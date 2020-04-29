@@ -1,0 +1,49 @@
+.logo {
+    height: 32px;
+}
+
+.header-div {
+    max-width: 1160px;
+    margin: 0px auto;
+    text-align: center;
+
+    .list-div {
+        text-align: left;
+        margin-top: 80px;
+
+        ul {
+            li {
+                margin-bottom: 10px;
+
+                h3 {
+                    position: relative;
+                    margin-bottom: 0px;
+                    font-size: 16px;
+                    font-weight: 600;
+                    line-height: 1.75;
+                    color: rgb(48, 62, 90);
+                }
+
+                p {
+                    font-size: 12px;
+                    line-height: 2;
+                    letter-spacing: 0.4px;
+                    color: rgb(101, 125, 149);
+                    margin-bottom: 4px;
+                    
+                    a {
+                        display: inline-block;
+                        padding-right: 20px;
+                        margin: 4px 20px 4px 0px;
+                        border-right: 1px solid rgb(213, 222, 231);
+                    }
+
+                    a:last-of-type {
+                        padding-right: 0px;
+                        border-right: none;
+                    }
+                }
+            }
+        }
+    }
+}

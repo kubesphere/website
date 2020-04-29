@@ -1,0 +1,86 @@
+@import "variables";
+@import "markdown";
+
+body {
+    background: #eff4f9;
+}
+
+.left-div {
+    position: fixed;
+    top: 0px;
+    left: 0px;
+    width: 280px;
+    height: 100vh;
+    background-color: rgb(36, 46, 66);
+    box-shadow: rgba(101, 125, 149, 0.2) 4px 0px 8px 0px;
+    overflow-y: auto;
+    color: rgb(255, 255, 255);
+    z-index: 2;
+    transition: left 0.2s ease-in-out;
+    a {
+        color: #ffffff;
+    }
+    .nav-menu {
+        ul {
+            display: none;
+            padding-left: 20px;
+        }
+    
+        .ul-active {
+            display: block;
+        }
+
+        li {
+            margin: 5px 0;
+        }
+
+        p {
+            cursor: pointer;
+            margin: 5px 0;
+            svg {
+                width: 16px;
+                height: 16px;
+                margin-top: 1px;
+                margin-right: 8px;
+                vertical-align: top;
+                transform: rotate(-90deg);
+                transition: all 0.2s ease;
+            }
+            .arrow-open {
+                transform: rotate(0deg);
+            }
+        }
+
+        .active a {
+            color: rgb(85, 188, 138);
+        }
+    }
+}
+
+.middle-div {
+    position: relative;
+    margin-left: 280px;
+
+    .header-div {
+        .logo {
+            height: 32px;
+        }
+    }
+
+    .content-div {
+        padding: 20px;
+        margin-right: 260px;
+    }
+
+    .menu-div {
+        position: fixed;
+        top: 0px;
+        right: 0px;
+        width: 240px;
+        padding: 10px;
+        height: 100vh;
+        overflow-y: auto;
+        font-size: 12px;
+        box-shadow: rgb(213, 222, 231) -1px 0px 0px 0px;
+    }
+}

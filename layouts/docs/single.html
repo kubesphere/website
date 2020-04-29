@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ .Title }}</title>
+
+    <link rel="stylesheet" href="/fonts/Roboto/stylesheet.css">
+
+    {{ $style := resources.Get "scss/doc.scss" | resources.ToCSS }}
+    <link rel="stylesheet" href="{{ $style.Permalink }}">
+
+    {{ $style := resources.Get "scss/reset.scss" | resources.ToCSS }}
+    <link rel="stylesheet" href="{{ $style.Permalink }}">
+    <script src="{{ "js/jquery-3.5.0.min.js" | relURL }}"></script>
+</head>
+<body>
+    <div class="left-div">
+        {{ partial "tree.html" . }}
+    </div>
+    <div class="middle-div">
+        <div class="header-div">
+            <a href="{{ site.Home.RelPermalink }}"><img src="{{ .Site.Params.logo | absURL }}" alt="{{ .Site.Title }}" class="logo"></a>
+        </div>
+        <div class="content-div">
+            <div class="md-body">
+                {{ .Content }}
+            </div>
+        </div>
+        <div class="menu-div">
+            {{ .TableOfContents }}
+        </div>
+    </div>
+</body>
+</html>

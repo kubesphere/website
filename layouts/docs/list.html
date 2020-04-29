@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ .Title }}</title>
+
+    <link rel="stylesheet" href="/fonts/Roboto/stylesheet.css">
+
+    {{ $style := resources.Get "scss/docs.scss" | resources.ToCSS }}
+    <link rel="stylesheet" href="{{ $style.Permalink }}">
+
+    {{ $style := resources.Get "scss/reset.scss" | resources.ToCSS }}
+    <link rel="stylesheet" href="{{ $style.Permalink }}">
+
+</head>
+<body>
+    <header>
+        <a href="{{ site.Home.RelPermalink }}"><img src="{{ .Site.Params.logo | absURL }}" alt="{{ .Site.Title }}" class="logo"></a>
+        <div class="header-div">
+            <h1>{{ i18n "introduction8" }}</h1>
+            <p>{{ i18n "introduction9" }}</p>
+            {{ $pages := (union .Pages .Sections).ByWeight }}
+            <div class="list-div">
+                <ul>
+                    {{ range $pages }}
+                    <li>
+                        {{ if .IsPage }}
+
+                        <h3>
+                            <a href="{{ .RelPermalink }}">{{ .LinkTitle }}</a>
+                        </h3>
+                        <p>{{ .Description }}</p>
+
+                        {{ else }}
+                        
+                        <h3>
+                            {{ template "first-page" (dict "section" . "firstSection" .)  }}
+                        </h3>
+                        <p>{{ .Description }}</p>
+                        {{ $page_list := (union .Pages .Sections).ByWeight }}
+                        <p>
+                        {{ range $page_list }}
+                            {{ if .IsPage }}
+                            <a href="{{ .RelPermalink }}">{{ .LinkTitle }}</a>
+                            {{ else }}
+                            {{ template "first-page" (dict "section" . "firstSection" .)  }}
+                            {{ end }}
+                        {{ end }}
+                        </p>
+
+                        {{ end }}
+                    </li>
+                    {{ end }}
+                </ul>
+            </div>
+            {{ define "first-page" }}
+            {{ $s := .section }}
+            {{ $firstSection := .firstSection }}
+            {{ $pages := (union $s.Pages $s.Sections).ByWeight }}
+            {{ $first := index $s.Pages 0}}
+            {{ if $first.IsPage }}
+                <a href="{{ $first.RelPermalink }}">{{ $firstSection.LinkTitle }}</a>
+            {{ else }}
+                {{ template "first-page" (dict "section" $first "firstSection" $firstSection)  }}
+            {{ end }}
+            {{ end }}
+        </div>
+    </header>
+    <section>
+
+    </section>
+</body>
+</html>

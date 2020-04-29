@@ -1,0 +1,29 @@
+<footer>
+    {{ $data := index .Site.Data .Site.Language.Lang }}
+    <div class="footer">
+        <div class="footer-main">
+            <div class="up-main">
+                <div class="left-div">
+                    <img src="{{ .Site.Params.logo | absURL }}" alt="{{ .Site.Title }}" class="foot-logo">
+                </div>
+                <div class="right-div">
+                    <ul>
+                        {{ with $data.footer.footer }}
+                        {{ range .list }}
+                            <li>
+                                <div class="h3">{{ .title }}</div>
+                                {{ range .list }}
+                                <a href="{{ .link }}">{{ .content }}</a>
+                                {{ end }}
+                            </li>
+                        {{ end }}
+                        {{ end }}
+                    </ul>
+                </div>
+            </div>
+            <div class="down-main">
+
+            </div>
+        </div>
+    </div>
+</footer>

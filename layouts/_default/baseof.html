@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html lang="{{ with .Site.LanguageCode }}{{ . }}{{ else }}en-US{{ end }}">
+{{- partial "head.html" . -}}
+
+<body>
+{{- partial "header.html" . -}}
+<img src="{{ .Site.Params.bg1 | absURL }}" alt="bg" class="bg-1">
+<section class="main-section">
+    {{- block "main" . }}{{- end }}
+</section>
+{{- partial "footer.html" . -}}
+</body>
+
+</html>

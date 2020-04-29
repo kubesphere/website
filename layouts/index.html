@@ -1,0 +1,135 @@
+{{ define "main" }}
+<section>
+    <div class="section-div-1">
+        <div class="banner-title">
+            <div class="banner-activities">
+                <span class="banner-tag">{{ i18n "activities" }}</span>
+                <a href="https://kubesphere.io/docs/introduction/what-is-kubesphere/#video-on-youtube" target="_blank" rel="noopener noreferrer" title="See a video for quick preview of KubeSphere">{{ i18n "meet" }}</a>
+            </div>
+            <div class="h1">{{ i18n "introduction1" }}<br>{{ i18n "introduction2" }}</div>
+            <div class="banner-sub-title">{{ i18n "introduction3" }}</div>
+            <p>{{ i18n "introduction4" }}</p>
+            <div class="banner-links">
+                <a href="/install/">
+                    <button class="install-button">
+                        {{ i18n "install" }}
+                    </button>
+                </a>
+            </div>
+        </div>
+        <div class="banner-snapshot">
+            <img src="{{ .Site.Params.img1 | absURL }}" alt="">
+            <img src="{{ .Site.Params.img2 | absURL }}" alt="" class="banner-snapshot-sub">
+        </div>
+    </div>
+</section>
+{{ $data := index .Site.Data .Site.Language.Lang }}
+<section>
+    <div class="section-div-2">
+        <div class="h1">{{ i18n "introduction5" }}</div>
+        <p>{{ i18n "introduction6" }}</p>
+        <div class="feature-cards">
+            {{ with $data.home.home }}
+            {{ range .list }}
+            <div class="feature-card">
+                <img src="{{ .icon | relURL }}" alt="{{ .title }}">
+                <div class="h2">{{ .title }}</div>
+                <p>{{ .content | safeHTML }}</p>
+            </div>
+            {{ end }}
+            {{ end }}
+        </div>
+    </div>
+</section>
+<section>
+    <div class="section-div-3">
+        <div class="app-install-title">
+            <img class="left" src="{{ .Site.Params.left | absURL }}" alt="">
+            <img class="right" src="{{ .Site.Params.right | absURL }}" alt="">
+            <div>{{ i18n "management" }}</div>
+            <p>{{ i18n "introduction7" }}</p>
+        </div>
+        <div class="slider-wrapper">
+            <div class="slider-repeat">
+                {{ with $data.home.home }}
+                {{ range .appList }}
+                <div class="app">
+                    <div class="app-header">
+                        <img class="app-icon" src="{{ .icon | relURL }}" alt="">
+                        <div class="app-title">
+                            <div class="app-name">{{ .name }}</div>
+                            <div class="app-version">{{ .version }}</div>
+                        </div>
+                    </div>
+                    <div class="app-desc">{{ .content }}</div>
+                </div>
+                {{ end }}
+                {{ range .appList }}
+                <div class="app">
+                    <div class="app-header">
+                        <img class="app-icon" src="{{ .icon | relURL }}" alt="">
+                        <div class="app-title">
+                            <div class="app-name">{{ .name }}</div>
+                            <div class="app-version">{{ .version }}</div>
+                        </div>
+                    </div>
+                    <div class="app-desc">{{ .content }}</div>
+                </div>
+                {{ end }}
+                {{ end }}
+            </div>
+        </div>
+    </div>
+</section>
+<section>
+    <div class="section-div-4">
+        <div class="h1">如何参与贡献</div>
+        <p>积极参与到 KubeSphere 上游的开发中，了解项目进度，以及 Bug 提交，可以通过 GitHub 与 Slack 与我们保持联系。</p>
+        <div class="contribute-cards">
+            <div class="contribute-card">
+                <div class="contribute-title">
+                    报告 Bug
+                </div>
+                <div>
+                    <p>KubeSphere 使用 GitHub issue 来管理 bug 跟踪</p>
+                </div>
+            </div>
+            <div class="contribute-card">
+                <div class="contribute-title">
+                    参与开发和设计
+                </div>
+                <div>
+                    <ul class="list">
+                        <li>认真阅读 kubesphere <a href="//github.com/kubesphere/kubesphere/blob/master/CONTRIBUTING.md" target="_blank" rel="noopener noreferrer">开发者指南</a></li>
+                        <li>fork 项目<!-- -->:<!-- --> <a href="https://github.com/kubesphere/kubesphere" target="_blank" rel="noopener noreferrer">https://github.com/kubesphere/kubesphere</a></li>
+                        <li><a href="/docs" target="_blank" rel="noopener noreferrer">阅读《KubeSphere 文档》</a></li>
+                        <li>参与到 KubeSphere 项目和上游项目如 Kubernetes、Docker、Istio 等</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="contribute-card">
+                <div class="contribute-title">
+                    日常沟通
+                </div>
+                <div>
+                    <ul class="list">
+                        <li>认真阅读 kubesphere <a href="//github.com/kubesphere/kubesphere/blob/master/CONTRIBUTING.md" target="_blank" rel="noopener noreferrer">开发者指南</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<section>
+    <div class="section-div-5">
+        <div>
+            <img src="{{ .Site.Params.cloud | absURL }}" alt="">
+            <div>CNCF 云原生基金会会员</div>
+        </div>
+        <div>
+            <img src="{{ .Site.Params.certified | absURL }}" alt="">
+            <div>CNCF 云原生基金会会员</div>
+        </div>
+    </div>
+</section>
+{{ end }}

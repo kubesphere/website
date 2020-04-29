@@ -1,0 +1,28 @@
+- id: home
+  translation: 首页
+- id: activities
+  translation: 动态
+- id: meet
+  translation: 回顾 KubeSphere 社区年度 Meetup
+- id: introduction1
+  translation: KubeSphere,
+- id: introduction2
+  translation: 以应用为中心的容器平台
+- id: introduction3
+  translation: 完全开源，加速企业云原生转型
+- id: introduction4
+  translation: KubeSphere 帮助企业在云、虚拟化及物理机等任何环境中快速构建、部署和运维基于 Kubernetes 的容器架构，轻松实现微服务治理、多租户管理、DevOps 与 CI/CD、监控日志告警、应用商店、大数据、以及人工智能等业务场景。
+- id: install
+  translation: 获取 KubeSphere
+- id: introduction5
+  translation: 什么是 KubeSphere ？
+- id: introduction6
+  translation: KubeSphere 是一款面向云原生设计的开源项目，在目前主流容器调度平台 Kubernetes 之上构建的分布式多租户容器管理平台，提供简单易用的操作界面以及向导式操作方式，在降低用户使用容器调度平台学习成本的同时，极大降低开发、测试、运维的日常工作的复杂度。
+- id: management
+  translation: 完整的应用生命周期管理
+- id: introduction7
+  translation: 基于 OpenPitrix 提供应用的全生命周期管理，包含开发、测试、发布、升级，下架等应用相关操作，多应用仓库管理，一键部署应用，并可实现版本控制、计费、审计等高级功能。
+- id: introduction8
+  translation: 欢迎使用 KubeSphere 文档
+- id: introduction9
+  translation: 欢迎阅读 KubeSphere 文档，我们尽可能以清晰简明的图文，介绍 KubeSphere 各项服务及使用方法。
