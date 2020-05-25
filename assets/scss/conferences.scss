@@ -1,0 +1,138 @@
+@import 'open-source';
+
+.tab-content {
+  background-color: #fff;
+  padding-top: 60px;
+  padding-bottom: 100px;
+
+  .content {
+    position: relative;
+    width: 1160px;
+    margin: 0 auto;
+
+    & > ul {
+
+      li:nth-child(1) {
+        .top-div  {
+          background-image: linear-gradient(270deg, rgb(101, 193, 148), rgb(76, 169, 134))
+        }
+      }
+
+      li:nth-child(2) {
+        .top-div  {
+          background-image: linear-gradient(to left, rgb(52, 197, 209), rgb(95, 182, 216))
+        }
+      }
+
+      & > li {
+        .top-div {
+          position: relative;
+          box-sizing: border-box;
+          height: 158px;
+          padding: 36px 48px;
+          margin-bottom: 12px;
+          border-radius: 4px;
+
+          .left-img {
+            position: absolute;
+            top: 0;
+            left: 0;
+          }
+
+          h3 {
+            font-size: 28px;
+            font-weight: 600;
+            line-height: 1.29;
+            color: #ffffff;
+          }
+
+          p {
+            margin-top: 8px;
+            font-size: 14px;
+            line-height: 1.71;
+            color: #ffffff;
+          }
+
+          .right-img {
+            position: absolute;
+            top: 50%;
+            right: 208px;
+            transform: translate(50%, -50%);
+          }
+        }
+
+        ul {
+          li {
+            position: relative;
+            box-sizing: border-box;
+            height: 354px;
+            padding: 40px 593px 30px 40px;
+            margin: 12px 0;
+            border-radius: 4px;
+            box-shadow: 0 4px 15px 0 rgba(7,42,68,.1);
+            background-color: #fff;
+
+            h4 {
+              font-size: 20px;
+
+              a {
+                color: #36435c;
+
+                &:hover {
+                  color: #55bc8a;
+                }
+              }
+            }
+
+            .author {
+              margin: 18px auto 22px;
+              font-size: 16px;
+              line-height: 1.75;
+              color: #36435c;
+            }
+
+            p {
+              height: 84px;
+              font-size: 14px;
+              line-height: 2;
+              color: #919aa3;
+            }
+
+            .line {
+              height: 0;
+              margin-top: 19.5px;
+              margin-bottom: 29.5px;
+              opacity: 0.5;
+              border: solid 1px #919aa3;
+            }
+
+            button {
+              width: 111px;
+              height: 36px;
+              border-radius: 20px;
+              border: solid 1px #ccd3db;
+              background-color: #f5f8f9;
+              font-size: 14px;
+              color: #36435c;
+              cursor: pointer;
+              &:hover {
+                color: #4ca986;
+              }
+            }
+
+            img {
+              position: absolute;
+              top: 16px;
+              right: 17px;
+              width: 480px;
+              height: 304px;
+              border-radius: 3px;
+              object-fit: contain;
+            }
+          }
+        }
+
+      }
+    }
+  }
+}

@@ -1,4 +1,5 @@
 ---
-title: "page1"
+title: blogs
 
+css: scss/blogs.scss
 ---

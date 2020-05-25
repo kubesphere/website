@@ -1,125 +1,251 @@
-baseURL = "http://example.org/"
-languageCode = "en-us"
+baseURL = "https://hugo-first.netlify.app"
+
+[markup]
+  [markup.tableOfContents]
+    endLevel = 4
+    ordered = false
+    startLevel = 2
 
 
 [params]
 logo = "images/logo.svg"
-bg1 = "images/bg-1.svg"
-img1 = "images/1.svg"
-img2 = "images/2.png"
-left = "images/left.svg"
-right = "images/right.svg"
-cloud = "images/cloud-native1.png"
-certified = "images/certified.svg"
 
 [languages.en]
-title = "KubeSphere | Enterprise container platform, built on Kubernetes"
-description = "KubeSphere is an open source container platform based on Kubernetes for enterprise app development and deployment, suppors installing anywhere from on-premise datacenter to any cloud to edge."
-languageName ="English"
 contentDir = "content/en"
 weight = 1
+languageCode = "en-US"
+languageName = "English"
 
 [[languages.en.menu.main]]
 weight = 1
-name = "Open Source"
+name = "Why KubeSphere"
+URL = "reason"
+
+[[languages.en.menu.main]]
+weight = 2
+name = "Scenario"
 hasChildren = true
 
   [[languages.en.menu.main]]
-  parent = "Open Source"
+  parent = "Scenario"
+  name = "Multi-cluster"
+  URL = "multi-cluster"
+  weight = 1
+
+  [[languages.en.menu.main]]
+  parent = "Scenario"
+  name = "DevOps"
+  URL = "devOps"
+  weight = 2
+
+  [[languages.en.menu.main]]
+  parent = "Scenario"
+  name = "Network"
+  URL = "network"
+  weight = 3
+
+  [[languages.en.menu.main]]
+  parent = "Scenario"
+  name = "Service Mesh"
+  URL = "service-mesh"
+  weight = 4
+
+  [[languages.en.menu.main]]
+  parent = "Scenario"
+  name = "Storage"
+  URL = "storage"
+  weight = 5
+
+  [[languages.en.menu.main]]
+  parent = "Scenario"
+  name = "AppStore"
+  URL = "app-store"
+  weight = 6
+
+  [[languages.en.menu.main]]
+  parent = "Scenario"
+  name = "Multi-tenancy"
+  URL = "multi-tenancy"
+  weight = 7
+
+  [[languages.en.menu.main]]
+  parent = "Scenario"
+  name = "Observability"
+  URL = "observability"
+  weight = 8
+
+[[languages.en.menu.main]]
+weight = 3
+name = "Resources"
+hasChildren = true
+
+  [[languages.en.menu.main]]
+  parent = "Resources"
   name = "Open Source Projects"
   URL = "projects"
   weight = 1
 
   [[languages.en.menu.main]]
-  parent = "Open Source"
+  parent = "Resources"
   name = "KubeCon & QCon"
   URL = "conferences"
   weight = 2
 
   [[languages.en.menu.main]]
-  parent = "Open Source"
+  parent = "Resources"
   name = "Technology Blogs"
   URL = "blogs"
   weight = 3
 
   [[languages.en.menu.main]]
-  parent = "Open Source"
+  parent = "Resources"
   name = "Video Resources"
   URL = "videos"
   weight = 4
 
 [[languages.en.menu.main]]
-name = "Quick Installation"
-URL = "install"
-weight = 2
-
-[[languages.en.menu.main]]
-weight = 3
+weight = 4
 name = "Documentation"
 URL = "docs"
 
 [[languages.en.menu.main]]
-weight = 4
-name = "Forum"
-URL = "forum"
-
-[[languages.en.menu.main]]
 weight = 5
-name = "News"
-URL = "trends"
+hasChildren = true
+name = "Community"
+    [[languages.en.menu.main]]
+    parent = "Community"
+    name = "Contribution"
+    URL = "contribution"
+    weight = 1
+
+    [[languages.en.menu.main]]
+    parent = "Community"
+    name = "Case Studies"
+    URL = "case"
+    weight = 2
+
+    [[languages.en.menu.main]]
+    parent = "Community"
+    name = "Partner"
+    URL = "partner"
+    weight = 3
 
 [languages.zh]
-title = "KubeSphere-以应用为中心的开源容器平台"
-description = "KubeSphere 是在 Kubernetes 之上构建的以应用为中心的开源容器平台，支持部署和运行在任何基础设施之上，帮助企业轻松应对敏捷开发、自动化运维、应用快速交付、微服务治理、多租户管理、监控日志告警、服务与网络管理等业务场景"
-languageName = "简体中文"
 weight = 2
 contentDir = "content/zh"
+languageCode = "zh-CN"
+languageName = "简体中文"
 
 [[languages.zh.menu.main]]
 weight = 1
-name = "开源社区"
+name = "Why KubeSphere"
+URL = "reason"
+
+[[languages.zh.menu.main]]
+weight = 2
+name = "Scenario"
 hasChildren = true
 
   [[languages.zh.menu.main]]
-  parent = "开源社区"
-  name = "开源项目"
+  parent = "Scenario"
+  name = "Multi-cluster"
+  URL = "multi-cluster"
+  weight = 1
+
+  [[languages.zh.menu.main]]
+  parent = "Scenario"
+  name = "DevOps"
+  URL = "devOps"
+  weight = 2
+
+  [[languages.zh.menu.main]]
+  parent = "Scenario"
+  name = "Network"
+  URL = "network"
+  weight = 3
+
+  [[languages.en.menu.main]]
+  parent = "Scenario"
+  name = "Service Mesh"
+  URL = "service-mesh"
+  weight = 4
+
+  [[languages.en.menu.main]]
+  parent = "Scenario"
+  name = "Storage"
+  URL = "storage"
+  weight = 5
+
+  [[languages.zh.menu.main]]
+  parent = "Scenario"
+  name = "AppStore"
+  URL = "app-store"
+  weight = 6
+
+  [[languages.zh.menu.main]]
+  parent = "Scenario"
+  name = "Multi-tenancy"
+  URL = "multi-tenancy"
+  weight = 7
+
+  [[languages.zh.menu.main]]
+  parent = "Scenario"
+  name = "Observability"
+  URL = "observability"
+  weight = 8
+
+[[languages.zh.menu.main]]
+weight = 3
+name = "Resources"
+hasChildren = true
+
+  [[languages.zh.menu.main]]
+  parent = "Resources"
+  name = "Open Source Projects"
   URL = "projects"
   weight = 1
 
   [[languages.zh.menu.main]]
-  parent = "开源社区"
+  parent = "Resources"
   name = "KubeCon & QCon"
   URL = "conferences"
   weight = 2
 
   [[languages.zh.menu.main]]
-  parent = "开源社区"
-  name = "技术博客"
+  parent = "Resources"
+  name = "Technology Blogs"
   URL = "blogs"
   weight = 3
 
   [[languages.zh.menu.main]]
-  parent = "开源社区"
-  name = "视频资源"
+  parent = "Resources"
+  name = "Video Resources"
   URL = "videos"
   weight = 4
 
 [[languages.zh.menu.main]]
-name = "快速安装"
-URL = "install"
-weight = 2
-
-[[languages.zh.menu.main]]
-weight = 3
-name = "文档中心"
+weight = 4
+name = "Documentation"
 URL = "docs"
 
 [[languages.zh.menu.main]]
-weight = 4
-name = "开发者社区"
-URL = "forum"
-
-[[languages.zh.menu.main]]
 weight = 5
-name = "动态"
-URL = "trends"
+hasChildren = true
+name = "Community"
+    [[languages.zh.menu.main]]
+    parent = "Community"
+    name = "Contribution"
+    URL = "contribution"
+    weight = 1
+
+    [[languages.zh.menu.main]]
+    parent = "Community"
+    name = "Case Studies"
+    URL = "case"
+    weight = 2
+
+    [[languages.zh.menu.main]]
+    parent = "Community"
+    name = "Partner"
+    URL = "partner"
+    weight = 3

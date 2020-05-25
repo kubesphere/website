@@ -1,6 +1,34 @@
 {{ define "main" }}
-
-<section id="home">
-    <h2>内容</h2>
+{{- partial "openSource.html" . -}}
+<section>
+    <div class="tab-content">
+        <div class="content">
+            <ul>
+                {{ $viewDetail := .Params.viewDetail }}
+                {{ range .Params.list }}
+                <li>
+                    <div class='top-div'>
+                        <img class='left-img' src="{{ .bg | absURL }}" alt="">
+                        <h3>{{ .name }}</h3>
+                        <p>{{ .content }}</p>
+                        <img class='right-img' src="{{  .icon | absURL }}" alt="">
+                    </div>
+                    <ul>
+                        {{ range .children }}
+                        <li>
+                            <h4><a href="{{ .link }}">{{ .name }}</a></h4>
+                            <div class='author'>{{ .author }}</div>
+                            <p>{{ .summary }}</p>
+                            <div class='line'></div>
+                            <a href="{{ .link }}"><button>{{ $viewDetail }}</button></a>
+                            <img src="{{ .image | absURL }}" alt="">
+                        </li>
+                        {{ end }}
+                    </ul>
+                </li>
+                {{ end }}
+            </ul>
+        </div>
+    </div>
 </section>
 {{ end }}

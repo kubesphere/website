@@ -1,6 +1,51 @@
 {{ define "main" }}
+{{- partial "openSource.html" . -}}
 
-<section id="home">
-    <h2>内容</h2>
+<section>
+    <div class="tab-content">
+        <div class="content">
+            <div class="left">
+                <ul id="objects-group">
+                    <li class="active">{{ .Params.name }}</li>
+                    {{ range .Params.groups }}
+                    <li data-name="{{ .name }}">{{ .name }}</li>
+                    {{ end }}
+                </ul>
+            </div>
+            <ul id="objects-item" class="right">
+                {{ range .Params.groups }}
+                {{ $name := .name }}
+                {{ range .children }}
+                <li data-name="{{ $name }}">
+                    <img src="{{ .icon | absURL }}" alt="">
+                    <a href="{{ .link }}">{{ .title }}</a>
+                    <p>{{ .description }}</p>
+                    <div>
+                        <a href="{{ .link }}">Github</a>
+                    </div>
+                </li>
+                {{ end }}
+                {{ end }}
+            </ul>
+        </div>
+    </div>
 </section>
+<script>
+	$('#objects-group li').click(function() {
+        $("#objects-group li").removeClass("active");
+        $(this).addClass("active");
+        var name = $(this).data("name")
+        if (name) {
+            $("#objects-item li").each(function(item) {
+                if ($(this).data("name") !== name) {
+                    $(this).hide()
+                } else {
+                    $(this).show()
+                }
+            })
+        } else {
+            $("#objects-item li").show()
+        }
+	})
+</script>
 {{ end }}

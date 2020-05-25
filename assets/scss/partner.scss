@@ -1,0 +1,227 @@
+@import 'variables';
+@import 'mixin';
+
+.section-1 {
+  position: relative;
+  height: 300px;
+  min-width: 1160px;
+
+  img {
+    width: 100%;
+    height: 100%;
+    object-fit:cover;
+  }
+
+  .title-div {
+    position: absolute;
+    top: 138px;
+    left: 0;
+    right: 0;
+    text-align: center;
+  }
+
+  h1 {
+    font-size: 40px;
+    font-weight: bold;
+    line-height: 1;
+    letter-spacing: -0.11px;
+    color: #ffffff;
+  }
+  p {
+    width: 1067px;
+    margin: 12px auto 0;
+    font-size: 16px;
+    line-height: 1.5;
+    letter-spacing: -0.04px;
+    color: #ffffff;
+  }
+}
+
+.section-2 {
+  & > div {
+    display: flex;
+    position: relative;
+    top: -40px;
+    width: 1160px;
+    margin: 0 auto;
+    box-shadow: 0 4px 8px 0 rgba(36, 46, 66, 0.06);
+    .left-div {
+      width: 470px;
+      height: 298px;
+      border-radius: 10px 0 0 10px;
+      background-color: #ffffff;
+      div {
+        @include common-title-style;
+        width: 351px;
+        height: 48px;
+        margin: 38px 80px 12px 40px;
+      }
+      p {
+        @include common-p-style;
+        width: 391px;
+        height: 160px;
+        margin-left: 40px;
+      }
+    }
+    .right-div {
+      position: relative;
+      width: 690px;
+      height: 298px;
+      border-radius: 0 10px 10px 0;
+      background-color: #3d3e49;
+
+      img {
+        margin-top: 107px;
+        margin-left: 45px;
+      }
+
+      .btn-div {
+        position: absolute;
+        width: 92px;
+        height: 27px;
+        font-size: 14px;
+        line-height: 27px;
+        text-align: center;
+        color: #ffffff;
+        border-radius: 100px;
+        box-shadow: 0 2px 8px 0 rgba(250, 164, 66, 0.5);
+        background-image: linear-gradient(107deg, #fdba39 20%, #f2635e 99%);
+      }
+
+      .div-1 {
+        top: 116px;
+        left: 85px;
+        background-image: linear-gradient(107deg, #f2635e 20%, #fdba39 99%);
+      }
+
+      .div-2 {
+        top: 89px;
+        left: 294px;
+      }
+
+      .div-3 {
+        top: 92px;
+        right: 97px;
+      }
+    }
+  }
+}
+
+.section-3 {
+  padding-top: 54px;
+  background-image: url('/images/partner/oval-4.svg');
+  background-position: center top;
+  background-repeat: no-repeat;
+
+  & > div {
+    width: 1160px;
+    margin: 0 auto;
+    h2 {
+      @include common-h2-style;
+      text-align: center;
+    }
+
+    ul {
+      @include common-flex-style;
+      margin-top: 20px;
+
+      li {
+        width: 570px;
+        height: 309px;
+        border-radius: 10px;
+        margin-top: 20px;
+        box-shadow: 0 4px 8px 0 rgba(36, 46, 66, 0.06), 0 8px 16px 0 rgba(36, 46, 66, 0.05);
+        background-color: #ffffff;
+
+        h3 {
+          margin: 40px 40px 20px;
+          @include common-title-style;
+        }
+
+        p {
+          margin-left: 40px;
+          margin-right: 40px;
+          @include common-p-style;
+        }
+
+        div {
+          margin-left: 40px;
+          margin-top: 20px;
+          font-weight: 600;
+          line-height: 1.5;
+
+          a {
+            color: #00a971;
+          }
+        }
+      }
+    }
+  }
+}
+
+.section-4 {
+  & > div {
+    @include common-center-div-style;
+    margin-top: 80px;
+    h2 {
+      @include common-h2-style;
+      text-align: center;
+    }
+
+    ul {
+      @include common-flex-style;
+      margin-top: 20px;
+
+      .intro {
+        background-image: radial-gradient(circle at -23% -21%, #cdf6d5, #089566 75%);
+        
+        p {
+          margin: 40px 30px;
+          font-size: 14px;
+          line-height: 1.71;
+          color: #ffffff;
+        }
+      }
+
+      li {
+        position: relative;
+        width: 274px;
+        height: 200px;
+        margin-top: 20px;
+        border-radius: 4px;
+        box-shadow: 0 4px 8px 0 rgba(36, 46, 66, 0.06), 0 8px 16px 0 rgba(36, 46, 66, 0.05);
+        background-color: #ffffff;
+
+        &:hover {
+          div {
+            display: block;
+          }
+        }
+
+        img {
+          width: 200px;
+          height: 100px;
+          margin: 50px 37px;
+          object-fit: contain;
+        }
+
+        div {
+          display: none;
+          position: absolute;
+          top: 10px;
+          right: 0;
+          width: 106px;
+          height: 32px;
+          object-fit: contain;
+          line-height: 32px;
+          text-align: center;
+          font-size: 12px;
+          color: #ffffff;
+          border-radius: 16px 0 0 16px;
+          box-shadow: 0 2px 8px 0 rgba(250, 164, 66, 0.5);
+          background-image: linear-gradient(108deg, #fdba39 20%, #f2635e 99%);
+        }
+      }
+    }
+  }
+}

@@ -5,96 +5,248 @@
   top: 0;
   left: 0;
   right: 0;
-  height: 100px;
-  vertical-align: middle;
-  opacity: .96;
-  box-shadow: 0 4px 8px 0 rgba(36,46,66,.2);
-  background-color: #f5f8f9!important;
-  border-color: transparent!important;
-}
+  height: 93px;
+  color: #ffffff;
+  border-bottom:  1px solid rgba($color: #e3e9ef, $alpha: 0.4);
+  background-image: linear-gradient(to top, rgba(23, 188, 133, 0.18), rgba(0, 169, 113, 0.18));
 
-.header-container {
-  position: relative;
-  width: 1160px;
-  margin: 0 auto;
-}
-
-.logo {
-  position: absolute;
-  left: 0;
-  padding: 34px 0;
-  height: 32px;
-}
-
-.nav {
-  width: 800px;
-  height: 100px;
-  margin: 0 auto;
-  line-height: 100px;
-  text-align: center;
-  & > li {
-    display: inline-block;
-    margin: 0 20px;
+  .header-container {
     position: relative;
-    color: #242e42;
-    font-size: 16px;
-    text-align: center;
-    line-height: 20px;
-    cursor: pointer;
+    width: 1160px;
+    margin: 0 auto;
   }
-  & > .active {
-    a {
-      color: #55bc8a;
+
+  .logo {
+    position: absolute;
+    left: 0;
+    top: 50%;
+    transform: translateY(-50%);
+  }
+
+  .nav {
+    height:93px;
+    margin-left: 200px;
+    margin-right: 380px;
+    line-height: 93px;
+    & > li:first-child {
+      margin-left: 0;
+    }
+    & > li {
+      display: inline-block;
+      margin-left: 20px;
+      position: relative;
+      font-size: 16px;
+      line-height: 20px;
+      cursor: pointer;
+      & > a {
+        color: #ffffff;
+      }
+    }
+
+    & > .active {
+      a {
+        // color: #55bc8a;
+      }
     }
   }
-}
 
-.menu-li {
-  position: absolute;
-  top: 0;
-  right: 0;
-}
-
-.menu-active {
-  span {
-    color: #55bc8a;
-  }
-  .active {
-    a {
-      color: #55bc8a;
+  .menu-active {
+    span {
+      // color: #55bc8a;
+    }
+    .active {
+      a {
+        color: #55bc8a;
+      }
     }
   }
-}
 
-.menu-li:hover .dropdown-menu {
-  display: block;
-}
-
-.dropdown-menu {
-  display: none;
-  position: absolute;
-  width: 200px;
-  left: 50%;
-  transform: translateX(-50%);
-  padding-left: 0;
-  background: #ffffff;
-  text-align: center;
-  line-height: 30px;
-  .active {
-    a {
-      color: #55bc8a;
-    }
+  .menu-li:hover {
+    padding-bottom: 40px;
   }
-}
 
-.language-menu {
-  top: 40px;
-  cursor: pointer;
+  .menu-span::after {
+    display: inline-block;
+    content: '';
+    margin-left: 5px;
+    border-width: 4px 2px;
+    border: solid transparent;
+    border-top-color: #fff;
+  }
+
   .dropdown-menu {
-    width: 120px;
+    display: none;
+    position: absolute;
+    top: 40px;
+    box-sizing: border-box;
+    width: 306px;
+    padding: 12px 30px 18px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: #ffffff;
+    line-height: 30px;
+    font-size: 0;
+    border-radius: 6px;
+    box-shadow: 0 4px 8px 0 rgba(36,46,66,.06),0 8px 16px 0 rgba(36,46,66,.05);
+
+    li {
+      display: inline-block;
+      width: 100px;
+      padding-left: 20px;
+      height: 32px;
+      line-height: 32px;
+      font-size: 12px;
+      color: #36435c;
+
+      a {
+        color: #36435c;
+
+        &:hover {
+          color: #55bc8a;
+        }
+      }
+
+    }
+
+    li:nth-child(2n) {
+      margin-left: 6px;
+    }
+
+    .active {
+      a {
+        color: #55bc8a;
+      }
+    }
+    &::after {
+      position: absolute;
+      top: -20px;
+      left: 50%;
+      transform: translateX(-50%);
+      content: "";
+      width: 0;
+      height: 0;
+      border: 10px solid transparent;
+      border-bottom-color: #fff;
+    }
+  }
+
+  .right-menu {
+    position: absolute;
+    top: 28px;
+    right: 0;
+
+    & > ul {
+      & > li {
+        display: inline-block;
+      }
+    }
+
+    .language-menu {
+      position: relative;
+      cursor: pointer;
+      &:hover {
+        padding-bottom: 40px;
+      }
+      & > div  {
+        img, span {
+          display: inline-block;
+          vertical-align: middle;
+        }
+
+        span::after {
+          display: inline-block;
+          content: '';
+          margin-left: 5px;
+          border-width: 4px 2px;
+          border: solid transparent;
+          border-top-color: #fff;
+        }
+      }
+      .dropdown-menu {
+        color: black;
+        width: 120px;
+        li {
+          padding: 0;
+          margin: 0;
+        }
+      }
+    }
+
+    .btn-li {
+      margin-left: 18px;
+      margin-right: 4px;
+      button {
+        width: 112px;
+        height: 36px;
+        border-radius: 30px;
+        border: none;
+        font-size: 14px;
+        color: #ffffff;
+        cursor: pointer;
+        box-shadow: 0 10px 50px 0 rgba(34, 43, 62, 0.1), 0 8px 16px 0 rgba(33, 43, 61, 0.2);
+        background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.1) 97%), linear-gradient(to bottom, #242e42, #242e42);
+        &:hover {
+          box-shadow: none;
+        }
+      }
+
+      &:hover {
+        padding-bottom: 40px;
+      }
+
+      .dropdown-menu {
+        top: 60px
+      }
+
+      ol {
+        li {
+          display: block;
+          margin-left: 0;
+        }
+      }
+    }
+
+    .link-li {
+      a {
+        display: inline-block;
+        width: 16px;
+        height: 16px;
+        margin-left: 12px;
+        background-position: center center;
+        background-repeat: no-repeat;
+      }
+
+      .link-1 {
+        background-image: url('/images/header/slack.svg');
+
+        &:hover {
+          background-image: url('/images/header/slack-hover.svg');
+        }
+      }
+
+      .link-2 {
+        background-image: url('/images/header/twitter.svg');
+
+        &:hover {
+          background-image: url('/images/header/twitter-hover.svg');
+        }
+      }
+
+      .link-3 {
+        background-image: url('/images/header/github.svg');
+
+        &:hover {
+          background-image: url('/images/header/github-hover.svg');
+        }
+      }
+
+    }
   }
 }
 
-.main-section {
-  padding-top: 100px;
+.navigationScroll {
+  box-shadow: 0 4px 8px 0 rgba(36, 46, 66, 0.06), 0 8px 16px 0 rgba(36, 46, 66, 0.05);
+  background-image: linear-gradient(to bottom, rgba(134, 219, 162, 0.9), rgba(0, 170, 114, 0.9));
 }
+
+

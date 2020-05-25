@@ -7,6 +7,11 @@
 
     <link rel="stylesheet" href="/fonts/Roboto/stylesheet.css">
 
-    {{ $style := resources.Get "scss/home.scss" | resources.ToCSS }}
-    <link rel="stylesheet" href="{{ $style.Permalink }}">
+    {{ $common := resources.Get "scss/common.scss" | toCSS | minify | fingerprint }}
+    <link rel="stylesheet" href="{{ $common.Permalink }}">
+
+    {{- partial "css.html" . -}}
+
+    <script src="{{ "js/jquery-3.5.0.min.js" | relURL }}"></script>
+
 </head>

@@ -1,10 +1,12 @@
 <!-- Header Start -->
 <header class="navigation">
     <div class="header-container">
-        <img src="{{ .Site.Params.logo | absURL }}" alt="{{ .Site.Title }}" class="logo">
+        <a href="{{ site.Home.RelPermalink }}">
+            <img src="/images/header/logo.svg" alt="{{ .Site.Title }}" class="logo">
+        </a>
+
         <ul class="nav">
             {{ $section := .Page.Section }}
-            <li {{ if .Page.IsHome }} class="active" {{ end}}><a href="{{ site.Home.RelPermalink }}">{{ i18n "home" }}</a></li>
             {{ range .Site.Menus.main }}
             {{ if .HasChildren }}
 
@@ -16,7 +18,7 @@
             {{ end }}
 
             <li {{ if $active }} class="menu-li menu-active" {{ else }} class="menu-li" {{ end}}>
-                <span>{{ .Name }}</span>
+                <span class='menu-span'>{{ .Name }}</span>
                 <ul class="dropdown-menu">
                     {{ range .Children }}
                     <li {{ if eq $section .URL }} class="active"{{ end}}><a href="{{ .URL | absLangURL }}">{{ .Name }}</a></li>
@@ -30,13 +32,71 @@
             {{ end }}
 
         </ul>
-        <div class="menu-li language-menu">
-            <span>{{ .Site.Language.LanguageName }}</span>
-            <ul class="dropdown-menu">
-                {{ range .Page.AllTranslations }}
-                <li onclick="location = '{{ .Permalink }}'">{{ .Language.LanguageName }}</li>
-                {{ end }}
+        <div class="right-menu">
+            <ul>
+                <li class="language-menu">
+                    <div>
+                        <img src="/images/header/black.svg" alt="">
+                        <span>{{ .Site.Language.LanguageName }}</span>
+                    </div>
+                    <ul class="dropdown-menu">
+                        {{ range .Page.AllTranslations }}
+                        <li onclick="location = '{{ .Permalink }}'">{{ .Language.LanguageName }}</li>
+                        {{ end }}
+                    </ul>
+                </li>
+                <li class='btn-li'>
+                    <button>Demo →</button>
+                    <ol class="dropdown-menu">
+                        <li>1.aaa</li>
+                        <li>2.bbb</li>
+                        <li>3.ccc</li>
+                    </ol>
+                </li>
+                <li class='link-li'>
+                    <a class='link-1' href=""></a>
+                    <a class='link-2' href=""></a>
+                    <a class='link-3' href=""></a>
+                </li>
             </ul>
         </div>
     </div>
 </header>
+<script>
+var bindNavMouseEvent = function(selector) {
+    var flag = false
+    $(selector).mouseenter(function() {
+        if (flag) {
+            return false
+        }
+        flag = true
+        $(this).find('.dropdown-menu').fadeIn(300, function() {
+            flag = false
+        })
+    });
+    $(selector).mouseleave(function() {
+        $(this).find('.dropdown-menu').fadeOut(300)
+    });
+}
+
+var bindScrollChangeHeader = function() {
+    var check = 100
+    var header = $('header')
+    window.addEventListener('scroll', function() {
+        var scrollY = window.scrollY;
+        if (scrollY > 100) {
+            header.addClass('navigationScroll')
+        } else {
+            header.removeClass('navigationScroll')
+        }
+    })
+}
+
+bindScrollChangeHeader()
+
+bindNavMouseEvent('.navigation .menu-li')
+bindNavMouseEvent('.navigation .language-menu')
+bindNavMouseEvent('.navigation .btn-li')
+
+
+</script>

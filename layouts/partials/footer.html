@@ -5,6 +5,11 @@
             <div class="up-main">
                 <div class="left-div">
                     <img src="{{ .Site.Params.logo | absURL }}" alt="{{ .Site.Title }}" class="foot-logo">
+                    <p>{{ i18n "introduction7" }}</p>
+                    <div>
+                        <input type="text" placeholder='{{ i18n "introduction6" }}'>
+                        <button>{{ i18n "introduction5" }}</button>
+                    </div>
                 </div>
                 <div class="right-div">
                     <ul>
@@ -22,7 +27,14 @@
                 </div>
             </div>
             <div class="down-main">
-
+                <div class='img-div'>
+                    <img src="/images/footer/facebook.svg" alt="">
+                    <img src="/images/footer/youtube.svg" alt="">
+                    <img src="/images/footer/slack.svg" alt="">
+                    <img src="/images/footer/twitter.svg" alt="">
+                    <img src="/images/footer/github.svg" alt="">
+                </div>
+                <p class='p1'>{{ i18n "introduction2" }}</p>
             </div>
         </div>
     </div>

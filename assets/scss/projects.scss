@@ -1,0 +1,113 @@
+@import 'open-source';
+
+
+.tab-content {
+  background-color: #fff;
+  padding-top: 60px;
+  padding-bottom: 100px;
+
+  .content {
+    position: relative;
+    min-height: 380px;
+    width: 1160px;
+    margin: 0 auto;
+    padding-bottom: 20px;
+
+    .left {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 200px;
+      padding: 0 30px;
+      border-radius: 4px;
+      box-shadow: 0 4px 15px 0 rgba(7,42,68,.1);
+      background-color: #fff;
+
+      li:first-of-type {
+        border-bottom: 1px solid rgba(181,193,204,.5);
+        font-size: 16px;
+        font-weight: 500;
+        color: #36435c;
+        line-height: 22px;
+        padding: 20px 0;
+        margin-bottom: 5px;
+      }
+
+      li {
+        position: relative;
+        padding: 15px 0;
+        font-size: 14px;
+        line-height: 20px;
+        color: #36435c;
+        -webkit-transition: all .2s ease-in-out;
+        transition: all .2s ease-in-out;
+        cursor: pointer;
+      }
+
+      li:hover, li.active {
+        color: #4ca986;
+      }
+    }
+
+    .right {
+      padding-left: 300px;
+
+      li {
+        position: relative;
+        padding: 32px 157px 32px 120px;
+        border-radius: 4px;
+        box-shadow: 0 4px 15px 0 rgba(7,42,68,.1);
+        background-color: #fff;
+
+        &:hover {
+          div {
+            display: block;
+          }
+        }
+
+        img {
+          position: absolute;
+          width: 64px;
+          height: 64px;
+          top: 50%;
+          left: 28px;
+          -webkit-transform: translateY(-50%);
+          transform: translateY(-50%);
+        }
+
+        & > a {
+          font-size: 20px;
+          font-weight: 600;
+          line-height: 1.6;
+          margin-bottom: 8px;
+          color: #36435c;
+        }
+
+        p {
+          font-size: 14px;
+          line-height: 1.71;
+          color: #8f94a1;
+        }
+
+        div {
+          display: none;
+          position: absolute;
+          top: 50%;
+          right: 40px;
+          -webkit-transform: translateY(-50%);
+          transform: translateY(-50%);
+          font-size: 16px;
+          line-height: 1.5;
+
+          a {
+            color: #55bc8a;
+          }
+        }
+      }
+
+      li + li {
+        margin-top: 12px;
+      }
+    }
+  }
+}

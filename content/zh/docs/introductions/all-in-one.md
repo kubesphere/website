@@ -12,6 +12,11 @@ weight: 2
 > - 若在云平台使用在线安装，可在安装前 [配置镜像加速器](https://kubesphere.com.cn/forum/d/149-kubesphere-v2-1-0)，或通过调高带宽的方式来加快安装速度。
 
 
+### 测试
+
+测试h3
+
+
 ## 前提条件
 
 建议关闭机器的防火墙，若未关闭防火墙则需要开放相关端口，参考 [需开放的端口](https://kubesphere.io/docs/v2.1/zh-CN/installation/port-firewall/)。

@@ -1,0 +1,25 @@
+<section>
+  <div class='open-source-header'>
+    <h1>{{ i18n "introduction10" }}</h1>
+    <p>{{ i18n "introduction11" }}</p>
+    <div>
+      <a href="https://github.com/kubesphere" target="_blank" rel="noopener noreferrer">
+        <button class="index-module--button--217nv index-module--control--3r7PJ index-module--large--3KWUF">
+          <svg width="1em" height="1em" viewBox="0 0 21 20">
+            <path d="M10.252.003C4.59.003 0 4.593 0 10.255c0 4.53 2.937 8.372 7.011 9.728.513.095.701-.223.701-.493 0-.245-.01-1.053-.014-1.909-2.853.62-3.454-1.21-3.454-1.21-.466-1.185-1.138-1.5-1.138-1.5-.93-.637.07-.623.07-.623 1.03.072 1.572 1.056 1.572 1.056.915 1.567 2.4 1.114 2.983.852.093-.662.358-1.115.651-1.371-2.277-.259-4.67-1.138-4.67-5.067 0-1.119.4-2.034 1.055-2.752-.106-.258-.457-1.3.099-2.713 0 0 .861-.275 2.82 1.051a9.834 9.834 0 0 1 2.566-.344 9.86 9.86 0 0 1 2.568.344c1.957-1.326 2.817-1.05 2.817-1.05.558 1.412.208 2.455.101 2.712.658.718 1.055 1.633 1.055 2.752 0 3.938-2.399 4.804-4.681 5.058.368.318.696.942.696 1.898 0 1.371-.012 2.476-.012 2.813 0 .273.185.592.705.492a10.253 10.253 0 0 0 7.005-9.727C20.506 4.59 15.916 0 10.254 0l-.002.003z" fill="currentColor" fill-rule="nonzero"></path>
+          </svg>
+          前往 Github
+        </button>
+      </a>
+    </div>
+    <ul class="tabs">
+      {{ $section := .Page.Section }}
+      {{ $menus := (index .Site.Menus.main 2).Children }}
+      {{ range $menus }}
+      <li class="">
+        <a {{ if eq $section .URL }} class="active"{{ end }} href="{{ .URL | absLangURL }}">{{ .Name }}</a>
+      </li>
+      {{ end }}
+    </ul>
+  </div>
+</section>
