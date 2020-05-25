@@ -2,37 +2,50 @@ footer:
   list:
     - title: Products
       list:
-        - content: Community Edition
-          link: /en
-        - content: QKE
-          link: https://appcenter.qingcloud.com/apps/app-cmgbd5k2/KubeSphere%C2%AE%EF%B8%8F%EF%BC%88QKE%EF%BC%89#Introduction
-        - content: Commercial Service
-          link: https://kubesphere.qingcloud.com/
-    - title: Related Products
-      list:
-        - content: AppCenter
-          link: https://appcenter.qingcloud.com/
-        - content: NeonSAN
-          link: https://www.qingcloud.com/products/qingstor-neonsan/
-        - content: QingCloud
-          link: https://www.qingcloud.com/products/qingstor-neonsan/
+        - content: KubeSphere
+          link: ''
+
+        - content: Porter
+          link: ''
+        
         - content: OpenPitrix
-          link: https://openpitrix.io/
+          link: ''
+
+        - content: Fluentbit-Operator
+          link: ''
+
+        - content: KubeKey
+          link: ''
+
+        - content: Notification Manager
+          link: ''
+    - title: Resources
+      list:
+        - content: Projects
+          link: 
+        - content: Blogs
+          link: 
+        - content: KubeCon & QCon
+          link: 
+        - content: Videos
+          link: 
     - title: KubeSphere Docs
       list:
         - content: Introduction
-          link: https://kubesphere.io/docs/v2.1/zh-CN/introduction/intro/
+          link: ''
         - content: Installation
-          link: https://kubesphere.io/docs/v2.1/zh-CN/installation/intro/
+          link: ''
         - content: Tutorial
-          link: https://kubesphere.io/docs/v2.1/zh-CN/quick-start/quick-start-guide/
+          link: ''
         - content: API Documentation
-          link: https://kubesphere.io/docs/v2.1/zh-CN/api-reference/api-docs/
-    - title: About
+          link: ''
+    - title: Community
       list:
-        - content: News
-          link: https://activity.qingcloud.com/event/kubesphere2019/
-        - content: Contact
-          link: https://www.qingcloud.com/contactus
-        - content: Careers
-          link: https://www.qingcloud.com/jobs
+        - content: Contribution
+          link: 
+        - content: Case Studies
+          link:
+        - content: Partners
+          link: 
+        - content: Roadmap
+          link: 

@@ -1,2 +1,5 @@
-{{ $style := resources.Get "scss/home.scss" | toCSS | minify | fingerprint }}
+{{ if .Params.css}}
+{{ $style := resources.Get .Params.css | toCSS | minify | fingerprint }}
 <link rel="stylesheet" href="{{ $style.Permalink }}">
+{{ end }}
+

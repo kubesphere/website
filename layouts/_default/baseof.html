@@ -4,7 +4,6 @@
 
 <body>
 {{- partial "header.html" . -}}
-<img src="{{ .Site.Params.bg1 | absURL }}" alt="bg" class="bg-1">
 <section class="main-section">
     {{- block "main" . }}{{- end }}
 </section>

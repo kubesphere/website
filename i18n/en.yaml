@@ -1,33 +1,21 @@
-- id: home
-  translation: Home
-- id: activities
-  translation: Activities
-- id: meet
-  translation:  See a video for quick preview of KubeSphere
-- id: introduction1
-  translation: The Kubernetes Platform,
+
 - id: introduction2
-  translation: tailored to the DevOps teams
+  translation: KubeSphere®️ 2020 All Rights Reserved.
 - id: introduction3
-  translation: —— KubeSphere Container Platform
+  translation: Published at
 - id: introduction4
-  translation: KubeSphere is a distributed operating system providing cloud native stack with Kubernetes as its kernel, and aims to be plug-and-play architecture for third-party applications seamless integration to boost its ecosystem.
-- id: install
-  translation: Get KubeSphere
-- id: install
-  translation: Get KubeSphere
+  translation: KubeCon & QCon
 - id: introduction5
-  translation: One Platform for full-stack solutions
+  translation: Subscribe
 - id: introduction6
-  translation: KubeSphere is also a multi-tenant enterprise-grade container platform with full-stack automated IT operation and streamlined DevOps workflows. It provides developer-friendly wizard web UI, helping enterprises to build out a more robust and feature-rich platform, which includes most common functionalities needed for enterprise Kubernetes strategy.
-- id: management
-  translation: Complete application lifecycle management
+  translation: Please enter your email address
 - id: introduction7
-  translation: Based on OpenPitrix, it provides application-wide lifecycle management, including development, testing, release, upgrade, and off-the-shelf application-related operations, multi application repositories management, one-click deployment of applications, and advanced functions such as version control, billing, and auditing.
+  translation: Receive the latest news, articles and updates from KubeSphere
 - id: introduction8
   translation: Welcome to the KubeSphere Documentation
 - id: introduction9
   translation: We will introduce the services and features of KubeSphere with clear and concise pictures and texts as far as possible.
-
-
-
+- id: introduction10
+  translation: Open Source Community
+- id: introduction11
+  translation: KubeSphere is committed to the open source contribution of cloud native technology, enriching the ecology of the open source community

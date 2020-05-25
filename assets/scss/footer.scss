@@ -17,6 +17,50 @@
         .foot-logo {
           height: 32px;
         }
+
+        p {
+          width: 360px;
+          height: 44px;
+          margin-top: 40px;
+          font-size: 16px;
+          line-height: 1.38;
+          color: #919aa3;
+        }
+
+        div {
+          width: 360px;
+          height: 48px;
+          margin-top: 20px;
+          border-radius: 24px;
+          border: solid 1px #ccd3db;
+          background-color: #f5f8f9;
+
+          input {
+            width: 209px;
+            height: 20px;
+            font-size: 14px;
+            margin-left: 17px;
+            color: #ccd3db;
+            border: none;
+            background-color: #f5f8f9;
+          }
+
+          button {
+            width: 111px;
+            height: 40px;
+            margin: 4px 5px 4px 14px;
+            border-radius: 20px;
+            border: none;
+            font-size: 14px;
+            color: #ffffff;
+            cursor: pointer;
+            box-shadow: 0 10px 50px 0 rgba(34, 43, 62, 0.1), 0 8px 16px 0 rgba(33, 43, 61, 0.2);
+            background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.1) 97%), linear-gradient(to bottom, #55bc8a, #55bc8a);
+            &:hover {
+              box-shadow: none;
+            }
+          }
+        }
       }
       .right-div {
         width: 720px;
@@ -46,6 +90,28 @@
           color: #919aa3;
           font-family: $font-family-id;
         }
+      }
+    }
+
+    .down-main {
+      text-align: center;
+      margin-top: 60px;
+
+      .img-div {
+        font-size: 0;
+        img {
+          margin: 0 6px;
+        }
+      }
+
+      .p1 {
+        height: 23px;
+        margin-top: 6px;
+        font-size: 14px;
+        line-height: 23px;
+        font-weight: 500;
+        letter-spacing: 1.08px;
+        color: #242e42;
       }
     }
   }

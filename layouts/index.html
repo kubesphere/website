@@ -1,135 +1,189 @@
 {{ define "main" }}
-<section>
-    <div class="section-div-1">
-        <div class="banner-title">
-            <div class="banner-activities">
-                <span class="banner-tag">{{ i18n "activities" }}</span>
-                <a href="https://kubesphere.io/docs/introduction/what-is-kubesphere/#video-on-youtube" target="_blank" rel="noopener noreferrer" title="See a video for quick preview of KubeSphere">{{ i18n "meet" }}</a>
-            </div>
-            <div class="h1">{{ i18n "introduction1" }}<br>{{ i18n "introduction2" }}</div>
-            <div class="banner-sub-title">{{ i18n "introduction3" }}</div>
-            <p>{{ i18n "introduction4" }}</p>
-            <div class="banner-links">
-                <a href="/install/">
-                    <button class="install-button">
-                        {{ i18n "install" }}
-                    </button>
-                </a>
-            </div>
-        </div>
-        <div class="banner-snapshot">
-            <img src="{{ .Site.Params.img1 | absURL }}" alt="">
-            <img src="{{ .Site.Params.img2 | absURL }}" alt="" class="banner-snapshot-sub">
-        </div>
-    </div>
-</section>
 {{ $data := index .Site.Data .Site.Language.Lang }}
-<section>
-    <div class="section-div-2">
-        <div class="h1">{{ i18n "introduction5" }}</div>
-        <p>{{ i18n "introduction6" }}</p>
-        <div class="feature-cards">
-            {{ with $data.home.home }}
-            {{ range .list }}
-            <div class="feature-card">
-                <img src="{{ .icon | relURL }}" alt="{{ .title }}">
-                <div class="h2">{{ .title }}</div>
-                <p>{{ .content | safeHTML }}</p>
-            </div>
-            {{ end }}
-            {{ end }}
-        </div>
+<section class='section-1'>
+  {{ with .Params.section1 }}
+  <img class='img1' src="images/home/52.svg" alt="">
+  <img class='img2' src="/images/home/12-3.svg" alt="">
+  <img class='img3' src="/images/home/2.svg" alt="">
+  <div>
+    <div>
+      <p class='p1'>{{ .title }}</p>
+      <h1>{{ .topic }}</h1>
+      <p class='p2'>{{ .content }}</p>
+      <button class='btn1'>{{ .btnContent1 }}</button>
+      <button class='btn2'>{{ .btnContent2 }}</button>
     </div>
+    <img class='img1' src="/images/home/53.jpg" alt="">
+    <img class='img2' src="/images/home/left.svg" alt="">
+    <img class='img4' src="/images/home/46.svg" alt="">
+  </div>
+  {{ end }}
 </section>
-<section>
-    <div class="section-div-3">
-        <div class="app-install-title">
-            <img class="left" src="{{ .Site.Params.left | absURL }}" alt="">
-            <img class="right" src="{{ .Site.Params.right | absURL }}" alt="">
-            <div>{{ i18n "management" }}</div>
-            <p>{{ i18n "introduction7" }}</p>
+
+<section class="section-2">
+  {{ with .Params.section2 }}
+  <div>
+    <h2>{{ .title }}</h2>
+    <p>{{ .content }}</p>
+    <ul>
+      {{ range .children }}
+      <li>
+        <img src="{{ .icon }}" alt="">
+        <h3>{{ .name }}</h3>
+        <p>{{ .content }}</p>
+      </li>
+      {{ end }}
+    </ul>
+  </div>
+  {{ end }}
+</section>
+
+<section class='section-3'>
+  {{ with .Params.section3 }}
+  <div>
+    <h2>{{ .title }}</h2>
+    <p>{{ .content }}</p>
+    <div class='menu-div'>
+      <ul>
+        {{ range $index, $element := .children }}
+        <li class='{{ if eq $index 0 }} active {{ end }} left-li' data-index='{{ $index }}'>{{ .name }}</li>
+        {{ end }}
+      </ul>
+      {{ range .children }}
+      <div class='right-div'>
+        <div class='top'>
+          <h3>💁🏼‍♂️{{ .name }}</h3>
+          <p>{{ .content }}</p>
         </div>
-        <div class="slider-wrapper">
-            <div class="slider-repeat">
-                {{ with $data.home.home }}
-                {{ range .appList }}
-                <div class="app">
-                    <div class="app-header">
-                        <img class="app-icon" src="{{ .icon | relURL }}" alt="">
-                        <div class="app-title">
-                            <div class="app-name">{{ .name }}</div>
-                            <div class="app-version">{{ .version }}</div>
-                        </div>
-                    </div>
-                    <div class="app-desc">{{ .content }}</div>
-                </div>
-                {{ end }}
-                {{ range .appList }}
-                <div class="app">
-                    <div class="app-header">
-                        <img class="app-icon" src="{{ .icon | relURL }}" alt="">
-                        <div class="app-title">
-                            <div class="app-name">{{ .name }}</div>
-                            <div class="app-version">{{ .version }}</div>
-                        </div>
-                    </div>
-                    <div class="app-desc">{{ .content }}</div>
-                </div>
-                {{ end }}
-                {{ end }}
-            </div>
-        </div>
+        <ul>
+          {{ range .children }}
+          <li>{{ .content }}</li>
+          {{ end }}
+        </ul>
+        <img src="{{ .icon | absURL }}" alt="">
+      </div>
+      {{ end }}
+
     </div>
+  </div>
+  {{ end }}
 </section>
-<section>
-    <div class="section-div-4">
-        <div class="h1">如何参与贡献</div>
-        <p>积极参与到 KubeSphere 上游的开发中，了解项目进度，以及 Bug 提交，可以通过 GitHub 与 Slack 与我们保持联系。</p>
-        <div class="contribute-cards">
-            <div class="contribute-card">
-                <div class="contribute-title">
-                    报告 Bug
-                </div>
-                <div>
-                    <p>KubeSphere 使用 GitHub issue 来管理 bug 跟踪</p>
-                </div>
-            </div>
-            <div class="contribute-card">
-                <div class="contribute-title">
-                    参与开发和设计
-                </div>
-                <div>
-                    <ul class="list">
-                        <li>认真阅读 kubesphere <a href="//github.com/kubesphere/kubesphere/blob/master/CONTRIBUTING.md" target="_blank" rel="noopener noreferrer">开发者指南</a></li>
-                        <li>fork 项目<!-- -->:<!-- --> <a href="https://github.com/kubesphere/kubesphere" target="_blank" rel="noopener noreferrer">https://github.com/kubesphere/kubesphere</a></li>
-                        <li><a href="/docs" target="_blank" rel="noopener noreferrer">阅读《KubeSphere 文档》</a></li>
-                        <li>参与到 KubeSphere 项目和上游项目如 Kubernetes、Docker、Istio 等</li>
-                    </ul>
-                </div>
-            </div>
-            <div class="contribute-card">
-                <div class="contribute-title">
-                    日常沟通
-                </div>
-                <div>
-                    <ul class="list">
-                        <li>认真阅读 kubesphere <a href="//github.com/kubesphere/kubesphere/blob/master/CONTRIBUTING.md" target="_blank" rel="noopener noreferrer">开发者指南</a></li>
-                    </ul>
-                </div>
-            </div>
-        </div>
+
+<section class='section-4'>
+  {{ with .Params.section4 }}
+  <img class='bg-1' src="/images/home/section4-left.svg" alt="">
+  <img class='bg-2' src="/images/home/section4-right.svg" alt="">
+  <div>
+    <div>
+      <h2>{{ .title }}</h2>
+      <p>{{ .content | safeHTML }}</p>
+      <ul>
+        {{ range .children }}
+        <li>
+          <img src="{{ .icon }}" alt="">
+          <div>
+            <h3>{{ .name }}</h3>
+            <p>{{ .content}}</p>
+          </div>
+        </li>
+        {{ end }}
+      </ul>
     </div>
-</section>
-<section>
-    <div class="section-div-5">
+
+    <ul>
+      {{ range .features}}
+      <li>
         <div>
-            <img src="{{ .Site.Params.cloud | absURL }}" alt="">
-            <div>CNCF 云原生基金会会员</div>
+          <div class='top-line {{ .color }}'></div>
+          <div class='img-span-div'>
+            <img src="{{ .icon }}" alt="">
+            <span>{{ .name }}</span>
+          </div>
+          <p>{{ .content }}</p>
         </div>
-        <div>
-            <img src="{{ .Site.Params.certified | absURL }}" alt="">
-            <div>CNCF 云原生基金会会员</div>
-        </div>
-    </div>
+        <div class='middle-line'></div>
+        <a href="">Read More →</a>
+      </li>
+      {{ end }}
+    </ul>
+  </div>
+  {{ end }}
 </section>
+
+<section class='section-5'>
+  {{ with .Params.section5 }}
+  <div>
+    <h2>{{ .title }}</h2>
+    <div>
+      {{ with .frontEnd }}
+      <div class='front-div'>
+        <h3>{{ .title }}</h3>
+        <p>{{ .project }}</p>
+        <ul>
+          {{ range .children }}
+          <li>
+            <img src="{{ .icon }}" alt="">
+          </li>
+          {{ end }}
+        </ul>
+      </div>
+      {{ end }}
+      {{ with .backEnd }}
+      <div class='back-div'>
+        <h3>{{ .title}}</h3>
+        <div class='group'>
+          <p>{{ .project }}</p>
+          <ul>
+            {{ range .group }}
+            <li>{{ .name }}</li>
+            {{ end }}
+          </ul>
+        </div>
+        <div class='image'>
+          <img src="/images/home/applications.jpg" alt="">
+          <img src="/images/home/applications.jpg" alt="">
+        </div>
+      </div>
+      {{ end }}
+    </div>
+  </div>
+  {{ end }}
+</section>
+
+<section class='section-6'>
+  {{ with .Params.section6 }}
+  <div>
+    <h2>{{ .title }}</h2>
+    <p>{{ .content | safeHTML }}</p>
+    <ul>
+      {{ range .children }}
+      <li>
+        <img src="{{ .icon }}" alt="">
+      </li>
+      {{ end }}
+    </ul>
+    <div>
+      <button>{{ .btnContent }}</button>
+    </div>
+    <div class='link-div'>
+      <a href="{{ .link }}">{{ .linkContent }}</a>
+    </div>
+    <img class='bottom-img' src="{{ .image }}" alt="">
+  </div>
+  <img class='bg-1' src="/images/home/section6-left.svg" alt="">
+  <img class='bg-2' src="/images/home/section6-right.svg" alt="">
+  {{ end }}
+</section>
+
+<script>
+  var bindMouseLeftLi = function() {
+    $('.left-li').mouseenter(function() {
+      var index = Number($(this).data('index'))
+      $('.left-li').removeClass('active')
+      $(this).addClass('active')
+      $('.right-div').hide().eq(index).show()
+    })
+  }
+  bindMouseLeftLi()
+</script>
 {{ end }}

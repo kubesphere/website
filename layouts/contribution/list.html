@@ -1,0 +1,184 @@
+{{ define "main" }}
+
+<section class="section-1">
+    {{ with .Params.section1 }}
+    <img src="{{ .topImage | absURL }}" alt="">
+    <div class="title-div">
+        <h1>{{ .title }}</h1>
+        <p>{{ .content }}</p>
+    </div>
+    {{ end }}
+</section>
+
+<section class="section-2">
+    {{ with .Params.section2 }}
+    <div>
+        <ul>
+        {{ range .topType }}
+            <li>
+                <div class='title'>
+                    <img src="{{ .icon1 | absURL }}" alt="">
+                    <p>{{ .name }}</p>
+                </div>
+                <div class='line'></div>
+                <ul>
+                    {{ range .children }}
+                    <li>
+                        <a href="{{ .link }}">{{ .content }}</a>
+                    </li>
+                    {{ end }}
+                </ul>
+                <img class='bottom-img' src="{{ .icon2 | absURL }}" alt="">
+            </li>
+        {{ end }}
+        </ul>
+        <div class='organization-div'>
+            {{ with .organization }}
+            {{ $topIcon := .topIcon }}
+            <h2>{{ .topic }}</h2>
+            <div>
+                <div class='top-div'>{{ .name }}</div>
+                <img src="{{ .icon | absURL }}" alt="">
+                <ul>
+                    {{ range $index, $element := .type }}
+                    <li>
+                        <div>
+                            <img src="{{ .icon | absURL }}" alt="">
+                            <span>{{ .name }}</span>
+                        </div>
+                        {{ if .children }}
+                        <ul>
+                            {{ range .children }}
+                            <li class="">
+                                <img src="{{ $topIcon | absURL }}" alt="">
+                                <div>{{ .name }}</div>
+                                {{ if eq $index 1}}
+                                <p class='left'>{{ .content }}</p>
+                                {{ else if eq $index 2}}
+                                <p class='right'>{{ .content }}</p>
+                                {{ end }}
+                                <p></p>
+                            </li>
+                            {{ end }}
+                        </ul>
+                        {{ end }}
+                    </li>
+                    {{ end }}
+                </ul>
+            </div>
+            {{ end }}
+        </div>
+    </div>
+    {{ end }}
+</section>
+
+<section class='section-3'>
+    {{ with .Params.section3.interestGroup }}
+    <h2>{{ .title }}</h2>
+    <p>{{ .content }}</p>
+    <ul class='interest-ul' data-index='0' data-length='{{ len .children }}'>
+        {{ range $index, $element := .children }}
+        {{ $active := "" }}
+        {{ $icon := $element.icon }}
+        {{ if eq $index 0 }}
+        {{ $active = "active" }}
+        {{ $icon = $element.iconActive }}
+        {{ end }}
+        <li class="{{ $active }}" data-info='{{ . | jsonify }}' data-index='{{ $index }}'>
+            <img src="{{ $icon | absURL }}" alt="">
+            <p>{{ $element.name }}</p>
+        </li>
+        {{ end }}
+    </ul>
+    <div class='bottom-div'>
+        {{ with $first := index .children 0}}
+        <div>
+            <div class='btn-change btn-left' data-num='-1'></div>
+            <img class='bottom-img' src="{{ .iconActive | absURL }}" alt="">
+            <div class='btn-change btn-right' data-num='1'></div>
+        </div>
+        <a href="{{ .link }}">{{ .linkContent }}</a>
+        <p>{{ .content }}</p>
+        <ul>
+            {{ range .children }}
+            <li>
+                <img src="{{ .icon | absURL }}" alt="">
+            </li>
+            {{ end }}
+        </ul>
+        {{ end }}
+    </div>
+    {{ end }}
+</section>
+
+<section class='section-4'>
+    {{ with .Params.section4.involved }}
+    <h2>{{ .title }}</h2>
+    <div>
+        {{ range .children}}
+        <div>
+            <img src="{{ .icon | absURL }}" alt="">
+            <h3>{{ .title }}</h3>
+            <p>{{ .content }}</p>
+            <div>
+                <a href="">{{ .linkContent }}</a>
+            </div>
+        </div>
+        {{ end }}
+    </div>
+    {{ end }}
+</section>
+
+<script>
+    var bindChangeIcon = function() {
+        var length = Number($('.interest-ul').data('length'))
+        $('.btn-change').click(function(event) {
+            var index = Number($('.interest-ul').data('index'))
+            var count = Number($(this).data('num'))
+            var nextIndex = (index + count + length) % length
+            $('.interest-ul').data('index', nextIndex)
+            changeByIndex(nextIndex)
+        })
+    }
+
+    var bindIconClick = function() {
+        $('.interest-ul li').click(function(event) {
+            var nextIndex = $(this).data('index')
+            $('.interest-ul').data('index', nextIndex)
+            changeByIndex(nextIndex)
+        })
+    }
+
+    var changeByIndex = function(index) {
+        changeCurrentElement()
+        var nextElement = $('.interest-ul li').eq(index)
+        changeNextElement(nextElement)
+    }
+
+    var changeCurrentElement = function() {
+        var currentElement = $('.section-3 .active')
+        var info = currentElement.data('info')
+        var currentElementImage = currentElement.find('img')
+        currentElementImage.attr({ src: info.icon })
+        currentElement.removeClass('active')
+    }
+
+    var changeNextElement = function(nextElement) {
+        var info = nextElement.data('info')
+        var nextElementImage = nextElement.find('img')
+        nextElementImage.attr({ src: info.iconActive })
+        nextElement.addClass('active')
+        changeBottomContentByInfo(info)
+    }
+
+    var changeBottomContentByInfo = function(info) {
+        var bottomDiv = $('.section-3 .bottom-div')
+        bottomDiv.find('.bottom-img').attr({ src: info.iconActive });
+        bottomDiv.find('a').text(info.linkContent).attr({ href: info.link })
+        bottomDiv.find('p').text(info.content);
+    }
+
+    bindIconClick()
+    bindChangeIcon()
+</script>
+{{ end }}

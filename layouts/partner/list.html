@@ -1,0 +1,68 @@
+{{ define "main" }}
+
+<section class="section-1">
+    {{ with .Params.section1 }}
+    <img src="{{ .topImage | absURL }}" alt="">
+    <div class="title-div">
+        <h1>{{ .title }}</h1>
+        <p>{{ .content }}</p>
+    </div>
+    {{ end }}
+</section>
+
+<section class="section-2">
+    {{ with .Params.section2 }}
+    <div>
+        <div class="left-div">
+            <div>{{ .title }}</div>
+            <p>{{ .content }}</p>
+        </div>
+        <div class="right-div">
+            <img src="{{ .mapImage | absURL }}" alt="">
+            <div class='btn-div div-1'>{{ .name1 }}</div>
+            <div class='btn-div div-2'>{{ .name2 }}</div>
+            <div class='btn-div div-3'>{{ .name3 }}</div>
+        </div>
+    </div>
+    {{ end }}
+</section>
+
+<section class="section-3">
+    {{ with .Params.section3 }}
+    {{ $tip := .tip }}
+    <div>
+        <h2>{{ .title }}</h2>
+        <ul class="partner-ul">
+            {{ range .partnerType }}
+                <li>
+                    <h3>{{ .title }}</h3>
+                    <p>{{ .content }}</p>
+                    <div>
+                        <a href="">{{ $tip }}</a>
+                    </div>
+                </li>
+            {{ end }}
+        </ul>
+    </div>
+    {{ end }}
+</section>
+
+<section class="section-4">
+    {{ with .Params.section4 }}
+    <div>
+        <h2>{{ .title }}</h2>
+        <ul class="partner-ul">
+            <li class="intro">
+                <p>{{ .content }}</p>
+            </li>
+            {{ range .featuredPartnerList }}
+                <li>               
+                    <img src="{{ .icon | absURL }}" alt="">
+                    <div>{{ .partnerType }}</div>
+                </li>
+            {{ end }}
+        </ul>
+    </div>
+    {{ end }}
+</section>
+{{ end }}

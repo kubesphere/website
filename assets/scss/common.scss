@@ -1,0 +1,12 @@
+@import 'reset';
+@import 'variables';
+@import 'header';
+@import 'footer';
+
+body {
+  font-family: $font-family-id;
+}
+
+html {
+  background-color: #f5f8f9;
+}
