@@ -18,7 +18,7 @@ cd website
 
 hugo version: hugo_extended_0.70.0 + [hugo releases](https://help.github.com/en/desktop/contributing-to-projects/creating-an-issue-or-pull-request#creating-a-new-pull-request)
 
-installed Hugo and clone this project locally. then run:
+When you have installed Hugo. then run:
 
 ```
 hugo server -D
