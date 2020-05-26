@@ -16,7 +16,7 @@ cd website
 
 ### Running the website locally
 
-hugo version: hugo_extended_0.70.0 + [hugo releases](https://help.github.com/en/desktop/contributing-to-projects/creating-an-issue-or-pull-request#creating-a-new-pull-request)
+hugo version: hugo_extended_0.70.0+, you can install Hugo from [hugo releases](https://help.github.com/en/desktop/contributing-to-projects/creating-an-issue-or-pull-request#creating-a-new-pull-request)
 
 When you have installed Hugo. then run:
 
@@ -26,7 +26,7 @@ hugo server -D
 
 ### Open a pull request
 
-open a [pull request (PR)](https://help.github.com/en/desktop/contributing-to-projects/creating-an-issue-or-pull-request#creating-a-new-pull-request) to add a localization to the repository.
+Open a [pull request (PR)](https://help.github.com/en/desktop/contributing-to-projects/creating-an-issue-or-pull-request#creating-a-new-pull-request) to add a localization to the repository.
 
 ## Localizing
 
