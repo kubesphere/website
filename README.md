@@ -7,7 +7,7 @@ kubesphere website
 
 First, create your own fork of the repository.
 
-Then, clone your fork and cd into it:
+Then, clone your fork and enter into it:
 
 ```
 git clone https://github.com/<username>/website
