@@ -35,7 +35,7 @@ snapshot: 'https://pek3b.qingstor.com/kubesphere-docs/png/20190930151339.png'
 
 以上设置的 IP 地址，用户名和密码：
 
-![netapp.png](http://ww1.sinaimg.cn/large/006bbiLEgy1g6t9q3s4kkj30yf0l8qsj.jpg)
+![netapp.png](https://ww1.sinaimg.cn/large/006bbiLEgy1g6t9q3s4kkj30yf0l8qsj.jpg)
 
 ## Trident搭建及配置
 
