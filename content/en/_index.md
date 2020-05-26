@@ -7,7 +7,7 @@ css: scss/index.scss
 
 section1:
   title: KubeSphere Container Platform
-  topic: The Kubernetes Platform, tailored to the hybrid cloud
+  topic: The Kubernetes Platform, tailored for the hybrid cloud
   content: KubeSphere is a distributed operating system providing cloud native stack with Kubernetes as its kernel, and aims to be plug-and-play architecture for third-party applications seamless integration to boost its ecosystem.
   btnContent1: Install on Kubernetes
   btnContent2: Install on Linux
