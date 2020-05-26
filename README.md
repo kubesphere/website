@@ -1,5 +1,6 @@
-# website
-kubesphere website
+# Website
+
+This project uses [Hugo](https://gohugo.io/) to build the new website for KubeSphere.
 
 ## Contribute
 
@@ -23,6 +24,8 @@ When you have installed Hugo, then run:
 ```
 hugo server -D
 ```
+
+Now you can preview the website in your browser using `http://localhost:1313/`.
 
 ### Open a pull request
 
