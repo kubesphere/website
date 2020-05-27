@@ -44,7 +44,7 @@ section2:
           link: ''
 
   organization:
-    topic: 'Community Framework'
+    topic: 'Community Governance'
     name: 'KubeSphere Community'
     icon: 'images/contribution/28.svg'
     topIcon: 'images/contribution/8.svg'
@@ -85,7 +85,7 @@ section3:
       - name: 'Apps'
         icon: '/images/contribution/apps.svg'
         iconActive: '/images/contribution/apps-active.svg'
-        content: 'App charts for the built-in App Store'
+        content: 'App charts for the built-in Application Store'
         link: ''
         linkContent: 'Join SIG - Apps →'
         children:
@@ -93,12 +93,12 @@ section3:
           - icon: '/images/contribution/calicq2.jpg'
           - icon: '/images/contribution/calicq3.jpg'
 
-      - name: 'App Store'
+      - name: 'Application Store'
         icon: '/images/contribution/app-store.svg'
         iconActive: '/images/contribution/app-store-active.svg'
         content: ''
         link: ''
-        linkContent: 'Join SIG - App store →'
+        linkContent: 'Join SIG - Application store →'
         children:
           - icon: ''
           - icon: ''
