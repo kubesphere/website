@@ -1,6 +1,65 @@
 {{ define "main" }}
 {{- partial "openSource.html" . -}}
-<section id="home">
-    <h2>内容</h2>
+<section class='section-1'>
+    <div>
+        <ul class='blog-tab-ul'>
+            <li class='active'>{{ .Params.tip }}</li>
+            {{ $tags := slice }}
+            {{ range .Data.Pages }}
+            {{ $tag := split .Params.tag ","}}
+            {{ $tags = $tags | append $tag }}
+            {{ end }}
+            {{ range ($tags | uniq) }}
+            <li data-tag='{{ . }}'>{{ . }}</li>
+            {{ end }}
+        </ul>
+        <ul class='blogs-ul'>
+            {{ range .Data.Pages }}
+            <li data-tag='{{ .Params.tag }}'>
+                <div class='img-div'>
+                    <img src="{{ .Params.snapshot }}" alt="">
+                </div>
+                <div class='content-div'>
+                    <p class='time'>{{ .Params.createTime }}</p>
+                    <h3><a href="{{ .RelPermalink }}">{{ .Title }}</a></h3>
+                    <div class='author'>
+                        <img src="" alt="">
+                        <span>{{ .Params.author }}</span>
+                    </div>
+                    <p class='summary'>{{ substr .Summary 0 89 }}</p>
+                    <ul>
+                        {{ range (split .Params.tag ",") }}
+                        <li>{{ . }}</li>
+                        {{ end }}
+                    </ul>
+                </div>
+                <a href="{{ .RelPermalink }}"></a>
+            </li>
+            {{ end }}
+        </ul>
+    </div>
 </section>
+
+<script>
+    var bindClickBlogLi = function() {
+        var tabLi = $('.blog-tab-ul > li')
+        var blogs = $('.blogs-ul > li')
+        tabLi.click(function() {
+            tabLi.removeClass('active')
+            var tag = $(this).data('tag')
+            $(this).addClass('active')
+            blogs.show()
+            if (tag) {
+                blogs.each(function() {
+                    var tags = $(this).data('tag')
+                    if (!tags || !tags.includes(tag)) {
+                        $(this).hide()
+                    }
+                })
+            }
+        })
+    }
+
+    bindClickBlogLi()
+</script>
 {{ end }}
