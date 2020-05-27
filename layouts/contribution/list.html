@@ -175,7 +175,12 @@
         var bottomDiv = $('.section-3 .bottom-div')
         bottomDiv.find('.bottom-img').attr({ src: info.iconActive });
         bottomDiv.find('a').text(info.linkContent).attr({ href: info.link })
-        bottomDiv.find('p').text(info.content);
+        bottomDiv.find('p').text(info.content)
+        var ul = bottomDiv.find('ul')
+        ul.empty()
+        $.each(info.children, function( key, value ) {
+            ul.append('<li><img src="' + value.icon + '" alt="" ></li>');
+        });
     }
 
     bindIconClick()

@@ -65,6 +65,15 @@ section3:
         - content: Better track, route and optimize communications within Kubernetes for cloud native apps
         - content: Easy-to-use web terminal and graphical panel, satisfying the habits of different users 
 
+    - name: User
+      content: Running and using Apps on Kubernetes has never been so easy
+      icon: /images/home/80.svg
+      children:
+        - content: Deploy and upgrade Apps in one click, without underlying infrastructure consideration
+        - content: Provide on-demand container resources and HPA, hardening the reliabity and flexibility of your applications
+        - content: Import any Helm repository in seconds to visually deploy and upgrade applications
+        - content: Support operation in application store, including metering and billing for applications (coming soon)
+
 section4:
   title: Key Features
   content: If you want to use an open source project, but act like a commercial product, KubeSphere is your choice. <br>The Roadmap listed the planning features, you can raise a proposal to submit your ideas with us.

@@ -12,52 +12,60 @@ section2:
   title: 'Together, build partnership for success all over the world'
   content: 'KubeSphere partners play a critical role in KubeSphere go-to-market strategy. KubeSphere partners are located all over the world, we are looking forward to the global cooperation, your success is our success.'
   name1: 'USA'
+  icon1: ''
   name2: 'European'
+  icon2: 'images/partner/radore.jpg'
   name3: 'China'
+  icon3: 'images/partner/qingcloud.svg'
   mapImage: 'images/partner/map.svg'
-
+  bg1: 'images/common/hexagon.svg'
+  bg2: 'images/partner/background1.svg'
+  bg3: 'images/partner/background2.svg'
 section3:
   title: 'Partner Types'
   tip: Request now →
   partnerType:
     - title: "App Providers"
-      content: "KubeSphere Application Store is a great place to showcase your application,  KubeSphere bring your applications to tens of thousands of users, making them deploy your App to Kubernetes with one click."
+      content: "KubeSphere Application Store is a great place to showcase your application, KubeSphere bring your applications to tens of thousands of users, making them deploy your App to Kubernetes with one click."
       link: ""
     
     - title: "Consulting"
-      content: "KubeSphere Application Store is a great place to showcase your application, users can quickly deploy your application to Kubernetes using KubeSphere. Submit your application to KubeSphere Application Store now!"
+      content: If agencies and consultancies want to help clients easily adopt Kubernetes and deliver applications using modern, open source technologies, KubeSphere is the best choice for your team.
       link: ""
 
     - title: "Cloud Providers"
-      content: "KubeSphere Application Store is a great place to showcase your application, users can quickly deploy your application to Kubernetes using KubeSphere. Submit your application to KubeSphere Application Store now!"
+      content: For any cloud providers who want to tightly integrate KubeSphere as a catalog or application in their application market for Kubernetes-based solution,  do not hesitate to use KubeSphere to extend your ecosystem.
       link: ""
 
     - title: "Go-To-Market"
-      content: "KubeSphere Application Store is a great place to showcase your application, users can quickly deploy your application to Kubernetes using KubeSphere. Submit your application to KubeSphere Application Store now!"
+      content: KubeSphere is 100% open source and free, you are able to localize KubeSphere, translate it into local languages, build local communities and develop local markets. GTM partners from around the globe that are tightly aligned with KubeSphere.
       link: ""
 
 section4:
   title: 'Featured Partners'
-  content: 'KubeSphere is trusted by various enterprises and organizations to the innovators driving the future of software.'
   featuredPartnerList:
+    - icon: "images/partner/partner5.jpg"
+      partnerType: "technology"
+      content: 'KubeSphere is trusted by various enterprises and organizations to the innovators driving the future of software.'
+
     - icon: "images/partner/partner1.jpg"
       partnerType: "Go-To-Market"
+      content: 
 
-    - icon: "images/partner/partner2.jpg"
+    - icon: "images/partner/partner10.jpg"
       partnerType: "Go-To-Market"
-
-    - icon: "images/partner/partner3.jpg"
-      partnerType: "Go-To-Market"
+      content:
 
     - icon: "images/partner/partner4.jpg"
-      partnerType: "Go-To-Market"
+      partnerType: "technology"
+      content: 
 
-    - icon: "images/partner/partner5.jpg"
-      partnerType: "Go-To-Market"
+    - icon: "images/partner/partner8.jpg"
+      partnerType: "technology"
+      content: 
 
-    - icon: "images/partner/partner6.jpg"
-      partnerType: "Go-To-Market"
+    - icon: "images/partner/partner9.jpg"
+      partnerType: "technology"
+      content: 
 
-    - icon: "images/partner/partner7.jpg"
-      partnerType: "Go-To-Market"
 ---

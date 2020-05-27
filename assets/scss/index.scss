@@ -504,6 +504,10 @@ section {
           font-weight: 600;
           line-height: 1.71;
           color: #00a971;
+
+          &:hover {
+            color: #008a5c;
+          }
         }
 
       }

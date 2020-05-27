@@ -100,7 +100,7 @@ section3:
         link: ''
         linkContent: 'Join SIG - App store →'
         children:
-          - icon: ''
+          - icon: '/images/contribution/calicq1.jpg'
           - icon: ''
           - icon: ''
 

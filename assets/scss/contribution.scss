@@ -462,6 +462,9 @@
         line-height: 1.33;
         a {
           color: #00a971;
+          &:hover {
+            color: #008a5c;
+          }
         }
       }
     }
