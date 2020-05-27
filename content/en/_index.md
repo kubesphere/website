@@ -8,7 +8,7 @@ css: scss/index.scss
 section1:
   title: KubeSphere Container Platform
   topic: The Kubernetes Platform, tailored for the hybrid cloud
-  content: KubeSphere is a distributed operating system providing cloud native stacks with Kubernetes as its kernel, and aims to create a plug-and-play architecture for third-party applications for seamless integration to boost its ecosystem.
+  content: KubeSphere is a distributed operating system managing cloud native applications with Kubernetes as its kernel, and provides plug-and-play architecture for the seamless integration of third-party applications to boost its ecosystem.
   btnContent1: Install on Kubernetes
   btnContent2: Install on Linux
 
@@ -44,14 +44,14 @@ section3:
       children:
         - content: Improve your environment utilization and reduce internal infrastructure costs
         - content: Support multi-cluster and multi-cloud Kubernetes management, avoiding vendor lock-in
-        - content: Provide security enhancements, multiple storage and network solutions
+        - content: Provide security enhancements, and support multiple storage and network solutions
         - content: Deliver a trustworthy and certified Kubernetes platform and distribution
 
     - name: Developers
       content: Focus on your business as automation tools do the rest
       icon: /images/home/74.png
       children:
-        - content: Create a smooth user experience and reduce the learning curve of the cloud native stack
+        - content: Create smooth user experience and reduce the learning curve of the cloud native stack
         - content: Provide toolkits and deployment automation tailored to any application environment
         - content: Offer out-of-box logging, monitoring and multi-tenancy functions, improving development efficiency
         - content: Support application lifecycle management, accelerating time to market
@@ -67,7 +67,7 @@ section3:
 
 section4:
   title: Key Features
-  content: If you are seeking for an open source project that also provides commercial products, KubeSphere is your choice. <br>The Roadmap lists planned features and you can raise a proposal to contribute your ideas to the community.
+  content: If you are seeking for an open source project run as a commerical product, KubeSphere is your choice. <br>The Roadmap lists planned features and you can raise a proposal to contribute your ideas to the community.
   children:
     - name: Provisioning Kubernetes 
       icon: /images/home/provisioning-kubernetes.svg
@@ -114,7 +114,7 @@ section4:
 
     - name: Multi-cluster management 
       icon: /images/home/management.svg
-      content: Distribute applications across multiple clusters and cloud providers, and provide disaster recovery plans and cross-cluster discovery
+      content: Distribute applications across multiple clusters and cloud providers, and provide disaster recovery solutions and cross-cluster discovery
       color: orange
 
 section5:
