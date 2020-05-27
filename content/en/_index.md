@@ -67,7 +67,7 @@ section3:
 
 section4:
   title: Key Features
-  content: If you are seeking for an open source project run as a commerical product, KubeSphere is your choice. <br>The Roadmap lists planned features and you can raise a proposal to contribute your ideas to the community.
+  content: If you are seeking for an open source project that rivals a commercial product, KubeSphere is your choice. <br>The Roadmap lists planned features and you can raise a proposal to contribute your ideas to the community.
   children:
     - name: Provisioning Kubernetes 
       icon: /images/home/provisioning-kubernetes.svg
