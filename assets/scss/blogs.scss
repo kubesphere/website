@@ -65,8 +65,9 @@
           height: 280px;
           overflow: hidden;
           & > img {
-            min-width: 100%;
+            width: 280px;
             height: 280px;
+            object-fit: contain;
           }
         }
 

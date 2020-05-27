@@ -4,264 +4,264 @@ title: "contribution"
 css: "scss/contribution.scss"
 
 section1:
-  title: 'Community is the Soul of KubeSphere'
-  content: 'Join the community to get help, get involved, or to get updates and KubeSphere news!'
+  title: 
+  content: 
   topImage: "images/contribution/contribution-top.jpg"
 
 section2:
   topType:
-    - name: 'Download'
+    - name: 
       icon1: 'images/contribution/download.svg'
       icon2: 'images/contribution/37.png'
       children:
-        - content: 'Download KubeSphere'
+        - content: 
           link: ''
-        - content: 'Quickstart'
+        - content: 
           link: ''
-        - content: 'Tutorial Videos'
+        - content: 
           link: ''
 
-    - name: 'Contribute'
+    - name: 
       icon1: 'images/contribution/contribute.svg'
       icon2: 'images/contribution/38.png'
       children:
-        - content: 'Join the SIGs and WGs'
+        - content: 
           link: ''
-        - content: 'Improve the Docs'
+        - content: 
           link: ''
-        - content: 'Submit a Bug or Suggestion'
+        - content: 
           link: ''
 
-    - name: 'Get in Touch'
+    - name: 
       icon1: 'images/contribution/business.svg'
       icon2: 'images/contribution/39.png'
       children:
-        - content: 'Join KubeSphere Slack'
+        - content: 
           link: ''
-        - content: 'Join the Mailing List'
+        - content: 
           link: ''
-        - content: 'Follow us on Twitter'
+        - content: 
           link: ''
 
   organization:
-    topic: 'Community Organization'
-    name: 'KubeSphere Community'
+    topic: 
+    name: 
     icon: 'images/contribution/28.svg'
     topIcon: 'images/contribution/8.svg'
     type:
-      - name: 'TOC'
+      - name: 
         icon: 'images/contribution/toc.svg'
 
-      - name: 'Developer Group'
+      - name: 
         icon: 'images/contribution/developer-group.svg'
         children:
-          - name: 'Owner /  Lead'
-            content: 'A lead is also the member of the project who is an experienced and acrive reciewer of the project.'
+          - name: 
+            content: 
 
-          - name: 'Member'
-            content: 'A lead is also the member of the project who is an experienced and acrive reciewer of the project.'
+          - name: 
+            content: 
           
-          - name: 'Contributor'
-            content: 'A lead is also the member of the project who is an experienced and acrive reciewer of the project.'
+          - name: 
+            content: 
 
-      - name: 'User Research Group'
+      - name: 
         icon: 'images/contribution/user.svg'
         children:
-          - name: 'Champion'
-            content: 'A lead is also the member of the project who is an experienced and acrive reciewer of the project.'
+          - name: 
+            content: 
         
-          - name: 'Ambassador'
-            content: 'A lead is also the member of the project who is an experienced and acrive reciewer of the project.'
+          - name: 
+            content: 
 
 
-      - name: 'Steering Committee'
+      - name: 
         icon: 'images/contribution/steering.svg'
 
 section3:
   interestGroup:
-    title: 'Find Your Special Interest Group'
-    content: 'SIGs are designed to let you can find everything you need in one place around a central topic. Find your commonality and join the SIG.'
+    title: 
+    content: 
     children:
-      - name: 'Apps'
+      - name: 
         icon: '/images/contribution/apps.svg'
         iconActive: '/images/contribution/apps-active.svg'
-        content: 'App charts for the built-in App Store'
+        content: 
         link: ''
-        linkContent: 'Join SIG - Apps →'
+        linkContent: 
         children:
           - icon: '/images/contribution/calicq1.jpg'
           - icon: '/images/contribution/calicq2.jpg'
           - icon: '/images/contribution/calicq3.jpg'
 
-      - name: 'App store'
+      - name: 
         icon: '/images/contribution/app-store.svg'
         iconActive: '/images/contribution/app-store-active.svg'
         content: ''
         link: ''
-        linkContent: 'Join SIG - App store →'
+        linkContent: 
         children:
           - icon: ''
           - icon: ''
           - icon: ''
 
-      - name: 'Architecture'
+      - name: 
         icon: '/images/contribution/architecture.svg'
         iconActive: '/images/contribution/architecture-active.svg'
         content: ''
         link: ''
-        linkContent: 'Join SIG - Architecture →'
+        linkContent: 
         children: 
           - icon: ''
 
-      - name: 'Cloud-Providers'
+      - name: 
         icon: '/images/contribution/cloud-providers.svg'
         iconActive: '/images/contribution/cloud-providers-active.svg'
         content: ''
         link: ''
-        linkContent: 'Join SIG - Cloud-Providers →'
+        linkContent: 
         children:
           - icon: ''
           - icon: ''
           - icon: ''
 
-      - name: 'Console (Front-end)'
+      - name: 
         icon: '/images/contribution/console.svg'
         iconActive: '/images/contribution/console-active.svg'
         content: ''
         link: ''
-        linkContent: 'Join SIG - Console (Front-end) →'
+        linkContent: 
         children:
           - icon: ''
           - icon: ''
           - icon: ''
     
-      - name: 'DevOps'
+      - name: 
         icon: '/images/contribution/dev-ops.svg'
         iconActive: '/images/contribution/dev-ops-active.svg'
         content: ''
         link: ''
-        linkContent: 'Join SIG - DevOps →'
+        linkContent: 
         children:
           - icon: ''
           - icon: ''
           - icon: ''
 
-      - name: ' Docs'
+      - name: 
         icon: '/images/contribution/docs.svg'
         iconActive: '/images/contribution/docs-active.svg'
         content: ''
         link: ''
-        linkContent: 'Join SIG - Docs →'
+        linkContent: 
         children:
           - icon: ''
           - icon: ''
           - icon: ''
 
-      - name: 'Edge'
+      - name: 
         icon: '/images/contribution/edge.svg'
         iconActive: '/images/contribution/edge-active.svg'
         content: ''
         link: ''
-        linkContent: 'Join SIG - Edge →'
+        linkContent: 
         children:
           - icon: ''
           - icon: ''
           - icon: ''
     
-      - name: 'Installation'
+      - name: 
         icon: '/images/contribution/installation.svg'
         iconActive: '/images/contribution/installation-active.svg'
         content: ''
         link: ''
-        linkContent: 'Join SIG - Installation →'
+        linkContent: 
         children:
           - icon: ''
           - icon: ''
           - icon: ''
 
-      - name: 'Microservice'
+      - name: 
         icon: '/images/contribution/microservice.svg'
         iconActive: '/images/contribution/microservice-active.svg'
         content: ''
         link: ''
-        linkContent: 'Join SIG - Microservice →'
+        linkContent: 
         children:
           - icon: ''
           - icon: ''
           - icon: ''
       
-      - name: 'Multicluster'
+      - name: 
         icon: '/images/contribution/multicluster.svg'
         iconActive: '/images/contribution/multicluster-active.svg'
         content: ''
         link: ''
-        linkContent: 'Join SIG - Multicluster →'
+        linkContent: 
         children:
           - icon: ''
           - icon: ''
           - icon: ''
     
-      - name: 'Multitenancy'
+      - name: 
         icon: '/images/contribution/multitenancy.svg'
         iconActive: '/images/contribution/multitenancy-active.svg'
         content: ''
         link: ''
-        linkContent: 'Join SIG - Multitenancy →'
+        linkContent: 
         children:
           - icon: ''
           - icon: ''
           - icon: ''
     
-      - name: 'Network'
+      - name: 
         icon: '/images/contribution/network.svg'
         iconActive: '/images/contribution/network-active.svg'
         content: ''
         link: ''
-        linkContent: 'Join SIG - Network →'
+        linkContent: 
         children:
           - icon: ''
           - icon: ''
           - icon: ''
       
-      - name: 'Observability'
+      - name: 
         icon: '/images/contribution/observability.svg'
         iconActive: '/images/contribution/observability-active.svg'
         content: ''
         link: ''
-        linkContent: 'Join SIG - Observability →'
+        linkContent: 
         children:
           - icon: ''
           - icon: ''
           - icon: ''
 
-      - name: 'Release'
+      - name: 
         icon: '/images/contribution/release.svg'
         iconActive: '/images/contribution/release-active.svg'
         content: ''
         link: ''
-        linkContent: 'Join SIG - Release →'
+        linkContent: 
         children:
           - icon: ''
           - icon: ''
           - icon: ''
       
-      - name: 'Storage'
+      - name: 
         icon: '/images/contribution/storage.svg'
         iconActive: '/images/contribution/storage-active.svg'
         content: ''
         link: ''
-        linkContent: 'Join SIG - Storage →'
+        linkContent: 
         children:
           - icon: ''
           - icon: ''
           - icon: ''
     
-      - name: 'Testing'
+      - name: 
         icon: '/images/contribution/testing.svg'
         iconActive: '/images/contribution/testing-active.svg'
         content: ''
         link: ''
-        linkContent: 'Join SIG - Testing →'
+        linkContent: 
         children:
           - icon: ''
           - icon: ''
@@ -269,17 +269,17 @@ section3:
 
 section4:
   involved:
-    title: 'Get involved'
+    title: 
     children:
-      - title: 'Be a Champion'
+      - title: 
         icon: 'images/contribution/group-1.png'
-        content: 'Join me tomorrow and start putting in the time to get your campaign ready with a landing page!'
+        content: 
         link: ''
-        linkContent: 'Become a KubeSphere Champion →'
+        linkContent: 
 
-      - title: 'Be a Member'
+      - title: 
         icon: 'images/contribution/group-2.png'
-        content: 'KubeSphere is 100% open source and driven by community,we appreciate contributions to our code and documentation!Significant contributions will earn you a contributor t-shirt.'
+        content: 
         link: ''
-        linkContent: 'Become a KubeSphere Member →'
+        linkContent: 
 ---
