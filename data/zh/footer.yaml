@@ -1,38 +1,51 @@
 footer:
   list:
-    - title: 产品
+    - title: 
       list:
-        - content: KubeSphere 容器平台
-          link: /en
-        - content: QKE
-          link: https://appcenter.qingcloud.com/apps/app-cmgbd5k2/KubeSphere%C2%AE%EF%B8%8F%EF%BC%88QKE%EF%BC%89#Introduction
-        - content: 商业服务
-          link: https://kubesphere.qingcloud.com/
-    - title: 相关产品
+        - content: 
+          link: ''
+
+        - content: 
+          link: ''
+        
+        - content: 
+          link: ''
+
+        - content: 
+          link: ''
+
+        - content: 
+          link: ''
+
+        - content: 
+          link: ''
+    - title: 
       list:
-        - content: AppCenter
-          link: https://appcenter.qingcloud.com/
-        - content: NeonSAN
-          link: https://www.qingcloud.com/products/qingstor-neonsan/
-        - content: QingCloud
-          link: https://www.qingcloud.com/products/qingstor-neonsan/
-        - content: OpenPitrix
-          link: https://openpitrix.io/
-    - title: 文档中心
+        - content: 
+          link: 
+        - content: 
+          link: 
+        - content: 
+          link: 
+        - content: 
+          link: 
+    - title: 
       list:
-        - content: 产品介绍
-          link: https://kubesphere.io/docs/v2.1/zh-CN/introduction/intro/
-        - content: 安装
-          link: https://kubesphere.io/docs/v2.1/zh-CN/installation/intro/
-        - content: 快速入门
-          link: https://kubesphere.io/docs/v2.1/zh-CN/quick-start/quick-start-guide/
-        - content: API 文档
-          link: https://kubesphere.io/docs/v2.1/zh-CN/api-reference/api-docs/
-    - title: 关于
+        - content: 
+          link: ''
+        - content: 
+          link: ''
+        - content: 
+          link: ''
+        - content: 
+          link: ''
+    - title: 
       list:
-        - content: 动态
-          link: https://activity.qingcloud.com/event/kubesphere2019/
-        - content: 联系我们
-          link: https://www.qingcloud.com/contactus
-        - content: 加入我们
-          link: https://www.qingcloud.com/jobs
+        - content: 
+          link: 
+        - content: 
+          link:
+        - content: 
+          link: 
+        - content: 
+          link: 
