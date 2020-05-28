@@ -1,0 +1,34 @@
+[
+  {
+    "title": "Helm-based Application Management in KubeSphere Application Store",
+    "link": "https://www.youtube.com/embed/h1Mmcr4wnF8?&autoplay=1",
+    "createTime": "2020.4.25",
+    "snapshot": "/images/videos/cover.png",
+    "group": "",
+    "tag": ""
+  },
+  {
+    "title": "Binary to Image - Containerize Artifact and Deploy Service to Kubernetes",
+    "link": "https://www.youtube.com/embed/jThC4CDoCLU?&autoplay=1",
+    "createTime": "2020.4.25",
+    "snapshot": "/images/videos/cover.png",
+    "group": "",
+    "tag": ""
+  },
+  {
+    "title": "Bookinfo Canary Release on Kubernetes using Istio, Jaeger and KubeSphere",
+    "link": "https://www.youtube.com/embed/EkGWtwcsdE4?&autoplay=1",
+    "createTime": "2020.4.25",
+    "snapshot": "/images/videos/cover.png",
+    "group": "",
+    "tag": ""
+  },
+  {
+    "title": "Create Horizontal Pod Autoscaler for Kubernetes Deployment using KubeSphere",
+    "link": "https://www.youtube.com/embed/Aqy-psx9B30?&autoplay=1",
+    "createTime": "2020.4.25",
+    "snapshot": "/images/videos/cover.png",
+    "group": "",
+    "tag": ""
+  }
+]

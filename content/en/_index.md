@@ -164,5 +164,8 @@ section6:
   btnLink:
   link:
   linkContent: Want your logo up there? Just submit a pull request →
+  joinTitle: Join the Revolution,Partner with KubeSphere
+  joinContent: We look forward to your joining KubeSphere partner to improve the ecosystem of both, and grow your business.
+  joinLink: 
   image: /images/home/certification.jpg
 ---
