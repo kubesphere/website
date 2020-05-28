@@ -1,5 +1,13 @@
+
+{{ if .Params.minCss }}
+{{ range (split .Params.minCss ",")}}
+<link rel="stylesheet" href="{{ . | absURL }}">
+{{ end }}
+{{ end }}
+
 {{ if .Params.css}}
 {{ $style := resources.Get .Params.css | toCSS | minify | fingerprint }}
 <link rel="stylesheet" href="{{ $style.Permalink }}">
 {{ end }}
+
 
