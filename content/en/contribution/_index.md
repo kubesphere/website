@@ -5,7 +5,7 @@ css: "scss/contribution.scss"
 
 section1:
   title: 'Community is the Soul of KubeSphere'
-  content: 'Join the community to get help, get involved, or to get updates and KubeSphere news!'
+  content: 'Join the community to get help, get involved, or get updates and KubeSphere news!'
   topImage: "images/contribution/contribution-top.jpg"
 
 section2:
@@ -44,7 +44,7 @@ section2:
           link: ''
 
   organization:
-    topic: 'Community Organization'
+    topic: 'Community Governance'
     name: 'KubeSphere Community'
     icon: 'images/contribution/28.svg'
     topIcon: 'images/contribution/8.svg'
@@ -56,7 +56,7 @@ section2:
         icon: 'images/contribution/developer-group.svg'
         children:
           - name: 'Owner /  Lead'
-            content: 'A lead is also the member of the project who is an experienced and acrive reciewer of the project.'
+            content: 'A lead is also a member of the project who is an experienced and active reviewer of the project.'
 
           - name: 'Member'
             content: 'A lead is also the member of the project who is an experienced and acrive reciewer of the project.'
@@ -80,12 +80,12 @@ section2:
 section3:
   interestGroup:
     title: 'Find Your Special Interest Group'
-    content: 'SIGs are designed to let you can find everything you need in one place around a central topic. Find your commonality and join the SIG.'
+    content: 'SIGs are designed to let you find everything you need in one place around a central topic. Find an interesting one and join the SIG.'
     children:
       - name: 'Apps'
         icon: '/images/contribution/apps.svg'
         iconActive: '/images/contribution/apps-active.svg'
-        content: 'App charts for the built-in App Store'
+        content: 'App charts for the built-in Application Store'
         link: ''
         linkContent: 'Join SIG - Apps →'
         children:
@@ -93,12 +93,12 @@ section3:
           - icon: '/images/contribution/calicq2.jpg'
           - icon: '/images/contribution/calicq3.jpg'
 
-      - name: 'App store'
+      - name: 'Application Store'
         icon: '/images/contribution/app-store.svg'
         iconActive: '/images/contribution/app-store-active.svg'
         content: ''
         link: ''
-        linkContent: 'Join SIG - App store →'
+        linkContent: 'Join SIG - Application store →'
         children:
           - icon: '/images/contribution/calicq1.jpg'
           - icon: ''
@@ -113,7 +113,7 @@ section3:
         children: 
           - icon: ''
 
-      - name: 'Cloud-Providers'
+      - name: 'Cloud Providers'
         icon: '/images/contribution/cloud-providers.svg'
         iconActive: '/images/contribution/cloud-providers-active.svg'
         content: ''
@@ -190,7 +190,7 @@ section3:
           - icon: ''
           - icon: ''
       
-      - name: 'Multicluster'
+      - name: 'Multi-cluster'
         icon: '/images/contribution/multicluster.svg'
         iconActive: '/images/contribution/multicluster-active.svg'
         content: ''
@@ -201,7 +201,7 @@ section3:
           - icon: ''
           - icon: ''
     
-      - name: 'Multitenancy'
+      - name: 'Multi-tenancy'
         icon: '/images/contribution/multitenancy.svg'
         iconActive: '/images/contribution/multitenancy-active.svg'
         content: ''
@@ -269,17 +269,17 @@ section3:
 
 section4:
   involved:
-    title: 'Get involved'
+    title: 'Get Involved'
     children:
       - title: 'Be a Champion'
         icon: 'images/contribution/group-1.png'
-        content: 'Join me tomorrow and start putting in the time to get your campaign ready with a landing page!'
+        content: 'Join me tomorrow and start to get your campaign ready with a landing page!'
         link: ''
         linkContent: 'Become a KubeSphere Champion →'
 
       - title: 'Be a Member'
         icon: 'images/contribution/group-2.png'
-        content: 'KubeSphere is 100% open source and driven by community,we appreciate contributions to our code and documentation!Significant contributions will earn you a contributor t-shirt.'
+        content: 'KubeSphere is 100% open source and driven by the community. We appreciate contributions to our code and documentation! Significant contributions will earn you a contributor T-shirt.'
         link: ''
         linkContent: 'Become a KubeSphere Member →'
 ---
