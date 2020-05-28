@@ -112,17 +112,17 @@
         color: #55bc8a;
       }
     }
-    &::after {
-      position: absolute;
-      top: -20px;
-      left: 50%;
-      transform: translateX(-50%);
-      content: "";
-      width: 0;
-      height: 0;
-      border: 10px solid transparent;
-      border-bottom-color: #fff;
-    }
+    // &::after {
+    //   position: absolute;
+    //   top: -20px;
+    //   left: 50%;
+    //   transform: translateX(-50%);
+    //   content: "";
+    //   width: 0;
+    //   height: 0;
+    //   border: 10px solid transparent;
+    //   border-bottom-color: #fff;
+    // }
   }
 
   .right-menu {

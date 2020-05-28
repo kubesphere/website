@@ -113,6 +113,7 @@
 
 <section class='section-4'>
     {{ with .Params.section4.involved }}
+    <img src="/images/contribution/involve-bg.jpg" alt="">
     <h2>{{ .title }}</h2>
     <div>
         {{ range .children}}
@@ -126,6 +127,19 @@
         </div>
         {{ end }}
     </div>
+    {{ end }}
+</section>
+
+<section class='section-5'>
+    {{ with .Params.section5 }}
+    <h2>{{ .title }}</h2>
+    <ul>
+        {{ range .list }}
+        <li>
+            <img src="{{ .icon }}" alt="">
+        </li>
+        {{ end }}
+    </ul>
     {{ end }}
 </section>
 

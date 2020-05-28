@@ -2,8 +2,8 @@
 {{ $data := index .Site.Data .Site.Language.Lang }}
 <section class='section-1'>
   {{ with .Params.section1 }}
-  <img class='img1' src="images/home/52.svg" alt="">
-  <img class='img2' src="/images/home/12-3.svg" alt="">
+  <img class='img1' src="images/home/bg.png" alt="">
+  <img class='img2' src="/images/home/12-3.png" alt="">
   <img class='img3' src="/images/home/2.svg" alt="">
   <div>
     <div>
@@ -13,7 +13,7 @@
       <button class='btn1'>{{ .btnContent1 }}</button>
       <button class='btn2'>{{ .btnContent2 }}</button>
     </div>
-    <img class='img1' src="/images/home/53.jpg" alt="">
+    <img class='img1' src="/images/home/53.png" alt="">
     <img class='img2' src="/images/home/left.svg" alt="">
     <img class='img4' src="/images/home/46.svg" alt="">
   </div>
@@ -71,7 +71,7 @@
 
 <section class='section-4'>
   {{ with .Params.section4 }}
-  <img class='bg-1' src="/images/home/section4-left.svg" alt="">
+  <img class='bg-1' src="/images/home/section4-left.png" alt="">
   <img class='bg-2' src="/images/home/section4-right.svg" alt="">
   <div>
     <div>
@@ -168,6 +168,11 @@
     <div class='link-div'>
       <a href="{{ .link }}">{{ .linkContent }}</a>
     </div>
+    <a class='join-div' href="{{ .titleLink }}">
+      <p class='p1'>{{ .joinTitle }}</p>
+      <p class='p2'>{{ .joinContent }}</p>
+      <img src="/images/home/join-right.svg" alt="">
+    </a>
     <img class='bottom-img' src="{{ .image }}" alt="">
   </div>
   <img class='bg-1' src="/images/home/section6-left.svg" alt="">
