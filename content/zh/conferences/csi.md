@@ -1,6 +1,5 @@
 ---
 title: '基于 CSI Kubernetes 存储插件的开发实践'
-type: 'QCon'
 author: '王欣'
 createTime: '2019-12-04'
 snapshot: 'https://pek3b.qingstor.com/kubesphere-docs/png/20190930112634.png'

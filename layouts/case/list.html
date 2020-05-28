@@ -23,6 +23,7 @@
             </li>
         {{ end }}
     </ul>
+    <img src="{{ .icon | absURL }}" alt="">
     {{ end }}
 </section>
 
@@ -46,7 +47,11 @@
             {{ end }}
             {{ end }}
         </ul>
+        {{ with .bottomContent }}
+        <p>{{ .content }} <a href="{{ .link }}">{{ .linkContent }}</a></p>
+        {{ end }}
     </div>
+    <img src="{{ .icon | absURL }}" alt="">
     {{ end }}
 </section>
 <script>

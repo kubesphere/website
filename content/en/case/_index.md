@@ -10,6 +10,7 @@ section1:
 
 section2:
   tip: Read Case Study →
+  icon: images/case/left.svg
   caseList:
     - icon: "images/case/case1.jpg"
       content: "KubeSphere is trusted by various enterprises and organizations to the innovators driving the future
@@ -44,6 +45,7 @@ section2:
 section3:
   title: 'Various Industries are Powered by KubeSphere'
   tip: ALL
+  icon: images/common/hexagon.svg
   caseType:
     - name: 'Financial'
       children:
@@ -72,4 +74,8 @@ section3:
           icon: 'images/case/v7.jpg'
         - name: 'anchnet'
           icon: 'images/case/v8.jpg'
+  bottomContent:
+    content: Want your logo up there? Just
+    linkContent: submit a pull request, or email you company's logo to us →
+    link:
 ---

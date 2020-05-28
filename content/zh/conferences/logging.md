@@ -1,6 +1,5 @@
 ---
 title: '云原生可观察性之日志管理'
-type: 'KubeCon'
 author: '霍秉杰，马丹'
 createTime: '2019-06-25'
 snapshot: 'https://pek3b.qingstor.com/kubesphere-docs/png/20190930095954.png'
