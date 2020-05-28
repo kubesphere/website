@@ -16,7 +16,7 @@ cd website
 
 ### Running the website locally
 
-hugo version: hugo_extended_0.70.0+, you can install Hugo from [hugo releases](https://help.github.com/en/desktop/contributing-to-projects/creating-an-issue-or-pull-request#creating-a-new-pull-request)
+hugo version: hugo_extended_0.70.0+, you can install Hugo from [hugo releases](https://github.com/gohugoio/hugo/releases)
 
 When you have installed Hugo, then run:
 
