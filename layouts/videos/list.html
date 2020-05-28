@@ -70,7 +70,9 @@
     var initModal = function() {
         $('#modal-for-video').on($.modal.BEFORE_CLOSE, function(event, modal) {
             $('#modal-for-video video')[0].pause()
-            var iframe = $("#iframe-player").attr({src: ''});
+            var src = $("#iframe-player").attr('src')
+            // 去掉自动播放
+            var iframe = $("#iframe-player").attr('src', src.slice(0, -11));
         });
     }
 
