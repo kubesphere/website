@@ -53,7 +53,7 @@ section {
     }
 
     h1 {
-      width: 668px;
+      width: 660px;
       height: 120px;
       margin-top: 12px;
       text-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
@@ -65,7 +65,7 @@ section {
     }
 
     .p2 {
-      width: 668px;
+      width: 660px;
       height: 72px;
       margin-top: 12px;
       margin-bottom: 30px;
@@ -113,14 +113,16 @@ section {
       top: 231px;
       right: 0;
       z-index: 2;
-      width: 480px;
-      height: 297px;
+      width: 460px;
       object-fit: contain;
+      border: 6px solid #ffffff;
+      border-radius: 3px;
+      box-shadow: 0 10px 20px 0 rgba(34, 43, 62, 0.1), 0 8px 16px 0 rgba(33, 43, 61, 0.2), 0 10px 30px 0 rgba(34, 43, 62, 0.1);
     }
 
     .img2 {
-      top: 490px;
-      right: 454px;
+      top: 470px;
+      right: 445px;
     }
 
     .img4 {
@@ -221,7 +223,7 @@ section {
       width: 964px;
       margin: 16px auto 50px;
       font-size: 16px;
-      line-height: 1.5;
+      line-height: 2;
       color: #919aa3;
     }
 
@@ -310,6 +312,7 @@ section {
             font-size: 16px;
             color: #36435c;
             margin-bottom: 20px;
+            line-height: 1.4;
           }
 
           li::before {
@@ -327,6 +330,7 @@ section {
 
         & > img {
           position: absolute;
+          max-width: 365px;
           bottom: -50px;
           right: -16px;
         }
