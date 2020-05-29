@@ -6,6 +6,7 @@
     <meta name="description" content="{{ with .Params.Description }}{{ . }}{{ else }}{{ with .Site.Params.description }}{{ . }}{{ end }}{{ end }}">
 
     <link rel="stylesheet" href="/fonts/Roboto/stylesheet.css">
+    <link rel="stylesheet" href="/fonts/ProximaNova/stylesheet.css">
 
     {{ $common := resources.Get "scss/common.scss" | toCSS | minify | fingerprint }}
     <link rel="stylesheet" href="{{ $common.Permalink }}">
