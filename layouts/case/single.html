@@ -32,7 +32,9 @@
         </div>
         {{ else }}
           <h2>{{ .title }}</h2>
+          {{ range .contentList }}
           <p>{{ .content }}</p>
+          {{ end }}
           {{ if .image }}
           <img src="{{ .image }}" alt="">
           {{ end }}
