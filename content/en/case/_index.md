@@ -15,12 +15,12 @@ section2:
     - icon: "images/case/case1.jpg"
       content: "KubeSphere is trusted by various enterprises and organizations to the innovators driving the future
       of software."
-      link: "aqara"
+      link: ""
 
     - icon: "images/case/case2.jpg"
       content: "KubeSphere is trusted by various enterprises and organizations to the innovators driving the future
       of software."
-      link: "aqara"
+      link: ""
 
     - icon: "images/case/case3.jpg"
       content: "KubeSphere is trusted by various enterprises and organizations to the innovators driving the future
@@ -30,17 +30,17 @@ section2:
     - icon: "images/case/case4.jpg"
       content: "KubeSphere is trusted by various enterprises and organizations to the innovators driving the future
       of software."
-      link: "aqara"
+      link: ""
 
     - icon: "images/case/case5.jpg"
       content: "KubeSphere is trusted by various enterprises and organizations to the innovators driving the future
       of software."
-      link: "aqara"
+      link: ""
 
     - icon: "images/case/case6.jpg"
       content: "KubeSphere is trusted by various enterprises and organizations to the innovators driving the future
       of software."
-      link: "aqara"
+      link: ""
 
 section3:
   title: 'Various Industries are Powered by KubeSphere'

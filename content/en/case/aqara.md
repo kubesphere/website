@@ -11,19 +11,24 @@ section1:
 section2:
   listLeft:
     - title: Company Introduction
-      content: China Minsheng Bank’s main applications were written in C and Java, using traditional architecture. “Our biggest challenge is how to make our traditional legacy applications adaptable to the cloud native environment,” says Zhang Li, who is leader of technology for CMBC’s container cloud. “We want to do distributed applications because in the past we used VMs, and that was quite expensive.”
+      contentList:
+        - content: China Minsheng Bank’s main applications were written in C and Java, using traditional architecture. “Our biggest challenge is how to make our traditional legacy applications adaptable to the cloud native environment,” says Zhang Li, who is leader of technology for CMBC’s container cloud. “We want to do distributed applications because in the past we used VMs, and that was quite expensive.”
+        - content: China Minsheng Bank’s main applications were written in C and Java, using traditional architecture. “Our biggest challenge is how to make our traditional legacy applications adaptable to the cloud native environment,” says Zhang Li, who is leader of technology for CMBC’s container cloud. “We want to do distributed applications because in the past we used VMs, and that was quite expensive.”
       image: /images/case/aqara-1.jpg
 
     - title: Challenge
-      content: CMBC brought in Alibaba Cloud to help with its cloud native transformation. The company is now in the process of breaking down and migrating its legacy applications to a Kubernetes platform, as well as developing new microservices on it.
+      contentList:
+        - content: CMBC brought in Alibaba Cloud to help with its cloud native transformation. The company is now in the process of breaking down and migrating its legacy applications to a Kubernetes platform, as well as developing new microservices on it.
       image:
 
     - title: Solution
-      content: With the Kubernetes platform, delivery efficiency has increased 3-4x, and resource utilization has doubled. “We are now developing AI-based applications, a blockchain application, and some big data analysis applications on the cloud native platform,” says Zhang.
+      contentList:
+        - content: With the Kubernetes platform, delivery efficiency has increased 3-4x, and resource utilization has doubled. “We are now developing AI-based applications, a blockchain application, and some big data analysis applications on the cloud native platform,” says Zhang.
       image:
 
     - title: Benefit
-      content: With the Kubernetes platform, delivery efficiency has increased 3-4x, and resource utilization has doubled. “We are now developing AI-based applications, a blockchain application, and some big data analysis applications on the cloud native platform,” says Zhang.
+      contentList:
+        - content: With the Kubernetes platform, delivery efficiency has increased 3-4x, and resource utilization has doubled. “We are now developing AI-based applications, a blockchain application, and some big data analysis applications on the cloud native platform,” says Zhang.
       image:
 
     - type: 1
@@ -34,11 +39,13 @@ section2:
 
 
     - title: Installation Architecture
-      content: CMBC brought in Alibaba Cloud to help with its cloud native transformation. The company is now in the process of breaking down and migrating its legacy applications to a Kubernetes platform, as well as developing new microservices on it.
+      contentList:
+        - content: CMBC brought in Alibaba Cloud to help with its cloud native transformation. The company is now in the process of breaking down and migrating its legacy applications to a Kubernetes platform, as well as developing new microservices on it.
       image:
 
     - title: Bussiness introduction
-      content: With the Kubernetes platform, delivery efficiency has increased 3-4x, and resource utilization has doubled. “We are now developing AI-based applications, a blockchain application, and some big data analysis applications on the cloud native platform,” says Zhang.
+      contentList:
+        - content: With the Kubernetes platform, delivery efficiency has increased 3-4x, and resource utilization has doubled. “We are now developing AI-based applications, a blockchain application, and some big data analysis applications on the cloud native platform,” says Zhang.
       image:
 
     - type: 2
@@ -46,7 +53,8 @@ section2:
       author: 'Katherine Martinez'
 
     - title: Testimonial
-      content: With the Kubernetes platform, delivery efficiency has increased 3-4x, and resource utilization has doubled. “We are now developing AI-based applications, a blockchain application, and some big data analysis applications on the cloud native platform,” says Zhang.
+      contentList:
+        - content: With the Kubernetes platform, delivery efficiency has increased 3-4x, and resource utilization has doubled. “We are now developing AI-based applications, a blockchain application, and some big data analysis applications on the cloud native platform,” says Zhang.
       image:
 
   rightPart:
