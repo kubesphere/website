@@ -7,36 +7,36 @@ css: scss/index.scss
 
 section1:
   title: KubeSphere Container Platform
-  topic: The Kubernetes Platform, tailored for the hybrid cloud
+  topic: The Kubernetes platform tailored for hybrid multicloud
   content: KubeSphere is a distributed operating system managing cloud native applications with Kubernetes as its kernel, and provides plug-and-play architecture for the seamless integration of third-party applications to boost its ecosystem.
   btnContent1: Install on Kubernetes
   btnContent2: Install on Linux
 
 section2: 
-  title: One Platform for full-stack solutions
+  title: One Platform for Full Stack Solutions
   content: KubeSphere is also a multi-tenant enterprise-grade container platform with full-stack automated IT operation and streamlined DevOps workflows. It provides developer-friendly wizard web UI, helping enterprises to build out a more robust and feature-rich platform, which includes the most common functionalities needed for enterprise Kubernetes strategies.
   children: 
     - name: Open Source
       icon: /images/home/open-source.svg
-      content: A CNCF-certified Kubernetes platform, 100% open source, built and improved by the community
+      content: A CNCF-certified Kubernetes platform, 100% open source, built and improved by the community.
 
     - name: Easy to Run
       icon: /images/home/easy-to-run.svg
-      content: Can be deployed on a Kubernetes cluster or Linux machines and support online and air-gapped installation
+      content: Can be deployed on an existing Kubernetes cluster or Linux machines, supports online and air-gapped installation.
 
-    - name: Feature-rich
+    - name: Rich Features
       icon: /images/home/feature-rich.svg
-      content: Deliver DevOps, service mesh, observability, application management, multi-tenancy, storage and networking management in an unified platform
+      content: Deliver DevOps, service mesh, observability, application management, multi-tenancy, storage and networking management in a unified platform.
 
     - name: Modular & Pluggable
       icon: /images/home/modular-pluggable.svg
-      content: These functionalities are loosely coupled with the platform since they are pluggable and optional. Other tools are easy to integrate and play
+      content: The functionalities are modularized and loosely coupled with the platform. Choose the modules according to your business needs.
 
 
 
 section3:
-  title: Benefits to different teams
-  content: Multi-tenancy enables different teams to securely deploy and maintain containerized applications from the cloud to the edge.  It allows developers to deploy code via several clicks on intuitive consoles, brings centralized observability and powerful DevOps strategies for the Ops team, helps the Infra team to install and maintain Kubernetes cluster with flexible network and efficient solutions, and avoids locking teams into a single-vendor ecosystem.
+  title: Benefits to Different Teams
+  content: Multi-tenancy enables different teams to securely deploy and maintain containerized applications from the cloud to the edge. It allows developers to deploy code with several clicks on the friendly console, and brings integrated observability and powerful DevOps strategies for the Ops team. It also helps the Infra team to install and maintain Kubernetes cluster with efficient, flexible network solutions which avoids locking teams into a single-vendor ecosystem.
   children:
     - name: Infra Team
       content: Automated installation, scaling, and upgrades from cloud to data center
@@ -69,14 +69,14 @@ section3:
       content: Running and using Apps on Kubernetes has never been so easy
       icon: /images/home/80.svg
       children:
-        - content: Deploy and upgrade Apps in one click, without underlying infrastructure consideration
+        - content: Deploy and upgrade Apps with one click to transparent underlying infrastructure
         - content: Provide on-demand container resources and HPA, hardening the reliabity and flexibility of your applications
         - content: Import any Helm repository in seconds to visually deploy and upgrade applications
         - content: Support operation in application store, including metering and billing for applications (coming soon)
 
 section4:
   title: Key Features
-  content: If you are seeking for an open source project that rivals a commercial product, KubeSphere is your choice. <br>The Roadmap lists planned features and you can raise a proposal to contribute your ideas to the community.
+  content: If you are seeking an open source project that rivals a commercial product, KubeSphere is your choice. <br>The Roadmap lists planned features and you can raise a proposal to contribute your ideas to the community.
   children:
     - name: Provisioning Kubernetes 
       icon: /images/home/provisioning-kubernetes.svg
@@ -84,7 +84,7 @@ section4:
 
     - name: K8s Resource Management
       icon: /images/home/k-8-s-resource-management.svg
-      content: Provide a web console for creating and managing Kubernetes resources, with powerful observability
+      content: Provide a web console for creating and managing Kubernetes resources with powerful observability
 
     - name: Multi-tenant Management 
       icon: /images/home/multi-tenant-management.svg
@@ -121,13 +121,13 @@ section4:
       content: Support Calico and Flannel, and provide load balancer plug-in Porter for Kubernetes installed on physical machines
       color: green
 
-    - name: Multi-cluster management 
+    - name: Multi-cluster Management 
       icon: /images/home/management.svg
       content: Distribute applications across multiple clusters and cloud providers, and provide disaster recovery solutions and cross-cluster discovery
       color: orange
 
 section5:
-  title: KubeSphere with its cloud native architecture
+  title: KubeSphere with its Cloud Native Architecture
   frontEnd:
     title: Front End
     project: KubeSphere Console
@@ -147,8 +147,8 @@ section5:
     
 
 section6:
-  title: Who uses KubeSphere
-  content: The Case Studies list more detailed user cases and their cloud native transformation stories. </br>Various enterprises and organizations use KubeSphere Container Platform for research, production and commercial products.
+  title: Who Uses KubeSphere
+  content: The Case Studies list more detailed user cases and their cloud native transformation stories. </br>Tons of enterprises and organizations are using KubeSphere Container Platform for research, production and their commercial products.
   children:
     - icon: /images/home/section6-1.jpg
     - icon: /images/home/section6-2.jpg
@@ -164,8 +164,8 @@ section6:
   btnLink:
   link:
   linkContent: Want your logo up there? Just submit a pull request →
-  joinTitle: Join the Revolution,Partner with KubeSphere
-  joinContent: We look forward to your joining KubeSphere partner to improve the ecosystem of both, and grow your business.
+  joinTitle: Join the Revolution, Partner with KubeSphere
+  joinContent: We look forward to your joining KubeSphere partner program to improve both ecosystems and grow your business.
   joinLink: 
   image: /images/home/certification.jpg
 ---
