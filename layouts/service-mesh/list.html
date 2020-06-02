@@ -1,0 +1,52 @@
+{{ define "main" }}
+<section class='section-1'>
+  {{ with .Params.section1}}
+  <img src="{{ .image }}" alt="">
+  <div class="title-div">
+    <h1>{{ .title }}</h1>
+    <p>{{ .content }}</p>
+  </div>
+  {{ end }}
+</section>
+
+<section class="section-2">
+  {{ with .Params.section2 }}
+  <div>
+    <h2 class="title-black-h2">{{ .title }}</h2>
+    <ul>
+      {{ range .list }}
+      <li>
+        <div>
+          <h3>{{ .title }}</h3>
+          {{ if .summary }}
+          <p>{{ .summary }}</p>
+          {{ end }}
+          {{ if .contentList }}
+          <ul>
+            {{ range .contentList}}
+            <li>{{ .content | safeHTML }}</li>
+            {{ end }}
+          </ul>
+          {{ end }}
+        </div>
+        <img src="{{ .image }}" alt="">
+      </li>
+      {{ end }}
+    </ul>
+  </div>
+  {{ end }}
+</section>
+
+<section class="section-3">
+  {{ with .Params.section3 }}
+  <img class="bg-left" src="{{ .bgLeft }}" alt="">
+  <img class="bg-right" src="{{ .bgRight }}" alt="">
+  <div>
+    <h2 class="title-black-h2">{{ .title }}</h2>
+    <img src="{{ .image }}" alt="">
+    <p>{{ .content }}</p>
+    <a href="{{ .link }}"><button>{{ .btnContent }}</button></a>
+  </div>
+  {{ end }}
+</section>
+{{ end }}

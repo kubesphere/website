@@ -14,3 +14,43 @@ h1, h2, h3 ,h4, h5, h6 {
 html {
   background-color: #f5f8f9;
 }
+
+button {
+  border: none;
+
+  &:hover {
+    box-shadow: none;
+  }
+}
+
+.title-h1 {
+  font-size: 40px;
+  line-height: 1;
+  letter-spacing: -0.11px;
+  color: #ffffff;
+  text-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
+}
+
+.title-black-h2 {
+  text-shadow: 0 4px 8px rgba(35, 45, 65, 0.1);
+  font-size: 32px;
+  font-weight: bold;
+  line-height: 1.63;
+  color: #3d3e49;
+}
+
+.title-white-h2 {
+  text-shadow: 0 4px 8px rgba(35, 45, 65, 0.1);
+  font-size: 32px;
+  font-weight: bold;
+  line-height: 1.63;
+  color: #ffffff;
+}
+
+.title-p {
+  font-size: 16px;
+  line-height: 1.5;
+  letter-spacing: -0.04px;
+  color: #ffffff;
+  text-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
+}
