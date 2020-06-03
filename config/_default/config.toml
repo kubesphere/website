@@ -9,6 +9,7 @@ baseURL = "https://hugo-first.netlify.app"
 
 [params]
 logo = "images/logo.svg"
+mailchimpSubscribeUrl = "https://gmail.us18.list-manage.com/subscribe/post?u=553ce463e00897cc36ed80866&id=f4b5009074"
 
 [languages.en]
 contentDir = "content/en"
