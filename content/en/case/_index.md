@@ -15,7 +15,7 @@ section2:
     - icon: "images/case/case1.jpg"
       content: "KubeSphere is trusted by various enterprises and organizations to the innovators driving the future
       of software."
-      link: ""
+      link: "benlai"
 
     - icon: "images/case/case2.jpg"
       content: "KubeSphere is trusted by various enterprises and organizations to the innovators driving the future
