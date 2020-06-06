@@ -1,6 +1,5 @@
 ---
 title: 'Porter-面向裸金属环境的 Kubernetes 开源负载均衡器'
-type: 'KubeCon'
 author: '宋雪涛'
 createTime: '2019-06-24'
 snapshot: 'https://pek3b.qingstor.com/kubesphere-docs/png/20190930095713.png'

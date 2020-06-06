@@ -1,0 +1,62 @@
+{{ define "main" }}
+
+<section class='section-1'>
+  {{ with .Params.section1}}
+  <img src="/images/case/case-detail-bg.png" alt="">
+  <div>
+    <h1>{{ .title }}</h1>
+    <p>{{ .content }}</p>
+  </div>
+  {{ end }}
+</section>
+
+<section class='section-2'>
+  {{ with .Params.section2 }}
+  <div>
+    <ul class='ul-left'>
+      {{ range .listLeft}}
+      <li>
+        {{ if eq .type 1}}
+        <ul>
+          {{ range .contentList }}
+          <li>
+            <p>{{ .content }}</p>
+          </li>
+          {{ end }}
+        </ul>
+        {{ else if eq .type 2}}
+        <div>
+          <p class='p1'>{{ .content }}</p>
+          <p class='p2'>{{ .author }}</p>
+          <img src="/images/case/ic-quote-right.svg" alt="">
+        </div>
+        {{ else }}
+          <h2>{{ .title }}</h2>
+          {{ range .contentList }}
+          <p>{{ .content }}</p>
+          {{ end }}
+          {{ if .image }}
+          <img src="{{ .image }}" alt="">
+          {{ end }}
+        {{ end }}
+      </li>
+      {{ end }}
+    </ul>
+    <div>
+      {{ with .rightPart}}
+      <img src="{{ .icon }}" alt="">
+      <ul class='ul-right'>
+        {{ range .list }}
+        <li>
+          <p class='p1'>{{ .title }}</p>
+          <p class='p2'>{{ .content }}</p>
+        </li>
+        {{ end }}
+      </ul>
+      {{ end }}
+    </div>
+  </div>
+  <img src="/images/common/hexagon.svg" alt="">
+  {{ end }}
+</section>
+{{ end }}

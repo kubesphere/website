@@ -1,3 +1,17 @@
+- id: introduction1
+  translation: 技术博客
+- id: introduction2
+  translation: " "
+- id: introduction3
+  translation: 发布于
+- id: introduction4
+  translation: KubeCon & QCon
+- id: introduction5
+  translation: 订阅
+- id: introduction6
+  translation: 请输入你的邮箱地址
+- id: introduction7
+  translation: " "
 - id: introduction8
   translation: 欢迎使用 KubeSphere 文档
 - id: introduction9

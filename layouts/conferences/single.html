@@ -13,7 +13,7 @@
 <section class="main-section">
     <div>
         <div class='breadcrumb'>
-            <span>{{ i18n "introduction4"}} ></span>
+            <span><a href='{{ "conferences" | absLangURL }}'>{{ i18n "introduction4"}}</a> > </span>
             <span>{{ .Title }}</span>
         </div>
         <div class='main-div'>
@@ -26,13 +26,14 @@
                 </div>
             </div>
         </div>
-        <div class='aside'>
+        <div class='aside aside-fixed'>
             <div class='title'>Table of Contents</div>
             <div class='tabs'>{{ .TableOfContents }}</div>
         </div>
     </div>
 </section>
 {{- partial "footer.html" . -}}
+<script src='{{ "js/aside.js" | absURL }}'></script>
 </body>
 
 </html>

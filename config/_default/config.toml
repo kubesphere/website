@@ -9,6 +9,7 @@ baseURL = "https://hugo-first.netlify.app"
 
 [params]
 logo = "images/logo.svg"
+mailchimpSubscribeUrl = "https://gmail.us18.list-manage.com/subscribe/post?u=553ce463e00897cc36ed80866&id=f4b5009074"
 
 [languages.en]
 contentDir = "content/en"
@@ -28,51 +29,21 @@ hasChildren = true
 
   [[languages.en.menu.main]]
   parent = "Scenario"
-  name = "Multi-cluster"
-  URL = "multi-cluster"
-  weight = 1
-
-  [[languages.en.menu.main]]
-  parent = "Scenario"
   name = "DevOps"
-  URL = "devOps"
-  weight = 2
-
-  [[languages.en.menu.main]]
-  parent = "Scenario"
-  name = "Network"
-  URL = "network"
-  weight = 3
+  URL = "dev-ops"
+  weight = 1
 
   [[languages.en.menu.main]]
   parent = "Scenario"
   name = "Service Mesh"
   URL = "service-mesh"
-  weight = 4
-
-  [[languages.en.menu.main]]
-  parent = "Scenario"
-  name = "Storage"
-  URL = "storage"
-  weight = 5
-
-  [[languages.en.menu.main]]
-  parent = "Scenario"
-  name = "AppStore"
-  URL = "app-store"
-  weight = 6
-
-  [[languages.en.menu.main]]
-  parent = "Scenario"
-  name = "Multi-tenancy"
-  URL = "multi-tenancy"
-  weight = 7
+  weight = 2
 
   [[languages.en.menu.main]]
   parent = "Scenario"
   name = "Observability"
   URL = "observability"
-  weight = 8
+  weight = 3
 
 [[languages.en.menu.main]]
 weight = 3
@@ -148,45 +119,15 @@ hasChildren = true
 
   [[languages.zh.menu.main]]
   parent = "Scenario"
-  name = "Multi-cluster"
-  URL = "multi-cluster"
-  weight = 1
-
-  [[languages.zh.menu.main]]
-  parent = "Scenario"
   name = "DevOps"
   URL = "devOps"
   weight = 2
 
   [[languages.zh.menu.main]]
   parent = "Scenario"
-  name = "Network"
-  URL = "network"
-  weight = 3
-
-  [[languages.en.menu.main]]
-  parent = "Scenario"
   name = "Service Mesh"
   URL = "service-mesh"
   weight = 4
-
-  [[languages.en.menu.main]]
-  parent = "Scenario"
-  name = "Storage"
-  URL = "storage"
-  weight = 5
-
-  [[languages.zh.menu.main]]
-  parent = "Scenario"
-  name = "AppStore"
-  URL = "app-store"
-  weight = 6
-
-  [[languages.zh.menu.main]]
-  parent = "Scenario"
-  name = "Multi-tenancy"
-  URL = "multi-tenancy"
-  weight = 7
 
   [[languages.zh.menu.main]]
   parent = "Scenario"

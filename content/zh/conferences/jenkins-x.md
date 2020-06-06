@@ -1,6 +1,5 @@
 ---
 title: '基于 Kubernetes 的 Serverless Jenkins —  Jenkins X'
-type: 'KubeCon'
 author: '夏润泽'
 createTime: '2019-06-24'
 snapshot: 'https://pek3b.qingstor.com/kubesphere-docs/png/20190930095450.png'

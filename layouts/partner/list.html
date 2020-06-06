@@ -16,14 +16,32 @@
         <div class="left-div">
             <div>{{ .title }}</div>
             <p>{{ .content }}</p>
+            <img class='img-1' src="{{ .bg2 | absURL }}" alt="">
+            <img class='img-2' src="{{ .bg3 | absURL }}" alt="">
         </div>
         <div class="right-div">
             <img src="{{ .mapImage | absURL }}" alt="">
-            <div class='btn-div div-1'>{{ .name1 }}</div>
-            <div class='btn-div div-2'>{{ .name2 }}</div>
-            <div class='btn-div div-3'>{{ .name3 }}</div>
+            <div class='btn-div div-1'>
+                <p>{{ .name1 }}</p>
+                <div>
+                    <img src="{{ .icon1 | absURL }}" alt="">
+                </div>
+            </div>
+            <div class='btn-div div-2'>
+                <p>{{ .name2 }}</p>
+                <div>
+                    <img src="{{ .icon2 | absURL }}" alt="">
+                </div>
+            </div>
+            <div class='btn-div div-3'>
+                <p>{{ .name3 }}</p>
+                <div>
+                    <img src="{{ .icon3 | absURL }}" alt="">
+                </div>
+            </div>
         </div>
     </div>
+    <img src="{{ .bg1 | absURL }}" alt="">
     {{ end }}
 </section>
 
@@ -52,13 +70,11 @@
     <div>
         <h2>{{ .title }}</h2>
         <ul class="partner-ul">
-            <li class="intro">
-                <p>{{ .content }}</p>
-            </li>
             {{ range .featuredPartnerList }}
-                <li>               
+                <li>
                     <img src="{{ .icon | absURL }}" alt="">
-                    <div>{{ .partnerType }}</div>
+                    <div class='type'>{{ .partnerType }}</div>
+                    <div class='content'>{{ .content }}</div>
                 </li>
             {{ end }}
         </ul>
