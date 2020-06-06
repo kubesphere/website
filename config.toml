@@ -256,118 +256,118 @@ name = "Community"
 weight = 3
 contentDir = "content/tr"
 languageCode = "tr-TR"
-languageName = "Türk"
+languageName = "Türkçe"
 
 [[languages.tr.menu.main]]
 weight = 1
-name = "Why KubeSphere"
+name = "Neden KubeSphere"
 URL = "reason"
 
 [[languages.tr.menu.main]]
 weight = 2
-name = "Scenario"
+name = "Senaryolar"
 hasChildren = true
 
   [[languages.tr.menu.main]]
-  parent = "Scenario"
+  parent = "Senaryolar"
   name = "Multi-cluster"
   URL = "multi-cluster"
   weight = 1
 
   [[languages.tr.menu.main]]
-  parent = "Scenario"
+  parent = "Senaryolar"
   name = "DevOps"
   URL = "devOps"
   weight = 2
 
   [[languages.tr.menu.main]]
-  parent = "Scenario"
+  parent = "Senaryolar"
   name = "Network"
   URL = "network"
   weight = 3
 
   [[languages.tr.menu.main]]
-  parent = "Scenario"
+  parent = "Senaryolar"
   name = "Service Mesh"
   URL = "service-mesh"
   weight = 4
 
   [[languages.tr.menu.main]]
-  parent = "Scenario"
+  parent = "Senaryolar"
   name = "Storage"
   URL = "storage"
   weight = 5
 
   [[languages.tr.menu.main]]
-  parent = "Scenario"
+  parent = "Senaryolar"
   name = "AppStore"
   URL = "app-store"
   weight = 6
 
   [[languages.tr.menu.main]]
-  parent = "Scenario"
+  parent = "Senaryolar"
   name = "Multi-tenancy"
   URL = "multi-tenancy"
   weight = 7
 
   [[languages.tr.menu.main]]
-  parent = "Scenario"
+  parent = "Senaryolar"
   name = "Observability"
   URL = "observability"
   weight = 8
 
 [[languages.tr.menu.main]]
 weight = 3
-name = "Resources"
+name = "Kaynaklar"
 hasChildren = true
 
   [[languages.tr.menu.main]]
-  parent = "Resources"
-  name = "Open Source Projects"
+  parent = "Kaynaklar"
+  name = "Open Source Projeler"
   URL = "projects"
   weight = 1
 
   [[languages.tr.menu.main]]
-  parent = "Resources"
+  parent = "Kaynaklar"
   name = "KubeCon & QCon"
   URL = "conferences"
   weight = 2
 
   [[languages.tr.menu.main]]
-  parent = "Resources"
-  name = "Technology Blogs"
+  parent = "Kaynaklar"
+  name = "Blog Yazıları"
   URL = "blogs"
   weight = 3
 
   [[languages.tr.menu.main]]
-  parent = "Resources"
-  name = "Video Resources"
+  parent = "Kaynaklar"
+  name = "Videolar"
   URL = "videos"
   weight = 4
 
 [[languages.tr.menu.main]]
 weight = 4
-name = "Documentation"
+name = "Dokümantasyon"
 URL = "docs"
 
 [[languages.tr.menu.main]]
 weight = 5
 hasChildren = true
-name = "Community"
+name = "Topluluk"
     [[languages.tr.menu.main]]
-    parent = "Community"
+    parent = "Topluluk"
     name = "Contribution"
     URL = "contribution"
     weight = 1
 
     [[languages.tr.menu.main]]
-    parent = "Community"
+    parent = "Topluluk"
     name = "Case Studies"
     URL = "case"
     weight = 2
 
     [[languages.tr.menu.main]]
-    parent = "Community"
-    name = "Partner"
+    parent = "Topluluk"
+    name = "Partnerler"
     URL = "partner"
     weight = 3
