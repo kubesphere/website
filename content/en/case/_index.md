@@ -35,7 +35,7 @@ section2:
     - icon: "images/case/case5.jpg"
       content: "KubeSphere is trusted by various enterprises and organizations to the innovators driving the future
       of software."
-      link: ""
+      link: "anchnet"
 
     - icon: "images/case/case6.jpg"
       content: "KubeSphere is trusted by various enterprises and organizations to the innovators driving the future
