@@ -12,10 +12,10 @@ section1:
   btnContent1: Install on Kubernetes
   btnContent2: Install on Linux
 
-section2: 
+section2:
   title: One Platform for Full Stack Solutions
   content: KubeSphere is also a multi-tenant enterprise-grade container platform with full-stack automated IT operation and streamlined DevOps workflows. It provides developer-friendly wizard web UI, helping enterprises to build out a more robust and feature-rich platform, which includes the most common functionalities needed for enterprise Kubernetes strategies.
-  children: 
+  children:
     - name: Open Source
       icon: /images/home/open-source.svg
       content: A CNCF-certified Kubernetes platform, 100% open source, built and improved by the community.
@@ -43,27 +43,27 @@ section3:
       icon: /images/home/7.svg
       children:
         - content: Improve your environment utilization and reduce internal infrastructure costs
-        - content: Support multi-cluster and multi-cloud Kubernetes management, avoiding vendor lock-in
         - content: Provide security enhancements, and support multiple storage and network solutions
         - content: Deliver a trustworthy and certified Kubernetes platform and distribution
+        - content: Support multi-cloud and multi-cluster Kubernetes management, avoiding vendor lock-in (coming soon)
 
     - name: Developers
-      content: Focus on your business as automation tools do the rest
+      content: Liberate YAML developers, enabling developers focus on business
       icon: /images/home/74.png
       children:
         - content: Create smooth user experience and reduce the learning curve of the cloud native stack
         - content: Provide toolkits and deployment automation tailored to any application environment
-        - content: Offer out-of-box logging, monitoring and multi-tenancy functions, improving development efficiency
+        - content: Offer out-of-box toolkits for building reproducible images from source code, improving development efficiency
         - content: Support application lifecycle management, accelerating time to market
 
     - name: Ops Team
       content: Build a one-stop enterprise-grade DevOps framework
       icon: /images/home/71.svg
       children:
-        - content: Centralized log collection, monitoring and alerting from infrastructure to applications
+        - content: Provide centralized log collection, monitoring, alerting, events and audit logs from infrastructure to applications
         - content: Streamlined process of continuous deployment, test, release, upgrade and scaling
         - content: Better tracking, routing and optimized communications within Kubernetes for cloud native apps
-        - content: Easy-to-use web terminal and graphical panel, satisfying the needs of different users 
+        - content: Easy-to-use web terminal and graphical panel, satisfying the needs of different users
 
     - name: User
       content: Running and using Apps on Kubernetes has never been so easy
@@ -76,9 +76,9 @@ section3:
 
 section4:
   title: Key Features
-  content: If you are seeking an open source project that rivals a commercial product, KubeSphere is your choice. <br>The Roadmap lists planned features and you can raise a proposal to contribute your ideas to the community.
+  content: If you are seeking an open source project that rivals a commercial product, KubeSphere is your choice. <br> <br>The Roadmap lists the planned features and we welcome everyone to raise a proposal to contribute your ideas.
   children:
-    - name: Provisioning Kubernetes 
+    - name: Provisioning Kubernetes
       icon: /images/home/provisioning-kubernetes.svg
       content: Deploy Kubernetes on any infrastructure out of box, including online and air-gapped installation, and support adding GPU nodes
 
@@ -86,19 +86,19 @@ section4:
       icon: /images/home/k-8-s-resource-management.svg
       content: Provide a web console for creating and managing Kubernetes resources with powerful observability
 
-    - name: Multi-tenant Management 
+    - name: Multi-tenant Management
       icon: /images/home/multi-tenant-management.svg
       content: Provide unified authentication with fine-grained roles and three-tier authorization system, and support AD/LDAP authentication
-  
+
   features:
-    - name: Application Store 
+    - name: Application Store
       icon: /images/home/store.svg
       content: Provide an application store for Helm-based applications, and offer application lifecycle management
       color: grape
 
     - name: Service Mesh (Istio-based)
       icon: /images/home/service.svg
-      content: Provide fine-grained traffic management, observability and tracing, and offer visualization for traffic topology 
+      content: Provide fine-grained traffic management, observability and tracing, and offer visualization for traffic topology
       color: red
 
     - name: Rich Observability
@@ -116,12 +116,12 @@ section4:
       content: Support GlusterFS, CephRBD, NFS, LocalPV solutions, and provide CSI plugins to consume storage from multiple cloud providers
       color: grape
 
-    - name: Multiple Network Solutions 
+    - name: Multiple Network Solutions
       icon: /images/home/network.svg
       content: Support Calico and Flannel, and provide load balancer plug-in Porter for Kubernetes installed on physical machines
       color: green
 
-    - name: Multi-cluster Management 
+    - name: Multi-cluster Management
       icon: /images/home/management.svg
       content: Distribute applications across multiple clusters and cloud providers, and provide disaster recovery solutions and cross-cluster discovery
       color: orange
@@ -144,28 +144,33 @@ section5:
       - name: API Gateway
       - name: Controller Manager
       - name: Account Service
-    
+
 
 section6:
-  title: Who Uses KubeSphere
-  content: The Case Studies list more detailed user cases and their cloud native transformation stories. </br>Tons of enterprises and organizations are using KubeSphere Container Platform for research, production and their commercial products.
+  title: End User Community
+  content: Tons of enterprises and organizations are using KubeSphere Container Platform for research, production and their commercial products.</br> The Case Studies list more detailed user cases and their cloud native transformation stories.
   children:
-    - icon: /images/home/section6-1.jpg
-    - icon: /images/home/section6-2.jpg
-    - icon: /images/home/section6-3.jpg
-    - icon: /images/home/section6-4.jpg
-    - icon: /images/home/section6-5.jpg
-    - icon: /images/home/section6-6.jpg
-    - icon: /images/home/section6-7.jpg
-    - icon: /images/home/section6-8.jpg
-    - icon: /images/home/section6-9.jpg
-    - icon: /images/home/section6-10.jpg
+    - icon: /images/home/section6-anchnet.jpg
+    - icon: /images/home/section6-aqara.jpg
+    - icon: /images/home/section6-benlai.jpg
+    - icon: /images/home/section6-china-mobile.jpg
+    - icon: /images/home/section6-extreme-vision.jpg
+    - icon: /images/home/section6-huaxia-bank.jpg
+    - icon: /images/home/section6-maxnerva.jpg
+    - icon: /images/home/section6-mile-works.svg
+    - icon: /images/home/section6-yiliu.jpg
+    - icon: /images/home/section6-powersmart.jpg
+    - icon: /images/home/section6-wisdom-world.jpg
+    - icon: /images/home/section6-sina.jpg
+    - icon: /images/home/section6-webank.jpg
+    - icon: /images/home/section6-vng.jpg
+    - icon: /images/home/section6-99kvm.jpg
   btnContent: Case Studies
   btnLink:
   link:
   linkContent: Want your logo up there? Just submit a pull request →
   joinTitle: Join the Revolution, Partner with KubeSphere
   joinContent: We look forward to your joining KubeSphere partner program to improve both ecosystems and grow your business.
-  joinLink: 
+  joinLink:
   image: /images/home/certification.jpg
 ---
