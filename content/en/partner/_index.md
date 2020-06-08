@@ -1,5 +1,5 @@
 ---
-title: "page1"
+title: "partner"
 
 css: "scss/partner.scss"
 

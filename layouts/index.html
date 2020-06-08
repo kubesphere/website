@@ -10,8 +10,8 @@
       <p class='p1'>{{ .title }}</p>
       <h1>{{ .topic }}</h1>
       <p class='p2'>{{ .content }}</p>
-      <button class='btn1'>{{ .btnContent1 }}</button>
-      <button class='btn2'>{{ .btnContent2 }}</button>
+      <a href="{{ .downloadLink1 }}"><button class='btn1'>{{ .btnContent1 }}</button></a>
+      <a href="{{ .downloadLink2 }}"><button class='btn2'>{{ .btnContent2 }}</button></a>
     </div>
     <img class='img1' src="/images/home/53.png" alt="">
     <img class='img2' src="/images/home/left.svg" alt="">
@@ -102,7 +102,7 @@
           <p>{{ .content }}</p>
         </div>
         <div class='middle-line'></div>
-        <a href="">Read More →</a>
+        <a href="{{ .link }}">{{ i18n "Read More" }} →</a>
       </li>
       {{ end }}
     </ul>
@@ -163,7 +163,7 @@
       {{ end }}
     </ul>
     <div>
-      <button>{{ .btnContent }}</button>
+      <a href="{{ .btnLink }}"><button>{{ .btnContent }}</button></a>
     </div>
     <div class='link-div'>
       <a href="{{ .link }}">{{ .linkContent }}</a>

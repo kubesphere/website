@@ -19,16 +19,18 @@ footer:
 
         - content: Notification Manager
           link: ''
+
     - title: Resources
       list:
         - content: Projects
-          link: 
+          link: projects
         - content: Blogs
-          link: 
+          link: blogs
         - content: KubeCon & QCon
-          link: 
+          link: conferences
         - content: Videos
-          link: 
+          link: videos
+
     - title: KubeSphere Docs
       list:
         - content: Introduction
@@ -39,13 +41,14 @@ footer:
           link: ''
         - content: API Documentation
           link: ''
+          
     - title: Community
       list:
         - content: Contribution
-          link: 
+          link: contribution
         - content: Case Studies
-          link:
+          link: case
         - content: Partners
-          link: 
+          link: partner
         - content: Roadmap
-          link: 
+          link: roadmap

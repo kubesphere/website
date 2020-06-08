@@ -48,7 +48,7 @@
             {{ end }}
         </ul>
         {{ with .bottomContent }}
-        <p>{{ .content }} <a href="{{ .link }}">{{ .linkContent }}</a></p>
+        <p>{{ .content }} <a href="{{ .link }}" target="_blank">{{ .linkContent }}</a></p>
         {{ end }}
     </div>
     <img src="{{ .icon | absURL }}" alt="">

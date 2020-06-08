@@ -26,5 +26,13 @@
   translation: email is required!
 - id: Please enter a valid email address.
   translation: Please enter a valid email address!
-
-
+- id: Demo
+  translation: Demo
+- id: demo content 1
+  translation: "1.Online experience account: demo1 / Demo123"
+- id: demo content 2
+  translation: 2.This demo account is only allowed to view parts of UI
+- id: demo content 3
+  translation: 3.It's recommended that install KubeSphere in your environment
+- id: Read More
+  translation: Read More

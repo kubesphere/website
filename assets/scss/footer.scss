@@ -102,8 +102,54 @@
 
       .img-div {
         font-size: 0;
-        img {
+
+        a {
+          display: inline-block;
+          width: 34px;
+          height: 34px;
           margin: 0 6px;
+          background-position: center;
+          background-repeat: no-repeat;
+        }
+
+        .facebook-a {
+          background-image: url("/images/footer/facebook.svg");
+
+          &:hover {
+            background-image: url("/images/footer/facebook-hover.svg");
+          }
+        }
+
+        .youtube-a {
+          background-image: url("/images/footer/youtube.svg");
+
+          &:hover {
+            background-image: url("/images/footer/youtube-hover.svg");
+          }
+        }
+
+        .slack-a {
+          background-image: url("/images/footer/slack.svg");
+
+          &:hover {
+            background-image: url("/images/footer/slack-hover.svg");
+          }
+        }
+
+        .twitter-a {
+          background-image: url("/images/footer/twitter.svg");
+
+          &:hover {
+            background-image: url("/images/footer/twitter-hover.svg");
+          }
+        }
+
+        .github-a {
+          background-image: url("/images/footer/github.svg");
+
+          &:hover {
+            background-image: url("/images/footer/github-hover.svg");
+          }
         }
       }
 

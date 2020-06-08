@@ -46,17 +46,19 @@
                     </ul>
                 </li>
                 <li class='btn-li'>
-                    <button>Demo →</button>
+                    <a href="https://demo.kubesphere.io/login" target="_blank" rel="noopener noreferrer">
+                        <button>{{ i18n "Demo" }} →</button>
+                    </a>
                     <ol class="dropdown-menu">
-                        <li></li>
-                        <li></li>
-                        <li></li>
+                        <li>{{ i18n "demo content 1" }}</li>
+                        <li>{{ i18n "demo content 2" }}</li>
+                        <li>{{ i18n "demo content 3" }}</li>
                     </ol>
                 </li>
                 <li class='link-li'>
-                    <a class='link-1' href=""></a>
-                    <a class='link-2' href=""></a>
-                    <a class='link-3' href=""></a>
+                    <a class='link-1' href="{{ .Site.Params.slackLink }}" target="_blank"></a>
+                    <a class='link-2' href="{{ .Site.Params.twitterLink }}" target="_blank"></a>
+                    <a class='link-3' href="{{ .Site.Params.githubLink }}" target="_blank"></a>
                 </li>
             </ul>
         </div>
@@ -70,12 +72,12 @@ var bindNavMouseEvent = function(selector) {
             return false
         }
         flag = true
-        $(this).find('.dropdown-menu').fadeIn(300, function() {
+        $(this).find('.dropdown-menu').fadeIn(200, function() {
             flag = false
         })
     });
     $(selector).mouseleave(function() {
-        $(this).find('.dropdown-menu').fadeOut(300)
+        $(this).find('.dropdown-menu').fadeOut(200)
     });
 }
 
