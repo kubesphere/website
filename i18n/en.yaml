@@ -19,12 +19,10 @@
 - id: introduction10
   translation: Open Source Community
 - id: introduction11
-  translation: KubeSphere is committed to the open source contribution of cloud native technology, enriching the ecology of the open source community
+  translation: KubeSphere is committed to the open source contribution of cloud native technology, enriching the ecosystem of the open source community.
 - id: introduction12
-  translation: Goto Github
+  translation: Go to GitHub
 - id: email is required
   translation: email is required!
 - id: Please enter a valid email address.
   translation: Please enter a valid email address!
-
-

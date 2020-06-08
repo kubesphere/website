@@ -48,7 +48,7 @@ section3:
         - content: Support multi-cloud and multi-cluster Kubernetes management, avoiding vendor lock-in (coming soon)
 
     - name: Developers
-      content: Liberate YAML developers, enabling developers focus on business
+      content: Liberate developers from complicated YAML, enabling them focus on business
       icon: /images/home/74.png
       children:
         - content: Create smooth user experience and reduce the learning curve of the cloud native stack
@@ -162,9 +162,10 @@ section6:
     - icon: /images/home/section6-powersmart.jpg
     - icon: /images/home/section6-wisdom-world.jpg
     - icon: /images/home/section6-sina.jpg
+    - icon: /images/home/section6-softtek.jpg
     - icon: /images/home/section6-webank.jpg
     - icon: /images/home/section6-vng.jpg
-    - icon: /images/home/section6-99kvm.jpg
+
   btnContent: Case Studies
   btnLink:
   link:
