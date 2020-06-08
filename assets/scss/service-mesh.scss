@@ -8,13 +8,6 @@ html {
 .section-1 {
   position: relative;
   height: 350px;
-  min-width: 1160px;
-
-  img {
-    width: 100%;
-    height: 100%;
-    object-fit:cover;
-  }
 
   .title-div {
     position: absolute;
@@ -25,18 +18,11 @@ html {
 
     h1 {
       width: 1060px;
-      font-size: 40px;
-      text-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
-      line-height: 1;
-      letter-spacing: -0.11px;
-      color: #ffffff;
     }
 
     p {
       width: 1060px;
       margin-top: 25px;
-      font-size: 16px;
-      line-height: 1.5;
       letter-spacing: -0.04px;
       color: #ffffff;
       text-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
@@ -49,8 +35,6 @@ html {
   padding-top: 60px;
   & > div {
     position: relative;
-    width: 1160px;
-    margin: 0 auto;
 
     h2 {
       width: 760px;
@@ -63,24 +47,15 @@ html {
         flex-direction: row-reverse;
       }
       & > li {
-        @include common-flex-style;
         align-items: center;
         margin-bottom: 20px;
 
         & > div {
           width: 460px;
 
-          h3 {
-            font-size: 24px;
-            line-height: 1;
-            color: #3d3e49;
-          }
-
           p {
             margin-top: 24px;
             opacity: 0.9;
-            font-size: 16px;
-            line-height: 1.5;
             color: #3d3e49;
           }
 
@@ -88,8 +63,6 @@ html {
             position: relative;
             margin-top: 25px;
             padding-left: 14px;
-            font-size: 16px;
-            color: #36435c;
 
             &::before {
               content: '';
@@ -139,8 +112,6 @@ html {
 
   & > div {
     position: relative;
-    width: 1160px;
-    margin: 0 auto;
     img {
       width: 955px;
       margin-top: 40px;
@@ -148,8 +119,6 @@ html {
   
     p {
       margin-top: 56px;
-      font-size: 16px;
-      line-height: 1.5;
       letter-spacing: -0.04px;
       color: #31383e;
     }

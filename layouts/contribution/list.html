@@ -2,18 +2,18 @@
 
 <section class="section-1">
     {{ with .Params.section1 }}
-    <img src="{{ .topImage | absURL }}" alt="">
+    <img class="top-cover-img" src="{{ .topImage | absURL }}" alt="">
     <div class="title-div">
-        <h1>{{ .title }}</h1>
-        <p>{{ .content }}</p>
+        <h1 class="title-center-h1">{{ .title }}</h1>
+        <p class="common-p">{{ .content }}</p>
     </div>
     {{ end }}
 </section>
 
 <section class="section-2">
     {{ with .Params.section2 }}
-    <div>
-        <ul>
+    <div class="common-layout">
+        <ul class="common-flex-layout">
         {{ range .topType }}
             <li>
                 <div class='title'>
@@ -35,11 +35,11 @@
         <div class='organization-div'>
             {{ with .organization }}
             {{ $topIcon := .topIcon }}
-            <h2>{{ .topic }}</h2>
+            <h2 class="title-black-h2">{{ .topic }}</h2>
             <div>
                 <div class='top-div'>{{ .name }}</div>
                 <img src="{{ .icon | absURL }}" alt="">
-                <ul>
+                <ul class="common-flex-layout">
                     {{ range $index, $element := .type }}
                     <li>
                         <div>
@@ -74,9 +74,9 @@
 
 <section class='section-3'>
     {{ with .Params.section3.interestGroup }}
-    <h2>{{ .title }}</h2>
-    <p>{{ .content }}</p>
-    <ul class='interest-ul' data-index='0' data-length='{{ len .children }}'>
+    <h2 class="title-black-h2">{{ .title }}</h2>
+    <p class="title-p">{{ .content }}</p>
+    <ul class='interest-ul common-layout' data-index='0' data-length='{{ len .children }}'>
         {{ range $index, $element := .children }}
         {{ $active := "" }}
         {{ $icon := $element.icon }}
@@ -97,8 +97,8 @@
             <img class='bottom-img' src="{{ .iconActive | absURL }}" alt="">
             <div class='btn-change btn-right' data-num='1'></div>
         </div>
-        <a href="{{ .link }}">{{ .linkContent }}</a>
-        <p>{{ .content }}</p>
+        <a class="common-green-a" href="{{ .link }}">{{ .linkContent }}</a>
+        <p class="common-p">{{ .content }}</p>
         <ul>
             {{ range .children }}
             <li>
@@ -114,13 +114,13 @@
 <section class='section-4'>
     {{ with .Params.section4.involved }}
     <img src="/images/contribution/involve-bg.jpg" alt="">
-    <h2>{{ .title }}</h2>
-    <div>
+    <h2 class="title-white-h2 ">{{ .title }}</h2>
+    <div  class="common-flex-layout">
         {{ range .children}}
         <div>
             <img src="{{ .icon | absURL }}" alt="">
-            <h3>{{ .title }}</h3>
-            <p>{{ .content }}</p>
+            <h3 class="title-white-h3">{{ .title }}</h3>
+            <p class="common-center-p">{{ .content }}</p>
             <div>
                 <a href="{{ .link }}" target="_blank">{{ .linkContent }}</a>
             </div>
@@ -131,16 +131,18 @@
 </section>
 
 <section class='section-5'>
-    {{ with .Params.section5 }}
-    <h2>{{ .title }}</h2>
-    <ul>
-        {{ range .list }}
-        <li>
-            <img src="{{ .icon }}" alt="">
-        </li>
+    <div class="common-layout">
+        {{ with .Params.section5 }}
+        <h2 class="title-black-h2">{{ .title }}</h2>
+        <ul>
+            {{ range .list }}
+            <li>
+                <img src="{{ .icon }}" alt="">
+            </li>
+            {{ end }}
+        </ul>
         {{ end }}
-    </ul>
-    {{ end }}
+    </div>
 </section>
 
 <script>
