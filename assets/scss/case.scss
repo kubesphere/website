@@ -4,13 +4,6 @@
 .section-1 {
   position: relative;
   height: 300px;
-  min-width: 1160px;
-
-  img {
-    width: 100%;
-    height: 100%;
-    object-fit:cover;
-  }
 
   .title-div {
     position: absolute;
@@ -20,17 +13,8 @@
     text-align: center;
   }
 
-  h1 {
-    font-size: 40px;
-    font-weight: bold;
-    line-height: 1;
-    letter-spacing: -0.11px;
-    color: #ffffff;
-  }
   p {
     margin-top: 12px;
-    font-size: 16px;
-    line-height: 1.5;
     letter-spacing: -0.04px;
     color: #ffffff;
   }
@@ -44,8 +28,6 @@
     justify-content: space-between;
     position: relative;
     top: -60px;
-    width: 1160px;
-    margin: 0 auto;
     z-index: 2;
 
     li {
@@ -65,7 +47,6 @@
       }
 
       p {
-        @include common-p-style;
         width: 293px;
         height: 128px;
         margin: 0 auto;
@@ -79,10 +60,6 @@
         font-size: 16px;
         font-weight: 600;
         line-height: 1.5;
-
-        a {
-          color: #00a971;
-        }
       }
     }
   }
@@ -105,12 +82,6 @@
   h2 {
     margin-bottom: 40px;
     text-align: center;
-    height: 52px;
-    text-shadow: 0 4px 8px rgba(35, 45, 65, 0.1);
-    font-size: 32px;
-    font-weight: bold;
-    line-height: 1.63;
-    color: #171c34;
   }
 
   & > div {
@@ -175,10 +146,6 @@
     & > p {
       margin-top: 40px;
       text-align: center;
-
-      a {
-        color: #00a971;
-      }
     }
   }
 

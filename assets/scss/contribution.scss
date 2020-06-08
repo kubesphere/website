@@ -5,13 +5,6 @@
 .section-1 {
   position: relative;
   height: 300px;
-  min-width: 1160px;
-
-  img {
-    width: 100%;
-    height: 100%;
-    object-fit:cover;
-  }
 
   .title-div {
     position: absolute;
@@ -21,17 +14,8 @@
     text-align: center;
   }
 
-  h1 {
-    font-size: 40px;
-    font-weight: bold;
-    line-height: 1;
-    letter-spacing: -0.11px;
-    color: #ffffff;
-  }
   p {
     margin-top: 12px;
-    font-size: 16px;
-    line-height: 1.5;
     letter-spacing: -0.04px;
     color: #ffffff;
   }
@@ -42,9 +26,7 @@
   background-position: center bottom;
   background-repeat: no-repeat;
   & > div {
-    @include common-content-div-style;
     & > ul {
-      @include common-flex-style;
       position: relative;
       transform: translateY(-40px);
       & > li {
@@ -114,13 +96,7 @@
       margin-top: 60px;
       text-align: center;
       h2 {
-        height: 52px;
         margin-bottom: 40px;
-        text-shadow: 0 4px 8px rgba(35, 45, 65, 0.1);
-        font-size: 32px;
-        font-weight: bold;
-        line-height: 52px;
-        color: #171c34;
       }
 
       & > div {
@@ -146,7 +122,6 @@
           left: 50%;
           width: 896px;
           transform: translateX(-50%);
-          @include common-flex-style;
 
           & > li {
             width: 200px;
@@ -258,26 +233,14 @@
 
 .section-3 {
   text-align: center;
-  h2 {
-    height: 52px;
-    text-shadow: 0 4px 8px rgba(35, 45, 65, 0.1);
-    font-size: 32px;
-    font-weight: bold;
-    line-height: 1.63;
-    color: #171c34;
-  }
+  padding-top: 40px;
+
   & > p {
     width: 964px;
-    height: 64px;
     margin: 12px auto 0;
-    font-size: 16px;
-    line-height: 2;
-    color: #919aa3;
   }
 
   & > ul {
-    width: 1160px;
-    margin: 0 auto;
     padding-bottom: 30px;
     text-align: left;
     border-bottom: solid 2px #e5e5e5;
@@ -374,15 +337,10 @@
 
     & > a {
       font-size: 18px;
-      font-weight: 600;
-      color: #00a971;
     }
 
     & > p {
-      height: 24px;
       margin-top: 4px;
-      font-size: 16px;
-      line-height: 1.5;
       color: #31383e;
     }
 
@@ -416,19 +374,13 @@
     height: 445px;
     object-fit: cover;
   }
+
   h2 {
-    height: 52px;
     margin-top: -385px;
     margin-bottom: 60px;
-    text-shadow: 0 4px 8px rgba(35, 45, 65, 0.1);
-    font-size: 32px;
-    font-weight: bold;
-    line-height: 1.63;
-    color: #ffffff;
   }
 
   & > div {
-    @include common-flex-style;
     width: 963px;
     margin: 0 auto;
     & > div {
@@ -444,19 +396,13 @@
       }
 
       h3 {
-        height: 29px;
         margin-top: 55px;
-        font-size: 20px;
-        font-weight: 600;
-        line-height: 1.2;
         color: #31383e;
       }
 
       p {
         height: 96px;
         margin: 13px auto 0;
-        font-size: 16px;
-        line-height: 1.5;
         color: #31383e;
       }
 
@@ -490,8 +436,6 @@
 }
 
 .section-5 {
-  width: 1160px;
-  margin: 0 auto;
 
   h2 {
     height: 52px;

@@ -2,20 +2,20 @@
 
 <section class="section-1">
     {{ with .Params.section1 }}
-    <img src="{{ .topImage | absURL }}" alt="">
+    <img class="top-cover-img" src="{{ .topImage | absURL }}" alt="">
     <div class="title-div">
-        <h1>{{ .title }}</h1>
-        <p>{{ .content }}</p>
+        <h1 class="title-center-h1">{{ .title }}</h1>
+        <p class="common-p">{{ .content }}</p>
     </div>
     {{ end }}
 </section>
 
 <section class="section-2">
     {{ with .Params.section2 }}
-    <div>
+    <div class="common-layout">
         <div class="left-div">
-            <div>{{ .title }}</div>
-            <p>{{ .content }}</p>
+            <div class="common-content">{{ .title }}</div>
+            <p class="common-p">{{ .content }}</p>
             <img class='img-1' src="{{ .bg2 | absURL }}" alt="">
             <img class='img-2' src="{{ .bg3 | absURL }}" alt="">
         </div>
@@ -48,15 +48,15 @@
 <section class="section-3">
     {{ with .Params.section3 }}
     {{ $tip := .tip }}
-    <div>
-        <h2>{{ .title }}</h2>
-        <ul class="partner-ul">
+    <div class="common-layout">
+        <h2 class="title-black-h2">{{ .title }}</h2>
+        <ul class="partner-ul common-flex-layout">
             {{ range .partnerType }}
                 <li>
-                    <h3>{{ .title }}</h3>
-                    <p>{{ .content }}</p>
+                    <h3 class="common-content">{{ .title }}</h3>
+                    <p class="common-p">{{ .content }}</p>
                     <div>
-                        <a href="{{ .link }}" target="_blank">{{ $tip }}</a>
+                        <a class="common-green-a" href="{{ .link }}" target="_blank">{{ $tip }}</a>
                     </div>
                 </li>
             {{ end }}
@@ -67,8 +67,8 @@
 
 <section class="section-4">
     {{ with .Params.section4 }}
-    <div>
-        <h2>{{ .title }}</h2>
+    <div class="common-layout">
+        <h2 class="title-black-h2">{{ .title }}</h2>
         <ul class="partner-ul">
             {{ range .featuredPartnerList }}
                 <li>

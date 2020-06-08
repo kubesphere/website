@@ -15,9 +15,19 @@ html {
   background-color: #f5f8f9;
 }
 
+section {
+  min-width: 1160px;
+}
+
 .common-layout {
   width: 1160px;
   margin: 0 auto;
+}
+
+.common-flex-layout {
+  display: flex;
+  flex-wrap: wrap ;
+  justify-content: space-between;
 }
 
 .title-h1 {
@@ -28,11 +38,20 @@ html {
   text-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
 }
 
+.title-center-h1 {
+  font-size: 40px;
+  line-height: 1;
+  letter-spacing: -0.11px;
+  color: #ffffff;
+  text-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
+  text-align: center;
+}
+
 .title-black-h2 {
   text-shadow: 0 4px 8px rgba(35, 45, 65, 0.1);
   font-size: 32px;
   font-weight: bold;
-  line-height: 1.63;
+  line-height: 52px;
   color: #171c34;
 }
 
@@ -44,6 +63,22 @@ html {
   color: #ffffff;
 }
 
+.title-black-h3 {
+  text-shadow: 0 4px 8px rgba(35, 45, 65, 0.1);
+  font-size: 24px;
+  font-weight: bold;
+  line-height: 32px;
+  color: #31383e;
+}
+
+.title-white-h3 {
+  height: 24px;
+  font-size: 20px;
+  font-weight: 600;
+  line-height: 1.2;
+  color: #ffffff;
+}
+
 .title-p {
   font-size: 16px;
   line-height: 2;
@@ -51,11 +86,31 @@ html {
   color: #919aa3;
 }
 
+.common-p {
+  font-size: 16px;
+  line-height: 1.5;
+  color: #8f94a1;
+}
+
 .common-center-p {
   font-size: 16px;
   line-height: 1.5;
   text-align: center;
   color: #8f94a1;
+}
+
+.common-content {
+  font-size: 20px;
+  font-weight: 600;
+  line-height: 1.2;
+  letter-spacing: -0.06px;
+  color: #3e464c;
+}
+
+.common-li {
+  font-size: 16px;
+  line-height: 20px;
+  color: #36435c;
 }
 
 .common-btn {
@@ -98,4 +153,20 @@ html {
   &:hover {
     color: #55bc8a;
   }
+}
+
+.common-middle-inline {
+  display: inline-block;
+  vertical-align: middle;
+}
+
+.common-top-inline {
+  display: inline-block;
+  vertical-align: top;
+}
+
+.top-cover-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
 }
