@@ -1,7 +1,8 @@
 ---
-title: Open Source Community - Open Source Community - KubeSphere | Enterprise container platform, built on Kubernetes
+title: "KubeSphere Presentations on KubeCon"
 description: KubeSphere is an open source container platform based on Kubernetes for enterprise app development and deployment, suppors installing anywhere from on-premise datacenter to any cloud to edge.
 keywords: KubeSphere, Kubernetes Dashboard, Install Enterprise Kubernetes, DevOps, Istio, Service Mesh, Jenkins, container platform
+
 
 
 css: "scss/conferences.scss"
@@ -10,42 +11,25 @@ viewDetail: View Details
 
 list:
   - name: KubeCon
-    content: KUBECON_DESC
+    content: Kubecon is an annual conference hosted by the Cloud Native Computing Foundation. We have given these presentations in KubeCon 2019.
     icon: images/conferences/kubecon.svg
     bg: images/conferences/kubecon-bg.svg
     children:
-      - name: 'Multi-tenant Management: Creating Accounts, Roles, Workspaces, Projects and DevOps Projects'
-        summary: ObjectiveIn this quickstart, as a cluster admin, you will learn how to create workspaces, roles and user accounts, and then invite new users…
-        author: xxx
-        link: admin-quick-start
-        image:
+      - name: 'Cloud Native Observability: Log Management'
+        summary: As logs often contain very valuable information, log management represents an important part of cloud native observability.
+        author: Benjamin Huo, Dan Ma
+        link: logging
+        image: https://pek3b.qingstor.com/kubesphere-docs/png/20200607224942.png
 
-      - name: Managing Canary Release of Microservice Application on Kubernetes with Istio
-        summary: Istio’s service mesh is able to manage traffic distribution with complete independence from deployment scaling, which enables a simpler, yet…
-        author: xxx
+      - name: 'Porter: An Open Source Load Balancer for Kubernetes in a Bare Metal Environment'
+        summary: Porter allows you to create Kubernetes services of type LoadBalancer in bare metal cluster, which makes you enjoy the consistent experience with the cloud.
+        author: Xuetao Song
         link: canary-release
-        image:
-
-      - name: Deploying a Grafana Application to Kubernetes Using Application Template
-        summary: ObjectiveThis tutorial shows you how to quickly deploy a Grafana application in KubeSphere via App Template, demonstrating the basic…
-        author: xxx
-        link: app-template
-        image:
+        image: https://pek3b.qingstor.com/kubesphere-docs/png/20190930095713.png
 
   - name: QCon International Software Development Conference
     content: QCON_DESC
     icon: images/conferences/qcon.svg
     bg: images/conferences/qcon-bg.svg
-    children:
-      - name: Creating a CI/CD Pipeline to Deploy Spring Boot App to Kubernetes
-        summary: ObjectiveThis tutorial shows you how to create a CI/CD Pipeline within DevOps project, which is intended for deploying a Spring Boot sample…
-        author: xxx
-        link: cicd-jenkinsfile
-        image:
 
-      - name: Creating Horizontal Pod Autoscaler for Deployment
-        summary: The Horizontal Pod Autoscaler automatically scales the number of pods in a deployment based on observed CPU utilization or Memory usage. The…
-        author: xxx
-        link: hpa
-        image:
 ---
