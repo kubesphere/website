@@ -79,20 +79,12 @@ section {
 
     button {
       height: 56px;
-      line-height: 56px;
       border-radius: 28px;
-      text-align: center;
       font-size: 16px;
-      border: none;
-      cursor: pointer;
-      &:hover {
-        box-shadow: none;
-      }
     }
 
     .btn1 {
       width: 211px;
-      color: #ffffff;
       box-shadow: 0 10px 50px 0 rgba(34, 43, 62, 0.1), 0 8px 16px 0 rgba(33, 43, 61, 0.2), 0 10px 50px 0 rgba(76, 169, 134, 0.05);
       background-image: linear-gradient(to bottom,rgba(0,0,0,0),rgba(0,0,0,0.1) 97%),linear-gradient(to bottom,#242e42,#242e42);
     }
@@ -146,26 +138,11 @@ section {
   z-index: 2;
 
   & > div {
-    width: 1160px;
-    margin: 0 auto;
     text-align: center;
-
-    & > h2 {
-      height: 52px;
-      text-shadow: 0 4px 8px rgba(35, 45, 65, 0.1);
-      font-size: 32px;
-      font-weight: bold;
-      line-height: 1.63;
-      color: #171c34;
-    }
 
     & > p {
       width: 964px;
-      height: 72px;
       margin: 16px auto 50px;
-      font-size: 16px;
-      line-height: 1.5;
-      color: #919aa3;
     }
 
     & > ul {
