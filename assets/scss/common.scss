@@ -23,6 +23,11 @@ button {
   }
 }
 
+.common-layout {
+  width: 1160px;
+  margin: 0 auto;
+}
+
 .title-h1 {
   font-size: 40px;
   line-height: 1;
@@ -53,4 +58,38 @@ button {
   letter-spacing: -0.04px;
   color: #ffffff;
   text-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
+}
+
+.common-btn {
+  border: none;
+  font-size: 14px;
+  color: #fff;
+  cursor: pointer;
+  box-shadow: 0 10px 50px 0 rgba(34,43,62,.1),0 8px 16px 0 rgba(33,43,61,.2);
+
+  &:hover {
+    box-shadow: none;
+  }
+}
+
+.common-a-green {
+  height: 24px;
+  font-weight: 600;
+  line-height: 24px;
+  color: #00a971;
+
+  &:hover {
+    color: #008a5c;
+  }
+}
+
+.common-a-black {
+  height: 24px;
+  font-weight: 600;
+  line-height: 24px;
+  color: #36435c;
+
+  &:hover {
+    color: #55bc8a;
+  }
 }

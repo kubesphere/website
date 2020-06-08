@@ -1,13 +1,14 @@
 ---
-title: "About"
-
+title: "Open Source Community - Open Source Community - KubeSphere | Enterprise container platform, built on Kubernetes"
+description: KubeSphere is an open source container platform based on Kubernetes for enterprise app development and deployment, suppors installing anywhere from on-premise datacenter to any cloud to edge.
+keywords: KubeSphere, Kubernetes Dashboard,  Install Enterprise Kubernetes, DevOps, Istio, Service Mesh, Jenkins, container platform
 
 css: "scss/projects.scss"
 name: Open Source Projects
 groups:
   - name: Container Platform
     children:
-      - title: KubeSphere
+      - title: "KubeSphere"
         icon: 'images/kubesphere.svg'
         link: 'https://github.com/kubesphere/kubesphere'
         description: KubeSphere is a distributed operating system managing cloud native applications with Kubernetes as its kernel, and provides plug-and-play architecture for the seamless integration of third-party applications to boost its ecosystem.

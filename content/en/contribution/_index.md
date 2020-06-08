@@ -37,11 +37,11 @@ section2:
       icon2: 'images/contribution/39.png'
       children:
         - content: 'Join KubeSphere Slack'
-          link: ''
+          link: 'https://join.slack.com/t/kubesphere/shared_invite/enQtNTE3MDIxNzUxNzQ0LTZkNTdkYWNiYTVkMTM5ZThhODY1MjAyZmVlYWEwZmQ3ODQ1NmM1MGVkNWEzZTRhNzk0MzM5MmY4NDc3ZWVhMjE'
         - content: 'Join the Mailing List'
           link: ''
         - content: 'Follow us on Twitter'
-          link: ''
+          link: 'https://twitter.com/KubeSphere'
 
   organization:
     topic: 'Community Governance'

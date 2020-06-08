@@ -9,7 +9,21 @@ baseURL = "https://hugo-first.netlify.app"
 
 [params]
 logo = "images/logo.svg"
+
+title = "KubeSphere | Enterprise container platform, built on Kubernetes"
+description = "KubeSphere is an open source container platform based on Kubernetes for enterprise app development and deployment, suppors installing anywhere from on-premise datacenter to any cloud to edge."
+keywords = "KubeSphere, Kubernetes Dashboard,  Install Enterprise Kubernetes, DevOps, container platform"
+
 mailchimpSubscribeUrl = "https://gmail.us18.list-manage.com/subscribe/post?u=553ce463e00897cc36ed80866&id=f4b5009074"
+
+gcs_engine_id = "018068616810858123755%3Apb1pt8sx6ve"
+
+githubLink = "https://github.com/kubesphere/kubesphere"
+slackLink = "https://join.slack.com/t/kubesphere/shared_invite/enQtNTE3MDIxNzUxNzQ0LTZkNTdkYWNiYTVkMTM5ZThhODY1MjAyZmVlYWEwZmQ3ODQ1NmM1MGVkNWEzZTRhNzk0MzM5MmY4NDc3ZWVhMjE"
+youtubeLink = "https://www.youtube.com/channel/UCyTdUQUYjf7XLjxECx63Hpw"
+facebookLink = ""
+twitterLink = "https://twitter.com/KubeSphere"
+
 
 [languages.en]
 contentDir = "content/en"

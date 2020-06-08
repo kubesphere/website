@@ -10,7 +10,9 @@ section1:
   topic: The Kubernetes platform tailored for hybrid multicloud
   content: KubeSphere is a distributed operating system managing cloud native applications with Kubernetes as its kernel, and provides plug-and-play architecture for the seamless integration of third-party applications to boost its ecosystem.
   btnContent1: Install on Kubernetes
+  downloadLink1: ""
   btnContent2: Install on Linux
+  downloadLink2: ""
 
 section2:
   title: One Platform for Full Stack Solutions
@@ -94,36 +96,43 @@ section4:
     - name: Application Store
       icon: /images/home/store.svg
       content: Provide an application store for Helm-based applications, and offer application lifecycle management
+      link: ""
       color: grape
 
     - name: Service Mesh (Istio-based)
       icon: /images/home/service.svg
-      content: Provide fine-grained traffic management, observability and tracing, and offer visualization for traffic topology
+      content: Provide fine-grained traffic management, observability and tracing, and offer visualization for traffic topology 
+      link: ""
       color: red
 
     - name: Rich Observability
       icon: /images/home/rich.svg
       content: Multi-dimensional monitoring metrics, multi-tenant log query and collection, and alerting and notification support
+      link: ""
       color: green
 
     - name: DevOps System
       icon: /images/home/dev-ops.svg
       content: Out-of-box CI/CD based on Jenkins, and automated workflow tools including S2I & B2I
+      link: ""
       color: orange
 
     - name: Multiple Storage Solutions
       icon: /images/home/multiple.svg
       content: Support GlusterFS, CephRBD, NFS, LocalPV solutions, and provide CSI plugins to consume storage from multiple cloud providers
+      link: ""
       color: grape
 
     - name: Multiple Network Solutions
       icon: /images/home/network.svg
       content: Support Calico and Flannel, and provide load balancer plug-in Porter for Kubernetes installed on physical machines
+      link: ""
       color: green
 
     - name: Multi-cluster Management
       icon: /images/home/management.svg
       content: Distribute applications across multiple clusters and cloud providers, and provide disaster recovery solutions and cross-cluster discovery
+      link: ""
       color: orange
 
 section5:
@@ -167,7 +176,7 @@ section6:
     - icon: /images/home/section6-vng.jpg
 
   btnContent: Case Studies
-  btnLink:
+  btnLink: case
   link:
   linkContent: Want your logo up there? Just submit a pull request →
   joinTitle: Join the Revolution, Partner with KubeSphere

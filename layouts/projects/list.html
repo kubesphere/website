@@ -18,10 +18,10 @@
                 {{ range .children }}
                 <li data-name="{{ $name }}">
                     <img src="{{ .icon | absURL }}" alt="">
-                    <a href="{{ .link }}">{{ .title }}</a>
+                    <a href="{{ .link }}" target="_blank">{{ .title }}</a>
                     <p>{{ .description }}</p>
                     <div>
-                        <a href="{{ .link }}">Github</a>
+                        <a href="{{ .link }}" target="_blank">Github</a>
                     </div>
                 </li>
                 {{ end }}
