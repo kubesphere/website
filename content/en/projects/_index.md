@@ -68,6 +68,13 @@ groups:
         link: 'https://github.com/kubesphere/s2ioperator'
         description: Source-to-image(S2I)-Operator is a Kubernetes Custom Resource Defintion (CRD) controller that provides easy Kubernetes-style resources for declaring CI/CD-style pipelines. S2I Operator create a ready-to-run images by injecting source code into a container image and letting the container prepare that source code for execution.
 
+  - name: Design
+    children:
+      - title: kube-design
+        icon: 'https://pek3b.qingstor.com/kubesphere-docs/png/20200608114816.png'
+        link: 'https://github.com/kubesphere/kube-design'
+        description: Kube Design is a set of React component libraries created for KubeSphere console. If you want to develop KubeSphere console, this library will be pretty useful in customizing front end.
+
   - name: Storage Plugins
     children:
       - title: QingStor-CSI
