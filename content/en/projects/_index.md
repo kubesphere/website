@@ -9,7 +9,7 @@ groups:
   - name: Container Platform
     children:
       - title: "KubeSphere"
-        icon: 'images/kubesphere.svg'
+        icon: 'images/projects/kubesphere.svg'
         link: 'https://github.com/kubesphere/kubesphere'
         description: KubeSphere is a distributed operating system managing cloud native applications with Kubernetes as its kernel, and provides plug-and-play architecture for the seamless integration of third-party applications to boost its ecosystem.
 
