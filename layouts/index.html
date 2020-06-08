@@ -7,11 +7,11 @@
   <img class='img3' src="/images/home/2.svg" alt="">
   <div>
     <div>
-      <p class='p1'>{{ .title }}</p>
-      <h1>{{ .topic }}</h1>
-      <p class='p2'>{{ .content }}</p>
-      <a href="{{ .downloadLink1 }}"><button class='btn1'>{{ .btnContent1 }}</button></a>
-      <a href="{{ .downloadLink2 }}"><button class='btn2'>{{ .btnContent2 }}</button></a>
+      <p class='p1'>{{ .title | safeHTML }}</p>
+      <h1>{{ .topic | safeHTML }}</h1>
+      <p class='p2'>{{ .content | safeHTML }}</p>
+      <a href="{{ .downloadLink1 }}"><button class='btn1 common-btn'>{{ .btnContent1 }}</button></a>
+      <a href="{{ .downloadLink2 }}"><button class='btn2 common-btn'>{{ .btnContent2 }}</button></a>
     </div>
     <img class='img1' src="/images/home/53.png" alt="">
     <img class='img2' src="/images/home/left.svg" alt="">
@@ -22,15 +22,15 @@
 
 <section class="section-2">
   {{ with .Params.section2 }}
-  <div>
-    <h2>{{ .title }}</h2>
-    <p>{{ .content }}</p>
+  <div class="common-layout">
+    <h2 class="title-black-h2">{{ .title | safeHTML }}</h2>
+    <p class="title-p">{{ .content | safeHTML }}</p>
     <ul>
       {{ range .children }}
       <li>
         <img src="{{ .icon }}" alt="">
-        <h3>{{ .name }}</h3>
-        <p>{{ .content }}</p>
+        <h3>{{ .name | safeHTML }}</h3>
+        <p>{{ .content | safeHTML }}</p>
       </li>
       {{ end }}
     </ul>
@@ -41,8 +41,8 @@
 <section class='section-3'>
   {{ with .Params.section3 }}
   <div>
-    <h2>{{ .title }}</h2>
-    <p>{{ .content }}</p>
+    <h2>{{ .title | safeHTML }}</h2>
+    <p>{{ .content | safeHTML }}</p>
     <div class='menu-div'>
       <ul>
         {{ range $index, $element := .children }}
@@ -53,11 +53,11 @@
       <div class='right-div'>
         <div class='top'>
           <h3>💁🏼‍♂️{{ .name }}</h3>
-          <p>{{ .content }}</p>
+          <p>{{ .content | safeHTML }}</p>
         </div>
         <ul>
           {{ range .children }}
-          <li>{{ .content }}</li>
+          <li>{{ .content | safeHTML }}</li>
           {{ end }}
         </ul>
         <img src="{{ .icon | absURL }}" alt="">
@@ -83,7 +83,7 @@
           <img src="{{ .icon }}" alt="">
           <div>
             <h3>{{ .name }}</h3>
-            <p>{{ .content}}</p>
+            <p>{{ .content | safeHTML }}</p>
           </div>
         </li>
         {{ end }}
@@ -99,7 +99,7 @@
             <img src="{{ .icon }}" alt="">
             <span>{{ .name }}</span>
           </div>
-          <p>{{ .content }}</p>
+          <p>{{ .content | safeHTML }}</p>
         </div>
         <div class='middle-line'></div>
         <a href="{{ .link }}">{{ i18n "Read More" }} →</a>
