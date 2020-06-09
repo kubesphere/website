@@ -12,7 +12,7 @@ section2:
   title: 'Together, build partnership for success all over the world'
   content: 'KubeSphere partners play a critical role in KubeSphere go-to-market strategy. KubeSphere partners are located all over the world, we are looking forward to the global cooperation, your success is our success.'
   name1: 'USA'
-  icon1: ''
+  icon1: 'images/partner/partner2.jpg'
   name2: 'European'
   icon2: 'images/partner/radore.jpg'
   name3: 'China'
@@ -28,7 +28,7 @@ section3:
     - title: "App Providers"
       content: "KubeSphere Application Store is a great place to showcase your application, KubeSphere bring your applications to tens of thousands of users, making them deploy your App to Kubernetes with one click."
       link: ""
-    
+
     - title: "Consulting"
       content: If agencies and consultancies want to help clients easily adopt Kubernetes and deliver applications using modern, open source technologies, KubeSphere is the best choice for your team.
       link: ""
@@ -50,7 +50,7 @@ section4:
 
     - icon: "images/partner/partner1.jpg"
       partnerType: "Go-To-Market"
-      content: 
+      content:
 
     - icon: "images/partner/partner10.jpg"
       partnerType: "Go-To-Market"
@@ -58,14 +58,14 @@ section4:
 
     - icon: "images/partner/partner4.jpg"
       partnerType: "technology"
-      content: 
+      content:
 
     - icon: "images/partner/partner8.jpg"
       partnerType: "technology"
-      content: 
+      content:
 
     - icon: "images/partner/partner9.jpg"
       partnerType: "technology"
-      content: 
+      content:
 
 ---
