@@ -36,4 +36,5 @@
   translation: 3.It's recommended that install KubeSphere in your environment
 - id: Coming Soon
   translation: Coming Soon
-
+- id: Read More
+  translation: Read More

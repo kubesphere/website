@@ -132,6 +132,7 @@ section4:
     - name: Multi-cluster Management
       icon: /images/home/management.svg
       content: Distribute applications across multiple clusters and cloud providers, and provide disaster recovery solutions and cross-cluster discovery
+      check: true
       link: ""
       color: orange
 
