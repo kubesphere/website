@@ -419,7 +419,13 @@
           background-color: #e4edf6;
         }
 
-        a {
+        & > span {
+          position: absolute;
+          top: 71px;
+          right: 20px;
+        }
+
+        & > a {
           position: absolute;
           top: 71px;
           right: 35px;

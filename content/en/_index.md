@@ -132,6 +132,7 @@ section4:
     - name: Multi-cluster Management
       icon: /images/home/management.svg
       content: Distribute applications across multiple clusters and cloud providers, and provide disaster recovery solutions and cross-cluster discovery
+      check: true
       link: ""
       color: orange
 
@@ -177,10 +178,10 @@ section6:
 
   btnContent: Case Studies
   btnLink: case
-  link: ../case
-  linkContent: Want your logo up there? Send an email to us, or submit a pull request →
+  link: mailto:kubesphere@gmail.com
+  linkContent: Want your logo up there? Just send an email to kubesphere@gmail.com
   joinTitle: Join the Revolution, Partner with KubeSphere
   joinContent: We look forward to your joining KubeSphere partner program to improve both ecosystems and grow your business.
-  joinLink: 
+  joinLink: partner
   image: /images/home/certification.jpg
 ---

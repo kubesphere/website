@@ -102,7 +102,11 @@
           <p class="common-p">{{ .content | safeHTML }}</p>
         </div>
         <div class='middle-line'></div>
-        <a class="common-green-a" href="{{ .link }}">{{ i18n "Read More" }} →</a>
+        {{ if .check }}
+        <span class="common-green-a">{{ i18n "Coming Soon" }} →</span>
+        {{ else }}
+        <a class="common-green-a" href="{{ .link }}" target="_blank">{{ i18n "Read More" }} →</a>
+        {{ end }}
       </li>
       {{ end }}
     </ul>
@@ -163,12 +167,12 @@
       {{ end }}
     </ul>
     <div>
-      <a href="{{ .btnLink }}"><button>{{ .btnContent }}</button></a>
+      <a href="{{ .btnLink }}" target="_blank"><button>{{ .btnContent }}</button></a>
     </div>
     <div class='link-div'>
-      <a class="common-black-a" href="{{ .link }}">{{ .linkContent }}</a>
+      <a class="common-black-a" href="{{ .link }}" target="_blank">{{ .linkContent }}</a>
     </div>
-    <a class='join-div' href="{{ .titleLink }}">
+    <a class='join-div' href="{{ .joinLink }}" target="_blank">
       <p class='p1'>{{ .joinTitle }}</p>
       <p class='p2'>{{ .joinContent }}</p>
       <img src="/images/home/join-right.svg" alt="">
