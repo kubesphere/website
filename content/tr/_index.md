@@ -3,7 +3,7 @@ title: KubeSphere | Açık Kaynak Container Platformu
 description: KubeSphere, kurumsal/bireysel uygulama geliştirme ve dağıtımı için Kubernetes tabanlı açık kaynaklı bir konteyner platformudur.
 
 
-css: scss/index.scss
+css: scss/index-tr.scss
 
 section1:
   title: KubeSphere Container Platform
@@ -140,16 +140,21 @@ section6:
   title: KubeSphere'i Tercih Edenler
   content: Müşteri senaryoları, daha ayrıntılı kullanıcı senaryoları ve bulut yerel dönüşüm hikayelerini sizler için listeledik. </br> Çeşitli işletme ve kuruluşlar araştırma, üretim ve ticari ürünler için KubeSphere Container Platform'u kullanıyor.
   children:
-    - icon: /images/home/section6-1.jpg
-    - icon: /images/home/section6-2.jpg
-    - icon: /images/home/section6-3.jpg
-    - icon: /images/home/section6-4.jpg
-    - icon: /images/home/section6-5.jpg
-    - icon: /images/home/section6-6.jpg
-    - icon: /images/home/section6-7.jpg
-    - icon: /images/home/section6-8.jpg
-    - icon: /images/home/section6-9.jpg
-    - icon: /images/home/section6-10.jpg
+    - icon: /images/home/section6-anchnet.jpg
+    - icon: /images/home/section6-aqara.jpg
+    - icon: /images/home/section6-benlai.jpg
+    - icon: /images/home/section6-china-mobile.jpg
+    - icon: /images/home/section6-extreme-vision.jpg
+    - icon: /images/home/section6-huaxia-bank.jpg
+    - icon: /images/home/section6-maxnerva.jpg
+    - icon: /images/home/section6-mile-works.svg
+    - icon: /images/home/section6-yiliu.jpg
+    - icon: /images/home/section6-powersmart.jpg
+    - icon: /images/home/section6-wisdom-world.jpg
+    - icon: /images/home/section6-sina.jpg
+    - icon: /images/home/section6-softtek.jpg
+    - icon: /images/home/section6-webank.jpg
+    - icon: /images/home/section6-vng.jpg
   btnContent: Müşteri Senaryoları
   btnLink:
   link:
