@@ -1,10 +1,10 @@
 {{ define "main" }}
 <section class="section-1">
     {{ with .Params.section1 }}
-    <img src="{{ .topImage | absURL }}" alt="">
+    <img class="top-cover-img" src="{{ .topImage | absURL }}" alt="">
     <div class="title-div">
-        <h1>{{ .title }}</h1>
-        <p>{{ .content }}</p>
+        <h1 class="title-center-h1">{{ .title }}</h1>
+        <p class="common-p">{{ .content }}</p>
     </div>
     {{ end }}
 </section>
@@ -12,13 +12,13 @@
 <section class="section-2">
     {{ with .Params.section2 }}
     {{ $tip := .tip }}
-    <ul class="cases-ul">
+    <ul class="cases-ul common-layout">
         {{ range .caseList }}
             <li>
                 <img src="{{ .icon | absURL }}" alt="">
-                <p>{{ .content }}</p>
+                <p class="title-p">{{ .content }}</p>
                 <div>
-                    <a href="{{ .link }}">{{ $tip }}</a>
+                    <a class="common-green-a" href="{{ .link }}">{{ $tip }}</a>
                 </div>
             </li>
         {{ end }}
@@ -29,7 +29,7 @@
 
 <section class="section-3">
     {{ with .Params.section3 }}
-    <h2>{{ .title }}</h2>
+    <h2 class="title-black-h2">{{ .title }}</h2>
     <div>
         <ul id="case-group">
             <li class="active">{{ .tip }}</li>
@@ -48,7 +48,7 @@
             {{ end }}
         </ul>
         {{ with .bottomContent }}
-        <p>{{ .content }} <a href="{{ .link }}" target="_blank">{{ .linkContent }}</a></p>
+        <p>{{ .content }} <a class="common-green-a" href="{{ .link }}" target="_blank">{{ .linkContent }}</a></p>
         {{ end }}
     </div>
     <img src="{{ .icon | absURL }}" alt="">

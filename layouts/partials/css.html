@@ -1,3 +1,13 @@
+<link rel="stylesheet" href="/fonts/Roboto/stylesheet.css">
+<link rel="stylesheet" href="/fonts/ProximaNova/stylesheet.css">
+
+{{ $common := resources.Get "scss/common.scss" | toCSS | minify | fingerprint }}
+<link rel="stylesheet" href="{{ $common.Permalink }}">
+
+{{ if eq .Site.Language.Lang "tr" }}
+{{ $footer := resources.Get "scss/footer-tr.scss" | toCSS | minify | fingerprint }}
+<link rel="stylesheet" href="{{ $footer.Permalink }}">
+{{ end }}
 
 {{ if .Params.minCss }}
 {{ range (split .Params.minCss ",")}}

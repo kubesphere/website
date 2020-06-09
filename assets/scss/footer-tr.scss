@@ -1,0 +1,9 @@
+@import 'footer';
+
+.footer > .footer-main > .up-main {
+  .right-div {
+    & > ul > li {
+      margin-right: 30px;
+    }
+  }
+}

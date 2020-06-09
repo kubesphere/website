@@ -27,19 +27,19 @@ section3:
   partnerType:
     - title: "App Providers"
       content: "KubeSphere Application Store is a great place to showcase your application, KubeSphere bring your applications to tens of thousands of users, making them deploy your App to Kubernetes with one click."
-      link: ""
+      link: "request"
 
     - title: "Consulting"
       content: If agencies and consultancies want to help clients easily adopt Kubernetes and deliver applications using modern, open source technologies, KubeSphere is the best choice for your team.
-      link: ""
+      link: "request"
 
     - title: "Cloud Providers"
       content: For any cloud providers who want to tightly integrate KubeSphere as a catalog or application in their application market for Kubernetes-based solution,  do not hesitate to use KubeSphere to extend your ecosystem.
-      link: ""
+      link: "request"
 
     - title: "Go-To-Market"
       content: KubeSphere is 100% open source and free, you are able to localize KubeSphere, translate it into local languages, build local communities and develop local markets. GTM partners from around the globe that are tightly aligned with KubeSphere.
-      link: ""
+      link: "request"
 
 section4:
   title: 'Featured Partners'

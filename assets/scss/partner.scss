@@ -4,13 +4,6 @@
 .section-1 {
   position: relative;
   height: 300px;
-  min-width: 1160px;
-
-  img {
-    width: 100%;
-    height: 100%;
-    object-fit:cover;
-  }
 
   .title-div {
     position: absolute;
@@ -20,18 +13,9 @@
     text-align: center;
   }
 
-  h1 {
-    font-size: 40px;
-    font-weight: bold;
-    line-height: 1;
-    letter-spacing: -0.11px;
-    color: #ffffff;
-  }
   p {
     width: 1067px;
     margin: 12px auto 0;
-    font-size: 16px;
-    line-height: 1.5;
     letter-spacing: -0.04px;
     color: #ffffff;
   }
@@ -51,8 +35,6 @@
     position: relative;
     z-index: 2;
     top: -40px;
-    width: 1160px;
-    margin: 0 auto;
     box-shadow: 0 4px 8px 0 rgba(36, 46, 66, 0.06);
     .left-div {
       position: relative;
@@ -61,16 +43,15 @@
       border-radius: 10px 0 0 10px;
       background-color: #ffffff;
       div {
-        @include common-title-style;
         width: 351px;
         height: 48px;
         margin: 38px 80px 12px 40px;
       }
       p {
-        @include common-p-style;
         width: 391px;
         height: 160px;
         margin-left: 40px;
+        line-height: 2;
       }
       .img-1 {
         position: absolute;
@@ -173,15 +154,11 @@
   background-repeat: no-repeat;
 
   & > div {
-    width: 1160px;
-    margin: 0 auto;
     h2 {
-      @include common-h2-style;
       text-align: center;
     }
 
     ul {
-      @include common-flex-style;
       margin-top: 20px;
 
       li {
@@ -194,14 +171,13 @@
 
         h3 {
           margin: 40px 40px 20px;
-          @include common-title-style;
         }
 
         p {
           height: 128px;
           margin-left: 40px;
           margin-right: 40px;
-          @include common-p-style;
+          line-height: 2;
         }
 
         div {
@@ -209,10 +185,6 @@
           margin-top: 20px;
           font-weight: 600;
           line-height: 1.5;
-
-          a {
-            color: #00a971;
-          }
         }
       }
     }
@@ -221,10 +193,8 @@
 
 .section-4 {
   & > div {
-    @include common-center-div-style;
     margin-top: 80px;
     h2 {
-      @include common-h2-style;
       text-align: center;
     }
 

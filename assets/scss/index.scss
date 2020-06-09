@@ -1,10 +1,6 @@
 @import 'variables';
 @import 'mixin';
 
-section {
-  min-width: 1160px;
-}
-
 .section-1 {
   position: relative;
   height: 884px;
@@ -54,7 +50,6 @@ section {
 
     h1 {
       width: 660px;
-      height: 120px;
       margin-top: 12px;
       text-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
       font-size: 50px;
@@ -147,8 +142,6 @@ section {
 
     & > ul {
       li {
-        display: inline-block;
-        vertical-align: top;
         width: 274px;
         height: 358px;
 
@@ -156,21 +149,9 @@ section {
           margin: 36px auto 20px;
         }
 
-        h3 {
-          height: 32px;
-          text-shadow: 0 4px 8px rgba(35, 45, 65, 0.1);
-          font-size: 24px;
-          font-weight: bold;
-          line-height: 1.33;
-          color: #31383e;
-        }
-
         p {
           width: 240px;
-          font-size: 16px;
           margin: 20px auto 0;
-          line-height: 1.5;
-          color: #8f94a1;
         }
       }
     }
@@ -183,25 +164,11 @@ section {
   padding-bottom: 500px;
   background-color: #f5f8f9;
   & > div {
-    width: 1160px;
-    margin: 0 auto;
     text-align: center;
-
-    & > h2 {
-      height: 52px;
-      text-shadow: 0 4px 8px rgba(35, 45, 65, 0.1);
-      font-size: 32px;
-      font-weight: bold;
-      line-height: 1.63;
-      color: #171c34;
-    }
 
     & > p {
       width: 964px;
       margin: 16px auto 50px;
-      font-size: 16px;
-      line-height: 2;
-      color: #919aa3;
     }
 
     & > div {
@@ -349,8 +316,6 @@ section {
 
   & > div {
     position: relative;
-    width: 1160px;
-    margin: 0 auto;
 
     & > div {
       width: 471px;
@@ -367,8 +332,6 @@ section {
       & > p {
         height: 96px;
         opacity: 0.9;
-        font-size: 16px;
-        line-height: 1.5;
         color: #ffffff;
       }
 
@@ -382,19 +345,8 @@ section {
             width: 414px;
             margin-left: 16px;
             display: inline-block;
-
-            h3 {
-              height: 24px;
-              font-size: 20px;
-              font-weight: 600;
-              line-height: 1.2;
-              color: #ffffff;
-            }
-
             p {
               opacity: 0.9;
-              font-size: 16px;
-              line-height: 1.5;
               color: #ffffff;
             }
           }
@@ -441,19 +393,14 @@ section {
         .img-span-div {
           margin-top: 23px;
           margin-left: 30px;
-          img {
-            vertical-align: middle;
-          }
-  
+
           span {
-            display: inline-block;
             height: 24px;
             margin-left: 16px;
             font-size: 20px;
             font-weight: 600;
             line-height: 1.2;
             color: #31383e;
-            vertical-align: middle;
           }
         }
 
@@ -461,9 +408,6 @@ section {
           width: 372px;
           margin-top: 10px;
           margin-left: 30px;
-          font-size: 16px;
-          line-height: 1.5;
-          color: #76808a;
         }
 
         .middle-line {
@@ -473,22 +417,18 @@ section {
           width: 2px;
           height: 114px;
           background-color: #e4edf6;
-
         }
 
-        a {
+        & > span {
+          position: absolute;
+          top: 71px;
+          right: 20px;
+        }
+
+        & > a {
           position: absolute;
           top: 71px;
           right: 35px;
-          height: 24px;
-          font-size: 14px;
-          font-weight: 600;
-          line-height: 1.71;
-          color: #00a971;
-
-          &:hover {
-            color: #008a5c;
-          }
         }
 
       }
@@ -503,16 +443,8 @@ section {
   background-color: #f5f8f9;
 
   & > div {
-    width: 1160px;
-    margin: 0 auto;
 
     h2 {
-      height: 52px;
-      text-shadow: 0 4px 8px rgba(35, 45, 65, 0.1);
-      font-size: 32px;
-      font-weight: bold;
-      line-height: 1.63;
-      color: #171c34;
       text-align: center;
     }
 
@@ -522,19 +454,8 @@ section {
       font-size: 0;
 
       .front-div {
-        display: inline-block;
-        vertical-align: top;
         width: 280px;
         text-align: center;
-
-        h3 {
-          height: 24px;
-          text-shadow: 0 4px 8px rgba(35, 45, 65, 0.1);
-          font-size: 24px;
-          font-weight: 600;
-          color: #31383e;
-        }
-
         p {
           width: 280px;
           height: 84px;
@@ -571,17 +492,10 @@ section {
       }
 
       .back-div {
-        display: inline-block;
-        vertical-align: top;
         width: 867px;
         margin-left: 13px;
 
         h3 {
-          height: 24px;
-          text-shadow: 0 4px 8px rgba(35, 45, 65, 0.1);
-          font-size: 24px;
-          font-weight: 600;
-          color: #31383e;
           text-align: center;
         }
 
@@ -689,33 +603,16 @@ section {
 
   & > div {
     position: relative;
-    width: 1160px;
-    margin: 0 auto;
     text-align: center;
     z-index: 2;
 
-    h2 {
-      height: 52px;
-      text-shadow: 0 4px 8px rgba(35, 45, 65, 0.1);
-      font-family: Roboto;
-      font-size: 32px;
-      font-weight: bold;
-      line-height: 1.63;
-      color: #171c34;
-    }
-
     & > p {
       width: 965px;
-      height: 64px;
       margin: 12px auto;
       white-space: pre;
-      font-size: 16px;
-      line-height: 2;
-      color: #919aa3;
     }
 
     ul {
-      @include common-flex-style;
       margin-top: 59px;
       margin-bottom: 45px;
       li {
@@ -758,6 +655,9 @@ section {
       a {
         color: #31383e;
         text-decoration: underline;
+        &:hover {
+          color: #55bc8a;
+        }
       }
     }
 

@@ -27,10 +27,10 @@
     <p class="title-p">{{ .content | safeHTML }}</p>
     <ul>
       {{ range .children }}
-      <li>
+      <li class="common-top-inline">
         <img src="{{ .icon }}" alt="">
-        <h3>{{ .name | safeHTML }}</h3>
-        <p>{{ .content | safeHTML }}</p>
+        <h3 class="title-black-h3 ">{{ .name | safeHTML }}</h3>
+        <p class="common-center-p">{{ .content | safeHTML }}</p>
       </li>
       {{ end }}
     </ul>
@@ -40,9 +40,9 @@
 
 <section class='section-3'>
   {{ with .Params.section3 }}
-  <div>
-    <h2>{{ .title | safeHTML }}</h2>
-    <p>{{ .content | safeHTML }}</p>
+  <div class="common-layout">
+    <h2 class="title-black-h2">{{ .title | safeHTML }}</h2>
+    <p class="title-p">{{ .content | safeHTML }}</p>
     <div class='menu-div'>
       <ul>
         {{ range $index, $element := .children }}
@@ -73,17 +73,17 @@
   {{ with .Params.section4 }}
   <img class='bg-1' src="/images/home/section4-left.png" alt="">
   <img class='bg-2' src="/images/home/section4-right.svg" alt="">
-  <div>
+  <div class="common-layout">
     <div>
       <h2>{{ .title }}</h2>
-      <p>{{ .content | safeHTML }}</p>
+      <p class="common-p">{{ .content | safeHTML }}</p>
       <ul>
         {{ range .children }}
         <li>
           <img src="{{ .icon }}" alt="">
           <div>
-            <h3>{{ .name }}</h3>
-            <p>{{ .content | safeHTML }}</p>
+            <h3 class="title-white-h3">{{ .name }}</h3>
+            <p class="common-p">{{ .content | safeHTML }}</p>
           </div>
         </li>
         {{ end }}
@@ -96,13 +96,17 @@
         <div>
           <div class='top-line {{ .color }}'></div>
           <div class='img-span-div'>
-            <img src="{{ .icon }}" alt="">
-            <span>{{ .name }}</span>
+            <img class="common-middle-inline" src="{{ .icon }}" alt="">
+            <span class="common-middle-inline">{{ .name }}</span>
           </div>
-          <p>{{ .content | safeHTML }}</p>
+          <p class="common-p">{{ .content | safeHTML }}</p>
         </div>
         <div class='middle-line'></div>
-        <a href="{{ .link }}">{{ i18n "Read More" }} →</a>
+        {{ if .check }}
+        <span class="common-green-a">{{ i18n "Coming Soon" }} →</span>
+        {{ else }}
+        <a class="common-green-a" href="{{ .link }}" target="_blank">{{ i18n "Read More" }} →</a>
+        {{ end }}
       </li>
       {{ end }}
     </ul>
@@ -112,12 +116,12 @@
 
 <section class='section-5'>
   {{ with .Params.section5 }}
-  <div>
-    <h2>{{ .title }}</h2>
+  <div class="common-layout">
+    <h2 class="title-black-h2">{{ .title }}</h2>
     <div>
       {{ with .frontEnd }}
-      <div class='front-div'>
-        <h3>{{ .title }}</h3>
+      <div class='front-div common-top-inline'>
+        <h3 class="title-black-h3">{{ .title }}</h3>
         <p>{{ .project }}</p>
         <ul>
           {{ range .children }}
@@ -129,8 +133,8 @@
       </div>
       {{ end }}
       {{ with .backEnd }}
-      <div class='back-div'>
-        <h3>{{ .title}}</h3>
+      <div class='back-div common-top-inline'>
+        <h3 class="title-black-h3">{{ .title}}</h3>
         <div class='group'>
           <p>{{ .project }}</p>
           <ul>
@@ -152,10 +156,10 @@
 
 <section class='section-6'>
   {{ with .Params.section6 }}
-  <div>
-    <h2>{{ .title }}</h2>
-    <p>{{ .content | safeHTML }}</p>
-    <ul>
+  <div class="common-layout">
+    <h2 class="title-black-h2">{{ .title }}</h2>
+    <p class="title-p">{{ .content | safeHTML }}</p>
+    <ul class="common-flex-layout">
       {{ range .children }}
       <li>
         <img src="{{ .icon }}" alt="">
@@ -163,12 +167,12 @@
       {{ end }}
     </ul>
     <div>
-      <a href="{{ .btnLink }}"><button>{{ .btnContent }}</button></a>
+      <a href="{{ .btnLink }}" target="_blank"><button>{{ .btnContent }}</button></a>
     </div>
     <div class='link-div'>
-      <a href="{{ .link }}">{{ .linkContent }}</a>
+      <a class="common-black-a" href="{{ .link }}" target="_blank">{{ .linkContent }}</a>
     </div>
-    <a class='join-div' href="{{ .titleLink }}">
+    <a class='join-div' href="{{ .joinLink }}" target="_blank">
       <p class='p1'>{{ .joinTitle }}</p>
       <p class='p2'>{{ .joinContent }}</p>
       <img src="/images/home/join-right.svg" alt="">

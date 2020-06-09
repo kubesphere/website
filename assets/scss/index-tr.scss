@@ -1,0 +1,27 @@
+@import 'index';
+
+.section-1 {
+  & > div {
+    .btn1 {
+      width: 250px;
+    }
+    .btn2 {
+      width: 230px;
+    }
+  }
+}
+
+.section-5 {
+  & > div > div {
+    .back-div {
+      & > .group {
+        ul {
+          margin-left: 25px;
+          li {
+            padding: 0 15px;
+          }
+        }
+      }
+    }
+  }
+}
