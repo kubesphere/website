@@ -10,9 +10,9 @@ section1:
   topic: The Kubernetes platform tailored for hybrid multicloud
   content: KubeSphere is a distributed operating system managing cloud native applications with Kubernetes as its kernel, and provides plug-and-play architecture for the seamless integration of third-party applications to boost its ecosystem.
   btnContent1: Install on Kubernetes
-  downloadLink1: ""
+  downloadLink1: "https://kubesphere.io/docs/installation/install-on-k8s/"
   btnContent2: Install on Linux
-  downloadLink2: ""
+  downloadLink2: "https://kubesphere.io/docs/installation/all-in-one/"
 
 section2:
   title: One Platform for Full Stack Solutions
@@ -96,37 +96,37 @@ section4:
     - name: Application Store
       icon: /images/home/store.svg
       content: Provide an application store for Helm-based applications, and offer application lifecycle management
-      link: ""
+      link: "https://kubesphere.io/docs/installation/install-openpitrix/"
       color: grape
 
     - name: Service Mesh (Istio-based)
       icon: /images/home/service.svg
-      content: Provide fine-grained traffic management, observability and tracing, and offer visualization for traffic topology 
-      link: ""
+      content: Provide fine-grained traffic management, observability and tracing, and offer visualization for traffic topology
+      link: "../service-mesh"
       color: red
 
     - name: Rich Observability
       icon: /images/home/rich.svg
       content: Multi-dimensional monitoring metrics, multi-tenant log query and collection, and alerting and notification support
-      link: ""
+      link: "../observability"
       color: green
 
     - name: DevOps System
       icon: /images/home/dev-ops.svg
       content: Out-of-box CI/CD based on Jenkins, and automated workflow tools including S2I & B2I
-      link: ""
+      link: "https://kubesphere.io/docs/installation/install-devops/"
       color: orange
 
     - name: Multiple Storage Solutions
       icon: /images/home/multiple.svg
       content: Support GlusterFS, CephRBD, NFS, LocalPV solutions, and provide CSI plugins to consume storage from multiple cloud providers
-      link: ""
+      link: "https://kubesphere.io/docs/introduction/features/#multiple-storage-solutions-support"
       color: grape
 
     - name: Multiple Network Solutions
       icon: /images/home/network.svg
       content: Support Calico and Flannel, and provide load balancer plug-in Porter for Kubernetes installed on physical machines
-      link: ""
+      link: "https://kubesphere.io/docs/introduction/features/#multiple-network-solutions-support"
       color: green
 
     - name: Multi-cluster Management
@@ -157,7 +157,7 @@ section5:
 
 section6:
   title: End User Community
-  content: Tons of enterprises and organizations are using KubeSphere Container Platform for research, production and their commercial products.</br> The Case Studies list more detailed user cases and their cloud native transformation stories.
+  content: Tons of enterprises and organizations are using KubeSphere Container Platform for research, production and their commercial products.</br> The <a class='inner-a' target='_blank' href='../case'>Case Studies</a> list more detailed user cases and their cloud native transformation stories.
   children:
     - icon: /images/home/section6-anchnet.jpg
     - icon: /images/home/section6-aqara.jpg
@@ -177,8 +177,8 @@ section6:
 
   btnContent: Case Studies
   btnLink: case
-  link:
-  linkContent: Want your logo up there? Just submit a pull request →
+  link: mailto:kubesphere@gmail.com
+  linkContent: Want your logo up there? Just send an email to kubesphere@gmail.com
   joinTitle: Join the Revolution, Partner with KubeSphere
   joinContent: We look forward to your joining KubeSphere partner program to improve both ecosystems and grow your business.
   joinLink: partner
