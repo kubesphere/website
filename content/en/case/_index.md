@@ -12,34 +12,28 @@ section2:
   tip: Read Case Study →
   icon: images/case/left.svg
   caseList:
+    - icon: "images/case/case5.jpg"
+      content: "KubeSphere is trusted by various enterprises and organizations to the innovators driving the future of software."
+      link: "anchnet"
+
+    - icon: "images/case/case3.jpg"
+      content: "KubeSphere is trusted by various enterprises and organizations to the innovators driving the future of software."
+      link: "aqara"
+
     - icon: "images/case/case1.jpg"
-      content: "KubeSphere is trusted by various enterprises and organizations to the innovators driving the future
-      of software."
+      content: "KubeSphere is trusted by various enterprises and organizations to the innovators driving the future of software."
       link: "benlai"
 
     - icon: "images/case/case2.jpg"
-      content: "KubeSphere is trusted by various enterprises and organizations to the innovators driving the future
-      of software."
+      content: "KubeSphere is trusted by various enterprises and organizations to the innovators driving the future of software."
       link: ""
-
-    - icon: "images/case/case3.jpg"
-      content: "KubeSphere is trusted by various enterprises and organizations to the innovators driving the future
-      of software."
-      link: "aqara"
 
     - icon: "images/case/case4.jpg"
-      content: "KubeSphere is trusted by various enterprises and organizations to the innovators driving the future
-      of software."
+      content: "KubeSphere is trusted by various enterprises and organizations to the innovators driving the future of software."
       link: ""
 
-    - icon: "images/case/case5.jpg"
-      content: "KubeSphere is trusted by various enterprises and organizations to the innovators driving the future
-      of software."
-      link: "anchnet"
-
     - icon: "images/case/case6.jpg"
-      content: "KubeSphere is trusted by various enterprises and organizations to the innovators driving the future
-      of software."
+      content: "KubeSphere is trusted by various enterprises and organizations to the innovators driving the future of software."
       link: ""
 
 section3:
