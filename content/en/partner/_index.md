@@ -4,7 +4,7 @@ title: "partner"
 css: "scss/partner.scss"
 
 section1:
-  title: 'Join the Revolution,Partner with KubeSphere'
+  title: 'Join the Revolution, Partner with KubeSphere'
   content: 'We look forward to your joining KubeSphere partner to improve the ecosystem of both, and grow your business. KubeSphere provide  resources and rights for partners to help them increase their expertise, deliver open source technology, and resell product.'
   topImage: 'images/partner/partner-top.jpg'
 
@@ -29,8 +29,8 @@ section3:
       content: "KubeSphere Application Store is a great place to showcase your application, KubeSphere bring your applications to tens of thousands of users, making them deploy your App to Kubernetes with one click."
       link: "request"
 
-    - title: "Consulting"
-      content: If agencies and consultancies want to help clients easily adopt Kubernetes and deliver applications using modern, open source technologies, KubeSphere is the best choice for your team.
+    - title: "Technology"
+      content: Technology Partners offer a hardware platform, cloud service or software application that integrates with KubeSphere, based on technical collaboration or joint solution. If you have such a product or solution could be integrated with KubeSphere, let's collaborate to enhance our users' experiences.
       link: "request"
 
     - title: "Cloud Providers"
@@ -44,28 +44,35 @@ section3:
 section4:
   title: 'Featured Partners'
   featuredPartnerList:
-    - icon: "images/partner/partner5.jpg"
-      partnerType: "technology"
-      content: 'KubeSphere is trusted by various enterprises and organizations to the innovators driving the future of software.'
+    - icon: "images/partner/qingcloud.svg"
+      partnerType: "Cloud Provider"
+      content: 'QingCloud is a cloud computing platform that provides IaaS-based flexible cloud services.'
 
-    - icon: "images/partner/partner1.jpg"
-      partnerType: "Go-To-Market"
-      content:
+    - icon: "images/partner/kubeedge.jpg"
+      partnerType: "Technology"
+      content: 'KubeEdge is an open source system extending native containerized application orchestration and device management to hosts at the Edge.'
 
-    - icon: "images/partner/partner10.jpg"
-      partnerType: "Go-To-Market"
-      content:
+    - icon: "images/partner/openeuler.jpg"
+      partnerType: "Technology"
+      content: 'openEuler is a free Linux distribution platform on which you can treat it as an innovative platform supporting the multi-processor architecture.'
 
-    - icon: "images/partner/partner4.jpg"
-      partnerType: "technology"
-      content:
+    - icon: "images/partner/nebular-graph.jpg"
+      partnerType: "App Provider"
+      content: 'Nebula Graph is an open-source graph database unmatched in its ability to host super large-scale graphs using billions of vertices (nodes) and trillions of edges with milliseconds of latency.'
 
-    - icon: "images/partner/partner8.jpg"
-      partnerType: "technology"
-      content:
+    - icon: "images/partner/istio.jpg"
+      partnerType: "Technology"
+      content: 'Istio is an open source independent service mesh that provides the fundamentals you need to successfully run a distributed microservice architecture.'
 
-    - icon: "images/partner/partner9.jpg"
-      partnerType: "technology"
-      content:
+    - icon: "images/partner/jenkins-zh.jpg"
+      partnerType: "Technology"
+      content: 'Jenkins Chinese community is made up of Jenkins Chinese fans and contributors, who work together to promote and improve the learning trial and landing of CI/CD technology.'
 
+    - icon: "images/partner/radore.jpg"
+      partnerType: "Go-to-market"
+      content: 'With the technical infrastructure it holds, Radore provides private and corporate data center services (Colocation, Dedicated Servers, Cloud Services, Web Hosting, CDN).'
+
+    - icon: "images/partner/webank.jpg"
+      partnerType: "App provider"
+      content: 'WeBank, The 1st digital bank in China and initiated by Tencent, offers wealth management and financing services through different online platforms.'
 ---
