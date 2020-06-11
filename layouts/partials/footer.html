@@ -26,7 +26,7 @@
                             <li>
                                 <div class="h3">{{ .title }}</div>
                                 {{ range .list }}
-                                <a href="{{ .link }}" target="_blank">{{ .content }}</a>
+                                <a href="{{ .link | absURL }}" target="_blank">{{ .content }}</a>
                                 {{ end }}
                             </li>
                         {{ end }}
