@@ -26,7 +26,7 @@ section2:
 
     - icon: "images/case/case2.jpg"
       content: "Huaxia Bank Co., Ltd. is a publicly traded commercial bank in China. It is based in Beijing and was founded in 1992."
-      link: ""
+      link: "huaxia-bank"
 
     - icon: "images/case/maxnerva.jpg"
       content: "Maxnerva Technology Services, HK.0103 is affiliated and invested by Foxconn Technology Group."
