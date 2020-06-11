@@ -5,7 +5,7 @@
   <img class='img1' src="images/home/bg.jpg" alt="">
   <img class='img2' src="/images/home/12-3.png" alt="">
   <img class='img3' src="/images/home/2.svg" alt="">
-  <div>
+  <div class="common-layout">
     <div>
       <p class='p1'>{{ .title | safeHTML }}</p>
       <h1>{{ .topic | safeHTML }}</h1>
@@ -43,7 +43,7 @@
   <div class="common-layout">
     <h2 class="title-black-h2">{{ .title | safeHTML }}</h2>
     <p class="title-p">{{ .content | safeHTML }}</p>
-    <div class='menu-div'>
+    <div class='menu-div common-flex-layout'>
       <ul>
         {{ range $index, $element := .children }}
         <li class='{{ if eq $index 0 }} active {{ end }} left-li' data-index='{{ $index }}'>{{ .name }}</li>
@@ -193,6 +193,21 @@
       $('.right-div').hide().eq(index).show()
     })
   }
+
+  var bindResize = function() {
+    var screenWidth = $(window).width()
+    if (screenWidth <= 768) {
+      $('.image').find('img').attr('src', "/images/home/applications2.png")
+    } 
+    $(window).resize(function() {
+      if (screenWidth <= 768) {
+        $('.image').find('img').attr('src', "/images/home/applications2.png")
+      } else {
+        $('.image').find('img').attr('src', "/images/home/applications1.png")
+      }
+    })
+  }
   bindMouseLeftLi()
+  bindResize()
 </script>
 {{ end }}

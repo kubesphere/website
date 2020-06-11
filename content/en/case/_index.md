@@ -30,7 +30,7 @@ section2:
 
     - icon: "images/case/maxnerva.jpg"
       content: "Maxnerva Technology Services, HK.0103 is affiliated and invested by Foxconn Technology Group."
-      link: ""
+      link: "maxnerva"
 
     - icon: "images/case/vng.jpg"
       content: "VNG has seen 14 years of continuous development and expansion to become one of the leading IT companies in Vietnam and Southeast Asia."
