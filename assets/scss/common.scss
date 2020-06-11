@@ -17,11 +17,21 @@ html {
 
 section {
   min-width: 1160px;
+
+  @media only screen and (max-width: $mobile-max-width) {
+    min-width: 0;
+  }
 }
 
 .common-layout {
   width: 1160px;
   margin: 0 auto;
+
+  @media only screen and (max-width: $mobile-max-width) {
+    box-sizing: border-box;
+    width: 100%;
+    padding: 0 20px;
+  }
 }
 
 .common-flex-layout {
@@ -36,15 +46,13 @@ section {
   letter-spacing: -0.11px;
   color: #ffffff;
   text-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
-}
 
-.title-center-h1 {
-  font-size: 40px;
-  line-height: 1;
-  letter-spacing: -0.11px;
-  color: #ffffff;
-  text-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
-  text-align: center;
+  @media only screen and (max-width: $mobile-max-width) {
+    font-size: 28px;
+    font-weight: bold;
+    line-height: 1.29;
+    letter-spacing: -0.08px;
+  }
 }
 
 .title-black-h2 {
@@ -53,6 +61,11 @@ section {
   font-weight: bold;
   line-height: 52px;
   color: #171c34;
+
+  @media only screen and (max-width: $mobile-max-width) {
+    font-size: 24px;
+    line-height: 1.17;
+  }
 }
 
 .title-white-h2 {
@@ -61,6 +74,11 @@ section {
   font-weight: bold;
   line-height: 1.63;
   color: #ffffff;
+
+  @media only screen and (max-width: $mobile-max-width) {
+    font-size: 24px;
+    line-height: 1.17;
+  }
 }
 
 .title-black-h3 {
@@ -84,6 +102,10 @@ section {
   line-height: 2;
   text-align: center;
   color: #919aa3;
+
+  @media only screen and (max-width: $mobile-max-width) {
+    line-height: 1.75;
+  }
 }
 
 .common-p {

@@ -1,18 +1,20 @@
+@import 'variables';
+
 .footer {
   width: 100%;
   padding: 118px 0;
 
-  & > .footer-main {
-    width: 1160px;
-    margin: 0 auto;
+  @media only screen and (max-width: $mobile-max-width) {
+    padding-top: 50px;
+  }
 
+  & > .footer-main {
     & > .up-main {
       & > div {
         display: inline-block;
         vertical-align: top;
       }
       .left-div {
-        width: 360px;
 
         .foot-logo {
           height: 32px;
@@ -25,6 +27,10 @@
           font-size: 16px;
           line-height: 1.38;
           color: #919aa3;
+
+          @media only screen and (max-width: $mobile-max-width) {
+            width: auto;
+          }
         }
 
         div {
@@ -60,6 +66,18 @@
               box-shadow: none;
             }
           }
+
+          @media only screen and (max-width: $mobile-max-width) {
+            width: 326px;
+
+            input {
+              width: 196px;
+            }
+
+            button {
+              width: 90px;
+            }
+          }
         }
         #message {
           color: red;
@@ -67,14 +85,21 @@
         }
       }
       .right-div {
-        width: 720px;
         margin-left: 60px;
+
+        @media only screen and (max-width: $mobile-max-width) {
+          margin-left: 0px;
+        }
 
         & > ul {
           li {
             display: inline-block;
             margin-right: 60px;
             vertical-align: top;
+
+            @media only screen and (max-width: $mobile-max-width) {
+              margin-top: 20px;
+            }
           }
           li:last-child {
             margin-right: 0;
