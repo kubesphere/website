@@ -39,6 +39,7 @@
           @media only screen and (max-width: $mobile-max-width) {
             height: auto;
             padding: 24px;
+            overflow: hidden;
           }
 
           .left-img {

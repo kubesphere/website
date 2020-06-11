@@ -176,6 +176,22 @@
             background-image: url("/images/footer/github-hover.svg");
           }
         }
+
+        .medium-a {
+          background-image: url("/images/footer/medium.svg");
+
+          &:hover {
+            background-image: url("/images/footer/medium-hover.svg");
+          }
+        }
+
+        .linkedin-a {
+          background-image: url("/images/footer/linkedin.svg");
+
+          &:hover {
+            background-image: url("/images/footer/linkedin-hover.svg");
+          }
+        }
       }
 
       .p1 {
