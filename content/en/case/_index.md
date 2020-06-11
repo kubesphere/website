@@ -41,6 +41,20 @@ section3:
   tip: ALL
   icon: images/common/hexagon.svg
   caseType:
+    - name: 'E-Business'
+      children:
+        - name: 'aqara'
+          icon: 'images/case/section6-aqara.jpg'
+        - name: 'benlai'
+          icon: 'images/case/section6-benlai.jpg'
+
+    - name: 'Financial'
+      children:
+        - name: 'huaxia-bank'
+          icon: 'images/case/section6-huaxia-bank.jpg'
+        - name: 'webank'
+          icon: 'images/case/section6-webank.jpg'
+
     - name: 'IT Service'
       children:
         - name: 'anchnet'
@@ -72,20 +86,6 @@ section3:
       children:
         - name: 'sina'
           icon: 'images/case/section6-sina.jpg'
-
-    - name: 'Financial'
-      children:
-        - name: 'huaxia-bank'
-          icon: 'images/case/section6-huaxia-bank.jpg'
-        - name: 'webank'
-          icon: 'images/case/section6-webank.jpg'
-
-    - name: 'E-Business'
-      children:
-        - name: 'aqara'
-          icon: 'images/case/section6-aqara.jpg'
-        - name: 'benlai'
-          icon: 'images/case/section6-benlai.jpg'
 
 
   bottomContent:
