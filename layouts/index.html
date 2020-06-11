@@ -2,18 +2,18 @@
 {{ $data := index .Site.Data .Site.Language.Lang }}
 <section class='section-1'>
   {{ with .Params.section1 }}
-  <img class='img1' src="images/home/52.svg" alt="">
-  <img class='img2' src="/images/home/12-3.svg" alt="">
+  <img class='img1' src="images/home/bg.jpg" alt="">
+  <img class='img2' src="/images/home/12-3.png" alt="">
   <img class='img3' src="/images/home/2.svg" alt="">
-  <div>
+  <div class="common-layout">
     <div>
-      <p class='p1'>{{ .title }}</p>
-      <h1>{{ .topic }}</h1>
-      <p class='p2'>{{ .content }}</p>
-      <button class='btn1'>{{ .btnContent1 }}</button>
-      <button class='btn2'>{{ .btnContent2 }}</button>
+      <p class='p1'>{{ .title | safeHTML }}</p>
+      <h1>{{ .topic | safeHTML }}</h1>
+      <p class='p2'>{{ .content | safeHTML }}</p>
+      <a href="{{ .downloadLink1 }}"><button class='btn1 common-btn'>{{ .btnContent1 }}</button></a>
+      <a href="{{ .downloadLink2 }}"><button class='btn2 common-btn'>{{ .btnContent2 }}</button></a>
     </div>
-    <img class='img1' src="/images/home/53.jpg" alt="">
+    <img class='img1' src="/images/home/53.png" alt="">
     <img class='img2' src="/images/home/left.svg" alt="">
     <img class='img4' src="/images/home/46.svg" alt="">
   </div>
@@ -22,15 +22,15 @@
 
 <section class="section-2">
   {{ with .Params.section2 }}
-  <div>
-    <h2>{{ .title }}</h2>
-    <p>{{ .content }}</p>
+  <div class="common-layout">
+    <h2 class="title-black-h2">{{ .title | safeHTML }}</h2>
+    <p class="title-p">{{ .content | safeHTML }}</p>
     <ul>
       {{ range .children }}
-      <li>
+      <li class="common-top-inline">
         <img src="{{ .icon }}" alt="">
-        <h3>{{ .name }}</h3>
-        <p>{{ .content }}</p>
+        <h3 class="title-black-h3 ">{{ .name | safeHTML }}</h3>
+        <p class="common-center-p">{{ .content | safeHTML }}</p>
       </li>
       {{ end }}
     </ul>
@@ -40,10 +40,10 @@
 
 <section class='section-3'>
   {{ with .Params.section3 }}
-  <div>
-    <h2>{{ .title }}</h2>
-    <p>{{ .content }}</p>
-    <div class='menu-div'>
+  <div class="common-layout">
+    <h2 class="title-black-h2">{{ .title | safeHTML }}</h2>
+    <p class="title-p">{{ .content | safeHTML }}</p>
+    <div class='menu-div common-flex-layout'>
       <ul>
         {{ range $index, $element := .children }}
         <li class='{{ if eq $index 0 }} active {{ end }} left-li' data-index='{{ $index }}'>{{ .name }}</li>
@@ -53,11 +53,11 @@
       <div class='right-div'>
         <div class='top'>
           <h3>💁🏼‍♂️{{ .name }}</h3>
-          <p>{{ .content }}</p>
+          <p>{{ .content | safeHTML }}</p>
         </div>
         <ul>
           {{ range .children }}
-          <li>{{ .content }}</li>
+          <li>{{ .content | safeHTML }}</li>
           {{ end }}
         </ul>
         <img src="{{ .icon | absURL }}" alt="">
@@ -71,19 +71,19 @@
 
 <section class='section-4'>
   {{ with .Params.section4 }}
-  <img class='bg-1' src="/images/home/section4-left.svg" alt="">
+  <img class='bg-1' src="/images/home/section4-left.png" alt="">
   <img class='bg-2' src="/images/home/section4-right.svg" alt="">
-  <div>
+  <div class="common-layout">
     <div>
       <h2>{{ .title }}</h2>
-      <p>{{ .content | safeHTML }}</p>
+      <p class="common-p">{{ .content | safeHTML }}</p>
       <ul>
         {{ range .children }}
         <li>
           <img src="{{ .icon }}" alt="">
           <div>
-            <h3>{{ .name }}</h3>
-            <p>{{ .content}}</p>
+            <h3 class="title-white-h3">{{ .name }}</h3>
+            <p class="common-p">{{ .content | safeHTML }}</p>
           </div>
         </li>
         {{ end }}
@@ -96,13 +96,17 @@
         <div>
           <div class='top-line {{ .color }}'></div>
           <div class='img-span-div'>
-            <img src="{{ .icon }}" alt="">
-            <span>{{ .name }}</span>
+            <img class="common-middle-inline" src="{{ .icon }}" alt="">
+            <span class="common-middle-inline">{{ .name }}</span>
           </div>
-          <p>{{ .content }}</p>
+          <p class="common-p">{{ .content | safeHTML }}</p>
         </div>
         <div class='middle-line'></div>
-        <a href="">Read More →</a>
+        {{ if .check }}
+        <span class="common-green-a">{{ i18n "Coming Soon" }} →</span>
+        {{ else }}
+        <a class="common-green-a" href="{{ .link }}" target="_blank">{{ i18n "Read More" }} →</a>
+        {{ end }}
       </li>
       {{ end }}
     </ul>
@@ -112,12 +116,12 @@
 
 <section class='section-5'>
   {{ with .Params.section5 }}
-  <div>
-    <h2>{{ .title }}</h2>
+  <div class="common-layout">
+    <h2 class="title-black-h2">{{ .title }}</h2>
     <div>
       {{ with .frontEnd }}
-      <div class='front-div'>
-        <h3>{{ .title }}</h3>
+      <div class='front-div common-top-inline'>
+        <h3 class="title-black-h3">{{ .title }}</h3>
         <p>{{ .project }}</p>
         <ul>
           {{ range .children }}
@@ -129,8 +133,8 @@
       </div>
       {{ end }}
       {{ with .backEnd }}
-      <div class='back-div'>
-        <h3>{{ .title}}</h3>
+      <div class='back-div common-top-inline'>
+        <h3 class="title-black-h3">{{ .title}}</h3>
         <div class='group'>
           <p>{{ .project }}</p>
           <ul>
@@ -140,8 +144,8 @@
           </ul>
         </div>
         <div class='image'>
-          <img src="/images/home/applications.jpg" alt="">
-          <img src="/images/home/applications.jpg" alt="">
+          <img src="/images/home/applications.png" alt="">
+          <img src="/images/home/applications.png" alt="">
         </div>
       </div>
       {{ end }}
@@ -152,10 +156,10 @@
 
 <section class='section-6'>
   {{ with .Params.section6 }}
-  <div>
-    <h2>{{ .title }}</h2>
-    <p>{{ .content | safeHTML }}</p>
-    <ul>
+  <div class="common-layout">
+    <h2 class="title-black-h2">{{ .title }}</h2>
+    <p class="title-p">{{ .content | safeHTML }}</p>
+    <ul class="common-flex-layout">
       {{ range .children }}
       <li>
         <img src="{{ .icon }}" alt="">
@@ -163,11 +167,16 @@
       {{ end }}
     </ul>
     <div>
-      <button>{{ .btnContent }}</button>
+      <a href="{{ .btnLink }}" target="_blank"><button>{{ .btnContent }}</button></a>
     </div>
     <div class='link-div'>
-      <a href="{{ .link }}">{{ .linkContent }}</a>
+      <a class="common-black-a" href="{{ .link }}" target="_blank">{{ .linkContent }}</a>
     </div>
+    <a class='join-div' href="{{ .joinLink }}" target="_blank">
+      <p class='p1'>{{ .joinTitle }}</p>
+      <p class='p2'>{{ .joinContent }}</p>
+      <img src="/images/home/join-right.svg" alt="">
+    </a>
     <img class='bottom-img' src="{{ .image }}" alt="">
   </div>
   <img class='bg-1' src="/images/home/section6-left.svg" alt="">
@@ -184,6 +193,21 @@
       $('.right-div').hide().eq(index).show()
     })
   }
+
+  var bindResize = function() {
+    var screenWidth = $(window).width()
+    if (screenWidth <= 768) {
+      $('.image').find('img').attr('src', "/images/home/applications2.png")
+    } 
+    $(window).resize(function() {
+      if (screenWidth <= 768) {
+        $('.image').find('img').attr('src', "/images/home/applications2.png")
+      } else {
+        $('.image').find('img').attr('src', "/images/home/applications1.png")
+      }
+    })
+  }
   bindMouseLeftLi()
+  bindResize()
 </script>
 {{ end }}

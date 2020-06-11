@@ -1,0 +1,144 @@
+@import 'variables';
+@import 'mixin';
+
+html {
+  background-color: #ffffff;
+}
+
+.section-1 {
+  position: relative;
+  height: 350px;
+
+  .title-div {
+    position: absolute;
+    width: 1160px;
+    top: 129px;
+    left: 50%;
+    transform: translateX(-50%);
+
+    h1 {
+      width: 1060px;
+    }
+
+    p {
+      width: 1060px;
+      margin-top: 25px;
+      letter-spacing: -0.04px;
+      color: #ffffff;
+      text-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
+    }
+  }
+}
+
+.section-2 {
+  background-color: #f5f8f9;
+  padding-top: 60px;
+  & > div {
+    position: relative;
+
+    h2 {
+      width: 760px;
+      margin: 0 auto 45px;
+      text-align: center;
+    }
+
+    & > ul {
+      & > li:nth-child(2n) {
+        flex-direction: row-reverse;
+      }
+      & > li {
+        align-items: center;
+        margin-bottom: 20px;
+
+        & > div {
+          width: 460px;
+
+          p {
+            margin-top: 24px;
+            opacity: 0.9;
+            color: #3d3e49;
+          }
+
+          li {
+            position: relative;
+            margin-top: 25px;
+            padding-left: 14px;
+
+            &::before {
+              content: '';
+              position: absolute;
+              display: block;
+              width: 6px;
+              height: 6px;
+              top: 5px;
+              left: 0;
+              border-radius: 50%;
+              background-color: #00a971;
+            }
+
+            span {
+              font-weight: 600;
+            }
+          }
+        }
+
+        img {
+          width: 660px;
+        }
+      }
+    }
+  }
+}
+
+.section-3 {
+  position: relative;
+  padding-top: 80px;
+  text-align: center;
+  overflow: hidden;
+
+  .bg-left {
+    position: absolute;
+    top: 242px;
+    right: 50%;
+    transform: translateX(-200px);
+  }
+
+  .bg-right {
+    position: absolute;
+    top: 200px;
+    left: 50%;
+    transform: translateX(180px);
+  }
+
+  & > div {
+    position: relative;
+    img {
+      width: 955px;
+      margin-top: 40px;
+    }
+  
+    p {
+      margin-top: 56px;
+      letter-spacing: -0.04px;
+      color: #31383e;
+    }
+  
+    button {
+      width: 263px;
+      height: 56px;
+      margin-top: 20px;
+      letter-spacing: -0.04px;
+      color: #ffffff;
+      font-size: 16px;
+      border-radius: 28px;
+      cursor: pointer;
+      box-shadow: 0 10px 50px 0 rgba(34, 43, 62, 0.1), 0 8px 16px 0 rgba(33, 43, 61, 0.2), 0 10px 50px 0 rgba(34, 43, 62, 0.1);
+      background-image: linear-gradient(to bottom, rgba(85, 188, 138, 0), rgba(85, 188, 138, 0.1) 97%), linear-gradient(to bottom, #55bc8a, #55bc8a);
+      
+      &:hover {
+        box-shadow: none;
+      }
+    }
+  }
+
+}

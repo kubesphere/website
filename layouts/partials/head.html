@@ -4,14 +4,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
     <meta name="description" content="{{ with .Params.Description }}{{ . }}{{ else }}{{ with .Site.Params.description }}{{ . }}{{ end }}{{ end }}">
-
-    <link rel="stylesheet" href="/fonts/Roboto/stylesheet.css">
-
-    {{ $common := resources.Get "scss/common.scss" | toCSS | minify | fingerprint }}
-    <link rel="stylesheet" href="{{ $common.Permalink }}">
-
+    <meta name="keywords" content="{{ with .Params.Keywords }}{{ range $i, $e := . }}{{ if $i }} {{ end }}{{ $e }}{{ end }}{{ else }}{{ with .Site.Params.Keywords }}{{ . }}{{ end }}{{ end }}">
+    
     {{- partial "css.html" . -}}
 
     <script src="{{ "js/jquery-3.5.0.min.js" | relURL }}"></script>
+    <script src='{{ "js/jquery.modal.min.js" | relURL }}'></script>
 
 </head>

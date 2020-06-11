@@ -1,8 +1,6 @@
 @import "variables";
-$mobile-max-width: 768px;
 
 .md-body {
-  font-family: $font-family-id;
   font-size: 16px;
   line-height: 2;
   word-wrap: break-word;
@@ -199,6 +197,14 @@ $mobile-max-width: 768px;
 .md-body ul,
 .md-body ol {
   padding-left: 2em;
+}
+
+.md-body ul li {
+  list-style: disc;
+}
+
+.md-body ol li {
+  list-style: decimal;
 }
 
 .md-body ul.no-list,

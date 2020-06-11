@@ -1,18 +1,20 @@
+@import 'variables';
+
 .footer {
   width: 100%;
   padding: 118px 0;
 
-  & > .footer-main {
-    width: 1160px;
-    margin: 0 auto;
+  @media only screen and (max-width: $mobile-max-width) {
+    padding-top: 50px;
+  }
 
+  & > .footer-main {
     & > .up-main {
       & > div {
         display: inline-block;
         vertical-align: top;
       }
       .left-div {
-        width: 360px;
 
         .foot-logo {
           height: 32px;
@@ -25,6 +27,10 @@
           font-size: 16px;
           line-height: 1.38;
           color: #919aa3;
+
+          @media only screen and (max-width: $mobile-max-width) {
+            width: auto;
+          }
         }
 
         div {
@@ -39,7 +45,7 @@
             width: 209px;
             height: 20px;
             font-size: 14px;
-            margin-left: 17px;
+            margin-left: 16px;
             color: #ccd3db;
             border: none;
             background-color: #f5f8f9;
@@ -60,17 +66,40 @@
               box-shadow: none;
             }
           }
+
+          @media only screen and (max-width: $mobile-max-width) {
+            width: 326px;
+
+            input {
+              width: 196px;
+            }
+
+            button {
+              width: 90px;
+            }
+          }
+        }
+        #message {
+          color: red;
+          margin-left: 16px;
         }
       }
       .right-div {
-        width: 720px;
         margin-left: 60px;
+
+        @media only screen and (max-width: $mobile-max-width) {
+          margin-left: 0px;
+        }
 
         & > ul {
           li {
             display: inline-block;
             margin-right: 60px;
             vertical-align: top;
+
+            @media only screen and (max-width: $mobile-max-width) {
+              margin-top: 20px;
+            }
           }
           li:last-child {
             margin-right: 0;
@@ -88,7 +117,6 @@
           display: block;
           line-height: 2;
           color: #919aa3;
-          font-family: $font-family-id;
         }
       }
     }
@@ -99,8 +127,54 @@
 
       .img-div {
         font-size: 0;
-        img {
+
+        a {
+          display: inline-block;
+          width: 34px;
+          height: 34px;
           margin: 0 6px;
+          background-position: center;
+          background-repeat: no-repeat;
+        }
+
+        .facebook-a {
+          background-image: url("/images/footer/facebook.svg");
+
+          &:hover {
+            background-image: url("/images/footer/facebook-hover.svg");
+          }
+        }
+
+        .youtube-a {
+          background-image: url("/images/footer/youtube.svg");
+
+          &:hover {
+            background-image: url("/images/footer/youtube-hover.svg");
+          }
+        }
+
+        .slack-a {
+          background-image: url("/images/footer/slack.svg");
+
+          &:hover {
+            background-image: url("/images/footer/slack-hover.svg");
+          }
+        }
+
+        .twitter-a {
+          background-image: url("/images/footer/twitter.svg");
+
+          &:hover {
+            background-image: url("/images/footer/twitter-hover.svg");
+          }
+        }
+
+        .github-a {
+          background-image: url("/images/footer/github.svg");
+
+          &:hover {
+            background-image: url("/images/footer/github-hover.svg");
+          }
         }
       }
 

@@ -4,13 +4,6 @@
 .section-1 {
   position: relative;
   height: 300px;
-  min-width: 1160px;
-
-  img {
-    width: 100%;
-    height: 100%;
-    object-fit:cover;
-  }
 
   .title-div {
     position: absolute;
@@ -20,31 +13,22 @@
     text-align: center;
   }
 
-  h1 {
-    font-size: 40px;
-    font-weight: bold;
-    line-height: 1;
-    letter-spacing: -0.11px;
-    color: #ffffff;
-  }
   p {
     margin-top: 12px;
-    font-size: 16px;
-    line-height: 1.5;
     letter-spacing: -0.04px;
     color: #ffffff;
   }
 }
 
 .section-2 {
+  position: relative;
   .cases-ul {
     display: flex;
     flex-wrap: wrap ;
     justify-content: space-between;
     position: relative;
     top: -60px;
-    width: 1160px;
-    margin: 0 auto;
+    z-index: 2;
 
     li {
       width: 373px;
@@ -63,11 +47,11 @@
       }
 
       p {
-        @include common-p-style;
         width: 293px;
         height: 128px;
         margin: 0 auto;
         overflow: hidden;
+        text-align: left;
       }
 
       div {
@@ -77,16 +61,20 @@
         font-size: 16px;
         font-weight: 600;
         line-height: 1.5;
-
-        a {
-          color: #00a971;
-        }
       }
     }
+  }
+
+  & > img {
+    position: absolute;
+    bottom: 30px;
+    right: 50%;
+    transform: translateX(-520px);
   }
 }
 
 .section-3 {
+  position: relative;
   background-image: url('/images/case/oval-4.svg');
   background-position: center top;
   background-repeat: no-repeat;
@@ -95,12 +83,6 @@
   h2 {
     margin-bottom: 40px;
     text-align: center;
-    height: 52px;
-    text-shadow: 0 4px 8px rgba(35, 45, 65, 0.1);
-    font-size: 32px;
-    font-weight: bold;
-    line-height: 1.63;
-    color: #171c34;
   }
 
   & > div {
@@ -115,17 +97,24 @@
       background-color: #ffffff;
 
       li {
-        margin-left: 60px;
+        padding: 8px 16px;
+        border-radius: 20px;
+        margin-left: 30px;
         height: 24px;
         font-size: 16px;
         line-height: 1.5;
         color: #36435c;
         cursor: pointer;
+        transition: all ease 0.2s;
+
+        &:hover {
+          box-shadow: 0 8px 16px 0 rgba(101, 193, 148, 0.2), 0 0 50px 0 rgba(101, 193, 148, 0.1);
+          background-color: #55bc8a;
+          color: #ffffff;
+        }
       }
 
       .active {
-        padding: 8px 16px;
-        border-radius: 20px;
         box-shadow: 0 8px 16px 0 rgba(101, 193, 148, 0.2), 0 0 50px 0 rgba(101, 193, 148, 0.1);
         background-color: #55bc8a;
         color: #ffffff;
@@ -133,8 +122,10 @@
     }
 
     #case-children {
+      position: relative;
+      z-index: 2;
       display: flex;
-      flex-wrap: wrap ;
+      flex-wrap: wrap;
       li {
         margin-top: 20px;
         margin-right: 21px;
@@ -152,5 +143,19 @@
         box-shadow: 0 4px 8px 0 rgba(36, 46, 66, 0.06), 0 8px 16px 0 rgba(36, 46, 66, 0.05);
       }
     }
+
+    & > p {
+      margin-top: 40px;
+      text-align: center;
+    }
+  }
+
+
+  & > img {
+    width: 152px;
+    position: absolute;
+    bottom: -20px;
+    left: 50%;
+    transform: translateX(500px);
   }
 }

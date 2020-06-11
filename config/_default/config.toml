@@ -10,6 +10,21 @@ baseURL = "https://hugo-first.netlify.app"
 [params]
 logo = "images/logo.svg"
 
+title = "KubeSphere | Enterprise container platform, built on Kubernetes"
+description = "KubeSphere is an open source container platform based on Kubernetes for enterprise app development and deployment, suppors installing anywhere from on-premise datacenter to any cloud to edge."
+keywords = "KubeSphere, Kubernetes Dashboard,  Install Enterprise Kubernetes, DevOps, container platform"
+
+mailchimpSubscribeUrl = "https://gmail.us18.list-manage.com/subscribe/post?u=553ce463e00897cc36ed80866&id=f4b5009074"
+
+gcs_engine_id = "018068616810858123755%3Apb1pt8sx6ve"
+
+githubLink = "https://github.com/kubesphere/kubesphere"
+slackLink = "https://join.slack.com/t/kubesphere/shared_invite/enQtNTE3MDIxNzUxNzQ0LTZkNTdkYWNiYTVkMTM5ZThhODY1MjAyZmVlYWEwZmQ3ODQ1NmM1MGVkNWEzZTRhNzk0MzM5MmY4NDc3ZWVhMjE"
+youtubeLink = "https://www.youtube.com/channel/UCyTdUQUYjf7XLjxECx63Hpw"
+facebookLink = ""
+twitterLink = "https://twitter.com/KubeSphere"
+
+
 [languages.en]
 contentDir = "content/en"
 weight = 1
@@ -28,51 +43,21 @@ hasChildren = true
 
   [[languages.en.menu.main]]
   parent = "Scenario"
-  name = "Multi-cluster"
-  URL = "multi-cluster"
-  weight = 1
-
-  [[languages.en.menu.main]]
-  parent = "Scenario"
   name = "DevOps"
-  URL = "devOps"
-  weight = 2
-
-  [[languages.en.menu.main]]
-  parent = "Scenario"
-  name = "Network"
-  URL = "network"
-  weight = 3
+  URL = "dev-ops"
+  weight = 1
 
   [[languages.en.menu.main]]
   parent = "Scenario"
   name = "Service Mesh"
   URL = "service-mesh"
-  weight = 4
-
-  [[languages.en.menu.main]]
-  parent = "Scenario"
-  name = "Storage"
-  URL = "storage"
-  weight = 5
-
-  [[languages.en.menu.main]]
-  parent = "Scenario"
-  name = "AppStore"
-  URL = "app-store"
-  weight = 6
-
-  [[languages.en.menu.main]]
-  parent = "Scenario"
-  name = "Multi-tenancy"
-  URL = "multi-tenancy"
-  weight = 7
+  weight = 2
 
   [[languages.en.menu.main]]
   parent = "Scenario"
   name = "Observability"
   URL = "observability"
-  weight = 8
+  weight = 3
 
 [[languages.en.menu.main]]
 weight = 3
@@ -106,7 +91,7 @@ hasChildren = true
 [[languages.en.menu.main]]
 weight = 4
 name = "Documentation"
-URL = "docs"
+URL = "https://kubesphere.io/docs/"
 
 [[languages.en.menu.main]]
 weight = 5
@@ -148,45 +133,15 @@ hasChildren = true
 
   [[languages.zh.menu.main]]
   parent = "Scenario"
-  name = "Multi-cluster"
-  URL = "multi-cluster"
-  weight = 1
-
-  [[languages.zh.menu.main]]
-  parent = "Scenario"
   name = "DevOps"
   URL = "devOps"
   weight = 2
 
   [[languages.zh.menu.main]]
   parent = "Scenario"
-  name = "Network"
-  URL = "network"
-  weight = 3
-
-  [[languages.en.menu.main]]
-  parent = "Scenario"
   name = "Service Mesh"
   URL = "service-mesh"
   weight = 4
-
-  [[languages.en.menu.main]]
-  parent = "Scenario"
-  name = "Storage"
-  URL = "storage"
-  weight = 5
-
-  [[languages.zh.menu.main]]
-  parent = "Scenario"
-  name = "AppStore"
-  URL = "app-store"
-  weight = 6
-
-  [[languages.zh.menu.main]]
-  parent = "Scenario"
-  name = "Multi-tenancy"
-  URL = "multi-tenancy"
-  weight = 7
 
   [[languages.zh.menu.main]]
   parent = "Scenario"
@@ -256,118 +211,118 @@ name = "Community"
 weight = 3
 contentDir = "content/tr"
 languageCode = "tr-TR"
-languageName = "Türk"
+languageName = "Türkçe"
 
 [[languages.tr.menu.main]]
 weight = 1
-name = "Why KubeSphere"
+name = "Neden KubeSphere"
 URL = "reason"
 
 [[languages.tr.menu.main]]
 weight = 2
-name = "Scenario"
+name = "Senaryolar"
 hasChildren = true
 
   [[languages.tr.menu.main]]
-  parent = "Scenario"
+  parent = "Senaryolar"
   name = "Multi-cluster"
   URL = "multi-cluster"
   weight = 1
 
   [[languages.tr.menu.main]]
-  parent = "Scenario"
+  parent = "Senaryolar"
   name = "DevOps"
   URL = "devOps"
   weight = 2
 
   [[languages.tr.menu.main]]
-  parent = "Scenario"
+  parent = "Senaryolar"
   name = "Network"
   URL = "network"
   weight = 3
 
   [[languages.tr.menu.main]]
-  parent = "Scenario"
+  parent = "Senaryolar"
   name = "Service Mesh"
   URL = "service-mesh"
   weight = 4
 
   [[languages.tr.menu.main]]
-  parent = "Scenario"
+  parent = "Senaryolar"
   name = "Storage"
   URL = "storage"
   weight = 5
 
   [[languages.tr.menu.main]]
-  parent = "Scenario"
+  parent = "Senaryolar"
   name = "AppStore"
   URL = "app-store"
   weight = 6
 
   [[languages.tr.menu.main]]
-  parent = "Scenario"
+  parent = "Senaryolar"
   name = "Multi-tenancy"
   URL = "multi-tenancy"
   weight = 7
 
   [[languages.tr.menu.main]]
-  parent = "Scenario"
+  parent = "Senaryolar"
   name = "Observability"
   URL = "observability"
   weight = 8
 
 [[languages.tr.menu.main]]
 weight = 3
-name = "Resources"
+name = "Kaynaklar"
 hasChildren = true
 
   [[languages.tr.menu.main]]
-  parent = "Resources"
-  name = "Open Source Projects"
+  parent = "Kaynaklar"
+  name = "Open Source Projeler"
   URL = "projects"
   weight = 1
 
   [[languages.tr.menu.main]]
-  parent = "Resources"
+  parent = "Kaynaklar"
   name = "KubeCon & QCon"
   URL = "conferences"
   weight = 2
 
   [[languages.tr.menu.main]]
-  parent = "Resources"
-  name = "Technology Blogs"
+  parent = "Kaynaklar"
+  name = "Blog Yazıları"
   URL = "blogs"
   weight = 3
 
   [[languages.tr.menu.main]]
-  parent = "Resources"
-  name = "Video Resources"
+  parent = "Kaynaklar"
+  name = "Videolar"
   URL = "videos"
   weight = 4
 
 [[languages.tr.menu.main]]
 weight = 4
-name = "Documentation"
+name = "Dokümantasyon"
 URL = "docs"
 
 [[languages.tr.menu.main]]
 weight = 5
 hasChildren = true
-name = "Community"
+name = "Topluluk"
     [[languages.tr.menu.main]]
-    parent = "Community"
+    parent = "Topluluk"
     name = "Contribution"
     URL = "contribution"
     weight = 1
 
     [[languages.tr.menu.main]]
-    parent = "Community"
+    parent = "Topluluk"
     name = "Case Studies"
     URL = "case"
     weight = 2
 
     [[languages.tr.menu.main]]
-    parent = "Community"
-    name = "Partner"
+    parent = "Topluluk"
+    name = "Partnerler"
     URL = "partner"
     weight = 3

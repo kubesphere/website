@@ -1,5 +1,24 @@
+<link rel="stylesheet" href="/fonts/Roboto/stylesheet.css">
+<link rel="stylesheet" href="/fonts/ProximaNova/stylesheet.css">
+<link rel="stylesheet" href="/css/jquery.modal.min.css">
+
+{{ $common := resources.Get "scss/common.scss" | toCSS | minify | fingerprint }}
+<link rel="stylesheet" href="{{ $common.Permalink }}">
+
+{{ if eq .Site.Language.Lang "tr" }}
+{{ $footer := resources.Get "scss/footer-tr.scss" | toCSS | minify | fingerprint }}
+<link rel="stylesheet" href="{{ $footer.Permalink }}">
+{{ end }}
+
+{{ if .Params.minCss }}
+{{ range (split .Params.minCss ",")}}
+<link rel="stylesheet" href="{{ . | absURL }}">
+{{ end }}
+{{ end }}
+
 {{ if .Params.css}}
 {{ $style := resources.Get .Params.css | toCSS | minify | fingerprint }}
 <link rel="stylesheet" href="{{ $style.Permalink }}">
 {{ end }}
+
 

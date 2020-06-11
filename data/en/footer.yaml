@@ -3,49 +3,52 @@ footer:
     - title: Products
       list:
         - content: KubeSphere
-          link: ''
+          link: 'https://github.com/kubesphere/kubesphere'
 
         - content: Porter
-          link: ''
-        
-        - content: OpenPitrix
-          link: ''
-
-        - content: Fluentbit-Operator
-          link: ''
+          link: 'https://github.com/kubesphere/porter'
 
         - content: KubeKey
-          link: ''
+          link: 'https://github.com/kubesphere/kubekey'
+
+        - content: OpenPitrix
+          link: 'https://github.com/openpitrix/openpitrix'
+
+        - content: Fluentbit-Operator
+          link: 'https://github.com/kubesphere/fluentbit-operator'
 
         - content: Notification Manager
-          link: ''
+          link: 'https://github.com/kubesphere/notification-manager'
+
     - title: Resources
       list:
         - content: Projects
-          link: 
+          link: projects
         - content: Blogs
-          link: 
+          link: blogs
         - content: KubeCon & QCon
-          link: 
+          link: conferences
         - content: Videos
-          link: 
+          link: videos
+
     - title: KubeSphere Docs
       list:
         - content: Introduction
-          link: ''
+          link: 'https://kubesphere.io/docs/'
         - content: Installation
-          link: ''
+          link: 'https://kubesphere.io/docs/installation/intro/'
         - content: Tutorial
-          link: ''
+          link: 'https://kubesphere.io/docs/quick-start/admin-quick-start/'
         - content: API Documentation
-          link: ''
+          link: 'https://kubesphere.io/docs/api-reference/api-docs/'
+
     - title: Community
       list:
         - content: Contribution
-          link: 
+          link: contribution
         - content: Case Studies
-          link:
+          link: case
         - content: Partners
-          link: 
+          link: partner
         - content: Roadmap
-          link: 
+          link: https://github.com/kubesphere/kubesphere/blob/master/docs/roadmap.md

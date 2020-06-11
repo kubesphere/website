@@ -1,51 +1,51 @@
 footer:
   list:
-    - title: 
+    - title: Products
       list:
-        - content: 
+        - content: KubeSphere
           link: ''
 
-        - content: 
+        - content: Porter
           link: ''
         
-        - content: 
+        - content: OpenPitrix
           link: ''
 
-        - content: 
+        - content: Fluentbit-Operator
           link: ''
 
-        - content: 
+        - content: KubeKey
           link: ''
 
-        - content: 
+        - content: Notification Manager
           link: ''
-    - title: 
+    - title: Kaynaklar
       list:
-        - content: 
+        - content: Projeler
           link: 
-        - content: 
+        - content: Blog Yazıları
           link: 
-        - content: 
+        - content: KubeCon & QCon
           link: 
-        - content: 
+        - content: Videolar
           link: 
-    - title: 
+    - title: KubeSphere Dokümantasyon
       list:
-        - content: 
+        - content: Giriş/Önsöz
           link: ''
-        - content: 
+        - content: Kurulum
           link: ''
-        - content: 
+        - content: Eğitim
           link: ''
-        - content: 
+        - content: API Dokümantasyonu
           link: ''
-    - title: 
+    - title: Topluluk
       list:
-        - content: 
+        - content: Contribution
           link: 
-        - content: 
+        - content: Müşteri Senaryoları
           link:
-        - content: 
+        - content: Partnerler
           link: 
-        - content: 
+        - content: Yol Haritası
           link: 

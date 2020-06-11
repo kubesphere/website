@@ -1,15 +1,23 @@
 <footer>
     {{ $data := index .Site.Data .Site.Language.Lang }}
     <div class="footer">
-        <div class="footer-main">
+        <div class="footer-main common-layout">
             <div class="up-main">
                 <div class="left-div">
                     <img src="{{ .Site.Params.logo | absURL }}" alt="{{ .Site.Title }}" class="foot-logo">
                     <p>{{ i18n "introduction7" }}</p>
                     <div>
-                        <input type="text" placeholder='{{ i18n "introduction6" }}'>
-                        <button>{{ i18n "introduction5" }}</button>
+                        <form 
+                            action="{{ .Site.Params.mailchimpSubscribeUrl }}" 
+                            method="post" 
+                            target="_blank" 
+                            novalidate
+                        >
+                            <input name="EMAIL" id="email-input" type="text" placeholder='{{ i18n "introduction6" }}'>
+                            <button type="submit" id="email-submit">{{ i18n "introduction5" }}</button>
+                        </form>
                     </div>
+                    <span id="message" data-message1='{{ i18n "email is required" }}' data-message2='{{ i18n "Please enter a valid email address." }}'></span>
                 </div>
                 <div class="right-div">
                     <ul>
@@ -18,7 +26,7 @@
                             <li>
                                 <div class="h3">{{ .title }}</div>
                                 {{ range .list }}
-                                <a href="{{ .link }}">{{ .content }}</a>
+                                <a href="{{ .link | absURL }}" target="_blank">{{ .content }}</a>
                                 {{ end }}
                             </li>
                         {{ end }}
@@ -28,14 +36,52 @@
             </div>
             <div class="down-main">
                 <div class='img-div'>
-                    <img src="/images/footer/facebook.svg" alt="">
-                    <img src="/images/footer/youtube.svg" alt="">
-                    <img src="/images/footer/slack.svg" alt="">
-                    <img src="/images/footer/twitter.svg" alt="">
-                    <img src="/images/footer/github.svg" alt="">
+                    <!-- <a class='facebook-a' href="" target="_blank"></a> -->
+                    <a class='youtube-a' href="{{ .Site.Params.youtubeLink }}" target="_blank"></a>
+                    <a class='slack-a' href="{{ .Site.Params.slackLink }}" target="_blank"></a>
+                    <a class='twitter-a' href="{{ .Site.Params.twitterLink }}" target="_blank"></a>
+                    <a class='github-a' href="{{ .Site.Params.githubLink }}" target="_blank"></a>
                 </div>
                 <p class='p1'>{{ i18n "introduction2" }}</p>
             </div>
         </div>
     </div>
+    
 </footer>
+
+<script>
+    var bindSubmit = function() {
+        var input = $('#email-input')
+        $('#email-submit').click(function(event) {
+            event.stopPropagation()
+            var email = input.val()
+            var message1 = $('#message').data('message1')
+            var message2 = $('#message').data('message2')
+            if (!email) {
+                event.preventDefault()
+                showMessage(message1)
+            } else if (!validateEmail(email)) {
+                event.preventDefault()
+                showMessage(message2)
+            }
+        })
+    }
+
+    var bindHideMessage = function() {
+        $(window).click(function() {
+            $('#message').hide()
+        })
+    }
+
+    var showMessage = function(message) {
+        $('#message').html(message).show()
+    }
+
+    var validateEmail = function(email) {
+        var reg = /^[A-Za-z0-9]+([_\.][A-Za-z0-9]+)*@([A-Za-z0-9\-]+\.)+[A-Za-z]{2,6}$/
+        return reg.test(email)
+    }
+
+    bindSubmit()
+    bindHideMessage()
+</script>

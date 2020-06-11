@@ -1,3 +1,5 @@
+- id: introduction1
+  translation: Technology Blogs
 - id: introduction2
   translation: KubeSphere®️ 2020 All Rights Reserved.
 - id: introduction3
@@ -17,4 +19,22 @@
 - id: introduction10
   translation: Open Source Community
 - id: introduction11
-  translation: KubeSphere is committed to the open source contribution of cloud native technology, enriching the ecology of the open source community
+  translation: KubeSphere is committed to the open source contribution of cloud native technology, enriching the ecosystem of the open source community.
+- id: introduction12
+  translation: Go to GitHub
+- id: email is required
+  translation: email is required!
+- id: Please enter a valid email address.
+  translation: Please enter a valid email address!
+- id: Demo
+  translation: Demo
+- id: demo content 1
+  translation: "1.Online experience account: demo1 / Demo123"
+- id: demo content 2
+  translation: 2.This demo account is only allowed to view parts of UI
+- id: demo content 3
+  translation: 3.It's recommended that install KubeSphere in your environment
+- id: Coming Soon
+  translation: Coming Soon
+- id: Read More
+  translation: Read More

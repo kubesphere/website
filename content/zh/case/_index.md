@@ -4,72 +4,66 @@ css: "scss/case.scss"
 
 
 section1:
-  title: User Case Studies
-  content: KubeSphere is trusted by various enterprises and organizations to the innovators driving the future of software.
+  title: 
+  content: 
   topImage: "images/case/case-top.jpg"
 
 section2:
-  tip: Read Case Study →
+  tip: 
   caseList:
     - icon: "images/case/case1.jpg"
-      content: "KubeSphere is trusted by various enterprises and organizations to the innovators driving the future
-      of software."
+      content: 
       link: ""
 
     - icon: "images/case/case2.jpg"
-      content: "KubeSphere is trusted by various enterprises and organizations to the innovators driving the future
-      of software."
+      content: 
       link: ""
 
     - icon: "images/case/case3.jpg"
-      content: "KubeSphere is trusted by various enterprises and organizations to the innovators driving the future
-      of software."
+      content: 
       link: ""
 
     - icon: "images/case/case4.jpg"
-      content: "KubeSphere is trusted by various enterprises and organizations to the innovators driving the future
-      of software."
+      content: 
       link: ""
 
     - icon: "images/case/case5.jpg"
-      content: "KubeSphere is trusted by various enterprises and organizations to the innovators driving the future
-      of software."
+      content: 
       link: ""
 
     - icon: "images/case/case6.jpg"
-      content: "KubeSphere is trusted by various enterprises and organizations to the innovators driving the future
-      of software."
+      content: 
       link: ""
 
 section3:
-  title: 'Various Industries are Powered by KubeSphere'
-  tip: ALL
+  title: 
+  tip: 全部
   caseType:
-    - name: 'Financial'
+    - name: 
       children:
-        - name: 'sina'
+        - name: 
           icon: 'images/case/v1.jpg'
-        - name: 'benlai'
+        - name: 
           icon: 'images/case/v2.jpg'
 
-    - name: 'T Service'
+    - name: 
       children:
-        - name: 'inaccel'
+        - name: 
           icon: 'images/case/v3.jpg'
-        - name: 'founder'
+        - name: 
           icon: 'images/case/v4.jpg'
 
-    - name: 'E-Business'
+    - name: 
       children:
-        - name: 'huaxia'
+        - name: 
           icon: 'images/case/v5.jpg'
-        - name: 'aqara'
+        - name: 
           icon: 'images/case/v6.jpg'
 
-    - name: 'Manufacture'
+    - name: 
       children:
-        - name: 'powersmart'
+        - name: 
           icon: 'images/case/v7.jpg'
-        - name: 'anchnet'
+        - name: 
           icon: 'images/case/v8.jpg'
 ---
