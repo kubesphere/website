@@ -272,7 +272,7 @@ section4:
         icon: 'images/contribution/group-1.png'
         content: 'You will be a public-facing community representative. We will provide you with resources to help you be successful as a speaker, or a writer.'
         link: 'https://forms.gle/akhMFSKLWgMxbHuR6'
-        linkContent: 'Become a KubeSphere Champion →'
+        linkContent: 'Become a KubeSphere Ambassador →'
 
       - title: 'Be a Contributor'
         icon: 'images/contribution/group-2.png'
