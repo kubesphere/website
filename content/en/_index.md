@@ -163,23 +163,23 @@ section6:
     - icon: /images/home/section6-anchnet.jpg
     - icon: /images/home/section6-aqara.jpg
     - icon: /images/home/section6-benlai.jpg
-    - icon: /images/home/section6-china-mobile.jpg
+    - icon: /images/home/section6-cmft.jpg
     - icon: /images/home/section6-extreme-vision.jpg
     - icon: /images/home/section6-huaxia-bank.jpg
     - icon: /images/home/section6-maxnerva.jpg
-    - icon: /images/home/section6-mile-works.svg
-    - icon: /images/home/section6-yiliu.jpg
+    - icon: /images/home/section6-inaccel.jpg
     - icon: /images/home/section6-powersmart.jpg
-    - icon: /images/home/section6-wisdom-world.jpg
     - icon: /images/home/section6-sina.jpg
     - icon: /images/home/section6-softtek.jpg
-    - icon: /images/home/section6-webank.jpg
     - icon: /images/home/section6-vng.jpg
+    - icon: /images/home/section6-webank.jpg
+    - icon: /images/home/section6-wisdom-world.jpg
+    - icon: /images/home/section6-yiliu.jpg
 
   btnContent: Case Studies
   btnLink: case
   link: mailto:kubesphere@gmail.com
-  linkContent: Want your logo up there? Just send an email to kubesphere@gmail.com
+  linkContent: Want to join user community and put your logo up there? Send an email to kubesphere@gmail.com
   joinTitle: Join the Revolution, Partner with KubeSphere
   joinContent: We look forward to your joining KubeSphere partner program to improve both ecosystems and grow your business.
   joinLink: partner

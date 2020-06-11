@@ -30,7 +30,7 @@ section3:
       link: "request"
 
     - title: "Technology"
-      content: Technology Partners offer a hardware platform, cloud service or software application that integrates with KubeSphere, based on technical collaboration or joint solution. If you have such a product or solution could be integrated with KubeSphere, let's collaborate to enhance our users' experiences.
+      content: Technology Partners offer a hardware platform, cloud service or software application that integrates with KubeSphere, based on technical collaboration or joint solution. If you have a solution could be integrated with KubeSphere, let's enhance users' experiences.
       link: "request"
 
     - title: "Cloud Providers"
@@ -44,21 +44,9 @@ section3:
 section4:
   title: 'Featured Partners'
   featuredPartnerList:
-    - icon: "images/partner/qingcloud.svg"
-      partnerType: "Cloud Provider"
-      content: 'QingCloud is a cloud computing platform that provides IaaS-based flexible cloud services.'
-
-    - icon: "images/partner/kubeedge.jpg"
+    - icon: "images/partner/inaccel.jpg"
       partnerType: "Technology"
-      content: 'KubeEdge is an open source system extending native containerized application orchestration and device management to hosts at the Edge.'
-
-    - icon: "images/partner/openeuler.jpg"
-      partnerType: "Technology"
-      content: 'openEuler is a free Linux distribution platform on which you can treat it as an innovative platform supporting the multi-processor architecture.'
-
-    - icon: "images/partner/nebular-graph.jpg"
-      partnerType: "App Provider"
-      content: 'Nebula Graph is an open-source graph database unmatched in its ability to host super large-scale graphs using billions of vertices (nodes) and trillions of edges with milliseconds of latency.'
+      content: 'InAccel is a world-leader in application acceleration using FPGAs in the cloud. We embrace cutting-edge technology to speedup mission-critical applications in the cloud, seamlessly.'
 
     - icon: "images/partner/istio.jpg"
       partnerType: "Technology"
@@ -67,6 +55,22 @@ section4:
     - icon: "images/partner/jenkins-zh.jpg"
       partnerType: "Technology"
       content: 'Jenkins Chinese community is made up of Jenkins Chinese fans and contributors, who work together to promote and improve the learning trial and landing of CI/CD technology.'
+
+    - icon: "images/partner/kubeedge.jpg"
+      partnerType: "Technology"
+      content: 'KubeEdge is an open source system extending native containerized application orchestration and device management to hosts at the Edge.'
+
+    - icon: "images/partner/nebular-graph.jpg"
+      partnerType: "App Provider"
+      content: 'Nebula Graph is an open-source graph database unmatched in its ability to host super large-scale graphs using billions of vertices (nodes) and trillions of edges with milliseconds of latency.'
+
+    - icon: "images/partner/openeuler.jpg"
+      partnerType: "Technology"
+      content: 'openEuler is a free Linux distribution platform on which you can treat it as an innovative platform supporting the multi-processor architecture.'
+
+    - icon: "images/partner/qingcloud.svg"
+      partnerType: "Cloud Provider"
+      content: 'QingCloud is a cloud computing platform that provides IaaS-based flexible cloud services. QKE is a cloud-hosted Kubernetes service with KubeSphere and powered by QingCloud'
 
     - icon: "images/partner/radore.jpg"
       partnerType: "Go-to-market"
