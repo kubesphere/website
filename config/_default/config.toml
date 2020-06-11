@@ -91,7 +91,7 @@ hasChildren = true
 [[languages.en.menu.main]]
 weight = 4
 name = "Documentation"
-URL = "docs"
+URL = "https://kubesphere.io/docs/"
 
 [[languages.en.menu.main]]
 weight = 5
