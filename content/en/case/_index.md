@@ -30,7 +30,7 @@ section2:
 
     - icon: "images/case/case4.jpg"
       content: "KubeSphere is trusted by various enterprises and organizations to the innovators driving the future of software."
-      link: ""
+      link: "maxnerva"
 
     - icon: "images/case/case6.jpg"
       content: "KubeSphere is trusted by various enterprises and organizations to the innovators driving the future of software."
