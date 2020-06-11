@@ -179,7 +179,7 @@ section6:
   btnContent: Case Studies
   btnLink: case
   link: mailto:kubesphere@gmail.com
-  linkContent: Want to join user community and put your logo up there? Send an email to kubesphere@gmail.com
+  linkContent: Want to join our user community and showcase your logo? Just send an email to kubesphere@gmail.com
   joinTitle: Join the Revolution, Partner with KubeSphere
   joinContent: We look forward to your joining KubeSphere partner program to improve both ecosystems and grow your business.
   joinLink: partner

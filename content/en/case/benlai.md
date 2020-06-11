@@ -1,6 +1,6 @@
 ---
 title: Benlai
-description: 
+description:
 
 css: scss/case-detail.scss
 
@@ -13,7 +13,7 @@ section2:
     - title: Company Introduction
       contentList:
         - content: We work closely with select food providers and supply bases. We are committed to improving food safety in China as we strive to provide cold chain delivery services and direct home delivery services from our bases. This is how we work to become a quality food provider in China.
-      image: /images/case/aqara-1.jpg
+      image: https://pek3b.qingstor.com/kubesphere-docs/png/20200611182545.png
 
     - title: 'Technology Condition: Infrastructure'
       contentList:
@@ -32,7 +32,7 @@ section2:
     - title: Embrace DevOps and Kubernetes
       contentList:
         - content: 'We have three main objectives as we embark on the road of DevOps:'
-        - content: 1. Improve resource utilization 
+        - content: 1. Improve resource utilization
         - content: 2. Enhance release efficiency
         - content: 3. Reduce the working cost of O&M
         - content: The most important part is cost efficiency. Here is how we work to update our business toward DevOps.
@@ -44,18 +44,18 @@ section2:
         - content: Enhanced Release Efficiency
         - content: Reduced Working Costs
 
-    - title: 'Level 1: Model Selection'
+    - title: 'Level 1: DevOps Tool Selection'
       contentList:
         - content: As we began to learn DevOps, an open-source platform KubeSphere had come to our awareness. KubeSphere is an enterprise-grade container platform built on Kubernetes with applications as its kernel. It supports multiple business scenarios, including agile development and automated O&M, DevOps, microservices governance, grayscale release, multi-tenant management, monitoring and alerting, log query and collection, application store, storage management and network management.
         - content: The Jenkins-based DevOps pipeline built in KubeSphere is very appropriate for us to use as it provides all necessary cloud native tools across the whole ecosystem for O&M.
         - content: Therefore, we began to create a proper CI/CD process by learning the operation, grammar and plugins related to KubeSphere and Jenkins. With the support of KubeSphere container platform, our level 1 CI/CD process had taken shape.
         - content: At Level 1, we successfully achieved some processes, such as code pulling, application programming, pushing images to a local repository and deploying them to a Kubernetes cluster.
-      image:
+      image: https://pek3b.qingstor.com/kubesphere-docs/png/20200611182621.png
 
     - title: Gaining Expertise
       contentList:
         - content: With a general CI/CD process in place, we continued to work on the pipeline. For example, we succeeded in the dynamical generation of application information after we studied how to customize a Jenkins pipeline. A large part of the reason why Jenkins becomes a major enterprise-grade CI/CD application is that it features an abundant plugin ecosystem. This has driven us to continue to work on Jenkins plugins, achieving a series of processes in the pipeline, such as FTP uploading, dynamic deployment of ConfigMap with commands and storage deployment.
-      image:
+      image: https://pek3b.qingstor.com/kubesphere-docs/png/20200611182839.png
 
     - type: 2
       content: 'The Jenkins-based DevOps pipeline built in KubeSphere is very appropriate for us to use as it provides all necessary cloud native tools across the whole ecosystem for O&M.'
@@ -82,21 +82,21 @@ section2:
     - title: 'Level 9: One-click Deployment'
       contentList:
         - content: Through our unremitting efforts, we have developed great expertise all the way up to Level 9, as the CI/CD process sees a considerable improvement.
-        - content: For future releases, we only need to select the release type and environment and perhaps a cup of coffee, waiting for the service to be released by KubeSphere all with one click.
+        - content: For future releases, we only need to select the release type and environment and perhaps a cup of coffee ☕️, waiting for the service to be released by KubeSphere all with one click.
       image:
 
   rightPart:
-    icon: /images/case/aqara-detail.jpg
+    icon: /images/case/section6-benlai.jpg
     list:
       - title: INDUSTRY
-        content: Food
+        content: E-Business
       - title: LOCATION
         content: China
       - title: CLOUD TYPE
-        content: Hybrid
+        content: Private
       - title: CHALLENGES
-        content: Resources, Efficiency, Costs
+        content: Resources Utilization, Delivery Efficiency, Costs
       - title: ADOPTED FEATURES
-        content: Hosted
+        content: CI/CD, DevOps, Jenkins
 
 ---
