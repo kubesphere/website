@@ -1,14 +1,13 @@
 {{ define "main" }}
 
-<section class="section-1">
-    {{ with .Params.section1 }}
-    <img class="top-cover-img" src="{{ .topImage | absURL }}" alt="">
-    <div class="title-div">
+{{ with .Params.section1 }}
+<section class="section-1 bg-cover" style='background-image: url("{{ .topImage }}");'>
+    <div class="title-div common-layout">
         <h1 class="title-center-h1">{{ .title }}</h1>
         <p class="common-p">{{ .content }}</p>
     </div>
-    {{ end }}
 </section>
+{{ end }}
 
 <section class="section-2">
     {{ with .Params.section2 }}

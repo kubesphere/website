@@ -6,7 +6,7 @@ css: "scss/case.scss"
 section1:
   title: User Case Studies
   content: KubeSphere is trusted by various enterprises and organizations to the innovators driving the future of software.
-  topImage: "images/case/case-top.jpg"
+  topImage: "/images/case/case-top.jpg"
 
 section2:
   tip: Read Case Study →

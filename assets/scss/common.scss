@@ -201,3 +201,9 @@ section {
   height: 100%;
   object-fit: cover;
 }
+
+.bg-cover {
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}

@@ -1,7 +1,7 @@
 {{ define "main" }}
 {{- partial "openSource.html" . -}}
 <section class='section-1'>
-    <div>
+    <div class="common-layout">
         <ul class='blog-tab-ul'>
             <li class='active'>{{ .Params.tip }}</li>
             {{ $tags := slice }}
@@ -26,7 +26,7 @@
                         <img src="" alt="">
                         <span>{{ .Params.author }}</span>
                     </div>
-                    <p class='summary'>{{ substr .Summary 0 89 }}</p>
+                    <p class='summary'>{{ substr .Summary 0 120 }}</p>
                     <ul>
                         {{ range (split .Params.tag ",") }}
                         <li>{{ . }}</li>

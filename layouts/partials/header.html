@@ -82,7 +82,7 @@
                 {{ end}}
             {{ end }}
 
-            <li {{ if $active }} class="menu-li menu-active" {{ else }} class="menu-li" {{ end}}>
+            <li data-check="0" {{ if $active }} class="menu-li menu-active" {{ else }} class="menu-li" {{ end}}>
                 <span class='menu-span'>{{ .Name }}</span>
                 <ul class="dropdown-menu">
                     {{ range .Children }}
@@ -136,13 +136,13 @@ var bindClickShowMenu = function() {
 }
 
 var bindClickModalLi = function() {
-    var check = false
     $('.modal .menu-li').click(function() {
-        if (!check) {
-            check = true
+        var check = $(this).data('check')
+        if (check === 0) {
+            $(this).data('check', 1)
             $(this).find('.dropdown-menu').slideDown(200)
         } else {
-            check = false
+            $(this).data('check', 0)
             $(this).find('.dropdown-menu').slideUp(200)
         }
         $(this).find('.menu-span').toggleClass('up')

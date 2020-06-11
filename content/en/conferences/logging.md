@@ -1,7 +1,7 @@
 ---
 title: 'Cloud Native Observability: Log Management'
 author: 'Benjamin Huo, Dan Ma'
-date: '2019-06-25'
+createTime: '2019-06-25'
 ---
 
 As logs often contain very valuable information, log management represents an important part of cloud native observability. Logs feature a standard output (stdout) in containers and Kubernetes, which is different from physical machines or virtual machines. This means the collection, analysis and management of logs at the platform level can be carried out in a unified fashion, which demonstrates the unique value of logs. This article introduces a major solution to log management (EFK) in the cloud native area, FluentBit Operator developed by the KubeSphere team and some practices of KubeSphere in multi-tenant log management. Besides, the article also elaborates on an open source tool Loki, a low-cost and extensible application inspired by Prometheus and developed specifically for the log management of Kubernetes.

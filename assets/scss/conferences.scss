@@ -5,10 +5,13 @@
   padding-top: 60px;
   padding-bottom: 100px;
 
+  @media only screen and (max-width: $mobile-max-width) {
+    padding-top: 20px;
+    padding-bottom: 40px;
+  }
+
   .content {
     position: relative;
-    width: 1160px;
-    margin: 0 auto;
 
     & > ul {
 
@@ -32,6 +35,11 @@
           padding: 36px 48px;
           margin-bottom: 12px;
           border-radius: 4px;
+
+          @media only screen and (max-width: $mobile-max-width) {
+            height: auto;
+            padding: 24px;
+          }
 
           .left-img {
             position: absolute;
@@ -58,6 +66,9 @@
             top: 50%;
             right: 208px;
             transform: translate(50%, -50%);
+            @media only screen and (max-width: $mobile-max-width) {
+              display: none;
+            }
           }
         }
 
@@ -71,6 +82,11 @@
             border-radius: 4px;
             box-shadow: 0 4px 15px 0 rgba(7,42,68,.1);
             background-color: #fff;
+
+            @media only screen and (max-width: $mobile-max-width) {
+              padding: 24px;
+              height: auto;
+            }
 
             h4 {
               font-size: 20px;
@@ -96,6 +112,7 @@
               font-size: 14px;
               line-height: 2;
               color: #919aa3;
+              overflow: hidden;
             }
 
             .line {
@@ -128,6 +145,10 @@
               height: 304px;
               border-radius: 3px;
               object-fit: contain;
+
+              @media only screen and (max-width: $mobile-max-width) {
+                display: none;
+              }
             }
           }
         }

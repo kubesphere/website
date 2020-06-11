@@ -7,15 +7,10 @@ html {
 
 .section-1 {
   position: relative;
-  height: 350px;
+  padding-top: 129px;
 
   .title-div {
-    position: absolute;
-    width: 1160px;
-    top: 129px;
-    left: 50%;
-    transform: translateX(-50%);
-
+    padding-bottom: 60px;
     h1 {
       width: 1060px;
     }
@@ -27,6 +22,19 @@ html {
       color: #ffffff;
       text-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
     }
+
+    @media only screen and (max-width: $mobile-max-width) {
+      width: 100%;
+      top: 100px;
+
+      h1 {
+        width: 100%;
+      }
+
+      p {
+        width: 100%;
+      }
+    }
   }
 }
 
@@ -37,8 +45,7 @@ html {
     position: relative;
 
     h2 {
-      width: 760px;
-      margin: 0 auto 45px;
+      margin-bottom: 45px;
       text-align: center;
     }
 
@@ -52,6 +59,10 @@ html {
 
         & > div {
           width: 460px;
+
+          @media only screen and (max-width: $mobile-max-width) {
+            width: 100%;
+          }
 
           p {
             margin-top: 24px;
@@ -84,6 +95,10 @@ html {
 
         img {
           width: 660px;
+
+          @media only screen and (max-width: $mobile-max-width) {
+            width: 100%;
+          }
         }
       }
     }
@@ -93,14 +108,23 @@ html {
 .section-3 {
   position: relative;
   padding-top: 80px;
+  padding-bottom: 20px;
   text-align: center;
   overflow: hidden;
+
+  @media only screen and (max-width: $mobile-max-width) {
+    padding-top: 40px;
+  }
 
   .bg-left {
     position: absolute;
     top: 242px;
     right: 50%;
     transform: translateX(-200px);
+
+    @media only screen and (max-width: $mobile-max-width) {
+      display: none;
+    }
   }
 
   .bg-right {
@@ -108,6 +132,10 @@ html {
     top: 200px;
     left: 50%;
     transform: translateX(180px);
+
+    @media only screen and (max-width: $mobile-max-width) {
+      display: none;
+    }
   }
 
   & > div {
@@ -115,6 +143,10 @@ html {
     img {
       width: 955px;
       margin-top: 40px;
+
+      @media only screen and (max-width: $mobile-max-width) {
+        width: 100%;
+      }
     }
   
     p {
@@ -132,7 +164,7 @@ html {
       font-size: 16px;
       border-radius: 28px;
       cursor: pointer;
-      box-shadow: 0 10px 50px 0 rgba(34, 43, 62, 0.1), 0 8px 16px 0 rgba(33, 43, 61, 0.2), 0 10px 50px 0 rgba(34, 43, 62, 0.1);
+      box-shadow: 0 10px 8px 0 rgba(34, 43, 62, 0.1), 0 8px 16px 0 rgba(33, 43, 61, 0.2), 0 10px 8px 0 rgba(34, 43, 62, 0.1);
       background-image: linear-gradient(to bottom, rgba(85, 188, 138, 0), rgba(85, 188, 138, 0.1) 97%), linear-gradient(to bottom, #55bc8a, #55bc8a);
       
       &:hover {
