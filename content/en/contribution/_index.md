@@ -6,7 +6,7 @@ css: "scss/contribution.scss"
 section1:
   title: 'Community is the Soul of KubeSphere'
   content: 'Join the community to get help, get involved, or get updates and KubeSphere news!'
-  topImage: "images/contribution/contribution-top.jpg"
+  topImage: "/images/contribution/contribution-top.jpg"
 
 section2:
   topType:
@@ -47,7 +47,7 @@ section2:
     topic: 'Community Governance'
     name: 'KubeSphere Community'
     icon: 'images/contribution/28.svg'
-    topIcon: 'images/contribution/8.svg'
+    topIcon: 'images/contribution/8.png'
     type:
       - name: 'TOC'
         icon: 'images/contribution/toc.svg'

@@ -1,7 +1,6 @@
 <section>
-  <div class='open-source-header'>
-    <img src='{{ "/images/common/resource-bg.jpg" | absURL }}' alt="">
-    <div>
+  <div class='open-source-header bg-cover'>
+    <div class="common-layout">
       <h1>{{ i18n "introduction10" }}</h1>
       <p>{{ i18n "introduction11" }}</p>
       <div>
@@ -16,7 +15,7 @@
       </div>
     </div>
   </div>
-  <ul class="open-source-tab">
+  <ul class="open-source-tab common-layout">
     {{ $section := .Page.Section }}
     {{ $menus := (index .Site.Menus.main 2).Children }}
     {{ range $menus }}

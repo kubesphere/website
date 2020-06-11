@@ -11,14 +11,14 @@
 <body>
 {{- partial "header.html" . -}}
 <section class="main-section">
-    <div>
+    <div class="common-layout">
         <div class='breadcrumb'>
             <span><a href='{{ "conferences" | absLangURL }}'>{{ i18n "introduction4"}}</a> > </span>
             <span>{{ .Title }}</span>
         </div>
         <div class='main-div'>
             <div class='author'>{{ .Params.author }}</div>
-            <div class='date'>{{ i18n "introduction3" }}：{{ .Params.date }}</div>
+            <div class='date'>{{ i18n "introduction3" }}：{{ string .Params.createTime }}</div>
             <h1>{{ .Title }}</h1>
             <div class='content'>
                 <div class='md-body'>

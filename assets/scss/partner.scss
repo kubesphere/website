@@ -3,18 +3,14 @@
 
 .section-1 {
   position: relative;
-  height: 300px;
+  padding-top: 138px;
+  padding-bottom: 100px;
 
   .title-div {
-    position: absolute;
-    top: 138px;
-    left: 0;
-    right: 0;
     text-align: center;
   }
 
   p {
-    width: 1067px;
     margin: 12px auto 0;
     letter-spacing: -0.04px;
     color: #ffffff;
@@ -29,6 +25,10 @@
     right: 50%;
     bottom: -40px;
     transform: translateX(-490px);
+
+    @media only screen and (max-width: $mobile-max-width) {
+      display: none;
+    }
   }
   & > div {
     display: flex;
@@ -42,16 +42,35 @@
       height: 298px;
       border-radius: 10px 0 0 10px;
       background-color: #ffffff;
+
+      @media only screen and (max-width: $mobile-max-width) {
+        width: 100%;
+        height: auto;
+        border-radius: 10px;
+        padding: 20px;
+      }
+
       div {
         width: 351px;
         height: 48px;
         margin: 38px 80px 12px 40px;
+
+        @media only screen and (max-width: $mobile-max-width) {
+          width: 100%;
+          margin: 0;
+        }
       }
       p {
         width: 391px;
         height: 160px;
         margin-left: 40px;
         line-height: 2;
+
+        @media only screen and (max-width: $mobile-max-width) {
+          width: 100%;
+          height: auto;
+          margin: 0;
+        }
       }
       .img-1 {
         position: absolute;
@@ -70,6 +89,10 @@
       height: 298px;
       border-radius: 0 10px 10px 0;
       background-color: #3d3e49;
+
+      @media only screen and (max-width: $mobile-max-width) {
+        display: none;
+      }
 
       & > img {
         margin-top: 107px;
@@ -161,6 +184,10 @@
     ul {
       margin-top: 20px;
 
+      @media only screen and (max-width: $mobile-max-width) {
+        justify-content: center;
+      }
+
       li {
         width: 570px;
         height: 309px;
@@ -168,6 +195,10 @@
         margin-top: 20px;
         box-shadow: 0 4px 8px 0 rgba(36, 46, 66, 0.06), 0 8px 16px 0 rgba(36, 46, 66, 0.05);
         background-color: #ffffff;
+
+        @media only screen and (max-width: $mobile-max-width) {
+          height: auto;
+        }
 
         h3 {
           margin: 40px 40px 20px;
@@ -178,11 +209,16 @@
           margin-left: 40px;
           margin-right: 40px;
           line-height: 2;
+
+          @media only screen and (max-width: $mobile-max-width) {
+            height: auto;
+          }
         }
 
         div {
           margin-left: 40px;
           margin-top: 20px;
+          margin-bottom: 20px;
           font-weight: 600;
           line-height: 1.5;
         }
@@ -202,8 +238,17 @@
       margin-top: 20px;
       font-size: 0;
 
+      @media only screen and (max-width: $mobile-max-width) {
+        text-align: center;
+      }
+
       li:nth-child(4n + 1) {
         margin-left: 0;
+
+        @media only screen and (max-width: $mobile-max-width) {
+          margin: 20px 10px 0;
+        }
+
       }
 
       li {
@@ -216,6 +261,10 @@
         border-radius: 4px;
         box-shadow: 0 4px 8px 0 rgba(36, 46, 66, 0.06), 0 8px 16px 0 rgba(36, 46, 66, 0.05);
         background-color: #ffffff;
+
+        @media only screen and (max-width: $mobile-max-width) {
+          margin: 20px 10px 0;
+        }
 
         &:hover {
           .content {
@@ -253,7 +302,7 @@
           bottom: 0;
           left: 0;
           right: 0;
-          padding: 40px 30px;
+          padding: 20px 30px;
           background-image: radial-gradient(circle at -23% -21%, #cdf6d5, #089566 75%);
           font-size: 14px;
           line-height: 1.71;

@@ -4,8 +4,6 @@
   padding-top: 93px;
 
   & > div {
-    width: 1160px;
-    margin: 0 auto;
     position: relative;
 
     .breadcrumb {
@@ -27,6 +25,12 @@
       background-color: #fff;
       border-radius: 4px;
 
+      @media only screen and (max-width: $mobile-max-width) {
+        width: 100%;
+        padding: 0;
+        background-color: #f5f8f9;
+      }
+
       .author {
         font-size: 16px;
         line-height: 1.5;
@@ -47,6 +51,10 @@
         font-weight: 500;
         line-height: 1.4;
         color: #171c34;
+
+        @media only screen and (max-width: $mobile-max-width) {
+          font-size: 28px;
+        }
       }
 
       .content {
@@ -123,6 +131,9 @@
 
     .aside {
       width: 230px;
+      @media only screen and (max-width: $mobile-max-width) {
+        display: none;
+      }
       .title {
         height: 32px;
         font-size: 24px;

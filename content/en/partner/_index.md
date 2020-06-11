@@ -6,7 +6,7 @@ css: "scss/partner.scss"
 section1:
   title: 'Join the Revolution, Partner with KubeSphere'
   content: 'We look forward to your joining KubeSphere partner to improve the ecosystem of both, and grow your business. KubeSphere provide  resources and rights for partners to help them increase their expertise, deliver open source technology, and resell product.'
-  topImage: 'images/partner/partner-top.jpg'
+  topImage: '/images/partner/partner-top.jpg'
 
 section2:
   title: 'Together, build partnership for success all over the world'

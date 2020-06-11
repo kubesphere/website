@@ -1,7 +1,7 @@
 ---
 title: 'Development Practices of CSI Storage Plugins - Part Ⅰ'
 author: 'Xin Wang'
-date: '2019-06-25'
+createTime: '2019-06-25'
 ---
 
 Many users will transfer their apps to Kubernetes, where storage underlies applications. As users deploy their apps on the Kubernetes, some existing storage plugins are unable to satisfy the growing needs in terms of both diversity and functionality. This is why we need to accelerate the development of new storage plugins, and integrate QingCloud storage services with Kubernetes and KubeSphere.

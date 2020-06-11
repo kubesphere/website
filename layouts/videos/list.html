@@ -2,7 +2,7 @@
 {{- partial "openSource.html" . -}}
 {{ $data := index .Site.Data .Site.Language.Lang }}
 <section class='section-1'>
-    <div>
+    <div class="common-layout">
         <ul class='video-tab-ul'>
             <li class='active'>{{ .Params.tip }}</li>
             {{ $groups := slice }}

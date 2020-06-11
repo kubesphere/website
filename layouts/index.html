@@ -200,10 +200,11 @@
       $('.image').find('img').attr('src', "/images/home/applications2.png")
     } 
     $(window).resize(function() {
+      var screenWidth = $(window).width()
       if (screenWidth <= 768) {
         $('.image').find('img').attr('src', "/images/home/applications2.png")
       } else {
-        $('.image').find('img').attr('src', "/images/home/applications1.png")
+        $('.image').find('img').attr('src', "/images/home/applications.png")
       }
     })
   }

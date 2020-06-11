@@ -5,9 +5,12 @@
   padding-top: 60px;
   padding-bottom: 100px;
 
+  @media only screen and (max-width: $mobile-max-width) {
+    padding-top: 20px;
+    padding-bottom: 40px;
+  }
+
   & > div {
-    width: 1160px;
-    margin: 0 auto;
 
     & > .blog-tab-ul {
       padding: 30px 34px 22px;
@@ -51,11 +54,9 @@
 
       & > li {
         position: relative;
-        height: 280px;
         border-radius: 4px;
         box-shadow: 0 4px 15px 0 rgba(7,42,68,.1);
         background-color: #fff;
-        overflow: hidden;
 
         .img-div {
           position: absolute;
@@ -69,11 +70,17 @@
             height: 280px;
             object-fit: contain;
           }
+          @media only screen and (max-width: $mobile-max-width) {
+            display: none;
+          }
         }
 
         & > .content-div{
-          height: 216px;
           padding: 32px 200px 32px 320px;
+
+          @media only screen and (max-width: $mobile-max-width) {
+            padding: 24px;
+          }
 
           .time {
             font-size: 14px;
@@ -85,9 +92,6 @@
             margin: 12px 0;
             font-size: 20px;
             line-height: 28px;
-            overflow: hidden;
-            white-space: nowrap;
-            text-overflow: ellipsis;
             color: #4ca986;
 
             a {

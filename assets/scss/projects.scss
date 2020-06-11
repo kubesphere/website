@@ -1,10 +1,14 @@
 @import 'open-source';
-
+@import 'variables';
 
 .tab-content {
   background-color: #fff;
   padding-top: 60px;
   padding-bottom: 100px;
+
+  @media only screen and (max-width: $mobile-max-width) {
+    padding-top: 20px;
+  }
 
   .content {
     position: relative;
@@ -20,6 +24,10 @@
       border-radius: 4px;
       box-shadow: 0 4px 15px 0 rgba(7,42,68,.1);
       background-color: #fff;
+
+      @media only screen and (max-width: $mobile-max-width) {
+        display: none;
+      }
 
       li:first-of-type {
         border-bottom: 1px solid rgba(181,193,204,.5);
@@ -49,6 +57,10 @@
 
     .right {
       padding-left: 300px;
+
+      @media only screen and (max-width: $mobile-max-width) {
+        padding-left: 0px;
+      }
 
       li {
         position: relative;
@@ -99,6 +111,22 @@
 
           a {
             color: #55bc8a;
+          }
+        }
+
+        @media only screen and (max-width: $mobile-max-width) {
+          padding: 12px 30px 12px 54px;
+
+          img {
+            width: 32px;
+            height: 32px;
+            left: 12px;
+          }
+
+          &:hover {
+            div {
+              display: none;
+            }
           }
         }
       }
