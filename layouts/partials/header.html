@@ -1,10 +1,75 @@
 <!-- Header Start -->
 <header class="navigation">
-    <div class="header-container">
-        <a href="{{ site.Home.RelPermalink }}">
-            <img src="/images/header/logo.svg" alt="{{ .Site.Title }}" class="logo">
-        </a>
+    <div class="common-layout">
+        <div class="header-container">
+            <a href="{{ site.Home.RelPermalink }}">
+                <img src="/images/header/logo.svg" alt="{{ .Site.Title }}" class="logo">
+            </a>
 
+            <ul class="nav">
+                {{ $section := .Page.Section }}
+                {{ range .Site.Menus.main }}
+                {{ if .HasChildren }}
+
+                {{ $active := false }}
+                {{ range .Children }}
+                    {{ if eq $section .URL }}
+                        {{ $active = true }}
+                    {{ end}}
+                {{ end }}
+
+                <li {{ if $active }} class="menu-li menu-active" {{ else }} class="menu-li" {{ end}}>
+                    <span class='menu-span'>{{ .Name }}</span>
+                    <ul class="dropdown-menu">
+                        {{ range .Children }}
+                        <li {{ if eq $section .URL }} class="active"{{ end}}><a href="{{ .URL | absLangURL }}">{{ .Name }}</a></li>
+                        {{ end }}
+                    </ul>
+                </li>
+                {{ else }}
+                <li {{ if eq $section .URL }} class="active"{{ end}}><a href="{{ .URL | absLangURL }}">{{ .Name }}</a></li>
+                {{ end }}
+
+                {{ end }}
+
+            </ul>
+            <div class="right-menu">
+                <ul>
+                    <li class="language-menu">
+                        <div>
+                            <img src="/images/header/black.svg" alt="">
+                            <span>{{ .Site.Language.LanguageName }}</span>
+                        </div>
+                        <ul class="dropdown-menu">
+                            {{ range .Page.AllTranslations }}
+                            <li onclick="location = '{{ .Permalink }}'">{{ .Language.LanguageName }}</li>
+                            {{ end }}
+                        </ul>
+                    </li>
+                    <li class='btn-li'>
+                        <a href="https://demo.kubesphere.io/login" target="_blank" rel="noopener noreferrer">
+                            <button>{{ i18n "Demo" }} →</button>
+                        </a>
+                        <ol class="dropdown-menu">
+                            <li>{{ i18n "demo content 1" }}</li>
+                            <li>{{ i18n "demo content 2" }}</li>
+                            <li>{{ i18n "demo content 3" }}</li>
+                        </ol>
+                    </li>
+                    <li class='link-li'>
+                        <a class='link-1' href="{{ .Site.Params.slackLink }}" target="_blank"></a>
+                        <a class='link-2' href="{{ .Site.Params.twitterLink }}" target="_blank"></a>
+                        <a class='link-3' href="{{ .Site.Params.githubLink }}" target="_blank"></a>
+                    </li>
+                    <li class="menu-icon">
+                        <img src="/images/header/menu.svg" alt="">
+                    </li>
+                </ul>
+            </div>
+        </div>      
+    </div>
+
+    <div id="modal-for-menu" class="modal">
         <ul class="nav">
             {{ $section := .Page.Section }}
             {{ range .Site.Menus.main }}
@@ -32,36 +97,6 @@
             {{ end }}
 
         </ul>
-        <div class="right-menu">
-            <ul>
-                <li class="language-menu">
-                    <div>
-                        <img src="/images/header/black.svg" alt="">
-                        <span>{{ .Site.Language.LanguageName }}</span>
-                    </div>
-                    <ul class="dropdown-menu">
-                        {{ range .Page.AllTranslations }}
-                        <li onclick="location = '{{ .Permalink }}'">{{ .Language.LanguageName }}</li>
-                        {{ end }}
-                    </ul>
-                </li>
-                <li class='btn-li'>
-                    <a href="https://demo.kubesphere.io/login" target="_blank" rel="noopener noreferrer">
-                        <button>{{ i18n "Demo" }} →</button>
-                    </a>
-                    <ol class="dropdown-menu">
-                        <li>{{ i18n "demo content 1" }}</li>
-                        <li>{{ i18n "demo content 2" }}</li>
-                        <li>{{ i18n "demo content 3" }}</li>
-                    </ol>
-                </li>
-                <li class='link-li'>
-                    <a class='link-1' href="{{ .Site.Params.slackLink }}" target="_blank"></a>
-                    <a class='link-2' href="{{ .Site.Params.twitterLink }}" target="_blank"></a>
-                    <a class='link-3' href="{{ .Site.Params.githubLink }}" target="_blank"></a>
-                </li>
-            </ul>
-        </div>
     </div>
 </header>
 <script>
@@ -94,11 +129,34 @@ var bindScrollChangeHeader = function() {
     })
 }
 
+var bindClickShowMenu = function() {
+    $('.menu-icon').click(function() {
+        $('#modal-for-menu').modal()
+    })
+}
+
+var bindClickModalLi = function() {
+    var check = false
+    $('.modal .menu-li').click(function() {
+        if (!check) {
+            check = true
+            $(this).find('.dropdown-menu').slideDown(200)
+        } else {
+            check = false
+            $(this).find('.dropdown-menu').slideUp(200)
+        }
+        $(this).find('.menu-span').toggleClass('up')
+    }) 
+}
+
 bindScrollChangeHeader()
 
-bindNavMouseEvent('.navigation .menu-li')
-bindNavMouseEvent('.navigation .language-menu')
-bindNavMouseEvent('.navigation .btn-li')
+bindNavMouseEvent('.header-container .menu-li')
+bindNavMouseEvent('.header-container .language-menu')
+bindNavMouseEvent('.header-container .btn-li')
+
+bindClickShowMenu()
+bindClickModalLi()
 
 
 </script>

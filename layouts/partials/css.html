@@ -1,5 +1,6 @@
 <link rel="stylesheet" href="/fonts/Roboto/stylesheet.css">
 <link rel="stylesheet" href="/fonts/ProximaNova/stylesheet.css">
+<link rel="stylesheet" href="/css/jquery.modal.min.css">
 
 {{ $common := resources.Get "scss/common.scss" | toCSS | minify | fingerprint }}
 <link rel="stylesheet" href="{{ $common.Permalink }}">
