@@ -1,12 +1,15 @@
 ---
 title: "observability"
+layout: "scenario"
 
-css: "scss/service-mesh.scss"
+css: "scss/scenario.scss"
 
 section1:
   title: KubeSphere allows you to build visualizations simply and intuitively
   content: KubeSphere provides rich observability from infrastructure to applications. It integrates your favorite tools for multi-dimensional monitoring metrics, multi-tenant log query and collection, alerting and notification.
   image: /images/service-mesh/banner.jpg
+
+image: /images/observability/observability.jpg
 
 section2:
   title: Discoverability, Observability, Security, Everything You Need in One Platform

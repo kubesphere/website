@@ -1,12 +1,16 @@
 ---
 title: "service mesh"
+layout: "scenario"
 
-css: "scss/service-mesh.scss"
+css: "scss/scenario.scss"
 
 section1:
   title: KubeSphere Service Mesh provides a simpler distribution of Istio with consolidated UX
   content: If you’re running and scaling microservices on Kubernetes, it’s time to adopt the istio-based service mesh for your distributed system. We design a unified UI to integrate and manage tools including Istio, Envoy, Jaeger.
   image: /images/service-mesh/banner.jpg
+
+image: /images/service-mesh/service-mesh.jpg
+bg: /images/service-mesh/28.svg
 
 section2:
   title: What Makes KubeSphere Service Mesh Special

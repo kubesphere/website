@@ -38,9 +38,27 @@ html {
   }
 }
 
+.section-img {
+  position: relative;
+  padding: 47px 0 65px 0;
+  text-align: center;
+  overflow: hidden;
+
+  .bg {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+
+    @media only screen and (max-width: $mobile-max-width) {
+      display: none;
+    }
+  }
+}
+
 .section-2 {
   background-color: #f5f8f9;
   padding-top: 60px;
+  padding-bottom: 40px;
   & > div {
     position: relative;
 
