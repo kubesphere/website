@@ -33,7 +33,9 @@
                         {{ end }}
                     </ul>
                 </div>
-                <a href="{{ .RelPermalink }}"></a>
+                <a href="{{ .RelPermalink }}">
+                    {{ "/static/images/blogs/right-arrow.svg" | readFile | safeHTML }}
+                </a>
             </li>
             {{ end }}
         </ul>

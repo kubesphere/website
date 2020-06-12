@@ -47,7 +47,7 @@ hasChildren = true
   parent = "Scenario"
   name = "DevOps"
   Title = "Embracing One-stop DevOps Workflow"
-  URL = "dev-ops"
+  URL = "devops"
   weight = 1
 
   [[languages.en.menu.main]]
