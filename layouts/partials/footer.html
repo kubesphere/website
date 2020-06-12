@@ -37,6 +37,21 @@
             <div class="down-main">
                 <div class='img-div'>
                     <!-- <a class='facebook-a' href="" target="_blank"></a> -->
+                    <a class='wechat' href="javascript:void(0);">
+                        {{ "/static/images/footer/wechat.svg" | readFile | safeHTML }}
+                        <div class="hide-div">
+                            <p>Follow the official account</p>
+                            <img src="/images/footer/wechat_code.svg" alt="">
+                        </div>
+                    </a>
+                    <a class='wechat' href="javascript:void(0);">
+                        {{ "/static/images/footer/group.svg" | readFile | safeHTML }}
+                        <div class="hide-div">
+                            <p>Join the WeChat group</p>
+                            <img src="/images/footer/group_code.svg" alt="">
+                            <p>进群请备注 “公司 - 姓名”</p>
+                        </div>
+                    </a>
                     <a class='youtube-a' href="{{ .Site.Params.youtubeLink }}" target="_blank"></a>
                     <a class='slack-a' href="{{ .Site.Params.slackLink }}" target="_blank"></a>
                     <a class='twitter-a' href="{{ .Site.Params.twitterLink }}" target="_blank"></a>
