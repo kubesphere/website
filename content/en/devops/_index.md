@@ -9,13 +9,13 @@ section1:
   content: KubeSphere provides rich observability from infrastructure to applications. It integrates your favorite tools for multi-dimensional monitoring metrics, multi-tenant log query and collection, alerting and notification.
   image: /images/service-mesh/banner.jpg
 
-image: /images/dev-ops/dev-ops.jpg
+image: /images/devops/dev-ops.jpg
 
 section2:
   title: Automatically Checkout Code, Test, Analyse, Build, Deploy and Release
   list:
     - title: Multi-dimensional Monitoring
-      image: /images/observability/multi-dimensional-monitoring.png
+      image: /images/devops/CD-pipeline.svg
       contentList:
         - content: <span>Easy to integrate with your SCM, </span> support GitLab / GitHub / BitBucket / SVN
         - content: <span>Design a graphical editing panel</span> to create CI/CD pipelines, without writing Jenkinsfile
@@ -24,7 +24,7 @@ section2:
         - content: <span>Provide dynamic build agents</span> to automatically spin up Pods as necessary
     
     - title: Built-in automated toolkits
-      image: /images/observability/log-query-and-collection.png
+      image: /images/devops/Built-in-automated-toolkits.svg
       contentList:
         - content: <span>Source to Image,</span> building reproducible container images from source code, without writing dockerfile
         - content: <span>Binary-to-image</span>is the bridge between your artifact and a runnable image
@@ -32,7 +32,7 @@ section2:
         - content: <span>Good recoverability and flexibility,</span> you can rebuild and rerun S2I / B2I whenever a patch is needed
     
     - title: Use GitOps to implement DevOps, not just culture
-      image: /images/observability/flexible-alerting-and-notification.png
+      image: /images/devops/Clear-insight.svg
       contentList:
         - content: <span>Combine Git with Kubernetes’ convergence, and automates the cloud native Apps delivery</span>
         - content: <span>Designed for teams, offer built-in multitenancy in DevOps project</span>

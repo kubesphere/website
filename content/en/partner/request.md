@@ -24,7 +24,7 @@ section2:
   bg2: 'images/partner/background1.svg'
   bg3: 'images/partner/background2.svg'
 
-section3:
+sectionIframe:
   title: Become a Partner with KubeSphere
   googleFormUrl: https://docs.google.com/forms/d/e/1FAIpQLSf2kT-J9xJma3ASsZF6n0jVaAldJU2gNL8wVz88SraNJyCE4Q/viewform?embedded=true
 ---

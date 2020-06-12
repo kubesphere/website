@@ -32,7 +32,7 @@
 
   .nav {
     height:100%;
-    margin-left: 200px;
+    margin-left: 300px;
     margin-right: 340px;
     line-height: 93px;
 
@@ -137,6 +137,14 @@
     // }
   }
 
+  .menu-Scenario {
+    width: 260px;
+  }
+
+  .menu-Community {
+    width: 120px;
+  }
+
   .right-menu {
     position: absolute;
     top: 28px;
@@ -178,7 +186,7 @@
       }
       .dropdown-menu {
         color: black;
-        width: 120px;
+        width: 100px;
         padding-left: 20px;
         li {
           padding: 0;

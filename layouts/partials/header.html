@@ -20,14 +20,14 @@
 
                 <li {{ if $active }} class="menu-li menu-active" {{ else }} class="menu-li" {{ end}}>
                     <span class='menu-span'>{{ .Name }}</span>
-                    <ul class="dropdown-menu">
+                    <ul class="dropdown-menu menu-{{ .Name }}">
                         {{ range .Children }}
-                        <li {{ if eq $section .URL }} class="active"{{ end}}><a href="{{ .URL | absLangURL }}">{{ .Name }}</a></li>
+                        <li {{ if eq $section .URL }} class="active"{{ end}}><a href="{{ .URL | absLangURL }}" target="_blank">{{ .Name }}</a></li>
                         {{ end }}
                     </ul>
                 </li>
                 {{ else }}
-                <li {{ if eq $section .URL }} class="active"{{ end}}><a href="{{ .URL | absLangURL }}">{{ .Name }}</a></li>
+                <li {{ if eq $section .URL }} class="active"{{ end}}><a href="{{ .URL | absLangURL }}" target="_blank">{{ .Name }}</a></li>
                 {{ end }}
 
                 {{ end }}
@@ -87,13 +87,7 @@
                 <ul class="dropdown-menu">
                     {{ range .Children }}
                     <li {{ if eq $section .URL }} class="active"{{ end}}>
-                        <a href="{{ .URL | absLangURL }}">
-                            {{ if .Title }}
-                            {{ .Title }}
-                            {{ else }}
-                            {{ .Name }}
-                            {{ end }}
-                        </a>
+                        <a href="{{ .URL | absLangURL }}">{{ .Name }}</a>
                     </li>
                     {{ end }}
                 </ul>
