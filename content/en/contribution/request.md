@@ -44,7 +44,7 @@ section2:
         - content: 'Follow us on Twitter'
           link: 'https://twitter.com/KubeSphere'
 section3:
-  title: Become a KubeSphere Contributor
+  title: Become a KubeSphere Ambassador
   googleFormUrl: https://docs.google.com/forms/d/e/1FAIpQLSf2kT-J9xJma3ASsZF6n0jVaAldJU2gNL8wVz88SraNJyCE4Q/viewform?embedded=true
 
 section4:

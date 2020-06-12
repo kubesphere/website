@@ -145,7 +145,6 @@
       z-index: 2;
       display: flex;
       flex-wrap: wrap;
-      justify-content: space-between;
 
       @media only screen and (max-width: $mobile-max-width) {
         justify-content: center;

@@ -271,7 +271,7 @@ section4:
       - title: 'Be an Ambassador'
         icon: 'images/contribution/group-1.png'
         content: 'You will be a public-facing community representative. We will provide you with resources to help you be successful as a speaker, or a writer.'
-        link: 'https://forms.gle/akhMFSKLWgMxbHuR6'
+        link: 'request'
         linkContent: 'Become a KubeSphere Ambassador →'
 
       - title: 'Be a Contributor'
