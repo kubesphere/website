@@ -17,7 +17,7 @@
   </div>
   <ul class="open-source-tab common-layout">
     {{ $section := .Page.Section }}
-    {{ $menus := (index .Site.Menus.main 2).Children }}
+    {{ $menus := (index .Site.Menus.main 1).Children }}
     {{ range $menus }}
     <li class="">
       <a {{ if eq $section .URL }} class="active"{{ end }} href="{{ .URL | absLangURL }}">{{ .Name }}</a>
