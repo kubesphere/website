@@ -1,18 +1,30 @@
 {{ define "main" }}
 
-<section class='section-1'>
-  {{ with .Params.section1}}
-  <img src="/images/case/case-detail-bg.png" alt="">
-  <div>
-    <h1>{{ .title }}</h1>
-    <p>{{ .content }}</p>
-  </div>
-  {{ end }}
+{{ with .Params.section1 }}
+<section class="section-1 bg-cover" style='background-image: url("/images/case/case-detail-bg.png");'>
+    <div class="common-layout">
+        <h1 class="title-h1">{{ .title }}</h1>
+        <p class="common-p">{{ .content }}</p>
+    </div>
 </section>
+{{ end }}
 
 <section class='section-2'>
   {{ with .Params.section2 }}
-  <div>
+  <div class="common-layout">
+    <div>
+      {{ with .rightPart}}
+      <img src="{{ .icon }}" alt="">
+      <ul class='ul-right'>
+        {{ range .list }}
+        <li>
+          <p class='p1'>{{ .title }}</p>
+          <p class='p2'>{{ .content }}</p>
+        </li>
+        {{ end }}
+      </ul>
+      {{ end }}
+    </div>
     <ul class='ul-left'>
       {{ range .listLeft}}
       <li>
@@ -42,19 +54,6 @@
       </li>
       {{ end }}
     </ul>
-    <div>
-      {{ with .rightPart}}
-      <img src="{{ .icon }}" alt="">
-      <ul class='ul-right'>
-        {{ range .list }}
-        <li>
-          <p class='p1'>{{ .title }}</p>
-          <p class='p2'>{{ .content }}</p>
-        </li>
-        {{ end }}
-      </ul>
-      {{ end }}
-    </div>
   </div>
   <img src="/images/common/hexagon.svg" alt="">
   {{ end }}
