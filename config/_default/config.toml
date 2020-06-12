@@ -46,18 +46,21 @@ hasChildren = true
   [[languages.en.menu.main]]
   parent = "Scenario"
   name = "DevOps"
-  URL = "dev-ops"
+  Title = "Embracing One-stop DevOps Workflow"
+  URL = "devops"
   weight = 1
 
   [[languages.en.menu.main]]
   parent = "Scenario"
   name = "Service Mesh"
+  Title = "Running Microservices on Kubernetes"
   URL = "service-mesh"
   weight = 2
 
   [[languages.en.menu.main]]
   parent = "Scenario"
   name = "Observability"
+  Title = "Building Cloud Native Observability"
   URL = "observability"
   weight = 3
 

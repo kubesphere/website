@@ -128,6 +128,15 @@
       .img-div {
         font-size: 0;
 
+        svg {
+          width: 32px;
+          height: 32px;
+          color: #b6c2cd;
+          cursor: pointer;
+          transition: all 0.2s ease-in-out;
+          margin-right: 8px;
+        }
+
         a {
           display: inline-block;
           width: 34px;
@@ -135,6 +144,45 @@
           margin: 0 6px;
           background-position: center;
           background-repeat: no-repeat;
+        }
+
+        .wechat {
+          position: relative;
+
+          .hide-div {
+            display: none;
+            position: absolute;
+            top: -10px;
+            left: 50%;
+            padding: 10px;
+            transform: translate(-50%, -100%);
+            background: #ffffff;
+            p {
+              font-size: 12px;
+              color: #b6c2cd;
+            }
+            img {
+              margin: 0 10px;
+            }
+            &::after {
+              content: '';
+              position: absolute;
+              bottom: -18px;
+              left: 50%;
+              transform: translateX(-50%);
+              border: 10px solid transparent;
+              border-top-color: #ffffff;
+            }
+          }
+
+          &:hover {
+            svg {
+              color: green;
+            }
+            div {
+              display: block;
+            }
+          }
         }
 
         .facebook-a {

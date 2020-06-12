@@ -1,14 +1,13 @@
 {{ define "main" }}
 
-<section class="section-1">
-    {{ with .Params.section1 }}
-    <img class="top-cover-img" src="{{ .topImage | absURL }}" alt="">
-    <div class="title-div">
+{{ with .Params.section1 }}
+<section class="section-1 bg-cover" style='background-image: url("{{ .topImage }}");'>
+    <div class="title-div common-layout">
         <h1 class="title-center-h1">{{ .title }}</h1>
         <p class="common-p">{{ .content }}</p>
     </div>
-    {{ end }}
 </section>
+{{ end }}
 
 <section class="section-2">
     {{ with .Params.section2 }}
@@ -45,11 +44,11 @@
     {{ end }}
 </section>
 
-<section>
+<section class='section-iframe'>
   {{ with .Params.section3 }}
   <div class="common-layout">
     <h2 style="margin: 40px 0;" class="title-black-h2">{{ .title }}</h2>
-    <iframe src="{{ .googleFormUrl }}" width="640" height="1491" frameborder="0" marginheight="0" marginwidth="0">正在加载…</iframe>
+    <iframe src="{{ .googleFormUrl }}" width="640" height="1000" frameborder="0" marginheight="0" marginwidth="0">正在加载…</iframe>
   </div>
   {{ end }}
 </section>

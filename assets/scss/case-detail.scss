@@ -1,36 +1,21 @@
+@import 'variables';
 .section-1 {
-  height: 300px;
-
-  img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-  }
+  padding-top: 129px;
+  padding-bottom: 60px;
 
   div {
     position: relative;
-    width: 1160px;
-    margin: -162px auto 0;
-
-    h1 {
-      height: 40px;
-      text-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
-      font-size: 40px;
-      font-weight: bold;
-      line-height: 1;
-      letter-spacing: -0.11px;
-      color: #ffffff;
-    }
 
     p {
       width: 733px;
       margin-top: 12px;
       opacity: 0.8;
       text-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
-      font-size: 16px;
-      line-height: 1.5;
-      letter-spacing: -0.04px;
       color: #ffffff;
+
+      @media only screen and (max-width: $mobile-max-width) {
+        width: 100%;
+      }
     }
   }
 }
@@ -42,16 +27,23 @@
     top: 320px;
     left: 50%;
     transform: translateX(400px);
+
+    @media only screen and (max-width: $mobile-max-width) {
+      display: none;
+    }
   }
   & > div {
     position: relative;
-    width: 1160px;
-    margin: 0 auto;
     padding-top: 56px;
     z-index: 2;
 
     .ul-left {
       width: 668px;
+
+      @media only screen and (max-width: $mobile-max-width) {
+        width: 100%;
+        margin-top: 40px;
+      }
 
       & > li + li {
         margin-top: 30px;
@@ -84,23 +76,33 @@
           font-size: 0;
           border-radius: 8px;
           overflow: hidden;
+          display: flex;
+          @media only screen and (max-width: $mobile-max-width) {
+            width: 100%;
+            display: block;
+          }
           li {
             position: relative;
             display: inline-block;
             box-sizing: border-box;
             width: 220px;
-            height: 126px;
+            min-height: 100%;
+            padding: 35px 30px;
+
+            @media only screen and (max-width: $mobile-max-width) {
+              display: block;
+              width: 100%;
+              margin: 10px auto;
+              padding: 20px;
+              border-radius: 8px;
+            }
 
             p {
-              position: absolute;
-              width: 160px;
-              top: 50%;
-              left: 50%;
-              transform: translate(-50%, -50%);
               font-size: 16px;
               line-height: 1.75;
               text-align: center;
               color: #ffffff;
+
             }
           }
           li:nth-child(1) {
@@ -152,16 +154,28 @@
       box-shadow: 0 4px 8px 0 rgba(36, 46, 66, 0.06), 0 8px 16px 0 rgba(36, 46, 66, 0.05);
       background-color: #ffffff;
 
+      @media only screen and (max-width: $mobile-max-width) {
+        width: 100%;
+        max-width: 400px;
+        position: relative;
+        right: 0;
+        top: 0px;
+        margin: 0 auto;
+      }
+
       img {
         display: block;
-        width: 293px;
-        margin: 0 auto;
-        height: 120px;
+        width: 100%;
         object-fit: contain;
+        border-radius: 10px;
       }
 
       .ul-right {
         padding: 4px 60px 26px;
+
+        @media only screen and (max-width: $mobile-max-width) {
+          padding: 4px 40px 26px;
+        }
 
         li + li {
           margin-top: 16px;

@@ -170,6 +170,14 @@
   }
 }
 
+.section-iframe {
+  iframe {
+    @media only screen and (max-width: $mobile-max-width) {
+      width: 100%;
+    }
+  }
+}
+
 .section-3 {
   padding-top: 54px;
   background-image: url('/images/partner/oval-4.svg');

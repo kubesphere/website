@@ -1,5 +1,4 @@
 {{ define "main" }}
-
 {{ with .Params.section1}}
 <section class='section-1 bg-cover' style='background-image: url("{{ .image }}");'>
   <div class="title-div common-layout">
@@ -8,6 +7,13 @@
   </div>
 </section>
 {{ end }}
+
+<section class="section-img">
+  <img class="common-layout" src="{{ .Params.image }}" alt="">
+  {{ if .Params.bg }}
+  <img class="bg" src="{{ .Params.bg }}" alt="">
+  {{ end }}
+</section>
 
 <section class="section-2">
   {{ with .Params.section2 }}
