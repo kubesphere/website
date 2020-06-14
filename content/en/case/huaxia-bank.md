@@ -58,7 +58,7 @@ section2:
     icon: /images/case/section6-huaxia-bank.jpg
     list:
       - title: INDUSTRY
-        content: Financial
+        content: Finance
       - title: LOCATION
         content: China
       - title: CLOUD TYPE

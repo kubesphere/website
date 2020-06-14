@@ -45,7 +45,7 @@ section3:
   title: 'Various Industries are Powered by KubeSphere'
   tip: ALL
   caseType:
-    - name: 'Financial'
+    - name: 'Finance'
       children:
         - name: 'sina'
           icon: 'images/case/v1.jpg'

@@ -4,13 +4,13 @@ title: "page1"
 css: "scss/partner.scss"
 
 section1:
-  title: 'Join the Revolution,Partner with KubeSphere'
-  content: 'We look forward to your joining KubeSphere partner to improve the ecosystem of both, and grow your business. KubeSphere provide  resources and rights for partners to help them increase their expertise, deliver open source technology, and resell product.'
+  title: 'Join the Revolution, Partner with KubeSphere'
+  content: 'We look forward to your joining KubeSphere partner program to improve both ecosystems and grow your business. KubeSphere provides resources and rights for partners to help them increase their expertise, deliver open source technologies, and resell products.'
   topImage: 'images/partner/partner-top.jpg'
 
 section2:
   title: 'Together, build partnership for success all over the world'
-  content: 'KubeSphere partners play a critical role in KubeSphere go-to-market strategy. KubeSphere partners are located all over the world, we are looking forward to the global cooperation, your success is our success.'
+  content: 'KubeSphere partners play a critical role in KubeSphere go-to-market strategy. KubeSphere partners are located all over the world. We are looking forward to global cooperation as your success is our success.'
   name1: 'USA'
   name2: 'European'
   name3: 'China'
