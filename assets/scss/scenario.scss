@@ -166,6 +166,15 @@ html {
         width: 100%;
       }
     }
+
+    iframe {
+      margin-top: 40px;
+
+      @media only screen and (max-width: $mobile-max-width) {
+        width: 100%;
+        height: 300px;
+      }
+    }
   
     p {
       margin-top: 56px;
