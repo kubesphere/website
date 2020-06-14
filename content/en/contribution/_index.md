@@ -192,7 +192,7 @@ section3:
       - name: 'Multi-cluster'
         icon: '/images/contribution/multicluster.svg'
         iconActive: '/images/contribution/multicluster-active.svg'
-        content: 'multi-cluster and multi-cloud management'
+        content: 'Multi-cluster and multi-cloud management'
         link: 'https://github.com/kubesphere/community/tree/master/sig-multicluster'
         linkContent: 'Join SIG - Multicluster →'
         children:
@@ -281,7 +281,7 @@ section4:
         linkContent: 'Become a KubeSphere Contributor →'
 
 section5:
-  title: Participated organizations
+  title: Participated Organizations
   list:
     - icon: /images/contribution/section5-1.svg
     - icon: /images/contribution/section5-2.jpg
