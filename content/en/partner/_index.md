@@ -30,7 +30,7 @@ section3:
       link: "request"
 
     - title: "Technology"
-      content: Technology Partners offer a hardware platform, cloud service or software application that integrates with KubeSphere based on technical collaboration or joint solutions. If you have a solution that can be integrated with KubeSphere, let's apply it to enhance user experiences.
+      content: Technology Partners offer hardware platforms, cloud services or applications for KubeSphere based on technical collaboration or joint solutions. If you have a solution of this kind, let's apply it to enhance user experiences.
       link: "request"
 
     - title: "Cloud Providers"
