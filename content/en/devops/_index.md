@@ -42,6 +42,7 @@ section2:
 
 section3:
   title: See KubeSphere One-stop DevOps Workflow In Action
+  videoLink: https://www.youtube.com/embed/c3V-2RX9yGY
   image: /images/service-mesh/15.jpg
   content: Want to get started in action by following with the hands-on lab?
   btnContent: Start Hands-on Lab
