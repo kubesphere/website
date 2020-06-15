@@ -23,7 +23,7 @@
                 <ul>
                     {{ range .children }}
                     <li>
-                        <a href="{{ .link }}" target="_blank">{{ .content }}</a>
+                        <a href="{{ .link }}" target="_blank" rel="noopener noreferrer">{{ .content }}</a>
                     </li>
                     {{ end }}
                 </ul>
@@ -98,7 +98,7 @@
             <img class='bottom-img' src="{{ .iconActive | absURL }}" alt="">
             <div class='btn-change btn-right' data-num='1'></div>
         </div>
-        <a class="common-green-a" href="{{ .link }}">{{ .linkContent }}</a>
+        <a class="common-green-a" href="{{ .link }}" target="_blank" rel="noopener noreferrer">{{ .linkContent }}</a>
         <p class="common-p">{{ .content }}</p>
         <ul>
             {{ range .children }}
@@ -123,7 +123,7 @@
             <h3 class="title-white-h3">{{ .title }}</h3>
             <p class="common-center-p">{{ .content }}</p>
             <div>
-                <a href="{{ .link }}" target="_blank">{{ .linkContent }}</a>
+                <a href="{{ .link }}" target="_blank" rel="noopener noreferrer">{{ .linkContent }}</a>
             </div>
         </div>
         {{ end }}
