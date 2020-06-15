@@ -22,12 +22,12 @@
                     <span class='menu-span'>{{ .Name }}</span>
                     <ul class="dropdown-menu menu-{{ .Name }}">
                         {{ range .Children }}
-                        <li {{ if eq $section .URL }} class="active"{{ end}}><a href="{{ .URL | absLangURL }}" target="_blank">{{ .Name }}</a></li>
+                        <li {{ if eq $section .URL }} class="active"{{ end}}><a href="{{ .URL | absLangURL }}">{{ .Name }}</a></li>
                         {{ end }}
                     </ul>
                 </li>
                 {{ else }}
-                <li {{ if eq $section .URL }} class="active"{{ end}}><a href="{{ .URL | absLangURL }}" target="_blank">{{ .Name }}</a></li>
+                <li {{ if eq $section .URL }} class="active"{{ end}}><a href="{{ .URL | absLangURL }}">{{ .Name }}</a></li>
                 {{ end }}
 
                 {{ end }}
