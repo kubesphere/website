@@ -5,7 +5,7 @@ css: "scss/case.scss"
 
 section1:
   title: User Case Studies
-  content: KubeSphere is trusted by various enterprises and organizations to the innovators driving the future of software.
+  content: KubeSphere is trusted by various enterprises and organizations as the innovator driving the future of software.
   topImage: "/images/case/case-top.jpg"
 
 section2:
@@ -13,11 +13,11 @@ section2:
   icon: images/case/left.svg
   caseList:
     - icon: "images/case/case5.jpg"
-      content: "Anchnet is a leading Next-generation Cloud Managed Service Provider (Cloud MSP) in China, provides cloud native technologies and solutions for customers."
+      content: "Anchnet is a leading Next-generation Cloud Managed Service Provider (Cloud MSP) in China, providing cloud native technologies and solutions for customers."
       link: "anchnet"
 
     - icon: "images/case/case3.jpg"
-      content: "Aqara is owned by Lumi United Technology, headquartered in China, we have over 300 Aqara service providers and 300 smart home showrooms."
+      content: "Aqara is owned by Lumi United Technology, headquartered in China, with over 300 Aqara service providers and 300 smart home showrooms."
       link: "aqara"
 
     - icon: "images/case/case1.jpg"
@@ -48,7 +48,7 @@ section3:
         - name: 'benlai'
           icon: 'images/case/section6-benlai.jpg'
 
-    - name: 'Financial'
+    - name: 'Finance'
       children:
         - name: 'huaxia-bank'
           icon: 'images/case/section6-huaxia-bank.jpg'

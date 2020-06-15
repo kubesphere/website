@@ -11,7 +11,7 @@ viewDetail: View Details
 
 list:
   - name: KubeCon
-    content: Kubecon is an annual conference hosted by the Cloud Native Computing Foundation. We have given these presentations in KubeCon 2019.
+    content: Kubecon is an annual conference hosted by the Cloud Native Computing Foundation. We gave these presentations in KubeCon 2019.
     icon: images/conferences/kubecon.svg
     bg: images/conferences/kubecon-bg.svg
     children:
