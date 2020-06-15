@@ -126,7 +126,7 @@ html {
 .section-3 {
   position: relative;
   padding-top: 80px;
-  padding-bottom: 20px;
+  padding-bottom: 50px;
   text-align: center;
   overflow: hidden;
 
@@ -191,13 +191,16 @@ html {
       font-size: 16px;
       border-radius: 28px;
       cursor: pointer;
-      box-shadow: 0 10px 8px 0 rgba(34, 43, 62, 0.1), 0 8px 16px 0 rgba(33, 43, 61, 0.2), 0 10px 8px 0 rgba(34, 43, 62, 0.1);
-      background-image: linear-gradient(to bottom, rgba(85, 188, 138, 0), rgba(85, 188, 138, 0.1) 97%), linear-gradient(to bottom, #55bc8a, #55bc8a);
-      
+      box-shadow: 0 10px 50px 0 rgba(34, 43, 62, 0.1), 0 8px 16px 0 rgba(33, 43, 61, 0.2);
+      background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.1) 97%), linear-gradient(to bottom, #55bc8a, #55bc8a);
       &:hover {
         box-shadow: none;
       }
     }
   }
 
+}
+
+.footer {
+  padding-top: 60px;
 }

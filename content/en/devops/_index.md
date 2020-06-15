@@ -9,7 +9,7 @@ section1:
   content: KubeSphere provides rich observability from infrastructure to applications. It integrates your favorite tools for multi-dimensional monitoring metrics, multi-tenant log query and collection, alerting and notification.
   image: /images/service-mesh/banner.jpg
 
-image: /images/devops/dev-ops.jpg
+image: /images/devops/dev-ops.svg
 
 section2:
   title: Automatically Checkout Code, Test, Analyse, Build, Deploy and Release
