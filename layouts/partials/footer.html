@@ -26,7 +26,11 @@
                             <li>
                                 <div class="h3">{{ .title }}</div>
                                 {{ range .list }}
-                                <a href="{{ .link | absURL }}" target="_blank">{{ .content }}</a>
+                                {{ if hasPrefix .link "http" }}
+                                <a href="{{ .link }}" target="_blank" rel="noopener noreferrer">{{ .content }}</a>
+                                {{ else }}
+                                <a href="{{ .link | absLangURL }}">{{ .content }}</a>
+                                {{ end }}
                                 {{ end }}
                             </li>
                         {{ end }}
@@ -52,12 +56,12 @@
                             <p>进群请备注 “公司 - 姓名”</p>
                         </div>
                     </a> -->
-                    <a class='youtube-a' href="{{ .Site.Params.youtubeLink }}" target="_blank"></a>
-                    <a class='slack-a' href="{{ .Site.Params.slackLink }}" target="_blank"></a>
-                    <a class='twitter-a' href="{{ .Site.Params.twitterLink }}" target="_blank"></a>
-                    <a class='github-a' href="{{ .Site.Params.githubLink }}" target="_blank"></a>
-                    <a class='medium-a' href="{{ .Site.Params.mediumLink }}" target="_blank"></a>
-                    <a class='linkedin-a' href="{{ .Site.Params.linkedinLink }}" target="_blank"></a>
+                    <a class='youtube-a' href="{{ .Site.Params.youtubeLink }}" target="_blank" rel="noopener noreferrer"></a>
+                    <a class='slack-a' href="{{ .Site.Params.slackLink }}" target="_blank" rel="noopener noreferrer"></a>
+                    <a class='twitter-a' href="{{ .Site.Params.twitterLink }}" target="_blank" rel="noopener noreferrer"></a>
+                    <a class='github-a' href="{{ .Site.Params.githubLink }}" target="_blank" rel="noopener noreferrer"></a>
+                    <a class='medium-a' href="{{ .Site.Params.mediumLink }}" target="_blank" rel="noopener noreferrer"></a>
+                    <a class='linkedin-a' href="{{ .Site.Params.linkedinLink }}" target="_blank" rel="noopener noreferrer"></a>
                 </div>
                 <p class='p1'>{{ i18n "introduction2" }}</p>
             </div>
