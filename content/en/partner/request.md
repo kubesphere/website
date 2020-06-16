@@ -26,5 +26,5 @@ section2:
 
 sectionIframe:
   title: Become a Partner with KubeSphere
-  googleFormUrl: https://docs.google.com/forms/d/e/1FAIpQLSf2kT-J9xJma3ASsZF6n0jVaAldJU2gNL8wVz88SraNJyCE4Q/viewform?embedded=true
+  googleFormUrl: https://docs.google.com/forms/d/e/1FAIpQLSed29YLAvJ5ym8Ht3ZZ2NU6-udZeDJ2I3Kbgc1d5H7jYYXEkQ/viewform?embedded=true&hl=en
 ---
