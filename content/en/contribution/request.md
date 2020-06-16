@@ -11,6 +11,6 @@ section1:
 
 sectionIframe:
   title: Become a KubeSphere Ambassador
-  googleFormUrl: https://docs.google.com/forms/d/e/1FAIpQLSf2kT-J9xJma3ASsZF6n0jVaAldJU2gNL8wVz88SraNJyCE4Q/viewform?embedded=true
+  googleFormUrl: https://docs.google.com/forms/d/e/1FAIpQLSfA1oNkKjtm2c4AHC6JyeB9zFwey4sg3-vEnnByXbn2UjY8lw/viewform?embedded=true&hl=en
 
 ---
