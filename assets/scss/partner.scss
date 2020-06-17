@@ -36,6 +36,11 @@
     z-index: 2;
     top: -40px;
     box-shadow: 0 4px 8px 0 rgba(36, 46, 66, 0.06);
+
+    @media only screen and (max-width: $mobile-max-width) {
+      flex-direction: column;
+    }
+
     .left-div {
       position: relative;
       width: 470px;
@@ -46,6 +51,7 @@
       @media only screen and (max-width: $mobile-max-width) {
         width: 100%;
         height: auto;
+        box-sizing: border-box;
         border-radius: 10px;
         padding: 20px;
       }
@@ -91,12 +97,21 @@
       background-color: #3d3e49;
 
       @media only screen and (max-width: $mobile-max-width) {
-        display: none;
+        box-sizing: border-box;
+        width: 100%;
+        height: auto;
+        margin-top: 20px;
+        border-radius: 10px;
       }
 
       & > img {
         margin-top: 107px;
         margin-left: 45px;
+
+        @media only screen and (max-width: $mobile-max-width) {
+          width: 100%;
+          margin-left: 0px;
+        }
       }
 
       .btn-div {
@@ -111,6 +126,12 @@
         box-shadow: 0 2px 8px 0 rgba(250, 164, 66, 0.5);
         background-image: linear-gradient(107deg, #fdba39 20%, #f2635e 99%);
         cursor: pointer;
+
+        @media only screen and (max-width: $mobile-max-width) {
+          width: 70px;
+          height: 20px;
+          line-height: 20px;
+        }
 
         &:hover {
           & > div {
@@ -129,12 +150,21 @@
           border-radius: 10px;
           background: #ffffff;
 
+          @media only screen and (max-width: $mobile-max-width) {
+            width: 90px;
+            height: 40px;
+          }
+
           img {
             width: 95px;
             position: absolute;
             top: 50%;
             left: 50%;
             transform: translate(-50%, -50%);
+
+            @media only screen and (max-width: $mobile-max-width) {
+              width: 70px;
+            }
           }
 
           &::after {
@@ -155,16 +185,31 @@
         top: 116px;
         left: 85px;
         background-image: linear-gradient(107deg, #f2635e 20%, #fdba39 99%);
+
+        @media only screen and (max-width: $mobile-max-width) {
+          left: 15%;
+          transform: translateX(-50%);
+        }
       }
 
       .div-2 {
         top: 89px;
         left: 294px;
+
+        @media only screen and (max-width: $mobile-max-width) {
+          left: 51.568%;
+          transform: translateX(-50%);
+        }
       }
 
       .div-3 {
         top: 92px;
         right: 97px;
+
+        @media only screen and (max-width: $mobile-max-width) {
+          right: 12.718%;
+          transform: translateX(50%);
+        }
       }
     }
   }

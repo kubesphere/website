@@ -1,6 +1,13 @@
 {{ define "main" }}
-
-<section style="text-align: center; margin-top: 200px;">
-    <h2>404</h2>
+<section class="section-1">
+    <img class="img-1" src="/images/404/combined-shape.svg" alt="">
+    <img class="img-2" src="/images/404/fill.svg" alt="">
+    <div class="common-layout">
+        <img src="/images/404/404.png" alt="">
+        <p>{{ i18n "We can’t find the page that you’re looking for :(" }}</p>
+        <a href="{{ site.Home.RelPermalink }}">
+            <button>{{ i18n "Go To Home" }}</button>
+        </a>
+    </div>
 </section>
 {{ end }}

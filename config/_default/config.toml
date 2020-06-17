@@ -35,23 +35,23 @@ languageName = "English"
 
 [[languages.en.menu.main]]
 weight = 2
-name = "Scenario"
+name = "Scenarios"
 hasChildren = true
 
   [[languages.en.menu.main]]
-  parent = "Scenario"
+  parent = "Scenarios"
   name = "Embracing One-stop DevOps Workflow"
   URL = "devops"
   weight = 1
 
   [[languages.en.menu.main]]
-  parent = "Scenario"
+  parent = "Scenarios"
   name = "Running Microservices on Kubernetes"
   URL = "service-mesh"
   weight = 2
 
   [[languages.en.menu.main]]
-  parent = "Scenario"
+  parent = "Scenarios"
   name = "Building Cloud Native Observability"
   URL = "observability"
   weight = 3

@@ -21,4 +21,14 @@
 <link rel="stylesheet" href="{{ $style.Permalink }}">
 {{ end }}
 
+{{ if eq .Site.Language.Lang "tr" }}
+{{ $footer := resources.Get "scss/footer-tr.scss" | toCSS | minify | fingerprint }}
+<link rel="stylesheet" href="{{ $footer.Permalink }}">
+{{ end }}
+
+{{ if strings.HasSuffix .Permalink "404.html" }}
+{{ $style := resources.Get "scss/404.scss" | toCSS | minify | fingerprint }}
+<link rel="stylesheet" href="{{ $style.Permalink }}">
+{{ end }}
+
 
