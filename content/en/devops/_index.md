@@ -6,7 +6,7 @@ css: "scss/scenario.scss"
 
 section1:
   title: KubeSphere DevOps offers end-to-end workflow and integrates popular CI/CD tools to boost delivery.
-  content: KubeSphere provides rich observability from infrastructure to applications. It integrates your favorite tools for multi-dimensional monitoring metrics, multi-tenant log query and collection, alerting and notification.
+  content: KubeSphere DevOps provides CI/CD pipeline based on Jenkins, and offers automated workflows including binary-to-image (B2I) and source-to-image (S2I), helps organizations accelerate time to market for their product.
   image: /images/service-mesh/banner.jpg
 
 image: /images/devops/dev-ops.svg
@@ -14,7 +14,7 @@ image: /images/devops/dev-ops.svg
 section2:
   title: Automatically Checkout Code, Test, Analyse, Build, Deploy and Release
   list:
-    - title: Multi-dimensional Monitoring
+    - title: Out-of-box CI/CD Pipeline
       image: /images/devops/CD-pipeline.svg
       contentList:
         - content: <span>Easy to integrate with your SCM,</span> supporting GitLab / GitHub / BitBucket / SVN
@@ -22,7 +22,7 @@ section2:
         - content: <span>Integrate SonarQube</span> to implement source code quality analysis
         - content: <span>Support dependency cache</span> to accelerate build and deployment
         - content: <span>Provide dynamic build agents</span> to automatically spin up Pods as necessary
-    
+
     - title: Built-in Automated Toolkits
       image: /images/devops/Built-in-automated-toolkits.svg
       contentList:
@@ -30,7 +30,7 @@ section2:
         - content: <span>Binary-to-image</span> is the bridge between your artifact and a runnable image
         - content: <span>Support automatically building and pushing</span> images to any registry, and finally deploy them to Kubernetes
         - content: <span>Provide excellent recoverability and flexibility</span> as you can rebuild and rerun S2I / B2I whenever a patch is needed
-    
+
     - title: Use GitOps to implement DevOps, not just culture
       image: /images/devops/Clear-insight.svg
       contentList:
@@ -46,7 +46,7 @@ section3:
   image: /images/service-mesh/15.jpg
   content: Want to get started in action by following the hands-on lab?
   btnContent: Start Hands-on Lab
-  link:
+  link: https://kubesphere.io/docs/installation/install-devops/
   bgLeft: /images/service-mesh/3-2.svg
   bgRight: /images/service-mesh/3.svg
 ---
