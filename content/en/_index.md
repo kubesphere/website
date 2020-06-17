@@ -78,7 +78,7 @@ section3:
 
 section4:
   title: Key Features
-  content: If you are seeking an open source project that rivals a commercial product, KubeSphere is your choice. <br> <br>The Roadmap lists the planned features and everyone is welcome to raise a proposal and contribute your ideas.
+  content: If you are seeking an open source project that rivals a commercial product, KubeSphere is your choice. <br> <br>The <a class='inner-a' target='_blank' href='https://github.com/kubesphere/kubesphere/blob/master/docs/roadmap.md'>RoadMap</a> lists the planned features and everyone is welcome to raise a proposal and contribute your ideas.
   children:
     - name: Provisioning Kubernetes
       icon: /images/home/provisioning-kubernetes.svg
@@ -158,7 +158,7 @@ section5:
 
 section6:
   title: End User Community
-  content: Tons of enterprises and organizations are using KubeSphere Container Platform for research, production and their commercial products.</br> The <a class='inner-a' href='../case'>Case Studies</a> list more detailed user cases and their cloud native transformation stories.
+  content: Tons of enterprises and organizations are using KubeSphere Container Platform for research, production and their commercial products.</br> The <a class='inner-a' target='_blank' href='../case'>Case Studies</a> list more detailed user cases and their cloud native transformation stories.
   children:
     - icon: /images/home/section6-anchnet.jpg
     - icon: /images/home/section6-aqara.jpg
