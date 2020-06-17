@@ -22,7 +22,7 @@ section2:
         - content: <span>Resource usage ranking</span> by node, workspace and project
         - content: <span>Service component monitoring</span> for users to quickly locate component failures
         - content: <span>Custom metrics support</span> includes application custom metrics dashboard (in v3.0.0)
-    
+
     - title: Log Query and Collection
       image: /images/observability/log-query-and-collection.png
       contentList:
@@ -30,7 +30,7 @@ section2:
         - content: <span>Multi-level log queries</span> include projects, workloads, Pods, containers and keywords, supporting drilling into each level to locate the issues
         - content: <span>Support multiple log collection platforms</span>, such as Elasticsearch, Kafka and Fluentd
         - content: <span>Service component monitoring</span> for users to quickly locate component failures
-    
+
     - title: Flexible Alerting and Notification
       image: /images/observability/flexible-alerting-and-notification.png
       contentList:
@@ -45,7 +45,7 @@ section3:
   image: /images/service-mesh/15.jpg
   content: Want to get started in action by following the hands-on lab?
   btnContent: Start Hands-on Lab
-  link:
+  link: https://kubesphere.io/docs/installation/intro/
   bgLeft: /images/service-mesh/3-2.svg
   bgRight: /images/service-mesh/3.svg
 ---
