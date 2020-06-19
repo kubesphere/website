@@ -10,8 +10,12 @@
       <p class='p1'>{{ .title | safeHTML }}</p>
       <h1>{{ .topic | safeHTML }}</h1>
       <p class='p2'>{{ .content | safeHTML }}</p>
-      <a href="{{ .downloadLink1 }}"><button class='btn1 common-btn'>{{ .btnContent1 }}</button></a>
-      <a href="{{ .downloadLink2 }}"><button class='btn2 common-btn'>{{ .btnContent2 }}</button></a>
+      <a href="{{ .downloadLink1 }}" target="_blank" rel="noopener noreferrer">
+        <button class='btn1 common-btn'>{{ .btnContent1 }}</button>
+      </a>
+      <a href="{{ .downloadLink2 }}" target="_blank" rel="noopener noreferrer">
+        <button class='btn2 common-btn'>{{ .btnContent2 }}</button>
+      </a>
     </div>
     <img class='img1' src="/images/home/53.png" alt="">
     <img class='img2' src="/images/home/left.svg" alt="">

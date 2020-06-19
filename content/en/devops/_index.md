@@ -7,7 +7,7 @@ css: "scss/scenario.scss"
 section1:
   title: KubeSphere DevOps offers end-to-end workflow and integrates popular CI/CD tools to boost delivery.
   content: KubeSphere DevOps provides CI/CD pipeline based on Jenkins, and offers automated workflows including binary-to-image (B2I) and source-to-image (S2I), helps organizations accelerate time to market for their product.
-  image: /images/service-mesh/banner.jpg
+  image: /images/devops/banner.jpg
 
 image: /images/devops/dev-ops.svg
 
