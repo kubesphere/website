@@ -6,11 +6,11 @@ author: 'Feynman, Ray, Sherlock'
 snapshot: 'https://pek3b.qingstor.com/kubesphere-docs/png/20200410130334.png'
 ---
 
-## A Container Platform: What is the Value of KubeSphere
+## A Promising Newcomer
 
 As **a promising newcomer** of the cloud native family, KubeSphere has gained widespread recognition among its users and developers since it joined the open source community nearly two years ago. This article illustrates the position and value of KubeSphere from scratch in a straightforward way and sheds light on why different teams have chosen KubeSphere.
 
-## What does KubeSphere mean for enterprises
+## For Enterprises
 
 KubeSphere is a **multi-tenant** container platform built on Kubernetes with applications at its core. It is capable of full stack IT automated operation and maintenance, streamlining the DevOps workflow for enterprises. KubeSphere not only helps enterprises quickly establish a Kubernetes cluster in public cloud or private data center, but also provides a set of multi-functional wizard interfaces.
 
@@ -22,7 +22,7 @@ In daily operation, maintenance and development, we might need to utilize and ma
 
 ![Unified Management Tool](https://pek3b.qingstor.com/kubesphere-docs/png/20200410133506.png)
 
-## What does KubeSphere mean for developers
+## For Developers
 
 KubeSphere is commonly known as "A Cloud Native Melting Pot" to many users. This is understandable as KubeSphere entails a package of solutions. We have designed a complete set of management interface with a unified platform for development, operation and maintenance. As such, users can easily install and manage their most commonly used cloud native tools, enjoying a consistent user experience with lower complexity in their business. Components at the lowest level of Kubernetes feature great flexibility as all of them are pluggable, making it possible for users to install the components based on their needs.
 
@@ -32,7 +32,7 @@ KubeSphere offers an app store based on [OpenPitrix](https://openpitrix.io/) and
 
 ![KubeSphere App Store](https://pek3b.qingstor.com/kubesphere-docs/png/20200410133902.png)
 
-## What does KubeSphere mean for operation and maintenance
+## For Operation and Maintenance
 
 Observability represents an essential part of container platforms. In a narrow sense, it mainly entails monitoring, logging and tracking; in a board sense, it includes alerting, events and audit logs. For operation and maintenance staff of Kubernetes, in general, an entire set of observable technical architecture needs to be put in place, such as Prometheus + Grafana + AlertManager and EFK. Besides, enterprises need to provide solutions to multi-tenant isolation in terms of the data they can see, such as monitoring, logging, events and audit logs. That means the cost of operation and maintenance will increase to meet the needs with higher complexity for enterprises.
 
@@ -40,7 +40,7 @@ KubeSphere is capable of quickly creating a set of technical architectures on th
 
 ![What does KubeSphere mean for operation and maintenance](https://pek3b.qingstor.com/kubesphere-docs/png/20200410133938.png)
 
-## What does KubeSphere mean for a DevOps team
+## For DevOps Teams
 
 A DevOps team is responsible for the operation, maintenance and management of a variety of open source toolchains in its daily work in addition to the development of automation tools. DevOps itself, broadly speaking, represents a methodology while it can also be seen as a culture. As many DevOps teams strive to carry out their work, they may find themselves overwhelmed by excessive CI/CD tools and complex processes while struggling to deal with different personalities and adjust to various environments.
 
@@ -60,7 +60,7 @@ Business developers can use built-in automation CD tools in KubeSphere (e.g. Bin
 
 ![Binary/Source to Image](https://pek3b.qingstor.com/kubesphere-docs/png/20200410134220.png)
 
-## What does KubeSphere mean for operation
+## For Operation
 
 Usually, the operation team needs to bring in some traffic for grayscale testing of a new product version before its release. Grayscale release is conducive to the stability of the whole system as the new version will be tested during the initial release. Issues can be found with adjustments made at this stage, serving as a way for product feasibility test with user feedback collected as well.
 
@@ -70,6 +70,6 @@ Three grayscale strategies are provided by KubeSphere based on Istio: blue-green
 
 ![KubeSphere service mesh](https://pek3b.qingstor.com/kubesphere-docs/png/20200410134326.png)
 
-## How to install KubeSphere
+## KubeSphere Installation
 
 KubeSphere can be deployed and run on any infrastructure, including public clouds, private clouds, virtual machines, bare metals and Kubernetes. It can be installed either online or offline. Please refer to [KubeSphere Installation Guide](https://kubesphere.io/docs/installation/intro/) for installation.
