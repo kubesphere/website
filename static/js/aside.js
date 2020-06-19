@@ -24,4 +24,22 @@ var bindAsideScroll = function() {
       }
   });
 }
+
+var bindClickLink = function() {
+  var aside = $('.aside')
+  var headerHeight = $('header').outerHeight()
+  aside.find('a').click(function(event) {
+    event.preventDefault()
+    var id = $(this).attr('href')
+    scrollToElement(id, headerHeight)
+  })
+}
+
+var scrollToElement = function(id, headerHeight) {
+  var element = $(id)
+  var toTop = element.offset().top
+  window.scrollTo(0, toTop - headerHeight)
+}
+
 bindAsideScroll()
+bindClickLink()
