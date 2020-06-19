@@ -1,34 +1,50 @@
 [
   {
-    "title": "Helm-based Application Management in KubeSphere Application Store",
-    "link": "https://www.youtube.com/embed/h1Mmcr4wnF8?&autoplay=1",
-    "createTime": "2020.4.25",
-    "snapshot": "/images/videos/cover.png",
-    "group": "",
+    "title": "Kubernetes and Microservices Observability on KubeSphere",
+    "link": "https://www.youtube.com/embed/uf0TTowc56I?&autoplay=1",
+    "createTime": "2020.6.17",
+    "snapshot": "https://pek3b.qingstor.com/kubesphere-docs/png/20200619153720.png",
+    "group": "Observability",
     "tag": ""
   },
   {
-    "title": "Binary to Image - Containerize Artifact and Deploy Service to Kubernetes",
-    "link": "https://www.youtube.com/embed/jThC4CDoCLU?&autoplay=1",
+    "title": "A Complete Walkthrough to KubeSphere DevOps System",
+    "link": "https://www.youtube.com/embed/uf0TTowc56I?&autoplay=1",
+    "createTime": "2020.6.12",
+    "snapshot": "https://pek3b.qingstor.com/kubesphere-docs/png/20200619153949.png",
+    "group": "DevOps",
+    "tag": ""
+  },
+  {
+    "title": "Helm-based Application Management in KubeSphere Application Store",
+    "link": "https://www.youtube.com/embed/h1Mmcr4wnF8?&autoplay=1",
     "createTime": "2020.4.25",
-    "snapshot": "/images/videos/cover.png",
-    "group": "",
+    "snapshot": "https://pek3b.qingstor.com/kubesphere-docs/png/20200619153336.png",
+    "group": "App Management",
+    "tag": ""
+  },
+  {
+    "title": "Binary to Image -  Build reproducible docker image from binary",
+    "link": "https://www.youtube.com/embed/jThC4CDoCLU?&autoplay=1",
+    "createTime": "2020.4.30",
+    "snapshot": "https://pek3b.qingstor.com/kubesphere-docs/png/20200619152950.png",
+    "group": "DevOps",
     "tag": ""
   },
   {
     "title": "Bookinfo Canary Release on Kubernetes using Istio, Jaeger and KubeSphere",
     "link": "https://www.youtube.com/embed/EkGWtwcsdE4?&autoplay=1",
-    "createTime": "2020.4.25",
-    "snapshot": "/images/videos/cover.png",
-    "group": "",
+    "createTime": "2020.5.15",
+    "snapshot": "https://pek3b.qingstor.com/kubesphere-docs/png/20200619153123.png",
+    "group": "Service Mesh",
     "tag": ""
   },
   {
     "title": "Create Horizontal Pod Autoscaler for Kubernetes Deployment using KubeSphere",
     "link": "https://www.youtube.com/embed/Aqy-psx9B30?&autoplay=1",
     "createTime": "2020.4.25",
-    "snapshot": "/images/videos/cover.png",
-    "group": "",
+    "snapshot": "https://pek3b.qingstor.com/kubesphere-docs/png/20200619153218.png",
+    "group": "Kubernetes",
     "tag": ""
   }
 ]
