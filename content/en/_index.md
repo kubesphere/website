@@ -107,14 +107,14 @@ section4:
 
     - name: Rich Observability
       icon: /images/home/rich.svg
-      content: Multi-dimensional monitoring metrics, multi-tenant log query and collection, and alerting and notification support
+      content: Multi-dimensional monitoring, events and audit logs query are supported; multi-tenant log query and collection, alerting and notification are built-in
       link: "../observability"
       color: green
 
     - name: DevOps System
       icon: /images/home/dev-ops.svg
-      content: Out-of-box CI/CD based on Jenkins, and automated workflow tools including S2I & B2I
-      link: "https://kubesphere.io/docs/installation/install-devops/"
+      content: Out-of-box CI/CD based on Jenkins, and automated workflow tools including Source-to-Image & Binary-to-Image
+      link: "/devops"
       color: orange
 
     - name: Multiple Storage Solutions
@@ -125,13 +125,13 @@ section4:
 
     - name: Multiple Network Solutions
       icon: /images/home/network.svg
-      content: Support Calico and Flannel, and provide load balancer plug-in Porter for Kubernetes installed on physical machines
+      content: Provide a <a class='inner-a' target='_blank' href='https://porterlb.io'>load balancer Porter</a> for bare metal Kubernetes, and offers network policy management, support Calico and Flannel CNI
       link: "https://kubesphere.io/docs/introduction/features/#multiple-network-solutions-support"
       color: green
 
     - name: Multi-cluster Management
       icon: /images/home/management.svg
-      content: Distribute applications across multiple clusters and cloud providers, and provide disaster recovery solutions and cross-cluster discovery
+      content: Distribute applications across multiple clusters and cloud providers, and provide disaster recovery solutions and cross-cluster observability
       check: true
       link: ""
       color: orange
