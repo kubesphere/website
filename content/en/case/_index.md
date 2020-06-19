@@ -34,7 +34,7 @@ section2:
 
     - icon: "images/case/vng.jpg"
       content: "VNG has seen 14 years of continuous development and expansion to become one of the leading IT companies in Vietnam and Southeast Asia."
-      link: ""
+      link: "vng"
 
 section3:
   title: 'Various Industries are Powered by KubeSphere'
