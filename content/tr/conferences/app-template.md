@@ -1,87 +1,88 @@
 ---
-title: 'Deploying a Grafana Application to Kubernetes Using Application Template'
+title: 'Uygulama Şablonu kullanarak Kubernetes üzerinde Grafana Uygulamasının Kurulumu'
 
 author: 'xxx'
 ---
 
-## Objective
+## Amaç
 
-This tutorial shows you how to quickly deploy a [Grafana](https://grafana.com/) application in KubeSphere via App Template, demonstrating the basic functionality of the application repository, application templates, and application management.
+Bu eğitim, uygulama havuzunun, uygulama şablonlarının ve uygulama yönetiminin temel işlevlerini göstererek KubeSphere'de bir [Grafana] (https://grafana.com/) uygulamasının Uygulama Şablonu ile nasıl hızlı bir şekilde dağıtılacağını ve gösterir.
 
-## Prerequisites
+## Gereklilikler
 
-You've completed all steps in [Tutorial 1](admin-quick-start.md).
+Bu eğitimdeki tüm adımları tamamlanız gerekir. [Tutorial 1](admin-quick-start.md).
 
-## Hands-on Lab
+## Uygulama
 
-### Step 1: Add a Application Repository
+### Adım 1: Uygulama Havuzu eklemek
 
-> Note: The application repository can be either the Object Storage, e.g. [QingStor Object Storage](https://www.qingcloud.com/products/qingstor/), [AWS S3](https://aws.amazon.com/cn/what-is-cloud-object-storage/), or [GitHub Repository](https://github.com/). The packages are composed of Helm Chart template files of the applications. Therefore, before adding an application repository to KubeSphere, you need to create an object storage and upload Helm packages in advance. This tutorial prepares a demo repository based on QingStor Object Storage.
+> Note: uygulama havuzu aynı zamanda bir Nesne Depolaması da olabilir. ör: [QingStor Object Storage](https://www.qingcloud.com/products/qingstor/), [AWS S3](https://aws.amazon.com/cn/what-is-cloud-object-storage/), or [GitHub Repository](https://github.com/). Paketler, uygulamaların Helm Tablosu şablon dosyalarından oluşur. Bu nedenle, KubeSphere'e bir uygulama havuzu eklemeden önce, bir nesne deposu oluşturmanız ve Helm paketlerini önceden yüklemeniz gerekir. Bu eğitimde QingStor Nesne Depolamasına dayalı bir demo deposu hazırlanmaktadır.
 
-1.1. Sign in with `admin` account and navigate to **Platform → Platform Settings → App Repositories**, then Click **Add App Repository**.
+1.1. `Admin` hesabıyla oturum açın ve ** Platform → Platform Ayarları → Uygulama Depoları ** seçeneğine gidin, ardından ** Uygulama Havuzu Ekle ** seçeneğine tıklayın.
 
 ![](https://pek3b.qingstor.com/kubesphere-docs/png/20190717133759.png)
 
-1.2. Fill in the basic information, name it as demo-repo and input the URL with `https://helm-chart-repo.pek3a.qingstor.com/kubernetes-charts/`, you can validate if this URL is available, choose **OK** when you've done.
+1.2. Temel bilgileri doldurun ve demo-repo olarak adlandırın. URL'yi  URL'yi`https://helm-chart-repo.pek3a.qingstor.com/kubernetes-charts/` şeklinde girin. Eğer URL müsaitse doğrulama yapabilirsiniz. İşlemi tamamladığınızda **OK** seçeneği ile devam edin.
 
 ![](https://pek3b.qingstor.com/kubesphere-docs/png/20190717134319.png)
 
-1.3. Click **App Templates** on the top of this page, it will automatically import all of the applications from the demo repository.
+1.3. Bu sayfanın üst kısmındaki ** Uygulama Şablonları ** seçeneğini tıklayarak tüm uygulamaları demo havuzundan otomatik olarak içe aktarın. 
 
 ![](https://pek3b.qingstor.com/kubesphere-docs/png/20190717134714.png)
 
-### Step 2: Deploy the Grafana Application
+### Adım 2: Grafana Uygulamasının Dağıtımı
 
-2.1. When you've already added the repository, you can logout and sign in with `project-regular` account. Then select **App Templates** on the top of this page, input "grafana" in the search box to find the application.
+2.1. Uygulama Havuzunu eklediğinizde, oturumu kapatıp ``proje-üye`` hesabıyla oturum açabilirsiniz. Ardından bu sayfanın üst kısmındaki ** Uygulama Şablonları ** 'nı seçin, uygulamayı bulmak için arama kutusuna "grafana" yazın.
 
 ![](https://pek3b.qingstor.com/kubesphere-docs/png/20190717145209.png)
 
-2.2. Click into grafana, **Deploy App** and fill in the basic information.
+2.2. Grafana'yı tıklayın, ** Uygulamayı Dağıt ** seçeneğine tıklayın ve temel bilgileri doldurun.
 
 ![](https://pek3b.qingstor.com/kubesphere-docs/png/20190717145338.png)
 
-2.3. **Name** can be customized by yourself, choose the corresponding Workspace (e.g. `demo-workspace`) and Project (e.g. `demo-project`) as the environment. Then choose **Deploy** to deploy Grafana to KubeSphere.
+2.3. ** Ad ** bölümünü kendiniz özelleştirilebilir, ortam olarak ilgili Çalışma Alanını (örneğin, `` demo-çalışma alanı '') ve Proje'yi (örneğin `` demo-proje '') seçin. Ardından Grafana'yı KubeSphere'e dağıtmak için ** Dağıt ** seçeneğini belirleyin. 
 
-2.4. Back to the `demo-project` and choose **Applications**, then you can see the application `grafana` showing `active` from the application list.
+
+2.4. Demo projesine dönün ve ** Uygulamalar ** 'ı seçin, ardından uygulama listesinde `grafana` uygulaması `aktif` olarak gösterilecektir.
 
 ![](https://pek3b.qingstor.com/kubesphere-docs/png/20190717145741.png)
 
-### Step 3: View App Details
+### Adım 3: Uygulama Detaylarını İnceleyin
 
-3.1. Click into `grafana` application, you will be able to see its Services and Workloads in `Resource Status` page, as well as Environmental Variables and App Template information.
+3.1.`Grafana` uygulamasına tıkladığınızda, Hizmetlerini ve İş Yüklerini  `Kaynak Durumu` sayfasında, Çevresel Değişkenler ve Uygulama Şablonu bilgilerinde görebilirsiniz.
 
 ![](https://pek3b.qingstor.com/kubesphere-docs/png/20190717150124.png)
 
-3.2. Next we are going to expose this service outside of the cluster via NodePort. Enter into its service e.g. `grafana-l47bmc`, then click **More → Edit Internet Access**.
+3.2. Daha sonra bu hizmeti NodePort aracılığıyla küme dışında göstereceğiz. Servisi girin örn. `grafana-l47bmc`, ardından ** Diğer → İnternet Erişimini Düzenle ** seçeneğine tıklayın.
 
 ![](https://pek3b.qingstor.com/kubesphere-docs/png/20190717150338.png)
 
-3.3. Select `NodePort` from the drop down list.
+3.3. Açılır pencereden `NodePort` öğesini seçin.
 
 ![](https://pek3b.qingstor.com/kubesphere-docs/png/20190717150427.png)
 
-3.4. Therefore it will generate a Node Port, for example, here is `31126` that we can access this service using `<$NodeIP>:<$NodePort>`.
+3.4. Bu nedenle bir Node Bağlantı Noktası üretecektir, örneğin, bu hizmete `<$NodeIP>:<$NodePort>` kullanarak erişebileceğimiz bir `31126` portu.
 
 ![](https://pek3b.qingstor.com/kubesphere-docs/png/20190717150540.png)
 
-### Step 4: Access the Grafana Service
+### Adım 4: Grafana Servisine Erişim
 
-At this point, you will be able to access the Nginx service via `${Node IP}:${NODEPORT}`, e.g. `http://192.168.0.88:31126`, or click the button **Click to visit** to access the Grafana dashboard.
+Bu noktada `${Node IP}:${NODEPORT}` üzerinden Nginx servisine erişebilirsiniz. Ör: Grafana yönetim paneline erişmek için `http://192.168.0.88:31126`, ya da **Gitmek için Tıklayın** butonuna tıklayabilirsiniz.
 
-4.1. Note that you have to obtain the account and password from the grafana secret in advance. Navigate to **Configuration Center → Secrets**, click into **grafana-l47bmc (Type: Default)**.
+4.1. İşlem öncesinde grafana'nın secret'ından hesap adı ve şifreyi öğrenmeniz gerektiğini unutmayın. **Yapılandırma Merkezi → Secrets** seçeneğine gidin, **grafana-l47bmc (Type: Default)** seçeneğine tıklayın.
 
 ![](https://pek3b.qingstor.com/kubesphere-docs/png/20190717152250.png)
 
-4.2. Click the button to display the secret information, then copy and paste the value of **admin-user** and **admin-password**.
+4.2. Secret detaylarını görüntülemek için düğmeyi tıklayın, ardından **admin-user** ve **admin-password** değerlerini kopyalayıp yapıştırın.
 
 ![](https://pek3b.qingstor.com/kubesphere-docs/png/20190717152352.png)
 
-4.3. Open the Grafana log in page, sign in with the **admin** account.
+4.3. Grafana giriş sayfasını açın, ** admin ** hesabıyla oturum açın.
 
 ![](https://pek3b.qingstor.com/kubesphere-docs/png/20190717152831.png)
 
 ![](https://pek3b.qingstor.com/kubesphere-docs/png/20190717152929.png)
 
-## Next Step
+## Sonraki Adım
 
-Tutorial 7 - [Create Horizontal Pod Autoscaler for Deployment](hpa.md).
+Eğitim 7 - [Dağıtım için Horizontal Pod Autoscaler Oluşuturulması](hpa.md).

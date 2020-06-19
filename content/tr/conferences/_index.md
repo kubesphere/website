@@ -4,7 +4,7 @@ title: "page1"
 
 css: "scss/conferences.scss"
 
-viewDetail: View Details
+viewDetail: Ayrıntıları İnceleyin
 
 list:
   - name: KubeCon
@@ -12,37 +12,37 @@ list:
     icon: images/conferences/kubecon.svg
     bg: images/conferences/kubecon-bg.svg
     children:
-      - name: 'Multi-tenant Management: Creating Accounts, Roles, Workspaces, Projects and DevOps Projects'
-        summary: ObjectiveIn this quickstart, as a cluster admin, you will learn how to create workspaces, roles and user accounts, and then invite new users…
+      - name: 'Alt Kullanıcı Yönetimi: Hesap oluşturma, Kullanıcı Rolleri, Çalışma Alanları, Projeler ve DevOps Projeleri'
+        summary: Bu rehberde, küme yöneticisi olarak, çalışma alanlarının, rollerin, kullanıcı hesaplarının nasıl oluşturulacağını ve yeni kullanıcıların nasıl davet edileceğini öğrenebilirsiniz. 
         author: xxx
         link: admin-quick-start
         image:
 
-      - name: Managing Canary Release of Microservice Application on Kubernetes with Istio
-        summary: Istio’s service mesh is able to manage traffic distribution with complete independence from deployment scaling, which enables a simpler, yet…
+      - name: Istio ile Kubernetes üzerindeki bir mikroservis uygulamasının Canary sürümününün yönetilmesi
+        summary: Istio’nun hizmet ağı, dağıtım aşamasındaki ölçeklendirmeden tamamen bağımsız olarak trafiğin dağıtılmasını sağlar...
         author: xxx
         link: canary-release
         image:
 
-      - name: Deploying a Grafana Application to Kubernetes Using Application Template
-        summary: ObjectiveThis tutorial shows you how to quickly deploy a Grafana application in KubeSphere via App Template, demonstrating the basic…
+      - name: Uygulama Şablonu ile Grafana’nın Kubernetes'te Dağıtımı
+        summary: Bu eğitimde, Grafana uygulamasının OpenPitrix tarafından desteklenen RadoreKube uygulama mağazasından şablonlar kullanarak hızlı bir şekilde nasıl dağıtılacağını öğrenebilirsiniz. 
         author: xxx
         link: app-template
         image:
 
-  - name: QCon International Software Development Conference
+  - name: QCon Uluslararası Yazılım Geliştirme Konferansı
     content: QCON_DESC
     icon: images/conferences/qcon.svg
     bg: images/conferences/qcon-bg.svg
     children:
-      - name: Creating a CI/CD Pipeline to Deploy Spring Boot App to Kubernetes
-        summary: ObjectiveThis tutorial shows you how to create a CI/CD Pipeline within DevOps project, which is intended for deploying a Spring Boot sample…
+      - name: Kubernetes üzerinde Spring Boot App dağıtımı için CI/CD Pipeline oluşturulması
+        summary: Bu eğitimde bir DevOps projesinde Spring Boot örneği dağıtmı amacıyla CI/CD Pipeline'nnin nasıl oluşturulacağını öğrenebilirsiniz.
         author: xxx
         link: cicd-jenkinsfile
         image:
 
-      - name: Creating Horizontal Pod Autoscaler for Deployment
-        summary: The Horizontal Pod Autoscaler automatically scales the number of pods in a deployment based on observed CPU utilization or Memory usage. The…
+      - name: Dağıtım için Horizontal Pod Autoscaler oluşturulması
+        summary: Horizontal Pod Autoscaler, dağıtım aşamasında CPU ya da hafıza kullanımına bağlı olarak kullanılacak pod sayısının otomatik olarak ölçeklendirilmesini sağlar.
         author: xxx
         link: hpa
         image:

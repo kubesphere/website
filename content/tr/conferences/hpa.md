@@ -1,102 +1,103 @@
 ---
-title: 'Creating Horizontal Pod Autoscaler for Deployment'
+title: 'Dağıtım için Horizontal Pod Autoscaler Oluşturulması'
 
 author: 'xxx'
 ---
 
-The Horizontal Pod Autoscaler automatically scales the number of pods in a deployment based on observed CPU utilization or Memory usage. The controller periodically adjusts the number of replicas in a deployment to match the observed average CPU utilization to the target value specified by user.
+Horizontal Pod Autoscaler, bir dağıtımdaki Pod sayısını gözlemlenen CPU veya Bellek kullanımına göre otomatik olarak ölçeklendirir. Denetleyici, bir dağıtımdaki kopya sayısını, gözlemlenen ortalama CPU kullanımını kullanıcı tarafından belirtilen hedef değerle eşleştirecek şekilde periyodik olarak ayarlar.
 
-## How does the HPA work
+## HPA nasıl çalışır?
 
-The Horizontal Pod Autoscaler is implemented as a control loop, with a period controlled by the controller manager’s HPA sync-period flag (with a default value of 15 seconds). For per-pod resource metrics (like CPU), the controller fetches the metrics from the resource metrics API for each pod targeted by the Horizontal Pod Autoscaler. See [Horizontal Pod Autoscaler](https://kubernetes.io/docs/tasks/run-application/horizontal-pod-autoscale/) for more details.
+Horizontal Pod Autoscaler (HPA), denetleyici yöneticisinin HPA eşitleme süresi ile (15 saniye varsayılan değeriyle) tarafından denetlenen belli bir zaman aralığında, bir kontrol döngüsü olarak uygulanır. HPA tarafından hedeflenen her bir Pod'un metrikleri (CPU gibi), kaynak metrikleri API'sından alınır.
+
+Daha fazla detay için: [Horizontal Pod Autoscaler](https://kubernetes.io/docs/tasks/run-application/horizontal-pod-autoscale/) 
 
 ![](https://pek3b.qingstor.com/kubesphere-docs/png/20190716214909.png)
 
-## Objective
+## Amaç
 
-This document walks you through an example of configuring Horizontal Pod Autoscaler for the hpa-example deployment.
+Bu doküman, HPA-örnek dağıtımı için HPA yapılandırma örneğini içerir.
 
-We will create a deployment to send an infinite loop of queries to the hpa example application, demonstrating its autoscaling function and the HPA Principle.
+HPA-örnek uygulamasına sonsuz bir sorgu döngüsü göndermek ve otomatik ölçeklendirme işlevi ile HPA Prensibini göstermek için bir dağıtım oluşturacağız.
 
-## Prerequisites
+## Gereklilikler
 
-- You need to create a workspace and project, see the [Tutorial 1](admin-quick-start.md) if not yet.
-- You need to sign in with `project-regular` and enter into the corresponding project.
+- Bir çalışma alanı ve proje oluşturmanız gereklidir. Henüz oluşturmadıysanız [Eğitim 1]'i (admin-quick-start.md) inceleyin.
+- `Proje-üye` ile oturum açmanız ve ilgili projeye girmeniz gerekir.
 
-## Hands-on Lab
+## Uygulama
 
-### Step 1: Create a Deployment
+### Adım 1: Dağıtım oluşturulması
 
-1.1. Enter into `demo-project`, then select **Workload → Deployments** and click **Create Deployment** button.
+1.1. `Demo proje` 'ye girin, ardından ** İşyükü → Dağıtımlar ** 'ı seçin ve ** Dağıtım Oluştur ** düğmesine tıklayın.
 
 ![](https://pek3b.qingstor.com/kubesphere-docs/png/20190716215848.png)
 
-1.2. Fill in the basic information in the pop-up window. e.g. `Name: hpa-example`, then click **Next** when you've done.
+1.2. Açılır pencerede temel bilgileri girin. Örneğin. `Ad:hpa-örnek`, ardından tamamladığınızda ** İleri ** düğmesini tıklayın.
 
-### Step 2: Configure the HPA
+### Adım 2: HPA'nın ayarlanması
 
-2.1. Choose **Horizontal Pod Autoscaling**, and fill in the table as following:
+2.1. ** Horizontal Pod Autoscaling** 'i seçin ve tabloyu aşağıdaki gibi doldurun:
+- Min Kopya Sayısı: 2
+- Max Kopya Sayısı: 10
+- CPU talep hedefi(%): 50 (Hedeflenen CPU kullanım yüzdesini ifade eder.)
 
-- Min Replicas Number: 2
-- Max Replicas Number: 10
-- CPU Request Target(%): 50 (represents the percent of target CPU utilization)
-
-Then click on the **Add Container** button.
+Sonrasında **Konteyner Ekle** butonuna tıklayın.
 
 ![](https://pek3b.qingstor.com/kubesphere-docs/png/20190716220122.png)
 
-2.2. Fill in the Pod Template with following values, then click **Save** to save these settings.
+2.2. Pod Şablonunu aşağıdaki değerlere göre doldurun. Ardından **Kaydet** butonuna tıklayın.
 
-- Image: `mirrorgooglecontainers/hpa-example`
-- Service Settings
-  - Name: port
-  - port: 80 (TCP protocol by default)
+- Imaj: `mirrorgooglecontainers/hpa-example`
+- Servis Ayarları
+  - Ad: port
+  - port: 80 (Varsayılan TCP protokolü)
 
 ![Add a Container](https://pek3b.qingstor.com/kubesphere-docs/png/20190321234139.png)
 
-2.3. Skip the Volume and Label Settings, click the **Create** button directly. Now the hpa-example deployment has been created successfully.
+2.3. Birim ve Etiket Ayarları'nı atlayın. **Oluştur** butonuna tıklayın. Böylece HPA-örnek dağıtımı başarıyla oluşturuldu.
 
 ![](https://pek3b.qingstor.com/kubesphere-docs/png/20190716221028.png)
 
-### Step 3: Create a Service
+### Adım 3: Servis oluşturulması
 
-3.1. Choose **Network & Services → Services** on the left menu, then click on the **Create Service** button.
+3.1. Soldaki menüden ** Ağ ve Servisler → Servisler ** 'i seçin, ardından ** Servis Oluştur ** düğmesine tıklayın.
 
 ![](https://pek3b.qingstor.com/kubesphere-docs/png/20190716221110.png)
 
-3.2. Fill in the basic information, e.g. `name : hpa-example`, then click **Next**.
+3.2. Temel bilgileri girin, ör. `name: hpa-example`, ardından ** İleri ** 'yi tıklayın.
 
-3.3. Choose the first item `Virtual IP: Access the service through the internal IP of the cluster` for the service Settings.
+3.3. Hizmet Ayarları için ilk baştaki `Sanal IP: Kümenin dahili IP'sinden servise erişin` öğesini seçin.
 
-3.4. In Selector blanks, click **Specify Workload** and select the `hpa-example` as the backend workload. Then choose **Save** and fill in the Ports blanks.
+3.4. Seçim alanında ** İş Yükünü Belirle ** 'yi tıklatın ve back-end iş yükü olarak `hpa-örneği` 'ni seçin. Ardından ** Kaydet ** 'i seçin Port boşluklarını doldurun.
 
 - Ports:
-  - Name: port
-  - Protocol: TCP
+  - Ad: port
+  - Protokol: TCP
   - Port: 80
-  - Target port: 80
+  - Hedef port: 80
 
 ![](https://pek3b.qingstor.com/kubesphere-docs/png/20190716221536.png)
 
-Click **Next → Create** to complete the creation. Now the hpa-example service has been created successfully.
+Oluşturmayı tamamlamak için ** İleri → Oluştur ** 'u tıklayın. Artık hpa-example hizmeti başarıyla oluşturuldu.
 
 ![](https://pek3b.qingstor.com/kubesphere-docs/png/20190716221828.png)
 
-### Step 4: Create Load-generator
+### Adım 4: Yük üreticinin oluşturulması
 
-4.1. In the current project, redirect to **Workload → Deployments**. Click **Create** button and fill in the basic information in the pop-up window, e.g. `Name : load-generator`. Click **Next** when you've done.
+4.1. Mevcut projede, ** İş Yükü → Dağıtımlar ** 'a gidin. ** Oluştur ** düğmesini tıklayın ve açılır pencerede temel bilgileri girin, ör. `Ad : yük-üretici`. İşiniz bittiğinde ** İleri ** düğmesini tıklayın.
 
-4.2. Click on **Add Container** button, and fill in the Pod template as following:
+4.2. ** Konteyner Ekle ** düğmesine tıklayın ve Pod şablonunu aşağıdaki gibi doldurun:
 
-- Image: busybox
-- Scroll down to **Start command**, add commands and parameters as following:
+- Imaj: busybox
+- Ekranı aşağı kaydırın ve **Start command** a tıklayın, aşağıdaki parametre ve komutları yazın:
 
 ```
 # Commands
 sh
 -c
 
-# Parameters (Note: the http service address like http://{$service name}.{$project name}.svc.cluster.local)
+# Parameters (Not: http servis adresi şu formatta girilmelidir: http://{$service name}.{$project name}.svc.cluster.local)
 while true; do wget -q -O- http://hpa-example.demo-project.svc.cluster.local; done
 ```
 
@@ -104,58 +105,60 @@ while true; do wget -q -O- http://hpa-example.demo-project.svc.cluster.local; do
 
 ![](https://pek3b.qingstor.com/kubesphere-docs/png/20190716222549.png)
 
-Click on the **Save** button when you've done, then click **Next**.
+İşlemi tamamladığınızda **Kaydet** butonuna ve ardından **İleri** butonuna tıklayın.
 
-4.3. Click **Next → Create** to complete creation.
+4.3. İşlemi tamamlamak için **İleri → Oluştur** butonlaırna tıklayın.
 
 So far, we've created 2 deployments (i.e. hpa-example and load-generator) and 1 service (i.e. hpa-example).
 
+Böylece 2 adet dağıtım (yani hpa-örnek ve yük üretici) ve 1 adet hizmet (yani hpa-örnek) oluşturduk.
+
 ![](https://pek3b.qingstor.com/kubesphere-docs/png/20190716222833.png)
 
-### Step 5: Verify the HPA
+### Adım 5: HPA'nın doğrulanması
 
-5.1. Click into `hpa-example` and inspect the changes, please pay attention to the HPA status and the CPU utilization, as well as the Pods monitoring graphs.
+5.1. `Hpa-örnek`'e tıklayın ve değişiklikleri inceleyin. Lütfen HPA durumuna, CPU kullanımına ve Pod izleme grafiklerine dikkat edin.
 
 ![](https://pek3b.qingstor.com/kubesphere-docs/png/20190322010021.png)
 
-### Step 6: Verify the Auto Scaling
+### Step 6: Auto Scale özelliğinin doğrulanması
 
-6.1. When all of the load-generator pods are successfully created and begin to access the hpe-example service, as shown in the following figure, the CPU utilization is significantly increased after refreshing the page, currently rising to `722%`, and the desired replicas and current replicas is rising to `10/10`.
+6.1. Tüm yük oluşturucu Pod'ları başarıyla oluşturulduğunda ve aşağıda gösterildiği gibi hpa-örnek hizmetine erişmeye başladığında, sayfa yenilendikten sonra CPU kullanımı önemli ölçüde artar. Görüldüğü gibi `%722`'ye yükselmekle birlikte istenen replika ve güncel replika sayıları da `10/10`'a yükseliyor.
 
 ![](https://pek3b.qingstor.com/kubesphere-docs/png/20190716223104.png)
 
-> Note: Since the Horizontal Pod Autoscaler is working right now, the load-generator looply requests the hpa-example service to make the CPU utilization rised rapidly. After the HPA starts working, it makes the backend of the service increases fast to handle a large number of requests together. Also the replicas of hpa-example continues to increase follow with the CPU utilization increases, which demonstrates the working principle of HPA.
+> Not: Şu anda Horizontal Pod Autoscaler çalıştığından, yük oluşturucu döngüsel olarak hpa-örnek hizmetinden, CPU kullanımını hızlı bir şekilde arttırmasını talep eder. HPA çalışmaya başladıktan sonra, çok sayıda isteği idare edebilmek için hizmetin back-end tarafının hızla artmasını sağlar. Ayrıca HPA'nın çalışma prensibini gösteren CPU kullanım artışları ile hpa-örneği kopyaları artmaya devam eder.
 
-6.2. In the monitoring graph, it can be seen that the CPU usage of the first Pod that we originally created, showing a significant upward trend. When HPA started working, the CPU usage has a significant decreased trend, finally it tends to be smooth. Accordingly, the CPU usage is increasing on the newly created Pods.
+6.2. İzleme grafiğinde, oluşturduğumuz ilk Pod'un CPU kullanımının önemli bir artış eğilimi gösterdiği görülebilir. HPA çalışmaya başladığında, CPU kullanımında önemli bir azalma eğilimi vardır, sakinleşme eğilimindedir. Buna göre, yeni oluşturulan Pod'larda CPU kullanımı artıyor.
 
 ![](https://pek3b.qingstor.com/kubesphere-docs/png/20190716223415.png)
 
-### Step 7: Stop the Load Generation
+### Adım 7: Yük üretiminin durdurulması
 
-7.1. Redirect to **Workload → Deployments** and delete `load-generator` to cease the load increasing.
+7.1. ** İşyükü → Dağıtımlar ** 'a yönlendirin ve yük artışını durdurmak için ``yük-üretici``'yi silin.
 
 ![](https://pek3b.qingstor.com/kubesphere-docs/png/20190716225225.png)
 
-7.2. Inspect the status of the `hpa-example` again, you'll find that its current CPU utilization has slowly dropped to 10% in a few minutes, eventually the HPA has reduced its deployment replicas to 1 (initial value). The trend reflected by the monitoring curve can also help us to further understand the working principle of HPA;
+7.2. `Hpa-example`'in durumunu tekrar inceleyin, mevcut CPU kullanımının birkaç dakika içinde yavaş yavaş %10'a düştüğünü göreceksiniz, netice olarak HPA dağıtım kopyalarını 1'e (başlangıç değeri) düşürecektir. İzleme eğrisinin yansıttığı eğilim, HPA'nın çalışma prensibini daha iyi anlamamıza da yardımcı olabilir;
 
 ![](https://pek3b.qingstor.com/kubesphere-docs/png/20190716230725.png)
 
-7.3. It enables user to inspect the monitoring graph of Deloyment, see the CPU utilization and Network inbound/outbound trend, they just match with the HPA example.
+7.3. Kullanıcının dağıtım izleme grafiğini denetlemesini, CPU kullanımını ve Ağ gelen/giden trendlerini görmesini sağlar, sadece HPA örneğiyle eşleşir.
 
 ![](https://pek3b.qingstor.com/kubesphere-docs/png/20190716230333.png)
 
-## Modify HPA Settings
+## Modify HPA Özelliklerinin değiştirilmesi
 
-If you need to modify the settings of the HPA, you can click into the deployment, and click **More → Horizontal Pod Autoscaler**.
+HPA ayarlarını değiştirmeniz gerekirse, dağıtıma tıklayıp ** Diğer → Yatay Bölme Otomatik Ölçeklendiricisi **'ni seçebilirsiniz.
 
 ![](https://pek3b.qingstor.com/kubesphere-docs/png/20190716225918.png)
 
-## Cancel HPA
+## HPA'nın iptal edilmesi
 
-Click **···** button on the right and **Cancel** if you don't need HPA within this deployment.
+Bu dağıtımda HPA'ya ihtiyaç duymuyorsanız sağ taraftaki **···** butonuna tıklayın ve **İptal** seçeneğini seçin.
 
 ![](https://pek3b.qingstor.com/kubesphere-docs/png/20190716225953.png)
 
-## Next Step
+## Sonraki Adım
 
-Tutorial 8 - [Source-to-Image: Build Reproducible Images from Source Code](s2i.md).
+Eğitim 8 - [Source-to-Image: Build Reproducible Images from Source Code](s2i.md).

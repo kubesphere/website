@@ -1,49 +1,49 @@
 ---
-title: 'Multi-tenant Management: Creating Accounts, Roles, Workspaces, Projects and DevOps Projects'
+title: 'Alt Kullanıcı Yönetimi: Hesap Oluşturma, Roller, Çalışma Alanları, Projeler ve DevOps Projeleri'
 author: 'xxx'
 date: '2019-06-24'
 ---
 
-## Objective
+## Amaç
 
-In this quickstart, as a cluster admin, you will learn how to create workspaces, roles and user accounts, and then invite new users into the workspace to create their projects and DevOps projects. This tutorial is used to help beginners to become familiar with multi-tenant management.
+Bu rehberde, bir küme yöneticisi olarak, çalışma alanlarının, rollerin ve kullanıcı hesaplarının nasıl oluşturulacağını öğrenecek ve ardından yeni kullanıcıları projelerini ve DevOps projelerini oluşturmak için çalışma alanına davet edeceksiniz. Bu uygulama, yeni başlayanların alt kullanıcı yönetimi tanımasına yardımcı olmayı amaçlar.
 
-## Prerequisites
+## Gereklilikler
 
-- You need to [install KubeSphere](https://kubesphere.io/en/install).
-- You need a default admin account.
+- KubeSphere'i yüklemeniz gereklidir.  [install KubeSphere](https://kubesphere.io/en/install).
+- Varsayılan yönetici hesabına sahip olmanız gereklidir.
 
-## Hands-on Lab
+## Uygulama
 
-Generally, the hierarchy relationship of Cluster, Workspace, Project and DevOps Project showing as the following graph, and there are common built-in roles existed in these orgnizations within each level.
+and there are common built-in roles existed in these orgnizations within each level. Genel olarak, Küme, Çalışma Alanı, Proje ve DevOps Projesi'nin hiyerarşi ilişkisi aşağıdaki grafikte gösterilmektedir. Her düzeyde ortak yerleşik roller bulunmaktadır.
 
 ![](https://pek3b.qingstor.com/kubesphere-docs/png/20190716231511.png)
 
-### Cluster Admin
+### Küme Yöneticisi
 
-The role of cluster-admin is able to create accounts for other users and assign roles to them. There are three common roles in cluster level, it also supports customizing new roles.
+Küme-yöneticisi rolü, diğer kullanıcılar için hesaplar oluşturabilir ve bunlara faklı roller atayabilir. Küme düzeyinde üç ortak rol vardır, ayrıca yeni rollerin özelleştirilmesi de desteklenir.
 
-| Built-in Roles     | Responsibility                                                                                             |
+| Hazır Roller     | Sorumluluklar                                                                                              |
 | ------------------ | ---------------------------------------------------------------------------------------------------------- |
-| cluster-admin      | Have the highest privileges for the cluster, can manage any resources                                      |
-| workspaces-manager | The workspace managers, can manage all of the resources, e.g. projects, DevOps projects, members and roles |
-| cluster-regular    | The regular users in the cluster, they are not authorized until they have been invited to the workspace    |
+| küme-yöneticisi      | Küme içindeki tüm ayrıcalıklara sahip olun ve tüm kaynakları                                      |
+| çalışma alanı-yöneticisi | Çalışma alanı yöneticileri, tüm kaynakları projeleri, DevOps projelerini, üyeleri ve rolleri yönetebilir.|
+| küme-üyesi    | Küme içindeki üye kullanıcılar, çalışma alanına davet edilene kadar yetkiye sahip değildir. |
 
-#### Step 1: Create roles and accounts
+#### Adım 1: Rollerin ve hesapların oluşturulması
 
-First, we will create a new role (user-manager), grants account management and role management authority to this role, then we will create an account and grant the user-manager role to this account.
+İlk olarak, yeni bir rol (kullanıcı-yönetici) oluşturacağız, bu role hesap yönetimi ve rol yönetimi yetkisi vereceğiz, ardından bir hesap oluşturacağız ve kullanıcı-yönetici rolünü bu hesaba vereceğiz.
 
-| Account Name | Cluster Role | Responsibility                    |
+| Hesap Adı  | Küme Rolü | Sorumluluk                    |
 | ------------ | ------------ | --------------------------------- |
-| user-manager | user-manager | Manage cluster accounts and roles |
+| kullanıcı-yönetici | kullanıcı-yönetici | Küme hesaplarını ve rollerini yönet |
 
-1.1 To get started, login KubeSphere with the `admin` account, click **Platform** and then navigate to **Platform Roles** page, click **Create** to create a role which is used to manage all accounts and roles.
+1.1 Başlamak için KubeSphere'e `admin` hesabı ile giriş yapın, **Platform ** 'u tıklayın ve ardından **Platform Rolleri** sayfasına gidin, **Oluştur** 'u tıklatarak tüm hesapları ve rolleri yönetmek için kullanılan bir rol oluşturun.
 
 ![](https://pek3b.qingstor.com/kubesphere-docs/png/20190716112614.png)
 
-1.2. Fill in the basic information and authority settings of the role, e.g. `Name : user-manager`.
+1.2. Rolün temel bilgilerini ve yetki ayarlarını girin, ör. `İsim: kullanıcı yöneticisi`.
 
-1.3. Check all the boxes for both **Account Management** and **Role Management**, then click **Create**.
+1.3. **Hesap Yönetimi** ve **Rol Yönetimi** için tüm kutuları işaretleyin ve ardından **Oluştur** 'u tıklayın.
 
 ![](https://pek3b.qingstor.com/kubesphere-docs/png/20190716112826.png)
 
@@ -51,95 +51,96 @@ First, we will create a new role (user-manager), grants account management and r
 
 ![](https://pek3b.qingstor.com/kubesphere-docs/png/20190716112945.png)
 
-1.5. Fill in the basic information, notice that select `user-manger` as its role.
+1.5. Temel bilgileri girin, rolü olarak `kullanıcı-yönetici`'yi seçin.
 
 ![](https://pek3b.qingstor.com/kubesphere-docs/png/20190716113050.png)
 
-1.6. Log out and Sign in with the `user-manager` account, then navigate to **Account** and create 4 accounts according to the following table. Please reference the above steps to create these 4 accounts.
+1.6. Oturumu kapatın ve `kullanıcı-yönetici` hesabıyla oturum açın, ardından **Hesap** 'a gidin ve aşağıdaki tabloya göre 4 hesap oluşturun. Bu 4 hesabı oluşturmak için lütfen yukarıdaki adımlara başvurun.
 
-| Account Name    | Cluster Role       | Responsibility                                                                                                                                                                                   |
+| Hesap Adı    | Küme Rolü     | Sorumluluk                                                                                                                                                                                    |
 | --------------- | ------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| ws-manager      | workspaces-manager | Create and manage all workspaces                                                                                                                                                                 |
-| ws-admin        | cluster-regular    | Manage all resources under the specified workspace<br> (This example is used to invite new members to join the workspace.)                                                                       |
-| project-admin   | cluster-regular    | Create and manage projects, DevOps projects, invite new members                                                                                                                                  |
-| project-regular | cluster-regular    | The regular user will be invited to the project and DevOps project by the project-admin, <br> we use this account to create workloads, pipelines and other resources under the specified project |
+| ws-yönetici     | çalışma alanı-yönetici | Çalışma alanı oluşturun ve yönetin                                                                                                                                                                 |
+| ws-yönetici        | küme-üye    | Belirtilen çalışma alanı altındaki tüm kaynakları yönetme <br> (Bu örnek, yeni üyeleri çalışma alanına katılmaya davet etmek için kullanılır.)                                                                       |
+| proje-admin   | cluster-regular    | Normal veya DevOps projeleri oluşturun ve yönetin, yeni üyeler davet edin.                                                                                                                                  |
+| project-üye | cluster-üye    | Üye kullanıcı projeye ve DevOps projesine proje yöneticisi tarafından davet edilir.<br> Belli bir hesap altında iş yükleri, iş planları ve diğer kaynakları oluşturmak için bu hesap kullanılır.  |
 
-1.7. Verify the 4 accounts that we created in step 1.6.
+1.7. Adım 1.6 'da oluşturulan 4 hesabı doğrulayın.
 
 ![](https://pek3b.qingstor.com/kubesphere-docs/png/20190716114245.png)
 
-### Workspace Admin
+### Çalışma Alanı Yöneticisi
 
-#### Step 2: Create a Workspace
+#### Adım 2: Çalışma Alanı Oluşturmak
 
-Workspace is the base of implementing the multi-tenant mechanism, it's also the base unit for projects and DevOps projects managment.
+Çalışma alanı alt kullanıcı mekanizmasının temelidir. Aaynı zamanda projelerin ve DevOps proje yönetiminin temel birimidir.
 
-2.1. Sign in with `ws-manager` that we created in Step 1, then click **Workspace** and click **Create Workspace**, name it as demo-workspace and appoint `ws-admin` as Workspace Manager, who has the highest administrative authority of the workspace.
+2.1. Birinci adımda oluşturduğumuz ``ws-yönetici'' ile oturum açın, ardından **Çalışma Alanı** 'nı tıklayın ve **Çalışma Alanı Oluştur** 'u seçin. demo-çalışma alanı olarak adlandırın ve Çalışma Alanı Yöneticisi olarak ``ws-admin``i atayın.
 
 ![](https://pek3b.qingstor.com/kubesphere-docs/png/20190716130007.png)
 
-2.2. Logout and sign in with `ws-admin` after `demo-workspace` has been created. Then click **View Workspace**, select **Worksapce Management → Members Management** and click **Invite Member**.
+2.2. Demo-çalışma alanı oluşturulduktan sonra, oturumu kapatın ve `ws-admin` ile giriş yapın. Ardından **Çalışma Alanını Görüntüle** 'yi tıklatın, **Çalışma Alanı Yönetimi → Üye Yönetimi**' ni seçin ve **Üyeyi Davet Et** 'i tıklatın. 
 
 ![](https://pek3b.qingstor.com/kubesphere-docs/png/20190716130330.png)
 
-2.3. Invite both `project-admin` and `project-regular` and grant them `workspace-regular` accordingly, click **OK** to save it. Now there are 3 members in the `demo-workspace`.
+2.3. IHem 'project-admin` hem de' project-normal`i davet edin ve onlara 'workpace-normal' erişimi verin, kaydetmek için **OK** düğmesini tıklatın. Bu adımla birlikte demo-çalışma alanında 3 üye olması gereklidir.
 
-| User Name       | Role in the Workspace | Responsibility                                                                                                                        |
+| Kullanıcı Adı       | Çalışma Alanındaki Rolü | Sorumluluk                                                                                                                       |
 | --------------- | --------------------- | ------------------------------------------------------------------------------------------------------------------------------------- |
-| ws-admin        | workspace-admin       | Manage all resources under the workspace<br> (We use this account to invite new members into the workspace)                           |
-| project-admin   | workspace-regular     | Create and manage projects, DevOps projects, and invite new members to join                                                           |
-| project-regular | workspace-viewer      | Will be invited by project-admin to join the project and DevOps project. <br> we use this account to create workloads, pipelines, etc |
+| ws-yönetici | çalışma alanı-yönetici | Çalışma alanı altındaki tüm kaynakları yönetme <br> (Bu hesap, çalışma alanına yeni üyeler davet etmek için kullanılır.) |
+| proje-yönetici | çalışma alanı-üye | Proje oluşturma ve yönetme, DevOps projeleri ve yeni üyeleri katılmaya davet etme |
+| proje-üye | çalışma alanı görüntüleyici | Proje yöneticisi tarafından projeye ve DevOps projesine katılmaya davet edilecektir. <br> Bu hesabı iş yükleri, iş planları vb. oluşturmak için kullanılır. |
+
 
 ![](https://pek3b.qingstor.com/kubesphere-docs/png/20190716130517.png)
 
-### Project Admin and DevOps Admin
+### Proje ve DevOps Yöneticisi
 
-#### Step 3: Create a Project
+#### Adım 3: Proje Oluşturmak
 
-3.1. Sign in with `project-admin` that we created in Step 1, then click **Create** and select **Create a resource project**.
+3.1. Birinci adımda oluşturduğumuz ``proje-yönetici'' hesabı ile oturum açın, ardından **Oluştur** 'u tıklayın ve **Bir kaynak projesi oluştur**' u seçin.
 
 ![](https://pek3b.qingstor.com/kubesphere-docs/png/20190716131852.png)
 
-3.2. Name it as `demo-project` and keep the advanced settings as the default values, then click **Create**.
+3.2. `demo-proje` olarak adlandırın ve gelişmiş ayarları varsayılan değerler olarak saklayın, ardından **Oluştur** 'u tıklayın.
 
-3.3. Choosing **Project Settings → Project Members** and click **Invite Member**.
+3.3. **Proje Ayarları → Proje Üyeleri** seçeneğini seçin ve **Üyeyi Davet Et** seçeneğini tıklayın.
 
 ![](https://pek3b.qingstor.com/kubesphere-docs/png/20190716132750.png)
 
-3.4. Invite `project-regular` to this project and grant this user **operator** accordingly.
+3.4. Bu projeye "proje-üye" davet edin ve bu kullanıcıyı **operatör** özelliği verin.
 
 ![](https://pek3b.qingstor.com/kubesphere-docs/png/20190716132840.png)
 
 ![](https://pek3b.qingstor.com/kubesphere-docs/png/20190716132920.png)
 
-#### Step 4: Set the Gateway
+#### Adım 4: Ağ Geçidini Ayarlama
 
-Before creating a route, you need to enable a gateway for this project.
+Bir rota oluşturmadan önce, bu proje için bir ağ geçidini etkinleştirmeniz gerekir.
 
-4.1. We still use `project-admin`, Choose **Project Settings → Internet Access** and click **Set Gateway**.
+4.1. Burada hala "proje-yönetici" hesabını kullanıyoruz. **Proje Ayarları → Internet Erişimi** 'ni seçin ve **Ağ Geçidini Ayarla** 'yı tıklayın.
 
 ![](https://pek3b.qingstor.com/kubesphere-docs/png/20190716134430.png)
 
-4.2. Keep the access method as `NodePort` and click `Save`.
+4.2. Erişim yöntemini `NodePort` olarak ayarlayın ve `Kaydet` seçeneğine tıklayın.
 
 ![](https://pek3b.qingstor.com/kubesphere-docs/png/20190716134742.png)
 
-4.3. Now we are able to see the Gateway Address (192.168.0.88), the NodePort of http and https respectively.
+4.3. Artık Ağ Geçidi Adresini (192.168.0.88), http ve https'nin NodePort'unu görebiliyoruz.
 
 ![](https://pek3b.qingstor.com/kubesphere-docs/png/20190716134849.png)
 
-#### Step 5: Create DevOps Project
+#### Adım 5: DevOps Projesi Oluşturma
 
-5.1. In this step, click **Projects** and click `Create Project` button, then select **Create a DevOps project**.
+5.1. Bu adımda **Projeler** 'e tıklayın ve ``Proje Oluştur`` düğmesine tıklayın, ardından **Bir DevOps projesi oluştur**' u seçin.
 
-5.2. Fill in the basic information, e.g. `demo-devops`, then click **Create** button, it will jump to `demo-devops` page.
+5.2. Temel bilgileri girin, ör. "demo-devops", ardından **Oluştur** düğmesine tıklayın, "demo-devops" sayfasına atlayacaktır.
 
 ![](https://pek3b.qingstor.com/kubesphere-docs/png/20190716133420.png)
 
-5.3. Similarly, navigate to **Project Management → Project Members**, then click **Invite Member** and grant `project-regular` as the role of `maintainer`, which is used to create pipeline, credentials, etc.
+5.3. Benzer şekilde, **Proje Yönetimi → Proje Üyeleri** 'ne gidin, ardından **Üye Davet Et**' i tıklayın ve iş planı, kimlik bilgileri vb. oluşturmak için kullanılan 'maintainer' rolünü ``proje-üye`` hesabına tanımlayın.
 
 ![](https://pek3b.qingstor.com/kubesphere-docs/png/20190716133626.png)
 
-<!-- ## Next Step
+<!-- ## Sonraki Adım 
 
-Tutorial 2 - [Expose your App: Create a Service and Ingress](ingress-demo.md). -->
+Eğitim 2 - [Uygulamanızı yayınlayın: Ingress ve servis oluşturun ](ingress-demo.md). -->

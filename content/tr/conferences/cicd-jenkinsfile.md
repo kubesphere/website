@@ -1,37 +1,37 @@
 ---
-title: 'Creating a CI/CD Pipeline to Deploy Spring Boot App to Kubernetes'
+title: 'Kubernetes Üzerinde CI/CD İş Planı Oluşturmak için Spring Boot Uygulaması'nın Dağıtımı'
 
 author: 'xxx'
 ---
 
-## Objective
+## Amaç
 
-This tutorial shows you how to create a CI/CD Pipeline within DevOps project, which is intended for deploying a Spring Boot sample application to Kubernetes.
+Bu eğitim, DevOps projesi içinde Kubernetes üzerinde bir Spring Boot uygulama örneği dağıtmak üzere tasarlanan bir CI / CD İş Planının'ın nasıl oluşturulacağını gösterir.
 
-## Overview
+## Genel Bakış
 
-Based on the existing Jenkinsfile in the sample GitHub repository, we can create a pipeline to build and complete the stages and steps (e.g. unit test, sonarqube analysis), which totally consists of eight stages as shown below.
+Örneğin GitHub deposundaki mevcut Jenkinsfile'a dayanarak, aşamaları ve adımları (örn. Birim testi, sonarqube analizi) oluşturmak ve tamamlamak için aşağıda gösterildiği gibi tamamen sekiz aşamadan oluşan bir iş planı oluşturabiliriz.
 
 ![](https://pek3b.qingstor.com/kubesphere-docs/png/20190719005547.png)
 
-## Prerequisites
+## Gereklilikler
 
-You've completed all steps in [Tutorial 1](admin-quick-start.md).
+[Tutorial 1](admin-quick-start.md) eğitimindeki tüm adımların tamamlanması gereklidir.
 
-## Hands-on Lab
+## Uygulama
 
-### Step 1: Create Credentials
+### Adım 1: Kimlik Bilgilerinin Oluşturulması 
 
-To get started, we need to create 3 credentials, i.e. DockerHub、GitHub and kubeconfig.
+Başlamak için 3 farklı kimlik oluşturmanız gerekiyor. Ör: DockerHub 、GitHub, kubeconfig.
 
-1.1. Sign in with `project-regular` account and enter into the `demo-devops`, navigate to **Credentials**, then click on the **Create Credentials**.
+1.1. `Proje-üye` hesabı ile oturum açın ve “demo-devops”a girin, ** Kimlik Bilgileri ** 'ne gidin, ardından ** Kimlik Bilgileri Oluştur **' a tıklayın.
 
 ![](https://pek3b.qingstor.com/kubesphere-docs/png/20190719010621.png)
 
-| Credential ID   | Type                | Username/Password/Secret                                             | Content |
+| Kimlik ID   | Tip                | Kullanıcı Adı/Şifre/Secret                                             | İçerik |
 | --------------- | ------------------- | -------------------------------------------------------------------- | ------- |
-| dockerhub-id    | Account Credentials | Enter your personal DockerHub account information                    | \|      |
-| github-id       | Account Credentials | Enter your personal GitHub account information                       | \|      |
+| dockerhub-id    | Hesap Bilgileri | Kişisel DockerHub hesap bilgilerinizi girin.                    | \|      |
+| github-id       | Hesap Bilgileri | Kişisel GitHub hesap bilgilerinizi girin.                       | \|      |
 | kube-config     |
-| demo-kubeconfig | kubeconfig          | \|It will be automatically filled with the kubeconfig of the cluster |
-| sonar-token     | secret_text         | You can get secret by creating SonarQube token                       | \       |
+| demo-kubeconfig | kubeconfig          | \|Kümeye ait kubeconfig ile otomatik olarak doldurulacaktır. |
+| sonar-token     | secret_text         | SonarQube token'ı oluşturarak bir secret elde edebilirsiniz.                        | \       |

@@ -1,5 +1,5 @@
 ---
-title: blogs
+title: blog
 
 css: scss/blogs.scss
 ---

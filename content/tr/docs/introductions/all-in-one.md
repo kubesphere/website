@@ -1,5 +1,5 @@
 ---
-title: "all-in-one"
+title: "hepsi-bir-arada"
 weight: 2
 ---
 

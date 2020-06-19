@@ -1,135 +1,135 @@
 ---
-title: "contribution"
+title: "Topluluk Katkısı"
 
 css: "scss/contribution.scss"
 
 section1:
-  title: 'Community is the Soul of KubeSphere'
-  content: 'Join the community to get help, get involved, or to get updates and KubeSphere news!'
+  title: 'KubeSphere'in ruhu topluluktur.'
+  content: 'Yardım almak, geliştirme süreçlerine dahil olmak ya da KubeSphere ile ilgili güncel haberleri almak için topluluğa katılın!'
   topImage: "images/contribution/contribution-top.jpg"
 
 section2:
   topType:
-    - name: 'Download'
+    - name: 'İndir'
       icon1: 'images/contribution/download.svg'
       icon2: 'images/contribution/37.png'
       children:
-        - content: 'Download KubeSphere'
+        - content: 'KubeSphere'i İndirin'
           link: ''
-        - content: 'Quickstart'
+        - content: 'Hızlı Başlangıç'
           link: ''
-        - content: 'Tutorial Videos'
+        - content: 'Eğitim Videoları'
           link: ''
 
-    - name: 'Contribute'
+    - name: 'Katkıda Bulunun'
       icon1: 'images/contribution/contribute.svg'
       icon2: 'images/contribution/38.png'
       children:
-        - content: 'Join the SIGs and WGs'
+        - content: 'SIG ve WG'lere katılın'
           link: ''
-        - content: 'Improve the Docs'
+        - content: 'Dokümanları Geliştirin'
           link: ''
-        - content: 'Submit a Bug or Suggestion'
+        - content: 'Hata bildirin ya da Öneride Bulunun'
           link: ''
 
-    - name: 'Get in Touch'
+    - name: 'İletişime Geçin'
       icon1: 'images/contribution/business.svg'
       icon2: 'images/contribution/39.png'
       children:
-        - content: 'Join KubeSphere Slack'
+        - content: 'KubeSphere Slack Kanalına Katılın'
           link: ''
-        - content: 'Join the Mailing List'
+        - content: 'E-Posta almak için tıklayın'
           link: ''
-        - content: 'Follow us on Twitter'
+        - content: 'KubeSphere'i Twitter'da Takip Edin'
           link: ''
 
   organization:
-    topic: 'Community Organization'
-    name: 'KubeSphere Community'
+    topic: 'Topluluk Organizasyonu'
+    name: 'KubeSphere Topluluğu'
     icon: 'images/contribution/28.svg'
     topIcon: 'images/contribution/8.svg'
     type:
       - name: 'TOC'
         icon: 'images/contribution/toc.svg'
 
-      - name: 'Developer Group'
+      - name: 'Geliştirici Grubu'
         icon: 'images/contribution/developer-group.svg'
         children:
-          - name: 'Owner /  Lead'
-            content: 'A lead is also the member of the project who is an experienced and acrive reciewer of the project.'
+          - name: 'Sahip / Yönetici'
+            content: 'Yönetici aynı zamanda projenin aktif bir üyesidir.'
 
-          - name: 'Member'
-            content: 'A lead is also the member of the project who is an experienced and acrive reciewer of the project.'
+          - name: 'Üye'
+            content: 'Yönetici aynı zamanda projenin aktif bir üyesidir.'
           
-          - name: 'Contributor'
-            content: 'A lead is also the member of the project who is an experienced and acrive reciewer of the project.'
+          - name: 'Katkı Sağlayan'
+            content: 'Yönetici aynı zamanda projenin aktif bir üyesidir.'
 
-      - name: 'User Research Group'
+      - name: 'Kullanıcı Araştırma Grubu'
         icon: 'images/contribution/user.svg'
         children:
-          - name: 'Champion'
-            content: 'A lead is also the member of the project who is an experienced and acrive reciewer of the project.'
+          - name: 'Şampiyon'
+            content: 'Yönetici aynı zamanda projenin aktif bir üyesidir.'
         
-          - name: 'Ambassador'
-            content: 'A lead is also the member of the project who is an experienced and acrive reciewer of the project.'
+          - name: 'Temsilci'
+            content: 'Yönetici aynı zamanda projenin aktif bir üyesidir.'
 
 
-      - name: 'Steering Committee'
+      - name: 'Yönetim Kurulu'
         icon: 'images/contribution/steering.svg'
 
 section3:
   interestGroup:
-    title: 'Find Your Special Interest Group'
-    content: 'SIGs are designed to let you can find everything you need in one place around a central topic. Find your commonality and join the SIG.'
+    title: 'Özel İlgi Duyduğunuz Grubu Bulun'
+    content: 'SIG'ler, ihtiyacınız olan her şeyi merkezi bir konunun etrafında tek noktada bulabilmeniz için tasarlanmıştır. Ortak özelliğinizi bulun ve SIG'ye katılın.'
     children:
-      - name: 'Apps'
+      - name: 'Uygulamalar'
         icon: '/images/contribution/apps.svg'
         iconActive: '/images/contribution/apps-active.svg'
-        content: 'App charts for the built-in App Store'
+        content: 'Dahili Uygulama Mağazası için uygulama listeleri '
         link: ''
-        linkContent: 'Join SIG - Apps →'
+        linkContent: 'SIG'ye katılın - Uygulamalar →'
         children:
           - icon: '/images/contribution/calicq1.jpg'
           - icon: '/images/contribution/calicq2.jpg'
           - icon: '/images/contribution/calicq3.jpg'
 
-      - name: 'App store'
+      - name: 'Uygulama Mağazası'
         icon: '/images/contribution/app-store.svg'
         iconActive: '/images/contribution/app-store-active.svg'
         content: ''
         link: ''
-        linkContent: 'Join SIG - App store →'
+        linkContent: 'SIG'ye katılın - Uygulama Mağazası →'
         children:
           - icon: ''
           - icon: ''
           - icon: ''
 
-      - name: 'Architecture'
+      - name: 'Mimari'
         icon: '/images/contribution/architecture.svg'
         iconActive: '/images/contribution/architecture-active.svg'
         content: ''
         link: ''
-        linkContent: 'Join SIG - Architecture →'
+        linkContent: 'SIG'ye katılın - Mimari →'
         children: 
           - icon: ''
 
-      - name: 'Cloud-Providers'
+      - name: 'Bulut-Sağlayıcılar'
         icon: '/images/contribution/cloud-providers.svg'
         iconActive: '/images/contribution/cloud-providers-active.svg'
         content: ''
         link: ''
-        linkContent: 'Join SIG - Cloud-Providers →'
+        linkContent: 'SIG'ye katılın - Bulut-Sağlayıcılar →'
         children:
           - icon: ''
           - icon: ''
           - icon: ''
 
-      - name: 'Console (Front-end)'
+      - name: 'Konsol (Front-end)'
         icon: '/images/contribution/console.svg'
         iconActive: '/images/contribution/console-active.svg'
         content: ''
         link: ''
-        linkContent: 'Join SIG - Console (Front-end) →'
+        linkContent: 'SIG'ye katılın - Konsole (Front-end) →'
         children:
           - icon: ''
           - icon: ''
@@ -140,18 +140,18 @@ section3:
         iconActive: '/images/contribution/dev-ops-active.svg'
         content: ''
         link: ''
-        linkContent: 'Join SIG - DevOps →'
+        linkContent: 'SIG'ye katılın - DevOps →'
         children:
           - icon: ''
           - icon: ''
           - icon: ''
 
-      - name: ' Docs'
+      - name: ' Dokümanlar'
         icon: '/images/contribution/docs.svg'
         iconActive: '/images/contribution/docs-active.svg'
         content: ''
         link: ''
-        linkContent: 'Join SIG - Docs →'
+        linkContent: 'SIG'ye katılın - Dokümanlar →'
         children:
           - icon: ''
           - icon: ''
@@ -162,106 +162,106 @@ section3:
         iconActive: '/images/contribution/edge-active.svg'
         content: ''
         link: ''
-        linkContent: 'Join SIG - Edge →'
+        linkContent: 'SIG'ye katılın - Edge →'
         children:
           - icon: ''
           - icon: ''
           - icon: ''
     
-      - name: 'Installation'
+      - name: 'Yükleme'
         icon: '/images/contribution/installation.svg'
         iconActive: '/images/contribution/installation-active.svg'
         content: ''
         link: ''
-        linkContent: 'Join SIG - Installation →'
+        linkContent: 'SIG'ye katılın - Yükleme →'
         children:
           - icon: ''
           - icon: ''
           - icon: ''
 
-      - name: 'Microservice'
+      - name: 'Micro Servis'
         icon: '/images/contribution/microservice.svg'
         iconActive: '/images/contribution/microservice-active.svg'
         content: ''
         link: ''
-        linkContent: 'Join SIG - Microservice →'
+        linkContent: 'SIG'ye katılın - Micro Servis →'
         children:
           - icon: ''
           - icon: ''
           - icon: ''
       
-      - name: 'Multicluster'
+      - name: 'Çoklu Küme'
         icon: '/images/contribution/multicluster.svg'
         iconActive: '/images/contribution/multicluster-active.svg'
         content: ''
         link: ''
-        linkContent: 'Join SIG - Multicluster →'
+        linkContent: 'SIG'ye katılın - Multicluster →'
         children:
           - icon: ''
           - icon: ''
           - icon: ''
     
-      - name: 'Multitenancy'
+      - name: 'Alt Kullanıcı'
         icon: '/images/contribution/multitenancy.svg'
         iconActive: '/images/contribution/multitenancy-active.svg'
         content: ''
         link: ''
-        linkContent: 'Join SIG - Multitenancy →'
+        linkContent: 'SIG'ye katılın- Multitenancy →'
         children:
           - icon: ''
           - icon: ''
           - icon: ''
     
-      - name: 'Network'
+      - name: 'Ağ'
         icon: '/images/contribution/network.svg'
         iconActive: '/images/contribution/network-active.svg'
         content: ''
         link: ''
-        linkContent: 'Join SIG - Network →'
+        linkContent: 'SIG'ye katılın - Ağ →'
         children:
           - icon: ''
           - icon: ''
           - icon: ''
       
-      - name: 'Observability'
+      - name: 'Gözlemlelebilirlik'
         icon: '/images/contribution/observability.svg'
         iconActive: '/images/contribution/observability-active.svg'
         content: ''
         link: ''
-        linkContent: 'Join SIG - Observability →'
+        linkContent: 'SIG'ye katılın - Gözlemlenebilirlik →'
         children:
           - icon: ''
           - icon: ''
           - icon: ''
 
-      - name: 'Release'
+      - name: 'Sürüm
         icon: '/images/contribution/release.svg'
         iconActive: '/images/contribution/release-active.svg'
         content: ''
         link: ''
-        linkContent: 'Join SIG - Release →'
+        linkContent: 'SIG'ye katılın - Sürüm →'
         children:
           - icon: ''
           - icon: ''
           - icon: ''
       
-      - name: 'Storage'
+      - name: 'Depolama'
         icon: '/images/contribution/storage.svg'
         iconActive: '/images/contribution/storage-active.svg'
         content: ''
         link: ''
-        linkContent: 'Join SIG - Storage →'
+        linkContent: 'SIG'ye katılın - Depolama →'
         children:
           - icon: ''
           - icon: ''
           - icon: ''
     
-      - name: 'Testing'
+      - name: 'Test'
         icon: '/images/contribution/testing.svg'
         iconActive: '/images/contribution/testing-active.svg'
         content: ''
         link: ''
-        linkContent: 'Join SIG - Testing →'
+        linkContent: 'SIG'ye katılın - Test →'
         children:
           - icon: ''
           - icon: ''
@@ -269,17 +269,17 @@ section3:
 
 section4:
   involved:
-    title: 'Get involved'
+    title: 'Siz de Katılın'
     children:
-      - title: 'Be a Champion'
+      - title: 'Şampiyon Olun'
         icon: 'images/contribution/group-1.png'
-        content: 'Join me tomorrow and start putting in the time to get your campaign ready with a landing page!'
+        content: 'Hemen katılın ve açılış sayfasına sahip bir  kampanyayla başlamaya hazır olun!'
         link: ''
-        linkContent: 'Become a KubeSphere Champion →'
+        linkContent: 'KubeSphere Şampiyon'u olun →'
 
-      - title: 'Be a Member'
+      - title: 'Üye Olun'
         icon: 'images/contribution/group-2.png'
-        content: 'KubeSphere is 100% open source and driven by community,we appreciate contributions to our code and documentation!Significant contributions will earn you a contributor t-shirt.'
+        content: 'KubeSphere 100% açık kaynaklıdır ve topluluk tarafından yönlendirilir. Kod yazımına ve dokümantasyona katkı yaparak ekosistemi çok daha ileri taşıyan herkesi takdir ediyoruz. Önemli katkılarda bulunan üyelerimiz ise çok özel bir KubeSphere tişörtü kazanacak!'
         link: ''
-        linkContent: 'Become a KubeSphere Member →'
+        linkContent: 'KubeSphere Üyesi Olun →'
 ---

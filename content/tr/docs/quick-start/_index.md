@@ -1,7 +1,7 @@
 ---
-title: "quick-start"
+title: "hızlı-başlangıç"
 weight: 2
-description: "Get a quick overview of the basic features of KubeSphere with several quick-start examples."
+description: "Birkaç örnek ile KubeSphere'in temel özelliklerine hızlı bir genel bakış edinin."
 _build:
     render: false
 ---
