@@ -42,7 +42,7 @@ section2:
 
 section3:
   title: See Cloud Native Observability in KubeSphere
-  image: /images/service-mesh/15.jpg
+  videoLink: https://www.youtube.com/embed/uf0TTowc56I
   content: Want to get started in action by following the hands-on lab?
   btnContent: Start Hands-on Lab
   link: https://kubesphere.io/docs/installation/intro/
