@@ -16,7 +16,7 @@
         {{ range .topType }}
             <li>
                 <div class='title'>
-                    <img src="{{ .icon1 | absURL }}" alt="">
+                    <img src="{{ .icon1 | relURL }}" alt="">
                     <p>{{ .name }}</p>
                 </div>
                 <div class='line'></div>
@@ -27,7 +27,7 @@
                     </li>
                     {{ end }}
                 </ul>
-                <img class='bottom-img' src="{{ .icon2 | absURL }}" alt="">
+                <img class='bottom-img' src="{{ .icon2 | relURL }}" alt="">
             </li>
         {{ end }}
         </ul>
@@ -37,19 +37,19 @@
             <h2 class="title-black-h2">{{ .topic }}</h2>
             <div>
                 <div class='top-div'>{{ .name }}</div>
-                <img src="{{ .icon | absURL }}" alt="">
+                <img src="{{ .icon | relURL }}" alt="">
                 <ul class="common-flex-layout">
                     {{ range $index, $element := .type }}
                     <li>
                         <div>
-                            <img src="{{ .icon | absURL }}" alt="">
+                            <img src="{{ .icon | relURL }}" alt="">
                             <span>{{ .name }}</span>
                         </div>
                         {{ if .children }}
                         <ul>
                             {{ range .children }}
                             <li class="">
-                                <img src="{{ $topIcon | absURL }}" alt="">
+                                <img src="{{ $topIcon | relURL }}" alt="">
                                 <div>{{ .name }}</div>
                                 {{ if eq $index 1}}
                                 <p class='left'>{{ .content }}</p>
@@ -85,7 +85,7 @@
             {{ $icon = $element.iconActive }}
             {{ end }}
             <li class="{{ $active }}" data-info='{{ . | jsonify }}' data-index='{{ $index }}'>
-                <img src="{{ $icon | absURL }}" alt="">
+                <img src="{{ $icon | relURL }}" alt="">
                 <p>{{ $element.name }}</p>
             </li>
             {{ end }}
@@ -95,7 +95,7 @@
         {{ with $first := index .children 0}}
         <div>
             <div class='btn-change btn-left' data-num='-1'></div>
-            <img class='bottom-img' src="{{ .iconActive | absURL }}" alt="">
+            <img class='bottom-img' src="{{ .iconActive | relURL }}" alt="">
             <div class='btn-change btn-right' data-num='1'></div>
         </div>
         <a class="common-green-a" href="{{ .link }}" target="_blank" rel="noopener noreferrer">{{ .linkContent }}</a>
@@ -103,7 +103,7 @@
         <ul>
             {{ range .children }}
             <li>
-                <img src="{{ .icon | absURL }}" alt="">
+                <img src="{{ .icon | relURL }}" alt="">
             </li>
             {{ end }}
         </ul>
@@ -119,7 +119,7 @@
     <div  class="common-flex-layout">
         {{ range .children}}
         <div>
-            <img src="{{ .icon | absURL }}" alt="">
+            <img src="{{ .icon | relURL }}" alt="">
             <h3 class="title-white-h3">{{ .title }}</h3>
             <p class="common-center-p">{{ .content }}</p>
             <div>

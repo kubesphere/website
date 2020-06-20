@@ -26,7 +26,7 @@
                             {{ if hasPrefix .URL "http" }}
                             <a href="{{ .URL }}" target="_blank" rel="noopener noreferrer">{{ .Name }}</a>
                             {{ else }}
-                            <a href="{{ .URL | absLangURL }}">{{ .Name }}</a>
+                            <a href="{{ .URL | relLangURL }}">{{ .Name }}</a>
                             {{ end }}
                         </li>
                         {{ end }}
@@ -37,7 +37,7 @@
                     {{ if hasPrefix .URL "http" }}
                     <a href="{{ .URL }}" target="_blank" rel="noopener noreferrer">{{ .Name }}</a>
                     {{ else }}
-                    <a href="{{ .URL | absLangURL }}">{{ .Name }}</a>
+                    <a href="{{ .URL | relLangURL }}">{{ .Name }}</a>
                     {{ end }}                
                 </li>
                 {{ end }}
@@ -99,13 +99,13 @@
                 <ul class="dropdown-menu">
                     {{ range .Children }}
                     <li {{ if eq $section .URL }} class="active"{{ end}}>
-                        <a href="{{ .URL | absLangURL }}">{{ .Name }}</a>
+                        <a href="{{ .URL | relLangURL }}">{{ .Name }}</a>
                     </li>
                     {{ end }}
                 </ul>
             </li>
             {{ else }}
-            <li {{ if eq $section .URL }} class="active"{{ end}}><a href="{{ .URL | absLangURL }}">{{ .Name }}</a></li>
+            <li {{ if eq $section .URL }} class="active"{{ end}}><a href="{{ .URL | relLangURL }}">{{ .Name }}</a></li>
             {{ end }}
 
             {{ end }}
