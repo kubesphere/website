@@ -1,9 +1,9 @@
 ---
-title: "介绍"
+title: "introductions"
 weight: 1
 _build:
     render: false
 
-description: "介绍"
+description: "Help you to better understand KubeSphere with detailed graphics and contents"
 
 ---

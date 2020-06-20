@@ -29,9 +29,9 @@
 - id: Demo
   translation: Demo
 - id: demo content 1
-  translation: "1.Online experience account: demo1 / Demo123"
+  translation: "1.Experience account: demo1 / Demo123"
 - id: demo content 2
-  translation: 2.This demo account is only allowed to view parts of UI
+  translation: 2.This account is only allowed to view parts of UI
 - id: demo content 3
   translation: 3.It's recommended that install KubeSphere in your environment
 - id: Coming Soon
@@ -42,4 +42,3 @@
   translation: We can’t find the page that you’re looking for :(
 - id: Go To Home
   translation: Go To Home
-
