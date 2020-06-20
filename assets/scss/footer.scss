@@ -117,6 +117,10 @@
           display: block;
           line-height: 2;
           color: #919aa3;
+
+          &:hover {
+            color: #55bc8a;
+          }
         }
       }
     }

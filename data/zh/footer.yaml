@@ -1,51 +1,59 @@
 footer:
   list:
-    - title: 
+    - title: 应用场景
       list:
-        - content: 
-          link: ''
+        - content: 拥抱一站式 DevOps
+          link: devops
 
-        - content: 
-          link: ''
-        
-        - content: 
-          link: ''
+        - content: 在 K8s 运行微服务
+          link: service-mesh
 
-        - content: 
-          link: ''
+        - content: 构建云原生可观察性
+          link: observability
 
-        - content: 
-          link: ''
+        - content: 物理机 K8s 暴露服务
+          link: 'https://porterlb.io'
 
-        - content: 
-          link: ''
-    - title: 
+        - content: K8s 一键部署与运维
+          link: 'https://github.com/kubesphere/kubekey'
+
+        - content: 多云应用管理平台
+          link: 'https://openpitrix.io/'
+
+        - content: Fluent-Bit 管理日志
+          link: 'https://github.com/kubesphere/fluentbit-operator'
+
+    - title: 资源
       list:
-        - content: 
-          link: 
-        - content: 
-          link: 
-        - content: 
-          link: 
-        - content: 
-          link: 
-    - title: 
+        - content: 开源项目
+          link: projects
+        - content: 技术博客
+          link: blogs
+        - content: 开源峰会
+          link: conferences
+        - content: 视频资源
+          link: videos
+
+    - title: 文档中心
       list:
-        - content: 
-          link: ''
-        - content: 
-          link: ''
-        - content: 
-          link: ''
-        - content: 
-          link: ''
-    - title: 
+        - content: 产品介绍
+          link: 'https://kubesphere.io/docs/'
+        - content: 如何安装
+          link: 'https://kubesphere.io/docs/installation/intro/'
+        - content: 快速入门
+          link: 'https://kubesphere.io/docs/quick-start/admin-quick-start/'
+        - content: API 文档
+          link: 'https://kubesphere.io/docs/api-reference/api-docs/'
+
+    - title: 开源社区
       list:
-        - content: 
-          link: 
-        - content: 
-          link:
-        - content: 
-          link: 
-        - content: 
-          link: 
+        - content: 参与贡献
+          link: contribution
+        - content: 案例学习
+          link: case
+        - content: 合作伙伴
+          link: partner
+        - content: 版本计划
+          link: https://github.com/kubesphere/kubesphere/blob/master/docs/roadmap.md
+        - content: 中国站
+          link: https://kubesphere.com.cn/

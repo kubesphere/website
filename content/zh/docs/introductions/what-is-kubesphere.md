@@ -1,25 +1,9 @@
 ---
-title: "什么是kubesphere"
+title: "what-is-kubesphere"
 weight: 1
 
 ---
 
-# what-is-kubesphere
+## test
 
-测试markdown
-
-## second
-
-测试markdown
-
-## second
-
-测试markdown
-
-## second
-
-测试markdown
-
-## second
-
-测试markdown
+test

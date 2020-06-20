@@ -1,24 +1,26 @@
 footer:
   list:
-    - title: Products
+    - title: Scenarios
       list:
-        - content: KubeSphere
-          link: 'https://github.com/kubesphere/kubesphere'
+        - content: Embrace DevOps
+          link: devops
 
-        - content: Porter
-          link: 'https://github.com/kubesphere/porter'
+        - content: Microservices on K8s
+          link: service-mesh
 
-        - content: KubeKey
-          link: 'https://github.com/kubesphere/kubekey'
+        - content: Cloud Native Observability
+          link: observability
 
-        - content: OpenPitrix
+        - content: Bare Metal LoadBalancer
+          link: 'https://porterlb.io/'
+
+        - content: Multi-cloud Apps Mgmt
           link: 'https://github.com/openpitrix/openpitrix'
 
-        - content: Fluentbit-Operator
+        - content: Logging management
           link: 'https://github.com/kubesphere/fluentbit-operator'
 
-        - content: Notification Manager
-          link: 'https://github.com/kubesphere/notification-manager'
+
 
     - title: Resources
       list:
@@ -52,3 +54,5 @@ footer:
           link: partner
         - content: Roadmap
           link: https://github.com/kubesphere/kubesphere/blob/master/docs/roadmap.md
+        - content: China Site
+          link: https://kubesphere.com.cn/

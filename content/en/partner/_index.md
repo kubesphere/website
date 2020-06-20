@@ -13,7 +13,7 @@ section2:
   content: 'KubeSphere partners play a critical role in KubeSphere go-to-market strategy. KubeSphere partners are located all over the world. We are looking forward to global cooperation as your success is our success.'
   name1: 'USA'
   icon1: 'images/partner/inaccel.jpg'
-  name2: 'European'
+  name2: 'Europe'
   icon2: 'images/partner/radore-flag.jpg'
   name3: 'China'
   icon3: 'images/partner/qingcloud.svg'
