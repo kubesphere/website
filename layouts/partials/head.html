@@ -1,7 +1,7 @@
 <head>
     {{ $data := index .Site.Data .Site.Language.Lang }}
     <meta charset="utf-8">
-    <title>{{ .Title }}</title>
+    <title>{{ with .Params.Title }}{{ . }}{{ else }}{{ with $data.head.title }}{{ . }}{{ end }}{{ end }}</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
     <meta name="description" content="{{ with .Params.Description }}{{ . }}{{ else }}{{ with $data.head.description }}{{ . }}{{ end }}{{ end }}">

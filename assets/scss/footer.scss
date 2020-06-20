@@ -86,16 +86,20 @@
       }
       .right-div {
         margin-left: 60px;
+        width: 732px;
 
         @media only screen and (max-width: $mobile-max-width) {
+          display: block;
+          width: 100%;
           margin-left: 0px;
         }
 
         & > ul {
+          @media only screen and (max-width: $mobile-max-width) {
+            justify-content: start;
+          }
           li {
-            display: inline-block;
-            margin-right: 60px;
-            vertical-align: top;
+            margin-right: 32px;
 
             @media only screen and (max-width: $mobile-max-width) {
               margin-top: 20px;
