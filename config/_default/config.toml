@@ -179,7 +179,7 @@ hasChildren = true
 [[languages.zh.menu.main]]
 weight = 4
 name = "文档中心"
-URL = "docs"
+URL = "https://kubesphere.com.cn/docs/zh-CN/"
 
 [[languages.zh.menu.main]]
 weight = 5
