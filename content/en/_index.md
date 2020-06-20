@@ -44,7 +44,7 @@ section3:
       content: Automated installation, scaling, and upgrades from cloud to data center
       icon: /images/home/7.svg
       children:
-        - content: Improve your environment utilization and reduce internal infrastructure costs
+        - content: Improve your resource utilization and reduce internal infrastructure costs
         - content: Provide security enhancements, and support multiple storage and network solutions
         - content: Deliver a trustworthy and certified Kubernetes platform and distribution
         - content: Support multi-cloud and multi-cluster Kubernetes management, avoiding vendor lock-in (coming soon)
@@ -72,7 +72,7 @@ section3:
       icon: /images/home/80.svg
       children:
         - content: Deploy and upgrade Apps with one click to transparent underlying infrastructure
-        - content: Provide on-demand container resources and HPA, hardening the reliabity and flexibility of your applications
+        - content: Provide on-demand container resources and HPA, hardening the reliability and flexibility of your applications
         - content: Import any Helm repository in seconds to visually deploy and upgrade applications
         - content: Support operation in application store, including metering and billing for applications (coming soon)
 
