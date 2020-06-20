@@ -17,7 +17,7 @@
                 {{ $name := .name }}
                 {{ range .children }}
                 <li data-name="{{ $name }}">
-                    <img src="{{ .icon | absURL }}" alt="">
+                    <img src="{{ .icon | relURL }}" alt="">
                     <a href="{{ .link }}" target="_blank" rel="noopener noreferrer">{{ .title }}</a>
                     <p>{{ .description }}</p>
                     <div>

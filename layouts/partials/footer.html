@@ -4,7 +4,7 @@
         <div class="footer-main common-layout">
             <div class="up-main">
                 <div class="left-div">
-                    <img src="{{ .Site.Params.logo | absURL }}" alt="{{ .Site.Title }}" class="foot-logo">
+                    <img src="{{ .Site.Params.logo | relURL }}" alt="{{ .Site.Title }}" class="foot-logo">
                     <p>{{ i18n "introduction7" }}</p>
                     <div>
                         <form 
@@ -29,7 +29,7 @@
                                 {{ if hasPrefix .link "http" }}
                                 <a href="{{ .link }}" target="_blank" rel="noopener noreferrer">{{ .content }}</a>
                                 {{ else }}
-                                <a href="{{ .link | absLangURL }}">{{ .content }}</a>
+                                <a href="{{ .link | relLangURL }}">{{ .content }}</a>
                                 {{ end }}
                                 {{ end }}
                             </li>

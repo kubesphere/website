@@ -64,7 +64,7 @@
           <li>{{ .content | safeHTML }}</li>
           {{ end }}
         </ul>
-        <img src="{{ .icon | absURL }}" alt="">
+        <img src="{{ .icon | relURL }}" alt="">
       </div>
       {{ end }}
 

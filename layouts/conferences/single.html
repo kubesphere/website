@@ -13,7 +13,7 @@
 <section class="main-section">
     <div class="common-layout">
         <div class='breadcrumb'>
-            <span><a href='{{ "conferences" | absLangURL }}'>{{ i18n "introduction4"}}</a> > </span>
+            <span><a href='{{ "conferences" | relLangURL }}'>{{ i18n "introduction4"}}</a> > </span>
             <span>{{ .Title }}</span>
         </div>
         <div class='main-div'>
@@ -33,7 +33,7 @@
     </div>
 </section>
 {{- partial "footer.html" . -}}
-<script src='{{ "js/aside.js" | absURL }}'></script>
+<script src='{{ "js/aside.js" | relURL }}'></script>
 </body>
 
 </html>

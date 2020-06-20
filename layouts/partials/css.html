@@ -7,7 +7,7 @@
 
 {{ if .Params.minCss }}
 {{ range (split .Params.minCss ",")}}
-<link rel="stylesheet" href="{{ . | absURL }}">
+<link rel="stylesheet" href="{{ . | relURL }}">
 {{ end }}
 {{ end }}
 
