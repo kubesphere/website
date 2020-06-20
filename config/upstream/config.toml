@@ -1,4 +1,1 @@
-baseURL = "https://dev.kubesphere.io/"
-
-[params]
-mailchimpSubscribeUrl = ""
+baseURL = "https://kubesphere.io"
