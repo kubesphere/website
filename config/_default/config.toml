@@ -126,83 +126,99 @@ languageName = "简体中文"
 
 [[languages.zh.menu.main]]
 weight = 2
-name = "Scenario"
+name = "应用场景"
 hasChildren = true
 
   [[languages.zh.menu.main]]
-  parent = "Scenario"
-  name = "DevOps"
-  URL = "devOps"
+  parent = "应用场景"
+  name = "拥抱一站式 DevOps 工作流"
+  URL = "devops"
   weight = 2
 
   [[languages.zh.menu.main]]
-  parent = "Scenario"
-  name = "Service Mesh"
+  parent = "应用场景"
+  name = "在 Kubernetes 运行微服务"
   URL = "service-mesh"
   weight = 4
 
   [[languages.zh.menu.main]]
-  parent = "Scenario"
-  name = "Observability"
+  parent = "应用场景"
+  name = "构建丰富的云原生可观察性"
   URL = "observability"
   weight = 8
 
 [[languages.zh.menu.main]]
 weight = 3
-name = "Resources"
+name = "资源"
 hasChildren = true
 
   [[languages.zh.menu.main]]
-  parent = "Resources"
-  name = "Open Source Projects"
+  parent = "资源"
+  name = "开源项目"
   URL = "projects"
   weight = 1
 
   [[languages.zh.menu.main]]
-  parent = "Resources"
-  name = "KubeCon & QCon"
+  parent = "资源"
+  name = "开源峰会"
   URL = "conferences"
   weight = 2
 
   [[languages.zh.menu.main]]
-  parent = "Resources"
-  name = "Technology Blogs"
+  parent = "资源"
+  name = "技术博客"
   URL = "blogs"
   weight = 3
 
   [[languages.zh.menu.main]]
-  parent = "Resources"
-  name = "Video Resources"
+  parent = "资源"
+  name = "视频资源"
   URL = "videos"
   weight = 4
 
 [[languages.zh.menu.main]]
 weight = 4
-name = "Documentation"
+name = "文档中心"
 URL = "docs"
 
 [[languages.zh.menu.main]]
 weight = 5
 hasChildren = true
-name = "Community"
+name = "开源社区"
     [[languages.zh.menu.main]]
-    parent = "Community"
-    name = "Contribution"
+    parent = "开源社区"
+    name = "参与贡献"
     URL = "contribution"
     weight = 1
 
     [[languages.zh.menu.main]]
-    parent = "Community"
-    name = "Case Studies"
+    parent = "开源社区"
+    name = "案例学习"
     URL = "case"
     weight = 2
 
     [[languages.zh.menu.main]]
-    parent = "Community"
-    name = "Partner"
+    parent = "开源社区"
+    name = "合作伙伴"
     URL = "partner"
     weight = 3
 
+    [[languages.zh.menu.main]]
+    parent = "开源社区"
+    name = "版本计划"
+    URL = "https://github.com/kubesphere/kubesphere/blob/master/docs/roadmap.md"
+    weight = 4
+
+    [[languages.zh.menu.main]]
+    parent = "开源社区"
+    name = "中国站"
+    URL = "https://kubesphere.com.cn/"
+    weight = 5
+
+[[languages.zh.menu.main]]
+weight = 6
+name = "用户论坛"
+URL = "https://kubesphere.com.cn/forum"
 
 
 [languages.tr]
