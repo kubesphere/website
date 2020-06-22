@@ -102,19 +102,19 @@ section4:
     - name: Service Mesh (Istio-based)
       icon: /images/home/service.svg
       content: Provide fine-grained traffic management, observability and tracing, and offer visualization for traffic topology
-      link: "../service-mesh"
+      link: "service-mesh"
       color: red
 
     - name: Rich Observability
       icon: /images/home/rich.svg
       content: Multi-dimensional monitoring, events and audit logs query are supported; multi-tenant log query and collection, alerting and notification are built-in
-      link: "../observability"
+      link: "observability"
       color: green
 
     - name: DevOps System
       icon: /images/home/dev-ops.svg
       content: Out-of-box CI/CD based on Jenkins, and automated workflow tools including Source-to-Image & Binary-to-Image
-      link: "/devops"
+      link: "devops"
       color: orange
 
     - name: Multiple Storage Solutions

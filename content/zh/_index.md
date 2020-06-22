@@ -102,19 +102,19 @@ section4:
     - name: 基于 Istio 的微服务治理
       icon: /images/home/service.svg
       content: 提供细粒度的流量管理、流量监控、灰度发布、分布式追踪，支持可视化的流量拓扑
-      link: "../service-mesh"
+      link: "service-mesh"
       color: red
 
     - name: 丰富的可观察性
       icon: /images/home/rich.svg
       content: 提供多维度与多租户的监控、日志、事件、审计搜索，支持多种告警策略与通知渠道，支持日志转发
-      link: "../observability"
+      link: "observability"
       color: green
 
     - name: DevOps 系统
       icon: /images/home/dev-ops.svg
       content: 基于 Jenkins 为引擎打造的 CI/CD，内置 Source-to-Image 和 Binary-to-Image 自动化打包部署工具
-      link: "/devops"
+      link: "devops"
       color: orange
 
     - name: 支持多种存储方案

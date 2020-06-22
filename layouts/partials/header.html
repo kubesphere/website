@@ -54,7 +54,7 @@
                         </div>
                         <ul class="dropdown-menu">
                             {{ range .Page.AllTranslations }}
-                            <li onclick="location = '{{ .Permalink }}'">{{ .Language.LanguageName }}</li>
+                            <li onclick="location = '{{ .RelPermalink }}'">{{ .Language.LanguageName }}</li>
                             {{ end }}
                         </ul>
                     </li>
