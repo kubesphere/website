@@ -80,10 +80,11 @@
 
   .menu-span::after {
     display: inline-block;
+    vertical-align: top;
     content: '';
     margin-left: 5px;
-    border-width: 4px 2px;
-    border: solid transparent;
+    margin-top: 10px;
+    border:  4px solid transparent;
     border-top-color: #fff;
   }
 
@@ -170,10 +171,11 @@
 
         span::after {
           display: inline-block;
+          vertical-align: top;
           content: '';
           margin-left: 5px;
-          border-width: 4px 2px;
-          border: solid transparent;
+          margin-top: 6px;
+          border: 4px solid transparent;
           border-top-color: #fff;
         }
       }
