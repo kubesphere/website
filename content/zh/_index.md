@@ -102,19 +102,19 @@ section4:
     - name: 基于 Istio 的微服务治理
       icon: /images/home/service.svg
       content: 提供细粒度的流量管理、流量监控、灰度发布、分布式追踪，支持可视化的流量拓扑
-      link: "service-mesh"
+      link: "service-mesh/"
       color: red
 
     - name: 丰富的可观察性
       icon: /images/home/rich.svg
       content: 提供多维度与多租户的监控、日志、事件、审计搜索，支持多种告警策略与通知渠道，支持日志转发
-      link: "observability"
+      link: "observability/"
       color: green
 
     - name: DevOps 系统
       icon: /images/home/dev-ops.svg
       content: 基于 Jenkins 为引擎打造的 CI/CD，内置 Source-to-Image 和 Binary-to-Image 自动化打包部署工具
-      link: "devops"
+      link: "devops/"
       color: orange
 
     - name: 支持多种存储方案
@@ -158,7 +158,7 @@ section5:
 
 section6:
   title: 用户社区
-  content: 已有来自全球的大量知名企业与组织将 KubeSphere 容器平台广泛应用在科研、生产环境以及他们的商业产品中，</br> 点击 <a class='inner-a' target='_blank' href='../case'>案例学习</a> 查看更详细的典型用户的实践案例文章。
+  content: 已有来自全球的大量知名企业与组织将 KubeSphere 容器平台广泛应用在科研、生产环境以及他们的商业产品中，</br> 点击 <a class='inner-a' target='_blank' href='case/'>案例学习</a> 查看更详细的典型用户的实践案例文章。
   children:
     - icon: /images/home/section6-anchnet.jpg
     - icon: /images/home/section6-aqara.jpg
@@ -177,11 +177,11 @@ section6:
     - icon: /images/home/section6-yiliu.jpg
 
   btnContent: 案例学习
-  btnLink: case
+  btnLink: case/
   link: mailto:kubesphere@gmail.com
   linkContent: 希望加入用户社区并在 KubeSphere 官网展示您的 Logo？请邮件至 kubesphere@gmail.com
   joinTitle: 加入 KubeSphere 社区合作伙伴计划
   joinContent: 我们非常期待您加入 KubeSphere 社区合作伙伴计划，共同完善各自的生态，加速您的业务增长。
-  joinLink: partner
+  joinLink: partner/
   image: /images/home/certification.jpg
 ---

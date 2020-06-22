@@ -102,19 +102,19 @@ section4:
     - name: Service Mesh (Istio-based)
       icon: /images/home/service.svg
       content: Provide fine-grained traffic management, observability and tracing, and offer visualization for traffic topology
-      link: "service-mesh"
+      link: "service-mesh/"
       color: red
 
     - name: Rich Observability
       icon: /images/home/rich.svg
       content: Multi-dimensional monitoring, events and audit logs query are supported; multi-tenant log query and collection, alerting and notification are built-in
-      link: "observability"
+      link: "observability/"
       color: green
 
     - name: DevOps System
       icon: /images/home/dev-ops.svg
       content: Out-of-box CI/CD based on Jenkins, and automated workflow tools including Source-to-Image & Binary-to-Image
-      link: "devops"
+      link: "devops/"
       color: orange
 
     - name: Multiple Storage Solutions
@@ -158,7 +158,7 @@ section5:
 
 section6:
   title: End User Community
-  content: Tons of enterprises and organizations are using KubeSphere Container Platform for research, production and their commercial products.</br> The <a class='inner-a' target='_blank' href='../case'>Case Studies</a> list more detailed user cases and their cloud native transformation stories.
+  content: Tons of enterprises and organizations are using KubeSphere Container Platform for research, production and their commercial products.</br> The <a class='inner-a' target='_blank' href='case/'>Case Studies</a> list more detailed user cases and their cloud native transformation stories.
   children:
     - icon: /images/home/section6-anchnet.jpg
     - icon: /images/home/section6-aqara.jpg
@@ -177,11 +177,11 @@ section6:
     - icon: /images/home/section6-yiliu.jpg
 
   btnContent: Case Studies
-  btnLink: case
+  btnLink: case/
   link: mailto:kubesphere@gmail.com
   linkContent: Want to join our user community and showcase your logo? Just send an email to kubesphere@gmail.com
   joinTitle: Join the Revolution, Partner with KubeSphere
   joinContent: We look forward to your joining KubeSphere partner program to improve both ecosystems and grow your business.
-  joinLink: partner
+  joinLink: partner/
   image: /images/home/certification.jpg
 ---

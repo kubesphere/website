@@ -42,3 +42,9 @@
   translation: We can’t find the page that you’re looking for :(
 - id: Go To Home
   translation: Go To Home
+- id: icon
+  translation: 图标
+- id: background image
+  translation: 背景图片
+- id: kubesphere console screenshot
+  translation: kubesphere console 截图

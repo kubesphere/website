@@ -8,10 +8,10 @@
                 {{ range .Params.list }}
                 <li>
                     <div class='top-div'>
-                        <img class='left-img' data-src="{{ .bg | relURL }}" alt="">
+                        <img class='left-img' data-src="{{ .bg | relURL }}" alt="{{ .name }}">
                         <h3>{{ .name }}</h3>
                         <p>{{ .content }}</p>
-                        <img class='right-img' data-src="{{  .icon | relURL }}" alt="">
+                        <img class='right-img' data-src="{{  .icon | relURL }}" alt="{{ .name }}">
                     </div>
                     <ul>
                         {{ range .children }}
@@ -21,7 +21,7 @@
                             <p>{{ .summary }}</p>
                             <div class='line'></div>
                             <a href="{{ .link }}"><button>{{ $viewDetail }}</button></a>
-                            <img data-src="{{ .image | relURL }}" alt="">
+                            <img data-src="{{ .image | relURL }}" alt="{{ .name }}">
                         </li>
                         {{ end }}
                     </ul>
