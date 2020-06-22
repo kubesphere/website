@@ -1,5 +1,5 @@
 ---
-title: "case"
+title: "案例分析"
 css: "scss/case.scss"
 
 

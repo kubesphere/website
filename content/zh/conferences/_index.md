@@ -1,5 +1,5 @@
 ---
-title: "page1"
+title: "开源峰会"
 css: "scss/conferences.scss"
 
 viewDetail: 查看详情

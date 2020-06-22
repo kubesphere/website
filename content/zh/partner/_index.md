@@ -1,5 +1,5 @@
 ---
-title: "partner"
+title: "合作伙伴"
 
 css: "scss/partner.scss"
 

@@ -1,5 +1,5 @@
 ---
-title: "observability"
+title: "可观察性"
 layout: "scenario"
 
 css: "scss/scenario.scss"
