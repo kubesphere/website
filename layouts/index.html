@@ -190,11 +190,11 @@
 
 <script>
   var bindMouseLeftLi = function() {
-    $('.left-li').mouseenter(function() {
+    $('.section-3 .left-li').mouseenter(function() {
       var index = Number($(this).data('index'))
       $('.left-li').removeClass('active')
       $(this).addClass('active')
-      $('.right-div').hide().eq(index).show()
+      $('.section-3 .right-div').hide().eq(index).show()
     })
   }
 
