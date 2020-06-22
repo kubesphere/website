@@ -4,7 +4,7 @@
         <div class="footer-main common-layout">
             <div class="up-main">
                 <div class="left-div">
-                    <img src="{{ .Site.Params.logo | relURL }}" alt="{{ .Site.Title }}" class="foot-logo">
+                    <img data-src="{{ .Site.Params.logo | relURL }}" alt="{{ .Site.Title }}" class="foot-logo">
                     <p>{{ i18n "introduction7" }}</p>
                     <div>
                         <form 
@@ -45,7 +45,7 @@
                         {{ "/static/images/footer/wechat.svg" | readFile | safeHTML }}
                         <div class="hide-div">
                             <p>Follow the official account</p>
-                            <img src="/images/footer/wechat_code.svg" alt="">
+                            <img data-src="/images/footer/wechat_code.svg" alt="">
                         </div>
                     </a>
                     <!-- <a class='wechat' href="javascript:void(0);">
@@ -103,6 +103,31 @@
         return reg.test(email)
     }
 
+    var lazyLoad = function(allImg, imgNum) {
+        for (var i = 0; i < imgNum; i++) {
+            var img = allImg.eq(i)
+            var loaded = img.attr("data-loaded");
+            if (loaded) {
+                continue
+            }
+            if (img.offset().top < parseInt($(window).height()) + parseInt($(window).scrollTop())) {
+                var src = img.attr("data-src")
+                img.attr("src", src)
+                img.attr("data-loaded", true)
+            }
+        }
+    }
+
+    var bindLayLoad = function() {
+        var allImg = $('img')
+        var imgNum = allImg.length
+        lazyLoad(allImg, imgNum)
+        $(window).scroll(function() {
+            lazyLoad(allImg, imgNum)
+        });
+    }
+
+    bindLayLoad()
     bindSubmit()
     bindHideMessage()
 </script>

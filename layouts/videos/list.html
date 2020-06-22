@@ -98,8 +98,8 @@
     }
 
     var createVideoLi = function(video) {
-        var img = '<img src="' + video.snapshot + '" alt="">'
-        var button = '<img class="btn" src="/images/videos/play.svg" alt="">'
+        var img = '<img data-src="' + video.snapshot + '" alt="">'
+        var button = '<img data-class="btn" src="/images/videos/play.svg" alt="">'
         var title = '<h3>' + video.title + '</h3>'
         var group = '<p>' + video.group + '</p>'
         var time = '<p class="time">' + video.createTime + '</p>'

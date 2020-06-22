@@ -3,7 +3,7 @@
     <div class="common-layout">
         <div class="header-container">
             <a href="{{ site.Home.RelPermalink }}">
-                <img src="/images/header/logo.svg" alt="{{ .Site.Title }}" class="logo">
+                <img data-src="/images/header/logo.svg" alt="{{ .Site.Title }}" class="logo">
             </a>
 
             <ul class="nav">
@@ -49,7 +49,7 @@
                 <ul>
                     <li class="language-menu">
                         <div>
-                            <img src="/images/header/black.svg" alt="">
+                            <img data-src="/images/header/black.svg" alt="">
                             <span>{{ .Site.Language.LanguageName }}</span>
                         </div>
                         <ul class="dropdown-menu">
@@ -74,7 +74,7 @@
                         <a class='link-3' href="{{ .Site.Params.githubLink }}" target="_blank" rel="noopener noreferrer"></a>
                     </li>
                     <li class="menu-icon">
-                        <img src="/images/header/menu.svg" alt="">
+                        <img data-src="/images/header/menu.svg" alt="">
                     </li>
                 </ul>
             </div>
@@ -118,13 +118,13 @@
         </div>
         <div class="link-div">
             <a href="{{ .Site.Params.slackLink }}" target="_blank" rel="noopener noreferrer">
-                <img src="/images/header/slack-hover.svg" alt="">
+                <img data-src="/images/header/slack-hover.svg" alt="">
             </a>
             <a href="{{ .Site.Params.twitterLink }}" target="_blank" rel="noopener noreferrer">
-                <img src="/images/header/twitter-hover.svg" alt="">
+                <img data-src="/images/header/twitter-hover.svg" alt="">
             </a>
             <a href="{{ .Site.Params.githubLink }}" target="_blank" rel="noopener noreferrer">
-                <img src="/images/header/github-hover.svg" alt="">
+                <img data-src="/images/header/github-hover.svg" alt="">
             </a>
         </div>
     </div>
