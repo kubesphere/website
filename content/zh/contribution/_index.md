@@ -1,5 +1,5 @@
 ---
-title: "contribution"
+title: "参与贡献"
 
 css: "scss/contribution.scss"
 

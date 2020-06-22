@@ -94,6 +94,7 @@
   background-position: center top;
   background-repeat: no-repeat;
   padding-top: 80px;
+  overflow: hidden;
 
   @media only screen and (max-width: $mobile-max-width) {
     padding-top: 40px;
