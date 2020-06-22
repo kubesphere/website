@@ -2,9 +2,9 @@
 {{ $data := index .Site.Data .Site.Language.Lang }}
 <section class='section-1'>
   {{ with .Params.section1 }}
-  <img class='img1' src="images/home/bg.jpg" alt="">
-  <img class='img2' src="/images/home/12-3.png" alt="">
-  <img class='img3' src="/images/home/2.svg" alt="">
+  <img class='img1' data-src="images/home/bg.jpg" alt="">
+  <img class='img2' data-src="/images/home/12-3.png" alt="">
+  <img class='img3' data-src="/images/home/2.svg" alt="">
   <div class="common-layout">
     <div>
       <p class='p1'>{{ .title | safeHTML }}</p>
@@ -17,9 +17,9 @@
         <button class='btn2 common-btn'>{{ .btnContent2 }}</button>
       </a>
     </div>
-    <img class='img1' src="/images/home/53.png" alt="">
-    <img class='img2' src="/images/home/left.svg" alt="">
-    <img class='img4' src="/images/home/46.svg" alt="">
+    <img class='img1' data-src="/images/home/53.png" alt="">
+    <img class='img2' data-src="/images/home/left.svg" alt="">
+    <img class='img4' data-src="/images/home/46.svg" alt="">
   </div>
   {{ end }}
 </section>
@@ -64,7 +64,7 @@
           <li>{{ .content | safeHTML }}</li>
           {{ end }}
         </ul>
-        <img src="{{ .icon | relURL }}" alt="">
+        <img data-src="{{ .icon | relURL }}" alt="">
       </div>
       {{ end }}
 
@@ -75,8 +75,8 @@
 
 <section class='section-4'>
   {{ with .Params.section4 }}
-  <img class='bg-1' src="/images/home/section4-left.png" alt="">
-  <img class='bg-2' src="/images/home/section4-right.svg" alt="">
+  <img class='bg-1' data-src="/images/home/section4-left.png" alt="">
+  <img class='bg-2' data-src="/images/home/section4-right.svg" alt="">
   <div class="common-layout">
     <div>
       <h2>{{ .title }}</h2>
@@ -84,7 +84,7 @@
       <ul>
         {{ range .children }}
         <li>
-          <img src="{{ .icon }}" alt="">
+          <img data-src="{{ .icon }}" alt="">
           <div>
             <h3 class="title-white-h3">{{ .name }}</h3>
             <p class="common-p">{{ .content | safeHTML }}</p>
@@ -100,7 +100,7 @@
         <div>
           <div class='top-line {{ .color }}'></div>
           <div class='img-span-div'>
-            <img class="common-middle-inline" src="{{ .icon }}" alt="">
+            <img class="common-middle-inline" data-src="{{ .icon }}" alt="">
             <span class="common-middle-inline">{{ .name }}</span>
           </div>
           <p class="common-p">{{ .content | safeHTML }}</p>
@@ -130,7 +130,7 @@
         <ul>
           {{ range .children }}
           <li>
-            <img src="{{ .icon }}" alt="">
+            <img data-src="{{ .icon }}" alt="">
           </li>
           {{ end }}
         </ul>
@@ -148,8 +148,8 @@
           </ul>
         </div>
         <div class='image'>
-          <img src="/images/home/applications.png" alt="">
-          <img src="/images/home/applications.png" alt="">
+          <img data-src="/images/home/applications.png" alt="">
+          <img data-src="/images/home/applications.png" alt="">
         </div>
       </div>
       {{ end }}
@@ -166,7 +166,7 @@
     <ul class="common-flex-layout">
       {{ range .children }}
       <li>
-        <img src="{{ .icon }}" alt="">
+        <img data-src="{{ .icon }}" alt="">
       </li>
       {{ end }}
     </ul>
@@ -179,22 +179,22 @@
     <a class='join-div' href="{{ .joinLink }}">
       <p class='p1'>{{ .joinTitle }}</p>
       <p class='p2'>{{ .joinContent }}</p>
-      <img src="/images/home/join-right.svg" alt="">
+      <img data-src="/images/home/join-right.svg" alt="">
     </a>
-    <img class='bottom-img' src="{{ .image }}" alt="">
+    <img class='bottom-img' data-src="{{ .image }}" alt="">
   </div>
-  <img class='bg-1' src="/images/home/section6-left.svg" alt="">
-  <img class='bg-2' src="/images/home/section6-right.svg" alt="">
+  <img class='bg-1' data-src="/images/home/section6-left.svg" alt="">
+  <img class='bg-2' data-src="/images/home/section6-right.svg" alt="">
   {{ end }}
 </section>
 
 <script>
   var bindMouseLeftLi = function() {
-    $('.left-li').mouseenter(function() {
+    $('.section-3 .left-li').mouseenter(function() {
       var index = Number($(this).data('index'))
       $('.left-li').removeClass('active')
       $(this).addClass('active')
-      $('.right-div').hide().eq(index).show()
+      $('.section-3 .right-div').hide().eq(index).show()
     })
   }
 

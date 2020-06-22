@@ -17,13 +17,13 @@
             {{ range .Data.Pages }}
             <li data-tag='{{ .Params.tag }}'>
                 <div class='img-div'>
-                    <img src="{{ .Params.snapshot }}" alt="">
+                    <img data-src="{{ .Params.snapshot }}" alt="">
                 </div>
                 <div class='content-div'>
                     <p class='time'>{{ .Params.createTime }}</p>
                     <h3><a href="{{ .RelPermalink }}">{{ .Title }}</a></h3>
                     <div class='author'>
-                        <img src="" alt="">
+                        <!-- <img src="" alt=""> -->
                         <span>{{ .Params.author }}</span>
                     </div>
                     <p class='summary'>{{ substr .Summary 0 120 }}</p>

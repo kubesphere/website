@@ -11,17 +11,21 @@ var getElementBottomToTop = function(element) {
 }
 
 var bindAsideScroll = function() {
+  var screenWidth = $(window).width()
+  if (screenWidth <= 768) {
+    return false
+  }
   var content = $('.main-div')
   var aside = $('.aside')
   $( window ).scroll(function() {
-      var s1 = getElementBottomToTop(content)
-      var s2 = getElementBottomToTop(aside)
-      if (s2 > s1) {
-          aside.addClass('aside-absolute').removeClass('aside-fixed')
-      }
-      if (getElementTopToScreenTop(aside) > 150) {
-          aside.removeClass('aside-absolute').addClass('aside-fixed')
-      }
+    var s1 = getElementBottomToTop(content)
+    var s2 = getElementBottomToTop(aside)
+    if (s2 > s1) {
+        aside.addClass('aside-absolute').removeClass('aside-fixed')
+    }
+    if (getElementTopToScreenTop(aside) > 150) {
+        aside.removeClass('aside-absolute').addClass('aside-fixed')
+    }
   });
 }
 
