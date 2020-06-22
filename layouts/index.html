@@ -2,9 +2,9 @@
 {{ $data := index .Site.Data .Site.Language.Lang }}
 <section class='section-1'>
   {{ with .Params.section1 }}
-  <img class='img1' data-src="images/home/bg.jpg" alt="">
-  <img class='img2' data-src="/images/home/12-3.png" alt="">
-  <img class='img3' data-src="/images/home/2.svg" alt="">
+  <img class='img1' data-src="/images/home/bg.jpg" alt="{{ i18n "background image"}}">
+  <img class='img2' data-src="/images/home/12-3.png" alt="{{ i18n "background image"}}">
+  <img class='img3' data-src="/images/home/2.svg" alt="{{ i18n "background image"}}">
   <div class="common-layout">
     <div>
       <p class='p1'>{{ .title | safeHTML }}</p>
@@ -17,9 +17,9 @@
         <button class='btn2 common-btn'>{{ .btnContent2 }}</button>
       </a>
     </div>
-    <img class='img1' data-src="/images/home/53.png" alt="">
-    <img class='img2' data-src="/images/home/left.svg" alt="">
-    <img class='img4' data-src="/images/home/46.svg" alt="">
+    <img class='img1' data-src="/images/home/53.png" alt="{{ i18n "kubesphere console screenshot"}}">
+    <img class='img2' data-src="/images/home/left.svg" alt="{{ i18n "background image"}}">
+    <img class='img4' data-src="/images/home/46.svg" alt="{{ i18n "background image"}}">
   </div>
   {{ end }}
 </section>
@@ -32,7 +32,7 @@
     <ul>
       {{ range .children }}
       <li class="common-top-inline">
-        <img src="{{ .icon }}" alt="">
+        <img src="{{ .icon }}" alt="{{ .name }}">
         <h3 class="title-black-h3 ">{{ .name | safeHTML }}</h3>
         <p class="common-center-p">{{ .content | safeHTML }}</p>
       </li>
@@ -64,7 +64,7 @@
           <li>{{ .content | safeHTML }}</li>
           {{ end }}
         </ul>
-        <img data-src="{{ .icon | relURL }}" alt="">
+        <img data-src="{{ .icon | relURL }}" alt="{{ .name }}">
       </div>
       {{ end }}
 
@@ -75,8 +75,8 @@
 
 <section class='section-4'>
   {{ with .Params.section4 }}
-  <img class='bg-1' data-src="/images/home/section4-left.png" alt="">
-  <img class='bg-2' data-src="/images/home/section4-right.svg" alt="">
+  <img class='bg-1' data-src="/images/home/section4-left.png" alt="{{ i18n "background image"}}">
+  <img class='bg-2' data-src="/images/home/section4-right.svg" alt="{{ i18n "background image"}}">
   <div class="common-layout">
     <div>
       <h2>{{ .title }}</h2>
@@ -84,7 +84,7 @@
       <ul>
         {{ range .children }}
         <li>
-          <img data-src="{{ .icon }}" alt="">
+          <img data-src="{{ .icon }}" alt="{{ .name }}">
           <div>
             <h3 class="title-white-h3">{{ .name }}</h3>
             <p class="common-p">{{ .content | safeHTML }}</p>
@@ -100,7 +100,7 @@
         <div>
           <div class='top-line {{ .color }}'></div>
           <div class='img-span-div'>
-            <img class="common-middle-inline" data-src="{{ .icon }}" alt="">
+            <img class="common-middle-inline" data-src="{{ .icon }}" alt="{{ .name }}">
             <span class="common-middle-inline">{{ .name }}</span>
           </div>
           <p class="common-p">{{ .content | safeHTML }}</p>
@@ -127,10 +127,11 @@
       <div class='front-div common-top-inline'>
         <h3 class="title-black-h3">{{ .title }}</h3>
         <p>{{ .project }}</p>
+        {{ $alt := .project }}
         <ul>
           {{ range .children }}
           <li>
-            <img data-src="{{ .icon }}" alt="">
+            <img data-src="{{ .icon }}" alt="{{ $alt }}">
           </li>
           {{ end }}
         </ul>
@@ -148,8 +149,8 @@
           </ul>
         </div>
         <div class='image'>
-          <img data-src="/images/home/applications.png" alt="">
-          <img data-src="/images/home/applications.png" alt="">
+          <img data-src="/images/home/applications.png" alt="{{ .project }}">
+          <img data-src="/images/home/applications.png" alt="{{ .project }}">
         </div>
       </div>
       {{ end }}
@@ -164,9 +165,10 @@
     <h2 class="title-black-h2">{{ .title }}</h2>
     <p class="title-p">{{ .content | safeHTML }}</p>
     <ul class="common-flex-layout">
+      {{ $alt := .title }}
       {{ range .children }}
       <li>
-        <img data-src="{{ .icon }}" alt="">
+        <img data-src="{{ .icon }}" alt="{{ $alt }}}">
       </li>
       {{ end }}
     </ul>
@@ -179,12 +181,12 @@
     <a class='join-div' href="{{ .joinLink }}">
       <p class='p1'>{{ .joinTitle }}</p>
       <p class='p2'>{{ .joinContent }}</p>
-      <img data-src="/images/home/join-right.svg" alt="">
+      <img data-src="/images/home/join-right.svg" alt="{{ i18n "background image"}}">
     </a>
-    <img class='bottom-img' data-src="{{ .image }}" alt="">
+    <img class='bottom-img' data-src="{{ .image }}" alt="cncf">
   </div>
-  <img class='bg-1' data-src="/images/home/section6-left.svg" alt="">
-  <img class='bg-2' data-src="/images/home/section6-right.svg" alt="">
+  <img class='bg-1' data-src="/images/home/section6-left.svg" alt="{{ i18n "icon" }}">
+  <img class='bg-2' data-src="/images/home/section6-right.svg" alt="{{ i18n "icon" }}">
   {{ end }}
 </section>
 

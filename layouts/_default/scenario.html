@@ -9,7 +9,7 @@
 {{ end }}
 
 <section class="section-img">
-  <img class="common-layout" data-src="{{ .Params.image }}" alt="">
+  <img class="common-layout" data-src="{{ .Params.image }}" alt="{{ .Title }}">
   {{ if .Params.bg }}
   <img class="bg" data-src="{{ .Params.bg }}" alt="">
   {{ end }}
@@ -35,7 +35,7 @@
           </ul>
           {{ end }}
         </div>
-        <img data-src="{{ .image }}" alt="">
+        <img data-src="{{ .image }}" alt="{{ .title }}">
       </li>
       {{ end }}
     </ul>
@@ -45,8 +45,8 @@
 
 <section class="section-3">
   {{ with .Params.section3 }}
-  <img class="bg-left" data-src="{{ .bgLeft }}" alt="">
-  <img class="bg-right" data-src="{{ .bgRight }}" alt="">
+  <img class="bg-left" data-src="{{ .bgLeft }}" alt="{{ i18n "background image" }}">
+  <img class="bg-right" data-src="{{ .bgRight }}" alt="{{ i18n "background image" }}">
   <div class="common-layout">
     <h2 class="title-black-h2">{{ .title }}</h2>
     {{ if .videoLink }}

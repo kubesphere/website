@@ -15,7 +15,7 @@
     <ul class="cases-ul common-layout">
         {{ range .caseList }}
             <li>
-                <img data-src="{{ .icon | relURL }}" alt="">
+                <img data-src="{{ .icon | relURL }}" alt="{{ .content }}">
                 <p class="title-p">{{ .content }}</p>
                 <div>
                     <a class="common-green-a" href="{{ .link }}">{{ $tip }}</a>
@@ -23,7 +23,7 @@
             </li>
         {{ end }}
     </ul>
-    <img data-src="{{ .icon | relURL }}" alt="">
+    <img data-src="{{ .icon | relURL }}" alt="{{ i18n "icon" }}">
     {{ end }}
 </section>
 
@@ -42,7 +42,7 @@
             {{ $name := .name }}
             {{ range .children }}
             <li data-name="{{ $name }}">
-                <img data-src="{{ .icon | relURL }}" alt="">
+                <img data-src="{{ .icon | relURL }}" alt="{{ .name }}">
             </li>
             {{ end }}
             {{ end }}
@@ -51,7 +51,7 @@
         <p>{{ .content }} <a class="common-green-a" href="{{ .link }}">{{ .linkContent }}</a></p>
         {{ end }}
     </div>
-    <img data-src="{{ .icon | relURL }}" alt="">
+    <img data-src="{{ .icon | relURL }}" alt="{{ i18n "icon" }}">
     {{ end }}
 </section>
 <script>

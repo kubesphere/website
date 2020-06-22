@@ -41,19 +41,19 @@ hasChildren = true
   [[languages.en.menu.main]]
   parent = "Scenarios"
   name = "Embracing One-stop DevOps Workflow"
-  URL = "devops"
+  URL = "devops/"
   weight = 1
 
   [[languages.en.menu.main]]
   parent = "Scenarios"
   name = "Running Microservices on Kubernetes"
-  URL = "service-mesh"
+  URL = "service-mesh/"
   weight = 2
 
   [[languages.en.menu.main]]
   parent = "Scenarios"
   name = "Building Cloud Native Observability"
-  URL = "observability"
+  URL = "observability/"
   weight = 3
 
 [[languages.en.menu.main]]
@@ -64,25 +64,25 @@ hasChildren = true
   [[languages.en.menu.main]]
   parent = "Resources"
   name = "Open Source Projects"
-  URL = "projects"
+  URL = "projects/"
   weight = 1
 
   [[languages.en.menu.main]]
   parent = "Resources"
   name = "KubeCon & QCon"
-  URL = "conferences"
+  URL = "conferences/"
   weight = 2
 
   [[languages.en.menu.main]]
   parent = "Resources"
   name = "Technology Blogs"
-  URL = "blogs"
+  URL = "blogs/"
   weight = 3
 
   [[languages.en.menu.main]]
   parent = "Resources"
   name = "Video Resources"
-  URL = "videos"
+  URL = "videos/"
   weight = 4
 
 [[languages.en.menu.main]]
@@ -97,19 +97,19 @@ name = "Community"
     [[languages.en.menu.main]]
     parent = "Community"
     name = "Contribution"
-    URL = "contribution"
+    URL = "contribution/"
     weight = 1
 
     [[languages.en.menu.main]]
     parent = "Community"
     name = "Case Studies"
-    URL = "case"
+    URL = "case/"
     weight = 2
 
     [[languages.en.menu.main]]
     parent = "Community"
     name = "Partner"
-    URL = "partner"
+    URL = "partner/"
     weight = 3
 
     [[languages.en.menu.main]]
@@ -132,19 +132,19 @@ hasChildren = true
   [[languages.zh.menu.main]]
   parent = "应用场景"
   name = "拥抱一站式 DevOps 工作流"
-  URL = "devops"
+  URL = "devops/"
   weight = 2
 
   [[languages.zh.menu.main]]
   parent = "应用场景"
   name = "在 Kubernetes 运行微服务"
-  URL = "service-mesh"
+  URL = "service-mesh/"
   weight = 4
 
   [[languages.zh.menu.main]]
   parent = "应用场景"
   name = "构建丰富的云原生可观察性"
-  URL = "observability"
+  URL = "observability/"
   weight = 8
 
 [[languages.zh.menu.main]]
@@ -155,25 +155,25 @@ hasChildren = true
   [[languages.zh.menu.main]]
   parent = "资源"
   name = "开源项目"
-  URL = "projects"
+  URL = "projects/"
   weight = 1
 
   [[languages.zh.menu.main]]
   parent = "资源"
   name = "开源峰会"
-  URL = "conferences"
+  URL = "conferences/"
   weight = 2
 
   [[languages.zh.menu.main]]
   parent = "资源"
   name = "技术博客"
-  URL = "blogs"
+  URL = "blogs/"
   weight = 3
 
   [[languages.zh.menu.main]]
   parent = "资源"
   name = "视频资源"
-  URL = "videos"
+  URL = "videos/"
   weight = 4
 
 [[languages.zh.menu.main]]
@@ -188,19 +188,19 @@ name = "开源社区"
     [[languages.zh.menu.main]]
     parent = "开源社区"
     name = "参与贡献"
-    URL = "contribution"
+    URL = "contribution/"
     weight = 1
 
     [[languages.zh.menu.main]]
     parent = "开源社区"
     name = "案例学习"
-    URL = "case"
+    URL = "case/"
     weight = 2
 
     [[languages.zh.menu.main]]
     parent = "开源社区"
     name = "合作伙伴"
-    URL = "partner"
+    URL = "partner/"
     weight = 3
 
     [[languages.zh.menu.main]]

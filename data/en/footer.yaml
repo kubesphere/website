@@ -3,13 +3,13 @@ footer:
     - title: Scenarios
       list:
         - content: Embrace DevOps
-          link: devops
+          link: devops/
 
         - content: Microservices on K8s
-          link: service-mesh
+          link: service-mesh/
 
         - content: Cloud Native Observability
-          link: observability
+          link: observability/
 
         - content: Bare Metal LoadBalancer
           link: 'https://porterlb.io/'
@@ -25,13 +25,13 @@ footer:
     - title: Resources
       list:
         - content: Projects
-          link: projects
+          link: projects/
         - content: Blogs
-          link: blogs
+          link: blogs/
         - content: KubeCon & QCon
-          link: conferences
+          link: conferences/
         - content: Videos
-          link: videos
+          link: videos/
 
     - title: KubeSphere Docs
       list:
@@ -47,11 +47,11 @@ footer:
     - title: Community
       list:
         - content: Contribution
-          link: contribution
+          link: contribution/
         - content: Case Studies
-          link: case
+          link: case/
         - content: Partners
-          link: partner
+          link: partner/
         - content: Roadmap
           link: https://github.com/kubesphere/kubesphere/blob/master/docs/roadmap.md
         - content: China Site
