@@ -122,11 +122,11 @@ All resources in Porter are CRD, including VIP, BGPPeer and BGPConfig. Users who
 
 The VIP traffic of user access will go to a node in the Kubernetes cluster under BGP. This is because the routes advertised by Porter are also nodes instead of Pod IP which is inaccessible externally. The path from a node to a pod is maintained by kube-proxy as below:
 
-![](https://pek3b.qingstor.com/kubesphere-docs/png/20200611120948.png)
+![Cautions](https://pek3b.qingstor.com/kubesphere-docs/png/20200611120948.png)
 
-The traffic will be sent to a pod randomly after the SNAT process. As Port will adjust routes based on the dynamic change of Service Endpoints to make sure a pod is available in a node for the next hop, we can change kube-proxy which is set by default. You can set ExternalTrafficPolicy=local in a Service and the result is shown as follows:
+The traffic will be sent to a pod randomly after the SNAT process. As Port will adjust routes based on the dynamic change of Service Endpoints to make sure a pod is available in a node for the next hop, we can change kube-proxy which is set by default. You can set **ExternalTrafficPolicy=local** in a Service and the result is shown as follows:
 
-![](https://pek3b.qingstor.com/kubesphere-docs/png/20200611121114.png)
+![ExternalTrafficPolicy](https://pek3b.qingstor.com/kubesphere-docs/png/20200611121114.png)
 
 There are two advantages in this method:
 
