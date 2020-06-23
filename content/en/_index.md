@@ -1,6 +1,6 @@
 ---
-title: KubeSphere | Enterprise container platform, built on Kubernetes
-description: KubeSphere is an open source container platform based on Kubernetes for enterprise app development and deployment, suppors installing anywhere from on-premise datacenter to any cloud to edge.
+title: KubeSphere | The Kubernetes platform tailored for hybrid multicloud
+description: KubeSphere is a distributed operating system managing cloud native applications with Kubernetes as its kernel, and provides plug-and-play architecture for the seamless integration of third-party applications to boost its ecosystem.
 
 
 css: scss/index.scss
