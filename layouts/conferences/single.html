@@ -10,7 +10,7 @@
 
 <body>
 {{- partial "header.html" . -}}
-<section class="main-section">
+<section class="main-section {{ if eq .Site.Language.Lang "zh"}} padding{{ end }}">
     <div class="common-layout">
         <div class='breadcrumb'>
             <span><a href='{{ "conferences" | relLangURL }}'>{{ i18n "introduction4"}}</a> > </span>

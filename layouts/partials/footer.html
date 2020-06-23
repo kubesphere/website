@@ -4,7 +4,7 @@
         <div class="footer-main common-layout">
             <div class="up-main">
                 <div class="left-div">
-                    <img data-src="{{ .Site.Params.logo | relURL }}" alt="{{ .Site.Title }}" class="foot-logo">
+                    <img src="{{ .Site.Params.logo | relURL }}" alt="{{ .Site.Title }}" class="foot-logo">
                     <p>{{ i18n "introduction7" }}</p>
                     <div>
                         <form 
@@ -45,7 +45,7 @@
                         {{ "/static/images/footer/wechat.svg" | readFile | safeHTML }}
                         <div class="hide-div">
                             <p>Follow the official account</p>
-                            <img data-src="/images/footer/wechat_code.svg" alt="">
+                            <img src="/images/footer/wechat_code.svg" alt="">
                         </div>
                     </a>
                     <!-- <a class='wechat' href="javascript:void(0);">
@@ -111,7 +111,7 @@
                 continue
             }
             if (img.offset().top < parseInt($(window).height()) + parseInt($(window).scrollTop())) {
-                var src = img.attr("data-src")
+                var src = img.attr("src")
                 img.attr("src", src)
                 img.attr("data-loaded", true)
             }
@@ -127,7 +127,7 @@
         });
     }
 
-    bindLayLoad()
+    // bindLayLoad()
     bindSubmit()
     bindHideMessage()
 </script>

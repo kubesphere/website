@@ -17,7 +17,7 @@
             {{ range .Data.Pages }}
             <li data-tag='{{ .Params.tag }}'>
                 <div class='img-div'>
-                    <img data-src="{{ .Params.snapshot }}" alt="{{ .Title }}">
+                    <img src="{{ .Params.snapshot }}" alt="{{ .Title }}">
                 </div>
                 <div class='content-div'>
                     <p class='time'>{{ .Params.createTime }}</p>
