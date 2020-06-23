@@ -4,7 +4,7 @@
 
 <body>
 {{- partial "header.html" . -}}
-<main class="main-section">
+<main class='main-section {{ if eq .Site.Language.Lang "zh"}} padding{{ end }}'>
     {{- block "main" . }}{{- end }}
 </main>
 {{- partial "footer.html" . -}}

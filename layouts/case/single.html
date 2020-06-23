@@ -14,7 +14,7 @@
   <div class="common-layout">
     <div>
       {{ with .rightPart}}
-      <img data-src="{{ .icon }}" alt="">
+      <img src="{{ .icon }}" alt="">
       <ul class='ul-right'>
         {{ range .list }}
         <li>
@@ -40,7 +40,7 @@
         <div>
           <p class='p1'>{{ .content }}</p>
           <p class='p2'>{{ .author }}</p>
-          <img data-src="/images/case/ic-quote-right.svg" alt="">
+          <img src="/images/case/ic-quote-right.svg" alt="">
         </div>
         {{ else }}
           <h2>{{ .title }}</h2>
@@ -48,14 +48,14 @@
           <p>{{ .content }}</p>
           {{ end }}
           {{ if .image }}
-          <img data-src="{{ .image }}" alt="">
+          <img src="{{ .image }}" alt="">
           {{ end }}
         {{ end }}
       </li>
       {{ end }}
     </ul>
   </div>
-  <img data-src="/images/common/hexagon.svg" alt="">
+  <img src="/images/common/hexagon.svg" alt="">
   {{ end }}
 </section>
 {{ end }}

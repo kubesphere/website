@@ -5,17 +5,51 @@
   top: 0;
   left: 0;
   right: 0;
-  height: 93px;
   color: #ffffff;
   border-bottom:  1px solid rgba($color: #e3e9ef, $alpha: 0.4);
   background-image: linear-gradient(to top, rgba(23, 188, 133, 0.18), rgba(0, 169, 113, 0.18));
+ 
+  .join-div {
+    padding: 10px 0;
+    background-image: linear-gradient(to left, #e7d44e 100%, #ecaf24 0%);
+    .content {
+      position: relative;
+      width: 900px;
+      margin: 0 auto;
+      text-align: center;
+      line-height: 20px;
+      font-size: 12px;
+      font-weight: 600;
+      color: #3d3e49;
+      @media only screen and (max-width: $mobile-max-width) {
+        box-sizing: border-box;
+        width: 100%;
+        padding: 0 40px;
+      }
 
-  @media only screen and (max-width: $mobile-max-width) {
-    height: 74px;
+      a {
+        color: #3d3e49;
+
+        &:hover {
+          color: #55bc8a;
+        }
+      }
+
+      img {
+        position: absolute;
+        top: 50%;
+        right: 10px;
+        transform: translateY(-50%);
+        cursor: pointer;
+      }
+    }
   }
 
-  .common-layout {
-    height: 100%;
+  & > .common-layout {
+    height: 93px;
+    @media only screen and (max-width: $mobile-max-width) {
+      height: 74px;
+    }
   }
 
   .header-container {

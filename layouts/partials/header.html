@@ -1,9 +1,18 @@
 <!-- Header Start -->
 <header class="navigation">
+    {{ if eq .Site.Language.Lang "zh"}}
+    <div class="join-div">
+        <div class="content">
+            👏 6 月 30 日 KubeSphere 3.0 发布会！带你一键解锁容器混合云！
+            <a href="https://datayi.cn/w/1P6jWZmP" target="_blank" rel="noopener noreferrer">免费报名线上直播 →</a>
+            <img id="close-join" src="/images/header/close.svg" alt="close">
+        </div>
+    </div>
+    {{ end }}
     <div class="common-layout">
         <div class="header-container">
             <a href="{{ site.Home.RelPermalink }}">
-                <img data-src="/images/header/logo.svg" alt="{{ .Site.Title }}" class="logo">
+                <img src="/images/header/logo.svg" alt="{{ .Site.Title }}" class="logo">
             </a>
 
             <ul class="nav">
@@ -49,7 +58,7 @@
                 <ul>
                     <li class="language-menu">
                         <div>
-                            <img data-src="/images/header/black.svg" alt="">
+                            <img src="/images/header/black.svg" alt="">
                             <span>{{ .Site.Language.LanguageName }}</span>
                         </div>
                         <ul class="dropdown-menu">
@@ -74,7 +83,7 @@
                         <a class='link-3' href="{{ .Site.Params.githubLink }}" target="_blank" rel="noopener noreferrer"></a>
                     </li>
                     <li class="menu-icon">
-                        <img data-src="/images/header/menu.svg" alt="">
+                        <img src="/images/header/menu.svg" alt="">
                     </li>
                 </ul>
             </div>
@@ -118,13 +127,13 @@
         </div>
         <div class="link-div">
             <a href="{{ .Site.Params.slackLink }}" target="_blank" rel="noopener noreferrer">
-                <img data-src="/images/header/slack-hover.svg" alt="">
+                <img src="/images/header/slack-hover.svg" alt="">
             </a>
             <a href="{{ .Site.Params.twitterLink }}" target="_blank" rel="noopener noreferrer">
-                <img data-src="/images/header/twitter-hover.svg" alt="">
+                <img src="/images/header/twitter-hover.svg" alt="">
             </a>
             <a href="{{ .Site.Params.githubLink }}" target="_blank" rel="noopener noreferrer">
-                <img data-src="/images/header/github-hover.svg" alt="">
+                <img src="/images/header/github-hover.svg" alt="">
             </a>
         </div>
     </div>
@@ -178,6 +187,15 @@ var bindClickModalLi = function() {
         $(this).find('.menu-span').toggleClass('up')
     }) 
 }
+
+var bindClickClose = function() {
+    $('#close-join').click(function() {
+        $('.navigation .join-div').hide()
+        $('.main-section').removeClass('padding')
+    })
+}
+
+bindClickClose()
 
 bindScrollChangeHeader()
 

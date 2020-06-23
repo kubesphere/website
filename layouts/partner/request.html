@@ -15,32 +15,32 @@
         <div class="left-div">
             <div class="common-content">{{ .title }}</div>
             <p class="common-p">{{ .content }}</p>
-            <img class='img-1' data-src="{{ .bg2 | relURL }}" alt="">
-            <img class='img-2' data-src="{{ .bg3 | relURL }}" alt="">
+            <img class='img-1' src="{{ .bg2 | relURL }}" alt="">
+            <img class='img-2' src="{{ .bg3 | relURL }}" alt="">
         </div>
         <div class="right-div">
-            <img data-src="{{ .mapImage | relURL }}" alt="">
+            <img src="{{ .mapImage | relURL }}" alt="">
             <div class='btn-div div-1'>
                 <p>{{ .name1 }}</p>
                 <div>
-                    <img data-src="{{ .icon1 | relURL }}" alt="">
+                    <img src="{{ .icon1 | relURL }}" alt="">
                 </div>
             </div>
             <div class='btn-div div-2'>
                 <p>{{ .name2 }}</p>
                 <div>
-                    <img data-src="{{ .icon2 | relURL }}" alt="">
+                    <img src="{{ .icon2 | relURL }}" alt="">
                 </div>
             </div>
             <div class='btn-div div-3'>
                 <p>{{ .name3 }}</p>
                 <div>
-                    <img data-src="{{ .icon3 | relURL }}" alt="">
+                    <img src="{{ .icon3 | relURL }}" alt="">
                 </div>
             </div>
         </div>
     </div>
-    <img data-src="{{ .bg1 | relURL }}" alt="">
+    <img src="{{ .bg1 | relURL }}" alt="">
     {{ end }}
 </section>
 
