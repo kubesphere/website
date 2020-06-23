@@ -68,6 +68,10 @@ section4:
       partnerType: "Technology"
       content: 'openEuler is a free Linux distribution platform on which you can treat it as an innovative platform supporting the multi-processor architecture.'
 
+    - icon: "images/partner/virtai-tech.jpg"
+      partnerType: "Technology"
+      content: 'OrionX software provides a fine-grained, remote, and dynamically configurable virtualization solution for physical GPUs with almost no performance loss.'
+
     - icon: "images/partner/qingcloud.svg"
       partnerType: "Cloud Provider"
       content: 'QingCloud is a cloud computing platform that provides IaaS-based flexible cloud services. QKE is a cloud-hosted Kubernetes service with KubeSphere and powered by QingCloud'
