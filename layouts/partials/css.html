@@ -3,7 +3,7 @@
 <link rel="stylesheet" href="/css/jquery.modal.min.css">
 
 {{ $common := resources.Get "scss/common.scss" | toCSS | minify | fingerprint }}
-<link rel="stylesheet" href="{{ $common.Permalink }}">
+<link rel="stylesheet" href="{{ $common.RelPermalink }}">
 
 {{ if .Params.minCss }}
 {{ range (split .Params.minCss ",")}}
@@ -13,12 +13,12 @@
 
 {{ if .Params.css}}
 {{ $style := resources.Get .Params.css | toCSS | minify | fingerprint }}
-<link rel="stylesheet" href="{{ $style.Permalink }}">
+<link rel="stylesheet" href="{{ $style.RelPermalink }}">
 {{ end }}
 
 {{ if strings.HasSuffix .Permalink "404.html" }}
 {{ $style := resources.Get "scss/404.scss" | toCSS | minify | fingerprint }}
-<link rel="stylesheet" href="{{ $style.Permalink }}">
+<link rel="stylesheet" href="{{ $style.RelPermalink }}">
 {{ end }}
 
 

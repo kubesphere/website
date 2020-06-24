@@ -8,10 +8,10 @@
     <link rel="stylesheet" href="/fonts/Roboto/stylesheet.css">
 
     {{ $style := resources.Get "scss/doc.scss" | resources.ToCSS }}
-    <link rel="stylesheet" href="{{ $style.Permalink }}">
+    <link rel="stylesheet" href="{{ $style.RelPermalink }}">
 
     {{ $style := resources.Get "scss/reset.scss" | resources.ToCSS }}
-    <link rel="stylesheet" href="{{ $style.Permalink }}">
+    <link rel="stylesheet" href="{{ $style.RelPermalink }}">
     <script src="{{ "js/jquery-3.5.0.min.js" | relURL }}"></script>
 </head>
 <body>
