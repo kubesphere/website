@@ -11,7 +11,7 @@
  
   .join-div {
     padding: 10px 0;
-    background-image: linear-gradient(to left, #e7d44e 100%, #ecaf24 0%);
+    background-image: linear-gradient(to left, #e7d44e, #ecaf24);
     .content {
       position: relative;
       width: 900px;
@@ -112,12 +112,16 @@
     padding-bottom: 40px;
   }
 
+  .menu-span {
+    display: inline-block;
+    vertical-align: middle;
+  }
+
   .menu-span::after {
     display: inline-block;
-    vertical-align: top;
+    vertical-align: middle;
     content: '';
     margin-left: 5px;
-    margin-top: 10px;
     border:  4px solid transparent;
     border-top-color: #fff;
   }
@@ -205,10 +209,9 @@
 
         span::after {
           display: inline-block;
-          vertical-align: top;
+          vertical-align: middle;
           content: '';
           margin-left: 5px;
-          margin-top: 6px;
           border: 4px solid transparent;
           border-top-color: #fff;
         }
