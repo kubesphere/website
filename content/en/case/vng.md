@@ -85,6 +85,6 @@ section2:
       - title: ADOPTED FEATURES
         content: DevOps, Logging, Monitoring
       - title: AUTHOR
-        content: Tan To Nguyen Duy Nguyen Duy
+        content: Tan To Nguyen Duy
 
 ---
