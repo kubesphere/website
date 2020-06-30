@@ -14,7 +14,7 @@
             {{ end }}
         </ul>
         <ul class='blogs-ul'>
-            {{ range .Data.Pages }}
+            {{ range (.Data.Pages.ByParam "createTime").Reverse }}
             <li data-tag='{{ .Params.tag }}'>
                 <div class='img-div'>
                     <img src="{{ .Params.snapshot }}" alt="{{ .Title }}">
