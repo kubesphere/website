@@ -55,7 +55,7 @@ section2:
 
     - type: 2
       content: 'KubeSphere allows ZaloPay Ops Team to devote more time and efforts automating management and workflow.'
-      author: 'Tan To'
+      author: 'Tan To Nguyen Duy Nguyen Duy'
 
     - title: Issues We Meet and Solutions
       contentList:
@@ -85,6 +85,6 @@ section2:
       - title: ADOPTED FEATURES
         content: DevOps, Logging, Monitoring
       - title: AUTHOR
-        content: Tan To
+        content: Tan To Nguyen Duy
 
 ---
