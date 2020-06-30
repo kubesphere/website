@@ -61,11 +61,13 @@
                             <img src="/images/header/black.svg" alt="">
                             <span>{{ .Site.Language.LanguageName }}</span>
                         </div>
+                        {{ with .Page.AllTranslations }}
                         <ul class="dropdown-menu">
-                            {{ range .Page.AllTranslations }}
+                            {{ range . }}
                             <li onclick="location = '{{ .RelPermalink }}'">{{ .Language.LanguageName }}</li>
                             {{ end }}
                         </ul>
+                        {{ end }}
                     </li>
                     <li class='btn-li'>
                         <a href="https://demo.kubesphere.io/login" target="_blank" rel="noopener noreferrer">
