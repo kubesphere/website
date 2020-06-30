@@ -20,10 +20,16 @@
             <div class='author'>{{ .Params.author }}</div>
             <div class='date'>{{ i18n "introduction3" }}：{{ string .Params.createTime }}</div>
             <h1>{{ .Title }}</h1>
+            <div class="share-1">
+                {{- partial "share.html" . -}}
+            </div>
             <div class='content'>
                 <div class='md-body'>
                     {{ .Content }}
                 </div>
+            </div>
+            <div class="share-2">
+                {{- partial "share.html" . -}}
             </div>
         </div>
         <div class='aside aside-fixed'>
