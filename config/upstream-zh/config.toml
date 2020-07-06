@@ -1,2 +1,5 @@
 baseURL = "https://kubesphere.com.cn"
 defaultContentLanguage = "zh"
+
+[params]
+showCaseNumber = true
