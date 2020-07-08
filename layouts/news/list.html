@@ -1,0 +1,74 @@
+{{ define "main" }}
+
+{{ with .Params.section1 }}
+<section class="section-1 bg-cover" style='background-image: url("{{ .topImage }}");'>
+    <div class="title-div common-layout">
+        <h1 class="title-center-h1">{{ .title }}</h1>
+        <p class="common-p">{{ .content }}</p>
+    </div>
+</section>
+{{ end }}
+
+{{ with .Params.section2 }}
+<section class="section-2">
+    <div class="common-layout">
+      <div class='news-list' data-origin='{{ .news | jsonify }}'>
+        {{ range .news }}
+        <div class="news-div">
+          <h2>
+            <a href="{{ .link }}" target="_blank" rel="noopener noreferrer">{{ .title }}</a>
+          </h2>
+          <p>{{ .description }}</p>
+          <img src="{{ .image }}" alt="{{ .title }}">
+        </div>
+        {{ end }}
+      </div>
+      <div id='pagination'></div>
+    </div>
+</section>
+{{ end }}
+
+<script src='{{ "js/pagination.min.js" | relURL }}'></script>
+<script>
+    var createNews = function(news) {
+        var a = '<a href="' + news.link + '" target="_blank" rel="noopener noreferrer">' + news.title + '</a>'
+        var h2 = '<h2>' + a + '</h2>'
+        var p = '<p>' + news.description + '</p>'
+        var img = '<img src="' + news.image + '" alt="' + news.title + '">'
+        var s = '<div class="news-div">' + h2 + p + img + '</div>'
+        return s
+    }
+
+    var createNewsList = function(news) {
+        var result = ''
+        for (var i = 0; i < news.length; i++) {
+            var n = news[i]
+            var s = createNews(n)
+            result += s
+        }
+        return result
+    }
+
+    var initPagination = function(dataSource) {
+        $('#pagination').pagination({
+            dataSource: dataSource,
+            pageSize: 10,
+            prevText: '<<',
+            nextText: '>>',
+            callback: function(data, pagination) {
+                var newsList =createNewsList(data)
+                $('.news-list').empty().append(newsList)
+            }
+        })
+    }
+
+    var initNews = function() {
+        var news =  $('.news-list').data('origin')
+        initPagination(news)
+    }
+
+    initNews()
+
+</script>
+
+{{ end }}
