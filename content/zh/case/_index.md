@@ -4,12 +4,12 @@ css: "scss/case.scss"
 
 
 section1:
-  title: User Case Studies
-  content: KubeSphere is trusted by various enterprises and organizations as the innovator driving the future of software.
+  title: 用户案例学习
+  content: KubeSphere 深受数千家企业和组织的信赖，通过创新推动软件业的发展
   topImage: "/images/case/case-top.jpg"
 
 section2:
-  tip: Read Case Study →
+  tip: 阅读案例 →
   icon: images/case/left.svg
   caseList:
     - icon: "images/case/case5.jpg"
@@ -33,29 +33,29 @@ section2:
       link: "maxnerva"
 
     - icon: "images/case/vng.jpg"
-      content: "VNG has seen 14 years of continuous development and expansion to become one of the leading IT companies in Vietnam and Southeast Asia."
+      content: "通过 14 年不断的发展，VNG 已成为越南和整个东南亚地区的 IT 领导企业之一。"
       link: "vng"
 
 section3:
-  title: 'Various Industries are Powered by KubeSphere'
-  tip: ALL
+  title: 'KubeSphere 助力各行各业'
+  tip: 全部
   icon: images/common/hexagon.svg
   caseType:
-    - name: 'E-Business'
+    - name: '电子商务'
       children:
         - name: 'aqara'
           icon: 'images/case/section6-aqara.jpg'
         - name: 'benlai'
           icon: 'images/case/section6-benlai.jpg'
 
-    - name: 'Finance'
+    - name: '金融'
       children:
         - name: 'huaxia-bank'
           icon: 'images/case/section6-huaxia-bank.jpg'
         - name: 'webank'
           icon: 'images/case/section6-webank.jpg'
 
-    - name: 'IT Service'
+    - name: 'IT 服务'
       children:
         - name: 'anchnet'
           icon: 'images/case/section6-anchnet.jpg'
@@ -82,7 +82,7 @@ section3:
         - name: 'mile-works'
           icon: 'images/case/section6-mile-works.jpg'
 
-    - name: 'Internet'
+    - name: '互联网'
       children:
         - name: 'sina'
           icon: 'images/case/section6-sina.jpg'
