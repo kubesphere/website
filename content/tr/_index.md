@@ -12,10 +12,10 @@ section1:
   btnContent1: Kubernetes Üzerinde Kurulum
   btnContent2: Linux Üzerinde Kurulum
 
-section2: 
+section2:
   title: Tek Platform Onlarca Çözüm
   content: KubeSphere, yığın otomatik BT operasyonuna ve modern DevOps iş akışlarına sahip multi-tenant kurumsal sınıf bir konteyner platformudur. Ayrıca işletmelerin Kubernetes stratejisi için gereken en yaygın işlevleri içeren daha sağlam ve zengin özellikli bir platform oluşturmalarına yardımcı olan geliştirici dostu web kullanıcı arayüzü sağlar.
-  children: 
+  children:
     - name: Açık Kaynak
       icon: /images/home/open-source.svg
       content: 100% açık kaynaklı kendisini topluluğa adamış CNCF sertifikalı Kubernetes platform
@@ -62,7 +62,7 @@ section3:
         - content: Altyapıdan uygulamalara merkezi günlük log kaydı, monitoring ve uyarı servisleri
         - content: Kolaylaştırılmış dağıtım, test, sürüm, yükseltme ve ölçeklendirme
         - content: Bulut uygulamaları için Kubernetes'i iyi izleyin, yönlendirin ve optimize edin
-        - content: Farklı kullanıcıların alışkanlıkları için optimize edilmiş, kullanımı kolay web konsolu ve grafik paneli 
+        - content: Farklı kullanıcıların alışkanlıkları için optimize edilmiş, kullanımı kolay web konsolu ve grafik paneli
 
 section4:
   title: Öne Çıkan Özellikler
@@ -79,7 +79,7 @@ section4:
     - name: Multi-tenant Yönetim
       icon: /images/home/multi-tenant-management.svg
       content: Kullanıcı yetkilendirmesi, alt hesaplar oluşturulması, LDAP desteği ile muteşem çözüm
-  
+
   features:
     - name: Uygulama Mağazası
       icon: /images/home/store.svg
@@ -111,7 +111,7 @@ section4:
       content: Calico ve Flannel destekler, Porter LB desteği vardır
       color: green
 
-    - name: Multi-cluster Yönetimi 
+    - name: Multi-cluster Yönetimi
       icon: /images/home/management.svg
       content: Uygulamaları birden çok cluster ve bulut sağlayıcıya dağıtın ve olağanüstü durum kurtarma için hazırlıklı olun
       color: orange
@@ -134,27 +134,37 @@ section5:
       - name: API Geçiş Kapısı
       - name: Kontroller Yönetimi
       - name: Hesap Yönetimi
-    
+
 
 section6:
   title: KubeSphere'i Tercih Edenler
   content: Müşteri senaryoları, daha ayrıntılı kullanıcı senaryoları ve bulut yerel dönüşüm hikayelerini sizler için listeledik. </br> Çeşitli işletme ve kuruluşlar araştırma, üretim ve ticari ürünler için KubeSphere Container Platform'u kullanıyor.
   children:
     - icon: /images/home/section6-anchnet.jpg
+    - icon: /images/home/section6-aviation-industry-corporation-of-china.jpg
     - icon: /images/home/section6-aqara.jpg
+    - icon: /images/home/section6-bank-of-beijing.jpg
     - icon: /images/home/section6-benlai.jpg
-    - icon: /images/home/section6-china-mobile.jpg
+    - icon: /images/home/section6-china-taiping.jpg
+    - icon: /images/home/section6-changqing-youtian.jpg
+    - icon: /images/home/section6-cmft.jpg
     - icon: /images/home/section6-extreme-vision.jpg
+    - icon: /images/home/section6-guizhou-water-investment.jpg
     - icon: /images/home/section6-huaxia-bank.jpg
+    - icon: /images/home/section6-inaccel.jpg
     - icon: /images/home/section6-maxnerva.jpg
-    - icon: /images/home/section6-mile-works.svg
-    - icon: /images/home/section6-yiliu.jpg
+    - icon: /images/home/section6-picc.jpg
     - icon: /images/home/section6-powersmart.jpg
-    - icon: /images/home/section6-wisdom-world.jpg
     - icon: /images/home/section6-sina.jpg
+    - icon: /images/home/section6-sichuan-airlines.jpg
+    - icon: /images/home/section6-sinopharm.jpg
     - icon: /images/home/section6-softtek.jpg
-    - icon: /images/home/section6-webank.jpg
+    - icon: /images/home/section6-spd-silicon-valley-bank.jpg
     - icon: /images/home/section6-vng.jpg
+    - icon: /images/home/section6-webank.jpg
+    - icon: /images/home/section6-wisdom-world.jpg
+    - icon: /images/home/section6-yiliu.jpg
+    - icon: /images/home/section6-zking-insurance.jpg
   btnContent: Müşteri Senaryoları
   btnLink:
   link:
