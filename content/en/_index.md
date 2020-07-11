@@ -161,20 +161,31 @@ section6:
   content: Tons of enterprises and organizations are using KubeSphere Container Platform for research, production and their commercial products.</br> The <a class='inner-a' target='_blank' href='case/'>Case Studies</a> list more detailed user cases and their cloud native transformation stories.
   children:
     - icon: /images/home/section6-anchnet.jpg
+    - icon: /images/home/section6-aviation-industry-corporation-of-china.jpg
     - icon: /images/home/section6-aqara.jpg
+    - icon: /images/home/section6-bank-of-beijing.jpg
     - icon: /images/home/section6-benlai.jpg
+    - icon: /images/home/section6-china-taiping.jpg
+    - icon: /images/home/section6-changqing-youtian.jpg
     - icon: /images/home/section6-cmft.jpg
     - icon: /images/home/section6-extreme-vision.jpg
+    - icon: /images/home/section6-guizhou-water-investment.jpg
     - icon: /images/home/section6-huaxia-bank.jpg
-    - icon: /images/home/section6-maxnerva.jpg
     - icon: /images/home/section6-inaccel.jpg
+    - icon: /images/home/section6-maxnerva.jpg
+    - icon: /images/home/section6-picc.jpg
     - icon: /images/home/section6-powersmart.jpg
     - icon: /images/home/section6-sina.jpg
+    - icon: /images/home/section6-sichuan-airlines.jpg
+    - icon: /images/home/section6-sinopharm.jpg
     - icon: /images/home/section6-softtek.jpg
+    - icon: /images/home/section6-spd-silicon-valley-bank.jpg
     - icon: /images/home/section6-vng.jpg
     - icon: /images/home/section6-webank.jpg
     - icon: /images/home/section6-wisdom-world.jpg
     - icon: /images/home/section6-yiliu.jpg
+    - icon: /images/home/section6-zking-insurance.jpg
+
 
   btnContent: Case Studies
   btnLink: case/
