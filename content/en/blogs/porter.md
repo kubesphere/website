@@ -1,5 +1,5 @@
 ---
-title: 'Porter: A Promising Newcomer in CNCF Landscape for Bare Metal Kubernetes Clusters'
+title: 'Porter: An Innovative Cloud Native Solution in CNCF Landscape'
 tag: 'Load Balancing, Porter'
 createTime: '2020-07-10'
 author: 'Feynman, Sherlock'
@@ -47,11 +47,3 @@ For detailed information about the architecture and principle, please refer to [
 
 - [KubeCon Shanghai: Porter — An Open Source Load Balancer for Bare Metal Kubernetes](https://www.youtube.com/watch?v=EjU1yAVxXYQ)
 - [Porter Website](https://porterlb.io/)
-
-
-
-
-
-
-
-
