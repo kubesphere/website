@@ -27,18 +27,18 @@ section2:
     - title: 采用 Kubernetes 和 KubeSphere
       contentList:
         - content: 2018 年底，我们使用 Kubernetes 作为容器编排解决方案。Kubernetes 帮助我们声明式地管理我们的集群，让我们得以控制应用版本，轻松复制应用。然而，有太多的问题需要我们去考虑，如日志监控、DevOps 和中间件等，这也使得 Kubernetes 的学习曲线相对较高。实际上，我们对几种最常用的工具进行了调研。例如，我们利用 EFK 进行日志管理，采用 Jenkins 作为 CI/CD 的引擎进行业务更新，我们也会在自己的环境中使用 Redis 和 Kafka。
-        - content: 这些常用的工具帮助我们提升了开发和运营的效率。然而，我们当前最大的挑战是开发者们需要学习、维护这些工具，在不同的终端和界面之间来回切换也相当耗费时间。因此，我们开始研究一种集中化的解决方案，可以将云原生堆栈集成到一个统一的网页控制台。我们对比了一些解决方案（如 Rancher 和原生的 Kubernetes），最后发现 KubeSphere 最为方便。
+        - content: 这些常用的工具帮助我们提升了开发和运营的效率。然而，我们当前最大的挑战是开发者们需要学习、维护这些工具，在不同的终端和界面之间来回切换也相当耗费时间。因此，我们开始研究一种集中化的解决方案，可以将云原生技术栈集成到一个统一的 Web 控制台。我们对比了一些解决方案（如 Rancher 和原生的 Kubernetes），最后发现 KubeSphere 最为方便。
         - content: 我们把 KubeSphere 安装在已有的 Kubernetes 集群上。目前，我们拥有两个 Kubernetes 集群，分别用于沙盒和生产环境。考虑到数据隐私问题，我们把集群都部署在物理机上。我们使用 HAProxy 安装高可用集群以实现流量的负载均衡。
       image: https://pek3b.qingstor.com/kubesphere-docs/png/20200619223626.png
 
     - title: 为什么我们选择 KubeSphere
       contentList:
-        - content: 多亏了 KubeSphere 所提供的对开发者友好的网页控制台，我们能轻松地监控从基础设施到应用程序的资源消耗情况。由此，ZaloPay 商户平台在 KubeSphere 上也已经稳定运行了半年。KubeSphere 提供了一系列功能，整合并打包了云原生堆栈，例如开箱即用的应用程序生命周期管理功能、监控日志、多租户以及告警通知等。由于每个功能和组件都可拔插，我们可以根据自己的需求去启用。
+        - content: 借助 KubeSphere 提供的对开发者友好的向导式操作界面，我们能轻松地监控从基础设施到应用程序的资源消耗情况。由此，ZaloPay 商户平台在 KubeSphere 上也已经稳定运行了半年。KubeSphere 提供了一系列功能，整合并打包了云原生技术栈，例如开箱即用的应用程序生命周期管理功能、监控日志、多租户以及告警通知等。由于每个功能和组件都可拔插，我们可以根据自己的需求去启用。
       image: https://pek3b.qingstor.com/kubesphere-docs/png/20200619224814.png
 
     - type: 1
       contentList:
-        - content: 对开发者友好的网页控制台
+        - content: 对开发者友好的 Web 控制台
         - content: 多维度监控功能
         - content: 功能丰富且可拔插
 
@@ -64,11 +64,11 @@ section2:
         - content: 在 v1.16.2 之后的版本中，这些问题已经解决。在生产环境下请特别注意这些问题。
       image: https://pek3b.qingstor.com/kubesphere-docs/png/20200620000210.png
 
-    - title: 证言
+    - title: 贡献开源
       contentList:
-        - content: 为了满足对云原生堆栈集中管理的需求，我们选择使用 KubeSphere 在 Kubernetes 的基础上加强可观察性。现在，我们可以在几分钟内迅速部署新的微服务并分配资源。KubeSphere 同样也帮助开发者加快了产品上市时间。
-        - content: KubeSphere 让 ZaloPay 的运维团队可以把更多的时间花在管理和工作流程的自动化上。KubeSphere 提供了丝滑的用户体验，对开发者友好的网页控制台将内在复杂的逻辑关系清晰地呈现，使得操作基础设施资源更为简单。KubeSphere 是世界上一个正在快速发展的开源社区。KubeSphere 社区帮助众多的公司和组织通过云原生技术轻松运营各自的业务，解决 Kubernetes 自身的痛点。
-        - content: 我非常喜欢开源模式。这种模式让全世界的开发者们走得更近，得以在一个开放、活跃的社区相互讨论彼此的观点，帮助解决彼此的问题。我相信开源是软件行业的大势所在，我也在努力为这一社区贡献自己的一份力量。我希望 KubeSphere 可以继续助力开源社区的发展，为其带来更好的产品。
+        - content: 为了满足对云原生技术栈集中管理的需求，我们选择使用 KubeSphere 在 Kubernetes 的基础上加强可观察性。现在，我们可以在几分钟内迅速部署新的微服务并分配资源。KubeSphere 同样也帮助开发者加快了产品上市时间。
+        - content: KubeSphere 让 ZaloPay 的运维团队可以把更多的时间花在管理和工作流程的自动化上。KubeSphere 提供了丝滑的用户体验，对开发者友好的 Web 控制台将内在复杂的逻辑关系清晰地呈现，使得操作基础设施资源更为简单。KubeSphere 是世界上一个正在快速发展的开源社区。KubeSphere 社区帮助众多的公司和组织通过云原生技术轻松运营各自的业务，解决 Kubernetes 自身的痛点。
+        - content: 我非常喜欢开源模式。这种模式让全世界的开发者们走得更近，得以在一个开放、活跃的社区相互讨论彼此的观点，帮助解决彼此的问题。我相信开源是软件行业的大势所在，我也在努力为这一社区贡献自己的一份力量。我希望 KubeSphere 可以继续助力开源社区的发展，为广大用户带来更好的产品。
       image:
 
   rightPart:
