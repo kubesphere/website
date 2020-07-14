@@ -1,5 +1,7 @@
 ---
 title: 'Porter: An Innovative Cloud Native Service Proxy in CNCF Landscape'
+keywords: Kubernetes, bare-metal, LoadBalancer, Porter
+description: Porter allows you to create Kubernetes services of type LoadBalancer in bare metal cluster, which makes you enjoy the consistent experience with the cloud. Porter has been accepted into CNCF Landscape as a promising newcomer.
 tag: 'Load Balancer, Kubernetes, Porter'
 createTime: '2020-07-10'
 author: 'Feynman, Sherlock'
@@ -29,9 +31,14 @@ Porter is an open source cloud native load balancing plugin designed by the Kube
 ![Porter](https://ap3.qingstor.com/kubesphere-website/docs/porter.png)
 
 All Porter codes are open source and documents are available in [GitHub](https://github.com/kubesphere/porter). You are welcome to star and use it.
+
+## Porter Showcase in KubeCon
+
+{{< youtube EjU1yAVxXYQ >}}
+
 ## Porter Installation
 
-Porter has been deployed and tested in two environments so far as below. You can see more details in GitHub about the deployment, test and process by clicking the link below. It is recommended to have a try:
+Porter has been deployed and tested in three environments so far as below. You can see more details in GitHub about the deployment, test and process by clicking the link below. It is recommended to have a try:
 
 - [Deploy Porter on Bare Metal Kubernetes Cluster](https://github.com/kubesphere/porter/blob/master/doc/deploy_baremetal.md)
 - [Test in the QingCloud Platform Using a Simulated Router](https://github.com/kubesphere/porter/blob/master/doc/zh/simulate_with_bird.md)
@@ -45,5 +52,5 @@ For detailed information about the architecture and principle, please refer to [
 
 ## Related Resources
 
-- [KubeCon Shanghai: Porter — An Open Source Load Balancer for Bare Metal Kubernetes](https://www.youtube.com/watch?v=EjU1yAVxXYQ)
+- [Porter: A Promising Newcomer in CNCF Landscape for Bare Metal Kubernetes Clusters](https://dzone.com/articles/porter-an-open-source-load-balancer-for-kubernetes)
 - [Porter Website](https://porterlb.io/)
