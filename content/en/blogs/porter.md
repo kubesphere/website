@@ -1,5 +1,5 @@
 ---
-title: 'Porter: An Innovative Cloud Native Solution in CNCF Landscape'
+title: 'Porter: An Innovative Cloud Native Service Proxy in CNCF Landscape'
 tag: 'Load Balancer, Kubernetes, Porter'
 createTime: '2020-07-10'
 author: 'Feynman, Sherlock'
