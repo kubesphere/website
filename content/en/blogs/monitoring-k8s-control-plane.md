@@ -1,5 +1,7 @@
 ---
 title: 'Monitoring Kubernetes Control Plane using KubeSphere'
+keywords: Kubernetes, KubeSphere, Monitoring, Prometheus
+description: KubeSphere leverages tools including Prometheus, Kube-state-metrics Node-exporter, ServiceMonitor, as well as the predefined rules in PrometheusRule, providing the monitoring metrics from application to infrastructure out of box.
 tag: 'kubernetes, monitoring'
 createTime: '2020-03-28'
 author: 'Feynman, Guangzhe'

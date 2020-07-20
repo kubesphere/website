@@ -7,10 +7,10 @@
                     <img src="{{ .Site.Params.logo | relURL }}" alt="{{ .Site.Title }}" class="foot-logo">
                     <p>{{ i18n "introduction7" }}</p>
                     <div>
-                        <form 
-                            action="{{ .Site.Params.mailchimpSubscribeUrl }}" 
-                            method="post" 
-                            target="_blank" 
+                        <form
+                            action="{{ .Site.Params.mailchimpSubscribeUrl }}"
+                            method="post"
+                            target="_blank"
                             novalidate
                         >
                             <input name="EMAIL" id="email-input" type="text" placeholder='{{ i18n "introduction6" }}'>
@@ -40,7 +40,6 @@
             </div>
             <div class="down-main">
                 <div class='img-div'>
-                    <!-- <a class='facebook-a' href="" target="_blank"></a> -->
                     <a class='wechat' href="javascript:void(0);">
                         {{ "/static/images/footer/wechat.svg" | readFile | safeHTML }}
                         <div class="hide-div">
@@ -48,6 +47,9 @@
                             <img src="/images/footer/wechat_code.svg" alt="">
                         </div>
                     </a>
+                    <a class='facebook-a' href="https://www.facebook.com/kubesphere" target="_blank"></a>
+                    <a class='twitter-a' href="{{ .Site.Params.twitterLink }}" target="_blank" rel="noopener noreferrer"></a>
+                    <a class='linkedin-a' href="{{ .Site.Params.linkedinLink }}" target="_blank" rel="noopener noreferrer"></a>
                     <!-- <a class='wechat' href="javascript:void(0);">
                         {{ "/static/images/footer/group.svg" | readFile | safeHTML }}
                         <div class="hide-div">
@@ -58,10 +60,8 @@
                     </a> -->
                     <a class='youtube-a' href="{{ .Site.Params.youtubeLink }}" target="_blank" rel="noopener noreferrer"></a>
                     <a class='slack-a' href="{{ .Site.Params.slackLink }}" target="_blank" rel="noopener noreferrer"></a>
-                    <a class='twitter-a' href="{{ .Site.Params.twitterLink }}" target="_blank" rel="noopener noreferrer"></a>
                     <a class='github-a' href="{{ .Site.Params.githubLink }}" target="_blank" rel="noopener noreferrer"></a>
                     <a class='medium-a' href="{{ .Site.Params.mediumLink }}" target="_blank" rel="noopener noreferrer"></a>
-                    <a class='linkedin-a' href="{{ .Site.Params.linkedinLink }}" target="_blank" rel="noopener noreferrer"></a>
                 </div>
                 <p class='p1'>{{ i18n "introduction2" }}</p>
                 {{ if .Site.Params.showCaseNumber }}
@@ -73,7 +73,7 @@
                   >
                     <span>京ICP备13019086号</span>
                   </a>
-                  <a 
+                  <a
                     target="_blank"
                     rel="noopener noreferrer"
                     href="http://www.beian.gov.cn/portal/registerSystemInfo?recordcode=11010502041003"
@@ -86,7 +86,7 @@
             </div>
         </div>
     </div>
-    
+
 </footer>
 
 <script>

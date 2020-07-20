@@ -10,9 +10,9 @@ section1:
   topic: 面向云原生应用的<br>容器混合云
   content: KubeSphere 愿景是打造一个以 Kubernetes 为内核的云原生分布式操作系统，它的架构可以非常方便地使第三方应用与云原生生态组件进行即插即用（plug-and-play）的集成，支持云原生应用在多云与多集群的统一分发和运维管理。
   btnContent1: 在 Kubernetes 安装
-  downloadLink1: "https://kubesphere.io/docs/zh-CN/installation/install-on-k8s/"
+  downloadLink1: "https://kubesphere.com.cn/docs/zh-CN/installation/install-on-k8s/"
   btnContent2: 在 Linux 安装
-  downloadLink2: "https://kubesphere.io/docs/zh-CN/installation/all-in-one/"
+  downloadLink2: "https://kubesphere.com.cn/docs/zh-CN/installation/all-in-one/"
 
 section2:
   title: 全栈的平台级解决方案
@@ -161,20 +161,30 @@ section6:
   content: 已有来自全球的大量知名企业与组织将 KubeSphere 容器平台广泛应用在科研、生产环境以及他们的商业产品中，</br> 点击 <a class='inner-a' target='_blank' href='case/'>案例学习</a> 查看更详细的典型用户的实践案例文章。
   children:
     - icon: /images/home/section6-anchnet.jpg
+    - icon: /images/home/section6-aviation-industry-corporation-of-china.jpg
     - icon: /images/home/section6-aqara.jpg
+    - icon: /images/home/section6-bank-of-beijing.jpg
     - icon: /images/home/section6-benlai.jpg
+    - icon: /images/home/section6-china-taiping.jpg
+    - icon: /images/home/section6-changqing-youtian.jpg
     - icon: /images/home/section6-cmft.jpg
     - icon: /images/home/section6-extreme-vision.jpg
+    - icon: /images/home/section6-guizhou-water-investment.jpg
     - icon: /images/home/section6-huaxia-bank.jpg
-    - icon: /images/home/section6-maxnerva.jpg
     - icon: /images/home/section6-inaccel.jpg
+    - icon: /images/home/section6-maxnerva.jpg
+    - icon: /images/home/section6-picc.jpg
     - icon: /images/home/section6-powersmart.jpg
     - icon: /images/home/section6-sina.jpg
+    - icon: /images/home/section6-sichuan-airlines.jpg
+    - icon: /images/home/section6-sinopharm.jpg
     - icon: /images/home/section6-softtek.jpg
+    - icon: /images/home/section6-spd-silicon-valley-bank.jpg
     - icon: /images/home/section6-vng.jpg
     - icon: /images/home/section6-webank.jpg
     - icon: /images/home/section6-wisdom-world.jpg
     - icon: /images/home/section6-yiliu.jpg
+    - icon: /images/home/section6-zking-insurance.jpg
 
   btnContent: 案例学习
   btnLink: case/

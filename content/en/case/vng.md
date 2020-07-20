@@ -13,7 +13,7 @@ section2:
   listLeft:
     - title: ZaloPay Introduction
       contentList:
-        - content: Launched in 2017, ZaloPay is built on the top of Zalo, equipped with many conveniences from Zalo’s ecosystem. There is already an ecosystem at Zalo, a significant volume of Zalo's users (~100 million-active-user).It is relatively competitive compared to MoMo, GrabPay by Moca, ViettelPay, etc.
+        - content: Launched in 2017, ZaloPay is built on top of Zalo, equipped with many conveniences from Zalo’s ecosystem. There is already an ecosystem at Zalo, boasting a significant volume of Zalo's users (~100 million-active-user). It is relatively competitive compared to MoMo, GrabPay by Moca, ViettelPay, etc.
         - content: Similar to AliPay which is one of three tenets of the “iron triangle” (aka e-commerce and logistics), GrabPay is an enabler of the Grab ecosystem and WeChat Pay is on a social media platform. ZaloPay ranked as the 3rd payment application of the year at the 2018 Tech Awards ceremony held by VnExpress, the most common newspaper in Vietnam. While the competitor MoMo took the top spot, followed by Viettel Pay, the rising players of GrabPay by Moca, VinID powered by VinGroup and AirPay by SEA have also joined the market, making the game even more intense.
       image: https://pek3b.qingstor.com/kubesphere-docs/png/20200619222719.png
 
@@ -38,14 +38,14 @@ section2:
 
     - type: 1
       contentList:
-        - content: Developer-friendly web console
-        - content: Multi-dimensional monitoring capabilities
-        - content: Feature-rich and pluggable
+        - content: Developer-friendly Web Console
+        - content: Multi-dimensional Monitoring Capabilities
+        - content: Feature-rich and Pluggable
 
     - title: How We Implement DevOps
       contentList:
-        - content: We implement the CI/CD pipeline as a typical and straightforward way, running the merchant platform in ZaloPay. As you can see from the figure below, we run CI/CD pipeline using KubeSphere, stitching GitLab, SonarQube, Docker, Kubernetes, and docker registry. In the first stage, the pipeline will initialize some necessary environments for the entire pipeline. Next, the pipeline will pull the source code from Gitlab by using the environment conditions (like checkout branch, deploy env, tag version). In the third stage, it will build the Golang project and trigger SonarQube to analyze the source code and check the quality. If there is nothing special or significant issue in the code, the pipeline will jump to next stage.
-        - content: When everything run smoothly, the pipeline will pack the project using Docker in the fourth stage. Then it push the docker image to the Docker Registry. The fifth stage is used to deploy the docker image to the desire environment, including sandbox and production. Then it cleans the pipeline garbage and send an email notification to our team with the running result of pipeline.
+        - content: We implement the CI/CD pipeline in a typical and straightforward way, running the merchant platform in ZaloPay. As you can see from the figure below, we run CI/CD pipeline using KubeSphere, stitching GitLab, SonarQube, Docker, Kubernetes, and docker registry. In the first stage, the pipeline will initialize some necessary environments for the entire pipeline. Next, the pipeline will pull the source code from Gitlab by using the environment conditions (like checkout branch, deploy env, tag version). In the third stage, it will build the Golang project and trigger SonarQube to analyze the source code and check the quality. If there is nothing special or significant issue in the code, the pipeline will jump to next stage.
+        - content: When everything runs smoothly, the pipeline will pack the project using Docker in the fourth stage. Then it pushes the docker image to the Docker Registry. The fifth stage is used to deploy the docker image to the desired environment, including sandbox and production. Then it cleans the pipeline garbage and sends an email notification to our team with the running result of pipeline.
       image: https://pek3b.qingstor.com/kubesphere-docs/png/20200619225121.png
 
     - title: Code Quality in SonarQube
@@ -59,9 +59,9 @@ section2:
 
     - title: Issues We Meet and Solutions
       contentList:
-        - content: When we installed KubeSphere, several CRDs were created, for some reason due to testing or something, I reinstalled, and deleted some resources. API server panics handling requests for a CRD with OpenAPI validation with x-kubernetes-int-or-string, etcd was also panic and crashed looply.
-        - content: This bug appears in Kubernetes versions smaller v1.16.2; it is not secure to upgrade Kubernetes API version and inevitably downtime. Otherwise it will not be possible to access the API; and kubectl or any controller will be terminated.
-        - content: Bugs are fixed in versions from v1.16.2 +. Please notice and carefully to play with production.
+        - content: When we installed KubeSphere, several CRDs were created. Due to testing or something, I reinstalled, and deleted some resources. API server panicked handling requests for a CRD with OpenAPI validation with x-kubernetes-int-or-string; etcd also panicked and crashed looply.
+        - content: This bug appears in Kubernetes versions smaller than v1.16.2; it is not secure to upgrade Kubernetes API version and it inevitably causes downtime. Otherwise it will not be possible to access the API; and kubectl or any controller will be terminated.
+        - content: Bugs are fixed in versions from v1.16.2 +. Please notice and carefully play with production.
       image: https://pek3b.qingstor.com/kubesphere-docs/png/20200620000210.png
 
     - title: Testimonial
