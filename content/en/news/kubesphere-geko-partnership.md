@@ -16,9 +16,9 @@ The partnership will take effect from July 2020 and can be extended one year lat
 
 ## About Geko
 
-Our skills are focused on cloud platforms and our expertise with Internet projects bring us a lot of resources with projects such as cloud migration, DRS, resilience architecture, full managed service, green cloud computing and cost efficiency.
+Geko is committed to creating cloud platforms with considerable expertise in Internet projects. It boasts a diversified portfolio of projects such as cloud migration, DRS, resilience architecture, full managed service, green cloud computing and cost efficiency.
 
-Take care of your product development and let us help you with our CI/CD pipeline solutions which will deploy your code with warranty and provide monitoring tools with realtime information and trending. Our 24/7 Services will help your company to ensure the availability of your product. Trust all of your Ops tasks to our team!
+As Geko works to provide CI/CD pipeline solutions which will deploy code in a reliable way, customers only need to focus on product development. As such, Ops teams can work in a much more convenient way. In addition, Geko also strives to provide monitoring tools with realtime information and trending. It offers 24/7 services that help companies ensure the availability of products.
 
 **Geko Website**: https://geko.cloud/
 
