@@ -1,0 +1,35 @@
+---
+title: 'Embrace KubeSphere Spanish Community: Geko and KubeSphere Build Partnership'
+createTime: '2020-07-22'
+author: 'Feynman, Sherlock'
+---
+
+July 22, 2020 - KubeSphere and Geko are pleased to announce a joint partnership to deliver outstanding value to KubeSphere users in Spain, and further to Europe. As part of KubeSphere’s endeavor to bring the fruitful result of open source to users around the world, this marks a great milestone for the container platform as we are embracing a more diversified and vibrant community.
+
+Spain is home to one of the most active open source communities in Europe. Geko, a strong and active player in the cloud industry of Spain, offers state-of-the-art technologies that help companies with cloud adoption, hybrid computing, container artifact development, and DevOps. In this connection, Geko has made great contribution to cloud native technologies, which echoes KubeSphere’s commitment to open source, with a shared aspiration to benefit everyone.
+
+Ray Zhou, head of KubeSphere project, highlighted KubeSphere’s decision to work with Geko. “KubeSphere is designed for users around the world at the very beginning. Our partnership with Geko provides us with an exciting opportunity to further empower innovators in the Spanish community that is leading the country’s technology revolution. We hope that more Spanish developers can be motivated to join us in different aspects so that the fruit of open source can be shared by everyone.”
+
+By building this strong partnership, KubeSphere and Geko look to better empower both community members as they are connected to exchange innovative solutions and explore cutting-edge technologies. Under the partnership, Geko will start by localizing the web console of KubeSphere v3.0, which will be released very soon. Local websites, documentation and more will be coming as the local community grows. Geko will also hold various activities to engage community members going forward, including workshops and meetups.
+
+The partnership will take effect from July 2020 and can be extended one year later for further cooperation.
+
+## About Geko
+
+Our skills are focused on cloud platforms and our expertise with Internet projects bring us a lot of resources with projects such as cloud migration, DRS, resilience architecture, full managed service, green cloud computing and cost efficiency.
+
+Take care of your product development and let us help you with our CI/CD pipeline solutions which will deploy your code with warranty and provide monitoring tools with realtime information and trending. Our 24/7 Services will help your company to ensure the availability of your product. Trust all of your Ops tasks to our team!
+
+**Geko Website**: https://geko.cloud/
+
+**Geko GitHub**: https://github.com/gekocloud
+
+## About KubeSphere
+
+[KubeSphere](https://kubesphere.io/) is an open source container platform based on Kubernetes with applications at its core. It provides full-stack IT automated operation and streamlined DevOps workflows.
+
+KubeSphere has been adopted by thousands of enterprises across the globe, such as **Aqara, Sina, Benlai, Sinopharm Group, Bank of Beijing, Huaxia Bank, PICC, WeBank, Sichuan Airlines, Geko, VNG Corporation and Radore**. KubeSphere offers wizard interfaces and various enterprise-grade features for operation and maintenance, including Kubernetes resource management, DevOps (CI/CD), application lifecycle management, service mesh, multi-tenant management, monitoring, logging, alerting, notification, storage and network management, and GPU support. With KubeSphere, enterprises are able to quickly establish a strong and feature-rich container platform.
+
+**KubeSphere Website**: https://kubesphere.io/
+
+**KubeSphere GitHub**: https://github.com/kubesphere/kubesphere
