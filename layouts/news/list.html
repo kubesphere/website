@@ -31,7 +31,10 @@
 <script src='{{ "js/pagination.min.js" | relURL }}'></script>
 <script>
     var createNews = function(news) {
-        var a = '<a href="' + news.link + '" target="_blank" rel="noopener noreferrer">' + news.title + '</a>'
+        a = '<a href="' + news.link + '">' + news.title + '</a>'
+        if (news.link.slice(0, 4) == "http") {
+            var a = '<a href="' + news.link + '" target="_blank" rel="noopener noreferrer">' + news.title + '</a>'
+        }
         var h2 = '<h2>' + a + '</h2>'
         var p = '<p>' + news.description + '</p>'
         var img = '<img src="' + news.image + '" alt="' + news.title + '">'
