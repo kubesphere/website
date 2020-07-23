@@ -26,6 +26,10 @@
   translation: email is required!
 - id: Please enter a valid email address.
   translation: Please enter a valid email address!
+- id: news
+  translation: news
+- id: Table of Contents
+  translation: Table of Contents
 - id: Demo
   translation: Demo
 - id: demo content 1

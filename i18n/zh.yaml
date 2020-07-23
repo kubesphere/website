@@ -26,6 +26,10 @@
   translation: 请提供您的邮箱
 - id: Please enter a valid email address.
   translation: 请输入有效的邮箱地址!
+- id: news
+  translation: 动态
+- id: Table of Contents
+  translation: 目录
 - id: Demo
   translation: Demo
 - id: demo content 1
