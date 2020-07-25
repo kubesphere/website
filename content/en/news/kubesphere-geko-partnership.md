@@ -1,5 +1,5 @@
 ---
-title: 'Embrace KubeSphere Spanish Community: Geko and KubeSphere Build Partnership'
+title: 'Embrace KubeSphere Spanish Community and European Market: Geko and KubeSphere Build Partnership'
 keywords: KubeSphere, Geko, Partner, Kubernetes
 description: KubeSphere and Geko are pleased to announce a joint partnership to deliver outstanding value to KubeSphere users in Spain, and further to Europe.
 createTime: '2020-07-22'
@@ -10,15 +10,15 @@ author: 'Feynman, Sherlock'
 
 July 22, 2020 - KubeSphere and Geko are pleased to announce a joint partnership to deliver outstanding value to KubeSphere users in Spain, and further to Europe. As part of KubeSphere’s endeavor to bring the fruitful result of open source to users around the world, this marks a great milestone for the container platform as we are embracing a more diversified and vibrant community.
 
-Spain is home to one of the most active open source communities in Europe, KubeCon and CloudNativeCon have also been hosted in Barcelona for many times, Spain is also a gathering place for cloud native enthusiasts. Geko, a strong and active player in the cloud industry of Spain, offers state-of-the-art technologies that help companies with cloud adoption, hybrid computing, container artifact development, and DevOps. In this connection, Geko has made great contribution to cloud native technologies, which echoes KubeSphere’s commitment to open source, with a shared aspiration to benefit everyone.
+Spain is home to one of the most active open source communities in Europe. KubeCon and CloudNativeCon have also been hosted in Barcelona for many times. Besides, Spain is also a popular gathering place for cloud native enthusiasts. Geko, a strong and active player in the cloud industry of Spain, offers state-of-the-art technologies that help companies with cloud adoption, hybrid computing, container artifact development, and DevOps. In this connection, Geko has made great contribution to cloud native technologies, which echoes KubeSphere’s commitment to open source, with a shared aspiration to benefit everyone.
 
 Ray Zhou, head of KubeSphere project, highlighted KubeSphere’s decision to work with Geko Cloud. “KubeSphere is designed for users around the world at the very beginning. Our partnership with Geko provides us with an exciting opportunity to further empower innovators in the Spanish community that is leading the country’s technology revolution. We hope that more Spanish developers can be motivated to join us in different aspects so that the fruit of open source can be shared by everyone.”
 
 ![](https://pek3b.qingstor.com/kubesphere-docs/png/20200725083630.png)
 
-By building this strong partnership, KubeSphere and Geko look to better empower both community members as they are connected to exchange innovative solutions and explore cutting-edge technologies. Under the partnership, Geko will start by localizing the web console of KubeSphere v3.0, which will be released very soon. Local websites, documentation and more will be coming as the local community grows. Geko will also hold various activities to engage community members going forward, including workshops and meetups.
+By building this strong partnership, KubeSphere and Geko look to better empower both community members as they are connected to exchange innovative solutions and explore cutting-edge technologies. Under the partnership, Geko will start by localizing the web console of KubeSphere v3.0, which will be released very soon. Local websites, documentation and more will be coming as the local community grows. Geko will also hold various activities to engage community members going forward, including workshops and meetups to help KubeSphere users.
 
-The partnership will take effect from July 2020 and can be extended one year later for further cooperation.
+As an important part of the partnership, Geko will help to provide services for users in the European market as well, including website maintenance ([kubesphere.eu](http://kubesphere.eu)), infrastructure supply, and specific feature design based on the needs in the region. The next year will see closer cooperation between Geko and KubeSphere, as they look to promote the community together in global events such as KubeCon.
 
 ## About Geko
 

@@ -10,7 +10,7 @@ section1:
 
 section2:
   news:
-    - title: 'Embrace KubeSphere Spanish Community: Geko and KubeSphere Build Partnership'
+    - title: 'Embrace KubeSphere Spanish Community and European Market: Geko and KubeSphere Build Partnership'
       description: KubeSphere and Geko will work together for the same aspiration to deliver more for the wider open source community in China, Spain and beyond.
       image: /images/news/tmtpost.jpg
       link: 'kubesphere-geko-partnership'
