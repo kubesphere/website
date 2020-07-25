@@ -1,7 +1,7 @@
 ---
 title: 'Embrace KubeSphere Spanish Community: Geko and KubeSphere Build Partnership'
 keywords: KubeSphere, Geko, Partner, Kubernetes
-description:
+description: KubeSphere and Geko are pleased to announce a joint partnership to deliver outstanding value to KubeSphere users in Spain, and further to Europe.
 createTime: '2020-07-22'
 author: 'Feynman, Sherlock'
 ---
