@@ -14,7 +14,7 @@ Spain is home to one of the most active open source communities in Europe. KubeC
 
 Ray Zhou, head of KubeSphere project, highlighted KubeSphere’s decision to work with Geko Cloud. “KubeSphere is designed for users around the world at the very beginning. Our partnership with Geko provides us with an exciting opportunity to further empower innovators in the Spanish community that is leading the country’s technology revolution. We hope that more Spanish developers can be motivated to join us in different aspects so that the fruit of open source can be shared by everyone.”
 
-![](https://pek3b.qingstor.com/kubesphere-docs/png/20200725083630.png)
+![Geko-Kubesphere-cooperation](https://pek3b.qingstor.com/kubesphere-docs/png/20200725083630.png)
 
 By building this strong partnership, KubeSphere and Geko look to better empower both community members as they are connected to exchange innovative solutions and explore cutting-edge technologies. Under the partnership, Geko will start by localizing the web console of KubeSphere v3.0, which will be released very soon. Local websites, documentation and more will be coming as the local community grows. Geko will also hold various activities to engage community members going forward, including workshops and meetups to help KubeSphere users.
 
