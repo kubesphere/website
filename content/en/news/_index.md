@@ -10,6 +10,10 @@ section1:
 
 section2:
   news:
+    - title: 'Spanish and Traditional Chinese Localization Available in KubeSphere Web Console'
+      description: Geko and Turtle Chang contribute to the localization of Spanish and Traditional Chinese.
+      image: /images/news/tmtpost.jpg
+      link: 'spanish-traditional-chinese-available'
     - title: 'Embrace KubeSphere Spanish Community: Geko and KubeSphere Build Partnership'
       description: KubeSphere and Geko will work together for the same aspiration to deliver more for the wider open source community in China, Spain and beyond.
       image: /images/news/tmtpost.jpg
