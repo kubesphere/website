@@ -1,5 +1,7 @@
 ---
 title: 'Radore and KubeSphere: Walk into the Future of Hybrid Cloud and Build Ecosystem Together'
+keywords: KubeSphere, Radore, Partner, Kubernetes
+description: KubeSphere and Radore will work to build and promote both ecosystems as we embark on the journey to the era of hybrid cloud.
 createTime: '2020-06-30'
 author: 'Feynman, Sherlock'
 ---

@@ -1,6 +1,8 @@
 ---
 title: 'Spanish and Traditional Chinese Localization Available in KubeSphere Web Console'
 createTime: '2020-07-27'
+keywords: KubeSphere, Localization, Community Contribution
+description: The web console of KubeSphere v3.0 now supports the localization of Spanish and Traditional Chinese.
 author: 'Feynman, Sherlock'
 ---
 
