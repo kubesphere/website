@@ -7,8 +7,12 @@
     <meta name="description" content="{{ with .Params.Description }}{{ . }}{{ else }}{{ with $data.head.description }}{{ . }}{{ end }}{{ end }}">
     <meta name="keywords" content="{{ with .Params.Keywords }}{{ range $i, $e := . }}{{ if $i }} {{ end }}{{ $e }}{{ end }}{{ else }}{{ with $data.head.keywords }}{{ . }}{{ end }}{{ end }}">
     
+    {{ with .Params.snapshot }}
+    <meta property=”og:image” content="{{ . }}" />
+    {{ end }}
+
     {{- partial "css.html" . -}}
 
-    <script src="{{ "js/jquery-3.5.0.min.js" | relURL }}"></script>
+    <script src='{{ "js/jquery-3.5.0.min.js" | relURL }}'></script>
     <script src='{{ "js/jquery.modal.min.js" | relURL }}'></script>
 </head>
