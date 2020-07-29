@@ -44,6 +44,10 @@ section3:
 section4:
   title: 'Featured Partners'
   featuredPartnerList:
+    - icon: "images/partner/geko-cloud.jpg"
+      partnerType: "Go-to-market"
+      content: Geko is committed to creating cloud platforms with considerable expertise in internet projects. It boasts a diversified portfolio of projects such as cloud migration, DRS, resilience architecture, full managed service, cloud computing and cost efficiency.
+      
     - icon: "images/partner/inaccel.jpg"
       partnerType: "Technology"
       content: 'InAccel is a world-leader in application acceleration using FPGAs in the cloud. We embrace cutting-edge technology to speedup mission-critical applications in the cloud, seamlessly.'
