@@ -10,10 +10,6 @@ baseURL = "https://hugo-first.netlify.app"
 [params]
 logo = "images/logo.svg"
 
-title = "KubeSphere | The Kubernetes platform tailored for hybrid multicloud"
-description = "KubeSphere is a distributed operating system managing cloud native applications with Kubernetes as its kernel, and provides plug-and-play architecture for the seamless integration of third-party applications to boost its ecosystem."
-keywords = "KubeSphere, Kubernetes, container platform, DevOps, hybrid cloud, cloud native"
-
 mailchimpSubscribeUrl = "https://kubesphere.us10.list-manage.com/subscribe/post?u=c85ea2b944b08b951f607bdd4&id=83f673a2d9"
 
 gcs_engine_id = "018068616810858123755%3Apb1pt8sx6ve"
@@ -32,6 +28,12 @@ contentDir = "content/en"
 weight = 1
 languageCode = "en-US"
 languageName = "English"
+
+[languages.en.params]
+title = "KubeSphere | The Kubernetes platform tailored for hybrid multicloud"
+description = "KubeSphere is a distributed operating system managing cloud native applications with Kubernetes as its kernel, and provides plug-and-play architecture for the seamless integration of third-party applications to boost its ecosystem."
+keywords = "KubeSphere, Kubernetes, container platform, DevOps, hybrid cloud, cloud native"
+snapshot = "/images/common/snapshot-en.png"
 
 [[languages.en.menu.main]]
 weight = 2
@@ -129,6 +131,12 @@ weight = 2
 contentDir = "content/zh"
 languageCode = "zh-CN"
 languageName = "简体中文"
+
+[languages.zh.params]
+title = "KubeSphere | 面向云原生应用的容器混合云"
+description = "KubeSphere 是在 Kubernetes 之上构建的以应用为中心的多租户容器平台，提供全栈的 IT 自动化运维的能力，简化企业的 DevOps 工作流。KubeSphere 提供了运维友好的向导式操作界面，帮助企业快速构建一个强大和功能丰富的容器云平台。"
+keywords = "KubeSphere, Kubernetes, 容器平台, DevOps, 混合云"
+snapshot = "/images/common/snapshot-zh.png"
 
 [[languages.zh.menu.main]]
 weight = 2
