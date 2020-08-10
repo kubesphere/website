@@ -15,6 +15,52 @@ git clone https://github.com/<username>/website
 cd website
 ```
 
+### Building the website
+
+You will need to build the website in order to **publish it as static content.**
+
+#### Install Hugo extended
+
+Go to the [Hugo releases place](https://github.com/gohugoio/hugo/releases) and
+download the `hugo_extended` version that better suits your OS (version 0.70+).
+
+**EXTENDED version is MANDATORY to properly build the static content!**
+
+#### Config your domain
+
+Edit the file `config\_default\config.toml` and modify the var `baseURL` (at the
+first line) in order to set your own domain. It will be hardcoded in the static
+files.
+
+```
+baseURL = "https://kubesphere.es"
+```
+
+#### Build the static content
+
+Just run `hugo` without parameters.
+
+```bash
+hugo
+
+                   | EN  | ZH  | TR
+-------------------+-----+-----+------
+  Pages            |  55 |  65 |  39
+  Paginator pages  |   0 |   0 |   0
+  Non-page files   |   0 |   0 |   0
+  Static files     | 375 | 375 | 375
+  Processed images |   0 |   0 |   0
+  Aliases          |   1 |   0 |   0
+  Sitemaps         |   2 |   1 |   1
+  Cleaned          |   0 |   0 |   0
+
+Total in 2396 ms
+```
+
+#### Get the already built static content
+
+You will find the previously generated content in the `public` directory.
+
 ### Running the website locally
 
 hugo version: hugo_extended_0.70.0+, you can install Hugo from [hugo releases](https://github.com/gohugoio/hugo/releases)
