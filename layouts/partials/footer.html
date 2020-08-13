@@ -5,7 +5,7 @@
             <div class="up-main">
                 <div class="left-div">
                     <img src="{{ .Site.Params.logo | relURL }}" alt="{{ .Site.Title }}" class="foot-logo">
-                    <p>{{ i18n "introduction7" }}</p>
+                    <p>{{ i18n "Receive the latest news, articles and updates from KubeSphere" }}</p>
                     <div>
                         <form
                             action="{{ .Site.Params.mailchimpSubscribeUrl }}"
@@ -13,8 +13,8 @@
                             target="_blank"
                             novalidate
                         >
-                            <input name="EMAIL" id="email-input" type="text" placeholder='{{ i18n "introduction6" }}'>
-                            <button type="submit" id="email-submit">{{ i18n "introduction5" }}</button>
+                            <input name="EMAIL" id="email-input" type="text" placeholder='{{ i18n "Please enter your email address" }}'>
+                            <button type="submit" id="email-submit">{{ i18n "Subscribe" }}</button>
                         </form>
                     </div>
                     <span id="message" data-message1='{{ i18n "email is required" }}' data-message2='{{ i18n "Please enter a valid email address." }}'></span>
@@ -63,7 +63,7 @@
                     <a class='github-a' href="{{ .Site.Params.githubLink }}" target="_blank" rel="noopener noreferrer"></a>
                     <a class='medium-a' href="{{ .Site.Params.mediumLink }}" target="_blank" rel="noopener noreferrer"></a>
                 </div>
-                <p class='p1'>{{ i18n "introduction2" }}</p>
+                <p class='p1'>{{ i18n "KubeSphere®️ 2020 All Rights Reserved." }}</p>
                 {{ if .Site.Params.showCaseNumber }}
                 <p class="case">
                     <a

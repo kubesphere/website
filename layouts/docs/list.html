@@ -18,8 +18,8 @@
     <header>
         <a href="{{ site.Home.RelPermalink }}"><img src="{{ .Site.Params.logo | relURL }}" alt="{{ .Site.Title }}" class="logo"></a>
         <div class="header-div">
-            <h1>{{ i18n "introduction8" }}</h1>
-            <p>{{ i18n "introduction9" }}</p>
+            <h1>{{ i18n "Welcome to the KubeSphere Documentation" }}</h1>
+            <p>{{ i18n "We will introduce the services and features of KubeSphere with clear and concise pictures and texts as far as possible." }}</p>
             {{ $pages := (union .Pages .Sections).ByWeight }}
             <div class="list-div">
                 <ul>

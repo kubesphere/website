@@ -13,12 +13,12 @@
 <section class="main-section {{ if eq .Site.Language.Lang "zh"}} padding{{ end }}">
     <div class="common-layout">
         <div class='breadcrumb'>
-            <span><a href='{{ "blogs" | relLangURL }}'>{{ i18n "introduction1"}}</a> > </span>
+            <span><a href='{{ "blogs" | relLangURL }}'>{{ i18n "Technology Blogs"}}</a> > </span>
             <span>{{ .Title }}</span>
         </div>
         <div class='main-div'>
             <div class='author'>{{ .Params.author }}</div>
-            <div class='date'>{{ i18n "introduction3" }}：{{ string .Params.createTime }}</div>
+            <div class='date'>{{ i18n "Published on" }}：{{ string .Params.createTime }}</div>
             <h1>{{ .Title }}</h1>
             <div class="share-1">
                 {{- partial "share.html" . -}}

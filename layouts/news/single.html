@@ -18,7 +18,7 @@
         </div>
         <div class='main-div'>
             <div class='author'>{{ .Params.author }}</div>
-            <div class='date'>{{ i18n "introduction3" }}：{{ string .Params.createTime }}</div>
+            <div class='date'>{{ i18n "Published on" }}：{{ string .Params.createTime }}</div>
             <h1>{{ .Title }}</h1>
             <div class="share-1">
                 {{- partial "share.html" . -}}
