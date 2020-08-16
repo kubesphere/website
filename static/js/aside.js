@@ -10,6 +10,8 @@ var getElementBottomToTop = function(element) {
   return elementOffsetTop + elementHeight
 }
 
+var asideOriginOffsetHeight = $('.aside').offset().top
+
 var bindAsideScroll = function() {
   var screenWidth = $(window).width()
   if (screenWidth <= 768) {
@@ -23,7 +25,7 @@ var bindAsideScroll = function() {
     if (s2 > s1) {
         aside.addClass('aside-absolute').removeClass('aside-fixed')
     }
-    if (getElementTopToScreenTop(aside) > 150) {
+    if (getElementTopToScreenTop(aside) > asideOriginOffsetHeight) {
         aside.removeClass('aside-absolute').addClass('aside-fixed')
     }
   });

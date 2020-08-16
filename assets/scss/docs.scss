@@ -1,49 +1,121 @@
-.logo {
-    height: 32px;
+@import 'variables';
+@import 'mixin';
+
+.section-1 {
+  position: relative;
+  padding-top: 129px;
+
+  .title-div {
+    padding-bottom: 80px;
+    h1 {
+      width: 1060px;
+    }
+
+    p {
+      width: 1060px;
+      margin-top: 25px;
+      letter-spacing: -0.04px;
+      color: #ffffff;
+      text-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
+    }
+
+    @media only screen and (max-width: $mobile-max-width) {
+      width: 100%;
+      top: 100px;
+
+      h1 {
+        width: 100%;
+      }
+
+      p {
+        width: 100%;
+      }
+    }
+  }
 }
 
-.header-div {
-    max-width: 1160px;
-    margin: 0px auto;
-    text-align: center;
-
-    .list-div {
-        text-align: left;
-        margin-top: 80px;
-
-        ul {
-            li {
-                margin-bottom: 10px;
-
-                h3 {
-                    position: relative;
-                    margin-bottom: 0px;
-                    font-size: 16px;
-                    font-weight: 600;
-                    line-height: 1.75;
-                    color: rgb(48, 62, 90);
-                }
-
-                p {
-                    font-size: 12px;
-                    line-height: 2;
-                    letter-spacing: 0.4px;
-                    color: rgb(101, 125, 149);
-                    margin-bottom: 4px;
-                    
-                    a {
-                        display: inline-block;
-                        padding-right: 20px;
-                        margin: 4px 20px 4px 0px;
-                        border-right: 1px solid rgb(213, 222, 231);
-                    }
-
-                    a:last-of-type {
-                        padding-right: 0px;
-                        border-right: none;
-                    }
-                }
-            }
+.section-2 {
+  & > div {
+      position: relative;
+      & > ul {
+        transform: translateY(-60px);
+        @media only screen and (max-width: $mobile-max-width) {
+          justify-content: center;
         }
-    }
+          & > li {
+              width: 373px;
+              height: 470px;
+              margin-top: 20px;
+              border-radius: 10px;
+              box-shadow: 0 4px 8px 0 rgba(36, 46, 66, 0.06), 0 8px 16px 0 rgba(36, 46, 66, 0.05);
+              background-color: #ffffff;
+              background-repeat: no-repeat;
+              background-position: bottom;
+
+              & > h2 {
+                  padding: 30px 40px;
+                  font-weight: 600;
+                  line-height: 1.2;
+                  color: #333333;
+                  border-bottom: 1px solid #d2e0d8;
+                  font-size: 0;
+
+                  & > span {
+                    display: inline-block;
+                    vertical-align: middle;
+                    width: 40px;
+                    height: 40px;
+                    margin-right: 10px;
+                    border-radius: 7px;
+                    background-image: linear-gradient(59deg, #ffffff -34%, #d5dee7 161%);
+
+                    & > img {
+                      margin: 8px;
+                    }
+                  }
+
+                  & > a {
+                    display: inline-block;
+                    vertical-align: middle;
+                    width: 243px;
+                    font-size: 20px;
+                  }
+              }
+
+              & > ul {
+                  padding: 0 40px;
+
+                  & > li {
+                      height: 46px;
+                      font-size: 16px;
+                      line-height: 46px;
+                      overflow: hidden;
+                      text-overflow:ellipsis;
+                      white-space:nowrap;
+                      border-bottom: 1px solid #d2e0d8;
+
+                      & > a {
+                        color: #31383e;
+
+                        &:hover {
+                          color: #00aa72
+                        }
+                      }
+                  }
+              }
+          }
+
+          & > li:nth-child(3n + 1) {
+              background-image: url("/images/docs/bg-1.svg");
+          }
+
+          & > li:nth-child(3n + 2) {
+              background-image: url("/images/docs/bg-2.svg");
+          }
+
+          & > li:nth-child(3n + 3) {
+              background-image: url("/images/docs/bg-3.svg");
+          }
+      }
+  }
 }

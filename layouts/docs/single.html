@@ -1,35 +1,239 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>{{ .Title }}</title>
+{{ define "main" }}
 
-    <link rel="stylesheet" href="/fonts/Roboto/stylesheet.css">
+<section class='section-1 bg-cover'>
+    <div class="common-layout">
+        {{ partial "breadcrumb.html" . }}
 
-    {{ $style := resources.Get "scss/doc.scss" | resources.ToCSS }}
-    <link rel="stylesheet" href="{{ $style.RelPermalink }}">
-
-    {{ $style := resources.Get "scss/reset.scss" | resources.ToCSS }}
-    <link rel="stylesheet" href="{{ $style.RelPermalink }}">
-    <script src="{{ "js/jquery-3.5.0.min.js" | relURL }}"></script>
-</head>
-<body>
-    <div class="left-div">
-        {{ partial "tree.html" . }}
-    </div>
-    <div class="middle-div">
-        <div class="header-div">
-            <a href="{{ site.Home.RelPermalink }}"><img src="{{ .Site.Params.logo | relURL }}" alt="{{ .Site.Title }}" class="logo"></a>
-        </div>
-        <div class="content-div">
-            <div class="md-body">
-                {{ .Content }}
+        <div class="title-div">
+            {{ $sections := .FirstSection.Sections.ByWeight }}
+            {{ $secondSection := .FirstSection }}
+            {{ $page := . }}
+            {{ range $sections }}
+                {{ if $page.IsDescendant . }}
+                    {{ $secondSection = . }}
+                {{ end }}
+            {{ end }}
+            <h1>{{ $secondSection.LinkTitle }}</h1>
+            <div class="menu section-control">
+                <div></div>
+                <div></div>
+                <div></div>
             </div>
         </div>
-        <div class="menu-div">
-            {{ .TableOfContents }}
+    </div>
+</section>
+
+<section class="section-menu">
+{{ with (.GetPage "/docs") }}
+    <div class="common-layout">
+        {{ partial "section" . }}
+    </div>
+{{ end }}
+</section>
+
+<section class="section-2">
+    <div class="common-layout">
+        <div class="left-div">
+            {{ partial "tree.html" . }}
+            <!-- <div class="download-div">
+                <span class="download-icon"></span>
+                <span>{{ i18n "Download this page (PDF)" }}</span>
+            </div> -->
+        </div>
+        <div class="second-section-menu">
+            <div></div>
+            <div></div>
+            <div></div>
+        </div>
+        <div class="middle-div">
+            <div class="top-div common-flex-layout">
+                <div class="contributor-div">
+                    <span>{{ i18n "update time" }}:</span>
+                    <span class="update-time"></span>
+                    <ul class="contributor-avatar"></ul>
+                    <span class="more-contributor"></span>
+                </div>
+                <div class="mutual-div common-flex-layout">
+                    <div class="edit-div">
+                        <a href="{{ .Site.Params.githubEditUrl}}/{{.Site.Language.Lang}}/{{ .File.Path }}" target="_blank">
+                            <span class="icon-span"></span>
+                            <span>{{ i18n "edit" }}</span>
+                        </a>
+                    </div>
+                    <div class="feedback-div">
+                        <a href="{{ .Site.Params.githubUrl}}/issues/new" target="_blank">
+                        <span class="icon-span"></span>
+                        <span>{{ i18n "feedback" }}</span>
+                        </a>
+                    </div>
+                    <div class="share-div">
+                        <div>
+                            <span class="icon-span"></span>
+                            <span>{{ i18n "share" }}</span>
+                        </div>
+                        <ul>
+                            <li>
+                                <img src="/images/docs/twitter.svg" alt="twitter">
+                                <a href="http://twitter.com/share?url={{ .Permalink }}&text={{ .Title }}" target="_blank" rel="noopener noreferrer">twitter</a>
+                            </li>
+                            <li>
+                                <img src="/images/docs/linkedIn.svg" alt="linkedIn">
+                                <a href="http://www.linkedin.com/shareArticle?mini=true&url={{ .Permalink }}" target="_blank" rel="noopener noreferrer">linkedIn</a>
+                            </li>
+                            <li>
+                                <img src="/images/docs/facebook.svg" alt="facebook">
+                                <a href="http://www.facebook.com/sharer.php?u={{ .Permalink }}" target="_blank" rel="noopener noreferrer">facebook</a>
+                            </li>
+                            <li>
+                                <img src="/images/docs/email.svg" alt="email" >
+                                <a href="mailto:kubesphere@gmail.com" target="_blank" rel="noopener noreferrer">email</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <div class="content-div main-div">
+                <div class="md-body">
+                    {{ .Content }}
+                </div>
+            </div>
+            {{ if .IsPage }}
+            
+            <div class="page-div common-flex-layout">
+                {{ with .Next }}
+                <!-- {{ if .IsDescendant (.GetPage "/docs")}} -->
+                    <a class="last" href="{{.RelPermalink}}">
+                        <img src="/images/docs/last.svg" alt="{{ i18n "Last" }}">
+                        {{ i18n "Last" }}
+                        <span>: {{.LinkTitle}}</span>
+                    </a>
+                <!-- {{ end }} -->
+                {{ end }}
+                {{ with .Prev }}
+                <!-- {{ if .IsDescendant (.GetPage "/docs")}} -->
+                    <a class="next" href="{{.RelPermalink}}">
+                        {{ i18n "Next" }}
+                        <span>: {{.LinkTitle}}</span>
+                        <img src="/images/docs/next.svg" alt="{{ i18n "Next" }}">
+                    </a>            
+                <!-- {{ end }} -->
+                {{ end }}
+            </div>
+            {{ end }}
+            <div></div>
+        </div>
+        <div class="aside aside-fixed">
+            <div class='title'>
+                {{ i18n "What’s on this Page" }}
+            </div>
+            <div class='tabs'>
+                {{ .TableOfContents }}
+            </div>
         </div>
     </div>
-</body>
-</html>
+</section>
+<script src='{{ "js/aside.js" | relURL }}'></script>
+<script>
+    var filePath = '{{ .File.Path }}'
+    // var filePath = 'README.md'
+
+    var getLatestTime = function(data) {
+        var commit = data[0].commit
+        return commit.author.date.replace("T", " ").replace("Z", "")
+    }
+
+    var filterData = function(data) {
+        var arr = []
+        var length = data.length
+        for (var i = 0; i < length; i++) {
+            var author = data[i].author
+            if (author) {
+                var avatar_url = author.avatar_url
+                if (avatar_url && !arr.includes(avatar_url)) {
+                    arr.push(avatar_url)
+                }
+            }
+
+        }
+        return arr
+    }
+    var getFileContributors = function() {
+        var url = 'https://api.github.com/repos/kubesphere/website/commits?path=' + filePath
+        $.getJSON(url, function(data) {
+            if (!data || data.length === 0) {
+                $('.contributor-div').hide()
+                return
+            }
+            var newData = filterData(data)
+            var time = getLatestTime(data)
+            renderLatestTime(time)
+            renderContributors(newData)
+        })
+    }
+    var renderContributors = function(data) {
+        var contributor = $('.contributor-avatar')
+        var length = data.length
+        var len = 5
+        $.each(data.slice(0, len), function(index, item) {
+            var img = $("<img />", {
+                "src": item
+            })
+            $("<li />", {
+                "html": img
+            }).appendTo(contributor);
+        });
+        var t = length - len
+        if (t > 0) {
+            $('.more-contributor').html('+' + t)
+        }
+    }
+
+    var renderLatestTime = function(time) {
+        $('.update-time').html(time)
+    }
+
+    var bindClickMenu = function() {
+        var sectionMenu = $(".section-menu")
+        $('.section-control').on('click', function(e){
+            if (sectionMenu.is(":hidden")) {
+                sectionMenu.show();
+            } else {
+                sectionMenu.hide()
+            }
+
+            $(document).one("click", function(){
+                sectionMenu.hide()
+            });
+
+            e.stopPropagation()
+        })
+
+        sectionMenu.on("click", function(e){
+            e.stopPropagation();
+        })
+    }
+
+    var bindClickSecondMenu = function() {
+        var sectionMenu = $(".section-2 .left-div")
+        $('.second-section-menu').on('click', function(e){
+            sectionMenu.css("left", "0")
+
+            $(document).one("click", function(){
+                sectionMenu.css("left", "-274px")
+            });
+
+            e.stopPropagation()
+        })
+
+        sectionMenu.on("click", function(e){
+            e.stopPropagation();
+        })
+    }
+
+    getFileContributors()
+    bindClickMenu()
+    bindClickSecondMenu()
+
+</script>
+{{ end }}

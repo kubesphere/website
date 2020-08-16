@@ -55,8 +55,10 @@
         }
 
         & > ul {
+          position: relative;
           width: 216px;
           margin: 60px auto 0;
+          z-index: 2;
 
           li {
             height: 24px;

@@ -3,13 +3,16 @@
 {{ $text := .text }}
 <!DOCTYPE html>
 <html lang="{{ with .Site.LanguageCode }}{{ . }}{{ else }}en-US{{ end }}">
-{{- partial "head.html" . -}}
+<head>
+    {{- partial "head.html" $context -}}
 
-{{ $style := resources.Get "scss/content.scss" | toCSS | minify | fingerprint }}
-<link rel="stylesheet" href="{{ $style.RelPermalink }}">
+    {{ $style := resources.Get "scss/content.scss" | toCSS | minify | fingerprint }}
+    <link rel="stylesheet" href="{{ $style.RelPermalink }}">
+    
+    {{ $style := resources.Get "scss/markdown.scss" | toCSS | minify | fingerprint }}
+    <link rel="stylesheet" href="{{ $style.RelPermalink }}">
+</head>
 
-{{ $style := resources.Get "scss/markdown.scss" | toCSS | minify | fingerprint }}
-<link rel="stylesheet" href="{{ $style.RelPermalink }}">
 
 <body>
   {{ partial "header.html" $context }}

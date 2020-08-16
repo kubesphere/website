@@ -10,6 +10,10 @@ baseURL = "https://hugo-first.netlify.app"
 [params]
 logo = "images/logo.svg"
 
+githubUrl = "https://github.com/kubesphere/website"
+
+githubEditUrl = "https://github.com/kubesphere/website/edit/master/content"
+
 mailchimpSubscribeUrl = "https://kubesphere.us10.list-manage.com/subscribe/post?u=c85ea2b944b08b951f607bdd4&id=83f673a2d9"
 
 gcs_engine_id = "018068616810858123755%3Apb1pt8sx6ve"

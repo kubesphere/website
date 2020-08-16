@@ -48,7 +48,7 @@
             {{ end }}
         </ul>
         {{ with .bottomContent }}
-        <p>{{ .content }} <a class="common-green-a" href="{{ .link }}">{{ .linkContent }}</a></p>
+        <p>{{ .content }} <a class="common-green-a" target="_blank" rel="noopener noreferrer" href="{{ .link }}">{{ .linkContent }}</a></p>
         {{ end }}
     </div>
     <img src="{{ .icon | relURL }}" alt="{{ i18n "icon" }}">

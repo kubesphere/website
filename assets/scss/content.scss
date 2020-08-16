@@ -143,6 +143,8 @@
 
     .aside {
       width: 230px;
+      max-height: 700px;
+      overflow: scroll;
       @media only screen and (max-width: $mobile-max-width) {
         display: none;
       }
