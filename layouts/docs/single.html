@@ -95,6 +95,7 @@
 
             <div class="content-div main-div">
                 <div class="md-body">
+                    <h1>{{ .Title }}</h1>
                     {{ .Content }}
                 </div>
             </div>
@@ -139,6 +140,7 @@
 <script src='{{ "js/aside.js" | relURL }}'></script>
 {{ end }}
 <script>
+    var languageCode = '{{.Site.Language.Lang}}'
     var filePath = '{{ .File.Path }}'
     // var filePath = 'README.md'
 
@@ -163,7 +165,7 @@
         return arr
     }
     var getFileContributors = function() {
-        var url = 'https://api.github.com/repos/kubesphere/website/commits?path=' + filePath
+        var url = 'https://api.github.com/repos/kubesphere/website/commits?path=content/' + languageCode + '/' + filePath
         $.getJSON(url, function(data) {
             if (!data || data.length === 0) {
                 $('.contributor-div').hide()

@@ -261,6 +261,7 @@ body {
                 display: inline;
                 vertical-align: middle;
                 font-size: 0;
+                margin-left: 10px;
 
                 li {
                     display: inline;
@@ -298,7 +299,12 @@ body {
                 a {
                     color: #3f5264;
                 }
+
+                &:first-child {
+                    margin-left: 0;
+                }
             }
+            
             .edit-div {
                 .icon-span {
                     background-image: url("/images/docs/edit.svg");
@@ -387,18 +393,17 @@ body {
         .content-div {
             .md-body {
                 font-size: 16px;
-                line-height: 2.29;
+                line-height: 1.71;
                 color: #36435c;
             }
             
             .md-body h2 {
                 font-size: 24px;
                 font-weight: 500;
-                line-height: 64px;
+                line-height: 40px;
                 color: #171c34;
                 text-shadow: none;
                 text-align: left;
-                margin-bottom: 20px;
             }
             
             .md-body h3 {

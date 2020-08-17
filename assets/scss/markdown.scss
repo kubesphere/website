@@ -106,8 +106,8 @@
 .md-body h4,
 .md-body h5,
 .md-body h6 {
-  margin-top: 30px;
-  margin-bottom: 20px;
+  margin-top: 20px;
+  margin-bottom: 5px;
   font-weight: 600;
   line-height: 1.5;
   color: #171c34;
@@ -170,11 +170,6 @@
   text-align: center;
   color: #171c34;
   text-shadow: 0 4px 8px rgba(35, 45, 65, 0.1);
-  margin-bottom: 60px;
-
-  @media only screen and (max-width: $mobile-max-width) {
-    margin-bottom: 20px;
-  }
 }
 
 .md-body h3 {
