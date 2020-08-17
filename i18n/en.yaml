@@ -1,26 +1,26 @@
-- id: introduction1
+- id: Technology Blogs
   translation: Technology Blogs
-- id: introduction2
+- id: KubeSphere®️ 2020 All Rights Reserved.
   translation: KubeSphere®️ 2020 All Rights Reserved.
-- id: introduction3
+- id: Published on
   translation: Published on
-- id: introduction4
+- id: KubeCon & QCon
   translation: KubeCon & QCon
-- id: introduction5
+- id: Subscribe
   translation: Subscribe
-- id: introduction6
+- id: Please enter your email address
   translation: Please enter your email address
-- id: introduction7
+- id: Receive the latest news, articles and updates from KubeSphere
   translation: Receive the latest news, articles and updates from KubeSphere
-- id: introduction8
+- id: Welcome to the KubeSphere Documentation
   translation: Welcome to the KubeSphere Documentation
-- id: introduction9
+- id: We will introduce the services and features of KubeSphere with clear and concise pictures and texts as far as possible.
   translation: We will introduce the services and features of KubeSphere with clear and concise pictures and texts as far as possible.
-- id: introduction10
+- id: Open Source Community
   translation: Open Source Community
-- id: introduction11
+- id: KubeSphere is committed to the open source contribution of cloud native technology, enriching the ecosystem of the open source community.
   translation: KubeSphere is committed to the open source contribution of cloud native technology, enriching the ecosystem of the open source community.
-- id: introduction12
+- id: Go to GitHub
   translation: Go to GitHub
 - id: email is required
   translation: email is required!
@@ -52,7 +52,24 @@
   translation: background image
 - id: kubesphere console screenshot
   translation: kubesphere console screenshot
-
+- id: Learn More
+  translation: Learn More
+- id: Download this page (PDF)
+  translation: Download this page (PDF)
+- id: Last updated
+  translation: Last updated
+- id: What’s on this Page
+  translation: What’s on this Page
+- id: Last
+  translation: Last
+- id: Next
+  translation: Next
+- id: edit
+  translation: Edit
+- id: feedback
+  translation: Feedback
+- id: share
+  translation: Share
 
 
 
