@@ -52,12 +52,12 @@
   translation: background image
 - id: kubesphere console screenshot
   translation: kubesphere console screenshot
-- id: Overview
-  translation: Overview
+- id: Learn More
+  translation: Learn More
 - id: Download this page (PDF)
   translation: Download this page (PDF)
-- id: update time
-  translation: update time
+- id: Last updated
+  translation: Last updated
 - id: What’s on this Page
   translation: What’s on this Page
 - id: Last

@@ -48,7 +48,7 @@
         <div class="middle-div">
             <div class="top-div common-flex-layout">
                 <div class="contributor-div">
-                    <span>{{ i18n "update time" }}:</span>
+                    <span>{{ i18n "Last updated" }}:</span>
                     <span class="update-time"></span>
                     <ul class="contributor-avatar"></ul>
                     <span class="more-contributor"></span>
@@ -123,6 +123,7 @@
             {{ end }}
             <div></div>
         </div>
+        {{ if .IsPage }}
         <div class="aside aside-fixed">
             <div class='title'>
                 {{ i18n "What’s on this Page" }}
@@ -131,9 +132,12 @@
                 {{ .TableOfContents }}
             </div>
         </div>
+        {{ end }}
     </div>
 </section>
+{{ if .IsPage }}
 <script src='{{ "js/aside.js" | relURL }}'></script>
+{{ end }}
 <script>
     var filePath = '{{ .File.Path }}'
     // var filePath = 'README.md'

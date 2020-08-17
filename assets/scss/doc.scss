@@ -91,7 +91,7 @@ body {
                 ul {
                     li {
                         margin: 12px 0;
-                        font-size: 16px;
+                        font-size: 14px;
                         line-height: 1.5;
 
                         & > a {
@@ -118,8 +118,8 @@ body {
     .second-section-menu {
         display: none;
         position: absolute;
-        top: 10px;
-        left: 20px;
+        top: 0;
+        left: 0px;
         width: 16px;
         cursor: pointer;
         z-index: 1;
@@ -150,7 +150,7 @@ body {
 
         .nav-menu {
             padding: 20px;
-            font-size: 16px;
+            font-size: 14px;
             color: #31383e;
             background-color: #f6f8fa;
             ul {
@@ -177,7 +177,7 @@ body {
                 font-size: 0;
 
                 span {
-                    font-size: 16px;
+                    font-size: 14px;
                 }
 
                 .arrow {
@@ -237,11 +237,12 @@ body {
     .middle-div {
         position: relative;
         margin-left: 274px;
-        margin-right: 184px;
+        margin-right: 80px;
         padding: 10px 20px;
 
         @media only screen and (max-width: $mobile-max-width) {
             margin: 0;
+            padding: 0;
         }
 
         .top-div {
@@ -378,6 +379,15 @@ body {
             }
         }
 
+        .content-div {
+            h2 {
+                text-align: left;
+            }
+            .md-body {
+                font-size: 14px;
+            }
+        }
+
         .page-div {
             position: relative;
             margin-top: 20px;
@@ -464,12 +474,12 @@ body {
         position: fixed;
         top: 220px;
         left: 50%;
-        transform: translateX(396px);
+        transform: translateX(500px);
     }
 
     .aside-absolute {
         position: absolute;
-        right: 0;
+        right: -104px;
         bottom: 0;
         top: none;
         left: none;
@@ -478,9 +488,20 @@ body {
 
 .popular-page-div {
     position: relative;
+    display: inline-block;
+    box-sizing: border-box;
+    width: 373px;
     padding: 20px;
+    margin-top: 17px;
+    margin-left: 5px;
     border-radius: 3px;
     background-color: #f6f8fa;
+
+    @media only screen and (max-width: $mobile-max-width) {
+        display: block;
+        width: 100%;
+        margin-left: 0;
+    }
 
     img {
         position: absolute;
@@ -493,27 +514,18 @@ body {
         border-radius: 7px;
         box-shadow: 0 4px 8px 0 rgba(36, 46, 66, 0.06), 0 8px 16px 0 rgba(36, 46, 66, 0.05);
         background-color: #ffffff;     
-        
-        @media only screen and (max-width: $mobile-max-width) {
-            left: 10px;
-            width: 20px;
-            height: 20px;
-            padding: 5px;
-        }
     }
 
     div {
-        margin: 0 60px 0 90px;
+        margin-left: 84px;
 
-        @media only screen and (max-width: $mobile-max-width) {
-            margin: 0 20px 0 30px;
-
-        }
         h2 {
+            height: 24px;
             margin: 0;
             text-align: left;
             font-size: 16px;
             line-height: 1.5;
+            overflow: hidden;
 
             a {
                 color: #333333;
@@ -525,34 +537,13 @@ body {
         }
 
         p {
+            max-height: 42px;
             margin-top: 8px;
             margin-bottom: 0;
-            font-size: 16px;
+            font-size: 14px;
             line-height: 1.5;
             color: #31383e;
-        }
-    }
-
-    & > a {
-        position: absolute;
-        top: 50%;
-        right: 20px;
-        transform: translateY(-50%);
-        width: 34px;
-        height: 34px;
-        background-image: url("/images/docs/arrow.svg");
-        background-repeat: no-repeat;
-        background-position: center;
-        background-size: cover;
-
-        &:hover {
-            background-image: url("/images/docs/arrow-hover.svg");
-        }
-
-        @media only screen and (max-width: $mobile-max-width) {
-            right: 10px;
-            width: 24px;
-            height: 24px;
+            overflow: hidden;
         }
     }
 }
