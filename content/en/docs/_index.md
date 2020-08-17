@@ -1,5 +1,5 @@
 ---
-title: "docs"
+title: "Documentation"
 css: "scss/docs.scss"
 
 LinkTitle: "Documentation"

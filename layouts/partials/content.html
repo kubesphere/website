@@ -47,6 +47,11 @@
   </section>
   {{ partial "footer.html" $context }}
   <script src='{{ "js/aside.js" | relURL }}'></script>
+  <script>
+    var viewer = new Viewer(document.querySelector('.md-body'), {
+        url: 'src'
+    })
+  </script>
 </body>
 
 </html>

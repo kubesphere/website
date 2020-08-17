@@ -231,9 +231,20 @@
         })
     }
 
-    getFileContributors()
-    bindClickMenu()
-    bindClickSecondMenu()
+    var useViewer = function() {
+        var viewer = new Viewer(document.querySelector('.md-body'), {
+            url: 'src'
+        })
+    }
+
+    var __main = function() {
+        getFileContributors()
+        bindClickMenu()
+        bindClickSecondMenu()
+        useViewer()
+    }
+
+    __main()
 
 </script>
 {{ end }}
