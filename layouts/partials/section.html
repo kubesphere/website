@@ -6,7 +6,7 @@
             <span><img src="{{ .Params.icon }}" alt="{{ .LinkTitle }}"></span>
             <a href="{{ .RelPermalink }}">{{ .LinkTitle }}</a>
         </h2>
-        {{ $page_list := where (union .Pages .Sections).ByWeight ".Params._build.render" "!=" false }}
+        {{ $page_list := (union (where .Pages ".Params._build.render" "!=" false) .Sections).ByWeight }}
         {{ $length := len $page_list}}
         <ul>
             {{ range first 5 $page_list }}

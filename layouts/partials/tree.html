@@ -25,7 +25,7 @@
 {{ end }}
 
 <ul class="{{ if $list_active }}ul-active{{ end }}">
-	{{ $pages := where (union $s.Pages $s.Sections).ByWeight ".Params._build.render" "!=" false }}
+	{{ $pages := (union (where $s.Pages ".Params._build.render" "!=" false) $s.Sections).ByWeight }}
 	{{ range $pages }}
 	{{ $active := eq . $p }}
 	<li class="list{{ if $active }} active{{ end }}">
