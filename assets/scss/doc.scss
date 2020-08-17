@@ -261,6 +261,7 @@ body {
                 display: inline;
                 vertical-align: middle;
                 font-size: 0;
+                margin-left: 10px;
 
                 li {
                     display: inline;
@@ -298,7 +299,12 @@ body {
                 a {
                     color: #3f5264;
                 }
+
+                &:first-child {
+                    margin-left: 0;
+                }
             }
+            
             .edit-div {
                 .icon-span {
                     background-image: url("/images/docs/edit.svg");

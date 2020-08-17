@@ -170,10 +170,6 @@
   text-align: center;
   color: #171c34;
   text-shadow: 0 4px 8px rgba(35, 45, 65, 0.1);
-
-  @media only screen and (max-width: $mobile-max-width) {
-    margin-bottom: 20px;
-  }
 }
 
 .md-body h3 {
