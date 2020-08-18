@@ -70,6 +70,14 @@
   translation: Feedback
 - id: share
   translation: Share
+- id: note
+  translation: Note
+- id: tip
+  translation: Tip
+- id: info
+  translation: Info
+- id: warning
+  translation: Warning
 
 
 

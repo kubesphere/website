@@ -8,6 +8,40 @@ weight: 1400
 
 ## Vision
 
+{{< notice note >}} 
+### This is a simple note. 
+{{</ notice >}}
+
+{{< notice tip >}} 
+This is a simple tip. 
+{{</ notice >}}
+
+{{< notice info >}} 
+This is a simple info. 
+{{</ notice >}}
+
+{{< notice warning >}} 
+This is a simple warning. 
+{{</ notice >}}
+
+{{< tabs >}}
+
+{{< tab "first" >}} 
+### Why KubeSphere
+{{</ tab >}}
+
+{{< tab "second" >}} 
+```
+console.log('test')
+```
+{{</ tab >}}
+
+{{< tab "third" >}} 
+this is third tab 
+{{</ tab >}} 
+
+{{</ tabs >}}
+
 KubeSphere is a distributed operating system that provides full stack system services and a pluggable framework for third-party software integration for enterprise-critical containerized workloads running in data center.
 
 Kubernetes has now become the de facto standard for deploying containerized applications at scale in private, public and hybrid cloud environments. However, many people easily get confused when they start to use Kubernetes as it is complicated and has many additional components to manage, some of which need to be installed and deployed by users themselves, such as storage service and network service. At present, Kubernetes only provides open source solutions or projects, which may be difficult to install, maintain and operate to some extent. For users, learning costs and barrier to entry are both high. In a word, it is not easy to get started quickly.
