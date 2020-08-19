@@ -4,24 +4,24 @@ keywords: 'kubernetes, kubesphere, VMware vSphere, installation'
 description: 'How to install KubeSphere on VMware vSphere Linux machines'
 ---
 
-# 在vSphere部署高可用的 KubeSphere
+# 在 vSphere 部署高可用的 KubeSphere
 
-对于生产环境，我们需要考虑集群的高可用性。如果关键组件（例如kube-apiserver，kube-scheduler和kube-controller-manager）都在同一主节点上运行，则一旦主节点出现故障，Kubernetes和KubeSphere将不可用。因此，我们需要通过为负载均衡器配置多个主节点来设置高可用性集群。您可以使用任何云负载平衡器或任何硬件负载平衡器（例如F5）。另外，Keepalived和HAproxy或Nginx也是创建高可用性集群的替代方法。
+对于生产环境，我们需要考虑集群的高可用性。如果关键组件（例如 kube-apiserver，kube-scheduler 和 kube-controller-manager）都在同一主节点上运行，则一旦主节点出现故障，Kubernetes 和 KubeSphere 将不可用。因此，我们需要通过为负载均衡器配置多个主节点来设置高可用性集群。您可以使用任何云负载平衡器或任何硬件负载平衡器（例如F5）。另外，Keepalived 和HAproxy 或 Nginx 也是创建高可用性集群的替代方法。
 
-本教程为您提供了一个示例，说明如何使用[keepalived + haproxy](https://kubesphere.com.cn/forum/d/1566-kubernetes-keepalived-haproxy)对kube-apiserver进行负载均衡，实现高可用kubernetes集群。
+本教程为您提供了一个示例，说明如何使用 [keepalived + haproxy](https://kubesphere.com.cn/forum/d/1566-kubernetes-keepalived-haproxy) 对 kube-apiserver 进行负载均衡，实现高可用 kubernetes 集群。
 
 ## 前提条件
 
-- 请遵循该[指南](https://github.com/kubesphere/kubekey)，确保您已经知道如何将KubeSphere与多节点集群一起安装。有关用于安装的config yaml文件的详细信息，请参阅多节点安装。本教程重点介绍如何配置负载均衡器。
-- 您需要一个VMware vSphere帐户来创建VM资源。
-- 考虑到数据的持久性，对于生产环境，我们建议您准备持久性存储并预先创建StorageClass。为了进行开发和测试，您可以使用集成的OpenEBS直接将LocalPV设置为存储服务。
+- 请遵循该[指南](https://github.com/kubesphere/kubekey)，确保您已经知道如何将 KubeSphere 与多节点集群一起安装。有关用于安装的 config yaml 文件的详细信息，请参阅多节点安装。本教程重点介绍如何配置负载均衡器。
+- 您需要一个 VMware vSphere 帐户来创建VM资源。
+- 考虑到数据的持久性，对于生产环境，我们建议您准备持久性存储并预先创建 StorageClass 。为了进行开发和测试，您可以使用集成的 OpenEBS 直接将 LocalPV设置为存储服务。
 
 ## 部署架构
 ![部署架构](../../../../../static/images/docs/vsphere/kubesphereOnVsphere-zh-部署架构.png)
 
 ## 创建主机
 
-本示例创建 9 台 **CentOS Linux release 7.6.1810 (Core)** 的虚拟机，每台配置为 8Core16GB100G。
+本示例创建 9 台 **CentOS Linux release 7.6.1810 (Core)**  的虚拟机，每台配置为 8Core16GB100G。
 
 | 主机IP | 主机名称 | 角色 |
 | --- | --- | --- |
@@ -34,6 +34,8 @@ description: 'How to install KubeSphere on VMware vSphere Linux machines'
 |10.10.71.67|vip|vip|
 |10.10.71.77|lb-0|lb（keepalived + haproxy）|
 |10.10.71.66|lb-1|lb（keepalived + haproxy）|
+
+
 选择可创建的资源池，点击右键-新建虚拟机(创建虚拟机入口请好几个，自己选择）
 ![0-1-新创](../../../../../static/images/docs/vsphere/kubesphereOnVsphere-zh-0-1-新创.png)
 选择创建类型-创建新虚拟机
@@ -48,12 +50,12 @@ description: 'How to install KubeSphere on VMware vSphere Linux machines'
 ![0-1-5-兼容性](../../../../../static/images/docs/vsphere/kubesphereOnVsphere-zh-0-1-5-兼容性.png)
 选择客户机操作系统，Linux CentOS 7 (64位)
 ![0-1-6-系统](../../../../../static/images/docs/vsphere/kubesphereOnVsphere-zh-0-1-6-系统.png)
-自定义硬件，这里操作系统是挂载的ISO文件（打开电源时连接），网络是VLAN71（勾选）
+自定义硬件，这里操作系统是挂载的 ISO 文件（打开电源时连接），网络是 VLAN71（勾选）
 ![0-1-7-硬件](../../../../../static/images/docs/vsphere/kubesphereOnVsphere-zh-0-1-7-硬件.png)
 清单，确认无误后，点击确定
 ![0-1-8](../../../../../static/images/docs/vsphere/kubesphereOnVsphere-zh-0-1-8.png)
 
-## 部署keepalived+haproxy
+## 部署 keepalived+haproxy
 ###  1. yum 安装
 
 ```bash
@@ -62,11 +64,11 @@ description: 'How to install KubeSphere on VMware vSphere Linux machines'
 yum install keepalived haproxy psmisc -y
 ```
 
-### 2. 配置haproxy
+### 2. 配置 haproxy
 
-在IP为10.10.71.77与10.10.71.66的服务器 ，配置haproxy (两台lb机器配置一致即可，注意后端服务地址)
+在IP为10.10.71.77与10.10.71.66的服务器 ，配置 haproxy  (两台 lb 机器配置一致即可，注意后端服务地址)
 ```bash
-#Haproxy配置/etc/haproxy/haproxy.cfg
+#Haproxy 配置 /etc/haproxy/haproxy.cfg
 global
     log         127.0.0.1 local2
     chroot      /var/lib/haproxy
@@ -111,14 +113,14 @@ backend kube-apiserver
 ```bash
 #启动之前检查语法是否有问题
 haproxy -f /etc/haproxy/haproxy.cfg -c
-#启动Haproxy，并设置开机自启动
+#启动 Haproxy，并设置开机自启动
 systemctl restart haproxy && systemctl enable haproxy
-#停止Haproxy
+#停止 Haproxy
 systemctl stop haproxy
 ```
-### 3. 配置keepalived
+### 3. 配置 keepalived
 ```bash
-# 主haproxy 77 lb-0-10.10.71.77
+# 主 haproxy 77 lb-0-10.10.71.77
 #/etc/keepalived/keepalived.conf
 global_defs {
   notification_email {
@@ -158,7 +160,7 @@ vrrp_instance haproxy-vip {
 }
 ```
 ```bash
-#备haproxy 66 lb-1-10.10.71.66
+#备 haproxy 66 lb-1-10.10.71.66
 #/etc/keepalived/keepalived.conf
 global_defs {
   notification_email {
@@ -174,7 +176,7 @@ vrrp_script chk_haproxy {
   weight 2
 }
 vrrp_instance haproxy-vip {
-  state BACKUP #备份服务器 是backup
+  state BACKUP #备份服务器 是 backup
   priority 90 #优先级要低（把备份的90修改为100）
   interface ens192                        #实例绑定的网卡
   virtual_router_id 60
@@ -185,7 +187,7 @@ vrrp_instance haproxy-vip {
   }
   unicast_src_ip 10.10.71.66      #当前机器地址
   unicast_peer {
-    10.10.71.77                         #peer中其它机器地址
+    10.10.71.77                         #peer 中其它机器地址
   }
   virtual_ipaddress {
     #加/24
@@ -197,23 +199,23 @@ vrrp_instance haproxy-vip {
 }
 ```
 ```bash
-#启动keepalived，设置开机自启动
+#启动 keepalived，设置开机自启动
 systemctl restart keepalived && systemctl enable keepalived
 systemctl stop keepaliv
-systemctl start keepalived    #开启keepalived服务
+systemctl start keepalived    #开启 keepalived服务
 ```
 
-### 4. 验证keepalived + haproxy
+### 4. 验证 keepalived + haproxy
 
-- 使用`ip a s`查看各lb节点vip绑定情况
-- 暂停vip所在节点haproxy：`systemctl stop haproxy`
-- 再次使用`ip a s`查看各lb节点vip绑定情况，查看vip是否发生漂移
-- 或者使用`systemctl status -l keepalived` 命令查看
+- 使用 `ip a s` 查看各 lb 节点 vip 绑定情况
+- 暂停vip所在节点 haproxy：`systemctl stop haproxy`
+- 再次使用 `ip a s `查看各lb节点vip绑定情况，查看vip是否发生漂移
+- 或者使用 `systemctl status -l keepalived`  命令查看
 
 ## 获取安装程序可执行文件
 
 ```bash
-#下载installer 至一台目标机器
+#下载 installer 至一台目标机器
 curl -O -k https://kubernetes.pek3b.qingstor.com/tools/kubekey/kk
 chmod +x kk
 ```
@@ -225,13 +227,13 @@ chmod +x kk
 ### 使用kubekey部署k8s集群
 
 ```bash
-# 创建配置文件(一个示例配置文件)|包含kubesphere的配置文件
+# 创建配置文件(一个示例配置文件)|包含 kubesphere 的配置文件
 ./kk create config --with-kubesphere v3.0.0 -f ~/config-sample.yaml
-#如果重复安装，镜像就不用再下载了，可以skip
+#如果重复安装，镜像就不用再下载了，可以 skip
 ./kk create cluster -f ~/config-sample.yaml --debug --skip-pull-images
-#删除cluster
+#删除 cluster
 ./kk delete cluster -f ~/config-sample.yaml --debug --skip-pull-images
-#小提示，如果安装过程中碰到`Failed to add worker to cluster: Failed to exec command...`
+#小提示，如果安装过程中碰到 `Failed to add worker to cluster: Failed to exec command...`
 kubeadm reset
 ```
 #### 多集群配置
