@@ -1,11 +1,11 @@
 ---
-title: "Introduction"
-description: "Help you to better understand KubeSphere with detailed graphics and contents"
+title: "Enable Pluggable Components"
+description: "Enable KubeSphere Pluggable Components"
 layout: "single"
 
-linkTitle: "Introduction"
+linkTitle: "Enable Pluggable Components"
 
-weight: 1000
+weight: 3500
 
 icon: "/images/docs/docs.svg"
 
