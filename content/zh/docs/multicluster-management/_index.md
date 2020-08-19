@@ -1,11 +1,11 @@
 ---
-title: "Introduction"
-description: "Help you to better understand KubeSphere with detailed graphics and contents"
+title: "Multi-cluster Management"
+description: "Import a hosted or on-premise Kubernetes cluster into KubeSphere"
 layout: "single"
 
-linkTitle: "Introduction"
+linkTitle: "Multi-cluster Management"
 
-weight: 1000
+weight: 3000
 
 icon: "/images/docs/docs.svg"
 

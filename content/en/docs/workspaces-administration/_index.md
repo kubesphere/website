@@ -1,11 +1,11 @@
 ---
-title: "Introduction"
-description: "Help you to better understand KubeSphere with detailed graphics and contents"
+title: "Workspace Administration"
+description: "Help you to better manage KubeSphere workspace"
 layout: "single"
 
-linkTitle: "Introduction"
+linkTitle: "Workspace Administration"
 
-weight: 1000
+weight: 4200
 
 icon: "/images/docs/docs.svg"
 
