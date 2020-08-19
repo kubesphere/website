@@ -1,7 +1,7 @@
 ---
-标题: "KubeSphere 在 VMware vSphere 高可用实例"
-关键字: "Kubesphere，安装，高可用性，高可用性，负载均衡器"
-描述: "本教程用于安装高可用性集群"
+title: "VMware vSphere Installation"
+keywords: 'kubernetes, kubesphere, VMware vSphere, installation'
+description: 'How to install KubeSphere on VMware vSphere Linux machines'
 ---
 
 # 在vSphere部署高可用的 KubeSphere
