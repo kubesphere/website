@@ -1,11 +1,11 @@
 ---
-title: "Introduction"
-description: "Help you to better understand KubeSphere with detailed graphics and contents"
+title: "Upgrade"
+description: "Upgrade KubeSphere and Kubernetes"
 layout: "single"
 
-linkTitle: "Introduction"
+linkTitle: "Upgrade"
 
-weight: 1000
+weight: 4000
 
 icon: "/images/docs/docs.svg"
 

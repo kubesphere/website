@@ -1,11 +1,11 @@
 ---
-title: "Introduction"
+title: "Quick Start"
 description: "Help you to better understand KubeSphere with detailed graphics and contents"
 layout: "single"
 
-linkTitle: "Introduction"
+linkTitle: "Quick Start"
 
-weight: 1000
+weight: 1500
 
 icon: "/images/docs/docs.svg"
 

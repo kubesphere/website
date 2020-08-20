@@ -1,11 +1,11 @@
 ---
-title: "Introduction"
+title: "Cluster Administration"
 description: "Help you to better understand KubeSphere with detailed graphics and contents"
 layout: "single"
 
-linkTitle: "Introduction"
+linkTitle: "Cluster Administration"
 
-weight: 1000
+weight: 4100
 
 icon: "/images/docs/docs.svg"
 

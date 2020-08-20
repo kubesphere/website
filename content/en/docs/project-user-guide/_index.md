@@ -1,11 +1,10 @@
 ---
-title: "Introduction"
-description: "Help you to better understand KubeSphere with detailed graphics and contents"
+title: "Project User Guide"
+description: "Help you to better manage resources in a KubeSphere project"
 layout: "single"
 
-linkTitle: "Introduction"
-
-weight: 1000
+linkTitle: "Project User Guide"
+weight: 4300
 
 icon: "/images/docs/docs.svg"
 
@@ -18,5 +17,7 @@ In this chapter, we will demonstrate how to use KubeKey to provision a new Kuber
 ## Most Popular Pages
 
 Below you will find some of the most common and helpful pages from this chapter. We highly recommend you to review them at first.
+
+{{< popularPage icon="/images/docs/bitmap.jpg" title="Install KubeSphere on AWS EC2" description="Provisioning a new Kubernetes and KubeSphere cluster based on AWS" link="" >}}
 
 {{< popularPage icon="/images/docs/bitmap.jpg" title="Install KubeSphere on AWS EC2" description="Provisioning a new Kubernetes and KubeSphere cluster based on AWS" link="" >}}
