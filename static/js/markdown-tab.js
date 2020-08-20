@@ -29,9 +29,7 @@ function addCopyButtons(clipboard) {
   document.querySelectorAll('pre > code').forEach(function (codeBlock) {
       var button = document.createElement('div');
       button.className = 'copy-code-button';
-      button.type = 'button';
-      var inner = document.createElement('div');
-      button.appendChild(inner)
+      button.title = "Copy Code"
       button.addEventListener('click', function () {
           clipboard.writeText(codeBlock.innerText).then(function () {
               /* Chrome doesn't seem to blur automatically,
@@ -40,15 +38,7 @@ function addCopyButtons(clipboard) {
           }, function (error) {
           });
       });
-      var pre = codeBlock.parentNode
-
-      pre.addEventListener('mouseenter', function() {
-        button.style.display = 'block'
-      })
-
-      pre.addEventListener('mouseleave', function() {
-        button.style.display = 'none'
-      })
+      var pre = codeBlock.parentNode;
 
       pre.insertBefore(button, codeBlock);
 

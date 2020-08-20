@@ -408,7 +408,14 @@
 }
 
 .md-body pre {
+  position: relative;
   word-wrap: normal;
+
+  &:hover {
+    .copy-code-button {
+      display: block;
+    }
+  }
 }
 
 .md-body pre > code {
