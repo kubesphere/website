@@ -1,6 +1,6 @@
 {{ define "main" }}
 
-{{ with .Params.section1}}
+{{ with .Params.section1 }}
 <section class='section-1 bg-cover' style='background-image: url("{{ .image }}");'>
     <div class="title-div common-layout">
         <h1 class="title-h1">{{ .title }}</h1>
@@ -14,5 +14,27 @@
         {{ partial "section" . }}
     </div>
 </section>
-<script src='{{ "js/markdown-tab.js" | relURL }}'></script>
+
+{{ with .Params.section3 }}
+<section class="section-3">
+    <div class="common-layout">
+        <div class="left-part-div">
+            <h2>{{ .title }}</h2>
+            <p>{{ .description }}</p>
+            <div class="common-flex-layout">
+                {{ range .list }}
+                <div>
+                    <img src="{{ .image }}" alt="">
+                    <p>{{ .content }}</p>
+                </div>
+                {{ end }}
+            </div>
+        </div>
+        <div class="right-part-div">
+            <h3>{{ .titleRight }}</h3>
+            <a href="{{ .btnLink }}"><button>{{ .btnContent }}</button></a>
+        </div>
+    </div>
+</section>
+{{ end }}
 {{ end }}

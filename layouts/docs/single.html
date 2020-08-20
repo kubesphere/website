@@ -50,18 +50,20 @@
                 <div class="contributor-div">
                     <span>{{ i18n "Last updated" }}:</span>
                     <span class="update-time"></span>
-                    <ul class="contributor-avatar"></ul>
+                    <a href="{{ .Site.Params.githubBlobUrl }}/{{ .Site.Language.Lang }}/{{ .File.Path }}">
+                        <ul class="contributor-avatar"></ul>
+                    </a>
                     <span class="more-contributor"></span>
                 </div>
                 <div class="mutual-div common-flex-layout">
                     <div class="edit-div">
-                        <a href="{{ .Site.Params.githubEditUrl}}/{{.Site.Language.Lang}}/{{ .File.Path }}" target="_blank">
+                        <a href="{{ .Site.Params.githubEditUrl }}/{{ .Site.Language.Lang }}/{{ .File.Path }}" target="_blank">
                             <span class="icon-span"></span>
                             <span>{{ i18n "edit" }}</span>
                         </a>
                     </div>
                     <div class="feedback-div">
-                        <a href="{{ .Site.Params.githubUrl}}/issues/new" target="_blank">
+                        <a href="{{ .Site.Params.githubUrl }}/issues/new" target="_blank">
                         <span class="icon-span"></span>
                         <span>{{ i18n "feedback" }}</span>
                         </a>
@@ -74,15 +76,15 @@
                         <ul>
                             <li>
                                 <img src="/images/docs/twitter.svg" alt="twitter">
-                                <a href="http://twitter.com/share?url={{ .Permalink }}&text={{ .Title }}" target="_blank" rel="noopener noreferrer">twitter</a>
+                                <a data-type="twitter" href="http://twitter.com/share?url={{ .Permalink }}&text={{ .Title }}" target="_blank" rel="noopener noreferrer">twitter</a>
                             </li>
                             <li>
                                 <img src="/images/docs/linkedIn.svg" alt="linkedIn">
-                                <a href="http://www.linkedin.com/shareArticle?mini=true&url={{ .Permalink }}" target="_blank" rel="noopener noreferrer">linkedIn</a>
+                                <a data-type="linkedin" href="http://www.linkedin.com/shareArticle?mini=true&url={{ .Permalink }}" target="_blank" rel="noopener noreferrer">linkedIn</a>
                             </li>
                             <li>
                                 <img src="/images/docs/facebook.svg" alt="facebook">
-                                <a href="http://www.facebook.com/sharer.php?u={{ .Permalink }}" target="_blank" rel="noopener noreferrer">facebook</a>
+                                <a data-type="facebook" href="http://www.facebook.com/sharer.php?u={{ .Permalink }}" target="_blank" rel="noopener noreferrer">facebook</a>
                             </li>
                             <li>
                                 <img src="/images/docs/email.svg" alt="email" >
@@ -138,12 +140,13 @@
 </section>
 {{ if .IsPage }}
 <script src='{{ "js/aside.js" | relURL }}'></script>
-<script src='{{ "js/markdown-tab.js" | relURL }}'></script>
-
 {{ end }}
+<script src='{{ "js/share.js" | relURL }}'></script>
+<script src='{{ "js/markdown-tab.js" | relURL }}'></script>
 <script>
     var languageCode = '{{.Site.Language.Lang}}'
     var filePath = '{{ .File.Path }}'
+    var githubUrl = '{{ .Site.Params.githubUrl }}'
     // var filePath = 'README.md'
 
     var getLatestTime = function(data) {
@@ -242,6 +245,12 @@
     var useViewer = function() {
         var viewer = new Viewer(document.querySelector('.md-body'), {
             url: 'src'
+        })
+    }
+
+    var bindClickContributor = function() {
+        $('.contributor-avatar').click(function() {
+
         })
     }
 

@@ -15,6 +15,24 @@ icon: "/images/docs/docs.svg"
 
 In this chapter, we will demonstrate how to use KubeKey to provision a new Kubernetes and KubeSphere cluster based on different infrastructures. Kubekey can help you to quickly build a production-ready cluster architecture on a set of machines from zero to one. It also helps you to easily scale the cluster and install pluggable components on existing architecture.
 
+```
+console.log('aaa')
+```
+
+```html
+<div class="menu section-control">
+  <div></div>
+  <div></div>
+  <div></div>
+</div>
+<div class="menu section-control">
+  <div></div>
+  <div></div>
+  <div></div>
+</div>
+
+```
+
 ## Most Popular Pages
 
 Below you will find some of the most common and helpful pages from this chapter. We highly recommend you to review them at first.
