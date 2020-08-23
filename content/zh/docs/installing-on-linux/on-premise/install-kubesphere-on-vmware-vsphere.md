@@ -10,18 +10,18 @@ description: 'How to install KubeSphere on VMware vSphere Linux machines'
 
 本教程为您提供了一个示例，说明如何使用 [keepalived + haproxy](https://kubesphere.com.cn/forum/d/1566-kubernetes-keepalived-haproxy) 对 kube-apiserver 进行负载均衡，实现高可用 kubernetes 集群。
 
-## 前提条件
+## 1. 前提条件
 
 - 请遵循该[指南](https://github.com/kubesphere/kubekey)，确保您已经知道如何将 KubeSphere 与多节点集群一起安装。有关用于安装的 config yaml 文件的详细信息，请参阅多节点安装。本教程重点介绍如何配置负载均衡器。
 - 您需要一个 VMware vSphere 帐户来创建VM资源。
 - 考虑到数据的持久性，对于生产环境，我们建议您准备持久性存储并预先创建 StorageClass 。为了进行开发和测试，您可以使用集成的 OpenEBS 直接将 LocalPV设置为存储服务。
 
-## 部署架构
+## 2. 部署架构
 ![部署架构](/images/docs/vsphere/kubesphereOnVsphere-zh-architecture.png)
 
-## 创建主机
+## 3. 创建主机
 
-本示例创建 9 台 **CentOS Linux release 7.6.1810（Core）**  的虚拟机，每台配置为 8 Core 16 GB 100 G。
+本示例创建 9 台 **CentOS Linux release 7.6.1810（Core）**  的虚拟机，默认的最小化安装，每台配置为 2 Core 4 GB 40 G 即可。
 
 | 主机 IP | 主机名称 | 角色 |
 | --- | --- | --- |
@@ -71,7 +71,7 @@ description: 'How to install KubeSphere on VMware vSphere Linux machines'
 
 ![0-1-8](/images/docs/vsphere/kubesphereOnVsphere-zh-0-1-8.png)
 
-## 部署 keepalived+haproxy
+## 4. 部署 keepalived+haproxy
 ###  1. yum 安装
 
 ```bash
@@ -228,7 +228,7 @@ systemctl start keepalived    #开启 keepalived服务
 - 再次使用 `ip a s ` 查看各 lb 节点 vip 绑定情况，查看 vip 是否发生漂移
 - 或者使用 `systemctl status -l keepalived`  命令查看
 
-## 获取安装程序可执行文件
+## 5. 获取安装程序可执行文件
 
 ```bash
 #下载 installer 至一台目标机器
@@ -236,23 +236,17 @@ curl -O -k https://kubernetes.pek3b.qingstor.com/tools/kubekey/kk
 chmod +x kk
 ```
 
-## 创建多节点群集
+## 6. 创建多节点群集
 
 您可以使用高级安装来控制自定义参数或创建多节点群集。具体来说，通过指定配置文件来创建集群。
 
-### kubekey 部署 k8s 集群
+### 1. kubekey 部署 k8s 集群
 
 ```bash
 # 创建配置文件(一个示例配置文件)|包含 kubesphere 的配置文件
 ./kk create config --with-kubesphere v3.0.0 -f ~/config-sample.yaml
-#如果重复安装，镜像就不用再下载了，可以 skip
-./kk create cluster -f ~/config-sample.yaml --debug --skip-pull-images
-#删除 cluster
-./kk delete cluster -f ~/config-sample.yaml --debug --skip-pull-images
-#小提示，如果安装过程中碰到 `Failed to add worker to cluster: Failed to exec command...`
-kubeadm reset
 ```
-#### 多集群配置
+#### 1.1 集群节点配置
 ```yaml
 #vi ~/config-sample.yaml
 apiVersion: kubekey.kubesphere.io/v1alpha1
@@ -382,7 +376,10 @@ spec:
   servicemesh:         # Whether to install KubeSphere Service Mesh (Istio-based). It provides fine-grained traffic management, observability and tracing, and offer visualization for traffic topology
     enabled: false
 ```
-#### 输出结果
+#### 1.2 验证安装结果
+
+如果在 install.sh 最好返回 `Welcome to KubeSphere` ，则表示已安装成功。
+
 ```bash
 **************************************************
 #####################################################
@@ -403,3 +400,10 @@ https://kubesphere.io             2020-08-15 23:32:12
 #####################################################
 ```
 
+#### 1.3 登录 console 界面
+
+使用给定的访问地址进行访问，进入到 KubeSphere 的登陆界面并使用默认账号（用户名 `admin`，密码 `P@88w0rd`）即可登陆平台。
+
+![登录](/images/docs/vsphere/login.png)
+
+![默认界面](/images/docs/vsphere/default.png)
