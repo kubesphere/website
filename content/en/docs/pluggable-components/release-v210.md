@@ -1,9 +1,9 @@
 ---
-title: "Release Notes For 2.1.0"
-keywords: "kubernetes, docker, kubesphere, jenkins, istio, prometheus"
-description: "KubeSphere Release Notes For 2.1.0"
+title: "KubeSphere DevOps System"
+keywords: "kubernetes, jenkins, kubesphere, DevOps, cicd"
+description: "How to Enable KubeSphere DevOps System"
 
-linkTitle: "Release Notes - 2.1.0"
+linkTitle: "KubeSphere DevOps System"
 weight: 200
 ---
 

@@ -1,9 +1,9 @@
 ---
-title: "Release Notes For 2.0.1"
-keywords: "kubernetes, docker, kubesphere, jenkins, istio, prometheus"
-description: "KubeSphere Release Notes For 2.0.1"
+title: "KubeSphere Service Mesh System"
+keywords: "kubernetes, istio, kubesphere, service-mesh, microservice"
+description: "How to Enable KubeSphere Service Mesh System"
 
-linkTitle: "Release Notes - 2.0.1"
+linkTitle: "KubeSphere Service Mesh System"
 weight: 400
 ---
 

@@ -1,5 +1,5 @@
 ---
-linkTitle: "Install on Public Cloud"
+linkTitle: "Cluster Operation"
 weight: 2200
 
 _build:

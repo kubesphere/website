@@ -1,9 +1,9 @@
 ---
-title: "KubeSphere Alerting and Notification"
-keywords: "kubernetes, alertmanager, kubesphere, alerting, notification"
-description: "How to Enable Alerting and Notification System"
+title: "KubeSphere Auditing Logs"
+keywords: "kubernetes, auditing, kubesphere, logs"
+description: "How to enable KubeSphere auditing logs system"
 
-linkTitle: "KubeSphere Alerting and Notification"
+linkTitle: "KubeSphere Auditing Logs"
 weight: 500
 ---
 

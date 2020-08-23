@@ -1,9 +1,9 @@
 ---
-title: "Release Notes For 2.1.1"
-keywords: "kubernetes, docker, kubesphere, jenkins, istio, prometheus"
-description: "KubeSphere Release Notes For 2.1.1"
+title: "KubeSphere Application Store"
+keywords: "kubernetes, docker, kubesphere, app-store, openpitrix"
+description: "How to Enable KubeSphere Application Store"
 
-linkTitle: "Release Notes - 2.1.1"
+linkTitle: "KubeSphere Application Store"
 weight: 100
 ---
 
