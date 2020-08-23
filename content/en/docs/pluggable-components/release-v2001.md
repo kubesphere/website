@@ -1,10 +1,10 @@
 ---
-title: "KubeSphere Alerting and Notification"
-keywords: "kubernetes, alertmanager, kubesphere, alerting, notification"
-description: "How to Enable Alerting and Notification System"
+title: "KubeSphere Events System"
+keywords: "kubernetes, events, kubesphere, k8s-events"
+description: "How to enable KubeSphere events system"
 
-linkTitle: "KubeSphere Alerting and Notification"
-weight: 500
+linkTitle: "KubeSphere Events System"
+weight: 700
 ---
 
 KubeSphere 2.0.0 was released on **May 18th, 2019**.

@@ -1,6 +1,6 @@
 ---
-linkTitle: "Install on Linux"
-weight: 2200
+linkTitle: "Install on On-premise Kubernetes"
+weight: 2300
 
 _build:
     render: false

@@ -1,9 +1,9 @@
 ---
-title: "Release Notes For 2.0.2"
-keywords: "kubernetes, docker, kubesphere, jenkins, istio, prometheus"
-description: "KubeSphere Release Notes For 2.0.2"
+title: "KubeSphere Logging System"
+keywords: "kubernetes, Elasticsearch, kubesphere, Logging, logs"
+description: "How to Enable KubeSphere Logging System"
 
-linkTitle: "Release Notes - 2.0.2"
+linkTitle: "KubeSphere Logging System"
 weight: 300
 ---
 
