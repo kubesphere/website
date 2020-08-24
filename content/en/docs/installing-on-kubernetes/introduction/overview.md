@@ -7,11 +7,9 @@ linkTitle: "Overview"
 weight: 2105
 ---
 
-
-
 ![KubeSphere+K8s](https://pek3b.qingstor.com/kubesphere-docs/png/20191123144507.png)
 
-As part of KubeSphere's commitment to provide a plug-and-play architecture for users, it can be easily installed on existing Kubernetes clusters. More specifically, KubeSphere can be deployed both on Kubernetes hosted on clouds (e.g. AWS EKS, QingCloud QKE and Google GKE) or on-premises.
+As part of KubeSphere's commitment to provide a plug-and-play architecture for users, it can be easily installed on existing Kubernetes clusters. More specifically, KubeSphere can be deployed both on Kubernetes hosted on clouds (e.g. AWS EKS, QingCloud QKE and Google GKE) or on-premises. This is because KubeSphere does not hack Kubernetes itself. It only interacts with the Kubernetes API to manage Kubernetes cluster resources. In other words, KubeSphere can be installed on any native Kubernetes cluster and Kubernetes distribution.
 
 This section gives you an overview of the general steps of installing KubeSphere on Kubernetes. For more information about the specific way of installation in different environments, see Installing on Hosted Kubernetes and Installing on On-premises Kubernetes.
 
@@ -29,6 +27,9 @@ After you make sure your existing Kubernetes cluster meets all the requirements,
 
 ```bash
 kubectl apply -f https://raw.githubusercontent.com/kubesphere/ks-installer/master/deploy/kubesphere-installer.yaml
+```
+
+```bash
 kubectl apply -f https://raw.githubusercontent.com/kubesphere/ks-installer/master/deploy/cluster-configuration.yaml
 ```
 
@@ -64,10 +65,11 @@ kubectl get svc/ks-console -n kubesphere-system
 
 If you start with a default minimal installation, refer to Enable Pluggable Components to install other components.
 
-{{< notice note >}} 
+{{< notice tip >}}
 
 - Pluggable components can be enabled either before or after the installation. Please refer to the example file [cluster-configuration.yaml](https://github.com/kubesphere/ks-installer/blob/master/deploy/cluster-configuration.yaml) for more details.
 - Make sure there is enough CPU and memory available in your cluster.
+- It is highly recommended that you install these pluggable components to discover the full-stack features and capabilities provided by KubeSphere.
 
 {{</ notice >}}
 
