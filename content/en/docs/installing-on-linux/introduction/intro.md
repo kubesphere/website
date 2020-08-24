@@ -45,13 +45,13 @@ Three scenarios to use KubeKey:
 
 {{< notice note >}}
 
-If you have existing Kubernetes clusters, please refer to [ks-installer](https://github.com/kubesphere/ks-installer).
+If you have existing Kubernetes clusters, please refer to [Installing on Kubernetes](https://kubesphere-v3.netlify.app/docs/installing-on-kubernetes/).
 
 {{</ notice >}} 
 
 ## Quick Installation for Development and Testing
 
-KubeSphere has decoupled some components since v2.1.0. KubeKey only installs necessary components by default as this way features fast installation and minimal resource consumption. If you want to install any optional component, see [Overview of Pluggable Components](../intro#pluggable-components-overview) for details.
+KubeSphere has decoupled some components since v2.1.0. KubeKey only installs necessary components by default as this way features fast installation and minimal resource consumption. If you want to enable enhanced pluggable functionalities, see [Overview of Pluggable Components](../intro#pluggable-components-overview) for details.
 
 The quick installation of KubeSphere is only for development or testing since it uses local volume for storage by default. If you want a production installation, see HA Cluster Configuration.
 
@@ -68,8 +68,8 @@ For air-gapped installation, please refer to [Install KubeSphere on Air Gapped L
 
 KubeKey allows users to install a highly available cluster for production. Users need to configure load balancers and persistent storage services in advance.
 
-- [Persistent Service Configuration](../storage-configuration): By default, KubeKey uses [Local Volume](https://kubernetes.io/docs/concepts/storage/volumes/#local) based on [openEBS](https://openebs.io/) to provide storage services with dynamic provisioning in Kubernetes clusters. It is convenient for the quick installation of a testing environment. In a production environment, it must have a storage server set up. Please refer to [Persistent Service Configuration](../storage-configuration) for details.
-- [Load Balancer Configuration for HA installation](../master-ha): Before you get started with multi-node installation in a production environment, you need to configure load balancers. Either cloud LB or `HAproxy + keepalived` works for the installation.
+- [Persistent Storage Configuration](../storage-configuration): By default, KubeKey uses [Local Volume](https://kubernetes.io/docs/concepts/storage/volumes/#local) based on [openEBS](https://openebs.io/) to provide storage services with dynamic provisioning in Kubernetes clusters. It is convenient for the quick installation of a testing environment. In a production environment, it must have a storage server set up. Please refer to [Persistent Storage Configuration](../storage-configuration) for details.
+- [Load Balancer Configuration for HA installation](../master-ha): Before you get started with multi-node installation in a production environment, you need to configure load balancers. Cloud load balancers, Nginx and `HAproxy + Keepalived` all work for the installation.
 
 For more information, see HA Cluster Configuration. You can also see the specific step of HA installations across major cloud providers in Installing on Public Cloud.
 
@@ -101,7 +101,7 @@ You need to drain a node before you remove. For more information, see Remove Nod
 
 ### Add New Storage Classes
 
-KubeKey allows you to set a new storage class after the installation. By default, the local volume of OpenEBS is adopted for persistent storage services. However, this is for development or testing purpose. It is recommended to change the default storage class in a production environment.
+KubeKey allows you to set a new storage class after the installation. You can set different storage classes for KubeSphere itself and your workloads.
 
 For more information, see Add New Storage Classes.
 
