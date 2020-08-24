@@ -1,7 +1,7 @@
 ---
-title: "Deploy KubeSphere on OKE"
-keywords: 'Kubernetes, KubeSphere, OKE, Installation'
-description: 'How to install KubeSphere on OKE'
+title: "Deploy KubeSphere on Oracle OKE"
+keywords: 'Kubernetes, KubeSphere, OKE, Installation, Oracle-cloud'
+description: 'How to install KubeSphere on Oracle OKE'
 
 weight: 2247
 ---
