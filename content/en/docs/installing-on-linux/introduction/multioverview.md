@@ -20,13 +20,13 @@ A multi-node cluster is composed of at least one master node and one worker node
 
 ## Why KubeKey
 
-If you are not familiar with Linux and network management, you may find it difficult to set up a highly-functional multi-node Kubernetes cluster. Starting from the version 3.0.0, KubeSphere uses a brand-new installer called KubeKey to replace the old ansible-based installer. Developed in Go language, KubeKey allows users to quickly deploy a multi-node architecture.
+If you are not familiar with Kubernetes components, you may find it difficult to set up a highly-functional multi-node Kubernetes cluster. Starting from the version 3.0.0, KubeSphere uses a brand-new installer called KubeKey to replace the old ansible-based installer. Developed in Go language, KubeKey allows users to quickly deploy a multi-node architecture.
 
 For users who do not have an existing Kubernetes cluster, they only need to create a configuration file with few commands and add node information (e.g. IP address and node roles) in it after KubeKey is downloaded. With one command, the installation will start and no additional operation is needed.
 
 ### Motivation
 
-- The ansible-based installer has a bunch of software dependencies such as Python. KubeKey is developed in Go language to get rid of the problem in a variety of environments, making sure the installation is successful.
+- The previous ansible-based installer has a bunch of software dependencies such as Python. KubeKey is developed in Go language to get rid of the problem in a variety of environments, making sure the installation is successful.
 - KubeKey uses Kubeadm to install Kubernetes clusters on nodes in parallel as much as possible in order to reduce installation complexity and improve efficiency. It will greatly save installation time compared to the older installer.
 - With KubeKey, users can scale clusters from an all-in-one cluster to a multi-node cluster, even an HA cluster.
 - KubeKey aims to install clusters as an object, i.e., CaaO.
@@ -37,16 +37,17 @@ Please see the requirements for hardware and operating system shown below. To ge
 
 ### System Requirements
 
-| Systems                               | Minimum Requirements (Each node)            |
-| ------------------------------------- | ------------------------------------------- |
-| **Ubuntu** *16.04, 18.04*             | CPU: 2 Cores, Memory: 4 G, Disk Space: 20 G |
-| **Debian** *Buster, Stretch*          | CPU: 2 Cores, Memory: 4 G, Disk Space: 20 G |
-| **CentOS/RHEL** *7*                   | CPU: 2 Cores, Memory: 4 G, Disk Space: 20 G |
-| **SUSE Linux Enterprise Server** *15* | CPU: 2 Cores, Memory: 4 G, Disk Space: 20 G |
+| Systems                                                | Minimum Requirements (Each node)            |
+| ------------------------------------------------------ | ------------------------------------------- |
+| **Ubuntu** *16.04, 18.04*                              | CPU: 2 Cores, Memory: 4 G, Disk Space: 40 G |
+| **Debian** *Buster, Stretch*                           | CPU: 2 Cores, Memory: 4 G, Disk Space: 40 G |
+| **CentOS** *7*.x                                       | CPU: 2 Cores, Memory: 4 G, Disk Space: 40 G |
+| **Red Hat Enterprise Linux 7**                         | CPU: 2 Cores, Memory: 4 G, Disk Space: 40 G |
+| **SUSE Linux Enterprise Server 15/openSUSE Leap 15.2** | CPU: 2 Cores, Memory: 4 G, Disk Space: 40 G |
 
 {{< notice note >}}
 
-The path /var/lib/docker is mainly used to store the container data, and will gradually increase in size during use and operation. In the case of a production environment, it is recommended that /var/lib/docker should mount a drive separately.
+The path `/var/lib/docker` is mainly used to store the container data, and will gradually increase in size during use and operation. In the case of a production environment, it is recommended that `/var/lib/docker` should mount a drive separately.
 
 {{</ notice >}} 
 
@@ -82,27 +83,46 @@ This example includes three hosts as below with the master node serving as the t
 
 As below, you can either download the binary file or build the binary package from source code.
 
-### Download Binary
+{{< tabs >}}
+
+{{< tab "Download Binary" >}}
+
+Execute the following command:
 
 ```bash
 curl -O -k https://kubernetes.pek3b.qingstor.com/tools/kubekey/kk
+```
+
+```bash
 chmod +x kk
 ```
 
-### Build Binary from Source Code
+{{</ tab >}}
+
+{{< tab "Build Binary from Source Code" >}}
+
+Execute the following command one by one:
 
 ```bash
 git clone https://github.com/kubesphere/kubekey.git
+```
+
+```bash
 cd kubekey
+```
+
+```bash
 ./build.sh
 ```
 
-{{< notice note >}}
+Note:
 
-- For the second way, Docker needs to be installed before the building.
+- Docker needs to be installed before the building.
 - If you have problems accessing `https://proxy.golang.org/`, execute `build.sh -p` instead.
 
-{{</ notice >}} 
+{{</ tab >}}
+
+{{</ tabs >}}
 
 ## Step 3: Create a Cluster
 
@@ -130,7 +150,7 @@ Here are some examples for your reference:
 ./kk create config [-f ~/myfolder/abc.yaml]
 ```
 
-- You can customize the storage plugins (supported: localVolume, nfsClient, rbd and glusterfs). You can also specify multiple plugins separated by comma. Please note the first one you add will be the default storage class.
+- You can customize the storage plugins (supported: LocalPV, NFS Client, Ceph RBD, and GlusterFS). You can also specify multiple plugins separated by comma. Please note the first one you add will be the default storage class.
 
 ```bash
 ./kk create config --with-storage localVolume
@@ -201,19 +221,22 @@ hosts:
 - `master`: Master node names
 - `worker`: Worker node names
 
-#### controlPlaneEndpoint
+#### controlPlaneEndpoint (for HA installation only)
 
-`controlPlaneEndpoint` sets a stable IP address or DNS name for the control plane. Please note that the address and port should be indented by two spaces in `config-sample.yaml`, and the `address` should be VIP. See KubeSphere on QingCloud Instance for more information.
+`controlPlaneEndpoint` allows you to define an external load balancer for an HA cluster. You need to prepare and configure an external load balancer if and only if you need to install more than 3 master nodes. Please note that the address and port should be indented by two spaces in `config-sample.yaml`, and the `address` should be VIP. See KubeSphere on QingCloud Instance for more information.
 
-You can enable the multi-cluster feature by editing the configuration file. For more information, see Multi-cluster Management.
+{{< notice tip >}}
 
-You can also select the components you want to install. For more information, see Enable Pluggable Components. For an example of a complete config-sample.yaml file, see [this file](https://github.com/kubesphere/kubekey/blob/master/docs/config-example.md).
+- You can enable the multi-cluster feature by editing the configuration file. For more information, see Multi-cluster Management.
+- You can also select the components you want to install. For more information, see Enable Pluggable Components. For an example of a complete config-sample.yaml file, see [this file](https://github.com/kubesphere/kubekey/blob/master/docs/config-example.md).
+
+{{</ notice >}}
 
 When you finish editing, save the file.
 
 ### 3. Create a cluster using the configuration file
 
-```
+```bash
 ./kk create cluster -f config-sample.yaml
 ```
 
@@ -229,7 +252,7 @@ The whole installation process may take 10-20 minutes, depending on your machine
 
 When the installation finishes, you can see the content as follows:
 
-```
+```bash
 #####################################################
 ###              Welcome to KubeSphere!           ###
 #####################################################
