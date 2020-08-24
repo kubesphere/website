@@ -1,5 +1,5 @@
 ---
-linkTitle: "Install on Public Cloud"
+linkTitle: "Installing on Public Cloud"
 weight: 2200
 
 _build:
