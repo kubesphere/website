@@ -12,7 +12,7 @@ Technically, you can either install, administer, and manage Kubernetes yourself 
 
 In this tutorial, we will use two key features of Azure virtual machines (VMs): 
 
-- Virtual Machine Scale Sets: Azure VMSS let you create and manage a group of load balanced VMs. The number of VM instances can automatically increase or decrease in response to demand or a defined schedule(Kubernates Autoscaler is available, but not covered in this tutorial, see [autoscaler](https://github.com/kubernetes/autoscaler/tree/master/cluster-autoscaler/cloudprovider/azure) for more details), Which perfect fits the Worker Nodes.
+- Virtual Machine Scale Sets: Azure VMSS let you create and manage a group of load balanced VMs. The number of VM instances can automatically increase or decrease in response to demand or a defined schedule(Kubernates Autoscaler is available, but not covered in this tutorial, see [autoscaler](https://github.com/kubernetes/autoscaler/tree/master/cluster-autoscaler/cloudprovider/azure) for more details), which perfectly fits the Worker Nodes.
 - Availability sets: An availability set is a logical grouping of VMs within a datacenter that automatically distributed across fault domains. This approach limits the impact of potential physical hardware failures, network outages, or power interruptions. All the Master and ETCD VMs will be placed in an Availability sets to meet our High Availability goals.
 
 Besides those VMs, other resources like Load Balancer, Virtual Network and Network Security Group will be involved.
@@ -44,9 +44,9 @@ Those VMs will be attached to a LoadBalancer, there are two different rules are 
 
 ## Deploy HA Cluster Infrastructrue
 
-You don't have to create those resources one by one with Wizards. Following the best practice of **infrastructure as code** on Azure, All resources in the architecture are already defined as ARM templates.
+You don't have to create those resources one by one with Wizards. Following the best practice of **infrastructure as code** on Azure, all resources in the architecture are already defined as ARM templates.
 
-### Staring deploy with one click
+### Start to deploy with one click
 
 Click the *Deploy* button below, you will be redirected to Azure and asked to fill in deployment parameters.
 
@@ -145,7 +145,7 @@ In addition to the node information, you need to provide the load balancer infor
 
 ### Persistent Storage Plugin Configuration
 
-See [Sorage Configuration](../storage-configuration) for details.
+See [Storage Configuration](../storage-configuration) for details.
 
 ### Configure the Network Plugin
 
@@ -162,13 +162,44 @@ Azure Virtual Network doesn't support IPIP mode which used by [calico](https://d
 
 After you complete the configuration, you can execute the following command to start the installation:
 
-```
+```bash
 ./kk create cluster -f config-sample.yaml
 ```
 
+Inspect the logs of installation:
+
+```bash
+kubectl logs -n kubesphere-system $(kubectl get pod -n kubesphere-system -l app=ks-install -o jsonpath='{.items[0].metadata.name}') -f
+```
+When the installation finishes, you can see the following message:
+
+```bash
+#####################################################
+###              Welcome to KubeSphere!           ###
+#####################################################
+Console: http://10.128.0.44:30880
+Account: admin
+Password: P@88w0rd
+NOTES：
+  1. After logging into the console, please check the
+     monitoring status of service components in
+     the "Cluster Management". If any service is not
+     ready, please wait patiently until all components
+     are ready.
+  2. Please modify the default password after login.
+#####################################################
+https://kubesphere.io             2020-xx-xx xx:xx:xx
+```
+
+### Access KubeSphere Console
+
+Now that KubeSphere is installed, you can access the web console of KubeSphere by the following URL.
+
+-  http://{LoadBalancer IP}:30880
+
 ## Add addtional Ports
 
-Since we are using self-hosted Kubernetes solutions on Azure, So the Load Balancer is not integrated with [Kubernetes Service](https://kubernetes.io/docs/concepts/services-networking/service/#loadbalancer). But you still can manually map the NodePod to the PublicLB. There are 2 steps required.
+Since we are using self-hosted Kubernetes solutions on Azure, So the Load Balancer is not integrated with [Kubernetes Service](https://kubernetes.io/docs/concepts/services-networking/service/#loadbalancer). But you still can manually map the Nodeport to the PublicLB. There are 2 steps required.
 
 1. Create a new Load Balance Rule in the Load Balancer.
    ![Architecture](/images/docs/aks/azure-vm-loadbalancer-rule.png)
