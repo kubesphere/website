@@ -12,7 +12,7 @@ This guide walks you through the steps of deploying KubeSphere on [Google Kubern
 
 ## Prepare a GKE Cluster
 
-- A standard Kubernetes in GKE is a prerequisite of installing KubeSphere. Go to the navigation menu and refer to the image below to create a cluster.
+- A standard Kubernetes cluster in GKE is a prerequisite of installing KubeSphere. Go to the navigation menu and refer to the image below to create a cluster.
 
 ![create-cluster-gke](https://ap3.qingstor.com/kubesphere-website/docs/create-cluster-gke.jpg)
 
