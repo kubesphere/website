@@ -35,7 +35,7 @@ kubernate服务需要做到高可用,需要保证kube-apiserver的ha,所以推�
  |172.24.107.77|node3|node|
  机器有限,所以把etcd放入master,在生产环境建议单独部署etcd,提高稳定性
 
- ## 部署keepalived+haproxy
+ ## 使用阿里SLB部署
  ###  1. 创建SLB
  ![1-1-创建slb](../../../../../static/images/docs/ali-ecs/ali-slb-create.png)
  创建SLB实例
