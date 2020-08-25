@@ -1,14 +1,14 @@
 ---
- title: "KubeSphere 在 阿里云ECS 高可用实例"
- keywords: "Kubesphere，安装，高可用性，高可用性，负载均衡器"
- description: "本教程用于安装高可用性集群"
- 
- Weight: 2229
- ---
+title: "KubeSphere 在 阿里云ECS 高可用实例"
+keywords: "Kubesphere安装, 阿里云, ecs, 高可用性, 高可用性, 负载均衡器"
+description: "本教程用于安装高可用性集群"
 
- # 在阿里云ECS部署高可用的 KubeSphere
+Weight: 2230
+---
 
- 快速入门 尝试建议All-In-One入手
+# 在阿里云ECS部署高可用的 KubeSphere
+
+快速入门 尝试建议All-In-One入手
 
 但对于生产环境，我们需要考虑集群的高可用性。
 kubernate服务需要做到高可用,需要保证kube-apiserver的ha,所以推荐下列两种方式
