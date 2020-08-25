@@ -20,7 +20,7 @@ Users are provided with multiple installation options. Please note not all optio
 - Minimal Packages: Only install the minimum required system components of KubeSphere. Here is the minimum resource requirement:
   - 2vCPUs
   - 4GB RAM
-  - 20GB Storage
+  - 40GB Storage
 - [Full Packages](../complete-installation): Install all available system components of KubeSphere such as DevOps, service mesh, and alerting.
 
 For the installation on Kubernetes, see Overview of Installing on Kubernetes.
