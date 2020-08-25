@@ -1,7 +1,9 @@
 ---
- 标题: "KubeSphere 在 阿里云ECS 高可用实例"
- 关键字: "Kubesphere，安装，高可用性，高可用性，负载均衡器"
- 描述: "本教程用于安装高可用性集群"
+ title: "KubeSphere 在 阿里云ECS 高可用实例"
+ keywords: "Kubesphere，安装，高可用性，高可用性，负载均衡器"
+ description: "本教程用于安装高可用性集群"
+ 
+ Weight: 2229
  ---
 
  # 在阿里云ECS部署高可用的 KubeSphere
@@ -54,20 +56,23 @@ kubernate服务需要做到高可用,需要保证kube-apiserver的ha,所以推�
 ![3-1-添加主机](../../../../../static/images/docs/ali-ecs/ali-slb-add.png)
 添加需要负载的3台master主机 6443端口(api-server)
 ![3-2-配置监听端口](../../../../../static/images/docs/ali-ecs/ali-slb-listen-conf1.png)
+
 ![3-3-配置监听端口](../../../../../static/images/docs/ali-ecs/ali-slb-listen-conf2.png)
+
 ![3-3-配置监听端口](../../../../../static/images/docs/ali-ecs/ali-slb-listen-conf3.png)
+
 - <font color=red>现在的健康检查暂时是失败的,因为还没部署master的服务,所以6443端口telnet不通的.
 </font>
 - 然后提交审核即可
 
- ## 4. 获取安装程序可执行文件
+ ### 4. 获取安装程序可执行文件
  ```bash
  #下载installer 至随意一台机器
  curl -O -k https://kubernetes.pek3b.qingstor.com/tools/kubekey/kk
  chmod +x kk
  ```
 
- ## 创建多节点群集
+ ### 创建多节点群集
 
  您可以使用高级安装来控制自定义参数或创建多节点群集。具体来说，通过指定配置文件来创建集群。
 
@@ -80,7 +85,7 @@ kubernate服务需要做到高可用,需要保证kube-apiserver的ha,所以推�
 # 同时安装存储插件 (支持：localVolume、nfsClient、rbd、glusterfs)。您可以指定多个插件并用逗号分隔。请注意，您添加的第一个将是默认存储类。
 ./kk create config --with-storage localVolume --with-kubesphere v3.0.0 -f config-sample.yaml
  ```
- #### 6. 多集群配置调整
+ ### 6. 多集群配置调整
  ```yaml
  #vi ~/config-sample.yaml
  apiVersion: kubekey.kubesphere.io/v1alpha1
@@ -199,7 +204,7 @@ kubernate服务需要做到高可用,需要保证kube-apiserver的ha,所以推�
      enabled: false
  ```
 
- #### 7. 执行命令创建集群
+ ### 7. 执行命令创建集群
  ```bash
 指定配置文件创建集群
 ./kk create cluster -f config-sample.yaml
@@ -240,7 +245,7 @@ kubectl logs -n kubesphere-system $(kubectl get pod -n kubesphere-system -l app=
  https://kubesphere.io             2020-08-24 23:30:06
  #####################################################
  ```
-## 下图为部署后的使用情况
+### 下图为部署后的使用情况
  ![部署架构](../../../../../static/images/docs/ali-ecs/succes.png)
 
 
