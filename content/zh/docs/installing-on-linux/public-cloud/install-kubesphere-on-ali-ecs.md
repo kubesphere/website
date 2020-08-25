@@ -1,30 +1,33 @@
 ---
-title: "KubeSphere 在 阿里云ECS 高可用实例"
-keywords: "Kubesphere安装, 阿里云, ecs, 高可用性, 高可用性, 负载均衡器"
+title: "KubeSphere 在阿里云 ECS 高可用实例"
+keywords: "Kubesphere 安装, 阿里云, ecs, 高可用性, 高可用性, 负载均衡器"
 description: "本教程用于安装高可用性集群"
 
 Weight: 2230
 ---
 
-# 在阿里云ECS部署高可用的 KubeSphere
+# 在阿里云 ECS 部署高可用的 KubeSphere
 
-快速入门 尝试建议All-In-One入手
-
-但对于生产环境，我们需要考虑集群的高可用性。
-kubernate服务需要做到高可用,需要保证kube-apiserver的ha,所以推荐下列两种方式
- 1. 阿里云SLB
+由于对于生产环境，我们需要考虑集群的高可用性。教你部署如何在阿里 ECS 实例服务快速部署一套高可用的生产环境
+Kubernetes 服务需要做到高可用,需要保证 kube-apiserver 的 HA ,推荐下列两种方式
+ 1. 阿里云 SLB 
  2. keepalived + haproxy [keepalived + haproxy](https://kubesphere.com.cn/forum/d/1566-kubernetes-keepalived-haproxy)对kube-apiserver进行负载均衡，实现高可用kubernetes集群。
 
  ## 前提条件
 
- - 请遵循该[指南](https://github.com/kubesphere/kubekey)，确保您已经知道如何将KubeSphere与多节点集群一起安装。有关用于安装的config yaml文件的详细信息，请参阅多节点安装。本教程重点介绍如何配置负载均衡器。
- - 考虑到数据的持久性，对于生产环境，我们不建议您使用存储OpenEBS,建议nfs,gfs等存储(需要提前安装)。文章为了进行开发和测试，集成的OpenEBS直接将LocalPV设置为存储服务。
+ - 请遵循该[指南](https://github.com/kubesphere/kubekey)，确保您已经知道如何将 KubeSphere 与多节点集群一起安装。有关用于安装的 config yaml 文件的详细信息。本教程重点介绍配置阿里负载均衡器服务高可用安装。
+ - 考虑到数据的持久性，对于生产环境，我们不建议您使用存储OpenEBS,建议 nfs , gfs 等存储(需要提前安装)。文章为了进行开发和测试，集成的 OpenEBS 直接将 LocalPV 设置为存储服务。
+ - SSH 可以访问所有节点.
+ - 所有节点的时间同步.
+ - Red Hat 在其 Linux 发行版本中包括了SELinux，建议关闭SELinux或者将SELinux的模式切换为Permissive[宽容]工作模式
 
  ## 部署架构
- ![部署架构](../../../../../static/images/docs/ali-ecs/ali.png)
+ 
+ ![部署架构](/images/docs/ali-ecs/ali.png)
+ 
  ## 创建主机
 
- 本示例创建 SLB + 6 台 **CentOS Linux release 7.6.1810 (Core)** 的虚拟机，每台配置为 2Core16GB50G
+ 本示例创建 SLB + 6 台 **CentOS Linux release 7.6.1810 (Core)** 的虚拟机，每台配置为 2Core4GB40G
 
  | 主机IP | 主机名称 | 角色 |
  | --- | --- | --- |
@@ -35,17 +38,23 @@ kubernate服务需要做到高可用,需要保证kube-apiserver的ha,所以推�
  |172.24.107.75|node1|node|
  |172.24.107.76|node2|node|
  |172.24.107.77|node3|node|
- 机器有限,所以把etcd放入master,在生产环境建议单独部署etcd,提高稳定性
-
- ## 使用阿里SLB部署
- ###  1. 创建SLB
- ![1-1-创建slb](../../../../../static/images/docs/ali-ecs/ali-slb-create.png)
- 创建SLB实例
- ### 2. 配置SLB
- ![2-1-创建slb](../../../../../static/images/docs/ali-ecs/ali-slb-config.png)
-
  
- 后面的config.yaml 需要配置slb分配的地址
+ > 注意:机器有限,所以把 etcd 放入 master,在生产环境建议单独部署 etcd,提高稳定性
+
+ ## 使用阿里 SLB 部署
+ ###  1. 创建 SLB
+ 
+ 进入到阿里云控制, 在左侧列表选择'负载均衡', 选择'实例管理' 进入下图, 选择'创建负载均衡'
+ 
+ ![1-1-创建slb](/images/docs/ali-ecs/ali-slb-create.png)
+ 
+ ### 2. 配置 SLB
+ 
+ 配置规格根据自身流量规模创建
+ 
+ ![2-1-创建slb](/images/docs/ali-ecs/ali-slb-config.png)
+ 
+后面的 config.yaml 需要配置 slb 分配的地址
  ```yaml
      controlPlaneEndpoint:
          domain: lb.kubesphere.local
@@ -53,33 +62,38 @@ kubernate服务需要做到高可用,需要保证kube-apiserver的ha,所以推�
          port: "6443"
 ```
  ### 3. 配置SLB 主机实例
-![3-1-添加主机](../../../../../static/images/docs/ali-ecs/ali-slb-add.png)
-添加需要负载的3台master主机 6443端口(api-server)
-![3-2-配置监听端口](../../../../../static/images/docs/ali-ecs/ali-slb-listen-conf1.png)
+ 
+ 需要在服务器组添加需要负载的3台 master 主机后按下图顺序配置监听 6443端口( api-server )
+ 
+![3-1-添加主机](/images/docs/ali-ecs/ali-slb-add.png)
 
-![3-3-配置监听端口](../../../../../static/images/docs/ali-ecs/ali-slb-listen-conf2.png)
+![3-2-配置监听端口](/images/docs/ali-ecs/ali-slb-listen-conf1.png)
 
-![3-3-配置监听端口](../../../../../static/images/docs/ali-ecs/ali-slb-listen-conf3.png)
+![3-3-配置监听端口](/images/docs/ali-ecs/ali-slb-listen-conf2.png)
 
-- <font color=red>现在的健康检查暂时是失败的,因为还没部署master的服务,所以6443端口telnet不通的.
-</font>
+![3-4-配置监听端口](/images/docs/ali-ecs/ali-slb-listen-conf3.png)
+
+- <font color=red>现在的健康检查暂时是失败的,因为还没部署 master 的服务,所以 6443 端口 telnet 不通的.</font>
 - 然后提交审核即可
 
  ### 4. 获取安装程序可执行文件
+ 
  ```bash
- #下载installer 至随意一台机器
+ #下载 kk installer 至随意一台机器
  curl -O -k https://kubernetes.pek3b.qingstor.com/tools/kubekey/kk
  chmod +x kk
  ```
 
- ### 创建多节点群集
+{{< notice tip >}} 
 
  您可以使用高级安装来控制自定义参数或创建多节点群集。具体来说，通过指定配置文件来创建集群。
+ 
+{{</ notice >}}
 
- ### 5. 使用kubekey部署k8s集群 带kubesphere
+ ### 5. 使用 kubekey 部署k8s集群和 kubesphere 控制台
 
  ```bash
- # 在当前位置创建配置文件config-sample.yaml|包含kubesphere的配置文件
+ # 在当前位置创建配置文件 config-sample.yaml |包含 kubesphere 的配置文件
  ./kk create config --with-kubesphere v3.0.0 -f config-sample.yaml
 --- 
 # 同时安装存储插件 (支持：localVolume、nfsClient、rbd、glusterfs)。您可以指定多个插件并用逗号分隔。请注意，您添加的第一个将是默认存储类。
@@ -206,53 +220,31 @@ kubernate服务需要做到高可用,需要保证kube-apiserver的ha,所以推�
 
  ### 7. 执行命令创建集群
  ```bash
-指定配置文件创建集群
+ # 指定配置文件创建集群
 ./kk create cluster -f config-sample.yaml
 
-查看kubesphere安装日志  -- 直到出现下面的输出结果
+ # 查看 kubesphere 安装日志  -- 直到出现控制台的访问地址和登陆账号
 kubectl logs -n kubesphere-system $(kubectl get pod -n kubesphere-system -l app=ks-install -o jsonpath='{.items[0].metadata.name}') -f
 ```
  
- ```
- #### 输出结果
- ```bash
- **************************************************
- task monitoring status is running
- task multicluster status is successful
- total: 2     completed:1
- **************************************************
- task monitoring status is successful
- task multicluster status is successful
- total: 2     completed:2
- **************************************************
- #####################################################
- ###              Welcome to KubeSphere!           ###
- #####################################################
- 
- Console: http://172.24.107.72:30880
- Account: admin
- Password: P@88w0rd
- 
- NOTES：
-   1. After logging into the console, please check the
-      monitoring status of service components in
-      the "Cluster Management". If any service is not
-      ready, please wait patiently until all components 
-      are ready.
-   2. Please modify the default password after login.
- 
- #####################################################
- https://kubesphere.io             2020-08-24 23:30:06
- #####################################################
- ```
-### 下图为部署后的使用情况
- ![部署架构](../../../../../static/images/docs/ali-ecs/succes.png)
+ - 访问公网 IP + Port 为部署后的使用情况,使用默认账号密码 (`admin/P@88w0rd`),文章安装为最小化,登陆点击`工作台` 可看到下图安装组件列表和机器情况.
 
+ ![面板图](/images/docs/ali-ecs/succes.png)
 
-```bash
+## 如何自定义开启可插拔组件
 
-#删除cluster
- ./kk delete cluster -f config-sample.yaml --debug --skip-pull-images
- #小提示，如果安装过程中碰到`Failed to add worker to cluster: Failed to exec command...`
- kubeadm reset
+ + 点击 `集群管理` - `自定义资源CRD` ,在过滤条件框输入 `ClusterConfiguration` ,如图下 
+
+ ![修改KsInstaller](/images/docs/ali-ecs/update_crd.png)
+ 
+ + 点击 `ClusterConfiguration` 详情,对 `ks-installer` 编辑保存退出即可,组件描述介绍:[文档说明](https://github.com/kubesphere/ks-installer/blob/master/deploy/cluster-configuration.yaml)
+ 
+ ![修改KsInstaller](/images/docs/ali-ecs/ks-install-source.png)
+
+## 安装问题
+
+> 提示: 如果安装过程中碰到 `Failed to add worker to cluster: Failed to exec command...`
+> <br>
+``` bash 处理方式
+    kubeadm reset
 ```
