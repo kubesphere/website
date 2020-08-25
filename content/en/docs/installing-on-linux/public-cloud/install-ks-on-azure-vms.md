@@ -6,7 +6,7 @@ description: "The tutorial is for installing a high-availability cluster on Azur
 
 ## Before you begin
 
-Technically, you can either install, administer, and manage Kubernetes yourself or go for a managed Kubernetes solution. If you are looking for a way to take advantage of Kubernetes with a hands-off approach, a fully managed platform solution is what you’re looking for, please see [Deploy KubeSphere on AKS](../../../installing-on-kubernetes/hosted-kubernetes/install-ks-on-aks) for more details. But if you want a bit more control over your configuration and setup a Highly Available clusters on Azure, this instruction will help you to setup a production-ready Kubernetes and KubeSphere.
+Technically, you can either install, administer, and manage Kubernetes yourself or go for a managed Kubernetes solution. If you are looking for a way to take advantage of Kubernetes with a hands-off approach, a fully managed platform solution is what you’re looking for, please see [Deploy KubeSphere on AKS](../../../installing-on-kubernetes/hosted-kubernetes/install-ks-on-aks) for more details. But if you want a bit more control over your configuration and setup a highly available cluster on Azure, this instruction will help you to setup a production-ready Kubernetes and KubeSphere.
 
 ## Introduction
 
@@ -25,11 +25,11 @@ Besides those VMs, other resources like Load Balancer, Virtual Network and Netwo
 
 ## Architecture
 
-Six machines of "Ubuntu 18.04" will be deployed in Azure Resources Group. Tree of them are grouped into an Availability sets, which will be used by Master and ETCD. Another tree VMs will be defined as a VMSS, Worker nodes will be run on it.
+Six machines of "Ubuntu 18.04" will be deployed in Azure Resources Group. Three of them are grouped into an Availability sets, playing the role of both Master and ETCD of the Kubernetes control plane. Another three VMs will be defined as a VMSS, Worker nodes will be run on it.
 
 ![Architecture](/images/docs/aks/Azure-architecture.png)
 
-Those VMs will be attached to a LoadBalancer, there are two different rules are per-defined in the LB:
+Those VMs will be attached to a load balancer, there are two predefined rules in the LB:
 
 - **Inbound NAT**: ssh port will be mapped for each machine, so we can easily manage VMs.
 - **Load Balancing**: http and https ports will be mapped to Node pools by default, we can add other ports on demand.
@@ -56,8 +56,8 @@ Click the *Deploy* button below, you will be redirected to Azure and asked to fi
 
 Only a few parameter need to be changed.
 
-- Choose the *Create new* link under the Resource group and fill in a Name such as "KubeSphereVMRG".
-- Fill in the Admin Username.
+- Choose the *Create new* link under the Resources group and fill in a Name such as "KubeSphereVMRG".
+- Fill in the admin's Username.
 - Copy your public ssh key and fill in the Admin Key. Or create new one with *ssh-keygen*.
 
 > Password authentication is restriced in the Linux configuration, only SSH accept.
@@ -66,13 +66,13 @@ Click the *Purchase* button in the bottom when you ready to continue.
 
 ### Review Azure Resources in the Portal
 
-Once the deployment success, you can find all the resources you need in the KubeSphereVMRG resource group. Take your time and check them one by one if you are new to Azure. Then find the public IP of LB and private IP addresses of the VMs. You need them in the next step.
+Once the deployment success, you can find all the resources you need in the KubeSphereVMRG Resources group. Take your time and check them one by one if you are new to Azure. Then find the public IP of LB and private IP addresses of the VMs. You will need them in the next step.
 
 ![New Created Resources](/images/docs/aks/azure-vm-all-resources.png)
 
 ## Deploy Kubernetes and Kubesphere
 
-For the following commands, you can execute them on your laptop or SSH to one of the Master VMs. There are files will be downloaded to local and disturbed to each VM during the installation. The installation will be much faster when you use **kk** in the Intranet than the Internet.
+You can execute the following command on your laptop or SSH to one of the Master VMs. There are files will be downloaded to local and disturbed to each VM during the installation. The installation will be much faster when you use **kk** in the Intranet than the Internet.
 
 ```bash
 # copy your private ssh to master-0
@@ -98,6 +98,11 @@ chmod +x kk
 ```
 ./kk create config --with-kubesphere v3.0.0 --with-kubernetes v1.17.9
 ```
+> Kubernetes Versions
+> - v1.15:   v1.15.12
+> - v1.16:   v1.16.13
+> - v1.17:   v1.17.9 (default)
+> - v1.18:   v1.18.6
 
 ### config-sample.yaml Example
 
@@ -141,7 +146,7 @@ In addition to the node information, you need to provide the load balancer infor
     port: "6443"
 ```
 
-> - Note we are using the public LB directly instead of an Internal LB due to the Azure [Load Balancer limits](https://docs.microsoft.com/en-us/azure/load-balancer/load-balancer-troubleshoot#cause-4-accessing-the-internal-load-balancer-frontend-from-the-participating-load-balancer-backend-pool-vm).
+> - Note we are using the public load balancer directly instead of an internal load balancer due to the Azure [Load Balancer limits](https://docs.microsoft.com/en-us/azure/load-balancer/load-balancer-troubleshoot#cause-4-accessing-the-internal-load-balancer-frontend-from-the-participating-load-balancer-backend-pool-vm).
 
 ### Persistent Storage Plugin Configuration
 
@@ -193,16 +198,14 @@ https://kubesphere.io             2020-xx-xx xx:xx:xx
 
 ### Access KubeSphere Console
 
-Now that KubeSphere is installed, you can access the web console of KubeSphere by the following URL.
-
--  http://{LoadBalancer IP}:30880
+Congratulation! Now you can access the KubeSphere console using http://10.128.0.44:30880 (Replace the IP with yours).
 
 ## Add addtional Ports
 
 Since we are using self-hosted Kubernetes solutions on Azure, So the Load Balancer is not integrated with [Kubernetes Service](https://kubernetes.io/docs/concepts/services-networking/service/#loadbalancer). But you still can manually map the Nodeport to the PublicLB. There are 2 steps required.
 
 1. Create a new Load Balance Rule in the Load Balancer.
-   ![Architecture](/images/docs/aks/azure-vm-loadbalancer-rule.png)
+   ![Load Balancer](/images/docs/aks/azure-vm-loadbalancer-rule.png)
 2. Create an Inbound Security rule to allow Internet access in the Network Security Group.
-   ![Architecture](/images/docs/aks/azure-vm-firewall.png)
+   ![Firewall](/images/docs/aks/azure-vm-firewall.png)
 
