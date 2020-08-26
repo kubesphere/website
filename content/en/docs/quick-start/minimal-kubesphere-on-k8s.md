@@ -1,8 +1,66 @@
 ---
 title: "Minimal KubeSphere on Kubernetes"
-keywords: 'kubesphere, kubernetes, docker, multi-tenant'
-description: 'Install a Minimal KubeSphere on Kubernetes'
+keywords: 'KubeSphere, Kubernetes, Minimal, Installation'
+description: 'Minimal Installation of KubeSphere on Kubernetes'
 
 linkTitle: "Minimal KubeSphere on Kubernetes"
 weight: 3020
 ---
+
+In addition to installing KubeSphere on a Linux machine, you can also deploy it on existing Kubernetes clusters directly. This QuickStart guide walks you through the general steps of completing a minimal KubeSphere installation on Kubernetes. For more information, see [Installing on Kubernetes](https://kubesphere-v3.netlify.app/docs/installing-on-kubernetes/).
+
+## Prerequisites
+
+Below is a quick check of your environment. For more information, see [Prerequisites](https://kubesphere-v3.netlify.app/docs/installing-on-kubernetes/introduction/prerequisites/).
+
+- Kubernetes version: `1.15.x, 1.16.x, 1.17.x, 1.18.x`;
+- CPU > 1 Core; Memory > 2 G;
+- A default Storage Class in your Kubernetes cluster is configured; use `kubectl get sc` to verify it.
+- The CSR signing feature is activated in kube-apiserver when it is started with the `--cluster-signing-cert-file` and `--cluster-signing-key-file` parameters. See [RKE installation issue](https://github.com/kubesphere/kubesphere/issues/1925#issuecomment-591698309).
+
+## Deploy KubeSphere
+
+After you make sure your machine meets the prerequisites, you can follow the steps below to install KubeSphere.
+
+- Execute the following commands to start installation:
+
+```bash
+kubectl apply -f https://raw.githubusercontent.com/kubesphere/ks-installer/master/deploy/kubesphere-installer.yaml
+```
+
+```bash
+kubectl apply -f https://raw.githubusercontent.com/kubesphere/ks-installer/master/deploy/cluster-configuration.yaml
+```
+
+{{< notice note >}} 
+
+If your server has trouble accessing GitHub, you can copy the content in [kubesphere-installer.yaml](https://raw.githubusercontent.com/kubesphere/ks-installer/master/deploy/kubesphere-installer.yaml) and [cluster-configuration.yaml](https://raw.githubusercontent.com/kubesphere/ks-installer/master/deploy/cluster-configuration.yaml) respectively and past it to local files. You then can use `kubectl apply -f` for the local files to install KubeSphere.
+
+{{</ notice >}} 
+
+- Inspect the logs of installation:
+
+```bash
+kubectl logs -n kubesphere-system $(kubectl get pod -n kubesphere-system -l app=ks-install -o jsonpath='{.items[0].metadata.name}') -f
+```
+
+{{< notice tip >}} 
+
+In cluster-configuration.yaml, you need to disable `metrics_server` manually by changing `true` to `false` if the component has already been installed in your environment.
+
+{{</ notice >}}
+
+- Use `kubectl get pod --all-namespaces` to see whether all pods are running normally in relevant namespaces of KubeSphere. If they are, check the port (30880 by default) of the console through the following command:
+
+```bash
+kubectl get svc/ks-console -n kubesphere-system
+```
+
+- Make sure port 30880 is opened in security groups and access the web console through the NodePort (`IP:30880`) with the default account and password (`admin/P@88w0rd`).
+- After logging in the console, you can check the status of different components in **Components**. You may need to wait for some components to be up and running if you want to use related services.
+
+![components](https://ap3.qingstor.com/kubesphere-website/docs/components.png)
+
+## Enable Pluggable Components (Optional)
+
+The guide above is used only for minimal installation by default. To enable other components in KubeSphere, see Enable Pluggable Components for more details.
