@@ -336,6 +336,10 @@ section {
 }
 
 // copy button
+.code-over-div {
+  position: relative;
+  overflow: auto;
+}
 .copy-code-button {
   display: none;
   position: absolute;

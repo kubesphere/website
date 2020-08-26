@@ -27,21 +27,21 @@ $('.nav-tabs a').click(function (e) {
 // copy button
 function addCopyButtons(clipboard) {
   document.querySelectorAll('pre > code').forEach(function (codeBlock) {
+      var div = document.createElement('div');
+      div.className = 'code-over-div';
       var button = document.createElement('div');
       button.className = 'copy-code-button';
       button.title = "Copy Code"
       button.addEventListener('click', function () {
           clipboard.writeText(codeBlock.innerText).then(function () {
-              /* Chrome doesn't seem to blur automatically,
-                  leaving the button in a focused state. */
               button.blur();
           }, function (error) {
           });
       });
       var pre = codeBlock.parentNode;
-
       pre.insertBefore(button, codeBlock);
-
+      div.appendChild(codeBlock)
+      pre.appendChild(div)
   });
 }
 if (navigator && navigator.clipboard) {
