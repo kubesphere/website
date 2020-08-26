@@ -20,7 +20,7 @@ To follow this guide, you need:
 
 ## 1.2 Lab
 
-| Role       | IP address          | hostname       | docker version | hardware | 系统          | 内核                       |
+| Role       | IP address          | Hostname       | Docker version | Hardware | System        | Kernel                     |
 | ---------- | ------------------- | -------------- | -------------- | -------- | ------------- | -------------------------- |
 | **master** | **192.168.144.131** | **k8s-master** | **18.09.9**    | **2c4g** | **CentOS7.7** | **3.10.0-1062.el7.x86_64** |
 | **node1**  | **192.168.144.136** | **k8s-node1**  | **18.09.9**    | **2c4g** | **CentOS7.7** | **3.10.0-1062.el7.x86_64** |
@@ -820,7 +820,7 @@ Enable Pluggable Components
 
 1. [Optional] Create the secret of certificate for Etcd in your Kubernetes cluster. This step is only needed when you want to enable Etcd monitoring.
 
-> Note: Create the secret according to the actual Etcd certificate path of your cluster; If the Etcd has not been configured certificate, an empty secret needs to be created.
+> Note: Create the secret according to the actual Etcd certificate path of your cluster; If the Etcd has not been configured certification, an empty secret needs to be created.
 
 - If the Etcd has been configured with certificates, refer to the following step (The following command is an example that is only used for the cluster created by `kubeadm`):
 
