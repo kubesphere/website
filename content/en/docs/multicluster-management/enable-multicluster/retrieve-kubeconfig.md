@@ -4,12 +4,12 @@ keywords: 'kubernetes, kubesphere, multicluster, hybrid-cloud'
 description: 'Overview'
 
 
-weight: 2340
+weight: 2345
 ---
 
 ## Prerequisites
 
-You have a Kubernetes cluster.
+You have a KubeSphere cluster.
 
 ## Explore KubeConfig File
 
