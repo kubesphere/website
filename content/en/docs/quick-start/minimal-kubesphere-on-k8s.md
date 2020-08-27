@@ -23,7 +23,14 @@ In addition to installing KubeSphere on a Linux machine, you can also deploy it 
 
 After you make sure your machine meets the prerequisites, you can follow the steps below to install KubeSphere.
 
-- Execute the following commands to start installation:
+- Please read the note below before you execute the commands to start installation:
+
+{{< notice note >}} 
+
+- If your server has trouble accessing GitHub, you can copy the content in [kubesphere-installer.yaml](https://raw.githubusercontent.com/kubesphere/ks-installer/master/deploy/kubesphere-installer.yaml) and [cluster-configuration.yaml](https://raw.githubusercontent.com/kubesphere/ks-installer/master/deploy/cluster-configuration.yaml) respectively and past it to local files. You then can use `kubectl apply -f` for the local files to install KubeSphere.
+- In cluster-configuration.yaml, you need to disable `metrics_server` manually by changing `true` to `false` if the component has already been installed in your environment, especially for cloud-hosted Kubernetes clusters.
+
+{{</ notice >}} 
 
 ```bash
 kubectl apply -f https://raw.githubusercontent.com/kubesphere/ks-installer/master/deploy/kubesphere-installer.yaml
@@ -33,23 +40,11 @@ kubectl apply -f https://raw.githubusercontent.com/kubesphere/ks-installer/maste
 kubectl apply -f https://raw.githubusercontent.com/kubesphere/ks-installer/master/deploy/cluster-configuration.yaml
 ```
 
-{{< notice note >}} 
-
-If your server has trouble accessing GitHub, you can copy the content in [kubesphere-installer.yaml](https://raw.githubusercontent.com/kubesphere/ks-installer/master/deploy/kubesphere-installer.yaml) and [cluster-configuration.yaml](https://raw.githubusercontent.com/kubesphere/ks-installer/master/deploy/cluster-configuration.yaml) respectively and past it to local files. You then can use `kubectl apply -f` for the local files to install KubeSphere.
-
-{{</ notice >}} 
-
 - Inspect the logs of installation:
 
 ```bash
 kubectl logs -n kubesphere-system $(kubectl get pod -n kubesphere-system -l app=ks-install -o jsonpath='{.items[0].metadata.name}') -f
 ```
-
-{{< notice tip >}} 
-
-In cluster-configuration.yaml, you need to disable `metrics_server` manually by changing `true` to `false` if the component has already been installed in your environment, especially for cloud-hosted Kubernetes clusters.
-
-{{</ notice >}}
 
 - Use `kubectl get pod --all-namespaces` to see whether all pods are running normally in relevant namespaces of KubeSphere. If they are, check the port (30880 by default) of the console through the following command:
 
