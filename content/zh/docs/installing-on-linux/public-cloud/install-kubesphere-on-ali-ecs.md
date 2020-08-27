@@ -1,25 +1,23 @@
 ---
 title: "KubeSphere 在阿里云 ECS 高可用实例"
-keywords: "Kubesphere 安装, 阿里云, ecs, 高可用性, 高可用性, 负载均衡器"
+keywords: "Kubesphere 安装， 阿里云， ECS， 高可用性， 高可用性， 负载均衡器"
 description: "本教程用于安装高可用性集群"
 
 Weight: 2230
 ---
 
-# 在阿里云 ECS 部署高可用的 KubeSphere
-
 由于对于生产环境，我们需要考虑集群的高可用性。教你部署如何在阿里 ECS 实例服务快速部署一套高可用的生产环境
-Kubernetes 服务需要做到高可用,需要保证 kube-apiserver 的 HA ,推荐下列两种方式
+Kubernetes 服务需要做到高可用，需要保证 kube-apiserver 的 HA ，推荐下列两种方式
  1. 阿里云 SLB 
- 2. keepalived + haproxy [keepalived + haproxy](https://kubesphere.com.cn/forum/d/1566-kubernetes-keepalived-haproxy)对kube-apiserver进行负载均衡，实现高可用kubernetes集群。
+ 2. keepalived + haproxy [keepalived + haproxy](https://kubesphere.com.cn/forum/d/1566-kubernetes-keepalived-haproxy)对 kube-apiserver 进行负载均衡，实现高可用 kubernetes 集群。
 
  ## 前提条件
 
- - 请遵循该[指南](https://github.com/kubesphere/kubekey)，确保您已经知道如何将 KubeSphere 与多节点集群一起安装。有关用于安装的 config yaml 文件的详细信息。本教程重点介绍配置阿里负载均衡器服务高可用安装。
- - 考虑到数据的持久性，对于生产环境，我们不建议您使用存储OpenEBS,建议 nfs , gfs 等存储(需要提前安装)。文章为了进行开发和测试，集成的 OpenEBS 直接将 LocalPV 设置为存储服务。
- - SSH 可以访问所有节点.
- - 所有节点的时间同步.
- - Red Hat 在其 Linux 发行版本中包括了SELinux，建议关闭SELinux或者将SELinux的模式切换为Permissive[宽容]工作模式
+ - 请遵循该[指南] (https://github.com/kubesphere/kubekey)，确保您已经知道如何将 KubeSphere 与多节点集群一起安装。有关用于安装的 config.yaml 文件的详细信息。本教程重点介绍配置阿里负载均衡器服务高可用安装。
+ - 考虑到数据的持久性，对于生产环境，我们不建议您使用存储OpenEBS，建议 NFS ， GlusterFS 等存储(需要提前安装)。文章为了进行开发和测试，集成的 OpenEBS 直接将 LocalPV 设置为存储服务。
+ - SSH 可以访问所有节点。
+ - 所有节点的时间同步。
+ - Red Hat 在其 Linux 发行版本中包括了SELinux，建议关闭 SELinux 或者将 SELinux 的模式切换为 Permissive [宽容]工作模式。
 
  ## 部署架构
  
@@ -39,16 +37,16 @@ Kubernetes 服务需要做到高可用,需要保证 kube-apiserver 的 HA ,推�
  |172.24.107.76|node2|node|
  |172.24.107.77|node3|node|
  
- > 注意:机器有限,所以把 etcd 放入 master,在生产环境建议单独部署 etcd,提高稳定性
+ > 注意:机器有限，所以把 etcd 放入 master，在生产环境建议单独部署 etcd，提高稳定性
 
  ## 使用阿里 SLB 部署
- ###  1. 创建 SLB
+ ###  创建 SLB
  
- 进入到阿里云控制, 在左侧列表选择'负载均衡', 选择'实例管理' 进入下图, 选择'创建负载均衡'
+ 进入到阿里云控制， 在左侧列表选择'负载均衡'， 选择'实例管理' 进入下图， 选择'创建负载均衡'
  
  ![1-1-创建slb](/images/docs/ali-ecs/ali-slb-create.png)
  
- ### 2. 配置 SLB
+ ###  配置 SLB
  
  配置规格根据自身流量规模创建
  
@@ -61,9 +59,9 @@ Kubernetes 服务需要做到高可用,需要保证 kube-apiserver 的 HA ,推�
          address: "39.104.82.170"
          port: "6443"
 ```
- ### 3. 配置SLB 主机实例
+ ###  配置SLB 主机实例
  
- 需要在服务器组添加需要负载的3台 master 主机后按下图顺序配置监听 6443端口( api-server )
+ 需要在服务器组添加需要负载的3台 master 主机后按下图顺序配置监听 6443 端口( api-server ) 
  
 ![3-1-添加主机](/images/docs/ali-ecs/ali-slb-add.png)
 
@@ -73,13 +71,17 @@ Kubernetes 服务需要做到高可用,需要保证 kube-apiserver 的 HA ,推�
 
 ![3-4-配置监听端口](/images/docs/ali-ecs/ali-slb-listen-conf3.png)
 
-- <font color=red>现在的健康检查暂时是失败的,因为还没部署 master 的服务,所以 6443 端口 telnet 不通的.</font>
+再按上述操作配置监听 30880 端口( ks-console )，主机添加选择全部主机节点。
+
+![3-5-配置监听端口](/images/docs/ali-ecs/ali-slb-listen-conf4.png)
+
+- <font color=red>现在的健康检查暂时是失败的，因为还没部署 master 的服务，所以端口 telnet 不通的。</font>
 - 然后提交审核即可
 
- ### 4. 获取安装程序可执行文件
+ ###  获取安装程序可执行文件
  
  ```bash
- #下载 kk installer 至随意一台机器
+ #下载 kk installer 至任意一台机器
  curl -O -k https://kubernetes.pek3b.qingstor.com/tools/kubekey/kk
  chmod +x kk
  ```
@@ -90,16 +92,40 @@ Kubernetes 服务需要做到高可用,需要保证 kube-apiserver 的 HA ,推�
  
 {{</ notice >}}
 
- ### 5. 使用 kubekey 部署k8s集群和 kubesphere 控制台
+ ###  使用 kubekey 部署k8s集群和 KubeSphere 控制台
 
  ```bash
- # 在当前位置创建配置文件 config-sample.yaml |包含 kubesphere 的配置文件
+ # 在当前位置创建配置文件 config-sample.yaml |包含 KubeSphere 的配置文件
  ./kk create config --with-kubesphere v3.0.0 -f config-sample.yaml
 --- 
 # 同时安装存储插件 (支持：localVolume、nfsClient、rbd、glusterfs)。您可以指定多个插件并用逗号分隔。请注意，您添加的第一个将是默认存储类。
 ./kk create config --with-storage localVolume --with-kubesphere v3.0.0 -f config-sample.yaml
  ```
- ### 6. 多集群配置调整
+
+```bash
+**************************************************
+#####################################################
+###              Welcome to KubeSphere!           ###
+#####################################################
+
+Console: http://172.24.107.72:30880
+Account: admin
+Password: P@88w0rd
+
+NOTES：
+  1. After logging into the console, please check the
+     monitoring status of service components in
+     the "Cluster Management". If any service is not
+     ready, please wait patiently until all components 
+     are ready.
+  2. Please modify the default password after login.
+
+#####################################################
+https://kubesphere.io             2020-08-24 23:30:06
+#####################################################
+```
+ ###  集群配置调整
+ 
  ```yaml
  #vi ~/config-sample.yaml
  apiVersion: kubekey.kubesphere.io/v1alpha1
@@ -218,26 +244,26 @@ Kubernetes 服务需要做到高可用,需要保证 kube-apiserver 的 HA ,推�
      enabled: false
  ```
 
- ### 7. 执行命令创建集群
+ ###  执行命令创建集群
  ```bash
  # 指定配置文件创建集群
 ./kk create cluster -f config-sample.yaml
 
- # 查看 kubesphere 安装日志  -- 直到出现控制台的访问地址和登陆账号
+ # 查看 KubeSphere 安装日志  -- 直到出现控制台的访问地址和登陆账号
 kubectl logs -n kubesphere-system $(kubectl get pod -n kubesphere-system -l app=ks-install -o jsonpath='{.items[0].metadata.name}') -f
 ```
  
- - 访问公网 IP + Port 为部署后的使用情况,使用默认账号密码 (`admin/P@88w0rd`),文章安装为最小化,登陆点击`工作台` 可看到下图安装组件列表和机器情况.
+ - 访问公网 IP + Port 为部署后的使用情况，使用默认账号密码 (`admin/P@88w0rd`)，文章安装为最小化，登陆点击`工作台` 可看到下图安装组件列表和机器情况。
 
  ![面板图](/images/docs/ali-ecs/succes.png)
 
 ## 如何自定义开启可插拔组件
 
- + 点击 `集群管理` - `自定义资源CRD` ,在过滤条件框输入 `ClusterConfiguration` ,如图下 
+ + 点击 `集群管理` - `自定义资源CRD` ，在过滤条件框输入 `ClusterConfiguration` ，如图下 
 
  ![修改KsInstaller](/images/docs/ali-ecs/update_crd.png)
  
- + 点击 `ClusterConfiguration` 详情,对 `ks-installer` 编辑保存退出即可,组件描述介绍:[文档说明](https://github.com/kubesphere/ks-installer/blob/master/deploy/cluster-configuration.yaml)
+ + 点击 `ClusterConfiguration` 详情，对 `ks-installer` 编辑保存退出即可，组件描述介绍:[文档说明](https://github.com/kubesphere/ks-installer/blob/master/deploy/cluster-configuration.yaml)
  
  ![修改KsInstaller](/images/docs/ali-ecs/ks-install-source.png)
 
