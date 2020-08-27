@@ -1,9 +1,9 @@
 ---
-title: "Quick Start"
+title: "Quickstarts"
 description: "Help you to better understand KubeSphere with detailed graphics and contents"
 layout: "single"
 
-linkTitle: "Quick Start"
+linkTitle: "Quickstarts"
 
 weight: 1500
 

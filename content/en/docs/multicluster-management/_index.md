@@ -1,6 +1,6 @@
 ---
 title: "Multi-cluster Management"
-description: "Import a hosted or on-premise Kubernetes cluster into KubeSphere"
+description: "Import a hosted or on-premises Kubernetes cluster into KubeSphere"
 layout: "single"
 
 linkTitle: "Multi-cluster Management"
