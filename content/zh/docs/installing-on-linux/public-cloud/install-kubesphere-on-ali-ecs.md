@@ -13,7 +13,7 @@ Kubernetes 服务需要做到高可用，需要保证 kube-apiserver 的 HA ，�
 
  ## 前提条件
 
- - 请遵循该[指南] (https://github.com/kubesphere/kubekey)，确保您已经知道如何将 KubeSphere 与多节点集群一起安装。有关用于安装的 config.yaml 文件的详细信息。本教程重点介绍配置阿里负载均衡器服务高可用安装。
+ - 请遵循该[指南](https://github.com/kubesphere/kubekey)，确保您已经知道如何将 KubeSphere 与多节点集群一起安装。有关用于安装的 config.yaml 文件的详细信息。本教程重点介绍配置阿里负载均衡器服务高可用安装。
  - 考虑到数据的持久性，对于生产环境，我们不建议您使用存储OpenEBS，建议 NFS ， GlusterFS 等存储(需要提前安装)。文章为了进行开发和测试，集成的 OpenEBS 直接将 LocalPV 设置为存储服务。
  - SSH 可以访问所有节点。
  - 所有节点的时间同步。
