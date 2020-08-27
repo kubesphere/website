@@ -50,20 +50,20 @@
                 <div class="contributor-div">
                     <span>{{ i18n "Last updated" }}:</span>
                     <span class="update-time"></span>
-                    <a href="{{ .Site.Params.githubBlobUrl }}/{{ .Site.Language.Lang }}/{{ .File.Path }}">
+                    <a href="{{ .Site.Params.githubBlobUrl }}/{{ .Site.Language.Lang }}/{{ .File.Path }}" target="_blank" rel="noopener noreferrer">
                         <ul class="contributor-avatar"></ul>
                     </a>
                     <span class="more-contributor"></span>
                 </div>
                 <div class="mutual-div common-flex-layout">
                     <div class="edit-div">
-                        <a href="{{ .Site.Params.githubEditUrl }}/{{ .Site.Language.Lang }}/{{ .File.Path }}" target="_blank">
+                        <a href="{{ .Site.Params.githubEditUrl }}/{{ .Site.Language.Lang }}/{{ .File.Path }}" target="_blank" rel="noopener noreferrer">
                             <span class="icon-span"></span>
                             <span>{{ i18n "edit" }}</span>
                         </a>
                     </div>
                     <div class="feedback-div">
-                        <a href="{{ .Site.Params.githubUrl }}/issues/new" target="_blank">
+                        <a href="{{ .Site.Params.githubUrl }}/issues/new" target="_blank" rel="noopener noreferrer">
                         <span class="icon-span"></span>
                         <span>{{ i18n "feedback" }}</span>
                         </a>
