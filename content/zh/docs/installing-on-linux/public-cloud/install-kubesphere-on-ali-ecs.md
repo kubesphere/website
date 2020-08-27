@@ -101,29 +101,6 @@ Kubernetes 服务需要做到高可用，需要保证 kube-apiserver 的 HA ，�
 # 同时安装存储插件 (支持：localVolume、nfsClient、rbd、glusterfs)。您可以指定多个插件并用逗号分隔。请注意，您添加的第一个将是默认存储类。
 ./kk create config --with-storage localVolume --with-kubesphere v3.0.0 -f config-sample.yaml
  ```
-
-```bash
-**************************************************
-#####################################################
-###              Welcome to KubeSphere!           ###
-#####################################################
-
-Console: http://172.24.107.72:30880
-Account: admin
-Password: P@88w0rd
-
-NOTES：
-  1. After logging into the console, please check the
-     monitoring status of service components in
-     the "Cluster Management". If any service is not
-     ready, please wait patiently until all components 
-     are ready.
-  2. Please modify the default password after login.
-
-#####################################################
-https://kubesphere.io             2020-08-24 23:30:06
-#####################################################
-```
  ###  集群配置调整
  
  ```yaml
@@ -251,6 +228,29 @@ https://kubesphere.io             2020-08-24 23:30:06
 
  # 查看 KubeSphere 安装日志  -- 直到出现控制台的访问地址和登陆账号
 kubectl logs -n kubesphere-system $(kubectl get pod -n kubesphere-system -l app=ks-install -o jsonpath='{.items[0].metadata.name}') -f
+```
+
+```bash
+**************************************************
+#####################################################
+###              Welcome to KubeSphere!           ###
+#####################################################
+
+Console: http://172.24.107.72:30880
+Account: admin
+Password: P@88w0rd
+
+NOTES：
+  1. After logging into the console, please check the
+     monitoring status of service components in
+     the "Cluster Management". If any service is not
+     ready, please wait patiently until all components 
+     are ready.
+  2. Please modify the default password after login.
+
+#####################################################
+https://kubesphere.io             2020-08-24 23:30:06
+#####################################################
 ```
  
  - 访问公网 IP + Port 为部署后的使用情况，使用默认账号密码 (`admin/P@88w0rd`)，文章安装为最小化，登陆点击`工作台` 可看到下图安装组件列表和机器情况。
