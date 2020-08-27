@@ -44,7 +44,35 @@ multicluster:
   clusterRole: host
 ```
 
-Set Proxy Service Address.
+{{</ tab >}}
+
+{{< tab "KubeSphere has not been installed" >}}
+
+There is no big difference if you just start the installation. Please fill in the `jwtSecret` with the value shown as above in `config-sample.yaml` or `cluster-configuration.yaml`:
+
+```yaml
+authentication:
+  jwtSecret: gfIwilcc0WjNGKJ5DLeksf2JKfcLgTZU
+```
+
+Then scroll down and change the `clusterRole` to `member`:
+
+```yaml
+multicluster:
+  clusterRole: member
+```
+
+{{</ tab >}}
+
+{{</ tabs >}}
+
+Then you can use the **kubectl** to retrieve the installation logs to verify the status. Wait for a while, you will be able to see the successful logs return if the host cluster is ready.
+
+```
+kubectl logs -n kubesphere-system $(kubectl get pod -n kubesphere-system -l app=ks-install -o jsonpath='{.items[0].metadata.name}') -f
+```
+
+#### Set Proxy Service Address
 
 After the installation of the Host Cluster, a proxy service called tower will be created in `kubesphere-system`, whose type is **LoadBalancer**.
 
@@ -60,7 +88,7 @@ NAME       TYPE            CLUSTER-IP      EXTERNAL-IP     PORT(S)              
 tower      LoadBalancer    10.233.63.191   139.198.110.23  8080:30721/TCP       16h
 ```
 
-There is always a LoadBalancer solution in the public cloud, and the external IP should be allocated by Load Balancer automatically. If your clusters are running in an on-premises environment (Especially for the **bare metal environment**), we recommend you to use [Porter](https://github.com/porter/porter) as the LB solution.
+> Generally, there is always a LoadBalancer solution in the public cloud, and the external IP should be allocated by Load Balancer automatically. If your clusters are running in an on-premises environment (Especially for the **bare metal environment**), we recommend you to use [Porter](https://github.com/porter/porter) as the LB solution.
 
 {{</ tab >}}
 
@@ -167,14 +195,20 @@ multicluster:
 
 ### Import Cluster
 
-1. Open the H Cluster Dashboard and click Add Cluster. Enter the basic information of the imported cluster and click **Next**.
+1. Open the H Cluster Dashboard and click **Add Cluster**.
+
+![Add Cluster](https://ap3.qingstor.com/kubesphere-website/docs/20200827231611.png)
+
+2. Enter the basic information of the imported cluster and click **Next**.
 
 ![Import Cluster](https://ap3.qingstor.com/kubesphere-website/docs/20200827211842.png)
 
-2. In **Connection Method**, select **Cluster connection agent** and Click **Import**.
+3. In **Connection Method**, select **Cluster connection agent** and Click **Import**.
 
 ![agent-en](/images/docs/agent-en.png)
 
-3. Create an `agent.yaml` file in the M Cluster based on the instruction, then copy and paste the deployment to the file. Execute `kubectl create -f agent.yaml` on the node and wait for the agent to be up and running. Please make sure the proxy address is accessible to the M Cluster.
+4. Create an `agent.yaml` file in the M Cluster based on the instruction, then copy and paste the deployment to the file. Execute `kubectl create -f agent.yaml` on the node and wait for the agent to be up and running. Please make sure the proxy address is accessible to the M Cluster.
 
-4. You can see the cluster you have imported in the H Cluster when the cluster agent is up and running.
+5. You can see the cluster you have imported in the H Cluster when the cluster agent is up and running.
+
+![Azure AKS](https://ap3.qingstor.com/kubesphere-website/docs/20200827231650.png)
