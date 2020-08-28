@@ -5,7 +5,7 @@ createTime: '2019-06-25'
 snapshot: 'https://pek3b.qingstor.com/kubesphere-docs/png/20190930095954.png'
 ---
 
-日志通常含有非常有价值的信息，日志管理是云原生可观察性的重要组成部分。不同于物理机或虚拟机，在容器与 Kubernetes 环境中，日志有标准的输出方式(stdout)，这使得进行平台级统一的日志收集、分析与管理水到渠成，并体现出日志数据独特的价值。本文将介绍云原生领域比较主流的日志管理方案 EFK 、 KubeSphere 团队开发的 FluentBit Operator 以及 KubeSphere 在多租户日志管理方面的实践。此外还将介绍受 Prometheus 启发专为 Kubenetes 日志管理开发，具有低成本可扩展等特性的开源软件 Loki。
+日志通常含有非常有价值的信息，日志管理是云原生可观察性的重要组成部分。不同于物理机或虚拟机，在容器与 Kubernetes 环境中，日志有标准的输出方式(stdout)，这使得进行平台级统一的日志收集、分析与管理水到渠成，并体现出日志数据独特的价值。本文将介绍云原生领域比较主流的日志管理方案 EFK 、 KubeSphere 团队开发的 FluentBit Operator 以及 KubeSphere 在多租户日志管理方面的实践。此外还将介绍受 Prometheus 启发专为 Kubernetes 日志管理开发，具有低成本可扩展等特性的开源软件 Loki。
 
 ## 什么是可观察性
 
