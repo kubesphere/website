@@ -83,7 +83,7 @@ In the Ready to complete page, you review the configuration selections that you 
 ## Keepalived+Haproxy
 ###  Yum Install
 
-- host lb-0(10.10.71.77) and host lb-1(10.10.71.66)
+host lb-0(10.10.71.77) and host lb-1(10.10.71.66)
 
 ```bash
 yum install keepalived haproxy psmisc -y
@@ -135,21 +135,24 @@ backend kube-apiserver
     server kube-apiserver-2 10.10.71.73:6443 check
     server kube-apiserver-3 10.10.71.62:6443 check
 ```
-- Check for grammar before starting
+Check for grammar before starting
+
 ```bash
 haproxy -f /etc/haproxy/haproxy.cfg -c
 ```
-- Start Haproxy and set it to enable haproxy
+Start Haproxy and set it to enable haproxy
+
 ```bash
 systemctl restart haproxy && systemctl enable haproxy
 ```
-- Stop Haproxy
+Stop Haproxy
+
 ```bash
 systemctl stop haproxy
 ```
 ### Configure Keepalived
 
-- Main haproxy 77 lb-0-10.10.71.77 (/etc/keepalived/keepalived.conf)
+Main haproxy 77 lb-0-10.10.71.77 (/etc/keepalived/keepalived.conf)
 
 ```bash
 global_defs {
@@ -189,7 +192,7 @@ vrrp_instance haproxy-vip {
   }
 }
 ```
-- remarks haproxy 66 lb-1-10.10.71.66 (/etc/keepalived/keepalived.conf)
+remarks haproxy 66 lb-1-10.10.71.66 (/etc/keepalived/keepalived.conf)
 
 ```bash
 global_defs {
@@ -227,7 +230,7 @@ vrrp_instance haproxy-vip {
   }
 }
 ```
-- start keepalived and enable keepalived
+start keepalived and enable keepalived
 
 ```bash
 systemctl restart keepalived && systemctl enable keepalived
@@ -237,20 +240,35 @@ systemctl start keepalived
 
 ### Verify availability
 
-- Use `ip a s` to view the vip binding status of each lb node
-- Pause VIP node haproxy：`systemctl stop haproxy`
-- Use `ip a s` again to check the vip binding of each lb node, and check whether vip drifts
-- Or use `systemctl status -l keepalived` command to view
+Use `ip a s` to view the vip binding status of each lb node
 
-e.g.
+```bash
+ip a s 
+```
 
-![](/images/docs/vsphere/kubesphereOnVsphere-en-keepalived + haproxy.png)
+Pause VIP node haproxy：`systemctl stop haproxy`
+
+```
+systemctl stop haproxy
+```
+
+Use `ip a s` again to check the vip binding of each lb node, and check whether vip drifts
+
+```bash
+ip a s 
+```
+
+Or use `systemctl status -l keepalived` command to view
+
+```bash
+systemctl status -l keepalived
+```
 
 
 
 ## Get the Installer Excutable File
 
-- Download Binary
+Download Binary
 
 ```bash
 curl -O -k https://kubernetes.pek3b.qingstor.com/tools/kubekey/kk
@@ -263,14 +281,14 @@ You have more control to customize parameters or create a multi-node cluster usi
 
 ### With KubeKey, you can install Kubernetes and KubeSphere 
 
-- Create a Kubernetes cluster with KubeSphere installed (e.g. --with-kubesphere v3.0.0)
+Create a Kubernetes cluster with KubeSphere installed (e.g. --with-kubesphere v3.0.0)
 
 ```bash
 ./kk create config --with-kubesphere v3.0.0 -f ~/config-sample.yaml
 ```
 #### Modify the file config-sample.yaml according to your environment
 
-- vi ~/config-sample.yaml
+vi ~/config-sample.yaml
 
 ```yaml
 apiVersion: kubekey.kubesphere.io/v1alpha1
@@ -400,13 +418,19 @@ spec:
   servicemesh:         # Whether to install KubeSphere Service Mesh (Istio-based). It provides fine-grained traffic management, observability and tracing, and offer visualization for traffic topology
     enabled: false
 ```
-- Create a cluster using the configuration file you customized above:
+Create a cluster using the configuration file you customized above:
 
-  ```bash
-  ./kk create cluster -f config-sample.yaml
-  ```
+```bash
+./kk create cluster -f config-sample.yaml
+```
 
 #### Verify the multi-node installation
+
+Inspect the logs of installation, and wait a while:
+
+```bash
+kubectl logs -n kubesphere-system $(kubectl get pod -n kubesphere-system -l app=ks-install -o jsonpath='{.items[0].metadata.name}') -f
+```
 
 If you can see the welcome log return, it means the installation is successful. You are ready to go.
 
@@ -429,14 +453,6 @@ NOTES：
 https://kubesphere.io             2020-08-15 23:32:12
 #####################################################
 ```
-
-- Inspect the logs of installation, and wait a while:
-
-  ```bash
-  kubectl logs -n kubesphere-system $(kubectl get pod -n kubesphere-system -l app=ks-install -o jsonpath='{.items[0].metadata.name}') -f
-  ```
-
-  
 
 #### Log in the console
 
