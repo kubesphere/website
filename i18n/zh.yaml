@@ -1,26 +1,26 @@
-- id: introduction1
+- id: Technology Blogs
   translation: 技术博客
-- id: introduction2
+- id: KubeSphere®️ 2020 All Rights Reserved.
   translation: "KubeSphere®️ 2020 All Rights Reserved."
-- id: introduction3
+- id: Published on
   translation: 发布于
-- id: introduction4
+- id: KubeCon & QCon
   translation: KubeCon & QCon
-- id: introduction5
+- id: Subscribe
   translation: 订阅
-- id: introduction6
+- id: Please enter your email address
   translation: 请输入你的邮箱地址
-- id: introduction7
+- id: Receive the latest news, articles and updates from KubeSphere
   translation: "通过邮件接收 KubeSphere 最新的技术博客与产品更新的通知"
-- id: introduction8
+- id: Welcome to the KubeSphere Documentation
   translation: 欢迎使用 KubeSphere 文档
-- id: introduction9
+- id: We will introduce the services and features of KubeSphere with clear and concise pictures and texts as far as possible.
   translation: 欢迎阅读 KubeSphere 文档，我们尽可能以清晰简明的图文，介绍 KubeSphere 各项服务及使用方法。
-- id: introduction10
+- id: Open Source Community
   translation: 开源社区
-- id: introduction11
+- id: KubeSphere is committed to the open source contribution of cloud native technology, enriching the ecosystem of the open source community.
   translation: 分享云原生领域最前沿的技术干货与开发实践文章，以及 KubeSphere 产品最新的动态。
-- id: introduction12
+- id: Go to GitHub
   translation: 访问 GitHub
 - id: email is required
   translation: 请提供您的邮箱
@@ -43,7 +43,7 @@
 - id: Read More
   translation: Read More
 - id: We can’t find the page that you’re looking for :(
-  translation: We can’t find the page that you’re looking for :(
+  translation: 没有你想找的页面 :(
 - id: Go To Home
   translation: 返回首页
 - id: icon

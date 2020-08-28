@@ -1,0 +1,30 @@
+{{ $sections := .Sections.ByWeight }}
+<ul class="common-flex-layout">
+    {{ range $sections }}
+    <li>
+        <h2>
+            <span><img src="{{ .Params.icon }}" alt="{{ .LinkTitle }}"></span>
+            <a href="{{ .RelPermalink }}">{{ .LinkTitle }}</a>
+        </h2>
+        {{ $page_list := (union (where .Pages ".Params._build.render" "!=" false) .Sections).ByWeight }}
+        {{ $length := len $page_list}}
+        <ul>
+            {{ range first 5 $page_list }}
+            <li>
+                {{ if .IsPage }}
+                <a href="{{ .RelPermalink }}" title="{{ .LinkTitle }}">{{ .LinkTitle }}</a>
+                {{ else }}
+                {{ partial "firstPageInSection" (dict "section" . "firstSection" .) }}
+                {{ end }}
+            </li>
+            {{ end }}
+            {{ if gt $length 5 }}
+            <li><a href="{{ .RelPermalink }}">{{ i18n "Learn More" }}...</a></li>
+            {{ end }}
+        </ul>
+    </li>
+    {{ end }}
+    {{ range $sections }}
+    <li style="height: 0; margin: 0; padding: 0;"></li>
+    {{ end }}
+</ul>

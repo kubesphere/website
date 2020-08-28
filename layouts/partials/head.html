@@ -1,19 +1,19 @@
-<head>
-    <meta charset="utf-8">
-    <title>{{ with .Params.Title }}{{ . }}{{ else }}{{ with .Site.Params.title }}{{ . }}{{ end }}{{ end }}</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-    <meta name="description" content="{{ with .Params.Description }}{{ . }}{{ else }}{{ with .Site.Params.description }}{{ . }}{{ end }}{{ end }}">
-    <meta name="keywords" content="{{ with .Params.Keywords }}{{ range $i, $e := . }}{{ if $i }} {{ end }}{{ $e }}{{ end }}{{ else }}{{ with .Site.Params.keywords }}{{ . }}{{ end }}{{ end }}">
-    
-    <meta property="og:type" content="article"/>
-    <meta property="og:title" content="{{ with .Params.Title }}{{ . }}{{ else }}{{ with .Site.Params.title }}{{ . }}{{ end }}{{ end }}"/>
-    <meta property="og:description" content="{{ with .Params.Description }}{{ . }}{{ else }}{{ with .Site.Params.description }}{{ . }}{{ end }}{{ end }}"/>
-    <meta property="og:image" content="{{ with .Params.snapshot }}{{ . }}{{ else }}{{ with .Site.Params.snapshot }}{{ . | absURL }}{{ end }}{{ end }}"/>
-    <meta property="og:url" content="{{ .Permalink }}"/>
 
-    {{- partial "css.html" . -}}
+<meta charset="utf-8">
+<title>{{ with .Params.Title }}{{ . }}{{ else }}{{ with .Site.Params.title }}{{ . }}{{ end }}{{ end }}</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<meta name="description" content="{{ with .Params.Description }}{{ . }}{{ else }}{{ with .Site.Params.description }}{{ . }}{{ end }}{{ end }}">
+<meta name="keywords" content="{{ with .Params.Keywords }}{{ range $i, $e := . }}{{ if $i }} {{ end }}{{ $e }}{{ end }}{{ else }}{{ with .Site.Params.keywords }}{{ . }}{{ end }}{{ end }}">
 
-    <script src='{{ "js/jquery-3.5.0.min.js" | relURL }}'></script>
-    <script src='{{ "js/jquery.modal.min.js" | relURL }}'></script>
-</head>
+<meta property="og:type" content="article"/>
+<meta property="og:title" content="{{ with .Params.Title }}{{ . }}{{ else }}{{ with .Site.Params.title }}{{ . }}{{ end }}{{ end }}"/>
+<meta property="og:description" content="{{ with .Params.Description }}{{ . }}{{ else }}{{ with .Site.Params.description }}{{ . }}{{ end }}{{ end }}"/>
+<meta property="og:image" content="{{ with .Params.snapshot }}{{ . }}{{ else }}{{ with .Site.Params.snapshot }}{{ . | absURL }}{{ end }}{{ end }}"/>
+<meta property="og:url" content="{{ .Permalink }}"/>
+
+{{- partial "css.html" . -}}
+
+<script src='{{ "js/jquery-3.5.0.min.js" | relURL }}'></script>
+<script src='{{ "js/viewer.min.js" | relURL }}'></script>
+<script src='{{ "js/jquery.modal.min.js" | relURL }}'></script>

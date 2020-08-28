@@ -225,3 +225,140 @@ section {
     }
   }
 }
+
+.notices {
+  margin: 20px 0;
+  position: relative;
+
+  p {
+    padding: 0 10px;
+    margin: 0!important;
+    height: 30px;
+    line-height: 30px;
+    color: #ffffff;
+  }
+
+  div {
+    padding: 10px;
+  }
+}
+
+.notices.note {
+  p {
+    background: #6ab0de
+  }
+  div {
+    background: #e7f2fa;
+  }
+}
+
+.notices.tip {
+  p {
+    background: #78C578
+  }
+  div {
+    background: #E6F9E6;
+  }
+}
+
+.notices.info {
+  p {
+    background: #F0B37E
+  }
+  div {
+    background: #FFF2DB;
+  }
+}
+
+.notices.warning {
+  p {
+    background: #E06F6C
+  }
+  div {
+    background: #FAE2E2;
+  }
+}
+
+/* content tabs */
+.code-tabs {
+  border: 1px solid #dee2e6;
+  overflow: hidden;
+  margin: 20px 0px;
+}
+
+.code-tabs .tab-content {
+  padding: 20px 15px;
+  margin-bottom: 0;
+}
+
+.code-tabs .tab-content .tab-pane{
+  margin-bottom: 0;
+}
+
+.code-tabs .nav-tabs {
+  padding-left: 0;
+  margin-bottom: 0;
+  border-bottom: 1px solid #dee2e6;
+}
+
+.code-tabs .nav-tabs .nav-item {
+  display: inline-block;
+  padding: 10px;
+  margin-top: 0;
+  border-right: 1px solid #dee2e6;
+}
+
+.code-tabs .nav-tabs .nav-item .nav-link {
+  text-decoration: none;
+  font-weight: 500;
+  border: 0;
+  margin-bottom: 0;
+}
+
+.code-tabs .nav-tabs .nav-item::before {
+  display: none;
+}
+
+.code-tabs .nav-tabs .nav-item.active {
+  background: #55bc8a;
+}
+
+.code-tabs .nav-tabs .nav-item.active .nav-link {
+  color: #ffffff;
+}
+
+.code-tabs .tab-pane {
+  display: none;
+}
+
+.code-tabs .active {
+  display: block;
+}
+
+// copy button
+.code-over-div {
+  position: relative;
+  overflow: auto;
+}
+.copy-code-button {
+  display: none;
+  position: absolute;
+  top: 5px;
+  right: 5px;
+  z-index: 2;
+  width: 20px;
+  height: 20px;
+  background-image: url('/images/docs/copy-code.svg');
+  background-repeat: no-repeat;
+  background-size: cover;
+  cursor: pointer;
+}
+
+.copy-code-button:hover {
+  top: 3px;
+}
+
+.highlight pre {
+  /* Avoid pushing up the copy buttons. */
+  margin: 0;
+}

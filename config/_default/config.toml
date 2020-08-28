@@ -1,4 +1,4 @@
-baseURL = "https://hugo-first.netlify.app"
+baseURL = "https://kubesphere-v3.netlify.app"
 
 [markup]
   [markup.tableOfContents]
@@ -9,6 +9,12 @@ baseURL = "https://hugo-first.netlify.app"
 
 [params]
 logo = "images/logo.svg"
+
+githubUrl = "https://github.com/kubesphere/website"
+
+githubBlobUrl = "https://github.com/kubesphere/website/blob/master/content"
+
+githubEditUrl = "https://github.com/kubesphere/website/edit/master/content"
 
 mailchimpSubscribeUrl = "https://kubesphere.us10.list-manage.com/subscribe/post?u=c85ea2b944b08b951f607bdd4&id=83f673a2d9"
 
