@@ -1,9 +1,9 @@
 ---
 title: "Port Requirements"
 keywords: 'kubernetes, docker, helm, jenkins, istio, prometheus'
-description: ''
+description: 'How to set the port in firewall rules'
 
-linkTitle: "Requirements"
+linkTitle: "Port Requirements"
 weight: 2120
 ---
 
