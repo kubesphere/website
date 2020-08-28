@@ -9,18 +9,18 @@ weight: 3060
 
 This tutorial demonstrates how to enable pluggable components of KubeSphere both before and after the installation. KubeSphere features ten pluggable components which are listed below.
 
-| Component      | Description                                                  |
-| -------------- | ------------------------------------------------------------ |
-| alerting       | KubeSphere alerting system. It enables users to customize alerting policies to send messages to receivers in time with different time intervals and alerting levels to choose from. |
-| auditing       | KubeSphere audit log system. It provides a security-relevant chronological set of records, recording the sequence of activities that happen in the platform, initiated by different tenants. |
-| devops         | KubeSphere DevOps system. It provides an out-of-box CI/CD system based on Jenkins, and automated workflow tools including Source-to-Image and Binary-to-Image. |
-| events         | KubeSphere events system. It provides a graphical web console for the exporting, filtering and alerting of Kubernetes events in multi-tenant Kubernetes clusters. |
-| logging        | KubeSphere logging system. Flexible logging functions are provided for log query, collection and management in a unified console. Additional log collectors can be added, such as Elasticsearch, Kafka and Fluentd. |
-| metrics_server | It enables HPA (Horizontal Pod Autoscaler).                  |
-| networkpolicy  | Network policies allow network isolation within the same cluster, which means firewalls can be set up between certain instances (Pods). |
-| notification   | KubeSphere notification system. It allows users to set `AlertManager` as its sender. Receivers include Email, WeChat Work, and Slack. |
-| openpitrix     | KubeSphere App Store. It provides an app store for Helm-based applications and allows users to manage apps throughout the entire lifecycle. |
-| servicemesh    | KubeSphere Service Mesh (Istio-based). It provides fine-grained traffic management, observability and tracing, and visualized traffic topology. |
+| Configuration Item | Corresponding Component               | Description                                                  |
+| ------------------ | ------------------------------------- | ------------------------------------------------------------ |
+| alerting           | KubeSphere alerting system            | Enable users to customize alerting policies to send messages to receivers in time with different time intervals and alerting levels to choose from. |
+| auditing           | KubeSphere audit log system           | Provide a security-relevant chronological set of records, recording the sequence of activities that happen in the platform, initiated by different tenants. |
+| devops             | KubeSphere DevOps system              | Provide an out-of-box CI/CD system based on Jenkins, and automated workflow tools including Source-to-Image and Binary-to-Image. |
+| events             | KubeSphere events system              | Provide a graphical web console for the exporting, filtering and alerting of Kubernetes events in multi-tenant Kubernetes clusters. |
+| logging            | KubeSphere logging system             | Provide flexible logging functions for log query, collection and management in a unified console. Additional log collectors can be added, such as Elasticsearch, Kafka and Fluentd. |
+| metrics_server     | HPA                                   | The Horizontal Pod Autoscaler automatically scales the number of pods based on needs. |
+| networkpolicy      | Network policy                        | Allow network isolation within the same cluster, which means firewalls can be set up between certain instances (Pods). |
+| notification       | KubeSphere notification system        | Allow users to set `AlertManager` as its sender. Receivers include Email, WeChat Work, and Slack. |
+| openpitrix         | KubeSphere App Store                  | Provide an app store for Helm-based applications and allow users to manage apps throughout the entire lifecycle. |
+| servicemesh        | KubeSphere Service Mesh (Istio-based) | Provide fine-grained traffic management, observability and tracing, and visualized traffic topology. |
 
 For more information about each component, see Overview of Enable Pluggable Components.
 
