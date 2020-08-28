@@ -7,9 +7,7 @@ Weight: 2230
 ---
 
 由于对于生产环境，我们需要考虑集群的高可用性。教你部署如何在华为云 ECS 实例服务快速部署一套高可用的生产环境
-Kubernetes 服务需要做到高可用，需要保证 kube-apiserver 的 HA ，推荐下列两种方式
- 1. 华为云 VPC 
- 2. keepalived + haproxy [keepalived + haproxy](https://kubesphere.com.cn/forum/d/1566-kubernetes-keepalived-haproxy)对 kube-apiserver 进行负载均衡，实现高可用 kubernetes 集群。
+Kubernetes 服务需要做到高可用，需要保证 kube-apiserver 的 HA ，推荐华为云负载均衡器服务.
 
  ## 前提条件
 
@@ -19,10 +17,6 @@ Kubernetes 服务需要做到高可用，需要保证 kube-apiserver 的 HA ，�
  - 所有节点的时间同步。
  - Red Hat 在其 Linux 发行版本中包括了SELinux，建议关闭 SELinux 或者将 SELinux 的模式切换为 Permissive [宽容]工作模式。
 
- ## 部署架构
- 
- ![部署架构](/images/docs/huawei-ecs/ali.png)
- 
  ## 创建主机
 
  本示例创建 6 台 Ubuntu 18.04 server 64bit 的云服务器，每台配置为 4 核 8 GB
@@ -38,24 +32,24 @@ Kubernetes 服务需要做到高可用，需要保证 kube-apiserver 的 HA ，�
  
  > 注意:机器有限，所以把 etcd 放入 master，在生产环境建议单独部署 etcd，提高稳定性
 
- ## 使用华为云 VPC 部署
+ ## 华为云负载均衡器部署
  ###  创建 VPC
  
  进入到华为云控制， 在左侧列表选择'虚拟私有云'， 选择'创建虚拟私有云' 创建VPC,配置如下图
  
  ![1-1-创建VPC](/images/docs/huawei-ecs/huawei-VPC-create.png)
  
- ###  创建 VPC 安全组
+ ###  创建安全组
  
 在 `访问控制→ 安全组`下，创建一个安全组，设置入方向的规则参考如下：
 
- ![2-1-创建安全组](/images/docs/huawei-ecs/huawei-rules-create.png.png)
+![2-1-创建安全组](/images/docs/huawei-ecs/huawei-rules-create.png)
  > 提示：后端服务器的安全组规则必须放行 100.125.0.0/16 网段，否则会导致健康检查异常，详见 后端服务器配置安全组 。此外，还应放行 192.168.1.0/24 （主机之间的网络需全放行）。
 
  ### 创建主机
-![3-1-选择主机配置](/images/docs/huawei-ecs/huawe-ECS-basic-settings.png.png)
+![3-1-选择主机配置](/images/docs/huawei-ecs/huawei-ECS-basic-settings.png)
 在网络配置中，网络选择第一步创建的 VPC 和子网。在安全组中，选择上一步创建的安全组。
-![3-2-选择网络配置](/images/docs/huawei-ecs/huawe-ECS-network-settings.png)
+![3-2-选择网络配置](/images/docs/huawei-ecs/huawie-ECS-network-settings.png)
 
 ### 创建负载均衡器
 在左侧栏选择 '弹性负载均衡器',进入后选择 购买弹性负载均衡器 
@@ -63,15 +57,15 @@ Kubernetes 服务需要做到高可用，需要保证 kube-apiserver 的 HA ，�
 #### 内网LB 配置
 为所有master 节点 添加后端监听器 ,监听端口为 6443
 
-![4-1-配置内网LB](/images/docs/huawei-ecs/huawe-master-lb-basic-config.png)
+![4-1-配置内网LB](/images/docs/huawei-ecs/huawei-master-lb-basic-config.png)
 
-![4-2-配置内网LB](/images/docs/huawe-master-lb-listeners-config.png)
+![4-2-配置内网LB](/images/docs/huawei-ecs/huawei-master-lb-listeners-config.png)
 #### 外网LB 配置
 若集群需要配置公网访问，则需要为外网负载均衡器配置一个公网 IP为 所有节点 添加后端监听器，监听端口为 80(测试使用 30880 端口,此处 80 端口也需要在安全组中开放)。
 
-![4-3-配置外网LB](/images/docs/huawe-public-lb-basic-config.png)
+![4-3-配置外网LB](/images/docs/huawei-ecs/huawei-public-lb-basic-config.png)
 
-![4-4-配置外网LB](/images/docs/huawe-public-lb-listeners-config.png)
+![4-4-配置外网LB](/images/docs/huawei-ecs/huawei-public-lb-listeners-config.png)
 
 后面配置文件 config.yaml 需要配置 slb 分配的地址
  ```yaml
@@ -105,7 +99,7 @@ Kubernetes 服务需要做到高可用，需要保证 kube-apiserver 的 HA ，�
  ```
 
  ### 集群配置调整
-目前我是开启了全量的组件,文末也提供了自定义的方法.可默认为 false
+目前当前集群开启了全量的组件,文末也提供了自定义的方法.可默认为 false
 ```yaml
 apiVersion: kubekey.kubesphere.io/v1alpha1
 kind: Cluster
@@ -258,12 +252,12 @@ NOTES：
 https://kubesphere.io             2020-08-28 01:25:54
 #####################################################
 ```
- - 访问公网 IP + Port 为部署后的使用情况，使用默认账号密码 (`admin/P@88w0rd`)，文章组件安装为最大化，登陆点击`平台管理>集群管理` 可看到下图安装组件列表和机器情况。
+访问公网 IP + Port 为部署后的使用情况，使用默认账号密码 (`admin/P@88w0rd`)，文章组件安装为最大化，登陆点击`平台管理>集群管理` 可看到下图安装组件列表和机器情况。
 
 
 ## 如何自定义开启可插拔组件
 
- + 点击 `集群管理` - `自定义资源CRD` ，在过滤条件框输入 `ClusterConfiguration` ，如图下 
-![5-1-自定义组件](/images/docs/huawe-crds-config.png)
- + 点击 `ClusterConfiguration` 详情，对 `ks-installer` 编辑保存退出即可，组件描述介绍:[文档说明](https://github.com/kubesphere/ks-installer/blob/master/deploy/cluster-configuration.yaml)
-![5-2-自定义组件](/images/docs/huawe-crds-edit_yaml.png)
+点击 `集群管理` - `自定义资源CRD` ，在过滤条件框输入 `ClusterConfiguration` ，如图下 
+![5-1-自定义组件](/images/docs/huawei/huawei-crds-config.png)
+点击 `ClusterConfiguration` 详情，对 `ks-installer` 编辑保存退出即可，组件描述介绍:[文档说明](https://github.com/kubesphere/ks-installer/blob/master/deploy/cluster-configuration.yaml)
+![5-2-自定义组件](/images/docs/huawei/huawei-crds-edit-yaml.png)
