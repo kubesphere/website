@@ -10,16 +10,16 @@ description: 'How to install KubeSphere on VMware vSphere Linux machines'
 
 本教程为您提供了一个示例，说明如何使用 [keepalived + haproxy](https://kubesphere.com.cn/forum/d/1566-kubernetes-keepalived-haproxy) 对 kube-apiserver 进行负载均衡，实现高可用 kubernetes 集群。
 
-## 1. 前提条件
+## 前提条件
 
 - 请遵循该[指南](https://github.com/kubesphere/kubekey)，确保您已经知道如何将 KubeSphere 与多节点集群一起安装。有关用于安装的 config yaml 文件的详细信息，请参阅多节点安装。本教程重点介绍如何配置负载均衡器。
 - 您需要一个 VMware vSphere 帐户来创建VM资源。
 - 考虑到数据的持久性，对于生产环境，我们建议您准备持久性存储并预先创建 StorageClass 。为了进行开发和测试，您可以使用集成的 OpenEBS 直接将 LocalPV设置为存储服务。
 
-## 2. 部署架构
+## 部署架构
 ![部署架构](/images/docs/vsphere/kubesphereOnVsphere-zh-architecture.png)
 
-## 3. 创建主机
+## 创建主机
 
 本示例创建 9 台 **CentOS Linux release 7.6.1810（Core）**  的虚拟机，默认的最小化安装，每台配置为 2 Core 4 GB 40 G 即可。
 
@@ -67,77 +67,93 @@ description: 'How to install KubeSphere on VMware vSphere Linux machines'
 
 ![0-1-7-硬件](/images/docs/vsphere/kubesphereOnVsphere-zh-0-1-7-hardware.png)
 
-清单，确认无误后，点击确定。
+在`即将完成`页面上可查看为虚拟机选择的配置。
 
 ![0-1-8](/images/docs/vsphere/kubesphereOnVsphere-zh-0-1-8.png)
 
-## 4. 部署 keepalived+haproxy
-###  1. yum 安装
+## 部署 keepalived+haproxy
+###  yum 安装
 
-```bash
-#在主机为lb-0和lb-1中部署keepalived+haproxy
-#即IP为10.10.71.77与10.10.71.66的服务器上安装部署haproxy、keepalived、psmisc
+- 在主机为lb-0和lb-1中部署keepalived+haproxy 即IP为10.10.71.77与10.10.71.66的服务器上安装部署haproxy、keepalived、psmisc
+
+  ```bash
 yum install keepalived haproxy psmisc -y
-```
+  ```
 
-### 2. 配置 haproxy
+### 配置 haproxy
 
 在IP为 10.10.71.77 与 10.10.71.66 的服务器 ，配置 haproxy  (两台 lb 机器配置一致即可，注意后端服务地址)。
-```bash
-#Haproxy 配置 /etc/haproxy/haproxy.cfg
-global
-    log         127.0.0.1 local2
-    chroot      /var/lib/haproxy
-    pidfile     /var/run/haproxy.pid
-    maxconn     4000
-    user        haproxy
-    group       haproxy
-    daemon
-    # turn on stats unix socket
-    stats socket /var/lib/haproxy/stats
-#---------------------------------------------------------------------
-# common defaults that all the 'listen' and 'backend' sections will
-# use if not designated in their block
-#---------------------------------------------------------------------
-defaults
-    log                     global
-    option                  httplog
-    option                  dontlognull
-    timeout connect         5000
-    timeout client          5000
-    timeout server          5000
-#---------------------------------------------------------------------
-# main frontend which proxys to the backends
-#---------------------------------------------------------------------
-frontend  kube-apiserver
-    bind *:6443
-    mode tcp
-    option tcplog
-    default_backend kube-apiserver
-#---------------------------------------------------------------------
-# round robin balancing between the various backends
-#---------------------------------------------------------------------
-backend kube-apiserver
-    mode tcp
-    option tcplog
-    balance     roundrobin
-    default-server inter 10s downinter 5s rise 2 fall 2 slowstart 60s maxconn 250 maxqueue 256 weight 100
-    server kube-apiserver-1 10.10.71.214:6443 check
-    server kube-apiserver-2 10.10.71.73:6443 check
-    server kube-apiserver-3 10.10.71.62:6443 check
-```
-```bash
-#启动之前检查语法是否有问题
-haproxy -f /etc/haproxy/haproxy.cfg -c
-#启动 Haproxy，并设置开机自启动
-systemctl restart haproxy && systemctl enable haproxy
-#停止 Haproxy
-systemctl stop haproxy
-```
-### 3. 配置 keepalived
-```bash
-# 主 haproxy 77 lb-0-10.10.71.77
-#/etc/keepalived/keepalived.conf
+
+- Haproxy 配置 /etc/haproxy/haproxy.cfg
+
+  ```bash
+  global
+      log         127.0.0.1 local2
+      chroot      /var/lib/haproxy
+      pidfile     /var/run/haproxy.pid
+      maxconn     4000
+      user        haproxy
+      group       haproxy
+      daemon
+      # turn on stats unix socket
+      stats socket /var/lib/haproxy/stats
+  #---------------------------------------------------------------------
+  # common defaults that all the 'listen' and 'backend' sections will
+  # use if not designated in their block
+  #---------------------------------------------------------------------
+  defaults
+      log                     global
+      option                  httplog
+      option                  dontlognull
+      timeout connect         5000
+      timeout client          5000
+      timeout server          5000
+  #---------------------------------------------------------------------
+  # main frontend which proxys to the backends
+  #---------------------------------------------------------------------
+  frontend  kube-apiserver
+      bind *:6443
+      mode tcp
+      option tcplog
+      default_backend kube-apiserver
+  #---------------------------------------------------------------------
+  # round robin balancing between the various backends
+  #---------------------------------------------------------------------
+  backend kube-apiserver
+      mode tcp
+      option tcplog
+      balance     roundrobin
+      default-server inter 10s downinter 5s rise 2 fall 2 slowstart 60s maxconn 250 maxqueue 256 weight 100
+      server kube-apiserver-1 10.10.71.214:6443 check
+      server kube-apiserver-2 10.10.71.73:6443 check
+      server kube-apiserver-3 10.10.71.62:6443 check
+  ```
+
+  
+
+- 启动之前检查语法是否有问题
+
+  ```bash
+  haproxy -f /etc/haproxy/haproxy.cfg -c
+  ```
+
+- 启动 Haproxy，并设置开机自启动
+
+  ```bash
+  systemctl restart haproxy && systemctl enable haproxy
+  ```
+
+- 停止 Haproxy
+
+  ```bash
+  systemctl stop haproxy
+  ```
+
+### 配置 keepalived
+
+- 主 haproxy 77 lb-0-10.10.71.77 (/etc/keepalived/keepalived.conf)
+
+  ```bash
 global_defs {
   notification_email {
   }
@@ -174,10 +190,9 @@ vrrp_instance haproxy-vip {
     chk_haproxy
   }
 }
-```
-```bash
-#备 haproxy 66 lb-1-10.10.71.66
-#/etc/keepalived/keepalived.conf
+  ```
+- 备 haproxy 66 lb-1-10.10.71.66 (/etc/keepalived/keepalived.conf)
+  ```bash
 global_defs {
   notification_email {
   }
@@ -213,170 +228,193 @@ vrrp_instance haproxy-vip {
     chk_haproxy
   }
 }
-```
-```bash
-#启动 keepalived，设置开机自启动
+  ```
+- 启动 keepalived，设置开机自启动
+  ```bash
 systemctl restart keepalived && systemctl enable keepalived
 systemctl stop keepaliv
-systemctl start keepalived    #开启 keepalived服务
-```
 
-### 4. 验证可用性
+  ```
+
+- 开启 keepalived服务
+
+  ```bash
+  systemctl start keepalivedb
+  ```
+
+### 验证可用性
 
 - 使用 `ip a s` 查看各 lb 节点 vip 绑定情况
 - 暂停vip所在节点 haproxy：`systemctl stop haproxy`
 - 再次使用 `ip a s ` 查看各 lb 节点 vip 绑定情况，查看 vip 是否发生漂移
 - 或者使用 `systemctl status -l keepalived`  命令查看
 
-## 5. 获取安装程序可执行文件
+e.g.
 
-```bash
-#下载 installer 至一台目标机器
+![](/images/docs/vsphere/kubesphereOnVsphere-zh-keepalived + haproxy.png)
+
+
+
+## 获取安装程序可执行文件
+
+- 下载 installer 至一台目标机器
+
+  ```bash
 curl -O -k https://kubernetes.pek3b.qingstor.com/tools/kubekey/kk
 chmod +x kk
-```
+  ```
 
-## 6. 创建多节点群集
+## 创建多节点群集
 
 您可以使用高级安装来控制自定义参数或创建多节点群集。具体来说，通过指定配置文件来创建集群。
 
-### 1. kubekey 部署 k8s 集群
+### kubekey 部署 k8s 集群
 
-```bash
-# 创建配置文件(一个示例配置文件)|包含 kubesphere 的配置文件
+- 创建配置文件(一个示例配置文件)|包含 kubesphere 的配置文件
+
+  ```bash
 ./kk create config --with-kubesphere v3.0.0 -f ~/config-sample.yaml
-```
-#### 1.1 集群节点配置
-```yaml
-#vi ~/config-sample.yaml
-apiVersion: kubekey.kubesphere.io/v1alpha1
-kind: Cluster
-metadata:
-  name: config-sample
-spec:
-  hosts:
-  - {name: master1, address: 10.10.71.214, internalAddress: 10.10.71.214, password: P@ssw0rd!}
-  - {name: master2, address: 10.10.71.73, internalAddress: 10.10.71.73, password: P@ssw0rd!}
-  - {name: master3, address: 10.10.71.62, internalAddress: 10.10.71.62, password: P@ssw0rd!}
-  - {name: node1, address: 10.10.71.75, internalAddress: 10.10.71.75, password: P@ssw0rd!}
-  - {name: node2, address: 10.10.71.76, internalAddress: 10.10.71.76, password: P@ssw0rd!}
-  - {name: node3, address: 10.10.71.79, internalAddress: 10.10.71.79, password: P@ssw0rd!}
-  roleGroups:
-    etcd:
-    - master1
-    - master2
-    - master3
-    master: 
-    - master1
-    - master2
-    - master3
-    worker:
-    - node1
-    - node2
-    - node3
-  controlPlaneEndpoint:
-    domain: lb.kubesphere.local
-    # vip
-    address: "10.10.71.67"                    
-    port: "6443"
-  kubernetes:
-    version: v1.17.9
-    imageRepo: kubesphere
-    clusterName: cluster.local
-    masqueradeAll: false  # masqueradeAll tells kube-proxy to SNAT everything if using the pure iptables proxy mode. [Default: false]
-    maxPods: 110  # maxPods is the number of pods that can run on this Kubelet. [Default: 110]
-    nodeCidrMaskSize: 24  # internal network node size allocation. This is the size allocated to each node on your network. [Default: 24]
-    proxyMode: ipvs  # mode specifies which proxy mode to use. [Default: ipvs]
-  network:
-    plugin: calico
-    calico:
-      ipipMode: Always  # IPIP Mode to use for the IPv4 POOL created at start up. If set to a value other than Never, vxlanMode should be set to "Never". [Always | CrossSubnet | Never] [Default: Always]
-      vxlanMode: Never  # VXLAN Mode to use for the IPv4 POOL created at start up. If set to a value other than Never, ipipMode should be set to "Never". [Always | CrossSubnet | Never] [Default: Never]
-      vethMTU: 1440  # The maximum transmission unit (MTU) setting determines the largest packet size that can be transmitted through your network. [Default: 1440]
-    kubePodsCIDR: 10.233.64.0/18
-    kubeServiceCIDR: 10.233.0.0/18
-  registry:
-    registryMirrors: []
-    insecureRegistries: []
-    privateRegistry: ""
-  storage:
-    defaultStorageClass: localVolume
-    localVolume:
-      storageClassName: local  
+  ```
+#### 集群节点配置
 
----
-apiVersion: installer.kubesphere.io/v1alpha1
-kind: ClusterConfiguration
-metadata:
-  name: ks-installer
-  namespace: kubesphere-system
-  labels:
-    version: v3.0.0
-spec:
-  local_registry: ""
-  persistence:
-    storageClass: ""
-  authentication:
-    jwtSecret: ""
-  etcd:
-    monitoring: true        # Whether to install etcd monitoring dashboard
-    endpointIps: 192.168.0.7,192.168.0.8,192.168.0.9  # etcd cluster endpointIps
-    port: 2379              # etcd port
-    tlsEnable: true
-  common:
-    mysqlVolumeSize: 20Gi # MySQL PVC size
-    minioVolumeSize: 20Gi # Minio PVC size
-    etcdVolumeSize: 20Gi  # etcd PVC size
-    openldapVolumeSize: 2Gi   # openldap PVC size
-    redisVolumSize: 2Gi # Redis PVC size
-    es:  # Storage backend for logging, tracing, events and auditing.
-      elasticsearchMasterReplicas: 1   # total number of master nodes, it's not allowed to use even number
-      elasticsearchDataReplicas: 1     # total number of data nodes
-      elasticsearchMasterVolumeSize: 4Gi   # Volume size of Elasticsearch master nodes
-      elasticsearchDataVolumeSize: 20Gi    # Volume size of Elasticsearch data nodes
-      logMaxAge: 7                     # Log retention time in built-in Elasticsearch, it is 7 days by default.
-      elkPrefix: logstash              # The string making up index names. The index name will be formatted as ks-<elk_prefix>-log
-      # externalElasticsearchUrl:
-      # externalElasticsearchPort:
-  console:
-    enableMultiLogin: false  # enable/disable multiple sing on, it allows an account can be used by different users at the same time.
-    port: 30880
-  alerting:                # Whether to install KubeSphere alerting system. It enables Users to customize alerting policies to send messages to receivers in time with different time intervals and alerting levels to choose from.
-    enabled: false
-  auditing:                # Whether to install KubeSphere audit log system. It provides a security-relevant chronological set of records，recording the sequence of activities happened in platform, initiated by different tenants.
-    enabled: false         
-  devops:                  # Whether to install KubeSphere DevOps System. It provides out-of-box CI/CD system based on Jenkins, and automated workflow tools including Source-to-Image & Binary-to-Image
-    enabled: false
-    jenkinsMemoryLim: 2Gi      # Jenkins memory limit
-    jenkinsMemoryReq: 1500Mi   # Jenkins memory request
-    jenkinsVolumeSize: 8Gi     # Jenkins volume size
-    jenkinsJavaOpts_Xms: 512m  # The following three fields are JVM parameters
-    jenkinsJavaOpts_Xmx: 512m
-    jenkinsJavaOpts_MaxRAM: 2g
-  events:                  # Whether to install KubeSphere events system. It provides a graphical web console for Kubernetes Events exporting, filtering and alerting in multi-tenant Kubernetes clusters.
-    enabled: false
-  logging:                 # Whether to install KubeSphere logging system. Flexible logging functions are provided for log query, collection and management in a unified console. Additional log collectors can be added, such as Elasticsearch, Kafka and Fluentd.
-    enabled: false
-    logsidecarReplicas: 2
-  metrics_server:                    # Whether to install metrics-server. IT enables HPA (Horizontal Pod Autoscaler).
-    enabled: true
-  monitoring:                        #
-    prometheusReplicas: 1            # Prometheus replicas are responsible for monitoring different segments of data source and provide high availability as well.
-    prometheusMemoryRequest: 400Mi   # Prometheus request memory
-    prometheusVolumeSize: 20Gi       # Prometheus PVC size
-    alertmanagerReplicas: 1          # AlertManager Replicas
-  multicluster:
-    clusterRole: none  # host | member | none  # You can install a solo cluster, or specify it as the role of host or member cluster
-  networkpolicy:       # Network policies allow network isolation within the same cluster, which means firewalls can be set up between certain instances (Pods).
-    enabled: false     
-  notification:        # It supports notification management in multi-tenant Kubernetes clusters. It allows you to set AlertManager as its sender, and receivers include Email, Wechat Work, and Slack.
-    enabled: false
-  openpitrix:          # Whether to install KubeSphere Application Store. It provides an application store for Helm-based applications, and offer application lifecycle management
-    enabled: false
-  servicemesh:         # Whether to install KubeSphere Service Mesh (Istio-based). It provides fine-grained traffic management, observability and tracing, and offer visualization for traffic topology
-    enabled: false
-```
-#### 1.2 验证安装结果
+- vi ~/config-sample.yaml
+
+  ```yaml
+  #vi ~/config-sample.yaml
+  apiVersion: kubekey.kubesphere.io/v1alpha1
+  kind: Cluster
+  metadata:
+    name: config-sample
+  spec:
+    hosts:
+    - {name: master1, address: 10.10.71.214, internalAddress: 10.10.71.214, password: P@ssw0rd!}
+    - {name: master2, address: 10.10.71.73, internalAddress: 10.10.71.73, password: P@ssw0rd!}
+    - {name: master3, address: 10.10.71.62, internalAddress: 10.10.71.62, password: P@ssw0rd!}
+    - {name: node1, address: 10.10.71.75, internalAddress: 10.10.71.75, password: P@ssw0rd!}
+    - {name: node2, address: 10.10.71.76, internalAddress: 10.10.71.76, password: P@ssw0rd!}
+    - {name: node3, address: 10.10.71.79, internalAddress: 10.10.71.79, password: P@ssw0rd!}
+    roleGroups:
+      etcd:
+      - master1
+      - master2
+      - master3
+      master: 
+      - master1
+      - master2
+      - master3
+      worker:
+      - node1
+      - node2
+      - node3
+    controlPlaneEndpoint:
+      domain: lb.kubesphere.local
+      # vip
+      address: "10.10.71.67"                    
+      port: "6443"
+    kubernetes:
+      version: v1.17.9
+      imageRepo: kubesphere
+      clusterName: cluster.local
+      masqueradeAll: false  # masqueradeAll tells kube-proxy to SNAT everything if using the pure iptables proxy mode. [Default: false]
+      maxPods: 110  # maxPods is the number of pods that can run on this Kubelet. [Default: 110]
+      nodeCidrMaskSize: 24  # internal network node size allocation. This is the size allocated to each node on your network. [Default: 24]
+      proxyMode: ipvs  # mode specifies which proxy mode to use. [Default: ipvs]
+    network:
+      plugin: calico
+      calico:
+        ipipMode: Always  # IPIP Mode to use for the IPv4 POOL created at start up. If set to a value other than Never, vxlanMode should be set to "Never". [Always | CrossSubnet | Never] [Default: Always]
+        vxlanMode: Never  # VXLAN Mode to use for the IPv4 POOL created at start up. If set to a value other than Never, ipipMode should be set to "Never". [Always | CrossSubnet | Never] [Default: Never]
+        vethMTU: 1440  # The maximum transmission unit (MTU) setting determines the largest packet size that can be transmitted through your network. [Default: 1440]
+      kubePodsCIDR: 10.233.64.0/18
+      kubeServiceCIDR: 10.233.0.0/18
+    registry:
+      registryMirrors: []
+      insecureRegistries: []
+      privateRegistry: ""
+    storage:
+      defaultStorageClass: localVolume
+      localVolume:
+        storageClassName: local  
+  
+  ---
+  apiVersion: installer.kubesphere.io/v1alpha1
+  kind: ClusterConfiguration
+  metadata:
+    name: ks-installer
+    namespace: kubesphere-system
+    labels:
+      version: v3.0.0
+  spec:
+    local_registry: ""
+    persistence:
+      storageClass: ""
+    authentication:
+      jwtSecret: ""
+    etcd:
+      monitoring: true        # Whether to install etcd monitoring dashboard
+      endpointIps: 192.168.0.7,192.168.0.8,192.168.0.9  # etcd cluster endpointIps
+      port: 2379              # etcd port
+      tlsEnable: true
+    common:
+      mysqlVolumeSize: 20Gi # MySQL PVC size
+      minioVolumeSize: 20Gi # Minio PVC size
+      etcdVolumeSize: 20Gi  # etcd PVC size
+      openldapVolumeSize: 2Gi   # openldap PVC size
+      redisVolumSize: 2Gi # Redis PVC size
+      es:  # Storage backend for logging, tracing, events and auditing.
+        elasticsearchMasterReplicas: 1   # total number of master nodes, it's not allowed to use even number
+        elasticsearchDataReplicas: 1     # total number of data nodes
+        elasticsearchMasterVolumeSize: 4Gi   # Volume size of Elasticsearch master nodes
+        elasticsearchDataVolumeSize: 20Gi    # Volume size of Elasticsearch data nodes
+        logMaxAge: 7                     # Log retention time in built-in Elasticsearch, it is 7 days by default.
+        elkPrefix: logstash              # The string making up index names. The index name will be formatted as ks-<elk_prefix>-log
+        # externalElasticsearchUrl:
+        # externalElasticsearchPort:
+    console:
+      enableMultiLogin: false  # enable/disable multiple sing on, it allows an account can be used by different users at the same time.
+      port: 30880
+    alerting:                # Whether to install KubeSphere alerting system. It enables Users to customize alerting policies to send messages to receivers in time with different time intervals and alerting levels to choose from.
+      enabled: false
+    auditing:                # Whether to install KubeSphere audit log system. It provides a security-relevant chronological set of records，recording the sequence of activities happened in platform, initiated by different tenants.
+      enabled: false         
+    devops:                  # Whether to install KubeSphere DevOps System. It provides out-of-box CI/CD system based on Jenkins, and automated workflow tools including Source-to-Image & Binary-to-Image
+      enabled: false
+      jenkinsMemoryLim: 2Gi      # Jenkins memory limit
+      jenkinsMemoryReq: 1500Mi   # Jenkins memory request
+      jenkinsVolumeSize: 8Gi     # Jenkins volume size
+      jenkinsJavaOpts_Xms: 512m  # The following three fields are JVM parameters
+      jenkinsJavaOpts_Xmx: 512m
+      jenkinsJavaOpts_MaxRAM: 2g
+    events:                  # Whether to install KubeSphere events system. It provides a graphical web console for Kubernetes Events exporting, filtering and alerting in multi-tenant Kubernetes clusters.
+      enabled: false
+    logging:                 # Whether to install KubeSphere logging system. Flexible logging functions are provided for log query, collection and management in a unified console. Additional log collectors can be added, such as Elasticsearch, Kafka and Fluentd.
+      enabled: false
+      logsidecarReplicas: 2
+    metrics_server:                    # Whether to install metrics-server. IT enables HPA (Horizontal Pod Autoscaler).
+      enabled: true
+    monitoring:                        #
+      prometheusReplicas: 1            # Prometheus replicas are responsible for monitoring different segments of data source and provide high availability as well.
+      prometheusMemoryRequest: 400Mi   # Prometheus request memory
+      prometheusVolumeSize: 20Gi       # Prometheus PVC size
+      alertmanagerReplicas: 1          # AlertManager Replicas
+    multicluster:
+      clusterRole: none  # host | member | none  # You can install a solo cluster, or specify it as the role of host or member cluster
+    networkpolicy:       # Network policies allow network isolation within the same cluster, which means firewalls can be set up between certain instances (Pods).
+      enabled: false     
+    notification:        # It supports notification management in multi-tenant Kubernetes clusters. It allows you to set AlertManager as its sender, and receivers include Email, Wechat Work, and Slack.
+      enabled: false
+    openpitrix:          # Whether to install KubeSphere Application Store. It provides an application store for Helm-based applications, and offer application lifecycle management
+      enabled: false
+    servicemesh:         # Whether to install KubeSphere Service Mesh (Istio-based). It provides fine-grained traffic management, observability and tracing, and offer visualization for traffic topology
+      enabled: false
+  ```
+  
+- 使用您在上面自定义的配置文件创建集群：
+
+  ```
+  ./kk create cluster -f config-sample.yaml
+  ```
+#### 验证安装结果
 
 如果在 install.sh 最好返回 `Welcome to KubeSphere` ，则表示已安装成功。
 
@@ -400,10 +438,23 @@ https://kubesphere.io             2020-08-15 23:32:12
 #####################################################
 ```
 
-#### 1.3 登录 console 界面
+- 检查安装日志，然后等待一段时间
+
+  ```bash
+  kubectl logs -n kubesphere-system $(kubectl get pod -n kubesphere-system -l app=ks-install -o jsonpath='{.items[0].metadata.name}') -f
+  ```
+
+  
+
+#### 登录 console 界面
 
 使用给定的访问地址进行访问，进入到 KubeSphere 的登陆界面并使用默认账号（用户名 `admin`，密码 `P@88w0rd`）即可登陆平台。
 
 ![登录](/images/docs/vsphere/login.png)
 
 ![默认界面](/images/docs/vsphere/default.png)
+
+#### 开启可插拔功能组件(可选)
+
+上面的示例演示了默认最小安装的过程。若要在 KubeSphere 中启用其他组件，请参阅[启用可插拔组件](https://github.com/kubesphere/ks-installer/blob/master/README_zh.md#安装功能组件)了解更多详细信息。
+
