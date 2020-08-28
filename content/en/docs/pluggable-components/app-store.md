@@ -111,5 +111,20 @@ You can find the web kubectl tool by clicking the hammer icon at the bottom righ
 
 {{</ notice >}}
 
-6. Check the status in **Components** or execute `kubectl get pod --all-namespaces` through kubectl to see the status of pods.
+6. Check the status in **Components** or execute the following command through kubectl to see the status of related pods.
+
+```bash
+kubectl get pod -n openpitrix-system
+```
+
+The output may look as follows if the component runs successfully:
+
+```bash
+NAME                                                READY   STATUS      RESTARTS   AGE
+hyperpitrix-generate-kubeconfig-pznht               0/2     Completed   0          1h6m
+hyperpitrix-release-app-job-hzdjf                   0/1     Completed   0          1h6m
+openpitrix-hyperpitrix-deployment-fb76645f4-crvmm   1/1     Running     0          1h6m
+```
+
+
 
