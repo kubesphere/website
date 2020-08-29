@@ -6,3 +6,5 @@ description: 'How to uninstall KubeSphere'
 
 weight: 2450
 ---
+
+Uninstall will remove KubeSphere and Kubernetes from the machines. This operation is irreversible and does not have any backup. Please be caution with operation. You can see [Uninstalling KubeSphere and Kubernetes](../uninstalling-kubesphere-and-kubernetes) for details.
