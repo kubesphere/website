@@ -68,8 +68,6 @@ servicemesh:
 kubectl apply -f cluster-configuration.yaml
 ```
 
-Whether you install KubeSphere on Linux or on Kubernetes, you can check the status of the component in the web console of KubeSphere after installation in **Components**.
-
 ## Enable Service Mesh after Installation
 
 1. Log in the console as `admin`. Click **Platform** at the top left corner and select **Clusters Management**.
@@ -107,7 +105,21 @@ You can find the web kubectl tool by clicking the hammer icon at the bottom righ
 
 {{</ notice >}}
 
-6. Check the status in **Components** or execute the following command through kubectl to see the status of related pods.
+## Verify the Installation of Component
+
+{{< tabs >}}
+
+{{< tab "Verify the Component in Dashboard" >}}
+
+Go to **Components** and check the status of Istio. You may see an image as follows:
+
+![Istio](https://ap3.qingstor.com/kubesphere-website/docs/20200829130918.png)
+
+{{</ tab >}}
+
+{{< tab "Verify the Component through kubectl" >}}
+
+Execute the following command to check the status of pods:
 
 ```bash
 kubectl get pod -n istio-system
@@ -132,3 +144,7 @@ jaeger-collector-76bf54b467-2fh2v        1/1     Running     0          1h17m
 jaeger-operator-7559f9d455-k26xz         1/1     Running     0          1h29m
 jaeger-query-b478c5655-s57k8             2/2     Running     0          1h17m
 ```
+
+{{</ tab >}}
+
+{{</ tabs >}}
