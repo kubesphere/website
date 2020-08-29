@@ -18,7 +18,7 @@ From v3.0.0, the brand-new installer [KubeKey](https://github.com/kubesphere/kub
 KubeSphere supports hybrid environment, that is, the newly added host OS can be CentOS or Ubuntu. When new machines are ready, add the configurations about the new machine information in the `hosts` and `roleGroups` of the file `config-sample.yaml`.
 
 {{< notice warning >}}
-Do not allowed to modify the host name of the original nodes (e.g. master) when adding new nodes.
+Do not allowed to modify the host name of the original nodes (e.g. master1) when adding new nodes.
 {{</ notice >}}
 
 For example, if you started the installation with [all-in-one](../../quick-start/all-in-one-on-linux) and you want to add new nodes for the single-node cluster, you can create a configuration file use KubeKey.
@@ -28,7 +28,7 @@ For example, if you started the installation with [all-in-one](../../quick-start
 ./kk create config --with-kubesphere --with-kubernetes v1.17.9
 ```
 
-The following section demonstrate how to add two nodes (i.e. `node1` and `node2`) using `root` user as an example, it assumes your host name of the first machine is `master1` (Replace the host name with yours).
+The following section demonstrates how to add two nodes (i.e. `node1` and `node2`) using `root` user as an example, it assumes your host name of the first machine is `master1` (Replace the following host name with yours).
 
 ```yaml
 spec:
@@ -55,7 +55,7 @@ Execute the following command to apply the changes:
 ./kk add nodes -f config-sample.yaml
 ```
 
-Finally, you will be able to see the new nodes and their information on the KubeSphere console after a successful return. Select **Infrastructure → Nodes** from the left menu, or using `kubectl get node` command can also see the changes.
+Finally, you will be able to see the new nodes and their information on the KubeSphere console after a successful return. Select **Nodes → Cluster Nodes** from the left menu, or using `kubectl get node` command can also see the changes.
 
 ```
 kubectl get node
