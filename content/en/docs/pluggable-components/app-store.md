@@ -72,8 +72,6 @@ openpitrix:
 kubectl apply -f cluster-configuration.yaml
 ```
 
-Whether you install KubeSphere on Linux or on Kubernetes, you can check the status of the component in the web console of KubeSphere after installation in **Components**.
-
 ## Enable App Store after Installation
 
 1. Log in the console as `admin`. Click **Platform** at the top left corner and select **Clusters Management**.
@@ -111,7 +109,21 @@ You can find the web kubectl tool by clicking the hammer icon at the bottom righ
 
 {{</ notice >}}
 
-6. Check the status in **Components** or execute the following command through kubectl to see the status of related pods.
+## Verify the Installation of Component
+
+{{< tabs >}}
+
+{{< tab "Verify the Component in Dashboard" >}}
+
+Go to **Components** and check the status of OpenPitrix. You may see an image as follows:
+
+![openpitrix](https://ap3.qingstor.com/kubesphere-website/docs/20200829124018.png)
+
+{{</ tab >}}
+
+{{< tab "Verify the Component through kubectl" >}}
+
+Execute the following command to check the status of pods:
 
 ```bash
 kubectl get pod -n openpitrix-system
@@ -126,5 +138,7 @@ hyperpitrix-release-app-job-hzdjf                   0/1     Completed   0       
 openpitrix-hyperpitrix-deployment-fb76645f4-crvmm   1/1     Running     0          1h6m
 ```
 
+{{</ tab >}}
 
+{{</ tabs >}}
 
