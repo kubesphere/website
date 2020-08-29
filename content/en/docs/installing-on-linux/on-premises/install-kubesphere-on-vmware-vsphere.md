@@ -2,28 +2,33 @@
 title: "VMware vSphere Installation"
 keywords: 'kubernetes, kubesphere, VMware vSphere, installation'
 description: 'How to install KubeSphere on VMware vSphere Linux machines'
+
+
+weight: 2260
 ---
 
-# 在 vSphere 部署高可用的 KubeSphere
+# Introduction
 
-对于生产环境，我们需要考虑集群的高可用性。如果关键组件（例如 kube-apiserver，kube-scheduler 和 kube-controller-manager）都在同一主节点上运行，则一旦主节点出现故障，Kubernetes 和 KubeSphere 将不可用。因此，我们需要通过为负载均衡器配置多个主节点来设置高可用性集群。您可以使用任何云负载平衡器或任何硬件负载平衡器（例如F5）。另外，Keepalived 和HAproxy 或 Nginx 也是创建高可用性集群的替代方法。
+For a production environment, we need to consider the high availability of the cluster. If the key components (e.g. kube-apiserver, kube-scheduler, and kube-controller-manager) are all running on the same master node, Kubernetes and KubeSphere will be unavailable once the master node goes down. Therefore, we need to set up a high-availability cluster by provisioning load balancers with multiple master nodes. You can use any cloud load balancer, or any hardware load balancer (e.g. F5). In addition, Keepalived and [HAproxy](https://www.haproxy.com/), or Nginx is also an alternative for creating high-availability clusters.
 
-本教程为您提供了一个示例，说明如何使用 [keepalived + haproxy](https://kubesphere.com.cn/forum/d/1566-kubernetes-keepalived-haproxy) 对 kube-apiserver 进行负载均衡，实现高可用 kubernetes 集群。
+This tutorial walks you through an example of how to create keepalived + haproxy, and implement high availability of master and etcd nodes using the load balancers.
 
-## 前提条件
+## Prerequisites
 
-- 请遵循该[指南](https://github.com/kubesphere/kubekey)，确保您已经知道如何将 KubeSphere 与多节点集群一起安装。有关用于安装的 config yaml 文件的详细信息，请参阅多节点安装。本教程重点介绍如何配置负载均衡器。
-- 您需要一个 VMware vSphere 帐户来创建VM资源。
-- 考虑到数据的持久性，对于生产环境，我们建议您准备持久性存储并预先创建 StorageClass 。为了进行开发和测试，您可以使用集成的 OpenEBS 直接将 LocalPV设置为存储服务。
+- Please make sure that you already know how to install KubeSphere with a multi-node cluster by following the [guide](https://github.com/kubesphere/kubekey). For the detailed information about the config yaml file that is used for installation, see Multi-node Installation. This tutorial focuses more on how to configure load balancers.
+- You need a VMware vSphere account to create VMs.
+- Considering data persistence, for a production environment, we recommend you to prepare persistent storage and create a StorageClass in advance. For development and testing, you can use the integrated OpenEBS to provision LocalPV as the storage service directly.
 
-## 部署架构
-![部署架构](/images/docs/vsphere/kubesphereOnVsphere-zh-architecture.png)
+## Architecture
 
-## 创建主机
+![Architecture](/images/docs/vsphere/kubesphereOnVsphere-zh-architecture.png)
 
-本示例创建 9 台 **CentOS Linux release 7.6.1810（Core）**  的虚拟机，默认的最小化安装，每台配置为 2 Core 4 GB 40 G 即可。
+## Prepare Linux Hosts
 
-| 主机 IP | 主机名称 | 角色 |
+This tutorial  creates 9 virtual machines with **CentOS Linux release 7.6.1810 (Core)**, the default minimal installation, each configuration is 2 Core 4 GB 40 G.
+
+
+| Host IP | Host Name | Role |
 | --- | --- | --- |
 |10.10.71.214|master1|master1, etcd|
 |10.10.71.73|master2|master2, etcd|
@@ -35,58 +40,60 @@ description: 'How to install KubeSphere on VMware vSphere Linux machines'
 |10.10.71.77|lb-0|lb（keepalived + haproxy）|
 |10.10.71.66|lb-1|lb（keepalived + haproxy）|
 
-选择可创建的资源池，点击右键-新建虚拟机（创建虚拟机入口请好几个，自己选择）
+Start the Virtual Machine Creation Process in the VMware Host Client
+You use the New Virtual Machine wizard to create a virtual machine to place in the VMware Host Client inventory
 
-![0-1-新创](/images/docs/vsphere/kubesphereOnVsphere-zh-0-1-1-create-type.png)
+![create](/images/docs/vsphere/kubesphereOnVsphere-en-0-1-create.png)
 
-选择创建类型，创建新虚拟机。
+You use the Select creation type page of the New Virtual Machine wizard to create a new virtual machine, deploy a virtual machine from  an OVF or OVA file, or register an existing virtual machine
 
-![0-1-1创建类型](/images/docs/vsphere/kubesphereOnVsphere-zh-0-1-create.png)
+![kubesphereOnVsphere-en-0-1-1-create-type](/images/docs/vsphere/kubesphereOnVsphere-en-0-1-1-create-type.png)
 
-填写虚拟机名称和存放文件夹。
+When you create a new virtual machine, provide a unique name for the  virtual machine to distinguish it from existing virtual machines on the  host you are managing.
 
-![0-1-2-name](/images/docs/vsphere/kubesphereOnVsphere-zh-0-1-2-name.png)
+![kubesphereOnVsphere-en-0-1-2-name](/images/docs/vsphere/kubesphereOnVsphere-en-0-1-2-name.png)
 
-选择计算资源。
+Select the datastore or datastore cluster to store the virtual machine  configuration files and all of the virtual disks in. You can select the  datastore that has the most suitable properties, such as size, speed,  and availability, for your virtual machine storage.
 
-![0-1-3-资源](/images/docs/vsphere/kubesphereOnVsphere-zh-0-1-3-resource.png)
+![kubesphereOnVsphere-en-0-1-3-resource](/images/docs/vsphere/kubesphereOnVsphere-en-0-1-3-resource.png)
 
-选择存储。
+![kubesphereOnVsphere-en-0-1-4-storage](/images/docs/vsphere/kubesphereOnVsphere-en-0-1-4-storage.png)
 
-![0-1-4-存储](/images/docs/vsphere/kubesphereOnVsphere-zh-0-1-4-storage.png)
+![kubesphereOnVsphere-en-0-1-5-compatibility](/images/docs/vsphere/kubesphereOnVsphere-en-0-1-5-compatibility.png)
 
-选择兼容性，这里是 ESXi 7.0 及更高版本。
+ you select a guest operating system, the wizard provides the appropriate defaults for the operating system installation.
 
-![0-1-5-兼容性](/images/docs/vsphere/kubesphereOnVsphere-zh-0-1-5-compatibility.png)
+![kubesphereOnVsphere-en-0-1-6-system](/images/docs/vsphere/kubesphereOnVsphere-en-0-1-6-system.png)
 
-选择客户机操作系统，Linux CentOS 7 （64 位）。
+Before you deploy a new virtual machine, you have the option to  configure the virtual machine hardware and the virtual machine options
 
-![0-1-6-系统](/images/docs/vsphere/kubesphereOnVsphere-zh-0-1-6-system.png)
+![kubesphereOnVsphere-en-0-1-7-hardware-1](/images/docs/vsphere/kubesphereOnVsphere-en-0-1-7-hardware-1.png)
 
-自定义硬件，这里操作系统是挂载的 ISO 文件（打开电源时连接），网络是 VLAN71（勾选）。
+![kubesphereOnVsphere-en-0-1-7-hardware-2](/images/docs/vsphere/kubesphereOnVsphere-en-0-1-7-hardware-2.png)
 
-![0-1-7-硬件](/images/docs/vsphere/kubesphereOnVsphere-zh-0-1-7-hardware.png)
+![kubesphereOnVsphere-en-0-1-7-hardware-3](/images/docs/vsphere/kubesphereOnVsphere-en-0-1-7-hardware-3.png)
 
-在`即将完成`页面上可查看为虚拟机选择的配置。
+![kubesphereOnVsphere-en-0-1-7-hardware-4](/images/docs/vsphere/kubesphereOnVsphere-en-0-1-7-hardware-4.png)
 
-![0-1-8](/images/docs/vsphere/kubesphereOnVsphere-zh-0-1-8.png)
+In the Ready to complete page, you review the configuration selections that you made for the virtual machine.
 
-## 部署 keepalived+haproxy
-###  yum 安装
+![kubesphereOnVsphere-en-0-1-8](/images/docs/vsphere/kubesphereOnVsphere-en-0-1-8.png)
 
-在主机为lb-0和lb-1中部署keepalived+haproxy 即IP为10.10.71.77与10.10.71.66的服务器上安装部署haproxy、keepalived、psmisc
+
+## Keepalived+Haproxy
+###  Yum Install
+
+host lb-0(10.10.71.77) and host lb-1(10.10.71.66)
 
 ```bash
 yum install keepalived haproxy psmisc -y
 ```
 
-### 配置 haproxy
+### Configure Haproxy
 
-在IP为 10.10.71.77 与 10.10.71.66 的服务器 ，配置 haproxy  (两台 lb 机器配置一致即可，注意后端服务地址)。
-
-Haproxy 配置 /etc/haproxy/haproxy.cfg
-
+On the servers with IP 10.10.71.77 and 10.10.71.66, configure haproxy (the configuration of the two lb machines is the same, pay attention to the back-end service address).
 ```bash
+#Haproxy Configure /etc/haproxy/haproxy.cfg
 global
     log         127.0.0.1 local2
     chroot      /var/lib/haproxy
@@ -128,169 +135,162 @@ backend kube-apiserver
     server kube-apiserver-2 10.10.71.73:6443 check
     server kube-apiserver-3 10.10.71.62:6443 check
 ```
-
-
-
-启动之前检查语法是否有问题
+Check for grammar before starting
 
 ```bash
 haproxy -f /etc/haproxy/haproxy.cfg -c
 ```
-
-启动 Haproxy，并设置开机自启动
+Start Haproxy and set it to enable haproxy
 
 ```bash
 systemctl restart haproxy && systemctl enable haproxy
 ```
-
-停止 Haproxy
+Stop Haproxy
 
 ```bash
 systemctl stop haproxy
 ```
+### Configure Keepalived
 
-### 配置 keepalived
-
-主 haproxy 77 lb-0-10.10.71.77 (/etc/keepalived/keepalived.conf)
+Main haproxy 77 lb-0-10.10.71.77 (/etc/keepalived/keepalived.conf)
 
 ```bash
 global_defs {
-notification_email {
-}
-smtp_connect_timeout 30    #连接超时时间
-router_id LVS_DEVEL01 ##相当于给这个服务器起个昵称
-vrrp_skip_check_adv_addr
-vrrp_garp_interval 0
-vrrp_gna_interval 0
+  notification_email {
+  }
+  smtp_connect_timeout 30   
+  router_id LVS_DEVEL01 
+  vrrp_skip_check_adv_addr
+  vrrp_garp_interval 0
+  vrrp_gna_interval 0
 }
 vrrp_script chk_haproxy {
-script "killall -0 haproxy"
-interval 2
-weight 2
+  script "killall -0 haproxy"
+  interval 2
+  weight 2
 }
 vrrp_instance haproxy-vip {
-state MASTER  #主服务器 是MASTER
-priority 100  #主服务器优先级要比备服务器高
-interface ens192                        #实例绑定的网卡
-virtual_router_id 60 #定义一个热备组，可以认为这是60号热备组
-advert_int 1 #1秒互相通告一次，检查对方死了没。
-authentication {
-  auth_type PASS #认证类型
-  auth_pass 1111 #认证密码  这些相当于暗号
-}
-unicast_src_ip 10.10.71.77      #当前机器地址
-unicast_peer {
-  10.10.71.66                       #peer中其它机器地址
-}
-virtual_ipaddress {
-  #vip地址
-  10.10.71.67/24 
-}
-track_script {
-  chk_haproxy
-}
+  state MASTER  
+  priority 100  
+  interface ens192                       
+  virtual_router_id 60 
+  advert_int 1 
+  authentication {
+    auth_type PASS 
+    auth_pass 1111
+  }
+  unicast_src_ip 10.10.71.77     
+  unicast_peer {
+    10.10.71.66                      
+  }
+  virtual_ipaddress {
+    #vip
+    10.10.71.67/24 
+  }
+  track_script {
+    chk_haproxy
+  }
 }
 ```
+remarks haproxy 66 lb-1-10.10.71.66 (/etc/keepalived/keepalived.conf)
 
-备 haproxy 66 lb-1-10.10.71.66 (/etc/keepalived/keepalived.conf)
 ```bash
 global_defs {
-notification_email {
-}
-router_id LVS_DEVEL02 ##相当于给这个服务器起个昵称
-vrrp_skip_check_adv_addr
-vrrp_garp_interval 0
-vrrp_gna_interval 0
+  notification_email {
+  }
+  router_id LVS_DEVEL02 
+  vrrp_skip_check_adv_addr
+  vrrp_garp_interval 0
+  vrrp_gna_interval 0
 }
 vrrp_script chk_haproxy {
-script "killall -0 haproxy"
-interval 2
-weight 2
+  script "killall -0 haproxy"
+  interval 2
+  weight 2
 }
 vrrp_instance haproxy-vip {
-state BACKUP #备份服务器 是 backup
-priority 90 #优先级要低（把备份的90修改为100）
-interface ens192                        #实例绑定的网卡
-virtual_router_id 60
-advert_int 1
-authentication {
-  auth_type PASS
-  auth_pass 1111
-}
-unicast_src_ip 10.10.71.66      #当前机器地址
-unicast_peer {
-  10.10.71.77                         #peer 中其它机器地址
-}
-virtual_ipaddress {
-  #加/24
-  10.10.71.67/24 
-}
-track_script {
-  chk_haproxy
-}
+  state BACKUP 
+  priority 90
+  interface ens192                        
+  virtual_router_id 60
+  advert_int 1
+  authentication {
+    auth_type PASS
+    auth_pass 1111
+  }
+  unicast_src_ip 10.10.71.66      
+  unicast_peer {
+    10.10.71.77                        
+  }
+  virtual_ipaddress {
+    10.10.71.67/24 
+  }
+  track_script {
+    chk_haproxy
+  }
 }
 ```
+start keepalived and enable keepalived
 
-启动 keepalived，设置开机自启动
 ```bash
 systemctl restart keepalived && systemctl enable keepalived
 systemctl stop keepaliv
-
+systemctl start keepalived    
 ```
 
-开启 keepalived服务
+### Verify availability
 
-```bash
-systemctl start keepalivedb
-```
+Use `ip a s` to view the vip binding status of each lb node
 
-### 验证可用性
-
-使用 `ip a s` 查看各 lb 节点 vip 绑定情况
-```bash
-ip a s
-```
-暂停vip所在节点 haproxy：`systemctl stop haproxy`
-```bash
-systemctl stop haproxy
-```
-再次使用 `ip a s ` 查看各 lb 节点 vip 绑定情况，查看 vip 是否发生漂移
 ```bash
 ip a s 
 ```
-或者使用 `systemctl status -l keepalived`  命令查看
+
+Pause VIP node haproxy：`systemctl stop haproxy`
+
+```
+systemctl stop haproxy
+```
+
+Use `ip a s` again to check the vip binding of each lb node, and check whether vip drifts
+
+```bash
+ip a s 
+```
+
+Or use `systemctl status -l keepalived` command to view
+
 ```bash
 systemctl status -l keepalived
 ```
 
 
-## 获取安装程序可执行文件
 
-下载 installer 至一台目标机器
+## Get the Installer Excutable File
+
+Download Binary
 
 ```bash
 curl -O -k https://kubernetes.pek3b.qingstor.com/tools/kubekey/kk
 chmod +x kk
 ```
 
-## 创建多节点群集
+## Create a Multi-Node Cluster 
 
-您可以使用高级安装来控制自定义参数或创建多节点群集。具体来说，通过指定配置文件来创建集群。
+You have more control to customize parameters or create a multi-node cluster using the advanced installation. Specifically, create a cluster by specifying a configuration file.。
 
-### kubekey 部署 k8s 集群
+### With KubeKey, you can install Kubernetes and KubeSphere 
 
-创建配置文件(一个示例配置文件)|包含 kubesphere 的配置文件
+Create a Kubernetes cluster with KubeSphere installed (e.g. --with-kubesphere v3.0.0)
 
 ```bash
 ./kk create config --with-kubesphere v3.0.0 -f ~/config-sample.yaml
 ```
-
-#### 集群节点配置
+#### Modify the file config-sample.yaml according to your environment
 
 vi ~/config-sample.yaml
 
 ```yaml
-#vi ~/config-sample.yaml
 apiVersion: kubekey.kubesphere.io/v1alpha1
 kind: Cluster
 metadata:
@@ -418,22 +418,21 @@ spec:
   servicemesh:         # Whether to install KubeSphere Service Mesh (Istio-based). It provides fine-grained traffic management, observability and tracing, and offer visualization for traffic topology
     enabled: false
 ```
+Create a cluster using the configuration file you customized above:
 
-使用您在上面自定义的配置文件创建集群：
-
-```
+```bash
 ./kk create cluster -f config-sample.yaml
 ```
 
-#### 验证安装结果
+#### Verify the multi-node installation
 
-检查安装日志，然后等待一段时间
+Inspect the logs of installation, and wait a while:
 
 ```bash
 kubectl logs -n kubesphere-system $(kubectl get pod -n kubesphere-system -l app=ks-install -o jsonpath='{.items[0].metadata.name}') -f
 ```
 
-如果在创建集群，最后返回 `Welcome to KubeSphere` ，则表示已安装成功。
+If you can see the welcome log return, it means the installation is successful. You are ready to go.
 
 ```bash
 **************************************************
@@ -455,15 +454,12 @@ https://kubesphere.io             2020-08-15 23:32:12
 #####################################################
 ```
 
-#### 登录 console 界面
+#### Log in the console
 
-使用给定的访问地址进行访问，进入到 KubeSphere 的登陆界面并使用默认账号（用户名 `admin`，密码 `P@88w0rd`）即可登陆平台。
+You will be able to use default account and password `admin / P@88w0rd` to log in the console `http://{$IP}:30880` to take a tour of KubeSphere. Please change the default password after logging in.
 
-![登录](/images/docs/vsphere/login.png)
+![](/images/docs/vsphere/login.png)
 
-![默认界面](/images/docs/vsphere/default.png)
-
-#### 开启可插拔功能组件(可选)
-
-上面的示例演示了默认最小安装的过程。若要在 KubeSphere 中启用其他组件，请参阅[启用可插拔组件](https://github.com/kubesphere/ks-installer/blob/master/README_zh.md#安装功能组件)了解更多详细信息。
+#### Enable Pluggable Components (Optional)
+The example above demonstrates the process of a default minimal installation. To enable other components in KubeSphere, see [Enable Pluggable Components for more details](https://github.com/kubesphere/ks-installer#enable-pluggable-components).
 
