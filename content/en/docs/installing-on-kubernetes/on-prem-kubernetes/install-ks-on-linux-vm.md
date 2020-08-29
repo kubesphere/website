@@ -56,7 +56,7 @@ EOF
 > sed -i '7s/enforcing/disabled/' /etc/selinux/config
 > ```
 
-## Create /etc/sysctl.d/k8s.conf file，add this for each node
+## Create /etc/sysctl.d/k8s.conf file, add this for each node
 
 add this content to file
 
@@ -76,7 +76,7 @@ modprobe br_netfilter && sysctl -p /etc/sysctl.d/k8s.conf
 
 ## Install ipvs for node
 
-Create`/etc/sysconfig/modules/ipvs.modules`file var script，ensure that the node can auto load module when node restart。Use`lsmod | grep -e ip_vs -e nf_conntrack_ipv4` command to look whether to load kernel module correctly
+Create`/etc/sysconfig/modules/ipvs.modules`file var script, ensure that the node can auto load module when node restart。Use`lsmod | grep -e ip_vs -e nf_conntrack_ipv4` command to look whether to load kernel module correctly
 
 write this content to file
 
@@ -232,7 +232,7 @@ restart docker
 systemctl daemon-reload && systemctl restart docker
 ```
 
-## install Kubeadm for each node
+## Install Kubeadm for each node
 
 Creating a minimum viable Kubernetes cluster that conforms to best practices. In fact, you can use `kubeadm` to set up a cluster that will pass the [Kubernetes Conformance tests](https://kubernetes.io/blog/2017/10/software-conformance-certification). `kubeadm` also supports other cluster lifecycle functions, such as [bootstrap tokens](https://kubernetes.io/docs/reference/access-authn-authz/bootstrap-tokens/) and cluster upgrades.
 
@@ -327,7 +327,7 @@ EOF
 
 ## Init master node
 
-**if you want to reinit，exec the command`kubeadm reset -f` and `rm -rf $HOME/.kube`**
+**if you want to reinit, exec the command`kubeadm reset -f` and `rm -rf $HOME/.kube`**
 
 ```bash
 kubeadm init --config=kubeadm-config.yaml --upload-certs
@@ -348,7 +348,7 @@ chown $(id -u):$(id -g) $HOME/.kube/config
 
 **put the node ofmaster's $HOME/.kube/config file copy to node files**
 
-> make dir，the path is /root
+> make dir, the path is /root
 >
 > ```bash
 > mkdir -p $HOME/.kube 
@@ -375,7 +375,7 @@ kubeadm join 192.168.144.131:6443 --token 1upxcb.5bcdacfoo0q1gts5 \
     --discovery-token-ca-cert-hash sha256:15613ac8af2663996fe19b16c991c6df140eaacba061ead09016b257fd4638ce
 ```
 
-**if you forget token and sha256 value，you could show in master node using this command**
+**if you forget token and sha256 value, you could show in master node using this command**
 
 ```python
 // show token
@@ -390,7 +390,7 @@ openssl x509 -pubkey -in /etc/kubernetes/pki/ca.crt | openssl rsa -pubin -outfor
 kubeadm join 192.168.9.10:6443 --token 9b28zg.oyt0kvvpmtrem4bg     --discovery-token-ca-cert-hash sha256:5e7c7cd1cc1f86c0761e54b9380de22968b6b221cb98939c14ab2942223f6f51
 ```
 
-**master node show node，the state is NotReady，for we have not install internet plugin，here we install calio**[Docs](https://kubernetes.io/docs/setup/production-environment/tools/kubeadm/create-cluster-kubeadm/)
+**master node show node, the state is NotReady, for we have not install internet plugin, here we install calio**[Docs](https://kubernetes.io/docs/setup/production-environment/tools/kubeadm/create-cluster-kubeadm/)
 
 ```python
 kubectl get nodes
@@ -445,14 +445,14 @@ Context "kubernetes-admin@kubernetes" modified.
 Active namespace is "kube-system".
 ```
 
-till now，use kubeadm install k8s 1.16.3 has **completed**！！！
+till now, use kubeadm install k8s 1.16.3 has **completed**
 
 # K8s cluster install kubesphere
 
 [The prerequisites for installing kubesphere on the official website are as follows](https://kubesphere.io/docs/zh-CN/installation/prerequisites/)
 
 - `Kubernetes Version： `1.15.x ≤ K8s version ≤ 1.17.x`；
-- `Helm`Version： `2.10.0 ≤ Helm Version ＜ 3.0.0`（do not support helm 2.16.0 [#6894](https://github.com/helm/helm/issues/6894)），and has installed Tiller，refer [How to install and configure Helm](https://devopscube.com/install-configure-helm-kubernetes/) （3.0 could suppose Helm v3）；
+- `Helm`Version： `2.10.0 ≤ Helm Version ＜ 3.0.0`（do not support helm 2.16.0 [#6894](https://github.com/helm/helm/issues/6894)）, and has installed Tiller, refer [How to install and configure Helm](https://devopscube.com/install-configure-helm-kubernetes/) （3.0 could suppose Helm v3）；
 - The cluster has a default storage type (storageclass). If you have not prepared storage, please refer to [install OpenEBS create LocalPV storage type](https://kubesphere.io/docs/zh-CN/appendix/install-openebs) as test environment。
 - The cluster can access the Internet. If there is no Internet, please refer to [Installing kubesphere offline in kubernetes](https://kubesphere.com.cn/docs/installation/install-on-k8s-airgapped/)。
 
