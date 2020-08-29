@@ -70,8 +70,6 @@ devops:
 kubectl apply -f cluster-configuration.yaml
 ```
 
-Whether you install KubeSphere on Linux or on Kubernetes, you can check the status of the component in the web console of KubeSphere after installation in **Components**.
-
 ## Enable DevOps after Installation
 
 1. Log in the console as `admin`. Click **Platform** at the top left corner and select **Clusters Management**.
@@ -109,7 +107,21 @@ You can find the web kubectl tool by clicking the hammer icon at the bottom righ
 
 {{</ notice >}}
 
-6. Check the status in **Components** or execute the following command through kubectl to see the status of related pods.
+## Verify the Installation of Component
+
+{{< tabs >}}
+
+{{< tab "Verify the Component in Dashboard" >}}
+
+Go to **Components** and check the status of DevOps. You may see an image as follows:
+
+![devops](https://ap3.qingstor.com/kubesphere-website/docs/20200829125245.png)
+
+{{</ tab >}}
+
+{{< tab "Verify the Component through kubectl" >}}
+
+Execute the following command to check the status of pods:
 
 ```bash
 kubectl get pod -n kubesphere-devops-system
@@ -123,3 +135,7 @@ ks-jenkins-68b8949bb-jcvkt                 1/1     Running   0          1h3m
 s2ioperator-0                              1/1     Running   1          1h3m
 uc-jenkins-update-center-8c898f44f-hqv78   1/1     Running   0          1h14m
 ```
+
+{{</ tab >}}
+
+{{</ tabs >}}
