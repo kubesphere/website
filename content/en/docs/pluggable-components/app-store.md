@@ -1,9 +1,9 @@
 ---
-title: "Enable App Store"
+title: "KubeSphere App Store"
 keywords: "Kubernetes, KubeSphere, app-store, OpenPitrix"
 description: "How to Enable KubeSphere App Store"
 
-linkTitle: "Enable App Store"
+linkTitle: "KubeSphere App Store"
 weight: 3515
 ---
 
