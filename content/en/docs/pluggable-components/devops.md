@@ -1,9 +1,9 @@
 ---
-title: "Enable DevOps System"
+title: "KubeSphere DevOps System"
 keywords: "Kubernetes, Jenkins, KubeSphere, DevOps, cicd"
 description: "How to Enable KubeSphere DevOps System"
 
-linkTitle: "Enable DevOps System"
+linkTitle: "KubeSphere DevOps System"
 weight: 3520
 ---
 
