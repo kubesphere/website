@@ -49,7 +49,7 @@ Kubernetes 服务需要做到高可用，需要保证 kube-apiserver 的 HA ，�
  ### 创建主机
 ![3-1-选择主机配置](/images/docs/huawei-ecs/huawei-ECS-basic-settings.png)
 在网络配置中，网络选择第一步创建的 VPC 和子网。在安全组中，选择上一步创建的安全组。
-![3-2-选择网络配置](/images/docs/huawei-ecs/huawie-ECS-network-settings.png)
+![3-2-选择网络配置](/images/docs/huawei-ecs/huawei-ECS-network-settings.png)
 
 ### 创建负载均衡器
 在左侧栏选择 '弹性负载均衡器',进入后选择 购买弹性负载均衡器 
@@ -258,6 +258,6 @@ https://kubesphere.io             2020-08-28 01:25:54
 ## 如何自定义开启可插拔组件
 
 点击 `集群管理` - `自定义资源CRD` ，在过滤条件框输入 `ClusterConfiguration` ，如图下 
-![5-1-自定义组件](/images/docs/huawei/huawei-crds-config.png)
+![5-1-自定义组件](/images/docs/huawei-ecs/huawei-crds-config.png)
 点击 `ClusterConfiguration` 详情，对 `ks-installer` 编辑保存退出即可，组件描述介绍:[文档说明](https://github.com/kubesphere/ks-installer/blob/master/deploy/cluster-configuration.yaml)
-![5-2-自定义组件](/images/docs/huawei/huawei-crds-edit-yaml.png)
+![5-2-自定义组件](/images/docs/huawei-ecs/huawei-crds-edit-yaml.png)
