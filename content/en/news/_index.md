@@ -10,6 +10,10 @@ section1:
 
 section2:
   news:
+    - title: 'KubeSphere 3.0.0 GA: Born for Hybrid Cloud Apps'
+      description: That's a Killer! KubeSphere 3.0.0 is Now Generally Available!
+      image: 
+      link: 'kubesphere-3.0.0-ga-announcement'
     - title: 'Bare-Metal Kubernetes Load Balancer Porter Included in CNCF Landscape'
       description: The CNCF accepted Porter, a load balancer meant for bare-metal Kubernetes clusters, in its Landscape. Porter uses BGP and ECMP to load balance traffic in self-hosted Kubernetes clusters.
       image: https://ap3.qingstor.com/kubesphere-website/docs/porter-deployment.png
