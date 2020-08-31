@@ -38,7 +38,7 @@ KubeSphere screens users from the infrastructure underneath and helps enterprise
 
   - **OAuth 2.0**. Users can now easily integrate third-party applications with OAuth 2.0 protocol.
 
-- **Multilingual Support of Web Console**. KubeSphere is designed for users around the world at the very beginning. Thanks to our community members across the globe, KubeSphere 3.0 now supports five official languages for its web console: English, Simplified Chinese, Traditional Chinese, Spanish and Turkish. More languages are expected to be supported going forward.
+- **Multilingual Support of Web Console**. KubeSphere is designed for users around the world at the very beginning. Thanks to our community members across the globe, KubeSphere 3.0 now supports four official languages for its web console: English, Simplified Chinese, Traditional Chinese, and Spanish. More languages are expected to be supported going forward.
 
 In addition to the above highlights, KubeSphere 3.0 also features other functionality upgrades. For more and detailed information, see Release Notes for 3.0.0.
 
