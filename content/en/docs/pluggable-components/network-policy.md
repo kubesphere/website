@@ -13,9 +13,10 @@ Starting from v3.0.0, users can configure network policies of native Kubernetes 
 
 {{< notice note >}}
 
-Please make sure that the CNI network plugin used by the cluster supports Network Policies before you enable it. There are a number of CNI network plugins that support Network Policies, including Calico, Cilium, Kube-router, Romana and Weave Net.
+- Please make sure that the CNI network plugin used by the cluster supports Network Policies before you enable it. There are a number of CNI network plugins that support Network Policies, including Calico, Cilium, Kube-router, Romana and Weave Net.
+- It is recommended that you use [Calico](https://www.projectcalico.org/) as the CNI plugin before you enable Network Policy.
 
-{{</ notice >}} 
+{{</ notice >}}
 
 For more information, see [Network Policies](https://kubernetes.io/docs/concepts/services-networking/network-policies/).
 
