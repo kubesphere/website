@@ -66,6 +66,30 @@ weight = 4
 name = "Documentation"
 URL = "https://kubesphere.io/docs/"
 
+    [[languages.en.menu.main]]
+    parent = "Documentation"
+    name = "v3.0.0"
+    URL = "https://kubesphere.io/docs"
+    weight = 1
+
+    [[languages.en.menu.main]]
+    parent = "Documentation"
+    name = "v2.1.x"
+    URL = "https://v2-1.docs.kubesphere.io/docs"
+    weight = 2
+
+    [[languages.en.menu.main]]
+    parent = "Documentation"
+    name = "v2.0.x"
+    URL = "https://v2-0.docs.kubesphere.io/docs/"
+    weight = 3
+
+    [[languages.en.menu.main]]
+    parent = "Documentation"
+    name = "v1.0.0"
+    URL = "https://v1-0.docs.kubesphere.io/docs/"
+    weight = 4
+
 [[languages.en.menu.main]]
 weight = 5
 hasChildren = true
