@@ -1,9 +1,9 @@
 ---
-title: "Enable Auditing Logs"
+title: "KubeSphere Auditing Logs"
 keywords: "Kubernetes, auditing, KubeSphere, logs"
-description: "How to enable KubeSphere Auditing Log System"
+description: "How to enable KubeSphere Auditing Logs"
 
-linkTitle: "Enable Auditing Logs"
+linkTitle: "KubeSphere Auditing Logs"
 weight: 3525
 ---
 
@@ -12,12 +12,6 @@ weight: 3525
 KubeSphere Auditing Log System provides a security-relevant chronological set of records documenting the sequence of activities related to individual users, managers, or other components of the system. Each request to KubeSphere generates an event that is then written to a webhook and processed according to a certain rule.
 
 For more information, see Logging, Events, and Auditing.
-
-{{< notice note >}}
-
-Logging needs to be installed first before you enable Auditing Logs.
-
-{{</ notice >}} 
 
 ## Enable Auditing Logs before Installation
 
@@ -33,7 +27,7 @@ vi config-sample.yaml
 
 {{< notice note >}}
 
-If you adopt [All-in-one Installation](https://kubesphere-v3.netlify.app/docs/quick-start/all-in-one-on-linux/), you do not need to create a config-sample.yaml file as you can create a cluster directly. Generally, the all-in-one mode is for users who are new to KubeSphere and look to get familiar with the system. If you want to enable Auditing Logs in this mode (e.g. for testing purpose), refer to the following section to see how Auditing Logs can be installed after installation.
+If you adopt [All-in-one Installation](https://kubesphere-v3.netlify.app/docs/quick-start/all-in-one-on-linux/), you do not need to create a config-sample.yaml file as you can create a cluster directly. Generally, the all-in-one mode is for users who are new to KubeSphere and look to get familiar with the system. If you want to enable Auditing in this mode (e.g. for testing purpose), refer to the following section to see how Auditing can be installed after installation.
 
 {{</ notice >}}
 
@@ -44,11 +38,23 @@ auditing:
     enabled: true # Change "false" to "true"
 ```
 
-{{< notice warning >}}
+{{< notice note >}}
 
-`Logging` needs to be enabled in this file as well.
+By default, KubeKey will install Elasticsearch internally if Auditing is enabled. For a production environment, it is highly recommended that you set the following value in **config-sample.yaml** if you want to enable Auditing, especially `externalElasticsearchUrl` and `externalElasticsearchPort`. Once you provide the following information before installation, KubeKey will integrate your external Elasticsearch directly instead of installing an internal one.
 
 {{</ notice >}}
+
+```bash
+es:  # Storage backend for logging, tracing, events and auditing.
+  elasticsearchMasterReplicas: 1   # total number of master nodes, it's not allowed to use even number
+  elasticsearchDataReplicas: 1     # total number of data nodes
+  elasticsearchMasterVolumeSize: 4Gi   # Volume size of Elasticsearch master nodes
+  elasticsearchDataVolumeSize: 20Gi    # Volume size of Elasticsearch data nodes
+  logMaxAge: 7                     # Log retention time in built-in Elasticsearch, it is 7 days by default.
+  elkPrefix: logstash              # The string making up index names. The index name will be formatted as ks-<elk_prefix>-log
+  externalElasticsearchUrl: # The URL of external Elasticsearch
+  externalElasticsearchPort: # The port of external Elasticsearch
+```
 
 3. Create a cluster using the configuration file:
 
@@ -58,27 +64,39 @@ auditing:
 
 ### **Installing on Kubernetes**
 
-When you install KubeSphere on Kubernetes, you need to download the file [cluster-configuration.yaml](https://raw.githubusercontent.com/kubesphere/ks-installer/master/deploy/cluster-configuration.yaml) for cluster setting. If you want to install Auditing Logs, do not use `kubectl apply -f` directly for this file.
+When you install KubeSphere on Kubernetes, you need to download the file [cluster-configuration.yaml](https://raw.githubusercontent.com/kubesphere/ks-installer/master/deploy/cluster-configuration.yaml) for cluster setting. If you want to install Auditing, do not use `kubectl apply -f` directly for this file.
 
-1. In the tutorial of [Installing KubeSphere on Kubernetes](https://kubesphere-v3.netlify.app/docs/installing-on-kubernetes/introduction/overview/), you execute `kubectl apply -f` first for the file [kubesphere-installer.yaml](https://raw.githubusercontent.com/kubesphere/ks-installer/master/deploy/kubesphere-installer.yaml). After that, to enable Auditing Logs, create a local file cluster-configuration.yaml.
+1. In the tutorial of [Installing KubeSphere on Kubernetes](https://kubesphere-v3.netlify.app/docs/installing-on-kubernetes/introduction/overview/), you execute `kubectl apply -f` first for the file [kubesphere-installer.yaml](https://raw.githubusercontent.com/kubesphere/ks-installer/master/deploy/kubesphere-installer.yaml). After that, to enable Auditing, create a local file cluster-configuration.yaml.
 
 ```bash
 vi cluster-configuration.yaml
 ```
 
 2. Copy all the content in the file [cluster-configuration.yaml](https://raw.githubusercontent.com/kubesphere/ks-installer/master/deploy/cluster-configuration.yaml) and paste it to the local file just created.
-3. In this local cluster-configuration.yaml file, navigate to `auditing` and enable Auditing Logs by changing `false` to `true` for `enabled`. Save the file after you finish.
+3. In this local cluster-configuration.yaml file, navigate to `auditing` and enable Auditing by changing `false` to `true` for `enabled`. Save the file after you finish.
 
 ```bash
 auditing:
     enabled: true # Change "false" to "true"
 ```
 
-{{< notice warning >}}
+{{< notice note >}}
 
-`Logging` needs to be enabled in this file as well.
+By default, ks-installer will install Elasticsearch internally if Auditing is enabled. For a production environment, it is highly recommended that you set the following value in **cluster-configuration.yaml** if you want to enable Auditing, especially `externalElasticsearchUrl` and `externalElasticsearchPort`. Once you provide the following information before installation, ks-installer will integrate your external Elasticsearch directly instead of installing an internal one.
 
 {{</ notice >}}
+
+```bash
+es:  # Storage backend for logging, tracing, events and auditing.
+  elasticsearchMasterReplicas: 1   # total number of master nodes, it's not allowed to use even number
+  elasticsearchDataReplicas: 1     # total number of data nodes
+  elasticsearchMasterVolumeSize: 4Gi   # Volume size of Elasticsearch master nodes
+  elasticsearchDataVolumeSize: 20Gi    # Volume size of Elasticsearch data nodes
+  logMaxAge: 7                     # Log retention time in built-in Elasticsearch, it is 7 days by default.
+  elkPrefix: logstash              # The string making up index names. The index name will be formatted as ks-<elk_prefix>-log
+  externalElasticsearchUrl: # The URL of external Elasticsearch
+  externalElasticsearchPort: # The port of external Elasticsearch
+```
 
 4. Execute the following command to start installation:
 
@@ -111,11 +129,23 @@ auditing:
     enabled: true # Change "false" to "true"
 ```
 
-{{< notice warning >}}
+{{< notice note >}}
 
-`Logging` needs to be enabled in this file as well.
+By default, Elasticsearch will be installed internally if Auditing is enabled. For a production environment, it is highly recommended that you set the following value in this yaml file if you want to enable Auditing, especially `externalElasticsearchUrl` and `externalElasticsearchPort`. Once you provide the following information, KubeSphere will integrate your external Elasticsearch directly instead of installing an internal one.
 
 {{</ notice >}}
+
+```bash
+es:  # Storage backend for logging, tracing, events and auditing.
+  elasticsearchMasterReplicas: 1   # total number of master nodes, it's not allowed to use even number
+  elasticsearchDataReplicas: 1     # total number of data nodes
+  elasticsearchMasterVolumeSize: 4Gi   # Volume size of Elasticsearch master nodes
+  elasticsearchDataVolumeSize: 20Gi    # Volume size of Elasticsearch data nodes
+  logMaxAge: 7                     # Log retention time in built-in Elasticsearch, it is 7 days by default.
+  elkPrefix: logstash              # The string making up index names. The index name will be formatted as ks-<elk_prefix>-log
+  externalElasticsearchUrl: # The URL of external Elasticsearch
+  externalElasticsearchPort: # The port of external Elasticsearch
+```
 
 5. You can use the web kubectl to check the installation process by executing the following command:
 
@@ -135,9 +165,11 @@ You can find the web kubectl tool by clicking the hammer icon at the bottom righ
 
 {{< tab "Verify the Component in Dashboard" >}}
 
-Go to **Components** and check the status of Logging. You may see an image as follows:
+If you enable both Logging and Auditing, you can check the status of Auditing in **Logging** in **Components**. You may see an image as follows:
 
 ![auditing](https://ap3.qingstor.com/kubesphere-website/docs/20200829121140.png)
+
+If you only enable Auditing without Logging installed, you cannot see the image above as the button **Logging** will not display.
 
 {{</ tab >}}
 
@@ -152,19 +184,18 @@ kubectl get pod -n kubesphere-logging-system
 The output may look as follows if the component runs successfully:
 
 ```bash
-NAME                                            READY   STATUS    RESTARTS   AGE
-elasticsearch-logging-data-0                    1/1     Running   0          29m
-elasticsearch-logging-data-1                    1/1     Running   0          27m
-elasticsearch-logging-discovery-0               1/1     Running   0          29m
-fluent-bit-djkwl                                1/1     Running   0          29m
-fluent-bit-srswf                                1/1     Running   0          29m
-fluent-bit-t92cc                                1/1     Running   0          29m
-fluentbit-operator-5bf7687b88-gjlvc             1/1     Running   0          29m
-kube-auditing-operator-7574bd6f96-wx7cp         1/1     Running   0          28m
-kube-auditing-webhook-deploy-6dfb46bb6c-7ft7h   1/1     Running   0          27m
-kube-auditing-webhook-deploy-6dfb46bb6c-86x62   1/1     Running   0          27m
-logsidecar-injector-deploy-667c6c9579-k2htl     2/2     Running   0          28m
-logsidecar-injector-deploy-667c6c9579-s6vcp     2/2     Running   0          28m
+NAME                                                              READY   STATUS      RESTARTS   AGE
+elasticsearch-logging-curator-elasticsearch-curator-159872n9g9g   0/1     Completed   0          2d10h
+elasticsearch-logging-curator-elasticsearch-curator-159880tzb7x   0/1     Completed   0          34h
+elasticsearch-logging-curator-elasticsearch-curator-1598898q8w7   0/1     Completed   0          10h
+elasticsearch-logging-data-0                                      1/1     Running     1          2d20h
+elasticsearch-logging-data-1                                      1/1     Running     1          2d20h
+elasticsearch-logging-discovery-0                                 1/1     Running     1          2d20h
+fluent-bit-6v5fs                                                  1/1     Running     1          2d20h
+fluentbit-operator-5bf7687b88-44mhq                               1/1     Running     1          2d20h
+kube-auditing-operator-7574bd6f96-p4jvv                           1/1     Running     1          2d20h
+kube-auditing-webhook-deploy-6dfb46bb6c-hkhmx                     1/1     Running     1          2d20h
+kube-auditing-webhook-deploy-6dfb46bb6c-jp77q                     1/1     Running     1          2d20h
 ```
 
 {{</ tab >}}
