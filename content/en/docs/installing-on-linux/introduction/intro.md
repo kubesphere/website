@@ -45,7 +45,7 @@ Three scenarios to use KubeKey:
 
 {{< notice note >}}
 
-If you have existing Kubernetes clusters, please refer to [Installing on Kubernetes](https://kubesphere-v3.netlify.app/docs/installing-on-kubernetes/).
+If you have existing Kubernetes clusters, please refer to [Installing on Kubernetes](https://kubesphere.io/docs/installing-on-kubernetes/).
 
 {{</ notice >}} 
 
