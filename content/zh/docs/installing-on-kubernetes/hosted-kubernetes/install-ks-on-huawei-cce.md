@@ -1,29 +1,29 @@
 ---
-title: "Install KubeSphere on Huawei CCE"
+title: "在华为云 CCE 安装 KubeSphere"
 keywords: "kubesphere, kubernetes, docker, huawei, cce"
-description: "It is to introduce how to install KubeSphere 3.0 on Huaiwei CCE."
+description: "介绍如何在华为云 CCE 容器引擎上部署 KubeSphere 3.0"
 ---
 
-This instruction is about how to install KubeSphere 3.0.0 on [Huaiwei CCE](https://support.huaweicloud.com/cce/).
+本指南将介绍如果在[华为云 CCE 容器引擎](https://support.huaweicloud.com/cce/)上部署并使用 KubeSphere 3.0.0 平台。
 
-## Preparation for Huawei CCE
+## 华为云 CCE 环境准备
 
-### Create Kubernetes Cluster
+### 创建 Kubernetes 集群
 
-First, create a Kubernetes Cluster according to the resources. Meet the requirements below (ignore this part if your environment is as required).
+首先按使用环境的资源需求创建 Kubernetes 集群，满足以下一些条件即可（如已有环境并满足条件可跳过本节内容）：
 
-- KubeSphere 3.0.0 supports  Kubernetes `1.15.x`, `1.16.x`, `1.17.x`, and `1.18.x` by default. Select a version and create the cluster, e.g. `v1.15.11`, `v1.17.9`.
-- Ensure the cloud computing network for your Kubernetes cluster works, or use an elastic IP when “Auo Creat”or “ Select Existing” ; or configur the network after the cluster is created (Configure [NAT Gateway](https://support.huaweicloud.com/natgateway/)）；
-- Select `s3.xlarge.2`  `4-core｜8GB` for nodes and add more if necessary (3 and more nodes are required for production environment).
+- KubeSphere 3.0.0 默认支持的 Kubernetes 版本为 `1.15.x`, `1.16.x`, `1.17.x`, `1.18.x`，需要选择其中支持的版本进行集群创建（如 `v1.15.11`, `v1.17.9`）；
+- 需要确保 Kubernetes 集群所使用的云主机的网络可以，可以通过在创建集群的同时 “自动创建” 或 “使用已有” 弹性 IP；或者在集群创建后自行配置网络（如配置 [NAT 网关](https://support.huaweicloud.com/natgateway/)）；
+- 工作节点规格方面建议选择 `s3.xlarge.2` 的 `4核｜8GB` 配置，并按需扩展工作节点数量（通常生产环境需要 3 个及以上工作节点）。
 
-### Create a public key for kubectl
+### 创建公网 kubectl 证书
 
-- Go to `Resource Management` > `Cluster Management` > `Basic Information` > `Network`, and bind `Public apiserver`.
-- Select `kubectl` on the right column, go to `Download kubectl configuration file`, and click `Click here to download`, then you will get a public key for kubectl.
+- 创建完集群后，进入 `资源管理` > `集群管理` 界面，在 `基本信息` > `网络` 面板中，绑定 `公网apiserver地址`；
+- 而后在右侧面板中，选择 `kubectl` 标签页，并在 `下载kubectl配置文件` 列表项中 `点击此处下载`，即可获取公用可用的 kubectl 证书。
 
-![Generate Kubectl config file](/images/docs/huawei-cce/zh/generate-kubeconfig.png)
+![生成 Kubectl 配置文件](/images/docs/huawei-cce/zh/generate-kubeconfig.png)
 
-After you get the configuration file for kubectl, use kubectl command lines to verify the connection to the cluster.
+获取 kubectl 配置文件后，可通过 kubectl 命令行工具来验证集群连接：
 
 ```bash
 $ kubectl version
@@ -32,13 +32,13 @@ Server Version: version.Info{Major:"1", Minor:"17+", GitVersion:"v1.17.9-r0-CCE2
 
 ```
 
-## KubeSphere Deployment
+## KubeSphere 平台部署
 
-### Create a custom StorageClass
+### 创建自定义 StorageClass
 
-> Huawei CCE built-in Everest CSI provides StorageClass `csi-disk` which uses SATA (normal I/O) by default, but the actual disk that is for Kubernetes clusters is either SAS (high I/O) or SSD (extremely high I/O). So it is suggested that create an extra StorageClass and set it as default for later. Refer to the official document - [Use kubectl to create a cloud storage](https://support.huaweicloud.com/usermanual-cce/cce_01_0044.html#section7)。
+> 由于华为 CCE 自带的 Everest CSI 组件所提供的 StorageClass `csi-disk` 默认指定的是 SATA 磁盘（即普通 I/O 磁盘），但实际创建的 Kubernetes 集群所配置的磁盘基本只有 SAS（高 I/O）和 SSD (超高 I/O)，因此建议额外创建对应的 StorageClass（并设定为默认）以方便后续部署使用。参见官方文档 - [使用 kubectl 创建云硬盘](https://support.huaweicloud.com/usermanual-cce/cce_01_0044.html#section7)。
 
-Below is an example to create a SAS(high I/O) for its corresponding StorageClass.
+以下示例展示如何创建一个 SAS（高 I/O）磁盘对应的 StorageClass：
 
 ```yaml
 # csi-disk-sas.yaml
@@ -54,7 +54,7 @@ metadata:
 parameters:
   csi.storage.k8s.io/csi-driver-name: disk.csi.everest.io
   csi.storage.k8s.io/fstype: ext4
-  # Bind Huawei “high I/O storage. If use “extremely high I/O, change it to SSD.
+  # 绑定华为 “高I/O” 磁盘，如需 “超高I/O“ 则此值改为 SSD
   everest.io/disk-volume-type: SAS
   everest.io/passthrough: "true"
 provisioner: everest-csi-provisioner
@@ -64,11 +64,11 @@ volumeBindingMode: Immediate
 
 ```
 
-For how to set up or cancel a default StorageClass, refer to Kubernetes official document - [Change Default StorageClass](https://kubernetes.io/zh/docs/tasks/administer-cluster/change-default-storage-class/)。 
+关于如何设定/取消默认 StorageClass，可参考 Kubernetes 官方文档 - [改变默认 StorageClass](https://kubernetes.io/zh/docs/tasks/administer-cluster/change-default-storage-class/)。 
 
-### Use ks-installer to minimize the deployment
+### 通过 ks-installer 执行最小化部署
 
-Use [ks-installer](https://github.com/kubesphere/ks-in staller) to deploy KubeSphere on an existing Kubernetes cluster. It is suggested that you install it in minimal size.
+接下来就可以使用 [ks-installer](https://github.com/kubesphere/ks-installer) 在已有的 Kubernetes 集群上来执行 KubeSphere 部署，建议首先还是以最小功能集进行安装，可执行以下命令：
 
 ```bash
 $ kubectl apply -f https://raw.githubusercontent.com/kubesphere/ks-installer/master/deploy/kubesphere-installer.yaml
@@ -76,36 +76,36 @@ $ kubectl apply -f https://raw.githubusercontent.com/kubesphere/ks-installer/mas
 
 ```
 
-Go to `Workload` > `Pod`, and check the running status of the pod in `kubesphere-system` of its namespace to understand the minimal deployment of KubeSphere. `ks-console-xxxx` of the namespace to understand the app availability of KubeSphere console. 
+执行部署命令后，可以通过进入 `工作负载` > `容器组 Pod` 界面，在右侧面板中查询 `kubesphere-system` 命名空间下的 Pod 运行状态了解 KubeSphere 平台最小功能集的部署状态；通过该命名空间下 `ks-console-xxxx` 容器的状态来了解 KubeSphere 控制台应用的可用状态。
 
-![Deploy KubeSphere in Minimal](/images/docs/huawei-cce/zh/deploy-ks-minimal.png)
+![部署 KubeSphere 最小功能集](/images/docs/huawei-cce/zh/deploy-ks-minimal.png)
 
-### Expose KubeSphere Console
+### 开启 KubeSphere 外网访问
 
-Check the running status of Pod in `kubesphere-system` namespace and make sure the basic components of  KubeSphere are running. Then expose KubeSphere console.
+通过 `kubesphere-system` 命名空间下的 Pod 运行状态确认 KubeSphere 基础组件都已进入运行状态后，我们需要为 KubeSphere 控制台开启外网访问。
 
-Go to `Resource Management` > `Network` and choose the service in `ks-console`. It is suggested that you choose `LoadBalancer` (Public IP is required). The configuration is shown below.
+进入 `资源管理` > `网络管理`，在右侧面板中选择 `ks-console` 更改网络访问方式，建议选用 `负载均衡（``LoadBalancer）` 访问方式（需绑定弹性公网 IP），配置完成后如下图：
 
-![Expose KubeSphere Console](/images/docs/huawei-cce/zh/expose-ks-console.png)
+![开启 KubeSphere 外网访问](/images/docs/huawei-cce/zh/expose-ks-console.png)
 
-Default settings are OK for other detailed configurations. You can also set it as you need.
+服务细节配置基本上选用默认选项即可，当然也可以按需进行调整：
 
-![Edit KubeSphere Console SVC](/images/docs/huawei-cce/zh/edit-ks-console-svc.png)
+![为 KubeSphere 控制台配置负载均衡访问](/images/docs/huawei-cce/zh/edit-ks-console-svc.png)
 
-After you set LoadBalancer for KubeSphere console, you can visit it via the given address. Go to KubeSphere login page and use the default account (username `admin` and pw `P@88w0rd`) to log in.
+通过负载均衡绑定公网访问后，即可使用给定的访问地址进行访问，进入到 KubeSphere 的登陆界面并使用默认账号（用户名 `admin`，密码 `P@88w0rd`）即可登陆平台：
 
-![Log in KubeSphere Console](/images/docs/huawei-cce/zh/login-ks-console.png)
+![登录 KubeSphere 平台](/images/docs/huawei-cce/zh/login-ks-console.png)
 
-### Start add-ons via KubeSphere
+### 通过 KubeSphere 开启附加组件
 
-When KubeSphere can be visited via the Internet, all the actions can be done on the console. Refer to the document - `Start add-ons in KubeSphere 3.0`.
+KubeSphere 平台外网可访问后，接下来的操作即可都在平台内完成。开启附加组件的操作可以参考社区文档 - `KubeSphere 3.0 界面开启可插拔组件安装`。
 
-💡 Notes: Before you start Istio, you have to delete `applications.app.k8s.io` built in Huawei CCE due to the CRD conflict. The simple way to do it is to use kubectl.
+💡 需要留意：在开启 Istio 组件之前，由于自定义资源定义（CRD）冲突的问题，需要先删除华为 CCE 自带的 `applications.app.k8s.io` ，最直接的方式是通过 kubectl 工具来完成：
 
 ```bash
 $ kubectl delete crd applications.app.k8s.io
 ```
 
-After all add-ons are installed, go to the Cluster Management, and you will see the interface below. You can see all the started add-ons in `Add-Ons`.
+全部附加组件开启并安装成功后，进入集群管理界面，可以得到如下界面呈现效果，特别是在 `服务组件` 部分可以看到已经开启的各个基础和附加组件：
 
-![Full View of KubeSphere Console](/images/docs/huawei-cce/zh/view-ks-console-full.png)
+![KubeSphere 全功能集管理界面](/images/docs/huawei-cce/zh/view-ks-console-full.png)
