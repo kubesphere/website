@@ -11,30 +11,30 @@ icon: "/images/docs/docs.svg"
 
 ---
 
-## Installing KubeSphere and Kubernetes on Linux
+Quickstarts include six hands-on lab exercises that help you quickly get started with KubeSphere. It is highly recommended that you go though all of these parts to explore the basic feature of KubeSphere.
 
-In this chapter, we will demonstrate how to use KubeKey to provision a new Kubernetes and KubeSphere cluster based on different infrastructures. Kubekey can help you to quickly build a production-ready cluster architecture on a set of machines from zero to one. It also helps you to easily scale the cluster and install pluggable components on existing architecture.
+## [All-in-one Installation on Linux](https://kubesphere-v3.netlify.app/docs/quick-start/all-in-one-on-linux/)
 
-```
-console.log('aaa')
-```
+Learn how to install KubeSphere on Linux with a minimal installation package. The tutorial serves as a basic kick-starter for you to understand the container platform, paving the way for learning the following guides.
 
-```html
-<div class="menu section-control">
-  <div></div>
-  <div></div>
-  <div></div>
-</div>
-<div class="menu section-control">
-  <div></div>
-  <div></div>
-  <div></div>
-</div>
+## [Minimal KubeSphere on Kubernetes](https://kubesphere-v3.netlify.app/docs/quick-start/minimal-kubesphere-on-k8s/)
 
-```
+Learn how to install KubeSphere on existing Kubernetes clusters with a minimal installation package. Your Kubernetes clusters can be hosed on cloud or on-premises.
 
-## Most Popular Pages
+## [Create Workspace, Project, Account and Role](https://kubesphere-v3.netlify.app/docs/quick-start/create-workspace-and-project/)
 
-Below you will find some of the most common and helpful pages from this chapter. We highly recommend you to review them at first.
+Understand how you can take advantage of multi-tenant system in KubeSphere for fine-grained access control at different levels.
 
-{{< popularPage icon="/images/docs/bitmap.jpg" title="Install KubeSphere on AWS EC2" description="Provisioning a new Kubernetes and KubeSphere cluster based on AWS" link="" >}}
+## [Deploy Bookinfo](https://kubesphere-v3.netlify.app/docs/quick-start/deploy-bookinfo-to-k8s/)
+
+Explore KubeSphere service mesh by deploying Bookinfo and using different traffic management strategies, such as canary release.
+
+## [Compose and Deploy Wordpress](https://kubesphere-v3.netlify.app/docs/quick-start/composing-an-app/)
+
+Learn the entire process of deploying an example app in KubeSphere, including credential creation, volume creation, and component setting.
+
+## [Enable Pluggable Components](https://kubesphere-v3.netlify.app/docs/quick-start/enable-pluggable-components/)
+
+Install pluggable components on the platform so that you can explore KubeSphere in an all-around way. Pluggable components can be enabled both before and after the installation.
+
+
