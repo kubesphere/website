@@ -165,9 +165,11 @@ You can find the web kubectl tool by clicking the hammer icon at the bottom righ
 
 {{< tab "Verify the Component in Dashboard" >}}
 
-Go to **Components** and check the status of Logging. You may see an image as follows:
+If you enable both Logging and Events, you can check the status of Events in **Logging** in **Components**. You may see an image as follows:
 
-![logging](https://ap3.qingstor.com/kubesphere-website/docs/20200829104152.png)
+![events](https://ap3.qingstor.com/kubesphere-website/docs/events.png)
+
+If you only enable Events without Logging installed, you cannot see the image above as the button **Logging** will not display.
 
 {{</ tab >}}
 
@@ -182,14 +184,16 @@ kubectl get pod -n kubesphere-logging-system
 The output may look as follows if the component runs successfully:
 
 ```bash
-NAME                                          READY   STATUS    RESTARTS   AGE
-elasticsearch-logging-data-0                  1/1     Running   0          9m33s
-elasticsearch-logging-data-1                  1/1     Running   0          5m12s
-elasticsearch-logging-discovery-0             1/1     Running   0          9m33s
-fluent-bit-qpvrf                              1/1     Running   0          4m56s
-fluentbit-operator-5bf7687b88-z7bgg           1/1     Running   0          9m26s
-logsidecar-injector-deploy-667c6c9579-662pm   2/2     Running   0          8m56s
-logsidecar-injector-deploy-667c6c9579-tjckn   2/2     Running   0          8m56s
+NAME                                  READY   STATUS    RESTARTS   AGE
+elasticsearch-logging-data-0          1/1     Running   0          11m
+elasticsearch-logging-data-1          1/1     Running   0          6m48s
+elasticsearch-logging-discovery-0     1/1     Running   0          11m
+fluent-bit-ljlsl                      1/1     Running   0          6m30s
+fluentbit-operator-5bf7687b88-85vxv   1/1     Running   0          11m
+ks-events-exporter-5cb959c74b-rc4lm   2/2     Running   0          7m1s
+ks-events-operator-7d46fcccc9-8vvsh   1/1     Running   0          10m
+ks-events-ruler-97f756879-lg65t       2/2     Running   0          7m1s
+ks-events-ruler-97f756879-ptbkr       2/2     Running   0          7m1s
 ```
 
 {{</ tab >}}
