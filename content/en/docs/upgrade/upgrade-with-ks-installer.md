@@ -7,7 +7,7 @@ linkTitle: "Upgrade with ks-installer"
 weight: 150
 ---
 
-ks-installer is recommended for users whose Kubernetes clusters were not setup via [KubeSphere Installer](https://v2-1.docs.kubesphere.io/docs/installation/all-in-one/#step-2-download-installer-package), but hosted by cloud vendors. This tutorial guides to **upgrade KubeSphere only**. Cluster operator are responsible for upgrading Kubernetes on themselves beforehand.
+ks-installer is recommended for users whose Kubernetes clusters were not setup via [KubeSphere Installer](https://v2-1.docs.kubesphere.io/docs/installation/all-in-one/#step-2-download-installer-package), but hosted by cloud vendors. This tutorial guides to **upgrade KubeSphere only**. Cluster operators are responsible for upgrading Kubernetes on themselves beforehand.
 
 ## Prerequisite
 
