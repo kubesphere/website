@@ -4,7 +4,7 @@ keywords: "Kubernetes, alertmanager, KubeSphere, alerting, notification"
 description: "How to Enable Alerting and Notification"
 
 linkTitle: "KubeSphere Alerting and Notification"
-weight: 500
+weight: 3545
 ---
 
 ## What are KubeSphere Alerting and Notification
