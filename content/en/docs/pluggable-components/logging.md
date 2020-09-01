@@ -1,9 +1,9 @@
 ---
-title: "Enable Logging"
+title: "KubeSphere Logging System"
 keywords: "Kubernetes, Elasticsearch, KubeSphere, Logging, logs"
 description: "How to Enable KubeSphere Logging System"
 
-linkTitle: "Enable Logging"
+linkTitle: "KubeSphere Logging System"
 weight: 3535
 ---
 
@@ -12,12 +12,6 @@ weight: 3535
 KubeSphere provides a powerful, holistic and easy-to-use logging system for log collection, query and management. It covers logs from at varied levels, including tenants, infrastructure resources, and applications. Users can search logs from different dimensions, such as project, workload, Pod and keyword. Compared with Kibana, the tenant-based logging system of KubeSphere features better isolation and security among tenants as each tenant can only view his or her own logs. Apart from KubeSphere's own logging system, the container platform also allows users to add third-party log collectors, such as Elasticsearch, Kafka and Fluentd. 
 
 For more information, see Logging, Events and Auditing.
-
-{{< notice note >}}
-
-Logging needs to be enabled first if you need to install Events or Auditing.
-
-{{</ notice >}} 
 
 ## Enable Logging before Installation
 
@@ -44,6 +38,23 @@ logging:
     enabled: true # Change "false" to "true"
 ```
 
+{{< notice note >}}
+
+By default, KubeKey will install Elasticsearch internally if Logging is enabled. For a production environment, it is highly recommended that you set the following value in **config-sample.yaml** if you want to enable Logging, especially `externalElasticsearchUrl` and `externalElasticsearchPort`. Once you provide the following information before installation, KubeKey will integrate your external Elasticsearch directly instead of installing an internal one.
+
+{{</ notice >}}
+
+```bash
+es:  # Storage backend for logging, tracing, events and auditing.
+  elasticsearchMasterReplicas: 1   # total number of master nodes, it's not allowed to use even number
+  elasticsearchDataReplicas: 1     # total number of data nodes
+  elasticsearchMasterVolumeSize: 4Gi   # Volume size of Elasticsearch master nodes
+  elasticsearchDataVolumeSize: 20Gi    # Volume size of Elasticsearch data nodes
+  logMaxAge: 7                     # Log retention time in built-in Elasticsearch, it is 7 days by default.
+  elkPrefix: logstash              # The string making up index names. The index name will be formatted as ks-<elk_prefix>-log
+  externalElasticsearchUrl: # The URL of external Elasticsearch
+  externalElasticsearchPort: # The port of external Elasticsearch
+```
 3. Create a cluster using the configuration file:
 
 ```bash
@@ -66,6 +77,24 @@ vi cluster-configuration.yaml
 ```bash
 logging:
     enabled: true # Change "false" to "true"
+```
+
+{{< notice note >}}
+
+By default, ks-installer will install Elasticsearch internally if Logging is enabled. For a production environment, it is highly recommended that you set the following value in **cluster-configuration.yaml** if you want to enable Logging, especially `externalElasticsearchUrl` and `externalElasticsearchPort`. Once you provide the following information before installation, ks-installer will integrate your external Elasticsearch directly instead of installing an internal one.
+
+{{</ notice >}}
+
+```bash
+es:  # Storage backend for logging, tracing, events and auditing.
+  elasticsearchMasterReplicas: 1   # total number of master nodes, it's not allowed to use even number
+  elasticsearchDataReplicas: 1     # total number of data nodes
+  elasticsearchMasterVolumeSize: 4Gi   # Volume size of Elasticsearch master nodes
+  elasticsearchDataVolumeSize: 20Gi    # Volume size of Elasticsearch data nodes
+  logMaxAge: 7                     # Log retention time in built-in Elasticsearch, it is 7 days by default.
+  elkPrefix: logstash              # The string making up index names. The index name will be formatted as ks-<elk_prefix>-log
+  externalElasticsearchUrl: # The URL of external Elasticsearch
+  externalElasticsearchPort: # The port of external Elasticsearch
 ```
 
 4. Execute the following command to start installation:
@@ -97,6 +126,24 @@ A Custom Resource Definition (CRD) allows users to create a new type of resource
 ```bash
 logging:
     enabled: true # Change "false" to "true"
+```
+
+{{< notice note >}}
+
+By default, Elasticsearch will be installed internally if Logging is enabled. For a production environment, it is highly recommended that you set the following value in this yaml file if you want to enable Logging, especially `externalElasticsearchUrl` and `externalElasticsearchPort`. Once you provide the following information, KubeSphere will integrate your external Elasticsearch directly instead of installing an internal one.
+
+{{</ notice >}}
+
+```bash
+es:  # Storage backend for logging, tracing, events and auditing.
+  elasticsearchMasterReplicas: 1   # total number of master nodes, it's not allowed to use even number
+  elasticsearchDataReplicas: 1     # total number of data nodes
+  elasticsearchMasterVolumeSize: 4Gi   # Volume size of Elasticsearch master nodes
+  elasticsearchDataVolumeSize: 20Gi    # Volume size of Elasticsearch data nodes
+  logMaxAge: 7                     # Log retention time in built-in Elasticsearch, it is 7 days by default.
+  elkPrefix: logstash              # The string making up index names. The index name will be formatted as ks-<elk_prefix>-log
+  externalElasticsearchUrl: # The URL of external Elasticsearch
+  externalElasticsearchPort: # The port of external Elasticsearch
 ```
 
 5. You can use the web kubectl to check the installation process by executing the following command:
