@@ -75,7 +75,7 @@ For more information, see HA Cluster Configuration. You can also see the specifi
 
 ## Overview of Pluggable Components
 
-KubeSphere has decoupled some core feature components since v2.1.0. These components are designed to be pluggable, which means you can enable any of them both before and after the installation. By default, KubeKey does not install these pluggable components. For more information, see Enable Pluggable Components.
+KubeSphere has decoupled some core feature components since v2.1.0. These components are designed to be pluggable, which means you can enable any of them both before and after the installation. By default, KubeKey does not install these pluggable components. For more information, see [Enable Pluggable Components](https://kubesphere.io/docs/pluggable-components/).
 
 ![Pluggable Components](https://pek3b.qingstor.com/kubesphere-docs/png/20191207140846.png)
 

@@ -59,4 +59,4 @@ kubectl get svc/ks-console -n kubesphere-system
 
 ## Enable Pluggable Components (Optional)
 
-The guide above is used only for minimal installation by default. To enable other components in KubeSphere, see Enable Pluggable Components for more details.
+The guide above is used only for minimal installation by default. To enable other components in KubeSphere, see [Enable Pluggable Components](https://kubesphere.io/docs/pluggable-components/) for more details.

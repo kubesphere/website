@@ -128,4 +128,4 @@ ks-console   LoadBalancer   10.0.181.93   13.86.xxx.xxx   80:30194/TCP   13m    
 ```
 ## Enable Pluggable Components (Optional)
 
-The example above demonstrates the process of a default minimal installation. For pluggable components, you can enable them either before or after the installation. See [Enable Pluggable Components](https://github.com/kubesphere/ks-installer#enable-pluggable-components) for details.
+The example above demonstrates the process of a default minimal installation. For pluggable components, you can enable them either before or after the installation. See [Enable Pluggable Components](https://kubesphere.io/docs/pluggable-components/) for details.
