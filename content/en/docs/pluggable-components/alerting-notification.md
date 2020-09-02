@@ -9,7 +9,7 @@ weight: 3545
 
 ## What are KubeSphere Alerting and Notification
 
-Alerting and Notification are two important building blocks of observability, closely related monitoring and logging. The alerting system in KubeSphere allows users to know activities of interest based on alert policies. When a predefined threshold of a certain metric is reached, an alert will be sent to preconfigured recipients, the notification method of which can be set by yourself, including Email, WeChat Work and Slack. This is extremely useful for enterprises to implement multi-tenant management and stringent security controls.
+Alerting and Notification are two important building blocks of observability, closely related monitoring and logging. The alerting system in KubeSphere, coupled with the proactive failure notification system, allows users to know activities of interest based on alert policies. When a predefined threshold of a certain metric is reached, an alert will be sent to preconfigured recipients, the notification method of which can be set by yourself, including Email, WeChat Work and Slack. With a highly functional alerting and notification system in place, you can quickly identify and resolve potential issues in advance before they affect your business.
 
 For more information, see Alerting Policy and Message.
 
@@ -25,7 +25,7 @@ It is recommended that you enable Alerting and Notification together so that use
 
 When you install KubeSphere on Linux, you need to create a configuration file, which lists all KubeSphere components.
 
-1. In the tutorial of [Installing KubeSphere on Linux](https://kubesphere-v3.netlify.app/docs/installing-on-linux/introduction/multioverview/), you create a default file **config-sample.yaml**. Modify the file by executing the following command:
+1. In the tutorial of [Installing KubeSphere on Linux](../../installing-on-linux/introduction/multioverview/), you create a default file **config-sample.yaml**. Modify the file by executing the following command:
 
 ```bash
 vi config-sample.yaml
@@ -33,7 +33,7 @@ vi config-sample.yaml
 
 {{< notice note >}}
 
-If you adopt [All-in-one Installation](https://kubesphere-v3.netlify.app/docs/quick-start/all-in-one-on-linux/), you do not need to create a config-sample.yaml file as you can create a cluster directly. Generally, the all-in-one mode is for users who are new to KubeSphere and look to get familiar with the system. If you want to enable Alerting and Notification in this mode (e.g. for testing purpose), refer to the following section to see how Alerting and Notification can be installed after installation.
+If you adopt [All-in-one Installation](../../quick-start/all-in-one-on-linux/), you do not need to create a config-sample.yaml file as you can create a cluster directly. Generally, the all-in-one mode is for users who are new to KubeSphere and look to get familiar with the system. If you want to enable Alerting and Notification in this mode (e.g. for testing purpose), refer to the following section to see how Alerting and Notification can be installed after installation.
 
 {{</ notice >}}
 
@@ -56,7 +56,7 @@ notification:
 
 When you install KubeSphere on Kubernetes, you need to download the file [cluster-configuration.yaml](https://raw.githubusercontent.com/kubesphere/ks-installer/master/deploy/cluster-configuration.yaml) for cluster setting. If you want to install Alerting and Notification, do not use `kubectl apply -f` directly for this file.
 
-1. In the tutorial of [Installing KubeSphere on Kubernetes](https://kubesphere-v3.netlify.app/docs/installing-on-kubernetes/introduction/overview/), you execute `kubectl apply -f` first for the file [kubesphere-installer.yaml](https://raw.githubusercontent.com/kubesphere/ks-installer/master/deploy/kubesphere-installer.yaml). After that, to enable Alerting and Notification, create a local file cluster-configuration.yaml.
+1. In the tutorial of [Installing KubeSphere on Kubernetes](../../installing-on-kubernetes/introduction/overview/), you execute `kubectl apply -f` first for the file [kubesphere-installer.yaml](https://raw.githubusercontent.com/kubesphere/ks-installer/master/deploy/kubesphere-installer.yaml). After that, to enable Alerting and Notification, create a local file cluster-configuration.yaml.
 
 ```bash
 vi cluster-configuration.yaml
