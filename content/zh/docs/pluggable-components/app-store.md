@@ -23,7 +23,7 @@ For more information, see App Store.
 
 When you install KubeSphere on Linux, you need to create a configuration file, which lists all KubeSphere components.
 
-1. In the tutorial of [Installing KubeSphere on Linux](https://kubesphere-v3.netlify.app/docs/installing-on-linux/introduction/multioverview/), you create a default file **config-sample.yaml**. Modify the file by executing the following command:
+1. In the tutorial of [Installing KubeSphere on Linux](https://kubesphere.io/docs/installing-on-linux/introduction/multioverview/), you create a default file **config-sample.yaml**. Modify the file by executing the following command:
 
 ```bash
 vi config-sample.yaml
@@ -31,7 +31,7 @@ vi config-sample.yaml
 
 {{< notice note >}}
 
-If you adopt [All-in-one Installation](https://kubesphere-v3.netlify.app/docs/quick-start/all-in-one-on-linux/), you do not need to create a config-sample.yaml file as you can create a cluster directly. Generally, the all-in-one mode is for users who are new to KubeSphere and look to get familiar with the system. If you want to enable App Store in this mode (e.g. for testing purpose), refer to the following section to see how App Store can be installed after installation.
+If you adopt [All-in-one Installation](https://kubesphere.io/docs/quick-start/all-in-one-on-linux/), you do not need to create a config-sample.yaml file as you can create a cluster directly. Generally, the all-in-one mode is for users who are new to KubeSphere and look to get familiar with the system. If you want to enable App Store in this mode (e.g. for testing purpose), refer to the following section to see how App Store can be installed after installation.
 
 {{</ notice >}}
 
@@ -52,7 +52,7 @@ openpitrix:
 
 When you install KubeSphere on Kubernetes, you need to download the file [cluster-configuration.yaml](https://raw.githubusercontent.com/kubesphere/ks-installer/v3.0.0/deploy/cluster-configuration.yaml) for cluster setting. If you want to install App Store, do not use `kubectl apply -f` directly for this file.
 
-1. In the tutorial of [Installing KubeSphere on Kubernetes](https://kubesphere-v3.netlify.app/docs/installing-on-kubernetes/introduction/overview/), you execute `kubectl apply -f` first for the file [kubesphere-installer.yaml](https://raw.githubusercontent.com/kubesphere/ks-installer/v3.0.0/deploy/kubesphere-installer.yaml). After that, to enable App Store, create a local file cluster-configuration.yaml.
+1. In the tutorial of [Installing KubeSphere on Kubernetes](../../installing-on-kubernetes/introduction/overview/), you execute `kubectl apply -f` first for the file [kubesphere-installer.yaml](https://raw.githubusercontent.com/kubesphere/ks-installer/v3.0.0/deploy/kubesphere-installer.yaml). After that, to enable App Store, create a local file cluster-configuration.yaml.
 
 ```bash
 vi cluster-configuration.yaml
@@ -141,4 +141,3 @@ openpitrix-hyperpitrix-deployment-fb76645f4-crvmm   1/1     Running     0       
 {{</ tab >}}
 
 {{</ tabs >}}
-

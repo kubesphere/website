@@ -115,26 +115,30 @@ Click **Submit** when you finish.
 
 ### Download KubeKey
 
-[Kubekey](https://github.com/kubesphere/kubekey) is the next-gen installer which is used for installing Kubernetes and KubeSphere v3.0.0 fastly, flexibly and easily.
+[Kubekey](https://github.com/kubesphere/kubekey) is the next-gen installer which provides an easy, fast and flexible way to install Kubernetes and KubeSphere v3.0.0.
+
+Follow the step below to download KubeKey.
 
 {{< tabs >}}
 
-{{< tab "For users with poor network to GitHub" >}}
+{{< tab "For users with poor network connections to GitHub" >}}
 
-For users in China, you can download the installer using this link.
+Download KubeKey using the following command:
 
 ```bash
 wget https://kubesphere.io/kubekey/releases/v1.0.0
 ```
+
 {{</ tab >}}
 
-{{< tab "For users with good network to GitHub" >}}
+{{< tab "For users with good network connections to GitHub" >}}
 
-For users with good network to GitHub, you can download it from [GitHub Release Page](https://github.com/kubesphere/kubekey/releases/tag/v1.0.0) or use the following link directly.
+Download KubeKey from [GitHub Release Page](https://github.com/kubesphere/kubekey/releases/tag/v1.0.0) or use the following command directly.
 
 ```bash
 wget https://github.com/kubesphere/kubekey/releases/download/v1.0.0/kubekey-v1.0.0-linux-amd64.tar.gz
 ```
+
 {{</ tab >}}
 
 {{</ tabs >}}
@@ -151,13 +155,17 @@ Grant the execution right to `kk`:
 chmod +x kk
 ```
 
-Then create an example configuration file with default configurations. Here we use Kubernetes v1.17.9 as an example.
+Create an example configuration file with default configurations. Here Kubernetes v1.17.9 is used as an example.
 
 ```bash
 ./kk create config --with-kubesphere v3.0.0 --with-kubernetes v1.17.9
 ```
 
-> Tip: These Kubernetes versions have been fully tested with KubeSphere: *v1.15.12*, *v1.16.13*, *v1.17.9* (default), *v1.18.6*.
+{{< notice note >}} 
+
+These Kubernetes versions have been fully tested with KubeSphere: v1.15.12, v1.16.13, v1.17.9 (default), and v1.18.6.
+
+{{</ notice >}} 
 
 ### Cluster Node Planning
 
@@ -222,7 +230,7 @@ In addition to the node information, you need to provide the load balancer infor
 
 {{</ notice >}}
 
-After that, you can enable any components you need by following **Enable Pluggable Components** and start your HA cluster installation.
+After that, you can enable any components you need by following [Enable Pluggable Components](../../../pluggable-components/) and start your HA cluster installation.
 
 ### Kubernetes Cluster Configuration (Optional)
 
@@ -253,7 +261,7 @@ For each storage plugin configuration, you can refer to [config-example.md](http
 
 KubeSphere has decoupled some core feature components since v2.1.0. These components are designed to be pluggable which means you can enable them either before or after installation. By default, KubeSphere will be started with a minimal installation if you do not enable them.
 
-You can enable any of them according to your demands. It is highly recommended that you install these pluggable components to discover the full-stack features and capabilities provided by KubeSphere. Please ensure your machines have sufficient CPU and memory before enabling them. See [Enable Pluggable Components](https://github.com/kubesphere/ks-installer#enable-pluggable-components) for details.
+You can enable any of them according to your demands. It is highly recommended that you install these pluggable components to discover the full-stack features and capabilities provided by KubeSphere. Please ensure your machines have sufficient CPU and memory before enabling them. See [Enable Pluggable Components](../../../pluggable-components/) for details.
 
 ### Start to Bootstrap a Cluster
 

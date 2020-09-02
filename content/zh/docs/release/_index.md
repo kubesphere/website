@@ -1,6 +1,6 @@
 ---
 title: "Release Notes"
-description: "Help you to better understand KubeSphere with detailed graphics and contents"
+description: "Release Notes of Different KubeSphere Versions"
 layout: "single"
 
 linkTitle: "Release Notes"
@@ -11,12 +11,29 @@ icon: "/images/docs/docs.svg"
 
 ---
 
-## Installing KubeSphere and Kubernetes on Linux
+This chapter lists the release notes of all versions of KubeSphere, helping you gain a comprehensive understanding of upgrades and feature enhancements in every version release.
 
-In this chapter, we will demonstrate how to use KubeKey to provision a new Kubernetes and KubeSphere cluster based on different infrastructures. Kubekey can help you to quickly build a production-ready cluster architecture on a set of machines from zero to one. It also helps you to easily scale the cluster and install pluggable components on existing architecture.
+## [Release Notes - 3.0.0](../release/release-v300/)
 
-## Most Popular Pages
+Release Notes for 3.0.0.
 
-Below you will find some of the most common and helpful pages from this chapter. We highly recommend you to review them at first.
+## [Release Notes - 2.1.1](../release/release-v211/)
 
-{{< popularPage icon="/images/docs/bitmap.jpg" title="Install KubeSphere on AWS EC2" description="Provisioning a new Kubernetes and KubeSphere cluster based on AWS" link="" >}}
+Release Notes for 2.1.1.
+
+## [Release Notes - 2.1.0](../release/release-v210/)
+
+Release Notes for 2.1.0.
+
+## [Release Notes - 2.0.2](../release/release-v202/)
+
+Release Notes for 2.0.2.
+
+## [Release Notes - 2.0.1](../release/release-v201/)
+
+Release Notes for 2.0.1.
+
+## [Release Notes - 2.0.0](../release/release-v200/)
+
+Release Notes for 2.0.0.
+
