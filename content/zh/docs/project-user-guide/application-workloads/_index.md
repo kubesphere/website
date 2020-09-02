@@ -1,6 +1,6 @@
 ---
 linkTitle: "Application Workloads"
-weight: 2200
+weight: 2080
 
 _build:
     render: false

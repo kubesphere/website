@@ -1,9 +1,9 @@
 ---
-title: "Installing on Kubernetes"
+title: "Installing KubeSphere on Kubernetes"
 description: "Help you to better understand KubeSphere with detailed graphics and contents"
 layout: "single"
 
-linkTitle: "Installing on Kubernetes"
+linkTitle: "Installing KubeSphere on Kubernetes"
 weight: 2500
 
 icon: "/images/docs/docs.svg"
