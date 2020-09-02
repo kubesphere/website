@@ -1,7 +1,7 @@
 ---
 title: "Overview"
-keywords: "kubernetes, docker, kubesphere, jenkins, istio, prometheus"
-description: "KubeSphere Release Notes For 3.0.0"
+keywords: "Kubernetes, KubeSphere, pluggable-components, overview"
+description: "Overview of installing pluggable components."
 
 linkTitle: "Overview"
 weight: 3510
