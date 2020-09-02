@@ -19,7 +19,7 @@ Learn how to install KubeSphere on Linux with a minimal installation package. Th
 
 ## [Minimal KubeSphere on Kubernetes](https://kubesphere.io/docs/quick-start/minimal-kubesphere-on-k8s/)
 
-Learn how to install KubeSphere on existing Kubernetes clusters with a minimal installation package. Your Kubernetes clusters can be hosed on cloud or on-premises.
+Learn how to install KubeSphere on existing Kubernetes clusters with a minimal installation package. Your Kubernetes clusters can be hosted on cloud or on-premises.
 
 ## [Create Workspace, Project, Account and Role](https://kubesphere.io/docs/quick-start/create-workspace-and-project/)
 
