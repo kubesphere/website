@@ -29,7 +29,7 @@ See the requirements for hardware and operating system shown below. To get start
 
 {{< notice note >}} 
 
-The system requirements above and the instructions below are for the default minimal installation without any optional components enabled. If your machine has at least 8 cores and 16G memory, it is recommended that you enable all components. For more information, see [Enable Pluggable Components](https://kubesphere.io/docs/pluggable-components/).
+The system requirements above and the instructions below are for the default minimal installation without any optional components enabled. If your machine has at least 8 cores and 16G memory, it is recommended that you enable all components. For more information, see [Enable Pluggable Components](../../pluggable-components/).
 
 {{</ notice >}} 
 
@@ -199,4 +199,4 @@ After logging in the console, you can check the status of different components i
 
 ## Enable Pluggable Components (Optional)
 
-The guide above is used only for minimal installation by default. To enable other components in KubeSphere, see [Enable Pluggable Components](https://kubesphere.io/docs/pluggable-components/) for more details.
+The guide above is used only for minimal installation by default. To enable other components in KubeSphere, see [Enable Pluggable Components](../../pluggable-components/) for more details.
