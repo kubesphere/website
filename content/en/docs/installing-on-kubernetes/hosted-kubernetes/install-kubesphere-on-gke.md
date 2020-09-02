@@ -51,26 +51,8 @@ This guide walks you through the steps of deploying KubeSphere on [Google Kubern
 kubectl apply -f https://raw.githubusercontent.com/kubesphere/ks-installer/v3.0.0/deploy/kubesphere-installer.yaml
 ```
 
-- Create a local cluster-configuration.yaml.
-
 ```bash
-vi cluster-configuration.yaml
-```
-
-- Copy all the content in this [file](https://raw.githubusercontent.com/kubesphere/ks-installer/v3.0.0/deploy/cluster-configuration.yaml) and paste it to your local cluster-configuration.yaml. Navigate to `metrics_server`, and change `true` to `false` for `enabled`.
-
-![change-metrics-server](https://ap3.qingstor.com/kubesphere-website/docs/true-false.png)
-
-{{< notice warning >}}
-
-Metrics Server is already installed on GKE. If you do not disable `metrics_server` in the cluster-configuration.yaml file, it will cause an issue and stop the installation process.
-
-{{</ notice >}}
-
-- Save the file when you finish. Execute the following command to start installation:
-
-```bash
-kubectl apply -f cluster-configuration.yaml
+kubectl apply -f https://raw.githubusercontent.com/kubesphere/ks-installer/v3.0.0/deploy/cluster-configuration.yaml
 ```
 
 - Inspect the logs of installation:
