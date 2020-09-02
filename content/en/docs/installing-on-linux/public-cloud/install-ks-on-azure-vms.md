@@ -1,38 +1,40 @@
 ---
 title: "Deploy KubeSphere on Azure VM Instance"
-keywords: "Kubesphere, Installation, HA, high availability, load balancer, Azure"
+keywords: "KubeSphere, Installation, HA, high availability, load balancer, Azure"
 description: "The tutorial is for installing a high-availability cluster on Azure."
+
+Weight: 2225
 ---
 
-## Before you begin
+## Before You Begin
 
-Technically, you can either install, administer, and manage Kubernetes yourself or go for a managed Kubernetes solution. If you are looking for a way to take advantage of Kubernetes with a hands-off approach, a fully managed platform solution is what you’re looking for, please see [Deploy KubeSphere on AKS](../../../installing-on-kubernetes/hosted-kubernetes/install-ks-on-aks) for more details. But if you want a bit more control over your configuration and setup a highly available cluster on Azure, this instruction will help you to setup a production-ready Kubernetes and KubeSphere.
+Technically, you can either install and manage Kubernetes yourself or adopt a managed Kubernetes solution. If you are looking for a hands-off approach to taking advantage of Kubernetes, a fully-managed platform solution may suit you best. Please see [Deploy KubeSphere on AKS](../../../installing-on-kubernetes/hosted-kubernetes/install-kubesphere-on-aks/) for more details. However, if you want a bit more control over your configuration and set up a highly-available cluster on Azure, this instruction will help you to create a production-ready Kubernetes and KubeSphere cluster.
 
 ## Introduction
 
-In this tutorial, we will use two key features of Azure virtual machines (VMs):
+In this tutorial, we will use two key features of Azure virtual machines (VMs): 
 
-- Virtual Machine Scale Sets: Azure VMSS let you create and manage a group of load balanced VMs. The number of VM instances can automatically increase or decrease in response to demand or a defined schedule(Kubernates Autoscaler is available, but not covered in this tutorial, see [autoscaler](https://github.com/kubernetes/autoscaler/tree/master/cluster-autoscaler/cloudprovider/azure) for more details), which perfectly fits the Worker Nodes.
-- Availability sets: An availability set is a logical grouping of VMs within a datacenter that automatically distributed across fault domains. This approach limits the impact of potential physical hardware failures, network outages, or power interruptions. All the Master and ETCD VMs will be placed in an Availability sets to meet our High Availability goals.
+- Virtual Machine Scale Sets (VMSS): Azure VMSS let you create and manage a group of load balanced VMs. The number of VM instances can automatically increase or decrease in response to demand or a defined schedule (Kubernetes Autoscaler is available, but not covered in this tutorial. See [autoscaler](https://github.com/kubernetes/autoscaler/tree/master/cluster-autoscaler/cloudprovider/azure) for more details), which perfectly fits Worker nodes.
+- Availability Sets: An availability set is a logical grouping of VMs within a datacenter that are automatically distributed across fault domains. This approach limits the impact of potential physical hardware failures, network outages, or power interruptions. All the Master and ETCD VMs will be placed in an availability set to achieve high availability.
 
 Besides those VMs, other resources like Load Balancer, Virtual Network and Network Security Group will be involved.
 
 ## Prerequisites
 
 - You need an [Azure](https://portal.azure.com) account to create all the resources.
-- Basic knowledge of [Azure Resource Manager](https://docs.microsoft.com/en-us/azure/azure-resource-manager/templates/)(ARM) templates, which are files that define the Azure infrastructure and configuration.
+- Basic knowledge of [Azure Resource Manager](https://docs.microsoft.com/en-us/azure/azure-resource-manager/templates/) (ARM) templates, which are files that define the infrastructure and configuration for your project.
 - Considering data persistence, for a production environment, we recommend you to prepare persistent storage and create a StorageClass in advance. For development and testing, you can use the integrated OpenEBS to provision LocalPV as the storage service directly.
 
 ## Architecture
 
-Six machines of "Ubuntu 18.04" will be deployed in Azure Resources Group. Three of them are grouped into an Availability sets, playing the role of both Master and ETCD of the Kubernetes control plane. Another three VMs will be defined as a VMSS, Worker nodes will be run on it.
+Six machines of **Ubuntu 18.04** will be deployed in Azure Resource Group. Three of them are grouped into an availability set, serving as both Master and ETCD of the Kubernetes control plane. Another three VMs will be defined as a VMSS where Worker nodes will be running.
 
 ![Architecture](/images/docs/aks/Azure-architecture.png)
 
-Those VMs will be attached to a load balancer, there are two predefined rules in the LB:
+Those VMs will be attached to a load balancer. There are two predefined rules in the LB:
 
-- **Inbound NAT**: ssh port will be mapped for each machine, so we can easily manage VMs.
-- **Load Balancing**: http and https ports will be mapped to Node pools by default, we can add other ports on demand.
+- **Inbound NAT**: ssh port will be mapped for each machine so that you can easily manage VMs.
+- **Load Balancing**: http and https ports will be mapped to Node pools by default. Other ports can be added on demand.
 
 | Service | Protocol | Rule | Backend Port | Frontend Port/Ports | Pools |
 |---|---|---|---|---|---|
@@ -44,35 +46,41 @@ Those VMs will be attached to a load balancer, there are two predefined rules in
 
 ## Deploy HA Cluster Infrastructrue
 
-You don't have to create those resources one by one with Wizards. Following the best practice of **infrastructure as code** on Azure, all resources in the architecture are already defined as ARM templates.
+You don't have to create those resources one by one with wizards. According to the best practice of **infrastructure as code** on Azure, all resources in the architecture are already defined as ARM templates.
 
 ### Start to deploy with one click
 
-Click the *Deploy* button below, you will be redirected to Azure and asked to fill in deployment parameters.
+Click the **Deploy** button below, and you will be redirected to Azure and asked to fill in deployment parameters.
 
 [![Deploy to Azure](https://raw.githubusercontent.com/Azure/azure-quickstart-templates/master/1-CONTRIBUTION-GUIDE/images/deploytoazure.svg?sanitize=true)](https://portal.azure.com/#create/Microsoft.Template/uri/https%3A%2F%2Fraw.githubusercontent.com%2FRolandMa1986%2Fazurek8s%2Fmaster%2Fazuredeploy.json) [![Visualize](https://raw.githubusercontent.com/Azure/azure-quickstart-templates/master/1-CONTRIBUTION-GUIDE/images/visualizebutton.svg?sanitize=true)](http://armviz.io/#/?load=https%3A%2F%2Fraw.githubusercontent.com%2FRolandMa1986%2Fazurek8s%2Fmaster%2Fazuredeploy.json)
 
 ### Change template parameters
 
-Only a few parameter need to be changed.
+Only few parameters need to be changed.
 
-- Choose the *Create new* link under the Resources group and fill in a Name such as "KubeSphereVMRG".
-- Fill in the admin's Username.
-- Copy your public ssh key and fill in the Admin Key. Or create new one with *ssh-keygen*.
+- Click **Create new** under **Resource group** and enter a name such as "KubeSphereVMRG".
+- Enter **Admin Username**.
+- Copy your public ssh key for the field **Admin Key**. Alternatively, create a new one with `ssh-keygen`.
 
-> Password authentication is restriced in the Linux configuration, only SSH accept.
+![](https://ap3.qingstor.com/kubesphere-website/docs/20200902145020.png)
 
-Click the *Purchase* button in the bottom when you ready to continue.
+{{< notice note >}}
+
+Password authentication is restricted in the Linux configuration. Only SSH is acceptable.
+
+{{</ notice >}} 
+
+Click the **Purchase** button at the bottom when you are ready to continue.
 
 ### Review Azure Resources in the Portal
 
-Once the deployment success, you can find all the resources you need in the KubeSphereVMRG Resources group. Take your time and check them one by one if you are new to Azure. Then find the public IP of LB and private IP addresses of the VMs. You will need them in the next step.
+Once the deployment succeeds, you can find all the resources you need in the resource group KubeSphereVMRG. Take your time and check them one by one if you are new to Azure. Record the public IP of LB and private IP addresses of the VMs. You will need them in the next step.
 
 ![New Created Resources](/images/docs/aks/azure-vm-all-resources.png)
 
-## Deploy Kubernetes and Kubesphere
+## Deploy Kubernetes and KubeSphere
 
-You can execute the following command on your laptop or SSH to one of the Master VMs. There are files will be downloaded to local and disturbed to each VM during the installation. The installation will be much faster when you use **kk** in the Intranet than the Internet.
+You can execute the following command on your device or connect to one of the Master VMs through ssh. During the installation, files will be downloaded and distributed to each VM. The installation will be much faster if you use KubeKey in the Intranet than the Internet.
 
 ```bash
 # copy your private ssh to master-0
@@ -84,25 +92,25 @@ ssh -i .ssh/id_rsa2  -p50200 kubesphere@40.81.5.xx
 
 ### Download KubeKey
 
-[Kubekey](https://github.com/kubesphere/kubekey) is the next-gen installer which is used for installing Kubernetes and KubeSphere v3.0.0 fastly, flexibly and easily.
+[Kubekey](https://github.com/kubesphere/kubekey) is the next-gen installer which provides an easy, fast and flexible way to install Kubernetes and KubeSphere v3.0.0.
 
-1. First, download it and generate a configuration file to customize the installation as follows.
+1. Download it so that you can generate a configuration file in the next step.
 
 
 {{< tabs >}}
 
-{{< tab "For users with poor network to GitHub" >}}
+{{< tab "For users with poor network connections to GitHub" >}}
 
-For users in China, you can download the installer using this link.
+Download KubeKey using the following command:
 
 ```bash
 wget https://kubesphere.io/kubekey/releases/v1.0.0
 ```
 {{</ tab >}}
 
-{{< tab "For users with good network to GitHub" >}}
+{{< tab "For users with good network connections to GitHub" >}}
 
-For users with good network to GitHub, you can download it from [GitHub Release Page](https://github.com/kubesphere/kubekey/releases/tag/v1.0.0) or use the following link directly.
+Download KubeKey from [GitHub Release Page](https://github.com/kubesphere/kubekey/releases/tag/v1.0.0) or use the following command directly:
 
 ```bash
 wget https://github.com/kubesphere/kubekey/releases/download/v1.0.0/kubekey-v1.0.0-linux-amd64.tar.gz
@@ -123,16 +131,16 @@ Grant the execution right to `kk`:
 chmod +x kk
 ```
 
-2. Then create an example configuration file with default configurations. Here we use Kubernetes v1.17.9 as an example.
+2. Create an example configuration file with default configurations. Here Kubernetes v1.17.9 is used as an example.
 
-```
+```bash
 ./kk create config --with-kubesphere v3.0.0 --with-kubernetes v1.17.9
 ```
-> The following Kubernetes versions have been fully tested with KubeSphere:
-> - v1.15:   v1.15.12
-> - v1.16:   v1.16.13
-> - v1.17:   v1.17.9 (default)
-> - v1.18:   v1.18.6
+{{< notice note >}} 
+
+These Kubernetes versions have been fully tested with KubeSphere: v1.15.12, v1.16.13, v1.17.9 (default), and v1.18.6.
+
+{{</ notice >}} 
 
 ### config-sample.yaml Example
 
@@ -176,7 +184,11 @@ In addition to the node information, you need to provide the load balancer infor
     port: "6443"
 ```
 
-> - Note we are using the public load balancer directly instead of an internal load balancer due to the Azure [Load Balancer limits](https://docs.microsoft.com/en-us/azure/load-balancer/load-balancer-troubleshoot#cause-4-accessing-the-internal-load-balancer-frontend-from-the-participating-load-balancer-backend-pool-vm).
+{{< notice note >}}
+
+The public load balancer is used directly instead of an internal load balancer due to Azure [Load Balancer limits](https://docs.microsoft.com/en-us/azure/load-balancer/load-balancer-troubleshoot#cause-4-accessing-the-internal-load-balancer-frontend-from-the-participating-load-balancer-backend-pool-vm).
+
+{{</ notice >}} 
 
 ### Persistent Storage Plugin Configuration
 
@@ -184,7 +196,7 @@ See [Storage Configuration](../storage-configuration) for details.
 
 ### Configure the Network Plugin
 
-Azure Virtual Network doesn't support IPIP mode which used by [calico](https://docs.projectcalico.org/reference/public-cloud/azure#about-calico-on-azure). So let's change the network plugin to flannel.
+Azure Virtual Network doesn't support IPIP mode used by [calico](https://docs.projectcalico.org/reference/public-cloud/azure#about-calico-on-azure). You need to change the network plugin to `flannel`.
 
 ```yaml
   network:
@@ -230,9 +242,9 @@ https://kubesphere.io             2020-xx-xx xx:xx:xx
 
 Congratulation! Now you can access the KubeSphere console using http://10.128.0.44:30880 (Replace the IP with yours).
 
-## Add addtional Ports
+## Add Additional Ports
 
-Since we are using self-hosted Kubernetes solutions on Azure, So the Load Balancer is not integrated with [Kubernetes Service](https://kubernetes.io/docs/concepts/services-networking/service/#loadbalancer). But you still can manually map the Nodeport to the PublicLB. There are 2 steps required.
+Since we are using self-hosted Kubernetes solutions on Azure, the Load Balancer is not integrated with [Kubernetes Service](https://kubernetes.io/docs/concepts/services-networking/service/#loadbalancer). However, you can still manually map the Nodeport to the PublicLB. There are 2 steps required.
 
 1. Create a new Load Balance Rule in the Load Balancer.
    ![Load Balancer](/images/docs/aks/azure-vm-loadbalancer-rule.png)
