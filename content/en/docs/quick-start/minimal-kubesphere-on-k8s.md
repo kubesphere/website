@@ -17,7 +17,7 @@ In addition to installing KubeSphere on a Linux machine, you can also deploy it 
 - The CSR signing feature is activated in kube-apiserver when it is started with the `--cluster-signing-cert-file` and `--cluster-signing-key-file` parameters. See [RKE installation issue](https://github.com/kubesphere/kubesphere/issues/1925#issuecomment-591698309).
 - For more information about the prerequisites of installing KubeSphere on Kubernetes, see [Prerequisites](https://kubesphere.io/docs/installing-on-kubernetes/introduction/prerequisites/).
 
-{{</ notice >}} 
+{{</ notice >}}
 
 ## Deploy KubeSphere
 
@@ -25,19 +25,19 @@ After you make sure your machine meets the prerequisites, you can follow the ste
 
 - Please read the note below before you execute the commands to start installation:
 
-{{< notice note >}} 
+{{< notice note >}}
 
-- If your server has trouble accessing GitHub, you can copy the content in [kubesphere-installer.yaml](https://raw.githubusercontent.com/kubesphere/ks-installer/master/deploy/kubesphere-installer.yaml) and [cluster-configuration.yaml](https://raw.githubusercontent.com/kubesphere/ks-installer/master/deploy/cluster-configuration.yaml) respectively and past it to local files. You then can use `kubectl apply -f` for the local files to install KubeSphere.
+- If your server has trouble accessing GitHub, you can copy the content in [kubesphere-installer.yaml](https://raw.githubusercontent.com/kubesphere/ks-installer/v3.0.0/deploy/kubesphere-installer.yaml) and [cluster-configuration.yaml](https://raw.githubusercontent.com/kubesphere/ks-installer/v3.0.0/deploy/cluster-configuration.yaml) respectively and past it to local files. You then can use `kubectl apply -f` for the local files to install KubeSphere.
 - In cluster-configuration.yaml, you need to disable `metrics_server` manually by changing `true` to `false` if the component has already been installed in your environment, especially for cloud-hosted Kubernetes clusters.
 
-{{</ notice >}} 
+{{</ notice >}}
 
 ```bash
-kubectl apply -f https://raw.githubusercontent.com/kubesphere/ks-installer/master/deploy/kubesphere-installer.yaml
+kubectl apply -f https://raw.githubusercontent.com/kubesphere/ks-installer/v3.0.0/deploy/kubesphere-installer.yaml
 ```
 
 ```bash
-kubectl apply -f https://raw.githubusercontent.com/kubesphere/ks-installer/master/deploy/cluster-configuration.yaml
+kubectl apply -f https://raw.githubusercontent.com/kubesphere/ks-installer/v3.0.0/deploy/cluster-configuration.yaml
 ```
 
 - Inspect the logs of installation:

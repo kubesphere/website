@@ -48,7 +48,7 @@ vi config-sample.yaml
 
 If you adopt [All-in-one Installation](https://kubesphere.io/docs/quick-start/all-in-one-on-linux/), you do not need to create a config-sample.yaml file as you can create a cluster directly. Generally, the all-in-one mode is for users who are new to KubeSphere and look to get familiar with the system. If you want to enable pluggable components in this mode (e.g. for testing purpose), refer to the following section to see how pluggable components can be installed after installation.
 
-{{</ notice >}} 
+{{</ notice >}}
 
 2. In this file, enable the pluggable components you want to install by changing `false` to `true` for `enabled`. Here is [an example file](https://github.com/kubesphere/kubekey/blob/master/docs/config-example.md) for your reference. Save the file after you finish.
 3. Create a cluster using the configuration file:
@@ -59,15 +59,15 @@ If you adopt [All-in-one Installation](https://kubesphere.io/docs/quick-start/al
 
 ### Installing on Kubernetes
 
-When you install KubeSphere on Kubernetes, you need to download the file [cluster-configuration.yaml](https://raw.githubusercontent.com/kubesphere/ks-installer/master/deploy/cluster-configuration.yaml) for cluster setting. If you want to install pluggable components, do not use `kubectl apply -f` directly for this file.
+When you install KubeSphere on Kubernetes, you need to download the file [cluster-configuration.yaml](https://raw.githubusercontent.com/kubesphere/ks-installer/v3.0.0/deploy/cluster-configuration.yaml) for cluster setting. If you want to install pluggable components, do not use `kubectl apply -f` directly for this file.
 
-1. In the tutorial of [Installing KubeSphere on Kubernetes](https://kubesphere.io/docs/installing-on-kubernetes/introduction/overview/), you execute `kubectl apply -f` first for the file [kubesphere-installer.yaml](https://raw.githubusercontent.com/kubesphere/ks-installer/master/deploy/kubesphere-installer.yaml). After that, to enable pluggable components, create a local file cluster-configuration.yaml.
+1. In the tutorial of [Installing KubeSphere on Kubernetes](https://kubesphere-v3.netlify.app/docs/installing-on-kubernetes/introduction/overview/), you execute `kubectl apply -f` first for the file [kubesphere-installer.yaml](https://raw.githubusercontent.com/kubesphere/ks-installer/v3.0.0/deploy/kubesphere-installer.yaml). After that, to enable pluggable components, create a local file cluster-configuration.yaml.
 
 ```bash
 vi cluster-configuration.yaml
 ```
 
-2. Copy all the content in the file [cluster-configuration.yaml](https://raw.githubusercontent.com/kubesphere/ks-installer/master/deploy/cluster-configuration.yaml) and paste it to the local file just created.
+2. Copy all the content in the file [cluster-configuration.yaml](https://raw.githubusercontent.com/kubesphere/ks-installer/v3.0.0/deploy/cluster-configuration.yaml) and paste it to the local file just created.
 3. In this local cluster-configuration.yaml file, enable the pluggable components you want to install by changing `false` to `true` for `enabled`. Here is [an example file](https://github.com/kubesphere/ks-installer/blob/master/deploy/cluster-configuration.yaml) for your reference. Save the file after you finish.
 4. Execute the following command to start installation:
 
@@ -113,7 +113,7 @@ kubectl logs -n kubesphere-system $(kubectl get pod -n kubesphere-system -l app=
 
 {{< notice tip >}}
 
-You can find the web kubectl tool by clicking the hammer icon at the bottom right corner of the console. 
+You can find the web kubectl tool by clicking the hammer icon at the bottom right corner of the console.
 
 {{</ notice >}}
 

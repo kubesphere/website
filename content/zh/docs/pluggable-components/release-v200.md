@@ -1,20 +1,20 @@
 ---
-title: "Release Notes For 2.0.0"
-keywords: "kubernetes, docker, kubesphere, jenkins, istio, prometheus"
-description: "KubeSphere Release Notes For 2.0.0"
+title: "KubeSphere Alerting and Notification"
+keywords: "kubernetes, alertmanager, kubesphere, alerting, notification"
+description: "How to Enable Alerting and Notification System"
 
-linkTitle: "Release Notes - 2.0.0"
+linkTitle: "KubeSphere Alerting and Notification"
 weight: 500
 ---
 
-KubeSphere 2.0.0 was released on **May 18th, 2019**. 
+KubeSphere 2.0.0 was released on **May 18th, 2019**.
 
 ## What's New in 2.0.0
 
 ### Component Upgrades
 
 - Support Kubernetes [Kubernetes 1.13.5](https://github.com/kubernetes/kubernetes/releases/tag/v1.13.5)
-- Integrate [QingCloud Cloud Controller](https://github.com/yunify/qingcloud-cloud-controller-manager). After installing load balancer, QingCloud load balancer can be created through KubeSphere console and the backend workload is bound automatically.  
+- Integrate [QingCloud Cloud Controller](https://github.com/yunify/qingcloud-cloud-controller-manager). After installing load balancer, QingCloud load balancer can be created through KubeSphere console and the backend workload is bound automatically. 
 - Integrate [QingStor CSI v0.3.0](https://github.com/yunify/qingstor-csi/tree/v0.3.0) storage plugin and support physical NeonSAN storage system. Support SAN storage service with high availability and high performance.
 - Integrate [QingCloud CSI v0.2.1](https://github.com/yunify/qingcloud-csi/tree/v0.2.1) storage plugin and support many types of volume to create QingCloud block services.
 - Harbor is upgraded to 1.7.5.

@@ -1,6 +1,6 @@
 ---
-linkTitle: "Installation"
-weight: 2100
+linkTitle: "Project Settings"
+weight: 2150
 
 _build:
     render: false

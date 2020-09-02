@@ -9,7 +9,7 @@ weight: 3535
 
 ## What is KubeSphere Logging System
 
-KubeSphere provides a powerful, holistic and easy-to-use logging system for log collection, query and management. It covers logs from at varied levels, including tenants, infrastructure resources, and applications. Users can search logs from different dimensions, such as project, workload, Pod and keyword. Compared with Kibana, the tenant-based logging system of KubeSphere features better isolation and security among tenants as each tenant can only view his or her own logs. Apart from KubeSphere's own logging system, the container platform also allows users to add third-party log collectors, such as Elasticsearch, Kafka and Fluentd. 
+KubeSphere provides a powerful, holistic and easy-to-use logging system for log collection, query and management. It covers logs from at varied levels, including tenants, infrastructure resources, and applications. Users can search logs from different dimensions, such as project, workload, Pod and keyword. Compared with Kibana, the tenant-based logging system of KubeSphere features better isolation and security among tenants as each tenant can only view his or her own logs. Apart from KubeSphere's own logging system, the container platform also allows users to add third-party log collectors, such as Elasticsearch, Kafka and Fluentd.
 
 For more information, see Logging, Events and Auditing.
 
@@ -63,15 +63,15 @@ es:  # Storage backend for logging, tracing, events and auditing.
 
 ### **Installing on Kubernetes**
 
-When you install KubeSphere on Kubernetes, you need to download the file [cluster-configuration.yaml](https://raw.githubusercontent.com/kubesphere/ks-installer/master/deploy/cluster-configuration.yaml) for cluster setting. If you want to install Logging, do not use `kubectl apply -f` directly for this file.
+When you install KubeSphere on Kubernetes, you need to download the file [cluster-configuration.yaml](https://raw.githubusercontent.com/kubesphere/ks-installer/v3.0.0/deploy/cluster-configuration.yaml) for cluster setting. If you want to install Logging, do not use `kubectl apply -f` directly for this file.
 
-1. In the tutorial of [Installing KubeSphere on Kubernetes](https://kubesphere.io/docs/installing-on-kubernetes/introduction/overview/), you execute `kubectl apply -f` first for the file [kubesphere-installer.yaml](https://raw.githubusercontent.com/kubesphere/ks-installer/master/deploy/kubesphere-installer.yaml). After that, to enable Logging, create a local file cluster-configuration.yaml.
+1. In the tutorial of [Installing KubeSphere on Kubernetes](https://kubesphere-v3.netlify.app/docs/installing-on-kubernetes/introduction/overview/), you execute `kubectl apply -f` first for the file [kubesphere-installer.yaml](https://raw.githubusercontent.com/kubesphere/ks-installer/v3.0.0/deploy/kubesphere-installer.yaml). After that, to enable Logging, create a local file cluster-configuration.yaml.
 
 ```bash
 vi cluster-configuration.yaml
 ```
 
-2. Copy all the content in the file [cluster-configuration.yaml](https://raw.githubusercontent.com/kubesphere/ks-installer/master/deploy/cluster-configuration.yaml) and paste it to the local file just created.
+2. Copy all the content in the file [cluster-configuration.yaml](https://raw.githubusercontent.com/kubesphere/ks-installer/v3.0.0/deploy/cluster-configuration.yaml) and paste it to the local file just created.
 3. In this local cluster-configuration.yaml file, navigate to `logging` and enable Logging by changing `false` to `true` for `enabled`. Save the file after you finish.
 
 ```bash

@@ -11,12 +11,29 @@ icon: "/images/docs/docs.svg"
 
 ---
 
-## Installing KubeSphere and Kubernetes on Linux
+This chapter gives you an overview of the basic concept of KubeSphere, features, advantages, uses cases and more.
 
-In this chapter, we will demonstrate how to use KubeKey to provision a new Kubernetes and KubeSphere cluster based on different infrastructures. Kubekey can help you to quickly build a production-ready cluster architecture on a set of machines from zero to one. It also helps you to easily scale the cluster and install pluggable components on existing architecture.
+## [What is KubeSphere](https://kubesphere-v3.netlify.app/docs/introduction/what-is-kubesphere/)
 
-## Most Popular Pages
+Develop a basic understanding of KubeSphere and highlighted features of its latest version.
 
-Below you will find some of the most common and helpful pages from this chapter. We highly recommend you to review them at first.
+## [Features](https://kubesphere-v3.netlify.app/docs/introduction/features/)
 
-{{< popularPage icon="/images/docs/bitmap.jpg" title="Install KubeSphere on AWS EC2" description="Provisioning a new Kubernetes and KubeSphere cluster based on AWS" link="" >}}
+Get started with KubeSphere by understanding what KubeSphere is capable of and how you can make full use of it.
+
+## [Architecture](https://kubesphere-v3.netlify.app/docs/introduction/architecture/)
+
+Explore the structure of KubeSphere to get a clear view of the components both at front end and back end.
+
+## [Advantages](https://kubesphere-v3.netlify.app/docs/introduction/advantages/)
+
+Understand the reason why KubeSphere is beneficial to your work.
+
+## [Use Cases](https://kubesphere-v3.netlify.app/docs/introduction/scenarios/)
+
+See how KubeSphere can be used in different scenarios, such as multi-cluster deployment, DevOps and service mesh.
+
+## [Glossary](https://kubesphere-v3.netlify.app/docs/introduction/glossary/)
+
+Learn terms and phrases that are used in KubeSphere.
+

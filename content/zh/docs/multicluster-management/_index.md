@@ -1,6 +1,6 @@
 ---
 title: "Multi-cluster Management"
-description: "Import a hosted or on-premise Kubernetes cluster into KubeSphere"
+description: "Import a hosted or on-premises Kubernetes cluster into KubeSphere"
 layout: "single"
 
 linkTitle: "Multi-cluster Management"
@@ -11,9 +11,13 @@ icon: "/images/docs/docs.svg"
 
 ---
 
-## Installing KubeSphere and Kubernetes on Linux
+Today, it's very common for organizations to run and manage multiple Kubernetes Clusters on different cloud providers or infrastructures. Each Kubernetes cluster is a relatively self-contained unit. And the upstream community is struggling to research and develop the multi-cluster management solution, such as [kubefed](https://github.com/kubernetes-sigs/kubefed).
 
-In this chapter, we will demonstrate how to use KubeKey to provision a new Kubernetes and KubeSphere cluster based on different infrastructures. Kubekey can help you to quickly build a production-ready cluster architecture on a set of machines from zero to one. It also helps you to easily scale the cluster and install pluggable components on existing architecture.
+The most common use cases in multi-cluster management including **service traffic load balancing, development and production isolation, decoupling of data processing and data storage, cross-cloud backup and disaster recovery, flexible allocation of computing resources, low latency access with cross-region services, and no vendor lock-in,** etc.
+
+KubeSphere is developed to address the multi-cluster and multi-cloud management challenges and implement the proceeding user scenarios, providing users with a unified control plane to distribute applications and its replicas to multiple clusters from public cloud to on-premise environment. KubeSphere also provides rich observability cross multiple clusters including centralized monitoring, logging, events, and auditing logs.
+
+![KubeSphere Multi-cluster Management](/images/docs/multi-cluster-overview.jpg)
 
 ## Most Popular Pages
 

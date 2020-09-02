@@ -18,6 +18,6 @@ In this chapter, we will demonstrate how to use KubeKey to provision a new Kuber
 
 Below you will find some of the most common and helpful pages from this chapter. We highly recommend you to review them at first.
 
-{{< popularPage icon="/images/docs/bitmap.jpg" title="Install KubeSphere on AWS EC2" description="Provisioning a new Kubernetes and KubeSphere cluster based on AWS" link="" >}}
+{{< popularPage icon="/images/docs/qingcloud-2.svg" title="Install KubeSphere on AWS EC2" description="Provisioning a new Kubernetes and KubeSphere cluster based on AWS" link="" >}}
 
 {{< popularPage icon="/images/docs/bitmap.jpg" title="Install KubeSphere on AWS EC2" description="Provisioning a new Kubernetes and KubeSphere cluster based on AWS" link="" >}}
