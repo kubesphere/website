@@ -27,7 +27,7 @@ For more information about each component, see Overview of Enable Pluggable Comp
 {{< notice note >}}
 
 - By default, the above components are not enabled except `metrics_server`. In some cases, you need to manually disable it by changing `true` to `false` in the configuration. This is because the component may already be installed in your environment, especially for cloud-hosted Kubernetes clusters.
-- `multicluster` is not covered in this tutorial. If you want to enable this feature, you need to set a corresponding value for `clusterRole`. For more information, see [Multi-cluster Management](https://kubesphere-v3.netlify.app/docs/multicluster-management/).
+- `multicluster` is not covered in this tutorial. If you want to enable this feature, you need to set a corresponding value for `clusterRole`. For more information, see [Multi-cluster Management](https://kubesphere.io/docs/multicluster-management/).
 - Make sure your machine meets the hardware requirements before the installation. Here is the recommendation if you want to enable all pluggable components: CPU ≥ 8 Cores, Memory ≥ 16 G, Disk Space ≥ 100 G.
 
 {{</ notice >}}
@@ -38,7 +38,7 @@ For more information about each component, see Overview of Enable Pluggable Comp
 
 When you install KubeSphere on Linux, you need to create a configuration file, which lists all KubeSphere components.
 
-1. In the tutorial of [Installing KubeSphere on Linux](https://kubesphere-v3.netlify.app/docs/installing-on-linux/introduction/multioverview/), you create a default file **config-sample.yaml**. Modify the file by executing the following command:
+1. In the tutorial of [Installing KubeSphere on Linux](https://kubesphere.io/docs/installing-on-linux/introduction/multioverview/), you create a default file **config-sample.yaml**. Modify the file by executing the following command:
 
 ```bash
 vi config-sample.yaml
@@ -46,9 +46,9 @@ vi config-sample.yaml
 
 {{< notice note >}}
 
-If you adopt [All-in-one Installation](https://kubesphere-v3.netlify.app/docs/quick-start/all-in-one-on-linux/), you do not need to create a config-sample.yaml file as you can create a cluster directly. Generally, the all-in-one mode is for users who are new to KubeSphere and look to get familiar with the system. If you want to enable pluggable components in this mode (e.g. for testing purpose), refer to the following section to see how pluggable components can be installed after installation.
+If you adopt [All-in-one Installation](https://kubesphere.io/docs/quick-start/all-in-one-on-linux/), you do not need to create a config-sample.yaml file as you can create a cluster directly. Generally, the all-in-one mode is for users who are new to KubeSphere and look to get familiar with the system. If you want to enable pluggable components in this mode (e.g. for testing purpose), refer to the following section to see how pluggable components can be installed after installation.
 
-{{</ notice >}} 
+{{</ notice >}}
 
 2. In this file, enable the pluggable components you want to install by changing `false` to `true` for `enabled`. Here is [an example file](https://github.com/kubesphere/kubekey/blob/master/docs/config-example.md) for your reference. Save the file after you finish.
 3. Create a cluster using the configuration file:
@@ -113,7 +113,7 @@ kubectl logs -n kubesphere-system $(kubectl get pod -n kubesphere-system -l app=
 
 {{< notice tip >}}
 
-You can find the web kubectl tool by clicking the hammer icon at the bottom right corner of the console. 
+You can find the web kubectl tool by clicking the hammer icon at the bottom right corner of the console.
 
 {{</ notice >}}
 
