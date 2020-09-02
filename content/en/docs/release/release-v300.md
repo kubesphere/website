@@ -106,26 +106,26 @@ weight: 50
 
 - Add and upgrade below apps in App Store:
   
-  | App Name               | Chart Version | Chart Version |
-  | ---------------------- | ------------- | :------------ |
-  | AWS EBS CSI Driver     | 0.5.0         | 0.3.0         |
-  | AWS EFS CSI Driver     | 0.3.0         | 0.1.0         |
-  | AWS FSX CSI Driver     | 0.1.0         | 0.1.0         |
-  | Elasticsearch Exporter | 1.1.0         | 3.3.0         |
-  | etcd                   | 3.3.12        | 0.1.1         |
-  | Harbor                 | 2.0.0         | 1.4.0         |
-  | Memcached              | 1.5.20        | 3.2.3         |
-  | Minio master           |               | 5.0.26        |
-  | MongoDB                | 4.2.1         | 0.3.0         |
-  | MySQL                  | 5.7.30        | 1.6.6         |
-  | MySQL Exporter         | 0.11.0        | 0.5.3         |
-  | Nginx                  | 1.18.0        | 1.3.2         |
-  | Porter                 | 0.3-alpha     | 0.1.3         |
-  | PostgreSQL             | 12.0          | 0.3.2         |
-  | RabbitMQ               | 3.8.1         | 0.3.0         |
-  | Redis                  | 5.0.5         | 0.3.2         |
-  | Redis Exporter         | 1.3.4         | 3.4.1         |
-  | Tomcat                 | 8.5.41        | 0.4.1+1       |
+  | App Name               | App Version | Chart Version |
+  | ---------------------- | ----------- | :------------ |
+  | AWS EBS CSI Driver     | 0.5.0       | 0.3.0         |
+  | AWS EFS CSI Driver     | 0.3.0       | 0.1.0         |
+  | AWS FSX CSI Driver     | 0.1.0       | 0.1.0         |
+  | Elasticsearch Exporter | 1.1.0       | 3.3.0         |
+  | etcd                   | 3.3.12      | 0.1.1         |
+  | Harbor                 | 2.0.0       | 1.4.0         |
+  | Memcached              | 1.5.20      | 3.2.3         |
+  | Minio master           |             | 5.0.26        |
+  | MongoDB                | 4.2.1       | 0.3.0         |
+  | MySQL                  | 5.7.30      | 1.6.6         |
+  | MySQL Exporter         | 0.11.0      | 0.5.3         |
+  | Nginx                  | 1.18.0      | 1.3.2         |
+  | Porter                 | 0.3-alpha   | 0.1.3         |
+  | PostgreSQL             | 12.0        | 0.3.2         |
+  | RabbitMQ               | 3.8.1       | 0.3.0         |
+  | Redis                  | 5.0.5       | 0.3.2         |
+  | Redis Exporter         | 1.3.4       | 3.4.1         |
+  | Tomcat                 | 8.5.41      | 0.4.1+1       |
 
 ### BUG FIXES
 
