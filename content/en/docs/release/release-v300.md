@@ -26,14 +26,14 @@ weight: 50
 - [KubeKey](https://github.com/kubesphere/kubekey) officially supports Kubernetes 1.15.12, 1.16.13, 1.17.9 and 1.18.6 (Please avoid using KubeKey to install Kubernetes 1.15 to 1.15.5 and 1.16 to 1.16.2, because Kubernetes has an [API validation issue](https://github.com/kubernetes/kubernetes/issues/83778))
 - Add support for EulerOS, UOS and KylinOS
 - Add support for Kunpeng and Phytium CPU
-- Use ClusterConfiguration to store ks-installer's configuration instead of ConfigMap
+- Use ClusterConfiguration CRD to store ks-installer's configuration instead of ConfigMap
 
 ## **Cluster Management**
 
 ### FEATURES
 
 - Support management of multiple Kubernetes clusters
-- Support Federated Deployment across multiple clusters
+- Support Federated Deployment and Federated StatefulSet across multiple clusters
 
 ## **Observability**
 
