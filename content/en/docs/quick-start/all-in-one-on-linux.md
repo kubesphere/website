@@ -54,24 +54,28 @@ The system requirements above and the instructions below are for the default min
 
 ## Step 2: Download KubeKey
 
+Follow the step below to download KubeKey.
+
 {{< tabs >}}
 
-{{< tab "For users with poor network to GitHub" >}}
+{{< tab "For users with poor network connections to GitHub" >}}
 
-For users in China, you can download the installer using this link.
+Download KubeKey using the following command:
 
 ```bash
 wget https://kubesphere.io/kubekey/releases/v1.0.0
 ```
+
 {{</ tab >}}
 
-{{< tab "For users with good network to GitHub" >}}
+{{< tab "For users with good network connections to GitHub" >}}
 
-For users with good network to GitHub, you can download it from [GitHub Release Page](https://github.com/kubesphere/kubekey/releases/tag/v1.0.0) or use the following link directly.
+Download KubeKey from [GitHub Release Page](https://github.com/kubesphere/kubekey/releases/tag/v1.0.0) or use the following command directly.
 
 ```bash
 wget https://github.com/kubesphere/kubekey/releases/download/v1.0.0/kubekey-v1.0.0-linux-amd64.tar.gz
 ```
+
 {{</ tab >}}
 
 {{</ tabs >}}

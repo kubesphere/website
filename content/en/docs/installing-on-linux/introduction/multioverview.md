@@ -81,24 +81,22 @@ This example includes three hosts as below with the master node serving as the t
 
 ## Step 2: Download KubeKey
 
-As below, you can either download the binary file.
-
-Download the Installer for KubeSphere v3.0.0.
+Follow the step below to download KubeKey.
 
 {{< tabs >}}
 
-{{< tab "For users with poor network to GitHub" >}}
+{{< tab "For users with poor network connections to GitHub" >}}
 
-For users in China, you can download the installer using this link.
+Download KubeKey using the following command:
 
 ```bash
 wget https://kubesphere.io/kubekey/releases/v1.0.0
 ```
 {{</ tab >}}
 
-{{< tab "For users with good network to GitHub" >}}
+{{< tab "For users with good network connections to GitHub" >}}
 
-For users with good network to GitHub, you can download it from [GitHub Release Page](https://github.com/kubesphere/kubekey/releases/tag/v1.0.0) or use the following link directly.
+Download KubeKey from [GitHub Release Page](https://github.com/kubesphere/kubekey/releases/tag/v1.0.0) or use the following command directly.
 
 ```bash
 wget https://github.com/kubesphere/kubekey/releases/download/v1.0.0/kubekey-v1.0.0-linux-amd64.tar.gz
