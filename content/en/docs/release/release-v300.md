@@ -9,8 +9,8 @@ weight: 50
 
 ## How to get v3.0.0
 
-- [Install KubeSphere v3.0.0 on Linux](https://github.com/kubesphere/kubekey)
-- [Install KubeSphere v3.0.0 on existing Kubernetes](https://github.com/kubesphere/ks-installer)
+- [Install KubeSphere v3.0.0 on Linux](../../installing-on-linux/)
+- [Install KubeSphere v3.0.0 on existing Kubernetes](../../installing-on-kubernetes/)
 
 ## Release Notes
 
@@ -97,28 +97,35 @@ weight: 50
 ### UPGRADES & ENHANCEMENTS
 
 - Users can use the same application repository name
+
 - Support the application template which contains CRDs
+
 - Merge all OpenPitrix services into one service
+
 - Support HTTP basic authentication when adding an application repository
+
 - Add and upgrade below apps in App Store:
-  AWS EBS CSI Driver 0.5.0 - Helm 0.3.0
-  AWS EFS CSI Driver 0.3.0 - Helm 0.1.0
-  AWS FSX CSI Driver 0.1.0 - Helm 0.1.0
-  Elasticsearch Exporter 1.1.0 - Helm 3.3.0
-  etcd 3.3.12 - Helm 0.1.1
-  Harbor 2.0.0 - Helm 1.4.0
-  Memcached 1.5.20 - Helm 3.2.3
-  Minio master - Helm 5.0.26
-  MongoDB 4.2.1 - Helm 0.3.0
-  MySQL 5.7.30 - Helm 1.6.6
-  MySQL Exporter 0.11.0 - Helm 0.5.3
-  Nginx 1.18.0 - Helm 1.3.2
-  Porter 0.3-alpha - Helm 0.1.3
-  PostgreSQL 12.0 - Helm 0.3.2
-  RabbitMQ 3.8.1 - Helm 0.3.0
-  Redis 5.0.5 - Helm 0.3.2
-  Redis Exporter 1.3.4 - Helm 3.4.1
-  Tomcat 8.5.41 - Helm 0.4.1+1
+  
+  | App                          | Helm Version |
+  | ---------------------------- | ------------ |
+  | AWS EBS CSI Driver 0.5.0     | Helm 0.3.0   |
+  | AWS EFS CSI Driver 0.3.0     | Helm 0.1.0   |
+  | AWS FSX CSI Driver 0.1.0     | Helm 0.1.0   |
+  | Elasticsearch Exporter 1.1.0 | Helm 3.3.0   |
+  | etcd 3.3.12                  | Helm 0.1.1   |
+  | Harbor 2.0.0                 | Helm 1.4.0   |
+  | Memcached 1.5.20             | Helm 3.2.3   |
+  | Minio master                 | Helm 5.0.26  |
+  | MongoDB 4.2.1                | Helm 0.3.0   |
+  | MySQL 5.7.30                 | Helm 1.6.6   |
+  | MySQL Exporter 0.11.0        | Helm 0.5.3   |
+  | Nginx 1.18.0                 | Helm 1.3.2   |
+  | Porter 0.3-alpha             | Helm 0.1.3   |
+  | PostgreSQL 12.0              | Helm 0.3.2   |
+  | RabbitMQ 3.8.1               | Helm 0.3.0   |
+  | Redis 5.0.5                  | Helm 0.3.2   |
+  | Redis Exporter 1.3.4         | Helm 3.4.1   |
+  | Tomcat 8.5.41                | Helm 0.4.1+1 |
 
 ### BUG FIXES
 
