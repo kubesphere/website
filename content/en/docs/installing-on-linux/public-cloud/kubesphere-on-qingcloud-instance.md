@@ -230,7 +230,7 @@ In addition to the node information, you need to provide the load balancer infor
 
 {{</ notice >}}
 
-After that, you can enable any components you need by following **Enable Pluggable Components** and start your HA cluster installation.
+After that, you can enable any components you need by following [Enable Pluggable Components](../../../pluggable-components/) and start your HA cluster installation.
 
 ### Kubernetes Cluster Configuration (Optional)
 
@@ -261,7 +261,7 @@ For each storage plugin configuration, you can refer to [config-example.md](http
 
 KubeSphere has decoupled some core feature components since v2.1.0. These components are designed to be pluggable which means you can enable them either before or after installation. By default, KubeSphere will be started with a minimal installation if you do not enable them.
 
-You can enable any of them according to your demands. It is highly recommended that you install these pluggable components to discover the full-stack features and capabilities provided by KubeSphere. Please ensure your machines have sufficient CPU and memory before enabling them. See [Enable Pluggable Components](https://github.com/kubesphere/ks-installer#enable-pluggable-components) for details.
+You can enable any of them according to your demands. It is highly recommended that you install these pluggable components to discover the full-stack features and capabilities provided by KubeSphere. Please ensure your machines have sufficient CPU and memory before enabling them. See [Enable Pluggable Components](../../../pluggable-components/) for details.
 
 ### Start to Bootstrap a Cluster
 

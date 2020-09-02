@@ -110,5 +110,4 @@ Instead of changing the service type to `LoadBalancer`, you can also access Kube
 
 ## Enable Pluggable Components (Optional)
 
-The example above demonstrates the process of a default minimal installation. To enable other components in KubeSphere, see Enable Pluggable Components for more details.
-
+The example above demonstrates the process of a default minimal installation. To enable other components in KubeSphere, see [Enable Pluggable Components](../../../pluggable-components/) for more details.
