@@ -500,4 +500,4 @@ You will be able to use default account and password `admin / P@88w0rd` to log i
 ![](/images/docs/vsphere/login.png)
 
 #### Enable Pluggable Components (Optional)
-The example above demonstrates the process of a default minimal installation. To enable other components in KubeSphere, see [Enable Pluggable Components for more details](https://github.com/kubesphere/ks-installer#enable-pluggable-components).
+The example above demonstrates the process of a default minimal installation. To enable other components in KubeSphere, see [Enable Pluggable Components](../../../pluggable-components/) for more details.
