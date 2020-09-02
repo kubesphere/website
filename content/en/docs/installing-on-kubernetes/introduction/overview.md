@@ -45,12 +45,6 @@ If your server has trouble accessing GitHub, you can copy the content in [kubesp
 kubectl logs -n kubesphere-system $(kubectl get pod -n kubesphere-system -l app=ks-install -o jsonpath='{.items[0].metadata.name}') -f
 ```
 
-{{< notice tip >}} 
-
-In some environments, you may find the installation process stopped by issues related to `metrics_server`, as some cloud providers have already installed metrics server in their platform. In this case, please manually create a local cluster-configuration.yaml file (copy the [content](https://raw.githubusercontent.com/kubesphere/ks-installer/v3.0.0/deploy/cluster-configuration.yaml) to it). In this file, disable `metrics_server` by changing `true` to `false` for `enabled`, and use `kubectl apply -f cluster-configuration.yaml` to execute it.
-
-{{</ notice >}}
-
 - Use `kubectl get pod --all-namespaces` to see whether all pods are running normally in relevant namespaces of KubeSphere. If they are, check the port (30880 by default) of the console through the following command:
 
 ```bash

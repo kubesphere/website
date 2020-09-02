@@ -8,7 +8,7 @@ weight: 2270
 
 This guide walks you through the steps of deploying KubeSphere on [Azure Kubernetes Service](https://docs.microsoft.com/en-us/azure/aks/).
 
-## Prepare a AKS cluster
+## Prepare an AKS cluster
 
 Azure can help you implement infrastructure as code by providing resource deployment automation options. Commonly adopted tools include [ARM templates](https://docs.microsoft.com/en-us/azure/azure-resource-manager/templates/overview) and [Azure CLI](https://docs.microsoft.com/en-us/cli/azure/what-is-azure-cli?view=azure-cli-latest). In this guide, we will use Azure CLI to create all the resources that are needed for the installation of KubeSphere.
 
@@ -28,7 +28,7 @@ An Azure resource group is a logical group in which Azure resources are deployed
 az group create --name KubeSphereRG --location westus
 ```
 
-### Create a AKS Cluster
+### Create an AKS Cluster
 Use the command `az aks create` to create an AKS cluster. The following example creates a cluster named `KuberSphereCluster` with three nodes. This will take several minutes to complete.
 
 ```bash
@@ -71,23 +71,9 @@ To start deploying KubeSphere, use the following command.
 ```bash
 kubectl apply -f https://raw.githubusercontent.com/kubesphere/ks-installer/v3.0.0/deploy/kubesphere-installer.yaml
 ```
-Download the cluster-configuration.yaml as below and you can customize the configuration. You can also enable pluggable components by setting the `enabled` property to `true` in this file.
 ```bash
-wget https://raw.githubusercontent.com/kubesphere/ks-installer/v3.0.0/deploy/cluster-configuration.yaml
+kubectl apply -f https://raw.githubusercontent.com/kubesphere/ks-installer/v3.0.0/deploy/cluster-configuration.yaml
 ```
-As `metrics-server` is already installed on AKS, you need to disable the component in the cluster-configuration.yaml file by changing `true` to `false` for `enabled`.
-```bash
-kebesphere@Azure:~$ vim ./cluster-configuration.yaml
----
-  metrics_server:                    # (CPU: 56 m, Memory: 44.35 MiB) Whether to install metrics-server. IT enables HPA (Horizontal Pod Autoscaler).
-    enabled: false
----
-```
-The installation process will start after the cluster configuration is applied through the following command:
-```bash
-kubectl apply -f ./cluster-configuration.yaml
-```
-
 You can inspect the logs of installation through the following command:
 
 ```bash

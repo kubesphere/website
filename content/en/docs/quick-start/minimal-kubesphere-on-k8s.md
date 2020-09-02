@@ -23,14 +23,7 @@ In addition to installing KubeSphere on a Linux machine, you can also deploy it 
 
 After you make sure your machine meets the prerequisites, you can follow the steps below to install KubeSphere.
 
-- Please read the note below before you execute the commands to start installation:
-
-{{< notice note >}}
-
-- If your server has trouble accessing GitHub, you can copy the content in [kubesphere-installer.yaml](https://raw.githubusercontent.com/kubesphere/ks-installer/v3.0.0/deploy/kubesphere-installer.yaml) and [cluster-configuration.yaml](https://raw.githubusercontent.com/kubesphere/ks-installer/v3.0.0/deploy/cluster-configuration.yaml) respectively and past it to local files. You then can use `kubectl apply -f` for the local files to install KubeSphere.
-- In cluster-configuration.yaml, you need to disable `metrics_server` manually by changing `true` to `false` if the component has already been installed in your environment, especially for cloud-hosted Kubernetes clusters.
-
-{{</ notice >}}
+- Execute the following commands:
 
 ```bash
 kubectl apply -f https://raw.githubusercontent.com/kubesphere/ks-installer/v3.0.0/deploy/kubesphere-installer.yaml
@@ -40,7 +33,13 @@ kubectl apply -f https://raw.githubusercontent.com/kubesphere/ks-installer/v3.0.
 kubectl apply -f https://raw.githubusercontent.com/kubesphere/ks-installer/v3.0.0/deploy/cluster-configuration.yaml
 ```
 
-- Inspect the logs of installation:
+{{< notice note >}}
+
+If your server has trouble accessing GitHub, you can copy the content in [kubesphere-installer.yaml](https://raw.githubusercontent.com/kubesphere/ks-installer/v3.0.0/deploy/kubesphere-installer.yaml) and [cluster-configuration.yaml](https://raw.githubusercontent.com/kubesphere/ks-installer/v3.0.0/deploy/cluster-configuration.yaml) respectively and past it to local files. You then can use `kubectl apply -f` for the local files to install KubeSphere.
+
+{{</ notice >}}
+
+Inspect the logs of installation:
 
 ```bash
 kubectl logs -n kubesphere-system $(kubectl get pod -n kubesphere-system -l app=ks-install -o jsonpath='{.items[0].metadata.name}') -f

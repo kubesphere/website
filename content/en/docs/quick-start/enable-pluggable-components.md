@@ -26,7 +26,7 @@ For more information about each component, see Overview of Enable Pluggable Comp
 
 {{< notice note >}}
 
-- By default, the above components are not enabled except `metrics_server`. In some cases, you need to manually disable it by changing `true` to `false` in the configuration. This is because the component may already be installed in your environment, especially for cloud-hosted Kubernetes clusters.
+- If you use KubeKey to install KubeSphere on Linux, by default, the above components are not enabled except `metrics_server`. However, `metrics_server` remains disabled in the installer if you install KubeSphere on existing Kubernetes clusters. This is because the component may already be installed in your environment, especially for cloud-hosted Kubernetes clusters.
 - `multicluster` is not covered in this tutorial. If you want to enable this feature, you need to set a corresponding value for `clusterRole`. For more information, see [Multi-cluster Management](https://kubesphere.io/docs/multicluster-management/).
 - Make sure your machine meets the hardware requirements before the installation. Here is the recommendation if you want to enable all pluggable components: CPU ≥ 8 Cores, Memory ≥ 16 G, Disk Space ≥ 100 G.
 
