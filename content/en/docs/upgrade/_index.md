@@ -25,7 +25,7 @@ Follow steps to use KubeKey to upgrade Kubernetes and KubeSphere.
 
 Follow steps to use ks-installer to upgrade KubeSphere.
 
-## [What Changed in 3.0.0](../upgrade/what-changed/)
+## [Changes after Upgrade](../upgrade/what-changed/)
 
 Understand what will be changed after the upgrade.
 
