@@ -56,8 +56,18 @@ The path `/var/lib/docker` is mainly used to store the container data, and will 
 - All nodes must be accessible through `SSH`.
 - Time synchronization for all nodes.
 - `sudo`/`curl`/`openssl` should be used in all nodes.
-- `ebtables`/`socat`/`ipset`/`conntrack` should be installed in all nodes.
 - `docker` can be installed by yourself or by KubeKey.
+
+### Dependency Requirements
+
+KubeKey can install Kubernetes and KubeSphere together. The dependency that needs to be installed may be different based on the Kubernetes version to be installed. You can refer to the list below to see if you need to install relevant dependencies on your node in advance. 
+
+|             | Kubernetes Version ≥ 1.18 | Kubernetes Version < 1.18 |
+| ----------- | ------------------------- | ------------------------- |
+| `socat`     | Required                  | Optional but recommended  |
+| `conntrack` | Required                  | Optional but recommended  |
+| `ebtables`  | Optional but recommended  | Optional but recommended  |
+| `ipset`     | Optional but recommended  | Optional but recommended  |
 
 ### Network and DNS Requirements
 
