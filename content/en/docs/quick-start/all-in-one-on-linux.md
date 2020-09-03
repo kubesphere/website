@@ -11,7 +11,7 @@ For those who are new to KubeSphere and looking for a quick way to discover the 
 
 ## Prerequisites
 
-If your machine is behind a firewall, you need to open relevant ports by following the document [Ports Requirement](../port-firewall).
+If your machine is behind a firewall, you need to open relevant ports by following the document [Port Requirements](../../installing-on-linux/introduction/port-firewall/).
 
 ## Step 1: Prepare Linux Machine
 
