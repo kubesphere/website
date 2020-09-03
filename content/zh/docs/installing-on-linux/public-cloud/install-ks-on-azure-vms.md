@@ -12,7 +12,7 @@ Technically, you can either install and manage Kubernetes yourself or adopt a ma
 
 ## Introduction
 
-In this tutorial, we will use two key features of Azure virtual machines (VMs): 
+In this tutorial, we will use two key features of Azure virtual machines (VMs):
 
 - Virtual Machine Scale Sets (VMSS): Azure VMSS let you create and manage a group of load balanced VMs. The number of VM instances can automatically increase or decrease in response to demand or a defined schedule (Kubernetes Autoscaler is available, but not covered in this tutorial. See [autoscaler](https://github.com/kubernetes/autoscaler/tree/master/cluster-autoscaler/cloudprovider/azure) for more details), which perfectly fits Worker nodes.
 - Availability Sets: An availability set is a logical grouping of VMs within a datacenter that are automatically distributed across fault domains. This approach limits the impact of potential physical hardware failures, network outages, or power interruptions. All the Master and ETCD VMs will be placed in an availability set to achieve high availability.
@@ -68,7 +68,7 @@ Only few parameters need to be changed.
 
 Password authentication is restricted in the Linux configuration. Only SSH is acceptable.
 
-{{</ notice >}} 
+{{</ notice >}}
 
 Click the **Purchase** button at the bottom when you are ready to continue.
 
@@ -104,7 +104,7 @@ ssh -i .ssh/id_rsa2  -p50200 kubesphere@40.81.5.xx
 Download KubeKey using the following command:
 
 ```bash
-wget https://kubesphere.io/kubekey/releases/v1.0.0
+wget -c https://kubesphere.io/download/kubekey-v1.0.0-linux-amd64.tar.gz -O - | tar -xz
 ```
 {{</ tab >}}
 
@@ -119,12 +119,6 @@ wget https://github.com/kubesphere/kubekey/releases/download/v1.0.0/kubekey-v1.0
 
 {{</ tabs >}}
 
-Unzip it.
-
-```bash
-tar -zxvf v1.0.0
-```
-
 Grant the execution right to `kk`:
 
 ```bash
@@ -136,11 +130,11 @@ chmod +x kk
 ```bash
 ./kk create config --with-kubesphere v3.0.0 --with-kubernetes v1.17.9
 ```
-{{< notice note >}} 
+{{< notice note >}}
 
 These Kubernetes versions have been fully tested with KubeSphere: v1.15.12, v1.16.13, v1.17.9 (default), and v1.18.6.
 
-{{</ notice >}} 
+{{</ notice >}}
 
 ### config-sample.yaml Example
 
@@ -188,7 +182,7 @@ In addition to the node information, you need to provide the load balancer infor
 
 The public load balancer is used directly instead of an internal load balancer due to Azure [Load Balancer limits](https://docs.microsoft.com/en-us/azure/load-balancer/load-balancer-troubleshoot#cause-4-accessing-the-internal-load-balancer-frontend-from-the-participating-load-balancer-backend-pool-vm).
 
-{{</ notice >}} 
+{{</ notice >}}
 
 ### Persistent Storage Plugin Configuration
 
