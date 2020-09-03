@@ -126,7 +126,7 @@ Follow the step below to download KubeKey.
 Download KubeKey using the following command:
 
 ```bash
-wget https://kubesphere.io/kubekey/releases/v1.0.0
+wget -c https://kubesphere.io/download/kubekey-v1.0.0-linux-amd64.tar.gz -O - | tar -xz
 ```
 
 {{</ tab >}}
@@ -143,12 +143,6 @@ wget https://github.com/kubesphere/kubekey/releases/download/v1.0.0/kubekey-v1.0
 
 {{</ tabs >}}
 
-Unzip it.
-
-```bash
-tar -zxvf v1.0.0
-```
-
 Grant the execution right to `kk`:
 
 ```bash
@@ -161,11 +155,11 @@ Create an example configuration file with default configurations. Here Kubernete
 ./kk create config --with-kubesphere v3.0.0 --with-kubernetes v1.17.9
 ```
 
-{{< notice note >}} 
+{{< notice note >}}
 
 These Kubernetes versions have been fully tested with KubeSphere: v1.15.12, v1.16.13, v1.17.9 (default), and v1.18.6.
 
-{{</ notice >}} 
+{{</ notice >}}
 
 ### Cluster Node Planning
 

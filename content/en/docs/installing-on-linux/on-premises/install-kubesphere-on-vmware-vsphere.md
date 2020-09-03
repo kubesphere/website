@@ -280,7 +280,7 @@ Follow the step below to download KubeKey.
 Download KubeKey using the following command:
 
 ```bash
-wget https://kubesphere.io/kubekey/releases/v1.0.0
+wget -c https://kubesphere.io/download/kubekey-v1.0.0-linux-amd64.tar.gz -O - | tar -xz
 ```
 
 {{</ tab >}}
@@ -296,12 +296,6 @@ wget https://github.com/kubesphere/kubekey/releases/download/v1.0.0/kubekey-v1.0
 {{</ tab >}}
 
 {{</ tabs >}}
-
-Unzip it.
-
-```bash
-tar -zxvf v1.0.0
-```
 
 Grant the execution right to `kk`:
 

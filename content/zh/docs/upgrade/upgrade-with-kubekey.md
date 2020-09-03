@@ -25,7 +25,7 @@ If your KubeSphere version is v2.1.0 or earlier, please upgrade to v2.1.1 first.
 For users in China, you can download the installer using this link.
 
 ```bash
-wget https://kubesphere.io/kubekey/releases/v1.0.0
+wget https://github.com/kubesphere/kubekey/releases/download/v1.0.0/kubekey-v1.0.0-linux-amd64.tar.gz
 ```
 {{</ tab >}}
 
@@ -39,12 +39,6 @@ wget https://github.com/kubesphere/kubekey/releases/download/v1.0.0/kubekey-v1.0
 {{</ tab >}}
 
 {{</ tabs >}}
-
-Unzip it.
-
-```bash
-tar -zxvf v1.0.0
-```
 
 Grant the execution right to `kk`:
 
