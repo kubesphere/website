@@ -4,7 +4,7 @@ keywords: "kubernetes, upgrade, kubesphere, v3.0.0"
 description: "Upgrade KubeSphere with kubekey"
 
 linkTitle: "Upgrade with KubeKey"
-weight: 100
+weight: 4015
 ---
 KubeKey is recommended for users whose KubeSphere and Kubernetes were both deployed by [KubeSphere Installer](https://v2-1.docs.kubesphere.io/docs/installation/all-in-one/#step-2-download-installer-package). If your Kubernetes cluster was provisioned by yourself or cloud providers, please refer to [Upgrade with ks-installer](../upgrade-with-ks-installer).
 

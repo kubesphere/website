@@ -4,7 +4,7 @@ keywords: "kubernetes, upgrade, kubesphere, v3.0.0"
 description: "KubeSphere Upgrade Overview"
 
 linkTitle: "Overview"
-weight: 50
+weight: 4010
 ---
 
 ## Kubernetes
