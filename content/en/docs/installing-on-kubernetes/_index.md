@@ -1,9 +1,9 @@
 ---
-title: "Installing KubeSphere on Kubernetes"
-description: "Help you to better understand KubeSphere with detailed graphics and contents"
+title: "Installing on Kubernetes"
+description: "Demonstrate how to install KubeSphere on Kubernetes either hosted on cloud or on-premises."
 layout: "single"
 
-linkTitle: "Installing KubeSphere on Kubernetes"
+linkTitle: "Installing on Kubernetes"
 weight: 2500
 
 icon: "/images/docs/docs.svg"
