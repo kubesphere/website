@@ -7,7 +7,7 @@ linkTitle: "Changes after Upgrade"
 weight: 4025
 ---
 
-This section covers the changes after upgrade for existing settings in previous versions. If you want to know all the new features and enhancements in KubeSphere 3.0.0, see Release Notes for 3.0.0 directly.
+This section covers the changes after upgrade for existing settings in previous versions. If you want to know all the new features and enhancements in KubeSphere 3.0.0, see [Release Notes for 3.0.0](../../release/release-v300/) directly.
 
 ## Access Control
 
