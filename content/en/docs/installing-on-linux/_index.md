@@ -1,6 +1,6 @@
 ---
 title: "Installing on Linux"
-description: "Help you to better understand KubeSphere with detailed graphics and contents"
+description: "Demonstrate how to install KubeSphere on Linux on cloud and in on-premises environments."
 layout: "single"
 
 linkTitle: "Installing on Linux"
