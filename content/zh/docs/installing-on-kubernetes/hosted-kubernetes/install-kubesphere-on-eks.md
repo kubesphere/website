@@ -169,4 +169,4 @@ kubectl get svc -nkubesphere-system
 
 ## Enable Pluggable Components (Optional)
 
-The example above demonstrates the process of a default minimal installation. To enable other components in KubeSphere, see Enable Pluggable Components for more details.
+The example above demonstrates the process of a default minimal installation. To enable other components in KubeSphere, see [Enable Pluggable Components](../../../pluggable-components/) for more details.

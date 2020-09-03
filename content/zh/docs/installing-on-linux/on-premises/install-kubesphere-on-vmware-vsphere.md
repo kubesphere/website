@@ -267,28 +267,32 @@ Or use `systemctl status -l keepalived` command to view
 systemctl status -l keepalived
 ```
 
-## Get the Installer Excutable File
+## Download KubeKey
 
-Download the Installer for KubeSphere v3.0.0.
+[Kubekey](https://github.com/kubesphere/kubekey) is the next-gen installer which provides an easy, fast and flexible way to install Kubernetes and KubeSphere v3.0.0.
+
+Follow the step below to download KubeKey.
 
 {{< tabs >}}
 
-{{< tab "For users with poor network to GitHub" >}}
+{{< tab "For users with poor network connections to GitHub" >}}
 
-For users in China, you can download the installer using this link.
+Download KubeKey using the following command:
 
 ```bash
 wget https://kubesphere.io/kubekey/releases/v1.0.0
 ```
+
 {{</ tab >}}
 
-{{< tab "For users with good network to GitHub" >}}
+{{< tab "For users with good network connections to GitHub" >}}
 
-For users with good network to GitHub, you can download it from [GitHub Release Page](https://github.com/kubesphere/kubekey/releases/tag/v1.0.0) or use the following link directly.
+Download KubeKey from [GitHub Release Page](https://github.com/kubesphere/kubekey/releases/tag/v1.0.0) or use the following command directly.
 
 ```bash
 wget https://github.com/kubesphere/kubekey/releases/download/v1.0.0/kubekey-v1.0.0-linux-amd64.tar.gz
 ```
+
 {{</ tab >}}
 
 {{</ tabs >}}
@@ -500,4 +504,4 @@ You will be able to use default account and password `admin / P@88w0rd` to log i
 ![](/images/docs/vsphere/login.png)
 
 #### Enable Pluggable Components (Optional)
-The example above demonstrates the process of a default minimal installation. To enable other components in KubeSphere, see [Enable Pluggable Components for more details](https://github.com/kubesphere/ks-installer#enable-pluggable-components).
+The example above demonstrates the process of a default minimal installation. To enable other components in KubeSphere, see [Enable Pluggable Components](../../../pluggable-components/) for more details.
