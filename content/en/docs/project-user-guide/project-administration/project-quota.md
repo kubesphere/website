@@ -1,9 +1,9 @@
 ---
-title: "Volumes"
+title: "Project Quotas"
 keywords: 'kubernetes, docker, helm, jenkins, istio, prometheus'
-description: 'Create Volumes (PVCs)'
+description: 'Project Quotas'
 
-linkTitle: "Volumes"
+linkTitle: "Project Quotas"
 weight: 2110
 ---
 
