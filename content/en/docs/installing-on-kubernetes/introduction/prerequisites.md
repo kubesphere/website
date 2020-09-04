@@ -51,4 +51,4 @@ glusterfs (default)       kubernetes.io/glusterfs   3d4h
 
 If your Kubernetes cluster environment meets all the requirements above, then you are ready to deploy KubeSphere on your existing Kubernetes cluster.
 
-For more information, see Overview of Installing on Kubernetes.
+For more information, see [Overview](../overview/).

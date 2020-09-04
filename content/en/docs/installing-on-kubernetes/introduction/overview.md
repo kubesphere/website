@@ -15,7 +15,7 @@ This section gives you an overview of the general steps of installing KubeSphere
 
 {{< notice note >}} 
 
-Please read the prerequisites before you install KubeSphere on existing Kubernetes clusters.
+Please read [Prerequisites](../prerequisites/) before you install KubeSphere on existing Kubernetes clusters.
 
 {{</ notice >}}
 
