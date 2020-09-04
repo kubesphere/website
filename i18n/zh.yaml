@@ -52,3 +52,29 @@
   translation: 背景图片
 - id: kubesphere console screenshot
   translation: kubesphere console 截图
+- id: Learn More
+  translation: 查看更过
+- id: Download this page (PDF)
+  translation: 下载该页 (PDF)
+- id: Last updated
+  translation: 最新更新
+- id: What’s on this Page
+  translation: 页面内容
+- id: Last
+  translation: 上一篇
+- id: Next
+  translation: 下一篇
+- id: edit
+  translation: 编辑
+- id: feedback
+  translation: 反馈
+- id: share
+  translation: 分享
+- id: note
+  translation: 注解
+- id: tip
+  translation: 提示
+- id: info
+  translation: 信息
+- id: warning
+  translation: 警告

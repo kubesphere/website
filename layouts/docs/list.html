@@ -5,6 +5,9 @@
     <div class="title-div common-layout">
         <h1 class="title-h1">{{ .title }}</h1>
         <p class="common-p">{{ .content }}</p>
+        <div class="search-div">
+            {{ partial "searchInput" . }}
+        </div>
     </div>
 </section>
 {{ end }}
