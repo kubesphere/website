@@ -1,5 +1,5 @@
 ---
-title: "KubeSphere on QingCloud Instance"
+title: "Deploy KubeSphere on QingCloud Instance"
 keywords: "KubeSphere, Installation, HA, High-availability, LoadBalancer"
 description: "The tutorial is for installing a high-availability cluster."
 
