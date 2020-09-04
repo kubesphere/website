@@ -1,6 +1,6 @@
 ---
 title: "Installing on Kubernetes"
-description: "Demonstrate how to install KubeSphere on Kubernetes hosted on cloud or on-premises."
+description: "Demonstrate how to install KubeSphere on Kubernetes either hosted on cloud or on-premises."
 layout: "single"
 
 linkTitle: "Installing on Kubernetes"
