@@ -1,16 +1,16 @@
 ---
 title: "Port Requirements"
-keywords: 'kubernetes, docker, helm, jenkins, istio, prometheus'
-description: 'How to set the port in firewall rules'
+keywords: 'Kubernetes, KubeSphere, port-requirements, firewall-rules'
+description: 'Port requirements in KubeSphere'
 
 linkTitle: "Port Requirements"
 weight: 2120
 ---
 
 
-KubeSphere requires certain ports to communicate among services. If your network configuration uses a firewall，you need to ensure infrastructure components can communicate with each other through specific ports that act as communication endpoints for certain processes or services.
+KubeSphere requires certain ports for the communications among services. If your network is configured with firewall rules, you need to ensure infrastructure components can communicate with each other through specific ports that act as communication endpoints for certain processes or services.
 
-|services|protocol|action|start port|end port|comment
+|Service|Protocol|Action|Start Port|End Port|Notes
 |---|---|---|---|---|---|
 |ssh|TCP|allow|22|
 |etcd|TCP|allow|2379|2380|
@@ -21,12 +21,11 @@ KubeSphere requires certain ports to communicate among services. If your network
 |master|TCP|allow|10250|10258|
 |dns|TCP|allow|53|
 |dns|UDP|allow|53|
-|local-registry|TCP|allow|5000||offline environment|
-|local-apt|TCP|allow|5080||offline environment|
-|rpcbind|TCP|allow|111|| use NFS |
-|ipip| IPENCAP / IPIP|allow| | |calico needs to allow the ipip protocol |
-
+|local-registry|TCP|allow|5000||For offline environment|
+|local-apt|TCP|allow|5080||For offline environment|
+|rpcbind|TCP|allow|111|| Required if NFS is used|
+|ipip| IPENCAP / IPIP|allow| | |Calico needs to allow the ipip protocol |
 
 {{< notice note >}}
-Please note when you use Calico network plugin and run your cluster in classic network in cloud environment, you need to open both IPENCAP and IPIP protocol for source IP.
+When you use the Calico network plugin and run your cluster in a classic network on cloud, you need to enable both IPENCAP and IPIP protocol for the source IP.
 {{</ notice >}}
