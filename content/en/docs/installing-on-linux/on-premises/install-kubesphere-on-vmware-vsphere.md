@@ -1,5 +1,5 @@
 ---
-title: "VMware vSphere Installation"
+title: "Deploy KubeSphere on VMware vSphere"
 keywords: 'kubernetes, kubesphere, VMware vSphere, installation'
 description: 'How to install KubeSphere on VMware vSphere Linux machines'
 
@@ -7,7 +7,7 @@ description: 'How to install KubeSphere on VMware vSphere Linux machines'
 weight: 2260
 ---
 
-# Introduction
+## Introduction
 
 For a production environment, we need to consider the high availability of the cluster. If the key components (e.g. kube-apiserver, kube-scheduler, and kube-controller-manager) are all running on the same master node, Kubernetes and KubeSphere will be unavailable once the master node goes down. Therefore, we need to set up a high-availability cluster by provisioning load balancers with multiple master nodes. You can use any cloud load balancer, or any hardware load balancer (e.g. F5). In addition, Keepalived and [HAproxy](https://www.haproxy.com/), or Nginx is also an alternative for creating high-availability clusters.
 
