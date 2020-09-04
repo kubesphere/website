@@ -1,5 +1,5 @@
 ---
-title: "Install KubeSphere on Huawei CCE"
+title: "Deploy KubeSphere on Huawei CCE"
 keywords: "kubesphere, kubernetes, docker, huawei, cce"
 description: "It is to introduce how to install KubeSphere 3.0 on Huaiwei CCE."
 ---
