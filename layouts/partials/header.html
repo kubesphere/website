@@ -199,26 +199,6 @@ var bindClickClose = function() {
 
 var language = '{{.Site.Language.Lang}}'
 
-var bindClickDocs = function() {
-    var host = window.location.origin
-    $('a').click(function(e) {
-    var name = $(this).data('docs')
-    if (name === 'Documentation') {
-      e.preventDefault()
-      if (host === 'https://kubesphere.com.cn/' || host === 'https://kubesphere.io/') {
-          if (language === 'zh') {
-            window.open('https://kubesphere.com.cn/docs/zh-CN/')
-          } else {
-            window.open('https://kubesphere.io/docs/')
-          }
-      } else {
-          window.open('/docs/')
-      }
-    }
-  })
-}
-bindClickDocs()
-
 bindClickClose()
 
 bindScrollChangeHeader()

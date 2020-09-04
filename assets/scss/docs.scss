@@ -31,6 +31,15 @@
         width: 100%;
       }
     }
+
+    .search-div {
+      width: 560px;
+      margin-top: 20px;
+
+      @media only screen and (max-width: $mobile-max-width) {
+        width: 100%;
+      }
+    }
   }
 }
 

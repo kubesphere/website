@@ -20,6 +20,10 @@
                 <div></div>
             </div>
         </div>
+
+        <div class="search-div">
+            {{ partial "searchInput" . }}
+        </div>
     </div>
 </section>
 
@@ -141,7 +145,6 @@
 {{ if .IsPage }}
 <script src='{{ "js/aside.js" | relURL }}'></script>
 {{ end }}
-<script src='{{ "js/share.js" | relURL }}'></script>
 <script src='{{ "js/markdown-tab.js" | relURL }}'></script>
 <script>
     var languageCode = '{{.Site.Language.Lang}}'
