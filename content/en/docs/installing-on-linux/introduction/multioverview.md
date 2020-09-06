@@ -58,11 +58,17 @@ The path `/var/lib/docker` is mainly used to store the container data, and will 
 - `sudo`/`curl`/`openssl` should be used in all nodes.
 - `docker` can be installed by yourself or by KubeKey.
 
+{{< notice note >}}
+
+`docker` must be installed in advance if you want to deploy KubeSphere in an offline environment.
+
+{{</ notice >}} 
+
 ### Dependency Requirements
 
 KubeKey can install Kubernetes and KubeSphere together. The dependency that needs to be installed may be different based on the Kubernetes version to be installed. You can refer to the list below to see if you need to install relevant dependencies on your node in advance. 
 
-|             | Kubernetes Version ≥ 1.18 | Kubernetes Version < 1.18 |
+| Dependency  | Kubernetes Version ≥ 1.18 | Kubernetes Version < 1.18 |
 | ----------- | ------------------------- | ------------------------- |
 | `socat`     | Required                  | Optional but recommended  |
 | `conntrack` | Required                  | Optional but recommended  |
