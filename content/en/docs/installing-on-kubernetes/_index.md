@@ -19,7 +19,7 @@ Develop a basic understanding of the general steps of deploying KubeSphere on ex
 
 ### [Prerequisites](../installing-on-kubernetes/introduction/prerequisites/)
 
-Make sure your environment where existing Kubernetes clusters run meet the prerequisites before installation.
+Make sure your environment where existing Kubernetes clusters run meets the prerequisites before installation.
 
 ## Installing on Hosted Kubernetes
 
