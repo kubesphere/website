@@ -1,5 +1,5 @@
 ---
-title: "KubeSphere on QingCloud Instance"
+title: "Deploy KubeSphere on QingCloud Instance"
 keywords: "KubeSphere, Installation, HA, High-availability, LoadBalancer"
 description: "The tutorial is for installing a high-availability cluster."
 
@@ -136,7 +136,7 @@ wget -c https://kubesphere.io/download/kubekey-v1.0.0-linux-amd64.tar.gz -O - | 
 Download KubeKey from [GitHub Release Page](https://github.com/kubesphere/kubekey/releases/tag/v1.0.0) or use the following command directly.
 
 ```bash
-wget https://github.com/kubesphere/kubekey/releases/download/v1.0.0/kubekey-v1.0.0-linux-amd64.tar.gz
+wget https://github.com/kubesphere/kubekey/releases/download/v1.0.0/kubekey-v1.0.0-linux-amd64.tar.gz -O - | tar -xz
 ```
 
 {{</ tab >}}

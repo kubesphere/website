@@ -229,7 +229,7 @@ The role of `roles-manager` overlaps with `users-manager` while the latter is al
 
 {{< notice note >}}
 
-To create a DevOps project, you need to install KubeSphere DevOps system in advance, which is a pluggable component providing CI/CD pipelines, Binary-to-image, Source-to-image features, and more. For more information about how to enable DevOps, see KubeSphere DevOps System.
+To create a DevOps project, you need to install KubeSphere DevOps system in advance, which is a pluggable component providing CI/CD pipelines, Binary-to-image, Source-to-image features, and more. For more information about how to enable DevOps, see [KubeSphere DevOps System](../../pluggable-components/devops/).
 
 {{</ notice >}} 
 
@@ -245,7 +245,7 @@ To create a DevOps project, you need to install KubeSphere DevOps system in adva
 
 ![new-devops-project](https://ap3.qingstor.com/kubesphere-website/docs/20200827150523.png)
 
-4. Go to **Project Management** and select **Project Members**. Click **Invite Member** to grant `project-regular` the role of `maintainer`, who is allowed to create pipelines and credentials.
+4. Go to **Project Management** and select **Project Members**. Click **Invite Member** to grant `project-regular` the role of `operator`, who is allowed to create pipelines and credentials.
 
 ![devops-invite-member](https://ap3.qingstor.com/kubesphere-website/docs/20200827150704.png)
 

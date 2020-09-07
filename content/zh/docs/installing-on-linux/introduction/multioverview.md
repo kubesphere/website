@@ -99,7 +99,7 @@ wget -c https://kubesphere.io/download/kubekey-v1.0.0-linux-amd64.tar.gz -O - | 
 Download KubeKey from [GitHub Release Page](https://github.com/kubesphere/kubekey/releases/tag/v1.0.0) or use the following command directly.
 
 ```bash
-wget https://github.com/kubesphere/kubekey/releases/download/v1.0.0/kubekey-v1.0.0-linux-amd64.tar.gz
+wget https://github.com/kubesphere/kubekey/releases/download/v1.0.0/kubekey-v1.0.0-linux-amd64.tar.gz -O - | tar -xz
 ```
 {{</ tab >}}
 
@@ -137,7 +137,7 @@ Here are some examples for your reference:
 ./kk create config [-f ~/myfolder/abc.yaml]
 ```
 
-- You can customize the persistent storage plugins (e.g. NFS Client, Ceph RBD, and GlusterFS) in `sample-config.yaml`.
+- You can customize persistent storage plugins (e.g. NFS Client, Ceph RBD, and GlusterFS) in `config-sample.yaml`.
 
 ```bash
 ./kk create config --with-storage localVolume
@@ -145,7 +145,7 @@ Here are some examples for your reference:
 
 {{< notice note >}}
 
-KubeKey will install [OpenEBS](https://openebs.io/) to provision [LocalPV](https://kubernetes.io/docs/concepts/storage/volumes/#local) for development and testing environment by default, which is convenient for new users. For this example of multi-cluster installation, we will use the default storage class (local volume). For production, please use NFS/Ceph/GlusterFS/CSI or commercial products as persistent storage solutions, you need to specify them in `addons` of `sample-config.yaml`, see [Persistent Storage Configuration](../storage-configuration).
+KubeKey will install [OpenEBS](https://openebs.io/) to provision [LocalPV](https://kubernetes.io/docs/concepts/storage/volumes/#local) for development and testing environment by default, which is convenient for new users. In this example of multi-node installation, the default storage class (local volume) is used. For production, please use NFS/Ceph/GlusterFS/CSI or commercial products as persistent storage solutions. You need to specify them under `addons` of `config-sample.yaml`. See [Persistent Storage Configuration](../storage-configuration) for more details.
 
 {{</ notice >}}
 

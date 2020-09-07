@@ -11,7 +11,7 @@ For those who are new to KubeSphere and looking for a quick way to discover the 
 
 ## Prerequisites
 
-If your machine is behind a firewall, you need to open relevant ports by following the document [Ports Requirement](../port-firewall).
+If your machine is behind a firewall, you need to open relevant ports by following the document [Port Requirements](../../installing-on-linux/introduction/port-firewall/).
 
 ## Step 1: Prepare Linux Machine
 
@@ -48,7 +48,7 @@ The system requirements above and the instructions below are for the default min
 {{< notice tip >}}
 
 - It is recommended that your OS be clean (without any other software installed). Otherwise, there may be conflicts.
-- It is recommended that a container image mirror (accelerator) be prepared if you have trouble downloading images from dockerhub.io. See [Configure registry mirrors for the Docker daemon](https://docs.docker.com/registry/recipes/mirror/#configure-the-docker-daemon).
+- It is recommended that a container image mirror (accelerator) be prepared if you have trouble downloading images from dockerhub.io. See [Configure Booster for Installation](../../installing-on-linux/faq/configure-booster/).
 
 {{</ notice >}}
 
@@ -63,7 +63,7 @@ Follow the step below to download KubeKey.
 Download KubeKey using the following command:
 
 ```bash
-wget https://github.com/kubesphere/kubekey/releases/download/v1.0.0/kubekey-v1.0.0-linux-amd64.tar.gz
+wget -c https://kubesphere.io/download/kubekey-v1.0.0-linux-amd64.tar.gz -O - | tar -xz
 ```
 
 {{</ tab >}}
@@ -73,7 +73,7 @@ wget https://github.com/kubesphere/kubekey/releases/download/v1.0.0/kubekey-v1.0
 Download KubeKey from [GitHub Release Page](https://github.com/kubesphere/kubekey/releases/tag/v1.0.0) or use the following command directly.
 
 ```bash
-wget https://github.com/kubesphere/kubekey/releases/download/v1.0.0/kubekey-v1.0.0-linux-amd64.tar.gz
+wget https://github.com/kubesphere/kubekey/releases/download/v1.0.0/kubekey-v1.0.0-linux-amd64.tar.gz -O - | tar -xz
 ```
 
 {{</ tab >}}
@@ -100,18 +100,18 @@ In this QuickStart tutorial, you only need to execute one command for installati
 ./kk create cluster [--with-kubernetes version] [--with-kubesphere version]
 ```
 
-Create a Kubernetes cluster with KubeSphere installed (e.g. `--with-kubesphere v3.0.0`), this is an example for your reference:
+Create a Kubernetes cluster with KubeSphere installed. Here is an example for your reference:
 
 
 ```bash
-./kk create cluster --with-kubernetes v1.17.9 --with-kubesphere [version]
+./kk create cluster --with-kubernetes v1.17.9 --with-kubesphere v3.0.0
 ```
 
 {{< notice note >}}
 
 - Supported Kubernetes versions: *v1.15.12*, *v1.16.13*, *v1.17.9* (default), *v1.18.6*.
 - For all-in-one installation, generally speaking, you do not need to change any configuration.
-- KubeKey will install [OpenEBS](https://openebs.io/) to provision LocalPV for development and testing environment by default, which is convenient for new users. For other storage classes, see Storage Class Configuration.
+- KubeKey will install [OpenEBS](https://openebs.io/) to provision LocalPV for development and testing environment by default, which is convenient for new users. For other storage classes, see [Persistent Storage Configuration](../../installing-on-linux/introduction/storage-configuration/).
 
 {{</ notice >}}
 

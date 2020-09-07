@@ -16,7 +16,7 @@ KubeSphere delivers **consolidated views while integrating a wide breadth of eco
 
 ## Run KubeSphere Everywhere
 
-As a lightweight platform, KubeSphere has become more friendly to different cloud ecosystems as it does not change Kubernetes itself at all. In other words, KubeSphere can be deployed **on any existing version-compatible Kubernetes cluster on any infrastructure** including virtual machine, bare metal, on-premises, public cloud and hybrid cloud. KubeSphere users have the choice of installing KubeSphere on cloud and container platforms, such as Alibaba Cloud, AWS, QingCloud, Tencent Cloud, Huawei Cloud and Rancher, and even importing and managing their existing Kubernetes clusters created using major Kubernetes distributions. The seamless integration of KubeSphere into existing Kubernetes platforms means that the business of users will not be affected, without any modification to their current resources or assets. For more information, see Installation.
+As a lightweight platform, KubeSphere has become more friendly to different cloud ecosystems as it does not change Kubernetes itself at all. In other words, KubeSphere can be deployed **on any existing version-compatible Kubernetes cluster on any infrastructure** including virtual machine, bare metal, on-premises, public cloud and hybrid cloud. KubeSphere users have the choice of installing KubeSphere on cloud and container platforms, such as Alibaba Cloud, AWS, QingCloud, Tencent Cloud, Huawei Cloud and Rancher, and even importing and managing their existing Kubernetes clusters created using major Kubernetes distributions. The seamless integration of KubeSphere into existing Kubernetes platforms means that the business of users will not be affected, without any modification to their current resources or assets. For more information, see [Installing on Linux](../../installing-on-linux/) and [Installing on Kubernetes](../../installing-on-kubernetes/).
 
 KubeSphere screens users from the infrastructure underneath and helps enterprises modernize, migrate, deploy and manage existing and containerized apps seamlessly across a variety of infrastructure types. This is how KubeSphere empowers developers and Ops teams to focus on application development and accelerate DevOps automated workflows and delivery processes with enterprise-level observability and troubleshooting, unified monitoring and logging, centralized storage and networking management, easy-to-use CI/CD pipelines, and so on.
 
@@ -40,7 +40,7 @@ KubeSphere screens users from the infrastructure underneath and helps enterprise
 
 - **Multilingual Support of Web Console**. KubeSphere is designed for users around the world at the very beginning. Thanks to our community members across the globe, KubeSphere 3.0 now supports four official languages for its web console: English, Simplified Chinese, Traditional Chinese, and Spanish. More languages are expected to be supported going forward.
 
-In addition to the above highlights, KubeSphere 3.0 also features other functionality upgrades. For more and detailed information, see Release Notes for 3.0.0.
+In addition to the above highlights, KubeSphere 3.0 also features other functionality upgrades. For more and detailed information, see [Release Notes for 3.0.0](../../release/release-v300/).
 
 ## Open Source
 

@@ -40,7 +40,7 @@ Kubernetes has become the de facto standard in container orchestration. Against 
 
 KubeSphere provides its unique feature as a solution to the above four cases. Based on the Federation pattern of KubeSphere's multi-cluster feature, multiple heterogeneous Kubernetes clusters can be aggregated within a unified Kubernetes resource pool. When users deploy applications, they can decide to which Kubernetes cluster they want app replicas to be scheduled in the pool. The whole process is managed and maintained through KubeSphere. This is how KubeSphere helps users achieve multi-site high availability (across zones and clusters).
 
-For more information, see Multi-cluster Management.
+For more information, see [Multi-cluster Management](../../multicluster-management/).
 
 ## Full-stack Observability with Streamlined O&M
 
