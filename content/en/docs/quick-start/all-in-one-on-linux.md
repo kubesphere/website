@@ -100,11 +100,11 @@ In this QuickStart tutorial, you only need to execute one command for installati
 ./kk create cluster [--with-kubernetes version] [--with-kubesphere version]
 ```
 
-Create a Kubernetes cluster with KubeSphere installed (e.g. `--with-kubesphere v3.0.0`), this is an example for your reference:
+Create a Kubernetes cluster with KubeSphere installed. Here is an example for your reference:
 
 
 ```bash
-./kk create cluster --with-kubernetes v1.17.9 --with-kubesphere [version]
+./kk create cluster --with-kubernetes v1.17.9 --with-kubesphere v3.0.0
 ```
 
 {{< notice note >}}
