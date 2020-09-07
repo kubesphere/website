@@ -48,7 +48,7 @@ The system requirements above and the instructions below are for the default min
 {{< notice tip >}}
 
 - It is recommended that your OS be clean (without any other software installed). Otherwise, there may be conflicts.
-- It is recommended that a container image mirror (accelerator) be prepared if you have trouble downloading images from dockerhub.io. See [Configure registry mirrors for the Docker daemon](https://docs.docker.com/registry/recipes/mirror/#configure-the-docker-daemon).
+- It is recommended that a container image mirror (accelerator) be prepared if you have trouble downloading images from dockerhub.io. See [Configure Booster for Installation](../../installing-on-linux/faq/configure-booster/).
 
 {{</ notice >}}
 
@@ -111,7 +111,7 @@ Create a Kubernetes cluster with KubeSphere installed (e.g. `--with-kubesphere v
 
 - Supported Kubernetes versions: *v1.15.12*, *v1.16.13*, *v1.17.9* (default), *v1.18.6*.
 - For all-in-one installation, generally speaking, you do not need to change any configuration.
-- KubeKey will install [OpenEBS](https://openebs.io/) to provision LocalPV for development and testing environment by default, which is convenient for new users. For other storage classes, see Storage Class Configuration.
+- KubeKey will install [OpenEBS](https://openebs.io/) to provision LocalPV for development and testing environment by default, which is convenient for new users. For other storage classes, see [Persistent Storage Configuration](../../installing-on-linux/introduction/storage-configuration/).
 
 {{</ notice >}}
 
