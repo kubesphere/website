@@ -1,5 +1,5 @@
 ---
-linkTitle: "Install on On-premises environment"
+linkTitle: "Installing in On-premises Environments"
 weight: 2200
 
 _build:
