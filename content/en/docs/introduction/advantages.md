@@ -32,7 +32,7 @@ The feature can be enabled both before and after the installation, giving users 
 
 **High Availability**. This is extremely useful when it comes to disaster recovery. A cluster can run major services with another one serving as the backup. When the major one goes down, services can be quickly taken over by another cluster. The logic is quite similar to the case when clusters are deployed in different regions, as requests can be sent to the closest one for low latency. In short, high availability is achieved across zones and clusters.
 
-For more information, see Multi-cluster Management.
+For more information, see [Multi-cluster Management](../../multicluster-management/).
 
 ### Powerful Observability
 

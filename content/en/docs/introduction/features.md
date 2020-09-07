@@ -46,7 +46,7 @@ With KubeSphere, users can manage the infrastructure underneath, such as adding 
 
 KubeSphere allows users to deploy applications across clusters. More importantly, an application can also be configured to run on a certain cluster. Besides, the multi-cluster feature, paired with [OpenPitrix](https://github.com/openpitrix/openpitrix), an industry-leading application management platform, enables users to manage apps across their whole lifecycle, including release, removal and distribution.
 
-For more information, see Multi-cluster Management.
+For more information, see [Multi-cluster Management](../../multicluster-management/).
 
 ## DevOps Support
 
