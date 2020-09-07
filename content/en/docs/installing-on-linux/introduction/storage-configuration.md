@@ -7,7 +7,7 @@ linkTitle: "Persistent Storage Configuration"
 weight: 2140
 ---
 ## Overview
-A persistent volume is a **Must** for KubeSphere. Therefore, before the installation of KubeSphere, a **default** 
+Persistent volumes are a **Must** for KubeSphere. Therefore, before the installation of KubeSphere, a **default** 
 [StorageClass](https://kubernetes.io/docs/concepts/storage/storage-classes/) and corresponding storage plugin should be installed on the Kubernetes cluster. As different users may choose different storage plugins, you can use [KubeKey](https://github.com/kubesphere/kubekey) to install storage plugins through 
 [add-on](https://github.com/kubesphere/kubekey/blob/v1.0.0/docs/addons.md). This tutorial will introduce add-on configurations for some mainly used storage plugins.
 
