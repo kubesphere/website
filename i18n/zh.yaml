@@ -78,3 +78,5 @@
   translation: 信息
 - id: warning
   translation: 警告
+- id: Enter keywords to get help quickly
+  translation: 输入关键字快速获取帮助

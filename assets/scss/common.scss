@@ -248,6 +248,10 @@ section {
     border: none;
     outline: none;
     color: #657480;
+
+    &::placeholder {
+      color:#919aa3;
+    }
   }
 
   svg {
