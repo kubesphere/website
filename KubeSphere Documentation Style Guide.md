@@ -41,7 +41,7 @@ When you submit your md files to GitHub, make sure you add related image files t
 
 ## Tone
 
-- Do not use "we". Address the reader as "you" directly. Using “we” in a sentence can be confusing, because the reader might not know whether they are part of the “we” you are describing. You can also use words like users, developers, administrators and engineers, depending on the feature you are describing.
+- Do not use “we”. Address the reader as “you” directly. Using “we” in a sentence can be confusing, because the reader might not know whether they are part of the “we” you are describing. You can also use words like users, developers, administrators and engineers, depending on the feature you are describing.
 - Do not use words which can imply a specific gender, including he, him, his, himself, she, her, hers and herself.
 
 | Do                                                           | Don't                                                        |
