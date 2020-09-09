@@ -8,19 +8,55 @@ linkTitle: "Multi-cluster Management"
 weight: 3000
 
 icon: "/images/docs/docs.svg"
-
 ---
 
-Today, it's very common for organizations to run and manage multiple Kubernetes Clusters on different cloud providers or infrastructures. Each Kubernetes cluster is a relatively self-contained unit. And the upstream community is struggling to research and develop the multi-cluster management solution, such as [kubefed](https://github.com/kubernetes-sigs/kubefed).
+## Introduction
 
-The most common use cases in multi-cluster management including **service traffic load balancing, development and production isolation, decoupling of data processing and data storage, cross-cloud backup and disaster recovery, flexible allocation of computing resources, low latency access with cross-region services, and no vendor lock-in,** etc.
+This chapter demonstrates how to use the multi-cluster feature of KubeSphere to import heterogeneous clusters for unified management.
 
-KubeSphere is developed to address the multi-cluster and multi-cloud management challenges and implement the proceeding user scenarios, providing users with a unified control plane to distribute applications and its replicas to multiple clusters from public cloud to on-premise environment. KubeSphere also provides rich observability cross multiple clusters including centralized monitoring, logging, events, and auditing logs.
+### [Overview](../multicluster-management/introduction/overview/)
 
-![KubeSphere Multi-cluster Management](/images/docs/multi-cluster-overview.jpg)
+Gain a basic understanding of multi-cluster management, such as its common use cases, and the benefits that KubeSphere can bring with its multi-cluster feature.
 
-## Most Popular Pages
+### [Kubernetes Federation in KubeSphere](../multicluster-management/introduction/kubefed-in-kubesphere/)
 
-Below you will find some of the most common and helpful pages from this chapter. We highly recommend you to review them at first.
+Understand the fundamental concept of Kubernetes federation in KubeSphere, including M clusters and H clusters.
 
-{{< popularPage icon="/images/docs/bitmap.jpg" title="Install KubeSphere on AWS EC2" description="Provisioning a new Kubernetes and KubeSphere cluster based on AWS" link="" >}}
+## Enable Multi-cluster in KubeSphere
+
+### [Direct Connection](../multicluster-management/enable-multicluster/direct-connection/)
+
+Understand the general steps of importing clusters through direct connection.
+
+### [Agent Connection](../multicluster-management/enable-multicluster/agent-connection/)
+
+Understand the general steps of importing clusters through agent connection.
+
+### [Retrieve KubeConfig](../multicluster-management/enable-multicluster/retrieve-kubeconfig/)
+
+Retrieve the KubeConfig which is needed for cluster importing through direct connection.
+
+## Import Cloud-hosted Kubernetes Cluster
+
+### [Import Aliyun ACK Cluster](../multicluster-management/import-cloud-hosted-k8s/import-aliyun-ack/)
+
+Learn how to import an Alibaba Cloud Kubernetes cluster.
+
+### [Import AWS EKS Cluster](../multicluster-management/import-cloud-hosted-k8s/import-aws-eks/)
+
+Learn how to import an Amazon Elastic Kubernetes Service cluster.
+
+## Import On-prem Kubernetes Cluster
+
+### [Import Kubeadm Kubernetes Cluster](../multicluster-management/import-on-prem-k8s/import-kubeadm-k8s/)
+
+Learn how to import a Kubernetes cluster created with kubeadm.
+
+## Remove Cluster
+
+### [Remove a Cluster from KubeSphere](../multicluster-management/remove-cluster/kubefed-in-kubesphere/)
+
+Learn how to unbind a cluster from your cluster pool in KubeSphere.
+
+
+
