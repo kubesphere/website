@@ -54,7 +54,7 @@ kubectl get svc/ks-console -n kubesphere-system
 - Make sure port 30880 is opened in security groups and access the web console through the NodePort (`IP:30880`) with the default account and password (`admin/P@88w0rd`).
 - After logging in the console, you can check the status of different components in **Components**. You may need to wait for some components to be up and running if you want to use related services.
 
-![components](https://ap3.qingstor.com/kubesphere-website/docs/components.png)
+![components](/images/docs/quickstart/kubesphere-components.png)
 
 ## Enable Pluggable Components (Optional)
 
