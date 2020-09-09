@@ -171,7 +171,7 @@ You may need to bind EIP and configure port forwarding in your environment for e
 
 After logging in the console, you can check the status of different components in **Components**. You may need to wait for some components to be up and running if you want to use related services. You can also use `kubectl get pod --all-namespaces` to inspect the running status of KubeSphere workloads.
 
-![components](https://ap3.qingstor.com/kubesphere-website/docs/components.png)
+![components](/images/docs/quickstart/kubesphere-components.png)
 
 ## Enable Pluggable Components (Optional)
 
