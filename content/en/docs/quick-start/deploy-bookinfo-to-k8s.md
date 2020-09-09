@@ -33,6 +33,12 @@ In this tutorial, you will learn how to deploy a sample application Bookinfo com
 
 ![switch-application-governance](https://ap3.qingstor.com/kubesphere-website/docs/20200908150358.png)
 
+{{< notice note >}} 
+
+You need to enable **Application Governance** so that you can use the Tracing feature. Once it is enabled, please check whether an annotation (e.g. `nginx.ingress.kubernetes.io/service-upstream: true`) is added for your route (Ingress) if the route is inaccessible.
+
+{{</ notice >}} 
+
 ## Estimated Time
 
 About 20 minutes.
