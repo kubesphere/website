@@ -1,20 +1,19 @@
 ---
 title: "Persistent Storage Configuration"
-keywords: 'kubernetes, docker, kubesphere, storage, volume, PVC'
+keywords: 'Kubernetes, docker, KubeSphere, storage, volume, PVC'
 description: 'Persistent Storage Configuration'
 
 linkTitle: "Persistent Storage Configuration"
 weight: 2140
 ---
 ## Overview
-Persistence volume is **Must** for Kubesphere. So before installation of Kubesphere,  one **default** 
-[StorageClass](https://kubernetes.io/docs/concepts/storage/storage-classes/) and corresponding storage plugin should be installed on the Kubernetes cluster.
-As different users may choose different storage plugin, [KubeKey](https://github.com/kubesphere/kubekey) supports to install storage plugin by the way of 
-[add-on](https://github.com/kubesphere/kubekey/blob/v1.0.0/docs/addons.md). This passage will introduce add-on configuration for some mainly used storage plugin.
+Persistent volumes are a **Must** for KubeSphere. Therefore, before the installation of KubeSphere, a **default** 
+[StorageClass](https://kubernetes.io/docs/concepts/storage/storage-classes/) and corresponding storage plugin should be installed on the Kubernetes cluster. As different users may choose different storage plugins, you can use [KubeKey](https://github.com/kubesphere/kubekey) to install storage plugins through 
+[add-on](https://github.com/kubesphere/kubekey/blob/v1.0.0/docs/addons.md). This tutorial will introduce add-on configurations for some mainly used storage plugins.
 
 ## QingCloud-CSI
-[QingCloud-CSI](https://github.com/yunify/qingcloud-csi) plugin implements an interface between CSI-enabled Container Orchestrator (CO) and the disk of QingCloud. 
-Here is a helm-chart example of installing by KubeKey add-on. 
+[QingCloud-CSI](https://github.com/yunify/qingcloud-csi) plugin implements an interface between CSI-enabled Container Orchestrator (CO) and the disk of QingCloud. Here is a helm-chart example of installing by KubeKey add-on. 
+
 ```bash
 addons:
 - name: csi-qingcloud
@@ -29,13 +28,10 @@ addons:
       - config.zone=SHOULD_BE_REPLACED
       - sc.isDefaultClass=true
 ```
-For more information about QingCloud, see [QingCloud](https://www.qingcloud.com/). 
-For more chart values, see [configuration](https://github.com/kubesphere/helm-charts/tree/master/src/test/csi-qingcloud#configuration).
+For more information about QingCloud, see [QingCloud](https://www.qingcloud.com/). For more chart values, see [Configuration](https://github.com/kubesphere/helm-charts/tree/master/src/test/csi-qingcloud#configuration).
 
 ## NFS-client
-The [nfs-client-provisioner](https://github.com/kubernetes-incubator/external-storage/tree/master/nfs-client) is an automatic provisioner for Kubernetes that uses your 
-*already configured* NFS server, dynamically creating Persistent Volumes.
-Hear is a helm-chart example of installing by KubeKey add-on.
+The [nfs-client-provisioner](https://github.com/kubernetes-incubator/external-storage/tree/master/nfs-client) is an automatic provisioner for Kubernetes that uses your *already configured* NFS server, dynamically creating Persistent Volumes. Here is a helm-chart example of installing by KubeKey add-on.
 ```yaml
 addons:
 - name: nfs-client
@@ -49,14 +45,12 @@ addons:
       - nfs.path=SHOULD_BE_REPLACED
       - storageClass.defaultClass=true
 ```
-For more chart values, see [configuration](https://github.com/kubesphere/helm-charts/tree/master/src/main/csi-nfs-provisioner#configuration)
+For more chart values, see [Configuration](https://github.com/kubesphere/helm-charts/tree/master/src/main/nfs-client-provisioner#configuration).
 
 ## Ceph RBD
 Ceph RBD is an in-tree storage plugin on Kubernetes. As **hyperkube** images were [deprecated since 1.17](https://github.com/kubernetes/kubernetes/pull/85094), 
-**KubeKey** will never use **hyperkube** images. So in-tree Ceph RBD may not work on Kubernetes installed by **KubeKey**. 
-If you work with 14.0.0(Nautilus)+ Ceph Cluster, we appreciate you to use [Ceph CSI](#Ceph CSI). 
-Meanwhile you could use [rbd provisioner](https://github.com/kubernetes-incubator/external-storage/tree/master/ceph/rbd) as substitute, which is same format with in-tree Ceph RBD. 
-Here is an example of rbd-provisioner. 
+**KubeKey** will never use **hyperkube** images. Hence, in-tree Ceph RBD may not work on Kubernetes installed by **KubeKey**. If you work with 14.0.0 (Nautilus)+ Ceph Cluster, we appreciate that you use [Ceph CSI](#Ceph CSI). Meanwhile, you could use [rbd provisioner](https://github.com/kubernetes-incubator/external-storage/tree/master/ceph/rbd) as a substitute, the format of which is the same as in-tree Ceph RBD. Here is an example of rbd-provisioner. 
+
 ```yaml
 - name: rbd-provisioner
   namespace: kube-system
@@ -70,19 +64,18 @@ Here is an example of rbd-provisioner.
       - ceph.userKey=SHOULD_BE_REPLACED
       - sc.isDefault=true
 ```
-For more values, see [configuration](https://github.com/kubesphere/helm-charts/tree/master/src/test/rbd-provisioner#configuration)
+For more values, see [Configuration](https://github.com/kubesphere/helm-charts/tree/master/src/test/rbd-provisioner#configuration).
 
 ## Ceph CSI
-[Ceph-CSI](https://github.com/ceph/ceph-csi) contains Ceph Container Storage Interface (CSI) driver for RBD, CephFS. It will be substitute for [Ceph-RBD](#Ceph RBD) in the future.
-Ceph CSI should be installed on v1.14.0+ Kubernetes, and work with 14.0.0(Nautilus)+ Ceph Cluster.
-For details about compatibility, see [support matrix](https://github.com/ceph/ceph-csi#support-matrix).	Here is an example of installing ceph-csi-rbd by **KubeKey** add-on.
+[Ceph-CSI](https://github.com/ceph/ceph-csi) contains Ceph Container Storage Interface (CSI) driver for RBD, CephFS. It will be a substitute for [Ceph-RBD](#Ceph RBD) in the future. Ceph CSI should be installed on v1.14.0+ Kubernetes, and work with 14.0.0 (Nautilus)+ Ceph Cluster. For details about compatibility, see [Support Matrix](https://github.com/ceph/ceph-csi#support-matrix). Here is an example of installing ceph-csi-rbd by **KubeKey** add-on.
+
 ```yaml
 csiConfig:
   - clusterID: "cluster1"
     monitors:
       - SHOULD_BE_REPLACED 
 ```
-Save the YAML file of ceph config in local, **/root/ceph-csi-config.yaml** for example. 
+Save the YAML file of ceph config locally (e.g. **/root/ceph-csi-config.yaml**).
 
 ```yaml
 apiVersion: v1
@@ -119,7 +112,7 @@ allowVolumeExpansion: true
 mountOptions:
    - discard
 ```
-Save the YAML file of StorageClass in local, **/root/ceph-csi-rbd-sc.yaml** for example. The add-on configuration could be set like:
+Save the YAML file of StorageClass locally (e.g. **/root/ceph-csi-rbd-sc.yaml**). The add-on configuration can be set like:
 
 ```yaml
 addons: 
@@ -136,11 +129,11 @@ addons:
       path:
       - /root/ceph-csi-rbd-sc.yaml
 ```
-For more information, see [chart for ceph-csi-rbd](https://github.com/ceph/ceph-csi/tree/master/charts/ceph-csi-rbd)
+For more information, see [chart for ceph-csi-rbd](https://github.com/ceph/ceph-csi/tree/master/charts/ceph-csi-rbd).
 
 
 ## Glusterfs
-Glusterfs is an in-tree storage plugin on Kubernetes, only StorageClass is need to been installed. 
+Glusterfs is an in-tree storage plugin on Kubernetes. Only StorageClass needs to be installed. 
 ```yaml
 apiVersion: v1
 kind: Secret
@@ -173,9 +166,10 @@ reclaimPolicy: Delete
 volumeBindingMode: Immediate
 allowVolumeExpansion: true
 ```
-For detailed information, see [configuration](https://kubernetes.io/docs/concepts/storage/storage-classes/#glusterfs) 
+For detailed information, see [Configuration](https://kubernetes.io/docs/concepts/storage/storage-classes/#glusterfs). 
 
-Save the YAML file of StorageClass in local, **/root/glusterfs-sc.yaml** for example. The add-on configuration could be set like:
+Save the YAML file of StorageClass locally (e.g. **/root/glusterfs-sc.yaml**). The add-on configuration can be set like:
+
 ```bash
 - addon
 - name: glusterfs
@@ -187,9 +181,7 @@ Save the YAML file of StorageClass in local, **/root/glusterfs-sc.yaml** for exa
 
 ## OpenEBS/LocalVolumes
 [OpenEBS](https://github.com/openebs/openebs) Dynamic Local PV provisioner can create Kubernetes Local Persistent Volumes using a unique 
-HostPath (directory) on the node to persist data. It's very convenient for experience KubeSphere when you has no special storage system.
-If no default StorageClass configured of **KubeKey** add-on, OpenEBS/LocalVolumes will be installed.
+HostPath (directory) on the node to persist data. It is very convenient for users to get started with KubeSphere when they have no special storage system. If no default StorageClass is configured with **KubeKey** add-on, OpenEBS/LocalVolumes will be installed.
 
 ## Multi-Storage
-If you intend to install more than one storage plugins, remind to set only one to be default. 
-Otherwise [ks-installer](https://github.com/kubesphere/ks-installer) will be confused about which StorageClass to use. 
+If you intend to install more than one storage plugins, please only set one of them to be the default. Otherwise, [ks-installer](https://github.com/kubesphere/ks-installer) will be confused about which StorageClass to use. 
