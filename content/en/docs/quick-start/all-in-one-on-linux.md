@@ -121,12 +121,6 @@ After you execute the command, you will see a table as below for environment che
 
 Make sure the above components marked with `y` are installed and input `yes` to continue.
 
-{{< notice note >}}
-
-If you download the binary file directly in Step 2, you do not need to install `docker` as KubeKey will install it automatically.
-
-{{</ notice >}}
-
 ## Step 4: Verify the Installation
 
 When you see the output as below, it means the installation finishes.
