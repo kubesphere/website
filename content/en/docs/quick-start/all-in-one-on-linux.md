@@ -80,7 +80,7 @@ wget https://github.com/kubesphere/kubekey/releases/download/v1.0.0/kubekey-v1.0
 
 {{</ tabs >}}
 
-Grant the execution right to `kk`:
+Make `kk` executable:
 
 ```bash
 chmod +x kk
