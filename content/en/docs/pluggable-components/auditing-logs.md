@@ -19,7 +19,7 @@ For more information, see Logging, Events, and Auditing.
 
 When you install KubeSphere on Linux, you need to create a configuration file, which lists all KubeSphere components.
 
-1. In the tutorial of [Installing KubeSphere on Linux](https://kubesphere.io/docs/installing-on-linux/introduction/multioverview/), you create a default file **config-sample.yaml**. Modify the file by executing the following command:
+1. In the tutorial of [Installing KubeSphere on Linux](../../installing-on-linux/introduction/multioverview/), you create a default file **config-sample.yaml**. Modify the file by executing the following command:
 
 ```bash
 vi config-sample.yaml
@@ -27,7 +27,7 @@ vi config-sample.yaml
 
 {{< notice note >}}
 
-If you adopt [All-in-one Installation](https://kubesphere.io/docs/quick-start/all-in-one-on-linux/), you do not need to create a config-sample.yaml file as you can create a cluster directly. Generally, the all-in-one mode is for users who are new to KubeSphere and look to get familiar with the system. If you want to enable Auditing in this mode (e.g. for testing purpose), refer to the following section to see how Auditing can be installed after installation.
+If you adopt [All-in-one Installation](../../quick-start/all-in-one-on-linux/), you do not need to create a config-sample.yaml file as you can create a cluster directly. Generally, the all-in-one mode is for users who are new to KubeSphere and look to get familiar with the system. If you want to enable Auditing in this mode (e.g. for testing purpose), refer to the following section to see how Auditing can be installed after installation.
 
 {{</ notice >}}
 
