@@ -112,7 +112,7 @@ Do not copy the content above directly to your local host file. Please replace i
 
 ![click-to-visit](https://ap3.qingstor.com/kubesphere-website/docs/20200908105527.png)
 
-6. In the app detail page, click **Normal user** at the bottom left corner.
+6. In the app detail page, click **Normal user** in the bottom-left corner.
 
 ![normal-user](https://ap3.qingstor.com/kubesphere-website/docs/20200908105756.png)
 
@@ -172,7 +172,7 @@ Make sure you replace the project name, IP address and port number in the above 
 
 ![real-time-data](https://ap3.qingstor.com/kubesphere-website/docs/20200908134454.png)
 
-### Task 5: View Tracing Details
+### Task 6: View Tracing Details
 
 KubeSphere provides the distributed tracing feature based on [Jaeger](https://www.jaegertracing.io/), which is used to monitor and troubleshoot microservices-based distributed applications.
 
@@ -184,7 +184,7 @@ KubeSphere provides the distributed tracing feature based on [Jaeger](https://ww
 
 ![tracing-kubesphere](https://ap3.qingstor.com/kubesphere-website/docs/20200908135252.png)
 
-### Task 6: Take Over All Traffic
+### Task 7: Take Over All Traffic
 
 With the canary release, you can test the new version online by bringing in part of the actual traffic and collect user feedback. If everything runs smoothly without any issues, you can bring all the traffic to the new version.
 
@@ -206,7 +206,7 @@ If anything goes wrong with the new version, you can roll back to the previous v
 
 ![](https://ap3.qingstor.com/kubesphere-website/docs/20200908140921.png)
 
-### Task 7: Remove the Old Version
+### Task 8: Remove the Old Version
 
 Now that the new version v2 takes over all the traffic successfully, you can remove the old version and release the resources of v1 based on your needs.
 
@@ -225,3 +225,7 @@ After you remove a certain version, related workloads and Istio-based configurat
 ![job-offline](https://ap3.qingstor.com/kubesphere-website/docs/20200908142246.png)
 
 The above tasks serve as a example of how to adopt a canary release to control traffic and publish a new version of your app. You can also try different strategies in **Grayscale Release** or see related sections in **Project Administration and Usage**.
+
+## Reference
+
+[Bookinfo Application](https://istio.io/latest/docs/examples/bookinfo/)
