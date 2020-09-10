@@ -72,7 +72,7 @@ kubectl apply -f cluster-configuration.yaml
 
 ## Enable DevOps after Installation
 
-1. Log in the console as `admin`. Click **Platform** at the top left corner and select **Clusters Management**.
+1. Log in the console as `admin`. Click **Platform** in the top-left corner and select **Clusters Management**.
 
 ![clusters-management](https://ap3.qingstor.com/kubesphere-website/docs/20200828111130.png)
 
@@ -88,7 +88,7 @@ A Custom Resource Definition (CRD) allows users to create a new type of resource
 
 ![edit-yaml](https://ap3.qingstor.com/kubesphere-website/docs/20200827182002.png)
 
-4. In this yaml file, navigate to `devops` and change `false` to `true` for `enabled`. After you finish, click **Update** at the bottom right corner to save the configuration.
+4. In this yaml file, navigate to `devops` and change `false` to `true` for `enabled`. After you finish, click **Update** in the bottom-right corner to save the configuration.
 
 ```bash
 devops:
@@ -103,7 +103,7 @@ kubectl logs -n kubesphere-system $(kubectl get pod -n kubesphere-system -l app=
 
 {{< notice tip >}}
 
-You can find the web kubectl tool by clicking the hammer icon at the bottom right corner of the console.
+You can find the web kubectl tool by clicking the hammer icon in the bottom-right corner of the console.
 
 {{</ notice >}}
 

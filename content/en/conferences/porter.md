@@ -92,7 +92,7 @@ A Pod may be scheduled to other nodes in Kubernetes. For a router, the next hop 
 
 ![BGP](https://pek3b.qingstor.com/kubesphere-docs/png/20200611120800.png)
 
-The image above briefly demonstrates how BGP works in Porter. At the bottom left, it is a two-node Kubernetes cluster with two routers (Leaf1 and Leaf2) above it. These two routers are connected to two kernel switches (Spine layer). Users are on the right side, whose routers are Border1 and Border2 (also connected to Spine).
+The image above briefly demonstrates how BGP works in Porter. In the bottom-left corner, it is a two-node Kubernetes cluster with two routers (Leaf1 and Leaf2) above it. These two routers are connected to two kernel switches (Spine layer). Users are on the right side, whose routers are Border1 and Border2 (also connected to Spine).
 
 The three layers of users and Kubernetes server are reachable. Services are created in the Kubernetes cluster and Porter is also used. A VIP (or other manually assigned IP) 1.1.1.1 is assigned by Porter, which sends the information to Leaf1 and Leaf2 through BGP. The next hop to access 1.1.1.1 can be Node1 or Node2. Meanwhile, the Leaf layer also sends the message to the Spine layer, which also knows the next hop to access 1.1.1.1 can be Leaf1 or Leaf2 based on its BGP.
 
