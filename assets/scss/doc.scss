@@ -189,9 +189,11 @@ body {
             }
     
             p {
+                position: relative;
                 cursor: pointer;
                 margin: 5px 0;
                 font-size: 0;
+                padding-left: 15px;
 
                 span {
                     font-size: 14px;
@@ -199,6 +201,9 @@ body {
 
                 .arrow {
                     display: inline-block;
+                    position: absolute;
+                    top: 5px;
+                    left: 0;
                     width: 0;
                     height: 0;
                     margin-right: 5px;
@@ -206,7 +211,7 @@ body {
                     border-left-color: #aeb8c1;
                 }
                 .arrow-open {
-                    transform: rotate(90deg) translateX(3px);
+                    transform: rotate(90deg) translate(3px, 3px);
                 }
             }
 

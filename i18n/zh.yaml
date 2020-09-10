@@ -78,3 +78,5 @@
   translation: 信息
 - id: warning
   translation: 警告
+- id: Search Documentation
+  translation: 搜索文档
