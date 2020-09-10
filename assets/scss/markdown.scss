@@ -194,11 +194,11 @@
   padding-left: 2em;
 }
 
-.md-body ul li {
+.md-body ul > li {
   list-style: disc;
 }
 
-.md-body ol li {
+.md-body ol > li {
   list-style: decimal;
 }
 
