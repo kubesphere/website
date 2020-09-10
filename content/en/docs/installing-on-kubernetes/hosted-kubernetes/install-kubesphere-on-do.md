@@ -12,7 +12,7 @@ This guide walks you through the steps of deploying KubeSphere on [ DigitalOcean
 
 ## Prepare a DOKS Cluster
 
-A Kubernetes cluster in DO is a prerequisite for installing KubeSphere. Go to your [DO account](https://cloud.digitalocean.com/) and, in the navigation menu, refer to the image below to create a cluster.
+A Kubernetes cluster in DO is a prerequisite for installing KubeSphere. Go to your [DO account](https://cloud.digitalocean.com/) and refer to the image below to create a cluster from the navigation menu.
 
 ![create-cluster-do](/images/docs/do/create-cluster-do.png)
 
@@ -29,7 +29,7 @@ You need to select:
 
 - Supported Kubernetes versions for KubeSphere 3.0.0: 1.15.x, 1.16.x, 1.17.x, 1.18.x.
 - 2 nodes are included in this example. You can add more nodes based on your own needs especially in a production environment.
-- The machine type Standard / 4 GB / 2 vCPUs is for minimal installation. If you plan to enable several pluggable components or use the cluster for production, we recommend to upgrade your nodes to a more powerfull type (such as CPU-Optimized / 8 GB / 4 vCPUs). It seems that DigitalOcean provisions the master nodes based on the type of the worker nodes, and for Standard ones the API server can become unresponsive quite fast.
+- The machine type Standard / 4 GB / 2 vCPUs is for minimal installation. If you plan to enable several pluggable components or use the cluster for production, you can upgrade your nodes to a more powerfull type (such as CPU-Optimized / 8 GB / 4 vCPUs). It seems that DigitalOcean provisions the master nodes based on the type of the worker nodes, and for Standard ones the API server can become unresponsive quite fast.
 
 {{</ notice >}} 
 
@@ -39,7 +39,7 @@ When the cluster is ready, you can download the config file for kubectl.
 
 ## Install KubeSphere on DOKS
 
-Now that the cluster is ready, you can install KubeSphere following this steps:
+Now that the cluster is ready, you can install KubeSphere following the steps below:
 
 - Install KubeSphere using kubectl. The following command is only for the default minimal installation.
 
@@ -47,18 +47,8 @@ Now that the cluster is ready, you can install KubeSphere following this steps:
   kubectl apply -f https://raw.githubusercontent.com/kubesphere/ks-installer/v3.0.0/deploy/kubesphere-installer.yaml
   ```
 
-- Create a local cluster-configuration.yaml.
-
   ```bash
-  vi cluster-configuration.yaml
-  ```
-
-- Copy all the content in this [file](https://raw.githubusercontent.com/kubesphere/ks-installer/v3.0.0/deploy/cluster-configuration.yaml) and paste it to your local cluster-configuration.yaml.
-
-- Save the file when you finish. Execute the following command to start installation:
-
-  ```bash
-  kubectl apply -f cluster-configuration.yaml
+  kubectl apply -f https://raw.githubusercontent.com/kubesphere/ks-installer/v3.0.0/deploy/cluster-configuration.yaml
   ```
 
 - Inspect the logs of installation:
@@ -95,11 +85,11 @@ Now that KubeSphere is installed, you can access the web console of KubeSphere b
 
   ![kubernetes-dashboard-access](/images/docs/do/kubernetes-dashboard-access.png)
 
-- Select the **kubesphere-system** namespace
+- Select the **kubesphere-system** namespace.
 
   ![kubernetes-dashboard-namespace](/images/docs/do/kubernetes-dashboard-namespace.png)
 
-- In **Service -> Services**, edit the service **ks-console**.
+- In **Services** under **Service**, edit the service **ks-console**.
 
   ![kubernetes-dashboard-edit](/images/docs/do/kubernetes-dashboard-edit.png)
 
@@ -113,7 +103,7 @@ Now that KubeSphere is installed, you can access the web console of KubeSphere b
 
   {{< notice tip >}}
 
-  Instead of changing the service type to `LoadBalancer`, you can also access KubeSphere console via `NodeIP:NodePort` (service type set to `NodePort`). You need to get the pulic IP of anyone of your nodes.
+  Instead of changing the service type to `LoadBalancer`, you can also access KubeSphere console via `NodeIP:NodePort` (service type set to `NodePort`). You need to get the public IP of one of your nodes.
 
   {{</ notice >}}
 
