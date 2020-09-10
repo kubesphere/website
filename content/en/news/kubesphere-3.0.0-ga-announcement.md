@@ -76,7 +76,25 @@ Here is a priority list for the next version of KubeSphere. If you are intereste
 
 ## Acknowledgements
 
-
-
-
-
+- [cw514102209](https://github.com/cw514102209) @ZTO
+- Jie Chen @benlai.com
+- [fu_changjie](https://github.com/Fuchange) @航天网络信息发展有限公司
+- [shenhonglei](https://github.com/shenhonglei) @EC DATA
+- [hantmac](https://github.com/hantmac) @掌门教育
+- [juan-vg](https://github.com/juan-vg) @Geko Cloud
+- [dpujadas](https://github.com/dpujadas) @Geko Cloud
+- [xavi](https://github.com/xmfreak) @Geko Cloud
+- [halil-bugol](https://github.com/halil-bugol) @Radore
+- [Lien](https://github.com/lilien1010) @Apache APISIX
+- Lynx @天智信达
+- Renee @禅道
+- Juan Xu @UISEE
+- Haili Zhang @UISEE
+- [Turtle](https://github.com/turtlechang) @WELL TAKE COMPUTER
+- Howie @XIAO EDUCATION
+- Haitao Pan @UCloud
+- [long0419](https://github.com/long0419) @武汉麦尔沃克信息技术有限公司
+- [xuelangos](https://github.com/xuelangos) @YOWANT
+- [cooka](https://github.com/cooka) @KUKA
+- Jian Zhang @JI HENG LINUX
+- [zhuch-h](https://github.com/zhuch-h) @科莱
