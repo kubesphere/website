@@ -4,12 +4,12 @@ keywords: 'kubernetes, kubesphere, multicluster, agent-connection'
 description: 'Overview'
 
 
-weight: 2343
+weight: 3013
 ---
 
 ## Prerequisites
 
-You have already installed at least two KubeSphere clusters, please refer to [Installing on Linux](../../../installing-on-linux) or [Installing on Kubernetes](../../../installing-on-kubernetes) if not yet.
+You have already installed at least two KubeSphere clusters. Please refer to [Installing on Linux](../../../installing-on-linux) or [Installing on Kubernetes](../../../installing-on-kubernetes) if they are not ready yet.
 
 {{< notice note >}}
 Multi-cluster management requires Kubesphere to be installed on the target clusters. If you have an existing cluster, please install a minimal KubeSphere on it as an agent, see [Installing Minimal KubeSphere on Kubernetes](../../installing-on-kubernetes/minimal-kubesphere-on-k8s) for details.

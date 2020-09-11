@@ -3,16 +3,15 @@ title: "Direct Connection"
 keywords: 'kubernetes, kubesphere, multicluster, hybrid-cloud'
 description: 'Overview'
 
-
-weight: 2340
+weight: 3011
 ---
 
 ## Prerequisites
 
-You have already installed at least two KubeSphere clusters, please refer to [Installing on Linux](../../../installing-on-linux) or [Installing on Kubernetes](../../../installing-on-kubernetes) if not yet.
+You have already installed at least two KubeSphere clusters. Please refer to [Installing on Linux](../../../installing-on-linux) or [Installing on Kubernetes](../../../installing-on-kubernetes) if they are not ready yet.
 
 {{< notice note >}}
-Multi-cluster management requires Kubesphere to be installed on the target clusters. If you have an existing cluster, please install a minimal KubeSphere on it as an agent, see [Installing Minimal KubeSphere on Kubernetes](../../installing-on-kubernetes/minimal-kubesphere-on-k8s) for details.
+Multi-cluster management requires Kubesphere to be installed on the target clusters. If you have an existing cluster, you can deploy KubeSphere on it with a minimal installation so that it can be imported. See [Minimal KubeSphere on Kubernetes](../../../quick-start/minimal-kubesphere-on-k8s/) for details.
 {{</ notice >}}
 
 ## Direct Connection
@@ -25,11 +24,11 @@ If the kube-apiserver address of Member Cluster (hereafter referred to as **M** 
 
 {{< tab "KubeSphere has been installed" >}}
 
-If you already have a standalone KubeSphere installed, you can change the `clusterRole` to a host cluster by editing the cluster configuration and **wait for a while**.
+If you already have a standalone KubeSphere installed, you can set the value of  `clusterRole` to `host` by editing the cluster configuration. You need to **wait for a while** so that the change can take effect.
 
 - Option A - Use Web Console:
 
-Use `cluster-admin` account to enter **Cluster Management → CRDs**, search for the keyword `ClusterConfiguration` and enter its detailed page, edit the YAML of `ks-installer`. This is similar to Enable Pluggable Components.
+Use `admin` account to log in the console and go to **CRDs** on the **Cluster Management** page. Enter the keyword `ClusterConfiguration` and go to its detail page. Edit the YAML of `ks-installer`, which is similar to [Enable Pluggable Components](../../../pluggable-components/).
 
 - Option B - Use Kubectl:
 
@@ -48,7 +47,7 @@ multicluster:
 
 {{< tab "KubeSphere has not been installed" >}}
 
-There is no big difference if you just start the installation. Please note that the `clusterRole` in `config-sample.yaml` or `cluster-configuration.yaml` has to be set like following:
+There is no big difference if you define a host cluster before installation. Please note that the `clusterRole` in `config-sample.yaml` or `cluster-configuration.yaml` has to be set as follows:
 
 ```yaml
 multicluster:
@@ -59,15 +58,15 @@ multicluster:
 
 {{</ tabs >}}
 
-Then you can use the **kubectl** to retrieve the installation logs to verify the status. Wait for a while, you will be able to see the successful logs return if the host cluster is ready.
+You can use **kubectl** to retrieve the installation logs to verify the status. Wait for a while, and you will be able to see the successful log return if the host cluster is ready.
 
-```
+```bash
 kubectl logs -n kubesphere-system $(kubectl get pod -n kubesphere-system -l app=ks-install -o jsonpath='{.items[0].metadata.name}') -f
 ```
 
 ### Prepare a Member Cluster
 
-In order to manage the member cluster within the host cluster, we need to make the jwtSecret same between them. So first you need to get it from the host by the following command.
+In order to manage the member cluster within the host cluster, you need to make `jwtSecret` the same between them. Therefore, you need to get it first from the host cluster by the following command.
 
 ```bash
 kubectl -n kubesphere-system get cm kubesphere-config -o yaml | grep -v "apiVersion" | grep jwtSecret
@@ -81,11 +80,11 @@ jwtSecret: "gfIwilcc0WjNGKJ5DLeksf2JKfcLgTZU"
 
 {{< tab "KubeSphere has been installed" >}}
 
-If you already have a standalone KubeSphere installed, you can change the `clusterRole` to a host cluster by editing the cluster configuration and **wait for a while**.
+If you already have a standalone KubeSphere installed, you can set the value of  `clusterRole` to `member` by editing the cluster configuration. You need to **wait for a while** so that the change can take effect.
 
 - Option A - Use Web Console:
 
-Use `cluster-admin` account to enter **Cluster Management → CRDs**, search for the keyword `ClusterConfiguration` and enter its detailed page, edit the YAML of `ks-installer`. This is similar to Enable Pluggable Components.
+Use `admin` account to log in the console and go to **CRDs** on the **Cluster Management** page. Enter the keyword `ClusterConfiguration` and go to its detail page. Edit the YAML of `ks-installer`, which is similar to [Enable Pluggable Components](../../../pluggable-components/).
 
 - Option B - Use Kubectl:
 
