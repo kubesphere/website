@@ -37,7 +37,7 @@ Give a title first before you write a paragraph. It can be grouped into differen
 
 ## Images
 
-When you submit your md files to GitHub, make sure you add related image files that appear in md files in the pull request as well. Please save your image files in ./images/docs. You can create a folder in the directory to save your images.
+When you submit your md files to GitHub, make sure you add related image files that appear in md files in the pull request as well. Please save your image files in static/images/docs. You can create a folder in the directory to save your images.
 
 ## Tone
 
