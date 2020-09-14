@@ -1,8 +1,7 @@
 ---
 title: "Agent Connection"
-keywords: 'kubernetes, kubesphere, multicluster, agent-connection'
+keywords: 'Kubernetes, KubeSphere, multicluster, agent-connection'
 description: 'Overview'
-
 
 weight: 3013
 ---
@@ -12,12 +11,12 @@ weight: 3013
 You have already installed at least two KubeSphere clusters. Please refer to [Installing on Linux](../../../installing-on-linux) or [Installing on Kubernetes](../../../installing-on-kubernetes) if they are not ready yet.
 
 {{< notice note >}}
-Multi-cluster management requires Kubesphere to be installed on the target clusters. If you have an existing cluster, please install a minimal KubeSphere on it as an agent, see [Installing Minimal KubeSphere on Kubernetes](../../installing-on-kubernetes/minimal-kubesphere-on-k8s) for details.
+Multi-cluster management requires Kubesphere to be installed on the target clusters. If you have an existing cluster, you can deploy KubeSphere on it with a minimal installation so that it can be imported. See [Minimal KubeSphere on Kubernetes](../../../quick-start/minimal-kubesphere-on-k8s/) for details.
 {{</ notice >}}
 
 ## Agent Connection
 
-The component [Tower](https://github.com/kubesphere/tower) of KubeSphere is used for agent connection. Tower is a tool for network connection between clusters through the agent. If the H Cluster cannot access the M Cluster directly, you can expose the proxy service address of the H cluster. This enables the M Cluster to connect to the H cluster through the agent. This method is applicable when the M Cluster is in a private environment (e.g. IDC) and the H Cluster is able to expose the proxy service. The agent connection is also applicable when your clusters are distributed in different cloud providers.
+The component [Tower](https://github.com/kubesphere/tower) of KubeSphere is used for agent connection. Tower is a tool for network connection between clusters through the agent. If the H Cluster cannot access the M Cluster directly, you can expose the proxy service address of the H cluster. This enables the M Cluster to connect to the H cluster through the agent. This method is applicable when the M Cluster is in a private environment (e.g. IDC) and the H Cluster is able to expose the proxy service. The agent connection is also applicable when your clusters are distributed across different cloud providers.
 
 ### Prepare a Host Cluster
 
@@ -25,11 +24,11 @@ The component [Tower](https://github.com/kubesphere/tower) of KubeSphere is used
 
 {{< tab "KubeSphere has been installed" >}}
 
-If you already have a standalone KubeSphere installed, you can change the `clusterRole` to a host cluster by editing the cluster configuration and **wait for a while**.
+If you already have a standalone KubeSphere installed, you can set the value of  `clusterRole` to `host` by editing the cluster configuration. You need to **wait for a while** so that the change can take effect.
 
 - Option A - Use Web Console:
 
-Use `cluster-admin` account to enter **Cluster Management → CRDs**, search for the keyword `ClusterConfiguration` and enter its detailed page, edit the YAML of `ks-installer`. This is similar to Enable Pluggable Components.
+Use `admin` account to log in the console and go to **CRDs** on the **Cluster Management** page. Enter the keyword `ClusterConfiguration` and go to its detail page. Edit the YAML of `ks-installer`, which is similar to [Enable Pluggable Components](../../../pluggable-components/).
 
 - Option B - Use Kubectl:
 
@@ -37,7 +36,7 @@ Use `cluster-admin` account to enter **Cluster Management → CRDs**, search for
 kubectl edit cc ks-installer -n kubesphere-system
 ```
 
-Scroll down and change the value of `clusterRole` to `host`, then click **Update** to make it effective:
+Scroll down and set the value of `clusterRole` to `host`, then click **Update** (if you use the web console) to make it effective:
 
 ```yaml
 multicluster:
@@ -48,27 +47,20 @@ multicluster:
 
 {{< tab "KubeSphere has not been installed" >}}
 
-There is no big difference if you just start the installation. Please fill in the `jwtSecret` with the value shown as above in `config-sample.yaml` or `cluster-configuration.yaml`:
-
-```yaml
-authentication:
-  jwtSecret: gfIwilcc0WjNGKJ5DLeksf2JKfcLgTZU
-```
-
-Then scroll down and change the `clusterRole` to `member`:
+There is no big difference if you define a host cluster before installation. Please note that the `clusterRole` in `config-sample.yaml` or `cluster-configuration.yaml` has to be set as follows:
 
 ```yaml
 multicluster:
-  clusterRole: member
+  clusterRole: host
 ```
 
 {{</ tab >}}
 
 {{</ tabs >}}
 
-Then you can use the **kubectl** to retrieve the installation logs to verify the status. Wait for a while, you will be able to see the successful logs return if the host cluster is ready.
+You can use **kubectl** to retrieve the installation logs to verify the status by running the following command. Wait for a while, and you will be able to see the successful log return if the host cluster is ready.
 
-```
+```bash
 kubectl logs -n kubesphere-system $(kubectl get pod -n kubesphere-system -l app=ks-install -o jsonpath='{.items[0].metadata.name}') -f
 ```
 

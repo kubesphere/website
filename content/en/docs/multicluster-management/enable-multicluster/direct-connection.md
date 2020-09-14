@@ -1,6 +1,6 @@
 ---
 title: "Direct Connection"
-keywords: 'kubernetes, kubesphere, multicluster, hybrid-cloud'
+keywords: 'Kubernetes, KubeSphere, multicluster, hybrid-cloud, direct-connection'
 description: 'Overview'
 
 weight: 3011
@@ -36,7 +36,7 @@ Use `admin` account to log in the console and go to **CRDs** on the **Cluster Ma
 kubectl edit cc ks-installer -n kubesphere-system
 ```
 
-Scroll down and change the value of `clusterRole` to `host`, then click **Update** to make it effective:
+Scroll down and set the value of `clusterRole` to `host`, then click **Update** (if you use the web console) to make it effective:
 
 ```yaml
 multicluster:
@@ -58,7 +58,7 @@ multicluster:
 
 {{</ tabs >}}
 
-You can use **kubectl** to retrieve the installation logs to verify the status. Wait for a while, and you will be able to see the successful log return if the host cluster is ready.
+You can use **kubectl** to retrieve the installation logs to verify the status by running the following command. Wait for a while, and you will be able to see the successful log return if the host cluster is ready.
 
 ```bash
 kubectl logs -n kubesphere-system $(kubectl get pod -n kubesphere-system -l app=ks-install -o jsonpath='{.items[0].metadata.name}') -f
@@ -71,6 +71,8 @@ In order to manage the member cluster within the host cluster, you need to make 
 ```bash
 kubectl -n kubesphere-system get cm kubesphere-config -o yaml | grep -v "apiVersion" | grep jwtSecret
 ```
+
+The output may look like this:
 
 ```yaml
 jwtSecret: "gfIwilcc0WjNGKJ5DLeksf2JKfcLgTZU"
@@ -92,14 +94,14 @@ Use `admin` account to log in the console and go to **CRDs** on the **Cluster Ma
 kubectl edit cc ks-installer -n kubesphere-system
 ```
 
-Then input the corresponding jwtSecret shown above:
+Input the corresponding `jwtSecret` shown above:
 
 ```yaml
 authentication:
   jwtSecret: gfIwilcc0WjNGKJ5DLeksf2JKfcLgTZU
 ```
 
-Then scroll down and change the value of `clusterRole` to `member`, then click **Update** to make it effective:
+Scroll down and set the value of `clusterRole` to `member`, then click **Update** (if you use the web console) to make it effective:
 
 ```yaml
 multicluster:
@@ -110,16 +112,16 @@ multicluster:
 
 {{< tab "KubeSphere has not been installed" >}}
 
-There is no big difference if you just start the installation. Please fill in the `jwtSecret` with the value shown as above in `config-sample.yaml` or `cluster-configuration.yaml`:
+There is no big difference if you define a member cluster before installation. Please note that the `clusterRole` in `config-sample.yaml` or `cluster-configuration.yaml` has to be set as follows:
 
 ```yaml
 authentication:
   jwtSecret: gfIwilcc0WjNGKJ5DLeksf2JKfcLgTZU
 ```
 
-Then scroll down and change the `clusterRole` to `member`:
+Scroll down and set the value of `clusterRole` to `member`:
 
-```
+```yaml
 multicluster:
   clusterRole: member
 ```
@@ -128,15 +130,15 @@ multicluster:
 
 {{</ tabs >}}
 
-Then you can use the **kubectl** to retrieve the installation logs to verify the status. Wait for a while, you will be able to see the successful logs return if the host cluster is ready.
+You can use **kubectl** to retrieve the installation logs to verify the status by running the following command. Wait for a while, and you will be able to see the successful log return if the member cluster is ready.
 
-```
+```bash
 kubectl logs -n kubesphere-system $(kubectl get pod -n kubesphere-system -l app=ks-install -o jsonpath='{.items[0].metadata.name}') -f
 ```
 
 ### Import Cluster
 
-1. Open the H Cluster Dashboard and click **Add Cluster**.
+1. Open the H Cluster dashboard and click **Add Cluster**.
 
 ![Add Cluster](https://ap3.qingstor.com/kubesphere-website/docs/20200827231611.png)
 
@@ -146,7 +148,7 @@ kubectl logs -n kubesphere-system $(kubectl get pod -n kubesphere-system -l app=
 
 3. In **Connection Method**, select **Direct Connection to Kubernetes cluster**.  
 
-4. [Retrieve the KubeConfig](../retrieve-kubeconfig), then copy the KubeConfig of the Member Cluster and paste it into the box.
+4. [Retrieve the KubeConfig](../retrieve-kubeconfig), copy the KubeConfig of the Member Cluster and paste it into the box.
 
 {{< notice tip >}}
 Please make sure the `server` address in KubeConfig is accessible on any node of the H Cluster. For `KubeSphere API Server` address, you can fill in the KubeSphere APIServer address or leave it blank.
