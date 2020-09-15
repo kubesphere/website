@@ -64,23 +64,28 @@ You can use **kubectl** to retrieve the installation logs to verify the status b
 kubectl logs -n kubesphere-system $(kubectl get pod -n kubesphere-system -l app=ks-install -o jsonpath='{.items[0].metadata.name}') -f
 ```
 
-#### Set Proxy Service Address
+### Set Proxy Service Address
 
-After the installation of the Host Cluster, a proxy service called tower will be created in `kubesphere-system`, whose type is **LoadBalancer**.
+After the installation of the Host Cluster, a proxy service called tower will be created in `kubesphere-system`, whose type is `LoadBalancer`.
 
 {{< tabs >}}
 
-{{< tab "There is a LoadBalancer in your cluster" >}}
+{{< tab "A LoadBalancer available in your cluster" >}}
 
-If a LoadBalancer plugin is available for the cluster, you can see a corresponding address for `EXTERNAL-IP`, which will be acquired by KubeSphere automatically. That means we can skip the step to set the proxy.
+If a LoadBalancer plugin is available for the cluster, you can see a corresponding address for `EXTERNAL-IP`, which will be acquired by KubeSphere automatically. That means you can skip the step to set the proxy. Execute the following command to check the service.
+
+```bash
+kubectl -n kubesphere-system get svc
+```
+
+The output may look as follows:
 
 ```shell
-$ kubectl -n kubesphere-system get svc
 NAME       TYPE            CLUSTER-IP      EXTERNAL-IP     PORT(S)              AGE
 tower      LoadBalancer    10.233.63.191   139.198.110.23  8080:30721/TCP       16h
 ```
 
-> Generally, there is always a LoadBalancer solution in the public cloud, and the external IP should be allocated by Load Balancer automatically. If your clusters are running in an on-premises environment (Especially for the **bare metal environment**), we recommend you to use [Porter](https://github.com/porter/porter) as the LB solution.
+Note: Generally, there is always a LoadBalancer solution in the public cloud, and the external IP can be allocated by the load balancer automatically. If your clusters are running in an on-premises environment, especially a **bare metal environment**, you can use [Porter](https://github.com/porter/porter) as the LB solution.
 
 {{</ tab >}}
 
