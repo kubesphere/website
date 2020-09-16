@@ -144,7 +144,7 @@ jwtSecret: "gfIwilcc0WjNGKJ5DLeksf2JKfcLgTZU"
 
 {{< tab "KubeSphere has been installed" >}}
 
-If you already have a standalone KubeSphere installed, you can change the `clusterRole` to a host cluster by editing the cluster configuration and **wait for a while**.
+If you already have a standalone KubeSphere installed, you can change the `clusterRole` to a member cluster by editing the cluster configuration and **wait for a while**.
 
 - Option A - Use Web Console:
 
