@@ -142,7 +142,7 @@ kubectl logs -n kubesphere-system $(kubectl get pod -n kubesphere-system -l app=
 
 ![Add Cluster](https://ap3.qingstor.com/kubesphere-website/docs/20200827231611.png)
 
-2. Enter the basic information of the cluster and click **Next**.
+2. Enter the basic information of the cluster to be imported and click **Next**.
 
 ![Import Cluster](https://ap3.qingstor.com/kubesphere-website/docs/20200827211842.png)
 
