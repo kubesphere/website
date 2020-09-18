@@ -1,78 +1,78 @@
 ---
-title: "Installing on Linux"
+title: "在Linux上安装"
 description: "Demonstrate how to install KubeSphere on Linux on cloud and in on-premises environments."
 layout: "single"
 
-linkTitle: "Installing on Linux"
+linkTitle: "在Linux上安装"
 weight: 2000
 
 icon: "/images/docs/docs.svg"
 ---
 
-This chapter demonstrates how to use KubeKey to provision a production-ready Kubernetes and KubeSphere cluster on Linux in different environments. You can also use KubeKey to easily scale up and down your cluster and set various storage classes based on your needs.
+本章演示如何使用KubeKey在不同环境的Linux上预配置生产就绪的Kubernetes和KubeSphere集群。 您还可以使用KubeKey轻松扩展和缩小集群，并根据需要设置各种存储类。
 
-## Introduction
+## 介绍
 
-### [Overview](../installing-on-linux/introduction/intro/)
+### [概述](../installing-on-linux/introduction/intro/)
 
-Explore the general content in this chapter, including installation preparation, installation tool and method, as well as storage setting.
+浏览本章的一般内容，包括安装准备，安装工具和方法以及存储设置。
 
-### [Multi-node Installation](../installing-on-linux/introduction/multioverview/)
+### [多节点安装](../installing-on-linux/introduction/multioverview/)
 
-Learn the general steps of installing KubeSphere and Kubernetes on a multi-node cluster.
+了解在多节点集群上安装KubeSphere和Kubernetes的一般步骤。
 
-### [Port Requirements](../installing-on-linux/introduction/port-firewall/)
+### [端口要求](../installing-on-linux/introduction/port-firewall/)
 
-Understand the specific port requirements for different services in KubeSphere.
+了解KubeSphere中不同服务的特定端口要求。
 
-### [Kubernetes Cluster Configuration](../installing-on-linux/introduction/vars/)
+### [Kubernetes集群配置](../installing-on-linux/introduction/vars/)
 
-Customize your setting in the configuration file for your cluster.
+在群集的配置文件中自定义设置。
 
-### [Persistent Storage Configuration](../installing-on-linux/introduction/storage-configuration/)
+### [持久卷配置](../installing-on-linux/introduction/storage-configuration/)
 
-Add different storage classes to your cluster with KubeKey, such as Ceph RBD and Glusterfs.
+使用KubeKey将不同的存储类添加到集群中，例如Ceph RBD和Glusterfs。
 
-## Installing in On-premises Environments
+## 在本地环境中安装
 
-### [Deploy KubeSphere on VMware vSphere](../installing-on-linux/on-premises/install-kubesphere-on-vmware-vsphere/)
+### [在VMware vSphere上部署KubeSphere](../installing-on-linux/on-premises/install-kubesphere-on-vmware-vsphere/)
 
-Learn how to create a high-availability cluster on VMware vSphere.
+了解如何在VMware vSphere上创建高可用性群集。
 
-## Installing on Public Cloud
+## 在公共云上安装
 
-### [Deploy KubeSphere on Azure VM Instance](../installing-on-linux/public-cloud/install-ks-on-azure-vms/)
+### [在Azure VM实例上部署KubeSphere](../installing-on-linux/public-cloud/install-ks-on-azure-vms/)
 
-Learn how to create a high-availability cluster on Azure virtual machines.
+了解如何在Azure虚拟机上创建高可用性群集。
 
-### [Deploy KubeSphere on QingCloud Instance](../installing-on-linux/public-cloud/kubesphere-on-qingcloud-instance/)
+### [在QingCloud实例上部署KubeSphere](../installing-on-linux/public-cloud/kubesphere-on-qingcloud-instance/)
 
-Learn how to create a high-availability cluster on QingCloud platform.
+了解如何在QingCloud平台上创建高可用性集群。
 
-## Cluster Operation
+## 集群运维
 
-### [Add New Nodes](../installing-on-linux/cluster-operation/add-new-nodes/)
+### [添加新节点](../installing-on-linux/cluster-operation/add-new-nodes/)
 
-Add more nodes to scale up your cluster.
+添加更多节点以扩展集群。
 
-### [Remove Nodes](../installing-on-linux/cluster-operation/remove-nodes/)
+### [删除节点](../installing-on-linux/cluster-operation/remove-nodes/)
 
-Cordon a node and even delete a node to scale down your cluster.
+停止调度节点，并删除节点以缩小集群规模。
 
-## Uninstalling
+## 卸载
 
-### [Uninstalling KubeSphere and Kubernetes](../installing-on-linux/uninstalling/uninstalling-kubesphere-and-kubernetes/)
+### [卸载KubeSphere和Kubernetes](../installing-on-linux/uninstalling/uninstalling-kubesphere-and-kubernetes/)
 
-Remove KubeSphere and Kubernetes from your machines.
+从您的机器上删除KubeSphere和Kubernetes。
 
-## FAQ
+## 常见问题
 
 ### [Configure Booster for Installation](../installing-on-linux/faq/configure-booster/)
 
 Set a registry mirror to speed up downloads during installation.
 
-## Most Popular Pages
+## 最受欢迎的页面
 
-Below you will find some of the most viewed and helpful pages in this chapter. It is highly recommended that you refer to them first.
+在下面的章节中，您将找到一些最受欢迎的页面。 强烈建议您先参考它们。
 
 {{< popularPage icon="/images/docs/qingcloud-2.svg" title="Deploy KubeSphere on QingCloud" description="Provision an HA KubeSphere cluster on QingCloud." link="../installing-on-linux/public-cloud/kubesphere-on-qingcloud-instance/" >}}

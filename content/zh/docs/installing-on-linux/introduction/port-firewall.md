@@ -1,14 +1,13 @@
 ---
-title: "Port Requirements"
+title: "端口要求"
 keywords: 'Kubernetes, KubeSphere, port-requirements, firewall-rules'
 description: 'Port requirements in KubeSphere'
 
-linkTitle: "Port Requirements"
+linkTitle: "端口要求"
 weight: 2120
 ---
 
-
-KubeSphere requires certain ports for the communications among services. If your network is configured with firewall rules, you need to ensure infrastructure components can communicate with each other through specific ports that act as communication endpoints for certain processes or services.
+KubeSphere需要某些端口用于服务之间的通信。 如果您的网络配置有防火墙规则，则需要确保基础组件可以通过特定端口相互通信。
 
 |Service|Protocol|Action|Start Port|End Port|Notes
 |---|---|---|---|---|---|
