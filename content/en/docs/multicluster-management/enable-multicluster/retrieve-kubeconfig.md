@@ -1,10 +1,9 @@
 ---
 title: "Retrieve KubeConfig"
-keywords: 'kubernetes, kubesphere, multicluster, hybrid-cloud'
+keywords: 'Kubernetes, KubeSphere, multicluster, hybrid-cloud, kubeconfig'
 description: 'Overview'
 
-
-weight: 2345
+weight: 3014
 ---
 
 ## Prerequisites
@@ -13,13 +12,13 @@ You have a KubeSphere cluster.
 
 ## Explore KubeConfig File
 
-Go to `$HOME/.kube`, and see what files are there. Typically, there is a file named config. Use the following command to retrieve the KubeConfig file:
+Go to `$HOME/.kube`, and check the file in the directory where, normally, a file named **config** exists. Use the following command to retrieve the KubeConfig file:
 
 ```bash
 cat $HOME/.kube/config
 ```
 
-```
+```yaml
 apiVersion: v1
 clusters:
 - cluster:
