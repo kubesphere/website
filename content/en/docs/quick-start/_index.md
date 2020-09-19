@@ -25,7 +25,7 @@ Learn how to install KubeSphere on existing Kubernetes clusters with a minimal i
 
 Understand how you can take advantage of multi-tenant system in KubeSphere for fine-grained access control at different levels.
 
-## [Deploy Bookinfo](../quick-start/deploy-bookinfo-to-k8s/)
+## [Deploy Bookinfo and Manage Traffic](../quick-start/deploy-bookinfo-to-k8s/)
 
 Explore KubeSphere service mesh by deploying Bookinfo and using different traffic management strategies, such as canary release.
 
