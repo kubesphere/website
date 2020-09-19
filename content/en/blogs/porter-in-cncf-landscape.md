@@ -10,11 +10,11 @@ snapshot: 'https://ap3.qingstor.com/kubesphere-website/docs/porter.png'
 
 [Porter](https://github.com/kubesphere/porter), a load balancer developed for bare metal Kubernetes clusters, was officially included in CNCF Landscape last week. This marks a great milestone for its parent project KubeSphere as it continues to deliver cloud native technologies to the wider community.
 
-![CNCF-Porter](https://ap3.qingstor.com/kubesphere-website/docs/1.png)
+![cncf-include-porter](https://ap3.qingstor.com/kubesphere-website/docs/cncf-include-porter.png)
 
 Cloud Native Computing Foundation, or CNCF, was built for the establishment of sustainable ecosystems for cloud native software. Its [Interactive Landscape](https://landscape.cncf.io/) is dynamically generated, serving as a technology roadmap for various industries. As Porter is now recognized by CNCF as one of the best cloud native practices, it represents another important solution to load balancing for developers. Moreover, it is expected to see a surge in popularity amid growing needs from its users faced with various challenges in this field.
 
-![CNCF-Landscape](https://ap3.qingstor.com/kubesphere-website/docs/2.png)
+![cloudnative-landscape-porter-cncf](https://ap3.qingstor.com/kubesphere-website/docs/cloudnative-landscape-porter-cncf.png)
 
 ## What is Porter
 
