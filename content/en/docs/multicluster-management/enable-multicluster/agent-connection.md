@@ -85,7 +85,7 @@ NAME       TYPE            CLUSTER-IP      EXTERNAL-IP     PORT(S)              
 tower      LoadBalancer    10.233.63.191   139.198.110.23  8080:30721/TCP       16h
 ```
 
-Note: Generally, there is always a LoadBalancer solution in the public cloud, and the external IP can be allocated by the load balancer automatically. If your clusters are running in an on-premises environment, especially a **bare metal environment**, you can use [Porter](https://github.com/porter/porter) as the LB solution.
+Note: Generally, there is always a LoadBalancer solution in the public cloud, and the external IP can be allocated by the load balancer automatically. If your clusters are running in an on-premises environment, especially a **bare metal environment**, you can use [Porter](https://github.com/kubesphere/porter) as the LB solution.
 
 {{</ tab >}}
 
