@@ -153,20 +153,33 @@ body {
     }
 
     .left-div {
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 274px;
-        background-color: #ffffff;
+        position: fixed;
+        top: 260px;
+        bottom: 20px;
+        left: 50%;
+        transform: translateX(-580px);
+        width: 200px;
         z-index: 2;
-        transition: all 0.5s;
+
+        @media only screen and (max-width: 1160px) {
+            left: 0;
+            transform: translateX(0px);
+        }
 
         @media only screen and (max-width: $mobile-max-width) {
-            left: -274px;
+            transition: all 0.5s;
+            left: -200px;
+        }
+
+        .inner-tree {
+            max-height: 100%;
+            position: relative;
+            overflow: scroll;
+            background-color: #ffffff;
         }
 
         .nav-menu {
-            padding: 20px;
+            padding: 10px;
             font-size: 14px;
             color: #31383e;
             background-color: #f6f8fa;
@@ -229,7 +242,6 @@ body {
         }
 
         .download-div {
-            width: 274px;
             height: 44px;
             margin-top: 10px;
             line-height: 44px;
@@ -258,9 +270,9 @@ body {
 
     .middle-div {
         position: relative;
-        margin-left: 274px;
-        margin-right: 80px;
-        padding: 10px 20px;
+        margin-left: 200px;
+        margin-right: 160px;
+        padding: 10px 10px;
 
         @media only screen and (max-width: $mobile-max-width) {
             margin: 0;
@@ -415,21 +427,18 @@ body {
         .content-div {
             .md-body {
                 font-size: 16px;
-                line-height: 1.71;
+                line-height: 2.29;
                 color: #36435c;
             }
             
             .md-body h2 {
-                font-size: 24px;
                 font-weight: 500;
                 line-height: 40px;
-                color: #171c34;
                 text-shadow: none;
                 text-align: left;
             }
             
             .md-body h3 {
-                font-size: 16px;
                 font-weight: 600;
                 line-height: 1.5;
                 color: #171c34;
@@ -579,65 +588,58 @@ body {
     }
 
     .aside {
-        position: relative;
-        width: 174px;
-        padding-left: 10px;
-        border-left: 1px solid #dde1e6;
-        max-height: 600px;
-        overflow: scroll;
+        position: fixed;
+        top: 260px;
+        bottom: 10px;
+        left: 50%;
+        transform: translateX(420px);
+        width: 160px;
         @media only screen and (max-width: $mobile-max-width) {
-          display: none;
+           display: none;
+        }
+
+        .inner-div {
+            max-height: 100%;
+            position: relative;
+            overflow: scroll;
+            padding-left: 10px;
+            border-left: 1px solid #dde1e6;
         }
 
         .title {
-          font-size: 14px;
-          line-height: 1.71;
-          color: #3e464c;
+            font-size: 14px;
+            line-height: 1.71;
+            color: #3e464c;
         }
   
         .tabs {
-          #TableOfContents > ul > li > a {
-            font-weight: 500;
-          }
-          li {
-            margin: 8px 0;
-            font-size: 14px;
-  
-            a {
-              display: block;
-              width: 100%;
-              font-weight: 400;
-              line-height: 24px;
-              color: #68747f;
-  
-              &:hover {
-                color: #00a971;
-              }
+            #TableOfContents > ul > li > a {
+                font-weight: 500;
             }
+            li {
+                margin: 8px 0;
+                font-size: 14px;
+    
+                a {
+                    display: block;
+                    width: 100%;
+                    font-weight: 400;
+                    line-height: 24px;
+                    color: #68747f;
+        
+                    &:hover {
+                        color: #00a971;
+                    }
+                }
 
-            .active {
-                color: #00a971;
+                .active {
+                    color: #00a971;
+                }
             }
-          }
-          li li {
-            padding-left: 20px;
-          }
+            li li {
+                padding-left: 20px;
+            }
         }
-      }
-  
-    .aside-fixed {
-        position: fixed;
-        top: 260px;
-        left: 50%;
-        transform: translateX(500px);
-    }
-
-    .aside-absolute {
-        position: absolute;
-        right: -104px;
-        bottom: 0;
-        top: none;
-        left: none;
     }
 }
 
