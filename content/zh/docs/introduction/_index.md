@@ -1,9 +1,9 @@
 ---
-title: "Introduction"
-description: "Help you to better understand KubeSphere with detailed graphics and contents"
+title: "产品介绍"
+description: "通过详细的图文介绍帮助您更好地了解 KubeSphere"
 layout: "single"
 
-linkTitle: "Introduction"
+linkTitle: "产品介绍"
 
 weight: 1000
 
@@ -11,29 +11,28 @@ icon: "/images/docs/docs.svg"
 
 ---
 
-This chapter gives you an overview of the basic concept of KubeSphere, features, advantages, uses cases and more.
+本章概述了 KubeSphere 的基本概念，功能，优势，应用场景等。
 
-## [What is KubeSphere](https://kubesphere.io/docs/introduction/what-is-kubesphere/)
+## [什么是 KubeSphere](https://kubesphere.io/docs/introduction/what-is-kubesphere/)
 
-Develop a basic understanding of KubeSphere and highlighted features of its latest version.
+使您对 KubeSphere 有基本的了解，并介绍最新版本的新特性。
 
-## [Features](https://kubesphere.io/docs/introduction/features/)
+## [平台功能](https://kubesphere.io/docs/introduction/features/)
 
-Get started with KubeSphere by understanding what KubeSphere is capable of and how you can make full use of it.
+了解 KubeSphere 的功能以及如何充分利用 KubeSphere。
 
-## [Architecture](https://kubesphere.io/docs/introduction/architecture/)
+## [架构说明](https://kubesphere.io/docs/introduction/architecture/)
 
-Explore the structure of KubeSphere to get a clear view of the components both at front end and back end.
+探索 KubeSphere 的结构，以清晰地了解前端和后端的组件。
 
-## [Advantages](https://kubesphere.io/docs/introduction/advantages/)
+## [为什么选择 KubeSphere](https://kubesphere.io/docs/introduction/advantages/)
 
-Understand the reason why KubeSphere is beneficial to your work.
+了解 KubeSphere 如何给您的工作带来帮助。
 
-## [Use Cases](https://kubesphere.io/docs/introduction/scenarios/)
+## [应用场景](https://kubesphere.io/docs/introduction/scenarios/)
 
-See how KubeSphere can be used in different scenarios, such as multi-cluster deployment, DevOps and service mesh.
+了解如何在不同的场景中使用 KubeSphere，例如：敏捷开发与自动化运维、DevOps 持续集成与交付等。
 
-## [Glossary](https://kubesphere.io/docs/introduction/glossary/)
+## [名词解释](https://kubesphere.io/docs/introduction/glossary/)
 
-Learn terms and phrases that are used in KubeSphere.
-
+了解 KubeSphere 中涉及到的基本概念。
