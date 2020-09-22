@@ -83,7 +83,7 @@ $ kubectl apply -f https://raw.githubusercontent.com/kubesphere/ks-installer/v3.
 $ kubectl apply -f https://raw.githubusercontent.com/kubesphere/ks-installer/v3.0.0/deploy/cluster-configuration.yaml
 ```
 
-Go to `Workload` > `Pod`, and check the running status of the pod in `kubesphere-system` of its namespace to understand the minimal deployment of KubeSphere. `ks-console-xxxx` of the namespace to understand the app availability of KubeSphere console. 
+Go to `Workload` > `Pod`, and check the running status of the pod in `kubesphere-system` of its namespace to understand the minimal deployment of KubeSphere. Check `ks-console-xxxx`  of the namespace to understand the availability of KubeSphere console.
 
 ![Deploy KubeSphere in Minimal](/images/docs/huawei-cce/en/deploy-ks-minimal.png)
 
