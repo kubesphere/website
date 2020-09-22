@@ -7,13 +7,13 @@ linkTitle: "持久卷配置"
 weight: 2140
 ---
 ## 概述
-对于Kubesphere，持久卷是**必须**的。 因此，在安装Kubesphere之前，请先设置一个[StorageClass](https://kubernetes.io/docs/concepts/storage/storage-classes/)和相应的存储插件应安装在Kubernetes集群上。
+对于 Kubesphere，持久卷是**必须**的。 因此，在安装 Kubesphere 之前，请先设置一个[StorageClass](https://kubernetes.io/docs/concepts/storage/storage-classes/)和相应的存储插件应安装在 Kubernetes 集群上。
 由于不同的用户可能会选择不同的存储插件，因此[KubeKey](https://github.com/kubesphere/kubekey)支持通过以下[附加组件](https://github.com/kubesphere/kubekey/blob/v1.0.0/docs/addons.md)方式安装存储插件。 本文将介绍一些主要使用的存储插件的附加配置。
 
 ## QingCloud-CSI
-[QingCloud-CSI](https://github.com/yunify/qingcloud-csi)插件在启用了CSI的Container Orchestrator (CO)和QingCloud磁盘之间实现了接口。
+[QingCloud-CSI](https://github.com/yunify/qingcloud-csi) 插件在启用了 CSI的 Container Orchestrator (CO)和 QingCloud 磁盘之间实现了接口。
 
-这是通过KubeKey附加组件安装的 helm-chart示例。
+这是通过KubeKey附加组件安装的 helm-chart 示例。
 
 ```bash
 addons:
@@ -29,11 +29,8 @@ addons:
       - config.zone=SHOULD_BE_REPLACED
       - sc.isDefaultClass=true
 ```
-For more information about QingCloud, see [QingCloud](https://www.qingcloud.com/). 
-For more chart values, see [configuration](https://github.com/kubesphere/helm-charts/tree/master/src/test/csi-qingcloud#configuration).
-
-有关QingCloud的更多信息，请参见[QingCloud](https://www.qingcloud.com/)。
-有关更多配置信息，请参见[configuration](https://github.com/kubesphere/helm-charts/tree/master/src/test/csi-qingcloud#configuration)。
+有关QingCloud的更多信息，请参见 [QingCloud](https://www.qingcloud.com/)。
+有关更多配置信息，请参见 [configuration](https://github.com/kubesphere/helm-charts/tree/master/src/test/csi-qingcloud#configuration)。
 
 ## NFS-client
 [nfs-client-provisioner](https://github.com/kubernetes-incubator/external-storage/tree/master/nfs-client) 是使用您的Kubernetes的自动预配器*已配置的* NFS服务器，动态创建持久卷。

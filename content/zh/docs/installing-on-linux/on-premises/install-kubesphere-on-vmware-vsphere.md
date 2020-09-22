@@ -78,7 +78,7 @@ description: 'How to install KubeSphere on VMware vSphere Linux machines'
 
 ###  yum 安装
 
-在主机为lb-0和lb-1中部署keepalived+haproxy 即IP为10.10.71.77与10.10.71.66的服务器上安装部署haproxy、keepalived、psmisc
+在主机为 lb-0 和 lb-1 中部署 keepalived+haproxy 即IP为10.10.71.77与10.10.71.66的服务器上安装部署haproxy、keepalived、psmisc
 
 ```bash
 yum install keepalived haproxy psmisc -y

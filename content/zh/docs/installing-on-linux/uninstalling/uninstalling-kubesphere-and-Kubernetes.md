@@ -11,7 +11,7 @@ weight: 2451
 
 {{< notice tip >}}
 
-卸载将会从计算机中删除KubeSphere和Kubernetes。 此操作是不可逆的，没有任何备份。 请谨慎操作。
+卸载将会从计算机中删除 KubeSphere 和 Kubernetes。 此操作是不可逆的，没有任何备份。 请谨慎操作。
 
 {{</ notice >}}
 

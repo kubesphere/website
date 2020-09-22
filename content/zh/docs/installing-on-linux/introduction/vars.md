@@ -7,7 +7,7 @@ linkTitle: "Kubernetes集群配置"
 weight: 2130
 ---
 
-本教程介绍了当您开始使用[KubeKey](https://github.com/kubesphere/kubekey)来配置集群时，如何在`config-example.yaml` 中自定义Kubernetes集群配置。 您可以参考以下部分以了解每个参数。
+本教程介绍了当您开始使用 [KubeKey](https://github.com/kubesphere/kubekey) 来配置集群时，如何在`config-example.yaml` 中自定义 Kubernetes 集群配置。 您可以参考以下部分以了解每个参数。
 
 ```yaml
 ######################### Kubernetes #########################

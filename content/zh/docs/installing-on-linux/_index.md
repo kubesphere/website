@@ -67,9 +67,9 @@ icon: "/images/docs/docs.svg"
 
 ## 常见问题
 
-### [Configure Booster for Installation](../installing-on-linux/faq/configure-booster/)
+### [为安装配置加速器](../installing-on-linux/faq/configure-booster/)
 
-Set a registry mirror to speed up downloads during installation.
+设置仓库镜像以加速安装时的下载速度。
 
 ## 最受欢迎的页面
 

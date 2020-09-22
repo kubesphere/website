@@ -18,21 +18,21 @@ weight: 2112
 - **Master**. 主节点通常托管控制面，控制和管理整个系统。
 - **Worker**. 工作节点运行在其上部署的实际应用程序。
 
-## 为什么选择KubeKey
+## 为什么选择 KubeKey
 
-如果您不熟悉Kubernetes组件，则可能会发现很难建立功能强大的多节点Kubernetes集群。 从版本3.0.0开始，KubeSphere使用一个名为KubeKey的全新安装程序来替换旧的基于ansible的安装程序。 用Go语言开发的KubeKey允许用户快速部署多节点体系结构。
+如果您不熟悉Kubernetes组件，则可能会发现很难建立功能强大的多节点 Kubernetes 集群。 从版本3.0.0开始， KubeSphere 使用一个名为 KubeKey 的全新安装程序来替换旧的基于 ansible 的安装程序。 用 Go 语言开发的 KubeKey 允许用户快速部署多节点体系结构。
 
-对于不具有现有Kubernetes集群的用户，下载KubeKey之后，他们只需创建带有很少命令的配置文件并在其中添加节点信息（例如IP地址和节点角色）即可。 使用一个命令，即可安装，并且不需要其他操作。
+对于不具有现有 Kubernetes 集群的用户，下载 KubeKey 之后，他们只需创建带有很少命令的配置文件并在其中添加节点信息（例如IP地址和节点角色）即可。 使用一个命令，即可安装，并且不需要其他操作。
 
 ### 优势
 
 - 
-  之前基于ansible的安装程序具有许多软件依赖性，例如Python。 KubeKey是使用Go语言开发的，可以消除各种环境中的问题，并确保安装成功。
-- KubeKey使用Kubeadm在节点上尽可能多地并行安装Kubernetes集群，以降低安装复杂性并提高效率。 与较早的安装程序相比，它将大大节省安装时间。
-- 借助KubeKey，用户可以将群集从多合一群集扩展到多节点群集，甚至是HA群集。
-- KubeKey旨在将群集安装为对象，即CaaO。
+  之前基于 ansible 的安装程序具有许多软件依赖性，例如 Python。 KubeKey 是使用 Go 语言开发的，可以消除各种环境中的问题，并确保安装成功。
+- KubeKey 使用 Kubeadm 在节点上尽可能多地并行安装 Kubernetes 集群，以降低安装复杂性并提高效率。 与较早的安装程序相比，它将大大节省安装时间。
+- 借助 KubeKey，用户可以将群集从多合一群集扩展到多节点群集，甚至是HA群集。
+- KubeKey 旨在将群集安装为对象，即 CaaO。
 
-## 步骤1：准备Linux主机
+## 步骤1：准备 Linux 主机
 
 请参阅下面显示的对硬件和操作系统的要求。 要开始进行多节点安装，您需要根据以下要求准备至少三台主机。
 
@@ -60,7 +60,7 @@ weight: 2112
 - 所有节点必须安装`ebtables`/`socat`/`ipset`/`conntrack` 。
 - Docker 可以自己安装或由`KubeKey`安装
 
-### 网络和DNS要求
+### 网络和 DNS 要求
 
 - 确保`/etc/resolv.conf`中的DNS地址可用。 否则，可能会导致群集中出现某些DNS问题。
 - 如果您的网络配置使用防火墙或安全组，则必须确保基础结构组件可以通过特定端口相互通信。 建议您关闭防火墙或遵循指南[网络访问](https://github.com/kubesphere/kubekey/blob/master/docs/network-access.md)。
@@ -68,7 +68,7 @@ weight: 2112
 {{< notice tip >}}
 
 - 建议您的操作系统是干净的（不安装任何其他软件）。 否则可能会发生冲突。
-- 如果您在从dockerhub.io下载镜像时遇到问题，建议准备一个容器镜像（加速器）。 请参阅[Configure registry mirrors for the Docker daemon](https://docs.docker.com/registry/recipes/mirror/#configure-the-docker-daemon)。
+- 如果您在从 dockerhub.io 下载镜像时遇到问题，建议准备一个容器镜像（加速器）。 请参阅[Configure registry mirrors for the Docker daemon](https://docs.docker.com/registry/recipes/mirror/#configure-the-docker-daemon)。
 
 {{</ notice >}}
 
@@ -80,24 +80,24 @@ weight: 2112
 | 192.168.0.3 | node1     | worker       |
 | 192.168.0.4 | node2     | worker       |
 
-## 步骤2：下载KubeKey
+## 步骤2：下载 KubeKey
 
-请按照以下步骤下载KubeKey。
+请按照以下步骤下载 KubeKey。
 
 {{< tabs >}}
 
-{{< tab "访问Github困难" >}}
+{{< tab "访问 Github 困难" >}}
 
-使用以下命令下载KubeKey:
+使用以下命令下载 KubeKey:
 
 ```bash
 wget -c https://kubesphere.io/download/kubekey-v1.0.0-linux-amd64.tar.gz -O - | tar -xz
 ```
 {{</ tab >}}
 
-{{< tab "访问Github很轻松" >}}
+{{< tab "访问 Github 很轻松" >}}
 
-从[GitHub Release Page](https://github.com/kubesphere/kubekey/releases/tag/v1.0.0)下载KubeKey或直接使用以下命令。
+从[GitHub Release Page](https://github.com/kubesphere/kubekey/releases/tag/v1.0.0)下载 KubeKey 或直接使用以下命令。
 
 ```bash
 wget https://github.com/kubesphere/kubekey/releases/download/v1.0.0/kubekey-v1.0.0-linux-amd64.tar.gz -O - | tar -xz
@@ -126,7 +126,7 @@ chmod +x kk
 
 {{< notice info >}}
 
-支持的Kubernetes 版本: *v1.15.12*, *v1.16.13*, *v1.17.9* (default), *v1.18.6*.
+支持的 Kubernetes 版本: *v1.15.12*, *v1.16.13*, *v1.17.9* (default), *v1.18.6*.
 
 {{</ notice >}}
 
@@ -146,19 +146,17 @@ chmod +x kk
 
 {{< notice note >}}
 
-默认情况下，KubeKey将安装[OpenEBS](https://openebs.io/)来为开发和测试环境配置[LocalPV](https://kubernetes.io/docs/concepts/storage/volumes/#local)， 对新用户来说很方便。 在此多节点安装示例中，使用默认存储类（本地卷）。 对于生产，请使用NFS/Ceph/GlusterFS/CSI或商业产品作为持久性存储解决方案。 您需要在`config-sample.yaml`的`addons`下指定它们。 有关更多详细信息，请参见[Persistent Storage Configuration](../storage-configuration)。
+默认情况下，KubeKey将安装 [OpenEBS](https://openebs.io/) 来为开发和测试环境配置 [LocalPV](https://kubernetes.io/docs/concepts/storage/volumes/#local)， 对新用户来说很方便。 在此多节点安装示例中，使用默认存储类（本地卷）。 对于生产，请使用NFS/Ceph/GlusterFS/CSI或商业产品作为持久性存储解决方案。 您需要在`config-sample.yaml`的`addons`下指定它们。 有关更多详细信息，请参见[Persistent Storage Configuration](../storage-configuration)。
 
 {{</ notice >}}
 
-- 您可以指定要安装的KubeSphere版本（例如`--with-kubesphere v3.0.0`）。
+- 您可以指定要安装的 KubeSphere 版本（例如`--with-kubesphere v3.0.0`）。
 
 ```bash
 ./kk create config --with-kubesphere [version]
 ```
 
 ### 2. 编辑配置文件
-
-A default file **config-sample.yaml** will be created if you do not change the name. Edit the file and here is an example of the configuration file of a multi-node cluster with one master node.
 
 如果不更改名称，将创建默认文件 **config-sample.yaml**。 编辑文件，这是具有一个主节点的多节点群集的配置文件示例。
 
@@ -213,7 +211,7 @@ hosts:
 
 #### controlPlaneEndpoint (仅用于HA安装)
 
-`controlPlaneEndpoint`允许您为HA集群定义外部负载均衡器。 当且仅当您需要安装3个以上的主节点时，才需要准备和配置外部负载均衡器。 请注意，地址和端口应在 `config-sample.yaml`中以两个空格缩进，`address`应为VIP。 有关详细信息，请参见HA配置。
+`controlPlaneEndpoint` 允许您为HA集群定义外部负载均衡器。 当且仅当您需要安装3个以上的主节点时，才需要准备和配置外部负载均衡器。 请注意，地址和端口应在 `config-sample.yaml`中以两个空格缩进，`address`应为VIP。 有关详细信息，请参见HA配置。
 
 {{< notice tip >}}
 
@@ -268,7 +266,7 @@ https://kubesphere.io             20xx-xx-xx xx:xx:xx
 
 {{< notice note >}}
 
-要访问控制台，您可能需要将源端口转发到Intranet IP和端口，具体取决于您的云提供商的平台。 还请确保在安全组中打开了端口30880。
+要访问控制台，您可能需要将源端口转发到 Intranet IP 和端口，具体取决于您的云提供商的平台。 还请确保在安全组中打开了端口30880。
 
 {{</ notice >}}
 
@@ -276,9 +274,9 @@ https://kubesphere.io             20xx-xx-xx xx:xx:xx
 
 ## 启用kubectl自动补全
 
-KubeKey不会启用kubectl自动补全功能。 请参阅下面的内容并将其打开：
+KubeKey 不会启用 kubectl 自动补全功能。 请参阅下面的内容并将其打开：
 
-**先决条件**：确保已安装bash-autocompletion并可以正常工作。
+**先决条件**：确保已安装 bash-autocompletion 并可以正常工作。
 
 ```bash
 # Install bash-completion

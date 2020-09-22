@@ -7,7 +7,7 @@ linkTitle: "端口要求"
 weight: 2120
 ---
 
-KubeSphere需要某些端口用于服务之间的通信。 如果您的网络配置有防火墙规则，则需要确保基础组件可以通过特定端口相互通信。
+KubeSphere 需要某些端口用于服务之间的通信。 如果您的网络配置有防火墙规则，则需要确保基础组件可以通过特定端口相互通信。
 
 |Service|Protocol|Action|Start Port|End Port|Notes
 |---|---|---|---|---|---|
