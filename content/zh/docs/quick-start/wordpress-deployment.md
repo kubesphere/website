@@ -37,7 +37,7 @@ The environment variable `WORDPRESS_DB_PASSWORD` is the password to connect to t
 
 ![create-secret](https://ap3.qingstor.com/kubesphere-website/docs/20200903154611.png)
 
-2. Enter the basic information (e.g. name it `mysql-secret`) and click **Next**. In the next page, select **Default** for **Type** and click **Add Data** to add a key-value pair. Input the Key (`MYSQL_ROOT_PASSWORD`) and Value (`123456`) as below and click `√` at the bottom right corner to confirm. When you finish, click **Create** to continue.
+2. Enter the basic information (e.g. name it `mysql-secret`) and click **Next**. In the next page, select **Default** for **Type** and click **Add Data** to add a key-value pair. Input the Key (`MYSQL_ROOT_PASSWORD`) and Value (`123456`) as below and click `√` in the bottom-right corner to confirm. When you finish, click **Create** to continue.
 
 ![key-value](https://ap3.qingstor.com/kubesphere-website/docs/20200903155603.png)
 
@@ -85,7 +85,7 @@ Follow the same steps above to create a WordPress secret `wordpress-secret` with
 
 ![container-image](https://ap3.qingstor.com/kubesphere-website/docs/container-image.png)
 
-7. Enter `mysql:5.6` in the search box, press **Enter** and click **Use Default Ports**. After that, do not click `√` at the bottom right corner as the setting is not finished yet.
+7. Enter `mysql:5.6` in the search box, press **Enter** and click **Use Default Ports**. After that, do not click `√` in the bottom-right corner as the setting is not finished yet.
 
 ![](https://ap3.qingstor.com/kubesphere-website/docs/20200903174120.png)
 
