@@ -9,7 +9,7 @@ weight: 2112
 
 在生产环境中，单节点群集无法满足大多数需求，因为该群集的资源有限且计算能力不足。 因此，不建议将单节点群集用于大规模数据处理。 此外，此类群集只有一个节点，因此不具有高可用性。 另一方面，就应用程序部署和分发而言，多节点体系结构是最常见和首选的选择。
 
-本节概述了多节点安装，包括概念，KubeKey和步骤。 有关HA安装的信息，请参阅在公有云上安装和在本地环境中安装。
+本节概述了多节点安装，包括概念，KubeKey 和步骤。 有关 HA 安装的信息，请参阅在公有云上安装和在本地环境中安装。
 
 ## 概念
 
@@ -62,7 +62,7 @@ weight: 2112
 
 ### 网络和 DNS 要求
 
-- 确保`/etc/resolv.conf`中的DNS地址可用。 否则，可能会导致群集中出现某些DNS问题。
+- 确保`/etc/resolv.conf`中的 DNS 地址可用。 否则，可能会导致群集中出现某些DNS问题。
 - 如果您的网络配置使用防火墙或安全组，则必须确保基础结构组件可以通过特定端口相互通信。 建议您关闭防火墙或遵循指南[网络访问](https://github.com/kubesphere/kubekey/blob/master/docs/network-access.md)。
 
 {{< notice tip >}}
@@ -146,7 +146,7 @@ chmod +x kk
 
 {{< notice note >}}
 
-默认情况下，KubeKey将安装 [OpenEBS](https://openebs.io/) 来为开发和测试环境配置 [LocalPV](https://kubernetes.io/docs/concepts/storage/volumes/#local)， 对新用户来说很方便。 在此多节点安装示例中，使用默认存储类（本地卷）。 对于生产，请使用NFS/Ceph/GlusterFS/CSI或商业产品作为持久性存储解决方案。 您需要在`config-sample.yaml`的`addons`下指定它们。 有关更多详细信息，请参见[Persistent Storage Configuration](../storage-configuration)。
+默认情况下，KubeKey将安装 [OpenEBS](https://openebs.io/) 来为开发和测试环境配置 [LocalPV](https://kubernetes.io/docs/concepts/storage/volumes/#local)， 对新用户来说很方便。 在此多节点安装示例中，使用默认存储类（本地卷）。 对于生产，请使用NFS/Ceph/GlusterFS/CSI或商业产品作为持久性存储解决方案。 您需要在`config-sample.yaml`的`addons`下指定它们。 有关更多详细信息，请参见 [Persistent Storage Configuration](../storage-configuration)。
 
 {{</ notice >}}
 
@@ -209,7 +209,7 @@ hosts:
 - `master`: Master节点名称
 - `worker`: Worker节点名称
 
-#### controlPlaneEndpoint (仅用于HA安装)
+#### controlPlaneEndpoint (仅用于 HA 安装)
 
 `controlPlaneEndpoint` 允许您为HA集群定义外部负载均衡器。 当且仅当您需要安装3个以上的主节点时，才需要准备和配置外部负载均衡器。 请注意，地址和端口应在 `config-sample.yaml`中以两个空格缩进，`address`应为VIP。 有关详细信息，请参见HA配置。
 
@@ -272,7 +272,7 @@ https://kubesphere.io             20xx-xx-xx xx:xx:xx
 
 ![kubesphere-login](https://ap3.qingstor.com/kubesphere-website/docs/login.png)
 
-## 启用kubectl自动补全
+## 启用 kubectl 自动补全
 
 KubeKey 不会启用 kubectl 自动补全功能。 请参阅下面的内容并将其打开：
 

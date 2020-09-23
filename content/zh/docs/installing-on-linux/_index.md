@@ -3,7 +3,7 @@ title: "在 Linux 上安装"
 description: "Demonstrate how to install KubeSphere on Linux on cloud and in on-premises environments."
 layout: "single"
 
-linkTitle: "在Linux上安装"
+linkTitle: "在 Linux 上安装"
 weight: 2000
 
 icon: "/images/docs/docs.svg"

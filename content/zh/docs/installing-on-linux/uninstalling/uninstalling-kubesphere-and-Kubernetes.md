@@ -1,5 +1,5 @@
 ---
-title: "卸载KubeSphere和Kubernetes"
+title: "卸载 KubeSphere 和 Kubernetes"
 keywords: 'kubernetes, kubesphere, uninstalling, remove-cluster'
 description: 'How to uninstall KubeSphere and kubernetes'
 
@@ -15,7 +15,7 @@ weight: 2451
 
 {{</ notice >}}
 
-- 如果您以快速入门 (all-in-one)开始：
+- 如果您以快速入门 ( all-in-one )开始：
 
 ```
 ./kk delete cluster

@@ -7,8 +7,8 @@ linkTitle: "持久卷配置"
 weight: 2140
 ---
 ## 概述
-对于 Kubesphere，持久卷是**必须**的。 因此，在安装 Kubesphere 之前，请先设置一个[StorageClass](https://kubernetes.io/docs/concepts/storage/storage-classes/)和相应的存储插件应安装在 Kubernetes 集群上。
-由于不同的用户可能会选择不同的存储插件，因此[KubeKey](https://github.com/kubesphere/kubekey)支持通过以下[附加组件](https://github.com/kubesphere/kubekey/blob/v1.0.0/docs/addons.md)方式安装存储插件。 本文将介绍一些主要使用的存储插件的附加配置。
+对于 Kubesphere，持久卷是**必须**的。 因此，在安装 Kubesphere 之前，请先设置一个 [StorageClass](https://kubernetes.io/docs/concepts/storage/storage-classes/) 和相应的存储插件应安装在 Kubernetes 集群上。
+由于不同的用户可能会选择不同的存储插件，因此 [KubeKey](https://github.com/kubesphere/kubekey) 支持通过以下 [附加组件](https://github.com/kubesphere/kubekey/blob/v1.0.0/docs/addons.md) 方式安装存储插件。 本文将介绍一些主要使用的存储插件的附加配置。
 
 ## QingCloud-CSI
 [QingCloud-CSI](https://github.com/yunify/qingcloud-csi) 插件在启用了 CSI的 Container Orchestrator (CO)和 QingCloud 磁盘之间实现了接口。

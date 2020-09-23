@@ -11,7 +11,7 @@ weight: 2340
 
 {{< notice tip >}}
 
-从v3.0.0起，全新的安装程序 [KubeKey](https://github.com/kubesphere/kubekey) 支持从一个单节点集群扩展主节点和工作节点。
+从 v3.0.0 起，全新的安装程序 [KubeKey](https://github.com/kubesphere/kubekey) 支持从一个单节点集群扩展主节点和工作节点。
 
 {{</ notice >}}
 
@@ -50,7 +50,7 @@ spec:
 ···
 ```
 
-### 步骤2：执行Add-node命令
+### 步骤2：执行 Add-node 命令
 
 执行以下命令以应用更改：
 
