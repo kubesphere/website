@@ -37,12 +37,14 @@
 
 <section class="section-2">
     <div class="common-layout">
-        <div class="left-div">
-            {{ partial "tree.html" . }}
-            <!-- <div class="download-div">
-                <span class="download-icon"></span>
-                <span>{{ i18n "Download this page (PDF)" }}</span>
-            </div> -->
+        <div class="left-div left-tree">
+            <div class="inner-tree">
+                {{ partial "tree.html" . }}
+                <!-- <div class="download-div">
+                    <span class="download-icon"></span>
+                    <span>{{ i18n "Download this page (PDF)" }}</span>
+                </div> -->
+            </div>
         </div>
         <div class="second-section-menu">
             <div></div>
@@ -80,15 +82,19 @@
                         <ul>
                             <li>
                                 <img src="/images/docs/twitter.svg" alt="twitter">
-                                <a data-type="twitter" href="http://twitter.com/share?url={{ .Permalink }}&text={{ .Title }}" target="_blank" rel="noopener noreferrer">twitter</a>
+                                <a href="http://twitter.com/share?url={{ .Permalink }}&text={{ .Title }}" target="_blank" rel="noopener noreferrer">twitter</a>
                             </li>
                             <li>
                                 <img src="/images/docs/linkedIn.svg" alt="linkedIn">
-                                <a data-type="linkedin" href="http://www.linkedin.com/shareArticle?mini=true&url={{ .Permalink }}" target="_blank" rel="noopener noreferrer">linkedIn</a>
+                                <a href="http://www.linkedin.com/shareArticle?mini=true&url={{ .Permalink }}" target="_blank" rel="noopener noreferrer">linkedIn</a>
                             </li>
                             <li>
                                 <img src="/images/docs/facebook.svg" alt="facebook">
-                                <a data-type="facebook" href="http://www.facebook.com/sharer.php?u={{ .Permalink }}" target="_blank" rel="noopener noreferrer">facebook</a>
+                                <a href="http://www.facebook.com/sharer.php?u={{ .Permalink }}" target="_blank" rel="noopener noreferrer">facebook</a>
+                            </li>
+                            <li>
+                                <img src="/images/docs/reddit.svg" alt="reddit">
+                                <a href="http://reddit.com/submit?url={{ .Permalink }}&title={{ .Title }}" target="_blank" rel="noopener noreferrer">reddit</a>
                             </li>
                             <li>
                                 <img src="/images/docs/email.svg" alt="email" >
@@ -131,20 +137,20 @@
             <div></div>
         </div>
         {{ if .IsPage }}
-        <div class="aside aside-fixed">
-            <div class='title'>
-                {{ i18n "What’s on this Page" }}
-            </div>
-            <div class='tabs'>
-                {{ .TableOfContents }}
+        <div class="aside">
+            <div class="inner-div">
+                <div class='title'>
+                    {{ i18n "What’s on this Page" }}
+                </div>
+                <div class='tabs'>
+                    {{ .TableOfContents }}
+                </div>
             </div>
         </div>
         {{ end }}
     </div>
 </section>
-{{ if .IsPage }}
 <script src='{{ "js/aside.js" | relURL }}'></script>
-{{ end }}
 <script src='{{ "js/markdown-tab.js" | relURL }}'></script>
 <script>
     var languageCode = '{{.Site.Language.Lang}}'

@@ -23,7 +23,7 @@
               <span><a href='{{ $parent | relLangURL }}'>{{ i18n $text }}</a> > </span>
               <span>{{ $context.Title }}</span>
           </div>
-          <div class='main-div'>
+          <div class='main-div middle-div'>
               <div class='author'>{{ $context.Params.author }}</div>
               <div class='date'>{{ i18n "Published on" }}：{{ string $context.Params.createTime }}</div>
               <h1>{{ $context.Title }}</h1>
@@ -39,9 +39,11 @@
                   {{ partial "share.html" }}
               </div>
           </div>
-          <div class='aside aside-fixed'>
-              <div class='title'>{{ i18n "Table of Contents" }}</div>
-              <div class='tabs'>{{ $context.TableOfContents }}</div>
+          <div class='aside'>
+              <div class="inner-div">
+                <div class='title'>{{ i18n "Table of Contents" }}</div>
+                <div class='tabs'>{{ $context.TableOfContents }}</div>
+              </div>
           </div>
       </div>
   </section>

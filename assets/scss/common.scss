@@ -23,6 +23,10 @@ section {
   }
 }
 
+::-webkit-scrollbar-track {
+    background: transparent;
+}
+
 .padding {
   padding-top: 40px;
 }
@@ -374,6 +378,7 @@ section {
 .code-over-div {
   position: relative;
   overflow: auto;
+  padding: 1em;
 }
 .copy-code-button {
   display: none;
