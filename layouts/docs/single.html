@@ -150,8 +150,14 @@
         {{ end }}
     </div>
 </section>
-<script src='{{ "js/aside.js" | relURL }}'></script>
-<script src='{{ "js/markdown-tab.js" | relURL }}'></script>
+{{ $aside := resources.Get "js/aside.js" }}
+{{ $asideJS := $aside | resources.Fingerprint "sha512" }}
+<script type="text/javascript" src="{{ $asideJS.RelPermalink }}" integrity="{{ $asideJS.Data.Integrity }}"></script>
+
+{{ $tab := resources.Get "js/markdown-tab.js" }}
+{{ $tabJS := $tab | resources.Fingerprint "sha512" }}
+<script type="text/javascript" src="{{ $tabJS.RelPermalink }}" integrity="{{ $tabJS.Data.Integrity }}"></script>
+
 <script>
     var languageCode = '{{.Site.Language.Lang}}'
     var filePath = '{{ .File.Path }}'
