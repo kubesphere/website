@@ -65,16 +65,27 @@ var scrollEvent = function(content, mdBody, aside, asideInner) {
 
 var bindClickLink = function() {
   var aside = $('.aside')
-  var headerHeight = $('header').outerHeight()
   aside.find('a').click(function(event) {
-    event.preventDefault()
     var id = $(this).attr('href')
-    scrollToElement(id, headerHeight)
+    setTimeout(function() {
+      scrollToElement(id)
+    })
   })
 }
 
-var scrollToElement = function(id, headerHeight) {
+var initScrollByHash = function() {
+  var hash = window.location.hash
+  var element = $(hash)
+  if (element) {
+    setTimeout(function() {
+      scrollToElement(hash)
+    })
+  }
+}
+
+var scrollToElement = function(id) {
   var element = $(id)
+  var headerHeight = $('header').outerHeight()
   var toTop = element.offset().top
   window.scrollTo(0, toTop - headerHeight)
 }
@@ -107,3 +118,4 @@ if ($('.common-layout .left-tree').length > 0) {
   bindLeftTreeScroll()
 }
 bindClickLink()
+initScrollByHash()
