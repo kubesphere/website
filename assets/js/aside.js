@@ -74,9 +74,9 @@ var bindClickLink = function() {
 }
 
 var initScrollByHash = function() {
-  var hash = window.location.hash
+  var hash = decodeURI(window.location.hash)
   var element = $(hash)
-  if (element) {
+  if (element.length > 0) {
     setTimeout(function() {
       scrollToElement(hash)
     })
