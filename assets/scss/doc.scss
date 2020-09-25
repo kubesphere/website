@@ -555,6 +555,7 @@ body {
         .page-div {
             position: relative;
             margin-top: 20px;
+            height: 30px;
 
             a {
                 position: absolute;
@@ -594,6 +595,7 @@ body {
         left: 50%;
         transform: translateX(420px);
         width: 160px;
+        border-left: 1px solid #dde1e6;
         @media only screen and (max-width: $mobile-max-width) {
            display: none;
         }
@@ -603,7 +605,6 @@ body {
             position: relative;
             overflow-y: auto;
             padding-left: 10px;
-            border-left: 1px solid #dde1e6;
         }
 
         .title {
@@ -642,4 +643,3 @@ body {
         }
     }
 }
-

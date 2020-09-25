@@ -2,7 +2,7 @@
 title: "Documentation"
 css: "scss/docs.scss"
 
-LinkTitle: "Documentation"
+LinkTitle: "文档"
 
 
 section1:

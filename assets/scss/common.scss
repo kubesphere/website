@@ -269,7 +269,7 @@ section {
   margin: 20px 0;
   position: relative;
 
-  p {
+  & > p {
     padding: 0 10px;
     margin: 0!important;
     height: 30px;
@@ -277,43 +277,43 @@ section {
     color: #ffffff;
   }
 
-  div {
+  & > div {
     padding: 10px;
   }
 }
 
 .notices.note {
-  p {
+  & > p {
     background: #6ab0de
   }
-  div {
+  & > div {
     background: #e7f2fa;
   }
 }
 
 .notices.tip {
-  p {
+  & > p {
     background: #78C578
   }
-  div {
+  & > div {
     background: #E6F9E6;
   }
 }
 
 .notices.info {
-  p {
+  & > p {
     background: #F0B37E
   }
-  div {
+  & > div {
     background: #FFF2DB;
   }
 }
 
 .notices.warning {
-  p {
+  & > p {
     background: #E06F6C
   }
-  div {
+  & > div {
     background: #FAE2E2;
   }
 }
