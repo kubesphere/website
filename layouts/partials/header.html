@@ -110,13 +110,13 @@
                 <ul class="dropdown-menu">
                     {{ range .Children }}
                     <li {{ if eq $section .URL }} class="active"{{ end}}>
-                        <a href="{{ .URL | relLangURL }}">{{ .Name }}</a>
+                        <a href="{{ .URL | relLangURL }}">{{ .Name | safeHTML }}</a>
                     </li>
                     {{ end }}
                 </ul>
             </li>
             {{ else }}
-            <li {{ if eq $section .URL }} class="active"{{ end}}><a data-docs="{{ .Name }}" href="{{ .URL | relLangURL }}">{{ .Name }}</a></li>
+            <li {{ if eq $section .URL }} class="active"{{ end}}><a data-docs="{{ .Name }}" href="{{ .URL | relLangURL }}">{{ .Name | safeHTML }}</a></li>
             {{ end }}
 
             {{ end }}
