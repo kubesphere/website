@@ -21,7 +21,7 @@ Users are provided with multiple installation options. Please note not all optio
   - 2vCPUs
   - 4GB RAM
   - 40GB Storage
-- Full Packages: Install all available system components of KubeSphere such as DevOps, service mesh, and alerting.
+- [Full Packages](../../../pluggable-components/): Install all available system components of KubeSphere such as DevOps, service mesh, and alerting.
 
 For the installation on Kubernetes, see Overview of Installing on Kubernetes.
 
