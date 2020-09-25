@@ -1,20 +1,20 @@
 ---
-title: "创建工作区、项目、帐户和角色"
+title: "创建企业空间、项目、帐户和角色"
 keywords: 'KubeSphere, Kubernetes, Multi-tenant, Workspace, Account, Role, Project'
 description: 'Create Workspace, Project, Account and Role'
 
-linkTitle: "创建工作区、项目、帐户和角色"
+linkTitle: "创建企业空间、项目、帐户和角色"
 weight: 3030
 ---
 
 
 ## 目标
 
-本指南演示如何创建以下教程所需的角色和用户帐户。同时，您将学习如何在工作负载运行的工作区中创建项目和 DevOps 工程。本教程之后，您将熟悉 KubeSphere 多租户管理系统。
+本指南演示如何创建以下教程所需的角色和用户帐户。同时，您将学习如何在工作负载运行的企业空间中创建项目和 DevOps 工程。本教程之后，您将熟悉 KubeSphere 多租户管理系统。
 
 ## 先决条件
 
-KubeSphere 需要安装在您的计算机中。
+KubeSphere 需要安装在您的服务器中。
 
 ## 估计时间
 
@@ -22,9 +22,9 @@ KubeSphere 需要安装在您的计算机中。
 
 ## 架构
 
-KubeSphere 的多租户系统具有**群集**、**工作区**和**项目**三个层次的层次结构。KubeSphere 中的项目是 Kubernetes  命名空间。
+KubeSphere 的多租户系统具有**群集**、**企业空间**和**项目**三个层次的层次结构。KubeSphere 中的项目是 Kubernetes  命名空间。
 
-您可以在 Kubernetes 集群中创建多个工作区。在每个工作区下，您还可以创建多个项目。
+您可以在 Kubernetes 集群中创建多个企业空间。在每个企业空间下，您还可以创建多个项目。
 
 每个级别都有多个内置角色。此外，KubeSphere 还允许您使用自定义授权创建角色。KubeSphere 层次结构适用于具有不同团队或组以及每个团队中不同角色的企业用户。
 
@@ -79,7 +79,7 @@ KubeSphere 的多租户系统具有**群集**、**工作区**和**项目**三个
 
 | 账户名          | 角色               | 描述信息                                                     |
 | --------------- | ------------------ | ------------------------------------------------------------ |
-| ws-manager      | workspaces-manager | 创建和管理所有工作区。                                       |
+| ws-manager      | workspaces-manager | 创建和管理所有企业空间。                                     |
 | ws-admin        | platform-regular   | 管理指定工作空间中的所有资源（在此示例中，此帐户用于邀请新成员加入工作空间）。 |
 | project-admin   | platform-regular   | 创建和管理项目以及 DevOps 项目，并邀请新成员加入项目。       |
 | project-regular | platform-regular   | `project-regular`将被` project-admin`邀请到一个项目或 DevOps 项目。 该帐户将用于在指定项目中创建工作负载，pipelines 和其他资源。 |
@@ -88,11 +88,11 @@ KubeSphere 的多租户系统具有**群集**、**工作区**和**项目**三个
 
 ![account-list](https://ap3.qingstor.com/kubesphere-website/docs/account-list.png)
 
-### 任务2：创建工作区
+### 任务2：创建企业空间
 
-在此任务中，您需要使用上一个任务中创建的帐户`ws-manager`创建一个工作空间。 作为项目，DevOps项目和组织成员的基本管理逻辑单元，工作区是 KubeSphere 多租户系统的基础。
+在此任务中，您需要使用上一个任务中创建的帐户`ws-manager`创建一个工作空间。 作为项目，DevOps项目和组织成员的基本管理逻辑单元，企业空间是 KubeSphere 多租户系统的基础。
 
-1. 以`ws-manager`身份登录 KubeSphere ，它具有管理平台上所有工作区的权限。 点击左上角的**平台管理**。 在**工作空间**中，您可以看到仅列出了一个默认工作空间，其中**system-workspace**在其中运行与系统相关的组件和服务。 您不允许删除该工作空间。
+1. 以`ws-manager`身份登录 KubeSphere ，它具有管理平台上所有企业空间的权限。 点击左上角的**平台管理**。 在**工作空间**中，您可以看到仅列出了一个默认工作空间，其中**system-workspace**在其中运行与系统相关的组件和服务。 您不允许删除该工作空间。
 
 ![create-workspace](https://ap3.qingstor.com/kubesphere-website/docs/create-workspace.jpg)
 
@@ -106,7 +106,7 @@ KubeSphere 的多租户系统具有**群集**、**工作区**和**项目**三个
 
 ![invite-member](https://ap3.qingstor.com/kubesphere-website/docs/20200827111048.png)
 
-4.  邀请`project-admin`和`project-regular`进入工作区。 分别授予他们`self-provisioner`和 `workspace-viewer`角色。
+4.  邀请`project-admin`和`project-regular`进入企业空间。 分别授予他们`self-provisioner`和 `workspace-viewer`角色。
 
 {{< notice note >}} 
 
@@ -116,7 +116,7 @@ KubeSphere 的多租户系统具有**群集**、**工作区**和**项目**三个
 
 ![invite-member](https://ap3.qingstor.com/kubesphere-website/docs/20200827113124.png)
 
-5. 将`project-admin`和`project-regular`都添加到工作区后，单击**确定**。 在**企业成员**中，您可以看到列出的三个成员。
+5. 将`project-admin`和`project-regular`都添加到企业空间后，单击**确定**。 在**企业成员**中，您可以看到列出的三个成员。
 
 | 账户名          | 角色                       | 描述信息                                                     |
 | --------------- | -------------------------- | ------------------------------------------------------------ |
