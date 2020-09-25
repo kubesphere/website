@@ -20,7 +20,7 @@ In project scope, you can grant the following resources' permissions to a role:
 
 ## Prerequisites
 
-At least one project has been created, such as `demo-project`. And you need an account of the `project-admin` role. See the [Create Workspace, Project, Account and Role](../../quick-start/create-workspace-and-project/) if not yet.
+At least one project has been created, such as `demo-project`. Besides, you need an account of the `admin` role at the Project level. See the [Create Workspace, Project, Account and Role](../../quick-start/create-workspace-and-project/) if it is not ready yet.
 
 ## Built-in roles
 

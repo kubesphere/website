@@ -19,7 +19,7 @@ In workspace scope, you can grant the following resources' permissions to a role
 
 ## Prerequisites
 
-At least one workspace has been created, such as `demo-workspace`. And you need an account of the `workspace-admin` role. See the [Create Workspace, Project, Account and Role](../../quick-start/create-workspace-and-project/) if not yet.
+At least one workspace has been created, such as `demo-workspace`. Besides, you need an account of the `workspace-admin` role at the Workspace level. See the [Create Workspace, Project, Account and Role](../../quick-start/create-workspace-and-project/) if it is not ready yet.
 
 {{< notice note >}} 
 
@@ -47,7 +47,7 @@ In **Workspace Roles**, there are four available built-in roles as shown below. 
 ## Create a Workspace Role
 
 1. Log in the console as `ws-admin` and go to **Workspace Roles** in **Workspace Settings**.
-2. In **Workspace Roles**, click **Create** and set a **Role Identifier**. In this example, a role named `workspace-projects-manager` will be created.
+2. In **Workspace Roles**, click **Create** and set a **Role Identifier**. In this example, a role named `workspace-projects-admin` will be created.
 
 ![Create a workspace role](/images/docs/ws-admin/workspace_role_create_step1.png)
 
@@ -69,7 +69,7 @@ Click **Edit Authorization** to continue.
 
 {{< notice note >}} 
 
-The role of `workspace-projects-manager` is only granted with Projects create/view permission, which may not satisfy your demand. This example is only for demonstration purpose. You can create customized roles based on your needs.
+The role of `workspace-projects-admin` is only granted with Projects create/view permission, which may not satisfy your demand. This example is only for demonstration purpose. You can create customized roles based on your needs.
 
 {{</ notice >}} 
 
@@ -77,7 +77,7 @@ The role of `workspace-projects-manager` is only granted with Projects create/vi
 
 1. In **Workspace Settings**, select **Workspace Members** and click **Invite Member**.
 
-2. Invite a user to the workspace. Grant the role `workspace-projects-manager` to the user. 
+2. Invite a user to the workspace. Grant the role `workspace-projects-admin` to the user. 
 
 ![invite member](/images/docs/ws-admin/workspace_invite_user.png)
 

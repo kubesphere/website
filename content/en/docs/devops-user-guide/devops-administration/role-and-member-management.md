@@ -18,7 +18,7 @@ In DevOps project scope, you can grant the following resources' permissions to a
 
 ## Prerequisites
 
-At least one DevOps project has been created, such as `demo-devops`. And you need an account of the `devops-admin` role. See the [Create Workspace, Project, Account and Role](../../../quick-start/create-workspace-and-project/) if not yet.
+At least one DevOps project has been created, such as `demo-devops`. Besides, you need an account of the `admin` role at the DevOps project level. See the [Create Workspace, Project, Account and Role](../../../quick-start/create-workspace-and-project/) if it is not ready yet.
 
 ## Built-in roles
 
