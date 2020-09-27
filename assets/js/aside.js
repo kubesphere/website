@@ -5,7 +5,7 @@ var getElementTopToScreenTop = function(element) {
 }
 
 var getElementBottomToScreenBottom = function(element) {
-  return $(window).height() + $(document).scrollTop() - element.offset().top - element.height()
+  return $(window).height() + $(document).scrollTop() - element.offset().top - element.outerHeight()
 }
 
 var getElementBottomToTop = function(element) {
@@ -44,7 +44,7 @@ var scrollEvent = function(content, aside, asideInner) {
   $( window ).scroll(function() {
     var headerHeight = $('header').outerHeight()
     var contentToTop = getElementTopToScreenTop(content)
-    if (contentToTop < headerHeight) {
+    if (contentToTop < headerHeight + 10) {
       aside.css("top", headerHeight + 10)
       aside.css("bottom", 10)
       var s1 = getElementBottomToTop(content)
