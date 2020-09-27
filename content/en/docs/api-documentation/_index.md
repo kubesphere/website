@@ -5,7 +5,7 @@ layout: "single"
 
 linkTitle: "API Documentation"
 
-weight: 3100
+weight: 8100
 
 icon: "/images/docs/docs.svg"
 
