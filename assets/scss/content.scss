@@ -153,7 +153,7 @@
       .inner-div {
         max-height: 100%;
         position: relative;
-        overflow: scroll;
+        overflow-y: auto;
     }
 
       .title {
