@@ -52,7 +52,6 @@ var scrollEvent = function(content, aside, asideInner) {
       if (s2 > s1) {
         var bottom = getElementBottomToScreenBottom(content)
         aside.css("bottom", bottom)
-        aside.css("top", "auto")
       }
     } else {
       aside.css("top", contentToTop)
