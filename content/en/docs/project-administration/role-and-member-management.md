@@ -29,7 +29,7 @@ In **Project Roles**, there are three available built-in roles as shown below. B
 | Built-in Roles     | Description                                                  |
 | ------------------ | ------------------------------------------------------------ |
 | viewer | The viewer who can view all resources in the project. |
-| regular   | The maintainer of the project who can manage resources other than users and roles in the project. |
+| operator   | The maintainer of the project who can manage resources other than users and roles in the project. |
 | admin     | The administrator in the project who can perform any action on any resource. It gives full control over all resources in the project. |
 
 1. In **Project Roles**, click `admin` and you can see the role detail as shown below.
