@@ -9,13 +9,17 @@ weight: 300
 
 KubeSphere provides monitoring of related indicators such as CPU, memory, network, and disk of the cluster, and supports reviewing historical monitoring and node usage rankings in **Cluster Status Monitoring**.
 
+## Prerequisites 
+
+You need an account granted a role including the authorization of Clusters Management. For example, you can log in the console as admin directly or create a new role with the authorization and assign it to an account.
+
 ## Cluster Status Monitoring
 
 Click **Platform** in the top left corner and select **Clusters Management**.
 
 ![Platform](/images/docs/cluster-administration/cluster-status-monitoring/platform.png)
 
-If the cluster is a multi-cluster, click the cluster name.
+If you have enabled the multi-cluster feature with member clusters imported, you can select a specific cluster to view its application resources. If you have not enabled the feature, refer to the next step directly.
 
 ![Clusters Management](/images/docs/cluster-administration/cluster-status-monitoring/clusters-management.png)
 
@@ -116,13 +120,13 @@ The network bandwidth is the ability of the network card to receive or send data
 
 #### Pod Status
 
-Pod status supports display the total number of pods in states **operating, abnormal, and completed**. The completed state pod is usually a Job or a CronJob. The number of pods in an abnormal state requires special attention.
+Pod status displays the total number of pods in different states, including Running, Completed and Warning. The pod tagged Completed usually refers to a Job or a CronJob. The number of pods marked Warning, which means an abnormal state, requires special attention.
 
 ![Pod Status](/images/docs/cluster-administration/cluster-status-monitoring/pod-status.png)
 
 ## ETCD Monitoring
 
-ETCD monitoring is useful to make good use of ETCD, especially to locate performance problems. The ETCD service provides metrics (metrics) interface natively, and the KubeSphere monitoring system provides a good monitoring display effect for its native data.
+ETCD monitoring is useful to make good use of ETCD, especially to locate performance problems. The ETCD service provides metrics interfaces natively, and the KubeSphere monitoring system provides a good monitoring display effect for its native data.
 
 |Monitoring indicators|Description|
 |---|---|
@@ -132,13 +136,13 @@ ETCD monitoring is useful to make good use of ETCD, especially to locate perform
 |gRPC Stream Messages|The gRPC streaming message receiving rate and sending rate on the server-side, which can reflect whether there are large-scale data read and write operations in the cluster, for more information about indicators, see [go-grpc-prometheus](https://github.com/grpc-ecosystem/go-grpc-prometheus#counters)|
 |WAL Fsync|The delay of WAL calling fsync, when ETCD keeps its log entries to disk before applying them, wal_fsync will be called, for more information about indicators, see [etcd Disk](https://etcd.io/docs/v3.3.12/metrics/#grpc-requests) |
 |DB Fsync|The submission delay distribution of the backend calls. When ETCD submits its most recent incremental snapshot to disk, backend_commit will be called. Note that high latency of disk operations (long WAL log synchronization time or library synchronization time) usually indicates disk problems, which may cause high request latency or make the cluster unstable, for more information about indicators, see [etcd Disk](https://etcd.io/docs/v3.3.12/metrics/#grpc-requests) |
-|Raft Proposals| - `Proposal Commit Rate`: Record the rate of consensus proposals committed. If the cluster is healthy, this indicator should increase over time. Several healthy members of the ETCD cluster may have different general proposals at the same time. The continuous large lag between a single member and its leader indicates that the member is slow or unhealthy. <br> - `Proposed Apply Rate`: Record the total rate of consensus proposals applied. The ETCD server applies each committed proposal asynchronously. The difference between the proposal commit rate and the proposal apply rate should usually be small (only a few thousand even under high load). If the difference between them continues to rise, it indicates that the ETCD server is overloaded. This can happen when using large-scale queries such as heavy range queries or large txn operations. <br> - `Proposal Failure Rate`: The total rate of failed proposals, usually related to two issues, temporary failures related to leader election or longer downtime due to loss of arbitration in the cluster. <br> - `Proposal Pending Total`: The current number of pending proposals. An increase in pending proposals indicates high client load or members unable to submit proposals. <br> Currently, the data displayed on the interface is the average size of the ETCD member indicators. For more information about indicators, see [etcd Server](https://etcd.io/docs/v3.3.12/metrics/#server).
+|Raft Proposals| - `Proposal Commit Rate`: Record the rate of consensus proposals committed. If the cluster is healthy, this indicator should increase over time. Several healthy members of the ETCD cluster may have different general proposals at the same time. The continuous large lag between a single member and its leader indicates that the member is slow or unhealthy. <br> - `Proposal Apply Rate`: Record the total rate of consensus proposals applied. The ETCD server applies each committed proposal asynchronously. The difference between the proposal commit rate and the proposal apply rate should usually be small (only a few thousand even under high load). If the difference between them continues to rise, it indicates that the ETCD server is overloaded. This can happen when using large-scale queries such as heavy range queries or large txn operations. <br> - `Proposal Failure Rate`: The total rate of failed proposals, usually related to two issues, temporary failures related to leader election or longer downtime due to loss of arbitration in the cluster. <br> - `Proposal Pending Total`: The current number of pending proposals. An increase in pending proposals indicates high client load or members unable to submit proposals. <br> Currently, the data displayed on the interface is the average size of the ETCD member indicators. For more information about indicators, see [etcd Server](https://etcd.io/docs/v3.3.12/metrics/#server).
 
 ![ETCD Monitoring](/images/docs/cluster-administration/cluster-status-monitoring/etcd-monitoring.png)
 
 ## APIServer Monitoring
 
-[API Server](https://kubernetes.io/docs/concepts/overview/kubernetes-api/) As the hub for the interaction of all components in the Kubernetes cluster, the following table lists the main indicators monitored by the APIServer.
+[API Server](https://kubernetes.io/docs/concepts/overview/kubernetes-api/) is the hub for the interaction of all components in a Kubernetes cluster. The following table lists the main indicators monitored for the APIServer.
 
 |Monitoring indicators|Description|
 |---|---|
@@ -149,18 +153,18 @@ ETCD monitoring is useful to make good use of ETCD, especially to locate perform
 
 ## Scheduler Monitoring
 
-[Scheduler](https://kubernetes.io/docs/reference/command-line-tools-reference/kube-scheduler/) Scheduler is the Kubernetes API of monitor the newly created Pod, and determine which nodes the newly created Pod should run on. It makes this decision based on available data, including the availability of collected resources and the resource requirements of the Pod. Monitoring data for scheduling delays ensure that you can see any delays faced by the scheduler.
+[Scheduler](https://kubernetes.io/docs/reference/command-line-tools-reference/kube-scheduler/) monitors the Kubernetes API of newly created pods and determines which nodes these new pods run on. It makes this decision based on available data, including the availability of collected resources and the resource requirements of the Pod. Monitoring data for scheduling delays ensures that you can see any delays facing the scheduler.
 
 |Monitoring indicators|Description|
 |---|---|
 |Attempt Frequency|Including the number of scheduling successes, errors, and failures|
 |Attempt Rate|Including scheduling rate of success, error, and failure|
-|Scheduler latency|End-to-end scheduling delay, which is the sum of scheduling algorithm delay and binding delay|
+|Scheduling latency|End-to-end scheduling delay, which is the sum of scheduling algorithm delay and binding delay|
 
 ![Scheduler Monitoring](/images/docs/cluster-administration/cluster-status-monitoring/scheduler-monitoring.png)
 
 ## Node Usage Ranking
 
-The node usage ranking is very useful for host monitoring. It supports perform ranking with indicators such as **CPU, Load Average, Memory, Local Storage, inode Utilization, and Pod Utilization**, support ascending and descending order. Administrators can quickly find potential problems or locate a node's insufficient resources by sorting by indicators. 
+You can sort nodes in ascending and descending order by indicators such as CPU, Load Average, Memory, Local Storage, inode Utilization, and Pod Utilization. This enables administrators to quickly find potential problems or identify a node's insufficient resources.
 
 ![Node Usage Ranking](/images/docs/cluster-administration/cluster-status-monitoring/node-usage-ranking.png)

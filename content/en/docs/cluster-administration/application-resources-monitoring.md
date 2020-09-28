@@ -9,13 +9,17 @@ weight: 400
 
 In addition to monitoring the data from the physical resource level, the cluster-admin needs to know how many application resources, such as the number of projects and DevOps projects, as well as how many specific types of workloads and services have already been used in the platform. Application resource monitoring is a summary of the resource usage and trends of the application level of the platform.
 
+## Prerequisites 
+
+You need an account granted a role including the authorization of Clusters Management. For example, you can log in the console as admin directly or create a new role with the authorization and assign it to an account.
+
 ## Resource Usage
 
 Click **Platform** in the top left corner and select **Clusters Management**.
 
 ![Platform](/images/docs/cluster-administration/cluster-status-monitoring/platform.png)
 
-If the cluster is a multi-cluster, click the cluster name.
+If you have enabled the multi-cluster feature with member clusters imported, you can select a specific cluster to view its application resources. If you have not enabled the feature, refer to the next step directly.
 
 ![Clusters Management](/images/docs/cluster-administration/cluster-status-monitoring/clusters-management.png)
 
