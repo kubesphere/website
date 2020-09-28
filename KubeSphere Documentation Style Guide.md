@@ -8,6 +8,10 @@ This style guide provides a set of editorial guidelines for those who are writin
 - English is the preferred language to use when you write documentation. If you are not sure whether you are writing correctly, you can use grammar checkers (e.g. [grammarly](https://www.grammarly.com/)). Although they are not 100% accurate, they can help you get rid of most of the wording issues. That said, Chinese is also acceptable if you really don't know how to express your meaning in English.
 - It is recommended that you use more images or diagrams to show UI functions and logical relations with tools such as [draw.io](https://draw.io).
 
+## Preparation Notice
+
+Before you start writing the specific steps for a feature, state clearly what should be ready in advance, such as necessary components, accounts or roles (do not tell readers to use `admin` for all the operations, which is unreasonable in reality for different tenants), or a specific environment. You can add this part at the beginning of a tutorial or put it in a separate part (e.g. **Prerequisites**).
+
 ## Paragraphs
 
 - It is not recommended that you write a single sentence more than two lines (excluding enumeration).
