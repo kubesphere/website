@@ -17,9 +17,7 @@ KubeSphere separates [frontend](https://github.com/kubesphere/console) from [bac
 
 | Back-end component | Function description |
 |---|---|
-| ks-account | Account service provides APIs for account and role management |
 | ks-apiserver | The KubeSphere API server validates and configures data for the API objects which include Kubernetes objects. The API Server services REST operations and provides the frontend to the cluster's shared state through which all other components interact. |
-| ks-apigateway | The API gateway is responsible for handling external requests for KubeSphere services. |
 | ks-console | KubeSphere console offers KubeSphere console service |
 | ks-controller-manager | KubeSphere controller takes care of business logic, for example, when create a workspace, the controller will automatically create corresponding permissions and configurations for it. |
 | metrics-server | Kubernetes monitoring component collects metrics from Kubelet on each node. |
