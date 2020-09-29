@@ -71,7 +71,7 @@ Upgrading steps are different for single-node clusters (all-in-one) and multi-no
 The following command upgrades your single-node cluster to KubeSphere v3.0.0 and Kubernetes v1.17.9 (default):
 
 ```bash
-./kk upgrade --with-kubesphere --with-kubernetes
+./kk upgrade --with-kubernetes v1.17.9 --with-kubesphere v3.0.0
 ```
 
 To upgrade Kubernetes to a specific version, please explicitly provide the version after the flag `--with-kubernetes`. Available versions are:
@@ -112,7 +112,7 @@ Please refer to the Cluster section of [config-example.yaml](https://github.com/
 The following command upgrades your cluster to KubeSphere v3.0.0 and Kubernetes v1.17.9 (default):
 
 ```bash
-./kk upgrade --with-kubesphere --with-kubernetes -f config-sample.yaml
+./kk upgrade --with-kubernetes v1.17.9 --with-kubesphere v3.0.0 -f config-sample.yaml
 ```
 
 To upgrade Kubernetes to a specific version, please explicitly provide the version after the flag `--with-kubernetes`. Available versions are:

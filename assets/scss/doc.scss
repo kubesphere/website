@@ -1,8 +1,14 @@
 @import "variables";
 @import "markdown";
 
-body {
+html, body {
     background: #ffffff;
+    height: 100%;
+    min-height: 100%;
+}
+
+main {
+    min-height: calc(100% - 105px);
 }
 
 .section-1 {
@@ -153,20 +159,33 @@ body {
     }
 
     .left-div {
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 274px;
-        background-color: #ffffff;
+        position: fixed;
+        top: 260px;
+        bottom: 20px;
+        left: 50%;
+        transform: translateX(-580px);
+        width: 180px;
         z-index: 2;
-        transition: all 0.5s;
+
+        @media only screen and (max-width: 1160px) {
+            left: 0;
+            transform: translateX(0px);
+        }
 
         @media only screen and (max-width: $mobile-max-width) {
-            left: -274px;
+            transition: all 0.5s;
+            left: -180px;
+        }
+
+        .inner-tree {
+            max-height: 100%;
+            position: relative;
+            overflow-y: auto;
+            background-color: #ffffff;
         }
 
         .nav-menu {
-            padding: 20px;
+            padding: 10px;
             font-size: 14px;
             color: #31383e;
             background-color: #f6f8fa;
@@ -229,7 +248,6 @@ body {
         }
 
         .download-div {
-            width: 274px;
             height: 44px;
             margin-top: 10px;
             line-height: 44px;
@@ -258,13 +276,15 @@ body {
 
     .middle-div {
         position: relative;
-        margin-left: 274px;
-        margin-right: 80px;
-        padding: 10px 20px;
+        margin-left: 180px;
+        margin-right: 180px;
+        padding: 10px;
+        border-right: 1px solid #dde1e6;
 
         @media only screen and (max-width: $mobile-max-width) {
             margin: 0;
             padding: 0;
+            border-right: none;
         }
 
         .top-div {
@@ -415,21 +435,18 @@ body {
         .content-div {
             .md-body {
                 font-size: 16px;
-                line-height: 1.71;
+                line-height: 2.29;
                 color: #36435c;
             }
             
             .md-body h2 {
-                font-size: 24px;
                 font-weight: 500;
                 line-height: 40px;
-                color: #171c34;
                 text-shadow: none;
                 text-align: left;
             }
             
             .md-body h3 {
-                font-size: 16px;
                 font-weight: 600;
                 line-height: 1.5;
                 color: #171c34;
@@ -546,6 +563,7 @@ body {
         .page-div {
             position: relative;
             margin-top: 20px;
+            height: 30px;
 
             a {
                 position: absolute;
@@ -579,65 +597,195 @@ body {
     }
 
     .aside {
-        position: relative;
-        width: 174px;
-        padding-left: 10px;
-        border-left: 1px solid #dde1e6;
-        max-height: 600px;
-        overflow: scroll;
+        position: fixed;
+        top: 260px;
+        bottom: 10px;
+        left: 50%;
+        transform: translateX(400px);
+        width: 180px;
         @media only screen and (max-width: $mobile-max-width) {
-          display: none;
+           display: none;
+        }
+
+        .inner-div {
+            max-height: 100%;
+            position: relative;
+            overflow-y: auto;
+            padding-left: 10px;
         }
 
         .title {
-          font-size: 14px;
-          line-height: 1.71;
-          color: #3e464c;
+            font-size: 14px;
+            line-height: 1.71;
+            color: #3e464c;
         }
   
         .tabs {
-          #TableOfContents > ul > li > a {
-            font-weight: 500;
-          }
-          li {
-            margin: 8px 0;
-            font-size: 14px;
-  
-            a {
-              display: block;
-              width: 100%;
-              font-weight: 400;
-              line-height: 24px;
-              color: #68747f;
-  
-              &:hover {
-                color: #00a971;
-              }
+            #TableOfContents > ul > li > a {
+                font-weight: 500;
             }
+            li {
+                margin: 8px 0;
+                font-size: 14px;
+    
+                a {
+                    display: block;
+                    width: 100%;
+                    font-weight: 400;
+                    line-height: 24px;
+                    color: #68747f;
+        
+                    &:hover {
+                        color: #00a971;
+                    }
+                }
 
-            .active {
-                color: #00a971;
+                .active {
+                    color: #00a971;
+                }
             }
-          }
-          li li {
-            padding-left: 20px;
-          }
+            li li {
+                padding-left: 20px;
+            }
         }
-      }
-  
-    .aside-fixed {
-        position: fixed;
-        top: 260px;
-        left: 50%;
-        transform: translateX(500px);
-    }
-
-    .aside-absolute {
-        position: absolute;
-        right: -104px;
-        bottom: 0;
-        top: none;
-        left: none;
     }
 }
 
+footer {
+
+    padding: 20px 0;
+
+    .down-main {
+      text-align: center;
+      .img-div {
+        font-size: 0;
+
+        svg {
+          width: 32px;
+          height: 32px;
+          color: #b6c2cd;
+          cursor: pointer;
+          transition: all 0.2s ease-in-out;
+          margin-right: 8px;
+        }
+
+        a {
+          display: inline-block;
+          width: 34px;
+          height: 34px;
+          margin: 0 6px;
+          background-position: center;
+          background-repeat: no-repeat;
+        }
+
+        .wechat {
+          position: relative;
+
+          .hide-div {
+            display: none;
+            position: absolute;
+            top: -10px;
+            left: 50%;
+            padding: 10px;
+            transform: translate(-50%, -100%);
+            background: #ffffff;
+            p {
+              font-size: 12px;
+              color: #b6c2cd;
+            }
+            img {
+              margin: 0 10px;
+            }
+            &::after {
+              content: '';
+              position: absolute;
+              bottom: -18px;
+              left: 50%;
+              transform: translateX(-50%);
+              border: 10px solid transparent;
+              border-top-color: #ffffff;
+            }
+          }
+
+          &:hover {
+            svg {
+              color: green;
+            }
+            div {
+              display: block;
+            }
+          }
+        }
+
+        .facebook-a {
+          background-image: url("/images/footer/facebook.svg");
+
+          &:hover {
+            background-image: url("/images/footer/facebook-hover.svg");
+          }
+        }
+
+        .youtube-a {
+          background-image: url("/images/footer/youtube.svg");
+
+          &:hover {
+            background-image: url("/images/footer/youtube-hover.svg");
+          }
+        }
+
+        .slack-a {
+          background-image: url("/images/footer/slack.svg");
+
+          &:hover {
+            background-image: url("/images/footer/slack-hover.svg");
+          }
+        }
+
+        .twitter-a {
+          background-image: url("/images/footer/twitter.svg");
+
+          &:hover {
+            background-image: url("/images/footer/twitter-hover.svg");
+          }
+        }
+
+        .github-a {
+          background-image: url("/images/footer/github.svg");
+
+          &:hover {
+            background-image: url("/images/footer/github-hover.svg");
+          }
+        }
+
+        .medium-a {
+          background-image: url("/images/footer/medium.svg");
+
+          &:hover {
+            background-image: url("/images/footer/medium-hover.svg");
+          }
+        }
+
+        .linkedin-a {
+          background-image: url("/images/footer/linkedin.svg");
+
+          &:hover {
+            background-image: url("/images/footer/linkedin-hover.svg");
+          }
+        }
+      }
+
+      .p1 {
+        height: 23px;
+        margin-top: 6px;
+        font-size: 14px;
+        line-height: 23px;
+        font-weight: 500;
+        letter-spacing: 1.08px;
+        color: #242e42;
+      }
+
+      .case {
+        margin-top: 20px;
+      }
+    }
+}
