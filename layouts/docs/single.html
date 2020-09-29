@@ -295,39 +295,12 @@
             <a class='facebook-a' href="https://www.facebook.com/kubesphere" target="_blank"></a>
             <a class='twitter-a' href="{{ .Site.Params.twitterLink }}" target="_blank" rel="noopener noreferrer"></a>
             <a class='linkedin-a' href="{{ .Site.Params.linkedinLink }}" target="_blank" rel="noopener noreferrer"></a>
-            <!-- <a class='wechat' href="javascript:void(0);">
-                {{ "/static/images/footer/group.svg" | readFile | safeHTML }}
-                <div class="hide-div">
-                    <p>Join the WeChat group</p>
-                    <img src="/images/footer/group_code.svg" alt="">
-                    <p>进群请备注 “公司 - 姓名”</p>
-                </div>
-            </a> -->
             <a class='youtube-a' href="{{ .Site.Params.youtubeLink }}" target="_blank" rel="noopener noreferrer"></a>
             <a class='slack-a' href="{{ .Site.Params.slackLink }}" target="_blank" rel="noopener noreferrer"></a>
             <a class='github-a' href="{{ .Site.Params.githubLink }}" target="_blank" rel="noopener noreferrer"></a>
             <a class='medium-a' href="{{ .Site.Params.mediumLink }}" target="_blank" rel="noopener noreferrer"></a>
         </div>
         <p class='p1'>{{ i18n "KubeSphere®️ 2020 All Rights Reserved." }}</p>
-        {{ if .Site.Params.showCaseNumber }}
-        <p class="case">
-            <a
-            href="http://www.beian.miit.gov.cn/"
-            target="_blank"
-            rel="noopener noreferrer"
-            >
-            <span>京ICP备13019086号</span>
-            </a>
-            <a
-            target="_blank"
-            rel="noopener noreferrer"
-            href="http://www.beian.gov.cn/portal/registerSystemInfo?recordcode=11010502041003"
-            >
-            <img src='/images/footer/case-icon.png' alt="备案图标"/>
-            <span>京公网安备 11010502041003号</span>
-            </a>
-        </p>
-        {{ end }}
     </div>
 </footer>
 </body>
