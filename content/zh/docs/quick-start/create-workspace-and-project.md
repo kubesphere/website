@@ -229,7 +229,7 @@ KubeSphere 的多租户系统具有**群集**、**企业空间**和**项目**三
 
 {{< notice note >}}
 
-要创建 DevOps 工程，您需要预先安装KubeSphere DevOps系统，该系统是可插入的组件，提供 CI/CD pipelines，二进制到镜像，源码到镜像功能等。 有关如何启用DevOps的更多信息，请参见 [KubeSphere DevOps System](../../pluggable-components/devops/)。
+要创建 DevOps 工程，您需要预先安装KubeSphere DevOps 系统，该系统是可插入的组件，提供 CI/CD pipelines，二进制到镜像，源码到镜像功能等。 有关如何启用 DevOps 的更多信息，请参见 [KubeSphere DevOps System](../../pluggable-components/devops/)。
 
 {{</ notice >}} 
 
