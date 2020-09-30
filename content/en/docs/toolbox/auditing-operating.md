@@ -7,7 +7,7 @@ linkTitle: "Auditing Operating"
 weight: 300
 ---
 
- KubeSphere Auditing Logs provides a security-relevant chronological set of records documenting the sequence of activities that have affected the system by individual users, administrators, or other components of the system. Each request to KubeSphere generates an event that is then written to a webhook and processed according to a certain rule. According to different rules, the event will be ignored, stored, or generated an alert.
+KubeSphere Auditing Logs provide a security-relevant chronological set of records documenting the sequence of activities that have affected the system by individual users, administrators, or other components of the system. Each request to KubeSphere generates an event that is then written to a webhook and processed according to a certain rule. The event will be ignored, stored, or generate an alert based on different rules.
 
 ## QuickStart
 
@@ -17,15 +17,15 @@ To enable Operation Auditing, see [KubeSphere Auditing Logs](../../pluggable-com
 
 ### Receive auditing log from KubeSphere
 
- KubeSphere Auditing Logs can receive auditing logs form KubeSphere and Kubernetes. By default, KubeSphere Auditing Logs only receives auditing logs from KubeSphere.
+KubeSphere Auditing Log system receives auditing logs only from KubeSphere by default, while it can also receive auditing logs from Kubernetes.
 
- User can stop receive auditing logs from KubeSphere by changing the value of 'auditing.enable' in ConfigMap `kubesphere-config` in the namespace `kubesphere-system` using the following command, 
+ User can stop receiving auditing logs from KubeSphere by changing the value of 'auditing.enable' in ConfigMap `kubesphere-config` in the namespace `kubesphere-system` using the following command, 
 
 ```
 kubectl edit cm -n kubesphere-system kubesphere-config
 ```
 
- change the value of `auditing.enabled` as false to stop receive auditing logs from KubeSphere.
+Change the value of `auditing.enabled` as `false` to stop receiving auditing logs from KubeSphere.
 
 ```
   spec:
@@ -64,7 +64,7 @@ spec:
 
  > Note that this action will restart the Kubernetes apiserver.
 
- The `audit-policy.yaml` define rules about what events should be recorded and what data they should include. You can use a minimal audit policy file to log all requests at the Metadata level:
+ The `audit-policy.yaml` defines rules about what events should be recorded and what data they should include. You can use a minimal audit policy file to log all requests at the Metadata level:
 
 ```
 # Log all requests at the Metadata level.
@@ -96,7 +96,7 @@ preferences: {}
 users: []
 ```
 
- The `ip` is the `CLUSTER-IP` of Service `kube-auditing-webhook-svc` in the namespace `kubesphere-logging-system`, you can get it used this command.
+ The `ip` is the `CLUSTER-IP` of Service `kube-auditing-webhook-svc` in the namespace `kubesphere-logging-system`. You can get it used this command.
 
 ```
 kubectl get svc -n kubesphere-logging-system
@@ -115,12 +115,11 @@ spec:
   auditing:
     k8sAuditingEnabled: true
 ```
-
- To stop receive auditing logs from Kubernetes, remove config about auditing webhook backend, then change the value of `k8sAuditingEnabled` to `false`.
+To stop receiving auditing logs from Kubernetes, remove the configuration of auditing webhook backend, then change the value of `k8sAuditingEnabled` to `false`.
 
 ### Custom auditing log
 
- KubeSphere Auditing Logs provides a CRD Webhook `kube-auditing-webhook` to custom auditing logs.
+KubeSphere Auditing Log system provides a CRD Webhook `kube-auditing-webhook` to customize auditing logs.
 
 ```
 apiVersion: auditing.kubesphere.io/v1alpha1
@@ -159,7 +158,7 @@ spec:
  k8sAuditingEnabled | Whether to Receive Kubernetes Auditing Logs. | false.
  receivers          | The receivers to receive the alerts.
 
- > You can change the level of Kubernetes auditing logs by modified the file `audit-policy.yaml`, then restart the Kubernetes apiserver. 
+ > You can change the level of Kubernetes auditing logs auditing logs by modifying the file `audit-policy.yaml`, then restart the Kubernetes apiserver. 
 
 ### Auditing Rule
 
@@ -229,7 +228,8 @@ spec:
  output    | Specifies the message of alert.
  priority  | The priority of the rule.
 
- When an auditing log matched a rule in `archiving-rule` and the priority of rule is not less than `archivingPriority`, it will be stored for further use. When an auditing log matched a rule in `alerting-rule`, if the priority of the rule is less than `alertingPriority`, it will be stored for further use;  else it will generate an alert will be sent to the user. 
+ When an auditing log matched a rule in `archiving-rule` and the priority of rule is not less than `archivingPriority`, it will be stored for further use. When an auditing log matched a rule in `alerting-rule`, if the priority of the rule is less than `alertingPriority`, it will be stored for further use; otherwise it will generate an alert which will be sent to the user.
+
 
 #### Rule condition
 
@@ -273,7 +273,8 @@ RequestReceivedTimestamp >= "2020-06-12T09:23:28.359896Z" and RequestReceivedTim
 ```
 
 #### Macro
-`Macro` is a rule condition snippets that can be re-used inside rules and even other macros. Macros provide a way to name common patterns and factor out redundancies in rules. Here¡¯s an example of a macro.
+
+A `macro` is a rule condition snippet that can be re-used inside rules and even other macros. Macros provide a way to name common patterns and factor out redundancies in rules. Here is an example of a macro.
 
 ```
 apiVersion: auditing.kubesphere.io/v1alpha1
@@ -291,10 +292,12 @@ spec:
     macro: ObjectRef.Resource="pods"
 ```
 
- > `Macro` can bu used in rules or other macros like ${pod} or ${alerting-rule.pod}. The difference between these two methods is, ${pod} only can be used in the CRD Rule `alerting-rule`, ${alerting-rule.pod} can be used in all CRD Rule. It is also applied to lists and alias.
+> `Macro` can be used in rules or other macros like ${pod} or ${alerting-rule.pod}. The difference between these two methods is that ${pod} only can be used in the CRD Rule `alerting-rule`, while ${alerting-rule.pod} can be used in all CRD Rules. It also applies to lists and alias.
 
 #### List
-`List` is collections of items that can be included in rules, macros, or other lists. Unlike rules and macros, lists cannot be parsed as filtering expressions. Here¡¯s an example of a list.
+
+A `list` is a collection of items that can be included in rules, macros, or other lists. Unlike rules and macros, lists cannot be parsed as filtering expressions. Here is an example of a list.
+
 ```
 apiVersion: auditing.kubesphere.io/v1alpha1
 kind: Rule
@@ -316,7 +319,9 @@ spec:
 ```
 
 #### Alias
-`Alias` is a short name of a filter field, it can be included in rules, macros, lists, and output string. Here¡¯s an example of an alias.
+
+A `alias` is a short name of a filter field. It can be included in rules, macros, lists, and output strings. Here is an example of an alias.
+
 ```
 apiVersion: auditing.kubesphere.io/v1alpha1
 kind: Rule
@@ -339,11 +344,16 @@ spec:
 ```
 Output: ${user} ${verb} a HostNetwork Pod ${name} in ${namespace}.
 ```
- > The field of the user, verb, namespace, name all are alias.
+> The fields of `user`, `verb`, `namespace`, and `name` are all aliases.
 
 ### KubeSphere Auditing Logs Query
 
- KubeSphere supports auditing logs query for tenant isolation. Use the `admin` account to log in KubeSphere, choose **Toolbox -> Auditing Operating**.
+ KubeSphere supports auditing logs query for tenant isolation. Use a account to log in KubeSphere, choose **Toolbox -> Auditing Operating**.
+ 
+> Any account has the authorization to query auditing log, the difference is which logs can be see. It follows the following principles.
+> - If a account has the authorization of view project in a project, it can see the auditing log happend in this project, such as create workload in the project.
+> - If a account has the authorization of list project in a workspace, it can see the auditing log happend in this workspace but not in project, such as create project in the workspace.
+> - If a account has the authorization of list project in a cluster, it can see the auditing log happend in this cluster but not in workspace and project, such as create workspace in the cluster.
 
  ![Toolbox](/images/docs/toolbox/toolbox.png)
 
