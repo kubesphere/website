@@ -46,7 +46,7 @@ section3:
   image: /images/service-mesh/15.jpg
   content: Want to get started in action by following the hands-on lab?
   btnContent: Start Hands-on Lab
-  link: https://kubesphere.io/docs/installation/install-devops/
+  link: https://kubesphere.io/docs/pluggable-components/devops/
   bgLeft: /images/service-mesh/3-2.svg
   bgRight: /images/service-mesh/3.svg
 ---
