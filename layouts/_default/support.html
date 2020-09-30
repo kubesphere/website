@@ -1,0 +1,15 @@
+{{ define "main" }}
+
+{{ with .Params.section1 }}
+<section class="section-1 bg-cover" style='background-image: url("{{ .topImage }}");'>
+    <div class="title-div common-layout">
+        <h1 class="title-center-h1">{{ .title }}</h1>
+        <p class="common-p">{{ .content }}</p>
+    </div>
+</section>
+{{ end }}
+
+{{ with .Params.sectionIframe }}
+<script src="{{ .formUrl }}"></script>
+{{ end }}
+{{ end }}

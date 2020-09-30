@@ -7,7 +7,7 @@ linkTitle: "Minimal KubeSphere on Kubernetes"
 weight: 3020
 ---
 
-In addition to installing KubeSphere on a Linux machine, you can also deploy it on existing Kubernetes clusters directly. This QuickStart guide walks you through the general steps of completing a minimal KubeSphere installation on Kubernetes. For more information, see [Installing on Kubernetes](https://kubesphere.io/docs/installing-on-kubernetes/).
+In addition to installing KubeSphere on a Linux machine, you can also deploy it on existing Kubernetes clusters directly. This QuickStart guide walks you through the general steps of completing a minimal KubeSphere installation on Kubernetes. For more information, see [Installing on Kubernetes](../../installing-on-kubernetes/).
 
 {{< notice note >}}
 
@@ -15,7 +15,7 @@ In addition to installing KubeSphere on a Linux machine, you can also deploy it 
 - Make sure your machine meets the minimal hardware requirement: CPU > 1 Core, Memory > 2 G;
 - A default Storage Class in your Kubernetes cluster needs to be configured before the installation;
 - The CSR signing feature is activated in kube-apiserver when it is started with the `--cluster-signing-cert-file` and `--cluster-signing-key-file` parameters. See [RKE installation issue](https://github.com/kubesphere/kubesphere/issues/1925#issuecomment-591698309).
-- For more information about the prerequisites of installing KubeSphere on Kubernetes, see [Prerequisites](https://kubesphere.io/docs/installing-on-kubernetes/introduction/prerequisites/).
+- For more information about the prerequisites of installing KubeSphere on Kubernetes, see [Prerequisites](../../installing-on-kubernetes/introduction/prerequisites/).
 
 {{</ notice >}}
 
@@ -54,7 +54,7 @@ kubectl get svc/ks-console -n kubesphere-system
 - Make sure port 30880 is opened in security groups and access the web console through the NodePort (`IP:30880`) with the default account and password (`admin/P@88w0rd`).
 - After logging in the console, you can check the status of different components in **Components**. You may need to wait for some components to be up and running if you want to use related services.
 
-![components](https://ap3.qingstor.com/kubesphere-website/docs/components.png)
+![components](/images/docs/quickstart/kubesphere-components.png)
 
 ## Enable Pluggable Components (Optional)
 

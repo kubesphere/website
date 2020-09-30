@@ -38,11 +38,11 @@ After KubeSphere is installed, you need to add different users with varied roles
 
 {{< notice tip >}}
 
-For account security, it is highly recommended that you change your password the first time you log in the console. To change your password, select **User Settings** in the drop-down menu at the top right corner. In **Password Setting**, set a new password.
+For account security, it is highly recommended that you change your password the first time you log in the console. To change your password, select **User Settings** in the drop-down menu in the top-right corner. In **Password Setting**, set a new password.
 
 {{</ notice >}}
 
-2. After you log in the console, click **Platform** at the top left corner and select **Access Control**.
+2. After you log in the console, click **Platform** in the top-left corner and select **Access Control**.
 
    ![access-control](https://ap3.qingstor.com/kubesphere-website/docs/access-control.png)
 
@@ -71,7 +71,7 @@ Click **OK** after you finish. A newly-created account will display in the accou
 
 {{< notice tip >}} 
 
-To log out, click your username at the top right corner and select **Log Out**.
+To log out, click your username in the top-right corner and select **Log Out**.
 
 {{</ notice >}}
 
@@ -92,7 +92,7 @@ For detailed information about the four accounts you need to create, refer to th
 
 In this task, you need to create a workspace using the account `ws-manager` created in the previous task. As the basic logic unit for the management of projects, DevOps projects and organization members, workspaces underpin multi-tenant system of KubeSphere.
 
-1. Log in KubeSphere as `ws-manager` which has the authorization to manage all workspaces on the platform. Click **Platform** at the top left corner. In **Workspaces**, you can see there is only one default workspace **system-workspace** listed, where system-related components and services run. You are not allowed to delete this workspace.
+1. Log in KubeSphere as `ws-manager` which has the authorization to manage all workspaces on the platform. Click **Platform** in the top-left corner. In **Workspaces**, you can see there is only one default workspace **system-workspace** listed, where system-related components and services run. You are not allowed to delete this workspace.
 
 ![create-workspace](https://ap3.qingstor.com/kubesphere-website/docs/create-workspace.jpg)
 
@@ -178,7 +178,7 @@ A route refers to Ingress in Kubernetes, which is an API object that manages ext
 
 {{< notice note >}}
 
-If you want to expose services using the type `LoadBalancer`, you need to use the [LoadBalancer plugin of cloud providers](https://kubernetes.io/docs/concepts/cluster-administration/cloud-providers/). If your Kubernetes cluster is running in a bare metal environment, it is recommended you use [Porter](https://github.com/kubesphere/porter) as the LoadBalancer plugin.
+If you want to expose services using the type `LoadBalancer`, you need to use the [LoadBalancer plugin of cloud providers](https://kubernetes.io/zh/docs/concepts/cluster-administration/cloud-providers/). If your Kubernetes cluster is running in a bare metal environment, it is recommended you use [Porter](https://github.com/kubesphere/porter) as the LoadBalancer plugin.
 
 {{</ notice >}} 
 

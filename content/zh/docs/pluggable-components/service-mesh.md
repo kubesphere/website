@@ -19,7 +19,7 @@ For more information, see related sections in Project Administration and Usage.
 
 When you install KubeSphere on Linux, you need to create a configuration file, which lists all KubeSphere components.
 
-1. In the tutorial of [Installing KubeSphere on Linux](https://kubesphere.io/docs/installing-on-linux/introduction/multioverview/), you create a default file **config-sample.yaml**. Modify the file by executing the following command:
+1. In the tutorial of [Installing KubeSphere on Linux](../../installing-on-linux/introduction/multioverview/), you create a default file **config-sample.yaml**. Modify the file by executing the following command:
 
 ```bash
 vi config-sample.yaml
@@ -27,7 +27,7 @@ vi config-sample.yaml
 
 {{< notice note >}}
 
-If you adopt [All-in-one Installation](https://kubesphere.io/docs/quick-start/all-in-one-on-linux/), you do not need to create a config-sample.yaml file as you can create a cluster directly. Generally, the all-in-one mode is for users who are new to KubeSphere and look to get familiar with the system. If you want to enable Service Mesh in this mode (e.g. for testing purpose), refer to the following section to see how Service Mesh can be installed after installation.
+If you adopt [All-in-one Installation](../../quick-start/all-in-one-on-linux/), you do not need to create a config-sample.yaml file as you can create a cluster directly. Generally, the all-in-one mode is for users who are new to KubeSphere and look to get familiar with the system. If you want to enable Service Mesh in this mode (e.g. for testing purpose), refer to the following section to see how Service Mesh can be installed after installation.
 
 {{</ notice >}}
 
@@ -70,7 +70,7 @@ kubectl apply -f cluster-configuration.yaml
 
 ## Enable Service Mesh after Installation
 
-1. Log in the console as `admin`. Click **Platform** at the top left corner and select **Clusters Management**.
+1. Log in the console as `admin`. Click **Platform** in the top-left corner and select **Clusters Management**.
 
 ![clusters-management](https://ap3.qingstor.com/kubesphere-website/docs/20200828111130.png)
 
@@ -86,7 +86,7 @@ A Custom Resource Definition (CRD) allows users to create a new type of resource
 
 ![edit-yaml](https://ap3.qingstor.com/kubesphere-website/docs/20200827182002.png)
 
-4. In this yaml file, navigate to `servicemesh` and change `false` to `true` for `enabled`. After you finish, click **Update** at the bottom right corner to save the configuration.
+4. In this yaml file, navigate to `servicemesh` and change `false` to `true` for `enabled`. After you finish, click **Update** in the bottom-right corner to save the configuration.
 
 ```bash
 servicemesh:
@@ -101,7 +101,7 @@ kubectl logs -n kubesphere-system $(kubectl get pod -n kubesphere-system -l app=
 
 {{< notice tip >}}
 
-You can find the web kubectl tool by clicking the hammer icon at the bottom right corner of the console.
+You can find the web kubectl tool by clicking the hammer icon in the bottom-right corner of the console.
 
 {{</ notice >}}
 

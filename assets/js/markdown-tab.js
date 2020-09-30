@@ -44,6 +44,7 @@ function addCopyButtons(clipboard) {
       pre.appendChild(div)
   });
 }
+$('pre').css('background', '#242e42')
 if (navigator && navigator.clipboard) {
     addCopyButtons(navigator.clipboard);
 }
