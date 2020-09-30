@@ -5,6 +5,8 @@ baseURL = "https://kubesphere-v3.netlify.app"
     endLevel = 3
     ordered = false
     startLevel = 2
+  [markup.goldmark.renderer]
+    unsafe= true
 
 
 [params]
