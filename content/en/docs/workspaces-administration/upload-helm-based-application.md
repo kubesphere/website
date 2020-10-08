@@ -16,9 +16,6 @@ KubeSphere provides full lifecycle management for applications. You can upload o
 
 ## Hands-on Lab
 
-
-### Step 1. Upload The Helm Chart
-
 Go to the workspace, open `Apps Management` and go to `App Templates`, then click the `Create` button.
 
 ![Create App Template](/images/application-templates/create-app.png)

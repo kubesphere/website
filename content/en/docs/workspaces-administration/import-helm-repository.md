@@ -11,32 +11,28 @@ KubeSphere builds application repository services on [OpenPitrix](https://openpi
 
 ## Preparing the application repository
 
-The [official Helm documentation](https://helm.sh/docs/topics/chart_repository/#hosting-chart-repositories) already provides several ways to create application repositories, but we've added the following three, including the Local Helm-based Repo and GitHub-based application repositories are prepared for user-friendly use.
+The [official Helm documentation](https://helm.sh/docs/topics/chart_repository/#hosting-chart-repositories) already provides several ways to create application repositories, But in this document, we recommend that you use the official KubeSphere helm repo.
 
-- [Quickly Build an Application Repository to Deploy Redis Based on Local Helm Repo](.../local-repo)(for quick testing)
-- [KubeSphere Official Application Repository](.../app-hosting-official)(minimal operation, **recommended!) **)
-- [Building Your Own Application Repository on GitHub](.../app-hosting-github)
-
+- [KubeSphere Official Application Repository](https://charts.kubesphere.io/)
 
 ## Adding application repositories
 
 1. Create a Workspace, and then in the Workspace, go to `Workspace Management → Application Repository` and click `Create Application Repository`.
 
-![](https://pek3b.qingstor.com/kubesphere-docs/png/20191025004747.png)
+    ![repo](https://pek3b.qingstor.com/kubesphere-docs/png/20191025004747.png)
 
-2. In the Add Repository window, fill in the URL with `https://helm-chart-repo.pek3a.qingstor.com/kubernetes-charts/`, and then create the repository after verification.
+2. In the Add Repository window, fill in the URL with `https://charts.kubesphere.io/main`, and then create the repository after verification.
 
+    - Repository Name: Give a simple and clear name to the repository, which is easy for users to browse and search.
+    - Type: Helm Chart type application is supported.
+    - URL: The following three protocols are supported
+        - The URL is S3 styled, e.g. `s3.<zone-id>.qingstor.com/<bucket-name>/` to access the QingStor service using the S3 interface.
+        - HTTP: readable, not writable, only supports fetching applications from this application repository (object storage) and deploying to the runtime environment, e.g., enter `http://docs-repo.gd2.qingstor.com`. This example contains a sample Nginx application that will be automatically imported into the platform after creation, and can be done in the application template Deployment.
+        - HTTPS: readable, not writable, supports only getting applications from this application repository, supports deployment to a runtime environment.
 
-- Repository Name: Give a simple and clear name to the repository, which is easy for users to browse and search.
-- Type: Helm Chart type application is supported.
-- URL: The following three protocols are supported
-   - The URL is S3 styled, e.g. `s3.<zone-id>.qingstor.com/<bucket-name>/` to access the QingStor service using the S3 interface.
-   - HTTP: readable, not writable, only supports fetching applications from this application repository (object storage) and deploying to the runtime environment, e.g., enter `http://docs-repo.gd2.qingstor.com`. This example contains a sample Nginx application that will be automatically imported into the platform after creation, and can be done in the application template Deployment.
-   - HTTPS: readable, not writable, supports only getting applications from this application repository, supports deployment to a runtime environment.
+    - Description information: a brief description of the main features of the application repository to give users a better understanding of the application repository.
 
-- Description information: a brief description of the main features of the application repository to give users a better understanding of the application repository.
-
-If the validation is passed, click the **Confirm** button to complete the addition of the application repository. Once the repository is added, KubeSphere will automatically load all the application templates under the repository.
+3. If the validation is passed, click the **Confirm** button to complete the addition of the application repository. Once the repository is added, KubeSphere will automatically load all the application templates under the repository.
 
 > Note that the example repository added above is a mirror of Google's Helm repository (we will be developing a commercial version of the application repository for enterprise use in the future), and some of these applications may not be successfully deployed.
 
