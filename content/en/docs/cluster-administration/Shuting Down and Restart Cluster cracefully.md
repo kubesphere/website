@@ -17,6 +17,7 @@ Usually we recommend one by one maintenance nodes instead of restarting cluster.
 
 ### Prerequisites
 Take an [etcd buckup](https://github.com/etcd-io/etcd/blob/master/Documentation/op-guide/recovery.md#snapshotting-the-keyspace) prior to shutting down the cluster.
+Ssh [keyless login](https://man.openbsd.org/ssh.1#AUTHENTICATION) is set up between hosts.
 
 ### Shutting Down the Cluster
 {{< notice warning >}}
