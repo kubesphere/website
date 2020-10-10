@@ -25,20 +25,24 @@ This tutorial walks you through an example of how to create Keepalived and HAPro
 
 ## Prepare Linux Hosts
 
-This tutorial creates 9 virtual machines of **CentOS Linux release 7.6.1810 (Core)** with the default minimal installation. Every machine has 2 Cores, 4 GB memory and 40 G disk space.
+This tutorial creates 8 virtual machines of **CentOS Linux release 7.6.1810 (Core)** with the default minimal installation. Every machine has 2 Cores, 4 GB memory and 40 G disk space.
 
 
 | Host IP | Host Name | Role |
 | --- | --- | --- |
-|10.10.71.214|master1|master1, etcd|
-|10.10.71.73|master2|master2, etcd|
-|10.10.71.62|master3|master3, etcd|
-|10.10.71.75|node1|node|
-|10.10.71.76|node2|node|
-|10.10.71.79|node3|node|
-|10.10.71.67|vip|vip|
+|10.10.71.214|master1|master, etcd|
+|10.10.71.73|master2|master, etcd|
+|10.10.71.62|master3|master, etcd|
+|10.10.71.75|node1|worker|
+|10.10.71.76|node2|worker|
+|10.10.71.79|node3|worker|
+|10.10.71.67|vip|vip(No need to create a VM)|
 |10.10.71.77|lb-0|lb (Keepalived + HAProxy)|
 |10.10.71.66|lb-1|lb (Keepalived + HAProxy)|
+
+{{< notice warning >}}
+The `vip` is a virtual IP, there is no need to create a virtual machine, so only 8 virtual machines need to be created.
+{{</ notice >}}
 
 Create virtual machines in the VMware Host Client. You can follow the New Virtual Machine wizard to create a virtual machine to place in the VMware Host Client inventory.
 

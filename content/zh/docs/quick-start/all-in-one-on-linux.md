@@ -37,8 +37,30 @@ The system requirements above and the instructions below are for the default min
 
 - The node can be accessed through `SSH`.
 - `sudo`/`curl`/`openssl` should be used.
-- `ebtables`/`socat`/`ipset`/`conntrack` should be installed in advance.
 - `docker` can be installed by yourself or by KubeKey.
+
+{{< notice note >}}
+
+`docker` must be installed in advance if you want to deploy KubeSphere in an offline environment.
+
+{{</ notice >}} 
+
+### Dependency Requirements
+
+KubeKey can install Kubernetes and KubeSphere together. The dependency that needs to be installed may be different based on the Kubernetes version to be installed. You can refer to the list below to see if you need to install relevant dependencies on your node in advance.
+
+| Dependency  | Kubernetes Version ≥ 1.18 | Kubernetes Version < 1.18 |
+| ----------- | ------------------------- | ------------------------- |
+| `socat`     | Required                  | Optional but recommended  |
+| `conntrack` | Required                  | Optional but recommended  |
+| `ebtables`  | Optional but recommended  | Optional but recommended  |
+| `ipset`     | Optional but recommended  | Optional but recommended  |
+
+{{< notice info >}}
+
+Developed in Go language, KubeKey represents a brand-new installation tool as a replacement for the ansible-based installer used before. KubeKey provides users with flexible installation choices, as they can install KubeSphere and Kubernetes separately or install them at one time, which is convenient and efficient.
+
+{{</ notice >}}
 
 ### Network and DNS Requirements
 
@@ -80,17 +102,11 @@ wget https://github.com/kubesphere/kubekey/releases/download/v1.0.0/kubekey-v1.0
 
 {{</ tabs >}}
 
-Grant the execution right to `kk`:
+Make `kk` executable:
 
 ```bash
 chmod +x kk
 ```
-
-{{< notice info >}}
-
-Developed in Go language, KubeKey represents a brand-new installation tool as a replacement for the ansible-based installer used before. KubeKey provides users with flexible installation choices, as they can install KubeSphere and Kubernetes separately or install them at one time, which is convenient and efficient.
-
-{{</ notice >}}
 
 ## Step 3: Get Started with Installation
 
@@ -120,12 +136,6 @@ After you execute the command, you will see a table as below for environment che
 ![environment-check](https://ap3.qingstor.com/kubesphere-website/docs/environment-check.png)
 
 Make sure the above components marked with `y` are installed and input `yes` to continue.
-
-{{< notice note >}}
-
-If you download the binary file directly in Step 2, you do not need to install `docker` as KubeKey will install it automatically.
-
-{{</ notice >}}
 
 ## Step 4: Verify the Installation
 
@@ -171,7 +181,7 @@ You may need to bind EIP and configure port forwarding in your environment for e
 
 After logging in the console, you can check the status of different components in **Components**. You may need to wait for some components to be up and running if you want to use related services. You can also use `kubectl get pod --all-namespaces` to inspect the running status of KubeSphere workloads.
 
-![components](https://ap3.qingstor.com/kubesphere-website/docs/components.png)
+![components](/images/docs/quickstart/kubesphere-components.png)
 
 ## Enable Pluggable Components (Optional)
 

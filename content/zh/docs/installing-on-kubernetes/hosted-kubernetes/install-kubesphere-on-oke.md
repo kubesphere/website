@@ -1,71 +1,71 @@
 ---
-title: "Deploy KubeSphere on Oracle OKE"
-keywords: 'Kubernetes, KubeSphere, OKE, Installation, Oracle-cloud'
-description: 'How to install KubeSphere on Oracle OKE'
+title: "在 Oracle OKE 上部署 KubeSphere"
+keywords: 'Kubernetes, KubeSphere, OKE, 安装, Oracle-cloud'
+description: '如何在 Oracle OKE 上安装 KubeSphere'
 
 weight: 2247
 ---
 
-This guide walks you through the steps of deploying KubeSphere on [Oracle Kubernetes Engine](https://www.oracle.com/cloud/compute/container-engine-kubernetes.html).
+本文演示在 [Oracle Kubernetes Engine](https://www.oracle.com/cn/cloud/compute/container-engine-kubernetes.html) 上部署 KubeSphere 的步骤。
 
-## Create a Kubernetes Cluster
+## 创建 Kubernetes 集群
 
-- A standard Kubernetes cluster in OKE is a prerequisite of installing KubeSphere. Go to the navigation menu and refer to the image below to create a cluster.
+1. 在 OKE 上创建一个标准的 Kubernetes 集群是安装 KubeSphere 的前提条件。在导航栏中，请参考下图创建集群。
 
-![oke-cluster](https://ap3.qingstor.com/kubesphere-website/docs/oke-cluster.jpg)
+![创建集群](/images/docs/zh-cn/installing-on-kubernetes/hosted-kubernetes/install-kubesphere-on-oke/创建集群.jpg)
 
-- In the pop-up window, select **Quick Create** and click **Launch Workflow**.
+2. 在弹出窗口中，选择**快速创建**并点击**启动工作流**。
 
-![oke-quickcreate](https://ap3.qingstor.com/kubesphere-website/docs/oke-quickcreate.jpg)
-
-{{< notice note >}}
-
-In this example, **Quick Create** is used for demonstration which will automatically create all the resources necessary for a cluster in Oracle Cloud. If you select **Custom Create**, you need to create all the resources (such as VCN and LB Subnets) yourself.
-
-{{</ notice >}} 
-
-- Next, you need to set the cluster with basic information. Here is an example for your reference. When you finish, click **Next**.
-
-![](https://ap3.qingstor.com/kubesphere-website/docs/cluster-setting.jpg)
+![快速创建](/images/docs/zh-cn/installing-on-kubernetes/hosted-kubernetes/install-kubesphere-on-oke/快速创建.jpg)
 
 {{< notice note >}}
 
-- Supported Kubernetes versions for KubeSphere 3.0.0: 1.15.x, 1.16.x, 1.17.x, 1.18.x.
-- It is recommended that you should select **Public** for **Visibility Type**, which will assign a public IP address for every node. The IP address can be used later to access the web console of KubeSphere.
-- In Oracle Cloud, a Shape is a template that determines the number of CPUs, amount of memory, and other resources that are allocated to an instance. `VM.Standard.E2.2 (2 CPUs and 16G Memory)` is used in this example. For more information, see [Standard Shapes](https://docs.cloud.oracle.com/en-us/iaas/Content/Compute/References/computeshapes.htm#vmshapes__vm-standard).
-- 3 nodes are included in this example. You can add more nodes based on your own needs especially in a production environment.
+本示例演示**快速创建**，Oracle Cloud 通过此模式会为集群自动创建所必需的资源。如果您选择**定制创建**，您需要自己创建所有资源（例如 VCN 和负载均衡器子网）。
 
 {{</ notice >}} 
 
-- Review cluster information and click **Create Cluster** if no adjustment is needed.
+3. 接下来，您需要为集群设置基本信息（可参考以下图例）。完成后，请点击**下一步**。
 
-![](https://ap3.qingstor.com/kubesphere-website/docs/create-cluster.jpg)
+![集群基本信息](/images/docs/zh-cn/installing-on-kubernetes/hosted-kubernetes/install-kubesphere-on-oke/集群基本信息.jpg)
 
-- After the cluster is created, click **Close**.
+{{< notice note >}}
 
-![cluster-ready](https://ap3.qingstor.com/kubesphere-website/docs/cluster-ready.jpg)
+- KubeSphere 3.0.0 所支持的 Kubernetes 版本：1.15.x, 1.16.x, 1.17.x, 1.18.x。
+- 建议您在**可见性类型**中选择**公共**，即每个节点会分配到一个公共 IP 地址，此地址之后可用于访问 KubeSphere Web 控制台。
+- 在 Oracle Cloud 中，**配置**定义了一个实例会分配到的 CPU 和内存等资源量，本示例使用 `VM.Standard.E2.2 (2 CPUs and 16G Memory)`。有关更多信息，请参见 [Standard Shapes](https://docs.cloud.oracle.com/en-us/iaas/Content/Compute/References/computeshapes.htm#vmshapes__vm-standard)。
+- 本示例包含 3 个节点，您可以根据需求自行添加节点（尤其是生产环境）。
 
-- Make sure the Cluster Status is **Active** and click **Access Cluster**.
+{{</ notice >}} 
 
-![access-cluster](https://ap3.qingstor.com/kubesphere-website/docs/access-cluster.jpg)
+4. 检查集群信息，确认无需修改后点击**创建集群**。
 
-- In the pop-up window, select **Cloud Shell Access** to access the cluster. Click **Launch Cloud Shell** and copy the code provided by Oracle Cloud.
+![完成创建集群](/images/docs/zh-cn/installing-on-kubernetes/hosted-kubernetes/install-kubesphere-on-oke/完成创建集群.jpg)
 
-![cloud-shell-access](https://ap3.qingstor.com/kubesphere-website/docs/cloudshell-access.png)
+5. 集群创建后，点击**关闭**。
 
-- In Cloud Shell, paste the command so that we can execute the installation command later.
+![集群创建完成](/images/docs/zh-cn/installing-on-kubernetes/hosted-kubernetes/install-kubesphere-on-oke/集群创建完成.jpg)
 
-![cloud-shell-oke](https://ap3.qingstor.com/kubesphere-website/docs/oke-cloud-shell.png)
+6. 确保集群状态为**活动**后，点击**访问集群**。
+
+![访问集群](/images/docs/zh-cn/installing-on-kubernetes/hosted-kubernetes/install-kubesphere-on-oke/访问集群.jpg)
+
+7. 在弹出窗口中，选择 **Cloud Shell 访问权限**。点击**启动 Cloud Shell**，并将 Oracle Cloud 所提供的命令复制到 Cloud Shell。
+
+![启动Cloud-shell](/images/docs/zh-cn/installing-on-kubernetes/hosted-kubernetes/install-kubesphere-on-oke/启动Cloud-shell.jpg)
+
+8. 在 Cloud Shell 中，粘贴该命令以便之后可以执行 KubeSphere 安装命令。
+
+![cloud-shell-oke](/images/docs/zh-cn/installing-on-kubernetes/hosted-kubernetes/install-kubesphere-on-oke/cloud-shell-oke.jpg)
 
 {{< notice warning >}}
 
-If you do not copy and execute the command above, you cannot proceed with the steps below.
+如果您不在 Cloud Shell 中执行该命令，您无法继续进行以下操作。
 
 {{</ notice >}}
 
-## Install KubeSphere on OKE
+## 在 OKE 上安装 KubeSphere
 
-- Install KubeSphere using kubectl. The following command is only for the default minimal installation.
+1. 使用 kubectl 安装 KubeSphere。直接输入以下命令会默认执行 KubeSphere 的最小化安装。
 
 ```bash
 kubectl apply -f https://raw.githubusercontent.com/kubesphere/ks-installer/v3.0.0/deploy/kubesphere-installer.yaml
@@ -75,13 +75,13 @@ kubectl apply -f https://raw.githubusercontent.com/kubesphere/ks-installer/v3.0.
 kubectl apply -f https://raw.githubusercontent.com/kubesphere/ks-installer/v3.0.0/deploy/cluster-configuration.yaml
 ```
 
-- Inspect the logs of installation:
+2. 检查安装日志：
 
 ```bash
 kubectl logs -n kubesphere-system $(kubectl get pod -n kubesphere-system -l app=ks-install -o jsonpath='{.items[0].metadata.name}') -f
 ```
 
-- When the installation finishes, you can see the following message:
+3. 安装完成后会输出以下信息：
 
 ```bash
 #####################################################
@@ -104,37 +104,37 @@ NOTES：
 https://kubesphere.io             20xx-xx-xx xx:xx:xx
 ```
 
-## Access KubeSphere Console
+## 访问 KubeSphere 控制台
 
-Now that KubeSphere is installed, you can access the web console of KubeSphere either through `NodePort` or `LoadBalancer`.
+KubeSphere 安装完成后，您可以通过 `NodePort` 或 `LoadBalancer` 的模式访问 KubeSphere 的 Web 控制台。
 
-- Check the service of KubeSphere console through the following command:
+1. 通过以下命令查看 KubeSphere 控制台的服务状态。
 
 ```bash
 kubectl get svc -n kubesphere-system
 ```
 
-- The output may look as below. You can change the type to `LoadBalancer` so that the external IP address can be exposed.
+2. 输出如下，您可以将类型修改为 `LoadBalancer`，从而暴露外部 IP 地址。
 
 ![console-nodeport](https://ap3.qingstor.com/kubesphere-website/docs/nodeport-console.jpg)
 
 {{< notice tip >}}
 
-It can be seen above that the service `ks-console` is being exposed through NodePort, which means you can access the console directly via `NodeIP:NodePort` (the public IP address of any node is applicable). You may need to open port `30880` in firewall rules.
+在上图中，`ks-console` 服务通过 `NodePort` 的类型暴露，即您可以通过 `NodeIP:NodePort` 的方式直接访问 Web 控制台（任意节点的公共 IP 都可用）。您可能需要在防火墙中提前开启端口 30880。
 
 {{</ notice >}}
 
-- Execute the command to edit the service configuration.
+3. 执行以下命令编辑服务配置。
 
 ```bash
 kubectl edit svc ks-console -o yaml -n kubesphere-system
 ```
 
-- Navigate to `type` and change `NodePort` to `LoadBalancer`. Save the configuration after you finish.
+4. 将 `type` 字段所对应的值修改为 `LoadBalancer`，然后保存配置。
 
 ![](https://ap3.qingstor.com/kubesphere-website/docs/change-service-type.png)
 
-- Execute the following command again and you can see the IP address displayed as below.
+5. 再次执行以下命令，您可以看到 IP 地址现已暴露（如下图）。
 
 ```bash
 kubectl get svc -n kubesphere-system
@@ -142,11 +142,11 @@ kubectl get svc -n kubesphere-system
 
 ![console-service](https://ap3.qingstor.com/kubesphere-website/docs/console-service.png)
 
-- Log in the console through the external IP address with the default account and password (`admin/P@88w0rd`). In the cluster overview page, you can see the dashboard shown below:
+6. 访问此外部 IP 地址并通过默认的账号和密码 (`admin/P@88w0rd`) 登录 Web 控制台。在**集群管理**页面，您可以看到集群概览。
 
-![kubesphere-oke-dashboard](https://ap3.qingstor.com/kubesphere-website/docs/kubesphere-oke-dashboard.png)
+![概览页面](/images/docs/zh-cn/installing-on-kubernetes/hosted-kubernetes/install-kubesphere-on-oke/概览页面.jpg)
 
-## Enable Pluggable Components (Optional)
+## 启用可拔插组件（可选）
 
-The example above demonstrates the process of a default minimal installation. To enable other components in KubeSphere, see [Enable Pluggable Components](../../../pluggable-components/) for more details.
+以上示例演示默认最小化安装的流程。若要启用 KubeSphere 中的其他组件，请参见[启用可拔插组件](../../../pluggable-components/)查看详细步骤。
 

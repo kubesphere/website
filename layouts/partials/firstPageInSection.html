@@ -2,8 +2,12 @@
 {{ $firstSection := .firstSection }}
 {{ $pages := (union $s.Pages $s.Sections).ByWeight }}
 {{ $first := index $s.Pages 0}}
-{{ if $first.IsPage }}
-    <a href="{{ $first.RelPermalink }}">{{ $firstSection.LinkTitle }}</a>
+{{ if $first }}
+    {{ if $first.IsPage }}
+        <a href="{{ $first.RelPermalink }}">{{ $firstSection.LinkTitle }}</a>
+    {{ else }}
+        {{ partial "firstPageInSection" (dict "section" $first "firstSection" $firstSection)  }}
+    {{ end }}
 {{ else }}
-    {{ partial "firstPageInSection" (dict "section" $first "firstSection" $firstSection)  }}
+    <a href="{{ $s.RelPermalink }}">{{ $firstSection.LinkTitle }}</a>
 {{ end }}

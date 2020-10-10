@@ -13,22 +13,23 @@ weight: 2110
 
 为用户提供了多个安装选项。 请注意，并非所有选项都是互斥的。 例如，您可以在离线环境中的多个节点上以最小化部署 KubeSphere。
 
-- [All-in-One](../all-in-one): 在单个节点上安装 KubeSphere  。 仅用于用户快速熟悉 KubeSphere。
-- [Multi-Node](../multi-node): 在多个节点上安装 KubeSphere  。 用于测试或开发。
-- [Install KubeSphere on Air-gapped Linux](../install-ks-on-linux-airgapped): 把 KubeSphere 的所有镜像打包，方便再 Linux 上离线安装。
-- [High Availability Installation](../master-ha): 在用于生产环境的多个节点上安装高可用性 KubeSphere。
+- [All-in-One](../../../quick-start/all-in-one-on-linux/): 在单个节点上安装 KubeSphere  。 仅用于用户快速熟悉 KubeSphere。
+- [Multi-Node](../multioverview/): 在多个节点上安装 KubeSphere  。 用于测试或开发。
+- [Install KubeSphere on Air-gapped Linux](../air-gapped-installation): 把 KubeSphere 的所有镜像打包，方便再 Linux 上离线安装。
+- High Availability Installation: 在用于生产环境的多个节点上安装高可用性 KubeSphere。
 - Minimal Packages: 仅安装 KubeSphere 所需的最少系统组件。 以下是最低资源要求:
   - 2vCPUs
   - 4GB RAM
   - 40GB Storage
 - [Full Packages](../complete-installation): 安装 KubeSphere 的所有可用系统组件，例如 DevOps，ServiceMesh 和告警。
 
+
 有关在 Kubernetes 上进行安装，请参阅在 Kubernetes 上进行安装概述。
 
 ## 安装前
 
 - 由于镜像和操作系统将从网络上下载，因此您的环境必须可以访问 Internet。 否则，您需要改用离线式安装程序。
-- 对于 [All-in-One ](../all-in-one) 安装，唯一的节点是主节点和工作节点。
+- 对于 All-in-One 安装，唯一的节点是主节点和工作节点。
 - 对于多节点安装，需要在安装之前在配置文件中指定节点角色。
 - 您的 Linux 主机必须已安装 OpenSSH 服务。
 - 在安装之前，请检查[端口要求](../port-firewall) 。
@@ -45,13 +46,13 @@ KubeKey 是用 Go 语言开发的，代表了一种全新的安装工具，可�
 
 {{< notice note >}}
 
-如果您已有 Kubernetes 集群，请参考[在 Kubernetes 上安装](https://kubesphere.io/docs/installing-on-kubernetes/)。
+如果您已有 Kubernetes 集群，请参考[在 Kubernetes 上安装](../../../installing-on-kubernetes/)。
 
 {{</ notice >}} 
 
 ## 快速安装用于开发和测试
 
-自v2.1.0起，KubeSphere 已取消了某些组件的耦合。 默认情况下，KubeKey 仅安装必要的组件，因为这种方法具有安装速度快和资源消耗最少的特点。 如果要启用增强的可插拔功能，请参阅[可插拔组件概述](../ intro＃pluggable-components-overview)了解详细信息。
+自v2.1.0起，KubeSphere 已取消了某些组件的耦合。 默认情况下，KubeKey 仅安装必要的组件，因为这种方法具有安装速度快和资源消耗最少的特点。 如果要启用增强的可插拔功能，请参阅[可插拔组件概述](../../../pluggable-components/)了解详细信息。
 
 快速安装KubeSphere仅用于开发或测试，因为默认情况下它使用本地卷进行存储。 如果要进行生产安装，请参阅“ HA群集配置”。
 
@@ -60,7 +61,7 @@ KubeKey 是用 Go 语言开发的，代表了一种全新的安装工具，可�
 
 {{< notice note >}}
 
-关于离线安装，请参考[在 Linux 上离线安装 KubeSphere](../ install-ks-on-linux-airgapped)。
+关于离线安装，请参考[在 Linux 上离线安装 KubeSphere](../air-gapped-installation/)。
 
 {{</ notice >}} 
 
@@ -68,7 +69,7 @@ KubeKey 是用 Go 语言开发的，代表了一种全新的安装工具，可�
 
 KubeKey 允许用户安装高度可用的群集进行生产。用户需要预先配置负载均衡器和持久性存储服务。
 
-- [持久卷配置](../storage-configuration)：默认情况下，KubeKey 使用基于 [openEBS](https://openebs.io/) 的[本地卷](https://kubernetes.io/docs/concepts/storage/volumes/#local)在 Kubernetes 集群中为存储服务提供动态配置。这对于快速安装测试环境非常方便。在生产环境中，必须设置存储服务器。有关详细信息，请参阅[Persistent Storage Configuration](../ storage-configuration)。
+- [持久卷配置](../storage-configuration)：默认情况下，KubeKey 使用基于 [openEBS](https://openebs.io/) 的[本地卷](https://kubernetes.io/docs/concepts/storage/volumes/#local)在 Kubernetes 集群中为存储服务提供动态配置。这对于快速安装测试环境非常方便。在生产环境中，必须设置存储服务器。有关详细信息，请参阅[Persistent Storage Configuration](../storage-configuration)。
 - [用于HA安装的负载均衡器配置](../master-ha)：在生产环境中开始进行多节点安装之前，需要配置负载均衡器。云负载均衡器，Nginx 和 `HAproxy + Keepalived`  均可用于安装。
 
 有关更多信息，请参见HA群集配置。您还可以在“在公共云上安装”中看到跨主要云提供商进行HA安装的特定步骤。
@@ -93,7 +94,7 @@ KubeKey 允许用户安装高度可用的群集进行生产。用户需要预先
 
 ### 添加新节点
 
-使用 KubeKey，您可以扩展节点的数量，以在安装后满足更高的资源需求，尤其是在生产环境中。 有关更多信息，请参阅[添加新节点](../../cluster-operation/add-new-nodes)。
+使用 KubeKey，您可以扩展节点的数量，以在安装后满足更高的资源需求，尤其是在生产环境中。 有关更多信息，请参阅[添加新节点](../../../installing-on-linux/cluster-operation/add-new-nodes/)。
 
 ### 删除节点
 
@@ -109,4 +110,4 @@ KubeKey 允许您在安装后设置新的存储类。 您可以为 KubeSphere �
 
 卸载 KubeSphere 意味着将其从计算机中删除，这是不可逆的。 请谨慎操作。
 
-有关更多信息，请参见[卸载](..././uninstalling/uninstalling-kubesphere-and-kubernetes)。
+有关更多信息，请参见[卸载](../../../installing-on-linux/uninstalling/uninstalling-kubesphere-and-kubernetes/)。

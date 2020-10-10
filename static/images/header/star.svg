@@ -1,0 +1,23 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="8" height="8" viewBox="0 0 8 8">
+    <defs>
+        <linearGradient id="kedyptodua" x1="71.36%" x2="71.36%" y1="50%" y2="-49.077%">
+            <stop offset="0%" stop-color="#ECAF24"/>
+            <stop offset="100%" stop-color="#FFF8CB"/>
+        </linearGradient>
+    </defs>
+    <g fill="none" fill-rule="evenodd">
+        <g fill-rule="nonzero">
+            <g>
+                <g>
+                    <g>
+                        <g>
+                            <g>
+                                <path fill="url(#kedyptodua)" d="M4.462.828l.631 1.335c.076.158.22.268.388.293l1.411.214c.422.064.59.605.285.916L6.156 4.624c-.122.124-.177.302-.148.476l.241 1.466c.072.44-.37.774-.747.567L4.24 6.44c-.15-.082-.33-.082-.48 0l-1.262.693c-.378.207-.82-.128-.747-.567L1.992 5.1c.029-.174-.026-.352-.148-.476L.823 3.587c-.306-.311-.137-.852.285-.916l1.411-.214c.168-.025.312-.135.388-.293L3.539.828c.189-.399.734-.399.923 0z" transform="translate(-800 -85) translate(738 69) translate(0 15) translate(20) translate(42 1)"/>
+                            </g>
+                        </g>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

@@ -2,9 +2,11 @@ baseURL = "https://kubesphere-v3.netlify.app"
 
 [markup]
   [markup.tableOfContents]
-    endLevel = 4
+    endLevel = 3
     ordered = false
     startLevel = 2
+  [markup.goldmark.renderer]
+    unsafe= true
 
 
 [params]
@@ -100,7 +102,7 @@ hasChildren = true
 
     [[languages.en.menu.main]]
     parent = "Documentation"
-    name = "v3.0.0"
+    name = "v3.0.0 <img src='/images/header/star.svg' alt='star'>"
     URL = "docs/"
     weight = 1
 
@@ -226,7 +228,7 @@ hasChildren = true
 name = "文档中心"
     [[languages.zh.menu.main]]
     parent = "文档中心"
-    name = "v3.0.0"
+    name = "v3.0.0 <img src='/images/header/star.svg' alt='star'>"
     URL = "docs/"
     weight = 1
 

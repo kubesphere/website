@@ -28,7 +28,7 @@
                 {{ range .list }}
                 <div>
                     <img src="{{ .image }}" alt="">
-                    <p>{{ .content }}</p>
+                    <p><a href="{{ .link }}">{{ .content }}</a></p>
                 </div>
                 {{ end }}
             </div>

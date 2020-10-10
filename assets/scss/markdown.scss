@@ -164,7 +164,7 @@
 }
 
 .md-body h2 {
-  font-size: 32px;
+  font-size: 1.8em;
   font-weight: normal;
   line-height: 1.63;
   text-align: center;
@@ -250,6 +250,10 @@
   width: 100%;
   overflow: auto;
   border-collapse: collapse;
+}
+
+.md-body table a {
+  word-break: break-word;
 }
 
 .md-body table th {

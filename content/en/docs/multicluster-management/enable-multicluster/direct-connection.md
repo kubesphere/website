@@ -65,8 +65,8 @@ kubectl logs -n kubesphere-system $(kubectl get pod -n kubesphere-system -l app=
 ```
 
 ### Prepare a Member Cluster
-
-In order to manage the member cluster within the host cluster, you need to make `jwtSecret` the same between them. Therefore, you need to get it first from the host cluster by the following command.
+  
+In order to manage the member cluster within the **host cluster**, you need to make `jwtSecret` the same between them. Therefore, you need to get it first from the **host cluster** by the following command.
 
 ```bash
 kubectl -n kubesphere-system get cm kubesphere-config -o yaml | grep -v "apiVersion" | grep jwtSecret
@@ -142,7 +142,7 @@ kubectl logs -n kubesphere-system $(kubectl get pod -n kubesphere-system -l app=
 
 ![Add Cluster](https://ap3.qingstor.com/kubesphere-website/docs/20200827231611.png)
 
-2. Enter the basic information of the cluster and click **Next**.
+2. Enter the basic information of the cluster to be imported and click **Next**.
 
 ![Import Cluster](https://ap3.qingstor.com/kubesphere-website/docs/20200827211842.png)
 

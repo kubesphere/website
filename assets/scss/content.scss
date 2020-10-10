@@ -78,7 +78,6 @@
         }
       
         .md-body h2 {
-          font-size: 24px;
           font-weight: 500;
           line-height: 64px;
           color: #171c34;
@@ -89,7 +88,6 @@
         }
       
         .md-body h3 {
-          font-size: 16px;
           font-weight: 600;
           line-height: 1.5;
           color: #171c34;
@@ -142,12 +140,22 @@
     }
 
     .aside {
+      position: fixed;
+      top: 150px;
+      left: 50%;
+      bottom: 10px;
+      transform: translateX(350px);
       width: 230px;
-      max-height: 700px;
-      overflow: scroll;
       @media only screen and (max-width: $mobile-max-width) {
         display: none;
       }
+
+      .inner-div {
+        max-height: 100%;
+        position: relative;
+        overflow-y: auto;
+    }
+
       .title {
         height: 32px;
         font-size: 24px;
@@ -178,26 +186,15 @@
               color: #55bc8a;
             }
           }
+
+          .active {
+            color: #55bc8a;
+          }
         }
         li li {
           padding-left: 20px;
         }
       }
-    }
-
-    .aside-fixed {
-      position: fixed;
-      top: 150px;
-      left: 50%;
-      transform: translateX(350px);
-    }
-
-    .aside-absolute {
-      position: absolute;
-      right: 0;
-      bottom: 0;
-      top: none;
-      left: none;
     }
   }
 }

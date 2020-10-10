@@ -22,19 +22,23 @@ description: 'How to install KubeSphere on VMware vSphere Linux machines'
 
 ## 创建主机
 
-本示例创建 9 台 **CentOS Linux release 7.6.1810（Core）**  的虚拟机，默认的最小化安装，每台配置为 2 Core 4 GB 40 G 即可。
+本示例创建 8 台 **CentOS Linux release 7.6.1810（Core）**  的虚拟机，默认的最小化安装，每台配置为 2 Core 4 GB 40 G 即可。
 
 | 主机 IP | 主机名称 | 角色 |
 | --- | --- | --- |
-|10.10.71.214|master1|master1, etcd|
-|10.10.71.73|master2|master2, etcd|
-|10.10.71.62|master3|master3, etcd|
-|10.10.71.75|node1|node|
-|10.10.71.76|node2|node|
-|10.10.71.79|node3|node|
-|10.10.71.67|vip|vip|
+|10.10.71.214|master1|master, etcd|
+|10.10.71.73|master2|master, etcd|
+|10.10.71.62|master3|master, etcd|
+|10.10.71.75|node1|worker|
+|10.10.71.76|node2|worker|
+|10.10.71.79|node3|worker|
+|10.10.71.67|vip|虚拟 IP（不是实际的主机）|
 |10.10.71.77|lb-0|lb（keepalived + haproxy）|
 |10.10.71.66|lb-1|lb（keepalived + haproxy）|
+
+{{< notice warning >}}
+vip 所在的是虚拟 IP，并不需要创建主机，所以只需要创建8台虚拟机。
+{{</ notice >}}
 
 选择可创建的资源池，点击右键-新建虚拟机（创建虚拟机入口请好几个，自己选择）
 
