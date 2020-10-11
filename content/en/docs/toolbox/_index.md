@@ -19,4 +19,3 @@ Understand how you can perform quick log queries to keep track of the latest log
 ## [Web Kubectl](../toolbox/web-kubectl/)
 
 The web kubectl tool is integrated into KubeSphere to provide consistent user experiences for Kubernetes users.
-
