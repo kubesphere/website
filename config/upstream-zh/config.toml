@@ -3,3 +3,5 @@ defaultContentLanguage = "zh"
 
 [params]
 showCaseNumber = true
+
+mailchimpSubscribeUrl = "https://yunify.us2.list-manage.com/subscribe/post?u=f29f08cef80223b46bad069b5&amp;id=4838e610c2"
