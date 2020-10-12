@@ -20,9 +20,7 @@ With Kubernetes, you don't need to modify your application to use an unfamiliar 
 
 {{< notice tip>}}
 
-In Kubesphere, the **Virtual IP** is a default type of a service that is created by **stateless** or **stateful**.<br />
-
-If you want to create a Headless service, you should use the mode of **YAML**.
+In KubeSphere, stateful and stateless services are created with a virtual IP by default. If you want to create a Headless service, use **YAML** to configure it directly.
 
 {{</ notice>}}
 
@@ -35,25 +33,21 @@ If you want to create a Headless service, you should use the mode of **YAML**.
 
 ![create_service_type](/images/docs/project-user-guide/workloads/create_service_type.png)
 
-Create a service that has these methods in the Kubesphere: **Stateless Service**, **Stateful Service**, and **External Service**. what's more, you can custom creation through **Specify Workloads** and **Edit by YAML**.
+As shown in the image, KubeSphere provides three basic methods to create a service: **Stateless Service**, **Stateful Service**, and **External Service**. Besides, you can also customize a service through **Specify Workloads** and **Edit by YAML** under **Custom Creation**.
 
 There are some ways to create a service
 
 - **Stateless Service**
 
-  Create a Stateless Service also create a **Deployment** workload.
-
-  For more information **Stateless**, please visit [Deployment](../../application-workloads/deployments)
+  A **Deployment** workload is also created when you create a stateless service. For more information about stateless services, see [Deployment](../../application-workloads/deployments)
 
 - **Stateful Service**
 
-  Create a Stateless Service also create a **Statefulset** workload.
-
-  For more information **Statefulset**, please visit [Statefulset](../../application-workloads/statefulsets)
+  A **StatefulSet** workload is also created when you create a stateful service. For more information about stateful services, see [Statefulset](../../application-workloads/statefulsets)
 
 - **External Service**
 
-  The service created by External Service is a service internet access method. It is different from Stateless and stateful.
+  Different from stateless and stateful services, an ExternalName service maps a service to a DNS name instead of a selector. You need to specify these services in the `externalName` field.
 
 - **Specify Workloads**
 
@@ -61,7 +55,7 @@ There are some ways to create a service
 
 - **Edit by YAML**
 
-  Create directly with Yaml, you can upload and download Yaml configuration files
+  Create a service directly with YAML. You can upload and download YAML configuration files to and from the console.
 
 {{< notice tip>}}
 
@@ -73,7 +67,7 @@ There are some ways to create a service
 
 Into **Application Workload**, click **Services**
 
-### Step 1: click the **Create**, choose **Stateless Service**
+### Step 1: click **Create**, and choose **Stateless Service**
 
 ![services_lists](/images/docs/project-user-guide/workloads/services_lists.png)
 
@@ -89,7 +83,7 @@ Into **Application Workload**, click **Services**
 
 {{< notice tip >}}
 
-**Name** have named two configs, `Deployment` and `Service`.
+The value of **Name** is used in both configurations, one for `Deployment` and the other for `Service`.
 
 {{</ notice>}}
 
@@ -148,7 +142,7 @@ Refer to [Deployment Advanced Settings](../deployments) for details.
 
 ![stateless_finish](/images/docs/project-user-guide/workloads/services_lists_finish.png)
 
-Now the Stateless Service has created, you can click it to view more information about it.also you can click **More** to operate this service item include edit config and delete.
+After the stateless service is created, you can click the three dots on the right to further edit it, such as its metadata (excluding **Name**), YAML, port, and Internet access.
 
 - **Edit**: Edit the base data.
 - **Edit YAML**: Edit the YAML config.
@@ -160,8 +154,8 @@ Now the Stateless Service has created, you can click it to view more information
 
 ![stateless_finish](/images/docs/project-user-guide/workloads/services_detail.png)
 
-- The **More** Operations is the same which in the services list.
+- Click **More** to expand the drop-down menu which is the same as the one in the service list.
 - The pod list provides the pod's detail information(conditions, phase, node, pod ip, monitoring).
-- You can view the container info by click the pod item.
+- You can view the container info by clicking the pod item.
 - Click the container log icon to view the output logs of the container.
-- You can view the pod detail page by click the pod name.
+- You can view the pod detail page by clicking the pod name.
