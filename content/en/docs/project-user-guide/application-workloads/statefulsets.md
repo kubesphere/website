@@ -31,7 +31,7 @@ StatefulSets are valuable for applications that require one or more of the follo
 
 ## Create a StatefulSets
 
-In the kubesphere, when creating a StatefulSets, a **Handless** service is also created. When you had created, you can go to services to find it.
+In KubeSphere, a **Headless** service is also created when you create a StatefulSet. You can find the headless service in **Services** under **Application Workloads** in a project.
 
 ### Step 1: Click Create
 
@@ -53,13 +53,13 @@ Click the **Add Container Image** area.
 
 ![statefulsets](/images/docs/project-user-guide/workloads/statefulsets_form_2_container_btn.png)
 
-You can input or select the image which in the public docker hub or private image repository you want to use.
+You can input an image name to use the image from public Docker Hub or select an image from a private repository you want to use.
 
 ![statefulsets](/images/docs/project-user-guide/workloads/statefulsets_form_2_container_1.png)
 
 - **Image Name**
 
-  You can click the icon or input the image name to search it. kubesphere provide the Dockerhub image and your private image repository. If you want to use your private image repository, you should create a docker hub secret first in **Configurations** **Secrets**
+  You can click the cube icon or input the image name to search it. KubeSphere provides Docker Hub images and your private image repository. If you want to use your private image repository, you should create a Docker Hub secret first in **Secrets** under **Configurations**.
 
 - **Image Tag**
 
@@ -67,13 +67,13 @@ You can input or select the image which in the public docker hub or private imag
 
 - **container type**
 
-  Choose Init Container，It means that to create the Init Container。 For more information about Init Container, please visit [Init Container](https://kubernetes.io/docs/concepts/workloads/pods/init-containers/?spm=a2c4g.11186623.2.19.16704b3e9qHXPb)
+  Choose **Init Container**, which means the init container will be created for the workload. For more information about init containers, please visit [Init Container](https://kubernetes.io/docs/concepts/workloads/pods/init-containers/?spm=a2c4g.11186623.2.19.16704b3e9qHXPb)
 
 ![statefulsets](/images/docs/project-user-guide/workloads/statefulsets_form_2_container_2.png)
 
 - **Resource Request**
 
-  The resource quota reserved by the container includes both CPU and memory resources. That is the container monopolizes the resource, preventing other services or processes from competing for resources due to insufficient resources, causing the application to become unavailable.
+  The resource quota reserved by the container includes both CPU and memory resources.It means the container monopolizes the resource, preventing other services or processes from competing for resources due to insufficient resources, causing the application to become unavailable.
 
   - CPU Request is `spec.containers[].resources.requests.cpu`. The CPU request can be exceeded.
   - Memory Request is `spec.containers[].resource.memory`. The Memory request can be exceeded but the container may clear up when Node memory is insufficient
@@ -162,7 +162,7 @@ You can input or select the image which in the public docker hub or private imag
 
 - **Container Security Context**
 
-  A security context defines privilege and access control settings for a Pod or Container. [Pod Security Policies](https://kubernetes.io/docs/concepts/policy/pod-security-policy/).
+  A security context defines privilege and access control settings for a Pod or Container. For more information about the security context, please visit [Pod Security Policies](https://kubernetes.io/docs/concepts/policy/pod-security-policy/).
 
 - **Sync Host Timezone**
 
@@ -178,17 +178,17 @@ You can input or select the image which in the public docker hub or private imag
 
   - **RollingUpdate (Recommended)**
 
-    When  `.spec.template` should update, The Pods in the StatefulSet are automatically deleted and create a new Pod to replace. When updating, these Pods are performed in reverse order, sequentially deleting, creating, and waiting for the Pod to become Ready before proceeding to the next Pod update.
+    If `.spec.template` is updated, the pods in the StatefulSet will be automatically deleted with new pods created as replacements. Pods are updated in reserve ordinal order, sequentially deleted and created. A new pod update will not begin until the previous Pod becomes up and running after it is updated.
 
   - **OnDelete**
 
-    When  `.spec.template` should update, The Pods in the StatefulSet are not automatically updated. The Pod must be manually deleted so that the controller can create a new Pod to react to its update.
+    If `.spec.template` is updated, the pods in the StatefulSet will not be automatically updated. You need to manually delete old pods so that the controller can create new pods.
 
   For more information about the update strategy, please visit [Statefulset Update-Strategies](https://kubernetes.io/docs/concepts/workloads/controllers/statefulset/#update-strategies).
 
 - **The number of Pods when updated**
 
-  The Partitions is mean which pods you want to update through the rolling update. It specifying by `.spec.updateStrategy.rollingUpdate.partition`. The default is 0. For more information about Partitions, please visit [Partitions](https://kubernetes.io/docs/concepts/workloads/controllers/statefulset/#partitions).
+  When you partition an update, all Pods with an ordinal greater than or equal to the value you set in Partition are updated when you update the StatefulSet’s Pod specification. This field is specified in .spec.updateStrategy.rollingUpdate.partition, whose default value is 0. For more information about partitions, please visit [Partitions](https://kubernetes.io/docs/concepts/workloads/controllers/statefulset/#partitions).
 
 - **Pod Security Context**
 
@@ -196,10 +196,10 @@ You can input or select the image which in the public docker hub or private imag
 
 - **Deployment Mode**
 
-  Select different deployment modes to change the affinity and anti-affinity of the inter-pod. In k8s, the affinity is used `podAffinity` and the anti-affinity is used `podAntiAffinity`. In the Kubesphere both affinity and anti-affinity are set `preferredDuringSchedulingIgnoredDuringExecution`.
+  You can select different deployment modes to switch between inter-pod affinity and inter-pod anti-affinity. In Kubernetes, inter-pod affinity is specified as field `podAffinity` of field `affinity` while inter-pod anti-affinity is specified as field `podAntiAffinity` of field `affinity`. In KubeSphere, both `podAffinity` and `podAntiAffinity` are set to `preferredDuringSchedulingIgnoredDuringExecution`. You can enable **Edit Mode** in the top right corner to see field details.
 
-  - Pod Decentralized Deployment is mean anti-affinity
-  - Pod Aggregation Deployment is mean affinity
+  - **Pod Decentralized Deployment** represents anti-affinity.
+  - **Pod Aggregation Deployment** represents affinity.
 
   For more information about affinity and anti-affinity, please visit  [Pod affinity](https://kubernetes.io/docs/concepts/scheduling-eviction/assign-pod-node/#inter-pod-affinity-and-anti-affinity)
 
@@ -247,7 +247,7 @@ For more information about volume, please visit [Volumes](../../storage/volumes)
 
 - **Set Node Scheduling Policy**
 
-  You can allow Pod replicas to run on specified nodes. It is used `nodeSelector`.
+  You can allow Pod replicas to run on specified nodes. It is specified in the field `nodeSelector`.
 
 - **Add Metadata**
 
@@ -271,7 +271,6 @@ You can click **More** to display what other operations about this Statefulset y
 ### Statefulset Detail View
 
 ![statefulsets](/images/docs/project-user-guide/workloads/statefulsets_detail.png)
-
 
 #### Statefulset Detail Operations
 
