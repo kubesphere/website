@@ -13,21 +13,21 @@ This guide demonstrates email notification settings (customized settings support
 
 ## Prerequisites
 
-- [KubeSphere Alerting and Notification](../../../pluggable-components/alerting-notification/) needs to be enabled
+[KubeSphere Alerting and Notification](../../../pluggable-components/alerting-notification/) needs to be enabled.
 
 ## Hands-on Lab
 
 1. Log in the web console with one account granted the role  `platform-admin`.
-2. After you log in the console, click **Platform** at the top left corner and select **Cluster Management**.
+2. Click **Platform** in the top left corner and select **Clusters Management**. 
 
 ![mail_server_guide](/images/docs/alerting/mail_server_guide.png)
 
-3. If you enable multi-cluster, you have to select the cluster where you plan to configure the mail server from the cluster list, otherwise you will automatically enter the only cluster.
+3. Select a cluster from the list and enter it (If you do not enable the [multi-cluster feature](../../../multicluster-management/), you will directly go to the **Overview** page).
 4. Select **Mail Server** under **Cluster Settings**. In the page, provide your mail server configuration and SMTP authentication information as follows:
-    - **SMTP Server Address**: Fill in the SMTP server address that can provide mail service. The port is usually 25.
-    - **Use SSL Secure Connection**: SSL can be used to encrypt mails, thereby improving the security of information transmitted by mail. Usually you have to configure the certificate for the mail server.
-    - SMTP authentication information: Fill in **SMTP User**, **SMTP Password**, **Sender Email Address** and etc.
+    - **SMTP Server Address**: Fill in the SMTP server address that can provide mail services. The port is usually 25.
+    - **Use SSL Secure Connection**: SSL can be used to encrypt mails, thereby improving the security of information transmitted by mails. Usually you have to configure the certificate for the mail server.
+    - SMTP authentication information: Fill in **SMTP User**, **SMTP Password**, **Sender Email Address**, etc. as below
 
 ![mail_server_config](/images/docs/alerting/mail_server_config.png)
 
-After completing the above settings, click **Save**. You can send a test email to verify the success of the server configuration.
+5. After you complete the above settings, click **Save**. You can send a test email to verify the success of the server configuration.
