@@ -36,13 +36,13 @@ Click the **Add Container Image** area.
 
 ![deployments](/images/docs/project-user-guide/workloads/deployments_form_2_container_btn.png)
 
-You can input or select the image which in the public docker hub or private image repository you want to use.
+You can input an image name to use the image from public Docker Hub or select an image from a private repository you want to use.
 
 ![deployments](/images/docs/project-user-guide/workloads/deployments_form_2_container_1.png)
 
 - **Image Name**
 
-  You can click the icon or input the image name to search it. kubesphere provide the Dockerhub image and your private image repository. If you want to use your private image repository, you should create a docker hub secret first in **Configurations** **Secrets**
+  You can click the cube icon or input the image name to search it. KubeSphere provides Docker Hub images and your private image repository. If you want to use your private image repository, you should create a Docker Hub secret first in **Secrets** under **Configurations**.
 
 - **Image Tag**
 
@@ -50,13 +50,13 @@ You can input or select the image which in the public docker hub or private imag
 
 - **Container Type**
 
-  Choose Init Container，It means that to create the Init Container。 For more information about Init Container, please visit [Init Container](https://kubernetes.io/docs/concepts/workloads/pods/init-containers/?spm=a2c4g.11186623.2.19.16704b3e9qHXPb)
+  Choose Init Container, which means the init container will be created for the workload. For more information about init containers, please visit [Init Container](https://kubernetes.io/docs/concepts/workloads/pods/init-containers/?spm=a2c4g.11186623.2.19.16704b3e9qHXPb)
 
 ![deployments](/images/docs/project-user-guide/workloads/deployments_form_2_container_2.png)
 
 - **Resource Request**
 
-  The resource quota reserved by the container includes both CPU and memory resources. That is the container monopolizes the resource, preventing other services or processes from competing for resources due to insufficient resources, causing the application to become unavailable.
+  The resource quota reserved by the container includes both CPU and memory resources. It means the container monopolizes the resource, preventing other services or processes from competing for resources due to insufficient resources, causing the application to become unavailable.
 
   - CPU Request is `spec.containers[].resources.requests.cpu`. The CPU request can be exceeded.
   - Memory Request is `spec.containers[].resource.memory`. The Memory request can be exceeded but the container may clear up when Node memory is insufficient
@@ -145,7 +145,7 @@ You can input or select the image which in the public docker hub or private imag
 
 - **Container Security Context**
 
-  A security context defines privilege and access control settings for a Pod or Container. [Pod Security Policies](https://kubernetes.io/docs/concepts/policy/pod-security-policy/).
+  A security context defines privilege and access control settings for a Pod or Container. For more information about the security context, please visit [Pod Security Policies](https://kubernetes.io/docs/concepts/policy/pod-security-policy/).
 
 - **Sync Host Timezone**
 
@@ -186,10 +186,10 @@ You can input or select the image which in the public docker hub or private imag
 
 - **Deployment Mode**
 
-  Select different deployment modes to change the affinity and anti-affinity of the inter-pod. In k8s, the affinity is used `podAffinity` and the anti-affinity is used `podAntiAffinity`. In the Kubesphere both affinity and anti-affinity are set `preferredDuringSchedulingIgnoredDuringExecution`.
+  You can select different deployment modes to switch between inter-pod affinity and inter-pod anti-affinity. In Kubernetes, inter-pod affinity is specified as field `podAffinity` of field `affinity` while inter-pod anti-affinity is specified as field `podAntiAffinity` of field `affinity`. In KubeSphere, both `podAffinity` and `podAntiAffinity` are set to `preferredDuringSchedulingIgnoredDuringExecution`. You can enable **Edit Mode** in the top right corner to see field details.
 
-  - Pod Decentralized Deployment is mean anti-affinity
-  - Pod Aggregation Deployment is mean affinity
+  - **Pod Decentralized Deployment** represents anti-affinity.
+  - **Pod Aggregation Deployment** represents affinity.
 
   For more information about affinity and anti-affinity, please visit  [Pod affinity](https://kubernetes.io/docs/concepts/scheduling-eviction/assign-pod-node/#inter-pod-affinity-and-anti-affinity)
 
@@ -239,7 +239,7 @@ For more information about volume, please visit [Volumes](../../storage/volumes)
 
 - **Set Node Scheduling Policy**
 
-  You can allow Pod replicas to run on specified nodes. It is used `nodeSelector`.
+  You can allow Pod replicas to run on specified nodes. It is specified in the field `nodeSelector`.
 
 - **Add Metadata**
 
@@ -247,13 +247,13 @@ For more information about volume, please visit [Volumes](../../storage/volumes)
 
 ## Check Deployment Detail
 
-You can check the deployment detail via click deployment's name on the list.
+You can check the Deployment detail by clicking the Deployment's name in the list.
 
 ### Deployment Operations
 
 ![deployments](/images/docs/project-user-guide/workloads/deployments_list.png)
 
-You can click **More** to display what other operations about this Deployment you can do.
+Click the three dots on the right and select the operation from the menu to modify a Deployment.
 
 - **Edit**：View and edit the base data.
 - **Edit Yaml**：View, upload, download, or update the YAML file。
