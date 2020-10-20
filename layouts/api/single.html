@@ -20,7 +20,7 @@
   </style>
 </head>
 <body>
-  <redoc spec-url='{{ "json/api.json" | relURL }}'></redoc>
+  <redoc spec-url='{{ .Params.swaggerUrl | relURL }}'></redoc>
   <script src="https://cdn.jsdelivr.net/npm/redoc/bundles/redoc.standalone.js"> </script>
 </body>
 </html>
