@@ -1,26 +1,18 @@
 ---
 title: "StatefulSets"
-keywords: 'kubesphere, kubernetes, StatefulSets, dashboard, service'
+keywords: 'KubeSphere, Kubernetes, StatefulSets, dashboard, service'
 description: 'Kubernetes StatefulSets'
-
 
 weight: 2240
 ---
 
-StatefulSet is the workload API object used to manage stateful applications.
+As workload API objects used to manage stateful applications, StatefulSets are responsible for the deploying and scaling of a set of Pods, and provides guarantees about the ordering and uniqueness of these Pods.
 
-Manages the deployment and scaling of a set of Pods, and provides guarantees about the ordering and uniqueness of these Pods.
+Like a Deployment, a StatefulSet manages Pods that are based on an identical container specification. Unlike a Deployment, a StatefulSet maintains a sticky identity for each of their Pods. These pods are created from the same specification, but are not interchangeable: each has a persistent identifier that it maintains across any rescheduling.
 
-Like a Deployment, a StatefulSet manages Pods that are based on an identical container spec. Unlike a Deployment, a StatefulSet maintains a sticky identity for each of their Pods. These pods are created from the same spec, but are not interchangeable: each has a persistent identifier that it maintains across any rescheduling.
+If you want to use storage volumes to provide persistence for your workload, you can use a StatefulSet as part of the solution. Although individual Pods in a StatefulSet are susceptible to failure, the persistent Pod identifiers make it easier to match existing volumes to the new Pods that replace any that have failed. For more information, see the [official documentation of Kubernetes](https://kubernetes.io/docs/concepts/workloads/controllers/statefulset/).
 
-If you want to use storage volumes to provide persistence for your workload, you can use a StatefulSet as part of the solution. Although individual Pods in a StatefulSet are susceptible to failure, the persistent Pod identifiers make it easier to match existing volumes to the new Pods that replace any that have failed.
-
-## Prerequisites
-
-- You need to create a workspace, project and `project-regular` account. Please refer to the [Getting Started with Multi-tenant Management](../../../quick-start/create-workspace-and-project) if not yet.
-- You need to sign in with `project-admin` account and invite `project-regular` to enter the corresponding project if not yet. Please refer to [Invite Member](../../../quick-start/create-workspace-and-project#task-3-create-a-project).
-
-## Using StatefulSets
+## Use StatefulSets
 
 StatefulSets are valuable for applications that require one or more of the following.
 
@@ -29,189 +21,77 @@ StatefulSets are valuable for applications that require one or more of the follo
 - Ordered, graceful deployment, and scaling.
 - Ordered, automated rolling updates.
 
-## Create a StatefulSets
+## Prerequisites
+
+- You need to create a workspace, a project and an account (`project-regular`). Please refer to [Create Workspace, Project, Account and Role](../../../quick-start/create-workspace-and-project) if they are not ready yet.
+- You need to sign in with `project-admin` account and invite `project-regular` to the corresponding project. Please refer to [these steps to invite a member](../../../quick-start/create-workspace-and-project#task-3-create-a-project).
+
+## Create a StatefulSet
 
 In KubeSphere, a **Headless** service is also created when you create a StatefulSet. You can find the headless service in **Services** under **Application Workloads** in a project.
 
-### Step 1: Click Create
+### Step 1: Open Dashboard
 
- Into **Workloads**, choose **StatefulSets** and click **Create**
+Log in the console as `project-regular`. Go to **Workloads** of a project, choose **StatefulSets** and click **Create**.
 
-![statefulsets](/images/docs/project-user-guide/workloads/statefulsets.png)
+![statefulsets](/images/docs/project-user-guide/workloads/statefulsets.jpg)
 
-### Step 2: Input Base Data
+### Step 2: Input Basic Information
 
-![statefulsets](/images/docs/project-user-guide/workloads/statefulsets_form_1.png)
+Specify a name for the StatefulSet (e.g. `demo-stateful`) and click **Next** to continue.
 
-### Step 3: Input Container Data
+![statefulsets](/images/docs/project-user-guide/workloads/statefulsets_form_1.jpg)
 
-![statefulsets](/images/docs/project-user-guide/workloads/statefulsets_form_2.png)
+### Step 3: Set Image
 
-#### Step 3.1: Container Setting
+1. Before you set an image, define the number of replicated Pods in **Pod Replicas** by clicking the **plus** or **minus** icon, which is indicated by the `.spec.replicas` field in the manifest file.
 
-Click the **Add Container Image** area.
+{{< notice tip >}}
 
-![statefulsets](/images/docs/project-user-guide/workloads/statefulsets_form_2_container_btn.png)
+You can see the StatefulSet manifest file in YAML format by enabling **Edit Mode** in the top right corner. KubeSphere allows you to edit the manifest file directly to create a StatefulSet. Alternatively, you can follow the steps below to create a StatefulSet via the dashboard.
 
-You can input an image name to use the image from public Docker Hub or select an image from a private repository you want to use.
+{{</ notice >}}
 
-![statefulsets](/images/docs/project-user-guide/workloads/statefulsets_form_2_container_1.png)
+![statefulsets](/images/docs/project-user-guide/workloads/statefulsets_form_2.jpg)
 
-- **Image Name**
+2. Click the **Add Container Image** area.
 
-  You can click the cube icon or input the image name to search it. KubeSphere provides Docker Hub images and your private image repository. If you want to use your private image repository, you should create a Docker Hub secret first in **Secrets** under **Configurations**.
+![statefulsets](/images/docs/project-user-guide/workloads/statefulsets_form_2_container_btn.jpg)
 
-- **Image Tag**
+3. You can input an image name to use the image from public Docker Hub or select an image from a private repository you want to use. For example, input `nginx` in the search bar and press **Enter**.
 
-  You can input tag like `imagename:tag`, If you do not specify, it will default to the latest version.
+![statefulsets](/images/docs/project-user-guide/workloads/statefulsets_form_2_container_1.jpg)
 
-- **container type**
+{{< notice note >}} 
 
-  Choose **Init Container**, which means the init container will be created for the workload. For more information about init containers, please visit [Init Container](https://kubernetes.io/docs/concepts/workloads/pods/init-containers/?spm=a2c4g.11186623.2.19.16704b3e9qHXPb)
+- Remember to press **Enter** on your keyboard after you input an image name in the search bar.
+- If you want to use your private image repository, you should create a Docker Hub secret first in **Secrets** under **Configurations**.
 
-![statefulsets](/images/docs/project-user-guide/workloads/statefulsets_form_2_container_2.png)
+{{</ notice >}} 
 
-- **Resource Request**
+4. Set requests and limits for CPU and memory resources based on your needs. For more information, see [Resource Request and Resource Limit in Container Image Settings](../container-image-settings/#add-container-image).
 
-  The resource quota reserved by the container includes both CPU and memory resources.It means the container monopolizes the resource, preventing other services or processes from competing for resources due to insufficient resources, causing the application to become unavailable.
+![statefulset-request-limit](/images/docs/project-user-guide/workloads/statefulset-request-limit.jpg)
 
-  - CPU Request is `spec.containers[].resources.requests.cpu`. The CPU request can be exceeded.
-  - Memory Request is `spec.containers[].resource.memory`. The Memory request can be exceeded but the container may clear up when Node memory is insufficient
+5. Click **Use Default Ports** for **Service Settings** or you can customize **Protocol**, **Name** and **Container Port**.
 
-- **Resource Limit**
+6. Select a policy for image pulling from the drop-down menu. For more information, see [Image Pull Policy in Container Image Settings](../container-image-settings/#add-container-image).
 
-  You can specify the upper limit of the resources that the application can use, including CPU and memory, to prevent excessive resources from being occupied. Among them, the unit of CPU resource is Core, and the unit is Mi
+7. For other settings (**Health Checker**, **Start Command**, **Environment Variables**, **Container Security Context** and **Sync Host Timezone**), you can configure them on the dashboard as well. For more information, see detailed explanations of these properties in [Container Image Settings](../container-image-settings/#add-container-image). When you finish, click **√** in the bottom right corner to continue.
 
-  - CPU Limit is `spec.containers[].resources.limits.cpu`. The CPU limit can be exceeded for a short time, and the container will not be stopped.
-  - Memory Limit is `spec.containers[].resources.limits.memory`. The Memory Limit can not be exceeded. If it exceeds, the container may be stopped or scheduled to another machine with sufficient resources
+8. Select an update strategy from the drop-down menu. It is recommended you choose **RollingUpdate**. For more information, see [Update Strategy](../container-image-settings/#update-strategy).
 
-![statefulsets](/images/docs/project-user-guide/workloads/statefulsets_form_2_container_3.png)
+9. Select a deployment mode. For more information, see [Deployment Mode](../container-image-settings/#deployment-mode).
 
-- **Image Pull Policy**
-  - Use Local Image First (**ifNotPresent**): It means that pull the image only if it does not exist locally.
-  - Redownload Image (**Always**): It means that pull the image whenever the pod is started.
-  - Only Use Local Image  (**Never**): It means that whatever the image is exist or not, it doesn't pull.
+10. Click **Next** to go to the next step when you finish setting the container image.
 
-  {{< notice tip>}}
+### Step 4: Mount Volumes
 
-  - Default is **IfNotPresent**, but the image tag with `:latest` is default **Always**.
-  - Docker will check it when pulling the image, if MD5 has not changed, it will not pull.
-  - The `:latest` should be avoided as much as possible in the production environment, and the latest image can be automatically pulled by the `:latest` in the development environment.
+StatefulSets can use the volume template, but you must create it in **Storage** in advance. KubeSphere provides users with 3 methods to mount volumes:
 
-  {{< /notice >}}
+![statefulsets](/images/docs/project-user-guide/workloads/statefulsets_form_3.jpg)
 
-- **Health Checker**
-
-  Support **liveness**, **Readiness**, and **Startup**. The survival check is used to detect when to restart the container.
-
-  - `livenessProbe`：Indicates whether the container is running
-  - `readinessProbe`：Indicates whether the container is ready to serve the request
-  - `startupProbe`: Indicates whether the application in the container has been started
-
-  Both of liveness, Readiness, and Startup have included these configs:
-
-  - **HTTPGetAction**: Perform an HTTP Get request on the specified port and path on the IP address of the container. If the response status code is greater than or equal to 200 and less than 400, the diagnosis is considered successful. The supported parameters include:
-    - **Scheme**：HTTP/HTTPS。
-    - **Path**: The path to access the HTTP server.
-    - **Port**: The access port or port name is exposed by the container. The port number must be between 1 and 65535.
-    - **Initial Delays**: is `initialDelaySeconds`. The number of seconds after the container has started before liveness probes are initiated, the default is 0 seconds.
-    - **Period Seconds**: is `periodSeconds`.
-      Probe frequency (in seconds), which defaults to 10 seconds. The minimum value is 1.
-    - **Timeouts**: is `timeoutSeconds`. Number of seconds after which the probe times out. It defaults to 1 second and the minimum value is 1.
-    - **Success Threshold**: is `successThreshold`. Minimum consecutive successes for the probe to be considered successful after having failed. It defaults to 1 and must be 1 for liveness and startup. The minimum value is 1.
-    - **Failure Threshold**: is `failureThreshold`. Minimum consecutive failures for the probe to be considered failed after having succeeded. It defaults to 3 and the minimum value is 1.
-
-  - **TCPSocketAction**: Perform a TCP check on the specified port on the IP address of the container. If the port is open, the diagnosis is considered successful. The supported parameters include:
-    - **Port**: The access port or port name is exposed by the container. The port number must be between 1 and 65535.
-    - **Initial Delays**: is `initialDelaySeconds`. The number of seconds after the container has started before liveness probes are initiated, the default is 0 seconds.
-    - **Period Seconds**: is `periodSeconds`.
-      Probe frequency (in seconds), which defaults to 10 seconds. The minimum value is 1.
-    - **Timeouts**: is `timeoutSeconds`. Number of seconds after which the probe times out. It defaults to 1 second and the minimum value is 1.
-    - **Success Threshold**: is `successThreshold`. Minimum consecutive successes for the probe to be considered successful after having failed. It defaults to 1 and must be 1 for liveness and startup. The minimum value is 1.
-    - **Failure Threshold**: is `failureThreshold`. Minimum consecutive failures for the probe to be considered failed after having succeeded. It defaults to 3 and the minimum value is 1.
-
-  - **ExecAction**: Execute the specified command in the container. If the return code is 0 when the command exits, the diagnosis is considered successful. The supported parameters include:
-    - **Command**: is `exec.command`. A detection command used to detect the health of the container.
-    - **Initial Delays**: is `initialDelaySeconds`. The number of seconds after the container has started before liveness probes are initiated, the default is 0 seconds.
-    - **Period Seconds**: is `periodSeconds`.
-      Probe frequency (in seconds), which defaults to 10 seconds. The minimum value is 1.
-    - **Timeouts**: is `timeoutSeconds`. Number of seconds after which the probe times out. It defaults to 1 second and the minimum value is 1.
-    - **Success Threshold**: is `successThreshold`. Minimum consecutive successes for the probe to be considered successful after having failed. It defaults to 1 and must be 1 for liveness and startup. The minimum value is 1.
-    - **Failure Threshold**: is `failureThreshold`. Minimum consecutive failures for the probe to be considered failed after having succeeded. It defaults to 3 and the minimum value is 1.
-
-   For more information about health checks, please visit [Container Probes](https://kubernetes.io/docs/concepts/workloads/pods/pod-lifecycle/#container-probes).
-
-- **Start Command**
-
-  By default, the container runs the default image command.
-
-  - Run Command is the `command` of containers.
-  - Parameters are the `args` of containers.
-
-  For more information about the command, please visit [Container Command](https://kubernetes.io/docs/tasks/inject-data-application/define-command-argument-container/).
-
-- **Environment Variables**
-
-  Supports configuring environment variables for Pod in the form of key-value pairs.
-
-  - name：Set the name of the environment variable.
-  - value：Set the value of the variable reference.
-  - type：Set the type of environment variables, support customization, configuration items, keys, and variable/variable references.
-
-  For more information about the command, please visit [Pod variable](https://kubernetes.io/docs/tasks/inject-data-application/environment-variable-expose-pod-information/?spm=a2c4g.11186623.2.20.16704b3e9qHXPb).
-
-- **Container Security Context**
-
-  A security context defines privilege and access control settings for a Pod or Container. For more information about the security context, please visit [Pod Security Policies](https://kubernetes.io/docs/concepts/policy/pod-security-policy/).
-
-- **Sync Host Timezone**
-
-  The time zone of the container will be consistent with that of the host after synchronization.
-
-![statefulsets](/images/docs/project-user-guide/workloads/statefulsets_form_2_container_finish.png)
-
-#### Step3.2: Other Setting
-
-- **Update Strategy**
-
-  The `.spec.updateStrategy` field of StatefulSet allows you to configure and disable automatic scrolling update Pod containers, tags, resource requests or restrictions, and annotations.
-
-  - **RollingUpdate (Recommended)**
-
-    If `.spec.template` is updated, the pods in the StatefulSet will be automatically deleted with new pods created as replacements. Pods are updated in reserve ordinal order, sequentially deleted and created. A new pod update will not begin until the previous Pod becomes up and running after it is updated.
-
-  - **OnDelete**
-
-    If `.spec.template` is updated, the pods in the StatefulSet will not be automatically updated. You need to manually delete old pods so that the controller can create new pods.
-
-  For more information about the update strategy, please visit [Statefulset Update-Strategies](https://kubernetes.io/docs/concepts/workloads/controllers/statefulset/#update-strategies).
-
-- **The number of Pods when updated**
-
-  When you partition an update, all Pods with an ordinal greater than or equal to the value you set in Partition are updated when you update the StatefulSet’s Pod specification. This field is specified in .spec.updateStrategy.rollingUpdate.partition, whose default value is 0. For more information about partitions, please visit [Partitions](https://kubernetes.io/docs/concepts/workloads/controllers/statefulset/#partitions).
-
-- **Pod Security Context**
-
-  A security context defines privilege and access control settings for a Pod or Container. For more information about Pod Security Policies, please visit [Pod Security Policies](https://kubernetes.io/docs/concepts/policy/pod-security-policy/).
-
-- **Deployment Mode**
-
-  You can select different deployment modes to switch between inter-pod affinity and inter-pod anti-affinity. In Kubernetes, inter-pod affinity is specified as field `podAffinity` of field `affinity` while inter-pod anti-affinity is specified as field `podAntiAffinity` of field `affinity`. In KubeSphere, both `podAffinity` and `podAntiAffinity` are set to `preferredDuringSchedulingIgnoredDuringExecution`. You can enable **Edit Mode** in the top right corner to see field details.
-
-  - **Pod Decentralized Deployment** represents anti-affinity.
-  - **Pod Aggregation Deployment** represents affinity.
-
-  For more information about affinity and anti-affinity, please visit  [Pod affinity](https://kubernetes.io/docs/concepts/scheduling-eviction/assign-pod-node/#inter-pod-affinity-and-anti-affinity)
-
-### Step 4: Input Volumes Data
-
-![statefulsets](/images/docs/project-user-guide/workloads/statefulsets_form_3.png)
-
-StatefulSets can use the volume template, but you should create it in **Storage** before.
-
-Mount Volume has 3 methods:
-
-- **Add Volume Template**: The volume Template is to dynamically create a PV. Bind the PV of the StorageClass type to the pod by setting `volumeClaimTemplates`.
+- **Add Volume Template**: A volume template is used to dynamically create a PV. Mount the PV of the StorageClass type to the Pod by setting the name, storage class, access mode, capacity and path, which are all indicated in the field `volumeClaimTemplates`.
 
 - **Add Volume**: Support EmptyDir and PersistentVolumeClaim.
 
@@ -219,31 +99,35 @@ Mount Volume has 3 methods:
 
   - **Existing Volume**: Use *PVC* to mount.
 
-    Persistent storage volumes can be used to save user's persist data, Add Existing Volume means you need to create volumes in advance
+    Persistent storage volumes can be used to save users' persistent data. You need to create volumes in advance so that you can choose an existing volume from the list.
 
   - **Temporary Volume**: Use *emptyDir* to mount.
 
-    The temporary storage volume represents [emptyDir](https://kubernetes.cn/docs/concepts/storage/volumes/#emptydir), which is first created when a Pod is assigned to a Node, and exists as long as that Pod is running on that node. When a Pod is removed from a node for any reason, the data in the emptyDir is deleted forever.
+    The temporary storage volume represents [emptyDir](https://kubernetes.cn/docs/concepts/storage/volumes/#emptydir), which is first created when a Pod is assigned to a node, and exists as long as that Pod is running on that node. When a Pod is removed from a node for any reason, the data in the emptyDir is deleted forever.
 
   - **HostPath**: Use *HostPath* to mount.
 
     A HostPath volume mounts a file or directory from the host node's filesystem into your Pod. This is not something that most Pods will need, but it offers a powerful escape hatch for some applications.
 
-- **Mount ConfigMap or Secret**: Supports for configuring the key-value pairs ​​in ConfigMap or Secret via reference configuration center.
+- **Mount ConfigMap or Secret**: Support key-value pairs ​​in ConfigMap or Secret.
 
   A secret volume is used to pass sensitive information, such as passwords, to Pods. Secret volumes are backed by tmpfs (a RAM-backed filesystem) so they are never written to non-volatile storage.
 
-  ConfigMap is used to store configuration data in the form of key-value pairs. The configMap resource provides a way to inject configuration data into Pods. The data stored in a ConfigMap object can be referenced in a volume of type configMap and then consumed by containerized applications running in a Pod.
+  A ConfigMap is used to store configuration data in the form of key-value pairs. The ConfigMap resource provides a way to inject configuration data into Pods. The data stored in a ConfigMap object can be referenced in a volume of type ConfigMap and then consumed by containerized applications running in a Pod. ConfigMaps are often used in the following cases:
 
-  - Set the value of the environment variable
-  - Set command parameters in the container
-  - Create a config file in the volume
+  - Set the value of the environment variable.
+  - Set command parameters in the container.
+  - Create a config file in the volume.
 
-For more information about volume, please visit [Volumes](../../storage/volumes)
+For more information about volumes, please visit [Volumes](../../storage/volumes).
 
-### Step 5: Input Advanced Data
+When you finish, click **Next** to continue.
 
-![statefulsets](/images/docs/project-user-guide/workloads/statefulsets_form_4.png)
+### Step 5: Configure Advanced Settings
+
+You can set a policy for node scheduling and add metadata in this section. When you finish, click **Create** to complete the whole process of creating a StatefulSet.
+
+![statefulsets](/images/docs/project-user-guide/workloads/statefulsets_form_4.jpg)
 
 - **Set Node Scheduling Policy**
 
@@ -253,52 +137,48 @@ For more information about volume, please visit [Volumes](../../storage/volumes)
 
   Additional metadata settings for resources such as **Labels** and **Annotations**.
 
-## Check Statefulset Detail
+## Check StatefulSet Details
 
-You can check the statefulSet detail via click statefulSet's name on the list.
+### Detail Page
 
-### Statefulset Operations
+1. After a StatefulSet is created, it displays in the list as below. You can click the three dots on the right to display what other operations about this StatefulSet you can do.
 
-![statefulsets](/images/docs/project-user-guide/workloads/statefulsets_list.png)
+![statefulsets](/images/docs/project-user-guide/workloads/statefulsets_list.jpg)
 
-You can click **More** to display what other operations about this Statefulset you can do.
+- **Edit**: View and edit the basic data.
+- **Edit YAMl**: View, upload, download, or update the YAML file.
+- **Redeploy**: Redeploy the StatefulSet.
+- **Delete**: Delete the StatefulSet.
 
-- **Edit**：View and edit the base data.
-- **Edit Yaml**：View, upload, download, or update the YAML file。
-- **Redeploy**：Redeploy this Statefulset.
-- **Delete**: Delete the Statefulset.
+2. Click the name of the StatefulSet and you can go to its detail page.
 
-### Statefulset Detail View
+![statefulsets](/images/docs/project-user-guide/workloads/statefulsets_detail.jpg)
 
-![statefulsets](/images/docs/project-user-guide/workloads/statefulsets_detail.png)
-
-#### Statefulset Detail Operations
-
-You can click **More** to display what the operations about this Statefulset you can do.
+3. Click **More** to display what operations about this StatefulSet you can do.
 
 ![statefulsets](/images/docs/project-user-guide/workloads/statefulsets_detail_operation_btn.png)
 
-- **Revision Rollback**: Select the revision to rollback.
+- **Revision Rollback**: Select the revision to roll back.
 - **Edit Service**: Set the port to expose the container image and the service port.
-- **Edit Config Template**：Set some config about Update Strategy, Container and Volume.
-- **Edit YAML**：View, upload, download, or update the YAML file。
-- **Redeploy**: Redeploy this Statefulset.
-- **Delete**: Delete the Statefulset, and return to the Statefulset list page.
+- **Edit Config Template**: Configure update strategies, containers and volumes.
+- **Edit YAML**: View, upload, download, or update the YAML file.
+- **Redeploy**: Redeploy this StatefulSet.
+- **Delete**: Delete the StatefulSet, and return to the StatefulSet list page.
 
-#### Resource Status
+4. Click the **Resource Status** tab to view the port and Pod information of a StatefulSet.
 
 ![statefulsets](/images/docs/project-user-guide/workloads/statefulsets_detail_state.png)
 
-- **Replica Status**: Increase or decrease the Pod Replica.
-- **Pods detail**
+- **Replica Status**: Click the arrow in the image to increase or decrease the number of Pod replicas.
+- **Pod detail**
 
   ![statefulsets](/images/docs/project-user-guide/workloads/statefulsets_detail_pod.png)
 
-  - The pod list provides the pod’s detail information(conditions, phase, node, pod ip, monitoring).
-  - You can view the container info by clicking the pod item.
-  - Click the container log icon to view the output logs of the container.
-  - You can view the pod detail page by clicking the pod name.
+  - The Pod list provides detailed information of the Pod (status, node, Pod IP and resource usage).
+  - You can view the container information by clicking a Pod item.
+  - Click the container log icon to view output logs of the container.
+  - You can view the Pod detail page by clicking the Pod name.
 
-#### Revision Records
+### Revision Records
 
 After the resource template of workload is changed, a new log will be generated and Pods will be rescheduled for a version update. The latest 10 versions will be saved by default. You can implement a redeployment based on the change log.
