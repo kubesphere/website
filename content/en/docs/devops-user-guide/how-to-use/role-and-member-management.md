@@ -3,7 +3,7 @@ title: "Role and Member Management"
 keywords: 'Kubernetes, KubeSphere, DevOps, role, member'
 description: 'Role and Member Management'
 
-weight: 2240
+weight: 600
 ---
 
 This guide demonstrates how to manage roles and members in your DevOps project. For more information about KubeSphere roles, see Overview of Role Management.
@@ -17,7 +17,7 @@ In DevOps project scope, you can grant the following resources' permissions to a
 
 ## Prerequisites
 
-At least one DevOps project has been created, such as `demo-devops`. Besides, you need an account of the `admin` role (e.g. `devops-admin`) at the DevOps project level. See [Create Workspace, Project, Account and Role](../../../quick-start/create-workspace-and-project/) if it is not ready yet.
+At least one DevOps project has been created, such as `demo-devops`. Besides, you need an account of the `admin` role (e.g. `devops-admin`) at the DevOps project level. 
 
 ## Built-in Roles
 
