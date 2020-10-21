@@ -11,8 +11,8 @@ icon: "/images/docs/docs.svg"
 This document describes the process to gracefully shut down your cluster. You might need to temporarily shut down your cluster for maintenance reasons.
 
 {{< notice warning >}}
-Shutting down cluster is very dangerous, you must to understand what are you doing and make an etcd backup before proceeding.
-Usually we recommend one by one maintenance nodes instead of restarting cluster.
+Shutting down a cluster is very dangerous. You must fully understand the operation and its consequences. Please make an etcd backup before you proceed.
+Usually, it is recommended to maintain your nodes one by one instead of restarting the whole cluster.
 {{</ notice >}}
 
 ### Prerequisites
@@ -21,11 +21,11 @@ Ssh [keyless login](https://man.openbsd.org/ssh.1#AUTHENTICATION) is set up betw
 
 ### Shutting Down the Cluster
 {{< notice warning >}}
-You must to take an etcd backup before proceeding for your cluster can be restored if you encounter any issues when restarting the cluster.
+You must back up your etcd data before you shut down the cluster as your cluster can be restored if you encounter any issues when restarting the cluster.
 {{</ notice >}}
 
 {{< notice tip >}}
-Use this method can shut down the cluster gracefully ,but there is still the possibility of data corruption.
+Using the method in this tutorial can shut down a cluster gracefully, while the possibility of data corruption still exists.
 {{</ notice >}}
 
 ### Step 1: Get the List of Nodes.
@@ -70,4 +70,4 @@ kubectl get nodes -l node-role.kubernetes.io/master
 kubectl get nodes -l node-role.kubernetes.io/worker
 ```
 
-If your cluster fails to restart, maybe you shuold [restore etcd cluster](https://github.com/etcd-io/etcd/blob/master/Documentation/op-guide/recovery.md#restoring-a-cluster).
+If your cluster fails to restart, maybe you should [restore etcd cluster](https://github.com/etcd-io/etcd/blob/master/Documentation/op-guide/recovery.md#restoring-a-cluster).
