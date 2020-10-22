@@ -17,6 +17,8 @@ This chapter demonstrates how to use KubeKey to provision a production-ready Kub
 
 Explore the general content in this chapter, including installation preparation, installation tool and method, as well as storage setting.
 
+### 
+
 ### [Multi-node Installation](../installing-on-linux/introduction/multioverview/)
 
 Learn the general steps of installing KubeSphere and Kubernetes on a multi-node cluster.
@@ -33,13 +35,19 @@ Customize your setting in the configuration file for your cluster.
 
 Add different storage classes to your cluster with KubeKey, such as Ceph RBD and Glusterfs.
 
+## Installing Offline Deploy
+
+### [Kubesphere-v3.0.0-Offline-Deploy](../installing-on-linux/installing-offline-deploy/kubesphere-v3.0-offline-deploy/)
+
+
+
 ## Installing in On-premises Environments
 
 ### [Deploy KubeSphere on VMware vSphere](../installing-on-linux/on-premises/install-kubesphere-on-vmware-vsphere/)
 
 Learn how to create a high-availability cluster on VMware vSphere.
 
-## Installing on Public Cloud
+## Installing on Public Cloud  
 
 ### [Deploy KubeSphere on Azure VM Instance](../installing-on-linux/public-cloud/install-ks-on-azure-vms/)
 
