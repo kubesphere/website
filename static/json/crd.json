@@ -1,11 +1,11 @@
 {
   "swagger": "2.0",
   "info": {
-    "title": "KubeSphere Advanced",
+    "title": "KubeSphere",
     "contact": {
       "name": "KubeSphere",
       "url": "https://kubesphere.io/",
-      "email": "kubesphere@yunify.com"
+      "email": "kubesphere@gmail.com"
     },
     "license": {
       "name": "Apache 2.0",
