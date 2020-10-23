@@ -25,7 +25,42 @@ Telemetry collects aggregate information about the size of KubeSphere clusters i
 
 ## Disable Telemetry
 
-Telemetry is enabled by default. To disable Telemetry, follow the steps below after you install KubeSphere.
+Telemetry is enabled by default when you install KubeSphere, while you also have the option to disable it either before or after the installation.
+
+### Disable Telemetry before Installation
+
+When you install KubeSphere on existing Kubernetes clusters, you need to download the file [cluster-configuration.yaml](https://raw.githubusercontent.com/kubesphere/ks-installer/v3.0.0/deploy/cluster-configuration.yaml) for cluster setting. If you want to disable Telemetry, do not use `kubectl apply -f` directly for this file.
+
+{{< notice note >}} 
+
+If you install KubeSphere on Linux, see [Disable Telemetry after Installation](../telemetry/#disable-telemetry-after-installation) directly.
+
+{{</ notice >}} 
+
+1. In the tutorial of [Installing KubeSphere on Kubernetes](http://localhost:1313/docs/installing-on-kubernetes/introduction/overview/), you execute `kubectl apply -f` first for the file [kubesphere-installer.yaml](https://raw.githubusercontent.com/kubesphere/ks-installer/v3.0.0/deploy/kubesphere-installer.yaml). After that, create a local file `cluster-configuration.yaml` through the following command:
+
+```bash
+vi cluster-configuration.yaml
+```
+
+2. Copy all the content in the file [cluster-configuration.yaml](https://raw.githubusercontent.com/kubesphere/ks-installer/v3.0.0/deploy/cluster-configuration.yaml) and paste it to the local file just created.
+3. Scroll down to the bottom of the file and add the value `telemetry_enabled: false` as follows:
+
+```yaml
+  openpitrix:
+    enabled: false
+  servicemesh:
+    enabled: false
+  telemetry_enabled: false # Add this line here to disable Telemetry.
+```
+
+4. Save the file after you finish and execute the following command to start installation.
+
+```bash
+kubectl apply -f cluster-configuration.yaml
+```
+
+### Disable Telemetry after Installation
 
 1. Log in the console as `admin` and click **Platform** in the top left corner.
 2. Select **Clusters Management** and navigate to **CRDs**.
