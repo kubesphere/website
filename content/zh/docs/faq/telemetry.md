@@ -37,7 +37,7 @@ If you install KubeSphere on Linux, see [Disable Telemetry after Installation](.
 
 {{</ notice >}} 
 
-1. In the tutorial of [Installing KubeSphere on Kubernetes](http://localhost:1313/docs/installing-on-kubernetes/introduction/overview/), you execute `kubectl apply -f` first for the file [kubesphere-installer.yaml](https://raw.githubusercontent.com/kubesphere/ks-installer/v3.0.0/deploy/kubesphere-installer.yaml). After that, create a local file `cluster-configuration.yaml` through the following command:
+1. In the tutorial of [Installing KubeSphere on Kubernetes](../../installing-on-kubernetes/introduction/overview/), you execute `kubectl apply -f` first for the file [kubesphere-installer.yaml](https://raw.githubusercontent.com/kubesphere/ks-installer/v3.0.0/deploy/kubesphere-installer.yaml). After that, create a local file `cluster-configuration.yaml` through the following command:
 
 ```bash
 vi cluster-configuration.yaml
