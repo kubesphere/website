@@ -18,8 +18,6 @@ weight: 2200
 
 master1　　　　　4 　　　　　　16GB　　　　100GB
 
-master2　　　　　4　　　　　　16GB　　　　　50GB
-
 node1　　　　　　4　　　　　　16GB　　　　　50GB
 
 node2　　　　　　4　　　　　　16GB　　　　　50GB
@@ -28,7 +26,7 @@ node2　　　　　　4　　　　　　16GB　　　　　50GB
 
 
 
-![image-20201020094441478](http://image.z5689.com/blog/20201020155539.png)
+![image-20201023175802071](http://image.z5689.com/blog/20201023180022.png)
 
 每台主机都需要安装依赖软件
 
@@ -134,8 +132,6 @@ hosts 加入主机参数
 ```
 {name: master1, address: 192.168.0.2, internalAddress: 192.168.0.2, user: root, password: Qwe12345}
 
-{name: master2, address: 192.168.0.3, internalAddress: 192.168.0.3, user: root, password: Qwe12345}
-
 {name: node1, address: 192.168.0.4, internalAddress: 192.168.0.4, user: root, password: Qwe12345}
 
 {name: node2, address: 192.168.0.5, internalAddress: 192.168.0.5, user: root, password: Qwe12345}
@@ -157,18 +153,14 @@ metadata:
 spec:
   hosts:
   - {name: master1, address: 192.168.0.2, internalAddress: 192.168.0.2, user: root, password: Qwe12345}
-  - {name: master2, address: 192.168.0.3, internalAddress: 192.168.0.3, user: root, password: Qwe12345}
   - {name: node1, address: 192.168.0.4, internalAddress: 192.168.0.4, user: root, password: Qwe12345}
   - {name: node2, address: 192.168.0.5, internalAddress: 192.168.0.5, user: root, password: Qwe12345}
   roleGroups:
     etcd:
     - master1
-    - master2
     master: 
     - master1
-    - master2
     worker:
-    - master2
     - node1
     - node2
   controlPlaneEndpoint:
@@ -289,8 +281,6 @@ $ ./kk create cluster -f config-sample.yaml
 集群安装成功
 
 ![image-20201020142113074](http://image.z5689.com/blog/20201020144600.png)
-
-![image-20201020144302279](http://image.z5689.com/blog/20201020144601.png)
 
 访问kubesphere，需要ACL 防火墙放通30880端口
 
