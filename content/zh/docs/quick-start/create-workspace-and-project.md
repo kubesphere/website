@@ -1,24 +1,24 @@
 ---
-title: "Create Workspace, Project, Account and Role"
-keywords: 'KubeSphere, Kubernetes, Multi-tenant, Workspace, Account, Role, Project'
-description: 'Create Workspace, Project, Account and Role'
+title: "创建工作空间，项目，账户和角色"
+keywords: 'KubeSphere，Kubernetes，多租户，Workspace，Account，Role，Project'
+description: '创建工作空间，项目，账户和角色'
 
-linkTitle: "Create Workspace, Project, Account and Role"
+linkTitle: "创建工作空间，项目，账户和角色"
 weight: 3030
 ---
 
 
-## Objective
+## 目标
 
-This guide demonstrates how to create roles and user accounts which are required for the following tutorials. Meanwhile, you will learn how to create projects and DevOps projects within your workspace where your workloads are running. After this tutorial, you will become familiar with KubeSphere multi-tenant management system.
+本指南演示了如何创建后续教程需要的角色和用户帐户。同时，您将会学习如何在运行工作负载的工作空间中创建普通项目和 DevOps 项目。通过这个教程，您将会熟悉 KubeSphere 的多租户管理系统。
 
-## Prerequisites
+## 前置条件
 
-KubeSphere needs to be installed in your machine.
+需要您已经完成安装 KubeSphere。
 
-## Estimated Time
+## 预计时间
 
-About 15 minutes.
+15 分钟左右。
 
 ## Architecture
 
@@ -28,68 +28,69 @@ You can create multiple workspaces within a Kubernetes cluster. Under each works
 
 Each level has multiple built-in roles. Besides, KubeSphere allows you to create roles with customized authorization as well. The KubeSphere hierarchy is applicable for enterprise users with different teams or groups, and different roles within each team.
 
-## Hands-on Lab
+## 动手实验
 
-### Task 1: Create an Account
+### 任务 1: 创建账户
 
-After KubeSphere is installed, you need to add different users with varied roles to the platform so that they can work at different levels on various resources. Initially, you only have one default account, which is admin, granted the role `platform-admin`. In the first task, you will create an account `user-manager` and further create more accounts as `user-manager`.
+完成 KubeSphere 安装后，您需要向平台添加具有不同角色的不同用户，以便他们可以在各种资源上以不同级别工作。最开始您只有一个默认账户，即 admin ，授权为 `platform-admin` 角色。在第一个任务中，您将会创建一个账户 `user-manager`，并进一步创建更多账户作为 `user-manager`。
 
-1. Log in the web console as `admin` with the default account and password (`admin/P@88w0rd`).
+1. 使用默认账户和密码 （`admin/P@88w0rd`）以 admin 身份登录 web 控制台。
 
-{{< notice tip >}}
+{{< notice 提示 >}}
 
-For account security, it is highly recommended that you change your password the first time you log in the console. To change your password, select **User Settings** in the drop-down menu in the top-right corner. In **Password Setting**, set a new password.
+为保证账户安全，强烈建议您在首次登录控制台时更改密码。您可在页面右上角的下拉菜单中选择 **个人设置** ，然后选择 **密码设置** 并重置密码。
 
 {{</ notice >}}
 
-2. After you log in the console, click **Platform** in the top-left corner and select **Access Control**.
+2. 登录控制台后，点击左上角的 **平台管理** 并选择 **访问控制** 。
 
    ![access-control](https://ap3.qingstor.com/kubesphere-website/docs/access-control.png)
 
-In **Account Roles**, there are four available built-in roles as shown below. The account to be created next will be assigned the role `users-manager`.
+在 **账户角色** 中有如下所示四个内置角色。接下来创建的账户会被分配为 **users-manager** 角色。
 
-| Built-in Roles     | Description                                                  |
+| 内置角色     | 描述                                                  |
 | ------------------ | ------------------------------------------------------------ |
-| workspaces-manager | Workspace manager in the platform who manages all workspaces in the platform. |
-| users-manager      | User manager in the platform who manages all users.          |
-| platform-regular   | Normal user in the platform who has no access to any resources before joining a workspace or cluster. |
-| platform-admin     | Platform administrator who can manage all resources in the platform. |
+| workspaces-manager | 平台企业空间管理员，管理平台所有企业空间。 |
+| users-manager      | 平台用户管理员，管理平台所有用户。          |
+| platform-regular   | 平台普通用户，在被邀请加入企业空间或集群之前没有任何资源操作权限。 |
+| platform-admin     | 平台管理员，可以管理平台内的所有资源。 |
 
-{{< notice note >}}
+{{< notice 注意 >}}
 
-Built-in roles are created automatically by KubeSphere and cannot be edited or deleted.
+内置角色由 KubeSphere 自动创建，无法编辑或删除。
 
 {{</ notice >}} 
 
-3. In **Accounts**, click **Create**. In the pop-up window, provide all the necessary information (marked with *) and select `users-manager`  for **Role**. Refer to the image below as an example.
+3. 选择 **账户管理** ，点击 **创建** 。在弹出窗口中提交所有必需信息（带有 * 标记），并选择角色为 `users-manager` 。参考下图示例。
 
 ![create-account](https://ap3.qingstor.com/kubesphere-website/docs/create-account.jpg)
 
-Click **OK** after you finish. A newly-created account will display in the account list in **Accounts**.
+完成后单击 **确定** 。新创建的账户会出现在 **账户管理** 页面的账户列表里面。
 
-4. Log out of the console and log back in with the account `user-manager` to create four accounts that will be used in the following tutorials.
+4. 登出控制台并使用 `user-manager` 账户登录，创建四个账户留待后续教程中使用。
 
-{{< notice tip >}} 
+{{< notice 提示 >}} 
 
-To log out, click your username in the top-right corner and select **Log Out**.
+点击右上角您的用户名并选择 **登出** 即可登出控制台。
 
 {{</ notice >}}
 
-For detailed information about the four accounts you need to create, refer to the table below.
+有关您需要创建的四个帐户的详细信息，请参阅下表。
 
-| Account         | Role               | Description                                                  |
+| 账户         | 角色               | 描述                                                  |
 | --------------- | ------------------ | ------------------------------------------------------------ |
 | ws-manager      | workspaces-manager | Create and manage all workspaces.                            |
 | ws-admin        | platform-regular   | Manage all resources in a specified workspace (This account is used to invite new members to a workspace in this example). |
 | project-admin   | platform-regular   | Create and manage projects and DevOps projects, and invite new members into the projects. |
 | project-regular | platform-regular   | `project-regular` will be invited to a project or DevOps project by `project-admin`. This account will be used to create workloads, pipelines and other resources in a specified project. |
 
-5. Verify the four accounts created.
+5. 检查已创建的四个账户。
 
 ![account-list](https://ap3.qingstor.com/kubesphere-website/docs/account-list.png)
 
-### Task 2: Create a Workspace
+### 任务 2: 创建企业空间
 
+在这个任务中，您需要使用前面任务中创建的账户 `ws-manager` 来创建一个企业空间。
 In this task, you need to create a workspace using the account `ws-manager` created in the previous task. As the basic logic unit for the management of projects, DevOps projects and organization members, workspaces underpin multi-tenant system of KubeSphere.
 
 1. Log in KubeSphere as `ws-manager` which has the authorization to manage all workspaces on the platform. Click **Platform** in the top-left corner. In **Workspaces**, you can see there is only one default workspace **system-workspace** listed, where system-related components and services run. You are not allowed to delete this workspace.
@@ -106,17 +107,17 @@ Click **Create** after you finish.
 
 ![invite-member](https://ap3.qingstor.com/kubesphere-website/docs/20200827111048.png)
 
-4. Invite both `project-admin` and `project-regular` to the workspace. Grant them the role `workspace-self-provisioner` and `workspace-viewer` respectively. 
+1. 邀请 `project-admin` 和 `project-regular` 这两个账户加入该企业空间。分别授权角色为 `workspace-self-provisioner` 和 `workspace-viewer` 。 
 
-{{< notice note >}} 
+{{< notice 注意 >}} 
 
-The actual role name follows a naming convention: `workspace name-role name`. For example, in this workspace named `demo`, the actual role name of the role `workspace-viewer` is `demo-workspace-viewer`.
+实际角色名遵循命名规范：`企业空间名-角色名` 。举个例子，在 `demo` 这个企业空间中，角色 `workspace-viewer` 实际的角色名为 `demo-workspace-viewer` 。
 
 {{</ notice >}} 
 
 ![invite-member](https://ap3.qingstor.com/kubesphere-website/docs/20200827113124.png)
 
-5. After you add both `project-admin` and `project-regular` to the workspace, click **OK**. In **Workspace Members**, you can see three members listed.
+1. After you add both `project-admin` and `project-regular` to the workspace, click **OK**. In **Workspace Members**, you can see three members listed.
 
 | Account         | Role                       | Description                                                  |
 | --------------- | -------------------------- | ------------------------------------------------------------ |
@@ -124,57 +125,57 @@ The actual role name follows a naming convention: `workspace name-role name`. Fo
 | project-admin   | workspace-self-provisioner | Create and manage projects and DevOps projects, and invite new members to join the projects. |
 | project-regular | workspace-viewer           | `project-regular` will be invited by `project-admin` to join a project or DevOps project. The account can be used to create workloads, pipelines, etc. |
 
-### Task 3: Create a Project
+### 任务 3: 创建项目
 
-In this task, you need to create a project using the account `project-admin` created in the previous task. A project in KubeSphere is the same as a namespace in Kubernetes, which provides virtual isolation for resources. For more information, see [Namespaces](https://kubernetes.io/docs/concepts/overview/working-with-objects/namespaces/).
+在这个任务中，您需要使用前面任务中创建的账户`project-admin`来创建一个项目。KubeSphere 中的项目类似 Kubernetes 中的 namespace ，用于对资源做虚拟隔离。更多相关信息，请参考 [Namespaces](https://kubernetes.io/docs/concepts/overview/working-with-objects/namespaces/) 。
 
-1. Log in KubeSphere as `project-admin`. In **Projects**, click **Create**.
+1. 使用 `project-admin` 登入 KubeSphere 。在**项目**中，点击**创建**。
 
 ![kubesphere-projects](https://ap3.qingstor.com/kubesphere-website/docs/kubesphere-projects.png)
 
-2. Enter the project name (e.g. `demo-project`) and click **OK** to finish. You can also add an alias and description for the project.
+2. 输入项目名称 （例如：`demo-project`）并点击**确定**完成创建。您也可以为项目添加别名和描述信息。
 
 ![demo-project](https://ap3.qingstor.com/kubesphere-website/docs/demo-project.png)
 
-3. In **Projects**, click the project created just now to view its detailed information.
+3. 在**项目**中点击刚刚创建的项目可查看该项目的详细信息。
 
 ![click-demo-project](https://ap3.qingstor.com/kubesphere-website/docs/click-demo-project.png)
 
-4. In the overview page of the project, the project quota remains unset by default. You can click **Set** and specify resource requests and limits based on your needs (e.g. 1 core for CPU and 1000Gi for memory).
+4. 在项目概览页面，可看到默认没有设置项目配额。您可以点击**设置**并根据您的需求设定资源预留和资源限制（例如：1核 CPU 和 1000Gi内存）
 
 ![project-overview](https://ap3.qingstor.com/kubesphere-website/docs/quota.png)
 
 ![set-quota](https://ap3.qingstor.com/kubesphere-website/docs/20200827134613.png)
 
-5. Invite `project-regular` to this project and grant this user the role `operator`. Please refer to the image below for specific steps.
+5. 邀请`project-regular`账户加入该项目并授权为`operator`角色。具体步骤请参考下图。
 
 ![](https://ap3.qingstor.com/kubesphere-website/docs/20200827135424.png)
 
 {{< notice info >}}
 
-The user granted the role `operator` will be a project maintainer who can manage resources other than users and roles in the project.
+被授权为`operator`角色的用户会成为项目维护者，可以管理项目下除用户和角色之外的资源。
 
 {{</ notice >}}
 
-#### Set Gateway
+#### 设置网关
 
-Before creating a route, you need to enable a gateway for this project. The gateway is an [NGINX Ingress controller](https://github.com/kubernetes/ingress-nginx) running in the project.
+在创建路由之前，您需要先在项目中启用网关。网关是运行在项目中的一个 [NGINX Ingress controller](https://github.com/kubernetes/ingress-nginx) 。
 
 {{< notice info >}}
 
-A route refers to Ingress in Kubernetes, which is an API object that manages external access to the services in a cluster, typically HTTP.
+路由指的是 Kubernetes 的入口，是一个用于管理集群内部服务对外访问的 API 对象。通常为 HTTP 服务。
 
 {{</ notice >}}
 
-6. To set a gateway, go to **Advanced Settings** in **Project Settings** and click **Set Gateway**. The account `project-admin` is still used in this step.
+1. To set a gateway, go to **高级设置** in **项目设置** and click **设置网关**. The account `project-admin` is still used in this step.
 
 ![set-gateway](https://ap3.qingstor.com/kubesphere-website/docs/20200827141823.png)
 
-7. Choose the access method **NodePort** and click **Save**.
+7. Choose the access method **NodePort** and click **保存**.
 
 ![nodeport](https://ap3.qingstor.com/kubesphere-website/docs/20200827141958.png)
 
-8. Under **Internet Access**, it can be seen that the Gateway Address and the NodePort of http and https all display in the page.
+8. Under **外网访问**, it can be seen that the Gateway Address and the NodePort of http and https all display in the page.
 
 {{< notice note >}}
 
@@ -184,7 +185,7 @@ If you want to expose services using the type `LoadBalancer`, you need to use th
 
 ![NodePort-setting-done](https://ap3.qingstor.com/kubesphere-website/docs/20200827142411.png)
 
-### Task 4: Create a Role
+### 任务 4: 创建角色
 
 After you finish the above tasks, you know that users can be granted different roles at different levels. The roles used in previous tasks are all built-in ones created by KubeSphere itself. In this task, you will learn how to define a role yourself to meet the needs in your work.
 
