@@ -72,7 +72,7 @@ $ docker run -d \
   registry:2
 ```
 
-配置registry（master1，master2，node1，node2都需要添加）
+配置registry（master1，node1，node2都需要添加）
 
 将registry证书域名及对应ip地址配置hosts /etc/hosts
 
