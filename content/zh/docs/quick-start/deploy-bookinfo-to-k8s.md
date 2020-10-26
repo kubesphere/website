@@ -1,29 +1,29 @@
 ---
-title: "Deploy Bookinfo and Manage Traffic"
-keywords: 'kubesphere, kubernetes, docker, multi-tenant'
-description: 'Deploy a Bookinfo App'
+title: "部署 Bookinfo 和管理流量"
+keywords: 'kubesphere, kubernetes, docker, 多租户'
+description: '部署一个 Bookinfo 应用'
 
-linkTitle: "Deploy Bookinfo and Manage Traffic"
+linkTitle: "部署 Bookinfo 和管理流量"
 weight: 3040
 ---
 
-[Istio](https://istio.io/), as an open-source service mesh solution, provides powerful features of traffic management for microservices. Here is the introduction of traffic management from the official website of [Istio](https://istio.io/latest/docs/concepts/traffic-management/):
+[Istio](https://istio.io/)，作为一种开源服务网格解决方案，为微服务提供了强大的流量管理功能。以下是[Istio](https://istio.io/latest/zh/docs/concepts/traffic-management/)官方网站上关于流量管理的简介：
 
-*Istio’s traffic routing rules let you easily control the flow of traffic and API calls between services. Istio simplifies configuration of service-level properties like circuit breakers, timeouts, and retries, and makes it easy to set up important tasks like A/B testing, canary rollouts, and staged rollouts with percentage-based traffic splits. It also provides out-of-box failure recovery features that help make your application more robust against failures of dependent services or the network.*
+*Istio 的流量路由规则可以让您很容易的控制服务之间的流量和 API 调用。Istio 简化了服务级别属性的配置，比如熔断器、超时和重试，并且能轻松的设置重要的任务，如 A/B 测试、金丝雀发布、基于流量百分比切分的概率发布等。它还提供了开箱即用的故障恢复特性，有助于增强应用的健壮性，从而更好地应对被依赖的服务或网络发生故障的情况。*
 
-KubeSphere provides three kinds of grayscale strategies based on Istio, including blue-green deployment, canary release and traffic mirroring.
+KubeSphere 基于 Istio 提供了三种灰度策略，包括蓝绿部署，金丝雀发布和流量镜像。
 
 Among others, a canary release represents an effective software development strategy in which a new version is deployed for testing with the base version preserved in the production environment. This strategy will bring part of the traffic to the new version being tested and the production release takes up the rest.
 
-## Objective
+## 目标
 
 In this tutorial, you will learn how to deploy a sample application Bookinfo composed of four separate microservices and use the traffic management feature of KubeSphere to publish a new version.
 
-## Prerequisites
+## 前置条件
 
-- You need to enable [KubeSphere Service Mesh](../../pluggable-components/service-mesh/).
+- 您需要启用 [KubeSphere Service Mesh](../../pluggable-components/service-mesh/) 。
 
-- You need to finish all tasks in [Create Workspace, Project, Account and Role](../create-workspace-and-project/).
+- 您需要完成 [Create Workspace, Project, Account and Role](../create-workspace-and-project/) 中的所有任务。
 
 - You need to enable **Application Governance**. To do so, follow the steps below:
 
@@ -39,11 +39,11 @@ You need to enable **Application Governance** so that you can use the Tracing fe
 
 {{</ notice >}} 
 
-## Estimated Time
+## 预计时间
 
-About 20 minutes.
+20分钟左右。
 
-## What is Bookinfo Application
+## 什么是 Bookinfo 应用程序
 
 The Bookinfo application is composed of four separate microservices as shown below. There are three versions of the **reviews** microservice.
 
