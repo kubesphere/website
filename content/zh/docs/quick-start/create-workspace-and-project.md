@@ -184,42 +184,42 @@ If you want to expose services using the type `LoadBalancer`, you need to use th
 
 ![NodePort-setting-done](https://ap3.qingstor.com/kubesphere-website/docs/20200827142411.png)
 
-### Task 4: Create a Role
+### 任务 4: 创建角色
 
-After you finish the above tasks, you know that users can be granted different roles at different levels. The roles used in previous tasks are all built-in ones created by KubeSphere itself. In this task, you will learn how to define a role yourself to meet the needs in your work.
+完成上述任务后，您将知道可以为用户授予不同级别的不同角色。先前任务中使用的角色都是 Ku​​beSphere 本身创建的内置角色。在此任务中，您将学习如何自己定义角色以满足工作需求。
 
-1.  Log in the console as `admin` again and go to **Access Control**.
-2. In **Account Roles**, there are four system roles listed which cannot be deleted or edited. Click **Create** and set a **Role Identifier**. In this example, a role named `roles-manager` will be created.
+1. 再次以`admin`账户登录控制台并转到 **访问控制** 。
+2. 在 **账户角色** 中，列出了四个无法被删除和修改的系统角色。点击 **创建** 和设置 **角色标识符**。在此示例中，将创建名为 `roles-manager` 的角色。
 
 ![create-role](https://ap3.qingstor.com/kubesphere-website/docs/20200827153339.png)
 
-{{< notice note >}}
+{{< notice 注意 >}}
 
-It is recommended you enter a description for the role as it explains what the role is used for. The role created here will be responsible for role management only, including adding and deleting roles.
+建议您输入角色说明来声明角色的用途。此处创建的角色将仅负责角色管理，包括添加和删除角色。
 
 {{</ notice >}} 
 
-Click **Edit Authorization** to continue.
+点击 **编辑权限** 继续。
 
-3. In **Access Control**, select the authorization that you want the user granted this role to have. For example, **Users View**, **Roles Management** and **Roles View** are selected for this role. Click **OK** to finish.
+3. 在 **访问控制** 中，选择您希望被授予了该角色的用户所拥有的权限。例如，为此角色选择 **账户查看**，**角色管理**，**角色查看**。点击 **确定** 完成创建。
 
 ![edit-authorization](https://ap3.qingstor.com/kubesphere-website/docs/20200827153651.png)
 
-{{< notice note >}} 
+{{< notice 注意 >}} 
 
-**Depend on** means the major authorization (the one listed after **Depend on**) needs to be selected first so that the affiliated authorization can be assigned.
+**依赖于** 是指需要先选择主要授权（**依赖于** 之后列出的授权），以便可以分配关联授权。
 
 {{</ notice >}} 
 
-4. Newly-created roles will be listed in **Account Roles**. You can click the three dots on the right to edit it.
+4. 新创建的角色将列在 **账户角色** 中。你可以点击右侧的三个点来编辑它。
 
 ![roles-manager](https://ap3.qingstor.com/kubesphere-website/docs/20200827154723.png)
 
-5. In **Accounts**, you can add a new account and grant it the role `roles-manager` or change the role of an existing account to `roles-manager` by editing it.
+5. 在 **账户管理** 中，你可以添加一个新的账户并授予角色 `roles-manager` ，或者通过编辑将现有账户的角色更改为 `roles-manager` 。
 
 ![edit-role](https://ap3.qingstor.com/kubesphere-website/docs/20200827155205.png)
 
-{{< notice note >}} 
+{{< notice 注意 >}} 
 
 The role of `roles-manager` overlaps with `users-manager` while the latter is also capable of user management. This example is only for demonstration purpose. You can create customized roles based on your needs.
 

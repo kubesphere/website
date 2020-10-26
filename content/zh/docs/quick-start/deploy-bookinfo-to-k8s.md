@@ -17,7 +17,7 @@ Among others, a canary release represents an effective software development stra
 
 ## 目标
 
-In this tutorial, you will learn how to deploy a sample application Bookinfo composed of four separate microservices and use the traffic management feature of KubeSphere to publish a new version.
+在本教程中，您将学习如何部署由四个独立的微服务组成的示例应用程序 Bookinfo ，以及如何使用 KubeSphere 的流量管理功能来发布新版本。
 
 ## 前置条件
 
