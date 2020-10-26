@@ -19,35 +19,29 @@ This tutorial walks you through an example of how to deploy [Harbor](https://goh
 
 ### Common steps
 
-1. To begin with, you deploy Harbor from the App Store. Please make sure you are landing on the **Overview** page of the project `demo`.
-
-![overview_of_demo_project](/images/docs/appstore/harbor/overview_of_demo_project.png)
-
-2. List your deployed apps. If it is empty, click the button `Deploy New Application`.
-
-![new_app_deploy](/images/docs/appstore/harbor/new_app_deploy.png)
-
-3. Choose harbor template `From App Store`.
+1. Choose harbor template `From App Store`.
 
 ![choose_app_from_store](/images/docs/appstore/harbor/choose_app_from_store.png)
 
-4. Find harbor in App Store.
-
-![overview_of_apps](/images/docs/appstore/harbor/overview_of_apps.png)
-
-5. Choose harbor **version** and **deployment location**, then click `Next`.
+2. Choose harbor **version** and **deployment location**, then click `Next`.
 
 ![deploy_set_of_harbor](/images/docs/appstore/harbor/deploy_set_of_harbor.png)
 
-6. Config harbor yaml, then click `Deploy`. There was an example yaml in section **FAQ**.
+3. Config harbor yaml, then click `Deploy`. There was an example yaml in section **FAQ**.
 
 ![config_of_harbor_deploy](/images/docs/appstore/harbor/config_of_harbor_deploy.png)
 
+> `type` : how to expose the service. It\'s related to kubernetes service.  
+> `tls` : means whether to enable https. Simply set it as **false** for common scenario.  
+> `externalURL` : the url exposed to user.  
+
 {{< notice warning >}}
-Don't forget to edit **externalURL**.
+Don't forget to edit **externalURL**, if you have trouble in login after harbor deployed, edit this may helpful.
 {{</ notice >}}
 
-7. Check the status of deployment, then try to login harbor.
+4. Check the status of deployment, then try to login harbor by use the `expose.type` you defined.
+
+For this example, we use `http://172.23.5.6:30002` to access to harbor which defined at step 3.
 
 ![active_of_harbor](/images/docs/appstore/harbor/active_of_harbor.png)
 
@@ -57,8 +51,9 @@ Don't forget to edit **externalURL**.
 
 1. How to enable http login ?
 
-* set `tls.enabled` as false in step 6.
-* keywords in example yaml
+* set `tls.enabled` as false in step 3. `externalURL` \'s protocol should be as same as the `expose.type.ports`.
+* if use docker login, set `externalURL` as one of `insecure-registries` in **daemon.json**, then reload docker.
+* the keywords showed in the yaml below, you should notice.
 
 ```yaml
 ## NOTICE 172.23.5.6 is the test host ip, should use your ip
@@ -91,7 +86,7 @@ expose:
         # The node port Notary listens on
         nodePort: 30004
 
-externalURL: https://172.23.5.6:30003
+externalURL: http://172.23.5.6:30002
 
 # The initial password of Harbor admin. Change it from portal after launching Harbor
 harborAdminPassword: "Harbor12345"
@@ -101,6 +96,12 @@ secretKey: "not-a-secure-key"
 
 2. How to enable https login ?
 
-* set `tls.enabled` as true in step 6, and edit **externalURL** properly.
-* ca certificates is in pod `harbor-core` \'s `/etc/core/ca`.
-* trust the ca certificates by your host first, then restart docker.
+    a. use self signed certificates.
+      * set `tls.enabled` as true in step 3, and edit **externalURL** properly.
+      * copy the ca certificates stored in pod `harbor-core` \'s `/etc/core/ca` to your host.
+      * trust the ca certificates by your host first, then restart docker.
+
+    b. use public ssl.
+      * add certificates as a secrets.
+      * set `tls.enabled` as true in step 3, and edit **externalURL** properly.
+      * edit `tls.secretName`.
