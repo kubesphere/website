@@ -1,9 +1,9 @@
 ---
 title: "How to integrate Harbor in Pipeline"
-keywords: 'kubernetes, docker, devops, jenkins, harbor'
+keywords: 'kubernetes, docker, devops, jenkins, jfrog'
 description: ''
 linkTitle: "Integrate Harbor in Pipeline"
-weight: 360
+weight: 300
 ---
 
 ## Prerequisites
