@@ -82,7 +82,7 @@ Each level has multiple built-in roles. Besides, KubeSphere allows you to create
 | ws-manager      | workspaces-manager | 创建和管理所有的企业空间。                            |
 | ws-admin        | platform-regular   | 管理指定企业空间中的所有资源（本例中此账户用于邀请新成员加入企业空间）。|
 | project-admin   | platform-regular   | 创建和管理普通项目及 DevOps 项目，并邀请新成员加入项目。|
-| project-regular | platform-regular   | `project-regular` 将会被 `project-admin` 邀请加入到创建的项目或 DevOps 项目。此账户将会用于在指定项目中创建工作负载，pipelines 和其他资源。|
+| project-regular | platform-regular   | `project-regular` 将会被 `project-admin` 邀请加入到创建的项目或 DevOps 项目。此账户将会用于在指定项目中创建工作负载，流水线和其他资源。|
 
 5. 检查已创建的四个账户。
 
@@ -122,7 +122,7 @@ Each level has multiple built-in roles. Besides, KubeSphere allows you to create
 | --------------- | -------------------------- | ------------------------------------------------------------ |
 | ws-admin        | workspace-admin            | 管理企业空间中的所有资源（我们使用这个账户来邀请新成员加入企业空间）。 |
 | project-admin   | workspace-self-provisioner | 创建和管理项目及 DevOps 项目，并邀请新成员加入企业空间。 |
-| project-regular | workspace-viewer           | `project-regular` 将由 `project-admin` 邀请加入项目或者 DevOps 项目。该账户可用来创建工作负载，pipelines 等等。 |
+| project-regular | workspace-viewer           | `project-regular` 将由 `project-admin` 邀请加入项目或者 DevOps 项目。该账户可用来创建工作负载，流水线等等。 |
 
 ### 任务 3: 创建项目
 
@@ -221,15 +221,15 @@ Each level has multiple built-in roles. Besides, KubeSphere allows you to create
 
 {{< notice 注意 >}} 
 
-The role of `roles-manager` overlaps with `users-manager` while the latter is also capable of user management. This example is only for demonstration purpose. You can create customized roles based on your needs.
+角色 `roles-manager` 与 `users-manager` 存在权限重叠，后者也可以进行用户管理，本示例仅用于演示目的。您可根据您的实际需求创建自定义角色。
 
 {{</ notice >}} 
 
-### Task 5: Create a DevOps Project (Optional)
+### Task 5: 创建 DevOps 项目 (可选)
 
-{{< notice note >}}
+{{< notice 注意 >}}
 
-To create a DevOps project, you need to install KubeSphere DevOps system in advance, which is a pluggable component providing CI/CD pipelines, Binary-to-image, Source-to-image features, and more. For more information about how to enable DevOps, see [KubeSphere DevOps System](../../pluggable-components/devops/).
+要创建 DevOps 项目，您需要预先安装 KubeSphere Devops 系统，该系统是一个用于提供 CI/CD 流水线，二进制打包镜像，源代码打包镜像等功能的可插拔组件。有关如何启用 DevOps 组件的更多信息，请参阅 [KubeSphere DevOps System](../../pluggable-components/devops/).
 
 {{</ notice >}} 
 
