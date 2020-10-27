@@ -1,4 +1,11 @@
-# Deploy Redis in KubeSphere
+---
+title: "在kubesphere中部署Redis"
+keywords: 'redis, 应用商店, OpenPitrix'
+description: '如何利用kubesphere中的应用商店部署Redis'
+
+
+weight: 2240
+---
 
 本文介绍在**kubesphere**中通过应用商店部署**Redis**的操作步骤。
 

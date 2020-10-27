@@ -1,4 +1,11 @@
-# Deploy MongoDB in KubeSphere
+---
+title: "在kubesphere中部署MongoDB"
+keywords: 'mongodb, 应用商店, OpenPitrix'
+description: '如何利用kubesphere中的应用商店部署mongoDB'
+
+
+weight: 2240
+---
 
 本文介绍在**kubesphere**中通过应用商店部署**MongoDB**的操作步骤。
 

@@ -1,4 +1,11 @@
-# Deploy Nginx in KubeSphere
+---
+title: "在kubesphere中部署Nginx"
+keywords: 'Nginx, 应用商店, OpenPitrix'
+description: '如何利用kubesphere中的应用商店部署Nginx'
+
+
+weight: 2240
+---
 
 本文介绍在**kubesphere**中通过应用商店部署**Nginx**的操作步骤。
 
