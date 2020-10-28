@@ -1,86 +1,116 @@
 ---
 title: "CronJobs"
-keywords: "kubesphere, kubernetes, jobs, cronjobs"
+keywords: "KubeSphere, Kubernetes, jobs, cronjobs"
 description: "Create a Kubernetes CronJob"
 
-weight: 2260
+weight: 2261
 ---
 
-CronJobs are useful for creating periodic and recurring tasks, like running backups or sending emails. CronJobs can also schedule individual tasks for a specific time, such as scheduling a Job for when your cluster is likely to be idle.
+CronJobs are useful for creating periodic and recurring tasks, like running backups or sending emails. CronJobs can also schedule individual tasks at a specific time or interval, such as scheduling a Job for when your cluster is likely to be idle.
+
+For more information, see [the official documentation of Kubernetes](https://kubernetes.io/docs/concepts/workloads/controllers/cron-jobs/).
 
 ## Prerequisites
 
-- You need to create a workspace, project and `project-regular` account. Please refer to the [Getting Started with Multi-tenant Management](../../../quick-start/create-workspace-and-project) if not yet.
-- You need to sign in with `project-admin` account and invite `project-regular` to enter the corresponding project if not yet. Please refer to [Invite Member](../../../quick-start/create-workspace-and-project#task-3-create-a-project).
+- You need to create a workspace, a project and an account (`project-regular`). Please refer to [Create Workspace, Project, Account and Role](../../../quick-start/create-workspace-and-project) if they are not ready yet.
+- You need to sign in with the `project-admin` account and invite `project-regular` to the corresponding project. Please refer to [these steps to invite a member](../../../quick-start/create-workspace-and-project#task-3-create-a-project).
 
 ## Create a CronJob
 
-### Step 1. Open Modal
+### Step 1: Open Dashboard
 
-1. Go to **Application Workloads** and click **CronJobs**.
-2. Click **Create** button to open the modal.
+Log in the console as `project-regular`. Go to **Jobs** of a project, choose **CronJobs** and click **Create**.
 
-![](/images/docs/cronjob-list.jpg)
+![cronjob-list](/images/docs/project-user-guide/application-workloads/cronjobs/cronjob-list.jpg)
 
-### Step 2. Basic Info
+### Step 2: Input Basic Information
 
-Enter the basic information.
+Enter the basic information. You can refer to the image below for each field. When you finish, click **Next**.
 
-- **Name**: The name of the cronjob, which is also the unique identifier.
-- **Alias**: The alias name of the cronjob, making resources easier to identify.
-- **Schedule**: It runs a job periodically on a given time-based schedule. Please see [CRON](https://en.wikipedia.org/wiki/Cron) for grammar reference.
+![cronjob-create-basic-info](/images/docs/project-user-guide/application-workloads/cronjobs/cronjob-create-basic-info.jpg)
 
-  > Some preset CRON statements are provided in kubesphere to simplify the input.
-  >
-  > | Type        | CRON        |
-  > | ----------- | ----------- |
-  > | Every Hour  | `0 * * * *` |
-  > | Every Day   | `0 0 * * *` |
-  > | Every Week  | `0 0 * * 0` |
-  > | Every Month | `0 0 1 * *` |
+- **Name**: The name of the CronJob, which is also the unique identifier.
+- **Alias**: The alias name of the CronJob, making resources easier to identify.
+- **Schedule**: It runs a Job periodically on a given time-based schedule. Please see [CRON](https://en.wikipedia.org/wiki/Cron) for grammar reference. Some preset CRON statements are provided in KubeSphere to simplify the input. This field is specified by `.spec.schedule`. For this CronJob, input `*/1 * * * *`, which means it runs once per minute.
 
-- **Excution Parameters**
-  - **_staringDeadlineSeconds_**  
-    Optional deadline in seconds for starting the job if it misses scheduled time for any reason. Missed jobs executions will be counted as failed ones.
-  - **_successfulJobsHistoryLimit_**  
-    The number of successful finished jobs to retain. This is a pointer to distinguish between explicit zero and not specified. Defaults to 3.
-  - **_failedJobsHistoryLimit_**  
-    The number of failed finished jobs to retain. This is a pointer to distinguish between explicit zero and not specified. Defaults to 1.
-  - **_concurrencyPolicy_**  
-    Specifies how to treat concurrent executions of a Job. Valid values are:
-      - **Allow** (default): allows CronJobs to run concurrently;
-      - **Forbid**: forbids concurrent runs, skipping next run if previous run hasn't finished yet;
-      - **Replace**: cancels currently running job and replaces it with a new one.
+  | Type        | CRON        |
+  | ----------- | ----------- |
+  | Every Hour  | `0 * * * *` |
+  | Every Day   | `0 0 * * *` |
+  | Every Week  | `0 0 * * 0` |
+  | Every Month | `0 0 1 * *` |
+  
+- **Advanced Settings (Execution Parameters)**:
+  
+  - **staringDeadlineSeconds**. Specified by `.spec.startingDeadlineSeconds` in the manifest file, this optional field represents the maximum number of seconds that a ConJob can take to start if it misses the scheduled time for any reason. CronJobs that have missed executions will be counted as failed ones. If you do not specify this field, there is no deadline for the CronJob.
+  - **successfulJobsHistoryLimit**. Specified by `.spec.successfulJobsHistoryLimit` in the manifest file, this field represents the number of successful CronJob executions to retain. This is a pointer to distinguish between explicit zero and not specified. It defaults to 3.
+  - **failedJobsHistoryLimit**. Specified by `.spec.failedJobsHistoryLimit` in the manifest file, this field represents the number of failed CronJob executions to retain. This is a pointer to distinguish between explicit zero and not specified. It defaults to 1.
+  - **concurrencyPolicy**. Specified by `.spec.concurrencyPolicy`, it represents how to treat concurrent executions of a Job. Valid values are:
+      - **Allow** (default): It allows CronJobs to run concurrently.
+      - **Forbid**: It forbids concurrent runs, skipping the next run if the previous run hasn't finished yet.
+      - **Replace**: It cancels currently running Job and replaces it with a new one.
 
-![](/images/docs/cronjob-create-basic-info.png)
+{{< notice note >}} 
 
-### Step 3. CronJob Settings & Others
+You can enable **Edit Mode** in the top right corner to see the YAML manifest of this CronJob.
 
-Please Refer to [Job Guide](../jobs#step-3-job-settings).
+{{</ notice >}} 
 
-### Step 4. Check Result
+### Step 3: ConJob Settings (Optional)
 
-If success, a new item will be added the Job list.
+Please refer to [Jobs](../jobs/#step-3-job-settings-optional).
 
-![](/images/docs/cronjob-list-new.png)
+### Step 4: Set Image
 
-## Check CronJob detail
+1. Click **Add Container Image** in **Container Image** and input `busybox` in the search bar.
 
-You can check the cronjob's detail via click cronjob's name in the list.
+![input-busybox](/images/docs/project-user-guide/application-workloads/cronjobs/input-busybox.jpg)
 
-### CronJob Operations
+2. Scroll down to **Start Command** and enter `/bin/sh,-c,date; echo "KubeSphere!"` in the box under **Parameters**. 
 
-- **Edit Info**: Edit the basic information except `Name` of the cronjob.
-- **Pause | Start**: Pause or start the cronjob. Pause a cronjob will tell the controller to suspend subsequent executions, it does not apply to already started executions.
-- **Edit YAML**: Edit the cronjob's specification in YAML format.
-- **Delete**: Delete the cronjob, and return to the cronjob list page.
+![start-command](/images/docs/project-user-guide/application-workloads/cronjobs/start-command.jpg)
 
-  ![](/images/docs/cronjob-actions.png)
+3. Click **√** to finish setting the image and **Next** to continue.
 
-### Execution Records
+![finish-image](/images/docs/project-user-guide/application-workloads/cronjobs/finish-image.jpg)
 
-You can check the execution records of the job.
+{{< notice note >}}
 
-- Click the job name to view the job detail.
+- This example CronJob prints `KubeSphere`. For more information about setting images, see [Container Image Settings](../container-image-settings/).
+- For more information about **Restart Policy**, see [Jobs](../jobs/#step-4-container-image).
+- You can skip **Mount Volumes** and **Advanced Settings** for this tutorial. For more information, see [Mount Volumes](../deployments/#step-4-mount-volumes) and [Configure Advanced Settings](../deployments/#step-5-configure-advanced-settings) in Deployments.
 
-![](/images/docs/cronjob-detail-records.png)
+{{</ notice >}} 
+
+### Step 5: Check Result
+
+1. In the final step of **Advanced Settings**, click **Create** to finish. A new item will be added the CronJob list if the creation is successful. Besides, you can also find Jobs under **Jobs** tab.
+
+![cronjob-list-new](/images/docs/project-user-guide/application-workloads/cronjobs/cronjob-list-new.jpg)
+
+![job-list](/images/docs/project-user-guide/application-workloads/cronjobs/job-list.jpg)
+
+2. Under **ConJobs** tab, click this CronJob and go to **Job Records** tab where you can see the information of each execution record. There are 3 successful CronJob executions as the field **successfulJobsHistoryLimit** is set to 3.
+
+![execution-record](/images/docs/project-user-guide/application-workloads/cronjobs/execution-record.jpg)
+
+3. Click any of them and you will be directed to the Job detail page.
+
+![job-detail-page](/images/docs/project-user-guide/application-workloads/cronjobs/job-detail-page.jpg)
+
+4. In **Resource Status**, you can inspect the Pod status. Click the arrow on the right and check the container log as shown below, which displays the expected output.
+
+![container-log-1](/images/docs/project-user-guide/application-workloads/cronjobs/container-log-1.jpg)
+
+![container-log-2](/images/docs/project-user-guide/application-workloads/cronjobs/container-log-2.jpg)
+
+## CronJob Operations
+
+On the CronJob detail page, you can manage the CronJob after it is created.
+
+- **Edit Info**: Edit the basic information except `Name` of the CronJob.
+- **Pause/Start**: Pause or start the Cronjob. Pausing a CronJob will tell the controller to suspend subsequent executions, which does not apply to executions that already start.
+- **Edit YAML**: Edit the CronJob's specification in YAML format.
+- **Delete**: Delete the CronJob, and return to the CronJob list page.
+
+![cronjob-action](/images/docs/project-user-guide/application-workloads/cronjobs/cronjob-action.jpg)
