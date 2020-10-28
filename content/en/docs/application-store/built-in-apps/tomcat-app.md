@@ -1,13 +1,13 @@
 ---
-title: "Deploy Tomcat"
-keywords: 'demploy, tomcat'
-description: 'Deploy Tomcat'
+title: "Deploy Tomcat on KubeSphere"
+keywords: 'KubeSphere,Kubernetes, Installation, Tomcat'
+description: 'How to deploy Tomcat on KubeSphere through App Store'
 
 linkTitle: "Deploy Tomcat"
-weight: 2110
+weight: 261
 ---
-
-This tutorial walks you through an example of how to demploy tomcat.
+[Apache Tomcat](https://tomcat.apache.org/index.html) software powers numerous large-scale, mission-critical web applications across a diverse range of industries and organizations.
+This tutorial walks you through an example of how to demploy Tomcat on KubeSphere.
 
 ## Prerequisites
 
@@ -16,7 +16,7 @@ This tutorial walks you through an example of how to demploy tomcat.
 
 ## Hands-on Lab
 
-### Step 1: Deploy Tomcat
+### Step 1: Deploy Tomcat from App Store
 
 Please make sure you are landing on the **Overview** page of the project `test-project`.
 
@@ -52,19 +52,21 @@ Please make sure you are landing on the **Overview** page of the project `test-p
 ![click-container-terminal](/images/docs/tomcat-app/tomcat-app08.jpg)
 ![tomcat-container-terminal](/images/docs/tomcat-app/tomcat-app09.jpg)
 
-3. You can view the deployed projects in `/usr/local/tomcat/webapps`
+3. You can view the deployed projects in `/usr/local/tomcat/webapps`.
 ![view-project](/images/docs/tomcat-app/tomcat-app10.jpg)
 
 ### Step 3: Access the Tomcat project in browser
 
 1. Go to **Services** and click **tomcat-service-name**.
 
-2. click **More** and click **Edit Internet Access**.
+2. Click **More** and click **Edit Internet Access**.
 ![click-edit-internet-access](/images/docs/tomcat-app/tomcat-app11.jpg)
 
-3. select **NodePort** and click **Ok**. ([more](https://v2-1.docs.kubesphere.io/docs/project-setting/project-gateway/))
+3. Select **NodePort** and click **Ok**. [More information](https://v2-1.docs.kubesphere.io/docs/project-setting/project-gateway/)
 ![select-nodeport](/images/docs/tomcat-app/tomcat-app12.jpg)
 
-4. through the node IP + node port + project path to access the tomcat project in browser. 
+4. Through <font color=green>{$NodeIP} : {$Nodeport} / {$Project path}</font>  to access the tomcat project in browser. 
 ![tomcat-port](/images/docs/tomcat-app/tomcat-app13.jpg)
 ![access-tomcat-browser](/images/docs/tomcat-app/tomcat-app14.jpg)
+
+5. If you want to learn more information about Tomcat please refer to https://tomcat.apache.org/index.html.
