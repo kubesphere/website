@@ -32,7 +32,7 @@ The [official Helm documentation](https://helm.sh/docs/topics/chart_repository/#
 
     - Description information: a brief description of the main features of the application repository to give users a better understanding of the application repository.
 
-3. If the validation is passed, click the **Confirm** button to complete the addition of the application repository. Once the repository is added, KubeSphere will automatically load all the application templates under the repository.
+3. If the validation is passed, click the **OK** button to complete the addition of the application repository. Once the repository is added, KubeSphere will automatically load all the application templates under the repository.
 
 > Note that the example repository added above is a mirror of Google's Helm repository (we will be developing a commercial version of the application repository for enterprise use in the future), and some of these applications may not be successfully deployed.
 
