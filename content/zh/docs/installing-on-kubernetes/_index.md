@@ -53,6 +53,10 @@ Learn how to deploy KubeSphere on Huawei Cloud Container Engine.
 
 Explore the best practice of installing KubeSphere in an air-gapped environment.
 
+###  [Air-gapped installation on existing Kubernetes](../on-prem-kubernetes/Air-gapped-installation-on-existing-Kubernetes/)
+
+
+
 ## Uninstalling
 
 ### [Uninstalling KubeSphere from Kubernetes](../installing-on-kubernetes/uninstalling/uninstalling-kubesphere-from-k8s/)

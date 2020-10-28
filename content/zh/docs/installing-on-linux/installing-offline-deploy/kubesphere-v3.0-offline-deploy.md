@@ -10,7 +10,7 @@ weight: 2200
 
 ### <center>kubesphere-v3.0.0离线部署</center>
 
-#### 一　新建4台 linux主机（centos7.7）
+#### 一　新建3台 linux主机（centos7.7）
 
 主机配置
 
