@@ -1,13 +1,13 @@
 ---
 title: "Deploy Tomcat on KubeSphere"
-keywords: 'KubeSphere,Kubernetes, Installation, Tomcat'
+keywords: 'KubeSphere, Kubernetes, Installation, Tomcat'
 description: 'How to deploy Tomcat on KubeSphere through App Store'
 
-linkTitle: "Deploy Tomcat"
+link title: "Deploy Tomcat"
 weight: 261
 ---
 [Apache Tomcat](https://tomcat.apache.org/index.html) software powers numerous large-scale, mission-critical web applications across a diverse range of industries and organizations.
-This tutorial walks you through an example of how to demploy Tomcat on KubeSphere.
+This tutorial walks you through an example of how to deploy Tomcat on KubeSphere.
 
 ## Prerequisites
 
@@ -55,7 +55,7 @@ Please make sure you are landing on the **Overview** page of the project `test-p
 3. You can view the deployed projects in `/usr/local/tomcat/webapps`.
 ![view-project](/images/docs/tomcat-app/tomcat-app10.jpg)
 
-### Step 3: Access the Tomcat project in browser
+### Step 3: Access the Tomcat project in the browser
 
 1. Go to **Services** and click **tomcat-service-name**.
 

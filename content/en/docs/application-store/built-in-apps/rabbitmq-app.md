@@ -3,10 +3,10 @@ title: "Deploy RabbitMQ on KubeSphere"
 keywords: 'KubeSphere, RabbitMQ, Kubernetes, Installation'
 description: 'How to deploy RabbitMQ on KubeSphere through App Store'
 
-linkTitle: "Deploy RabbitMQ"
+link title: "Deploy RabbitMQ"
 weight: 251
 ---
-[RabbitMQ](https://www.rabbitmq.com/) is the most widely deployed open source message broker.and it's lightweight and easy to deploy on premises and in the cloud. It supports multiple messaging protocols. RabbitMQ can be deployed in distributed and federated configurations to meet high-scale, high-availability requirements.
+[RabbitMQ](https://www.rabbitmq.com/) is the most widely deployed open source message broker. and it's lightweight and easy to deploy on premises and in the cloud. It supports multiple messaging protocols. RabbitMQ can be deployed in distributed and federated configurations to meet high-scale, high-availability requirements.
 This tutorial walks you through an example of how to deploy RabbitMQ on KubeSphere.
 
 ## Prerequisites
@@ -34,7 +34,7 @@ Please make sure you are landing on the **Overview** page of the project `test-p
 
 ![click-next](/images/docs/rabbitmq-app/rabbitmq03.jpg)
 
-4. Use the default configuration or change the account and  password as you want. then click **Deploy**.
+4. Use the default configuration or change the account and password as you want. then click **Deploy**.
 
 ![click-demploy](/images/docs/rabbitmq-app/rabbitMQ04.jpg)
 
