@@ -24,13 +24,13 @@ This tutorial shows you how to quickly deploy a [Grafana](https://grafana.com/) 
 
 1.1. Sign in with `ws-admin` account, click **View Workspace** and navigate to **Workspace Settings → App Repos**, then click **Create App Repository**.
 
-![App Repo List](https://pek3b.qingstor.com/kubesphere-docs/png/20200106143904.png)
+![Add App Repo](/images/application-templates/create-app-repo.png)
 
 1.2. Fill in the basic information, name it `demo-repo` and input the URL `https://helm-chart-repo.pek3a.qingstor.com/kubernetes-charts/`. You can validate if this URL is available, and choose **OK** when you have done.
 
 > Note: It will automatically import all of the applications from the Helm repository into KubeSphere. You can browse those app templates in each project.
 
-![Add App Repo](https://pek3b.qingstor.com/kubesphere-docs/png/20200106144105.png)
+![Add App Repo](/images/application-templates/validate-repo2.png)
 
 ### Step 2: Browse App Templates
 
@@ -38,11 +38,11 @@ This tutorial shows you how to quickly deploy a [Grafana](https://grafana.com/) 
 
 2.2. Click **Application Workloads → Applications**, click **Deploy New Application**.
 
-![App List](https://pek3b.qingstor.com/kubesphere-docs/png/20200106161804.png)
+![App List](/images/application-templates/20200106161804.png)
 
 2.3. Choose **From App Templates** and select `demo-repo` from the dropdown list.
 
-![App Templates](https://pek3b.qingstor.com/kubesphere-docs/png/20200106162219.png)
+![App Templates](/images/application-templates/20200106162219.png)
 
 2.4. Search `Grafana` and click into Grafana App. We will demonstrate deploying Grafana to Kubernetes as an example.
 
@@ -52,25 +52,25 @@ This tutorial shows you how to quickly deploy a [Grafana](https://grafana.com/) 
 
 3.1. Click **Deploy** on the right. Generally you do not need to change any configuration, just click **Deploy**.
 
-![View Grafana](https://pek3b.qingstor.com/kubesphere-docs/png/20200106171747.png)
+![View Grafana](/images/application-templates/20200106171747.png)
 
 3.2. Wait for two minutes, then you will see the application `grafana` showing `active` on the application list.
 
-![Deploy Grafana](https://pek3b.qingstor.com/kubesphere-docs/png/20200106172151.png)
+![Deploy Grafana](/images/application-templates/20200106172151.png)
 
 ### Step 4: Expose Grafana Service
 
 4.1. Click into Grafana application, and then enter into its service page.
 
-![View Grafana Detail](https://pek3b.qingstor.com/kubesphere-docs/png/20200106172416.png)
+![View Grafana Detail](/images/application-templates/20200106172416.png)
 
 4.2. In this page, make sure its deployment and Pod are running, then click **More → Edit Internet Access**, and select **NodePort** in the dropdown list, click **OK** to save it.
 
-![Edit Internet Access for Grafana Service](https://pek3b.qingstor.com/kubesphere-docs/png/20200106172532.png)
+![Edit Internet Access for Grafana Service](/images/application-templates/20200106172532.png)
 
 4.3. At this point, you will be able to access Grafana service from outside of the cluster.
 
-![Grafana Service Endpoint](https://pek3b.qingstor.com/kubesphere-docs/png/20200106172837.png)
+![Grafana Service Endpoint](/images/application-templates/20200106172837.png)
 
 ### Step 5: Access the Grafana Service
 
@@ -78,14 +78,14 @@ In this step, we can access Grafana service using `${Node IP}:${NODEPORT}`, e.g.
 
 5.1. Note you have to obtain the account and password from the grafana secret in advance. Navigate to **Configuration Center → Secrets**, click into **grafana-l47bmc** with Type Default.
 
-![Grafana Secret](https://pek3b.qingstor.com/kubesphere-docs/png/20200106173434.png)
+![Grafana Secret](/images/application-templates/20200106173434.png)
 
 5.2. Click the eye button to display the secret information, then copy and paste the values of **admin-user** and **admin-password** respectively.
 
-![Grafana Credentials](https://pek3b.qingstor.com/kubesphere-docs/png/20200106173531.png)
+![Grafana Credentials](/images/application-templates/20200106173531.png)
 
 5.3. Open the Grafana login page, sign in with the **admin** account.
 
-![Grafana Login Page](https://pek3b.qingstor.com/kubesphere-docs/png/20190717152831.png#alt=)
+![Grafana Login Page](/images/application-templates/20190717152831.png)
 
-![Grafana Dashboard](https://pek3b.qingstor.com/kubesphere-docs/png/20190717152929.png#alt=)
+![Grafana Dashboard](/images/application-templates/20190717152929.png)
