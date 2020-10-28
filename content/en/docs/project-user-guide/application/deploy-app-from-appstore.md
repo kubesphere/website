@@ -51,5 +51,3 @@ Log out and switch to sign in with project-regular account, the normal user of t
 ![Access the application templates](/images/application-templates/deploy-new-application.png)
 
 ![Choose the application templates](/images/application-templates/choose-new-application.png)
-
-For an example of a step-by-step deployment application, refer to [Quick Start - One-Click Deployment Application](../../quick-start/one-click-deploy)
