@@ -8,13 +8,15 @@ author: 'Willqy, Feynman, Sherlock'
 snapshot: 'https://ap3.qingstor.com/kubesphere-website/docs/tidb-architecture.png'
 ---
 
-In a world where Kubernetes has become the de facto standard to build application services that span multiple containers, running a cloud-native distributed database represents an important part of the experience of using Kubernetes. In this connection, [TiDB](https://github.com/pingcap/tidb), as an open-source NewSQL database that supports Hybrid Transactional and Analytical Processing (HTAP) workloads, has come to my awareness. It is MySQL compatible and features horizontal scalability, strong consistency, and high availability. It strives to provide users with a one-stop database solution that covers OLTP (Online Transactional Processing), OLAP (Online Analytical Processing), and HTAP services. TiDB is suitable for various use cases that require high availability and strong consistency with large-scale data.
+![TiDB on KubeSphere](https://ap3.qingstor.com/kubesphere-website/docs/20201028212049.png)
+
+In a world where Kubernetes has become the de facto standard to build application services that span multiple containers, running a cloud-native distributed database represents an important part of the experience of using Kubernetes. In this connection, [TiDB](https://github.com/pingcap/tidb), an open-source NewSQL database that supports Hybrid Transactional and Analytical Processing (HTAP) workloads, has come to my awareness. It is MySQL compatible and features horizontal scalability, strong consistency, and high availability. It strives to provide users with a one-stop database solution that covers OLTP (Online Transactional Processing), OLAP (Online Analytical Processing), and HTAP services. TiDB is suitable for various use cases that require high availability and strong consistency with large-scale data.
 
 ![tidb-architecture](https://ap3.qingstor.com/kubesphere-website/docs/tidb-architecture.png)
 
 Among others, [TiDB Operator](https://github.com/pingcap/tidb-operator) is an automatic operation system for TiDB clusters in Kubernetes. It provides a full management life-cycle for TiDB including deployment, upgrades, scaling, backup, fail-over, and configuration changes. With TiDB Operator, TiDB can run seamlessly in Kubernetes clusters deployed on public or private cloud.
 
-In addition to TiDB, I am also a KubeSphere user. [KubeSphere](https://kubesphere.io/) is a distributed operating system managing cloud-native applications with [Kubernetes](https://kubernetes.io/) as its kernel, providing a plug-and-play architecture for the seamless integration of third-party applications to boost its ecosystem. [KubeSphere can be run anywhere](https://kubesphere.io/docs/introduction/what-is-kubesphere/#run-kubesphere-everywhere) as it is highly pluggable without any hacking into Kubernetes.
+In addition to TiDB, I am also a KubeSphere user. [KubeSphere](https://kubesphere.io/) is an open-source distributed operating system managing cloud-native applications with [Kubernetes](https://kubernetes.io/) as its kernel, providing a plug-and-play architecture for the seamless integration of third-party applications to boost its ecosystem. [KubeSphere can be run anywhere](https://kubesphere.io/docs/introduction/what-is-kubesphere/#run-kubesphere-everywhere) as it is highly pluggable without any hacking into Kubernetes.
 
 ![KubeSphere-structure-comp](https://ap3.qingstor.com/kubesphere-website/docs/KubeSphere-structure-comp.png)
 
@@ -28,15 +30,19 @@ Therefore, I select QingCloud Kubernetes Engine (QKE) to prepare the environment
 
 1. Log in the [web console of QingCloud](https://console.qingcloud.com/). Simply select KubeSphere (QKE) from the menu and create a Kubernetes cluster with KubeSphere installed. The platform allows you to install different components of KubeSphere. Here, we need to enable [OpenPitrix](https://github.com/openpitrix/openpitrix), which powers the app management feature in KubeSphere.
 
-![qingcloud-kubernetes-engine](https://ap3.qingstor.com/kubesphere-website/docs/20201026173924.png)
+{{< notice note >}}
+KubeSphere can be installed on any infrastructure. I just use QingCloud Platform as an example. See [KubeSphere Documentation](https://kubesphere.io/docs/) for more details.
+{{</ notice >}}
 
-![enable-openpitrix](https://ap3.qingstor.com/kubesphere-website/docs/20201026173734.png)
+
+
+![qingcloud-kubernetes-engine](https://ap3.qingstor.com/kubesphere-website/docs/20201026173924.png)
 
 2. The cluster will be up and running in around 10 minutes. In this example, I select 3 working nodes to make sure I have enough resources for the deployment later. You can also customize configurations based on your needs. When the cluster is ready, log in the web console of KubeSphere with the default account and password (`admin/P@88w0rd`). Here is the cluster **Overview** page:
 
 ![cluster-management](https://ap3.qingstor.com/kubesphere-website/docs/20201026175447.png)
 
-3. Use the built-in tool Kubectl from the Toolkit in the bottom right corner to execute the following command to install TiDB Operator CRD:
+3. Use the built-in **Web Kubectl** from the Toolkit in the bottom right corner to execute the following command to install TiDB Operator CRD:
 
 ```bash
 kubectl apply -f https://raw.githubusercontent.com/pingcap/tidb-operator/v1.1.6/manifests/crd.yaml
@@ -56,7 +62,7 @@ kubectl apply -f https://raw.githubusercontent.com/pingcap/tidb-operator/v1.1.6/
 
 ![add-pingcap-repo](https://ap3.qingstor.com/kubesphere-website/docs/20201026193015.png)
 
-## Deploying tidb-operator
+## Deploying TiDB-operator
 
 1. Like I mentioned above, we need to create a project (i.e. namespace) first to run the TiBD cluster.
 
@@ -94,7 +100,7 @@ kubectl apply -f https://raw.githubusercontent.com/pingcap/tidb-operator/v1.1.6/
 
 ![tidb-deployment](https://ap3.qingstor.com/kubesphere-website/docs/20201027132001.png)
 
-## Deploying tidb-cluster
+## Deploying TiDB-cluster
 
 The process of deploying tidb-cluster is basically the same as that of tidb-operator shown above.
 
@@ -140,7 +146,7 @@ Now that we have our apps ready, we may need to focus more on observability. Kub
 
 ![tidb-cluster-deployment-ready](https://ap3.qingstor.com/kubesphere-website/docs/20201027132450.png)
 
-2. tidb, tikv and pd are all stateful applications which can be found in **StatefulSets**. Note that tikv and tidb will be created automatically and it may take a while before displaying in the list.
+2. TiDB, TiKV and pd are all stateful applications which can be found in **StatefulSets**. Note that TiKV and TiDB will be created automatically and it may take a while before displaying in the list.
 
 ![tidb-statefulsets](https://ap3.qingstor.com/kubesphere-website/docs/20201027134239.png)
 
@@ -152,7 +158,7 @@ Now that we have our apps ready, we may need to focus more on observability. Kub
 
 ![view-tikv-loads](https://ap3.qingstor.com/kubesphere-website/docs/20201027141541.png)
 
-5. Relevant Pods are also listed. As you can see, tidb-cluster contains three pd Pods, two tidb Pods and 3 tikv Pods.
+5. Relevant Pods are also listed. As you can see, tidb-cluster contains three pd Pods, two TiDB Pods and 3 TiKV Pods.
 
 ![tidb-pod-list](https://ap3.qingstor.com/kubesphere-website/docs/20201027134634.png)
 
@@ -160,7 +166,7 @@ Now that we have our apps ready, we may need to focus more on observability. Kub
 
 ![tidb-storage-usage](https://ap3.qingstor.com/kubesphere-website/docs/20201027133725.png)
 
-7. Volume usage is also monitored. Here is an example of tikv:
+7. Volume usage is also monitored. Here is an example of TiKV:
 
 ![tikv-volume-status](https://ap3.qingstor.com/kubesphere-website/docs/20201027141718.png)
 
@@ -208,7 +214,7 @@ mysql> show databases;
 mysql> 
 ```
 
-4. Besides, tidb integrates Prometheus and Grafana to monitor performance of the database cluster. As we can see above, Grafana is being exposed through `NodePort`. After you configure necessary port forwarding rules and open its port in security groups on QingCloud Platform, you can access the Grafana UI to view metrics.
+4. Besides, TiDB integrates Prometheus and Grafana to monitor performance of the database cluster. As we can see above, Grafana is being exposed through `NodePort`. After you configure necessary port forwarding rules and open its port in security groups on QingCloud Platform, you can access the Grafana UI to view metrics.
 
 ![grafana-in-KubeSphere](https://ap3.qingstor.com/kubesphere-website/docs/20201027141035.png)
 
@@ -218,10 +224,12 @@ I hope you guys all have successfully deploy TiDB. Both TiDB and KubeSphere are 
 
 ## References
 
-https://docs.pingcap.com/tidb-in-kubernetes/stable/get-started
+**KubeSphere GitHub**: https://github.com/kubesphere/kubesphere 
 
-https://docs.pingcap.com/tidb-in-kubernetes/stable/tidb-operator-overview
+**TiDB GitHub**: https://github.com/pingcap/TiDB
 
-https://kubesphere.io/docs/introduction/what-is-kubesphere/
+**TiDB Operator Documentation**: https://docs.pingcap.com/tidb-in-kubernetes/stable/tidb-operator-overview
 
-https://kubesphere.io/docs/
+**KubeSphere Introduction**: https://kubesphere.io/docs/introduction/what-is-kubesphere/
+
+**KubeSphere Documentation**: https://kubesphere.io/docs/
