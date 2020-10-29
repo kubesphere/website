@@ -31,4 +31,12 @@ weight: 2242
 
 4. Wait for a few minutes, then you will see the application memcached showing active on the application list.
 
-![minio_active](/images/docs/appstore/memcached/memcached_active.png)
+![memcached_active](/images/docs/appstore/memcached/memcached_active.png)
+
+5. Click into Memcached application, and then enter into its workload page and get the pod IP.
+
+![View Memcached Detail](/images/docs/appstore/memcached/view_memcached_workload.png)
+
+6. Because Memcached service type is headless, we should connect it inside cluster with pod IP got previously and default port `11211`.
+
+![Connect Memcached](/images/docs/appstore/memcached/connect_memcached.png)
