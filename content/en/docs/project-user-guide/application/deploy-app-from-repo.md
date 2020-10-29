@@ -13,8 +13,8 @@ This tutorial shows you how to quickly deploy a [Grafana](https://grafana.com/) 
 
 ## Prerequisites
 
-- You have enabled [KubeSphere Application Store](../../installation/install-openpitrix)
-- You have completed the tutorial in [Getting Started with Multi-tenant Management](../admin-quick-start)
+- You have enabled [KubeSphere App Store](../../pluggable-components/app-store)
+- You have completed the tutorial in [Create Workspace, Project, Account and Role](../../quick-start/create-workspace-and-project/)
 
 ## Hands-on Lab
 
