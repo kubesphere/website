@@ -61,4 +61,4 @@ kubectl get svc/ks-console -n kubesphere-system
 The guide above is used only for minimal installation by default. To enable other components in KubeSphere, see [Enable Pluggable Components](../../pluggable-components/) for more details.
 
 ## Demo
-<script src="https://asciinema.org/a/362122.js" id="asciicast-362122" async></script>
+<script src="https://asciinema.org/a/367950.js" id="asciicast-367950" async></script>

@@ -188,4 +188,4 @@ After logging in the console, you can check the status of different components i
 The guide above is used only for minimal installation by default. To enable other components in KubeSphere, see [Enable Pluggable Components](../../pluggable-components/) for more details.
 
 ## Demo
-<script src="https://asciinema.org/a/362291.js" id="asciicast-362291" async></script>
+<script src="https://asciinema.org/a/367904.js" id="asciicast-367904" async></script>
