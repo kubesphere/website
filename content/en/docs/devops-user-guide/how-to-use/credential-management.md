@@ -1,70 +1,84 @@
 ---
-title: "Credentials Management"
-keywords: 'kubernetes, docker, helm, jenkins, istio, prometheus'
-description: ''
-linkTitle: "Credentials Management"
+title: "Credential Management"
+keywords: 'Kubernetes, docker, credential, KubeSphere, devops'
+description: 'This tutorial demonstrates how to manage credentials in a DevOps project.'
+linkTitle: "Credential Management"
 weight: 400
 ---
 
-A DevOps project user can configure credentials for Jenkins Pipeline. Once a user (e.g. Owner and Maintainer) adds/configures these credentials in DevOps project, the credentials can be used by DevOps projects to interact with these third-party applications.
+Credentials are objects containing sensitive information, such as usernames and passwords, SSH keys, and tokens. When a KubeSphere DevOps pipeline is running, it interacts with objects in external environments to perform a series of tasks, including pulling code, pushing and pulling images, and running scripts. During this process, credentials need to be provided accordingly while they do not appear explicitly in the pipeline.
 
-Currently, it can store the following 4 types of credentials in DevOps project:
+A DevOps project user with necessary permissions can configure credentials for Jenkins pipelines. Once the user adds or configures these credentials in a DevOps project, they can be used in the DevOps project to interact with third-party applications.
 
-- Account credentials: Username and password - which could be handled as separate components or as a colon separated string in the format username:password, such as GitHub, GitLab, Docker Hub, etc.
-- SSH: Username with private key - an SSH public/private key pair.
-- Secret text: Secret content in a file.
-- kubeconfig: It's used to configure cross-cluster authentication, the page will automatically generate the contents of the kubeconfig file of the current Kubernetes cluster.
+Currently, you can store the following 4 types of credentials in a DevOps project:
 
-## Create Credential
+![create-credential-page](/images/docs/devops-user-guide/credential-management/create-credential-page.jpg)
 
-Sign in with `project-regular`, choose **Credentials** and click **Create Credential**.
+- **Account Credentials**: Username and password which can be handled as separate components or as a colon-separated string in the format `username:password`, such as accounts of GitHub, GitLab, and Docker Hub.
+- **SSH**: Username with a private key, an SSH public/private key pair.
+- **Secret Text**: Secret content in a file.
+- **kubeconfig**: It is used to configure cross-cluster authentication. If you select this type, the dialogue will auto-populate the field with the kubeconfig file of the current Kubernetes cluster.
 
-![Create Credential](https://pek3b.qingstor.com/kubesphere-docs/png/20200221164349.png)
+This tutorial demonstrates how to create and manage credentials in a DevOps project.
 
-### Create Credential for DockerHub
+## Prerequisites
 
-1. Click **Create**, fill in the basic information in the pop-up window.
+- You have enabled [KubeSphere DevOps System](../../../pluggable-components/devops/).
+- You have a workspace, a DevOps project and an account (`project-regular`) invited to the DevOps project with the `operator` role. If they are not ready yet, see [Create Workspace, Project, Account and Role](../../../quick-start/create-workspace-and-project/).
 
-- Credential ID: it will be used in pipeline, name it **dockerhub-id**
-- Type: Choose `Account Credentials`
-- Username: Your DockerHub account
-- Token/password: Your DockerHub password
-- Description: A brief introduction to this credential.
+## Create Credentials
 
+Log in the console of KubeSphere as `project-regular`. Navigate to your DevOps project, choose **Credentials** and click **Create**.
 
-Click **OK** when you've done.
+![create-credential-step1](/images/docs/devops-user-guide/credential-management/create-credential-step1.jpg)
 
-![Create Credential for DockerHub](https://pek3b.qingstor.com/kubesphere-docs/png/20200221165257.png)
+### Create Docker Hub Credentials
 
-3. Then you can see this credential has been created successully.
+1. In the dialogue that appears, provide the following information.
 
-![](https://pek3b.qingstor.com/kubesphere-docs/png/20200221165339.png)
+![dockerhub-credentials](/images/docs/devops-user-guide/credential-management/dockerhub-credentials.jpg)
 
-### Create Credential for GitHub
+- **Credential ID**:  Set an ID, such as `dockerhub-id`, which can be used in pipelines.
+- **Type**: Select **Account Credentials**.
+- **Username**: Your Docker Hub account (i.e Docker ID).
+- **Token/Password**: Your Docker Hub password.
+- **Description**: A brief introduction to the credentials.
 
-Similarly, we create a GitHub Credential and name it `github-id`, choose **Account Credentials**, others are the same with above.
+2. Click **OK** when you finish.
 
-> Note: If there is any special characters includes `@` `$`, it may cause unrecognizable error. You need to encode your account or password through third-party website, e.g. [urlencoder](https://www.urlencoder.org/), please convert it and paste to KubeSphere console.
+### Create GitHub Credentials
 
-### Create KubeConfig Credential
+Similarly, follow the same steps above to create GitHub credentials. Set a different Credential ID (e.g. `github-id`) and also select **Account Credentials** for **Type**. Enter your GitHub username and password for **Username** and **Token/Password** respectively.
 
-The same as above, create a Credential, name it `demo-kubeconfig`, choose **kubeconfig**, click **Create** to complete creation.
+{{< notice note >}}
 
-> Note: A file that is used to configure access to clusters is called a kubeconfig file. Thus we create the kubeconfig credential to access the current Kubernetes cluster, which will be used in pipeline. You don't need to change the file since KubeSphere will automatically load the kubeconfig of the current Kubernetes cluster. On the contrary, you may need to change kubeconfig in KubeSphere when access other cluster.
+If there are any special characters such as `@` and `$` in your account or password, they can cause errors as a pipeline runs because they may not be recognized. In this case, you need to encode your account or password on some third-party websites first, such as [urlencoder](https://www.urlencoder.org/). After that, copy and paste the output for your credential information.
 
-![](https://pek3b.qingstor.com/kubesphere-docs/png/20200221174005.png)
+{{</ notice >}}
 
-## Using the Credential
+### Create Kubeconfig Credentials
 
-1. When you creating a Pipeline, click on **Code Repository**.
+Similarly, follow the same steps above to create kubeconfig credentials. Set a different Credential ID (e.g. `demo-kubeconfig`) and select **kubeconfig**.
 
-![](https://pek3b.qingstor.com/kubesphere-docs/png/20190321162726.png)
+{{< notice info >}}
 
-2. Choose **Git**, then select **gitlab-id** that we created at the last step. Thus you can use it directly.
+A file that is used to configure access to clusters is called a kubeconfig file. This is a generic way of referring to configuration files. For more information, see [the official documentation of Kubernetes](https://kubernetes.io/docs/concepts/configuration/organize-cluster-access-kubeconfig/). You create kubeconfig credentials for the access to the current Kubernetes cluster, which will be used in pipelines. You don't need to change the file since KubeSphere automatically populates the field with the kubeconfig of the current Kubernetes cluster. You may need to change kubeconfig when accessing other clusters.
 
+{{</ notice >}}
 
-## Manage the Credential
+## View and Manage Credentials
 
-Enter this credential's details page, then you can edit its information or delete it.
+1. Credentials created display in the list as below.
 
-![Manage the Credential](https://pek3b.qingstor.com/kubesphere-docs/png/20190321163301.png)
+![credentials-list](/images/docs/devops-user-guide/credential-management/credentials-list.jpg)
+
+2. Click any of them to go to its detail page, where you can see account details and all the events related to the credentials.
+
+![credential-detail-page](/images/docs/devops-user-guide/credential-management/credential-detail-page.jpg)
+
+3. You can also edit or delete credentials on this page. Note that when you edit credentials, KubeSphere does not display the existing username or password information. The previous one will be overwritten if you enter a new username and password.
+
+![edit-credentials](/images/docs/devops-user-guide/credential-management/edit-credentials.jpg)
+
+For more information about how credentials are used, see [Create a Pipeline Using Jenkinsfile](../create-a-pipeline-using-jenkinsfile/) and [Create a Pipeline Using Graphical Editing Panel](../create-a-pipeline-using-graphical-editing-panel).
+
