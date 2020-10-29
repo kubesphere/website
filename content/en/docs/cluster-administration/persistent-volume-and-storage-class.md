@@ -1,37 +1,44 @@
 ---
-title: "Storage Class"
-keywords: "kubernetes, docker, kubesphere, storage class, Ceph RBD, Glusterfs, QingCloud, "
-description: "KubeSphere StorageClass management"
+title: "Persistent Volume and Storage Class"
+keywords: "storage, volume, pv, pvc, storage class, csi, Ceph RBD, Glusterfs, QingCloud, "
+description: "Persistent Volume and Storage Class Management"
 
-linkTitle: "Storage Class"
+linkTitle: "Persistent Volume and Storage Class"
 weight: 100
 ---
 ## Introduction
-Workloads with persistence need storage resources, also known as PersistentVolumes. 
-KubeSphere adopts [**dynamic volume provisioning**](https://kubernetes.io/docs/concepts/storage/dynamic-provisioning/) 
-based on storage class to create and manage PersistentVolumes. 
-Before using storage class, you should ensure the underlying **storage server** and **volume plugin** are **both ready**.
-### Storage Server
-Storage server is the actual system that processes data. It could be filesystem or block or object storage systems.
-For examples, [ceph-block-storage](https://ceph.io/ceph-storage/block-storage/) is a block storage system, 
-[glusterfs](https://www.gluster.org/) is a shared network filesystem, these are often used on Kubernetes.
-Disks of public or private cloud can also be used, such as QingCloud disks and AWS EBS.
-### Volume Plugin
-Volume plugins are drivers to provision and manager storage resources on Kubernetes based on the storage servers. 
-The following are frequently used types of volume plugins. You should choose suitable plugin for your storage server.
+This section describes how to manage storage classes and persistent volumes in KubeSphere.
 
-| Plugin Type | Description |
+A PersistentVolume (PV) is a piece of storage in the cluster that has been provisioned by an administrator or dynamically provisioned using Storage Classes. PVs are volume plugins like Volumes, but have a lifecycle independent of any individual Pod that uses the PV.
+
+A PersistentVolumeClaim (PVC) is a request for storage by a user. It is similar to a Pod. Pods consume node resources and PVCs consume PV resources.
+
+There are two ways PVs may be provisioned: [statically](https://kubernetes.io/docs/concepts/storage/persistent-volumes/#static) or [dynamically](https://kubernetes.io/docs/concepts/storage/persistent-volumes/#dynamic).
+
+KubeSphere supports [dynamic volume provisioning](https://kubernetes.io/docs/concepts/storage/dynamic-provisioning/) 
+based on storage class to create PVs.
+
+A [StorageClass](https://kubernetes.io/docs/concepts/storage/storage-classes) provides a way for administrators to describe the "classes" of storage they offer. Different classes might map to quality-of-service levels, or to backup policies, or to arbitrary policies determined by the cluster administrators. Each StorageClass has a provisioner that determines what volume plugin is used for provisioning PVs. This field must be specified. For which value to use, please read [here](https://kubernetes.io/docs/concepts/storage/storage-classes/#provisioner) or check with your storage administrator.
+
+Below table summaries the common volume plugins for various provisioners(storage systems).
+| Type | Description |
 | :---- | :---- |  
 | In-tree | Built-in and run as part of Kubernetes, like [RBD](https://kubernetes.io/docs/concepts/storage/storage-classes/#ceph-rbd) & [Glusterfs](https://kubernetes.io/docs/concepts/storage/storage-classes/#glusterfs) and [more](https://kubernetes.io/docs/concepts/storage/storage-classes/#provisioner)| 
 | External-provisioner| Deployed independently from Kubernetes, but work like in-tree plugin, like [nfs-client](https://github.com/kubernetes-retired/external-storage/tree/master/nfs-client) and [more](https://github.com/kubernetes-retired/external-storage) | 
 | CSI | Container Storage Interface, a standard for exposing storage resources to workloads on COs like Kubernetes, like [QingCloud-csi](https://github.com/yunify/qingcloud-csi) & [Ceph-CSI](https://github.com/ceph/ceph-csi) and [more](https://kubernetes-csi.github.io/docs/drivers.html)|                          
-                         
-## Create Storage Class
-In KubeSphere, you can deploy `QingCloud-CSI` `Glusterfs` `Ceph RBD` storage class on the console directly.
-Alternatively KubeSphere also supports a customized storage class. 
 
-![Create Storage Class](/images/storage/create-storage-class.png)
+## Manage Storage Class
+You can list, create, update and delete a storage class in KubeSphere console via the `Storage` -> `Storage Classes` panel.
 
+KubeSphere supports you to create storage classes for `QingCloud-CSI`, `Glusterfs` and `Ceph RBD` directly, you can also create custom storage classes for other storage systems by your needs.
+
+![Create Storage Class: Basic Info](/images/storage/create-storage-class-basic-info.png)
+
+![Create Storage Class: Storage System](/images/storage/create-storage-class-storage-system.png)
+
+![Create Storage Class: Settings](/images/storage/create-storage-class-settings.png)
+
+### Common Settings
 Some settings are commonly used and shared among storage classes. 
 You can find them as dashboard properties on the console, which are also indicated by fields or annotations in the StorageClass manifest. 
 You can see the manifest file in YAML format by enabling **Edit Mode** in the top right corner. 
@@ -39,7 +46,7 @@ Here are property descriptions of some commonly used fields in KubeSphere.
 
 | Setting | Description |
 | :---- | :---- |  
-| Allow Volume Expansion | Filed [`allowVolumeExpansion`](https://kubernetes.io/docs/concepts/storage/storage-classes/#allow-volume-expansion). When set to true, PersistentVolumes can be configured to be expandable. | 
+| Allow Volume Expansion | Filed [`allowVolumeExpansion`](https://kubernetes.io/docs/concepts/storage/storage-classes/#allow-volume-expansion). When set to true, PVs can be configured to be expandable. | 
 | Reclaiming Policy | Filed [`reclaimPolicy`](https://kubernetes.io/docs/concepts/storage/storage-classes/#reclaim-policy). It could be set as `Delete` or `Retain` (default) | 
 | Storage System | Filed [`provisioner`](https://kubernetes.io/docs/concepts/storage/storage-classes/#provisioner). It determines what volume plugin is used for provisioning PVs| 
 | Supported Access Mode | Annotation `metadata.annotations[storageclass.kubesphere.io/supported-access-modes]`.It tells KubeSphere which [`Access Mode`](https://kubernetes.io/docs/concepts/storage/persistent-volumes/#access-modes) supported| 
@@ -68,10 +75,10 @@ More storage class Parameters could be seen in [QingCloud-CSI user guide](https:
 
 ### Glusterfs
 Glusterfs is an in-tree storage plugin on Kubernetes, that means you don't need to install volume plugin additionally. 
-But storage server should be installed ahead for creating storage classes of glusterfs.
+The Glustefs storage system must be installed before creating storage classes for it.
 
 #### Prerequisite
-- Glusterfs server has already been installed. See [Glusterfs Installation Documentation](https://www.gluster.org/install/) for more information.
+- Glusterfs storage system has already been installed. See [Glusterfs Installation Documentation](https://www.gluster.org/install/) for more information.
 
 #### Setting
 | Setting | Description |
@@ -119,11 +126,17 @@ If you use in-tree Ceph RBD, the value should be *kubernetes.io/rbd*.
 
 For more information about StorageClass parameters, see [Ceph RBD in Kubernetes Documentation](https://kubernetes.io/docs/concepts/storage/storage-classes/#ceph-rbd).
 
-### Custom StorageClass
-In addition to the above storage plugins, you can also create custom storage classes of other plugins.
-For example, NFS (Net File System) is widely used on Kubernetes with the external-provisioner volume plugin 
+### Custom Storage Class
+You can create custom storage classes for your storage systems if they are not directly supported by KubeSphere.
+
+The following example shows you how to create a storage class for NFS in KubeSphere console.
+
+#### NFS Introduction
+NFS (Net File System) is widely used on Kubernetes with the external-provisioner volume plugin 
 [nfs-client](https://github.com/kubernetes-retired/external-storage/tree/master/nfs-client).
 You can create storage classes of nfs-client by the way of custom storage class.
+
+![Create Custom Storage Class](/images/storage/create-storage-class-storage-system-custom.png)
 
 #### Prerequisite
 - A available NFS server 
@@ -142,6 +155,9 @@ You can create storage classes of nfs-client by the way of custom storage class.
 | :---- | :---- |  :----| 
 | archiveOnDelete | Archive pvc when deleting | `true` | 
 
+## Manage Volumes
+Once the storage class was created, you can create volumes with it.
 
+You can list, create, update and delete volumes in KubeSphere console via the `Storage` -> `Volumes` panel. For more details, please see [Volume Management](/docs/project-user-guide/storage/volumes/).
 
 
