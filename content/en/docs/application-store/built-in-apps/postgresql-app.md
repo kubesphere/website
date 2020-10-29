@@ -6,7 +6,7 @@ description: 'How to use built-in PostgreSQL'
 
 weight: 2242
 ---
-PostgreSQL is a powerful, open source object-relational database system which is famous for reliability, feature robustness, and performance. This guide will show you one-click deployment for PostgreSQL in Kubenetes .
+[PostgreSQL](https://www.postgresql.org/) is a powerful, open source object-relational database system which is famous for reliability, feature robustness, and performance. This guide will show you one-click deployment for PostgreSQL in Kubenetes .
 
 ## Prerequisites
 

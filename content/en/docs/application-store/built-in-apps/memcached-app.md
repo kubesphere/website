@@ -6,7 +6,7 @@ description: 'How to use built-in Memcached Object Storage'
 
 weight: 2242
 ---
-Memcached is designed for large data caches. Its API is available for most popular languages. This guide will show you one-click deployment for Memcached in Kubenetes .
+[Memcached](https://memcached.org/) is designed for large data caches. Its API is available for most popular languages. This guide will show you one-click deployment for Memcached in Kubenetes .
 
 ## Prerequisites
 
