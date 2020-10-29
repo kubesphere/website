@@ -5,7 +5,7 @@ var getElementTopToScreenTop = function(element) {
 }
 
 var getElementBottomToScreenBottom = function(element) {
-  return $(window).height() + $(document).scrollTop() - element.offset().top - element.height()
+  return $(window).height() + $(document).scrollTop() - element.offset().top - element.outerHeight()
 }
 
 var getElementBottomToTop = function(element) {
@@ -20,12 +20,11 @@ var bindAsideScroll = function() {
     return false
   }
   var content = $('.middle-div')
-  var mdBody = $('.md-body')
   var aside = $('.aside')
   var contentToTop = getElementTopToScreenTop(content)
   aside.css("top", contentToTop)
   var asideInner = $('.aside .inner-div')
-  scrollEvent(content, mdBody, aside, asideInner)
+  scrollEvent(content, aside, asideInner)
 }
 
 var bindLeftTreeScroll = function() {
@@ -34,27 +33,25 @@ var bindLeftTreeScroll = function() {
     return false
   }
   var content = $('.middle-div')
-  var mdBody = $('.md-body')
   var aside = $('.common-layout .left-tree')
   var contentToTop = getElementTopToScreenTop(content)
   aside.css("top", contentToTop)
   var asideInner = $('.left-div .inner-tree')
-  scrollEvent(content, mdBody, aside, asideInner)
+  scrollEvent(content, aside, asideInner)
 }
 
-var scrollEvent = function(content, mdBody, aside, asideInner) {
+var scrollEvent = function(content, aside, asideInner) {
   $( window ).scroll(function() {
     var headerHeight = $('header').outerHeight()
     var contentToTop = getElementTopToScreenTop(content)
-    if (contentToTop < headerHeight) {
+    if (contentToTop < headerHeight + 10) {
       aside.css("top", headerHeight + 10)
       aside.css("bottom", 10)
-      var s1 = getElementBottomToTop(mdBody)
+      var s1 = getElementBottomToTop(content)
       var s2 = getElementBottomToTop(asideInner)
       if (s2 > s1) {
-        var bottom = getElementBottomToScreenBottom(mdBody)
+        var bottom = getElementBottomToScreenBottom(content)
         aside.css("bottom", bottom)
-        aside.css("top", "auto")
       }
     } else {
       aside.css("top", contentToTop)

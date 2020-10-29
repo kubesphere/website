@@ -1,8 +1,14 @@
 @import "variables";
 @import "markdown";
 
-body {
+html, body {
     background: #ffffff;
+    height: 100%;
+    min-height: 100%;
+}
+
+main {
+    min-height: calc(100% - 105px);
 }
 
 .section-1 {
@@ -158,7 +164,7 @@ body {
         bottom: 20px;
         left: 50%;
         transform: translateX(-580px);
-        width: 200px;
+        width: 180px;
         z-index: 2;
 
         @media only screen and (max-width: 1160px) {
@@ -168,7 +174,7 @@ body {
 
         @media only screen and (max-width: $mobile-max-width) {
             transition: all 0.5s;
-            left: -200px;
+            left: -180px;
         }
 
         .inner-tree {
@@ -270,13 +276,15 @@ body {
 
     .middle-div {
         position: relative;
-        margin-left: 200px;
-        margin-right: 160px;
-        padding: 10px 10px;
+        margin-left: 180px;
+        margin-right: 180px;
+        padding: 10px;
+        border-right: 1px solid #dde1e6;
 
         @media only screen and (max-width: $mobile-max-width) {
             margin: 0;
             padding: 0;
+            border-right: none;
         }
 
         .top-div {
@@ -555,6 +563,7 @@ body {
         .page-div {
             position: relative;
             margin-top: 20px;
+            height: 30px;
 
             a {
                 position: absolute;
@@ -592,8 +601,8 @@ body {
         top: 260px;
         bottom: 10px;
         left: 50%;
-        transform: translateX(420px);
-        width: 160px;
+        transform: translateX(400px);
+        width: 180px;
         @media only screen and (max-width: $mobile-max-width) {
            display: none;
         }
@@ -603,7 +612,6 @@ body {
             position: relative;
             overflow-y: auto;
             padding-left: 10px;
-            border-left: 1px solid #dde1e6;
         }
 
         .title {
@@ -643,3 +651,141 @@ body {
     }
 }
 
+footer {
+
+    padding: 20px 0;
+
+    .down-main {
+      text-align: center;
+      .img-div {
+        font-size: 0;
+
+        svg {
+          width: 32px;
+          height: 32px;
+          color: #b6c2cd;
+          cursor: pointer;
+          transition: all 0.2s ease-in-out;
+          margin-right: 8px;
+        }
+
+        a {
+          display: inline-block;
+          width: 34px;
+          height: 34px;
+          margin: 0 6px;
+          background-position: center;
+          background-repeat: no-repeat;
+        }
+
+        .wechat {
+          position: relative;
+
+          .hide-div {
+            display: none;
+            position: absolute;
+            top: -10px;
+            left: 50%;
+            padding: 10px;
+            transform: translate(-50%, -100%);
+            background: #ffffff;
+            p {
+              font-size: 12px;
+              color: #b6c2cd;
+            }
+            img {
+              margin: 0 10px;
+            }
+            &::after {
+              content: '';
+              position: absolute;
+              bottom: -18px;
+              left: 50%;
+              transform: translateX(-50%);
+              border: 10px solid transparent;
+              border-top-color: #ffffff;
+            }
+          }
+
+          &:hover {
+            svg {
+              color: green;
+            }
+            div {
+              display: block;
+            }
+          }
+        }
+
+        .facebook-a {
+          background-image: url("/images/footer/facebook.svg");
+
+          &:hover {
+            background-image: url("/images/footer/facebook-hover.svg");
+          }
+        }
+
+        .youtube-a {
+          background-image: url("/images/footer/youtube.svg");
+
+          &:hover {
+            background-image: url("/images/footer/youtube-hover.svg");
+          }
+        }
+
+        .slack-a {
+          background-image: url("/images/footer/slack.svg");
+
+          &:hover {
+            background-image: url("/images/footer/slack-hover.svg");
+          }
+        }
+
+        .twitter-a {
+          background-image: url("/images/footer/twitter.svg");
+
+          &:hover {
+            background-image: url("/images/footer/twitter-hover.svg");
+          }
+        }
+
+        .github-a {
+          background-image: url("/images/footer/github.svg");
+
+          &:hover {
+            background-image: url("/images/footer/github-hover.svg");
+          }
+        }
+
+        .medium-a {
+          background-image: url("/images/footer/medium.svg");
+
+          &:hover {
+            background-image: url("/images/footer/medium-hover.svg");
+          }
+        }
+
+        .linkedin-a {
+          background-image: url("/images/footer/linkedin.svg");
+
+          &:hover {
+            background-image: url("/images/footer/linkedin-hover.svg");
+          }
+        }
+      }
+
+      .p1 {
+        height: 23px;
+        margin-top: 6px;
+        font-size: 14px;
+        line-height: 23px;
+        font-weight: 500;
+        letter-spacing: 1.08px;
+        color: #242e42;
+      }
+
+      .case {
+        margin-top: 20px;
+      }
+    }
+}

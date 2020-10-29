@@ -36,12 +36,12 @@ This tutorial creates 8 virtual machines of **CentOS Linux release 7.6.1810 (Cor
 |10.10.71.75|node1|worker|
 |10.10.71.76|node2|worker|
 |10.10.71.79|node3|worker|
-|10.10.71.67|vip|vip(No need to create a VM)|
+|10.10.71.67|vip|vip (No need to create a VM)|
 |10.10.71.77|lb-0|lb (Keepalived + HAProxy)|
 |10.10.71.66|lb-1|lb (Keepalived + HAProxy)|
 
 {{< notice warning >}}
-The `vip` is a virtual IP, there is no need to create a virtual machine, so only 8 virtual machines need to be created.
+You do not need to create a virtual machine for `vip` (i.e. Virtual IP) above, so only 8 virtual machines need to be created.
 {{</ notice >}}
 
 Create virtual machines in the VMware Host Client. You can follow the New Virtual Machine wizard to create a virtual machine to place in the VMware Host Client inventory.
@@ -331,7 +331,7 @@ Create a Kubernetes cluster with KubeSphere installed (e.g. `--with-kubesphere v
 
 {{< notice note >}} 
 
-The following Kubernetes versions has been fully tested with KubeSphere: v1.15.12, v1.16.13, v1.17.9 (default) and v1.18.6.
+The following Kubernetes versions have been fully tested with KubeSphere: v1.15.12, v1.16.13, v1.17.9 (default) and v1.18.6.
 
 {{</ notice >}} 
 

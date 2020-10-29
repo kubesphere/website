@@ -21,10 +21,11 @@ You will need to build the website in order to **publish it as static content.**
 
 #### Install Hugo extended
 
-Go to the [Hugo releases place](https://github.com/gohugoio/hugo/releases) and
-download the `hugo_extended` version that better suits your OS (version 0.70+).
+Go to the [Hugo releases place](https://github.com/gohugoio/hugo/releases) and download the `hugo_extended` version that better suits your OS (version 0.70+).
 
 **EXTENDED version is MANDATORY to properly build the static content!**
+
+Note: If you install Hugo on Windows, you need to add environment variables for the exe file of Hugo. For example, you place the exe file in the path `C:\Hugo\bin`. You have to add this path in environment variables. Execute `hugo version` to view if the installation is successful.
 
 #### Config your domain
 
@@ -75,13 +76,27 @@ Now you can preview the website in your browser using `http://localhost:1313/`.
 
 ### Open a pull request
 
-Open a [pull request (PR)](https://help.github.com/en/desktop/contributing-to-projects/creating-an-issue-or-pull-request#creating-a-new-pull-request) to add a localization to the repository.
+Open a [pull request (PR)](https://help.github.com/en/desktop/contributing-to-projects/creating-an-issue-or-pull-request#creating-a-new-pull-request) to add a localization to the repository. Please use DCO sign-off when you submit a pr. Refer to the command below (add `-s`):
+
+```bash
+git commit -s -m "xxx"
+```
+
+### Preview a pull request
+
+Click **Details** as shown in the image below, which will direct you to the website homepage. Navigate to the part you want to preview.
+
+![](https://ap3.qingstor.com/kubesphere-website/docs/preview-pr-github.png)
+
+If the button above does not appear, go to **Files changed** tab. Click the three dots of the md file you want to preview as shown below. Please note that this method can only give you a preview on the GitHub instead of on the website.
+
+![view-file](https://ap3.qingstor.com/kubesphere-website/docs/view-file-github.png)
 
 ## Localizing
 
 ### Find your two-letter language code
 
-First, find your localization’s two-letter country code. For example, the two-letter code for Turkey is tr. then, open `config.toml`, change the menu which language you want to translate。
+First, find your localization’s two-letter country code. For example, the two-letter code for Turkey is tr. Then, open `config.toml` and change the menu of the language you want to translate.
 
 ```
 [languages.tr]

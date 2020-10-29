@@ -149,7 +149,7 @@ Input the following command to check the result.
 kubectl logs -n kubesphere-system $(kubectl get pod -n kubesphere-system -l app=ks-install -o jsonpath='{.items[0].metadata.name}') -f
 ```
 
-The output displays the IP address and port number of the web console, which is exposed through `NodePort 30880` by default. Now, you can access the console through `EIP:30880` with the default account and password (`admin/P@88word`).
+The output displays the IP address and port number of the web console, which is exposed through `NodePort 30880` by default. Now, you can access the console through `EIP:30880` with the default account and password (`admin/P@88w0rd`).
 
 ```bash
 #####################################################
@@ -186,3 +186,6 @@ After logging in the console, you can check the status of different components i
 ## Enable Pluggable Components (Optional)
 
 The guide above is used only for minimal installation by default. To enable other components in KubeSphere, see [Enable Pluggable Components](../../pluggable-components/) for more details.
+
+## Demo
+<script src="https://asciinema.org/a/362291.js" id="asciicast-362291" async></script>

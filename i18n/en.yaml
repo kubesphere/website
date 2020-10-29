@@ -60,8 +60,8 @@
   translation: Last updated
 - id: What’s on this Page
   translation: What’s on this Page
-- id: Last
-  translation: Last
+- id: Previous
+  translation: Previous
 - id: Next
   translation: Next
 - id: edit
