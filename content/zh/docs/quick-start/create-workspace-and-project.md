@@ -233,19 +233,19 @@ Each level has multiple built-in roles. Besides, KubeSphere allows you to create
 
 {{</ notice >}} 
 
-1. Log in the console as `project-admin` for this task. In **DevOps Projects**, click **Create**.
+1. 使用 `project-admin` 登录控制台，在 **DevOps Projects** 中点击 **Create** 。
 
 ![devops-project](https://ap3.qingstor.com/kubesphere-website/docs/20200827145521.png)
 
-2. Enter the DevOps project name (e.g. `demo-devops`) and click **OK**. You can also add an alias and description for the project.
+2. 输入 DevOps 项目的名字（例如：`demo-devops`）然后点击 **OK** 。您也可以为创建的项目添加别名或者描述。
 
 ![devops-project](https://ap3.qingstor.com/kubesphere-website/docs/20200827145755.png)
 
-3. In **DevOps Projects**, click the project created just now to view its detailed information.
+3. 在 **DevOps Projects** 中，点击刚刚创建的项目查看详细信息。
 
 ![new-devops-project](https://ap3.qingstor.com/kubesphere-website/docs/20200827150523.png)
 
-4. Go to **Project Management** and select **Project Members**. Click **Invite Member** to grant `project-regular` the role of `operator`, who is allowed to create pipelines and credentials.
+4. 转到 **Project Management** 然后选择 **Project Members** 。点击 **Invite Member** 为 `project-regular` 授权 `operator` 角色，允许创建流水线和证书。
 
 ![devops-invite-member](https://ap3.qingstor.com/kubesphere-website/docs/20200827150704.png)
 
