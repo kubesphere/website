@@ -222,7 +222,7 @@ I hope you guys all have successfully deploy TiDB. Both TiDB and KubeSphere are 
 
 **KubeSphere GitHub**: https://github.com/kubesphere/kubesphere 
 
-**TiDB GitHub**: https://docs.pingcap.com/tidb-in-kubernetes/stable/get-started
+**TiDB GitHub**: https://github.com/pingcap/
 
 **TiDB-Operator Documentation**: https://docs.pingcap.com/tidb-in-kubernetes/stable/tidb-operator-overview
 
