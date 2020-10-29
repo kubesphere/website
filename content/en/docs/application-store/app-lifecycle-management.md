@@ -7,7 +7,7 @@ description: 'App Lifecycle Management'
 weight: 2240
 ---
 
-KubeSphere integrates open source [OpenPitrix](https://github.com/openpitrix/openpitrix) to set up app store and app repository services which provide full lifecycle of application management. Application Store supports three kinds of application deployment as follows:
+KubeSphere integrates open-source project [OpenPitrix](https://github.com/openpitrix/openpitrix) to set up the App Store which provide the full lifecycle of application management. App Store supports two kinds of application deployment as follows:
 
 > - **Application template** provides a way for developers and ISVs to share applications with users in a workspace. It also supports importing third-party application repositories within workspace.
 > - **Composing application** means users can quickly compose multiple microservices into a complete application through the one-stop console.
@@ -20,8 +20,8 @@ In this tutorial, we will walk you through how to use [EMQ X](https://www.emqx.i
 
 ## Prerequisites
 
-- You need to install [Application Store (OpenPitrix)](../../installation/install-openpitrix).
-- You need to create a workspace and a project, see [Get Started with Multi-tenant Management](../admin-quick-start).
+- You need to install [App Store (OpenPitrix)](../../pluggable-components/app-store).
+- You need to create a workspace and a project, see [Create Workspace, Project, Account and Role](../../quick-start/create-workspace-and-project/).
 
 ## Hands-on Lab
 
