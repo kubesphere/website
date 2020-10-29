@@ -1,7 +1,7 @@
 ---
-title: "在 KubeSphere 中部署 Nginx "
+title: "在 KubeSphere 中部署 Nginx"
 keywords: 'Nginx，应用商店，OpenPitrix，Kubernetes'
-description: '使用 KubeSphere 应用商店部署 Nginx 至 Kubernetes '
+description: '使用 KubeSphere 应用商店部署 Nginx 至 Kubernetes'
 
 
 weight: 2240
@@ -48,7 +48,7 @@ weight: 2240
 
    目前，支持 2 种配置方式：可视化配置和 yaml 配置。通过点击 **YAML** 按钮，来实现配置方式的转换。
 
-   在应用配置页面中，可设置 nginx 的副本数，并设置是否开启 Ingress 。
+   在应用配置页面中，可设置 nginx 的副本数，并设置是否开启 Ingress。
 
    ![image-20201026102039163](https://sh1a.qingstor.com/ks-website-image/pic/image-20201026102039163.png)
 
@@ -62,13 +62,13 @@ weight: 2240
 
    ![image-20201026101525181](https://sh1a.qingstor.com/ks-website-image/pic/image-20201026101525181.png)
 
-## 使用 Nginx 
+## 使用 Nginx
 
-1. 在服务列表中，选择 nginx 应用对应的服务，设置外网访问方式为 **nodeport** 。示例中， nodeport 为 31034 。
+1. 在服务列表中，选择 nginx 应用对应的服务，设置外网访问方式为 **nodeport**。示例中，nodeport 为 31034。
 
    ![image-20201026110147496](https://sh1a.qingstor.com/ks-website-image/pic/image-20201026110147496.png)
 
-2. 可以通过 < kubesphere 集群 IP > : < nodeport 端口> 来访问 nginx 。
+2. 可以通过 < kubesphere 集群 IP > : < nodeport 端口> 来访问 nginx。
 
    ![image-20201026110323363](https://sh1a.qingstor.com/ks-website-image/pic/image-20201026110323363.png)
 

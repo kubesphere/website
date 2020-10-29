@@ -1,5 +1,5 @@
 ---
-title: "在 KubeSphere 中部署Redis"
+title: "在 KubeSphere 中部署 Redis"
 keywords: 'redis，应用商店，OpenPitrix，Kubernetes'
 description: '使用 KubeSphere 应用商店部署 Redis 至 Kubernetes'
 
@@ -62,7 +62,7 @@ weight: 2240
 
    ![image-20201022120644789](https://sh1a.qingstor.com/ks-website-image/pic/image-20201022120644789.png)
 
-## 使用 redis 
+## 使用 redis
 
 1. 在容器组列表中，选择 redis 应用对应的容器组，点击进入详情页面中。点击**终端**图标，进入容器终端。
 

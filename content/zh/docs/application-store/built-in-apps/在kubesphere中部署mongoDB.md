@@ -1,7 +1,7 @@
 ---
-title: "在 KubeSphere 中部署 MongoDB "
+title: "在 KubeSphere 中部署 MongoDB"
 keywords: 'mongodb，应用商店，OpenPitrix，Kubernetes'
-description: '使用 KubeSphere 应用商店部署 MongoDB 至 Kubernetes '
+description: '使用 KubeSphere 应用商店部署 MongoDB 至 Kubernetes'
 
 
 weight: 2240
@@ -48,7 +48,7 @@ weight: 2240
 
    目前，支持 2 种配置方式：可视化配置和 yaml 配置。通过点击 **YAML** 按钮，来实现配置方式的转换。
 
-   在应用配置页面中，可设置 mongdb 的存储大小、 root 用户名和密码。
+   在应用配置页面中，可设置 mongdb 的存储大小、root 用户名和密码。
 
    ![image-20201026101148434](https://sh1a.qingstor.com/ks-website-image/pic/image-20201026101148434.png)
 
@@ -62,7 +62,7 @@ weight: 2240
 
    ![image-20201026101525181](https://sh1a.qingstor.com/ks-website-image/pic/image-20201026101525181.png)
 
-## 使用 mongodb 
+## 使用 mongodb
 
 1. 在容器组列表中，选择 mongodb 应用对应的容器组，点击进入详情页面中。点击**终端**图标，进入容器终端。
 
