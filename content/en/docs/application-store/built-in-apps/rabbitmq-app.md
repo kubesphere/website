@@ -26,7 +26,7 @@ Please make sure you are landing on the **Overview** page of the project `test-p
 
 2. Find **RabbitMQ** and click **Deploy**.
 
-![find-tomcat](/images/docs/rabbitmq-app/rabbitmq02.jpg)
+![find-rabbitmq](/images/docs/rabbitmq-app/rabbitmq02.jpg)
 
 ![click-deploy](/images/docs/rabbitmq-app/rabbitmq021.jpg)
 
@@ -52,10 +52,10 @@ Please make sure you are landing on the **Overview** page of the project `test-p
 
 ![click-internet](/images/docs/rabbitmq-app/rabbitmq07.jpg)
 
-3. Select **NodePort** and click **Ok**. [More information](https://v2-1.docs.kubesphere.io/docs/project-setting/project-gateway/)
+3. Select **NodePort** and click **Ok**. [Learn More](https://v2-1.docs.kubesphere.io/docs/project-setting/project-gateway/)
 ![select-nodeport](/images/docs/rabbitmq-app/rabbitmq08.jpg)
 
-4. Through <font color=green>{$NodeIP} : {$Nodeport}</font> to access rabbitmq management.
+4. Through <font color=green>{$NodeIP} : {$Nodeport}</font> to access RabbitMQ management.
 ![access-rabbitmq](/images/docs/rabbitmq-app/rabbitmq09.png)
 
 5. Log in RabbitMQ management.
