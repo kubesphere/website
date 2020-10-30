@@ -28,11 +28,11 @@ In v3.0.0, KubeSphere refactors many of its components such as Fluent Bit Operat
 Execute the following commands to download configuration templates.
 
 ```bash
-wget https://raw.githubusercontent.com/kubesphere/ks-installer/v3.0.0/deploy/kubesphere-installer.yaml
+wget https://github.com/kubesphere/ks-installer/releases/download/v3.0.0/kubesphere-installer.yaml
 ```
 
 ```bash
-wget https://raw.githubusercontent.com/kubesphere/ks-installer/v3.0.0/deploy/cluster-configuration.yaml
+wget https://github.com/kubesphere/ks-installer/releases/download/v3.0.0/cluster-configuration.yaml
 ```
 
 ## Step 2: Modify the configuration file template
