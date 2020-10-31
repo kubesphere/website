@@ -2,9 +2,6 @@
 {{ $data := index .Site.Data .Site.Language.Lang }}
 <section class='section-1'>
   {{ with .Params.section1 }}
-  <img class='img1' src="/images/home/bg.jpg" alt="{{ i18n "background image"}}">
-  <img class='img2' src="/images/home/12-3.png" alt="{{ i18n "background image"}}">
-  <img class='img3' src="/images/home/2.svg" alt="{{ i18n "background image"}}">
   <div class="common-layout">
     <div>
       <p class='p1'>{{ .title | safeHTML }}</p>
@@ -21,6 +18,9 @@
     <img class='img2' src="/images/home/left.svg" alt="{{ i18n "background image"}}">
     <img class='img4' src="/images/home/46.svg" alt="{{ i18n "background image"}}">
   </div>
+  <img class='img1' src="/images/home/bg.jpg" alt="{{ i18n "background image"}}">
+  <img class='img2' src="/images/home/12-3.png" alt="{{ i18n "background image"}}">
+  <img class='img3' src="/images/home/2.svg" alt="{{ i18n "background image"}}">
   {{ end }}
 </section>
 

@@ -252,6 +252,10 @@
   border-collapse: collapse;
 }
 
+.md-body table a {
+  word-break: break-word;
+}
+
 .md-body table th {
   font-weight: 600;
   border-radius: 3px;

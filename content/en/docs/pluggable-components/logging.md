@@ -31,6 +31,12 @@ If you adopt [All-in-one Installation](../../quick-start/all-in-one-on-linux/), 
 
 {{</ notice >}}
 
+{{< notice warning >}}
+
+If you adopt [Multi-node installation](../../installing-on-linux/introduction/multioverview/) and are using symbolic links for docker root directory, make sure all nodes follow the exactly same symbolic links. Logging agents are deployed in DaemonSet onto nodes. Any discrepancy in container log path may cause failure of collection on that node. 
+
+{{</ notice >}}
+
 2. In this file, navigate to `logging` and change `false` to `true` for `enabled`. Save the file after you finish.
 
 ```bash
