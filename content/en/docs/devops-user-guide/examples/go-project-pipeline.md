@@ -10,7 +10,7 @@ weight: 200
 ## Prerequisites
 
 - You need to [enable KubeSphere DevOps System](../../../../docs/pluggable-components/devops/).
-- You need to create a workspace, a DevOps project, a project, and a **project-regular** user account, and this account needs to be invited into a DevOps project and a normal project.
+- You need to create a workspace, a DevOps project, a project, and a **project-regular** user account, and this account needs to be invited into a DevOps project and a normal project. See [create-workspace-and-project](../../../../docs/quick-start/create-workspace-and-project)
 
 ## Get Dockerhub Credential
 
@@ -42,11 +42,11 @@ After you have created your dockerhub credential, you still need create a **kube
 
 ![](/images/devops/create-kubeconfig.png)
 
-## Create a pipline
+## Create a pipeline
 
 ![](/images/devops/ks-console-create-pipline.png)
 
-Fill in the pipeline's basic information in the pop-up window,  enter the name of piplne and set the others as default value.
+Fill in the pipeline's basic information in the pop-up window,  enter the name of pipeline and set the others as default value.
 
 ![](/images/devops/create-pipline-2.png)
 
@@ -113,7 +113,7 @@ pipeline {
 
 ![](/images/devops/edit-jenkins-file.png)
 
-## Run the pipline
+## Run the pipeline
 
 After you have saved the jenkins file, click the **Run** button. If everything goes well, you will see a deployment workload under your project.
 
