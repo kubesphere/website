@@ -63,15 +63,15 @@ es:  # Storage backend for logging, tracing, events and auditing.
 
 ### **Installing on Kubernetes**
 
-When you install KubeSphere on Kubernetes, you need to download the file [cluster-configuration.yaml](https://raw.githubusercontent.com/kubesphere/ks-installer/v3.0.0/deploy/cluster-configuration.yaml) for cluster setting. If you want to install Logging, do not use `kubectl apply -f` directly for this file.
+When you install KubeSphere on Kubernetes, you need to download the file [cluster-configuration.yaml](https://github.com/kubesphere/ks-installer/releases/download/v3.0.0/cluster-configuration.yaml) for cluster setting. If you want to install Logging, do not use `kubectl apply -f` directly for this file.
 
-1. In the tutorial of [Installing KubeSphere on Kubernetes](../../installing-on-kubernetes/introduction/overview/), you execute `kubectl apply -f` first for the file [kubesphere-installer.yaml](https://raw.githubusercontent.com/kubesphere/ks-installer/v3.0.0/deploy/kubesphere-installer.yaml). After that, to enable Logging, create a local file cluster-configuration.yaml.
+1. In the tutorial of [Installing KubeSphere on Kubernetes](../../installing-on-kubernetes/introduction/overview/), you execute `kubectl apply -f` first for the file [kubesphere-installer.yaml](https://github.com/kubesphere/ks-installer/releases/download/v3.0.0/kubesphere-installer.yaml). After that, to enable Logging, create a local file cluster-configuration.yaml.
 
 ```bash
 vi cluster-configuration.yaml
 ```
 
-2. Copy all the content in the file [cluster-configuration.yaml](https://raw.githubusercontent.com/kubesphere/ks-installer/v3.0.0/deploy/cluster-configuration.yaml) and paste it to the local file just created.
+2. Copy all the content in the file [cluster-configuration.yaml](https://github.com/kubesphere/ks-installer/releases/download/v3.0.0/cluster-configuration.yaml) and paste it to the local file just created.
 3. In this local cluster-configuration.yaml file, navigate to `logging` and enable Logging by changing `false` to `true` for `enabled`. Save the file after you finish.
 
 ```bash

@@ -26,16 +26,16 @@ weight: 3020
 - 在执行命令开始安装之前，请阅读以下注释：
 
 ```bash
-kubectl apply -f https://raw.githubusercontent.com/kubesphere/ks-installer/v3.0.0/deploy/kubesphere-installer.yaml
+kubectl apply -f https://github.com/kubesphere/ks-installer/releases/download/v3.0.0/kubesphere-installer.yaml
 ```
 
 ```bash
-kubectl apply -f https://raw.githubusercontent.com/kubesphere/ks-installer/v3.0.0/deploy/cluster-configuration.yaml
+kubectl apply -f https://github.com/kubesphere/ks-installer/releases/download/v3.0.0/cluster-configuration.yaml
 ```
 
 {{< notice note >}}
 
-如果您的服务器无法访问GitHub，则可以分别复制 [kubesphere-installer.yaml](https://raw.githubusercontent.com/kubesphere/ks-installer/v3.0.0/deploy/kubesphere-installer.yaml) 和 [cluster-configuration.yaml](https://raw.githubusercontent.com/kubesphere/ks-installer/v3.0.0/deploy/cluster-configuration.yaml) 中的内容并将其粘贴到本地文件中。 然后，您可以对本地文件使用 `kubectl apply -f` 来安装 KubeSphere 。
+如果您的服务器无法访问GitHub，则可以分别复制 [kubesphere-installer.yaml](https://github.com/kubesphere/ks-installer/releases/download/v3.0.0/kubesphere-installer.yaml) 和 [cluster-configuration.yaml](https://github.com/kubesphere/ks-installer/releases/download/v3.0.0/cluster-configuration.yaml) 中的内容并将其粘贴到本地文件中。 然后，您可以对本地文件使用 `kubectl apply -f` 来安装 KubeSphere 。
 
 {{</ notice >}}
 
