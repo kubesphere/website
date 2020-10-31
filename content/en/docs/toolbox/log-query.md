@@ -1,84 +1,85 @@
 ---
 title: "Log Query"
-keywords: 'kubesphere, kubernetes, log'
-description: 'Query kubernetes logs from toolbox'
+keywords: 'KubeSphere, Kubernetes, log'
+description: 'Query Kubernetes logs from toolbox'
 
 linkTitle: "Log Query"
-weight: 3040
+weight: 5510
 ---
 
-The logs of applications and systems can help you understand what is happening inside your cluster and workloads. The logs are particularly useful for debugging problems and monitoring cluster activities. KubeSphere provides a powerful and easy-to-use logging system which offers users the capabilities of log collection, query and management in terms of tenants. Tenant-based logging system is much more useful than Kibana since different tenants can only view her/his own logs, leading much better security. Moreover, KubeSphere logging system filters out lots of redundant information.
+The logs of applications and systems can help you better understand what is happening inside your cluster and workloads. The logs are particularly useful for debugging problems and monitoring cluster activities. KubeSphere provides a powerful and easy-to-use logging system which offers users the capabilities of log collection, query and management from the perspective of tenants. The tenant-based logging system is much more useful than Kibana since different tenants can only view their own logs, leading to better security. Moreover, KubeSphere logging system filters out some redundant information so that tenants can only focus on logs that are useful to them.
 
 ## Objective
 
-In this tutorial, you will learn how to use log query component to enter log query interface, use search parameters and drill into detail page.
+In this tutorial, you will learn how to use the log query function, including the interface, search parameters and detail pages.
 
 ## Prerequisites
 
 - You need to enable [KubeSphere Logging System](../../pluggable-components/logging/).
 
-## Enter log query interface
+## Enter Log Query Interface
 
-Log query function is available for all users, log in the console, and mouse over the **Toolbox** in the lower right corner and then select **Log Search**.
+1. The log query function is available for all users. Log in the console with any account, hover over the **Toolbox** in the lower right corner and select **Log Search**.
 
 ![log-query-guide](/images/docs/log-query/log-query-guide.png)
 
-As shown in the pop-up window, you can see the time histogram of logs amount, cluster selection dropdown list and search parameter input box.
+2. As shown in the pop-up window, you can see a time histogram of log numbers, a cluster selection drop-down list and a log search bar.
 
 ![log-query-interface](/images/docs/log-query/log-query-interface.png)
 
 {{< notice note >}}
-- The logging console query logs on each cluster separately, you can switch query cluster using the dropdown list beside the search parameter input box.
-- The logging console supports the following search parameter fields:
+- KubeSphere supports log queries on each cluster separately. You can switch the target cluster using the drop-down list next to the log search bar.
+- Supported fields in the log search bar:
     - Keyword
     - Project
     - Workload
     - Pod
     - Container
     - Time Range
-- Keywords field supports multiple keyword combination query. For example, you can use "Error", "Fail", "Fatal", "Exception", "Warning" together to query all the exception logs.
-- Keywords field supports exact query and fuzzy query. Fuzzy query provides case-insensitive fuzzy matching and retrieval of full terms by the first half of a word or phrase because of the ElasticSearch segmentation rules. For example, you can retrieve the logs containing `node_cpu_total` by search the keyword `node_cpu`, but not the keyword `cpu`.
+- The keyword field supports the query of keyword combinations. For example, you can use "Error", "Fail", "Fatal", "Exception", and "Warning" together to query all the exception logs.
+- The keyword field supports exact query and fuzzy query. The fuzzy query provides case-insensitive fuzzy matching and retrieval of full terms by the first half of a word or phrase based on the ElasticSearch segmentation rules. For example, you can retrieve the logs containing `node_cpu_total` by searching the keyword `node_cpu` instead of the keyword `cpu`.
 
 {{</ notice >}}
 
 ![log-query-time-range](/images/docs/log-query/log-query-time-range.png)
 
-It also supports customizing the range of time to query, you can input time range directly by selecting `time range` in search parameter input box, or click on the bars in the time histogram, then it will use the time range of that bar as searching time range.
+3. You can customize the query time range by selecting **Time Range** in the log search bar. Alternatively, click on the bars in the time histogram, and KubeSphere will use the time range of that bar for log queries.
 
 {{< notice note >}}
-- KubeSphere stores the logs for last seven days by default.
-- Each cluster set its own log retain period separately, you can modify log retain period in the ClusterConfig, please refer to [KubeSphere Logging System](../../pluggable-components/logging/) for log retain period setting.
+- KubeSphere stores logs for last seven days by default.
+- Each cluster has its own log retention period which can be set separately. You can modify it in `ClusterConfiguration`. Refer to [KubeSphere Logging System](../../pluggable-components/logging/) for more details.
 
 {{</ notice >}}
 
-## Use search parameters
+## Use Search Parameters
 
-For example, if you want to query the logs on `product` cluster including the keyword `error` in the `kubesphere-system` project within `last 12 hours` shown in the following screenshot.
+1. You can provide as many fields as possible to narrow down your search results. Below is an example of  a log query on the cluster `product` with the keyword `error` in the project `kubesphere-system` within `last 12 hours`.
 
 ![log-query-log-search](/images/docs/log-query/log-query-log-search.png)
 
-13 rows of logs returned with the corresponding time, project, pod and container information.
+2. It returns logs of 13 rows with the corresponding time, project, pod and container information all displayed.
 
-Click any one of the results from the list. Drill into its detail page and inspect the logs from this pod, including the complete context at the right section. It is convenient for developers to debug and analyze.
+3. Click any one of the results from the list. Drill into its detail page and inspect the log from this pod, including the complete context on the right. It is convenient for developers in terms of debugging and analyzing.
 
 {{< notice note >}}
-- Log query interface support dynamical refresh with 5s, 10s or 15s, and allows to export the logs to local storage for further analysis.
+
+The log query interface supports dynamic refreshing with 5s, 10s or 15s, and allows users to export logs to a local file for further analysis (in the top-right corner).
 
 {{</ notice >}}
 
 ![log-query-log-detail](/images/docs/log-query/log-query-log-detail.png)
 
-As you see from the left panel, you can switch to inspect another pod and its container within the same project from the dropdown list. In this case, you can determine if any abnormal pods affect other pods.
+4. As you can see from the left panel, you can switch between pods and inspect its containers within the same project from the drop-down list. In this case, you can detect if any abnormal pods affect other pods.
 
 ![log-query-inspect-other-pods](/images/docs/log-query/log-query-inspect-other-pods.png)
 
 
-## Drill into detail page
+## Drill into Detail Page
 
-If the log looks abnormal, you can drill into the the pod detail page or container detail page to deep inspect the container logs, resource monitoring graph and events.
+1. If the log looks abnormal, you can drill into the pod detail page or container detail page to further inspect container logs, resource monitoring graphs and events.
 
 ![log-query-drill](/images/docs/log-query/log-query-drill.png)
 
-Inspect the container detail page as follows. At the same time, it allows you to open the terminal to debug container directly.
+2. Inspect the container detail page as follows. At the same time, it allows you to open the terminal to debug the container directly.
 
 ![log-query-drill-container](/images/docs/log-query/log-query-drill-container.png)

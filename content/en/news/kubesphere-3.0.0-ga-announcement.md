@@ -98,3 +98,4 @@ Here is a priority list for the next version of KubeSphere. If you are intereste
 - [cooka](https://github.com/cooka) @KUKA
 - Jian Zhang @JI HENG LINUX
 - [zhuch-h](https://github.com/zhuch-h) @科莱
+- [jackzhou](https://github.com/j4ckzh0u) @信大网御

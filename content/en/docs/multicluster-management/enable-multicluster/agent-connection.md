@@ -132,7 +132,6 @@ kubectl -n kubesphere-system rollout restart deployment ks-apiserver
 
 {{</ tabs >}}
 
-
 ### Prepare a Member Cluster
 
 In order to manage the member cluster within the **host cluster**, you need to make `jwtSecret` the same between them. Therefore, you need to get it first from the **host cluster** by the following command.

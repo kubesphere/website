@@ -1,23 +1,21 @@
 ---
 title: "Toolbox"
-description: "Help you to better understand KubeSphere toolbox usage"
+description: "Help you to better understand KubeSphere toolbox"
 layout: "single"
 
 linkTitle: "Toolbox"
 
-weight: 1500
+weight: 5500
 
 icon: "/images/docs/docs.svg"
-
 ---
 
-This chapter demonstrates how to use toolbox of KubeSphere to perform log query and Web Kubectl.
+This chapter demonstrates how to use toolbox of KubeSphere to perform log queries and run commands with web kubectl.
 
 ## [Log Query](../toolbox/log-query/)
 
-Learn how to use log query tool.
+Understand how you can perform quick log queries to keep track of the latest logs of your cluster.
 
 ## [Web Kubectl](../toolbox/web-kubectl/)
 
-Learn how to use web kubectl tool.
-
+The web kubectl tool is integrated into KubeSphere to provide consistent user experiences for Kubernetes users.
