@@ -10,11 +10,11 @@ weight: 200
 ## Prerequisites
 
 - You need to [enable KubeSphere DevOps System](../../../../docs/pluggable-components/devops/).
-- You need to create a workspace, a DevOps project, a project, and a **project-regular** user account, and this account needs to be invited into a DevOps project and a normal project. See [create-workspace-and-project](../../../../docs/quick-start/create-workspace-and-project)
+- You need to create a workspace, a DevOps project, a project, and a **project-regular** user account, and this account needs to be invited into a DevOps project and a normal project. See [create-workspace-and-project](../../../../docs/quick-start/create-workspace-and-project).
 
 ## Get Dockerhub Credential
 
-Vist [dockerhub](https://dockerhub.com), log into the site, click **account settings**.
+Vist [dockerhub](https://dockerhub.com), log into the site, click **Account Settings**.
 
 ![](/images/devops/dockerhub-settings.png)
 
@@ -26,7 +26,7 @@ Enter the name of the access token, then save it.
 
 ![](/images/devops/dockerhub-token-ok.png)
 
-Click **Copy and Close** to save the access token and do not lose it.
+Click **Copy and Close** and remember to save the access token.
 
 ![](/images/devops/dockerhub-token-copy.png)
 
