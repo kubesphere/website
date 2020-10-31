@@ -48,9 +48,9 @@ At the same time, KubeSphere has some built-in podTemplates, so that users can a
 
 In the current version, there are 4 types of built-in podTemplates, i.e. `base`, `nodejs`, `maven` and `go`. KubeSphere also provides an isolated Docker environment in Pods.
 
-You can use the built-in podTemplate by specifying the label for an agent. For example, to use the nodejs podTemplate, you can specify label as `nodejs` when creating the Pipeline, as shown in the example below.
+You can use the built-in podTemplate by specifying the label for an agent. For example, to use the nodejs podTemplate, you can set the label to `nodejs` when creating the Pipeline, as shown in the example below.
 
-![](https://pek3b.qingstor.com/kubesphere-docs/png/20190322222702.png)
+![jenkins-agent](/images/docs/devops-user-guide/jenkins-agent/jenkins-agent.jpg)
 
 ```groovy
 pipeline {
