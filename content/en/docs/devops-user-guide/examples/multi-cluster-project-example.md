@@ -12,7 +12,7 @@ weight: 300
 
 - You need to [enable multi-cluster](../../../../docs/multicluster-management/).
 - You need to [enable KubeSphere DevOps System](../../../../docs/pluggable-components/devops/) on your host cluster.
-- You need to [create a workspace with multiple clusters](../../../../docs/quick-start/create-workspace-and-project/), a DevOps project on your **host** cluster, a multi-cluster project(in this tutorial, your are assumed to add host and only one member cluster to the  multi-cluster project), and a **project-regular** user account, and this account needs to be invited into the DevOps project and the multi-cluster project.
+- You need to create a workspace with multiple clusters, a DevOps project on your **host** cluster, a multi-cluster project(in this tutorial, your are assumed to add host and only one member cluster to the  multi-cluster project), and a **project-regular** user account, and this account needs to be invited into the DevOps project and the multi-cluster project. See [multi-cluster](../../../multicluster-management) and [project-administration](../../../project-administration/project-and-multicluster-project.)
 
 ## Get Dockerhub Credential
 
