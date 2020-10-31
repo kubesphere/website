@@ -68,11 +68,11 @@ If you do not copy and execute the command above, you cannot proceed with the st
 - Install KubeSphere using kubectl. The following command is only for the default minimal installation.
 
 ```bash
-kubectl apply -f https://raw.githubusercontent.com/kubesphere/ks-installer/v3.0.0/deploy/kubesphere-installer.yaml
+kubectl apply -f https://github.com/kubesphere/ks-installer/releases/download/v3.0.0/kubesphere-installer.yaml
 ```
 
 ```bash
-kubectl apply -f https://raw.githubusercontent.com/kubesphere/ks-installer/v3.0.0/deploy/cluster-configuration.yaml
+kubectl apply -f https://github.com/kubesphere/ks-installer/releases/download/v3.0.0/cluster-configuration.yaml
 ```
 
 - Inspect the logs of installation:

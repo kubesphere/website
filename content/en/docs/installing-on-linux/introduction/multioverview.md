@@ -303,3 +303,6 @@ kubectl completion bash >/etc/bash_completion.d/kubectl
 ```
 
 Detailed information can be found [here](https://kubernetes.io/docs/tasks/tools/install-kubectl/#enabling-shell-autocompletion).
+
+## Demo
+<script src="https://asciinema.org/a/368752.js" id="asciicast-368752" async></script>
