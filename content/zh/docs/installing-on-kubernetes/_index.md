@@ -1,66 +1,67 @@
 ---
-title: "Installing on Kubernetes"
-description: "Demonstrate how to install KubeSphere on Kubernetes either hosted on cloud or on-premises."
+title: 在 Kubernetes 安装 KubeSphere
+description: "演示如何在云或本地托管的现有 Kubernetes 安装 KubeSphere。"
 layout: "single"
 
-linkTitle: "Installing on Kubernetes"
+linkTitle: "在 Kubernetes 安装 KubeSphere"
 weight: 2500
 
 icon: "/images/docs/docs.svg"
 ---
 
-This chapter demonstrates how to deploy KubeSphere on existing Kubernetes clusters hosted on cloud or on-premises. As a highly flexible solution to container orchestration, KubeSphere allows users to deploy it and use its services across all Kubernetes engines.
+本章演示如何在云或本地托管的现有 Kubernetes 群集上部署 KubeSphere 。 作为容器编排的高度灵活的解决方案，KubeSphere 允许用户在所有 Kubernetes 引擎上部署它并使用其服务。
 
-## Introduction
+## 安装说明
 
-### [Overview](../installing-on-kubernetes/introduction/overview/)
+### [概览](../installing-on-kubernetes/introduction/overview/)
 
-Develop a basic understanding of the general steps of deploying KubeSphere on existing Kubernetes clusters.
+基本了解在现有 Kubernetes 集群上部署 KubeSphere 的一般步骤。
 
-### [Prerequisites](../installing-on-kubernetes/introduction/prerequisites/)
+### [准备工作](../installing-on-kubernetes/introduction/prerequisites/)
 
-Make sure your environment where existing Kubernetes clusters run meets the prerequisites before installation.
+确保现有 Kubernetes 集群运行所在的环境满足安装的前提条件。
 
-## Installing on Hosted Kubernetes
+## 云上托管的 Kubernetes 安装
 
-### [Deploy KubeSphere on Oracle OKE](../installing-on-kubernetes/hosted-kubernetes/install-kubesphere-on-oke/)
+### [基于 Oracle OKE 安装 KubeSphere](../installing-on-kubernetes/hosted-kubernetes/install-kubesphere-on-oke/)
 
-Learn how to deploy KubeSphere on Oracle Cloud Infrastructure Container Engine for Kubernetes.
+了解如何在适用于 Kubernetes 的 Oracle 云基础架构容器引擎上部署 KubeSphere。
 
-### [Deploy KubeSphere on AWS EKS](../installing-on-kubernetes/hosted-kubernetes/install-kubesphere-on-eks/)
+### [基于 AWS EKS 安装 KubeSphere](../installing-on-kubernetes/hosted-kubernetes/install-kubesphere-on-eks/)
 
-Learn how to deploy KubeSphere on Amazon Elastic Kubernetes Service.
+了解如何在 Amazon Elastic Kubernetes Service 上部署 KubeSphere。
 
-### [Deploy KubeSphere on DigitalOcean](../installing-on-kubernetes/hosted-kubernetes/install-kubesphere-on-do/)
+### [基于 DigitalOcean 安装 KubeSphere](../installing-on-kubernetes/hosted-kubernetes/install-kubesphere-on-do/)
 
-Learn how to deploy KubeSphere on DigitalOcean.
+了解如何在 DigitalOcean 上部署 KubeSphere。
 
-### [Deploy KubeSphere on GKE](../installing-on-kubernetes/hosted-kubernetes/install-kubesphere-on-gke/)
+### [基于 Google GKE 安装 KubeSphere](../installing-on-kubernetes/hosted-kubernetes/install-kubesphere-on-gke/)
 
-Learn how to deploy KubeSphere on Google Kubernetes Engine.
+了解如何在 Google Kubernetes Engine 上部署 KubeSphere。
 
-### [Deploy KubeSphere on AKS](../installing-on-kubernetes/hosted-kubernetes/install-kubesphere-on-aks/)
+### [基于 Azure AKS 安装 KubeSphere](../installing-on-kubernetes/hosted-kubernetes/install-kubesphere-on-aks/)
 
-Learn how to deploy KubeSphere on Azure Kubernetes Service.
+了解如何在 Azure Kubernetes 服务上部署 KubeSphere。
 
-### [Deploy KubeSphere on Huawei CCE](../installing-on-kubernetes/hosted-kubernetes/install-ks-on-huawei-cce/)
+### [基于华为云 CCE 安装 KubeSphere](../installing-on-kubernetes/hosted-kubernetes/install-ks-on-huawei-cce/)
 
-Learn how to deploy KubeSphere on Huawei Cloud Container Engine.
+了解如何在华为云容器引擎上部署 KubeSphere。
 
-## Installing on On-premises Kubernetes
+## 在自建 Kubernetes 上安装
 
-### [Air-gapped Installation](../installing-on-kubernetes/on-prem-kubernetes/install-ks-on-linux-airgapped/)
+### [基于 Air-gapped 安装 KubeSphere ](../installing-on-kubernetes/on-prem-kubernetes/install-ks-on-linux-airgapped/)
 
-Explore the best practice of installing KubeSphere in an air-gapped environment.
+探索在 air-gapped 的环境中安装 KubeSphere 的最佳实践。
 
-## Uninstalling
+## 卸载
 
-### [Uninstalling KubeSphere from Kubernetes](../installing-on-kubernetes/uninstalling/uninstalling-kubesphere-from-k8s/)
+### [从 Kubernetes 卸载 KubeSphere](../installing-on-kubernetes/uninstalling/uninstalling-kubesphere-from-k8s/)
 
-Remove KubeSphere from Kubernetes clusters.
+从 Kubernetes 集群中删除 KubeSphere。
 
-## Most Popular Pages
+## 最受欢迎的页面
 
-Below you will find some of the most viewed and helpful pages in this chapter. It is highly recommended that you refer to them first.
+在下面的章节中，您将找到一些最受欢迎的页面。 强烈建议您先参考它们。
 
-{{< popularPage icon="/images/docs/bitmap.jpg" title="Deploy KubeSphere on AWS EKS" description="Provision KubeSphere on existing Kubernetes clusters on EKS." link="../installing-on-kubernetes/hosted-kubernetes/install-kubesphere-on-eks/" >}}
+{{< popularPage icon="/images/docs/bitmap.jpg" title="基于 AWS EKS 安装 KubeSphere" description="在 EKS 上的现有 Kubernetes 集群上配置 KubeSphere。" link="../installing-on-kubernetes/hosted-kubernetes/install-kubesphere-on-eks/" >}}
+
