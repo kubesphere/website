@@ -224,7 +224,7 @@ KubeSphere 容器平台对于云原生应用部署非常友好，对于还不熟
 
 **KubeSphere GitHub**: https://github.com/kubesphere/kubesphere 
 
-**TiDB GitHub**: https://github.com/pingcap/
+**TiDB GitHub**: https://github.com/pingcap/TiDB
 
 **TiDB Operator 快速入门**: https://github.com/pingcap/docs-tidb-operator/blob/master/zh/get-started.md
 
