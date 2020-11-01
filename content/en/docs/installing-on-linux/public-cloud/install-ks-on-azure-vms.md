@@ -96,17 +96,7 @@ ssh -i .ssh/id_rsa2  -p50200 kubesphere@40.81.5.xx
 
 1. Download it so that you can generate a configuration file in the next step.
 
-
 {{< tabs >}}
-
-{{< tab "For users with poor network connections to GitHub" >}}
-
-Download KubeKey using the following command:
-
-```bash
-wget -c https://kubesphere.io/download/kubekey-v1.0.0-linux-amd64.tar.gz -O - | tar -xz
-```
-{{</ tab >}}
 
 {{< tab "For users with good network connections to GitHub" >}}
 
@@ -114,6 +104,16 @@ Download KubeKey from [GitHub Release Page](https://github.com/kubesphere/kubeke
 
 ```bash
 wget https://github.com/kubesphere/kubekey/releases/download/v1.0.0/kubekey-v1.0.0-linux-amd64.tar.gz -O - | tar -xz
+```
+
+{{</ tab >}}
+
+{{< tab "For users with poor network connections to GitHub" >}}
+
+Download KubeKey using the following command:
+
+```bash
+wget -c https://kubesphere.io/download/kubekey-v1.0.0-linux-amd64.tar.gz -O - | tar -xz
 ```
 {{</ tab >}}
 

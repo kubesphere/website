@@ -134,7 +134,7 @@ After you execute the command, you will see a table as below for environment che
 
 ![environment-check](https://ap3.qingstor.com/kubesphere-website/docs/environment-check.png)
 
-Make sure the above components marked with `y` are installed and input `yes` to continue. For details read [Node Requirements](#node-requirements) and [Dependency Requirements](#dependency-requirements) above.
+Make sure the above components marked with `y` are installed and input `yes` to continue. For details, read [Node Requirements](#node-requirements) and [Dependency Requirements](#dependency-requirements) above.
 
 ## Step 4: Verify the Installation
 
