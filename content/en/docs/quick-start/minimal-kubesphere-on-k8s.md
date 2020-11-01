@@ -27,9 +27,7 @@ After you make sure your machine meets the prerequisites, you can follow the ste
 
 ```bash
 kubectl apply -f https://github.com/kubesphere/ks-installer/releases/download/v3.0.0/kubesphere-installer.yaml
-```
 
-```bash
 kubectl apply -f https://github.com/kubesphere/ks-installer/releases/download/v3.0.0/cluster-configuration.yaml
 ```
 
