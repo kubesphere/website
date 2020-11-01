@@ -69,10 +69,10 @@ All the other Resources will be placed in MC_KubeSphereRG_KuberSphereCluster_wes
 ## Deploy KubeSphere on AKS
 To start deploying KubeSphere, use the following command.
 ```bash
-kubectl apply -f https://raw.githubusercontent.com/kubesphere/ks-installer/v3.0.0/deploy/kubesphere-installer.yaml
+kubectl apply -f https://github.com/kubesphere/ks-installer/releases/download/v3.0.0/kubesphere-installer.yaml
 ```
 ```bash
-kubectl apply -f https://raw.githubusercontent.com/kubesphere/ks-installer/v3.0.0/deploy/cluster-configuration.yaml
+kubectl apply -f https://github.com/kubesphere/ks-installer/releases/download/v3.0.0/cluster-configuration.yaml
 ```
 You can inspect the logs of installation through the following command:
 

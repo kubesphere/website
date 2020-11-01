@@ -101,21 +101,22 @@ Follow the step below to download KubeKey.
 
 {{< tabs >}}
 
-{{< tab "For users with poor network connections to GitHub" >}}
-
-Download KubeKey using the following command:
-
-```bash
-wget -c https://kubesphere.io/download/kubekey-v1.0.0-linux-amd64.tar.gz -O - | tar -xz
-```
-{{</ tab >}}
-
 {{< tab "For users with good network connections to GitHub" >}}
 
 Download KubeKey from [GitHub Release Page](https://github.com/kubesphere/kubekey/releases/tag/v1.0.0) or use the following command directly.
 
 ```bash
 wget https://github.com/kubesphere/kubekey/releases/download/v1.0.0/kubekey-v1.0.0-linux-amd64.tar.gz -O - | tar -xz
+```
+
+{{</ tab >}}
+
+{{< tab "For users with poor network connections to GitHub" >}}
+
+Download KubeKey using the following command:
+
+```bash
+wget -c https://kubesphere.io/download/kubekey-v1.0.0-linux-amd64.tar.gz -O - | tar -xz
 ```
 {{</ tab >}}
 
@@ -152,18 +153,6 @@ Here are some examples for your reference:
 ```bash
 ./kk create config [-f ~/myfolder/abc.yaml]
 ```
-
-- You can customize persistent storage plugins (e.g. NFS Client, Ceph RBD, and GlusterFS) in `config-sample.yaml`.
-
-```bash
-./kk create config --with-storage localVolume
-```
-
-{{< notice note >}}
-
-KubeKey will install [OpenEBS](https://openebs.io/) to provision [LocalPV](https://kubernetes.io/docs/concepts/storage/volumes/#local) for development and testing environment by default, which is convenient for new users. In this example of multi-node installation, the default storage class (local volume) is used. For production, please use NFS/Ceph/GlusterFS/CSI or commercial products as persistent storage solutions. You need to specify them under `addons` of `config-sample.yaml`. See [Persistent Storage Configuration](../storage-configuration) for more details.
-
-{{</ notice >}}
 
 - You can specify a KubeSphere version that you want to install (e.g. `--with-kubesphere v3.0.0`).
 
@@ -232,6 +221,16 @@ hosts:
 
 - You can enable the multi-cluster feature by editing the configuration file. For more information, see Multi-cluster Management.
 - You can also select the components you want to install. For more information, see [Enable Pluggable Components](../../../pluggable-components/). For an example of a complete config-sample.yaml file, see [this file](https://github.com/kubesphere/kubekey/blob/master/docs/config-example.md).
+
+{{</ notice >}}
+
+#### addons
+
+You can customize persistent storage plugins (e.g. NFS Client, Ceph RBD, and GlusterFS) by specifying storage under the field `addons` in `config-sample.yaml`. For more information, see [Persistent Storage Configuration](../storage-configuration).
+
+{{< notice note >}}
+
+KubeKey will install [OpenEBS](https://openebs.io/) to provision [LocalPV](https://kubernetes.io/docs/concepts/storage/volumes/#local) for development and testing environment by default, which is convenient for new users. In this example of multi-node installation, the default storage class (local volume) is used. For production, please use NFS/Ceph/GlusterFS/CSI or commercial products as persistent storage solutions.
 
 {{</ notice >}}
 
@@ -305,3 +304,6 @@ kubectl completion bash >/etc/bash_completion.d/kubectl
 ```
 
 Detailed information can be found [here](https://kubernetes.io/docs/tasks/tools/install-kubectl/#enabling-shell-autocompletion).
+
+## Demo
+<script src="https://asciinema.org/a/368752.js" id="asciicast-368752" async></script>

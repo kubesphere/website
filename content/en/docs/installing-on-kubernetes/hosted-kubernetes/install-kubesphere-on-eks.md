@@ -120,13 +120,13 @@ kubectl get svc
 - Install KubeSphere using kubectl. The following command is only for the default minimal installation.
 
 ```bash
-kubectl apply -f https://raw.githubusercontent.com/kubesphere/ks-installer/v3.0.0/deploy/kubesphere-installer.yaml
+kubectl apply -f https://github.com/kubesphere/ks-installer/releases/download/v3.0.0/kubesphere-installer.yaml
 ```
 ![minimal-install](/images/docs/eks/minimal-install.png)
 
 - Create a local **cluster-configuration.yaml** file.
 ```shell
-kubectl apply -f https://raw.githubusercontent.com/kubesphere/ks-installer/v3.0.0/deploy/cluster-configuration.yaml
+kubectl apply -f https://github.com/kubesphere/ks-installer/releases/download/v3.0.0/cluster-configuration.yaml
 ```
 ![config-install](/images/docs/eks/config-install.png)
 

@@ -1,48 +1,46 @@
 ---
-title: "Architecture"
-keywords: "kubesphere, kubernetes, docker, helm, jenkins, istio, prometheus, devops, service mesh"
-description: "KubeSphere architecture"
+title: "架构说明"
+keywords: "kubesphere, kubernetes, docker, helm, jenkins, istio, prometheus, devops, service mesh，架构说明，架构"
+description: "KubeSphere 架构说明"
 
-linkTitle: "Architecture"
+linkTitle: "架构说明"
 weight: 1300
 ---
 
-## Separation of frontend and backend
+## 前后端分离
 
-KubeSphere separates [frontend](https://github.com/kubesphere/console) from [backend](https://github.com/kubesphere/kubesphere), and it itself is a cloud native application and provides open standard REST APIs for external systems to use. Please see [API documentation](../../api-reference/api-docs) for details. The following figure is the system architecture. KubeSphere can run anywhere from on-premise datacenter to any cloud to edge. In addition, it can be deployed on any Kubernetes distribution.
+KubeSphere 将 [前端](https://github.com/kubesphere/console) 与 [后端](https://github.com/kubesphere/kubesphere) 分开，实现了面向云原生的设计，后端的各个功能组件可通过 REST API 对接外部系统。 可参考 [API文档](../../api-reference/api-docs)。下图是系统架构图。 KubeSphere 无底层的基础设施依赖，可以运行在任何 Kubernetes、私有云、公有云、VM 或物理环境（BM）之上。 此外，它可以部署在任何 Kubernetes 发行版上。
 
 ![Architecture](https://pek3b.qingstor.com/kubesphere-docs/png/20190810073322.png)
 
-## Components List
+## 组件列表
 
-| Back-end component | Function description |
+| 后端组件 | 功能说明 |
 |---|---|
-| ks-account | Account service provides APIs for account and role management |
-| ks-apiserver | The KubeSphere API server validates and configures data for the API objects which include Kubernetes objects. The API Server services REST operations and provides the frontend to the cluster's shared state through which all other components interact. |
-| ks-apigateway | The API gateway is responsible for handling external requests for KubeSphere services. |
-| ks-console | KubeSphere console offers KubeSphere console service |
-| ks-controller-manager | KubeSphere controller takes care of business logic, for example, when create a workspace, the controller will automatically create corresponding permissions and configurations for it. |
-| metrics-server | Kubernetes monitoring component collects metrics from Kubelet on each node. |
-| Prometheus | provides monitoring metrics and services of clusters, nodes, workloads, API objects. |
-| Elasticsearch | provides log indexing, querying and data management. Besides the built-in service, KubeSphere supports the integration of external Elasticsearch service. |
-| Fluent Bit | collects logs and forwarding them to ElasticSearch or Kafka. |
-| Jenkins | provides CI/CD pipeline service. |
-| SonarQube | is an optional component that provides code static checking and quality analysis. |
-| Source-to-Image | automatically compiles and packages source code into Docker image. |
-| Istio | provides microservice governance and traffic control, such as grayscale release, canary release, circuit break, traffic mirroring and so on. |
-| Jaeger | collects sidecar data and provides distributed tracing service. |
-| OpenPitrix | provides application lifecycle management such as template management, deployment, app store management, etc. |
-| Alert | provides configurable alert service for cluster, workload, Pod, and container etc. |
-| Notification | is an integrated notification service; it currently supports mail delivery method. |
-| Redis | caches the data of ks-console and ks-account. |
-| MySQL | is the shared database for cluster back-end components including monitoring, alarm, DevOps, OpenPitrix etc. |
-| PostgreSQL | SonarQube and Harbor's back-end database |
-| OpenLDAP | is responsible for centralized storage and management of user account and integrates with external LDAP server. |
-| Storage | built-in CSI plug-in collecting cloud platform storage services. It supports open source NFS/Ceph/Gluster client. |
-| Network | supports Calico/Flannel and other open source network plug-ins to integrate with cloud platform SDN. |
+| ks-apiserver | 整个集群管理的 API 接口和集群内部各个模块之间通信的枢纽，以及集群安全控制。|
+| ks-console | 提供 KubeSphere 的控制台服务。|
+| ks-controller-manager | 实现业务逻辑的，例如创建企业空间时，为其创建对应的权限；或创建服务策略时，生成对应的 Istio 配置等。|
+| metrics-server | Kubernetes 的监控组件，从每个节点的 Kubelet 采集指标信息。|
+| Prometheus | 提供群集，节点，工作负载，API对象的监视指标和服务。|
+| Elasticsearch | 提供集群的日志索引、查询、数据管理等服务，在安装时也可对接您已有的 ES 减少资源消耗。|
+| Fluent Bit | 提供日志接收与转发，可将采集到的⽇志信息发送到 ElasticSearch、Kafka。 |
+| Jenkins | 提供 CI/CD 流水线服务。|
+| SonarQube | 可选安装项，提供代码静态检查与质量分析。|
+| Source-to-Image | 将源代码自动将编译并打包成 Docker 镜像，方便快速构建镜像。|
+| Istio | 提供微服务治理与流量管控，如灰度发布、金丝雀发布、熔断、流量镜像等。|
+| Jaeger | 收集 Sidecar 数据，提供分布式 Tracing 服务。|
+| OpenPitrix | 提供应用程序生命周期管理，例如应用模板、应用部署与管理的服务等。|
+| Alert | 提供集群、Workload、Pod、容器级别的自定义告警服务。|
+| Notification | 是一项综合通知服务； 它当前支持邮件传递方法。|
+| Redis | 将 ks-console 与 ks-account 的数据存储在内存中的存储系统。|
+| MySQL | 集群后端组件的数据库，监控、告警、DevOps、OpenPitrix 共用 MySQL 服务。|
+| PostgreSQL | SonarQube 和 Harbor 的后端数据库。|
+| OpenLDAP | 负责集中存储和管理用户账号信息与对接外部的 LDAP。|
+| Storage | 内置 CSI 插件对接云平台存储服务，可选安装开源的 NFS/Ceph/Gluster 的客户端。|
+| Network | 可选安装 Calico/Flannel 等开源的网络插件，支持对接云平台 SDN。|
 
-## Service Components
+## 服务组件
 
-Each component has many services, see [Service Components](../../infrastructure/components) for more details.
+以上列表中每个功能组件下还有多个服务组件，关于服务组件的说明，可参考 [服务组件说明](../../pluggable-components/)。
 
 ![Service Components](https://pek3b.qingstor.com/kubesphere-docs/png/20191017163549.png)
