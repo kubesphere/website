@@ -16,25 +16,25 @@ icon: "/images/docs/docs.svg"
 
 ### [概览](../multicluster-management/introduction/overview/)
 
-对多群集管理有基本的了解，例如它的常见用例，以及 KubeSphere 通过它的多群集功能可以带来的好处。
+对多集群管理有基本的了解，例如它的常见用例，以及 KubeSphere 通过它的多集群功能可以带来的好处。
 
-### [KubeSphere 中的 Kubernetes 联合](../multicluster-management/introduction/kubefed-in-kubesphere/)
+### [KubeSphere 中的 Kubernetes 集群联邦](../multicluster-management/introduction/kubefed-in-kubesphere/)
 
-理解 KubeSphere 中的 Kubernetes 联合的基本概念，包括 M 集群和 H 集群。
+理解 KubeSphere 中的 Kubernetes 集群联邦的基本概念，包括 M 集群和 H 集群。
 
 ## 在 KubeSphere 中启用多集群
 
 ### [直接连接](../multicluster-management/enable-multicluster/direct-connection/)
 
-了解通过直接连接导入群集的一般步骤。
+了解通过直接连接导入集群的一般步骤。
 
 ### [代理连接](../multicluster-management/enable-multicluster/agent-connection/)
 
-了解通过代理连接导入群集的一般步骤。
+了解通过代理连接导入集群的一般步骤。
 
 ### [获取 KubeConfig](../multicluster-management/enable-multicluster/retrieve-kubeconfig/)
 
-获取通过直接连接导入群集所需的 KubeConfig。
+获取通过直接连接导入集群所需的 KubeConfig。
 
 ## 导入云托管的 Kubernetes 集群
 
