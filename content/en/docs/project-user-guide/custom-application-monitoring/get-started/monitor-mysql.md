@@ -12,88 +12,90 @@ This tutorial walks you through an example of how to monitor MySQL metrics and v
 
 ## Prerequisites
 
-- Please make sure you [enable the OpenPitrix system](https://kubesphere.io/docs/pluggable-components/app-store/). We will deploy MySQL and MySQL exporter from the App Store.
-- You need to create a workspace, a project, and a user account for this tutorial. The account needs to be a platform regular user and to be invited as the project operator with the `operator` role. In this tutorial, you log in as `project-operator` and work in the project `demo` in the workspace `my-workspace`.
+- Please make sure you [enable the OpenPitrix system](https://kubesphere.io/docs/pluggable-components/app-store/). MySQL and MySQL exporter will be deployed from the App Store.
+- You need to create a workspace, a project, and a user account for this tutorial. For more information, see [Create Workspace, Project, Account and Role](../../../../quick-start/create-workspace-and-project/). The account needs to be a platform regular user and to be invited as the project operator with the `operator` role. In this tutorial, you log in as `project-operator` and work in the project `demo` in the workspace `demo-workspace`.
 
 ## Hands-on Lab
 
 ### Step 1: Deploy MySQL
 
-To begin with, we deploy MySQL from the App Store and set the root password to `testing`. Please make sure you are landing on the project overview page of `demo`.
+To begin with, you deploy MySQL from the App Store and set the root password to `testing`. Please make sure you are landing on the **Overview** page of the project `demo`.
 
-- Go to **App Store**
+1. Go to **App Store**.
 
-![go-to-app-store](/images/docs/project-user-guide/custom-application-monitoring/go-to-app-store.PNG)
+![go-to-app-store](/images/docs/project-user-guide/custom-application-monitoring/go-to-app-store.jpg)
 
-- Find **MySQL** and Click **Deploy**
+2. Find **MySQL** and click **Deploy**.
 
-![find-mysql](/images/docs/project-user-guide/custom-application-monitoring/find-mysql.PNG)
+![find-mysql](/images/docs/project-user-guide/custom-application-monitoring/find-mysql.jpg)
 
-![click-deploy](/images/docs/project-user-guide/custom-application-monitoring/click-deploy.PNG)
+![click-deploy](/images/docs/project-user-guide/custom-application-monitoring/click-deploy.jpg)
 
-- Make sure MySQL is deployed in `demo`
+3. Make sure MySQL is deployed in `demo` and click **Next**.
 
-![click-next](/images/docs/project-user-guide/custom-application-monitoring/click-next.PNG)
+![click-next](/images/docs/project-user-guide/custom-application-monitoring/click-next.jpg)
 
-- Uncomment the `mysqlRootPassword` field and click **Deploy**
+4. Uncomment the `mysqlRootPassword` field and click **Deploy**.
 
-![uncomment-mysqlRootPassword](/images/docs/project-user-guide/custom-application-monitoring/uncomment-mysqlRootPassword.PNG)
+![uncomment-mysqlRootPassword](/images/docs/project-user-guide/custom-application-monitoring/uncomment-mysqlRootPassword.jpg)
 
-- Wait until MySQL is up
+5. Wait until MySQL is up and running.
 
-![check-if-mysql-is-running](/images/docs/project-user-guide/custom-application-monitoring/check-if-mysql-is-running.PNG)
+![check-if-mysql-is-running](/images/docs/project-user-guide/custom-application-monitoring/check-if-mysql-is-running.jpg)
 
 
 ### Step 2: Deploy MySQL exporter
 
-Deploy MySQL exporter in `demo` on the same cluster. MySQL exporter is responsible for querying MySQL status and reports them in Prometheus format.
+You need to deploy MySQL exporter in `demo` on the same cluster. MySQL exporter is responsible for querying MySQL status and reports the data in Prometheus format.
 
-- Go to **App Store** and find **MySQL exporter**
+1. Go to **App Store** and find **MySQL exporter**.
 
-![find-mysql-exporter](/images/docs/project-user-guide/custom-application-monitoring/find-mysql-exporter.PNG) 
+![find-mysql-exporter](/images/docs/project-user-guide/custom-application-monitoring/find-mysql-exporter.jpg) 
 
-![exporter-click-deploy](/images/docs/project-user-guide/custom-application-monitoring/exporter-click-deploy.PNG)
+![exporter-click-deploy](/images/docs/project-user-guide/custom-application-monitoring/exporter-click-deploy.jpg)
 
-- Deploy MySQL exporter in `demo` again
+2. Deploy MySQL exporter in `demo` again.
 
-![exporter-click-next](/images/docs/project-user-guide/custom-application-monitoring/exporter-click-next.PNG)
+![exporter-click-next](/images/docs/project-user-guide/custom-application-monitoring/exporter-click-next.jpg)
 
-- Set `serviceMonitor.enabled` to true
+3. Make sure `serviceMonitor.enabled` is set to `true`. The built-in MySQL exporter sets it to `true` by default, so you don't have to manually modify `serviceMonitor.enabled`.
 
-The builtin MySQL exporter sets it true by default, so you don't have to manually modify `serviceMonitor.enabled`.
-
-![set-servicemonitor-to-true](/images/docs/project-user-guide/custom-application-monitoring/set-servicemonitor-to-true.PNG)
+![set-servicemonitor-to-true](/images/docs/project-user-guide/custom-application-monitoring/set-servicemonitor-to-true.jpg)
 
 {{< notice warning >}}
-Don't forget to enable SericeMonitor CRD if you are using external exporter helm charts. Those charts usually disable ServiceMonitor by default and require manual modification.
+Don't forget to enable the SericeMonitor CRD if you are using external exporter helm charts. Those charts usually disable ServiceMonitor by default and require manual modification.
 {{</ notice >}}
 
-- Modify MySQL connection parameters
+4. Modify MySQL connection parameters. MySQL exporter needs to connect to the target MySQL. In this tutorial, MySQL is installed with the service name `mysql-a8xgvx`. Set `mysql.host` to `mysql-a8xgvx`, `mysql.pass` to `testing`, and `user` to `root` as below. Note that your MySQL service may be created with **a different name**.
 
-MySQL exporter needs to connect to the target MySQL. In this tutorial, MySQL is installed with the Service name `mysql-egn701`. Modify `mysql.host` to `mysql-egn701`, `mysql.pass` to `testing`, and `user` to `root` as below. Note that your MySQL Service may be created with **a different name**.
+![mysql-conn-params](/images/docs/project-user-guide/custom-application-monitoring/mysql-conn-params.jpg)
 
-![mysql-conn-params](/images/docs/project-user-guide/custom-application-monitoring/mysql-conn-params.PNG)
+5. Click **Deploy** and wait until MySQL exporter is up and running.
 
-- Click **Deploy** and wait until MySQL exporter is up
+![exporter-click-deploy-2](/images/docs/project-user-guide/custom-application-monitoring/exporter-click-deploy-2.jpg)
 
-![exporter-click-deploy-2](/images/docs/project-user-guide/custom-application-monitoring/exporter-click-deploy-2.PNG)
-
-![exporter-is-running](/images/docs/project-user-guide/custom-application-monitoring/exporter-is-running.PNG)
+![exporter-is-running](/images/docs/project-user-guide/custom-application-monitoring/exporter-is-running.jpg)
 
 ### Step 3: Create Dashboard
 
 After about two minutes, you can create a monitoring dashboard for MySQL and visualize metrics in real time.
 
-- Navigate to **Custom Monitoring** and Click **Create**
+1. Navigate to **Custom Monitoring** under **Monitoring  & Alerting** and click **Create**.
 
-![navigate-to-custom-monitoring](/images/docs/project-user-guide/custom-application-monitoring/navigate-to-custom-monitoring.PNG)
+![navigate-to-custom-monitoring](/images/docs/project-user-guide/custom-application-monitoring/navigate-to-custom-monitoring.jpg)
 
-- Name the dashboard as `mysql-overview` and choose **MySQL template**
+2. In the dialogue that appears, name the dashboard as `mysql-overview` and choose **MySQL template**. Click **Create** to continue.
 
-![create-mysql-dashboard](/images/docs/project-user-guide/custom-application-monitoring/create-mysql-dashboard.PNG)
+![create-mysql-dashboard](/images/docs/project-user-guide/custom-application-monitoring/create-mysql-dashboard.jpg)
 
-- Save template
+3. Save the template by clicking **Save Template** in the top right corner. A newly-created dashboard displays in the dashboard list as below.
 
-![save-mysql-template](/images/docs/project-user-guide/custom-application-monitoring/save-mysql-template.PNG)
+![save-mysql-template](/images/docs/project-user-guide/custom-application-monitoring/save-mysql-template.jpg)
 
-![monitor-mysql-done](/images/docs/project-user-guide/custom-application-monitoring/monitor-mysql-done.PNG)
+![monitor-mysql-done](/images/docs/project-user-guide/custom-application-monitoring/monitor-mysql-done.jpg)
+
+{{< notice tip >}}
+
+For more information about dashboard strings, see [Visualization](../../../../project-user-guide/custom-application-monitoring/visualization/overview/).
+
+{{</ notice >}}
