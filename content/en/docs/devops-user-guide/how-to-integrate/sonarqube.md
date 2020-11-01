@@ -1,30 +1,34 @@
 ---
-title: "How to integrate SonarQube in Pipeline"
-keywords: 'kubernetes, docker, devops, jenkins, sonarqube'
-description: ''
-linkTitle: "Integrate SonarQube in Pipeline"
+title: "Integrate SonarQube into Pipeline"
+keywords: 'Kubernetes, KubeSphere, devops, jenkins, sonarqube, pipeline'
+description: 'This tutorial demonstrates how to integrate SonarQube into pipelines.'
+linkTitle: "Integrate SonarQube into Pipeline"
 weight: 200
 ---
 
+[SonarQube](https://www.sonarqube.org/) is a popular continuous inspection tool for code quality. You can use it for static and dynamic analysis of a codebase. After it is integrated into pipelines in KubeSphere, you can view common code issues such as bugs and vulnerabilities directly on the dashboard as SonarQube detects issues in a running pipeline.
+
+This tutorial demonstrates how you can integrate SonarQube into pipelines. Refer to the following steps first before you [create a pipeline using a Jenkinsfile](../../../devops-user-guide/how-to-use/create-a-pipeline-using-jenkinsfile/).
+
 ## Prerequisites
 
-- You need to [enable KubeSphere DevOps System](../../../../docs/pluggable-components/devops/).
+You need to [enable KubeSphere DevOps System](../../../../docs/pluggable-components/devops/).
 
-## Install SonarQube Server(Optional, if you don't)
+## Install SonarQube Server
 
-Execute the following command to install Sonarqube Server:
+1. Execute the following command to install SonarQube Server if it is not ready:
 
 ```bash
 helm upgrade --install sonarqube sonarqube --repo https://charts.kubesphere.io/main -n kubesphere-devops-system  --create-namespace --set service.type=NodePort
 ```
 
-You will get this prompt:
+2. You will get this prompt:
 
-![](/images/devops/sonarqube-install.png)
+![sonarqube-install](/images/docs/devops-user-guide/integrate-sonarqube-into-pipeline/sonarqube-install.png)
 
-## Get Address of Sonarqube Console
+## Get Address of SonarQube Console
 
-Execute the following command to get SonarQube NodePort. As you can see `31331` is returned in this example:
+1. Execute the following command to get SonarQube NodePort.
 
 ```bash
 export NODE_PORT=$(kubectl get --namespace kubesphere-devops-system -o jsonpath="{.spec.ports[0].nodePort}" services sonarqube-sonarqube)
@@ -32,37 +36,65 @@ export NODE_IP=$(kubectl get nodes --namespace kubesphere-devops-system -o jsonp
 echo http://$NODE_IP:$NODE_PORT
 ```
 
-## Configuration of Sonarqube Server
+2. You can get the output as below (`31434` is the port number in this example, which may be different from yours):
 
-### Access SonarQube Console
+```bash
+http://192.168.0.4:31434
+```
 
-Now access SonarQube console `http://{$Node IP}:{$NodePort}` in your browser using the default account `admin / admin`.
+## Configure SonarQube Server
 
-![](https://pek3b.qingstor.com/kubesphere-docs/png/20200107003216.png)
+### Step 1: Access SonarQube Console
 
-![](https://pek3b.qingstor.com/kubesphere-docs/png/20200107003240.png)
+1. Execute the following command to view the status of SonarQube. Note that the SonarQube console is not accessible until SonarQube is up and running.
+
+```bash
+$ kubectl get pod -n kubesphere-devops-system
+NAME                                       READY   STATUS    RESTARTS   AGE
+ks-jenkins-68b8949bb-7zwg4                 1/1     Running   0          84m
+s2ioperator-0                              1/1     Running   1          84m
+sonarqube-postgresql-0                     1/1     Running   0          5m31s
+sonarqube-sonarqube-bb595d88b-97594        1/1     Running   2          5m31s
+uc-jenkins-update-center-8c898f44f-m8dz2   1/1     Running   0          85m
+```
+
+2. Access the SonarQube console `http://{$Node IP}:{$NodePort}` in your browser and you can see its homepage as below:
+
+![access-sonarqube-console](/images/docs/devops-user-guide/integrate-sonarqube-into-pipeline/access-sonarqube-console.jpg)
+
+3. Click **Log in** in the top right corner and use the default account `admin/admin`.
+
+![log-in-page](/images/docs/devops-user-guide/integrate-sonarqube-into-pipeline/log-in-page.jpg)
 
 {{< notice note >}}
-Make sure you have set up necessary port forwarding rules and open the port to access SonarQube in your security groups.
+
+You may need to set up necessary port forwarding rules and open the port to access SonarQube in your security groups depending on where your instances are deployed.
+
 {{</ notice >}}
 
-### Create SonarQube Admin Token
+### Step 2: Create SonarQube Admin Token
 
-1. Click `My Account` go to the personal page.
+1. Click the letter **A** and select **My Account** from the menu to go to the **Profile** page.
 
-![](/images/devops/sonarqube-config-1.png)
+![sonarqube-config-1](/images/docs/devops-user-guide/integrate-sonarqube-into-pipeline/sonarqube-config-1.jpg)
 
-2. Click `Security` and input a token name, such as kubesphere.
+2. Click **Security** and input a token name, such as `kubesphere`.
 
-![](/images/devops/sonarqube-config-2.png)
+![sonarqube-config-2](/images/docs/devops-user-guide/integrate-sonarqube-into-pipeline/sonarqube-config-2.jpg)
 
-3. Click `Generate` and copy the token.
+3. Click **Generate** and copy the token.
 
-![](/images/devops/sonarqube-config-3.png)
+![sonarqube-config-3](/images/docs/devops-user-guide/integrate-sonarqube-into-pipeline/sonarqube-config-3.jpg)
 
-### Create a Webhook Server
+{{< notice warning >}} 
 
-Execute the following command to get the address of Sonarqube Webhook
+Make sure you do copy the token because you won't be able to see it again as shown in the prompt.
+
+{{</ notice >}}
+
+### Step 3: Create a Webhook Server
+
+1. Execute the following command to get the address of SonarQube Webhook.
 
 ```bash
 export NODE_PORT=$(kubectl get --namespace kubesphere-devops-system -o jsonpath="{.spec.ports[0].nodePort}" services ks-jenkins)
@@ -70,29 +102,53 @@ export NODE_IP=$(kubectl get nodes --namespace kubesphere-devops-system -o jsonp
 echo http://$NODE_IP:$NODE_PORT/sonarqube-webhook/
 ```
 
-Click in turn `Administration –> Configuration –> Webhooks` to create a webhook. 
+2. Expected output:
 
-![](/images/devops/sonarqube-webhook-1.png)
+```bash
+http://192.168.0.4:30180/sonarqube-webhook/
+```
 
-Input Name and Jenkins Console URL.
+3. Click **Administration**, **Configuration** and **Webhooks** in turn to create a webhook. 
 
-![](/images/devops/sonarqube-webhook-2.png)
+![sonarqube-webhook-1](/images/docs/devops-user-guide/integrate-sonarqube-into-pipeline/sonarqube-webhook-1.jpg)
 
-## Configuration of KubeSphere
+4. Click **Create**.
 
-### Add Configuration of Sonarqube to ks-installer
+![sonarqube-webhook-3](/images/docs/devops-user-guide/integrate-sonarqube-into-pipeline/sonarqube-webhook-3.jpg)
+
+5. Input **Name** and **Jenkins Console URL** (i.e. the SonarQube Webhook address) in the dialogue that appears. Click **Create** to finish.
+
+![webhook-page-info](/images/docs/devops-user-guide/integrate-sonarqube-into-pipeline/webhook-page-info.jpg)
+
+### Step 4: Add SonarQube Configuration to ks-installer
+
+1. Execute the following command to edit `ks-installer`.
 
 ```bash
 kubectl edit cc -n kubesphere-system ks-installer
 ```
 
-Add externalSonarUrl and externalSonarToken and save it.
+2. Navigate to `devops`. Add the field `sonarqube` and specify `externalSonarUrl` and `externalSonarToken` under it.
 
-![](/images/devops/sonarqube-token-1.png)
+```yaml
+devops:
+  enabled: true
+  jenkinsJavaOpts_MaxRAM: 2g
+  jenkinsJavaOpts_Xms: 512m
+  jenkinsJavaOpts_Xmx: 512m
+  jenkinsMemoryLim: 2Gi
+  jenkinsMemoryReq: 1500Mi
+  jenkinsVolumeSize: 8Gi
+  sonarqube: # Add this field manually.
+    externalSonarUrl: http://192.168.0.4:31434 # The SonarQube IP address.
+    externalSonarToken: f75dc3be11fd3d58debfd4e445e3de844683ad93 # The SonarQube admin token created above.
+```
 
-### Add Sonarqube Server to Jenkins
+3. Save the file after you finish.
 
-Execute the following command to get the address of Jenkins.
+### Step 5: Add SonarQube Server to Jenkins
+
+1. Execute the following command to get the address of Jenkins.
 
 ```bash
 export NODE_PORT=$(kubectl get --namespace kubesphere-devops-system -o jsonpath="{.spec.ports[0].nodePort}" services ks-jenkins)
@@ -100,27 +156,66 @@ export NODE_IP=$(kubectl get nodes --namespace kubesphere-devops-system -o jsonp
 echo http://$NODE_IP:$NODE_PORT
 ```
 
-In the page of Jenkins UI, you also need to add Sonarqube Server.
+2. You can get the output as below, which tells you the port number of Jenkins.
 
-![](/images/devops/sonarqube-config.png)
+```bash
+http://192.168.0.4:30180
+```
 
-### Add SonarqubeUrl to Kubesphere Console
+3. Access Jenkins with the address `http://Public IP:30180`. When KubeSphere is installed, the Jenkins dashboard is also installed by default. Besides, Jenkins is configured with KubeSphere LDAP, which means you can log in Jenkins with KubeSphere accounts (e.g. `admin/P@88w0rd`) directly. For more information about configuring Jenkins, see [Jenkins System Settings](../../../devops-user-guide/how-to-use/jenkins-setting/).
 
-In order to be able to click directly from the UI page to jump to the Sonarqube page, you need to configure the following
+![jenkins-login-page](/images/docs/devops-user-guide/integrate-sonarqube-into-pipeline/jenkins-login-page.jpg)
+
+{{< notice note >}}
+
+You may need to set up necessary port forwarding rules and open the port `30180` to access Jenkins in your security groups depending on where your instances are deployed.
+
+{{</ notice >}} 
+
+4. Click **Manage Jenkins** on the left.
+
+![manage-jenkins](/images/docs/devops-user-guide/integrate-sonarqube-into-pipeline/manage-jenkins.jpg)
+
+5. Scroll down to **Configure System** and click it.
+
+![configure-system](/images/docs/devops-user-guide/integrate-sonarqube-into-pipeline/configure-system.jpg)
+
+6. Navigate to **SonarQube servers** and click **Add SonarQube**.
+
+![add-sonarqube](/images/docs/devops-user-guide/integrate-sonarqube-into-pipeline/add-sonarqube.jpg)
+
+7. Input **Name**, **Server URL** (`http://Node IP:port`) and **Server authentication token** (the SonarQube admin token). Click **Apply** to finish.
+
+![sonarqube-jenkins-settings](/images/docs/devops-user-guide/integrate-sonarqube-into-pipeline/sonarqube-jenkins-settings.jpg)
+
+### Step 6: Add sonarqubeUrl to KubeSphere Console
+
+You need to specify `sonarqubeURL` so that you can access SonarQube directly from the KubeSphere console.
+
+1. Execute the following command:
 
 ```bash
 kubectl edit  cm -n kubesphere-system  ks-console-config
 ```
 
-Add the following:
+2. Navigate to `client` and add the field `devops` with `sonarqubeURL` specified.
 
-```bash
+```yaml
 client:
-    devops:
-        sonarqubeURL: http://192.168.6.11:31331
+  version:
+    kubesphere: v3.0.0
+    kubernetes: v1.17.9
+    openpitrix: v0.3.5
+  enableKubeConfig: true
+  devops: # Add this field manually.
+    sonarqubeURL: http://192.168.0.4:31434 # The SonarQube IP address.
 ```
 
-### Restart Services to Make All Effective
+3. Save the file.
+
+### Step 7: Restart Services to Make All Effective
+
+Execute the following commands.
 
 ```bash
 kubectl -n kubesphere-system rollout restart deploy ks-apiserver
@@ -130,28 +225,32 @@ kubectl -n kubesphere-system rollout restart deploy ks-apiserver
 kubectl -n kubesphere-system rollout restart deploy ks-console
 ```
 
-## Create SonarQube Token For New Projetct
+## Create SonarQube Token for New Projetct
 
-1. Click **Create new project** then a pop-up page **Analyze a project** shows up.
+You need a SonarQube token so that your pipeline can communicate with SonarQube as it runs.
 
-![](https://pek3b.qingstor.com/kubesphere-docs/png/20200213225325.png)
+1. On the SonarQube console, click **Create new project**.
 
-2. Enter a project name like `java-sample`，then click **Generate**.
+![sonarqube-create-project](/images/docs/devops-user-guide/integrate-sonarqube-into-pipeline/sonarqube-create-project.jpg)
 
-![](https://pek3b.qingstor.com/kubesphere-docs/png/20200213230427.png)
+2. Enter a project key, such as `java-demo`, and click **Set Up**.
 
-3. At this point, we've got token as follows. Click **Continue**.
+![jenkins-projet-key](/images/docs/devops-user-guide/integrate-sonarqube-into-pipeline/jenkins-projet-key.jpg)
 
-![](https://pek3b.qingstor.com/kubesphere-docs/png/20200213231314.png)
+3. Enter a project name, such as `java-sample`, and click **Generate**.
 
-4. Choose **Java** and select `Maven` by default, please be aware that you just need to copy the highlighted serial number.
+![generate-a-token](/images/docs/devops-user-guide/integrate-sonarqube-into-pipeline/generate-a-token.jpg)
 
-![](/images/devops/sonarqube-example.png)
+4. After the token is created, click **Continue**.
 
-## View the results on KubeSpher Console
+![token-created](/images/docs/devops-user-guide/integrate-sonarqube-into-pipeline/token-created.jpg)
 
-Please refer to [Create a Pipeline - using Graphical Editing Panel](../../how-to-use/create-a-pipeline-using-graphical-editing-panel) or [Create a pipeline using jenkinsfile](../../how-to-use/create-a-pipeline-using-jenkinsfile) for configuration in the project.
+4. Choose **Java** and **Maven** respectively. Copy the serial number within the green box in the image below, which needs to be added in the [Credentials](../../../devops-user-guide/how-to-use/credential-management/#create-credentials) section if it is to be used in pipelines.
 
-Then, after running successfully, you will get:
+![sonarqube-example](/images/docs/devops-user-guide/integrate-sonarqube-into-pipeline/sonarqube-example.jpg)
 
-![](/images/devops/sonarqube-view.png)
+## View Results on KubeSphere Console
+
+After you [create a pipeline using the graphical editing panel](../../how-to-use/create-a-pipeline-using-graphical-editing-panel) or [create a pipeline using a Jenkinsfile](../../how-to-use/create-a-pipeline-using-jenkinsfile), you can view the result of code quality analysis. For example, you may see an image as below if SonarQube runs successfully.
+
+![sonarqube-view-result](/images/docs/devops-user-guide/integrate-sonarqube-into-pipeline/sonarqube-view-result.jpg)
