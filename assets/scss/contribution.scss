@@ -479,9 +479,9 @@
 }
 
 .section-calendar {
-
+  padding: 10px;
   & > div {
-    width: 800px;
+    width: 1160px;
     margin: 0 auto;
     @media only screen and (max-width: $mobile-max-width) {
       width: 100%;
