@@ -31,13 +31,7 @@ kubectl apply -f https://github.com/kubesphere/ks-installer/releases/download/v3
 kubectl apply -f https://github.com/kubesphere/ks-installer/releases/download/v3.0.0/cluster-configuration.yaml
 ```
 
-{{< notice note >}}
-
-If your server has trouble accessing GitHub, you can copy the content in [kubesphere-installer.yaml](https://github.com/kubesphere/ks-installer/releases/download/v3.0.0/kubesphere-installer.yaml) and [cluster-configuration.yaml](https://github.com/kubesphere/ks-installer/releases/download/v3.0.0/cluster-configuration.yaml) respectively and past it to local files. You then can use `kubectl apply -f` for the local files to install KubeSphere.
-
-{{</ notice >}}
-
-Inspect the logs of installation:
+- Inspect the logs of installation:
 
 ```bash
 kubectl logs -n kubesphere-system $(kubectl get pod -n kubesphere-system -l app=ks-install -o jsonpath='{.items[0].metadata.name}') -f
