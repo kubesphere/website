@@ -8,16 +8,13 @@ weight: 200
 
 A Jenkinsfile is a text file that contains the definition of a Jenkins pipeline and is checked into source control.  As it stores the entire workflow as code, it underpins the code review and iteration process of a pipeline. For more information, see [the official documentation of Jenkins](https://www.jenkins.io/doc/book/pipeline/jenkinsfile/).
 
-This tutorial demonstrates how to create a pipeline based on a Jenkinsfile from a GitHub repository. Using the pipeline, you deploy an example application to a development environment and a production environment respectively, which is accessible externally. Besides, you will also use a repository branch to test dependency caching capability 
+This tutorial demonstrates how to create a pipeline based on a Jenkinsfile from a GitHub repository. Using the pipeline, you deploy an example application to a development environment and a production environment respectively, which is accessible externally.
 
+{{< notice note >}}
 
+Two types of pipelines can be created in KubeSphere: Pipelines created based on a Jenkinsfile in SCM, which is introduced in this tutorial, and [pipelines created through the graphical editing panel](../create-a-pipeline-using-graphical-editing-panel). The Jenkinsfile in SCM requires an internal Jenkinsfile in Source Control Management (SCM). In other words, the Jenkfinsfile serves as part of SCM. The KubeSphere DevOps system automatically builds a CI/CD pipeline based on the existing Jenkinsfile of the code repository. You can define workflows such as `stage` and `step`.
 
-Meanwhile, we will demo a branch that is used to test dependency caching capability. In this demo, it takes a relatively long time to finish the pipeline for the first time. However, it runs very faster since then. It proves the cache works well since this branch pulls lots of dependency from internet initially.
-
-> Note:
-> KubeSphere supports two kinds of pipeline, i.e., Jenkinsfile in SCM which is introduced in this document and [Create a Pipeline - using Graphical Editing Panel](../create-a-pipeline-using-graphical-editing-panel). Jenkinsfile in SCM requires an internal Jenkinsfile in Source Control Management (SCM). In another word, Jenkfinsfile serves as a part of SCM. KubeSphere DevOps system will automatically build a CI/CD pipeline depending on existing Jenkinsfile of the code repository. You can define workflow like Stage, Step and Job in the pipeline.
-
-
+{{</ notice >}} 
 
 ## Prerequisites
 
@@ -29,20 +26,22 @@ Meanwhile, we will demo a branch that is used to test dependency caching capabil
 
 ## Pipeline Overview
 
-There are eight stages as shown below in the pipeline that is going to demonstrate.
+There are eight stages as shown below in this example pipeline.
 
 ![Pipeline Overview](https://pek3b.qingstor.com/kubesphere-docs/png/20190512155453.png#align=left&display=inline&height=1302&originHeight=1302&originWidth=2180&search=&status=done&width=2180)
 
-> Note：
+{{< notice note >}}
 
-> - **Stage 1. Checkout SCM**: Checkout source code from GitHub repository.
-> - **Stage 2. Unit test**: It will continue to execute next stage after unit test passed.
-> - **Stage 3. SonarQube analysis**：Process sonarQube code quality analysis.
-> - **Stage 4.** **Build & push snapshot image**: Build the image based on selected branches in the behavioral strategy. Push the tag of `SNAPSHOT-$BRANCH_NAME-$BUILD_NUMBER` to DockerHub, among which, the `$BUILD_NUMBER` is the operation serial number in the pipeline's activity list.
-> - **Stage 5. Push the latest image**: Tag the sonarqube branch as latest and push it to DockerHub.
-> - **Stage 6. Deploy to dev**: Deploy sonarqube branch to Dev environment. verification is needed for this stage.
-> - **Stage 7. Push with tag**: Generate tag and released to GitHub. Then push the tag to DockerHub.
-> - **Stage 8. Deploy to production**: Deploy the released tag to the Production environment.
+- **Stage 1. Checkout SCM**: Check out source code from the GitHub repository.
+- **Stage 2. Unit test**: It will not proceed with the next stage unit the test is passed.
+- **Stage 3. SonarQube analysis**: The SonarQube code quality analysis.
+- **Stage 4.** **Build & push snapshot image**: Build the image based on selected branches in **Behavioral strategy**. Push the tag of `SNAPSHOT-$BRANCH_NAME-$BUILD_NUMBER` to Docker Hub, the `$BUILD_NUMBER` of which is the operation serial number in the pipeline's activity list.
+- **Stage 5. Push the latest image**: Tag the sonarqube branch as `latest` and push it to Docker Hub.
+- **Stage 6. Deploy to dev**: Deploy the sonarqube branch to the development environment. Review is required for this stage.
+- **Stage 7. Push with tag**: Generate the tag and release it to GitHub. The tag is pushed to Docker Hub.
+- **Stage 8. Deploy to production**: Deploy the released tag to the production environment.
+
+{{</ notice >}} 
 
 ## Hands-on Lab
 
@@ -161,7 +160,7 @@ Discarding old branches means that you will discard the branch record all togeth
 
 {{</ notice >}} 
 
-6. In the **Behavioral strategy**, KubeSphere offers three strategies by default. You can delete **Discover PR from Forks** as this strategy will not be used in this example. You do not need to change the setting and can use the default value directly.
+6. In **Behavioral strategy**, KubeSphere offers three strategies by default. You can delete **Discover PR from Forks** as this strategy will not be used in this example. You do not need to change the setting and can use the default value directly.
 
 ![remove-behavioral-strategy](/images/docs/devops-user-guide/create-a-pipeline-using-a-jenkinsfile/remove-behavioral-strategy.jpg)
 
@@ -236,7 +235,7 @@ input(id: 'release-image-with-tag', message: 'release image with tag?', submitte
 
 ### Step 6: Check Pipeline Status
 
-1. In **Task Status**, you can see how a pipeline is running. Please note that the pipeline will keep initializing for several minutes when it is just created. There are eight stages in the sample pipeline and they have been defined separately in [Jenkinsfile-online](https://github.com/kubesphere/devops-java-sample/blob/sonarqube/Jenkinsfile-online).
+1. In **Task Status**, you can see how a pipeline is running. Please note that the pipeline will keep initializing for several minutes after it is just created. There are eight stages in the sample pipeline and they have been defined separately in [Jenkinsfile-online](https://github.com/kubesphere/devops-java-sample/blob/sonarqube/Jenkinsfile-online).
 
 ![inspect-pipeline-log-1](/images/docs/devops-user-guide/create-a-pipeline-using-a-jenkinsfile/inspect-pipeline-log-1.jpg)
 
@@ -252,7 +251,7 @@ input(id: 'release-image-with-tag', message: 'release image with tag?', submitte
 
 ![sonarqube-result-detail](/images/docs/devops-user-guide/integrate-sonarqube-into-pipeline/sonarqube-result-detail.jpg)
 
-2. The Docker image built through the pipeline has also been successfully pushed to Docker Hub, as it is  defined in the Jenkinsfile. In Docker Hub, you will find the image with the tag v0.0.2 that is specified before the pipeline runs.
+2. The Docker image built through the pipeline has also been successfully pushed to Docker Hub, as it is  defined in the Jenkinsfile. In Docker Hub, you will find the image with the tag `v0.0.2` that is specified before the pipeline runs.
 
 ![docker-hub-result](/images/docs/devops-user-guide/integrate-sonarqube-into-pipeline/docker-hub-result.jpg)
 
@@ -260,7 +259,7 @@ input(id: 'release-image-with-tag', message: 'release image with tag?', submitte
 
 ![github-result](/images/docs/devops-user-guide/integrate-sonarqube-into-pipeline/github-result.jpg)
 
-4. The sample application will be deployed to `kubesphere-sample-dev` and `kubesphere-sample-prod` with  Deployments and Services created. Go to these two projects and here are the expected result:
+4. The sample application will be deployed to `kubesphere-sample-dev` and `kubesphere-sample-prod` with  corresponding Deployments and Services created. Go to these two projects and here are the expected result:
 
 | Environment | URL | Namespace | Deployment | Service |
 | :--- | :--- | :--- | :--- | :--- |
@@ -283,24 +282,34 @@ You may need to open the port in your security groups so that you can access the
 
 ### Step 8: Access Sample Service
 
-7.1. You can switch to use `admin` account to open **web kubectl** from **Toolbox**. Enter into project `kubesphere-sample-dev`, select **Application Workloads → Services** and click into `ks-sample-dev` service.
+1. To access the service, log in KubeSphere as `admin` to use the **web kubectl** from **Toolbox**. Go to the project `kubesphere-sample-dev`, and select `ks-sample-dev` in **Services** under **Application Workloads**. The endpoint can be used to access the service.
 
-![Web Kubectl](/images/devops/service-view.png)
+![sample-app-result-check](/images/docs/devops-user-guide/integrate-sonarqube-into-pipeline/sample-app-result-check.jpg)
 
-7.2. Open **web kubectl** from **Toolbox**, try to access as the following:
+![access-endpoint](/images/docs/devops-user-guide/integrate-sonarqube-into-pipeline/access-endpoint.jpg)
 
-> Note: curl Endpoints or {$Virtual IP}:{$Port} or {$Node IP}:{$NodePort}
+2. Use the **web kubectl** from **Toolbox** in the bottom right corner by executing the following command:
 
 ```bash
-$ curl 10.233.102.188:8080
+$ curl 10.10.128.169:8080
+```
+
+3. Expected output:
+
+```bash
 Really appreciate your star, that's the power of our life.
 ```
 
-7.3. Similarly, you can test the service in project `kubesphere-sample-pro`
+{{< notice note >}} 
 
-> Note: curl Endpoints or {$Virtual IP}:{$Port} or {$Node IP}:{$NodePort}
+Use `curl` endpoints or {$Virtual IP}:{$Port} or {$Node IP}:{$NodePort} 
+
+{{</ notice >}} 
+
+4. Similarly, you can test the service in the project `kubesphere-sample-prod` and you will see the same result.
 
 ```bash
-$ curl 10.233.102.188:8080
+$ curl 10.10.128.170:8080
 Really appreciate your star, that's the power of our life.
 ```
+
