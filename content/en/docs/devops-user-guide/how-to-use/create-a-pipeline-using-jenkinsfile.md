@@ -1,25 +1,31 @@
 ---
-title: "Create a pipeline using jenkinsfile"
-keywords: 'kubesphere, kubernetes, docker, spring boot, jenkins, devops, ci/cd, pipeline'
-description: "Create a pipeline using jenkinsfile"
-linkTitle: "Create a pipeline using jenkinsfile"
+title: "Create a Pipeline Using a Jenkinsfile"
+keywords: 'KubeSphere, Kubernetes, docker, spring boot, Jenkins, devops, ci/cd, pipeline'
+description: "How to create a pipeline using a Jenkinsfile."
+linkTitle: "Create a Pipeline Using a Jenkinsfile"
 weight: 200
 ---
 
-## Objective
+A Jenkinsfile is a text file that contains the definition of a Jenkins pipeline and is checked into source control.  As it stores the entire workflow as code, it underpins the code review and iteration process of a pipeline. For more information, see [the official documentation of Jenkins](https://www.jenkins.io/doc/book/pipeline/jenkinsfile/).
 
-In this tutorial, we will show you how to create a pipeline based on the Jenkinsfile from a GitHub repository. Using the pipeline, we will deploy a demo application to a development environment and a production environment respectively. Meanwhile, we will demo a branch that is used to test dependency caching capability. In this demo, it takes a relatively long time to finish the pipeline for the first time. However, it runs very faster since then. It proves the cache works well since this branch pulls lots of dependency from internet initially.
+This tutorial demonstrates how to create a pipeline based on a Jenkinsfile from a GitHub repository. Using the pipeline, you deploy an example application to a development environment and a production environment respectively, which is accessible externally. Besides, you will also use a repository branch to test dependency caching capability 
+
+
+
+Meanwhile, we will demo a branch that is used to test dependency caching capability. In this demo, it takes a relatively long time to finish the pipeline for the first time. However, it runs very faster since then. It proves the cache works well since this branch pulls lots of dependency from internet initially.
 
 > Note:
 > KubeSphere supports two kinds of pipeline, i.e., Jenkinsfile in SCM which is introduced in this document and [Create a Pipeline - using Graphical Editing Panel](../create-a-pipeline-using-graphical-editing-panel). Jenkinsfile in SCM requires an internal Jenkinsfile in Source Control Management (SCM). In another word, Jenkfinsfile serves as a part of SCM. KubeSphere DevOps system will automatically build a CI/CD pipeline depending on existing Jenkinsfile of the code repository. You can define workflow like Stage, Step and Job in the pipeline.
 
+
+
 ## Prerequisites
 
-- You need to have a DokcerHub account and a GitHub account.
-- You need to create a workspace, a DevOps project, and a **project-regular** user account, and this account needs to be invited into a DevOps project.
-- Set CI dedicated node for building pipeline, please refer to [Set CI Node for Dependency Cache](../../how-to-use/set-ci-node/).
-- You need to install and configure sonarqube, please refer to [How to integrate SonarQube in Pipeline
-](../../../how-to-integrate/sonarqube/) . Or you can skip this part, There is no **Sonarqube Analysis** below.
+- You need to have a [Docker Hub](https://hub.docker.com/) account and a [GitHub](https://github.com/) account.
+- You need to [enable KubeSphere DevOps system](../../../pluggable-components/devops/).
+- You need to create a workspace, a DevOps project, and an account (`project-regular`). This account needs to be invited to the DevOps project with the `operator` role. See [Create Workspace, Project, Account and Role](../../../quick-start/create-workspace-and-project/) if they are not ready.
+- You need to set a CI dedicated node for running pipelines. Refer to [Set CI Node for Dependency Cache](../../how-to-use/set-ci-node/).
+- You need to install and configure SonarQube. Refer to [Integrate SonarQube into Pipeline](../../../devops-user-guide/how-to-integrate/sonarqube/). If you skip this part, there is no **SonarQube Analysis** below.
 
 ## Pipeline Overview
 
@@ -42,176 +48,185 @@ There are eight stages as shown below in the pipeline that is going to demonstra
 
 ### Step 1: Create Credentials
 
-> Note: If there are special characters in your account or password, please encode it using https://www.urlencoder.org/, then paste the encoded result into credentials below.
+1. Log in the KubeSphere console as `project-regular`. Go to your DevOps project and create the following credentials in **Credentials** under **Project Management**. For more information about how to create credentials, see [Credential Management](../../../devops-user-guide/how-to-use/credential-management/).
 
-1.1. Log in KubeSphere with the account `project-regular`, enter into the created DevOps project and create the following three credentials under **Project Management → Credentials**:
+{{< notice note >}}
+
+If there are any special characters such as `@` and `$` in your account or password, they can cause errors as a pipeline runs because they may not be recognized. In this case, you need to encode your account or password on some third-party websites first, such as [urlencoder](https://www.urlencoder.org/). After that, copy and paste the output for your credential information.
+
+{{</ notice >}} 
 
 |Credential ID| Type | Where to use |
 | --- | --- | --- |
-| dockerhub-id | Account Credentials | DockerHub |
+| dockerhub-id | Account Credentials | Docker Hub |
 | github-id | Account Credentials | GitHub |
 | demo-kubeconfig | kubeconfig | Kubernetes |
 
-1.2. We need to create an additional credential `sonar-token` for SonarQube token, which is used in stage 3 (SonarQube analysis) mentioned above. Refer to [Access SonarQube Console and Create Token](../../how-to-integrate/sonarqube/) to copy the token and paste here. Then press **OK** button.
+2. You need to create an additional credential ID (`sonar-token`) for SonarQube, which is used in stage 3 (SonarQube analysis) mentioned above. Refer to [Create SonarQube Token for New Project](../../../devops-user-guide/how-to-integrate/sonarqube/#create-sonarqube-token-for-new-project) to use the token for the **secret** field below. Click **OK** to finish.
 
-![sonar-token](https://pek3b.qingstor.com/kubesphere-docs/png/20200226171101.png)
+![sonar-token](/images/docs/devops-user-guide/create-a-pipeline-using-a-jenkinsfile/sonar-token.jpg)
 
-In total, we have created four credentials in this step.
+3. In total, you have four credentials in the list.
 
-![Credentials](https://pek3b.qingstor.com/kubesphere-docs/png/20200107105153.png)
+![credential-list](/images/docs/devops-user-guide/create-a-pipeline-using-a-jenkinsfile/credential-list.jpg)
 
-### Step 2: Modify Jenkinsfile in Repository
+### Step 2: Modify Jenkinsfile in GitHub Repository
 
-#### Fork Project
+1. Log in GitHub. Fork [devops-java-sample](https://github.com/kubesphere/devops-java-sample) from the GitHub repository to your own GitHub account.
 
-Log in GitHub. Fork the [devops-java-sample](https://github.com/kubesphere/devops-java-sample) from  GitHub repository to your own GitHub.
+![fork-github-repo](/images/docs/devops-user-guide/create-a-pipeline-using-a-jenkinsfile/fork-github-repo.jpg)
 
-![Fork Sample](/images/devops/jenkins-fork.png)
+2. In your own GitHub repository of **devops-java-sample**, click the file `Jenkinsfile-online` in the root directory.
 
-#### Edit Jenkinsfile
+![jenkins-edit-1](/images/docs/devops-user-guide/create-a-pipeline-using-a-jenkinsfile/jenkins-edit-1.jpg)
 
-2.1. After forking the repository to your own GitHub, open the file **Jenkinsfile-online** under root directory.
+3. Click the edit icon on the right to edit environment variables.
 
-![Open File](/images/devops/jenkins-edit-1.png)
+![jenkins-edit-2](/images/docs/devops-user-guide/create-a-pipeline-using-a-jenkinsfile/jenkins-edit-2.jpg)
 
-2.2. Click the editing logo in GitHub UI to edit the values of environment variables.
-
-![Jenkinsfile](/images/devops/jenkins-edit-2.png)
-
-| Editing Items | Value | Description |
+| Items | Value | Description |
 | :--- | :--- | :--- |
-| DOCKER\_CREDENTIAL\_ID | dockerhub-id | Fill in DockerHub's credential ID to log in your DockerHub. |
-| GITHUB\_CREDENTIAL\_ID | github-id | Fill in the GitHub credential ID to push the tag to GitHub repository. |
-| KUBECONFIG\_CREDENTIAL\_ID | demo-kubeconfig | kubeconfig credential ID is used to access to the running Kubernetes cluster. |
-| REGISTRY | docker.io | Set the web name of docker.io by default for pushing images. |
-| DOCKERHUB\_NAMESPACE | your-dockerhub-account | Replace it to your DockerHub's account name. (It can be the Organization name under the account.) |
-| GITHUB\_ACCOUNT | your-github-account | Change your GitHub account name, such as `https://github.com/kubesphere/`. Fill in `kubesphere` which can also be the account's Organization name. |
-| APP\_NAME | devops-java-sample | Application name |
-| SONAR\_CREDENTIAL\_ID | sonar-token | Fill in the SonarQube token credential ID for code quality test. |
+| DOCKER\_CREDENTIAL\_ID | dockerhub-id | The **Credential ID** you set in KubeSphere for your Docker Hub account. |
+| GITHUB\_CREDENTIAL\_ID | github-id | The **Credential ID** you set in KubeSphere for your GitHub account. It is used to push tags to your GitHub repository. |
+| KUBECONFIG\_CREDENTIAL\_ID | demo-kubeconfig | The **Credential ID** you set in KubeSphere for your kubeconfig. It is used to access a running Kubernetes cluster. |
+| REGISTRY | docker.io | It defaults to `docker.io`, serving as the address of pushing images. |
+| DOCKERHUB\_NAMESPACE | your-dockerhub-account | Replace it with your Docker Hub's account name. It can be the Organization name under the account. |
+| GITHUB\_ACCOUNT | your-github-account | Replace it with your GitHub account name. For example, your GitHub account name is `kubesphere` if your GitHub address is  `https://github.com/kubesphere/`. It can also be the account's Organization name. |
+| APP\_NAME | devops-java-sample | The application name. |
+| SONAR\_CREDENTIAL\_ID | sonar-token | The **Credential ID** you set in KubeSphere for the SonarQube token. It is used for code quality test. |
 
-**Note: The command parameter `-o` of Jenkinsfile's `mvn` indicates that the offline mode is on. This tutorial has downloaded relevant dependencies to save time and to adapt to network interference in certain environments. The offline mode is on by default.**
+{{< notice note >}}
 
-2.3. After editing the environmental variables, click **Commit changes** at the top of GitHub page, then submit the updates to the sonarqube branch.
+The command parameter `-o` of Jenkinsfile's `mvn` indicates that the offline mode is enabled. Relevant dependencies have already been downloaded in this tutorial to save time and to adapt to network interference in certain environments. The offline mode is on by default.
+
+{{</ notice >}} 
+
+4. After you edit the environmental variables, click **Commit changes** at the bottom of the page, which updates the file in the SonarQube branch.
+
+![commit-changes](/images/docs/devops-user-guide/create-a-pipeline-using-a-jenkinsfile/commit-changes.jpg)
 
 ### Step 3: Create Projects
 
-In this step, we will create two projects, i.e. `kubesphere-sample-dev` and `kubesphere-sample-prod`, which are development environment and production environment respectively.
+You need to create two projects, such as `kubesphere-sample-dev` and `kubesphere-sample-prod`, which represent the development environment and the production environment respectively. Related Deployments and Services of the app will be created automatically in these two projects once the pipeline runs successfully.
 
-#### Create The First Project
+{{< notice note >}}
 
-> Tip：The account `project-admin` should be created in advance since it is used as the reviewer of the CI/CD Pipeline.
+The account `project-admin` needs to be created in advance since it is the reviewer of the CI/CD Pipeline. See [Create Workspace, Project, Account and Role](../../../quick-start/create-workspace-and-project/) for more information.
 
-3.1. Use the account `project-admin` to log in KubeSphere. Click **Create** button, then choose **Create a resource project**. Fill in basic information for the project. Click **Next** after complete.
+{{</ notice >}}
 
-- Name: `kubesphere-sample-dev`.
-- Alias: `development environment`.
+1. Use the account `project-admin` to log in KubeSphere. In the same workspace where you create the DevOps project, create two projects as below. Make sure you invite `project-regular` to these two projects with the role of `operator`.
 
+| Project Name           | Alias                   |
+| ---------------------- | ----------------------- |
+| kubesphere-sample-dev  | development environment |
+| kubesphere-sample-prod | production environment  |
 
-3.2. Leave the default values at Advanced Settings. Click **Create**.
+2. Check the project list. You have two projects and one DevOps project as below:
 
-3.3. Now invite  `project-regular` user into `kubesphere-sample-dev`. Choose **Project Settings → Project Members**. Click **Invite Member** to invite `project-regular` and grant this account the role of `operator`.
-
-#### Create the Second Project
-
-Similarly, create a project named `kubesphere-sample-prod` following the steps above. This project is the production environment. Then invite `project-regular` to the project of `kubesphere-sample-prod`, and grant it the role of `operator` as well.
-
-> Note: When the CI/CD pipeline succeeded. You will see the demo application's Deployment and Service have been deployed to `kubesphere-sample-dev` and `kubesphere-sample-prod.` respectively.
-
-![Project List](https://pek3b.qingstor.com/kubesphere-docs/png/20200107142252.png)
+![project-list](/images/docs/devops-user-guide/create-a-pipeline-using-a-jenkinsfile/project-list.jpg)
 
 ### Step 4: Create a Pipeline
 
-#### Fill in Basic Information
+1. Log out of KubeSphere and log back in as `project-regular`. Go to the DevOps project `demo-devops` and click **Create** to build a new pipeline.
 
-4.1. Switch the login user to `project-regular`. Enter into the DevOps project `demo-devops`. click **Create** to build a new pipeline.
+![create-pipeline](/images/docs/devops-user-guide/create-a-pipeline-using-a-jenkinsfile/create-pipeline.jpg)
 
-![Pipeline List](https://pek3b.qingstor.com/kubesphere-docs/png/20200107142659.png)
+2. Provide the basic information in the dialogue that appears. Name it `jenkinsfile-in-scm` and select a code repository.
 
-4.2. Fill in the pipeline's basic information in the pop-up window, name it `jenkinsfile-in-scm`, click **Code Repository**.
+![create-pipeline-2](/images/docs/devops-user-guide/create-a-pipeline-using-a-jenkinsfile/create-pipeline-2.jpg)
 
-![New Pipeline](https://pek3b.qingstor.com/kubesphere-docs/png/20200107143247.png)
+3. In the tab **GitHub**, click **Get Token** to generate a new GitHub token if you do not have one. Paste the token to the box and click **Confirm**.
 
-#### Add Repository
+![generate-github-token-1](/images/docs/devops-user-guide/create-a-pipeline-using-a-jenkinsfile/generate-github-token-1.jpg)
 
-4.3. Click **Get Token** to generate a new GitHub token if you do not have one. Then paste the token to the edit box.
+![generate-github-token-2](/images/docs/devops-user-guide/create-a-pipeline-using-a-jenkinsfile/generate-github-token-2.jpg)
 
-![Get Token](https://pek3b.qingstor.com/kubesphere-docs/png/20200107143539.png)
+4. Choose your GitHub account. All the repositories related to this token will be listed on the right. Select **devops-java-sample** and click **Select this repo**. Click **Next** to continue.
 
-![GitHub Token](https://pek3b.qingstor.com/kubesphere-docs/png/20200107143648.png)
+![select-repo](/images/docs/devops-user-guide/create-a-pipeline-using-a-jenkinsfile/select-repo.jpg)
 
-4.4. Click **Confirm**, choose your account. All the code repositories related to this token will be listed on the right. Select **devops-java-sample** and click **Select this repo**, then click **Next**.
+5. In **Advanced Settings**, check the box next to **Discard old branch**. In this tutorial, you can use the default value of **Days to keep old branches** and **Maximum number branches to keep**.
 
-![Select Repo](https://pek3b.qingstor.com/kubesphere-docs/png/20200107143818.png)
+![branch-settings](/images/docs/devops-user-guide/create-a-pipeline-using-a-jenkinsfile/branch-settings.jpg)
 
-#### Advanced Settings
+Discarding old branches means that you will discard the branch record all together. The branch record includes console output, archived artifacts and other relevant metadata of specific branches. Fewer branches mean that you can save the disk space that Jenkins is using. KubeSphere provides two options to determine when old branches are discarded:
 
-Now we are on the advanced setting page.
+- **Days to keep old branches**. Branches will be discarded after a certain number of days. 
+- **Maximum number of branches to keep**. The oldest branches will be discarded after branches reach a certain amount.
 
-<!--
-> Note:
-> The branches can be controlled by both of the preservation days and the branch number. If the branch has expired the preservation dates or exceeded the limitation number, the branch should be discarded. For example, if the preservation day is 2 and the branch number is  3, any branches that do not meet the requirements should be discarded. Set both of the limitation to -1 by default means not to delete branched automatically. 
->
-> Discarding old branches means that you will discard the branch record all together. The branch record includes console output, archive artifacts and other relevant data. Keeping less branches saves Jenkins' disk space. We provide two options to determine when to discard old branches:
->
-> - Days for preserving the branches: If branch reaches the days, it must be discarded.
-> - Number of branches: If there is a significant number of branches, the oldest branches should be discarded. -->
+{{< notice note >}}
 
-4.5. In the behavioral strategy, KubeSphere pipeline has set three strategies by default. Since this demo has not applied the strategy of **Discover PR from Forks,**, this strategy can be deleted.
+**Days to keep old branches** and **Maximum number of branches to keep** apply to branches at the same time. As long as a branch meets the condition of either field, it will be discarded. For example, if you specify 2 as the number of retention days and 3 as the maximum number of branches, any branches that exceed either number will be discarded. KubeSphere repopulates these two fields with -1 by default, which means deleted branches will be discarded.
 
-![Remove Behavioral Strategy](https://pek3b.qingstor.com/kubesphere-docs/png/20200107144107.png)
+{{</ notice >}} 
 
-<!-- > Note：
-> There types of discovering strategies are supported. When the Jenkins pipeline is activated, the Pull Request (PR) submitted by the developer will also be regarded as a separate branch.
-> Discover the branch:
-> - Exclude the branch as PR: Select this option means that CI will not scan the source branch as such Origin's master branch. These branches needs to be merged.
-> - Only the branched submitted as PR: Only scan the PR branch.
-> - All the branches: extract all the branches from the repository origin.
->
-> Discover PR from the origin repository:
-> - The source code after PR merges with the branch: Once discovery operation is based on the source codes derived from merging the PR and the target branch. It is also based on the running pipeline.
-> - PR's source code edition: Once discovery operation is based on the pipeline build by PR's source codes.
-> - There will be two pipelines when the PR is found. One pipeline applies PR's source code and the other one uses the source code from  merging the PR with the target branch: This is twice discovery operation.  -->
+6. In the **Behavioral strategy**, KubeSphere offers three strategies by default. You can delete **Discover PR from Forks** as this strategy will not be used in this example. You do not need to change the setting and can use the default value directly.
 
-4.6. The path is **Jenkinsfile** by default. Please change it to `Jenkinsfile-online`, which is the file name of Jenkinsfile in the repository located in root directory.
+![remove-behavioral-strategy](/images/docs/devops-user-guide/create-a-pipeline-using-a-jenkinsfile/remove-behavioral-strategy.jpg)
 
-> Note: Script path is the Jenkinsfile path in the code repository. It indicates the repository's root directory. If the file location changes, the script path should also be changed.
+As a Jenkins pipeline runs, the Pull Request (PR) submitted by developers will also be regarded as a separate branch.
 
-![Change Jenkinsfile Path](https://pek3b.qingstor.com/kubesphere-docs/png/20200107145113.png)
+**Discover Branches**
 
-4.7. **Scan Repo Trigger** can be customized according to the team's development preference. We set it to `5 minutes`. Click **Create** when complete advanced settings.
+- **Exclude branches that are also filed as PRs**. The source branch is not scanned such as the origin's master branch. These branches need to be merged.
+- **Only branches that are also filed as PRs**. Only scan the PR branch.
+- **All branches**. Pull all the branches from the repository origin.
 
-<!-- > Note: Regular scaning is to set a cycle to require the pipeline scan remote repositories regularly. According to the **Behaviour Strategy **to check whether there is a code update or a new PR.
->
-> Webhook Push:
-> Webhook is a high-efficiency way to detect the changes in the remote repository and automatically activate new operations. Webhook should play the main role in scanning Jenkins for GitHub and Git (like Gitlab). Please refer to the cycle time setting in the previous step. In this sample, you can run the pipeline manually. If you need to set automatic scanning for remote branches and active the operation, please refer to Setting automatic scanning - GitHub SCM. 
-> -->
+**Discover PR from Origin**
 
-![Advanced Settings](https://pek3b.qingstor.com/kubesphere-docs/png/20200107145528.png)
+- **Source code version of PR merged with target branch**. A pipeline is created and runs based on the source code after the PR is merged into the target branch.
+- **Source code version of PR itself**. A pipeline is created and runs based on the source code of the PR itself.
+- **Two pipelines are created when a PR is discovered**. KubeSphere creates two pipelines, one based on the source code after the PR is merged into the target branch, and the other based on the source code of the PR itself.
 
-#### Run the Pipeline
+7. Scroll down to **Script Path**. The field specifies the Jenkinsfile path in the code repository. It indicates the repository's root directory. If the file location changes, the script path also needs to be changed. Please change it to `Jenkinsfile-online`, which is the file name of Jenkinsfile in the example repository located in the root directory.
 
-Refresh browser manually or you may need to click `Scan Repository`, then you can find two activities triggered. Or you may want to trigger them manually as the following instructions.
+![jenkinsfile-online](/images/docs/devops-user-guide/create-a-pipeline-using-a-jenkinsfile/jenkinsfile-online.jpg)
 
-4.8. Click **Run** on the right. According to the **Behavioral Strategy**, it will load the branches that have Jenkinsfile. Set the value of branch as `sonarqube`. Since there is no default value in the Jenkinsfile file, put in a tag number in the  **TAG_NAME** such as `v0.0.1`. Click **OK** to trigger a new activity.
+8. In **Scan Repo Trigger**, check **If not, scan regularly** and set the interval to **5 minutes**. Click **Create** to finish.
 
-> Note: TAG\_NAME is used to generate release and images with tag in GitHub and DockerHub. Please notice that `TAG_NAME` should not duplicate the existing `tag` name in the code repository. Otherwise the pipeline can not run.  
+![advanced-setting](/images/docs/devops-user-guide/create-a-pipeline-using-a-jenkinsfile/advanced-setting.jpg)
 
-![Run Pipeline](/images/devops/20200107230822.png)
+{{< notice note >}}
 
-At this point, the pipeline for the sonarqube branch is running.
+You can set a specific interval to allow pipelines to scan remote repositories, so that any code updates or new PRs can be detected based on the strategy you set in **Behavioral strategy**.
 
-> Note: Click **Branch** to switch to the branch list and review which branches are running. The branch here is determined by the **Behavioral Strategy.**
+{{</ notice >}}
 
-![Tag Name](/images/devops/20200107232100.png)
+### Step 5: Run a Pipeline
 
-#### Review Pipeline
+1. After a pipeline is created, it displays in the list below. Click it to go to its detail page.
 
-When the pipeline runs to the step of `input`
-it will pause. You need to click **Continue** manually. Please note that there are three stages defined in the Jenkinsfile-online. Therefore, the pipeline will be reviewed three times in the three stages of `deploy to dev, push with tag, deploy to production`.
+![pipeline-list](/images/docs/devops-user-guide/create-a-pipeline-using-a-jenkinsfile/pipeline-list.jpg)
 
-![](https://pek3b.qingstor.com/kubesphere-docs/png/20200108001020.png)
+2. Under **Activity**, three branches are being scanned. Click **Run** on the right and the pipeline runs based on the behavioral strategy you set. Select **sonarqube** from the drop-down list and add a tag number such as `v0.0.2`. Click **OK** to trigger a new activity.
 
-> Note: In real development or production scenario, it requires someone who has higher authority (e.g. release manager) to review the pipeline and the image, as well as the code analysis result. They have the authority to determine whether to approve push and deploy. In Jenkinsfile, the `input` step supports you to specify who to review the pipeline. If you want to specify a user `project-admin` to review, you can add a field in the Jenkinsfile. If there are multiple users, you need to use commas to separate them as follows:
+![pipeline-detail](/images/docs/devops-user-guide/create-a-pipeline-using-a-jenkinsfile/pipeline-detail.jpg)
+
+![tag-name](/images/docs/devops-user-guide/create-a-pipeline-using-a-jenkinsfile/tag-name.jpg)
+
+{{< notice note >}} 
+
+- If you do need see any activity on this page, you need to refresh your browser manually or click **Scan Repository** from the drop-down menu (the **More** button).
+- The tag name is used to generate releases and images with the tag in GitHub and Docker Hub. An existing tag name cannot be used again for the field TAG_NAME. Otherwise, the pipeline will not be running successfully.
+
+{{</ notice >}}
+
+3. Wait for a while and you can see some activities stop and some fail. Click the first one to view details.
+
+![activity-failure](/images/docs/devops-user-guide/create-a-pipeline-using-a-jenkinsfile/activity-failure.jpg)
+
+{{< notice note >}}
+
+Activity failures may be caused by different factors. In this example, only the Jenkinsfile of the branch sonarqube is changed as you edit the environment variables in it in the steps above. On the contrary, these variables in the dependency and master branch remain changed (namely, wrong GitHub and Docker Hub account), resulting in the failure. You can click it and inspect its logs to see details. Other reasons for failures may be network issues, incorrect coding in the Jenkinsfile and so on.
+
+{{</ notice >}} 
+
+4. The pipeline pauses at the stage `deploy to dev`. You need to click **Proceed** manually. Note that the pipeline will be reviewed three times as `deploy to dev`, `push with tag`, and `deploy to production` are defined in the Jenkinsfile respectively.
+
+![pipeline-proceed](/images/docs/devops-user-guide/create-a-pipeline-using-a-jenkinsfile/pipeline-proceed.jpg)
+
+In a development or production environment, it requires someone who has higher authority (e.g. release manager) to review the pipeline, images, as well as the code analysis result. They have the authority to determine whether the pipeline can go to the next stage. In the Jenkinsfile, you use the section `input` to specify who reviews the pipeline. If you want to specify a user (e.g. `project-admin`) to review it, you can add a field in the Jenkinsfile. If there are multiple users, you need to use commas to separate them as follows:
 
 ```groovy
 ···
@@ -219,50 +234,54 @@ input(id: 'release-image-with-tag', message: 'release image with tag?', submitte
 ···
 ```
 
-### Step 5: Check Pipeline Status
+### Step 6: Check Pipeline Status
 
-5.1. Click into **Activity → sonarqube → Task Status**, you can see the pipeline running status. Please note that the pipeline will keep initializing for several minutes when the creation just completed. There are eight stages in the sample pipeline and they have been defined individually in [Jenkinsfile-online](https://github.com/kubesphere/devops-java-sample/blob/sonarqube/Jenkinsfile-online).
+1. In **Task Status**, you can see how a pipeline is running. Please note that the pipeline will keep initializing for several minutes when it is just created. There are eight stages in the sample pipeline and they have been defined separately in [Jenkinsfile-online](https://github.com/kubesphere/devops-java-sample/blob/sonarqube/Jenkinsfile-online).
 
-![Pipeline stages](https://pek3b.qingstor.com/kubesphere-docs/png/20200108002652.png)
+![inspect-pipeline-log-1](/images/docs/devops-user-guide/create-a-pipeline-using-a-jenkinsfile/inspect-pipeline-log-1.jpg)
 
-5.2. Check the pipeline running logs by clicking **Show Logs** at the top right corner. The page shows dynamic logs outputs, operating status and time etc.
+2. Check the pipeline running logs by clicking **Show Logs** in the top right corner. You can see the dynamic log output of the pipeline, including any errors that may stop the pipeline from running. For each stage, you click it to inspect logs, which can be downloaded to your local machine for further analysis.
 
-For each step, click specific stage on the left to inspect the logs. The logs can be downloaded to local for further analysis.
+![inspect-pipeline-log-2](/images/docs/devops-user-guide/create-a-pipeline-using-a-jenkinsfile/inspect-pipeline-log-2.jpg)
 
-![Pipeline Logs](https://pek3b.qingstor.com/kubesphere-docs/png/20200108003016.png)
+### Step 7: Verify Results
 
-### Step 6: Verify Pipeline Running Results
+1. Once you successfully executed the pipeline, click **Code Quality** to check the results through  SonarQube as follows.
 
-6.1. Once you successfully executed the pipeline, click `Code Quality` to check the results through  SonarQube as the follows (reference only).
+![sonarqube-result-detail-1.jpg](/images/docs/devops-user-guide/integrate-sonarqube-into-pipeline/sonarqube-result-detail-1.jpg.jpg)
 
-![SQ Results](https://pek3b.qingstor.com/kubesphere-docs/png/20200108003257.png)
+![sonarqube-result-detail](/images/docs/devops-user-guide/integrate-sonarqube-into-pipeline/sonarqube-result-detail.jpg)
 
-6.2. The Docker image built by the pipeline has been successfully pushed to DockerHub, since we defined `push to DockerHub` stage in Jenkinsfile-online. In DockerHub you will find the image with tag v0.0.1 that we configured before running the pipeline, also you will find the images with tags`SNAPSHOT-sonarqube-6`(SNAPSHOT-branch-serial number) and `latest` have been pushed to DockerHub.
+2. The Docker image built through the pipeline has also been successfully pushed to Docker Hub, as it is  defined in the Jenkinsfile. In Docker Hub, you will find the image with the tag v0.0.2 that is specified before the pipeline runs.
 
-![DockerHub Images](/images/devops/20200108134653.png)
+![docker-hub-result](/images/docs/devops-user-guide/integrate-sonarqube-into-pipeline/docker-hub-result.jpg)
 
-At the same time, a new tag and a new release have been generated in GitHub.
+3. At the same time, a new tag and a new release have been generated in GitHub.
 
-![GitHub Release](https://pek3b.qingstor.com/kubesphere-docs/png/20200108133933.png)
+![github-result](/images/docs/devops-user-guide/integrate-sonarqube-into-pipeline/github-result.jpg)
 
-The sample application will be deployed to `kubesphere-sample-dev` and `kubesphere-sample-prod` as  deployment and service.
+4. The sample application will be deployed to `kubesphere-sample-dev` and `kubesphere-sample-prod` with  Deployments and Services created. Go to these two projects and here are the expected result:
 
 | Environment | URL | Namespace | Deployment | Service |
 | :--- | :--- | :--- | :--- | :--- |
-| Dev | `http://{NodeIP}:{$30861}` | kubesphere-sample-dev | ks-sample-dev | ks-sample-dev |
+| Development | `http://{NodeIP}:{$30861}` | kubesphere-sample-dev | ks-sample-dev | ks-sample-dev |
 | Production | `http://{$NodeIP}:{$30961}` | kubesphere-sample-prod | ks-sample | ks-sample |
-
-6.3. Enter into these two projects, you can find the application's resources have been deployed to Kubernetes successully. For example, lets verify the Deployments and Services under project `kubesphere-sample-dev`:
 
 #### Deployments
 
-![Deployments](https://pek3b.qingstor.com/kubesphere-docs/png/20200108135508.png)
+![pipeline-deployments](/images/docs/devops-user-guide/integrate-sonarqube-into-pipeline/pipeline-deployments.jpg)
 
 #### Services
 
-![Services](https://pek3b.qingstor.com/kubesphere-docs/png/20200108135541.png)
+![devops-prod](/images/docs/devops-user-guide/integrate-sonarqube-into-pipeline/devops-prod.jpg)
 
-### Step 7: Visit Sample Service
+{{< notice note >}}
+
+You may need to open the port in your security groups so that you can access the app with the URL.
+
+{{</ notice >}} 
+
+### Step 8: Access Sample Service
 
 7.1. You can switch to use `admin` account to open **web kubectl** from **Toolbox**. Enter into project `kubesphere-sample-dev`, select **Application Workloads → Services** and click into `ks-sample-dev` service.
 
@@ -285,5 +304,3 @@ Really appreciate your star, that's the power of our life.
 $ curl 10.233.102.188:8080
 Really appreciate your star, that's the power of our life.
 ```
-
-Configurations! You are familiar with KubeSphere DevOps pipeline, and you can continue to learn how to build CI/CD pipeline with a graphical panel and visualize your workflow in the next tutorial.

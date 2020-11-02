@@ -225,7 +225,7 @@ kubectl -n kubesphere-system rollout restart deploy ks-apiserver
 kubectl -n kubesphere-system rollout restart deploy ks-console
 ```
 
-## Create SonarQube Token for New Projetct
+## Create SonarQube Token for New Project
 
 You need a SonarQube token so that your pipeline can communicate with SonarQube as it runs.
 
