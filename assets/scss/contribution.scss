@@ -478,6 +478,35 @@
   }
 }
 
+.section-calendar {
+
+  & > div {
+    width: 800px;
+    margin: 0 auto;
+    @media only screen and (max-width: $mobile-max-width) {
+      width: 100%;
+    }
+
+    & > div {
+      position: relative;
+      width: 100%;
+      overflow: hidden;
+      padding-top: 56.25%;
+
+      & > iframe {
+        position: absolute;
+        top: 0;
+        left: 0;
+        bottom: 0;
+        right: 0;
+        width: 100%;
+        height: 100%;
+      }
+    }
+  }
+
+}
+
 .section-4 {
   position: relative;
   text-align: center;
