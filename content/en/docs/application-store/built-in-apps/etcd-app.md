@@ -14,13 +14,13 @@ This tutorial shows you how to quickly deploy an [etcd](https://etcd.io) applica
 # Prerequisites
 
 - You have enabled [KubeSphere Application Store](/docs/pluggable-components/app-store/)
-- You have completed the tutorial [Create Workspace, Project, Account and Role](/docs/quick-start/create-workspace-and-project/). The account needs to be a platform regular user and to be invited as the project operator with the `operator` role. In this tutorial, we'll work in the project `apps` of the workspace `apps`.
+- You have completed the tutorial [Create Workspace, Project, Account and Role](/docs/quick-start/create-workspace-and-project/). The account needs to be a platform regular user and to be invited as the project operator with the `operator` role. In this tutorial, we'll work in the project `project-apps` of the workspace `ws-apps`.
 
 # Hands-on Lab
 
 ## Step 1: Browse Apps
 
-1.1. Sign in KubeSphere as a workspace regular account (`apps-regular` for this guide), then enter into project `apps`.
+1.1. Sign in KubeSphere as a workspace regular account (`ws-apps-regular` for this guide), then enter into project `project-apps`.
 
 1.2. Click **Application Workloads → Applications**, click **Deploy New Application**.
 
@@ -63,4 +63,4 @@ etcdctl get /name
 
 ![etcd data](/images/docs/appstore/etcd/access-etcd-data.png)
 
-3.3. For clients within the KubeSphere cluster, etcd service can be accessed through `<app name>.<project name>.svc.<K8s domain>:2379` (`etcd-ca9w6t.apps.svc.cluster.local:2379` for this guide).
+3.3. For clients within the KubeSphere cluster, etcd service can be accessed through `<app name>.<project name>.svc.<K8s domain>:2379` (`etcd-ca9w6t.project-apps.svc.cluster.local:2379` for this guide).
