@@ -9,10 +9,6 @@ weight: 3010
 
 For those who are new to KubeSphere and looking for a quick way to discover the platform, the all-in-one mode is your best choice to get started. It features rapid deployment and hassle-free configuration installation with KubeSphere and Kubernetes all provisioned on your machine.
 
-## Prerequisites
-
-If your machine is behind a firewall, you need to open relevant ports by following the document [Port Requirements](../../installing-on-linux/introduction/port-firewall/).
-
 ## Step 1: Prepare Linux Machine
 
 See the requirements for hardware and operating system shown below. To get started with all-in-one installation, you only need to prepare one host according to the following requirements.
@@ -37,7 +33,7 @@ The system requirements above and the instructions below are for the default min
 
 - The node can be accessed through `SSH`.
 - `sudo`/`curl`/`openssl` should be used.
-- `docker` can be installed by yourself or by KubeKey.
+- `docker` can be installed by yourself or by [KubeKey](https://github.com/kubesphere/kubekey).
 
 {{< notice note >}}
 
@@ -110,7 +106,7 @@ chmod +x kk
 
 ## Step 3: Get Started with Installation
 
-In this QuickStart tutorial, you only need to execute one command for installation, the template of which is shown below:
+In this Quickstart tutorial, you only need to execute one command for installation, the template of which is shown below:
 
 ```bash
 ./kk create cluster [--with-kubernetes version] [--with-kubesphere version]
