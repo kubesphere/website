@@ -13,7 +13,7 @@ As part of KubeSphere's commitment to provide a plug-and-play architecture for u
 
 This section gives you an overview of the general steps of installing KubeSphere on Kubernetes. For more information about the specific way of installation in different environments, see Installing on Hosted Kubernetes and Installing on On-premises Kubernetes.
 
-{{< notice note >}} 
+{{< notice note >}}
 
 Please read [Prerequisites](../prerequisites/) before you install KubeSphere on existing Kubernetes clusters.
 
@@ -27,17 +27,9 @@ After you make sure your existing Kubernetes cluster meets all the requirements,
 
 ```bash
 kubectl apply -f https://github.com/kubesphere/ks-installer/releases/download/v3.0.0/kubesphere-installer.yaml
-```
 
-```bash
 kubectl apply -f https://github.com/kubesphere/ks-installer/releases/download/v3.0.0/cluster-configuration.yaml
 ```
-
-{{< notice note >}} 
-
-If your server has trouble accessing GitHub, you can copy the content in [kubesphere-installer.yaml](https://github.com/kubesphere/ks-installer/releases/download/v3.0.0/kubesphere-installer.yaml) and [cluster-configuration.yaml](https://github.com/kubesphere/ks-installer/releases/download/v3.0.0/cluster-configuration.yaml) respectively and past it to local files. You then can use `kubectl apply -f` for the local files to install KubeSphere.
-
-{{</ notice >}}
 
 - Inspect the logs of installation:
 
@@ -61,10 +53,8 @@ If you start with a default minimal installation, refer to [Enable Pluggable Com
 
 {{< notice tip >}}
 
-- Pluggable components can be enabled either before or after the installation. Please refer to the example file [cluster-configuration.yaml](https://github.com/kubesphere/ks-installer/blob/master/deploy/cluster-configuration.yaml) for more details.
+- Pluggable components can be enabled either before or after the installation. Please refer to the example file [cluster-configuration.yaml](https://github.com/kubesphere/ks-installer/blob/release-3.0/deploy/cluster-configuration.yaml) for more details.
 - Make sure there is enough CPU and memory available in your cluster.
 - It is highly recommended that you install these pluggable components to discover the full-stack features and capabilities provided by KubeSphere.
 
 {{</ notice >}}
-
-
