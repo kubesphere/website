@@ -8,7 +8,7 @@ weight: 2265
 
 ![KubeSphere+DOKS](/images/docs/do/KubeSphere-DOKS.png)
 
-This guide walks you through the steps of deploying KubeSphere on [ DigitalOcean Kubernetes](https://www.digitalocean.com/products/kubernetes/).
+This guide walks you through the steps of deploying KubeSphere on [DigitalOcean Kubernetes](https://www.digitalocean.com/products/kubernetes/).
 
 ## Prepare a DOKS Cluster
 
@@ -17,6 +17,7 @@ A Kubernetes cluster in DO is a prerequisite for installing KubeSphere. Go to yo
 ![create-cluster-do](/images/docs/do/create-cluster-do.png)
 
 You need to select:
+
 1. Kubernetes version (e.g. *1.18.6-do.0*)
 2. Datacenter region (e.g. *Frankfurt*)
 3. VPC network (e.g. *default-fra1*)
@@ -25,13 +26,13 @@ You need to select:
 
 ![config-cluster-do](/images/docs/do/config-cluster-do.png)
 
-{{< notice note >}} 
+{{< notice note >}}
 
 - Supported Kubernetes versions for KubeSphere 3.0.0: 1.15.x, 1.16.x, 1.17.x, 1.18.x.
 - 2 nodes are included in this example. You can add more nodes based on your own needs especially in a production environment.
-- The machine type Standard / 4 GB / 2 vCPUs is for minimal installation. If you plan to enable several pluggable components or use the cluster for production, you can upgrade your nodes to a more powerfull type (such as CPU-Optimized / 8 GB / 4 vCPUs). It seems that DigitalOcean provisions the master nodes based on the type of the worker nodes, and for Standard ones the API server can become unresponsive quite fast.
+- The machine type Standard / 4 GB / 2 vCPUs is for minimal installation. If you plan to enable several pluggable components or use the cluster for production, you can upgrade your nodes to a more powerfull type (such as CPU-Optimized / 8 GB / 4 vCPUs). It seems that DigitalOcean provisions the master nodes based on the type of the worker nodes, and for Standard ones the API server can become unresponsive quite soon.
 
-{{</ notice >}} 
+{{</ notice >}}
 
 When the cluster is ready, you can download the config file for kubectl.
 
@@ -39,15 +40,13 @@ When the cluster is ready, you can download the config file for kubectl.
 
 ## Install KubeSphere on DOKS
 
-Now that the cluster is ready, you can install KubeSphere following the steps below:
+Now the cluster is ready, you can install KubeSphere following the steps below:
 
-- Install KubeSphere using kubectl. The following command is only for the default minimal installation.
+- Install KubeSphere using kubectl. The following commands are only for the default minimal installation.
 
   ```bash
   kubectl apply -f https://github.com/kubesphere/ks-installer/releases/download/v3.0.0/kubesphere-installer.yaml
-  ```
-
-  ```bash
+  
   kubectl apply -f https://github.com/kubesphere/ks-installer/releases/download/v3.0.0/cluster-configuration.yaml
   ```
 
@@ -79,7 +78,7 @@ https://kubesphere.io             2020-xx-xx xx:xx:xx
 
 ## Access KubeSphere Console
 
-Now that KubeSphere is installed, you can access the web console of KubeSphere by following the steps below.
+Now KubeSphere is installed, you can access the web console of KubeSphere by following the steps below.
 
 - Go to the Kubernetes Dashboard provided by DigitalOcean.
 
