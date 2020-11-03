@@ -9,7 +9,7 @@ weight: 2000
 icon: "/images/docs/docs.svg"
 ---
 
-This chapter demonstrates how to use KubeKey to provision a production-ready Kubernetes and KubeSphere cluster on Linux in different environments. You can also use KubeKey to easily scale up and down your cluster and set various storage classes based on your needs.
+This chapter demonstrates how to use KubeKey to provision a production-ready Kubernetes and KubeSphere cluster on Linux in different environments. You can also use KubeKey to easily scale out and in your cluster and set various storage classes based on your needs.
 
 ## Introduction
 
@@ -53,11 +53,11 @@ Learn how to create a high-availability cluster on QingCloud platform.
 
 ### [Add New Nodes](../installing-on-linux/cluster-operation/add-new-nodes/)
 
-Add more nodes to scale up your cluster.
+Add more nodes to scale out your cluster.
 
 ### [Remove Nodes](../installing-on-linux/cluster-operation/remove-nodes/)
 
-Cordon a node and even delete a node to scale down your cluster.
+Cordon a node and even delete a node to scale in your cluster.
 
 ## Uninstalling
 
@@ -69,7 +69,7 @@ Remove KubeSphere and Kubernetes from your machines.
 
 ### [Configure Booster for Installation](../installing-on-linux/faq/configure-booster/)
 
-Set a registry mirror to speed up downloads during installation.
+Set a registry mirror to speed up image downloads during installation.
 
 ## Most Popular Pages
 
