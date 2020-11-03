@@ -36,7 +36,7 @@ For more information about each component, see [Overview of Enable Pluggable Com
 
 ### **Installing on Linux**
 
-When you install KubeSphere on multi-node Linux, you need to create a configuration file, which lists all KubeSphere components.
+When you implement multi-node installation of KubeSphere on Linux, you need to create a configuration file, which lists all KubeSphere components.
 
 1. In the tutorial of [Installing KubeSphere on Linux](../../installing-on-linux/introduction/multioverview/), you create a default file **config-sample.yaml**. Modify the file by executing the following command:
 
