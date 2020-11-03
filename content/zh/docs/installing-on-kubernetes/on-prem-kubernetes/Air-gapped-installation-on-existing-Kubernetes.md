@@ -138,7 +138,7 @@ spec:
 ####  四  安装默认存储  openebs
 
 ```
-kubectl apply -f https://openebs.github.io/charts/openebs-operator.yaml
+kubectl apply -f https://openebs.github.io/charts/openebs-operator-1.9.0.yaml
 ```
 
 安装完成
