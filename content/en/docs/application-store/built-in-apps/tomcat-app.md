@@ -30,7 +30,7 @@ Please make sure you are landing on the **Overview** page of the project `test-p
 
 ![click-deploy](/images/docs/tomcat-app/tomcat-app03.jpg)
 
-3. Make sure MySQL is deployed in `test-project` and click **Next**.
+3. Make sure Tomcat is deployed in `test-project` and click **Next**.
 
 ![click-next](/images/docs/tomcat-app/tomcat-app04.jpg)
 
@@ -62,7 +62,7 @@ Please make sure you are landing on the **Overview** page of the project `test-p
 2. Click **More** and click **Edit Internet Access**.
 ![click-edit-internet-access](/images/docs/tomcat-app/tomcat-app11.jpg)
 
-3. Select **NodePort** and click **Ok**. [More information](https://v2-1.docs.kubesphere.io/docs/project-setting/project-gateway/)
+3. Select **NodePort** and click **Ok**. [Learn More](https://v2-1.docs.kubesphere.io/docs/project-setting/project-gateway/)
 ![select-nodeport](/images/docs/tomcat-app/tomcat-app12.jpg)
 
 4. Through <font color=green>{$NodeIP} : {$Nodeport} / {$Project path}</font>  to access the tomcat project in browser. 
