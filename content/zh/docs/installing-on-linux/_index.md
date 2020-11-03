@@ -9,13 +9,13 @@ weight: 2000
 icon: "/images/docs/docs.svg"
 ---
 
-本章演示如何使用 KubeKey 在 Linux 上配置生产可用的 Kubernetes 和 KubeSphere 集群。 你还可以使用 KubeKey 轻松对集群扩缩容，并根据需要设置各种存储类。
+本章演示如何使用 KubeKey 在 Linux 上配置生产可用的 Kubernetes 和 KubeSphere 集群。您还可以使用 KubeKey 轻松对集群扩缩容，并根据需要设置各种存储类。
 
 ## 介绍
 
-### [总览](../installing-on-linux/introduction/intro/)
+### [概述](../installing-on-linux/introduction/intro/)
 
-本章的大致内容包括安装准备，安装工具和方法以及存储设置。
+浏览本章的概述，包括安装准备、安装工具和方法以及存储设置。
 
 ### [多节点安装](../installing-on-linux/introduction/multioverview/)
 
@@ -30,25 +30,25 @@ icon: "/images/docs/docs.svg"
 
 ### [持久化存储配置](../installing-on-linux/introduction/storage-configuration/)
 
-使用 KubeKey 将不同的存储类添加到集群, 比如 Ceph RBD 和 Glusterfs。
+使用 KubeKey 将不同的存储类添加到集群，例如 Ceph RBD 和 Glusterfs。
 
 ## 在本地环境中安装 KubeSphere
 
-### [在VMware vSphere 中部署](../installing-on-linux/on-premises/install-kubesphere-on-vmware-vsphere/)
+### [在 VMware vSphere 上部署](../installing-on-linux/on-premises/install-kubesphere-on-vmware-vsphere/)
 
 了解如何在 VMware vSphere 上创建高可用 KubeSphere 群集。
 
 ## 在公有云上安装 KubeSphere
 
-### [在 Azure 虚拟机中部署 KubeSphere](../installing-on-linux/public-cloud/install-ks-on-azure-vms/)
+### [在 Azure 虚拟机上部署 KubeSphere](../installing-on-linux/public-cloud/install-ks-on-azure-vms/)
 
 了解如何在 Azure 虚拟机上创建高可用 KubeSphere 群集。
 
-### [在 QingCloud 虚拟机上部署 KubeSphere](../installing-on-linux/public-cloud/kubesphere-on-qingcloud-instance/)
+### [在青云QingCloud 虚拟机上部署 KubeSphere](../installing-on-linux/public-cloud/kubesphere-on-qingcloud-instance/)
 
-了解如何在 QingCloud 平台上创建高可用 KubeSphere 集群。
+了解如何在青云QingCloud 平台上创建高可用 KubeSphere 集群。
 
-## 运维你的集群
+## 添加或删除节点
 
 ### [添加新节点](../installing-on-linux/cluster-operation/add-new-nodes/)
 
@@ -56,7 +56,7 @@ icon: "/images/docs/docs.svg"
 
 ### [移除节点](../installing-on-linux/cluster-operation/remove-nodes/)
 
-cordon 节点，或者删除节点以缩小集群规模。
+停止调度节点，或者删除节点以缩小集群规模。
 
 ## 卸载
 
@@ -66,12 +66,12 @@ cordon 节点，或者删除节点以缩小集群规模。
 
 ## FAQ
 
-### [配置 Booster](../installing-on-linux/faq/configure-booster/)
+### [为安装配置加速器](../installing-on-linux/faq/configure-booster/)
 
 配置镜像仓库以加快安装速度。
 
-## 更多信息
+## 常用指南
 
-在下面的章节中，你将找到那些最受欢迎的页面。强烈建议你先参考一下。
+以下是本章节中的常用指南，建议您优先参考。
 
 {{< popularPage icon="/images/docs/qingcloud-2.svg" title="Deploy KubeSphere on QingCloud" description="Provision an HA KubeSphere cluster on QingCloud." link="../installing-on-linux/public-cloud/kubesphere-on-qingcloud-instance/" >}}
