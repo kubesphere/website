@@ -11,24 +11,24 @@ icon: "/images/docs/docs.svg"
 
 ---
 
-This chapter demonstrates how cluster operators can upgrade existing KubeSphere to v3.0.0.
+本章将演示集群运营商如何将现有的 KubeSphere 升级到 v3.0.0。
 
-## [Overview](../upgrade/upgrade-overview/)
+## [总览](../upgrade/upgrade-overview/)
 
-Understand what you need to pay attention to before the upgrade, such as versions and upgrade tools.
+了解升级之前需要注意的事项，例如版本和升级工具。
 
-## [Upgrade with KubeKey](../upgrade/upgrade-with-kubekey/)
+## [使用 KubeKey 升级](../upgrade/upgrade-with-kubekey/)
 
-Follow steps to use KubeKey to upgrade Kubernetes and KubeSphere.
+按照步骤使用 KubeKey 升级 Kubernetes 和 KubeSphere。
 
-## [Upgrade with ks-installer](../upgrade/upgrade-with-ks-installer/)
+## [使用 ks-installer 升级](../upgrade/upgrade-with-ks-installer/)
 
-Follow steps to use ks-installer to upgrade KubeSphere.
+按照步骤使用 ks-installer 升级KubeSphere。
 
-## [Changes after Upgrade](../upgrade/what-changed/)
+## [升级后的变化](../upgrade/what-changed/)
 
-Understand what will be changed after the upgrade.
+了解升级后的变化。
 
 ## [FAQ](../upgrade/upgrade-faq/)
 
-Find the answers to some of the most asked questions of upgrading.
+常见升级问题的答案。
