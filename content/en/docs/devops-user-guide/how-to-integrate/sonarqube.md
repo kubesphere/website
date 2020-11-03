@@ -245,7 +245,7 @@ You need a SonarQube token so that your pipeline can communicate with SonarQube 
 
 ![token-created](/images/docs/devops-user-guide/integrate-sonarqube-into-pipeline/token-created.jpg)
 
-4. Choose **Java** and **Maven** respectively. Copy the serial number within the green box in the image below, which needs to be added in the [Credentials](../../../devops-user-guide/how-to-use/credential-management/#create-credentials) section if it is to be used in pipelines.
+5. Choose **Java** and **Maven** respectively. Copy the serial number within the green box in the image below, which needs to be added in the [Credentials](../../../devops-user-guide/how-to-use/credential-management/#create-credentials) section if it is to be used in pipelines.
 
 ![sonarqube-example](/images/docs/devops-user-guide/integrate-sonarqube-into-pipeline/sonarqube-example.jpg)
 
