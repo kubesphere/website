@@ -1,5 +1,5 @@
 ---
-linkTitle: "How to integrate"
+linkTitle: "Tool Integration"
 weight: 300
 
 _build:
