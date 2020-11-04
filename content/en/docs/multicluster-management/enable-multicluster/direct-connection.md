@@ -28,13 +28,13 @@ If you already have a standalone KubeSphere installed, you can set the value of 
 
 - Option A - Use Web Console:
 
-Use `admin` account to log in the console and go to **CRDs** on the **Cluster Management** page. Enter the keyword `ClusterConfiguration` and go to its detail page. Edit the YAML of `ks-installer`, which is similar to [Enable Pluggable Components](../../../pluggable-components/).
+  Use `admin` account to log in the console and go to **CRDs** on the **Cluster Management** page. Enter the keyword `ClusterConfiguration` and go to its detail page. Edit the YAML of `ks-installer`, which is similar to [Enable Pluggable Components](../../../pluggable-components/).
 
 - Option B - Use Kubectl:
 
-```shell
-kubectl edit cc ks-installer -n kubesphere-system
-```
+  ```shell
+  kubectl edit cc ks-installer -n kubesphere-system
+  ```
 
 Scroll down and set the value of `clusterRole` to `host`, then click **Update** (if you use the web console) to make it effective:
 
@@ -47,7 +47,7 @@ multicluster:
 
 {{< tab "KubeSphere has not been installed" >}}
 
-There is no big difference if you define a host cluster before installation. Please note that the `clusterRole` in `config-sample.yaml` or `cluster-configuration.yaml` has to be set as follows:
+There is no big difference than installing a standalone KubeSphere if you define a host cluster before installation. Please note that the `clusterRole` in `config-sample.yaml` or `cluster-configuration.yaml` has to be set as follows:
 
 ```yaml
 multicluster:
@@ -86,13 +86,13 @@ If you already have a standalone KubeSphere installed, you can set the value of 
 
 - Option A - Use Web Console:
 
-Use `admin` account to log in the console and go to **CRDs** on the **Cluster Management** page. Enter the keyword `ClusterConfiguration` and go to its detail page. Edit the YAML of `ks-installer`, which is similar to [Enable Pluggable Components](../../../pluggable-components/).
+  Use `admin` account to log in the console and go to **CRDs** on the **Cluster Management** page. Enter the keyword `ClusterConfiguration` and go to its detail page. Edit the YAML of `ks-installer`, which is similar to [Enable Pluggable Components](../../../pluggable-components/).
 
 - Option B - Use Kubectl:
 
-```shell
-kubectl edit cc ks-installer -n kubesphere-system
-```
+  ```shell
+  kubectl edit cc ks-installer -n kubesphere-system
+  ```
 
 Input the corresponding `jwtSecret` shown above:
 
@@ -112,7 +112,7 @@ multicluster:
 
 {{< tab "KubeSphere has not been installed" >}}
 
-There is no big difference if you define a member cluster before installation. Please note that the `clusterRole` in `config-sample.yaml` or `cluster-configuration.yaml` has to be set as follows:
+There is no big difference than installing a standalone KubeSphere if you define a member cluster before installation. Please note that the `clusterRole` in `config-sample.yaml` or `cluster-configuration.yaml` has to be set as follows:
 
 ```yaml
 authentication:
@@ -139,23 +139,20 @@ kubectl logs -n kubesphere-system $(kubectl get pod -n kubesphere-system -l app=
 ### Import Cluster
 
 1. Open the H Cluster dashboard and click **Add Cluster**.
-
-![Add Cluster](https://ap3.qingstor.com/kubesphere-website/docs/20200827231611.png)
+  ![Add Cluster](https://ap3.qingstor.com/kubesphere-website/docs/20200827231611.png)
 
 2. Enter the basic information of the cluster to be imported and click **Next**.
-
-![Import Cluster](https://ap3.qingstor.com/kubesphere-website/docs/20200827211842.png)
+  ![Import Cluster](https://ap3.qingstor.com/kubesphere-website/docs/20200827211842.png)
 
 3. In **Connection Method**, select **Direct Connection to Kubernetes cluster**.  
 
 4. [Retrieve the KubeConfig](../retrieve-kubeconfig), copy the KubeConfig of the Member Cluster and paste it into the box.
 
-{{< notice tip >}}
-Please make sure the `server` address in KubeConfig is accessible on any node of the H Cluster. For `KubeSphere API Server` address, you can fill in the KubeSphere APIServer address or leave it blank.
-{{</ notice >}}
+    {{< notice tip >}}
+    Please make sure the `server` address in KubeConfig is accessible on any node of the H Cluster.
+    {{</ notice >}}
 
-![import a cluster - direct connection](/images/docs/direct_import_en.png)
+    ![import a cluster - direct connection](/images/docs/direct_import_en.png)
 
 5. Click **Import** and wait for cluster initialization to finish.
-
-![Azure AKS](https://ap3.qingstor.com/kubesphere-website/docs/20200827231650.png)
+  ![Azure AKS](https://ap3.qingstor.com/kubesphere-website/docs/20200827231650.png)

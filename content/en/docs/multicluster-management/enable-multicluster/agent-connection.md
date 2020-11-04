@@ -16,7 +16,7 @@ Multi-cluster management requires Kubesphere to be installed on the target clust
 
 ## Agent Connection
 
-The component [Tower](https://github.com/kubesphere/tower) of KubeSphere is used for agent connection. Tower is a tool for network connection between clusters through the agent. If the H Cluster cannot access the M Cluster directly, you can expose the proxy service address of the H cluster. This enables the M Cluster to connect to the H cluster through the agent. This method is applicable when the M Cluster is in a private environment (e.g. IDC) and the H Cluster is able to expose the proxy service. The agent connection is also applicable when your clusters are distributed across different cloud providers.
+The component [Tower](https://github.com/kubesphere/tower) of KubeSphere is used for agent connection. Tower is a tool for network connection between clusters through the agent. If the Host Cluster (hereafter referred to as H Cluster) cannot access the Member Cluster (hereafter referred to as M Cluster) directly, you can expose the proxy service address of the H cluster. This enables the M Cluster to connect to the H cluster through the agent. This method is applicable when the M Cluster is in a private environment (e.g. IDC) and the H Cluster is able to expose the proxy service. The agent connection is also applicable when your clusters are distributed across different cloud providers.
 
 ### Prepare a Host Cluster
 
@@ -28,13 +28,13 @@ If you already have a standalone KubeSphere installed, you can set the value of 
 
 - Option A - Use Web Console:
 
-Use `admin` account to log in the console and go to **CRDs** on the **Cluster Management** page. Enter the keyword `ClusterConfiguration` and go to its detail page. Edit the YAML of `ks-installer`, which is similar to [Enable Pluggable Components](../../../pluggable-components/).
+  Use `admin` account to log in the console and go to **CRDs** on the **Cluster Management** page. Enter the keyword `ClusterConfiguration` and go to its detail page. Edit the YAML of `ks-installer`, which is similar to [Enable Pluggable Components](../../../pluggable-components/).
 
 - Option B - Use Kubectl:
 
-```shell
-kubectl edit cc ks-installer -n kubesphere-system
-```
+  ```shell
+  kubectl edit cc ks-installer -n kubesphere-system
+  ```
 
 Scroll down and set the value of `clusterRole` to `host`, then click **Update** (if you use the web console) to make it effective:
 
@@ -47,7 +47,7 @@ multicluster:
 
 {{< tab "KubeSphere has not been installed" >}}
 
-There is no big difference if you define a host cluster before installation. Please note that the `clusterRole` in `config-sample.yaml` or `cluster-configuration.yaml` has to be set as follows:
+There is no big difference than installing a standalone KubeSphere if you define a host cluster before installation. Please note that the `clusterRole` in `config-sample.yaml` or `cluster-configuration.yaml` has to be set as follows:
 
 ```yaml
 multicluster:
@@ -93,40 +93,40 @@ Note: Generally, there is always a LoadBalancer solution in the public cloud, an
 
 1. If you cannot see a corresponding address displayed (the EXTERNAL-IP is pending), you need to manually set the proxy address. For example, you have an available public IP address `139.198.120.120`, and the port `8080` of this IP address has been forwarded to the port `30721` of the cluster. Execute the following command to check the service.
 
-```shell
-kubectl -n kubesphere-system get svc
-```
+    ```shell
+    kubectl -n kubesphere-system get svc
+    ```
 
-```shell
-NAME       TYPE            CLUSTER-IP      EXTERNAL-IP     PORT(S)              AGE
-tower      LoadBalancer    10.233.63.191   <pending>  8080:30721/TCP            16h
-```
+    ```shell
+    NAME       TYPE            CLUSTER-IP      EXTERNAL-IP     PORT(S)              AGE
+    tower      LoadBalancer    10.233.63.191   <pending>  8080:30721/TCP            16h
+    ```
 
 2. Add the value of `proxyPublishAddress` to the configuration file of ks-installer and input the public IP address and port number as follows.
 
-- Option A - Use Web Console:
+    - Option A - Use Web Console:
 
-Use `admin` account to log in the console and go to **CRDs** on the **Cluster Management** page. Enter the keyword `ClusterConfiguration` and go to its detail page. Edit the YAML of `ks-installer`, which is similar to [Enable Pluggable Components](../../../pluggable-components/).
+      Use `admin` account to log in the console and go to **CRDs** on the **Cluster Management** page. Enter the keyword `ClusterConfiguration` and go to its detail page. Edit the YAML of `ks-installer`, which is similar to [Enable Pluggable Components](../../../pluggable-components/).
 
-- Option B - Use Kubectl:
+    - Option B - Use Kubectl:
 
-```bash
-kubectl -n kubesphere-system edit clusterconfiguration ks-installer
-```
+      ```bash
+      kubectl -n kubesphere-system edit clusterconfiguration ks-installer
+      ```
 
-Navigate to `multicluster` and add a new line for `proxyPublishAddress` to define the IP address so access tower.
+    Navigate to `multicluster` and add a new line for `proxyPublishAddress` to define the IP address so access tower.
 
-```yaml
-multicluster:
-    clusterRole: host
-    proxyPublishAddress: http://139.198.120.120:8080 # Add this line to set the address to access tower
-```
+    ```yaml
+    multicluster:
+        clusterRole: host
+        proxyPublishAddress: http://139.198.120.120:8080 # Add this line to set the address to access tower
+    ```
 
-3. Save the configuration and restart `ks-apiserver`.
+3. Save the configuration and wait for a while, or you can manually restart `ks-apiserver` to make the change effective immediately using the following command.
 
-```shell
-kubectl -n kubesphere-system rollout restart deployment ks-apiserver
-```
+    ```shell
+    kubectl -n kubesphere-system rollout restart deployment ks-apiserver
+    ```
 
 {{</ tab >}}
 
@@ -154,13 +154,13 @@ If you already have a standalone KubeSphere installed, you can set the value of 
 
 - Option A - Use Web Console:
 
-Use `admin` account to log in the console and go to **CRDs** on the **Cluster Management** page. Enter the keyword `ClusterConfiguration` and go to its detail page. Edit the YAML of `ks-installer`, which is similar to [Enable Pluggable Components](../../../pluggable-components/).
+  Use `admin` account to log in the console and go to **CRDs** on the **Cluster Management** page. Enter the keyword `ClusterConfiguration` and go to its detail page. Edit the YAML of `ks-installer`, which is similar to [Enable Pluggable Components](../../../pluggable-components/).
 
 - Option B - Use Kubectl:
 
-```shell
-kubectl edit cc ks-installer -n kubesphere-system
-```
+  ```shell
+  kubectl edit cc ks-installer -n kubesphere-system
+  ```
 
 Input the corresponding `jwtSecret` shown above:
 
@@ -180,7 +180,7 @@ multicluster:
 
 {{< tab "KubeSphere has not been installed" >}}
 
-There is no big difference if you define a member cluster before installation. Please note that the `clusterRole` in `config-sample.yaml` or `cluster-configuration.yaml` has to be set as follows:
+There is no big difference than installing a standalone KubeSphere if you define a member cluster before installation. Please note that the `clusterRole` in `config-sample.yaml` or `cluster-configuration.yaml` has to be set as follows:
 
 ```yaml
 authentication:
@@ -198,23 +198,18 @@ multicluster:
 
 {{</ tabs >}}
 
-
 ### Import Cluster
 
 1. Open the H Cluster dashboard and click **Add Cluster**.
-
-![Add Cluster](https://ap3.qingstor.com/kubesphere-website/docs/20200827231611.png)
+  ![Add Cluster](https://ap3.qingstor.com/kubesphere-website/docs/20200827231611.png)
 
 2. Enter the basic information of the cluster to be imported and click **Next**.
+  ![Import Cluster](https://ap3.qingstor.com/kubesphere-website/docs/20200827211842.png)
 
-![Import Cluster](https://ap3.qingstor.com/kubesphere-website/docs/20200827211842.png)
+3. In **Connection Method**, select **Cluster connection agent** and click **Import**. It will show the agent deployment generated by the H Cluster in the console.
+  ![agent-en](/images/docs/agent-en.png)
 
-3. In **Connection Method**, select **Cluster connection agent** and click **Import**.
-
-![agent-en](/images/docs/agent-en.png)
-
-4. Create an `agent.yaml` file in the M Cluster based on the instruction, then copy and paste the deployment to the file. Execute `kubectl create -f agent.yaml` on the node and wait for the agent to be up and running. Please make sure the proxy address is accessible to the M Cluster.
+4. Create an `agent.yaml` file in the M Cluster based on the instruction, then copy and paste the agent deployment to the file. Execute `kubectl create -f agent.yaml` on the node and wait for the agent to be up and running. Please make sure the proxy address is accessible to the M Cluster.
 
 5. You can see the cluster you have imported in the H Cluster when the cluster agent is up and running.
-
-![Azure AKS](https://ap3.qingstor.com/kubesphere-website/docs/20200827231650.png)
+  ![Azure AKS](https://ap3.qingstor.com/kubesphere-website/docs/20200827231650.png)
