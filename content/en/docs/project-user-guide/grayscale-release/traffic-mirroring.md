@@ -1,6 +1,6 @@
 ---
 title: "Traffic Mirroring"
-keywords: 'KubeSphere, Kubernetes, traffic mirroring, helm, jenkins, istio, prometheus'
+keywords: 'KubeSphere, Kubernetes, traffic mirroring, istio'
 description: 'Traffic Mirroring'
 
 linkTitle: "Traffic Mirroring"
