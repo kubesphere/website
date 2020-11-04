@@ -1,44 +1,77 @@
 ---
 title: "Traffic Mirroring"
-keywords: 'KubeSphere, kubernetes, docker, helm, jenkins, istio, prometheus'
+keywords: 'KubeSphere, Kubernetes, traffic mirroring, istio'
 description: 'Traffic Mirroring'
 
 linkTitle: "Traffic Mirroring"
 weight: 2130
 ---
 
-Traffic mirroring, also called shadowing, is a powerful concept that allows feature teams to bring changes to production with as little risk as possible. Mirroring sends a copy of live traffic to a mirrored service. The mirrored traffic happens out of band of the critical request path for the primary service.
+Traffic mirroring, also called shadowing, is a powerful, risk-free method of testing your app versions as it sends a copy of live traffic to a service that is being mirrored. Namely, you implement a similar setup for acceptance test so that problems can be detected in advance. As mirrored traffic happens out of band of the critical request path for the primary service, your end users will not be affected during the whole process.
 
-It provides a more accurate way to test new versions as problems can be detected in advance while not affecting the production environment. Therefore, it serves as a more secure and reliable method for version releases.
+## Prerequisites
 
-
-## Before you begin
-
-Firstly, you shoud enable the service-mesh plugin, to make the istio component available by following the document [Requirements](../../../pluggable-components/service-mesh/).
+- You need to enable [KubeSphere Service Mesh](../../../pluggable-components/service-mesh/).
+- You need to create a workspace, a project and an account (`project-regular`). Please refer to [Create Workspace, Project, Account and Role](../../../quick-start/create-workspace-and-project) if they are not ready yet.
+- You need to sign in with the `project-admin` account and invite `project-regular` to the corresponding project. Please refer to [these steps to invite a member](../../../quick-start/create-workspace-and-project#task-3-create-a-project).
+- You need to enable **Application Governance** and have an available app so that you can mirror the traffic of it. The sample app used in this tutorial is Bookinfo. For more information, see [Deploy Bookinfo and Manage Traffic](../../../quick-start/deploy-bookinfo-to-k8s/).
 
 ## Create Traffic Mirroring Job
 
-Create traffic mirroring job:
+1. Log in KubeSphere as `project-regular`. Under **Categories**, click **Create Job** on the right of **Traffic Mirroring**.
 
-![](/images/service-mesh/traffic-mirroring-1.jpg)
+![traffic-mirroring-1](/images/docs/project-user-guide/grayscale-release/traffic-mirroring/traffic-mirroring-1.jpg)
 
-![](/images/service-mesh/traffic-mirroring-2.jpg)
+2. Set a name for it and click **Next**.
 
-![](/images/service-mesh/traffic-mirroring-3.jpg)
+![traffic-mirroring-2](/images/docs/project-user-guide/grayscale-release/traffic-mirroring/traffic-mirroring-2.jpg)
 
-Then add 2 Deployments, one for each version (v1 and v2):
+3. Select your app from the drop-down list and the service of which you want to mirror the traffic. If you also use the sample app Bookinfo, select **reviews** and click **Next**.
 
-> Notice, the image now is `v2`.
+![traffic-mirroring-3](/images/docs/project-user-guide/grayscale-release/traffic-mirroring/traffic-mirroring-3.jpg)
 
-![](/images/service-mesh/traffic-mirroring-4.jpg)
+4. On the **Grayscale Release Version** page, add another version of it (e.g. `v2`) as shown in the image below and click **Next**:
 
-![](/images/service-mesh/traffic-mirroring-6.jpg)
+![traffic-mirroring-4](/images/docs/project-user-guide/grayscale-release/traffic-mirroring/traffic-mirroring-4.jpg)
 
-Also, you can directly get the virtualservice to identify the mirror and weight:
+{{< notice note >}}
+
+The image version is `v2` in the screenshot.
+
+{{</ notice >}} 
+
+5. Click **Create** in the final step.
+
+![traffic-mirroring-5](/images/docs/project-user-guide/grayscale-release/traffic-mirroring/traffic-mirroring-5.jpg)
+
+6. The traffic mirroring job created displays under the tab **Job Status**. Click it to view details.
+
+![traffic-mirroing-task](/images/docs/project-user-guide/grayscale-release/traffic-mirroring/traffic-mirroing-task.jpg)
+
+7. You can see the traffic is being mirrored to `v2` with real-time traffic displaying in the line chart.
+
+![traffic-mirroring-6](/images/docs/project-user-guide/grayscale-release/traffic-mirroring/traffic-mirroring-6.jpg)
+
+8. The new **Deployment** is created as well.
+
+![new-deployment](/images/docs/project-user-guide/grayscale-release/traffic-mirroring/new-deployment.jpg)
+
+9. Besides, you can directly get the virtual service to view `mirror` and `weight` by executing the following command:
+
+```bash
+kubectl -n demo-project get virtualservice -o yaml
+```
+
+{{< notice note >}} 
+
+- When you execute the command above, replace `demo-project` with your own project (i.e. namespace) name.
+- If you want to execute the command from the web kubectl on the KubeSphere console, you need to use the account `admin`.
+
+{{</ notice >}} 
+
+10. Expected output:
 
 ```
-# kubectl -n test get virtualservice reviews -oyaml
-
 ...
 spec:
   hosts:
@@ -59,10 +92,16 @@ spec:
       ...
 ```
 
-This route rule sends 100% of the traffic to v1. The last stanza specifies that you want to mirror to the reviews:v2 service. When traffic gets mirrored, the requests are sent to the mirrored service with their Host/Authority headers appended with -shadow. For example, cluster-1 becomes cluster-1-shadow.
+This route rule sends 100% of the traffic to `v1`. The last stanza specifies that you want to mirror to the service `reviews v2`. When traffic gets mirrored, the requests are sent to the mirrored service with their Host/Authority headers appended with `-shadow`. For example, `cluster-1` becomes `cluster-1-shadow`.
 
-Also, it is important to note that these requests are mirrored as “fire and forget”, which means that the responses are discarded.
+{{< notice note >}}
 
-You can use the weight field to mirror a fraction of the traffic, instead of mirroring all requests. If this field is absent, for compatibility with older versions, all traffic will be mirrored.
+These requests are mirrored as “fire and forget”, which means that the responses are discarded. You can specify the `weight` field to mirror a fraction of the traffic, instead of mirroring all requests. If this field is absent, for compatibility with older versions, all traffic will be mirrored. For more information, see [Mirroring](https://istio.io/v1.5/pt-br/docs/tasks/traffic-management/mirroring/).
 
-![](/images/service-mesh/traffic-mirroring-7.jpg)
+{{</ notice >}}
+
+## Take a Job Offline
+
+You can remove the traffic mirroring job by clicking **Job offline**, which does not affect the current app version.
+
+![remove-traffic-mirroring](/images/docs/project-user-guide/grayscale-release/traffic-mirroring/remove-traffic-mirroring.jpg)
