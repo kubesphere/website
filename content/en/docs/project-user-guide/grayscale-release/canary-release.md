@@ -1,53 +1,81 @@
 ---
 title: "Canary Release"
-keywords: 'KubeSphere, kubernetes, docker, helm, jenkins, istio, prometheus'
-description: 'Canary Release'
+keywords: 'KubeSphere, Kubernetes, canary release, istio, service mesh'
+description: 'How to implement the canary release for an app.'
 
 linkTitle: "Canary Release"
 weight: 2130
 ---
 
+On the back of [Istio](https://istio.io/), KubeSphere provides users with necessary control to deploy canary services. In a canary release, you introduce a new version of a service and test it by sending a small percentage of traffic to it. At the same time, the old version is responsible for handling the rest of the traffic. If everything goes well, you can gradually increase the traffic sent to the new version, while simultaneously phasing out the old version. In the case of any occurring issues, KubeSphere allows you to roll back to the previous version as you change the traffic percentage.
 
-One of the benefits of the Istio project is that it provides the control needed to deploy canary services. The idea behind canary deployment is to introduce a new version of a service by first testing it using a small percentage of user traffic, and then if all goes well, increase, possibly gradually in increments, the percentage while simultaneously phasing out the old version. If anything goes wrong along the way, we abort and rollback to the previous version. In its simplest form, the traffic sent to the canary version is a randomly selected percentage of requests, but in more sophisticated schemes it can be based on the region, user, or other properties of the request.
+This method serves as an efficient way to test performance and reliability of a service. It can help detect potential problems in the actual environment while not affecting the overall system stability.
 
-This method brings part of the actual traffic into a new version to test its performance and reliability. It can help detect potential problems in the actual environment while not affecting the overall system stability.
+![canary-release-0](/images/docs/project-user-guide/grayscale-release/canary-release/canary-release-0.png)
 
-![](/images/service-mesh/canary-release-0.png)
+## Prerequisites
 
-## Before you begin
-
-Firstly, you shoud enable the service-mesh plugin, to make the istio component available by following the document [Requirements](../../../pluggable-components/service-mesh/).
+- You need to enable [KubeSphere Service Mesh](../../../pluggable-components/service-mesh/).
+- You need to create a workspace, a project and an account (`project-regular`). Please refer to [Create Workspace, Project, Account and Role](../../../quick-start/create-workspace-and-project) if they are not ready yet.
+- You need to sign in with the `project-admin` account and invite `project-regular` to the corresponding project. Please refer to [these steps to invite a member](../../../quick-start/create-workspace-and-project#task-3-create-a-project).
+- You need to enable **Application Governance** and have an available app so that you can implement the canary release for it. The sample app used in this tutorial is Bookinfo. For more information, see [Deploy Bookinfo and Manage Traffic](../../../quick-start/deploy-bookinfo-to-k8s/).
 
 ## Create Canary Release Job
 
-Create canary release job:
+1. Log in KubeSphere as `project-regular`. Under **Categories**, click **Create Job** on the right of **Canary Release**.
 
-![](/images/service-mesh/canary-release-1.jpg)
+![create-canary-release](/images/docs/project-user-guide/grayscale-release/canary-release/create-canary-release.jpg)
 
-![](/images/service-mesh/canary-release-2.jpg)
+2. Set a name for it and click **Next**.
 
-![](/images/service-mesh/canary-release-3.jpg)
+![set-task-name](/images/docs/project-user-guide/grayscale-release/canary-release/set-task-name.jpg)
 
-Then add 2 Deployments, one for each version (v1 and v2):
+3. Select your app from the drop-down list and the service for which you want to implement the canary release. If you also use the sample app Bookinfo, select **reviews** and click **Next**.
 
-> Notice, the image now is `v2`.
+![cabary-release-3](/images/docs/project-user-guide/grayscale-release/canary-release/cabary-release-3.jpg)
 
-![](/images/service-mesh/canary-release-4.jpg)
+4. On the **Grayscale Release Version** page, add another version of it (e.g `v2`) as shown in the image below and click **Next**:
 
-You can forward by traffic ratio, also, you can forward by request content, such as `Http Header` 、`Cookie`、`URI` and so on.
+![canary-release-4](/images/docs/project-user-guide/grayscale-release/canary-release/canary-release-4.jpg)
 
-Now, we forward by traffic ratio, each version loads half of the total traffic:
+{{< notice note >}}
 
-![](/images/service-mesh/canary-release-5.jpg)
+The image version is `v2` in the screenshot.
 
-After a short time, we can see the actual requests almost approach the traffic ratio:
+{{</ notice >}} 
 
-![](/images/service-mesh/canary-release-6.jpg)
+5. You send traffic to these two versions (`v1` and `v2`) either by a specific percentage or by the request content such as `Http Header`, `Cookie` and `URI`. Select **Forward by traffic ratio** and drag the icon in the middle to change the percentage of traffic sent to these two versions respectively (e.g. set 50% for either one). When you finish, click **Create**.
 
-Also, you can directly get the virtualservice to identify the weight:
+![canary-release-5](/images/docs/project-user-guide/grayscale-release/canary-release/canary-release-5.gif)
 
+6. The canary release job created displays under the tab **Job Status**. Click it to view details.
+
+![canary-release-job](/images/docs/project-user-guide/grayscale-release/canary-release/canary-release-job.jpg)
+
+7. Wait for a while and you can see half of the traffic go to each of them:
+
+![canary-release-6](/images/docs/project-user-guide/grayscale-release/canary-release/canary-release-6.jpg)
+
+8. The new **Deployment** is created as well.
+
+![deployment-list-1](/images/docs/project-user-guide/grayscale-release/canary-release/deployment-list-1.jpg)
+
+9. Besides, you can directly get the virtual service to identify the weight by executing the following command:
+
+```bash
+kubectl -n demo-project get virtualservice -o yaml
 ```
-# kubectl -n test get virtualservice -oyaml
+
+{{< notice note >}} 
+
+- When you execute the command above, replace `demo-project` with your own project (i.e. namespace) name.
+- If you want to execute the command from the web kubectl on the KubeSphere console, you need to use the account `admin`.
+
+{{</ notice >}} 
+
+10. Expected output:
+
+```yaml
 ...
 spec:
   hosts:
@@ -68,11 +96,13 @@ spec:
       weight: 50
       ...
 ```
-## At The Last
+## Take a Job Offline
 
-After implementing the canary release deployment, if the new version has no problem, you can set the new version to take over all the traffic, or you can rollback to the old version. 
+1. After you implement the canary release, and the result meets your expectation, you can select **Take Over** from the menu, sending all the traffic to the new version. 
 
-After choosing the correct version, now you can take the task offline and the other version will be removed.
+![take-over-traffic](/images/docs/project-user-guide/grayscale-release/canary-release/take-over-traffic.jpg)
+
+2. To remove the old version with the new version handling all the traffic, click **Job offline**.
 
 
-![](/images/service-mesh/canary-release-7.jpg)
+![job-offline](/images/docs/project-user-guide/grayscale-release/canary-release/job-offline.jpg)
