@@ -40,7 +40,7 @@ When the cluster is ready, you can download the config file for kubectl.
 
 ## Install KubeSphere on DOKS
 
-Now the cluster is ready, you can install KubeSphere following the steps below:
+Now that the cluster is ready, you can install KubeSphere following the steps below:
 
 - Install KubeSphere using kubectl. The following commands are only for the default minimal installation.
 
@@ -78,7 +78,7 @@ https://kubesphere.io             2020-xx-xx xx:xx:xx
 
 ## Access KubeSphere Console
 
-Now KubeSphere is installed, you can access the web console of KubeSphere by following the steps below.
+Now that KubeSphere is installed, you can access the web console of KubeSphere by following the steps below.
 
 - Go to the Kubernetes Dashboard provided by DigitalOcean.
 

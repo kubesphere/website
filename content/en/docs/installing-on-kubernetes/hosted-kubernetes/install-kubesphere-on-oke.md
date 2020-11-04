@@ -104,7 +104,7 @@ This guide walks you through the steps of deploying KubeSphere on [Oracle Kubern
 
 ## Access KubeSphere Console
 
-Now KubeSphere is installed. You can access the web console of KubeSphere either through `NodePort` or `LoadBalancer`.
+Now that KubeSphere is installed, you can access the web console of KubeSphere either through `NodePort` or `LoadBalancer`.
 
 - Check the service of KubeSphere console through the following command:
 

@@ -79,7 +79,7 @@ This guide walks you through the steps of deploying KubeSphere on [Google Kubern
 
 ## Access KubeSphere Console
 
-Now KubeSphere is installed, you can access the web console of KubeSphere by following the steps below.
+Now that KubeSphere is installed, you can access the web console of KubeSphere by following the steps below.
 
 - In **Services & Ingress**, select the service **ks-console**.
 
