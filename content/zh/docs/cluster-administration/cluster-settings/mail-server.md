@@ -31,3 +31,4 @@ weight: 4190
 ![mail_server_config](/images/docs/alerting/mail_server_config-zh.png)
 
 5. 完成上述设置后，单击**保存**。 您可以发送测试电子邮件以验证服务器配置是否成功。
+
