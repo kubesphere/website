@@ -147,12 +147,10 @@ kubectl logs -n kubesphere-system $(kubectl get pod -n kubesphere-system -l app=
 3. In **Connection Method**, select **Direct Connection to Kubernetes cluster**.  
 
 4. [Retrieve the KubeConfig](../retrieve-kubeconfig), copy the KubeConfig of the Member Cluster and paste it into the box.
-
-    {{< notice tip >}}
-    Please make sure the `server` address in KubeConfig is accessible on any node of the H Cluster.
-    {{</ notice >}}
-
-    ![import a cluster - direct connection](/images/docs/direct_import_en.png)
+  {{< notice tip >}}
+  Please make sure the `server` address in KubeConfig is accessible on any node of the H Cluster.
+  {{</ notice >}}
+  ![import a cluster - direct connection](/images/docs/direct_import_en.png)
 
 5. Click **Import** and wait for cluster initialization to finish.
   ![Azure AKS](https://ap3.qingstor.com/kubesphere-website/docs/20200827231650.png)
