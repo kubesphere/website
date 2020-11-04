@@ -1,51 +1,82 @@
 ---
 title: "Blue-green Deployment"
-keywords: 'KubeSphere, kubernetes, docker, helm, jenkins, istio, prometheus'
-description: 'Blue-green Deployment'
+keywords: 'KubeSphere, Kubernetes, service mesh, istio, release, blue-green deployment'
+description: 'How to implement blue-green deployment for an app.'
 
 linkTitle: "Blue-green Deployment"
 weight: 2130
 ---
 
 
-The blue-green release provides a zero downtime deployment, which means the new version can be deployed with the old one preserved. At any time, only one of the version is active serving all the traffic, while the other one remains idle. If there is a problem with running, you can quickly roll back to the old version
+The blue-green release provides a zero downtime deployment, which means the new version can be deployed with the old one preserved. At any time, only one of the versions is active serving all the traffic, while the other one remains idle. If there is a problem with running, you can quickly roll back to the old version.
 
-![](/images/service-mesh/blue-green-0.png)
-
-
-## Before you begin
-
-Firstly, you shoud enable the service-mesh plugin, to make the istio component available by following the document [Requirements](../../../pluggable-components/service-mesh/).
-
-## Create Grayscale Release Job
-
-Create blue-green deployment job:
-
-![](/images/service-mesh/blue-green-1.jpg)
-
-![](/images/service-mesh/blue-green-2.jpg)
-
-![](/images/service-mesh/blue-green-3.jpg)
-
-Then add 2 Deployments, one for each version (v1 and v2):
-
-> Notice, the image now is `v2`.
-
-![](/images/service-mesh/blue-green-4.jpg)
+![blue-green-0](/images/docs/project-user-guide/grayscale-release/blue-green-deployment/blue-green-0.png)
 
 
-Now, you should choose one version to take over all the traffic:
+## Prerequisites
 
-![](/images/service-mesh/blue-green-5.jpg)
+- You need to enable [KubeSphere Service Mesh](../../../pluggable-components/service-mesh/).
+- You need to create a workspace, a project and an account (`project-regular`). Please refer to [Create Workspace, Project, Account and Role](../../../quick-start/create-workspace-and-project) if they are not ready yet.
+- You need to sign in with the `project-admin` account and invite `project-regular` to the corresponding project. Please refer to [these steps to invite a member](../../../quick-start/create-workspace-and-project#task-3-create-a-project).
+- You need to enable **Application Governance** and have an available app so that you can implement blue-green deployment for it. The sample app used in this tutorial is Bookinfo. For more information, see [Deploy Bookinfo and Manage Traffic](../../../quick-start/deploy-bookinfo-to-k8s/).
 
-After a short time, we can see v2 take on all actual requests:
-![](/images/service-mesh/blue-green-6.jpg)
+## Create Blue-green Deployment Job
+
+1. Log in KubeSphere as `project-regular`. Under **Categories**, click **Create Job** on the right of **Blue-green Deployment**.
+
+![blue-green-1](/images/docs/project-user-guide/grayscale-release/blue-green-deployment/blue-green-1.jpg)
+
+2. Set a name for it and click **Next**.
+
+![blue-green-2](/images/docs/project-user-guide/grayscale-release/blue-green-deployment/blue-green-2.jpg)
+
+3. Select your app from the drop-down list and the service for which you want to implement blue-green deployment. If you also use the sample app Bookinfo, select **reviews** and click **Next**.
+
+![blue-green-3](/images/docs/project-user-guide/grayscale-release/blue-green-deployment/blue-green-3.jpg)
+
+4. On the **Grayscale Release Version** page, add another version of it (e.g `v2`) as shown in the image below and click **Next**:
+
+![blue-green-4](/images/docs/project-user-guide/grayscale-release/blue-green-deployment/blue-green-4.jpg)
+
+{{< notice note >}}
+
+The image version is `v2` in the screenshot.
+
+{{</ notice >}} 
+
+5. To allow the app version `v2` to take over all the traffic, select **Take over all traffic** and click **Create**.
 
 
-Also, you can directly get the virtualservice to identify the weight:
+![blue-green-5](/images/docs/project-user-guide/grayscale-release/blue-green-deployment/blue-green-5.jpg)
 
+6. The blue-green deployment job created displays under the tab **Job Status**. Click it to view details.
+
+![blue-green-job-list](/images/docs/project-user-guide/grayscale-release/blue-green-deployment/blue-green-job-list.jpg)
+
+7. Wait for a while and you can see all the traffic go to the version `v2`:
+
+![blue-green-6](/images/docs/project-user-guide/grayscale-release/blue-green-deployment/blue-green-6.jpg)
+
+8. The new **Deployment** is created as well.
+
+![version2-deployment](/images/docs/project-user-guide/grayscale-release/blue-green-deployment/version2-deployment.jpg)
+
+9. Besides, you can directly get the virtual service to identify the weight by executing the following command:
+
+```bash
+kubectl -n demo-project get virtualservice -o yaml
 ```
-# kubectl -n test get virtualservice -oyaml
+
+{{< notice note >}} 
+
+- When you execute the command above, replace `demo-project` with your own project (i.e. namespace) name.
+- If you want to execute the command from the web kubectl on the KubeSphere console, you need to use the account `admin`.
+
+{{</ notice >}} 
+
+10. Expected output:
+
+```yaml
 ...
   spec:
     hosts:
@@ -61,9 +92,9 @@ Also, you can directly get the virtualservice to identify the weight:
         ...
 ```
 
-## At The Last
+## Take a Job Offline
 
-After implementing the blue-green deployment, and the results meet your expectation, now you can take the task offline and the version v1 will be removed.
+After you implement the blue-green deployment, and the result meets your expectation, you can take the task offline with the version `v1` removed by clicking **Job offline**.
 
-![](/images/service-mesh/blue-green-7.jpg)
+![blue-green-7](/images/docs/project-user-guide/grayscale-release/blue-green-deployment/blue-green-7.jpg)
 
