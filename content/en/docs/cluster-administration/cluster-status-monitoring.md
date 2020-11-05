@@ -17,7 +17,7 @@ You need an account granted a role including the authorization of **Clusters Man
 
 1. Click **Platform** in the top left corner and select **Clusters Management**.
 
-![Platform](../../../../static../../../../static/images/docs/cluster-administration/cluster-status-monitoring/platform.png)
+![Platform](../../../../static/images/docs/cluster-administration/cluster-status-monitoring/platform.png)
 
 1. If you have enabled the [multi-cluster feature](../../multicluster-management) with member clusters imported, you can select a specific cluster to view its application resources. If you have not enabled the feature, refer to the next step directly.
 
