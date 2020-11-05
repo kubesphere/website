@@ -11,7 +11,7 @@ weight: 3525
 
 KubeSphere Auditing Log System provides a security-relevant chronological set of records documenting the sequence of activities related to individual users, managers, or other components of the system. Each request to KubeSphere generates an event that is then written to a webhook and processed according to a certain rule.
 
-For more information, see Logging, Events, and Auditing.
+For more information, see [Auditing Log Query](../../toolbox/auditing/auditing-query).
 
 ## Enable Auditing Logs before Installation
 
