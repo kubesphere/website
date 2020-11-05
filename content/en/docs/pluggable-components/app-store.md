@@ -21,7 +21,7 @@ For more information, see [App Store](../../application-store/).
 
 ### Installing on Linux
 
-When you install KubeSphere on Linux, you need to create a configuration file, which lists all KubeSphere components.
+When you implement multi-node installation of KubeSphere on Linux, you need to create a configuration file, which lists all KubeSphere components.
 
 1. In the tutorial of [Installing KubeSphere on Linux](../../installing-on-linux/introduction/multioverview/), you create a default file **config-sample.yaml**. Modify the file by executing the following command:
 
@@ -37,7 +37,7 @@ If you adopt [All-in-one Installation](../../quick-start/all-in-one-on-linux/), 
 
 2. In this file, navigate to `openpitrix` and change `false` to `true` for `enabled`. Save the file after you finish.
 
-    ```bash
+    ```yaml
     openpitrix:
         enabled: true # Change "false" to "true"
     ```
@@ -60,7 +60,7 @@ The process of installing KubeSphere on Kubernetes is same as stated in the tuto
 
 2. In this local cluster-configuration.yaml file, navigate to `openpitrix` and enable App Store by changing `false` to `true` for `enabled`. Save the file after you finish.
 
-    ```bash
+    ```yaml
     openpitrix:
         enabled: true # Change "false" to "true"
     ```
@@ -91,7 +91,7 @@ A Custom Resource Definition (CRD) allows users to create a new type of resource
 
 4. In this yaml file, navigate to `openpitrix` and change `false` to `true` for `enabled`. After you finish, click **Update** in the bottom-right corner to save the configuration.
 
-    ```bash
+    ```yaml
     openpitrix:
         enabled: true # Change "false" to "true"
     ```
