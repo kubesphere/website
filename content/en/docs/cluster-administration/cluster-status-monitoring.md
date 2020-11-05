@@ -19,7 +19,7 @@ You need an account granted a role including the authorization of **Clusters Man
 
 ![Platform](../../../../static/images/docs/cluster-administration/cluster-status-monitoring/platform.png)
 
-1. If you have enabled the [multi-cluster feature](../../multicluster-management) with member clusters imported, you can select a specific cluster to view its application resources. If you have not enabled the feature, refer to the next step directly.
+2. If you have enabled the [multi-cluster feature](../../multicluster-management) with member clusters imported, you can select a specific cluster to view its application resources. If you have not enabled the feature, refer to the next step directly.
 
 ![Clusters Management](../../../../static/images/docs/cluster-administration/cluster-status-monitoring/clusters-management.png)
 
@@ -41,7 +41,7 @@ You need an account granted a role including the authorization of **Clusters Man
 
 ![Monitoring](../../../../static/images/docs/cluster-administration/cluster-status-monitoring/monitoring.png)
 
-{{< notice tip >}} 
+{{< notice tip >}}  
 
 You can customize the time range from the drop-down list in the top right corner to view historical data.
 
