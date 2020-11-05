@@ -27,11 +27,9 @@ When you implement multi-node installation of KubeSphere on Linux, you need to c
     vi config-sample.yaml
     ```
 
-{{< notice note >}}
-
+    {{< notice note >}}
 If you adopt [All-in-one Installation](../../quick-start/all-in-one-on-linux/), you do not need to create a config-sample.yaml file as you can create a cluster directly. Generally, the all-in-one mode is for users who are new to KubeSphere and look to get familiar with the system. If you want to enable DevOps in this mode (e.g. for testing purpose), refer to the following section to see how DevOps can be installed after installation.
-
-{{</ notice >}}
+    {{</ notice >}}
 
 2. In this file, navigate to `devops` and change `false` to `true` for `enabled`. Save the file after you finish.
 
@@ -78,11 +76,9 @@ The process of installing KubeSphere on Kubernetes is same as stated in the tuto
 
 2. Click **CRDs** and enter `clusterconfiguration` in the search bar. Click the result to view its detailed page.
 
-{{< notice info >}}
-
+    {{< notice info >}}
 A Custom Resource Definition (CRD) allows users to create a new type of resources without adding another API server. They can use these resources like any other native Kubernetes objects.
-
-{{</ notice >}}
+    {{</ notice >}}
 
 3. In **Resource List**, click the three dots on the right of `ks-installer` and select **Edit YAML**.
     ![edit-yaml](https://ap3.qingstor.com/kubesphere-website/docs/20200827182002.png)
@@ -100,11 +96,9 @@ A Custom Resource Definition (CRD) allows users to create a new type of resource
     kubectl logs -n kubesphere-system $(kubectl get pod -n kubesphere-system -l app=ks-install -o jsonpath='{.items[0].metadata.name}') -f
     ```
 
-{{< notice tip >}}
-
+    {{< notice tip >}}
 You can find the web kubectl tool by clicking the hammer icon in the bottom-right corner of the console.
-
-{{</ notice >}}
+    {{</ notice >}}
 
 ## Verify the Installation of Component
 
