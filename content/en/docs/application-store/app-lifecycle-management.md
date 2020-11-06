@@ -102,6 +102,12 @@ You need to create two accounts first, one for ISVs (`isv`) and the other (`revi
 
    ![test-deploy](/images/docs/appstore/application-lifecycle-management/test-deploy.jpg)
 
+   {{< notice note >}} 
+
+   If you don't want test the app, you can submit it for review directly. However, it is recommended that you test your app deployment and function first before you submit it for review, especially in a production environment. This helps you detect any problems in advance and accelerate the review process. 
+
+   {{</ notice >}} 
+
 8. Select the cluster and project to which you want to deploy the app, check the app configuration, and then click **Deploy**.
 
    ![select-project](/images/docs/appstore/application-lifecycle-management/select-project.jpg)
@@ -159,39 +165,57 @@ After the app is approved, `isv` can release the EMQ X application to the App St
 
    ![deploy-emqx](/images/docs/appstore/application-lifecycle-management/deploy-emqx.png)
 
-### Step 5: Create Application Category
+### Step 5: Create App Category
 
-Depending on the business needs, `Reviewer` can create multiple categories for different types of applications. It is similar as tag and can be used in application store to filter applications, e.g. Big data, Middleware, IoT, etc.
+`Reviewer` can create multiple categories for different types of applications based on their function and usage. It is similar to setting tags and categories can be used in the App Store as filters, such as Big Data, Middleware, and IoT.
 
-As for EMQ X application, we can create a category and name it `IOT`. First switch back to the user `Reviewer`, go to **Platform → App  Store Management → App Categories**
+1. To create a category, go to the **App Store Management** page and click the plus icon in **App Categories**.
 
-![Create Category](/images/application-templates/iot-category.png)
+   ![app-category](/images/docs/appstore/application-lifecycle-management/app-category.jpg)
 
-Then click **Uncategorized** and find EMQ X, change its category to `IOT` and save it.
+2. Set a name and icon for the category in the dialogue, then click **OK**. For EMQ X, you can input `IoT` for the field **Category Name**.
 
-> Note usually reviewer should create necessary categories in advance according to the requirements of the store. Then ISVs categorize their applications as appropriate before submitting for review.
+   ![app-category-1](/images/docs/appstore/application-lifecycle-management/app-category-1.jpg)
 
-![Categorize EMQ](/images/application-templates/iot-emqx.png)
+   {{< notice note >}}
+
+   Usually, an app reviewer creates necessary categories in advance and ISVs select the category in which an app appears before submitting it for review. A newly created category has no app in it.
+
+   {{</ notice >}} 
+
+3. As the category is created, you can assign the category to your app. In **Uncategorized**, select EMQ X and click **Change Category**. 
+
+   ![assign-category](/images/docs/appstore/application-lifecycle-management/assign-category.jpg)
+
+4. In the dialogue, select the category (**IoT**) from the drop-down list and click **OK**.
+
+   ![category-select](/images/docs/appstore/application-lifecycle-management/category-select.jpg)
+
+5. The app displays in the category as expected.
+
+   ![app-in-category-list](/images/docs/appstore/application-lifecycle-management/app-in-category-list.jpg)
 
 ### Step 6: Add New Version
 
-6.1. KubeSphere supports adding new versions of existing applications for users to quickly upgrade. Let's continue to use `isv` account and enter the EMQ X template page in the workspace.
+To allow workspace users to upgrade apps, you need to add new app versions to KubeSphere first. Follow the steps below to add a new version for the example app.
 
-![Create New Version](/images/application-templates/emqx-active.png)
+1. Log in KubeSphere as `isv` again and navigate to **App Templates**. Click the app EMQ X in the list.
 
-6.2. Download [EMQ X v4.0.2](https://github.com/kubesphere/tutorial/raw/master/tutorial%205%20-%20app-store/emqx-v4.0.2.tgz), then click on the **New Version** on the right, upload the package that you just downloaded.
+   ![template-list-one-app](/images/docs/appstore/application-lifecycle-management/template-list-one-app.jpg)
 
-![Upload New Version](/images/application-templates/emqx-new-version.png)
+2. Download [EMQ X v4.0.2](https://github.com/kubesphere/tutorial/raw/master/tutorial%205%20-%20app-store/emqx-v4.0.2.tgz), which is the new version of EMQ X. In the tab **Versions**, click **New Version** on the right to upload the package you just downloaded.
 
-6.3. Click **OK** when you upload successfully.
+   ![create-new-version](/images/docs/appstore/application-lifecycle-management/create-new-version.jpg)
 
-![New Version Info](/images/application-templates/upload-emqx-new-version.png)
+3. Click **Upload Helm Chart Package** and click **OK** after it is uploaded.
 
-6.4. At this point, you can test the new version and submit it to `Reviewer`. This process is similar to the one for the first version.
+   ![upload-new-version](/images/docs/appstore/application-lifecycle-management/upload-new-version.jpg)
 
-![Submit New Version](/images/application-templates/upload-emqx-new-version.png)
+4. The new app version displays in the version list. You can click it to expand the menu and test the new version. Besides, you can also submit it for review and release it to the App Store, which is the same as the steps shown above.
 
-6.5. After you submit the new version, the rest of process regarding review and release are also similar to the first version that we demonstrated above.
+   ![new-version-draft](/images/docs/appstore/application-lifecycle-management/new-version-draft.jpg)
+
+   ![test-new-version](/images/docs/appstore/application-lifecycle-management/test-new-version.jpg)
 
 ### Step 7: Upgrade
 
