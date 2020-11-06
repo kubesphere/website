@@ -1,13 +1,13 @@
 ---
-title: "Kubernetes Federation in KubeSphere"
-keywords: 'Kubernetes, KubeSphere, federation, multicluster, hybrid-cloud'
-description: 'Overview'
+title: "KubeSphere 中的 Kubernetes 联邦"
+keywords: 'Kubernetes, KubeSphere, 联邦, 多集群, 混合云'
+description: '概要'
 
 weight: 3007
 ---
 
-The multi-cluster feature relates to the network connection among multiple clusters. Therefore, it is important to understand the topological relations of clusters as the workload can be reduced.
+多群集功能与多个群集之间的网络连接有关。 因此，了解集群的拓扑关系很重要，这样可以减少工作量。
 
-Before you use the multi-cluster feature, you need to create a Host Cluster (hereafter referred to as **H** Cluster), which is actually a KubeSphere cluster with the multi-cluster feature enabled. All the clusters managed by the H Cluster are called Member Cluster (hereafter referred to as **M** Cluster). They are common KubeSphere clusters that do not have the multi-cluster feature enabled. There can only be one H Cluster while multiple M Clusters can exist at the same time. In a multi-cluster architecture, the network between the H Cluster and the M Cluster can be connected directly or through an agent. The network between M Clusters can be set in a completely isolated environment.
+在使用多集群功能之前，您需要创建一个主集群（Host Cluster，以下简称 **H** 集群），H 集群实际上是启用了多集群功能的 KubeSphere 集群。所有被 H 集群管理的集群称为成员集群（Member Cluster，以下简称 **M** 集群）。M 集群是未启用多集群功能的普通 KubeSphere 集群。只能有一个 H 集群存在，而多个 M 集群可以同时存在。 在多集群体系结构中，H 集群和 M 集群之间的网络可以直接连接，也可以通过代理连接。 M 集群之间的网络可以设置在完全隔离的环境中。
 
-![Kubernetes Federation in KubeSphere](https://ap3.qingstor.com/kubesphere-website/docs/20200907232319.png)
+![KubeSphere 中的 Kubernetes 联邦](https://ap3.qingstor.com/kubesphere-website/docs/20200907232319.png)
