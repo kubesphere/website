@@ -6,6 +6,7 @@ description: "Persistent Volume and Storage Class Management"
 linkTitle: "Persistent Volume and Storage Class"
 weight: 100
 ---
+
 This tutorial describes the basic concepts of PVs, PVCs and storage classes and demonstrates how a cluster administrator can manage storage classes and persistent volumes in KubeSphere.
 
 ## Introduction
@@ -33,28 +34,24 @@ You need an account granted a role including the authorization of **Clusters Man
 ## Manage Storage Class
 
 1. Click **Platform** in the top left corner and select **Clusters Management**.
-
-![clusters-management-select](/images/docs/cluster-administration/persistent-volume-and-storage-class/clusters-management-select.jpg)
+    ![clusters-management-select](/images/docs/cluster-administration/persistent-volume-and-storage-class/clusters-management-select.jpg)
 
 2. If you have enabled the [multi-cluster feature](../../multicluster-management) with member clusters imported, you can select a specific cluster. If you have not enabled the feature, refer to the next step directly.
 
 3. On the **Cluster Management** page, navigate to **Storage Classes** under **Storage**, where you can create, update and delete a storage class.
-
-![storage-class](/images/docs/cluster-administration/persistent-volume-and-storage-class/storage-class.jpg)
+    ![storage-class](/images/docs/cluster-administration/persistent-volume-and-storage-class/storage-class.jpg)
 
 4. To create a storage class, click **Create** and enter the basic information in the pop-up window. When you finish, click **Next**.
-
-![create-storage-class-basic-info](/images/docs/cluster-administration/persistent-volume-and-storage-class/create-storage-class-basic-info.png)
+    ![create-storage-class-basic-info](/images/docs/cluster-administration/persistent-volume-and-storage-class/create-storage-class-basic-info.png)
 
 5. In KubeSphere, you can create storage classes for `QingCloud-CSI`, `Glusterfs` and `Ceph RBD` directly. Alternatively, you can also create customized storage classes for other storage systems based on your needs. Select a type and click **Next**.
+    ![create-storage-class-storage-system](/images/docs/cluster-administration/persistent-volume-and-storage-class/create-storage-class-storage-system.png)
 
-![create-storage-class-storage-system](/images/docs/cluster-administration/persistent-volume-and-storage-class/create-storage-class-storage-system.png)
-
-![create-storage-class-settings](/images/docs/cluster-administration/persistent-volume-and-storage-class/create-storage-class-settings.png)
+    ![create-storage-class-settings](/images/docs/cluster-administration/persistent-volume-and-storage-class/create-storage-class-settings.png)
 
 ### Common Settings
 
-Some settings are commonly used and shared among storage classes. You can find them as dashboard properties on the console, which are also indicated by fields or annotations in the StorageClass manifest. You can see the manifest file in YAML format by enabling **Edit Mode** in the top right corner. 
+Some settings are commonly used and shared among storage classes. You can find them as dashboard properties on the console, which are also indicated by fields or annotations in the StorageClass manifest. You can see the manifest file in YAML format by enabling **Edit Mode** in the top right corner.
 Here are property descriptions of some commonly used fields in KubeSphere.
 
 | Property | Description |
@@ -67,9 +64,11 @@ Here are property descriptions of some commonly used fields in KubeSphere.
 For other settings, you need to provide different information for different storage plugins, which, in the manifest, are always indicated under the field `parameters`. They will be described in detail in the sections below. You can also refer to [Parameters](https://kubernetes.io/docs/concepts/storage/storage-classes/#parameters) in the official documentation of Kubernetes.
 
 ### QingCloud CSI
+
 QingCloud CSI is a CSI plugin on Kubernetes for the volume of QingCloud. Storage classes of QingCloud CSI can be created on the KubeSphere console.
 
 #### Prerequisites
+
 - QingCloud CSI can be used on both public cloud and private cloud of QingCloud. Therefore, make sure KubeSphere has been installed on either of them so that you can use cloud volumes.
 - QingCloud CSI Plugin has been installed on your KubeSphere cluster. See [QingCloud-CSI Installation](https://github.com/yunify/qingcloud-csi#installation) for more information.
 
@@ -89,12 +88,15 @@ QingCloud CSI is a CSI plugin on Kubernetes for the volume of QingCloud. Storage
 More storage class parameters can be seen in [QingCloud-CSI user guide](https://github.com/yunify/qingcloud-csi/blob/master/docs/user-guide.md#set-storage-class).
 
 ### Glusterfs
+
 Glusterfs is an in-tree storage plugin on Kubernetes, which means you don't need to install a volume plugin additionally.
 
 #### Prerequisites
+
 The Glusterfs storage system has already been installed. See [GlusterFS Installation Documentation](https://www.gluster.org/install/) for more information.
 
 #### Settings
+
 | Property | Description |
 | :---- | :---- |
 | resturl  | The Gluster REST service/Heketi service url which provision gluster volumes on demand. |
@@ -108,6 +110,7 @@ The Glusterfs storage system has already been installed. See [GlusterFS Installa
 For more information about StorageClass parameters, see [Glusterfs in Kubernetes Documentation](https://kubernetes.io/docs/concepts/storage/storage-classes/#glusterfs).
 
 ### Ceph RBD
+
 Ceph RBD is also an in-tree storage plugin on Kubernetes. The volume plugin is already in Kubernetes, 
 but the storage server must be installed before you create the storage class of Ceph RBD.
 
@@ -117,10 +120,12 @@ Nevertheless, you can use [rbd provisioner](https://github.com/kubernetes-incuba
 ![storage-system](/images/docs/cluster-administration/persistent-volume-and-storage-class/storage-system.png)
 
 #### Prerequisites
+
 - The Ceph server has already been installed. See [Ceph Installation Documentation](https://docs.ceph.com/en/latest/install/) for more information.
 - Install the plugin if you choose to use rbd-provisioner. Community developers provide [charts for rbd provisioner](https://github.com/kubesphere/helm-charts/tree/master/src/test/rbd-provisioner) that you can use to install rbd-provisioner by helm.
 
 #### Settings
+
 | Property | Description |
 | :---- | :---- |
 | monitors| The Ceph monitors, comma delimited. |
@@ -138,15 +143,18 @@ Nevertheless, you can use [rbd provisioner](https://github.com/kubernetes-incuba
 For more information about StorageClass parameters, see [Ceph RBD in Kubernetes Documentation](https://kubernetes.io/docs/concepts/storage/storage-classes/#ceph-rbd).
 
 ### Custom Storage Class
+
 You can create custom storage classes for your storage systems if they are not directly supported by KubeSphere. The following example shows you how to create a storage class for NFS on the KubeSphere console.
 
 #### NFS Introduction
-NFS (Net File System) is widely used on Kubernetes with the external-provisioner volume plugin 
+
+NFS (Net File System) is widely used on Kubernetes with the external-provisioner volume plugin
 [nfs-client](https://github.com/kubernetes-retired/external-storage/tree/master/nfs-client). You can create the storage class of nfs-client by clicking **Custom** in the image below.
 
 ![Create Custom Storage Class](/images/storage/create-storage-class-storage-system-custom.png)
 
 #### Prerequisites
+
 - An available NFS server.
 - The volume plugin nfs-client has already been installed. Community developers provide [charts for nfs-client](https://github.com/kubesphere/helm-charts/tree/master/src/main/nfs-client-provisioner) that you can use to install nfs-client by helm.
 
@@ -162,12 +170,11 @@ NFS (Net File System) is widely used on Kubernetes with the external-provisioner
 | Supported Access Mode | Specified by `.metadata.annotations.storageclass.kubesphere.io/supported-access-modes` in the manifest. `ReadWriteOnce`, `ReadOnlyMany` and `ReadWriteMany` all are selected by default. |
 
 #### Parameters
+
 | Key| Description | Value |
 | :---- | :---- |  :----|
 | archiveOnDelete | Archive pvc when deleting | `true` |
 
 ## Manage Volumes
 
-Once the storage class is created, you can create volumes with it. You can list, create, update and delete volumes in **Volumes** under **Storage** on the KubeSphere console. For more details, please see [Volume Management](../project-user-guide/storage/volumes/).
-
-
+Once the storage class is created, you can create volumes with it. You can list, create, update and delete volumes in **Volumes** under **Storage** on the KubeSphere console. For more details, please see [Volume Management](../../project-user-guide/storage/volumes/).
