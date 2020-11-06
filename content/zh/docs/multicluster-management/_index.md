@@ -1,62 +1,62 @@
 ---
-title: "Multi-cluster Management"
-description: "Import a hosted or on-premises Kubernetes cluster into KubeSphere"
+title: "多集群管理"
+description: "将托管的或本地的 Kubernetes 集群导入 KubeSphere"
 layout: "single"
 
-linkTitle: "Multi-cluster Management"
+linkTitle: "多集群管理"
 
 weight: 3000
 
 icon: "/images/docs/docs.svg"
 ---
 
-## Introduction
+## 介绍
 
-This chapter demonstrates how to use the multi-cluster feature of KubeSphere to import heterogeneous clusters for unified management.
+本章演示如何使用 KubeSphere 的多集群功能导入异构集群以进行统一的管理。
 
-### [Overview](../multicluster-management/introduction/overview/)
+### [概要](../multicluster-management/introduction/overview/)
 
-Gain a basic understanding of multi-cluster management, such as its common use cases, and the benefits that KubeSphere can bring with its multi-cluster feature.
+对多集群管理有个基本的了解，例如多集群管理的常见用例，以及 KubeSphere 可以通过多集群功能带来的好处。
 
-### [Kubernetes Federation in KubeSphere](../multicluster-management/introduction/kubefed-in-kubesphere/)
+### [KubeSphere 中的 Kubernetes 联邦](../multicluster-management/introduction/kubefed-in-kubesphere/)
 
-Understand the fundamental concept of Kubernetes federation in KubeSphere, including M clusters and H clusters.
+了解 KubeSphere 中的 Kubernetes 联邦的基本概念，包括 M 集群和 H 集群。
 
-## Enable Multi-cluster in KubeSphere
+## 直接连接
 
-### [Direct Connection](../multicluster-management/enable-multicluster/direct-connection/)
+### [直接连接](../multicluster-management/enable-multicluster/direct-connection/)
 
-Understand the general steps of importing clusters through direct connection.
+了解通过直接连接导入集群的一般步骤。
 
-### [Agent Connection](../multicluster-management/enable-multicluster/agent-connection/)
+### [代理连接](../multicluster-management/enable-multicluster/agent-connection/)
 
-Understand the general steps of importing clusters through agent connection.
+了解通过代理连接导入集群的一般步骤。
 
-### [Retrieve KubeConfig](../multicluster-management/enable-multicluster/retrieve-kubeconfig/)
+### [获取 KubeConfig](../multicluster-management/enable-multicluster/retrieve-kubeconfig/)
 
-Retrieve the KubeConfig which is needed for cluster importing through direct connection.
+获取通过直接连接导入集群所需的 KubeConfig。
 
-## Import Cloud-hosted Kubernetes Cluster
+## 导入云托管的 Kubernetes 集群
 
-### [Import Aliyun ACK Cluster](../multicluster-management/import-cloud-hosted-k8s/import-aliyun-ack/)
+### [导入阿里云 ACK 集群](../multicluster-management/import-cloud-hosted-k8s/import-aliyun-ack/)
 
-Learn how to import an Alibaba Cloud Kubernetes cluster.
+了解如何导入阿里云 Kubernetes 集群。
 
-### [Import AWS EKS Cluster](../multicluster-management/import-cloud-hosted-k8s/import-aws-eks/)
+### [导入 AWS EKS 集群](../multicluster-management/import-cloud-hosted-k8s/import-aws-eks/)
 
-Learn how to import an Amazon Elastic Kubernetes Service cluster.
+了解如何导入 Amazon Elastic Kubernetes 服务集群。
 
-## Import On-prem Kubernetes Cluster
+## 导入本地 Kubernetes 集群
 
-### [Import Kubeadm Kubernetes Cluster](../multicluster-management/import-on-prem-k8s/import-kubeadm-k8s/)
+### [导入 Kubeadm Kubernetes 集群](../multicluster-management/import-on-prem-k8s/import-kubeadm-k8s/)
 
-Learn how to import a Kubernetes cluster created with kubeadm.
+了解如何导入通过 kubeadm 创建的 Kubernetes 集群。
 
-## Remove Cluster
+## 删除集群
 
-### [Remove a Cluster from KubeSphere](../multicluster-management/remove-cluster/kubefed-in-kubesphere/)
+### [从 KubeSphere 删除集群](../multicluster-management/remove-cluster/kubefed-in-kubesphere/)
 
-Learn how to unbind a cluster from your cluster pool in KubeSphere.
+了解如何从 KubeSphere 的集群池中解除集群的绑定。
 
 
 
