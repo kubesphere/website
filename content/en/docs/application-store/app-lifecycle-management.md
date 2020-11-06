@@ -1,127 +1,163 @@
 ---
-title: "App Lifecycle Management"
-keywords: 'kubernetes, kubesphere, app-store'
+title: "Application Lifecycle Management"
+keywords: 'Kubernetes, KubeSphere, app-store'
 description: 'App Lifecycle Management'
-
-
+linkTitle: 'Application Lifecycle Management'
 weight: 2240
 ---
 
-KubeSphere integrates open-source project [OpenPitrix](https://github.com/openpitrix/openpitrix) to set up the App Store which provide the full lifecycle of application management. App Store supports two kinds of application deployment as follows:
+KubeSphere integrates [OpenPitrix](https://github.com/openpitrix/openpitrix), an open-source multi-cloud application management platform, to set up the App Store, managing applications throughout their entire lifecycle. The App Store supports two kinds of application deployment as follows:
 
-> - **Application template** provides a way for developers and ISVs to share applications with users in a workspace. It also supports importing third-party application repositories within workspace.
-> - **Composing application** means users can quickly compose multiple microservices into a complete application through the one-stop console.
+- **App template** provides a way for developers and independent software vendors (ISVs) to share applications with users in a workspace. You can also import third-party app repositories within a workspace.
+- **Composing app** means users can quickly build a complete application using multiple microservices to compose it. KubeSphere allows users to select existing services or create new services to create a composing app on the one-stop console.
 
-![App Store](/images/application-templates/app-store.png)
+![app-store](/images/docs/appstore/application-lifecycle-management/app-store.png)
 
 ## Objective
 
-In this tutorial, we will walk you through how to use [EMQ X](https://www.emqx.io/) as a demo application to demonstrate the **global application store** and **application lifecycle management** including upload / submit / review / test / release / upgrade / delete application templates.
+This tutorial demonstrates how to use [EMQ X](https://www.emqx.io/) as an example application to manage apps throughout the entire lifecycle, including submission, review, test, release, upgrade and deletion. 
+
+
+
+demonstrate the **global application store** and **application lifecycle management** including upload / submit / review / test / release / upgrade / delete application templates.
 
 ## Prerequisites
 
-- You need to install [App Store (OpenPitrix)](../../pluggable-components/app-store).
-- You need to create a workspace and a project, see [Create Workspace, Project, Account and Role](../../quick-start/create-workspace-and-project/).
+- You need to enable [KubeSphere App Store (OpenPitrix)](../../pluggable-components/app-store).
+- You need to create a workspace and a project. For more information, see [Create Workspace, Project, Account and Role](../../quick-start/create-workspace-and-project/).
 
 ## Hands-on Lab
 
 ### Step 1: Create Customized Role and Account
 
-In this step, we will create two accounts, i.e., `isv` for ISVs and `reviewer` for app technical reviewers.
+You need to create two accounts first, one for ISVs (`isv`) and the other (`reviewer`) for app technical reviewers.
 
-1.1. First of all, we need to create a role for app reviewers. Log in KubeSphere console with the account `admin`, go to **Platform → Access Control → Account Roles**, then click **Create** and name it `app-review`, choose **App Templates Management** and **App Templates View**  in the authorization settings list, then click **Create**.
+1. Log in the KubeSphere console with the account `admin`. Click **Platform** in the top left corner and select **Access Control**. In **Account Roles**, click **Create**.
 
-![Authorization Settings](/images/application-templates/create-roles.png)
+   ![create-role](/images/docs/appstore/application-lifecycle-management/create-role.jpg)
 
-1.2. Create an account `reviewer`, and grant the role of **app-review** to it.
+2. Set a name for the role, such as `app-review`, and click **Edit Authorization**.
 
-1.3. Similarly, create an account `isv`, and grant the role of **platform-regular** to it.
+   ![app-review-name](/images/docs/appstore/application-lifecycle-management/app-review-name.jpg)
 
-![Create Accounts](/images/application-templates/create-accounts.png)
+3. In **Apps Management**, choose **App Templates Management** and **App Templates View**  in the authorization settings list, then click **OK**.
 
-1.4. Invite the accounts that we created above to an existing workspace such as `demo-workspace`, and grant them the role of `workspace-admin`.
+   ![create-roles](/images/docs/appstore/application-lifecycle-management/create-roles.png)
+
+   {{< notice note >}}
+
+   The account granted the role `app-review` is able to view the App Store on the platform and manage apps, including release, removal, and review.
+
+   {{</ notice >}} 
+
+4. As the role is ready now, you need to create an account and grant the role of `app-review` to it. In **Accounts**, click **Create**. Provide the required information and click **OK**.
+
+   ![create-review-role](/images/docs/appstore/application-lifecycle-management/create-review-role.jpg)
+
+5. Similarly, create another account `isv`, and grant the role of `platform-regular` to it.
+
+   ![account-ready](/images/docs/appstore/application-lifecycle-management/account-ready.jpg)
+
+6. Invite both accounts created above to an existing workspace such as `demo-workspace`, and grant them the role of `workspace-admin`.
 
 ### Step 2: Upload and Submit Application
 
-2.1. Log in KubeSphere with `isv`, enter the workspace. We are going to upload the EMQ X app to this workspace. First please download [EMQ X chart v1.0.0](https://github.com/kubesphere/tutorial/raw/master/tutorial%205%20-%20app-store/emqx-v1.0.0-rc.1.tgz) and click **Upload Template** by choosing **App Templates**.
+1. Log in KubeSphere as `isv` and go to your workspace. You need to upload the example app EMQ X to this workspace so that it can be used later. First, download the app [EMQ X chart v1.0.0](https://github.com/kubesphere/tutorial/raw/master/tutorial%205%20-%20app-store/emqx-v1.0.0-rc.1.tgz) and click **Upload Template** in **App Templates**.
 
-> Note we are going to upload a newer version of EMQ X to demo the upgrade feature later on.
+   ![upload-app](/images/docs/appstore/application-lifecycle-management/upload-app.jpg)
 
-![App Templates](/images/application-templates/app-templates.png)
+   {{< notice note >}}
 
-2.2. Click **Upload**, then click **Upload Helm Chart Package** to upload the chart.
+   In this example, a new version of EMQ X will be uploaded later to demonstrate the upgrade feature.
 
-![Upload Template](/images/application-templates/upload-templates.png)
+   {{</ notice >}} 
 
-2.3. Click **OK**. Now download [EMQ Icon](https://github.com/kubesphere/tutorial/raw/master/tutorial%205%20-%20app-store/emqx-logo.png) and click **Upload icon** to upload App logo. Click **OK** when you are done.
+2. In the dialogue that appears, click **Upload Helm Chart Package** to upload the chart file. Click **OK** to continue.
 
-![EMQ Template](/images/application-templates/upload-icons.png)
+   ![upload-templates](/images/docs/appstore/application-lifecycle-management/upload-templates.png)
 
-2.4. At this point, you will be able to see the status displays `draft`, which means this app is under developing. The uploaded app is visible for all members in the same workspace.
+3. Basic information of the app displays under **App Info**. To upload an icon for the app, click **Upload icon**. You can also skip it and click **OK** directly.
 
-![Template List](/images/application-templates/app-templates-draft.png)
+   {{< notice note >}}
 
-2.5. Enter app template detailed page by clicking on EMQ X from the list. You can edit the basic information of this app by clicking **Edit Info**.
+   Maximum accepted resolutions of the app icon: 96 x 96 pixels.
 
-![Edit Template](/images/application-templates/edit-template.png)
+   {{</ notice >}} 
 
-2.6. You can customize the app's basic information by filling in the table as the following screenshot.
+   ![upload-icons](/images/docs/appstore/application-lifecycle-management/upload-icons.png)
 
-![Customize Template](/images/application-templates/edit-app-info.png)
+4. The app displays in the template list after successfully uploaded with the status **draft**, which means this app is under development. The uploaded app is visible to all members in the same workspace.
 
-2.7. Save your changes, then you can test this application by deploying to Kubernetes. Click on the **Test Deploy** button.
+   ![app-templates-draft](/images/docs/appstore/application-lifecycle-management/app-templates-draft.png)
 
-![Save Template](/images/application-templates/test-deploy.png)
+5. Go to the detail page of the app template by clicking EMQ X from the list. You can edit the basic information of this app by clicking **Edit Info**.
 
-2.8. Select cluster and project that you want to deploy into, check app config then click **Deploy**.
+   ![edit-template](/images/docs/appstore/application-lifecycle-management/edit-template.png)
 
-![Deploy Template](/images/application-templates/select-deploy-location.png)
+6. You can customize the app's basic information by specifying the fields in the pop-up window.
 
-![Template Instance](/images/application-templates/app-deploy.png)
+   ![edit-app-info](/images/docs/appstore/application-lifecycle-management/edit-app-info.jpg)
 
-2.9. Wait for a few minutes, then switch to the tab **Deployed Instances**. You will find EMQ X App has been deployed successfully.
+7. Save your changes, then you can test this application by deploying it to Kubernetes. Click the draft version to expand the menu and select **Test Deploy**.
 
-![Template Instance](/images/application-templates/deploy-instance.png)
+   ![test-deploy](/images/docs/appstore/application-lifecycle-management/test-deploy.jpg)
 
-2.10. At this point, you can click `Submit Review` to submit this application to `reviewer`.
+8. Select the cluster and project to which you want to deploy the app, check the app configuration, and then click **Deploy**.
 
-![Submit Template](/images/application-templates/submit-review.png)
+   ![select-project](/images/docs/appstore/application-lifecycle-management/select-project.jpg)
 
-2.11. As shown in the following graph, the app status has been changed to `Submitted`. Now app reviewer can review it.
+   ![app-deploy](/images/docs/appstore/application-lifecycle-management/app-deploy.jpg)
 
-![Template Status](/images/application-templates/submitted.png)
+9. Wait for a few minutes, then switch to the tab **Deployed Instances**. You will find EMQ X has been deployed successfully.
+
+   ![deployed-instance](/images/docs/appstore/application-lifecycle-management/deployed-instance.jpg)
+
+10. Click **Submit Review** to submit this application for review.
+
+    ![submit-for-app-review](/images/docs/appstore/application-lifecycle-management/submit-for-app-review.jpg)
+
+    {{< notice note >}}
+    
+
+The version number automatically created cannot be used directly here. You need to set a version number manually, such as `1.0.0`. Note that it must start with a number and contain decimal points.
+
+{{</ notice >}}
+
+11. After the app is submitted, the app status will change to **Submitted**. Now app reviewers can review it.
+
+    ![submitted-status](/images/docs/appstore/application-lifecycle-management/submitted-status.jpg)
 
 ### Step 3: Review Application
 
-3.1. Log out, then use `reviewer` account to log in KubeSphere. Navigate to **Platform → App Store Management → App Review**.
+1. Log out and log back in KubeSphere as `reviewer`. Click **Platform** in the top left corner and select **App Store Management**. The app submitted in the previous step displays under the tab **Unprocessed**.
 
-![Review List](/images/application-templates/app-review.png)
+   ![app-unprocessed](/images/docs/appstore/application-lifecycle-management/app-processing.jpg)
 
-3.2. Click **Review** by clicking the vertical three dots at the end of app item in the list, then you start to review the app's basic information, introduction, chart file and updated logs from the pop-up windows.
+2. To review this app, click it to inspect the app information, introduction, chart file and update logs from the pop-up window.
 
-![EMQ Info](/images/application-templates/review.png)
+   ![review](/images/docs/appstore/application-lifecycle-management/review.jpg)
 
-3.3. It is the reviewer's responsibility to judge if the app satisfies the criteria of the Global App Store or not, if yes, then click `Pass`; otherwise, `Reject` it.
+3. It is the responsibility of the reviewer to decide whether the app meets the criteria to be released to the App Store. Click **Pass** to approve it or **Reject** to deny an app submission.
 
 ### Step 4: Release Application to Store
 
-4.1. Log out and switch to use `isv` to log in KubeSphere. Now `isv` can release the EMQ X application to the global application store which means all users in this platform can find and deploy this application.
+After the app is approved, `isv` can release the EMQ X application to the App Store, allowing all users on the platform to find and deploy this application.
 
-4.2. Enter the demo workspace and navigate to the EMQ X app from the template list. Enter the detailed page and expand the version list, then click **Release to Store**, choose **OK** in the pop-up windows.
+1. Log out and log back in KubeSphere as `isv`. Go to your workspace and navigate to the EMQ X app from the template list. On its detail page, expand the version menu, then click **Release to Store**. In the pop-up prompt, click **OK** to confirm.
 
-![Release EMQ](/images/application-templates/release-app.png)
+   ![release-to-store](/images/docs/appstore/application-lifecycle-management/release-to-store.jpg)
 
-4.3. At this point, EMQ X has been released to application store.
+2. Under **Audit Records**, you can see the app status. **Active** means it is available in the App Store.
 
-![Audit Records](/images/application-templates/aduit-records.png)
+   ![audit-records](/images/docs/appstore/application-lifecycle-management/audit-records.jpg)
 
-4.4. Go to **App Store** in the top menu, you will see the app in the list.
+3. Click **View in Store** to go to its **App Info** page in the App Store. Alternatively, click **App Store** in the top left corner and you can also see the app.
 
-![EMQ on Store](/images/application-templates/emqx.png)
+   ![emqx](/images/docs/appstore/application-lifecycle-management/emqx.jpg)
 
-4.5. At this point, we can use any role of users to access EMQ X application. Click into the application detailed page to go through its basic information. You can click **Deploy** button to deploy the application to Kubernetes.
+4. Now, users in the workspace can deploy EMQ X from the App Store. To deploy the app to Kubernetes, click the app to go to its **App Info** page, and click **Deploy**.
 
-![Deploy EMQ](/images/application-templates/deploy-emqx.png)
+   ![deploy-emqx](/images/docs/appstore/application-lifecycle-management/deploy-emqx.png)
 
 ### Step 5: Create Application Category
 
