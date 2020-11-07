@@ -34,7 +34,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
               <div class='date'>{{ i18n "Published on" }}：{{ string $context.Params.createTime }}</div>
               <h1>{{ $context.Title }}</h1>
               <div class="share-1">
-                  {{ partial "share.html" }}
+                  {{ partial "share.html" $context }}
               </div>
               <div class='content'>
                   <div class='md-body'>
@@ -42,7 +42,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                   </div>
               </div>
               <div class="share-2">
-                  {{ partial "share.html" }}
+                  {{ partial "share.html" $context }}
               </div>
           </div>
           <div class='aside'>
