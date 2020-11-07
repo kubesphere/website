@@ -7,7 +7,7 @@ linkTitle: "Notification Manager"
 weight: 2020
 ---
 
-[Notification Manager](https://github.com/kubesphere/notification-manager) manages notifications in KubeSphere. It receives alerts or notifications from different senders and then send notifications to different users.
+[Notification Manager](https://github.com/kubesphere/notification-manager) manages notifications in KubeSphere. It receives alerts or notifications from different senders and then sends notifications to different users.
 
 Supported senders includes:
 

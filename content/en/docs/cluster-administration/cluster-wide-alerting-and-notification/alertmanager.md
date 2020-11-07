@@ -21,7 +21,7 @@ Starting from v3.0, KubeSphere adds popular alert rules in the open source commu
 
 ## Use Alertmanager to manage K8s events alerts
 
-Alertmanager can be used to manage alerts sent from sources other than Prometheus. In KubeSphere v3.0 and above, user can use it to manage alerts triggered by K8s events. For more details, please refer to [kube-events](https://github.com/kubesphere/kube-events)
+Alertmanager can be used to manage alerts sent from sources other than Prometheus. In KubeSphere v3.0 and above, user can use it to manage alerts triggered by K8s events. For more details, please refer to [kube-events](https://github.com/kubesphere/kube-events).
 
 ## Use Alertmanager to manage KubeSphere auditing alerts
 
