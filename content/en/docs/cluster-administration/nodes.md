@@ -20,12 +20,15 @@ You need an account granted a role including the authorization of **Clusters Man
 Cluster nodes are only accessible to cluster administrators. Some node metrics are very important to clusters. Therefore, it is the administrator's responsibility to watch over these numbers and make sure nodes are available. Follow the steps below to view node status.
 
 1. Click **Platform** in the top left corner and select **Clusters Management**.
+
     ![clusters-management-select](/images/docs/cluster-administration/node-management/clusters-management-select.jpg)
 
 2. If you have enabled the [multi-cluster feature](../../multicluster-management) with member clusters imported, you can select a specific cluster to view its nodes. If you have not enabled the feature, refer to the next step directly.
+
     ![select-a-cluster](/images/docs/cluster-administration/node-management/select-a-cluster.jpg)
 
 3. Choose **Cluster Nodes** under **Nodes**, where you can see detailed information of node status.
+
     ![Node Status](/images/docs/cluster-administration/node-management/node_status.png)
 
     - **Name**: The node name and subnet IP address.
@@ -49,6 +52,7 @@ Click a node from the list and you can go to its detail page.
 
 - **Cordon/Uncordon**: Marking a node as unschedulable is very useful during a node reboot or other maintenance. The Kubernetes scheduler will not schedule new Pods to this node if it's been marked unschedulable. Besides, this does not affect existing workloads already on the node. In KubeSphere, you mark a node as unschedulable by clicking **Cordon** on the node detail page. The node will be schedulable if you click the button (**Uncordon**) again.
 - **Labels**: Node labels can be very useful when you want to assign Pods to specific nodes. Label a node first (e.g. label GPU nodes with `node-role.kubernetes.io/gpu-node`), and then add the label in **Advanced Settings** [when you create a workload](../../project-user-guide/application-workloads/deployments/#step-5-configure-advanced-settings) so that you can allow Pods to run on GPU nodes explicitly. To add node labels, click **More** and select **Edit Labels**.
+
     ![drop-down-list-node](/images/docs/cluster-administration/node-management/drop-down-list-node.jpg)
 
     ![Label Node](/images/docs/cluster-administration/node-management/label_node.jpg)
@@ -56,6 +60,7 @@ Click a node from the list and you can go to its detail page.
     ![Assign pods to nodes](/images/docs/cluster-administration/node-management/assign_pods_to_node.jpg)
 
 - **Taints**: Taints allow a node to repel a set of pods. You add or remove node taints on the node detail page. To add or delete taints, click **More** and select **Taint Management** from the drop-down menu.
+
     ![add-taints](/images/docs/cluster-administration/node-management/add-taints.jpg)
 
     {{< notice note >}}
