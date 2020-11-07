@@ -120,6 +120,7 @@ IOPS（每秒输入/输出操作）表示每秒读取和写入操作数的性能
 ## ETCD监控
 
 ETCD监控可以帮助您更好地利用ETCD，特别是定位性能问题。 ETCD服务在本地提供指标接口，KubeSphere监控系统具有高度图形化和响应性强的仪表板来显示其本地数据。
+
 | 指标 | 描述 |
 | --- | --- |
 | ETCD结点 | - **是否有Leader** 表示成员是否有Leader。 如果成员没有 Leader， 则完全不可用。 如果集群中的所有成员 都没有任何Leader，则整个集群完全不可用。 </br> - **Leader变更次数** 指的是自开始以来集群成员看到的Leader更改次数。 频繁更换Leader将显著影响etcd的性能。 它还标明，Leader不稳定，可能是由于网络连接问题或ETCD集群负载过高所致。 |
@@ -135,6 +136,7 @@ ETCD监控可以帮助您更好地利用ETCD，特别是定位性能问题。 ET
 ## APIServer监控
 
 [API Server](https://kubernetes.io/docs/concepts/overview/kubernetes-api/) 是Kubernetes集群中所有组件交互的中枢。 下表列出了为APIServer监控的主要指标。
+
 | 指标 | 描述 |
 | --- | --- |
 | 请求延迟 | 按HTTP请求方法分类，以毫秒为单位的资源请求响应延迟。 |
@@ -145,6 +147,7 @@ ETCD监控可以帮助您更好地利用ETCD，特别是定位性能问题。 ET
 ## 调度器监控
 
 [调度器](https://kubernetes.io/docs/reference/command-line-tools-reference/kube-scheduler/) 监控新建Pod的Kubernetes API，并确定这些新Pod运行在哪些节点上。 它根据可用数据做出这一决定，包括收集的资源的可用性和Pod的资源需求。 监控调度延迟的数据可确保您可以看到调度程序面临的任何延迟。
+
 | 指标 | 描述 |
 | --- | --- |
 | 调度次数 | 包括调度成功、错误和失败的次数。 |
