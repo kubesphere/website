@@ -1,42 +1,42 @@
 ---
-title: "Direct Connection"
-keywords: 'Kubernetes, KubeSphere, multicluster, hybrid-cloud, direct-connection'
-description: 'Overview'
+title: "直接连接"
+keywords: 'Kubernetes, KubeSphere, 多集群, 混合云, 直接连接'
+description: '概要'
 
 weight: 3011
 ---
 
-## Prerequisites
+## 前提条件
 
-You have already installed at least two KubeSphere clusters. Please refer to [Installing on Linux](../../../installing-on-linux) or [Installing on Kubernetes](../../../installing-on-kubernetes) if they are not ready yet.
+您已经安装了至少两个 KubeSphere 集群。如果尚未安装，请参阅[在Linux上安装](../../../installing-on-linux)或者[在Kubernetes上安装](../../../installing-on-kubernetes)。
 
 {{< notice note >}}
-Multi-cluster management requires Kubesphere to be installed on the target clusters. If you have an existing cluster, you can deploy KubeSphere on it with a minimal installation so that it can be imported. See [Minimal KubeSphere on Kubernetes](../../../quick-start/minimal-kubesphere-on-k8s/) for details.
+多集群管理要求将 Kubesphere 安装在目标集群上。如果您已经有一个集群，则可以在上面部署 KubeSphere 最小安装，以便可以将其导入。有关详细信息，请参阅 [Kubernetes 上的最小 KubeSphere](../../../quick-start/minimal-kubesphere-on-k8s/)。
 {{</ notice >}}
 
-## Direct Connection
+## 直接连接
 
-If the kube-apiserver address of Member Cluster (hereafter referred to as **M** Cluster) is accessible on any node of the Host Cluster (hereafter referred to as **H** Cluster), you can adopt **Direction Connection**. This method is applicable when the kube-apiserver address of M Cluster can be exposed or H Cluster and M Cluster are in the same private network or subnet.
+如果成员集群（以下简称 **M** 集群）的 kube-apiserver 地址可以在主集群（以下简称 **H** 集群）的任何节点上访问，则可以采用 **直接连接**。当 M 集群的 kube-apiserver 地址可以暴漏，或者 H 集群和 M 集群在同一专网或子网中时，此方法适用。
 
-### Prepare a Host Cluster
+### 准备主集群
 
 {{< tabs >}}
 
-{{< tab "KubeSphere has been installed" >}}
+{{< tab "已经安装 KubeSphere" >}}
 
-If you already have a standalone KubeSphere installed, you can set the value of  `clusterRole` to `host` by editing the cluster configuration. You need to **wait for a while** so that the change can take effect.
+如果已经安装了独立的 KubeSphere，则可以通过编辑集群配置，将 `clusterRole` 的值设置为 `host`。您需要**稍等片刻**，以使更改生效。
 
-- Option A - Use Web Console:
+- 选项 A - 使用 web 控制台：
 
-Use `admin` account to log in the console and go to **CRDs** on the **Cluster Management** page. Enter the keyword `ClusterConfiguration` and go to its detail page. Edit the YAML of `ks-installer`, which is similar to [Enable Pluggable Components](../../../pluggable-components/).
+使用 `admin` 帐户登录控制台，然后进入**集群管理**页面上的 **CRDs**。输入关键字 `ClusterConfiguration`，然后转到其详细信息页面。编辑 `ks-installer` 的YAML，类似于[启用可插拔组件](../../../pluggable-components/)。
 
-- Option B - Use Kubectl:
+- 选项 B - 使用 Kubectl：
 
 ```shell
 kubectl edit cc ks-installer -n kubesphere-system
 ```
 
-Scroll down and set the value of `clusterRole` to `host`, then click **Update** (if you use the web console) to make it effective:
+向下滚动并将 `clusterRole`的值设置为 `host`，然后点击**更新**（如果使用 web 控制台）以使其生效：
 
 ```yaml
 multicluster:
@@ -45,9 +45,9 @@ multicluster:
 
 {{</ tab >}}
 
-{{< tab "KubeSphere has not been installed" >}}
+{{< tab "尚未安装 KubeSphere" >}}
 
-There is no big difference if you define a host cluster before installation. Please note that the `clusterRole` in `config-sample.yaml` or `cluster-configuration.yaml` has to be set as follows:
+如果在安装之前定义主集群也没有太大差别。请注意，`config-sample.yaml` 或 `cluster-configuration.yaml` 中的 `clusterRole` 必须设置如下：
 
 ```yaml
 multicluster:
@@ -58,21 +58,21 @@ multicluster:
 
 {{</ tabs >}}
 
-You can use **kubectl** to retrieve the installation logs to verify the status by running the following command. Wait for a while, and you will be able to see the successful log return if the host cluster is ready.
+您可以使用 **kubectl** 来获取安装日志以验证状态。运行以下命令，稍等片刻，如果主集群已准备就绪，您将能够看到成功的日志返回。
 
 ```bash
 kubectl logs -n kubesphere-system $(kubectl get pod -n kubesphere-system -l app=ks-install -o jsonpath='{.items[0].metadata.name}') -f
 ```
 
-### Prepare a Member Cluster
+### 准备成员集群
   
-In order to manage the member cluster within the **host cluster**, you need to make `jwtSecret` the same between them. Therefore, you need to get it first from the **host cluster** by the following command.
+为了管理**主集群**中的成员集群，需要使它们之间的 `jwtSecret` 相同。因此，您首先需要通过以下命令从**主集群**中获取它。
 
 ```bash
 kubectl -n kubesphere-system get cm kubesphere-config -o yaml | grep -v "apiVersion" | grep jwtSecret
 ```
 
-The output may look like this:
+命令的输出可能如下所示：
 
 ```yaml
 jwtSecret: "gfIwilcc0WjNGKJ5DLeksf2JKfcLgTZU"
@@ -80,28 +80,28 @@ jwtSecret: "gfIwilcc0WjNGKJ5DLeksf2JKfcLgTZU"
 
 {{< tabs >}}
 
-{{< tab "KubeSphere has been installed" >}}
+{{< tab "已经安装 KubeSphere" >}}
 
-If you already have a standalone KubeSphere installed, you can set the value of  `clusterRole` to `member` by editing the cluster configuration. You need to **wait for a while** so that the change can take effect.
+如果已经安装了独立的 KubeSphere，则可以通过编辑集群配置，将 `clusterRole` 的值设置为 `member`。您需要**稍等片刻**，以使更改生效。
 
-- Option A - Use Web Console:
+- 选项 A - 使用 web 控制台：
 
-Use `admin` account to log in the console and go to **CRDs** on the **Cluster Management** page. Enter the keyword `ClusterConfiguration` and go to its detail page. Edit the YAML of `ks-installer`, which is similar to [Enable Pluggable Components](../../../pluggable-components/).
+使用 `admin` 帐户登录控制台，然后进入**集群管理**页面上的 **CRDs**。输入关键字`ClusterConfiguration`，然后进入其详细信息页面。编辑 ` ks-installer` 的 YAML，类似于[启用可插拔组件](../../../pluggable-components/)。
 
-- Option B - Use Kubectl:
+- 选项 B - 使用 Kubectl：
 
 ```shell
 kubectl edit cc ks-installer -n kubesphere-system
 ```
 
-Input the corresponding `jwtSecret` shown above:
+输入上面相应地方显示的 `jwtSecret`：
 
 ```yaml
 authentication:
   jwtSecret: gfIwilcc0WjNGKJ5DLeksf2JKfcLgTZU
 ```
 
-Scroll down and set the value of `clusterRole` to `member`, then click **Update** (if you use the web console) to make it effective:
+向下滚动并将 `clusterRole` 的值设置为 `member`，然后点击**更新**（如果使用 web 控制台）以使其生效：
 
 ```yaml
 multicluster:
@@ -110,16 +110,16 @@ multicluster:
 
 {{</ tab >}}
 
-{{< tab "KubeSphere has not been installed" >}}
+{{< tab "尚未安装 KubeSphere" >}}
 
-There is no big difference if you define a member cluster before installation. Please note that the `clusterRole` in `config-sample.yaml` or `cluster-configuration.yaml` has to be set as follows:
+如果在安装之前定义成员集群也没有太大差别。请注意，`config-sample.yaml` 或 `cluster-configuration.yaml` 中的 `clusterRole` 必须设置如下：
 
 ```yaml
 authentication:
   jwtSecret: gfIwilcc0WjNGKJ5DLeksf2JKfcLgTZU
 ```
 
-Scroll down and set the value of `clusterRole` to `member`:
+向下滚动并将 `clusterRole` 的值设置为 `member`：
 
 ```yaml
 multicluster:
@@ -130,32 +130,32 @@ multicluster:
 
 {{</ tabs >}}
 
-You can use **kubectl** to retrieve the installation logs to verify the status by running the following command. Wait for a while, and you will be able to see the successful log return if the member cluster is ready.
+您可以使用 **kubectl** 来获取安装日志以验证状态。运行以下命令，稍等片刻，如果成员集群已准备就绪，您将能够看到成功的日志返回。
 
 ```bash
 kubectl logs -n kubesphere-system $(kubectl get pod -n kubesphere-system -l app=ks-install -o jsonpath='{.items[0].metadata.name}') -f
 ```
 
-### Import Cluster
+### 导入集群
 
-1. Open the H Cluster dashboard and click **Add Cluster**.
+1. 打开 H 集群仪表板，然后点击**添加集群**.
 
-![Add Cluster](https://ap3.qingstor.com/kubesphere-website/docs/20200827231611.png)
+![添加集群](https://ap3.qingstor.com/kubesphere-website/docs/20200827231611.png)
 
-2. Enter the basic information of the cluster to be imported and click **Next**.
+2. 输入要导入的集群的基本信息，然后点击**下一步**.
 
-![Import Cluster](https://ap3.qingstor.com/kubesphere-website/docs/20200827211842.png)
+![导入集群](https://ap3.qingstor.com/kubesphere-website/docs/20200827211842.png)
 
-3. In **Connection Method**, select **Direct Connection to Kubernetes cluster**.  
+3. 在**连接方法**中, 选择**直接连接到Kubernetes集群**.  
 
-4. [Retrieve the KubeConfig](../retrieve-kubeconfig), copy the KubeConfig of the Member Cluster and paste it into the box.
+4. [获取 KubeConfig](../retrieve-kubeconfig)，复制成员集群的 KubeConfig 并将其粘贴到框中。
 
 {{< notice tip >}}
-Please make sure the `server` address in KubeConfig is accessible on any node of the H Cluster. For `KubeSphere API Server` address, you can fill in the KubeSphere APIServer address or leave it blank.
+请确保在 H 集群的任何节点上都可以访问 KubeConfig 中的 `server` 地址。对于 `KubeSphere API 服务器` 地址，您可以填写 KubeSphere API 服务器地址或将其留空。
 {{</ notice >}}
 
-![import a cluster - direct connection](/images/docs/direct_import_en.png)
+![导入集群 - 直接连接](/images/docs/direct_import_en.png)
 
-5. Click **Import** and wait for cluster initialization to finish.
+5. 点击**导入**，然后等待集群初始化完成。
 
 ![Azure AKS](https://ap3.qingstor.com/kubesphere-website/docs/20200827231650.png)
