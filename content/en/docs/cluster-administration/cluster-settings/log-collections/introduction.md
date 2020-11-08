@@ -34,7 +34,7 @@ To add a log receiver:
 
 ### Add Elasticsearch as log receiver
 
-A default Elasticsearch receiver will be added with its service address set to an Elasticsearch cluster if logging/events/auditing is enabled in [ClusterConfiguration](https://github.com/kubesphere/kubekey/blob/master/docs/config-example.md)
+A default Elasticsearch receiver will be added with its service address set to an Elasticsearch cluster if logging/events/auditing is enabled in [ClusterConfiguration](https://github.com/kubesphere/kubekey/blob/master/docs/config-example.md).
 
 An internal Elasticsearch cluster will be deployed into K8s cluster if neither ***externalElasticsearchUrl*** nor ***externalElasticsearchPort*** are specified in [ClusterConfiguration](https://github.com/kubesphere/kubekey/blob/master/docs/config-example.md) when logging/events/auditing is enabled.
 
@@ -72,15 +72,15 @@ To turn a log receiver on or off:
 - Click a log receiver and enter the receiver details page.
 - Click ***More*** -> ***Change Status***
 
-![more](/images/docs/cluster-administration/cluster-settings/log-collections/more.png)
+    ![more](/images/docs/cluster-administration/cluster-settings/log-collections/more.png)
 
 - You can select ***Activate*** or ***Close*** to turn the log receiver on or off
 
-![Change Status](/images/docs/cluster-administration/cluster-settings/log-collections/change-status.png)
+    ![Change Status](/images/docs/cluster-administration/cluster-settings/log-collections/change-status.png)
 
 - Log receiver's status will be changed to ***Close*** if you turn it off, otherwise the status will be ***Collecting***
 
-![receiver-status](/images/docs/cluster-administration/cluster-settings/log-collections/receiver-status.png)
+    ![receiver-status](/images/docs/cluster-administration/cluster-settings/log-collections/receiver-status.png)
 
 ## Modify or delete a log receiver
 
@@ -89,6 +89,6 @@ You can modify a log receiver or delete it:
 - Click a log receiver and enter the receiver details page.
 - You can edit a log receiver by clicking ***Edit*** or ***Edit Yaml***
 
-![more](/images/docs/cluster-administration/cluster-settings/log-collections/more.png)
+    ![more](/images/docs/cluster-administration/cluster-settings/log-collections/more.png)
 
 - Log receiver can be deleted by clicking ***Delete Log Collector***

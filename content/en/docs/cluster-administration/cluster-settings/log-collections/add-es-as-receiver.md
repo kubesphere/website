@@ -15,23 +15,25 @@ Before adding a log receiver, you need to enable any of the `logging`, `events` 
 
 1. To add a log receiver:
 
-- Login KubeSphere with an account of ***platform-admin*** role
-- Click ***Platform*** -> ***Clusters Management***
-- Select a cluster if multiple clusters exist
-- Click ***Cluster Settings*** -> ***Log Collections***
-- Log receivers can be added by clicking ***Add Log Collector***
+    - Login KubeSphere with an account of ***platform-admin*** role
+    - Click ***Platform*** -> ***Clusters Management***
+    - Select a cluster if multiple clusters exist
+    - Click ***Cluster Settings*** -> ***Log Collections***
+    - Log receivers can be added by clicking ***Add Log Collector***
 
-![Add receiver](/images/docs/cluster-administration/cluster-settings/log-collections/add-receiver.png)
+    ![Add receiver](/images/docs/cluster-administration/cluster-settings/log-collections/add-receiver.png)
 
 2. Choose ***Elasticsearch*** and fill in the Elasticsearch service address and port like below:
 
-![Add Elasticsearch](/images/docs/cluster-administration/cluster-settings/log-collections/add-es.png)
+    ![Add Elasticsearch](/images/docs/cluster-administration/cluster-settings/log-collections/add-es.png)
 
 3. Elasticsearch appears in the receiver list of ***Log Collections*** page and its status becomes ***Collecting***.
 
-![Receiver List](/images/docs/cluster-administration/cluster-settings/log-collections/receiver-list.png)
+    ![Receiver List](/images/docs/cluster-administration/cluster-settings/log-collections/receiver-list.png)
 
 4. Verify whether Elasticsearch is receiving logs sent from Fluent Bit:
 
-- Click ***Log Search*** in the ***Toolbox*** in the bottom right corner.
-- You can search logs in the logging console that appears.
+    - Click ***Log Search*** in the ***Toolbox*** in the bottom right corner.
+    - You can search logs in the logging console that appears.
+
+    You can read [Log Query](../../../../toolbox/log-query/) to learn how to use the tool.
