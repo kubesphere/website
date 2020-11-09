@@ -17,9 +17,9 @@ The [official Helm documentation](https://helm.sh/docs/topics/chart_repository/#
 
 ## Adding application repositories
 
-1. Create a Workspace, and then in the Workspace, go to `Workspace Management → Application Repository` and click `Create Application Repository`.
+1. Create a Workspace, and then in the Workspace, go to `App Managements → App repos` and click `Add Repo`.
 
-    ![repo](https://pek3b.qingstor.com/kubesphere-docs/png/20191025004747.png)
+    ![repo](/images/application-templates/20201109150224.png)
 
 2. In the Add Repository window, fill in the URL with `https://charts.kubesphere.io/main`, and then create the repository after verification.
 
