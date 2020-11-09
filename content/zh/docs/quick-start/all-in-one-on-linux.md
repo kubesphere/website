@@ -1,25 +1,24 @@
 ---
-title: "All-in-one Installation on Linux"
+title: "Linux 上的 All-in-one 安装"
 keywords: 'KubeSphere, Kubernetes, All-in-one, Installation'
 description: 'All-in-one Installation on Linux'
 
-linkTitle: "All-in-one Installation on Linux"
+linkTitle: "kubeSphere 在 Linux 上的 All-in-one 安装"
 weight: 3010
 ---
 
-For those who are new to KubeSphere and looking for a quick way to discover the platform, the all-in-one mode is your best choice to get started. It features rapid deployment and hassle-free configuration installation with KubeSphere and Kubernetes all provisioned on your machine.
+对于那些刚接触 kubeSphere 的并且想快速上手的用户, all-in-one 安装模式是最佳的选择。这种模式的特点就是能够快速部署且提供 kubeSphere 和 kubernetes 安装时的简便配置。
 
-## Prerequisites
+## 安装的前提条件
 
-If your machine is behind a firewall, you need to open relevant ports by following the document [Port Requirements](../../installing-on-linux/introduction/port-firewall/).
+如果你的机器开启了防火墙，则需要按照文档打开[需要开放的端口](../../installing-on-linux/introduction/port-firewall/).
 
-## Step 1: Prepare Linux Machine
+## Step 1: 准备 Linux 机器
 
-See the requirements for hardware and operating system shown below. To get started with all-in-one installation, you only need to prepare one host according to the following requirements.
+请参考下面的对机器硬件和操作系统的要求。 要开始 all-in-one 安装，你需要根据以下要求准备一台主机。
+### 建议的机器硬件配置
 
-### Hardware Recommendation
-
-| System                                                 | Minimum Requirements                        |
+|  操作系统                                                |  最低要求                        |
 | ------------------------------------------------------ | ------------------------------------------- |
 | **Ubuntu** *16.04, 18.04*                              | CPU: 2 Cores, Memory: 4 G, Disk Space: 40 G |
 | **Debian** *Buster, Stretch*                           | CPU: 2 Cores, Memory: 4 G, Disk Space: 40 G |
@@ -29,27 +28,27 @@ See the requirements for hardware and operating system shown below. To get start
 
 {{< notice note >}}
 
-The system requirements above and the instructions below are for the default minimal installation without any optional components enabled. If your machine has at least 8 cores and 16G memory, it is recommended that you enable all components. For more information, see [Enable Pluggable Components](../../pluggable-components/).
+上面的系统要求和下面的说明适用于没有启用任何可选组件的默认最小安装。 如果你的计算机是 8C16G 及以上，则建议启用所有组件. 更多信息可以参考 [开启插件](../../pluggable-components/)。
 
 {{</ notice >}}
 
-### Node Requirements
+### 节点的要求
 
-- The node can be accessed through `SSH`.
-- `sudo`/`curl`/`openssl` should be used.
-- `docker` can be installed by yourself or by KubeKey.
+- 节点必须能够通过 `SSH` 连接。
+- 节点上可以使用 `sudo`/`curl`/`openssl` 命令。
+- `docker` 已经通过 KubeKey 安装。
 
 {{< notice note >}}
 
-`docker` must be installed in advance if you want to deploy KubeSphere in an offline environment.
+如果你想离线安装 kubeShpere，那么必须安装好 `docker`。
 
 {{</ notice >}}
 
-### Dependency Requirements
+### 需要安装的依赖项
 
-KubeKey can install Kubernetes and KubeSphere together. The dependency that needs to be installed may be different based on the Kubernetes version to be installed. You can refer to the list below to see if you need to install relevant dependencies on your node in advance.
+KubeKey 可以将 Kubernetes 和 KubeSphere 一起安装. 针对不同的 Kubernetes 版本，需要安装的依赖项可能有所不同。你 可以参考下面的列表，查看是否需要提前在节点上安装相关的依赖项。
 
-| Dependency  | Kubernetes Version ≥ 1.18 | Kubernetes Version < 1.18 |
+|  依赖项 | Kubernetes Version ≥ 1.18 | Kubernetes Version < 1.18 |
 | ----------- | ------------------------- | ------------------------- |
 | `socat`     | Required                  | Optional but recommended  |
 | `conntrack` | Required                  | Optional but recommended  |
@@ -58,41 +57,40 @@ KubeKey can install Kubernetes and KubeSphere together. The dependency that need
 
 {{< notice info >}}
 
-Developed in Go language, KubeKey represents a brand-new installation tool as a replacement for the ansible-based installer used before. KubeKey provides users with flexible installation choices, as they can install KubeSphere and Kubernetes separately or install them at one time, which is convenient and efficient.
+KubeKey 是用 Go 语言开发的，是一种全新的安装工具，可以代替以前使用的基于ansible 的安装程序。 KubeKey 为用户提供了灵活的安装选择，因为他可以分别安装KubeSphere 和 Kubernetes 或二者同时安装，既方便又高效。
 
 {{</ notice >}}
 
-### Network and DNS Requirements
+### 网络和 DNS 配置
 
-- Make sure the DNS address in `/etc/resolv.conf` is available. Otherwise, it may cause some issues of DNS in clusters.
-- If your network configuration uses Firewall or Security Group, you must ensure infrastructure components can communicate with each other through specific ports. It's recommended that you turn off the firewall or follow the guide [Port Requirements](../../installing-on-linux/introduction/port-firewall/).
+- 必须确保 `/etc/resolv.conf` 中的 DNS 配置是可用的，不然集群中的 DNS 可能会有问题。
+- 如果你的网络配置使用了防火墙或安全组，则必须确保基础组件可以通过特定端口相互通信。建议根据下面的指导将防火墙关闭[需要开发的端口](../../installing-on-linux/introduction/port-firewall/)。
 
 {{< notice tip >}}
 
-- It is recommended that your OS be clean (without any other software installed). Otherwise, there may be conflicts.
-- It is recommended that a container image mirror (accelerator) be prepared if you have trouble downloading images from dockerhub.io. See [Configure Booster for Installation](../../installing-on-linux/faq/configure-booster/).
+- 建议操作系统处于干净的状态（不安装任何其他软件），否则可能会发生冲突。
+- 如果你无法从 dockerhub.io 下载容器镜像，建议提前准备好容器镜像或者配置镜像加速器。 参考 [加速安装的配置](../../installing-on-linux/faq/configure-booster/)。
 
 {{</ notice >}}
 
-## Step 2: Download KubeKey
+## Step 2: 下载 KubeKey
 
-Follow the step below to download KubeKey.
+请按照以下步骤下载 KubeKey。
 
 {{< tabs >}}
 
-{{< tab "For users with good network connections to GitHub" >}}
+{{< tab "对于访问 GitHub 较快的用户" >}}
 
-Download KubeKey from [GitHub Release Page](https://github.com/kubesphere/kubekey/releases/tag/v1.0.0) or use the following command directly.
-
+ 从 [GitHub Release Page](https://github.com/kubesphere/kubekey/releases/tag/v1.0.0) 下载 kubekey 或者直接使用下面的命令。
 ```bash
 wget https://github.com/kubesphere/kubekey/releases/download/v1.0.0/kubekey-v1.0.0-linux-amd64.tar.gz -O - | tar -xz
 ```
 
 {{</ tab >}}
 
-{{< tab "For users with poor network connections to GitHub" >}}
+{{< tab "对于访问 GitHub 速度比较慢的用户" >}}
 
-Download KubeKey using the following command:
+使用下面的命令下载 KubeKey:
 
 ```bash
 wget -c https://kubesphere.io/download/kubekey-v1.0.0-linux-amd64.tar.gz -O - | tar -xz
@@ -102,21 +100,21 @@ wget -c https://kubesphere.io/download/kubekey-v1.0.0-linux-amd64.tar.gz -O - | 
 
 {{</ tabs >}}
 
-Make `kk` executable:
+为 `kk` 命令添加可执行权限:
 
 ```bash
 chmod +x kk
 ```
 
-## Step 3: Get Started with Installation
+## Step 3: 开始安装
 
-In this QuickStart tutorial, you only need to execute one command for installation, the template of which is shown below:
+在本快速入门教程中，你只需执行一个命令即可进行安装，其模板如下所示:
 
 ```bash
 ./kk create cluster [--with-kubernetes version] [--with-kubesphere version]
 ```
 
-Create a Kubernetes cluster with KubeSphere installed. Here is an example for your reference:
+创建安装了 KubeSphere 的 Kubernetes 集群。这是一个示例供你参考：
 
 ```bash
 ./kk create cluster --with-kubernetes v1.17.9 --with-kubesphere v3.0.0
@@ -124,31 +122,31 @@ Create a Kubernetes cluster with KubeSphere installed. Here is an example for yo
 
 {{< notice note >}}
 
-- Supported Kubernetes versions: *v1.15.12*, *v1.16.13*, *v1.17.9* (default), *v1.18.6*.
-- For all-in-one installation, generally speaking, you do not need to change any configuration.
-- KubeKey will install [OpenEBS](https://openebs.io/) to provision LocalPV for development and testing environment by default, which is convenient for new users. For other storage classes, see [Persistent Storage Configuration](../../installing-on-linux/introduction/storage-configuration/).
+- 支持的 Kubernetes 版本: *v1.15.12*, *v1.16.13*, *v1.17.9* (default), *v1.18.6*.
+- 一般来说，对于 all-in-one 安装，你无需更改任何配置。
+- KubeKey 会默认安装 [OpenEBS](https://openebs.io/) 为开发和测试环境提供LocalPV， 这对用户来说是非常方便的. 对于其它的 storage classes, 参考 [持久化存储配置](../../installing-on-linux/introduction/storage-configuration/).
 
 {{</ notice >}}
 
-After you execute the command, you will see a table as below for environment check.
+执行该命令后，将看到下面的表格，用于环境检查。
 
 ![environment-check](https://ap3.qingstor.com/kubesphere-website/docs/environment-check.png)
 
-Make sure the above components marked with `y` are installed and input `yes` to continue. For details, read [Node Requirements](#node-requirements) and [Dependency Requirements](#dependency-requirements) above.
+确保安装了上面标有 `y` 的组件，并输入 `yes` 继续。更多细节可以参考上面的[节点的要求](#节点的要求)和[需要安装的依赖项](#需要安装的依赖项)。
 
-## Step 4: Verify the Installation
+## Step 4: 验证安装结果
 
-When you see the output as below, it means the installation finishes.
+当你看到以下输出时，表明安装已经完成。
 
 ![installation-complete](https://ap3.qingstor.com/kubesphere-website/docs/Installation-complete.png)
 
-Input the following command to check the result.
+输入以下命令以检查安装结果。
 
 ```bash
 kubectl logs -n kubesphere-system $(kubectl get pod -n kubesphere-system -l app=ks-install -o jsonpath='{.items[0].metadata.name}') -f
 ```
 
-The output displays the IP address and port number of the web console, which is exposed through `NodePort 30880` by default. Now, you can access the console through `EIP:30880` with the default account and password (`admin/P@88w0rd`).
+输出会显示 Web 控制台的 IP 地址和端口号，默认的 NodePort 是 `30880`。 现在，你可以使用默认的帐户和密码（`admin /P@88w0rd`）通过 `EIP：30880` 访问控制台。
 
 ```bash
 #####################################################
@@ -174,17 +172,17 @@ https://kubesphere.io             20xx-xx-xx xx:xx:xx
 
 {{< notice note >}}
 
-You may need to bind EIP and configure port forwarding in your environment for external users to access the console. Besides, make sure the port 30880 is opened in your security groups.
+你可能需要在环境中绑定 `EIP` 并配置端口转发，以供外部用户访问控制台。此外，确保在安全组中打开了 `30880` 端口。
 
 {{</ notice >}}
 
-After logging in the console, you can check the status of different components in **Components**. You may need to wait for some components to be up and running if you want to use related services. You can also use `kubectl get pod --all-namespaces` to inspect the running status of KubeSphere workloads.
+检查完上面的安装日志后，可以到 **Components** 中确认各个组件的安装状态。 如果要使用相关服务，可能需要等待某些组件启动并运行。 你也可以使用 `kubectl get pod --all-namespaces` 来检查 KubeSphere 相关组件的运行状况。
 
 ![components](/images/docs/quickstart/kubesphere-components.png)
 
-## Enable Pluggable Components (Optional)
+## 开启插件 (可选)
 
-The guide above is used only for minimal installation by default. To enable other components in KubeSphere, see [Enable Pluggable Components](../../pluggable-components/) for more details.
+上面的指南默认情况下仅用于最简单的安装。 需要在 KubeSphere 中开启插件， 可参考 [开启插件](../../pluggable-components/)。
 
 ## Demo
 
