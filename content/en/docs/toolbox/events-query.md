@@ -4,7 +4,7 @@ keywords: 'KubeSphere, Kubernetes, Event, Query'
 description: 'How to perform event query in KubeSphere.'
 
 linkTitle: "Event Query"
-weight: 4190
+weight: 4900
 ---
 
 ## Objective
