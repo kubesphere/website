@@ -3,7 +3,7 @@ title: "Linux 上的 All-in-one 安装"
 keywords: 'KubeSphere, Kubernetes, All-in-one, Installation'
 description: 'All-in-one Installation on Linux'
 
-linkTitle: "kubeSphere 在 Linux 上的 All-in-one 安装"
+linkTitle: "在 Linux 上安装 All-in-one KubeSphere"
 weight: 3010
 ---
 
