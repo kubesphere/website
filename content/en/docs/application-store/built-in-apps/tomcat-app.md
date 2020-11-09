@@ -6,67 +6,83 @@ description: 'How to deploy Tomcat on KubeSphere through App Store'
 link title: "Deploy Tomcat"
 weight: 261
 ---
-[Apache Tomcat](https://tomcat.apache.org/index.html) software powers numerous large-scale, mission-critical web applications across a diverse range of industries and organizations.
-This tutorial walks you through an example of how to deploy Tomcat on KubeSphere.
+[Apache Tomcat](https://tomcat.apache.org/index.html) powers numerous large-scale, mission-critical web applications across a diverse range of industries and organizations. Tomcat provides a pure Java HTTP web server environment in which Java code can run.
+
+This tutorial walks you through an example of deploying Tomcat from the App Store of KubeSphere.
 
 ## Prerequisites
 
-- Please make sure you [enable the OpenPitrix system](https://kubesphere.io/docs/pluggable-components/app-store/). Tomcat will be deployed from the App Store.
-- You need to create a workspace, a project, and a user account for this tutorial.  The account needs to be a platform regular user and to be invited as the project operator with the `operator` role. In this tutorial, you log in as `project-operator` and work in the project `test-project` in the workspace `test-workspace`.
+- Please make sure you [enable the OpenPitrix system](https://kubesphere.io/docs/pluggable-components/app-store/).
+- You need to create a workspace, a project, and a user account for this tutorial. The account needs to be a platform regular user and to be invited as the project operator with the `operator` role. In this tutorial, you log in as `project-regular` and work in the project `demo-project` in the workspace `demo-workspace`. For more information, see [Create Workspace, Project, Account and Role](../../../quick-start/create-workspace-and-project/).
 
 ## Hands-on Lab
 
 ### Step 1: Deploy Tomcat from App Store
 
-Please make sure you are landing on the **Overview** page of the project `test-project`.
+1. On the **Overview** page of the project `demo-project`, click **App Store** in the top left corner.
 
-1. Go to **App Store**.
+   ![go-to-app-store](/images/docs/appstore/built-in-apps/tomcat-app/tomcat-app01.jpg)
 
-![go-to-app-store](/images/docs/tomcat-app/tomcat-app01.jpg)
+2. Find Tomcat and click **Deploy** on the **App Info** page.
 
-2. Find **Tomcat** and click **Deploy**.
+   ![find-tomcat](/images/docs/appstore/built-in-apps/tomcat-app/find-tomcat.jpg)
 
-![find-tomcat](/images/docs/tomcat-app/tomcat-app02.jpg)
+   ![click-deploy](/images/docs/appstore/built-in-apps/tomcat-app/click-deploy.jpg)
 
-![click-deploy](/images/docs/tomcat-app/tomcat-app03.jpg)
+3. Set a name and select an app version. Make sure Tomcat is deployed in `demo-project` and click **Next**.
 
-3. Make sure Tomcat is deployed in `test-project` and click **Next**.
+   ![click-next](/images/docs/appstore/built-in-apps/tomcat-app/click-next.jpg)
 
-![click-next](/images/docs/tomcat-app/tomcat-app04.jpg)
+4. In **App Config**, you can use the default configuration or customize the configuration by editing the YAML file directly. Click **Deploy** to continue.
 
-4. Use the default configuration and click **Deploy**.
-
-![click-demploy](/images/docs/tomcat-app/tomcat-app05.jpg)
+   ![deploy-tomcat](/images/docs/appstore/built-in-apps/tomcat-app/deploy-tomcat.jpg)
 
 5. Wait until Tomcat is up and running.
 
-![check-if-tomcat-is-running](/images/docs/tomcat-app/tomcat-app06.jpg)
+   ![tomcat-running](/images/docs/appstore/built-in-apps/tomcat-app/tomcat-running.jpg)
 
 ### Step 2: Access Tomcat Terminal
 
-1. Go to **Services** and click **tomcat-service-name**.
+1. Go to **Services** and click the service name of Tomcat.
 
-![click-tomcat-service](/images/docs/tomcat-app/tomcat-app07.jpg)
+   ![click-tomcat-service](/images/docs/appstore/built-in-apps/tomcat-app/click-tomcat-service.jpg)
 
-2. Expand pods information and click **terminal**. You can now use the feature.
-![click-container-terminal](/images/docs/tomcat-app/tomcat-app08.jpg)
-![tomcat-container-terminal](/images/docs/tomcat-app/tomcat-app09.jpg)
+2. Under **Pods**, expand the menu to see container details, and then click the **Terminal** icon.
 
-3. You can view the deployed projects in `/usr/local/tomcat/webapps`.
-![view-project](/images/docs/tomcat-app/tomcat-app10.jpg)
+   ![tomcat-teminal-icon](/images/docs/appstore/built-in-apps/tomcat-app/tomcat-teminal-icon.jpg)
 
-### Step 3: Access the Tomcat project in the browser
+3. You can view deployed projects in `/usr/local/tomcat/webapps`.
 
-1. Go to **Services** and click **tomcat-service-name**.
+   ![view-project](/images/docs/appstore/built-in-apps/tomcat-app/view-project.jpg)
 
-2. Click **More** and click **Edit Internet Access**.
-![click-edit-internet-access](/images/docs/tomcat-app/tomcat-app11.jpg)
+### Step 3: Access Tomcat Project from Browser
 
-3. Select **NodePort** and click **Ok**. [Learn More](https://v2-1.docs.kubesphere.io/docs/project-setting/project-gateway/)
-![select-nodeport](/images/docs/tomcat-app/tomcat-app12.jpg)
+To access Tomcat projects outside the cluster, you need to expose the app through NodePort first.
 
-4. Through <font color=green>{$NodeIP} : {$Nodeport} / {$Project path}</font>  to access the tomcat project in browser. 
-![tomcat-port](/images/docs/tomcat-app/tomcat-app13.jpg)
-![access-tomcat-browser](/images/docs/tomcat-app/tomcat-app14.jpg)
+1. Go to **Services** and click the service name of Tomcat.
 
-5. If you want to learn more information about Tomcat please refer to https://tomcat.apache.org/index.html.
+   ![click-tomcat-service](/images/docs/appstore/built-in-apps/tomcat-app/click-tomcat-service.jpg)
+
+2. Click **More** and select **Edit Internet Access** from the drop-down menu.
+
+   ![edit-internet-access](/images/docs/appstore/built-in-apps/tomcat-app/edit-internet-access.jpg)
+
+3. Select **NodePort** for **Access Method** and click **OK**. For more information, see [Project Gateway](https://deploy-preview-492--kubesphere-v3.netlify.app/docs/project-administration/project-gateway/).
+
+   ![nodeport](/images/docs/appstore/built-in-apps/tomcat-app/nodeport.jpg)
+
+4. Under **Service Ports**, you can see the port is exposed.
+
+   ![exposed-port](/images/docs/appstore/built-in-apps/tomcat-app/exposed-port.jpg)
+
+5. Access the sample Tomcat project through `{$NodeIP}:{$Nodeport}` in your browser. 
+
+   ![access-tomcat-browser](/images/docs/appstore/built-in-apps/tomcat-app/access-tomcat-browser.jpg)
+
+   {{< notice note >}}
+
+   You may need to open the port in your security groups and configure related port forwarding rules depending on your where your Kubernetes cluster is deployed.
+
+   {{</ notice >}} 
+
+6. For more information about Tomcat, refer to [the official documentation of Tomcat](https://tomcat.apache.org/index.html).
