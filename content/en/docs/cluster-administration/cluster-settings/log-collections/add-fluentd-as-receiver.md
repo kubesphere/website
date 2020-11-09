@@ -125,31 +125,30 @@ EOF
 
 1. To add a log receiver:
 
-- Login KubeSphere with an account of ***platform-admin*** role
-- Click ***Platform*** -> ***Clusters Management***
-- Select a cluster if multiple clusters exist
-- Click ***Cluster Settings*** -> ***Log Collections***
-- Log receivers can be added by clicking ***Add Log Collector***
+    - Login KubeSphere with an account of ***platform-admin*** role
+    - Click ***Platform*** -> ***Clusters Management***
+    - Select a cluster if multiple clusters exist
+    - Click ***Cluster Settings*** -> ***Log Collections***
+    - Log receivers can be added by clicking ***Add Log Collector***
 
-![Add receiver](/images/docs/cluster-administration/cluster-settings/log-collections/add-receiver.png)
+    ![Add receiver](/images/docs/cluster-administration/cluster-settings/log-collections/add-receiver.png)
 
 2. Choose ***Fluentd*** and fill in the Fluentd service address and port like below:
 
-![Add Fluentd](/images/docs/cluster-administration/cluster-settings/log-collections/add-fluentd.png)
+    ![Add Fluentd](/images/docs/cluster-administration/cluster-settings/log-collections/add-fluentd.png)
 
 3. Fluentd appears in the receiver list of ***Log Collections*** UI and its status shows ***Collecting***.
 
-![Receiver List](/images/docs/cluster-administration/cluster-settings/log-collections/receiver-list.png)
-
+    ![Receiver List](/images/docs/cluster-administration/cluster-settings/log-collections/receiver-list.png)
 
 4. Verify whether Fluentd is receiving logs sent from Fluent Bit:
 
-- Click ***Application Workloads*** in the ***Cluster Management*** UI.
-- Select ***Workloads*** and then select the `default` namespace in the ***Workload*** - ***Deployments*** tab
-- Click the ***fluentd*** item and then click the ***fluentd-xxxxxxxxx-xxxxx*** pod
-- Click the ***fluentd*** container
-- In the ***fluentd*** container page, select the ***Container Logs*** tab
+    - Click ***Application Workloads*** in the ***Cluster Management*** UI.
+    - Select ***Workloads*** and then select the `default` namespace in the ***Workload*** - ***Deployments*** tab
+    - Click the ***fluentd*** item and then click the ***fluentd-xxxxxxxxx-xxxxx*** pod
+    - Click the ***fluentd*** container
+    - In the ***fluentd*** container page, select the ***Container Logs*** tab
 
-You'll see logs begin to scroll up continuously.
+    You'll see logs begin to scroll up continuously.
 
-![Container Logs](/images/docs/cluster-administration/cluster-settings/log-collections/container-logs.png)
+    ![Container Logs](/images/docs/cluster-administration/cluster-settings/log-collections/container-logs.png)
