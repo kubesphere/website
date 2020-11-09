@@ -9,10 +9,6 @@ weight: 3010
 
 For those who are new to KubeSphere and looking for a quick way to discover the platform, the all-in-one mode is your best choice to get started. It features rapid deployment and hassle-free configuration installation with KubeSphere and Kubernetes all provisioned on your machine.
 
-## Prerequisites
-
-If your machine is behind a firewall, you need to open relevant ports by following the document [Port Requirements](../../installing-on-linux/introduction/port-firewall/).
-
 ## Step 1: Prepare Linux Machine
 
 See the requirements for hardware and operating system shown below. To get started with all-in-one installation, you only need to prepare one host according to the following requirements.
@@ -37,13 +33,13 @@ The system requirements above and the instructions below are for the default min
 
 - The node can be accessed through `SSH`.
 - `sudo`/`curl`/`openssl` should be used.
-- `docker` can be installed by yourself or by KubeKey.
+- `docker` can be installed by yourself or by [KubeKey](https://github.com/kubesphere/kubekey).
 
 {{< notice note >}}
 
 `docker` must be installed in advance if you want to deploy KubeSphere in an offline environment.
 
-{{</ notice >}} 
+{{</ notice >}}
 
 ### Dependency Requirements
 
@@ -65,7 +61,7 @@ Developed in Go language, KubeKey represents a brand-new installation tool as a 
 ### Network and DNS Requirements
 
 - Make sure the DNS address in `/etc/resolv.conf` is available. Otherwise, it may cause some issues of DNS in clusters.
-- If your network configuration uses Firewall or Security Group, you must ensure infrastructure components can communicate with each other through specific ports. It's recommended that you turn off the firewall or follow the guide [Network Access](https://github.com/kubesphere/kubekey/blob/master/docs/network-access.md).
+- If your network configuration uses Firewall or Security Group, you must ensure infrastructure components can communicate with each other through specific ports. It's recommended that you turn off the firewall or follow the guide [Port Requirements](../../installing-on-linux/introduction/port-firewall/).
 
 {{< notice tip >}}
 
@@ -80,22 +76,22 @@ Follow the step below to download KubeKey.
 
 {{< tabs >}}
 
-{{< tab "For users with poor network connections to GitHub" >}}
-
-Download KubeKey using the following command:
-
-```bash
-wget -c https://kubesphere.io/download/kubekey-v1.0.0-linux-amd64.tar.gz -O - | tar -xz
-```
-
-{{</ tab >}}
-
 {{< tab "For users with good network connections to GitHub" >}}
 
 Download KubeKey from [GitHub Release Page](https://github.com/kubesphere/kubekey/releases/tag/v1.0.0) or use the following command directly.
 
 ```bash
 wget https://github.com/kubesphere/kubekey/releases/download/v1.0.0/kubekey-v1.0.0-linux-amd64.tar.gz -O - | tar -xz
+```
+
+{{</ tab >}}
+
+{{< tab "For users with poor network connections to GitHub" >}}
+
+Download KubeKey using the following command:
+
+```bash
+wget -c https://kubesphere.io/download/kubekey-v1.0.0-linux-amd64.tar.gz -O - | tar -xz
 ```
 
 {{</ tab >}}
@@ -110,14 +106,13 @@ chmod +x kk
 
 ## Step 3: Get Started with Installation
 
-In this QuickStart tutorial, you only need to execute one command for installation, the template of which is shown below:
+In this Quickstart tutorial, you only need to execute one command for installation, the template of which is shown below:
 
 ```bash
 ./kk create cluster [--with-kubernetes version] [--with-kubesphere version]
 ```
 
 Create a Kubernetes cluster with KubeSphere installed. Here is an example for your reference:
-
 
 ```bash
 ./kk create cluster --with-kubernetes v1.17.9 --with-kubesphere v3.0.0
@@ -135,7 +130,7 @@ After you execute the command, you will see a table as below for environment che
 
 ![environment-check](https://ap3.qingstor.com/kubesphere-website/docs/environment-check.png)
 
-Make sure the above components marked with `y` are installed and input `yes` to continue.
+Make sure the above components marked with `y` are installed and input `yes` to continue. For details, read [Node Requirements](#node-requirements) and [Dependency Requirements](#dependency-requirements) above.
 
 ## Step 4: Verify the Installation
 
@@ -149,7 +144,7 @@ Input the following command to check the result.
 kubectl logs -n kubesphere-system $(kubectl get pod -n kubesphere-system -l app=ks-install -o jsonpath='{.items[0].metadata.name}') -f
 ```
 
-The output displays the IP address and port number of the web console, which is exposed through `NodePort 30880` by default. Now, you can access the console through `EIP:30880` with the default account and password (`admin/P@88word`).
+The output displays the IP address and port number of the web console, which is exposed through `NodePort 30880` by default. Now, you can access the console through `EIP:30880` with the default account and password (`admin/P@88w0rd`).
 
 ```bash
 #####################################################
@@ -186,3 +181,7 @@ After logging in the console, you can check the status of different components i
 ## Enable Pluggable Components (Optional)
 
 The guide above is used only for minimal installation by default. To enable other components in KubeSphere, see [Enable Pluggable Components](../../pluggable-components/) for more details.
+
+## Demo
+
+<script src="https://asciinema.org/a/362291.js" id="asciicast-362291" async></script>

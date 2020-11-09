@@ -13,21 +13,14 @@ KubeKey is recommended for users whose KubeSphere and Kubernetes were both deplo
 - You need to have a KubeSphere cluster running version 2.1.1.
 
 {{< notice warning >}}
+
 If your KubeSphere version is v2.1.0 or earlier, please upgrade to v2.1.1 first.
+
 {{</ notice >}}
 
 - Download KubeKey.
 
 {{< tabs >}}
-
-{{< tab "For users with poor network connections to GitHub" >}}
-
-Download KubeKey using the following command:
-
-```bash
-wget -c https://kubesphere.io/download/kubekey-v1.0.0-linux-amd64.tar.gz -O - | tar -xz
-```
-{{</ tab >}}
 
 {{< tab "For users with good network connections to GitHub" >}}
 
@@ -35,6 +28,16 @@ Download KubeKey from [GitHub Release Page](https://github.com/kubesphere/kubeke
 
 ```bash
 wget https://github.com/kubesphere/kubekey/releases/download/v1.0.0/kubekey-v1.0.0-linux-amd64.tar.gz -O - | tar -xz
+```
+
+{{</ tab >}}
+
+{{< tab "For users with poor network connections to GitHub" >}}
+
+Download KubeKey using the following command:
+
+```bash
+wget -c https://kubesphere.io/download/kubekey-v1.0.0-linux-amd64.tar.gz -O - | tar -xz
 ```
 {{</ tab >}}
 
@@ -49,7 +52,9 @@ chmod +x kk
 - Make sure you read [Release Notes For 3.0.0](../../release/release-v300/) carefully.
 
 {{< notice warning >}}
+
 In v3.0.0, KubeSphere refactors many of its components such as Fluent Bit Operator and IAM. Make sure you back up any important components in case you heavily customized them but not from console.
+
 {{</ notice >}}
 
 - Make your upgrade plan. Two upgrading scenarios are documented below.
@@ -71,7 +76,7 @@ Upgrading steps are different for single-node clusters (all-in-one) and multi-no
 The following command upgrades your single-node cluster to KubeSphere v3.0.0 and Kubernetes v1.17.9 (default):
 
 ```bash
-./kk upgrade --with-kubesphere --with-kubernetes
+./kk upgrade --with-kubernetes v1.17.9 --with-kubesphere v3.0.0
 ```
 
 To upgrade Kubernetes to a specific version, please explicitly provide the version after the flag `--with-kubernetes`. Available versions are:
@@ -92,7 +97,9 @@ This command creates a configuration file `config-sample.yaml` from your cluster
 ```
 
 {{< notice note >}}
+
 It assumes your kubeconfig is allocated in `~/.kube/config`. You can change it with the flag `--kubeconfig`.
+
 {{</ notice >}}
 
 #### Step 2: Modify the configuration file template
@@ -105,14 +112,16 @@ Modify `config-sample.yaml` to fit your cluster setup. Make sure you replace the
 - `registry`: Input image registry information (Optional).
 
 {{< notice note >}}
-Please refer to the Cluster section of [config-example.yaml](https://github.com/kubesphere/kubekey/blob/master/docs/config-example.md) for more information.
+
+Please refer to the `Cluster` section of [config-example.yaml](https://github.com/kubesphere/kubekey/blob/master/docs/config-example.md) for more information.
+
 {{</ notice >}}
 
 #### Step 3: Upgrade your cluster
 The following command upgrades your cluster to KubeSphere v3.0.0 and Kubernetes v1.17.9 (default):
 
 ```bash
-./kk upgrade --with-kubesphere --with-kubernetes -f config-sample.yaml
+./kk upgrade --with-kubernetes v1.17.9 --with-kubesphere v3.0.0 -f config-sample.yaml
 ```
 
 To upgrade Kubernetes to a specific version, please explicitly provide the version after the flag `--with-kubernetes`. Available versions are:

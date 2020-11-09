@@ -1,32 +1,32 @@
 ---
-title: "Network Policy"
+title: "网络策略"
 keywords: "Kubernetes, KubeSphere, NetworkPolicy"
-description: "How to Enable Network Policy"
+description: "如何启用网络策略"
 
-linkTitle: "Network Policy"
+linkTitle: "网络策略"
 weight: 3547
 ---
 
-## What is Network Policy
+## 什么是网络策略
 
-Starting from v3.0.0, users can configure network policies of native Kubernetes in KubeSphere. Network Policies are an application-centric construct, enabling you to specify how a pod is allowed to communicate with various network entities over the network. With network policies, users can achieve network isolation within the same cluster, which means firewalls can be set up between certain instances (pods).
+从 v3.0.0 开始，用户可以在 KubeSphere 中配置原生 Kubernetes 的网络策略。网络策略是一种以应用为中心的构造，可以让你指定一个 Pod 如何被允许通过网络与各种网络实体进行通信。通过网络策略，用户可以在同一集群内实现网络隔离，这意味着可以在某些实例（Pod）之间设置防火墙。
 
 {{< notice note >}}
 
-- Please make sure that the CNI network plugin used by the cluster supports Network Policies before you enable it. There are a number of CNI network plugins that support Network Policies, including Calico, Cilium, Kube-router, Romana and Weave Net.
-- It is recommended that you use [Calico](https://www.projectcalico.org/) as the CNI plugin before you enable Network Policy.
+- 在启用之前，请确保集群使用的 CNI 网络插件支持网络策略。支持网络策略的 CNI 网络插件有很多，包括 Calico、Cilium、Kube-router、Romana 和 Weave Net。
+- 建议您在启用网络策略之前，使用 [Calico](https://www.projectcalico.org/) 作为 CNI 插件。
 
 {{</ notice >}}
 
-For more information, see [Network Policies](https://kubernetes.io/docs/concepts/services-networking/network-policies/).
+更多信息请参见[网络政策](https://kubernetes.io/docs/concepts/services-networking/network-policies/)。
 
-## Enable Network Policy before Installation
+## 在安装前启用网络策略
 
-### Installing on Linux
+### 在 Linux 上安装
 
-When you install KubeSphere on Linux, you need to create a configuration file, which lists all KubeSphere components.
+当您在 Linux 上安装 KubeSphere 时，你需要创建一个配置文件，该文件列出了所有 KubeSphere 组件。
 
-1. In the tutorial of [Installing KubeSphere on Linux](../../installing-on-linux/introduction/multioverview/), you create a default file **config-sample.yaml**. Modify the file by executing the following command:
+1. 基于[在 Linux 上安装 KubeSphere](.../.../installing-on-linux/introduction/multioverview/) 的教程，您创建了一个默认文件 **config-sample.yaml**。通过执行以下命令修改该文件：
 
 ```bash
 vi config-sample.yaml
@@ -34,73 +34,74 @@ vi config-sample.yaml
 
 {{< notice note >}}
 
-If you adopt [All-in-one Installation](../../quick-start/all-in-one-on-linux/), you do not need to create a config-sample.yaml file as you can create a cluster directly. Generally, the all-in-one mode is for users who are new to KubeSphere and look to get familiar with the system. If you want to enable Network Policy in this mode (e.g. for testing purpose), refer to the following section to see how Network Policy can be installed after installation.
+如果采用 [All-in-one 安装](.../.../quick-start/all-in-one-on-linux/)，则不需要创建 `config-sample.yaml` 文件，因为可以直接创建集群。一般来说，All-in-one 模式是为那些刚刚接触 KubeSphere 并希望熟悉系统的用户准备的。如果您想在这个模式下启用网络策略（比如出于测试的目的），可以参考下面的部分，看看安装后如何启用网络策略。
 
 {{</ notice >}}
 
-2. In this file, navigate to `networkpolicy` and change `false` to `true` for `enabled`. Save the file after you finish.
+2. 在该文件中，搜寻到 `networkpolicy`，并将 `enabled` 的 `false` 改为 `true`。完成后保存文件。
 
 ```bash
 networkpolicy:
     enabled: true # Change "false" to "true"
 ```
 
-3. Create a cluster using the configuration file:
+3. 使用配置文件创建一个集群：
 
 ```bash
 ./kk create cluster -f config-sample.yaml
 ```
 
-### **Installing on Kubernetes**
+### 在 Kubernetes 上安装
 
-When you install KubeSphere on Kubernetes, you need to download the file [cluster-configuration.yaml](https://raw.githubusercontent.com/kubesphere/ks-installer/master/deploy/cluster-configuration.yaml) for cluster setting. If you want to install Network Policy, do not use `kubectl apply -f` directly for this file.
+在 Kubernetes 上安装 KubeSphere 时，需要下载文件 [cluster-configuration.yaml](https://raw.githubusercontent.com/kubesphere/ks-installer/master/deploy/cluster-configuration.yaml) 进行集群设置。如果要安装网络策略，不要直接使用 `kubectl apply -f` 对这个文件进行设置。
 
-1. In the tutorial of [Installing KubeSphere on Kubernetes](../../installing-on-kubernetes/introduction/overview/), you execute `kubectl apply -f` first for the file [kubesphere-installer.yaml](https://raw.githubusercontent.com/kubesphere/ks-installer/master/deploy/kubesphere-installer.yaml). After that, to enable Network Policy, create a local file cluster-configuration.yaml.
+1. 参照[在 Kubernetes 上安装 KubeSphere](.../.../installing-on-kubernetes/introduction/overview/) 的教程，先对文件 [kubesphere-installer.yaml](https://raw.githubusercontent.com/kubesphere/ks-installer/master/deploy/kubesphere-installer.yaml) 执行 `kubectl apply -f`。之后，为了启用网络策略，创建一个本地文件 `cluster-configuration.yaml`。
 
 ```bash
 vi cluster-configuration.yaml
 ```
 
-2. Copy all the content in the file [cluster-configuration.yaml](https://raw.githubusercontent.com/kubesphere/ks-installer/master/deploy/cluster-configuration.yaml) and paste it to the local file just created.
-3. In this local cluster-configuration.yaml file, navigate to `networkpolicy` and enable Network Policy by changing `false` to `true` for `enabled`. Save the file after you finish.
+2. 将 [cluster-configuration.yaml](https://github.com/kubesphere/ks-installer/releases/download/v3.0.0/cluster-configuration.yaml) 文件中的所有内容复制到刚才创建的本地文件中。
+   
+3. 在这个本地 `cluster-configuration.yaml` 文件中，搜寻到 `networkpolicy`，并将  `enabled` 的 `false` 改为 `true`，启用它们。完成后保存文件。
 
 ```bash
 networkpolicy:
     enabled: true # Change "false" to "true"
 ```
 
-4. Execute the following command to start installation:
+4. 执行以下命令开始安装：
 
 ```bash
 kubectl apply -f cluster-configuration.yaml
 ```
 
-## Enable Network Policy after Installation
+## 在安装后启用网络策略
 
-1. Log in the console as `admin`. Click **Platform** in the top-left corner and select **Clusters Management**.
+1. 以 `admin` 身份登录控制台。点击左上角的**平台管理**，选择**集群管理**。
 
-![clusters-management](https://ap3.qingstor.com/kubesphere-website/docs/20200828111130.png)
+![集群管理](https://ap3.qingstor.com/kubesphere-website/docs/20200828111130.png)
 
-2. Click **CRDs** and enter `clusterconfiguration` in the search bar. Click the result to view its detailed page.
+2. 点击 **自定义资源 CRD**，在搜索栏中输入 `clusterconfiguration`。点击结果查看其详细页面。
 
 {{< notice info >}}
 
-A Custom Resource Definition (CRD) allows users to create a new type of resources without adding another API server. They can use these resources like any other native Kubernetes objects.
+自定义资源定义（CRD）允许用户在不增加另一个 API 服务器的情况下创建一种新的资源类型。他们可以像其他任何本地 Kubernetes 对象一样使用这些资源。
 
 {{</ notice >}}
 
-3. In **Resource List**, click the three dots on the right of `ks-installer` and select **Edit YAML**.
+3. 在**资源列表**中，点击 `ks-installer` 右边的三个点，选择**编辑 YAML**。
 
-![edit-yaml](https://ap3.qingstor.com/kubesphere-website/docs/20200827182002.png)
+![编辑 YAML](https://ap3.qingstor.com/kubesphere-website/docs/20200827182002.png)
 
-4. In this yaml file, navigate to `networkpolicy` and change `false` to `true` for `enabled`. After you finish, click **Update** in the bottom-right corner to save the configuration.
+4. 在这个 YAML 文件中，搜寻到 `networkpolicy`，将 `enabled` 的 `false` 改为 `true`。完成后，点击右下角的**更新**，保存配置。
 
 ```bash
 networkpolicy:
     enabled: true # Change "false" to "true"
 ```
 
-5. You can use the web kubectl to check the installation process by executing the following command:
+5. 您可以通过执行以下命令，使用 Web Kubectl 工具来检查安装过程：
 
 ```bash
 kubectl logs -n kubesphere-system $(kubectl get pod -n kubesphere-system -l app=ks-install -o jsonpath='{.items[0].metadata.name}') -f
@@ -108,12 +109,12 @@ kubectl logs -n kubesphere-system $(kubectl get pod -n kubesphere-system -l app=
 
 {{< notice tip >}}
 
-You can find the web kubectl tool by clicking the hammer icon in the bottom-right corner of the console.
+您可以通过点击控制台右下角的锤子图标找到 Kubectl 工具。
 
 {{</ notice >}}
 
-## Verify the Installation of Component
+## 验证组件的安装
 
-If you can see **Network Policies** in **Network** as the image below, it means the installation succeeds as this part won't display until you install the component.
+如果您能在**网络管理**中看到**网络策略**，如下图所示，说明安装成功，因为在安装组件之前，这部分不会显示。
 
 ![networkpolicy](https://ap3.qingstor.com/kubesphere-website/docs/20200831162836.png)

@@ -6,7 +6,7 @@ css: scss/case-detail.scss
 
 section1:
   title: VNG
-  content: VNG Coporation 是越南领先的互联网科技公司。在 2014 年，我们被评为越南唯一一家估值 10 亿美元的创业公司。VNG 推出了许多重要产品，比如 Zalo、ZaloPay 和 Zing 等，吸引了数亿用户。
+  content: VNG Corporation 是越南领先的互联网科技公司。在 2014 年，我们被评为越南唯一一家估值 10 亿美元的创业公司。VNG 推出了许多重要产品，比如 Zalo、ZaloPay 和 Zing 等，吸引了数亿用户。
   image: https://pek3b.qingstor.com/kubesphere-docs/png/20200619222719.png
 
 section2:

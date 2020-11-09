@@ -65,7 +65,7 @@ kubectl logs -n kubesphere-system $(kubectl get pod -n kubesphere-system -l app=
 ```
 
 ### Prepare a Member Cluster
-
+  
 In order to manage the member cluster within the **host cluster**, you need to make `jwtSecret` the same between them. Therefore, you need to get it first from the **host cluster** by the following command.
 
 ```bash

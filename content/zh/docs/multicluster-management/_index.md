@@ -1,26 +1,62 @@
 ---
-title: "Multi-cluster Management"
-description: "Import a hosted or on-premises Kubernetes cluster into KubeSphere"
+title: "多集群管理"
+description: "将托管的或本地的 Kubernetes 集群导入 KubeSphere"
 layout: "single"
 
-linkTitle: "Multi-cluster Management"
+linkTitle: "多集群管理"
 
 weight: 3000
 
 icon: "/images/docs/docs.svg"
-
 ---
 
-Today, it's very common for organizations to run and manage multiple Kubernetes Clusters on different cloud providers or infrastructures. Each Kubernetes cluster is a relatively self-contained unit. And the upstream community is struggling to research and develop the multi-cluster management solution, such as [kubefed](https://github.com/kubernetes-sigs/kubefed).
+## 介绍
 
-The most common use cases in multi-cluster management including **service traffic load balancing, development and production isolation, decoupling of data processing and data storage, cross-cloud backup and disaster recovery, flexible allocation of computing resources, low latency access with cross-region services, and no vendor lock-in,** etc.
+本章演示如何使用 KubeSphere 的多集群功能导入异构集群以进行统一的管理。
 
-KubeSphere is developed to address the multi-cluster and multi-cloud management challenges and implement the proceeding user scenarios, providing users with a unified control plane to distribute applications and its replicas to multiple clusters from public cloud to on-premise environment. KubeSphere also provides rich observability cross multiple clusters including centralized monitoring, logging, events, and auditing logs.
+### [概要](../multicluster-management/introduction/overview/)
 
-![KubeSphere Multi-cluster Management](/images/docs/multi-cluster-overview.jpg)
+对多集群管理有个基本的了解，例如多集群管理的常见用例，以及 KubeSphere 可以通过多集群功能带来的好处。
 
-## Most Popular Pages
+### [KubeSphere 中的 Kubernetes 联邦](../multicluster-management/introduction/kubefed-in-kubesphere/)
 
-Below you will find some of the most common and helpful pages from this chapter. We highly recommend you to review them at first.
+了解 KubeSphere 中的 Kubernetes 联邦的基本概念，包括 M 集群和 H 集群。
 
-{{< popularPage icon="/images/docs/bitmap.jpg" title="Install KubeSphere on AWS EC2" description="Provisioning a new Kubernetes and KubeSphere cluster based on AWS" link="" >}}
+## 直接连接
+
+### [直接连接](../multicluster-management/enable-multicluster/direct-connection/)
+
+了解通过直接连接导入集群的一般步骤。
+
+### [代理连接](../multicluster-management/enable-multicluster/agent-connection/)
+
+了解通过代理连接导入集群的一般步骤。
+
+### [获取 KubeConfig](../multicluster-management/enable-multicluster/retrieve-kubeconfig/)
+
+获取通过直接连接导入集群所需的 KubeConfig。
+
+## 导入云托管的 Kubernetes 集群
+
+### [导入阿里云 ACK 集群](../multicluster-management/import-cloud-hosted-k8s/import-aliyun-ack/)
+
+了解如何导入阿里云 Kubernetes 集群。
+
+### [导入 AWS EKS 集群](../multicluster-management/import-cloud-hosted-k8s/import-aws-eks/)
+
+了解如何导入 Amazon Elastic Kubernetes 服务集群。
+
+## 导入本地 Kubernetes 集群
+
+### [导入 Kubeadm Kubernetes 集群](../multicluster-management/import-on-prem-k8s/import-kubeadm-k8s/)
+
+了解如何导入通过 kubeadm 创建的 Kubernetes 集群。
+
+## 删除集群
+
+### [从 KubeSphere 删除集群](../multicluster-management/remove-cluster/kubefed-in-kubesphere/)
+
+了解如何从 KubeSphere 的集群池中解除集群的绑定。
+
+
+

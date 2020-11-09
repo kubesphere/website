@@ -26,20 +26,12 @@ After you make sure your machine meets the prerequisites, you can follow the ste
 - Execute the following commands:
 
 ```bash
-kubectl apply -f https://raw.githubusercontent.com/kubesphere/ks-installer/v3.0.0/deploy/kubesphere-installer.yaml
+kubectl apply -f https://github.com/kubesphere/ks-installer/releases/download/v3.0.0/kubesphere-installer.yaml
+
+kubectl apply -f https://github.com/kubesphere/ks-installer/releases/download/v3.0.0/cluster-configuration.yaml
 ```
 
-```bash
-kubectl apply -f https://raw.githubusercontent.com/kubesphere/ks-installer/v3.0.0/deploy/cluster-configuration.yaml
-```
-
-{{< notice note >}}
-
-If your server has trouble accessing GitHub, you can copy the content in [kubesphere-installer.yaml](https://raw.githubusercontent.com/kubesphere/ks-installer/v3.0.0/deploy/kubesphere-installer.yaml) and [cluster-configuration.yaml](https://raw.githubusercontent.com/kubesphere/ks-installer/v3.0.0/deploy/cluster-configuration.yaml) respectively and past it to local files. You then can use `kubectl apply -f` for the local files to install KubeSphere.
-
-{{</ notice >}}
-
-Inspect the logs of installation:
+- Inspect the logs of installation:
 
 ```bash
 kubectl logs -n kubesphere-system $(kubectl get pod -n kubesphere-system -l app=ks-install -o jsonpath='{.items[0].metadata.name}') -f
@@ -59,3 +51,6 @@ kubectl get svc/ks-console -n kubesphere-system
 ## Enable Pluggable Components (Optional)
 
 The guide above is used only for minimal installation by default. To enable other components in KubeSphere, see [Enable Pluggable Components](../../pluggable-components/) for more details.
+
+## Demo
+<script src="https://asciinema.org/a/362122.js" id="asciicast-362122" async></script>

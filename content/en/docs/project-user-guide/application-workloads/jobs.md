@@ -1,6 +1,6 @@
 ---
 title: "Jobs"
-keywords: "kubesphere, kubernetes, docker, jobs"
+keywords: "KubeSphere, Kubernetes, docker, jobs"
 description: "Create a Kubernetes Job"
 
 weight: 2260
@@ -8,101 +8,164 @@ weight: 2260
 
 A Job creates one or more Pods and ensures that a specified number of them successfully terminate. As pods successfully complete, the Job tracks the successful completions. When a specified number of successful completions is reached, the task (ie, Job) is complete. Deleting a Job will clean up the Pods it created.
 
-A simple case is to create one Job object in order to reliably run one Pod to completion. The Job object will start a new Pod if the first Pod fails or is deleted (for example due to a node hardware failure or a node reboot).
+A simple case is to create one Job object in order to reliably run one Pod to completion. The Job object will start a new Pod if the first Pod fails or is deleted (for example due to a node hardware failure or a node reboot). You can also use a Job to run multiple Pods in parallel.
 
-You can also use a Job to run multiple Pods in parallel.
+The following example demonstrates specific steps of creating a Job (computing π to 2000 decimal places) in KubeSphere.
 
 ## Prerequisites
 
-- You need to create a workspace, project and `project-regular` account. Please refer to the [Getting Started with Multi-tenant Management](../../../quick-start/create-workspace-and-project) if not yet.
-- You need to sign in with `project-admin` account and invite `project-regular` to enter the corresponding project if not yet. Please refer to [Invite Member](../../../quick-start/create-workspace-and-project#task-3-create-a-project).
+- You need to create a workspace, a project and an account (`project-regular`). Please refer to [Create Workspace, Project, Account and Role](../../../quick-start/create-workspace-and-project) if they are not ready yet.
+- You need to sign in with `project-admin` account first and invite `project-regular` to the corresponding project. If it is not ready yet, please [invite a member](../../../quick-start/create-workspace-and-project#task-3-create-a-project) first.
 
 ## Create a Job
 
-### Step 1. Open Modal
+### Step 1: Open Dashboard
 
-1. Go to **Application Workloads** and click **Jobs**.
+1. Log in the console as `project-regular`. Go to **Application Workloads** and click **Jobs**.
 2. Click **Create** button to open the modal.
 
-![](/images/docs/job-list.png)
+![create-job](/images/docs/project-user-guide/application-workloads/jobs/create-job.jpg)
 
-### Step 2. Basic Info
+### Step 2: Input Basic Information
 
-Enter the basic information.
+Enter the basic information. Refer to the image below as an example.
 
-- **Name**: The name of the job, which is also the unique identifier.
-- **Alias**: The alias name of the job, making resources easier to identify.
+- **Name**: The name of the Job, which is also the unique identifier.
+- **Alias**: The alias name of the Job, making resources easier to identify.
+- **Description**: The description of the Job, which gives a brief introduction of the Job.
 
-  ![](/images/docs/job-create-basic-info.png)
+![job-create-basic-info](/images/docs/project-user-guide/application-workloads/jobs/job-create-basic-info.png)
 
-### Step 3. Job Settings
+### Step 3: Job Settings (Optional)
 
-Enter the job parameters (optional).
+You can set the values in this step as below or click **Next** to skip it directly. Refer to the table below for detailed explanations of each field.
 
-![](/images/docs/job-create-job-settings.png)
+![job-create-job-settings](/images/docs/project-user-guide/application-workloads/jobs/job-create-job-settings.png)
 
-#### Job Parameters
+| Name                    | Definition                   | Description                                                  |
+| ----------------------- | ---------------------------- | ------------------------------------------------------------ |
+| Back off Limit          | `spec.backoffLimit`          | It specifies the number of retries before this Job is marked failed. It defaults to 6. |
+| Completions             | `spec.completions`           | It specifies the desired number of successfully finished pods the Job should be run with. Setting it to nil means that the success of any pod signals the success of all pods, and allows parallelism to have any positive value. Setting it to 1 means that parallelism is limited to 1 and the success of that pod signals the success of the Job. For more information, see [Jobs](https://kubernetes.io/docs/concepts/workloads/controllers/jobs-run-to-completion/). |
+| Parallelism             | `spec.parallelism`           | It specifies the maximum desired number of pods the Job should run at any given time. The actual number of pods running in a steady state will be less than this number when the work left to do is less than max parallelism ((`.spec.completions - .status.successful`) < `.spec.parallelism`). For more information, see [Jobs](https://kubernetes.io/docs/concepts/workloads/controllers/jobs-run-to-completion/). |
+| Active Deadline Seconds | `spec.activeDeadlineSeconds` | It specifies the duration in seconds relative to the startTime that the Job may be active before the system tries to terminate it; the value must be a positive integer. |
 
-| Name                    | Definition                   | Description                                                                                                                                                                                                                                                                                                                                                                                                                              |
-| ----------------------- | ---------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| Back of Limit           | `spec.backoffLimit`          | Specifies the number of retries before marking this job failed. Defaults to 6                                                                                                                                                                                                                                                                                                                                                            |
-| Completions             | `spec.completions`           | Specifies the desired number of successfully finished pods the job should be run with. Setting to nil means that the success of any pod signals the success of all pods, and allows parallelism to have any positive value. Setting to 1 means that parallelism is limited to 1 and the success of that pod signals the success of the job. More info: https://kubernetes.io/docs/concepts/workloads/controllers/jobs-run-to-completion/ |
-| Parallelism             | `spec.parallelism`           | Specifies the maximum desired number of pods the job should run at any given time. The actual number of pods running in steady state will be less than this number when ((.spec.completions - .status.successful) < .spec.parallelism), i.e. when the work left to do is less than max parallelism. More info: https://kubernetes.io/docs/concepts/workloads/controllers/jobs-run-to-completion/                                         |
-| Active Deadline Seconds | `spec.activeDeadlineSeconds` | Specifies the duration in seconds relative to the startTime that the job may be active before the system tries to terminate it; value must be positive integer                                                                                                                                                                                                                                                                           |
+### Step 4: Set Image
 
-### Step 4. Container Image
+1. Select **Never** for **Restart Policy**. You can only specify **Never** or **OnFailure** for **Restart Policy** when the Job is not completed:
 
-Set up the **container images**.
+   - If **Restart Policy** is set to **Never**, the Job creates a new Pod when the Pod fails, and the failed Pod does not disappear.
 
-![](/images/docs/job-container-settings.png)
+   - If **Restart Policy** is set to **OnFailure**, the Job will internally restart the container when the Pod fails, instead of creating a new Pod.
 
-- **Restart Policy** can only specify `Never` or `OnFailure`, when the job is not completed:
+![job-container-settings](/images/docs/project-user-guide/application-workloads/jobs/job-container-settings.png)
 
-  - If Restart Policy specifies `Never`, the job creates a new Pod when the Pod fails, and the failed Pod does not disappear.
-  - If Restart Policy specifies `OnFailure`, the job will internally restart the container when the Pod fails, instead of creating a new Pod.
+2. Click **Add Container Image** which directs you to the **Add Container** page. Enter `perl` in the image search bar and press the **Return** key.
 
-- To add a container for the job, please refer to [Pod Containers](../deployments) for details.
+![add-container-image-job](/images/docs/project-user-guide/application-workloads/jobs/add-container-image-job.png)
 
-### Step 5. Mount Volumes
+3. On the same page, scroll down to **Start Command**. Input the following commands in the box which computes pi to 2000 places then prints it. Click **√** in the bottom right corner and select **Next** to continue.
 
-Refer to [Pod Volumes](../deployments) for details.
+```bash
+perl,-Mbignum=bpi,-wle,print bpi(2000)
+```
 
-### Step 6. Advanced Settings
+![start-command-job](/images/docs/project-user-guide/application-workloads/jobs/start-command-job.jpg)
 
-Refer to [Deployment Advanced Settings](../deployments) for details.
+{{< notice note >}}
 
-### Step 7. Check Result
+For more information about setting images, see [Container Image Settings](../container-image-settings/).
 
-If success, a new item will be added the Job list.
+{{</ notice >}} 
 
-![](/images/docs/job-list-new.png)
+### Step 5: Inspect Job Manifest (Optional)
 
-## Check Job detail
+1. Enable **Edit Mode** in the top right corner which displays the manifest file of the Job. You can see all the values are set based on what you have specified in the previous steps.
 
-You can check the job's detail via click job's name in the list.
+```yaml
+apiVersion: batch/v1
+kind: Job
+metadata:
+  namespace: cc
+  labels:
+    app: job-test-1
+  name: job-test-1
+  annotations:
+    kubesphere.io/alias-name: Test
+    kubesphere.io/description: A job test
+spec:
+  template:
+    metadata:
+      labels:
+        app: job-test-1
+      annotations:
+        kubesphere.io/containerSecrets: null
+    spec:
+      containers:
+        - name: container-xv4p2o
+          imagePullPolicy: IfNotPresent
+          image: perl
+          command:
+            - perl
+            - '-Mbignum=bpi'
+            - '-wle'
+            - print bpi(2000)
+      restartPolicy: Never
+      serviceAccount: default
+      initContainers: []
+      volumes: []
+      imagePullSecrets: null
+  backoffLimit: 5
+  parallelism: 2
+  completions: 4
+  activeDeadlineSeconds: 300
+```
 
-### Job Operations
+2. You can make adjustments in the manifest directly and click **Create** or disable the **Edit Mode** and get back to the **Create Job** page.
 
-- **Edit Info**: Editing the basic information except `Name` of the job, .
-- **Rerun Job**: Re-run the job, the pod will restart, and a new execution record will be generated.
-- **View YAML**: View the job's specification in YAML format.
-- **Delete**: Delete the job, and return to the job list page.
+{{< notice note >}} 
 
-  ![](/images/docs/job-actions.png)
+You can skip **Mount Volumes** and **Advanced Settings** for this tutorial. For more information, see [Pod Volumes](../deployments) and [Deployment Advanced Settings](../deployments).
 
-### Execution Records
+{{</ notice >}}
 
-You can check the execution records of the job.
+### Step 6: Check Result
 
-![](/images/docs/job-detail-records.jpg)
+1. In the final step of **Advanced Settings**, click **Create** to finish. A new item will be added the Job list if the creation is successful.
 
-### Resource Status
+![job-list-new](/images/docs/project-user-guide/application-workloads/jobs/job-list-new.png)
 
-Click **Resource Status** tab to check the pods of the job.
+2. Click this Job and go to **Execution Records** tab where you can see the information of each execution record. There are four completed Pods since **Completions** was set to `4` in Step 3.
 
-- The pod list provides the pod's detail information(conditions, phase, node, pod ip, monitoring).
-- You can view the container info by click the pod item.
+![execution-record](/images/docs/project-user-guide/application-workloads/jobs/execution-record.jpg)
+
+{{< notice tip >}}
+
+You can rerun the Job if it fails, the reason of which displays under **Messages**.
+
+{{</ notice >}}
+
+3. In **Resource Status**, you can inspect the Pod status. Two pods were created each time as **Parallelism** was set to 2. Click the arrow on the right and check the container log as shown below, which displays the expected calculation result.
+
+![container-log](/images/docs/project-user-guide/application-workloads/jobs/container-log.jpg)
+
+![container-log-check](/images/docs/project-user-guide/application-workloads/jobs/container-log-check.jpg)
+
+{{< notice tip >}}
+
+- In **Resource Status**, the pod list provides the pod's detailed information (e.g. creation time, node, pod IP and monitoring data).
+- You can view the container information by clicking the pod.
 - Click the container log icon to view the output logs of the container.
-- You can view the pod detail page by click the pod name.
+- You can view the pod detail page by clicking the pod name.
 
-![](/images/docs/job-detail-pods.png)
+{{</ notice >}} 
+
+## Job Operations
+
+On the Job detail page, you can manage the Job after it is created.
+
+- **Edit Info**: Edit the basic information except `Name` of the job.
+- **Rerun Job**: Rerun the Job, the pod will restart, and a new execution record will be generated.
+- **View YAML**: View the Job's specification in YAML format.
+- **Delete**: Delete the Job and return to the Job list page.
+
+![job-operation](/images/docs/project-user-guide/application-workloads/jobs/job-operation.jpg)

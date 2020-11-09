@@ -91,8 +91,9 @@ weight: 2112
 使用以下命令下载 KubeKey:
 
 ```bash
-wget -c https://kubesphere.io/download/kubekey-v1.0.0-linux-amd64.tar.gz -O - | tar -xz
+wget https://github.com/kubesphere/kubekey/releases/download/v1.0.0/kubekey-v1.0.0-linux-amd64.tar.gz -O - | tar -xz
 ```
+
 {{</ tab >}}
 
 {{< tab "访问 Github 很轻松" >}}
@@ -100,11 +101,12 @@ wget -c https://kubesphere.io/download/kubekey-v1.0.0-linux-amd64.tar.gz -O - | 
 从[GitHub Release Page](https://github.com/kubesphere/kubekey/releases/tag/v1.0.0)下载 KubeKey 或直接使用以下命令。
 
 ```bash
-wget https://github.com/kubesphere/kubekey/releases/download/v1.0.0/kubekey-v1.0.0-linux-amd64.tar.gz -O - | tar -xz
+wget -c https://kubesphere.io/download/kubekey-v1.0.0-linux-amd64.tar.gz -O - | tar -xz
 ```
 {{</ tab >}}
 
 {{</ tabs >}}
+
 
 将执行权授予`kk`:
 
@@ -289,4 +291,9 @@ echo 'source <(kubectl completion bash)' >>~/.bashrc
 kubectl completion bash >/etc/bash_completion.d/kubectl
 ```
 
+
 详细信息[见此](https://kubernetes.io/docs/tasks/tools/install-kubectl/#enabling-shell-autocompletion)。
+
+## 示例
+<script src="https://asciinema.org/a/364501.js" id="asciicast-364501" async></script>
+

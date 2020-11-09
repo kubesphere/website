@@ -14,99 +14,94 @@ This guide walks you through the steps of deploying KubeSphere on [Google Kubern
 
 - A standard Kubernetes cluster in GKE is a prerequisite of installing KubeSphere. Go to the navigation menu and refer to the image below to create a cluster.
 
-![create-cluster-gke](https://ap3.qingstor.com/kubesphere-website/docs/create-cluster-gke.jpg)
+  ![create-cluster-gke](https://ap3.qingstor.com/kubesphere-website/docs/create-cluster-gke.jpg)
 
 - In **Cluster basics**, select a Master version. The static version `1.15.12-gke.2` is used here as an example.
 
-![](https://ap3.qingstor.com/kubesphere-website/docs/master-version.png)
+  ![select-master-version](https://ap3.qingstor.com/kubesphere-website/docs/master-version.png)
 
 - In **default-pool** under **Node Pools**, define 3 nodes in this cluster.
 
-![node-number](https://ap3.qingstor.com/kubesphere-website/docs/node-number.png)
+  ![node-number](https://ap3.qingstor.com/kubesphere-website/docs/node-number.png)
 
 - Go to **Nodes**, select the image type and set the Machine Configuration as below. When you finish, click **Create**.
 
-![machine-config](https://ap3.qingstor.com/kubesphere-website/docs/machine-configuration.jpg)
+  ![machine-config](https://ap3.qingstor.com/kubesphere-website/docs/machine-configuration.jpg)
 
-{{< notice note >}} 
+{{< notice note >}}
 
 - Supported Kubernetes versions for KubeSphere 3.0.0: 1.15.x, 1.16.x, 1.17.x, 1.18.x.
-- Ubuntu is used for the operating system here as an example. For more information on supported systems, see Overview.
 - 3 nodes are included in this example. You can add more nodes based on your own needs especially in a production environment.
 - The machine type e2-medium (2 vCPU, 4GB memory) is for minimal installation. If you want to enable pluggable components or use the cluster for production, please select a machine type with more resources.
 - For other settings, you can change them as well based on your own needs or use the default value.
 
-{{</ notice >}} 
+{{</ notice >}}
 
 - When the GKE cluster is ready, you can connect to the cluster with Cloud Shell.
 
-
-![cloud-shell-gke](https://ap3.qingstor.com/kubesphere-website/docs/cloud-shell.png)
+  ![cloud-shell-gke](https://ap3.qingstor.com/kubesphere-website/docs/cloud-shell.png)
 
 ## Install KubeSphere on GKE
 
-- Install KubeSphere using kubectl. The following command is only for the default minimal installation.
+- Install KubeSphere using kubectl. The following commands are only for the default minimal installation.
 
-```bash
-kubectl apply -f https://raw.githubusercontent.com/kubesphere/ks-installer/v3.0.0/deploy/kubesphere-installer.yaml
-```
+  ```bash
+  kubectl apply -f https://github.com/kubesphere/ks-installer/releases/download/v3.0.0/kubesphere-installer.yaml
 
-```bash
-kubectl apply -f https://raw.githubusercontent.com/kubesphere/ks-installer/v3.0.0/deploy/cluster-configuration.yaml
-```
+  kubectl apply -f https://github.com/kubesphere/ks-installer/releases/download/v3.0.0/cluster-configuration.yaml
+  ```
 
 - Inspect the logs of installation:
 
-```bash
-kubectl logs -n kubesphere-system $(kubectl get pod -n kubesphere-system -l app=ks-install -o jsonpath='{.items[0].metadata.name}') -f
-```
+  ```bash
+  kubectl logs -n kubesphere-system $(kubectl get pod -n kubesphere-system -l app=ks-install -o jsonpath='{.items[0].metadata.name}') -f
+  ```
 
 - When the installation finishes, you can see the following message:
 
-```bash
-#####################################################
-###              Welcome to KubeSphere!           ###
-#####################################################
-Console: http://10.128.0.44:30880
-Account: admin
-Password: P@88w0rd
-NOTES：
-  1. After logging into the console, please check the
-     monitoring status of service components in
-     the "Cluster Management". If any service is not
-     ready, please wait patiently until all components
-     are ready.
-  2. Please modify the default password after login.
-#####################################################
-https://kubesphere.io             2020-xx-xx xx:xx:xx
-```
+  ```bash
+  #####################################################
+  ###              Welcome to KubeSphere!           ###
+  #####################################################
+  Console: http://10.128.0.44:30880
+  Account: admin
+  Password: P@88w0rd
+  NOTES：
+    1. After logging into the console, please check the
+      monitoring status of service components in
+      the "Cluster Management". If any service is not
+      ready, please wait patiently until all components
+      are ready.
+    2. Please modify the default password after login.
+  #####################################################
+  https://kubesphere.io             2020-xx-xx xx:xx:xx
+  ```
 
 ## Access KubeSphere Console
 
-Now that KubeSphere is installed, you can access the web console of KubeSphere by following the step below.
+Now that KubeSphere is installed, you can access the web console of KubeSphere by following the steps below.
 
 - In **Services & Ingress**, select the service **ks-console**.
 
-![ks-console](https://ap3.qingstor.com/kubesphere-website/docs/console-service.jpg)
+  ![ks-console](https://ap3.qingstor.com/kubesphere-website/docs/console-service.jpg)
 
 - In **Service details**, click **Edit** and change the type from `NodePort` to `LoadBalancer`. Save the file when you finish.
 
-![lb-change](https://ap3.qingstor.com/kubesphere-website/docs/lb-change.jpg)
+  ![lb-change](https://ap3.qingstor.com/kubesphere-website/docs/lb-change.jpg)
 
 - Access the web console of KubeSphere using the endpoint generated by GKE.
 
+  ![access-console](https://ap3.qingstor.com/kubesphere-website/docs/access-console.png)
 
-![access-console](https://ap3.qingstor.com/kubesphere-website/docs/access-console.png)
+  {{< notice tip >}}
 
-{{< notice tip >}}
+  Instead of changing the service type to `LoadBalancer`, you can also access KubeSphere console via `NodeIP:NodePort` (service type set to `NodePort`). You may need to open port `30880` in firewall rules.
 
-Instead of changing the service type to `LoadBalancer`, you can also access KubeSphere console via `NodeIP:NodePort` (service type set to `NodePort`). You may need to open port `30880` in firewall rules.
-
-{{</ notice >}}
+  {{</ notice >}}
 
 - Log in the console with the default account and password (`admin/P@88w0rd`). In the cluster overview page, you can see the dashboard as shown in the following image.
 
-![gke-cluster](https://ap3.qingstor.com/kubesphere-website/docs/gke-cluster.png)
+  ![gke-cluster](https://ap3.qingstor.com/kubesphere-website/docs/gke-cluster.png)
 
 ## Enable Pluggable Components (Optional)
 

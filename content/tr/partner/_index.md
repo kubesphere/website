@@ -21,19 +21,19 @@ section3:
   tip: Request now →
   partnerType:
     - title: "App Providers"
-      content: "KubeSphere Application Store is a great place to showcase your application,  KubeSphere bring your applications to tens of thousands of users, making them deploy your App to Kubernetes with one click."
+      content: "KubeSphere App Store is a great place to showcase your application,  KubeSphere bring your applications to tens of thousands of users, making them deploy your App to Kubernetes with one click."
       link: ""
     
     - title: "Consulting"
-      content: "KubeSphere Application Store is a great place to showcase your application, users can quickly deploy your application to Kubernetes using KubeSphere. Submit your application to KubeSphere Application Store now!"
+      content: "KubeSphere App Store is a great place to showcase your application, users can quickly deploy your application to Kubernetes using KubeSphere. Submit your application to KubeSphere App Store now!"
       link: ""
 
     - title: "Cloud Providers"
-      content: "KubeSphere Application Store is a great place to showcase your application, users can quickly deploy your application to Kubernetes using KubeSphere. Submit your application to KubeSphere Application Store now!"
+      content: "KubeSphere App Store is a great place to showcase your application, users can quickly deploy your application to Kubernetes using KubeSphere. Submit your application to KubeSphere App Store now!"
       link: ""
 
     - title: "Go-To-Market"
-      content: "KubeSphere Application Store is a great place to showcase your application, users can quickly deploy your application to Kubernetes using KubeSphere. Submit your application to KubeSphere Application Store now!"
+      content: "KubeSphere App Store is a great place to showcase your application, users can quickly deploy your application to Kubernetes using KubeSphere. Submit your application to KubeSphere App Store now!"
       link: ""
 
 section4:

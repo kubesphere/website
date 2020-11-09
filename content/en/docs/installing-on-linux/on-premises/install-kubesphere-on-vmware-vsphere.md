@@ -36,12 +36,12 @@ This tutorial creates 8 virtual machines of **CentOS Linux release 7.6.1810 (Cor
 |10.10.71.75|node1|worker|
 |10.10.71.76|node2|worker|
 |10.10.71.79|node3|worker|
-|10.10.71.67|vip|vip(No need to create a VM)|
+|10.10.71.67|vip|vip (No need to create a VM)|
 |10.10.71.77|lb-0|lb (Keepalived + HAProxy)|
 |10.10.71.66|lb-1|lb (Keepalived + HAProxy)|
 
 {{< notice warning >}}
-The `vip` is a virtual IP, there is no need to create a virtual machine, so only 8 virtual machines need to be created.
+You do not need to create a virtual machine for `vip` (i.e. Virtual IP) above, so only 8 virtual machines need to be created.
 {{</ notice >}}
 
 Create virtual machines in the VMware Host Client. You can follow the New Virtual Machine wizard to create a virtual machine to place in the VMware Host Client inventory.
@@ -291,22 +291,22 @@ Follow the step below to download KubeKey.
 
 {{< tabs >}}
 
-{{< tab "For users with poor network connections to GitHub" >}}
-
-Download KubeKey using the following command:
-
-```bash
-wget -c https://kubesphere.io/download/kubekey-v1.0.0-linux-amd64.tar.gz -O - | tar -xz
-```
-
-{{</ tab >}}
-
 {{< tab "For users with good network connections to GitHub" >}}
 
 Download KubeKey from [GitHub Release Page](https://github.com/kubesphere/kubekey/releases/tag/v1.0.0) or use the following command directly.
 
 ```bash
 wget https://github.com/kubesphere/kubekey/releases/download/v1.0.0/kubekey-v1.0.0-linux-amd64.tar.gz -O - | tar -xz
+```
+
+{{</ tab >}}
+
+{{< tab "For users with poor network connections to GitHub" >}}
+
+Download KubeKey using the following command:
+
+```bash
+wget -c https://kubesphere.io/download/kubekey-v1.0.0-linux-amd64.tar.gz -O - | tar -xz
 ```
 
 {{</ tab >}}
@@ -331,7 +331,7 @@ Create a Kubernetes cluster with KubeSphere installed (e.g. `--with-kubesphere v
 
 {{< notice note >}} 
 
-The following Kubernetes versions has been fully tested with KubeSphere: v1.15.12, v1.16.13, v1.17.9 (default) and v1.18.6.
+The following Kubernetes versions have been fully tested with KubeSphere: v1.15.12, v1.16.13, v1.17.9 (default) and v1.18.6.
 
 {{</ notice >}} 
 
@@ -464,7 +464,7 @@ spec:
     enabled: false     
   notification:        # It supports notification management in multi-tenant Kubernetes clusters. It allows you to set AlertManager as its sender, and receivers include Email, Wechat Work, and Slack.
     enabled: false
-  openpitrix:          # Whether to install KubeSphere Application Store. It provides an application store for Helm-based applications, and offer application lifecycle management
+  openpitrix:          # Whether to install KubeSphere App Store. It provides an application store for Helm-based applications, and offer application lifecycle management
     enabled: false
   servicemesh:         # Whether to install KubeSphere Service Mesh (Istio-based). It provides fine-grained traffic management, observability and tracing, and offer visualization for traffic topology
     enabled: false

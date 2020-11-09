@@ -37,13 +37,13 @@ footer:
     - title: 文档中心
       list:
         - content: 产品介绍
-          link: 'https://kubesphere.io/docs/'
+          link: '../../../zh/docs/introduction/what-is-kubesphere/'
         - content: 如何安装
-          link: 'https://kubesphere.io/docs/installation/intro/'
+          link: '../../../zh/docs/quick-start/all-in-one-on-linux/'
         - content: 快速入门
-          link: 'https://kubesphere.io/docs/quick-start/admin-quick-start/'
+          link: '../../../zh/docs/quick-start/create-workspace-and-project/'
         - content: API 文档
-          link: 'https://kubesphere.io/docs/api-reference/api-docs/'
+          link: '../../../docs/api-reference/api-docs/'
 
     - title: 开源社区
       list:

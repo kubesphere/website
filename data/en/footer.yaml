@@ -36,13 +36,13 @@ footer:
     - title: KubeSphere Docs
       list:
         - content: Introduction
-          link: 'https://kubesphere.io/docs/'
+          link: '../../../docs/introduction/what-is-kubesphere/'
         - content: Installation
-          link: 'https://kubesphere.io/docs/installation/intro/'
+          link: '../../../docs/quick-start/all-in-one-on-linux/'
         - content: Tutorial
-          link: 'https://kubesphere.io/docs/quick-start/admin-quick-start/'
+          link: '../../../docs/quick-start/create-workspace-and-project/'
         - content: API Documentation
-          link: 'https://kubesphere.io/docs/api-reference/api-docs/'
+          link: '../../../docs/api-reference/api-docs/'
 
     - title: Community
       list:

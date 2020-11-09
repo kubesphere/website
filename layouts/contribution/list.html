@@ -112,6 +112,16 @@
     {{ end }}
 </section>
 
+<section class='section-calendar'>
+    {{ with .Params.sectionCalendar }}
+    <div>
+        <div>
+            <iframe src="{{ .iframeUrl }}" style="border: 0" frameborder="0" scrolling="no"></iframe>
+        </div>
+    </div>
+    {{ end }}
+</section>
+
 <section class='section-4'>
     {{ with .Params.section4.involved }}
     <img src="/images/contribution/involve-bg.jpg" alt="{{ i18n "background image" }}">
