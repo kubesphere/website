@@ -93,7 +93,7 @@ section4:
       content: Provide unified authentication with fine-grained roles and three-tier authorization system, and support AD/LDAP authentication
 
   features:
-    - name: Application Store
+    - name: App Store
       icon: /images/home/store.svg
       content: Provide an application store for Helm-based applications, and offer application lifecycle management
       link: "/docs/pluggable-components/app-store/"

@@ -1,25 +1,25 @@
 ---
-title: "KubeSphere Logging System"
+title: "KubeSphere 日志系统"
 keywords: "Kubernetes, Elasticsearch, KubeSphere, Logging, logs"
-description: "How to Enable KubeSphere Logging System"
+description: "如何启用 KubeSphere 日志系统"
 
-linkTitle: "KubeSphere Logging System"
+linkTitle: "KubeSphere 日志系统"
 weight: 3535
 ---
 
-## What is KubeSphere Logging System
+## 什么是 KubeSphere 日志系统
 
-KubeSphere provides a powerful, holistic and easy-to-use logging system for log collection, query and management. It covers logs at varied levels, including tenants, infrastructure resources, and applications. Users can search logs from different dimensions, such as project, workload, Pod and keyword. Compared with Kibana, the tenant-based logging system of KubeSphere features better isolation and security among tenants as each tenant can only view his or her own logs. Apart from KubeSphere's own logging system, the container platform also allows users to add third-party log collectors, such as Elasticsearch, Kafka and Fluentd.
+KubeSphere 为日志收集、查询和管理提供了一个强大的、整体的、易于使用的日志系统。它涵盖了不同层次的日志，包括租户、基础设施资源和应用。用户可以从项目、工作量、Pod 和关键字等不同维度对日志进行搜索。与 Kibana 相比，KubeSphere 基于租户的日志系统具有更好的隔离性和租户之间的安全性，因为每个租户只能查看自己的日志。除了 KubeSphere 自身的日志系统，容器平台还允许用户添加第三方日志收集器，如 Elasticsearch、Kafka 和 Fluentd。
 
-For more information, see Logging, Events and Auditing.
+有关更多信息，请参阅日志、事件和审计系统。
 
-## Enable Logging before Installation
+## 在安装前启用日志系统
 
-### Installing on Linux
+### 在 Linux 上安装
 
-When you install KubeSphere on Linux, you need to create a configuration file, which lists all KubeSphere components.
+当您在 Linux 上安装 KubeSphere 时，你需要创建一个配置文件，该文件列出了所有 KubeSphere 组件。
 
-1. In the tutorial of [Installing KubeSphere on Linux](../../installing-on-linux/introduction/multioverview/), you create a default file **config-sample.yaml**. Modify the file by executing the following command:
+1. 基于[在 Linux 上安装 KubeSphere](.../.../installing-on-linux/introduction/multioverview/) 的教程，您创建了一个默认文件 **config-sample.yaml**。通过执行以下命令修改该文件：
 
 ```bash
 vi config-sample.yaml
@@ -27,11 +27,17 @@ vi config-sample.yaml
 
 {{< notice note >}}
 
-If you adopt [All-in-one Installation](../../quick-start/all-in-one-on-linux/), you do not need to create a config-sample.yaml file as you can create a cluster directly. Generally, the all-in-one mode is for users who are new to KubeSphere and look to get familiar with the system. If you want to enable Logging in this mode (e.g. for testing purpose), refer to the following section to see how Logging can be installed after installation.
+如果采用 [All-in-one 安装](.../.../quick-start/all-in-one-on-linux/)，则不需要创建 `config-sample.yaml` 文件，因为可以直接创建集群。一般来说，All-in-one 模式是为那些刚刚接触 KubeSphere 并希望熟悉系统的用户准备的。如果您想在这个模式下启用日志系统（比如出于测试的目的），可以参考下面的部分，看看安装后如何启用日志系统。
 
 {{</ notice >}}
 
-2. In this file, navigate to `logging` and change `false` to `true` for `enabled`. Save the file after you finish.
+{{< notice warning >}}
+
+如果你采用[多节点安装](.../.../install-on-linux/introduction/multioverview/)，并且使用符号链接作为 Docker 根目录，请确保所有节点遵循完全相同的符号链接。日志代理在 DaemonSet 中部署到节点上。容器日志路径的任何差异都可能导致该节点的收集失败。
+
+{{</ notice >}}
+
+2. 在该文件中，搜寻到 `logging`，并将 `enabled` 的 `false` 改为 `true`。完成后保存文件。
 
 ```bash
 logging:
@@ -40,7 +46,7 @@ logging:
 
 {{< notice note >}}
 
-By default, KubeKey will install Elasticsearch internally if Logging is enabled. For a production environment, it is highly recommended that you set the following value in **config-sample.yaml** if you want to enable Logging, especially `externalElasticsearchUrl` and `externalElasticsearchPort`. Once you provide the following information before installation, KubeKey will integrate your external Elasticsearch directly instead of installing an internal one.
+默认情况下，如果启用了审计功能，KubeKey 将在内部安装 Elasticsearch。对于生产环境，如果你想启用日志系统，强烈建议你在 **config-sample.yaml** 中设置以下值，尤其是 `externalElasticsearchUrl` 和 `externalElasticsearchPort`。一旦你在安装前提供以下信息，KubeKey 将直接整合你的外部 Elasticsearch，而不是安装一个内部 Elasticsearch。
 
 {{</ notice >}}
 
@@ -55,24 +61,26 @@ es:  # Storage backend for logging, tracing, events and auditing.
   externalElasticsearchUrl: # The URL of external Elasticsearch
   externalElasticsearchPort: # The port of external Elasticsearch
 ```
-3. Create a cluster using the configuration file:
+
+3. 使用配置文件创建一个集群：
 
 ```bash
 ./kk create cluster -f config-sample.yaml
 ```
 
-### **Installing on Kubernetes**
+### 在 Kubernetes 上安装
 
-When you install KubeSphere on Kubernetes, you need to download the file [cluster-configuration.yaml](https://github.com/kubesphere/ks-installer/releases/download/v3.0.0/cluster-configuration.yaml) for cluster setting. If you want to install Logging, do not use `kubectl apply -f` directly for this file.
+在 Kubernetes 上安装 KubeSphere 时，需要下载文件 [cluster-configuration.yaml](https://raw.githubusercontent.com/kubesphere/ks-installer/master/deploy/cluster-configuration.yaml) 进行集群设置。如果要安装日志系统，不要直接使用 `kubectl apply -f` 对这个文件进行设置。
 
-1. In the tutorial of [Installing KubeSphere on Kubernetes](../../installing-on-kubernetes/introduction/overview/), you execute `kubectl apply -f` first for the file [kubesphere-installer.yaml](https://github.com/kubesphere/ks-installer/releases/download/v3.0.0/kubesphere-installer.yaml). After that, to enable Logging, create a local file cluster-configuration.yaml.
+1. 参照[在 Kubernetes 上安装 KubeSphere](.../.../installing-on-kubernetes/introduction/overview/) 的教程，先对文件 [kubesphere-installer.yaml](https://raw.githubusercontent.com/kubesphere/ks-installer/master/deploy/kubesphere-installer.yaml) 执行 `kubectl apply -f`。之后，为了启用日志，创建一个本地文件 `cluster-configuration.yaml`。
 
 ```bash
 vi cluster-configuration.yaml
 ```
 
-2. Copy all the content in the file [cluster-configuration.yaml](https://github.com/kubesphere/ks-installer/releases/download/v3.0.0/cluster-configuration.yaml) and paste it to the local file just created.
-3. In this local cluster-configuration.yaml file, navigate to `logging` and enable Logging by changing `false` to `true` for `enabled`. Save the file after you finish.
+2. 将 [cluster-configuration.yaml](https://github.com/kubesphere/ks-installer/releases/download/v3.0.0/cluster-configuration.yaml) 文件中的所有内容复制到刚才创建的本地文件中。
+   
+3. 在这个本地 `cluster-configuration.yaml` 文件中，搜寻到 `logging`，并将  `enabled` 的 `false` 改为 `true`，启用它们。完成后保存文件。
 
 ```bash
 logging:
@@ -81,7 +89,7 @@ logging:
 
 {{< notice note >}}
 
-By default, ks-installer will install Elasticsearch internally if Logging is enabled. For a production environment, it is highly recommended that you set the following value in **cluster-configuration.yaml** if you want to enable Logging, especially `externalElasticsearchUrl` and `externalElasticsearchPort`. Once you provide the following information before installation, ks-installer will integrate your external Elasticsearch directly instead of installing an internal one.
+默认情况下，如果启用了日志功能，ks-installer 会在内部安装 Elasticsearch。对于生产环境，如果你想启用日志系统，强烈建议你在 **cluster-configuration.yaml** 中设置以下值，尤其是 `externalElasticsearchUrl` 和 `externalElasticsearchPort`。当你在安装前提供以下信息时，ks-installer 将直接整合你的外部 Elasticsearch，而不是安装内部 Elasticsearch。
 
 {{</ notice >}}
 
@@ -97,31 +105,31 @@ es:  # Storage backend for logging, tracing, events and auditing.
   externalElasticsearchPort: # The port of external Elasticsearch
 ```
 
-4. Execute the following command to start installation:
+4. 执行以下命令开始安装：
 
 ```bash
 kubectl apply -f cluster-configuration.yaml
 ```
 
-## Enable Logging after Installation
+## 在安装后启用事件
 
-1. Log in the console as `admin`. Click **Platform** in the top-left corner and select **Clusters Management**.
+1. 以 `admin` 身份登录控制台。点击左上角的**平台管理**，选择**集群管理**。
 
-![clusters-management](https://ap3.qingstor.com/kubesphere-website/docs/20200828111130.png)
+![集群管理](https://ap3.qingstor.com/kubesphere-website/docs/20200828111130.png)
 
-2. Click **CRDs** and enter `clusterconfiguration` in the search bar. Click the result to view its detailed page.
+2. 点击 **自定义资源 CRD**，在搜索栏中输入 `clusterconfiguration`。点击结果查看其详细页面。
 
 {{< notice info >}}
 
-A Custom Resource Definition (CRD) allows users to create a new type of resources without adding another API server. They can use these resources like any other native Kubernetes objects.
+自定义资源定义（CRD）允许用户在不增加另一个 API 服务器的情况下创建一种新的资源类型。他们可以像其他任何本地 Kubernetes 对象一样使用这些资源。
 
 {{</ notice >}}
 
-3. In **Resource List**, click the three dots on the right of `ks-installer` and select **Edit YAML**.
+3. 在**资源列表**中，点击 `ks-installer` 右边的三个点，选择**编辑 YAML**。
 
-![edit-yaml](https://ap3.qingstor.com/kubesphere-website/docs/20200827182002.png)
+![编辑 YAML](https://ap3.qingstor.com/kubesphere-website/docs/20200827182002.png)
 
-4. In this yaml file, navigate to `logging` and change `false` to `true` for `enabled`. After you finish, click **Update** in the bottom-right corner to save the configuration.
+4. 在这个 YAML 文件中，搜寻到 `logging`，将 `enabled` 的 `false` 改为 `true`。完成后，点击右下角的**更新**，保存配置。
 
 ```bash
 logging:
@@ -130,7 +138,7 @@ logging:
 
 {{< notice note >}}
 
-By default, Elasticsearch will be installed internally if Logging is enabled. For a production environment, it is highly recommended that you set the following value in this yaml file if you want to enable Logging, especially `externalElasticsearchUrl` and `externalElasticsearchPort`. Once you provide the following information, KubeSphere will integrate your external Elasticsearch directly instead of installing an internal one.
+默认情况下，如果启用了日志系统，Elasticsearch 将在内部安装。对于生产环境，如果你想启用日志，强烈建议你在这个 YAML 文件中设置以下值，尤其是 `externalElasticsearchUrl` 和 `externalElasticsearchPort`。一旦你提供了以下信息，KubeSphere 将直接整合你的外部 Elasticsearch，而不是安装一个内部 Elasticsearch。
 
 {{</ notice >}}
 
@@ -146,7 +154,7 @@ es:  # Storage backend for logging, tracing, events and auditing.
   externalElasticsearchPort: # The port of external Elasticsearch
 ```
 
-5. You can use the web kubectl to check the installation process by executing the following command:
+5. 您可以通过执行以下命令，使用 Web Kubectl 工具来检查安装过程：
 
 ```bash
 kubectl logs -n kubesphere-system $(kubectl get pod -n kubesphere-system -l app=ks-install -o jsonpath='{.items[0].metadata.name}') -f
@@ -154,31 +162,31 @@ kubectl logs -n kubesphere-system $(kubectl get pod -n kubesphere-system -l app=
 
 {{< notice tip >}}
 
-You can find the web kubectl tool by clicking the hammer icon in the bottom-right corner of the console.
+您可以通过点击控制台右下角的锤子图标找到 Kubectl 工具。
 
 {{</ notice >}}
 
-## Verify the Installation of Component
+## 验证组件的安装
 
 {{< tabs >}}
 
-{{< tab "Verify the Component in Dashboard" >}}
+{{< tab "在仪表板中验证组件的安装" >}}
 
-Go to **Components** and check the status of Logging. You may see an image as follows:
+进入**服务组件**，检查 Logging 的状态。你可能会看到如下图片：
 
 ![logging](https://ap3.qingstor.com/kubesphere-website/docs/20200829104152.png)
 
 {{</ tab >}}
 
-{{< tab "Verify the Component through kubectl" >}}
+{{< tab "通过 kubectl 验证组件的安装" >}}
 
-Execute the following command to check the status of pods:
+执行以下命令来检查 Pod 的状态：
 
 ```bash
 kubectl get pod -n kubesphere-logging-system
 ```
 
-The output may look as follows if the component runs successfully:
+如果组件运行成功，输出结果可能如下：
 
 ```bash
 NAME                                          READY   STATUS    RESTARTS   AGE

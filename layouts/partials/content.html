@@ -15,6 +15,12 @@
 
 
 <body>
+{{ if .Site.Params.addGoogleTag }}
+<!-- Google Tag Manager (noscript) -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-W9FLX4R"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<!-- End Google Tag Manager (noscript) -->
+{{ end }}   
   {{ partial "header.html" $context }}
   <section class="main-section {{ if eq .context.Site.Language.Lang "zh"}} padding{{ end }}">
       <div class="common-layout">
@@ -28,7 +34,7 @@
               <div class='date'>{{ i18n "Published on" }}：{{ string $context.Params.createTime }}</div>
               <h1>{{ $context.Title }}</h1>
               <div class="share-1">
-                  {{ partial "share.html" }}
+                  {{ partial "share.html" $context }}
               </div>
               <div class='content'>
                   <div class='md-body'>
@@ -36,7 +42,7 @@
                   </div>
               </div>
               <div class="share-2">
-                  {{ partial "share.html" }}
+                  {{ partial "share.html" $context }}
               </div>
           </div>
           <div class='aside'>

@@ -16,6 +16,7 @@ You need an account granted a role including the authorization of **Clusters Man
 ## Cluster Status Monitoring
 
 1. Click **Platform** in the top left corner and select **Clusters Management**.
+<<<<<<< HEAD
 ![Platform](/images/docs/cluster-administration/cluster-status-monitoring/platform.png)
 
 2. If you have enabled the [multi-cluster feature](../../multicluster-management) with member clusters imported, you can select a specific cluster to view its application resources. If you have not enabled the feature, refer to the next step directly.
@@ -24,10 +25,23 @@ You need an account granted a role including the authorization of **Clusters Man
 3. Choose **Cluster Status** under **Monitoring & Alerting** to see the overview of cluster status monitoring, including **Cluster Node Status**, **Components Status**, **Cluster Resources Usage**, **ETCD Monitoring**, and **Service Component Monitoring**, as shown in the following figure.
 
 ![Cluster Status Monitoring](/images/docs/cluster-administration/cluster-status-monitoring/cluster-status-monitoring.png)
+=======
+
+    ![Platform](/images/docs/cluster-administration/cluster-status-monitoring/platform.png)
+
+2. If you have enabled the [multi-cluster feature](../../multicluster-management) with member clusters imported, you can select a specific cluster to view its application resources. If you have not enabled the feature, refer to the next step directly.
+
+    ![Clusters Management](/images/docs/cluster-administration/cluster-status-monitoring/clusters-management.png)
+
+3. Choose **Cluster Status** under **Monitoring & Alerting** to see the overview of cluster status monitoring, including **Cluster Node Status**, **Components Status**, **Cluster Resources Usage**, **ETCD Monitoring**, and **Service Component Monitoring**, as shown in the following figure.
+
+    ![Cluster Status Monitoring](/images/docs/cluster-administration/cluster-status-monitoring/cluster-status-monitoring.png)
+>>>>>>> 5f1e339a014d6bf1d77bcedbb4f723ea0a7e556d
 
 ### Cluster Node Status
 
 1. **Cluster Node Status** displays the status of all nodes, separately marking the active ones. You can go to the **Cluster Nodes** page shown below to view the real-time resource usage of all nodes by clicking **Node Online Status**.
+<<<<<<< HEAD
 ![Cluster Nodes](/images/docs/cluster-administration/cluster-status-monitoring/cluster-nodes.png)
 
 2. In **Cluster Nodes**, click the node name to view usage details in **Running Status**, including the information of CPU, Memory, Pod, Local Storage in the current node, and its health status.
@@ -38,16 +52,29 @@ You need an account granted a role including the authorization of **Clusters Man
 ![Monitoring](/images/docs/cluster-administration/cluster-status-monitoring/monitoring.png)
 
 {{< notice tip >}}  
+=======
 
+    ![Cluster Nodes](/images/docs/cluster-administration/cluster-status-monitoring/cluster-nodes.png)
+
+2. In **Cluster Nodes**, click the node name to view usage details in **Running Status**, including the information of CPU, Memory, Pod, Local Storage in the current node, and its health status.
+
+    ![Running Status](/images/docs/cluster-administration/cluster-status-monitoring/running-status.png)
+
+3. Click the tab **Monitoring** to view how the node is functioning during a certain period based on different metrics, including **CPU Utilization, CPU Load Average, Memory Utilization, Disk Utilization, inode Utilization, IOPS, DISK Throughput, and Network Bandwidth**, as shown in the following figure.
+
+    ![Monitoring](/images/docs/cluster-administration/cluster-status-monitoring/monitoring.png)
+>>>>>>> 5f1e339a014d6bf1d77bcedbb4f723ea0a7e556d
+
+    {{< notice tip >}}
 You can customize the time range from the drop-down list in the top right corner to view historical data.
-
-{{</ notice >}}
+    {{</ notice >}}
 
 ### Component Status
 
 KubeSphere monitors the health status of various service components in the cluster. When a key component malfunctions, the system may become unavailable. The monitoring mechanism of KubeSphere ensures the platform can notify tenants of any occurring issues in case of a component failure, so that they can quickly locate the problem and take corresponding action.
 
 1. On the **Cluster Status Monitoring** page, click components (the part in the green box below) under **Components Status** to view the status of service components.
+<<<<<<< HEAD
 ![component-monitoring](/images/docs/cluster-administration/cluster-status-monitoring/component-monitoring.jpg)
 
 2. You can see all the components are listed in this part. Components marked in green are those functioning normally while those marked in orange require special attention as it signals potential issues.
@@ -55,10 +82,18 @@ KubeSphere monitors the health status of various service components in the clust
 ![Service Components Status](/images/docs/cluster-administration/cluster-status-monitoring/service-components-status.png)
 
 {{< notice tip >}}
+=======
 
+    ![component-monitoring](/images/docs/cluster-administration/cluster-status-monitoring/component-monitoring.jpg)
+
+2. You can see all the components are listed in this part. Components marked in green are those functioning normally while those marked in orange require special attention as it signals potential issues.
+
+    ![Service Components Status](/images/docs/cluster-administration/cluster-status-monitoring/service-components-status.png)
+>>>>>>> 5f1e339a014d6bf1d77bcedbb4f723ea0a7e556d
+
+    {{< notice tip >}}
 Components marked in orange may turn to green after a period of time, the reasons of which may be different, such as image pulling retries or pod recreations. You can click the component to see its service details.
-
-{{</ notice >}}
+    {{</ notice >}}
 
 ### Cluster Resources Usage
 
@@ -151,6 +186,11 @@ ETCD monitoring helps you to make better use of ETCD, especially to locate perfo
 
 ![ETCD Monitoring](/images/docs/cluster-administration/cluster-status-monitoring/etcd-monitoring.png)
 
+<<<<<<< HEAD
+=======
+![ETCD Monitoring](/images/docs/cluster-administration/cluster-status-monitoring/etcd-monitoring.png)
+
+>>>>>>> 5f1e339a014d6bf1d77bcedbb4f723ea0a7e556d
 ## APIServer Monitoring
 
 [API Server](https://kubernetes.io/docs/concepts/overview/kubernetes-api/) is the hub for the interaction of all components in a Kubernetes cluster. The following table lists the main indicators monitored for the APIServer.

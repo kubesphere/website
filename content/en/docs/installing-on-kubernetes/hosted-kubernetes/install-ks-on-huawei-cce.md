@@ -3,7 +3,7 @@ title: "Deploy KubeSphere on Huawei CCE"
 keywords: "KubeSphere, Kubernetes, installation, huawei, cce"
 description: "How to install KubeSphere on Huawei CCE."
 
-weight: 2275
+weight: 2270
 ---
 
 This guide walks you through the steps of deploying KubeSphere on [Huaiwei CCE](https://support.huaweicloud.com/en-us/qs-cce/cce_qs_0001.html).
@@ -14,7 +14,7 @@ This guide walks you through the steps of deploying KubeSphere on [Huaiwei CCE](
 
 First, create a Kubernetes cluster based on the requirements below.
 
-- KubeSphere 3.0.0 supports Kubernetes `1.15.x`, `1.16.x`, `1.17.x`, and `1.18.x` by default. Select a version and create the cluster, e.g. `v1.15.11` or `v1.17.9`.
+- KubeSphere 3.0.0 supports Kubernetes `1.15.x`, `1.16.x`, `1.17.x`, and `1.18.x`. Select a version and create the cluster, e.g. `v1.15.11` or `v1.17.9`.
 - Ensure the cloud computing network for your Kubernetes cluster works, or use an elastic IP when you use “Auto Create” or “Select Existing”. You can also configure the network after the cluster is created. Refer to Configure [NAT Gateway](https://support.huaweicloud.com/en-us/productdesc-natgateway/en-us_topic_0086739762.html).
 - Select `s3.xlarge.2`  `4-core｜8GB` for nodes and add more if necessary (3 and more nodes are required for a production environment).
 
@@ -23,7 +23,7 @@ First, create a Kubernetes cluster based on the requirements below.
 - Go to `Resource Management` > `Cluster Management` > `Basic Information` > `Network`, and bind `Public apiserver`.
 - Select `kubectl` on the right column, go to `Download kubectl configuration file`, and click `Click here to download`, then you will get a public key for kubectl.
 
-![Generate Kubectl config file](/images/docs/huawei-cce/en/generate-kubeconfig.png)
+  ![Generate Kubectl config file](/images/docs/huawei-cce/en/generate-kubeconfig.png)
 
 After you get the configuration file for kubectl, use kubectl command lines to verify the connection to the cluster.
 
@@ -41,7 +41,7 @@ Server Version: version.Info{Major:"1", Minor:"17+", GitVersion:"v1.17.9-r0-CCE2
 
 Huawei CCE built-in Everest CSI provides StorageClass `csi-disk` which uses SATA (normal I/O) by default, but the actual disk that is used for Kubernetes clusters is either SAS (high I/O) or SSD (extremely high I/O). Therefore, it is suggested that you create an extra StorageClass and set it as default. Refer to the official document - [Use kubectl to create a cloud storage](https://support.huaweicloud.com/en-us/usermanual-cce/cce_01_0044.html).
 
-{{</ notice >}} 
+{{</ notice >}}
 
 Below is an example to create a SAS (high I/O) for its corresponding StorageClass.
 
@@ -76,38 +76,36 @@ For how to set up or cancel a default StorageClass, refer to Kubernetes official
 Use [ks-installer](https://github.com/kubesphere/ks-installer) to deploy KubeSphere on an existing Kubernetes cluster. Execute the following commands directly for a minimal installation:
 
 ```bash
-$ kubectl apply -f https://github.com/kubesphere/ks-installer/releases/download/v3.0.0/kubesphere-installer.yaml
-```
+kubectl apply -f https://github.com/kubesphere/ks-installer/releases/download/v3.0.0/kubesphere-installer.yaml
 
-```bash
-$ kubectl apply -f https://github.com/kubesphere/ks-installer/releases/download/v3.0.0/cluster-configuration.yaml
+kubectl apply -f https://github.com/kubesphere/ks-installer/releases/download/v3.0.0/cluster-configuration.yaml
 ```
 
 Go to `Workload` > `Pod`, and check the running status of the pod in `kubesphere-system` of its namespace to understand the minimal deployment of KubeSphere. Check `ks-console-xxxx`  of the namespace to understand the availability of KubeSphere console.
 
-![Deploy KubeSphere in Minimal](/images/docs/huawei-cce/en/deploy-ks-minimal.png)
+  ![Deploy KubeSphere in Minimal](/images/docs/huawei-cce/en/deploy-ks-minimal.png)
 
 ### Expose KubeSphere Console
 
-Check the running status of Pod in `kubesphere-system` namespace and make sure the basic components of  KubeSphere are running. Then expose KubeSphere console.
+Check the running status of Pods in `kubesphere-system` namespace and make sure the basic components of  KubeSphere are running. Then expose KubeSphere console.
 
 Go to `Resource Management` > `Network` and choose the service in `ks-console`. It is suggested that you choose `LoadBalancer` (Public IP is required). The configuration is shown below.
 
-![Expose KubeSphere Console](/images/docs/huawei-cce/en/expose-ks-console.png)
+  ![Expose KubeSphere Console](/images/docs/huawei-cce/en/expose-ks-console.png)
 
 Default settings are OK for other detailed configurations. You can also set it based on your needs.
 
-![Edit KubeSphere Console SVC](/images/docs/huawei-cce/en/edit-ks-console-svc.png)
+  ![Edit KubeSphere Console SVC](/images/docs/huawei-cce/en/edit-ks-console-svc.png)
 
 After you set LoadBalancer for KubeSphere console, you can visit it via the given address. Go to KubeSphere login page and use the default account (username `admin` and pw `P@88w0rd`) to log in.
 
-![Log in KubeSphere Console](/images/docs/huawei-cce/en/login-ks-console.png)
+  ![Log in KubeSphere Console](/images/docs/huawei-cce/en/login-ks-console.png)
 
 ## Enable Pluggable Components (Optional)
 
 The example above demonstrates the process of a default minimal installation. To enable other components in KubeSphere, see [Enable Pluggable Components](../../../pluggable-components/) for more details.
 
-{{< notice note >}} 
+{{< notice note >}}
 
 Before you use Istio-based features of KubeSphere, you have to delete `applications.app.k8s.io` built in Huawei CCE due to the CRD conflict. You can run the command `kubectl delete crd applications.app.k8s.io` directly to delete it.
 
@@ -115,4 +113,4 @@ Before you use Istio-based features of KubeSphere, you have to delete `applicati
 
 After your component is installed, go to the **Cluster Management** page, and you will see the interface below. You can check the status of your component in **Components**.
 
-![Full View of KubeSphere Console](/images/docs/huawei-cce/en/view-ks-console-full.png)
+  ![Full View of KubeSphere Console](/images/docs/huawei-cce/en/view-ks-console-full.png)

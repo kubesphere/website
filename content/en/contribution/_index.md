@@ -15,9 +15,9 @@ section2:
       icon2: 'images/contribution/37.png'
       children:
         - content: 'Download KubeSphere'
-          link: 'https://kubesphere.io/docs/installation/intro/'
+          link: '../../../docs/quick-start/all-in-one-on-linux/'
         - content: 'Quickstart'
-          link: 'https://kubesphere.io/docs/quick-start/admin-quick-start/'
+          link: '../../../docs/quick-start/create-workspace-and-project/'
         - content: 'Tutorial Videos'
           link: '../videos'
 
@@ -84,7 +84,7 @@ section3:
       - name: 'Apps'
         icon: '/images/contribution/apps.svg'
         iconActive: '/images/contribution/apps-active.svg'
-        content: 'App charts for the built-in Application Store'
+        content: 'App charts for the built-in App Store'
         link: 'https://github.com/kubesphere/community/tree/master/sig-apps'
         linkContent: 'Join SIG - Apps →'
         children:
@@ -92,7 +92,7 @@ section3:
           - icon: '/images/contribution/calicq2.jpg'
           - icon: '/images/contribution/calicq3.jpg'
 
-      - name: 'Application Store'
+      - name: 'App Store'
         icon: '/images/contribution/app-store.svg'
         iconActive: '/images/contribution/app-store-active.svg'
         content: 'App Store, App template management'

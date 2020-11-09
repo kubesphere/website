@@ -1,15 +1,15 @@
 ---
-title: "Overview"
-keywords: 'Kubernetes, KubeSphere, multicluster, hybrid-cloud'
-description: 'Overview'
+title: "概要"
+keywords: 'Kubernetes, KubeSphere, 多集群, 混合云'
+description: '概要'
 
 weight: 3006
 ---
 
-Today, it's very common for organizations to run and manage multiple Kubernetes clusters across different cloud providers or infrastructures. As each Kubernetes cluster is a relatively self-contained unit, the upstream community is struggling to research and develop a multi-cluster management solution. That said, Kubernetes Cluster Federation ([KubeFed](https://github.com/kubernetes-sigs/kubefed) for short) may be a possible approach among others.
+如今，在不同的云服务提供商或者基础设施上运行和管理多个 Kubernetes 集群已经非常普遍。 由于每个 Kubernetes 集群都是一个相对独立的单元，上游社区正努力研发多集群管理解决方案。 也就是说，Kubernetes 集群联邦（Kubernetes Cluster Federation，简称 [KubeFed](https://github.com/kubernetes-sigs/kubefed)）可能是其中一种可行的方法。
 
-The most common use cases of multi-cluster management include service traffic load balancing, development and production isolation, decoupling of data processing and data storage, cross-cloud backup and disaster recovery, flexible allocation of computing resources, low latency access with cross-region services, and vendor lock-in avoidance.
+多集群管理最常见的用例包括服务流量负载均衡、开发和生产的隔离、数据处理和数据存储的分离、跨云备份和灾难恢复、计算资源的灵活分配、跨区域服务的低延迟访问以及厂商捆绑的防范。
 
-KubeSphere is developed to address multi-cluster and multi-cloud management challenges and implement the proceeding user scenarios, providing users with a unified control plane to distribute applications and its replicas to multiple clusters from public cloud to on-premises environments. KubeSphere also provides rich observability cross multiple clusters including centralized monitoring, logging, events, and auditing logs.
+KubeSphere 的开发旨在解决多集群和多云管理的难题，并实现后续的用户场景，为用户提供统一的控制平面，以将应用程序及其副本分发到从公有云到本地环境的多个集群。 KubeSphere 还提供跨多个群集的丰富的可观察性，包括集中式监视、日志记录、事件和审核日志。
 
-![KubeSphere Multi-cluster Management](/images/docs/multi-cluster-overview.jpg)
+![KubeSphere 多集群管理](/images/docs/multi-cluster-overview.jpg)
