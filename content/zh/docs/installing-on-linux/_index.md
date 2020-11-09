@@ -1,4 +1,5 @@
 ---
+linkTitle: "在 Linux 上安装"
 title: "在 Linux 上安装 KubeSphere"
 description: "演示如何在云上和本地 Linux 环境中安装 KubeSphere。"
 layout: "single"
@@ -9,13 +10,14 @@ weight: 2000
 icon: "/images/docs/docs.svg"
 ---
 
-本章演示如何使用 KubeKey 在 Linux 上配置生产可用的 Kubernetes 和 KubeSphere 集群。您还可以使用 KubeKey 轻松对集群扩缩容，并根据需要设置各种存储类。
+
+本章演示如何使用 KubeKey 在不同环境的 Linux 上预配置生产就绪的 Kubernetes 和 KubeSphere 集群。 您还可以使用 KubeKey 轻松扩展和缩小集群，并根据需要设置各种存储类。
 
 ## 介绍
 
 ### [概述](../installing-on-linux/introduction/intro/)
 
-浏览本章的概述，包括安装准备、安装工具和方法以及存储设置。
+浏览本章的概述，包括安装准备，安装工具和方法以及存储设置。
 
 ### [多节点安装](../installing-on-linux/introduction/multioverview/)
 
@@ -24,6 +26,7 @@ icon: "/images/docs/docs.svg"
 ### [端口要求](../installing-on-linux/introduction/port-firewall/)
 
 了解 KubeSphere 中不同服务的特定端口要求。
+
 ### [Kubernetes 集群配置](../installing-on-linux/introduction/vars/)
 
 在集群的配置文件中添加自定义设置。
@@ -64,9 +67,11 @@ icon: "/images/docs/docs.svg"
 
 从机器上删除 KubeSphere 和 Kubernetes。
 
-## FAQ
+
+## 常见问题
 
 ### [为安装配置加速器](../installing-on-linux/faq/configure-booster/)
+
 
 配置镜像仓库以加快安装速度。
 
