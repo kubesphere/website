@@ -12,11 +12,9 @@ KubeKey is recommended for users whose KubeSphere and Kubernetes were both deplo
 
 - You need to have a KubeSphere cluster running version 2.1.1.
 
-{{< notice warning >}}
-
+    {{< notice warning >}}
 If your KubeSphere version is v2.1.0 or earlier, please upgrade to v2.1.1 first.
-
-{{</ notice >}}
+    {{</ notice >}}
 
 - Download KubeKey.
 
@@ -31,7 +29,6 @@ wget https://github.com/kubesphere/kubekey/releases/download/v1.0.0/kubekey-v1.0
 ```
 
 {{</ tab >}}
-
 {{< tab "For users with poor network connections to GitHub" >}}
 
 Download KubeKey using the following command:
@@ -39,8 +36,8 @@ Download KubeKey using the following command:
 ```bash
 wget -c https://kubesphere.io/download/kubekey-v1.0.0-linux-amd64.tar.gz -O - | tar -xz
 ```
-{{</ tab >}}
 
+{{</ tab >}}
 {{</ tabs >}}
 
 Make `kk` executable:
@@ -51,14 +48,11 @@ chmod +x kk
 
 - Make sure you read [Release Notes For 3.0.0](../../release/release-v300/) carefully.
 
-{{< notice warning >}}
-
+    {{< notice warning >}}
 In v3.0.0, KubeSphere refactors many of its components such as Fluent Bit Operator and IAM. Make sure you back up any important components in case you heavily customized them but not from console.
-
-{{</ notice >}}
+    {{</ notice >}}
 
 - Make your upgrade plan. Two upgrading scenarios are documented below.
-
 
 ## Upgrade KubeSphere and Kubernetes
 

@@ -1,15 +1,15 @@
 ---
-title: "Compose and Deploy Wordpress"
-keywords: 'KubeSphere, Kubernetes, app, Wordpress'
+title: "Compose and Deploy WordPress"
+keywords: 'KubeSphere, Kubernetes, app, WordPress'
 description: 'Compose and deploy Wordpress.'
 
-linkTitle: "Compose and Deploy Wordpress"
+linkTitle: "Compose and Deploy WordPress"
 weight: 3050
 ---
 
 ## WordPress Introduction
 
-WordPress is a free and open-source content management system written in PHP, allowing users to build their own websites. A complete Wordpress application includes the following Kubernetes objects with MySQL serving as the backend database.
+WordPress is a free and open-source content management system written in PHP, allowing users to build their own websites. A complete WordPress application includes the following Kubernetes objects with MySQL serving as the backend database.
 
 ![WordPress](https://pek3b.qingstor.com/kubesphere-docs/png/20200105181908.png)
 

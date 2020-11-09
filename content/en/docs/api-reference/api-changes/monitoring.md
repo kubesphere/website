@@ -34,10 +34,6 @@ The following metrics have been deprecated and removed.
 |cluster_workspace_count|
 |cluster_account_count|
 |cluster_devops_project_count|
-|workspace_namespace_count|
-|workspace_devops_project_count|
-|workspace_member_count|
-|workspace_role_count|
 |coredns_up_sum|
 |coredns_cache_hits|
 |coredns_cache_misses|
@@ -52,6 +48,15 @@ The following metrics have been deprecated and removed.
 |coredns_proxy_request_duration_quantile|
 |prometheus_up_sum|
 |prometheus_tsdb_head_samples_appended_rate|
+
+New metrics are introduced in KubeSphere 3.0.0.
+
+|New Metrics|
+|---|
+|kubesphere_workspace_count|
+|kubesphere_user_count|
+|kubesphere_cluser_count|
+|kubesphere_app_template_count|
 
 ## Response Fields
 

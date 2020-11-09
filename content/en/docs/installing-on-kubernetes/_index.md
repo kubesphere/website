@@ -39,9 +39,9 @@ Make sure your environment where existing Kubernetes clusters run meets the prer
 
 ## Installing on Hosted Kubernetes
 
-### [Deploy KubeSphere on Oracle OKE](../installing-on-kubernetes/hosted-kubernetes/install-kubesphere-on-oke/)
+### [Deploy KubeSphere on AKS](../installing-on-kubernetes/hosted-kubernetes/install-kubesphere-on-aks/)
 
-Learn how to deploy KubeSphere on Oracle Cloud Infrastructure Container Engine for Kubernetes.
+Learn how to deploy KubeSphere on Azure Kubernetes Service.
 
 ### [Deploy KubeSphere on AWS EKS](../installing-on-kubernetes/hosted-kubernetes/install-kubesphere-on-eks/)
 
@@ -55,13 +55,13 @@ Learn how to deploy KubeSphere on DigitalOcean.
 
 Learn how to deploy KubeSphere on Google Kubernetes Engine.
 
-### [Deploy KubeSphere on AKS](../installing-on-kubernetes/hosted-kubernetes/install-kubesphere-on-aks/)
-
-Learn how to deploy KubeSphere on Azure Kubernetes Service.
-
 ### [Deploy KubeSphere on Huawei CCE](../installing-on-kubernetes/hosted-kubernetes/install-ks-on-huawei-cce/)
 
 Learn how to deploy KubeSphere on Huawei Cloud Container Engine.
+
+### [Deploy KubeSphere on Oracle OKE](../installing-on-kubernetes/hosted-kubernetes/install-kubesphere-on-oke/)
+
+Learn how to deploy KubeSphere on Oracle Cloud Infrastructure Container Engine for Kubernetes.
 
 ## Installing on On-premises Kubernetes
 

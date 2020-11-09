@@ -17,19 +17,21 @@ You have created a node-level alert policy and received alert notifications of i
 
 ### Task 1: View Alert Message
 
-1. Log in the console with one account granted the role `platform-admin`. 
-2. Click **Platform** in the top left corner and select **Clusters Management**. 
+1. Log in the console with one account granted the role `platform-admin`.
 
-![alerting_message_node_level_guide](/images/docs/alerting/alerting_message_node_level_guide.png)
+2. Click **Platform** in the top left corner and select **Clusters Management**.
+
+    ![alerting_message_node_level_guide](/images/docs/alerting/alerting_message_node_level_guide.png)
 
 3. Select a cluster from the list and enter it (If you do not enable the [multi-cluster feature](../../../multicluster-management/), you will directly go to the **Overview** page).
+
 4. Navigate to **Alerting Messages** under **Monitoring & Alerting**, and you can see alert messages in the list. In the example of [Alert Policy (Node Level)](../alerting-policy/), you set one node as the monitoring target, and its memory utilization rate is higher than the threshold of `50%`, so you can see an alert message of it.
 
-![alerting_message_node_level_list](/images/docs/alerting/alerting_message_node_level_list.png)
+    ![alerting_message_node_level_list](/images/docs/alerting/alerting_message_node_level_list.png)
 
 5. Click the alert message to enter the detail page. In **Alerting Detail**, you can see the graph of memory utilization rate of the node over time, which has been continuously higher than the threshold of `50%` set in the alert rule, so the alert was triggered.
 
-![alerting_message_node_level_detail](/images/docs/alerting/alerting_message_node_level_detail.png)
+    ![alerting_message_node_level_detail](/images/docs/alerting/alerting_message_node_level_detail.png)
 
 ### Task 2: View Alert Policy
 
@@ -41,9 +43,9 @@ Switch to **Alerting Policy** to view the alert policy corresponding to this ale
 
 1. Switch to **Recent Notification**. It can be seen that 3 notifications have been received, because the notification rule was set with a repetition period of `Alert once every 5 minutes` and retransmission of `Resend up to 3 times`.
 
-![alerting_message_node_level_notification](/images/docs/alerting/alerting_message_node_level_notification.png)
+    ![alerting_message_node_level_notification](/images/docs/alerting/alerting_message_node_level_notification.png)
 
-2. Log in your email to see alert notification mails sent by the KubeSphere mail server. You have received a total of 3 emails. 
+2. Log in your email to see alert notification mails sent by the KubeSphere mail server. You have received a total of 3 emails.
 
 ### Task 4: Add Comment
 
