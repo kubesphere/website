@@ -1,9 +1,9 @@
 ---
-title: "Accecc Control and Account Management"
-description: "Accecc Control and Account Management"
+title: "Access Control and Account Management"
+description: "Access Control and Account Management"
 layout: "single"
 
-linkTitle: "Accecc Control and Account Management"
+linkTitle: "Access Control and Account Management"
 weight: 4500
 
 icon: "/images/docs/docs.svg"
