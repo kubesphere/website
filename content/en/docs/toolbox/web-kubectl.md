@@ -47,5 +47,5 @@ In this tutorial, you will learn how to use web kubectl to operate on and manage
   - `NAME`: Specifies the name of the resource. Names are case-sensitive. If the name is omitted, details for all resources are displayed, such as `kubectl get pods`.
   - `flags`: Specifies optional flags. For example, you can use the `-s` or `--server` flags to specify the address and port of the Kubernetes API server.
 - If you need help, run `kubectl help` from the terminal window or refer to the [Kubernetes kubectl CLI documentation](https://kubernetes.io/docs/reference/kubectl/overview/).
-    
+
     {{</ notice >}}
