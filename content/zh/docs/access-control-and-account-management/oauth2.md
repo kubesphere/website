@@ -77,7 +77,7 @@ data:
 ![github](/images/docs/access-control-and-account-management/github3.png)
 ![github](/images/docs/access-control-and-account-management/github4.png)
 
-账户登录到 KubeSphere 之后就可以被添加、邀请到启用空间中[参与项目协同](https://kubesphere.io/docs/workspaces-administration/role-and-member-management) 。
+账户登录到 KubeSphere 之后就可以被添加、邀请到启用空间中[参与项目协同](https://kubesphere.io/docs/workspace-administration/role-and-member-management) 。
 
 ## OAuth2 插件开发
 
