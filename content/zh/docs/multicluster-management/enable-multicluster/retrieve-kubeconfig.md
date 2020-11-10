@@ -1,18 +1,18 @@
 ---
-title: "Retrieve KubeConfig"
-keywords: 'Kubernetes, KubeSphere, multicluster, hybrid-cloud, kubeconfig'
+title: "获取 KubeConfig"
+keywords: 'Kubernetes, KubeSphere, 多集群, 混合云, kubeconfig'
 description: 'Overview'
 
 weight: 3014
 ---
 
-## Prerequisites
+## 前提条件
 
-You have a KubeSphere cluster.
+您有一个 KubeSphere 集群。
 
-## Explore KubeConfig File
+## 浏览 KubeConfig 文件
 
-Go to `$HOME/.kube`, and check the file in the directory where, normally, a file named **config** exists. Use the following command to retrieve the KubeConfig file:
+进入 `$HOME/.kube`，检查目录中的文件，通常该目录下存在一个名为 **config** 的文件。使用以下命令获取 KubeConfig 文件：
 
 ```bash
 cat $HOME/.kube/config
