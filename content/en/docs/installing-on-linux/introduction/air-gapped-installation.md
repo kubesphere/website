@@ -7,7 +7,7 @@ linkTitle: "Air-gapped Installation"
 weight: 2113
 ---
 
-The air-gapped installation is almost the same as the online installation except it creates a local registry to host the Docker images. We will demonstrate how to install KubeSphere and Kubernetes on air-gapped environment.
+The air-gapped installation is almost the same as the online installation except that you must create a local registry to host Docker images. This tutorial demonstrates how to install KubeSphere and Kubernetes in an air-gapped environment.
 
 ## Step 1: Prepare Linux Hosts
 
@@ -15,23 +15,21 @@ Please see the requirements for hardware and operating system shown below. To ge
 
 ### System Requirements
 
-| Systems                                                | Minimum Requirements (Each node)            |
-| ------------------------------------------------------ | ------------------------------------------- |
-| **Ubuntu** *16.04, 18.04*                              | CPU: 2 Cores, Memory: 4 G, Disk Space: 40 G |
-| **Debian** *Buster, Stretch*                           | CPU: 2 Cores, Memory: 4 G, Disk Space: 40 G |
-| **CentOS** *7*.x                                       | CPU: 2 Cores, Memory: 4 G, Disk Space: 40 G |
-| **Red Hat Enterprise Linux 7**                         | CPU: 2 Cores, Memory: 4 G, Disk Space: 40 G |
-| **SUSE Linux Enterprise Server 15/openSUSE Leap 15.2** | CPU: 2 Cores, Memory: 4 G, Disk Space: 40 G |
+| Systems                                                | Minimum Requirements (Each node)             |
+| ------------------------------------------------------ | -------------------------------------------- |
+| **Ubuntu** *16.04, 18.04*                              | CPU: 2 Cores, Memory: 4 G, Disk Space: 100 G |
+| **Debian** *Buster, Stretch*                           | CPU: 2 Cores, Memory: 4 G, Disk Space: 100 G |
+| **CentOS** *7*.x                                       | CPU: 2 Cores, Memory: 4 G, Disk Space: 100 G |
+| **Red Hat Enterprise Linux 7**                         | CPU: 2 Cores, Memory: 4 G, Disk Space: 100 G |
+| **SUSE Linux Enterprise Server 15/openSUSE Leap 15.2** | CPU: 2 Cores, Memory: 4 G, Disk Space: 100 G |
 
 {{< notice note >}}
 
-Installer will use `/var/lib/docker` as the default directory where all Docker related files, including the images, are stored. We recommend you to add additional storage to a disk with at least **100G** mounted at `/var/lib/docker` and `/mnt/registry` respectively. See [fdisk](https://www.computerhope.com/unix/fdisk.htm) command for reference.
+[KubeKey](https://github.com/kubesphere/kubekey) uses `/var/lib/docker` as the default directory where all Docker related files, including images, are stored. It is recommended you add additional storage volumes with at least **100G** mounted to `/var/lib/docker` and `/mnt/registry` respectively. See [fdisk](https://www.computerhope.com/unix/fdisk.htm) command for reference.
 
 {{</ notice >}}
 
 ### Node Requirements
-
-**Important**
 
 - It's recommended that your OS be clean (without any other software installed). Otherwise, there may be conflicts.
 - Ensure your disk of each node is at least **100G**.
@@ -50,10 +48,17 @@ KubeKey can install Kubernetes and KubeSphere together. The dependency that need
 | `ebtables`  | Optional but recommended  | Optional but recommended  |
 | `ipset`     | Optional but recommended  | Optional but recommended  |
 
+{{< notice note >}}
+
+- In an air-gapped environment, you can install these dependencies using a private package, a RPM package (for CentOS) or a Deb package (for Debian).
+- It is recommended you create an OS image file with all relevant dependencies installed in advance. In this way, you can use the image file directly for the installation of OS on each machine, improving deployment efficiency while not worrying about any dependency issues.
+
+{{</ notice >}} 
+
 ### Network and DNS Requirements
 
 - Make sure the DNS address in `/etc/resolv.conf` is available. Otherwise, it may cause some issues of DNS in clusters.
-- If your network configuration uses Firewall or Security Group, you must ensure infrastructure components can communicate with each other through specific ports. It's recommended that you turn off the firewall or follow the guide [Network Access](https://github.com/kubesphere/kubekey/blob/master/docs/network-access.md).
+- If your network configuration uses Firewall or Security Group, you must ensure infrastructure components can communicate with each other through specific ports. It's recommended that you turn off the firewall. For more information, refer to [Port Requirements](../port-firewall/).
 
 ### Example Machines
 
@@ -67,29 +72,29 @@ This example includes three hosts as below with the master node serving as the t
 
 ## Step 2: Prepare a Private Image Registry
 
-You can use Harbor or any other private image registries, we take Docker registry as an example, using [self-signed certificates](https://docs.docker.com/registry/insecure/) (If you have your own private image registry, you can skip this step).
+You can use Harbor or any other private image registries. This tutorial uses Docker registry as an example with [self-signed certificates](https://docs.docker.com/registry/insecure/#use-self-signed-certificates) (If you have your own private image registry, you can skip this step).
 
-### Use Self-signed certificates
+### Use Self-signed Certificates
 
-Generate your own certificate:
+1. Generate your own certificate by executing the following commands:
 
-```bash
-mkdir -p certs
-```
+   ```bash
+   mkdir -p certs
+   ```
 
-```bash
-openssl req \
--newkey rsa:4096 -nodes -sha256 -keyout certs/domain.key \
--x509 -days 36500 -out certs/domain.crt
-```
+   ```bash
+   openssl req \
+   -newkey rsa:4096 -nodes -sha256 -keyout certs/domain.key \
+   -x509 -days 36500 -out certs/domain.crt
+   ```
 
-Be sure to specify a domain name in the field **Common Name** when you are generating your own certificate, for example, we use `dockerhub.kubesphere.local` in this example:
+2. Make sure you specify a domain name in the field `Common Name` when you are generating your own certificate. For instance, the field is set to `dockerhub.kubekey.local` in this example. 
 
-![Use self-signed certificates](/images/docs/air-gapped/self-signed-cert.png)
+   ![self-signed-cert](/images/docs/installing-on-linux/introduction/air-gapped-installation/self-signed-cert.jpg)
 
 ### Start Docker Registry
 
-Run the following command to start the Docker registry:
+Run the following commands to start the Docker registry:
 
 ```
 docker run -d \
@@ -104,76 +109,167 @@ docker run -d \
   registry:2
 ```
 
-### Configure Registry 
+### Configure Registry
 
-Please add the mapping configuration into the server where it requires to access the docker registry. Put the registry domain name and IP into `etc/hosts`:
+1. Add an entry to `/etc/hosts` to map the hostname (i.e. the registry domain name; in this case, it is `dockerhub.kubekey.local`) to the private IP address of your machine as below.
 
-![Configure Registry](/images/docs/air-gapped/docker-registry.png)
+   ```bash
+   # docker registry
+   192.168.0.2 dockerhub.kubekey.local
+   ```
 
-Copy the certificate to the specified directory so that Docker trusts the certificate 
+2. Execute the following commands to copy the certificate to a specified directory and make Docker trust it.
 
-The path of the certificate is related to the certificate domain name, please create a certificate copy path based on the actual domain name).
+   ```bash
+   mkdir -p  /etc/docker/certs.d/dockerhub.kubekey.local
+   ```
 
-```
-mkdir -p  /etc/docker/certs.d/dockerhub.kubesphere.local
-```
+   ```bash
+   cp certs/domain.crt  /etc/docker/certs.d/dockerhub.kubesphere.local/ca.crt
+   ```
 
-```
-cp certs/domain.crt  /etc/docker/certs.d/dockerhub.kubesphere.local/ca.crt
-```
+   {{< notice note >}}
 
-Then validate if the docker registry is able to use. 
+   The path of the certificate is related to the domain name. When you copy the path, use your actual domain name if it is different from the one set above.
 
-![validate-registry](/images/docs/air-gapped/validate-registry.png)
+   {{</ notice >}} 
+
+3. To verify whether the private registry is effective, you can copy an image to your local machine first, and use `docker push` and `docker pull` to test it.
 
 
-## Download Air-gapped Installer
+## Step 3: Download KubeKey
 
-Execute the following command to dowloand the air-gapped Installer
-
-```
-curl -Ok https://kubesphere-installer.pek3b.qingstor.com/offline/v3.0.0/kubesphere-all-v3.0.0-offline-linux-amd64.tar.gz 
-```
-
-> The installer md5: `65e9a1158a682412faa1166c0cf06772`
-
-Unpack it:
+Similar to installing KubeSphere on Linux in an online environment, you also need to [download KubeKey](https://github.com/kubesphere/kubekey/releases) first. Download the `tar.gz` file, and transfer it to your local machine which serves as the taskbox for installation. After you uncompress the file, execute the following command to make `kk` executable:
 
 ```bash
-tar -zxf kubesphere-all-v3.0.0-offline-linux-amd64.tar.gz
+chmod +x kk
 ```
 
-Enter into the installation catalogue:
+## Step 4: Prepare Installation Images
+
+As you install KubeSphere and Kubernetes on Linux, you need to prepare an image package containing all the necessary images and download the Kubernetes binary file in advance.
+
+1. Download the image list file `images-list.txt` from a machine that has access to the Internet through the following command:
+
+   ```bash
+   curl -L -O https://github.com/kubesphere/ks-installer/releases/download/v3.0.0/images-list.txt
+   ```
+
+   {{< notice note >}}
+
+   This file lists images under `##+modulename` based on different modules. You can add your own images to this file following the same rule. To view the complete file, see [Appendix](../air-gapped-installation/#image-list-of-kubesphere-v300).
+
+   {{</ notice >}} 
+
+2. Download `images-manager.sh`. 
+
+   ```bash
+   curl -L -O https://github.com/kubesphere/ks-installer/releases/download/v3.0.0/offline-installation-tool.sh
+   ```
+
+3. Make the `.sh` file executable.
+
+   ```bash
+   chmod +x offline-installation-tool.sh
+   ```
+
+4. You can execute the command `./offline-installation-tool.sh -h` to see how to use the script:
+
+   ```bash
+   root@master:/home/ubuntu# ./offline-installation-tool.sh -h
+   Usage:
+   
+     ./offline-installation-tool.sh [-l IMAGES-LIST] [-d IMAGES-DIR] [-r PRIVATE-REGISTRY] [-v KUBERNETES-VERSION ]
+   
+   Description:
+     -b                     : save kubernetes' binaries.
+     -d IMAGES-DIR          : the dir of files (tar.gz) which generated by `docker save`. default: /home/ubuntu/kubesphere-images
+     -l IMAGES-LIST         : text file with list of images.
+     -r PRIVATE-REGISTRY    : target private registry:port.
+     -s                     : save model will be applied. Pull the images in the IMAGES-LIST and save images as a tar.gz file.
+     -v KUBERNETES-VERSION  : download kubernetes' binaries. default: v1.17.9
+     -h                     : usage message
+   ```
+
+5. Download the Kubernetes binary file.
+
+   ```bash
+   ./offline-installation-tool.sh -b -v v1.17.9 
+   ```
+
+   If you cannot access the object storage service of Google, run the following command instead to add the environment variable to change the source.
+
+   ```bash
+   export KKZONE=cn;./offline-installation-tool.sh -b -v v1.17.9 
+   ```
+
+   {{< notice note >}}
+
+   - You can change the Kubernetes version downloaded based on your needs. Supported versions: v1.15.12, v1.16.13, v1.17.9 (default) and v1.18.6.
+
+   - After you run the script, a folder `kubekey` is automatically created. Note that this file and `kk` must be placed in the same directory when you create the cluster later.
+
+   {{</ notice >}} 
+
+6. Pull images in the file `images-list.txt`.
+
+   ```bash
+   ./offline-installation-tool.sh -s -l images-list.txt -d ./kubesphere-images
+   ```
+
+   {{< notice note >}}
+
+   You can choose to pull images as needed. For example, you can delete `##k8s-images` and related images under it in `images-list.text` if you already have a Kubernetes cluster.
+
+   {{</ notice >}} 
+
+## Step 5: Push Images to Private Registry
+
+Transfer your packaged image file to your local machine and execute the following command to push it to the registry.
 
 ```bash
-cd kubesphere-all-v3.0.0-offline-linux-amd64
+./offline-installation-tool.sh -l images-list.txt -d ./kubesphere-images -r dockerhub.kubekey.local
 ```
 
-## Pre-configuration before Installation
+{{< notice note >}}
+
+The domain name is `dockerhub.kubekey.local` in the command. Make sure you use your **own registry address**.
+
+{{</ notice >}} 
+
+## Step 6: Create a Cluster
+
+In this tutorial, KubeSphere is installed on multiple nodes, so you need to specify a configuration file to add host information. Besides, for air-gapped installation, pay special attention to `.spec.registry.privateRegistry`, which must be set to **your own registry address**. See the [complete YAML file](../air-gapped-installation/#2-edit-the-configuration-file) below for more information.
 
 ### Create an Example Configuration File
 
-Execute the command to generate an example configuration file for installation:
+Execute the following command to generate an example configuration file for installation:
 
 ```bash
 ./kk create config [--with-kubernetes version] [--with-kubesphere version] [(-f | --file) path]
 ```
 
-**Example**
+For example:
 
 ```bash
-./kk create config --with v1.17.9 --with-kubesphere v3.0.0 
+./kk create config --with-kubesphere -f config-sample.yaml
 ```
 
-{{< notice info >}}
+{{< notice note >}}
 
-Supported Kubernetes versions: *v1.15.12*, *v1.16.13*, *v1.17.9* (default), *v1.18.6*.
+Make sure the Kubernetes version is the one you downloaded.
 
 {{</ notice >}}
 
 ### Edit the Configuration File
 
-Edit the generated configuration file `config-sample.yaml` refer to the following sample template:
+Edit the generated configuration file `config-sample.yaml`. Here is an example for your reference:
+
+{{< notice warning >}} 
+
+For air-gapped installation, you must specify `privateRegistry`, which is `dockerhub.kubekey.local` in this example.
+
+{{</ notice >}}
 
 ```yaml
 apiVersion: kubekey.kubesphere.io/v1alpha1
@@ -182,9 +278,9 @@ metadata:
   name: sample
 spec:
   hosts:
-  - {name: master, address: 192.168.6.17, internalAddress: 192.168.6.17, password: Qcloud@123}
-  - {name: node1, address: 192.168.6.18, internalAddress: 192.168.6.18, password: Qcloud@123}
-  - {name: node2, address: 192.168.6.19, internalAddress: 192.168.6.19, password: Qcloud@123}
+  - {name: master, address: 192.168.0.2, internalAddress: 192.168.0.2, password: Qcloud@123}
+  - {name: node1, address: 192.168.0.3, internalAddress: 192.168.0.3, password: Qcloud@123}
+  - {name: node2, address: 192.168.0.4, internalAddress: 192.168.0.4, password: Qcloud@123}
   roleGroups:
     etcd:
     - master
@@ -209,7 +305,7 @@ spec:
   registry:
     registryMirrors: []
     insecureRegistries: []
-    privateRegistry: dockerhub.kubekey.local  # Add the private image registry address here 
+    privateRegistry: dockerhub.kubekey.local  # Add the private image registry address here. 
   addons: []
 
 ---
@@ -284,26 +380,7 @@ spec:
 
 {{< notice info >}}
 
-Please see detailed definitions of parameters above from [Multi-node Installation](../multioverview), [Kubernetes Cluster Configuration](../vars). You can also enable the pluggable components in the `config-sample.yaml` as you want, refer to [Enable Pluggle Components](../../../pluggable-components) for more details.
-
-{{</ notice >}}
-
-
-### Load Docker Images into Registry
-
-Enter into the folder `kubesphere-all-v3.0.0-offline-linux-amd64/kubesphere-images-v3.0.0`.
-
-![Load Images](/images/docs/air-gapped/load-image.png)
-
-Execute the following script to push all image packages to the target image registry, we use `dockerhub.kubekey.local` as an example in this guide, please replace the domain with your private registry domain. 
-
-```
-./push-images.sh  dockerhub.kubekey.local
-```
-
-{{< notice info >}}
-
-You can find the script `push-image.sh` from [GitHub](https://github.com/kubesphere/ks-installer/blob/master/scripts/push-image-list.sh).
+For more information about these parameters, see [Multi-node Installation](../multioverview/#2-edit-the-configuration-file) and [Kubernetes Cluster Configuration](../vars/). To enable pluggable components in `config-sample.yaml`, refer to [Enable Pluggle Components](../../../pluggable-components) for more details.
 
 {{</ notice >}}
 
@@ -315,6 +392,12 @@ You can execute the following command after you make sure that all steps above a
 ```bash
 ./kk create cluster -f config-sample.yaml
 ```
+
+{{< notice warning >}}
+
+After you transfer the executable file `kk` and the folder `kubekey` that contains the Kubernetes binary file to the taskbox machine for installation, they must be placed in the same directory before you execute the command above.
+
+{{</ notice >}}
 
 ## Verify the installation
 
@@ -342,11 +425,11 @@ https://kubesphere.io             20xx-xx-xx xx:xx:xx
 #####################################################
 ```
 
-Now, you will be able to access the web console of KubeSphere at `http://{IP}:30880` (e.g. you can use the EIP) with the account and password `admin/P@88w0rd`.
+Now, you will be able to access the web console of KubeSphere through `http://{IP}:30880` with the default account and password `admin/P@88w0rd`.
 
 {{< notice note >}}
 
-To access the console, you may need to forward the source port to the intranet port of the intranet IP depending on the platform of your cloud providers. Please also make sure port 30880 is opened in the security group.
+To access the console, make sure the port 30880 is opened in your security group.
 
 {{</ notice >}}
 
@@ -354,153 +437,172 @@ To access the console, you may need to forward the source port to the intranet p
 
 ## Appendix
 
-### Image List for KubeSphere v3.0.0
+### Image List of KubeSphere v3.0.0
 
-```
-# k8s (Choose one the K8s versions to use) ：
-kubesphere/kube-apiserver:v1.16.13
-kubesphere/kube-scheduler:v1.16.13
-kubesphere/kube-proxy:v1.16.13
+```txt
+##k8s-images
+kubesphere/kube-apiserver:v1.17.9          
+kubesphere/kube-scheduler:v1.17.9          
+kubesphere/kube-proxy:v1.17.9              
+kubesphere/kube-controller-manager:v1.17.9 
+kubesphere/kube-apiserver:v1.18.6          
+kubesphere/kube-scheduler:v1.18.6          
+kubesphere/kube-proxy:v1.18.6              
+kubesphere/kube-controller-manager:v1.18.6 
+kubesphere/kube-apiserver:v1.16.13         
+kubesphere/kube-scheduler:v1.16.13         
+kubesphere/kube-proxy:v1.16.13             
 kubesphere/kube-controller-manager:v1.16.13
-kubesphere/kube-apiserver:v1.15.12
-kubesphere/kube-scheduler:v1.15.12
-kubesphere/kube-proxy:v1.15.12
+kubesphere/kube-apiserver:v1.15.12         
+kubesphere/kube-scheduler:v1.15.12         
+kubesphere/kube-proxy:v1.15.12             
 kubesphere/kube-controller-manager:v1.15.12
-kubesphere/kube-apiserver:v1.17.9
-kubesphere/kube-scheduler:v1.17.9
-kubesphere/kube-proxy:v1.17.9
-kubesphere/kube-controller-manager:v1.17.9
-kubesphere/pause:3.1
-kubesphere/pause:3.2  (K8s version should be higher than v1.18)
-kubesphere/etcd:v3.3.12
-calico/kube-controllers:v3.15.1
-calico/node:v3.15.1
-calico/cni:v3.15.1
-calico/pod2daemon-flexvol:v3.15.1
-coredns/coredns:1.6.9
-kubesphere/k8s-dns-node-cache:1.15.12
-
-# localVolume：
-kubesphere/node-disk-manager:0.5.0
-kubesphere/node-disk-operator:0.5.0
-kubesphere/provisioner-localpv:1.10.0
+kubesphere/pause:3.1                       
+kubesphere/pause:3.2                       
+kubesphere/etcd:v3.3.12                    
+calico/kube-controllers:v3.15.1            
+calico/node:v3.15.1                        
+calico/cni:v3.15.1                         
+calico/pod2daemon-flexvol:v3.15.1          
+coredns/coredns:1.6.9                      
+kubesphere/k8s-dns-node-cache:1.15.12      
+kubesphere/node-disk-manager:0.5.0         
+kubesphere/node-disk-operator:0.5.0        
+kubesphere/provisioner-localpv:1.10.0      
 kubesphere/linux-utils:1.10.0
+kubesphere/nfs-client-provisioner:v3.1.0-k8s1.11
 
-# kubesphere minimal：
-kubesphere/ks-apiserver:v3.0.0
-kubesphere/ks-console:v3.0.0
-kubesphere/ks-controller-manager:v3.0.0
-kubesphere/ks-installer:v3.0.0
-kubesphere/etcd:v3.2.18
+##ks-core-images
+kubesphere/ks-apiserver:v3.0.0                  
+kubesphere/ks-console:v3.0.0                    
+kubesphere/ks-controller-manager:v3.0.0         
+kubesphere/ks-installer:v3.0.0                  
+kubesphere/etcd:v3.2.18                         
 kubesphere/kubectl:v1.0.0
 kubesphere/ks-upgrade:v3.0.0
-kubesphere/ks-devops:flyway-v3.0.0
-redis:5.0.5-alpine
-alpine:3.10.4
-haproxy:2.0.4
-mysql:8.0.11
-nginx:1.14-alpine
-minio/minio:RELEASE.2019-08-07T01-59-21Z
-minio/mc:RELEASE.2019-08-07T23-14-43Z
-mirrorgooglecontainers/defaultbackend-amd64:1.4
-kubesphere/nginx-ingress-controller:0.24.1
-osixia/openldap:1.3.0
-csiplugin/snapshot-controller:v2.0.1
-kubesphere/ks-upgrade:v3.0.0                      
-kubesphere/ks-devops:flyway-v3.0.0
-
-# monitoring：
-kubesphere/prometheus-config-reloader:v0.38.3
-kubesphere/prometheus-operator:v0.38.3
-prom/alertmanager:v0.21.0
-prom/prometheus:v2.20.1
-kubesphere/node-exporter:ks-v0.18.1
-jimmidyson/configmap-reload:v0.3.0
-kubesphere/notification-manager-operator:v0.1.0
-kubesphere/notification-manager:v0.1.0
-kubesphere/metrics-server:v0.3.7
-kubesphere/kube-rbac-proxy:v0.4.1
+kubesphere/ks-devops:flyway-v3.0.0                       
+redis:5.0.5-alpine                              
+alpine:3.10.4                                   
+haproxy:2.0.4                                   
+mysql:8.0.11                                    
+nginx:1.14-alpine                               
+minio/minio:RELEASE.2019-08-07T01-59-21Z        
+minio/mc:RELEASE.2019-08-07T23-14-43Z           
+mirrorgooglecontainers/defaultbackend-amd64:1.4 
+kubesphere/nginx-ingress-controller:0.24.1      
+osixia/openldap:1.3.0                           
+csiplugin/snapshot-controller:v2.0.1            
+kubesphere/kubefed:v0.3.0                       
+kubesphere/tower:v0.1.0                         
+kubesphere/prometheus-config-reloader:v0.38.3   
+kubesphere/prometheus-operator:v0.38.3          
+prom/alertmanager:v0.21.0                       
+prom/prometheus:v2.20.1                         
+kubesphere/node-exporter:ks-v0.18.1             
+jimmidyson/configmap-reload:v0.3.0              
+kubesphere/notification-manager-operator:v0.1.0 
+kubesphere/notification-manager:v0.1.0          
+kubesphere/metrics-server:v0.3.7                
+kubesphere/kube-rbac-proxy:v0.4.1               
 kubesphere/kube-state-metrics:v1.9.6
 
-# logging:
-kubesphere/elasticsearch-oss:6.7.0-1
-kubesphere/fluentbit-operator:v0.2.0
-kubesphere/fluentbit-operator:migrator
-kubesphere/fluent-bit:v1.4.6    
-kubesphere/kube-auditing-operator:v0.1.0
-kubesphere/kube-auditing-webhook:v0.1.0
-kubesphere/kube-events-exporter:v0.1.0
-kubesphere/kube-events-operator:v0.1.0
-kubesphere/kube-events-ruler:v0.1.0
+##ks-logging-images                 
+kubesphere/elasticsearch-oss:6.7.0-1      
+kubesphere/elasticsearch-curator:v5.7.6 
+kubesphere/fluentbit-operator:v0.2.0       
+kubesphere/fluentbit-operator:migrator     
+kubesphere/fluent-bit:v1.4.6             
+elastic/filebeat:6.7.0  
+kubesphere/kube-auditing-operator:v0.1.0   
+kubesphere/kube-auditing-webhook:v0.1.0    
+kubesphere/kube-events-exporter:v0.1.0     
+kubesphere/kube-events-operator:v0.1.0     
+kubesphere/kube-events-ruler:v0.1.0        
 kubesphere/log-sidecar-injector:1.1
 docker:19.03
 
-# service-mesh：
-istio/citadel:1.4.8
-istio/galley:1.4.8
-istio/kubectl:1.4.8
-istio/mixer:1.4.8
-istio/pilot:1.4.8
-istio/proxyv2:1.4.8
-istio/sidecar_injector:1.4.8
-jaegertracing/jaeger-agent:1.17
-jaegertracing/jaeger-collector:1.17
-jaegertracing/jaeger-operator:1.17.1
+##istio-images
+istio/citadel:1.4.8                         
+istio/galley:1.4.8                          
+istio/kubectl:1.4.8                         
+istio/mixer:1.4.8                           
+istio/pilot:1.4.8                           
+istio/proxyv2:1.4.8                         
+istio/sidecar_injector:1.4.8                
+jaegertracing/jaeger-agent:1.17             
+jaegertracing/jaeger-collector:1.17         
+jaegertracing/jaeger-operator:1.17.1        
 jaegertracing/jaeger-query:1.17
 jaegertracing/jaeger-es-index-cleaner:1.17.1
 
-# devops：
-jenkins/jenkins:2.176.2
-jenkins/jnlp-slave:3.27-1
-kubesphere/jenkins-uc:v3.0.0
-kubesphere/s2ioperator:v2.1.1
-kubesphere/s2irun:v2.1.1
-kubesphere/builder-base:v2.1.0
-kubesphere/builder-nodejs:v2.1.0
-kubesphere/builder-maven:v2.1.0
-kubesphere/builder-go:v2.1.0
-kubesphere/s2i-binary:v2.1.0
-kubesphere/tomcat85-java11-centos7:v2.1.0
-kubesphere/tomcat85-java11-runtime:v2.1.0
-kubesphere/tomcat85-java8-centos7:v2.1.0
-kubesphere/tomcat85-java8-runtime:v2.1.0
-kubesphere/java-11-centos7:v2.1.0
-kubesphere/java-8-centos7:v2.1.0
-kubesphere/java-8-runtime:v2.1.0
-kubesphere/java-11-runtime:v2.1.0
-kubesphere/nodejs-8-centos7:v2.1.0
-kubesphere/nodejs-6-centos7:v2.1.0
-kubesphere/nodejs-4-centos7:v2.1.0
-kubesphere/python-36-centos7:v2.1.0
-kubesphere/python-35-centos7:v2.1.0
-kubesphere/python-34-centos7:v2.1.0
+##ks-devops-images
+jenkins/jenkins:2.176.2                     
+jenkins/jnlp-slave:3.27-1                   
+kubesphere/jenkins-uc:v3.0.0                
+kubesphere/s2ioperator:v2.1.1               
+kubesphere/s2irun:v2.1.1                    
+kubesphere/builder-base:v2.1.0              
+kubesphere/builder-nodejs:v2.1.0            
+kubesphere/builder-maven:v2.1.0             
+kubesphere/builder-go:v2.1.0                
+kubesphere/s2i-binary:v2.1.0                
+kubesphere/tomcat85-java11-centos7:v2.1.0   
+kubesphere/tomcat85-java11-runtime:v2.1.0   
+kubesphere/tomcat85-java8-centos7:v2.1.0    
+kubesphere/tomcat85-java8-runtime:v2.1.0    
+kubesphere/java-11-centos7:v2.1.0           
+kubesphere/java-8-centos7:v2.1.0            
+kubesphere/java-8-runtime:v2.1.0            
+kubesphere/java-11-runtime:v2.1.0           
+kubesphere/nodejs-8-centos7:v2.1.0          
+kubesphere/nodejs-6-centos7:v2.1.0          
+kubesphere/nodejs-4-centos7:v2.1.0          
+kubesphere/python-36-centos7:v2.1.0         
+kubesphere/python-35-centos7:v2.1.0         
+kubesphere/python-34-centos7:v2.1.0         
 kubesphere/python-27-centos7:v2.1.0
-
-# notification&&alerting:
-kubesphere/notification:flyway_v2.1.2
-kubesphere/notification:v2.1.2   
-kubesphere/alert-adapter:v3.0.0
-kubesphere/alerting-dbinit:v3.0.0
+kubesphere/notification:flyway_v2.1.2       
+kubesphere/notification:v2.1.2              
+kubesphere/alert-adapter:v3.0.0             
+kubesphere/alerting-dbinit:v3.0.0           
 kubesphere/alerting:v2.1.2
 
-# multicluster:
-kubesphere/kubefed:v0.3.0
-kubesphere/tower:v0.1.0
-
-# openpitrix(app store)：
-openpitrix/generate-kubeconfig:v0.5.0
-openpitrix/openpitrix:flyway-v0.5.0
-openpitrix/openpitrix:v0.5.0
+##openpitrix-images
+openpitrix/generate-kubeconfig:v0.5.0       
+openpitrix/openpitrix:flyway-v0.5.0         
+openpitrix/openpitrix:v0.5.0                
 openpitrix/release-app:v0.5.0
+
+##example-images
+kubesphere/examples-bookinfo-productpage-v1:1.13.0
+kubesphere/examples-bookinfo-reviews-v1:1.13.0
+kubesphere/examples-bookinfo-reviews-v2:1.13.0
+kubesphere/examples-bookinfo-reviews-v3:1.13.0
+kubesphere/examples-bookinfo-details-v1:1.13.0
+kubesphere/examples-bookinfo-ratings-v1:1.13.0
+busybox:1.31.1
+joosthofman/wget:1.0
+kubesphere/netshoot:v1.0
+nginxdemos/hello:plain-text
+wordpress:4.8-apache
+mirrorgooglecontainers/hpa-example:latest
+java:openjdk-8-jre-alpine
+fluent/fluentd:v1.4.2-2.0
+perl:latest
+
+##csi-images
+csiplugin/csi-neonsan:v1.2.0 
+csiplugin/csi-neonsan-ubuntu:v1.2.0
+csiplugin/csi-neonsan-centos:v1.2.0
+csiplugin/csi-provisioner:v1.5.0
+csiplugin/csi-attacher:v2.1.1
+csiplugin/csi-resizer:v0.4.0
+csiplugin/csi-snapshotter:v2.0.1
+csiplugin/csi-node-driver-registrar:v1.2.0
+csiplugin/csi-qingcloud:v1.2.0
 ```
 
-### How to Manually Load the Images to Registry
 
-If you would to like to load the docker images of KubeSphere to a target registry, you need to retag it at first. We use `kubesphere/kube-apiserver:v1.17.9` as an example:
-
-```bash
-docker tag kubesphere/kube-apiserver:v1.17.9 dockerhub.kubesphere.local/kubesphere/kube-apiserver:v1.17.9
-```
 
 
 
