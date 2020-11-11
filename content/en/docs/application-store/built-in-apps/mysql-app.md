@@ -1,74 +1,91 @@
 ---
-title: "Deploy MySql on KubeSphere"
-keywords: 'KubeSphere, Kubernetes, Installation, MySql'
-description: 'How to deploy MySql on KubeSphere through App Store'
+title: "Deploy MySQL on KubeSphere"
+keywords: 'KubeSphere, Kubernetes, Installation, MySQL'
+description: 'How to deploy MySQL on KubeSphere through App Store'
 
-link title: "Deploy MySql"
+link title: "Deploy MySQL"
 weight: 345
 ---
-[MySql](https://www.mysql.com/) is an open source relational database management system (RDBMS), which USES the most commonly used database management language - Structured Query Language (SQL) for database management.
-MySQL is open source, so anyone can download it under the General Public License and modify it to suit their personal needs.
-This tutorial walks you through an example of how to deploy MySql on KubeSphere.
+[MySQL](https://www.mysql.com/) is an open-source relational database management system (RDBMS), which uses the most commonly used database management language - Structured Query Language (SQL) for database management. It provides a fully managed database service to deploy cloud-native applications using the world’s most popular open-source database.
+
+This tutorial walks you through an example of deploying MySQL from the App Store of KubeSphere.
 
 ## Prerequisites
 
-- Please make sure you [enable the OpenPitrix system](https://kubesphere.io/docs/pluggable-components/app-store/). MySql will be deployed from the App Store.
-- You need to create a workspace, a project, and a user account for this tutorial.  The account needs to be a platform regular user and to be invited as the project operator with the `operator` role. In this tutorial, you log in as `project-operator` and work in the project `test-project` in the workspace `test-workspace`.
+- Please make sure you [enable the OpenPitrix system](https://kubesphere.io/docs/pluggable-components/app-store/).
+- You need to create a workspace, a project, and a user account for this tutorial. The account needs to be a platform regular user and to be invited as the project operator with the `operator` role. In this tutorial, you log in as `project-regular` and work in the project `demo-project` in the workspace `demo-workspace`. For more information, see [Create Workspace, Project, Account and Role](../../../quick-start/create-workspace-and-project/).
 
 ## Hands-on Lab
 
-### Step 1: Deploy MySql from App Store
+### Step 1: Deploy MySQL from App Store
 
-Please make sure you are landing on the **Overview** page of the project `test-project`.
+1. On the **Overview** page of the project `demo-project`, click **App Store** in the top left corner.
 
-1. Go to **App Store**.
+   ![go-to-app-store](/images/docs/appstore/built-in-apps/mysql-app/go-to-app-store.jpg)
 
-![go-to-app-store](/images/docs/mysql-app/mysql01.png)
+2. Find MySQL and click **Deploy** on the **App Info** page.
 
-2. Find **MySql** and click **Deploy**.
+   ![find-mysql](/images/docs/appstore/built-in-apps/mysql-app/find-mysql.jpg)
 
-![find-mysql](/images/docs/mysql-app/mysql02.png)
+   ![click-deploy](/images/docs/appstore/built-in-apps/mysql-app/click-deploy.jpg)
 
-![click-deploy](/images/docs/mysql-app/mysql03.png)
+3. Set a name and select an app version. Make sure MySQL is deployed in `demo-project` and click **Next**.
 
-3. Make sure MySQL is deployed in `test-project` and click **Next**.
+   ![deploy-mysql](/images/docs/appstore/built-in-apps/mysql-app/deploy-mysql.jpg)
 
-![click-next](/images/docs/mysql-app/mysql04.png)
+4. In **App Config**, uncomment the `mysqlRootPassword` field or customize the password. Click **Deploy** to continue.
 
-4. Uncomment the `mysqlRootPassword` field or modify the password as you want. then click **Deploy**.
+   ![uncomment-password](/images/docs/appstore/built-in-apps/mysql-app/uncomment-password.jpg)
 
-![click-demploy](/images/docs/mysql-app/mysql05.png)
+5. Wait until MySQL is up and running.
 
-5. Wait until MySql is up and running.
+   ![mysql-running](/images/docs/appstore/built-in-apps/mysql-app/mysql-running.jpg)
 
-![check-if-mysql-is-running](/images/docs/mysql-app/mysql06.png)
+### Step 2: Access MySQL Terminal
 
-### Step 2: Access MySql Terminal
+1. Go to **Workloads** and click the service name of MySQL.
 
-1. Go to **WorkLoads** and click **MySql-Workload-name**.
+   ![mysql-workload](/images/docs/appstore/built-in-apps/mysql-app/mysql-workload.jpg)
 
-![click-mysql-Workload](/images/docs/mysql-app/mysql07.png)
+2. Under **Pods**, expand the menu to see container details, and then click the **Terminal** icon.
 
-2. Expand pods information and click **terminal**. You can now use the feature.
-![click-container-terminal](/images/docs/mysql-app/mysql08.png)
+   ![mysql-teminal](/images/docs/appstore/built-in-apps/mysql-app/mysql-teminal.jpg)
 
-3. You can use `mysql -uroot -ptesting`log in mysql database at the terminal.
-![login-mysql](/images/docs/mysql-app/mysql09.png)
+3. In the terminal, execute `mysql -uroot -ptesting` to log in MySQL as the root user.
 
-### Step 3: Access MySql database through the external network
+   ![log-in-mysql](/images/docs/appstore/built-in-apps/mysql-app/log-in-mysql.jpg)
 
-1. Go to **Services** and click **mysql-service-name**.
-![click-mysql-service](/images/docs/mysql-app/mysql10.png)
+### Step 3: Access MySQL Database outside Cluster
 
-2. Click **More** and click **Edit Internet Access**.
-![click-edit-internet-access](/images/docs/mysql-app/mysql11.png)
+To access MySQL outside the cluster, you need to expose the app through NodePort first.
 
-3. Select **NodePort** and click **Ok**. [Learn More](https://v2-1.docs.kubesphere.io/docs/project-setting/project-gateway/)
-![select-nodeport](/images/docs/mysql-app/mysql12.png)
+1. Go to **Services** and click the service name of MySQL.
 
-4. Through <font color=green>{$NodeIP} : {$Nodeport} </font>  to access the mysql database. 
-![mysql-port](/images/docs/mysql-app/mysql13.png)
-![access-mysql-database](/images/docs/mysql-app/mysql14.png)
-![access-mysql-database](/images/docs/mysql-app/mysql15.png)
+   ![mysql-service](/images/docs/appstore/built-in-apps/mysql-app/mysql-service.jpg)
 
-5. If you want to learn more information about MySql please refer to https://dev.mysql.com/doc/.
+2. Click **More** and select **Edit Internet Access** from the drop-down menu.
+
+   ![edit-internet-access](/images/docs/appstore/built-in-apps/mysql-app/edit-internet-access.jpg)
+
+3. Select **NodePort** for **Access Method** and click **OK**. For more information, see [Project Gateway](https://deploy-preview-492--kubesphere-v3.netlify.app/docs/project-administration/project-gateway/).
+
+   ![nodeport-mysql](/images/docs/appstore/built-in-apps/mysql-app/nodeport-mysql.jpg)
+
+4. Under **Service Ports**, you can see the port is exposed. The port and public IP will be used in the next step to access the MySQL database.
+
+   ![mysql-port-number](/images/docs/appstore/built-in-apps/mysql-app/mysql-port-number.jpg)
+
+5. To access your MySQL database, you need to use the MySQL client or install a third-party application such as SQLPro Studio for the connection. The following example demonstrates how to access the MySQL database through SQLPro Studio.
+
+   ![login](/images/docs/appstore/built-in-apps/mysql-app/login.jpg)
+
+   ![access-mysql-success](/images/docs/appstore/built-in-apps/mysql-app/access-mysql-success.jpg)
+
+   {{< notice note >}}
+
+   You may need to open the port in your security groups and configure related port forwarding rules depending on your where your Kubernetes cluster is deployed.
+
+   {{</ notice >}} 
+
+6. For more information about MySQL, refer to [the official documentation of MySQL](https://dev.mysql.com/doc/).
+
