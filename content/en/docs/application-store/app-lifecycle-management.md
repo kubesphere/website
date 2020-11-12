@@ -56,7 +56,7 @@ You need to create two accounts first, one for ISVs (`isv`) and the other (`revi
 
 ### Step 2: Upload and Submit Application
 
-1. Log in KubeSphere as `isv` and go to your workspace. You need to upload the example app Redis to this workspace so that it can be used later. First, download the app Redis 11.3.4 and click **Upload Template** in **App Templates**.
+1. Log in KubeSphere as `isv` and go to your workspace. You need to upload the example app Redis to this workspace so that it can be used later. First, download the app [Redis 11.3.4](https://github.com/kubesphere/tutorial/raw/master/tutorial%205%20-%20app-store/redis-11.3.4.tgz) and click **Upload Template** in **App Templates**.
 
    ![upload-app](/images/docs/appstore/application-lifecycle-management/upload-app.jpg)
 
@@ -209,7 +209,7 @@ To allow workspace users to upgrade apps, you need to add new app versions to Ku
 
    ![redis-new-version](/images/docs/appstore/application-lifecycle-management/redis-new-version.jpg)
 
-2. Download Redis 12.0.0, which is a new version of Redis for demonstration in this tutorial. In the tab **Versions**, click **New Version** on the right to upload the package you just downloaded.
+2. Download [Redis 12.0.0](https://github.com/kubesphere/tutorial/raw/master/tutorial%205%20-%20app-store/redis-12.0.0.tgz), which is a new version of Redis for demonstration in this tutorial. In the tab **Versions**, click **New Version** on the right to upload the package you just downloaded.
 
    ![new-version-redis](/images/docs/appstore/application-lifecycle-management/new-version-redis.jpg)
 
