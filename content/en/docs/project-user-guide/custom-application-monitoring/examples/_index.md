@@ -1,5 +1,5 @@
 ---
-linkTitle: "Get Started"
+linkTitle: "Examples"
 weight: 2110
 
 _build:
