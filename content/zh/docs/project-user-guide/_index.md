@@ -53,11 +53,11 @@ icon: "/images/docs/docs.svg"
 
 ### 开始使用
 
-#### [监控 MySQL](../project-user-guide/custom-application-monitoring/get-started/monitor-mysql/)
+#### [监控 MySQL](../project-user-guide/custom-application-monitoring/examples/monitor-mysql/)
 
 部署 MySQL 和 MySQL Exporter 并创建一个仪表板来监视该应用程序。
 
-#### [监视示例 Web](../project-user-guide/custom-application-monitoring/get-started/monitor-sample-web/)
+#### [监视示例 Web](../project-user-guide/custom-application-monitoring/examples/monitor-sample-web/)
 
 使用 Helm 图表来部署示例 Web 应用程序并创建仪表板以监视该应用程序。
 

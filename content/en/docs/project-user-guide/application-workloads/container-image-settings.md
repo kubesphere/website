@@ -3,7 +3,7 @@ title: "Container Image Settings"
 keywords: 'KubeSphere, Kubernetes, image, workload, setting, container'
 description: 'How to set container images in KubeSphere.'
 
-weight: 2265
+weight: 2290
 ---
 
 When you create Deployments, StatefulSets or DaemonSets, you need to specify a container image. At the same time, KubeSphere provides users with various options to customize workload configurations, such as health check probes, environment variables and start commands. This page illustrates detailed explanations of different properties in **Container Image**.

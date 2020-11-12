@@ -1,7 +1,7 @@
 ---
-title: "Composing an App for Microservices"
+title: "Compose a Microservice App"
 keywords: 'kubesphere, kubernetes, docker, devops, service mesh, openpitrix'
-description: 'Composing an app for microservices'
+description: 'Compose a microservice-based application'
 
 
 weight: 2260
