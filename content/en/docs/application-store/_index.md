@@ -1,6 +1,6 @@
 ---
 title: "App Store"
-description: "Getting started with KubeSphere DevOps project"
+description: "Getting started with the App Store of KubeSphere"
 layout: "single"
 
 
