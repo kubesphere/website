@@ -1,5 +1,5 @@
 ---
-title: "Uninstalling"
+title: "卸载"
 keywords: 'kubernetes, kubesphere, uninstalling, remove-cluster'
 description: 'How to uninstall KubeSphere'
 
