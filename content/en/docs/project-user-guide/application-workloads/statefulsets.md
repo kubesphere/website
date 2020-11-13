@@ -10,7 +10,7 @@ As workload API object, a StatefulSet is used to manage stateful applications. I
 
 Like a Deployment, a StatefulSet manages Pods that are based on an identical container specification. Unlike a Deployment, a StatefulSet maintains a sticky identity for each of their Pods. These pods are created from the same specification, but are not interchangeable: each has a persistent identifier that it maintains across any rescheduling.
 
-If you want to use storage volumes to provide persistence for your workload, you can use a StatefulSet as part of the solution. Although individual Pods in a StatefulSet are susceptible to failure, the persistent Pod identifiers make it easier to match existing volumes to the new Pods that replace any that have failed. 
+If you want to use storage volumes to provide persistence for your workload, you can use a StatefulSet as part of the solution. Although individual Pods in a StatefulSet are susceptible to failure, the persistent Pod identifiers make it easier to match existing volumes to the new Pods that replace any that have failed.
 
 StatefulSets are valuable for applications that require one or more of the following.
 
@@ -33,7 +33,7 @@ In KubeSphere, a **Headless** service is also created when you create a Stateful
 
 ### Step 1: Open Dashboard
 
-Log in the console as `project-regular`. Go to **Application Workloads** of a project, choose **StatefulSets** and click **Create**.
+Log in the console as `project-regular`. Go to **Application Workloads** of a project, select **Workloads**, and click **Create** under the tab **StatefulSets**.
 
 ![statefulsets](/images/docs/project-user-guide/workloads/statefulsets.jpg)
 
