@@ -20,7 +20,7 @@ For more information, see the [official documentation of Kubernetes](https://kub
 
 ### Step 1: Open Dashboard
 
-Log in the console as `project-regular`. Go to **Application Workloads** of a project, choose **Deployments** and click **Create**.
+Log in the console as `project-regular`. Go to **Application Workloads** of a project, select **Workloads**, and click **Create** under the tab **Deployments**.
 
 ![deployments](/images/docs/project-user-guide/workloads/deployments.png)
 

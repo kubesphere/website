@@ -28,7 +28,7 @@ DaemonSets are very helpful in cases where you want to deploy ongoing background
 
 ### Step 1: Open Dashboard
 
-Log in the console as `project-regular`. Go to **Application Workloads** of a project, choose **DaemonSets** and click **Create**.
+Log in the console as `project-regular`. Go to **Application Workloads** of a project, select **Workloads**, and click **Create** under the tab **DaemonSets**.
 
 ![daemonsets](/images/docs/project-user-guide/workloads/daemonsets.jpg)
 
