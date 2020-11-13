@@ -161,7 +161,7 @@ As you install KubeSphere and Kubernetes on Linux, you need to prepare an image 
 
    {{</ notice >}} 
 
-2. Download `images-manager.sh`. 
+2. Download `offline-installation-tool.sh`.
 
    ```bash
    curl -L -O https://github.com/kubesphere/ks-installer/releases/download/v3.0.0/offline-installation-tool.sh
@@ -211,7 +211,7 @@ As you install KubeSphere and Kubernetes on Linux, you need to prepare an image 
 
    {{</ notice >}} 
 
-6. Pull images in the file `images-list.txt`.
+6. Pull images in `offline-installation-tool.sh`.
 
    ```bash
    ./offline-installation-tool.sh -s -l images-list.txt -d ./kubesphere-images
@@ -385,7 +385,7 @@ For more information about these parameters, see [Multi-node Installation](../mu
 {{</ notice >}}
 
 
-## Start Installation
+## Step 7: Start Installation
 
 You can execute the following command after you make sure that all steps above are completed.
 
@@ -399,7 +399,7 @@ After you transfer the executable file `kk` and the folder `kubekey` that contai
 
 {{</ notice >}}
 
-## Verify the installation
+## Step 8: Verify Installation
 
 When the installation finishes, you can see the content as follows:
 
