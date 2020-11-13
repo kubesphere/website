@@ -21,13 +21,14 @@ DaemonSets are very helpful in cases where you want to deploy ongoing background
 ## Prerequisites
 
 - You need to create a workspace, a project and an account (`project-regular`). Please refer to [Create Workspace, Project, Account and Role](../../../quick-start/create-workspace-and-project) if they are not ready yet.
-- You need to sign in with the `project-admin` account and invite `project-regular` to the corresponding project. Please refer to [these steps to invite a member](../../../quick-start/create-workspace-and-project#task-3-create-a-project).
+
+- You need to sign in with the `project-admin` account and invite `project-regular` to the corresponding project. Please refer to [the steps to invite a member](../../../quick-start/create-workspace-and-project#task-3-create-a-project).
 
 ## Create a DaemonSet
 
 ### Step 1: Open Dashboard
 
-Log in the console as `project-regular`. Go to **Workloads** of a project, choose **DaemonSets** and click **Create**.
+Log in the console as `project-regular`. Go to **Application Workloads** of a project, choose **DaemonSets** and click **Create**.
 
 ![daemonsets](/images/docs/project-user-guide/workloads/daemonsets.jpg)
 
@@ -39,24 +40,24 @@ Specify a name for the DaemonSet (e.g. `demo-daemonset`) and click **Next** to c
 
 ### Step 3: Set Image
 
-1. Click the **Add Container Image** area.
+1. Click the **Add Container Image** box.
 
-![daemonsets](/images/docs/project-user-guide/workloads/daemonsets_form_2_container_btn.jpg)
+    ![daemonsets](/images/docs/project-user-guide/workloads/daemonsets_form_2_container_btn.jpg)
 
-2. You can input an image name to use the image from public Docker Hub or select an image from a private repository you want to use. For example, input `fluentd` in the search bar and press **Enter**.
+2. Input an image name from public Docker Hub or from a [private repository](../../configuration/image-registry/) you specified. For example, input `fluentd` in the search bar and press **Enter**.
 
-![daemonsets](/images/docs/project-user-guide/workloads/daemonsets_form_2_container_1.jpg)
+    ![daemonsets](/images/docs/project-user-guide/workloads/daemonsets_form_2_container_1.jpg)
 
-{{< notice note >}} 
+    {{< notice note >}}
 
 - Remember to press **Enter** on your keyboard after you input an image name in the search bar.
-- If you want to use your private image repository, you should create a Docker Hub secret first in **Secrets** under **Configurations**.
+- If you want to use your private image repository, you should [create an image secret](../../configuration/image-registry/) first in **Secrets** under **Configurations**.
 
-{{</ notice >}} 
+    {{</ notice >}}
 
 3. Set requests and limits for CPU and memory resources based on your needs. For more information, see [Resource Request and Resource Limit in Container Image Settings](../container-image-settings/#add-container-image).
 
-![daemonset-request-limit](/images/docs/project-user-guide/workloads/daemonset-request-limit.jpg)
+    ![daemonset-request-limit](/images/docs/project-user-guide/workloads/daemonset-request-limit.jpg)
 
 4. Click **Use Default Ports** for **Port Settings** or you can customize **Protocol**, **Name** and **Container Port**.
 
@@ -120,40 +121,40 @@ You can add metadata in this section. When you finish, click **Create** to compl
 
 1. After a DaemonSet is created, it displays in the list as below. You can click the three dots on the right and select the operation from the menu to modify a DaemonSet.
 
-![daemonsets](/images/docs/project-user-guide/workloads/daemonsets_list.png)
+    ![daemonsets](/images/docs/project-user-guide/workloads/daemonsets_list.png)
 
-- **Edit**: View and edit the basic data.
-- **Edit YAML**: View, upload, download, or update the YAML file.
-- **Redeploy**: Redeploy the DaemonSet.
-- **Delete**: Delete the DaemonSet.
+    - **Edit**: View and edit the basic information.
+    - **Edit YAML**: View, upload, download, or update the YAML file.
+    - **Redeploy**: Redeploy the DaemonSet.
+    - **Delete**: Delete the DaemonSet.
 
 2. Click the name of the DaemonSet and you can go to its detail page.
 
-![daemonsets](/images/docs/project-user-guide/workloads/daemonsets_detail.jpg)
+    ![daemonsets](/images/docs/project-user-guide/workloads/daemonsets_detail.jpg)
 
 3. Click **More** to display what operations about this DaemonSet you can do.
 
-![daemonsets](/images/docs/project-user-guide/workloads/daemonsets_detail_operation_btn.jpg)
+    ![daemonsets](/images/docs/project-user-guide/workloads/daemonsets_detail_operation_btn.jpg)
 
-- **Revision Rollback**: Select the revision to roll back.
-- **Edit Config Template**: Configure update strategies, containers and volumes.
-- **Edit YAML**: View, upload, download, or update the YAML file.
-- **Redeploy**: Redeploy this DaemonSet.
-- **Delete**: Delete the DaemonSet, and return to the DaemonSet list page.
+    - **Revision Rollback**: Select the revision to roll back.
+    - **Edit Config Template**: Configure update strategies, containers and volumes.
+    - **Edit YAML**: View, upload, download, or update the YAML file.
+    - **Redeploy**: Redeploy this DaemonSet.
+    - **Delete**: Delete the DaemonSet, and return to the DaemonSet list page.
 
 4. Click the **Resource Status** tab to view the port and Pod information of a DaemonSet.
 
-![daemonsets](/images/docs/project-user-guide/workloads/daemonsets_detail_state.png)
+    ![daemonsets](/images/docs/project-user-guide/workloads/daemonsets_detail_state.png)
 
-- **Replica Status**: You cannot change the number of Pod replicas for a DaemonSet, which defaults to 2.
-- **Pod detail**
+    - **Replica Status**: You cannot change the number of Pod replicas for a DaemonSet.
+    - **Pod detail**
 
-  ![daemonsets](/images/docs/project-user-guide/workloads/daemonsets_detail_pod.png)
+      ![daemonsets](/images/docs/project-user-guide/workloads/daemonsets_detail_pod.png)
 
-  - The Pod list provides detailed information of the Pod (status, node, Pod IP and resource usage).
-  - You can view the container information by clicking a Pod item.
-  - Click the container log icon to view output logs of the container.
-  - You can view the Pod detail page by clicking the Pod name.
+      - The Pod list provides detailed information of the Pod (status, node, Pod IP and resource usage).
+      - You can view the container information by clicking a Pod item.
+      - Click the container log icon to view output logs of the container.
+      - You can view the Pod detail page by clicking the Pod name.
 
 ### Revision Records
 
