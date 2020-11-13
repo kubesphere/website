@@ -13,7 +13,7 @@ For more information, see [the official documentation of Kubernetes](https://kub
 ## Prerequisites
 
 - You need to create a workspace, a project and an account (`project-regular`). Please refer to [Create Workspace, Project, Account and Role](../../../quick-start/create-workspace-and-project) if they are not ready yet.
-- You need to sign in with the `project-admin` account and invite `project-regular` to the corresponding project. Please refer to [these steps to invite a member](../../../quick-start/create-workspace-and-project#task-3-create-a-project).
+- You need to sign in with the `project-admin` account and invite `project-regular` to the corresponding project. Please refer to [the steps to invite a member](../../../quick-start/create-workspace-and-project#task-3-create-a-project).
 
 ## Create a CronJob
 
@@ -64,45 +64,45 @@ Please refer to [Jobs](../jobs/#step-3-job-settings-optional).
 
 1. Click **Add Container Image** in **Container Image** and input `busybox` in the search bar.
 
-![input-busybox](/images/docs/project-user-guide/application-workloads/cronjobs/input-busybox.jpg)
+    ![input-busybox](/images/docs/project-user-guide/application-workloads/cronjobs/input-busybox.jpg)
 
 2. Scroll down to **Start Command** and enter `/bin/sh,-c,date; echo "KubeSphere!"` in the box under **Parameters**. 
 
-![start-command](/images/docs/project-user-guide/application-workloads/cronjobs/start-command.jpg)
+    ![start-command](/images/docs/project-user-guide/application-workloads/cronjobs/start-command.jpg)
 
 3. Click **√** to finish setting the image and **Next** to continue.
 
-![finish-image](/images/docs/project-user-guide/application-workloads/cronjobs/finish-image.jpg)
+    ![finish-image](/images/docs/project-user-guide/application-workloads/cronjobs/finish-image.jpg)
 
-{{< notice note >}}
+    {{< notice note >}}
 
 - This example CronJob prints `KubeSphere`. For more information about setting images, see [Container Image Settings](../container-image-settings/).
-- For more information about **Restart Policy**, see [Jobs](../jobs/#step-4-container-image).
+- For more information about **Restart Policy**, see [Jobs](../jobs/#step-4-set-image).
 - You can skip **Mount Volumes** and **Advanced Settings** for this tutorial. For more information, see [Mount Volumes](../deployments/#step-4-mount-volumes) and [Configure Advanced Settings](../deployments/#step-5-configure-advanced-settings) in Deployments.
 
-{{</ notice >}} 
+    {{</ notice >}}
 
 ### Step 5: Check Result
 
-1. In the final step of **Advanced Settings**, click **Create** to finish. A new item will be added the CronJob list if the creation is successful. Besides, you can also find Jobs under **Jobs** tab.
+1. In the final step of **Advanced Settings**, click **Create** to finish. A new item will be added to the CronJob list if the creation is successful. Besides, you can also find Jobs under **Jobs** tab.
 
-![cronjob-list-new](/images/docs/project-user-guide/application-workloads/cronjobs/cronjob-list-new.jpg)
+    ![cronjob-list-new](/images/docs/project-user-guide/application-workloads/cronjobs/cronjob-list-new.jpg)
 
-![job-list](/images/docs/project-user-guide/application-workloads/cronjobs/job-list.jpg)
+    ![job-list](/images/docs/project-user-guide/application-workloads/cronjobs/job-list.jpg)
 
 2. Under **ConJobs** tab, click this CronJob and go to **Job Records** tab where you can see the information of each execution record. There are 3 successful CronJob executions as the field **successfulJobsHistoryLimit** is set to 3.
 
-![execution-record](/images/docs/project-user-guide/application-workloads/cronjobs/execution-record.jpg)
+    ![execution-record](/images/docs/project-user-guide/application-workloads/cronjobs/execution-record.jpg)
 
 3. Click any of them and you will be directed to the Job detail page.
 
-![job-detail-page](/images/docs/project-user-guide/application-workloads/cronjobs/job-detail-page.jpg)
+    ![job-detail-page](/images/docs/project-user-guide/application-workloads/cronjobs/job-detail-page.jpg)
 
 4. In **Resource Status**, you can inspect the Pod status. Click the arrow on the right and check the container log as shown below, which displays the expected output.
 
-![container-log-1](/images/docs/project-user-guide/application-workloads/cronjobs/container-log-1.jpg)
+    ![container-log-1](/images/docs/project-user-guide/application-workloads/cronjobs/container-log-1.jpg)
 
-![container-log-2](/images/docs/project-user-guide/application-workloads/cronjobs/container-log-2.jpg)
+    ![container-log-2](/images/docs/project-user-guide/application-workloads/cronjobs/container-log-2.jpg)
 
 ## CronJob Operations
 
