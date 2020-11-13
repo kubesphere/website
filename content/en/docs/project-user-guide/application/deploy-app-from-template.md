@@ -4,59 +4,50 @@ keywords: 'kubernetes, chart, helm, KubeSphere, application'
 description: 'Deploy Applications from App Template'
 
 
-weight: 2210
+weight: 2209
 ---
 
-## Objective
+The application template is the storage, delivery, and management approach for the application in KubeSphere. The application template is built on the [Helm](https://helm.sh/) packaging specification and delivered through a unified public or private application repository. The application can be composed of one or more Kubernetes workloads and services according to the application's characteristics.
 
-This tutorial shows you a simple example about how to quickly deploy a [Nginx](https://nginx.org/) application using templates from KubeSphere application store sponsored by [OpenPitrix](https://github.com/openpitrix/openpitirx). The demonstration includes one-click deploying apps within a workspace and exposing service by NodePort.
+Application templates visualize and provide deployment and management capabilities in KubeSphere, enabling users to quickly deploy applications to pointed projects based on application templates. The application template can serve as a middleware and business system created by the enterprise, which could be shared between the teams. It can also be used as the basis for constructing industry delivery standards, delivery processes and paths according to industry characteristics.
 
-## Prerequisites
+Before using an application template, you need to add an application repository in advance. KubeSphere built an application repository service based on [OpenPitrix](https://openpitrix.io). Before using the application template, you need to upload the Helm application package to the object storage, then add an application repository in KubeSphere. It will automatically loads all the applications as App template under this repository, as described in [Add Application Repository](../deploy-app-from-repo).
 
-- You have enabled [KubeSphere App Store](../../pluggable-components/app-store)
-- You have completed the tutorial in [Create Workspace, Project, Account and Role](../../quick-start/create-workspace-and-project/)
+![Use Application Template Flow](/images/application-templates/app-template-en.png)
 
-## Hands-on Lab
+In addition, application templates can also be combined with OpenPitrix's application lifecycle management capabilities to support docking ISV, and regular users through application uploading, application review, deployment testing, application publishing, application version management and more, finnaly build a public or private application store where offers application services for KubeSphere. Companies can also build industry-wide public or internal application stores to enable standardized one-click delivery of applications, see [OpenPitrix Official Documentation](https://openpitrix.io/docs/v0.4/zh-CN/manual-guide/introduction).
 
-### Step 1: Browse App Templates
+## Application List
 
-1.1. Switch to use `project-regular` account to log in, then enter into `demo-project`.
+In all projects, an **application** portal is provided, which serves as an entry point for the application template. Once the application is deployed, it can also be used as a list of applications to manage all applications under the current project.
 
-1.2. Click **Application Workloads → Applications**, click **Deploy New Application**.
+![Application List](/images/application-templates/app-portal.png)
 
-![App List](/images/application-templates/20200106161804.png)
+Click **Deploy New Application** to go to the **App Templates** page.
 
-1.3. Choose **From App Store** and enter into app store.
+## Application Template
 
-![App Templates](/images/application-templates/20201028180736.png)
+### Add a sample repository
 
-![App Store](/images/application-templates/20201028180853.png)
+As mentioned earlier, before using an application template, the cluster admin needs to pre-add the available application repository so that users can access and deploy the application in the application template.
 
-1.4. Search `Nginx` and click into Nginx App. We will demonstrate how to one-click deploying Nginx to Kubernetes.
+This document provides a sample application repository just for demonstration. Users can upload application packages in the object storage and add application repositories as needed.
 
-### Step 2: One-click Deploy Nginx Application
+1. Sign in with the cluster admin account to the KubeSphere and go into the target workspace, then choose **App Management → App Repos** to enter the list page.
 
-2.1. Click **Deploy** on the right. Generally you do not need to change any configuration, just click **Deploy**.
+![Adding a sample repository](/images/application-templates/add-repo.png)
 
-![View Nginx](/images/application-templates/20201028181426.png)
+2. Click **Add Repo** button.
 
-2.2. Wait for two minutes, then you will see the application `nginx` showing `active` on the application list.
+3. Fill in the basic information in the pop-up window, select https for the URL, fill in the blank with `https://helm-chart-repo.pek3a.qingstor.com/kubernetes-charts/`, then click the **Validate** button. After the validation is passed, click **OK** to complete it.
 
-![Deploy Nginx](/images/application-templates/20201028181614.png)
+![basic information](/images/application-templates/validate-repo.png)
+![repo list](https://pek3b.qingstor.com/kubesphere-docs/png/20190311145335.png)
 
-### Step 3: Expose Nginx Web Service
+### Access the application templates
 
-3.1. Click into Nginx application, and then enter into its service page.
+Log out and switch to sign in with project-regular account, the normal user of the project and go into the target project, then choose  **Application Workloads → Applications → Deploy New Application → From App Templates → docs-demo-repo**, you can see that all the applications in the sample application repository have been imported into the application template, then you will be able to browse or search for the desired app for one-click deployment to the desired project.
 
-![View Nginx Detail](/images/application-templates/20201028181834.png)
+![Access the application templates](/images/application-templates/deploy-new-application.png)
 
-3.2. In this page, make sure its deployment and Pod are running, then click **More → Edit Internet Access**, and select **NodePort** in the dropdown list, click **OK** to save it.
-
-![Edit Internet Access for Nginx Web Service](/images/application-templates/20201028181957.png)
-
-3.3. At this point, you will be able to access Nginx web service from outside of the cluster.
-
-![Nginx Service Endpoint](/images/application-templates/20201028182251.png)
-
-
-
+![Choose the application templates](/images/application-templates/choose-new-application.png)
