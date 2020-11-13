@@ -30,7 +30,7 @@ jobs:
           dst: gitee/kubesphere
           white_list: 'website'
           dst_key: ${{ secrets.GITEE_PRIVATE_KEY }}
-          dst_token: ${{ GITEE_TOKEN}}
+          dst_token: ${{ secrets.GITEE_TOKEN}}
           account_type: org
 
       - name: Build English Website
