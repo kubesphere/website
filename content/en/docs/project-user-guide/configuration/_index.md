@@ -1,5 +1,5 @@
 ---
-linkTitle: "ConfigMap and Secrets"
+linkTitle: "Configurations"
 weight: 2100
 
 _build:
