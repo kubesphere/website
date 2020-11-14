@@ -1,122 +1,160 @@
 ---
-title: "How to compile and deploy a Go project"
-keywords: 'kubernetes, docker, devops, jenkins, go'
-description: ''
-linkTitle: "Compile dnd deploy a Go project"
+title: "Build and Deploy a Go Project"
+keywords: 'Kubernetes, docker, devops, jenkins, go, KubeSphere'
+description: 'This tutorial demonstrates how to build and deploy a Go project.'
+linkTitle: "Build and Deploy a Go Project"
 weight: 200
-
 ---
 
 ## Prerequisites
 
 - You need to [enable KubeSphere DevOps System](../../../../docs/pluggable-components/devops/).
-- You need to create a workspace, a DevOps project, a project, and a **project-regular** user account, and this account needs to be invited into a DevOps project and a normal project. See [create-workspace-and-project](../../../../docs/quick-start/create-workspace-and-project).
+- You need to have a [Docker Hub](https://hub.docker.com/) account.
+- You need to create a workspace, a DevOps project, a project, and an account (`project-regular`). This account needs to be invited to the DevOps project and the project with the role `operator`. For more information, see [Create Workspace, Project, Account and Role](../../../quick-start/create-workspace-and-project).
 
-## Get Dockerhub Credential
+## Create Docker Hub Access Token
 
-Vist [dockerhub](https://dockerhub.com), log into the site, click **Account Settings**.
+1. Sign in [Docker Hub](https://hub.docker.com/) and select **Account Settings** from the menu in the top right corner.
 
-![](/images/devops/dockerhub-settings.png)
+   ![dockerhub-settings](/images/docs/devops-user-guide/examples/compile-and-deploy-a-go-project/dockerhub-settings.jpg)
 
-Click **Security** and **New Access Token**.
+2. Click **Security** and **New Access Token**.
 
-![](/images/devops/dockerhub-create-token.png)
+   ![dockerhub-create-token](/images/docs/devops-user-guide/examples/compile-and-deploy-a-go-project/dockerhub-create-token.jpg)
 
-Enter the name of the access token, then save it.
+3. Enter the token name and click **Create**.
 
-![](/images/devops/dockerhub-token-ok.png)
+   ![dockerhub-token-ok](/images/docs/devops-user-guide/examples/compile-and-deploy-a-go-project/dockerhub-token-ok.jpg)
 
-Click **Copy and Close** and remember to save the access token.
+4. Click **Copy and Close** and remember to save the access token.
 
-![](/images/devops/dockerhub-token-copy.png)
+   ![dockerhub-token-copy](/images/docs/devops-user-guide/examples/compile-and-deploy-a-go-project/dockerhub-token-copy.jpg)
 
-### Create Credentials
+## Create Credentials
 
-Log into KubeSphere, enter into the created DevOps project and create the following credential under **Project Management → Credentials**:
+You need to create credentials in KubeSphere for the access token created so that the pipeline can interact with Docker Hub for imaging pushing. Besides, you also create kubeconfig credentials for the access to the Kubernetes cluster.
 
-![](/images/devops/create-dockerhub-id.png)
+1. Log in the web console of KubeSphere as `project-regular`. Go to your DevOps project and click **Create** in **Credentials**.
 
-The **Username** is your dockerhub username. **Password**  is the access token you just copied.
+   ![create-dockerhub-id](/images/docs/devops-user-guide/examples/compile-and-deploy-a-go-project/create-dockerhub-id.jpg)
 
-After you have created your dockerhub credential, you still need create a **kubeconfig** type credential.
+2. In the dialogue that appears, set a **Credential ID**, which will be used later in the Jenkinsfile, and select **Account Credentials** for **Type**. Enter your Docker Hub account name for **Username** and the access token just created for **Token/Password**. When you finish, click **OK**.
 
-![](/images/devops/create-kubeconfig.png)
+   ![credential-docker-create](/images/docs/devops-user-guide/examples/compile-and-deploy-a-go-project/credential-docker-create.jpg)
 
-## Create a pipeline
+{{< notice tip >}}
 
-![](/images/devops/ks-console-create-pipline.png)
+For more information about how to create credentials, see [Credential Management](../../../devops-user-guide/how-to-use/credential-management/).
 
-Fill in the pipeline's basic information in the pop-up window,  enter the name of pipeline and set the others as default value.
+{{</ notice >}} 
 
-![](/images/devops/create-pipline-2.png)
+3. Click **Create** again and select **kubeconfig** for **Type**. Note that KubeSphere automatically populates the **Content** field, which is the kubeconfig of the current user account. Set a **Credential ID** and click **OK**.
 
-![](/images/devops/create-pipline-3.png)
+   ![create-kubeconfig](/images/docs/devops-user-guide/examples/compile-and-deploy-a-go-project/create-kubeconfig.jpg)
 
-## Edit jenkins file
+## Create a Pipeline
 
-Click **Edit Jenkins File** button under your pipeline and paste the following text into the pop-up window. You need to replace **DOCKERHUB_USERNAME**,  **DOCKERHUB_CREDENTIAL**, **KUBECONFIG_CREDENTIAL_ID**, **PROJECT_NAME** as yours.
+With the above credentials ready, you can create a pipeline using an example Jenkinsfile as below.
 
-```pipeline {
-pipeline {  
-  agent {
-    node {
-      label 'maven'
-    }
-  }
-  
-  environment {
-    // the address of your harbor registry
-    REGISTRY = 'docker.io'
-    DOCKERHUB_USERNAME = 'yuswift'
-    // docker image name
-    APP_NAME = 'devops-go-sample'
-    // ‘dockerhubid’ is the credential id you created on ks console
-    DOCKERHUB_CREDENTIAL = credentials('dockerhubid')
-    //the kubeconfig credential id you created on ks console
-    KUBECONFIG_CREDENTIAL_ID = 'go'
-    // the project name you created on ks console
-    PROJECT_NAME = 'devops-go'
-  }
-  
-  stages {
-    stage('docker login') {
-      steps{
-        container ('maven') {
-          sh 'echo $DOCKERHUB_CREDENTIAL_PSW  | docker login -u $DOCKERHUB_CREDENTIAL_USR --password-stdin'
-            }
-          }  
-        }
-        
-    stage('build & push') {
-      steps {
-        container ('maven') {
-          sh 'git clone https://github.com/yuswift/devops-go-sample.git'
-          sh 'cd devops-go-sample && docker build -t $REGISTRY/$DOCKERHUB_USERNAME/$APP_NAME .'
-          sh 'docker push $REGISTRY/$DOCKERHUB_USERNAME/$APP_NAME'
-          }
-        }
-      }
-    stage ('deploy app') {
-      steps {
-        container('maven') {
-          kubernetesDeploy(configs: 'devops-go-sample/manifest/deploy.yaml', kubeconfigId: "$KUBECONFIG_CREDENTIAL_ID")
-          }
-        }
-      }
-    }
-  }
-```
+1. To create a pipeline, click **Create** on the **Pipelines** page.
 
-> Note: 
->
-> - You are assumed to push images into dockehub. If you are using Harbor, you can not pass the parameter to `docker login -u ` via jenkins credential with environment variable. Because every harbor robot account username contains a "\$" character, which will be converted into "\$$" by jenkins when used by environment varibles. See more about [this](https://number1.co.za/rancher-cannot-use-harbor-robot-account-imagepullbackoff-pull-access-denied/).
+   ![create-pipeline](/images/docs/devops-user-guide/examples/compile-and-deploy-a-go-project/create-pipeline.jpg)
 
-![](/images/devops/edit-jenkins-file.png)
+2. Set a name in the pop-up window and click **Next** directly.
 
-## Run the pipeline
+   ![set-pipeline-name](/images/docs/devops-user-guide/examples/compile-and-deploy-a-go-project/set-pipeline-name.jpg)
 
-After you have saved the jenkins file, click the **Run** button. If everything goes well, you will see a deployment workload under your project.
+3. In this tutorial, you can use default values for all the fields. In **Advanced Settings**, click **Create** directly.
 
-![](/images/devops/run-pipline.png)
+   ![create-pipeline-2](/images/docs/devops-user-guide/examples/compile-and-deploy-a-go-project/create-pipeline-2.jpg)
 
-![](/images/devops/devops-go-ok.png)
+## Edit Jenkinsfile
+
+1. In the pipeline list, click this pipeline to go to its detail page. Click **Edit Jenkinsfile** to define a Jenkinsfile and your pipeline runs based on it.
+
+   ![edit-jenkinsfile](/images/docs/devops-user-guide/examples/compile-and-deploy-a-go-project/edit-jenkinsfile.jpg)
+
+2. Copy and paste all the content below to the pop-up window as an example Jenkinsfile for your pipeline. You must replace the value of `DOCKERHUB_USERNAME`,  `DOCKERHUB_CREDENTIAL`, `KUBECONFIG_CREDENTIAL_ID`,  and `PROJECT_NAME` with yours. When you finish, click **OK**.
+
+   ```groovy
+   pipeline {  
+     agent {
+       node {
+         label 'maven'
+       }
+     }
+     
+     environment {
+       // the address of your harbor registry
+       REGISTRY = 'docker.io'
+       // your docker hub username
+       DOCKERHUB_USERNAME = 'yuswift'
+       // docker image name
+       APP_NAME = 'devops-go-sample'
+       // ‘dockerhubid’ is the credential id you created in KubeSphere for docker access token
+       DOCKERHUB_CREDENTIAL = credentials('dockerhubid')
+       //the kubeconfig credential id you created in KubeSphere
+       KUBECONFIG_CREDENTIAL_ID = 'go'
+       // the name of the project you created in KubeSphere, not the DevOps project name
+       PROJECT_NAME = 'devops-go'
+     }
+     
+     stages {
+       stage('docker login') {
+         steps{
+           container ('maven') {
+             sh 'echo $DOCKERHUB_CREDENTIAL_PSW  | docker login -u $DOCKERHUB_CREDENTIAL_USR --password-stdin'
+               }
+             }  
+           }
+           
+       stage('build & push') {
+         steps {
+           container ('maven') {
+             sh 'git clone https://github.com/yuswift/devops-go-sample.git'
+             sh 'cd devops-go-sample && docker build -t $REGISTRY/$DOCKERHUB_USERNAME/$APP_NAME .'
+             sh 'docker push $REGISTRY/$DOCKERHUB_USERNAME/$APP_NAME'
+             }
+           }
+         }
+       stage ('deploy app') {
+         steps {
+           container('maven') {
+             kubernetesDeploy(configs: 'devops-go-sample/manifest/deploy.yaml', kubeconfigId: "$KUBECONFIG_CREDENTIAL_ID")
+             }
+           }
+         }
+       }
+     }
+   ```
+
+{{< notice note >}} 
+
+If your pipeline runs successfully, images will be pushed to Docker Hub. If you are using Harbor, you cannot pass the parameter to `docker login -u`  via the Jenkins credential with environment variables. This is because every Harbor robot account username contains a  `$` character, which will be converted to `$$` by Jenkins when used by environment variables. [Learn more](https://number1.co.za/rancher-cannot-use-harbor-robot-account-imagepullbackoff-pull-access-denied/).
+
+{{</ notice >}} 
+
+## Run Pipeline
+
+1. After you finish the Jenkinsfile, you can see graphical panels display on the dashboard. Click **Run** to run the pipeline.
+
+   ![run-pipeline](/images/docs/devops-user-guide/examples/compile-and-deploy-a-go-project/run-pipeline.jpg)
+
+2. In **Activity**, you can see the status of the pipeline. It may take a while before it successfully runs.
+
+   ![pipeline-running](/images/docs/devops-user-guide/examples/compile-and-deploy-a-go-project/pipeline-running.jpg)
+
+
+## Verify Results
+
+1. A **Deployment** will be created in the project specified in the Jenkinsfile if the pipeline runs successfully.
+
+   ![view-deployments](/images/docs/devops-user-guide/examples/compile-and-deploy-a-go-project/view-deployments.jpg)
+
+2. Check whether the image is pushed to Docker Hub as shown below:
+
+   ![docker-image-1](/images/docs/devops-user-guide/examples/compile-and-deploy-a-go-project/docker-image-1.jpg)
+
+   ![docker-image-2](/images/docs/devops-user-guide/examples/compile-and-deploy-a-go-project/docker-image-2.jpg)
+   
+   

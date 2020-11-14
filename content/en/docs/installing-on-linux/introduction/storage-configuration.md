@@ -36,12 +36,35 @@ If you plan to install KubeSphere on [QingCloud](https://www.qingcloud.com/), [Q
 ### Chart Config
 ```yaml
 config:
-  qy_access_key_id: "MBKTPXWCIRIEDQYQKXYL"    # <--ToBeReplaced-->
-  qy_secret_access_key: "cqEnHYZhdVCVif9qCUge3LNUXG1Cb9VzKY2RnBdX"  # <--ToBeReplaced ->
-  zone: "pek3a"  # <--ToBeReplaced-->
+  qy_access_key_id: "MBKTPXWCIRIEDQYQKXYL"    # Replace it with your own key id.
+  qy_secret_access_key: "cqEnHYZhdVCVif9qCUge3LNUXG1Cb9VzKY2RnBdX"  # Replace it with your own access key.
+  zone: "pek3a"  # Lowercase letters only.
 sc:
-  isDefaultClass: true
+  isDefaultClass: true # Set it as the default storage class.
 ```
+You need to create this file of chart configurations and input the values above manually.
+
+#### Key
+
+To get values for `qy_access_key_id` and `qy_secret_access_key`, log in the web console of [QingCloud](https://console.qingcloud.com/login) and refer to the image below to create a key first. Download the key after it is created, which is stored in a csv file.
+
+![access-key](/images/docs/installing-on-linux/introduction/persistent-storage-configuration/access-key.jpg)
+
+#### Zone
+
+The field `zone` specifies where your cloud volumes are deployed. On QingCloud Platform, you must select a zone before you create volumes.
+
+![storage-zone](/images/docs/installing-on-linux/introduction/persistent-storage-configuration/storage-zone.jpg)
+
+Make sure the value you specify for `zone` matches the region ID below:
+
+| Zone                                        | Region ID               |
+| ------------------------------------------- | ----------------------- |
+| Shanghai1-A/Shanghai1-B                     | sh1a/sh1b               |
+| Beijing3-A/Beijing3-B/Beijing3-C/Beijing3-D | pek3a/pek3b/pek3c/pek3d |
+| Guangdong2-A/Guangdong2-B                   | gd2a/gd2b               |
+| Asia-Pacific 2-A                            | ap2a                    |
+
 If you want to configure more values, see [chart configuration for QingCloud CSI](https://github.com/kubesphere/helm-charts/tree/master/src/test/csi-qingcloud#configuration).
 
 ### Add-on Config

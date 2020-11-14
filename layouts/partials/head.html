@@ -25,14 +25,40 @@
 {{ end }}
 
 <!-- Global site tag (gtag.js) - Google Analytics -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-YYCVN36HT5"></script>
+{{ if .Site.Params.addGoogleAnalytics }}
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-181950513-1"></script>
 <script>
   window.dataLayer = window.dataLayer || [];
   function gtag(){dataLayer.push(arguments);}
   gtag('js', new Date());
 
-  gtag('config', 'G-YYCVN36HT5');
+
+  gtag('config', 'UA-181950513-1');
 </script>
+{{ end }}
+
+{{ if .Site.Params.addGoogleTag }}
+<!-- Google Tag Manager -->
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-W9FLX4R');</script>
+<!-- End Google Tag Manager -->
+
+<script type="text/javascript" src="//script.crazyegg.com/pages/scripts/0100/4419.js" async="async"></script>
+{{ end }}
+
+<!-- GrowingIO Analytics code version 2.1 -->
+<!-- Copyright 2015-2017 GrowingIO, Inc. More info available at http://www.growingio.com -->
+<script type='text/javascript'>
+!function(e,t,n,g,i){e[i]=e[i]||function(){(e[i].q=e[i].q||[]).push(arguments)},n=t.createElement("script"),tag=t.getElementsByTagName("script")[0],n.async=1,n.src=('https:'==document.location.protocol?'https://':'http://')+g,tag.parentNode.insertBefore(n,tag)}(window,document,"script","assets.giocdn.com/2.1/gio.js","gio");
+  gio('init', '8a24ae300cbf8b8c', {});
+  //custom page code begin here
+  //custom page code end here
+  gio('send');
+</script>
+<!-- End GrowingIO Analytics code version: 2.1 -->
 
 
 

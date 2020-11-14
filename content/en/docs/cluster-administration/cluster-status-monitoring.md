@@ -9,7 +9,7 @@ weight: 300
 
 KubeSphere provides monitoring of related metrics such as CPU, memory, network, and disk of the cluster. You can also review historical monitoring data and sort nodes by different indicators based on their usage in **Cluster Status Monitoring**.
 
-## Prerequisites 
+## Prerequisites
 
 You need an account granted a role including the authorization of **Clusters Management**. For example, you can log in the console as `admin` directly or create a new role with the authorization and assign it to an account.
 
@@ -17,35 +17,33 @@ You need an account granted a role including the authorization of **Clusters Man
 
 1. Click **Platform** in the top left corner and select **Clusters Management**.
 
-![Platform](/images/docs/cluster-administration/cluster-status-monitoring/platform.png)
+    ![Platform](/images/docs/cluster-administration/cluster-status-monitoring/platform.png)
 
 2. If you have enabled the [multi-cluster feature](../../multicluster-management) with member clusters imported, you can select a specific cluster to view its application resources. If you have not enabled the feature, refer to the next step directly.
 
-![Clusters Management](/images/docs/cluster-administration/cluster-status-monitoring/clusters-management.png)
+    ![Clusters Management](/images/docs/cluster-administration/cluster-status-monitoring/clusters-management.png)
 
 3. Choose **Cluster Status** under **Monitoring & Alerting** to see the overview of cluster status monitoring, including **Cluster Node Status**, **Components Status**, **Cluster Resources Usage**, **ETCD Monitoring**, and **Service Component Monitoring**, as shown in the following figure.
 
-![Cluster Status Monitoring](/images/docs/cluster-administration/cluster-status-monitoring/cluster-status-monitoring.png)
+    ![Cluster Status Monitoring](/images/docs/cluster-administration/cluster-status-monitoring/cluster-status-monitoring.png)
 
 ### Cluster Node Status
 
 1. **Cluster Node Status** displays the status of all nodes, separately marking the active ones. You can go to the **Cluster Nodes** page shown below to view the real-time resource usage of all nodes by clicking **Node Online Status**.
 
-![Cluster Nodes](/images/docs/cluster-administration/cluster-status-monitoring/cluster-nodes.png)
+    ![Cluster Nodes](/images/docs/cluster-administration/cluster-status-monitoring/cluster-nodes.png)
 
 2. In **Cluster Nodes**, click the node name to view usage details in **Running Status**, including the information of CPU, Memory, Pod, Local Storage in the current node, and its health status.
 
-![Running Status](/images/docs/cluster-administration/cluster-status-monitoring/running-status.png)
+    ![Running Status](/images/docs/cluster-administration/cluster-status-monitoring/running-status.png)
 
 3. Click the tab **Monitoring** to view how the node is functioning during a certain period based on different metrics, including **CPU Utilization, CPU Load Average, Memory Utilization, Disk Utilization, inode Utilization, IOPS, DISK Throughput, and Network Bandwidth**, as shown in the following figure.
 
-![Monitoring](/images/docs/cluster-administration/cluster-status-monitoring/monitoring.png)
+    ![Monitoring](/images/docs/cluster-administration/cluster-status-monitoring/monitoring.png)
 
-{{< notice tip >}} 
-
+    {{< notice tip >}}
 You can customize the time range from the drop-down list in the top right corner to view historical data.
-
-{{</ notice >}}
+    {{</ notice >}}
 
 ### Component Status
 
@@ -53,17 +51,15 @@ KubeSphere monitors the health status of various service components in the clust
 
 1. On the **Cluster Status Monitoring** page, click components (the part in the green box below) under **Components Status** to view the status of service components.
 
-![component-monitoring](/images/docs/cluster-administration/cluster-status-monitoring/component-monitoring.jpg)
+    ![component-monitoring](/images/docs/cluster-administration/cluster-status-monitoring/component-monitoring.jpg)
 
 2. You can see all the components are listed in this part. Components marked in green are those functioning normally while those marked in orange require special attention as it signals potential issues.
 
-![Service Components Status](/images/docs/cluster-administration/cluster-status-monitoring/service-components-status.png)
+    ![Service Components Status](/images/docs/cluster-administration/cluster-status-monitoring/service-components-status.png)
 
-{{< notice tip >}} 
-
+    {{< notice tip >}}
 Components marked in orange may turn to green after a period of time, the reasons of which may be different, such as image pulling retries or pod recreations. You can click the component to see its service details.
-
-{{</ notice >}}
+    {{</ notice >}}
 
 ### Cluster Resources Usage
 
@@ -155,6 +151,7 @@ ETCD monitoring helps you to make better use of ETCD, especially to locate perfo
 |Raft Proposals|- **Proposal Commit Rate** records the rate of consensus proposals committed. If the cluster is healthy, this indicator should increase over time. Several healthy members of an ETCD cluster may have different general proposals at the same time. A continuous large lag between a single member and its leader indicates that the member is slow or unhealthy. <br>- **Proposal Apply Rate** records the total rate of consensus proposals applied. The ETCD server applies each committed proposal asynchronously. The difference between the **Proposal Commit Rate** and the **Proposal Apply Rate** should usually be small (only a few thousands even under high loads). If the difference between them continues to rise, it indicates that the ETCD server is overloaded. This can happen when using large-scale queries such as heavy range queries or large txn operations. <br>- **Proposal Failure Rate** records the total rate of failed proposals, usually related to two issues: temporary failures related to leader election or longer downtime due to a loss of quorum in the cluster. <br> - **Proposal Pending Total** records the current number of pending proposals. An increase in pending proposals indicates high client loads or members unable to submit proposals. <br> Currently, the data displayed on the dashboard is the average size of ETCD members. For more information about these indicators, see [etcd Server](https://etcd.io/docs/v3.3.12/metrics/#server). |
 
 ![ETCD Monitoring](/images/docs/cluster-administration/cluster-status-monitoring/etcd-monitoring.png)
+
 ## APIServer Monitoring
 
 [API Server](https://kubernetes.io/docs/concepts/overview/kubernetes-api/) is the hub for the interaction of all components in a Kubernetes cluster. The following table lists the main indicators monitored for the APIServer.

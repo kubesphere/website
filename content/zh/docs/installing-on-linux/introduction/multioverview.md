@@ -1,43 +1,44 @@
 ---
-title: "Multi-node Installation"
+title: "多节点安装"
 keywords: 'Multi-node, Installation, KubeSphere'
 description: 'Multi-node Installation Overview'
 
-linkTitle: "Multi-node Installation"
+linkTitle: "多节点安装"
 weight: 2112
 ---
 
-In a production environment, a single-node cluster cannot satisfy most of the needs as the cluster has limited resources with insufficient compute capabilities. Thus, single-node clusters are not recommended for large-scale data processing. Besides, a cluster of this kind is not available with high availability as it only has one node. On the other hand, a multi-node architecture is the most common and preferred choice in terms of application deployment and distribution.
+在生产环境中，单节点群集无法满足大多数需求，因为该群集的资源有限且计算能力不足。 因此，不建议将单节点群集用于大规模数据处理。 此外，此类群集只有一个节点，因此不具有高可用性。 另一方面，就应用程序部署和分发而言，多节点体系结构是最常见和首选的选择。
 
-This section gives you an overview of multi-node installation, including the concept, KubeKey and steps. For information about HA installation, refer to Installing on Public Cloud and Installing in On-premises Environment.
+本节概述了多节点安装，包括概念，KubeKey 和步骤。 有关 HA 安装的信息，请参阅在公有云上安装和在本地环境中安装。
 
-## Concept
+## 概念
 
-A multi-node cluster is composed of at least one master node and one worker node. You can use any node as the **taskbox** to carry out the installation task. You can add additional nodes based on your needs (e.g. for high availability) both before and after the installation.
+多节点群集由至少一个主节点和一个工作节点组成。 您可以使用任何节点作为“任务箱”来执行安装任务。 您可以在安装之前和之后根据需要添加其他节点（例如，为了实现高可用性）。
 
-- **Master**. A master node generally hosts the control plane that controls and manages the whole system.
-- **Worker**. Worker nodes run the actual applications deployed on them.
+- **Master**. 主节点通常托管控制面，控制和管理整个系统。
+- **Worker**. 工作节点运行在其上部署的实际应用程序。
 
-## Why KubeKey
+## 为什么选择 KubeKey
 
-If you are not familiar with Kubernetes components, you may find it difficult to set up a highly-functional multi-node Kubernetes cluster. Starting from the version 3.0.0, KubeSphere uses a brand-new installer called KubeKey to replace the old ansible-based installer. Developed in Go language, KubeKey allows users to quickly deploy a multi-node architecture.
+如果您不熟悉Kubernetes组件，则可能会发现很难建立功能强大的多节点 Kubernetes 集群。 从版本3.0.0开始， KubeSphere 使用一个名为 KubeKey 的全新安装程序来替换旧的基于 ansible 的安装程序。 用 Go 语言开发的 KubeKey 允许用户快速部署多节点体系结构。
 
-For users who do not have an existing Kubernetes cluster, they only need to create a configuration file with few commands and add node information (e.g. IP address and node roles) in it after KubeKey is downloaded. With one command, the installation will start and no additional operation is needed.
+对于不具有现有 Kubernetes 集群的用户，下载 KubeKey 之后，他们只需创建带有很少命令的配置文件并在其中添加节点信息（例如IP地址和节点角色）即可。 使用一个命令，即可安装，并且不需要其他操作。
 
-### Motivation
+### 优势
 
-- The previous ansible-based installer has a bunch of software dependencies such as Python. KubeKey is developed in Go language to get rid of the problem in a variety of environments, making sure the installation is successful.
-- KubeKey uses Kubeadm to install Kubernetes clusters on nodes in parallel as much as possible in order to reduce installation complexity and improve efficiency. It will greatly save installation time compared to the older installer.
-- With KubeKey, users can scale clusters from an all-in-one cluster to a multi-node cluster, even an HA cluster.
-- KubeKey aims to install clusters as an object, i.e., CaaO.
+- 
+  之前基于 ansible 的安装程序具有许多软件依赖性，例如 Python。 KubeKey 是使用 Go 语言开发的，可以消除各种环境中的问题，并确保安装成功。
+- KubeKey 使用 Kubeadm 在节点上尽可能多地并行安装 Kubernetes 集群，以降低安装复杂性并提高效率。 与较早的安装程序相比，它将大大节省安装时间。
+- 借助 KubeKey，用户可以将群集从多合一群集扩展到多节点群集，甚至是HA群集。
+- KubeKey 旨在将群集安装为对象，即 CaaO。
 
-## Step 1: Prepare Linux Hosts
+## 步骤1：准备 Linux 主机
 
-Please see the requirements for hardware and operating system shown below. To get started with multi-node installation, you need to prepare at least three hosts according to the following requirements.
+请参阅下面显示的对硬件和操作系统的要求。 要开始进行多节点安装，您需要根据以下要求准备至少三台主机。
 
-### System Requirements
+### 系统要求
 
-| Systems                                                | Minimum Requirements (Each node)            |
+| 系统                                                   | 最低要求（每个节点）                        |
 | ------------------------------------------------------ | ------------------------------------------- |
 | **Ubuntu** *16.04, 18.04*                              | CPU: 2 Cores, Memory: 4 G, Disk Space: 40 G |
 | **Debian** *Buster, Stretch*                           | CPU: 2 Cores, Memory: 4 G, Disk Space: 40 G |
@@ -47,47 +48,31 @@ Please see the requirements for hardware and operating system shown below. To ge
 
 {{< notice note >}}
 
-The path `/var/lib/docker` is mainly used to store the container data, and will gradually increase in size during use and operation. In the case of a production environment, it is recommended that `/var/lib/docker` should mount a drive separately.
+`/var/lib/docker`路径主要用于存储容器数据，并且在使用和操作过程中会逐渐增加大小。 在生产环境中，建议`/var/lib/docker`应该分开安装驱动器。
 
 {{</ notice >}}
 
-### Node Requirements
+### 节点要求
 
-- All nodes must be accessible through `SSH`.
-- Time synchronization for all nodes.
-- `sudo`/`curl`/`openssl` should be used in all nodes.
-- `docker` can be installed by yourself or by KubeKey.
+- 所有节点必须可以通过SSH访问。
+- 所有节点配置时钟同步。
+- 所有节点必须可以使用`sudo`/`curl`/`openssl` 。
+- 所有节点必须安装`ebtables`/`socat`/`ipset`/`conntrack` 。
+- Docker 可以自己安装或由`KubeKey`安装
 
-{{< notice note >}}
+### 网络和 DNS 要求
 
-`docker` must be installed in advance if you want to deploy KubeSphere in an offline environment.
-
-{{</ notice >}} 
-
-### Dependency Requirements
-
-KubeKey can install Kubernetes and KubeSphere together. The dependency that needs to be installed may be different based on the Kubernetes version to be installed. You can refer to the list below to see if you need to install relevant dependencies on your node in advance. 
-
-| Dependency  | Kubernetes Version ≥ 1.18 | Kubernetes Version < 1.18 |
-| ----------- | ------------------------- | ------------------------- |
-| `socat`     | Required                  | Optional but recommended  |
-| `conntrack` | Required                  | Optional but recommended  |
-| `ebtables`  | Optional but recommended  | Optional but recommended  |
-| `ipset`     | Optional but recommended  | Optional but recommended  |
-
-### Network and DNS Requirements
-
-- Make sure the DNS address in `/etc/resolv.conf` is available. Otherwise, it may cause some issues of DNS in clusters.
-- If your network configuration uses Firewall or Security Group, you must ensure infrastructure components can communicate with each other through specific ports. It's recommended that you turn off the firewall or follow the guide [Network Access](https://github.com/kubesphere/kubekey/blob/master/docs/network-access.md).
+- 确保`/etc/resolv.conf`中的 DNS 地址可用。 否则，可能会导致群集中出现某些DNS问题。
+- 如果您的网络配置使用防火墙或安全组，则必须确保基础结构组件可以通过特定端口相互通信。 建议您关闭防火墙或遵循指南[网络访问](https://github.com/kubesphere/kubekey/blob/master/docs/network-access.md)。
 
 {{< notice tip >}}
 
-- It's recommended that your OS be clean (without any other software installed). Otherwise, there may be conflicts.
-- A container image mirror (accelerator) is recommended to be prepared if you have trouble downloading images from dockerhub.io. See [Configure registry mirrors for the Docker daemon](https://docs.docker.com/registry/recipes/mirror/#configure-the-docker-daemon).
+- 建议您的操作系统是干净的（不安装任何其他软件）。 否则可能会发生冲突。
+- 如果您在从 dockerhub.io 下载镜像时遇到问题，建议准备一个容器镜像（加速器）。 请参阅[Configure registry mirrors for the Docker daemon](https://docs.docker.com/registry/recipes/mirror/#configure-the-docker-daemon)。
 
 {{</ notice >}}
 
-This example includes three hosts as below with the master node serving as the taskbox.
+本示例包括以下三个主机，其中主节点用作“任务箱”。
 
 | Host IP     | Host Name | Role         |
 | ----------- | --------- | ------------ |
@@ -95,15 +80,15 @@ This example includes three hosts as below with the master node serving as the t
 | 192.168.0.3 | node1     | worker       |
 | 192.168.0.4 | node2     | worker       |
 
-## Step 2: Download KubeKey
+## 步骤2：下载 KubeKey
 
-Follow the step below to download KubeKey.
+请按照以下步骤下载 KubeKey。
 
 {{< tabs >}}
 
-{{< tab "For users with good network connections to GitHub" >}}
+{{< tab "访问 Github 困难" >}}
 
-Download KubeKey from [GitHub Release Page](https://github.com/kubesphere/kubekey/releases/tag/v1.0.0) or use the following command directly.
+使用以下命令下载 KubeKey:
 
 ```bash
 wget https://github.com/kubesphere/kubekey/releases/download/v1.0.0/kubekey-v1.0.0-linux-amd64.tar.gz -O - | tar -xz
@@ -111,9 +96,9 @@ wget https://github.com/kubesphere/kubekey/releases/download/v1.0.0/kubekey-v1.0
 
 {{</ tab >}}
 
-{{< tab "For users with poor network connections to GitHub" >}}
+{{< tab "访问 Github 很轻松" >}}
 
-Download KubeKey using the following command:
+从[GitHub Release Page](https://github.com/kubesphere/kubekey/releases/tag/v1.0.0)下载 KubeKey 或直接使用以下命令。
 
 ```bash
 wget -c https://kubesphere.io/download/kubekey-v1.0.0-linux-amd64.tar.gz -O - | tar -xz
@@ -122,19 +107,20 @@ wget -c https://kubesphere.io/download/kubekey-v1.0.0-linux-amd64.tar.gz -O - | 
 
 {{</ tabs >}}
 
-Make `kk` executable:
+
+将执行权授予`kk`:
 
 ```bash
 chmod +x kk
 ```
 
-## Step 3: Create a Cluster
+## 步骤3：创建一个集群
 
-For multi-node installation, you need to create a cluster by specifying a configuration file.
+对于多节点安装，您需要通过指定配置文件来创建集群。
 
-### 1. Create an example configuration file
+### 1. 创建一个示例配置文件
 
-Command:
+命令:
 
 ```bash
 ./kk create config [--with-kubernetes version] [--with-kubesphere version] [(-f | --file) path]
@@ -142,27 +128,39 @@ Command:
 
 {{< notice info >}}
 
-Supported Kubernetes versions: *v1.15.12*, *v1.16.13*, *v1.17.9* (default), *v1.18.6*.
+支持的 Kubernetes 版本: *v1.15.12*, *v1.16.13*, *v1.17.9* (default), *v1.18.6*.
 
 {{</ notice >}}
 
-Here are some examples for your reference:
+以下是一些示例供您参考：
 
-- You can create an example configuration file with default configurations. You can also specify the file with a different filename, or in a different folder.
+- 您可以使用默认配置创建示例配置文件。 您还可以使用其他文件名或其他文件夹指定文件。
 
 ```bash
 ./kk create config [-f ~/myfolder/abc.yaml]
 ```
 
-- You can specify a KubeSphere version that you want to install (e.g. `--with-kubesphere v3.0.0`).
+- 您可以在`config-sample.yaml`中自定义持久性存储插件（例如NFS Client，Ceph RBD和GlusterFS）。
+
+```bash
+./kk create config --with-storage localVolume
+```
+
+{{< notice note >}}
+
+默认情况下，KubeKey将安装 [OpenEBS](https://openebs.io/) 来为开发和测试环境配置 [LocalPV](https://kubernetes.io/docs/concepts/storage/volumes/#local)， 对新用户来说很方便。 在此多节点安装示例中，使用默认存储类（本地卷）。 对于生产，请使用NFS/Ceph/GlusterFS/CSI或商业产品作为持久性存储解决方案。 您需要在`config-sample.yaml`的`addons`下指定它们。 有关更多详细信息，请参见 [Persistent Storage Configuration](../storage-configuration)。
+
+{{</ notice >}}
+
+- 您可以指定要安装的 KubeSphere 版本（例如`--with-kubesphere v3.0.0`）。
 
 ```bash
 ./kk create config --with-kubesphere [version]
 ```
 
-### 2. Edit the configuration file
+### 2. 编辑配置文件
 
-A default file **config-sample.yaml** will be created if you do not change the name. Edit the file and here is an example of the configuration file of a multi-node cluster with one master node.
+如果不更改名称，将创建默认文件 **config-sample.yaml**。 编辑文件，这是具有一个主节点的多节点群集的配置文件示例。
 
 ```yaml
 spec:
@@ -186,21 +184,21 @@ spec:
 
 #### Hosts
 
-- List all your machines under `hosts` and add their detailed information as above. In this case, port 22 is the default port of SSH. Otherwise, you need to add the port number after the IP address. For example:
+- 在`hosts`下列出您的所有计算机，并如上所述添加其详细信息。 在这种情况下，端口22是SSH的默认端口。 否则，您需要在IP地址后面添加端口号。 例如：
 
 ```yaml
 hosts:
   - {name: master, address: 192.168.0.2, internalAddress: 192.168.0.2, port: 8022, user: ubuntu, password: Testing123}
 ```
 
-- For default root user:
+- 默认是root用户:
 
 ```yaml
 hosts:
   - {name: master, address: 192.168.0.2, internalAddress: 192.168.0.2, password: Testing123}
 ```
 
-- For passwordless login with SSH keys:
+- 使用SSH密钥的无密码登录：
 
 ```yaml
 hosts:
@@ -209,34 +207,24 @@ hosts:
 
 #### roleGroups
 
-- `etcd`: etcd node names
-- `master`: Master node names
-- `worker`: Worker node names
+- `etcd`: etcd节点名称
+- `master`: Master节点名称
+- `worker`: Worker节点名称
 
-#### controlPlaneEndpoint (for HA installation only)
+#### controlPlaneEndpoint (仅用于 HA 安装)
 
-`controlPlaneEndpoint` allows you to define an external load balancer for an HA cluster. You need to prepare and configure an external load balancer if and only if you need to install more than 3 master nodes. Please note that the address and port should be indented by two spaces in `config-sample.yaml`, and the `address` should be VIP. See HA Configuration for details.
+`controlPlaneEndpoint` 允许您为HA集群定义外部负载均衡器。 当且仅当您需要安装3个以上的主节点时，才需要准备和配置外部负载均衡器。 请注意，地址和端口应在 `config-sample.yaml`中以两个空格缩进，`address`应为VIP。 有关详细信息，请参见HA配置。
 
 {{< notice tip >}}
 
-- You can enable the multi-cluster feature by editing the configuration file. For more information, see Multi-cluster Management.
-- You can also select the components you want to install. For more information, see [Enable Pluggable Components](../../../pluggable-components/). For an example of a complete config-sample.yaml file, see [this file](https://github.com/kubesphere/kubekey/blob/master/docs/config-example.md).
+- 您可以通过编辑配置文件来启用多集群功能。 有关更多信息，请参阅多集群管理。
+- 您也可以选择要安装的组件。 有关更多信息，请参见[启用可插拔组件](../../../pluggable-components/)。 有关完整的config-sample.yaml文件的示例，请参见[此文件](https://github.com/kubesphere/kubekey/blob/master/docs/config-example.md)。
 
 {{</ notice >}}
 
-#### addons
+完成编辑后，保存文件。
 
-You can customize persistent storage plugins (e.g. NFS Client, Ceph RBD, and GlusterFS) by specifying storage under the field `addons` in `config-sample.yaml`. For more information, see [Persistent Storage Configuration](../storage-configuration).
-
-{{< notice note >}}
-
-KubeKey will install [OpenEBS](https://openebs.io/) to provision [LocalPV](https://kubernetes.io/docs/concepts/storage/volumes/#local) for development and testing environment by default, which is convenient for new users. In this example of multi-node installation, the default storage class (local volume) is used. For production, please use NFS/Ceph/GlusterFS/CSI or commercial products as persistent storage solutions.
-
-{{</ notice >}}
-
-When you finish editing, save the file.
-
-### 3. Create a cluster using the configuration file
+### 3. 使用配置文件创建集群
 
 ```bash
 ./kk create cluster -f config-sample.yaml
@@ -244,15 +232,15 @@ When you finish editing, save the file.
 
 {{< notice note >}}
 
-You need to change `config-sample.yaml` above to your own file if you use a different name.
+如果使用其他名称，则需要将上面的`config-sample.yaml`更改为您自己的文件。
 
 {{</ notice >}}
 
-The whole installation process may take 10-20 minutes, depending on your machine and network.
+整个安装过程可能需要10到20分钟，具体取决于您的计算机和网络。
 
-### 4. Verify the installation
+### 4. 验证安装
 
-When the installation finishes, you can see the content as follows:
+安装完成后，您可以看到如下内容：
 
 ```bash
 #####################################################
@@ -276,21 +264,21 @@ https://kubesphere.io             20xx-xx-xx xx:xx:xx
 #####################################################
 ```
 
-Now, you will be able to access the web console of KubeSphere at `http://{IP}:30880` (e.g. you can use the EIP) with the account and password `admin/P@88w0rd`.
+现在，您可以使用帐户和密码`admin/P@88w0rd`访问位于`http://{IP}:30880`的KubeSphere Web控制台（例如，您可以使用EIP）。
 
 {{< notice note >}}
 
-To access the console, you may need to forward the source port to the intranet port of the intranet IP depending on the platform of your cloud providers. Please also make sure port 30880 is opened in the security group.
+要访问控制台，您可能需要将源端口转发到 Intranet IP 和端口，具体取决于您的云提供商的平台。 还请确保在安全组中打开了端口30880。
 
 {{</ notice >}}
 
 ![kubesphere-login](https://ap3.qingstor.com/kubesphere-website/docs/login.png)
 
-## Enable kubectl Autocompletion
+## 启用 kubectl 自动补全
 
-KubeKey doesn't enable kubectl autocompletion. See the content below and turn it on:
+KubeKey 不会启用 kubectl 自动补全功能。 请参阅下面的内容并将其打开：
 
-**Prerequisite**: make sure bash-autocompletion is installed and works.
+**先决条件**：确保已安装 bash-autocompletion 并可以正常工作。
 
 ```bash
 # Install bash-completion
@@ -303,7 +291,9 @@ echo 'source <(kubectl completion bash)' >>~/.bashrc
 kubectl completion bash >/etc/bash_completion.d/kubectl
 ```
 
-Detailed information can be found [here](https://kubernetes.io/docs/tasks/tools/install-kubectl/#enabling-shell-autocompletion).
 
-## Demo
+详细信息[见此](https://kubernetes.io/docs/tasks/tools/install-kubectl/#enabling-shell-autocompletion)。
+
+## 示例
 <script src="https://asciinema.org/a/364501.js" id="asciicast-364501" async></script>
+

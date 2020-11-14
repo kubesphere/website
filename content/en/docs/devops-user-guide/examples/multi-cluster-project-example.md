@@ -1,138 +1,155 @@
 ---
-title: "How to deloy applications cross multiple clusters"
-keywords: 'kubernetes, docker, devops, jenkins, multiple cluster'
-description: ''
-linkTitle: "Deloy applications cross multiple clusters"
+title: "Deploy Apps in a Multi-cluster Project Using Jenkinsfile"
+keywords: 'Kubernetes, KubeSphere, docker, devops, jenkins, multi-cluster'
+description: 'This tutorial demonstrates how to deploy apps in a multi-cluster project using a Jenkinsfile.'
+linkTitle: "Deploy Apps in a Multi-cluster Project Using Jenkinsfile"
 weight: 300
-
-
 ---
 
 ## Prerequisites
 
-- You need to [enable multi-cluster](../../../../docs/multicluster-management/).
+- You need to [enable the multi-cluster feature](../../../../docs/multicluster-management/).
+- You need to have a [Docker Hub](https://hub.docker.com/) account.
 - You need to [enable KubeSphere DevOps System](../../../../docs/pluggable-components/devops/) on your host cluster.
-- You need to create a workspace with multiple clusters, a DevOps project on your **host** cluster, a multi-cluster project(in this tutorial, your are assumed to add host and only one member cluster to the  multi-cluster project), and a **project-regular** user account, and this account needs to be invited into the DevOps project and the multi-cluster project. See [multi-cluster](../../../multicluster-management) and [project-administration](../../../project-administration/project-and-multicluster-project.)
+- You need to create a workspace with multiple clusters, a DevOps project on your **host** cluster, a multi-cluster project (in this tutorial, this multi-cluster project is created on the host cluster and one member cluster), and an account (`project-regular`). This account needs to be invited to the DevOps project and the multi-cluster project with the role `operator`. For more information, see [Create Workspace, Project, Account and Role](../../../quick-start/create-workspace-and-project), [Multi-cluster Management](../../../multicluster-management) and [Multi-cluster Projects](../../../project-administration/project-and-multicluster-project/#multi-cluster-projects).
 
-## Get Dockerhub Credential
+## Create Docker Hub Access Token
 
-Vist [dockerhub](https://dockerhub.com), log into the site, click **account settings**.
+1. Sign in [Docker Hub](https://hub.docker.com/) and select **Account Settings** from the menu in the top right corner.
 
-![](/images/devops/dockerhub-settings.png)
+   ![dockerhub-settings](/images/docs/devops-user-guide/examples/compile-and-deploy-a-go-multi-cluster-project/dockerhub-settings.jpg)
 
-Click **Security** and **New Access Token**.
+2. Click **Security** and **New Access Token**.
 
-![](/images/devops/dockerhub-create-token.png)
+   ![dockerhub-create-token](/images/docs/devops-user-guide/examples/compile-and-deploy-a-go-multi-cluster-project/dockerhub-create-token.jpg)
 
-Enter the name of the access token, then save it.
+3. Enter the token name and click **Create**.
 
-![](/images/devops/dockerhub-token-ok.png)
+   ![dockerhub-token-ok](/images/docs/devops-user-guide/examples/compile-and-deploy-a-go-multi-cluster-project/dockerhub-token-ok.jpg)
 
-Click **Copy and Close** and remember to save the access token.
+4. Click **Copy and Close** and remember to save the access token.
 
-![](/images/devops/dockerhub-token-copy.png)
+   ![dockerhub-token-copy](/images/docs/devops-user-guide/examples/compile-and-deploy-a-go-multi-cluster-project/dockerhub-token-copy.jpg)
 
-### Create Credentials
+## Create Credentials
 
-Log into KubeSphere, enter into the created DevOps project on your **host** cluster and create the following credential under **Project Management → Credentials**:
+You need to create credentials in KubeSphere for the access token created so that the pipeline can interact with Docker Hub for imaging pushing. Besides, you also need to create kubeconfig credentials for the access to the Kubernetes cluster.
 
-![](/images/devops/create-dockerhub-id.png)
+1. Log in the web console of KubeSphere as `project-regular`. Go to your DevOps project and click **Create** in **Credentials**.
 
-The **Username** is your dockerhub username. **Password**  is the access token you just copied.
+   ![create-dockerhub-id](/images/docs/devops-user-guide/examples/compile-and-deploy-a-go-multi-cluster-project/create-dockerhub-id.jpg)
 
-After you have created your dockerhub credential, you still need create a **kubeconfig** type credential.
+2. In the dialogue that appears, set a **Credential ID**, which will be used later in the Jenkinsfile, and select **Account Credentials** for **Type**. Enter your Docker Hub account name for **Username** and the access token just created for **Token/Password**. When you finish, click **OK**.
 
-![](/images/devops/create-kubeconfig.png)
+   ![credential-docker-create](/images/docs/devops-user-guide/examples/compile-and-deploy-a-go-multi-cluster-project/credential-docker-create.jpg)
 
-## Create a pipeline
+   {{< notice tip >}}
 
-![](/images/devops/ks-console-create-pipline.png)
+   For more information about how to create credentials, see [Credential Management](../../../devops-user-guide/how-to-use/credential-management/).
 
-Fill in the pipeline's basic information in the pop-up window,  enter the name of pipeline and set the others as default value.
+   {{</ notice >}} 
 
-![](/images/devops/create-pipline-2.png)
+3. Click **Create** again and select **kubeconfig** for **Type**. Note that KubeSphere automatically populates the **Content** field, which is the kubeconfig of the current user account. Set a **Credential ID** and click **OK**.
 
-![](/images/devops/create-pipline-3.png)
+   ![create-kubeconfig](/images/docs/devops-user-guide/examples/compile-and-deploy-a-go-multi-cluster-project/create-kubeconfig.jpg)
 
-## Edit jenkins file
+## Create a Pipeline
 
-Click **Edit Jenkins File** button under your pipeline and paste the following text into the pop-up window. You need to replace **DOCKERHUB_USERNAME**,  **DOCKERHUB_CREDENTIAL**, **KUBECONFIG_CREDENTIAL_ID**, **PROJECT_NAME** as yours.
+With the above credentials ready, you can create a pipeline using an example Jenkinsfile as below.
 
-```pipeline {
-pipeline {
-  agent {
-    node {
-      label 'maven'
-    }
+1. To create a pipeline, click **Create** on the **Pipelines** page.
 
-  }
-  
-  environment {
-    REGISTRY = 'docker.io'
-    // username of dockerhub
-    DOCKERHUB_USERNAME = 'yuswift'
-    APP_NAME = 'devops-go-sample'
-    // ‘dockerhubid’ is the dockerhub credential id you created on ks console
-    DOCKERHUB_CREDENTIAL = credentials('dockerhubid')
-    // the kubeconfig credential id you created on ks console
-    KUBECONFIG_CREDENTIAL_ID = 'multi-cluster'
-    // mutli-cluster project name under your own workspace
-    MULTI_CLUSTER_PROJECT_NAME = 'devops-with-go'
-    // the member cluster name you want to deploy app on
-    // in this tutorial, you are assumed to deploy app on host and only one member cluster
-    // for more member clusters, please manifest/multi-cluster-deploy.yaml
-    MEMBER_CLUSTER_NAME = 'c9'
-  }  
-  
-  stages {
-    stage('docker login') {
-      steps {
-        container('maven') {
-          sh 'echo $DOCKERHUB_CREDENTIAL_PSW  | docker login -u $DOCKERHUB_CREDENTIAL_USR --password-stdin'
-        }
+   ![create-pipeline](/images/docs/devops-user-guide/examples/compile-and-deploy-a-go-project/create-pipeline.jpg)
 
-      }
-    }
-    
-    stage('build & push') {
-      steps {
-        container('maven') {
-          sh 'git clone https://github.com/yuswift/devops-go-sample.git'
-          sh 'cd devops-go-sample && docker build -t $REGISTRY/$DOCKERHUB_USERNAME/$APP_NAME .'
-          sh 'docker push $REGISTRY/$DOCKERHUB_USERNAME/$APP_NAME'
-        }
-      }
-    }
-    
-    stage('deploy app to multi cluster') {
-      steps {
-        container('maven') {
-          script {
-            withCredentials([
-              kubeconfigFile(
-                credentialsId: 'multi-cluster',
-                variable: 'KUBECONFIG')
-              ]) {
-              sh 'envsubst < devops-go-sample/manifest/multi-cluster-deploy.yaml | kubectl apply -f -'
-              }
-            }
-          }
-        }
-      }
-    }
-  }
-```
+2. Set a name in the pop-up window and click **Next** directly.
 
-> Note: 
->
-> - You are assumed to push images into dockehub. If you are using Harbor robot account, you can not pass the parameter to `docker login -u ` via jenkins credential with environment variable. Because every harbor-robot-account username contains a "\$" character, which will be converted into "\$$" by jenkins when used by environment varibles. See more about [this](https://number1.co.za/rancher-cannot-use-harbor-robot-account-imagepullbackoff-pull-access-denied/).
+   ![set-pipeline-name](/images/docs/devops-user-guide/examples/compile-and-deploy-a-go-project/set-pipeline-name.jpg)
 
-![](/images/devops/edit-jenkins-file.png)
+3. In this tutorial, you can use default values for all the fields. In **Advanced Settings**, click **Create** directly.
 
-## Run the pipline
+   ![create-pipeline-2](/images/docs/devops-user-guide/examples/compile-and-deploy-a-go-project/create-pipeline-2.jpg)
 
-After you have saved the jenkins file, click the **Run** button. If everything goes well, you will see two deployment workload under your multi-cluster project.
+## Edit Jenkinsfile
 
-![](/images/devops/run-pipline.png)
+1. In the pipeline list, click this pipeline to go to its detail page. Click **Edit Jenkinsfile** to define a Jenkinsfile and your pipeline runs based on it.
 
-![](/images/devops/multi-cluster-ok.png)
+   ![edit-jenkinsfile](/images/docs/devops-user-guide/examples/compile-and-deploy-a-go-project/edit-jenkinsfile.jpg)
+
+2. Copy and paste all the content below to the pop-up window as an example Jenkinsfile for your pipeline. You must replace the value of `DOCKERHUB_USERNAME`,  `DOCKERHUB_CREDENTIAL`, `KUBECONFIG_CREDENTIAL_ID`,  `MULTI_CLUSTER_PROJECT_NAME`,  and `MEMBER_CLUSTER_NAME` with yours. When you finish, click **OK**.
+
+   ```
+   pipeline {
+     agent {
+       node {
+         label 'maven'
+       }
+   
+     }
+     
+     environment {
+       REGISTRY = 'docker.io'
+       // username of dockerhub
+       DOCKERHUB_USERNAME = 'yuswift'
+       APP_NAME = 'devops-go-sample'
+       // ‘dockerhubid’ is the dockerhub credential id you created on ks console
+       DOCKERHUB_CREDENTIAL = credentials('dockerhubid')
+       // the kubeconfig credential id you created on ks console
+       KUBECONFIG_CREDENTIAL_ID = 'multi-cluster'
+       // mutli-cluster project name under your own workspace
+       MULTI_CLUSTER_PROJECT_NAME = 'devops-with-go'
+       // the member cluster name you want to deploy app on
+       // in this tutorial, you are assumed to deploy app on host and only one member cluster
+       // for more member clusters, please edit manifest/multi-cluster-deploy.yaml
+       MEMBER_CLUSTER_NAME = 'c9'
+     }  
+     
+     stages {
+       stage('docker login') {
+         steps {
+           container('maven') {
+             sh 'echo $DOCKERHUB_CREDENTIAL_PSW  | docker login -u $DOCKERHUB_CREDENTIAL_USR --password-stdin'
+           }
+   
+         }
+       }
+       
+       stage('build & push') {
+         steps {
+           container('maven') {
+             sh 'git clone https://github.com/yuswift/devops-go-sample.git'
+             sh 'cd devops-go-sample && docker build -t $REGISTRY/$DOCKERHUB_USERNAME/$APP_NAME .'
+             sh 'docker push $REGISTRY/$DOCKERHUB_USERNAME/$APP_NAME'
+           }
+         }
+       }
+       
+       stage('deploy app to multi cluster') {
+         steps {
+           container('maven') {
+             script {
+               withCredentials([
+                 kubeconfigFile(
+                   credentialsId: 'multi-cluster',
+                   variable: 'KUBECONFIG')
+                 ]) {
+                 sh 'envsubst < devops-go-sample/manifest/multi-cluster-deploy.yaml | kubectl apply -f -'
+                 }
+               }
+             }
+           }
+         }
+       }
+     }
+   ```
+
+   {{< notice note >}}
+
+   If your pipeline runs successfully, images will be pushed to Docker Hub. If you are using Harbor, you cannot pass the parameter to `docker login -u`  via the Jenkins credential with environment variables. This is because every Harbor robot account username contains a  `$` character, which will be converted to `$$` by Jenkins when used by environment variables. [Learn more](https://number1.co.za/rancher-cannot-use-harbor-robot-account-imagepullbackoff-pull-access-denied/).
+
+   {{</ notice >}} 
+
+## Run Pipeline
+
+After you save the Jenkinsfile, click **Run**. If everything goes well, you will see the Deployment workload in your multi-cluster project.
+
+![multi-cluster-ok](/images/docs/devops-user-guide/examples/compile-and-deploy-a-go-multi-cluster-project/multi-cluster-ok.png)

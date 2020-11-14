@@ -3,3 +3,4 @@ baseURL = "https://kubesphere.io"
 [params]
 
 addGoogleAnalytics = true
+addGoogleTag = true
