@@ -1,7 +1,7 @@
 ---
 title: "直接连接"
 keywords: 'Kubernetes, KubeSphere, 多集群, 混合云, 直接连接'
-description: '概要'
+description: '概述'
 
 weight: 3011
 ---
