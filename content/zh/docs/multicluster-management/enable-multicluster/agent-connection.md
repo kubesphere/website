@@ -32,9 +32,9 @@ KubeSphere 的 [Tower](https://github.com/kubesphere/tower) 组件用于代理�
 
 - 选项 B - 使用 Kubectl：
 
-```shell
-kubectl edit cc ks-installer -n kubesphere-system
-```
+  ```shell
+  kubectl edit cc ks-installer -n kubesphere-system
+  ```
 
 向下滚动并将 `clusterRole` 的值设置为 `host` ，然后点击**更新**（如果使用 web 控制台）以使其生效：
 
@@ -93,40 +93,40 @@ tower      LoadBalancer    10.233.63.191   139.198.110.23  8080:30721/TCP       
 
 1. 如果看不到相应的地址显示出来（EXTERNAL-IP 处于 pending 状态），则需要手动设置代理地址。例如，您有一个可用的公有 IP 地址 `139.198.120.120`，并且此 IP 地址的端口 `8080` 被转发到集群的端口 `30721`。执行以下命令来检查服务。
 
-```shell
-kubectl -n kubesphere-system get svc
-```
+    ```shell
+    kubectl -n kubesphere-system get svc
+    ```
 
-```shell
-NAME       TYPE            CLUSTER-IP      EXTERNAL-IP     PORT(S)              AGE
-tower      LoadBalancer    10.233.63.191   <pending>  8080:30721/TCP            16h
-```
+    ```shell
+    NAME       TYPE            CLUSTER-IP      EXTERNAL-IP     PORT(S)              AGE
+    tower      LoadBalancer    10.233.63.191   <pending>  8080:30721/TCP            16h
+    ```
 
 2. 将 `proxyPublishAddress` 的值添加到 ks-installer 的配置文件中，并按如下所示输入公有 IP 地址和端口号。
 
-- 选项 A - 使用 web 控制台：
+    - 选项 A - 使用 web 控制台：
 
-使用 `admin` 帐户登录控制台，然后进入**集群管理**页面上的 **CRDs**。输入关键字 `ClusterConfiguration`，然后进入其详细信息页面。编辑 `ks-installer` 的 YAML，类似于[启用可插拔组件](../../../pluggable-components/)。
+      使用 `admin` 帐户登录控制台，然后进入**集群管理**页面上的 **CRDs**。输入关键字 `ClusterConfiguration`，然后进入其详细信息页面。编辑 `ks-installer` 的 YAML，类似于[启用可插拔组件](../../../pluggable-components/)。
 
-- 选项 B - 使用 Kubectl：
+    - 选项 B - 使用 Kubectl：
 
-```bash
-kubectl -n kubesphere-system edit clusterconfiguration ks-installer
-```
+      ```bash
+      kubectl -n kubesphere-system edit clusterconfiguration ks-installer
+      ```
 
-定位到 `multicluster` 并为 `proxyPublishAddress` 添加新行来定义IP地址，以便访问 tower。
+    定位到 `multicluster` 并为 `proxyPublishAddress` 添加新行来定义IP地址，以便访问 tower。
 
-```yaml
-multicluster:
-    clusterRole: host
-    proxyPublishAddress: http://139.198.120.120:8080 # Add this line to set the address to access tower
-```
+    ```yaml
+    multicluster:
+        clusterRole: host
+        proxyPublishAddress: http://139.198.120.120:8080 # Add this line to set the address to access tower
+    ```
 
 3. 保存配置并重启 `ks-apiserver`。
 
-```shell
-kubectl -n kubesphere-system rollout restart deployment ks-apiserver
-```
+    ```shell
+    kubectl -n kubesphere-system rollout restart deployment ks-apiserver
+    ```
 
 {{</ tab >}}
 
@@ -158,9 +158,9 @@ jwtSecret: "gfIwilcc0WjNGKJ5DLeksf2JKfcLgTZU"
 
 - 选项 B - 使用 Kubectl：
 
-```shell
-kubectl edit cc ks-installer -n kubesphere-system
-```
+  ```shell
+  kubectl edit cc ks-installer -n kubesphere-system
+  ```
 
 输入上面相应地方显示的 `jwtSecret`：
 
@@ -203,18 +203,18 @@ multicluster:
 
 1. 打开 H 集群仪表板，然后点击**添加集群**。
 
-![添加集群](https://ap3.qingstor.com/kubesphere-website/docs/20200827231611.png)
+  ![添加集群](https://ap3.qingstor.com/kubesphere-website/docs/20200827231611.png)
 
 2. 输入要导入的集群的基本信息，然后单击**下一步**。
 
-![导入集群](https://ap3.qingstor.com/kubesphere-website/docs/20200827211842.png)
+  ![导入集群](https://ap3.qingstor.com/kubesphere-website/docs/20200827211842.png)
 
 3. 在**连接方法**中，选择**集群连接代理**，然后点击**导入**。
 
-![代理](/images/docs/agent-en.png)
+  ![代理](/images/docs/agent-en.png)
 
 4. 根据指示在 M 集群中创建一个 `agent.yaml` 文件，然后将 deployment 复制并粘贴到该文件中。在节点上执行 `kubectl create -f agent.yaml` 然后等待代理启动并运行。请确保 M 集群可以访问代理地址。
 
 5. 当集群代理启动并运行时，您可以在 H 集群中看到已导入的集群。
 
-![Azure AKS](https://ap3.qingstor.com/kubesphere-website/docs/20200827231650.png)
+  ![Azure AKS](https://ap3.qingstor.com/kubesphere-website/docs/20200827231650.png)
