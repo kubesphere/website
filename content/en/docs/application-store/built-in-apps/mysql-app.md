@@ -67,7 +67,7 @@ To access MySQL outside the cluster, you need to expose the app through NodePort
 
    ![edit-internet-access](/images/docs/appstore/built-in-apps/mysql-app/edit-internet-access.jpg)
 
-3. Select **NodePort** for **Access Method** and click **OK**. For more information, see [Project Gateway](https://deploy-preview-492--kubesphere-v3.netlify.app/docs/project-administration/project-gateway/).
+3. Select **NodePort** for **Access Method** and click **OK**. For more information, see [Project Gateway](../../../project-administration/project-gateway/).
 
    ![nodeport-mysql](/images/docs/appstore/built-in-apps/mysql-app/nodeport-mysql.jpg)
 
