@@ -47,6 +47,10 @@ Learn how to deploy MongoDB from the App Store of KubeSphere and access its serv
 
 Learn how to deploy MySQL from the App Store of KubeSphere and access its service.
 
+### [Deploy NGINX on KubeSphere](../application-store/built-in-apps/nginx-app/)
+
+Learn how to deploy NGINX from the App Store of KubeSphere and access its service.
+
 ### [Deploy PostgreSQL on KubeSphere](../application-store/built-in-apps/postgresql-app/)
 
 Learn how to deploy PostgreSQL from the App Store of KubeSphere and access its service.
