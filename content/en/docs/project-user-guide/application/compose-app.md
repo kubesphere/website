@@ -4,7 +4,7 @@ keywords: 'kubesphere, kubernetes, docker, devops, service mesh, openpitrix'
 description: 'Compose a microservice-based application'
 
 
-weight: 2260
+weight: 2230
 ---
 
 TBD
