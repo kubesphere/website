@@ -20,10 +20,16 @@ docsearch({
     hits.forEach(hit => {
       if (typeof window !== undefined) {
         var host = window.location.host
-        if (host == 'kubesphere.com.cn' && language == 'en') {
-          host = host + '/en'
+        if (host == 'kubesphere.com.cn') {
+          if (language == 'en') {
+            host = host + '/en'
+            hit.url = hit.url.replace('kubesphere.io', host)
+          } else if (language == 'zh') {
+            hit.url = hit.url.replace('kubesphere.io/zh', host)
+          }
+        } else {
+          hit.url = hit.url.replace('kubesphere.io', host)
         }
-        hit.url = hit.url.replace('kubesphere.io', host)
       }
     })
     return hits
