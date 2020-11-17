@@ -1,5 +1,5 @@
 ---
-title: "Uninstalling KubeSphere and Kubernetes"
+title: "卸载 KubeSphere 和 Kubernetes"
 keywords: 'kubernetes, kubesphere, uninstalling, remove-cluster'
 description: 'How to uninstall KubeSphere and kubernetes'
 
@@ -7,19 +7,21 @@ description: 'How to uninstall KubeSphere and kubernetes'
 weight: 2451
 ---
 
-You can delete the cluster by the following command.
+您可以通过以下命令删除集群。
 
 {{< notice tip >}}
-Uninstall will remove KubeSphere and Kubernetes from the machines. This operation is irreversible and does not have any backup. Please be caution with operation.
+
+卸载将会从计算机中删除 KubeSphere 和 Kubernetes。 此操作是不可逆的，没有任何备份。 请谨慎操作。
+
 {{</ notice >}}
 
-- If you started with the quick start (all-in-one):
+- 如果您以快速入门 ( all-in-one )开始：
 
 ```
 ./kk delete cluster
 ```
 
-- If you started with the advanced mode (created with a configuration file):
+- 如果从高级模式开始（使用配置文件创建）：
 
 ```
 ./kk delete cluster [-f config-sample.yaml]

@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>{{ with .Params.Title }}{{ . }}{{ else }}{{ with .Site.Params.title }}{{ . }}{{ end }}{{ end }}</title>
+  <meta name="description" content="{{ with .Params.Description }}{{ . }}{{ else }}{{ with .Site.Params.description }}{{ . }}{{ end }}{{ end }}">
+  <meta name="keywords" content="{{ with .Params.Keywords }}{{ range $i, $e := . }}{{ if $i }} {{ end }}{{ $e }}{{ end }}{{ else }}{{ with .Site.Params.keywords }}{{ . }}{{ end }}{{ end }}">
+
+  <link href="https://fonts.googleapis.com/css?family=Montserrat:300,400,700|Roboto:300,400,700" rel="stylesheet">
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+    }
+    img[alt="logo"] {
+      width: 160px;
+      margin: 20px auto;
+    }
+  </style>
+</head>
+<body>
+  <redoc spec-url='{{ .Params.swaggerUrl | relURL }}'></redoc>
+  <script src="https://cdn.jsdelivr.net/npm/redoc/bundles/redoc.standalone.js"> </script>
+</body>
+</html>

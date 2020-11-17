@@ -1,172 +1,173 @@
 ---
-title: "Features"
-keywords: "KubeSphere, Kubernetes, Docker, Jenkins, Istio, Features"
-description: "KubeSphere Key Features"
+title: "平台功能"
+keywords: "KubeSphere, Kubernetes, Docker, Jenkins, Istio, Features, 平台功能, 功能"
+description: "KubeSphere 平台功能"
 
-linkTitle: "Features"
+linkTitle: "平台功能"
 weight: 1200
 ---
 
-## Overview
+## 概览
 
-As an open source container platform, KubeSphere provides enterprises with a robust, secure and feature-rich platform, boasting the most common functionalities needed for enterprises adopting Kubernetes, such as multi-cluster deployment and management, network policy configuration, Service Mesh (Istio-based), DevOps projects (CI/CD), security management, Source-to-Image and Binary-to-Image, multi-tenant management, multi-dimensional monitoring, log query and collection, alerting and notification, auditing, application management, and image registry management.
+KubeSphere 作为开源的企业级全栈化容器平台，为用户提供了一个健壮、安全、功能丰富、具备极致体验的 Web 控制台。拥有企业级 Kubernetes 所需的最常见的功能，如工作负载管理，网络策略配置，微服务治理（基于 Istio），DevOps 工程 (CI/CD) ，安全管理，Source to Image/Binary to Image，多租户管理，多维度监控，日志查询和收集，告警通知，审计，应用程序管理和镜像管理、应用配置密钥管理等功能模块。
 
-It also supports various open source storage and network solutions, as well as cloud storage services. For example, KubeSphere presents users with a powerful cloud-native tool [Porter](https://porterlb.io/), a CNCF-certified load balancer developed for bare metal Kubernetes clusters.
+它还支持各种开源存储和网络解决方案以及云存储服务。例如，KubeSphere 为用户提供了功能强大的云原生工具[负载均衡器插件 Porter](https://porterlb.io/)，这是为 Kubernetes 集群开发的 CNCF 认证的负载均衡插件。
 
-With an easy-to-use web console in place, KubeSphere eases the learning curve for users and drives the adoption of Kubernetes.
+有了易于使用的图形化 Web 控制台，KubeSphere 简化了用户的学习曲线并推动了更多的企业使用 Kubernetes 。
 
 ![Overview](https://pek3b.qingstor.com/kubesphere-docs/png/20200202153355.png)
 
-The following modules elaborate on the key features and benefits provided by KubeSphere. For detailed information, see the respective chapter in this guide.
+以下从专业的角度详解各个模块的功能服务。有关详细信息，请参阅本指南中的相应章节。
 
-## Provisioning and Maintaining Kubernetes
+## 部署和维护 Kubernetes
 
-### Provisioning Kubernetes Clusters
+### 部署 Kubernetes 集群
 
-[KubeKey](https://github.com/kubesphere/kubekey) allows you to deploy Kubernetes on your infrastructure out of box, provisioning Kubernetes clusters with high availability. It is recommended that at least three master nodes are configured behind a load balancer for production environment.
+[KubeKey](https://github.com/kubesphere/kubekey) 允许用户直接在基础架构上部署 Kubernetes，为 Kubernetes 群集提供高可用性。建议在生产环境至少配置三个主节点。
 
-### Kubernetes Resource Management
+### Kubernetes 资源管理
 
-KubeSphere provides a graphical web console, giving users a clear view of a variety of Kubernetes resources, including Pods and containers, clusters and nodes, workloads, secrets and ConfigMaps, services and Ingress, jobs and CronJobs, and applications. With wizard user interfaces, users can easily interact with these resources for service discovery, HPA, image management, scheduling, high availability implementation, container health check and more.
+对底层 Kubernetes 中的多种类型的资源提供可视化的展示与监控数据，以向导式 UI 实现工作负载管理、镜像管理、服务与应用路由管理 (服务发现)、密钥配置管理等，并提供弹性伸缩 (HPA) 和容器健康检查支持，支持数万规模的容器资源调度，保证业务在高峰并发情况下的高可用性。
 
-As KubeSphere 3.0 features enhanced observability, users are able to keep track of resources from multi-tenant perspectives, such as custom monitoring, events, auditing logs, alerts and notifications.
+由于 KubeSphere 3.0 具有增强的可观察性，用户可以从多租户角度跟踪资源，例如自定义监视、事件、审核日志、告警通知。
 
-### Cluster Upgrade and Scaling
+### 集群升级和扩展
 
-The next-gen installer [KubeKey](https://github.com/kubesphere/kubekey) provides an easy way of installation, management and maintenance. Moreover, it supports rolling upgrades of Kubernetes clusters so that the cluster service is always available while being upgraded. Also, you can add new nodes to a Kubernetes cluster to include more workloads by using KubeKey.
+[KubeKey](https://github.com/kubesphere/kubekey) 提供了一种简单的安装，管理和维护方式。它支持 Kubernetes 集群的滚动升级，以便集群服务在升级时始终可用。另外，也可以使用 KubeKey 将新节点添加到 Kubernetes 集群中以使用更多工作负载。
 
-## Multi-cluster Management and Deployment
+## 多集群管理和部署
 
-As the IT world sees a growing number of cloud-native applications reshaping software portfolios for enterprises, users tend to deploy their clusters across locations, geographies, and clouds. Against this backdrop, KubeSphere has undergone a significant upgrade to address the pressing need of users with its brand-new multi-cluster feature.
+随着IT界越来越多的企业使用云原生应用程序来重塑软件产品组合，用户更倾向于跨位置、地理位置和云部署集群。在此背景下，KubeSphere 进行了重大升级，以其全新的多集群功能满足用户的迫切需求。
 
-With KubeSphere, users can manage the infrastructure underneath, such as adding or deleting clusters. Heterogeneous clusters deployed on any infrastructure (e.g. Amazon EKS and Google Kubernetes Engine) can be managed in a unified way. This is made possible by a central control plane of KubeSphere with two efficient management approaches available.
+借助 KubeSphere的图形化 Web 控制台，用户可以管理底层的基础架构，例如添加或删除集群。可以使用相同的方式管理部署在任何基础架构（例如 Amazon EKS和Google Kubernetes Engine）上的异构集群。
 
-- **Solo**. Independently deployed Kubernetes clusters can be maintained and managed together in KubeSphere container platform.
-- **Federation**. Multiple Kubernetes clusters can be aggregated together as a Kubernetes resource pool. When users deploy applications, replicas can be deployed on different Kubernetes clusters in the pool. In this regard, high availability is achieved across zones and clusters.
+- **独立**：可以在 KubeSphere 容器平台中维护和管理独立部署的 Kubernetes 集群。
+- **联邦**：多个 Kubernetes 集群可以聚合在一起作为 Kubernetes 资源池。当用户部署应用程序时，副本可以部署在资源池中的不同 Kubernetes 群集上。由此，跨区域和多群集实现了高可用性。
 
-KubeSphere allows users to deploy applications across clusters. More importantly, an application can also be configured to run on a certain cluster. Besides, the multi-cluster feature, paired with [OpenPitrix](https://github.com/openpitrix/openpitrix), an industry-leading application management platform, enables users to manage apps across their whole lifecycle, including release, removal and distribution.
+KubeSphere 允许用户跨集群部署应用程序。更重要的是，还可以将应用程序配置为在特定群集上运行。此外，多集群功能与行业领先的应用程序管理平台 [OpenPitrix](https://github.com/openpitrix/openpitrix) 配合使用，使用户可以在整个生命周期内管理应用程序，包括发行、移除和分发。
 
-For more information, see [Multi-cluster Management](../../multicluster-management/).
+有关更多信息，请参阅 [多集群管理](../../multicluster-management/)。
 
-## DevOps Support
+## DevOps支持
 
-KubeSphere provides a pluggable DevOps component based on popular CI/CD tools such as Jenkins. It features automated workflows and tools including binary-to-image (B2I) and source-to-image (S2I) to package source code or binary artifacts into ready-to-run container images.
+KubeSphere 提供了基于 Jenkins 的可视化 CI/CD 流水线编辑，无需对 Jenkins 进行配置，同时内置丰富的 CI/CD 流水线插件，包括Binary-to-Image (B2I) 和Source-to-Image (S2I)，用于将源代码或二进制文件打包到准备运行的容器映像中。
 
 ![DevOps](https://pek3b.qingstor.com/kubesphere-docs/png/20200202220455.png)
 
-### CI/CD Pipeline
+### CI/CD 流水线
 
-- **Automation**. CI/CD pipelines and build strategies are based on Jenkins, streamlining and automating the development, test and production process. Dependency caches are used to accelerate build and deployment.
-- **Out-of-box**. Users can ship their Jenkins build strategy and client plugin to create a Jenkins pipeline based on Git repository/SVN. They can define any step and stage in the built-in Jenkinsfile. Common agent types are embedded, such as Maven, Node.js and Go. Users can customize the agent type as well.
-- **Visualization**. Users can easily interact with a visualized control panel to set conditions and manage CI/CD pipelines.
-- **Quality Management**. Static code analysis is supported to detect bugs, code smells and security vulnerabilities.
-- **Logs**. The entire running process of CI/CD pipelines is recorded.
+- **自动化**：CI/CD 流水线和构建策略均基于 Jenkins，可简化和自动化开发、测试和生产过程。缓存依赖项用于加速构建和部署。
+- **开箱即用**：用户可以基于他们的 Jenkins 构建策略和客户端插件来创建基于 Git repository/SVN 的 Jenkins 流水线。在内置的 Jenkinsfile 中定义任何步骤和阶段。支持常见的代理类型，例如 Maven，Node.js 和 Go。用户也可以自定义代理类型。
+- **可视化**：用户可以轻松地与可视化控制面板进行交互，编辑、管理 CI/CD 流水线。
+- **质量管理**：支持通过静态代码分析扫描来检测DevOps 工程中的 bug、代码错误和安全漏洞。
+- **日志**：日志完整记录 CI/CD 流水线运行全过程。
 
 ### Source-to-Image
 
-Source-to-Image (S2I) is a toolkit and automated workflow for building reproducible container images from source code. S2I produces ready-to-run images by injecting source code into a container image and making the container ready to execute from source code.
+Source-to-Image (S2I) 是一个直接将源代码构建成镜像的自动化构建工具，它是通过将源代码放入一个负责编译源代码的构建器镜像(Builder image) 中，自动将编译后的代码打包成 Docker 镜像。
 
-S2I allows you to publish your service to Kubernetes without writing a Dockerfile. You just need to provide a source code repository address, and specify the target image registry. All configurations will be stored as different resources in Kubernetes. Your service will be automatically published to Kubernetes, and the image will be pushed to the target registry as well.
+S2I 允许用户将服务发布到 Kubernetes，而无需编写 Dockerfile。只需要提供源代码仓库地址，并指定目标镜像仓库即可。所有配置将在 Kubernetes 中存储为不同的资源。服务将自动发布到 Kubernetes，并且镜像也将推送到目标仓库。
 
 ![S2I](https://pek3b.qingstor.com/kubesphere-docs/png/20200204131749.png)
 
 ### Binary-to-Image
 
-Similar to S2I, Binary-to-Image (B2I) is a toolkit and automated workflow for building reproducible container images from binary (e.g. Jar, War, Binary package).
+与 S2I 相似，Binary-to-Image (B2I) 是一个直接将二进制文件构建成镜像的自动化构建工具，用于从二进制文件（例如 Jar，War，Binary 包）构建可复制的容器镜像。
 
-You just need to upload your application binary package, and specify the image registry to which you want to push. The rest is exactly the same as S2I.
+用户只需要上传应用程序二进制包，并指定要推送到的镜像仓库即可。其余部分与 S2I 完全相同。
 
-For more information, see DevOps Administration.
+有关更多信息，请参阅 [DevOps 管理](../../devops-user-guide/)。
 
-## Istio-based Service Mesh
+## 基于 Istio 的服务网络
 
-KubeSphere service mesh is composed of a set of ecosystem projects, such as Istio, Envoy and Jaeger. We design a unified user interface to use and manage these tools. Most features are out-of-box and have been designed from the developer's perspective, which means KubeSphere can help you to reduce the learning curve since you do not need to deep dive into those tools individually.
+KubeSphere 服务网络由一组生态系统项目组成，例如 Istio，Envoy 和 Jaeger。我们设计了一个统一的用户界面来使用和管理这些工具。大多数功能都是现成的，并且是从开发人员的角度进行设计的，这意味着 KubeSphere 可以帮助用户减少学习难度，因为不需要单独深入研究这些工具。
 
-KubeSphere service mesh provides fine-grained traffic management, observability, tracing, and service identity and security management for a distributed application. Therefore, developers can focus on core business. With service mesh management of KubeSphere, users can better track, route and optimize communications within Kubernetes for cloud-native apps.
+KubeSphere 服务网络为分布式应用程序提供细粒度的流量管理、可观察性、服务跟踪以及服务身份和安全性管理。因此，开发人员只需要专注于核心业务。通过 KubeSphere 的服务网络管理，用户可以更好地跟踪、查看路由和优化 Kubernetes 中用于云原生应用程序的通信。
 
-### Traffic Management
+### 流量管理
 
-- **Canary release** represents an important deployment strategy of new versions for testing purposes. Traffic is separated with a pre-configured ratio into a canary release and a production release respectively. If everything goes well, users can change the percentage and gradually replace the old version with the new one.
-- **Blue-green deployment** allows users to run two versions of an application at the same time. Blue stands for the current app version and green represents the new version tested for functionality and performance. Once the testing results are successful, application traffic is routed from the in-production version (blue) to the new one (green).
-- **Traffic mirroring** enables teams to bring changes to production with as little risk as possible. Mirroring sends a copy of live traffic to a mirrored service.
-- **Circuit breaker** allows users to set limits for calls to individual hosts within a service, such as the number of concurrent connections or how many times calls to this host have failed.
+- **金丝雀发布**： 金丝雀发布是在现有生产系统旁边创建了一个全新的独立生产环境，通过使新版本只对少数终端用户可用，这样可降低向推出新代码和功能的风险。如果新版本一切顺利，用户可以更改百分比，并逐渐用新版本替换旧版本。
+- **蓝绿发布**： 允许用户同时运行一个应用程序的两个版本。蓝色代表当前应用程序版本，绿色代表经过功能和性能测试的新版本。一旦测试结果成功，就将应用程序流量从生产版本（蓝色）路由到新版本（绿色）。
+- **流量镜像**：流量镜像也叫作影子流量，是指通过一定的配置将线上的真实流量复制一份到镜像服务中去，我们通过流量镜像转发以达到在不影响线上服务的情况下对流量或请求内容做具体分析的目的，它的设计思想是只做转发而不接收响应（fire and forget），使团队能够以最小的风险进行生产变更。
+- **断路器**： 允许用户设置服务内单个主机的呼叫限制，例如并发连接数或对该主机的呼叫失败次数。
 
-For more information, see Grayscale Release.
+有关更多信息，请参见 [灰度发布](../../project-user-guide/grayscale-release/overview/)。
 
-### Visualization
+### 可视化
 
-KubeSphere service mesh has the ability to visualize the connections between microservices and the topology of how they interconnect. In this regard, observability is extremely useful in understanding the interconnection of cloud-native microservices.
+KubeSphere 服务网络具有可视化微服务之间的连接以及它们如何互连的拓扑的能力。在这方面，可观察性对于理解云原生微服务的互连非常有帮助。
 
-### Distributed Tracing
+### 分布式跟踪
 
-Based on Jaeger, KubeSphere service mesh enables users to track how services interact with each other. It helps users gain a deeper understanding of request latency, bottlenecks, serialization and parallelism via visualization.
+用户能基于 Jaeger，跟踪 KubeSphere 服务之间的网络交互。它通过可视化帮助用户更深入地了解请求延迟、瓶颈、序列化和并行性。
 
-## Multi-tenant Management
+## 多租户管理
 
-In KubeSphere, resources (e.g. clusters) can be shared between tenants. First, administrators or managers need to set different account roles with different authorizations. After that, members in the platform can be assigned with these roles to perform specific actions on varied resources. Meanwhile, as KubeSphere completely isolates tenants, they will not affect each other at all.
+在 KubeSphere 中，资源（例如群集）可以在租户之间共享。首先，管理员或运维人员需要使用不同的权限设置不同的帐户角色。可以将这些角色分配给平台中的成员，以对各种资源执行特定的操作。同时，由于 KubeSphere 完全隔离了租户，因此它们根本不会相互影响。
 
-- **Multi-tenancy**. It provides role-based fine-grained authentication in a unified way and a three-tier authorization system.
-- **Unified authentication**. For enterprises, KubeSphere is compatible with their central authentication system that is base on LDAP or AD protocol. Single sign-on (SSO) is also supported to achieve unified authentication of tenant identity.
-- **Authorization system**. It is organized into three levels: cluster, workspace and project. KubeSphere ensures resources can be shared while different roles at multiple levels are completely isolated for resource security.
+- **多租户**：它提供了基于角色的细粒度身份验证和三层授权的系统。
+- **统一认证**：KubeSphere 与 LDAP 或 AD 协议的中央身份验证系统兼容。还支持单点登录 (SSO)，以实现租户身份的统一身份验证。
+- **授权系统**：它分为三个级别：集群，企业空间和项目。 KubeSphere 确保可以共享资源，同时完全隔离多个级别的不同角色以确保资源安全。
 
-For more information, see Role and Member Management in Workspace.
+有关更多信息，请参见企业空间中的 [角色和成员管理](../../workspace-administration/release-v210/)。
 
-## Observability
+## 可观察性
 
-### Multi-dimensional Monitoring
+### 多维度监控
 
-KubeSphere features a self-updating monitoring system with graphical interfaces that streamline the whole process of operation and maintenance. It provides customized monitoring of a variety of resources and includes a set of alerts that can immediately notify users of any occurring issues.
+KubeSphere 通过可视化界面操作监控、运维功能，可简化操作和维护的整个过程。它提供了对各种资源的自定义监控，并可以立即将发生的问题发送给用户。
 
-- **Customized monitoring dashboard**. Users can decide exactly what metics need to be monitored in what kind of form. Different templates are available in KubeSphere for users to select, such as Elasticsearch, MySQL, and Redis. Alternatively, they can also create their own monitoring templates, including charts, colors, intervals and units.
-- **O&M-friendly**. The monitoring system can be operated in a visualized interface with open standard APIs for enterprises to integrate their existing systems. Therefore, they can implement operation and maintenance in a unified way.
-- **Third-party compatibility**. KubeSphere is compatible with Prometheus, which is the de facto metrics collection platform for monitoring in Kubernetes environments. Monitoring data can be seamlessly displayed in the web console of KubeSphere.
+- **可定制的监控仪表板**：用户可以准确决定需要以哪种形式监控哪些工具。 KubeSphere 中提供了不同的模板供用户选择，例如 Elasticsearch，MySQL 和 Redis。或者，他们也可以创建自己的监视模板，包括图表，颜色，间隔和单位。
+- **运维友好**：开放标准接口，易于对接企业运维系统，以统一运维入口实现集中化运维。
+- **第三方兼容性**：KubeSphere 与 Prometheus 兼容，后者是用于在 Kubernetes 环境中进行监视的事实指标收集平台。监视数据可以在 KubeSphere 的 Web 控制台中无缝显示。
 
-- **Multi-dimensional monitoring at second-level precision**.
-	- For infrastructure monitoring, the system provides comprehensive metrics such as CPU utilization, memory utilization, CPU load average, disk usage, inode utilization, disk throughput, IOPS, network outbound/inbound rate, Pod status, ETCD service status, and API Server status.
-	- For application resource monitoring, the system provides five key monitoring metrics: CPU utilization, memory consumption, Pod number, network outbound and inbound rate. Besides, users can sort data based on resource consumption and search metics by customizing the time range. In this way, occurring problems can be quickly located so that users can take necessary action.
-- **Ranking**. Users can sort data by node, workspace and project, which gives them a graphical view of how their resources are running in a straightforward way.
-- **Component monitoring**. It allows users to quickly locate any component failures to avoid unnecessary business downtime.
+- **二级精度的多维度监控**：
+	- 在集群资源维度，系统提供了全面的指标，例如 CPU 利用率、内存利用率、CPU 平均负载、磁盘使用量、inode 使用率、磁盘吞吐量、IOPS、网卡速率、容器组运行状态、ETCD 监控、API Server 监控等多项指标。
+	- 在应用资源维度，提供针对应用的 CPU 用量、内存用量、容器组数量、网络流出速率、网络流入速率等五项监控指标。并支持按用量排序和自定义时间范围查询，快速定位异常提供按节点、企业空间、项目等资源用量排行。
+- **排序**：用户可以按节点，工作空间和项目对数据进行排序，从而以直观的方式为他们的资源运行提供图形化视图。
 
-### Alerting, Events, Auditing and Notifications
+- **组件监控**：它允许用户快速定位任何组件故障，以避免不必要的业务停机。
 
-- **Customized alerting policies and rules**. The alerting system is based on multi-tenant monitoring of multi-dimensional metrics. The system will send alerts related to a wide spectrum of resources such as pod, network and workload. In this regard, users can customize their own alerting policy by setting specific rules, such as repetition interval and time. The threshold and alerting level can also be defined by users themselves. 
-- **Accurate event tracking**. KubeSphere allows users to know what is happening inside a cluster, such as container running status (successful or failed), node scheduling, and image pulling result. They will be accurately recorded with the specific reason, status and message displayed in the web console. In a production environment, this will help users to respond to any issues in time.
-- **Enhanced auditing security**. As KubeSphere features fine-grained management of user authorization, resources and network can be completely isolated to ensure data security. The comprehensive auditing feature allows users to search for activities related to any operation or alert.
-- **Diversified notification methods**. Emails represent a key approach for users to receive notifications of relevant activities they want to know. They can be sent based on the rule set by users themselves, who are able to customize the sender email address and their receiver lists. Besides, other channels, such as Slack and WeChat, are also supported to meet the need of our users. In this connection, KubeSphere provides users with more notification preferences as they are updated on the latest development in KubeSphere no matter what channel they select.
+### 自研多租户告警系统
 
-For more information, please see Project Administration and Usage.
+- **自定义告警策略和规则**：支持基于多租户、多维度的监控指标告警。 该系统将发送与各种资源，如节点、网络和工作负载相关的告警。可自定义包含多个告警规则的告警策略，如重复间隔和时间，来定制自己的告警策略、阈值和告警级别。
+- **准确的事件跟踪**：用户可以及时了解集群内部发生的情况，例如容器运行状态（成功或失败），节点调度和镜像拉取结果。 它们将被准确记录，并在 Web 控制台中显示结果，状态和消息。 在生产环境中，这将帮助用户及时响应任何问题。
+- **增强审计安全性**：由于 KubeSphere 具有对用户授权的细粒度管理，因此可以将资源和网络完全隔离以确保数据安全。 全面的审核功能使用户可以搜索与任何操作或告警相关的活动。
+- **多种通知方式**：电子邮件是用户接收想要了解的相关活动的通知的一种关键方法。 可以根据用户自己设置的规则发送邮件，用户可以自定义发件人电子邮件地址及其收件人列表。 此外，还支持其他渠道，例如 Slack 和 WeChat。 因此，无论用户选择哪种渠道，KubeSphere都会为用户提供更多的通知首选项，因为他们会根据KubeSphere的最新开发进行更新。
 
-## Log Query and Collection
+有关更多信息，请参见 [项目用户手册](../../project-user-guide/)。
 
-- **Multi-tenant log management**. In KubeSphere log search system, different tenants can only see their own log information. Logs can be exported as records for future reference.
-- **Multi-level log query**. Users can search for logs related to various resources, such as projects, workloads, and pods. Flexible and convenient log collection configuration options are available.
-- **Multiple log collectors**. Users can choose log collectors such as Elasticsearch, Kafka, and Fluentd.
-- **On-disk log collection**. For applications whose logs are saved in a Pod sidecar as a file, users can enable Disk Log Collection.
+## 日志查询与收集
 
-## Application Management and Orchestration
+- **多租户日志管理**.：提供多租户日志管理，在 KubeSphere 的日志查询系统中，不同的租户只能看到属于自己的日志信息，支持中文日志检索，支持日志导出。
+- **多级日志查询**：多级别的日志查询（项目/工作负载/容器组/容器以及关键字）、灵活方便的日志收集配置选项等。
+- **多种日志收集平台**：用户可以选择多种日志收集平台，例如 Elasticsearch，Kafka 和 Fluentd。
+- **落盘日志收集功能**：对于将日志以文件形式保存在 Pod 挂盘上的应用，支持开启落盘日志收集功能。
 
-- **App Store**. KubeSphere provides an app store based on [OpenPitrix](https://github.com/openpitrix/openpitrix), an industry-leading open source system for app management across the whole lifecycle, including release, removal, and distribution.
-- **App repository**. In KubeSphere, users can create an app repository hosted either in object storage (such as [QingStor](https://www.qingcloud.com/products/qingstor/) or [AWS S3](https://aws.amazon.com/what-is-cloud-object-storage/)) or in [GitHub](https://github.com/). App packages submitted to the app repository are composed of Helm Chart template files of the app.
-- **App template**. With app templates, KubeSphere provides a visualized way for app deployment with just one click. Internally, app templates can help different teams in the enterprise to share middleware and business systems. Externally, they can serve as an industry standard for application delivery based on different scenarios and needs.
+## 应用程序管理和编排
 
-## Multiple Storage Solutions
+- **应用商店**：KubeSphere 提供了一个基于开源 [OpenPitrix](https://github.com/openpitrix/openpitrix) 的应用商店，支持应用上传、应用审核、应用上架与分类、应用部署，为用户提供应用全生命周期管理功能。
+- **应用资料库**：在 KubeSphere 中，用户可以创建一个托管在对象存储，例如 [QingStor](https://www.qingcloud.com/products/qingstor/) 、 [AWS S3](https://aws.amazon.com/what-is-cloud-object-storage/) 中的应用存储库或 [GitHub](https://github.com/) 中， 提交到应用程序存储库的应用程序包由应用程序的 Helm Chart 模板文件组成。
+- **应用程式范本**：有了应用程序模板，KubeSphere 只需单击一下即可提供一种可视化的方法来部署应用程序。 在内部，应用程序模板可以帮助企业中的不同团队共享中间件和业务系统。 在外部，它们可以用作基于不同方案和需求的应用程序交付的行业标准。
 
-- Open source storage solutions are available such as GlusterFS, CephRBD, and NFS.
-- NeonSAN CSI plugin connects to QingStor NeonSAN to meet core business requirements for low latency, high resilience, and high performance.
-- QingCloud CSI plugin connects to various block storage services in QingCloud platform.
+## 多种存储解决方案
 
-## Multiple Network Solutions
+- 可使用开源存储解决方案，例如 GlusterFS，CephRBD 和 NFS。
+- 可使用 NeonSAN CSI 插件连接到 QingStor NeonSAN，以满足低延迟，高弹性和高性能的核心业务要求。
+- 可使用 QingCloud CSI 插件连接到 QingCloud 平台中的各种块存储服务。
 
-- Open source network solutions are available such as Calico and Flannel.
+## 多种网络解决方案
 
-- [Porter](https://github.com/kubesphere/porter), a load balancer developed for bare metal Kubernetes clusters, is designed by KubeSphere development team. This CNCF-certified tool serves as an important solution for developers. It mainly features:
+- 支持 Calico、Flannel 等开源网络方案。所
 
-  1. ECMP routing load balancing
-  2. BGP dynamic routing configuration
-  3. VIP management
-  4. LoadBalancerIP assignment in Kubernetes services (v0.3.0)
-  5. Installation with Helm Chart (v0.3.0)
-  6. Dynamic BGP server configuration through CRD (v0.3.0)
-  7. Dynamic BGP peer configuration through CRD (v0.3.0)
+- [Porter](https://github.com/kubesphere/porter)，是由 KubeSphere 开发团队设计、经过 CNCF 认证的一款适用于物理机部署 Kubernetes 的负载均衡插件。 主要特点：
 
-  For more information, please see [this article](https://kubesphere.io/conferences/porter/).
+  1. ECMP 路由负载均衡
+  2. BGP 动态路由
+  3. VIP 管理
+  4. 分配 Kubernetes 服务中的 LoadBalancerIP  (v0.3.0)
+  5. 使用 Helm Chart 安装 (v0.3.0)
+  6. 通过 CRD 动态配置BGP服务器 (v0.3.0)
+  7. 通过 CRD 动态配置BGP对等 (v0.3.0)
+
+  Porter 有关更多信息，请参见 [本文](https://kubesphere.io/conferences/porter/)。

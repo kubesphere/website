@@ -44,7 +44,7 @@ Now that the cluster is ready, you can install KubeSphere following this steps:
 - Install KubeSphere using kubectl. The following command is only for the default minimal installation.
 
   ```bash
-  kubectl apply -f https://raw.githubusercontent.com/kubesphere/ks-installer/v3.0.0/deploy/kubesphere-installer.yaml
+  kubectl apply -f https://github.com/kubesphere/ks-installer/releases/download/v3.0.0/kubesphere-installer.yaml
   ```
 
 - Create a local cluster-configuration.yaml.
@@ -53,7 +53,7 @@ Now that the cluster is ready, you can install KubeSphere following this steps:
   vi cluster-configuration.yaml
   ```
 
-- Copy all the content in this [file](https://raw.githubusercontent.com/kubesphere/ks-installer/v3.0.0/deploy/cluster-configuration.yaml) and paste it to your local cluster-configuration.yaml.
+- Copy all the content in this [file](https://github.com/kubesphere/ks-installer/releases/download/v3.0.0/cluster-configuration.yaml) and paste it to your local cluster-configuration.yaml.
 
 - Save the file when you finish. Execute the following command to start installation:
 

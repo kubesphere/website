@@ -22,7 +22,7 @@ This tutorial demonstrates how to enable pluggable components of KubeSphere both
 | openpitrix         | KubeSphere App Store                  | Provide an app store for Helm-based applications and allow users to manage apps throughout the entire lifecycle. |
 | servicemesh        | KubeSphere Service Mesh (Istio-based) | Provide fine-grained traffic management, observability and tracing, and visualized traffic topology. |
 
-For more information about each component, see Overview of Enable Pluggable Components.
+For more information about each component, see [Overview of Enable Pluggable Components](../../pluggable-components/).
 
 {{< notice note >}}
 
@@ -36,7 +36,7 @@ For more information about each component, see Overview of Enable Pluggable Comp
 
 ### **Installing on Linux**
 
-When you install KubeSphere on Linux, you need to create a configuration file, which lists all KubeSphere components.
+When you implement multi-node installation of KubeSphere on Linux, you need to create a configuration file, which lists all KubeSphere components.
 
 1. In the tutorial of [Installing KubeSphere on Linux](../../installing-on-linux/introduction/multioverview/), you create a default file **config-sample.yaml**. Modify the file by executing the following command:
 
@@ -46,11 +46,11 @@ vi config-sample.yaml
 
 {{< notice note >}}
 
-If you adopt [All-in-one Installation](../../quick-start/all-in-one-on-linux/), you do not need to create a config-sample.yaml file as you can create a cluster directly. Generally, the all-in-one mode is for users who are new to KubeSphere and look to get familiar with the system. If you want to enable pluggable components in this mode (e.g. for testing purpose), refer to the following section to see how pluggable components can be installed after installation.
+If you adopt [All-in-one Installation](../../quick-start/all-in-one-on-linux/), you do not need to create a config-sample.yaml file as you can create a cluster directly. Generally, the all-in-one mode is for users who are new to KubeSphere and look to get familiar with the system. If you want to enable pluggable components in this mode (e.g. for testing purpose), refer to the [following section](#enable-pluggable-components-after-installation) to see how pluggable components can be installed after installation.
 
 {{</ notice >}}
 
-2. In this file, enable the pluggable components you want to install by changing `false` to `true` for `enabled`. Here is [an example file](https://github.com/kubesphere/kubekey/blob/master/docs/config-example.md) for your reference. Save the file after you finish.
+2. In this file, enable the pluggable components you want to install by changing `false` to `true` for `enabled`. Here is [an example file](https://github.com/kubesphere/kubekey/blob/release-1.0/docs/config-example.md) for your reference. Save the file after you finish.
 3. Create a cluster using the configuration file:
 
 ```bash
@@ -59,21 +59,26 @@ If you adopt [All-in-one Installation](../../quick-start/all-in-one-on-linux/), 
 
 ### Installing on Kubernetes
 
-When you install KubeSphere on Kubernetes, you need to download the file [cluster-configuration.yaml](https://raw.githubusercontent.com/kubesphere/ks-installer/v3.0.0/deploy/cluster-configuration.yaml) for cluster setting. If you want to install pluggable components, do not use `kubectl apply -f` directly for this file.
+When you install KubeSphere on Kubernetes, you need to execute `kubectl apply -f` first for the installer file [kubesphere-installer.yaml](https://github.com/kubesphere/ks-installer/releases/download/v3.0.0/kubesphere-installer.yaml) as stated in the tutorial of [Installing KubeSphere on Kubernetes](../../installing-on-kubernetes/introduction/overview/). After that, follow the steps below to enable pluggable components:
 
-1. In the tutorial of [Installing KubeSphere on Kubernetes](../../installing-on-kubernetes/introduction/overview/), you execute `kubectl apply -f` first for the file [kubesphere-installer.yaml](https://raw.githubusercontent.com/kubesphere/ks-installer/v3.0.0/deploy/kubesphere-installer.yaml). After that, to enable pluggable components, create a local file cluster-configuration.yaml.
+1. Download the file [cluster-configuration.yaml](https://github.com/kubesphere/ks-installer/releases/download/v3.0.0/cluster-configuration.yaml) and copy and paste the content of it to a local `cluster-configuration.yaml` file.
 
 ```bash
 vi cluster-configuration.yaml
 ```
 
-2. Copy all the content in the file [cluster-configuration.yaml](https://raw.githubusercontent.com/kubesphere/ks-installer/v3.0.0/deploy/cluster-configuration.yaml) and paste it to the local file just created.
-3. In this local cluster-configuration.yaml file, enable the pluggable components you want to install by changing `false` to `true` for `enabled`. Here is [an example file](https://github.com/kubesphere/ks-installer/blob/master/deploy/cluster-configuration.yaml) for your reference. Save the file after you finish.
-4. Execute the following command to start installation:
+2. To enable the pluggable component you want to install, change `false` to `true` for `enabled` under the component in this file.
+3. Save this local file and execute the following command to apply it.
 
 ```bash
 kubectl apply -f cluster-configuration.yaml
 ```
+
+{{< notice warning >}} 
+
+You must apply the `kubesphere-installer.yaml` file first before you apply the file `cluster-configuration.yaml`. Wrong execution order or the failure to apply either file can result in installation failure.
+
+{{</ notice >}}
 
 Whether you install KubeSphere on Linux or on Kubernetes, you can check the status of the components you have enabled in the web console of KubeSphere after installation. Go to **Components**, and you can see an image below:
 

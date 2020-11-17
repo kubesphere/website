@@ -9,13 +9,13 @@ section1:
   content: KubeSphere DevOps provides CI/CD pipeline based on Jenkins, and offers automated workflows including binary-to-image (B2I) and source-to-image (S2I), helps organizations accelerate time to market for their product.
   image: /images/devops/banner.jpg
 
-image: /images/devops/dev-ops.svg
+image: /images/devops/dev-ops.png
 
 section2:
   title: Automatically Checkout Code, Test, Analyse, Build, Deploy and Release
   list:
     - title: Out-of-box CI/CD Pipeline
-      image: /images/devops/CD-pipeline.svg
+      image: /images/devops/CD-pipeline.png
       contentList:
         - content: <span>Easy to integrate with your SCM,</span> supporting GitLab / GitHub / BitBucket / SVN
         - content: <span>Design a graphical editing panel</span> to create CI/CD pipelines, without writing Jenkinsfile
@@ -24,7 +24,7 @@ section2:
         - content: <span>Provide dynamic build agents</span> to automatically spin up Pods as necessary
 
     - title: Built-in Automated Toolkits
-      image: /images/devops/Built-in-automated-toolkits.svg
+      image: /images/devops/Built-in-automated-toolkits.png
       contentList:
         - content: <span>Source to Image</span> builds reproducible container images from source code without writing dockerfile
         - content: <span>Binary-to-image</span> is the bridge between your artifact and a runnable image
@@ -32,7 +32,7 @@ section2:
         - content: <span>Provide excellent recoverability and flexibility</span> as you can rebuild and rerun S2I / B2I whenever a patch is needed
 
     - title: Use GitOps to implement DevOps, not just culture
-      image: /images/devops/Clear-insight.svg
+      image: /images/devops/Clear-insight.png
       contentList:
         - content: <span>Combine Git with Kubernetes’ convergence, and automates the cloud native Apps delivery</span>
         - content: <span>Designed for teams, offer built-in multitenancy in DevOps project</span>

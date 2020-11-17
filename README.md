@@ -21,10 +21,11 @@ You will need to build the website in order to **publish it as static content.**
 
 #### Install Hugo extended
 
-Go to the [Hugo releases place](https://github.com/gohugoio/hugo/releases) and
-download the `hugo_extended` version that better suits your OS (version 0.70+).
+Go to the [Hugo releases place](https://github.com/gohugoio/hugo/releases) and download the `hugo_extended` version that better suits your OS (version 0.70+).
 
 **EXTENDED version is MANDATORY to properly build the static content!**
+
+Note: If you install Hugo on Windows, you need to add environment variables for the exe file of Hugo. For example, you place the exe file in the path `C:\Hugo\bin`. You have to add this path in environment variables. Execute `hugo version` to view if the installation is successful.
 
 #### Config your domain
 
