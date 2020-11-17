@@ -14,7 +14,7 @@ icon: "/images/docs/docs.svg"
 
 本章演示如何使用 KubeSphere 的多集群功能导入异构集群以进行统一的管理。
 
-### [概要](../multicluster-management/introduction/overview/)
+### [概述](../multicluster-management/introduction/overview/)
 
 对多集群管理有个基本的了解，例如多集群管理的常见用例，以及 KubeSphere 可以通过多集群功能带来的好处。
 

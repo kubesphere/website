@@ -1,7 +1,7 @@
 ---
 title: "KubeSphere 中的 Kubernetes 联邦"
 keywords: 'Kubernetes, KubeSphere, 联邦, 多集群, 混合云'
-description: '概要'
+description: '概述'
 
 weight: 3007
 ---
