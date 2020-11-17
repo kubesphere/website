@@ -1,42 +1,42 @@
 ---
-title: "Agent Connection"
-keywords: 'Kubernetes, KubeSphere, multicluster, agent-connection'
+title: "代理连接"
+keywords: 'Kubernetes, KubeSphere, 多集群, 代理连接'
 description: 'Overview'
 
 weight: 3013
 ---
 
-## Prerequisites
+## 前提条件
 
-You have already installed at least two KubeSphere clusters. Please refer to [Installing on Linux](../../../installing-on-linux) or [Installing on Kubernetes](../../../installing-on-kubernetes) if they are not ready yet.
+您已经安装了至少两个 KubeSphere 集群。如果尚未安装，请参阅[在 Linux 上安装](../../../installing-on-linux)或者[在 Kubernetes 上安装](../../../installing-on-kubernetes)。
 
 {{< notice note >}}
-Multi-cluster management requires Kubesphere to be installed on the target clusters. If you have an existing cluster, you can deploy KubeSphere on it with a minimal installation so that it can be imported. See [Minimal KubeSphere on Kubernetes](../../../quick-start/minimal-kubesphere-on-k8s/) for details.
+多集群管理要求将 Kubesphere 安装在目标集群上。如果您已经有一个集群，则可以在上面部署 KubeSphere 最小安装，以便可以将其导入。有关详细信息，请参见 [Kubernetes 上的最小 KubeSphere](../../../quick-start/minimal-kubesphere-on-k8s/)。
 {{</ notice >}}
 
-## Agent Connection
+## 代理连接
 
-The component [Tower](https://github.com/kubesphere/tower) of KubeSphere is used for agent connection. Tower is a tool for network connection between clusters through the agent. If the H Cluster cannot access the M Cluster directly, you can expose the proxy service address of the H cluster. This enables the M Cluster to connect to the H cluster through the agent. This method is applicable when the M Cluster is in a private environment (e.g. IDC) and the H Cluster is able to expose the proxy service. The agent connection is also applicable when your clusters are distributed across different cloud providers.
+KubeSphere 的 [Tower](https://github.com/kubesphere/tower) 组件用于代理连接。Tower 是通过代理在集群之间进行网络连接的工具。如果 H 集群无法直接访问 M 集群，则可以暴漏 H 集群的代理服务地址。这使 M 集群可以通过代理连接到 H 集群。当 M 集群处于私有环境（例如 IDC）并且 H 集群能够暴漏代理服务时，此方法适用。 当您的集群分布在不同的云服务提供商之间时，代理连接也适用。
 
-### Prepare a Host Cluster
+### 准备主集群
 
 {{< tabs >}}
 
-{{< tab "KubeSphere has been installed" >}}
+{{< tab "已经安装 KubeSphere" >}}
 
-If you already have a standalone KubeSphere installed, you can set the value of  `clusterRole` to `host` by editing the cluster configuration. You need to **wait for a while** so that the change can take effect.
+如果已经安装了独立的 KubeSphere，则可以通过编辑集群配置，将 `clusterRole` 的值设置为 `host` 。您需要**稍等片刻**，以使更改生效。
 
-- Option A - Use Web Console:
+- 选项 A - 使用 web 控制台：
 
-Use `admin` account to log in the console and go to **CRDs** on the **Cluster Management** page. Enter the keyword `ClusterConfiguration` and go to its detail page. Edit the YAML of `ks-installer`, which is similar to [Enable Pluggable Components](../../../pluggable-components/).
+使用 `admin` 帐户登录控制台，然后转到**集群管理**页面上的 **CRDs**。输入关键字 `ClusterConfiguration`，然后转到其详细信息页面。编辑 `ks-installer` 的 YAML，类似于[启用可插拔组件](../../../pluggable-components/)。
 
-- Option B - Use Kubectl:
+- 选项 B - 使用 Kubectl：
 
-```shell
-kubectl edit cc ks-installer -n kubesphere-system
-```
+  ```shell
+  kubectl edit cc ks-installer -n kubesphere-system
+  ```
 
-Scroll down and set the value of `clusterRole` to `host`, then click **Update** (if you use the web console) to make it effective:
+向下滚动并将 `clusterRole` 的值设置为 `host` ，然后点击**更新**（如果使用 web 控制台）以使其生效：
 
 ```yaml
 multicluster:
@@ -45,9 +45,9 @@ multicluster:
 
 {{</ tab >}}
 
-{{< tab "KubeSphere has not been installed" >}}
+{{< tab "尚未安装 KubeSphere" >}}
 
-There is no big difference if you define a host cluster before installation. Please note that the `clusterRole` in `config-sample.yaml` or `cluster-configuration.yaml` has to be set as follows:
+如果在安装之前定义主集群也没有太大差别。请注意，`config-sample.yaml` 或者 `cluster-configuration.yaml` 中的 `clusterRole` 必须设置如下：
 
 ```yaml
 multicluster:
@@ -58,89 +58,89 @@ multicluster:
 
 {{</ tabs >}}
 
-You can use **kubectl** to retrieve the installation logs to verify the status by running the following command. Wait for a while, and you will be able to see the successful log return if the host cluster is ready.
+您可以使用 **kubectl** 来获取安装日志以验证状态。运行以下命令，稍等片刻，如果主集群已准备就绪，您将能够看到成功的日志返回。
 
 ```bash
 kubectl logs -n kubesphere-system $(kubectl get pod -n kubesphere-system -l app=ks-install -o jsonpath='{.items[0].metadata.name}') -f
 ```
 
-### Set Proxy Service Address
+### 设置代理服务地址
 
-After the installation of the Host Cluster, a proxy service called tower will be created in `kubesphere-system`, whose type is `LoadBalancer`.
+安装主集群后，将在 `kubesphere-system` 中创建一个名为 tower 的代理服务，其类型为 `LoadBalancer`。
 
 {{< tabs >}}
 
-{{< tab "A LoadBalancer available in your cluster" >}}
+{{< tab "集群中有可用的 LoadBalancer" >}}
 
-If a LoadBalancer plugin is available for the cluster, you can see a corresponding address for `EXTERNAL-IP`, which will be acquired by KubeSphere automatically. That means you can skip the step to set the proxy. Execute the following command to check the service.
+如果集群中有可用的 LoadBalancer 插件，则可以看到相应的 `EXTERNAL-IP` 地址，该地址将由 KubeSphere 自动获取。这意味着您可以跳过设置代理的步骤。执行以下命令来检查服务。
 
 ```bash
 kubectl -n kubesphere-system get svc
 ```
 
-The output may look as follows:
+命令的输出可能如下所示：
 
 ```shell
 NAME       TYPE            CLUSTER-IP      EXTERNAL-IP     PORT(S)              AGE
 tower      LoadBalancer    10.233.63.191   139.198.110.23  8080:30721/TCP       16h
 ```
 
-Note: Generally, there is always a LoadBalancer solution in the public cloud, and the external IP can be allocated by the load balancer automatically. If your clusters are running in an on-premises environment, especially a **bare metal environment**, you can use [Porter](https://github.com/kubesphere/porter) as the LB solution.
+注意：通常，公有云中总会有 LoadBalancer 解决方案，并且负载均衡器可以自动分配外部 IP。如果您的集群运行在本地环境中，尤其是在**裸金属环境**中，可以使用 [Porter](https://github.com/kubesphere/porter) 作为 LB 解决方案。
 
 {{</ tab >}}
 
-{{< tab "No LoadBalancer available in your cluster" >}}
+{{< tab "集群中没有可用的 LoadBalancer" >}}
 
-1. If you cannot see a corresponding address displayed (the EXTERNAL-IP is pending), you need to manually set the proxy address. For example, you have an available public IP address `139.198.120.120`, and the port `8080` of this IP address has been forwarded to the port `30721` of the cluster. Execute the following command to check the service.
+1. 如果看不到相应的地址显示出来（EXTERNAL-IP 处于 pending 状态），则需要手动设置代理地址。例如，您有一个可用的公有 IP 地址 `139.198.120.120`，并且此 IP 地址的端口 `8080` 被转发到集群的端口 `30721`。执行以下命令来检查服务。
 
-```shell
-kubectl -n kubesphere-system get svc
-```
+    ```shell
+    kubectl -n kubesphere-system get svc
+    ```
 
-```shell
-NAME       TYPE            CLUSTER-IP      EXTERNAL-IP     PORT(S)              AGE
-tower      LoadBalancer    10.233.63.191   <pending>  8080:30721/TCP            16h
-```
+    ```shell
+    NAME       TYPE            CLUSTER-IP      EXTERNAL-IP     PORT(S)              AGE
+    tower      LoadBalancer    10.233.63.191   <pending>  8080:30721/TCP            16h
+    ```
 
-2. Add the value of `proxyPublishAddress` to the configuration file of ks-installer and input the public IP address and port number as follows.
+2. 将 `proxyPublishAddress` 的值添加到 ks-installer 的配置文件中，并按如下所示输入公有 IP 地址和端口号。
 
-- Option A - Use Web Console:
+    - 选项 A - 使用 web 控制台：
 
-Use `admin` account to log in the console and go to **CRDs** on the **Cluster Management** page. Enter the keyword `ClusterConfiguration` and go to its detail page. Edit the YAML of `ks-installer`, which is similar to [Enable Pluggable Components](../../../pluggable-components/).
+      使用 `admin` 帐户登录控制台，然后进入**集群管理**页面上的 **CRDs**。输入关键字 `ClusterConfiguration`，然后进入其详细信息页面。编辑 `ks-installer` 的 YAML，类似于[启用可插拔组件](../../../pluggable-components/)。
 
-- Option B - Use Kubectl:
+    - 选项 B - 使用 Kubectl：
 
-```bash
-kubectl -n kubesphere-system edit clusterconfiguration ks-installer
-```
+      ```bash
+      kubectl -n kubesphere-system edit clusterconfiguration ks-installer
+      ```
 
-Navigate to `multicluster` and add a new line for `proxyPublishAddress` to define the IP address so access tower.
+    定位到 `multicluster` 并为 `proxyPublishAddress` 添加新行来定义IP地址，以便访问 tower。
 
-```yaml
-multicluster:
-    clusterRole: host
-    proxyPublishAddress: http://139.198.120.120:8080 # Add this line to set the address to access tower
-```
+    ```yaml
+    multicluster:
+        clusterRole: host
+        proxyPublishAddress: http://139.198.120.120:8080 # Add this line to set the address to access tower
+    ```
 
-3. Save the configuration and restart `ks-apiserver`.
+3. 保存配置并重启 `ks-apiserver`。
 
-```shell
-kubectl -n kubesphere-system rollout restart deployment ks-apiserver
-```
+    ```shell
+    kubectl -n kubesphere-system rollout restart deployment ks-apiserver
+    ```
 
 {{</ tab >}}
 
 {{</ tabs >}}
 
-### Prepare a Member Cluster
+### 准备成员集群
 
-In order to manage the member cluster within the **host cluster**, you need to make `jwtSecret` the same between them. Therefore, you need to get it first from the **host cluster** by the following command.
+为了管理**主集群**中的成员集群，需要使它们之间的 `jwtSecret` 相同。因此，您首先需要通过以下命令从**主集群**中获取它。
 
 ```bash
 kubectl -n kubesphere-system get cm kubesphere-config -o yaml | grep -v "apiVersion" | grep jwtSecret
 ```
 
-The output may look like this:
+命令输出可能如下所示：
 
 ```yaml
 jwtSecret: "gfIwilcc0WjNGKJ5DLeksf2JKfcLgTZU"
@@ -148,28 +148,28 @@ jwtSecret: "gfIwilcc0WjNGKJ5DLeksf2JKfcLgTZU"
 
 {{< tabs >}}
 
-{{< tab "KubeSphere has been installed" >}}
+{{< tab "已经安装 KubeSphere" >}}
 
-If you already have a standalone KubeSphere installed, you can set the value of  `clusterRole` to `member` by editing the cluster configuration. You need to **wait for a while** so that the change can take effect.
+如果已经安装了独立的 KubeSphere，则可以通过编辑集群配置，将  `clusterRole` 的值设置为 `member`。您需要**稍等片刻**，以使更改生效。
 
-- Option A - Use Web Console:
+- 选项 A - 使用 web 控制台：
 
-Use `admin` account to log in the console and go to **CRDs** on the **Cluster Management** page. Enter the keyword `ClusterConfiguration` and go to its detail page. Edit the YAML of `ks-installer`, which is similar to [Enable Pluggable Components](../../../pluggable-components/).
+使用 `admin` 帐户登录控制台，然后进入**集群管理**页面上的 **CRDs**。 输入关键字 **ClusterConfiguration**，然后进入其详细信息页面。编辑 `ks-installer` 的 YAML，类似于[启用可插拔组件](../../../pluggable-components/)。
 
-- Option B - Use Kubectl:
+- 选项 B - 使用 Kubectl：
 
-```shell
-kubectl edit cc ks-installer -n kubesphere-system
-```
+  ```shell
+  kubectl edit cc ks-installer -n kubesphere-system
+  ```
 
-Input the corresponding `jwtSecret` shown above:
+输入上面相应地方显示的 `jwtSecret`：
 
 ```yaml
 authentication:
   jwtSecret: gfIwilcc0WjNGKJ5DLeksf2JKfcLgTZU
 ```
 
-Scroll down and set the value of `clusterRole` to `member`, then click **Update** (if you use the web console) to make it effective:
+向下滚动并将 `clusterRole` 的值设置为 `member`，然后点击**更新**（如果使用 web 控制台）以使其生效：
 
 ```yaml
 multicluster:
@@ -178,16 +178,16 @@ multicluster:
 
 {{</ tab >}}
 
-{{< tab "KubeSphere has not been installed" >}}
+{{< tab "尚未安装 KubeSphere" >}}
 
-There is no big difference if you define a member cluster before installation. Please note that the `clusterRole` in `config-sample.yaml` or `cluster-configuration.yaml` has to be set as follows:
+如果在安装之前定义成员集群也没有太大差别。请注意，`config-sample.yaml` 或者 `cluster-configuration.yaml` 中的 `clusterRole` 必须设置如下：
 
 ```yaml
 authentication:
   jwtSecret: gfIwilcc0WjNGKJ5DLeksf2JKfcLgTZU
 ```
 
-Scroll down and set the value of `clusterRole` to `member`:
+向下滚动并将 `clusterRole` 的值设置为 `member`：
 
 ```yaml
 multicluster:
@@ -199,22 +199,22 @@ multicluster:
 {{</ tabs >}}
 
 
-### Import Cluster
+### 导入集群
 
-1. Open the H Cluster dashboard and click **Add Cluster**.
+1. 打开 H 集群仪表板，然后点击**添加集群**。
 
-![Add Cluster](https://ap3.qingstor.com/kubesphere-website/docs/20200827231611.png)
+  ![添加集群](https://ap3.qingstor.com/kubesphere-website/docs/20200827231611.png)
 
-2. Enter the basic information of the cluster to be imported and click **Next**.
+2. 输入要导入的集群的基本信息，然后单击**下一步**。
 
-![Import Cluster](https://ap3.qingstor.com/kubesphere-website/docs/20200827211842.png)
+  ![导入集群](https://ap3.qingstor.com/kubesphere-website/docs/20200827211842.png)
 
-3. In **Connection Method**, select **Cluster connection agent** and click **Import**.
+3. 在**连接方法**中，选择**集群连接代理**，然后点击**导入**。
 
-![agent-en](/images/docs/agent-en.png)
+  ![代理](/images/docs/agent-en.png)
 
-4. Create an `agent.yaml` file in the M Cluster based on the instruction, then copy and paste the deployment to the file. Execute `kubectl create -f agent.yaml` on the node and wait for the agent to be up and running. Please make sure the proxy address is accessible to the M Cluster.
+4. 根据指示在 M 集群中创建一个 `agent.yaml` 文件，然后将 deployment 复制并粘贴到该文件中。在节点上执行 `kubectl create -f agent.yaml` 然后等待代理启动并运行。请确保 M 集群可以访问代理地址。
 
-5. You can see the cluster you have imported in the H Cluster when the cluster agent is up and running.
+5. 当集群代理启动并运行时，您可以在 H 集群中看到已导入的集群。
 
-![Azure AKS](https://ap3.qingstor.com/kubesphere-website/docs/20200827231650.png)
+  ![Azure AKS](https://ap3.qingstor.com/kubesphere-website/docs/20200827231650.png)

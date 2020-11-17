@@ -1,51 +1,82 @@
 ---
-title: "Minio App"
+title: "Deploy MinIO on KubeSphere"
 keywords: 'Kubernetes, KubeSphere, Minio, app-store'
-description: 'How to use built-in Minio Object Storage'
-
+description: 'How to deploy Minio on KubeSphere from the App Store of KubeSphere'
+linkTitle: "Deploy MinIO on KubeSphere"
 
 weight: 2242
 ---
-MinIO object storage is designed for high performence and the S3 API. This guide will show you how to deploy Minio object storage with only a few steps.
+[MinIO](https://min.io/) object storage is designed for high performance and the S3 API. It is ideal for large, private cloud environments with stringent security requirements and delivers mission-critical availability across a diverse range of workloads.
+
+This tutorial walks you through an example of deploying MinIO from the App Store of KubeSphere.
 
 ## Prerequisites
 
-- You have enabled [KubeSphere App Store](../../pluggable-components/app-store)
-- You have completed the tutorial in [Create Workspace, Project, Account and Role](../../quick-start/create-workspace-and-project/). Now switch to use `project-regular` account to log in and enter into `demo-peoject`.
+- Please make sure you [enable the OpenPitrix system](../../../pluggable-components/app-store/).
+- You need to create a workspace, a project, and a user account (`project-regular`) for this tutorial. The account needs to be a platform regular user and to be invited as the project operator with the `operator` role. In this tutorial, you log in as `project-regular` and work in the project `demo-project` in the workspace `demo-workspace`. For more information, see [Create Workspace, Project, Account and Role](../../../quick-start/create-workspace-and-project/).
 
 ## Hands-on Lab
 
-### Common steps
+### Step 1: Deploy MinIO from App Store
 
-1. Choose Minio template `From App Store`.
+1. On the **Overview** page of the project `demo-project`, click **App Store** in the top left corner.
 
-![choose_minio_from_app_store](/images/docs/appstore/minio/choose_minio_from_app_store.png)
+   ![minio-app](/images/docs/appstore/built-in-apps/minio-app/minio-app.jpg)
 
-2. Check app info and click `Deploy` button.
+2. Find MinIO and click **Deploy** on the **App Info** page.
 
-![deploy_minio](/images/docs/appstore/minio/deploy_minio.png)
+   ![minio-in-app-store](/images/docs/appstore/built-in-apps/minio-app/minio-in-app-store.jpg)
 
-3. Select app version and deployment location, then go to **Next → Deploy**
+   ![deploy-minio](/images/docs/appstore/built-in-apps/minio-app/deploy-minio.jpg)
 
-![deploy_minio_confirm](/images/docs/appstore/minio/deploy_minio_confirm.png)
+3. Set a name and select an app version. Make sure MinIO is deployed in `demo-project` and click **Next**.
 
-4. Wait for a few minutes, then you will see the application minio showing active on the application list.
+   ![minio-deploy](/images/docs/appstore/built-in-apps/minio-app/minio-deploy.jpg)
 
-![minio_active](/images/docs/appstore/minio/minio_active.png)
+4. In **App Config**, you can use the default configuration or customize the configuration by editing the YAML file directly. Click **Deploy** to continue.
 
-5. Click into Minio application, and then enter into its service page.
+   ![deloy-minio-2](/images/docs/appstore/built-in-apps/minio-app/deloy-minio-2.jpg)
 
-![View Minio Detail](/images/docs/appstore/minio/view_minio_service.png)
+5. Wait until MinIO is up and running.
 
-6. In this page, make sure its deployment and Pod are running, then click **More → Edit Internet Access**, and select **NodePort** in the dropdown list, click **OK** to save it.
+   ![minio-in-list](/images/docs/appstore/built-in-apps/minio-app/minio-in-list.jpg)
 
-![Expose Minio Service](/images/docs/appstore/minio/expose_minio_service.png)
+### Step 2: Access MinIO Browser
 
-7.Go to **App Template  → Configuration Files** and get accessKey and secretKey from `values.yaml`.
+To access MinIO outside the cluster, you need to expose the app through NodePort first.
 
-![Get Minio Access Key](/images/docs/appstore/minio/get_minio_access_key.png)
+1. Go to **Services** and click the service name of MinIO.
 
-8. In this step, we can access Minio object storage service using ${Node IP}:${NODEPORT}, e.g. http://192.168.18.152:30116/ with the access key and secret key we got previously to login.
+   ![minio-detail](/images/docs/appstore/built-in-apps/minio-app/minio-detail.jpg)
 
-![Get Minio Access Key](/images/docs/appstore/minio/login_minio_console.png)
+2. Click **More** and select **Edit Internet Access** from the drop-down menu.
 
+   ![edit-internet-access](/images/docs/appstore/built-in-apps/minio-app/edit-internet-access.jpg)
+
+3. Select **NodePort** for **Access Method** and click **OK**. For more information, see [Project Gateway](../../../project-administration/project-gateway/).
+
+   ![nodeport](/images/docs/appstore/built-in-apps/minio-app/nodeport.jpg)
+
+4. Under **Service Ports**, you can see the port is exposed.
+
+   ![port-exposed](/images/docs/appstore/built-in-apps/minio-app/port-exposed.jpg)
+
+5. To access the MinIO browser, you need `accessKey` and `secretKey`, which are specified in the configuration file of MinIO. Go to **App Templates** in **Applications**, click MinIO, and you can find the value of these two fields under the tab **Configuration Files**.
+
+   ![template-list](/images/docs/appstore/built-in-apps/minio-app/template-list.jpg)
+
+   ![config-file](/images/docs/appstore/built-in-apps/minio-app/config-file.jpg)
+
+6. Access the MinIO browser through `{$NodeIP}:{$Nodeport}` using `accessKey` and `secretKey`.
+
+   ![minio-browser](/images/docs/appstore/built-in-apps/minio-app/minio-browser.jpg)
+
+   ![minio-browser-interface](/images/docs/appstore/built-in-apps/minio-app/minio-browser-interface.jpg)
+
+   {{< notice note >}}
+
+   You may need to open the port in your security groups and configure related port forwarding rules depending on your where your Kubernetes cluster is deployed.
+
+   {{</ notice >}} 
+
+7. For more information about MinIO, refer to [the official documentation of MinIO](https://docs.min.io/).
