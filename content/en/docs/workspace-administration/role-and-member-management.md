@@ -19,7 +19,7 @@ In workspace scope, you can grant the following resources' permissions to a role
 
 ## Prerequisites
 
-At least one workspace has been created, such as `demo-workspace`. Besides, you need an account of the `workspace-admin` role (e.g. `ws-admin`) at the workspace level. See [Create Workspace, Project, Account and Role](../../quick-start/create-workspace-and-project/) if it is not ready yet.
+At least one workspace has been created, such as `demo-workspace`. Besides, you need an account of the `workspace-admin` role (e.g. `ws-admin`) at the workspace level. See [Create Workspace, Project, Account and Role](../../quick-start/create-workspace-and-project/) if they are not ready yet.
 
 {{< notice note >}} 
 
@@ -40,7 +40,7 @@ In **Workspace Roles**, there are four available built-in roles as shown below. 
 
 1. In **Workspace Roles** , click  `workspace-admin` and you can see the role detail as shown below.
 
-![invite member](/images/docs/ws-admin/workspace_role_detail.png)
+   ![workspace_role_detail](/images/docs/workspace-administration/role-and-member-management/workspace_role_detail.png)
 
 2. You can switch to **Authorized Users** tab to see all the users that are granted a `workspace-admin` role.
 
@@ -48,46 +48,48 @@ In **Workspace Roles**, there are four available built-in roles as shown below. 
 
 1. Log in the console as `ws-admin` and go to **Workspace Roles** in **Workspace Settings**.
 
-{{< notice note >}}
+   {{< notice note >}}
 
-The account `ws-admin` is used as an example. As long as the account you are using is granted a role including the authorization of **Workspace Members View**, **Workspace Roles Management** and **Workspace Roles View** in **Access Control** at the workspace level, it can create a workspace role.
+   The account `ws-admin` is used as an example. As long as the account you are using is granted a role including the authorization of **Workspace Members View**, **Workspace Roles Management** and **Workspace Roles View** in **Access Control** at the workspace level, it can create a workspace role.
 
-{{</ notice >}} 
+   {{</ notice >}} 
 
 2. In **Workspace Roles**, click **Create** and set a **Role Identifier**. In this example, a role named `workspace-projects-admin` will be created. Click **Edit Authorization** to continue.
 
-![Create a workspace role](/images/docs/ws-admin/workspace_role_create_step1.png)
+   ![workspace_role_create_step1](/images/docs/workspace-administration/role-and-member-management/workspace_role_create_step1.png)
 
 3. In **Projects management**, select the authorization that you want the user granted this role to have. For example, **Projects Create**, **Projects Management**, and **Projects View** are selected for this role. Click **OK** to finish.
 
-![Edit Authorization](/images/docs/ws-admin/workspace_role_create_step2.png)
+   ![workspace_role_create_step2](/images/docs/workspace-administration/role-and-member-management/workspace_role_create_step2.png)
 
-{{< notice note >}} 
+   {{< notice note >}} 
 
-**Depend on** means the major authorization (the one listed after **Depend on**) needs to be selected first so that the affiliated authorization can be assigned.
+   **Depend on** means the major authorization (the one listed after **Depend on**) needs to be selected first so that the affiliated authorization can be assigned.
 
-{{</ notice >}} 
+   {{</ notice >}} 
 
 4. Newly-created roles will be listed in **Workspace Roles**. You can click the three dots on the right to edit it.
 
-![Edit Roles](/images/docs/ws-admin/workspace_role_edit.png)
+   ![workspace_role_edit](/images/docs/workspace-administration/role-and-member-management/workspace_role_edit.png)
 
-{{< notice note >}} 
+   {{< notice note >}} 
 
-The role of `workspace-projects-admin` is only granted **Projects Create**, **Projects Management**, and **Projects View**, which may not satisfy your need. This example is only for demonstration purpose. You can create customized roles based on your needs.
+   The role of `workspace-projects-admin` is only granted **Projects Create**, **Projects Management**, and **Projects View**, which may not satisfy your need. This example is only for demonstration purpose. You can create customized roles based on your needs.
 
-{{</ notice >}} 
+   {{</ notice >}} 
 
 ## Invite a New Member
 
 1. In **Workspace Settings**, select **Workspace Members** and click **Invite Member**.
+
 2. Invite a user to the workspace. Grant the role `workspace-projects-admin` to the user. 
 
-![invite member](/images/docs/ws-admin/workspace_invite_user.png)
+   ![workspace_invite_user](/images/docs/workspace-administration/role-and-member-management/workspace_invite_user.png)
 
 
 3. After you add a user to the workspace, click **OK**. In **Workspace Members**, you can see the newly invited member listed.
+
 4. You can also change the role of an existing member by editing it or remove it from the workspace.
 
-![edit member role](/images/docs/ws-admin/workspace_user_edit.png)
+   ![workspace_user_edit](/images/docs/workspace-administration/role-and-member-management/workspace_user_edit.png)
 
