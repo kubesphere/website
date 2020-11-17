@@ -1,29 +1,31 @@
 ---
-title: "Configuring Authentication"
+title: "Configure Authentication"
 keywords: "LDAP, identity provider"
 description: "How to configure identity provider"
 
-linkTitle: "Configuring Authentication"
+linkTitle: "Configure Authentication"
 weight: 200
 ---
 
 ## Objective
-This guide demonstrates how to set up authentication. You can use external identity providers such as LDAP or Active Directory with KubeSphere.
+
+This guide demonstrates how to set up authentication. You can use external identity providers such as LDAP or Active Directory for KubeSphere.
 
 ## Prerequisites
-* KubeSphere needs to be installed in your machine.
+
+KubeSphere needs to be installed in your machines.
 
 ## Overview
 
-KubeSphere includes a built-in OAuth server. Developers and administrators obtain OAuth access tokens to authenticate themselves to the API.
+KubeSphere includes a built-in OAuth server. Users obtain OAuth access tokens to authenticate themselves to the API.
 
-As an administrator, you can configure OAuth by edit configmap to specify an identity provider.
+As an administrator, you can configure OAuth by editing configmap to specify an identity provider.
 
 ## Identity Providers
 
-KubeSphere has an internal account management system. 
+KubeSphere has an internal account management system.
 
-You can modify the kubesphere authentication configuration using your desired identity provider with the following command:
+You can modify the kubesphere authentication configuration using your desired identity provider by the following command:
 
 ```bash
 kubectl -n kubesphere-system edit cm kubesphere-config
@@ -61,15 +63,14 @@ kubectl -n kubesphere-system rollout restart deploy/ks-apiserver
 
 Set LDAPIdentityProvider in the identityProviders section to validate username and password against an LDAPv3 server using simple bind authentication.
 
-During authentication, the LDAP directory is searched for an entry that matches the provided username. If a single unique match is found, a simple bind is attempted using the DN of the entry plus the provided password. 
+During authentication, the LDAP directory is searched for an entry that matches the provided username. If a single unique match is found, a simple bind is attempted using the DN of the entry plus the provided password.
 
 There are four parameters common to all identity providers:
 
 | Parameter | Description |
 |-----------|-------------|
 | name | The name of the identity provider is associated with the user label. |
-| mappingMethod | Defines how new identities are mapped to users when they login. |
-
+| mappingMethod | Defines how new identities are mapped to users when they log in. |
 
 *Example Configuration Using LDAPIdentityProvider*:
 
@@ -111,11 +112,8 @@ For the above example:
 | loginAttribute | User naming attributes identify user objects, will be mapped to KubeSphere account name. |
 | mailAttribute | The mail attribute will be mapped to the KubeSphere account. |
 
-
-
 {{< notice tip >}}
 
 LDAPS is not supported now. Planned at `v3.1.0`.
 
 {{</ notice >}}
-
