@@ -1,6 +1,6 @@
 ---
 title: "Deploy Application from App Template"
-keywords: 'kubernetes, chart, helm, KubeSphere, application'
+keywords: 'kubernetes, chart, helm, kubesphere, application'
 description: 'Deploy Application from App Template'
 
 
@@ -9,12 +9,12 @@ weight: 2210
 
 ## Objective
 
-This tutorial shows you how to quickly deploy a [Grafana](https://grafana.com/) application using templates from KubeSphere App Store sponsored by [OpenPitrix](https://github.com/openpitrix/openpitirx/). The demonstration includes importing application repository, sharing and deploying apps within a workspace.
+This tutorial shows you how to quickly deploy a [Grafana](https://grafana.com/) application using templates from private repository sponsored by [OpenPitrix](https://github.com/openpitrix/openpitirx/). The demonstration includes importing application repository, sharing and deploying apps within a workspace.
 
 ## Prerequisites
 
-- You have enabled [KubeSphere App Store](../../pluggable-components/app-store)
-- You have completed the tutorial in [Create Workspace, Project, Account and Role](../../quick-start/create-workspace-and-project/)
+- You have enabled [OpenPitirx](../../pluggable-components/app-store).
+- You have completed the tutorial in [Create Workspace, Project, Account and Role](../../quick-start/create-workspace-and-project/).
 
 ## Hands-on Lab
 
