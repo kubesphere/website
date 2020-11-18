@@ -1,6 +1,6 @@
 ---
 title: "Deploy Application from App Store"
-keywords: 'kubernetes, chart, helm, KubeSphere, application'
+keywords: 'kubernetes, chart, helm, kubesphere, application'
 description: 'Deploy Application from App Store'
 
 
@@ -9,16 +9,16 @@ weight: 2220
 
 ## Objective
 
-This tutorial shows you a simple example about how to quickly deploy a [Nginx](https://nginx.org/) application using templates from KubeSphere application store sponsored by [OpenPitrix](https://github.com/openpitrix/openpitirx). The demonstration includes one-click deploying apps within a workspace and exposing service by NodePort.
+This tutorial shows you a simple example about how to quickly deploy a [Nginx](https://nginx.org/) application from KubeSphere App Store sponsored by [OpenPitrix](https://github.com/openpitrix/openpitirx). The App Store is also the public application repository in the platform, which means anybody can view the applications in the store, and any authenticated users can deploy applications from the store. This is typically different than the private application repositories only accessible within tenant's workspaces. The demonstration includes one-click deploying apps from the App Store and exposing service by NodePort.
 
 ## Prerequisites
 
-- You have enabled [KubeSphere App Store](../../pluggable-components/app-store)
-- You have completed the tutorial in [Create Workspace, Project, Account and Role](../../quick-start/create-workspace-and-project/)
+- You have enabled [KubeSphere App Store](../../pluggable-components/app-store).
+- You have completed the tutorial in [Create Workspace, Project, Account and Role](../../quick-start/create-workspace-and-project/).
 
 ## Hands-on Lab
 
-### Step 1: Browse App Templates
+### Step 1: Browse App Store
 
 1.1. Switch to use `project-regular` account to log in, then enter into `demo-project`.
 
@@ -26,13 +26,13 @@ This tutorial shows you a simple example about how to quickly deploy a [Nginx](h
 
 ![App List](/images/application-templates/20200106161804.png)
 
-1.3. Choose **From App Store** and enter into app store.
+1.3. Choose **From App Store** and enter into the list page.
 
 ![App Templates](/images/application-templates/20201028180736.png)
 
 ![App Store](/images/application-templates/20201028180853.png)
 
-1.4. Search `Nginx` and click into Nginx App. We will demonstrate how to one-click deploying Nginx to Kubernetes.
+1.4. Search `Nginx` and click into Nginx App. We will demonstrate how to deploy Nginx to Kubernetes with one-click.
 
 ### Step 2: One-click Deploy Nginx Application
 
