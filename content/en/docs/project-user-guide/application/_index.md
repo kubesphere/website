@@ -1,5 +1,5 @@
 ---
-linkTitle: "Application"
+linkTitle: "Applications"
 weight: 2079
 
 _build:
