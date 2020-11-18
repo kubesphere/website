@@ -48,6 +48,6 @@ This tutorial demonstrates how to add an app repository to KubeSphere.
 
 {{</ notice >}} 
 
-4. The repository displays in the repository list below after imported and KubeSphere automatically adds all apps in the repository as app templates. When users choose to deploy apps using app templates, they can see apps in this repository. For more information, see [App Repository](../../../project-user-guide/application/application-repo/).
+4. The repository displays in the repository list below after imported and KubeSphere automatically adds all apps in the repository as app templates. When users choose to deploy apps using app templates, they can see apps in this repository. For more information, see [Deploy Apps from App Templates](../../../project-user-guide/application/deploy-app-from-template/).
 
    ![app-repo-list](/images/docs/workspace-administration/app-repository/import-helm-repository/app-repo-list.jpg)
