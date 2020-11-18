@@ -1,91 +1,131 @@
 ---
-title: "Deploy Application from App Template"
-keywords: 'kubernetes, chart, helm, kubesphere, application'
-description: 'Deploy Application from App Template'
-
+title: "Deploy Apps from App Templates"
+keywords: 'Kubernetes, chart, helm, KubeSphere, application, app templates'
+description: 'How to deploy apps from app templates in a private repository.'
+linkTitle: "Deploy Apps from App Templates"
 
 weight: 2210
 ---
 
-## Objective
+When you deploy an app, you can select the app from the App Store which contains built-in apps of KubeSphere and [apps uploaded as Helm charts](../../../workspace-administration/upload-helm-based-application/). Alternatively, you can use apps from private app repositories added to KubeSphere to provide app templates.
 
-This tutorial shows you how to quickly deploy a [Grafana](https://grafana.com/) application using templates from private repository sponsored by [OpenPitrix](https://github.com/openpitrix/openpitirx/). The demonstration includes importing application repository, sharing and deploying apps within a workspace.
+This tutorial demonstrates how to quickly deploy [Grafana](https://grafana.com/) using the app template from a private repository, which is based on QingStor object storage.
 
 ## Prerequisites
 
-- You have enabled [OpenPitirx](../../pluggable-components/app-store).
-- You have completed the tutorial in [Create Workspace, Project, Account and Role](../../quick-start/create-workspace-and-project/).
+- You have enabled [OpenPitirx (App Store)](../../../pluggable-components/app-store).
+- You have completed the tutorial of [Create Workspace, Project, Account and Role](../../../quick-start/create-workspace-and-project/). Namely, you must have a workspace, a project and two user accounts (`ws-admin` and `project-regular`). `ws-admin` must be granted the role of `workspace-admin` in the workspace and `project-regular` must be granted the role of `operator` in the project.
 
 ## Hands-on Lab
 
-### Step 1: Add an Application Repository
+### Step 1: Add an App Repository
 
-> Note: The application repository can be hosted by either object storage, e.g. [QingStor Object Storage](https://www.qingcloud.com/products/qingstor/), [AWS S3](https://aws.amazon.com/what-is-cloud-object-storage/), or by [GitHub Repository](https://github.com/). The packages are composed of Helm Chart template files of the applications. Therefore, before adding an application repository to KubeSphere, you need to create an object storage bucket and upload Helm packages in advance. This tutorial prepares a demo repository based on QingStor Object Storage.
+1. Log in the web console of KubeSphere as `ws-admin`. In your workspace, go to **App Repos** under **Apps Management**, and then click **Add Repo**.
 
-1.1. Sign in with `ws-admin` account, click **View Workspace** and navigate to **Workspace Settings → App Repos**, then click **Create App Repository**.
+   ![add-app-repo](/images/docs/project-user-guide/applications/deploy-apps-from-app-templates/add-app-repo.jpg)
 
-![Add App Repo](/images/application-templates/create-app-repo.png)
+2. In the dialogue that appears, enter `test-repo` for the app repository name and `https://helm-chart-repo.pek3a.qingstor.com/kubernetes-charts/` for the repository URL. Click **Validate** to verify the URL and click **OK** to continue.
 
-1.2. Fill in the basic information, name it `demo-repo` and input the URL `https://helm-chart-repo.pek3a.qingstor.com/kubernetes-charts/`. You can validate if this URL is available, and choose **OK** when you have done.
+   ![input-repo-info](/images/docs/project-user-guide/applications/deploy-apps-from-app-templates/input-repo-info.jpg)
 
-> Note: It will automatically import all of the applications from the Helm repository into KubeSphere. You can browse those app templates in each project.
+3. Your repository displays in the list after successfully imported to KubeSphere.
 
-![Add App Repo](/images/application-templates/validate-repo2.png)
+   ![repository-list](/images/docs/project-user-guide/applications/deploy-apps-from-app-templates/repository-list.jpg)
 
-### Step 2: Browse App Templates
+   {{< notice note >}}
 
-2.1. Switch to use `project-regular` account to log in, then enter into `demo-project`.
+   For more information about dashboard properties as you add a private repository, see [Import Helm Repository](../../../workspace-administration/app-repository/import-helm-repository/).
 
-2.2. Click **Application Workloads → Applications**, click **Deploy New Application**.
+   {{</ notice >}} 
 
-![App List](/images/application-templates/20200106161804.png)
+### Step 2: Deploy Grafana from App Templates
 
-2.3. Choose **From App Templates** and select `demo-repo` from the dropdown list.
+1. Log out of KubeSphere and log back in as `project-regular`. In your project, choose **Applications** under **Application Workloads** and click **Deploy New Application**.
 
-![App Templates](/images/application-templates/20200106162219.png)
+   ![create-new-app](/images/docs/project-user-guide/applications/deploy-apps-from-app-templates/create-new-app.jpg)
 
-2.4. Search `Grafana` and click into Grafana App. We will demonstrate deploying Grafana to Kubernetes as an example.
+2. Select **From App Templates** from the pop-up dialogue.
 
-> Note: The applications of this demo repository are synchronized from the Google Helm repo. Some applications may not be able to be deployed successfully, since the helm charts were maintained by different organizations.
+   ![select-app-templates](/images/docs/project-user-guide/applications/deploy-apps-from-app-templates/select-app-templates.jpg)
 
-### Step 3: Deploy Grafana Application
+   **From App Store**: Choose built-in apps and apps uploaded individually as Helm charts.
 
-3.1. Click **Deploy** on the right. Generally you do not need to change any configuration, just click **Deploy**.
+   **From App Templates**: Choose apps from private app repositories and the workspace app pool.
 
-![View Grafana](/images/application-templates/20200106171747.png)
+3. Select `test-repo` from the drop-down list, which is the private app repository just uploaded.
 
-3.2. Wait for two minutes, then you will see the application `grafana` showing `active` on the application list.
+   ![private-app-template](/images/docs/project-user-guide/applications/deploy-apps-from-app-templates/private-app-template.jpg)
 
-![Deploy Grafana](/images/application-templates/20200106172151.png)
+   {{< notice note >}}
 
-### Step 4: Expose Grafana Service
+   The option **From workspace** in the list represents the workspace app pool, which contains apps uploaded as Helm charts. They are also part of app templates.
 
-4.1. Click into Grafana application, and then enter into its service page.
+   {{</ notice >}} 
 
-![View Grafana Detail](/images/application-templates/20200106172416.png)
+4. Input `Grafana` in the search bar to find the app, and then click it to deploy it.
 
-4.2. In this page, make sure its deployment and Pod are running, then click **More → Edit Internet Access**, and select **NodePort** in the dropdown list, click **OK** to save it.
+   ![search-grafana](/images/docs/project-user-guide/applications/deploy-apps-from-app-templates/search-grafana.jpg)
 
-![Edit Internet Access for Grafana Service](/images/application-templates/20200106172532.png)
+   {{< notice note >}} 
 
-4.3. At this point, you will be able to access Grafana service from outside of the cluster.
+   The app repository used in this tutorial is synchronized from the Google Helm repository. Some apps in it may not be deployed successfully as their Helm charts are maintained by different organizations.
 
-![Grafana Service Endpoint](/images/application-templates/20200106172837.png)
+   {{</ notice >}} 
 
-### Step 5: Access the Grafana Service
+5. You can view its app information and configuration files. Under **Versions**, select a version number from the list and click **Deploy**.
 
-In this step, we can access Grafana service using `${Node IP}:${NODEPORT}`, e.g. `http://192.168.0.54:31407`, or click the button **Click to visit** to access the Grafana dashboard.
+   ![deploy-grafana](/images/docs/project-user-guide/applications/deploy-apps-from-app-templates/deploy-grafana.jpg)
 
-5.1. Note you have to obtain the account and password from the grafana secret in advance. Navigate to **Configuration Center → Secrets**, click into **grafana-l47bmc** with Type Default.
+6. Set an app name and confirm the version and deployment location. Click **Next** to continue.
 
-![Grafana Secret](/images/application-templates/20200106173434.png)
+   ![confirm-info](/images/docs/project-user-guide/applications/deploy-apps-from-app-templates/confirm-info.jpg)
+   
+7. In **App Config**, you can manually edit the manifest file or click **Deploy** directly.
 
-5.2. Click the eye button to display the secret information, then copy and paste the values of **admin-user** and **admin-password** respectively.
+   ![app-config](/images/docs/project-user-guide/applications/deploy-apps-from-app-templates/app-config.jpg)
 
-![Grafana Credentials](/images/application-templates/20200106173531.png)
+8. Wait for Grafana to be up and running.
 
-5.3. Open the Grafana login page, sign in with the **admin** account.
+### Step 3: Expose Grafana Service
 
-![Grafana Login Page](/images/application-templates/20190717152831.png)
+To access Grafana outside the cluster, you need to expose the app through NodePort first.
 
-![Grafana Dashboard](/images/application-templates/20190717152929.png)
+1. Go to **Services** and click the service name of Grafana.
+
+   ![grafana-services](/images/docs/project-user-guide/applications/deploy-apps-from-app-templates/grafana-services.jpg)
+
+2. Click **More** and select **Edit Internet Access** from the drop-down menu.
+
+   ![edit-access](/images/docs/project-user-guide/applications/deploy-apps-from-app-templates/edit-access.jpg)
+
+3. Select **NodePort** for **Access Method** and click **OK**. For more information, see [Project Gateway](../../../project-administration/project-gateway/).
+
+   ![nodeport](/images/docs/project-user-guide/applications/deploy-apps-from-app-templates/nodeport.jpg)
+
+4. Under **Service Ports**, you can see the port is exposed.
+
+   ![exposed-port](/images/docs/project-user-guide/applications/deploy-apps-from-app-templates/exposed-port.jpg)
+
+### Step 4: Access Grafana
+
+1. To access the Grafana dashboard, you need the username and password. Navigate to **Secrets** and click the item that has the same name as the app name.
+
+   ![grafana-secret](/images/docs/project-user-guide/applications/deploy-apps-from-app-templates/grafana-secret.jpg)
+
+2. On the detail page, click the eye icon first and you can see the username and password.
+
+   ![secret-page](/images/docs/project-user-guide/applications/deploy-apps-from-app-templates/secret-page.jpg)
+
+   ![click-eye-icon](/images/docs/project-user-guide/applications/deploy-apps-from-app-templates/click-eye-icon.jpg)
+
+2. Access Grafana through `${Node IP}:${NODEPORT}`.
+
+   ![grafana-UI](/images/docs/project-user-guide/applications/deploy-apps-from-app-templates/grafana-UI.jpg)
+
+   ![home-page](/images/docs/project-user-guide/applications/deploy-apps-from-app-templates/home-page.jpg)
+
+   {{< notice note >}}
+
+   You may need to open the port in your security groups and configure related port forwarding rules depending on your where your Kubernetes cluster is deployed.
+
+   {{</ notice >}} 
