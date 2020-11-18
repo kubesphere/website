@@ -3,7 +3,7 @@ title: "Telemetry in KubeSphere"
 keywords: "Installer, Telemetry, KubeSphere, Kubernetes"
 description: "Telemetry collects aggregate information of KubeSphere installation."
 
-Weight: 7100
+Weight: 7300
 ---
 
 Telemetry collects aggregate information about the size of KubeSphere clusters installed, KubeSphere and Kubernetes versions, components enabled, cluster running time, error logs, etc. KubeSphere promises that the information is only used by the KubeSphere community to improve products and will not be shared with any third parties.
