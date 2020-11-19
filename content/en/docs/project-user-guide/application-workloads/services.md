@@ -2,6 +2,7 @@
 title: "Services"
 keywords: 'KubeSphere, Kubernetes, services, workloads'
 description: 'Create a KubeSphere Service'
+linkTitle: "Services"
 
 weight: 2260
 ---
@@ -26,9 +27,7 @@ In KubeSphere, stateful and stateless Services are created with a virtual IP by 
 
 ## Prerequisites
 
-- You need to create a workspace, a project and an account (`project-regular`). Please refer to [Create Workspace, Project, Account and Role](../../../quick-start/create-workspace-and-project) if they are not ready yet.
-
-- You need to sign in with the `project-admin` account and invite `project-regular` to the corresponding project. Please refer to [the steps to invite a member](../../../quick-start/create-workspace-and-project#task-3-create-a-project).
+You need to create a workspace, a project and an account (`project-regular`). The account must be invited to the project with the role of `operator`. For more information, see [Create Workspace, Project, Account and Role](../../../quick-start/create-workspace-and-project).
 
 ## Service Type
 
@@ -95,7 +94,7 @@ The steps of creating a stateful Service and a stateless Service are basically t
 The value of **Name** is used in both configurations, one for Deployment and the other for Service. You can see the manifest file of the Deployment and the Service by enabling **Edit Mode** in the top right corner. Below is an example file for your reference.
 
     {{</ notice>}}
-
+    
     ``` yaml
     kind: Deployment
     metadata:
