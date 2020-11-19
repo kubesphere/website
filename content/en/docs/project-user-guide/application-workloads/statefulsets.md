@@ -2,6 +2,7 @@
 title: "StatefulSets"
 keywords: 'KubeSphere, Kubernetes, StatefulSets, dashboard, service'
 description: 'Kubernetes StatefulSets'
+linkTitle: "StatefulSets"
 
 weight: 2240
 ---
@@ -23,9 +24,7 @@ For more information, see the [official documentation of Kubernetes](https://kub
 
 ## Prerequisites
 
-- You need to create a workspace, a project and an account (`project-regular`). Please refer to [Create Workspace, Project, Account and Role](../../../quick-start/create-workspace-and-project) if they are not ready yet.
-
-- You need to sign in with `project-admin` account and invite `project-regular` to the corresponding project. Please refer to [the steps to invite a member](../../../quick-start/create-workspace-and-project#task-3-create-a-project).
+You need to create a workspace, a project and an account (`project-regular`). The account must be invited to the project with the role of `operator`. For more information, see [Create Workspace, Project, Account and Role](../../../quick-start/create-workspace-and-project).
 
 ## Create a StatefulSet
 
@@ -52,7 +51,7 @@ Specify a name for the StatefulSet (e.g. `demo-stateful`) and click **Next** to 
 You can see the StatefulSet manifest file in YAML format by enabling **Edit Mode** in the top right corner. KubeSphere allows you to edit the manifest file directly to create a StatefulSet. Alternatively, you can follow the steps below to create a StatefulSet via the dashboard.
 
     {{</ notice >}}
-
+    
     ![statefulsets](/images/docs/project-user-guide/workloads/statefulsets_form_2.jpg)
 
 2. Click the **Add Container Image** box.
