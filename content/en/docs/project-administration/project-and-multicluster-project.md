@@ -4,7 +4,7 @@ keywords: 'KubeSphere, Kubernetes, project, multicluster-project'
 description: 'This tutorial introduces projects and multi-cluster projects.'
 
 linkTitle: "Projects and Multi-cluster Projects"
-weight: 2130
+weight: 2100
 ---
 
 A project in KubeSphere is a Kubernetes [namespace](https://kubernetes.io/docs/concepts/overview/working-with-objects/namespaces/), which is used to organize resources into non-overlapping groups. It represents a logical partitioning capability as it divides cluster resources between multiple tenants.
