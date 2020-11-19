@@ -1,9 +1,9 @@
 ---
-title: "介绍"
+title: "简介"
 keywords: "KubeSphere, Kubernetes, 安装"
 description: "Kubernetes 部署 KubeSphere概述"
 
-linkTitle: "介绍"
+linkTitle: "简介"
 weight: 2105
 ---
 
@@ -15,7 +15,7 @@ weight: 2105
 
 {{< notice note >}} 
 
-在现有Kubernetes群集上安装KubeSphere之前，请阅读先决条件。
+在现有Kubernetes群集上安装KubeSphere之前，请阅读[先决条件](../prerequisites/)。
 
 {{</ notice >}}
 
