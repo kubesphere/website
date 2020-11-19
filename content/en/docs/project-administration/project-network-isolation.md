@@ -15,7 +15,7 @@ KubeSphere project network isolation lets project administrators enforce which n
 - Use an account of the `admin` role at the project level. For example, use the account `project-admin` created in [Create Workspace, Project, Account and Role](../../quick-start/create-workspace-and-project/).
 
 {{< notice note >}}
-For the implementation of the Network Policy, you can refer to [kubesphere-network-policy](https://github.com/kubesphere/community/blob/master/sig-network/concepts-and-designs/kubesphere-network-policy.md)
+For the implementation of the Network Policy, you can refer to [kubesphere-network-policy](https://github.com/kubesphere/community/blob/master/sig-network/concepts-and-designs/kubesphere-network-policy.md).
 {{</ notice >}}
 
 ## Enable/Disable Project Network Isolation
@@ -35,10 +35,11 @@ You can also disable network isolation via this path.
 When network isolation is turned off, any previously created network policies will be deleted as well.
 {{</ notice >}}
 
-## Setting network policy
+## Setting Network Policy
 
 If the default policy does not meet your needs when network isolation is enabled, you can customize your network policy
-to meet your needs. Currently, you can add custom network policies in KubeSphere from two perspectives::
+to meet your needs. Currently, you can add custom network policies in KubeSphere from two perspectives:
+
 - Cluster Internal
 - Cluster External
 
@@ -103,29 +104,31 @@ It is best to set `spec.externalTrafficPolicy` in the service configuration to `
 5. Click **OK**
 
 {{< notice note >}}
-In step 4, when you select **SCTP**, you must make sure the SCTP is [enabled](https://kubernetes.io/docs/concepts/services-networking/network-policies/#sctp-support). 
+In step 4, when you select **SCTP**, you must make sure the SCTP is [enabled](https://kubernetes.io/docs/concepts/services-networking/network-policies/#sctp-support).
 {{</ notice >}}
 
-### Best practice
+### Best Practices
 
-To ensure that all pods in the project are secure, a best practice is to enable network isolation. 
+To ensure that all Pods in the project are secure, a best practice is to enable network isolation.
 
 When network isolation is on, the project cannot be accessed by other projects.  If your workloads need to be accessed by others, you can follow these steps:
-1. Set gateway via **Project Settings/Advanced Settings**
-2. Expose workloads that need to be accessed to a gateway via a service
-3. Allow ingress traffic from the namespace where you gateway locate
+
+1. Set gateway via **[Project Settings/Advanced Settings](../project-gateway/)**.
+2. Expose workloads that need to be accessed to a gateway via a service.
+3. Allow ingress traffic from the namespace where you gateway locate.
 
 If egress traffic is controlled, you should have a clear plan of what projects, services, and IP addresses can be accessed, and then add them one by one.
 If you're not sure what you want, then you'd better keep your network policy unchanged.
 
-## FAQ
+## FAQs
 
-Q: Why can't the custom monitoring system of KubeSphere get data after I enabled network isolation?
+Q: **Why can't the custom monitoring system of KubeSphere get data after I enabled network isolation?**
 
-A: After you enabled custom monitoring, KubeSphere monitoring system will access the metrics of the pod. You need to allow ingress traffic for KubeSphere monitoring system. Otherwise, it cannot access pod metrics.
+A: After you enabled custom monitoring, KubeSphere monitoring system will access the metrics of the Pod. You need to allow ingress traffic for KubeSphere monitoring system. Otherwise, it cannot access Pod metrics.
 
-Here kubesphere provides a configuration item `allowedIngressNamespaces`to simplify similar configurations, which allows you to allow all projects
- listed in the configuration
+Here KubeSphere provides a configuration item `allowedIngressNamespaces`to simplify similar configurations, which allows you to allow all projects
+ listed in the configuration.
+
 ```yaml
 root@node1:~# kubectl get -n kubesphere-system clusterconfigurations.installer.kubesphere.io  ks-installer -o yaml
 apiVersion: installer.kubesphere.io/v1alpha1
@@ -144,13 +147,13 @@ spec:
         - kubesphere-system
         - kubesphere-monitoring-system
   ...
-``` 
+```
 
-Q: Why can't I access the service even after setting network policy through the service?
+Q: **Why can't I access the service even after setting network policy through the service?**
 
-A: When you add a network policy and access the service via cluster ip, if the network is not 
+A: When you add a network policy and access the service via cluster ip, if the network is not
    working, check the kube-proxy configuration to see if `masqueradeAll` is `false`.
-   
+
    ```yaml
    root@node1:~# kubectl get cm -n kube-system kube-proxy -o yaml
    apiVersion: v1
@@ -171,9 +174,8 @@ A: When you add a network policy and access the service via cluster ip, if the n
      ...
    ```
 
-Q: How do I determine the CIDR when I set the ingress policy?
+Q: **How do I determine the CIDR when I set the ingress policy?**
 
-A: In k8s, the source ip address of the packet is often handled by nat, 
+A: In K8s, the source ip address of the packet is often handled by nat,
    so you need to figure out what the source address of the packet will be before you add the rule.
    Here you can refer to [Source IP](https://github.com/kubesphere/community/blob/master/sig-network/concepts-and-designs/kubesphere-network-policy.md#source-ip).
- 
