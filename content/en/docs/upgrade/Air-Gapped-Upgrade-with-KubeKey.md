@@ -141,6 +141,8 @@ As you install KubeSphere and Kubernetes on Linux, you need to prepare an image 
 
    - You can change the Kubernetes version downloaded based on your needs. Supported versions: v1.15.12, v1.16.13, v1.17.9 (default) and v1.18.6.
 
+   - You can upgrade Kubernetes from v1.16.13 to v1.17.9 by download the v1.17.9 Kubernetes binary file, but for cross-version upgrades, all intermediate version also needs to be downloaded in advance, such as if you want upgrade Kubernetes from v1.15.12 to v1.18.6, you need to download the Kubernetes v1.16.13, v1.17.9 and v1.18.6 binary file.
+
    - After you run the script, a folder `kubekey` is automatically created. Note that this file and `kk` must be placed in the same directory when you create the cluster later.
 
    {{</ notice >}} 
