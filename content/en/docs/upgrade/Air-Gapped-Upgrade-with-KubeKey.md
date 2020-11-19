@@ -56,13 +56,13 @@ Upgrading steps are different for single-node clusters (all-in-one) and multi-no
 
 ### System Requirements
 
-| Systems                                                | Minimum Requirements (Each node)             |
-| ------------------------------------------------------ | -------------------------------------------- |
-| **Ubuntu** *16.04, 18.04*                              | CPU: 2 Cores, Memory: 4 G, Disk Space: 100 G |
-| **Debian** *Buster, Stretch*                           | CPU: 2 Cores, Memory: 4 G, Disk Space: 100 G |
-| **CentOS** *7*.x                                       | CPU: 2 Cores, Memory: 4 G, Disk Space: 100 G |
-| **Red Hat Enterprise Linux 7**                         | CPU: 2 Cores, Memory: 4 G, Disk Space: 100 G |
-| **SUSE Linux Enterprise Server 15/openSUSE Leap 15.2** | CPU: 2 Cores, Memory: 4 G, Disk Space: 100 G |
+| Systems                                                         | Minimum Requirements (Each node)            |
+| --------------------------------------------------------------- | ------------------------------------------- |
+| **Ubuntu** *16.04, 18.04*                                       | CPU: 2 Cores, Memory: 4 G, Disk Space: 40 G |
+| **Debian** *Buster, Stretch*                                    | CPU: 2 Cores, Memory: 4 G, Disk Space: 40 G |
+| **CentOS** *7.x*                                                | CPU: 2 Cores, Memory: 4 G, Disk Space: 40 G |
+| **Red Hat Enterprise Linux** *7*                                | CPU: 2 Cores, Memory: 4 G, Disk Space: 40 G |
+| **SUSE Linux Enterprise Server** *15* **/openSUSE Leap** *15.2* | CPU: 2 Cores, Memory: 4 G, Disk Space: 40 G |
 
 {{< notice note >}}
 
