@@ -1,62 +1,86 @@
 ---
-title: "Deploy Application from App Store"
-keywords: 'kubernetes, chart, helm, kubesphere, application'
-description: 'Deploy Application from App Store'
-
-
+title: "Deploy Apps from App Store"
+keywords: 'Kubernetes, chart, helm, KubeSphere, application, App Store'
+description: 'How to deploy apps from the App Store.'
+linkTitle: "Deploy Apps from App Store"
 weight: 2220
 ---
 
-## Objective
+The [App Store](../../../application-store/) is also the public app repository on the platform, which means every tenant on the platform can view the applications in the Store regardless of which workspace they belong to. The App Store contains 15 featured enterprise-ready containerized apps and apps released by tenants from different workspaces on the platform. Any authenticated users can deploy applications from the Store. This is different from private app repositories which are only accessible to tenants in the workspace where private app repositories are imported.
 
-This tutorial shows you a simple example about how to quickly deploy a [Nginx](https://nginx.org/) application from KubeSphere App Store sponsored by [OpenPitrix](https://github.com/openpitrix/openpitirx). The App Store is also the public application repository in the platform, which means anybody can view the applications in the store, and any authenticated users can deploy applications from the store. This is typically different than the private application repositories only accessible within tenant's workspaces. The demonstration includes one-click deploying apps from the App Store and exposing service by NodePort.
+This tutorial demonstrates how to quickly deploy [NGINX](https://www.nginx.com/) from the KubeSphere App Store powered by [OpenPitrix](https://github.com/openpitrix/openpitrix) and access its service through NodePort.
 
 ## Prerequisites
 
-- You have enabled [KubeSphere App Store](../../pluggable-components/app-store).
-- You have completed the tutorial in [Create Workspace, Project, Account and Role](../../quick-start/create-workspace-and-project/).
+- You have enabled [OpenPitirx (App Store)](../../../pluggable-components/app-store).
+- You need to create a workspace, a project, and a user account (`project-regular`) for this tutorial. The account needs to be a platform regular user invited to the project with the `operator` role. For more information, see [Create Workspace, Project, Account and Role](../../../quick-start/create-workspace-and-project/).
 
 ## Hands-on Lab
 
-### Step 1: Browse App Store
+### Step 1: Deploy NGINX from App Store
 
-1.1. Switch to use `project-regular` account to log in, then enter into `demo-project`.
+1. On the **Overview** page of the project `demo-project`, click **App Store** in the top left corner.
 
-1.2. Click **Application Workloads → Applications**, click **Deploy New Application**.
+   ![app-store](/images/docs/project-user-guide/applications/deploy-apps-from-app-store/app-store.jpg)
 
-![App List](/images/application-templates/20200106161804.png)
+   {{< notice note >}}
 
-1.3. Choose **From App Store** and enter into the list page.
+   You can also click **Deploy New Application** and select **From App Store** to go to the App Store.
 
-![App Templates](/images/application-templates/20201028180736.png)
+   {{</ notice >}} 
 
-![App Store](/images/application-templates/20201028180853.png)
+2. Find NGINX and click **Deploy** on the **App Info** page.
 
-1.4. Search `Nginx` and click into Nginx App. We will demonstrate how to deploy Nginx to Kubernetes with one-click.
+   ![nginx-in-app-store](/images/docs/project-user-guide/applications/deploy-apps-from-app-store/nginx-in-app-store.jpg)
 
-### Step 2: One-click Deploy Nginx Application
+   ![deploy-nginx](/images/docs/project-user-guide/applications/deploy-apps-from-app-store/deploy-nginx.jpg)
 
-2.1. Click **Deploy** on the right. Generally you do not need to change any configuration, just click **Deploy**.
+3. Set a name and select an app version. Make sure NGINX is deployed in `demo-project` and click **Next**.
 
-![View Nginx](/images/application-templates/20201028181426.png)
+   ![confirm-deployment](/images/docs/project-user-guide/applications/deploy-apps-from-app-store/confirm-deployment.jpg)
 
-2.2. Wait for two minutes, then you will see the application `nginx` showing `active` on the application list.
+4. In **App Config**, specify the number of replicas to deploy for the app and enable Ingress based on your needs. When you finish, click **Deploy**.
 
-![Deploy Nginx](/images/application-templates/20201028181614.png)
+   ![edit-config-nginx](/images/docs/project-user-guide/applications/deploy-apps-from-app-store/edit-config-nginx.jpg)
 
-### Step 3: Expose Nginx Web Service
+   ![manifest-file](/images/docs/project-user-guide/applications/deploy-apps-from-app-store/manifest-file.jpg)
 
-3.1. Click into Nginx application, and then enter into its service page.
+   {{< notice note >}}
 
-![View Nginx Detail](/images/application-templates/20201028181834.png)
+   To specify more values for NGINX, use the toggle switch to see the app’s manifest in YAML format and edit its configurations. 
 
-3.2. In this page, make sure its deployment and Pod are running, then click **More → Edit Internet Access**, and select **NodePort** in the dropdown list, click **OK** to save it.
+   {{</ notice >}}
 
-![Edit Internet Access for Nginx Web Service](/images/application-templates/20201028181957.png)
+5. Wait until NGINX is up and running.
 
-3.3. At this point, you will be able to access Nginx web service from outside of the cluster.
+   ![nginx-running](/images/docs/project-user-guide/applications/deploy-apps-from-app-store/nginx-running.jpg)
 
-![Nginx Service Endpoint](/images/application-templates/20201028182251.png)
+### Step 2: Access NGINX
 
+To access NGINX outside the cluster, you need to expose the app through NodePort first.
 
+1. Go to **Services** and click the service name of NGINX.
 
+   ![nginx-service](/images/docs/project-user-guide/applications/deploy-apps-from-app-store/nginx-service.jpg)
+
+2. On the service detail page, click **More** and select **Edit Internet Access** from the drop-down menu.
+
+   ![edit-internet-access](/images/docs/project-user-guide/applications/deploy-apps-from-app-store/edit-internet-access.jpg)
+
+3. Select **NodePort** for **Access Method** and click **OK**. For more information, see [Project Gateway](../../../project-administration/project-gateway/).
+
+   ![nodeport](/images/docs/project-user-guide/applications/deploy-apps-from-app-store/nodeport.jpg)
+
+4. Under **Service Ports**, you can see the port is exposed.
+
+   ![exposed-port](/images/docs/project-user-guide/applications/deploy-apps-from-app-store/exposed-port.jpg)
+
+5. Access NGINX through `{$NodeIP}:{$Nodeport}`.
+
+   ![access-nginx](/images/docs/project-user-guide/applications/deploy-apps-from-app-store/access-nginx.jpg)
+
+   {{< notice note >}}
+
+   You may need to open the port in your security groups and configure related port forwarding rules depending on your where your Kubernetes cluster is deployed.
+
+   {{</ notice >}} 
