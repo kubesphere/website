@@ -1,6 +1,6 @@
 ---
-title: "DevOps用户指南"
-description: "Getting started with KubeSphere DevOps project"
+title: "DevOps 用户指南"
+description: "如何使用 KubeSphere DevOps"
 layout: "single"
 
 linkTitle: "DevOps 用户指南"
@@ -11,27 +11,27 @@ icon: "/images/docs/docs.svg"
 ---
 
 
-想要在Kubernetes集群上部署和管理CI/CD任务以及相关的工作负载，请使用KubeSphere DevOps系统。 本章演示了如何在DevOps项目中进行管理和工作，包括运行流水线，创建凭据和集成工具。
+想要在 Kubernetes 集群上部署和管理 CI/CD 任务以及相关的工作负载，请使用 KubeSphere DevOps 系统。本章演示了如何在 DevOps 项目中进行管理和工作，包括运行流水线，创建凭据和集成工具。
 
-在安装DevOps组件时，将自动部署Jenkins。 KubeSphere为您提供一致的用户体验，因为您可以像以前一样通过Jenkinsfile建立流水线。 此外，KubeSphere还具有高度实时化的图形化仪表板，可以可视化整个流程，为您提供一个直观的视图，方便您了解流水线在每个阶段是如何运行的。
+在安装 DevOps 组件时，将自动部署 Jenkins。KubeSphere 为您提供一致的用户体验，因为您可以像以前一样通过 Jenkinsfile 建立流水线。此外，KubeSphere 还具有高度实时化的图形化仪表板，可以可视化整个流程，为您提供一个直观的视图，方便您了解流水线在每个阶段是如何运行的。
 
-## 使用DevOps
+## 使用 DevOps
 
-### [DevOps项目管理](../devops-user-guide/how-to-use/devops-project-management/)
+### [DevOps 项目管理](../devops-user-guide/how-to-use/devops-project-management/)
 
-创建和管理DevOps项目以及其中的角色和成员。
+创建和管理 DevOps 项目以及其中的角色和成员。
 
-### [使用Jenkinsfile创建流水线](../devops-user-guide/how-to-use/create-a-pipeline-using-jenkinsfile/)
+### [使用 Jenkinsfile 创建流水线](../devops-user-guide/how-to-use/create-a-pipeline-using-jenkinsfile/)
 
-通过使用示例Jenkinsfile了解如何创建和运行流水线。
+通过使用示例 Jenkinsfile 了解如何创建和运行流水线。
 
 ### [使用图形编辑面板创建流水线](../devops-user-guide/how-to-use/create-a-pipeline-using-graphical-editing-panel/)
 
-了解如何使用KubeSphere的图形编辑面板创建和运行流水线。
+了解如何使用 KubeSphere 的图形编辑面板创建和运行流水线。
 
 ### [选择Jenkins Agent](../devops-user-guide/how-to-use/choose-jenkins-agent/)
 
-指定Jenkins Agent并为流水线使用内置的容器组模版。
+指定 Jenkins Agent 并为流水线使用内置的容器组模版。
 
 ### [凭证管理](../devops-user-guide/how-to-use/credential-management/)
 
@@ -43,12 +43,12 @@ icon: "/images/docs/docs.svg"
 
 ### [为KubeSphere流水线设置电子邮件服务器](../devops-user-guide/how-to-use/jenkins-email/)
 
-设置邮件服务器以接收有关您Jenkins流水线的通知。
+设置邮件服务器以接收有关您 Jenkins 流水线的通知。
 
 ### [Jenkins系统设置](../devops-user-guide/how-to-use/jenkins-setting/)
 
-了解如何自定义您的Jenkins配置。
+了解如何自定义您的 Jenkins 配置。
 
 ## 集成工具
 
-### [将SonarQube集成到流水线中](../devops-user-guide/how-to-integrate/sonarqube/)
+### [将 SonarQube 集成到流水线中](../devops-user-guide/how-to-integrate/sonarqube/)
