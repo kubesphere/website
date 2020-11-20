@@ -178,7 +178,7 @@ KubeSphere 的多租户系统具有**群集**、**企业空间**和**项目**三
 
 {{< notice note >}}
 
-如果要使用`LoadBalancer`暴露服务，则需要使用[云提供商的 LoadBalancer 插件](https://kubernetes.io/docs/concepts/cluster-administration/cloud-providers/)。 如果您的 Kubernetes 集群在裸机环境中运行，建议您使用 [Porter](https://github.com/kubesphere/porter) 作为 LoadBalancer 插件。
+如果要使用`LoadBalancer`暴露服务，则需要使用云提供商的 LoadBalancer 插件。 如果您的 Kubernetes 集群在裸机环境中运行，建议您使用 [Porter](https://github.com/kubesphere/porter) 作为 LoadBalancer 插件。
 
 {{</ notice >}} 
 
