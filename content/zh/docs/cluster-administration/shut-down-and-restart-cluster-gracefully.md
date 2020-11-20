@@ -1,37 +1,42 @@
 ---
-title: "Cluster Shutdown and Restart"
+title: "集群关闭和重新启动"
 description: "Demonstrate how to shut down and restart Kubernetes clusters gracefully"
 layout: "single"
 
-linkTitle: "Cluster Shutdown and Restart"
+linkTitle: "集群关闭和重新启动"
 weight: 5000
 
 icon: "/images/docs/docs.svg"
 ---
-This document describes the process of gracefully shutting down your cluster and how to restart it. You might need to temporarily shut down your cluster for maintenance reasons.
+
+出于维护原因，您可能需要临时关闭群集。本文档介绍了正常关闭集群的过程以及如何重新启动集群。
 
 {{< notice warning >}}
-Shutting down a cluster is very dangerous. You must fully understand the operation and its consequences. Please make an etcd backup before you proceed.
-Usually, it is recommended to maintain your nodes one by one instead of restarting the whole cluster.
+关闭群集非常危险。 您必须完全了解所做的操作及其后果。 请先进行etcd备份，然后再继续。 通常建议一 一维护您的节点，而不是重新启动整个集群。
 {{</ notice >}}
 
-## Prerequisites
-- Take an [etcd backup](https://github.com/etcd-io/etcd/blob/master/Documentation/op-guide/recovery.md#snapshotting-the-keyspace) prior to shutting down a cluster.
-- SSH [passwordless login](https://man.openbsd.org/ssh.1#AUTHENTICATION) is set up between hosts.
+## 前提条件
 
-## Shutting Down Cluster
+- 关闭群集之前，请先进行[etcd备份](https://github.com/etcd-io/etcd/blob/master/Documentation/op-guide/recovery.md#snapshotting-the-keyspace)。
+- 主机之间设置了SSH[免密登录](https://man.openbsd.org/ssh.1#AUTHENTICATION)。
+
+## 关闭集群
+
 {{< notice tip >}}
 
-- You must back up your etcd data before you shut down the cluster as your cluster can be restored if you encounter any issues when restarting the cluster.
-- Using the method in this tutorial can shut down a cluster gracefully, while the possibility of data corruption still exists.
+- 关闭群集之前，必须备份etcd数据，因为如果在重新启动群集时遇到任何问题，则可以通过etcd还原群集。
+- 使用本教程中的方法可以正常关闭集群，而数据损坏的可能性仍然存在。
 
 {{</ notice >}}
 
-### Step 1: Get Node List
+### 步骤 1: 获取节点列表
+
 ```bash
 nodes=$(kubectl get nodes -o name)
 ```
-### Step 2: Shut Down All Nodes
+
+### 步骤 2: 关闭所有节点
+
 ```bash
 for node in ${nodes[@]}
 do
@@ -39,36 +44,46 @@ do
     ssh $node sudo shutdown -h 1
 done
 ```
-Then you can shut down other cluster dependencies, such as external storage.
 
-## Restart Cluster Gracefully
-You can restart a cluster gracefully after shutting down the cluster gracefully.
+然后，您可以关闭其他群集依赖项，例如外部存储。
 
-### Prerequisites
-You have shut down your cluster gracefully.
+## 正常重启群集
+
+在正常关闭集群后，可以正常重启集群。
+
+### 前提条件
+
+您已正常关闭集群。
 
 {{< notice tip >}}
-Usually, a cluster can be used after restarting, but the cluster may be unavailable due to unexpected conditions. For example:
+大多数情况下，重新启动集群后可以继续正常使用，但是由于意外情况，该集群可能不可用。 例如:
 
-- Etcd data corruption during the shutdown.
-- Node failures.
-- Unexpected network errors.
+- 关闭期间Etcd数据损坏。
+- 节点故障。
+- 不可预期的网络错误。
 
 {{</ notice >}}
 
-### Step 1: Check All Cluster Dependencies' Status
-Ensure all cluster dependencies are ready, such as external storage.
-### Step 2: Power on Cluster Machines
-Wait for the cluster to be up and running, which may take about 10 minutes.
-### Step 3: Check All Master Nodes' Status
-Check the status of core components, such as etcd services, and make sure everything is ready.
+### 步骤 1: 检查所有群集依赖项的状态
+
+确保所有群集依赖项均已就绪，例如外部存储。
+
+### 步骤 2: 打开集群主机电源
+
+等待集群启动并运行，这可能需要大约10分钟。
+
+### 步骤 3: 检查所有主节点的状态
+
+检查核心组件（例如etcd服务）的状态，并确保一切就绪。
+
 ```bash
 kubectl get nodes -l node-role.kubernetes.io/master
 ```
 
-### Step 4: Check All Worker Nodes' Status
+### 步骤 4: 检查所有工作节点的状态
+
 ```bash
 kubectl get nodes -l node-role.kubernetes.io/worker
 ```
 
-If your cluster fails to restart, please try to [restore the etcd cluster](https://github.com/etcd-io/etcd/blob/master/Documentation/op-guide/recovery.md#restoring-a-cluster).
+如果您的集群重启失败，请尝试[恢复etcd集群](https://github.com/etcd-io/etcd/blob/master/Documentation/op-guide/recovery.md#restoring-a-cluster)。
