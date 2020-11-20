@@ -1,0 +1,83 @@
+---
+title: "Deploy RabbitMQ on KubeSphere"
+keywords: 'KubeSphere, RabbitMQ, Kubernetes, Installation'
+description: 'How to deploy RabbitMQ on KubeSphere through App Store'
+
+link title: "Deploy RabbitMQ"
+weight: 251
+---
+[RabbitMQ](https://www.rabbitmq.com/) is the most widely deployed open-source message broker. It is lightweight and easy to deploy on premises and in the cloud. It supports multiple messaging protocols. RabbitMQ can be deployed in distributed and federated configurations to meet high-scale, high-availability requirements.
+
+This tutorial walks you through an example of how to deploy RabbitMQ from the App Store of KubeSphere.
+
+## Prerequisites
+
+- Please make sure you [enable the OpenPitrix system](https://kubesphere.io/docs/pluggable-components/app-store/).
+- You need to create a workspace, a project, and a user account for this tutorial. The account needs to be a platform regular user and to be invited as the project operator with the `operator` role. In this tutorial, you log in as `project-regular` and work in the project `demo-project` in the workspace `demo-workspace`. For more information, see [Create Workspace, Project, Account and Role](../../../quick-start/create-workspace-and-project/).
+
+## Hands-on Lab
+
+### Step 1: Deploy RabbitMQ from App Store
+
+1. On the **Overview** page of the project `demo-project`, click **App Store** in the top left corner.
+
+   ![rabbitmq01](/images/docs/appstore/built-in-apps/rabbitmq-app/rabbitmq01.jpg)
+
+2. Find RabbitMQ and click **Deploy** on the **App Info** page.
+
+   ![find-rabbitmq](/images/docs/appstore/built-in-apps/rabbitmq-app/rabbitmq02.jpg)
+
+   ![click-deploy](/images/docs/appstore/built-in-apps/rabbitmq-app/rabbitmq021.jpg)
+
+3. Set a name and select an app version. Make sure RabbitMQ is deployed in `demo-project` and click **Next**.
+
+   ![rabbitmq03](/images/docs/appstore/built-in-apps/rabbitmq-app/rabbitmq03.jpg)
+
+4. In **App Config**, you can use the default configuration directly or customize the configuration either by specifying fields in a form or editing the YAML file. Record the value of **Root Username** and the value of **Root Password**, which will be used later for login. Click **Deploy** to continue.
+
+   ![rabbitMQ11](/images/docs/appstore/built-in-apps/rabbitmq-app/rabbitMQ11.jpg)
+
+   ![rabbitMQ04](/images/docs/appstore/built-in-apps/rabbitmq-app/rabbitMQ04.jpg)
+
+   {{< notice tip >}}
+
+   To see the manifest file, toggle the **YAML** switch.
+
+   {{</ notice >}}
+
+5. Wait until RabbitMQ is up and running.
+
+   ![check-if-rabbitmq-is-running](/images/docs/appstore/built-in-apps/rabbitmq-app/rabbitmq05.jpg)
+
+### Step 2: Access RabbitMQ Dashboard
+
+To access RabbitMQ outside the cluster, you need to expose the app through NodePort first.
+
+1. Go to **Services** and click the service name of RabbitMQ.
+
+   ![go-to-services](/images/docs/appstore/built-in-apps/rabbitmq-app/rabbitmq06.jpg)
+
+2. Click **More** and select **Edit Internet Access** from the drop-down menu.
+
+   ![rabbitmq07](/images/docs/appstore/built-in-apps/rabbitmq-app/rabbitmq07.jpg)
+
+3. Select **NodePort** for **Access Method** and click **OK**. For more information, see [Project Gateway](../../../project-administration/project-gateway/). 
+
+   ![rabbitmq08](/images/docs/appstore/built-in-apps/rabbitmq-app/rabbitmq08.jpg)
+
+4. Under **Service Ports**, you can see ports are exposed.
+
+   ![rabbitmq09](/images/docs/appstore/built-in-apps/rabbitmq-app/rabbitmq09.jpg)
+
+5. Access RabbitMQ **management** through `{$NodeIP}:{$Nodeport}`. Note that the username and password are those you set in **Step 1**.
+   ![rabbitmq-dashboard](/images/docs/appstore/built-in-apps/rabbitmq-app/rabbitmq-dashboard.jpg)
+
+   ![rabbitma-dashboard-detail](/images/docs/appstore/built-in-apps/rabbitmq-app/rabbitma-dashboard-detail.jpg)
+
+   {{< notice note >}}
+
+   You may need to open the port in your security groups and configure related port forwarding rules depending on your where your Kubernetes cluster is deployed.
+
+   {{</ notice >}} 
+
+6. For more information about RabbitMQ, refer to [the official documentation of RabbitMQ](https://www.rabbitmq.com/documentation.html).
