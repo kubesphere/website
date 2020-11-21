@@ -19,7 +19,7 @@ Usually, it is recommended to maintain your nodes one by one instead of restarti
 - Take an [etcd backup](https://github.com/etcd-io/etcd/blob/master/Documentation/op-guide/recovery.md#snapshotting-the-keyspace) prior to shutting down a cluster.
 - SSH [passwordless login](https://man.openbsd.org/ssh.1#AUTHENTICATION) is set up between hosts.
 
-## Shutting Down Cluster
+## Shut Down Cluster
 {{< notice tip >}}
 
 - You must back up your etcd data before you shut down the cluster as your cluster can be restored if you encounter any issues when restarting the cluster.
