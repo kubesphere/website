@@ -1,9 +1,8 @@
 ---
-title: "GitLab App"
-keywords: 'kubernetes, kubesphere, gitlab, app-store'
-description: 'How to deploy GitLab'
-
-
+title: "Deploy GitLab on KubeSphere"
+keywords: 'Kubernetes, KubeSphere, GitLab, app-store'
+description: 'How to deploy GitLab on KubeSphere'
+linkTitle: "Deploy GitLab on KubeSphere"
 weight: 2240
 ---
 
@@ -14,63 +13,81 @@ This tutorial shows you how to quickly deploy a [GitLab](https://gitlab.com/gitl
 ## Prerequisites
 
 - You have enabled [OpenPitrix](/docs/pluggable-components/app-store/).
-- You have completed the tutorial [Create Workspace, Project, Account and Role](/docs/quick-start/create-workspace-and-project/). The account needs to be a platform regular user and to be invited as the project operator with the `operator` role. In this tutorial, we'll work in the project `apps` of the workspace `apps`.
+- You have completed the tutorial of [Create Workspace, Project, Account and Role](/docs/quick-start/create-workspace-and-project/). Namely, you must have a workspace, a project, and two accounts (`ws-admin` and `project-regular`). `ws-admin` must have the role of `workspace-admin` in the workspace and `project-regular` must be invited to the project with the role of `operator`
 
 ## Hands-on Lab
 
-### Step 1: Add an Application Repository
+### Step 1: Add an App Repository
 
-1.1. Sign in as workspace admin account (`apps-admin` for this guide), click **View Workspace** and navigate to **Apps Management → App Repos**, then click **Add Repo**.
+1. Log in the web console of KubeSphere as `ws-admin`. In your workspace, go to **App Repos** under **Apps Management**, and then click **Add Repo**.
 
-  ![Add Repo](/images/docs/appstore/gitlab/add-repo.png)
+   ![import-repo](/images/docs/appstore/external-apps/gitlab-app/import-repo.jpg)
 
-1.2. Fill in the basic information, name it `main` and input the URL https://charts.kubesphere.io/main. You can validate if this URL is available, and choose OK when you have done.
+2. In the dialogue that appears, specify an app repository name (e.g. `demo-repository`) and add your repository URL. This tutorial uses `https://charts.kubesphere.io/main` as the private repository, which contains the app GitLab. 
 
-  {{< notice note >}}
-  It will automatically import all of the applications from the Helm repository into KubeSphere. You can browse those app templates in each project.
-  {{</ notice >}}
+3. After you specify required fields, click **Validate** to verify the URL. You will see a green check mark next to the URL if it is available and click **OK** to finish.
 
-  ![Add KS Repo](/images/docs/appstore/gitlab/add-ks-repo.png)
+   ![validate-link](/images/docs/appstore/external-apps/gitlab-app/validate-link.jpg)
 
-### Step 2: Browse App Templates
+   {{< notice note >}}
 
-2.1. Switch to use workspace regular account to log in (`apps-regular` for this guide), then enter into project `apps`.
+   After the repository is imported, you can deploy apps in the repository as app templates in all projects in this workspace.
 
-2.2. Click **Application Workloads → Applications**, click **Deploy New Application**.
+   {{</ notice >}}
 
-  ![Deploy App](/images/docs/appstore/gitlab/deploy-app.png)
+4. You can see that the repository displays in the list as below.
 
-2.3. Choose **From App Templates** and select `main` from the dropdown list. Click `gitlab`.
+   ![repository-list](/images/docs/appstore/external-apps/gitlab-app/repository-list.jpg)
 
-  ![Deploy GitLab](/images/docs/appstore/gitlab/deploy-gitlab.png)
+### Step 2: Deploy GitLab
 
-### Step 3: Deploy GitLab Application
+1. Log out of KubeSphere and log back in as `project-regular`. In your project, choose **Applications** under **Application Workloads** and click **Deploy New Application**.
 
-3.1. Click **Deploy** at the top right, customize app name if needed, and then click **Next**.
+   ![deploy-app](/images/docs/appstore/external-apps/gitlab-app/deploy-app.jpg)
 
-  ![Deploy GitLab Info](/images/docs/appstore/gitlab/deploy-gitlab-info.png)
+2. Select **From App Templates** from the pop-up dialogue.
 
-3.2. Customize App Config, and then click **Deploy**.
+   ![from-app-templates](/images/docs/appstore/external-apps/gitlab-app/from-app-templates.jpg)
 
-Generally we need to customize the domain name, and we'll use `apps.svc.cluster.local` here, which follows K8s internal DNS suffix for in-cluster access (the leading `apps` means the project `apps`, you can use your own project name accordingly).
+3. Select `demo-repository` from the drop-down list, which is the private app repository just uploaded, and click GitLab.
 
-  ```yaml
-  global:
-    hosts:
-      domain: apps.svc.cluster.local
+   ![select-repo](/images/docs/appstore/external-apps/gitlab-app/select-repo.jpg)
 
-  gitlab-runner:
-    install: false
+4. You can view its app information and configuration files. Under **Versions**, select a version number from the list and click **Deploy**.
 
-  gitlab:
-    webservice:
-      helmTests:
-        enabled: false
-  ```
+   ![gitlab-config](/images/docs/appstore/external-apps/gitlab-app/gitlab-config.jpg)
 
-  ![GitLab configuration](/images/docs/appstore/gitlab/deploy-gitlab-conf.png)
+5. Set an app name and confirm the version and deployment location. Click **Next** to continue.
 
-3.3. Wait for a few minutes, then you will see the application `git` showing `active` in the application list.
+   ![confirm-name](/images/docs/appstore/external-apps/gitlab-app/confirm-name.jpg)
+
+6. On the **App Config** page, specify the domain name of GitLab which will be used later to access the app. For example, set `.global.hosts.domain` to `demo-project.svc.cluster.local`.
+
+   ```yaml
+     global:
+       hosts:
+         domain: demo-project.svc.cluster.local
+   
+     gitlab-runner:
+       install: false
+   
+     gitlab:
+       webservice:
+         helmTests:
+           enabled: false
+   ```
+
+   {{< notice note >}}
+
+   - For the domain name, it follows the internal NDS suffix of Kubernetes for the access within the cluster. The leading `demo-project` in the domain name in this example refers to the project name. Make sure you replace it with your own project name.
+
+   - Set `.gitlab-runner.install` to `false` as the tutorial does not demonstrate CI/CD jobs.
+
+   - Set `.gitlab.webservice.helmTests.enabled` to `false` as the tutorial does not need to test the deployment.
+
+   {{</ notice >}} 
+
+7. After you finish editing the configuration, click **Deploy**. Wait for a few minutes, then you will see the application `git` showing `active` in the application list.
 
   ![GitLab Active](/images/docs/appstore/gitlab/deploy-gitlab-done.png)
 
