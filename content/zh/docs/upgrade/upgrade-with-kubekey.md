@@ -1,30 +1,32 @@
 ---
-title: "Upgrade with KubeKey"
+title: "使用 KubeKey 升级"
 keywords: "Kubernetes, upgrade, KubeSphere, v3.0.0, KubeKey"
-description: "Upgrade KubeSphere with kubekey"
+description: "Upgrade KubeSphere with KubeKey"
 
-linkTitle: "Upgrade with KubeKey"
+linkTitle: "使用 KubeKey 升级"
 weight: 4015
 ---
-KubeKey is recommended for users whose KubeSphere and Kubernetes were both deployed by [KubeSphere Installer](https://v2-1.docs.kubesphere.io/docs/installation/all-in-one/#step-2-download-installer-package). If your Kubernetes cluster was provisioned by yourself or cloud providers, please refer to [Upgrade with ks-installer](../upgrade-with-ks-installer).
 
-## Prerequisites
+对于 KubeSphere 和 Kubernetes 都是通过 [KubeSphere Installer](https://v2-1.docs.kubesphere.io/docs/installation/all-in-one/#step-2-download-installer-package) 部署的用户，推荐使用 KubeKey 升级。
+如果你的 Kubernetes 是由云供应商托管或自行配置的，请参阅 [使用 ks-installer 升级](../upgrade-with-ks-installer)。
 
-- You need to have a KubeSphere cluster running version 2.1.1.
+## 前提条件
+
+- 你需要有一个运行在 v2.1.1 版本的 KubeSphere 集群。
 
 {{< notice warning >}}
 
-If your KubeSphere version is v2.1.0 or earlier, please upgrade to v2.1.1 first.
+如果你的 KubeSphere 是 v2.1.0 或更早的版本，请先升级至 v2.1.1。
 
 {{</ notice >}}
 
-- Download KubeKey.
+- 下载 KubeKey。
 
 {{< tabs >}}
 
-{{< tab "For users with good network connections to GitHub" >}}
+{{< tab "对于与 GitHub 有良好网络连接的用户" >}}
 
-Download KubeKey from [GitHub Release Page](https://github.com/kubesphere/kubekey/releases/tag/v1.0.0) or use the following command directly.
+你可以从 [GitHub Release](https://github.com/kubesphere/kubekey/releases/tag/v1.0.0) 页面下载 KubeKey，也可以直接使用下面的命令。
 
 ```bash
 wget https://github.com/kubesphere/kubekey/releases/download/v1.0.0/kubekey-v1.0.0-linux-amd64.tar.gz -O - | tar -xz
@@ -32,9 +34,9 @@ wget https://github.com/kubesphere/kubekey/releases/download/v1.0.0/kubekey-v1.0
 
 {{</ tab >}}
 
-{{< tab "For users with poor network connections to GitHub" >}}
+{{< tab "对于与 GitHub 网络连接较差的用户" >}}
 
-Download KubeKey using the following command:
+使用以下命令下载 KubeKey：
 
 ```bash
 wget -c https://kubesphere.io/download/kubekey-v1.0.0-linux-amd64.tar.gz -O - | tar -xz
@@ -43,54 +45,52 @@ wget -c https://kubesphere.io/download/kubekey-v1.0.0-linux-amd64.tar.gz -O - | 
 
 {{</ tabs >}}
 
-Make `kk` executable:
+给 `kk` 增加执行权限：
 
 ```bash
 chmod +x kk
 ```
 
-- Make sure you read [Release Notes For 3.0.0](../../release/release-v300/) carefully.
+- 请仔细阅读 [v3.0.0](../../release/release-v300/) 发布说明。
 
 {{< notice warning >}}
 
-In v3.0.0, KubeSphere refactors many of its components such as Fluent Bit Operator and IAM. Make sure you back up any important components in case you heavily customized them but not from console.
+在 v3.0.0 版本中，KubeSphere 重构了其许多组件，例如 Fluent Bit Operator 和 IAM。如果你对这些组件有自定义修改，请先备份。
 
 {{</ notice >}}
 
-- Make your upgrade plan. Two upgrading scenarios are documented below.
+- 制定你的升级计划，下面提供了两种升级场景。
 
+## 升级 KubeSphere 和 Kubernetes
 
-## Upgrade KubeSphere and Kubernetes
-
-Upgrading steps are different for single-node clusters (all-in-one) and multi-node clusters.
+对于单节点集群（all-in-one）和多节点集群，升级步骤是不同的。
 
 {{< notice info >}}
 
-- Upgrading with Kubernetes will cause helm to be upgraded from v2 to v3. If you want to continue using helm2, please back up it: `cp /usr/local/bin/helm /usr/local/bin/helm2`
-- When upgrading Kubernetes, KubeKey will upgrade from one MINOR version to the next MINOR version until the target version. For example, you may see the upgrading process going from 1.16 to 1.17 and to 1.18, instead of directly jumping to 1.18 from 1.16.
-
+- 使用 Kubernetes 升级将导致 helm 从 v2 升级到 v3。如果您想继续使用 helm2，请先备份它： `cp /usr/local/bin/helm /usr/local/bin/helm2`。
+- 当升级 Kubernetes 时，KubeKey 将从一个小版本升级到下一个小版本，直到目标版本。例如，你需要从 1.16 升级至 1.18，会先升级到 1.17 然后在升级到 1.18，而不是直接从 1.16 升级到 1.18。
 {{</ notice >}}
 
-### All-in-one Cluster
+### 单节点集群
 
-The following command upgrades your single-node cluster to KubeSphere v3.0.0 and Kubernetes v1.17.9 (default):
+使用下面的命令将你单节点集群（all-in-one）升级至 KubeSphere v3.0.0 和 Kubernetes v1.17.9（默认）：
 
 ```bash
 ./kk upgrade --with-kubernetes v1.17.9 --with-kubesphere v3.0.0
 ```
 
-To upgrade Kubernetes to a specific version, please explicitly provide the version after the flag `--with-kubernetes`. Available versions are:
+如果要将 Kubernetes 升级至特定版本，可以通过 `--with-kubernetes` 指定版本号，以下是可用版本:
 
 - v1.15.12
 - v1.16.8, v1.16.10, v1.16.12, v1.16.13
 - v1.17.0, v1.17.4, v1.17.5, v1.17.6, v1.17.7, v1.17.8, v1.17.9
 - v1.18.3, v1.18.5, v1.18.6
 
-### Multi-node Cluster
+### 多节点集群
 
-#### Step1: Generate a configuration file with KubeKey
+#### Step 1: 使用 KubeKey 生成配置文件
 
-This command creates a configuration file `config-sample.yaml` from your cluster.
+这个命令会根据你的集群来创建一个 `config-sample.yaml` 配置文件。
 
 ```bash
 ./kk create config --from-cluster
@@ -98,33 +98,34 @@ This command creates a configuration file `config-sample.yaml` from your cluster
 
 {{< notice note >}}
 
-It assumes your kubeconfig is allocated in `~/.kube/config`. You can change it with the flag `--kubeconfig`.
+假设你的 `kubeconfig` 在 `~/.kube/config` 目录，你可以通过 `--kubeconfig` 指定它的位置。
 
 {{</ notice >}}
 
-#### Step 2: Modify the configuration file template
+#### Step 2: 修改配置文件模版
 
-Modify `config-sample.yaml` to fit your cluster setup. Make sure you replace the following fields correctly.
+根据你的集群信息修改 `config-sample.yaml` 文件，请确保以下字段被正确修改。
 
-- `hosts`: Input connection information among your hosts.
-- `roleGroups.etcd`: Input etcd members.
-- `controlPlaneEndpoint`: Input your load balancer address (Optional).
-- `registry`: Input image registry information (Optional).
+- `hosts`: 输入集群主机的连接信息。
+- `roleGroups.etcd`: 输入 etcd 节点。
+- `controlPlaneEndpoint`: 输入负载均衡地址（可选）。
+- `registry`: 输入镜像中心信息（可选）。
 
 {{< notice note >}}
 
-Please refer to the `Cluster` section of [config-example.yaml](https://github.com/kubesphere/kubekey/blob/master/docs/config-example.md) for more information.
+你可以参阅 [config-example.yaml](https://github.com/kubesphere/kubekey/blob/master/docs/config-example.md) 中的集群部分获取更多的信息。
 
 {{</ notice >}}
 
-#### Step 3: Upgrade your cluster
-The following command upgrades your cluster to KubeSphere v3.0.0 and Kubernetes v1.17.9 (default):
+#### Step 3: 升级集群
+
+使用下面的命令将你的集群升级至 KubeSphere v3.0.0 和 Kubernetes v1.17.9（默认）：
 
 ```bash
 ./kk upgrade --with-kubernetes v1.17.9 --with-kubesphere v3.0.0 -f config-sample.yaml
 ```
 
-To upgrade Kubernetes to a specific version, please explicitly provide the version after the flag `--with-kubernetes`. Available versions are:
+如果要将 Kubernetes 升级至特定版本，可以通过 `--with-kubernetes` 指定版本号，以下是可用版本：
 
 - v1.15.12
 - v1.16.8, v1.16.10, v1.16.12, v1.16.13
