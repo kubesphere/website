@@ -48,13 +48,23 @@ kubectl -n kubesphere-monitoring-system delete pvc `kubectl -n kubesphere-monito
 
 {{< notice note >}}
 
-KubeSphere 3.0 was certified to work well with Prometheus Operator **v0.38.3+**, Prometheus **v2.20.1+**, Alertmanager **v0.21.0+**,kube-state-metrics **v1.9.6**, node-exporter **v0.18.1**, so please be aware that your Prometheus stack components' version meets these version requirements especially node-exporter and kube-state-metrics.
+KubeSphere 3.0.0 was certified to work well with the following Prometheus stack components:
 
-If you've already had a Prometheus stack up and running, you can skip this step.
+- Prometheus Operator **v0.38.3+**
+- Prometheus **v2.20.1+**
+- Alertmanager **v0.21.0+**
+- kube-state-metrics **v1.9.6**
+- node-exporter **v0.18.1**
+
+Please be aware that your Prometheus stack components' version meets these version requirements especially `node-exporter` and `kube-state-metrics`.
+
+**Make sure to install `node-exporter` and `kube-state-metrics` if only `Prometheus Operator` and `Prometheus` were installed. These two components are required for KubeSphere to work properly.**
+
+**If you've already had the entire Prometheus stack up and running, you can skip this step.**
 
 {{</ notice >}}
 
-Promethes stack can be installed in many ways, the following steps show how to install using `kube-prometheus`. 
+Promethes stack can be installed in many ways, the following steps show how to install using **upstream `kube-prometheus`** to namespace `monitoring`.
 
 ```bash
 # Get kube-prometheus version v0.6.0 whose node-exporter's version v0.18.1 matches the one KubeSphere v3.0.0 used
@@ -68,6 +78,7 @@ rm -rf manifests/prometheus-adapter-*.yaml
 # Change kube-state-metrics to the same version v1.9.6 as KubeSphere v3.0.0 used
 sed -i 's/v1.9.5/v1.9.6/g' manifests/kube-state-metrics-deployment.yaml
 # Install Prometheus, Alertmanager, Grafana, kube-state-metrics, node-exporter
+# You can only install kube-state-metrics or node-exporter by only applying yaml files kube-state-metrics-*.yaml or node-exporter-*.yaml
 kubectl apply -f manifests/
 ```
 
@@ -75,7 +86,7 @@ kubectl apply -f manifests/
 
 {{< notice note >}}
 
-KubeSphere 3.0 uses Prometheus Operator to manage Prometheus/Alertmanager config and lifecycle, ServiceMonitor (to manage scrape config), PrometheusRule (to manage Prometheus recording/alert rules).
+KubeSphere 3.0.0 uses Prometheus Operator to manage Prometheus/Alertmanager config and lifecycle, ServiceMonitor (to manage scrape config), PrometheusRule (to manage Prometheus recording/alert rules).
 
 There are a few items listed in [KubeSphere kustomization](https://github.com/kubesphere/kube-prometheus/blob/ks-v3.0/kustomize/kustomization.yaml), among which `prometheus-rules.yaml` and `prometheus-rulesEtcd.yaml` are required for KubeSphere v3.0.0 to work properly and the others are optional. You can remove `alertmanager-secret.yaml` if you don't want your existing Alertmanager's config to be overwritten. You can remove `xxx-serviceMonitor.yaml` if you don't want your own `ServiceMonitors` to be overwritten (KubeSphere customized ServiceMonitors discard many irrelevant metrics to make sure Promethues only store the most useful metrics).
 
@@ -95,8 +106,8 @@ sed -i 's/my-namespace/<replace-me-with-new-ns>/g' kustomization.yaml
 # Apply KubeSphere customized stuff including Promethues rules, Alertmanager config, various ServiceMonitors.  
 kubectl apply -k .
 # Setup service for kube-scheduler and kube-controller-manager metrics exposure
-kubectl apply -f https://raw.githubusercontent.com/kubesphere/kube-prometheus/ks-v3.0/kustomize/prometheus-serviceKubeScheduler.yaml
-kubectl apply -f https://raw.githubusercontent.com/kubesphere/kube-prometheus/ks-v3.0/kustomize/prometheus-serviceKubeControllerManager.yaml
+kubectl apply -f ./prometheus-serviceKubeScheduler.yaml
+kubectl apply -f ./prometheus-serviceKubeControllerManager.yaml
 # Find Prometheus CR which is usually k8s
 kubectl -n monitoring get prometheus
 # Set Prometheus rule evaluation interval to 1m to be consistent with KubeSphere v3.0.0 customized ServiceMonitor, rule evaluation interval should be greater or equal to scrape interval.
@@ -126,3 +137,9 @@ Change monitoring endpoint to your own Prometheus:
 ```
 
 Restart KubeSphere APIServer by running `kubectl -n kubesphere-system rollout restart deployment/ks-apiserver`
+
+{{< notice warning >}}
+
+If you enable/disable KubeSphere pluggable components following [this guide](https://kubesphere.io/docs/pluggable-components/overview/) , the `monitoring endpoint` will be reset to the original one and you have to change it to the new one and then restart KubeSphere APIServer again.
+
+{{</ notice >}}
