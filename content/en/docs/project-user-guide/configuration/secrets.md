@@ -58,7 +58,7 @@ You can see the Secret's manifest file in YAML format by enabling **Edit Mode** 
 
      ![tls](/images/docs/project-user-guide/configurations/secrets/tls.jpg)
 
-   - **Image Registry Secret**. The type of [kubernetes.io/dockerconfigjson](https://kubernetes.io/docs/concepts/configuration/secret/#docker-config-secrets) in Kubernetes, which is used to store the credentials for accessing a Docker registry for images. For more information, see [Image Registry](../image-registry/).
+   - **Image Registry Secret**. The type of [kubernetes.io/dockerconfigjson](https://kubernetes.io/docs/concepts/configuration/secret/#docker-config-secrets) in Kubernetes, which is used to store the credentials for accessing a Docker registry for images. For more information, see [Image Registries](../image-registry/).
 
      ![image-registry-secret](/images/docs/project-user-guide/configurations/secrets/image-registry-secret.jpg)
 
@@ -79,8 +79,6 @@ You can see the Secret's manifest file in YAML format by enabling **Edit Mode** 
 3. Click **√** in the bottom right corner to confirm. You can continue to add key-value pairs to the Secret or click **Create** to finish the creation. For more information about how to use the Secret, see [Compose and Deploy WordPress](../../../quick-start/wordpress-deployment/#task-3-create-an-application).
 
 ## Check Secret Details
-
-### Detail Page
 
 1. After a Secret is created, it displays in the list as below. You can click the three dots on the right and select the operation from the menu to modify it.
 
@@ -112,7 +110,7 @@ As mentioned above, KubeSphere automatically converts the value of a key into it
 
 ## Use a Secret
 
-Generally, you need to use a Secret when you create workloads, [Services](../../../project-user-guide/application-workloads/services/), [Jobs](../../../project-user-guide/application-workloads/jobs/) or [CronJobs](../../../project-user-guide/application-workloads/cronjob/). For example, you can select a Secret for a code repository. For more information, see [Image Registry](../image-registry/).
+Generally, you need to use a Secret when you create workloads, [Services](../../../project-user-guide/application-workloads/services/), [Jobs](../../../project-user-guide/application-workloads/jobs/) or [CronJobs](../../../project-user-guide/application-workloads/cronjob/). For example, you can select a Secret for a code repository. For more information, see [Image Registries](../image-registry/).
 
 ![use-secret-repository](/images/docs/project-user-guide/configurations/secrets/use-secret-repository.jpg)
 

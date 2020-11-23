@@ -64,8 +64,6 @@ You can see the ConfigMap manifest file in YAML format by enabling **Edit Mode**
 
 ## Check ConfigMap Details
 
-### Detail Page
-
 1. After a ConfigMap is created, it displays in the list as below. You can click the three dots on the right and select the operation from the menu to modify it.
 
     ![configmap-list](/images/docs/project-user-guide/configurations/configmaps/configmap-list.jpg)
@@ -87,7 +85,7 @@ You can see the ConfigMap manifest file in YAML format by enabling **Edit Mode**
     - **Modify Config**: Modify the key-value pair of the ConfigMap.
     - **Delete**: Delete the ConfigMap, and return to the list page.
 
-4. Click the **Eidt Info** to view and edit the basic information.
+4. Click the **Edit Info** to view and edit the basic information.
 
     ![edit-configmap-info](/images/docs/project-user-guide/configurations/configmaps/edit-configmap-info.jpg)
     
