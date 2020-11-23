@@ -1,5 +1,5 @@
 ---
-title: "Linux 上的 All-in-one 安装"
+title: "在 Linux 上安装 All-in-one KubeSphere"
 keywords: 'KubeSphere, Kubernetes, All-in-one, Installation'
 description: 'All-in-one Installation on Linux'
 
@@ -41,7 +41,7 @@ weight: 3010
 
   {{< notice note >}}
 
-如果您想离线安装 KubeShpere，那么必须安装好 `docker`。
+如果您想离线安装 KubeSphere，那么必须预先安装好 `docker`。
 
   {{</ notice >}}
 
@@ -58,19 +58,19 @@ KubeKey 可以将 Kubernetes 和 KubeSphere 一起安装。针对不同的 Kuber
 
 {{< notice info >}}
 
-KubeKey 是用 Go 语言开发的，是一种全新的安装工具，可以代替以前使用的基于 ansible 的安装程序。KubeKey 为用户提供了灵活的安装选择，可以分别安装 KubeSphere 和 Kubernetes 或二者同时安装，既方便又高效。
+KubeKey 是用 Go 语言开发的一款全新的安装工具，可以代替以前基于 ansible 的安装程序。KubeKey 为用户提供了灵活的安装选择，可以分别安装 KubeSphere 和 Kubernetes 或二者同时安装，既方便又高效。
 
 {{</ notice >}}
 
 ### 网络和 DNS 配置
 
 - 必须确保 `/etc/resolv.conf` 中的 DNS 配置是可用的，不然集群中的 DNS 可能会有问题。
-- 如果您的网络配置使用了防火墙或安全组，则必须确保基础组件可以通过特定端口相互通信，可以根据文档[需要开发的端口](../../installing-on-linux/introduction/port-firewall/)的指导将防火墙关闭。
+- 如果您的网络配置使用了防火墙或安全组，则必须确保基础组件可以通过特定端口相互通信，可以根据文档[需要开放的端口](../../installing-on-linux/introduction/port-firewall/)的指导将防火墙关闭。
 
 {{< notice tip >}}
 
 - 建议操作系统处于干净的状态（不安装任何其他软件），否则可能会发生冲突。
-- 如果您无法从 dockerhub.io 下载容器镜像，建议提前准备好容器镜像或者配置镜像加速器。参考 [加速安装的配置](../../installing-on-linux/faq/configure-booster/)。
+- 如果您无法从 dockerhub.io 下载容器镜像，建议提前准备好容器镜像或者配置镜像加速器。参考[加速安装的配置](../../installing-on-linux/faq/configure-booster/)。
 
 {{</ notice >}}
 
@@ -148,7 +148,7 @@ chmod +x kk
 kubectl logs -n kubesphere-system $(kubectl get pod -n kubesphere-system -l app=ks-install -o jsonpath='{.items[0].metadata.name}') -f
 ```
 
-输出会显示 Web 控制台的 IP 地址和端口号，默认的 NodePort 是 `30880`。现在，您可以使用默认的帐户和密码（`admin /P@88w0rd`）通过 `EIP：30880` 访问控制台。
+输出会显示 Web 控制台的 IP 地址和端口号，默认的 NodePort 是 `30880`。现在可以使用默认的帐户和密码（`admin /P@88w0rd`）通过 `EIP：30880` 访问控制台。
 
 ```bash
 #####################################################
