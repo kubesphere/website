@@ -65,7 +65,7 @@ You can see the StatefulSet manifest file in YAML format by enabling **Edit Mode
     {{< notice note >}}
 
 - Remember to press **Enter** on your keyboard after you input an image name in the search bar.
-- If you want to use your private image repository, you should [create an image secret](../../configuration/image-registry/) first in **Secrets** under **Configurations**.
+- If you want to use your private image repository, you should [create an Image Registry Secret](../../configuration/image-registry/) first in **Secrets** under **Configurations**.
 
     {{</ notice >}}
 
