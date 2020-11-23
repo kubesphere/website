@@ -25,6 +25,14 @@ Follow steps to use KubeKey to upgrade Kubernetes and KubeSphere.
 
 Follow steps to use ks-installer to upgrade KubeSphere.
 
+## [Air-Gapped Upgrade with ks-installer](../upgrade/Air-Gapped-Upgrade-with-ks-installer/)
+
+Follow steps to use ks-installer and Offline-package to upgrade KubeSphere.
+
+## [Air-Gapped Upgrade with KubeKey](../upgrade/Air-Gapped-Upgrade-with-KubeKey/)
+
+Follow steps to use Offline-package to upgrade Kubernetes and KubeSphere.
+
 ## [Changes after Upgrade](../upgrade/what-changed/)
 
 Understand what will be changed after the upgrade.
