@@ -11,21 +11,21 @@ icon: "/images/docs/docs.svg"
 
 In KubeSphere, project users with necessary permissions are able to perform a series of tasks, such as creating different kinds of workloads, configuring volumes, secrets, and ConfigMaps, setting various release strategies, monitoring app metrics, and creating alerting policies. As KubeSphere features great flexibility and compatibility without any code hacking into native Kubernetes, it is very convenient for users to get started with any feature required for their testing, development and production environments.
 
-## Application
+## Applications
 
-### [Deploy Applications from App Store](../project-user-guide/application/deploy-app-from-appstore/)
+### [App Templates](../project-user-guide/application/app-template/)
 
-Learn how to deploy an application from the app store.
+Understand the concept of app templates and how they can help to deploy applications within enterprises.
 
-### [Deploy Applications from App Template](../project-user-guide/application/deploy-app-from-template/)
+### [Deploy Apps from App Templates](../project-user-guide/application/deploy-app-from-template/)
 
-Learn how to deploy an application from an Helm-based template.
+Learn how to deploy an application from a Helm-based template.
 
-### [Deploy Applications from Repository](../project-user-guide/application/deploy-app-from-repo/)
+### [Deploy Apps from App Store](../project-user-guide/application/deploy-app-from-appstore/)
 
-Learn how to deploy an application from a repository.
+Learn how to deploy an application from the App Store.
 
-### [Compose a Microservice Application](../project-user-guide/application/compose-app/)
+### [Compose a Microservice App](../project-user-guide/application/compose-app/)
 
 Learn how to compose a mcroservice-based application from scratch.
 
@@ -63,15 +63,15 @@ Learn basic concepts of Routes (i.e. Ingress) and how to create Routes in KubeSp
 
 Learn different properties on the dashboard in detail as you set container images for your workload.
 
-## ConfigMap and Secrets
+## Configurations
 
 ### [ConfigMaps](../project-user-guide/configuration/configmaps/)
 
-Introduce the steps to create configmap in KubeSphere.
+Learn how to create a ConfigMap in KubeSphere.
 
 ### [Secrets](../project-user-guide/configuration/secrets/)
 
-Learn how to manage secret in KubeSphere.
+Learn how to create a Secret in KubeSphere.
 
 ### [Image Registry](../project-user-guide/configuration/image-registry/)
 
@@ -119,7 +119,7 @@ Learn how to release a blue-green deployment in KubeSphere.
 
 ### [Canary Release](../project-user-guide/grayscale-release/canary-release/)
 
-Learn how to rolling deploy a canary service in KubeSphere.
+Learn how to deploy a canary service in KubeSphere.
 
 ### [Traffic Mirroring](../project-user-guide/grayscale-release/traffic-mirroring/)
 
@@ -129,7 +129,7 @@ Learn how to conduct a traffic mirroring job in KubeSphere.
 
 ### [Volumes](../project-user-guide/storage/volumes/)
 
-Learn how to create, edit, attach a volume in KubeSphere.
+Learn how to create, edit, and attach a volume in KubeSphere.
 
 ### [Volume Snapshots](../project-user-guide/storage/volume-snapshots/)
 
