@@ -10,7 +10,7 @@ weight: 200
 
 - You need to [enable KubeSphere DevOps System](../../../../docs/pluggable-components/devops/).
 - You need to have a [Docker Hub](https://hub.docker.com/) account.
-- You need to create a workspace, a DevOps project, a project, and an account (`project-regular`). This account needs to be invited to the DevOps project and the project with the role `operator`. For more information, see [Create Workspace, Project, Account and Role](../../../quick-start/create-workspace-and-project).
+- You need to create a workspace, a DevOps project, a project, and an account (`project-regular`). This account needs to be invited to the DevOps project and the project for deploying your workload with the role `operator`. For more information, see [Create Workspace, Project, Account and Role](../../../quick-start/create-workspace-and-project).
 
 ## Create Docker Hub Access Token
 
@@ -42,11 +42,11 @@ You need to create credentials in KubeSphere for the access token created so tha
 
    ![credential-docker-create](/images/docs/devops-user-guide/examples/compile-and-deploy-a-go-project/credential-docker-create.jpg)
 
-{{< notice tip >}}
+   {{< notice tip >}}
 
 For more information about how to create credentials, see [Credential Management](../../../devops-user-guide/how-to-use/credential-management/).
 
-{{</ notice >}} 
+   {{</ notice >}}
 
 3. Click **Create** again and select **kubeconfig** for **Type**. Note that KubeSphere automatically populates the **Content** field, which is the kubeconfig of the current user account. Set a **Credential ID** and click **OK**.
 
@@ -83,7 +83,7 @@ With the above credentials ready, you can create a pipeline using an example Jen
          label 'maven'
        }
      }
-     
+
      environment {
        // the address of your harbor registry
        REGISTRY = 'docker.io'
@@ -98,7 +98,7 @@ With the above credentials ready, you can create a pipeline using an example Jen
        // the name of the project you created in KubeSphere, not the DevOps project name
        PROJECT_NAME = 'devops-go'
      }
-     
+
      stages {
        stage('docker login') {
          steps{
@@ -107,7 +107,7 @@ With the above credentials ready, you can create a pipeline using an example Jen
                }
              }  
            }
-           
+
        stage('build & push') {
          steps {
            container ('maven') {
@@ -128,11 +128,11 @@ With the above credentials ready, you can create a pipeline using an example Jen
      }
    ```
 
-{{< notice note >}} 
+   {{< notice note >}}
 
 If your pipeline runs successfully, images will be pushed to Docker Hub. If you are using Harbor, you cannot pass the parameter to `docker login -u`  via the Jenkins credential with environment variables. This is because every Harbor robot account username contains a  `$` character, which will be converted to `$$` by Jenkins when used by environment variables. [Learn more](https://number1.co.za/rancher-cannot-use-harbor-robot-account-imagepullbackoff-pull-access-denied/).
 
-{{</ notice >}} 
+   {{</ notice >}}
 
 ## Run Pipeline
 
