@@ -265,7 +265,7 @@ section3:
           - icon: '/images/contribution/calicq7.jpg'
 
 sectionCalendar:
-  iframeUrl: https://calendar.google.com/calendar/embed?src=kubesphere%40gmail.com&ctz=Asia%2FBrunei
+  iframeUrl: https://calendar.google.com/calendar/embed?src=kubesphere%40gmail.com&ctz=Asia%2FShanghai
 
 section4:
   involved:
