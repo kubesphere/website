@@ -12,6 +12,8 @@ A Kubernetes [ConfigMap](https://kubernetes.io/docs/concepts/configuration/confi
 - Set command parameters in containers.
 - Create a configuration file in volumes.
 
+This tutorial demonstrates how to create a ConfigMap in KubeSphere.
+
 ## Prerequisites
 
 You need to create a workspace, a project and an account (`project-regular`). The account must be invited to the project with the role of `operator`. For more information, see [Create Workspace, Project, Account and Role](../../../quick-start/create-workspace-and-project).
