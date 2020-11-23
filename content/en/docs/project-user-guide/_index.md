@@ -73,7 +73,7 @@ Learn how to create a ConfigMap in KubeSphere.
 
 Learn how to create a Secret in KubeSphere.
 
-### [Image Registry](../project-user-guide/configuration/image-registry/)
+### [Image Registries](../project-user-guide/configuration/image-registry/)
 
 Learn how to create an image registry in KubeSphere.
 
