@@ -1,9 +1,9 @@
 ---
-title: "介绍"
+title: "概述"
 keywords: "KubeSphere, Kubernetes, 安装"
 description: "Kubernetes 部署 KubeSphere概述"
 
-linkTitle: "介绍"
+linkTitle: "概述"
 weight: 2105
 ---
 
