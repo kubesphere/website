@@ -3,7 +3,7 @@ title: "先决条件"
 keywords: "KubeSphere, Kubernetes, 安装, 先决条件"
 description: "在现有Kubernetes上安装KubeSphere的先决条件"
 
-linkTitle: "先决条件"
+linkTitle: "准备工作"
 weight: 2125
 ---
 

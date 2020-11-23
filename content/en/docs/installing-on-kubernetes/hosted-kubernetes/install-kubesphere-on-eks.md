@@ -3,7 +3,7 @@ title: "Deploy KubeSphere on AWS EKS"
 keywords: 'Kubernetes, KubeSphere, EKS, Installation'
 description: 'How to install KubeSphere on EKS'
 
-weight: 2265
+weight: 2210
 ---
 
 This guide walks you through the steps of deploying KubeSphere on [AWS EKS](https://docs.aws.amazon.com/eks/latest/userguide/what-is-eks.html).

@@ -1,5 +1,5 @@
 ---
-linkTitle: "介绍"
+linkTitle: "安装说明"
 weight: 2100
 
 _build:
