@@ -50,3 +50,17 @@ Learn how to customize your Jenkins settings.
 ## Tool Integration
 
 ### [Integrate SonarQube into Pipeline](../devops-user-guide/how-to-integrate/sonarqube/)
+
+## Examples
+
+### [Build and Deploy a Go Project](../devops-user-guide/examples/go-project-pipeline/)
+
+Demonstrate how to build and deploy a Go project using KubeSphere pipeline.
+
+### [How to Build and Deploy a Maven Project](../devops-user-guide/examples/a-maven-project/)
+
+Demonstrate how to build and deploy a maven project using KubeSphere pipeline.
+
+### [Deploy Apps in a Multi-cluster Project Using Jenkinsfile](../devops-user-guide/examples/multi-cluster-project-example/)
+
+Demonstrate how to deploy a multi-cluster project using KubeSphere Jenkinsfile-based pipeline.
