@@ -107,6 +107,26 @@ var bindScrollTableActive = function() {
   })
 }
 
+var bindScrollHeader = function() {
+  var check = 100
+  var header = $('header')
+  var div = $('header > .common-layout')
+  var originHeight = div.height()
+  var nav = $('header .nav')
+  $( window ).scroll(function() {
+      var scrollY = window.scrollY;
+      if (scrollY > 100) {
+        div.css('height', 50)
+        nav.css('line-height', '50px')
+      } else {
+        div.css('height', originHeight)
+        nav.css('line-height', originHeight + 'px')
+      }
+  })
+}
+
+bindScrollHeader()
+
 if ($('.aside').length > 0) {
   bindAsideScroll()
   bindScrollTableActive()
