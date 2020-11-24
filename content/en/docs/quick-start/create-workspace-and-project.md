@@ -26,7 +26,7 @@ The multi-tenant system of KubeSphere features **three** levels of hierarchical 
 
 You are required to create a new [workspace](../../workspace-administration/workspace-overview/) to work on instead of tackling the system workspace where system resources are running and most of them are viewable only. In addition, it is strongly recommended you work with platform-regular role in your own workspace in terms of security consideration.
 
-You can create multiple workspaces within a Kubernetes cluster. Under each workspace, you can also create multiple projects. Each level has multiple built-in roles. Besides, KubeSphere allows you to create roles with customized authorization as well. The KubeSphere hierarchy is applicable for enterprise users with different teams or groups, and different roles within each team.
+You can create multiple workspaces within a KubeSphere cluster. Under each workspace, you can also create multiple projects. Each level has multiple built-in roles. Besides, KubeSphere allows you to create roles with customized authorization as well. The KubeSphere hierarchy is applicable for enterprise users with different teams or groups, and different roles within each team.
 
 ## Hands-on Lab
 
