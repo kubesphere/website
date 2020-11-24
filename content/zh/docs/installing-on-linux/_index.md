@@ -23,6 +23,10 @@ icon: "/images/docs/docs.svg"
 
 了解在多节点集群上安装 KubeSphere 和 Kubernetes 的一般步骤。
 
+### [离线环境安装](../installing-on-linux/introduction/air-gapped-installation/)
+
+了解如何在离线环境下安装 KubeSphere 和 Kubernetes.
+
 ### [端口要求](../installing-on-linux/introduction/port-firewall/)
 
 了解 KubeSphere 中不同服务的特定端口要求。
@@ -41,15 +45,27 @@ icon: "/images/docs/docs.svg"
 
 了解如何在 VMware vSphere 上创建高可用 KubeSphere 群集。
 
+### [在裸机上部署](../installing-on-linux/on-premises/install-kubesphere-on-bare-metal/)
+
+了解如何在裸机上部署一个单 master 的多节点 KubeSohere 集群。
+
 ## 在公有云上安装 KubeSphere
 
-### [在 Azure 虚拟机上部署 KubeSphere](../installing-on-linux/public-cloud/install-ks-on-azure-vms/)
+### [在 Azure 虚拟机上部署 KubeSphere](../installing-on-linux/public-cloud/install-kubesphere-on-azure-vms/)
 
 了解如何在 Azure 虚拟机上创建高可用 KubeSphere 群集。
 
-### [在青云QingCloud 虚拟机上部署 KubeSphere](../installing-on-linux/public-cloud/kubesphere-on-qingcloud-instance/)
+### [在青云QingCloud 虚拟机上部署 KubeSphere](../installing-on-linux/public-cloud/install-kubesphere-on-qingcloud-vms/)
 
 了解如何在青云QingCloud 平台上创建高可用 KubeSphere 集群。
+
+### [在华为云虚拟机上部署 KubeSphere](../installing-on-linux/public-cloud/install-kubesphere-on-huaweicloud-ecs/)
+
+了解如何在华为云虚拟机上创建高可用的 KubeSphere 集群。
+
+### [在阿里云虚拟机上部署 KubeSphere](../installing-on-linux/public-cloud/install-kubesphere-on-ali-ecs/)
+
+了解如何在阿里云虚拟机上创建高可用的 KubeSphere 集群。
 
 ## 添加或删除节点
 

@@ -1,5 +1,5 @@
 ---
-title: "Uninstalling KubeSphere and Kubernetes"
+title: "Uninstall KubeSphere and Kubernetes"
 keywords: 'Kubernetes, KubeSphere, uninstalling, remove-cluster'
 description: 'How to uninstall KubeSphere and Kubernetes'
 
