@@ -1,231 +1,231 @@
 ---
-title: "Deploy Bookinfo and Manage Traffic"
-keywords: 'kubesphere, kubernetes, docker, multi-tenant'
-description: 'Deploy a Bookinfo App'
+title: "部署 Bookinfo 和管理流量"
+keywords: 'kubesphere, kubernetes, docker, 多租户'
+description: '部署一个 Bookinfo 应用'
 
-linkTitle: "Deploy Bookinfo and Manage Traffic"
+linkTitle: "部署 Bookinfo 和管理流量"
 weight: 3040
 ---
 
-[Istio](https://istio.io/), as an open-source service mesh solution, provides powerful features of traffic management for microservices. Here is the introduction of traffic management from the official website of [Istio](https://istio.io/latest/docs/concepts/traffic-management/):
+[Istio](https://istio.io/)，作为一种开源服务网格解决方案，为微服务提供了强大的流量管理功能。以下是 [Istio](https://istio.io/latest/zh/docs/concepts/traffic-management/) 官方网站上关于流量管理的简介：
 
-*Istio’s traffic routing rules let you easily control the flow of traffic and API calls between services. Istio simplifies configuration of service-level properties like circuit breakers, timeouts, and retries, and makes it easy to set up important tasks like A/B testing, canary rollouts, and staged rollouts with percentage-based traffic splits. It also provides out-of-box failure recovery features that help make your application more robust against failures of dependent services or the network.*
+*Istio 的流量路由规则可以让您很容易的控制服务之间的流量和 API 调用。Istio 简化了服务级别属性的配置，比如熔断器、超时和重试，并且能轻松的设置重要的任务，如 A/B 测试、金丝雀发布、基于流量百分比切分的概率发布等。它还提供了开箱即用的故障恢复特性，有助于增强应用的健壮性，从而更好地应对被依赖的服务或网络发生故障的情况。*
 
-KubeSphere provides three kinds of grayscale strategies based on Istio, including blue-green deployment, canary release and traffic mirroring.
+KubeSphere 基于 Istio 提供了三种灰度策略，包括蓝绿部署，金丝雀发布和流量镜像。
 
-Among others, a canary release represents an effective software development strategy in which a new version is deployed for testing with the base version preserved in the production environment. This strategy will bring part of the traffic to the new version being tested and the production release takes up the rest.
+其中，金丝雀发布代表了一种有效的软件开发策略，在这种策略中，新版本被部署用于测试，基线版本留存在生产环境中。此策略为正在测试的新版本引入一部分流量，而生产版本将接收其余的流量。
 
-## Objective
+## 目标
 
-In this tutorial, you will learn how to deploy a sample application Bookinfo composed of four separate microservices and use the traffic management feature of KubeSphere to publish a new version.
+在本教程中，您将学习如何部署由四个独立的微服务组成的示例应用程序 Bookinfo ，以及如何使用 KubeSphere 的流量管理功能来发布新版本。
 
-## Prerequisites
+## 前置条件
 
-- You need to enable [KubeSphere Service Mesh](../../pluggable-components/service-mesh/).
+- 您需要启用 [KubeSphere 服务网格](../../pluggable-components/service-mesh/) 。
 
-- You need to finish all tasks in [Create Workspace, Project, Account and Role](../create-workspace-and-project/).
+- 您需要完成 [Create Workspace, Project, Account and Role](../create-workspace-and-project/) 中的所有任务。
 
-- You need to enable **Application Governance**. To do so, follow the steps below:
+- 您需要启用**应用治理**。为此，请按照以下步骤操作:
 
-  Log in the console as `project-admin` and go to your project. Navigate to **Advanced Settings** under **Project Settings**, click **Edit**, and select **Edit Gateway**. In the dialog that appears, flip on the toggle switch next to **Application Governance**.
+  使用 `project-admin` 登录控制台并转到您的项目。找到**项目设置**下的**高级设置**，点击**编辑**，然后选择**编辑网关**。在出现的对话框中，打开**应用治理**旁边的开关。
 
 ![edit-gateway](https://ap3.qingstor.com/kubesphere-website/docs/20200908145220.png)
 
 ![switch-application-governance](https://ap3.qingstor.com/kubesphere-website/docs/20200908150358.png)
 
-{{< notice note >}} 
+{{< notice 提示 >}} 
 
-You need to enable **Application Governance** so that you can use the Tracing feature. Once it is enabled, please check whether an annotation (e.g. `nginx.ingress.kubernetes.io/service-upstream: true`) is added for your route (Ingress) if the route is inaccessible.
+您需要启用**应用治理**以使用追踪功能。启用后若无法访问路由，请检查您的路由（Ingress）是否已经添加注释（例如：`nginx.ingress.kubernetes.io/service-upstream: true`）。
 
 {{</ notice >}} 
 
-## Estimated Time
+## 预计时间
 
-About 20 minutes.
+20分钟左右。
 
-## What is Bookinfo Application
+## 什么是 Bookinfo 应用
 
-The Bookinfo application is composed of four separate microservices as shown below. There are three versions of the **reviews** microservice.
+Bookinfo 应用由如下四个独立的微服务组成。其中 **reviews** 微服务有三个版本。
 
-- The **productpage** microservice calls the **details** and **reviews** microservices to populate the page.
-- The **details** microservice contains book information.
-- The **reviews** microservice contains book reviews. It also calls the ratings microservice.
-- The **ratings** microservice contains book ranking information that accompanies a book review.
+- **productpage** 微服务会调用 **details** 和 **reviews** 用来生成页面。
+- **details** 这个微服务中包含了书籍的信息。
+- **reviews** 这个微服务中包含了书籍相关的评论。它还会调用 **ratings** 微服务。
+- **ratings** 这个微服务中包含了由书籍评价组成的评级信息。
 
-The end-to-end architecture of the application is shown below. See [Bookinfo Application](https://istio.io/latest/docs/examples/bookinfo/) for more details.
+这个应用的端到端架构如下所示。更多详细信息，请参考 [Bookinfo 应用](https://istio.io/latest/zh/docs/examples/bookinfo/) 。
 
-![Bookinfo Application](https://pek3b.qingstor.com/kubesphere-docs/png/20190718152533.png#align=left&display=inline&height=1030&originHeight=1030&originWidth=1712&search=&status=done&width=1712)
+![Bookinfo 应用](https://pek3b.qingstor.com/kubesphere-docs/png/20190718152533.png#align=left&display=inline&height=1030&originHeight=1030&originWidth=1712&search=&status=done&width=1712)
 
-## Hands-on Lab
+## 动手实验
 
-### Task 1: Deploy Bookinfo
+### 任务 1: 部署 Bookinfo
 
-1. Log in the console as `project-regular` and enter **demo-project**. Navigate to **Applications** under **Application Workloads**, and click **Deploy Sample Application** on the right.
+1. 使用账户 `project-regular` 登录控制台并进入项目。转到**应用负载**下的**应用**，点击右侧的**部署示例应用**。
 
 ![sample-bookinfo](https://ap3.qingstor.com/kubesphere-website/docs/20200908100219.png)
 
-2. Click **Next** in the dialog that appears where required fields are pre-populated and relevant components are already set. You do not need to change the setting and just click **Create** in the final page (**Internet Access**).
+2. 在出现的对话框中点击**下一步**，其中必填字段已经预先填充了，同时也已经设置了相关组件。您无需修改设置，只需在最后一页（**外网访问**）点击**创建**。
 
 ![create-bookinfo](https://ap3.qingstor.com/kubesphere-website/docs/20200908101041.png)
 
-3. In **Workloads**, make sure the status of all four deployments displays `running`, which means the app has been created successfully.
+3. 在**工作负载**中，确保这四个部署都显示 `running` ，代表该应用已经成功创建。
 
 ![running](https://ap3.qingstor.com/kubesphere-website/docs/20200908101328.png)
 
-{{< notice note >}} 
+{{< notice 提示 >}} 
 
-It may take a few minutes before the deployments are up and running.
+部署启用并运行可能需要几分钟完成。
 
 {{</ notice >}} 
 
-### Task 2: Access Bookinfo
+### 任务 2: 访问 Bookinfo
 
-1. In **Applications**, go to **Composing App** and click the app `bookinfo` to see its detailed information.
+1. 在**应用**中，点击应用 `bookinfo` 查看详细信息。
 
 ![click-bookinfo](https://ap3.qingstor.com/kubesphere-website/docs/20200908102119.png)
 
-{{< notice note >}} 
+{{< notice 提示 >}} 
 
-If you do not see the app in the list, refresh your page.
+如果您无法在列表中看到该应用，请刷新页面。
 
 {{</ notice >}} 
 
-2. In the detail page, record the hostname and port number of the app which will be used to access Bookinfo.
+2. 在详细信息页面中，记录用于访问 Bookinfo 应用的主机名和端口号。
 
 ![](https://ap3.qingstor.com/kubesphere-website/docs/20200908102821.png)
 
-3. As the app will be accessed outside the cluster via NodePort, you need to open the port in the image above (in this case, the port number is 32277) in your security group for outbound traffic and set any port forwarding rules if necessary.
-4. Edit your local host file (`/etc/hosts`) by adding an entry in it to map the hostname to the public IP address. For example:
+3. 由于将通过 NodePort 在集群外访问该应用，因此您需要在安全组中为出站流量开放上图中的端口（在本例中，端口号为32277），并根据需要设置任意端口转发规则。
+4. 编辑您的本地主机文件（`/etc/hosts`），添加一条配置将主机名映射到对应的公网 IP 。例如：
 
 ```bash
 # {Public IP} {hostname}
 139.198.19.38 productpage.demo-project.192.168.0.2.nip.io
 ```
 
-{{< notice warning >}} 
+{{< notice 注意 >}} 
 
-Do not copy the content above directly to your local host file. Please replace it with your own public IP address and hostname.
+不要直接复制上述内容到本地主机文件。请将其替换成您自己环境的公网 IP 与主机名。
 
 {{</ notice >}} 
 
-5. When you finish, click the button **Click to visit** to access the app.
+5. 完成后，点击**点击访问**按钮访问该应用。
 
 ![click-to-visit](https://ap3.qingstor.com/kubesphere-website/docs/20200908105527.png)
 
-6. In the app detail page, click **Normal user** in the bottom-left corner.
+6. 在应用详情页面，点击左下角的 **Normal user** 。
 
 ![normal-user](https://ap3.qingstor.com/kubesphere-website/docs/20200908105756.png)
 
-7. In the image below, you can notice that only **Reviewer1** and **Reviewer2** are displayed without any stars in the **Book Reviews** section. This is the status of this app version. In the task below, you can see a different UI appearance through a canary release.
+7. 在下图中，您可以注意到 **Book Reviews** 仅出现 **Reviewer1** 和 **Reviewer2** 并且没有任何星星，这是当前应用程序版本的状态。在下面的任务中，您可以通过金丝雀发布看到不同的 UI 展现。
 
 ![](https://ap3.qingstor.com/kubesphere-website/docs/20200908110106.png)
 
-### Task 3: Create Canary Release
+### Task 3: 创建金丝雀发布
 
-1. Go back to KubeSphere console and select **Grayscale Release**. Click **Create Canary Release Job** and you will be directed to **Grayscale Release** section of the project. Select **Canary Release** and click **Create Job**.
+1. 回到 KubeSphere 控制台并选择**灰度发布**。点击**发布灰度任务**，您将会被引导至项目的**灰度发布**部分。选择**金丝雀发布**并且点击**发布任务**。
 
 ![](https://ap3.qingstor.com/kubesphere-website/docs/20200908110903.png)
 
 ![create-job](https://ap3.qingstor.com/kubesphere-website/docs/20200908111003.png)
 
-2. Add a name (e.g. `canary-release`) and click **Next**. Select **reviews** as the component to roll out a change and click **Next**.
+2. 添加一个任务名称（例如：`canary-release`）然后点击**下一步**。选择 **reviews** 作为需要更改的组件并点击**下一步**。
 
 ![](https://ap3.qingstor.com/kubesphere-website/docs/20200908111359.png)
 
-3. In the next dialog, enter `v2` as **Grayscale Release Version Number** and change the image to `kubesphere/examples-bookinfo-reviews-v2:1.13.0` (`v1` changed to `v2`). Click **Next** to continue.
+3. 在下一个对话框中，输入 `v2` 作为**灰度版本号**并修改镜像为 `kubesphere/examples-bookinfo-reviews-v2:1.13.0` （`v1` 更改为 `v2`）。点击**下一步**继续。
 
 ![release-version](https://ap3.qingstor.com/kubesphere-website/docs/20200908111958.png)
 
-4. The canary release supports two release strategies: **Forward by traffic ratio** and **Forward by request content**. In this tutorial, please select **Forward by traffic ratio** and set the same traffic ratio for v1 and v2 (50% each). You can click the icon in the middle and move leftwards or rightwards to change the traffic ratio. Click **Create** to finish the setting.
+4. 金丝雀发布支持两种发布策略：**按流量比例下发**和**按请求内容下发**。在本教程中，请选择**按流量比例下发**并为 v1 和 v2 设置相同的流量比例 （各50%）。你可以点击中间的图标，然后向左或向右移动以更改流量比例。点击**创建**完成设置。
 
 ![](https://ap3.qingstor.com/kubesphere-website/docs/20200908113031.png)
 
-5. The job created will display in **Job Status**.
+5. 创建的任务将会显示在**任务状态**。
 
 ![canary-release-test](https://ap3.qingstor.com/kubesphere-website/docs/20200908113728.png)
 
-### Task 4: Verify Canary Release
+### Task 4: 验证金丝雀发布
 
-Visit the Bookinfo website again and refresh your browser repeatedly. You will be able to see the **Book Reviews** section switched between v1 and v2 at a rate of 50%.
+再次访问 Bookinfo 网站，然后反复刷新浏览器。您可以看到 **Book Reviews** 部分以50%的比率在 v1 和 v2 版本之间切换。
 
 ![verify-canary-release](https://ap3.qingstor.com/kubesphere-website/docs/canary.gif)
 
-### Task 5: View Network Topology
+### Task 5: 查看网络拓扑
 
-1. Execute the following command in the machine where KubeSphere runs to bring in real traffic to simulate the access to Bookinfo every 0.5 seconds.
+1. 在运行 KubeSphere 的机器上执行以下命令来引入真实流量，每0.5秒模拟访问一次 Bookinfo 。
 
 ```bash
 watch -n 0.5 "curl http://productpage.demo-project.192.168.0.2.nip.io:32277/productpage?u=normal"
 ```
 
-{{< notice note >}}
+{{< notice 提示 >}}
 
-Make sure you replace the project name, IP address and port number in the above command with your own.
+请确保将上述命令行中的项目名称，IP 地址和端口号替换成您自己环境的。
 
 {{</ notice >}} 
 
-2. In **Traffic Management**, you can see communications, dependency, health and performance among different microservices.
+2. 在 **Traffic Management** 中，您可以看到不同微服务之间的通信，依赖关系，运行状态及性能。
 
 ![traffic-management](https://ap3.qingstor.com/kubesphere-website/docs/20200908133652.png)
 
-3. Click a component (e.g. **reviews**) and you can see the information of traffic monitoring on the right, displaying real-time data of **Traffic**, **Success rate** and **Duration**.
+3. 点击组件（例如：**reviews**）您可以在右侧看到流量监控信息，显示 **Traffic** ， **Success rate** 和 **Duration** 的实时数据。
 
 ![real-time-data](https://ap3.qingstor.com/kubesphere-website/docs/20200908134454.png)
 
-### Task 6: View Tracing Details
+### Task 6: 查看 Tracing 详情
 
-KubeSphere provides the distributed tracing feature based on [Jaeger](https://www.jaegertracing.io/), which is used to monitor and troubleshoot microservices-based distributed applications.
+KubeSphere 提供基于 [Jaeger](https://www.jaegertracing.io/) 的分布式追踪功能。用来对基于微服务的分布式应用程序进行监控及故障排查。
 
-1. In **Tracing** tab, you can clearly see all phases and internal calls of requests, as well as the period in each phase.
+1. 在 **Tracing** 选项卡中，您可以清楚地看到请求的所有阶段及内部调用，以及每个阶段的调用耗时。
 
 ![tracing](https://ap3.qingstor.com/kubesphere-website/docs/20200908135108.png)
 
-2. Click any item, and you can even drill down to see request details and where this request is being processed (which machine or container).
+2. 点击任意条目，您可以深入查看请求的详细信息及该请求被处理的位置（在哪个机器或者容器）。
 
 ![tracing-kubesphere](https://ap3.qingstor.com/kubesphere-website/docs/20200908135252.png)
 
-### Task 7: Take Over All Traffic
+### Task 7: 接管所有流量
 
-With the canary release, you can test the new version online by bringing in part of the actual traffic and collect user feedback. If everything runs smoothly without any issues, you can bring all the traffic to the new version.
+通过金丝雀发布，您可以通过引入部分实际流量并收集用户反馈来在线测试新版本。如果一切运行顺利，没有任何问题，则可以将所有流量引入新版本。
 
-1. In **Grayscale Release**, click the canary release job.
+1. 在**灰度发布**中，点击金丝雀发布任务。
 
 ![open-canary-release](https://ap3.qingstor.com/kubesphere-website/docs/20200908140138.png)
 
-2. In the dialog that appears, click the three dots of **reviews v2** and select **Take Over**. It means 100% of the traffic will be sent to the new version (v2).
+2. 在弹出的对话框中，点击 **reviews v2** 的三个点并选择**接管所有流量**。这代表 100% 的流量将会被发送到新版本（v2）。
 
 ![](https://ap3.qingstor.com/kubesphere-website/docs/20200908140314.png)
 
-{{< notice note >}}
+{{< notice 提示 >}}
 
-If anything goes wrong with the new version, you can roll back to the previous version v1 anytime.
+如果新版本出现什么问题，您可以随时回滚到之前的 v1 版本。
 
 {{</ notice >}} 
 
-3. Open the Bookinfo page again and refresh the browser several times. You can find that it only shows the result of **reviews v2** (i.e. ratings with black stars).
+3. 重新打开 Bookinfo 页面多刷新几次浏览器。您会发现页面只会显示 **reviews v2** 的结果（即带有黑色星标的评级）。
 
 ![](https://ap3.qingstor.com/kubesphere-website/docs/20200908140921.png)
 
-### Task 8: Remove the Old Version
+### Task 8: 移除旧版本
 
-Now that the new version v2 takes over all the traffic successfully, you can remove the old version and release the resources of v1 based on your needs.
+现在新版本 v2 成功接管了所有流量，您可以根据需要删除旧版本并释放 v1 的资源。
 
-{{< notice warning >}} 
+{{< notice 注意 >}} 
 
-After you remove a certain version, related workloads and Istio-based configuration resources will also be deleted.
+删除某个版本后，相关的工作负载和基于Istio的配置资源也将被删除。
 
 {{</ notice >}}
 
-1. In **Grayscale Release**, click the canary release job.
+1. 在**灰度发布**中，点击金丝雀发布任务。
 
 ![open-canary-release](https://ap3.qingstor.com/kubesphere-website/docs/20200908140138.png)
 
-2. In the dialog that appears, click **Job offline** to remove the old version.
+2. 在弹出的对话框中，点击**任务下线**以移除旧版本。
 
 ![job-offline](https://ap3.qingstor.com/kubesphere-website/docs/20200908142246.png)
 
-The above tasks serve as a example of how to adopt a canary release to control traffic and publish a new version of your app. You can also try different strategies in **Grayscale Release** or see related sections in **Project Administration and Usage**.
+以上任务是使用金丝雀发布来控制流量和发布应用程序新版本的示例。您也可以尝试使用**灰度发布**中的其他不同发布策略，或者查看**项目管理及使用**中相关内容。
 
-## Reference
+## 参考
 
-[Bookinfo Application](https://istio.io/latest/docs/examples/bookinfo/)
+[Bookinfo 应用](https://istio.io/latest/docs/examples/bookinfo/)
