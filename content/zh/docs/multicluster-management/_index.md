@@ -18,11 +18,11 @@ icon: "/images/docs/docs.svg"
 
 对多集群管理有个基本的了解，例如多集群管理的常见用例，以及 KubeSphere 可以通过多集群功能带来的好处。
 
-### [KubeSphere 中的 Kubernetes 联邦](../multicluster-management/introduction/kubefed-in-kubesphere/)
+### [KubeSphere 联邦](../multicluster-management/introduction/kubefed-in-kubesphere/)
 
 了解 KubeSphere 中的 Kubernetes 联邦的基本概念，包括 M 集群和 H 集群。
 
-## 直接连接
+## 启用多集群
 
 ### [直接连接](../multicluster-management/enable-multicluster/direct-connection/)
 
