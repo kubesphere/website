@@ -6,67 +6,54 @@ linkTitle: "DevOps Project Management"
 weight: 110
 ---
 
+This tutorial demonstrates how to create and manage DevOps projects.
+
 ## Prerequisites
 
-- You need to create a workspace, a project and an account (project-admin). Please refer to Create Workspace, Project, Account and Role if they are not ready yet.
-- You need to enable KubeSphere DevOps system.
+- You need to create a workspace and an account (`project-admin`). The account must be invited to the workspace with the role of `workspace-self-provisioner`. For more information, refer to [Create Workspace, Project, Account and Role](../../../quick-start/create-workspace-and-project/).
+- You need to enable the [KubeSphere DevOps system](../../../pluggable-components/devops/).
 
-## Create a DevOps 
+## Create a DevOps Project
 
-1. Sign in with project-admin, choose `DevOps Projects` tap, then click **Create** and select **Create a DevOps project**.
+1. Log in the console of KubeSphere as `project-admin`. Go to **DevOps Projects** and click **Create**.
 
-![Create a DevOps](/images/devops/create-devops-1.png)
+   ![devops-project-create](/images/docs/devops-user-guide/using-devops/devops-project-management/devops-project-create.jpg) 
 
-2. Fill in the basic information for this DevOps project.
+2. Provide the basic information for the DevOps project and click **OK**.
 
-- Name: A concise and clear name for this DevOps project, which is convenient for users to browse and search, e.g. `demo-devops`.
-- Description: A brief introduction to DevOps project.
+   ![create-devops](/images/docs/devops-user-guide/using-devops/devops-project-management/create-devops.jpg)
 
-![devops_create_project](/images/devops/create-devops-2.png)
+   - **Name**: A concise and clear name for this DevOps project, which is convenient for users to identify, such as `demo-devops`.
+   - **Alias**: The alias name of the DevOps project.
+   - **Description**: A brief introduction to the DevOps project.
+   - **Cluster Settings**: In the current version, a DevOps project cannot run across multiple clusters at the same time. If you have enabled [the multi-cluster feature](../../../multicluster-management/), you must select the cluster where your DevOps project runs.
 
-3. Then you will be able to view it has been created successfully. 
+3. A DevOps project will appear in the list below after created.
 
-![devops_create_project](/images/devops/create-devops-3.png)
+   ![devops-list](/images/docs/devops-user-guide/using-devops/devops-project-management/devops-list.jpg)
 
-## View the DevOps Project
+## View a DevOps Project
 
-4. Enter into `demo-devops` page, it allows DevOps project admin to create CI/CD Pipelines and Credentials, as well as project management which includes basic information, roles and members. 
+Click the DevOps project just created to go to its detail page. Tenants with different permissions are allowed to perform various tasks in a DevOps project, including creating CI/CD pipelines and credentials, and managing accounts and roles. 
 
-![devops_create_project](/images/devops/create-devops-4.png)
+![devops-detail-page](/images/docs/devops-user-guide/using-devops/devops-project-management/devops-detail-page.jpg)
 
-### Pipeline
+### Pipelines
 
-Pipeline is a suite of plugins which supports implementing and integrating continuous delivery pipelines into Jenkins.
+A pipeline entails a collection of plugins that allow you to constantly and consistently test and build your code. It combines continuous integration (CI) and continuous delivery (CD) to provide streamlined workflows so that your code can be automatically delivered to any target.
 
 ### Credentials
 
-A DevOps project user can configure credentials in the application for dedicated use by Jenkins Pipeline. Once a user (e.g. Owner and Maintainer) adds/configures these credentials in DevOps project, the credentials can be used by DevOps projects to interact with these 3rd party applications, such as GitHub, GitLab, Docker Hub, etc. See [Credentials Management](../credential-management/) for how to use the credentials.
+A DevOps project user with required permissions can configure credentials for pipelines for the interaction with external environments. Once the user adds these credentials in a DevOps project, the credentials can be used by the DevOps project to interact with third-party applications, such as GitHub, GitLab and Docker Hub. For more information, see [Credential Management](../credential-management/).
 
-### Member Roles
+### Members and Roles
 
-Currently, there are 4 kind of built-in roles in DevOps project as following list:
+Similar to a project, a DevOps project also requires users to be granted different roles before they can work in the DevOps project. Project administrators (e.g. `project-admin`) are responsible for inviting tenants and granting them different roles. For more information, see [Role and Member Management](../role-and-member-management/).
 
-- Viewer: The viewer who can view all resources in the DevOps project.
-- Operator: The normal member in a DevOps project who can create pipelines and credentials in the DevOps project.
-- Admin: The administrator in the DevOps project who can perform any action on any resource. It gives full control over all resources in the DevOps project.
+## Edit or Delete a DevOps Project
 
-### Project Members
+1. Click **Basic Info** under **Project Management**, and you can see an overview of the current DevOps project, including the number of project roles and members, project name and project creator.
 
-Click on the **Project Members** to see which users are currently in the project. Click the **Invite Member** button to invite developer, testing, or operation colleagues to join this DevOps project. 
+2. Click **Project Management** on the right, and you can edit the basic information of the DevOps project or delete it.
 
-![Invite Project Members](/images/devops/create-devops-5.png)
-
-You can search for the member name in the pop-up page, click the “+” sign on the right to invite members from the user pool in the workspace to join the current DevOps project for collaborative work. 
-
-![Project Members Setting](/images/devops/create-devops-6.png)
-
-For example, you can grant invite `project-regular` into this DevOps project, and grant `project-regular` as Maintainer.
-
-
-Note that after the project-admin invites the member to the current DevOps project, in general, the resources (pipelines, credentials, etc.) created by the other members are visible to each other within the same group.
-
-## Edit or Delete the DevOps Project
-
-Choose **Project Management → Basic Info**, then click **···**, you will see the option for edit and delete button. It allows project admin to modify the basic information of this DevOps project.
-
-![Edit or Delete the DevOps Project](/images/devops/create-devops-7.png)
+   ![project-basic-info](/images/docs/devops-user-guide/using-devops/devops-project-management/project-basic-info.jpg)
