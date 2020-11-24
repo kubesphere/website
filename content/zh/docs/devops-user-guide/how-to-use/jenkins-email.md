@@ -7,7 +7,7 @@ Weight: 400
 ---
 
 
-内置的 Jenkins 无法与平台通知系统共享相同的电子邮件配置。 因此，您需要单独为 KubeSphere DevOps 流水线配置电子邮件服务器设置。
+内置的 Jenkins 无法与平台通知系统共享相同的电子邮件配置。 因此，您需要单独为 KubeSphere DevOps 流水线配置电子邮件服务器。
 ## 前提条件
 
 - 您需要启用 [KubeSphere DevOps 系统](../../../pluggable-components/devops/)。
@@ -25,7 +25,7 @@ Weight: 400
 
 ![workloads-list](/images/docs/devops-user-guide-zh/jenkins-email-zh/workloads-list.png)
 
-4. 向下滚动到图像下方需要指定的字段。 完成保存后，单击**更新**。
+4. 向下滚动到图像下方需要配置的字段， 完成配置后，单击**更新**。
 
 {{< notice warning >}}
 
