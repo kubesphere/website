@@ -42,4 +42,4 @@ Weight: 400
 |EMAIL\_FROM\_ADDR | 电子邮件发件人地址 |
 |EMAIL\_FROM\_NAME | 电子邮件发件人姓名 |
 |EMAIL\_FROM\_PASS | 电子邮件发件人密码 |
-|EMAIL\_USE\_SSL | 是否启用SSL配置 |
+|EMAIL\_USE\_SSL | 是否启用 SSL 配置 |
