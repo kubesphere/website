@@ -21,6 +21,10 @@ Explore the general content in this chapter, including installation preparation,
 
 Learn the general steps of installing KubeSphere and Kubernetes on a multi-node cluster.
 
+### [Air-gapped Installation](../installing-on-linux/introduction/air-gapped-installation/)
+
+Learn how to install KubeSphere and Kubernetes in an air-gapped environment.
+
 ### [Port Requirements](../installing-on-linux/introduction/port-firewall/)
 
 Understand the specific port requirements for different services in KubeSphere.
@@ -39,17 +43,21 @@ Add different storage classes to your cluster with KubeKey, such as Ceph RBD and
 
 Learn how to create a high-availability cluster on VMware vSphere.
 
+### [Deploy KubeSphere on Bare Metal](../installing-on-linux/on-premises/install-kubesphere-on-bare-metal/)
+
+Learn how to create a multi-node cluster with one master on bare metal.
+
 ## Installing on Public Cloud
 
-### [Deploy KubeSphere on Azure VM Instance](../installing-on-linux/public-cloud/install-ks-on-azure-vms/)
+### [Deploy KubeSphere on Azure VM Instances](../installing-on-linux/public-cloud/install-kubesphere-on-azure-vms/)
 
 Learn how to create a high-availability cluster on Azure virtual machines.
 
-### [Deploy KubeSphere on QingCloud Instance](../installing-on-linux/public-cloud/kubesphere-on-qingcloud-instance/)
+### [Deploy KubeSphere on QingCloud Instances](../installing-on-linux/public-cloud/install-kubesphere-on-qingcloud-vms/)
 
 Learn how to create a high-availability cluster on QingCloud platform.
 
-## Cluster Operation
+## Add/Delete Nodes
 
 ### [Add New Nodes](../installing-on-linux/cluster-operation/add-new-nodes/)
 
@@ -61,7 +69,7 @@ Cordon a node and even delete a node to scale in your cluster.
 
 ## Uninstalling
 
-### [Uninstalling KubeSphere and Kubernetes](../installing-on-linux/uninstalling/uninstalling-kubesphere-and-kubernetes/)
+### [Uninstall KubeSphere and Kubernetes](../installing-on-linux/uninstalling/uninstalling-kubesphere-and-kubernetes/)
 
 Remove KubeSphere and Kubernetes from your machines.
 
