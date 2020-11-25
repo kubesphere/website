@@ -80,5 +80,6 @@
   translation: Warning
 - id: Search Documentation
   translation: Search Documentation
-
+- id: ALL
+  translation: ALL
 

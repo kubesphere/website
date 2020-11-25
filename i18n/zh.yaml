@@ -80,3 +80,5 @@
   translation: 警告
 - id: Search Documentation
   translation: 搜索文档
+- id: ALL
+  translation: 全部
