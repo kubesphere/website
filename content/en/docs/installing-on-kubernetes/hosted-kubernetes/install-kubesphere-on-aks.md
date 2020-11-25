@@ -40,20 +40,20 @@ az aks create --resource-group KubeSphereRG --name KuberSphereCluster --node-cou
 
 {{< notice note >}}
 
-You can use `--node-vm-size` or `-s` option to change the size of Kubernetes nodes. Default: Standard_DS2_v2 (2vCPU, 7GB memory). For more options, see [az aks create](https://docs.microsoft.com/en-us/cli/azure/aks?view=azure-cli-latest#az-aks-create).
+You can use `--node-vm-size` or `-s` option to change the size of Kubernetes nodes. The default node size is Standard_DS2_v2 (2vCPU, 7GB memory). For more options, see [az aks create](https://docs.microsoft.com/en-us/cli/azure/aks?view=azure-cli-latest#az-aks-create).
 
 {{</ notice >}}
 
 ### Connect to the Cluster
 
-To configure kubectl to connect to the Kubernetes cluster, use the command `az aks get-credentials`. This command downloads credentials and configures the Kubernetes CLI to use them.
+To configure kubectl to connect to the Kubernetes cluster, use the command `az aks get-credentials`. This command downloads the credentials and configures that the Kubernetes CLI will use.
 
 ```bash
 az aks get-credentials --resource-group KubeSphereRG --name KuberSphereCluster
 ```
 
 ```bash
-kebesphere@Azure:~$ kubectl get nodes
+$ kubectl get nodes
 NAME                                STATUS   ROLES   AGE   VERSION
 aks-nodepool1-23754246-vmss000000   Ready    agent   38m   v1.16.13
 ```
@@ -64,11 +64,11 @@ After you execute all the commands above, you can see there are 2 Resource Group
 
 ![Resource groups](/images/docs/aks/aks-create-command.png)
 
-Azure Kubernetes Services itself will be placed in KubeSphereRG.
+Azure Kubernetes Services itself will be placed in `KubeSphereRG`.
 
 ![Azure Kubernetes Services](/images/docs/aks/aks-dashboard.png)
 
-All the other Resources will be placed in MC_KubeSphereRG_KuberSphereCluster_westus, such as VMs, Load Balancer and Virtual Network.
+All the other Resources will be placed in `MC_KubeSphereRG_KuberSphereCluster_westus`, such as VMs, Load Balancer and Virtual Network.
 
 ![Azure Kubernetes Services](/images/docs/aks/aks-all-resources.png)
 
@@ -98,7 +98,7 @@ kubectl edit service ks-console -n kubesphere-system
 
 Find the following section and change the type to `LoadBalancer`.
 
-```bash
+```yaml
 spec:
   clusterIP: 10.0.78.113
   externalTrafficPolicy: Cluster
@@ -121,7 +121,7 @@ status:
 After saving the configuration of ks-console service, you can use the following command to get the public IP address (under `EXTERNAL-IP`). Use the IP address to access the console with the default account and password (`admin/P@88w0rd`).
 
 ```bash
-kebesphere@Azure:~$ kubectl get svc/ks-console -n kubesphere-system
+$ kubectl get svc/ks-console -n kubesphere-system
 NAME         TYPE           CLUSTER-IP    EXTERNAL-IP   PORT(S)        AGE
 ks-console   LoadBalancer   10.0.181.93   13.86.xxx.xxx   80:30194/TCP   13m       6379/TCP       10m
 ```
