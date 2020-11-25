@@ -1,5 +1,5 @@
 ---
-title: "Kubernetes Federation in KubeSphere"
+title: "KubeSphere Federation"
 keywords: 'Kubernetes, KubeSphere, federation, multicluster, hybrid-cloud'
 description: 'Overview'
 

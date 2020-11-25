@@ -18,7 +18,7 @@ This chapter demonstrates how to use the multi-cluster feature of KubeSphere to 
 
 Gain a basic understanding of multi-cluster management, such as its common use cases, and the benefits that KubeSphere can bring with its multi-cluster feature.
 
-### [Kubernetes Federation in KubeSphere](../multicluster-management/introduction/kubefed-in-kubesphere/)
+### [KubeSphere Federation](../multicluster-management/introduction/kubefed-in-kubesphere/)
 
 Understand the fundamental concept of Kubernetes federation in KubeSphere, including M clusters and H clusters.
 
