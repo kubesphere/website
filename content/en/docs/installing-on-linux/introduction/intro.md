@@ -18,7 +18,7 @@ Users are provided with multiple installation options. Please note not all optio
 - [Air-gapped Installation on Linux](../air-gapped-installation): All images of KubeSphere have been encapsulated into a package. It is convenient for air-gapped installation on Linux machines.
 - [High Availability Installation](../ha-configuration/): Install high availability KubeSphere on multiple nodes which is used for the production environment.
 - Minimal Packages: Only install the minimum required system components of KubeSphere. Here is the minimum resource requirement:
-  - 2vCPUs
+  - 2 CPUs
   - 4GB RAM
   - 40GB Storage
 - [Full Packages](../../../pluggable-components/): Install all available system components of KubeSphere such as DevOps, service mesh, and alerting.
@@ -27,7 +27,7 @@ If you have existing Kubernetes clusters, see [Overview of Installing on Kuberne
 
 ## Before Installation
 
-- As images will be pulled and operating systems will be downloaded from the Internet, your environment must have Internet access. Otherwise, you need to use the air-gapped installer instead.
+- As images will be pulled will be downloaded from the Internet, your environment must have Internet access. Otherwise, you need to use the air-gapped installer instead.
 - For all-in-one installation, the only one node is both the master and the worker.
 - For multi-node installation, you need to specify the node roles in the configuration file before installation.
 - Your linux host must have OpenSSH Server installed.
