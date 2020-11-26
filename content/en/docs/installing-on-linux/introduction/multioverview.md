@@ -1,7 +1,7 @@
 ---
 title: "Multi-node Installation"
 keywords: 'Multi-node, Installation, KubeSphere'
-description: 'Multi-node Installation Overview'
+description: 'Explain how to install KubeSphere on multiple nodes'
 
 linkTitle: "Multi-node Installation"
 weight: 2112
@@ -9,7 +9,7 @@ weight: 2112
 
 In a production environment, a single-node cluster cannot satisfy most of the needs as the cluster has limited resources with insufficient compute capabilities. Thus, single-node clusters are not recommended for large-scale data processing. Besides, a cluster of this kind is not available with high availability as it only has one node. On the other hand, a multi-node architecture is the most common and preferred choice in terms of application deployment and distribution.
 
-This section gives you an overview of multi-node installation, including the concept, KubeKey and steps. For information about HA installation, refer to Installing on Public Cloud and Installing in On-premises Environment.
+This section gives you an overview of a single-master multi-node installation, including the concept, [KubeKey](https://github.com/kubesphere/kubekey/) and steps. For information about HA installation, refer to [High Availability Configurations](../ha-configuration/), [Installing on Public Cloud](../../public-cloud/install-kubesphere-on-azure-vms/) and [Installing in On-premises Environment](../../on-premises/install-kubesphere-on-bare-metal/).
 
 ## Concept
 
@@ -33,7 +33,7 @@ For users who do not have an existing Kubernetes cluster, they only need to crea
 
 ## Step 1: Prepare Linux Hosts
 
-Please see the requirements for hardware and operating system shown below. To get started with multi-node installation, you need to prepare at least three hosts according to the following requirements.
+Please see the requirements for hardware and operating system shown below. To get started with multi-node installation in this demo, you need to prepare at least three hosts according to the following requirements. It is possible to install KubeSphere on two nodes with enough resources planned.
 
 ### System Requirements
 
@@ -42,8 +42,8 @@ Please see the requirements for hardware and operating system shown below. To ge
 | **Ubuntu** *16.04, 18.04*                              | CPU: 2 Cores, Memory: 4 G, Disk Space: 40 G |
 | **Debian** *Buster, Stretch*                           | CPU: 2 Cores, Memory: 4 G, Disk Space: 40 G |
 | **CentOS** *7*.x                                       | CPU: 2 Cores, Memory: 4 G, Disk Space: 40 G |
-| **Red Hat Enterprise Linux 7**                         | CPU: 2 Cores, Memory: 4 G, Disk Space: 40 G |
-| **SUSE Linux Enterprise Server 15/openSUSE Leap 15.2** | CPU: 2 Cores, Memory: 4 G, Disk Space: 40 G |
+| **Red Hat Enterprise Linux** *7*                         | CPU: 2 Cores, Memory: 4 G, Disk Space: 40 G |
+| **SUSE Linux Enterprise Server** *15* **/openSUSE Leap** *15.2* | CPU: 2 Cores, Memory: 4 G, Disk Space: 40 G |
 
 {{< notice note >}}
 
@@ -62,7 +62,7 @@ The path `/var/lib/docker` is mainly used to store the container data, and will 
 
 `docker` must be installed in advance if you want to deploy KubeSphere in an offline environment.
 
-{{</ notice >}} 
+{{</ notice >}}
 
 ### Dependency Requirements
 
@@ -78,12 +78,12 @@ KubeKey can install Kubernetes and KubeSphere together. The dependency that need
 ### Network and DNS Requirements
 
 - Make sure the DNS address in `/etc/resolv.conf` is available. Otherwise, it may cause some issues of DNS in clusters.
-- If your network configuration uses Firewall or Security Group, you must ensure infrastructure components can communicate with each other through specific ports. It's recommended that you turn off the firewall or follow the guide [Network Access](https://github.com/kubesphere/kubekey/blob/master/docs/network-access.md).
+- If your network configuration uses Firewall or Security Group, you must ensure infrastructure components can communicate with each other through specific ports. It's recommended that you turn off the firewall or follow the guide [Port Requirements](../port-firewall/).
 
 {{< notice tip >}}
 
 - It's recommended that your OS be clean (without any other software installed). Otherwise, there may be conflicts.
-- A container image mirror (accelerator) is recommended to be prepared if you have trouble downloading images from dockerhub.io. See [Configure registry mirrors for the Docker daemon](https://docs.docker.com/registry/recipes/mirror/#configure-the-docker-daemon).
+- A container image mirror (accelerator) is recommended to be prepared if you have trouble downloading images from dockerhub.io. See [Configure Booster for Installation](../../faq/configure-booster/) and [Configure registry mirrors for the Docker daemon](https://docs.docker.com/registry/recipes/mirror/#configure-the-docker-daemon).
 
 {{</ notice >}}
 
@@ -118,6 +118,7 @@ Download KubeKey using the following command:
 ```bash
 wget -c https://kubesphere.io/download/kubekey-v1.0.0-linux-amd64.tar.gz -O - | tar -xz
 ```
+
 {{</ tab >}}
 
 {{</ tabs >}}
@@ -150,15 +151,15 @@ Here are some examples for your reference:
 
 - You can create an example configuration file with default configurations. You can also specify the file with a different filename, or in a different folder.
 
-```bash
-./kk create config [-f ~/myfolder/abc.yaml]
-```
+  ```bash
+  ./kk create config [-f ~/myfolder/abc.yaml]
+  ```
 
 - You can specify a KubeSphere version that you want to install (e.g. `--with-kubesphere v3.0.0`).
 
-```bash
-./kk create config --with-kubesphere [version]
-```
+  ```bash
+  ./kk create config --with-kubesphere [version]
+  ```
 
 ### 2. Edit the configuration file
 
@@ -188,24 +189,24 @@ spec:
 
 - List all your machines under `hosts` and add their detailed information as above. In this case, port 22 is the default port of SSH. Otherwise, you need to add the port number after the IP address. For example:
 
-```yaml
-hosts:
-  - {name: master, address: 192.168.0.2, internalAddress: 192.168.0.2, port: 8022, user: ubuntu, password: Testing123}
-```
+  ```yaml
+  hosts:
+    - {name: master, address: 192.168.0.2, internalAddress: 192.168.0.2, port: 8022, user: ubuntu, password: Testing123}
+  ```
 
 - For default root user:
 
-```yaml
-hosts:
-  - {name: master, address: 192.168.0.2, internalAddress: 192.168.0.2, password: Testing123}
-```
+  ```yaml
+  hosts:
+    - {name: master, address: 192.168.0.2, internalAddress: 192.168.0.2, password: Testing123}
+  ```
 
 - For passwordless login with SSH keys:
 
-```yaml
-hosts:
-  - {name: master, address: 192.168.0.2, internalAddress: 192.168.0.2, privateKeyPath: "~/.ssh/id_rsa"}
-```
+  ```yaml
+  hosts:
+    - {name: master, address: 192.168.0.2, internalAddress: 192.168.0.2, privateKeyPath: "~/.ssh/id_rsa"}
+  ```
 
 #### roleGroups
 
@@ -215,12 +216,12 @@ hosts:
 
 #### controlPlaneEndpoint (for HA installation only)
 
-`controlPlaneEndpoint` allows you to define an external load balancer for an HA cluster. You need to prepare and configure an external load balancer if and only if you need to install more than 3 master nodes. Please note that the address and port should be indented by two spaces in `config-sample.yaml`, and the `address` should be VIP. See HA Configuration for details.
+`controlPlaneEndpoint` allows you to define an external load balancer for an HA cluster. You need to prepare and configure an external load balancer if and only if you need to install multiple master nodes. Please note that the address and port should be indented by two spaces in `config-sample.yaml`, and the `address` should be VIP. See [HA Configuration](../ha-configuration/) for details.
 
 {{< notice tip >}}
 
-- You can enable the multi-cluster feature by editing the configuration file. For more information, see Multi-cluster Management.
-- You can also select the components you want to install. For more information, see [Enable Pluggable Components](../../../pluggable-components/). For an example of a complete config-sample.yaml file, see [this file](https://github.com/kubesphere/kubekey/blob/master/docs/config-example.md).
+- You can enable the multi-cluster feature by editing the configuration file. For more information, see [Multi-cluster Management](../../../multicluster-management/).
+- You can also select the components you want to install. For more information, see [Enable Pluggable Components](../../../pluggable-components/). For an example of a complete config-sample.yaml file, see [this file](https://github.com/kubesphere/kubekey/blob/release-1.0/docs/config-example.md).
 
 {{</ notice >}}
 
