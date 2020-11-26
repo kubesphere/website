@@ -31,7 +31,7 @@ About 15 minutes.
 
 #### Create a MySQL Secret
 
-The environment variable `WORDPRESS_DB_PASSWORD` is the password to connect to the database in WordPress. In this step, you need to create a ConfigMap to store the environment variable that will be used in MySQL pod template.
+The environment variable `WORDPRESS_DB_PASSWORD` is the password to connect to the database in WordPress. In this step, you need to create a Secret to store the environment variable that will be used in MySQL pod template.
 
 1. Log in KubeSphere console using the account `project-regular`. Go to the detailed page of `demo-project` and navigate to **Configurations**. In **Secrets**, click **Create** on the right.
 
