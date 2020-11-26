@@ -18,7 +18,7 @@ Develop a basic understanding of key components in KubeSphere, including feature
 
 ## [KubeSphere App Store](../pluggable-components/app-store/)
 
-Learn how to enable App Store to share data and apps internally and set industry standards of delivery process externally. 
+Learn how to enable App Store to share data and apps internally and set industry standards of delivery process externally.
 
 ## [KubeSphere DevOps System](../pluggable-components/devops/)
 
@@ -47,3 +47,13 @@ Learn how to enable Alerting and Notification to identify any potential issues i
 ## [Network Policy](../pluggable-components/network-policy/)
 
 Learn how to enable Network Policy to control traffic flow at the IP address or port level.
+
+## FAQ
+
+### [Logging](../pluggable-components/faq/logging/)
+
+Questions asked Frequently for the logging functionality.
+
+### [Monitoring](../pluggable-components/faq/monitoring/)
+
+Questions asked Frequently for the monitoring functionality.
