@@ -49,19 +49,17 @@ Check the installation with `aws --version`.
    - Security groups: The SecurityGroups value from the AWS CloudFormation output that you generated with [Create your Amazon EKS cluster VPC](https://docs.aws.amazon.com/eks/latest/userguide/getting-started-console.html#vpc-create). This security group has ControlPlaneSecurityGroup in the drop-down name.
 
    - For **Cluster endpoint access**, choose one of the following options:
-   ![endpoints](/images/docs/eks/endpoints.png)
+      ![endpoints](/images/docs/eks/endpoints.png)
 
-   - Public: Enables only public access to your cluster's Kubernetes API server endpoint. Kubernetes API requests that originate from outside of your cluster's VPC use the public endpoint. By default, access is allowed from any source IP address. You can optionally restrict access to one or more CIDR ranges such as 192.168.0.0/16, for example, by selecting **Advanced settings** and then selecting **Add source**.
+      - Public: Enables only public access to your cluster's Kubernetes API server endpoint. Kubernetes API requests that originate from outside of your cluster's VPC use the public endpoint. By default, access is allowed from any source IP address. You can optionally restrict access to one or more CIDR ranges such as 192.168.0.0/16, for example, by selecting **Advanced settings** and then selecting **Add source**.
 
-   - Private: Enables only private access to your cluster's Kubernetes API server endpoint. Kubernetes API requests that originate from within your cluster's VPC use the private VPC endpoint.
+      - Private: Enables only private access to your cluster's Kubernetes API server endpoint. Kubernetes API requests that originate from within your cluster's VPC use the private VPC endpoint.
 
-      {{< notice note >}}
-
+         {{< notice note >}}
    If you created a VPC without outbound internet access, then you must enable private access.
+         {{</ notice >}}
 
-      {{</ notice >}}
-
-   - Public and private: Enables public and private access.
+      - Public and private: Enables public and private access.
 
 4. Select **Next**. On the **Configure logging** page, you can optionally choose which log types that you want to enable. By default, each log type is **Disabled**. For more information, see [Amazon EKS control plane logging](https://docs.aws.amazon.com/eks/latest/userguide/control-plane-logs.html).
    ![logging](/images/docs/eks/logging.png)
@@ -70,10 +68,10 @@ Check the installation with `aws --version`.
    ![revies](/images/docs/eks/review.png)
 
    - For more information about the previous options, see [Modifying cluster endpoint access](https://docs.aws.amazon.com/eks/latest/userguide/cluster-endpoint.html#modify-endpoint-access).
-   When your cluster provisioning is complete (usually between 10 and 15 minutes), note the API server endpoint and Certificate authority values. These are used in your kubectl configuration.
+   When your cluster provisioning is complete (usually between 10 and 15 minutes), save the API server endpoint and Certificate authority values. These are used in your kubectl configuration.
    ![creating](/images/docs/eks/creating.png)
 
-6. Create **Node Group** and define 2 nodes in this cluster.
+6. Create **Node Group** and define 3 nodes in this cluster.
    ![node-group](/images/docs/eks/node-group.png)
 
 7. Configure the node group.
@@ -114,7 +112,7 @@ We will use the kubectl command-line utility for communicating with the cluster 
 
    - You can specify an IAM role ARN with the `--role-arn` option to use for authentication when you issue kubectl commands. Otherwise, the IAM entity in your default AWS CLI or SDK credential chain is used. You can view your default AWS CLI or SDK identity by running the `aws sts get-caller-identity` command.
 
-      For more information, see the help page with the `aws eks update-kubeconfig help` command or see [update-kubeconfig](https://docs.aws.amazon.com/cli/latest/reference/eks/update-kubeconfig.html) in the *AWS CLI Command Reference*.
+   For more information, see the help page with the `aws eks update-kubeconfig help` command or see [update-kubeconfig](https://docs.aws.amazon.com/cli/latest/reference/eks/update-kubeconfig.html) in the *AWS CLI Command Reference*.
 
 3. Test your configuration.
 
@@ -177,7 +175,7 @@ Now that KubeSphere is installed, you can access the web console of KubeSphere b
 
 - Log in the console with the default account and password (`admin/P@88w0rd`). In the cluster overview page, you can see the dashboard as shown in the following image.
 
-   ![gke-cluster](https://ap3.qingstor.com/kubesphere-website/docs/gke-cluster.png)
+   ![eks-cluster](https://ap3.qingstor.com/kubesphere-website/docs/gke-cluster.png)
 
 ## Enable Pluggable Components (Optional)
 
