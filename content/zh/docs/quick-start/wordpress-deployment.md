@@ -3,9 +3,7 @@ title: "创建并发布 WordPress"
 keywords: 'KubeSphere, Kubernetes, app, WordPress'
 description: '创建 WordPress 应用并发布至 Kubernetes'
 
-
 linkTitle: "创建并发布 WordPress"
-
 weight: 3050
 ---
 
@@ -164,7 +162,6 @@ WordPress 是使用 PHP 语言开发的内容管理系统软件，用户可以�
 
     ![create](/images/docs/quickstart/create.png)
 
-
 ### 任务 4：验证资源
 
 在**工作负载**中，分别检查**部署**和**有状态副本集**中的`wordpress-v1`和`mysql-v1`的状态。如果他们运行如下图所示，这意味着 WordPress 已经成功创建。
@@ -172,7 +169,6 @@ WordPress 是使用 PHP 语言开发的内容管理系统软件，用户可以�
 ![wordpress-deployment](/images/docs/quickstart/wordpress-deployment.png)
 
 ![wordpress-statefulset](/images/docs/quickstart/wordpress-statefulset.png)
-
 
 ### 任务 5：通过 NodePort 访问 WordPress
 
