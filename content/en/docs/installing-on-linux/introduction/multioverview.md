@@ -218,13 +218,6 @@ spec:
 
 `controlPlaneEndpoint` allows you to define an external load balancer for an HA cluster. You need to prepare and configure an external load balancer if and only if you need to install multiple master nodes. Please note that the address and port should be indented by two spaces in `config-sample.yaml`, and the `address` should be VIP. See [HA Configuration](../ha-configuration/) for details.
 
-{{< notice tip >}}
-
-- You can enable the multi-cluster feature by editing the configuration file. For more information, see [Multi-cluster Management](../../../multicluster-management/).
-- You can also select the components you want to install. For more information, see [Enable Pluggable Components](../../../pluggable-components/). For an example of a complete config-sample.yaml file, see [this file](https://github.com/kubesphere/kubekey/blob/release-1.0/docs/config-example.md).
-
-{{</ notice >}}
-
 #### addons
 
 You can customize persistent storage plugins (e.g. NFS Client, Ceph RBD, and GlusterFS) by specifying storage under the field `addons` in `config-sample.yaml`. For more information, see [Persistent Storage Configuration](../storage-configuration).
@@ -232,6 +225,13 @@ You can customize persistent storage plugins (e.g. NFS Client, Ceph RBD, and Glu
 {{< notice note >}}
 
 KubeKey will install [OpenEBS](https://openebs.io/) to provision [LocalPV](https://kubernetes.io/docs/concepts/storage/volumes/#local) for development and testing environment by default, which is convenient for new users. In this example of multi-node installation, the default storage class (local volume) is used. For production, please use NFS/Ceph/GlusterFS/CSI or commercial products as persistent storage solutions.
+
+{{</ notice >}}
+
+{{< notice tip >}}
+
+- You can enable the multi-cluster feature by editing the configuration file. For more information, see [Multi-cluster Management](../../../multicluster-management/).
+- You can also select the components you want to install. For more information, see [Enable Pluggable Components](../../../pluggable-components/). For an example of a complete config-sample.yaml file, see [this file](https://github.com/kubesphere/kubekey/blob/release-1.0/docs/config-example.md).
 
 {{</ notice >}}
 
