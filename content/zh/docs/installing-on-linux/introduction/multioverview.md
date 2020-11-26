@@ -7,16 +7,16 @@ linkTitle: "多节点安装"
 weight: 2112
 ---
 
-[All-in-one](../../quick-start/all-in-one-on-linux/) 是为新用户体验 KubeSphere 而提供的快速且简单的安装方式，在正式环境中，单节点群集因受限于资源和计算能力的不足而无法满足大多数需求，因此不建议将单节点群集用于大规模数据处理。多节点安装环境通常包括至少一个主节点和多个工作节点，如果是生产环境则需要安装主节点高可用的方式。
+[All-in-one](../../../quick-start/all-in-one-on-linux/) 是为新用户体验 KubeSphere 而提供的快速且简单的安装方式，在正式环境中，单节点集群因受限于资源和计算能力的不足而无法满足大多数需求，因此不建议将单节点集群用于大规模数据处理。多节点安装环境通常包括至少一个主节点和多个工作节点，如果是生产环境则需要安装主节点高可用的方式。
 
-本节概述了多节点安装，包括概念，[KubeKey](https://github.com/kubesphere/kubekey/) 及安装步骤。有关主节点高可用安装的信息，请参阅在公有云上安装或在本地环境中安装，如[在阿里云 ECS 安装高可用 KubeSphere](../../public-cloud/install-kubesphere-on-ali-ecs/) 或 [在 VMware vSphere 部署高可用 KubeSphere](../../on-premises/install-kubesphere-on-vmware-vsphere/)。
+本节概述了多节点安装，包括概念，[KubeKey](https://github.com/kubesphere/kubekey/) 及安装步骤。有关主节点高可用安装的信息，请参阅[高可用安装配置](../ha-configuration/)或参阅在公有云上安装或在本地环境中安装，如[在阿里云 ECS 安装高可用 KubeSphere](../../public-cloud/install-kubesphere-on-ali-ecs/) 或 [在 VMware vSphere 部署高可用 KubeSphere](../../on-premises/install-kubesphere-on-vmware-vsphere/)。
 
 ## 概念
 
-多节点群集由至少一个主节点和一个工作节点组成，可以使用任何节点作为“任务箱”来执行安装任务。您可以在安装之前或之后根据需要添加其他节点（例如，为了实现高可用性）。
+多节点集群由至少一个主节点和一个工作节点组成，可以使用任何节点作为**任务箱**来执行安装任务。您可以在安装之前或之后根据需要添加其他节点（例如，为了实现高可用性）。
 
-- **Master**. 主节点，通常托管控制面，控制和管理整个系统。
-- **Worker**. 工作节点，运行在其上部署实际应用程序。
+- **Master**：主节点，通常托管控制面，控制和管理整个系统。
+- **Worker**：工作节点，运行在其上部署实际应用程序。
 
 ## 为什么选择 KubeKey
 
@@ -26,26 +26,26 @@ weight: 2112
 
 - 之前基于 ansible 的安装程序具有许多软件依赖性，例如 Python。KubeKey 是使用 Go 语言开发的，可以消除各种环境中的问题，并确保安装成功。
 - KubeKey 使用 Kubeadm 在节点上尽可能多地并行安装 Kubernetes 集群，以降低安装复杂性并提高效率。与较早的安装程序相比，它将大大节省安装时间。
-- 借助 KubeKey 用户可以自由伸缩集群，包括将集群从单节点群集扩展到多节点群集，甚至是主节点高可用群集。
+- 借助 KubeKey 用户可以自由伸缩集群，包括将集群从单节点集群扩展到多节点集群，甚至是主节点高可用集群。
 - KubeKey 未来计划将集群管理封装成一个对象，即 Cluster as an Object (CaaO)。
 
 ## 步骤1：准备 Linux 主机
 
-安装之前请参阅下面对硬件和操作系统的要求准备至少三台主机。
+安装之前请参阅下面对硬件和操作系统的要求准备至少三台主机，如果您只有两台主机的话请保证机器配置足够安装。
 
 ### 系统要求
 
 | 系统                                                             | 最低要求（每个节点）                           |
 | --------------------------------------------------------------- | ------------------------------------------- |
-| **Ubuntu** *16.04, 18.04*                                       | CPU: 2 Cores, Memory: 4 G, Disk Space: 40 G |
-| **Debian** *Buster, Stretch*                                    | CPU: 2 Cores, Memory: 4 G, Disk Space: 40 G |
-| **CentOS** *7.x*                                                | CPU: 2 Cores, Memory: 4 G, Disk Space: 40 G |
-| **Red Hat Enterprise Linux** *7*                                | CPU: 2 Cores, Memory: 4 G, Disk Space: 40 G |
-| **SUSE Linux Enterprise Server** *15* **/openSUSE Leap** *15.2* | CPU: 2 Cores, Memory: 4 G, Disk Space: 40 G |
+| **Ubuntu** *16.04, 18.04*                                       | CPU：2 核，内存：4 G，硬盘：40 G |
+| **Debian** *Buster, Stretch*                                    | CPU：2 核，内存：4 G，硬盘：40 G |
+| **CentOS** *7.x*                                                | CPU：2 核，内存：4 G，硬盘：40 G |
+| **Red Hat Enterprise Linux** *7*                                | CPU：2 核，内存：4 G，硬盘：40 G |
+| **SUSE Linux Enterprise Server** *15* **/openSUSE Leap** *15.2* | CPU：2 核，内存：4 G，硬盘：40 G |
 
 {{< notice note >}}
 
-`/var/lib/docker` 路径主要用于存储容器数据，通常在使用过程中数据量会逐渐增加，因此在生产环境中，建议将 `/var/lib/docker` 挂载在单独的数据盘上。
+`/var/lib/docker`路径主要用于存储容器数据，通常在使用过程中数据量会逐渐增加，因此在生产环境中，建议将`/var/lib/docker`挂载在单独的数据盘上。
 
 {{</ notice >}}
 
@@ -53,8 +53,14 @@ weight: 2112
 
 - 所有节点必须可以通过 SSH 访问。
 - 所有节点配置时钟同步。
-- 所有节点必须可以使用 `sudo`/`curl`/`openssl`。
+- 所有节点必须可以使用`sudo`/`curl`/`openssl`。
 - Docker 可以自己预先安装或由 `KubeKey` 统一安装。
+
+{{< notice note >}}
+
+如果您的环境不能访问外网，则必须预先安装`docker`，然后用离线方式安装。
+
+{{</ notice >}}
 
 ### 软件依赖要求
 
@@ -69,17 +75,17 @@ weight: 2112
 
 ### 网络和 DNS 要求
 
-- 确保 `/etc/resolv.conf` 中的 DNS 地址可用，否则，可能会导致群集中出现某些 DNS 问题。
-- 如果您的网络配置使用防火墙或安全组，则必须确保基础结构组件可以通过特定端口相互通信。建议您关闭防火墙或遵循指南[网络访问](https://github.com/kubesphere/kubekey/blob/master/docs/network-access.md)。
+- 确保`/etc/resolv.conf`中的 DNS 地址可用，否则，可能会导致集群中出现某些 DNS 问题。
+- 如果您的网络配置使用防火墙或安全组，则必须确保基础结构组件可以通过特定端口相互通信。建议您关闭防火墙或遵循指南[端口要求](../port-firewall/)。
 
 {{< notice tip >}}
 
 - 建议您的操作系统是干净的（不安装任何其他软件），否则可能会发生冲突。
-- 如果您在从 dockerhub.io 下载镜像时遇到问题，建议准备一个容器镜像（加速器）。请参阅 [Configure registry mirrors for the Docker daemon](https://docs.docker.com/registry/recipes/mirror/#configure-the-docker-daemon)。
+- 如果您在从 dockerhub.io 下载镜像时遇到问题，建议准备一个容器镜像（加速器）。请参阅[配置镜像 mirror 加速安装](../../faq/configure-booster/) 或 [Configure registry mirrors for the Docker daemon](https://docs.docker.com/registry/recipes/mirror/#configure-the-docker-daemon)。
 
 {{</ notice >}}
 
-本示例包括以下三个主机，其中主节点用作“任务箱”。
+本示例包括以下三个主机，其中主节点用作**任务箱**。
 
 | Host IP     | Host Name | Role         |
 | ----------- | --------- | ------------ |
@@ -113,7 +119,7 @@ wget https://github.com/kubesphere/kubekey/releases/download/v1.0.0/kubekey-v1.0
 
 {{</ tabs >}}
 
-将执行权授予 `kk`:
+将执行权授予`kk`:
 
 ```bash
 chmod +x kk
@@ -121,7 +127,7 @@ chmod +x kk
 
 ## 步骤3：创建一个集群
 
-对于多节点安装，您需要通过指定配置文件来创建集群。
+对于多节点安装，需要通过指定配置文件来创建集群。
 
 ### 1. 创建一个示例配置文件
 
@@ -133,7 +139,7 @@ chmod +x kk
 
 {{< notice info >}}
 
-支持的 Kubernetes 版本: *v1.15.12*, *v1.16.13*, *v1.17.9* (默认), *v1.18.6*.
+支持的 Kubernetes 版本：*v1.15.12*, *v1.16.13*, *v1.17.9* (默认), *v1.18.6*.
 
 {{</ notice >}}
 
@@ -145,7 +151,7 @@ chmod +x kk
   ./kk create config [-f ~/myfolder/abc.yaml]
   ```
 
-- 可以在 `config-sample.yaml` 中自定义持久性存储插件（例如 NFS Client，Ceph RBD 和 GlusterFS）。
+- 可以在`config-sample.yaml`中自定义持久性存储插件（例如 NFS Client，Ceph RBD 和 GlusterFS）。
 
   ```bash
   ./kk create config --with-storage localVolume
@@ -153,11 +159,11 @@ chmod +x kk
 
   {{< notice note >}}
 
-默认情况下，KubeKey 将安装 [OpenEBS](https://openebs.io/) 并配置 [LocalPV](https://kubernetes.io/docs/concepts/storage/volumes/#local) 为默认存储类，方便用户部署开发或测试环境。本示例也采取这种默认安装方式。对于生产环境，请使用 NFS/Ceph/GlusterFS/CSI 或商业产品作为持久性存储解决方案，则需要在 `config-sample.yaml` 的 `addons` 下配置存储信息。有关更多详细信息，请参见 [Persistent Storage Configuration](../storage-configuration/)。
+默认情况下，KubeKey 将安装 [OpenEBS](https://openebs.io/) 并配置 [LocalPV](https://kubernetes.io/docs/concepts/storage/volumes/#local) 为默认存储类，方便用户部署开发或测试环境。本示例也采取这种默认安装方式。对于生产环境，请使用 NFS/Ceph/GlusterFS/CSI 或商业产品作为持久性存储解决方案，则需要在 `config-sample.yaml` 的 `addons` 下配置存储信息。有关更多详细信息，请参见 [持久化存储配置](../storage-configuration/)。
 
   {{</ notice >}}
 
-- 您可以指定要安装的 KubeSphere 版本（例如`--with-kubesphere v3.0.0`）。
+- 可以指定要安装的 KubeSphere 版本（例如`--with-kubesphere v3.0.0`）。
 
   ```bash
   ./kk create config --with-kubesphere [version]
@@ -165,7 +171,7 @@ chmod +x kk
 
 ### 2. 编辑配置文件
 
-如果不更改名称，将创建默认文件 **config-sample.yaml**。编辑文件，这是具有一个主节点的多节点群集的配置文件示例。
+如果不更改名称，将创建默认文件 **config-sample.yaml**。编辑文件，这是具有一个主节点的多节点集群的配置文件示例。
 
 ```yaml
 spec:
@@ -189,21 +195,21 @@ spec:
 
 #### hosts
 
-- 在 `hosts` 下列出所有计算机，并如上所述添加其详细信息。在这种情况下，端口 22 是 SSH 的默认端口。否则，您需要在 IP 地址后面添加端口号，例如：
+- 在`hosts`下列出所有计算机，并如上所述添加其详细信息。在这种情况下，端口 22 是 SSH 的默认端口。否则，您需要在 IP 地址后面添加端口号，例如：
 
   ```yaml
   hosts:
     - {name: master, address: 192.168.0.2, internalAddress: 192.168.0.2, port: 8022, user: ubuntu, password: Testing123}
   ```
 
-- 默认是 root 用户:
+- 默认是 root 用户示例:
 
   ```yaml
   hosts:
     - {name: master, address: 192.168.0.2, internalAddress: 192.168.0.2, password: Testing123}
   ```
 
-- 使用 SSH 密钥的无密码登录：
+- 使用 SSH 密钥的无密码登录示例：
 
   ```yaml
   hosts:
@@ -212,18 +218,28 @@ spec:
 
 #### roleGroups
 
-- `etcd`: etcd 节点名称
-- `master`: Master 节点名称
-- `worker`: Worker 节点名称
+- `etcd`：etcd 节点名称
+- `master`：Master 节点名称
+- `worker`：Worker 节点名称
 
 #### controlPlaneEndpoint (仅用于 HA 安装)
 
-`controlPlaneEndpoint` 允许您为 HA 集群定义外部负载均衡器。当且仅当安装多个主节点时，才需要配置外部负载均衡器。请注意，地址和端口应在 `config-sample.yaml` 中以两个空格缩进，`address` 应为 VIP。有关详细信息，请参见 HA 配置。
+`controlPlaneEndpoint`允许您为 HA 集群定义外部负载均衡器。当且仅当安装多个主节点时，才需要配置外部负载均衡器。请注意，地址和端口应在`config-sample.yaml`中以两个空格缩进，`address`应为 VIP。有关详细信息，请参见 [HA 配置](../ha-configuration/)。
+
+#### addons
+
+您可以在此配置文件`config-sample.yaml`里设置持久化存储，比如 NFS 客户端、Ceph RBD、GlusterFS 等，信息添加在`addons`下，详细说明请参阅[持久化存储配置](../storage-configuration)。
+
+{{< notice note >}}
+
+KubeSphere 默认情况下安装 [openEBS](https://openebs.io/) 的[本地卷](https://kubernetes.io/docs/concepts/storage/volumes/#local)作为存储类型，方便在开发或测试环境下快速安装。如果需要在生产环境安装，请使用 NFS/Ceph/GlusterFS/CSI 或者商业化存储。
+
+{{</ notice >}}
 
 {{< notice tip >}}
 
-- 您可以通过编辑配置文件来启用多集群功能。有关更多信息，请参阅[多集群管理](../../../multicluster-management/)。
-- 您也可以选择要安装的组件。有关更多信息，请参见[启用可插拔组件](../../../pluggable-components/)。有关完整的 config-sample.yaml 文件的示例，请参见[此文件](https://github.com/kubesphere/kubekey/blob/master/docs/config-example.md)。
+- 可以通过编辑配置文件的方式启用多集群功能。有关更多信息，请参阅[多集群管理](../../../multicluster-management/)。
+- 也可以选择要安装的组件。有关更多信息，请参见[启用可插拔组件](../../../pluggable-components/)。有关完整的 config-sample.yaml 文件的示例，请参见[此文件](https://github.com/kubesphere/kubekey/blob/release-1.0/docs/config-example.md)。
 
 {{</ notice >}}
 
@@ -237,11 +253,11 @@ spec:
 
 {{< notice note >}}
 
-如果使用其他名称，则需要将上面的 `config-sample.yaml` 更改为您自己的文件。
+如果使用其他名称，则需要将上面的`config-sample.yaml`更改为您自己的文件。
 
 {{</ notice >}}
 
-整个安装过程可能需要 10 到 20 分钟，具体取决于您的计算机和网络。
+整个安装过程可能需要 10 到 20 分钟，具体取决于您的计算机和网络环境。
 
 ### 4. 验证安装
 
@@ -269,11 +285,11 @@ https://kubesphere.io             20xx-xx-xx xx:xx:xx
 #####################################################
 ```
 
-现在，您可以使用帐户和密码 `admin/P@88w0rd` 访问 `http://{IP}:30880` KubeSphere Web 控制台。
+现在可以使用帐户和密码`admin/P@88w0rd`访问`http://{IP}:30880`KubeSphere Web 控制台。
 
 {{< notice note >}}
 
-如果公网要访问控制台，您可能需要将源端口转发到 Intranet IP 和端口，具体取决于您的云提供商的平台。还请确保在安全组中打开了端口 30880。
+如果公网要访问控制台，您可能需要将源端口转发到 Intranet IP 和端口，具体取决于您的云提供商的平台，还请确保在安全组中打开了端口 30880。
 
 {{</ notice >}}
 
