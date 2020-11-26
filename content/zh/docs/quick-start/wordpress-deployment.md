@@ -3,7 +3,7 @@ title: "创建 Wordpress 应用并发布至 Kubernetes"
 keywords: 'KubeSphere, Kubernetes, app, Wordpress'
 description: '创建 Wordpress 应用并发布至 Kubernetes。'
 
-linkTitle: "Compose and Deploy Wordpress"
+linkTitle: "创建 Wordpress 应用并发布至 Kubernetes"
 weight: 3050
 ---
 
@@ -165,7 +165,7 @@ WordPress 是使用 PHP 语言开发的内容管理系统软件，用户可以�
 
 ![create](/images/docs/quickstart/create.png)
 
-### Task 4: 验证资源
+### 任务 4: 验证资源
 
 在 **工作负载** 中，分别检查 **部署** 和 **有状态副本集** 中的 `wordpress-v1` 和 `mysql-v1` 的状态。 如果他们运行如下图所示，这意味着 WordPress 已经成功创建。
 
@@ -173,7 +173,7 @@ WordPress 是使用 PHP 语言开发的内容管理系统软件，用户可以�
 
 ![wordpress-statefulset](/images/docs/quickstart/wordpress-statefulset.png)
 
-### Task 5: 通过 NodePort 访问 WordPress
+### 任务 5: 通过 NodePort 访问 WordPress
 
 1. 要访问集群外的服务，请首先导航到 **服务** 。 单击 `wordpress` 右侧的三个点后选择 **编辑外网访问**。
 

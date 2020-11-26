@@ -3,7 +3,7 @@ title: "启用可插拔功能组件"
 keywords: 'KubeSphere, Kubernetes, 可插拔, 功能组件'
 description: '启用可插拔功能组件'
 
-linkTitle: "Enable Pluggable Components"
+linkTitle: "启用可插拔功能组件"
 weight: 3060
 ---
 
