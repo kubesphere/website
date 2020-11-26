@@ -18,26 +18,27 @@ You need an account granted a role including the authorization of **Clusters Man
 
 1. Click **Platform** in the top left corner and select **Clusters Management**.
 
-![clusters-management](/images/docs/devops-user-guide/set-ci-node-for-dependency-cache/clusters-management.jpg)
+   ![clusters-management](/images/docs/devops-user-guide/using-devops/set-ci-node-for-dependency-cache/clusters-management.jpg)
 
 2. If you have enabled the [multi-cluster feature](../../../multicluster-management) with member clusters imported, you can select a specific cluster to view its nodes. If you have not enabled the feature, refer to the next step directly.
+
 3. Navigate to **Cluster Nodes** under **Nodes**, where you can see existing nodes in the current cluster.
 
-![Node Management](/images/docs/devops-user-guide/set-ci-node-for-dependency-cache/set-node-1.png)
+   ![Node Management](/images/docs/devops-user-guide/using-devops/set-ci-node-for-dependency-cache/set-node-1.png)
 
 4. Choose a node from the list to run CI tasks. For example, select `node2` here and click it to go to its detail page. Click **More** and select **Edit Labels**.
 
-![Select CI Node](/images/docs/devops-user-guide/set-ci-node-for-dependency-cache/set-node-2.png)
+   ![Select CI Node](/images/docs/devops-user-guide/using-devops/set-ci-node-for-dependency-cache/set-node-2.png)
 
 5. In the dialogue that appears, click **Add Labels**. Add a new label with key `node-role.kubernetes.io/worker` and value `ci`, and click **Save**.
 
-![Add CI Label](/images/docs/devops-user-guide/set-ci-node-for-dependency-cache/set-node-3.png)
+   ![Add CI Label](/images/docs/devops-user-guide/using-devops/set-ci-node-for-dependency-cache/set-node-3.png)
 
-{{< notice note >}} 
+   {{< notice note >}} 
 
-The node may already have the key without a value. You can input the value `ci` directly.
+   The node may already have the key without a value. You can input the value `ci` directly.
 
-{{</ notice >}} 
+   {{</ notice >}} 
 
 ## Add a Taint to a CI Node
 
@@ -45,18 +46,18 @@ Basically, pipelines and S2I/B2I workflows will be scheduled to this node accord
 
 1. Click **More** and select **Taint Management**.
 
-![Select CI Node](/images/docs/devops-user-guide/set-ci-node-for-dependency-cache/set-node-2.png)
+   ![Select CI Node](/images/docs/devops-user-guide/using-devops/set-ci-node-for-dependency-cache/set-node-2.png)
 
 2. Click **Add Taint** and enter a key `node.kubernetes.io/ci` without specifying a value. You can choose `NoSchedule` or `PreferNoSchedule` based on your needs.
 
-![Add Taint](/images/docs/devops-user-guide/set-ci-node-for-dependency-cache/set-node-4.png)
+   ![Add Taint](/images/docs/devops-user-guide/using-devops/set-ci-node-for-dependency-cache/set-node-4.png)
 
 3. Click **Save**. KubeSphere will schedule tasks according to the taint you set. You can go back to work on your DevOps pipeline now.
 
-![Taint Result](/images/docs/devops-user-guide/set-ci-node-for-dependency-cache/set-node-5.png)
+   ![Taint Result](/images/docs/devops-user-guide/using-devops/set-ci-node-for-dependency-cache/set-node-5.png)
 
-{{< notice tip >}} 
+   {{< notice tip >}} 
 
-This tutorial also covers the operation related to node management. For detailed information, see [Node Management](../../../cluster-administration/nodes/).
+   This tutorial also covers the operation related to node management. For detailed information, see [Node Management](../../../cluster-administration/nodes/).
 
-{{</ notice >}}
+   {{</ notice >}}
