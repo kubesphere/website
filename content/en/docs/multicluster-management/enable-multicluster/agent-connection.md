@@ -8,7 +8,7 @@ weight: 3013
 
 ## Prerequisites
 
-You have already installed at least two KubeSphere clusters. Please refer to [Installing on Linux](../../../installing-on-linux) or [Installing on Kubernetes](../../../installing-on-kubernetes) if they are not ready yet.
+You have already installed at least two KubeSphere clusters. Please refer to [Installing on Linux](../../../installing-on-linux) or [Installing on Kubernetes](../../../installing-on-kubernetes) if they are not ready yet. You can also set up the role of the cluster in advance when installing KubeSphere as instructed in the tab `KubeSphere has not been installed` of [Prepare a Host Cluster](#prepare-a-host-cluster) and [Prepare a Member Cluster](#prepare-a-member-cluster) below.
 
 {{< notice note >}}
 Multi-cluster management requires Kubesphere to be installed on the target clusters. If you have an existing cluster, you can deploy KubeSphere on it with a minimal installation so that it can be imported. See [Minimal KubeSphere on Kubernetes](../../../quick-start/minimal-kubesphere-on-k8s/) for details.
@@ -16,7 +16,7 @@ Multi-cluster management requires Kubesphere to be installed on the target clust
 
 ## Agent Connection
 
-The component [Tower](https://github.com/kubesphere/tower) of KubeSphere is used for agent connection. Tower is a tool for network connection between clusters through the agent. If the Host Cluster (hereafter referred to as H Cluster) cannot access the Member Cluster (hereafter referred to as M Cluster) directly, you can expose the proxy service address of the H cluster. This enables the M Cluster to connect to the H cluster through the agent. This method is applicable when the M Cluster is in a private environment (e.g. IDC) and the H Cluster is able to expose the proxy service. The agent connection is also applicable when your clusters are distributed across different cloud providers.
+The component [Tower](https://github.com/kubesphere/tower) of KubeSphere is used for agent connection. Tower is a tool for network connection between clusters through the agent. If the Host Cluster (hereafter referred to as **H** Cluster) cannot access the Member Cluster (hereafter referred to as **M** Cluster) directly, you can expose the proxy service address of the H cluster. This enables the M Cluster to connect to the H cluster through the agent. This method is applicable when the M Cluster is in a private environment (e.g. IDC) and the H Cluster is able to expose the proxy service. The agent connection is also applicable when your clusters are distributed across different cloud providers.
 
 ### Prepare a Host Cluster
 
@@ -24,7 +24,7 @@ The component [Tower](https://github.com/kubesphere/tower) of KubeSphere is used
 
 {{< tab "KubeSphere has been installed" >}}
 
-If you already have a standalone KubeSphere installed, you can set the value of  `clusterRole` to `host` by editing the cluster configuration. You need to **wait for a while** so that the change can take effect.
+If you already have a standalone KubeSphere installed, you can set the value of `clusterRole` to `host` by editing the cluster configuration. You need to **wait for a while** so that the change can take effect.
 
 - Option A - Use Web Console:
 
@@ -72,7 +72,7 @@ After the installation of the Host Cluster, a proxy service called tower will be
 
 {{< tab "A LoadBalancer available in your cluster" >}}
 
-If a LoadBalancer plugin is available for the cluster, you can see a corresponding address for `EXTERNAL-IP`, which will be acquired by KubeSphere automatically. That means you can skip the step to set the proxy. Execute the following command to check the service.
+If a LoadBalancer plugin is available for the cluster, you can see a corresponding address for `EXTERNAL-IP` of the tower service, which will be acquired by KubeSphere and set the proxy service automatically. That means you can skip the step to set the proxy. Execute the following command to confirm you have a LoadBalancer.
 
 ```bash
 kubectl -n kubesphere-system get svc
@@ -85,7 +85,11 @@ NAME       TYPE            CLUSTER-IP      EXTERNAL-IP     PORT(S)              
 tower      LoadBalancer    10.233.63.191   139.198.110.23  8080:30721/TCP       16h
 ```
 
-Note: Generally, there is always a LoadBalancer solution in the public cloud, and the external IP can be allocated by the load balancer automatically. If your clusters are running in an on-premises environment, especially a **bare metal environment**, you can use [Porter](https://github.com/kubesphere/porter) as the LB solution.
+{{< notice note >}}
+
+Generally, there is always a LoadBalancer solution in the public cloud, and the external IP can be allocated by the load balancer automatically. If your clusters are running in an on-premises environment, especially a **bare metal environment**, you can use [Porter](https://github.com/kubesphere/porter) as the LB solution.
+
+{{</ notice >}}
 
 {{</ tab >}}
 
@@ -94,15 +98,12 @@ Note: Generally, there is always a LoadBalancer solution in the public cloud, an
 1. If you cannot see a corresponding address displayed (the EXTERNAL-IP is pending), you need to manually set the proxy address. For example, you have an available public IP address `139.198.120.120`, and the port `8080` of this IP address has been forwarded to the port `30721` of the cluster. Execute the following command to check the service.
 
     ```shell
-    kubectl -n kubesphere-system get svc
-    ```
-
-    ```shell
+    $ kubectl -n kubesphere-system get svc
     NAME       TYPE            CLUSTER-IP      EXTERNAL-IP     PORT(S)              AGE
     tower      LoadBalancer    10.233.63.191   <pending>  8080:30721/TCP            16h
     ```
 
-2. Add the value of `proxyPublishAddress` to the configuration file of ks-installer and input the public IP address and port number as follows.
+2. Add the value of `proxyPublishAddress` to the configuration file of ks-installer and input the public IP address (`139.198.120.120` for this demo) and port number as follows.
 
     - Option A - Use Web Console:
 
@@ -134,7 +135,7 @@ Note: Generally, there is always a LoadBalancer solution in the public cloud, an
 
 ### Prepare a Member Cluster
 
-In order to manage the member cluster within the **host cluster**, you need to make `jwtSecret` the same between them. Therefore, you need to get it first from the **host cluster** by the following command.
+In order to manage the member cluster within the **host cluster**, you need to make `jwtSecret` the same between them. Therefore, you need to get it first by excuting the following command on the **host cluster**.
 
 ```bash
 kubectl -n kubesphere-system get cm kubesphere-config -o yaml | grep -v "apiVersion" | grep jwtSecret
@@ -150,7 +151,7 @@ jwtSecret: "gfIwilcc0WjNGKJ5DLeksf2JKfcLgTZU"
 
 {{< tab "KubeSphere has been installed" >}}
 
-If you already have a standalone KubeSphere installed, you can set the value of  `clusterRole` to `member` by editing the cluster configuration. You need to **wait for a while** so that the change can take effect.
+If you already have a standalone KubeSphere installed, you can set the value of `clusterRole` to `member` by editing the cluster configuration. You need to **wait for a while** so that the change can take effect.
 
 - Option A - Use Web Console:
 
