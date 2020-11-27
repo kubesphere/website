@@ -1,7 +1,7 @@
 ---
 title: "选择 Jenkins Agent" 
 keywords: 'Kubernetes, KubeSphere, docker, devops, jenkins, agent'
-description: '本教程介绍了 Jenkins 代理和 KubeSphere 中的内置 podTemplates。'
+description: '本教程介绍了 Jenkins Agent 和 KubeSphere 中的内置 podTemplates。'
 linkTitle: "选择 Jenkins Agent"
 weight: 400
 ---
