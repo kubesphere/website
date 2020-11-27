@@ -165,6 +165,12 @@ Here are some examples for your reference:
 
 A default file **config-sample.yaml** will be created if you do not change the name. Edit the file and here is an example of the configuration file of a multi-node cluster with one master node.
 
+{{< notice note >}}
+
+To customize Kubernetes related parameters please refer to [Kubernetes Cluster Configurations](../vars/).
+
+{{</ notice >}}
+
 ```yaml
 spec:
   hosts:

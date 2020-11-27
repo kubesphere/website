@@ -173,6 +173,12 @@ chmod +x kk
 
 如果不更改名称，将创建默认文件 **config-sample.yaml**。编辑文件，这是具有一个主节点的多节点集群的配置文件示例。
 
+{{< notice note >}}
+
+Kubernetes 相关的参数配置参见 [Kubernetes 集群配置](../vars/)。
+
+{{</ notice >}}
+
 ```yaml
 spec:
   hosts:
