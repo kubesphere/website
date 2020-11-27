@@ -5,7 +5,7 @@ layout: "single"
 
 linkTitle: "Release Notes"
 
-weight: 1
+weight: 1000
 
 icon: "/images/docs/docs.svg"
 

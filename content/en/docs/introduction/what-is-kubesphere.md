@@ -3,7 +3,7 @@ title: "What is KubeSphere"
 keywords: 'Kubernetes, KubeSphere, Introduction'
 description: 'What is KubeSphere'
 
-weight: 1100
+weight: 2100
 ---
 
 ## Overview

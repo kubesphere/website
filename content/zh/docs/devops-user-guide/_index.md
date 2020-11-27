@@ -4,7 +4,7 @@ description: "如何使用 KubeSphere DevOps"
 layout: "single"
 
 linkTitle: "DevOps 用户指南"
-weight: 4400
+weight: 12000
 
 icon: "/images/docs/docs.svg"
 

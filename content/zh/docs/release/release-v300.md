@@ -4,7 +4,7 @@ keywords: "Kubernetes, KubeSphere, release-notes"
 description: "KubeSphere Release Notes for 3.0.0"
 
 linkTitle: "Release Notes - 3.0.0"
-weight: 50
+weight: 1006
 ---
 
 ## How to get v3.0.0

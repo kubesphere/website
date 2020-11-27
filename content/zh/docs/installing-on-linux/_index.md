@@ -5,7 +5,7 @@ description: "演示如何在云上和本地 Linux 环境中安装 KubeSphere。
 layout: "single"
 
 linkTitle: "在 Linux 上安装 KubeSphere"
-weight: 2000
+weight: 4000
 
 icon: "/images/docs/docs.svg"
 ---
