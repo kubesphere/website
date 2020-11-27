@@ -5,7 +5,7 @@ layout: "single"
 
 linkTitle: "升级"
 
-weight: 4000
+weight: 8000
 
 icon: "/images/docs/docs.svg"
 
@@ -19,16 +19,24 @@ icon: "/images/docs/docs.svg"
 
 ## [使用 KubeKey 升级](../upgrade/upgrade-with-kubekey/)
 
-按照步骤使用 KubeKey 升级 Kubernetes 和 KubeSphere。
+如何使用 KubeKey 升级 Kubernetes 和 KubeSphere。
 
 ## [使用 ks-installer 升级](../upgrade/upgrade-with-ks-installer/)
 
-按照步骤使用 ks-installer 升级 KubeSphere。
+如何使用 ks-installer 升级 KubeSphere。
+
+## [离线环境使用 KubeKey 升级](../upgrade/air-gapped-upgrade-with-kubekey/)
+
+在离线环境下如何使用 KubeKey 升级 Kubernetes 和 KubeSphere。
+
+## [离线环境下使用 ks-installer 升级](../upgrade/air-gapped-upgrade-with-ks-installer/)
+
+在离线环境下如何使用 ks-installer 升级 KubeSphere。
 
 ## [升级后的变化](../upgrade/what-changed/)
 
 了解升级后的变化。
 
-## [FAQ](../upgrade/upgrade-faq/)
+## [常见问题](../upgrade/upgrade-faq/)
 
-常见升级问题的答案。
+常见升级问题的解答。

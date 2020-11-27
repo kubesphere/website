@@ -5,7 +5,7 @@ layout: "single"
 
 linkTitle: "Upgrade"
 
-weight: 4000
+weight: 8000
 
 icon: "/images/docs/docs.svg"
 
@@ -25,13 +25,13 @@ Follow steps to use KubeKey to upgrade Kubernetes and KubeSphere.
 
 Follow steps to use ks-installer to upgrade KubeSphere.
 
-## [Air-Gapped Upgrade with ks-installer](../upgrade/Air-Gapped-Upgrade-with-ks-installer/)
-
-Follow steps to use ks-installer and Offline-package to upgrade KubeSphere.
-
-## [Air-Gapped Upgrade with KubeKey](../upgrade/Air-Gapped-Upgrade-with-KubeKey/)
+## [Air-Gapped Upgrade with KubeKey](../upgrade/air-gapped-upgrade-with-kubekey/)
 
 Follow steps to use Offline-package to upgrade Kubernetes and KubeSphere.
+
+## [Air-Gapped Upgrade with ks-installer](../upgrade/air-gapped-upgrade-with-ks-installer/)
+
+Follow steps to use ks-installer and Offline-package to upgrade KubeSphere.
 
 ## [Changes after Upgrade](../upgrade/what-changed/)
 

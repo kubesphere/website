@@ -4,7 +4,7 @@ keywords: "Kubernetes, upgrade, KubeSphere, v3.0.0, KubeKey"
 description: "Upgrade KubeSphere with KubeKey"
 
 linkTitle: "使用 KubeKey 升级"
-weight: 4015
+weight: 8200
 ---
 
 对于 KubeSphere 和 Kubernetes 都是通过 [KubeSphere Installer](https://v2-1.docs.kubesphere.io/docs/installation/all-in-one/#step-2-download-installer-package) 部署的用户，推荐使用 KubeKey 升级。
