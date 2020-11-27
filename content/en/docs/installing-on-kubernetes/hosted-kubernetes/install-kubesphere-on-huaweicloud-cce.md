@@ -15,17 +15,17 @@ This guide walks you through the steps of deploying KubeSphere on [Huaiwei CCE](
 First, create a Kubernetes cluster based on the requirements below.
 
 - KubeSphere 3.0.0 supports Kubernetes `1.15.x`, `1.16.x`, `1.17.x`, and `1.18.x`. Select a version and create the cluster, e.g. `v1.15.11` or `v1.17.9`.
-- Ensure the cloud computing network for your Kubernetes cluster works, or use an elastic IP when you use “Auto Create” or “Select Existing”. You can also configure the network after the cluster is created. Refer to Configure [NAT Gateway](https://support.huaweicloud.com/en-us/productdesc-natgateway/en-us_topic_0086739762.html).
-- Select `s3.xlarge.2`  `4-core｜8GB` for nodes and add more if necessary (3 and more nodes are required for a production environment).
+- Ensure the cloud computing network for your Kubernetes cluster works, or use an elastic IP when you use **Auto Create** or **Select Existing**. You can also configure the network after the cluster is created. Refer to [NAT Gateway](https://support.huaweicloud.com/en-us/productdesc-natgateway/en-us_topic_0086739762.html).
+- Select `s3.xlarge.2` `4-core｜8GB` for nodes and add more if necessary (3 and more nodes are required for a production environment).
 
 ### Create a public key for kubectl
 
-- Go to `Resource Management` > `Cluster Management` > `Basic Information` > `Network`, and bind `Public apiserver`.
-- Select `kubectl` on the right column, go to `Download kubectl configuration file`, and click `Click here to download`, then you will get a public key for kubectl.
+- Go to **Resource Management** > **Cluster Management** > **Basic Information** > **Network**, and bind `Public apiserver`.
+- Select **kubectl** on the right column, go to **Download kubectl configuration file**, and click **Click here to download**, then you will get a public key for kubectl.
 
   ![Generate Kubectl config file](/images/docs/huawei-cce/en/generate-kubeconfig.png)
 
-After you get the configuration file for kubectl, use kubectl command lines to verify the connection to the cluster.
+After you get the configuration file for kubectl, use kubectl command line to verify the connection to the cluster.
 
 ```bash
 $ kubectl version
@@ -33,13 +33,13 @@ Client Version: version.Info{Major:"1", Minor:"18", GitVersion:"v1.18.8", GitCom
 Server Version: version.Info{Major:"1", Minor:"17+", GitVersion:"v1.17.9-r0-CCE20.7.1.B003-17.36.3", GitCommit:"136c81cf3bd314fcbc5154e07cbeece860777e93", GitTreeState:"clean", BuildDate:"2020-08-08T06:01:28Z", GoVersion:"go1.13.9", Compiler:"gc", Platform:"linux/amd64"}
 ```
 
-## KubeSphere Deployment
+## Deploy KubeSphere
 
 ### Create a custom StorageClass
 
 {{< notice note >}}
 
-Huawei CCE built-in Everest CSI provides StorageClass `csi-disk` which uses SATA (normal I/O) by default, but the actual disk that is used for Kubernetes clusters is either SAS (high I/O) or SSD (extremely high I/O). Therefore, it is suggested that you create an extra StorageClass and set it as default. Refer to the official document - [Use kubectl to create a cloud storage](https://support.huaweicloud.com/en-us/usermanual-cce/cce_01_0044.html).
+Huawei CCE built-in Everest CSI provides StorageClass `csi-disk` which uses SATA (normal I/O) by default, but the actual disk that is used for Kubernetes clusters is either SAS (high I/O) or SSD (extremely high I/O). Therefore, it is suggested that you create an extra StorageClass and set it as **default**. Refer to the official document - [Use kubectl to create a cloud storage](https://support.huaweicloud.com/en-us/usermanual-cce/cce_01_0044.html).
 
 {{</ notice >}}
 
@@ -81,7 +81,7 @@ kubectl apply -f https://github.com/kubesphere/ks-installer/releases/download/v3
 kubectl apply -f https://github.com/kubesphere/ks-installer/releases/download/v3.0.0/cluster-configuration.yaml
 ```
 
-Go to `Workload` > `Pod`, and check the running status of the pod in `kubesphere-system` of its namespace to understand the minimal deployment of KubeSphere. Check `ks-console-xxxx`  of the namespace to understand the availability of KubeSphere console.
+Go to **Workload** > **Pod**, and check the running status of the pod in `kubesphere-system` of its namespace to understand the minimal deployment of KubeSphere. Check `ks-console-xxxx`  of the namespace to understand the availability of KubeSphere console.
 
   ![Deploy KubeSphere in Minimal](/images/docs/huawei-cce/en/deploy-ks-minimal.png)
 
@@ -89,15 +89,15 @@ Go to `Workload` > `Pod`, and check the running status of the pod in `kubesphere
 
 Check the running status of Pods in `kubesphere-system` namespace and make sure the basic components of  KubeSphere are running. Then expose KubeSphere console.
 
-Go to `Resource Management` > `Network` and choose the service in `ks-console`. It is suggested that you choose `LoadBalancer` (Public IP is required). The configuration is shown below.
+Go to **Resource Management** > **Network** and choose the service in `ks-console`. It is suggested that you choose `LoadBalancer` (Public IP is required). The configuration is shown below.
 
   ![Expose KubeSphere Console](/images/docs/huawei-cce/en/expose-ks-console.png)
 
-Default settings are OK for other detailed configurations. You can also set it based on your needs.
+Default settings are OK for other detailed configurations. You can also set them based on your needs.
 
   ![Edit KubeSphere Console SVC](/images/docs/huawei-cce/en/edit-ks-console-svc.png)
 
-After you set LoadBalancer for KubeSphere console, you can visit it via the given address. Go to KubeSphere login page and use the default account (username `admin` and pw `P@88w0rd`) to log in.
+After you set LoadBalancer for KubeSphere console, you can visit it via the given address. Go to KubeSphere login page and use the default account (username `admin` and password `P@88w0rd`) to log in.
 
   ![Log in KubeSphere Console](/images/docs/huawei-cce/en/login-ks-console.png)
 
