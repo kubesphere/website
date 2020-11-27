@@ -24,7 +24,7 @@ For example, if you start with [all-in-one installation](../../../quick-start/al
 
 ```bash
 # Assume your original Kubernetes cluster is v1.17.9
-./kk create config --with-kubesphere --with-kubernetes v1.17.9
+./kk create config --with-kubesphere v3.0.0 --with-kubernetes v1.17.9
 ```
 
 The following section demonstrates how to add two nodes (i.e. `node1` and `node2`) using `root` user as an example. It is assumed that your host name of the first machine is `master1` (Replace the following host name with yours).
