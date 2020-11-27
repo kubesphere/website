@@ -5,7 +5,7 @@ layout: "single"
 
 linkTitle: "Toolbox"
 
-weight: 5500
+weight: 16000
 
 icon: "/images/docs/docs.svg"
 ---

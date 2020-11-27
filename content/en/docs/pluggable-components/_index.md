@@ -5,7 +5,7 @@ layout: "single"
 
 linkTitle: "Enable Pluggable Components"
 
-weight: 3500
+weight: 7000
 
 icon: "/images/docs/docs.svg"
 ---

@@ -5,7 +5,7 @@ layout: "single"
 
 linkTitle: "Cluster Administration"
 
-weight: 4100
+weight: 9000
 
 icon: "/images/docs/docs.svg"
 
