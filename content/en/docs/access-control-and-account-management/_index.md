@@ -4,7 +4,7 @@ description: "Access Control and Account Management"
 layout: "single"
 
 linkTitle: "Access Control and Account Management"
-weight: 4500
+weight: 13000
 
 icon: "/images/docs/docs.svg"
 

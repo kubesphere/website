@@ -5,7 +5,7 @@ layout: "single"
 
 linkTitle: "Introduction"
 
-weight: 1000
+weight: 2000
 
 icon: "/images/docs/docs.svg"
 

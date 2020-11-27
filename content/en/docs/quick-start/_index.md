@@ -5,7 +5,7 @@ layout: "single"
 
 linkTitle: "Quickstarts"
 
-weight: 1500
+weight: 3000
 
 icon: "/images/docs/docs.svg"
 

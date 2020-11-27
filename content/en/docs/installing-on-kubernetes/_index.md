@@ -4,7 +4,7 @@ description: "Demonstrate how to install KubeSphere on Kubernetes either hosted 
 layout: "single"
 
 linkTitle: "Installing on Kubernetes"
-weight: 2500
+weight: 5000
 
 icon: "/images/docs/docs.svg"
 ---
