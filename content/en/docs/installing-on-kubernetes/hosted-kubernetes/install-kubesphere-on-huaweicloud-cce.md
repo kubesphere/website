@@ -105,7 +105,7 @@ After you set LoadBalancer for KubeSphere console, you can visit it via the give
 
 The example above demonstrates the process of a default minimal installation. To enable other components in KubeSphere, see [Enable Pluggable Components](../../../pluggable-components/) for more details.
 
-{{< notice note >}}
+{{< notice warning >}}
 
 Before you use Istio-based features of KubeSphere, you have to delete `applications.app.k8s.io` built in Huawei CCE due to the CRD conflict. You can run the command `kubectl delete crd applications.app.k8s.io` directly to delete it.
 
