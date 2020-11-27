@@ -39,7 +39,7 @@ This tutorial creates 8 virtual machines of **CentOS Linux release 7.6.1810 (Cor
 |10.10.71.77|lb-0|lb (Keepalived + HAProxy)|
 |10.10.71.66|lb-1|lb (Keepalived + HAProxy)|
 
-{{< notice warning >}}
+{{< notice note >}}
 You do not need to create a virtual machine for `vip` (i.e. Virtual IP) above, so only 8 virtual machines need to be created.
 {{</ notice >}}
 
