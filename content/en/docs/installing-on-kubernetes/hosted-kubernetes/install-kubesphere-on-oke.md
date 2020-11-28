@@ -81,7 +81,7 @@ This guide walks you through the steps of deploying KubeSphere on [Oracle Kubern
 
 - When the installation finishes, you can see the following message:
 
-  ```bash
+  ```yaml
   #####################################################
   ###              Welcome to KubeSphere!           ###
   #####################################################
