@@ -13,7 +13,7 @@ icon: "/images/docs/docs.svg"
 
 This chapter demonstrates how cluster operators can upgrade existing KubeSphere to v3.0.0.
 
-## [Overview](../upgrade/upgrade-overview/)
+## [Overview](../upgrade/overview/)
 
 Understand what you need to pay attention to before the upgrade, such as versions and upgrade tools.
 
