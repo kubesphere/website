@@ -20,7 +20,7 @@ Pods that are part of a DaemonSet tolerate being run on an unschedulable node. D
 
 ## Delete a Node
 
-You can delete the node by the following command:
+You can delete the node using [KubeKey](https://github.com/kubesphere/kubekey) by the following command. The `config-sample.yaml` file is the one created when you [set up the cluster](../../introduction/multioverview/).
 
 ```bash
 ./kk delete node <nodeName> -f config-sample.yaml
