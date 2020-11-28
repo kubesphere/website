@@ -1,14 +1,14 @@
 ---
 title: "Retrieve KubeConfig"
 keywords: 'Kubernetes, KubeSphere, multicluster, hybrid-cloud, kubeconfig'
-description: 'Overview'
+description: 'Describe how to retrieve kubeconfig from a Kuberenetes cluster'
 
 weight: 3014
 ---
 
 ## Prerequisites
 
-You have a KubeSphere cluster.
+You have a Kubernetes cluster.
 
 ## Explore KubeConfig File
 
