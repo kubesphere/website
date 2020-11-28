@@ -3,7 +3,7 @@ title: "KubeSphere 在华为云 ECS 高可用实例"
 keywords: "Kubesphere 安装， 华为云， ECS， 高可用性， 高可用性，  负载均衡器"
 description: "本教程用于安装高可用性集群"
 
-Weight: 2230
+Weight: 4230
 ---
 
 由于对于生产环境，我们需要考虑集群的高可用性。教你部署如何在华为云 ECS 实例服务快速部署一套高可用的生产环境
