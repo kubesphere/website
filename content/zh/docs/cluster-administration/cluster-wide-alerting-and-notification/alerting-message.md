@@ -4,7 +4,7 @@ keywords: 'KubeSphere, Kubernetes, Node, Alerting, Message, Notification'
 description: '如何在节点级别查看告警信息。'
 
 linkTitle: "告警消息(节点级别)"
-weight: 4170
+weight: 9540
 ---
 
 告警信息记录根据警报规则触发的告警的详细信息，包括监控目标，告警策略，最近的通知和注释。

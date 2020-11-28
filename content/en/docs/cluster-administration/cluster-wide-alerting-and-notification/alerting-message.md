@@ -4,7 +4,7 @@ keywords: 'KubeSphere, Kubernetes, Node, Alerting, Message, Notification'
 description: 'How to view alerting messages at the node level.'
 
 linkTitle: "Alerting Message (Node Level)"
-weight: 4170
+weight: 9540
 ---
 
 Alert messages record detailed information of alerts triggered based on alert rules, including monitoring targets, alert policies, recent notifications and comments.

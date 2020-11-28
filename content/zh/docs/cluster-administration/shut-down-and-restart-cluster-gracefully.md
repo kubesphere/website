@@ -1,10 +1,10 @@
 ---
-title: "集群关闭和重新启动"
+title: "关闭和重启集群"
 description: "Demonstrate how to shut down and restart Kubernetes clusters gracefully"
 layout: "single"
 
-linkTitle: "集群关闭和重新启动"
-weight: 5000
+linkTitle: "关闭和重启集群"
+weight: 9800
 
 icon: "/images/docs/docs.svg"
 ---

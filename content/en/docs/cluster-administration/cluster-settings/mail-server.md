@@ -4,7 +4,7 @@ keywords: 'KubeSphere, Kubernetes, Notification, Mail Server'
 description: 'Mail Server'
 
 linkTitle: "Mail Server"
-weight: 4190
+weight: 9630
 ---
 
 ## Objective

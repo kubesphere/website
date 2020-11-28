@@ -4,7 +4,7 @@ keywords: 'kubernetes, log, elasticsearch, kafka, fluentd, pod, container, fluen
 description: 'Add log receivers to receive container logs'
 
 linkTitle: "Introduction"
-weight: 2100
+weight: 9621
 ---
 
 KubeSphere provides a flexible log collection configuration method. Powered by [FluentBit Operator](https://github.com/kubesphere/fluentbit-operator/), users can add/modify/delete/enable/disable Elasticsearch, Kafka and Fluentd receivers with ease. Once a receiver is added, logs will be sent to this receiver.
