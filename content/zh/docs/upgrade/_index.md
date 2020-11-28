@@ -13,7 +13,7 @@ icon: "/images/docs/docs.svg"
 
 本章演示集群管理员如何将现有的 KubeSphere 升级到 v3.0.0。
 
-## [概述](../upgrade/upgrade-overview/)
+## [概述](../upgrade/overview/)
 
 了解升级之前需要注意的事项，例如版本和升级工具。
 
