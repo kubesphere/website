@@ -3,7 +3,7 @@ title: "什么是 KubeSphere"
 keywords: 'Kubernetes, KubeSphere, 介绍'
 description: '什么是 KubeSphere'
 
-weight: 1100
+weight: 2100
 ---
 
 ## 概述

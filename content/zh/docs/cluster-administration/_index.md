@@ -5,7 +5,7 @@ layout: "single"
 
 linkTitle: "集群管理"
 
-weight: 4100
+weight: 9000
 
 icon: "/images/docs/docs.svg"
 

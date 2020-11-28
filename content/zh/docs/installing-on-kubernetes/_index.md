@@ -4,7 +4,7 @@ description: "演示如何在云或本地托管的现有 Kubernetes 集群上安
 layout: "single"
 
 linkTitle: "在 Kubernetes 上安装 KubeSphere"
-weight: 2500
+weight: 5000
 
 icon: "/images/docs/docs.svg"
 ---

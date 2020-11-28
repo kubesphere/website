@@ -3,7 +3,7 @@ title: "Glossary"
 keywords: 'kubernetes, docker, helm, jenkins, istio, prometheus'
 description: ''
 
-weight: 1500
+weight: 2600
 ---
 
 This document describes some frequently used glossaries in KubeSphere as shown below:

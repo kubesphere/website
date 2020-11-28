@@ -4,7 +4,7 @@ description: "帮助您更好地管理 KubeSphere 项目中的资源"
 layout: "single"
 
 linkTitle: "项目用户指南"
-weight: 4300
+weight: 11000
 
 icon: "/images/docs/docs.svg"
 ---

@@ -3,7 +3,7 @@ title: "名词解释"
 keywords: 'kubernetes, docker, helm, jenkins, istio, prometheus，名词解释'
 description: 'KubeSphere中常用的词汇释义'
 
-weight: 1500
+weight: 2600
 ---
 
 本文档介绍了KubeSphere中一些常用的词汇表，如下所示：
