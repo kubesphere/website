@@ -11,7 +11,7 @@ icon: "/images/docs/docs.svg"
 
 ---
 
-在 KubeSphere 中，您可以使用交互式 Web 控制台或内置的本地命令行工具 `kubectl` 设置集群并配置其功能。作为集群管理员，您将负责一系列任务，包括在节点上管理调度并添加标签，控制集群可见性，​​监控集群状态，设置集群的告警范围和通知规则，以及配置存储和日志收集的方案等。
+在 KubeSphere 中，您可以使用交互式 Web 控制台或内置的本地命令行工具`kubectl`设置集群并配置其功能。作为集群管理员，您将负责一系列任务，包括在节点上管理调度并添加标签，控制集群可见性，​​监控集群状态，设置集群的告警范围和通知规则，以及配置存储和日志收集的方案等。
 
 {{< notice note >}}
 
@@ -37,9 +37,9 @@ icon: "/images/docs/docs.svg"
 
 ## 群集范围的告警和通知
 
-### [kubeSphere中的Alertmanager](../cluster-administration/cluster-wide-alerting-and-notification/alertmanager/)
+### [kubeSphere 中的 Alertmanager](../cluster-administration/cluster-wide-alerting-and-notification/alertmanager/)
 
-了解如何在 KubeSphere 中使用 Alertmanager 管理警报。
+了解如何在 KubeSphere 中使用 Alertmanager 管理告警。
 
 ### [通知管理器](../cluster-administration/cluster-wide-alerting-and-notification/notification-manager/)
 
@@ -54,6 +54,10 @@ icon: "/images/docs/docs.svg"
 了解如何查看节点的告警策略。
 
 ## 集群设置
+
+### [集群可见性与权限](../cluster-administration/cluster-settings/cluster-visibility-and-authorization/)
+
+了解如何设置集群的可见性以及授权。
 
 ### 日志收集
 
@@ -77,10 +81,10 @@ icon: "/images/docs/docs.svg"
 
 自定义您的电子邮件地址设置，以接收任何告警的通知。
 
-## [自定义平台信息](../cluster-administration/platform-settings/customize-basic-information/)
+## [自定义平台信息](../cluster-administration/platform-settings/)
 
 自定义平台设置，如 Logo、标题等。
 
-## [关闭和重启集群](../cluster-administration/shuting-down-and-restart-cluster-cracefully/)
+## [关闭和重启集群](../cluster-administration/shut-down-and-restart-cluster-gracefully/)
 
 了解如何优雅地关闭集群以及如何重新启动它。

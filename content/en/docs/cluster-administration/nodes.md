@@ -4,7 +4,7 @@ keywords: "Kubernetes, KubeSphere, taints, nodes, labels, requests, limits"
 description: "Kubernetes Node Management"
 
 linkTitle: "Node Management"
-weight: 200
+weight: 9200
 ---
 
 Kubernetes runs your workloads by placing containers into Pods to run on nodes. A node may be a virtual or physical machine, depending on the cluster. Each node contains the services necessary to run Pods, managed by the control plane. For more information about nodes, see the [official documentation of Kubernetes](https://kubernetes.io/docs/concepts/architecture/nodes/).

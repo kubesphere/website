@@ -4,7 +4,7 @@ keywords: 'KubeSphere, Kubernetes, Node, Alerting, Policy, Notification'
 description: '如何在节点级设置告警策略。'
 
 linkTitle: "告警策略（节点级别）"
-weight: 4160
+weight: 9530
 ---
 
 ## 目标

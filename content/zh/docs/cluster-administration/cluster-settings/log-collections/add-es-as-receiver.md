@@ -4,7 +4,7 @@ keywords: 'kubernetes, log, elasticsearch, pod, container, fluentbit, output'
 description: 'Add Elasticsearch as log receiver to receive container logs'
 
 linkTitle: "Add Elasticsearch as Receiver"
-weight: 2200
+weight: 9622
 ---
 KubeSphere supports using Elasticsearch, Kafka and Fluentd as log receivers.
 This doc will demonstrate how to add an Elasticsearch receiver.

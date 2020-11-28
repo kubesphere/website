@@ -1,6 +1,6 @@
 ---
 linkTitle: "Cluster Settings"
-weight: 4180
+weight: 9600
 
 _build:
     render: false

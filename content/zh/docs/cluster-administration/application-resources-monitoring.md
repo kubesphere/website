@@ -3,7 +3,7 @@ title: "应用资源监控"
 keywords: "Kubernetes, KubeSphere, resources, monitoring"
 description: "Monitor application resources in KubeSphere"
 linkTitle: "应用资源监控"
-weight: 400
+weight: 9400
 ---
 
 
