@@ -1,14 +1,14 @@
 ---
 title: "获取 KubeConfig"
 keywords: 'Kubernetes, KubeSphere, 多集群, 混合云, kubeconfig'
-description: 'Overview'
+description: '介绍如果获取一个 Kuberenetes 集群的 kubeconfig 信息'
 
 weight: 3014
 ---
 
 ## 前提条件
 
-您有一个 KubeSphere 集群。
+您有一个 Kubernetes 集群。
 
 ## 浏览 KubeConfig 文件
 
