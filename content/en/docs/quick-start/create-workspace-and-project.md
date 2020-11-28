@@ -4,7 +4,7 @@ keywords: 'KubeSphere, Kubernetes, Multi-tenant, Workspace, Account, Role, Proje
 description: 'Create Workspace, Project, Account and Role'
 
 linkTitle: "Create Workspace, Project, Account and Role"
-weight: 3030
+weight: 3300
 ---
 
 

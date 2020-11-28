@@ -4,7 +4,7 @@ keywords: 'KubeSphere, Kubernetes, Multi-tenant, Workspace, Account, Role, Proje
 description: '创建企业空间、项目、帐户和角色快速指南'
 
 linkTitle: "创建企业空间、项目、帐户和角色"
-weight: 3030
+weight: 3300
 ---
 
 

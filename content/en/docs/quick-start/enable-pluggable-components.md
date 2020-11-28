@@ -4,7 +4,7 @@ keywords: 'KubeSphere, Kubernetes, pluggable, components'
 description: 'Enable Pluggable Components'
 
 linkTitle: "Enable Pluggable Components"
-weight: 3060
+weight: 3600
 ---
 
 This tutorial demonstrates how to enable pluggable components of KubeSphere both before and after the installation. KubeSphere features ten pluggable components which are listed below.

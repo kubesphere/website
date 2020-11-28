@@ -4,7 +4,7 @@ keywords: 'KubeSphere, Kubernetes, All-in-one, Installation'
 description: 'All-in-one Installation on Linux'
 
 linkTitle: "在 Linux 上安装 All-in-one KubeSphere"
-weight: 3010
+weight: 3100
 ---
 
 对于那些刚接触 KubeSphere 的并且想快速上手的用户，all-in-one 安装模式是最佳的选择，它能够帮助您零配置快速部署 KubeSphere 和 Kubernetes。

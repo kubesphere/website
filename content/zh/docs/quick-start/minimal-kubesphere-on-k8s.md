@@ -4,7 +4,7 @@ keywords: 'kubesphere, kubernetes, docker, multi-tenant'
 description: '在已有 Kubernetes 集群上安装最小化 KubeSphere'
 
 linkTitle: "在 Kubernetes 上最小化安装 KubeSphere"
-weight: 3020
+weight: 3200
 ---
 
 除了在 Linux 机器上安装 KubeSphere 之外，您还可以将其直接部署在现有的 Kubernetes 集群上。本快速入门指南将引导您完成在 Kubernetes 上最小化安装 KubeSphere 的一般步骤。有关更多信息，请参阅在 [Kubernetes 上安装 KubeSphere](../../installing-on-kubernetes/)。
