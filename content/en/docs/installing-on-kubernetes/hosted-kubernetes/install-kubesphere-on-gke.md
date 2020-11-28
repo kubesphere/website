@@ -3,7 +3,7 @@ title: "Deploy KubeSphere on GKE"
 keywords: 'Kubernetes, KubeSphere, GKE, Installation'
 description: 'How to install KubeSphere on GKE'
 
-weight: 2230
+weight: 5240
 ---
 
 ![KubeSphere+GKE](https://pek3b.qingstor.com/kubesphere-docs/png/20191123145223.png)

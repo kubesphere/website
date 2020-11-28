@@ -4,7 +4,7 @@ keywords: "kubesphere, kubernetes, docker, tencent, tke"
 description: "介绍如何在腾讯云 TKE 上部署 KubeSphere 3.0"
 
 
-weight: 2250
+weight: 5270
 ---
 
 本指南将介绍如何在[腾讯云 TKE](https://cloud.tencent.com/document/product/457/6759) 上部署并使用 KubeSphere 3.0.0 平台。

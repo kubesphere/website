@@ -3,7 +3,7 @@ title: "Deploy KubeSphere on AKS"
 keywords: "KubeSphere, Kubernetes, Installation, Azure, AKS"
 description: "How to deploy KubeSphere on AKS"
 
-weight: 2200
+weight: 5210
 ---
 
 This guide walks you through the steps of deploying KubeSphere on [Azure Kubernetes Service](https://docs.microsoft.com/en-us/azure/aks/).

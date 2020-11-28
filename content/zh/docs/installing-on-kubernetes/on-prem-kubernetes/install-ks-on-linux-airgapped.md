@@ -4,7 +4,7 @@ keywords: 'kubernetes, kubesphere, air gapped, installation'
 description: 'How to install KubeSphere on air-gapped Linux machines'
 
 
-weight: 2240
+weight: 5310
 ---
 
 TBD

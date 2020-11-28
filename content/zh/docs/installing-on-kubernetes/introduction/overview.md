@@ -4,7 +4,7 @@ keywords: "KubeSphere, Kubernetes, 安装"
 description: "在已有 Kubernetes 集群上部署 KubeSphere 的一般步骤"
 
 linkTitle: "概述"
-weight: 2105
+weight: 5110
 ---
 
 ![KubeSphere+K8s](https://pek3b.qingstor.com/kubesphere-docs/png/20191123144507.png)

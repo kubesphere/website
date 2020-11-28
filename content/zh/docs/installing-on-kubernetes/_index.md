@@ -55,7 +55,7 @@ icon: "/images/docs/docs.svg"
 
 ## 卸载
 
-### [从 Kubernetes 卸载 KubeSphere](../installing-on-kubernetes/uninstalling/uninstalling-kubesphere-from-k8s/)
+### [从 Kubernetes 上卸载 KubeSphere](../installing-on-kubernetes/uninstall-kubesphere-from-k8s/)
 
 从 Kubernetes 集群中删除 KubeSphere。
 
