@@ -1,6 +1,6 @@
 ---
 linkTitle: "在公共云上安装"
-weight: 2210
+weight: 4200
 
 _build:
     render: false

@@ -4,7 +4,7 @@ keywords: 'kubernetes, kubesphere, scale, add-nodes'
 description: 'How to add new nodes in an existing cluster'
 
 
-weight: 2340
+weight: 4410
 ---
 
 使用 KubeSphere 一段时间后，很可能随着工作负载的增加需要扩展集群。在这种情况下，KubeSphere 提供了一个添加新节点的脚本。原理上，该操作是基于 Kubelet 的注册机制，换句话说，新节点将自动加入现有的 Kubernetes 集群中。

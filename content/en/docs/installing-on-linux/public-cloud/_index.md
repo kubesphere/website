@@ -1,6 +1,6 @@
 ---
 linkTitle: "Installing on Public Cloud"
-weight: 2210
+weight: 4200
 
 _build:
     render: false
