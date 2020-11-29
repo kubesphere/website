@@ -3,7 +3,7 @@ title: "在 AWS EKS 上部署 KubeSphere"
 keywords: 'Kubernetes, KubeSphere, EKS, 安装'
 description: '介绍如何在 AWS EKS  上部署 KubeSphere'
 
-weight: 2210
+weight: 5220
 ---
 
 本指南将介绍如何在 [AWS EKS](https://docs.aws.amazon.com/eks/latest/userguide/what-is-eks.html) 上部署 KubeSphere。您也可以通过 [KubeSphere on AWS Quick Start](https://aws.amazon.com/quickstart/architecture/qingcloud-kubesphere/) 在 AWS 上自动部署 EKS 和 KubeSphere。

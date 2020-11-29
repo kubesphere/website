@@ -3,7 +3,7 @@ title: "Deploy KubeSphere on Huawei CCE"
 keywords: "KubeSphere, Kubernetes, installation, huawei, cce"
 description: "How to install KubeSphere on Huawei CCE."
 
-weight: 2240
+weight: 5250
 ---
 
 This guide walks you through the steps of deploying KubeSphere on [Huaiwei CCE](https://support.huaweicloud.com/en-us/qs-cce/cce_qs_0001.html).

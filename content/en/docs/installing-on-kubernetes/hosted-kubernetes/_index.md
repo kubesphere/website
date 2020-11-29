@@ -1,6 +1,6 @@
 ---
 linkTitle: "Installing on Hosted Kubernetes"
-weight: 2200
+weight: 5200
 
 _build:
     render: false

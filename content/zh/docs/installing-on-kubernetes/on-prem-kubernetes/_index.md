@@ -1,6 +1,6 @@
 ---
 linkTitle: "Installing on On-premises Kubernetes"
-weight: 2300
+weight: 5300
 
 _build:
     render: false
