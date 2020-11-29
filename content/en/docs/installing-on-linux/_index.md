@@ -67,9 +67,7 @@ Add more nodes to scale out your cluster.
 
 Cordon a node and even delete a node to scale in your cluster.
 
-## Uninstalling
-
-### [Uninstall KubeSphere and Kubernetes](../installing-on-linux/uninstalling/uninstalling-kubesphere-and-kubernetes/)
+## [Uninstall KubeSphere and Kubernetes](../installing-on-linux/uninstall-kubesphere-and-kubernetes/)
 
 Remove KubeSphere and Kubernetes from your machines.
 
