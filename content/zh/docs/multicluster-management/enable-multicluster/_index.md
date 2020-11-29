@@ -1,6 +1,6 @@
 ---
 linkTitle: "启用多集群"
-weight: 3010
+weight: 6200
 
 _build:
     render: false

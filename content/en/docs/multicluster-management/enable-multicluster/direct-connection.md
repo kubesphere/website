@@ -3,7 +3,7 @@ title: "Direct Connection"
 keywords: 'Kubernetes, KubeSphere, multicluster, hybrid-cloud, direct-connection'
 description: 'Overview'
 
-weight: 3011
+weight: 6210
 ---
 
 ## Prerequisites

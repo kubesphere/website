@@ -4,7 +4,7 @@ keywords: 'Kubernetes, KubeSphere, 多集群, Amazon eks'
 description: '导入 AWS EKS 集群'
 
 
-weight: 2340
+weight: 6320
 ---
 
 在本节中，我们将向您展示如何使用[直接连接](../../enable-multicluster/direct-connection)方法将 EKS 导入 KubeSphere。

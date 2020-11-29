@@ -52,11 +52,6 @@ Learn how to import an Amazon Elastic Kubernetes Service cluster.
 
 Learn how to import a Kubernetes cluster created with kubeadm.
 
-## Remove Cluster
-
-### [Remove a Cluster from KubeSphere](../multicluster-management/remove-cluster/kubefed-in-kubesphere/)
+## [Unbind a Cluster](../multicluster-management/unbind-cluster/)
 
 Learn how to unbind a cluster from your cluster pool in KubeSphere.
-
-
-

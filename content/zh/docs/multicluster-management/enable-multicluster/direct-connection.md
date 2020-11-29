@@ -3,7 +3,7 @@ title: "直接连接"
 keywords: 'Kubernetes, KubeSphere, 多集群, 混合云, 直接连接'
 description: '介绍如何使用直接连接方式管理多集群'
 
-weight: 3011
+weight: 6210
 ---
 
 ## 前提条件
