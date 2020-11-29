@@ -26,7 +26,7 @@ When you implement multi-node installation of KubeSphere on Linux, you need to c
     ```
 
     {{< notice note >}}
-If you adopt [All-in-one Installation](../../quick-start/all-in-one-on-linux/), you do not need to create a config-sample.yaml file as you can create a cluster directly. Generally, the all-in-one mode is for users who are new to KubeSphere and look to get familiar with the system. If you want to enable Events in this mode (e.g. for testing purpose), refer to the following section to see how Events can be installed after installation.
+If you adopt [All-in-one Installation](../../quick-start/all-in-one-on-linux/), you do not need to create a config-sample.yaml file as you can create a cluster directly. Generally, the all-in-one mode is for users who are new to KubeSphere and look to get familiar with the system. If you want to enable Events in this mode (e.g. for testing purpose), refer to the following section to see how Events can be [installed after installation](#enable-events-after-installation).
     {{</ notice >}}
 
 2. In this file, navigate to `events` and change `false` to `true` for `enabled`. Save the file after you finish.
@@ -58,7 +58,7 @@ By default, KubeKey will install Elasticsearch internally if Events is enabled. 
     ./kk create cluster -f config-sample.yaml
     ```
 
-### **Installing on Kubernetes**
+### Installing on Kubernetes
 
 The process of installing KubeSphere on Kubernetes is same as stated in the tutorial of [Installing KubeSphere on Kubernetes](../../installing-on-kubernetes/introduction/overview/) except the optional component Events needs to be enabled first in the [cluster-configuration.yaml](https://github.com/kubesphere/ks-installer/releases/download/v3.0.0/cluster-configuration.yaml) file.
 
