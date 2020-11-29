@@ -4,7 +4,7 @@ keywords: 'KubeSphere, kubernetes, Calico, Network Policy'
 description: 'Workspace Network Isolation'
 
 linkTitle: "Workspace Network Isolation"
-weight: 2130
+weight: 10500
 ---
 
 ## Prerequisites
