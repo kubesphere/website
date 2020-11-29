@@ -77,17 +77,13 @@ icon: "/images/docs/docs.svg"
 
 停止调度节点，或者删除节点以缩小集群规模。
 
-## 卸载
-
-### [卸载 KubeSphere 和 Kubernetes](../installing-on-linux/uninstalling/uninstalling-kubesphere-and-kubernetes/)
+## [卸载 KubeSphere 和 Kubernetes](../installing-on-linux/uninstall-kubesphere-and-kubernetes/)
 
 从机器上删除 KubeSphere 和 Kubernetes。
-
 
 ## 常见问题
 
 ### [为安装配置加速器](../installing-on-linux/faq/configure-booster/)
-
 
 配置镜像仓库以加快安装速度。
 
