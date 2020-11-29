@@ -3,7 +3,7 @@ title: "Uninstall KubeSphere and Kubernetes"
 keywords: 'Kubernetes, KubeSphere, uninstalling, remove-cluster'
 description: 'How to uninstall KubeSphere and Kubernetes'
 
-weight: 2451
+weight: 4500
 ---
 
 You can delete the cluster by the following command.

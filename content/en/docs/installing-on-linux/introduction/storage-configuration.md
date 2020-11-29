@@ -4,7 +4,7 @@ keywords: 'Kubernetes, docker, KubeSphere, storage, volume, PVC, KubeKey, add-on
 description: 'Persistent Storage Configuration'
 
 linkTitle: "Persistent Storage Configurations"
-weight: 2140
+weight: 4170
 ---
 
 ## Overview

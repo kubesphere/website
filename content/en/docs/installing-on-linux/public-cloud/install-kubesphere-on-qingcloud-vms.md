@@ -3,7 +3,7 @@ title: "Deploy KubeSphere on QingCloud Instance"
 keywords: "KubeSphere, Installation, HA, High-availability, LoadBalancer"
 description: "The tutorial is for installing a high-availability cluster."
 
-Weight: 2229
+Weight: 4220
 ---
 
 ## Introduction

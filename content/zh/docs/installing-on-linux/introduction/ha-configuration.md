@@ -3,7 +3,7 @@ title: "High Availability Configurations"
 keywords: 'KubeSphere, Kubernetes, HA, high availability, installation, configuration'
 description: 'How to configure a high-availability Kubernetes cluster.'
 linkTitle: "High Availability Configurations"
-weight: 2130
+weight: 4150
 ---
 
 You can set up a single-master Kubernetes cluster with KubeSphere installed based on the tutorial of [Multi-node Installation](../multioverview/). Single-master clusters may be sufficient for development and testing in most cases. For a production environment, however, you need to consider the high availability of the cluster. If key components (for example, kube-apiserver, kube-scheduler, and kube-controller-manager) are all running on the same master node, Kubernetes and KubeSphere will be unavailable once the master node goes down. Therefore, you need to set up a high-availability cluster by provisioning load balancers with multiple master nodes. You can use any cloud load balancer, or any hardware load balancer (e.g. F5). In addition, Keepalived and [HAproxy](https://www.haproxy.com/), or Nginx is also an alternative for creating high-availability clusters.

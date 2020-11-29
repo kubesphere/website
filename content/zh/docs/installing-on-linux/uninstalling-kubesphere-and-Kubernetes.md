@@ -4,7 +4,7 @@ keywords: 'kubernetes, kubesphere, uninstalling, remove-cluster'
 description: 'How to uninstall KubeSphere and kubernetes'
 
 
-weight: 2451
+weight: 4500
 ---
 
 您可以通过以下命令删除集群。
