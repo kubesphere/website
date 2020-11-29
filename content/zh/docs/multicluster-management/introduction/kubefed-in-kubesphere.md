@@ -3,7 +3,7 @@ title: "KubeSphere 联邦"
 keywords: 'Kubernetes, KubeSphere, 联邦, 多集群, 混合云'
 description: '概述'
 
-weight: 3007
+weight: 6120
 ---
 
 多集群功能与集群之间的网络连接有关。因此，了解集群的拓扑关系很重要，这样可以避免很多不必要的麻烦。

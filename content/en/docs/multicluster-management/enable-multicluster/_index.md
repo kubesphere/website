@@ -1,6 +1,6 @@
 ---
 linkTitle: "Enable Multi-cluster in KubeSphere"
-weight: 3010
+weight: 6200
 
 _build:
     render: false

@@ -4,7 +4,7 @@ keywords: 'Kubernetes, KubeSphere, multicluster, Amazon eks'
 description: 'Import AWS EKS Cluster'
 
 
-weight: 2340
+weight: 6320
 ---
 
 In this section, we are going to show you how to import EKS to KubeSphere using [direct connection](../../enable-multicluster/direct-connection) method. 

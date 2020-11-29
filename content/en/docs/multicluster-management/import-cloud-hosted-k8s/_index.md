@@ -1,6 +1,6 @@
 ---
 linkTitle: "Import Cloud-hosted Kubernetes Cluster"
-weight: 3010
+weight: 6300
 
 _build:
     render: false

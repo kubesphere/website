@@ -3,7 +3,7 @@ title: "概述"
 keywords: 'Kubernetes, KubeSphere, 多集群, 混合云'
 description: '概述'
 
-weight: 3006
+weight: 6110
 ---
 
 如今，在不同的云服务提供商或者基础设施上运行和管理多个 Kubernetes 集群已经非常普遍。由于每个 Kubernetes 集群都是一个相对独立的单元，上游社区设计开发多集群管理解决方案非常的艰难，即便如此，Kubernetes 集群联邦（Kubernetes Cluster Federation，简称 [KubeFed](https://github.com/kubernetes-sigs/kubefed)）可能是其中一种可行的方法。

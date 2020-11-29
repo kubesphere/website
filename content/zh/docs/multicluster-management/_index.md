@@ -52,11 +52,6 @@ icon: "/images/docs/docs.svg"
 
 了解如何导入通过 kubeadm 创建的 Kubernetes 集群。
 
-## 删除集群
-
-### [从 KubeSphere 删除集群](../multicluster-management/remove-cluster/kubefed-in-kubesphere/)
+## [解绑集群](../multicluster-management/unbind-cluster/)
 
 了解如何从 KubeSphere 的集群池中解除集群的绑定。
-
-
-
