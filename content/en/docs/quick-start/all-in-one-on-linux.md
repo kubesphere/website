@@ -4,7 +4,7 @@ keywords: 'KubeSphere, Kubernetes, All-in-one, Installation'
 description: 'All-in-one Installation on Linux'
 
 linkTitle: "All-in-one Installation on Linux"
-weight: 3010
+weight: 3100
 ---
 
 For those who are new to KubeSphere and looking for a quick way to discover the platform, the all-in-one mode is your best choice to get started. It features rapid deployment and hassle-free configuration installation with KubeSphere and Kubernetes all provisioned on your machine.

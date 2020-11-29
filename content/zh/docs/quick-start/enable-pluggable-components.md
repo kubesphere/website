@@ -4,7 +4,7 @@ keywords: 'KubeSphere，Kubernetes，可插拔功能组件'
 description: '启用可插拔功能组件'
 
 linkTitle: "启用可插拔功能组件"
-weight: 3060
+weight: 3600
 ---
 
 本教程演示如何在安装前或安装后启用 KubeSphere 的可插拔组件。KubeSphere 具有以下列出的十个可插拔组件。
