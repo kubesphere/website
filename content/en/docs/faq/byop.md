@@ -25,21 +25,18 @@ To use your own Prometheus stack setup, the steps are as below:
 You can uninstall KubeSphere customized Prometheus stack as below:
 
 ```bash
-# Enter ks-installer pod
-kubectl -n kubesphere-system exec -it `kubectl -n kubesphere-system get pod|grep ks-installer|awk '{print $1}'` -- /bin/sh
-# Execute the following commands inside ks-installer pod to uninstall, pls ignore errors like below:
-# Error from server (NotFound): error when deleting "/kubesphere/kubesphere/prometheus/xx/xxx.yaml": xxx "xxx" not found
-kubectl delete -f /kubesphere/kubesphere/prometheus/alertmanager/
-kubectl delete -f /kubesphere/kubesphere/prometheus/devops/
-kubectl delete -f /kubesphere/kubesphere/prometheus/etcd/
-kubectl delete -f /kubesphere/kubesphere/prometheus/grafana/
-kubectl delete -f /kubesphere/kubesphere/prometheus/kube-state-metrics/
-kubectl delete -f /kubesphere/kubesphere/prometheus/node-exporter/
-kubectl delete -f /kubesphere/kubesphere/prometheus/upgrade/
-kubectl delete -f /kubesphere/kubesphere/prometheus/prometheus-rules-v1.16\+.yaml
-kubectl delete -f /kubesphere/kubesphere/prometheus/prometheus-rules.yaml
-kubectl delete -f /kubesphere/kubesphere/prometheus/prometheus
-kubectl delete -f /kubesphere/kubesphere/prometheus/init/
+# Execute the following commands to uninstall:
+kubectl -n kubesphere-system exec $(kubectl get pod -n kubesphere-system -l app=ks-install -o jsonpath='{.items[0].metadata.name}') -- kubectl delete -f /kubesphere/kubesphere/prometheus/alertmanager/ 2>/dev/null
+kubectl -n kubesphere-system exec $(kubectl get pod -n kubesphere-system -l app=ks-install -o jsonpath='{.items[0].metadata.name}') -- kubectl delete -f /kubesphere/kubesphere/prometheus/devops/ 2>/dev/null
+kubectl -n kubesphere-system exec $(kubectl get pod -n kubesphere-system -l app=ks-install -o jsonpath='{.items[0].metadata.name}') -- kubectl delete -f /kubesphere/kubesphere/prometheus/etcd/ 2>/dev/null
+kubectl -n kubesphere-system exec $(kubectl get pod -n kubesphere-system -l app=ks-install -o jsonpath='{.items[0].metadata.name}') -- kubectl delete -f /kubesphere/kubesphere/prometheus/grafana/ 2>/dev/null
+kubectl -n kubesphere-system exec $(kubectl get pod -n kubesphere-system -l app=ks-install -o jsonpath='{.items[0].metadata.name}') -- kubectl delete -f /kubesphere/kubesphere/prometheus/kube-state-metrics/ 2>/dev/null
+kubectl -n kubesphere-system exec $(kubectl get pod -n kubesphere-system -l app=ks-install -o jsonpath='{.items[0].metadata.name}') -- kubectl delete -f /kubesphere/kubesphere/prometheus/node-exporter/ 2>/dev/null
+kubectl -n kubesphere-system exec $(kubectl get pod -n kubesphere-system -l app=ks-install -o jsonpath='{.items[0].metadata.name}') -- kubectl delete -f /kubesphere/kubesphere/prometheus/upgrade/ 2>/dev/null
+kubectl -n kubesphere-system exec $(kubectl get pod -n kubesphere-system -l app=ks-install -o jsonpath='{.items[0].metadata.name}') -- kubectl delete -f /kubesphere/kubesphere/prometheus/prometheus-rules-v1.16\+.yaml 2>/dev/null
+kubectl -n kubesphere-system exec $(kubectl get pod -n kubesphere-system -l app=ks-install -o jsonpath='{.items[0].metadata.name}') -- kubectl delete -f /kubesphere/kubesphere/prometheus/prometheus-rules.yaml 2>/dev/null
+kubectl -n kubesphere-system exec $(kubectl get pod -n kubesphere-system -l app=ks-install -o jsonpath='{.items[0].metadata.name}') -- kubectl delete -f /kubesphere/kubesphere/prometheus/prometheus 2>/dev/null
+kubectl -n kubesphere-system exec $(kubectl get pod -n kubesphere-system -l app=ks-install -o jsonpath='{.items[0].metadata.name}') -- kubectl delete -f /kubesphere/kubesphere/prometheus/init/ 2>/dev/null
 # Delete pvc Prometheus used
 kubectl -n kubesphere-monitoring-system delete pvc `kubectl -n kubesphere-monitoring-system get pvc | grep -v VOLUME | awk '{print $1}' |  tr '\n' ' '`
 ```
@@ -102,16 +99,18 @@ If your Prometheus stack setup isn't managed by Prometheus Operator, you can ski
 # Get KubeSphere v3.0.0 customized kube-prometheus
 cd ~ && mkdir kubesphere && cd kubesphere && git clone https://github.com/kubesphere/kube-prometheus.git && cd kube-prometheus/kustomize
 # Change to your own namespace in which Prometheus stack is deployed
-sed -i 's/my-namespace/<replace-me-with-new-ns>/g' kustomization.yaml
+# For example 'monitoring' if you install Prometheus to the monitoring namespace following step 2.
+sed -i 's/my-namespace/<your own namespace>/g' kustomization.yaml
 # Apply KubeSphere customized stuff including Promethues rules, Alertmanager config, various ServiceMonitors.  
 kubectl apply -k .
 # Setup service for kube-scheduler and kube-controller-manager metrics exposure
 kubectl apply -f ./prometheus-serviceKubeScheduler.yaml
 kubectl apply -f ./prometheus-serviceKubeControllerManager.yaml
-# Find Prometheus CR which is usually k8s
-kubectl -n monitoring get prometheus
-# Set Prometheus rule evaluation interval to 1m to be consistent with KubeSphere v3.0.0 customized ServiceMonitor, rule evaluation interval should be greater or equal to scrape interval.
-kubectl -n monitoring patch prometheus k8s --patch '{
+# Find Prometheus CR which is usually k8s in your own namespace
+kubectl -n <your own namespace> get prometheus
+# Set Prometheus rule evaluation interval to 1m to be consistent with KubeSphere v3.0.0 customized ServiceMonitor
+# Rule evaluation interval should be greater or equal to scrape interval.
+kubectl -n <your own namespace> patch prometheus k8s --patch '{
   "spec": {
     "evaluationInterval": "1m"
   }
