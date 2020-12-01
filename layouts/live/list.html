@@ -162,13 +162,13 @@
 
     var showIframe = function(link) {
         $('#modal-for-video video').hide()
-        $('#modal-for-video iframe').attr({src: link})
+        $('#modal-for-video iframe').show().attr({src: link})
         $('#modal-for-video').modal()
     }
 
     var showVideo = function(link) {
         $('#modal-for-video iframe').hide()
-        $('#modal-for-video video').attr({src: link})
+        $('#modal-for-video video').show().attr({src: link})
         $('#modal-for-video').modal()
     }
 
