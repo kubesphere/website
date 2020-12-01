@@ -1,10 +1,12 @@
 ---
-title: 'KubeSphere and Cigo Cloud Partner on Providing Container Services and Building a Developer Community in Africa'
-keywords: KubeSphere, Cigo Cloud, Partner, Kubernetes
-description: KubeSphere and Cigo Cloud work to empower African users on the cloud and promote a local developer community.
+title: "KubeSphere and Cigo Cloud Partner on Providing Container Services and Building a Developer Community in Africa"
+keywords: "KubeSphere, Cigo Cloud, Partner, Kubernetes"
+description: "KubeSphere and Cigo Cloud work to empower African users on the cloud and promote a local developer community."
 createTime: '2020-11-30'
 author: 'Feynman, Sherlock'
 ---
+
+![cigo-and-KubeSphere](https://ap3.qingstor.com/kubesphere-website/docs/cigo-cloud.png)
 
 Cigo Cloud has committed to providing cloud services and information technologies to enterprises in Africa and beyond. In this spirit of collaboration, KubeSphere and Cigo Cloud are announcing a joint effort to better empower KubeSphere users in Africa on the cloud.
 
@@ -19,6 +21,9 @@ In addition to providing cloud services, both Cigo Cloud and KubeSphere work to 
 Based in Johannesburg, South Africa, Cigo Cloud is committed to providing cloud services and information technologies to enterprises in the global market. With a professional and comprehensive group of experts on cloud services, Cigo Cloud strives to offer platform-level mixed Cloud ICT services. It enables enterprise users to leverage SAAS and cloud computing products and services that are autonomous, controllable, neutral, reliable, flexible and open.
 
 **Email**: support@cigocloud.com
+
 **Website**:  www.cigocloud.com
+
 **Facebook**: https://www.facebook.com/Cigo-Cloud-109268734336260/
+
 **LinkedIn**: https://www.linkedin.com/in/cigo-cloud-051b161ba/
