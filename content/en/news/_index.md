@@ -10,6 +10,10 @@ section1:
 
 section2:
   news:
+    - title: 'KubeSphere and Cigo Cloud Partner on Providing Container Services and Building a Developer Community in Africa'
+      description: KubeSphere and Cigo Cloud work to empower African users on the cloud and promote a local developer community.
+      image: https://ap3.qingstor.com/kubesphere-website/docs/cigo-cloud.png
+      link: 'kubesphere-cigo-partnership'
     - title: 'KubeSphere 3.0.0 GA: Born for Hybrid Cloud Apps'
       description: That's a Killer! KubeSphere 3.0.0 is Now Generally Available!
       image: https://ap3.qingstor.com/kubesphere-website/docs/20200830101950.png
