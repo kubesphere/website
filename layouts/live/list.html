@@ -1,5 +1,4 @@
 {{ define "main" }}
-{{ $data := index .Site.Data .Site.Language.Lang }}
 
 {{ with .Params.section1 }}
 <section class='section-1 bg-cover' style='background-image: url("{{ .image }}");'>
@@ -9,19 +8,45 @@
 </section>
 {{ end }}
 
-
+{{ with .Params.section2 }}
 <section class='section-2'>
   <div class="common-layout">
-    <h1></h1>
+      <div class="live-2-left">
+          <a href="{{ .url }}">
+            <img src="{{ .image }}" alt="">
+          </a>
+      </div>
+      <div class="live-2-right">
+            {{ with .notice }}
+            <div class='notice shadow'>
+                <h2 title="{{ .title }}">{{ .title }}</h2>
+                <p><img src="{{ .timeIcon }}" alt="">{{ .time }}</p>
+                <p><img src="{{ .baseIcon }}" alt="">{{ .base }}</p>
+                <a class="btn-a" href="{{ .url }}">{{ i18n "View details" }}</a>
+                <div class="tag">{{ .tag }}</div>
+            </div>
+            {{ end }}
+            {{ with .over }}
+            <div class='over shadow'>
+                <h2 title="{{ .title }}">
+                    <a href="{{ .url }}">{{ .title }}</a>
+                </h2>
+                <div class="tag">{{ .tag }}</div>
+            </div>
+            {{ end }}
+      </div>
   </div>
 </section>
+{{ end }}
 
+{{ $language := .Site.Language.Lang }}
+{{ with .Params.section3 }}
 <section class='section-3'>
     <div class="common-layout">
         <ul class='video-tab-ul'>
             <li class='active'>{{ i18n "ALL" }}</li>
             {{ $groups := slice }}
-            {{ range $data.video }}
+            {{ range .videos }}
             {{ $group := split .group ","}}
             {{ $groups = $groups | append $group }}
             {{ end }}
@@ -29,11 +54,12 @@
             <li data-group='{{ . }}'>{{ . }}</li>
             {{ end }}
         </ul>
-        <ul class='video-ul' data-language='{{ .Site.Language.Lang }}' data-origin='{{ $data.video | jsonify }}'>
+        <ul class='video-ul' data-language='{{ $language }}' data-origin='{{ .videos | jsonify }}'>
         </ul>
         <div id='pagination'></div>
     </div>
 </section>
+{{ end }}
 
 <div id="modal-for-video" class="modal">
     <div class='video-div'>
@@ -50,18 +76,49 @@
     </div>
 </div>
 
+{{ $overImg := .Params.section4.overImg}}
+{{ $noticeImg := .Params.section4.noticeImg}}
+{{ with .Params.section4 }}
 <section class='section-4'>
-  <div class="common-layout">
-    <h1></h1>
-  </div>
+    <div class="common-layout">
+        {{ range .list }}
+        <div>
+            <div class="time-div">
+                {{$over := (time .lastTime).Unix}}
+                {{ if ge now.Unix $over}}
+                    <img src="{{ $overImg }}" alt="">
+                {{ else }}
+                    <img src="{{ $noticeImg }}" alt="">
+                {{ end }}
+                <div class="right">
+                    <p class="date">{{ .date }}</p>
+                    <p class="time">{{ .time }}</p>
+                </div>
+            </div>
+            <h3><a href="{{ .url }}">{{ .title }}</a></h3>
+            {{ if ge now.Unix $over}}
+                <button class="over-btn">{{ i18n "Watch replay" }}</button>
+            {{ else }}
+                <button class="notice-btn">{{ i18n "View details" }}</button>
+            {{ end }}
+        </div>
+        {{ end }}
+    </div>
 </section>
+{{ end }}
 
-
+{{ with .Params.section5 }}
 <section class='section-5'>
-  <div class="common-layout">
-    <h1></h1>
-  </div>
+    <div class="common-layout">
+        <div class="left-div">
+            <h2>{{ .title }}</h2>
+            <p>{{ .content }}</p>
+            <a class="btn-a" href="{{ .url }}">{{ .btn }}</a>
+        </div>
+        <img src="{{ .image }}" alt="">
+    </div>
 </section>
+{{ end }}
 
 <script src='{{ "js/pagination.min.js" | relURL }}'></script>
 
@@ -85,10 +142,10 @@
     var bindClickVideoLi = function() {
         $('.video-ul').on('click', 'li', function(ev) {
             var link = $(this).data('link')
-            var language = $('.video-ul').data('language')
-            if (language === 'zh') {
+            var type = $(this).data('type')
+            if (type === 'video') {
                 showVideo(link)
-            } else if (language === 'en') {
+            } else if (type === 'iframe') {
                 showIframe(link)
             }
         })
@@ -132,7 +189,7 @@
         var group = '<p>' + video.group + '</p>'
         var time = '<p class="time">' + video.createTime + '</p>'
         var div = '<div>' + button + '<div>' + title + group + time + '</div></div>' 
-        var s = '<li data-link="' + video.link + '">' + img + div + '</li>'
+        var s = '<li data-link="' + video.link + '" data-type="' + video.type + '">' + img + div + '</li>'
         return s
     }
 
@@ -143,7 +200,7 @@
             prevText: '<<',
             nextText: '>>',
             callback: function(data, pagination) {
-                var videoList =createVideoList(data)
+                var videoList = createVideoList(data)
                 $('.video-ul').empty().append(videoList)
             }
         })

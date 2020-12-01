@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="20" height="40" viewBox="0 0 20 40">
+    <g fill="none" fill-rule="evenodd">
+        <g>
+            <g>
+                <g>
+                    <g>
+                        <g>
+                            <g>
+                                <g transform="translate(-644 -1607) translate(204 1583) translate(440 22) translate(0 2)">
+                                    <rect width="20" height="40" fill="#FFF" opacity=".798" rx="4"/>
+                                    <text fill="#4A499A" font-family="PingFangSC-Medium, PingFang SC" font-size="14" font-weight="400">
+                                        <tspan x="3" y="19">预</tspan> <tspan x="3" y="36">告</tspan>
+                                    </text>
+                                </g>
+                            </g>
+                        </g>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

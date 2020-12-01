@@ -82,4 +82,7 @@
   translation: Search Documentation
 - id: ALL
   translation: ALL
-
+- id: Watch replay
+  translation: Watch replay
+- id: View details
+  translation: View details

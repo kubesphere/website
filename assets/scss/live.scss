@@ -1,15 +1,147 @@
-@import 'open-source';
-
+@import 'variables';
+@import 'mixin';
+.btn-a {
+  display: inline-block;
+  padding: 0 53px;
+  height: 56px;
+  border-radius: 28px;
+  line-height: 56px;
+  font-size: 16px;
+  color: #ffffff;
+  box-shadow: 0 10px 50px 0 rgba(34, 43, 62, 0.1), 0 8px 16px 0 rgba(33, 43, 61, 0.2), 0 10px 50px 0 rgba(34, 43, 62, 0.1);
+  background-image: linear-gradient(to bottom, rgba(85, 188, 138, 0), rgba(85, 188, 138, 0.1) 97%), linear-gradient(to bottom, #55bc8a, #55bc8a);
+  &:hover {
+    box-shadow: none;
+  }
+}
 .section-1 {
   position: relative;
   padding-top: 124px;
   padding-bottom: 136px;
 }
 
+.section-2 {
+  position: relative;
+  margin-top: -94px;
+
+  .common-layout {
+    display: flex;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px 0 rgba(36, 46, 66, 0.06), 0 8px 16px 0 rgba(36, 46, 66, 0.05);
+    overflow: hidden;
+    background-color: #ffffff;
+
+    @media only screen and (max-width: $mobile-max-width) {
+      flex-direction: column;
+      border-radius: 0;
+    }
+
+    .live-2-left {
+      width: 840px;
+      height: 400px;
+      @media only screen and (max-width: $mobile-max-width) {
+        width: 100%;
+        height: auto;
+      }
+      img {
+        width: 100%;
+        height: 100%;
+        min-height: 200px;
+        object-fit: cover;
+      }
+    }
+
+    .live-2-right {
+      box-sizing: border-box;
+      width: 320px;
+      height: 400px;
+      padding: 10px;
+      @media only screen and (max-width: $mobile-max-width) {
+        max-width: 320px;
+        width: auto;
+        height: auto;
+        margin: 0 auto;
+      }
+      h2 {
+        margin-bottom: 10px;
+        font-size: 18px;
+        line-height: 1.78;
+        letter-spacing: -0.05px;
+        color: #3d3e49;
+        @include block-ellipsis(2);
+      }
+
+      .tag {
+        position: absolute;
+        top: 4px;
+        right: 0;
+        font-size: 12px;
+        padding: 4px 10px;
+        line-height: 12px;
+        border-top-left-radius: 10px;
+        border-bottom-left-radius: 10px;
+      }
+
+      .shadow {
+        position: relative;
+        padding: 20px 24px;
+        border-radius: 8px;
+        box-shadow: 0 4px 8px 0 rgba(36, 46, 66, 0.06), 0 8px 16px 0 rgba(36, 46, 66, 0.05);
+      }
+
+      .notice {
+        box-sizing: border-box;
+        height: 250px;
+
+        p {
+          margin-bottom: 6px;
+          height: 28px;
+          font-size: 16px;
+          line-height: 28px;
+          letter-spacing: -0.04px;
+          color: #919aa3;   
+          
+          img {
+            vertical-align: middle;
+            margin-right: 4px;
+          }
+        }
+
+        a {
+          margin: 34px auto 0;
+          height: 40px;
+          padding: 0 28px;     
+          line-height: 40px;   
+        }
+
+        .tag {
+          color: #3d3e49;
+          background-color: #f7b500;
+        }
+      }
+
+      .over {
+        box-sizing: border-box;
+        height: 120px;
+        margin-top: 10px;
+
+        a {
+          color: #3d3e49;
+        }
+
+        .tag {
+          color: #ffffff;
+          background-color: #919aa3;
+        }
+      }
+    }
+  }
+}
+
 .section-3 {
   background-color: #fff;
-  padding-top: 60px;
-  padding-bottom: 100px;
+  padding-top: 30px;
+  padding-bottom: 60px;
 
   @media only screen and (max-width: $mobile-max-width) {
     padding-top: 20px;
@@ -19,7 +151,7 @@
   & > div {
 
     & > .video-tab-ul {
-      padding: 30px 34px 22px;
+      padding: 0 34px;
       border-radius: 5px;
       box-shadow: 0 4px 16px 0 rgba(7,42,68,.1);
       background-color: #fff;
@@ -28,7 +160,7 @@
         display: inline-block;
         min-width: 48px;
         padding: 8px 16px;
-        margin-bottom: 8px;
+        margin: 10px 0;
         border-radius: 20px;
         -webkit-transition: all .2s ease-in-out;
         transition: all .2s ease-in-out;
@@ -218,6 +350,131 @@
     iframe {
       width: 100%;
       height: 300px;
+    }
+  }
+}
+
+.section-4 {
+  background-image: linear-gradient(113deg, #4a499a 27%, #8552c3 81%);
+  .common-layout {
+    white-space: nowrap;
+    overflow: auto;
+    & > div {
+      box-sizing: border-box;
+      display: inline-block;
+      vertical-align: top;
+      white-space: normal;
+      width: 140px;
+      height: 225px;
+      margin: 80px 40px;
+      padding-top: 20px;
+      border-top: 1px solid #a1b3c4;
+
+      .time-div {
+        display: flex;
+
+        .right {
+          margin-left: 4px;
+          font-weight: bold;
+          line-height: 1;
+          color: #ffffff;
+          .date {
+            margin-bottom: 4px;
+            font-size: 24px;
+          }
+          .time {
+            font-size: 14px;
+          }
+        }
+      }
+
+      h3 {
+        height: 60px;
+        margin: 21px 0 47px;
+        font-size: 14px;
+        font-weight: 500;
+        line-height: 1.43;
+        color: #d5dee7;
+        a {
+          color: #d5dee7;
+
+          &:hover {
+            color: #008a5c;
+          }
+        }
+      }
+
+      button {
+        font-size: 12px;
+        font-weight: 600;
+        line-height: 2;
+        border: none;
+        padding: 5px 28px;
+        border-radius: 17px;
+        cursor: pointer;
+        box-shadow: 0 10px 50px 0 rgba(34, 43, 62, 0.1), 0 8px 16px 0 rgba(33, 43, 61, 0.2);
+        &:hover {
+          box-shadow: none;
+        }
+      }
+
+      .over-btn {
+        color: #ffffff;
+        background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.1) 97%), linear-gradient(to bottom, #242e42, #242e42);
+      }
+
+      .notive-btn {
+        color: #3d3e49;
+        background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.1) 97%), linear-gradient(to bottom, #ffffff, #ffffff);
+      }
+    }
+  }
+}
+
+.section-5 {
+  .common-layout {
+    position: relative;
+    padding-top: 100px;
+    padding-left: 60px;
+    padding-bottom: 30px;
+    @media only screen and (max-width: $mobile-max-width) {
+      padding-left: 20px;
+    }
+    .left-div {
+      position: relative;
+      width: 600px;
+      @media only screen and (max-width: $mobile-max-width) {
+        width: 100%;
+        z-index: 2;
+      }
+      h2 {
+        font-size: 32px;
+        font-weight: 600;
+        line-height: 1.63;
+        color: #171c34;
+        text-shadow: 0 4px 8px rgba(35, 45, 65, 0.1);
+      }
+
+      p {
+        margin-top: 13px;
+        font-size: 16px;
+        line-height: 1.5;
+        letter-spacing: -0.04px;
+        color: #31383e;
+      }
+
+      a {
+        margin-top: 18px;
+      }
+    }
+
+    & > img {
+      position: absolute;
+      top: 88px;
+      right: 0;
+      @media only screen and (max-width: $mobile-max-width) {
+        opacity: 0.3;
+      }
     }
   }
 }

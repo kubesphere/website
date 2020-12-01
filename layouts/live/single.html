@@ -1,0 +1,38 @@
+{{ define "main" }}
+
+<section class="section-1">
+    <div>
+      {{ with .Params.section1 }}
+
+      {{ if .videoUrl }}
+      <div class="video-div">
+        {{ if eq .type "iframe" }}
+        <iframe 
+          src="{{ .videoUrl }}" 
+          frameborder="0" 
+          allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" 
+          allowfullscreen>
+      </iframe>
+        {{ else }}
+        <video src="{{ .videoUrl }}" controls poster="{{ .snapshot }}"></video>
+        {{ end }}
+      </div>
+      {{ end }}
+      <div class="time-div">
+        <img src="{{ .timeIcon }}" alt="">
+        <span>{{ .time }}</span>
+        <img src="{{ .baseIcon }}" alt="">
+        <span>{{ .base }}</span>
+      </div>
+      {{ end }}
+
+      <h1>{{ .Title }}</h1>
+      <div class='content'>
+        <div class='md-body'>
+            {{ .Content }}
+        </div>
+    </div>
+    </div>
+</section>
+
+{{ end }}
