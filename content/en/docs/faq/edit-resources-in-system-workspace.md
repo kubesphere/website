@@ -1,7 +1,7 @@
 ---
 title: "Edit System Resources on the Console"
-keywords: "Installer, Telemetry, KubeSphere, Kubernetes"
-description: "Telemetry collects aggregate information of KubeSphere installation."
+keywords: "system, resources, KubeSphere, Kubernetes"
+description: "How to edit system resources on the console."
 linkTitle: 'Edit System Resources on the Console'
 Weight: 7300
 ---
