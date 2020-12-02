@@ -8,16 +8,16 @@ weight: 2240
 
 KubeSphere integrates [OpenPitrix](https://github.com/openpitrix/openpitrix), an open-source multi-cloud application management platform, to set up the App Store, managing applications throughout their entire lifecycle. The App Store supports two kinds of application deployment:
 
-- **App template** provides a way for developers and independent software vendors (ISVs) to share applications with users in a workspace. You can also import third-party app repositories within a workspace.
-- **Composing app** means users can quickly build a complete application using multiple microservices to compose it. KubeSphere allows users to select existing services or create new services to create a composing app on the one-stop console.
+- **App templates** provide a way for developers and independent software vendors (ISVs) to share applications with users in a workspace. You can also import third-party app repositories within a workspace.
+- **Composing apps** help users quickly build a complete application using multiple microservices to compose it. KubeSphere allows users to select existing services or create new services to create a composing app on the one-stop console.
 
 ![app-store](/images/docs/appstore/application-lifecycle-management/app-store.png)
 
-Using [Redis](https://redis.io/) as an example application, this tutorial demonstrates how to manage the app throughout the entire lifecycle, including submission, review, test, release, upgrade and removal. 
+Using [Redis](https://redis.io/) as an example application, this tutorial demonstrates how to manage the app throughout the entire lifecycle, including submission, review, test, release, upgrade and removal.
 
 ## Prerequisites
 
-- You need to enable [KubeSphere App Store (OpenPitrix)](../../pluggable-components/app-store).
+- You need to enable [KubeSphere App Store (OpenPitrix)](../../pluggable-components/app-store/).
 - You need to create a workspace, a project and an account (`project-regular`). For more information, see [Create Workspace, Project, Account and Role](../../quick-start/create-workspace-and-project/).
 
 ## Hands-on Lab
