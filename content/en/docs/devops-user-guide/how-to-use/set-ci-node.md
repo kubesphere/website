@@ -1,8 +1,8 @@
 ---
-title: "Set CI Node for Dependency Cache"
+title: "Set a CI Node for Dependency Caching"
 keywords: 'Kubernetes, docker, KubeSphere, Jenkins, cicd, pipeline, dependency cache'
-description: 'How to set a CI node for dependency cache of KubeSphere pipeline.'
-linkTitle: "Set CI Node for Dependency Cache"
+description: 'How to set a CI node for dependency caching of KubeSphere pipelines.'
+linkTitle: "Set a CI Node for Dependency Caching"
 weight: 400
 ---
 

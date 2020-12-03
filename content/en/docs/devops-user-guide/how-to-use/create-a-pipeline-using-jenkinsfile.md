@@ -21,7 +21,7 @@ Two types of pipelines can be created in KubeSphere: Pipelines created based on 
 - You need to have a [Docker Hub](https://hub.docker.com/) account and a [GitHub](https://github.com/) account.
 - You need to [enable KubeSphere DevOps system](../../../pluggable-components/devops/).
 - You need to create a workspace, a DevOps project, and an account (`project-regular`). This account needs to be invited to the DevOps project with the `operator` role. See [Create Workspace, Project, Account and Role](../../../quick-start/create-workspace-and-project/) if they are not ready.
-- You need to set a CI dedicated node for running pipelines. Refer to [Set CI Node for Dependency Cache](../../how-to-use/set-ci-node/).
+- You need to set a CI dedicated node for running pipelines. Refer to [Set a CI Node for Dependency Caching](../../how-to-use/set-ci-node/).
 - You need to install and configure SonarQube. Refer to [Integrate SonarQube into Pipeline](../../../devops-user-guide/how-to-integrate/sonarqube/). If you skip this part, there is no **SonarQube Analysis** below.
 
 ## Pipeline Overview
