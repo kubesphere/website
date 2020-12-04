@@ -1,6 +1,6 @@
 ---
 title: "应用商店"
-description: "Getting started with the App Store of KubeSphere"
+description: "上手 KubeSphere 应用商店"
 layout: "single"
 
 
@@ -11,66 +11,66 @@ icon: "/images/docs/docs.svg"
 
 ---
 
-The KubeSphere App Store, powered by [OpenPitrix](https://github.com/openpitrix/openpitrix), an open-source platform that manages apps across clouds, provides users with enterprise-ready containerized solutions. You can upload your own apps through app templates or add app repositories that serve as an application tool for tenants to choose the app they want.
+KubeSphere 应用商店基于 [OpenPitrix](https://github.com/openpitrix/openpitrix)  （一个跨云管理应用的开源平台）为用户提供企业就绪的容器化解决方案。您可以通过应用模板上传自己的应用，或者添加应用仓库作为应用工具，供租户选择他们想要的应用。
 
-The App Store features a highly productive integrated system for application lifecycle management, allowing users to quickly upload, release, deploy, upgrade and remove apps in ways best suit them. This is how KubeSphere empowers developers to spend less time setting up and more time developing.
+应用商店为应用生命周期管理提供了一个高效的集成系统，用户可以用最合适的方式快速上传、发布、部署、升级和下架应用。因此，开发者借助 KubeSphere 就能减少花在设置上的时间，更多地专注于开发。
 
-## [Application Lifecycle Management](../application-store/app-lifecycle-management/)
+## [应用程序生命周期管理](../application-store/app-lifecycle-management/)
 
-Manage your app across the entire lifecycle, including submission, review, test, release, upgrade and removal.
+您可以跨整个生命周期管理应用，包括提交、审核、测试、发布、升级和下架。
 
-## Built-in Applications
+## 内置应用
 
-KubeSphere provides 15 featured built-in apps that are commonly used on Kubernetes. With few clicks, you can deploy them to Kubernetes clusters on-premises or in third-party clouds.
+KubeSphere 内置了15个在 Kubernetes 上常用的精选应用。只需点击几下，您就可以将它们部署到本地的 Kubernetes 集群或第三方云。
 
-### [Deploy etcd on KubeSphere](../application-store/built-in-apps/etcd-app/)
+### [在 KubeSphere 中部署 etcd](../application-store/built-in-apps/etcd-app/)
 
-Learn how to deploy etcd from the App Store of KubeSphere and access its service.
+了解如何从 KubeSphere 应用商店中部署 etcd 并访问服务。
 
-### [Deploy Harbor on KubeSphere](../application-store/built-in-apps/harbor-app/)
+### [在 KubeSphere 中部署 Harbor](../application-store/built-in-apps/harbor-app/)
 
-Learn how to deploy Harbor from the App Store of KubeSphere and access its service.
+了解如何从 KubeSphere 应用商店中部署 Harbor 并访问服务。
 
-### [Deploy Memcached on KubeSphere](../application-store/built-in-apps/memcached-app/)
+### [在 KubeSphere 中部署 Memcached](../application-store/built-in-apps/memcached-app/)
 
-Learn how to deploy Memcached from the App Store of KubeSphere and access its service.
+了解如何从 KubeSphere 应用商店中部署 Memcached 并访问服务。
 
-### [Deploy Minio on KubeSphere](../application-store/built-in-apps/minio-app/)
+### [在 KubeSphere 中部署 Minio](../application-store/built-in-apps/minio-app/)
 
-Learn how to deploy Minio from the App Store of KubeSphere and access its service.
+了解如何从 KubeSphere 应用商店中部署 Minio 并访问服务。
 
-### [Deploy MongoDB on KubeSphere](../application-store/built-in-apps/mongodb-app/)
+### [在 KubeSphere 中部署 MongoDB](../application-store/built-in-apps/mongodb-app/)
 
-Learn how to deploy MongoDB from the App Store of KubeSphere and access its service.
+了解如何从 KubeSphere 应用商店中部署 MongoDB 并访问服务。
 
-### [Deploy MySQL on KubeSphere](../application-store/built-in-apps/mysql-app/)
+### [在 KubeSphere 中部署 MySQL](../application-store/built-in-apps/mysql-app/)
 
-Learn how to deploy MySQL from the App Store of KubeSphere and access its service.
+了解如何从 KubeSphere 应用商店中部署 MySQL 并访问服务。
 
-### [Deploy NGINX on KubeSphere](../application-store/built-in-apps/nginx-app/)
+### [在 KubeSphere 中部署 NGINX](../application-store/built-in-apps/nginx-app/)
 
-Learn how to deploy NGINX from the App Store of KubeSphere and access its service.
+了解如何从 KubeSphere 应用商店中部署 NGINX 并访问服务。
 
-### [Deploy PostgreSQL on KubeSphere](../application-store/built-in-apps/postgresql-app/)
+### [在 KubeSphere 中部署 PostgreSQL](../application-store/built-in-apps/postgresql-app/)
 
-Learn how to deploy PostgreSQL from the App Store of KubeSphere and access its service.
+了解如何从 KubeSphere 应用商店中部署 PostgreSQL 并访问服务。
 
-### [Deploy RabbitMQ on KubeSphere](../application-store/built-in-apps/rabbitmq-app/)
+### [在 KubeSphere 中部署 RabbitMQ](../application-store/built-in-apps/rabbitmq-app/)
 
-Learn how to deploy RabbitMQ from the App Store of KubeSphere and access its service.
+了解如何从 KubeSphere 应用商店中部署 RabbitMQ 并访问服务。
 
-### [Deploy Redis on KubeSphere](../application-store/built-in-apps/redis-app/)
+### [在 KubeSphere 中部署 Redis](../application-store/built-in-apps/redis-app/)
 
-Learn how to deploy Redis from the App Store of KubeSphere and access its service.
+了解如何从 KubeSphere 应用商店中部署 Redis 并访问服务。
 
-### [Deploy Tomcat on KubeSphere](../application-store/built-in-apps/tomcat-app/)
+### [在 KubeSphere 中部署 Tomcat](../application-store/built-in-apps/tomcat-app/)
 
-Learn how to deploy Tomcat from the App Store of KubeSphere and access its service.
+了解如何从 KubeSphere 应用商店中部署 Tomcat 并访问服务。
 
-## External Applications
+## 外部应用程序
 
-You can upload app templates or add app repositories to KubeSphere so that tenants in the same workspace can quickly deploy apps from them.
+您可以上传应用模板或向 KubeSphere 中添加应用仓库，以便同一企业空间中的租户能快速用它们部署应用。
 
-### [Deploy GitLab on KubeSphere](../application-store/external-apps/gitlab-app/)
+### [在 KubeSphere 中部署 GitLab](../application-store/external-apps/gitlab-app/)
 
-Learn how to deploy GitLab through an app repository and access its service.
+了解如何通过应用仓库部署 GitLab 并访问服务。
