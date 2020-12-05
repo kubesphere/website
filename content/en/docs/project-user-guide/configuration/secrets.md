@@ -20,13 +20,13 @@ You need to create a workspace, a project and an account (`project-regular`). Th
 
 ## Create a Secret
 
-### Step 1: Open Dashboard
+### Step 1: Open the dashboard
 
 Log in the console as `project-regular`. Go to **Configurations** of a project, choose **Secrets** and click **Create**.
 
 ![create-secrets](/images/docs/project-user-guide/configurations/secrets/create-secrets.jpg)
 
-### Step 2: Input Basic Information
+### Step 2: Input basic information
 
 Specify a name for the Secret (e.g. `demo-secret`) and click **Next** to continue.
 
@@ -38,7 +38,7 @@ You can see the Secret's manifest file in YAML format by enabling **Edit Mode** 
 
 ![set-secret](/images/docs/project-user-guide/configurations/secrets/set-secret.jpg)
 
-### Step 3: Set Secret
+### Step 3: Set a Secret
 
 1. Under the tab **Secret Settings**, you must choose a Secret type. In KubeSphere, you can create the following types of Secrets, indicated by the `type` field.
 
@@ -117,3 +117,45 @@ Generally, you need to use a Secret when you create workloads, [Services](../../
 Alternatively, you may need to add environment variables for containers. On the **Container Image** page, check **Environment Variables** and click **Use ConfigMap or Secret** to use a Secret from the list.
 
 ![use-secret-image](/images/docs/project-user-guide/configurations/secrets/use-secret-image.jpg)
+
+## Create the Most Common Secrets
+
+This section shows how to create Secrets from your Docker Hub account and GitHub account.
+
+### Create the Docker Hub Secret
+
+1. Log in KubeSphere as `project-regular` and go to your project. Select **Secrets** from the navigation bar and click **Create** on the right.
+
+   ![secret-create](/images/docs/project-user-guide/configurations/secrets/secret-create.jpg)
+
+2. Set a name, such as `dockerhub-id`, and click **Next**. On the **Secret Settings** page, fill in the following fields and click **Validate** to verify whether the information provided is valid.
+
+   **Type**: Select **Image Registry Secret**.
+
+   **Registry Address**: Enter the Docker Hub registry address, such as `docker.io`.
+
+   **User Name**: Enter your Docker ID.
+
+   **Password**: Enter your Docker Hub password.
+
+   ![docker-hub-secret](/images/docs/project-user-guide/configurations/secrets/docker-hub-secret.jpg)
+
+3. Click **Create** to finish.
+
+### Create the GitHub Secret
+
+1. Log in KubeSphere as `project-regular` and go to your project. Select **Secrets** from the navigation bar and click **Create** on the right.
+
+   ![secret-create](/images/docs/project-user-guide/configurations/secrets/secret-create.jpg)
+
+2. Set a name, such as `github-id`, and click **Next**. On the **Secret Settings** page, fill in the following fields.
+
+   **Type**: Select **Account Password Secret**.
+
+   **User Name**: Enter your GitHub account.
+
+   **Password**: Enter your GitHub password.
+
+   ![github-secret](/images/docs/project-user-guide/configurations/secrets/github-secret.jpg)
+
+3. Click **Create** to finish.

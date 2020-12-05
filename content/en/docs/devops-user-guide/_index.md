@@ -35,7 +35,7 @@ Specify the Jenkins agent and use the built-in podTemplate for your pipeline.
 
 Create credentials so that your pipelines can communicate with third-party applications or websites.
 
-### [Set CI Node for Dependency Cathe](../devops-user-guide/how-to-use/set-ci-node/)
+### [Set a CI Node for Dependency Cathing](../devops-user-guide/how-to-use/set-ci-node/)
 
 Configure a node or a group of nodes specifically for continuous integration (CI) to speed up the building process in a pipeline.
 
