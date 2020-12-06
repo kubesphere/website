@@ -78,25 +78,43 @@ Follow the step below to download KubeKey.
 
 {{< tab "For users with good network connections to GitHub" >}}
 
-Download KubeKey from [GitHub Release Page](https://github.com/kubesphere/kubekey/releases/tag/v1.0.0) or use the following command directly.
+Download KubeKey from its [GitHub Release Page](https://github.com/kubesphere/kubekey/releases) or use the following command directly.
 
 ```bash
-wget https://github.com/kubesphere/kubekey/releases/download/v1.0.0/kubekey-v1.0.0-linux-amd64.tar.gz -O - | tar -xz
+curl -sfL https://get-kk.kubesphere.io | VERSION=v1.0.1 sh -
 ```
 
 {{</ tab >}}
 
 {{< tab "For users with poor network connections to GitHub" >}}
 
-Download KubeKey using the following command:
+Run the following command first to make sure you download KubeKey from the correct zone.
 
 ```bash
-wget -c https://kubesphere.io/download/kubekey-v1.0.0-linux-amd64.tar.gz -O - | tar -xz
+export KKZONE=cn
 ```
+
+Run the following command to download KubeKey:
+
+```bash
+curl -sfL https://get-kk.kubesphere.io | VERSION=v1.0.1 sh -
+```
+
+{{< notice note >}}
+
+After you download KubeKey, If you transfer it to a new machine also with poor network connections to GitHub, you must run `export KKZONE=cn` again before you proceed with the steps below.
+
+{{</ notice >}} 
 
 {{</ tab >}}
 
 {{</ tabs >}}
+
+{{< notice note >}}
+
+The commands above download the latest release (v1.0.1) of KubeKey. You can change the version number in the command to download a specific version.
+
+{{</ notice >}} 
 
 Make `kk` executable:
 

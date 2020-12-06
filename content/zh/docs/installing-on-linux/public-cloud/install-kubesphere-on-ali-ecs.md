@@ -84,11 +84,49 @@ controlPlaneEndpoint:
 
 下载可执行安装程序 `kk` 至一台目标机器：
 
-```
-wget -c https://kubesphere.io/download/kubekey-v1.0.0-linux-amd64.tar.gz -O - | tar -xz
+{{< tabs >}}
+
+{{< tab "如果您能正常访问 GitHub" >}}
+
+从 [GitHub Release Page](https://github.com/kubesphere/kubekey/releases) 下载 KubeKey 或直接使用以下命令。
+
+```bash
+curl -sfL https://get-kk.kubesphere.io | VERSION=v1.0.1 sh -
 ```
 
-给 `kk` 授予可执行权限：
+{{</ tab >}}
+
+{{< tab "如果您访问 GitHub 受限" >}}
+
+先执行以下命令以确保您从正确的区域下载 KubeKey。
+
+```bash
+export KKZONE=cn
+```
+
+执行以下命令下载 KubeKey。
+
+```bash
+curl -sfL https://get-kk.kubesphere.io | VERSION=v1.0.1 sh -
+```
+
+{{< notice note >}}
+
+在您下载 KubeKey 后，如果您将其传至新的机器，且访问 GitHub 同样受限，在您执行以下步骤之前请务必再次执行 `export KKZONE=cn` 命令。
+
+{{</ notice >}} 
+
+{{</ tab >}}
+
+{{</ tabs >}}
+
+{{< notice note >}}
+
+执行以上命令会下载最新版 KubeKey (v1.0.1)，您可以修改命令中的版本号下载指定版本。
+
+{{</ notice >}} 
+
+为 `kk` 添加可执行权限：
 
 ```bash
 chmod +x kk
