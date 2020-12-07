@@ -4,7 +4,7 @@ keywords: 'KubeSphere, Kubernetes, role, member, management, project'
 description: 'Role and Member Management in a Project'
 
 linkTitle: "Role and Member Management"
-weight: 2130
+weight: 13200
 ---
 
 This guide demonstrates how to manage roles and members in your project. For more information about KubeSphere roles, see Overview of Role Management.

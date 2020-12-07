@@ -4,7 +4,7 @@ description: "FAQ is designed to answer and summarize the questions users ask mo
 layout: "single"
 
 linkTitle: "FAQ"
-weight: 17000
+weight: 16000
 
 icon: "/images/docs/docs.svg"
 ---
