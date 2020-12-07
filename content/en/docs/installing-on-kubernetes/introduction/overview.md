@@ -4,7 +4,7 @@ keywords: "KubeSphere, Kubernetes, Installation"
 description: "Overview of KubeSphere Installation on Kubernetes"
 
 linkTitle: "Overview"
-weight: 5110
+weight: 4110
 ---
 
 ![KubeSphere+K8s](https://pek3b.qingstor.com/kubesphere-docs/png/20191123144507.png)

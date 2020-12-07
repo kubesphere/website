@@ -4,7 +4,7 @@ keywords: "Kubernetes, KubeSphere, app-store, OpenPitrix"
 description: "How to Enable KubeSphere App Store"
 
 linkTitle: "KubeSphere App Store"
-weight: 3515
+weight: 6200
 ---
 
 ## What is KubeSphere App Store

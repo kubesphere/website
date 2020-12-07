@@ -4,7 +4,7 @@ keywords: "Kubernetes, Elasticsearch, KubeSphere, Logging, logs"
 description: "How to Enable KubeSphere Logging System"
 
 linkTitle: "KubeSphere Logging System"
-weight: 3535
+weight: 6400
 ---
 
 ## What is KubeSphere Logging System

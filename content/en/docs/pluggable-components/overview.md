@@ -4,7 +4,7 @@ keywords: "Kubernetes, KubeSphere, pluggable-components, overview"
 description: "Overview of installing pluggable components."
 
 linkTitle: "Overview"
-weight: 3510
+weight: 6100
 ---
 
 TBD

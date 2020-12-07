@@ -3,7 +3,7 @@ title: "Deploy KubeSphere on DigitalOcean"
 keywords: 'Kubernetes, KubeSphere, DigitalOcean, Installation'
 description: 'How to install KubeSphere on DigitalOcean'
 
-weight: 5230
+weight: 4230
 ---
 
 ![KubeSphere+DOKS](/images/docs/do/KubeSphere-DOKS.png)

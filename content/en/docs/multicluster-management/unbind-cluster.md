@@ -4,7 +4,7 @@ keywords: 'kubernetes, kubesphere, multicluster, hybrid-cloud'
 description: 'Describe how to unbind a cluster from the KubeSphere multiple cluster management platform'
 
 
-weight: 6500
+weight: 5500
 ---
 
 TBD

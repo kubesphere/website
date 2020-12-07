@@ -4,7 +4,7 @@ keywords: "Kubernetes, istio, KubeSphere, service-mesh, microservices"
 description: "How to Enable KubeSphere Service Mesh"
 
 linkTitle: "KubeSphere Service Mesh"
-weight: 3540
+weight: 6800
 ---
 
 ## What is KubeSphere Service Mesh

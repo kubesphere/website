@@ -4,7 +4,7 @@ keywords: "Kubernetes, events, KubeSphere, k8s-events"
 description: "How to enable KubeSphere Events"
 
 linkTitle: "KubeSphere Events"
-weight: 3530
+weight: 6500
 ---
 
 ## What are KubeSphere Events

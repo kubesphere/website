@@ -5,7 +5,7 @@ layout: "single"
 
 linkTitle: "Upgrade"
 
-weight: 8000
+weight: 7000
 
 icon: "/images/docs/docs.svg"
 

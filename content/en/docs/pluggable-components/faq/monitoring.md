@@ -4,7 +4,7 @@ keywords: "Kubernetes, Prometheus, KubeSphere, Monitoring"
 description: "FAQ"
 
 linkTitle: "Monitoring"
-weight: 3540
+weight: 6930
 ---
 
 - [How to access KubeSphere Prometheus console](#how-to-access-kubesphere-prometheus-console)

@@ -5,7 +5,7 @@ layout: "single"
 
 linkTitle: "Multi-cluster Management"
 
-weight: 6000
+weight: 5000
 
 icon: "/images/docs/docs.svg"
 ---
