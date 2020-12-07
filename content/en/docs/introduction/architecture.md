@@ -4,7 +4,7 @@ keywords: "kubesphere, kubernetes, docker, helm, jenkins, istio, prometheus, dev
 description: "KubeSphere architecture"
 
 linkTitle: "Architecture"
-weight: 2300
+weight: 1300
 ---
 
 ## Separation of frontend and backend

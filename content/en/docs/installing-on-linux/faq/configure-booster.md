@@ -4,7 +4,7 @@ keywords: 'KubeSphere, booster, installation, faq'
 description: 'How to configure a booster for installation'
 
 
-weight: 4610
+weight: 3610
 ---
 
 If you have trouble downloading images from dockerhub.io, it is highly recommended that you configure a registry mirror (i.e. booster) beforehand to speed up downloads. You can refer to the [official documentation of Docker](https://docs.docker.com/registry/recipes/mirror/#configure-the-docker-daemon) or follow the steps below.

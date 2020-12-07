@@ -4,7 +4,7 @@ keywords: 'Kubernetes, KubeSphere, VMware-vSphere, installation'
 description: 'How to install KubeSphere on VMware vSphere Linux machines.'
 
 
-weight: 4310
+weight: 3310
 ---
 
 ## Introduction

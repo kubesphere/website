@@ -4,7 +4,7 @@ keywords: "KubeSphere, Kubernetes, Docker, Jenkins, Istio, Features"
 description: "KubeSphere Key Features"
 
 linkTitle: "Features"
-weight: 2200
+weight: 1200
 ---
 
 ## Overview

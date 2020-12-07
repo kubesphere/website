@@ -4,7 +4,7 @@ description: "Demonstrate how to install KubeSphere on Linux on cloud and in on-
 layout: "single"
 
 linkTitle: "Installing on Linux"
-weight: 4000
+weight: 3000
 
 icon: "/images/docs/docs.svg"
 ---
