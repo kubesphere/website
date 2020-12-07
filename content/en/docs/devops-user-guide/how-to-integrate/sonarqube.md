@@ -16,13 +16,29 @@ You need to [enable KubeSphere DevOps System](../../../../docs/pluggable-compone
 
 ## Install SonarQube Server
 
-1. Execute the following command to install SonarQube Server if it is not ready:
+> Take helm3 as an example
+
+1. Install Helm3
+
+   ```bash
+   curl https://raw.githubusercontent.com/helm/helm/master/scripts/get-helm-3 | bash
+   ```
+
+   View Helm version
+
+   ```bash
+   helm version
+
+   version.BuildInfo{Version:"v3.4.1", GitCommit:"c4e74854886b2efe3321e185578e6db9be0a6e29", GitTreeState:"clean", GoVersion:"go1.14.11"}
+   ```
+
+2. Execute the following command to install SonarQube Server if it is not ready:
 
    ```bash
    helm upgrade --install sonarqube sonarqube --repo https://charts.kubesphere.io/main -n kubesphere-devops-system  --create-namespace --set service.type=NodePort
    ```
 
-2. You will get this prompt:
+3. You will get this prompt:
 
    ![sonarqube-install](/images/docs/devops-user-guide/tool-integration/integrate-sonarqube-into-pipeline/sonarqube-install.png)
 
