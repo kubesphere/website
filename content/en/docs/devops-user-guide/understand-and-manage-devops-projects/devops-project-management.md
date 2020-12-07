@@ -3,7 +3,7 @@ title: "DevOps Project Management"
 keywords: 'kubernetes, docker, helm, jenkins, istio, prometheus'
 description: ''
 linkTitle: "DevOps Project Management"
-weight: 110
+weight: 11120
 ---
 
 This tutorial demonstrates how to create and manage DevOps projects.

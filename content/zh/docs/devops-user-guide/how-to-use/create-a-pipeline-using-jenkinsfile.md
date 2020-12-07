@@ -3,7 +3,7 @@ title: "使用 Jenkinsfile 创建流水线"
 keywords: 'KubeSphere, Kubernetes, docker, spring boot, Jenkins, devops, ci/cd, pipeline'
 description: "如何使用 Jenkinsfile 创建流水线。"
 linkTitle: "使用 Jenkinsfile 创建流水线"
-weight: 200
+weight: 11210
 ---
 
 Jenkinsfile 是一个文本文件，它包含了 Jenkins 流水线的定义并被检入源代码控制仓库。由于将整个工作流存储为代码，因此它是代码审查和流水线迭代过程的基础。有关更多信息，请参阅 [Jenkins官方文档](https://www.jenkins.io/doc/book/pipeline/jenkinsfile/)。

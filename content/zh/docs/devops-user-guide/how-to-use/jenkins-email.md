@@ -3,7 +3,7 @@ title: "为 KubeSphere 流水线设置电子邮件服务器"
 keywords: 'KubeSphere, Kubernetes, notification, jenkins, devops, ci/cd, pipeline, email server'
 description: '为 KubeSphere CI/CD 流水线设置电子邮件服务器'
 linkTitle: "为 KubeSphere 流水线设置电子邮件服务器"
-Weight: 400
+Weight: 11260
 ---
 
 

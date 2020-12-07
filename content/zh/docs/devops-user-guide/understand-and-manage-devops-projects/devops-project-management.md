@@ -3,7 +3,7 @@ title: "DevOps 工程管理"
 keywords: 'kubernetes, docker, helm, jenkins, istio, prometheus'
 description: '本教程演示了如何创建和管理 DevOps 工程。'
 linkTitle: "DevOps 工程管理 "
-weight: 110
+weight: 11120
 ---
 
 本教程演示了如何创建和管理 DevOps 工程。

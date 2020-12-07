@@ -3,7 +3,7 @@ title: "Create a Pipeline Using a Jenkinsfile"
 keywords: 'KubeSphere, Kubernetes, docker, spring boot, Jenkins, devops, ci/cd, pipeline'
 description: "How to create a pipeline using a Jenkinsfile."
 linkTitle: "Create a Pipeline Using a Jenkinsfile"
-weight: 200
+weight: 11210
 ---
 
 A Jenkinsfile is a text file that contains the definition of a Jenkins pipeline and is checked into source control.  As it stores the entire workflow as code, it underpins the code review and iteration process of a pipeline. For more information, see [the official documentation of Jenkins](https://www.jenkins.io/doc/book/pipeline/jenkinsfile/).

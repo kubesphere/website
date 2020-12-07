@@ -3,7 +3,7 @@ title: "为缓存依赖项设置 CI 节点"
 keywords: 'Kubernetes, docker, KubeSphere, Jenkins, cicd, pipeline, dependency cache'
 description: '如何为 KubeSphere 流水线的缓存依赖项设置 CI 节点'
 linkTitle: "为缓存依赖项设置 CI 节点"
-weight: 400
+weight: 11270
 ---
 
 通常，在构建应用程序时需要提取不同的依赖关系。 这可能会导致某些问题，例如较长的拉取时间和网络的不稳定会进一步导致构建失败。 为了为您的流水线提供更可靠和稳定的环境，您可以配置一个或一组专门用于持续集成（CI）的节点。 这些 CI 节点可以通过使用缓存来加快构建过程。</br>

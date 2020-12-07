@@ -3,7 +3,7 @@ title: "凭证管理"
 keywords: 'Kubernetes, docker, credential, KubeSphere, devops'
 description: '本教程演示了如何在 DevOps 项目中管理凭证。'
 linkTitle: "凭证管理"
-weight: 400
+weight: 11230
 ---
 
 凭证是包含了敏感数据的对象，例如用户名密码、SSH 密钥和一些 Token 等。 当 KubeSphere 流水线运行时，会与很多外部环境交互，如拉取代码，push/pull 镜像，SSH 连接至相关环境中执行脚本等，此过程中需提供一系列凭证，而这些凭证不应明文出现在流水线中。</br>
