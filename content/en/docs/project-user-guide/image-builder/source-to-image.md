@@ -3,7 +3,7 @@ title: "Source to Image: Publish an App without a Dockerfile"
 keywords: 'KubeSphere, Kubernetes, Docker, S2I, Source-to-Image'
 description: 'How to publish your application using Source-to-Image.'
 linkTitle: "Source to Image: Publish an App without a Dockerfile"
-weight: 2110
+weight: 10610
 ---
 
 Source-to-Image (S2I) is a toolkit and workflow for building reproducible container images from source code. S2I produces ready-to-run images by injecting source code into a container image and letting the container prepare that source code for execution. KubeSphere integrates S2I to automatically build images and publish them to Kubernetes without any Dockerfile.

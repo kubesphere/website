@@ -4,7 +4,7 @@ description: "Demonstrate how to shut down and restart Kubernetes clusters grace
 layout: "single"
 
 linkTitle: "Cluster Shutdown and Restart"
-weight: 9800
+weight: 8800
 
 icon: "/images/docs/docs.svg"
 ---

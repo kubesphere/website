@@ -4,7 +4,7 @@ keywords: 'monitoring, prometheus, prometheus operator'
 description: 'Monitor Sample Web'
 
 linkTitle: "Monitor Sample Web"
-weight: 2120
+weight: 10813
 ---
 
 This section walks you through monitoring a sample web application. The application is instrumented with Prometheus Go client in its code. Therefore, it can expose metrics directly without the help of exporters.

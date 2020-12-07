@@ -4,7 +4,7 @@ keywords: "Kubernetes, KubeSphere, resources, monitoring"
 description: "Monitor application resources in KubeSphere"
 
 linkTitle: "Application Resources Monitoring"
-weight: 9400
+weight: 8300
 ---
 
 In addition to monitoring data at the physical resource level, cluster administrators also need to keep a close track of application resources across the platform, such as the number of projects and DevOps projects, as well as the number of workloads and services of a specific type. Application resource monitoring provides a summary of resource usage and application-level trends of the platform.

@@ -4,7 +4,7 @@ keywords: 'monitoring, prometheus, prometheus operator, querying'
 description: 'Querying'
 
 linkTitle: "Querying"
-weight: 2150
+weight: 10817
 ---
 
 In the query editor, you can input PromQL expressions to process and fetch metrics. To learn how to write PromQL, please read [Querying Examples](https://prometheus.io/docs/prometheus/latest/querying/examples/).

@@ -3,7 +3,7 @@ title: "Secrets"
 keywords: 'KubeSphere, Kubernetes, Secrets'
 description: 'How to create a Secret in KubeSphere.'
 linkTitle: "Secrets"
-weight: 2120
+weight: 10410
 ---
 
 A Kubernetes [Secret](https://kubernetes.io/docs/concepts/configuration/secret/) is used to store and manage sensitive information, such as passwords, OAuth tokens, and ssh keys. To use a Secret, a Pod needs to reference it in one of [the following ways](https://kubernetes.io/docs/concepts/configuration/secret/#overview-of-secrets).

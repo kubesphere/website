@@ -3,7 +3,7 @@ title: "ConfigMaps"
 keywords: 'KubeSphere, Kubernetes, ConfigMaps'
 description: 'How to create a ConfigMap in KubeSphere'
 linkTitle: "ConfigMaps"
-weight: 2110
+weight: 10420
 ---
 
 A Kubernetes [ConfigMap](https://kubernetes.io/docs/concepts/configuration/configmap/) is used to store configuration data in the form of key-value pairs. The ConfigMap resource provides a way to inject configuration data into Pods. The data stored in a ConfigMap object can be referenced in a volume of type `ConfigMap` and then consumed by containerized applications running in a Pod. ConfigMaps are often used in the following cases:
