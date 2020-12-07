@@ -5,7 +5,7 @@ layout: "single"
 
 
 linkTitle: "App Store"
-weight: 15000
+weight: 14000
 
 icon: "/images/docs/docs.svg"
 

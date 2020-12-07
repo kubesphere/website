@@ -4,7 +4,7 @@ keywords: 'kubernetes, kubesphere, devops, docker, helm, jenkins, istio, prometh
 description: 'KubeSphere Glossary documentation'
 
 
-weight: 240
+weight: 17200
 ---
 
 This glossary includes technical terms that are specific to KubeSphere, as well as more general terms that provide useful context.

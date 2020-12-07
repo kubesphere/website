@@ -4,7 +4,7 @@ keywords: 'Kubernetes, KubeSphere, API'
 description: 'KubeSphere API documentation'
 
 
-weight: 240
+weight: 17100
 ---
 
 In KubeSphere v3.0, we move the functionalities of _ks-apigateway_, _ks-account_ into _ks-apiserver_ to make the architecture more compact and straight forward. In order to use KubeSphere API, you need to expose _ks-apiserver_ to your client.

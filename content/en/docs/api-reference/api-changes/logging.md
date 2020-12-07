@@ -4,7 +4,7 @@ keywords: 'Kubernetes, KubeSphere, API, Logging'
 description: 'Logging'
 
 
-weight: 250
+weight: 17310
 ---
 
 The API changes of logging component in KubeSphere v3.0.0.

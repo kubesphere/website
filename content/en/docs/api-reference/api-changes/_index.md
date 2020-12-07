@@ -5,7 +5,7 @@ layout: "single"
 
 linkTitle: "API Changes"
 
-weight: 8200
+weight: 17300
 
 icon: "/images/docs/docs.svg"
 
