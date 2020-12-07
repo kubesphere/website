@@ -4,7 +4,7 @@ keywords: 'kubesphere, kubernetes, docker, multi-tenant'
 description: 'Deploy a Bookinfo App on K8s and learn how to release microservics using canary deployment'
 
 linkTitle: "Deploy Bookinfo and Manage Traffic"
-weight: 3400
+weight: 2400
 ---
 
 [Istio](https://istio.io/), as an open-source service mesh solution, provides powerful features of traffic management for microservices. Here is the introduction of traffic management from the official website of [Istio](https://istio.io/latest/docs/concepts/traffic-management/):

@@ -3,7 +3,7 @@ title: "Add New Nodes"
 keywords: 'Kubernetes, KubeSphere, scale-up, add-nodes'
 description: 'How to add new nodes to an existing cluster.'
 
-weight: 4410
+weight: 3410
 ---
 
 After you use KubeSphere for a certain period of time, it is likely that you need to scale out your cluster with an increasing number of workloads. In this case, KubeSphere provides script to add new nodes to the cluster. Fundamentally, the operation is based on Kubelet's registration mechanism. In other words, the new nodes will automatically join the existing Kubernetes cluster.

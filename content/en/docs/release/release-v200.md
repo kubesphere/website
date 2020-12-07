@@ -4,7 +4,7 @@ keywords: "kubernetes, docker, kubesphere, jenkins, istio, prometheus"
 description: "KubeSphere Release Notes For 2.0.0"
 
 linkTitle: "Release Notes - 2.0.0"
-weight: 1111
+weight: 18500
 ---
 
 KubeSphere 2.0.0 was released on **May 18th, 2019**. 

@@ -3,7 +3,7 @@ title: "Deploy KubeSphere on Bare Metal"
 keywords: 'Kubernetes, KubeSphere, bare-metal'
 description: 'How to install KubeSphere on bare metal.'
 
-weight: 4320
+weight: 3320
 ---
 
 ## Introduction
