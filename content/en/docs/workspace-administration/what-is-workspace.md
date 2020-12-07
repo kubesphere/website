@@ -4,7 +4,7 @@ keywords: "Kubernetes, KubeSphere, workspace"
 description: "This tutorial introduces the concept of workspace and demonstrates how to create and delete a workspace."
 
 linkTitle: "Workspace Overview"
-weight: 10100
+weight: 9100
 ---
 
 A workspace is a logical unit to organize your [projects](../../project-administration/) and [DevOps projects](../../devops-user-guide/) and manage [app templates](../upload-helm-based-application/) and app repositories. It is the place for you to control resource access and share resources within your team in a secure way.

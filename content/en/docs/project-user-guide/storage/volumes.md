@@ -3,7 +3,7 @@ title: "Volumes"
 keywords: 'Kubernetes, persistent volumes, persistent volume claims, volume clone, volume snapshot, volume expanding'
 description: 'How to create a volume, mount a volume and use volume features from its detail page.'
 linkTitle: "Volumes"
-weight: 2110
+weight: 10310
 ---
 
 When you create an application workload in a project, you can create a [PersistentVolumeClaim](https://kubernetes.io/docs/concepts/storage/persistent-volumes/) (PVC) for it. A PVC allows you to create a request for storage, further provisioning persistent storage to applications. More specifically, persistent storage is managed by PersistentVolume resources.

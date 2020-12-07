@@ -1,6 +1,6 @@
 ---
 linkTitle: "Alerting"
-weight: 2200
+weight: 10700
 
 _build:
     render: false

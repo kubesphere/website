@@ -4,7 +4,7 @@ keywords: 'monitoring, prometheus, prometheus operator'
 description: 'Overview'
 
 linkTitle: "Overview"
-weight: 2130
+weight: 10815
 ---
 
 This section introduces dashboard features. You will learn how to visualize metric data in KubeSphere for your custom applications. If you do not know how to integrate your application metrics into KubeSphere monitoring system, read [Introduction](../../introduction) first.

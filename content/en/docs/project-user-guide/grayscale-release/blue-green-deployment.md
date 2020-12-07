@@ -4,7 +4,7 @@ keywords: 'KubeSphere, Kubernetes, service mesh, istio, release, blue-green depl
 description: 'How to implement blue-green deployment for an app.'
 
 linkTitle: "Blue-green Deployment"
-weight: 2130
+weight: 10520
 ---
 
 

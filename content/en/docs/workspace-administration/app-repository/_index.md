@@ -1,6 +1,6 @@
 ---
 linkTitle: "App Repository"
-weight: 10300
+weight: 9300
 
 _build:
     render: false

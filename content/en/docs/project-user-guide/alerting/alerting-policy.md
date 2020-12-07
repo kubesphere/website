@@ -4,7 +4,7 @@ keywords: 'KubeSphere, Kubernetes, Workload, Alerting, Policy, Notification'
 description: 'How to set alerting policies at the workload level.'
 
 linkTitle: "Alerting Policy (Workload Level)"
-weight: 2210
+weight: 10710
 ---
 
 ## Objective

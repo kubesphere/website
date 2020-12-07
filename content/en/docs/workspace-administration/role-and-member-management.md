@@ -4,7 +4,7 @@ keywords: "Kubernetes, workspace, KubeSphere, multitenancy"
 description: "Role and Member Management in a Workspace"
 
 linkTitle: "Role and Member Management"
-weight: 10400
+weight: 9400
 ---
 
 This guide demonstrates how to manage roles and members in your workspace. For more information about KubeSphere roles, see Overview of Role Management.

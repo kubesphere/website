@@ -4,7 +4,7 @@ description: "Help you to better manage resources in a KubeSphere project"
 layout: "single"
 
 linkTitle: "Project User Guide"
-weight: 11000
+weight: 10000
 
 icon: "/images/docs/docs.svg"
 ---

@@ -3,7 +3,7 @@ title: "Binary to Image: Publish an Artifact to Kubernetes"
 keywords: "KubeSphere, Kubernetes, Docker, B2I, Binary-to-Image"
 description: "How to publish artifacts to Kubernetes using Binary-to-Image"
 linkTitle: "Binary to Image: Publish an Artifact to Kubernetes"
-weight: 2110
+weight: 10620
 ---
 
 Binary-to-Image (B2I) is a toolkit and workflow for building reproducible container images from binary executables such as Jar, War, and binary packages. More specifically, you upload an artifact and specify a target repository such as Docker Hub or Harbor where you want to push the image. If everything runs successfully, your image will be pushed to the target repository and your application will be automatically deployed to Kubernetes if you create a Service in the workflow.

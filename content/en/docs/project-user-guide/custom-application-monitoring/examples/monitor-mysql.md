@@ -4,7 +4,7 @@ keywords: 'monitoring, prometheus, prometheus operator'
 description: 'Monitor MySQL'
 
 linkTitle: "Monitor MySQL"
-weight: 2110
+weight: 10812
 ---
 From the [Introduction](../../introduction#indirect-exposing) section, you know it is not feasible to instrument MySQL with Prometheus metrics directly. To expose MySQL metrics in Prometheus format, you need to deploy MySQL exporter instead.
 

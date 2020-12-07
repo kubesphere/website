@@ -4,7 +4,7 @@ keywords: 'monitoring, prometheus, prometheus operator'
 description: 'Panels'
 
 linkTitle: "Panels"
-weight: 2140
+weight: 10816
 ---
 
 KubeSphere currently supports two kinds of charts: text charts and graph charts.

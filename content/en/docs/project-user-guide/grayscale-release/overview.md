@@ -3,7 +3,7 @@ title: "Overview"
 keywords: 'Kubernetes, KubeSphere, grayscale release, overview, service mesh'
 description: 'An overview of grayscale release.'
 linkTitle: "Overview"
-weight: 2110
+weight: 10510
 ---
 
 Modern, cloud-native applications are often composed of a group of independently deployable components, also known as microservices. In a microservices architecture, developers are able to make adjustments to their apps with great flexibility as they do not affect the network of services each performing a specific function. This kind of network of microservices making up an application is also called **service mesh**.

@@ -4,7 +4,7 @@ keywords: 'monitoring, prometheus, prometheus operator'
 description: 'Introduction to KubeSphere custom application monitoring.'
 
 linkTitle: "Introduction"
-weight: 2100
+weight: 10810
 ---
 
 Custom monitoring allows you to monitor and visualize custom application metrics in KubeSphere. The application can be either a third-party application, such as MySQL, Redis, and Elasticsearch, or your own applications. This section introduces the workflow of this feature.

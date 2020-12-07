@@ -4,7 +4,7 @@ keywords: 'Kubernetes, chart, helm, KubeSphere, application, app templates'
 description: 'How to deploy apps from app templates in a private repository.'
 linkTitle: "Deploy Apps from App Templates"
 
-weight: 2210
+weight: 10120
 ---
 
 When you deploy an app, you can select the app from the App Store which contains built-in apps of KubeSphere and [apps uploaded as Helm charts](../../../workspace-administration/upload-helm-based-application/). Alternatively, you can use apps from private app repositories added to KubeSphere to provide app templates.

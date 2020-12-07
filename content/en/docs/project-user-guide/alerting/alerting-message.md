@@ -4,7 +4,7 @@ keywords: 'KubeSphere, Kubernetes, Workload, Alerting, Message, Notification'
 description: 'How to view alerting messages at the workload level.'
 
 linkTitle: "Alerting Message (Workload Level)"
-weight: 2220
+weight: 10720
 ---
 
 Alert messages record detailed information of alerts triggered based on alert rules, including monitoring targets, alert policies, recent notifications and comments.
