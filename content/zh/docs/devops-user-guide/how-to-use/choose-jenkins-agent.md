@@ -3,7 +3,7 @@ title: "选择 Jenkins Agent"
 keywords: 'Kubernetes, KubeSphere, docker, devops, jenkins, agent'
 description: '本教程介绍了 Jenkins Agent 和 KubeSphere 中的内置 podTemplates。'
 linkTitle: "选择 Jenkins Agent"
-weight: 400
+weight: 11250
 ---
 
 `Agent` 部分指定整个流水线或特定阶段将在 Jenkins 环境中执行的位置，具体取决于 Agent 部分的放置位置。该部分必须在流水线的顶层定义，但是阶段级别的用法是可选的。有关更多信息，请参阅 [Jenkins 的官方文档。](https://www.jenkins.io/doc/book/pipeline/syntax/#agent)

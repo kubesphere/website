@@ -3,7 +3,7 @@ title: "Set Email Server for KubeSphere Pipelines"
 keywords: 'KubeSphere, Kubernetes, notification, jenkins, devops, ci/cd, pipeline, email server'
 description: 'Set Email server for KubeSphere CI/CD pipelines'
 linkTitle: "Set Email Server for KubeSphere Pipelines"
-Weight: 400
+Weight: 11260
 ---
 
 

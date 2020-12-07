@@ -3,7 +3,7 @@ title: "Integrate SonarQube into Pipelines"
 keywords: 'Kubernetes, KubeSphere, devops, jenkins, sonarqube, pipeline'
 description: 'This tutorial demonstrates how to integrate SonarQube into pipelines.'
 linkTitle: "Integrate SonarQube into Pipelines"
-weight: 200
+weight: 11310
 ---
 
 [SonarQube](https://www.sonarqube.org/) is a popular continuous inspection tool for code quality. You can use it for static and dynamic analysis of a codebase. After it is integrated into pipelines in KubeSphere, you can view common code issues such as bugs and vulnerabilities directly on the dashboard as SonarQube detects issues in a running pipeline.

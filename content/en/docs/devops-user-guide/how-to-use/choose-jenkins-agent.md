@@ -3,7 +3,7 @@ title: "Choose Jenkins Agent"
 keywords: 'Kubernetes, KubeSphere, docker, devops, jenkins, agent'
 description: 'This tutorial introduces Jenkins agents and built-in podTemplates in KubeSphere.'
 linkTitle: "Choose Jenkins Agent"
-weight: 400
+weight: 11250
 ---
 
 The `agent` section specifies where the entire Pipeline, or a specific stage, will execute in the Jenkins environment depending on where the `agent` section is placed. The section must be defined at the top-level inside the `pipeline` block, but stage-level usage is optional. For more information, see [the official documentation of Jenkins](https://www.jenkins.io/doc/book/pipeline/syntax/#agent).
