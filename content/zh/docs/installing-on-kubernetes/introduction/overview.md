@@ -19,6 +19,12 @@ weight: 5110
 
 {{</ notice >}}
 
+## 视频演示
+
+<video controls="controls" style="width: 100% !important; height: auto !important;">
+  <source type="video/mp4" src="https://kubesphere-docs.pek3b.qingstor.com/website/docs-v3.0/KS3.0%E5%AE%89%E8%A3%85%E4%B8%8E%E9%83%A8%E7%BD%B2_4_%E5%9C%A8%E5%B7%B2%E6%9C%89K8s%E9%9B%86%E7%BE%A4%E4%B8%8A%E9%83%A8%E7%BD%B2KubeSphere.mp4">
+</video>
+
 ## 部署 KubeSphere
 
 确保现有的 Kubernetes 群集满足所有要求之后，可以使用 kubectl 执行 KubeSphere 的默认最小安装。
