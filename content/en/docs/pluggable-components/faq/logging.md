@@ -4,7 +4,7 @@ keywords: "Kubernetes, Elasticsearch, KubeSphere, Logging, logs"
 description: "FAQ"
 
 linkTitle: "Logging"
-weight: 3535
+weight: 6920
 ---
 
 - [How to change the log store to external elasticsearch and shut down the internal elasticsearch](#how-to-change-the-log-store-to-external-elasticsearch-and-shut-down-the-internal-elasticsearch)

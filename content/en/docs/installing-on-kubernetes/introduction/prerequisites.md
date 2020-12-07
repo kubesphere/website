@@ -4,7 +4,7 @@ keywords: "KubeSphere, Kubernetes, Installation, Prerequisites"
 description: "The prerequisites of installing KubeSphere on existing Kubernetes"
 
 linkTitle: "Prerequisites"
-weight: 5120
+weight: 4120
 ---
 
 

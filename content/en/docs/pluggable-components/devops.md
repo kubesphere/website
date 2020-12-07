@@ -4,7 +4,7 @@ keywords: "Kubernetes, Jenkins, KubeSphere, DevOps, cicd"
 description: "How to Enable KubeSphere DevOps System"
 
 linkTitle: "KubeSphere DevOps System"
-weight: 3520
+weight: 6300
 ---
 
 ## What is KubeSphere DevOps System

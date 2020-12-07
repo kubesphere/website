@@ -4,7 +4,7 @@ keywords: "Kubernetes, KubeSphere, NetworkPolicy"
 description: "How to Enable Network Policy"
 
 linkTitle: "Network Policy"
-weight: 3547
+weight: 6900
 ---
 
 ## What is Network Policy

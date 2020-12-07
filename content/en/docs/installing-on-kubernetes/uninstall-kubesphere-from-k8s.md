@@ -4,7 +4,7 @@ keywords: 'kubernetes, kubesphere, uninstall, remove-cluster'
 description: 'How to uninstall KubeSphere from Kubernetes'
 
 
-weight: 5400
+weight: 4400
 ---
 
 You can uninstall KubeSphere from your existing Kubernetes cluster as follows.

@@ -3,7 +3,7 @@ title: "Agent Connection"
 keywords: 'Kubernetes, KubeSphere, multicluster, agent-connection'
 description: 'Overview'
 
-weight: 6220
+weight: 5220
 ---
 
 ## Prerequisites

@@ -4,7 +4,7 @@ keywords: "Kubernetes, auditing, KubeSphere, logs"
 description: "How to enable KubeSphere Auditing Logs"
 
 linkTitle: "KubeSphere Auditing Logs"
-weight: 3525
+weight: 6700
 ---
 
 ## What are KubeSphere Auditing Logs
