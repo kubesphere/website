@@ -11,6 +11,12 @@ weight: 4120
 
 本节概述了多节点安装，包括概念，[KubeKey](https://github.com/kubesphere/kubekey/) 及安装步骤。有关主节点高可用安装的信息，请参阅[高可用安装配置](../ha-configuration/)或参阅在公有云上安装或在本地环境中安装，如[在阿里云 ECS 安装高可用 KubeSphere](../../public-cloud/install-kubesphere-on-ali-ecs/) 或 [在 VMware vSphere 部署高可用 KubeSphere](../../on-premises/install-kubesphere-on-vmware-vsphere/)。
 
+## 视频演示
+
+<video controls="controls" style="width: 100% !important; height: auto !important;">
+  <source type="video/mp4" src="https://kubesphere-docs.pek3b.qingstor.com/website/docs-v3.0/KS3.0%E5%AE%89%E8%A3%85%E4%B8%8E%E9%83%A8%E7%BD%B2_2_Multi-Node%20Deployment%20on%20Linux.mp4">
+</video>
+
 ## 概念
 
 多节点集群由至少一个主节点和一个工作节点组成，可以使用任何节点作为**任务箱**来执行安装任务。您可以在安装之前或之后根据需要添加其他节点（例如，为了实现高可用性）。

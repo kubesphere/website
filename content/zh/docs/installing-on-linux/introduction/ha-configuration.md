@@ -10,6 +10,12 @@ You can set up a single-master Kubernetes cluster with KubeSphere installed base
 
 This tutorial demonstrates the general configurations of a high-availability cluster as you install KubeSphere on Linux.
 
+## Video Demonstration
+
+<video controls="controls" style="width: 100% !important; height: auto !important;">
+  <source type="video/mp4" src="https://kubesphere-docs.pek3b.qingstor.com/website/docs-v3.0/KS3.0%E5%AE%89%E8%A3%85%E4%B8%8E%E9%83%A8%E7%BD%B2_3_HA%20Deployment%20on%20Linux.mp4">
+</video>
+
 ## Architecture
 
 Make sure you have prepared six Linux machines before you begin, with three of them serving as master nodes and the other three as worker nodes. The following image shows details of these machines, including their private IP address and role. For more information about system and network requirements, see [Multi-node Installation](../multioverview/#step-1-prepare-linux-hosts).
