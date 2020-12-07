@@ -19,7 +19,7 @@ weight: 10100
 
 ## 创建企业空间
 
-1. 以 `ws-manager` 身份登录 KubeSphere Web 控制台。在访问控制页面，您可以查看平台上的所有企业空间。列表中已列出默认企业空间 `system-workspace`，该企业空间包含所有系统项目。
+1. 以 `ws-manager` 身份登录 KubeSphere Web 控制台。在**访问控制**页面，您可以查看平台上的所有企业空间。列表中已列出默认企业空间 `system-workspace`，该企业空间包含所有系统项目。
 
 2. 点击**创建**。
 
