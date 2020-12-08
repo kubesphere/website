@@ -4,7 +4,7 @@ keywords: "kubesphere, kubernetes, docker, helm, jenkins, istio, prometheus, dev
 description: "KubeSphere 架构说明"
 
 linkTitle: "架构说明"
-weight: 2300
+weight: 1300
 ---
 
 ## 前后端分离

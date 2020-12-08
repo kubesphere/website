@@ -1,6 +1,6 @@
 ---
 linkTitle: "FAQ"
-weight: 5500
+weight: 4500
 
 _build:
     render: false

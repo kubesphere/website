@@ -4,7 +4,7 @@ keywords: 'kubernetes, kubesphere, scale, delete-nodes'
 description: '如何删除 KubeSphere 工作节点'
 
 
-weight: 4420
+weight: 3420
 ---
 
 ## 停止调度节点

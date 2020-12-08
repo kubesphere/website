@@ -4,5 +4,5 @@ keywords: 'kubernetes, kubesphere, uninstalling, remove-cluster'
 description: 'How to uninstall KubeSphere'
 
 
-weight: 4600
+weight: 3600
 ---
