@@ -4,7 +4,7 @@ keywords: "Kubernetes, Elasticsearch, KubeSphere, Logging, logs"
 description: "如何启用 KubeSphere 日志系统"
 
 linkTitle: "KubeSphere 日志系统"
-weight: 3535
+weight: 6400
 ---
 
 ## 什么是 KubeSphere 日志系统

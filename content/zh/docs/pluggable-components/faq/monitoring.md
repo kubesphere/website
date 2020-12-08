@@ -4,7 +4,7 @@ keywords: "Kubernetes, Prometheus, KubeSphere, Monitoring"
 description: "FAQ"
 
 linkTitle: "监控系统"
-weight: 3540
+weight: 6930
 ---
 
 ## 如何访问 KubeSphere Prometheus 控制台

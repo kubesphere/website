@@ -4,7 +4,7 @@ keywords: "Air-Gapped, upgrade, kubesphere, v3.0.0"
 description: "Air-Gapped Upgrade KubeSphere"
 
 linkTitle: "Air-Gapped Upgrade with ks-installer"
-weight: 8500
+weight: 7500
 ---
 
 ks-installer is recommended for users whose Kubernetes clusters were not set up via [KubeSphere Installer](https://v2-1.docs.kubesphere.io/docs/installation/all-in-one/#step-2-download-installer-package), but hosted by cloud vendors. This tutorial is for **upgrading KubeSphere only**. Cluster operators are responsible for upgrading Kubernetes themselves beforehand.

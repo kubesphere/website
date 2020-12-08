@@ -4,7 +4,7 @@ keywords: 'KubeSphere, Kubernetes, customize, platform'
 description: 'How to Customize KubeSphere Platform Information.'
 
 linkTitle: "Platform Settings"
-weight: 9700
+weight: 8700
 ---
 
 TBD

@@ -4,7 +4,7 @@ keywords: "Cluster Visibility, Cluster Management"
 description: "Cluster Visibility"
 
 linkTitle: "Cluster Visibility and Authorization"
-weight: 9610
+weight: 8610
 ---
 
 ## Objective

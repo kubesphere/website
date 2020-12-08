@@ -4,7 +4,7 @@ keywords: "Kubernetes, KubeSphere, NetworkPolicy"
 description: "如何启用网络策略"
 
 linkTitle: "网络策略"
-weight: 3547
+weight: 6900
 ---
 
 ## 什么是网络策略

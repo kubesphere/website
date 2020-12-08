@@ -4,7 +4,7 @@ keywords: 'KubeSphere, Kubernetes, DaemonSet, workload'
 description: 'Kubernetes DaemonSets'
 linkTitle: "DaemonSets"
 
-weight: 2250
+weight: 10230
 ---
 
 A DaemonSet manages groups of replicated Pods while it ensures that all (or some) nodes run a copy of a Pod. As nodes are added to the cluster, DaemonSets automatically add Pods to the new nodes as needed.
@@ -72,37 +72,15 @@ Specify a name for the DaemonSet (e.g. `demo-daemonset`) and click **Next** to c
 
 ### Step 4: Mount Volumes
 
-You can add a volume directly or mount a ConfigMap or Secret. Alternatively, click **Next** directly to skip this step.
+You can add a volume directly or mount a ConfigMap or Secret. Alternatively, click **Next** directly to skip this step. For more information about volumes, visit [Volumes](../../storage/volumes/#mount-a-volume).
 
 ![daemonsets](/images/docs/project-user-guide/workloads/daemonsets_form_3.jpg)
 
-- **Add Volume**: Support EmptyDir and PersistentVolumeClaim.
+{{< notice note >}}
 
-  In **Add Volume** there are 3 kinds of volumes:
+DaemonSets can't use a volume template, which is used by StatefulSets.
 
-  - **Existing Volume**: Use *PVC* to mount.
-
-    Persistent storage volumes can be used to save users' persistent data. You need to create volumes in advance so that you can choose an existing volume from the list.
-
-  - **Temporary Volume**: Use *emptyDir* to mount.
-
-    The temporary storage volume represents [emptyDir](https://kubernetes.cn/docs/concepts/storage/volumes/#emptydir), which is first created when a Pod is assigned to a node, and exists as long as that Pod is running on that node. When a Pod is removed from a node for any reason, the data in the emptyDir is deleted forever.
-
-  - **HostPath**: Use *HostPath* to mount.
-
-    A HostPath volume mounts a file or directory from the host node's filesystem into your Pod. This is not something that most Pods will need, but it offers a powerful escape hatch for some applications.
-
-- **Mount ConfigMap or Secret**: Support key-value pairs in ConfigMap or Secret.
-
-  A secret volume is used to pass sensitive information, such as passwords, to Pods. Secret volumes are backed by tmpfs (a RAM-backed filesystem) so they are never written to non-volatile storage.
-
-  A ConfigMap is used to store configuration data in the form of key-value pairs. The ConfigMap resource provides a way to inject configuration data into Pods. The data stored in a ConfigMap object can be referenced in a volume of type ConfigMap and then consumed by containerized applications running in a Pod. ConfigMaps are often used in the following cases:
-
-  - Set the value of the environment variable.
-  - Set command parameters in the container.
-  - Create a config file in the volume.
-
-For more information about volumes, please visit [Volumes](../../storage/volumes).
+{{</ notice>}}
 
 ### Step 5: Configure Advanced Settings
 
