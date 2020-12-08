@@ -4,51 +4,85 @@ description: "如何使用 KubeSphere DevOps"
 layout: "single"
 
 linkTitle: "DevOps 用户指南"
-weight: 12000
+weight: 11000
 
 icon: "/images/docs/docs.svg"
 
 ---
 
 
-想要在 Kubernetes 集群上部署和管理 CI/CD 任务以及相关的工作负载，请使用 KubeSphere DevOps 系统。本章演示了如何在 DevOps 项目中进行管理和工作，包括运行流水线，创建凭据和集成工具。
+您可以使用 KubeSphere DevOps 系统在 Kubernetes 集群上部署和管理 CI/CD 任务以及相关的工作负载。本章演示了如何在 DevOps 工程中进行管理和工作，包括运行流水线、创建凭据和集成工具。
 
-在安装 DevOps 组件时，将自动部署 Jenkins。KubeSphere 为您提供一致的用户体验，因为您可以像以前一样通过 Jenkinsfile 建立流水线。此外，KubeSphere 还具有高度实时化的图形化仪表板，可以可视化整个流程，为您提供一个直观的视图，方便您了解流水线在每个阶段是如何运行的。
+在安装 DevOps 组件时，将自动部署 Jenkins。KubeSphere 为您提供一致的用户体验，因为您可以像以前一样通过 Jenkinsfile 建立流水线。此外，KubeSphere 还具有高度实时化的图形编辑面板，可以可视化整个流程，为您提供一个直观的视图，方便您了解流水线在每个阶段的运行状态。
+
+## 理解和管理 DevOps 工程
+
+### [概述](../devops-user-guide/understand-and-manage-devops-projects/overview/)
+
+了解 DevOps 的基本知识。
+
+### [DevOps 工程管理](../devops-user-guide/understand-and-manage-devops-projects/devops-project-management/)
+
+创建并管理 DevOps 工程，了解 DevOps 工程中的各项基本元素。
+
+### [角色和成员管理](../devops-user-guide/understand-and-manage-devops-projects/role-and-member-management/)
+
+在 DevOps 工程中创建并管理各种角色和成员。
 
 ## 使用 DevOps
 
-### [DevOps 项目管理](../devops-user-guide/how-to-use/devops-project-management/)
-
-创建和管理 DevOps 项目以及其中的角色和成员。
-
 ### [使用 Jenkinsfile 创建流水线](../devops-user-guide/how-to-use/create-a-pipeline-using-jenkinsfile/)
 
-通过使用示例 Jenkinsfile 了解如何创建和运行流水线。
+学习如何使用示例 Jenkinsfile 创建并运行流水线。
 
 ### [使用图形编辑面板创建流水线](../devops-user-guide/how-to-use/create-a-pipeline-using-graphical-editing-panel/)
 
-了解如何使用 KubeSphere 的图形编辑面板创建和运行流水线。
-
-### [选择Jenkins Agent](../devops-user-guide/how-to-use/choose-jenkins-agent/)
-
-指定 Jenkins Agent 并为流水线使用内置的容器组模版。
+学习如何使用 KubeSphere 图形编辑面板创建并运行流水线。
 
 ### [凭证管理](../devops-user-guide/how-to-use/credential-management/)
 
 创建凭证以便您的流水线可以与第三方应用程序或网站进行交互。
 
-### [为依赖关系设置CI节点](../devops-user-guide/how-to-use/set-ci-node/)
+### [Jenkins 系统设置](../devops-user-guide/how-to-use/jenkins-setting/)
 
-配置专门用于持续集成（CI）的一个或一组节点从而加快流水线中的构建过程。
+了解如何自定义您的 Jenkins 设置。
 
-### [为KubeSphere流水线设置电子邮件服务器](../devops-user-guide/how-to-use/jenkins-email/)
+### [选择 Jenkins Agent](../devops-user-guide/how-to-use/choose-jenkins-agent/)
 
-设置邮件服务器以接收有关您 Jenkins 流水线的通知。
+指定 Jenkins agent 并为流水线使用内置的 podTemplate。
 
-### [Jenkins系统设置](../devops-user-guide/how-to-use/jenkins-setting/)
+### [为 KubeSphere 流水线设置电子邮件服务器](../devops-user-guide/how-to-use/jenkins-email/)
 
-了解如何自定义您的 Jenkins 配置。
+设置电子邮件服务器以接收有关您 Jenkins 流水线的通知。
 
-## 集成工具
+### [为依赖缓存设置 CI 节点](../devops-user-guide/how-to-use/set-ci-node/)
+
+配置专门用于持续集成 (CI) 的一个或一组节点从而加快流水线中的构建过程。
+
+### [流水线设置](../devops-user-guide/how-to-use/pipeline-settings/)
+
+理解 DevOps 工程中流水线的各个属性。
+
+## 工具集成
 
 ### [将 SonarQube 集成到流水线中](../devops-user-guide/how-to-integrate/sonarqube/)
+
+将 SonarQube 集成到流水线中进行代码质量分析。
+
+### [将 Harbor 集成到流水线中](../devops-user-guide/how-to-integrate/harbor/)
+
+将 Harbor 集成到流水线中并向您的 Harbor 仓库推送镜像。
+
+## 示例
+
+### [构建和部署 Go 工程](../devops-user-guide/examples/go-project-pipeline/)
+
+学习如何使用 KubeSphere 流水线构建并部署 Go 工程。
+
+### [构建和部署 Maven 工程](../devops-user-guide/examples/a-maven-project/)
+
+学习如何使用 KubeSphere 流水线构建并部署 Maven 工程。
+
+### [使用 Jenkinsfile 在多集群项目中部署应用](../devops-user-guide/examples/multi-cluster-project-example/)
+
+学习如何使用 KubeSphere 流水线基于 Jenkinsfile 在多集群项目中部署应用。
