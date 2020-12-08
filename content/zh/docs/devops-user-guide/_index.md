@@ -86,7 +86,3 @@ icon: "/images/docs/docs.svg"
 ### [使用 Jenkinsfile 在多集群项目中部署应用](../devops-user-guide/examples/multi-cluster-project-example/)
 
 学习如何使用 KubeSphere 流水线基于 Jenkinsfile 在多集群项目中部署应用。
-
-
-
-### 
