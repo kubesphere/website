@@ -4,7 +4,7 @@ description: "Help you to better manage KubeSphere projects"
 layout: "single"
 
 linkTitle: "Project Administration"
-weight: 14000
+weight: 13000
 
 icon: "/images/docs/docs.svg"
 

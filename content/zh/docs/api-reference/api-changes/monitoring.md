@@ -4,7 +4,7 @@ keywords: 'Kubernetes, KubeSphere, API, Monitoring'
 description: 'Monitoring'
 
 
-weight: 260
+weight: 17320
 ---
 
 ## API Version
@@ -13,7 +13,7 @@ The monitoring API version is bumped to `v1alpha3`.
 
 ## Time format
 
-The time format for query parameters must be in Unix timestamp, which is the number of seconds that have elapsed since the Unix epoch. Decimal is no longer allowed. The change affects the parameters `start`, `end` and `time`.
+The time format for query parameters must be in Unix timestamp, which is the number of seconds that has elapsed since the Unix epoch. Decimal is no longer allowed. The change affects the parameters `start`, `end` and `time`.
 
 ## Deprecated Metrics
 

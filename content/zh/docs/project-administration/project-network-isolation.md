@@ -4,7 +4,7 @@ keywords: 'KubeSphere, kubernetes, Calico, Network Policy'
 description: 'Project Network Isolation'
 
 linkTitle: "Project Network Isolation"
-weight: 2130
+weight: 13300
 ---
 
 KubeSphere project network isolation lets project administrators enforce which network traffic is allowed using rules.

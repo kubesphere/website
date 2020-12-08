@@ -4,7 +4,7 @@ keywords: 'Kubernetes, KubeSphere, Harbor, app-store'
 description: 'How to use built-in Harbor registry'
 
 
-weight: 2242
+weight: 14220
 ---
 From the [Introduction](../../_index) section, you know there was uncounted application could be installed by helm. [kubesphere\'s App Store](https://charts.kubesphere.io/main/) also added some popular application.
 

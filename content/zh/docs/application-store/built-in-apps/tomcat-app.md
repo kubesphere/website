@@ -4,7 +4,7 @@ keywords: 'KubeSphere, Kubernetes, Installation, Tomcat'
 description: 'How to deploy Tomcat on KubeSphere through App Store'
 
 link title: "Deploy Tomcat"
-weight: 261
+weight: 14292
 ---
 [Apache Tomcat](https://tomcat.apache.org/index.html) powers numerous large-scale, mission-critical web applications across a diverse range of industries and organizations. Tomcat provides a pure Java HTTP web server environment in which Java code can run.
 

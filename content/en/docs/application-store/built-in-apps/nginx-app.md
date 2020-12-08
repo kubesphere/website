@@ -3,7 +3,7 @@ title: "Deploy NGINX on KubeSphere"
 keywords: 'KubeSphere, Kubernetes, Installation, NGINX'
 description: 'How to deploy NGINX from the App Store of KubeSphere'
 linkTitle: "Deploy NGINX on KubeSphere"
-weight: 261
+weight: 14270
 ---
 
 [NGINX](https://www.nginx.com/) is an open-source software application for web serving, reverse proxying, caching, load balancing, media streaming, and more.

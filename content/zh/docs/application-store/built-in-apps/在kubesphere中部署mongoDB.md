@@ -4,7 +4,7 @@ keywords: 'mongodb，应用商店，OpenPitrix，Kubernetes'
 description: '使用 KubeSphere 应用商店部署 MongoDB 至 Kubernetes'
 
 
-weight: 2240
+weight: 14250
 ---
 
 本文介绍在 **kubesphere** 中通过应用商店部署 **MongoDB** 的操作步骤。

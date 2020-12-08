@@ -3,7 +3,7 @@ title: "Deploy Redis on KubeSphere"
 keywords: 'KubeSphere, Kubernetes, Installation, Redis'
 description: 'How to deploy Redis from the App Store of KubeSphere'
 linkTitle: "Deploy Redis on KubeSphere"
-weight: 261
+weight: 14291
 ---
 
 [Redis](https://redis.io/) is an open-source (BSD licensed), in-memory data structure store, used as a database, cache and message broker.

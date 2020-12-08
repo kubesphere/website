@@ -5,7 +5,7 @@ layout: "single"
 
 linkTitle: "Reference"
 
-weight: 18000
+weight: 17000
 
 icon: "/images/docs/docs.svg"
 
