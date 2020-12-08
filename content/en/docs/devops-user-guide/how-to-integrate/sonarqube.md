@@ -12,27 +12,33 @@ This tutorial demonstrates how you can integrate SonarQube into pipelines. Refer
 
 ## Prerequisites
 
-You need to [enable KubeSphere DevOps System](../../../../docs/pluggable-components/devops/).
+You need to [enable the KubeSphere DevOps System](../../../../docs/pluggable-components/devops/).
 
 ## Install SonarQube Server
 
-> Take helm3 as an example
+To integrate SonarQube into your pipeline, you must install SonarQube Server first.
 
-1. Install Helm3
+1. Install Helm first so that you can install SonarQube using the tool. For example, run the following command to install Helm 3:
 
    ```bash
    curl https://raw.githubusercontent.com/helm/helm/master/scripts/get-helm-3 | bash
    ```
 
-   View Helm version
+   View the Helm version.
 
    ```bash
    helm version
-
+   
    version.BuildInfo{Version:"v3.4.1", GitCommit:"c4e74854886b2efe3321e185578e6db9be0a6e29", GitTreeState:"clean", GoVersion:"go1.14.11"}
    ```
 
-2. Execute the following command to install SonarQube Server if it is not ready:
+   {{< notice note >}}
+
+   For more information, see [the Helm documentation](https://helm.sh/docs/intro/install/).
+
+   {{</ notice >}} 
+
+2. Execute the following command to install SonarQube Server.
 
    ```bash
    helm upgrade --install sonarqube sonarqube --repo https://charts.kubesphere.io/main -n kubesphere-devops-system  --create-namespace --set service.type=NodePort
