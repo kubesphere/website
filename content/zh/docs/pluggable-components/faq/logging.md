@@ -4,7 +4,7 @@ keywords: "Kubernetes, Elasticsearch, KubeSphere, Logging, logs"
 description: "FAQ"
 
 linkTitle: "日志系统"
-weight: 3535
+weight: 6920
 ---
 
 ## 如何将日志存储改为外部弹性搜索并关闭内部弹性搜索

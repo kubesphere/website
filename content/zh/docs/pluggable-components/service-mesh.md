@@ -4,7 +4,7 @@ keywords: "Kubernetes, istio, KubeSphere, service-mesh, microservices"
 description: "如何启用 KubeSphere 服务网格"
 
 linkTitle: "KubeSphere 服务网格"
-weight: 3540
+weight: 6800
 ---
 
 ## 什么是 KubeSphere 服务网格

@@ -4,7 +4,7 @@ keywords: "Kubernetes, KubeSphere, taints, nodes, labels, requests, limits"
 description: "Kubernetes 节点管理"
 
 linkTitle: "节点管理"
-weight: 9200
+weight: 8100
 ---
 
 Kubernetes通过将容器放入容器组中并在节点上运行来运行工作负载。节点可以是虚拟机，也可以是物理机，这取决于集群环境。每个节点都包含运行容器组所需的服务，这些服务由控制平面管理。有关节点的更多信息，请参见[Kubernetes的官方文档](https://kubernetes.io/docs/concepts/architecture/nodes/)。

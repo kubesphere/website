@@ -4,7 +4,7 @@ keywords: "Kubernetes, KubeSphere, app-store, OpenPitrix"
 description: "如何启用 KubeSphere 应用商店"
 
 linkTitle: "KubeSphere 应用商店"
-weight: 3515
+weight: 6200
 ---
 
 ## 什么是 KubeSphere 应用商店

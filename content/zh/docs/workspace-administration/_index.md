@@ -5,7 +5,7 @@ layout: "single"
 
 linkTitle: "Workspace Administration and User Guide"
 
-weight: 10000
+weight: 9000
 
 icon: "/images/docs/docs.svg"
 

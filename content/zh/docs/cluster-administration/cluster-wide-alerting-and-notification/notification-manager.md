@@ -4,7 +4,7 @@ keywords: "kubernetes, KubeSphere, notification manager, email, wechat, slack"
 description: "K8s native notification management with multi-tenancy support"
 
 linkTitle: "Notification Manager"
-weight: 9520
+weight: 8520
 ---
 
 [Notification Manager](https://github.com/kubesphere/notification-manager) manages notifications in KubeSphere. It receives alerts or notifications from different senders and then sends notifications to different users.

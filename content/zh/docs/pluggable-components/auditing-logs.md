@@ -4,7 +4,7 @@ keywords: "Kubernetes, auditing, KubeSphere, logs"
 description: "如何启用 KubeSphere 审计日志"
 
 linkTitle: "KubeSphere 审计日志"
-weight: 3525
+weight: 6700
 ---
 
 ## 什么是 KubeSphere 审计日志

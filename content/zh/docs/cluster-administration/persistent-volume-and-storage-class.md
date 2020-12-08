@@ -4,7 +4,7 @@ keywords: "storage, volume, pv, pvc, storage class, csi, Ceph RBD, Glusterfs, Qi
 description: "Persistent Volume and Storage Class Management"
 
 linkTitle: "Persistent Volume and Storage Class"
-weight: 9100
+weight: 8400
 ---
 
 This tutorial describes the basic concepts of PVs, PVCs and storage classes and demonstrates how a cluster administrator can manage storage classes and persistent volumes in KubeSphere.

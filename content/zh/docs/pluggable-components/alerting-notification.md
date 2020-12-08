@@ -4,7 +4,7 @@ keywords: "Kubernetes, alertmanager, KubeSphere, alerting, notification"
 description: "如何启用告警和通知系统"
 
 linkTitle: "KubeSphere 告警和通知"
-weight: 3545
+weight: 6600
 ---
 
 ## 什么是 KubeSphere 告警和通知系统

@@ -4,7 +4,7 @@ keywords: "Air-Gapped, kubernetes, upgrade, kubesphere, v3.0.0"
 description: "Air-Gapped Upgrade Kubernetes and KubeSphere"
 
 linkTitle: "Air-Gapped Upgrade with KubeKey"
-weight: 8400
+weight: 7400
 ---
 Air-gapped upgrade with KubeKey is recommended for users whose KubeSphere and Kubernetes were both deployed by [All-in-One Installation](https://v2-1.docs.kubesphere.io/docs/installation/all-in-one/) or [Multi-node Installation](https://v2-1.docs.kubesphere.io/docs/installation/multi-node/). If your Kubernetes cluster was provisioned by yourself or cloud providers, please refer to [Air-Gapped Upgrade with ks-installer](../air-gapped-upgrade-with-ks-installer/).
 

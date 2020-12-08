@@ -4,7 +4,7 @@ keywords: "Kubernetes, events, KubeSphere, k8s-events"
 description: "如何启用 KubeSphere 事件"
 
 linkTitle: "KubeSphere 事件系统"
-weight: 3530
+weight: 6500
 ---
 
 ## 什么是 KubeSphere 事件系统

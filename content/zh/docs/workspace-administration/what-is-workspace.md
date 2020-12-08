@@ -4,7 +4,7 @@ keywords: "Kubernetes, KubeSphere, workspace"
 description: "本教程介绍了企业空间的概念，并演示了如何创建和删除企业空间。"
 
 linkTitle: "企业空间概述"
-weight: 10100
+weight: 9100
 ---
 
 企业空间是用来管理[项目](../../project-administration/)、[DevOps 工程](../../devops-user-guide/)、[应用模板](../upload-helm-based-application/)和应用仓库的一种逻辑单元。您可以在企业空间中控制资源访问权限，也可以安全地在团队内部分享资源。

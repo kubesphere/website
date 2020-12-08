@@ -4,7 +4,7 @@ keywords: 'KubeSphere, Kubernetes, Notification, Mail Server'
 description: '邮件服务器'
 
 linkTitle: "邮件服务器"
-weight: 9630
+weight: 8630
 ---
 
 ## 目标

@@ -5,7 +5,7 @@ layout: "single"
 
 linkTitle: "启用可插拔组件"
 
-weight: 7000
+weight: 6000
 
 icon: "/images/docs/docs.svg"
 ---

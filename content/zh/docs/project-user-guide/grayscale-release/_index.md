@@ -1,6 +1,6 @@
 ---
 linkTitle: "Grayscale Release"
-weight: 2100
+weight: 10500
 
 _build:
     render: false

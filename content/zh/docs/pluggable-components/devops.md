@@ -4,7 +4,7 @@ keywords: "Kubernetes, Jenkins, KubeSphere, DevOps, cicd"
 description: "如何启用 KubeSphere DevOps 系统"
 
 linkTitle: "KubeSphere DevOps"
-weight: 3520
+weight: 6300
 ---
 
 ## 什么是 KubeSphere DevOps 系统

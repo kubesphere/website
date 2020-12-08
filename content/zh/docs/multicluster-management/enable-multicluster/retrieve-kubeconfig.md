@@ -3,7 +3,7 @@ title: "获取 KubeConfig"
 keywords: 'Kubernetes, KubeSphere, 多集群, 混合云, kubeconfig'
 description: '介绍如果获取一个 Kuberenetes 集群的 kubeconfig 信息'
 
-weight: 6230
+weight: 5230
 ---
 
 ## 前提条件

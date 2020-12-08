@@ -3,7 +3,7 @@ title: 任务
 keywords: "KubeSphere, Kubernetes, docker, jobs"
 description: "Create a Kubernetes Job"
 
-weight: 2270
+weight: 10250
 ---
 
 Job 会创建一个或者多个 Pods，并确保指定数量的 Pods 成功终止。 随着 Pods 成功结束，Job 跟踪记录成功完成的 Pods 个数。 当数量达到指定的成功个数阈值时，任务（即 Job）结束。 删除 Job 的操作会清除所创建的全部 Pods。

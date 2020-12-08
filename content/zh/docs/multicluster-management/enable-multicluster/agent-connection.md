@@ -3,7 +3,7 @@ title: "代理连接"
 keywords: 'Kubernetes, KubeSphere, 多集群, 代理连接'
 description: 'Overview'
 
-weight: 6220
+weight: 5220
 ---
 
 ## 前提条件
