@@ -4,7 +4,7 @@ keywords: 'Multi-node, Installation, KubeSphere'
 description: 'Multi-node Installation Overview'
 
 linkTitle: "多节点安装"
-weight: 4120
+weight: 3120
 ---
 
 [All-in-one](../../../quick-start/all-in-one-on-linux/) 是为新用户体验 KubeSphere 而提供的快速且简单的安装方式，在正式环境中，单节点集群因受限于资源和计算能力的不足而无法满足大多数需求，因此不建议将单节点集群用于大规模数据处理。多节点安装环境通常包括至少一个主节点和多个工作节点，如果是生产环境则需要安装主节点高可用的方式。

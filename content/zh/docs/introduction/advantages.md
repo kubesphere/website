@@ -3,7 +3,7 @@ title: "Advantages"
 keywords: "KubeSphere, Kubernetes, Advantages"
 description: "KubeSphere Advantages"
 
-weight: 2400
+weight: 1400
 ---
 
 ## Vision

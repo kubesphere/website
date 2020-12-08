@@ -5,7 +5,7 @@ layout: "single"
 
 linkTitle: "快速入门"
 
-weight: 3000
+weight: 2000
 
 icon: "/images/docs/docs.svg"
 

@@ -4,7 +4,7 @@ keywords: 'kubernetes, kubesphere, faq'
 description: 'FAQ'
 
 
-weight: 5510
+weight: 4510
 ---
 
 TBD

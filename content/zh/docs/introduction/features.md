@@ -4,7 +4,7 @@ keywords: "KubeSphere, Kubernetes, Docker, Jenkins, Istio, Features, 平台功�
 description: "KubeSphere 平台功能"
 
 linkTitle: "平台功能"
-weight: 2200
+weight: 1200
 ---
 
 ## 概览

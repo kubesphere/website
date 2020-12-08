@@ -4,7 +4,7 @@ keywords: 'kubesphere, kubernetes, docker, 多租户'
 description: '部署一个 Bookinfo 应用'
 
 linkTitle: "部署 Bookinfo 和管理流量"
-weight: 3400
+weight: 2400
 ---
 
 [Istio](https://istio.io/)，作为一种开源服务网格解决方案，为微服务提供了强大的流量管理功能。以下是 [Istio](https://istio.io/latest/zh/docs/concepts/traffic-management/) 官方网站上关于流量管理的简介：

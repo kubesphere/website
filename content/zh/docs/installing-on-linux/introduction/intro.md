@@ -4,7 +4,7 @@ keywords: 'Kubernetes, KubeSphere, Linux, Installation'
 description: '介绍在 Linux 上安装 KubeSphere 的各种方式'
 
 linkTitle: "概述"
-weight: 4110
+weight: 3110
 ---
 
 对于在 Linux 上的安装，KubeSphere 既可以安装在云中也可以安装在本地环境中，例如 AWS EC2，Azure VM 和裸机。用户可以在 Linux 主机上安装全新的 Kubernetes 和 KubeSphere 集群，安装过程简单而友好。同时，KubeSphere 不仅提供在线安装工具即 [KubeKey](https://github.com/kubesphere/kubekey)，而且还为无法访问 Internet 的环境提供了离线的安装解决方案。

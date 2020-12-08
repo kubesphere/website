@@ -4,7 +4,7 @@ keywords: 'KubeSphere, Kubernetes, app, WordPress'
 description: '创建 WordPress 应用并发布至 Kubernetes'
 
 linkTitle: "创建并发布 WordPress"
-weight: 3500
+weight: 2500
 ---
 
 ## WordPress 简介
