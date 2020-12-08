@@ -40,7 +40,7 @@ weight: 9400
 
 1. 在**企业角色**中，点击 `workspace-admin` 就可以查看如下所示的角色详情。
 
-![企业成员详情](/images/docs/zh-cn/workspace-administration-and-user-guide/role-and-member-management/workspace-role-detail.PNG)
+   ![企业成员详情](/images/docs/zh-cn/workspace-administration-and-user-guide/role-and-member-management/workspace-role-detail.PNG)
 
 2. 您可以切换到**授权用户**标签页，查看被授予 `workspace-admin` 角色的所有用户。
 
@@ -48,46 +48,46 @@ weight: 9400
 
 1. 以 `ws-admin` 身份登录控制台，转到**企业空间设置**下的**企业角色**。
 
-{{< notice note >}}
+   {{< notice note >}}
 
-此处使用 `ws-admin` 账户作为示例。只要账户在企业空间层级被授予的角色拥有**访问控制**下的**成员查看**、**角色查看**以及**角色管理**权限，您就可以使用该账户创建企业角色。
+此处使用 `ws-admin` 帐户作为示例。只要帐户在企业空间层级被授予的角色拥有**访问控制**下的**成员查看**、**角色查看**以及**角色管理**权限，您就可以使用该帐户创建企业角色。
 
-{{</ notice >}} 
+   {{</ notice >}} 
 
 2. 在**企业角色**中，点击**创建**并设置**角色标识符**。本示例将创建一个名为 `workspace-projects-admin` 的角色。点击**编辑权限**继续。
 
-![创建企业角色步骤一](/images/docs/zh-cn/workspace-administration-and-user-guide/role-and-member-management/workspace-role-create-step1.PNG)
+   ![创建企业角色步骤一](/images/docs/zh-cn/workspace-administration-and-user-guide/role-and-member-management/workspace-role-create-step1.PNG)
 
 3. 在**项目管理**中，选择该角色所包含的权限。本示例中，为该角色选择了**项目创建**、**项目管理**和**项目查看**。点击**确定**完成操作。
 
-![编辑权限](/images/docs/zh-cn/workspace-administration-and-user-guide/role-and-member-management/workspace-role-create-step2.PNG)
+   ![编辑权限](/images/docs/zh-cn/workspace-administration-and-user-guide/role-and-member-management/workspace-role-create-step2.PNG)
 
-{{< notice note >}} 
+   {{< notice note >}} 
 
 **依赖于**意味着当前授权项依赖列出的授权项，系统会自动选上该依赖项。
 
-{{</ notice >}} 
+   {{</ notice >}} 
 
 4. 新创建的角色将在**企业角色**中列出。您可以点击右侧的三个点对其进行编辑。
 
-![编辑角色](/images/docs/zh-cn/workspace-administration-and-user-guide/role-and-member-management/workspace-role-edit.PNG)
+   ![编辑角色](/images/docs/zh-cn/workspace-administration-and-user-guide/role-and-member-management/workspace-role-edit.PNG)
 
-{{< notice note >}} 
+   {{< notice note >}} 
 
 本示例中仅为 `workspace-projects-admin` 角色授予了**项目创建**、**项目管理**和**项目查看**权限用作演示。如果您有更多需求，可以按需创建自定义角色。
 
-{{</ notice >}} 
+   {{</ notice >}} 
 
 ## 邀请新成员
 
 1. 在**企业空间设置**中，转到**企业成员**，再点击**邀请成员**。
 2. 邀请一名成员加入企业空间，并为其授予 `workspace-projects-admin` 角色。
 
-![邀请成员](/images/docs/zh-cn/workspace-administration-and-user-guide/role-and-member-management/workspace-invite-user.PNG)
+   ![邀请成员](/images/docs/zh-cn/workspace-administration-and-user-guide/role-and-member-management/workspace-invite-user.PNG)
 
 
 3. 将成员加入企业空间后，点击**确定**。您可以在**企业成员**列表中查看新邀请的成员。
 4. 您也可以编辑现有成员以更改其角色或将其从企业空间中移除。
 
-![编辑成员角色](/images/docs/zh-cn/workspace-administration-and-user-guide/role-and-member-management/workspace-user-edit.PNG)
+   ![编辑成员角色](/images/docs/zh-cn/workspace-administration-and-user-guide/role-and-member-management/workspace-user-edit.PNG)
 
