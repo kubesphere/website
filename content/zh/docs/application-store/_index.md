@@ -5,7 +5,7 @@ layout: "single"
 
 
 linkTitle: "应用商店"
-weight: 15000
+weight: 14000
 
 icon: "/images/docs/docs.svg"
 

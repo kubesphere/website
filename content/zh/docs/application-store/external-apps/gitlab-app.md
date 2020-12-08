@@ -4,7 +4,7 @@ keywords: 'kubernetes, kubesphere, gitlab, app-store'
 description: 'How to deploy GitLab'
 
 
-weight: 2240
+weight: 14310
 ---
 
 ## Objective

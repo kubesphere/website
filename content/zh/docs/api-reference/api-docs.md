@@ -4,20 +4,22 @@ keywords: 'Kubernetes, KubeSphere, API'
 description: 'KubeSphere API documentation'
 
 
-weight: 240
+weight: 17100
 ---
 
 In KubeSphere v3.0, we move the functionalities of _ks-apigateway_, _ks-account_ into _ks-apiserver_ to make the architecture more compact and straight forward. In order to use KubeSphere API, you need to expose _ks-apiserver_ to your client.
 
-## Expose KubeSphere API service
-If you are going to access KubeSphere inside the cluster, you can skip the following section and just using the KubeSphere API server endpoint **`http://ks-apiserver.kubesphere-system.svc`**. 
+## Step 1: Expose KubeSphere API service
 
-But if not, you need to expose the KubeSphere API server endpoint to the outside of the cluster first.
+If you are going to access KubeSphere inside the cluster, you can skip the following section and just use the KubeSphere API server endpoint **`http://ks-apiserver.kubesphere-system.svc`**.
 
-There are many ways to expose a Kubernetes service, for simplicity, we use _NodePort_ in our case. Change service `ks-apiserver` type to NodePort by using following command, and then you are done.
+On the other hand, you need to expose the KubeSphere API server endpoint to the outside of the cluster first.
+
+There are many ways to expose a Kubernetes service. For simplicity, we use _NodePort_ in our case. Change service `ks-apiserver` type to NodePort by using the following command.
+
 ```bash
-root@master:~# kubectl -n kubesphere-system patch service ks-apiserver -p '{"spec":{"type":"NodePort"}}'
-root@master:~# kubectl -n kubesphere-system get svc
+$ kubectl -n kubesphere-system patch service ks-apiserver -p '{"spec":{"type":"NodePort"}}'
+$ kubectl -n kubesphere-system get svc
 NAME            TYPE           CLUSTER-IP      EXTERNAL-IP      PORT(S)              AGE
 etcd            ClusterIP      10.233.34.220   <none>           2379/TCP             44d
 ks-apiserver    NodePort       10.233.15.31    <none>           80:31407/TCP         49d
@@ -26,18 +28,26 @@ ks-console      NodePort       10.233.3.45     <none>           80:30880/TCP    
 
 Now, you can access `ks-apiserver` outside the cluster through URL like `http://[node ip]:31407`, where `[node ip]` means IP of any node in your cluster.
 
-## Generate a token
-There is one more thing to do before calling the API, authorization. Any clients that talk to the KubeSphere API server need to identify themselves first, only after successful authorization will the server respond to the call.
+## Step 2: Generate a token
 
-Let's say now a user `jeff` with password `P#$$w0rd` want to generate a token. He/She can issue a request like the following:
+You need to identify yourself before making any call to the API server. Let's take a user `jeff` with password `P#$$w0rd` as an example. He needs to issue a request to generate a token like the following:
+
 ```bash
-root@master:~# curl -X POST -H 'Content-Type: application/x-www-form-urlencoded' \
+curl -X POST -H 'Content-Type: application/x-www-form-urlencoded' \
  'http://[node ip]:31407/oauth/token' \
   --data-urlencode 'grant_type=password' \
   --data-urlencode 'username=admin' \
   --data-urlencode 'password=P#$$w0rd'
-``` 
-If the identity is correct, the server will response something like the following. `access_token` is the token what we need to access the KubeSphere API Server.
+```
+
+{{< notice note >}}
+
+Please substitue `[node ip]` with the real ip address.
+
+{{</ notice >}}
+
+If the identity is correct, the server will response something like the following. `access_token` is the token to access the KubeSphere API Server.
+
 ```json
 {
  "access_token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImFkbWluIiwidWlkIjoiYTlhNjJmOTEtYWQ2Yi00MjRlLWIxNWEtZTFkOTcyNmUzNDFhIiwidG9rZW5fdHlwZSI6ImFjY2Vzc190b2tlbiIsImV4cCI6MTYwMDg1MjM5OCwiaWF0IjoxNjAwODQ1MTk4LCJpc3MiOiJrdWJlc3BoZXJlIiwibmJmIjoxNjAwODQ1MTk4fQ.Hcyf-CPMeq8XyQQLz5PO-oE1Rp1QVkOeV_5J2oX1hvU",
@@ -46,15 +56,15 @@ If the identity is correct, the server will response something like the followin
  "expires_in": 7200
 }
 ```
-> **Note**: Please substitue `[node ip]:31407` with the real ip address. 
 
-## Make the call
+## Step 3: Make the call
 
-Now you got everything you need to access api server, make the call using the access token just acquire :
+Now you got everything you need to access KubeSphere API server. Make the call using the access token acquired above as the following to get node list:
+
 ```bash
-root@master1:~# curl -X GET -H "Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImFkbWluIiwidWlkIjoiYTlhNjJmOTEtYWQ2Yi00MjRlLWIxNWEtZTFkOTcyNmUzNDFhIiwidG9rZW5fdHlwZSI6ImFjY2Vzc190b2tlbiIsImV4cCI6MTYwMDg1MjM5OCwiaWF0IjoxNjAwODQ1MTk4LCJpc3MiOiJrdWJlc3BoZXJlIiwibmJmIjoxNjAwODQ1MTk4fQ.Hcyf-CPMeq8XyQQLz5PO-oE1Rp1QVkOeV_5J2oX1hvU" \
+$ curl -X GET -H "Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImFkbWluIiwidWlkIjoiYTlhNjJmOTEtYWQ2Yi00MjRlLWIxNWEtZTFkOTcyNmUzNDFhIiwidG9rZW5fdHlwZSI6ImFjY2Vzc190b2tlbiIsImV4cCI6MTYwMDg1MjM5OCwiaWF0IjoxNjAwODQ1MTk4LCJpc3MiOiJrdWJlc3BoZXJlIiwibmJmIjoxNjAwODQ1MTk4fQ.Hcyf-CPMeq8XyQQLz5PO-oE1Rp1QVkOeV_5J2oX1hvU" \
   -H 'Content-Type: application/json' \
-  'http://10.233.15.31/kapis/resources.kubesphere.io/v1alpha3/nodes'
+  'http://[node ip]:31407/kapis/resources.kubesphere.io/v1alpha3/nodes'
 
 {
  "items": [
@@ -86,8 +96,15 @@ root@master1:~# curl -X GET -H "Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cC
      ....
 ```
 
-## API Reference
-KubeSpehre API swagger json can be found in repo https://github.com/kubesphere/kubesphere/blob/master/api/
+{{< notice note >}}
 
-- KubeSphere specified API [swagger json](https://github.com/kubesphere/kubesphere/blob/master/api/ks-openapi-spec/swagger.json). It contains all the API that only applied to KubeSphere.
-- KubeSphere specified CRD [swagger json](https://github.com/kubesphere/kubesphere/blob/master/api/openapi-spec/swagger.json). Contains all the generated CRD api documentation, it's same with Kubernetes api objects.
+Please substitue `[node ip]` with the real ip address.
+
+{{</ notice >}}
+
+## API Reference
+
+KubeSpehre API swagger json can be found in repo https://github.com/kubesphere/kubesphere/tree/release-3.0/api
+
+- KubeSphere specified API [swagger json](https://github.com/kubesphere/kubesphere/blob/release-3.0/api/ks-openapi-spec/swagger.json). It contains all the APIs that are only applied to KubeSphere.
+- KubeSphere specified CRD [swagger json](https://github.com/kubesphere/kubesphere/blob/release-3.0/api/openapi-spec/swagger.json). It contains all the generated CRDs API documentation. It is same with Kubernetes api objects.

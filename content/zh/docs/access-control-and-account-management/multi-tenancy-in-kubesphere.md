@@ -4,7 +4,7 @@ keywords: "kubernetes, kubesphere, multi-tenancy"
 description: "Multi-tenancy in KubeSphere"
 
 linkTitle: "KubeSphere中的多租户"
-weight: 2230
+weight: 12100
 ---
 
 

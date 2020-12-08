@@ -1,9 +1,9 @@
 ---
 title: "应用程序生命周期管理"
-keywords: 'Kubernetes, KubeSphere, app-store'
-description: 'App Lifecycle Management'
+keywords: 'Kubernetes, KubeSphere, 应用商店'
+description: '应用程序生命周期管理'
 linkTitle: '应用程序生命周期管理'
-weight: 2240
+weight: 14100
 ---
 
 KubeSphere integrates [OpenPitrix](https://github.com/openpitrix/openpitrix), an open-source multi-cloud application management platform, to set up the App Store, managing applications throughout their entire lifecycle. The App Store supports two kinds of application deployment:

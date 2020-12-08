@@ -4,7 +4,7 @@ keywords: 'KubeSphere, Kubernetes, kubectl, cli'
 description: 'Use kubectl from toolbox'
 
 linkTitle: "Web Kubectl"
-weight: 5515
+weight: 15400
 ---
 
 The Kubernetes command-line tool, kubectl, allows you to run commands on Kubernetes clusters. You can use kubectl to deploy applications, inspect and manage cluster resources, and view logs.
