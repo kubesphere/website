@@ -4,7 +4,7 @@ keywords: "LDAP, identity provider"
 description: "How to configure identity provider"
 
 linkTitle: "Configure Authentication"
-weight: 12100
+weight: 12200
 ---
 
 ## Objective
