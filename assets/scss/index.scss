@@ -1039,6 +1039,49 @@
   }
 }
 
+.meet-div {
+  z-index: 100;
+  position: fixed;
+  right: 32px;
+  bottom: 32px;
+  width: 320px;
+  padding-top: 44px;
+  border-radius: 4px;
+  box-shadow: 0 8px 16px 0 rgba(36, 46, 66, 0.4);
+  border: solid 1px #d1d7df;
+  background-color: #ffffff;
+  text-align: center;
+  cursor: pointer;
+  background-image: url('/images/home/group-20.svg');
+
+  .close {
+    position: absolute;
+    top: 8px;
+    right: 8px;
+    cursor: pointer;
+  }
+
+  .img-2 {
+    margin-top: 22px;
+  }
+
+  p {
+    margin: 20px 0;
+  }
+
+  .img-3 {
+    display: block;
+    width: 80px;
+    height: 80px;
+    margin: 0 auto;
+  }
+
+  .img-4 {
+    margin-top: 24px;
+    margin-bottom: 29px;
+  }
+}
+
 footer {
   background: #ffffff;
 
