@@ -1,85 +1,86 @@
 ---
-title: "Role and Member Management"
+title: "角色和成员管理"
 keywords: 'Kubernetes, KubeSphere, DevOps, role, member'
-description: 'Role and Member Management'
-linkTitle: "Role and Member Management"
+description: '角色和成员管理'
+linkTitle: "角色和成员管理"
 weight: 11130
 ---
 
-This guide demonstrates how to manage roles and members in your DevOps project. For more information about KubeSphere roles, see Overview of Role Management.
+本教程演示了如何在 DevOps 工程中管理角色和成员。 有关 KubeSphere 角色的更多信息，请参见角色管理概述。
 
-In DevOps project scope, you can grant the following resources' permissions to a role:
+在 DevOps 工程范围内，您可以向角色授予以下资源的权限：
 
-- Pipelines
-- Credentials
-- DevOps Settings
-- Access Control
+- 流水线
+- 凭证
+- DevOps 配置
+- 访问控制
 
-## Prerequisites
+## 先决条件
 
-At least one DevOps project has been created, such as `demo-devops`. Besides, you need an account of the `admin` role (e.g. `devops-admin`) at the DevOps project level. 
+至少已创建一个 DevOps 工程，例如 `demo-devops`。 此外，您需要在 DevOps 工程级别具有管理员角色的帐户（例如 `devops-admin`）。
 
-## Built-in Roles
+## 内置角色
 
-In **Project Roles**, there are three available built-in roles as shown below. Built-in roles are created automatically by KubeSphere when a DevOps project is created and they cannot be edited or deleted.
+在**工程角色**中，有三个可用的内置角色，如下所示。 内置角色是在创建 DevOps 工程时由 KubeSphere 自动创建的，并且无法对其进行编辑或删除。
 
-| Built-in Roles     | Description                                                  |
+| 内置角色     | 描述信息                                                  |
 | ------------------ | ------------------------------------------------------------ |
-| viewer | The viewer who can view all resources in the DevOps project. |
-| operator   | The normal member in a DevOps project who can create pipelines and credentials in the DevOps project. |
-| admin     | The administrator in the DevOps project who can perform any action on any resource. It gives full control over all resources in the DevOps project. |
+| viewer | DevOps 工程观察者，可以查看 DevOps 工程下所有的资源。 |
+| operator   | DevOps 工程普通成员，可以在 DevOps 工程下创建流水线凭证等。 |
+| admin     | DevOps 工程管理员，可以管理 DevOps 工程下所有的资源。 |
 
-## Create a DevOps Project Role
+## 创建一个 DevOps 工程角色
 
-1. Log in the console as `devops-admin` and select a DevOps project (e.g. `demo-devops`) under **DevOps Projects** list.
+1. 以 `devops-admin` 身份登录控制台，然后在 **DevOps 工程**列表下选择一个 DevOps 项目（例如 `demo-devops`）。
 
    {{< notice note >}}
 
-   The account `devops-admin` is used as an example. As long as the account you are using is granted a role including the authorization of **Project Members View**, **Project Roles Management** and **Project Roles View** in **Access Control** at DevOps project level, it can create a DevOps project role.
+   以 `devops-admin` 帐户为例。只要您使用的帐户被授予了一个角色，包括在DevOps工程级别访问控制中的**工程观察者**、**工程管理员**和**工程维护者**的授权，它就可以创建 DevOps 项目角色。
 
-   {{</ notice >}} 
+   {{</ notice >}}
 
-2. Go to **Project Roles** in **Project Management**, click **Create** and set a **Role Identifier**. In this example, a role named `pipeline-creator` will be created. Click **Edit Authorization** to continue.
+2. 转到**工程管理**中的**工程角色**，单击**创建**并设置**角色标识符**。 在此示例中，将创建一个名为 `pipeline-creator` 的角色。 单击**编辑权限**继续。
 
-   ![Create a devops project role](/images/docs/devops-admin/devops_role_step1.png)
+   ![Create a devops project role](/images/docs/devops-admin-zh/devops_role_step1.png)
 
-3. In **Pipelines Management**, select the authorization that you want the user granted this role to have. For example, **Pipelines Management** and **Pipelines View** are selected for this role. Click **OK** to finish.
+3. 在**流水线管理**中，选择您希望授予该角色用户所拥有的权限。 例如，为此角色选择了**流水线管理**和**流水线查看**。 单击**确定**完成。
 
-   ![Edit Authorization](/images/docs/devops-admin/devops_role_step2.png)
+   ![Edit Authorization](/images/docs/devops-admin-zh/devops_role_step2.png)
 
-   {{< notice note >}} 
+   {{< notice note >}}
 
-   **Depend on** means the major authorization (the one listed after **Depend on**) needs to be selected first so that the affiliated authorization can be assigned.
+   **依赖于**表示首先需要选择主要授权（**依赖于**之后列出的），以便可以分配关联授权。
 
-   {{</ notice >}} 
+   {{</ notice >}}
 
-4. Newly-created roles will be listed in **Project Roles**. You can click the three dots on the right to edit it.
+4. 新创建的角色将列在**工程角色**中。 您可以单击右侧的三个点对其进行编辑。
 
-   ![Edit Roles](/images/docs/devops-admin/devops_role_list.png)
+   ![Edit Roles](/images/docs/devops-admin-zh/devops_role_list.png)
 
-   {{< notice note >}} 
+   {{< notice note >}}
 
-   The role of `pipeline-creator` is only granted **Pipelines Management** and **Pipelines View**, which may not satisfy your need. This example is only for demonstration purpose. You can create customized roles based on your needs.
+  仅授予 `pipeline-creator` 角色流水线管理和查看权限可能无法满足您的实际需求。本示例仅用于演示目的。您可以根据实际需要自定义角色权限。
 
-   {{</ notice >}} 
+   {{</ notice >}}
 
-## Invite a New Member
+## 邀请新成员
 
-1. In **Project Management**, select **Project Members** and click **Invite Member**.
+1. 在**工程管理**中选择**工程成员**，然后单击**邀请成员**。
 
-2. Invite a user to the DevOps project. Grant the role of `pipeline-creator` to the user. 
+2. 邀请用户加入 DevOps 项目。向用户授予 `pipeline-creator` 的角色。
 
-   ![invite member](/images/docs/devops-admin/devops_invite_member.png)
+   ![invite member](/images/docs/devops-admin-zh/devops_invite_member.png)
 
-   {{< notice note >}} 
+   {{< notice note >}}
 
-   The user must be invited to the DevOps project's workspace first.
+   首先必须先邀请用户加入 DevOps 工程所在的企业空间。
 
-   {{</ notice >}} 
+   {{</ notice >}}
 
-3. After you add a user to the DevOps project, click **OK**. In **Project Members**, you can see the newly invited member listed.
+3. 将用户添加到 DevOps 工程后，单击**确定**。 在**工程成员**中，您可以看到列出了新邀请的成员。
 
-4. You can also change the role of an existing member by editing it or remove it from the DevOps project.
+    ![list member](/images/docs/devops-admin-zh/devops_list_member.png)
 
-   ![edit member role](/images/docs/devops-admin/devops_user_edit.png)
+4. 您还可以通过编辑现有成员或从 DevOps 工程中将其删除来更改其角色。
 
+   ![edit member role](/images/docs/devops-admin-zh/devops_user_edit.png)
