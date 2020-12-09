@@ -84,7 +84,7 @@ KubeSphere 的多租户系统分三个层级，即**群集**、**企业空间**�
 
 在此任务中，您需要使用上一个任务中创建的帐户`ws-manager`创建一个企业空间。作为项目，DevOps 项目和组织成员的基本管理逻辑单元，企业空间是 KubeSphere 多租户系统的基础。
 
-1. 以`ws-manager`身份登录 KubeSphere，它具有管理平台上所有企业空间的权限。点击左上角的**平台管理**。在**企业空间**中，可以看到仅列出了一个默认企业空间**system-workspace**，这是一个系统空间，其中运行与系统相关的组件和服务，您不允许删除该企业空间。
+1. 以`ws-manager`身份登录 KubeSphere，它具有管理平台上所有企业空间的权限。点击左上角的**平台管理**，选择**访问控制**。在**企业空间**中，可以看到仅列出了一个默认企业空间**system-workspace**，这是一个系统空间，其中运行与系统相关的组件和服务，您不允许删除该企业空间。
 
    ![create-workspace](https://ap3.qingstor.com/kubesphere-website/docs/create-workspace.jpg)
 

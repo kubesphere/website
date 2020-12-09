@@ -43,7 +43,7 @@ In **Project Roles**, there are three available built-in roles as shown below. B
 
    ![Create a devops project role](/images/docs/devops-admin/devops_role_step1.png)
 
-3. In **Pipelines Management**, select the authorization that you want the user granted this role to have. For example, **Pipelines Management** and **Pipelines View** are selected for this role. Click **OK** to finish.
+3. In **Pipelines Management**, select the authorization that you want this role to contain. For example, **Pipelines Management** and **Pipelines View** are selected for this role. Click **OK** to finish.
 
    ![Edit Authorization](/images/docs/devops-admin/devops_role_step2.png)
 

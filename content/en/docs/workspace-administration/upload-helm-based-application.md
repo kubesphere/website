@@ -6,7 +6,7 @@ linkTitle: "Upload Helm-based Applications"
 weight: 9200
 ---
 
-KubeSphere provides full lifecycle management for applications. Among others, workspace administrators can upload or create new app templates and test them quickly. Furthermore, they publish well-tested apps to [App Store](../../application-store/) so that other users can deploy them with one click. To develop app templates, workspace administrators need to upload packaged [Helm charts](https://helm.sh/) to KubeSphere first.
+KubeSphere provides full lifecycle management for applications. Among other things, workspace administrators can upload or create new app templates and test them quickly. Furthermore, they publish well-tested apps to [App Store](../../application-store/) so that other users can deploy them with one click. To develop app templates, workspace administrators need to upload packaged [Helm charts](https://helm.sh/) to KubeSphere first.
 
 This tutorial demonstrates how to develop an app template by uploading a packaged Helm chart.
 
@@ -47,4 +47,4 @@ Maximum accepted resolutions of the app icon: 96 x 96 pixels.
 
     ![version-page](/images/docs/workspace-administration/upload-helm-based-application/version-page.jpg)
 
-7. For more information about how to release your app to the App Store, refer to [Application Lifecycle Management](../../application-store/app-lifecycle-management/#step-2-upload-and-submit-application) once you have fully tested it.
+7. For more information about how to release your app to the App Store, refer to [Application Lifecycle Management](../../application-store/app-lifecycle-management/#step-2-upload-and-submit-application).

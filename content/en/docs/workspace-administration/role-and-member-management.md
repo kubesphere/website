@@ -58,7 +58,7 @@ In **Workspace Roles**, there are four available built-in roles as shown below. 
 
    ![workspace_role_create_step1](/images/docs/workspace-administration/role-and-member-management/workspace_role_create_step1.png)
 
-3. In **Projects management**, select the authorization that you want the user granted this role to have. For example, **Projects Create**, **Projects Management**, and **Projects View** are selected for this role. Click **OK** to finish.
+3. In **Projects management**, select the authorization that you want this role to contain. For example, **Projects Create**, **Projects Management**, and **Projects View** are selected for this role. Click **OK** to finish.
 
    ![workspace_role_create_step2](/images/docs/workspace-administration/role-and-member-management/workspace_role_create_step2.png)
 
