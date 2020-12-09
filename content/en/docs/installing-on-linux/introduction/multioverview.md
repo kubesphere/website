@@ -181,7 +181,7 @@ Here are some examples for your reference:
 
 ### 2. Edit the configuration file
 
-A default file **config-sample.yaml** will be created if you do not change the name. Edit the file and here is an example of the configuration file of a multi-node cluster with one master node.
+A default file `config-sample.yaml` will be created if you do not change the name. Edit the file and here is an example of the configuration file of a multi-node cluster with one master node.
 
 {{< notice note >}}
 
@@ -211,7 +211,15 @@ spec:
 
 #### Hosts
 
-- List all your machines under `hosts` and add their detailed information as above. In this case, port 22 is the default port of SSH. Otherwise, you need to add the port number after the IP address. For example:
+List all your machines under `hosts` and add their detailed information as above.
+
+`name`: The hostname of the instance.
+
+`address`: The IP address you use for the connection between the taskbox and other instances through SSH. This can be either the public IP address or the private IP address depending on your environment. For example, some cloud platforms provide every instance with a public IP address which you use to access instances through SSH. In this case, you can input the public IP address for this field.
+
+`internalAddress`: The private IP address of the instance.
+
+- In this tutorial, port 22 is the default port of SSH so you do not need to add it in the yaml file. Otherwise, you need to add the port number after the IP address. For example:
 
   ```yaml
   hosts:
@@ -231,6 +239,12 @@ spec:
   hosts:
     - {name: master, address: 192.168.0.2, internalAddress: 192.168.0.2, privateKeyPath: "~/.ssh/id_rsa"}
   ```
+
+{{< notice tip >}} 
+
+Before you install KubeSphere, you can use the information provided under `hosts` (for example, IP addresses and passwords) to test the network connection between the taskbox and other instances using SSH.
+
+{{</ notice >}}
 
 #### roleGroups
 
