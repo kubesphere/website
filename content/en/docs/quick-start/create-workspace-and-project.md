@@ -88,7 +88,7 @@ To log out, click your username in the top-right corner and select **Log Out**.
 
 In this task, you need to create a workspace using the account `ws-manager` created in the previous task. As the basic logic unit for the management of projects, DevOps projects and organization members, workspaces underpin multi-tenant system of KubeSphere.
 
-1. Log in KubeSphere as `ws-manager` which has the authorization to manage all workspaces on the platform. Click **Platform** in the top-left corner. In **Workspaces**, you can see there is only one default workspace **system-workspace** listed, where system-related components and services run. You are not allowed to delete this workspace.
+1. Log in KubeSphere as `ws-manager` which has the authorization to manage all workspaces on the platform. Click **Platform** in the top-left corner and select **Access Control**. In **Workspaces**, you can see there is only one default workspace **system-workspace** listed, where system-related components and services run. You are not allowed to delete this workspace.
 
    ![create-workspace](https://ap3.qingstor.com/kubesphere-website/docs/create-workspace.jpg)
 
@@ -180,7 +180,7 @@ It is recommended you enter a description for the role as it explains what the r
 
    Click **Edit Authorization** to continue.
 
-3. In **Access Control**, select the authorization that you want the user granted this role to have. For example, **Users View**, **Roles Management** and **Roles View** are selected for this role. Click **OK** to finish.
+3. In **Access Control**, select the authorization that you want this role to contain. For example, **Users View**, **Roles Management** and **Roles View** are selected for this role. Click **OK** to finish.
 
    ![edit-authorization](https://ap3.qingstor.com/kubesphere-website/docs/20200827153651.png)
 

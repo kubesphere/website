@@ -52,7 +52,7 @@ The account `project-admin` is used as an example. As long as the account you ar
 
     ![Create a project role](/images/docs/project-admin/project_role_create_step1.png)
 
-3. Select the authorization that you want the user granted this role to have. For example, **Application Workloads View** in **Application Workloads**, and **Alerting Messages View** and **Alerting Policies View** in **Monitoring & Alerting** are selected for this role. Click **OK** to finish.
+3. Select the authorization that you want this role to contain. For example, **Application Workloads View** in **Application Workloads**, and **Alerting Messages View** and **Alerting Policies View** in **Monitoring & Alerting** are selected for this role. Click **OK** to finish.
 
     ![Edit Authorization](/images/docs/project-admin/project_role_create_step2.png)
 
