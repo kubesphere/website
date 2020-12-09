@@ -38,7 +38,7 @@ You need to create credentials in KubeSphere for the access token created so tha
 
    ![create-dockerhub-id](/images/docs/devops-user-guide/examples/compile-and-deploy-a-go-project/create-dockerhub-id.jpg)
 
-2. In the dialogue that appears, set a **Credential ID**, which will be used later in the Jenkinsfile, and select **Account Credentials** for **Type**. Enter your Docker Hub account name for **Username** and the access token just created for **Token/Password**. When you finish, click **OK**.
+2. In the dialog that appears, set a **Credential ID**, which will be used later in the Jenkinsfile, and select **Account Credentials** for **Type**. Enter your Docker Hub account name for **Username** and the access token just created for **Token/Password**. When you finish, click **OK**.
 
    ![credential-docker-create](/images/docs/devops-user-guide/examples/compile-and-deploy-a-go-project/credential-docker-create.jpg)
 

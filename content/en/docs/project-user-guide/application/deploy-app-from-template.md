@@ -24,7 +24,7 @@ This tutorial demonstrates how to quickly deploy [Grafana](https://grafana.com/)
 
    ![add-app-repo](/images/docs/project-user-guide/applications/deploy-apps-from-app-templates/add-app-repo.jpg)
 
-2. In the dialogue that appears, enter `test-repo` for the app repository name and `https://helm-chart-repo.pek3a.qingstor.com/kubernetes-charts/` for the repository URL. Click **Validate** to verify the URL and click **OK** to continue.
+2. In the dialog that appears, enter `test-repo` for the app repository name and `https://helm-chart-repo.pek3a.qingstor.com/kubernetes-charts/` for the repository URL. Click **Validate** to verify the URL and click **OK** to continue.
 
    ![input-repo-info](/images/docs/project-user-guide/applications/deploy-apps-from-app-templates/input-repo-info.jpg)
 
@@ -44,7 +44,7 @@ This tutorial demonstrates how to quickly deploy [Grafana](https://grafana.com/)
 
    ![create-new-app](/images/docs/project-user-guide/applications/deploy-apps-from-app-templates/create-new-app.jpg)
 
-2. Select **From App Templates** from the pop-up dialogue.
+2. Select **From App Templates** from the pop-up dialog.
 
    ![select-app-templates](/images/docs/project-user-guide/applications/deploy-apps-from-app-templates/select-app-templates.jpg)
 

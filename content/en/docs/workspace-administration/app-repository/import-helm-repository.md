@@ -25,7 +25,7 @@ This tutorial demonstrates how to add an app repository to KubeSphere.
 
     ![app-repo](/images/docs/workspace-administration/app-repository/import-helm-repository/app-repo.jpg)
 
-2. In the dialogue that appears, specify an app repository name and add your repository URL. For example, enter `https://charts.kubesphere.io/main`.
+2. In the dialog that appears, specify an app repository name and add your repository URL. For example, enter `https://charts.kubesphere.io/main`.
 
     ![app-info-dialogue](/images/docs/workspace-administration/app-repository/import-helm-repository/app-info-dialogue.jpg)
 

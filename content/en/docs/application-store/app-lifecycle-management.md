@@ -66,7 +66,7 @@ You need to create two accounts first, one for ISVs (`isv`) and the other (`revi
 
    {{</ notice >}} 
 
-2. In the dialogue that appears, click **Upload Helm Chart Package** to upload the chart file. Click **OK** to continue.
+2. In the dialog that appears, click **Upload Helm Chart Package** to upload the chart file. Click **OK** to continue.
 
    ![upload-template](/images/docs/appstore/application-lifecycle-management/upload-template.jpg)
 
@@ -179,7 +179,7 @@ After the app is approved, `isv` can release the Redis application to the App St
 
    ![app-category](/images/docs/appstore/application-lifecycle-management/app-category.jpg)
 
-2. Set a name and icon for the category in the dialogue, then click **OK**. For Redis, you can input `Database` for the field **Category Name**.
+2. Set a name and icon for the category in the dialog, then click **OK**. For Redis, you can input `Database` for the field **Category Name**.
 
    ![set-app-type](/images/docs/appstore/application-lifecycle-management/set-app-type.jpg)
 
@@ -193,7 +193,7 @@ After the app is approved, `isv` can release the Redis application to the App St
 
    ![set-category-for-app](/images/docs/appstore/application-lifecycle-management/set-category-for-app.jpg)
 
-4. In the dialogue, select the category (**Database**) from the drop-down list and click **OK**.
+4. In the dialog, select the category (**Database**) from the drop-down list and click **OK**.
 
    ![confirm-category](/images/docs/appstore/application-lifecycle-management/confirm-category.jpg)
 
@@ -261,7 +261,7 @@ You can choose to remove an app entirely from the App Store or suspend a specifi
 
    ![remove-app](/images/docs/appstore/application-lifecycle-management/remove-app.jpg)
 
-2. On the detail page, click **Suspend App** and select **OK** in the dialogue to confirm the operation to remove the app from the App Store.
+2. On the detail page, click **Suspend App** and select **OK** in the dialog to confirm the operation to remove the app from the App Store.
 
    ![suspend-app](/images/docs/appstore/application-lifecycle-management/suspend-app.jpg)
 
@@ -275,7 +275,7 @@ You can choose to remove an app entirely from the App Store or suspend a specifi
 
    ![activate-app](/images/docs/appstore/application-lifecycle-management/activate-app.jpg)
 
-4. To suspend a specific app version, expand the version menu and click **Suspend Version**. In the dialogue that appears, click **OK** to confirm.
+4. To suspend a specific app version, expand the version menu and click **Suspend Version**. In the dialog that appears, click **OK** to confirm.
 
    ![suspend-version](/images/docs/appstore/application-lifecycle-management/suspend-version.jpg)
 

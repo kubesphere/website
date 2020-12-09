@@ -83,7 +83,7 @@ After about two minutes, you can create a monitoring dashboard for MySQL and vis
 
     ![navigate-to-custom-monitoring](/images/docs/project-user-guide/custom-application-monitoring/navigate-to-custom-monitoring.jpg)
 
-2. In the dialogue that appears, name the dashboard as `mysql-overview` and choose **MySQL template**. Click **Create** to continue.
+2. In the dialog that appears, name the dashboard as `mysql-overview` and choose **MySQL template**. Click **Create** to continue.
 
     ![create-mysql-dashboard](/images/docs/project-user-guide/custom-application-monitoring/create-mysql-dashboard.jpg)
 

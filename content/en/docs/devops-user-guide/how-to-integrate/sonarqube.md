@@ -138,7 +138,7 @@ To integrate SonarQube into your pipeline, you must install SonarQube Server fir
 
    ![sonarqube-webhook-3](/images/docs/devops-user-guide/tool-integration/integrate-sonarqube-into-pipeline/sonarqube-webhook-3.jpg)
 
-5. Input **Name** and **Jenkins Console URL** (i.e. the SonarQube Webhook address) in the dialogue that appears. Click **Create** to finish.
+5. Input **Name** and **Jenkins Console URL** (i.e. the SonarQube Webhook address) in the dialog that appears. Click **Create** to finish.
 
    ![webhook-page-info](/images/docs/devops-user-guide/tool-integration/integrate-sonarqube-into-pipeline/webhook-page-info.jpg)
 

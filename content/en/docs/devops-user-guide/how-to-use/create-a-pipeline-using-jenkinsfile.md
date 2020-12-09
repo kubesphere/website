@@ -131,7 +131,7 @@ The account `project-admin` needs to be created in advance since it is the revie
 
    ![create-pipeline](/images/docs/devops-user-guide/using-devops/create-a-pipeline-using-a-jenkinsfile/create-pipeline.jpg)
 
-2. Provide the basic information in the dialogue that appears. Name it `jenkinsfile-in-scm` and select a code repository.
+2. Provide the basic information in the dialog that appears. Name it `jenkinsfile-in-scm` and select a code repository.
 
    ![create-pipeline-2](/images/docs/devops-user-guide/using-devops/create-a-pipeline-using-a-jenkinsfile/create-pipeline-2.jpg)
 
