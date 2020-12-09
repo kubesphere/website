@@ -63,7 +63,7 @@ This tutorial walks you through an example of deploying MongoDB from the App Sto
 
    {{< notice note >}}
 
-   If you want to access MongoDB outside the cluster, click **More** and select **Edit Internet Access**. In the dialogue that appears, select **NodePort** as the access mode. Use the port number to access MongoDB after it is exposed. You may need to open the port in your security groups and configure related port forwarding rules depending on your where your Kubernetes cluster is deployed.
+   If you want to access MongoDB outside the cluster, click **More** and select **Edit Internet Access**. In the dialog that appears, select **NodePort** as the access mode. Use the port number to access MongoDB after it is exposed. You may need to open the port in your security groups and configure related port forwarding rules depending on your where your Kubernetes cluster is deployed.
 
    {{</ notice >}} 
 

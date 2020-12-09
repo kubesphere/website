@@ -30,7 +30,7 @@ You need an account granted a role including the authorization of **Clusters Man
 
    ![Select CI Node](/images/docs/devops-user-guide/using-devops/set-ci-node-for-dependency-cache/set-node-2.png)
 
-5. In the dialogue that appears, click **Add Labels**. Add a new label with key `node-role.kubernetes.io/worker` and value `ci`, and click **Save**.
+5. In the dialog that appears, click **Add Labels**. Add a new label with key `node-role.kubernetes.io/worker` and value `ci`, and click **Save**.
 
    ![Add CI Label](/images/docs/devops-user-guide/using-devops/set-ci-node-for-dependency-cache/set-node-3.png)
 

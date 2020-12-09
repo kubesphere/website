@@ -17,7 +17,7 @@ Currently, you can store the following 4 types of credentials in a DevOps projec
 - **Account Credentials**: Username and password which can be handled as separate components or as a colon-separated string in the format `username:password`, such as accounts of GitHub, GitLab, and Docker Hub.
 - **SSH**: Username with a private key, an SSH public/private key pair.
 - **Secret Text**: Secret content in a file.
-- **kubeconfig**: It is used to configure cross-cluster authentication. If you select this type, the dialogue will auto-populate the field with the kubeconfig file of the current Kubernetes cluster.
+- **kubeconfig**: It is used to configure cross-cluster authentication. If you select this type, the dialog will auto-populate the field with the kubeconfig file of the current Kubernetes cluster.
 
 This tutorial demonstrates how to create and manage credentials in a DevOps project. For more information about how credentials are used, see [Create a Pipeline Using a Jenkinsfile](../create-a-pipeline-using-jenkinsfile/) and [Create a Pipeline Using Graphical Editing Panels](../create-a-pipeline-using-graphical-editing-panel).
 
@@ -34,7 +34,7 @@ Log in the console of KubeSphere as `project-regular`. Navigate to your DevOps p
 
 ### Create Docker Hub Credentials
 
-1. In the dialogue that appears, provide the following information.
+1. In the dialog that appears, provide the following information.
 
    ![dockerhub-credentials](/images/docs/devops-user-guide/using-devops/credential-management/dockerhub-credentials.jpg)
 

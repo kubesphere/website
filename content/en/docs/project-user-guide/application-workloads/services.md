@@ -81,7 +81,7 @@ The steps of creating a stateful Service and a stateless Service are basically t
 
 ### Step 2: Input Basic Information
 
-1. In the dialogue that appears, you can see the filed **Version** prepopulated with `v1`. You need to define a name for the Service, such as `demo-service`. When you finish, click **Next** to continue.
+1. In the dialog that appears, you can see the filed **Version** prepopulated with `v1`. You need to define a name for the Service, such as `demo-service`. When you finish, click **Next** to continue.
 
     ![stateless_form_1](/images/docs/project-user-guide/workloads/stateless_form_1.jpg)
 

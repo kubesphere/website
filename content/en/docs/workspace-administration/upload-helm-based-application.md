@@ -21,7 +21,7 @@ This tutorial demonstrates how to develop an app template by uploading a package
 
     ![upload-app-template](/images/docs/workspace-administration/upload-helm-based-application/upload-app-template.jpg)
 
-2. In the dialogue that appears, click **Upload Helm Chart Package**. You can upload your own Helm chart or download the [Nginx chart](/files/application-templates/nginx-0.1.0.tgz) and use it as an example for the following steps.
+2. In the dialog that appears, click **Upload Helm Chart Package**. You can upload your own Helm chart or download the [Nginx chart](/files/application-templates/nginx-0.1.0.tgz) and use it as an example for the following steps.
 
     ![upload-helm](/images/docs/workspace-administration/upload-helm-based-application/upload-helm.jpg)
 
