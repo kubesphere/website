@@ -1,44 +1,50 @@
 ---
-title: "Upload Helm-based Application"
-keywords: "kubernetes, helm, kubesphere, openpitrix, application"
-description: "Upload Helm-based Application"
-
-linkTitle: "Upload Helm-based Application"
+title: "上传基于 Helm 的应用程序"
+keywords: "Kubernetes, helm, KubeSphere, openpitrix, application"
+description: "如何向 KubeSphere 上传基于 Helm 的应用程序"
+linkTitle: "上传基于 Helm 的应用程序"
 weight: 9200
 ---
 
-KubeSphere provides full lifecycle management for applications. You can upload or create new app templates and test them quickly. In addition, you can publish your apps to [App Store](../../application-store/) so that other users can deploy with one click. You can upload [Helm Chart](https://helm.sh/) to develop app templates.
+KubeSphere 提供应用程序的全生命周期管理。例如，企业空间管理员可以上传或创建新的应用模板，并进行快速测试。此外，管理员会将经过充分测试的应用发布到[应用商店](../../application-store/)，这样其他用户能一键部署这些应用。为了开发应用模板，企业空间管理员首先需要将打包的 [Helm chart](https://helm.sh/) 上传到 KubeSphere。
 
-## Prerequisites
+本教程演示了如何通过上传打包的 Helm chart 来开发应用模板。
 
-You need to create a workspace and `project-admin` account. Please refer to the [Create Workspace, Project, Account and Role](../../quick-start/create-workspace-and-project/) if not yet.
+## 准备工作
 
-## Hands-on Lab
+- 您需要启用 [KubeSphere 应用商店 (OpenPitrix)](../../pluggable-components/app-store/)。
+- 还需要创建一个企业空间和一个用户帐号 (`project-admin`)。该帐号必须被邀请至企业空间中，并被授予 `workspace-self-provisioner` 角色。有关更多信息，请参考[创建企业空间、项目、帐户和角色](../../quick-start/create-workspace-and-project/)。
 
-1. Sign in with `project-admin` account. Go to the workspace, open `Apps Management` and go to `App Templates`, then click the `Create` button.
+## 动手实验
 
-    ![Create App Template](/images/application-templates/create-app.png)
+1. 用 `project-admin` 帐号登录 KubeSphere。在企业空间页面，转到**应用管理**下的**应用模板**，然后点击**上传模板**。
 
-2. Click the `Upload` button.
+    ![上传应用模板](/images/docs/zh-cn/workspace-administration-and-user-guide/upload-helm-based-applications/upload-app-template.PNG)
 
-    ![Upload](/images/application-templates/upload-app1.png)
+2. 在弹出的对话框中，点击**上传 Helm 配置文件**。您可以上传自己的 Helm chart，或者下载 [Nginx chart](/files/application-templates/nginx-0.1.0.tgz) 用它作为示例来完成接下来的步骤。
 
-3. Assuming you've already developed a Helm chart locally, or you can download the example [Nginx package](/files/application-templates/nginx-0.1.0.tgz) here.
+    ![上传 helm](/images/docs/zh-cn/workspace-administration-and-user-guide/upload-helm-based-applications/upload-helm.PNG)
 
-    ![Upload Nginx](/images/application-templates/upload-app2.png)
+3. 文件包上传完毕后，点击**确定**继续。
 
-4. Select the Helm chart file you have finished developing locally and click `OK` to proceed to the next step.
+    ![确认上传](/images/docs/zh-cn/workspace-administration-and-user-guide/upload-helm-based-applications/confirm-upload.PNG)
 
-    ![Upload Nginx](/images/application-templates/upload-app3.png)
+4. **应用信息**下显示了应用的基本信息。点击**上传图标**来上传应用的图标。您也可以跳过上传图标，直接点击**确定**。
 
-    ![Upload Nginx](/images/application-templates/upload-app4.png)
+    ![上传图标](/images/docs/zh-cn/workspace-administration-and-user-guide/upload-helm-based-applications/upload-icon.PNG)
 
-5. Now that you have successfully uploaded a Helm package, you can click on its name to go to its detail page.
+    {{< notice note >}}
 
-    ![App list](/images/application-templates/app-list.png)
+应用图标支持的最大分辨率为：96 × 96 像素。
 
-6. On the versions list tab, you can click on the corresponding version to test the deployment.
+{{</ notice >}}
 
-    ![App detail page](/images/application-templates/app-detail-test-deploy.png)
+5. 成功上传后，模板列表中会列出应用，状态为**开发中**，意味着该应用正在开发中。上传的应用对同一企业空间下的所有成员均可见。
 
-You can also publish your application to App Store by following the [tutorial](../../application-store/app-lifecycle-management/) once you've fully tested your application.
+    ![开发中应用](/images/docs/zh-cn/workspace-administration-and-user-guide/upload-helm-based-applications/draft-app.PNG)
+
+6. 点击应用，随后打开的页面默认选中**版本**标签。点击待提交版本以扩展菜单，您可以在菜单上看到删除版本、测试部署、提交审核的选项。
+
+    ![版本页面](/images/docs/zh-cn/workspace-administration-and-user-guide/upload-helm-based-applications/version-page.PNG)
+
+7. 有关如何将应用发布到应用商店的更多信息，请参考[应用程序生命周期管理](../../application-store/app-lifecycle-management/)。
