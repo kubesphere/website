@@ -1,6 +1,6 @@
 ---
 title: "上传基于 Helm 的应用程序"
-keywords: "Kubernetes, helm, KubeSphere, openpitrix, application"
+keywords: "Kubernetes, Helm, KubeSphere, OpenPitrix, 应用程序"
 description: "如何向 KubeSphere 上传基于 Helm 的应用程序"
 linkTitle: "上传基于 Helm 的应用程序"
 weight: 9200
@@ -13,11 +13,11 @@ KubeSphere 提供应用程序的全生命周期管理。例如，企业空间管
 ## 准备工作
 
 - 您需要启用 [KubeSphere 应用商店 (OpenPitrix)](../../pluggable-components/app-store/)。
-- 还需要创建一个企业空间和一个用户帐号 (`project-admin`)。该帐号必须被邀请至企业空间中，并被授予 `workspace-self-provisioner` 角色。有关更多信息，请参考[创建企业空间、项目、帐户和角色](../../quick-start/create-workspace-and-project/)。
+- 您需要创建一个企业空间和一个用户帐户 (`project-admin`)。该帐户必须被邀请至企业空间中，并被授予 `workspace-self-provisioner` 角色。有关更多信息，请参考[创建企业空间、项目、帐户和角色](../../quick-start/create-workspace-and-project/)。
 
 ## 动手实验
 
-1. 用 `project-admin` 帐号登录 KubeSphere。在企业空间页面，转到**应用管理**下的**应用模板**，然后点击**上传模板**。
+1. 用 `project-admin` 帐户登录 KubeSphere。在企业空间页面，转到**应用管理**下的**应用模板**，然后点击**上传模板**。
 
     ![上传应用模板](/images/docs/zh-cn/workspace-administration-and-user-guide/upload-helm-based-applications/upload-app-template.PNG)
 
@@ -35,7 +35,7 @@ KubeSphere 提供应用程序的全生命周期管理。例如，企业空间管
 
     {{< notice note >}}
 
-应用图标支持的最大分辨率为：96 × 96 像素。
+应用图标支持的最大分辨率为 96 × 96 像素。
 
 {{</ notice >}}
 
