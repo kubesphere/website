@@ -32,7 +32,3 @@ icon: "/images/docs/docs.svg"
 ## [应用场景](../introduction/scenarios/)
 
 了解如何在不同的场景中使用 KubeSphere，例如敏捷开发与自动化运维、DevOps 持续集成与交付等。
-
-## [名词解释](../introduction/glossary/)
-
-了解 KubeSphere 中涉及到的基本概念。

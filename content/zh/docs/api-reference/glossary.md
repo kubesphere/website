@@ -13,38 +13,29 @@ This glossary includes technical terms that are specific to KubeSphere, as well 
 
 - **Workspace** <br>
     A logical unit to organize a tenant's workload projects / Kubernetes namespaces, DevOps projects, manage resource access and share information within the team.
-
 - **System Workspace** <br>
     The special place to organize system projects from KubeSphere, Kubernetes and optional components such as OpenPitrix, Istio, monitorng etc.
-
 - **Workspace member** <br>
     The users that are invited into the workspace who have certain priviledge to work in the workspace.
-
 - **Project** <br>
-    A project in KubeSphere is a Kubernetes namespace
+    A project in KubeSphere is a Kubernetes namespace.
 
 - **Multi-cluster Project** <br>
     A project whose workload is deployed into multiple clusters.
-
 - **Project memeber** <br>
     The users that are invited into the project who have certain priviledge to access the project.
-
 - **Workbench** <br>
     The landing page for a tenant where contains authorized resources to access including workspaces, App Store, etc.
-
 - **Volume** <br>
     A KubeSphere Volume is a Kubernetes Persistent Volume Claim (PVC)
-
 - **Public Cluster** <br>
     Platform admin can set the cluster visibility, meaning who can access the cluster. A public cluster means all platform users can access the cluster, in which they are able to create and schedule resources.
-
 - **KubeKey** <br>
     A brand-new installation tool developed in Go. It can install KubeSphere and Kubernetes separately or install them at one time.
-
 - **ks-installer** <br>
     The package to deploy KubeSphere on existing Kubernetes clusters.
 
-## Application
+## Applications and Workloads
 
 - **OpenPitirx** <br>
     An open-source system to package, deploy and manage different types of apps.
@@ -57,6 +48,30 @@ This glossary includes technical terms that are specific to KubeSphere, as well 
 
 - **App Store** <br>
     A public place for different users to share various applications.
+    
+- **Deployment**
+
+    You use a Deployment to describe a desired state. The Kubernetes Deployment controller changes the actual state to the desired state at a controlled rate. In other words, a Deployment runs multiple replicas of an application and replaces any instances if they fail. For more information, see [Deployments](https://kubernetes.io/docs/concepts/workloads/controllers/deployment/).
+
+- **StatefulSet**
+
+    A StatefulSet is the workload object used to manage stateful applications, such as MySQL. For more information, see [StatefulSets](https://kubernetes.io/docs/concepts/workloads/controllers/statefulset/).
+
+- **DaemonSet**
+
+    A DaemonSet ensures that all (or some) nodes run a copy of a Pod, such as Fluentd and Logstash. For more information, see [DaemonSets](https://kubernetes.io/docs/concepts/workloads/controllers/daemonset/).
+
+- **Job**
+
+    A Job creates one or more Pods and ensures that a specified number of them successfully terminate. For more information, see [Jobs](https://kubernetes.io/docs/concepts/workloads/controllers/jobs-run-to-completion/).
+
+- **CronJob**
+
+    A CronJob creates Jobs on a time-based schedule. A CronJob object is like one line of a crontab (cron table) file. It runs a Job periodically on a given schedule. For more information, see [CronJob](https://kubernetes.io/docs/concepts/workloads/controllers/cron-jobs/).
+
+- **Service**
+
+    A Kubernetes service is an abstraction object which defines a logical set of Pods and a policy by which to access them - sometimes called a microservice. For more information, see [Service](https://kubernetes.io/docs/concepts/services-networking/service/).
 
 ## DevOps
 
