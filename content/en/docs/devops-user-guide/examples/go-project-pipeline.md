@@ -12,7 +12,7 @@ weight: 11410
 - You need to have a [Docker Hub](https://hub.docker.com/) account.
 - You need to create a workspace, a DevOps project, a project, and an account (`project-regular`). This account needs to be invited to the DevOps project and the project for deploying your workload with the role `operator`. For more information, see [Create Workspace, Project, Account and Role](../../../quick-start/create-workspace-and-project).
 
-## Create Docker Hub Access Token
+## Create a Docker Hub Access Token
 
 1. Sign in [Docker Hub](https://hub.docker.com/) and select **Account Settings** from the menu in the top right corner.
 
@@ -68,7 +68,7 @@ With the above credentials ready, you can create a pipeline using an example Jen
 
    ![create-pipeline-2](/images/docs/devops-user-guide/examples/compile-and-deploy-a-go-project/create-pipeline-2.jpg)
 
-## Edit Jenkinsfile
+## Edit the Jenkinsfile
 
 1. In the pipeline list, click this pipeline to go to its detail page. Click **Edit Jenkinsfile** to define a Jenkinsfile and your pipeline runs based on it.
 
@@ -134,7 +134,7 @@ If your pipeline runs successfully, images will be pushed to Docker Hub. If you 
 
    {{</ notice >}}
 
-## Run Pipeline
+## Run the Pipeline
 
 1. After you finish the Jenkinsfile, you can see graphical panels display on the dashboard. Click **Run** to run the pipeline.
 

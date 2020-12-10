@@ -1,8 +1,8 @@
 ---
-title: "How to Build and Deploy a Maven Project"
+title: "Build and Deploy a Maven Project"
 keywords: 'kubernetes, docker, devops, jenkins, maven'
 description: ''
-linkTitle: "Build And Deploy A Maven Project"
+linkTitle: "Build and Deploy a Maven Project"
 weight: 11430
 ---
 

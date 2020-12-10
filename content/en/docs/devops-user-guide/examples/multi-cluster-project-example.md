@@ -13,7 +13,7 @@ weight: 11420
 - You need to [enable KubeSphere DevOps System](../../../../docs/pluggable-components/devops/) on your host cluster.
 - You need to create a workspace with multiple clusters, a DevOps project on your **host** cluster, a multi-cluster project (in this tutorial, this multi-cluster project is created on the host cluster and one member cluster), and an account (`project-regular`). This account needs to be invited to the DevOps project and the multi-cluster project with the role `operator`. For more information, see [Create Workspace, Project, Account and Role](../../../quick-start/create-workspace-and-project), [Multi-cluster Management](../../../multicluster-management) and [Multi-cluster Projects](../../../project-administration/project-and-multicluster-project/#multi-cluster-projects).
 
-## Create Docker Hub Access Token
+## Create a Docker Hub Access Token
 
 1. Sign in [Docker Hub](https://hub.docker.com/) and select **Account Settings** from the menu in the top right corner.
 
@@ -69,7 +69,7 @@ With the above credentials ready, you can create a pipeline using an example Jen
 
    ![create-pipeline-2](/images/docs/devops-user-guide/examples/compile-and-deploy-a-go-project/create-pipeline-2.jpg)
 
-## Edit Jenkinsfile
+## Edit the Jenkinsfile
 
 1. In the pipeline list, click this pipeline to go to its detail page. Click **Edit Jenkinsfile** to define a Jenkinsfile and your pipeline runs based on it.
 
@@ -148,7 +148,7 @@ With the above credentials ready, you can create a pipeline using an example Jen
 
    {{</ notice >}} 
 
-## Run Pipeline
+## Run the Pipeline
 
 After you save the Jenkinsfile, click **Run**. If everything goes well, you will see the Deployment workload in your multi-cluster project.
 

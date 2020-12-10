@@ -41,11 +41,11 @@ In **Project Roles**, there are three available built-in roles as shown below. B
 
 2. Go to **Project Roles** in **Project Management**, click **Create** and set a **Role Identifier**. In this example, a role named `pipeline-creator` will be created. Click **Edit Authorization** to continue.
 
-   ![Create a devops project role](/images/docs/devops-admin/devops_role_step1.png)
+   ![devops_role_step1](/images/docs/devops-user-guide/understand-and-manage-devops-projects/role-and-member-management/devops_role_step1.png)
 
 3. In **Pipelines Management**, select the authorization that you want this role to contain. For example, **Pipelines Management** and **Pipelines View** are selected for this role. Click **OK** to finish.
 
-   ![Edit Authorization](/images/docs/devops-admin/devops_role_step2.png)
+   ![devops_role_step2](/images/docs/devops-user-guide/understand-and-manage-devops-projects/role-and-member-management/devops_role_step2.png)
 
    {{< notice note >}} 
 
@@ -55,7 +55,7 @@ In **Project Roles**, there are three available built-in roles as shown below. B
 
 4. Newly-created roles will be listed in **Project Roles**. You can click the three dots on the right to edit it.
 
-   ![Edit Roles](/images/docs/devops-admin/devops_role_list.png)
+   ![devops_role_list](/images/docs/devops-user-guide/understand-and-manage-devops-projects/role-and-member-management/devops_role_list.png)
 
    {{< notice note >}} 
 
@@ -69,7 +69,7 @@ In **Project Roles**, there are three available built-in roles as shown below. B
 
 2. Invite a user to the DevOps project. Grant the role of `pipeline-creator` to the user. 
 
-   ![invite member](/images/docs/devops-admin/devops_invite_member.png)
+   ![devops_invite_member](/images/docs/devops-user-guide/understand-and-manage-devops-projects/role-and-member-management/devops_invite_member.png)
 
    {{< notice note >}} 
 
@@ -81,5 +81,5 @@ In **Project Roles**, there are three available built-in roles as shown below. B
 
 4. You can also change the role of an existing member by editing it or remove it from the DevOps project.
 
-   ![edit member role](/images/docs/devops-admin/devops_user_edit.png)
+   ![devops_user_edit](/images/docs/devops-user-guide/understand-and-manage-devops-projects/role-and-member-management/devops_user_edit.png)
 
