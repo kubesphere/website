@@ -35,7 +35,7 @@ This glossary includes technical terms that are specific to KubeSphere, as well 
 - **ks-installer** <br>
     The package to deploy KubeSphere on existing Kubernetes clusters.
 
-## Application and Workloads
+## Applications and Workloads
 
 - **OpenPitirx** <br>
     An open-source system to package, deploy and manage different types of apps.
