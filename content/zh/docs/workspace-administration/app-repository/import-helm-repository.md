@@ -1,53 +1,53 @@
 ---
-title: "Import Helm Repository"
-keywords: "Kubernetes, helm, KubeSphere, application"
-description: "Import Helm Repository into KubeSphere"
+title: "导入 Helm 仓库"
+keywords: "Kubernetes, Helm, KubeSphere, 应用程序"
+description: "向 KubeSphere 导入 Helm 仓库"
 
-linkTitle: "Import Helm Repository"
+linkTitle: "导入 Helm 仓库"
 weight: 9310
 ---
 
-KubeSphere builds app repositories that allow users to use Kubernetes applications based on Helm charts. App repositories are powered by [OpenPitrix](https://github.com/openpitrix/openpitrix), an open-source platform for cross-cloud application management sponsored by QingCloud. In an app repository, every application serves as a base package library. To deploy and manage an app from an app repository, you need to create the repository in advance.
+KubeSphere 构建的应用仓库可以让用户使用基于 Helm Chart 的 Kubernetes 应用程序。KubeSphere 基于[OpenPitrix](https://github.com/openpitrix/openpitrix) 提供应用仓库服务，OpenPitrix 是由青云QingCloud 发起的开源跨云应用程序管理平台，支持基于 Helm Chart 类型的 Kubernetes 应用程序。在应用仓库中，每个应用程序都是基础软件包存储库。您需要事先创建应用仓库，才能从中部署和管理应用。
 
-To create a repository, you use an HTTP/HTTPS server or object storage solutions to store packages. More specifically, an app repository relies on external storage independent of OpenPitrix, such as [MinIO](https://min.io/) object storage, [QingStor object storage](https://github.com/qingstor), and [AWS object storage](https://aws.amazon.com/what-is-cloud-object-storage/). These object storage services are used to store configuration packages and index files created by developers. After a repository is registered, the configuration packages are automatically indexed as deployable applications.
+为了创建仓库，您可以使用 HTTP 或 HTTPS 服务器或者对象存储解决方案来存储文件包。具体地说，应用仓库依靠独立于 OpenPitrix 的外部存储，例如 [MinIO](https://min.io/) 对象存储、[QingStor 对象存储](https://github.com/qingstor)以及 [AWS 对象存储](https://aws.amazon.com/cn/what-is-cloud-object-storage/)。这些对象存储服务用于存储开发者创建的配置包和索引文件。注册仓库后，配置包就会自动被索引为可部署的应用程序。
 
-This tutorial demonstrates how to add an app repository to KubeSphere.
+本教程演示了如何向 KubeSphere 中添加应用仓库。
 
-## Prerequisites
+## 准备工作
 
-- You need to enable [KubeSphere App Store (OpenPitrix)](../../../pluggable-components/app-store/).
-- You need to have an app repository. Refer to [the official documentation of Helm](https://v2.helm.sh/docs/developing_charts/#the-chart-repository-guide) to create repositories or [upload your own apps to the public repository of KubeSphere](../upload-app-to-public-repository/). Alternatively, use the example repository in the steps below, which are only for demonstration purposes.
-- You need to create a workspace and a user account (`ws-admin`). The account must be granted the role of `workspace-admin` in the workspace. For more information, refer to [Create Workspace, Project, Account and Role](../../../quick-start/create-workspace-and-project/).
+- 您需要启用 [KubeSphere 应用商店 (OpenPitrix)](../../../pluggable-components/app-store/)。
+- 您需要准备一个应用仓库。请参考 [Helm 官方文档](https://v2.helm.sh/docs/developing_charts/#the-chart-repository-guide)创建仓库，或者[上传自己的应用至 KubeSphere 公共仓库](../../../workspace-administration/app-repository/upload-app-to-public-repository/)。此外，也可以使用下方步骤中的示例仓库，这里仅用作演示。
+- 您需要创建一个企业空间和一个用户帐户 (`ws-admin`)。该帐户必须在企业空间中被授予 `workspace-admin` 角色。有关更多信息，请参考[创建企业空间、项目、帐户和角色](../../../quick-start/create-workspace-and-project/)。
 
-## Add App Repository
+## 添加应用仓库
 
-1. Log in the web console of KubeSphere as `ws-admin`. In your workspace, go to **App Repos** under **Apps Management**, and then click **Add Repo**.
+1. 以 `ws-admin` 身份登录 KubeSphere Web 控制台。在企业空间页面，转到**应用管理**下的**应用仓库**，然后点击**添加仓库**。
 
-    ![app-repo](/images/docs/workspace-administration/app-repository/import-helm-repository/app-repo.jpg)
+    ![添加仓库](/images/docs/zh-cn/workspace-administration-and-user-guide/app-repository/import-helm-repository/app-repo.PNG)
 
-2. In the dialogue that appears, specify an app repository name and add your repository URL. For example, enter `https://charts.kubesphere.io/main`.
+2. 在弹出的对话框中，输入应用仓库名称并添加仓库 URL。例如，输入 `https://charts.kubeshpere.io/main`。
 
-    ![app-info-dialogue](/images/docs/workspace-administration/app-repository/import-helm-repository/app-info-dialogue.jpg)
+    ![应用信息对话框](/images/docs/zh-cn/workspace-administration-and-user-guide/app-repository/import-helm-repository/app-info-dialogue.png)
 
-    - **App Repository Name**: Set a simple and clear name for the repository, which is easy for users to identify.
-    - **Type**: Support applications based on Helm charts.
-    - **URL**: Support the following three protocols:
-      - S3: The URL is S3-styled, such as `s3.<zone-id>.qingstor.com/<bucket-name>/` for the access to QingStor services using the S3 interface. If you select this type, you need to provide the access key and secret.
-      - HTTP: Readable but not writable. Applications in the app repository (object storage) can be acquired and deployed to the runtime environment, such as `http://docs-repo.gd2.qingstor.com`. The example contains an sample app NGINX, which will be imported automatically after the repository is created. You can deploy it from app templates.
-      - HTTPS: Readable but not writable. Applications in the app repository can be acquired and deployed to the runtime environment.
-    - **Description**: Give a brief introduction of main features of the app repository.
+    - **应用仓库名称**：为仓库设置一个简洁明了的名称，方便用户识别。
+    - **类型**：支持基于 Helm chart 的应用程序。
+    - **URL**：支持下列三种协议：
+      - S3：S3 格式的 URL，例如 `s3.<zone-id>.qingstor.com/<bucket-name>/`，用于访问使用 S3 接口的 QingStor 服务。如果您选择此类型，则需要提供 Access Key ID 和 Secret Access Key。
+      - HTTP：可读但不可写。可以获取应用仓库（对象存储）中的应用程序，部署至运行时环境中，例如 `http://docs-repo.gd2.qingstor.com`。示例中包含一个样例应用 NGINX，创建仓库后会自动导入。您可以用应用模板来部署它。
+      - HTTPS：可读但不可写。可以获取应用仓库中的应用程序，部署至运行时环境中。
+    - **描述信息**：简单介绍应用仓库的主要特性。
 
-3. After you specify required fields, click **Validate** to verify the URL. You will see a green check mark next to the URL if it is available and click **OK** to finish.
+3. 输入必需的字段后，点击**验证**以验证 URL。如果 URL 可用，您会在它旁边看到一个绿色的对号，点击**确定**完成操作。
 
-    ![validate-link](/images/docs/workspace-administration/app-repository/import-helm-repository/validate-link.jpg)
+    ![验证 URL](/images/docs/zh-cn/workspace-administration-and-user-guide/app-repository/import-helm-repository/validate-link.PNG)
     
     {{< notice note >}}
 
-- The example repository used in this tutorial is a mirror of Google's Helm repository. Some of the apps in this repository may not be successfully deployed. The KubeSphere team will develop a commercial version of app repositories for enterprises in the future.
-- In an on-premises private cloud environment, you can build your own repository based on [Helm](https://helm.sh). Then, you develop and upload applications to the repository and deploy them on KubeSphere for your own needs.
+- 本教程中使用的示例仓库是 Google Helm 仓库的镜像。仓库中部分应用可能无法部署成功。KubeSphere 团队后期将提供生产可用并且有商业支持的应用仓库。
+- 在本地私有云环境中，您可以基于 [Helm](https://helm.sh/) 构建自己的仓库。然后，您可以向仓库中部署和上传应用程序，并根据自己的需求将这些应用部署到 KubeSphere。
 
 {{</ notice >}} 
 
-4. The repository displays in the repository list below after imported and KubeSphere automatically adds all apps in the repository as app templates. When users choose to deploy apps using app templates, they can see apps in this repository. For more information, see [Deploy Apps from App Templates](../../../project-user-guide/application/deploy-app-from-template/).
+4. 导入完成后，仓库会列在下方的仓库列表中，并且 KubeSphere 会自动加载该仓库中的所有应用，并添加为应用模板。当用户使用应用模板来部署应用时，可以在该仓库中查看这些应用。有关更多信息，请参见[用应用模板部署应用](../../../project-user-guide/application/deploy-app-from-template/)。
 
-   ![app-repo-list](/images/docs/workspace-administration/app-repository/import-helm-repository/app-repo-list.jpg)
+   ![应用仓库列表](/images/docs/zh-cn/workspace-administration-and-user-guide/app-repository/import-helm-repository/app-repo-list.PNG)
