@@ -195,7 +195,7 @@ chmod +x kk
 
 ### 2. 编辑配置文件
 
-如果不更改名称，将创建默认文件 **config-sample.yaml**。编辑文件，这是具有一个主节点的多节点集群的配置文件示例。
+如果不更改名称，将创建默认文件 `config-sample.yaml`。编辑文件，这是具有一个主节点的多节点集群的配置文件示例。
 
 {{< notice note >}}
 
@@ -225,7 +225,15 @@ spec:
 
 #### hosts
 
-- 在`hosts`下列出所有计算机，并如上所述添加其详细信息。在这种情况下，端口 22 是 SSH 的默认端口。否则，您需要在 IP 地址后面添加端口号，例如：
+请在 `hosts` 下列出您所有安装机器的详细信息。
+
+`name`：实例的主机名称。
+
+`address`：此 IP 地址用于您通过 SSH 从任务执行机连接至其他实例，可以是公共 IP 或私有 IP 地址，具体取决于安装环境。例如，部分云平台会为每个实例提供一个公共 IP 地址，用于通过 SSH 进行访问。在这种情况下，请在此字段填入该公共 IP 地址。
+
+`internalAddress`：实例的私有 IP 地址。
+
+- 本教程中端口 22 是 SSH 的默认端口。如果您使用其他端口，请在 IP 地址后添加对应端口号，例如：
 
   ```yaml
   hosts:
@@ -245,6 +253,12 @@ spec:
   hosts:
     - {name: master, address: 192.168.0.2, internalAddress: 192.168.0.2, privateKeyPath: "~/.ssh/id_rsa"}
   ```
+
+{{< notice tip >}} 
+
+在安装 KubeSphere 之前，建议您先使用 `hosts` 下所提供的信息（例如 IP 地址和密码）通过 SSH 的方式测试任务执行机和其他实例之间的网络连接。
+
+{{</ notice >}}
 
 #### roleGroups
 
