@@ -33,7 +33,3 @@ Understand the reason why KubeSphere is beneficial to your work.
 
 See how KubeSphere can be used in different scenarios, such as multi-cluster deployment, DevOps and service mesh.
 
-## [Glossary](../introduction/glossary/)
-
-Learn terms and phrases that are used in KubeSphere.
-
