@@ -7,7 +7,7 @@ linkTitle: "导入 Helm 仓库"
 weight: 9310
 ---
 
-KubeSphere 构建的应用仓库可以让用户使用基于 Helm chart 的 Kubernetes 应用程序。[OpenPitrix](https://github.com/openpitrix/openpitrix) 是青云赞助的一个开源平台，用于跨云应用程序管理，在其基础之上开发了应用仓库。在应用仓库中，每个应用程序充当一个基础包库。您需要事先创建应用仓库，才能从中部署和管理应用。
+KubeSphere 构建的应用仓库可以让用户使用基于 Helm Chart 的 Kubernetes 应用程序。KubeSphere 基于[OpenPitrix](https://github.com/openpitrix/openpitrix) 提供应用仓库服务，OpenPitrix 是由青云QingCloud 发起的开源跨云应用程序管理平台，支持基于 Helm Chart 类型的 Kubernetes 应用程序。在应用仓库中，每个应用程序都是基础软件包存储库。您需要事先创建应用仓库，才能从中部署和管理应用。
 
 为了创建仓库，您可以使用 HTTP 或 HTTPS 服务器或者对象存储解决方案来存储文件包。具体地说，应用仓库依靠独立于 OpenPitrix 的外部存储，例如 [MinIO](https://min.io/) 对象存储、[QingStor 对象存储](https://github.com/qingstor)以及 [AWS 对象存储](https://aws.amazon.com/cn/what-is-cloud-object-storage/)。这些对象存储服务用于存储开发者创建的配置包和索引文件。注册仓库后，配置包就会自动被索引为可部署的应用程序。
 
@@ -29,10 +29,10 @@ KubeSphere 构建的应用仓库可以让用户使用基于 Helm chart 的 Kuber
 
     ![应用信息对话框](/images/docs/zh-cn/workspace-administration-and-user-guide/app-repository/import-helm-repository/app-info-dialogue.png)
 
-    - **仓库名称**：为仓库设置一个简洁明了的名称，方便用户识别。
+    - **应用仓库名称**：为仓库设置一个简洁明了的名称，方便用户识别。
     - **类型**：支持基于 Helm chart 的应用程序。
     - **URL**：支持下列三种协议：
-      - S3：S3 格式的 URL，例如 `s3.<zone-id>.qingstor.com/<bucket-name>/`，用于访问使用 S3 接口的 QingStor 服务。如果您选择此类型，则需要提供 access key 和密钥。
+      - S3：S3 格式的 URL，例如 `s3.<zone-id>.qingstor.com/<bucket-name>/`，用于访问使用 S3 接口的 QingStor 服务。如果您选择此类型，则需要提供 Access Key ID 和 Secret Access Key。
       - HTTP：可读但不可写。可以获取应用仓库（对象存储）中的应用程序，部署至运行时环境中，例如 `http://docs-repo.gd2.qingstor.com`。示例中包含一个样例应用 NGINX，创建仓库后会自动导入。您可以用应用模板来部署它。
       - HTTPS：可读但不可写。可以获取应用仓库中的应用程序，部署至运行时环境中。
     - **描述信息**：简单介绍应用仓库的主要特性。
@@ -43,11 +43,11 @@ KubeSphere 构建的应用仓库可以让用户使用基于 Helm chart 的 Kuber
     
     {{< notice note >}}
 
-- 本教程中使用的示例仓库是 Google Helm 仓库的镜像。仓库中部分应用可能无法部署成功。KubeSphere 团队后期将开发商业版本的应用仓库。
+- 本教程中使用的示例仓库是 Google Helm 仓库的镜像。仓库中部分应用可能无法部署成功。KubeSphere 团队后期将提供生产可用并且有商业支持的应用仓库。
 - 在本地私有云环境中，您可以基于 [Helm](https://helm.sh/) 构建自己的仓库。然后，您可以向仓库中部署和上传应用程序，并根据自己的需求将这些应用部署到 KubeSphere。
 
 {{</ notice >}} 
 
-4. 导入完成后，仓库就会在下方仓库列表中列出，并且 KubeSphere 自动将所有应用添加至仓库用作应用模板。当用户选择使用应用模板来部署应用时，可以在该仓库中查看这些应用。有关更多信息，请参见[用应用模板部署应用](../../../project-user-guide/application/deploy-app-from-template/)。
+4. 导入完成后，仓库会列在下方的仓库列表中，并且 KubeSphere 会自动加载该仓库中的所有应用，并添加为应用模板。当用户使用应用模板来部署应用时，可以在该仓库中查看这些应用。有关更多信息，请参见[用应用模板部署应用](../../../project-user-guide/application/deploy-app-from-template/)。
 
    ![应用仓库列表](/images/docs/zh-cn/workspace-administration-and-user-guide/app-repository/import-helm-repository/app-repo-list.PNG)
