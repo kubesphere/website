@@ -1,48 +1,46 @@
 ---
-title: "Jenkins System Settings"
+title: "Jenkins 系统设置"
 keywords: 'Kubernetes, KubeSphere, Jenkins, CasC'
-description: 'How to set up Jenkins in KubeSphere.'
-linkTitle: 'Jenkins System Settings'
+description: '如何在 KubeSphere 中设置 Jenkins.'
+linkTitle: 'Jenkins 系统设置'
 Weight: 11240
 ---
 
-Jenkins is powerful and flexible and it has become the de facto standard for CI/CD workflows. Nevertheless, many plugins require users to set system-level configurations before they can be put to use.
+Jenkins 强大而灵活，已经成为 CI/CD 工作流事实上的标准。 但是，许多插件要求用户先设置系统级配置，然后才能使用。
+KubeSphere DevOps 系统提供基于 Jenkins 的容器化 CI/CD 功能。为了为用户提供可调度的 Jenkins 环境，KubeSphere 使用 **Configuration-as-Code** 进行 Jenkins 系统设置，这要求用户登录 Jenkins 仪表板并在修改后重新加载配置。在当前版本中，Jenkins 系统设置在 KubeSphere 控制台上不可用，即将发布的版本将支持该设置。
+本教程演示了如何在 Jenkins 仪表板上设置 Jenkins 并重新加载配置。
 
-The KubeSphere DevOps System offers containerized CI/CD functions based on Jenkins. To provide users with a schedulable Jenkins environment, KubeSphere uses **Configuration-as-Code** for Jenkins system settings, which requires users to log in the Jenkins dashboard and reload the configuration after it is modified. In the current release, Jenkins system settings are not available on the KubeSphere console, which will be supported in upcoming releases.
+## 先决条件
 
-This tutorial demonstrates how to set up Jenkins and reload configurations on the Jenkins dashboard.
+您已启用 [KubeSphere DevOps 系统](../../../pluggable-components/devops/)。
 
-## Prerequisites
+## 修改 ConfigMap
 
-You have enabled [the KubeSphere DevOps System](../../../pluggable-components/devops/).
+建议您通过Configuration-as-Code（CasC）在 KubeSphere 中配置 Jenkins。 内置的 Jenkins CasC 文件存储为 [ConfigMap](../../../project-user-guide/configuration/configmaps/)。
 
-## Modify the ConfigMap
+1. 以 kubeSphere 管理员（`admin`）身份登录， 单击左上角的**平台管理**，然后选择**集群管理**。
 
-It is recommended that you configure Jenkins in KubeSphere through Configuration-as-Code (CasC). The built-in Jenkins CasC file is stored as a [ConfigMap](../../../project-user-guide/configuration/configmaps/).
+   ![cluster-management](/images/docs/devops-user-guide-zh/using-devops-zh/jenkins-system-settings-zh/cluster-management.png)
 
-1. Log in KubeSphere as `admin`. Click **Platform** in the top left corner and select **Clusters Management**.
+2. 如果您已经在导入成员集群时启用了[多集群特性](../../../multicluster-management)，那么您可以选择一个特定集群以查看其应用程序资源。 如果尚未启用该特性，请直接参考下一步。
 
-   ![cluster-management](/images/docs/devops-user-guide/using-devops/jenkins-system-settings/cluster-management.jpg)
+3. 从导航栏中，在**配置中心**下选择**配置**。 在**配置**页面上，从下拉列表中选择 `kubesphere-devops-system`，然后单击 `jenkins-casc-config`。
 
-2. If you have enabled the [multi-cluster feature](../../../multicluster-management) with member clusters imported, you can select a specific cluster to edit the ConfigMap. If you have not enabled the feature, refer to the next step directly.
+   ![edit-configmap](/images/docs/devops-user-guide-zh/using-devops-zh/jenkins-system-settings-zh/edit-configmap.png)
 
-3. From the navigation bar, select **ConfigMaps** under **Configurations**. On the **ConfigMaps** page, select `kubesphere-devops-system` from the drop-down list and click `jenkins-casc-config`.
+4. 在详细信息页面上，从**更多操作**下拉列表中单击**编辑配置文件（YAML 文件）**。
 
-   ![edit-configmap](/images/docs/devops-user-guide/using-devops/jenkins-system-settings/edit-configmap.jpg)
+   ![more-list](/images/docs/devops-user-guide-zh/using-devops-zh/jenkins-system-settings-zh/more-list.png)
 
-4. On the detail page, click **Edit YAML** from the **More** drop-down list.
+5. 如下所示，`jenkins-casc-config` 的配置模板是一个 YAML 文件。 您可以在 ConfigMap 的代理（Kubernetes Jenkins agent）中修改容器镜像、标签等内容，或者在 podTemplate 中添加容器。 完成后，单击**更新**。
 
-   ![more-list](/images/docs/devops-user-guide/using-devops/jenkins-system-settings/more-list.jpg)
+   ![edit-jenkins](/images/docs/devops-user-guide-zh/using-devops-zh/jenkins-system-settings-zh/edit-jenkins.png)
 
-5. The configuration template for `jenkins-casc-config` is a YAML file as shown below. You can modify the container image, label, etc. in the broker (Kubernetes Jenkins agent) in the ConfigMap or add a container in the podTemplate. When you finish, click **Update**.
+## 登录 Jenkins 重新加载配置
 
-   ![edit-jenkins](/images/docs/devops-user-guide/using-devops/jenkins-system-settings/edit-jenkins.jpg)
+修改 `jenkins-casc-config` 后，需要在 Jenkins 仪表板上的 **Configuration as Code** 页面上重新加载更新的系统配置。 这是因为直接通过 Jenkins 仪表板配置的系统设置可能在 Jenkins 重新调度之后被 CasC（`Configuration as Code`） 配置覆盖。
 
-## Log in Jenkins to Reload Configurations
-
-After you modified `jenkins-casc-config`, you need to reload your updated system configuration on the **Configuration as Code** page on the Jenkins dashboard. This is because system settings configured directly through the Jenkins dashboard may be overwritten by the CasC configuration after Jenkins is rescheduled.
-
-1. Execute the following command to get the address of Jenkins.
+1. 执行以下命令获取 Jenkins 的地址。
 
    ```bash
    export NODE_PORT=$(kubectl get --namespace kubesphere-devops-system -o jsonpath="{.spec.ports[0].nodePort}" services ks-jenkins)
@@ -50,38 +48,38 @@ After you modified `jenkins-casc-config`, you need to reload your updated system
    echo http://$NODE_IP:$NODE_PORT
    ```
 
-2. You can see the expected output as below, which tells you the IP address and port number of Jenkins.
+2. 您可以看到如下所示的预期输出，它告诉您 Jenkins 的 IP 地址和端口号。
 
    ```bash
-   http://192.168.0.4:30180
+   http://10.77.1.201:30180
    ```
 
-3. Access Jenkins at `http://Node IP:Port Number`. When KubeSphere is installed, the Jenkins dashboard is also installed by default. Besides, Jenkins is configured with KubeSphere LDAP, which means you can log in Jenkins with KubeSphere accounts (e.g. `admin/P@88w0rd`) directly.
+3. 使用地址 `http://Node IP:Port Number` 访问 Jenkins。安装 KubeSphere 时，默认情况下也会安装 Jenkins 仪表板。 Jenkins 配置了 KubeSphere LDAP，这意味着您可以直接使用 KubeSphere 帐户（例如 `admin/P@88w0rd`）登录 Jenkins。
 
-   ![jenkins-dashboard](/images/docs/devops-user-guide/using-devops/jenkins-system-settings/jenkins-dashboard.jpg)
-
-   {{< notice note >}}
-
-   You may need to set up necessary port forwarding rules and open the port `30180` to access Jenkins in your security groups depending on where your instances are deployed.
-
-   {{</ notice >}} 
-
-4. After you log in the dashboard, click **Manage Jenkins** from the navigation bar.
-
-   ![manage-jenkins](/images/docs/devops-user-guide/using-devops/jenkins-system-settings/manage-jenkins.jpg)
-
-5. Scroll down and click **Configuration as Code**.
-
-   ![configuration-as-code](/images/docs/devops-user-guide/using-devops/jenkins-system-settings/configuration-as-code.jpg)
-
-6. To reload configurations that you have modified in the ConfigMap, click **Apply new configuration**.
-
-   ![app-config](/images/docs/devops-user-guide/using-devops/jenkins-system-settings/app-config.jpg)
-
-7. For more information about how to set up Jenkins via CasC, see the [Jenkins documentation](https://github.com/jenkinsci/configuration-as-code-plugin).
+   ![jenkins-dashboard](/images/docs/devops-user-guide-zh/using-devops-zh/jenkins-system-settings-zh/jenkins-dashboard.png)
 
    {{< notice note >}}
 
-   In the current version, not all plugins support CasC settings. CasC will only overwrite plugin configurations that are set up through CasC.
+   您可能需要设置必要的端口转发规则并打开端口 `30180` 才能访问安全组中的 Jenkins，具体取决于您的实例部署的位置。
 
-   {{</ notice >}} 
+   {{</ notice >}}
+
+4. 登录仪表板后，从导航栏中单击 **Manage Jenkins**。
+
+   ![manage-jenkins](/images/docs/devops-user-guide-zh/using-devops-zh/jenkins-system-settings-zh/manage-jenkins.png)
+
+5. 向下翻页并单击 **Configuration as Code**.
+
+   ![configuration-as-code](/images/docs/devops-user-guide-zh/using-devops-zh/jenkins-system-settings-zh/configuration-as-code.png)
+
+6. 要重新加载在 ConfigMap 中修改的配置，请单击 **Apply new configuration**。.
+
+   ![app-config](/images/docs/devops-user-guide-zh/using-devops-zh/jenkins-system-settings-zh/app-config.png)
+
+7. 有关如何通过 CasC 设置 Jenkins 的更多信息，请参阅 [Jenkins 文档](https://github.com/jenkinsci/configuration-as-code-plugin)。
+
+   {{< notice note >}}
+
+在当前版本中，并非所有插件都支持 CasC 设置。 CasC 将仅覆盖通过 CasC 设置的插件配置。
+
+   {{</ notice >}}
