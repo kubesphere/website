@@ -2,7 +2,7 @@
 title: 'TiDB on KubeSphere: Release Cloud-Native Distributed Database on the KubeSphere App Store'
 keywords: Kubernetes, KubeSphere, TiDB, QingCloud Kubernetes Engine
 description: This blog demonstrates how to add a PingCap repository to KubeSphere to deploy tidb-operator and tidb-cluster.
-tag: TiDB, Kubernetes, QKE'
+tag: 'TiDB, Kubernetes, QKE'
 createTime: '2020-11-30'
 author: 'Will, Feynman, Sherlock'
 snapshot: 'https://ap3.qingstor.com/kubesphere-website/docs/tidb-architecture.png'
