@@ -32,7 +32,7 @@ Log in the console of KubeSphere as `project-regular`. Navigate to your DevOps p
 
 ![create-credential-step1](/images/docs/devops-user-guide/using-devops/credential-management/create-credential-step1.jpg)
 
-### Create Docker Hub Credentials
+### Create Docker Hub credentials
 
 1. In the dialog that appears, provide the following information.
 
@@ -46,7 +46,7 @@ Log in the console of KubeSphere as `project-regular`. Navigate to your DevOps p
 
 2. Click **OK** when you finish.
 
-### Create GitHub Credentials
+### Create GitHub credentials
 
 Similarly, follow the same steps above to create GitHub credentials. Set a different Credential ID (e.g. `github-id`) and also select **Account Credentials** for **Type**. Enter your GitHub username and password for **Username** and **Token/Password** respectively.
 
@@ -56,7 +56,7 @@ If there are any special characters such as `@` and `$` in your account or passw
 
 {{</ notice >}}
 
-### Create Kubeconfig Credentials
+### Create kubeconfig credentials
 
 Similarly, follow the same steps above to create kubeconfig credentials. Set a different Credential ID (e.g. `demo-kubeconfig`) and select **kubeconfig**.
 

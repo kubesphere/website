@@ -38,7 +38,7 @@ This example pipeline includes the following six stages.
 
 ## Hands-on Lab
 
-### Step 1: Create Credentials
+### Step 1: Create credentials
 
 1. Log in the KubeSphere console as `project-regular`. Go to your DevOps project and create the following credentials in **Credentials** under **Project Management**. For more information about how to create credentials, see [Credential Management](../credential-management/).
 
@@ -61,13 +61,13 @@ This example pipeline includes the following six stages.
 
    ![credential-list](/images/docs/devops-user-guide/using-devops/create-a-pipeline-using-graphical-editing-panels/credential-list.jpg)
 
-### Step 2: Create a Project
+### Step 2: Create a project
 
 In this tutorial, the example pipeline will deploy the [sample](https://github.com/kubesphere/devops-java-sample/tree/sonarqube) app to a project. Hence, you must create the project (for example, `kubesphere-sample-dev`) in advance. The Deployment and Service of the app will be created automatically in the project once the pipeline runs successfully.
 
 You can use the account `project-admin` to create the project. Besides, this account is also the reviewer of the CI/CD pipeline. Make sure the account `project-regular` is invited to the project with the role of `operator`. For more information, see [Create Workspace, Project, Account and Role](../../../quick-start/create-workspace-and-project/).
 
-### Step 3: Create a Pipeline
+### Step 3: Create a pipeline
 
 1. Make sure you have logged in KubeSphere as `project-regular`, and then go to your DevOps project. Click **Create** in **Pipelines**.
 
@@ -97,7 +97,7 @@ You can use the account `project-admin` to create the project. Besides, this acc
 
    ![pipeline-list](/images/docs/devops-user-guide/using-devops/create-a-pipeline-using-graphical-editing-panels/pipeline-list.jpg)
 
-### Step 4: Edit the Pipeline
+### Step 4: Edit the pipeline
 
 Click the pipeline to go to its detail page. To use graphical editing panels, click **Edit Pipeline** under the tab **Pipeline**. This pipeline consists of six stages. Follow the steps below to set each stage.
 
@@ -321,7 +321,7 @@ This stage uses SonarQube to test your code. You can skip this stage if you do n
 
    ![pipeline-done](/images/docs/devops-user-guide/using-devops/create-a-pipeline-using-graphical-editing-panels/pipeline-done.jpg)
 
-### Step 5: Run a Pipeline
+### Step 5: Run a pipeline
 
 1. You need to manually run the pipeline that is created through the graphical editing panel. Click **Run**, and you can see three string parameters defined in Step 3. Click **OK** to run the pipeline.
 
@@ -335,7 +335,7 @@ This stage uses SonarQube to test your code. You can skip this stage if you do n
 
 4. Log out of KubeSphere and log back in the console as `project-admin`. Go to your DevOps project and click the pipeline `graphical-pipeline`. Under the **Activity** tab, click the record to be reviewed. To approve the pipeline, click **Proceed**.
 
-### Step 6: View Pipeline Details
+### Step 6: View pipeline details
 
 1. Log back in the console as `project-regular`. Go to your DevOps project and click the pipeline `graphical-pipeline`. Under the **Activity** tab, click the record marked with **Success** under **Status**.
 
@@ -347,19 +347,19 @@ This stage uses SonarQube to test your code. You can skip this stage if you do n
 
    ![inspect-logs](/images/docs/devops-user-guide/using-devops/create-a-pipeline-using-graphical-editing-panels/inspect-logs.jpg)
 
-### Step 7: Download Artifact
+### Step 7: Download the artifact
 
 Click the **Artifacts** tab and then click the icon on the right to download the artifact.
 
 ![download-artifact](/images/docs/devops-user-guide/using-devops/create-a-pipeline-using-graphical-editing-panels/download-artifact.jpg)
 
-### Step 8: View Code Analysis Result
+### Step 8: View code analysis results
 
 On the **Code Quality** page, view the code analysis result of this example pipeline, which is provided by SonarQube. If you do not configure SonarQube in advance, this section is not available. For more information, see [Integrate SonarQube into Pipelines](../../../devops-user-guide/how-to-integrate/sonarqube/).
 
 ![sonarqube-result-detail](/images/docs/devops-user-guide/using-devops/create-a-pipeline-using-graphical-editing-panels/sonarqube-result-detail.jpg)
 
-### Step 9: Verify Kubernetes Resources
+### Step 9: Verify Kubernetes resources
 
 1. If every stage of the pipeline runs successfully, a Docker image will be automatically built and pushed to your Docker Hub repository. Ultimately, the pipeline automatically creates a Deployment and a Service in the project you set beforehand.
 
@@ -379,7 +379,7 @@ On the **Code Quality** page, view the code analysis result of this example pipe
 
    {{</ notice >}} 
 
-4. Now that the pipeline has run successfully, an image will be pushed to Docker Hub. Log in Docker Hub and check the result. 
+4. Now that the pipeline has run successfully, an image will be pushed to Docker Hub. Log in Docker Hub and check the result.
 
    ![dockerhub-image](/images/docs/devops-user-guide/using-devops/create-a-pipeline-using-graphical-editing-panels/dockerhub-image.jpg)
 

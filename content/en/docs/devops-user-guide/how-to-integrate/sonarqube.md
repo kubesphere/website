@@ -14,7 +14,7 @@ This tutorial demonstrates how you can integrate SonarQube into pipelines. Refer
 
 You need to [enable the KubeSphere DevOps System](../../../../docs/pluggable-components/devops/).
 
-## Install SonarQube Server
+## Install the SonarQube Server
 
 To integrate SonarQube into your pipeline, you must install SonarQube Server first.
 
@@ -48,7 +48,7 @@ To integrate SonarQube into your pipeline, you must install SonarQube Server fir
 
    ![sonarqube-install](/images/docs/devops-user-guide/tool-integration/integrate-sonarqube-into-pipeline/sonarqube-install.png)
 
-## Get Address of SonarQube Console
+## Get the SonarQube Console Address
 
 1. Execute the following command to get SonarQube NodePort.
 
@@ -64,9 +64,9 @@ To integrate SonarQube into your pipeline, you must install SonarQube Server fir
    http://192.168.0.4:31434
    ```
 
-## Configure SonarQube Server
+## Configure the SonarQube Server
 
-### Step 1: Access SonarQube Console
+### Step 1: Access the SonarQube console
 
 1. Execute the following command to view the status of SonarQube. Note that the SonarQube console is not accessible until SonarQube is up and running.
 
@@ -94,7 +94,7 @@ To integrate SonarQube into your pipeline, you must install SonarQube Server fir
 
    {{</ notice >}}
 
-### Step 2: Create SonarQube Admin Token
+### Step 2: Create a SonarQube admin token
 
 1. Click the letter **A** and select **My Account** from the menu to go to the **Profile** page.
 
@@ -114,7 +114,7 @@ To integrate SonarQube into your pipeline, you must install SonarQube Server fir
 
    {{</ notice >}}
 
-### Step 3: Create a Webhook Server
+### Step 3: Create a webhook server
 
 1. Execute the following command to get the address of SonarQube Webhook.
 
@@ -142,7 +142,7 @@ To integrate SonarQube into your pipeline, you must install SonarQube Server fir
 
    ![webhook-page-info](/images/docs/devops-user-guide/tool-integration/integrate-sonarqube-into-pipeline/webhook-page-info.jpg)
 
-### Step 4: Add SonarQube Configuration to ks-installer
+### Step 4: Add the SonarQube configuration to ks-installer
 
 1. Execute the following command to edit `ks-installer`.
 
@@ -168,7 +168,7 @@ To integrate SonarQube into your pipeline, you must install SonarQube Server fir
 
 3. Save the file after you finish.
 
-### Step 5: Add SonarQube Server to Jenkins
+### Step 5: Add the SonarQube server to Jenkins
 
 1. Execute the following command to get the address of Jenkins.
 
@@ -210,7 +210,7 @@ To integrate SonarQube into your pipeline, you must install SonarQube Server fir
 
    ![sonarqube-jenkins-settings](/images/docs/devops-user-guide/tool-integration/integrate-sonarqube-into-pipeline/sonarqube-jenkins-settings.jpg)
 
-### Step 6: Add sonarqubeUrl to KubeSphere Console
+### Step 6: Add sonarqubeUrl to the KubeSphere Console
 
 You need to specify `sonarqubeURL` so that you can access SonarQube directly from the KubeSphere console.
 
@@ -235,7 +235,7 @@ You need to specify `sonarqubeURL` so that you can access SonarQube directly fro
 
 3. Save the file.
 
-### Step 7: Restart Services to Make All Effective
+### Step 7: Restart Services
 
 Execute the following commands.
 
@@ -247,7 +247,7 @@ kubectl -n kubesphere-system rollout restart deploy ks-apiserver
 kubectl -n kubesphere-system rollout restart deploy ks-console
 ```
 
-## Create SonarQube Token for New Project
+## Create a SonarQube Token for a New Project
 
 You need a SonarQube token so that your pipeline can communicate with SonarQube as it runs.
 
@@ -271,7 +271,7 @@ You need a SonarQube token so that your pipeline can communicate with SonarQube 
 
    ![sonarqube-example](/images/docs/devops-user-guide/tool-integration/integrate-sonarqube-into-pipeline/sonarqube-example.jpg)
 
-## View Results on KubeSphere Console
+## View Results on the KubeSphere Console
 
 After you [create a pipeline using the graphical editing panel](../../how-to-use/create-a-pipeline-using-graphical-editing-panel) or [create a pipeline using a Jenkinsfile](../../how-to-use/create-a-pipeline-using-jenkinsfile), you can view the result of code quality analysis. For example, you may see an image as below if SonarQube runs successfully.
 

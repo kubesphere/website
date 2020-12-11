@@ -1,7 +1,7 @@
 ---
 title: "DevOps Project Management"
-keywords: 'kubernetes, docker, helm, jenkins, istio, prometheus'
-description: ''
+keywords: 'Kubernetes, KubeSphere, DevOps, Jenkins'
+description: 'How to create and manage DevOps projects'
 linkTitle: "DevOps Project Management"
 weight: 11120
 ---
@@ -17,11 +17,11 @@ This tutorial demonstrates how to create and manage DevOps projects.
 
 1. Log in the console of KubeSphere as `project-admin`. Go to **DevOps Projects** and click **Create**.
 
-   ![devops-project-create](/images/docs/devops-user-guide/using-devops/devops-project-management/devops-project-create.jpg) 
+   ![devops-project-create](/images/docs/devops-user-guide/understand-and-manage-devops-projects/devops-project-management/devops-project-create.jpg) 
 
 2. Provide the basic information for the DevOps project and click **OK**.
 
-   ![create-devops](/images/docs/devops-user-guide/using-devops/devops-project-management/create-devops.jpg)
+   ![create-devops](/images/docs/devops-user-guide/understand-and-manage-devops-projects/devops-project-management/create-devops.jpg)
 
    - **Name**: A concise and clear name for this DevOps project, which is convenient for users to identify, such as `demo-devops`.
    - **Alias**: The alias name of the DevOps project.
@@ -30,13 +30,13 @@ This tutorial demonstrates how to create and manage DevOps projects.
 
 3. A DevOps project will appear in the list below after created.
 
-   ![devops-list](/images/docs/devops-user-guide/using-devops/devops-project-management/devops-list.jpg)
+   ![devops-list](/images/docs/devops-user-guide/understand-and-manage-devops-projects/devops-project-management/devops-list.jpg)
 
 ## View a DevOps Project
 
 Click the DevOps project just created to go to its detail page. Tenants with different permissions are allowed to perform various tasks in a DevOps project, including creating CI/CD pipelines and credentials, and managing accounts and roles. 
 
-![devops-detail-page](/images/docs/devops-user-guide/using-devops/devops-project-management/devops-detail-page.jpg)
+![devops-detail-page](/images/docs/devops-user-guide/understand-and-manage-devops-projects/devops-project-management/devops-detail-page.jpg)
 
 ### Pipelines
 
@@ -46,7 +46,7 @@ A pipeline entails a collection of plugins that allow you to constantly and cons
 
 A DevOps project user with required permissions can configure credentials for pipelines for the interaction with external environments. Once the user adds these credentials in a DevOps project, the credentials can be used by the DevOps project to interact with third-party applications, such as GitHub, GitLab and Docker Hub. For more information, see [Credential Management](../credential-management/).
 
-### Members and Roles
+### Members and roles
 
 Similar to a project, a DevOps project also requires users to be granted different roles before they can work in the DevOps project. Project administrators (e.g. `project-admin`) are responsible for inviting tenants and granting them different roles. For more information, see [Role and Member Management](../role-and-member-management/).
 
@@ -56,4 +56,4 @@ Similar to a project, a DevOps project also requires users to be granted differe
 
 2. Click **Project Management** on the right, and you can edit the basic information of the DevOps project or delete it.
 
-   ![project-basic-info](/images/docs/devops-user-guide/using-devops/devops-project-management/project-basic-info.jpg)
+   ![project-basic-info](/images/docs/devops-user-guide/understand-and-manage-devops-projects/devops-project-management/project-basic-info.jpg)

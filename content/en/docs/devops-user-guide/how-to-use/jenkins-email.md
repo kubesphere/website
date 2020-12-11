@@ -1,5 +1,5 @@
 ---
-title: "Set Email Server for KubeSphere Pipelines"
+title: "Set the Email Server for KubeSphere Pipelines"
 keywords: 'KubeSphere, Kubernetes, notification, jenkins, devops, ci/cd, pipeline, email server'
 description: 'Set Email server for KubeSphere CI/CD pipelines'
 linkTitle: "Set Email Server for KubeSphere Pipelines"
@@ -14,7 +14,7 @@ The built-in Jenkins cannot share the same email configuration with the platform
 - You need to enable [KubeSphere DevOps System](../../../pluggable-components/devops/).
 - You need an account granted a role including the authorization of **Clusters Management**. For example, you can log in the console as `admin` directly or create a new role with the authorization and assign it to an account.
 
-## Set Email Server
+## Set the Email Server
 
 1. Click **Platform** in the top left corner and select **Clusters Management**.
 

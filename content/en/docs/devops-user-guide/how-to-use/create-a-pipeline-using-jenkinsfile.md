@@ -45,7 +45,7 @@ There are eight stages as shown below in this example pipeline.
 
 ## Hands-on Lab
 
-### Step 1: Create Credentials
+### Step 1: Create credentials
 
 1. Log in the KubeSphere console as `project-regular`. Go to your DevOps project and create the following credentials in **Credentials** under **Project Management**. For more information about how to create credentials, see [Credential Management](../../../devops-user-guide/how-to-use/credential-management/).
 
@@ -69,7 +69,7 @@ There are eight stages as shown below in this example pipeline.
 
    ![credential-list](/images/docs/devops-user-guide/using-devops/create-a-pipeline-using-a-jenkinsfile/credential-list.jpg)
 
-### Step 2: Modify Jenkinsfile in GitHub Repository
+### Step 2: Modify the Jenkinsfile in your GitHub repository
 
 1. Log in GitHub. Fork [devops-java-sample](https://github.com/kubesphere/devops-java-sample) from the GitHub repository to your own GitHub account.
 
@@ -104,7 +104,7 @@ There are eight stages as shown below in this example pipeline.
 
    ![commit-changes](/images/docs/devops-user-guide/using-devops/create-a-pipeline-using-a-jenkinsfile/commit-changes.jpg)
 
-### Step 3: Create Projects
+### Step 3: Create projects
 
 You need to create two projects, such as `kubesphere-sample-dev` and `kubesphere-sample-prod`, which represent the development environment and the production environment respectively. Related Deployments and Services of the app will be created automatically in these two projects once the pipeline runs successfully.
 
@@ -125,7 +125,7 @@ The account `project-admin` needs to be created in advance since it is the revie
 
    ![project-list](/images/docs/devops-user-guide/using-devops/create-a-pipeline-using-a-jenkinsfile/project-list.jpg)
 
-### Step 4: Create a Pipeline
+### Step 4: Create a pipeline
 
 1. Log out of KubeSphere and log back in as `project-regular`. Go to the DevOps project `demo-devops` and click **Create** to build a new pipeline.
 
@@ -193,7 +193,7 @@ The account `project-admin` needs to be created in advance since it is the revie
 
    {{</ notice >}}
 
-### Step 5: Run a Pipeline
+### Step 5: Run a pipeline
 
 1. After a pipeline is created, it displays in the list below. Click it to go to its detail page.
 
@@ -234,7 +234,7 @@ The account `project-admin` needs to be created in advance since it is the revie
    ···
    ```
 
-### Step 6: Check Pipeline Status
+### Step 6: Check pipeline status
 
 1. In **Task Status**, you can see how a pipeline is running. Please note that the pipeline will keep initializing for several minutes after it is just created. There are eight stages in the sample pipeline and they have been defined separately in [Jenkinsfile-online](https://github.com/kubesphere/devops-java-sample/blob/sonarqube/Jenkinsfile-online).
 
@@ -244,7 +244,7 @@ The account `project-admin` needs to be created in advance since it is the revie
 
    ![inspect-pipeline-log-2](/images/docs/devops-user-guide/using-devops/create-a-pipeline-using-a-jenkinsfile/inspect-pipeline-log-2.jpg)
 
-### Step 7: Verify Results
+### Step 7: Verify results
 
 1. Once you successfully executed the pipeline, click **Code Quality** to check the results through  SonarQube as follows.
 
@@ -281,7 +281,7 @@ The account `project-admin` needs to be created in advance since it is the revie
 
    {{</ notice >}} 
 
-### Step 8: Access Sample Service
+### Step 8: Access the example Service
 
 1. To access the Service, log in KubeSphere as `admin` to use the **web kubectl** from **Toolbox**. Go to the project `kubesphere-sample-dev`, and select `ks-sample-dev` in **Services** under **Application Workloads**. The endpoint can be used to access the Service.
 
