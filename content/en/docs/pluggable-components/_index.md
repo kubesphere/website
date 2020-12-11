@@ -52,8 +52,8 @@ Learn how to enable Network Policy to control traffic flow at the IP address or 
 
 ### [Logging](../pluggable-components/faq/logging/)
 
-Questions asked Frequently for the logging functionality.
+Questions asked frequently about the logging functionality.
 
 ### [Monitoring](../pluggable-components/faq/monitoring/)
 
-Questions asked Frequently for the monitoring functionality.
+Questions asked frequently about the monitoring functionality.
