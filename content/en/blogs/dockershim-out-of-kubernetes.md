@@ -1,18 +1,18 @@
 ---
- title: 'Dockershim Deprecation: Is Docker Truly out of Game?'
+title: 'Dockershim Deprecation: Is Docker Truly out of Game?'
 keywords: Kubernetes, KubeSphere, Docker
 description: What does dockershim deprecation mean for KubeSphere users？
 tag: 'KubeSphere, Kubernetes, Docker'
 createTime: '2020-12-11'
 author: 'Pixiake, Feynman, Sherlock'
-snapshot: ''
+snapshot: 'https://ap3.qingstor.com/kubesphere-website/docs/container-runtime.png'
 ---
 
 Recently, the Kubernetes community announced it is [deprecating Docker](https://github.com/kubernetes/kubernetes/blob/master/CHANGELOG/CHANGELOG-1.20.md#deprecation) as a container runtime after v1.20.
 
 ### Is Docker truly out of the game
 
-Strictly speaking, what’s actually happening is that Dockershim is being removed from Kubelet. In other words, Docker will not be used as the default container runtime. However, you may still integrate Docker into your environment. For more information, you can take a look at the official announcement of Kubernetes:
+Strictly speaking, what’s actually happening is that dockershim is being removed from Kubelet. In other words, Docker will not be used as the default container runtime. However, you may still integrate Docker into your environment. For more information, you can take a look at the official announcement of Kubernetes:
 
 **[Don\'t Panic: Kubernetes and Docker](https://kubernetes.io/blog/2020/12/02/dont-panic-kubernetes-and-docker/)**
 
@@ -27,6 +27,8 @@ Currently, the KubeSphere container platform is using Docker as the container ru
 In future releases, other KubeSphere components, such as DevOps, will support these container runtimes and you will be able to use these CRI implementations.
 
 ### The next game changer: containerd, CRI-O, and iSula
+
+![runtime](https://ap3.qingstor.com/kubesphere-website/docs/container-runtime.png)
 
 #### containerd
 
@@ -270,10 +272,6 @@ After you deploy the cluster, you can access the web console of KubeSphere. On t
 
 ![cluster-management](https://ap3.qingstor.com/kubesphere-website/docs/20201211153052.png)
 
-#### iSula on openEuler 20.09
-
-
-
 #### containerd
 
 ![containerd](https://ap3.qingstor.com/kubesphere-website/docs/containerd.jpg)
@@ -281,6 +279,10 @@ After you deploy the cluster, you can access the web console of KubeSphere. On t
 #### **CRI-O**
 
 ![crio](https://ap3.qingstor.com/kubesphere-website/docs/20201211171940.png)
+
+#### iSula on openEuler 20.09
+
+![isula](https://ap3.qingstor.com/kubesphere-website/docs/20201211182531.png)
 
 ### Reference
 
