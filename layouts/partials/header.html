@@ -9,6 +9,14 @@
         </div>
     </div>
     {{ end }}
+    {{ if eq .Site.Language.Lang "en"}}
+    <div class="join-div">
+        <div class="content">
+            🚀 KubeSphere on AWS is now available！You can easily provision an Amazon EKS managed by KubeSphere. <a href="https://aws.amazon.com/quickstart/architecture/qingcloud-kubesphere/" target="_blank" rel="noopener noreferrer">Try it on AWS →</a>
+            <img id="close-join" src="/images/header/close.svg" alt="close">
+        </div>
+    </div>
+    {{ end }}
     <div class="common-layout">
         <div class="header-container">
             <a href="{{ site.Home.RelPermalink }}">
