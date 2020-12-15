@@ -9,7 +9,7 @@ weight: 10000
 icon: "/images/docs/docs.svg"
 ---
 
-在 KubeSphere 中，具有必要权限的项目用户能够执行一系列任务，例如创建各种工作负载，配置卷、密钥和 ConfigMap，设置各种发布策略，监控应用程序指标以及创建告警策略。 由于 KubeSphere 具有极大的灵活性和兼容性，无需将任何代码植入到原生 Kubernetes 中，因此用户可以轻松地开始使用测试、开发和生产环境所需的任何功能。
+在 KubeSphere 中，具有必要权限的项目用户能够执行一系列任务，例如创建各种工作负载，配置卷、密钥和 ConfigMap，设置各种发布策略，监控应用程序指标以及创建告警策略。由于 KubeSphere 具有极大的灵活性和兼容性，无需将任何代码植入到原生 Kubernetes 中，因此用户可以在测试、开发和生产环境快速上手 KubeSphere 的各种功能。
 
 ## 应用程序
 
@@ -25,7 +25,7 @@ icon: "/images/docs/docs.svg"
 
 了解如何从应用商店中部署应用程序。
 
-### [编写微服务应用](../project-user-guide/application/compose-app/)
+### [构建微服务应用](../project-user-guide/application/compose-app/)
 
 了解如何从零开始编写基于微服务的应用程序。
 
@@ -55,9 +55,9 @@ icon: "/images/docs/docs.svg"
 
 了解定时任务的基本概念以及如何在 KubeSphere 中创建定时任务。
 
-### [路由](../project-user-guide/application-workloads/ingress/)
+### [应用路由](../project-user-guide/application-workloads/ingress/)
 
-了解路由的基本概念（例如应用路由）以及如何在 KubeSphere 中创建路由。
+了解应用路由（即 Ingress）的基本概念以及如何在 KubeSphere 中创建应用路由。
 
 ### [容器镜像设置](../project-user-guide/application-workloads/container-image-settings/)
 
@@ -77,7 +77,7 @@ icon: "/images/docs/docs.svg"
 
 了解如何在 KubeSphere 中创建镜像仓库。
 
-## 定制应用程序监控
+## 自定义应用程序监控
 
 ### [介绍](../project-user-guide/custom-application-monitoring/introduction/)
 
@@ -87,11 +87,11 @@ icon: "/images/docs/docs.svg"
 
 #### [监控 MySQL](../project-user-guide/custom-application-monitoring/examples/monitor-mysql/)
 
-部署 MySQL 和 MySQL Exporter 并创建一个仪表板来监控该应用程序。
+部署 MySQL 和 MySQL Exporter 并为该应用程序创建监控面板。
 
 #### [监视示例 Web](../project-user-guide/custom-application-monitoring/examples/monitor-sample-web/)
 
-使用 Helm Chart 来部署示例 Web 应用程序并创建仪表板以监控该应用程序。
+使用 Helm Chart 来部署示例 Web 应用程序并为该应用程序创建监控面板。
 
 ### 可视化
 
@@ -129,7 +129,7 @@ icon: "/images/docs/docs.svg"
 
 ### [存储卷](../project-user-guide/storage/volumes/)
 
-了解如何在 KubeSphere 中创建、编辑和附加存储卷。
+了解如何在 KubeSphere 中创建、编辑和挂载存储卷。
 
 ### [存储卷快照](../project-user-guide/storage/volume-snapshots/)
 
