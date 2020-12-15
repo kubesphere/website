@@ -27,7 +27,7 @@ icon: "/images/docs/docs.svg"
 
 ### [构建微服务应用](../project-user-guide/application/compose-app/)
 
-了解如何从零开始编写基于微服务的应用程序。
+了解如何从零开始构建基于微服务的应用程序。
 
 ## 应用工作负载
 
