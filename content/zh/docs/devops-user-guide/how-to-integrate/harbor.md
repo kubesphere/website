@@ -1,20 +1,20 @@
 ---
-title: "How to integrate Harbor in Pipeline"
+title: "如何将 Harbor 集成到流水线"
 keywords: 'kubernetes, docker, devops, jenkins, harbor'
 description: ''
-linkTitle: "Integrate Harbor in Pipeline"
+linkTitle: "将 Harbor 集成到流水线"
 weight: 11320
 ---
 
-## Prerequisites
+## 先决条件
 
-- You need to [enable KubeSphere DevOps System](../../../../docs/pluggable-components/devops/).
-- You need to create a workspace, a DevOps project, and a **project-regular** user account, and this account needs to be invited into a DevOps project. See [create-workspace-and-project](../../../../docs/quick-start/create-workspace-and-project).
-- You need to have installed **Harbor** already. 
+- 您需要[启用 KubeSphere DevOps 系统](../../../../docs/pluggable-components/devops/)。
+- 您需要创建一个企业空间，一个 DevOps 项目和一个项目**常规帐户（project-regular）**，并且需要将此帐户邀请到 DevOps 项目中。 请参阅创建[企业空间和项目](../../../../docs/quick-start/create-workspace-and-project)。
+- 您已经安装 **Harbor**。
 
-## Install  Harbor
+## 安装 Harbor
 
-It is highly recommended that you install harbor [by application store](). You can also install harbor manally by helm3.
+强烈建议您通过应用程序商店安装 Harbor。你也可以通过 helm3 手动安装 Harbor。
 
 ```bash
 helm repo add harbor https://helm.goharbor.io
@@ -23,53 +23,55 @@ helm repo add harbor https://helm.goharbor.io
 helm install harbor-release harbor/harbor --set expose.type=nodePort,externalURL=http://$ip:30002,expose.tls.enabled=false
 ```
 
-After several minutes, open your browser and visit http:$node_ip:30003. Enter **admin** and **Harbor12345** , then click **LOG** **IN**.
+几分钟后，打开浏览器并访问 `http://$node_ip:30003`  输入 **admin** 和 **Harbor12345**，然后单击 **log in** 登录。
 
-![](/images/devops/harbor-login.png)
+![harbor-login](/images/devops-zh/harbor-login.png)
 
-Click **NEW** **PROJECT** , enter the project name, then click **ok**.
+单击**新建项目**，输入项目名称，然后单击**确定**。
 
-## Get Harbor credential
+## 获取 Harbor 凭证
 
-![](/images/devops/harbor-new-project.png)
+![harbor-new-project](/images/devops-zh/harbor-new-project.png)
 
-![](/images/devops/harbor-project-ok.png)
+![harbor-project-ok](/images/devops-zh/harbor-project-ok.png)
 
-Click your project name you just created, find the **Robot Accounts** tab, then click **NEW ROBOT ACCOUNT**.
+单击您刚刚创建的项目名称，找到**机器人帐户**选项卡，然后单击**添加机器人帐户**。
 
-![](/images/devops/harbor-robot-account.png)
+![harbor-robot-account](/images/devops-zh/harbor-robot-account.png)
 
-Enter the name of the robot account, then save it.
+输入机器人帐户的名称，然后保存。
 
-![](/images/devops/harbor-robot-account-ok.png)
+![harbor-robot-account-ok](/images/devops-zh/harbor-robot-account-ok.png)
 
-Click **EXPORT TO FILE** to save the credential.
+单击**导出到文件中**以保存凭证。
 
-![](/images/devops/harbor-robot-account-save.png)
+![harbor-robot-account-save](/images/devops-zh/harbor-robot-account-save.png)
 
-### Create Credentials
+### 创建凭证
 
-Log into KubeSphere, enter into the created DevOps project and create the following credential under **Project Management → Credentials**:
+登录到 KubeSphere，进入创建的 DevOps 项目，并在**工程管理**→**凭证**下创建以下**凭证**：
 
-![](/images/devops/ks-console-create-credential.png)
+![ks-console-create-credential](/images/devops-zh/ks-console-create-credential.png)
 
-The **Username** is the name field of the json file you just saved. **Password**  takes the token field.
+用户名是您刚刚保存的 json 文件的 `name` 字段内容。 密码使用 `token` 字段内容。
 
-![](/images/devops/ks-console-credential-ok.png)
+![ks-console-credential-ok](/images/devops-zh/ks-console-credential-ok.png)
 
-## Create a pipeline
+## 创建流水线
 
-![](/images/devops/ks-console-create-pipline.png)
+![ks-console-create-pipline](/images/devops-zh/ks-console-create-pipline.png)
 
-Fill in the pipeline's basic information in the pop-up window,  enter the name of pipelne and set the others as default value.
+在弹出窗口中填写流水线的基本信息，输入流水线的名称，然后将其他名称设置为默认值。
 
-![](/images/devops/create-pipline-2.png)
+![create-pipline-2](/images/devops-zh/create-pipline-2.png)
 
-![](/images/devops/create-pipline-3.png)
+![create-pipline-3](/images/devops-zh/create-pipline-3.png)
 
-## Edit jenkins file
+## 编辑 Jenkinsfile
 
-Click **Edit Jenkins File** button under your pipeline and paste the following text into the pop-up window. You need to replace **REGISTRY**, **HARBOR_NAMESPACE**, **APP_NAME**, **HARBOR_CREDENTIAL** as yours.
+单击流水线下的**编辑 Jenkinsfile** 按钮，然后将以下文本粘贴到弹出窗口中。 您需要替换环境变量 REGISTRY，HARBOR_NAMESPACE，APP_NAME，HARBOR_CREDENTIAL。
+
+![editJenkinsfile](/images/devops-zh/edit-Jenkinsfile.png)
 
 ```pipeline {
 pipeline {  
@@ -95,8 +97,8 @@ pipeline {
     stage('docker login') {
       steps{
         container ('maven') {
-          // replace the username behind -u and do not forget ''
-          sh '''echo $HARBOR_CREDENTIAL_PSW | docker login $REGISTRY -u 'robot$yuswift2018' --password-stdin'''
+          // replace the username behind -u and do not forget
+          sh '''echo $HARBOR_CREDENTIAL | docker login $REGISTRY -u 'robot$yuswift2018' --password-stdin'''
             }
           }  
         }
@@ -115,14 +117,14 @@ pipeline {
 
 ```
 
-> Note: 
->
-> - You can pass the parameter to `docker login -u ` via jenkins credential with environment variable. However, every harbor-robot-account username contains a "\$" character, which will be converted into "\$$" by jenkins when used by environment varibles. See more about [this](https://number1.co.za/rancher-cannot-use-harbor-robot-account-imagepullbackoff-pull-access-denied/).
+  {{< notice note >}}
 
-![](/images/devops/edit-jenkins-file.png)
+您可以通过带有环境变量的 jenkins 凭证将参数传递给 docker login -u。但是，每个 harbor-robot-account 用户名都包含一个 “$” 字符，当被环境变量使用时，jenkins 将其转换为 “$$”。查看更多[相关信息](https://number1.co.za/rancher-cannot-use-harbor-robot-account-imagepullbackoff-pull-access-denied/)。
 
-## Run the pipeline
+   {{</ notice >}}
 
-After you have saved the jenkins file, click the **Run** button. If everything goes well, you will see image have been pushed into your harbor registry by jenkins.
+## 运行流水线
 
-![](/images/devops/run-pipline.png)
+保存完 jenkinsfile 后，单击**运行**按钮。 如果一切顺利，您会看到 jenkins 将镜像推送到 Harbor 仓库中。
+
+![run-pipline](/images/devops-zh/run-pipline.png)
