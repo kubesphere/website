@@ -27,7 +27,7 @@ Learn how to deploy an application from the App Store.
 
 ### [Compose a Microservice App](../project-user-guide/application/compose-app/)
 
-Learn how to compose a mcroservice-based application from scratch.
+Learn how to compose a microservice-based application from scratch.
 
 ## Application Workloads
 
@@ -129,7 +129,7 @@ Learn how to conduct a traffic mirroring job in KubeSphere.
 
 ### [Volumes](../project-user-guide/storage/volumes/)
 
-Learn how to create, edit, and attach a volume in KubeSphere.
+Learn how to create, edit, and mount a volume in KubeSphere.
 
 ### [Volume Snapshots](../project-user-guide/storage/volume-snapshots/)
 
