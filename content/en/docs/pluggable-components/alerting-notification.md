@@ -1,15 +1,14 @@
 ---
 title: "KubeSphere Alerting and Notification"
 keywords: "Kubernetes, alertmanager, KubeSphere, alerting, notification"
-description: "How to Enable Alerting and Notification"
-
+description: "How to enable Alerting and Notification"
 linkTitle: "KubeSphere Alerting and Notification"
 weight: 6600
 ---
 
 ## What are KubeSphere Alerting and Notification
 
-Alerting and Notification are two important building blocks of observability, closely related monitoring and logging. The alerting system in KubeSphere, coupled with the proactive failure notification system, allows users to know activities of interest based on alert policies. When a predefined threshold of a certain metric is reached, an alert will be sent to preconfigured recipients, the notification method of which can be set by yourself, including Email, WeChat Work and Slack. With a highly functional alerting and notification system in place, you can quickly identify and resolve potential issues in advance before they affect your business.
+Alerting and Notification are two important building blocks of observability, closely related to monitoring and logging. The alerting system in KubeSphere, coupled with the proactive failure notification system, allows users to know activities of interest based on alert policies. When a predefined threshold of a certain metric is reached, an alert will be sent to preconfigured recipients, the notification method of which can be set by yourself, including Email, WeChat Work and Slack. With a highly functional alerting and notification system in place, you can quickly identify and resolve potential issues in advance before they affect your business.
 
 For more information, see [Alerting Policy](../../project-user-guide/alerting/alerting-policy) and [Alerting Message](../../project-user-guide/alerting/alerting-message).
 
@@ -25,14 +24,14 @@ It is recommended that you enable Alerting and Notification together so that use
 
 When you implement multi-node installation of KubeSphere on Linux, you need to create a configuration file, which lists all KubeSphere components.
 
-1. In the tutorial of [Installing KubeSphere on Linux](../../installing-on-linux/introduction/multioverview/), you create a default file **config-sample.yaml**. Modify the file by executing the following command:
+1. In the tutorial of [Installing KubeSphere on Linux](../../installing-on-linux/introduction/multioverview/), you create a default file `config-sample.yaml`. Modify the file by executing the following command:
 
     ```bash
     vi config-sample.yaml
     ```
 
     {{< notice note >}}
-If you adopt [All-in-one Installation](../../quick-start/all-in-one-on-linux/), you do not need to create a config-sample.yaml file as you can create a cluster directly. Generally, the all-in-one mode is for users who are new to KubeSphere and look to get familiar with the system. If you want to enable Alerting and Notification in this mode (e.g. for testing purpose), refer to the following section to see how Alerting and Notification can be installed after installation.
+If you adopt [All-in-One Installation](../../quick-start/all-in-one-on-linux/), you do not need to create a `config-sample.yaml` file as you can create a cluster directly. Generally, the all-in-one mode is for users who are new to KubeSphere and look to get familiar with the system. If you want to enable Alerting and Notification in this mode (e.g. for testing purposes), refer to [the following section](#enable-alerting-and-notification-after-installation) to see how Alerting and Notification can be installed after installation.
     {{</ notice >}}
 
 2. In this file, navigate to `alerting` and `notification` and change `false` to `true` for `enabled`. Save the file after you finish.
@@ -60,7 +59,7 @@ The process of installing KubeSphere on Kubernetes is same as stated in the tuto
     vi cluster-configuration.yaml
     ```
 
-2. In this local cluster-configuration.yaml file, navigate to `alerting` and `notification` and enable them by changing `false` to `true` for `enabled`. Save the file after you finish.
+2. In this local `cluster-configuration.yaml` file, navigate to `alerting` and `notification` and enable them by changing `false` to `true` for `enabled`. Save the file after you finish.
 
     ```yaml
     alerting:
@@ -80,16 +79,18 @@ The process of installing KubeSphere on Kubernetes is same as stated in the tuto
 ## Enable Alerting and Notification after Installation
 
 1. Log in the console as `admin`. Click **Platform** in the top-left corner and select **Clusters Management**.
-    ![clusters-management](https://ap3.qingstor.com/kubesphere-website/docs/20200828111130.png)
-
-2. Click **CRDs** and enter `clusterconfiguration` in the search bar. Click the result to view its detailed page.
+    
+    ![clusters-management](/images/docs/enable-pluggable-components/kubesphere-alerting-and-notification/clusters-management.png)
+    
+2. Click **CRDs** and enter `clusterconfiguration` in the search bar. Click the result to view its detail page.
 
     {{< notice info >}}
 A Custom Resource Definition (CRD) allows users to create a new type of resources without adding another API server. They can use these resources like any other native Kubernetes objects.
     {{</ notice >}}
 
 3. In **Resource List**, click the three dots on the right of `ks-installer` and select **Edit YAML**.
-    ![edit-yaml](https://ap3.qingstor.com/kubesphere-website/docs/20200827182002.png)
+
+    ![edit-yaml](/images/docs/enable-pluggable-components/kubesphere-alerting-and-notification/edit-yaml.png)
 
 4. In this yaml file, navigate to `alerting` and `notification` and change `false` to `true` for `enabled`. After you finish, click **Update** in the bottom-right corner to save the configuration.
 
@@ -110,21 +111,21 @@ A Custom Resource Definition (CRD) allows users to create a new type of resource
 You can find the web kubectl tool by clicking the hammer icon in the bottom-right corner of the console.
     {{</ notice >}}
 
-## Verify the Installation of Component
+## Verify the Installation of the Component
 
 {{< tabs >}}
 
-{{< tab "Verify the Component in Dashboard" >}}
+{{< tab "Verify the component on the dashboard" >}}
 
 If you can see **Alerting Messages** and **Alerting Policies** in the image below, it means the installation succeeds as the two parts won't display until you install the component.
 
-![alerting](https://ap3.qingstor.com/kubesphere-website/docs/20200901143123.png)
+![alerting](/images/docs/enable-pluggable-components/kubesphere-alerting-and-notification/alerting.png)
 
 {{</ tab >}}
 
-{{< tab "Verify the Component through kubectl" >}}
+{{< tab "Verify the component through kubectl" >}}
 
-Execute the following command to check the status of pods:
+Execute the following command to check the status of Pods:
 
 ```bash
 kubectl get pod -n kubesphere-alerting-system
