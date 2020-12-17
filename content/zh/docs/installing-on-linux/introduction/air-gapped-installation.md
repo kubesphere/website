@@ -9,6 +9,12 @@ weight: 3130
 
 The air-gapped installation is almost the same as the online installation except that you must create a local registry to host Docker images. This tutorial demonstrates how to install KubeSphere and Kubernetes in an air-gapped environment.
 
+## Video Demonstration
+
+<video controls="controls" style="width: 100% !important; height: auto !important;">
+  <source type="video/mp4" src="https://kubesphere-docs.pek3b.qingstor.com/website/docs-v3.0/%E5%AE%89%E8%A3%85%E4%B8%8E%E9%83%A8%E7%BD%B2_5_%E7%A6%BB%E7%BA%BF%E9%83%A8%E7%BD%B2%E5%A4%9A%E8%8A%82%E7%82%B9KubeSphere%E9%9B%86%E7%BE%A4.mp4">
+</video>
+
 ## Step 1: Prepare Linux Hosts
 
 Please see the requirements for hardware and operating system shown below. To get started with multi-node installation, you need to prepare at least three hosts according to the following requirements.
