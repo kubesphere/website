@@ -10,6 +10,12 @@ weight: 7200
 对于 KubeSphere 和 Kubernetes 都是通过 [KubeSphere Installer](https://v2-1.docs.kubesphere.io/docs/installation/all-in-one/#step-2-download-installer-package) 部署的用户，推荐使用 KubeKey 升级。
 如果你的 Kubernetes 是由云供应商托管或自行配置的，请参阅 [使用 ks-installer 升级](../upgrade-with-ks-installer)。
 
+## 视频演示
+
+<video controls="controls" style="width: 100% !important; height: auto !important;">
+  <source type="video/mp4" src="https://kubesphere-docs.pek3b.qingstor.com/website/docs-v3.0/%E5%AE%89%E8%A3%85%E4%B8%8E%E9%83%A8%E7%BD%B2_7_%E4%BB%8E%20KubeSphere%202.x%20%E5%8D%87%E7%BA%A7%E5%88%B0%203.0.mp4">
+</video>
+
 ## 前提条件
 
 - 你需要有一个运行在 v2.1.1 版本的 KubeSphere 集群。
