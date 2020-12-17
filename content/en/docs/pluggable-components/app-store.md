@@ -2,35 +2,34 @@
 title: "KubeSphere App Store"
 keywords: "Kubernetes, KubeSphere, app-store, OpenPitrix"
 description: "How to Enable KubeSphere App Store"
-
 linkTitle: "KubeSphere App Store"
 weight: 6200
 ---
 
 ## What is KubeSphere App Store
 
-As an open-source and app-centric container platform, KubeSphere provides users with a Helm-based app store for application lifecycle management on the back of [OpenPitrix](https://github.com/openpitrix/openpitrix), an open-source web-based system to package, deploy and manage different types of apps. KubeSphere App Store allows ISVs, developers and users to upload, test, deploy and release apps with just several clicks in a one-stop shop.
+As an open-source and app-centric container platform, KubeSphere provides users with a Helm-based app store for application lifecycle management on the back of [OpenPitrix](https://github.com/openpitrix/openpitrix), an open-source web-based system to package, deploy and manage different types of apps. The KubeSphere App Store allows ISVs, developers and users to upload, test, deploy and release apps with just several clicks in a one-stop shop.
 
-Internally, KubeSphere App Store can serve as a place for different teams to share data, middleware, and office applications. Externally, it is conducive to setting industry standards of building and delivery. By default, there are 15 apps in the App Store. After you enable this feature, you can add more apps with app templates.
+Internally, the KubeSphere App Store can serve as a place for different teams to share data, middleware, and office applications. Externally, it is conducive to setting industry standards of building and delivery. By default, there are 15 built-in apps in the App Store. After you enable this feature, you can add more apps with app templates.
 
-![app-store](https://ap3.qingstor.com/kubesphere-website/docs/20200828170503.png)
+![app-store](/images/docs/enable-pluggable-components/kubesphere-app-store/app-store.png)
 
 For more information, see [App Store](../../application-store/).
 
-## Enable App Store before Installation
+## Enable the App Store before Installation
 
 ### Installing on Linux
 
 When you implement multi-node installation of KubeSphere on Linux, you need to create a configuration file, which lists all KubeSphere components.
 
-1. In the tutorial of [Installing KubeSphere on Linux](../../installing-on-linux/introduction/multioverview/), you create a default file **config-sample.yaml**. Modify the file by executing the following command:
+1. In the tutorial of [Installing KubeSphere on Linux](../../installing-on-linux/introduction/multioverview/), you create a default file `config-sample.yaml`. Modify the file by executing the following command:
 
     ```bash
     vi config-sample.yaml
     ```
 
     {{< notice note >}}
-If you adopt [All-in-one Installation](../../quick-start/all-in-one-on-linux/), you do not need to create a config-sample.yaml file as you can create a cluster directly. Generally, the all-in-one mode is for users who are new to KubeSphere and look to get familiar with the system. If you want to enable App Store in this mode (e.g. for testing purpose), refer to [the following section](#enable-app-store-after-installation) to see how App Store can be installed after installation.
+If you adopt [All-in-One Installation](../../quick-start/all-in-one-on-linux/), you do not need to create a `config-sample.yaml` file as you can create a cluster directly. Generally, the all-in-one mode is for users who are new to KubeSphere and look to get familiar with the system. If you want to enable the App Store in this mode (e.g. for testing purposes), refer to [the following section](#enable-app-store-after-installation) to see how the App Store can be installed after installation.
     {{</ notice >}}
 
 2. In this file, navigate to `openpitrix` and change `false` to `true` for `enabled`. Save the file after you finish.
@@ -56,7 +55,7 @@ The process of installing KubeSphere on Kubernetes is same as stated in the tuto
     vi cluster-configuration.yaml
     ```
 
-2. In this local cluster-configuration.yaml file, navigate to `openpitrix` and enable App Store by changing `false` to `true` for `enabled`. Save the file after you finish.
+2. In this local `cluster-configuration.yaml` file, navigate to `openpitrix` and enable the App Store by changing `false` to `true` for `enabled`. Save the file after you finish.
 
     ```yaml
     openpitrix:
@@ -71,19 +70,23 @@ The process of installing KubeSphere on Kubernetes is same as stated in the tuto
     kubectl apply -f cluster-configuration.yaml
     ```
 
-## Enable App Store after Installation
+## Enable the App Store after Installation
 
 1. Log in the console as `admin`. Click **Platform** in the top-left corner and select **Clusters Management**.
-    ![clusters-management](https://ap3.qingstor.com/kubesphere-website/docs/20200828111130.png)
+   
+   ![clusters-management](/images/docs/enable-pluggable-components/kubesphere-app-store/clusters-management.png)
 
-2. Click **CRDs** and enter `clusterconfiguration` in the search bar. Click the result to view its detailed page.
+2. Click **CRDs** and enter `clusterconfiguration` in the search bar. Click the result to view its detail page.
 
     {{< notice info >}}
+
 A Custom Resource Definition (CRD) allows users to create a new type of resources without adding another API server. They can use these resources like any other native Kubernetes objects.
-    {{</ notice >}}
+
+{{</ notice >}}
 
 3. In **Resource List**, click the three dots on the right of `ks-installer` and select **Edit YAML**.
-    ![edit-yaml](https://ap3.qingstor.com/kubesphere-website/docs/20200827182002.png)
+
+    ![edit-yaml](/images/docs/enable-pluggable-components/kubesphere-app-store/edit-yaml.png)
 
 4. In this yaml file, navigate to `openpitrix` and change `false` to `true` for `enabled`. After you finish, click **Update** in the bottom-right corner to save the configuration.
 
@@ -99,24 +102,27 @@ A Custom Resource Definition (CRD) allows users to create a new type of resource
     ```
 
     {{< notice tip >}}
-You can find the web kubectl tool by clicking the hammer icon in the bottom-right corner of the console.
-    {{</ notice >}}
+    
 
-## Verify the Installation of Component
+You can find the web kubectl tool by clicking the hammer icon in the bottom-right corner of the console.
+
+{{</ notice >}}
+
+## Verify the Installation of the Component
 
 {{< tabs >}}
 
-{{< tab "Verify the Component in Dashboard" >}}
+{{< tab "Verify the component on the dashboard" >}}
 
-Go to **Components** and check the status of OpenPitrix. You may see an image as follows:
+Go to **Components** and check the status of **OpenPitrix**. You may see an image as follows:
 
-![openpitrix](https://ap3.qingstor.com/kubesphere-website/docs/20200829124018.png)
+![openpitrix](/images/docs/enable-pluggable-components/kubesphere-app-store/openpitrix.png)
 
 {{</ tab >}}
 
-{{< tab "Verify the Component through kubectl" >}}
+{{< tab "Verify the component through kubectl" >}}
 
-Execute the following command to check the status of pods:
+Execute the following command to check the status of Pods:
 
 ```bash
 kubectl get pod -n openpitrix-system
