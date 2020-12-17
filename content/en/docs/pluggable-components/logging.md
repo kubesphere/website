@@ -1,15 +1,14 @@
 ---
 title: "KubeSphere Logging System"
 keywords: "Kubernetes, Elasticsearch, KubeSphere, Logging, logs"
-description: "How to Enable KubeSphere Logging System"
-
+description: "How to enable the KubeSphere Logging System"
 linkTitle: "KubeSphere Logging System"
 weight: 6400
 ---
 
 ## What is KubeSphere Logging System
 
-KubeSphere provides a powerful, holistic and easy-to-use logging system for log collection, query and management. It covers logs at varied levels, including tenants, infrastructure resources, and applications. Users can search logs from different dimensions, such as project, workload, Pod and keyword. Compared with Kibana, the tenant-based logging system of KubeSphere features better isolation and security among tenants as each tenant can only view his or her own logs. Apart from KubeSphere's own logging system, the container platform also allows users to add third-party log collectors, such as Elasticsearch, Kafka and Fluentd.
+KubeSphere provides a powerful, holistic and easy-to-use logging system for log collection, query and management. It covers logs at varied levels, including tenants, infrastructure resources, and applications. Users can search logs from different dimensions, such as project, workload, Pod and keyword. Compared with Kibana, the tenant-based logging system of KubeSphere features better isolation and security among tenants as tenants can only view their own logs. Apart from KubeSphere's own logging system, the container platform also allows users to add third-party log collectors, such as Elasticsearch, Kafka and Fluentd.
 
 For more information, see [Log Query](../../toolbox/log-query).
 
@@ -19,19 +18,19 @@ For more information, see [Log Query](../../toolbox/log-query).
 
 When you install KubeSphere on Linux, you need to create a configuration file, which lists all KubeSphere components.
 
-1. In the tutorial of [Installing KubeSphere on Linux](../../installing-on-linux/introduction/multioverview/), you create a default file **config-sample.yaml**. Modify the file by executing the following command:
+1. In the tutorial of [Installing KubeSphere on Linux](../../installing-on-linux/introduction/multioverview/), you create a default file `config-sample.yaml`. Modify the file by executing the following command:
 
     ```bash
     vi config-sample.yaml
     ```
 
     {{< notice note >}}
-If you adopt [All-in-one Installation](../../quick-start/all-in-one-on-linux/), you do not need to create a config-sample.yaml file as you can create a cluster directly. Generally, the all-in-one mode is for users who are new to KubeSphere and look to get familiar with the system. If you want to enable Logging in this mode (e.g. for testing purpose), refer to the following section to see how Logging can be installed after installation.
-    {{</ notice >}}
 
-    {{< notice warning >}}
-If you adopt [Multi-node installation](../../installing-on-linux/introduction/multioverview/) and are using symbolic links for docker root directory, make sure all nodes follow the exactly same symbolic links. Logging agents are deployed in DaemonSet onto nodes. Any discrepancy in container log path may cause failure of collection on that node.
-    {{</ notice >}}
+- If you adopt [All-in-One Installation](../../quick-start/all-in-one-on-linux/), you do not need to create a `config-sample.yaml` file as you can create a cluster directly. Generally, the all-in-one mode is for users who are new to KubeSphere and look to get familiar with the system. If you want to enable Logging in this mode (e.g. for testing purposes), refer to [the following section](#enable-logging-after-installation) to see how Logging can be installed after installation.
+
+- If you adopt [Multi-Node Installation](../../installing-on-linux/introduction/multioverview/) and are using symbolic links for docker root directory, make sure all nodes follow the exactly same symbolic links. Logging agents are deployed in DaemonSets onto nodes. Any discrepancy in container log path may cause collection failures on that node.
+
+{{</ notice >}}
 
 2. In this file, navigate to `logging` and change `false` to `true` for `enabled`. Save the file after you finish.
 
@@ -41,7 +40,7 @@ If you adopt [Multi-node installation](../../installing-on-linux/introduction/mu
     ```
 
     {{< notice note >}}
-By default, KubeKey will install Elasticsearch internally if Logging is enabled. For a production environment, it is highly recommended that you set the following values in **config-sample.yaml** if you want to enable Logging, especially `externalElasticsearchUrl` and `externalElasticsearchPort`. Once you provide the following information before installation, KubeKey will integrate your external Elasticsearch directly instead of installing an internal one.
+By default, KubeKey will install Elasticsearch internally if Logging is enabled. For a production environment, it is highly recommended that you set the following values in `config-sample.yaml` if you want to enable Logging, especially `externalElasticsearchUrl` and `externalElasticsearchPort`. Once you provide the following information before installation, KubeKey will integrate your external Elasticsearch directly instead of installing an internal one.
     {{</ notice >}}
 
     ```yaml
@@ -72,7 +71,7 @@ The process of installing KubeSphere on Kubernetes is same as stated in the tuto
     vi cluster-configuration.yaml
     ```
 
-2. In this local cluster-configuration.yaml file, navigate to `logging` and enable Logging by changing `false` to `true` for `enabled`. Save the file after you finish.
+2. In this local `cluster-configuration.yaml` file, navigate to `logging` and enable Logging by changing `false` to `true` for `enabled`. Save the file after you finish.
 
     ```yaml
     logging:
@@ -80,7 +79,7 @@ The process of installing KubeSphere on Kubernetes is same as stated in the tuto
     ```
 
     {{< notice note >}}
-By default, ks-installer will install Elasticsearch internally if Logging is enabled. For a production environment, it is highly recommended that you set the following values in **cluster-configuration.yaml** if you want to enable Logging, especially `externalElasticsearchUrl` and `externalElasticsearchPort`. Once you provide the following information before installation, ks-installer will integrate your external Elasticsearch directly instead of installing an internal one.
+By default, ks-installer will install Elasticsearch internally if Logging is enabled. For a production environment, it is highly recommended that you set the following values in `cluster-configuration.yaml` if you want to enable Logging, especially `externalElasticsearchUrl` and `externalElasticsearchPort`. Once you provide the following information before installation, ks-installer will integrate your external Elasticsearch directly instead of installing an internal one.
     {{</ notice >}}
 
     ```yaml
@@ -106,16 +105,20 @@ By default, ks-installer will install Elasticsearch internally if Logging is ena
 ## Enable Logging after Installation
 
 1. Log in the console as `admin`. Click **Platform** in the top-left corner and select **Clusters Management**.
-  ![clusters-management](https://ap3.qingstor.com/kubesphere-website/docs/20200828111130.png)
+   
+   ![clusters-management](/images/docs/enable-pluggable-components/kubesphere-logging-system/clusters-management.png)
 
-2. Click **CRDs** and enter `clusterconfiguration` in the search bar. Click the result to view its detailed page.
+2. Click **CRDs** and enter `clusterconfiguration` in the search bar. Click the result to view its detail page.
 
     {{< notice info >}}
+
 A Custom Resource Definition (CRD) allows users to create a new type of resources without adding another API server. They can use these resources like any other native Kubernetes objects.
-    {{</ notice >}}
+
+{{</ notice >}}
 
 3. In **Resource List**, click the three dots on the right of `ks-installer` and select **Edit YAML**.
-  ![edit-yaml](https://ap3.qingstor.com/kubesphere-website/docs/20200827182002.png)
+
+    ![edit-yaml](/images/docs/enable-pluggable-components/kubesphere-logging-system/edit-yaml.png)
 
 4. In this yaml file, navigate to `logging` and change `false` to `true` for `enabled`. After you finish, click **Update** in the bottom-right corner to save the configuration.
 
@@ -124,10 +127,10 @@ A Custom Resource Definition (CRD) allows users to create a new type of resource
         enabled: true # Change "false" to "true"
     ```
 
-    {{< notice note >}}
-By default, Elasticsearch will be installed internally if Logging is enabled. For a production environment, it is highly recommended that you set the following values in this yaml file if you want to enable Logging, especially `externalElasticsearchUrl` and `externalElasticsearchPort`. Once you provide the following information, KubeSphere will integrate your external Elasticsearch directly instead of installing an internal one.
+    {{< notice note >}}By default, Elasticsearch will be installed internally if Logging is enabled. For a production environment, it is highly recommended that you set the following values in this yaml file if you want to enable Logging, especially `externalElasticsearchUrl` and `externalElasticsearchPort`. Once you provide the following information, KubeSphere will integrate your external Elasticsearch directly instead of installing an internal one.
+    
     {{</ notice >}}
-
+    
     ```yaml
     es:  # Storage backend for logging, tracing, events and auditing.
       elasticsearchMasterReplicas: 1   # total number of master nodes, it's not allowed to use even number
@@ -147,24 +150,26 @@ By default, Elasticsearch will be installed internally if Logging is enabled. Fo
     ```
 
     {{< notice tip >}}
-You can find the web kubectl tool by clicking the hammer icon in the bottom-right corner of the console.
-    {{</ notice >}}
 
-## Verify the Installation of Component
+You can find the web kubectl tool by clicking the hammer icon in the bottom-right corner of the console.
+
+{{</ notice >}}
+
+## Verify the Installation of the Component
 
 {{< tabs >}}
 
-{{< tab "Verify the Component in Dashboard" >}}
+{{< tab "Verify the component on the dashboard" >}}
 
-Go to **Components** and check the status of Logging. You may see an image as follows:
+Go to **Components** and check the status of **Logging**. You may see an image as follows:
 
-![logging](https://ap3.qingstor.com/kubesphere-website/docs/20200829104152.png)
+![logging](/images/docs/enable-pluggable-components/kubesphere-logging-system/logging.png)
 
 {{</ tab >}}
 
-{{< tab "Verify the Component through kubectl" >}}
+{{< tab "Verify the component through kubectl" >}}
 
-Execute the following command to check the status of pods:
+Execute the following command to check the status of Pods:
 
 ```bash
 kubectl get pod -n kubesphere-logging-system
