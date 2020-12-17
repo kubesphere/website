@@ -76,7 +76,7 @@ Follow the steps below to download KubeKey.
 
 {{< tabs >}}
 
-{{< tab "For users with good network connections to GitHub" >}}
+{{< tab "Good network connections with GitHub/Googleapis" >}}
 
 Download KubeKey from its [GitHub Release Page](https://github.com/kubesphere/kubekey/releases) or use the following command directly.
 
@@ -86,7 +86,7 @@ curl -sfL https://get-kk.kubesphere.io | VERSION=v1.0.1 sh -
 
 {{</ tab >}}
 
-{{< tab "For users with poor network connections to GitHub" >}}
+{{< tab "Poor network connections with GitHub/Googleapis" >}}
 
 Run the following command first to make sure you download KubeKey from the correct zone.
 
@@ -102,7 +102,7 @@ curl -sfL https://get-kk.kubesphere.io | VERSION=v1.0.1 sh -
 
 {{< notice note >}}
 
-After you download KubeKey, If you transfer it to a new machine also with poor network connections to GitHub, you must run `export KKZONE=cn` again before you proceed with the steps below.
+After you download KubeKey, If you transfer it to a new machine also with poor network connections to Googleapis, you must run `export KKZONE=cn` again before you proceed with the steps below.
 
 {{</ notice >}} 
 
@@ -197,3 +197,6 @@ After logging in the console, you can check the status of different components i
 ## Enable Pluggable Components (Optional)
 
 The guide above is used only for the minimal installation by default. To enable other components in KubeSphere, see [Enable Pluggable Components](../../pluggable-components/) for more details.
+
+## Demo
+<script src="https://asciinema.org/a/379701.js" id="asciicast-379701" async></script>
