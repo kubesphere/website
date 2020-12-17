@@ -23,14 +23,14 @@ weight: 6200
 
 当您在 Linux 上安装多节点 KubeSphere 时，首先需要创建一个配置文件，该文件列出了所有 KubeSphere 组件。
 
-1. 基于[在 Linux 上安装 KubeSphere](../../installing-on-linux/introduction/multioverview/) 的教程，创建一个默认文件 **config-sample.yaml**，通过执行以下命令修改该文件：
+1. 基于[在 Linux 上安装 KubeSphere](../../installing-on-linux/introduction/multioverview/) 的教程，您需要创建一个默认文件 `config-sample.yaml`，通过执行以下命令修改该文件：
 
     ```bash
     vi config-sample.yaml
     ```
 
     {{< notice note >}}
-如果您采用 [All-in-one 安装](../../quick-start/all-in-one-on-linux/)，则不需要创建 config-sample.yaml 文件，因为可以直接创建集群。一般来说，All-in-one 模式是为那些刚刚接触 KubeSphere 并希望熟悉系统的用户准备的。如果您想在这个模式下启用应用商店（比如用于测试），请参考[下面的部分](#在安装后启用应用商店)，查看如何在安装后启用应用商店。
+如果您采用 [All-in-one 安装](../../quick-start/all-in-one-on-linux/)，则不需要创建 `config-sample.yaml` 文件，因为可以直接创建集群。一般来说，All-in-one 模式是为那些刚接触 KubeSphere 并希望熟悉系统的用户而准备的。如果您想在这个模式下启用应用商店（比如用于测试），请参考[下面的部分](#在安装后启用应用商店)，查看如何在安装后启用应用商店。
     {{</ notice >}}
 
 2. 在该文件中，搜寻到 `openpitrix`，并将 `enabled` 的 `false` 改为 `true`，完成后保存文件。
@@ -56,7 +56,7 @@ weight: 6200
     vi cluster-configuration.yaml
     ```
 
-2. 在该本地 cluster-configuration.yaml 文件中，搜寻到 `openpitrix`，并将  `enabled` 的 `false` 改为 `true`，以启用应用商店。完成后保存文件。
+2. 在该本地 `cluster-configuration.yaml` 文件中，搜寻到 `openpitrix`，并将 `enabled` 的 `false` 改为 `true`，以启用应用商店。完成后保存文件。
 
     ```bash
     openpitrix:
@@ -77,10 +77,10 @@ weight: 6200
 
     ![集群管理](/images/docs/zh-cn/enable-pluggable-components/kubesphere-app-store/clusters-management.png)
 
-2. 点击 **自定义资源 CRD**，在搜索栏中输入 `clusterconfiguration`，点击结果查看其详细页面。
+2. 点击**自定义资源 CRD**，在搜索栏中输入 `clusterconfiguration`，点击结果查看其详细页面。
 
     {{< notice info >}}
-自定义资源定义（CRD）允许用户在不增加额外 API 服务器的情况下创建一种新的资源类型，用户可以像使用其它 Kubernetes 原生对象一样使用这些自定义资源。
+自定义资源定义 (CRD) 允许用户在不增加额外 API 服务器的情况下创建一种新的资源类型，用户可以像使用其他 Kubernetes 原生对象一样使用这些自定义资源。
     {{</ notice >}}
 
 3. 在**资源列表**中，点击 `ks-installer` 右边的三个点，选择**编辑配置文件**。
