@@ -98,7 +98,7 @@ ssh -i .ssh/id_rsa2  -p50200 kubesphere@40.81.5.xx
 
 {{< tabs >}}
 
-{{< tab "For users with good network connections to GitHub" >}}
+{{< tab "Good network connections to GitHub/Googleapis" >}}
 
 Download KubeKey from its [GitHub Release Page](https://github.com/kubesphere/kubekey/releases) or use the following command directly:
 
@@ -108,7 +108,7 @@ curl -sfL https://get-kk.kubesphere.io | VERSION=v1.0.1 sh -
 
 {{</ tab >}}
 
-{{< tab "For users with poor network connections to GitHub" >}}
+{{< tab "Poor network connections to GitHub/Googleapis" >}}
 
 Run the following command first to make sure you download KubeKey from the correct zone.
 
@@ -124,7 +124,7 @@ curl -sfL https://get-kk.kubesphere.io | VERSION=v1.0.1 sh -
 
 {{< notice note >}}
 
-After you download KubeKey, If you transfer it to a new machine also with poor network connections to GitHub, you must run `export KKZONE=cn` again before you proceed with the steps below.
+After you download KubeKey, If you transfer it to a new machine also with poor network connections to Googleapis, you must run `export KKZONE=cn` again before you proceed with the steps below.
 
 {{</ notice >}} 
 
