@@ -283,7 +283,7 @@ systemctl status -l keepalived
 
 {{< tabs >}}
 
-{{< tab "如果您能正常访问 GitHub" >}}
+{{< tab "如果您能正常访问 GitHub/Googleapis" >}}
 
 从 [GitHub Release Page](https://github.com/kubesphere/kubekey/releases) 下载 KubeKey 或直接使用以下命令。
 
@@ -293,7 +293,7 @@ curl -sfL https://get-kk.kubesphere.io | VERSION=v1.0.1 sh -
 
 {{</ tab >}}
 
-{{< tab "如果您访问 GitHub 受限" >}}
+{{< tab "如果您访问 GitHub/Googleapis 受限" >}}
 
 先执行以下命令以确保您从正确的区域下载 KubeKey。
 
@@ -309,7 +309,7 @@ curl -sfL https://get-kk.kubesphere.io | VERSION=v1.0.1 sh -
 
 {{< notice note >}}
 
-在您下载 KubeKey 后，如果您将其传至新的机器，且访问 GitHub 同样受限，在您执行以下步骤之前请务必再次执行 `export KKZONE=cn` 命令。
+在您下载 KubeKey 后，如果您将其传至新的机器，且访问 Googleapis 同样受限，在您执行以下步骤之前请务必再次执行 `export KKZONE=cn` 命令。
 
 {{</ notice >}} 
 

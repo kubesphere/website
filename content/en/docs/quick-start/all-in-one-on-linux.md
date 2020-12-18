@@ -76,7 +76,7 @@ Follow the steps below to download KubeKey.
 
 {{< tabs >}}
 
-{{< tab "Good network connections with GitHub/Googleapis" >}}
+{{< tab "Good network connections to GitHub/Googleapis" >}}
 
 Download KubeKey from its [GitHub Release Page](https://github.com/kubesphere/kubekey/releases) or use the following command directly.
 
@@ -86,7 +86,7 @@ curl -sfL https://get-kk.kubesphere.io | VERSION=v1.0.1 sh -
 
 {{</ tab >}}
 
-{{< tab "Poor network connections with GitHub/Googleapis" >}}
+{{< tab "Poor network connections to GitHub/Googleapis" >}}
 
 Run the following command first to make sure you download KubeKey from the correct zone.
 
