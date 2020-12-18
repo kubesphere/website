@@ -6,288 +6,288 @@ linkTitle: '应用程序生命周期管理'
 weight: 14100
 ---
 
-KubeSphere integrates [OpenPitrix](https://github.com/openpitrix/openpitrix), an open-source multi-cloud application management platform, to set up the App Store, managing applications throughout their entire lifecycle. The App Store supports two kinds of application deployment:
+KubeSphere 集成了 [OpenPitrix](https://github.com/openpitrix/openpitrix)（一个跨云管理应用程序的开源平台）来构建应用商店，管理应用程序的整个生命周期。应用商店支持两种应用程序部署方式：
 
-- **App template** provides a way for developers and independent software vendors (ISVs) to share applications with users in a workspace. You can also import third-party app repositories within a workspace.
-- **Composing app** means users can quickly build a complete application using multiple microservices to compose it. KubeSphere allows users to select existing services or create new services to create a composing app on the one-stop console.
+- **应用模板**，这种方式让开发者和独立软件供应商 (ISV) 能够与企业空间中的用户共享应用程序。您也可以在企业空间中导入第三方应用仓库。
+- **自制应用**，这种方式帮助用户使用多个微服务来快速构建一个完整的应用程序。KubeSphere 让用户可以选择现有服务或者创建新的服务，用于在一站式控制台上创建自制应用。
 
-![app-store](/images/docs/appstore/application-lifecycle-management/app-store.png)
+![应用商店](/images/docs/zh-cn/app-store/application-lifecycle-management/app-store.PNG)
 
-Using [Redis](https://redis.io/) as an example application, this tutorial demonstrates how to manage the app throughout the entire lifecycle, including submission, review, test, release, upgrade and removal. 
+本教程使用 [Redis](https://redis.io/) 作为示例应用程序，演示如何进行应用全生命周期管理，包括提交、审核、测试、发布、升级和下架。
 
-## Prerequisites
+## 准备工作
 
-- You need to enable [KubeSphere App Store (OpenPitrix)](../../pluggable-components/app-store).
-- You need to create a workspace, a project and an account (`project-regular`). For more information, see [Create Workspace, Project, Account and Role](../../quick-start/create-workspace-and-project/).
+- 您需要启用 [KubeSphere 应用商店 (OpenPitrix)](../../pluggable-components/app-store)。
+- 您需要创建一个企业空间、一个项目以及一个帐户 (`project-regular`)。有关更多信息，请参见[创建企业空间、项目、帐户和角色](../../quick-start/create-workspace-and-project/)。
 
-## Hands-on Lab
+## 动手实验
 
-### Step 1: Create Customized Role and Account
+### 步骤一：创建自定义角色和帐户
 
-You need to create two accounts first, one for ISVs (`isv`) and the other (`reviewer`) for app technical reviewers.
+首先，您需要创建两个帐户，一个是 ISV 的帐户 (`isv`)，另一个是应用技术审核员的帐户 (`reviewer`)。
 
-1. Log in the KubeSphere console with the account `admin`. Click **Platform** in the top left corner and select **Access Control**. In **Account Roles**, click **Create**.
+1. 使用 `admin` 帐户登录 KubeSphere 控制台。点击左上角的**平台管理**，选择**访问控制**。转到**帐户角色**，点击**创建**。
 
-   ![create-role](/images/docs/appstore/application-lifecycle-management/create-role.jpg)
+   ![创建角色](/images/docs/zh-cn/app-store/application-lifecycle-management/create-role.PNG)
 
-2. Set a name for the role, such as `app-review`, and click **Edit Authorization**.
+2. 为角色设置一个名称，例如 `app-review`，然后点击**编辑权限**。
 
-   ![app-review-name](/images/docs/appstore/application-lifecycle-management/app-review-name.jpg)
+   ![设置名称](/images/docs/zh-cn/app-store/application-lifecycle-management/app-review-name.PNG)
 
-3. In **Apps Management**, choose **App Templates Management** and **App Templates View**  in the authorization list, then click **OK**.
+3. 转到**应用管理**，选择权限列表中的**应用商店管理**和**应用商店查看**，然后点击**确定**。
 
-   ![create-roles](/images/docs/appstore/application-lifecycle-management/create-roles.png)
-
-   {{< notice note >}}
-
-   The account granted the role `app-review` is able to view the App Store on the platform and manage apps, including review and removal.
-
-   {{</ notice >}} 
-
-4. As the role is ready now, you need to create an account and grant the role of `app-review` to it. In **Accounts**, click **Create**. Provide the required information and click **OK**.
-
-   ![create-review-role](/images/docs/appstore/application-lifecycle-management/create-review-role.jpg)
-
-5. Similarly, create another account `isv`, and grant the role of `platform-regular` to it.
-
-   ![account-ready](/images/docs/appstore/application-lifecycle-management/account-ready.jpg)
-
-6. Invite both accounts created above to an existing workspace such as `demo-workspace`, and grant them the role of `workspace-admin`.
-
-### Step 2: Upload and Submit Application
-
-1. Log in KubeSphere as `isv` and go to your workspace. You need to upload the example app Redis to this workspace so that it can be used later. First, download the app [Redis 11.3.4](https://github.com/kubesphere/tutorial/raw/master/tutorial%205%20-%20app-store/redis-11.3.4.tgz) and click **Upload Template** in **App Templates**.
-
-   ![upload-app](/images/docs/appstore/application-lifecycle-management/upload-app.jpg)
+   ![创建角色](/images/docs/zh-cn/app-store/application-lifecycle-management/create-roles.PNG)
 
    {{< notice note >}}
 
-   In this example, a new version of Redis will be uploaded later to demonstrate the upgrade feature.
+   被授予 `app-review` 角色的帐户能够查看平台上的应用商店并管理应用，包括审核和下架应用。
 
    {{</ notice >}} 
 
-2. In the dialogue that appears, click **Upload Helm Chart Package** to upload the chart file. Click **OK** to continue.
+4. 创建角色后，您需要创建一个帐户，把 `app-review` 角色授予它。转到**帐户管理**，点击**创建**。输入必需的信息，然后点击**确定**。
 
-   ![upload-template](/images/docs/appstore/application-lifecycle-management/upload-template.jpg)
+   ![创建审核帐户](/images/docs/zh-cn/app-store/application-lifecycle-management/create-review-role.PNG)
 
-3. Basic information of the app displays under **App Info**. To upload an icon for the app, click **Upload icon**. You can also skip it and click **OK** directly.
+5. 再创建另一个帐户 `isv`，把 `platform-regular` 角色授予它。
+
+   ![帐户已创建](/images/docs/zh-cn/app-store/application-lifecycle-management/account-ready.PNG)
+
+6. 邀请上面创建好的两个帐户进入现有的企业空间，例如 `demo-workspace`，并授予它们 `workspace-admin` 角色。
+
+### 步骤二：上传和提交应用程序
+
+1. 以 `isv` 身份登录控制台，转到您的企业空间。您需要上传示例应用 Redis 至该企业空间，供后续使用。首先，下载应用 [Redis 11.3.4](https://github.com/kubesphere/tutorial/raw/master/tutorial%205%20-%20app-store/redis-11.3.4.tgz)，然后转到**应用模板**，点击**上传模板**。
+
+   ![上传应用](/images/docs/zh-cn/app-store/application-lifecycle-management/upload-app.PNG)
 
    {{< notice note >}}
 
-   Maximum accepted resolutions of the app icon: 96 x 96 pixels.
+   在本示例中，稍后会上传新版本的 Redis 来演示升级功能。
 
    {{</ notice >}} 
 
-   ![upload-icon](/images/docs/appstore/application-lifecycle-management/upload-icon.jpg)
+2. 在弹出的对话框中，点击**上传 Helm 配置文件**上传 Chart 文件。点击**确定**继续。
 
-4. The app displays in the template list with the status **draft** after successfully uploaded, which means this app is under development. The uploaded app is visible to all members in the same workspace.
+   ![上传模板](/images/docs/zh-cn/app-store/application-lifecycle-management/upload-template.PNG)
 
-   ![app-draft](/images/docs/appstore/application-lifecycle-management/app-draft.jpg)
+3. **应用信息**下显示了应用的基本信息。要上传应用的图标，点击**上传图标**。您也可以跳过上传图标，直接点击**确定**。
 
-5. Go to the detail page of the app template by clicking Redis from the list. You can edit the basic information of this app by clicking **Edit Info**.
+   {{< notice note >}}
 
-   ![edit-app-template](/images/docs/appstore/application-lifecycle-management/edit-app-template.jpg)
+   应用图标支持的最大分辨率为 96 × 96 像素。
 
-6. You can customize the app's basic information by specifying the fields in the pop-up window.
+   {{</ notice >}} 
 
-   ![edit-app-information](/images/docs/appstore/application-lifecycle-management/edit-app-information.jpg)
+   ![上传图标](/images/docs/zh-cn/app-store/application-lifecycle-management/upload-icon.PNG)
 
-7. Click **OK** to save your changes, then you can test this application by deploying it to Kubernetes. Click the draft version to expand the menu and select **Test Deploy**.
+4. 成功上传后，模板列表中会列出应用，状态为**开发中**，意味着该应用正在开发中。上传的应用对同一企业空间下的所有成员均可见。
 
-   ![test-deployment](/images/docs/appstore/application-lifecycle-management/test-deployment.jpg)
+   ![应用开发中](/images/docs/zh-cn/app-store/application-lifecycle-management/app-draft.PNG)
+
+5. 点击列表中的 Redis 进入应用模板详情页面。您可以点击**编辑信息**来编辑该应用的基本信息。
+
+   ![编辑应用模板](/images/docs/zh-cn/app-store/application-lifecycle-management/edit-app-template.PNG)
+
+6. 您可以通过在弹出窗口中指定字段来自定义应用的基本信息。
+
+   ![编辑应用信息](/images/docs/zh-cn/app-store/application-lifecycle-management/edit-app-information.PNG)
+
+7. 点击**确定**保存更改，然后您可以通过将其部署到 Kubernetes 来测试该应用程序。点击待提交版本展开菜单，选择**测试部署**。
+
+   ![测试部署](/images/docs/zh-cn/app-store/application-lifecycle-management/test-deployment.PNG)
 
    {{< notice note >}} 
 
-   If you don't want to test the app, you can submit it for review directly. However, it is recommended that you test your app deployment and function first before you submit it for review, especially in a production environment. This helps you detect any problems in advance and accelerate the review process. 
+   如果您不想测试应用，可以直接提交审核。但是，建议您先测试应用部署和功能，再提交审核，尤其是在生产环境中。这会帮助您提前发现问题，加快审核过程。
 
    {{</ notice >}} 
 
-8. Select the cluster and project to which you want to deploy the app, set up different configurations for the app, and then click **Deploy**.
+8. 选择要部署应用的群集和项目，为应用设置不同的配置，然后点击**部署**。
 
-   ![deployment-place](/images/docs/appstore/application-lifecycle-management/deployment-place.jpg)
+   ![部署位置](/images/docs/zh-cn/app-store/application-lifecycle-management/deployment-place.PNG)
 
-   ![deploying-app](/images/docs/appstore/application-lifecycle-management/deploying-app.jpg)
+   ![部署应用](/images/docs/zh-cn/app-store/application-lifecycle-management/deploying-app.PNG)
 
    {{< notice note >}}
 
-   Some apps can be deployed with all configurations set in a form. You can use the toggle switch to see its YAML file, which contains all parameters you need to specify in the form. 
+   有些应用可以在表单中设置所有配置后进行部署。您可以使用拨动开关查看它的 YAML 文件，文件中包含了需要在表单中指定的所有参数。
 
    {{</ notice >}} 
 
-9. Wait for a few minutes, then switch to the tab **Deployed Instances**. You will find that Redis has been deployed successfully.
+9. 稍等几分钟，切换到**部署实例**选项卡。您会看到 Redis 已经部署成功。
 
-   ![deployed-instance-success](/images/docs/appstore/application-lifecycle-management/deployed-instance-success.jpg)
+   ![部署实例成功](/images/docs/zh-cn/app-store/application-lifecycle-management/deployed-instance-success.PNG)
 
-10. After you test the app with no issues found, you can click **Submit Review** to submit this application for review.
+10. 测试应用并且没有发现问题后，便可以点击**提交审核**，提交该应用程序进行审核。
 
-    ![submit-for-review](/images/docs/appstore/application-lifecycle-management/submit-for-review.jpg)
+    ![提交审核](/images/docs/zh-cn/app-store/application-lifecycle-management/submit-for-review.PNG)
 
     {{< notice note >}}
     
 
-The version number must start with a number and contain decimal points.
+版本号必须以数字开头并包含小数点。
 
 {{</ notice >}}
 
-11. After the app is submitted, the app status will change to **Submitted**. Now app reviewers can review it.
+11. 应用提交后，它的状态会变成**等待审核**。现在，应用审核员便可以进行审核。
 
-    ![submitted-app](/images/docs/appstore/application-lifecycle-management/submitted-app.jpg)
+    ![应用已提交](/images/docs/zh-cn/app-store/application-lifecycle-management/submitted-app.PNG)
 
-### Step 3: Review Application
+### 步骤三：审核应用程序
 
-1. Log out and log back in KubeSphere as `reviewer`. Click **Platform** in the top left corner and select **App Store Management**. On the **App Review** page, the app submitted in the previous step displays under the tab **Unprocessed**.
+1. 登出控制台，然后以 `reviewer` 身份重新登录 KubeSphere。点击左上角的**平台管理**，选择**应用商店管理**。在**应用审核**页面，上一步中提交的应用会显示在**待处理**选项卡下。
 
-   ![app-to-be-reviewed](/images/docs/appstore/application-lifecycle-management/app-to-be-reviewed.jpg)
+   ![应用待审核](/images/docs/zh-cn/app-store/application-lifecycle-management/app-to-be-reviewed.PNG)
 
-2. To review this app, click it to inspect the app information, introduction, chart file and update logs from the pop-up window.
+2. 点击该应用进行审核，在弹出窗口中查看应用信息、介绍、配置文件和更新日志。
 
-   ![reviewing](/images/docs/appstore/application-lifecycle-management/reviewing.jpg)
+   ![审核中](/images/docs/zh-cn/app-store/application-lifecycle-management/reviewing.PNG)
 
-3. It is the responsibility of the reviewer to decide whether the app meets the criteria to be released to the App Store. Click **Pass** to approve it or **Reject** to deny an app submission.
+3. 审核员的职责是决定该应用是否符合发布至应用商店的标准。点击**通过**来批准，或者点击**拒绝**来拒绝提交的应用。
 
-### Step 4: Release Application to App Store
+### 步骤四：发布应用程序至应用商店
 
-After the app is approved, `isv` can release the Redis application to the App Store, allowing all users on the platform to find and deploy this application.
+应用获批后，`isv` 便可以将 Redis 应用程序发布至应用商店，让平台上的所有用户都能找到并部署该应用程序。
 
-1. Log out and log back in KubeSphere as `isv`. Go to your workspace and click Redis on the **App Templates** page. On its detail page, expand the version menu, then click **Release to Store**. In the pop-up prompt, click **OK** to confirm.
+1. 登出控制台，然后以 `isv` 身份重新登录 KubeSphere。转到您的企业空间，点击**应用模板**页面上的 Redis。在详情页面上展开版本菜单，然后点击**发布到商店**。在弹出的提示框中，点击**确定**以确认操作。
 
-   ![app-templates-page](/images/docs/appstore/application-lifecycle-management/app-templates-page.jpg)
+   ![应用模板页面](/images/docs/zh-cn/app-store/application-lifecycle-management/app-templates-page.PNG)
 
-2. Under **Audit Records**, you can see the app status. **Active** means it is available in the App Store.
+2. 在**应用审核**下，您可以查看应用状态。**已上架**意味着它在应用商店中可用。
 
-   ![app-active](/images/docs/appstore/application-lifecycle-management/app-active.jpg)
+   ![应用已上架](/images/docs/zh-cn/app-store/application-lifecycle-management/app-active.PNG)
 
-3. Click **View in Store** to go to its **App Info** page in the App Store. Alternatively, click **App Store** in the top left corner and you can also see the app.
+3. 点击**在商店查看**转到应用商店的**应用信息**页面，或者点击左上角的**应用商店**也可以查看该应用。
 
-   ![redis](/images/docs/appstore/application-lifecycle-management/redis.jpg)
-
-   {{< notice note >}}
-
-   You may see two Redis apps in the App Store, one of which is a built-in app in KubeSphere. Note that a newly-released app displays at the beginning of the list in the App Store.
-
-   {{</ notice >}} 
-
-4. Now, users in the workspace can deploy Redis from the App Store. To deploy the app to Kubernetes, click the app to go to its **App Info** page, and click **Deploy**.
-
-   ![deploy-redis](/images/docs/appstore/application-lifecycle-management/deploy-redis.jpg)
-
-### Step 5: Create App Category
-
-`reviewer` can create multiple categories for different types of applications based on their function and usage. It is similar to setting tags and categories can be used in the App Store as filters, such as Big Data, Middleware, and IoT.
-
-1. Log in KubeSphere as `reviewer`. To create a category, go to the **App Store Management** page and click the plus icon in **App Categories**.
-
-   ![app-category](/images/docs/appstore/application-lifecycle-management/app-category.jpg)
-
-2. Set a name and icon for the category in the dialogue, then click **OK**. For Redis, you can input `Database` for the field **Category Name**.
-
-   ![set-app-type](/images/docs/appstore/application-lifecycle-management/set-app-type.jpg)
+   ![redis](/images/docs/zh-cn/app-store/application-lifecycle-management/redis.PNG)
 
    {{< notice note >}}
 
-   Usually, an app reviewer creates necessary categories in advance and ISVs select the category in which an app appears before submitting it for review. A newly-created category has no app in it.
+   您可能会在应用商店看到两个 Redis 应用，其中一个是 KubeSphere 中的内置应用。请注意，新发布的应用会显示在应用商店列表的开头。
 
    {{</ notice >}} 
 
-3. As the category is created, you can assign the category to your app. In **Uncategorized**, select Redis and click **Change Category**. 
+4. 现在，企业空间中的用户可以从应用商店中部署 Redis。要将应用部署至 Kubernetes，请点击应用转到**应用信息**页面，然后点击**部署**。
 
-   ![set-category-for-app](/images/docs/appstore/application-lifecycle-management/set-category-for-app.jpg)
+   ![部署 redis](/images/docs/zh-cn/app-store/application-lifecycle-management/deploy-redis.PNG)
 
-4. In the dialogue, select the category (**Database**) from the drop-down list and click **OK**.
+### 步骤五：创建应用分类
 
-   ![confirm-category](/images/docs/appstore/application-lifecycle-management/confirm-category.jpg)
+`reviewer` 可以根据不同类型应用程序的功能和用途创建多个分类。这类似于设置标签，可以在应用商店中将分类用作筛选器，例如大数据、中间件和物联网等。
 
-5. The app displays in the category as expected.
+1. 以 `reviewer` 身份登录 KubeSphere。要创建分类，请转到**应用商店管理**页面，再点击**应用分类**页面中的加号图标。
 
-   ![app-in-category-list-expected](/images/docs/appstore/application-lifecycle-management/app-in-category-list-expected.jpg)
+   ![应用分类](/images/docs/zh-cn/app-store/application-lifecycle-management/app-category.PNG)
 
-### Step 6: Add New Version
+2. 在弹出的对话框中设置分类名称和图标，然后点击**确定**。对于 Redis，您可以将**分类名称**设置为 `Database`。
 
-To allow workspace users to upgrade apps, you need to add new app versions to KubeSphere first. Follow the steps below to add a new version for the example app.
+   ![设置应用分类](/images/docs/zh-cn/app-store/application-lifecycle-management/set-app-type.PNG)
 
-1. Log in KubeSphere as `isv` again and navigate to **App Templates**. Click the app Redis in the list.
+   {{< notice note >}}
 
-   ![redis-new-version](/images/docs/appstore/application-lifecycle-management/redis-new-version.jpg)
+   通常，应用审核员会提前创建必要的分类，ISV 会选择应用所属的分类，然后提交审核。新创建的分类中没有应用。
 
-2. Download [Redis 12.0.0](https://github.com/kubesphere/tutorial/raw/master/tutorial%205%20-%20app-store/redis-12.0.0.tgz), which is a new version of Redis for demonstration in this tutorial. In the tab **Versions**, click **New Version** on the right to upload the package you just downloaded.
+   {{</ notice >}} 
 
-   ![new-version-redis](/images/docs/appstore/application-lifecycle-management/new-version-redis.jpg)
+3. 创建好分类后，您可以给您的应用分配分类。在**未分类**中选择 Redis，点击**调整分类**。
 
-3. Click **Upload Helm Chart Package** and click **OK** after it is uploaded.
+   ![设置分类](/images/docs/zh-cn/app-store/application-lifecycle-management/set-category-for-app.PNG)
 
-   ![upload-new-redis-version](/images/docs/appstore/application-lifecycle-management/upload-new-redis-version.jpg)
+4. 在弹出对话框的下拉列表中选择分类 (**Database**) 然后点击**确定**。
 
-4. The new app version displays in the version list. You can click it to expand the menu and test the new version. Besides, you can also submit it for review and release it to the App Store, which is the same as the steps shown above.
+   ![确认分类](/images/docs/zh-cn/app-store/application-lifecycle-management/confirm-category.PNG)
 
-   ![uploaded-new-version](/images/docs/appstore/application-lifecycle-management/uploaded-new-version.jpg)
+5. 该应用便会显示在对应分类中。
 
-   ![see-new-version](/images/docs/appstore/application-lifecycle-management/see-new-version.jpg)
+   ![分类显示](/images/docs/zh-cn/app-store/application-lifecycle-management/app-in-category-list-expected.PNG)
 
-### Step 7: Upgrade
+### 步骤六：添加新版本
 
-After a new version is released to the App Store, all users can upgrade this application to the new version.
+要让企业空间用户能够更新应用，您需要先向 KubeSphere 添加新的应用版本。按照下列步骤为示例应用添加新版本。
+
+1. 再次以 `isv` 身份登录 KubeSphere，搜寻到**应用模板**，点击列表中的 Redis 应用。
+
+   ![redis 新版本](/images/docs/zh-cn/app-store/application-lifecycle-management/redis-new-version.PNG)
+
+2. 下载 [Redis 12.0.0](https://github.com/kubesphere/tutorial/raw/master/tutorial%205%20-%20app-store/redis-12.0.0.tgz)，这是 Redis 的一个新版本，本教程用它来演示。在**版本**选项卡中点击右侧的**添加版本**，上传您刚刚下载的文件包。
+
+   ![新版本](/images/docs/zh-cn/app-store/application-lifecycle-management/new-version-redis.PNG)
+
+3. 点击**上传 Helm 配置文件**，上传完成后点击**确定**。
+
+   ![上传 redis 新版本](/images/docs/zh-cn/app-store/application-lifecycle-management/upload-new-redis-version.PNG)
+
+4. 新的应用版本会显示在版本列表中。您可以通过点击来展开菜单并测试新的版本。另外，您也可以提交审核并发布至应用商店，操作步骤和上面说明的一样。
+
+   ![上传新版本](/images/docs/zh-cn/app-store/application-lifecycle-management/uploaded-new-version.PNG)
+
+   ![查看新版本](/images/docs/zh-cn/app-store/application-lifecycle-management/see-new-version.PNG)
+
+### 步骤七：升级
+
+新版本发布至应用商店后，所有用户都可以升级该应用程序至新版本。
 
 {{< notice note >}}
 
-To follow the steps below, you must deploy an app of one of its old versions first. In this example, Redis 11.3.4 was already deployed in the project `demo-project` and its new version 12.0.0 was released to the App Store.
+要完成下列步骤，您必须先部署应用的一个旧版本。本示例中，Redis 11.3.4 已经部署至项目 `demo-project`，它的新版本 12.0.0 也已经发布至应用商店。
 
 {{</ notice >}} 
 
-1. Log in KubeSphere as `project-regular`, navigate to the **Applications** page of the project, and click the app to be upgraded.
+1. 以 `project-regular` 身份登录 KubeSphere，搜寻到项目的**应用**页面，点击要升级的应用。
 
-   ![app-to-be-upgraded](/images/docs/appstore/application-lifecycle-management/app-to-be-upgraded.jpg)
+   ![待升级应用](/images/docs/zh-cn/app-store/application-lifecycle-management/app-to-be-upgraded.PNG)
 
-2. Under **App Template**, select **Version Info**. You can see all released app versions in the list. The app version you are using currently is marked with **Current Version**. To upgrade your app to a specific version, click **Upgrade** on the right of the version number.
+2. 在**应用模板**选项卡下，选择**版本信息**。您可以在列表中查看所有已发布的应用版本。您正在使用的应用版本标注为**当前版本**。要将应用升级至特定版本，点击版本号右侧的**升级**。
 
    {{< notice note >}}
 
-   You must move your cursor onto the app version to see the **Upgrade** button.
+   您必须把光标移至应用版本上才能看到**升级**按钮。
 
    {{</ notice >}} 
 
-   ![upgrade-an-app](/images/docs/appstore/application-lifecycle-management/upgrade-an-app.jpg)
+   ![升级应用](/images/docs/zh-cn/app-store/application-lifecycle-management/upgrade-an-app.PNG)
 
-3. On the **Applications** page, you can see that the app is being upgraded. The status will change to **active** when the upgrade finishes.
+3. 在**应用**页面，您会看到应用正在升级中。升级完成后，应用状态会变成**活跃**。
 
-   ![version-upgraded](/images/docs/appstore/application-lifecycle-management/version-upgraded.jpg)
+   ![版本升级](/images/docs/zh-cn/app-store/application-lifecycle-management/version-upgraded.PNG)
 
-   ![upgrade-finish](/images/docs/appstore/application-lifecycle-management/upgrade-finish.jpg)
+   ![升级完成](/images/docs/zh-cn/app-store/application-lifecycle-management/upgrade-finish.PNG)
 
-### Step 8: Suspend App
+### 步骤八：下架应用
 
-You can choose to remove an app entirely from the App Store or suspend a specific app version.
+您可以选择将应用完全从应用商店下架，或者下架某个特定版本。
 
-1. Log in KubeSphere as `reviewer`. Click **Platform** in the top left corner and go to **App Store Management**. On the **App Store** page, click Redis.
+1. 以 `reviewer` 身份登录 KubeSphere。点击左上角的**平台管理**，选择**应用商店管理**。在**应用商店**页面，点击 Redis。
 
-   ![remove-app](/images/docs/appstore/application-lifecycle-management/remove-app.jpg)
+   ![下架应用](/images/docs/zh-cn/app-store/application-lifecycle-management/remove-app.PNG)
 
-2. On the detail page, click **Suspend App** and select **OK** in the dialogue to confirm the operation to remove the app from the App Store.
+2. 在详情页面，点击**下架应用**，在弹出的对话框中选择**确定**，确认将应用从应用商店下架的操作。
 
-   ![suspend-app](/images/docs/appstore/application-lifecycle-management/suspend-app.jpg)
+   ![应用下架](/images/docs/zh-cn/app-store/application-lifecycle-management/suspend-app.PNG)
 
    {{< notice note >}}
 
-   Removing an app from the App Store does not affect tenants who are using the app.
+   将应用从应用商店下架不影响正在使用该应用的租户。
 
    {{</ notice >}} 
 
-3. To make the app available in the App Store again, click **Activate App**.
+3. 要让应用再次在应用商店可用，点击**上架应用**。
 
-   ![activate-app](/images/docs/appstore/application-lifecycle-management/activate-app.jpg)
+   ![上架应用](/images/docs/zh-cn/app-store/application-lifecycle-management/activate-app.PNG)
 
-4. To suspend a specific app version, expand the version menu and click **Suspend Version**. In the dialogue that appears, click **OK** to confirm.
+4. 要下架应用的特定版本，展开版本菜单，点击**下架版本**。在弹出的对话框中，点击**确定**以确认操作。
 
-   ![suspend-version](/images/docs/appstore/application-lifecycle-management/suspend-version.jpg)
+   ![下架版本](/images/docs/zh-cn/app-store/application-lifecycle-management/suspend-version.PNG)
 
    {{< notice note >}}
 
-   After an app version is suspended, this version is not available in the App Store. Suspending an app version does not affect tenants who are using this version.
+   下架应用版本后，该版本在应用商店将不可用。下架应用版本不影响正在使用该版本的租户。
 
    {{</ notice >}}
 
-5. To make the app version available in the App Store again, click **Activate Version**.
+5. 要让应用版本再次在应用商店可用，点击**上架版本**。
 
-   ![activate-version](/images/docs/appstore/application-lifecycle-management/activate-version.jpg)
+   ![上架版本](/images/docs/zh-cn/app-store/application-lifecycle-management/activate-version.PNG)
 
    
 
