@@ -9,7 +9,7 @@ weight: 6400
 
 ## 什么是 KubeSphere 日志系统
 
-KubeSphere 为日志收集、查询和管理提供了一个强大的、整体的、易于使用的日志系统。它涵盖了不同层级的日志，包括租户、基础设施资源和应用。用户可以从项目、工作负载、Pod 和关键字等不同维度对日志进行搜索。与 Kibana 相比，KubeSphere 基于租户的日志系统中，每个租户只能查看自己的日志，从而可以在租户之间提供更好的隔离性和安全性。除了 KubeSphere 自身的日志系统，容器平台还允许用户添加第三方日志收集器，如 Elasticsearch、Kafka 和 Fluentd。
+KubeSphere 为日志收集、查询和管理提供了一个强大的、全面的、易于使用的日志系统。它涵盖了不同层级的日志，包括租户、基础设施资源和应用。用户可以从项目、工作负载、Pod 和关键字等不同维度对日志进行搜索。与 Kibana 相比，KubeSphere 基于租户的日志系统中，每个租户只能查看自己的日志，从而可以在租户之间提供更好的隔离性和安全性。除了 KubeSphere 自身的日志系统，容器平台还允许用户添加第三方日志收集器，如 Elasticsearch、Kafka 和 Fluentd。
 
 有关更多信息，请参见[日志查询](../../toolbox/log-query/)。
 
@@ -41,7 +41,7 @@ KubeSphere 为日志收集、查询和管理提供了一个强大的、整体的
     ```
 
     {{< notice note >}}
-默认情况下，如果启用了日志系统，KubeKey 将在内部安装 Elasticsearch。对于生产环境，如果您想启用日志系统，强烈建议在 `config-sample.yaml` 中设置以下值，尤其是 `externalElasticsearchUrl` 和 `externalElasticsearchPort`。在安装前提供以下信息后，KubeKey 将直接整合您的外部 Elasticsearch，不再安装内部 Elasticsearch。
+默认情况下，如果启用了日志系统，KubeKey 将安装内置 Elasticsearch。对于生产环境，如果您想启用日志系统，强烈建议在 `config-sample.yaml` 中设置以下值，尤其是 `externalElasticsearchUrl` 和 `externalElasticsearchPort`。在安装前提供以下信息后，KubeKey 将直接对接您的外部 Elasticsearch，不再安装内置 Elasticsearch。
     {{</ notice >}}
 
     ```yaml
@@ -80,7 +80,7 @@ KubeSphere 为日志收集、查询和管理提供了一个强大的、整体的
     ```
 
     {{< notice note >}}
-默认情况下，如果启用了日志系统，KubeKey 将在内部安装 Elasticsearch。对于生产环境，如果您想启用日志系统，强烈建议在 `config-sample.yaml` 中设置以下值，尤其是 `externalElasticsearchUrl` 和 `externalElasticsearchPort`。在安装前提供以下信息后，KubeKey 将直接整合您的外部 Elasticsearch，不再安装内部 Elasticsearch。
+默认情况下，如果启用了日志系统，ks-installer 将安装内置 Elasticsearch。对于生产环境，如果您想启用日志系统，强烈建议在 `cluster-configuration.yaml` 中设置以下值，尤其是 `externalElasticsearchUrl` 和 `externalElasticsearchPort`。在安装前提供以下信息后，ks-installer 将直接对接您的外部 Elasticsearch，不再安装内置 Elasticsearch。
     {{</ notice >}}
 
     ```yaml
@@ -125,7 +125,7 @@ KubeSphere 为日志收集、查询和管理提供了一个强大的、整体的
     ```
 
     {{< notice note >}}
-默认情况下，如果启用了日志系统，KubeKey 将在内部安装 Elasticsearch。对于生产环境，如果您想启用日志系统，强烈建议在该 YAML 文件中设置以下值，尤其是 `externalElasticsearchUrl` 和 `externalElasticsearchPort`。在安装前提供以下信息后，KubeKey 将直接整合您的外部 Elasticsearch，不再安装内部 Elasticsearch。
+默认情况下，如果启用了日志系统，将会安装内置 Elasticsearch。对于生产环境，如果您想启用日志系统，强烈建议在该 YAML 文件中设置以下值，尤其是 `externalElasticsearchUrl` 和 `externalElasticsearchPort`。在文件中提供以下信息后，KubeSphere 将直接对接您的外部 Elasticsearch，不再安装内置 Elasticsearch。
     {{</ notice >}}
 
     ```yaml
