@@ -1,5 +1,5 @@
 ---
-title: 'TiDB on KubeSphere: Release Cloud-Native Distributed Database on the KubeSphere App Store'
+title: 'TiDB on KubeSphere: Release a Cloud-Native Distributed Database to the KubeSphere App Store'
 keywords: Kubernetes, KubeSphere, TiDB, QingCloud Kubernetes Engine
 description: This blog demonstrates how to add a PingCap repository to KubeSphere to deploy tidb-operator and tidb-cluster.
 tag: 'TiDB, Kubernetes, QKE'
@@ -12,13 +12,13 @@ snapshot: 'https://ap3.qingstor.com/kubesphere-website/docs/tidb-architecture.pn
 
 In this article, I will demonstrate another way to upload an app to KubeSphere and release it to the App Store.
 
-## Prerequisites
+## Before You Begin
 
 - You have [prepared the environment with KubeSphere installed](https://kubesphere.io/blogs/tidb-on-kubesphere-using-qke/#preparing-environments).
 
 - You have [enabled the KubeSphere App Store](https://kubesphere.io/docs/pluggable-components/app-store/).
 
-## Prepare TiDB Helm Charts
+## Preparing TiDB Helm Charts
 
 As I will upload individual Helm charts of TiDB later, I need to first download them using [Helm](https://helm.sh/). Helm helps you create, install and manage Kubernetes applications.
 
@@ -65,7 +65,7 @@ As I will upload individual Helm charts of TiDB later, I need to first download 
    ```
 
 
-## Upload Helm charts to KubeSphere
+## Uploading Helm Charts to KubeSphere
 
 Now that you have Helm charts ready, you can upload them to KubeSphere as app templates.
 
@@ -81,7 +81,7 @@ Now that you have Helm charts ready, you can upload them to KubeSphere as app te
 
    ![tidb-file-uploaded](https://ap3.qingstor.com/kubesphere-website/docs/20201130142335.png)
 
-## Deploy TiDB Operator and TiDB Cluster
+## Deploying TiDB Operator and a TiDB Cluster
 
 1. To deploy apps, you need to [create a project](https://kubesphere.io/docs/quick-start/create-workspace-and-project/#task-3-create-a-project) (i.e. namespace) where all workloads of an app run.
 
@@ -99,7 +99,7 @@ Now that you have Helm charts ready, you can upload them to KubeSphere as app te
 
    ![deploy-tidb](https://ap3.qingstor.com/kubesphere-website/docs/20201201141406.png)
 
-## Release Apps to the App Store
+## Releasing Apps to the App Store
 
 [App templates](https://kubesphere.io/docs/project-user-guide/application/app-template/) enable users to deploy and manage apps in a visualized way. Internally, they play an important role as shared resources (e.g. databases, middleware and operating systems) created by enterprises for the coordination and cooperation within teams.
 
