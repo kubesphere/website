@@ -40,7 +40,7 @@ KubeSphere 集成了 [OpenPitrix](https://github.com/openpitrix/openpitrix)（�
 
    {{< notice note >}}
 
-   被授予 `app-review` 角色的帐号能够查看平台上的应用商店并管理应用，包括审核和下架应用。
+   被授予 `app-review` 角色的帐户能够查看平台上的应用商店并管理应用，包括审核和下架应用。
 
    {{</ notice >}} 
 
@@ -185,7 +185,7 @@ KubeSphere 集成了 [OpenPitrix](https://github.com/openpitrix/openpitrix)（�
 
    {{< notice note >}}
 
-   通常，应用审核员会提前创建必要的分类，ISV 会选择应用出现的分类，然后提交审核。新创建的分类中没有应用。
+   通常，应用审核员会提前创建必要的分类，ISV 会选择应用所属的分类，然后提交审核。新创建的分类中没有应用。
 
    {{</ notice >}} 
 
