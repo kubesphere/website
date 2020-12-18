@@ -16,6 +16,12 @@ weight: 2300
 
 KubeSphere 需要安装在您的服务器中。
 
+## 视频演示
+
+<video controls="controls" style="width: 100% !important; height: auto !important;">
+  <source type="video/mp4" src="https://kubesphere-docs.pek3b.qingstor.com/website/docs-v3.0/%E5%BF%AB%E9%80%9F%E5%85%A5%E9%97%A8_1_%E5%88%9B%E5%BB%BA%E4%BC%81%E4%B8%9A%E7%A9%BA%E9%97%B4%E9%A1%B9%E7%9B%AE%E8%B4%A6%E6%88%B7%E5%92%8C%E8%A7%92%E8%89%B2.mp4">
+</video>
+
 ## 估计时间
 
 大约 15 分钟。
