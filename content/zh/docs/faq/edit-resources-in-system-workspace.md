@@ -39,5 +39,11 @@ Weight: 16300
    ```
 
 4. 执行如下命令重新部署 `ks-console`，并等待 Pods 重建。
+
+   ```bash
+   kubectl -n kubesphere-system rollout restart deployment ks-console
+   ```
+
 5. 刷新 KubeSphere 控制台。`system-workspace` 中的项目将出现编辑按钮。
+
 6. 如需关闭控制台的编辑功能，请采用相同方法删除 `systemWorkspace` 字段。
