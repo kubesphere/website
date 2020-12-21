@@ -6,9 +6,9 @@ linkTitle: 'Edit System Resources on the Console'
 Weight: 16300
 ---
 
- When you install KubeSphere, the workspace `system-workspace` is created where all KubeSphere system projects and Kubernetes system projects run. To avoid any misoperation on both systems, you are not allowed to edit resources in the workspace directly on the console. However, you can still make adjustments to resources using `kubectl`.
+When you install KubeSphere, the workspace `system-workspace` is created where all KubeSphere system projects and Kubernetes system projects run. To avoid any misoperation on both systems, you are not allowed to edit resources in the workspace directly on the console. However, you can still make adjustments to resources using `kubectl`.
 
-This tutorial demonstrates how to edit `system-workspace` resources on the console directly.
+This tutorial demonstrates how to enable the editing function of `system-workspace` resources.
 
 {{< notice warning >}}
 
