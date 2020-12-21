@@ -31,22 +31,27 @@ This tutorial demonstrates how to add an app repository to KubeSphere.
 
     - **App Repository Name**: Set a simple and clear name for the repository, which is easy for users to identify.
     - **Type**: Support applications based on Helm charts.
-    - **URL**: Support the following three protocols:
-      - S3: The URL is S3-styled, such as `s3.<zone-id>.qingstor.com/<bucket-name>/` for the access to QingStor services using the S3 interface. If you select this type, you need to provide the access key and secret.
-      - HTTP: Readable but not writable. Applications in the app repository (object storage) can be acquired and deployed to the runtime environment, such as `http://docs-repo.gd2.qingstor.com`. The example contains an sample app NGINX, which will be imported automatically after the repository is created. You can deploy it from app templates.
-      - HTTPS: Readable but not writable. Applications in the app repository can be acquired and deployed to the runtime environment.
+    - **URL**: Following the RFC 3986 specification, support the following three protocols:
+      - S3: The URL is S3-styled, such as `s3.<region>.amazonaws.com` for the access to Amazon S3 services using the S3 interface. If you select this type, you need to provide the access key and secret.
+      - HTTP: Such as `http://docs-repo.gd2.qingstor.com`. The example contains an sample app NGINX, which will be imported automatically after the repository is created. You can deploy it from app templates.
+      - HTTPS: Such as `https://docs-repo.gd2.qingstor.com`
+    {{< notice note >}}
+
+If you want to use basic access authentication in HTTP/HTTPS, you can use a URL like this style `http://username:password@docs-repo.gd2.qingstor.com`
+
+    {{</ notice >}}
     - **Description**: Give a brief introduction of main features of the app repository.
 
 3. After you specify required fields, click **Validate** to verify the URL. You will see a green check mark next to the URL if it is available and click **OK** to finish.
 
     ![validate-link](/images/docs/workspace-administration/app-repository/import-helm-repository/validate-link.jpg)
-    
+
     {{< notice note >}}
 
-- The example repository used in this tutorial is a mirror of Google's Helm repository. Some of the apps in this repository may not be successfully deployed. The KubeSphere team will develop a commercial version of app repositories for enterprises in the future.
-- In an on-premises private cloud environment, you can build your own repository based on [Helm](https://helm.sh). Then, you develop and upload applications to the repository and deploy them on KubeSphere for your own needs.
+1. In an on-premises private cloud environment, you can build your own repository based on [ChartMuseum](https://chartmuseum.com/). Then, you develop and upload applications to the repository and deploy them on KubeSphere for your own needs. 
+2. If you need to set up HTTP basic access authentication, you can refer to this document https://github.com/helm/chartmuseum#basic-auth
 
-{{</ notice >}} 
+    {{</ notice >}}
 
 4. The repository displays in the repository list below after imported and KubeSphere automatically adds all apps in the repository as app templates. When users choose to deploy apps using app templates, they can see apps in this repository. For more information, see [Deploy Apps from App Templates](../../../project-user-guide/application/deploy-app-from-template/).
 
