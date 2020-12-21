@@ -8,8 +8,8 @@ weight: 14100
 
 KubeSphere 集成了 [OpenPitrix](https://github.com/openpitrix/openpitrix)（一个跨云管理应用程序的开源平台）来构建应用商店，管理应用程序的整个生命周期。应用商店支持两种应用程序部署方式：
 
-- **应用模板**，这种方式让开发者和独立软件供应商 (ISV) 能够与企业空间中的用户共享应用程序。您也可以在企业空间中导入第三方应用仓库。
-- **自制应用**，这种方式帮助用户使用多个微服务来快速构建一个完整的应用程序。KubeSphere 让用户可以选择现有服务或者创建新的服务，用于在一站式控制台上创建自制应用。
+- **应用模板**：这种方式让开发者和独立软件供应商 (ISV) 能够与企业空间中的用户共享应用程序。您也可以在企业空间中导入第三方应用仓库。
+- **自制应用**：这种方式帮助用户使用多个微服务来快速构建一个完整的应用程序。KubeSphere 让用户可以选择现有服务或者创建新的服务，用于在一站式控制台上创建自制应用。
 
 ![应用商店](/images/docs/zh-cn/app-store/application-lifecycle-management/app-store.PNG)
 
@@ -253,7 +253,7 @@ KubeSphere 集成了 [OpenPitrix](https://github.com/openpitrix/openpitrix)（�
 
    ![升级完成](/images/docs/zh-cn/app-store/application-lifecycle-management/upgrade-finish.PNG)
 
-### 步骤八：下架应用
+### 步骤八：下架应用程序
 
 您可以选择将应用完全从应用商店下架，或者下架某个特定版本。
 

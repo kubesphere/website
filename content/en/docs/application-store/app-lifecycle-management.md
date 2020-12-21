@@ -22,7 +22,7 @@ Using [Redis](https://redis.io/) as an example application, this tutorial demons
 
 ## Hands-on Lab
 
-### Step 1: Create Customized Role and Account
+### Step 1: Create a customized role and account
 
 You need to create two accounts first, one for ISVs (`isv`) and the other (`reviewer`) for app technical reviewers.
 
@@ -54,7 +54,7 @@ You need to create two accounts first, one for ISVs (`isv`) and the other (`revi
 
 6. Invite both accounts created above to an existing workspace such as `demo-workspace`, and grant them the role of `workspace-admin`.
 
-### Step 2: Upload and Submit Application
+### Step 2: Upload and submit an application
 
 1. Log in KubeSphere as `isv` and go to your workspace. You need to upload the example app Redis to this workspace so that it can be used later. First, download the app [Redis 11.3.4](https://github.com/kubesphere/tutorial/raw/master/tutorial%205%20-%20app-store/redis-11.3.4.tgz) and click **Upload Template** in **App Templates**.
 
@@ -133,7 +133,7 @@ The version number must start with a number and contain decimal points.
 
     ![submitted-app](/images/docs/appstore/application-lifecycle-management/submitted-app.jpg)
 
-### Step 3: Review Application
+### Step 3: Review the application
 
 1. Log out and log back in KubeSphere as `reviewer`. Click **Platform** in the top left corner and select **App Store Management**. On the **App Review** page, the app submitted in the previous step displays under the tab **Unprocessed**.
 
@@ -145,7 +145,7 @@ The version number must start with a number and contain decimal points.
 
 3. It is the responsibility of the reviewer to decide whether the app meets the criteria to be released to the App Store. Click **Pass** to approve it or **Reject** to deny an app submission.
 
-### Step 4: Release Application to App Store
+### Step 4: Release the application to the App Store
 
 After the app is approved, `isv` can release the Redis application to the App Store, allowing all users on the platform to find and deploy this application.
 
@@ -171,7 +171,7 @@ After the app is approved, `isv` can release the Redis application to the App St
 
    ![deploy-redis](/images/docs/appstore/application-lifecycle-management/deploy-redis.jpg)
 
-### Step 5: Create App Category
+### Step 5: Create an app category
 
 `reviewer` can create multiple categories for different types of applications based on their function and usage. It is similar to setting tags and categories can be used in the App Store as filters, such as Big Data, Middleware, and IoT.
 
@@ -201,7 +201,7 @@ After the app is approved, `isv` can release the Redis application to the App St
 
    ![app-in-category-list-expected](/images/docs/appstore/application-lifecycle-management/app-in-category-list-expected.jpg)
 
-### Step 6: Add New Version
+### Step 6: Add a new version
 
 To allow workspace users to upgrade apps, you need to add new app versions to KubeSphere first. Follow the steps below to add a new version for the example app.
 
@@ -253,7 +253,7 @@ To follow the steps below, you must deploy an app of one of its old versions fir
 
    ![upgrade-finish](/images/docs/appstore/application-lifecycle-management/upgrade-finish.jpg)
 
-### Step 8: Suspend App
+### Step 8: Suspend the application
 
 You can choose to remove an app entirely from the App Store or suspend a specific app version.
 
