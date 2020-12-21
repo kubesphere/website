@@ -85,6 +85,6 @@ weight: 3610
 
 {{< notice note >}}
 
-[在 Linux 以 All-in-one 模式安装 KubeSphere](../../../quick-start/all-in-one-on-linux/) 不需要 `config-sample.yaml` 文件。该模式下请采用第一种方法进行配置。
+[在 Linux 上通过 All-in-one 模式安装 KubeSphere](../../../quick-start/all-in-one-on-linux/) 不需要 `config-sample.yaml` 文件。该模式下请采用第一种方法进行配置。
 
 {{</ notice >}}
