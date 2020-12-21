@@ -1,91 +1,90 @@
 ---
-title: "Configure Booster for Installation"
-keywords: 'KubeSphere, booster, installation, faq'
-description: 'How to configure a booster for installation'
-
-
+title: "为安装配置加速器"
+keywords: 'KubeSphere, 加速器, 安装, FAQ'
+description: '如何为安装配置加速器'
+linkTitle: "为安装配置加速器"
 weight: 3610
 ---
 
-If you have trouble downloading images from dockerhub.io, it is highly recommended that you configure a registry mirror (i.e. booster) beforehand to speed up downloads. You can refer to the [official documentation of Docker](https://docs.docker.com/registry/recipes/mirror/#configure-the-docker-daemon) or follow the steps below.
+如果您无法从 `dockerhub.io` 下载镜像，强烈建议您预先配置仓库的镜像地址（即加速器）以加快下载速度。您可以参考[ Docker 官方文档](https://docs.docker.com/registry/recipes/mirror/#configure-the-docker-daemon)，或执行以下步骤。
 
-## Get Booster URL
+## 获取加速器地址
 
-To configure the booster, you need a registry mirror address. See the following example to see how you can get a booster URL from Alibaba Cloud.
+您需要获取仓库的一个镜像地址以配置加速器。以下示例介绍如何从阿里云获取加速器地址。
 
-1. Log in the console of Alibaba Cloud and enter "container registry" in the search bar. Click **Container Registry** in the drop-down list as below.
+1. 登录阿里云控制台，在搜索栏中输入“容器镜像服务”，点击搜索结果中的**容器镜像服务**。
 
-![container-registry](https://ap3.qingstor.com/kubesphere-website/docs/20200904165654.png)
+   ![container-registry.png](/images/docs/zh-cn/installing-on-linux/faq/configure-booster/container-registry.PNG)
 
-2. Click **Image Booster**.
+2. 点击**镜像加速器**。
 
-![image-booster](https://ap3.qingstor.com/kubesphere-website/docs/20200904170057.png)
+   ![image-booster](/images/docs/zh-cn/installing-on-linux/faq/configure-booster/image-booster.PNG)
 
-3. You can find the **Booster URL** in the image below as well as the official guide from Alibaba Cloud to help you configure the booster.
+3. 在如图所示的位置获取**加速器地址**，并按照页面上提供的阿里云官方操作文档配置加速器。
 
-![](https://ap3.qingstor.com/kubesphere-website/docs/20200904171359.png)
+   ![booster-url](/images/docs/zh-cn/installing-on-linux/faq/configure-booster/booster-url.PNG)
 
-## Set Registry Mirror
+## 配置仓库镜像地址
 
-You can configure the Docker daemon directly or use KubeKey to set the configuration.
+您可以直接配置 Docker 守护程序，也可以使用 KubeKey 进行配置。
 
-### Configure the Docker daemon
-
-{{< notice note >}}
-
-Docker needs to be installed in advance for this method.
-
-{{</ notice >}} 
-
-1. Execute the following commands:
-
-```bash
-sudo mkdir -p /etc/docker
-```
-
-```bash
-sudo vi /etc/docker/daemon.json
-```
-
-2. Add the `registry-mirrors` key and value to the file.
-
-```bash
-{
-  "registry-mirrors": ["https://<my-docker-mirror-host>"]
-}
-```
-
-{{< notice note >}} 
-
-Make sure you replace the address within the quotation mark above with your own Booster URL.
-
-{{</ notice >}} 
-
-3. Save the file and reload Docker by executing the following commands so that the change can take effect.
-
-```bash
-sudo systemctl daemon-reload
-```
-
-```bash
-sudo systemctl restart docker
-```
-
-### Use KubeKey to set the registry mirror
-
-1. After you create a config-sample.yaml file with KubeKey before installation, navigate to `registry` in the file.
-
-```bash
-registry:
-    registryMirrors: [] # For users who need to speed up downloads
-    insecureRegistries: [] # Set an address of insecure image registry. See https://docs.docker.com/registry/insecure/
-    privateRegistry: "" # Configure a private image registry for air-gapped installation (e.g. docker local registry or Harbor)
-```
-
-2. Input the registry mirror address above and save the file. For more information about the installation process, see [Multi-node Installation](../../../installing-on-linux/introduction/multioverview/). 
+### 配置 Docker 守护程序
 
 {{< notice note >}}
 
-If you adopt [all-in-one installation](../../../quick-start/all-in-one-on-linux/), refer to the first method because a config-sample.yaml file is not needed for this mode.
+采用此方法，您需要预先安装 Docker。
 
 {{</ notice >}} 
+
+1. 执行如下命令：
+
+   ```bash
+   sudo mkdir -p /etc/docker
+   ```
+
+   ```bash
+   sudo vi /etc/docker/daemon.json
+   ```
+
+2. 在文件中添加 `registry-mirrors` 键值对。
+
+   ```json
+   {
+     "registry-mirrors": ["https://<my-docker-mirror-host>"]
+   }
+   ```
+
+   {{< notice note >}}
+
+   请将命令中的地址替换成您实际的加速器地址。
+
+   {{</ notice >}} 
+
+3. 执行如下命令保存文件并重新加载 Docker，以使修改生效。
+
+   ```bash
+   sudo systemctl daemon-reload
+   ```
+
+   ```bash
+   sudo systemctl restart docker
+   ```
+
+### 使用 KubeKey 配置仓库镜像地址
+
+1. 在安装前用 KubeKey 创建 `config-sample.yaml` 文件，并定位到文件中的 `registry` 位置。
+
+   ```yaml
+   registry:
+       registryMirrors: [] # For users who need to speed up downloads
+       insecureRegistries: [] # Set an address of insecure image registry. See https://docs.docker.com/registry/insecure/
+       privateRegistry: "" # Configure a private image registry for air-gapped installation (e.g. docker local registry or Harbor)
+   ```
+
+2. 在 `registryMirrors` 处填入仓库的镜像地址并保存文件。关于安装过程的更多信息，请参见[多节点安装](../../../installing-on-linux/introduction/multioverview/)。
+
+{{< notice note >}}
+
+[在 Linux 以 All-in-one 模式安装 KubeSphere](../../../quick-start/all-in-one-on-linux/) 不需要 `config-sample.yaml` 文件。该模式下请采用第一种方法进行配置。
+
+{{</ notice >}}
