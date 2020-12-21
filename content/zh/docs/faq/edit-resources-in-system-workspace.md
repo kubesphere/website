@@ -6,7 +6,7 @@ linkTitle: '在控制台上编辑系统资源'
 Weight: 16300
 ---
 
-当您安装 KubeSphere 时，工作区 `system-workspace` 将被创建，用于运行所有 KubeSphere 系统项目和 Kubernetes 系统项目。为了避免对这两个系统的误操作，您不能直接在控制台上编辑该工作区中的资源。但是，您仍然可以使用 `kubectl`来调整资源。
+当您安装 KubeSphere 时，企业空间 `system-workspace` 将被创建，用于运行所有 KubeSphere 系统项目和 Kubernetes 系统项目。为了避免对这两个系统的误操作，您不能直接在控制台上编辑该企业空间中的资源。但是，您仍然可以使用 `kubectl`来修改资源。
 
 本教程演示如何启用 `system-workspace` 资源的编辑功能。
 
@@ -38,7 +38,7 @@ Weight: 16300
      systemWorkspace: "$"  # Add this line manually.
    ```
 
-4. 执行如下命令重新部署 `ks-console`，并等待 Pods 重建。
+4. 执行如下命令重新部署 `ks-console`，并等待 Pod 重建。
 
    ```bash
    kubectl -n kubesphere-system rollout restart deployment ks-console
