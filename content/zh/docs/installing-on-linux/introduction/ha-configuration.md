@@ -1,57 +1,51 @@
 ---
-title: "High Availability Configurations"
-keywords: 'KubeSphere, Kubernetes, HA, high availability, installation, configuration'
-description: 'How to configure a high-availability Kubernetes cluster.'
-linkTitle: "High Availability Configurations"
+title: "高可用配置"
+keywords: 'KubeSphere, Kubernetes, HA, 高可用, 安装, 配置'
+description: '如何配置一个高可用 Kubernetes 集群。'
+linkTitle: "高可用配置"
 weight: 3150
 ---
 
-You can set up a single-master Kubernetes cluster with KubeSphere installed based on the tutorial of [Multi-node Installation](../multioverview/). Single-master clusters may be sufficient for development and testing in most cases. For a production environment, however, you need to consider the high availability of the cluster. If key components (for example, kube-apiserver, kube-scheduler, and kube-controller-manager) are all running on the same master node, Kubernetes and KubeSphere will be unavailable once the master node goes down. Therefore, you need to set up a high-availability cluster by provisioning load balancers with multiple master nodes. You can use any cloud load balancer, or any hardware load balancer (e.g. F5). In addition, Keepalived and [HAproxy](https://www.haproxy.com/), or Nginx is also an alternative for creating high-availability clusters.
+您可以根据教程[多节点安装](../../../installing-on-linux/introduction/multioverview/)来创建单主节点 Kubernetes 集群并安装 KubeSphere。大多数情况下，单主节点集群大致足以供开发和测试环境使用。但是，对于生产环境，您需要考虑集群的高可用性。如果关键组件（例如 kube-apiserver、kube-scheduler 和 kube-controller-manager）都在同一个主节点上运行，一旦主节点宕机，Kubernetes 和 KubeSphere 都将不可用。因此，您需要为多个主节点配置负载均衡器，以创建高可用集群。您可以使用任意云负载均衡器或者任意硬件负载均衡器（例如 F5）。此外，也可以使用 Keepalived 和 [HAproxy](https://www.haproxy.com/)，或者 Nginx 来创建高可用集群。
 
-This tutorial demonstrates the general configurations of a high-availability cluster as you install KubeSphere on Linux.
+本教程演示了在 Linux 上安装 KubeSphere 时，高可用集群的大体配置。
 
-## Video Demonstration
+## 架构
 
-<video controls="controls" style="width: 100% !important; height: auto !important;">
-  <source type="video/mp4" src="https://kubesphere-docs.pek3b.qingstor.com/website/docs-v3.0/KS3.0%E5%AE%89%E8%A3%85%E4%B8%8E%E9%83%A8%E7%BD%B2_3_HA%20Deployment%20on%20Linux.mp4">
-</video>
+在您开始操作前，请确保准备了 6 台 Linux 机器，其中 3 台充当主节点，另外 3 台充当工作节点。下图展示了这些机器的详情，包括它们的私有 IP 地址和角色。有关系统和网络要求的更多信息，请参见[多节点安装](../../../installing-on-linux/introduction/multioverview/#步骤1准备-linux-主机)。
 
-## Architecture
+![高可用架构](/images/docs/zh-cn/installing-on-linux/introduction/ha-configurations/ha-architecture.png)
 
-Make sure you have prepared six Linux machines before you begin, with three of them serving as master nodes and the other three as worker nodes. The following image shows details of these machines, including their private IP address and role. For more information about system and network requirements, see [Multi-node Installation](../multioverview/#step-1-prepare-linux-hosts).
+## 配置负载均衡器
 
-![ha-architecture](/images/docs/installing-on-linux/introduction/ha-configurations/ha-architecture.png)
+您必须在您的环境中创建一个负载均衡器来监听（在某些云平台也称作监听器）关键端口。建议监听下表中的端口。
 
-## Configure a Load Balancer
-
-You must create a load balancer in your environment to listen (also known as listeners on some cloud platforms) on key ports. Here is a table of recommended ports that need to be listened on.
-
-| Service    | Protocol | Port  |
-| ---------- | -------- | ----- |
-| apiserver  | TCP      | 6443  |
-| ks-console | TCP      | 30880 |
-| http       | TCP      | 80    |
-| https      | TCP      | 443   |
+| 服务       | 协议 | 端口  |
+| ---------- | ---- | ----- |
+| apiserver  | TCP  | 6443  |
+| ks-console | TCP  | 30880 |
+| http       | TCP  | 80    |
+| https      | TCP  | 443   |
 
 {{< notice note >}}
 
-- Make sure your load balancer at least listens on the port of apiserver.
+- 请确保您的负载均衡器至少监听 apiserver 端口。
 
-- You may need to open ports in your security group to ensure external traffic is not blocked depending on where your cluster is deployed. For more information, see [Port Requirements](../port-firewall/).
-- You can configure both internal and external load balancers on some cloud platforms. After assigning a public IP address to the external load balancer, you can use the IP address to access the cluster.
-- For more information about how to configure load balancers, see “Installing on Public Cloud” to see specific steps on major public cloud platforms.
+- 根据集群的部署位置，您可能需要在安全组中打开端口以确保外部流量不被屏蔽。有关更多信息，请参见[端口要求](../../../installing-on-linux/introduction/port-firewall/)。
+- 在一些云平台上，您可以同时配置内置负载均衡器和外置负载均衡器。为外置负载均衡器分配公共 IP 地址后，您可以使用该 IP 地址来访问集群。
+- 有关如何配置负载均衡器的更多信息，请参见“在公有云上安装”中对在主要公有云平台上具体操作步骤的说明。
 
 {{</ notice >}} 
 
-## Download KubeKey
+## 下载 KubeKey
 
-[Kubekey](https://github.com/kubesphere/kubekey) is the next-gen installer which provides an easy, fast and flexible way to install Kubernetes and KubeSphere. Follow the steps below to download KubeKey.
+[Kubekey](https://github.com/kubesphere/kubekey) 是新一代安装程序，可以简单、快速和灵活地安装 Kubernetes 和 KubeSphere。请按照以下步骤下载 KubeKey。
 
 {{< tabs >}}
 
-{{< tab "Good network connections to GitHub/Googleapis" >}}
+{{< tab "如果您能正常访问 GitHub 和 Googleapis" >}}
 
-Download KubeKey from its [GitHub Release Page](https://github.com/kubesphere/kubekey/releases) or use the following command directly.
+从 [GitHub Release Page](https://github.com/kubesphere/kubekey/releases) 下载 KubeKey 或直接使用以下命令。
 
 ```bash
 curl -sfL https://get-kk.kubesphere.io | VERSION=v1.0.1 sh -
@@ -59,15 +53,15 @@ curl -sfL https://get-kk.kubesphere.io | VERSION=v1.0.1 sh -
 
 {{</ tab >}}
 
-{{< tab "Poor network connections to GitHub/Googleapis" >}}
+{{< tab "如果您访问 GitHub 和 Googleapis 受限" >}}
 
-Run the following command first to make sure you download KubeKey from the correct zone.
+先执行以下命令以确保您从正确的区域下载 KubeKey。
 
 ```bash
 export KKZONE=cn
 ```
 
-Run the following command to download KubeKey:
+执行以下命令下载 KubeKey：
 
 ```bash
 curl -sfL https://get-kk.kubesphere.io | VERSION=v1.0.1 sh -
@@ -75,7 +69,7 @@ curl -sfL https://get-kk.kubesphere.io | VERSION=v1.0.1 sh -
 
 {{< notice note >}}
 
-After you download KubeKey, If you transfer it to a new machine also with poor network connections to Googleapis, you must run `export KKZONE=cn` again before you proceed with the steps below.
+在您下载 KubeKey 后，如果您将其传至新的机器，且访问 Googleapis 同样受限，在您执行以下步骤之前请务必再次执行 `export KKZONE=cn` 命令。
 
 {{</ notice >}} 
 
@@ -85,17 +79,17 @@ After you download KubeKey, If you transfer it to a new machine also with poor n
 
 {{< notice note >}}
 
-The commands above download the latest release (v1.0.1) of KubeKey. You can change the version number in the command to download a specific version.
+执行以上命令会下载最新版 KubeKey (v1.0.1)，您可以修改命令中的版本号下载指定版本。
 
 {{</ notice >}} 
 
-Make `kk` executable:
+为 `kk` 添加可执行权限：
 
 ```bash
 chmod +x kk
 ```
 
-Create an example configuration file with default configurations. Here Kubernetes v1.17.9 is used as an example.
+创建包含默认配置的示例配置文件。这里使用 Kubernetes v1.17.9 作为示例。
 
 ```bash
 ./kk create config --with-kubesphere v3.0.0 --with-kubernetes v1.17.9
@@ -103,21 +97,21 @@ Create an example configuration file with default configurations. Here Kubernete
 
 {{< notice note >}}
 
-Kubernetes versions that have been fully tested with KubeSphere: v1.15.12, v1.16.13, v1.17.9 (default), and v1.18.6.
+在 KubeSphere 上充分测试过的 Kubernetes 版本：v1.15.12、v1.16.13、v1.17.9（默认）以及 v1.18.6。
 
 {{</ notice >}}
 
-## Deploy KubeSphere and Kubernetes
+## 部署 KubeSphere 和 Kubernetes
 
-After you run the commands above, a configuration file `config-sample.yaml` will be created. Edit the file to add machine information, configure the load balancer and more.
+运行以上命令后，会创建一个配置文件 `config-sample.yaml`。编辑该文件以添加机器信息、配置负载均衡器和其他内容。
 
 {{< notice note >}}
 
-The file name may be different if you customize it.
+如果您自定义文件名，文件名称可能会不同。
 
 {{</ notice >}} 
 
-### config-sample.yaml Example
+### config-sample.yaml 示例
 
 ```yaml
 spec:
@@ -143,9 +137,9 @@ spec:
     - node3
 ```
 
-For more information about different fields in this configuration file, see [Kubernetes Cluster Configurations](../vars/) and [Multi-node Installation](../multioverview/#2-edit-the-configuration-file).
+有关该配置文件中不同字段的更多信息，请参见 [Kubernetes 集群配置](../../../installing-on-linux/introduction/vars/)和[多节点安装](../../../installing-on-linux/introduction/multioverview/#2-编辑配置文件)。
 
-### Configure the Load Balancer
+### 配置负载均衡器
 
 ```yaml
 ## Public LB config example
@@ -158,39 +152,39 @@ For more information about different fields in this configuration file, see [Kub
 
 {{< notice note >}}
 
-- The address and port should be indented by two spaces in `config-sample.yaml`.
-- In most cases, you need to provide the **private IP address** of the load balancer for the field `address`. However, different cloud providers may have different configurations for load balancers. For example, if you configure a Server Load Balancer (SLB) on Alibaba Cloud, the platform assigns a public IP address to the SLB, which means you need to specify the public IP address for the field `address`.
-- The domain name of the load balancer is `lb.kubesphere.local` by default for internal access. If you need to change the domain name, please uncomment and modify it.
+- `config-sample.yaml` 文件中的 `address` 和 `port` 应缩进两个空格。
+- 大多数情况下，您需要在负载均衡器的 `address` 字段中提供**私有 IP 地址**。但是，不同的云厂商可能对负载均衡器有不同的配置。例如，如果您在阿里云上配置服务器负载均衡器 (SLB)，平台会为 SLB 分配一个公共 IP 地址，所以您需要在 `address` 字段中指定公共 IP 地址。
+- 负载均衡器默认的内部访问域名是 `lb.kubesphere.local`。如果您需要更改域名，请去掉注释并修改域名。
 
 {{</ notice >}}
 
-### Persistent Storage Plugin Configurations
+### 持久化存储插件配置
 
-For a production environment, you need to prepare persistent storage and configure the storage plugin (e.g. CSI) in `config-sample.yaml` to define which storage service you want to use. For more information, see [Persistent Storage Configurations](../storage-configuration/).
+在生产环境中，您需要准备持久化存储并在 `config-sample.yaml` 中配置存储插件（例如 CSI），以明确您想使用哪一种存储服务。有关更多信息，请参见[持久化存储配置](../../../installing-on-linux/introduction/storage-configuration/)。
 
-### Enable Pluggable Components (Optional)
+### 启用可插拔组件（可选）
 
-KubeSphere has decoupled some core feature components since v2.1.0. These components are designed to be pluggable which means you can enable them either before or after installation. By default, KubeSphere will be installed with the minimal package if you do not enable them.
+自 v2.1.0 起，KubeSphere 解耦了一些核心功能组件。您可以在安装之前或者之后启用这些可插拔组件。如果您不启用这些组件，KubeSphere 将默认以最小化安装。
 
-You can enable any of them according to your demands. It is highly recommended that you install these pluggable components to discover the full-stack features and capabilities provided by KubeSphere. Make sure your machines have sufficient CPU and memory before enabling them. See [Enable Pluggable Components](../../../pluggable-components/) for details.
+您可以根据您的需求来启用任意可插拔组件。强烈建议您安装这些可插拔组件，以便体验 KubeSphere 提供的全栈特性和功能。启用前，请确保您的机器有足够的 CPU 和内存。有关详情请参见[启用可插拔组件](../../../pluggable-components/)。
 
-### Start Installation
+### 开始安装
 
-After you complete the configuration, you can execute the following command to start the installation:
+配置完成后，您可以执行以下命令来开始安装：
 
 ```bash
 ./kk create cluster -f config-sample.yaml
 ```
 
-### Verify Installation
+### 验证安装
 
-1. Run the following command to Inspect the logs of installation.
+1. 运行以下命令查看安装日志。
 
    ```bash
    kubectl logs -n kubesphere-system $(kubectl get pod -n kubesphere-system -l app=ks-install -o jsonpath='{.items[0].metadata.name}') -f
    ```
 
-2. When you see the following message, it means your HA cluster is successfully created.
+2. 若您看到以下信息，您的高可用集群便已创建成功。
 
    ```bash
    #####################################################
