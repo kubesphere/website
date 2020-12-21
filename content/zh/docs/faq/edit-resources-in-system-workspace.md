@@ -1,50 +1,49 @@
 ---
-title: "Edit System Resources on the Console"
-keywords: "system, resources, KubeSphere, Kubernetes"
-description: "How to edit system resources on the console."
-linkTitle: 'Edit System Resources on the Console'
+title: "在控制台上编辑系统资源"
+keywords: "系统, 资源, KubeSphere, Kubernetes"
+description: "如何在控制台上编辑系统资源。"
+linkTitle: '在控制台上编辑系统资源'
 Weight: 16300
 ---
 
- When you install KubeSphere, the workspace `system-workspace` is created where all KubeSphere system projects and Kubernetes system projects run. To avoid any misoperation on both systems, you are not allowed to edit resources in the workspace directly on the console. However, you can still make adjustments to resources using `kubectl`.
+当您安装 KubeSphere 时，企业空间 `system-workspace` 将被创建，用于运行所有 KubeSphere 系统项目和 Kubernetes 系统项目。为了避免对这两个系统的误操作，您不能直接在控制台上编辑该企业空间中的资源。但是，您仍然可以使用 `kubectl`来修改资源。
 
-This tutorial demonstrates how to edit `system-workspace` resources on the console directly.
+本教程演示如何启用 `system-workspace` 资源的编辑功能。
 
 {{< notice warning >}}
 
-Editing resources in `system-workspace` may cause unexpected results, such as KubeSphere system and node failures, and your business may be affected. Please be extremely careful about the operation.
+编辑 `system-workspace` 中的资源可能会导致意外结果，例如 KubeSphere 系统和节点故障，并且可能对您的业务造成影响。执行此操作时请高度谨慎。
 
 {{</ notice >}}
 
-## Edit the Console Configuration
+## 编辑控制台配置
 
-1. Log in KubeSphere as `admin`. Click the hammer icon in the bottom right corner and select **Kubectl**.
+1. 以 `admin` 用户登录 KubeSphere，点击右下角的锤子图标，然后选择 **Kubectl**。
 
-2. Execute the following command:
+2. 执行如下命令：
 
    ```bash
    kubectl -n kubesphere-system edit cm ks-console-config
    ```
 
-3. Add the `systemWorkspace` field under `client` and save the file.
+3. 在 `client` 下添加 `systemWorkspace` 字段并保存文件。
 
    ```yaml
-       client:
-         version:
-           kubesphere: v3.0.0
-           kubernetes: v1.17.9
-           openpitrix: v0.3.5
-         enableKubeConfig: true
-         systemWorkspace: "$"  # Add this line manually.
+   client:
+     version:
+       kubesphere: v3.0.0
+       kubernetes: v1.17.9
+       openpitrix: v0.3.5
+     enableKubeConfig: true
+     systemWorkspace: "$"  # Add this line manually.
    ```
 
-4. Redeploy `ks-console` by executing the following command and wait for Pods to be recreated.
+4. 执行如下命令重新部署 `ks-console`，并等待 Pod 重建。
 
    ```bash
    kubectl -n kubesphere-system rollout restart deployment ks-console
    ```
 
-5. Refresh the KubeSphere console and you can see that editing buttons in projects in `system-workspace` appear.
+5. 刷新 KubeSphere 控制台。`system-workspace` 中的项目将出现编辑按钮。
 
-6. If you want to disable the editing function on the console, delete the field `systemWorkspace` by following the same steps above. 
-
+6. 如需关闭控制台的编辑功能，请采用相同方法删除 `systemWorkspace` 字段。
