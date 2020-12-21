@@ -2,7 +2,6 @@
 title: "KubeSphere 日志系统"
 keywords: "Kubernetes, Elasticsearch, KubeSphere, 日志系统, 日志"
 description: "如何启用 KubeSphere 日志系统"
-
 linkTitle: "KubeSphere 日志系统"
 weight: 6400
 ---
@@ -26,12 +25,12 @@ KubeSphere 为日志收集、查询和管理提供了一个强大的、全面的
     ```
 
     {{< notice note >}}
-如果您采用 [All-in-one 安装](.../.../quick-start/all-in-one-on-linux/)，则不需要创建 `config-sample.yaml` 文件，因为可以直接创建集群。一般来说，All-in-one 模式是为那些刚接触 KubeSphere 并希望熟悉系统的用户而准备的。如果您想在这个模式下启用日志系统（比如用于测试），请参考[下面的部分](#在安装后启用日志系统)，查看如何在安装后启用日志系统。
-    {{</ notice >}}
 
-    {{< notice warning >}}
-如果您采用[多节点安装](.../.../install-on-linux/introduction/multioverview/)，并且使用符号链接作为 Docker 根目录，请确保所有节点遵循完全相同的符号链接。日志代理在守护进程集中部署到节点上。容器日志路径的任何差异都可能导致该节点的收集失败。
-    {{</ notice >}}
+- 如果您采用 [All-in-one 安装](.../.../quick-start/all-in-one-on-linux/)，则不需要创建 `config-sample.yaml` 文件，因为可以直接创建集群。一般来说，All-in-one 模式是为那些刚接触 KubeSphere 并希望熟悉系统的用户而准备的。如果您想在这个模式下启用日志系统（比如用于测试），请参考[下面的部分](#在安装后启用日志系统)，查看如何在安装后启用日志系统。
+
+- 如果您采用[多节点安装](.../.../install-on-linux/introduction/multioverview/)，并且使用符号链接作为 Docker 根目录，请确保所有节点遵循完全相同的符号链接。日志代理在守护进程集中部署到节点上。容器日志路径的任何差异都可能导致该节点的收集失败。
+
+{{</ notice >}}
 
 2. 在该文件中，搜寻到 `logging`，并将 `enabled` 的 `false` 改为 `true`。完成后保存文件。
 
@@ -106,15 +105,19 @@ KubeSphere 为日志收集、查询和管理提供了一个强大的、全面的
 ## 在安装后启用日志系统
 
 1. 以 `admin` 身份登录控制台。点击左上角的**平台管理**，选择**集群管理**。
-    ![集群管理](/images/docs/zh-cn/enable-pluggable-components/kubesphere-logging-system/clusters-management.png)
+   
+   ![集群管理](/images/docs/zh-cn/enable-pluggable-components/kubesphere-logging-system/clusters-management.png)
 
 2. 点击**自定义资源 CRD**，在搜索栏中输入 `clusterconfiguration`。点击结果查看其详细页面。
 
     {{< notice info >}}
+
 自定义资源定义（CRD）允许用户在不增加额外 API 服务器的情况下创建一种新的资源类型，用户可以像使用其他 Kubernetes 原生对象一样使用这些自定义资源。
-    {{</ notice >}}
+
+{{</ notice >}}
 
 3. 在**资源列表**中，点击 `ks-installer` 右边的三个点，选择**编辑配置文件**。
+
     ![编辑 yaml](/images/docs/zh-cn/enable-pluggable-components/kubesphere-logging-system/edit-yaml.PNG)
 
 4. 在该 YAML 文件中，搜寻到 `logging`，将 `enabled` 的 `false` 改为 `true`。完成后，点击右下角的**更新**，保存配置。
@@ -124,8 +127,8 @@ KubeSphere 为日志收集、查询和管理提供了一个强大的、全面的
         enabled: true # Change "false" to "true"
     ```
 
-    {{< notice note >}}
-默认情况下，如果启用了日志系统，将会安装内置 Elasticsearch。对于生产环境，如果您想启用日志系统，强烈建议在该 YAML 文件中设置以下值，尤其是 `externalElasticsearchUrl` 和 `externalElasticsearchPort`。在文件中提供以下信息后，KubeSphere 将直接对接您的外部 Elasticsearch，不再安装内置 Elasticsearch。
+    {{< notice note >}}默认情况下，如果启用了日志系统，将会安装内置 Elasticsearch。对于生产环境，如果您想启用日志系统，强烈建议在该 YAML 文件中设置以下值，尤其是 `externalElasticsearchUrl` 和 `externalElasticsearchPort`。在文件中提供以下信息后，KubeSphere 将直接对接您的外部 Elasticsearch，不再安装内置 Elasticsearch。
+
     {{</ notice >}}
 
     ```yaml
@@ -147,8 +150,10 @@ KubeSphere 为日志收集、查询和管理提供了一个强大的、全面的
     ```
 
     {{< notice tip >}}
+
 您可以通过点击控制台右下角的锤子图标找到 Web Kubectl 工具。
-    {{</ notice >}}
+
+{{</ notice >}}
 
 ## 验证组件的安装
 
