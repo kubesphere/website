@@ -1,88 +1,88 @@
 ---
-title: "Air-gapped Installation"
-keywords: 'Air-gapped, Installation, KubeSphere'
-description: 'How to install KubeSphere in an air-gapped environment.'
+title: "离线安装"
+keywords: '离线, 安装, KubeSphere'
+description: '如何在离线环境安装 KubeSphere。'
 
-linkTitle: "Air-gapped Installation"
+linkTitle: "离线安装"
 weight: 3130
 ---
 
-The air-gapped installation is almost the same as the online installation except that you must create a local registry to host Docker images. This tutorial demonstrates how to install KubeSphere and Kubernetes in an air-gapped environment.
+离线安装几乎与在线安装相同，不同之处是您必须创建一个本地仓库来托管 Docker 镜像。本教程演示了如何在离线环境安装 KubeSphere 和 Kubernetes。
 
-## Video Demonstration
+## 视频演示
 
 <video controls="controls" style="width: 100% !important; height: auto !important;">
   <source type="video/mp4" src="https://kubesphere-docs.pek3b.qingstor.com/website/docs-v3.0/%E5%AE%89%E8%A3%85%E4%B8%8E%E9%83%A8%E7%BD%B2_5_%E7%A6%BB%E7%BA%BF%E9%83%A8%E7%BD%B2%E5%A4%9A%E8%8A%82%E7%82%B9KubeSphere%E9%9B%86%E7%BE%A4.mp4">
 </video>
 
-## Step 1: Prepare Linux Hosts
+## 步骤 1：准备 Linux 主机
 
-Please see the requirements for hardware and operating system shown below. To get started with multi-node installation, you need to prepare at least three hosts according to the following requirements.
+请查看下表中对硬件和操作系统的要求。要开始进行多节点安装，您需要按照下列要求准备至少三台主机。
 
-### System Requirements
+### 系统要求
 
-| Systems                                                | Minimum Requirements (Each node)             |
-| ------------------------------------------------------ | -------------------------------------------- |
-| **Ubuntu** *16.04, 18.04*                              | CPU: 2 Cores, Memory: 4 G, Disk Space: 100 G |
-| **Debian** *Buster, Stretch*                           | CPU: 2 Cores, Memory: 4 G, Disk Space: 100 G |
-| **CentOS** *7*.x                                       | CPU: 2 Cores, Memory: 4 G, Disk Space: 100 G |
-| **Red Hat Enterprise Linux 7**                         | CPU: 2 Cores, Memory: 4 G, Disk Space: 100 G |
-| **SUSE Linux Enterprise Server 15/openSUSE Leap 15.2** | CPU: 2 Cores, Memory: 4 G, Disk Space: 100 G |
+| 系统                                                   | 最低要求（每个节点）              |
+| ------------------------------------------------------ | --------------------------------- |
+| **Ubuntu** *16.04, 18.04*                              | CPU: 2 核，内存：4 G，硬盘：100 G |
+| **Debian** *Buster, Stretch*                           | CPU: 2 核，内存：4 G，硬盘：100 G |
+| **CentOS** *7*.x                                       | CPU: 2 核，内存：4 G，硬盘：100 G |
+| **Red Hat Enterprise Linux 7**                         | CPU: 2 核，内存：4 G，硬盘：100 G |
+| **SUSE Linux Enterprise Server 15/openSUSE Leap 15.2** | CPU: 2 核，内存：4 G，硬盘：100 G |
 
 {{< notice note >}}
 
-[KubeKey](https://github.com/kubesphere/kubekey) uses `/var/lib/docker` as the default directory where all Docker related files, including images, are stored. It is recommended you add additional storage volumes with at least **100G** mounted to `/var/lib/docker` and `/mnt/registry` respectively. See [fdisk](https://www.computerhope.com/unix/fdisk.htm) command for reference.
+[KubeKey](https://github.com/kubesphere/kubekey) 使用 `/var/lib/docker` 作为默认路径来存储所有 Docker 相关文件（包括镜像）。建议您添加附加存储卷，分别给 `/var/lib/docker` 和 `/mnt/registry` 挂载至少 **100G**。请参见 [fdisk](https://www.computerhope.com/unix/fdisk.htm) 的参考命令。
 
 {{</ notice >}}
 
-### Node Requirements
+### 节点要求
 
-- It's recommended that your OS be clean (without any other software installed). Otherwise, there may be conflicts.
-- Ensure your disk of each node is at least **100G**.
-- All nodes must be accessible through `SSH`.
-- Time synchronization for all nodes.
-- `sudo`/`curl`/`openssl` should be used in all nodes.
-- `docker` must be installed by yourself in an offline environment.
+- 建议您使用干净的操作系统（不安装任何其他软件），否则可能会有冲突。
+- 请确保每个节点的硬盘至少有 **100G**。
+- 所有节点必须都能通过 `SSH` 访问。
+- 所有节点时间同步。
+- 所有节点都应使用 `sudo`/`curl`/`openssl`。
+- 请您务必在离线环境中安装 `docker`。
 
 
-KubeKey can install Kubernetes and KubeSphere together. The dependency that needs to be installed may be different based on the Kubernetes version to be installed. You can refer to the list below to see if you need to install relevant dependencies on your node in advance.
+KubeKey 能够同时安装 Kubernetes 和 KubeSphere。根据要安装的 Kubernetes 版本，需要安装的依赖项可能会不同。您可以参考下方列表，查看是否需要提前在您的节点上安装相关依赖项。
 
-| Dependency  | Kubernetes Version ≥ 1.18 | Kubernetes Version < 1.18 |
-| ----------- | ------------------------- | ------------------------- |
-| `socat`     | Required                  | Optional but recommended  |
-| `conntrack` | Required                  | Optional but recommended  |
-| `ebtables`  | Optional but recommended  | Optional but recommended  |
-| `ipset`     | Optional but recommended  | Optional but recommended  |
+| 依赖项      | Kubernetes 版本 ≥ 1.18 | Kubernetes 版本 < 1.18 |
+| ----------- | ---------------------- | ---------------------- |
+| `socat`     | 必须                   | 可选但建议             |
+| `conntrack` | 必须                   | 可选但建议             |
+| `ebtables`  | 可选但建议             | 可选但建议             |
+| `ipset`     | 可选但建议             | 可选但建议             |
 
 {{< notice note >}}
 
-- In an air-gapped environment, you can install these dependencies using a private package, a RPM package (for CentOS) or a Deb package (for Debian).
-- It is recommended you create an OS image file with all relevant dependencies installed in advance. In this way, you can use the image file directly for the installation of OS on each machine, improving deployment efficiency while not worrying about any dependency issues.
+- 在离线环境中，您可以使用私有包、RPM 包（适用于 CentOS）或者 Deb 包（适用于 Debian）来安装这些依赖项。
+- 建议您事先创建一个操作系统镜像文件，并且安装好所有相关依赖项。这样，您便可以直接使用该镜像文件在每台机器上安装操作系统，提高部署效率，也不用担心任何依赖项问题。
 
 {{</ notice >}} 
 
-### Network and DNS Requirements
+### 网络和 DNS 要求
 
-- Make sure the DNS address in `/etc/resolv.conf` is available. Otherwise, it may cause some issues of DNS in clusters.
-- If your network configuration uses Firewall or Security Group, you must ensure infrastructure components can communicate with each other through specific ports. It's recommended that you turn off the firewall. For more information, refer to [Port Requirements](../port-firewall/).
+- 请确保 `/etc/resolv.conf` 中的 DNS 地址可用，否则可能会导致集群中的 DNS 出问题。
+- 如果您的网络配置使用防火墙或者安全组，请务必确保基础设施组件能够通过特定端口相互通信。建议您关闭防火墙。有关更多信息，请参考[端口要求](../port-firewall/)。
 
-### Example Machines
+### 示例机器
 
-This example includes three hosts as below with the master node serving as the taskbox.
+本示例包含三台主机，如下所示，主节点充当任务机。
 
-| Host IP     | Host Name | Role         |
-| ----------- | --------- | ------------ |
-| 192.168.0.2 | master    | master, etcd |
-| 192.168.0.3 | node1     | worker       |
-| 192.168.0.4 | node2     | worker       |
+| 主机 IP     | 主机名称 | 角色         |
+| ----------- | -------- | ------------ |
+| 192.168.0.2 | master   | master, etcd |
+| 192.168.0.3 | node1    | worker       |
+| 192.168.0.4 | node2    | worker       |
 
-## Step 2: Prepare a Private Image Registry
+## 步骤 2：准备一个私有镜像仓库
 
-You can use Harbor or any other private image registries. This tutorial uses Docker registry as an example with [self-signed certificates](https://docs.docker.com/registry/insecure/#use-self-signed-certificates) (If you have your own private image registry, you can skip this step).
+您可以使用 Harbor 或者其他任意私有镜像仓库。本教程以 Docker 仓库作为示例，并使用[自签名证书](https://docs.docker.com/registry/insecure/#use-self-signed-certificates)（如果您有自己的私有镜像仓库，可以跳过这一步）。
 
-### Use Self-signed Certificates
+### 使用自签名证书
 
-1. Generate your own certificate by executing the following commands:
+1. 执行以下命令生成您自己的证书：
 
    ```bash
    mkdir -p certs
@@ -94,13 +94,13 @@ You can use Harbor or any other private image registries. This tutorial uses Doc
    -x509 -days 36500 -out certs/domain.crt
    ```
 
-2. Make sure you specify a domain name in the field `Common Name` when you are generating your own certificate. For instance, the field is set to `dockerhub.kubekey.local` in this example. 
+2. 当您生成自己的证书时，请确保在字段 `Common Name` 中指定一个域名。例如，本示例中该字段被指定为 `dockerhub.kubekey.local`。
 
-   ![self-signed-cert](/images/docs/installing-on-linux/introduction/air-gapped-installation/self-signed-cert.jpg)
+   ![自签名证书](/images/docs/zh-cn/installing-on-linux/introduction/air-gapped-installation/self-signed-cert.jpg)
 
-### Start Docker Registry
+### 启动 Docker 仓库
 
-Run the following commands to start the Docker registry:
+执行以下命令启动 Docker 仓库：
 
 ```
 docker run -d \
@@ -115,16 +115,16 @@ docker run -d \
   registry:2
 ```
 
-### Configure Registry
+### 配置仓库
 
-1. Add an entry to `/etc/hosts` to map the hostname (i.e. the registry domain name; in this case, it is `dockerhub.kubekey.local`) to the private IP address of your machine as below.
+1. 在 `/etc/hosts` 中添加一个条目，将主机名（即仓库域名；在本示例中是 `dockerhub.kubekey.local`）映射到您机器的私有 IP 地址，如下所示。
 
    ```bash
    # docker registry
    192.168.0.2 dockerhub.kubekey.local
    ```
 
-2. Execute the following commands to copy the certificate to a specified directory and make Docker trust it.
+2. 执行以下命令，复制证书到指定目录，并使 Docker 信任该证书。
 
    ```bash
    mkdir -p  /etc/docker/certs.d/dockerhub.kubekey.local
@@ -136,26 +136,26 @@ docker run -d \
 
    {{< notice note >}}
 
-   The path of the certificate is related to the domain name. When you copy the path, use your actual domain name if it is different from the one set above.
+   证书的路径与域名相关联。当您复制路径时，如果与上面设置的路径不同，请使用实际域名。
 
    {{</ notice >}} 
 
-3. To verify whether the private registry is effective, you can copy an image to your local machine first, and use `docker push` and `docker pull` to test it.
+3. 要验证私有仓库是否有效，您可以先复制一个镜像到您的本地机器，然后使用 `docker push` 和 `docker pull` 来测试。
 
 
-## Step 3: Download KubeKey
+## 步骤 3：下载 KubeKey
 
-Similar to installing KubeSphere on Linux in an online environment, you also need to [download KubeKey](https://github.com/kubesphere/kubekey/releases) first. Download the `tar.gz` file, and transfer it to your local machine which serves as the taskbox for installation. After you uncompress the file, execute the following command to make `kk` executable:
+与在 Linux 上在线安装 KubeSphere 相似，您也需要事先[下载 KubeKey](https://github.com/kubesphere/kubekey/releases)。下载 `tar.gz` 文件，将它传输到充当任务机的本地机器上进行安装。解压文件后，执行以下命令，使 `kk` 可执行。
 
 ```bash
 chmod +x kk
 ```
 
-## Step 4: Prepare Installation Images
+## 步骤 4：准备安装镜像
 
-As you install KubeSphere and Kubernetes on Linux, you need to prepare an image package containing all the necessary images and download the Kubernetes binary file in advance.
+当您在 Linux 上安装 KubeSphere 和 Kubernetes 时，需要准备一个包含所有必需镜像的镜像包，并事先下载 Kubernetes 二进制文件。
 
-1. Download the image list file `images-list.txt` from a machine that has access to the Internet through the following command:
+1. 使用以下命令从能够访问互联网的机器上下载镜像清单文件 `images-list.txt`：
 
    ```bash
    curl -L -O https://github.com/kubesphere/ks-installer/releases/download/v3.0.0/images-list.txt
@@ -163,23 +163,23 @@ As you install KubeSphere and Kubernetes on Linux, you need to prepare an image 
 
    {{< notice note >}}
 
-   This file lists images under `##+modulename` based on different modules. You can add your own images to this file following the same rule. To view the complete file, see [Appendix](../air-gapped-installation/#image-list-of-kubesphere-v300).
+   该文件根据不同的模块列出了 `##+modulename` 下的镜像。您可以按照相同的规则把自己的镜像添加到这个文件中。要查看完整文件，请参见[附录](../air-gapped-installation/#kubesphere-v300-镜像清单)。
 
    {{</ notice >}} 
 
-2. Download `offline-installation-tool.sh`.
+2. 下载 `offline-installation-tool.sh`。
 
    ```bash
    curl -L -O https://github.com/kubesphere/ks-installer/releases/download/v3.0.0/offline-installation-tool.sh
    ```
 
-3. Make the `.sh` file executable.
+3. 使 `.sh` 文件可执行。
 
    ```bash
    chmod +x offline-installation-tool.sh
    ```
 
-4. You can execute the command `./offline-installation-tool.sh -h` to see how to use the script:
+4. 您可以执行命令 `./offline-installation-tool.sh -h` 来查看如何使用脚本：
 
    ```bash
    root@master:/home/ubuntu# ./offline-installation-tool.sh -h
@@ -197,13 +197,13 @@ As you install KubeSphere and Kubernetes on Linux, you need to prepare an image 
      -h                     : usage message
    ```
 
-5. Download the Kubernetes binary file.
+5. 下载 Kubernetes 二进制文件。
 
    ```bash
    ./offline-installation-tool.sh -b -v v1.17.9 
    ```
 
-   If you cannot access the object storage service of Google, run the following command instead to add the environment variable to change the source.
+   如果您无法访问 Google 的对象存储服务，请运行以下命令添加环境变量以变更来源。
 
    ```bash
    export KKZONE=cn;./offline-installation-tool.sh -b -v v1.17.9 
@@ -211,13 +211,13 @@ As you install KubeSphere and Kubernetes on Linux, you need to prepare an image 
 
    {{< notice note >}}
 
-   - You can change the Kubernetes version downloaded based on your needs. Supported versions: v1.15.12, v1.16.13, v1.17.9 (default) and v1.18.6.
+   - 您可以根据自己的需求变更下载的 Kubernetes 版本。支持的版本：v1.15.12、v1.16.13、v1.17.9（默认） 以及 v1.18.6。
 
-   - After you run the script, a folder `kubekey` is automatically created. Note that this file and `kk` must be placed in the same directory when you create the cluster later.
+   - 运行脚本后，会自动创建一个文件夹 `kubekey`。请注意，您稍后创建集群时，该文件和 `kk` 必须放在同一个目录下。
 
    {{</ notice >}} 
 
-6. Pull images in `offline-installation-tool.sh`.
+6. 在 `offline-installation-tool.sh` 中拉取镜像。
 
    ```bash
    ./offline-installation-tool.sh -s -l images-list.txt -d ./kubesphere-images
@@ -225,13 +225,13 @@ As you install KubeSphere and Kubernetes on Linux, you need to prepare an image 
 
    {{< notice note >}}
 
-   You can choose to pull images as needed. For example, you can delete `##k8s-images` and related images under it in `images-list.text` if you already have a Kubernetes cluster.
+   您可以根据需要选择拉取的镜像。例如，如果已经有一个 Kubernetes 集群了，您可以在 `images-list.text` 中删除 `##k8s-images` 和在它下面的相关镜像。
 
    {{</ notice >}} 
 
-## Step 5: Push Images to Private Registry
+## 步骤 5：推送镜像至私有仓库
 
-Transfer your packaged image file to your local machine and execute the following command to push it to the registry.
+将打包的镜像文件传输至您的本地机器，并运行以下命令把它推送至仓库。
 
 ```bash
 ./offline-installation-tool.sh -l images-list.txt -d ./kubesphere-images -r dockerhub.kubekey.local
@@ -239,23 +239,23 @@ Transfer your packaged image file to your local machine and execute the followin
 
 {{< notice note >}}
 
-The domain name is `dockerhub.kubekey.local` in the command. Make sure you use your **own registry address**.
+命令中的域名是 `dockerhub.kubekey.local`。请确保使用您**自己仓库的地址**。
 
 {{</ notice >}} 
 
-## Step 6: Create a Cluster
+## 步骤 6：创建集群
 
-In this tutorial, KubeSphere is installed on multiple nodes, so you need to specify a configuration file to add host information. Besides, for air-gapped installation, pay special attention to `.spec.registry.privateRegistry`, which must be set to **your own registry address**. See the [complete YAML file](../air-gapped-installation/#2-edit-the-configuration-file) below for more information.
+本教程中，KubeSphere 安装在多个节点上，因此您需要指定一个配置文件以添加主机信息。此外，离线安装时，请务必将 `.spec.registry.privateRegistry` 设置为**您自己的仓库地址**。有关更多信息，请参见下面的[完整 YAML 文件](../air-gapped-installation/#编辑配置文件)。
 
-### Create an Example Configuration File
+### 创建示例配置文件
 
-Execute the following command to generate an example configuration file for installation:
+执行以下命令生成示例配置文件用于安装：
 
 ```bash
 ./kk create config [--with-kubernetes version] [--with-kubesphere version] [(-f | --file) path]
 ```
 
-For example:
+例如：
 
 ```bash
 ./kk create config --with-kubesphere -f config-sample.yaml
@@ -263,17 +263,17 @@ For example:
 
 {{< notice note >}}
 
-Make sure the Kubernetes version is the one you downloaded.
+请确保 Kubernetes 版本和您下载的版本一致。
 
 {{</ notice >}}
 
-### Edit the Configuration File
+### 编辑配置文件
 
-Edit the generated configuration file `config-sample.yaml`. Here is an example for your reference:
+编辑生成的配置文件 `config-sample.yaml`。请参考以下示例：
 
 {{< notice warning >}} 
 
-For air-gapped installation, you must specify `privateRegistry`, which is `dockerhub.kubekey.local` in this example.
+离线安装时，您必须指定 `privateRegistry`，在本示例中是 `dockerhub.kubekey.local`。
 
 {{</ notice >}}
 
@@ -386,14 +386,14 @@ spec:
 
 {{< notice info >}}
 
-For more information about these parameters, see [Multi-node Installation](../multioverview/#2-edit-the-configuration-file) and [Kubernetes Cluster Configuration](../vars/). To enable pluggable components in `config-sample.yaml`, refer to [Enable Pluggle Components](../../../pluggable-components) for more details.
+有关这些参数的更多信息，请参见[多节点安装](../../../installing-on-linux/introduction/multioverview/#2-编辑配置文件)和 [Kubernetes 集群配置](../../../installing-on-linux/introduction/vars/)。要在 `config-sample.yaml` 中启用可插拔组件，请参考启用[可插拔组件](../../../pluggable-components/)中的更多详情。
 
 {{</ notice >}}
 
 
-## Step 7: Start Installation
+## 步骤 7：开始安装
 
-You can execute the following command after you make sure that all steps above are completed.
+确定完成上面所有步骤后，您可以执行以下命令。
 
 ```bash
 ./kk create cluster -f config-sample.yaml
@@ -401,13 +401,13 @@ You can execute the following command after you make sure that all steps above a
 
 {{< notice warning >}}
 
-After you transfer the executable file `kk` and the folder `kubekey` that contains the Kubernetes binary file to the taskbox machine for installation, they must be placed in the same directory before you execute the command above.
+将可执行文件 `kk` 和包含 Kubernetes 二进制文件的文件夹 `kubekey` 传输至任务机机器用于安装后，必须将它们放在相同目录中，然后再执行上面的命令。
 
 {{</ notice >}}
 
-## Step 8: Verify Installation
+## 步骤 8：验证安装
 
-When the installation finishes, you can see the content as follows:
+安装完成后，您会看到以下内容：
 
 ```bash
 #####################################################
@@ -431,19 +431,19 @@ https://kubesphere.io             20xx-xx-xx xx:xx:xx
 #####################################################
 ```
 
-Now, you will be able to access the web console of KubeSphere through `http://{IP}:30880` with the default account and password `admin/P@88w0rd`.
+现在，您可以通过 `http://{IP}:30880` 使用默认帐户和密码 `admin/P@88w0rd` 访问 KubeSphere 的 Web 控制台。
 
 {{< notice note >}}
 
-To access the console, make sure the port 30880 is opened in your security group.
+要访问控制台，请确保在您的安全组中打开端口 30880。
 
 {{</ notice >}}
 
-![kubesphere-login](https://ap3.qingstor.com/kubesphere-website/docs/login.png)
+![登录 kubesphere](/images/docs/zh-cn/installing-on-linux/introduction/air-gapped-installation/kubesphere-login.PNG)
 
-## Appendix
+## 附录
 
-### Image List of KubeSphere v3.0.0
+### KubeSphere v3.0.0 镜像清单
 
 ```txt
 ##k8s-images
