@@ -71,12 +71,6 @@ Cordon a node and even delete a node to scale in your cluster.
 
 Remove KubeSphere and Kubernetes from your machines.
 
-## FAQ
-
-### [Configure Booster for Installation](../installing-on-linux/faq/configure-booster/)
-
-Set a registry mirror to speed up image downloads during installation.
-
 ## Most Popular Pages
 
 Below you will find some of the most viewed and helpful pages in this chapter. It is highly recommended that you refer to them first.

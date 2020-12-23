@@ -3,7 +3,7 @@ title: "Monitoring"
 keywords: "Kubernetes, Prometheus, KubeSphere, Monitoring"
 description: "FAQ about monitoring"
 linkTitle: "Monitoring"
-weight: 6930
+weight: 16320
 ---
 
 This page contains some of the frequently asked questions about monitoring.
