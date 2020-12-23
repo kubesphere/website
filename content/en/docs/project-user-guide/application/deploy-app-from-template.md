@@ -3,7 +3,6 @@ title: "Deploy Apps from App Templates"
 keywords: 'Kubernetes, chart, helm, KubeSphere, application, app templates'
 description: 'How to deploy apps from app templates in a private repository.'
 linkTitle: "Deploy Apps from App Templates"
-
 weight: 10120
 ---
 
@@ -18,7 +17,7 @@ This tutorial demonstrates how to quickly deploy [Grafana](https://grafana.com/)
 
 ## Hands-on Lab
 
-### Step 1: Add an App Repository
+### Step 1: Add an app repository
 
 1. Log in the web console of KubeSphere as `ws-admin`. In your workspace, go to **App Repos** under **Apps Management**, and then click **Add Repo**.
 
@@ -38,7 +37,7 @@ This tutorial demonstrates how to quickly deploy [Grafana](https://grafana.com/)
 
    {{</ notice >}} 
 
-### Step 2: Deploy Grafana from App Templates
+### Step 2: Deploy Grafana from app templates
 
 1. Log out of KubeSphere and log back in as `project-regular`. In your project, choose **Applications** under **Application Workloads** and click **Deploy New Application**.
 
@@ -86,7 +85,7 @@ This tutorial demonstrates how to quickly deploy [Grafana](https://grafana.com/)
 
 8. Wait for Grafana to be up and running.
 
-### Step 3: Expose Grafana Service
+### Step 3: Expose the Grafana Service
 
 To access Grafana outside the cluster, you need to expose the app through NodePort first.
 

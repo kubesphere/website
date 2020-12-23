@@ -1,8 +1,8 @@
 ---
-title: "Deploy Apps from App Store"
+title: "Deploy Apps from the App Store"
 keywords: 'Kubernetes, chart, helm, KubeSphere, application, App Store'
 description: 'How to deploy apps from the App Store.'
-linkTitle: "Deploy Apps from App Store"
+linkTitle: "Deploy Apps from the App Store"
 weight: 10130
 ---
 
@@ -17,7 +17,7 @@ This tutorial demonstrates how to quickly deploy [NGINX](https://www.nginx.com/)
 
 ## Hands-on Lab
 
-### Step 1: Deploy NGINX from App Store
+### Step 1: Deploy NGINX from the App Store
 
 1. On the **Overview** page of the project `demo-project`, click **App Store** in the top left corner.
 
