@@ -9,13 +9,13 @@ weight: 13100
 
 KubeSphere 中的一个项目是一个 Kubernetes [命名空间](https://kubernetes.io/zh/docs/concepts/overview/working-with-objects/namespaces/)，用于将资源划分成互不重叠的分组。这一功能可在多个租户之间分配集群资源，从而是一种逻辑分区功能。
 
-多集群项目跨集群运行，能为用户提供高可用性，并在问题发生时将问题隔离在某个集群内，避免影响业务。更多信息，请参见[多群集管理](../../multicluster-management/)。
+多集群项目跨集群运行，能为用户提供高可用性，并在问题发生时将问题隔离在某个集群内，避免影响业务。有关更多信息，请参见[多群集管理](../../multicluster-management/)。
 
 本章介绍项目管理的基本操作，如创建项目和删除项目。
 
 ## 准备工作
 
-- 您需要获取一个可用的企业空间。
+- 您需要准备一个可用的企业空间。
 - 您需要获取**项目管理**权限。该权限包含在内置角色 `workspace-self-provisioner` 中。
 - 在创建多集群项目前，您需要通过[直接连接](../../multicluster-management/enable-multicluster/direct-connection/)或[代理连接](../../multicluster-management/enable-multicluster/agent-connection/)启用多集群功能。
 
@@ -35,7 +35,7 @@ KubeSphere 中的一个项目是一个 Kubernetes [命名空间](https://kuberne
 
     {{</ notice >}}
 
-2. 在弹出的**创建项目**对话框中输入项目名称，根据需要添加别名或说明，选择要创建项目的集群（如果没有启用多集群功能，则不会出现此选项），然后单击**确定**完成操作。
+2. 在弹出的**创建项目**对话框中输入项目名称，根据需要添加别名或说明，选择要创建项目的集群（如果没有启用多集群功能，则不会出现此选项），然后点击**确定**完成操作。
 
     ![create-project-page](/images/docs/zh-cn/project-admin/create-project-page.jpg)
 
@@ -45,7 +45,7 @@ KubeSphere 中的一个项目是一个 Kubernetes [命名空间](https://kuberne
 
 ### 编辑项目信息
 
-1. 在左侧导航栏中选择**项目设置** > **基本信息**，在页面右侧点击**项目管理**。
+1. 在左侧导航栏中选择**项目设置**下的**基本信息**，在页面右侧点击**项目管理**。
 
     ![basic-info-page](/images/docs/zh-cn/project-admin/basic-info-page.jpg)
 
@@ -59,7 +59,7 @@ KubeSphere 中的一个项目是一个 Kubernetes [命名空间](https://kuberne
 
 ### 删除项目
 
-1. 在左侧导航栏中选择**项目设置** > **基本信息**，在页面右侧点击**项目管理**。
+1. 在左侧导航栏中选择**项目设置**下的**基本信息**，在页面右侧点击**项目管理**。
 
     ![basic-info-page](/images/docs/zh-cn/project-admin/basic-info-page.jpg)
 
@@ -69,7 +69,7 @@ KubeSphere 中的一个项目是一个 Kubernetes [命名空间](https://kuberne
 
     {{< notice warning >}}
 
-项目被删除后无法恢复，项目中的资源也会从项目中被移除。
+项目被删除后无法恢复，项目中的资源也会从项目中移除。
 
 {{</ notice >}}
 
@@ -92,13 +92,13 @@ KubeSphere 中的一个项目是一个 Kubernetes [命名空间](https://kuberne
 
     ![create-multicluster-project-page](/images/docs/zh-cn/project-admin/create-multicluster-project-page.jpg)
 
-3. 创建的多集群项目项目会显示在下图所示的列表中。您可以点击项目名称打开**概览**页面。
+3. 创建的多集群项目会显示在下图所示的列表中。您可以点击项目名称打开**概览**页面。
 
     ![multicluster-project-list](/images/docs/zh-cn/project-admin/multicluster-project-list.jpg)
 
 ### 编辑多集群项目信息
 
-1. 在左侧导航栏中选择**项目设置** > **基本信息**，在页面右侧点击**项目管理**。
+1. 在左侧导航栏中选择**项目设置**下的**基本信息**，在页面右侧点击**项目管理**。
 
     ![basic-info-multicluster](/images/docs/zh-cn/project-admin/basic-info-multicluster.jpg)
 
@@ -112,7 +112,7 @@ KubeSphere 中的一个项目是一个 Kubernetes [命名空间](https://kuberne
 
 ### 删除多集群项目
 
-1. 在左侧导航栏中选择**项目设置** > **基本信息**，在页面右侧点击**项目管理**。
+1. 在左侧导航栏中选择**项目设置**下的**基本信息**，在页面右侧点击**项目管理**。
 
     ![basic-info-multicluster](/images/docs/zh-cn/project-admin/basic-info-multicluster.jpg)
 
@@ -122,6 +122,6 @@ KubeSphere 中的一个项目是一个 Kubernetes [命名空间](https://kuberne
 
     {{< notice warning >}}
 
-多集群项目被删除后无法恢复，项目中的资源也会从项目中被移除。
+多集群项目被删除后无法恢复，项目中的资源也会从项目中移除。
 
 {{</ notice >}}
