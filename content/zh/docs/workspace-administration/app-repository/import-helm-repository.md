@@ -31,10 +31,19 @@ KubeSphere 构建的应用仓库可以让用户使用基于 Helm Chart 的 Kuber
 
     - **应用仓库名称**：为仓库设置一个简洁明了的名称，方便用户识别。
     - **类型**：支持基于 Helm chart 的应用程序。
-    - **URL**：支持下列三种协议：
-      - S3：S3 格式的 URL，例如 `s3.<zone-id>.qingstor.com/<bucket-name>/`，用于访问使用 S3 接口的 QingStor 服务。如果您选择此类型，则需要提供 Access Key ID 和 Secret Access Key。
-      - HTTP：可读但不可写。可以获取应用仓库（对象存储）中的应用程序，部署至运行时环境中，例如 `http://docs-repo.gd2.qingstor.com`。示例中包含一个样例应用 NGINX，创建仓库后会自动导入。您可以用应用模板来部署它。
-      - HTTPS：可读但不可写。可以获取应用仓库中的应用程序，部署至运行时环境中。
+    - **URL**：遵循 RFC 3986 规范并支持以下三种协议：
+      
+      - S3：S3 格式的 URL，例如 `s3.<region>.amazonaws.com`，用于访问使用 S3 接口的 Amazon S3 服务。如果您选择此类型，则需要提供 Access Key ID 和 Secret Access Key。
+      
+      - HTTP：例如 `http://docs-repo.gd2.qingstor.com`。示例中包含一个样例应用 NGINX，创建仓库后会自动导入。您可以用应用模板来部署它。
+      
+      - HTTPS：例如 `https://docs-repo.gd2.qingstor.com`。
+      
+        {{< notice note >}}
+      
+
+如果您想要对 HTTP/HTTPS 进行基本访问验证，可以使用类似此格式的 URL：`http://username:password@docs-repo.gd2.qingstor.com`。
+        {{</ notice >}}
     - **描述信息**：简单介绍应用仓库的主要特性。
 
 3. 输入必需的字段后，点击**验证**以验证 URL。如果 URL 可用，您会在它旁边看到一个绿色的对号，点击**确定**完成操作。
@@ -43,8 +52,8 @@ KubeSphere 构建的应用仓库可以让用户使用基于 Helm Chart 的 Kuber
     
     {{< notice note >}}
 
-- 本教程中使用的示例仓库是 Google Helm 仓库的镜像。仓库中部分应用可能无法部署成功。KubeSphere 团队后期将提供生产可用并且有商业支持的应用仓库。
-- 在本地私有云环境中，您可以基于 [Helm](https://helm.sh/) 构建自己的仓库。然后，您可以向仓库中部署和上传应用程序，并根据自己的需求将这些应用部署到 KubeSphere。
+- 在本地私有云环境中，您可以基于 [ChartMuseum](https://chartmuseum.com/) 构建自己的仓库。然后，您可以开发和上传应用程序至该仓库，再根据您的需求将这些应用程序部署至 KubeSphere。
+- 如果您需要设置 HTTP 基本访问验证，请参考[此文件](https://github.com/helm/chartmuseum#basic-auth)。
 
 {{</ notice >}} 
 
