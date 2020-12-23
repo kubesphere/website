@@ -2,7 +2,6 @@
 title: "Cluster Status Monitoring"
 keywords: "Kubernetes, KubeSphere, status, monitoring"
 description: "Monitor cluster resources in KubeSphere"
-
 linkTitle: "Cluster Status Monitoring"
 weight: 8200
 ---
@@ -27,7 +26,7 @@ You need an account granted a role including the authorization of **Clusters Man
 
     ![Cluster Status Monitoring](/images/docs/cluster-administration/cluster-status-monitoring/cluster-status-monitoring.png)
 
-### Cluster Node Status
+### Cluster node status
 
 1. **Cluster Node Status** displays the status of all nodes, separately marking the active ones. You can go to the **Cluster Nodes** page shown below to view the real-time resource usage of all nodes by clicking **Node Online Status**.
 
@@ -45,7 +44,7 @@ You need an account granted a role including the authorization of **Clusters Man
 You can customize the time range from the drop-down list in the top right corner to view historical data.
     {{</ notice >}}
 
-### Component Status
+### Component status
 
 KubeSphere monitors the health status of various service components in the cluster. When a key component malfunctions, the system may become unavailable. The monitoring mechanism of KubeSphere ensures the platform can notify tenants of any occurring issues in case of a component failure, so that they can quickly locate the problem and take corresponding action.
 
@@ -61,7 +60,7 @@ KubeSphere monitors the health status of various service components in the clust
 Components marked in orange may turn to green after a period of time, the reasons of which may be different, such as image pulling retries or pod recreations. You can click the component to see its service details.
     {{</ notice >}}
 
-### Cluster Resources Usage
+### Cluster resources usage
 
 **Cluster Resources Usage** displays the information including **CPU Utilization, Memory Utilization, Disk Utilization, and Pod Quantity Trend** of all nodes in the cluster. Click the pie chart on the left to switch indicators, which shows the trend during a period in a line chart on the right.
 
@@ -73,19 +72,19 @@ Monitoring data in **Physical Resources Monitoring** help users better observe t
 
 ![Physical Resources Monitoring](/images/docs/cluster-administration/cluster-status-monitoring/physical-resources-monitoring.png)
 
-### CPU Utilization
+### CPU utilization
 
 CPU utilization shows how CPU resources are used in a period. If you notice that the CPU usage of the platform during a certain period soars, you must first locate the process that is occupying CPU resources the most. For example, for Java applications, you may expect a CPU usage spike in the case of memory leaks or infinite loops in the code.
 
 ![CPU Utilization](/images/docs/cluster-administration/cluster-status-monitoring/cpu-utilization.png)
 
-### Memory Utilization
+### Memory utilization
 
 Memory is one of the important components on a machine, serving as a bridge for communications with the CPU. Therefore, the performance of memory has a great impact on the machine. Data loading, thread concurrency and I/O buffering are all dependent on memory when a program is running. The size of available memory determines whether the program can run normally and how it is functioning. Memory utilization reflects how memory resources are used within a cluster as a whole, displayed as a percentage of available memory in use at a given moment.
 
 ![Memory Utilization](/images/docs/cluster-administration/cluster-status-monitoring/memory-utilization.png)
 
-### CPU Load Average
+### CPU load average
 
 CPU load average is the average number of processes in the system in a runnable state and an uninterruptible state per unit time. Namely, it is the average number of active processes. Note that there is no direct relation between the CPU load average and the CPU utilization. Ideally, the load average should be equal to the number of CPUs. Therefore, you need to consider the number of CPUs when you look into the load average. A system is overloaded only when the load average is greater than the number of CPUs.
 
@@ -97,7 +96,7 @@ KubeSphere provides users with three different time periods to view the load ave
 
 ![CPU Load Average](/images/docs/cluster-administration/cluster-status-monitoring/cpu-load-average.png)
 
-### Disk Usage
+### Disk usage
 
 KubeSphere workloads such as `StatefulSets` and `DaemonSets` all rely on persistent volumes. Some components and services also require a persistent volume. Such backend storage relies on disks, such as block storage or network shared storage. In this connection, providing a real-time monitoring environment for disk usage is an important part of maintaining the high reliability of data.
 
@@ -105,7 +104,7 @@ In the daily management of the Linux system, platform administrators may encount
 
 ![Disk Usage](/images/docs/cluster-administration/cluster-status-monitoring/disk-usage.png)
 
-### inode Utilization
+### inode utilization
 
 Each file must have an inode, which is used to store the file's meta-information, such as the file's creator and creation date. The inode will also consume hard disk space, and many small cache files can easily lead to the exhaustion of inode resources. Also, the inode may be used up, but the hard disk is not full. In this case, new files cannot be created on the hard disk.
 
@@ -113,7 +112,7 @@ In KubeSphere, the monitoring of inode utilization can help you detect such situ
 
 ![inode Utilization](/images/docs/cluster-administration/cluster-status-monitoring/inode-utilization.png)
 
-### Disk Throughput
+### Disk throughput
 
 The monitoring of disk throughput and IOPS is an indispensable part of disk monitoring, which is convenient for cluster administrators to adjust data layout and other management activities to optimize the overall performance of the cluster. Disk throughput refers to the speed of the disk transmission data stream (shown in MB/s), and the transmission data are the sum of data reading and writing. When large blocks of discontinuous data are being transmitted, this indicator is of great importance for reference.
 ![Disk Throughput](/images/docs/cluster-administration/cluster-status-monitoring/disk-throughput.png)
@@ -124,13 +123,13 @@ The monitoring of disk throughput and IOPS is an indispensable part of disk moni
 
 ![IOPS](/images/docs/cluster-administration/cluster-status-monitoring/iops.png)
 
-### Network Bandwidth
+### Network bandwidth
 
 The network bandwidth is the ability of the network card to receive or send data per second, shown in Mbps (megabits per second).
 
 ![Network Bandwidth](/images/docs/cluster-administration/cluster-status-monitoring/netework-bandwidth.png)
 
-### Pod Status
+### Pod status
 
 Pod status displays the total number of pods in different states, including **Running**, **Completed** and **Warning**. The pod tagged **Completed** usually refers to a Job or a CronJob. The number of pods marked **Warning**, which means an abnormal state, requires special attention.
 

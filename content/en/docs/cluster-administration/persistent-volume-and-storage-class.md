@@ -1,9 +1,8 @@
 ---
-title: "Persistent Volume and Storage Class"
+title: "Persistent Volumes and Storage Classes"
 keywords: "storage, volume, pv, pvc, storage class, csi, Ceph RBD, Glusterfs, QingCloud, "
 description: "Persistent Volume and Storage Class Management"
-
-linkTitle: "Persistent Volume and Storage Class"
+linkTitle: "Persistent Volumes and Storage Classes"
 weight: 8400
 ---
 
@@ -31,7 +30,7 @@ The table below summarizes common volume plugins for various provisioners (stora
 
 You need an account granted a role including the authorization of **Clusters Management**. For example, you can log in the console as `admin` directly or create a new role with the authorization and assign it to an account.
 
-## Manage Storage Class
+## Manage Storage Classes
 
 1. Click **Platform** in the top left corner and select **Clusters Management**.
     ![clusters-management-select](/images/docs/cluster-administration/persistent-volume-and-storage-class/clusters-management-select.jpg)
@@ -49,7 +48,7 @@ You need an account granted a role including the authorization of **Clusters Man
 
     ![create-storage-class-settings](/images/docs/cluster-administration/persistent-volume-and-storage-class/create-storage-class-settings.png)
 
-### Common Settings
+### Common settings
 
 Some settings are commonly used and shared among storage classes. You can find them as dashboard properties on the console, which are also indicated by fields or annotations in the StorageClass manifest. You can see the manifest file in YAML format by enabling **Edit Mode** in the top right corner.
 Here are property descriptions of some commonly used fields in KubeSphere.
@@ -142,7 +141,7 @@ Nevertheless, you can use [rbd provisioner](https://github.com/kubernetes-incuba
 
 For more information about StorageClass parameters, see [Ceph RBD in Kubernetes Documentation](https://kubernetes.io/docs/concepts/storage/storage-classes/#ceph-rbd).
 
-### Custom Storage Class
+### Custom storage classes
 
 You can create custom storage classes for your storage systems if they are not directly supported by KubeSphere. The following example shows you how to create a storage class for NFS on the KubeSphere console.
 
