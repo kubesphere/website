@@ -3,7 +3,7 @@ title: "Logging"
 keywords: "Kubernetes, Elasticsearch, KubeSphere, Logging, logs"
 description: "FAQ about logging"
 linkTitle: "Logging"
-weight: 6920
+weight: 16310
 ---
 
 This page contains some of the frequently asked questions about logging.

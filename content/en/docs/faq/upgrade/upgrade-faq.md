@@ -1,10 +1,9 @@
 ---
-title: "FAQ"
+title: "Upgrade Qingcloud CSI"
 keywords: "Kubernetes, upgrade, KubeSphere, v3.0.0"
-description: "KubeSphere Upgrade FAQ"
-
-linkTitle: "FAQ"
-weight: 7700
+description: "Upgrade Qingcloud CSI"
+linkTitle: "Upgrade Qingcloud CSI"
+weight: 16210
 ---
 
 ## How to upgrade Qingcloud CSI after upgrading?
