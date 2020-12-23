@@ -1,9 +1,8 @@
 ---
-title: "Alerting Policy (Node Level)"
+title: "Alerting Policies (Node Level)"
 keywords: 'KubeSphere, Kubernetes, Node, Alerting, Policy, Notification'
 description: 'How to set alerting policies at the node level.'
-
-linkTitle: "Alerting Policy (Node Level)"
+linkTitle: "Alerting Policies (Node Level)"
 weight: 8530
 ---
 
@@ -18,7 +17,7 @@ KubeSphere provides alert policies for nodes and workloads. This guide demonstra
 
 ## Hands-on Lab
 
-### Task 1: Create an Alert Policy
+### Task 1: Create an alert policy
 
 1. Log in the console with one account granted the role `platform-admin`.
 
@@ -32,7 +31,7 @@ KubeSphere provides alert policies for nodes and workloads. This guide demonstra
 
     ![alerting_policy_node_level_create](/images/docs/alerting/alerting_policy_node_level_create.png)
 
-### Task 2: Provide Basic Information
+### Task 2: Provide basic information
 
 In the dialog that appears, fill in the basic information as follows. Click **Next** after you finish.
 
@@ -42,7 +41,7 @@ In the dialog that appears, fill in the basic information as follows. Click **Ne
 
 ![alerting_policy_node_level_basic_info](/images/docs/alerting/alerting_policy_node_level_basic_info.png)
 
-### Task 3: Select Monitoring Targets
+### Task 3: Select monitoring targets
 
 Select several nodes in the node list or use Node Selector to choose a group of nodes as the monitoring targets. Here a node is selected for the convenience of demonstration. Click **Next** when you finish.
 
@@ -54,7 +53,7 @@ You can sort nodes in the node list from the drop-down menu through the followin
 
 {{</ notice >}}
 
-### Task 4: Add Alerting Rules
+### Task 4: Add alerting rules
 
 1. Click **Add Rule** to begin to create an alerting rule. The rule defines parameters such as metric type, check period, consecutive times, metric threshold and alert level to provide rich configurations. The check period (the second field under **Rule**) means the time interval between 2 consecutive checks of the metric. For example, `2 minutes/period` means the metric is checked every two minutes. The consecutive times (the third field under **Rule**) means the number of consecutive times that the metric meets the threshold when checked. An alert is only triggered when the actual time is equal to or is greater than the number of consecutive times set in the alert policy.
 
@@ -76,7 +75,7 @@ You can create node-level alert policies for the following metrics:
 
 {{</ notice >}}
 
-### Task 5: Set Notification Rule
+### Task 5: Set notification rules
 
 1. **Effective Notification Time Range** is used to set sending time of notification emails, such as `09:00 ~ 19:00`. **Notification Channel** currently only supports **Email**. You can add email addresses of members to be notified to **Notification List**.
 
@@ -92,7 +91,7 @@ You can create node-level alert policies for the following metrics:
 
 {{</ notice >}}
 
-### Task 6: View Alert Policy
+### Task 6: View alert policies
 
 After an alert policy is successfully created, you can enter its detail information page to view the status, alert rules, monitoring targets, notification rule, alert history, etc. Click **More** and select **Change Status** from the drop-down menu to enable or disable this alert policy.
 
