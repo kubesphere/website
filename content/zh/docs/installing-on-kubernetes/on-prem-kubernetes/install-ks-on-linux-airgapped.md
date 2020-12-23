@@ -166,7 +166,7 @@ Docker 使用 `/var/lib/docker` 作为默认路径来存储所有 Docker 相关�
    curl -L -O https://github.com/kubesphere/ks-installer/releases/download/v3.0.0/kubesphere-installer.yaml
    ```
 
-2. 编辑 `cluster-configuration.yaml` 以添加您的私有镜像仓库。例如，本教程中的仓库地址是 `dockerhub.kubekey.local`，将它用作 `.spec.local_registry` 的值，如下所示：
+2. 编辑 `cluster-configuration.yaml` 添加您的私有镜像仓库。例如，本教程中的仓库地址是 `dockerhub.kubekey.local`，将它用作 `.spec.local_registry` 的值，如下所示：
 
    ```yaml
    spec:
