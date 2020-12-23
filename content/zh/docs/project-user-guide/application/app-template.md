@@ -22,7 +22,7 @@ KubeSphere 的公共仓库也称作应用商店，企业空间中的每位租户
 
 {{< notice note >}}
 
-对于 KubeSphere 中[作为 Helm Chart 上传的单个应用](../../../workspace-administration/upload-helm-based-application/)，待审核通过并发布后，会和内置应用一同显示在应用商店中。此外，当您从私有应用仓库中选择应用模板时，在下拉列表中也可以看到**来自企业空间**，其中存储了这些作为 Helm charts 上传的单个应用。
+对于 KubeSphere 中[作为 Helm Chart 上传的单个应用](../../../workspace-administration/upload-helm-based-application/)，待审核通过并发布后，会和内置应用一同显示在应用商店中。此外，当您从私有应用仓库中选择应用模板时，在下拉列表中也可以看到**来自企业空间**，其中存储了这些作为 Helm Chart 上传的单个应用。
 
 {{</ notice >}} 
 
