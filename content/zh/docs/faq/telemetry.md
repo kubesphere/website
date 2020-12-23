@@ -1,5 +1,5 @@
 ---
-title: "KubeSphere 的 Telemetry 特性"
+title: "启用或禁用 KubeSphere 中的 Telemetry"
 keywords: "安装器, Telemetry, KubeSphere, Kubernetes"
 description: "Telemetry 收集 KubeSphere 安装的汇总信息。"
 
