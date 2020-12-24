@@ -140,6 +140,7 @@ To create a Kubernetes cluster with KubeSphere installed, refer to the following
 
 - Supported Kubernetes versions: *v1.15.12*, *v1.16.13*, *v1.17.9* (default), *v1.18.6*.
 - For all-in-one installation, generally speaking, you do not need to change any configuration.
+- If you do not add the flag `--with-kubesphere` in the command in this step, KubeSphere will not be deployed. KubeKey will install Kubernetes only. If you add the flag `--with-kubesphere` without specifying a KubeSphere version, the latest version of KubeSphere will be installed.
 - KubeKey will install [OpenEBS](https://openebs.io/) to provision LocalPV for the development and testing environment by default, which is convenient for new users. For other storage classes, see [Persistent Storage Configurations](../../installing-on-linux/introduction/storage-configuration/).
 
 {{</ notice >}}
