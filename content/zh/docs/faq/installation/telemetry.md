@@ -2,7 +2,7 @@
 title: "启用或禁用 KubeSphere 中的 Telemetry"
 keywords: "安装器, Telemetry, KubeSphere, Kubernetes"
 description: "Telemetry 收集 KubeSphere 安装的汇总信息。"
-linkTitle: "KubeSphere 中的 Telemetry"
+linkTitle: "启用或禁用 KubeSphere 中的 Telemetry"
 Weight: 16300
 ---
 
