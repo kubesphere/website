@@ -1,13 +1,11 @@
 ---
 title: "Supported Browsers"
 keywords: "FAQ, console, KubeSphere, Kubernetes"
-description: "FAQ is designed to answer and summarize the questions our users most frequently ask about KubeSphere Console."
+description: "Supported browsers of KubeSphere."
 linkTitle: "Supported Browsers"
 Weight: 16510
 ---
 
-**What kind of browsers does KubeSphere support?**
+The KubeSphere web console supports major web browsers including **Chrome, Firefox, Safari, Opera, and Edge.** You only need to consider the supported versions of these browsers listed in the green box of the table below:
 
-In general, KubeSphere console supports major web browsers including **Chrome, Firefox, Safari, Opera, and Edge.** You only need to consider the supported versions of these browsers listed in the green box of the table below:
-
-![supported browsers](/images/docs/faq/console-browser.png)
+![console-browser](/images/docs/faq/kubesphere-web-console/supported-browsers/console-browser.png)
