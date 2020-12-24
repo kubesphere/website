@@ -47,13 +47,3 @@ icon: "/images/docs/docs.svg"
 ## [网络策略](../pluggable-components/network-policy/)
 
 了解如何启用网络策略来控制 IP 地址或端口级别的流量。
-
-## 常见问题
-
-### [日志](../pluggable-components/faq/logging/)
-
-关于日志功能经常遇到的问题。
-
-### [监控](../pluggable-components/faq/monitoring/)
-
-关于监控功能经常遇到的问题。

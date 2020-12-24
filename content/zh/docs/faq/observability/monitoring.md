@@ -1,10 +1,9 @@
 ---
 title: "监控系统"
-keywords: "Kubernetes, Prometheus, KubeSphere, Monitoring"
-description: "FAQ"
-
+keywords: "Kubernetes, Prometheus, KubeSphere, 监控系统"
+description: "关于监控系统的常见问题"
 linkTitle: "监控系统"
-weight: 6930
+weight: 16320
 ---
 
 ## 如何访问 KubeSphere Prometheus 控制台
@@ -20,11 +19,11 @@ kubectl edit svc -n kubesphere-monitoring-system prometheus-k8s
 如果有进程占用主机端口 9100，`kubespher-monitoring-system` 下的 Node Exporter 会崩溃。为了解决冲突，你需要终止进程或将 Node Exporter 换到另一个可用端口。
 
 要采用另一个主机端口，例如 `29100`，运行以下命令，将所有 `9100` 替换为 `29100`（需要更改 5 处）。
- 
+
  ```shell
  kubectl edit ds -n kubesphere-monitoring-system node-exporter
  ```
- 
+
  ```shell
  apiVersion: apps/v1
  kind: DaemonSet
@@ -54,7 +53,7 @@ kubectl edit svc -n kubesphere-monitoring-system prometheus-k8s
          - containerPort: 9100
            hostPort: 9100
   ...
-```
+ ```
 
 ## 与现有的 Prometheus Operator 相冲突
 
