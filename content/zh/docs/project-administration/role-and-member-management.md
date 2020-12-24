@@ -36,7 +36,7 @@ weight: 13200
 
     ![view role details](/images/docs/zh-cn/project-admin/project_role_detail.png)
 
-2. 您可以点击**授权用户**页签查看被授予 `admin` 角色的用户。
+2. 您可以点击**授权用户**选项卡查看被授予 `admin` 角色的用户。
 
 ## 创建项目角色
 
