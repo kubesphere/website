@@ -1,92 +1,92 @@
 ---
-title: "Role and Member Management"
-keywords: 'KubeSphere, Kubernetes, role, member, management, project'
-description: 'Role and Member Management in a Project'
+title: "角色和成员管理"
+keywords: 'KubeSphere, Kubernetes, 角色, 成员, 管理, 项目'
+description: '项目中的角色和成员管理'
 
-linkTitle: "Role and Member Management"
+linkTitle: "角色和成员管理"
 weight: 13200
 ---
 
-This guide demonstrates how to manage roles and members in your project. For more information about KubeSphere roles, see Overview of Role Management.
+本教程演示如何管理项目中的角色和成员。
 
-In project scope, you can grant the following resources' permissions to a role:
+您可以在项目范围内向角色授予以下资源的权限：
 
-- Application Workloads
-- Storage
-- Configurations
-- Monitoring & Alerting
-- Project Settings
-- Access Control
+- 应用负载
+- 存储
+- 配置
+- 监控告警
+- 项目设置
+- 访问控制
 
-## Prerequisites
+## 准备工作
 
-At least one project has been created, such as `demo-project`. Besides, you need an account of the `admin` role (e.g. `project-admin`) at the project level. See [Create Workspace, Project, Account and Role](../../quick-start/create-workspace-and-project/) if it is not ready yet.
+您需要至少创建一个项目（例如 `demo-project`）。 此外，您还需要准备一个在项目层角色为 `admin` 的帐户（例如 `project-admin`）。有关详情请参见[创建企业空间、项目、帐户和角色](../../quick-start/create-workspace-and-project/)。
 
-## Built-in Roles
+## 内置角色
 
-In **Project Roles**, there are three available built-in roles as shown below. Built-in roles are created automatically by KubeSphere when a project is created and they cannot be edited or deleted. You can only view permissions and authorized user list.
+在**项目角色**页面有三个内置角色。内置角色由 KubeSphere 在项目创建时自动创建，不能编辑或删除。您只能查看其权限列表和授权用户列表。
 
-| Built-in Roles     | Description                                                  |
+| 内置角色 | 描述                                                |
 | ------------------ | ------------------------------------------------------------ |
-| viewer | The viewer who can view all resources in the project. |
-| operator   | The maintainer of the project who can manage resources other than users and roles in the project. |
-| admin     | The administrator in the project who can perform any action on any resource. It gives full control over all resources in the project. |
+| viewer | 项目观察者，可以查看项目下所有的资源。 |
+| operator   | 项目维护者，可以管理项目下除用户和角色之外的资源。 |
+| admin     | 项目管理员，可以对项目下的所有资源执行所有操作。此角色可以完全控制项目下的所有资源。 |
 
-1. In **Project Roles**, click `admin` and you can see the role detail as shown below.
+1. 在**项目角色**页面，点击 `admin` 查看该角色的详情，如下图所示：
 
-    ![view role details](/images/docs/project-admin/project_role_detail.png)
+    ![view role details](/images/docs/zh-cn/project-admin/project_role_detail.png)
 
-2. You can switch to **Authorized Users** tab to see all the users that are granted an `admin` role.
+2. 您可以点击**授权用户**页签查看被授予 `admin` 角色的用户。
 
-## Create a Project Role
+## 创建项目角色
 
-1. Log in the console as `project-admin` and select a project (e.g. `demo-project`) under **Projects** list.
-
-    {{< notice note >}}
-
-The account `project-admin` is used as an example. As long as the account you are using is granted a role including the authorization of **Project Members View**, **Project Roles Management** and **Project Roles View** in **Access Control** at project level, it can create a project role.
-
-    {{</ notice >}}
-
-2. Go to **Project Roles** in **Project Settings**, click **Create** and set a **Role Identifier**. In this example, a role named `project-monitor` will be created. Click **Edit Authorization** to continue.
-
-    ![Create a project role](/images/docs/project-admin/project_role_create_step1.png)
-
-3. Select the authorization that you want the user granted this role to have. For example, **Application Workloads View** in **Application Workloads**, and **Alerting Messages View** and **Alerting Policies View** in **Monitoring & Alerting** are selected for this role. Click **OK** to finish.
-
-    ![Edit Authorization](/images/docs/project-admin/project_role_create_step2.png)
+1. 以 `project-admin` 用户登录控制台，在**项目管理**页面选择一个项目（例如 `demo-project`）。
 
     {{< notice note >}}
 
-**Depend on** means the major authorization (the one listed after **Depend on**) needs to be selected first so that the affiliated authorization can be assigned.
+此处以 `project-admin` 帐户为例。在**访问控制**页面，只要您帐户的角色具有**成员查看**、**角色管理**和**角色查看**权限，该帐户就可用于创建项目角色。
 
-    {{</ notice >}}
+{{</ notice >}}
 
-4. Newly-created roles will be listed in **Project Roles**. You can click the three dots on the right to edit it.
+2. 打开**项目设置**下的**项目角色**页面，点击**创建**，设置**角色标识符**（此处以创建 `project-monitor` 角色为例），点击**编辑权限**进行下一步。
 
-    ![Edit Roles](/images/docs/project-admin/project_role_list.png)
+    ![Create a project role](/images/docs/zh-cn/project-admin/project_role_create_step1.png)
 
-    {{< notice note >}}
+3. 选择授予此角色的帐户的权限（例如**应用负载**中的**应用负载查看**，以及**监控告警**中的**告警消息查看**和**告警策略查看**），点击**确定**完成操作。
 
-The role of `project-monitor` is only granted limited permissions in **Monitoring & Alerting**, which may not satisfy your need. This example is only for demonstration purpose. You can create customized roles based on your needs.
-
-    {{</ notice >}}
-
-## Invite a New Member
-
-1. In **Project Settings**, select **Project Members** and click **Invite Member**.
-2. Invite a user to the project. Grant the role of `project-monitor` to the user. 
-
-    ![invite member](/images/docs/project-admin/project_invite_member_step2.png)
+    ![Edit Authorization](/images/docs/zh-cn/project-admin/project_role_create_step2.png)
 
     {{< notice note >}}
 
-The user must be invited to the project's workspace first.
+某些权限**依赖于**其他权限。要选择从属的权限，必须选择其依赖的权限。
 
     {{</ notice >}}
 
-3. After you add a user to the project, click **OK**. In **Project Members**, you can see the newly invited member listed.
+4. 角色创建后会显示在**项目角色**页面。您可以点击角色右边的三个点对其进行编辑。
 
-4. You can also change the role of an existing member by editing it or remove it from the project.
+    ![Edit Roles](/images/docs/zh-cn/project-admin/project_role_list.png)
 
-    ![edit member role](/images/docs/project-admin/project_user_edit.png)
+    {{< notice note >}}
+
+`project-monitor` 角色在**监控告警**中仅被授予有限的权限，可能无法满足您的需求。此处仅为示例，您可以根据需求创建自定义角色。
+
+{{</ notice >}}
+
+## 邀请成员
+
+1. 选择**项目设置**下的**项目成员**，点击**邀请成员**。
+2. 邀请一个用户加入当前项目，对其授予 `project-monitor` 角色。 
+
+    ![invite member](/images/docs/zh-cn/project-admin/project_invite_member_step2.png)
+
+    {{< notice note >}}
+
+要进行此操作，该用户必须先被邀请至当前项目的企业空间。
+
+    {{</ notice >}}
+
+3. 点击**确定**。用户被邀请至当前项目后会显示在**项目成员**页面。
+
+4. 您可以修改现有成员的角色或将其从项目中移除。
+
+    ![edit member role](/images/docs/zh-cn/project-admin/project_user_edit.png)
