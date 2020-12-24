@@ -12,7 +12,7 @@ The administrator who has the permission to manage users can change an account p
 
 ![modify-password](/images/docs/faq/forgot-password/modify-password.png)
 
-### Reset the Administrator Password
+## Reset the Administrator Password
 
 Execute the following command on the host cluster to change the password of any account.
 
