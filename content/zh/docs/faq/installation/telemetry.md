@@ -2,8 +2,8 @@
 title: "启用或禁用 KubeSphere 中的 Telemetry"
 keywords: "安装器, Telemetry, KubeSphere, Kubernetes"
 description: "Telemetry 收集 KubeSphere 安装的汇总信息。"
-
-Weight: 16400
+linkTitle: "启用或禁用 KubeSphere 中的 Telemetry"
+Weight: 16300
 ---
 
 Telemetry 收集已安装 KubeSphere 集群的大小、KubeSphere 和 Kubernetes 版本、已启用的组件、集群运行时间、错误日志等汇总信息。KubeSphere 保证该信息仅由 KubeSphere 社区用于改进产品，并且不与任何第三方分享该信息。

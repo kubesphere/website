@@ -36,7 +36,3 @@ icon: "/images/docs/docs.svg"
 ## [升级后的变化](../upgrade/what-changed/)
 
 了解升级后的变化。
-
-## [常见问题](../upgrade/upgrade-faq/)
-
-常见升级问题的解答。

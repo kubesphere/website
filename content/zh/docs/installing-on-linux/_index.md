@@ -81,12 +81,6 @@ icon: "/images/docs/docs.svg"
 
 从机器上删除 KubeSphere 和 Kubernetes。
 
-## 常见问题
-
-### [为安装配置加速器](../installing-on-linux/faq/configure-booster/)
-
-配置镜像仓库以加快安装速度。
-
 ## 常用指南
 
 以下是本章节中的常用指南，建议您优先参考。

@@ -1,9 +1,9 @@
 ---
-title: "Bring your own Prometheus"
+title: "Bring Your Own Prometheus"
 keywords: "Monitoring, Prometheus, node-exporter, kube-state-metrics, KubeSphere, Kubernetes"
 description: "Use your own Prometheus stack for KubeSphere monitoring"
-
-Weight: 16100
+linkTitle: "Bring Your Own Prometheus"
+Weight: 16330
 ---
 
 KubeSphere comes with several pre-installed customized monitoring components including Prometheus Operator, Prometheus, Alertmanager, Grafana (Optional), various service monitors, node-exporter, kube-state-metrics. These components might already exist before you install KubeSphere, it's possible to use your own Prometheus stack setup in KubeSphere v3.0.0 .

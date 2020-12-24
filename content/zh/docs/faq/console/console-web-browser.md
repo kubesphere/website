@@ -1,9 +1,9 @@
 ---
-title: "Questions about KubeSphere Console"
+title: "Supported Browsers"
 keywords: "FAQ, console, KubeSphere, Kubernetes"
 description: "FAQ is designed to answer and summarize the questions our users most frequently ask about KubeSphere Console."
-
-Weight: 16200
+linkTitle: "Supported Browsers"
+Weight: 16510
 ---
 
 **What kind of browsers does KubeSphere support?**
