@@ -27,7 +27,7 @@ Telemetry collects aggregate information about the size of KubeSphere clusters i
 
 Telemetry is enabled by default when you install KubeSphere, while you also have the option to disable it either before or after the installation.
 
-### Disable Telemetry before Installation
+### Disable Telemetry before installation
 
 When you install KubeSphere on existing Kubernetes clusters, you need to download the file [cluster-configuration.yaml](https://github.com/kubesphere/ks-installer/releases/download/v3.0.0/cluster-configuration.yaml) for cluster setting. If you want to disable Telemetry, do not use `kubectl apply -f` directly for this file.
 
@@ -61,7 +61,7 @@ If you install KubeSphere on Linux, see [Disable Telemetry after Installation](.
     kubectl apply -f cluster-configuration.yaml
     ```
 
-### Disable Telemetry after Installation
+### Disable Telemetry after installation
 
 1. Log in the console as `admin` and click **Platform** in the top left corner.
 
