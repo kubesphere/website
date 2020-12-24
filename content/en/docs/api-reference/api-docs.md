@@ -7,9 +7,20 @@ description: 'KubeSphere API documentation'
 weight: 17100
 ---
 
+## Architecture
+
+The KubeSphere API server validates and configures data for the API objects. 
+The API Server services REST operations and provide the frontend to the
+cluster's shared state through which all other components interact.
+
+![ks-apiserver](/images/docs/api-reference/ks-apiserver.png)
+
+## How to use KubeSphere API
+
 In KubeSphere v3.0, we move the functionalities of _ks-apigateway_, _ks-account_ into _ks-apiserver_ to make the architecture more compact and straight forward. In order to use KubeSphere API, you need to expose _ks-apiserver_ to your client.
 
-## Step 1: Expose KubeSphere API service
+
+### Step 1: Expose KubeSphere API service
 
 If you are going to access KubeSphere inside the cluster, you can skip the following section and just use the KubeSphere API server endpoint **`http://ks-apiserver.kubesphere-system.svc`**.
 
@@ -28,7 +39,7 @@ ks-console      NodePort       10.233.3.45     <none>           80:30880/TCP    
 
 Now, you can access `ks-apiserver` outside the cluster through URL like `http://[node ip]:31407`, where `[node ip]` means IP of any node in your cluster.
 
-## Step 2: Generate a token
+### Step 2: Generate a token
 
 You need to identify yourself before making any call to the API server. Let's take a user `jeff` with password `P#$$w0rd` as an example. He needs to issue a request to generate a token like the following:
 
@@ -57,7 +68,7 @@ If the identity is correct, the server will response something like the followin
 }
 ```
 
-## Step 3: Make the call
+### Step 3: Make the call
 
 Now you got everything you need to access KubeSphere API server. Make the call using the access token acquired above as the following to get node list:
 
