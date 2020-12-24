@@ -6,7 +6,7 @@ linkTitle: "Upgrade QingCloud CSI"
 weight: 16210
 ---
 
-## Upgrade QingCloud CSI after upgrading
+## Upgrade QingCloud CSI after Upgrading
 
 Currently QingCloud CSI cannot be upgraded by KubeKey. You can run the following command to upgrade the CSI manually after you upgrade KubeSphere:
 
