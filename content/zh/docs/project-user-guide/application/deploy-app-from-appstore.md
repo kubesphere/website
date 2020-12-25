@@ -1,86 +1,86 @@
 ---
-title: "Deploy Apps from App Store"
+title: "从应用商店部署应用"
 keywords: 'Kubernetes, chart, helm, KubeSphere, application, App Store'
-description: 'How to deploy apps from the App Store.'
-linkTitle: "Deploy Apps from App Store"
+description: '如何从应用商店部署应用'
+linkTitle: "从应用商店部署应用"
 weight: 10130
 ---
 
-The [App Store](../../../application-store/) is also the public app repository on the platform, which means every tenant on the platform can view the applications in the Store regardless of which workspace they belong to. The App Store contains 15 featured enterprise-ready containerized apps and apps released by tenants from different workspaces on the platform. Any authenticated users can deploy applications from the Store. This is different from private app repositories which are only accessible to tenants in the workspace where private app repositories are imported.
+[应用商店](../../../application-store/)是平台上的公共应用仓库。平台上的每个租户，无论属于哪个企业空间，都可以查看应用商店中的应用。应用商店包含15个精选的企业就绪的容器化应用，以及平台上不同企业空间的租户发布的应用。任何经过身份验证的用户都可以从应用商店部署应用。这与私有应用仓库不同，访问私有应用仓库的租户必须属于私有应用仓库所在的企业空间。
 
-This tutorial demonstrates how to quickly deploy [NGINX](https://www.nginx.com/) from the KubeSphere App Store powered by [OpenPitrix](https://github.com/openpitrix/openpitrix) and access its service through NodePort.
+本教程演示如何从基于 [OpenPitrix](https://github.com/openpitrix/openpitrix) 的 KubeSphere 应用商店快速部署 [NGINX](https://www.nginx.com/)，并通过 NodePort 访问其服务。
 
-## Prerequisites
+## 准备工作
 
-- You have enabled [OpenPitirx (App Store)](../../../pluggable-components/app-store).
-- You need to create a workspace, a project, and a user account (`project-regular`) for this tutorial. The account needs to be a platform regular user invited to the project with the `operator` role. For more information, see [Create Workspace, Project, Account and Role](../../../quick-start/create-workspace-and-project/).
+- 您需要启用 [OpenPitirx (App Store)](../../../pluggable-components/app-store)。
+- 您需要创建一个企业空间、一个项目和一个用户帐户（例如 `project-regular`）。该帐户必须是已邀请至项目的平台普通用户，并具有 `operator` 角色。有关更多信息，请参见[创建企业空间、项目、帐户和角色](../../../quick-start/create-workspace-and-project/)。
 
-## Hands-on Lab
+## 动手实验
 
-### Step 1: Deploy NGINX from App Store
+### 步骤 1：从应用商店部署 NGINX
 
-1. On the **Overview** page of the project `demo-project`, click **App Store** in the top left corner.
+1. 在 `demo-project` 项目的**概览**页面，点击左上角的**应用商店**。
 
-   ![app-store](/images/docs/project-user-guide/applications/deploy-apps-from-app-store/app-store.jpg)
+   ![app-store](/images/docs/zh-cn/project-user-guide/applications/deploy-apps-from-app-store/app-store.jpg)
 
    {{< notice note >}}
 
-   You can also click **Deploy New Application** and select **From App Store** to go to the App Store.
+   您也可以打开**应用负载**下的**应用**页面，点击**部署新应用**，并选择**来自应用商店**进入应用商店。
 
    {{</ notice >}} 
 
-2. Find NGINX and click **Deploy** on the **App Info** page.
+2. 找到 NGINX，在**应用信息**页面点击**部署**。
 
-   ![nginx-in-app-store](/images/docs/project-user-guide/applications/deploy-apps-from-app-store/nginx-in-app-store.jpg)
+   ![nginx-in-app-store](/images/docs/zh-cn/project-user-guide/applications/deploy-apps-from-app-store/nginx-in-app-store.jpg)
 
-   ![deploy-nginx](/images/docs/project-user-guide/applications/deploy-apps-from-app-store/deploy-nginx.jpg)
+   ![deploy-nginx](/images/docs/zh-cn/project-user-guide/applications/deploy-apps-from-app-store/deploy-nginx.jpg)
 
-3. Set a name and select an app version. Make sure NGINX is deployed in `demo-project` and click **Next**.
+3. 设置应用的名称和版本，确保 NGINX 部署在 `demo-project` 项目中，点击**下一步**。
 
-   ![confirm-deployment](/images/docs/project-user-guide/applications/deploy-apps-from-app-store/confirm-deployment.jpg)
+   ![confirm-deployment](/images/docs/zh-cn/project-user-guide/applications/deploy-apps-from-app-store/confirm-deployment.jpg)
 
-4. In **App Config**, specify the number of replicas to deploy for the app and enable Ingress based on your needs. When you finish, click **Deploy**.
+4. 在**应用配置**页面，设置应用部署的副本数，根据需要启用或禁用 Ingress，然后点击**部署**。
 
-   ![edit-config-nginx](/images/docs/project-user-guide/applications/deploy-apps-from-app-store/edit-config-nginx.jpg)
+   ![edit-config-nginx](/images/docs/zh-cn/project-user-guide/applications/deploy-apps-from-app-store/edit-config-nginx.jpg)
 
-   ![manifest-file](/images/docs/project-user-guide/applications/deploy-apps-from-app-store/manifest-file.jpg)
+   ![manifest-file](/images/docs/zh-cn/project-user-guide/applications/deploy-apps-from-app-store/manifest-file.jpg)
 
    {{< notice note >}}
 
-   To specify more values for NGINX, use the toggle switch to see the app’s manifest in YAML format and edit its configurations. 
+   如需为 NGINX 设置更多的参数, 可点击 **YAML** 后的切换开关打开应用的 YAML 配置文件，并在配置文件中设置相关参数。 
 
    {{</ notice >}}
 
-5. Wait until NGINX is up and running.
+5. 等待应用创建完成并开始运行。
 
-   ![nginx-running](/images/docs/project-user-guide/applications/deploy-apps-from-app-store/nginx-running.jpg)
+   ![nginx-running](/images/docs/zh-cn/project-user-guide/applications/deploy-apps-from-app-store/nginx-running.jpg)
 
-### Step 2: Access NGINX
+### 步骤 2：访问 NGINX
 
-To access NGINX outside the cluster, you need to expose the app through NodePort first.
+要从集群外访问 NGINX，您需要先用 NodePort 暴露该应用。
 
-1. Go to **Services** and click the service name of NGINX.
+1. 打开**服务**页面并点击 NGINX 的服务名称。
 
-   ![nginx-service](/images/docs/project-user-guide/applications/deploy-apps-from-app-store/nginx-service.jpg)
+   ![nginx-service](/images/docs/zh-cn/project-user-guide/applications/deploy-apps-from-app-store/nginx-service.jpg)
 
-2. On the service detail page, click **More** and select **Edit Internet Access** from the drop-down menu.
+2. 在服务详情页面，点击**更多操作**，在下拉菜单中选择**编辑外网访问**。
 
-   ![edit-internet-access](/images/docs/project-user-guide/applications/deploy-apps-from-app-store/edit-internet-access.jpg)
+   ![edit-internet-access](/images/docs/zh-cn/project-user-guide/applications/deploy-apps-from-app-store/edit-internet-access.jpg)
 
-3. Select **NodePort** for **Access Method** and click **OK**. For more information, see [Project Gateway](../../../project-administration/project-gateway/).
+3. 将**访问方式**设置为 **NodePort** 并点击**确定**。有关更多信息，请参见[项目网关](../../../project-administration/project-gateway/)。
 
-   ![nodeport](/images/docs/project-user-guide/applications/deploy-apps-from-app-store/nodeport.jpg)
+   ![nodeport](/images/docs/zh-cn/project-user-guide/applications/deploy-apps-from-app-store/nodeport.jpg)
 
-4. Under **Service Ports**, you can see the port is exposed.
+4. 您可以在**服务端口**区域查看暴露的端口。
 
-   ![exposed-port](/images/docs/project-user-guide/applications/deploy-apps-from-app-store/exposed-port.jpg)
+   ![exposed-port](/images/docs/zh-cn/project-user-guide/applications/deploy-apps-from-app-store/exposed-port.jpg)
 
-5. Access NGINX through `{$NodeIP}:{$Nodeport}`.
+5. 用 `{$NodeIP}:{$Nodeport}` 地址访问 NGINX。
 
-   ![access-nginx](/images/docs/project-user-guide/applications/deploy-apps-from-app-store/access-nginx.jpg)
+   ![access-nginx](/images/docs/zh-cn/project-user-guide/applications/deploy-apps-from-app-store/access-nginx.jpg)
 
    {{< notice note >}}
 
-   You may need to open the port in your security groups and configure related port forwarding rules depending on your where your Kubernetes cluster is deployed.
+   取决于您的 Kubernetes 集群的部署位置，您可能需要在安全组中放行端口并配置相关的端口转发规则。
 
    {{</ notice >}} 
