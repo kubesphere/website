@@ -1,9 +1,8 @@
 ---
-title: "Auditing Rule"
+title: "Auditing Rules"
 keywords: "Kubernetes, docker, kubesphere, auditing"
 description: "Kubernetes and KubeSphere operation auditing"
-
-linkTitle: "Auditing Rule"
+linkTitle: "Auditing Rules"
 weight: 15320
 ---
 
@@ -88,7 +87,7 @@ spec:
  When an auditing log matches a rule in `archiving-rule` and the rule priority is no less than `archivingPriority`, it will be stored for further use. When an auditing log matches a rule in `alerting-rule`, if the priority of the rule is less than `alertingPriority`, it will be stored for further use; otherwise it will generate an alert which will be sent to the user.
 
 
-## Rule Condition
+## Rule Conditions
 
 A `Condition` is a filtering expression that can use comparison operators (=, !=, <, <=, >, >=, contains, in, like, and regex) and can be combined using Boolean operators (and, or and not) and parentheses. Here are the supported filters.
 
