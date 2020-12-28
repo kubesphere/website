@@ -1,83 +1,84 @@
 ---
-title: "Deploy RabbitMQ on KubeSphere"
-keywords: 'KubeSphere, RabbitMQ, Kubernetes, Installation'
-description: 'How to deploy RabbitMQ on KubeSphere through App Store'
+title: "在 KubeSphere 中部署 RabbitMQ"
+keywords: 'KubeSphere, RabbitMQ, Kubernetes, 安装'
+description: '如何通过应用商店在 KubeSphere 中部署 RabbitMQ'
 
-link title: "Deploy RabbitMQ"
+link title: "在 KubeSphere 中部署 RabbitMQ"
 weight: 14290
 ---
-[RabbitMQ](https://www.rabbitmq.com/) is the most widely deployed open-source message broker. It is lightweight and easy to deploy on premises and in the cloud. It supports multiple messaging protocols. RabbitMQ can be deployed in distributed and federated configurations to meet high-scale, high-availability requirements.
+[RabbitMQ](https://www.rabbitmq.com/) 是最广泛部署的开源消息代理。它轻量且易于在本地和云上部署，支持多种消息协议。RabbitMQ 可在分布和联合的配置中部署，以满足大规模和高可用性需求。
 
-This tutorial walks you through an example of how to deploy RabbitMQ from the App Store of KubeSphere.
+本教程演示如何从 KubeSphere 的应用商店部署 RabbitMQ。
 
-## Prerequisites
+## 准备工作
 
-- Please make sure you [enable the OpenPitrix system](https://kubesphere.io/docs/pluggable-components/app-store/).
-- You need to create a workspace, a project, and a user account for this tutorial. The account needs to be a platform regular user and to be invited as the project operator with the `operator` role. In this tutorial, you log in as `project-regular` and work in the project `demo-project` in the workspace `demo-workspace`. For more information, see [Create Workspace, Project, Account and Role](../../../quick-start/create-workspace-and-project/).
+- 您需要[启用 OpenPitrix 系统](../../../pluggable-components/app-store/)。
+- 您需要创建一个企业空间、一个项目和一个用户帐户。该帐户必须是已邀请至项目的平台普通用户，并且在项目中的角色为 `operator`。在本教程中，您需要以 `project-regular` 用户登录，并在 `demo-workspace` 企业空间的`demo-project` 项目中进行操作。有关更多信息，请参见[创建企业空间、项目、帐户和角色](../../../quick-start/create-workspace-and-project/)。
 
-## Hands-on Lab
+## 动手实验
 
-### Step 1: Deploy RabbitMQ from App Store
+### 步骤 1：从应用商店部署 RabbitMQ
 
-1. On the **Overview** page of the project `demo-project`, click **App Store** in the top left corner.
+1. 在 `demo-project` 的**概览**页面，点击左上角的**应用商店**。
 
-   ![rabbitmq01](/images/docs/appstore/built-in-apps/rabbitmq-app/rabbitmq01.jpg)
+   ![rabbitmq01](/images/docs/zh-cn/appstore/built-in-apps/rabbitmq-app/rabbitmq01.jpg)
 
-2. Find RabbitMQ and click **Deploy** on the **App Info** page.
+2. 找到 RabbitMQ，在**应用信息**页面点击**部署**。
 
-   ![find-rabbitmq](/images/docs/appstore/built-in-apps/rabbitmq-app/rabbitmq02.jpg)
+   ![find-rabbitmq](/images/docs/zh-cn/appstore/built-in-apps/rabbitmq-app/rabbitmq02.jpg)
 
-   ![click-deploy](/images/docs/appstore/built-in-apps/rabbitmq-app/rabbitmq021.jpg)
+   ![click-deploy](/images/docs/zh-cn/appstore/built-in-apps/rabbitmq-app/rabbitmq021.jpg)
 
-3. Set a name and select an app version. Make sure RabbitMQ is deployed in `demo-project` and click **Next**.
+3. 设置应用名称和版本，确保 RabbitMQ 部署在 `demo-project` 项目中，然后点击**下一步**。
 
-   ![rabbitmq03](/images/docs/appstore/built-in-apps/rabbitmq-app/rabbitmq03.jpg)
+   ![rabbitmq03](/images/docs/zh-cn/appstore/built-in-apps/rabbitmq-app/rabbitmq03.jpg)
 
-4. In **App Config**, you can use the default configuration directly or customize the configuration either by specifying fields in a form or editing the YAML file. Record the value of **Root Username** and the value of **Root Password**, which will be used later for login. Click **Deploy** to continue.
+4. 在**应用配置**页面，您可以直接使用默认配置，也可以通过修改表单参数或编辑 YAML 文件自定义配置。您需要记录 **Root Username** 和 **Root Password** 的值，用于在后续步骤中登录系统。设置完成后点击**部署**。
 
-   ![rabbitMQ11](/images/docs/appstore/built-in-apps/rabbitmq-app/rabbitMQ11.jpg)
+   ![rabbitMQ11](/images/docs/zh-cn/appstore/built-in-apps/rabbitmq-app/rabbitMQ11.jpg)
 
-   ![rabbitMQ04](/images/docs/appstore/built-in-apps/rabbitmq-app/rabbitMQ04.jpg)
+   ![rabbitMQ04](/images/docs/zh-cn/appstore/built-in-apps/rabbitmq-app/rabbitMQ04.jpg)
 
    {{< notice tip >}}
 
-   To see the manifest file, toggle the **YAML** switch.
+   如需查看清单文件，请点击 **YAML** 开关。
 
    {{</ notice >}}
 
-5. Wait until RabbitMQ is up and running.
+5. 等待 RabbitMQ 创建完成并开始运行。
 
-   ![check-if-rabbitmq-is-running](/images/docs/appstore/built-in-apps/rabbitmq-app/rabbitmq05.jpg)
+   ![check-if-rabbitmq-is-running](/images/docs/zh-cn/appstore/built-in-apps/rabbitmq-app/rabbitmq05.jpg)
 
-### Step 2: Access RabbitMQ Dashboard
+### 步骤 2：访问 RabbitMQ 主页
 
-To access RabbitMQ outside the cluster, you need to expose the app through NodePort first.
+要从集群外访问 RabbitMQ，您需要先用 NodePort 暴露该应用。
 
-1. Go to **Services** and click the service name of RabbitMQ.
+1. 打开**服务**页面并点击 RabbitMQ 的服务名称。
 
-   ![go-to-services](/images/docs/appstore/built-in-apps/rabbitmq-app/rabbitmq06.jpg)
+   ![go-to-services](/images/docs/zh-cn/appstore/built-in-apps/rabbitmq-app/rabbitmq06.jpg)
 
-2. Click **More** and select **Edit Internet Access** from the drop-down menu.
+2. 点击**更多操作**，在下拉菜单中选择**编辑外网访问**。
 
-   ![rabbitmq07](/images/docs/appstore/built-in-apps/rabbitmq-app/rabbitmq07.jpg)
+   ![rabbitmq07](/images/docs/zh-cn/appstore/built-in-apps/rabbitmq-app/rabbitmq07.jpg)
 
-3. Select **NodePort** for **Access Method** and click **OK**. For more information, see [Project Gateway](../../../project-administration/project-gateway/). 
+3. 将**访问方式**设置为 **NodePort** 并点击**确定**。有关更多信息，请参见[项目网关](../../../project-administration/project-gateway/)。
 
-   ![rabbitmq08](/images/docs/appstore/built-in-apps/rabbitmq-app/rabbitmq08.jpg)
+   ![rabbitmq08](/images/docs/zh-cn/appstore/built-in-apps/rabbitmq-app/rabbitmq08.jpg)
 
-4. Under **Service Ports**, you can see ports are exposed.
+4. 您可以在**服务端口**区域查看暴露的端口。
 
-   ![rabbitmq09](/images/docs/appstore/built-in-apps/rabbitmq-app/rabbitmq09.jpg)
+   ![rabbitmq09](/images/docs/zh-cn/appstore/built-in-apps/rabbitmq-app/rabbitmq09.jpg)
 
-5. Access RabbitMQ **management** through `{$NodeIP}:{$Nodeport}`. Note that the username and password are those you set in **Step 1**.
-   ![rabbitmq-dashboard](/images/docs/appstore/built-in-apps/rabbitmq-app/rabbitmq-dashboard.jpg)
+5. 用 `{$NodeIP}:{$Nodeport}` 地址以及步骤 1 中记录的用户名和密码访问 RabbitMQ 的 **management** 端口。
+   ![rabbitmq-dashboard](/images/docs/zh-cn/appstore/built-in-apps/rabbitmq-app/rabbitmq-dashboard.jpg)
 
-   ![rabbitma-dashboard-detail](/images/docs/appstore/built-in-apps/rabbitmq-app/rabbitma-dashboard-detail.jpg)
+   ![rabbitma-dashboard-detail](/images/docs/zh-cn/appstore/built-in-apps/rabbitmq-app/rabbitma-dashboard-detail.jpg)
 
    {{< notice note >}}
 
-   You may need to open the port in your security groups and configure related port forwarding rules depending on your where your Kubernetes cluster is deployed.
+   取决于您的 Kubernetes 集群的部署位置，您可能需要在安全组中放行端口并配置相关的端口转发规则。
 
    {{</ notice >}} 
 
-6. For more information about RabbitMQ, refer to [the official documentation of RabbitMQ](https://www.rabbitmq.com/documentation.html).
+6. 有关 RabbitMQ 的更多信息，请参考[ RabbitMQ 官方文档](https://www.rabbitmq.com/documentation.html)。
+
