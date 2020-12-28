@@ -7,7 +7,7 @@ linkTitle: "从应用模板部署应用"
 weight: 10120
 ---
 
-部署应用时，您可选择使用应用商店。应用商店包含了 KubeSphere 的内置应用和[上传为 Helm chart 的应用](../../../workspace-administration/upload-helm-based-application/)。此外，您还可以使用应用模板。应用模板可由添加至 KubeSphere 的私有应用仓库提供。
+部署应用时，您可选择使用应用商店。应用商店包含了 KubeSphere 的内置应用和[以 Helm Chart 形式上传的应用](../../../workspace-administration/upload-helm-based-application/)。此外，您还可以使用应用模板。应用模板可由添加至 KubeSphere 的私有应用仓库提供。
 
 本教程演示如何使用私有应用仓库中的应用模板快速部署 [Grafana](https://grafana.com/)。该私有应用仓库基于 QingStor 对象存储。
 
@@ -20,11 +20,11 @@ weight: 10120
 
 ### 步骤 1：添加应用仓库
 
-1. 以 `ws-admin` 用户登录 KubeSphere 的 web 工作台。在您的企业空间中，进入**应用管理**下的**应用仓库**页面，并点击**添加仓库**。
+1. 以 `ws-admin` 用户登录 KubeSphere 的 Web 控制台。在您的企业空间中，进入**应用管理**下的**应用仓库**页面，并点击**添加仓库**。
 
    ![add-app-repo](/images/docs/zh-cn/project-user-guide/applications/deploy-apps-from-app-templates/add-app-repo.jpg)
 
-2. 在弹出的对话框中，将应用仓库名称设置为 `test-repo`，将应用仓库的 URL 设置为 `https://helm-chart-repo.pek3a.qingstor.com/kubernetes-charts/`，点击**验证**对URL进行验证，再点击**确定**进入下一步。
+2. 在弹出的对话框中，将应用仓库名称设置为 `test-repo`，将应用仓库的 URL 设置为 `https://helm-chart-repo.pek3a.qingstor.com/kubernetes-charts/`，点击**验证**对 URL 进行验证，再点击**确定**进入下一步。
 
    ![input-repo-info](/images/docs/zh-cn/project-user-guide/applications/deploy-apps-from-app-templates/input-repo-info.jpg)
 
@@ -48,7 +48,7 @@ weight: 10120
 
    ![select-app-templates](/images/docs/zh-cn/project-user-guide/applications/deploy-apps-from-app-templates/select-app-templates.jpg)
 
-   **来自应用商店**：选择内置的应用和单独上传为 Helm chart 的应用。
+   **来自应用商店**：选择内置的应用和以 Helm Chart 形式单独上传的应用。
 
    **来自应用模板**：从私有应用仓库和企业空间应用池选择应用。
 
@@ -58,7 +58,7 @@ weight: 10120
 
    {{< notice note >}}
 
-   下拉列表中的**来自企业空间**选项表示企业空间应用池，包含上传为 Helm chart 的应用。这些应用也属于应用模板。
+   下拉列表中的**来自企业空间**选项表示企业空间应用池，包含以 Helm Chart 形式上传的应用。这些应用也属于应用模板。
 
    {{</ notice >}} 
 
@@ -68,7 +68,7 @@ weight: 10120
 
    {{< notice note >}} 
 
-   本教程使用的应用仓库与 Google Helm 仓库同步。由于其中的 Helm chart 由不同的组织维护，部分应用可能无法部署成功。
+   本教程使用的应用仓库与 Google Helm 仓库同步。由于其中的 Helm Chart 由不同的组织维护，部分应用可能无法部署成功。
 
    {{</ notice >}} 
 
@@ -86,7 +86,7 @@ weight: 10120
 
 8. 等待 Grafana 创建完成并开始运行。
 
-### 步骤 3: 暴露 Grafana 服务
+### 步骤 3：暴露 Grafana 服务
 
 要从集群外访问 Grafana，您需要先用 NodePort 暴露该应用。
 
@@ -106,7 +106,7 @@ weight: 10120
 
    ![exposed-port](/images/docs/zh-cn/project-user-guide/applications/deploy-apps-from-app-templates/exposed-port.jpg)
 
-### 步骤 4: 访问 Grafana
+### 步骤 4：访问 Grafana
 
 1. 您需要获取用户名和密码才能登录 Grafana 主页。导航至**密钥**页面，点击与应用名称相同的条目。
 
