@@ -6,13 +6,19 @@ linkTitle: "多节点安装"
 weight: 3120
 ---
 
-在生产环境中，单节点集群由于集群资源有限并且计算能力不足，无法满足大部分需求。因此，不建议在大规模数据处理时使用单节点集群。此外，这类集群只有一个节点，因此也不具有高可用性。另一方面，在应用程序部署和分发方面，多节点架构是最常见的首选架构。
+在生产环境中，单节点集群由于集群资源有限并且计算能力不足，无法满足大部分需求。因此，不建议在处理大规模数据时使用单节点集群。此外，这类集群只有一个节点，因此也不具有高可用性。相比之下，在应用程序部署和分发方面，多节点架构是最常见的首选架构。
 
 本节概述了单主节点式多节点安装，包括概念、[KubeKey](https://github.com/kubesphere/kubekey/) 和操作步骤。有关高可用安装的信息，请参考[高可用配置](../../../installing-on-linux/introduction/ha-configuration/)、[在公有云上安装](../../../installing-on-linux/public-cloud/install-kubesphere-on-azure-vms/)和[在本地环境中安装](../../../installing-on-linux/on-premises/install-kubesphere-on-bare-metal/)。
 
+## 视频演示
+
+<video controls="controls" style="width: 100% !important; height: auto !important;">
+  <source type="video/mp4" src="https://kubesphere-docs.pek3b.qingstor.com/website/docs-v3.0/KS3.0%E5%AE%89%E8%A3%85%E4%B8%8E%E9%83%A8%E7%BD%B2_2_Multi-Node%20Deployment%20on%20Linux.mp4">
+</video>
+
 ## 概念
 
-多节点集群由至少一个主节点和一个工作节点组成，可以使用任何节点作为**任务机**来执行安装任务。您可以在安装之前或之后根据需要添加其他节点（例如，为了实现高可用性）。
+多节点集群由至少一个主节点和一个工作节点组成，可以使用任何节点作为**任务机**来执行安装任务。您可以在安装之前或之后根据需要新增节点（例如，为了实现高可用性）。
 
 - **Master**：主节点，通常托管控制平面，控制和管理整个系统。
 - **Worker**：工作节点，运行部署在其之上的实际应用程序。
@@ -26,9 +32,9 @@ weight: 3120
 ### 优势
 
 - 之前基于 ansible 的安装程序有许多软件依赖项，例如 Python。KubeKey 使用 Go 语言开发，可以消除各种环境中的问题，确保安装成功。
-- KubeKey 使用 Kubeadm 在节点上尽可能多地并行安装 Kubernetes 集群，以降低安装复杂性并提高效率。与较早的安装程序相比，它将大大节省安装时间。
-- 通过使用 KubeKey，用户可以将集群从 all-in-one 集群扩缩成多节点集群，甚至扩缩成高可用集群。
-- KubeKey 计划将集群作为一个对象来安装，即 Cluster as an Object (CaaO)。
+- KubeKey 使用 Kubeadm 在节点上尽可能多地并行安装 Kubernetes 集群，以降低安装复杂性并提高效率。与之前的安装程序相比，它将大大节省安装时间。
+- 用户可以使用 KubeKey 将 All-in-One 集群（即单节点集群）扩展到多节点集群，甚至高可用集群。
+- KubeKey 旨在将集群作为一个对象来安装，即 Cluster as an Object (CaaO)。
 
 ## 步骤 1：准备 Linux 主机
 
@@ -162,8 +168,8 @@ chmod +x kk
 
 - 支持的 Kubernetes 版本：*v1.15.12*、*v1.16.13*、*v1.17.9*（默认）、*v1.18.6*。
 
-- 如果您在这一步的命令中不添加标志变量 `--with-kubesphere`，则不会部署 KubeSphere，只能使用配置文件中的 `addons` 字段安装，或者在您后续使用 `./kk create cluster` 命令时再次添加这个标志变量。
-- 如果您添加标志变量 `--with-kubesphere` 时不指定 KubeSphere 版本，则会安装最新版本的 KubeSphere。
+- 如果您在这一步的命令中不添加标志 `--with-kubesphere`，则不会部署 KubeSphere，只能使用配置文件中的 `addons` 字段安装，或者在您后续使用 `./kk create cluster` 命令时再次添加这个标志。
+- 如果您添加标志 `--with-kubesphere` 时不指定 KubeSphere 版本，则会安装最新版本的 KubeSphere。
 
 {{</ notice >}}
 
@@ -221,7 +227,7 @@ spec:
 
 `internalAddress`：实例的私有 IP 地址。
 
-- 在本教程中，端口 22 是 SSH 的默认端口，因此您无需将它添加至 Yaml 文件中。否则，您需要在 IP 地址后添加对应端口号。例如：
+- 在本教程中，端口 22 是 SSH 的默认端口，因此您无需将它添加至 YAML 文件中。否则，您需要在 IP 地址后添加对应端口号。例如：
 
   ```yaml
   hosts:
@@ -256,7 +262,7 @@ spec:
 
 #### controlPlaneEndpoint（仅适用于高可用安装）
 
-`controlPlaneEndpoint` 使您可以为高可用集群定义外置负载均衡器。当且仅当安装多个主节点时，才需要准备和配置外置负载均衡器。请注意，`config-sample.yaml` 中的地址和端口应缩进两个空格，`address` 应为 VIP。有关详细信息，请参见[高可用配置](../../../installing-on-linux/introduction/ha-configuration/)。
+`controlPlaneEndpoint` 使您可以为高可用集群定义外部负载均衡器。当且仅当安装多个主节点时，才需要准备和配置外部负载均衡器。请注意，`config-sample.yaml` 中的地址和端口应缩进两个空格，`address` 应为 VIP。有关详细信息，请参见[高可用配置](../../../installing-on-linux/introduction/ha-configuration/)。
 
 #### addons
 
@@ -264,7 +270,7 @@ spec:
 
 {{< notice note >}}
 
-KubeSphere 会默认安装 [OpenEBS](https://openebs.io/)，为开发和测试环境配置 [LocalPV](https://kubernetes.io/docs/concepts/storage/volumes/#local)，方便新用户。在本多节点安装示例中，使用了默认存储类（本地存储卷）。对于生产环境，请使用 NFS/Ceph/GlusterFS/CSI 或者商业存储产品作为持久化存储解决方案。
+KubeSphere 会默认安装 [OpenEBS](https://openebs.io/)，为开发和测试环境配置 [LocalPV](https://kubernetes.io/docs/concepts/storage/volumes/#local)，方便新用户。在本多节点安装示例中，使用了默认存储类型（本地存储卷）。对于生产环境，请使用 NFS/Ceph/GlusterFS/CSI 或者商业存储产品作为持久化存储解决方案。
 
 {{</ notice >}}
 
@@ -347,4 +353,4 @@ kubectl completion bash >/etc/bash_completion.d/kubectl
 详细信息[见此](https://kubernetes.io/docs/tasks/tools/install-kubectl/#enabling-shell-autocompletion)。
 
 ## 演示
-<script src="https://asciinema.org/a/368752.js" id="asciicast-368752" async></script>
+<script src="https://asciinema.org/a/364501.js" id="asciicast-364501" async></script>
