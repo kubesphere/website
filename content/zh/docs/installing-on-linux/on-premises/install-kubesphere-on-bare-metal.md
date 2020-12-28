@@ -256,11 +256,15 @@ Create a Kubernetes cluster with KubeSphere installed (e.g. `--with-kubesphere v
 
 {{< notice note >}} 
 
-The following Kubernetes versions have been fully tested with KubeSphere: v1.15.12, v1.16.13, v1.17.9 (default) and v1.18.6.
+- The following Kubernetes versions have been fully tested with KubeSphere: v1.15.12, v1.16.13, v1.17.9 (default) and v1.18.6.
+
+- If you do not add the flag `--with-kubesphere` in the command above, KubeSphere will not be deployed unless you install it using the `addons` field in the configuration file or add this flag again when you use `./kk create cluster` later.
+
+- If you add the flag `--with-kubesphere` without specifying a KubeSphere version, the latest version of KubeSphere will be installed.
 
 {{</ notice >}} 
 
-A default file **config-sample.yaml** will be created. Modify it according to your environment.
+A default file `config-sample.yaml` will be created. Modify it according to your environment.
 
 ```bash
 vi config-sample.yaml
