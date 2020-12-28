@@ -10,7 +10,7 @@ You can upload the Helm chart of an app to KubeSphere so that tenants with neces
 
 ## Install Helm
 
-If you have already installed KubeSphere, then Helm is already deployed in your environment. Otherwise, refer to the [Helm documentation](https://helm.sh/docs/intro/install/) to install Helm first.
+If you have already installed KubeSphere, then Helm is deployed in your environment. Otherwise, refer to the [Helm documentation](https://helm.sh/docs/intro/install/) to install Helm first.
 
 ## Create a Local Repository
 
@@ -26,7 +26,7 @@ cd helm-repo
 
 ## Create an App
 
-Use `helm create` to create a folder named `nginx`, which automatically creates YAML files templates and directories for your app. Generally, it is not recommended to change the name of files and directories in the top level directory.
+Use `helm create` to create a folder named `nginx`, which automatically creates YAML templates and directories for your app. Generally, it is not recommended to change the name of files and directories in the top level directory.
 
 ```bash
 $ helm create nginx
@@ -43,7 +43,7 @@ nginx/
 └── values.yaml
 ```
 
-Chart.yaml is used to define the basic information of the chart, including name, API, and app version. For more information, see [Chart.yaml File](../helm-specification/#chartyaml-file).
+`Chart.yaml` is used to define the basic information of the chart, including name, API, and app version. For more information, see [Chart.yaml File](../helm-specification/#chartyaml-file).
 
 An example of the `Chart.yaml` file:
 
@@ -112,9 +112,30 @@ affinity: {}
 
 Refer to [Helm Specifications](../helm-specification/) to edit files in the `nginx` folder and save them when you finish editing.
 
-## Package the App
+## Create an Index File (Optional)
 
-Execute the following command to package your app.
+To add a repository with an HTTP or HTTPS URL in KubeSphere, you need to upload an `index.yaml` file to the object storage in advance. Use Helm to create the index file by executing the following command in the previous directory of `nginx`.
+
+```bash
+helm repo index .
+```
+
+```bash
+$ ls
+index.yaml  nginx
+```
+
+{{< notice note >}}
+
+- If the repository URL is S3-styled, an index file will be created automatically in the object storage when you add apps to the repository.
+
+- For more information about how to add repositories to KubeSphere, see [Import an Helm Repository](../../../workspace-administration/app-repository/import-helm-repository/).
+
+{{</ notice >}}
+
+## Package the Chart
+
+Go to the previous directory of `nginx` and execute the following command to package your chart which creates a .tgz package.
 
 ```bash
 helm package nginx
@@ -125,5 +146,12 @@ $ ls
 nginx  nginx-0.1.0.tgz
 ```
 
-## Upload the App
+## Upload Your App
 
+Now that you have your Helm-based app ready, you can load it to KubeSphere and test it on the platform.
+
+## See Also
+
+[Helm Specifications](../helm-specification/)
+
+[Import an Helm Repository](../../../workspace-administration/app-repository/import-helm-repository/)

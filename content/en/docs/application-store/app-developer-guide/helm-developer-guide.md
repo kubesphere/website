@@ -155,6 +155,3 @@ Now that you have your Helm-based app ready, you can load it to KubeSphere and t
 [Helm Specifications](../helm-specification/)
 
 [Import an Helm Repository](../../../workspace-administration/app-repository/import-helm-repository/)
-
-
-
