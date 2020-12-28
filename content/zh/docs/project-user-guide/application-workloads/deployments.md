@@ -1,143 +1,144 @@
 ---
-title: "Deployments"
-keywords: 'KubeSphere, Kubernetes, Deployments, workload'
-description: 'Kubernetes Deployments'
-linkTitle: "Deployments"
+title: "部署"
+keywords: 'KubeSphere, Kubernetes, 部署, 工作负载'
+description: 'Kubernetes 部署'
+linkTitle: "部署"
 
 weight: 10210
 ---
 
-A Deployment controller provides declarative updates for Pods and ReplicaSets. You describe a desired state in a Deployment object, and the Deployment controller changes the actual state to the desired state at a controlled rate. As a Deployment runs a number of replicas of your application, it automatically replaces instances that go down or malfunction. This is how Deployments make sure app instances are available to handle user requests.
+部署控制器为 Pod 和副本集提供声明式升级。您可以在部署对象中描述一个期望状态，部署控制器会以受控速率将实际状态变更为期望状态。一个部署运行着应用程序的几个副本，它会自动替换宕机或故障的实例。因此，部署能够确保应用实例可用，处理用户请求。
 
-For more information, see the [official documentation of Kubernetes](https://kubernetes.io/docs/concepts/workloads/controllers/deployment/).
+有关更多信息，请参见 [Kubernetes 官方文档](https://kubernetes.io/zh/docs/concepts/workloads/controllers/deployment/)。
 
-## Prerequisites
+## 准备工作
 
-You need to create a workspace, a project and an account (`project-regular`). The account must be invited to the project with the role of `operator`. For more information, see [Create Workspace, Project, Account and Role](../../../quick-start/create-workspace-and-project).
+您需要创建一个企业空间、一个项目和一个帐户 (`project-regular`)，务必邀请这个帐户到项目中并赋予 `operator` 角色。有关更多信息，请参见[创建企业空间、项目、帐户和角色](../../../quick-start/create-workspace-and-project/)。
 
-## Create a Deployment
+## 创建部署
 
-### Step 1: Open Dashboard
+### 步骤 1：打开仪表板
 
-Log in the console as `project-regular`. Go to **Application Workloads** of a project, select **Workloads**, and click **Create** under the tab **Deployments**.
+以 `project-regular` 身份登录控制台。转到项目的**应用负载**，选择**工作负载**，点击**部署**选项卡下面的**创建**。
 
-![deployments](/images/docs/project-user-guide/workloads/deployments.png)
+![部署](/images/docs/zh-cn/project-user-guide/application-workloads/deployments/deployments.PNG)
 
-### Step 2: Input Basic Information
+### 步骤 2：输入基本信息
 
-Specify a name for the Deployment (e.g. `demo-deployment`) and click **Next** to continue.
+为该部署指定一个名称（例如 `demo-deployment`），点击**下一步**继续。
 
-![deployments](/images/docs/project-user-guide/workloads/deployments_form_1.jpg)
+![输入部署名称](/images/docs/zh-cn/project-user-guide/application-workloads/deployments/deployment-name.PNG)
 
-### Step 3: Set Image
+### 步骤 3：设置镜像
 
-1. Before you set an image, define the number of replicated Pods in **Pod Replicas** by clicking the **plus** or **minus** icon, which is indicated by the `.spec.replicas` field in the manifest file.
+1. 设置镜像前，请点击**容器组副本数量**中的**加号**或**减号**图标来定义 Pod 的副本数量，该参数显示在清单文件中的 `.spec.replicas` 字段。
 
     {{< notice tip >}}
-You can see the Deployment manifest file in YAML format by enabling **Edit Mode** in the top right corner. KubeSphere allows you to edit the manifest file directly to create a Deployment. Alternatively, you can follow the steps below to create a Deployment via the dashboard.
+您可以启用右上角的**编辑模式**，查看 YAML 格式的部署清单文件。KubeSphere 使您可以直接编辑清单文件创建部署，或者您可以按照下列步骤使用仪表板创建部署。
     {{</ notice >}}
 
-    ![deployments](/images/docs/project-user-guide/workloads/deployments_form_2.jpg)
+    ![设置副本数量](/images/docs/zh-cn/project-user-guide/application-workloads/deployments/replica-number.PNG)
 
-2. Click the **Add Container Image** box.
+2. 点击**添加容器镜像**。
 
-    ![deployments](/images/docs/project-user-guide/workloads/deployments_form_2_container_btn.jpg)
+    ![添加容器镜像](/images/docs/zh-cn/project-user-guide/application-workloads/deployments/add-container-image.PNG)
 
-3. Input an image name from public Docker Hub or from a [private repository](../../configuration/image-registry/) you specified. For example, input `nginx` in the search bar and press **Enter**.
+3. 输入镜像名称，该镜像可以来自公共 Docker Hub，也可以来自您指定的[私有仓库](../../../project-user-guide/configuration/image-registry/)。例如，在搜索栏输入 `nginx` 然后按**回车键**。
 
-    ![deployments](/images/docs/project-user-guide/workloads/deployments_form_2_container_1.jpg)
+    ![输入镜像名称](/images/docs/zh-cn/project-user-guide/application-workloads/deployments/input-image-name.PNG)
 
     {{< notice note >}}
 
-- Remember to press **Enter** on your keyboard after you input an image name in the search bar.
-- If you want to use your private image repository, you should [create an Image Registry Secret](../../configuration/image-registry/) first in **Secrets** under **Configurations**.
+- 在搜索栏输入镜像名称后，请记得按键盘上的**回车键**。
+- 如果想使用您的私有镜像仓库，您应该先通过**配置中心**下面的**密钥**[创建镜像仓库密钥](../../../project-user-guide/configuration/image-registry/)。
 
     {{</ notice >}}
 
-4. Set requests and limits for CPU and memory resources based on your needs. For more information, see [Resource Request and Resource Limit in Container Image Settings](../container-image-settings/#add-container-image).
+4. 根据您的需求设置 CPU 和内存的资源请求和限制。有关更多信息，请参见[容器镜像设置中关于资源请求和资源限制的内容](../../../project-user-guide/application-workloads/container-image-settings/#添加容器镜像)。
 
-    ![deployments](/images/docs/project-user-guide/workloads/deployments_form_2_container_2.jpg)
+    ![资源设置](/images/docs/zh-cn/project-user-guide/application-workloads/deployments/resource-setting.PNG)
 
-5. Click **Use Default Ports** for **Port Settings** or you can customize **Protocol**, **Name** and **Container Port**.
+5. **端口设置**请点击**使用默认端口**，或者您可以自定义**协议**、**名称**和**容器端口**。
 
-6. Select a policy for image pulling from the drop-down menu. For more information, see [Image Pull Policy in Container Image Settings](../container-image-settings/#add-container-image).
+6. 在下拉菜单中选择镜像拉取策略。有关更多信息，请参见[容器镜像设置中关于镜像拉取策略的内容](../../../project-user-guide/application-workloads/container-image-settings/#添加容器镜像)。
 
-7. For other settings (**Health Checker**, **Start Command**, **Environment Variables**, **Container Security Context** and **Sync Host Timezone**), you can configure them on the dashboard as well. For more information, see detailed explanations of these properties in [Container Image Settings](../container-image-settings/#add-container-image). When you finish, click **√** in the bottom right corner to continue.
+7. 对于其他设置（**健康检查器**、**启动命令**、**环境变量**、**容器 Security Context** 以及**同步主机时区**），您也可以在仪表板上配置它们。有关更多信息，请参见[容器镜像设置](../../../project-user-guide/application-workloads/container-image-settings/#添加容器镜像)中对这些属性的详细说明。操作完成后，点击右下角的 **√** 继续。
 
-8. Select an update strategy from the drop-down menu. It is recommended you choose **RollingUpdate**. For more information, see [Update Strategy](../container-image-settings/#update-strategy).
+8. 在下拉菜单中选择更新策略。建议您选择**滚动更新**。有关更多信息，请参见[更新策略](../../../project-user-guide/application-workloads/container-image-settings/#更新策略)。
 
-9. Select a deployment mode. For more information, see [Deployment Mode](../container-image-settings/#deployment-mode).
+9. 选择部署模式。有关更多信息，请参见[部署模式](../../../project-user-guide/application-workloads/container-image-settings/#部署模式)。
 
-10. Click **Next** to go to the next step when you finish setting the container image.
+10. 完成容器镜像设置后，点击**下一步**进行下一步操作。
 
-### Step 4: Mount Volumes
+### 步骤 4：挂载存储
 
-You can add a volume directly or mount a ConfigMap or Secret. Alternatively, click **Next** directly to skip this step. For more information about volumes, visit [Volumes](../../storage/volumes/#mount-a-volume).
+您可以直接添加存储卷或者挂载 ConfigMap 或密钥，或者直接点击**下一步**跳过该步骤。有关存储卷的更多信息，请访问[存储卷](../../../project-user-guide/storage/volumes/#挂载存储卷)。
 
-![deployments](/images/docs/project-user-guide/workloads/deployments_form_3.jpg)
+![挂载存储](/images/docs/zh-cn/project-user-guide/application-workloads/deployments/mount-volumes.PNG)
 
 {{< notice note >}}
 
-Deployments can't use a volume template, which is used by StatefulSets.
+部署无法使用存储卷模板，而有状态副本集可以使用。
 
 {{</ notice>}}
 
-### Step 5: Configure Advanced Settings
+### 步骤 5：配置高级设置
 
-You can set a policy for node scheduling and add metadata in this section. When you finish, click **Create** to complete the whole process of creating a Deployment.
+您可以在该部分设置节点调度策略并添加元数据。完成操作后，点击**创建**完成创建部署的整个流程。
 
-![deployments](/images/docs/project-user-guide/workloads/deployments_form_4.jpg)
+![高级设置](/images/docs/zh-cn/project-user-guide/application-workloads/deployments/advanced-settings.PNG)
 
-- **Set Node Scheduling Policy**
+- **设置节点调度策略**
 
-  You can allow Pod replicas to run on specified nodes. It is specified in the field `nodeSelector`.
+  您可以让 Pod 副本在指定节点上运行。该参数在 `nodeSelector` 字段中指定。
 
-- **Add Metadata**
+- **添加元数据**
 
-  Additional metadata settings for resources such as **Labels** and **Annotations**.
+  为资源进行额外的元数据设置，例如**标签**和**注解**。
 
-## Check Deployment Details
+## 查看部署详情
 
-### Detail Page
+### 详情页面
 
-1. After a Deployment is created, it displays in the list as below. You can click the three dots on the right and select actions from the menu to modify your Deployment.
+1. 创建部署后，它就会显示在下方的列表中。您可以点击右边的三个点，在弹出菜单中选择操作，修改您的部署。
 
-    ![deployments](/images/docs/project-user-guide/workloads/deployments_list.png)
+    ![部署列表](/images/docs/zh-cn/project-user-guide/application-workloads/deployments/deployment-listed.PNG)
 
-    - **Edit**: View and edit the basic information.
-    - **Edit YAML**: View, upload, download, or update the YAML file.
-    - **Redeploy**: Redeploy the Deployment.
-    - **Delete**: Delete the Deployment.
+    - **编辑**：查看并编辑基本信息。
+    - **编辑配置文件**：查看、上传、下载或者更新 YAML 文件。
+    - **重新部署**：重新部署该部署。
+    - **删除**：删除该部署。
 
-2. Click the name of the Deployment and you can go to its detail page.
+2. 点击部署名称可以进入它的详情页面。
 
-    ![deployments](/images/docs/project-user-guide/workloads/deployments_detail.png)
+    ![部署详情](/images/docs/zh-cn/project-user-guide/application-workloads/deployments/deployment-detail-page.PNG)
 
-3. Click **More** to display what operations about this Deployment you can do.
+3. 点击**更多操作**，显示您可以对该部署进行的操作。
 
-    ![deployments](/images/docs/project-user-guide/workloads/deployments_detail_operation_btn.png)
+    ![更多操作](/images/docs/zh-cn/project-user-guide/application-workloads/deployments/more-actions.PNG)
 
-    - **Revision Rollback**: Select the revision to roll back.
-    - **Horizontal Pod Autoscaling**: Autoscale the replicas according to CPU and memory usage. If both CPU and memory are specified, replicas are added or deleted if any of the conditions is met.
-    - **Edit Config Template**: Configure update strategies, containers and volumes.
-    - **Edit YAML**: View, upload, download, or update the YAML file.
-    - **Redeploy**: Redeploy this Deployment.
-    - **Delete**: Delete the Deployment, and return to the Deployment list page.
+    - **版本回退**：选择要回退的版本。
+    - **弹性伸缩**：根据 CPU 和内存使用情况自动伸缩副本。如果 CPU 和内存都已指定，则在满足任一条件时添加或删除副本。
+    - **编辑配置模板**：配置更新策略、容器和存储卷。
+    - **编辑配置文件**：查看、上传、下载或者更新 YAML 文件。
+    - **重新部署**：重新部署该部署。
+    - **删除**：删除该部署并返回部署列表页面。
 
-4. Click the **Resource Status** tab to view the port and Pod information of the Deployment.
+4. 点击**资源状态**选项卡，查看该部署的端口和 Pod 信息。
 
-    ![deployments](/images/docs/project-user-guide/workloads/deployments_detail_state.png)
+    ![资源状态](/images/docs/zh-cn/project-user-guide/application-workloads/deployments/resource-status.PNG)
 
-    - **Replica Status**: Click the arrow in the image to increase or decrease the number of Pod replicas.
-    - **Pod detail**
+    - **副本运行状态**：点击图像中的箭头增加或减少 Pod 副本数量。
+    - **Pod 详情**
 
-        ![deployments](/images/docs/project-user-guide/workloads/deployments_detail_pod.png)
+        ![Pod 详情](/images/docs/zh-cn/project-user-guide/application-workloads/deployments/pod-details.PNG)
 
-        - The Pod list provides detailed information of the Pod (status, node, Pod IP and resource usage).
-        - You can view the container information by clicking a Pod item.
-        - Click the container log icon to view output logs of the container.
-        - You can view the Pod detail page by clicking the Pod name.
+        - Pod 列表中显示了 Pod 详情（运行状态、节点、Pod IP 以及资源使用情况）。
+        - 您可以点击 Pod 条目查看容器信息。
+        - 点击容器日志图标查看容器的输出日志。
+        - 您可以点击 Pod 名称查看 Pod 详情页面。
 
-### Revision Records
+### 版本记录
 
-After the resource template of workload is changed, a new log will be generated and Pods will be rescheduled for a version update. The latest 10 versions will be saved by default. You can implement a redeployment based on the change log.
+修改工作负载的资源模板后，会生成一个新的日志并重新调度 Pod 进行版本更新。默认保存 10 个最近的版本。您可以根据修改日志进行重新部署。
+
