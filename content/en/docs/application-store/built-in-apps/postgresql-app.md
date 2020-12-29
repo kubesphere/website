@@ -49,7 +49,7 @@ This tutorial walks you through an example of how to deploy PostgreSQL from the 
 
 ### Step 2: Access PostgreSQL Database
 
-To access MySQL outside the cluster, you need to expose the app through NodePort first.
+To access PostgreSQL outside the cluster, you need to expose the app through NodePort first.
 
 1. Go to **Services** and click the service name of PostgreSQL.
 
