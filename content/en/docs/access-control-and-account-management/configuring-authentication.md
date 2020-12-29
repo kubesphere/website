@@ -1,7 +1,7 @@
 ---
 title: "Configure Authentication"
 keywords: "LDAP, identity provider"
-description: "How to configure identity provider"
+description: "How to configure authentication"
 
 linkTitle: "Configure Authentication"
 weight: 12200
@@ -21,17 +21,18 @@ KubeSphere includes a built-in OAuth server. Users obtain OAuth access tokens to
 
 As an administrator, you can configure OAuth by editing configmap to specify an identity provider.
 
-## Identity Providers
 
-KubeSphere has an internal account management system.
 
-You can modify the kubesphere authentication configuration using your desired identity provider by the following command:
+
+## Authentication Configuration
+
+KubeSphere has an internal account management system. You can modify the kubesphere authentication configuration by the following command:
+
+*Example Configuration*:
 
 ```bash
 kubectl -n kubesphere-system edit cm kubesphere-config
 ```
-
-*Example Configuration*:
 
 ```yaml
 apiVersion: v1
@@ -51,7 +52,19 @@ data:
           ...
 ```
 
-You can define additional authentication configuration in the `identityProviders `section.
+For the above example:
+
+| Parameter | Description |
+|-----------|-------------|
+| authenticateRateLimiterMaxTries | AuthenticateRateLimiter defines under which circumstances we will block user. |
+| authenticateRateLimiterDuration | A user will be blocked if his/her failed login attempt reaches AuthenticateRateLimiterMaxTries in AuthenticateRateLimiterDuration for about AuthenticateRateLimiterDuration. |
+| loginHistoryRetentionPeriod | Retention login history, records beyond this amount will be deleted. |
+| maximumClockSkew |  Controls the maximum allowed clock skew when performing time-sensitive operations, such as validating the expiration time of a user token. The default value for maximum clock skew is `10 seconds`. |
+| multipleLogin |  Allow multiple users login from different location at the same time. The default value for multiple login is `true`. |
+| jwtSecret | Secret to sign user token. Multi-cluster environments [need to use the same secret](../../multicluster-management/enable-multicluster/direct-connection/#prepare-a-member-cluster). |
+| accessTokenMaxAge |  AccessTokenMaxAge control the lifetime of access tokens. The default lifetime is 2 hours. Setting the `accessTokenMaxAge` to 0 means the token will not expire, it will be set to 0 when the cluster role is member. |
+| accessTokenInactivityTimeout | Inactivity timeout for tokens. The value represents the maximum amount of time that can occur between consecutive uses of the token. Tokens become invalid if they are not used within this temporal window. The user will need to acquire a new token to regain access once a token times out. |
+
 
 After modifying the identity provider configuration, you need to restart the ks-apiserver.
 
@@ -59,7 +72,11 @@ After modifying the identity provider configuration, you need to restart the ks-
 kubectl -n kubesphere-system rollout restart deploy/ks-apiserver
 ```
 
-## LDAP Authentication
+## Identity Providers
+
+You can define additional authentication configuration in the `identityProviders `section.
+
+### LDAP Authentication
 
 Set LDAPIdentityProvider in the identityProviders section to validate username and password against an LDAPv3 server using simple bind authentication.
 
@@ -70,7 +87,7 @@ There are four parameters common to all identity providers:
 | Parameter | Description |
 |-----------|-------------|
 | name | The name of the identity provider is associated with the user label. |
-| mappingMethod | Defines how new identities are mapped to users when they log in. |
+| mappingMethod | The account mapping configuration. You can use different mapping methods, such as:<br/>- `auto`: The default value. The user account will be automatically created and mapped if the login is successful. <br/>- `lookup`: Using this method requires you to manually provision accounts. |
 
 *Example Configuration Using LDAPIdentityProvider*:
 
