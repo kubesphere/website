@@ -7,7 +7,7 @@ linkTitle: "守护进程集 (DaemonSet)"
 weight: 10230
 ---
 
-守护程序集管理多组复制的Pod，同时确保所有（或某些）节点运行 Pod 的副本，保证在每个 Node 上都运行一个容器副本，将节点添加到集群后，DaemonSets会根据需要自动将Pod添加到新节点。
+守护程序集管理多组复制的 Pod，同时确保所有（或某些）节点运行 Pod 的副本，保证在每个 Node 上都运行一个容器副本，将节点添加到集群后，DaemonSets会根据需要自动将Pod添加到新节点。
 
 有关更多信息，请参见 [Kubernetes 官方文档](https://kubernetes.io/docs/concepts/workloads/controllers/daemonset/)。
 
