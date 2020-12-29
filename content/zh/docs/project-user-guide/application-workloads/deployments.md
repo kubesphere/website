@@ -13,7 +13,7 @@ weight: 10210
 
 ## 准备工作
 
-您需要创建一个企业空间、一个项目和一个帐户 (`project-regular`)，务必邀请这个帐户到项目中并赋予 `operator` 角色。有关更多信息，请参见[创建企业空间、项目、帐户和角色](../../../quick-start/create-workspace-and-project/)。
+您需要创建一个企业空间、一个项目和一个帐户 (`project-regular`)，务必邀请该帐户到项目中并赋予 `operator` 角色。有关更多信息，请参见[创建企业空间、项目、帐户和角色](../../../quick-start/create-workspace-and-project/)。
 
 ## 创建部署
 
@@ -58,7 +58,7 @@ weight: 10210
 
     ![资源设置](/images/docs/zh-cn/project-user-guide/application-workloads/deployments/resource-setting.PNG)
 
-5. **端口设置**请点击**使用默认端口**，或者您可以自定义**协议**、**名称**和**容器端口**。
+5. 点击**使用默认端口**以自动填充**端口设置**，或者您可以自定义**协议**、**名称**和**容器端口**。
 
 6. 在下拉菜单中选择镜像拉取策略。有关更多信息，请参见[容器镜像设置中关于镜像拉取策略的内容](../../../project-user-guide/application-workloads/container-image-settings/#添加容器镜像)。
 
@@ -68,9 +68,9 @@ weight: 10210
 
 9. 选择部署模式。有关更多信息，请参见[部署模式](../../../project-user-guide/application-workloads/container-image-settings/#部署模式)。
 
-10. 完成容器镜像设置后，点击**下一步**进行下一步操作。
+10. 完成容器镜像设置后，点击**下一步**继续。
 
-### 步骤 4：挂载存储
+### 步骤 4：挂载存储卷
 
 您可以直接添加存储卷或者挂载 ConfigMap 或密钥，或者直接点击**下一步**跳过该步骤。有关存储卷的更多信息，请访问[存储卷](../../../project-user-guide/storage/volumes/#挂载存储卷)。
 
@@ -100,7 +100,7 @@ weight: 10210
 
 ### 详情页面
 
-1. 创建部署后，它就会显示在下方的列表中。您可以点击右边的三个点，在弹出菜单中选择操作，修改您的部署。
+1. 部署创建后会显示在下方的列表中。您可以点击右边的三个点，在弹出菜单中选择操作，修改您的部署。
 
     ![部署列表](/images/docs/zh-cn/project-user-guide/application-workloads/deployments/deployment-listed.PNG)
 
@@ -118,7 +118,7 @@ weight: 10210
     ![更多操作](/images/docs/zh-cn/project-user-guide/application-workloads/deployments/more-actions.PNG)
 
     - **版本回退**：选择要回退的版本。
-    - **弹性伸缩**：根据 CPU 和内存使用情况自动伸缩副本。如果 CPU 和内存都已指定，则在满足任一条件时添加或删除副本。
+    - **弹性伸缩**：根据 CPU 和内存使用情况自动伸缩副本。如果 CPU 和内存都已指定，则在满足任一条件时会添加或删除副本。
     - **编辑配置模板**：配置更新策略、容器和存储卷。
     - **编辑配置文件**：查看、上传、下载或者更新 YAML 文件。
     - **重新部署**：重新部署该部署。

@@ -1,5 +1,5 @@
 ---
-linkTitle: "应用程序工作负载"
+linkTitle: "应用负载"
 weight: 10200
 
 _build:

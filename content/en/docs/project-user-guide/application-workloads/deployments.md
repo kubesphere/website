@@ -68,7 +68,7 @@ You can see the Deployment manifest file in YAML format by enabling **Edit Mode*
 
 9. Select a deployment mode. For more information, see [Deployment Mode](../container-image-settings/#deployment-mode).
 
-10. Click **Next** to go to the next step when you finish setting the container image.
+10. Click **Next** to continue when you finish setting the container image.
 
 ### Step 4: Mount volumes
 
