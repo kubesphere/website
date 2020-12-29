@@ -52,11 +52,11 @@ After a workspace is created, you can allocate additional clusters to the worksp
 
 4. You can see the list of authorized workspaces, which means the current cluster is available to resources in all these workspaces.
 
-   ![cluster-visibility-settings-1](/images/docs/cluster-administration/cluster-settings/cluster-visibility-and-authorization/cluster-visibility-settings-1.png)
+   ![workspace-list](/images/docs/cluster-administration/cluster-settings/cluster-visibility-and-authorization/workspace-list.jpg)
 
 5. Click **Edit Visibility** to set the cluster authorization. You can select new workspaces that will be able to use the cluster or unbind it from a workspace.
 
-   ![cluster-visibility-settings-2](/images/docs/cluster-administration/cluster-settings/cluster-visibility-and-authorization/cluster-visibility-settings-2.png)
+   ![assign-workspace](/images/docs/cluster-administration/cluster-settings/cluster-visibility-and-authorization/assign-workspace.jpg)
 
 ### Make a cluster public
 
