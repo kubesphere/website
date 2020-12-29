@@ -6,14 +6,14 @@ description: '如何通过应用商店在 KubeSphere 中部署 RabbitMQ'
 link title: "在 KubeSphere 中部署 RabbitMQ"
 weight: 14290
 ---
-[RabbitMQ](https://www.rabbitmq.com/) 是最广泛部署的开源消息代理。它轻量且易于在本地和云上部署，支持多种消息协议。RabbitMQ 可在分布和联合的配置中部署，以满足大规模和高可用性需求。
+[RabbitMQ](https://www.rabbitmq.com/) 是部署最广泛的开源消息代理。它轻量且易于在本地和云上部署，支持多种消息协议。RabbitMQ 可在分布和联邦的配置中部署，以满足大规模和高可用性需求。
 
 本教程演示如何从 KubeSphere 的应用商店部署 RabbitMQ。
 
 ## 准备工作
 
 - 您需要[启用 OpenPitrix 系统](../../../pluggable-components/app-store/)。
-- 您需要创建一个企业空间、一个项目和一个用户帐户。该帐户必须是已邀请至项目的平台普通用户，并且在项目中的角色为 `operator`。在本教程中，您需要以 `project-regular` 用户登录，并在 `demo-workspace` 企业空间的`demo-project` 项目中进行操作。有关更多信息，请参见[创建企业空间、项目、帐户和角色](../../../quick-start/create-workspace-and-project/)。
+- 您需要创建一个企业空间、一个项目和一个用户帐户。该帐户必须是已邀请至项目的平台普通用户，并且在项目中的角色为 `operator`。在本教程中，您需要以 `project-regular` 用户登录，并在 `demo-workspace` 企业空间的 `demo-project` 项目中进行操作。有关更多信息，请参见[创建企业空间、项目、帐户和角色](../../../quick-start/create-workspace-and-project/)。
 
 ## 动手实验
 
