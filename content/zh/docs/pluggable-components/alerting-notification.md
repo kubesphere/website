@@ -54,9 +54,9 @@ notification:
 
 ### 在 Kubernetes 上安装
 
-在 Kubernetes 上安装 KubeSphere 时，需要下载文件 [cluster-configuration.yaml](https://raw.githubusercontent.com/kubesphere/ks-installer/master/deploy/cluster-configuration.yaml) 进行集群设置。如果要安装告警和通知系统，不要直接使用 `kubectl apply -f` 对这个文件进行设置。
+在 Kubernetes 上安装 KubeSphere 时，需要下载文件 [cluster-configuration.yaml](https://github.com/kubesphere/ks-installer/releases/download/v3.0.0/cluster-configuration.yaml) 进行集群设置。如果要安装告警和通知系统，不要直接使用 `kubectl apply -f` 对这个文件进行设置。
 
-1. 参照[在 Kubernetes 上安装 KubeSphere](.../.../installing-on-kubernetes/introduction/overview/) 的教程，先对文件 [kubesphere-installer.yaml](https://raw.githubusercontent.com/kubesphere/ks-installer/master/deploy/kubesphere-installer.yaml) 执行 `kubectl apply -f`。之后，为了启用告警和通知系统，创建一个本地文件 `cluster-configuration.yaml`。
+1. 参照[在 Kubernetes 上安装 KubeSphere](.../.../installing-on-kubernetes/introduction/overview/) 的教程，先对文件 [kubesphere-installer.yaml](https://github.com/kubesphere/ks-installer/releases/download/v3.0.0/kubesphere-installer.yaml) 执行 `kubectl apply -f`。之后，为了启用告警和通知系统，创建一个本地文件 `cluster-configuration.yaml`。
 
 ```bash
 vi cluster-configuration.yaml
