@@ -8,7 +8,7 @@ weight: 3320
 
 ## 介绍
 
-KubeSphere 除了可以在云上安装，还可以在裸机上安装。由于在裸机上没有虚拟层，基础设施的开销大大降低，从而可以给部署的应用提供更多的计算和存储资源，硬件效率得到提高。以下举例介绍如何在裸机上安装 KubeSphere。
+KubeSphere 除了可以在云上安装，还可以在裸机上安装。由于在裸机上没有虚拟层，基础设施的开销大大降低，从而可以给部署的应用提供更多的计算和存储资源，硬件效率得到提高。以下示例介绍如何在裸机上安装 KubeSphere。
 
 ## 准备工作
 
@@ -18,11 +18,11 @@ KubeSphere 除了可以在云上安装，还可以在裸机上安装。由于在
 
 ## 准备 Linux 主机
 
-本教程使用 3 台物理机，硬件配置为 **DELL 620 Intel (R) Xeon (R) CPU E5-2640 v2 @ 2.00GHz (32G memory)**。 在这 3 台物理机上将安装 **CentOS Linux release 7.6.1810 (Core)** 操作系统，用于 KubeSphere 最小化安装。
+本教程使用 3 台物理机，硬件配置为 **DELL 620 Intel (R) Xeon (R) CPU E5-2640 v2 @ 2.00GHz (32G memory)**。在这 3 台物理机上将安装 **CentOS Linux release 7.6.1810 (Core)** 操作系统，用于 KubeSphere 最小化安装。
 
 ### 安装 CentOS
 
-请提前下载并安装[ CentOS 镜像](http://mirror1.es.uci.edu/centos/7.6.1810/isos/x86_64/CentOS-7-x86_64-DVD-1810.iso)。请确保根目录已至少已分配 200 GB 空间用于存储 Docker 镜像（如果 KubeSphere 仅用于测试，您可以跳过这一步）。
+请提前下载并安装[ CentOS 镜像](http://mirror1.es.uci.edu/centos/7.6.1810/isos/x86_64/CentOS-7-x86_64-DVD-1810.iso)。请确保根目录已至少分配 200 GB 空间用于存储 Docker 镜像（如果 KubeSphere 仅用于测试，您可以跳过这一步）。
 
 有关系统要求的更多信息，请参见[系统要求](../../../installing-on-linux/introduction/multioverview/)。
 
@@ -186,7 +186,7 @@ yum install wget # This tool will be used later to download KubeKey.
 
 {{< notice note >}} 
 
-取决于将要安装的 Kubernetes 版本，您可能不需要安装依赖项。有关更多信息，请参见[依赖项要求](../../../installing-on-linux/introduction/multioverview/)。
+取决于将要安装的 Kubernetes 版本，您可能不需要安所有装依赖项。有关更多信息，请参见[依赖项要求](../../../installing-on-linux/introduction/multioverview/)。
 
 {{</ notice >}} 
 
@@ -246,7 +246,7 @@ chmod +x kk
 
 ## 创建多节点集群
 
-您可用使用 KubeKey 同时安装 Kubernetes 和 KubeSphere。您也可以通过自定义配置文件中的参数创建多节点集群。
+您可用使用 KubeKey 同时安装 Kubernetes 和 KubeSphere，通过自定义配置文件中的参数创建多节点集群。
 
 创建安装有 KubeSphere 的 Kubernetes 集群（例如使用 `--with-kubesphere v3.0.0`）：
 
@@ -256,10 +256,10 @@ chmod +x kk
 
 {{< notice note >}} 
 
-- 以下 Kubernetes 版本已通过 KubeSphere 测试：v1.15.12、v1.16.13、v1.17.9 (default) 和 v1.18.6。
+- 在 KubeSphere 上充分测试过的 Kubernetes 版本：v1.15.12、v1.16.13、v1.17.9（默认）和 v1.18.6。
 
-- 如果您在上述命令中不使用 `--with-kubesphere` 参数，KubeSphere 将不被安装，除非您在配置文件中设置 `addons` 字段或在后续的 `./kk create cluster` 命令中增加此参数。
-- 如果您在上述命令中使用 `--with-kubesphere` 参数而不指定 KubeSphere 版本，最新的 KubeSphere 版本将被安装。
+- 如果您在这一步的命令中不添加标志 `--with-kubesphere`，则不会部署 KubeSphere，只能使用配置文件中的 `addons` 字段安装 KubeSphere，或者在您后续使用 `./kk create cluster` 命令时再次添加该标志。
+- 如果您添加标志 `--with-kubesphere` 时不指定 KubeSphere 版本，则会安装最新版本的 KubeSphere。
 
 {{</ notice >}} 
 
@@ -330,7 +330,7 @@ https://kubesphere.io             20xx-xx-xx xx:xx:xx
 
 #### 登录控制台
 
-您可以使用默认的帐户和和密码 `admin/P@88w0rd` 登录 KubeSphere 控制台并开始使用 KubeSphere。请在登录后修改默认密码。
+您可以使用默认的帐户和密码 `admin/P@88w0rd` 登录 KubeSphere 控制台并开始使用 KubeSphere。请在登录后修改默认密码。
 
 #### 启用可插拔组件（可选）
 以上示例演示了默认的最小化安装流程。如需启用 KubeSphere 的其他组件，请参考[启用可插拔组件](../../../pluggable-components/)。
