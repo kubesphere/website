@@ -2,25 +2,25 @@
 title: "Deploy KubeSphere on Bare Metal"
 keywords: 'Kubernetes, KubeSphere, bare-metal'
 description: 'How to install KubeSphere on bare metal.'
-
+linkTitle: "Deploy KubeSphere on Bare Metal"
 weight: 3320
 ---
 
 ## Introduction
 
-In addition to the deployment on cloud, KubeSphere can also be installed on bare metal. As the virtualization layer is removed, the infrastructure overhead is drastically reduced, which brings more compute and storage resources to app deployments. As a result, hardware efficiency is improved. Refer to the example below of how to deploy KubeSphere on bare metal.
+In addition to the deployment on cloud, KubeSphere can also be installed on bare metal. As the virtualization layer is removed, the infrastructure overhead is drastically reduced, which brings more compute and storage resources to app deployments. As a result, hardware efficiency is improved. Refer to the example below to deploy KubeSphere on bare metal.
 
 ## Prerequisites
 
-- Please make sure that you already know how to install KubeSphere with a multi-node cluster based on the tutorial [Multi-node Installation](../../../installing-on-linux/introduction/multioverview/).
+- Make sure you already know how to install KubeSphere on a multi-node cluster based on the tutorial [Multi-Node Installation](../../../installing-on-linux/introduction/multioverview/).
 - Server and network redundancy in your environment.
-- Considering data persistence, for a production environment, it is recommended you prepare persistent storage and create a StorageClass in advance. For development and testing, you can use the integrated OpenEBS to provision LocalPV as the storage service directly.
+- For a production environment, it is recommended that you prepare persistent storage and create a StorageClass in advance. For development and testing, you can use the integrated OpenEBS to provision LocalPV as the storage service directly.
 
 ## Prepare Linux Hosts
 
 This tutorial uses 3 physical machines of **DELL 620 Intel (R) Xeon (R) CPU E5-2640 v2 @ 2.00GHz (32G memory)**, on which **CentOS Linux release 7.6.1810 (Core)** will be installed for the minimal deployment of KubeSphere.
 
-### CentOS Installation
+### Install CentOS
 
 Download and install the [image](http://mirror1.es.uci.edu/centos/7.6.1810/isos/x86_64/CentOS-7-x86_64-DVD-1810.iso) first. Make sure you allocate at least 200 GB to the root directory where it stores docker images (you can skip this if you are installing KubeSphere for testing).
 
@@ -35,108 +35,108 @@ Here is a list of the three hosts for your reference.
 |192.168.60.153|worker1|worker|
 |192.168.60.154|worker2|worker|
 
-### NIC Setting
+### NIC settings
 
 1. Clear NIC configurations.
 
-```bash
-ifdown em1
-```
-
-```bash
-ifdown em2
-```
-
-```bash
-rm -rf /etc/sysconfig/network-scripts/ifcfg-em1
-```
-
-```bash
-rm -rf /etc/sysconfig/network-scripts/ifcfg-em2
-```
+   ```bash
+   ifdown em1
+   ```
+   
+   ```bash
+   ifdown em2
+   ```
+   
+   ```bash
+   rm -rf /etc/sysconfig/network-scripts/ifcfg-em1
+   ```
+   
+   ```bash
+   rm -rf /etc/sysconfig/network-scripts/ifcfg-em2
+   ```
 
 2. Create the NIC bonding.
 
-```bash
-nmcli con add type bond con-name bond0 ifname bond0 mode 802.3ad ip4 192.168.60.152/24 gw4 192.168.60.254
-```
+   ```bash
+   nmcli con add type bond con-name bond0 ifname bond0 mode 802.3ad ip4 192.168.60.152/24 gw4 192.168.60.254
+   ```
 
 3. Set the bonding mode.
 
-```bash
-nmcli con mod id bond0 bond.options mode=802.3ad,miimon=100,lacp_rate=fast,xmit_hash_policy=layer2+3
-```
+   ```bash
+   nmcli con mod id bond0 bond.options mode=802.3ad,miimon=100,lacp_rate=fast,xmit_hash_policy=layer2+3
+   ```
 
 4. Bind the physical NIC.
 
-```bash
-nmcli con add type bond-slave ifname em1 con-name em1 master bond0
-```
+   ```bash
+   nmcli con add type bond-slave ifname em1 con-name em1 master bond0
+   ```
 
-```bash
-nmcli con add type bond-slave ifname em2 con-name em2 master bond0
-```
+   ```bash
+   nmcli con add type bond-slave ifname em2 con-name em2 master bond0
+   ```
 
 5. Change the NIC mode.
 
-```bash
-vi /etc/sysconfig/network-scripts/ifcfg-bond0
-BOOTPROTO=static
-```
+   ```bash
+   vi /etc/sysconfig/network-scripts/ifcfg-bond0
+   BOOTPROTO=static
+   ```
 
 6. Restart Network Manager.
 
-```bash
-systemctl restart NetworkManager
-```
+   ```bash
+   systemctl restart NetworkManager
+   ```
 
-```bash
-nmcli con # Display NIC information
-```
+   ```bash
+   nmcli con # Display NIC information
+   ```
 
 7. Change the host name and DNS.
 
-```bash
-hostnamectl set-hostname worker-1
-```
+   ```bash
+   hostnamectl set-hostname worker-1
+   ```
 
-```bash
-vim /etc/resolv.conf
-```
+   ```bash
+   vim /etc/resolv.conf
+   ```
 
-### Time Setting
+### Time settings
 
 1. Synchronize time.
 
-```bash
-yum install -y chrony
-```
-
-```bash
-systemctl enable chronyd
-```
-
-```bash
-systemctl start chronyd
-```
-
-```bash
-timedatectl set-ntp true
-```
+   ```bash
+   yum install -y chrony
+   ```
+   
+   ```bash
+   systemctl enable chronyd
+   ```
+   
+   ```bash
+   systemctl start chronyd
+   ```
+   
+   ```bash
+   timedatectl set-ntp true
+   ```
 
 2. Set the time zone.
 
-```bash
-timedatectl set-timezone Asia/Shanghai
-```
+   ```bash
+   timedatectl set-timezone Asia/Shanghai
+   ```
 
 3. Check if the ntp-server is available.
 
-```bash
-chronyc activity -v
-```
+   ```bash
+   chronyc activity -v
+   ```
 
-### Firewall Setting
+### Firewall settings
 
 Execute the following commands to stop and disable the FirewallD service:
 
@@ -156,7 +156,7 @@ systemctl stop firewalld
 systemctl disable firewalld
 ```
 
-### Package Update and Dependencies
+### Package updates and dependencies
 
 Execute the following commands to update system packages and install dependencies.
 
@@ -244,7 +244,7 @@ Make `kk` executable:
 chmod +x kk
 ```
 
-## Create a Multi-node Cluster
+## Create a Multi-Node Cluster
 
 With KubeKey, you can install Kubernetes and KubeSphere together. You have the option to create a multi-node cluster by customizing parameters in the configuration file.
 
@@ -298,7 +298,7 @@ Create a cluster using the configuration file you customized above:
 ./kk create cluster -f config-sample.yaml
 ```
 
-#### Verify the Multi-node Installation
+#### Verify the installation
 
 After the installation finishes, you can inspect the logs of installation by executing the command below:
 
@@ -306,7 +306,7 @@ After the installation finishes, you can inspect the logs of installation by exe
 kubectl logs -n kubesphere-system $(kubectl get pod -n kubesphere-system -l app=ks-install -o jsonpath='{.items[0].metadata.name}') -f
 ```
 
-If you can see the welcome log return, it means the installation is successful. Your cluster is up and running.
+If you can see the welcome log return, it means the installation is successful.
 
 ```bash
 **************************************************
@@ -328,74 +328,74 @@ https://kubesphere.io             20xx-xx-xx xx:xx:xx
 #####################################################
 ```
 
-#### Log in the Console
+#### Log in the console
 
 You will be able to use default account and password `admin/P@88w0rd` to log in the console `http://{$IP}:30880` to take a tour of KubeSphere. Please change the default password after login.
 
-#### Enable Pluggable Components (Optional)
+#### Enable pluggable components (Optional)
 The example above demonstrates the process of a default minimal installation. To enable other components in KubeSphere, see [Enable Pluggable Components](../../../pluggable-components/) for more details.
 
 ## System Improvements
 
 - Update your system.
 
-```bash
-yum update
-```
+   ```bash
+   yum update
+   ```
 
 - Add the required options to the kernel boot arguments:
 
-```bash
-sudo /sbin/grubby --update-kernel=ALL --args='cgroup_enable=memory cgroup.memory=nokmem swapaccount=1'
-```
+   ```bash
+   sudo /sbin/grubby --update-kernel=ALL --args='cgroup_enable=memory cgroup.memory=nokmem swapaccount=1'
+   ```
 
 - Enable the `overlay2` kernel module.
 
-```bash
-echo "overlay2" | sudo tee -a /etc/modules-load.d/overlay.conf
-```
+   ```bash
+   echo "overlay2" | sudo tee -a /etc/modules-load.d/overlay.conf
+   ```
 
 - Refresh the dynamically generated grub2 configuration.
 
-```bash
-sudo grub2-set-default 0
-```
+   ```bash
+   sudo grub2-set-default 0
+   ```
 
 - Adjust kernel parameters and make the change effective.
 
-```bash
-cat <<EOF | sudo tee -a /etc/sysctl.conf
-vm.max_map_count = 262144
-fs.may_detach_mounts = 1
-net.ipv4.ip_forward = 1
-vm.swappiness=1
-kernel.pid_max =1000000
-fs.inotify.max_user_instances=524288
-EOF
-sudo sysctl -p
-```
+   ```bash
+   cat <<EOF | sudo tee -a /etc/sysctl.conf
+   vm.max_map_count = 262144
+   fs.may_detach_mounts = 1
+   net.ipv4.ip_forward = 1
+   vm.swappiness=1
+   kernel.pid_max =1000000
+   fs.inotify.max_user_instances=524288
+   EOF
+   sudo sysctl -p
+   ```
 
 - Adjust system limits.
 
-```bash
-vim /etc/security/limits.conf
-*                soft    nofile         1024000
-*                hard    nofile         1024000
-*                soft    memlock        unlimited
-*                hard    memlock        unlimited
-root             soft    nofile         1024000
-root             hard    nofile         1024000
-root             soft    memlock        unlimited
-```
+   ```bash
+   vim /etc/security/limits.conf
+   *                soft    nofile         1024000
+   *                hard    nofile         1024000
+   *                soft    memlock        unlimited
+   *                hard    memlock        unlimited
+   root             soft    nofile         1024000
+   root             hard    nofile         1024000
+   root             soft    memlock        unlimited
+   ```
 
 - Remove the previous limit configuration.
 
-```bash
-sudo rm /etc/security/limits.d/20-nproc.conf
-```
+   ```bash
+   sudo rm /etc/security/limits.d/20-nproc.conf
+   ```
 
 - Root the system.
 
-```bash
-reboot
-```
+   ```bash
+   reboot
+   ```

@@ -221,7 +221,7 @@ List all your machines under `hosts` and add their detailed information as above
 
 `internalAddress`: The private IP address of the instance.
 
-- In this tutorial, port 22 is the default port of SSH so you do not need to add it in the yaml file. Otherwise, you need to add the port number after the IP address. For example:
+- In this tutorial, port 22 is the default port of SSH so you do not need to add it in the YAML file. Otherwise, you need to add the port number after the IP address. For example:
 
   ```yaml
   hosts:
