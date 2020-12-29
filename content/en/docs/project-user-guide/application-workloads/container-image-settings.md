@@ -30,7 +30,7 @@ After you click **Add Container Image**, you will see an image as below.
 
 #### Image Search Bar
 
-You can click the cube icon on the right to select an image from the list or input an image name to search it. KubeSphere provides Docker Hub images and your private image repository. If you want to use your private image repository, you need to create a Docker Hub secret first in **Secrets** under **Configurations**.
+You can click the cube icon on the right to select an image from the list or input an image name to search it. KubeSphere provides Docker Hub images and your private image repository. If you want to use your private image repository, you need to create an Image Registry Secret first in **Secrets** under **Configurations**.
 
 {{< notice note >}} 
 
@@ -68,7 +68,7 @@ You can specify the upper limit of the resources that the application can use, i
 
 {{< notice note >}}
 
-The CPU resource is measure in CPU units, or **Core** in KubeSphere. The memory resource is measured in bytes, or **Mi** in KubeSphere.
+The CPU resource is measured in CPU units, or **Core** in KubeSphere. The memory resource is measured in bytes, or **Mi** in KubeSphere.
 
 {{</ notice >}} 
 
