@@ -40,7 +40,7 @@ KubeSphere 项目中的网关是一个[ NGINX Ingress 控制器](https://www.ngi
 
 ![nodeport](/images/docs/zh-cn/project-administration/project-gateway/nodeport.jpg)
 
-例如，如果您的服务配置了的弹性IP地址 (EIP)，请访问：
+例如，如果您的服务配置了的弹性 IP 地址 (EIP)，请访问：
 
 - `http://EIP:32734`
 - `https://EIP:32471`
@@ -54,7 +54,7 @@ KubeSphere 项目中的网关是一个[ NGINX Ingress 控制器](https://www.ngi
 
 - 取决于您的环境，您可能需要在安全组中放行端口并配置相关的端口转发规则 。
 
-- 如果使用主机名访问服务，请确保您设置的域名可以解析为对应的IP地址。
+- 如果使用主机名访问服务，请确保您设置的域名可以解析为对应的 IP 地址。
 - 在生产环境中不建议使用 **NodePort**，请使用 **LoadBalancer**。
 
 {{</ notice >}} 
@@ -67,6 +67,6 @@ KubeSphere 项目中的网关是一个[ NGINX Ingress 控制器](https://www.ngi
 
 {{< notice note >}}
 
-云厂商通常支持负载均衡器插件。如果在平台上主流的 Kubernetes Engine 上安装 KubeSphere，您可能会发现环境中已有可用的负载均衡器。如果在裸金属环境中安装 KubeSphere，您可以使用 [Porter](https://github.com/kubesphere/porter) 作为负载均衡器。
+云厂商通常支持负载均衡器插件。如果在主流的 Kubernetes Engine 上安装 KubeSphere，您可能会发现环境中已有可用的负载均衡器。如果在裸金属环境中安装 KubeSphere，您可以使用 [Porter](https://github.com/kubesphere/porter) 作为负载均衡器。
 
 {{</ notice >}} 
