@@ -41,7 +41,7 @@ Server Version: version.Info{Major:"1", Minor:"18+", GitVersion:"v1.18.4-tke.2",
 - 使用 kubectl 执行以下命令安装 KubeSphere：
 
 ```bash
-kubectl apply -f https://raw.githubusercontent.com/kubesphere/ks-installer/master/deploy/kubesphere-installer.yaml
+kubectl apply -f https://github.com/kubesphere/ks-installer/releases/download/v3.0.0/kubesphere-installer.yaml
 ```
 
 - 本地创建名为 `cluster-configuration.yaml` 的文件：
@@ -50,7 +50,7 @@ kubectl apply -f https://raw.githubusercontent.com/kubesphere/ks-installer/maste
 vim cluster-configuration.yaml
 ```
 
-- 复制此[文件](https://raw.githubusercontent.com/kubesphere/ks-installer/master/deploy/cluster-configuration.yaml)中的内容到 `cluster-configuration.yaml` 中，默认最小化安装未开启可插拔组件，然后执行以下命令：
+- 复制此[文件](https://github.com/kubesphere/ks-installer/releases/download/v3.0.0/cluster-configuration.yaml)中的内容到 `cluster-configuration.yaml` 中，默认最小化安装未开启可插拔组件，然后执行以下命令：
 
 ```bash
 kubectl apply -f cluster-configuration.yaml
