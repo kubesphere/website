@@ -8,7 +8,7 @@ weight: 5120
 
 The multi-cluster feature relates to the network connection among multiple clusters. Therefore, it is important to understand the topological relations of clusters.
 
-## How the Multi-Cluster Architecture Works
+## How the Multi-cluster Architecture Works
 
 Before you use the central control plane of KubeSphere to management multiple clusters, you need to create a Host Cluster, also known as **H** Cluster. The H Cluster, essentially, is a KubeSphere cluster with the multi-cluster feature enabled. It provides you with the control plane for unified management of Member Clusters, also known as **M** Cluster. M Clusters are common KubeSphere clusters without the central control plane. Namely, tenants with necessary permissions (usually cluster administrators) can access the control plane from the H Cluster to manage all M Clusters, such as viewing and editing resources on M Clusters. Conversely, if you access the web console of any M Cluster separately, you cannot see any resources on other clusters.
 
@@ -21,3 +21,9 @@ There can only be one H Cluster while multiple M Clusters can exist at the same 
 ## Vendor Agnostic
 
 KubeSphere features a powerful, inclusive central control plane so that you can manage any KubeSphere clusters in a unified way regardless of deployment environments or cloud providers.
+
+## Use the App Store in a Multi-cluster Architecture
+
+Different from other components in KubeSphere, the [KubeSphere App Store](../../../pluggable-components/app-store/) serves as a global application pool for all clusters, including H Cluster and M Clusters. You only need to enable the App Store on the H Cluster and you can use functions related to the App Store on M Clusters directly (no matter whether the App Store is enabled on M Clusters or not), such as [app templates](../../../project-user-guide/application/app-template/) and [app repositories](../../../workspace-administration/app-repository/import-helm-repository/).
+
+However, if you only enable the App Store on M Clusters without enabling it on the H Cluster, you will not be able to use the App Store on any cluster in the multi-cluster architecture.
