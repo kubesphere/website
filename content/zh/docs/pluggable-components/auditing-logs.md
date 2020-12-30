@@ -16,9 +16,9 @@ KubeSphere 审计日志系统提供了一套与安全相关并按时间顺序排
 
 ### 在 Linux 上安装
 
-当您在 Linux 上多节点安装 KubeSphere 时，需要创建一个配置文件，该文件列出了所有 KubeSphere 组件。
+当您在 Linux 上安装多节点 KubeSphere 时，需要创建一个配置文件，该文件列出了所有 KubeSphere 组件。
 
-1. 基于[在 Linux 上安装 KubeSphere](../../installing-on-linux/introduction/multioverview/) 的教程，创建一个默认文件 `config-sample.yaml`。执行以下命令修改该文件：
+1. 基于[在 Linux 上安装 KubeSphere](../../installing-on-linux/introduction/multioverview/) 的教程，您需要创建一个默认文件 `config-sample.yaml`。执行以下命令修改该文件：
 
     ```bash
     vi config-sample.yaml
