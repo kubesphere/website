@@ -21,7 +21,7 @@ This method serves as an efficient way to test performance and reliability of a 
 
 ## Create Canary Release Job
 
-1. Log in KubeSphere as `project-regular`. Under **Categories**, click **Create Job** on the right of **Canary Release**.
+1. Log in to KubeSphere as `project-regular`. Under **Categories**, click **Create Job** on the right of **Canary Release**.
 
    ![create-canary-release](/images/docs/project-user-guide/grayscale-release/canary-release/create-canary-release.jpg)
 

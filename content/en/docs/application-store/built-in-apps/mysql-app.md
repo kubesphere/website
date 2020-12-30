@@ -51,7 +51,7 @@ This tutorial walks you through an example of deploying MySQL from the App Store
 
    ![mysql-teminal](/images/docs/appstore/built-in-apps/mysql-app/mysql-teminal.jpg)
 
-3. In the terminal, execute `mysql -uroot -ptesting` to log in MySQL as the root user.
+3. In the terminal, execute `mysql -uroot -ptesting` to log in to MySQL as the root user.
 
    ![log-in-mysql](/images/docs/appstore/built-in-apps/mysql-app/log-in-mysql.jpg)
 

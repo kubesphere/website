@@ -22,7 +22,7 @@ You need to create a workspace, a project and an account (`project-regular`). Th
 
 ### Step 1: Open Dashboard
 
-Log in the console as `project-regular`. Go to **Configurations** of a project, choose **ConfigMaps** and click **Create**.
+Log in to the console as `project-regular`. Go to **Configurations** of a project, choose **ConfigMaps** and click **Create**.
 
 ![create-configmap](/images/docs/project-user-guide/configurations/configmaps/create-configmap.jpg)
 

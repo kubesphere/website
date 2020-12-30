@@ -19,7 +19,7 @@ You need to create a workspace, a project and an account (`project-regular`). Th
 
 ### Step 1: Open Dashboard
 
-Log in the console as `project-regular`. Go to **Jobs** of a project, choose **CronJobs** and click **Create**.
+Log in to the console as `project-regular`. Go to **Jobs** of a project, choose **CronJobs** and click **Create**.
 
 ![cronjob-list](/images/docs/project-user-guide/application-workloads/cronjobs/cronjob-list.jpg)
 

@@ -35,7 +35,7 @@ weight: 11420
 
 You need to create credentials in KubeSphere for the access token created so that the pipeline can interact with Docker Hub for imaging pushing. Besides, you also need to create kubeconfig credentials for the access to the Kubernetes cluster.
 
-1. Log in the web console of KubeSphere as `project-regular`. Go to your DevOps project and click **Create** in **Credentials**.
+1. Log in to the web console of KubeSphere as `project-regular`. Go to your DevOps project and click **Create** in **Credentials**.
 
    ![create-dockerhub-id](/images/docs/devops-user-guide/examples/compile-and-deploy-a-go-multi-cluster-project/create-dockerhub-id.jpg)
 

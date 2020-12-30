@@ -21,7 +21,7 @@ This tutorial demonstrates how to add an app repository to KubeSphere.
 
 ## Add App Repository
 
-1. Log in the web console of KubeSphere as `ws-admin`. In your workspace, go to **App Repos** under **Apps Management**, and then click **Add Repo**.
+1. Log in to the web console of KubeSphere as `ws-admin`. In your workspace, go to **App Repos** under **Apps Management**, and then click **Add Repo**.
 
     ![app-repo](/images/docs/workspace-administration/app-repository/import-helm-repository/app-repo.jpg)
 

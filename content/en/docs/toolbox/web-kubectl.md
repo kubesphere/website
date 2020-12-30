@@ -14,7 +14,7 @@ In this tutorial demonstrates how to use web kubectl to operate on and manage cl
 
 ## Use Web Kubectl
 
-1. Log in KubeSphere with an account granted the `platform-admin` role, hover over the **Toolbox** in the lower right corner and select **Kubectl**.
+1. Log in to KubeSphere with an account granted the `platform-admin` role, hover over the **Toolbox** in the lower right corner and select **Kubectl**.
 
     ![web-kubectl-enter](/images/docs/web-kubectl/web-kubectl-enter.png)
 

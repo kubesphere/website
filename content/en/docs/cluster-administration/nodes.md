@@ -13,7 +13,7 @@ This tutorial demonstrates what a cluster administrator can view and do for node
 
 ## Prerequisites
 
-You need an account granted a role including the authorization of **Clusters Management**. For example, you can log in the console as `admin` directly or create a new role with the authorization and assign it to an account.
+You need an account granted a role including the authorization of **Clusters Management**. For example, you can log in to the console as `admin` directly or create a new role with the authorization and assign it to an account.
 
 ## Node Status
 

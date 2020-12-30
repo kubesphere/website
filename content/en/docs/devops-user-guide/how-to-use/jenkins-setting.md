@@ -8,7 +8,7 @@ Weight: 11240
 
 Jenkins is powerful and flexible and it has become the de facto standard for CI/CD workflows. Nevertheless, many plugins require users to set system-level configurations before they can be put to use.
 
-The KubeSphere DevOps System offers containerized CI/CD functions based on Jenkins. To provide users with a schedulable Jenkins environment, KubeSphere uses **Configuration-as-Code** for Jenkins system settings, which requires users to log in the Jenkins dashboard and reload the configuration after it is modified. In the current release, Jenkins system settings are not available on the KubeSphere console, which will be supported in upcoming releases.
+The KubeSphere DevOps System offers containerized CI/CD functions based on Jenkins. To provide users with a schedulable Jenkins environment, KubeSphere uses **Configuration-as-Code** for Jenkins system settings, which requires users to log in to the Jenkins dashboard and reload the configuration after it is modified. In the current release, Jenkins system settings are not available on the KubeSphere console, which will be supported in upcoming releases.
 
 This tutorial demonstrates how to set up Jenkins and reload configurations on the Jenkins dashboard.
 
@@ -20,7 +20,7 @@ You have enabled [the KubeSphere DevOps System](../../../pluggable-components/de
 
 It is recommended that you configure Jenkins in KubeSphere through Configuration-as-Code (CasC). The built-in Jenkins CasC file is stored as a [ConfigMap](../../../project-user-guide/configuration/configmaps/).
 
-1. Log in KubeSphere as `admin`. Click **Platform** in the top left corner and select **Clusters Management**.
+1. Log in to KubeSphere as `admin`. Click **Platform** in the top left corner and select **Clusters Management**.
 
    ![cluster-management](/images/docs/devops-user-guide/using-devops/jenkins-system-settings/cluster-management.jpg)
 
@@ -38,7 +38,7 @@ It is recommended that you configure Jenkins in KubeSphere through Configuration
 
    ![edit-jenkins](/images/docs/devops-user-guide/using-devops/jenkins-system-settings/edit-jenkins.jpg)
 
-## Log in Jenkins to Reload Configurations
+## Log in to Jenkins to Reload Configurations
 
 After you modified `jenkins-casc-config`, you need to reload your updated system configuration on the **Configuration as Code** page on the Jenkins dashboard. This is because system settings configured directly through the Jenkins dashboard may be overwritten by the CasC configuration after Jenkins is rescheduled.
 
@@ -56,7 +56,7 @@ After you modified `jenkins-casc-config`, you need to reload your updated system
    http://192.168.0.4:30180
    ```
 
-3. Access Jenkins at `http://Node IP:Port Number`. When KubeSphere is installed, the Jenkins dashboard is also installed by default. Besides, Jenkins is configured with KubeSphere LDAP, which means you can log in Jenkins with KubeSphere accounts (e.g. `admin/P@88w0rd`) directly.
+3. Access Jenkins at `http://Node IP:Port Number`. When KubeSphere is installed, the Jenkins dashboard is also installed by default. Besides, Jenkins is configured with KubeSphere LDAP, which means you can log in to Jenkins with KubeSphere accounts (e.g. `admin/P@88w0rd`) directly.
 
    ![jenkins-dashboard](/images/docs/devops-user-guide/using-devops/jenkins-system-settings/jenkins-dashboard.jpg)
 
@@ -66,7 +66,7 @@ After you modified `jenkins-casc-config`, you need to reload your updated system
 
    {{</ notice >}} 
 
-4. After you log in the dashboard, click **Manage Jenkins** from the navigation bar.
+4. After you log in to the dashboard, click **Manage Jenkins** from the navigation bar.
 
    ![manage-jenkins](/images/docs/devops-user-guide/using-devops/jenkins-system-settings/manage-jenkins.jpg)
 
