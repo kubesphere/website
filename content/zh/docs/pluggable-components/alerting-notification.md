@@ -22,9 +22,9 @@ weight: 6600
 
 ### 在 Linux 上安装
 
-当您在 Linux 上多节点安装 KubeSphere 时，需要创建一个配置文件，该文件列出了所有 KubeSphere 组件。
+当您在 Linux 上安装多节点 KubeSphere 时，需要创建一个配置文件，该文件列出了所有 KubeSphere 组件。
 
-1. 基于[在 Linux 上安装 KubeSphere](../../installing-on-linux/introduction/multioverview/) 的教程，创建一个默认文件 `config-sample.yaml`。通过执行以下命令修改该文件：
+1. 基于[在 Linux 上安装 KubeSphere](../../installing-on-linux/introduction/multioverview/) 的教程，您需要创建一个默认文件 `config-sample.yaml`。通过执行以下命令修改该文件：
 
     ```bash
     vi config-sample.yaml
