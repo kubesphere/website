@@ -33,7 +33,7 @@ This tutorial walks you through an example of deploying MySQL from the App Store
 
    ![deploy-mysql](/images/docs/appstore/built-in-apps/mysql-app/deploy-mysql.jpg)
 
-4. In **App Config**, uncomment the `mysqlRootPassword` field or customize the password. Click **Deploy** to continue.
+4. In **App Config**, uncomment the `mysqlRootPassword` field and customize the password. Click **Deploy** to continue.
 
    ![uncomment-password](/images/docs/appstore/built-in-apps/mysql-app/uncomment-password.jpg)
 
