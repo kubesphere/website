@@ -394,7 +394,7 @@ The example above demonstrates the process of a default minimal installation. To
    sudo rm /etc/security/limits.d/20-nproc.conf
    ```
 
-- Root the system.
+- Reboot the system.
 
    ```bash
    reboot
