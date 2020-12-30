@@ -6,7 +6,7 @@ description: '如何通过应用商店在 KubeSphere 中部署 Tomcat'
 link title: "在 KubeSphere 中部署 Tomcat"
 weight: 14292
 ---
-[Apache Tomcat](https://tomcat.apache.org/index.html) 支撑着诸多行业和组织中的众多大规模关键业务 Web 应用。它提供了一个纯 Java HTTP Web 服务器环境，可用于执行 Java 代码。
+[Apache Tomcat](https://tomcat.apache.org/index.html) 支撑着诸多行业和组织中的众多大规模任务关键型 Web 应用。它提供了一个纯 Java HTTP Web 服务器环境，可用于执行 Java 代码。
 
 本教程演示如何从 KubeSphere 的应用商店部署 Tomcat。
 
