@@ -186,7 +186,7 @@ yum install wget # This tool will be used later to download KubeKey.
 
 {{< notice note >}} 
 
-取决于将要安装的 Kubernetes 版本，您可能不需要安所有装依赖项。有关更多信息，请参见[依赖项要求](../../../installing-on-linux/introduction/multioverview/)。
+取决于将要安装的 Kubernetes 版本，您可能不需要安装所有依赖项。有关更多信息，请参见[依赖项要求](../../../installing-on-linux/introduction/multioverview/)。
 
 {{</ notice >}} 
 
