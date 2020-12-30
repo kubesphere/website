@@ -55,7 +55,7 @@ weight: 14260
 
    ![log-in-mysql](/images/docs/zh-cn/appstore/built-in-apps/mysql-app/log-in-mysql.jpg)
 
-### 步骤3：从集群外访问 MySQL 数据库
+### 步骤 3：从集群外访问 MySQL 数据库
 
 要从集群外访问 MySQL，您需要先用 NodePort 暴露该应用。
 
