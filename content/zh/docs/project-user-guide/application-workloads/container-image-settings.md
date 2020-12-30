@@ -16,9 +16,9 @@ weight: 10280
 
 ## 容器镜像
 
-### Pod 副本
+### 容器组副本数量
 
-点击**加号**或**减号**图标设置 Pod 副本数量，该参数显示在清单文件中的 `.spec.replicas` 字段。该选项对守护进程集不可用。
+点击**加号**或**减号**图标设置 Pod（即容器组）副本数量，该参数显示在清单文件中的 `.spec.replicas` 字段。该选项对守护进程集不可用。
 
 ![Pod 副本](/images/docs/zh-cn/project-user-guide/application-workloads/container-image-settings/pod-replicas.PNG)
 
@@ -54,8 +54,8 @@ weight: 10280
 
 容器预留的资源配额包括 CPU 和内存资源。这意味着容器独占这些资源，防止其他服务或进程因资源不足争夺资源而导致应用程序不可用。
 
-- CPU 预留显示在清单文件中的 `.spec.containers[].resources.requests.cpu`，可以超过 CPU 预留。
-- 内存预留显示在清单文件中的 `.spec.containers[].resources.requests.memory`。可以超过内存预留，但节点内存不足时可能会清理容器。
+- CPU 预留显示在清单文件中的 `.spec.containers[].resources.requests.cpu`，实际用量可以超过 CPU 预留。
+- 内存预留显示在清单文件中的 `.spec.containers[].resources.requests.memory`。实际用量可以超过内存预留，但节点内存不足时可能会清理容器。
 
 ![资源预留和限制](/images/docs/zh-cn/project-user-guide/application-workloads/container-image-settings/resource-request-limit.PNG)
 
@@ -63,12 +63,12 @@ weight: 10280
 
 您可以指定应用程序能使用的资源上限，包括 CPU 和内存，防止占用过多资源。
 
-- CPU 限制显示在清单文件中的 `.spec.containers[].resources.limits.cpu`。可以短时间超过 CPU 限制，容器不会被停止。
-- 内存限制显示在清单文件中的 `.spec.containers[].resources.limits.memory`。不能超过内存限制，如果超过了，容器可能会被停止或者被调度到其他资源充足的机器上。
+- CPU 限制显示在清单文件中的 `.spec.containers[].resources.limits.cpu`。实际用量可以短时间超过 CPU 限制，容器不会被停止。
+- 内存限制显示在清单文件中的 `.spec.containers[].resources.limits.memory`。实际用量不能超过内存限制，如果超过了，容器可能会被停止或者被调度到其他资源充足的机器上。
 
 {{< notice note >}}
 
-CPU 资源以 CPU 单位计量，或者以 KubeSphere 中的 **Core** 计量。内存资源以字节计量，或者以 KubeSphere 中的 **Mi** 计量。
+CPU 资源以 CPU 单位计量，即 KubeSphere 中的 **Core**。内存资源以字节计量，即 KubeSphere 中的 **Mi**。
 
 {{</ notice >}} 
 
@@ -98,19 +98,19 @@ CPU 资源以 CPU 单位计量，或者以 KubeSphere 中的 **Core** 计量。�
 
 #### **健康检查器**
 
-支持**存活**、**就绪**和**启动**检查。存活检查用于检测何时重启容器。
+支持**存活**、**就绪**和**启动**检查。
 
 ![容器健康检查](/images/docs/zh-cn/project-user-guide/application-workloads/container-image-settings/container-health-check.PNG)
 
 - **容器存活检查**：使用存活探针检测容器是否在运行，该参数显示在 `livenessProbe` 字段。
 
-- **容器就绪检查**：使用就绪探针检测容器是否准备好为请求提供服务，该参数显示在 `readinessProbe` 字段。
+- **容器就绪检查**：使用就绪探针检测容器是否准备好处理请求，该参数显示在 `readinessProbe` 字段。
 
 - **容器启动检查**：使用启动探针检测容器应用程序是否已经启动，该参数显示在 `startupProbe` 字段。
 
 存活、就绪和启动检查都包含以下配置：
 
-- **HTTPGetAction（HTTP 请求检查）**：在容器 IP 地址的指定端口和路径上执行 HTTP `Get` 请求，如果响应的状态码大于等于 200 且小于 400，则认为诊断成功。支持的参数包括：
+- **HTTPGetAction（HTTP 请求检查）**：在容器 IP 地址的指定端口和路径上执行 HTTP `Get` 请求，如果响应状态码大于等于 200 且小于 400，则认为诊断成功。支持的参数包括：
 
   ![HTTP 请求检查](/images/docs/zh-cn/project-user-guide/application-workloads/container-image-settings/http-request-check.PNG)
 
@@ -120,7 +120,7 @@ CPU 资源以 CPU 单位计量，或者以 KubeSphere 中的 **Core** 计量。�
   - **初始延迟**：容器启动后，存活探针启动之前等待的秒数，由 `initialDelaySeconds` 指定。默认为 0。
   - **执行探测频率**：探测频率（以秒为单位），由 `periodSeconds` 指定。默认为 10，最小值为 1。
   - **超时时间**：探针超时的秒数，由 `timeoutSeconds` 指定。默认为 1，最小值为 1。
-  - **健康阈值**：探测失败后，视为探测成功的最小连续成功次数，由 `successThreshold` 指定。默认为 1，存活探针和启动探针内必须为 1。最小值为 1。
+  - **健康阈值**：探测失败后，视为探测成功的最小连续成功次数，由 `successThreshold` 指定。默认为 1，存活探针和启动探针的该值必须为 1。最小值为 1。
   - **不健康阈值**：探测成功后，视为探测失败的最小连续失败次数，由 `failureThreshold` 指定。默认为 3，最小值为 1。
 
 - **TCPSocketAction（TCP 端口检查）**：在容器 IP 地址的指定端口上执行 TCP 检查。如果该端口打开，则认为诊断成功。支持的参数包括：
@@ -131,7 +131,7 @@ CPU 资源以 CPU 单位计量，或者以 KubeSphere 中的 **Core** 计量。�
   - **初始延迟**：容器启动后，存活探针启动之前等待的秒数，由 `initialDelaySeconds` 指定。默认为 0。
   - **执行探测频率**：探测频率（以秒为单位），由 `periodSeconds` 指定。默认为 10，最小值为 1。
   - **超时时间**：探针超时的秒数，由 `timeoutSeconds` 指定。默认为 1，最小值为 1。
-  - **健康阈值**：探测失败后，视为探测成功的最小连续成功次数，由 `successThreshold` 指定。默认为 1，存活探针和启动探针内必须为 1。最小值为 1。
+  - **健康阈值**：探测失败后，视为探测成功的最小连续成功次数，由 `successThreshold` 指定。默认为 1，存活探针和启动探针的该值必须为 1。最小值为 1。
   - **不健康阈值**：探测成功后，视为探测失败的最小连续失败次数，由 `failureThreshold` 指定。默认为 3，最小值为 1。
   
 - **ExecAction（执行命令检查）**：在容器中执行指定命令。如果命令退出时返回代码为 0，则认为诊断成功。支持的参数包括：
@@ -142,7 +142,7 @@ CPU 资源以 CPU 单位计量，或者以 KubeSphere 中的 **Core** 计量。�
   - **初始延迟**：容器启动后，存活探针启动之前等待的秒数，由 `initialDelaySeconds` 指定。默认为 0。
   - **执行探测频率**：探测频率（以秒为单位），由 `periodSeconds` 指定。默认为 10，最小值为 1。
   - **超时时间**：探针超时的秒数，由 `timeoutSeconds` 指定。默认为 1，最小值为 1。
-  - **健康阈值**：探测失败后，视为探测成功的最小连续成功次数，由 `successThreshold` 指定。默认为 1，存活探针和启动探针内必须为 1。最小值为 1。
+  - **健康阈值**：探测失败后，视为探测成功的最小连续成功次数，由 `successThreshold` 指定。默认为 1，存活探针和启动探针的该值必须为 1。最小值为 1。
   - **不健康阈值**：探测成功后，视为探测失败的最小连续失败次数，由 `failureThreshold` 指定。默认为 3，最小值为 1。
 
 有关健康检查的更多信息，请访问[容器探针](https://kubernetes.io/zh/docs/concepts/workloads/pods/pod-lifecycle/#container-probes)。
@@ -153,8 +153,8 @@ CPU 资源以 CPU 单位计量，或者以 KubeSphere 中的 **Core** 计量。�
 
 ![启动命令](/images/docs/zh-cn/project-user-guide/application-workloads/container-image-settings/start-command.PNG)
 
-- **运行命令**是指清单文件中容器的 `command` 字段。
-- **参数**是指清单文件中容器的 `args` 字段。
+- **运行命令**对应清单文件中容器的 `command` 字段。
+- **参数**对应清单文件中容器的 `args` 字段。
 
 有关该命令的更多信息，请访问[为容器设置启动时要执行的命令和参数](https://kubernetes.io/zh/docs/tasks/inject-data-application/define-command-argument-container/)。
 
@@ -170,7 +170,7 @@ CPU 资源以 CPU 单位计量，或者以 KubeSphere 中的 **Core** 计量。�
 
 有关该命令的更多信息，请访问 [Pod 变量](https://kubernetes.io/zh/docs/tasks/inject-data-application/environment-variable-expose-pod-information/)。
 
-#### **容器 Security Context**
+#### **容器组 Security Context**
 
 Security Context 定义 Pod 或容器的特权和访问控制设置。有关 Security Context 的更多信息，请访问 [Pod 安全策略](https://kubernetes.io/zh/docs/concepts/policy/pod-security-policy/)。
 
@@ -210,7 +210,7 @@ Security Context 定义 Pod 或容器的特权和访问控制设置。有关 Sec
 
 - **滚动更新（推荐）**
 
-  如果 `.spec.template` 已更新，有状态副本集中的 Pod 将被自动删除，并创建新的 Pod 来替换。Pod 将按照保留顺序进行更新，依次删除和创建。前一个 Pod 更新完成并开始运行后，才会开始更新下一个新的 Pod。
+  如果 `.spec.template` 已更新，有状态副本集中的 Pod 将被自动删除，并创建新的 Pod 来替换。Pod 将按照反向顺序更新，依次删除和创建。前一个 Pod 更新完成并开始运行后，才会开始更新下一个新的 Pod。
 
 - **删除容器组时更新**
 
@@ -246,7 +246,7 @@ Security Context 定义 Pod 或容器的特权和访问控制设置。有关 Sec
 
 部署中的**更新时容器组数量**与有状态副本集中的不同。
 
-- **容器组最大不可用数量**：升级过程中可能不可用的 Pod 的最大数量，由 `maxUnavailable` 指定。默认值是 25%。
+- **容器组最大不可用数量**：升级过程中允许不可用的 Pod 的最大数量，由 `maxUnavailable` 指定。默认值是 25%。
 - **容器组最大超出数量**：可调度的超过期望数量的 Pod 的最大数量，由 `maxSurge` 指定。默认值是 25%。
 
 {{</ tab >}}
@@ -261,16 +261,16 @@ Security Context 定义 Pod 或容器的特权和访问控制设置。有关 Sec
 
 守护进程集中的**更新时容器组数量**与有状态副本集中的不同。
 
-- **容器组最大不可用数量**：升级过程中可能不可用的 Pod 的最大数量，由 `maxUnavailable` 指定。默认值是 20%。
+- **容器组最大不可用数量**：升级过程中允许不可用的 Pod 的最大数量，由 `maxUnavailable` 指定。默认值是 20%。
 - **最小就绪时间**：新创建的守护进程集的 Pod 被视为可用之前的最少秒数，由 `minReadySeconds` 指定。默认值是 0。
 
 {{</ tab >}}
 
 {{</ tabs >}}
 
-### 容器 Security Context
+### 容器组 Security Context
 
-Security Context 定义 Pod 或容器的特权和访问控制设置。有关  Pod Security Context 的更多信息，请访问 [Pod 安全策略](https://kubernetes.io/zh/docs/concepts/policy/pod-security-policy/)。
+Security Context 定义 Pod 或容器的特权和访问控制设置。有关 Pod Security Context 的更多信息，请访问 [Pod 安全策略](https://kubernetes.io/zh/docs/concepts/policy/pod-security-policy/)。
 
 ### 部署模式
 

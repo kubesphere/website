@@ -98,7 +98,7 @@ This value is indicated by the `imagePullPolicy` field. On the dashboard, you ca
 
 #### **Health Checker**
 
-Support **Liveness**, **Readiness**, and **Startup**. The survival check is used to detect when to restart the container.
+Support **Liveness**, **Readiness**, and **Startup**.
 
 ![container-health-check](/images/docs/project-user-guide/workloads/container-health-check.jpg)
 
@@ -210,7 +210,7 @@ The drop-down menu under **Update Strategy** is indicated by the `.spec.updateSt
 
 - **RollingUpdate (Recommended)**
 
-  If `.spec.template` is updated, the Pods in the StatefulSet will be automatically deleted with new pods created as replacements. Pods are updated in reserve ordinal order, sequentially deleted and created. A new Pod update will not begin until the previous Pod becomes up and running after it is updated.
+  If `.spec.template` is updated, the Pods in the StatefulSet will be automatically deleted with new pods created as replacements. Pods are updated in reverse ordinal order, sequentially deleted and created. A new Pod update will not begin until the previous Pod becomes up and running after it is updated.
 
 - **OnDelete**
 
