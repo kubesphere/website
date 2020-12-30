@@ -32,7 +32,7 @@ In KubeSphere, a **Headless** service is also created when you create a Stateful
 
 ### Step 1: Open Dashboard
 
-Log in the console as `project-regular`. Go to **Application Workloads** of a project, select **Workloads**, and click **Create** under the tab **StatefulSets**.
+Log in to the console as `project-regular`. Go to **Application Workloads** of a project, select **Workloads**, and click **Create** under the tab **StatefulSets**.
 
 ![statefulsets](/images/docs/project-user-guide/workloads/statefulsets.jpg)
 

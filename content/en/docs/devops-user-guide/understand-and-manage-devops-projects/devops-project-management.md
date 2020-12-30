@@ -15,7 +15,7 @@ This tutorial demonstrates how to create and manage DevOps projects.
 
 ## Create a DevOps Project
 
-1. Log in the console of KubeSphere as `project-admin`. Go to **DevOps Projects** and click **Create**.
+1. Log in to the console of KubeSphere as `project-admin`. Go to **DevOps Projects** and click **Create**.
 
    ![devops-project-create](/images/docs/devops-user-guide/understand-and-manage-devops-projects/devops-project-management/devops-project-create.jpg) 
 

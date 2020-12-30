@@ -21,7 +21,7 @@ The blue-green release provides a zero downtime deployment, which means the new 
 
 ## Create Blue-green Deployment Job
 
-1. Log in KubeSphere as `project-regular`. Under **Categories**, click **Create Job** on the right of **Blue-green Deployment**.
+1. Log in to KubeSphere as `project-regular`. Under **Categories**, click **Create Job** on the right of **Blue-green Deployment**.
 
    ![blue-green-1](/images/docs/project-user-guide/grayscale-release/blue-green-deployment/blue-green-1.jpg)
 

@@ -17,7 +17,7 @@ Traffic mirroring, also called shadowing, is a powerful, risk-free method of tes
 
 ## Create Traffic Mirroring Job
 
-1. Log in KubeSphere as `project-regular`. Under **Categories**, click **Create Job** on the right of **Traffic Mirroring**.
+1. Log in to KubeSphere as `project-regular`. Under **Categories**, click **Create Job** on the right of **Traffic Mirroring**.
 
    ![traffic-mirroring-1](/images/docs/project-user-guide/grayscale-release/traffic-mirroring/traffic-mirroring-1.jpg)
 

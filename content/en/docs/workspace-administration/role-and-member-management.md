@@ -46,7 +46,7 @@ In **Workspace Roles**, there are four available built-in roles as shown below. 
 
 ## Create a Workspace Role
 
-1. Log in the console as `ws-admin` and go to **Workspace Roles** in **Workspace Settings**.
+1. Log in to the console as `ws-admin` and go to **Workspace Roles** in **Workspace Settings**.
 
    {{< notice note >}}
 

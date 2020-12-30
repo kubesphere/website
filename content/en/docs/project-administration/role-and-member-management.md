@@ -40,7 +40,7 @@ In **Project Roles**, there are three available built-in roles as shown below. B
 
 ## Create a Project Role
 
-1. Log in the console as `project-admin` and select a project (e.g. `demo-project`) under **Projects** list.
+1. Log in to the console as `project-admin` and select a project (e.g. `demo-project`) under **Projects** list.
 
     {{< notice note >}}
 

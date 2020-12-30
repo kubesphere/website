@@ -20,7 +20,7 @@ When you create workloads, [Services](../../../project-user-guide/application-wo
 
 ### Step 1: Open Dashboard
 
-Log in the web console of KubeSphere as `project-regular`. Go to **Configurations** of a project, choose **Secrets** and click **Create**.
+Log in to the web console of KubeSphere as `project-regular`. Go to **Configurations** of a project, choose **Secrets** and click **Create**.
 
 ![open-dashboard](/images/docs/project-user-guide/configurations/image-registries/open-dashboard.jpg)
 
@@ -41,8 +41,8 @@ You can see the Secret's manifest file in YAML format by enabling **Edit Mode** 
 Select **Image Registry Secret** for **Type**. To use images from your private registry as you create application workloads, you need to specify the following fields.
 
 - **Registry Address**. The address of the image registry that stores images for you to use when creating application workloads.
-- **User Name**. The account name you use to log in the registry.
-- **Password**. The password you use to log in the registry.
+- **User Name**. The account name you use to log in to the registry.
+- **Password**. The password you use to log in to the registry.
 - **Email** (Optional). Your email address.
 
 ![image-registry-info](/images/docs/project-user-guide/configurations/image-registries/image-registry-info.jpg)

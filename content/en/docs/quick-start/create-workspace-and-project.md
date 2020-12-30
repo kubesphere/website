@@ -34,15 +34,15 @@ You can create multiple workspaces within a KubeSphere cluster. Under each works
 
 After KubeSphere is installed, you need to add different users with varied roles to the platform so that they can work at different levels on various resources. Initially, you only have one default account, which is `admin`, granted the role `platform-admin`. In the first task, you will create an account `user-manager` and further create more accounts as `user-manager`.
 
-1. Log in the web console as `admin` with the default account and password (`admin/P@88w0rd`).
+1. Log in to the web console as `admin` with the default account and password (`admin/P@88w0rd`).
 
    {{< notice tip >}}
-For account security, it is highly recommended that you change your password the first time you log in the console. To change your password, select **User Settings** in the drop-down menu in the top-right corner. In **Password Setting**, set a new password. You also can change your locale in the User Settings.
+For account security, it is highly recommended that you change your password the first time you log in to the console. To change your password, select **User Settings** in the drop-down menu in the top-right corner. In **Password Setting**, set a new password. You also can change your locale in the User Settings.
    {{</ notice >}}
 
    ![user-settings](https://ap3.qingstor.com/kubesphere-website/docs/access-control.png)
 
-2. After you log in the console, click **Platform** in the top-left corner and select **Access Control**.
+2. After you log in to the console, click **Platform** in the top-left corner and select **Access Control**.
 
    ![access-control](https://ap3.qingstor.com/kubesphere-website/docs/access-control.png)
 
@@ -88,7 +88,7 @@ To log out, click your username in the top-right corner and select **Log Out**.
 
 In this task, you need to create a workspace using the account `ws-manager` created in the previous task. As the basic logic unit for the management of projects, DevOps projects and organization members, workspaces underpin multi-tenant system of KubeSphere.
 
-1. Log in KubeSphere as `ws-manager` which has the authorization to manage all workspaces on the platform. Click **Platform** in the top-left corner and select **Access Control**. In **Workspaces**, you can see there is only one default workspace **system-workspace** listed, where system-related components and services run. You are not allowed to delete this workspace.
+1. Log in to KubeSphere as `ws-manager` which has the authorization to manage all workspaces on the platform. Click **Platform** in the top-left corner and select **Access Control**. In **Workspaces**, you can see there is only one default workspace **system-workspace** listed, where system-related components and services run. You are not allowed to delete this workspace.
 
    ![create-workspace](https://ap3.qingstor.com/kubesphere-website/docs/create-workspace.jpg)
 
@@ -122,7 +122,7 @@ The actual role name follows a naming convention: `<workspace name>-<role name>`
 
 In this task, you need to create a project using the account `project-admin` created in the previous task. A project in KubeSphere is the same as a namespace in Kubernetes, which provides virtual isolation for resources. For more information, see [Namespaces](https://kubernetes.io/docs/concepts/overview/working-with-objects/namespaces/).
 
-1. Log in KubeSphere as `project-admin`. In **Projects**, click **Create**.
+1. Log in to KubeSphere as `project-admin`. In **Projects**, click **Create**.
 
    ![kubesphere-projects](https://ap3.qingstor.com/kubesphere-website/docs/kubesphere-projects.png)
 
@@ -168,7 +168,7 @@ If you want to expose services using the type `LoadBalancer`, you need to use th
 
 After you finish the above tasks, you know that users can be granted different roles at different levels. The roles used in previous tasks are all built-in ones created by KubeSphere itself. In this task, you will learn how to define a role yourself to meet the needs in your work.
 
-1. Log in the console as `admin` again and go to **Access Control**.
+1. Log in to the console as `admin` again and go to **Access Control**.
 
 2. In **Account Roles**, there are four system roles listed which cannot be deleted or edited. Click **Create** and set a **Role Identifier**. In this example, a role named `roles-manager` will be created.
 
@@ -208,7 +208,7 @@ To create a DevOps project, you need to install KubeSphere DevOps system in adva
 
 {{</ notice >}}
 
-1. Log in the console as `project-admin` for this task. In **DevOps Projects**, click **Create**.
+1. Log in to the console as `project-admin` for this task. In **DevOps Projects**, click **Create**.
 
    ![devops-project](https://ap3.qingstor.com/kubesphere-website/docs/20200827145521.png)
 

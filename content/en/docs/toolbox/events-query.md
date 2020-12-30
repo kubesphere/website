@@ -16,7 +16,7 @@ This guide demonstrates how you can do multi-level, fine-grained event queries t
 
 ## Query Events
 
-1. The event query function is available for all users. Log in the console with any account, hover over the **Toolbox** in the lower right corner and select **Event Search**.
+1. The event query function is available for all users. Log in to the console with any account, hover over the **Toolbox** in the lower right corner and select **Event Search**.
 
     ![events_query_guide](/images/docs/events/events_query_guide.png)
 

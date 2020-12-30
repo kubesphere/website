@@ -19,7 +19,7 @@ You need to create a workspace, a project and an account (`project-regular`). Th
 
 ### Step 1: Open the dashboard
 
-Log in the console as `project-regular`. Go to **Application Workloads** of a project, select **Workloads**, and click **Create** under the tab **Deployments**.
+Log in to the console as `project-regular`. Go to **Application Workloads** of a project, select **Workloads**, and click **Create** under the tab **Deployments**.
 
 ![deployments](/images/docs/project-user-guide/workloads/deployments.png)
 

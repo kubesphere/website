@@ -40,7 +40,7 @@ This example pipeline includes the following six stages.
 
 ### Step 1: Create credentials
 
-1. Log in the KubeSphere console as `project-regular`. Go to your DevOps project and create the following credentials in **Credentials** under **Project Management**. For more information about how to create credentials, see [Credential Management](../credential-management/).
+1. Log in to the KubeSphere console as `project-regular`. Go to your DevOps project and create the following credentials in **Credentials** under **Project Management**. For more information about how to create credentials, see [Credential Management](../credential-management/).
 
    {{< notice note >}} 
 
@@ -266,7 +266,7 @@ This stage uses SonarQube to test your code. You can skip this stage if you do n
 
    ![docker-credential](/images/docs/devops-user-guide/using-devops/create-a-pipeline-using-graphical-editing-panels/docker-credential.jpg)
 
-6. Click **Add nesting steps** (the first one) in the **withCredentials** step created above. Select **shell** and enter the following command in the pop-up window, which is used to log in Docker Hub. Click **OK** to confirm.
+6. Click **Add nesting steps** (the first one) in the **withCredentials** step created above. Select **shell** and enter the following command in the pop-up window, which is used to log in to Docker Hub. Click **OK** to confirm.
 
    ```shell
    echo "$DOCKER_PASSWORD" | docker login $REGISTRY -u "$DOCKER_USERNAME" --password-stdin
@@ -379,7 +379,7 @@ On the **Code Quality** page, view the code analysis result of this example pipe
 
    {{</ notice >}} 
 
-4. Now that the pipeline has run successfully, an image will be pushed to Docker Hub. Log in Docker Hub and check the result.
+4. Now that the pipeline has run successfully, an image will be pushed to Docker Hub. Log in to Docker Hub and check the result.
 
    ![dockerhub-image](/images/docs/devops-user-guide/using-devops/create-a-pipeline-using-graphical-editing-panels/dockerhub-image.jpg)
 
