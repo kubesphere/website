@@ -1,43 +1,43 @@
 ---
-title: "Deploy KubeSphere on Bare Metal"
-keywords: 'Kubernetes, KubeSphere, bare-metal'
-description: 'How to install KubeSphere on bare metal.'
-linkTitle: "Deploy KubeSphere on Bare Metal"
+title: "在裸机上安装 KubeSphere"
+keywords: 'Kubernetes, KubeSphere, 裸机'
+description: '如何在裸机上安装 KubeSphere。'
+linkTitle: "在裸机上安装 KubeSphere"
 weight: 3320
 ---
 
-## Introduction
+## 介绍
 
-In addition to the deployment on cloud, KubeSphere can also be installed on bare metal. As the virtualization layer is removed, the infrastructure overhead is drastically reduced, which brings more compute and storage resources to app deployments. As a result, hardware efficiency is improved. Refer to the example below to deploy KubeSphere on bare metal.
+KubeSphere 除了可以在云上安装，还可以在裸机上安装。由于在裸机上没有虚拟层，基础设施的开销大大降低，从而可以给部署的应用提供更多的计算和存储资源，硬件效率得到提高。以下示例介绍如何在裸机上安装 KubeSphere。
 
-## Prerequisites
+## 准备工作
 
-- Make sure you already know how to install KubeSphere on a multi-node cluster based on the tutorial [Multi-Node Installation](../../../installing-on-linux/introduction/multioverview/).
-- Server and network redundancy in your environment.
-- For a production environment, it is recommended that you prepare persistent storage and create a StorageClass in advance. For development and testing, you can use the integrated OpenEBS to provision LocalPV as the storage service directly.
+- 您需要了解如何在多节点集群中安装 KubeSphere。有关详情，请参见[多节点安装](../../../installing-on-linux/introduction/multioverview/)。
+- 您的环境中需要有足够的服务器和网络冗余。
+- 如果搭建生产环境，建议您提前准备持久化存储并创建 StorageClass。如果搭建开发测试环境，您可以直接使用集成的 OpenEBS 配置 LocalPV 存储服务。
 
-## Prepare Linux Hosts
+## 准备 Linux 主机
 
-This tutorial uses 3 physical machines of **DELL 620 Intel (R) Xeon (R) CPU E5-2640 v2 @ 2.00GHz (32G memory)**, on which **CentOS Linux release 7.6.1810 (Core)** will be installed for the minimal deployment of KubeSphere.
+本教程使用 3 台物理机，硬件配置为 **DELL 620 Intel (R) Xeon (R) CPU E5-2640 v2 @ 2.00GHz (32G memory)**。在这 3 台物理机上将安装 **CentOS Linux release 7.6.1810 (Core)** 操作系统，用于 KubeSphere 最小化安装。
 
-### Install CentOS
+### 安装 CentOS
 
-Download and install the [image](http://mirror1.es.uci.edu/centos/7.6.1810/isos/x86_64/CentOS-7-x86_64-DVD-1810.iso) first. Make sure you allocate at least 200 GB to the root directory where it stores docker images (you can skip this if you are installing KubeSphere for testing).
+请提前下载并安装[ CentOS 镜像](http://mirror1.es.uci.edu/centos/7.6.1810/isos/x86_64/CentOS-7-x86_64-DVD-1810.iso)。请确保根目录已至少分配 200 GB 空间用于存储 Docker 镜像（如果 KubeSphere 仅用于测试，您可以跳过这一步）。
 
-For more information about the supported systems, see [System Requirements](../../../installing-on-linux/introduction/multioverview/). 
+有关系统要求的更多信息，请参见[系统要求](../../../installing-on-linux/introduction/multioverview/)。
 
-Here is a list of the three hosts for your reference.
+三台主机的角色分配如下，供参考。
 
 
-| Host IP | Host Name | Role |
+| 主机 IP 地址 | 主机名 | 角色 |
 | --- | --- | --- |
 |192.168.60.152|master1|master1, etcd|
 |192.168.60.153|worker1|worker|
 |192.168.60.154|worker2|worker|
 
-### NIC settings
+### 设置网卡
 
-1. Clear NIC configurations.
+1. 清空网卡配置。
 
    ```bash
    ifdown em1
@@ -55,19 +55,19 @@ Here is a list of the three hosts for your reference.
    rm -rf /etc/sysconfig/network-scripts/ifcfg-em2
    ```
 
-2. Create the NIC bonding.
+2. 创建 bond 网卡。
 
    ```bash
    nmcli con add type bond con-name bond0 ifname bond0 mode 802.3ad ip4 192.168.60.152/24 gw4 192.168.60.254
    ```
 
-3. Set the bonding mode.
+3. 设置 bond 模式。
 
    ```bash
    nmcli con mod id bond0 bond.options mode=802.3ad,miimon=100,lacp_rate=fast,xmit_hash_policy=layer2+3
    ```
 
-4. Bind the physical NIC.
+4. 将物理网卡绑定至 bond。
 
    ```bash
    nmcli con add type bond-slave ifname em1 con-name em1 master bond0
@@ -77,14 +77,14 @@ Here is a list of the three hosts for your reference.
    nmcli con add type bond-slave ifname em2 con-name em2 master bond0
    ```
 
-5. Change the NIC mode.
+5. 修改网卡模式。
 
    ```bash
    vi /etc/sysconfig/network-scripts/ifcfg-bond0
    BOOTPROTO=static
    ```
 
-6. Restart Network Manager.
+6. 重启 Network Manager。
 
    ```bash
    systemctl restart NetworkManager
@@ -94,7 +94,7 @@ Here is a list of the three hosts for your reference.
    nmcli con # Display NIC information
    ```
 
-7. Change the host name and DNS.
+7. 修改主机名和 DNS。
 
    ```bash
    hostnamectl set-hostname worker-1
@@ -104,9 +104,9 @@ Here is a list of the three hosts for your reference.
    vim /etc/resolv.conf
    ```
 
-### Time settings
+### 设置时间
 
-1. Synchronize time.
+1. 开启时间同步。
 
    ```bash
    yum install -y chrony
@@ -124,21 +124,21 @@ Here is a list of the three hosts for your reference.
    timedatectl set-ntp true
    ```
 
-2. Set the time zone.
+2. 设置时区。
 
    ```bash
    timedatectl set-timezone Asia/Shanghai
    ```
 
-3. Check if the ntp-server is available.
+3. 检查 ntp-server 是否可用。
 
    ```bash
    chronyc activity -v
    ```
 
-### Firewall settings
+### 设置防火墙
 
-Execute the following commands to stop and disable the FirewallD service:
+执行以下命令停止并禁用 firewalld 服务：
 
 ```bash
 iptables -F
@@ -156,9 +156,9 @@ systemctl stop firewalld
 systemctl disable firewalld
 ```
 
-### Package updates and dependencies
+### 更新系统包和依赖项
 
-Execute the following commands to update system packages and install dependencies.
+执行以下命令更新系统包并安装依赖项：
 
 ```bash
 yum update
@@ -186,21 +186,21 @@ yum install wget # This tool will be used later to download KubeKey.
 
 {{< notice note >}} 
 
-You may not need to install all the dependencies depending on the Kubernetes version to be installed. For more information, see [Dependency Requirements](../../../installing-on-linux/introduction/multioverview/).
+取决于将要安装的 Kubernetes 版本，您可能不需要安装所有依赖项。有关更多信息，请参见[依赖项要求](../../../installing-on-linux/introduction/multioverview/)。
 
 {{</ notice >}} 
 
-## Download KubeKey
+## 下载 KubeKey
 
-[Kubekey](https://github.com/kubesphere/kubekey) is the next-gen installer which provides an easy, fast and flexible way to install Kubernetes and KubeSphere.
+[KubeKey](https://github.com/kubesphere/kubekey) 是新一代 Kubernetes 和 KubeSphere 安装器，可帮助您以简单、快速、灵活的方式安装 Kubernetes 和 KubeSphere。
 
-Follow the step below to download KubeKey.
+请按照以下步骤下载 KubeKey。
 
 {{< tabs >}}
 
-{{< tab "Good network connections to GitHub/Googleapis" >}}
+{{< tab "如果您能正常访问 GitHub/Googleapis" >}}
 
-Download KubeKey from its [GitHub Release Page](https://github.com/kubesphere/kubekey/releases) or use the following command directly.
+从 [GitHub Release Page](https://github.com/kubesphere/kubekey/releases) 下载 KubeKey 或使用以下命令：
 
 ```bash
 curl -sfL https://get-kk.kubesphere.io | VERSION=v1.0.1 sh -
@@ -208,15 +208,15 @@ curl -sfL https://get-kk.kubesphere.io | VERSION=v1.0.1 sh -
 
 {{</ tab >}}
 
-{{< tab "Poor network connections to GitHub/Googleapis" >}}
+{{< tab "如果您访问 GitHub/Googleapis 受限" >}}
 
-Run the following command first to make sure you download KubeKey from the correct zone.
+先执行以下命令以确保您从正确的区域下载 KubeKey：
 
 ```bash
 export KKZONE=cn
 ```
 
-Run the following command to download KubeKey:
+执行以下命令下载 KubeKey：
 
 ```bash
 curl -sfL https://get-kk.kubesphere.io | VERSION=v1.0.1 sh -
@@ -224,9 +224,9 @@ curl -sfL https://get-kk.kubesphere.io | VERSION=v1.0.1 sh -
 
 {{< notice note >}}
 
-After you download KubeKey, if you transfer it to a new machine also with poor network connections to Googleapis, you must run `export KKZONE=cn` again before you proceed with the steps below.
+在您下载 KubeKey 后，如果您将其传至新的机器，且访问 Googleapis 同样受限，在您执行以下步骤之前请务必再次执行 `export KKZONE=cn` 命令。
 
-{{</ notice >}} 
+{{</ notice >}}
 
 {{</ tab >}}
 
@@ -234,21 +234,21 @@ After you download KubeKey, if you transfer it to a new machine also with poor n
 
 {{< notice note >}}
 
-The commands above download the latest release (v1.0.1) of KubeKey. You can change the version number in the command to download a specific version.
+执行以上命令会下载最新版 KubeKey (v1.0.1)，您可以修改命令中的版本号下载指定版本。
 
 {{</ notice >}} 
 
-Make `kk` executable:
+为 `kk` 文件添加可执行权限。
 
 ```bash
 chmod +x kk
 ```
 
-## Create a Multi-Node Cluster
+## 创建多节点集群
 
-With KubeKey, you can install Kubernetes and KubeSphere together. You have the option to create a multi-node cluster by customizing parameters in the configuration file.
+您可用使用 KubeKey 同时安装 Kubernetes 和 KubeSphere，通过自定义配置文件中的参数创建多节点集群。
 
-Create a Kubernetes cluster with KubeSphere installed (e.g. `--with-kubesphere v3.0.0`):
+创建安装有 KubeSphere 的 Kubernetes 集群（例如使用 `--with-kubesphere v3.0.0`）：
 
 ```bash
 ./kk create config --with-kubernetes v1.17.9 --with-kubesphere v3.0.0
@@ -256,14 +256,14 @@ Create a Kubernetes cluster with KubeSphere installed (e.g. `--with-kubesphere v
 
 {{< notice note >}} 
 
-- The following Kubernetes versions have been fully tested with KubeSphere: v1.15.12, v1.16.13, v1.17.9 (default) and v1.18.6.
+- 在 KubeSphere 上充分测试过的 Kubernetes 版本：v1.15.12、v1.16.13、v1.17.9（默认）和 v1.18.6。
 
-- If you do not add the flag `--with-kubesphere` in the command above, KubeSphere will not be deployed unless you install it using the `addons` field in the configuration file or add this flag again when you use `./kk create cluster` later.
-- If you add the flag `--with-kubesphere` without specifying a KubeSphere version, the latest version of KubeSphere will be installed.
+- 如果您在这一步的命令中不添加标志 `--with-kubesphere`，则不会部署 KubeSphere，只能使用配置文件中的 `addons` 字段安装 KubeSphere，或者在您后续使用 `./kk create cluster` 命令时再次添加该标志。
+- 如果您添加标志 `--with-kubesphere` 时不指定 KubeSphere 版本，则会安装最新版本的 KubeSphere。
 
 {{</ notice >}} 
 
-A default file `config-sample.yaml` will be created. Modify it according to your environment.
+系统将创建默认的 `config-sample.yaml` 文件。您可以根据您的环境修改此文件。
 
 ```bash
 vi config-sample.yaml
@@ -292,21 +292,21 @@ spec:
     address: ""                    
     port: "6443"
 ```
-Create a cluster using the configuration file you customized above:
+执行以下命令使用自定义的配置文件创建集群：
 
 ```bash
 ./kk create cluster -f config-sample.yaml
 ```
 
-#### Verify the installation
+#### 验证安装
 
-After the installation finishes, you can inspect the logs of installation by executing the command below:
+安装结束后，您可以执行以下命令查看安装日志：
 
 ```bash
 kubectl logs -n kubesphere-system $(kubectl get pod -n kubesphere-system -l app=ks-install -o jsonpath='{.items[0].metadata.name}') -f
 ```
 
-If you can see the welcome log return, it means the installation is successful.
+如果返回欢迎日志，则安装成功。
 
 ```bash
 **************************************************
@@ -328,40 +328,40 @@ https://kubesphere.io             20xx-xx-xx xx:xx:xx
 #####################################################
 ```
 
-#### Log in the console
+#### 登录控制台
 
-You will be able to use default account and password `admin/P@88w0rd` to log in the console `http://{$IP}:30880` to take a tour of KubeSphere. Please change the default password after login.
+您可以使用默认的帐户和密码 `admin/P@88w0rd` 登录 KubeSphere 控制台并开始使用 KubeSphere。请在登录后修改默认密码。
 
-#### Enable pluggable components (Optional)
-The example above demonstrates the process of a default minimal installation. To enable other components in KubeSphere, see [Enable Pluggable Components](../../../pluggable-components/) for more details.
+#### 启用可插拔组件（可选）
+以上示例演示了默认的最小化安装流程。如需启用 KubeSphere 的其他组件，请参考[启用可插拔组件](../../../pluggable-components/)。
 
-## System Improvements
+## 优化系统
 
-- Update your system.
+- 更新系统。
 
    ```bash
    yum update
    ```
 
-- Add the required options to the kernel boot arguments:
+- 添加所需的内核引导参数。
 
    ```bash
    sudo /sbin/grubby --update-kernel=ALL --args='cgroup_enable=memory cgroup.memory=nokmem swapaccount=1'
    ```
 
-- Enable the `overlay2` kernel module.
+- 启用 `overlay2` 内核模块。
 
    ```bash
    echo "overlay2" | sudo tee -a /etc/modules-load.d/overlay.conf
    ```
 
-- Refresh the dynamically generated grub2 configuration.
+- 刷新动态生成的 grub2 配置。
 
    ```bash
    sudo grub2-set-default 0
    ```
 
-- Adjust kernel parameters and make the change effective.
+- 调整内核参数并使修改生效。
 
    ```bash
    cat <<EOF | sudo tee -a /etc/sysctl.conf
@@ -375,7 +375,7 @@ The example above demonstrates the process of a default minimal installation. To
    sudo sysctl -p
    ```
 
-- Adjust system limits.
+- 调整系统限制。
 
    ```bash
    vim /etc/security/limits.conf
@@ -388,13 +388,13 @@ The example above demonstrates the process of a default minimal installation. To
    root             soft    memlock        unlimited
    ```
 
-- Remove the previous limit configuration.
+- 删除旧的限制配置。
 
    ```bash
    sudo rm /etc/security/limits.d/20-nproc.conf
    ```
 
-- Root the system.
+- 重启系统。
 
    ```bash
    reboot
