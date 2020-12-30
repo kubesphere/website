@@ -110,7 +110,7 @@ KubeSphere 审计日志系统提供了一套与安全相关并按时间顺序排
 自定义资源定义 (CRD) 允许用户在不新增 API 服务器的情况下创建一种新的资源类型，用户可以像使用其他 Kubernetes 内置对象一样使用这些自定义资源。
     {{</ notice >}}
 
-3. 在**资源列表**中，点击 `ks-installer` 右边的三个点，选择**编辑 YAML**。
+3. 在**资源列表**中，点击 `ks-installer` 右边的三个点，选择**编辑配置文件**。
 
      ![编辑 YAML](/images/docs/zh-cn/enable-pluggable-components/kubesphere-auditing-logs/edit-yaml.PNG)
 
