@@ -20,4 +20,4 @@ weight: 5120
 
 ## 厂商无锁定
 
-KubeSphere 拥有功能强大的中央控制平面，您可以统一管纳部署在任意环境或云厂商上的 KubeSphere 集群。
+KubeSphere 拥有功能强大的中央控制平面，您可以统一纳管部署在任意环境或云厂商上的 KubeSphere 集群。
