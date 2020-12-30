@@ -55,7 +55,7 @@ weight: 14292
 
    ![view-project](/images/docs/zh-cn/appstore/built-in-apps/tomcat-app/view-project.jpg)
 
-### 步骤3：用浏览器访问 Tomcat 项目
+### 步骤 3：用浏览器访问 Tomcat 项目
 
 要从集群外访问 Tomcat 项目，您需要先用 NodePort 暴露该应用。
 
