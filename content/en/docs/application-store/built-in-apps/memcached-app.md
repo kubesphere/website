@@ -42,7 +42,7 @@ This tutorial walks you through an example of deploying Memcached from the App S
 
 ### Step 2: Access Memcached
 
-1. Navigate to **Services**, and click the Service name of Memcached.
+1. Navigate to **Services**, and click the service name of Memcached.
 
    ![memcached-service](/images/docs/appstore/built-in-apps/memcached-app/memcached-service.jpg)
 
