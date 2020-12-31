@@ -17,7 +17,7 @@ This tutorial walks you through an example of deploying MySQL from the App Store
 
 ## Hands-on Lab
 
-### Step 1: Deploy MySQL from App Store
+### Step 1: Deploy MySQL from the App Store
 
 1. On the **Overview** page of the project `demo-project`, click **App Store** in the top left corner.
 
@@ -41,7 +41,7 @@ This tutorial walks you through an example of deploying MySQL from the App Store
 
    ![mysql-running](/images/docs/appstore/built-in-apps/mysql-app/mysql-running.jpg)
 
-### Step 2: Access MySQL Terminal
+### Step 2: Access the MySQL Terminal
 
 1. Go to **Workloads** and click the service name of MySQL.
 
@@ -55,7 +55,7 @@ This tutorial walks you through an example of deploying MySQL from the App Store
 
    ![log-in-mysql](/images/docs/appstore/built-in-apps/mysql-app/log-in-mysql.jpg)
 
-### Step 3: Access MySQL Database outside Cluster
+### Step 3: Access the MySQL Database outside the Cluster
 
 To access MySQL outside the cluster, you need to expose the app through NodePort first.
 
@@ -88,4 +88,3 @@ To access MySQL outside the cluster, you need to expose the app through NodePort
    {{</ notice >}} 
 
 6. For more information about MySQL, refer to [the official documentation of MySQL](https://dev.mysql.com/doc/).
-
