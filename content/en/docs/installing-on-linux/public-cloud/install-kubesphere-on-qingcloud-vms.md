@@ -334,7 +334,7 @@ To verify if the cluster is highly available, you can turn off an instance on pu
 
 ## See Also
 
-[Multi-Node Installation](../../../installing-on-linux/introduction/multioverview/)
+[Multi-node Installation](../../../installing-on-linux/introduction/multioverview/)
 
 [Kubernetes Cluster Configurations](../../../installing-on-linux/introduction/vars/)
 

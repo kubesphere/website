@@ -1,8 +1,8 @@
 ---
-title: "Multi-Node Installation"
+title: "Multi-node Installation"
 keywords: 'Multi-node, Installation, KubeSphere'
 description: 'Explain how to install KubeSphere on multiple nodes'
-linkTitle: "Multi-Node Installation"
+linkTitle: "Multi-node Installation"
 weight: 3120
 ---
 
