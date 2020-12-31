@@ -81,7 +81,7 @@ Docker needs to be installed in advance for this method.
        privateRegistry: "" # Configure a private image registry for air-gapped installation (e.g. docker local registry or Harbor)
    ```
 
-2. Input the registry mirror address above and save the file. For more information about the installation process, see [Multi-Node Installation](../../../installing-on-linux/introduction/multioverview/). 
+2. Input the registry mirror address above and save the file. For more information about the installation process, see [Multi-node Installation](../../../installing-on-linux/introduction/multioverview/). 
 
 {{< notice note >}}
 

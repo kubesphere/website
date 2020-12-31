@@ -12,7 +12,7 @@ In addition to the deployment on cloud, KubeSphere can also be installed on bare
 
 ## Prerequisites
 
-- Make sure you already know how to install KubeSphere on a multi-node cluster based on the tutorial [Multi-Node Installation](../../../installing-on-linux/introduction/multioverview/).
+- Make sure you already know how to install KubeSphere on a multi-node cluster based on the tutorial [Multi-node Installation](../../../installing-on-linux/introduction/multioverview/).
 - Server and network redundancy in your environment.
 - For a production environment, it is recommended that you prepare persistent storage and create a StorageClass in advance. For development and testing, you can use the integrated OpenEBS to provision LocalPV as the storage service directly.
 
@@ -244,7 +244,7 @@ Make `kk` executable:
 chmod +x kk
 ```
 
-## Create a Multi-Node Cluster
+## Create a Multi-node Cluster
 
 With KubeKey, you can install Kubernetes and KubeSphere together. You have the option to create a multi-node cluster by customizing parameters in the configuration file.
 
