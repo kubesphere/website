@@ -1,8 +1,8 @@
 ---
-title: "Log Query"
+title: "日志查询"
 keywords: 'KubeSphere, Kubernetes, log'
 description: 'Query Kubernetes logs from toolbox'
-linkTitle: "Log Query"
+linkTitle: "日志查询"
 weight: 15100
 ---
 

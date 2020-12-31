@@ -1,8 +1,8 @@
 ---
-title: "Event Query"
+title: "事件查询"
 keywords: 'KubeSphere, Kubernetes, Event, Query'
 description: 'How to perform event query in KubeSphere.'
-linkTitle: "Event Query"
+linkTitle: "事件查询"
 weight: 15200
 ---
 

@@ -1,9 +1,8 @@
 ---
-title: "Persistent Volume and Storage Class"
+title: "持久卷和存储类型"
 keywords: "storage, volume, pv, pvc, storage class, csi, Ceph RBD, Glusterfs, QingCloud, "
 description: "Persistent Volume and Storage Class Management"
-
-linkTitle: "Persistent Volume and Storage Class"
+linkTitle: "持久卷和存储类型"
 weight: 8400
 ---
 
