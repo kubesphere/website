@@ -17,7 +17,7 @@ This tutorial walks you through an example of deploying NGINX from the App Store
 
 ## Hands-on Lab
 
-### Step 1: Deploy NGINX from App Store
+### Step 1: Deploy NGINX from the App Store
 
 1. On the **Overview** page of the project `demo-project`, click **App Store** in the top left corner.
 

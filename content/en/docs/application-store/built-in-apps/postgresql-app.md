@@ -17,7 +17,7 @@ This tutorial walks you through an example of how to deploy PostgreSQL from the 
 
 ## Hands-on Lab
 
-### Step 1: Deploy PostgreSQL from App Store
+### Step 1: Deploy PostgreSQL from the App Store
 
 1. On the **Overview** page of the project `demo-project`, click **App Store** in the top left corner.
 
@@ -47,7 +47,7 @@ This tutorial walks you through an example of how to deploy PostgreSQL from the 
 
    ![postgresql-ready](/images/docs/appstore/built-in-apps/postgresql-app/postgresql-ready.jpg)
 
-### Step 2: Access PostgreSQL Database
+### Step 2: Access the PostgreSQL Database
 
 To access PostgreSQL outside the cluster, you need to expose the app through NodePort first.
 
