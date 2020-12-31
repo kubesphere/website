@@ -9,7 +9,7 @@ weight: 6800
 
 ## 什么是 KubeSphere 服务网格
 
-在 [Istio](https://istio.io/) 的基础上，KubeSphere 服务网格将微服务治理和流量管理可视化。它拥有强大的工具包，包括**断路、蓝绿部署、金丝雀发布、流量镜像、分布式追踪、可观察性和流量控制**等。开发者无需植入任何代码，即可轻松上手服务网格，Istio 的学习曲线大大降低。KubeSphere 服务网格的所有功能都旨在满足用户的业务需求。
+KubeSphere 服务网格基于 [Istio](https://istio.io/)，将微服务治理和流量管理可视化。它拥有强大的工具包，包括**熔断机制、蓝绿部署、金丝雀发布、流量镜像、分布式链路追踪、可观察性和流量控制**等。KubeSphere 服务网格支持代码无侵入的微服务治理，帮助开发者快速上手，Istio 的学习曲线也极大降低。KubeSphere 服务网格的所有功能都旨在满足用户的业务需求。
 
 有关更多信息，请参见[灰度发布](../../project-user-guide/grayscale-release/overview/)。
 
