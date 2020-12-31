@@ -38,11 +38,11 @@ weight: 9400
 | workspace-regular   | 企业空间普通成员，无法在企业空间下创建项目和 DevOps 工程。 |
 | workspace-admin     | 企业空间管理员，可对任何资源进行任意操作。它可以充分管理企业空间下所有的资源。 |
 
-1. 在**企业角色**中，点击 `admin` 就可以查看如下所示的角色详情。
+1. 在**企业角色**中，点击 `workspace-admin` 就可以查看如下所示的角色详情。
 
    ![企业成员详情](/images/docs/zh-cn/workspace-administration-and-user-guide/role-and-member-management/workspace-role-detail.PNG)
 
-2. 您可以切换到**授权用户**标签页，查看被授予 `admin` 角色的所有用户。
+2. 您可以切换到**授权用户**标签页，查看被授予 `workspace-admin` 角色的所有用户。
 
 ## 创建企业角色
 
