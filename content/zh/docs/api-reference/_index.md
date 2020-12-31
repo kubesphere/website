@@ -1,9 +1,9 @@
 ---
-title: "Reference"
+title: "参考"
 description: "The glossary used by KubeSphere and how to use KubeSphere API to build your own application"
 layout: "single"
 
-linkTitle: "Reference"
+linkTitle: "参考"
 
 weight: 17000
 

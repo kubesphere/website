@@ -1,9 +1,9 @@
 ---
-title: "Toolbox"
+title: "工具箱"
 description: "Help you to better understand KubeSphere toolbox"
 layout: "single"
 
-linkTitle: "Toolbox"
+linkTitle: "工具箱"
 
 weight: 15000
 

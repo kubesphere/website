@@ -1,8 +1,8 @@
 ---
-title: "History"
+title: "浏览历史"
 keywords: 'KubeSphere, Kubernetes, history'
 description: 'View browsing history from the toolbox.'
-linkTitle: "History"
+linkTitle: "浏览历史"
 weight: 15500
 ---
 
