@@ -23,7 +23,7 @@ At least one workspace has been created, such as `demo-workspace`. Besides, you 
 
 {{< notice note >}} 
 
-The actual role name follows a naming convention: `workspace name-role name`. For example, for a workspace named `demo-workspace`, the actual role name of the role `workspace-admin` is `demo-workspace-admin`.
+The actual role name follows a naming convention: `workspace name-role name`. For example, for a workspace named `demo-workspace`, the actual role name of the role `admin` is `demo-workspace-admin`.
 
 {{</ notice >}} 
 
@@ -38,11 +38,11 @@ In **Workspace Roles**, there are four available built-in roles as shown below. 
 | workspace-regular   | The regular user in the workspace who cannot create projects or DevOps projects. |
 | workspace-admin     | The administrator in the workspace who can perform any action on any resource. It gives full control over all resources in the workspace. |
 
-1. In **Workspace Roles** , click  `workspace-admin` and you can see the role detail as shown below.
+1. In **Workspace Roles** , click `workspace-admin` and you can see the role detail as shown below.
 
    ![workspace_role_detail](/images/docs/workspace-administration/role-and-member-management/workspace_role_detail.png)
 
-2. You can switch to **Authorized Users** tab to see all the users that are granted a `workspace-admin` role.
+2. You can switch to **Authorized Users** tab to see all the users that are granted the `workspace-admin` role.
 
 ## Create a Workspace Role
 

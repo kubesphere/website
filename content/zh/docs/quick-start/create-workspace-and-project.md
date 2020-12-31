@@ -107,7 +107,7 @@ KubeSphere 的多租户系统分三个层级，即**群集**、**企业空间**�
 4. 邀请`project-admin`和`project-regular`进入企业空间，分别授予他们`self-provisioner`和`workspace-viewer`角色。
 
    {{< notice note >}}
-实际的角色名称遵循命名约定：`<workspace name>-<role name>`。例如，在名为`demo`的企业空间中，角色`workspace-viewer`的实际角色名称是`demo-workspace-viewer`。
+实际角色名称的格式：`<workspace name>-<role name>`。例如，在名为 `demo-workspace` 的企业空间中，角色 `viewer` 的实际角色名称是 `demo-workspace-viewer`。
    {{</ notice >}}
 
    ![invite-member](https://ap3.qingstor.com/kubesphere-website/docs/20200827113124.png)

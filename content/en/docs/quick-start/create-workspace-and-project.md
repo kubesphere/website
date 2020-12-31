@@ -105,7 +105,7 @@ In this task, you need to create a workspace using the account `ws-manager` crea
 4. Invite both `project-admin` and `project-regular` to the workspace. Grant them the role `workspace-self-provisioner` and `workspace-viewer` respectively. 
 
    {{< notice note >}}
-The actual role name follows a naming convention: `<workspace name>-<role name>`. For example, in this workspace named `demo`, the actual role name of the role `workspace-viewer` is `demo-workspace-viewer`.
+The actual role name follows a naming convention: `<workspace name>-<role name>`. For example, in this workspace named `demo-workspace`, the actual role name of the role `viewer` is `demo-workspace-viewer`.
    {{</ notice >}}
 
    ![invite-member](https://ap3.qingstor.com/kubesphere-website/docs/20200827113124.png)
