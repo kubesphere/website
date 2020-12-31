@@ -33,17 +33,21 @@ You need an account granted a role including the authorization of **Clusters Man
 ## Manage Storage Classes
 
 1. Click **Platform** in the top left corner and select **Clusters Management**.
+    
     ![clusters-management-select](/images/docs/cluster-administration/persistent-volume-and-storage-class/clusters-management-select.jpg)
-
+    
 2. If you have enabled the [multi-cluster feature](../../multicluster-management) with member clusters imported, you can select a specific cluster. If you have not enabled the feature, refer to the next step directly.
 
 3. On the **Cluster Management** page, navigate to **Storage Classes** under **Storage**, where you can create, update and delete a storage class.
+
     ![storage-class](/images/docs/cluster-administration/persistent-volume-and-storage-class/storage-class.jpg)
 
 4. To create a storage class, click **Create** and enter the basic information in the pop-up window. When you finish, click **Next**.
+
     ![create-storage-class-basic-info](/images/docs/cluster-administration/persistent-volume-and-storage-class/create-storage-class-basic-info.png)
 
 5. In KubeSphere, you can create storage classes for `QingCloud-CSI`, `Glusterfs` and `Ceph RBD` directly. Alternatively, you can also create customized storage classes for other storage systems based on your needs. Select a type and click **Next**.
+
     ![create-storage-class-storage-system](/images/docs/cluster-administration/persistent-volume-and-storage-class/create-storage-class-storage-system.png)
 
     ![create-storage-class-settings](/images/docs/cluster-administration/persistent-volume-and-storage-class/create-storage-class-settings.png)
