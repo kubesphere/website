@@ -1,0 +1,256 @@
+---
+title: '深入理解 K8s 中的 request 和 limit'
+tag: 'Kubernetes,KubeSphere,schedule,monitoring'
+createTime: '2021-01-01'
+author: '饶云坤'
+snapshot: ''
+---
+
+放眼全球， IT 产业在过去的 20 年里取得了令人瞩目的长足进步与飞速发展，网络数据几乎是以指数的形式膨胀，并且深刻地影响着我们每一个人日常。当然也对整个 IT 产业的顶层技术架构不管是在计算，存储还是网络都提出了更高的要求。在这期间，云的概念也开始普及，许多公司都部署了实施云化战略，纷纷搭建起云平台，希望完成传统应用到云端的迁移。但是这个过程中也遇到了一些问题诸如敏捷性，可扩展性等问题。而近几年来提出的云原生（ Cloud Native ）概念，近乎完美地解决了上述云化过程中遇到的这些问题。而具有 Google 背书和相关容器生态的容器编排系统， 作为一个事实上的标准， Kubernetes 很自然的走入了人们的视野。但是 Kubernetes 天然具有比较陡峭的学习曲线，缺乏周边软件配套。而 KubeSphere 作为国内唯一一个开源的 Kubernetes（ k8s ）发行版，极大地降低了使用 Kubernetes 的门槛，所以其一经出现，便广泛收到开源社区和相关上下游企业的广泛好评。越来越多的企业选择通过 Kubesphere 在生产环境的 k8s 集群上部署应用。
+
+在生产环境中，了解 k8s 的基本概念，熟悉 Kubesphere 赋予给用户哪些能力，对于提优化云原生应用和提升整个集群的性能和稳定性至关重要。其中，给每套服务分配合理的资源是部署云原生应用绕不开的主题。在 k8s 中主要是通过`requests`和`limits` 2 个参数来划分应用资源的。下面，首先会简单阐述一下 k8s 中`requests`和`limits`这 2 个参数的具体含义，进而分析这 2 个参数是如何进一步应用容器应用的调用乃至整个集群的稳定性的。最后，我们将探讨如何基于 Kubesphere 来简化应用部署。
+
+## request 与 limit 简介
+
+为了实现 k8s 集群中资源的有效调度和充分利用，k8s 采用`requests`和`limits`两种限制类型来对资源进行容器粒度的分配。每一个容器都可以独立地设定相应的`requests`和`limits`。这 2 个参数是通过每个容器 containerSpec 的 resources 字段进行设置的。一般来说，在调度的时候`requests`比较重要，在运行时`limits`比较重要。
+
+```yaml
+resources:  
+    requests:    
+        cpu: 50m
+        memory: 50Mi
+   limits:    
+        cpu: 100m
+        memory: 100Mi
+```
+
+### 什么是 requests?
+
+`requests`定义了对应容器需要的最小资源量。这句话的含义是，举例来讲，比如对于一个 Sprintboot 业务容器，这里的`request`必须是容器镜像中 JVM 虚拟机需要占用的最少资源。如果这里把 pod 的内存`request`指定为 10Mi ，显然是不合理的，JVM 实际占用的内存 Xms 超出了 k8s 分配给 pod 的内存，导致 pod 内存溢出，从而 k8s 不断重启 pod 。
+
+我们知道在 k8s 中 pod 是最小的调度单位，pod 的`requests`与 pod 内容器的`requests`关系如下：
+
+```golang
+func computePodResourceRequest(pod *v1.Pod) *preFilterState {
+	result := &preFilterState{}
+	for _, container := range pod.Spec.Containers {
+		result.Add(container.Resources.Requests)
+	}
+
+	// take max_resource(sum_pod, any_init_container)
+	for _, container := range pod.Spec.InitContainers {
+		result.SetMaxResource(container.Resources.Requests)
+	}
+
+	// If Overhead is being utilized, add to the total requests for the pod
+	if pod.Spec.Overhead != nil && utilfeature.DefaultFeatureGate.Enabled(features.PodOverhead) {
+		result.Add(pod.Spec.Overhead)
+	}
+
+	return result
+}
+...
+func (f *Fit) PreFilter(ctx context.Context, cycleState *framework.CycleState, pod *v1.Pod) *framework.Status {
+	cycleState.Write(preFilterStateKey, computePodResourceRequest(pod))
+	return nil
+}
+...
+func getPreFilterState(cycleState *framework.CycleState) (*preFilterState, error) {
+	c, err := cycleState.Read(preFilterStateKey)
+	if err != nil {
+		// preFilterState doesn't exist, likely PreFilter wasn't invoked.
+		return nil, fmt.Errorf("error reading %q from cycleState: %v", preFilterStateKey, err)
+	}
+
+	s, ok := c.(*preFilterState)
+	if !ok {
+		return nil, fmt.Errorf("%+v  convert to NodeResourcesFit.preFilterState error", c)
+	}
+	return s, nil
+}
+...
+func (f *Fit) Filter(ctx context.Context, cycleState *framework.CycleState, pod *v1.Pod, nodeInfo *framework.NodeInfo) *framework.Status {
+	s, err := getPreFilterState(cycleState)
+	if err != nil {
+		return framework.NewStatus(framework.Error, err.Error())
+	}
+
+	insufficientResources := fitsRequest(s, nodeInfo, f.ignoredResources, f.ignoredResourceGroups)
+
+	if len(insufficientResources) != 0 {
+		// We will keep all failure reasons.
+		failureReasons := make([]string, 0, len(insufficientResources))
+		for _, r := range insufficientResources {
+			failureReasons = append(failureReasons, r.Reason)
+		}
+		return framework.NewStatus(framework.Unschedulable, failureReasons...)
+	}
+	return nil
+}
+```
+
+从上面的源码中不难看出，调度器（实际上是 Schedule thread ）首先会在 Pre filter 阶段计算出待调度 pod 所需要的资源，具体讲就是从 Pod Spec 中分别计算初始容器和工作容器`requests`之和，并取其较大者，特别地，对于像 Kata-container 这样微虚机，其自身的虚拟化开销相比于容器来说是不能忽略不计的，所以还需要加上虚拟化本身的资源开销，计算出的结果存入到缓存中，在紧接着的 Filter 阶段，会遍历所有节点过滤出符合符合条件的节点。
+
+实际上在过滤出所有符合条件的节点以后，如果当前满足的条件的节点只有一个，那么该 pod 随后将被调度到该结点。但是更多的情况下，此时过滤之后符合条件的结点往往有多个，这时候就需要进入 Score 阶段，依次对这些结点进行打分（ Score ）。而打分本身也是包括多个维度通过内置 plugin 的形式综合评判的。值得注意的是，前面我们定义的 pod 的`requests`和`limits`参数也会直接影响到`NodeResourcesLeastAllocated`算法最终的计算结果。源码如下：
+
+```golang
+func leastResourceScorer(resToWeightMap resourceToWeightMap) func(resourceToValueMap, resourceToValueMap, bool, int, int) int64 {
+	return func(requested, allocable resourceToValueMap, includeVolumes bool, requestedVolumes int, allocatableVolumes int) int64 {
+		var nodeScore, weightSum int64
+		for resource, weight := range resToWeightMap {
+			resourceScore := leastRequestedScore(requested[resource], allocable[resource])
+			nodeScore += resourceScore * weight
+			weightSum += weight
+		}
+		return nodeScore / weightSum
+	}
+}
+...
+func leastRequestedScore(requested, capacity int64) int64 {
+	if capacity == 0 {
+		return 0
+	}
+	if requested > capacity {
+		return 0
+	}
+
+	return ((capacity - requested) * int64(framework.MaxNodeScore)) / capacity
+}
+```
+
+可以看到在`NodeResourcesLeastAllocated`算法中，对于同一个 pod ，目标结点的资源越充裕，那么该结点的得分也就越高。换句话说，同一个 pod 更倾向于调度到资源充足的结点。其实，这里对于具有运维经验的同学来将，可能会提出质疑，既然资源是均匀分布的，为什么在实际集群中，有时会出现某个结点某一项指标（一般来讲是内存）会明显高于其他结点。其实，答案已经在上面的源码当中给出了。实际上在创建 pod 的过程中，一方面，k8s 需要拨备包含 CPU 和内存在内的多种资源。每种资源都会对应一个权重（对应源码中的 resToWeightMap 数据结构），所以这里的资源均衡是包含 CPU 和内存在内的所有资源的综合考量。另一方面，在 Score 阶段，除了`NodeResourcesLeastAllocated`算法以外，调用器还会使用到其他算法（例如`InterPodAffinity`）进行分数的评定。而之所以往往观察到的是内存分布不够均衡，是因为对于应用来说，相比于其他资源，内存一般是更紧缺的一类资源。
+
+> 注：在 k8s 调度器中，会把调度过程分为若干个阶段，即 Pre filter, Filter, Post filter, Score 等。在 Pre filter 阶段，用于选择符合  Pod Spec 描述的 Nodes 。
+
+### 什么是 limits ?
+
+`limits`定义了这个容器最大可以消耗的资源上限，防止过量消耗资源导致资源短缺甚至宕机。特别的，设置为 0 表示对使用的资源不做限制。值得一提的是，当设置`limits`而没有设置`requests`时，Kubernetes 默认令`requests`等于`limits`。
+
+进一步可以把`requests`和`limits`描述的资源分为 2 类：可压缩资源（例如 CPU ）和不可压缩资源（例如内存）。合理地设置`limits`参数对于不可压缩资源来讲尤为重要。下面我们以内存资源为例，讨论一下`limits`参数的实际意义。
+
+前面我们已经知道`requests`参数会最终的k8s调度结果起到直接的显而易见的影响。借助于 Linux 内核 Cgroup 机制，`limits`参数实际上是被 k8s 用来约束分配给进程的资源。对于内存参数而言，实际上就是告诉 Linux 内核什么时候相关容器进程可以为了清理空间而被杀死（ oom-kill ）。
+
+总结一下：
+
+- 对于 CPU，如果 pod 中服务使用 CPU 超过设置的`limits`，pod 不会被 kill 掉但会被限制。如果没有设置 limits ，pod 可以使用全部空闲的 CPU 资源。
+- 对于内存，当一个 pod 使用内存超过了设置的`limits`，pod 中 container 的进程会被 kernel 因 OOM kill 掉。当 container 因为 OOM 被 kill 掉时，系统倾向于在其原所在的机器上重启该 container 或本机或其他重新创建一个 pod。
+- 0 <= requests <=Node Allocatable, requests <= limits <= Infinity
+
+### Pod 的服务质量（ QoS ）
+
+Kubernetes 创建 Pod 时就给它指定了下列一种 QoS 类：Guaranteed，Burstable，BestEffort。
+
+- Guaranteed：Pod 中的每个容器，包含初始化容器，必须指定内存和CPU的`requests`和`limits`，并且两者要相等。
+- Burstable：Pod 不符合 Guaranteed QoS 类的标准；Pod 中至少一个容器具有内存或 CPU `requests`。
+- BestEffort：Pod 中的容器必须没有设置内存和 CPU `requests`或`limits`。
+
+结合结点上 Kubelet 的CPU管理策略，可以对指定 pod 进行绑核操作，参见[官方文档](https://kubernetes.io/docs/tasks/administer-cluster/cpu-management-policies/)。
+
+另外，QOS 作为 k8s 中一种资源保护机制，其主要是针对不可压缩资源比如的内存的一种控制技术，比如在内存中其通过为不同的 pod 和容器构造 OOM 评分，并且通过内核的策略的辅助，从而实现当节点内存资源不足的时候，内核可以按照策略的优先级，优先 kill 掉哪些优先级比较低（分值越高优先级越低）的pod。相关源码如下:
+
+```golang
+func GetContainerOOMScoreAdjust(pod *v1.Pod, container *v1.Container, memoryCapacity int64) int {
+	if types.IsCriticalPod(pod) {
+		// Critical pods should be the last to get killed.
+		return guaranteedOOMScoreAdj
+	}
+
+	switch v1qos.GetPodQOS(pod) {
+	case v1.PodQOSGuaranteed:
+		// Guaranteed containers should be the last to get killed.
+		return guaranteedOOMScoreAdj
+	case v1.PodQOSBestEffort:
+		return besteffortOOMScoreAdj
+	}
+
+	// Burstable containers are a middle tier, between Guaranteed and Best-Effort. Ideally,
+	// we want to protect Burstable containers that consume less memory than requested.
+	// The formula below is a heuristic. A container requesting for 10% of a system's
+	// memory will have an OOM score adjust of 900. If a process in container Y
+	// uses over 10% of memory, its OOM score will be 1000. The idea is that containers
+	// which use more than their request will have an OOM score of 1000 and will be prime
+	// targets for OOM kills.
+	// Note that this is a heuristic, it won't work if a container has many small processes.
+	memoryRequest := container.Resources.Requests.Memory().Value()
+	oomScoreAdjust := 1000 - (1000*memoryRequest)/memoryCapacity
+	// A guaranteed pod using 100% of memory can have an OOM score of 10. Ensure
+	// that burstable pods have a higher OOM score adjustment.
+	if int(oomScoreAdjust) < (1000 + guaranteedOOMScoreAdj) {
+		return (1000 + guaranteedOOMScoreAdj)
+	}
+	// Give burstable pods a higher chance of survival over besteffort pods.
+	if int(oomScoreAdjust) == besteffortOOMScoreAdj {
+		return int(oomScoreAdjust - 1)
+	}
+	return int(oomScoreAdjust)
+}
+```
+
+对于 Guaranteed 级别的 Pod，OOM 参数设置成了 -997 ，对于 Best-Effort 级别的 pod ， OOM 参数设置成了 1000，对于 Burstable 级别的  Pod ， OOM 参数取值从 2 到 999 。因此，如果资源充足，可将 QoS pods 类型均设置为 Guaranteed 。用计算资源换业务性能和稳定性，减少排查问题时间和成本。同时如果想更好的提高资源利用率，业务服务也可以设置为 Guaranteed ，而其他服务根据重要程度可分别设置为 Burstable 或 Best-Effort 。
+
+### 集群的稳定性
+
+集群的稳定性直接决定了其上运行的业务应用的稳定性。而临时性的资源短缺往往是导致集群不稳定的主要因素。集群一旦不稳定，轻则业务应用的性能下降，重则出现相关结点不可用，例如 (CPU 软死锁)[https://unix.stackexchange.com/questions/70377/bug-soft-lockup-cpu-stuck-for-x-seconds]。上面我们已经提到的，通过合理地设置 pod 的 QoS 进一步提高集群稳定性的方法，是集群出现突发的资源短缺的事后应急方案。实际上我们还可以通过(编辑 Kubelet 配置文件)[https://kubernetes.io/docs/tasks/administer-cluster/out-of-resource/]来预留一部分系统资源，从而保证当可用计算资源较少时 kubelet 所在节点的稳定性。 这在处理如内存和硬盘之类的不可压缩资源时尤为重要。
+
+## Kubesphere 资源配置实践
+
+前面我们已经深入地探讨了 k8s 中`request`、`limit`这 2 个参数的含义，包括它们是如何间接影响整个集群的状态（包含调度和稳定性等）。实际上这也是 k8s 一直以来的使用痛点，即用户需要对 k8s 集群本身具有一定程度的了解并且具体相关的实战经验，才能保证整个集群的平稳运行。而作为 k8s 的发行版 Kubephere ，极大地降低了 k8s 的学习门槛，配合简介美观的 UI 界面，你会发现有效运维原来是一件如此轻松的事情。下面我们将演示如何在 Kubesphere 平台中配置容器的相关资源。
+
+### 准备工作
+
+您需要创建一个企业空间、一个项目和一个帐户 (project-admin)，务必邀请该帐户到项目中并赋予 admin 角色。有关更多信息，请参见(创建企业空间、项目、帐户和角色)[https://kubesphere.io/zh/docs/quick-start/create-workspace-and-project/]。
+
+### 设置项目配额（ Resource Quotas ）
+
+1. 进入项目概览界面，若该项目之前没有配置项目配额，直接点击“设置”进入项目的配额设置页面。
+
+![](../../../images/blogs/deep-dive-into-the-K8s-request-and-limit/ksnip_20210101-144857.png)
+
+2. 进入项目配额页面，为该项目分别指定`request`和`limit`配额。
+
+![](../../../images/blogs/deep-dive-into-the-K8s-request-and-limit/ksnip_20210101-145934.png)
+
+设置项目配额的有 2 方面的作用:
+
+- 限定了该项目下所有 pod 指定的`request`和`limit`之和分别要小于等与这里指定的项目的总`request`和`limit`。
+- 如果在项目中创建任何一个容器没有指定`request`或者`limit`，那么相应的资源会创建报错，并会以事件的形式给出报错提示。
+
+可以看到，设定项目配额以后，在该项目中创建任何容器都需要指定`request`和`limit`，隐含实现了所谓的“code is law”，即人人都需要遵守的规则。
+
+> Kubesphere中的项目配额等价于 k8s 中的 resource quotas ，项目配额除了能够以项目为单位管理 CPU 和内存的使用使用分配情况，还能够管理其他类型的资源数目等，详细信息参见(资源配额)[https://kubernetes.io/docs/concepts/policy/resource-quotas/]。
+
+### 设置容器资源的默认请求
+
+上面我们已经讨论过项目中开启了配额以后，那么之后创建的pod必须明确指定相应的`request`和`limit`。事实上，在实际的测试或者生产环境当中，大部分pod的`request`和`limit`是高度相近甚至完全相同的。有没有办法在项目中，事先设定好默认的缺省`request`和`limit`，当用户没有指定容器的`request`和`limit`时，直接应用默认值，若pod已经指定`request`和`limit`则直接跳过呢？答案是肯定的。
+
+1. 进入项目概览界面，若该项目之前没有配置容器资源默认请求，直接点击“设置”进入项目的容器资源默认请求设置页面。
+
+![](../../../images/blogs/deep-dive-into-the-K8s-request-and-limit/ksnip_20210101-153255.png)
+
+2. 进入项目配额页面，为该项目分别指定 CPU 和内存的默认值。
+
+![](../../../images/blogs/deep-dive-into-the-K8s-request-and-limit/ksnip_20210101-153523.png)
+
+> Kubesphere 中的项目种的容器资源默认请求是借助于 k8s 中的 Limit Ranges ，目前 Kubesphere 支持 CPU 和内存的`request`和`limit`的默认值设定。
+
+前面我们已经了解到，对于一些关键的业务容器，通常其流量和负载相比于其他 pod 都是比较高的，对于这类容器的`request`和`limit`需要具体问题具体分析。分析的维度是多个方面的，例如该业务容器是 CPU 密集型的，还是 IO 密集型的。是单点的还是高可用的，这个服务的上游和下游是谁等等。另一方面，在生产环境中这类业务容器的负载从一个比较长的时间维度看的话，往往是具有周期性的。因此，业务容器的历史监控数据可以在参数设置方面提供重要的参考价值。而 Kubesphere 在最初的设计中，就已经在架构层面考虑到了这点，将 Prometheus 组件无缝集成到 Kubesphere 平台中，并提供纵向上至集群层级，下至 pod 层级的完整的监控体系。横向涵盖 CPU ，内存，网络，存储等。一般，`request`值可以设定为历史数据的均指，而`limit`要大于历史数据的均指，最终数值还需要结合具体情况做一些小的调整。
+
+## 总结
+
+Kubernetes 作为一个具有良好移植和扩展性的开源平台，用于管理容器化的工作负载和服务。 Kubernetes 拥有一个庞大且快速增长的生态系统，已成为容器编排领域的事实标准。但是也不可避免地引入许多复杂性。而 Kubesphere 作为国内唯一一个开源的 Kubernetes（k8s）发行版，极大地降低了使用 Kubernetes
+的门槛。借助于 Kubesphere 平台，原先需要通过后台命令行和 yaml 文件管理的系统配置，现在只需要在简介美观的 UI 界面上轻松完成。本文从云原生应用部署阶段`request`和`limit`的设置问题其入，分析了相关 k8s 底层的工作原理以及如何通过 Kubesphere 平台简化相关的运维工作。
+
+## 参考文献
+
+- https://learnk8s.io/setting-cpu-memory-limits-requests
+- https://kubernetes.io/docs/tasks/configure-pod-container/quality-service-pod/
+- https://docs.oracle.com/cd/E13150_01/jrockit_jvm/jrockit/jrdocs/refman/optionX.html
+- https://kubesphere.com.cn/forum/d/1155-k8s
+- https://kubernetes.io/docs/tasks/administer-cluster/out-of-resource/
+- https://kubernetes.io/docs/concepts/policy/limit-range/
+
+
+
+
+
+
