@@ -99,7 +99,7 @@ Two elastic IPs are needed for this tutorial, one for the VPC network and the ot
 
    {{< notice note >}}
 
-   After you create the listener, check the firewall rules of the load balancer. Make sure that port `30880` has been added to the firewall rules and that external traffic is allowed to port `6443`. Otherwise, the installation will fail. You can find the information in **Security Groups** under **Security** on the QingCloud platform.
+   After you create the listener, check the firewall rules of the load balancer. Make sure that port `30880` has been added to the firewall rules and that external traffic is allowed to port `30880`. Otherwise, the installation will fail. You can find the information in **Security Groups** under **Security** on the QingCloud platform.
 
    {{</ notice >}}
 
