@@ -47,7 +47,7 @@ weight: 14280
 
    ![postgresql-ready](/images/docs/zh-cn/appstore/built-in-apps/postgresql-app/postgresql-ready.jpg)
 
-### 步骤2：访问 PostgreSQL 数据库
+### 步骤 2：访问 PostgreSQL 数据库
 
 要从集群外访问 PostgreSQL，您需要先用 NodePort 暴露该应用。
 

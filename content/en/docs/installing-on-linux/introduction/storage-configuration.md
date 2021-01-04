@@ -46,7 +46,7 @@ You need to create this file of chart configurations and input the values above 
 
 #### Key
 
-To get values for `qy_access_key_id` and `qy_secret_access_key`, log in the web console of [QingCloud](https://console.qingcloud.com/login) and refer to the image below to create a key first. Download the key after it is created, which is stored in a csv file.
+To get values for `qy_access_key_id` and `qy_secret_access_key`, log in to the web console of [QingCloud](https://console.qingcloud.com/login) and refer to the image below to create a key first. Download the key after it is created, which is stored in a csv file.
 
 ![access-key](/images/docs/installing-on-linux/introduction/persistent-storage-configuration/access-key.jpg)
 

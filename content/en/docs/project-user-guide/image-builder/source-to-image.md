@@ -23,13 +23,13 @@ This tutorial demonstrates how to use S2I to import source code of a Java sample
 
 ### Step 1: Fork the example repository
 
-Log in GitHub and fork the GitHub repository [devops-java-sample](https://github.com/kubesphere/devops-java-sample) to your personal GitHub account.
+Log in to GitHub and fork the GitHub repository [devops-java-sample](https://github.com/kubesphere/devops-java-sample) to your personal GitHub account.
 
 ![fork-repository](/images/docs/project-user-guide/image-builder/s2i-publish-app-without-dockerfile/fork-repository.jpg)
 
 ### Step 2: Create Secrets
 
-Log in KubeSphere as `project-regular`. Go to your project and create a Secret for Docker Hub and GitHub respectively. For more information, see [Create the Most Common Secrets](../../../project-user-guide/configuration/secrets/#create-the-most-common-secrets).
+Log in to KubeSphere as `project-regular`. Go to your project and create a Secret for Docker Hub and GitHub respectively. For more information, see [Create the Most Common Secrets](../../../project-user-guide/configuration/secrets/#create-the-most-common-secrets).
 
 {{< notice note >}}
 

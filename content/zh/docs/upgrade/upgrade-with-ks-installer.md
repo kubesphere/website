@@ -1,9 +1,8 @@
 ---
-title: "Upgrade with ks-installer"
+title: "使用 ks-installer 升级"
 keywords: "kubernetes, upgrade, kubesphere, v3.0.0"
 description: "Upgrade KubeSphere with ks-installer"
-
-linkTitle: "Upgrade with ks-installer"
+linkTitle: "使用 ks-installer 升级"
 weight: 7300
 ---
 

@@ -12,7 +12,7 @@ In addition to the deployment on cloud, KubeSphere can also be installed on bare
 
 ## Prerequisites
 
-- Make sure you already know how to install KubeSphere on a multi-node cluster based on the tutorial [Multi-Node Installation](../../../installing-on-linux/introduction/multioverview/).
+- Make sure you already know how to install KubeSphere on a multi-node cluster based on the tutorial [Multi-node Installation](../../../installing-on-linux/introduction/multioverview/).
 - Server and network redundancy in your environment.
 - For a production environment, it is recommended that you prepare persistent storage and create a StorageClass in advance. For development and testing, you can use the integrated OpenEBS to provision LocalPV as the storage service directly.
 
@@ -244,7 +244,7 @@ Make `kk` executable:
 chmod +x kk
 ```
 
-## Create a Multi-Node Cluster
+## Create a Multi-node Cluster
 
 With KubeKey, you can install Kubernetes and KubeSphere together. You have the option to create a multi-node cluster by customizing parameters in the configuration file.
 
@@ -328,9 +328,9 @@ https://kubesphere.io             20xx-xx-xx xx:xx:xx
 #####################################################
 ```
 
-#### Log in the console
+#### Log in to the console
 
-You will be able to use default account and password `admin/P@88w0rd` to log in the console `http://{$IP}:30880` to take a tour of KubeSphere. Please change the default password after login.
+You will be able to use default account and password `admin/P@88w0rd` to log in to the console `http://{$IP}:30880` to take a tour of KubeSphere. Please change the default password after login.
 
 #### Enable pluggable components (Optional)
 The example above demonstrates the process of a default minimal installation. To enable other components in KubeSphere, see [Enable Pluggable Components](../../../pluggable-components/) for more details.

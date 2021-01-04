@@ -17,7 +17,7 @@ This tutorial walks you through an example of deploying etcd from the App Store 
 
 ## Hands-on Lab
 
-### Step 1: Deploy etcd from App Store
+### Step 1: Deploy etcd from the App Store
 
 1. On the **Overview** page of the project `demo-project`, click **App Store** in the top left corner.
 
@@ -47,11 +47,11 @@ This tutorial walks you through an example of deploying etcd from the App Store 
 
    ![etcd-running](/images/docs/appstore/built-in-apps/etcd-app/etcd-running.jpg)
 
-### Step 2: Access etcd Service
+### Step 2: Access the etcd Service
 
 After the app is deployed, you can use etcdctl, a command-line tool for interacting with etcd server, to access etcd on the KubeSphere console directly.
 
-1. Navigate to **StatefulSets** in **Workloads**, click the service name of etcd.
+1. Navigate to **StatefulSets** in **Workloads**, and click the service name of etcd.
 
    ![etcd-statefulset](/images/docs/appstore/built-in-apps/etcd-app/etcd-statefulset.jpg)
 

@@ -3,13 +3,12 @@ title: "StatefulSets"
 keywords: 'KubeSphere, Kubernetes, StatefulSets, dashboard, service'
 description: 'Kubernetes StatefulSets'
 linkTitle: "StatefulSets"
-
 weight: 10220
 ---
 
-As workload API object, a StatefulSet is used to manage stateful applications. It is responsible for the deploying, scaling of a set of Pods, and guarantees the ordering and uniqueness of these Pods.
+As a workload API object, a StatefulSet is used to manage stateful applications. It is responsible for the deploying, scaling of a set of Pods, and guarantees the ordering and uniqueness of these Pods.
 
-Like a Deployment, a StatefulSet manages Pods that are based on an identical container specification. Unlike a Deployment, a StatefulSet maintains a sticky identity for each of their Pods. These pods are created from the same specification, but are not interchangeable: each has a persistent identifier that it maintains across any rescheduling.
+Like a Deployment, a StatefulSet manages Pods that are based on an identical container specification. Unlike a Deployment, a StatefulSet maintains a sticky identity for each of their Pods. These Pods are created from the same specification, but are not interchangeable: each has a persistent identifier that it maintains across any rescheduling.
 
 If you want to use storage volumes to provide persistence for your workload, you can use a StatefulSet as part of the solution. Although individual Pods in a StatefulSet are susceptible to failure, the persistent Pod identifiers make it easier to match existing volumes to the new Pods that replace any that have failed.
 
@@ -30,19 +29,19 @@ You need to create a workspace, a project and an account (`project-regular`). Th
 
 In KubeSphere, a **Headless** service is also created when you create a StatefulSet. You can find the headless service in [Services](../services/) under **Application Workloads** in a project.
 
-### Step 1: Open Dashboard
+### Step 1: Open the dashboard
 
-Log in the console as `project-regular`. Go to **Application Workloads** of a project, select **Workloads**, and click **Create** under the tab **StatefulSets**.
+Log in to the console as `project-regular`. Go to **Application Workloads** of a project, select **Workloads**, and click **Create** under the tab **StatefulSets**.
 
 ![statefulsets](/images/docs/project-user-guide/workloads/statefulsets.jpg)
 
-### Step 2: Input Basic Information
+### Step 2: Input basic information
 
 Specify a name for the StatefulSet (e.g. `demo-stateful`) and click **Next** to continue.
 
 ![statefulsets](/images/docs/project-user-guide/workloads/statefulsets_form_1.jpg)
 
-### Step 3: Set Image
+### Step 3: Set an image
 
 1. Before you set an image, define the number of replicated Pods in **Pod Replicas** by clicking the **plus** or **minus** icon, which is indicated by the `.spec.replicas` field in the manifest file.
 
@@ -83,15 +82,15 @@ You can see the StatefulSet manifest file in YAML format by enabling **Edit Mode
 
 9. Select a deployment mode. For more information, see [Deployment Mode](../container-image-settings/#deployment-mode).
 
-10. Click **Next** to go to the next step when you finish setting the container image.
+10. Click **Next** to continue when you finish setting the container image.
 
-### Step 4: Mount Volumes
+### Step 4: Mount volumes
 
 StatefulSets can use the volume template, but you must create it in **Storage** in advance. For more information about volumes, visit [Volumes](../../storage/volumes/#mount-a-volume). When you finish, click **Next** to continue.
 
 ![statefulsets](/images/docs/project-user-guide/workloads/statefulsets_form_3.jpg)
 
-### Step 5: Configure Advanced Settings
+### Step 5: Configure advanced settings
 
 You can set a policy for node scheduling and add metadata in this section. When you finish, click **Create** to complete the whole process of creating a StatefulSet.
 
@@ -107,7 +106,7 @@ You can set a policy for node scheduling and add metadata in this section. When 
 
 ## Check StatefulSet Details
 
-### Detail Page
+### Detail page
 
 1. After a StatefulSet is created, it displays in the list as below. You can click the three dots on the right to select actions from the menu to modify your StatefulSet.
 
@@ -147,6 +146,6 @@ You can set a policy for node scheduling and add metadata in this section. When 
         - Click the container log icon to view output logs of the container.
         - You can view the Pod detail page by clicking the Pod name.
 
-### Revision Records
+### Revision records
 
 After the resource template of workload is changed, a new log will be generated and Pods will be rescheduled for a version update. The latest 10 versions will be saved by default. You can implement a redeployment based on the change log.

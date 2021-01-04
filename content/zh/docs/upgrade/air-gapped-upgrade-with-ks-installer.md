@@ -1,9 +1,8 @@
 ---
-title: "Air-Gapped Upgrade with ks-installer"
+title: "使用 ks-installer 离线升级"
 keywords: "Air-Gapped, upgrade, kubesphere, v3.0.0"
 description: "Air-Gapped Upgrade KubeSphere"
-
-linkTitle: "Air-Gapped Upgrade with ks-installer"
+linkTitle: "使用 ks-installer 离线升级"
 weight: 7500
 ---
 

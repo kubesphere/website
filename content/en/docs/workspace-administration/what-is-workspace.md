@@ -19,7 +19,7 @@ You have an account granted the role of `workspaces-manager`, such as `ws-manage
 
 ## Create a Workspace
 
-1. Log in the web console of KubeSphere as `ws-manager`. On the **Access Control** page, you can see all workspaces on the platform. By default, you have at least one workspace `system-workspace` in the list which contains all system projects.
+1. Log in to the web console of KubeSphere as `ws-manager`. On the **Access Control** page, you can see all workspaces on the platform. By default, you have at least one workspace `system-workspace` in the list which contains all system projects.
 
 2. Click **Create**.
 

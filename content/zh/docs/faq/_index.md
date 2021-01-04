@@ -1,9 +1,9 @@
 ---
-title: "FAQ"
+title: "常见问题"
 description: "FAQ is designed to answer and summarize the questions users ask most frequently about KubeSphere."
 layout: "single"
 
-linkTitle: "FAQ"
+linkTitle: "常见问题"
 weight: 16000
 
 icon: "/images/docs/docs.svg"

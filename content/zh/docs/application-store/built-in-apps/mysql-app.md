@@ -1,91 +1,91 @@
 ---
-title: "Deploy MySQL on KubeSphere"
-keywords: 'KubeSphere, Kubernetes, Installation, MySQL'
-description: 'How to deploy MySQL on KubeSphere through App Store'
+title: "在 KubeSphere 中部署 MySQL"
+keywords: 'KubeSphere, Kubernetes, 安装, MySQL'
+description: '如何通过应用商店在 KubeSphere 中部署 MySQL'
 
-link title: "Deploy MySQL"
+link title: "在 KubeSphere 中部署 MySQL"
 weight: 14260
 ---
-[MySQL](https://www.mysql.com/) is an open-source relational database management system (RDBMS), which uses the most commonly used database management language - Structured Query Language (SQL) for database management. It provides a fully managed database service to deploy cloud-native applications using the world’s most popular open-source database.
+[MySQL ](https://www.mysql.com/)是一个开源的关系型数据库管理系统 (RDBMS)，它基于最常用的数据库管理语言 SQL。作为世界上最受欢迎的开源数据库，MySQL 为云原生应用部署提供了完全托管的数据库服务。
 
-This tutorial walks you through an example of deploying MySQL from the App Store of KubeSphere.
+本教程演示如何从 KubeSphere 的应用商店部署 MySQL。
 
-## Prerequisites
+## 准备工作
 
-- Please make sure you [enable the OpenPitrix system](https://kubesphere.io/docs/pluggable-components/app-store/).
-- You need to create a workspace, a project, and a user account for this tutorial. The account needs to be a platform regular user and to be invited as the project operator with the `operator` role. In this tutorial, you log in as `project-regular` and work in the project `demo-project` in the workspace `demo-workspace`. For more information, see [Create Workspace, Project, Account and Role](../../../quick-start/create-workspace-and-project/).
+- 您需要[启用 OpenPitrix 系统](../../../pluggable-components/app-store/)。
+- 您需要创建一个企业空间、一个项目和一个用户帐户 (`project-regular`)。该帐户必须是已邀请至项目的平台普通用户，并且在项目中的角色为 `operator`。在本教程中，您需要以 `project-regular` 用户登录，并在 `demo-workspace` 企业空间的 `demo-project` 项目中进行操作。有关更多信息，请参见[创建企业空间、项目、帐户和角色](../../../quick-start/create-workspace-and-project/)。
 
-## Hands-on Lab
+## 动手实验
 
-### Step 1: Deploy MySQL from App Store
+### 步骤 1：从应用商店部署 MySQL
 
-1. On the **Overview** page of the project `demo-project`, click **App Store** in the top left corner.
+1. 在 `demo-project` 的**概览**页面，点击左上角的**应用商店**。
 
-   ![go-to-app-store](/images/docs/appstore/built-in-apps/mysql-app/go-to-app-store.jpg)
+   ![go-to-app-store](/images/docs/zh-cn/appstore/built-in-apps/mysql-app/go-to-app-store.jpg)
 
-2. Find MySQL and click **Deploy** on the **App Info** page.
+2. 找到 MySQL，在**应用信息**页面点击**部署**。
 
-   ![find-mysql](/images/docs/appstore/built-in-apps/mysql-app/find-mysql.jpg)
+   ![find-mysql](/images/docs/zh-cn/appstore/built-in-apps/mysql-app/find-mysql.jpg)
 
-   ![click-deploy](/images/docs/appstore/built-in-apps/mysql-app/click-deploy.jpg)
+   ![click-deploy](/images/docs/zh-cn/appstore/built-in-apps/mysql-app/click-deploy.jpg)
 
-3. Set a name and select an app version. Make sure MySQL is deployed in `demo-project` and click **Next**.
+3. 设置应用名称和版本，确保 MySQL 部署在 `demo-project` 项目中，然后点击**下一步**。
 
-   ![deploy-mysql](/images/docs/appstore/built-in-apps/mysql-app/deploy-mysql.jpg)
+   ![deploy-mysql](/images/docs/zh-cn/appstore/built-in-apps/mysql-app/deploy-mysql.jpg)
 
-4. In **App Config**, uncomment the `mysqlRootPassword` field or customize the password. Click **Deploy** to continue.
+4. 在**应用配置**页面，取消对 `mysqlRootPassword` 字段的注释并设置密码，然后点击**部署**。
 
-   ![uncomment-password](/images/docs/appstore/built-in-apps/mysql-app/uncomment-password.jpg)
+   ![uncomment-password](/images/docs/zh-cn/appstore/built-in-apps/mysql-app/uncomment-password.jpg)
 
-5. Wait until MySQL is up and running.
+5. 等待 MySQL 创建完成并开始运行。
 
-   ![mysql-running](/images/docs/appstore/built-in-apps/mysql-app/mysql-running.jpg)
+   ![mysql-running](/images/docs/zh-cn/appstore/built-in-apps/mysql-app/mysql-running.jpg)
 
-### Step 2: Access MySQL Terminal
+### 步骤 2：访问 MySQL 终端
 
-1. Go to **Workloads** and click the service name of MySQL.
+1. 打开**工作负载**页面并点击 MySQL 的工作负载名称。
 
-   ![mysql-workload](/images/docs/appstore/built-in-apps/mysql-app/mysql-workload.jpg)
+   ![mysql-workload](/images/docs/zh-cn/appstore/built-in-apps/mysql-app/mysql-workload.jpg)
 
-2. Under **Pods**, expand the menu to see container details, and then click the **Terminal** icon.
+2. 在**容器组**区域，展开容器详情，点击终端图标。
 
-   ![mysql-teminal](/images/docs/appstore/built-in-apps/mysql-app/mysql-teminal.jpg)
+   ![mysql-teminal](/images/docs/zh-cn/appstore/built-in-apps/mysql-app/mysql-teminal.jpg)
 
-3. In the terminal, execute `mysql -uroot -ptesting` to log in MySQL as the root user.
+3. 在终端窗口中，执行 `mysql -uroot -ptesting` 命令以 `root` 用户登录 MySQL。
 
-   ![log-in-mysql](/images/docs/appstore/built-in-apps/mysql-app/log-in-mysql.jpg)
+   ![log-in-mysql](/images/docs/zh-cn/appstore/built-in-apps/mysql-app/log-in-mysql.jpg)
 
-### Step 3: Access MySQL Database outside Cluster
+### 步骤 3：从集群外访问 MySQL 数据库
 
-To access MySQL outside the cluster, you need to expose the app through NodePort first.
+要从集群外访问 MySQL，您需要先用 NodePort 暴露该应用。
 
-1. Go to **Services** and click the service name of MySQL.
+1. 打开**服务**页面并点击 MySQL 的服务名称。
 
-   ![mysql-service](/images/docs/appstore/built-in-apps/mysql-app/mysql-service.jpg)
+   ![mysql-service](/images/docs/zh-cn/appstore/built-in-apps/mysql-app/mysql-service.jpg)
 
-2. Click **More** and select **Edit Internet Access** from the drop-down menu.
+2. 点击**更多操作**，在下拉菜单中选择**编辑外网访问**。
 
-   ![edit-internet-access](/images/docs/appstore/built-in-apps/mysql-app/edit-internet-access.jpg)
+   ![edit-internet-access](/images/docs/zh-cn/appstore/built-in-apps/mysql-app/edit-internet-access.jpg)
 
-3. Select **NodePort** for **Access Method** and click **OK**. For more information, see [Project Gateway](../../../project-administration/project-gateway/).
+3. 将**访问方式**设置为 **NodePort** 并点击**确定**。有关更多信息，请参见[项目网关](../../../project-administration/project-gateway/)。
 
-   ![nodeport-mysql](/images/docs/appstore/built-in-apps/mysql-app/nodeport-mysql.jpg)
+   ![nodeport-mysql](/images/docs/zh-cn/appstore/built-in-apps/mysql-app/nodeport-mysql.jpg)
 
-4. Under **Service Ports**, you can see the port is exposed. The port and public IP will be used in the next step to access the MySQL database.
+4. 您可以在**服务端口**区域查看暴露的端口。该端口号和公网 IP 地址将在下一步用于访问 MySQL 数据库。
 
-   ![mysql-port-number](/images/docs/appstore/built-in-apps/mysql-app/mysql-port-number.jpg)
+   ![mysql-port-number](/images/docs/zh-cn/appstore/built-in-apps/mysql-app/mysql-port-number.jpg)
 
-5. To access your MySQL database, you need to use the MySQL client or install a third-party application such as SQLPro Studio for the connection. The following example demonstrates how to access the MySQL database through SQLPro Studio.
+5. 您需要使用 MySQL Client 或第三方应用（例如 SQLPro Studio）才能访问 MySQL 数据库。以下演示如何使用 SQLPro Studio 访问 MySQL 数据库。
 
-   ![login](/images/docs/appstore/built-in-apps/mysql-app/login.jpg)
+   ![login](/images/docs/zh-cn/appstore/built-in-apps/mysql-app/login.jpg)
 
-   ![access-mysql-success](/images/docs/appstore/built-in-apps/mysql-app/access-mysql-success.jpg)
+   ![access-mysql-success](/images/docs/zh-cn/appstore/built-in-apps/mysql-app/access-mysql-success.jpg)
 
    {{< notice note >}}
 
-   You may need to open the port in your security groups and configure related port forwarding rules depending on your where your Kubernetes cluster is deployed.
+   取决于您的 Kubernetes 集群的部署位置，您可能需要在安全组中放行端口并配置相关的端口转发规则。
 
    {{</ notice >}} 
 
-6. For more information about MySQL, refer to [the official documentation of MySQL](https://dev.mysql.com/doc/).
+6. 有关 MySQL 的更多信息，请参考[ MySQL 官方文档](https://dev.mysql.com/doc/)。
 

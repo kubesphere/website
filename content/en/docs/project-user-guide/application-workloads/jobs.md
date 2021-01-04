@@ -21,7 +21,7 @@ You need to create a workspace, a project and an account (`project-regular`). Th
 
 ### Step 1: Open Dashboard
 
-Log in the console as `project-regular`. Go to **Application Workloads** and click **Jobs**. Click **Create** to open the modal.
+Log in to the console as `project-regular`. Go to **Application Workloads** and click **Jobs**. Click **Create** to open the modal.
 
 ![create-job](/images/docs/project-user-guide/application-workloads/jobs/create-job.jpg)
 

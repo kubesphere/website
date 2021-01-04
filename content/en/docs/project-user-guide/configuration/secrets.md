@@ -22,7 +22,7 @@ You need to create a workspace, a project and an account (`project-regular`). Th
 
 ### Step 1: Open the dashboard
 
-Log in the console as `project-regular`. Go to **Configurations** of a project, choose **Secrets** and click **Create**.
+Log in to the console as `project-regular`. Go to **Configurations** of a project, choose **Secrets** and click **Create**.
 
 ![create-secrets](/images/docs/project-user-guide/configurations/secrets/create-secrets.jpg)
 
@@ -124,7 +124,7 @@ This section shows how to create Secrets from your Docker Hub account and GitHub
 
 ### Create the Docker Hub Secret
 
-1. Log in KubeSphere as `project-regular` and go to your project. Select **Secrets** from the navigation bar and click **Create** on the right.
+1. Log in to KubeSphere as `project-regular` and go to your project. Select **Secrets** from the navigation bar and click **Create** on the right.
 
    ![secret-create](/images/docs/project-user-guide/configurations/secrets/secret-create.jpg)
 
@@ -144,7 +144,7 @@ This section shows how to create Secrets from your Docker Hub account and GitHub
 
 ### Create the GitHub Secret
 
-1. Log in KubeSphere as `project-regular` and go to your project. Select **Secrets** from the navigation bar and click **Create** on the right.
+1. Log in to KubeSphere as `project-regular` and go to your project. Select **Secrets** from the navigation bar and click **Create** on the right.
 
    ![secret-create](/images/docs/project-user-guide/configurations/secrets/secret-create.jpg)
 
