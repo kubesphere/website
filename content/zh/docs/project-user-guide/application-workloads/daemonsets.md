@@ -16,7 +16,7 @@ weight: 10230
 如果您想在所有节点或者没有用户干预的特定节点上部署持续运行的后台任务，守护进程集会非常有用。例如：
 
 - 在每个节点上运行日志收集守护进程，例如 Fluentd 和 Logstash 等。
-- 在每个节点上运行节点监控守护进程，例如 Prometheus Node Exporter、collected 和 AppDynamics Agent 等。
+- 在每个节点上运行节点监控守护进程，例如 Prometheus Node Exporter、collectd 和 AppDynamics Agent 等。
 - 在每个节点上运行集群存储守护进程和系统程序，例如 Glusterd、Ceph、kube-dns 和 kube-proxy 等。
 
 ## 准备工作
