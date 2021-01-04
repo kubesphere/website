@@ -19,7 +19,7 @@ In workspace scope, you can grant the following resources' permissions to a role
 
 ## Prerequisites
 
-At least one workspace has been created, such as `demo-workspace`. Besides, you need an account of the `workspace-admin` role (e.g. `ws-admin`) at the workspace level. See [Create Workspace, Project, Account and Role](../../quick-start/create-workspace-and-project/) if they are not ready yet.
+At least one workspace has been created, such as `demo-workspace`. Besides, you need an account of the `workspace-admin` role (e.g. `ws-admin`) at the workspace level. See [Create Workspaces, Projects, Accounts and Roles](../../quick-start/create-workspace-and-project/) if they are not ready yet.
 
 {{< notice note >}} 
 

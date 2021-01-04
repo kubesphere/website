@@ -10,7 +10,7 @@ weight: 9500
 
 - You have already enabled [Network Policies](../../pluggable-components/network-policy/).
 
-- Use an account of the `workspace-admin` role. For example, use the account `ws-admin` created in [Create Workspace, Project, Account and Role](../../quick-start/create-workspace-and-project/).
+- Use an account of the `workspace-admin` role. For example, use the account `ws-admin` created in [Create Workspaces, Projects, Accounts and Roles](../../quick-start/create-workspace-and-project/).
 
   {{< notice note >}}
 

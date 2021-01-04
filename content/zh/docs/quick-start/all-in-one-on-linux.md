@@ -152,13 +152,13 @@ chmod +x kk
 
 执行该命令后，您将看到以下表格，用于环境检查。有关详细信息，请参见[节点要求](#节点要求)和[依赖项要求](#依赖项要求)。输入 `yes` 继续安装流程。
 
-![environment-check](https://ap3.qingstor.com/kubesphere-website/docs/environment-check.png)
+![environment-check](/images/docs/zh-cn/quickstart/all-in-one-on-linux/environment-check.png)
 
 ## 步骤 4：验证安装结果
 
 当您看到以下输出时，表明安装已经完成。
 
-![installation-complete](https://ap3.qingstor.com/kubesphere-website/docs/Installation-complete.png)
+![Installation-complete](/images/docs/zh-cn/quickstart/all-in-one-on-linux/Installation-complete.png)
 
 输入以下命令以检查安装结果。
 
@@ -198,7 +198,7 @@ https://kubesphere.io             20xx-xx-xx xx:xx:xx
 
 登录至控制台后，您可以在**服务组件**中查看各个组件的状态。如果要使用相关服务，您可能需要等待部分组件启动并运行。您也可以使用 `kubectl get pod --all-namespaces` 来检查 KubeSphere 相关组件的运行状况。
 
-![components](/images/docs/quickstart/kubesphere-components.png)
+![service-components](/images/docs/zh-cn/quickstart/all-in-one-on-linux/service-components.jpg)
 
 ## 启用可插拔组件（可选）
 

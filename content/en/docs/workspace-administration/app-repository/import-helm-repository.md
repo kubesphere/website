@@ -17,7 +17,7 @@ This tutorial demonstrates how to add an app repository to KubeSphere.
 
 - You need to enable [KubeSphere App Store (OpenPitrix)](../../../pluggable-components/app-store/).
 - You need to have an app repository. Refer to [the official documentation of Helm](https://v2.helm.sh/docs/developing_charts/#the-chart-repository-guide) to create repositories or [upload your own apps to the public repository of KubeSphere](../upload-app-to-public-repository/). Alternatively, use the example repository in the steps below, which are only for demonstration purposes.
-- You need to create a workspace and a user account (`ws-admin`). The account must be granted the role of `workspace-admin` in the workspace. For more information, refer to [Create Workspace, Project, Account and Role](../../../quick-start/create-workspace-and-project/).
+- You need to create a workspace and a user account (`ws-admin`). The account must be granted the role of `workspace-admin` in the workspace. For more information, refer to [Create Workspaces, Projects, Accounts and Roles](../../../quick-start/create-workspace-and-project/).
 
 ## Add App Repository
 
