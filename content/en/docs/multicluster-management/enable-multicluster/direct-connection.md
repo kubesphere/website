@@ -43,7 +43,7 @@ You need to **wait for a while** so that the change can take effect.
 
 {{< tab "KubeSphere has not been installed" >}}
 
-You can define a host cluster before you install KubeSphere either on Linux or on an existing Kubernetes cluster. If you want to [install KubeSphere on Linux](../../../installing-on-linux/introduction/multioverview/#1-create-an-example-configuration-file), you use a `config-sample.yaml` file. If you want to [install KubeSphere on an existing Kubernetes cluster](../../../installing-on-kubernetes/introduction/overview/#deploy-kubesphere), you use a `cluster-configuration.yaml` file. To set a host cluster, change the value of `clusterRole` to `host` in the YAML file before you install KubeSphere.
+You can define a host cluster before you install KubeSphere either on Linux or on an existing Kubernetes cluster. If you want to [install KubeSphere on Linux](../../../installing-on-linux/introduction/multioverview/#1-create-an-example-configuration-file), you use a `config-sample.yaml` file. If you want to [install KubeSphere on an existing Kubernetes cluster](../../../installing-on-kubernetes/introduction/overview/#deploy-kubesphere), you use two YAML files, one of which is `cluster-configuration.yaml`. To set a host cluster, change the value of `clusterRole` to `host` in `config-sample.yaml` or `cluster-configuration.yaml` accordingly before you install KubeSphere.
 
 ```yaml
 multicluster:
@@ -116,7 +116,7 @@ You need to **wait for a while** so that the change can take effect.
 
 {{< tab "KubeSphere has not been installed" >}}
 
-You can define a member cluster before you install KubeSphere either on Linux or on an existing Kubernetes cluster. If you want to [install KubeSphere on Linux](../../../installing-on-linux/introduction/multioverview/#1-create-an-example-configuration-file), you use a `config-sample.yaml` file. If you want to [install KubeSphere on an existing Kubernetes cluster](../../../installing-on-kubernetes/introduction/overview/#deploy-kubesphere), you use a `cluster-configuration.yaml` file. To set a member cluster, input the value of `jwtSecret` shown above and change the value of `clusterRole` to `member` before you install KubeSphere.
+You can define a member cluster before you install KubeSphere either on Linux or on an existing Kubernetes cluster. If you want to [install KubeSphere on Linux](../../../installing-on-linux/introduction/multioverview/#1-create-an-example-configuration-file), you use a `config-sample.yaml` file. If you want to [install KubeSphere on an existing Kubernetes cluster](../../../installing-on-kubernetes/introduction/overview/#deploy-kubesphere), you use two YAML files, one of which is `cluster-configuration.yaml`. To set a member cluster, input the value of `jwtSecret` shown above and change the value of `clusterRole` to `member` in `config-sample.yaml` or `cluster-configuration.yaml` accordingly before you install KubeSphere.
 
 ```yaml
 authentication:
@@ -165,5 +165,5 @@ Make sure the `server` address in KubeConfig is accessible on any node of the ho
      ![kubeconfig](/images/docs/multicluster-management/enable-multicluster-management-in-kubesphere/direct-connection/kubeconfig.jpg)
 
 4. Click **Import** and wait for cluster initialization to finish.
-     
+   
      ![cluster-imported](/images/docs/multicluster-management/enable-multicluster-management-in-kubesphere/direct-connection/cluster-imported.png)

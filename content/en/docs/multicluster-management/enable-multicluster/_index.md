@@ -1,5 +1,5 @@
 ---
-linkTitle: "Enable Multi-Cluster Management in KubeSphere"
+linkTitle: "Enable Multi-cluster Management in KubeSphere"
 weight: 5200
 
 _build:

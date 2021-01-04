@@ -43,7 +43,7 @@ You need to **wait for a while** so that the change can take effect.
 
 {{< tab "KubeSphere has not been installed" >}}
 
-You can define a host cluster before you install KubeSphere either on Linux or on an existing Kubernetes cluster. If you want to [install KubeSphere on Linux](../../../installing-on-linux/introduction/multioverview/#1-create-an-example-configuration-file), you use a `config-sample.yaml` file. If you want to [install KubeSphere on an existing Kubernetes cluster](../../../installing-on-kubernetes/introduction/overview/#deploy-kubesphere), you use a `cluster-configuration.yaml` file. To set a host cluster, change the value of `clusterRole` to `host` in the YAML file before you install KubeSphere.
+You can define a host cluster before you install KubeSphere either on Linux or on an existing Kubernetes cluster. If you want to [install KubeSphere on Linux](../../../installing-on-linux/introduction/multioverview/#1-create-an-example-configuration-file), you use a `config-sample.yaml` file. If you want to [install KubeSphere on an existing Kubernetes cluster](../../../installing-on-kubernetes/introduction/overview/#deploy-kubesphere), you use two YAML files, one of which is `cluster-configuration.yaml`. To set a host cluster, change the value of `clusterRole` to `host` in `config-sample.yaml` or `cluster-configuration.yaml` accordingly before you install KubeSphere.
 
 ```yaml
 multicluster:
@@ -80,7 +80,7 @@ If a LoadBalancer plugin is available for the cluster, you can see a correspondi
 kubectl -n kubesphere-system get svc
 ```
 
-The output may look as follows:
+The output is similar to this:
 
 ```shell
 NAME       TYPE            CLUSTER-IP      EXTERNAL-IP     PORT(S)              AGE
@@ -100,7 +100,7 @@ Generally, there is always a LoadBalancer solution in the public cloud, and the 
 1. If you cannot see a corresponding address displayed (`EXTERNAL-IP` is `pending`), you need to manually set the proxy address. For example, you have an available public IP address `139.198.120.120`, and port `8080` of **this IP address has been forwarded to port** `30721` of the cluster. Execute the following command to check the service.
 
     ```shell
-    $ kubectl -n kubesphere-system get svc
+    kubectl -n kubesphere-system get svc
     ```
 
     The output is similar to this:
@@ -189,7 +189,7 @@ You need to **wait for a while** so that the change can take effect.
 
 {{< tab "KubeSphere has not been installed" >}}
 
-You can define a member cluster before you install KubeSphere either on Linux or on an existing Kubernetes cluster. If you want to [install KubeSphere on Linux](../../../installing-on-linux/introduction/multioverview/#1-create-an-example-configuration-file), you use a `config-sample.yaml` file. If you want to [install KubeSphere on an existing Kubernetes cluster](../../../installing-on-kubernetes/introduction/overview/#deploy-kubesphere), you use a `cluster-configuration.yaml` file. To set a member cluster, input the value of `jwtSecret` shown above and change the value of `clusterRole` to `member` before you install KubeSphere.
+You can define a member cluster before you install KubeSphere either on Linux or on an existing Kubernetes cluster. If you want to [install KubeSphere on Linux](../../../installing-on-linux/introduction/multioverview/#1-create-an-example-configuration-file), you use a `config-sample.yaml` file. If you want to [install KubeSphere on an existing Kubernetes cluster](../../../installing-on-kubernetes/introduction/overview/#deploy-kubesphere), you use two YAML files, one of which is `cluster-configuration.yaml`. To set a member cluster, input the value of `jwtSecret` shown above and change the value of `clusterRole` to `member` in `config-sample.yaml` or `cluster-configuration.yaml` accordingly before you install KubeSphere.
 
 ```yaml
 authentication:
