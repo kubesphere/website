@@ -99,6 +99,10 @@ Generally, there is always a LoadBalancer solution in the public cloud, and the 
 
     ```shell
     $ kubectl -n kubesphere-system get svc
+    ```
+
+    The output is similar to this:
+    ```
     NAME       TYPE            CLUSTER-IP      EXTERNAL-IP     PORT(S)              AGE
     tower      LoadBalancer    10.233.63.191   <pending>  8080:30721/TCP            16h
     ```
