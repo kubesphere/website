@@ -2,7 +2,6 @@
 title: "Minimal KubeSphere on Kubernetes"
 keywords: 'KubeSphere, Kubernetes, Minimal, Installation'
 description: 'Minimal Installation of KubeSphere on Kubernetes'
-
 linkTitle: "Minimal KubeSphere on Kubernetes"
 weight: 2200
 ---
@@ -43,7 +42,7 @@ After you make sure your machine meets the prerequisites, you can follow the ste
     kubectl get svc/ks-console -n kubesphere-system
     ```
 
-4. Make sure the port `30880` is opened in your security group and access the web console through the NodePort (`IP:30880`) with the default account and password (`admin/P@88w0rd`).
+4. Make sure port `30880` is opened in your security group and access the web console through the NodePort (`IP:30880`) with the default account and password (`admin/P@88w0rd`).
 
 5. After logging in to the console, you can check the status of different components in **Components**. You may need to wait for some components to be up and running if you want to use related services.
 
@@ -53,5 +52,5 @@ After you make sure your machine meets the prerequisites, you can follow the ste
 
 The guide above is used only for the minimal installation by default. To enable other components in KubeSphere, see [Enable Pluggable Components](../../pluggable-components/) for more details.
 
-## Demo
+## Code Demonstration
 <script src="https://asciinema.org/a/362122.js" id="asciicast-362122" async></script>

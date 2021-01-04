@@ -150,7 +150,7 @@ chmod +x kk
 
 {{</ notice >}}
 
-执行该命令后，您将看到以下表格，用于环境检查。有关详细信息，请参见[节点要求](#节点要求)和[依赖项要求](#依赖项要求)。输入 `y` 继续安装流程。
+执行该命令后，您将看到以下表格，用于环境检查。有关详细信息，请参见[节点要求](#节点要求)和[依赖项要求](#依赖项要求)。输入 `yes` 继续安装流程。
 
 ![environment-check](https://ap3.qingstor.com/kubesphere-website/docs/environment-check.png)
 
