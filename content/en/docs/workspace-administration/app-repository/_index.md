@@ -1,5 +1,5 @@
 ---
-linkTitle: "App Repository"
+linkTitle: "App Repositories"
 weight: 9300
 
 _build:

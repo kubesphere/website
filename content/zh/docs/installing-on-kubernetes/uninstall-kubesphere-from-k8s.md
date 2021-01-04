@@ -1,15 +1,15 @@
 ---
 title: "从 Kubernetes 上卸载 KubeSphere"
-keywords: 'kubernetes, kubesphere, uninstall, remove-cluster'
-description: 'How to uninstall KubeSphere from Kubernetes'
+keywords: 'Kubernetes, KubeSphere, 卸载, 移除集群'
+description: '如何从 Kubernetes 上卸载 KubeSphere'
 LinkTitle: "从 Kubernetes 上卸载 KubeSphere"
 weight: 4400
 ---
 
-You can uninstall KubeSphere from your existing Kubernetes cluster as follows.
+您可以使用 [kubesphere-delete.sh](https://github.com/kubesphere/ks-installer/blob/master/scripts/kubesphere-delete.sh) 将 KubeSphere 从您现有的 Kubernetes 集群中卸载。复制 [GitHub 源文件](https://raw.githubusercontent.com/kubesphere/ks-installer/master/scripts/kubesphere-delete.sh)并在本地机器上执行此脚本。
 
-{{< notice tip >}}
-Uninstall will remove KubeSphere from your Kubernetes cluster. This operation is irreversible and does not have any backup. Please be cautious with this operation.
+{{< notice warning >}}
+
+卸载意味着 KubeSphere 会从您的 Kubernetes 集群中移除。此操作不可逆并且没有任何备份，请谨慎操作。
+
 {{</ notice >}}
-
-You can use [kubesphere-delete.sh](https://github.com/kubesphere/ks-installer/blob/master/scripts/kubesphere-delete.sh) to uninstall KubeSphere from Kubernetes. Copy it from [GitHub source file](https://raw.githubusercontent.com/kubesphere/ks-installer/master/scripts/kubesphere-delete.sh) and execute this script in your local.

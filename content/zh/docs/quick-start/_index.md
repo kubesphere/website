@@ -35,4 +35,4 @@ icon: "/images/docs/docs.svg"
 
 ## [启用可插拔组件](../quick-start/enable-pluggable-components/)
 
-了解如何在 KubeSphere 上启用可拔插组件，以便您全方位地探索 KubeSphere。安装前和安装后均可启用可插拔组件。
+了解如何在 KubeSphere 上启用可插拔组件，以便您全方位地探索 KubeSphere。安装前和安装后均可启用可插拔组件。
