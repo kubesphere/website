@@ -23,7 +23,7 @@ In this tutorial, you will learn how to deploy a sample application Bookinfo com
 
 - You need to enable [KubeSphere Service Mesh](../../pluggable-components/service-mesh/).
 
-- You need to finish all tasks in [Create Workspace, Project, Account and Role](../create-workspace-and-project/).
+- You need to finish all tasks in [Create Workspaces, Projects, Accounts and Roles](../create-workspace-and-project/).
 
 - You need to enable **Application Governance**. To do so, follow the steps below:
 

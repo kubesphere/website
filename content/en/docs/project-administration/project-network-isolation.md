@@ -12,7 +12,7 @@ KubeSphere project network isolation lets project administrators enforce which n
 ## Prerequisites
 
 - You have already enabled Network Policy. Please refer to [network-policy](../../pluggable-components/network-policy) if it is not ready yet.
-- Use an account of the `admin` role at the project level. For example, use the account `project-admin` created in [Create Workspace, Project, Account and Role](../../quick-start/create-workspace-and-project/).
+- Use an account of the `admin` role at the project level. For example, use the account `project-admin` created in [Create Workspaces, Projects, Accounts and Roles](../../quick-start/create-workspace-and-project/).
 
 {{< notice note >}}
 For the implementation of the Network Policy, you can refer to [kubesphere-network-policy](https://github.com/kubesphere/community/blob/master/sig-network/concepts-and-designs/kubesphere-network-policy.md).

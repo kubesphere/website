@@ -12,7 +12,7 @@ This guide demonstrates how to set cluster visibility.
 
 ## Prerequisites
 * You need to enable the [multi-cluster feature](../../../multicluster-management/).
-* You need to have a workspace and an account that has the permission to create workspaces, such as `ws-manager`. For more information, see [Create Workspace, Project, Account and Role](../../../quick-start/create-workspace-and-project/).
+* You need to have a workspace and an account that has the permission to create workspaces, such as `ws-manager`. For more information, see [Create Workspaces, Projects, Accounts and Roles](../../../quick-start/create-workspace-and-project/).
 
 ## Set Cluster Visibility
 

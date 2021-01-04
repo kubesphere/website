@@ -18,7 +18,7 @@ Using [Redis](https://redis.io/) as an example application, this tutorial demons
 ## Prerequisites
 
 - You need to enable [KubeSphere App Store (OpenPitrix)](../../pluggable-components/app-store/).
-- You need to create a workspace, a project and an account (`project-regular`). For more information, see [Create Workspace, Project, Account and Role](../../quick-start/create-workspace-and-project/).
+- You need to create a workspace, a project and an account (`project-regular`). For more information, see [Create Workspaces, Projects, Accounts and Roles](../../quick-start/create-workspace-and-project/).
 
 ## Hands-on Lab
 

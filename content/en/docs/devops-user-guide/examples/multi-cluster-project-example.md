@@ -11,7 +11,7 @@ weight: 11420
 - You need to [enable the multi-cluster feature](../../../../docs/multicluster-management/).
 - You need to have a [Docker Hub](https://hub.docker.com/) account.
 - You need to [enable KubeSphere DevOps System](../../../../docs/pluggable-components/devops/) on your host cluster.
-- You need to create a workspace with multiple clusters, a DevOps project on your **host** cluster, a multi-cluster project (in this tutorial, this multi-cluster project is created on the host cluster and one member cluster), and an account (`project-regular`). This account needs to be invited to the DevOps project and the multi-cluster project with the role `operator`. For more information, see [Create Workspace, Project, Account and Role](../../../quick-start/create-workspace-and-project), [Multi-cluster Management](../../../multicluster-management) and [Multi-cluster Projects](../../../project-administration/project-and-multicluster-project/#multi-cluster-projects).
+- You need to create a workspace with multiple clusters, a DevOps project on your **host** cluster, a multi-cluster project (in this tutorial, this multi-cluster project is created on the host cluster and one member cluster), and an account (`project-regular`). This account needs to be invited to the DevOps project and the multi-cluster project with the role `operator`. For more information, see [Create Workspaces, Projects, Accounts and Roles](../../../quick-start/create-workspace-and-project), [Multi-cluster Management](../../../multicluster-management) and [Multi-cluster Projects](../../../project-administration/project-and-multicluster-project/#multi-cluster-projects).
 
 ## Create a Docker Hub Access Token
 

@@ -15,7 +15,7 @@ This tutorial demonstrates how to create and delete a workspace.
 
 ## Prerequisites
 
-You have an account granted the role of `workspaces-manager`, such as `ws-manager` in [Create Workspace, Project, Account and Role](../../quick-start/create-workspace-and-project/).
+You have an account granted the role of `workspaces-manager`, such as `ws-manager` in [Create Workspaces, Projects, Accounts and Roles](../../quick-start/create-workspace-and-project/).
 
 ## Create a Workspace
 
