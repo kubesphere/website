@@ -3,13 +3,12 @@ title: "StatefulSets"
 keywords: 'KubeSphere, Kubernetes, StatefulSets, dashboard, service'
 description: 'Kubernetes StatefulSets'
 linkTitle: "StatefulSets"
-
 weight: 10220
 ---
 
-As workload API object, a StatefulSet is used to manage stateful applications. It is responsible for the deploying, scaling of a set of Pods, and guarantees the ordering and uniqueness of these Pods.
+As a workload API object, a StatefulSet is used to manage stateful applications. It is responsible for the deploying, scaling of a set of Pods, and guarantees the ordering and uniqueness of these Pods.
 
-Like a Deployment, a StatefulSet manages Pods that are based on an identical container specification. Unlike a Deployment, a StatefulSet maintains a sticky identity for each of their Pods. These pods are created from the same specification, but are not interchangeable: each has a persistent identifier that it maintains across any rescheduling.
+Like a Deployment, a StatefulSet manages Pods that are based on an identical container specification. Unlike a Deployment, a StatefulSet maintains a sticky identity for each of their Pods. These Pods are created from the same specification, but are not interchangeable: each has a persistent identifier that it maintains across any rescheduling.
 
 If you want to use storage volumes to provide persistence for your workload, you can use a StatefulSet as part of the solution. Although individual Pods in a StatefulSet are susceptible to failure, the persistent Pod identifiers make it easier to match existing volumes to the new Pods that replace any that have failed.
 

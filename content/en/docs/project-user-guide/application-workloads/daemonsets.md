@@ -3,7 +3,6 @@ title: "DaemonSets"
 keywords: 'KubeSphere, Kubernetes, DaemonSet, workload'
 description: 'Kubernetes DaemonSets'
 linkTitle: "DaemonSets"
-
 weight: 10230
 ---
 
