@@ -17,7 +17,7 @@ This tutorial walks you through an example of deploying MongoDB from the App Sto
 
 ## Hands-on Lab
 
-### Step 1: Deploy MongoDB from App Store
+### Step 1: Deploy MongoDB from the App Store
 
 1. On the **Overview** page of the project `demo-project`, click **App Store** in the top left corner.
 
@@ -47,7 +47,7 @@ This tutorial walks you through an example of deploying MongoDB from the App Sto
 
    ![mongodb-running](/images/docs/appstore/built-in-apps/mongodb-app/mongodb-running.jpg)
 
-### Step 2: Access MongoDB Terminal
+### Step 2: Access the MongoDB Terminal
 
 1. Go to **Services** and click the service name of MongoDB.
 

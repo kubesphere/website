@@ -99,7 +99,7 @@ Default settings are OK for other detailed configurations. You can also set them
 
 After you set LoadBalancer for KubeSphere console, you can visit it via the given address. Go to KubeSphere login page and use the default account (username `admin` and password `P@88w0rd`) to log in.
 
-  ![Log in KubeSphere Console](/images/docs/huawei-cce/en/login-ks-console.png)
+  ![Log in to KubeSphere Console](/images/docs/huawei-cce/en/login-ks-console.png)
 
 ## Enable Pluggable Components (Optional)
 

@@ -38,7 +38,7 @@ This step demonstrates how to create load balancers on the QingCloud platform.
 
 #### Create an internal load balancer
 
-1. Log in the [QingCloud console](https://console.qingcloud.com/login). In the menu on the left, under **Network & CDN**, select **Load Balancers**. Click **Create** to create a load balancer.
+1. Log in to the [QingCloud console](https://console.qingcloud.com/login). In the menu on the left, under **Network & CDN**, select **Load Balancers**. Click **Create** to create a load balancer.
 
    ![create-lb](/images/docs/installing-on-linux/installing-on-public-cloud/deploy-kubesphere-on-qingcloud-instances/create-lb.png)
 
@@ -334,7 +334,7 @@ To verify if the cluster is highly available, you can turn off an instance on pu
 
 ## See Also
 
-[Multi-Node Installation](../../../installing-on-linux/introduction/multioverview/)
+[Multi-node Installation](../../../installing-on-linux/introduction/multioverview/)
 
 [Kubernetes Cluster Configurations](../../../installing-on-linux/introduction/vars/)
 

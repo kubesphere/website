@@ -3,7 +3,6 @@ title: "DaemonSets"
 keywords: 'KubeSphere, Kubernetes, DaemonSet, workload'
 description: 'Kubernetes DaemonSets'
 linkTitle: "DaemonSets"
-
 weight: 10230
 ---
 
@@ -25,19 +24,19 @@ You need to create a workspace, a project and an account (`project-regular`). Th
 
 ## Create a DaemonSet
 
-### Step 1: Open Dashboard
+### Step 1: Open the dashboard
 
-Log in the console as `project-regular`. Go to **Application Workloads** of a project, select **Workloads**, and click **Create** under the tab **DaemonSets**.
+Log in to the console as `project-regular`. Go to **Application Workloads** of a project, select **Workloads**, and click **Create** under the tab **DaemonSets**.
 
 ![daemonsets](/images/docs/project-user-guide/workloads/daemonsets.jpg)
 
-### Step 2: Input Basic Information
+### Step 2: Input basic information
 
 Specify a name for the DaemonSet (e.g. `demo-daemonset`) and click **Next** to continue.
 
 ![daemonsets](/images/docs/project-user-guide/workloads/daemonsets_form_1.jpg)
 
-### Step 3: Set Image
+### Step 3: Set an image
 
 1. Click the **Add Container Image** box.
 
@@ -68,9 +67,9 @@ Specify a name for the DaemonSet (e.g. `demo-daemonset`) and click **Next** to c
 
 8. Select a deployment mode. For more information, see [Deployment Mode](../container-image-settings/#deployment-mode).
 
-9. Click **Next** to go to the next step when you finish setting the container image.
+9. Click **Next** to continue when you finish setting the container image.
 
-### Step 4: Mount Volumes
+### Step 4: Mount volumes
 
 You can add a volume directly or mount a ConfigMap or Secret. Alternatively, click **Next** directly to skip this step. For more information about volumes, visit [Volumes](../../storage/volumes/#mount-a-volume).
 
@@ -82,7 +81,7 @@ DaemonSets can't use a volume template, which is used by StatefulSets.
 
 {{</ notice>}}
 
-### Step 5: Configure Advanced Settings
+### Step 5: Configure advanced settings
 
 You can add metadata in this section. When you finish, click **Create** to complete the whole process of creating a DaemonSet.
 
@@ -94,7 +93,7 @@ You can add metadata in this section. When you finish, click **Create** to compl
 
 ## Check DaemonSet Details
 
-### Detail Page
+### Detail page
 
 1. After a DaemonSet is created, it displays in the list as below. You can click the three dots on the right and select the operation from the menu to modify a DaemonSet.
 
@@ -133,6 +132,6 @@ You can add metadata in this section. When you finish, click **Create** to compl
       - Click the container log icon to view output logs of the container.
       - You can view the Pod detail page by clicking the Pod name.
 
-### Revision Records
+### Revision records
 
 After the resource template of workload is changed, a new log will be generated and Pods will be rescheduled for a version update. The latest 10 versions will be saved by default. You can implement a redeployment based on the change log.

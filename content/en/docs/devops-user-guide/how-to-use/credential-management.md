@@ -28,7 +28,7 @@ This tutorial demonstrates how to create and manage credentials in a DevOps proj
 
 ## Create Credentials
 
-Log in the console of KubeSphere as `project-regular`. Navigate to your DevOps project, choose **Credentials** and click **Create**.
+Log in to the console of KubeSphere as `project-regular`. Navigate to your DevOps project, choose **Credentials** and click **Create**.
 
 ![create-credential-step1](/images/docs/devops-user-guide/using-devops/credential-management/create-credential-step1.jpg)
 

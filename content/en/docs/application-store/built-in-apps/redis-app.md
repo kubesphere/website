@@ -17,7 +17,7 @@ This tutorial walks you through an example of deploying Redis from the App Store
 
 ## Hands-on Lab
 
-### Step 1: Deploy Redis from App Store
+### Step 1: Deploy Redis from the App Store
 
 1. On the **Overview** page of the project `demo-project`, click **App Store** in the top left corner.
 
@@ -47,7 +47,7 @@ This tutorial walks you through an example of deploying Redis from the App Store
 
    ![redis-running](/images/docs/appstore/built-in-apps/redis-app/redis-running.jpg)
 
-### Step 2: Access Redis Terminal
+### Step 2: Access the Redis Terminal
 
 1. Go to **Services** and click the service name of Redis.
 

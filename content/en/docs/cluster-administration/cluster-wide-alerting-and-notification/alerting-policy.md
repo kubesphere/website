@@ -19,7 +19,7 @@ KubeSphere provides alert policies for nodes and workloads. This guide demonstra
 
 ### Task 1: Create an alert policy
 
-1. Log in the console with one account granted the role `platform-admin`.
+1. Log in to the console with one account granted the role `platform-admin`.
 
 2. Click **Platform** in the top left corner and select **Clusters Management**.
 

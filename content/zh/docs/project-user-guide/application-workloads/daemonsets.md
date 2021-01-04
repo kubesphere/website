@@ -1,138 +1,138 @@
 ---
-title: "守护进程集 (DaemonSet)"
-keywords: 'KubeSphere, Kubernetes, DaemonSet, workload'
-description: 'Kubernetes DaemonSets'
-linkTitle: "守护进程集 (DaemonSet)"
+title: "守护进程集"
+keywords: 'KubeSphere, Kubernetes, 守护进程集, 工作负载'
+description: 'Kubernetes 守护进程集'
+linkTitle: "守护进程集"
 
 weight: 10230
 ---
 
-守护程序集管理多组复制的 Pod，同时确保所有（或某些）节点运行 Pod 的副本，保证在每个 Node 上都运行一个容器副本，将节点添加到集群后，DaemonSets会根据需要自动将Pod添加到新节点。
+守护进程集管理多组 Pod 副本，确保所有（或某些）节点运行一个 Pod 的副本。集群添加节点时，守护进程集会根据需要自动将 Pod 添加到新节点。
 
-有关更多信息，请参见 [Kubernetes 官方文档](https://kubernetes.io/docs/concepts/workloads/controllers/daemonset/)。
+有关更多信息，请参见 [Kubernetes 官方文档](https://kubernetes.io/zh/docs/concepts/workloads/controllers/daemonset/)。
 
-## 使用 DaemonSets
+## 使用守护进程集
 
-在您要在所有或者没有任何用户干预的特定节点上部署正在运行的后台任务的情况下，DaemonSets 非常有用，例如：
-- 在每个节点上运行日志收集守护程序, 比如 Fluentd 和 Logstash 等。
-- 在每个节点上运行一个节点监视守护程序，比如 Prometheus Node Exporter、collected 和 AppDynamics Agent 等。
-- 在每个节点上运行集群存储守护程序和系统程序，比如 Glusterd、Ceph、kube-dns 和 kube-proxy 等。
+如果您想在所有节点或者没有用户干预的特定节点上部署持续运行的后台任务，守护进程集会非常有用。例如：
 
-## 先决条件
+- 在每个节点上运行日志收集守护进程，例如 Fluentd 和 Logstash 等。
+- 在每个节点上运行节点监控守护进程，例如 Prometheus Node Exporter、collectd 和 AppDynamics Agent 等。
+- 在每个节点上运行集群存储守护进程和系统程序，例如 Glusterd、Ceph、kube-dns 和 kube-proxy 等。
 
-您需要创建一个企业空间、一个项目以及一个帐户 (`project-regular`)。有关更多信息，请参见[创建企业空间、项目、帐户和角色](../../../quick-start/create-workspace-and-project)。
+## 准备工作
 
-## 创建 DaemonSet
+您需要创建一个企业空间、一个项目和一个帐户 (`project-regular`)，务必邀请该帐户到项目中并赋予 `operator` 角色。有关更多信息，请参见[创建企业空间、项目、帐户和角色](../../../quick-start/create-workspace-and-project/)。
 
-### 步骤 1: Open Dashboard
+## 创建守护进程集
 
-以 `project-regular` 身份登录控制台。 转到项目的**应用负载**，选择**工作负载（Workload）**，然后在**守护进程集**选项卡下单击**创建**。
+### 步骤 1：打开仪表板
 
-![daemonsets](/images/docs/project-user-guide-zh/workloads-zh/daemonsets.png)
+以 `project-regular` 身份登录控制台。转到项目的**应用负载**，选择**工作负载**，点击**守护进程集**选项卡下面的**创建**。
 
-### 步骤 2: 填写基本信息
+![守护进程集](/images/docs/zh-cn/project-user-guide/application-workloads/daemonsets/daemonsets.png)
 
-为 DaemonSet 指定一个名称（例如 `demo-daemonset`），然后单击**下一步**继续。
+### 步骤 2：输入基本信息
 
-![daemonsets](/images/docs/project-user-guide-zh/workloads-zh/daemonsets_form_1.png)
+为该守护进程集指定一个名称（例如 `demo-daemonset`），点击**下一步**继续。
 
-### 步骤 3: 设置镜像
+![输入名称](/images/docs/zh-cn/project-user-guide/application-workloads/daemonsets/daemonsets_form_1.png)
 
-1. 单击**添加容器镜像**。
+### 步骤 3：设置镜像
 
-    ![daemonsets](/images/docs/project-user-guide-zh/workloads-zh/daemonsets_form_2_container_btn.png)
+1. 点击**添加容器镜像**。
 
-2. 从公共 Docker Hub 或您指定的[私有镜像仓库](../../configuration/image-registry/)中输入镜像名称。 例如，在搜索栏中输入 `fluentd`，然后按 **Enter** 键。
+    ![添加容器镜像](/images/docs/zh-cn/project-user-guide/application-workloads/daemonsets/daemonsets_form_2_container_btn.png)
 
-    ![daemonsets](/images/docs/project-user-guide-zh/workloads-zh/daemonsets_form_2_container_1.png)
+2. 输入镜像名称，该镜像可以来自公共 Docker Hub，也可以来自您指定的[私有仓库](../../../project-user-guide/configuration/image-registry/)。例如，在搜索栏输入 `fluentd` 然后按**回车键**。
+
+    ![输入镜像名称](/images/docs/zh-cn/project-user-guide/application-workloads/daemonsets/daemonsets_form_2_container_1.png)
 
     {{< notice note >}}
 
-- 在搜索栏中输入镜像名称后，请记得要按键盘上的 **Enter** 键。
-- 如果要使用私有镜像仓库，则应首先在**配置中心**下的**密钥**中[创建私有镜像仓库密钥](../../configuration/image-registry/)。
+- 在搜索栏输入镜像名称后，请记得按键盘上的**回车键**。
+- 如果想使用您的私有镜像仓库，您应该先通过**配置中心**下面的**密钥**[创建镜像仓库密钥](../../../project-user-guide/configuration/image-registry/)。
 
     {{</ notice >}}
 
-3. 根据您的需求设置对 CPU 和内存资源的预留和限制。 有关更多信息，请参见[容器镜像设置中的资源预留和资源限制](../container-image-settings/#add-container-image)。
+3. 根据您的需求设置 CPU 和内存的资源请求和限制。有关更多信息，请参见[容器镜像设置中关于资源请求和资源限制的内容](../../../project-user-guide/application-workloads/container-image-settings/#添加容器镜像)。
 
-    ![daemonset-request-limit](/images/docs/project-user-guide-zh/workloads-zh/daemonset-request-limit.png)
+    ![资源请求和限制](/images/docs/zh-cn/project-user-guide/application-workloads/daemonsets/daemonset-request-limit.png)
 
-4. 服务设置里可以**使用默认端口**进行**服务设置**，您也可以自定义**协议**、**名称**和**容器端口**。
+4. 点击**使用默认端口**以自动填充**端口设置**，或者您可以自定义**协议**、**名称**和**容器端口**。
 
-5. 从下拉菜单中选择镜像拉取策略。 有关更多信息，请参见容器镜像设置中的[镜像拉取策略](../container-image-settings/#add-container-image)。
+5. 在下拉菜单中选择镜像拉取策略。有关更多信息，请参见[容器镜像设置中关于镜像拉取策略的内容](../../../project-user-guide/application-workloads/container-image-settings/#添加容器镜像)。
 
-6. 对于其他设置（**健康检查器**、**启动命令**、**环境变量**、**容器安全上下文（Security Context）**和**同步主机时区**），也可以在仪表板上对其进行配置。 有关更多信息，请参见[容器镜像设置](../container-image-settings/#add-container-image)中这些属性的详细说明。 完成后，单击右下角的 **√** 继续。
+6. 对于其他设置（**健康检查器**、**启动命令**、**环境变量**、**容器 Security Context** 以及**同步主机时区**），您也可以在仪表板上配置它们。有关更多信息，请参见[容器镜像设置](../../../project-user-guide/application-workloads/container-image-settings/#添加容器镜像)中对这些属性的详细说明。操作完成后，点击右下角的 **√** 继续。
 
-7. 从下拉菜单中选择一种更新策略。 建议您选择滚动更新 (RollingUpdate)。 有关更多信息，请参见[更新策略](../container-image-settings/#update-strategy)。
+7. 在下拉菜单中选择更新策略。建议您选择**滚动更新**。有关更多信息，请参见[更新策略](../../../project-user-guide/application-workloads/container-image-settings/#更新策略)。
 
-8. 选择部署模式。有关更多信息，请参见[部署模式](../container-image-settings/#deployment-mode)。
+8. 选择部署模式。有关更多信息，请参见[部署模式](../../../project-user-guide/application-workloads/container-image-settings/#部署模式)。
 
-9. 完成设置容器镜像后，单击**下一步**转到下一步。
+9. 完成容器镜像设置后，点击**下一步**继续。
 
-### 步骤 4: 挂载卷
+### 步骤 4：挂载存储卷
 
-您可以直接添加卷，也可以挂载 ConfigMap 或 Secret。 或者，直接单击**下一步**以跳过此步骤。有关卷的更多信息，请参考[卷](../../storage/volumes/#mount-a-volume)。
+您可以直接添加存储卷或者挂载 ConfigMap 或密钥，或者直接点击**下一步**跳过该步骤。有关存储卷的更多信息，请访问[存储卷](../../../project-user-guide/storage/volumes/#挂载存储卷)。
 
-![daemonsets](/images/docs/project-user-guide-zh/workloads-zh/daemonsets_form_3.png)
+![挂载存储](/images/docs/zh-cn/project-user-guide/application-workloads/daemonsets/daemonsets_form_3.png)
 
 {{< notice note >}}
 
-DaemonSets 不能使用 StatefulSets 使用的卷模板。
+守护进程集无法使用存储卷模板，而有状态副本集可以使用。
 
 {{</ notice>}}
 
-### 步骤 5: 配置高级设置
+### 步骤 5：配置高级设置
 
-您可以在此部分中添加元数据。 完成后，单击**创建**完成创建 DaemonSet 的整个过程。
+您可以在该部分添加元数据。完成操作后，点击**创建**完成创建守护进程集的整个流程。
 
-![daemonsets](/images/docs/project-user-guide-zh/workloads-zh/daemonsets_form_4.png)
+![高级设置](/images/docs/zh-cn/project-user-guide/application-workloads/daemonsets/daemonsets_form_4.png)
 
 - **添加元数据**
 
-  对资源进行额外的元数据设置，例如 `Label` 和 `Annotation`。
+  为资源进行额外的元数据设置，例如**标签**和**注解**。
 
-## 检查 DaemonSet 详细信息
+## 查看守护进程集详情
 
-### 详细页面
+### 详情页面
 
-1. 创建 DaemonSet 后，它将显示在列表中，如下所示。 您可以单击右侧的三个点从菜单中选择操作修改 DaemonSet。
+1. 守护进程集创建后会显示在下方的列表中。您可以点击右边的三个点，在弹出菜单中选择操作，修改您的守护进程集。
 
-    ![daemonsets](/images/docs/project-user-guide-zh/workloads-zh/daemonsets_list.png)
+    ![守护进程集列表](/images/docs/zh-cn/project-user-guide/application-workloads/daemonsets/daemonsets_list.png)
 
-    - **编辑**: 查看和编辑几本信息。
-    - **编辑 YAMl**: 查看、上传、下载或者更新 YAML 文件。
-    - **重新部署**: 重新部署 DaemonSet 。
-    - **删除**: 删除 DaemonSet 。
+    - **编辑**：查看并编辑基本信息。
+    - **编辑配置文件**：查看、上传、下载或者更新 YAML 文件。
+    - **重新部署**：重新部署该守护进程集。
+    - **删除**：删除该守护进程集。
 
-2. 单击 DaemonSet 的名称，然后可以转到其详细信息页面。
+2. 点击守护进程集名称可以进入它的详情页面。
 
-    ![daemonsets](/images/docs/project-user-guide-zh/workloads-zh/daemonsets_detail.png)
+    ![详情页面](/images/docs/zh-cn/project-user-guide/application-workloads/daemonsets/daemonsets_detail.png)
 
-3. 单击**更多操作**显示有关此 DaemonSet 的操作。
+3. 点击**更多操作**，显示您可以对该守护进程集进行的操作。
 
-    ![daemonsets](/images/docs/project-user-guide-zh/workloads-zh/daemonsets_detail_operation_btn.png)
+    ![更多操作](/images/docs/zh-cn/project-user-guide/application-workloads/daemonsets/daemonsets_detail_operation_btn.png)
 
-    - **版本回退**: 选择要回滚的版本。
-    - **编辑服务**: 设置端口公开容器镜像和服务端口。
-    - **编辑配置模版**: 配置更新策略、容器和卷
-    - **编辑 YAML 文件**: 查看、上传、下载或更新 YAML 文件。
-    - **重新部署**: 重新部署此 DaemonSet。
-    - **删除**: 删除 DaemonSet，然后返回到 DaemonSet 列表页面。
+    - **版本回退**：选择要回退的版本。
+    - **编辑配置模板**：配置更新策略、容器和存储卷。
+    - **编辑配置文件**：查看、上传、下载或者更新 YAML 文件。
+    - **重新部署**：重新部署该守护进程集。
+    - **删除**：删除该守护进程集并返回守护进程集列表页面。
 
-4. 单击**资源状态**选项卡查看 DaemonSet 的端口和 Pod 信息。
+4. 点击**资源状态**选项卡，查看该守护进程集的端口和 Pod 信息。
 
-    ![daemonsets](/images/docs/project-user-guide-zh/workloads-zh/daemonsets_detail_state.png)
+    ![资源状态](/images/docs/zh-cn/project-user-guide/application-workloads/daemonsets/daemonsets_detail_state.png)
 
-    - **副本运行状态**: 您不能更改 DaemonSet 的 Pod 副本的数量。
-    - **Pod 细节**
+    - **副本运行状态**：您无法更改守护进程集的 Pod 副本数量。
+    - **Pod 详情**
 
-      ![daemonsets](/images/docs/project-user-guide-zh/workloads-zh/daemonsets_detail_pod.png)
+      ![Pod 详情](/images/docs/zh-cn/project-user-guide/application-workloads/daemonsets/daemonsets_detail_pod.png)
 
-        - Pod 列表提供 Pod 的详细信息（状态、节点、Pod IP 和资源使用情况）。
-        - 您可以通过单击 Pod 条目查看容器信息。
-        - 单击容器日志图标可以查看容器的输出日志。
-        - 您可以通过单击 Pod 名称查看 Pod 详细信息页面。
+      - Pod 列表中显示了 Pod 详情（运行状态、节点、Pod IP 以及资源使用情况）。
+      - 您可以点击 Pod 条目查看容器信息。
+      - 点击容器日志图标查看容器的输出日志。
+      - 您可以点击 Pod 名称查看 Pod 详情页面。
 
-### Revision Records
+### 版本记录
 
-对工作负载的资源模板进行修改后会生成一个新的记录并重新调度容器组（Pod）进行版本的迭代，默认保存 10 个最近的版本。您可以根据版本记录进行重新部署。
+修改工作负载的资源模板后，会生成一个新的日志并重新调度 Pod 进行版本更新。默认保存 10 个最近的版本。您可以根据修改日志进行重新部署。
