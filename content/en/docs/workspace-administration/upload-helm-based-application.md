@@ -12,7 +12,7 @@ This tutorial demonstrates how to develop an app template by uploading a package
 
 ## Prerequisites
 
-- You need to enable [KubeSphere App Store (OpenPitrix)](../../pluggable-components/app-store/).
+- You need to enable the [KubeSphere App Store (OpenPitrix)](../../pluggable-components/app-store/).
 - You need to create a workspace and a user account (`project-admin`). The account must be invited to the workspace with the role of `workspace-self-provisioner`. For more information, refer to [Create Workspaces, Projects, Accounts and Roles](../../quick-start/create-workspace-and-project/).
 
 ## Hands-on Lab
