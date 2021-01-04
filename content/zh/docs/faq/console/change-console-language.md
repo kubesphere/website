@@ -1,29 +1,29 @@
 ---
-title: "Change the Console Language"
-keywords: "FAQ, console, KubeSphere, Kubernetes, language"
-description: "How to change the console language."
-linkTitle: "Change the Console Language"
+title: "更改控制台语言"
+keywords: "FAQ, 控制台, KubeSphere, Kubernetes, 语言"
+description: "如何更改控制台语言。"
+linkTitle: "更改控制台语言"
 Weight: 16530
 ---
 
-The KubeSphere web console is currently available in four languages: Simplified Chinese, Traditional Chinese, English and Spanish.
+KubeSphere Web 控制台目前支持四种语言：简体中文、繁体中文、英语和西班牙语。
 
-This tutorial demonstrates how to change the language of the console.
+本教程演示如何更改控制台语言。
 
-## **Prerequisites**
+## 准备工作
 
-You have installed KubeSphere.
+您需要先安装 KubeSphere。
 
-## Change the Console Language
+## 更改控制台语言
 
-1. Log in KubeSphere with your account and click the account name in the top right corner.
+1. 登录 KubeSphere，点击右上角的帐户名称。
 
-2. Select **User Settings**.
+2. 选择**个人设置**。
 
-   ![user-settings](/images/docs/faq/kubesphere-web-console/change-console-language/user-settings.jpg)
+   ![user-settings](/images/docs/zh-cn/faq/kubesphere-web-console/change-console-language/user-settings.jpg)
 
-3. On the **Basic Info** page, select a desired language from the **Language** drop-down list.
+3. 在**基本信息**页面，从**语言**下拉列表中选择所需的语言。
 
-   ![basic-info-page](/images/docs/faq/kubesphere-web-console/change-console-language/basic-info-page.jpg)
+   ![basic-info-page](/images/docs/zh-cn/faq/kubesphere-web-console/change-console-language/basic-info-page.jpg)
 
-4. Click the **✓** icon to save it.
+4. 点击 **✓** 图标保存设置。
