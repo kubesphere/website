@@ -1,154 +1,152 @@
 ---
-title: "有状态副本集 （StatefulSets）"
-keywords: 'KubeSphere, Kubernetes, StatefulSets, dashboard, service'
+title: "有状态副本集"
+keywords: 'KubeSphere, Kubernetes, 有状态副本集, 仪表板, 服务'
 description: 'Kubernetes StatefulSets'
-linkTitle: "有状态副本集 （StatefulSets）"
+linkTitle: "有状态副本集"
 
 weight: 10220
 ---
 
-作为工作负载 API 对象，有状态副本集 （StatefulSets）用于管理有状态的应用程序。 它负责一组 Pod 的部署和扩展，并保证这些 Pod 的顺序和唯一性。
+有状态副本集是用于管理有状态应用的工作负载 API 对象，负责一组 Pod 的部署和扩缩，并保证这些 Pod 的顺序性和唯一性。
 
-与 Deployment 类似 ，StatefulSet 管理基于相同容器规范的 Pod。 与 Deployment 不同的是，StatefulSet 为其每个 Pod 维护一个粘性身份。 这些 Pod 是根据相同的规范创建的，但不可互换：每个 Pod 都有一个持久性标识符，该标识符在任何重新调度中都会被维护。
+与部署类似，有状态副本集管理基于相同容器规范的 Pod。与部署不同的是，有状态副本集为其每个 Pod 维护一个粘性身份。 这些 Pod 根据相同的规范而创建，但不能相互替换：每个 Pod 都有一个持久的标识符，无论 Pod 如何调度，该标识符均保持不变。
 
-如果希望使用存储卷为工作负载提供持久性存储，可以使用 StatefulSet 作为解决方案的一部分。 尽管 StatefulSet 中的单个 Pod 容易出现故障，但持久性的 Pod 标识符可以更容易地将现有的卷匹配到替换任何故障的新 Pod。
+如果您想使用存储卷为工作负载提供持久化存储，可以使用有状态副本集作为解决方案的一部分。尽管有状态副本集中的单个 Pod 容易出现故障，但持久的 Pod 标识符可以更容易地将现有存储卷匹配到替换任意故障 Pod 的新 Pod。
 
-对于需要一个或多个以下应用程序的应用程序来说，StatefulSets 非常有用。
+对于需要满足以下一个或多个需求的应用程序来说，有状态副本集非常有用。
 
-- 稳定的唯一网络标识符。
-- 稳定的持久化存储。
-- 有序部署、有序扩展。
-- 有序收缩、有序删除。
+- 稳定的、唯一的网络标识符。
+- 稳定的、持久的存储。
+- 有序的、优雅的部署和扩缩。
+- 有序的、自动的滚动更新。
 
-有关更多信息，请参见 [Kubernetes 的官方文档](https://kubernetes.io/docs/concepts/workloads/controllers/statefulset/)。
+有关更多信息，请参见 [Kubernetes 官方文档](https://kubernetes.io/zh/docs/concepts/workloads/controllers/statefulset/)。
 
-## 先决条件
+## 准备工作
 
-您需要创建一个企业空间、一个项目以及一个帐户 (`project-regular`)。有关更多信息，请参见[创建企业空间、项目、帐户和角色](../../quick-start/create-workspace-and-project/)。
+您需要创建一个企业空间、一个项目以及一个帐户 (`project-regular`)，务必邀请该帐户到项目中并赋予 `operator` 角色。有关更多信息，请参见[创建企业空间、项目、帐户和角色](../../../quick-start/create-workspace-and-project/)。
 
-## 创建一个 StatefulSet
+## 创建有状态副本集
 
-在 KubeSphere 中，创建 StatefulSet 时也会创建 **Headless** 服务。 您可以在项目的**应用负载**下的[服务](../services/)中找到 headless 服务。
+在 KubeSphere 中，创建有状态副本集时也会创建 **Headless** 服务。您可以在项目的**应用负载**下的[服务](../services/)中找到 Headless 服务。
 
-### 步骤 1: 打开仪表板
+### 步骤 1：打开仪表板
 
-以 `project-regular` 身份登录控制台。 转到项目的**应用负载**，选择**工作负载（Workload）**，然后在**有状态副本集**选项卡下单击**创建**。
+以 `project-regular` 身份登录控制台。转到项目的**应用负载**，选择**工作负载**，然后在**有状态副本集**选项卡下点击**创建**。
 
-![statefulsets](/images/docs/project-user-guide-zh/workloads-zh/statefulsets.png)
+![有状态副本集](/images/docs/zh-cn/project-user-guide/application-workloads/statefulsets/statefulsets.png)
 
-### 步骤 2: 输入基本信息
+### 步骤 2：输入基本信息
 
-为 StatefulSet 指定一个名称（例如 `demo-stateful`），然后单击**下一步**继续。
+为有状态副本集指定一个名称（例如 `demo-stateful`），然后点击**下一步**继续。
 
-![statefulsets](/images/docs/project-user-guide-zh/workloads-zh/statefulsets_form_1.png)
+![输入名称](/images/docs/zh-cn/project-user-guide/application-workloads/statefulsets/statefulsets_form_1.png)
 
-### 步骤 3: 设置镜像
+### 步骤 3：设置镜像
 
-1. 在设置镜像之前，请通过单击 **+** 或 **-** 图标来定义容器组副本数量，这个值是清单文件里的 `.spec.replicas` 字段值。
+1. 设置镜像前，请点击**容器组副本数量**中的**加号**或**减号**图标来定义 Pod（即容器组）的副本数量，该参数显示在清单文件中的 `.spec.replicas` 字段。
 
     {{< notice tip >}}
 
-通过启用右上角的**编辑模式**可以查看 YAML 格式的 StatefulSet 清单文件。KubeSphere 允许您直接编辑清单文件以创建 StatefulSet。 或者您可以按照以下步骤通过仪表板创建 StatefulSet。
+您可以启用右上角的**编辑模式**，查看 YAML 格式的有状态副本集清单文件。KubeSphere 使您可以直接编辑清单文件创建有状态副本集，或者您可以按照下列步骤使用仪表板创建有状态副本集。
 
     {{</ notice >}}
     
-    ![statefulsets](/images/docs/project-user-guide-zh/workloads-zh/statefulsets_form_2.png)
+    ![设置镜像](/images/docs/zh-cn/project-user-guide/application-workloads/statefulsets/statefulsets_form_2.png)
 
-2. 单击**添加容器镜像**。
+2. 点击**添加容器镜像**。
 
-![statefulsets](/images/docs/project-user-guide-zh/workloads-zh/statefulsets_form_2_container_btn.png)
+    ![添加容器镜像](/images/docs/zh-cn/project-user-guide/application-workloads/statefulsets/statefulsets_form_2_container_btn.png)
 
-3. 从公共 Docker Hub 或您指定的私有存储库中输入镜像名称。 例如，在搜索栏中输入 nginx，然后按 Enter 键。
+3. 输入镜像名称，该镜像可以来自公共 Docker Hub，也可以来自您指定的[私有仓库](../../../project-user-guide/configuration/image-registry/)。例如，在搜索栏输入 `nginx` 然后按**回车键**。
 
-    ![statefulsets](/images/docs/project-user-guide-zh/workloads-zh/statefulsets_form_2_container_1.png)
+    ![输入镜像名称](/images/docs/zh-cn/project-user-guide/application-workloads/statefulsets/statefulsets_form_2_container_1.png)
 
     {{< notice note >}}
 
-- 在搜索栏中输入镜像名称后，请记得要按键盘上的 **Enter** 键。
-- 如果要使用私有镜像仓库，则应首先在**配置**下的**凭据**中[创建私有镜像仓库凭据](../../configuration/image-registry/)。
+- 在搜索栏输入镜像名称后，请记得按键盘上的**回车键**。
+- 如果想使用您的私有镜像仓库，您应该先通过**配置中心**下面的**密钥**[创建镜像仓库密钥](../../../project-user-guide/configuration/image-registry/)。
 
     {{</ notice >}}
 
-4. 根据您的需求设置对 CPU 和内存资源的预留和限制。 有关更多信息，请参见[容器镜像设置中的资源预留和资源限制](../container-image-settings/#add-container-image)。
+4. 根据您的需求设置 CPU 和内存的资源请求和限制。有关更多信息，请参见[容器镜像设置中关于资源请求和资源限制的内容](../../../project-user-guide/application-workloads/container-image-settings/#添加容器镜像)。
 
-    ![statefulset-request-limit](/images/docs/project-user-guide-zh/workloads-zh/statefulset-request-limit.png)
+    ![资源请求](/images/docs/zh-cn/project-user-guide/application-workloads/statefulsets/statefulset-request-limit.png)
 
-5. 服务设置里可以**使用默认端口**进行**服务设置**，您也可以自定义**协议**、**名称**和**容器端口**。
+5. 点击**使用默认端口**以自动填充**服务设置**，或者您可以自定义**协议**、**名称**和**容器端口**。
 
-6. 从下拉菜单中选择镜像拉取策略。 有关更多信息，请参见容器镜像设置中的[镜像拉取策略](../container-image-settings/#add-container-image)。
+6. 从下拉菜单中选择镜像拉取策略。 有关更多信息，请参见[容器镜像设置中关于镜像拉取策略的内容](../../../project-user-guide/application-workloads/container-image-settings/#添加容器镜像)。
 
-7. 对于其他设置（**健康检查器**、**启动命令**、**环境变量**、**容器安全上下文（Security Context）**和**同步主机时区**），也可以在仪表板上对其进行配置。 有关更多信息，请参见[容器镜像设置](../container-image-settings/#add-container-image)中这些属性的详细说明。 完成后，单击右下角的 **√** 继续。
+7. 对于其他设置（**健康检查器**、**启动命令**、**环境变量**、**容器 Security Context** 以及**同步主机时区**），您也可以在仪表板上配置它们。有关更多信息，请参见[容器镜像设置](../../../project-user-guide/application-workloads/container-image-settings/#添加容器镜像)中对这些属性的详细说明。操作完成后，点击右下角的 **√** 继续。
 
-8. 从下拉菜单中选择一种更新策略。 建议您选择滚动更新 (RollingUpdate)。 有关更多信息，请参见[更新策略](../container-image-settings/#update-strategy)。
-   
-![statefulset-update-strategy](/images/docs/project-user-guide-zh/workloads-zh/update-strategy.png)
+8. 在下拉菜单中选择更新策略。建议您选择**滚动更新**。有关更多信息，请参见[更新策略](../container-image-settings/#更新策略)。
 
-9. 选择部署模式。有关更多信息，请参见[部署模式](../container-image-settings/#deployment-mode)。
+9. 选择部署模式。有关更多信息，请参见[部署模式](../../../project-user-guide/application-workloads/container-image-settings/#部署模式)。
 
-10. 完成设置容器镜像后，单击**下一步**转到下一步。
+10. 完成容器镜像设置后，点击**下一步**继续。
 
-### 步骤 4: 挂载卷
+### 步骤 4：挂载存储卷
 
-StatefulSets 可以使用卷模板，但是您必须提前在 **Storage** 中创建它。 有关卷的更多信息，请参考[卷](../../storage/volumes/#mount-a-volume)。 完成后，单击**下一步**继续。
+有状态副本集可以使用存储卷模板，但是您必须提前在**存储管理**中创建它。有关存储卷的更多信息，请访问[存储卷](../../../project-user-guide/storage/volumes/#挂载存储卷)。完成后，点击**下一步**继续。
 
-![statefulsets](/images/docs/project-user-guide-zh/workloads-zh/statefulsets_form_3.png)
+![挂载存储卷](/images/docs/zh-cn/project-user-guide/application-workloads/statefulsets/statefulsets_form_3.png)
 
-### 步骤 5: 配置高级设置
+### 步骤 5：配置高级设置
 
-您可以在此部分中设置节点调度策略并添加元数据。 完成后，单击**创建**完成创建 StatefulSet 的整个过程。
+您可以在此部分中设置节点调度策略并添加元数据。完成操作后，点击**创建**完成创建有状态副本集的整个流程。
 
-![statefulsets](/images/docs/project-user-guide-zh/workloads-zh/statefulsets_form_4.png)
+![高级设置](/images/docs/zh-cn/project-user-guide/application-workloads/statefulsets/statefulsets_form_4.png)
 
 - **设置节点调度策略**
 
-  可以让 Pod 副本在指定的节点上运行。 在字段 `nodeSelector` 中指定。
+  您可以让 Pod 副本在指定节点上运行。该参数在 `nodeSelector` 字段中指定。
 
 - **添加元数据**
 
-  对资源进行额外的元数据设置，例如 `Label` 和 `Annotation`。
+  为资源进行额外的元数据设置，例如**标签**和**注解**。
 
-## 检查 StatefulSet 详细信息
+## 查看有状态副本集详情
 
-### 详细页面
+### 详情页面
 
-1. 创建 StatefulSet 后，它将显示在列表中，如下所示。 您可以单击右侧的三个点从菜单中选择操作修改 StatefulSet。
+1. 有状态副本集创建后会显示在下方的列表中。您可以点击右边的三个点，在弹出菜单中选择操作，修改您的有状态副本集。
 
-    ![statefulsets](/images/docs/project-user-guide-zh/workloads-zh/statefulsets_list.png)
+    ![列表](/images/docs/zh-cn/project-user-guide/application-workloads/statefulsets/statefulsets_list.png)
 
-    - **编辑**: 查看和编辑几本信息。
-    - **编辑 YAMl**: 查看、上传、下载或者更新 YAML 文件。
-    - **重新部署**: 重新部署 StatefulSet.
-    - **删除**: 删除 StatefulSet.
+    - **编辑**：查看并编辑基本信息。
+    - **编辑配置文件**：查看、上传、下载或者更新 YAML 文件。
+    - **重新部署**：重新部署该有状态副本集。
+    - **删除**：删除该有状态副本集。
 
-2. 单击 StatefulSet 的名称，然后可以转到其详细信息页面。
+2. 点击有状态副本集名称可以进入它的详情页面。
 
-    ![statefulsets](/images/docs/project-user-guide-zh/workloads-zh/statefulsets_detail.png)
+    ![详情页面](/images/docs/zh-cn/project-user-guide/application-workloads/statefulsets/statefulsets_detail.png)
 
-3. 单击**更多操作**显示有关此 StatefulSet 的操作
+3. 点击**更多操作**，显示您可以对该有状态副本集进行的操作。
 
-    ![statefulsets](/images/docs/project-user-guide-zh/workloads-zh/statefulsets_detail_operation_btn.png)
+    ![更多操作](/images/docs/zh-cn/project-user-guide/application-workloads/statefulsets/statefulsets_detail_operation_btn.png)
 
-    - **版本回退**: 选择要回滚的版本。
-    - **编辑服务**: 设置端口公开容器镜像和服务端口。
-    - **编辑配置模版**: 配置更新策略、容器和卷
-    - **编辑 YAML 文件**: 查看、上传、下载或更新 YAML 文件。
-    - **重新部署**: 重新部署此 StatefulSet。
-    - **删除**: 删除 StatefulSet，然后返回到 StatefulSet 列表页面。
+    - **版本回退**：选择要回退的版本。
+    - **编辑服务**：设置端口来暴露容器镜像和服务端口。
+    - **编辑配置模板**：配置更新策略、容器和存储卷。
+    - **编辑配置文件**：查看、上传、下载或者更新 YAML 文件。
+    - **重新部署**：重新部署该有状态副本集。
+    - **删除**：删除该有状态副本集并返回有状态副本集列表页面。
 
-4. 单击**资源状态**选项卡查看 StatefulSet 的端口和 Pod 信息。
+4. 点击**资源状态**选项卡，查看该有状态副本集的端口和 Pod 信息。
 
-    ![statefulsets](/images/docs/project-user-guide-zh/workloads-zh/statefulsets_detail_state.png)
+    ![资源状态](/images/docs/zh-cn/project-user-guide/application-workloads/statefulsets/statefulsets_detail_state.png)
 
-    - **副本运行状态**: 单击图像中的箭头可以增加或减少 Pod 副本的数量。
-    - **Pod 细节**
+    - **副本运行状态**：点击图像中的箭头增加或减少 Pod 副本数量。
+    - **Pod 详情**
 
-        ![statefulsets](/images/docs/project-user-guide-zh/workloads-zh/statefulsets_detail_pod.png)
+        ![Pod 列表](/images/docs/zh-cn/project-user-guide/application-workloads/statefulsets/statefulsets_detail_pod.png)
 
-        - Pod 列表提供 Pod 的详细信息（状态、节点、Pod IP 和资源使用情况）。
-        - 您可以通过单击 Pod 条目查看容器信息。
-        - 单击容器日志图标可以查看容器的输出日志。
-        - 您可以通过单击 Pod 名称查看 Pod 详细信息页面。
+        - Pod 列表中显示了 Pod 详情（运行状态、节点、Pod IP 以及资源使用情况）。
+        - 您可以点击 Pod 条目查看容器信息。
+        - 点击容器日志图标查看容器的输出日志。
+        - 您可以点击 Pod 名称查看 Pod 详情页面。
 
 ### 版本记录
 
-对工作负载的资源模板进行修改后会生成一个新的记录并重新调度容器组（Pod）进行版本的迭代，默认保存 10 个最近的版本。您可以根据版本记录进行重新部署。
+修改工作负载的资源模板后，会生成一个新的日志并重新调度 Pod 进行版本更新。默认保存 10 个最近的版本。您可以根据修改日志进行重新部署。
