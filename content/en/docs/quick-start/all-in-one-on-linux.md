@@ -12,7 +12,7 @@ For those who are new to KubeSphere and looking for a quick way to discover the 
 
 To get started with all-in-one installation, you only need to prepare one host according to the following requirements for hardware and operating system.
 
-### Hardware recommendation
+### Hardware recommendations
 
 | System                                                 | Minimum Requirements                        |
 | ------------------------------------------------------ | ------------------------------------------- |
@@ -144,7 +144,7 @@ To create a Kubernetes cluster with KubeSphere installed, refer to the following
 
 {{</ notice >}}
 
-After you execute the command, you will see a table as below for environment check. For details, read [Node requirements](#node-requirements) and [Dependency requirements](#dependency-requirements) above. Input `y` to continue.
+After you execute the command, you will see a table as below for environment check. For details, read [Node requirements](#node-requirements) and [Dependency requirements](#dependency-requirements) above. Input `yes` to continue.
 
 ![environment-check](/images/docs/quickstart/all-in-one-installation/environment-check.png)
 
