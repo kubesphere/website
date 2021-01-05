@@ -2,18 +2,15 @@
 title: "Prerequisites"
 keywords: "KubeSphere, Kubernetes, Installation, Prerequisites"
 description: "The prerequisites of installing KubeSphere on existing Kubernetes"
-
 linkTitle: "Prerequisites"
 weight: 4120
 ---
 
+You can install KubeSphere on virtual machines and bare metal with Kubernetes also provisioned. In addition, KubeSphere can also be deployed on cloud-hosted and on-premises Kubernetes clusters as long as your Kubernetes cluster meets the prerequisites below.
 
-
-Not only can KubeSphere be installed on virtual machines and bare metal with provisioned Kubernetes, but also supports installing on cloud-hosted and on-premises existing Kubernetes clusters as long as your Kubernetes cluster meets the prerequisites below.
-
-- Kubernetes version:  `1.15.x, 1.16.x, 1.17.x, 1.18.x`.
+- Kubernetes version: 1.15.x, 1.16.x, 1.17.x, 1.18.x.
 - Avaiable CPU > 1 Core and Memory > 2 G.
-- A **default** Storage Class in your Kubernetes cluster is configured; use `kubectl get sc` to verify it.
+- A **default** StorageClass in your Kubernetes cluster is configured; use `kubectl get sc` to verify it.
 - The CSR signing feature is activated in kube-apiserver when it is started with the `--cluster-signing-cert-file` and `--cluster-signing-key-file` parameters. See [RKE installation issue](https://github.com/kubesphere/kubesphere/issues/1925#issuecomment-591698309).
 
 ## Pre-checks
@@ -27,7 +24,7 @@ Not only can KubeSphere be installed on virtual machines and bare metal with pro
     ```
 
     {{< notice note >}}
-Pay attention to the `Server Version` line. If `GitVersion` shows an older one, you need to upgrade Kubernetes first. Please refer to [Upgrading kubeadm clusters from v1.14 to v1.15](https://v1-15.docs.kubernetes.io/docs/tasks/administer-cluster/kubeadm/kubeadm-upgrade-1-15/).
+Pay attention to the `Server Version` line. If `GitVersion` shows an older one, you need to upgrade Kubernetes first.
     {{</ notice >}}
 
 2. Check if the available resources in your cluster meet the minimum requirements.
@@ -39,7 +36,7 @@ Pay attention to the `Server Version` line. If `GitVersion` shows an older one, 
     Swap:             0           0           0
     ```
 
-3. Check if there is a **default** Storage Class in your cluster. An existing default Storage Class is a prerequisite for KubeSphere installation.
+3. Check if there is a **default** StorageClass in your cluster. An existing default StorageClass is a prerequisite for KubeSphere installation.
 
     ```bash
     $ kubectl get sc
