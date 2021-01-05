@@ -2,12 +2,11 @@
 title: "Overview"
 keywords: "KubeSphere, Kubernetes, Installation"
 description: "Overview of KubeSphere Installation on Kubernetes"
-
 linkTitle: "Overview"
 weight: 4110
 ---
 
-![KubeSphere+K8s](https://pek3b.qingstor.com/kubesphere-docs/png/20191123144507.png)
+![kubesphere+k8s](/images/docs/installing-on-kubernetes/introduction/overview/kubesphere+k8s.png)
 
 As part of KubeSphere's commitment to provide a plug-and-play architecture for users, it can be easily installed on existing Kubernetes clusters. More specifically, KubeSphere can be deployed on Kubernetes either hosted on clouds (e.g. AWS EKS, QingCloud QKE and Google GKE) or on-premises. This is because KubeSphere does not hack Kubernetes itself. It only interacts with the Kubernetes API to manage Kubernetes cluster resources. In other words, KubeSphere can be installed on any native Kubernetes cluster and Kubernetes distribution.
 
@@ -15,37 +14,37 @@ This section gives you an overview of the general steps of installing KubeSphere
 
 {{< notice note >}}
 
-Please read [Prerequisites](../prerequisites/) before you install KubeSphere on existing Kubernetes clusters.
+Read [Prerequisites](../prerequisites/) before you install KubeSphere on existing Kubernetes clusters.
 
 {{</ notice >}}
 
 ## Deploy KubeSphere
 
-After you make sure your existing Kubernetes cluster meets all the requirements, you can use kubectl to trigger the default minimal installation of KubeSphere.
+After you make sure your existing Kubernetes cluster meets all the requirements, you can use kubectl to install KubeSphere with the default minimal package.
 
-- Execute the following commands to start installation:
+1. Execute the following commands to start installation:
 
     ```bash
     kubectl apply -f https://github.com/kubesphere/ks-installer/releases/download/v3.0.0/kubesphere-installer.yaml
-
+    
     kubectl apply -f https://github.com/kubesphere/ks-installer/releases/download/v3.0.0/cluster-configuration.yaml
     ```
 
-- Inspect the logs of installation:
+2. Inspect the logs of installation:
 
     ```bash
     kubectl logs -n kubesphere-system $(kubectl get pod -n kubesphere-system -l app=ks-install -o jsonpath='{.items[0].metadata.name}') -f
     ```
 
-- Use `kubectl get pod --all-namespaces` to see whether all pods are running normally in relevant namespaces of KubeSphere. If they are, check the port (30880 by default) of the console through the following command:
+3. Use `kubectl get pod --all-namespaces` to see whether all pods are running normally in relevant namespaces of KubeSphere. If they are, check the port (30880 by default) of the console through the following command:
 
     ```bash
     kubectl get svc/ks-console -n kubesphere-system
     ```
 
-- Make sure port 30880 is opened in security groups and access the web console through the NodePort (`IP:30880`) with the default account and password (`admin/P@88w0rd`).
+4. Make sure port 30880 is opened in security groups and access the web console through the NodePort (`IP:30880`) with the default account and password (`admin/P@88w0rd`).
 
-    ![kubesphere-console](https://ap3.qingstor.com/kubesphere-website/docs/login.png)
+    ![login](/images/docs/installing-on-kubernetes/introduction/overview/login.png)
 
 ## Enable Pluggable Components (Optional)
 
