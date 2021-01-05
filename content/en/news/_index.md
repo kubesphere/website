@@ -10,6 +10,10 @@ section1:
 
 section2:
   news:
+    - title: 'KubeSphere is Now Available as an AWS Quick Start'
+      description: KubeSphere expands collaboration with Amazon Web Services to further accelerate the cloud-native technology transformation.
+      image: https://ap3.qingstor.com/kubesphere-website/docs/kubesphere-aws.png
+      link: 'kubesphere-available-on-aws-quickstart'
     - title: 'KubeSphere and Cigo Cloud Partner on Providing Container Services and Building a Developer Community in Africa'
       description: KubeSphere and Cigo Cloud work to empower African users on the cloud and promote a local developer community.
       image: https://ap3.qingstor.com/kubesphere-website/docs/cigo-cloud.png
