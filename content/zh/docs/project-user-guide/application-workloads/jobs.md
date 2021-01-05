@@ -11,7 +11,7 @@ weight: 10250
 
 在简单的使用场景中，您可以创建一个任务对象，以便可靠地运行一个 Pod 直到结束。当第一个 Pod 故障或者被删除（例如因为节点硬件故障或者节点重启）时，任务对象会启动一个新的 Pod。您也可以使用一个任务并行运行多个 Pod。
 
-下面的示例演示了在 KubeSphere 中创建任务的具体步骤，该任务负责计算 π 到小数点后 2000 位。 
+下面的示例演示了在 KubeSphere 中创建任务的具体步骤，该任务会计算 π 到小数点后 2000 位。 
 
 ## 准备工作
 
@@ -44,8 +44,8 @@ weight: 10250
 | 名称                   | 定义                         | 描述信息                                                     |
 | ---------------------- | ---------------------------- | ------------------------------------------------------------ |
 | 最大重试次数           | `spec.backoffLimit`          | 指定将该任务视为失败之前的重试次数。默认值为 6。             |
-| 完成数                 | `spec.completions`           | 指定该任务应该运行至成功结束的 Pod 的期望数量。如果设置为 nil，则意味着任何 Pod 成功结束即标志着所有 Pod 成功结束，并且允许并行数为任何正数值。如果设置为 1，则意味着并行数限制为 1，并且该 Pod 成功结束标志着任务成功完成。有关更多信息，请参见 [Jobs](https://kubernetes.io/zh/docs/concepts/workloads/controllers/job/). |
-| 并行数                 | `spec.parallelism`           | 指定该任务在任何给定时间应该运行的最大期望 Pod 数量。当剩余工作小于最大并行数时 ((`.spec.completions - .status.successful`) < `.spec.parallelism`)，实际稳定运行的 Pod 数量会小于该值。有关更多信息，请参见 [Jobs](https://kubernetes.io/zh/docs/concepts/workloads/controllers/job/). |
+| 完成数                 | `spec.completions`           | 指定该任务应该运行至成功结束的 Pod 的期望数量。如果设置为 nil，则意味着任何 Pod 成功结束即标志着所有 Pod 成功结束，并且允许并行数为任何正数值。如果设置为 1，则意味着并行数限制为 1，并且该 Pod 成功结束标志着任务成功完成。有关更多信息，请参见 [Jobs](https://kubernetes.io/zh/docs/concepts/workloads/controllers/job/)。 |
+| 并行数                 | `spec.parallelism`           | 指定该任务在任何给定时间应该运行的最大期望 Pod 数量。当剩余工作小于最大并行数时 ((`.spec.completions - .status.successful`) < `.spec.parallelism`)，实际稳定运行的 Pod 数量会小于该值。有关更多信息，请参见 [Jobs](https://kubernetes.io/zh/docs/concepts/workloads/controllers/job/)。 |
 | 退出超时时限(单位：秒) | `spec.activeDeadlineSeconds` | 指定该任务在系统尝试终止任务前处于运行状态的持续时间（相对于 stratTime），单位为秒；该值必须是正整数。 |
 
 ### 步骤 4：设置镜像
@@ -62,7 +62,7 @@ weight: 10250
 
     ![添加镜像](/images/docs/zh-cn/project-user-guide/application-workloads/jobs/add-container-image-job.PNG)
 
-3. 在该页面向下滚动到**启动命令**。在命令框中输入以下命令，计算 pi 到小数点后 2000 位然后打印出来。点击右下角的 **√**，然后选择**下一步**继续。
+3. 在该页面向下滚动到**启动命令**。在命令框中输入以下命令，计算 pi 到小数点后 2000 位并输出结果。点击右下角的 **√**，然后选择**下一步**继续。
 
     ```bash
     perl,-Mbignum=bpi,-wle,print bpi(2000)
