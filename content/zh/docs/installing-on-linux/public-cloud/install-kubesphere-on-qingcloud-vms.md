@@ -46,7 +46,7 @@ Weight: 3220
 
    ![qingcloud-lb](/images/docs/zh-cn/installing-on-linux/installing-on-public-cloud/deploy-kubesphere-on-qingcloud-instances/qingcloud-lb.png)
 
-4. 点击上一步创建的负载均衡器。在其详情页面创建监听器，将**监听协议**设置为`TCP`，将**端口**设置为 `6443`。
+4. 点击上一步创建的负载均衡器。在其详情页面创建监听器，将**监听协议**设置为 `TCP`，将**端口**设置为 `6443`。
 
    ![listener](/images/docs/zh-cn/installing-on-linux/installing-on-public-cloud/deploy-kubesphere-on-qingcloud-instances/listener.png)
 
