@@ -67,8 +67,6 @@ Built-in roles are created automatically by KubeSphere and cannot be edited or d
    To log out, click your username in the top-right corner and select **Log Out**.
    {{</ notice >}}
 
-   For detailed information about the four accounts you need to create, refer to the table below.
-
    | Account           | Role                 | Description                                                  |
    | ----------------- | -------------------- | ------------------------------------------------------------ |
    | `ws-manager`      | `workspaces-manager` | Create and manage all workspaces.                            |
