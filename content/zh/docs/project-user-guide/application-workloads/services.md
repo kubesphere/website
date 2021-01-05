@@ -9,7 +9,7 @@ weight: 10240
 
 服务是一种抽象方法，它将运行在一组 Pod 上的应用程序暴露为网络服务。也就是说，服务将这些 Pod 的 Endpoint 组成一个单一资源，可以通过不同的方式访问该资源。
 
-有了 Kubernetes，您无需修改应用程序来使用不熟悉的服务发现机制。Kubernetes 为 Pod 提供 IP 地址，为一组 Pod 提供一个单一 DNS 名，并且可以在 Pod 之间进行负载均衡。
+有了 Kubernetes，您无需修改应用程序来使用不熟悉的服务发现机制。Kubernetes 为 Pod 提供 IP 地址，为一组 Pod 提供一个单一 DNS 名称，并且可以在 Pod 之间进行负载均衡。
 
 有关更多信息，请参见 [Kubernetes 官方文档](https://kubernetes.io/zh/docs/concepts/services-networking/service/)。
 
@@ -45,7 +45,7 @@ weight: 10240
 
 - **外部服务**
 
-  与无状态服务和有状态服务不同，ExternalName 服务将一个服务映射到一个 DNS 名，而不是映射到选择器。您需要在 **ExternalName** 字段中指定这些服务，该字段显示在 YAML 文件中的 `externalName`。
+  与无状态服务和有状态服务不同，ExternalName 服务将一个服务映射到一个 DNS 名称，而不是映射到选择器。您需要在 **ExternalName** 字段中指定这些服务，该字段显示在 YAML 文件中的 `externalName`。
 
 - **指定工作负载**
 
@@ -134,7 +134,7 @@ weight: 10240
 
 {{< notice tip >}}
 
-有关仪表板属性的详细说明，请直接参见[容器镜像设置](../../../project-user-guide/application-workloads/container-image-settings/)。
+有关仪表板上各项属性的详细说明，请直接参见[容器镜像设置](../../../project-user-guide/application-workloads/container-image-settings/)。
 
 {{</ notice >}}
 
@@ -166,7 +166,7 @@ weight: 10240
 
 - 开启会话保持
 
-  您可能想把从单个客户端会话发送的所有流量都路由到跨多个副本运行的应用的同一实例。这种做法降低了延迟，因此能更好地利用缓存。负载均衡的这种行为称为“会话保持”。
+  您可能想把从单个客户端会话发送的所有流量都路由到跨多个副本运行的应用的同一实例。这种做法降低了延迟，因此能更好地利用缓存。负载均衡的这种行为称为“会话保持 (Sticky Session)”。
 
   您可以在该字段设置最大会话保持时间，由清单文件中的 `.spec.sessionAffinityConfig.clientIP.timeoutSeconds` 指定，默认为 10800。
 
