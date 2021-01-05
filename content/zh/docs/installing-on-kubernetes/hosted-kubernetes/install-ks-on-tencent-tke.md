@@ -1,6 +1,6 @@
 ---
 title: "在腾讯云 TKE 安装 KubeSphere"
-keywords: "kubesphere, kubernetes, docker, tencent, tke"
+keywords: "kubesphere, kubernetes, docker, tencent, tke" 
 description: "介绍如何在腾讯云 TKE 上部署 KubeSphere 3.0"
 
 
@@ -72,7 +72,6 @@ vim cluster-configuration.yaml
     openldapVolumeSize: 10Gi   # openldap PVC size.
     redisVolumSize: 10Gi # Redis PVC size.
 ```
-
 
 - 然后执行以下命令部署：
 
