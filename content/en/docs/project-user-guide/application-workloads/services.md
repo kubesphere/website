@@ -3,7 +3,6 @@ title: "Services"
 keywords: 'KubeSphere, Kubernetes, services, workloads'
 description: 'Create a KubeSphere Service'
 linkTitle: "Services"
-
 weight: 10240
 ---
 
@@ -77,7 +76,7 @@ The value of `annotations:kubesphere.io/serviceType` keywords can be defined as:
 
 The steps of creating a stateful Service and a stateless Service are basically the same. This example only goes through the process of creating a stateless Service for demonstration purpose.
 
-    {{</ notice >}} 
+{{</ notice >}} 
 
 ### Step 2: Input basic information
 
@@ -128,7 +127,7 @@ The value of **Name** is used in both configurations, one for Deployment and the
 
 ### Step 3: Set an image
 
-To add a container image for the Service, see [Set Image](../deployments/#step-3-set-image) for details.
+To add a container image for the Service, see [Set an image](../deployments/#step-3-set-an-image) for details.
 
 ![stateless_form_2.png](/images/docs/project-user-guide/workloads/stateless_form_2.jpg)
 
