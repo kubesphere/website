@@ -1,8 +1,8 @@
 ---
-title: "在青云QingCloud主机上部署 KubeSphere"
+title: "在青云QingCloud 主机上部署 KubeSphere"
 keywords: "KubeSphere, 安装, HA, 高可用性, LoadBalancer"
-description: "本教程介绍如何在青云QingCloud主机上安装高可用集群。"
-linkTitle: "在青云QingCloud主机上部署 KubeSphere"
+description: "本教程介绍如何在青云QingCloud 主机上安装高可用集群。"
+linkTitle: "在青云QingCloud 主机上部署 KubeSphere"
 Weight: 3220
 ---
 
@@ -10,12 +10,12 @@ Weight: 3220
 
 对于生产环境，需要考虑集群的高可用性。如果关键组件（例如 kube-apiserver、kube-scheduler 和 kube-controller-manager）在相同的主节点上运行，一旦主节点出现故障，Kubernetes 和 KubeSphere 将不可用。因此，您需要为多个主节点配置负载均衡器，以搭建高可用集群。您可以使用任何云负载均衡器或任何硬件负载均衡器（例如 F5）。此外，您也可以使用 Keepalived+[HAproxy](https://www.haproxy.com/) 或 NGINX 搭建高可用集群。
 
-本教程演示如何创建两个[青云QingCloud负载均衡器](https://docs.qingcloud.com/product/network/loadbalancer)，分别用于内部和外部负载均衡，以及如何使用负载均衡器实现主节点和 etcd 节点的高可用性。
+本教程演示如何创建两个[青云QingCloud 负载均衡器](https://docs.qingcloud.com/product/network/loadbalancer)，分别用于内部和外部负载均衡，以及如何使用负载均衡器实现主节点和 etcd 节点的高可用性。
 
 ## 准备工作
 
 - 您需要了解如何在多节点集群上安装 KubeSphere（请参见[多节点安装](../../../installing-on-linux/introduction/multioverview/)）。有关安装中用到的配置文件的详细信息，请参见[编辑配置文件](../../../installing-on-linux/introduction/multioverview/#2-编辑配置文件)。本教程主要介绍如何配置负载均衡器。
-- 您需要注册一个[青云QingCloud](https://console.qingcloud.com/login)帐户才能在青云QingCloud创建负载均衡器。如在其他云平台上创建负载均衡器，请参考对应云厂商提供的指南。
+- 您需要注册一个[青云QingCloud ](https://console.qingcloud.com/login)帐户才能在青云QingCloud 创建负载均衡器。如在其他云平台上创建负载均衡器，请参考对应云厂商提供的指南。
 - 如果搭建生产环境，建议您提前准备持久化存储并创建 StorageClass。如果搭建开发测试环境，您可以直接使用集成的 OpenEBS 配置 LocalPV 存储服务。
 
 ## 集群架构
@@ -34,19 +34,19 @@ Weight: 3220
 
 ### 步骤 1：创建负载均衡器
 
-本步骤演示如何在青云QingCloud平台上创建负载均衡器。
+本步骤演示如何在青云QingCloud 平台上创建负载均衡器。
 
 #### 创建内部负载均衡器
 
-1. 登录[青云QingCloud控制台](https://console.qingcloud.com/login)。在左侧导航栏选择**网络与 CDN **下的**负载均衡器**，然后点击**创建**。
+1. 登录[青云QingCloud 控制台](https://console.qingcloud.com/login)。在左侧导航栏选择**网络与 CDN** 下的**负载均衡器**，然后点击**创建**。
 
    ![create-lb](/images/docs/zh-cn/installing-on-linux/installing-on-public-cloud/deploy-kubesphere-on-qingcloud-instances/create-lb.png)
 
-2. 在弹出的对话框中，设置负载均衡器的名称，在**网络**下拉列表中选择机器所在的私有网络（在本例中为 `pn`），其他参数可以保持默认，然后点击**提交**。 
+2. 在弹出的对话框中，设置负载均衡器的名称，在**网络**下拉列表中选择机器所在的私有网络（在本例中为 `pn`），其他参数可以保持默认，然后点击**提交**。
 
    ![qingcloud-lb](/images/docs/zh-cn/installing-on-linux/installing-on-public-cloud/deploy-kubesphere-on-qingcloud-instances/qingcloud-lb.png)
 
-4. 点击上一步创建的负载均衡器。在其详情页面创建监听器，将**监听协议**设置为**TCP**，将**端口**设置为 `6443`。
+4. 点击上一步创建的负载均衡器。在其详情页面创建监听器，将**监听协议**设置为`TCP`，将**端口**设置为 `6443`。
 
    ![listener](/images/docs/zh-cn/installing-on-linux/installing-on-public-cloud/deploy-kubesphere-on-qingcloud-instances/listener.png)
 
@@ -59,7 +59,7 @@ Weight: 3220
 
    {{< notice note >}}
 
-   在创建监听器后需要检查负载均衡器的防火墙规则。请确保 `6443` 端口已添加到防火墙规则中并且外部流量可以通过 `6443` 端口，否则安装将会失败。在青云QingCloud平台上，您可以在**安全**下的**安全组**页面查看相关信息。
+   在创建监听器后需要检查负载均衡器的防火墙规则。请确保 `6443` 端口已添加到防火墙规则中并且外部流量可以通过 `6443` 端口，否则安装将会失败。在青云QingCloud 平台上，您可以在**安全**下的**安全组**页面查看相关信息。
 
    {{</ notice >}}
 
@@ -99,7 +99,7 @@ Weight: 3220
 
    {{< notice note >}}
 
-   在创建监听器后需要检查负载均衡器的防火墙规则。请确保 `30880` 端口已添加到防火墙规则中并且外部流量可以通过 `30880` 端口，否则安装将会失败。在青云QingCloud平台上，您可以在**安全**下的**安全组**页面查看相关信息。
+   在创建监听器后需要检查负载均衡器的防火墙规则。请确保 `30880` 端口已添加到防火墙规则中并且外部流量可以通过 `30880` 端口，否则安装将会失败。在青云QingCloud 平台上，您可以在**安全**下的**安全组**页面查看相关信息。
 
    {{</ notice >}}
 
@@ -111,7 +111,7 @@ Weight: 3220
 
    设置完成后点击**提交**。
 
-4. 点击**应用修改**。页面上显示六台机器已添加为外部部负载均衡器后端监听器的后端服务器。
+4. 点击**应用修改**。页面上显示六台机器已添加为外部负载均衡器后端监听器的后端服务器。
 
 ### 步骤 2：下载 KubeKey
 
@@ -123,7 +123,7 @@ Weight: 3220
 
 {{< tab "如果您能正常访问 GitHub/Googleapis" >}}
 
-从 [GitHub 发布页面](https://github.com/kubesphere/kubekey/releases) 下载 KubeKey 或直接使用以下命令：
+从 [GitHub 发布页面](https://github.com/kubesphere/kubekey/releases)下载 KubeKey 或直接使用以下命令：
 
 ```bash
 curl -sfL https://get-kk.kubesphere.io | VERSION=v1.0.1 sh -
@@ -246,9 +246,9 @@ spec:
 
 {{</ notice >}}
 
-### 步骤5：配置 Kubernetes 集群（可选）
+### 步骤 5：配置 Kubernetes 集群（可选）
 
-集群管理员可修改 KubeKey 提供的一些字段来自定义 Kubernetes 安装参数，包括 Kubernetes 版本、网络插件和镜像仓库。 `config-example.yaml` 文件中的一些字段有默认值。您可以根据需要修改文件中 Kubernetes 相关的字段。有关更多信息，请参考[ Kubernetes 集群配置](../../../installing-on-linux/introduction/vars/)。
+集群管理员可修改 KubeKey 提供的一些字段来自定义 Kubernetes 安装参数，包括 Kubernetes 版本、网络插件和镜像仓库。`config-example.yaml` 文件中的一些字段有默认值。您可以根据需要修改文件中 Kubernetes 相关的字段。有关更多信息，请参考[ Kubernetes 集群配置](../../../installing-on-linux/introduction/vars/)。
 
 ### 步骤 6：配置持久化存储插件
 
@@ -321,7 +321,7 @@ https://kubesphere.io             2020-08-13 10:50:24
 
 ![active](/images/docs/zh-cn/installing-on-linux/installing-on-public-cloud/deploy-kubesphere-on-qingcloud-instances/active.png)
 
-如果两个监听器中的节点状态都是**活跃**，所有节点已启动并运行正常。
+如果两个监听器中的节点状态都是**活跃**，表明所有节点已启动并运行正常。
 
 ![active-listener](/images/docs/zh-cn/installing-on-linux/installing-on-public-cloud/deploy-kubesphere-on-qingcloud-instances/active-listener.png)
 
