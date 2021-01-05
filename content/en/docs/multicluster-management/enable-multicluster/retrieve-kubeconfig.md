@@ -1,18 +1,20 @@
 ---
 title: "Retrieve KubeConfig"
 keywords: 'Kubernetes, KubeSphere, multicluster, hybrid-cloud, kubeconfig'
-description: 'Describe how to retrieve kubeconfig from a Kuberenetes cluster'
-
+description: 'How to retrieve kubeconfig from a Kuberenetes cluster.'
+titleLink: "Retrieve KubeConfig"
 weight: 5230
 ---
+
+You need to provide the kubeconfig of a member cluster if you import it using [direct connection](../direct-connection/).
 
 ## Prerequisites
 
 You have a Kubernetes cluster.
 
-## Explore KubeConfig File
+## Get KubeConfig
 
-Go to `$HOME/.kube`, and check the file in the directory where, normally, a file named **config** exists. Use the following command to retrieve the KubeConfig file:
+Go to `$HOME/.kube`, and check the file in the directory where, normally, a file named `config` exists. Use the following command to retrieve the KubeConfig file:
 
 ```bash
 cat $HOME/.kube/config

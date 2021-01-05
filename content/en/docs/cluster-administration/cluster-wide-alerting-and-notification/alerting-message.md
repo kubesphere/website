@@ -16,7 +16,7 @@ You have created a node-level alert policy and received alert notifications of i
 
 ### Task 1: View alert messages
 
-1. Log in the console with one account granted the role `platform-admin`.
+1. Log in to the console with one account granted the role `platform-admin`.
 
 2. Click **Platform** in the top left corner and select **Clusters Management**.
 
@@ -44,7 +44,7 @@ Switch to **Alerting Policy** to view the alert policy corresponding to this ale
 
     ![alerting_message_node_level_notification](/images/docs/alerting/alerting_message_node_level_notification.png)
 
-2. Log in your email to see alert notification mails sent by the KubeSphere mail server. You have received a total of 3 emails.
+2. Log in to your email to see alert notification mails sent by the KubeSphere mail server. You have received a total of 3 emails.
 
 ### Task 4: Add comments
 

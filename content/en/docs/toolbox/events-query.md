@@ -2,22 +2,21 @@
 title: "Event Query"
 keywords: 'KubeSphere, Kubernetes, Event, Query'
 description: 'How to perform event query in KubeSphere.'
-
 linkTitle: "Event Query"
 weight: 15200
 ---
 
-## Objective
+Kubernetes events provide insight into what is happening inside a cluster, based on which KubeSphere adds longer historical query and aggregation capabilities, and also supports event query for tenant isolation.
 
-Kubernetes events provide insight into what is happening inside a cluster, based on which KubeSphere adds longer historical query and aggregation capabilities, and also supports event query for tenant isolation. This guide demonstrates how you will do multi-level, fine-grained event queries to track the state of your components.
+This guide demonstrates how you can do multi-level, fine-grained event queries to track the status of your components.
 
 ## Prerequisites
 
-- [KubeSphere Events](../../pluggable-components/events/) needs to be enabled.
+[KubeSphere Events](../../pluggable-components/events/) needs to be enabled.
 
-## Hands-on Lab
+## Query Events
 
-1. The event query function is available for all users. Log in the console with any account, hover over the **Toolbox** in the lower right corner and select **Event Search**.
+1. The event query function is available for all users. Log in to the console with any account, hover over the **Toolbox** in the lower right corner and select **Event Search**.
 
     ![events_query_guide](/images/docs/events/events_query_guide.png)
 
@@ -30,14 +29,14 @@ Kubernetes events provide insight into what is happening inside a cluster, based
 - KubeSphere supports event queries on each cluster separately if you have enabled the multi-cluster feature. You can switch the target cluster using the drop-down list next to the search bar.
 
 - Supported fields in the search bar:
-  - Workspace
-  - Project
-  - Resource Type
-  - Resource Name
-  - Reason
-  - Message
-  - Category
-  - Time Range
+  - **Workspace**
+  - **Project**
+  - **Resource Type**
+  - **Resource Name**
+  - **Reason**
+  - **Message**
+  - **Category**
+  - **Time Range**
 - You can customize the query time range by selecting **Time Range** in the search bar. KubeSphere stores events for last seven days by default.
 
     {{</ notice >}}

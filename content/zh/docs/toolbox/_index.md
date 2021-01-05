@@ -1,18 +1,18 @@
 ---
-title: "Toolbox"
+title: "工具箱"
 description: "Help you to better understand KubeSphere toolbox"
 layout: "single"
 
-linkTitle: "Toolbox"
+linkTitle: "工具箱"
 
 weight: 15000
 
 icon: "/images/docs/docs.svg"
 ---
 
-KubeSphere provides several important functionalities from the toolbox. This chapter demonstrates how to use toolbox of KubeSphere to perform event, log, auditing log queries and run commands with web kubectl.
+KubeSphere provides several important functionalities from the toolbox. This chapter demonstrates how to use the toolbox of KubeSphere to query events, logs, and auditing logs, and run commands with web kubectl.
 
-![toolbox](/images/docs/toolbox/toolbox.png)
+![toolbox](/images/docs/toolbox/index/toolbox.jpg)
 
 ## [Log Query](../toolbox/log-query/)
 
@@ -28,13 +28,13 @@ Understand how you can perform quick event queries to keep track of the latest e
 
 Learn how to receive and customize auditing logs.
 
-### [Auditing Rule](../toolbox/auditing/auditing-rule/)
+### [Auditing Rules](../toolbox/auditing/auditing-rule/)
 
 Understand the auditing rule and how to customize a rule for processing auditing logs.
 
 ### [Auditing Log Query](../toolbox/auditing/auditing-query/)
 
-Understand how you can perform quick auditing log queries to keep track of the latest audits of your cluster.
+Understand how you can perform quick auditing log queries to keep track of the latest auditing information of your cluster.
 
 ## [Web Kubectl](../toolbox/web-kubectl/)
 

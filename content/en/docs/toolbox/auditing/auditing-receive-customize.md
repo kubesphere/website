@@ -2,7 +2,6 @@
 title: "Receive and Customize Auditing Logs"
 keywords: "Kubernetes, KubeSphere, auditing, log, customize, receive"
 description: "How to receive and customize KubeSphere and Kubernetes auditing logs."
-
 linkTitle: "Receive and Customize Auditing Logs"
 weight: 15310
 ---
@@ -15,7 +14,7 @@ To enable auditing logs, see [KubeSphere Auditing Logs](../../../pluggable-compo
 
 ## Receive Auditing Logs from KubeSphere
 
-KubeSphere Auditing Log system receives auditing logs only from KubeSphere by default, while it can also receive auditing logs from Kubernetes.
+The KubeSphere Auditing Log system receives auditing logs only from KubeSphere by default, while it can also receive auditing logs from Kubernetes.
 
 Users can stop receiving auditing logs from KubeSphere by changing the value of `auditing.enable` in ConfigMap `kubesphere-config` in the namespace `kubesphere-system` using the following command: 
 
@@ -127,7 +126,7 @@ spec:
 ```
 {{< notice tip >}} 
 
-You can also use an account of `platform-admin` role to log in the console, search `Webhook` in **CRDs** on the **Cluster Management** page, and edit `kube-auditing-webhook` directly.
+You can also use an account of `platform-admin` role to log in to the console, search `Webhook` in **CRDs** on the **Cluster Management** page, and edit `kube-auditing-webhook` directly.
 
 {{</ notice >}}
 

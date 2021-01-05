@@ -100,7 +100,7 @@ By default, ks-installer will install Elasticsearch internally if Auditing is en
 
 ## Enable Auditing Logs after Installation
 
-1. Log in the console as `admin`. Click **Platform** in the top-left corner and select **Clusters Management**.
+1. Log in to the console as `admin`. Click **Platform** in the top-left corner and select **Clusters Management**.
    
     ![clusters-management](/images/docs/enable-pluggable-components/kubesphere-auditing-logs/clusters-management.png)
     

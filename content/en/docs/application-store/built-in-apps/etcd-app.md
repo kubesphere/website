@@ -13,11 +13,11 @@ This tutorial walks you through an example of deploying etcd from the App Store 
 ## Prerequisites
 
 - Please make sure you [enable the OpenPitrix system](https://kubesphere.io/docs/pluggable-components/app-store/).
-- You need to create a workspace, a project, and a user account (`project-regular`) for this tutorial. The account needs to be a platform regular user and to be invited as the project operator with the `operator` role. In this tutorial, you log in as `project-regular` and work in the project `demo-project` in the workspace `demo-workspace`. For more information, see [Create Workspace, Project, Account and Role](../../../quick-start/create-workspace-and-project/).
+- You need to create a workspace, a project, and a user account (`project-regular`) for this tutorial. The account needs to be a platform regular user and to be invited as the project operator with the `operator` role. In this tutorial, you log in as `project-regular` and work in the project `demo-project` in the workspace `demo-workspace`. For more information, see [Create Workspaces, Projects, Accounts and Roles](../../../quick-start/create-workspace-and-project/).
 
 ## Hands-on Lab
 
-### Step 1: Deploy etcd from App Store
+### Step 1: Deploy etcd from the App Store
 
 1. On the **Overview** page of the project `demo-project`, click **App Store** in the top left corner.
 
@@ -47,11 +47,11 @@ This tutorial walks you through an example of deploying etcd from the App Store 
 
    ![etcd-running](/images/docs/appstore/built-in-apps/etcd-app/etcd-running.jpg)
 
-### Step 2: Access etcd Service
+### Step 2: Access the etcd Service
 
 After the app is deployed, you can use etcdctl, a command-line tool for interacting with etcd server, to access etcd on the KubeSphere console directly.
 
-1. Navigate to **StatefulSets** in **Workloads**, click the service name of etcd.
+1. Navigate to **StatefulSets** in **Workloads**, and click the service name of etcd.
 
    ![etcd-statefulset](/images/docs/appstore/built-in-apps/etcd-app/etcd-statefulset.jpg)
 

@@ -16,20 +16,20 @@ This tutorial demonstrates how to use S2I to import source code of a Java sample
 
 - You need to enable the [KubeSphere DevOps System](../../../pluggable-components/devops/) as S2I is integrated into it.
 - You need to create a [GitHub](https://github.com/) account and a [Docker Hub](http://www.dockerhub.com/) account. GitLab and Harbor are also supported. This tutorial uses a GitHub repository to provide the source code for building and pushes an image to Docker Hub.
-- You need to create a workspace, a project and an account (`project-regular`). The account must be invited to the project with the role of `operator`. For more information, see [Create Workspace, Project, Account and Role](../../../quick-start/create-workspace-and-project).
+- You need to create a workspace, a project and an account (`project-regular`). The account must be invited to the project with the role of `operator`. For more information, see [Create Workspaces, Projects, Accounts and Roles](../../../quick-start/create-workspace-and-project).
 - Set a CI dedicated node for building images. This is not mandatory but recommended for the development and production environment as it caches dependencies and reduces build time. For more information, see [Set a CI Node for Dependency Caching](../../../devops-user-guide/how-to-use/set-ci-node/).
 
 ## Use Source-to-Image (S2I)
 
 ### Step 1: Fork the example repository
 
-Log in GitHub and fork the GitHub repository [devops-java-sample](https://github.com/kubesphere/devops-java-sample) to your personal GitHub account.
+Log in to GitHub and fork the GitHub repository [devops-java-sample](https://github.com/kubesphere/devops-java-sample) to your personal GitHub account.
 
 ![fork-repository](/images/docs/project-user-guide/image-builder/s2i-publish-app-without-dockerfile/fork-repository.jpg)
 
 ### Step 2: Create Secrets
 
-Log in KubeSphere as `project-regular`. Go to your project and create a Secret for Docker Hub and GitHub respectively. For more information, see [Create the Most Common Secrets](../../../project-user-guide/configuration/secrets/#create-the-most-common-secrets).
+Log in to KubeSphere as `project-regular`. Go to your project and create a Secret for Docker Hub and GitHub respectively. For more information, see [Create the Most Common Secrets](../../../project-user-guide/configuration/secrets/#create-the-most-common-secrets).
 
 {{< notice note >}}
 

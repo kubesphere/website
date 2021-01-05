@@ -1,8 +1,8 @@
 ---
-title: "Multi-Node Installation"
+title: "Multi-node Installation"
 keywords: 'Multi-node, Installation, KubeSphere'
 description: 'Explain how to install KubeSphere on multiple nodes'
-linkTitle: "Multi-Node Installation"
+linkTitle: "Multi-node Installation"
 weight: 3120
 ---
 
@@ -126,7 +126,7 @@ curl -sfL https://get-kk.kubesphere.io | VERSION=v1.0.1 sh -
 
 {{< notice note >}}
 
-After you download KubeKey, If you transfer it to a new machine also with poor network connections to Googleapis, you must run `export KKZONE=cn` again before you proceed with the steps below.
+After you download KubeKey, if you transfer it to a new machine also with poor network connections to Googleapis, you must run `export KKZONE=cn` again before you proceed with the steps below.
 
 {{</ notice >}} 
 
@@ -221,7 +221,7 @@ List all your machines under `hosts` and add their detailed information as above
 
 `internalAddress`: The private IP address of the instance.
 
-- In this tutorial, port 22 is the default port of SSH so you do not need to add it in the yaml file. Otherwise, you need to add the port number after the IP address. For example:
+- In this tutorial, port 22 is the default port of SSH so you do not need to add it in the YAML file. Otherwise, you need to add the port number after the IP address. For example:
 
   ```yaml
   hosts:

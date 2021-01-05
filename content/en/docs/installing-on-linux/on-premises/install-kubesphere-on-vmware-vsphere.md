@@ -321,7 +321,7 @@ curl -sfL https://get-kk.kubesphere.io | VERSION=v1.0.1 sh -
 
 {{< notice note >}}
 
-After you download KubeKey, If you transfer it to a new machine also with poor network connections to Googleapis, you must run `export KKZONE=cn` again before you proceed with the steps below.
+After you download KubeKey, if you transfer it to a new machine also with poor network connections to Googleapis, you must run `export KKZONE=cn` again before you proceed with the steps below.
 
 {{</ notice >}} 
 
@@ -531,9 +531,9 @@ https://kubesphere.io             2020-08-15 23:32:12
 #####################################################
 ```
 
-### Log in the Console
+### Log in to the Console
 
-You will be able to use default account and password `admin/P@88w0rd` to log in the console `http://{$IP}:30880` to take a tour of KubeSphere. Please change the default password after login.
+You will be able to use default account and password `admin/P@88w0rd` to log in to the console `http://{$IP}:30880` to take a tour of KubeSphere. Please change the default password after login.
 
 ## Enable Pluggable Components (Optional)
 

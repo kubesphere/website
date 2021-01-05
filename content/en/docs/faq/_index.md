@@ -47,6 +47,10 @@ Use your own Prometheus stack setup in KubeSphere.
 
 Reset the password of any account.
 
+### [Session Timeout](../access-control/session-timeout/)
+
+Understand session timeout and customize the timeout period.
+
 ## KubeSphere Web Console
 
 ### [Supported Browsers](../faq/console/console-web-browser/)

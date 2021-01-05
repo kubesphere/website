@@ -1,9 +1,9 @@
 ---
-title: "Workspace Administration and User Guide"
+title: "企业空间管理和用户指南"
 description: "This chapter helps you to better manage KubeSphere workspaces."
 layout: "single"
 
-linkTitle: "Workspace Administration and User Guide"
+linkTitle: "企业空间管理和用户指南"
 
 weight: 9000
 

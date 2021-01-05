@@ -16,12 +16,12 @@ The blue-green release provides a zero downtime deployment, which means the new 
 ## Prerequisites
 
 - You need to enable [KubeSphere Service Mesh](../../../pluggable-components/service-mesh/).
-- You need to create a workspace, a project and an account (`project-regular`). The account must be invited to the project with the role of `operator`. For more information, see [Create Workspace, Project, Account and Role](../../../quick-start/create-workspace-and-project).
+- You need to create a workspace, a project and an account (`project-regular`). The account must be invited to the project with the role of `operator`. For more information, see [Create Workspaces, Projects, Accounts and Roles](../../../quick-start/create-workspace-and-project).
 - You need to enable **Application Governance** and have an available app so that you can implement the blue-green deployment for it. The sample app used in this tutorial is Bookinfo. For more information, see [Deploy Bookinfo and Manage Traffic](../../../quick-start/deploy-bookinfo-to-k8s/).
 
 ## Create Blue-green Deployment Job
 
-1. Log in KubeSphere as `project-regular`. Under **Categories**, click **Create Job** on the right of **Blue-green Deployment**.
+1. Log in to KubeSphere as `project-regular`. Under **Categories**, click **Create Job** on the right of **Blue-green Deployment**.
 
    ![blue-green-1](/images/docs/project-user-guide/grayscale-release/blue-green-deployment/blue-green-1.jpg)
 

@@ -2,22 +2,19 @@
 title: "Web Kubectl"
 keywords: 'KubeSphere, Kubernetes, kubectl, cli'
 description: 'Use kubectl from toolbox'
-
 linkTitle: "Web Kubectl"
 weight: 15400
 ---
 
-The Kubernetes command-line tool, kubectl, allows you to run commands on Kubernetes clusters. You can use kubectl to deploy applications, inspect and manage cluster resources, and view logs.
+The Kubernetes command-line tool, kubectl, allows you to run commands on Kubernetes clusters. You can use kubectl to deploy applications, inspect and manage cluster resources, view logs and more.
 
 KubeSphere provides web kubectl on the console for user convenience. By default, in the current version, only the account granted the `platform-admin` role (such as the default account `admin`) has the permission to use web kubectl for cluster resource operation and management.
 
-## Objective
-
-In this tutorial, you will learn how to use web kubectl to operate on and manage cluster resources.
+In this tutorial demonstrates how to use web kubectl to operate on and manage cluster resources.
 
 ## Use Web Kubectl
 
-1. Log in KubeSphere with an account granted the `platform-admin` role, hover over the **Toolbox** in the lower right corner and select **Kubectl**.
+1. Log in to KubeSphere with an account granted the `platform-admin` role, hover over the **Toolbox** in the lower right corner and select **Kubectl**.
 
     ![web-kubectl-enter](/images/docs/web-kubectl/web-kubectl-enter.png)
 

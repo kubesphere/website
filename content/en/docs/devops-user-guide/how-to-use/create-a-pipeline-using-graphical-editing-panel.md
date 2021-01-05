@@ -14,7 +14,7 @@ This tutorial demonstrates how to create a pipeline through graphical editing pa
 
 - You need to [enable the KubeSphere DevOps System](../../../../docs/pluggable-components/devops/).
 - You need to have a [Docker Hub](http://www.dockerhub.com/) account.
-- You need to create a workspace, a DevOps project, and an account (`project-regular`). This account must be invited to the DevOps project with the `operator` role. See [Create Workspace, Project, Account and Role](../../../quick-start/create-workspace-and-project/) if they are not ready.
+- You need to create a workspace, a DevOps project, and an account (`project-regular`). This account must be invited to the DevOps project with the `operator` role. See [Create Workspaces, Projects, Accounts and Roles](../../../quick-start/create-workspace-and-project/) if they are not ready.
 - Set CI dedicated nodes to run the pipeline. For more information, see [Set CI Node for Dependency Cache](../set-ci-node/).
 - Configure your email server for pipeline notifications (Optional). For more information, see [Set Email Server for KubeSphere Pipelines](../../how-to-use/jenkins-email/).
 - Configure SonarQube to include code analysis as part of the pipeline (Optional). For more information, see [Integrate SonarQube into Pipelines](../../../devops-user-guide/how-to-integrate/sonarqube/).
@@ -40,7 +40,7 @@ This example pipeline includes the following six stages.
 
 ### Step 1: Create credentials
 
-1. Log in the KubeSphere console as `project-regular`. Go to your DevOps project and create the following credentials in **Credentials** under **Project Management**. For more information about how to create credentials, see [Credential Management](../credential-management/).
+1. Log in to the KubeSphere console as `project-regular`. Go to your DevOps project and create the following credentials in **Credentials** under **Project Management**. For more information about how to create credentials, see [Credential Management](../credential-management/).
 
    {{< notice note >}} 
 
@@ -65,7 +65,7 @@ This example pipeline includes the following six stages.
 
 In this tutorial, the example pipeline will deploy the [sample](https://github.com/kubesphere/devops-java-sample/tree/sonarqube) app to a project. Hence, you must create the project (for example, `kubesphere-sample-dev`) in advance. The Deployment and Service of the app will be created automatically in the project once the pipeline runs successfully.
 
-You can use the account `project-admin` to create the project. Besides, this account is also the reviewer of the CI/CD pipeline. Make sure the account `project-regular` is invited to the project with the role of `operator`. For more information, see [Create Workspace, Project, Account and Role](../../../quick-start/create-workspace-and-project/).
+You can use the account `project-admin` to create the project. Besides, this account is also the reviewer of the CI/CD pipeline. Make sure the account `project-regular` is invited to the project with the role of `operator`. For more information, see [Create Workspaces, Projects, Accounts and Roles](../../../quick-start/create-workspace-and-project/).
 
 ### Step 3: Create a pipeline
 
@@ -266,7 +266,7 @@ This stage uses SonarQube to test your code. You can skip this stage if you do n
 
    ![docker-credential](/images/docs/devops-user-guide/using-devops/create-a-pipeline-using-graphical-editing-panels/docker-credential.jpg)
 
-6. Click **Add nesting steps** (the first one) in the **withCredentials** step created above. Select **shell** and enter the following command in the pop-up window, which is used to log in Docker Hub. Click **OK** to confirm.
+6. Click **Add nesting steps** (the first one) in the **withCredentials** step created above. Select **shell** and enter the following command in the pop-up window, which is used to log in to Docker Hub. Click **OK** to confirm.
 
    ```shell
    echo "$DOCKER_PASSWORD" | docker login $REGISTRY -u "$DOCKER_USERNAME" --password-stdin
@@ -379,7 +379,7 @@ On the **Code Quality** page, view the code analysis result of this example pipe
 
    {{</ notice >}} 
 
-4. Now that the pipeline has run successfully, an image will be pushed to Docker Hub. Log in Docker Hub and check the result.
+4. Now that the pipeline has run successfully, an image will be pushed to Docker Hub. Log in to Docker Hub and check the result.
 
    ![dockerhub-image](/images/docs/devops-user-guide/using-devops/create-a-pipeline-using-graphical-editing-panels/dockerhub-image.jpg)
 
