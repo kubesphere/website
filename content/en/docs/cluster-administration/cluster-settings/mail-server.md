@@ -17,7 +17,7 @@ This guide demonstrates email notification settings (customized settings support
 
 ## Hands-on Lab
 
-1. Log in the web console with one account granted the role  `platform-admin`.
+1. Log in to the web console with one account granted the role  `platform-admin`.
 2. Click **Platform** in the top left corner and select **Clusters Management**.
 
     ![mail_server_guide](/images/docs/alerting/mail_server_guide.png)

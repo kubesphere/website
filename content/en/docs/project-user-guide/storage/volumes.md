@@ -14,7 +14,7 @@ This tutorial demonstrates how to create a volume, mount a volume and use volume
 
 ## Prerequisites
 
-- You need to create a workspace, a project and an account (`project-regular`). The account must be invited to the project with the role of `operator`. For more information, see [Create Workspace, Project, Account and Role](../../../quick-start/create-workspace-and-project).
+- You need to create a workspace, a project and an account (`project-regular`). The account must be invited to the project with the role of `operator`. For more information, see [Create Workspaces, Projects, Accounts and Roles](../../../quick-start/create-workspace-and-project).
 
 - If you want to dynamically provision a volume, you need to [configure a storage class](../../../cluster-administration/persistent-volume-and-storage-class/) that supports dynamic provisioning.
 
@@ -22,7 +22,7 @@ This tutorial demonstrates how to create a volume, mount a volume and use volume
 
 All the volumes that are created on the **Volumes** page are PersistentVolumeClaim objects. KubeSphere binds the PersistentVolumeClaim to the PersistentVolume that satisfies the request you set for the PersistentVolumeClaim, such as capacity and access mode. When you create an application workload, you can select the desired volume and mount it to your workload.
 
-1. Log in the web console of KubeSphere and go to a project. Click **Volumes** under **Storage** from the navigation bar, and you see all volumes that have been mounted to workloads in the project.
+1. Log in to the web console of KubeSphere and go to a project. Click **Volumes** under **Storage** from the navigation bar, and you see all volumes that have been mounted to workloads in the project.
 
 2. To create a volume, click **Create** on the **Volumes** page.
 

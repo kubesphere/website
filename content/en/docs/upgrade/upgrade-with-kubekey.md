@@ -46,7 +46,7 @@ curl -sfL https://get-kk.kubesphere.io | VERSION=v1.0.1 sh -
 
 {{< notice note >}}
 
-After you download KubeKey, If you transfer it to a new machine also with poor network connections to Googleapis, you must run `export KKZONE=cn` again before you proceed with the steps below.
+After you download KubeKey, if you transfer it to a new machine also with poor network connections to Googleapis, you must run `export KKZONE=cn` again before you proceed with the steps below.
 
 {{</ notice >}} 
 

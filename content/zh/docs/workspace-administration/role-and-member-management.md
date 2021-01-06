@@ -19,11 +19,11 @@ weight: 9400
 
 ## 准备工作
 
-至少已创建一个企业空间，例如 `demo-workspace`。您还需要准备一个帐户（如 `ws-admin`），该帐户在企业空间层级拥有 `workspace-admin ` 角色。如果不清楚怎样进行准备工作，请参见[创建企业空间、项目、帐户和角色](../../quick-start/create-workspace-and-project/)。
+至少已创建一个企业空间，例如 `demo-workspace`。您还需要准备一个帐户（如 `ws-admin`），该帐户在企业空间层级拥有 `workspace-admin` 角色。如果不清楚怎样进行准备工作，请参见[创建企业空间、项目、帐户和角色](../../quick-start/create-workspace-and-project/)。
 
 {{< notice note >}} 
 
-实际的角色名称遵循命名约定：`workspace name-role name`。例如，在名为 `demo-workspace` 的企业空间中，角色 `workspace-admin` 的实际角色名称为 `demo-workspace-admin`。
+实际角色名称的格式：`workspace name-role name`。例如，在名为 `demo-workspace` 的企业空间中，角色 `admin` 的实际角色名称为 `demo-workspace-admin`。
 
 {{</ notice >}} 
 

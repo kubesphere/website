@@ -26,7 +26,7 @@ As you can imagine, the very first thing to consider is to have a Kubernetes clu
 
 Therefore, I select QingCloud Kubernetes Engine (QKE) to prepare the environment. In fact, you can also use instances on the platform directly and [deploy a highly-available Kubernetes cluster with KubeSphere installed](https://kubesphere.io/docs/installing-on-linux/public-cloud/kubesphere-on-qingcloud-instance/). Here is how I deploy the cluster and TiDB:
 
-1. Log in the [web console of QingCloud](https://console.qingcloud.com/). Simply select **KubeSphere (QKE)** from the menu and create a Kubernetes cluster with KubeSphere installed. The platform allows you to install different components of KubeSphere. Here, we need to enable [OpenPitrix](https://github.com/openpitrix/openpitrix), which powers the app management feature in KubeSphere.
+1. Log in to the [web console of QingCloud](https://console.qingcloud.com/). Simply select **KubeSphere (QKE)** from the menu and create a Kubernetes cluster with KubeSphere installed. The platform allows you to install different components of KubeSphere. Here, we need to enable [OpenPitrix](https://github.com/openpitrix/openpitrix), which powers the app management feature in KubeSphere.
 
    {{< notice note >}}
 
@@ -36,7 +36,7 @@ Therefore, I select QingCloud Kubernetes Engine (QKE) to prepare the environment
 
    ![qingcloud-kubernetes-engine](https://ap3.qingstor.com/kubesphere-website/docs/20201026173924.png)
 
-2. The cluster will be up and running in around 10 minutes. In this example, I select 3 working nodes to make sure I have enough resources for the deployment later. You can also customize configurations based on your needs. When the cluster is ready, log in the web console of KubeSphere with the default account and password (`admin/P@88w0rd`). Here is the cluster **Overview** page:
+2. The cluster will be up and running in around 10 minutes. In this example, I select 3 working nodes to make sure I have enough resources for the deployment later. You can also customize configurations based on your needs. When the cluster is ready, log in to the web console of KubeSphere with the default account and password (`admin/P@88w0rd`). Here is the cluster **Overview** page:
 
    ![cluster-management](https://ap3.qingstor.com/kubesphere-website/docs/20201026175447.png)
 

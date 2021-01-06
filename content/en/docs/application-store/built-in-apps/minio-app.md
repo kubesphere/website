@@ -3,7 +3,6 @@ title: "Deploy MinIO on KubeSphere"
 keywords: 'Kubernetes, KubeSphere, Minio, app-store'
 description: 'How to deploy Minio on KubeSphere from the App Store of KubeSphere'
 linkTitle: "Deploy MinIO on KubeSphere"
-
 weight: 14240
 ---
 [MinIO](https://min.io/) object storage is designed for high performance and the S3 API. It is ideal for large, private cloud environments with stringent security requirements and delivers mission-critical availability across a diverse range of workloads.
@@ -13,11 +12,11 @@ This tutorial walks you through an example of deploying MinIO from the App Store
 ## Prerequisites
 
 - Please make sure you [enable the OpenPitrix system](../../../pluggable-components/app-store/).
-- You need to create a workspace, a project, and a user account (`project-regular`) for this tutorial. The account needs to be a platform regular user and to be invited as the project operator with the `operator` role. In this tutorial, you log in as `project-regular` and work in the project `demo-project` in the workspace `demo-workspace`. For more information, see [Create Workspace, Project, Account and Role](../../../quick-start/create-workspace-and-project/).
+- You need to create a workspace, a project, and a user account (`project-regular`) for this tutorial. The account needs to be a platform regular user and to be invited as the project operator with the `operator` role. In this tutorial, you log in as `project-regular` and work in the project `demo-project` in the workspace `demo-workspace`. For more information, see [Create Workspaces, Projects, Accounts and Roles](../../../quick-start/create-workspace-and-project/).
 
 ## Hands-on Lab
 
-### Step 1: Deploy MinIO from App Store
+### Step 1: Deploy MinIO from the App Store
 
 1. On the **Overview** page of the project `demo-project`, click **App Store** in the top left corner.
 
@@ -41,7 +40,7 @@ This tutorial walks you through an example of deploying MinIO from the App Store
 
    ![minio-in-list](/images/docs/appstore/built-in-apps/minio-app/minio-in-list.jpg)
 
-### Step 2: Access MinIO Browser
+### Step 2: Access the MinIO Browser
 
 To access MinIO outside the cluster, you need to expose the app through NodePort first.
 

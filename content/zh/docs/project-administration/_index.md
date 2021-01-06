@@ -1,9 +1,9 @@
 ---
-title: "Project Administration"
+title: "项目管理"
 description: "Help you to better manage KubeSphere projects"
 layout: "single"
 
-linkTitle: "Project Administration"
+linkTitle: "项目管理"
 weight: 13000
 
 icon: "/images/docs/docs.svg"

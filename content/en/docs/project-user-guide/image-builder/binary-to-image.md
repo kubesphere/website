@@ -26,7 +26,7 @@ For demonstration and testing purposes, here are some example artifacts you can 
 
 - You have enabled the [KubeSphere DevOps System](../../installation/install-devops).
 - You need to create a [Docker Hub](http://www.dockerhub.com/) account. GitLab and Harbor are also supported.
-- You need to create a workspace, a project and an account (`project-regular`). The account must be invited to the project with the role of `operator`. For more information, see [Create Workspace, Project, Account and Role](../../../quick-start/create-workspace-and-project).
+- You need to create a workspace, a project and an account (`project-regular`). The account must be invited to the project with the role of `operator`. For more information, see [Create Workspaces, Projects, Accounts and Roles](../../../quick-start/create-workspace-and-project).
 - Set a CI dedicated node for building images. This is not mandatory but recommended for the development and production environment as it caches dependencies and reduces build time. For more information, see [Set a CI Node for Dependency Caching](../../../devops-user-guide/how-to-use/set-ci-node/).
 
 ## Create a Service Using Binary-to-Image (B2I)
@@ -37,7 +37,7 @@ The steps below show how to upload an artifact, build an image and release it to
 
 ### Step 1: Create a Docker Hub Secret
 
-You must create a Docker Hub Secret so that the Docker image created through B2I can be push to Docker Hub. Log in KubeSphere as `project-regular`, go to your project and create a Secret for Docker Hub. For more information, see [Create the Most Common Secrets](../../../project-user-guide/configuration/secrets/#create-the-most-common-secrets).
+You must create a Docker Hub Secret so that the Docker image created through B2I can be push to Docker Hub. Log in to KubeSphere as `project-regular`, go to your project and create a Secret for Docker Hub. For more information, see [Create the Most Common Secrets](../../../project-user-guide/configuration/secrets/#create-the-most-common-secrets).
 
 ### Step 2: Create a Service
 
@@ -140,7 +140,7 @@ Make sure you have created a Secret for Docker Hub. For more information, see [C
 
 ### Step 1: Upload an artifact
 
-1. Log in KubeSphere as `project-regular` and go to your project.
+1. Log in to KubeSphere as `project-regular` and go to your project.
 
 2. Select **Image Builder** from the navigation bar and click **Create**.
 

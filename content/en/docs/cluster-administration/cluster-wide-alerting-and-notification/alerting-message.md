@@ -1,9 +1,8 @@
 ---
-title: "Alerting Message (Node Level)"
+title: "Alerting Messages (Node Level)"
 keywords: 'KubeSphere, Kubernetes, Node, Alerting, Message, Notification'
 description: 'How to view alerting messages at the node level.'
-
-linkTitle: "Alerting Message (Node Level)"
+linkTitle: "Alerting Messages (Node Level)"
 weight: 8540
 ---
 
@@ -15,9 +14,9 @@ You have created a node-level alert policy and received alert notifications of i
 
 ## Hands-on Lab
 
-### Task 1: View Alert Message
+### Task 1: View alert messages
 
-1. Log in the console with one account granted the role `platform-admin`.
+1. Log in to the console with one account granted the role `platform-admin`.
 
 2. Click **Platform** in the top left corner and select **Clusters Management**.
 
@@ -33,21 +32,21 @@ You have created a node-level alert policy and received alert notifications of i
 
     ![alerting_message_node_level_detail](/images/docs/alerting/alerting_message_node_level_detail.png)
 
-### Task 2: View Alert Policy
+### Task 2: View alert policies
 
 Switch to **Alerting Policy** to view the alert policy corresponding to this alert message, and you can see the triggering rule of it set in the example of [Alert Policy (Node Level)](../alerting-policy/).
 
 ![alerting_message_node_level_policy](/images/docs/alerting/alerting_message_node_level_policy.png)
 
-### Task 3: View Recent Notification
+### Task 3: View recent notifications
 
 1. Switch to **Recent Notification**. It can be seen that 3 notifications have been received, because the notification rule was set with a repetition period of `Alert once every 5 minutes` and retransmission of `Resend up to 3 times`.
 
     ![alerting_message_node_level_notification](/images/docs/alerting/alerting_message_node_level_notification.png)
 
-2. Log in your email to see alert notification mails sent by the KubeSphere mail server. You have received a total of 3 emails.
+2. Log in to your email to see alert notification mails sent by the KubeSphere mail server. You have received a total of 3 emails.
 
-### Task 4: Add Comment
+### Task 4: Add comments
 
 Click **Comment** to add comments to current alert messages. For example, as memory utilization rate of the node is higher than the threshold set based on the alert rule, you can add a comment in the dialog below: `The node needs to be tainted and new pod is not allowed to be scheduled to it`.
 

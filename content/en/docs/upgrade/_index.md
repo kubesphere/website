@@ -36,7 +36,3 @@ Follow steps to use ks-installer and Offline-package to upgrade KubeSphere.
 ## [Changes after Upgrade](../upgrade/what-changed/)
 
 Understand what will be changed after the upgrade.
-
-## [FAQ](../upgrade/upgrade-faq/)
-
-Find the answers to some of the most asked questions of upgrading.

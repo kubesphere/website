@@ -74,4 +74,5 @@ Three grayscale strategies are provided by KubeSphere based on Istio: blue-green
 
 ## KubeSphere Installation
 
-KubeSphere can be deployed and run on any infrastructure, including public clouds, private clouds, virtual machines, bare metals and Kubernetes. It can be installed either online or offline. Please refer to [KubeSphere Installation Guide](https://kubesphere.io/docs/installation/intro/) for installation.
+KubeSphere can be deployed and run on any infrastructure, including public clouds, private clouds, virtual machines, bare metals and Kubernetes. It can be installed either online or offline. For more information, refer to [Installing on Linux](https://kubesphere.io/docs/installing-on-linux/) and [Installing on Kubernetes](https://kubesphere.io/docs/installing-on-kubernetes/).
+

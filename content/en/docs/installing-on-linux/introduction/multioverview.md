@@ -2,7 +2,6 @@
 title: "Multi-node Installation"
 keywords: 'Multi-node, Installation, KubeSphere'
 description: 'Explain how to install KubeSphere on multiple nodes'
-
 linkTitle: "Multi-node Installation"
 weight: 3120
 ---
@@ -35,7 +34,7 @@ For users who do not have an existing Kubernetes cluster, they only need to crea
 
 Please see the requirements for hardware and operating system shown below. To get started with multi-node installation in this demo, you need to prepare at least three hosts according to the following requirements. It is possible to install KubeSphere on two nodes with enough resources planned.
 
-### System Requirements
+### System requirements
 
 | Systems                                                | Minimum Requirements (Each node)            |
 | ------------------------------------------------------ | ------------------------------------------- |
@@ -51,7 +50,7 @@ The path `/var/lib/docker` is mainly used to store the container data, and will 
 
 {{</ notice >}}
 
-### Node Requirements
+### Node requirements
 
 - All nodes must be accessible through `SSH`.
 - Time synchronization for all nodes.
@@ -64,7 +63,7 @@ The path `/var/lib/docker` is mainly used to store the container data, and will 
 
 {{</ notice >}}
 
-### Dependency Requirements
+### Dependency requirements
 
 KubeKey can install Kubernetes and KubeSphere together. The dependency that needs to be installed may be different based on the Kubernetes version to be installed. You can refer to the list below to see if you need to install relevant dependencies on your node in advance. 
 
@@ -75,15 +74,15 @@ KubeKey can install Kubernetes and KubeSphere together. The dependency that need
 | `ebtables`  | Optional but recommended  | Optional but recommended  |
 | `ipset`     | Optional but recommended  | Optional but recommended  |
 
-### Network and DNS Requirements
+### Network and DNS requirements
 
 - Make sure the DNS address in `/etc/resolv.conf` is available. Otherwise, it may cause some issues of DNS in clusters.
-- If your network configuration uses Firewall or Security Group, you must ensure infrastructure components can communicate with each other through specific ports. It's recommended that you turn off the firewall or follow the guide [Port Requirements](../port-firewall/).
+- If your network configuration uses firewall rules or security groups, you must ensure infrastructure components can communicate with each other through specific ports. It's recommended that you turn off the firewall or follow the guide [Port Requirements](../port-firewall/).
 
 {{< notice tip >}}
 
 - It's recommended that your OS be clean (without any other software installed). Otherwise, there may be conflicts.
-- A container image mirror (accelerator) is recommended to be prepared if you have trouble downloading images from dockerhub.io. See [Configure Booster for Installation](../../faq/configure-booster/) and [Configure registry mirrors for the Docker daemon](https://docs.docker.com/registry/recipes/mirror/#configure-the-docker-daemon).
+- A container image mirror (booster) is recommended to be prepared if you have trouble downloading images from `dockerhub.io`. See [Configure a Booster for Installation](../../../faq/installation/configure-booster/) and [Configure registry mirrors for the Docker daemon](https://docs.docker.com/registry/recipes/mirror/#configure-the-docker-daemon).
 
 {{</ notice >}}
 
@@ -127,7 +126,7 @@ curl -sfL https://get-kk.kubesphere.io | VERSION=v1.0.1 sh -
 
 {{< notice note >}}
 
-After you download KubeKey, If you transfer it to a new machine also with poor network connections to Googleapis, you must run `export KKZONE=cn` again before you proceed with the steps below.
+After you download KubeKey, if you transfer it to a new machine also with poor network connections to Googleapis, you must run `export KKZONE=cn` again before you proceed with the steps below.
 
 {{</ notice >}} 
 
@@ -159,9 +158,12 @@ Command:
 ./kk create config [--with-kubernetes version] [--with-kubesphere version] [(-f | --file) path]
 ```
 
-{{< notice info >}}
+{{< notice note >}}
 
-Supported Kubernetes versions: *v1.15.12*, *v1.16.13*, *v1.17.9* (default), *v1.18.6*.
+- Supported Kubernetes versions: *v1.15.12*, *v1.16.13*, *v1.17.9* (default), *v1.18.6*.
+
+- If you do not add the flag `--with-kubesphere` in the command in this step, KubeSphere will not be deployed unless you install it using the `addons` field in the configuration file or add this flag again when you use `./kk create cluster` later.
+- If you add the flag `--with-kubesphere` without specifying a KubeSphere version, the latest version of KubeSphere will be installed.
 
 {{</ notice >}}
 
@@ -219,14 +221,14 @@ List all your machines under `hosts` and add their detailed information as above
 
 `internalAddress`: The private IP address of the instance.
 
-- In this tutorial, port 22 is the default port of SSH so you do not need to add it in the yaml file. Otherwise, you need to add the port number after the IP address. For example:
+- In this tutorial, port 22 is the default port of SSH so you do not need to add it in the YAML file. Otherwise, you need to add the port number after the IP address. For example:
 
   ```yaml
   hosts:
     - {name: master, address: 192.168.0.2, internalAddress: 192.168.0.2, port: 8022, user: ubuntu, password: Testing123}
   ```
 
-- For default root user:
+- For the default root user:
 
   ```yaml
   hosts:
@@ -254,11 +256,11 @@ Before you install KubeSphere, you can use the information provided under `hosts
 
 #### controlPlaneEndpoint (for HA installation only)
 
-`controlPlaneEndpoint` allows you to define an external load balancer for an HA cluster. You need to prepare and configure an external load balancer if and only if you need to install multiple master nodes. Please note that the address and port should be indented by two spaces in `config-sample.yaml`, and the `address` should be VIP. See [HA Configuration](../ha-configuration/) for details.
+`controlPlaneEndpoint` allows you to define an external load balancer for an HA cluster. You need to prepare and configure an external load balancer if and only if you need to install multiple master nodes. Please note that the address and port should be indented by two spaces in `config-sample.yaml`, and `address` should be VIP. See [HA Configuration](../ha-configuration/) for details.
 
 #### addons
 
-You can customize persistent storage plugins (e.g. NFS Client, Ceph RBD, and GlusterFS) by specifying storage under the field `addons` in `config-sample.yaml`. For more information, see [Persistent Storage Configuration](../storage-configuration).
+You can customize persistent storage plugins (e.g. NFS Client, Ceph RBD, and GlusterFS) by specifying storage under the field `addons` in `config-sample.yaml`. For more information, see [Persistent Storage Configurations](../storage-configuration).
 
 {{< notice note >}}
 
@@ -269,7 +271,7 @@ KubeKey will install [OpenEBS](https://openebs.io/) to provision [LocalPV](https
 {{< notice tip >}}
 
 - You can enable the multi-cluster feature by editing the configuration file. For more information, see [Multi-cluster Management](../../../multicluster-management/).
-- You can also select the components you want to install. For more information, see [Enable Pluggable Components](../../../pluggable-components/). For an example of a complete config-sample.yaml file, see [this file](https://github.com/kubesphere/kubekey/blob/release-1.0/docs/config-example.md).
+- You can also select the components you want to install. For more information, see [Enable Pluggable Components](../../../pluggable-components/). For an example of a complete `config-sample.yaml` file, see [this file](https://github.com/kubesphere/kubekey/blob/release-1.0/docs/config-example.md).
 
 {{</ notice >}}
 
@@ -319,11 +321,11 @@ Now, you will be able to access the web console of KubeSphere at `http://{IP}:30
 
 {{< notice note >}}
 
-To access the console, you may need to forward the source port to the intranet port of the intranet IP depending on the platform of your cloud providers. Please also make sure port 30880 is opened in the security group.
+To access the console, you may need to configure port forwarding rules depending on your environment. Please also make sure port 30880 is opened in your security group.
 
 {{</ notice >}}
 
-![kubesphere-login](https://ap3.qingstor.com/kubesphere-website/docs/login.png)
+![login](/images/docs/installing-on-linux/introduction/multi-node-installation/login.png)
 
 ## Enable kubectl Autocompletion
 

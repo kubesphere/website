@@ -22,7 +22,7 @@ KubeSphere provides alert policies for nodes and workloads. This guide demonstra
 
 ### Task 1: Create an Alert Policy
 
-Log in the console and go to your project. Navigate to **Alerting Policy** under **Monitoring & Alerting**, then click **Create**.
+Log in to the console and go to your project. Navigate to **Alerting Policy** under **Monitoring & Alerting**, then click **Create**.
 
 ![alerting_policy_workload_level_create](/images/docs/alerting/alerting_policy_workload_level_create.png)
 

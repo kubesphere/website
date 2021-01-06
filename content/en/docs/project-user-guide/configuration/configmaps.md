@@ -16,13 +16,13 @@ This tutorial demonstrates how to create a ConfigMap in KubeSphere.
 
 ## Prerequisites
 
-You need to create a workspace, a project and an account (`project-regular`). The account must be invited to the project with the role of `operator`. For more information, see [Create Workspace, Project, Account and Role](../../../quick-start/create-workspace-and-project).
+You need to create a workspace, a project and an account (`project-regular`). The account must be invited to the project with the role of `operator`. For more information, see [Create Workspaces, Projects, Accounts and Roles](../../../quick-start/create-workspace-and-project).
 
 ## Create a ConfigMap
 
 ### Step 1: Open Dashboard
 
-Log in the console as `project-regular`. Go to **Configurations** of a project, choose **ConfigMaps** and click **Create**.
+Log in to the console as `project-regular`. Go to **Configurations** of a project, choose **ConfigMaps** and click **Create**.
 
 ![create-configmap](/images/docs/project-user-guide/configurations/configmaps/create-configmap.jpg)
 

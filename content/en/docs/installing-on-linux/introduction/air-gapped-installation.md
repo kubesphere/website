@@ -257,7 +257,9 @@ For example:
 
 {{< notice note >}}
 
-Make sure the Kubernetes version is the one you downloaded.
+- Make sure the Kubernetes version is the one you downloaded.
+
+- If you do not add the flag `--with-kubesphere` in the command in this step, KubeSphere will not be deployed unless you install it using the `addons` field in the configuration file or add this flag again when you use `./kk create cluster` later.
 
 {{</ notice >}}
 

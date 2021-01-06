@@ -47,13 +47,3 @@ Learn how to enable the Service Mesh to use different traffic management strateg
 ## [Network Policies](../pluggable-components/network-policy/)
 
 Learn how to enable Network Policies to control traffic flow at the IP address or port level.
-
-## FAQ
-
-### [Logging](../pluggable-components/faq/logging/)
-
-Questions asked frequently about the logging functionality.
-
-### [Monitoring](../pluggable-components/faq/monitoring/)
-
-Questions asked frequently about the monitoring functionality.

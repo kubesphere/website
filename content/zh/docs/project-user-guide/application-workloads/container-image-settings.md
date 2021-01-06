@@ -1,282 +1,282 @@
 ---
-title: "Container Image Settings"
-keywords: 'KubeSphere, Kubernetes, image, workload, setting, container'
-description: 'How to set container images in KubeSphere.'
+title: "容器镜像设置"
+keywords: 'KubeSphere, Kubernetes, 镜像, 工作负载, 设置, 容器'
+description: '如何在 KubeSphere 中设置容器镜像。'
 
 weight: 10280
 ---
 
-When you create Deployments, StatefulSets or DaemonSets, you need to specify a container image. At the same time, KubeSphere provides users with various options to customize workload configurations, such as health check probes, environment variables and start commands. This page illustrates detailed explanations of different properties in **Container Image**.
+创建部署、有状态副本集或者守护进程集时，您需要指定一个容器镜像。同时，KubeSphere 向用户提供多种选项，用于自定义工作负载配置，例如健康检查探针、环境变量和启动命令。本页内容详细说明了**容器镜像**中的不同属性。
 
 {{< notice tip >}}
 
-You can enable **Edit Mode** in the top right corner to see corresponding values in the manifest file (YAML format) of properties on the dashboard.
+您可以在右上角启用**编辑模式**，查看仪表板上的属性对应到清单文件（YAML 格式）中的值。
 
 {{</ notice >}}
 
-## Container Image
+## 容器镜像
 
-### Pod Replicas
+### 容器组副本数量
 
-Set the number of replicated Pods by clicking the **plus** or **minus** icon, indicated by the `.spec.replicas` field in the manifest file. This option is not available for DaemonSets.
+点击**加号**或**减号**图标设置 Pod（即容器组）副本数量，该参数显示在清单文件中的 `.spec.replicas` 字段。该选项对守护进程集不可用。
 
-![pod-replicas](/images/docs/project-user-guide/workloads/pod-replicas.jpg)
+![Pod 副本](/images/docs/zh-cn/project-user-guide/application-workloads/container-image-settings/pod-replicas.PNG)
 
-### Add Container Image
+### 添加容器镜像
 
-After you click **Add Container Image**, you will see an image as below.
+点击**添加容器镜像**后，您会看到如下图所示的界面。
 
-![add-container-explan](/images/docs/project-user-guide/workloads/add-container-explan.jpg)
+![添加容器镜像](/images/docs/zh-cn/project-user-guide/application-workloads/container-image-settings/add-container-explain.PNG)
 
-#### Image Search Bar
+#### 镜像搜索栏
 
-You can click the cube icon on the right to select an image from the list or input an image name to search it. KubeSphere provides Docker Hub images and your private image repository. If you want to use your private image repository, you need to create a Docker Hub secret first in **Secrets** under **Configurations**.
+您可以点击右边的立方形图标，从列表中选择一个镜像，或者输入镜像名称进行搜索。KubeSphere 提供 Docker Hub 的镜像以及您的私有镜像仓库的镜像。如果想使用私有镜像仓库，您需要先在**配置中心**下的**密钥**中创建镜像仓库密钥。
 
 {{< notice note >}} 
 
-Remember to press **Enter** on your keyboard after you input an image name in the search bar.
+在搜索栏输入镜像名称后，请记得按键盘上的**回车键**。
 
 {{</ notice >}} 
 
-#### Image Tag
+#### 镜像标签
 
-You can input a tag like `imagename:tag`. If you do not specify it, it will default to the latest version.
+您可以输入一个标签，例如 `imagename:tag`。如果您不指定标签，则会默认为最新版本。
 
-#### Container Name
+#### 容器名称
 
-The container name is automatically created by KubeSphere, which is indicated by `.spec.containers.name`.
+容器名称由 KubeSphere 自动创建，显示在 `.spec.containers.name` 中。
 
-#### Container Type
+#### 容器类型
 
-If you choose **Init Container**, it means the init container will be created for the workload. For more information about init containers, please visit [Init Containers](https://kubernetes.io/docs/concepts/workloads/pods/init-containers/?spm=a2c4g.11186623.2.19.16704b3e9qHXPb).
+如果您选择**初始容器**，则会为该工作负载创建初始容器。有关初始容器的更多信息，请访问 [Init 容器](https://kubernetes.io/zh/docs/concepts/workloads/pods/init-containers/)。
 
-#### Resource Request
+#### 资源请求
 
-The resource quota reserved by the container includes both CPU and memory resources. It means the container monopolizes the resource, preventing other services or processes from competing for resources due to insufficient resources, causing the application to become unavailable.
+容器预留的资源配额包括 CPU 和内存资源。这意味着容器独占这些资源，防止其他服务或进程因资源不足争夺资源而导致应用程序不可用。
 
-- The CPU request is indicated by `.spec.containers[].resources.requests.cpu` in the manifest file. The CPU request can be exceeded.
-- The memory request is indicated by `.spec.containers[].resources.requests.memory` in the manifest file. The memory request can be exceeded but the container may clear up when node memory is insufficient.
+- CPU 预留显示在清单文件中的 `.spec.containers[].resources.requests.cpu`，实际用量可以超过 CPU 预留。
+- 内存预留显示在清单文件中的 `.spec.containers[].resources.requests.memory`。实际用量可以超过内存预留，但节点内存不足时可能会清理容器。
 
-![resource-request-limit](/images/docs/project-user-guide/workloads/resource-request-limit.jpg)
+![资源预留和限制](/images/docs/zh-cn/project-user-guide/application-workloads/container-image-settings/resource-request-limit.PNG)
 
-#### Resource Limit
+#### 资源限制
 
-You can specify the upper limit of the resources that the application can use, including CPU and memory, to prevent excessive resources from being occupied.
+您可以指定应用程序能使用的资源上限，包括 CPU 和内存，防止占用过多资源。
 
-- The CPU limit is indicated by `.spec.containers[].resources.limits.cpu` in the manifest file. The CPU limit can be exceeded for a short time, and the container will not be stopped.
-- The memory limit is indicated by `.spec.containers[].resources.limits.memory` in the manifest file. The memory limit cannot be exceeded. If it exceeds, the container may be stopped or scheduled to another machine with sufficient resources.
+- CPU 限制显示在清单文件中的 `.spec.containers[].resources.limits.cpu`。实际用量可以短时间超过 CPU 限制，容器不会被停止。
+- 内存限制显示在清单文件中的 `.spec.containers[].resources.limits.memory`。实际用量不能超过内存限制，如果超过了，容器可能会被停止或者被调度到其他资源充足的机器上。
 
 {{< notice note >}}
 
-The CPU resource is measure in CPU units, or **Core** in KubeSphere. The memory resource is measured in bytes, or **Mi** in KubeSphere.
+CPU 资源以 CPU 单位计量，即 KubeSphere 中的 **Core**。内存资源以字节计量，即 KubeSphere 中的 **Mi**。
 
 {{</ notice >}} 
 
-#### **Port/Service Settings**
+#### **端口/服务设置**
 
-You need to set the access protocol for the container as well as port information. To use the default setting, click **Use Default Ports**.
+您需要为容器设置访问协议和端口信息。请点击**使用默认端口**以自动填充默认设置。
 
-#### **Image Pull Policy**
+#### **镜像拉取策略**
 
-This value is indicated by the `imagePullPolicy` field. On the dashboard, you can choose one of the following three options from the drop-down list.
+该值显示在 `imagePullPolicy` 字段。在仪表板上，您可以从下拉列表的以下三个选项中选择一个。
 
-![image-pull-policy](/images/docs/project-user-guide/workloads/image-pull-policy.jpg)
+![镜像拉取策略](/images/docs/zh-cn/project-user-guide/application-workloads/container-image-settings/image-pull-policy.PNG)
 
-- **Use Local Image First (ifNotPresent)**: It means that the image is pulled only if it does not exist locally.
+- **优先使用本地镜像 (ifNotPresent)**：只有本地不存在镜像时才会拉取镜像。
 
-- **Redownload Image (Always)**: It means that the image is pulled whenever the pod starts.
+- **尝试重新下载镜像 (Always)**：只要启动 Pod 就会拉取镜像。
 
-- **Only Use Local Image  (Never)**: It means that the image is not pulled no matter the image exists or not.
+- **仅使用本地镜像 (Never)**：无论镜像是否存在都不会拉取镜像。
 
 {{< notice tip>}}
 
-- The default value is `IfNotPresent`, but the value of images tagged with `:latest` is `Always` by default.
-- Docker will check it when pulling the image. If MD5 has not changed, it will not pull.
-- The `:latest` should be avoided as much as possible in the production environment, and the latest image can be automatically pulled by the `:latest` in the development environment.
+- 默认值是 `IfNotPresent`，但标记为 `:latest` 的镜像的默认值是 `Always`。
+- Docker 会在拉取镜像时进行检查，如果 MD5 值没有变，则不会拉取镜像。
+- 在生产环境中应尽量避免使用 `:latest`，在开发环境中使用 `:latest` 会自动拉取最新的镜像。
 
 {{< /notice >}}
 
-#### **Health Checker**
+#### **健康检查器**
 
-Support **Liveness**, **Readiness**, and **Startup**. The survival check is used to detect when to restart the container.
+支持**存活**、**就绪**和**启动**检查。
 
-![container-health-check](/images/docs/project-user-guide/workloads/container-health-check.jpg)
+![容器健康检查](/images/docs/zh-cn/project-user-guide/application-workloads/container-image-settings/container-health-check.PNG)
 
-- **Container Liveness Check**: Liveness probes are used to know whether a container is running, indicated by `livenessProbe`.
+- **容器存活检查**：使用存活探针检测容器是否在运行，该参数显示在 `livenessProbe` 字段。
 
-- **Container Readiness Check**: Readiness probes are used to know whether a container is ready to serve requests, indicated by `readinessProbe`.
+- **容器就绪检查**：使用就绪探针检测容器是否准备好处理请求，该参数显示在 `readinessProbe` 字段。
 
-- **Container Startup Check**: Startup probes are used to know whether a container application has started, indicated by `startupProbe`.
+- **容器启动检查**：使用启动探针检测容器应用程序是否已经启动，该参数显示在 `startupProbe` 字段。
 
-Liveness, Readiness and Startup Check have all included the configurations below:
+存活、就绪和启动检查都包含以下配置：
 
-- **HTTPGetAction (HTTP Request Check)**: Perform an HTTP `Get` request on the specified port and path on the IP address of the container. If the response status code is greater than or equal to 200 and less than 400, the diagnosis is considered successful. The supported parameters include:
+- **HTTPGetAction（HTTP 请求检查）**：在容器 IP 地址的指定端口和路径上执行 HTTP `Get` 请求，如果响应状态码大于等于 200 且小于 400，则认为诊断成功。支持的参数包括：
 
-  ![http-request-check](/images/docs/project-user-guide/workloads/http-request-check.jpg)
+  ![HTTP 请求检查](/images/docs/zh-cn/project-user-guide/application-workloads/container-image-settings/http-request-check.PNG)
 
-  - **Scheme**: HTTP or HTTPS, specified by `scheme`.
-  - **Path**: The path to access the HTTP server, specified by `path`.
-  - **Port**: The access port or port name is exposed by the container. The port number must be between 1 and 65535. The value is specified by `port`.
-  - **Initial Delays**: The number of seconds after the container has started before liveness probes are initiated, specified by `initialDelaySeconds`. It defaults to 0.
-  - **Period Seconds**: The probe frequency (in seconds), specified by `periodSeconds`. It defaults to 10. The minimum value is 1.
-  - **Timeouts**: The number of seconds after which the probe times out, specified by `timeoutSeconds`. It defaults to 1. The minimum value is 1.
-  - **Success Threshold**: The minimum consecutive successes for the probe to be considered successful after having failed, specified by `successThreshold`. It defaults to 1 and must be 1 for liveness and startup. The minimum value is 1.
-  - **Failure Threshold**: The minimum consecutive failures for the probe to be considered failed after having succeeded, specified by `failureThreshold`. It defaults to 3. The minimum value is 1.
+  - **方案**：HTTP 或 HTTPS，由 `scheme` 指定。
+  - **路径**：访问 HTTP 服务器的路径，由 `path` 指定。
+  - **端口**：访问端口或端口名由容器暴露。端口号必须在 1 和 65535 之间。该值由 `port` 指定。
+  - **初始延迟**：容器启动后，存活探针启动之前等待的秒数，由 `initialDelaySeconds` 指定。默认为 0。
+  - **执行探测频率**：探测频率（以秒为单位），由 `periodSeconds` 指定。默认为 10，最小值为 1。
+  - **超时时间**：探针超时的秒数，由 `timeoutSeconds` 指定。默认为 1，最小值为 1。
+  - **健康阈值**：探测失败后，视为探测成功的最小连续成功次数，由 `successThreshold` 指定。默认为 1，存活探针和启动探针的该值必须为 1。最小值为 1。
+  - **不健康阈值**：探测成功后，视为探测失败的最小连续失败次数，由 `failureThreshold` 指定。默认为 3，最小值为 1。
 
-- **TCPSocketAction (TCP Port Check)**: Perform a TCP check on the specified port on the IP address of the container. If the port is open, the diagnosis is considered successful. The supported parameters include:
+- **TCPSocketAction（TCP 端口检查）**：在容器 IP 地址的指定端口上执行 TCP 检查。如果该端口打开，则认为诊断成功。支持的参数包括：
   
-  ![tcp-port-check](/images/docs/project-user-guide/workloads/tcp-port-check.jpg)
+  ![TCP 端口检查](/images/docs/zh-cn/project-user-guide/application-workloads/container-image-settings/tcp-port-check.PNG)
   
-  - **Port**: The access port or port name is exposed by the container. The port number must be between 1 and 65535. The value is specified by `port`.
-  - **Initial Delays**: The number of seconds after the container has started before liveness probes are initiated, specified by `initialDelaySeconds`. It defaults to 0.
-  - **Period Seconds**: The probe frequency (in seconds), specified by `periodSeconds`. It defaults to 10. The minimum value is 1.
-  - **Timeouts**: The number of seconds after which the probe times out, specified by `timeoutSeconds`. It defaults to 1. The minimum value is 1.
-  - **Success Threshold**: The minimum consecutive successes for the probe to be considered successful after having failed, specified by `successThreshold`. It defaults to 1 and must be 1 for liveness and startup. The minimum value is 1.
-  - **Failure Threshold**: The minimum consecutive failures for the probe to be considered failed after having succeeded, specified by `failureThreshold`. It defaults to 3. The minimum value is 1.
+  - **端口**：访问端口或端口名由容器暴露。端口号必须在 1 和 65535 之间。该值由 `port` 指定。
+  - **初始延迟**：容器启动后，存活探针启动之前等待的秒数，由 `initialDelaySeconds` 指定。默认为 0。
+  - **执行探测频率**：探测频率（以秒为单位），由 `periodSeconds` 指定。默认为 10，最小值为 1。
+  - **超时时间**：探针超时的秒数，由 `timeoutSeconds` 指定。默认为 1，最小值为 1。
+  - **健康阈值**：探测失败后，视为探测成功的最小连续成功次数，由 `successThreshold` 指定。默认为 1，存活探针和启动探针的该值必须为 1。最小值为 1。
+  - **不健康阈值**：探测成功后，视为探测失败的最小连续失败次数，由 `failureThreshold` 指定。默认为 3，最小值为 1。
   
-- **ExecAction (Exec Command Check)**: Execute the specified command in the container. If the return code is 0 when the command exits, the diagnosis is considered successful. The supported parameters include:
+- **ExecAction（执行命令检查）**：在容器中执行指定命令。如果命令退出时返回代码为 0，则认为诊断成功。支持的参数包括：
   
-  ![exec-command-check](/images/docs/project-user-guide/workloads/exec-command-check.jpg)
+  ![执行命令检查](/images/docs/zh-cn/project-user-guide/application-workloads/container-image-settings/exec-command-check.PNG)
   
-  - **Command**: A detection command used to detect the health of the container, specified by `exec.command`.
-  - **Initial Delays**: The number of seconds after the container has started before liveness probes are initiated, specified by `initialDelaySeconds`. It defaults to 0.
-  - **Period Seconds**: The probe frequency (in seconds), specified by `periodSeconds`. It defaults to 10. The minimum value is 1.
-  - **Timeouts**: The number of seconds after which the probe times out, specified by `timeoutSeconds`. It defaults to 1. The minimum value is 1.
-  - **Success Threshold**: The minimum consecutive successes for the probe to be considered successful after having failed, specified by `successThreshold`. It defaults to 1 and must be 1 for liveness and startup. The minimum value is 1.
-  - **Failure Threshold**: The minimum consecutive failures for the probe to be considered failed after having succeeded, specified by `failureThreshold`. It defaults to 3. The minimum value is 1.
+  - **命令**：用于检测容器健康状态的检测命令，由 `exec.command` 指定。
+  - **初始延迟**：容器启动后，存活探针启动之前等待的秒数，由 `initialDelaySeconds` 指定。默认为 0。
+  - **执行探测频率**：探测频率（以秒为单位），由 `periodSeconds` 指定。默认为 10，最小值为 1。
+  - **超时时间**：探针超时的秒数，由 `timeoutSeconds` 指定。默认为 1，最小值为 1。
+  - **健康阈值**：探测失败后，视为探测成功的最小连续成功次数，由 `successThreshold` 指定。默认为 1，存活探针和启动探针的该值必须为 1。最小值为 1。
+  - **不健康阈值**：探测成功后，视为探测失败的最小连续失败次数，由 `failureThreshold` 指定。默认为 3，最小值为 1。
 
- For more information about health checks, please visit [Container Probes](https://kubernetes.io/docs/concepts/workloads/pods/pod-lifecycle/#container-probes).
+有关健康检查的更多信息，请访问[容器探针](https://kubernetes.io/zh/docs/concepts/workloads/pods/pod-lifecycle/#container-probes)。
 
-#### **Start Command**
+#### **启动命令**
 
-By default, the container runs the default image command.
+默认情况下，容器会运行默认镜像命令。
 
-![start-command](/images/docs/project-user-guide/workloads/start-command.jpg)
+![启动命令](/images/docs/zh-cn/project-user-guide/application-workloads/container-image-settings/start-command.PNG)
 
-- **Run Command** refers to the `command` field of containers in the manifest file.
-- **Parameters** refers to the `args` field of containers in the manifest file.
+- **运行命令**对应清单文件中容器的 `command` 字段。
+- **参数**对应清单文件中容器的 `args` 字段。
 
-For more information about the command, please visit [Define a Command and Arguments for a Container](https://kubernetes.io/docs/tasks/inject-data-application/define-command-argument-container/).
+有关该命令的更多信息，请访问[为容器设置启动时要执行的命令和参数](https://kubernetes.io/zh/docs/tasks/inject-data-application/define-command-argument-container/)。
 
-#### **Environment Variables**
+#### **环境变量**
 
-Configure environment variables for Pods in the form of key-value pairs.
+以键值对形式为 Pod 配置环境变量。
 
-![envi-var](/images/docs/project-user-guide/workloads/envi-var.jpg)
+![环境变量](/images/docs/zh-cn/project-user-guide/application-workloads/container-image-settings/envi-var.PNG)
 
-- name: The name of the environment variable, specified by `env.name`.
-- value: The value of the variable reference, specified by `env.value`.
-- type: The type of environment variables. It supports customization, configuration items, keys, and variable/variable references.
+- 名称：环境变量的名称，由 `env.name` 指定。
+- 值：变量引用的值，由 `env.value` 指定。
+- 类型：环境变量的类型，支持自定义、配置项、键以及变量或变量引用。
 
-For more information about the command, please visit [Pod variable](https://kubernetes.io/docs/tasks/inject-data-application/environment-variable-expose-pod-information/?spm=a2c4g.11186623.2.20.16704b3e9qHXPb).
+有关该命令的更多信息，请访问 [Pod 变量](https://kubernetes.io/zh/docs/tasks/inject-data-application/environment-variable-expose-pod-information/)。
 
-#### **Container Security Context**
+#### **容器组 Security Context**
 
-A security context defines privilege and access control settings for a Pod or Container. For more information about the security context, please visit [Pod Security Policies](https://kubernetes.io/docs/concepts/policy/pod-security-policy/).
+Security Context 定义 Pod 或容器的特权和访问控制设置。有关 Security Context 的更多信息，请访问 [Pod 安全策略](https://kubernetes.io/zh/docs/concepts/policy/pod-security-policy/)。
 
-![security-context](/images/docs/project-user-guide/workloads/security-context.jpg)
+![Security Context](/images/docs/zh-cn/project-user-guide/application-workloads/container-image-settings/security-context.PNG)
 
-#### **Sync Host Timezone**
+#### **同步主机时区**
 
-The time zone of the container will be consistent with that of the host after synchronization.
+同步后，容器的时区将和主机的时区一致。
 
-## **Update Strategy**
+## **更新策略**
 
-### Pod Update
+### Pod 更新
 
-Update strategies are different for different workloads.
+不同工作负载使用不同的更新策略。
 
 {{< tabs >}}
 
-{{< tab "Deployments" >}}
+{{< tab "部署" >}}
 
-The `.spec.strategy` field specifies the strategy used to replace old Pods with new ones. `.spec.strategy.type` can be `Recreate` or `RollingUpdate`. `RollingUpdate` is the default value.
+`.spec.strategy` 字段指定用于用新 Pod 替换旧 Pod 的策略。`.spec.strategy.type` 可以是 `Recreate` 或 `RollingUpdate`。默认值是 `RollingUpdate`。
 
-- **RollingUpdate (Recommended)**
+- **滚动更新（推荐）**
 
-  A rolling update means the instance of the old version will be gradually replaced with new ones. During the upgrade process, the traffic will be load balanced and distributed to the old and new instances simultaneously, so the service will not be interrupted.
+  滚动更新将逐步用新版本的实例替换旧版本的实例。升级过程中，流量会同时负载均衡分布到新老版本的实例上，因此服务不会中断。
 
-- **Recreate**
+- **替换升级**
 
-  All existing Pods will be killed before new ones are created. Please note that the service will be interrupted during the update process.
+  替换升级会先删除现有的 Pod，再创建新的 Pod。请注意，升级过程中服务会中断。
 
-For more information about update strategies, please visit [Strategy in Deployments](https://kubernetes.io/docs/concepts/workloads/controllers/deployment/#strategy).
-
-{{</ tab >}}
-
-{{< tab "StatefulSets" >}}
-
-The drop-down menu under **Update Strategy** is indicated by the `.spec.updateStrategy` field of a StatefulSet in the manifest file. It allows you to handle updates of Pod containers, tags, resource requests or limits, and annotations. There are two strategies:
-
-- **RollingUpdate (Recommended)**
-
-  If `.spec.template` is updated, the Pods in the StatefulSet will be automatically deleted with new pods created as replacements. Pods are updated in reserve ordinal order, sequentially deleted and created. A new Pod update will not begin until the previous Pod becomes up and running after it is updated.
-
-- **OnDelete**
-
-  If `.spec.template` is updated, the Pods in the StatefulSet will not be automatically updated. You need to manually delete old Pods so that the controller can create new Pods.
-
-For more information about update strategies, please visit [StatefulSet Update Strategies](https://kubernetes.io/docs/concepts/workloads/controllers/statefulset/#update-strategies).
+有关升级策略的更多信息，请访问[部署的策略部分](https://kubernetes.io/zh/docs/concepts/workloads/controllers/deployment/#strategy)。
 
 {{</ tab >}}
 
-{{< tab "DaemonSets" >}}
+{{< tab "有状态副本集" >}}
 
-The drop-down menu under **Update Strategy** is indicated by the `.spec.updateStrategy` field of a DaemonSet in the manifest file. It allows you to handle updates of Pod containers, tags, resource requests or limits, and annotations. There are two strategies:
+**更新策略**下的下拉菜单显示在清单文件中有状态副本集的 `.spec.updateStrategy` 字段。您可以处理 Pod 容器、标签、资源预留或限制以及注解的更新。有两种策略：
 
-- **RollingUpdate (Recommended)**
+- **滚动更新（推荐）**
 
-  If `.spec.template` is updated, old DaemonSet pods will be killed with new pods created automatically in a controlled fashion. At most one pod of the DaemonSet will be running on each node during the whole update process.
+  如果 `.spec.template` 已更新，有状态副本集中的 Pod 将被自动删除，并创建新的 Pod 来替换。Pod 将按照反向顺序更新，依次删除和创建。前一个 Pod 更新完成并开始运行后，才会开始更新下一个新的 Pod。
 
-- **OnDelete**
+- **删除容器组时更新**
 
-  If `.spec.template` is updated, new DaemonSet pods will only be created when you manually delete old DaemonSet pods. This is the same behavior of DaemonSets in Kubernetes version 1.5 or before.
+  如果 `.spec.template` 已更新，有状态副本集中的 Pod 将不会自动更新。您需要手动删除旧的 Pod，控制器才会创建新的 Pod。
 
-For more information about update strategies, please visit [DaemonSet Update Strategy](https://kubernetes.io/docs/tasks/manage-daemon/update-daemon-set/#daemonset-update-strategy).
+有关更新策略的更多信息，请访问[有状态副本集更新策略](https://kubernetes.io/zh/docs/concepts/workloads/controllers/statefulset/#update-strategies)。
+
+{{</ tab >}}
+
+{{< tab "守护进程集" >}}
+
+**更新策略**下的下拉菜单显示在清单文件中守护进程集的 `.spec.updateStrategy` 字段。您可以处理 Pod 容器、标签、资源预留或限制以及注解的更新。有两种策略：
+
+- **滚动更新（推荐）**
+
+  如果 `.spec.template` 已更新，旧的守护进程集 Pod 将被终止，并以受控方式自动创建新的 Pod。整个更新过程中，每个节点上至多只有一个守护进程集的 Pod 运行。
+
+- **删除容器组时更新**
+
+  如果 `.spec.template` 已更新，只有当您手动删除旧的守护进程集 Pod 时才会创建新的守护进程集 Pod。这与 1.5 或之前版本 Kubernetes 中的守护进程集的操作行为相同。
+
+有关更新策略的更多信息，请访问[守护进程集更新策略](https://kubernetes.io/zh/docs/tasks/manage-daemon/update-daemon-set/#daemonset-%E6%9B%B4%E6%96%B0%E7%AD%96%E7%95%A5)。
 
 {{</ tab >}}
 
 {{</ tabs >}}
 
-### The Number of Pods When Updated
+### 更新时 Pod 数量
 
 {{< tabs >}}
 
-{{< tab "Deployments" >}}
+{{< tab "部署" >}}
 
-**The number of Pods when updated** in a Deployment is different from that of a StatefulSet.
+部署中的**更新时容器组数量**与有状态副本集中的不同。
 
-- **The maximum unavailable number of Pods**: The maximum number of Pods that can be unavailable during the update, specified by `maxUnavailable`. The default value is 25%.
-- **The maximum surge number of Pods**: The maximum number of Pods that can be scheduled above the desired number of Pods, specified by `maxSurge`. The default value is 25%.
-
-{{</ tab >}}
-
-{{< tab "StatefulSets" >}}
-
-When you partition an update, all Pods with an ordinal greater than or equal to the value you set in Partition are updated when you update the StatefulSet’s Pod specification. This field is specified by `.spec.updateStrategy.rollingUpdate.partition`, whose default value is 0. For more information about partitions, please visit [Partitions](https://kubernetes.io/docs/concepts/workloads/controllers/statefulset/#partitions).
+- **容器组最大不可用数量**：升级过程中允许不可用的 Pod 的最大数量，由 `maxUnavailable` 指定。默认值是 25%。
+- **容器组最大超出数量**：可调度的超过期望数量的 Pod 的最大数量，由 `maxSurge` 指定。默认值是 25%。
 
 {{</ tab >}}
 
-{{< tab "DaemonSets" >}}
+{{< tab "有状态副本集" >}}
 
-**The number of Pods when updated** in a DaemonSet is different from that of a StatefulSet.
+如果您对更新进行分区，当更新有状态副本集的 Pod 配置时，所有序号大于等于该分区序号值的 Pod 都会被更新。该字段由 `.spec.updateStrategy.rollingUpdate.partition` 指定，默认值是 0。有关分区的更多信息，请访问[分区](https://kubernetes.io/zh/docs/concepts/workloads/controllers/statefulset/#partitions)。
 
-- **The maximum unavailable number of Pods**: The maximum number of pods that can be unavailable during the update, specified by `maxUnavailable`. The default value is 20%.
-- **MinReadySeconds**: The minimum number of seconds before a newly created Pod of DaemonSet is treated as available, specified by `minReadySeconds`. The default value is 0.
+{{</ tab >}}
+
+{{< tab "守护进程集" >}}
+
+守护进程集中的**更新时容器组数量**与有状态副本集中的不同。
+
+- **容器组最大不可用数量**：升级过程中允许不可用的 Pod 的最大数量，由 `maxUnavailable` 指定。默认值是 20%。
+- **最小就绪时间**：新创建的守护进程集的 Pod 被视为可用之前的最少秒数，由 `minReadySeconds` 指定。默认值是 0。
 
 {{</ tab >}}
 
 {{</ tabs >}}
 
-### Pod Security Context
+### 容器组 Security Context
 
-A security context defines privilege and access control settings for a Pod or Container. For more information about Pod Security Policies, please visit [Pod Security Policies](https://kubernetes.io/docs/concepts/policy/pod-security-policy/).
+Security Context 定义 Pod 或容器的特权和访问控制设置。有关 Pod Security Context 的更多信息，请访问 [Pod 安全策略](https://kubernetes.io/zh/docs/concepts/policy/pod-security-policy/)。
 
-### Deployment Mode
+### 部署模式
 
-You can select different deployment modes to switch between inter-pod affinity and inter-pod anti-affinity. In Kubernetes, inter-pod affinity is specified as field `podAffinity` of field `affinity` while inter-pod anti-affinity is specified as field `podAntiAffinity` of field `affinity`. In KubeSphere, both `podAffinity` and `podAntiAffinity` are set to `preferredDuringSchedulingIgnoredDuringExecution`. You can enable **Edit Mode** in the top right corner to see field details.
+您可以选择不同的部署模式，切换 Pod 间亲和与 Pod 间反亲和。在 Kubernetes 中，Pod 间亲和由 `affinity` 字段下的 `podAffinity` 字段指定，而 Pod 间反亲和由 `affinity` 字段下的 `podAntiAffinity` 字段指定。在 KubeSphere 中，`podAffinity` 和 `podAntiAffinity` 都设置为 `preferredDuringSchedulingIgnoredDuringExecution`。您可以在右上角启用**编辑模式**查看字段详情，
 
-- **Pod Decentralized Deployment** represents anti-affinity.
-- **Pod Aggregation Deployment** represents affinity.
+- **容器组分散部署**代表反亲和性。
+- **容器组聚合部署**代表亲和性。
 
-For more information about affinity and anti-affinity, please visit [Pod affinity](https://kubernetes.io/docs/concepts/scheduling-eviction/assign-pod-node/#inter-pod-affinity-and-anti-affinity).
+有关亲和性和反亲和性的更多信息，请访问 [Pod 亲和性](https://kubernetes.io/zh/docs/concepts/scheduling-eviction/assign-pod-node/#pod-%E9%97%B4%E4%BA%B2%E5%92%8C%E4%B8%8E%E5%8F%8D%E4%BA%B2%E5%92%8C)。

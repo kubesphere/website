@@ -91,7 +91,7 @@ As you install KubeSphere and Kubernetes on Linux, you need to prepare an image 
 
    {{< notice note >}}
 
-   This file lists images under `##+modulename` based on different modules. You can add your own images to this file following the same rule. To view the complete file, see [Appendix](../air-gapped-installation/#image-list-of-kubesphere-v300).
+   This file lists images under `##+modulename` based on different modules. You can add your own images to this file following the same rule. To view the complete file, see [Appendix](../../installing-on-linux/introduction/air-gapped-installation/#image-list-of-kubesphere-v300).
 
    {{</ notice >}} 
 

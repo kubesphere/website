@@ -2,7 +2,6 @@
 title: "All-in-One Installation on Linux"
 keywords: 'KubeSphere, Kubernetes, All-in-one, Installation'
 description: 'All-in-One Installation on Linux'
-
 linkTitle: "All-in-One Installation on Linux"
 weight: 2100
 ---
@@ -11,9 +10,9 @@ For those who are new to KubeSphere and looking for a quick way to discover the 
 
 ## Step 1: Prepare a Linux Machine
 
-See the requirements for hardware and operating system shown below. To get started with all-in-one installation, you only need to prepare one host according to the following requirements.
+To get started with all-in-one installation, you only need to prepare one host according to the following requirements for hardware and operating system.
 
-### Hardware recommendation
+### Hardware recommendations
 
 | System                                                 | Minimum Requirements                        |
 | ------------------------------------------------------ | ------------------------------------------- |
@@ -29,7 +28,7 @@ The system requirements above and the instructions below are for the default min
 
 {{</ notice >}}
 
-### Node Requirements
+### Node requirements
 
 - The node can be accessed through `SSH`.
 - `sudo`/`curl`/`openssl` should be used.
@@ -66,7 +65,7 @@ Developed in Go language, KubeKey represents a brand-new installation tool as a 
 {{< notice tip >}}
 
 - It is recommended that your OS be clean (without any other software installed). Otherwise, there may be conflicts.
-- It is recommended that a container image mirror (accelerator) be prepared if you have trouble downloading images from `dockerhub.io`. For more information, see [Configure Booster for Installation](../../installing-on-linux/faq/configure-booster/).
+- It is recommended that a container image mirror (a booster) be prepared if you have trouble downloading images from `dockerhub.io`. For more information, see [Configure a Booster for Installation](../../faq/installation/configure-booster/).
 
 {{</ notice >}}
 
@@ -102,7 +101,7 @@ curl -sfL https://get-kk.kubesphere.io | VERSION=v1.0.1 sh -
 
 {{< notice note >}}
 
-After you download KubeKey, If you transfer it to a new machine also with poor network connections to Googleapis, you must run `export KKZONE=cn` again before you proceed with the steps below.
+After you download KubeKey, if you transfer it to a new machine also with poor network connections to Googleapis, you must run `export KKZONE=cn` again before you proceed with the steps below.
 
 {{</ notice >}} 
 
@@ -140,11 +139,12 @@ To create a Kubernetes cluster with KubeSphere installed, refer to the following
 
 - Supported Kubernetes versions: *v1.15.12*, *v1.16.13*, *v1.17.9* (default), *v1.18.6*.
 - For all-in-one installation, generally speaking, you do not need to change any configuration.
+- If you do not add the flag `--with-kubesphere` in the command in this step, KubeSphere will not be deployed. KubeKey will install Kubernetes only. If you add the flag `--with-kubesphere` without specifying a KubeSphere version, the latest version of KubeSphere will be installed.
 - KubeKey will install [OpenEBS](https://openebs.io/) to provision LocalPV for the development and testing environment by default, which is convenient for new users. For other storage classes, see [Persistent Storage Configurations](../../installing-on-linux/introduction/storage-configuration/).
 
 {{</ notice >}}
 
-After you execute the command, you will see a table as below for environment check. For details, read [Node Requirements](#node-requirements) and [Dependency Requirements](#dependency-requirements) above. Input `y` to continue.
+After you execute the command, you will see a table as below for environment check. For details, read [Node requirements](#node-requirements) and [Dependency requirements](#dependency-requirements) above. Input `yes` to continue.
 
 ![environment-check](/images/docs/quickstart/all-in-one-installation/environment-check.png)
 
@@ -190,7 +190,7 @@ You may need to configure port forwarding rules and open the port in your securi
 
 {{</ notice >}}
 
-After logging in the console, you can check the status of different components in **Components**. You may need to wait for some components to be up and running if you want to use related services. You can also use `kubectl get pod --all-namespaces` to inspect the running status of KubeSphere workloads.
+After logging in to the console, you can check the status of different components in **Components**. You may need to wait for some components to be up and running if you want to use related services. You can also use `kubectl get pod --all-namespaces` to inspect the running status of KubeSphere workloads.
 
 ![kubesphere-components](/images/docs/quickstart/all-in-one-installation/kubesphere-components.png)
 
@@ -198,5 +198,5 @@ After logging in the console, you can check the status of different components i
 
 The guide above is used only for the minimal installation by default. To enable other components in KubeSphere, see [Enable Pluggable Components](../../pluggable-components/) for more details.
 
-## Demo
+## Code Demonstration
 <script src="https://asciinema.org/a/379741.js" id="asciicast-379741" async></script>

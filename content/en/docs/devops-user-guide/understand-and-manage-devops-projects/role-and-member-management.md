@@ -31,7 +31,7 @@ In **Project Roles**, there are three available built-in roles as shown below. B
 
 ## Create a DevOps Project Role
 
-1. Log in the console as `devops-admin` and select a DevOps project (e.g. `demo-devops`) under **DevOps Projects** list.
+1. Log in to the console as `devops-admin` and select a DevOps project (e.g. `demo-devops`) under **DevOps Projects** list.
 
    {{< notice note >}}
 

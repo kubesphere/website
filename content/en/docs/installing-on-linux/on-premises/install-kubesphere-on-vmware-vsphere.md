@@ -321,7 +321,7 @@ curl -sfL https://get-kk.kubesphere.io | VERSION=v1.0.1 sh -
 
 {{< notice note >}}
 
-After you download KubeKey, If you transfer it to a new machine also with poor network connections to Googleapis, you must run `export KKZONE=cn` again before you proceed with the steps below.
+After you download KubeKey, if you transfer it to a new machine also with poor network connections to Googleapis, you must run `export KKZONE=cn` again before you proceed with the steps below.
 
 {{</ notice >}} 
 
@@ -353,11 +353,14 @@ Create a Kubernetes cluster with KubeSphere installed (e.g. `--with-kubesphere v
 
 {{< notice note >}}
 
-The following Kubernetes versions have been fully tested with KubeSphere: v1.15.12, v1.16.13, v1.17.9 (default) and v1.18.6.
+- The following Kubernetes versions have been fully tested with KubeSphere: v1.15.12, v1.16.13, v1.17.9 (default) and v1.18.6.
+
+- If you do not add the flag `--with-kubesphere` in the command in this step, KubeSphere will not be deployed unless you install it using the `addons` field in the configuration file or add this flag again when you use `./kk create cluster` later.
+- If you add the flag `--with-kubesphere` without specifying a KubeSphere version, the latest version of KubeSphere will be installed.
 
 {{</ notice >}}
 
-A default file **config-sample.yaml** will be created. Modify it according to your environment.
+A default file `config-sample.yaml` will be created. Modify it according to your environment.
 
 ```bash
 vi config-sample.yaml
@@ -528,9 +531,9 @@ https://kubesphere.io             2020-08-15 23:32:12
 #####################################################
 ```
 
-### Log in the Console
+### Log in to the Console
 
-You will be able to use default account and password `admin/P@88w0rd` to log in the console `http://{$IP}:30880` to take a tour of KubeSphere. Please change the default password after login.
+You will be able to use default account and password `admin/P@88w0rd` to log in to the console `http://{$IP}:30880` to take a tour of KubeSphere. Please change the default password after login.
 
 ## Enable Pluggable Components (Optional)
 

@@ -19,7 +19,7 @@ This tutorial demonstrates how to create an application (WordPress as an example
 
 ## Prerequisites
 
-An account `project-regular` is needed with the role `operator` assigned in one of your projects (the user has been invited to the project). For more information, see [Create Workspace, Project, Account and Role](../create-workspace-and-project/).
+An account `project-regular` is needed with the role `operator` assigned in one of your projects (the user has been invited to the project). For more information, see [Create Workspaces, Projects, Accounts and Roles](../create-workspace-and-project/).
 
 ## Estimated Time
 
@@ -33,7 +33,7 @@ About 15 minutes.
 
 The environment variable `WORDPRESS_DB_PASSWORD` is the password to connect to the database in WordPress. In this step, you need to create a Secret to store the environment variable that will be used in MySQL pod template.
 
-1. Log in KubeSphere console using the account `project-regular`. Go to the detailed page of `demo-project` and navigate to **Configurations**. In **Secrets**, click **Create** on the right.
+1. Log in to KubeSphere console using the account `project-regular`. Go to the detailed page of `demo-project` and navigate to **Configurations**. In **Secrets**, click **Create** on the right.
 
 ![create-secret](https://ap3.qingstor.com/kubesphere-website/docs/20200903154611.png)
 

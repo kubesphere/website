@@ -14,7 +14,7 @@ As an open-source project on [GitHub](https://github.com/kubesphere), KubeSphere
 Users are provided with multiple installation options. Please note not all options are mutually exclusive. For instance, you can deploy KubeSphere with minimal packages on multiple nodes in an air-gapped environment.
 
 - [All-in-One](../../../quick-start/all-in-one-on-linux/): Install KubeSphere on a single node. It is only for users to quickly get familiar with KubeSphere.
-- [Multi-Node](../multioverview/): Install KubeSphere on multiple nodes. It is for testing or development.
+- [Multi-node](../multioverview/): Install KubeSphere on multiple nodes. It is for testing or development.
 - [Air-gapped Installation on Linux](../air-gapped-installation): All images of KubeSphere have been encapsulated into a package. It is convenient for air-gapped installation on Linux machines.
 - [High Availability Installation](../ha-configuration/): Install high availability KubeSphere on multiple nodes which is used for the production environment.
 - Minimal Packages: Only install the minimum required system components of KubeSphere. Here is the minimum resource requirement:

@@ -1,129 +1,129 @@
 ---
-title: "Deploy KubeSphere on QingCloud Instance"
-keywords: "KubeSphere, Installation, HA, High-availability, LoadBalancer"
-description: "The tutorial is for installing a high-availability cluster."
-
+title: "在青云QingCloud 主机上部署 KubeSphere"
+keywords: "KubeSphere, 安装, HA, 高可用性, LoadBalancer"
+description: "本教程介绍如何在青云QingCloud 主机上安装高可用集群。"
+linkTitle: "在青云QingCloud 主机上部署 KubeSphere"
 Weight: 3220
 ---
 
-## Introduction
+## 介绍
 
-For a production environment, we need to consider the high availability of the cluster. If the key components (e.g. kube-apiserver, kube-scheduler, and kube-controller-manager) are all running on the same master node, Kubernetes and KubeSphere will be unavailable once the master node goes down. Therefore, we need to set up a high-availability cluster by provisioning load balancers with multiple master nodes. You can use any cloud load balancer, or any hardware load balancer (e.g. F5). In addition, Keepalived and [HAproxy](https://www.haproxy.com/), or Nginx is also an alternative for creating high-availability clusters.
+对于生产环境，需要考虑集群的高可用性。如果关键组件（例如 kube-apiserver、kube-scheduler 和 kube-controller-manager）在相同的主节点上运行，一旦主节点出现故障，Kubernetes 和 KubeSphere 将不可用。因此，您需要为多个主节点配置负载均衡器，以搭建高可用集群。您可以使用任何云负载均衡器或任何硬件负载均衡器（例如 F5）。此外，您也可以使用 Keepalived+[HAproxy](https://www.haproxy.com/) 或 NGINX 搭建高可用集群。
 
-This tutorial walks you through an example of how to create two [QingCloud Load Balancers](https://docs.qingcloud.com/product/network/loadbalancer), serving as the internal load balancer and external load balancer respectively, and of how to implement high availability of master and etcd nodes using the load balancers.
+本教程演示如何创建两个[青云QingCloud 负载均衡器](https://docs.qingcloud.com/product/network/loadbalancer)，分别用于内部和外部负载均衡，以及如何使用负载均衡器实现主节点和 etcd 节点的高可用性。
 
-## Prerequisites
+## 准备工作
 
-- Please make sure that you already know how to install KubeSphere with a multi-node cluster by following the [guide](https://github.com/kubesphere/kubekey). For the detailed information about the config yaml file that is used for installation, see Multi-node Installation. This tutorial focuses more on how to configure load balancers.
-- You need a [QingCloud](https://console.qingcloud.com/login) account to create load balancers, or follow the guide of any other cloud provider to create load balancers.
-- Considering data persistence, for a production environment, we recommend you to prepare persistent storage and create a StorageClass in advance. For development and testing, you can use the integrated OpenEBS to provision LocalPV as the storage service directly.
+- 您需要了解如何在多节点集群上安装 KubeSphere（请参见[多节点安装](../../../installing-on-linux/introduction/multioverview/)）。有关安装中用到的配置文件的详细信息，请参见[编辑配置文件](../../../installing-on-linux/introduction/multioverview/#2-编辑配置文件)。本教程主要介绍如何配置负载均衡器。
+- 您需要注册一个[青云QingCloud ](https://console.qingcloud.com/login)帐户才能在青云QingCloud 创建负载均衡器。如在其他云平台上创建负载均衡器，请参考对应云厂商提供的指南。
+- 如果搭建生产环境，建议您提前准备持久化存储并创建 StorageClass。如果搭建开发测试环境，您可以直接使用集成的 OpenEBS 配置 LocalPV 存储服务。
 
-## Architecture
+## 集群架构
 
-This example prepares six machines of **Ubuntu 16.04.6**. We will create two load balancers, and deploy three master and etcd nodes on three of the machines. You can configure these master and etcd nodes in `config-sample.yaml` of KubeKey (Please note that this is the default name, which can be changed by yourself).
+本教程使用六台 **Ubuntu 16.04.6** 机器。您需要创建两个负载均衡器，并在其中的三台机器上部署三个主节点和 etcd 节点。您可以在 KubeKey 创建的 `config-sample.yaml` 文件中配置上述节点（`config-sample.yaml` 为文件的默认名称，可以手动更改）。
 
-![kubesphere-ha-architecture](https://ap3.qingstor.com/kubesphere-website/docs/ha-architecture.png)
-
-{{< notice note >}}
-
-The Kubernetes document [Options for Highly Available topology](https://kubernetes.io/docs/setup/production-environment/tools/kubeadm/ha-topology/) demonstrates that there are two options for configuring the topology of a highly available (HA) Kubernetes cluster, i.e. stacked etcd topology and external etcd topology. You should carefully consider the advantages and disadvantages of each topology before setting up an HA cluster according to [this document](https://kubernetes.io/docs/setup/production-environment/tools/kubeadm/ha-topology/). In this guide, we adopt stacked etcd topology to bootstrap an HA cluster for convenient demonstration.
-
-{{</ notice >}}
-
-## Install HA Cluster
-
-### Create Load Balancers
-
-This step demonstrates how to create load balancers on QingCloud platform.
-
-#### Create an Internal Load Balancer
-
-1. Log in [QingCloud Console](https://console.qingcloud.com/login). In the menu on the left, under **Network & CDN**, select **Load Balancers**. Click **Create** to create a load balancer.
-
-![create-lb](https://ap3.qingstor.com/kubesphere-website/docs/create-lb.png)
-
-2. In the pop-up window, set a name for the load balancer. Choose the VxNet where your machines are created from the Network drop-down list. Here is `pn`. Other fields can be default values as shown below. Click **Submit** to finish.
-
-![qingcloud-lb](https://ap3.qingstor.com/kubesphere-website/docs/qingcloud-lb.png)
-
-3. Click the load balancer. In the detailed information page, create a listener that listens on port `6443` with the Listener Protocol set as `TCP`.
-
-![Listener](https://ap3.qingstor.com/kubesphere-website/docs/listener.png)
-
-- Name: Define a name for this Listener
-- Listener Protocol: Select `TCP` protocol
-- Port: `6443`
-- Load mode: `Poll`
-
-Click Submit to continue.
+![ha-architecture](/images/docs/zh-cn/installing-on-linux/installing-on-public-cloud/deploy-kubesphere-on-qingcloud-instances/ha-architecture.png)
 
 {{< notice note >}}
 
-After you create the listener, please check the firewall rules of the load balancer. Make sure that the port `6443` has been added to the firewall rules and the external traffic can pass through `6443`. Otherwise, the installation will fail. If you are using QingCloud platform, you can find the information in **Security Groups** under **Security**.
+根据 Kubernetes 官方文档[高可用拓扑选项](https://kubernetes.io/zh/docs/setup/production-environment/tools/kubeadm/ha-topology/)，Kubernetes 高可用集群有两种拓扑配置形式，即堆叠 etcd 拓扑和外部 etcd 拓扑。在搭建高可用集群前，您需要根据该文档仔细权衡两种拓扑的利弊。本教程采用堆叠 etcd 拓扑搭建高可用集群作为示例。
 
 {{</ notice >}}
 
-4. Click **Add Backend**, and choose the VxNet you just selected (in this example, it is `pn`). Click the button **Advanced Search**, choose the three master nodes, and set the port to `6443` which is the default secure port of api-server.
+## 安装高可用集群
 
-![add-backend](https://ap3.qingstor.com/kubesphere-website/docs/3-master.png)
+### 步骤 1：创建负载均衡器
 
-Click **Submit** when you finish.
+本步骤演示如何在青云QingCloud 平台上创建负载均衡器。
 
-5. Click the button **Apply Changes** to activate the configurations. At this point, you can find the three masters have been added as the backend servers of the listener that is behind the internal load balancer.
+#### 创建内部负载均衡器
+
+1. 登录[青云QingCloud 控制台](https://console.qingcloud.com/login)。在左侧导航栏选择**网络与 CDN** 下的**负载均衡器**，然后点击**创建**。
+
+   ![create-lb](/images/docs/zh-cn/installing-on-linux/installing-on-public-cloud/deploy-kubesphere-on-qingcloud-instances/create-lb.png)
+
+2. 在弹出的对话框中，设置负载均衡器的名称，在**网络**下拉列表中选择机器所在的私有网络（在本例中为 `pn`），其他参数可以保持默认，然后点击**提交**。
+
+   ![qingcloud-lb](/images/docs/zh-cn/installing-on-linux/installing-on-public-cloud/deploy-kubesphere-on-qingcloud-instances/qingcloud-lb.png)
+
+4. 点击上一步创建的负载均衡器。在其详情页面创建监听器，将**监听协议**设置为 `TCP`，将**端口**设置为 `6443`。
+
+   ![listener](/images/docs/zh-cn/installing-on-linux/installing-on-public-cloud/deploy-kubesphere-on-qingcloud-instances/listener.png)
+
+   - **名称**：监听器的名称
+   - **监听协议**：`TCP`
+   - **端口：**`6443`
+   - **负载方式**：`轮询`
+
+   设置完成后点击**提交**。
+
+   {{< notice note >}}
+
+   在创建监听器后需要检查负载均衡器的防火墙规则。请确保 `6443` 端口已添加到防火墙规则中并且外部流量可以通过 `6443` 端口，否则安装将会失败。在青云QingCloud 平台上，您可以在**安全**下的**安全组**页面查看相关信息。
+
+   {{</ notice >}}
+
+5. 点击**添加后端**，选择之前选择的私有网络（在本例中为 `pn`），点击**高级搜索**，选择三个主节点，并将**端口**设置为 `6443`（api-server 的默认安全端口）。
+
+   ![3-master](/images/docs/zh-cn/installing-on-linux/installing-on-public-cloud/deploy-kubesphere-on-qingcloud-instances/3-master.png)
+
+   设置完成后点击**提交**。
+
+5. 点击**应用修改**。页面上显示三个主节点已添加为内部负载均衡器后端监听器的后端服务器。
+
+   {{< notice note >}}
+
+   将三个主节点添加为后端后，页面上可能会显示三个主节点的状态为**不可用**。这属于正常现象。这是由于 api-server 的 `6443` 端口尚未在主节点上启用。安装完成后，主节点的状态将自动变为**活跃**，同时 api-server 的端口将暴露，从而内部负载均衡器将正常工作。
+
+   {{</ notice >}}
+
+   ![apply-change](/images/docs/zh-cn/installing-on-linux/installing-on-public-cloud/deploy-kubesphere-on-qingcloud-instances/apply-change.png)
+
+   记录**网络**区域显示的内网 VIP 地址。该地址将在后续步骤中添加至配置文件。
+
+#### 创建外部负载均衡器
+
+您需要提前在**网络与 CDN** 下的**公网 IP** 页面申请公网 IP 地址。
 
 {{< notice note >}}
 
-The status of all masters might show `Not Available` after you added them as backends. This is normal since the port `6443` of api-server is not active on master nodes yet. The status will change to `Active` and the port of api-server will be exposed after the installation finishes, which means the internal load balancer you configured works as expected.
+本教程需要用到两个公网 IP 地址。其中一个用于 VPC 网络，另一个用于本步骤创建的外部负载均衡器。同一个公网 IP 地址不能同时与 VPC 网络和负载均衡器绑定。
 
 {{</ notice >}}
 
-![apply-changes](https://ap3.qingstor.com/kubesphere-website/docs/apply-change.png)
+1. 创建外部负载均衡器时，点击**添加公网 IPv4** 将您申请到的公网 IP 地址与负载均衡器绑定，将**网络**设置为**不加入私有网络**。其他步骤与创建内部负载均衡器相同。
 
-Record the Intranet VIP shown under Networks. The IP address will be added later to the config yaml file.
+   ![bind-eip](/images/docs/zh-cn/installing-on-linux/installing-on-public-cloud/deploy-kubesphere-on-qingcloud-instances/bind-eip.png)
 
-#### Create an External Load Balancer
+2. 在负载均衡器详情页面，创建一个监听器用于监听 `30880` 端口（KubeSphere 控制台 NodePort 端口），将**监听协议**设置为 `HTTP`。
 
-You need to create an EIP in advance. To create an EIP, go to **Elastic IPs** under **Networks & CDN**.
+   {{< notice note >}}
 
-{{< notice note >}}
+   在创建监听器后需要检查负载均衡器的防火墙规则。请确保 `30880` 端口已添加到防火墙规则中并且外部流量可以通过 `30880` 端口，否则安装将会失败。在青云QingCloud 平台上，您可以在**安全**下的**安全组**页面查看相关信息。
 
-Two elastic IPs are needed for this whole tutorial, one for the VPC network and the other for the external load balancer created in this step. You cannot associate the same EIP to the VPC network and the load balancer at the same time.
+   {{</ notice >}}
 
-{{</ notice >}}
+   ![listener2](/images/docs/zh-cn/installing-on-linux/installing-on-public-cloud/deploy-kubesphere-on-qingcloud-instances/listener2.png)
 
-6. Similarly, create an external load balancer while don't select VxNet for the Network field. Bind the EIP that you created to this load balancer by clicking **Add IPv4**.
+3. 点击**添加后端**。在弹出的对话框中选择私有网络 `pn`，点击**高级搜索**，选择私有网络 `pn` 中的六台机器用于安装 KubeSphere，并将**端口**设置为 `30880`。
 
-![bind-eip](https://ap3.qingstor.com/kubesphere-website/docs/bind-eip.png)
+   ![six-instances](/images/docs/zh-cn/installing-on-linux/installing-on-public-cloud/deploy-kubesphere-on-qingcloud-instances/six-instances.png)
 
-7. In the load balancer detailed information page, create a listener that listens on port `30880` (NodePort of KubeSphere console) with the Listener Protocol set as `HTTP`.
+   设置完成后点击**提交**。
 
-{{< notice note >}}
+4. 点击**应用修改**。页面上显示六台机器已添加为外部负载均衡器后端监听器的后端服务器。
 
-After you create the listener, please check the firewall rules of the load balancer. Make sure that the port `30880` has been added to the firewall rules and the external traffic can pass through `6443`. Otherwise, the installation will fail. If you are using QingCloud platform, you can find the information in **Security Groups** under **Security**.
+### 步骤 2：下载 KubeKey
 
-{{</ notice >}}
+[KubeKey](https://github.com/kubesphere/kubekey) 是新一代 Kubernetes 和 KubeSphere 安装器，可帮助您以简单、快速、灵活的方式安装 Kubernetes 和 KubeSphere。
 
-![listener2](https://ap3.qingstor.com/kubesphere-website/docs/listener2.png)
-
-8. Click **Add Backend**. In **Advanced Search**, choose the `six` machines on which we are going to install KubeSphere within the VxNet `pn`, and set the port to `30880`.
-
-![six-instances](https://ap3.qingstor.com/kubesphere-website/docs/six-instances.png)
-
-Click **Submit** when you finish.
-
-9. Click **Apply Changes** to activate the configurations. At this point, you can find the six machines have been added as the backend servers of the listener that is behind the external load balancer.
-
-### Download KubeKey
-
-[Kubekey](https://github.com/kubesphere/kubekey) is the next-gen installer which provides an easy, fast and flexible way to install Kubernetes and KubeSphere v3.0.0.
-
-Follow the step below to download KubeKey.
+请按照以下步骤下载 KubeKey。
 
 {{< tabs >}}
 
-{{< tab "Good network connections to GitHub/Googleapis" >}}
+{{< tab "如果您能正常访问 GitHub/Googleapis" >}}
 
-Download KubeKey from its [GitHub Release Page](https://github.com/kubesphere/kubekey/releases) or use the following command directly.
+从 [GitHub 发布页面](https://github.com/kubesphere/kubekey/releases)下载 KubeKey 或直接使用以下命令：
 
 ```bash
 curl -sfL https://get-kk.kubesphere.io | VERSION=v1.0.1 sh -
@@ -131,15 +131,15 @@ curl -sfL https://get-kk.kubesphere.io | VERSION=v1.0.1 sh -
 
 {{</ tab >}}
 
-{{< tab "Poor network connections to GitHub/Googleapis" >}}
+{{< tab "如果您访问 GitHub/Googleapis 受限" >}}
 
-Run the following command first to make sure you download KubeKey from the correct zone.
+先执行以下命令以确保您从正确的区域下载 KubeKey：
 
 ```bash
 export KKZONE=cn
 ```
 
-Run the following command to download KubeKey:
+执行以下命令下载 KubeKey：
 
 ```bash
 curl -sfL https://get-kk.kubesphere.io | VERSION=v1.0.1 sh -
@@ -147,7 +147,7 @@ curl -sfL https://get-kk.kubesphere.io | VERSION=v1.0.1 sh -
 
 {{< notice note >}}
 
-After you download KubeKey, If you transfer it to a new machine also with poor network connections to Googleapis, you must run `export KKZONE=cn` again before you proceed with the steps below.
+在您下载 KubeKey 后，如果您将其传至新的机器，且访问 Googleapis 同样受限，在您执行以下步骤之前请务必再次执行 `export KKZONE=cn` 命令。
 
 {{</ notice >}} 
 
@@ -157,17 +157,17 @@ After you download KubeKey, If you transfer it to a new machine also with poor n
 
 {{< notice note >}}
 
-The commands above download the latest release (v1.0.1) of KubeKey. You can change the version number in the command to download a specific version.
+执行以上命令会下载最新版 KubeKey (v1.0.1)，您可以修改命令中的版本号下载指定版本。
 
 {{</ notice >}} 
 
-Make `kk` executable:
+为 `kk` 文件添加可执行权限。
 
 ```bash
 chmod +x kk
 ```
 
-Create an example configuration file with default configurations. Here Kubernetes v1.17.9 is used as an example.
+创建包含默认配置的示例配置文件。以下以 Kubernetes v1.17.9 为例。
 
 ```bash
 ./kk create config --with-kubesphere v3.0.0 --with-kubernetes v1.17.9
@@ -175,24 +175,28 @@ Create an example configuration file with default configurations. Here Kubernete
 
 {{< notice note >}}
 
-These Kubernetes versions have been fully tested with KubeSphere: v1.15.12, v1.16.13, v1.17.9 (default), and v1.18.6.
+- 支持的 Kubernetes 版本：*v1.15.12*、*v1.16.13*、*v1.17.9*（默认）、*v1.18.6*。
+
+- 如果您在这一步的命令中不添加标志 `--with-kubesphere`，则不会部署 KubeSphere，只能使用配置文件中的 `addons` 字段安装，或者在您后续使用 `./kk create cluster` 命令时再次添加这个标志。
+
+- 如果您添加标志 `--with-kubesphere` 时不指定 KubeSphere 版本，则会安装最新版本的 KubeSphere。
 
 {{</ notice >}}
 
-### Cluster Node Planning
+### 步骤 3：设置集群节点
 
-As we adopt the HA topology with stacked control plane nodes, where etcd nodes are colocated with master nodes, we will define the master nodes and etcd nodes are on the same three machines.
+当您采用包含堆叠控制平面节点的高可用拓扑时，主节点和 etcd 节点在相同的三台机器上。
 
-| **Property** | **Description**                   |
-| :----------- | :-------------------------------- |
-| `hosts`      | Detailed information of all nodes |
-| `etcd`       | etcd node names                   |
-| `master`     | Master node names                 |
-| `worker`     | Worker node names                 |
+| **参数** | **描述**           |
+| :------- | :----------------- |
+| `hosts`  | 所有节点的详细信息 |
+| `etcd`   | etcd 节点名称      |
+| `master` | 主节点名称         |
+| `worker` | 工作节点名称       |
 
-- Put the master node name (master1, master2 and master3) under `etcd` and `master` respectively as below, which means these three machines will be assigned with both the master and etcd role. Please note that the number of etcd needs to be odd. Meanwhile, we do not recommend you to install etcd on worker nodes since the memory consumption of etcd is very high. Edit the configuration file, and we use **Ubuntu 16.04.6** in this example.
+在 `etcd` 和 `master` 参数下分别设置主节点的名称（`master1`、`master2` 和 `master3`）使得三台机器同时作为主节点和 etcd 节点。etcd 节点的数量必须是奇数。此外，由于 etcd 内存占用较高，不建议将 etcd 安装在工作节点上。
 
-#### config-sample.yaml Example
+#### config-sample.yaml 文件示例
 
 ```yaml
 spec:
@@ -218,13 +222,13 @@ spec:
     - node3
 ```
 
-For a complete configuration sample explanation, please see [this file](https://github.com/kubesphere/kubekey/blob/master/docs/config-example.md).
+有关完整的配置示例说明，请参见[此文件](https://github.com/kubesphere/kubekey/blob/master/docs/config-example.md)。
 
-### Configure the Load Balancer
+### 步骤 4：配置负载均衡器
 
-In addition to the node information, you need to provide the load balancer information in the same yaml file. For the Intranet VIP address, you can find it in step 5 mentioned above. Assume the VIP address and listening port of the **internal load balancer** are `192.168.0.253` and `6443` respectively, and you can refer to the following example.
+在前述 YAML 文件中除了需要配置节点信息外，还需要配置负载均衡器信息。本步骤需要用到[创建内部负载均衡器](#创建内部负载均衡器)时记录的内网 VIP 地址。在本示例中，**内部负载均衡器**的 VIP 地址和监听端口分别为 `192.168.0.253` 和 `6443`。您可以参考如下 YAML 文件配置。
 
-#### The configuration example in config-sample.yaml
+#### config-sample.yaml 文件示例
 
 ```yaml
 ## Internal LB config example
@@ -237,55 +241,53 @@ In addition to the node information, you need to provide the load balancer infor
 
 {{< notice note >}}
 
-- The address and port should be indented by two spaces in `config-sample.yaml`, and the address should be VIP.
-- The domain name of the load balancer is `lb.kubesphere.local` by default for internal access. If you need to change the domain name, please uncomment and modify it.
+- 在 `config-sample.yaml` 文件中，`address` 和 `port` 字段应缩进两个空格，同时 `address` 字段的值应为 VIP 地址。
+- 负载均衡器的默认域名为 `lb.kubesphere.local`，用于内部访问。您可以在 `domain` 字段修改域名。
 
 {{</ notice >}}
 
-After that, you can enable any components you need by following [Enable Pluggable Components](../../../pluggable-components/) and start your HA cluster installation.
+### 步骤 5：配置 Kubernetes 集群（可选）
 
-### Kubernetes Cluster Configuration (Optional)
+集群管理员可修改 KubeKey 提供的一些字段来自定义 Kubernetes 安装参数，包括 Kubernetes 版本、网络插件和镜像仓库。`config-example.yaml` 文件中的一些字段有默认值。您可以根据需要修改文件中 Kubernetes 相关的字段。有关更多信息，请参考[ Kubernetes 集群配置](../../../installing-on-linux/introduction/vars/)。
 
-Kubekey provides some fields and parameters to allow the cluster administrator to customize Kubernetes installation, including Kubernetes version, network plugins and image registry. There are some default values provided in `config-example.yaml`. Optionally, you can modify the Kubernetes related configuration in `config-example.yaml` according to your needs. See [config-example.md](https://github.com/kubesphere/kubekey/blob/master/docs/config-example.md) for detailed explanation.
+### 步骤 6：配置持久化存储插件
 
-### Persistent Storage Plugin Configuration
-
-As we mentioned in the prerequisites, considering data persistence in a production environment, you need to prepare persistent storage and configure the storage plugin (e.g. CSI) in `config-sample.yaml` to define which storage service you want.
+考虑到生产环境需要数据持久化，您需要准备持久化存储并在 `config-sample.yaml` 文件中配置所需的存储插件（例如 CSI）。
 
 {{< notice note >}}
 
-For testing or development, you can skip this part. KubeKey will use the integrated OpenEBS to provision LocalPV as the storage service directly.
+如搭建测试开发环境，您可以跳过这一步。KubeKey 将直接使用集成的 OpenEBS 配置 LocalPV 存储服务。
 
 {{</ notice >}}
 
-**Available Storage Plugins & Clients**
+**可用的存储插件和客户端**
 
 - Ceph RBD & CephFS
 - GlusterFS
 - NFS
 - QingCloud CSI
 - QingStor CSI
-- More plugins are WIP, which will be added soon
+- 未来版本将支持更多插件
 
-For each storage plugin configuration, you can refer to [config-example.md](https://github.com/kubesphere/kubekey/blob/master/docs/config-example.md) to get detailed explanation. Make sure you have configured the storage plugin before you get started. KubeKey will create a StorageClass and persistent volumes for related workloads during the installation.
+请确保在安装前配置了存储插件。在安装过程中，KubeKey 将为相关的工作负载创建 StorageClass 和持久卷。有关更多信息，请参见[持久化存储配置](../../../installing-on-linux/introduction/storage-configuration/)。
 
-### Enable Pluggable Components (Optional)
+### 步骤 7：启用可插拔组件（可选）
 
-KubeSphere has decoupled some core feature components since v2.1.0. These components are designed to be pluggable which means you can enable them either before or after installation. By default, KubeSphere will be started with a minimal installation if you do not enable them.
+从 v2.1.0 版本开始，一些核心功能组件从 KubeSphere 中解耦出来。这些组件被设计成可插拔的形式，您可以在安装前或安装后启用它们。默认情况下，如果您没有启用这些组件，KubeSphere 将以最小化形式安装。
 
-You can enable any of them according to your demands. It is highly recommended that you install these pluggable components to discover the full-stack features and capabilities provided by KubeSphere. Please ensure your machines have sufficient CPU and memory before enabling them. See [Enable Pluggable Components](../../../pluggable-components/) for details.
+您可以根据需要启用任何可插拔组件。强烈建议您安装这些组件以充分发掘 KubeSphere 的全栈特性。如果您启用这些组件，请确保您机器有足够的 CPU 和内存资源。有关详情，请参见[启用可插拔组件](../../../pluggable-components/)。
 
-### Start to Bootstrap a Cluster
+### 步骤 8：搭建集群
 
-After you complete the configuration, you can execute the following command to start the installation:
+完成以上配置后，执行以下命令开始安装：
 
 ```bash
 ./kk create cluster -f config-sample.yaml
 ```
 
-### Verify the Installation
+### 步骤 9：验证安装结果
 
-Inspect the logs of installation. When you see the successful logs as follows, congratulations and enjoy it!
+检查安装日志。如果显示如下日志，KubeSphere 安装成功。
 
 ```bash
 kubectl logs -n kubesphere-system $(kubectl get pod -n kubesphere-system -l app=ks-install -o jsonpath='{.items[0].metadata.name}') -f
@@ -313,18 +315,28 @@ https://kubesphere.io             2020-08-13 10:50:24
 #####################################################
 ```
 
-### Verify the HA Cluster
+### 步骤 10：验证高可用集群
 
-Now that you have finished the installation, you can go back to the detailed information page of both the internal and external load balancers to see the status.
+安装完成后，打开内部和外部负载均衡器的详情页面查看节点状态。
 
-![LB active](https://ap3.qingstor.com/kubesphere-website/docs/active.png)
+![active](/images/docs/zh-cn/installing-on-linux/installing-on-public-cloud/deploy-kubesphere-on-qingcloud-instances/active.png)
 
-Both listeners show that the status is `Active`, meaning the node is up and running.
+如果两个监听器中的节点状态都是**活跃**，表明所有节点已启动并运行正常。
 
-![active-listener](https://ap3.qingstor.com/kubesphere-website/docs/active-listener.png)
+![active-listener](/images/docs/zh-cn/installing-on-linux/installing-on-public-cloud/deploy-kubesphere-on-qingcloud-instances/active-listener.png)
 
-In the web console of KubeSphere, you can also see that all the nodes are functioning well.
+进入 KubeSphere 的 Web 控制台，您也可以看到所有节点运行正常。
 
-![cluster-node](https://ap3.qingstor.com/kubesphere-website/docs/cluster-node.png)
+![cluster-node](/images/docs/zh-cn/installing-on-linux/installing-on-public-cloud/deploy-kubesphere-on-qingcloud-instances/cluster-node.png)
 
-To verify if the cluster is highly available, you can turn off an instance on purpose. For example, the above dashboard is accessed through the address `IP: 30880` (the EIP address here is the one bound to the external load balancer). If the cluster is highly available, the dashboard will still work well even if you shut down a master node.
+为验证集群的高可用性，可关闭一台主机进行测试。例如，上面的控制台可通过 `IP:30880` 地址访问（此处 IP 地址为绑定到外部负载均衡器的 EIP 地址）。如果集群的高可用性正常，在您关闭一台主节点后，控制台应该仍能正常工作。
+
+## 另请参见
+
+[多节点安装](../../../installing-on-linux/introduction/multioverview/)
+
+[Kubernetes 集群配置](../../../installing-on-linux/introduction/vars/)
+
+[持久化存储配置](../../../installing-on-linux/introduction/storage-configuration/)
+
+[启用可插拔组件](../../../pluggable-components/)

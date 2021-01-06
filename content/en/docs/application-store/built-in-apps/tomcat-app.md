@@ -2,8 +2,7 @@
 title: "Deploy Tomcat on KubeSphere"
 keywords: 'KubeSphere, Kubernetes, Installation, Tomcat'
 description: 'How to deploy Tomcat on KubeSphere through App Store'
-
-link title: "Deploy Tomcat"
+linkTitle: "Deploy Tomcat on KubeSphere"
 weight: 14292
 ---
 [Apache Tomcat](https://tomcat.apache.org/index.html) powers numerous large-scale, mission-critical web applications across a diverse range of industries and organizations. Tomcat provides a pure Java HTTP web server environment in which Java code can run.
@@ -13,11 +12,11 @@ This tutorial walks you through an example of deploying Tomcat from the App Stor
 ## Prerequisites
 
 - Please make sure you [enable the OpenPitrix system](../../../pluggable-components/app-store/).
-- You need to create a workspace, a project, and a user account for this tutorial. The account needs to be a platform regular user and to be invited as the project operator with the `operator` role. In this tutorial, you log in as `project-regular` and work in the project `demo-project` in the workspace `demo-workspace`. For more information, see [Create Workspace, Project, Account and Role](../../../quick-start/create-workspace-and-project/).
+- You need to create a workspace, a project, and a user account for this tutorial. The account needs to be a platform regular user and to be invited as the project operator with the `operator` role. In this tutorial, you log in as `project-regular` and work in the project `demo-project` in the workspace `demo-workspace`. For more information, see [Create Workspaces, Projects, Accounts and Roles](../../../quick-start/create-workspace-and-project/).
 
 ## Hands-on Lab
 
-### Step 1: Deploy Tomcat from App Store
+### Step 1: Deploy Tomcat from the App Store
 
 1. On the **Overview** page of the project `demo-project`, click **App Store** in the top left corner.
 
@@ -41,7 +40,7 @@ This tutorial walks you through an example of deploying Tomcat from the App Stor
 
    ![tomcat-running](/images/docs/appstore/built-in-apps/tomcat-app/tomcat-running.jpg)
 
-### Step 2: Access Tomcat Terminal
+### Step 2: Access the Tomcat Terminal
 
 1. Go to **Services** and click the service name of Tomcat.
 
@@ -55,9 +54,9 @@ This tutorial walks you through an example of deploying Tomcat from the App Stor
 
    ![view-project](/images/docs/appstore/built-in-apps/tomcat-app/view-project.jpg)
 
-### Step 3: Access Tomcat Project from Browser
+### Step 3: Access a Tomcat Project from Your Browser
 
-To access Tomcat projects outside the cluster, you need to expose the app through NodePort first.
+To access a Tomcat project outside the cluster, you need to expose the app through NodePort first.
 
 1. Go to **Services** and click the service name of Tomcat.
 

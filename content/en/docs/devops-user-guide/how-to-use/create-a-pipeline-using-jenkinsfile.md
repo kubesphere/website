@@ -20,7 +20,7 @@ Two types of pipelines can be created in KubeSphere: Pipelines created based on 
 
 - You need to have a [Docker Hub](https://hub.docker.com/) account and a [GitHub](https://github.com/) account.
 - You need to [enable KubeSphere DevOps system](../../../pluggable-components/devops/).
-- You need to create a workspace, a DevOps project, and an account (`project-regular`). This account needs to be invited to the DevOps project with the `operator` role. See [Create Workspace, Project, Account and Role](../../../quick-start/create-workspace-and-project/) if they are not ready.
+- You need to create a workspace, a DevOps project, and an account (`project-regular`). This account needs to be invited to the DevOps project with the `operator` role. See [Create Workspaces, Projects, Accounts and Roles](../../../quick-start/create-workspace-and-project/) if they are not ready.
 - You need to set a CI dedicated node for running pipelines. Refer to [Set a CI Node for Dependency Caching](../../how-to-use/set-ci-node/).
 - You need to install and configure SonarQube. Refer to [Integrate SonarQube into Pipeline](../../../devops-user-guide/how-to-integrate/sonarqube/). If you skip this part, there is no **SonarQube Analysis** below.
 
@@ -47,7 +47,7 @@ There are eight stages as shown below in this example pipeline.
 
 ### Step 1: Create credentials
 
-1. Log in the KubeSphere console as `project-regular`. Go to your DevOps project and create the following credentials in **Credentials** under **Project Management**. For more information about how to create credentials, see [Credential Management](../../../devops-user-guide/how-to-use/credential-management/).
+1. Log in to the KubeSphere console as `project-regular`. Go to your DevOps project and create the following credentials in **Credentials** under **Project Management**. For more information about how to create credentials, see [Credential Management](../../../devops-user-guide/how-to-use/credential-management/).
 
    {{< notice note >}}
 
@@ -71,7 +71,7 @@ There are eight stages as shown below in this example pipeline.
 
 ### Step 2: Modify the Jenkinsfile in your GitHub repository
 
-1. Log in GitHub. Fork [devops-java-sample](https://github.com/kubesphere/devops-java-sample) from the GitHub repository to your own GitHub account.
+1. Log in to GitHub. Fork [devops-java-sample](https://github.com/kubesphere/devops-java-sample) from the GitHub repository to your own GitHub account.
 
    ![fork-github-repo](/images/docs/devops-user-guide/using-devops/create-a-pipeline-using-a-jenkinsfile/fork-github-repo.jpg)
 
@@ -110,11 +110,11 @@ You need to create two projects, such as `kubesphere-sample-dev` and `kubesphe
 
 {{< notice note >}}
 
-The account `project-admin` needs to be created in advance since it is the reviewer of the CI/CD Pipeline. See [Create Workspace, Project, Account and Role](../../../quick-start/create-workspace-and-project/) for more information.
+The account `project-admin` needs to be created in advance since it is the reviewer of the CI/CD Pipeline. See [Create Workspaces, Projects, Accounts and Roles](../../../quick-start/create-workspace-and-project/) for more information.
 
 {{</ notice >}}
 
-1. Use the account `project-admin` to log in KubeSphere. In the same workspace where you create the DevOps project, create two projects as below. Make sure you invite `project-regular` to these two projects with the role of `operator`.
+1. Use the account `project-admin` to log in to KubeSphere. In the same workspace where you create the DevOps project, create two projects as below. Make sure you invite `project-regular` to these two projects with the role of `operator`.
 
    | Project Name           | Alias                   |
    | ---------------------- | ----------------------- |
@@ -283,7 +283,7 @@ The account `project-admin` needs to be created in advance since it is the revie
 
 ### Step 8: Access the example Service
 
-1. To access the Service, log in KubeSphere as `admin` to use the **web kubectl** from **Toolbox**. Go to the project `kubesphere-sample-dev`, and select `ks-sample-dev` in **Services** under **Application Workloads**. The endpoint can be used to access the Service.
+1. To access the Service, log in to KubeSphere as `admin` to use the **web kubectl** from **Toolbox**. Go to the project `kubesphere-sample-dev`, and select `ks-sample-dev` in **Services** under **Application Workloads**. The endpoint can be used to access the Service.
 
    ![sample-app-result-check](/images/docs/devops-user-guide/tool-integration/integrate-sonarqube-into-pipeline/sample-app-result-check.jpg)
    
