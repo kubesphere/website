@@ -1,162 +1,181 @@
 ---
 title: "集群状态监控"
-keywords: "Kubernetes， KubeSphere， status， monitoring"
-description: "kubeSphere的集群资源监控"
-
+keywords: "Kubernetes, KubeSphere, 状态, 监控"
+description: "监控 KubeSphere 集群资源"
 linkTitle: "集群状态监控"
 weight: 8200
 ---
 
-KubeSphere 提供了对集群的 CPU、内存、网络和磁盘等相关指标的监控。在**集群状态监控**页面中，您还可以查看历史监控数据并根据节点的使用情况按不同的指标对节点进行排序。
+KubeSphere 支持对集群 CPU、内存、网络和磁盘等资源的相关指标进行监控。在**集群状态监控**页面，您可以查看历史监控数据并根据不同资源的使用率对节点进行排序。
 
-## 前提条件
+## 准备工作
 
-您需要一个被授予**集群管理**角色的帐户。 例如，您可以直接以`admin`身份登录控制台或使用授权创建新角色并将其分配给帐户。
+您需要一个被授予**集群管理**权限的帐户。例如，您可以直接用 `admin` 帐户登录控制台，或创建一个具有**集群管理**权限的角色然后将此角色授予一个帐户。
 
 ## 集群状态监控
 
-1. 单击左上角的**平台管理**，然后选择**集群管理**。
-![Platform](/images/docs/cluster-administration/cluster-status-monitoring-zh/platform.png)
+1. 点击左上角的**平台管理**，然后选择**集群管理**。
 
-2. 如果您已经在导入成员集群时启用了[多集群特性](../../multicluster-management
-)，那么您可以选择一个特定集群以查看其应用程序资源。 如果尚未启用该特性，请直接参考下一步。
-![Clusters Management](/images/docs/cluster-administration/cluster-status-monitoring-zh/clusters-management.png)
+    ![Platform](/images/docs/cluster-administration/cluster-status-monitoring-zh/platform.png)
 
-3. 在**监控告警**下拉选项里选择“集群状态”以查看集群状态监控的概览，包括**集群节点状态**、**组件状态**、**集群资源使用情况**、**ETCD监控**和**服务组件监控**，如下图所示：
-![Cluster Status Monitoring](/images/docs/cluster-administration/cluster-status-monitoring-zh/cluster-status-monitoring.png)
+2. 如果您已启用了[多集群特性](../../multicluster-management
+)并已导入了成员集群，您可以选择一个集群以查看其应用程序资源。如果尚未启用该特性，请直接进行下一步。
+
+    ![Clusters Management](/images/docs/cluster-administration/cluster-status-monitoring-zh/clusters-management.png)
+
+3. 在左侧导航栏选择**监控告警**下的**集群状态**以查看集群状态概览，包括**集群节点状态**、**组件状态**、**集群资源使用情况**、**ETCD 监控**和**服务组件监控**。
+
+    ![Cluster Status Monitoring](/images/docs/cluster-administration/cluster-status-monitoring-zh/cluster-status-monitoring.png)
 
 ### 集群节点状态
 
-1. **集群节点状态**显示在线结点/所有结点状态。 您可以通过单击**节点在线状态**跳转到如下所示的**集群节点**页以查看所有节点的实时资源使用情况。
-![Cluster Nodes](/images/docs/cluster-administration/cluster-status-monitoring-zh/cluster-nodes.png)
+1. **集群节点状态**显示在线节点和所有节点的数量。您可以点击**节点在线状态**跳转到**集群节点**页面以查看所有节点的实时资源使用情况。
 
-2. 在**集群节点**中，单击节点名称可以查看结点**运行状态**中的使用详细信息，包括当前节点中的CPU、内存、容器组、本地存储的信息及其健康状态。
-![Running Status](/images/docs/cluster-administration/cluster-status-monitoring-zh/running-status.png)
+    ![Cluster Nodes](/images/docs/cluster-administration/cluster-status-monitoring-zh/cluster-nodes.png)
+2. 在**集群节点**页面，点击节点名称可打开**运行状态**页面查看 CPU、内存、容器组、本地存储等资源的使用详情，以及节点健康状态。
 
-3. 单击**监控**选项卡，可以根据不同的指标查看节点在特定时期内的运行情况，这些指标包括**CPU使用率**、**CPU平均负载**、**内存使用率**、**磁盘使用率**、**inode使用率**、**IOPS**、**磁盘吞吐**和**网络带宽**，如下图所示：
-![Monitoring](/images/docs/cluster-administration/cluster-status-monitoring-zh/monitoring.png)
+    ![Running Status](/images/docs/cluster-administration/cluster-status-monitoring-zh/running-status.png)
+3. 点击**监控**选项卡，可以查看节点在特定时间范围内的各种运行指标，包括 **CPU 使用情况**、**CPU 平均负载**、**内存使用情况**、**磁盘利用率**、**inode 使用率**、**IOPS**、**磁盘吞吐**和**网络带宽**。
 
-{{< notice tip >}}
-您可以从右上角的下拉列表中自定义时间范围查看历史数据。
+    ![Monitoring](/images/docs/cluster-administration/cluster-status-monitoring-zh/monitoring.png)
+
+    {{< notice tip >}}
+
+您可以在右上角的下拉列表中自定义时间范围查看历史数据。
+
 {{</ notice  >}}
 
 ### 组件状态
 
-KubeSphere监控集群中各种服务组件的运行健康状况。 当关键组件发生故障时，系统可能变的不可用。 KubeSphere的监控机制确保该平台可以在组件出现故障时将任何发生的问题通知租户，以便他们可以快速定位问题并采取相应的措施。
+KubeSphere 监控集群中各种服务组件的健康状态。当关键组件发生故障时，系统可能会变得不可用。KubeSphere 的监控机制确保平台可以在组件出现故障时将所有问题通知租户，以便快速定位问题并采取相应的措施。
 
-1. 在**集群状态监控'**页面上，单击**组件状态**里的组件（下面绿色框中的部分）以查看服务组件的状态。
-![component-monitoring](/images/docs/cluster-administration/cluster-status-monitoring-zh/component-monitoring.png)
+1. 在**集群状态监控**页面，单击**组件状态**区域的组件以查看其状态。
 
-2. 您可以看到所有组件都列在这一页面中。标记为绿色的组件是正常运行的组件，而标记为橙色的组件则需要特别注意，因为它表示此组件存在潜在问题。
-![Service Components Status](/images/docs/cluster-administration/cluster-status-monitoring-zh/service-components-status.png)
+    ![component-monitoring](/images/docs/cluster-administration/cluster-status-monitoring-zh/component-monitoring.png)
+2. **服务组件**页面列出了所有的组件。标记为绿色的组件是正常运行的组件，标记为橙色的组件存在问题，需要特别关注。
 
+    ![Service Components Status](/images/docs/cluster-administration/cluster-status-monitoring-zh/service-components-status.png)
 {{< notice tip >}}
-标记为橙色的组件可能会在一段时间后变为绿色，原因可能会有所不同，例如重试拉取镜像或重新创建实例。 您可以单击该组件查看其服务详细信息。
+标记为橙色的组件可能会由于各种原因在一段时间后变为绿色，例如重试拉取镜像或重新创建实例。您可以点击一个组件查看其服务详情。
 {{</ notice  >}}
 
 ### 群集资源使用情况
 
-**集群资源使用情况**显示的信息包括集群中所有节点的**CPU使用率**、**内存使用率**、**磁盘使用率**和**容器组数量变化**。 单击左侧的饼图以切换指标，在右侧的曲线图中显示一段时间内的趋势。
+**集群资源使用情况**显示集群中所有节点的 **CPU 使用情况**、**内存使用情况**、**磁盘利用率**和**容器组数量变化**。您可以单击左侧的饼图切换指标。右侧的曲线图显示一段时间内指示的变化趋势。
+
 ![Cluster Resources Usage](/images/docs/cluster-administration/cluster-status-monitoring-zh/cluster-resources-usage.png)
 
 ## 物理资源监控
 
-**物理资源监控**中的监控数据可以帮助用户更好地观察自己的物理资源，并据此建立正常的资源和集群性能使用阀值。KubeSphere允许用户查看最近7天的集群监控数据，包括**CPU使用情况**、**内存使用情况**、**CPU平均负载(1分钟/5分钟/15分钟)**、**inode使用率**、**磁盘吞吐量(读写)**、**IOPS(读写)**、**网络带宽**和**容器组运行状态**。您可以在KubeSphere中查看自定义时间范围和时间间隔内的物理资源历史监控数据。 以下各节简要介绍每个监控指标。
+您可以利用**物理资源监控**页面提供的数据更好地掌控物理资源状态，并建立正常资源和集群性能的标准。KubeSphere 允许用户查看最近 7 天的集群监控数据，包括 **CPU 使用情况**、**内存使用情况**、**CPU 平均负载（1 分钟/5 分钟/15 分钟）**、**inode 使用率**、**磁盘吞吐（读写）**、**IOPS（读写）**、**网络带宽**和**容器组运行状态**。您可以在 KubeSphere 中自定义时间范围和时间间隔以查看物理资源的历史监控数据。以下简要介绍每个监控指标。
+
 ![Physical Resources Monitoring](/images/docs/cluster-administration/cluster-status-monitoring-zh/physical-resources-monitoring.png)
 
-### CPU利用率
+### CPU 使用情况
 
-CPU利用率显示一段时间内CPU资源的使用率。 如果您注意到某一段时间平台的CPU使用率飙升，您必须首先定位占用CPU资源最多的进程。 例如，对于Java应用程序，代码中出现内存泄漏或无限循环的情况可能会出现CPU使用率飙高。
+**CPU 使用情况**显示一段时间内 CPU 资源的使用率。如果某一时间段的 CPU 使用率急剧上升，您首先需要定位占用 CPU 资源最多的进程。例如，Java 应用程序代码中的内存泄漏或无限循环可能会导致 CPU 使用率急剧上升。
+
 ![CPU Utilization](/images/docs/cluster-administration/cluster-status-monitoring-zh/cpu-utilization.png)
 
-### 内存利用率
+### 内存使用情况
 
-内存是服务器上的重要部件之一，是与CPU通信的桥梁。 因此，内存的性能对机器有很大的影响。 当程序运行时，数据加载、线程并发和I/O缓冲都依赖于内存。 可用内存的大小决定了程序是否可以正常运行以及它是如何运行的。 内存利用率反映了集群内存资源的整体使用情况，显示为给定时刻使用的可用内存的百分比。
+内存是机器上的重要组件之一，是与 CPU 通信的桥梁。因此，内存对机器的性能有很大影响。当程序运行时，数据加载、线程并发和 I/O 缓冲都依赖于内存。可用内存的大小决定了程序能否正常运行以及如何运行。**内存使用情况**反映了集群内存资源的整体使用情况，显示为特定时刻内存占用的百分比。
 
 ![Memory Utilization](/images/docs/cluster-administration/cluster-status-monitoring-zh/memory-utilization.png)
 
-### CPU平均负载
+### CPU 平均负载
 
-CPU平均负载是单位时间内系统中处于可运行状态和不中断状态的平均进程数。 也就是说，它是活动进程的平均数量。 请注意，CPU平均负载和CPU利用率之间没有直接关系。 理想情况下，平均负载应该等于CPU的数量。 因此，在查看平均负载时，需要考虑CPU的数量。 只有当平均负载大于cpu数量时，系统才会超载。
-KubeSphere为用户提供了三个不同的时间段来查看平均负载：1分钟，5分钟和15分钟。 通常，建议您查看所有这些参数，以全面了解平均负载：
+CPU 平均负载是单位时间内系统中处于可运行状态和非中断状态的平均进程数（亦即活动进程的平均数量）。CPU 平均负载和 CPU 利用率之间没有直接关系。理想情况下，平均负载应该等于 CPU 的数量。因此，在查看平均负载时，需要考虑 CPU 的数量。只有当平均负载大于 CPU 数量时，系统才会超载。
 
-- 如果在一定时间内1分钟/ 5分钟/ 15分钟的曲线相似，则表明集群的CPU负载相对稳定。
-- 如果某一时段或某一特定时间点的1分钟的值远远大于15分钟的值，则表示最近1分钟的负荷在增加，需要继续观察。 一旦1分钟的值超过CPU数量，可能意味着系统超载。 你需要进一步分析问题的根源。
-- 反之，如果某一时段或某一特定时间点的1分钟值远小于15分钟，则表示系统在最近1分钟内负载在降低，在前15分钟内产生了较高的负载。
+KubeSphere 为用户提供了 1 分钟、5 分钟和 15 分钟三种不同的平均负载。通常情况下，建议您比较这三种数据以全面了解平均负载情况。
+
+- 如果在一定时间范围内 1 分钟、5 分钟和 15 分钟的曲线相似，则表明集群的 CPU 负载相对稳定。
+- 如果某一时间范围或某一特定时间点 1 分钟的数值远大于 15 分钟的数值，则表明最近 1 分钟的负载在增加，需要继续观察。一旦 1 分钟的数值超过 CPU 数量，系统可能出现超载，您需要进一步分析问题的根源。
+- 如果某一时间范围或某一特定时间点 1 分钟的数值远小于 15 分钟的数值，则表明系统在最近 1 分钟内负载在降低，在前 15 分钟内出现了较高的负载。
+
 ![CPU Load Average](/images/docs/cluster-administration/cluster-status-monitoring-zh/cpu-load-average.png)
 
 ### 磁盘使用量
 
-KubeSphere工作负载(如StatefulSets和DaemonSets)都依赖于持久卷。 某些组件和服务也需要持久卷。 这种后端存储依赖于磁盘，例如块存储或网络共享存储。 因此，为磁盘使用情况提供实时监控环境是保持数据高可靠性的重要组成部分。</br>
-在Linux系统的日常管理中，管理员可能会遇到磁盘空间不足导致数据丢失甚至系统崩溃的情况。 作为集群管理的重要组成部分，他们需要密切关注系统的磁盘使用情况，并确保文件系统不会被填满或滥用。 通过监视磁盘使用的历史数据，您可以评估给定时间段内磁盘的使用情况。 在磁盘使用率较高的情况下，您可以通过清理不必要的镜像或容器来释放磁盘空间。
+KubeSphere 的工作负载（例如 `StatefulSets` 和 `DaemonSets`）都依赖于持久卷。某些组件和服务也需要持久卷。这种后端存储依赖于磁盘，例如块存储或网络共享存储。因此，实时的磁盘用量监控环境对确保数据的高可靠性尤为重要。
+
+在 Linux 系统的日常管理中，平台管理员可能会遇到磁盘空间不足导致数据丢失甚至系统崩溃的情况。作为集群管理的重要组成部分，平台管理员需要密切关注系统的磁盘使用情况，并确保文件系统不会被用尽或滥用。通过监控磁盘使用的历史数据，您可以评估特定时间范围内磁盘的使用情况。在磁盘使用率较高的情况下，您可以通过清理不必要的镜像或容器来释放磁盘空间。
+
 ![Disk Usage](/images/docs/cluster-administration/cluster-status-monitoring-zh/disk-usage.png)
 
-### inode使用率
+### inode 使用率
 
-每个文件都必须有一个inode，用于存储文件的元信息，如文件的创建者和创建日期。 Inode还会消耗硬盘空间，许多小缓存文件很容易导致inode资源耗尽。 此外，在inode已用完但硬盘未满的情况下，无法在硬盘上创建新文件。</br>
-在KubeSphere中，对inode利用率的监控可以帮助您提前检测到此类情况，因为您可以清楚地了解集群inode的使用情况。 该机制提示用户及时清理临时文件，防止集群因inode耗尽而无法工作。
+每个文件都有一个 inode，用于存储文件的创建者和创建日期等元信息。inode 也会占用磁盘空间，众多的小缓存文件很容易导致 inode 资源耗尽。此外，在 inode 已用完但磁盘未满的情况下，也无法在磁盘上创建新文件。
+
+在 KubeSphere 中，对 inode 使用率的监控可以帮助您清楚地了解集群 inode 的使用率，从而提前检测到此类情况。该机制提示用户及时清理临时文件，防止集群因 inode 耗尽而无法工作。
+
 ![inode Utilization](/images/docs/cluster-administration/cluster-status-monitoring-zh/inode-utilization.png)
 
 ### 磁盘吞吐
 
-磁盘吞吐量和IOPS监控是磁盘监控不可或缺的一部分，它方便集群管理员调整数据布局和优化集群整体性能等管理活动。 磁盘吞吐量是指磁盘传输数据流的速度(单位：MB/s)，传输数据是读写数据的总和。 当传输大块不连续数据时，该指标具有重要的参考价值。
+磁盘吞吐和 IOPS 监控是磁盘监控不可或缺的一部分，可帮助集群管理员调整数据布局和其他管理活动以优化集群整体性能。磁盘吞吐量是指磁盘传输数据流（包括读写数据）的速度，单位为 MB/s。当传输大块非连续数据时，该指标具有重要的参考意义。
+
 ![Disk Throughput](/images/docs/cluster-administration/cluster-status-monitoring-zh/disk-throughput.png)
 
 ### IOPS
 
-IOPS（每秒输入/输出操作）表示每秒读取和写入操作数的性能度量。 具体来说，磁盘的IOPS是每秒连续读取和写入的总和。当传输小块不连续数据时，该指示器具有重要的参考意义。
+IOPS 表示每秒读取和写入操作数。具体来说，磁盘的 IOPS 是每秒连续读取和写入的总和。当传输小块非连续数据时，该指示器具有重要的参考意义。
+
 ![IOPS](/images/docs/cluster-administration/cluster-status-monitoring-zh/iops.png)
 
 ### 网络带宽
 
-网络带宽是网卡每秒接收或发送数据的能力，以Mbps（兆位/秒）表示。
+网络带宽是网卡每秒接收或发送数据的能力，单位为 MB/s。
+
 ![Network Bandwidth](/images/docs/cluster-administration/cluster-status-monitoring-zh/netework-bandwidth.png)
 
 ### 容器组运行状态
 
-容器组状态显示所有处于不同状态的容器组的总和，状态包括**正在运行**、**已完成**和**警告**状态。标记为**已完成**的容器组通常指的是Job或CronJob。 标有**警告**(表示异常状态)的Pod数量需要特别注意。
+**容器组运行状态**显示不同状态的容器组的总数，包括**运行中**、**已完成**和**异常**状态。标记为**已完成**的容器组通常为 Job 或 CronJob。标记为**异常**的容器组需要特别注意。
+
 ![Pod Status](/images/docs/cluster-administration/cluster-status-monitoring-zh/pod-status.png)
 
-## ETCD监控
+## ETCD 监控
 
-ETCD监控可以帮助您更好地利用ETCD，特别是定位性能问题。 ETCD服务在本地提供指标接口，KubeSphere监控系统具有高度图形化和响应性强的仪表板来显示其本地数据。
+**ETCD 监控**可以帮助您更好地利用 etcd，特别用于是定位性能问题。etcd 服务提供了原生的指标接口。KubeSphere 监控系统提供了高度图形化和响应性强的仪表板，用于显示原生数据。
 
 | 指标 | 描述 |
 | --- | --- |
-| ETCD结点 | - **是否有Leader** 表示成员是否有Leader。 如果成员没有 Leader， 则完全不可用。 如果集群中的所有成员 都没有任何Leader，则整个集群完全不可用。 </br> - **Leader变更次数** 指的是自开始以来集群成员看到的Leader更改次数。 频繁更换Leader将显著影响etcd的性能。 它还标明，Leader不稳定，可能是由于网络连接问题或ETCD集群负载过高所致。 |
-| DB大小 | ETCD的底层数据库大小(以MiB为单位)。 当前图表显示了ETCD的每个成员数据库的平均大小。 |
-| 客户端流量 | 它包括发送到GRPC客户端的总流量和从GRPC客户端接收的总流量。有关该指标的更多信息，请参阅[etcd Network](https://github.com/etcd-io/etcd/blob/v3.2.17/Documentation/metrics.md#network)。 |
-| gRPC流式消息 | 服务器端的gRPC流消息接收速率和发送速率，反映集群内是否正在进行大规模的数据读写操作。 有关指标的更多信息，请参阅 [go-grpc-prometheus](https://github.com/grpc-ecosystem/go-grpc-prometheus#counters)。 |
-| WAL日志同步时间 | WAL调用fsync的延迟。当ETCD在应用日志条目之前将其日志条目持久保存到磁盘时，将调用`wal_fsync` 。有关该指标的详细信息，请参阅[etcd Disk](https://etcd.io/docs/v3.3.12/metrics/#grpc-requests)。 |
-| DB同步时间 | 后端调用的提交延迟分布。 当ETCD将其最新的增量快照提交到磁盘时，将调用 `backend_commit`。 需要注意的是，磁盘操作延迟较大(WAL日志同步时间较长或库同步<时间较长)通常表示磁盘有问题，这可能会导致请求延迟过高或导致集群不稳定。有关该指标的详细信息，请参阅[etcd Disk](https://etcd.io/docs/v3.3.12/metrics/#grpc-requests)。 |
-| Raft提议 | - **提议提交速率**记录提交的协商一致提议的速率。 如果群集运行状况良好，则此指标应随着时间的推移而增加。 ETCD群集的几个健康成员可以同时具有不同的一般提议。 单个成员与其领导者之间的持续较大滞后表示该成员是缓慢或不健康的。</br>- **提议应用速率** 记录协商一致提议的总应用率。ETCD服务器异步地应用每个提交的提议。**提议提交速率** 和**提议应用速率** 的差异应该很小 (即使在高负载下也只有几千)。如果它们之间的差异持续增大，则表明 ETCD服务器过载。当使用大范围查询或大量txn操作等大规模查询时，可能会出现这种情况。</br>- **提议失败速率** 记录提议失败的总速率，通常与两个问题有关：与领导人选举相关的临时失败或由于群集中失去法定人数而导致的更长停机时间。</br>- **排队提议数** 记录当前待处理提案的数量。 待处理提案的增加表明客户负载较高或成员无法提交提案。当前仪表板上显示的数据是ETCD成员的平均大小。 有关这些指标的详细信息，请参阅 [ETCD Server](https://etcd.io/docs/v3.3.12/metrics/#server)。 |
+| ETCD 节点 | - **是否有 Leader** 表示成员是否有 Leader。如果成员没有 Leader，则成员完全不可用。如果集群中的所有成员都没有任何 Leader，则整个集群完全不可用。<br>- **Leader 变更次数**表示集群成员观察到的 Leader 变更总次数。频繁变更 Leader 将显著影响 etcd 性能，同时这还表明 Leader 可能由于网络连接问题或 etcd 集群负载过高而不稳定。 |
+| 库大小 | etcd 的底层数据库大小，单位为 MiB。图表中显示的是 etcd 的每个成员数据库的平均大小。 |
+| 客户端流量 | 包括发送到 gRPC 客户端的总流量和从 gRPC 客户端接收的总流量。有关该指标的更多信息，请参阅[ etcd Network](https://github.com/etcd-io/etcd/blob/v3.2.17/Documentation/metrics.md#network)。 |
+| gRPC 流式消息 | 服务器端的 gRPC 流消息接收速率和发送速率，反映集群内是否正在进行大规模的数据读写操作。有关该指标的更多信息，请参阅[ go-grpc-prometheus](https://github.com/grpc-ecosystem/go-grpc-prometheus#counters)。 |
+| WAL 日志同步时间 | WAL 调用 fsync 的延迟。在应用日志条目之前，etcd 会在持久化日志条目到磁盘时调用 `wal_fsync`。有关该指标的更多信息，请参阅[ etcd Disk](https://etcd.io/docs/v3.3.12/metrics/#disk)。 |
+| 库同步时间 | 后端调用提交延迟的分布。当 etcd 将其最新的增量快照提交到磁盘时，会调用 `backend_commit`。需要注意的是，磁盘操作延迟较大（WAL 日志同步时间或库同步时间较长）通常表示磁盘存在问题，这可能会导致请求延迟过高或集群不稳定。有关该指标的详细信息，请参阅[ etcd Disk](https://etcd.io/docs/v3.3.12/metrics/#disk)。 |
+| Raft 提议 | - **提议提交速率**记录提交的协商一致提议的速率。如果群集运行状况良好，则该指标应随着时间的推移而增加。etcd 集群的几个健康成员可以同时具有不同的一般提议。单个成员与其 Leader 之间的持续较大滞后表示该成员缓慢或不健康。<br>- **提议应用速率**记录协商一致提议的总应用率。etcd 服务器异步地应用每个提交的提议。**提议提交速率**和**提议应用速率**的差异应该很小（即使在高负载下也只有几千）。如果它们之间的差异持续增大，则表明 etcd 服务器过载。当使用大范围查询或大量 txn 操作等大规模查询时，可能会出现这种情况。<br>- **提议失败速率**记录提议失败的总速率。这通常与两个问题有关：与 Leader 选举相关的临时失败或由于群集成员数目达不规定数目而导致的长时间停机。<br>- **排队提议数**记录当前待处理提议的数量。待处理提议的增加表明客户端负载较高或成员无法提交提议。<br>目前，仪表板上显示的数据是 etcd 成员的平均数值。有关这些指标的详细信息，请参阅[ etcd Server](https://etcd.io/docs/v3.3.12/metrics/#server)。 |
 
 ![ETCD Monitoring](/images/docs/cluster-administration/cluster-status-monitoring-zh/etcd-monitoring.png)
 
-## APIServer监控
+## APIServer 监控
 
-[API Server](https://kubernetes.io/docs/concepts/overview/kubernetes-api/) 是Kubernetes集群中所有组件交互的中枢。 下表列出了为APIServer监控的主要指标。
+[APIServer](https://kubernetes.io/docs/concepts/overview/kubernetes-api/) 是 Kubernetes 集群中所有组件交互的中枢。下表列出了 APIServer 的主要监控指标。
 
 | 指标 | 描述 |
 | --- | --- |
-| 请求延迟 | 按HTTP请求方法分类，以毫秒为单位的资源请求响应延迟。 |
-| 每秒请求次数 | Kube-apiserver每秒接受的请求数。 |
+| 请求延迟 | 资源请求响应延迟，单位为毫秒。该指标按照 HTTP 请求方法进行分类。 |
+| 每秒请求次数 | kube-apiserver 每秒接受的请求数。 |
 
 ![APIServer Monitoring](/images/docs/cluster-administration/cluster-status-monitoring-zh/apiserver-monitoring.png)
 
 ## 调度器监控
 
-[调度器](https://kubernetes.io/docs/reference/command-line-tools-reference/kube-scheduler/) 监控新建Pod的Kubernetes API，并确定这些新Pod运行在哪些节点上。 它根据可用数据做出这一决定，包括收集的资源的可用性和Pod的资源需求。 监控调度延迟的数据可确保您可以看到调度程序面临的任何延迟。
+[调度器](https://kubernetes.io/zh/docs/reference/command-line-tools-reference/kube-scheduler/)监控新建容组的 Kubernetes API，并决定这些新容器组运行在哪些节点上。调度器根据收集资源的可用性和容器组的资源需求等数据进行决策。监控调度延迟的数据可确保您及时了解调度器的任何延迟。
 
 | 指标 | 描述 |
 | --- | --- |
 | 调度次数 | 包括调度成功、错误和失败的次数。 |
 | 调度频率 | 包括调度成功、错误和失败的频率。 |
-| 调度延迟 | 端到端调度时延，即调度算法时延和绑定时延之和 |
+| 调度延迟 | 端到端调度延迟，即调度算法延迟和绑定延迟之和。 |
 
 ![Scheduler Monitoring](/images/docs/cluster-administration/cluster-status-monitoring-zh/scheduler-monitoring.png)
 
 ## 节点用量排行
 
-您可以按CPU使用率、CPU平均负载、内存使用率、本地存储用量、innode使用率和Pod用量等指标对节点进行升序和降序排序， 因此管理员能够快速发现潜在问题或发现节点资源不足的情况。
+您可以按 **CPU 使用率**、**CPU 平均负载**、**内存使用率**、**本地存储用量**、**inode 使用率**和**容器组用量**等指标对节点进行升序和降序排序。您可以利用这一功能快速发现潜在问题和节点资源不足的情况。
+
 ![Node Usage Ranking](/images/docs/cluster-administration/cluster-status-monitoring-zh/node-usage-ranking.png)
