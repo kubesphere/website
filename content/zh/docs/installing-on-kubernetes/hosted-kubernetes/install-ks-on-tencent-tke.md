@@ -1,6 +1,6 @@
 ---
 title: "在腾讯云 TKE 安装 KubeSphere"
-keywords: "kubesphere, kubernetes, docker, tencent, tke" 
+keywords: "kubesphere, kubernetes, docker, tencent, tke"
 description: "介绍如何在腾讯云 TKE 上部署 KubeSphere 3.0"
 
 
@@ -39,7 +39,7 @@ Server Version: version.Info{Major:"1", Minor:"18+", GitVersion:"v1.18.4-tke.2",
 ### 通过 ks-installer 执行最小化部署
 接下来就可以使用 [ks-installer](https://github.com/kubesphere/ks-installer) 在已有的 Kubernetes 集群上来执行 KubeSphere 部署，建议首先还是以最小功能集进行安装。
 
-- 使用 kubectl 执行以下命令安装 KubeSphere
+- 使用 kubectl 执行以下命令安装 KubeSphere：
 
 ```bash
 kubectl apply -f https://github.com/kubesphere/ks-installer/releases/download/v3.0.0/kubesphere-installer.yaml
