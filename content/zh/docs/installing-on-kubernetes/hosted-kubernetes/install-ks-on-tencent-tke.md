@@ -14,7 +14,8 @@ weight: 4270
 ### 创建 Kubernetes 集群
 首先按使用环境的资源需求[创建 Kubernetes 集群](https://cloud.tencent.com/document/product/457/32189)，满足以下一些条件即可（如已有环境并满足条件可跳过本节内容）：
 
-- KubeSphere 3.0.0 默认支持的 Kubernetes 版本为 `1.15.x`, `1.16.x`, `1.17.x`, `1.18.x`，需要选择其中支持的版本进行集群创建（如 `1.16.3`, `1.18.4`）；
+- KubeSphere 3.0.0 默认支持的 Kubernetes 版本为 `1.15.x`, `1.16.x`, `1.17.x`, `1.18.x`，需要选择其中支持的版本进行集群创建（如 `1.16.3`, `1.18.4`）。
+- 如果老集群版本不大于1.15.0，需要操作控制台先升级master节点然后升级node节点，依次升级至符合要求版本即可。
 - 工作节点机型配置规格方面选择 `SA2.LARGE8` 的 `4核｜8GB` 配置即可，并按需扩展工作节点数量（通常生产环境需要 3 个及以上工作节点）。
 
 ### 创建公网 kubectl 证书
@@ -44,13 +45,35 @@ Server Version: version.Info{Major:"1", Minor:"18+", GitVersion:"v1.18.4-tke.2",
 kubectl apply -f https://github.com/kubesphere/ks-installer/releases/download/v3.0.0/kubesphere-installer.yaml
 ```
 
-- 本地创建名为 `cluster-configuration.yaml` 的文件：
+- 这里有个注意点**腾讯云申请PVC需要是10G的倍数**
+- 下载集群配置文件
+
+```bash
+wget https://github.com/kubesphere/ks-installer/releases/download/v3.0.0/cluster-configuration.yaml
+```
+
+- 修改集群配置文件，PVC修改为10G的倍数，1倍n倍都可以，其他可拔插组件如果开启也需要调整，开启哪个调整哪个即可，默认最小化安装未开启可插拔组件
 
 ```bash
 vim cluster-configuration.yaml
+//默认值
+  common:
+    mysqlVolumeSize: 20Gi # MySQL PVC size.
+    minioVolumeSize: 20Gi # Minio PVC size.
+    etcdVolumeSize: 20Gi  # etcd PVC size.
+    openldapVolumeSize: 2Gi   # openldap PVC size.
+    redisVolumSize: 2Gi # Redis PVC size.
+
+//修改后的值，PVC为10G的倍数，1倍n倍都可以，其他可拔插组件如果开启也需要调整，
+  common:
+    mysqlVolumeSize: 10Gi # MySQL PVC size.
+    minioVolumeSize: 10Gi # Minio PVC size.
+    etcdVolumeSize: 10Gi  # etcd PVC size.
+    openldapVolumeSize: 10Gi   # openldap PVC size.
+    redisVolumSize: 10Gi # Redis PVC size.
 ```
 
-- 复制此[文件](https://github.com/kubesphere/ks-installer/releases/download/v3.0.0/cluster-configuration.yaml)中的内容到 `cluster-configuration.yaml` 中，默认最小化安装未开启可插拔组件，然后执行以下命令：
+- 然后执行以下命令部署：
 
 ```bash
 kubectl apply -f cluster-configuration.yaml
