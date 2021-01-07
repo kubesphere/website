@@ -248,7 +248,7 @@ spec:
 
 ### 步骤 5：配置 Kubernetes 集群（可选）
 
-集群管理员可修改 KubeKey 提供的一些字段来自定义 Kubernetes 安装参数，包括 Kubernetes 版本、网络插件和镜像仓库。`config-example.yaml` 文件中的一些字段有默认值。您可以根据需要修改文件中 Kubernetes 相关的字段。有关更多信息，请参考[ Kubernetes 集群配置](../../../installing-on-linux/introduction/vars/)。
+集群管理员可修改 KubeKey 提供的一些字段来自定义 Kubernetes 安装参数，包括 Kubernetes 版本、网络插件和镜像仓库。`config-sample.yaml` 文件中的一些字段有默认值。您可以根据需要修改文件中 Kubernetes 相关的字段。有关更多信息，请参考[ Kubernetes 集群配置](../../../installing-on-linux/introduction/vars/)。
 
 ### 步骤 6：配置持久化存储插件
 

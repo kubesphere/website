@@ -17,7 +17,7 @@ This tutorial demonstrates how to develop an app template by uploading a package
 
 ## Hands-on Lab
 
-1. Sign in KubeSphere with the `project-admin` account. In your workspace, go to **App Templates** under **Apps Management**, and click **Upload Template**. 
+1. Log in to KubeSphere as `project-admin`. In your workspace, go to **App Templates** under **Apps Management**, and click **Upload Template**. 
 
     ![upload-app-template](/images/docs/workspace-administration/upload-helm-based-application/upload-app-template.jpg)
 

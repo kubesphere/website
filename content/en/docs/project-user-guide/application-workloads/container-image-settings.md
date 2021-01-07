@@ -92,7 +92,7 @@ This value is indicated by the `imagePullPolicy` field. On the dashboard, you ca
 
 - The default value is `IfNotPresent`, but the value of images tagged with `:latest` is `Always` by default.
 - Docker will check it when pulling the image. If MD5 has not changed, it will not pull.
-- The `:latest` should be avoided as much as possible in the production environment, and the latest image can be automatically pulled by the `:latest` in the development environment.
+- The `:latest` tag should be avoided as much as possible in the production environment, and the latest image can be automatically pulled by the `:latest` tag in the development environment.
 
 {{< /notice >}}
 

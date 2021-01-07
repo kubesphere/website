@@ -138,7 +138,7 @@ chmod +x kk
 
 {{< notice note >}}
 
-你可以参阅 [config-example.yaml](https://github.com/kubesphere/kubekey/blob/master/docs/config-example.md) 中的集群部分获取更多的信息。
+你可以参阅此[完整配置文件](https://github.com/kubesphere/kubekey/blob/master/docs/config-example.md) 中的集群部分获取更多的信息。
 
 {{</ notice >}}
 

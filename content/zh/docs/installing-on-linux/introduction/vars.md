@@ -7,7 +7,7 @@ linkTitle: "Kubernetes 集群配置"
 weight: 3160
 ---
 
-本教程介绍使用 [KubeKey](https://github.com/kubesphere/kubekey) 安装集群时，如何在 `config-example.yaml` 文件中配置 Kubernetes 集群参数（[多节点安装时](../multioverview/)需要此文件）。文件中每个参数的说明如下：
+本教程介绍使用 [KubeKey](https://github.com/kubesphere/kubekey) 安装集群时，如何在 `config-sample.yaml` 文件中配置 Kubernetes 集群参数（[多节点安装时](../multioverview/)需要此文件）。文件中每个参数的说明如下：
 
 ```yaml
 ######################### Kubernetes #########################
