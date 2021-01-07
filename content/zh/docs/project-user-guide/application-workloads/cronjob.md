@@ -1,116 +1,116 @@
 ---
-title: "CronJobs"
+title: "定时任务 (CronJob)"
 keywords: "KubeSphere, Kubernetes, jobs, cronjobs"
-description: "Create a Kubernetes CronJob"
-linkTitle: "CronJobs"
+description: "创建 KubeSphere 定时任务 (CronJob)"
+linkTitle: "定时任务 (CronJob)"
 
 weight: 10260
 ---
 
-CronJobs are useful for creating periodic and recurring tasks, like running backups or sending emails. CronJobs can also schedule individual tasks at a specific time or interval, such as scheduling a Job for when your cluster is likely to be idle.
+CronJobs 对于创建定期和重复执行的任务非常有用，例如运行备份或发送电子邮件。CronJobs 还可以在特定时间或间隔执行单个任务，例如在集群可能处于空闲状态时安排任务。
 
-For more information, see [the official documentation of Kubernetes](https://kubernetes.io/docs/concepts/workloads/controllers/cron-jobs/).
+有关更多信息，请参见 [Kubernetes 官方文档](https://kubernetes.io/docs/concepts/workloads/controllers/cron-jobs/).
 
-## Prerequisites
+## 先决条件
 
-You need to create a workspace, a project and an account (`project-regular`). The account must be invited to the project with the role of `operator`. For more information, see [Create Workspace, Project, Account and Role](../../../quick-start/create-workspace-and-project).
+您需要创建一个企业空间、一个项目以及一个帐户 (`project-regular`)。必须邀请该帐户以 `operator` 身份加入该项目。有关更多信息，请参见[创建企业空间、项目、帐户和角色](../../../quick-start/create-workspace-and-project)。
 
-## Create a CronJob
+## 创建 CronJob
 
-### Step 1: Open Dashboard
+### 步骤 1: 打开控制台
 
-Log in the console as `project-regular`. Go to **Jobs** of a project, choose **CronJobs** and click **Create**.
+以 `project-regular` 身份登录控制台。 转到项目的**应用负载**，选择**任务**，然后在**定时任务**选项卡下单击**创建**。
 
-![cronjob-list](/images/docs/project-user-guide/application-workloads/cronjobs/cronjob-list.jpg)
+![cronjob-list](/images/docs/project-user-guide-zh/application-workloads-zh/cronjobs-zh/cronjob-list.png)
 
-### Step 2: Input Basic Information
+### 步骤 2: 输入基本信息
 
-Enter the basic information. You can refer to the image below for each field. When you finish, click **Next**.
+输入基本信息。 您可以参考以下图像的每个字段。 完成后，单击**下一步**。
 
-![cronjob-create-basic-info](/images/docs/project-user-guide/application-workloads/cronjobs/cronjob-create-basic-info.jpg)
+![cronjob-create-basic-info](/images/docs/project-user-guide-zh/application-workloads-zh/cronjobs-zh/cronjob-create-basic-info.png)
 
-- **Name**: The name of the CronJob, which is also the unique identifier.
-- **Alias**: The alias name of the CronJob, making resources easier to identify.
-- **Schedule**: It runs a Job periodically on a given time-based schedule. Please see [CRON](https://en.wikipedia.org/wiki/Cron) for grammar reference. Some preset CRON statements are provided in KubeSphere to simplify the input. This field is specified by `.spec.schedule`. For this CronJob, input `*/1 * * * *`, which means it runs once per minute.
+- **名称**: CronJob 的名称，也是唯一的标识符。
+- **别名**: CronJob 的别名, 帮助您更好的区分资源。
+- **定时计划**: 按照给定的时间计划运行任务。语法参照 [CRON](https://en.wikipedia.org/wiki/Cron) 。KubeSphere 中提供了一些预置 CRON 语句，以简化输入。该字段由`.spec.schedule`指定。对于此 CronJob，输入`* / 1 * * * *`，这意味着它每分钟运行一次。
 
-  | Type        | CRON        |
+  | 类型       | CRON        |
   | ----------- | ----------- |
-  | Every Hour  | `0 * * * *` |
-  | Every Day   | `0 0 * * *` |
-  | Every Week  | `0 0 * * 0` |
-  | Every Month | `0 0 1 * *` |
+  | 每小时  | `0 * * * *` |
+  | 每天   | `0 0 * * *` |
+  | 每周  | `0 0 * * 0` |
+  | 每月 | `0 0 1 * *` |
   
-- **Advanced Settings (Execution Parameters)**:
+- **高级设置 (执行参数)**:
   
-  - **staringDeadlineSeconds**. Specified by `.spec.startingDeadlineSeconds` in the manifest file, this optional field represents the maximum number of seconds that a ConJob can take to start if it misses the scheduled time for any reason. CronJobs that have missed executions will be counted as failed ones. If you do not specify this field, there is no deadline for the CronJob.
-  - **successfulJobsHistoryLimit**. Specified by `.spec.successfulJobsHistoryLimit` in the manifest file, this field represents the number of successful CronJob executions to retain. This is a pointer to distinguish between explicit zero and not specified. It defaults to 3.
-  - **failedJobsHistoryLimit**. Specified by `.spec.failedJobsHistoryLimit` in the manifest file, this field represents the number of failed CronJob executions to retain. This is a pointer to distinguish between explicit zero and not specified. It defaults to 1.
-  - **concurrencyPolicy**. Specified by `.spec.concurrencyPolicy`, it represents how to treat concurrent executions of a Job. Valid values are:
-      - **Allow** (default): It allows CronJobs to run concurrently.
-      - **Forbid**: It forbids concurrent runs, skipping the next run if the previous run hasn't finished yet.
-      - **Replace**: It cancels currently running Job and replaces it with a new one.
+  - **启动 Job 的期限（秒）**. 由清单文件中的 `.spec.startingDeadlineSeconds` 指定，此可选字段表示如果由于任何原因错过计划时间，ConJob启动所需的最大秒数。错过执行的 CronJob 将被视为失败。 如果未指定此字段，则 CronJob 没有截止日期。
+  - **保留完成 Job 数**. 由清单文件中的 `.spec.successfulJobsHistoryLimit` 指定，此字段表示要保留的成功 CronJob 执行次数。 如若未指定该字段，则默认值为 3。
+  - **保留失败 Job 数**. 由清单文件中的 `.spec.failedJobsHistoryLimit` 指定，此字段表示要保留的 CronJob 执行失败的次数。 如若未指定该字段，则默认值为 1。
+  - **并发策略**. 由 `.spec.concurrencyPolicy` 指定，它表示如何处理 Job 的并发执行。 有效值为:
+      - **Allow** (默认值): 允许CronJobs并发运行。
+      - **Forbid**: 禁止并发运行，如果前一个还没有完成，则直接跳过下一个。
+      - **Replace**: 取消当前正在运行的 Job，用一个新的来替换。
 
-{{< notice note >}} 
+{{< notice note >}}
 
-You can enable **Edit Mode** in the top right corner to see the YAML manifest of this CronJob.
+您可以在右上角启用**编辑模式**查看此 CronJob 的 YAML 格式配置文件。
 
-{{</ notice >}} 
+{{</ notice >}}
 
-### Step 3: ConJob Settings (Optional)
+### 步骤 3: ConJob 设置 (可选)
 
-Please refer to [Jobs](../jobs/#step-3-job-settings-optional).
+请参阅 [任务（Jobs）](../jobs/#step-3-job-settings-optional)。
 
-### Step 4: Set Image
+### 步骤 4: 设置镜像
 
-1. Click **Add Container Image** in **Container Image** and input `busybox` in the search bar.
+1. 在**容器镜像**里单击 **添加容器镜像**  ，在搜索栏中输入 `busybox` 。
 
-    ![input-busybox](/images/docs/project-user-guide/application-workloads/cronjobs/input-busybox.jpg)
+    ![input-busybox](/images/docs/project-user-guide-zh/application-workloads-zh/cronjobs-zh/input-busybox.png)
 
-2. Scroll down to **Start Command** and enter `/bin/sh,-c,date; echo "KubeSphere!"` in the box under **Parameters**. 
+2. 向下滚动到**启动命令** 然后在**参数**框中输入 `/bin/sh,-c,date; echo "KubeSphere!"` 。
 
-    ![start-command](/images/docs/project-user-guide/application-workloads/cronjobs/start-command.jpg)
+    ![start-command](/images/docs/project-user-guide-zh/application-workloads-zh/cronjobs-zh/start-command.png)
 
-3. Click **√** to finish setting the image and **Next** to continue.
+3. 单击 **√** 完成镜像设置，然后单击**下一步**继续。
 
-    ![finish-image](/images/docs/project-user-guide/application-workloads/cronjobs/finish-image.jpg)
+    ![finish-image](/images/docs/project-user-guide-zh/application-workloads-zh/cronjobs-zh/finish-image.png)
 
     {{< notice note >}}
 
-- This example CronJob prints `KubeSphere`. For more information about setting images, see [Container Image Settings](../container-image-settings/).
-- For more information about **Restart Policy**, see [Jobs](../jobs/#step-4-set-image).
-- You can skip **Mount Volumes** and **Advanced Settings** for this tutorial. For more information, see [Mount Volumes](../deployments/#step-4-mount-volumes) and [Configure Advanced Settings](../deployments/#step-5-configure-advanced-settings) in Deployments.
+- 此示例 CronJob 打印字母 `KubeSphere`。 有关设置镜像的更多信息请参阅[容器镜像设置](../container-image-settings/)。
+- 有关**重新启动策略**的更多信息，请参见[任务（Job）](../jobs/#step-4-set-image)。
+- 您可以跳过本教程的**挂载存储**和**高级设置**。 有关更多信息，请参见在 Deployments 中[挂载存储](../deployments/#step-4-mount-volumes)和[配置高级设置](../deployments/#step-5-configure-advanced-settings)。
 
     {{</ notice >}}
 
-### Step 5: Check Result
+### 步骤 5: 检查结果
 
-1. In the final step of **Advanced Settings**, click **Create** to finish. A new item will be added to the CronJob list if the creation is successful. Besides, you can also find Jobs under **Jobs** tab.
+1. 在**高级设置**的最后一步中，单击**创建**以完成。 如果创建成功，新项目将添加到 CronJob 列表中。 此外，您还可以在**任务（Jobs）**标签下找到作业任务。
 
-    ![cronjob-list-new](/images/docs/project-user-guide/application-workloads/cronjobs/cronjob-list-new.jpg)
+    ![cronjob-list-new](/images/docs/project-user-guide-zh/application-workloads-zh/cronjobs-zh/cronjob-list-new.png)
 
-    ![job-list](/images/docs/project-user-guide/application-workloads/cronjobs/job-list.jpg)
+    ![job-list](/images/docs/project-user-guide-zh/application-workloads-zh/cronjobs-zh/job-list.png)
 
-2. Under **ConJobs** tab, click this CronJob and go to **Job Records** tab where you can see the information of each execution record. There are 3 successful CronJob executions as the field **successfulJobsHistoryLimit** is set to 3.
+2. 在 **ConJobs** 选项卡下，单击此 CronJob，然后转到**任务记录**选项卡，您可以在其中查看每个执行记录的信息。 由于将字段`successJobsHistoryLimit`设置为 3，因此只记录了成功执行 3 次的任务。
 
-    ![execution-record](/images/docs/project-user-guide/application-workloads/cronjobs/execution-record.jpg)
+    ![execution-record](/images/docs/project-user-guide-zh/application-workloads-zh/cronjobs-zh/execution-record.png)
 
-3. Click any of them and you will be directed to the Job detail page.
+3. 单击其中任何一个，您将转到作业详细信息页面。
 
-    ![job-detail-page](/images/docs/project-user-guide/application-workloads/cronjobs/job-detail-page.jpg)
+    ![job-detail-page](/images/docs/project-user-guide-zh/application-workloads-zh/cronjobs-zh/job-detail-page.png)
 
-4. In **Resource Status**, you can inspect the Pod status. Click the arrow on the right and check the container log as shown below, which displays the expected output.
+4. 在**资源状态**中，您可以检查 Pod 状态。 单击右侧的箭头，可以检查容器日志，如下所示，该日志显示了预期的输出。
 
-    ![container-log-1](/images/docs/project-user-guide/application-workloads/cronjobs/container-log-1.jpg)
+    ![container-log-1](/images/docs/project-user-guide-zh/application-workloads-zh/cronjobs-zh/container-log-1.png)
 
-    ![container-log-2](/images/docs/project-user-guide/application-workloads/cronjobs/container-log-2.jpg)
+    ![container-log-2](/images/docs/project-user-guide-zh/application-workloads-zh/cronjobs-zh/container-log-2.png)
 
-## CronJob Operations
+## CronJob 操作
 
-On the CronJob detail page, you can manage the CronJob after it is created.
+在 CronJob 详细信息页面上，您可以在创建 CronJob 之后对其进行管理。
 
-- **Edit Info**: Edit the basic information except `Name` of the CronJob.
-- **Pause/Start**: Pause or start the Cronjob. Pausing a CronJob will tell the controller to suspend subsequent executions, which does not apply to executions that already start.
-- **Edit YAML**: Edit the CronJob's specification in YAML format.
-- **Delete**: Delete the CronJob, and return to the CronJob list page.
+- **编辑信息**: 编辑除了 CronJob `名称` 以外的基本信息。
+- **暂停/启动**: 暂停或启动 Cronjob。 暂停 CronJob 将告诉控制器暂停后续任务，这不适用于已经开始执行的任务。
+- **编辑 YAML**: 以 YAML 格式编辑 CronJob 的配置。
+- **删除**: 删除 CronJob，然后返回到 CronJob 列表页面。
 
-![cronjob-action](/images/docs/project-user-guide/application-workloads/cronjobs/cronjob-action.jpg)
+![cronjob-action](/images/docs/project-user-guide-zh/application-workloads-zh/cronjobs-zh/cronjob-action.png)
