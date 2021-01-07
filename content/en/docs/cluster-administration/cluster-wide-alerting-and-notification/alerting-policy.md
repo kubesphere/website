@@ -8,7 +8,7 @@ weight: 8530
 
 ## Objective
 
-KubeSphere provides alert policies for nodes and workloads. This guide demonstrates how you can create alert policies for nodes in the cluster and configure mail notifications. See [Alerting Policy (Workload Level)](../../../project-user-guide/alerting/alerting-policy/) to learn how to configure alert policies for workloads.
+KubeSphere provides alerting policies for nodes and workloads. This guide demonstrates how you can create alerting policies for nodes in the cluster and configure mail notifications. See [Alerting Policy (Workload Level)](../../../project-user-guide/alerting/alerting-policy/) to learn how to configure alerting policies for workloads.
 
 ## Prerequisites
 
@@ -17,7 +17,7 @@ KubeSphere provides alert policies for nodes and workloads. This guide demonstra
 
 ## Hands-on Lab
 
-### Task 1: Create an alert policy
+### Task 1: Create an alerting policy
 
 1. Log in to the console with one account granted the role `platform-admin`.
 
@@ -36,8 +36,8 @@ KubeSphere provides alert policies for nodes and workloads. This guide demonstra
 In the dialog that appears, fill in the basic information as follows. Click **Next** after you finish.
 
 - **Name**: a concise and clear name as its unique identifier, such as `alert-demo`.
-- **Alias**: to help you distinguish alert policies better. Chinese is supported.
-- **Description**: a brief introduction to the alert policy.
+- **Alias**: to help you distinguish alerting policies better. Chinese is supported.
+- **Description**: a brief introduction to the alerting policy.
 
 ![alerting_policy_node_level_basic_info](/images/docs/alerting/alerting_policy_node_level_basic_info.png)
 
@@ -55,7 +55,7 @@ You can sort nodes in the node list from the drop-down menu through the followin
 
 ### Task 4: Add alerting rules
 
-1. Click **Add Rule** to begin to create an alerting rule. The rule defines parameters such as metric type, check period, consecutive times, metric threshold and alert level to provide rich configurations. The check period (the second field under **Rule**) means the time interval between 2 consecutive checks of the metric. For example, `2 minutes/period` means the metric is checked every two minutes. The consecutive times (the third field under **Rule**) means the number of consecutive times that the metric meets the threshold when checked. An alert is only triggered when the actual time is equal to or is greater than the number of consecutive times set in the alert policy.
+1. Click **Add Rule** to begin to create an alerting rule. The rule defines parameters such as metric type, check period, consecutive times, metric threshold and alert level to provide rich configurations. The check period (the second field under **Rule**) means the time interval between 2 consecutive checks of the metric. For example, `2 minutes/period` means the metric is checked every two minutes. The consecutive times (the third field under **Rule**) means the number of consecutive times that the metric meets the threshold when checked. An alert is only triggered when the actual time is equal to or is greater than the number of consecutive times set in the alerting policy.
 
     ![alerting_policy_node_level_alerting_rule](/images/docs/alerting/alerting_policy_node_level_alerting_rule.png)
 
@@ -65,7 +65,7 @@ You can sort nodes in the node list from the drop-down menu through the followin
 
 {{< notice note >}}
 
-You can create node-level alert policies for the following metrics:
+You can create node-level alerting policies for the following metrics:
 
 - CPU: `cpu utilization rate`, `cpu load average 1 minute`, `cpu load average 5 minutes`, `cpu load average 15 minutes`
 - Memory: `memory utilization rate`, `memory available`
@@ -83,17 +83,17 @@ You can create node-level alert policies for the following metrics:
 
     ![alerting_policy_node_level_notification_rule](/images/docs/alerting/alerting_policy_node_level_notification_rule.png)
 
-3. Click **Create**, and you can see that the alert policy is successfully created.
+3. Click **Create**, and you can see that the alerting policy is successfully created.
 
 {{< notice note >}}
 
-*Waiting Time for Alerting* **=** *Check Period* **x** *Consecutive Times*. For example, if the check period is 1 minute/period, and the number of consecutive times is 2, you need to wait for 2 minutes before the alert message appears.
+*Waiting Time for Alerting* **=** *Check Period* **x** *Consecutive Times*. For example, if the check period is 1 minute/period, and the number of consecutive times is 2, you need to wait for 2 minutes before the alerting message appears.
 
 {{</ notice >}}
 
-### Task 6: View alert policies
+### Task 6: View alerting policies
 
-After an alert policy is successfully created, you can enter its detail information page to view the status, alert rules, monitoring targets, notification rule, alert history, etc. Click **More** and select **Change Status** from the drop-down menu to enable or disable this alert policy.
+After an alerting policy is successfully created, you can enter its detail information page to view the status, alert rules, monitoring targets, notification rule, alert history, etc. Click **More** and select **Change Status** from the drop-down menu to enable or disable this alerting policy.
 
 ![alerting-policy-node-level-detail-page](/images/docs/alerting/alerting-policy-node-level-detail-page.png)
 
