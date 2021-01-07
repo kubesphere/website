@@ -189,7 +189,7 @@ multicluster:
 
 {{< tab "尚未安装 KubeSphere" >}}
 
-在 Linux 上或者在现有 Kubernetes 集群上安装 KubeSphere 之前，您可以定义 Member 集群。如果您想[在 Linux 上安装 KubeSphere](../../../installing-on-linux/introduction/multioverview/#1-创建示例配置文件)，需要使用 `config-sample.yaml` 文件。如果您想[在现有 Kubernetes 集群上安装 KubeSphere](../../../installing-on-kubernetes/introduction/overview/#部署-kubesphere)，需要使用两个 YAML 文件，其中一个是 `cluster-configuration.yaml`。要设置 Member 集群，请在安装 KubeSphere 之前，将 `config-sample.yaml` 或 `cluster-configuration.yaml` 文件中对应的 `clusterRole` 的值修改为 `member`。
+在 Linux 上或者在现有 Kubernetes 集群上安装 KubeSphere 之前，您可以定义 Member 集群。如果您想[在 Linux 上安装 KubeSphere](../../../installing-on-linux/introduction/multioverview/#1-创建示例配置文件)，需要使用 `config-sample.yaml` 文件。如果您想[在现有 Kubernetes 集群上安装 KubeSphere](../../../installing-on-kubernetes/introduction/overview/#部署-kubesphere)，需要使用两个 YAML 文件，其中一个是 `cluster-configuration.yaml`。要设置 Member 集群，请在安装 KubeSphere 之前，在 `config-sample.yaml` 或 `cluster-configuration.yaml` 文件中输入上方 `jwtSecret` 所对应的值，并将 `clusterRole` 的值修改为 `member`。
 
 ```yaml
 authentication:
