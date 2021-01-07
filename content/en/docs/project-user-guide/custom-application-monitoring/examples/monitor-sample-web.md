@@ -1,9 +1,8 @@
 ---
-title: "Monitor Sample Web"
+title: "Monitor a Sample Web Application"
 keywords: 'monitoring, prometheus, prometheus operator'
-description: 'Monitor Sample Web'
-
-linkTitle: "Monitor Sample Web"
+description: 'Monitor a Sample Web Application'
+linkTitle: "Monitor a Sample Web Application"
 weight: 10813
 ---
 
@@ -14,25 +13,25 @@ This section walks you through monitoring a sample web application. The applicat
 - Please make sure you [enable the OpenPitrix system](../../../../pluggable-components/app-store/).
 - You need to create a workspace, a project, and a user account for this tutorial. For more information, see [Create Workspaces, Projects, Accounts and Roles](../../../../quick-start/create-workspace-and-project/). The account needs to be a platform regular user and to be invited as the workspace self provisioner with the `self-provisioner` role. Namely, create an account `workspace-self-provisioner` of the `self-provisioner` role, and use this account to create a project (e.g. `test`). In this tutorial, you log in as `workspace-self-provisioner` and work in the project `test` in the workspace `demo-workspace`.
 
-- Knowledge of Helm Chart and [PromQL](https://prometheus.io/docs/prometheus/latest/querying/examples/).
+- Knowledge of Helm charts and [PromQL](https://prometheus.io/docs/prometheus/latest/querying/examples/).
 
 ## Hands-on Lab
 
-### Step 1: Prepare Sample Web Application Image
+### Step 1: Prepare the image of a sample web application
 
-First, prepare the sample web application image. The sample web application exposes a user-defined metric called `myapp_processed_ops_total`. It is a counter type metric that counts the number of operations that have been processed by far. The counter increases automatically by one every 2 seconds.
+The sample web application exposes a user-defined metric called `myapp_processed_ops_total`. It is a counter type metric that counts the number of operations that have been processed. The counter increases automatically by one every 2 seconds.
 
 This sample application exposes application-specific metrics via the endpoint `http://localhost:2112/metrics`.
 
 In this tutorial, you use the made-ready image `kubespheredev/promethues-example-app`. The source code can be found in [kubesphere/prometheus-example-app](https://github.com/kubesphere/prometheus-example-app). You can also follow [Instrument A Go Application For Prometheus](https://prometheus.io/docs/guides/go-application/) in the official documentation of Prometheus.
 
-### Step 2: Pack the Application into a Helm Chart
+### Step 2: Pack the application into a Helm chart
 
-Pack the Deployment, Service, and ServiceMonitor YAML template into a helm chat for reuse. In the Deployment and Service template, you define sample web container and the port for the metrics endpoint. ServiceMonitor is a custom resource defined and used by Prometheus Operator. It connects your application and KubeSphere monitoring engine (Prometheus) so that the engine knows where and how to scrape metrics. In future releases, KubeSphere will provide a graphical user interface for easy operation.
+Pack the Deployment, Service, and ServiceMonitor YAML template into a Helm chat for reuse. In the Deployment and Service template, you define the sample web container and the port for the metrics endpoint. ServiceMonitor is a custom resource defined and used by Prometheus Operator. It connects your application and KubeSphere monitoring engine (Prometheus) so that the engine knows where and how to scrape metrics. In future releases, KubeSphere will provide a graphical user interface for easy operation.
 
-Find the source code in the folder `helm` in [kubesphere/prometheus-example-app](https://github.com/kubesphere/prometheus-example-app). The helm chart package is made ready and is named as `prometheus-example-app-0.1.0.tgz`. Please download the .tgz file and you will use it in the next step.
+Find the source code in the folder `helm` in [kubesphere/prometheus-example-app](https://github.com/kubesphere/prometheus-example-app). The Helm chart package is made ready and is named `prometheus-example-app-0.1.0.tgz`. Please download the .tgz file and you will use it in the next step.
 
-### Step 3: Upload the Helm Chart
+### Step 3: Upload the Helm chart
 
 1. Go to the workspace **Overview** page of `demo-workspace` and navigate to **App Templates**.
 
@@ -52,7 +51,7 @@ Find the source code in the folder `helm` in [kubesphere/prometheus-example-app]
 
     ![click-upload-app-template-6](/images/docs/project-user-guide/custom-application-monitoring/click-upload-app-template-6.jpg)
 
-### Step 4: Deploy Sample Web Application
+### Step 4: Deploy the sample web application
 
 You need to deploy the sample web application into `demo`. For demonstration purposes, you can simply run a test deployment.
 
@@ -80,7 +79,7 @@ You need to deploy the sample web application into `demo`. For demonstration pur
 
     ![create-dashboard-1](/images/docs/project-user-guide/custom-application-monitoring/create-dashboard-1.jpg)
 
-### Step 5: Create Dashboard
+### Step 5: Create a monitoring dashboard
 
 This section guides you on how to create a dashboard from scratch. You will create a text chart showing the total number of processed operations and a line chart for displaying the operation rate.
 
