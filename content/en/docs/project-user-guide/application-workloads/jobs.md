@@ -74,7 +74,7 @@ You can set the values in this step as below or click **Next** to use the defaul
 For more information about setting images, see [Container Image Settings](../container-image-settings/).
     {{</ notice >}}
 
-### Step 5: Inspect job manifest (optional)
+### Step 5: Inspect the Job manifest (optional)
 
 1. Enable **Edit Mode** in the top right corner which displays the manifest file of the Job. You can see all the values are set based on what you have specified in the previous steps.
 
@@ -120,7 +120,7 @@ For more information about setting images, see [Container Image Settings](../con
 2. You can make adjustments in the manifest directly and click **Create** or disable the **Edit Mode** and get back to the **Create Job** page.
 
     {{< notice note >}}
-You can skip **Mount Volumes** and **Advanced Settings** for this tutorial. For more information, see [Pod Volumes](../deployments/#step-4-mount-volumes) and [Deployment Advanced Settings](../deployments/#step-5-configure-advanced-settings).
+You can skip **Mount Volumes** and **Advanced Settings** for this tutorial. For more information, see [Mount volumes](../deployments/#step-4-mount-volumes) and [Configure advanced settings](../deployments/#step-5-configure-advanced-settings).
     {{</ notice >}}
 
 ### Step 6: Check the result
@@ -129,7 +129,7 @@ You can skip **Mount Volumes** and **Advanced Settings** for this tutorial. For 
 
     ![job-list-new](/images/docs/project-user-guide/application-workloads/jobs/job-list-new.png)
 
-2. Click this Job and go to **Execution Records** tab where you can see the information of each execution record. There are four completed Pods since **Completions** was set to `4` in Step 3.
+2. Click this Job and go to **Execution Records** where you can see the information of each execution record. There are four completed Pods since **Completions** was set to `4` in Step 3.
 
     ![execution-record](/images/docs/project-user-guide/application-workloads/jobs/execution-record.jpg)
 

@@ -249,7 +249,7 @@ respectively, and you can refer to the following example.
 
 ### Step 5: Kubernetes cluster configurations (Optional)
 
-Kubekey provides some fields and parameters to allow the cluster administrator to customize Kubernetes installation, including Kubernetes version, network plugins and image registry. There are some default values provided in `config-example.yaml`. You can modify Kubernetes-related configurations in the file based on your needs. For more information, see [Kubernetes Cluster Configurations](../../../installing-on-linux/introduction/vars/).
+Kubekey provides some fields and parameters to allow the cluster administrator to customize Kubernetes installation, including Kubernetes version, network plugins and image registry. There are some default values provided in `config-sample.yaml`. You can modify Kubernetes-related configurations in the file based on your needs. For more information, see [Kubernetes Cluster Configurations](../../../installing-on-linux/introduction/vars/).
 
 ### Step 6: Persistent storage plugin configurations
 

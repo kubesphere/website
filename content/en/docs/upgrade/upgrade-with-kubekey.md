@@ -127,7 +127,7 @@ Modify `config-sample.yaml` to fit your cluster setup. Make sure you replace the
 
 {{< notice note >}}
 
-Please refer to the `Cluster` section of [config-example.yaml](https://github.com/kubesphere/kubekey/blob/master/docs/config-example.md) for more information.
+Refer to the `Cluster` section of [the complete configuration file](https://github.com/kubesphere/kubekey/blob/master/docs/config-example.md) for more information.
 
 {{</ notice >}}
 
