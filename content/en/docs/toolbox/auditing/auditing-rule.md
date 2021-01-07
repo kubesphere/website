@@ -199,7 +199,7 @@ spec:
 ```
 
 ## Output
- The `Output` string is used to format the alert message when an auditing log triggers an alert. The `Output` string can include lists and alias. Here is an example.
+ The `Output` string is used to format the alerting message when an auditing log triggers an alert. The `Output` string can include lists and alias. Here is an example.
 
 ```yaml
 Output: ${user} ${verb} a HostNetwork Pod ${name} in ${namespace}.

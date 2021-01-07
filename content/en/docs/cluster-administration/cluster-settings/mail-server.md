@@ -9,7 +9,7 @@ weight: 8630
 
 ## Objective
 
-This guide demonstrates email notification settings (customized settings supported) for alert policies. You can specify user email addresses to receive alert messages.
+This guide demonstrates email notification settings (customized settings supported) for alerting policies. You can specify user email addresses to receive alerting messages.
 
 ## Prerequisites
 
