@@ -2,14 +2,13 @@
 title: "Overview"
 keywords: 'monitoring, prometheus, prometheus operator'
 description: 'Overview'
-
 linkTitle: "Overview"
 weight: 10815
 ---
 
 This section introduces dashboard features. You will learn how to visualize metric data in KubeSphere for your custom applications. If you do not know how to integrate your application metrics into KubeSphere monitoring system, read [Introduction](../../introduction) first.
 
-## Create Dashboard
+## Create a Monitoring Dashboard
 
 To create new dashboards for your application metrics, navigate to **Custom Monitoring** on the project **Overview** page. There are three ways to create dashboards. For MySQL, Elasticsearch, and Redis, you can use built-in templates. These templates are for demonstration purposes and are updated with KubeSphere releases. Besides, you can choose to customize dashboards from scratch.
 
@@ -25,7 +24,7 @@ For a quickstart, KubeSphere provides built-in templates for MySQL, Elasticsearc
 
 To start with a blank template, click **Create**. 
 
-### From YAML file
+### From YAML
 
 Toggle to **Edit Mode** in the top right corner then paste your dashboard YAML files.
 
@@ -59,20 +58,20 @@ You can view chart details in the right-most column. It shows the **max**, **min
 
 ![dashboard-layout-4](/images/docs/project-user-guide/custom-application-monitoring/dashboard-layout-4.jpg)
 
-## Edit Dashboard
+## Edit the monitoring dashboard
 
 You can edit an existing template by clicking **Edit Template** in the top right corner.
 
-### Add panel
+### Add a panel
 
 To add text charts, click the **add icon** in the left column. To add charts, click **Add Monitoring Item** in the bottom right corner.
 
 ![edit-dashboard](/images/docs/project-user-guide/custom-application-monitoring/edit-dashboard.jpg)
 
-### Add group
+### Add a group
 
 To group monitoring items, you can drag the item into the target group. To add a new group, click **Add Monitoring Group**.
 
-## Open Dashboard
+## Dashboard Templates
 
 Find and share dashboard templates in [Monitoring Dashboards Gallery](https://github.com/kubesphere/monitoring-dashboard/tree/master/contrib/gallery). It is a place for KubeSphere community users to contribute their masterpieces.
