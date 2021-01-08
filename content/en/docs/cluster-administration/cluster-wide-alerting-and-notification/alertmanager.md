@@ -30,7 +30,7 @@ In KubeSphere v3.0 and above, users can also use Alertmanager to manage alerts t
 
 Generally, to receive notifications for Alertmanager alerts, users have to edit Alertmanager's configuration files manually to configure receiver settings such as Email and Slack.
 
-This is not convenient for Kubernetes users and it breaks the multi-tenant principle/architecture of KubeSphere. More specifically, alerts triggered by workloads in different namespaces belonging to different users might be sent to the same user.
+This is not convenient for Kubernetes users and it breaks the multi-tenant principle/architecture of KubeSphere. More specifically, alerts triggered by workloads in different namespaces, which should have been sent to different tenants, might be sent to the same tenant.
 
 To use Alertmanager to manage alerts on the platform, KubeSphere offers [Notification Manager](https://github.com/kubesphere/notification-manager), a Kubernetes native notification management tool, which is completely open source. It complies with the multi-tenancy principle, providing user-friendly experiences of Kubernetes notifications. It's installed by default in KubeSphere v3.0 and above.
 

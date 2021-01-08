@@ -16,7 +16,7 @@ Alertmanager 处理由客户端应用程序（例如 Prometheus 服务器）发�
 
 Prometheus 的告警分为两部分。Prometheus 服务器根据告警规则向 Alertmanager 发送告警。随后，Alertmanager 管理这些告警，包括沉默、抑制、聚合等，并通过不同方式发送通知，例如电子邮件、应需 (on-call) 通知系统以及聊天平台。
 
-从 3.0 版本开始，KubeSphere 向 Prometheus 添加了开源社区中流行的告警规则，用作内置告警规则。默认情况下，3.0 版 KubeSphere 中的 Prometheus 会持续评估这些内置告警规则，然后向 Alertmanager 发送告警。
+从 3.0 版本开始，KubeSphere 向 Prometheus 添加了开源社区中流行的告警规则，用作内置告警规则。默认情况下，KubeSphere 3.0 中的 Prometheus 会持续评估这些内置告警规则，然后向 Alertmanager 发送告警。
 
 ## 使用 Alertmanager 管理 Kubernetes 事件告警
 
@@ -30,7 +30,7 @@ Alertmanager 可用于管理 Prometheus 以外来源发出的告警。在 3.0 �
 
 一般来说，要接收 Alertmanager 告警的通知，用户需要手动编辑 Alertmanager 的配置文件，配置接收器（例如电子邮件和 Slack）的设置。
 
-这对 Kubernetes 用户来说并不方便，并且打破了 KubeSphere 的多租户规则/架构。具体来说，不同的命名空间属于不同的用户，由不同命名空间中的工作负载触发的告警可能会发送至同一个用户。
+这对 Kubernetes 用户来说并不方便，并且违背了 KubeSphere 的多租户规则/架构。具体来说，由不同命名空间中的工作负载所触发的告警可能会发送至同一个租户，然而这些告警信息本应发给不同的租户。
 
 为了使用 Alertmanager 管理平台上的告警，KubeSphere 提供了 [Notification Manager](https://github.com/kubesphere/notification-manager)，它是一个 Kubernetes 原生通知管理工具，完全开源。它符合多租户规则，提供用户友好的 Kubernetes 通知体验，3.0 版及更高版本的 KubeSphere 均默认安装 Notification Manager。
 
