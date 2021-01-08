@@ -60,4 +60,4 @@ After a workspace is created, you can allocate additional clusters to the worksp
 
 ### Make a cluster public
 
-You can check **Set as public cluster** so that all platform users can access the cluster, in which they are able to create and schedule resources.
+You can check **Set as public cluster** so that platform users can access the cluster, in which they are able to create and schedule resources.
