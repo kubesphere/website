@@ -1,63 +1,63 @@
 ---
-title: "Cluster Visibility and Authorization"
-keywords: "Cluster Visibility, Cluster Management"
-description: "Cluster Visibility"
-linkTitle: "Cluster Visibility and Authorization"
+title: "集群可见性和授权"
+keywords: "集群可见性, 集群管理"
+description: "集群可见性"
+linkTitle: "集群可见性和授权"
 weight: 8610
 ---
 
-In KubeSphere, you can allocate a cluster to multiple workspaces through authorization so that workspace resources can all run on the cluster. At the same time, a workspace can also be associated with multiple clusters. Workspace users with necessary permissions can create multi-cluster projects using clusters allocated to the workspace.
+在 KubeSphere 中，您可以通过授权将一个集群分配给多个企业空间，让企业空间资源都可以在该集群上运行。同时，一个企业空间也可以关联多个集群。拥有必要权限的企业空间用户可以使用分配给该企业空间的集群来创建多集群项目。
 
-This guide demonstrates how to set cluster visibility.
+本指南演示如何设置集群可见性。
 
-## Prerequisites
-* You need to enable the [multi-cluster feature](../../../multicluster-management/).
-* You need to have a workspace and an account that has the permission to create workspaces, such as `ws-manager`. For more information, see [Create Workspace, Project, Account and Role](../../../quick-start/create-workspace-and-project/).
+## 准备工作
+* 您需要启用[多集群功能](../../../multicluster-management/)。
+* 您需要有一个企业空间和一个拥有创建企业空间权限的帐户，例如 `ws-manager`。有关更多信息，请参见[创建企业空间、项目、帐户和角色](../../../quick-start/create-workspace-and-project/)。
 
-## Set Cluster Visibility
+## 设置集群可见性
 
-### Select available clusters when you create a workspace
+### 在创建企业空间时选择可用集群
 
-1. Log in KubeSphere with an account that has the permission to create a workspace, such as `ws-manager`.
+1. 使用拥有创建企业空间权限的帐户登录 KubeSphere，例如 `ws-manager`。
 
-2. Click **Platform** in the top left corner and select **Access Control**. In **Workspaces** from the navigation bar, click **Create**.
+2. 点击左上角的**平台管理**，选择**访问控制**。在左侧导航栏选择**企业空间**，然后点击**创建**。
 
-   ![create-workspace](/images/docs/cluster-administration/cluster-settings/cluster-visibility-and-authorization/create-workspace.jpg)
+   ![创建企业空间](/images/docs/zh-cn/project-user-guide/cluster-settings/cluster-visibility-and-authorization/create-workspace.PNG)
 
-3. Provide the basic information for the workspace and click **Next**.
+3. 输入企业空间的基本信息，点击**下一步**。
 
-4. On the **Select Clusters** page, you can see a list of available clusters. Check the cluster that you want to allocate to the workspace.
+4. 在**集群选择**页面，您可以看到可用集群列表，选择分配给企业空间的集群。
 
-   ![select-a-cluster](/images/docs/cluster-administration/cluster-settings/cluster-visibility-and-authorization/select-a-cluster.png)
+   ![选择集群](/images/docs/zh-cn/project-user-guide/cluster-settings/cluster-visibility-and-authorization/select-a-cluster.PNG)
 
-5. After the workspace is created, workspace members with necessary permissions can create resources that run on the associated cluster.
+5. 创建企业空间后，拥有必要权限的企业空间成员可以创建资源，在关联集群上运行。
 
-   ![create-project](/images/docs/cluster-administration/cluster-settings/cluster-visibility-and-authorization/create-project.png)
+   ![创建项目](/images/docs/zh-cn/project-user-guide/cluster-settings/cluster-visibility-and-authorization/create-project.png)
 
    {{< notice warning >}}
 
-Try not to create resources on the host cluster to avoid excessive loads, which can lead to a decrease in the stability across clusters.
+尽量不要在 Host 集群上创建资源，避免负载过高导致多集群稳定性下降。
 
 {{</ notice >}} 
 
-### Set cluster visibility after a workspace is created
+### 在创建企业空间后设置集群可见性
 
-After a workspace is created, you can allocate additional clusters to the workspace through authorization or unbind a cluster from the workspace. Follow the steps below to adjust the visibility of a cluster.
+创建企业空间后，您可以通过授权向该企业空间分配其他集群，或者将集群从企业空间中解绑。按照以下步骤调整集群可见性。
 
-1. Log in KubeSphere with an account that has the permission to manage clusters, such as `admin`.
+1. 使用拥有集群管理权限的帐户登录 KubeSphere，例如 `admin`。
 
-2. Click **Platform** in the top left corner and select **Clusters Management**. Select a cluster from the list to view cluster information.
+2. 点击左上角的**平台管理**，选择**集群管理**。从列表中选择一个集群查看集群信息。
 
-3. In **Cluster Settings** from the navigation bar, select **Cluster Visibility**.
+3. 在左侧导航栏找到**集群设置**，选择**集群可见性**。
 
-4. You can see the list of authorized workspaces, which means the current cluster is available to resources in all these workspaces.
+4. 您可以看到已授权企业空间的列表，这意味着所有这些企业空间中的资源都能使用当前集群。
 
-   ![cluster-visibility-settings-1](/images/docs/cluster-administration/cluster-settings/cluster-visibility-and-authorization/cluster-visibility-settings-1.png)
+   ![设置集群可见性1](/images/docs/zh-cn/project-user-guide/cluster-settings/cluster-visibility-and-authorization/workspace-list.PNG)
 
-5. Click **Edit Visibility** to set the cluster authorization. You can select new workspaces that will be able to use the cluster or unbind it from a workspace.
+5. 点击**编辑可见范围**设置集群授权。您可以选择让新的企业空间使用该集群，或者将该集群从企业空间解绑。
 
-   ![cluster-visibility-settings-2](/images/docs/cluster-administration/cluster-settings/cluster-visibility-and-authorization/cluster-visibility-settings-2.png)
+   ![设置集群可见性2](/images/docs/zh-cn/project-user-guide/cluster-settings/cluster-visibility-and-authorization/assign-workspace.PNG)
 
-### Make a cluster public
+### 将集群设置为公开集群
 
-You can check **Set as public cluster** so that all platform users can access the cluster, in which they are able to create and schedule resources.
+您可以打开**设置为公开集群**，这样所有平台用户都可以访问该集群，在该集群上创建并调度资源。
