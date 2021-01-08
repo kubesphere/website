@@ -22,17 +22,17 @@ weight: 8610
 
 2. 点击左上角的**平台管理**，选择**访问控制**。在左侧导航栏选择**企业空间**，然后点击**创建**。
 
-   ![创建企业空间](/images/docs/zh-cn/project-user-guide/cluster-settings/cluster-visibility-and-authorization/create-workspace.PNG)
+   ![创建企业空间](/images/docs/zh-cn/cluster-administration/cluster-settings/cluster-visibility-and-authorization/create-workspace.PNG)
 
 3. 输入企业空间的基本信息，点击**下一步**。
 
 4. 在**集群选择**页面，您可以看到可用集群列表，选择分配给企业空间的集群。
 
-   ![选择集群](/images/docs/zh-cn/project-user-guide/cluster-settings/cluster-visibility-and-authorization/select-a-cluster.PNG)
+   ![选择集群](/images/docs/zh-cn/cluster-administration/cluster-settings/cluster-visibility-and-authorization/select-a-cluster.PNG)
 
 5. 创建企业空间后，拥有必要权限的企业空间成员可以创建资源，在关联集群上运行。
 
-   ![创建项目](/images/docs/zh-cn/project-user-guide/cluster-settings/cluster-visibility-and-authorization/create-project.png)
+   ![创建项目](/images/docs/zh-cn/cluster-administration/cluster-settings/cluster-visibility-and-authorization/create-project.png)
 
    {{< notice warning >}}
 
@@ -52,12 +52,12 @@ weight: 8610
 
 4. 您可以看到已授权企业空间的列表，这意味着所有这些企业空间中的资源都能使用当前集群。
 
-   ![设置集群可见性1](/images/docs/zh-cn/project-user-guide/cluster-settings/cluster-visibility-and-authorization/workspace-list.PNG)
+   ![设置集群可见性1](/images/docs/zh-cn/cluster-administration/cluster-settings/cluster-visibility-and-authorization/workspace-list.PNG)
 
 5. 点击**编辑可见范围**设置集群授权。您可以选择让新的企业空间使用该集群，或者将该集群从企业空间解绑。
 
-   ![设置集群可见性2](/images/docs/zh-cn/project-user-guide/cluster-settings/cluster-visibility-and-authorization/assign-workspace.PNG)
+   ![设置集群可见性2](/images/docs/zh-cn/cluster-administration/cluster-settings/cluster-visibility-and-authorization/assign-workspace.PNG)
 
 ### 将集群设置为公开集群
 
-您可以打开**设置为公开集群**，这样所有平台用户都可以访问该集群，在该集群上创建并调度资源。
+您可以打开**设置为公开集群**，以便平台用户访问该集群，并在该集群上创建和调度资源。
