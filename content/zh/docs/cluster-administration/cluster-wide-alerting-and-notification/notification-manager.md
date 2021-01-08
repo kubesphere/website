@@ -387,7 +387,7 @@ EOF
 
 {{< notice info>}}
 
-- 当您创建 Slack 应用时，Slack 令牌为 OAuth 访问令牌或者 Bot 用户访问令牌。
+- 当您创建 Slack 应用时，Slack 令牌为 OAuth 访问令牌或者 Bot 用户 OAuth 访问令牌。
 - 该应用必须有作用域 [chat:write](https://api.slack.com/scopes/chat:write)。
 - 创建该应用的用户或者 Bot 用户必须在您想发送通知的频道中。
 
