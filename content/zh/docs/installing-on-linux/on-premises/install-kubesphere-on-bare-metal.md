@@ -180,9 +180,6 @@ yum install epel-release
 yum install conntrack-tools
 ```
 
-```bash
-yum install wget # This tool will be used later to download KubeKey.
-```
 
 {{< notice note >}} 
 
