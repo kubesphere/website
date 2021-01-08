@@ -1,65 +1,65 @@
 ---
-title: "Blue-green Deployment"
-keywords: 'KubeSphere, Kubernetes, service mesh, istio, release, blue-green deployment'
-description: 'How to implement blue-green deployment for an app.'
+title: "蓝绿部署"
+keywords: 'KubeSphere, Kubernetes, 服务网格, istio, 发布, 蓝绿部署'
+description: '如何实现应用的蓝绿部署。'
 
-linkTitle: "Blue-green Deployment"
+linkTitle: "蓝绿部署"
 weight: 10520
 ---
 
 
-The blue-green release provides a zero downtime deployment, which means the new version can be deployed with the old one preserved. At any time, only one of the versions is active serving all the traffic, while the other one remains idle. If there is a problem with running, you can quickly roll back to the old version.
+蓝绿发布提供零宕机部署，即在保留旧版本的同时部署新版本。在任何时候，只有其中一个版本处于活跃状态，为所有流量提供服务，另一个版本保持空闲状态。如果运行出现问题，您可以快速回滚到旧版本。
 
-![blue-green-0](/images/docs/project-user-guide/grayscale-release/blue-green-deployment/blue-green-0.png)
+![blue-green-0](/images/docs/zh-cn/project-user-guide/grayscale-release/blue-green-deployment/blue-green-0.PNG)
 
 
-## Prerequisites
+## 准备工作
 
-- You need to enable [KubeSphere Service Mesh](../../../pluggable-components/service-mesh/).
-- You need to create a workspace, a project and an account (`project-regular`). The account must be invited to the project with the role of `operator`. For more information, see [Create Workspace, Project, Account and Role](../../../quick-start/create-workspace-and-project).
-- You need to enable **Application Governance** and have an available app so that you can implement the blue-green deployment for it. The sample app used in this tutorial is Bookinfo. For more information, see [Deploy Bookinfo and Manage Traffic](../../../quick-start/deploy-bookinfo-to-k8s/).
+- 您需要启用 [KubeSphere 服务网格](../../../pluggable-components/service-mesh/)。
+- 您需要创建一个企业空间、一个项目和一个帐户 (`project-regular`)，务必邀请该帐户到项目中并赋予 `operator` 角色。有关更多信息，请参见[创建企业空间、项目、帐户和角色](../../../quick-start/create-workspace-and-project/)。
+- 您需要启用**应用治理**并有一个可用应用，以便您可以实现该应用的蓝绿部署。本教程使用示例应用 Bookinfo。有关更多信息，请参见[部署 Bookinfo 和管理流量](../../../quick-start/deploy-bookinfo-to-k8s/)。
 
-## Create Blue-green Deployment Job
+## 创建蓝绿部署任务
 
-1. Log in KubeSphere as `project-regular`. Under **Categories**, click **Create Job** on the right of **Blue-green Deployment**.
+1. 以 `project-regular` 身份登录 KubeSphere，在**灰度策略**选项卡下，点击**蓝绿部署**右侧的**发布任务**。
 
-   ![blue-green-1](/images/docs/project-user-guide/grayscale-release/blue-green-deployment/blue-green-1.jpg)
+   ![blue-green-1](/images/docs/zh-cn/project-user-guide/grayscale-release/blue-green-deployment/blue-green-1.PNG)
 
-2. Set a name for it and click **Next**.
+2. 输入名称然后点击**下一步**。
 
-   ![blue-green-2](/images/docs/project-user-guide/grayscale-release/blue-green-deployment/blue-green-2.jpg)
+   ![blue-green-2](/images/docs/zh-cn/project-user-guide/grayscale-release/blue-green-deployment/blue-green-2.PNG)
 
-3. Select your app from the drop-down list and the service for which you want to implement the blue-green deployment. If you also use the sample app Bookinfo, select **reviews** and click **Next**.
+3. 从下拉列表选择您的应用以及想实现蓝绿部署的服务。如果您也使用示例应用 Bookinfo，请选择 **reviews** 并点击**下一步**。
 
-   ![blue-green-3](/images/docs/project-user-guide/grayscale-release/blue-green-deployment/blue-green-3.jpg)
+   ![blue-green-3](/images/docs/zh-cn/project-user-guide/grayscale-release/blue-green-deployment/blue-green-3.PNG)
 
-4. On the **Grayscale Release Version** page, add another version of it (e.g `v2`) as shown in the image below and click **Next**:
+4. 如下图所示，在**灰度版本**页面，为其添加另一个版本（例如 `v2`），然后点击**下一步**：
 
-   ![blue-green-4](/images/docs/project-user-guide/grayscale-release/blue-green-deployment/blue-green-4.jpg)
+   ![blue-green-4](/images/docs/zh-cn/project-user-guide/grayscale-release/blue-green-deployment/blue-green-4.PNG)
 
    {{< notice note >}}
 
-   The image version is `v2` in the screenshot.
+   截图中的镜像版本为 `v2`。
 
    {{</ notice >}} 
 
-5. To allow the app version `v2` to take over all the traffic, select **Take over all traffic** and click **Create**.
+5. 要让应用版本 `v2` 接管所有流量，请选择**接管所有流量**，然后点击**创建**。
 
-   ![blue-green-5](/images/docs/project-user-guide/grayscale-release/blue-green-deployment/blue-green-5.jpg)
+   ![blue-green-5](/images/docs/zh-cn/project-user-guide/grayscale-release/blue-green-deployment/blue-green-5.PNG)
 
-6. The blue-green deployment job created displays under the tab **Job Status**. Click it to view details.
+6. 蓝绿部署任务创建后，会显示在**任务状态**选项卡下。点击可查看详情。
 
-   ![blue-green-job-list](/images/docs/project-user-guide/grayscale-release/blue-green-deployment/blue-green-job-list.jpg)
+   ![blue-green-任务列表](/images/docs/zh-cn/project-user-guide/grayscale-release/blue-green-deployment/blue-green-job-list.PNG)
 
-7. Wait for a while and you can see all the traffic go to the version `v2`:
+7. 稍等片刻后，您可以看到所有流量都流向 `v2` 版本：
 
-   ![blue-green-6](/images/docs/project-user-guide/grayscale-release/blue-green-deployment/blue-green-6.jpg)
+   ![blue-green-6](/images/docs/zh-cn/project-user-guide/grayscale-release/blue-green-deployment/blue-green-6.PNG)
 
-8. The new **Deployment** is created as well.
+8. 新的**部署**也已创建。
 
-   ![version2-deployment](/images/docs/project-user-guide/grayscale-release/blue-green-deployment/version2-deployment.jpg)
+   ![版本2-部署](/images/docs/zh-cn/project-user-guide/grayscale-release/blue-green-deployment/version2-deployment.PNG)
 
-9. You can directly get the virtual service to identify the weight by executing the following command:
+9. 您可以执行以下命令直接获取虚拟服务来查看权重：
 
    ```bash
    kubectl -n demo-project get virtualservice -o yaml
@@ -67,12 +67,12 @@ The blue-green release provides a zero downtime deployment, which means the new 
 
    {{< notice note >}} 
 
-   - When you execute the command above, replace `demo-project` with your own project (i.e. namespace) name.
-   - If you want to execute the command from the web kubectl on the KubeSphere console, you need to use the account `admin`.
+   - 当您执行上述命令时，请将 `demo-project` 替换成您自己的项目（即命名空间）名称。
+   - 如果您想使用 KubeSphere 控制台上的 Web Kubectl 来执行命令，则需要使用 `admin` 帐户。
 
    {{</ notice >}}
 
-10. Expected output:
+10. 预期输出结果：
 
     ```yaml
     ...
@@ -90,9 +90,9 @@ The blue-green release provides a zero downtime deployment, which means the new 
             ...
     ```
 
-## Take a Job Offline
+## 下线任务
 
-After you implement the blue-green deployment, and the result meets your expectation, you can take the task offline with the version `v1` removed by clicking **Job offline**.
+待您实现蓝绿部署并且结果满足您的预期，您可以点击**任务下线**来移除 `v1` 版本，从而下线任务。
 
-![blue-green-7](/images/docs/project-user-guide/grayscale-release/blue-green-deployment/blue-green-7.jpg)
+![blue-green-7](/images/docs/zh-cn/project-user-guide/grayscale-release/blue-green-deployment/blue-green-7.PNG)
 
