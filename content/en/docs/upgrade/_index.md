@@ -11,7 +11,7 @@ icon: "/images/docs/docs.svg"
 
 ---
 
-This chapter demonstrates how cluster operators can upgrade existing KubeSphere to v3.0.0.
+This chapter demonstrates how cluster operators can upgrade KubeSphere to v3.0.0.
 
 ## [Overview](../upgrade/overview/)
 
@@ -19,19 +19,19 @@ Understand what you need to pay attention to before the upgrade, such as version
 
 ## [Upgrade with KubeKey](../upgrade/upgrade-with-kubekey/)
 
-Follow steps to use KubeKey to upgrade Kubernetes and KubeSphere.
+Use KubeKey to upgrade Kubernetes and KubeSphere.
 
 ## [Upgrade with ks-installer](../upgrade/upgrade-with-ks-installer/)
 
-Follow steps to use ks-installer to upgrade KubeSphere.
+Use ks-installer to upgrade KubeSphere.
 
 ## [Air-Gapped Upgrade with KubeKey](../upgrade/air-gapped-upgrade-with-kubekey/)
 
-Follow steps to use Offline-package to upgrade Kubernetes and KubeSphere.
+Use the offline package to upgrade Kubernetes and KubeSphere.
 
 ## [Air-Gapped Upgrade with ks-installer](../upgrade/air-gapped-upgrade-with-ks-installer/)
 
-Follow steps to use ks-installer and Offline-package to upgrade KubeSphere.
+Use ks-installer and offline package to upgrade KubeSphere.
 
 ## [Changes after Upgrade](../upgrade/what-changed/)
 
