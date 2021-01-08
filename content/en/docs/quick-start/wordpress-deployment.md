@@ -2,7 +2,6 @@
 title: "Compose and Deploy WordPress"
 keywords: 'KubeSphere, Kubernetes, app, WordPress'
 description: 'Compose and deploy Wordpress.'
-
 linkTitle: "Compose and Deploy WordPress"
 weight: 2500
 ---
