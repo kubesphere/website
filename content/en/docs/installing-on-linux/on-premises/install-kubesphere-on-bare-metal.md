@@ -180,10 +180,6 @@ yum install epel-release
 yum install conntrack-tools
 ```
 
-```bash
-yum install wget # This tool will be used later to download KubeKey.
-```
-
 {{< notice note >}} 
 
 You may not need to install all the dependencies depending on the Kubernetes version to be installed. For more information, see [Dependency Requirements](../../../installing-on-linux/introduction/multioverview/).
