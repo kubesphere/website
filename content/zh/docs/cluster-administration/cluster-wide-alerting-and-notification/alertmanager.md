@@ -1,37 +1,37 @@
 ---
-title: "Manage Alerts with Alertmanager in KubeSphere"
-keywords: 'Kubernetes, Prometheus, Alertmanager, alerting'
-description: 'Manage alerts with Alertmanager in KubeSphere'
-linkTitle: "Alertmanager in KubeSphere"
+title: "在 KubeSphere 中使用 Alertmanager 管理告警"
+keywords: 'Kubernetes, Prometheus, Alertmanager, 告警'
+description: '在 KubeSphere 中使用 Alertmanager 管理告警'
+linkTitle: "KubeSphere 中的 Alertmanager"
 weight: 8510
 ---
 
-Alertmanager handles alerts sent by client applications such as the Prometheus server. It takes care of deduplicating, grouping, and routing them to the correct receiver integration such as email, PagerDuty, or OpsGenie. It also takes care of silencing and inhibition of alerts. For more details, refer to the [Alertmanager guide](https://prometheus.io/docs/alerting/latest/alertmanager/).
+Alertmanager 处理由客户端应用程序（例如 Prometheus 服务器）发出的告警。它会将告警去重、分组 (Grouping) 并路由至正确的接收器，例如电子邮件、PagerDuty 或者 OpsGenie。它还负责告警沉默 (Silencing) 和抑制 (Inhibition)。有关更多详细信息，请参考 [Alertmanager 指南](https://prometheus.io/docs/alerting/latest/alertmanager/)。
 
-KubeSphere has been using Prometheus as its monitoring service's backend from the first release. Starting from v3.0, KubeSphere adds Alertmanager to its monitoring stack to manage alerts sent from Prometheus as well as other components such as [kube-events](https://github.com/kubesphere/kube-events) and kube-auditing.
+从初次发布开始，KubeSphere 就一直使用 Prometheus 作为监控服务的后端。从 3.0 版本开始，KubeSphere 的监控栈新增了 Alertmanager 来管理从 Prometheus 和其他服务组件（例如 [kube-events](https://github.com/kubesphere/kube-events) 和 kube-auditing）发出的告警。
 
 ![alertmanager-kubesphere](/images/docs/cluster-administration/cluster-wide-alerting-and-notification/alertmanager-in-kubesphere/alertmanager@kubesphere.png)
 
-## Use Alertmanager to Manage Prometheus Alerts
+## 使用 Alertmanager 管理 Prometheus 告警
 
-Alerting with Prometheus is separated into two parts. Alerting rules in Prometheus servers send alerts to an Alertmanager. The Alertmanager then manages those alerts, including silencing, inhibition, aggregation and sending out notifications via methods such as emails, on-call notification systems, and chat platforms.
+Prometheus 的告警分为两部分。Prometheus 服务器根据告警规则向 Alertmanager 发送告警。随后，Alertmanager 管理这些告警，包括沉默、抑制、聚合等，并通过不同方式发送通知，例如电子邮件、应需 (on-call) 通知系统以及聊天平台。
 
-Starting from v3.0, KubeSphere adds popular alert rules in the open source community to its Prometheus offering as built-in alert rules. And by default Prometheus in KubeSphere v3.0 evaluates these built-in alert rules continuously and then sends alerts to Alertmanager.
+从 3.0 版本开始，KubeSphere 向 Prometheus 添加了开源社区中流行的告警规则，用作内置告警规则。默认情况下，3.0 版 KubeSphere 中的 Prometheus 会持续评估这些内置告警规则，然后向 Alertmanager 发送告警。
 
-## Use Alertmanager to Manage Kubernetes Event Alerts
+## 使用 Alertmanager 管理 Kubernetes 事件告警
 
-Alertmanager can be used to manage alerts sent from sources other than Prometheus. In KubeSphere v3.0 and above, users can use it to manage alerts triggered by Kubernetes events. For more details, refer to [kube-events](https://github.com/kubesphere/kube-events).
+Alertmanager 可用于管理 Prometheus 以外来源发出的告警。在 3.0 版及更高版本的 KubeSphere 中，用户可以用它管理由 Kubernetes 事件触发的告警。有关更多详细信息，请参考 [kube-events](https://github.com/kubesphere/kube-events)。
 
-## Use Alertmanager to Manage KubeSphere Auditing Alerts
+## 使用 Alertmanager 管理 KubeSphere 审计告警
 
-In KubeSphere v3.0 and above, users can also use Alertmanager to manage alerts triggered by Kubernetes/KubeSphere auditing events.
+在 3.0 版及更高版本的 KubeSphere 中，用户还可以使用 Alertmanager 管理由 Kubernetes 或 KubeSphere 审计事件触发的告警。
 
-## Receive Notifications for Alertmanager Alerts
+## 接收 Alertmanager 告警的通知
 
-Generally, to receive notifications for Alertmanager alerts, users have to edit Alertmanager's configuration files manually to configure receiver settings such as Email and Slack.
+一般来说，要接收 Alertmanager 告警的通知，用户需要手动编辑 Alertmanager 的配置文件，配置接收器（例如电子邮件和 Slack）的设置。
 
-This is not convenient for Kubernetes users and it breaks the multi-tenant principle/architecture of KubeSphere. More specifically, alerts triggered by workloads in different namespaces belonging to different users might be sent to the same user.
+这对 Kubernetes 用户来说并不方便，并且打破了 KubeSphere 的多租户规则/架构。具体来说，不同的命名空间属于不同的用户，由不同命名空间中的工作负载触发的告警可能会发送至同一个用户。
 
-To use Alertmanager to manage alerts on the platform, KubeSphere offers [Notification Manager](https://github.com/kubesphere/notification-manager), a Kubernetes native notification management tool, which is completely open source. It complies with the multi-tenancy principle, providing user-friendly experiences of Kubernetes notifications. It's installed by default in KubeSphere v3.0 and above.
+为了使用 Alertmanager 管理平台上的告警，KubeSphere 提供了 [Notification Manager](https://github.com/kubesphere/notification-manager)，它是一个 Kubernetes 原生通知管理工具，完全开源。它符合多租户规则，提供用户友好的 Kubernetes 通知体验，3.0 版及更高版本的 KubeSphere 均默认安装 Notification Manager。
 
-For more details about using Notification Manager to receive Alertmanager notifications, refer to [Notification Manager](../notification-manager).
+有关使用 Notification Manager 接收 Alertmanager 通知的详细信息，请参考 [Notification Manager](../notification-manager)。
