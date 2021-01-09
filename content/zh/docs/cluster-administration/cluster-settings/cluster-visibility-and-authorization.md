@@ -26,7 +26,7 @@ weight: 8610
 
 3. 输入企业空间的基本信息，点击**下一步**。
 
-4. 在**集群选择**页面，您可以看到可用集群列表，选择分配给企业空间的集群。
+4. 在**集群选择**页面，您可以看到可用的集群列表，选择要分配给企业空间的集群并点击**创建**。
 
    ![选择集群](/images/docs/zh-cn/cluster-administration/cluster-settings/cluster-visibility-and-authorization/select-a-cluster.PNG)
 
