@@ -20,7 +20,7 @@ As a lightweight platform, KubeSphere has become more friendly to different clou
 
 KubeSphere hides the details of underlying infrastructure for users and helps enterprises modernize, migrate, deploy and manage existing and containerized apps seamlessly across a variety of infrastructure types. This is how KubeSphere empowers developers and Ops teams to focus on application development and accelerate DevOps automated workflows and delivery processes with enterprise-level observability and troubleshooting, unified monitoring and logging, centralized storage and networking management, easy-to-use CI/CD pipelines, and so on.
 
-![KubeSphere Overview](https://pek3b.qingstor.com/kubesphere-docs/png/20200224091526.png)
+![kubesphere-ecosystem](/images/docs/introduction/kubesphere-ecosystem.png)
 
 ## What's New in 3.0
 
