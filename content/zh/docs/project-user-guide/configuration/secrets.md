@@ -32,7 +32,7 @@ Kubernetes [密钥 (Secret)](https://kubernetes.io/zh/docs/concepts/configuratio
 
 {{< notice tip >}}
 
-您可以在对话框右上角启用**编辑模式**来查看密钥的 YAML 清单文件，并通过直接编辑清单文件来创建密钥。您也可继续执行后续步骤在控制台上创建密钥。
+您可以在对话框右上角启用**编辑模式**来查看密钥的 YAML 清单文件，并通过直接编辑清单文件来创建密钥。您也可以继续执行后续步骤在控制台上创建密钥。
 
 {{</ notice >}} 
 
@@ -114,7 +114,7 @@ Kubernetes [密钥 (Secret)](https://kubernetes.io/zh/docs/concepts/configuratio
 
 ![use-secret-repository](/images/docs/zh-cn/project-user-guide/configurations/secrets/use-secret-repository.jpg)
 
-此外，您还可能需要为容器添加环境变量。创建部署时，您可以在**容器镜像**页面勾选**环境变量**，点击**引用配置文件或密钥**，然后从下拉列表中选择一个密钥。
+此外，您还可以用密钥为容器添加环境变量。您可以在**容器镜像**页面勾选**环境变量**，点击**引用配置文件或密钥**，然后从下拉列表中选择一个密钥。
 
 ![use-secret-image](/images/docs/zh-cn/project-user-guide/configurations/secrets/use-secret-image.jpg)
 
