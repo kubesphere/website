@@ -1,2 +1,57 @@
+@import 'variables';
 
+@mixin clearfix {
+  zoom: 1;
+
+  &:after {
+    content: '.';
+    display: block;
+    clear: both;
+    overflow: hidden;
+    height: 0;
+    visibility: hidden;
+  }
+}
+
+@mixin ellipsis {
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  word-wrap: normal;
+  overflow: hidden;
+}
+
+@mixin block-ellipsis($line: 2) {
+  display: -webkit-box;
+  overflow: hidden;
+  -webkit-line-clamp: $line;
+  -webkit-box-orient: vertical;
+}
+
+@mixin nowrap {
+  white-space: nowrap;
+  word-wrap: normal;
+}
+
+@mixin break-all {
+  word-break: break-all;
+  white-space: normal;
+}
+
+@mixin break-word {
+  word-wrap: break-word;
+  white-space: normal;
+}
+
+@mixin vertical-center {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+@mixin middle {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
 

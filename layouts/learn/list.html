@@ -1,0 +1,218 @@
+{{ define "main" }}
+
+{{ with .Params.section1 }}
+<section class="section-1 bg-cover" style='background-image: url("{{ .topImage }}");'>
+    <div class="common-layout">
+        <h1 class="title-h1">{{ .title }}</h1>
+        <p class="common-p">{{ .content | safeHTML }}</p>
+    </div>
+</section>
+{{ end }}
+
+{{ with .Params.section2 }}
+<section class="section-2">
+    <div>
+        <div class="common-layout">
+            <ul>
+                {{ range .list }}
+                <li>
+                    <a href="#{{.id}}">{{ .name }}</a>
+                </li>
+                {{ end }}
+            </ul>
+        </div>
+    </div>
+    
+</section>
+{{ end }}
+
+<section class="section-3" id="section3">
+    {{ with .Params.section3 }}
+    <div class="common-layout">
+        <h2>{{ .title }}</h2>
+        <div class="video-div">
+            <video src="{{ .videoUrl }}" poster="{{ .snapshot }}" controls></video>
+            <p>{{ .description }}</p>
+        </div>
+    </div>
+    {{ end }}
+</section>
+
+<section class="section-4" id="section4">
+    {{ with .Params.section4 }}
+    <div class="common-layout">
+        <h2>{{ .title }}</h2>
+        <p>{{ .description }}</p>
+        <ul>
+            {{ range .list }}
+            <li>
+                <img src="{{ .image }}" alt="icon">
+                <div class="name">{{ .name }}</div>
+                <div class="profession">{{ .profession }}</div>
+                <p>{{ .description }}</p>
+            </li>
+            {{ end }}
+        </ul>
+    </div>
+    {{ end }}
+</section>
+
+<section class="section-5" id="section5">
+    {{ with .Params.section5 }}
+    <div class="common-layout">
+        <h2>{{ .title }}</h2>
+        <ul>
+            {{ range .list }}
+            <li>
+                <p>{{ .content }}</p>
+                <img src="{{ .icon }}" alt="icon">
+            </li>
+            {{ end }} 
+        </ul>
+    </div>
+    {{ end }}
+</section>
+
+<section class="section-6" id="section6">
+    <div class="common-layout">
+        <h2>{{ .Params.section6.title }}</h2>
+        <ul class="level">
+            {{ range .Page.Sections }}
+            <li>
+                <p class="title">{{ .LinkTitle }}</p>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>{{ i18n "Course theme"}}</th>
+                            <th>{{ i18n "Course benefits"}}</th>
+                            <th class="center">{{ i18n "Video tutorial"}}</th>
+                            <th class="center">{{ i18n "Graphic Course"}}</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {{ range .Page.Sections }}
+                        <tr>
+                            <td>{{ .LinkTitle }}</td>
+                            <td>{{ .Params.profit }}</td>
+                            <td class="center">
+                                {{ with .GetPage "video" }}
+                                <a class="video-link" href="{{ .RelPermalink}}">{{ i18n "Start learning" }}</a>
+                                {{ end }}
+                            </td>
+                            <td class="center">
+                                {{ with .GetPage "content" }}
+                                <a class="content-link" href="{{ .RelPermalink }}">{{ i18n "View graphic" }}</a>
+                                {{ end }}
+                            </td>
+                        </tr>
+                        {{ end }}
+                    </tbody>
+                </table>
+            </li>
+            {{ end }} 
+        </ul>
+    </div>
+</section>
+
+<section class="section-7" id="section7">
+    {{ with .Params.section7 }}
+    <div class="common-layout">
+        <h2>{{ .title }}</h2>
+        <ul>
+            {{ range .list }}
+            <li>
+                <div class="tip"></div>
+                <div class="name">{{ .company }}</div>
+                <p><span class="profession"></span><span>{{ .profession }}</span></p>
+                <p><span class="base"></span></span><span>{{ .base }} | {{ .workYears }}</span></p>
+                <div class="apply">
+                    <a href="{{ .link }}">{{ i18n "Apply for the job" }}</a>
+                </div>
+            </li>
+            {{ end }} 
+        </ul>
+        <div class="more">
+            <a href="{{ .link }}">{{ i18n "View more jobs" }}</a>
+        </div>
+    </div>
+    {{ end }}
+</section>
+
+<script>
+var getElementTopToScreenTop = function(element) {
+  var elementOffsetTop = element.offset().top
+  var windowScrollTop = $(window).scrollTop()
+  return elementOffsetTop - windowScrollTop
+}
+
+var initScrollByHash = function() {
+  var hash = decodeURI(window.location.hash)
+  var element = $(hash)
+  if (element.length > 0) {
+    setTimeout(function() {
+      scrollToElement(hash)
+    })
+  }
+}
+
+var bindClickTopLink = function() {
+  var top = $('.section-2')
+  top.find('a').click(function(event) {
+    var id = $(this).attr('href')
+    setTimeout(function() {
+      scrollToElement(id)
+    })
+  })
+}
+
+var scrollToElement = function(id) {
+  var element = $(id)
+  var headerHeight = $('header').outerHeight()
+  var topHeight = $('.section-2').outerHeight()
+  var toTop = element.offset().top
+  window.scrollTo(0, toTop - headerHeight - topHeight)
+}
+
+var topPosition = function() {
+    var top = $('.section-2')
+    var topContent = $('.section-2 > div')
+    var headerHeight = $('header').outerHeight()
+    var contentToTop = getElementTopToScreenTop(top)
+    if (contentToTop < headerHeight) {
+        topContent.css("position", 'fixed')
+        topContent.css("top", headerHeight)
+        topContent.addClass('top-shadow')
+    } else {
+        topContent.css("position", 'relative')
+        topContent.css("top", 0)
+        topContent.removeClass('top-shadow')
+    }
+}
+
+var topActive = function() {
+    var top = $('.section-2')
+    var headerHeight = $('header').outerHeight()
+    var topHeight = $('.section-2').outerHeight()
+    top.find('a').each(function() {
+      var id = $(this).attr('href')
+      console.log(id)
+      var h = $(id)
+      var elementToTop = getElementTopToScreenTop(h)
+      if (elementToTop < headerHeight + topHeight + 10) {
+        top.find('.active').removeClass('active')
+        $(this).addClass('active')
+      }
+    })
+}
+
+var bindScrollEvent = function() {
+  $( window ).scroll(function() {
+    topPosition()
+    topActive()
+  })
+}
+bindScrollEvent()
+initScrollByHash()
+bindClickTopLink()
+</script>
+{{ end }}

@@ -1,0 +1,274 @@
+@import "variables";
+
+.navigation {
+  box-shadow: 0 4px 8px 0 rgba(36, 46, 66, 0.06), 0 8px 16px 0 rgba(36, 46, 66, 0.05);
+  background-image: linear-gradient(to bottom, rgba(134, 219, 162, 0.9), rgba(0, 170, 114, 0.9));
+}
+
+.section-1 {
+  padding-top: 98px;
+  @media only screen and (max-width: $mobile-max-width) {
+    padding-top: 128px;
+  }
+  span {
+    font-size: 16px;
+    line-height: 1.5;
+    letter-spacing: -0.04px;
+    color: #3d3e49;
+    text-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
+    a {
+      color: #3d3e49;
+
+      &:hover {
+        color: #00aa72;
+      }
+    }
+
+    &:last-child {
+      opacity: 0.6;
+    }
+  }
+}
+
+.section-2 {
+  margin-top: 4px;
+
+  .common-layout {
+    display: flex;
+    align-items: flex-start;
+
+    .left {
+      position: relative;
+      box-sizing: border-box;
+      width: 781px;
+      padding: 20px;
+      background-color: #ffffff;
+
+      iframe {
+        width: 100%;
+        height: 800px;
+      }
+
+      & > video {
+        width: 100%;
+        margin-bottom: 10px;
+        outline: none;
+      }
+
+      .date {
+        display: flex;
+        align-items: center;
+        font-size: 14px;
+        line-height: 1.43;
+        color: #919aa3;
+
+        .time {
+          display: inline-block;
+          margin-right: 4px;
+          width: 14px;
+          height: 14px;
+          background-image: url("/images/learn/time.svg");
+        }
+      }
+
+      .pdf-div {
+        margin-top: 10px;
+      }
+
+      @media only screen and (max-width: $mobile-max-width) {
+        width: 100%;
+        padding: 10px;
+
+        iframe {
+          height: 600px;
+        }
+      }
+    }
+
+    .right {
+      box-sizing: border-box;
+      width: 368px;
+      padding: 24px;
+      max-height: 600px;
+      margin-left: 15px;
+      overflow: auto;
+      background-color: #ffffff;
+
+      @media only screen and (max-width: $mobile-max-width) {
+        display: none;
+      }
+
+      .lesson-div {
+        margin-top: 20px;
+
+        &:first-child {
+          margin-top: 0;
+        }
+
+        & > p {
+          position: relative;
+          padding-left: 9px;
+          font-size: 16px;
+          font-weight: 500;
+          line-height: 1.5;
+          letter-spacing: -0.04px;
+
+          &::before {
+            position: absolute;
+            top: 10px;
+            left: 0;
+            content: "";
+            width: 4px;
+            height: 4px;
+            border-radius: 50%;
+            background-color: #36435c;
+          }
+
+          a {
+            color: #36435c;
+            &:hover {
+              color: #55bc8a;
+            }
+          }
+
+          .icon {
+            display: inline-block;
+            margin-left: 6px;
+            width: 12px;
+            height: 12px;
+            background-image: url("/images/learn/video.svg");
+          }
+
+          .play-span {
+            display: none;
+            height: 12px;
+            font-size: 0;
+            span {
+              display: inline-block;
+              width: 2px;
+              height: 100%;
+              margin-right: 2px;
+              background-color: #55bc8a;
+            }
+          }
+
+          .playing {
+            display: inline-block;
+            span {
+              animation-name: playing;
+              animation-duration: 1s;
+              animation-timing-function: ease;
+              animation-delay: 0s;
+              animation-iteration-count: infinite;
+
+              &:first-child {
+                animation-delay: 0.3s;
+              }
+              &:last-child {
+                animation-delay: 0.5s;
+              }
+            }
+          }
+        }
+        & > p.active {
+          a {
+            color: #55bc8a;
+          }
+
+          &::before {
+            background-color: #55bc8a;
+          }
+        }
+      }
+
+      .lesson-link-div {
+        margin-top: 10px;
+        display: flex;
+        a {
+          display: block;
+          box-sizing: border-box;
+          width: 100px;
+          height: 72px;
+          padding: 11px 20px 10px;
+          margin-left: 10px;
+          margin-right: 0;
+          font-size: 14px;
+          line-height: 24px;
+          text-align: center;
+          color: #8f94a1;
+          border-radius: 4px;
+          background-color: #f5f9fa;
+          border: solid 1px transparent;
+
+          &:first-child {
+            margin-left: 0;
+          }
+
+          &:hover {
+            border: solid 1px #4ca986;
+          }
+
+          span {
+            display: inline-block;
+            width: 24px;
+            height: 24px;
+          }
+        }
+        
+        .active {
+          color: #00a971;
+          border: solid 1px #55bc8a;
+          background-color: #cdf6d5;
+        }
+
+        .lesson {
+          span {
+            background-image: url("/images/learn/icon-image.svg");
+          }
+        }
+
+        .lesson.active {
+          span {
+            background-image: url("/images/learn/icon-image-active.svg");
+          }
+        }
+
+        .courseware {
+          span {
+            background-image: url("/images/learn/icon-ppt.svg");
+          }
+        }
+
+        .courseware.active {
+          span {
+            background-image: url("/images/learn/icon-ppt-active.svg");
+          }
+        }
+
+        .examination {
+          span {
+            background-image: url("/images/learn/icon-download.svg");
+          }
+        }
+
+        .examination.active {
+          span {
+            background-image: url("/images/learn/icon-download-active.svg");
+          }
+        }
+      }
+    }
+  }
+}
+
+@keyframes playing {
+  0% {
+    height: 100%;
+  }
+  50% {
+    height: 50%;
+  }
+  100% {
+    height: 100%;
+  }
+}
