@@ -1,8 +1,7 @@
 ---
 title: "Monitor MySQL"
-keywords: 'monitoring, prometheus, prometheus operator'
+keywords: 'monitoring, Prometheus, Prometheus operator'
 description: 'Monitor MySQL'
-
 linkTitle: "Monitor MySQL"
 weight: 10812
 ---
@@ -13,15 +12,15 @@ This tutorial walks you through an example of how to monitor MySQL metrics and v
 ## Prerequisites
 
 - Please make sure you [enable the OpenPitrix system](https://kubesphere.io/docs/pluggable-components/app-store/). MySQL and MySQL exporter will be deployed from the App Store.
-- You need to create a workspace, a project, and a user account for this tutorial. For more information, see [Create Workspace, Project, Account and Role](../../../../quick-start/create-workspace-and-project/). The account needs to be a platform regular user and to be invited as the project operator with the `operator` role. In this tutorial, you log in as `project-operator` and work in the project `demo` in the workspace `demo-workspace`.
+- You need to create a workspace, a project, and a user account for this tutorial. For more information, see [Create Workspaces, Projects, Accounts and Roles](../../../../quick-start/create-workspace-and-project/). The account needs to be a platform regular user and to be invited as the project operator with the `operator` role. In this tutorial, you log in as `project-operator` and work in the project `demo` in the workspace `demo-workspace`.
 
 ## Hands-on Lab
 
 ### Step 1: Deploy MySQL
 
-To begin with, you [deploy MySQL from the App Store](../../../../application-store/built-in-apps/mysql-app/) and set the root password to `testing`. Please make sure you are landing on the **Overview** page of the project `demo`.
+To begin with, you [deploy MySQL from the App Store](../../../../application-store/built-in-apps/mysql-app/) and set the root password to `testing`.
 
-1. Go to **App Store**.
+1. Go to the project `demo` and click **App Store** in the top left corner.
 
     ![go-to-app-store](/images/docs/project-user-guide/custom-application-monitoring/go-to-app-store.jpg)
 
@@ -62,7 +61,7 @@ You need to deploy MySQL exporter in `demo` on the same cluster. MySQL exporter 
     ![set-servicemonitor-to-true](/images/docs/project-user-guide/custom-application-monitoring/set-servicemonitor-to-true.jpg)
 
     {{< notice warning >}}
-Don't forget to enable the SericeMonitor CRD if you are using external exporter helm charts. Those charts usually disable ServiceMonitor by default and require manual modification.
+Don't forget to enable the SericeMonitor CRD if you are using external exporter Helm charts. Those charts usually disable ServiceMonitor by default and require manual modification.
     {{</ notice >}}
 
 4. Modify MySQL connection parameters. MySQL exporter needs to connect to the target MySQL. In this tutorial, MySQL is installed with the service name `mysql-a8xgvx`. Set `mysql.host` to `mysql-a8xgvx`, `mysql.pass` to `testing`, and `user` to `root` as below. Note that your MySQL service may be created with **a different name**.
@@ -75,7 +74,7 @@ Don't forget to enable the SericeMonitor CRD if you are using external exporter 
 
     ![exporter-is-running](/images/docs/project-user-guide/custom-application-monitoring/exporter-is-running.jpg)
 
-### Step 3: Create Dashboard
+### Step 3: Create a monitoring dashboard
 
 After about two minutes, you can create a monitoring dashboard for MySQL and visualize metrics in real time.
 
@@ -83,7 +82,7 @@ After about two minutes, you can create a monitoring dashboard for MySQL and vis
 
     ![navigate-to-custom-monitoring](/images/docs/project-user-guide/custom-application-monitoring/navigate-to-custom-monitoring.jpg)
 
-2. In the dialog that appears, name the dashboard as `mysql-overview` and choose **MySQL template**. Click **Create** to continue.
+2. In the dialog that appears, name the dashboard `mysql-overview` and choose **MySQL template**. Click **Create** to continue.
 
     ![create-mysql-dashboard](/images/docs/project-user-guide/custom-application-monitoring/create-mysql-dashboard.jpg)
 

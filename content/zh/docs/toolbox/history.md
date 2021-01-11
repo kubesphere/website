@@ -1,19 +1,19 @@
 ---
-title: "History"
-keywords: 'KubeSphere, Kubernetes, history'
-description: 'View browsing history from the toolbox.'
-linkTitle: "History"
+title: "历史记录"
+keywords: 'KubeSphere, Kubernetes, 历史记录'
+description: '在工具箱中查看浏览历史记录。'
+linkTitle: "历史记录"
 weight: 15500
 ---
 
-When you work in multiple workspaces or projects, your web browser will record the latest path you visited. 
+当您在多个企业空间或项目中进行操作，您的 Web 浏览器会记录您最新访问的路径。
 
-You can check your history using F1, Win+K, or Command +K, which helps you quickly switch between the resources you access. Alternatively, follow the steps below to see the browsing history:
+您可以使用 F1 键、Win 键+K 键或者 Command 键+K 键来查看历史记录，帮助您快速切换访问的资源。或者，按照以下步骤查看浏览历史记录：
 
-1. Click the hammer icon in the bottom right corner and select **History**.
+1. 点击右下角的锤子图标，选择**历史记录**。
 
-   ![toolbox](/images/docs/toolbox/history/toolbox.jpg)
+   ![工具箱](/images/docs/zh-cn/toolbox/history/toolbox.PNG)
 
-2. You can see your browsing history under **Recent Visit**. You can also find the quick links to user guides, API documentation and more on the **History** page.
+2. 您可以在**最近访问**下查看浏览历史记录，还可以在**历史记录**页面找到用户指南、API 文档等快捷链接。
 
-   ![recent-history](/images/docs/toolbox/history/recent-history.jpg)
+   ![近期历史记录](/images/docs/zh-cn/toolbox/history/recent-history.PNG)

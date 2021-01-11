@@ -13,11 +13,11 @@ This tutorial walks you through an example of deploying NGINX from the App Store
 ## Prerequisites
 
 - Please make sure you [enable the OpenPitrix system](../../../pluggable-components/app-store/).
-- You need to create a workspace, a project, and a user account (`project-regular`) for this tutorial. The account needs to be a platform regular user and to be invited as the project operator with the `operator` role. In this tutorial, you log in as `project-regular` and work in the project `demo-project` in the workspace `demo-workspace`. For more information, see [Create Workspace, Project, Account and Role](../../../quick-start/create-workspace-and-project/).
+- You need to create a workspace, a project, and a user account (`project-regular`) for this tutorial. The account needs to be a platform regular user and to be invited as the project operator with the `operator` role. In this tutorial, you log in as `project-regular` and work in the project `demo-project` in the workspace `demo-workspace`. For more information, see [Create Workspaces, Projects, Accounts and Roles](../../../quick-start/create-workspace-and-project/).
 
 ## Hands-on Lab
 
-### Step 1: Deploy NGINX from App Store
+### Step 1: Deploy NGINX from the App Store
 
 1. On the **Overview** page of the project `demo-project`, click **App Store** in the top left corner.
 

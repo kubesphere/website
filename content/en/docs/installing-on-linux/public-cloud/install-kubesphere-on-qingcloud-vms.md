@@ -1,121 +1,121 @@
 ---
-title: "Deploy KubeSphere on QingCloud Instance"
+title: "Deploy KubeSphere on QingCloud Instances"
 keywords: "KubeSphere, Installation, HA, High-availability, LoadBalancer"
-description: "The tutorial is for installing a high-availability cluster."
-
+description: "The tutorial is for installing a high-availability cluster on QingCloud instances."
+linkTitle: "Deploy KubeSphere on QingCloud Instances"
 Weight: 3220
 ---
 
 ## Introduction
 
-For a production environment, we need to consider the high availability of the cluster. If the key components (e.g. kube-apiserver, kube-scheduler, and kube-controller-manager) are all running on the same master node, Kubernetes and KubeSphere will be unavailable once the master node goes down. Therefore, we need to set up a high-availability cluster by provisioning load balancers with multiple master nodes. You can use any cloud load balancer, or any hardware load balancer (e.g. F5). In addition, Keepalived and [HAproxy](https://www.haproxy.com/), or Nginx is also an alternative for creating high-availability clusters.
+For a production environment, you need to consider the high availability of the cluster. If key components (e.g. kube-apiserver, kube-scheduler, and kube-controller-manager) are all running on the same master node, Kubernetes and KubeSphere will be unavailable once the master node goes down. Therefore, you need to set up a high-availability cluster by provisioning load balancers with multiple master nodes. You can use any cloud load balancer, or any hardware load balancer (e.g. F5). In addition, Keepalived and [HAproxy](https://www.haproxy.com/), or Nginx is also an alternative for creating high-availability clusters.
 
-This tutorial walks you through an example of how to create two [QingCloud Load Balancers](https://docs.qingcloud.com/product/network/loadbalancer), serving as the internal load balancer and external load balancer respectively, and of how to implement high availability of master and etcd nodes using the load balancers.
+This tutorial walks you through an example of how to create two [QingCloud load balancers](https://docs.qingcloud.com/product/network/loadbalancer), serving as the internal load balancer and external load balancer respectively, and of how to implement high availability of master and etcd nodes using the load balancers.
 
 ## Prerequisites
 
-- Please make sure that you already know how to install KubeSphere with a multi-node cluster by following the [guide](https://github.com/kubesphere/kubekey). For the detailed information about the config yaml file that is used for installation, see Multi-node Installation. This tutorial focuses more on how to configure load balancers.
+- Make sure you already know how to install KubeSphere on a multi-node cluster by following the [guide](../../../installing-on-linux/introduction/multioverview/). For detailed information about the configuration file that is used for installation, see [Edit the configuration file](../../../installing-on-linux/introduction/multioverview/#2-edit-the-configuration-file). This tutorial focuses more on how to configure load balancers.
 - You need a [QingCloud](https://console.qingcloud.com/login) account to create load balancers, or follow the guide of any other cloud provider to create load balancers.
-- Considering data persistence, for a production environment, we recommend you to prepare persistent storage and create a StorageClass in advance. For development and testing, you can use the integrated OpenEBS to provision LocalPV as the storage service directly.
+- For a production environment, it is recommended that you prepare persistent storage and create a StorageClass in advance. For development and testing, you can use the integrated OpenEBS to provision LocalPV as the storage service directly.
 
 ## Architecture
 
-This example prepares six machines of **Ubuntu 16.04.6**. We will create two load balancers, and deploy three master and etcd nodes on three of the machines. You can configure these master and etcd nodes in `config-sample.yaml` of KubeKey (Please note that this is the default name, which can be changed by yourself).
+This example prepares six machines of **Ubuntu 16.04.6**. You will create two load balancers, and deploy three master and etcd nodes on three of the machines. You can configure these master and etcd nodes in `config-sample.yaml` created by KubeKey (Please note that this is the default name, which can be changed by yourself).
 
-![kubesphere-ha-architecture](https://ap3.qingstor.com/kubesphere-website/docs/ha-architecture.png)
-
-{{< notice note >}}
-
-The Kubernetes document [Options for Highly Available topology](https://kubernetes.io/docs/setup/production-environment/tools/kubeadm/ha-topology/) demonstrates that there are two options for configuring the topology of a highly available (HA) Kubernetes cluster, i.e. stacked etcd topology and external etcd topology. You should carefully consider the advantages and disadvantages of each topology before setting up an HA cluster according to [this document](https://kubernetes.io/docs/setup/production-environment/tools/kubeadm/ha-topology/). In this guide, we adopt stacked etcd topology to bootstrap an HA cluster for convenient demonstration.
-
-{{</ notice >}}
-
-## Install HA Cluster
-
-### Create Load Balancers
-
-This step demonstrates how to create load balancers on QingCloud platform.
-
-#### Create an Internal Load Balancer
-
-1. Log in [QingCloud Console](https://console.qingcloud.com/login). In the menu on the left, under **Network & CDN**, select **Load Balancers**. Click **Create** to create a load balancer.
-
-![create-lb](https://ap3.qingstor.com/kubesphere-website/docs/create-lb.png)
-
-2. In the pop-up window, set a name for the load balancer. Choose the VxNet where your machines are created from the Network drop-down list. Here is `pn`. Other fields can be default values as shown below. Click **Submit** to finish.
-
-![qingcloud-lb](https://ap3.qingstor.com/kubesphere-website/docs/qingcloud-lb.png)
-
-3. Click the load balancer. In the detailed information page, create a listener that listens on port `6443` with the Listener Protocol set as `TCP`.
-
-![Listener](https://ap3.qingstor.com/kubesphere-website/docs/listener.png)
-
-- Name: Define a name for this Listener
-- Listener Protocol: Select `TCP` protocol
-- Port: `6443`
-- Load mode: `Poll`
-
-Click Submit to continue.
+![ha-architecture](/images/docs/installing-on-linux/installing-on-public-cloud/deploy-kubesphere-on-qingcloud-instances/ha-architecture.png)
 
 {{< notice note >}}
 
-After you create the listener, please check the firewall rules of the load balancer. Make sure that the port `6443` has been added to the firewall rules and the external traffic can pass through `6443`. Otherwise, the installation will fail. If you are using QingCloud platform, you can find the information in **Security Groups** under **Security**.
+The Kubernetes document [Options for Highly Available topology](https://kubernetes.io/docs/setup/production-environment/tools/kubeadm/ha-topology/) demonstrates that there are two options for configuring the topology of a highly available (HA) Kubernetes cluster, i.e. stacked etcd topology and external etcd topology. You should carefully consider the advantages and disadvantages of each topology before setting up an HA cluster according to [this document](https://kubernetes.io/docs/setup/production-environment/tools/kubeadm/ha-topology/). This tutorial adopts stacked etcd topology to bootstrap an HA cluster for demonstration purposes.
 
 {{</ notice >}}
 
-4. Click **Add Backend**, and choose the VxNet you just selected (in this example, it is `pn`). Click the button **Advanced Search**, choose the three master nodes, and set the port to `6443` which is the default secure port of api-server.
+## Install an HA Cluster
 
-![add-backend](https://ap3.qingstor.com/kubesphere-website/docs/3-master.png)
+### Step 1: Create load balancers
 
-Click **Submit** when you finish.
+This step demonstrates how to create load balancers on the QingCloud platform.
 
-5. Click the button **Apply Changes** to activate the configurations. At this point, you can find the three masters have been added as the backend servers of the listener that is behind the internal load balancer.
+#### Create an internal load balancer
 
-{{< notice note >}}
+1. Log in to the [QingCloud console](https://console.qingcloud.com/login). In the menu on the left, under **Network & CDN**, select **Load Balancers**. Click **Create** to create a load balancer.
 
-The status of all masters might show `Not Available` after you added them as backends. This is normal since the port `6443` of api-server is not active on master nodes yet. The status will change to `Active` and the port of api-server will be exposed after the installation finishes, which means the internal load balancer you configured works as expected.
+   ![create-lb](/images/docs/installing-on-linux/installing-on-public-cloud/deploy-kubesphere-on-qingcloud-instances/create-lb.png)
 
-{{</ notice >}}
+2. In the pop-up window, set a name for the load balancer. Choose the VxNet where your machines are created from the **Network** drop-down list. Here is `pn`. Other fields can be default values as shown below. Click **Submit** to finish.
 
-![apply-changes](https://ap3.qingstor.com/kubesphere-website/docs/apply-change.png)
+   ![qingcloud-lb](/images/docs/installing-on-linux/installing-on-public-cloud/deploy-kubesphere-on-qingcloud-instances/qingcloud-lb.png)
 
-Record the Intranet VIP shown under Networks. The IP address will be added later to the config yaml file.
+3. Click the load balancer. On the detail page, create a listener that listens on port `6443` with the **Listener Protocol** set to `TCP`.
 
-#### Create an External Load Balancer
+   ![listener](/images/docs/installing-on-linux/installing-on-public-cloud/deploy-kubesphere-on-qingcloud-instances/listener.png)
+
+   - **Name**: Define a name for this Listener
+   - **Listener Protocol**: Select `TCP` protocol
+   - **Port**: `6443`
+   - **Balance mode**: `Poll`
+
+   Click **Submit** to continue.
+
+   {{< notice note >}}
+   
+   After you create the listener, check the firewall rules of the load balancer. Make sure that port `6443` has been added to the firewall rules and that external traffic is allowed to port `6443`. Otherwise, the installation will fail. You can find the information in **Security Groups** under **Security** on the QingCloud platform.
+   
+   {{</ notice >}}
+
+4. Click **Add Backend**, and choose the VxNet you just selected (in this example, it is `pn`). Click **Advanced Search**, choose the three master nodes, and set the port to `6443` which is the default secure port of api-server.
+
+   ![3-master](/images/docs/installing-on-linux/installing-on-public-cloud/deploy-kubesphere-on-qingcloud-instances/3-master.png)
+
+   Click **Submit** when you finish.
+
+5. Click  **Apply Changes** to use the configurations. At this point, you can find the three masters have been added as the backend servers of the listener that is behind the internal load balancer.
+
+   {{< notice note >}}
+   
+   The status of all masters might show **Not Available** after you added them as backends. This is normal since port `6443` of api-server is not active on master nodes yet. The status will change to **Active** and the port of api-server will be exposed after the installation finishes, which means the internal load balancer you configured works as expected.
+   
+   {{</ notice >}}
+   
+   ![apply-change](/images/docs/installing-on-linux/installing-on-public-cloud/deploy-kubesphere-on-qingcloud-instances/apply-change.png)
+   
+   Record the Intranet VIP shown under **Networks**. The IP address will be added later to the configuration file.
+
+#### Create an external load balancer
 
 You need to create an EIP in advance. To create an EIP, go to **Elastic IPs** under **Networks & CDN**.
 
 {{< notice note >}}
 
-Two elastic IPs are needed for this whole tutorial, one for the VPC network and the other for the external load balancer created in this step. You cannot associate the same EIP to the VPC network and the load balancer at the same time.
+Two elastic IPs are needed for this tutorial, one for the VPC network and the other for the external load balancer created in this step. You cannot associate the same EIP to the VPC network and the load balancer at the same time.
 
 {{</ notice >}}
 
-6. Similarly, create an external load balancer while don't select VxNet for the Network field. Bind the EIP that you created to this load balancer by clicking **Add IPv4**.
+1. Similarly, create an external load balancer while don't select VxNet for the **Network** field. Bind the EIP that you created to this load balancer by clicking **Add IPv4**.
 
-![bind-eip](https://ap3.qingstor.com/kubesphere-website/docs/bind-eip.png)
+   ![bind-eip](/images/docs/installing-on-linux/installing-on-public-cloud/deploy-kubesphere-on-qingcloud-instances/bind-eip.png)
 
-7. In the load balancer detailed information page, create a listener that listens on port `30880` (NodePort of KubeSphere console) with the Listener Protocol set as `HTTP`.
+2. On the load balancer's detail page, create a listener that listens on port `30880` (NodePort of KubeSphere console) with **Listener Protocol** set to `HTTP`.
 
-{{< notice note >}}
+   {{< notice note >}}
 
-After you create the listener, please check the firewall rules of the load balancer. Make sure that the port `30880` has been added to the firewall rules and the external traffic can pass through `6443`. Otherwise, the installation will fail. If you are using QingCloud platform, you can find the information in **Security Groups** under **Security**.
+   After you create the listener, check the firewall rules of the load balancer. Make sure that port `30880` has been added to the firewall rules and that external traffic is allowed to port `30880`. Otherwise, the installation will fail. You can find the information in **Security Groups** under **Security** on the QingCloud platform.
 
-{{</ notice >}}
+   {{</ notice >}}
 
-![listener2](https://ap3.qingstor.com/kubesphere-website/docs/listener2.png)
+   ![listener2](/images/docs/installing-on-linux/installing-on-public-cloud/deploy-kubesphere-on-qingcloud-instances/listener2.png)
 
-8. Click **Add Backend**. In **Advanced Search**, choose the `six` machines on which we are going to install KubeSphere within the VxNet `pn`, and set the port to `30880`.
+3. Click **Add Backend**. In **Advanced Search**, choose the `six` machines on which you are going to install KubeSphere within the VxNet `pn`, and set the port to `30880`.
 
-![six-instances](https://ap3.qingstor.com/kubesphere-website/docs/six-instances.png)
+   ![six-instances](/images/docs/installing-on-linux/installing-on-public-cloud/deploy-kubesphere-on-qingcloud-instances/six-instances.png)
 
-Click **Submit** when you finish.
+   Click **Submit** when you finish.
 
-9. Click **Apply Changes** to activate the configurations. At this point, you can find the six machines have been added as the backend servers of the listener that is behind the external load balancer.
+4. Click **Apply Changes** to use the configurations. At this point, you can find the six machines have been added as the backend servers of the listener that is behind the external load balancer.
 
-### Download KubeKey
+### Step 2: Download KubeKey
 
-[Kubekey](https://github.com/kubesphere/kubekey) is the next-gen installer which provides an easy, fast and flexible way to install Kubernetes and KubeSphere v3.0.0.
+[Kubekey](https://github.com/kubesphere/kubekey) is the next-gen installer which provides an easy, fast and flexible way to install Kubernetes and KubeSphere.
 
 Follow the step below to download KubeKey.
 
@@ -147,7 +147,7 @@ curl -sfL https://get-kk.kubesphere.io | VERSION=v1.0.1 sh -
 
 {{< notice note >}}
 
-After you download KubeKey, If you transfer it to a new machine also with poor network connections to Googleapis, you must run `export KKZONE=cn` again before you proceed with the steps below.
+After you download KubeKey, if you transfer it to a new machine also with poor network connections to Googleapis, you must run `export KKZONE=cn` again before you proceed with the steps below.
 
 {{</ notice >}} 
 
@@ -182,9 +182,9 @@ Create an example configuration file with default configurations. Here Kubernete
 
 {{</ notice >}}
 
-### Cluster Node Planning
+### Step 3: Set cluster nodes
 
-As we adopt the HA topology with stacked control plane nodes, where etcd nodes are colocated with master nodes, we will define the master nodes and etcd nodes are on the same three machines.
+As you adopt the HA topology with stacked control plane nodes, the master nodes and etcd nodes are on the same three machines.
 
 | **Property** | **Description**                   |
 | :----------- | :-------------------------------- |
@@ -193,7 +193,7 @@ As we adopt the HA topology with stacked control plane nodes, where etcd nodes a
 | `master`     | Master node names                 |
 | `worker`     | Worker node names                 |
 
-- Put the master node name (master1, master2 and master3) under `etcd` and `master` respectively as below, which means these three machines will be assigned with both the master and etcd role. Please note that the number of etcd needs to be odd. Meanwhile, we do not recommend you to install etcd on worker nodes since the memory consumption of etcd is very high. Edit the configuration file, and we use **Ubuntu 16.04.6** in this example.
+Put the master node name (`master1`, `master2` and `master3`) under `etcd` and `master` respectively as below, which means these three machines will serve as both the master and etcd nodes. Note that the number of etcd needs to be odd. Meanwhile, it is not recommended that you install etcd on worker nodes since the memory consumption of etcd is very high.
 
 #### config-sample.yaml Example
 
@@ -221,11 +221,13 @@ spec:
     - node3
 ```
 
-For a complete configuration sample explanation, please see [this file](https://github.com/kubesphere/kubekey/blob/master/docs/config-example.md).
+For a complete configuration sample explanation, see [this file](https://github.com/kubesphere/kubekey/blob/master/docs/config-example.md).
 
-### Configure the Load Balancer
+### Step 4: Configure the load balancer
 
-In addition to the node information, you need to provide the load balancer information in the same yaml file. For the Intranet VIP address, you can find it in step 5 mentioned above. Assume the VIP address and listening port of the **internal load balancer** are `192.168.0.253` and `6443` respectively, and you can refer to the following example.
+In addition to the node information, you need to provide the load balancer information in the same YAML file. For the Intranet VIP address, you can find it in the last part when you create [an internal load balancer](#step-1-create-load-balancers). Assume the VIP address and listening port of the **internal load balancer** are `192.168.0.253` and `6443` 
+
+respectively, and you can refer to the following example.
 
 #### The configuration example in config-sample.yaml
 
@@ -241,19 +243,17 @@ In addition to the node information, you need to provide the load balancer infor
 {{< notice note >}}
 
 - The address and port should be indented by two spaces in `config-sample.yaml`, and the address should be VIP.
-- The domain name of the load balancer is `lb.kubesphere.local` by default for internal access. If you need to change the domain name, please uncomment and modify it.
+- The domain name of the load balancer is `lb.kubesphere.local` by default for internal access. If you need to change the domain name, uncomment and modify it.
 
 {{</ notice >}}
 
-After that, you can enable any components you need by following [Enable Pluggable Components](../../../pluggable-components/) and start your HA cluster installation.
+### Step 5: Kubernetes cluster configurations (Optional)
 
-### Kubernetes Cluster Configuration (Optional)
+Kubekey provides some fields and parameters to allow the cluster administrator to customize Kubernetes installation, including Kubernetes version, network plugins and image registry. There are some default values provided in `config-sample.yaml`. You can modify Kubernetes-related configurations in the file based on your needs. For more information, see [Kubernetes Cluster Configurations](../../../installing-on-linux/introduction/vars/).
 
-Kubekey provides some fields and parameters to allow the cluster administrator to customize Kubernetes installation, including Kubernetes version, network plugins and image registry. There are some default values provided in `config-example.yaml`. Optionally, you can modify the Kubernetes related configuration in `config-example.yaml` according to your needs. See [config-example.md](https://github.com/kubesphere/kubekey/blob/master/docs/config-example.md) for detailed explanation.
+### Step 6: Persistent storage plugin configurations
 
-### Persistent Storage Plugin Configuration
-
-As we mentioned in the prerequisites, considering data persistence in a production environment, you need to prepare persistent storage and configure the storage plugin (e.g. CSI) in `config-sample.yaml` to define which storage service you want.
+Considering data persistence in a production environment, you need to prepare persistent storage and configure the storage plugin (e.g. CSI) in `config-sample.yaml` to define which storage service you want.
 
 {{< notice note >}}
 
@@ -261,24 +261,24 @@ For testing or development, you can skip this part. KubeKey will use the integra
 
 {{</ notice >}}
 
-**Available Storage Plugins & Clients**
+**Available storage plugins and clients**
 
 - Ceph RBD & CephFS
 - GlusterFS
 - NFS
 - QingCloud CSI
 - QingStor CSI
-- More plugins are WIP, which will be added soon
+- More plugins will be supported in future releases
 
-For each storage plugin configuration, you can refer to [config-example.md](https://github.com/kubesphere/kubekey/blob/master/docs/config-example.md) to get detailed explanation. Make sure you have configured the storage plugin before you get started. KubeKey will create a StorageClass and persistent volumes for related workloads during the installation.
+Make sure you have configured the storage plugin before you get started. KubeKey will create a StorageClass and persistent volumes for related workloads during the installation. For more information, see [Persistent Storage Configurations](../../../installing-on-linux/introduction/storage-configuration/).
 
-### Enable Pluggable Components (Optional)
+### Step 7: Enable pluggable components (Optional)
 
-KubeSphere has decoupled some core feature components since v2.1.0. These components are designed to be pluggable which means you can enable them either before or after installation. By default, KubeSphere will be started with a minimal installation if you do not enable them.
+KubeSphere has decoupled some core feature components since v2.1.0. These components are designed to be pluggable which means you can enable them either before or after installation. By default, KubeSphere will be installed with the minimal package if you do not enable them.
 
-You can enable any of them according to your demands. It is highly recommended that you install these pluggable components to discover the full-stack features and capabilities provided by KubeSphere. Please ensure your machines have sufficient CPU and memory before enabling them. See [Enable Pluggable Components](../../../pluggable-components/) for details.
+You can enable any of them according to your demands. It is highly recommended that you install these pluggable components to discover the full-stack features and capabilities provided by KubeSphere. Make sure your machines have sufficient CPU and memory before you enable them. See [Enable Pluggable Components](../../../pluggable-components/) for details.
 
-### Start to Bootstrap a Cluster
+### Step 8: Start to bootstrap a cluster
 
 After you complete the configuration, you can execute the following command to start the installation:
 
@@ -286,9 +286,9 @@ After you complete the configuration, you can execute the following command to s
 ./kk create cluster -f config-sample.yaml
 ```
 
-### Verify the Installation
+### Step 9: Verify the installation
 
-Inspect the logs of installation. When you see the successful logs as follows, congratulations and enjoy it!
+Inspect the logs of installation. When you see output logs as follows, it means KubeSphere has been successfully deployed.
 
 ```bash
 kubectl logs -n kubesphere-system $(kubectl get pod -n kubesphere-system -l app=ks-install -o jsonpath='{.items[0].metadata.name}') -f
@@ -316,18 +316,28 @@ https://kubesphere.io             2020-08-13 10:50:24
 #####################################################
 ```
 
-### Verify the HA Cluster
+### Step 10: Verify the HA cluster
 
-Now that you have finished the installation, you can go back to the detailed information page of both the internal and external load balancers to see the status.
+Now that you have finished the installation, go back to the detail page of both the internal and external load balancers to see the status.
 
-![LB active](https://ap3.qingstor.com/kubesphere-website/docs/active.png)
+![active](/images/docs/installing-on-linux/installing-on-public-cloud/deploy-kubesphere-on-qingcloud-instances/active.png)
 
-Both listeners show that the status is `Active`, meaning the node is up and running.
+Both listeners show that the status is **Active**, meaning nodes are up and running.
 
-![active-listener](https://ap3.qingstor.com/kubesphere-website/docs/active-listener.png)
+![active-listener](/images/docs/installing-on-linux/installing-on-public-cloud/deploy-kubesphere-on-qingcloud-instances/active-listener.png)
 
 In the web console of KubeSphere, you can also see that all the nodes are functioning well.
 
-![cluster-node](https://ap3.qingstor.com/kubesphere-website/docs/cluster-node.png)
+![cluster-node](/images/docs/installing-on-linux/installing-on-public-cloud/deploy-kubesphere-on-qingcloud-instances/cluster-node.png)
 
-To verify if the cluster is highly available, you can turn off an instance on purpose. For example, the above dashboard is accessed through the address `IP: 30880` (the EIP address here is the one bound to the external load balancer). If the cluster is highly available, the dashboard will still work well even if you shut down a master node.
+To verify if the cluster is highly available, you can turn off an instance on purpose. For example, the above console is accessed through the address `IP: 30880` (the EIP address here is the one bound to the external load balancer). If the cluster is highly available, the console will still work well even if you shut down a master node.
+
+## See Also
+
+[Multi-node Installation](../../../installing-on-linux/introduction/multioverview/)
+
+[Kubernetes Cluster Configurations](../../../installing-on-linux/introduction/vars/)
+
+[Persistent Storage Configurations](../../../installing-on-linux/introduction/storage-configuration/)
+
+[Enable Pluggable Components](../../../pluggable-components/)

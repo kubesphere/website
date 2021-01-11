@@ -1,138 +1,138 @@
 ---
-title: "DaemonSets"
-keywords: 'KubeSphere, Kubernetes, DaemonSet, workload'
-description: 'Kubernetes DaemonSets'
-linkTitle: "DaemonSets"
+title: "守护进程集"
+keywords: 'KubeSphere, Kubernetes, 守护进程集, 工作负载'
+description: 'Kubernetes 守护进程集'
+linkTitle: "守护进程集"
 
 weight: 10230
 ---
 
-A DaemonSet manages groups of replicated Pods while it ensures that all (or some) nodes run a copy of a Pod. As nodes are added to the cluster, DaemonSets automatically add Pods to the new nodes as needed.
+守护进程集管理多组 Pod 副本，确保所有（或某些）节点运行一个 Pod 的副本。集群添加节点时，守护进程集会根据需要自动将 Pod 添加到新节点。
 
-For more information, see the [official documentation of Kubernetes](https://kubernetes.io/docs/concepts/workloads/controllers/daemonset/).
+有关更多信息，请参见 [Kubernetes 官方文档](https://kubernetes.io/zh/docs/concepts/workloads/controllers/daemonset/)。
 
-## Use DaemonSets
+## 使用守护进程集
 
-DaemonSets are very helpful in cases where you want to deploy ongoing background tasks that run on all or certain nodes without any user intervention. For example:
+如果您想在所有节点或者没有用户干预的特定节点上部署持续运行的后台任务，守护进程集会非常有用。例如：
 
-- Run a log collection daemon on every node, such as Fluentd or Logstash.
-- Run a node monitoring daemon on every node, such as Prometheus Node Exporter, collectd, and AppDynamics Agent.
-- Run a cluster storage daemon and system program on every node, such as Glusterd, Ceph, kube-dns, and kube-proxy.
+- 在每个节点上运行日志收集守护进程，例如 Fluentd 和 Logstash 等。
+- 在每个节点上运行节点监控守护进程，例如 Prometheus Node Exporter、collectd 和 AppDynamics Agent 等。
+- 在每个节点上运行集群存储守护进程和系统程序，例如 Glusterd、Ceph、kube-dns 和 kube-proxy 等。
 
-## Prerequisites
+## 准备工作
 
-You need to create a workspace, a project and an account (`project-regular`). The account must be invited to the project with the role of `operator`. For more information, see [Create Workspace, Project, Account and Role](../../../quick-start/create-workspace-and-project).
+您需要创建一个企业空间、一个项目和一个帐户 (`project-regular`)，务必邀请该帐户到项目中并赋予 `operator` 角色。有关更多信息，请参见[创建企业空间、项目、帐户和角色](../../../quick-start/create-workspace-and-project/)。
 
-## Create a DaemonSet
+## 创建守护进程集
 
-### Step 1: Open Dashboard
+### 步骤 1：打开仪表板
 
-Log in the console as `project-regular`. Go to **Application Workloads** of a project, select **Workloads**, and click **Create** under the tab **DaemonSets**.
+以 `project-regular` 身份登录控制台。转到项目的**应用负载**，选择**工作负载**，点击**守护进程集**选项卡下面的**创建**。
 
-![daemonsets](/images/docs/project-user-guide/workloads/daemonsets.jpg)
+![守护进程集](/images/docs/zh-cn/project-user-guide/application-workloads/daemonsets/daemonsets.png)
 
-### Step 2: Input Basic Information
+### 步骤 2：输入基本信息
 
-Specify a name for the DaemonSet (e.g. `demo-daemonset`) and click **Next** to continue.
+为该守护进程集指定一个名称（例如 `demo-daemonset`），点击**下一步**继续。
 
-![daemonsets](/images/docs/project-user-guide/workloads/daemonsets_form_1.jpg)
+![输入名称](/images/docs/zh-cn/project-user-guide/application-workloads/daemonsets/daemonsets_form_1.png)
 
-### Step 3: Set Image
+### 步骤 3：设置镜像
 
-1. Click the **Add Container Image** box.
+1. 点击**添加容器镜像**。
 
-    ![daemonsets](/images/docs/project-user-guide/workloads/daemonsets_form_2_container_btn.jpg)
+    ![添加容器镜像](/images/docs/zh-cn/project-user-guide/application-workloads/daemonsets/daemonsets_form_2_container_btn.png)
 
-2. Input an image name from public Docker Hub or from a [private repository](../../configuration/image-registry/) you specified. For example, input `fluentd` in the search bar and press **Enter**.
+2. 输入镜像名称，该镜像可以来自公共 Docker Hub，也可以来自您指定的[私有仓库](../../../project-user-guide/configuration/image-registry/)。例如，在搜索栏输入 `fluentd` 然后按**回车键**。
 
-    ![daemonsets](/images/docs/project-user-guide/workloads/daemonsets_form_2_container_1.jpg)
+    ![输入镜像名称](/images/docs/zh-cn/project-user-guide/application-workloads/daemonsets/daemonsets_form_2_container_1.png)
 
     {{< notice note >}}
 
-- Remember to press **Enter** on your keyboard after you input an image name in the search bar.
-- If you want to use your private image repository, you should [create an Image Registry Secret](../../configuration/image-registry/) first in **Secrets** under **Configurations**.
+- 在搜索栏输入镜像名称后，请记得按键盘上的**回车键**。
+- 如果想使用您的私有镜像仓库，您应该先通过**配置中心**下面的**密钥**[创建镜像仓库密钥](../../../project-user-guide/configuration/image-registry/)。
 
     {{</ notice >}}
 
-3. Set requests and limits for CPU and memory resources based on your needs. For more information, see [Resource Request and Resource Limit in Container Image Settings](../container-image-settings/#add-container-image).
+3. 根据您的需求设置 CPU 和内存的资源请求和限制。有关更多信息，请参见[容器镜像设置中关于资源请求和资源限制的内容](../../../project-user-guide/application-workloads/container-image-settings/#添加容器镜像)。
 
-    ![daemonset-request-limit](/images/docs/project-user-guide/workloads/daemonset-request-limit.jpg)
+    ![资源请求和限制](/images/docs/zh-cn/project-user-guide/application-workloads/daemonsets/daemonset-request-limit.png)
 
-4. Click **Use Default Ports** for **Port Settings** or you can customize **Protocol**, **Name** and **Container Port**.
+4. 点击**使用默认端口**以自动填充**端口设置**，或者您可以自定义**协议**、**名称**和**容器端口**。
 
-5. Select a policy for image pulling from the drop-down menu. For more information, see [Image Pull Policy in Container Image Settings](../container-image-settings/#add-container-image).
+5. 在下拉菜单中选择镜像拉取策略。有关更多信息，请参见[容器镜像设置中关于镜像拉取策略的内容](../../../project-user-guide/application-workloads/container-image-settings/#添加容器镜像)。
 
-6. For other settings (**Health Checker**, **Start Command**, **Environment Variables**, **Container Security Context** and **Sync Host Timezone**), you can configure them on the dashboard as well. For more information, see detailed explanations of these properties in [Container Image Settings](../container-image-settings/#add-container-image). When you finish, click **√** in the bottom right corner to continue.
+6. 对于其他设置（**健康检查器**、**启动命令**、**环境变量**、**容器 Security Context** 以及**同步主机时区**），您也可以在仪表板上配置它们。有关更多信息，请参见[容器镜像设置](../../../project-user-guide/application-workloads/container-image-settings/#添加容器镜像)中对这些属性的详细说明。操作完成后，点击右下角的 **√** 继续。
 
-7. Select an update strategy from the drop-down menu. It is recommended you choose **RollingUpdate**. For more information, see [Update Strategy](../container-image-settings/#update-strategy).
+7. 在下拉菜单中选择更新策略。建议您选择**滚动更新**。有关更多信息，请参见[更新策略](../../../project-user-guide/application-workloads/container-image-settings/#更新策略)。
 
-8. Select a deployment mode. For more information, see [Deployment Mode](../container-image-settings/#deployment-mode).
+8. 选择部署模式。有关更多信息，请参见[部署模式](../../../project-user-guide/application-workloads/container-image-settings/#部署模式)。
 
-9. Click **Next** to go to the next step when you finish setting the container image.
+9. 完成容器镜像设置后，点击**下一步**继续。
 
-### Step 4: Mount Volumes
+### 步骤 4：挂载存储卷
 
-You can add a volume directly or mount a ConfigMap or Secret. Alternatively, click **Next** directly to skip this step. For more information about volumes, visit [Volumes](../../storage/volumes/#mount-a-volume).
+您可以直接添加存储卷或者挂载 ConfigMap 或密钥，或者直接点击**下一步**跳过该步骤。有关存储卷的更多信息，请访问[存储卷](../../../project-user-guide/storage/volumes/#挂载存储卷)。
 
-![daemonsets](/images/docs/project-user-guide/workloads/daemonsets_form_3.jpg)
+![挂载存储](/images/docs/zh-cn/project-user-guide/application-workloads/daemonsets/daemonsets_form_3.png)
 
 {{< notice note >}}
 
-DaemonSets can't use a volume template, which is used by StatefulSets.
+守护进程集无法使用存储卷模板，而有状态副本集可以使用。
 
 {{</ notice>}}
 
-### Step 5: Configure Advanced Settings
+### 步骤 5：配置高级设置
 
-You can add metadata in this section. When you finish, click **Create** to complete the whole process of creating a DaemonSet.
+您可以在该部分添加元数据。完成操作后，点击**创建**完成创建守护进程集的整个流程。
 
-![daemonsets](/images/docs/project-user-guide/workloads/daemonsets_form_4.jpg)
+![高级设置](/images/docs/zh-cn/project-user-guide/application-workloads/daemonsets/daemonsets_form_4.png)
 
-- **Add Metadata**
+- **添加元数据**
 
-  Additional metadata settings for resources such as **Labels** and **Annotations**.
+  为资源进行额外的元数据设置，例如**标签**和**注解**。
 
-## Check DaemonSet Details
+## 查看守护进程集详情
 
-### Detail Page
+### 详情页面
 
-1. After a DaemonSet is created, it displays in the list as below. You can click the three dots on the right and select the operation from the menu to modify a DaemonSet.
+1. 守护进程集创建后会显示在下方的列表中。您可以点击右边的三个点，在弹出菜单中选择操作，修改您的守护进程集。
 
-    ![daemonsets](/images/docs/project-user-guide/workloads/daemonsets_list.png)
+    ![守护进程集列表](/images/docs/zh-cn/project-user-guide/application-workloads/daemonsets/daemonsets_list.png)
 
-    - **Edit**: View and edit the basic information.
-    - **Edit YAML**: View, upload, download, or update the YAML file.
-    - **Redeploy**: Redeploy the DaemonSet.
-    - **Delete**: Delete the DaemonSet.
+    - **编辑**：查看并编辑基本信息。
+    - **编辑配置文件**：查看、上传、下载或者更新 YAML 文件。
+    - **重新部署**：重新部署该守护进程集。
+    - **删除**：删除该守护进程集。
 
-2. Click the name of the DaemonSet and you can go to its detail page.
+2. 点击守护进程集名称可以进入它的详情页面。
 
-    ![daemonsets](/images/docs/project-user-guide/workloads/daemonsets_detail.jpg)
+    ![详情页面](/images/docs/zh-cn/project-user-guide/application-workloads/daemonsets/daemonsets_detail.png)
 
-3. Click **More** to display what operations about this DaemonSet you can do.
+3. 点击**更多操作**，显示您可以对该守护进程集进行的操作。
 
-    ![daemonsets](/images/docs/project-user-guide/workloads/daemonsets_detail_operation_btn.jpg)
+    ![更多操作](/images/docs/zh-cn/project-user-guide/application-workloads/daemonsets/daemonsets_detail_operation_btn.png)
 
-    - **Revision Rollback**: Select the revision to roll back.
-    - **Edit Config Template**: Configure update strategies, containers and volumes.
-    - **Edit YAML**: View, upload, download, or update the YAML file.
-    - **Redeploy**: Redeploy this DaemonSet.
-    - **Delete**: Delete the DaemonSet, and return to the DaemonSet list page.
+    - **版本回退**：选择要回退的版本。
+    - **编辑配置模板**：配置更新策略、容器和存储卷。
+    - **编辑配置文件**：查看、上传、下载或者更新 YAML 文件。
+    - **重新部署**：重新部署该守护进程集。
+    - **删除**：删除该守护进程集并返回守护进程集列表页面。
 
-4. Click the **Resource Status** tab to view the port and Pod information of a DaemonSet.
+4. 点击**资源状态**选项卡，查看该守护进程集的端口和 Pod 信息。
 
-    ![daemonsets](/images/docs/project-user-guide/workloads/daemonsets_detail_state.png)
+    ![资源状态](/images/docs/zh-cn/project-user-guide/application-workloads/daemonsets/daemonsets_detail_state.png)
 
-    - **Replica Status**: You cannot change the number of Pod replicas for a DaemonSet.
-    - **Pod detail**
+    - **副本运行状态**：您无法更改守护进程集的 Pod 副本数量。
+    - **Pod 详情**
 
-      ![daemonsets](/images/docs/project-user-guide/workloads/daemonsets_detail_pod.png)
+      ![Pod 详情](/images/docs/zh-cn/project-user-guide/application-workloads/daemonsets/daemonsets_detail_pod.png)
 
-      - The Pod list provides detailed information of the Pod (status, node, Pod IP and resource usage).
-      - You can view the container information by clicking a Pod item.
-      - Click the container log icon to view output logs of the container.
-      - You can view the Pod detail page by clicking the Pod name.
+      - Pod 列表中显示了 Pod 详情（运行状态、节点、Pod IP 以及资源使用情况）。
+      - 您可以点击 Pod 条目查看容器信息。
+      - 点击容器日志图标查看容器的输出日志。
+      - 您可以点击 Pod 名称查看 Pod 详情页面。
 
-### Revision Records
+### 版本记录
 
-After the resource template of workload is changed, a new log will be generated and Pods will be rescheduled for a version update. The latest 10 versions will be saved by default. You can implement a redeployment based on the change log.
+修改工作负载的资源模板后，会生成一个新的日志并重新调度 Pod 进行版本更新。默认保存 10 个最近的版本。您可以根据修改日志进行重新部署。

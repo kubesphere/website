@@ -18,7 +18,7 @@ Using [Redis](https://redis.io/) as an example application, this tutorial demons
 ## Prerequisites
 
 - You need to enable [KubeSphere App Store (OpenPitrix)](../../pluggable-components/app-store/).
-- You need to create a workspace, a project and an account (`project-regular`). For more information, see [Create Workspace, Project, Account and Role](../../quick-start/create-workspace-and-project/).
+- You need to create a workspace, a project and an account (`project-regular`). For more information, see [Create Workspaces, Projects, Accounts and Roles](../../quick-start/create-workspace-and-project/).
 
 ## Hands-on Lab
 
@@ -26,7 +26,7 @@ Using [Redis](https://redis.io/) as an example application, this tutorial demons
 
 You need to create two accounts first, one for ISVs (`isv`) and the other (`reviewer`) for app technical reviewers.
 
-1. Log in the KubeSphere console with the account `admin`. Click **Platform** in the top left corner and select **Access Control**. In **Account Roles**, click **Create**.
+1. Log in to the KubeSphere console with the account `admin`. Click **Platform** in the top left corner and select **Access Control**. In **Account Roles**, click **Create**.
 
    ![create-role](/images/docs/appstore/application-lifecycle-management/create-role.jpg)
 
@@ -56,7 +56,7 @@ You need to create two accounts first, one for ISVs (`isv`) and the other (`revi
 
 ### Step 2: Upload and submit an application
 
-1. Log in KubeSphere as `isv` and go to your workspace. You need to upload the example app Redis to this workspace so that it can be used later. First, download the app [Redis 11.3.4](https://github.com/kubesphere/tutorial/raw/master/tutorial%205%20-%20app-store/redis-11.3.4.tgz) and click **Upload Template** in **App Templates**.
+1. Log in to KubeSphere as `isv` and go to your workspace. You need to upload the example app Redis to this workspace so that it can be used later. First, download the app [Redis 11.3.4](https://github.com/kubesphere/tutorial/raw/master/tutorial%205%20-%20app-store/redis-11.3.4.tgz) and click **Upload Template** in **App Templates**.
 
    ![upload-app](/images/docs/appstore/application-lifecycle-management/upload-app.jpg)
 
@@ -175,7 +175,7 @@ After the app is approved, `isv` can release the Redis application to the App St
 
 `reviewer` can create multiple categories for different types of applications based on their function and usage. It is similar to setting tags and categories can be used in the App Store as filters, such as Big Data, Middleware, and IoT.
 
-1. Log in KubeSphere as `reviewer`. To create a category, go to the **App Store Management** page and click the plus icon in **App Categories**.
+1. Log in to KubeSphere as `reviewer`. To create a category, go to the **App Store Management** page and click the plus icon in **App Categories**.
 
    ![app-category](/images/docs/appstore/application-lifecycle-management/app-category.jpg)
 
@@ -205,7 +205,7 @@ After the app is approved, `isv` can release the Redis application to the App St
 
 To allow workspace users to upgrade apps, you need to add new app versions to KubeSphere first. Follow the steps below to add a new version for the example app.
 
-1. Log in KubeSphere as `isv` again and navigate to **App Templates**. Click the app Redis in the list.
+1. Log in to KubeSphere as `isv` again and navigate to **App Templates**. Click the app Redis in the list.
 
    ![redis-new-version](/images/docs/appstore/application-lifecycle-management/redis-new-version.jpg)
 
@@ -233,7 +233,7 @@ To follow the steps below, you must deploy an app of one of its old versions fir
 
 {{</ notice >}} 
 
-1. Log in KubeSphere as `project-regular`, navigate to the **Applications** page of the project, and click the app to be upgraded.
+1. Log in to KubeSphere as `project-regular`, navigate to the **Applications** page of the project, and click the app to be upgraded.
 
    ![app-to-be-upgraded](/images/docs/appstore/application-lifecycle-management/app-to-be-upgraded.jpg)
 
@@ -257,7 +257,7 @@ To follow the steps below, you must deploy an app of one of its old versions fir
 
 You can choose to remove an app entirely from the App Store or suspend a specific app version.
 
-1. Log in KubeSphere as `reviewer`. Click **Platform** in the top left corner and go to **App Store Management**. On the **App Store** page, click Redis.
+1. Log in to KubeSphere as `reviewer`. Click **Platform** in the top left corner and go to **App Store Management**. On the **App Store** page, click Redis.
 
    ![remove-app](/images/docs/appstore/application-lifecycle-management/remove-app.jpg)
 

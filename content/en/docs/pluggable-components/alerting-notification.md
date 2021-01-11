@@ -8,7 +8,7 @@ weight: 6600
 
 ## What are KubeSphere Alerting and Notification
 
-Alerting and Notification are two important building blocks of observability, closely related to monitoring and logging. The alerting system in KubeSphere, coupled with the proactive failure notification system, allows users to know activities of interest based on alert policies. When a predefined threshold of a certain metric is reached, an alert will be sent to preconfigured recipients, the notification method of which can be set by yourself, including Email, WeChat Work and Slack. With a highly functional alerting and notification system in place, you can quickly identify and resolve potential issues in advance before they affect your business.
+Alerting and Notification are two important building blocks of observability, closely related to monitoring and logging. The alerting system in KubeSphere, coupled with the proactive failure notification system, allows users to know activities of interest based on alerting policies. When a predefined threshold of a certain metric is reached, an alert will be sent to preconfigured recipients, the notification method of which can be set by yourself, including Email, WeChat Work and Slack. With a highly functional alerting and notification system in place, you can quickly identify and resolve potential issues in advance before they affect your business.
 
 For more information, see [Alerting Policy](../../project-user-guide/alerting/alerting-policy) and [Alerting Message](../../project-user-guide/alerting/alerting-message).
 
@@ -78,7 +78,7 @@ The process of installing KubeSphere on Kubernetes is same as stated in the tuto
 
 ## Enable Alerting and Notification after Installation
 
-1. Log in the console as `admin`. Click **Platform** in the top-left corner and select **Clusters Management**.
+1. Log in to the console as `admin`. Click **Platform** in the top-left corner and select **Clusters Management**.
     
     ![clusters-management](/images/docs/enable-pluggable-components/kubesphere-alerting-and-notification/clusters-management.png)
     

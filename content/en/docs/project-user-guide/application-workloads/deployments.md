@@ -13,23 +13,23 @@ For more information, see the [official documentation of Kubernetes](https://kub
 
 ## Prerequisites
 
-You need to create a workspace, a project and an account (`project-regular`). The account must be invited to the project with the role of `operator`. For more information, see [Create Workspace, Project, Account and Role](../../../quick-start/create-workspace-and-project).
+You need to create a workspace, a project and an account (`project-regular`). The account must be invited to the project with the role of `operator`. For more information, see [Create Workspaces, Projects, Accounts and Roles](../../../quick-start/create-workspace-and-project).
 
 ## Create a Deployment
 
-### Step 1: Open Dashboard
+### Step 1: Open the dashboard
 
-Log in the console as `project-regular`. Go to **Application Workloads** of a project, select **Workloads**, and click **Create** under the tab **Deployments**.
+Log in to the console as `project-regular`. Go to **Application Workloads** of a project, select **Workloads**, and click **Create** under the tab **Deployments**.
 
 ![deployments](/images/docs/project-user-guide/workloads/deployments.png)
 
-### Step 2: Input Basic Information
+### Step 2: Input basic information
 
 Specify a name for the Deployment (e.g. `demo-deployment`) and click **Next** to continue.
 
 ![deployments](/images/docs/project-user-guide/workloads/deployments_form_1.jpg)
 
-### Step 3: Set Image
+### Step 3: Set an image
 
 1. Before you set an image, define the number of replicated Pods in **Pod Replicas** by clicking the **plus** or **minus** icon, which is indicated by the `.spec.replicas` field in the manifest file.
 
@@ -68,9 +68,9 @@ You can see the Deployment manifest file in YAML format by enabling **Edit Mode*
 
 9. Select a deployment mode. For more information, see [Deployment Mode](../container-image-settings/#deployment-mode).
 
-10. Click **Next** to go to the next step when you finish setting the container image.
+10. Click **Next** to continue when you finish setting the container image.
 
-### Step 4: Mount Volumes
+### Step 4: Mount volumes
 
 You can add a volume directly or mount a ConfigMap or Secret. Alternatively, click **Next** directly to skip this step. For more information about volumes, visit [Volumes](../../storage/volumes/#mount-a-volume).
 
@@ -82,7 +82,7 @@ Deployments can't use a volume template, which is used by StatefulSets.
 
 {{</ notice>}}
 
-### Step 5: Configure Advanced Settings
+### Step 5: Configure advanced settings
 
 You can set a policy for node scheduling and add metadata in this section. When you finish, click **Create** to complete the whole process of creating a Deployment.
 
@@ -98,7 +98,7 @@ You can set a policy for node scheduling and add metadata in this section. When 
 
 ## Check Deployment Details
 
-### Detail Page
+### Detail page
 
 1. After a Deployment is created, it displays in the list as below. You can click the three dots on the right and select actions from the menu to modify your Deployment.
 
@@ -138,6 +138,6 @@ You can set a policy for node scheduling and add metadata in this section. When 
         - Click the container log icon to view output logs of the container.
         - You can view the Pod detail page by clicking the Pod name.
 
-### Revision Records
+### Revision records
 
 After the resource template of workload is changed, a new log will be generated and Pods will be rescheduled for a version update. The latest 10 versions will be saved by default. You can implement a redeployment based on the change log.

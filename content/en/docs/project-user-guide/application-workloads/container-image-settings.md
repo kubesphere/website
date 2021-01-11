@@ -30,7 +30,7 @@ After you click **Add Container Image**, you will see an image as below.
 
 #### Image Search Bar
 
-You can click the cube icon on the right to select an image from the list or input an image name to search it. KubeSphere provides Docker Hub images and your private image repository. If you want to use your private image repository, you need to create a Docker Hub secret first in **Secrets** under **Configurations**.
+You can click the cube icon on the right to select an image from the list or input an image name to search it. KubeSphere provides Docker Hub images and your private image repository. If you want to use your private image repository, you need to create an Image Registry Secret first in **Secrets** under **Configurations**.
 
 {{< notice note >}} 
 
@@ -68,7 +68,7 @@ You can specify the upper limit of the resources that the application can use, i
 
 {{< notice note >}}
 
-The CPU resource is measure in CPU units, or **Core** in KubeSphere. The memory resource is measured in bytes, or **Mi** in KubeSphere.
+The CPU resource is measured in CPU units, or **Core** in KubeSphere. The memory resource is measured in bytes, or **Mi** in KubeSphere.
 
 {{</ notice >}} 
 
@@ -92,13 +92,13 @@ This value is indicated by the `imagePullPolicy` field. On the dashboard, you ca
 
 - The default value is `IfNotPresent`, but the value of images tagged with `:latest` is `Always` by default.
 - Docker will check it when pulling the image. If MD5 has not changed, it will not pull.
-- The `:latest` should be avoided as much as possible in the production environment, and the latest image can be automatically pulled by the `:latest` in the development environment.
+- The `:latest` tag should be avoided as much as possible in the production environment, and the latest image can be automatically pulled by the `:latest` tag in the development environment.
 
 {{< /notice >}}
 
 #### **Health Checker**
 
-Support **Liveness**, **Readiness**, and **Startup**. The survival check is used to detect when to restart the container.
+Support **Liveness**, **Readiness**, and **Startup**.
 
 ![container-health-check](/images/docs/project-user-guide/workloads/container-health-check.jpg)
 
@@ -210,7 +210,7 @@ The drop-down menu under **Update Strategy** is indicated by the `.spec.updateSt
 
 - **RollingUpdate (Recommended)**
 
-  If `.spec.template` is updated, the Pods in the StatefulSet will be automatically deleted with new pods created as replacements. Pods are updated in reserve ordinal order, sequentially deleted and created. A new Pod update will not begin until the previous Pod becomes up and running after it is updated.
+  If `.spec.template` is updated, the Pods in the StatefulSet will be automatically deleted with new pods created as replacements. Pods are updated in reverse ordinal order, sequentially deleted and created. A new Pod update will not begin until the previous Pod becomes up and running after it is updated.
 
 - **OnDelete**
 

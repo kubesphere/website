@@ -1,34 +1,34 @@
 ---
-title: "Overview"
-keywords: 'Kubernetes, KubeSphere, grayscale release, overview, service mesh'
-description: 'An overview of grayscale release.'
-linkTitle: "Overview"
+title: "概述"
+keywords: 'Kubernetes, KubeSphere, 灰度发布, 概述, 服务网格'
+description: '灰度发布概述。'
+linkTitle: "概述"
 weight: 10510
 ---
 
-Modern, cloud-native applications are often composed of a group of independently deployable components, also known as microservices. In a microservices architecture, developers are able to make adjustments to their apps with great flexibility as they do not affect the network of services each performing a specific function. This kind of network of microservices making up an application is also called **service mesh**.
+现代云原生应用程序通常由一组可独立部署的组件组成，这些组件也称作微服务。在微服务架构中，每个服务网络执行特定功能，开发者能够非常灵活地对应用做出调整，不会影响服务网络。这种组成应用程序的微服务网络也称作**服务网格**。
 
-A KubeSphere service mesh, built on the open-source project of [Istio](https://istio.io/), controls how different parts of an app interact with one another. Among others, grayscale release strategies represent an important part for users to test and release new app versions without affecting the communication among microservices.
+KubeSphere 服务网格基于开源项目 [Istio](https://istio.io/) 构建，可以控制应用程序不同部分之间的通信方式。其中，灰度发布策略为用户在不影响微服务之间通信的情况下测试和发布新的应用版本发挥了重要作用。
 
-## Grayscale Release Strategies
+## 灰度发布策略
 
-A grayscale release in KubeSphere ensures smooth transition as you upgrade your apps to a new version. The specific strategy adopted may be different but the ultimate goal is the same - identify potential problems in advance without affecting your apps running in the production environment. This not only minimizes risks of a version upgrade but also tests the performance of new app builds.
+当您在 KubeSphere 中升级应用至新版本时，灰度发布可以确保平稳过渡。采用的具体策略可能不同，但最终目标相同，即提前识别潜在问题，避免影响在生产环境中运行的应用。这样不仅可以将版本升级的风险降到最低，还能测试应用新构建版本的性能。
 
-KubeSphere provides users with three grayscale release strategies.
+KubeSphere 为用户提供三种灰度发布策略。
 
-### [Blue-green Deployment](../blue-green-deployment/)
+### [蓝绿部署](../blue-green-deployment/)
 
-A blue-green deployment provides an efficient method of releasing new versions with zero downtime and outages as it creates an identical standby environment where the new app version runs. With this approach, KubeSphere routes all the traffic to either version. Namely, only one environment is live at any given time. In the case of any issues with the new build, it allows you to immediately roll back to the previous version.
+蓝绿部署会创建一个相同的备用环境，在该环境中运行新的应用版本，从而为发布新版本提供一个高效的方式，不会出现宕机或者服务中断。通过这种方法，KubeSphere 将所有流量路由至其中一个版本，即在任意给定时间只有一个环境接收流量。如果新构建版本出现任何问题，您可以立刻回滚至先前版本。
 
-### [Canary Release](../canary-release/)
+### [金丝雀发布](../canary-release/)
 
-A canary deployment reduces the risk of version upgrades to a minimum as it slowly rolls out changes to a small subset of users. More specially, you have the option to expose a new app version to a portion of production traffic, which is defined by yourself on the highly responsive dashboard. Besides, KubeSphere gives you a visualized view of real-time traffic as it monitors requests after you implement a canary deployment. During the process, you can analyze the behavior of the new app version and choose to gradually increase the percentage of traffic sent to it. Once you are confident of the build, you can route all the traffic to it.
+金丝雀部署缓慢地向一小部分用户推送变更，从而将版本升级的风险降到最低。具体来讲，您可以在高度响应的仪表板上进行定义，选择将新的应用版本暴露给一部分生产流量。另外，您执行金丝雀部署后，KubeSphere 会监控请求，为您提供实时流量的可视化视图。在整个过程中，您可以分析新的应用版本的行为，选择逐渐增加向它发送的流量比例。待您对构建版本有把握后，便可以把所有流量路由至该构建版本。
 
-### [Traffic Mirroring](../traffic-mirroring/)
+### [流量镜像](../traffic-mirroring/)
 
-Traffic mirroring copies live production traffic and sends it to a mirrored service. By default, KubeSphere mirrors all the traffic while you can also manually define the percentage of traffic to be mirrored by specifying a value. Common use cases include:
+流量镜像复制实时生产流量并发送至镜像服务。默认情况下，KubeSphere 会镜像所有流量，您也可以指定一个值来手动定义镜像流量的百分比。常见用例包括：
 
-- Test new app versions. You can compare the real-time output of mirrored traffic and production traffic.
-- Test clusters. You can use production traffic of instances for cluster testing.
-- Test databases. You can use an empty database to store and load data.
+- 测试新的应用版本。您可以对比镜像流量和生产流量的实时输出。
+- 测试集群。您可以将实例的生产流量用于集群测试。
+- 测试数据库。您可以使用空数据库来存储和加载数据。
 

@@ -12,13 +12,13 @@ This guide demonstrates how to set cluster visibility.
 
 ## Prerequisites
 * You need to enable the [multi-cluster feature](../../../multicluster-management/).
-* You need to have a workspace and an account that has the permission to create workspaces, such as `ws-manager`. For more information, see [Create Workspace, Project, Account and Role](../../../quick-start/create-workspace-and-project/).
+* You need to have a workspace and an account that has the permission to create workspaces, such as `ws-manager`. For more information, see [Create Workspaces, Projects, Accounts and Roles](../../../quick-start/create-workspace-and-project/).
 
 ## Set Cluster Visibility
 
 ### Select available clusters when you create a workspace
 
-1. Log in KubeSphere with an account that has the permission to create a workspace, such as `ws-manager`.
+1. Log in to KubeSphere with an account that has the permission to create a workspace, such as `ws-manager`.
 
 2. Click **Platform** in the top left corner and select **Access Control**. In **Workspaces** from the navigation bar, click **Create**.
 
@@ -44,7 +44,7 @@ Try not to create resources on the host cluster to avoid excessive loads, which 
 
 After a workspace is created, you can allocate additional clusters to the workspace through authorization or unbind a cluster from the workspace. Follow the steps below to adjust the visibility of a cluster.
 
-1. Log in KubeSphere with an account that has the permission to manage clusters, such as `admin`.
+1. Log in to KubeSphere with an account that has the permission to manage clusters, such as `admin`.
 
 2. Click **Platform** in the top left corner and select **Clusters Management**. Select a cluster from the list to view cluster information.
 
@@ -52,12 +52,12 @@ After a workspace is created, you can allocate additional clusters to the worksp
 
 4. You can see the list of authorized workspaces, which means the current cluster is available to resources in all these workspaces.
 
-   ![cluster-visibility-settings-1](/images/docs/cluster-administration/cluster-settings/cluster-visibility-and-authorization/cluster-visibility-settings-1.png)
+   ![workspace-list](/images/docs/cluster-administration/cluster-settings/cluster-visibility-and-authorization/workspace-list.jpg)
 
 5. Click **Edit Visibility** to set the cluster authorization. You can select new workspaces that will be able to use the cluster or unbind it from a workspace.
 
-   ![cluster-visibility-settings-2](/images/docs/cluster-administration/cluster-settings/cluster-visibility-and-authorization/cluster-visibility-settings-2.png)
+   ![assign-workspace](/images/docs/cluster-administration/cluster-settings/cluster-visibility-and-authorization/assign-workspace.jpg)
 
 ### Make a cluster public
 
-You can check **Set as public cluster** so that all platform users can access the cluster, in which they are able to create and schedule resources.
+You can check **Set as public cluster** so that platform users can access the cluster, in which they are able to create and schedule resources.

@@ -12,7 +12,7 @@ This tutorial demonstrates how to create and use a volume snapshot.
 
 ## Prerequisites
 
-- You need to create a workspace, a project and an account (`project-regular`). The account must be invited to the project with the role of `operator`. For more information, see [Create Workspace, Project, Account and Role](../../../quick-start/create-workspace-and-project).
+- You need to create a workspace, a project and an account (`project-regular`). The account must be invited to the project with the role of `operator`. For more information, see [Create Workspaces, Projects, Accounts and Roles](../../../quick-start/create-workspace-and-project).
 
 - Kubernetes version 1.17+.
 
@@ -21,7 +21,7 @@ This tutorial demonstrates how to create and use a volume snapshot.
 
 ## Create a Volume Snapshot
 
-1. Log in the web console of KubeSphere as `project-regular`. On the **Volumes** page of your page, select a volume that you want to create a snapshot for.
+1. Log in to the web console of KubeSphere as `project-regular`. On the **Volumes** page of your page, select a volume that you want to create a snapshot for.
 
    ![select-volume](/images/docs/project-user-guide/volume-management/volume-snapshots/select-volume.jpg)
 
@@ -43,7 +43,7 @@ There are two ways for you to use a snapshot to create a volume.
 
 ### Create a volume from the snapshot detail page
 
-1. Log in the web console of KubeSphere as `project-regular`. On a snapshot's detail page, click **Apply** to use the snapshot. Generally, the steps are the same as creating a volume directly.
+1. Log in to the web console of KubeSphere as `project-regular`. On a snapshot's detail page, click **Apply** to use the snapshot. Generally, the steps are the same as creating a volume directly.
 
    ![apply-volume](/images/docs/project-user-guide/volume-management/volume-snapshots/apply-volume.jpg)
 
@@ -65,7 +65,7 @@ There are two ways for you to use a snapshot to create a volume.
 
 ### Create a volume from the Volumes page
 
-1. Log in the web console of KubeSphere as `project-regular`. On the **Volumes** page of a project, click **Create**.
+1. Log in to the web console of KubeSphere as `project-regular`. On the **Volumes** page of a project, click **Create**.
 
    ![volumes-page](/images/docs/project-user-guide/volume-management/volume-snapshots/volumes-page.jpg)
 

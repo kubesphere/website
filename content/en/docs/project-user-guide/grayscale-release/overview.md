@@ -22,7 +22,7 @@ A blue-green deployment provides an efficient method of releasing new versions w
 
 ### [Canary Release](../canary-release/)
 
-A canary deployment reduces the risk of version upgrades to a minimum as it slowly rolls out changes to a small subset of users. More specially, you have the option to expose a new app version to a portion of production traffic, which is defined by yourself on the highly responsive dashboard. Besides, KubeSphere gives you a visualized view of real-time traffic as it monitors requests after you implement a canary deployment. During the process, you can analyze the behavior of the new app version and choose to gradually increase the percentage of traffic sent to it. Once you are confident of the build, you can route all the traffic to it.
+A canary deployment reduces the risk of version upgrades to a minimum as it slowly rolls out changes to a small subset of users. More specifically, you have the option to expose a new app version to a portion of production traffic, which is defined by yourself on the highly responsive dashboard. Besides, KubeSphere gives you a visualized view of real-time traffic as it monitors requests after you implement a canary deployment. During the process, you can analyze the behavior of the new app version and choose to gradually increase the percentage of traffic sent to it. Once you are confident of the build, you can route all the traffic to it.
 
 ### [Traffic Mirroring](../traffic-mirroring/)
 

@@ -16,7 +16,7 @@ You have installed KubeSphere.
 
 ## Change the Console Language
 
-1. Log in KubeSphere with your account and click the account name in the top right corner.
+1. Log in to KubeSphere with your account and click the account name in the top right corner.
 
 2. Select **User Settings**.
 

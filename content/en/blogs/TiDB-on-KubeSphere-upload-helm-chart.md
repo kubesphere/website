@@ -69,7 +69,7 @@ As I will upload individual Helm charts of TiDB later, I need to first download 
 
 Now that you have Helm charts ready, you can upload them to KubeSphere as app templates.
 
-1. Log in the web console of KubeSphere. As I described in my last blog, you need to create a workspace before you create any resources in it. You can see [the official documentation of KubeSphere](https://kubesphere.io/docs/quick-start/create-workspace-and-project/) to learn how to create a workspace.
+1. Log in to the web console of KubeSphere. As I described in my last blog, you need to create a workspace before you create any resources in it. You can see [the official documentation of KubeSphere](https://kubesphere.io/docs/quick-start/create-workspace-and-project/) to learn how to create a workspace.
 
    ![create-workspace](https://ap3.qingstor.com/kubesphere-website/docs/20201026192648.png)
 

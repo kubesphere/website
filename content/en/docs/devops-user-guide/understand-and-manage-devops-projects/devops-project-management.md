@@ -10,12 +10,12 @@ This tutorial demonstrates how to create and manage DevOps projects.
 
 ## Prerequisites
 
-- You need to create a workspace and an account (`project-admin`). The account must be invited to the workspace with the role of `workspace-self-provisioner`. For more information, refer to [Create Workspace, Project, Account and Role](../../../quick-start/create-workspace-and-project/).
+- You need to create a workspace and an account (`project-admin`). The account must be invited to the workspace with the role of `workspace-self-provisioner`. For more information, refer to [Create Workspaces, Projects, Accounts and Roles](../../../quick-start/create-workspace-and-project/).
 - You need to enable the [KubeSphere DevOps system](../../../pluggable-components/devops/).
 
 ## Create a DevOps Project
 
-1. Log in the console of KubeSphere as `project-admin`. Go to **DevOps Projects** and click **Create**.
+1. Log in to the console of KubeSphere as `project-admin`. Go to **DevOps Projects** and click **Create**.
 
    ![devops-project-create](/images/docs/devops-user-guide/understand-and-manage-devops-projects/devops-project-management/devops-project-create.jpg) 
 

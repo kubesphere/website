@@ -15,11 +15,11 @@ This tutorial demonstrates how to create and delete a workspace.
 
 ## Prerequisites
 
-You have an account granted the role of `workspaces-manager`, such as `ws-manager` in [Create Workspace, Project, Account and Role](../../quick-start/create-workspace-and-project/).
+You have an account granted the role of `workspaces-manager`, such as `ws-manager` in [Create Workspaces, Projects, Accounts and Roles](../../quick-start/create-workspace-and-project/).
 
 ## Create a Workspace
 
-1. Log in the web console of KubeSphere as `ws-manager`. On the **Access Control** page, you can see all workspaces on the platform. By default, you have at least one workspace `system-workspace` in the list which contains all system projects.
+1. Log in to the web console of KubeSphere as `ws-manager`. On the **Access Control** page, you can see all workspaces on the platform. By default, you have at least one workspace `system-workspace` in the list which contains all system projects.
 
 2. Click **Create**.
 

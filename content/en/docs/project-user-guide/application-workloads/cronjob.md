@@ -13,13 +13,13 @@ For more information, see [the official documentation of Kubernetes](https://kub
 
 ## Prerequisites
 
-You need to create a workspace, a project and an account (`project-regular`). The account must be invited to the project with the role of `operator`. For more information, see [Create Workspace, Project, Account and Role](../../../quick-start/create-workspace-and-project).
+You need to create a workspace, a project and an account (`project-regular`). The account must be invited to the project with the role of `operator`. For more information, see [Create Workspaces, Projects, Accounts and Roles](../../../quick-start/create-workspace-and-project).
 
 ## Create a CronJob
 
 ### Step 1: Open Dashboard
 
-Log in the console as `project-regular`. Go to **Jobs** of a project, choose **CronJobs** and click **Create**.
+Log in to the console as `project-regular`. Go to **Jobs** of a project, choose **CronJobs** and click **Create**.
 
 ![cronjob-list](/images/docs/project-user-guide/application-workloads/cronjobs/cronjob-list.jpg)
 

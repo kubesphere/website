@@ -263,7 +263,9 @@ chmod +x kk
 
 {{< notice note >}}
 
-请确保 Kubernetes 版本和您下载的版本一致。
+- 请确保 Kubernetes 版本和您下载的版本一致。
+
+- 如果您在这一步的命令中不添加标志 `--with-kubesphere`，则不会部署 KubeSphere，只能使用配置文件中的 `addons` 字段安装，或者在您后续使用 `./kk create cluster` 命令时再次添加这个标志。
 
 {{</ notice >}}
 

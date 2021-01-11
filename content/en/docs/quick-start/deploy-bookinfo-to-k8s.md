@@ -23,11 +23,11 @@ In this tutorial, you will learn how to deploy a sample application Bookinfo com
 
 - You need to enable [KubeSphere Service Mesh](../../pluggable-components/service-mesh/).
 
-- You need to finish all tasks in [Create Workspace, Project, Account and Role](../create-workspace-and-project/).
+- You need to finish all tasks in [Create Workspaces, Projects, Accounts and Roles](../create-workspace-and-project/).
 
 - You need to enable **Application Governance**. To do so, follow the steps below:
 
-  Log in the console as `project-admin` and go to your project. Navigate to **Advanced Settings** under **Project Settings**, click **Edit**, and select **Edit Gateway**. In the dialog that appears, flip on the toggle switch next to **Application Governance**.
+  Log in to the console as `project-admin` and go to your project. Navigate to **Advanced Settings** under **Project Settings**, click **Edit**, and select **Edit Gateway**. In the dialog that appears, flip on the toggle switch next to **Application Governance**.
 
   ![edit-gateway](https://ap3.qingstor.com/kubesphere-website/docs/20200908145220.png)
 
@@ -58,7 +58,7 @@ The end-to-end architecture of the application is shown below. See [Bookinfo App
 
 ### Task 1: Deploy Bookinfo
 
-1. Log in the console as `project-regular` and enter **demo-project**. Navigate to **Applications** under **Application Workloads**, and click **Deploy Sample Application** on the right.
+1. Log in to the console as `project-regular` and enter **demo-project**. Navigate to **Applications** under **Application Workloads**, and click **Deploy Sample Application** on the right.
 
     ![sample-bookinfo](https://ap3.qingstor.com/kubesphere-website/docs/20200908100219.png)
 

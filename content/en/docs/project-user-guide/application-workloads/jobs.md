@@ -2,7 +2,7 @@
 title: "Jobs"
 keywords: "KubeSphere, Kubernetes, docker, jobs"
 description: "Create a Kubernetes Job"
-CronJobs: "Jobs"
+linkTitle: "Jobs"
 
 weight: 10250
 ---
@@ -15,17 +15,17 @@ The following example demonstrates specific steps of creating a Job (computing Ï
 
 ## Prerequisites
 
-You need to create a workspace, a project and an account (`project-regular`). The account must be invited to the project with the role of `operator`. For more information, see [Create Workspace, Project, Account and Role](../../../quick-start/create-workspace-and-project).
+You need to create a workspace, a project and an account (`project-regular`). The account must be invited to the project with the role of `operator`. For more information, see [Create Workspaces, Projects, Accounts and Roles](../../../quick-start/create-workspace-and-project).
 
 ## Create a Job
 
-### Step 1: Open Dashboard
+### Step 1: Open the dashboard
 
-Log in the console as `project-regular`. Go to **Application Workloads** and click **Jobs**. Click **Create** to open the modal.
+Log in to the console as `project-regular`. Go to **Jobs** under **Application Workloads** and click **Create**.
 
 ![create-job](/images/docs/project-user-guide/application-workloads/jobs/create-job.jpg)
 
-### Step 2: Input Basic Information
+### Step 2: Input basic information
 
 Enter the basic information. Refer to the image below as an example.
 
@@ -35,7 +35,7 @@ Enter the basic information. Refer to the image below as an example.
 
 ![job-create-basic-info](/images/docs/project-user-guide/application-workloads/jobs/job-create-basic-info.png)
 
-### Step 3: Job Settings (Optional)
+### Step 3: Job settings (optional)
 
 You can set the values in this step as below or click **Next** to use the default values. Refer to the table below for detailed explanations of each field.
 
@@ -48,7 +48,7 @@ You can set the values in this step as below or click **Next** to use the defaul
 | Parallelism             | `spec.parallelism`           | It specifies the maximum desired number of Pods the Job should run at any given time. The actual number of Pods running in a steady state will be less than this number when the work left to do is less than max parallelism ((`.spec.completions - .status.successful`) < `.spec.parallelism`). For more information, see [Jobs](https://kubernetes.io/docs/concepts/workloads/controllers/jobs-run-to-completion/). |
 | Active Deadline Seconds | `spec.activeDeadlineSeconds` | It specifies the duration in seconds relative to the startTime that the Job may be active before the system tries to terminate it; the value must be a positive integer. |
 
-### Step 4: Set Image
+### Step 4: Set an image
 
 1. Select **Never** for **Restart Policy**. You can only specify **Never** or **OnFailure** for **Restart Policy** when the Job is not completed:
 
@@ -74,7 +74,7 @@ You can set the values in this step as below or click **Next** to use the defaul
 For more information about setting images, see [Container Image Settings](../container-image-settings/).
     {{</ notice >}}
 
-### Step 5: Inspect Job Manifest (Optional)
+### Step 5: Inspect the Job manifest (optional)
 
 1. Enable **Edit Mode** in the top right corner which displays the manifest file of the Job. You can see all the values are set based on what you have specified in the previous steps.
 
@@ -120,16 +120,16 @@ For more information about setting images, see [Container Image Settings](../con
 2. You can make adjustments in the manifest directly and click **Create** or disable the **Edit Mode** and get back to the **Create Job** page.
 
     {{< notice note >}}
-You can skip **Mount Volumes** and **Advanced Settings** for this tutorial. For more information, see [Pod Volumes](../deployments/#step-4-mount-volumes) and [Deployment Advanced Settings](../deployments/#step-5-configure-advanced-settings).
+You can skip **Mount Volumes** and **Advanced Settings** for this tutorial. For more information, see [Mount volumes](../deployments/#step-4-mount-volumes) and [Configure advanced settings](../deployments/#step-5-configure-advanced-settings).
     {{</ notice >}}
 
-### Step 6: Check Result
+### Step 6: Check the result
 
 1. In the final step of **Advanced Settings**, click **Create** to finish. A new item will be added to the Job list if the creation is successful.
 
     ![job-list-new](/images/docs/project-user-guide/application-workloads/jobs/job-list-new.png)
 
-2. Click this Job and go to **Execution Records** tab where you can see the information of each execution record. There are four completed Pods since **Completions** was set to `4` in Step 3.
+2. Click this Job and go to **Execution Records** where you can see the information of each execution record. There are four completed Pods since **Completions** was set to `4` in Step 3.
 
     ![execution-record](/images/docs/project-user-guide/application-workloads/jobs/execution-record.jpg)
 

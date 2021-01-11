@@ -14,11 +14,11 @@ This tutorial demonstrates how to set a gateway in KubeSphere for the external a
 
 ## Prerequisites
 
-You need to create a workspace, a project and an account (`project-admin`). The account must be invited to the project with the role of `admin` at the project level. For more information, see [Create Workspace, Project, Account and Role](../../../docs/quick-start/create-workspace-and-project).
+You need to create a workspace, a project and an account (`project-admin`). The account must be invited to the project with the role of `admin` at the project level. For more information, see [Create Workspaces, Projects, Accounts and Roles](../../../docs/quick-start/create-workspace-and-project).
 
 ## Set a Gateway
 
-1. Log in the KubeSphere web console as `project-admin` and go to your project. In **Project Settings** from the navigation bar, select **Advanced Settings** and click **Set Gateway**.
+1. Log in to the KubeSphere web console as `project-admin` and go to your project. In **Project Settings** from the navigation bar, select **Advanced Settings** and click **Set Gateway**.
 
    ![set-project-gateway](/images/docs/project-administration/project-gateway/set-project-gateway.jpg)
 

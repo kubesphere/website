@@ -16,13 +16,13 @@ This tutorial demonstrates how to create a Secret in KubeSphere.
 
 ## Prerequisites
 
-You need to create a workspace, a project and an account (`project-regular`). The account must be invited to the project with the role of `operator`. For more information, see [Create Workspace, Project, Account and Role](../../../quick-start/create-workspace-and-project).
+You need to create a workspace, a project and an account (`project-regular`). The account must be invited to the project with the role of `operator`. For more information, see [Create Workspaces, Projects, Accounts and Roles](../../../quick-start/create-workspace-and-project).
 
 ## Create a Secret
 
 ### Step 1: Open the dashboard
 
-Log in the console as `project-regular`. Go to **Configurations** of a project, choose **Secrets** and click **Create**.
+Log in to the console as `project-regular`. Go to **Configurations** of a project, choose **Secrets** and click **Create**.
 
 ![create-secrets](/images/docs/project-user-guide/configurations/secrets/create-secrets.jpg)
 
@@ -124,7 +124,7 @@ This section shows how to create Secrets from your Docker Hub account and GitHub
 
 ### Create the Docker Hub Secret
 
-1. Log in KubeSphere as `project-regular` and go to your project. Select **Secrets** from the navigation bar and click **Create** on the right.
+1. Log in to KubeSphere as `project-regular` and go to your project. Select **Secrets** from the navigation bar and click **Create** on the right.
 
    ![secret-create](/images/docs/project-user-guide/configurations/secrets/secret-create.jpg)
 
@@ -144,7 +144,7 @@ This section shows how to create Secrets from your Docker Hub account and GitHub
 
 ### Create the GitHub Secret
 
-1. Log in KubeSphere as `project-regular` and go to your project. Select **Secrets** from the navigation bar and click **Create** on the right.
+1. Log in to KubeSphere as `project-regular` and go to your project. Select **Secrets** from the navigation bar and click **Create** on the right.
 
    ![secret-create](/images/docs/project-user-guide/configurations/secrets/secret-create.jpg)
 

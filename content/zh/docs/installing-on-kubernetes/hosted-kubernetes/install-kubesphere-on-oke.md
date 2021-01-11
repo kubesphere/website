@@ -138,6 +138,6 @@ KubeSphere 安装完成后，您可以通过 `NodePort` 或 `LoadBalancer` 的�
 
     ![概览页面](/images/docs/zh-cn/installing-on-kubernetes/hosted-kubernetes/install-kubesphere-on-oke/概览页面.jpg)
 
-## 启用可拔插组件（可选）
+## 启用可插拔组件（可选）
 
 上面的示例演示了默认的最小安装过程，要在 KubeSphere 中启用其他组件，请参阅[启用可插拔组件](../../../pluggable-components/)。
