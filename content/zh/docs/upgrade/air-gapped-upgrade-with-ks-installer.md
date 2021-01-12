@@ -187,7 +187,7 @@ Now, you will be able to access the web console of KubeSphere through `http://{I
 
 {{< notice note >}}
 
-To access the console, make sure the port 30880 is opened in your security group.
+To access the console, make sure port 30880 is opened in your security group.
 
 {{</ notice >}}
 

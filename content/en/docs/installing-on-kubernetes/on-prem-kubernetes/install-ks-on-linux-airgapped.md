@@ -2,7 +2,6 @@
 title: "Air-gapped Installation"
 keywords: 'Kubernetes, KubeSphere, air-gapped, installation'
 description: 'How to install KubeSphere on Kubernetes in an air-gapped environment.'
-
 linkTitle: "Air-gapped Installation"
 weight: 4310
 ---
@@ -15,7 +14,7 @@ Before you follow the steps below, read [Prerequisites](../../../installing-on-k
 
 You can use Harbor or any other private image registries. This tutorial uses Docker registry as an example with [self-signed certificates](https://docs.docker.com/registry/insecure/#use-self-signed-certificates) (If you have your own private image registry, you can skip this step).
 
-### Use Self-signed Certificates
+### Use self-signed certificates
 
 1. Generate your own certificate by executing the following commands:
 
@@ -33,7 +32,7 @@ You can use Harbor or any other private image registries. This tutorial uses Doc
 
    ![self-signed-cert](/images/docs/installing-on-linux/introduction/air-gapped-installation/self-signed-cert.jpg)
 
-### Start Docker Registry
+### Start the Docker registry
 
 Run the following commands to start the Docker registry:
 
@@ -56,7 +55,7 @@ Docker uses `/var/lib/docker` as the default directory where all Docker related 
 
 {{</ notice >}}
 
-### Configure Registry
+### Configure the registry
 
 1. Add an entry to `/etc/hosts` to map the hostname (i.e. the registry domain name; in this case, it is `dockerhub.kubekey.local`) to the private IP address of your machine as below.
 
@@ -141,7 +140,7 @@ As you install KubeSphere in an air-gapped environment, you need to prepare an i
 
    {{</ notice >}} 
 
-## Step 3: Push Images to Private Registry
+## Step 3: Push Images to Your Private Registry
 
 Transfer your packaged image file to your local machine and execute the following command to push it to the registry.
 
@@ -235,7 +234,7 @@ Now, you will be able to access the web console of KubeSphere through `http://{I
 
 {{< notice note >}}
 
-To access the console, make sure the port 30880 is opened in your security group.
+To access the console, make sure port 30880 is opened in your security group.
 
 {{</ notice >}}
 
@@ -243,7 +242,7 @@ To access the console, make sure the port 30880 is opened in your security group
 
 ## Appendix
 
-### Image List of KubeSphere v3.0.0
+### Image list of KubeSphere v3.0.0
 
 ```txt
 ##k8s-images

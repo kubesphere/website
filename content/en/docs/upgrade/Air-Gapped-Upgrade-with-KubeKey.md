@@ -2,31 +2,16 @@
 title: "Air-Gapped Upgrade with KubeKey"
 keywords: "Air-Gapped, kubernetes, upgrade, kubesphere, v3.0.0"
 description: "Air-Gapped Upgrade Kubernetes and KubeSphere"
-
 linkTitle: "Air-Gapped Upgrade with KubeKey"
 weight: 7400
 ---
-Air-gapped upgrade with KubeKey is recommended for users whose KubeSphere and Kubernetes were both deployed by [All-in-One Installation](https://v2-1.docs.kubesphere.io/docs/installation/all-in-one/) or [Multi-node Installation](https://v2-1.docs.kubesphere.io/docs/installation/multi-node/). If your Kubernetes cluster was provisioned by yourself or cloud providers, please refer to [Air-Gapped Upgrade with ks-installer](../air-gapped-upgrade-with-ks-installer/).
+Air-gapped upgrade with KubeKey is recommended for users whose KubeSphere and Kubernetes were both deployed by [All-in-One Installation](https://v2-1.docs.kubesphere.io/docs/installation/all-in-one/) or [Multi-node Installation](https://v2-1.docs.kubesphere.io/docs/installation/multi-node/). If your Kubernetes cluster was provisioned by yourself or cloud providers, refer to [Air-gapped Upgrade with ks-installer](../air-gapped-upgrade-with-ks-installer/).
 
 ## Prerequisites
 
-1. You need to have a KubeSphere cluster running version 2.1.1.
+1. You need to have a KubeSphere cluster running version 2.1.1. If your KubeSphere version is v2.1.0 or earlier, upgrade to v2.1.1 first.
 
-   {{< notice warning >}}
-
-   If your KubeSphere version is v2.1.0 or earlier, please upgrade to v2.1.1 first.
-
-   {{</ notice >}}
-
-2. Docker Registry
-
-   You need to have a harbor or other Docker registry.
-
-   {{< notice tip >}}
-
-   You can [Prepare a Private Image Registry](../../installing-on-linux/introduction/air-gapped-installation/#step-2-prepare-a-private-image-registry)
-
-   {{</ notice >}}
+2. A Docker registry. You need to have a Harbor or other Docker registries. For more information, see [Prepare a Private Image Registry](../../installing-on-linux/introduction/air-gapped-installation/#step-2-prepare-a-private-image-registry).
 
 3. Make sure every node can push and pull images from the Docker Registry.
 
@@ -34,24 +19,21 @@ Air-gapped upgrade with KubeKey is recommended for users whose KubeSphere and Ku
 
    {{< notice warning >}}
 
-   In v3.0.0, KubeSphere refactors many of its components such as Fluent Bit Operator and IAM. Make sure you back up any important components in case you heavily customized them but not from console.
+   In v3.0.0, KubeSphere refactors many of its components such as Fluent Bit Operator and IAM. Make sure you back up any important components if you heavily customized them but not from the console.
 
    {{</ notice >}}
 
-5. Make your upgrade plan. Two upgrading scenarios are documented below.
 
-## Air-Gapped Upgrade KubeSphere and Kubernetes
+## Upgrade KubeSphere and Kubernetes
 
 Upgrading steps are different for single-node clusters (all-in-one) and multi-node clusters.
 
 {{< notice info >}}
 
-- Air-gapped upgrading with Kubernetes will cause helm to be upgraded from v2 to v3. If you want to continue using helm2, please back up it: `cp /usr/local/bin/helm /usr/local/bin/helm2`
+- Upgrading Kubernetes will cause Helm to be upgraded from v2 to v3. If you want to continue using helm2, back up it first: `cp /usr/local/bin/helm /usr/local/bin/helm2`
 - When upgrading Kubernetes, KubeKey will upgrade from one MINOR version to the next MINOR version until the target version. For example, you may see the upgrading process going from 1.16 to 1.17 and to 1.18, instead of directly jumping to 1.18 from 1.16.
 
 {{</ notice >}}
-
-
 
 
 ### System Requirements
@@ -79,11 +61,11 @@ Similar to installing KubeSphere on Linux in an online environment, you also nee
 chmod +x kk
 ```
 
-### Step 2: Prepare Installation Images
+### Step 2: Prepare installation images
 
 As you install KubeSphere and Kubernetes on Linux, you need to prepare an image package containing all the necessary images and download the Kubernetes binary file in advance.
 
-1. Download the image list file `images-list.txt` from a machine that has access to the Internet through the following command:
+1. Download the image list file `images-list.txt` from a machine that has access to Internet through the following command:
 
    ```bash
    curl -L -O https://github.com/kubesphere/ks-installer/releases/download/v3.0.0/images-list.txt
@@ -141,7 +123,7 @@ As you install KubeSphere and Kubernetes on Linux, you need to prepare an image 
 
    - You can change the Kubernetes version downloaded based on your needs. Supported versions: v1.15.12, v1.16.13, v1.17.9 (default) and v1.18.6.
 
-   - You can upgrade Kubernetes from v1.16.13 to v1.17.9 by download the v1.17.9 Kubernetes binary file, but for cross-version upgrades, all intermediate version also needs to be downloaded in advance, such as if you want upgrade Kubernetes from v1.15.12 to v1.18.6, you need to download the Kubernetes v1.16.13, v1.17.9 and v1.18.6 binary file.
+   - You can upgrade Kubernetes from v1.16.13 to v1.17.9 by downloading the v1.17.9 Kubernetes binary file, but for cross-version upgrades, all intermediate versions need to be downloaded in advance. For example, if you want to upgrade Kubernetes from v1.15.12 to v1.18.6, you need to download Kubernetes v1.16.13 and v1.17.9, and the v1.18.6 binary file.
 
    - After you run the script, a folder `kubekey` is automatically created. Note that this file and `kk` must be placed in the same directory when you create the cluster later.
 
@@ -159,9 +141,9 @@ As you install KubeSphere and Kubernetes on Linux, you need to prepare an image 
 
    {{</ notice >}} 
 
-### Step 3: Push Images to Private Registry
+### Step 3: Push images to your private registry
 
-   Transfer your packaged image file to your local machine and execute the following command to push it to the registry.
+Transfer your packaged image file to your local machine and execute the following command to push it to the registry.
 
 ```bash
 ./offline-installation-tool.sh -l images-list.txt -d ./kubesphere-images -r dockerhub.kubekey.local
@@ -173,34 +155,34 @@ As you install KubeSphere and Kubernetes on Linux, you need to prepare an image 
 
    {{</ notice >}} 
 
-### Air-Gapped Upgrade All-in-one Cluster
+### Air-gapped upgrade for all-in-one clusters
 
-#### Example Machine
-| Host Name |  IP        |           Role       |   Port  |          URL            |
-| --------- | ---------- | -------------------- | ------- | ----------------------- |
-|   master  | 192.168.1.1|  Docker Registry     |   5000  | http://192.168.1.1:5000 |
-|   master  | 192.168.1.1|  master, etcd, worker|         |                         |
+#### Example machines
+| Host Name | IP          | Role                 | Port | URL                     |
+| --------- | ----------- | -------------------- | ---- | ----------------------- |
+| master    | 192.168.1.1 | Docker registry      | 5000 | http://192.168.1.1:5000 |
+| master    | 192.168.1.1 | master, etcd, worker |      |                         |
 
 #### Versions
 
-|       | Kubernetes |  KubeSphere |
-|------ | ---------- | ----------- |
-| Befor |  v1.16.13  |   v2.1.1    |
-| After |  v1.17.9   |   v3.0.0    |
+|        | Kubernetes | KubeSphere |
+| ------ | ---------- | ---------- |
+| Before | v1.16.13   | v2.1.1     |
+| After  | v1.17.9    | v3.0.0     |
 
-#### Upgrade a Cluster
+#### Upgrade a cluster
 
-   In this tutorial, KubeSphere is installed on multiple nodes, so you need to specify a configuration file to add host information. Besides, for air-gapped installation, pay special attention to `.spec.registry.privateRegistry`, which must be set to **your own registry address**. See the [complete YAML file](../air-gapped-installation/#2-edit-the-configuration-file) below for more information.
+In this example, KubeSphere is installed on a single node, and you need to specify a configuration file to add host information. Besides, for air-gapped installation, pay special attention to `.spec.registry.privateRegistry`, which must be set to **your own registry address**. For more information, see the following sections.
 
-#### Create an Example Configuration File
+#### Create an example configuration file
 
-   Execute the following command to generate an example configuration file for installation:
+Execute the following command to generate an example configuration file for installation:
 
 ```bash
 ./kk create config [--with-kubernetes version] [--with-kubesphere version] [(-f | --file) path]
 ```
 
-   For example:
+For example:
 
 ```bash
 ./kk create config --with-kubernetes v1.17.9  --with-kubesphere v3.0.0 -f config-sample.yaml
@@ -212,17 +194,17 @@ Make sure the Kubernetes version is the one you downloaded.
 
 {{</ notice >}}
 
-#### Edit the Configuration File
+#### Edit the configuration file
 
-  Edit the generated configuration file `config-sample.yaml`. Here is [an example for your reference](https://github.com/kubesphere/kubekey/blob/master/docs/config-example.md)
+Edit the configuration file `config-sample.yaml`. Here is [an example for your reference](https://github.com/kubesphere/kubekey/blob/master/docs/config-example.md).
 
    {{< notice warning >}} 
 
-   For air-gapped installation, you must specify `privateRegistry`, which is `dockerhub.kubekey.local` in this example.
+For air-gapped installation, you must specify `privateRegistry`, which is `dockerhub.kubekey.local` in this example.
 
    {{</ notice >}}
 
-   Set the `hosts` of your `config-sample.yaml` file:
+ Set `hosts` of your `config-sample.yaml` file:
 
 ```yaml
   hosts:
@@ -236,7 +218,7 @@ Make sure the Kubernetes version is the one you downloaded.
     - ks.master
 ```
 
-Set the `privateRegistry` value of your `config-sample.yaml` file:
+Set `privateRegistry` of your `config-sample.yaml` file:
 ```yaml
   registry:
     registryMirrors: []
@@ -244,13 +226,13 @@ Set the `privateRegistry` value of your `config-sample.yaml` file:
     privateRegistry: dockerhub.kubekey.local
 ```
 
-#### Upgrades your single-node cluster to KubeSphere v3.0.0 and Kubernetes v1.17.9 (default)
+#### Upgrade your single-node cluster to KubeSphere v3.0.0 and Kubernetes v1.17.9 (default)
 
 ```bash
 ./kk upgrade -f config-sample.yaml
 ```
 
-To upgrade Kubernetes to a specific version, please explicitly provide the version after the flag `--with-kubernetes`. Available versions are:
+To upgrade Kubernetes to a specific version, explicitly provide the version after the flag `--with-kubernetes`. Available versions are:
 
 - v1.15.12
 - v1.16.8, v1.16.10, v1.16.12, v1.16.13
@@ -258,29 +240,29 @@ To upgrade Kubernetes to a specific version, please explicitly provide the versi
 - v1.18.3, v1.18.5, v1.18.6
 
 
-### Air-Gapped Upgrade Multi-node Cluster
+### Air-gapped upgrade for multi-node clusters
 
-#### Example Machine
-| Host Name |  IP        |           Role       |   Port  |          URL            |
-| --------- | ---------- | -------------------- | ------- | ----------------------- |
-|   master  | 192.168.1.1|  Docker Registry     |   5000  | http://192.168.1.1:5000 |
-|   master  | 192.168.1.1|  master, etcd        |         |                         |
-|   slave1  | 192.168.1.2|  worker              |         |                         |
-|   slave1  | 192.168.1.3|  worker              |         |                         |
+#### Example machines
+| Host Name | IP          | Role            | Port | URL                     |
+| --------- | ----------- | --------------- | ---- | ----------------------- |
+| master    | 192.168.1.1 | Docker registry | 5000 | http://192.168.1.1:5000 |
+| master    | 192.168.1.1 | master, etcd    |      |                         |
+| slave1    | 192.168.1.2 | worker          |      |                         |
+| slave1    | 192.168.1.3 | worker          |      |                         |
 
 
 #### Versions
 
-|       | Kubernetes |  KubeSphere |
-|------ | ---------- | ----------- |
-| Befor |  v1.16.13  |   v2.1.1    |
-| After |  v1.17.9   |   v3.0.0    |
+|        | Kubernetes | KubeSphere |
+| ------ | ---------- | ---------- |
+| Before | v1.16.13   | v2.1.1     |
+| After  | v1.17.9    | v3.0.0     |
 
-#### Upgrade a Cluster
+#### Upgrade a cluster
 
-   In this tutorial, KubeSphere is installed on multiple nodes, so you need to specify a configuration file to add host information. Besides, for air-gapped installation, pay special attention to `.spec.registry.privateRegistry`, which must be set to **your own registry address**. See the [complete YAML file](../air-gapped-installation/#2-edit-the-configuration-file) below for more information.
+In this example, KubeSphere is installed on multiple nodes, so you need to specify a configuration file to add host information. Besides, for air-gapped installation, pay special attention to `.spec.registry.privateRegistry`, which must be set to **your own registry address**. For more information, see the following sections.
 
-#### Create an Example Configuration File
+#### Create an example configuration file
 
    Execute the following command to generate an example configuration file for installation:
 
@@ -300,9 +282,9 @@ Make sure the Kubernetes version is the one you downloaded.
 
 {{</ notice >}}
 
-#### Edit the Configuration File
+#### Edit the configuration file
 
-  Edit the generated configuration file `config-sample.yaml`. Here is [an example for your reference](https://github.com/kubesphere/kubekey/blob/master/docs/config-example.md)
+Edit the configuration file `config-sample.yaml`. Here is [an example for your reference](https://github.com/kubesphere/kubekey/blob/master/docs/config-example.md).
 
    {{< notice warning >}} 
 
@@ -310,7 +292,7 @@ Make sure the Kubernetes version is the one you downloaded.
 
    {{</ notice >}}
 
-   Set the `hosts` of your `config-sample.yaml` file:
+Set `hosts` of your `config-sample.yaml` file:
 
 ```yaml
   hosts:
@@ -326,7 +308,7 @@ Make sure the Kubernetes version is the one you downloaded.
     - ks.slave1
     - ks.slave2
 ```
-Set the `privateRegistry` value of your `config-sample.yaml` file:
+Set `privateRegistry` of your `config-sample.yaml` file:
 ```yaml
   registry:
     registryMirrors: []
@@ -334,13 +316,13 @@ Set the `privateRegistry` value of your `config-sample.yaml` file:
     privateRegistry: dockerhub.kubekey.local
 ```
 
-#### Upgrades your single-node cluster to KubeSphere v3.0.0 and Kubernetes v1.17.9 (default)
+#### Upgrade your multi-node cluster to KubeSphere v3.0.0 and Kubernetes v1.17.9 (default)
 
 ```bash
 ./kk upgrade -f config-sample.yaml
 ```
 
-To upgrade Kubernetes to a specific version, please explicitly provide the version after the flag `--with-kubernetes`. Available versions are:
+To upgrade Kubernetes to a specific version, explicitly provide the version after the flag `--with-kubernetes`. Available versions are:
 
 - v1.15.12
 - v1.16.8, v1.16.10, v1.16.12, v1.16.13
