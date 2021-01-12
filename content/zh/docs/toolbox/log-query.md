@@ -1,83 +1,83 @@
 ---
 title: "日志查询"
-keywords: 'KubeSphere, Kubernetes, log'
-description: 'Query Kubernetes logs from toolbox'
+keywords: 'KubeSphere, Kubernetes, 日志'
+description: '在工具箱中查询 Kubernetes 日志'
 linkTitle: "日志查询"
 weight: 15100
 ---
 
-The logs of applications and systems can help you better understand what is happening inside your cluster and workloads. The logs are particularly useful for debugging problems and monitoring cluster activities. KubeSphere provides a powerful and easy-to-use logging system which offers users the capabilities of log collection, query and management from the perspective of tenants. The tenant-based logging system is much more useful than Kibana since different tenants can only view their own logs, leading to better security. Moreover, the KubeSphere logging system filters out some redundant information so that tenants can only focus on logs that are useful to them.
+应用程序和系统的日志可以帮助您更好地了解集群内部和工作负载内部发生的事情。日志对于排除故障问题和监控集群活动特别有用。KubeSphere 提供强大且易用的日志系统，从租户的角度为用户提供日志收集、查询和管理的功能。基于租户的日志系统使不同的租户只能查看自己的日志，安全性更好，相较于 Kibana 更为实用。此外，KubeSphere 日志系统会过滤掉一些冗余信息，以便用户能够只专注于对自己有用的日志。
 
-This tutorial demonstrates how to use the log query function, including the interface, search parameters and detail pages.
+本教程演示了如何使用日志查询功能，包括界面、搜索参数和详情页面。
 
-## Prerequisites
+## 准备工作
 
-You need to enable the [KubeSphere Logging System](../../pluggable-components/logging/).
+您需要启用 [KubeSphere 日志系统](../../pluggable-components/logging/)。
 
-## Enter the Log Query Interface
+## 进入日志查询界面
 
-1. The log query function is available for all users. Log in the console with any account, hover over the **Toolbox** in the lower right corner and select **Log Search**.
+1. 所有用户都可以使用日志查询功能。使用任意帐户登录控制台，在右下角的**工具箱**图标上悬停，然后在弹出菜单中选择**日志查询**。
 
-    ![log-query-guide](/images/docs/log-query/log-query-guide.png)
+    ![进入日志查询](/images/docs/zh-cn/toolbox/log-query/log-query-guide.PNG)
 
-2. As shown in the pop-up window, you can see a time histogram of log numbers, a cluster selection drop-down list and a log search bar.
+2. 在弹出窗口中，您可以看到日志数量的时间直方图、集群选择下拉列表以及日志查询栏。
 
-    ![log-query-interface](/images/docs/log-query/log-query-interface.png)
+    ![日志查询界面](/images/docs/zh-cn/toolbox/log-query/log-query-interface.PNG)
 
     {{< notice note >}}
 
-- KubeSphere supports log queries on each cluster separately if you have enabled the multi-cluster feature. You can switch the target cluster using the drop-down list next to the log search bar.
-- Supported fields in the log search bar:
-  - **Keyword**
-  - **Project**
-  - **Workload**
-  - **Pod**
-  - **Container**
-  - **Time Range**
-- The keyword field supports the query of keyword combinations. For example, you can use `Error`, `Fail`, `Fatal`, `Exception`, and `Warning` together to query all the exception logs.
-- The keyword field supports exact query and fuzzy query. The fuzzy query provides case-insensitive fuzzy matching and retrieval of full terms by the first half of a word or phrase based on the ElasticSearch segmentation rules. For example, you can retrieve the logs containing `node_cpu_total` by searching the keyword `node_cpu` instead of the keyword `cpu`.
+- 如果您启用了多集群功能，KubeSphere 支持对每个集群分别进行日志查询。您可以使用日志搜索栏旁边的下拉列表切换目标集群。
+- 日志搜索栏中支持以下字段：
+  - **关键字**
+  - **项目**
+  - **工作负载**
+  - **容器组**
+  - **容器**
+  - **时间范围**
+- 关键字字段支持关键字组合查询。例如，您可以同时使用 `Error`、`Fail`、`Fatal`、`Exception` 和 `Warning` 来查询所有异常日志。
+- 关键字字段支持精确匹配和模糊匹配。模糊匹配不区分大小写，并且根据 ElasticSearch 分段规则，通过单词或词组的前半部分来检索完整术语。例如，您可以通过搜索关键字 `node_cpu`（而不是 `cpu`）来检索包含 `node_cpu_total` 的日志。
 
     {{</ notice >}}
 
-3. You can customize the query time range by selecting **Time Range** in the log search bar. Alternatively, click on the bars in the time histogram, and KubeSphere will use the time range of that bar for log queries.
+3. 您可以在日志搜索栏中选择**时间范围**来自定义查询时间范围。或者，点击时间直方图中的柱状图，KubeSphere 会使用该柱状图的时间范围进行日志查询。
 
-    ![log-query-time-range](/images/docs/log-query/log-query-time-range.png)
+    ![log-query-time-range](/images/docs/zh-cn/toolbox/log-query/log-query-time-range.PNG)
 
     {{< notice note >}}
 
-- KubeSphere stores logs for last seven days by default.
-- Each cluster has its own log retention period which can be set separately. You can modify it in `ClusterConfiguration`. Refer to [KubeSphere Logging System](../../pluggable-components/logging/) for more details.
+- KubeSphere 默认存储最近七天内的日志。
+- 每个集群都有自己的日志保留期限，可单独设置，您可以在 `ClusterConfiguration` 中进行修改。有关详细信息，请参考 [KubeSphere 日志系统](../../pluggable-components/logging/)。
 
     {{</ notice >}}
 
-## Use Search Parameters
+## 使用搜索参数
 
-1. You can provide as many fields as possible to narrow down your search results. Below is an example of  a log query on the cluster `product` with the keyword `error` in the project `kubesphere-system` within `last 12 hours`.
+1. 您可以提供尽可能多的字段来缩小搜索结果。以在集群 `product` 的项目 `kubesphere-system` 中查询最近 12 小时内包含关键字 `error` 的日志为例，如下图所示。
 
-    ![log-query-log-search](/images/docs/log-query/log-query-log-search.png)
+    ![搜索日志](/images/docs/zh-cn/toolbox/log-query/log-query-log-search.PNG)
 
-2. It returns logs of 13 rows with the corresponding time, project, pod and container information all displayed.
+2. 查询返回 13 行日志，并显示了相应的时间、项目、容器组（即 Pod）和容器信息。
 
-3. Click any one of the results from the list. Drill into its detail page and inspect the log from this Pod, including the complete context on the right. It is convenient for developers in terms of debugging and analyzing.
+3. 点击列表中的任一结果，进入它的详情页面，查看该 Pod 的日志，包括右侧的完整内容，便于开发者分析和排除故障。
 
     {{< notice note >}}
 
-The log query interface supports dynamic refreshing with 5s, 10s or 15s, and allows users to export logs to a local file for further analysis (in the top-right corner).
+日志查询界面支持每 5 秒、10 秒或 15 秒动态刷新一次，并且用户可以将日志导出至本地文件进行进一步分析（点击右上角按钮）。
 
     {{</ notice >}}
     
-    ![log-query-log-detail](/images/docs/log-query/log-query-log-detail.png)
+    ![日志详情](/images/docs/zh-cn/toolbox/log-query/log-query-log-detail.PNG)
 
-4. As you can see from the left panel, you can switch between Pods and inspect its containers within the same project from the drop-down list. In this case, you can detect if any abnormal Pods affect other Pods.
+4. 您在左侧面板可以通过下拉列表切换 Pod 并查看其在同一个项目中的容器，从而查看是否有任何异常 Pod 影响到其他 Pod。
 
-    ![log-query-inspect-other-pods](/images/docs/log-query/log-query-inspect-other-pods.png)
+    ![查看其它 Pod](/images/docs/zh-cn/toolbox/log-query/log-query-inspect-other-pods.PNG)
 
-## Drill into the Detail Page
+## 进入详情页面
 
-1. If the log looks abnormal, you can drill into the Pod detail page or container detail page to further inspect container logs, resource monitoring graphs and events.
+1. 如果日志看起来异常，您可以进入 Pod 详情页面或容器详情页面，进一步查看容器日志、资源监控图以及事件。
 
-    ![log-query-drill](/images/docs/log-query/log-query-drill.png)
+    ![进入详情页面](/images/docs/zh-cn/toolbox/log-query/log-query-drill.PNG)
 
-2. Inspect the container detail page as follows. At the same time, it allows you to open the terminal to debug the container directly.
+2. 如下图所示，查看容器详情页面。同时，您还可以打开终端直接为容器排除故障。
 
-    ![log-query-drill-container](/images/docs/log-query/log-query-drill-container.png)
+    ![进入容器](/images/docs/zh-cn/toolbox/log-query/log-query-drill-container.png)
