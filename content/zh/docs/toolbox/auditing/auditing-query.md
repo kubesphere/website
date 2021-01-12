@@ -45,14 +45,14 @@ KubeSphere 支持租户隔离的审计日志查询。本教程演示了如何使
  资源名称   | 与请求相关联的资源名称。支持模糊匹配。 
  操作行为          | 与请求相关联的 Kubernetes 操作行为。对于非资源请求，该参数为小写 HTTP 方式。支持精确匹配。 
  状态码      | HTTP 响应码。支持精确匹配。 
- 操作帐号 | 调用该请求的用户。支持精确匹配和模糊匹配。 
+ 操作帐户 | 调用该请求的用户。支持精确匹配和模糊匹配。 
  来源 IP      | 该请求源自的 IP 地址和中间代理。支持模糊匹配。 
  时间范围      | 该请求到达 Apiserver 的时间。 
 
    {{< notice note >}} 
 
-- 模糊匹配提供不区分大小写的模糊匹配，并且根据 ElasticSearch 分段规则，通过单词或词组的前半部分来检索完整术语。
-- KubeSphere 默认存储最近七天的日志。您可以在 ConfigMap 中的 `elasticsearch-logging-curator` 字段修改留存期。
+- 模糊匹配不区分大小写，并且根据 ElasticSearch 分段规则，通过单词或词组的前半部分来检索完整术语。
+- KubeSphere 默认存储最近七天的日志。您可以在 `elasticsearch-logging-curator`  ConfigMap 中修改保留期限。
 
 {{</ notice >}} 
 
