@@ -10,36 +10,36 @@ weight: 15000
 icon: "/images/docs/docs.svg"
 ---
 
-KubeSphere provides several important functionalities from the toolbox. This chapter demonstrates how to use the toolbox of KubeSphere to query events, logs, and auditing logs, and run commands with web kubectl.
+KubeSphere 通过工具箱提供几种重要功能。本章演示了如何使用 KubeSphere 工具箱查询事件、日志和审计日志，以及如何通过 Web Kubectl 运行命令。
 
-![toolbox](/images/docs/toolbox/index/toolbox.jpg)
+![工具箱](/images/docs/zh-cn/toolbox/index/toolbox.PNG)
 
-## [Log Query](../toolbox/log-query/)
+## [日志查询](../toolbox/log-query/)
 
-Understand how you can perform quick log queries to keep track of the latest logs of your cluster.
+了解如何快速执行日志查询，追踪集群的最新日志。
 
-## [Event Query](../toolbox/events-query/)
+## [事件查询](../toolbox/events-query/)
 
-Understand how you can perform quick event queries to keep track of the latest events of your cluster.
+了解如何快速执行事件查询，追踪集群的最新事件。
 
-## Auditing
+## 审计
 
-### [Receive and Customize Auditing Logs](../toolbox/auditing/auditing-receive-customize/)
+### [接收和自定义审计日志](../toolbox/auditing/auditing-receive-customize/)
 
-Learn how to receive and customize auditing logs.
+了解如何接收和自定义审计日志。
 
-### [Auditing Rules](../toolbox/auditing/auditing-rule/)
+### [审计规则](../toolbox/auditing/auditing-rule/)
 
-Understand the auditing rule and how to customize a rule for processing auditing logs.
+了解审计规则以及如何自定义有关处理审计日志的规则。
 
-### [Auditing Log Query](../toolbox/auditing/auditing-query/)
+### [审计日志查询](../toolbox/auditing/auditing-query/)
 
-Understand how you can perform quick auditing log queries to keep track of the latest auditing information of your cluster.
+了解如何快速执行审计日志查询，追踪集群的最新审计信息。
 
 ## [Web Kubectl](../toolbox/web-kubectl/)
 
-The web kubectl tool is integrated into KubeSphere to provide consistent user experiences for Kubernetes users.
+KubeSphere 中集成了 Web Kubectl 工具，为 Kubernetes 用户提供一致的用户体验。
 
-## [History](../toolbox/history/)
+## [历史记录](../toolbox/history/)
 
-Learn how to quickly switch between the resources you access in your workspace.
+了解如何快速切换在企业空间中访问的资源。
