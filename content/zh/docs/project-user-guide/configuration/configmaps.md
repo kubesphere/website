@@ -36,7 +36,7 @@ Kubernetes [ConfigMap](https://kubernetes.io/docs/concepts/configuration/configm
 
 {{</ notice >}} 
 
-![set-basic-info](/images/docs/project-user-guide/configurations/configmaps/set-basic-info.jpg)
+![set-basic-info](/images/docs/zh-cn/project-user-guide/configurations/configmaps/set-basic-info.jpg)
 
 ### 步骤 3：配置键值对
 
@@ -66,7 +66,7 @@ Kubernetes [ConfigMap](https://kubernetes.io/docs/concepts/configuration/configm
 
 1. ConfigMap 创建后会显示在如图所示的列表中。您可以点击右边的三个点，并从下拉菜单中选择操作来修改 ConfigMap。
 
-    ![configmap-list](/images/docs/project-user-guide/configurations/configmaps/configmap-list.jpg)
+    ![configmap-list](/images/docs/zh-cn/project-user-guide/configurations/configmaps/configmap-list.jpg)
 
     - **编辑**：查看和编辑基本信息。
     - **编辑配置文件**：查看、上传、下载或更新 YAML 文件。
@@ -87,7 +87,7 @@ Kubernetes [ConfigMap](https://kubernetes.io/docs/concepts/configuration/configm
 
 4. 点击**编辑信息**来查看和编辑 ConfigMap 的基本信息。
 
-    ![edit-configmap-info](/images/docs/project-user-guide/configurations/configmaps/edit-configmap-info.jpg)
+    ![edit-configmap-info](/images/docs/zh-cn/project-user-guide/configurations/configmaps/edit-configmap-info.jpg)
     
 
 ## 使用 ConfigMap
