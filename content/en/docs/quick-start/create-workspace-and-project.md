@@ -92,6 +92,12 @@ In this step, you create a workspace using the account `ws-manager` created in t
 
    Click **Create** after you finish.
 
+   {{< notice note >}}
+
+   If you have enabled the [multi-cluster feature](../../multicluster-management/), you need to [assign an available cluster](../../cluster-administration/cluster-settings/cluster-visibility-and-authorization/#select-available-clusters-when-you-create-a-workspace) (or multiple clusters) to the workspace so that projects can be created on the cluster(s) later.
+
+   {{</ notice >}} 
+
 3. Log out of the console and log back in as `ws-admin`. In **Workspace Settings**, select **Workspace Members** and click **Invite Member**.
 
    ![invite-member](/images/docs/quickstart/create-workspaces-projects-accounts/invite-member.png)
