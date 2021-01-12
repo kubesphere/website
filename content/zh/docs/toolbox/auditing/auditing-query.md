@@ -52,7 +52,7 @@ KubeSphere 支持租户隔离的审计日志查询。本教程演示了如何使
    {{< notice note >}} 
 
 - 模糊匹配不区分大小写，并且根据 ElasticSearch 分段规则，通过单词或词组的前半部分来检索完整术语。
-- KubeSphere 默认存储最近七天的日志。您可以在 `elasticsearch-logging-curator`  ConfigMap 中修改保留期限。
+- KubeSphere 默认存储最近七天的日志。您可以在 `elasticsearch-logging-curator` ConfigMap 中修改保留期限。
 
 {{</ notice >}} 
 
