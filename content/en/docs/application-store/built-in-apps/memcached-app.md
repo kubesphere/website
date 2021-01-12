@@ -1,7 +1,7 @@
 ---
 title: "Deploy Memcached on KubeSphere"
 keywords: 'Kubernetes, KubeSphere, Memcached, app-store'
-description: 'How to deploy Memcached on KubeSphere through App Store'
+description: 'How to deploy Memcached on KubeSphere through the App Store'
 linkTitle: "Deploy Memcached on KubeSphere"
 weight: 14230
 ---
