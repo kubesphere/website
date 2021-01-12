@@ -57,12 +57,12 @@ weight: 10540
 
    {{< notice note >}} 
 
-   - 请将上述命令中的 `demo-project` 修改成实际的项目（即 Namespace）名称。
+   - 请将上述命令中的 `demo-project` 修改成实际的项目（即命名空间）名称。
    - 您需要以 `admin` 用户重新登录才能在 KubeSphere 控制台的 Web kubectl 页面执行上述命令。
 
    {{</ notice >}} 
 
-10. 命令执行结果：
+10. 预期输出结果：
 
     ```bash
     ...
