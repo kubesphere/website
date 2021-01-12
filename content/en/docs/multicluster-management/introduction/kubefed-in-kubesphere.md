@@ -21,3 +21,9 @@ There can only be one H Cluster while multiple M Clusters can exist at the same 
 ## Vendor Agnostic
 
 KubeSphere features a powerful, inclusive central control plane so that you can manage any KubeSphere clusters in a unified way regardless of deployment environments or cloud providers.
+
+## Use the App Store in a Multi-cluster Architecture
+
+Different from other components in KubeSphere, the [KubeSphere App Store](../../../pluggable-components/app-store/) serves as a global application pool for all clusters, including H Cluster and M Clusters. You only need to enable the App Store on the H Cluster and you can use functions related to the App Store on M Clusters directly (no matter whether the App Store is enabled on M Clusters or not), such as [app templates](../../../project-user-guide/application/app-template/) and [app repositories](../../../workspace-administration/app-repository/import-helm-repository/).
+
+However, if you only enable the App Store on M Clusters without enabling it on the H Cluster, you will not be able to use the App Store on any cluster in the multi-cluster architecture.
