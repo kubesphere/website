@@ -2,7 +2,7 @@
 title: "ConfigMap"
 keywords: 'KubeSphere, Kubernetes, ConfigMap'
 description: '如何在 KubeSphere 中创建 ConfigMap。'
-linkTitle: "配置"
+linkTitle: "ConfigMap"
 weight: 10420
 ---
 

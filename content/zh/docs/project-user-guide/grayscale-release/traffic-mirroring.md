@@ -1,9 +1,8 @@
 ---
 title: "流量镜像"
 keywords: 'KubeSphere, Kubernetes, 流量镜像, Istio'
-description: 'Traffic Mirroring'
-
-linkTitle: "Traffic Mirroring"
+description: '流量镜像'
+linkTitle: "流量镜像"
 weight: 10540
 ---
 
