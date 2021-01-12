@@ -1,97 +1,98 @@
 ---
-title: "ConfigMaps"
-keywords: 'KubeSphere, Kubernetes, ConfigMaps'
-description: 'How to create a ConfigMap in KubeSphere'
-linkTitle: "ConfigMaps"
+title: "ConfigMap"
+keywords: 'KubeSphere, Kubernetes, ConfigMap'
+description: '如何在 KubeSphere 中创建 ConfigMap。'
+linkTitle: "配置"
 weight: 10420
 ---
 
-A Kubernetes [ConfigMap](https://kubernetes.io/docs/concepts/configuration/configmap/) is used to store configuration data in the form of key-value pairs. The ConfigMap resource provides a way to inject configuration data into Pods. The data stored in a ConfigMap object can be referenced in a volume of type `ConfigMap` and then consumed by containerized applications running in a Pod. ConfigMaps are often used in the following cases:
+Kubernetes [ConfigMap](https://kubernetes.io/docs/concepts/configuration/configmap/) 以键值对的形式存储配置数据。ConfigMap 资源可用于向 Pod 中注入配置数据。ConfigMap 对象中存储的数据可以被 `ConfigMap` 类型的卷引用，并由 Pod 中运行的容器化应用使用。ConfigMap 通常用于以下场景：
 
-- Set the value of environment variables.
-- Set command parameters in containers.
-- Create a configuration file in volumes.
+- 设置环境变量的值。
+- 设置容器中的命令参数。
+- 在卷中创建配置文件。
 
-This tutorial demonstrates how to create a ConfigMap in KubeSphere.
+本教程演示如何在 KubeSphere 中创建 ConfigMap。
 
-## Prerequisites
+## 准备工作
 
-You need to create a workspace, a project and an account (`project-regular`). The account must be invited to the project with the role of `operator`. For more information, see [Create Workspace, Project, Account and Role](../../../quick-start/create-workspace-and-project).
+您需要创建一个企业空间、一个项目和一个帐户（例如 `project-regular`）。该帐户必须已邀请至该项目，并具有 `operator` 角色。有关更多信息，请参阅[创建企业空间、项目、帐户和角色](../../../quick-start/create-workspace-and-project)。
 
-## Create a ConfigMap
+## 创建 ConfigMap
 
-### Step 1: Open Dashboard
+### 步骤 1：进入 ConfigMap 页面
 
-Log in the console as `project-regular`. Go to **Configurations** of a project, choose **ConfigMaps** and click **Create**.
+以 `project-regular` 用户登录控制台并进入项目，在左侧导航栏中选择**配置中心**下的**配置**，然后点击**创建**。
 
-![create-configmap](/images/docs/project-user-guide/configurations/configmaps/create-configmap.jpg)
+![create-configmap](/images/docs/zh-cn/project-user-guide/configurations/configmaps/create-configmap.jpg)
 
-### Step 2: Input Basic Information
+### 步骤 2：配置基本信息
 
-Specify a name for the ConfigMap (e.g. `demo-configmap`) and click **Next** to continue.
+设置 ConfigMap 的名称（例如 `demo-configmap`），然后点击**下一步**。
 
 {{< notice tip >}}
 
-You can see the ConfigMap manifest file in YAML format by enabling **Edit Mode** in the top right corner. KubeSphere allows you to edit the manifest file directly to create a ConfigMap. Alternatively, you can follow the steps below to create a ConfigMap via the dashboard.
+您可以在对话框右上角启用**编辑模式**来查看 ConfigMap 的 YAML 清单文件，并通过直接编辑清单文件来创建 ConfigMap。您也可以继续执行后续步骤在控制台上创建 ConfigMap。
 
 {{</ notice >}} 
 
 ![set-basic-info](/images/docs/project-user-guide/configurations/configmaps/set-basic-info.jpg)
 
-### Step 3: Input Configuration Values
+### 步骤 3：配置键值对
 
-1. Under the tab **ConfigMap Settings**, configure values by clicking **Add Data**.
+1. 在**配置设置**选项卡，点击**添加数据**以配置键值对。
 
-   ![add-data](/images/docs/project-user-guide/configurations/configmaps/add-data.jpg)
+   ![add-data](/images/docs/zh-cn/project-user-guide/configurations/configmaps/add-data.jpg)
 
-2. Input a key-value pair. For example:
+2. 配置一个键值对。下图为示例：
 
-   ![key-value](/images/docs/project-user-guide/configurations/configmaps/key-value.jpg)
+   ![key-value](/images/docs/zh-cn/project-user-guide/configurations/configmaps/key-value.jpg)
 
    {{< notice note >}}
 
-   - key-value pairs displays under the field `data` in the manifest.
+   - 配置的键值对会显示在清单文件中的 `data` 字段下。
 
-   - On the KubeSphere dashboard, you can only add key-value pairs for a ConfigMap currently. In future releases, you will be able to add a path to a directory containing configuration files to create ConfigMaps directly on the dashboard.
+   - 目前 KubeSphere 控制台只支持在 ConfigMap 中配置键值对。未来版本将会支持添加配置文件的路径来创建 ConfigMap。
 
    {{</ notice >}} 
 
-3. Click **√** in the bottom right corner to save it and click **Add Data** again if you want to add more key-value pairs.
+3. 点击对话框右下角的 **√** 以保存配置。您可以再次点击**添加数据**继续配置更多键值对。
 
-   ![finish-creating](/images/docs/project-user-guide/configurations/configmaps/finish-creating.jpg)
+   ![finish-creating](/images/docs/zh-cn/project-user-guide/configurations/configmaps/finish-creating.jpg)
 
-4. When you finish, click **Create** to generate the ConfigMap.
+4. 配置完成后点击**创建**来生成 ConfigMap。
 
-## Check ConfigMap Details
+## 查看 ConfigMap 详情
 
-1. After a ConfigMap is created, it displays in the list as below. You can click the three dots on the right and select the operation from the menu to modify it.
+1. ConfigMap 创建后会显示在如图所示的列表中。您可以点击右边的三个点，并从下拉菜单中选择操作来修改 ConfigMap。
 
     ![configmap-list](/images/docs/project-user-guide/configurations/configmaps/configmap-list.jpg)
 
-    - **Edit**: View and edit the basic information.
-    - **Edit YAML**: View, upload, download, or update the YAML file.
-    - **Modify Config**: Modify the key-value pair of the ConfigMap.
-    - **Delete**: Delete the ConfigMap.
+    - **编辑**：查看和编辑基本信息。
+    - **编辑配置文件**：查看、上传、下载或更新 YAML 文件。
+    - **修改配置**：修改 ConfigMap 键值对。
+    - **删除**：删除 ConfigMap。
 
-2. Click the name of the ConfigMap and you can go to its detail page. Under the tab **Detail**, you can see all the key-value pairs you have added for the ConfigMap.
+2. 点击 ConfigMap 名称打开 ConfigMap 详情页面。在**详情**选项卡，您可以查看 ConfigMap 的所有键值对。
 
-    ![detail-page](/images/docs/project-user-guide/configurations/configmaps/detail-page.jpg)
+    ![detail-page](/images/docs/zh-cn/project-user-guide/configurations/configmaps/detail-page.jpg)
 
-3. Click **More** to display what operations about this ConfigMap you can do.
+3. 点击**更多操作**对 ConfigMap 进行其他操作。
 
-    ![configmap-dropdown-menu](/images/docs/project-user-guide/configurations/configmaps/configmap-dropdown-menu.jpg)
+    ![configmap-dropdown-menu](/images/docs/zh-cn/project-user-guide/configurations/configmaps/configmap-dropdown-menu.jpg)
 
-    - **Edit YAML**: View, upload, download, or update the YAML file.
-    - **Modify Config**: Modify the key-value pair of the ConfigMap.
-    - **Delete**: Delete the ConfigMap, and return to the list page.
+    - **编辑配置文件**：查看、上传、下载或更新 YAML 文件。
+    - **修改配置**：修改 ConfigMap 键值对。
+    - **删除**：删除 ConfigMap 并返回 ConfigMap 列表页面。
 
-4. Click the **Edit Info** to view and edit the basic information.
+4. 点击**编辑信息**来查看和编辑 ConfigMap 的基本信息。
 
     ![edit-configmap-info](/images/docs/project-user-guide/configurations/configmaps/edit-configmap-info.jpg)
     
 
-## Use a ConfigMap
+## 使用 ConfigMap
 
-When you create workloads, [Services](../../../project-user-guide/application-workloads/services/), [Jobs](../../../project-user-guide/application-workloads/jobs/) or [CronJobs](../../../project-user-guide/application-workloads/cronjob/), you may need to add environment variables for containers. On the **Container Image** page, check **Environment Variables** and click **Use ConfigMap or Secret** to use a ConfigMap from the list.
+在创建工作负载、[服务](../../../project-user-guide/application-workloads/services/)、[任务](../../../project-user-guide/application-workloads/jobs/)或[定时任务](../../../project-user-guide/application-workloads/cronjob/)时，您可以用 ConfigMap 为容器添加环境变量。您可以在**容器镜像**页面勾选**环境变量**，点击**引用配置文件或密钥**，然后从下拉列表中选择一个 ConfigMap。
 
-![use-configmap](/images/docs/project-user-guide/configurations/configmaps/use-configmap.jpg)
+![use-configmap](/images/docs/zh-cn/project-user-guide/configurations/configmaps/use-configmap.jpg)
+
