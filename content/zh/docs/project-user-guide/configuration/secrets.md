@@ -6,7 +6,7 @@ linkTitle: "密钥"
 weight: 10410
 ---
 
-Kubernetes [密钥 (Secret)](https://kubernetes.io/zh/docs/concepts/configuration/secret/) 可用于存储和管理密码、OAuth 令牌和 SSH 密钥等信息。Pod 可以通过[三种方式](https://kubernetes.io/zh/docs/concepts/configuration/secret/#overview-of-secrets)使用密钥：
+Kubernetes [密钥 (Secret)](https://kubernetes.io/zh/docs/concepts/configuration/secret/) 可用于存储和管理密码、OAuth 令牌和 SSH 密钥等敏感信息。Pod 可以通过[三种方式](https://kubernetes.io/zh/docs/concepts/configuration/secret/#overview-of-secrets)使用密钥：
 
 - 作为挂载到 Pod 中容器化应用上的卷中的文件。
 - 作为 Pod 中容器使用的环境变量。
@@ -40,13 +40,13 @@ Kubernetes [密钥 (Secret)](https://kubernetes.io/zh/docs/concepts/configuratio
 
 ### 步骤 3：设置密钥
 
-1. 在**密钥设置**选项卡，从**类型**下拉列表中选择密钥类型。
+1. 在**密钥设置**选项卡，从**类型**下拉列表中选择密钥类型。您可以在 KubeSphere 中创建以下密钥，类型对应 YAML 文件中的 `type` 字段。
 
    ![secret-type](/images/docs/zh-cn/project-user-guide/configurations/secrets/secret-type.jpg)
 
    {{< notice note >}}
 
-   对于所有的密钥类型，配置在**数据**区域的所有键值对的值都必须是 base64 编码的字符串。KubeSphere 会自动将您在控制台上配置的值转换成 base64 编码并保存到 YAML 文件中。例如，密钥类型为**默认**时，如果您在**添加数据**页面将**键**和**值**分别设置为 `password` 和 `hello123`，YAML 文件中的显示的实际值将为 `aGVsbG8xMjM=`（即 `hello123` 的 base64 编码，由 KubeSphere 自动转换）。
+   对于所有的密钥类型，配置在清单文件中 `data` 字段的所有键值对的值都必须是 base64 编码的字符串。KubeSphere 会自动将您在控制台上配置的值转换成 base64 编码并保存到 YAML 文件中。例如，密钥类型为**默认**时，如果您在**添加数据**页面将**键**和**值**分别设置为 `password` 和 `hello123`，YAML 文件中显示的实际值为 `aGVsbG8xMjM=`（即 `hello123` 的 base64 编码，由 KubeSphere 自动转换）。
 
    {{</ notice >}} 
 
