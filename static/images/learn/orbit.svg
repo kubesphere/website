@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="100" height="63" viewBox="0 0 100 63">
+    <g fill="none" fill-rule="evenodd" opacity=".6">
+        <g fill-rule="nonzero">
+            <g>
+                <g>
+                    <path fill="#55BC8A" d="M50 0L19.737 50 50 100c27.57 0 50-22.43 50-50S77.57 0 50 0z" transform="translate(-310 -1535) translate(139 1445) translate(171 90)"/>
+                    <path fill="#CDF6D5" d="M0 50c0 27.57 22.43 50 50 50V0C22.43 0 0 22.43 0 50z" transform="translate(-310 -1535) translate(139 1445) translate(171 90)"/>
+                    <path fill="#CDF6D5" d="M50 20.557L32.18 50 50 79.443c16.235 0 29.443-13.208 29.443-29.443S66.235 20.557 50 20.557z" transform="translate(-310 -1535) translate(139 1445) translate(171 90)"/>
+                    <path fill="#FFF" d="M20.557 50c0 16.235 13.208 29.443 29.443 29.443V20.557c-16.235 0-29.443 13.208-29.443 29.443z" transform="translate(-310 -1535) translate(139 1445) translate(171 90)"/>
+                    <path fill="#65C194" d="M50 11.768l-5.32 8.789L50 29.346c4.846 0 8.79-3.943 8.79-8.79 0-4.846-3.944-8.788-8.79-8.788z" transform="translate(-310 -1535) translate(139 1445) translate(171 90)"/>
+                    <path fill="#86DBA2" d="M41.21 20.557c0 4.846 3.944 8.789 8.79 8.789V11.768c-4.846 0-8.79 3.942-8.79 8.789zM50 35.156L41.016 50 50 64.844c8.185 0 14.844-6.659 14.844-14.844 0-8.185-6.659-14.844-14.844-14.844z" transform="translate(-310 -1535) translate(139 1445) translate(171 90)"/>
+                    <path fill="#CDF6D5" d="M35.156 50c0 8.185 6.659 14.844 14.844 14.844V35.156c-8.185 0-14.844 6.659-14.844 14.844z" transform="translate(-310 -1535) translate(139 1445) translate(171 90)"/>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

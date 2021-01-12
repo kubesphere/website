@@ -80,3 +80,27 @@
   translation: 警告
 - id: Search Documentation
   translation: 搜索文档
+- id: Course theme
+  translation: 课程主题
+- id: Course benefits
+  translation: 课程收益
+- id: Video tutorial
+  translation: 视频教程
+- id: Graphic Course
+  translation: 图文课程
+- id: Start learning
+  translation: 开始学习
+- id: View graphic
+  translation: 查看图文
+- id: Apply for the job
+  translation: 申请职位
+- id: View more jobs
+  translation: 查看更多职位
+- id: Cloud Native Technology Class
+  translation: 云原生技术课堂
+- id: warnGraphic explanation
+  translation: 图文讲解
+- id: PPT courseware
+  translation: PPT 课件
+- id: Self-test
+  translation: 考题自测

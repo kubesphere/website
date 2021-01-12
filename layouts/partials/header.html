@@ -149,9 +149,12 @@
     </div>
 </header>
 <script>
-var bindNavMouseEvent = function(selector) {
+var bindNavMouseEvent = function(selector, element) {
+    if (!element) {
+        element = $(selector)
+    }
     var flag = false
-    $(selector).mouseenter(function() {
+    element.mouseenter(function() {
         if (flag) {
             return false
         }
@@ -160,7 +163,7 @@ var bindNavMouseEvent = function(selector) {
             flag = false
         })
     });
-    $(selector).mouseleave(function() {
+    element.mouseleave(function() {
         $(this).find('.dropdown-menu').fadeOut(200)
     });
 }
@@ -211,7 +214,9 @@ bindClickClose()
 
 bindScrollChangeHeader()
 
-bindNavMouseEvent('.header-container .menu-li')
+$('.header-container .menu-li').each(function() {
+    bindNavMouseEvent('', $(this))
+})
 bindNavMouseEvent('.header-container .language-menu')
 bindNavMouseEvent('.header-container .btn-li')
 

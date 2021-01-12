@@ -31,4 +31,11 @@
 {{ end }}
 {{ end }}
 
+{{ if .IsDescendant (.GetPage "/learn") }}
+{{ if not (eq . (.GetPage "/learn"))}}
+{{ $style := resources.Get "scss/learn-page.scss" | toCSS | minify | fingerprint }}
+<link rel="stylesheet" href="{{ $style.RelPermalink }}">
+{{ end }}
+{{ end }}
+
 
