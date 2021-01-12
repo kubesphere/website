@@ -34,7 +34,7 @@ Change the value of `auditing.enabled` as `false` to stop receiving auditing log
 
 ## Receive Auditing Logs from Kubernetes
 
- To make the KubeSphere Auditing Log system receive auditing logs from Kubernetes, you need to add a Kubernetes audit policy file and Kubernetes audit webhook config file to `/etc/kubernetes/manifests/kube-apiserver.yaml` as follows.
+To make the KubeSphere Auditing Log system receive auditing logs from Kubernetes, you need to add a Kubernetes audit policy file and Kubernetes audit webhook config file to `/etc/kubernetes/manifests/kube-apiserver.yaml` as follows.
 
 ### Audit policy
 
@@ -77,7 +77,7 @@ rules:
 - level: Metadata
 ```
 
- For more information about the audit policy, see [Audit Policy](https://kubernetes.io/docs/tasks/debug-application-cluster/audit/#audit-policy).
+For more information about the audit policy, see [Audit Policy](https://kubernetes.io/docs/tasks/debug-application-cluster/audit/#audit-policy).
 
 ### Audit webhook
 
@@ -101,7 +101,7 @@ preferences: {}
 users: []
 ```
 
- The `ip` is the `CLUSTER-IP` of Service `kube-auditing-webhook-svc` in the namespace `kubesphere-logging-system`. You can get it using this command.
+The `ip` is the `CLUSTER-IP` of Service `kube-auditing-webhook-svc` in the namespace `kubesphere-logging-system`. You can get it using this command.
 
 ```bash
 kubectl get svc -n kubesphere-logging-system
