@@ -1,28 +1,28 @@
 ---
-title: "Receive and Customize Auditing Logs"
-keywords: "Kubernetes, KubeSphere, auditing, log, customize, receive"
-description: "How to receive and customize KubeSphere and Kubernetes auditing logs."
-linkTitle: "Receive and Customize Auditing Logs"
+title: "接收和自定义审计日志"
+keywords: "Kubernetes, KubeSphere, 审计, 日志, 自定义, 接收"
+description: "如何接收并自定义 KubeSphere 和 Kubernetes 审计日志。"
+linkTitle: "接收和自定义审计日志"
 weight: 15310
 ---
 
-KubeSphere Auditing Logs provide a security-relevant chronological set of records documenting the sequence of activities that have affected the system by individual users, administrators, or other components of the system. Each request to KubeSphere generates an event that is then written to a webhook and processed according to a certain rule. The event will be ignored, stored, or generate an alert based on different rules.
+KubeSphere 审计日志提供了与安全相关的、按时间顺序排列的记录集，记录每个用户、管理员或系统其他组件对系统产生影响的一系列活动。对 KubeSphere 的每个请求都会生成一个事件，随后该事件会写入 Webhook 并根据特定规则进行处理。根据不同规则，该事件会被忽略、存储或生成告警。
 
-## Enable KubeSphere Auditing Logs
+## 启用 KubeSphere 审计日志
 
-To enable auditing logs, see [KubeSphere Auditing Logs](../../../pluggable-components/auditing-logs/).
+要启用审计日志，请参见 [KubeSphere 审计日志](../../../pluggable-components/auditing-logs/)。
 
-## Receive Auditing Logs from KubeSphere
+## 接收来自 KubeSphere 的审计日志
 
-The KubeSphere Auditing Log system receives auditing logs only from KubeSphere by default, while it can also receive auditing logs from Kubernetes.
+KubeSphere 审计日志系统默认只接收来自 KubeSphere 的审计日志，同时也可以接收来自 Kubernetes 的审计日志。
 
-Users can stop receiving auditing logs from KubeSphere by changing the value of `auditing.enable` in ConfigMap `kubesphere-config` in the namespace `kubesphere-system` using the following command: 
+用户可以使用以下命令在命名空间 `kubesphere-system` 中修改 `kubesphere-config` ConfigMap 中 `auditing.enable` 的值，停止接收来自 KubeSphere 的审计日志：
 
 ```bash
 kubectl edit cm -n kubesphere-system kubesphere-config
 ```
 
-Change the value of `auditing.enabled` as `false` to stop receiving auditing logs from KubeSphere.
+将 `auditing.enabled` 的值修改为 `false`，停止接收来自 KubeSphere 的审计日志。
 
 ```yaml
   spec:
@@ -30,13 +30,13 @@ Change the value of `auditing.enabled` as `false` to stop receiving auditing log
       enabled: false
 ```
 
- It should restart the KubeSphere apiserver to make the changes effective.
+您需要重启 KubeSphere Apiserver 使修改生效。
 
-## Receive Auditing Logs from Kubernetes
+## 接收来自 Kubernetes 的审计日志
 
- To make the KubeSphere Auditing Log system receive auditing logs from Kubernetes, you need to add a Kubernetes audit policy file and Kubernetes audit webhook config file to `/etc/kubernetes/manifests/kube-apiserver.yaml` as follows.
+要使 KubeSphere 审计日志系统接收来自 Kubernetes 的审计日志，您需要向 `/etc/kubernetes/manifests/kube-apiserver.yaml` 添加 Kubernetes 审计策略文件和 Kubernetes 审计 Webhook 配置文件，如下所示。
 
-### Audit policy
+### 审计策略
 
 ```yaml
 apiVersion: v1
@@ -63,11 +63,11 @@ spec:
 
 {{< notice note >}} 
 
-This operation will restart the Kubernetes apiserver.
+该操作会重启 Kubernetes Apiserver。
 
 {{</ notice >}}  
 
-The file `audit-policy.yaml` defines rules about what events should be recorded and what data they should include. You can use a minimal audit policy file to log all requests at the Metadata level:
+`audit-policy.yaml` 文件定义了关于应记录哪些事件和应包含哪些数据的规则。您可以使用最小审计策略文件记录元数据级别的所有请求。
 
 ```yaml
 # Log all requests at the Metadata level.
@@ -77,11 +77,11 @@ rules:
 - level: Metadata
 ```
 
- For more information about the audit policy, see [Audit Policy](https://kubernetes.io/docs/tasks/debug-application-cluster/audit/#audit-policy).
+有关审计策略的更多信息，请参见[审计策略](https://kubernetes.io/zh/docs/tasks/debug-application-cluster/audit/#audit-policy)。
 
-### Audit webhook
+### 审计 Webhook
 
-The file `audit-webhook.yaml` defines the webhook which the Kubernetes auditing logs will be sent to. Here is an example configuration of the Kube-Auditing webhook.
+`audit-webhook.yaml` 文件定义了 Kubernetes 审计日志将要发送至的 Webhook。以下是 Kube-Auditing Webhook 的示例配置。
 
 ```yaml
 apiVersion: v1
@@ -101,7 +101,7 @@ preferences: {}
 users: []
 ```
 
- The `ip` is the `CLUSTER-IP` of Service `kube-auditing-webhook-svc` in the namespace `kubesphere-logging-system`. You can get it using this command.
+`ip` 即命名空间 `kubesphere-logging-system` 中 `kube-auditing-webhook-svc` 服务的 `CLUSTER-IP`，您可以使用以下命令来获取。
 
 ```bash
 kubectl get svc -n kubesphere-logging-system
@@ -109,11 +109,11 @@ kubectl get svc -n kubesphere-logging-system
 
 {{< notice note >}}
 
-It should restart the Kubernetes apiserver to make the changes effective after you modified these two files.
+修改这两个文件后，您需要重启 Kubernetes Apiserver 使修改生效。
 
 {{</ notice >}} 
 
-Edit the CRD Webhook `kube-auditing-webhook`, and change the value of `k8sAuditingEnabled` to `true` through the following commands.
+使用以下命令编辑 `kube-auditing-webhook` CRD Webhook，将 `k8sAuditingEnabled` 的值改为 `true`。
 
 ```bash
 kubectl edit webhooks.auditing.kubesphere.io kube-auditing-webhook
@@ -126,15 +126,15 @@ spec:
 ```
 {{< notice tip >}} 
 
-You can also use an account of `platform-admin` role to log in the console, search `Webhook` in **CRDs** on the **Cluster Management** page, and edit `kube-auditing-webhook` directly.
+您也可以使用拥有 `platform-admin` 角色的帐户登录控制台，在**集群管理**页面转到**自定义资源 CRD**，搜索 `Webhook`，直接编辑 `kube-auditing-webhook`。
 
 {{</ notice >}}
 
-To stop receiving auditing logs from Kubernetes, remove the configuration of auditing webhook backend, then change the value of `k8sAuditingEnabled` to `false`.
+要停止接收来自 Kubernetes 的审计日志，请移除审计 Webhook 后端的配置，然后将 `k8sAuditingEnabled` 的值修改为 `false`。
 
-## Customize Auditing Logs
+## 自定义审计日志
 
-KubeSphere Auditing Log system provides a CRD Webhook `kube-auditing-webhook` to customize auditing logs. Here is an example yaml file:
+KubeSphere 审计日志系统提供 `kube-auditing-webhook` CRD Webhook 来自定义审计日志。下方是一个示例 YAML 文件：
 
 ```yaml
 apiVersion: auditing.kubesphere.io/v1alpha1
@@ -164,17 +164,17 @@ spec:
           port: 9093
 ```
 
- Parameter          | Description | Default
+ 参数        | 描述信息 | 默认值 
  ---                | ---         | ---
- `replicas`         | The replica number of the Kube-Auditing webhook. | 2
- `archivingPriority` | The priority of the archiving rule. The known audit types are `DEBUG`, `INFO`, and `WARNING`. | `DEBUG` 
- `alertingPriority` | The priority of the alerting rule. The known audit types are `DEBUG`, `INFO`, and `WARNING`. | `WARNING` 
- `auditLevel`       | The level of auditing logs. The known levels are: <br> - `None`: don't log events. <br> - `Metadata`: log request metadata (requesting user, timestamp, resource, verb, etc.) but not requests or response bodies. <br> - `Request`: log event metadata and request bodies but no response body. This does not apply to non-resource requests. <br> - `RequestResponse`: log event metadata, requests, and response bodies. This does not apply to non-resource requests. | `Metadata` 
- `k8sAuditingEnabled` | Whether to receive Kubernetes auditing logs. | `false` 
- `receivers`        | The receivers to receive alerts. |
+ `replicas`         | Kube-Auditing Webhook 的副本数量。 | 2
+ `archivingPriority` | 存档规则的优先级。已知的审计类型有 `DEBUG`、`INFO` 和 `WARNING`。 | `DEBUG` 
+ `alertingPriority` | 告警规则的优先级。已知的审计类型有 `DEBUG`、`INFO` 和 `WARNING`。 | `WARNING` 
+ `auditLevel`       | 审计日志的级别。已知的级别有： <br> - `None`：不记录事件。 <br> - `Metadata`：记录请求的元数据，例如请求的用户、时间戳、资源和操作行为 (Verb) 等，但不记录请求或响应的消息体。 <br> - `Request`：记录事件的元数据和请求的消息体但不记录响应的消息体。这不适用于非资源类型的请求。 <br> - `RequestResponse`：记录事件的元数据、请求以及响应的消息体。这不适用于非资源类型的请求。 | `Metadata` 
+ `k8sAuditingEnabled` | 是否接收 Kubernetes 审计日志。 | `false` 
+ `receivers`        | 接收告警的接收器。 |
 
 {{< notice note >}} 
 
-You can change the level of Kubernetes auditing logs by modifying the file `audit-policy.yaml`, then restart the Kubernetes apiserver.
+您可以通过修改 `audit-policy.yaml` 文件变更 Kubernetes 审计日志的级别，然后重启 Kubernetes Apiserver。
 
 {{</ notice >}} 
