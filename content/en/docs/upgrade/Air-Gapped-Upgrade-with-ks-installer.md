@@ -2,39 +2,24 @@
 title: "Air-Gapped Upgrade with ks-installer"
 keywords: "Air-Gapped, upgrade, kubesphere, v3.0.0"
 description: "Air-Gapped Upgrade KubeSphere"
-
 linkTitle: "Air-Gapped Upgrade with ks-installer"
 weight: 7500
 ---
 
-ks-installer is recommended for users whose Kubernetes clusters were not set up via [KubeSphere Installer](https://v2-1.docs.kubesphere.io/docs/installation/all-in-one/#step-2-download-installer-package), but hosted by cloud vendors. This tutorial is for **upgrading KubeSphere only**. Cluster operators are responsible for upgrading Kubernetes themselves beforehand.
+ks-installer is recommended for users whose Kubernetes clusters were not set up through the [KubeSphere Installer](https://v2-1.docs.kubesphere.io/docs/installation/all-in-one/#step-2-download-installer-package), but hosted by cloud vendors. This tutorial is for **upgrading KubeSphere only**. Cluster operators are responsible for upgrading Kubernetes themselves beforehand.
 
 
 ## Prerequisites
 
-- You need to have a KubeSphere cluster running version 2.1.1.
+- You need to have a KubeSphere cluster running version 2.1.1. If your KubeSphere version is v2.1.0 or earlier, upgrade to v2.1.1 first.
 
-{{< notice warning >}}
-
-If your KubeSphere version is v2.1.0 or earlier, please upgrade to v2.1.1 first.
-
-{{</ notice >}}
-
-- Docker Registry
-
-You need to have a harbor or other Docker registry.
-
-{{< notice tip >}}
-
-You can [quick start yourself docker registry](https://kubesphere.io/docs/installing-on-linux/introduction/air-gapped-installation/#step-2-prepare-a-private-image-registry)
-
-{{</ notice >}}
+- A Docker registry. You need to have a Harbor or other Docker registries. For more information, see [Prepare a Private Image Registry](../../installing-on-linux/introduction/air-gapped-installation/#step-2-prepare-a-private-image-registry).
 
 - Make sure you read [Release Notes For 3.0.0](../../release/release-v300/) carefully.
 
 {{< notice warning >}}
 
-In v3.0.0, KubeSphere refactors many of its components such as Fluent Bit Operator and IAM. Make sure you back up any important components in case you heavily customized them but not from console.
+In v3.0.0, KubeSphere refactors many of its components such as Fluent Bit Operator and IAM. Make sure you back up any important components if you heavily customized them but not from the console.
 
 {{</ notice >}}
 
@@ -42,7 +27,7 @@ In v3.0.0, KubeSphere refactors many of its components such as Fluent Bit Operat
 
 As you install KubeSphere in an air-gapped environment, you need to prepare an image package containing all the necessary images in advance.
 
-1. Download the image list file `images-list.txt` from a machine that has access to the Internet through the following command:
+1. Download the image list file `images-list.txt` from a machine that has access to Internet through the following command:
 
    ```bash
    curl -L -O https://github.com/kubesphere/ks-installer/releases/download/v3.0.0/images-list.txt
@@ -92,11 +77,11 @@ As you install KubeSphere in an air-gapped environment, you need to prepare an i
 
    {{< notice note >}}
 
-   You can choose to pull images as needed. For example, you can delete `##k8s-images` and related images under it in `images-list.text` as you already have a Kubernetes cluster.
+   You can choose to pull images as needed. For example, you can delete `##k8s-images` and related images under it in `images-list.text` if you already have a Kubernetes cluster.
 
    {{</ notice >}} 
 
-## Step 2: Push Images to Private Registry
+## Step 2: Push Images to Your Private Registry
 
 Transfer your packaged image file to your local machine and execute the following command to push it to the registry.
 
@@ -138,7 +123,7 @@ Similar to installing KubeSphere on an existing Kubernetes cluster in an online 
 
    {{</ notice >}}
 
-3. Save `cluster-configuration.yaml` after you finish editing. Replace `ks-installer` with your **own registry address** with the following command:
+3. Save `cluster-configuration.yaml` after you finish editing it. Replace `ks-installer` with your **own registry address** with the following command:
 
    ```bash
    sed -i "s#^\s*image: kubesphere.*/ks-installer:.*#        image: dockerhub.kubekey.local/kubesphere/ks-installer:v3.0.0#" kubesphere-installer.yaml
@@ -150,7 +135,7 @@ Similar to installing KubeSphere on an existing Kubernetes cluster in an online 
 
    {{</ notice >}}
 
-## Step 4: Upgrade Kubesphere
+## Step 4: Upgrade KubeSphere
 
 Execute the following commands after you make sure that all steps above are completed.
 
@@ -188,7 +173,7 @@ Now, you will be able to access the web console of KubeSphere through `http://{I
 
 {{< notice note >}}
 
-To access the console, make sure the port 30880 is opened in your security group.
+To access the console, make sure port 30880 is opened in your security group.
 
 {{</ notice >}}
 

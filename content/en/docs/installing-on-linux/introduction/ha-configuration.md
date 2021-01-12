@@ -114,7 +114,7 @@ The file name may be different if you customize it.
 
 {{</ notice >}} 
 
-### config-sample.yaml Example
+### config-sample.yaml example
 
 ```yaml
 spec:
@@ -142,7 +142,7 @@ spec:
 
 For more information about different fields in this configuration file, see [Kubernetes Cluster Configurations](../vars/) and [Multi-node Installation](../multioverview/#2-edit-the-configuration-file).
 
-### Configure the Load Balancer
+### Configure the load balancer
 
 ```yaml
 ## Public LB config example
@@ -161,17 +161,17 @@ For more information about different fields in this configuration file, see [Kub
 
 {{</ notice >}}
 
-### Persistent Storage Plugin Configurations
+### Persistent storage plugin configurations
 
 For a production environment, you need to prepare persistent storage and configure the storage plugin (e.g. CSI) in `config-sample.yaml` to define which storage service you want to use. For more information, see [Persistent Storage Configurations](../storage-configuration/).
 
-### Enable Pluggable Components (Optional)
+### Enable pluggable components (Optional)
 
 KubeSphere has decoupled some core feature components since v2.1.0. These components are designed to be pluggable which means you can enable them either before or after installation. By default, KubeSphere will be installed with the minimal package if you do not enable them.
 
 You can enable any of them according to your demands. It is highly recommended that you install these pluggable components to discover the full-stack features and capabilities provided by KubeSphere. Make sure your machines have sufficient CPU and memory before enabling them. See [Enable Pluggable Components](../../../pluggable-components/) for details.
 
-### Start Installation
+### Start installation
 
 After you complete the configuration, you can execute the following command to start the installation:
 
@@ -179,7 +179,7 @@ After you complete the configuration, you can execute the following command to s
 ./kk create cluster -f config-sample.yaml
 ```
 
-### Verify Installation
+### Verify installation
 
 1. Run the following command to Inspect the logs of installation.
 
