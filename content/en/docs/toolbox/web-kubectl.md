@@ -10,7 +10,7 @@ The Kubernetes command-line tool, kubectl, allows you to run commands on Kuberne
 
 KubeSphere provides web kubectl on the console for user convenience. By default, in the current version, only the account granted the `platform-admin` role (such as the default account `admin`) has the permission to use web kubectl for cluster resource operation and management.
 
-In this tutorial demonstrates how to use web kubectl to operate on and manage cluster resources.
+This tutorial demonstrates how to use web kubectl to operate on and manage cluster resources.
 
 ## Use Web Kubectl
 
