@@ -30,7 +30,7 @@ kubectl edit cm -n kubesphere-system kubesphere-config
       enabled: false
 ```
 
-应重启 KubeSphere Apiserver 使修改生效。
+您需要重启 KubeSphere Apiserver 使修改生效。
 
 ## 接收来自 Kubernetes 的审计日志
 
@@ -109,7 +109,7 @@ kubectl get svc -n kubesphere-logging-system
 
 {{< notice note >}}
 
-修改这两个文件后，应重启 Kubernetes Apiserver 使修改生效。
+修改这两个文件后，您需要重启 Kubernetes Apiserver 使修改生效。
 
 {{</ notice >}} 
 
@@ -169,7 +169,7 @@ spec:
  `replicas`         | Kube-Auditing Webhook 的副本数量。 | 2
  `archivingPriority` | 存档规则的优先级。已知的审计类型有 `DEBUG`、`INFO` 和 `WARNING`。 | `DEBUG` 
  `alertingPriority` | 告警规则的优先级。已知的审计类型有 `DEBUG`、`INFO` 和 `WARNING`。 | `WARNING` 
- `auditLevel`       | 审计日志的级别。已知的级别有： <br> - `None`：不记录事件。 <br> - `Metadata`：记录请求的元数据（请求的用户、时间戳、资源、动词等）但不记录请求或响应的消息体。 <br> - `Request`：记录事件的元数据和请求的消息体但不记录响应的消息体。这不适用于非资源类型的请求。 <br> - `RequestResponse`：记录事件的元数据、请求以及响应的消息体。这不适用于非资源类型的请求。 | `Metadata` 
+ `auditLevel`       | 审计日志的级别。已知的级别有： <br> - `None`：不记录事件。 <br> - `Metadata`：记录请求的元数据，例如请求的用户、时间戳、资源和操作行为 (Verb) 等，但不记录请求或响应的消息体。 <br> - `Request`：记录事件的元数据和请求的消息体但不记录响应的消息体。这不适用于非资源类型的请求。 <br> - `RequestResponse`：记录事件的元数据、请求以及响应的消息体。这不适用于非资源类型的请求。 | `Metadata` 
  `k8sAuditingEnabled` | 是否接收 Kubernetes 审计日志。 | `false` 
  `receivers`        | 接收告警的接收器。 |
 

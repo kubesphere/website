@@ -30,7 +30,7 @@ Change the value of `auditing.enabled` as `false` to stop receiving auditing log
       enabled: false
 ```
 
- It should restart the KubeSphere apiserver to make the changes effective.
+You need to restart the KubeSphere apiserver to make the changes effective.
 
 ## Receive Auditing Logs from Kubernetes
 
@@ -109,7 +109,7 @@ kubectl get svc -n kubesphere-logging-system
 
 {{< notice note >}}
 
-It should restart the Kubernetes apiserver to make the changes effective after you modified these two files.
+You need to restart the Kubernetes apiserver to make the changes effective after you modified these two files.
 
 {{</ notice >}} 
 
