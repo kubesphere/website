@@ -1,107 +1,135 @@
 ---
-title: "Harbor App"
+title: "Deploy Harbor on KubeSphere"
 keywords: 'Kubernetes, KubeSphere, Harbor, app-store'
-description: 'How to use built-in Harbor registry'
-
-
+description: 'How to deploy Harbor on KubeSphere through the App Store'
+linkTitle: "Deploy Harbor on KubeSphere"
 weight: 14220
 ---
-From the [Introduction](../../_index) section, you know there was uncounted application could be installed by helm. [kubesphere\'s App Store](https://charts.kubesphere.io/main/) also added some popular application.
+[Harbor](https://goharbor.io/) is an open-source registry that secures artifacts with policies and role-based access control, ensures images are scanned and free from vulnerabilities, and signs images as trusted.
 
-This tutorial walks you through an example of how to deploy [Harbor](https://goharbor.io/) with several click in kubesphere.
+This tutorial walks you through an example of deploying [Harbor](https://goharbor.io/) from the App Store of KubeSphere.
 
 ## Prerequisites
 
-- Please make sure you [enable the OpenPitrix system](https://kubesphere.io/docs/pluggable-components/app-store/). We will deploy Harbor from the App Store.
-- You need to create a [workspace, a project, and a user account](https://kubesphere.io/docs/quick-start/create-workspace-and-project/) for this tutorial. The account needs to be a platform regular user and to be invited as the project operator with the `operator` role. In this tutorial, you log in as `project-operator` and work in the project `demo` in the workspace `demo-wp`.
+- Please make sure you [enable the OpenPitrix system](../../../pluggable-components/app-store/).
+- You need to create a workspace, a project, and a user account for this tutorial. The account needs to be a platform regular user and to be invited as the project operator with the `operator` role. In this tutorial, you log in as `project-regular` and work in the project `demo-project` in the workspace `demo-workspace`. For more information, see [Create Workspaces, Projects, Accounts and Roles](../../../quick-start/create-workspace-and-project/).
 
 ## Hands-on Lab
 
-### Common steps
+### Step 1: Deploy Harbor from the App Store
 
-1. Choose harbor template `From App Store`.
+1. On the **Overview** page of the project `demo-project`, click **App Store** in the top left corner.
 
-![choose_app_from_store](/images/docs/appstore/harbor/choose_app_from_store.png)
+   ![app-store](/images/docs/appstore/built-in-apps/harbor-app/app-store.jpg)
 
-2. Choose harbor **version** and **deployment location**, then click `Next`.
+2. Find Harbor and click **Deploy** on the **App Info** page.
 
-![deploy_set_of_harbor](/images/docs/appstore/harbor/deploy_set_of_harbor.png)
+   ![find-harbor](/images/docs/appstore/built-in-apps/harbor-app/find-harbor.jpg)
 
-3. Config harbor yaml, then click `Deploy`. There was an example yaml in section **FAQ**.
+   ![click-deploy](/images/docs/appstore/built-in-apps/harbor-app/click-deploy.jpg)
 
-![config_of_harbor_deploy](/images/docs/appstore/harbor/config_of_harbor_deploy.png)
+3. Set a name and select an app version. Make sure Harbor is deployed in `demo-project` and click **Next**.
 
-> `type` : how to expose the service. It\'s related to kubernetes service.  
-> `tls` : means whether to enable https. Simply set it as **false** for common scenario.  
-> `externalURL` : the url exposed to user.  
+   ![deploy-harbor](/images/docs/appstore/built-in-apps/harbor-app/deploy-harbor.jpg)
 
-{{< notice warning >}}
-Don't forget to edit **externalURL**, if you have trouble in login after harbor deployed, edit this may helpful.
-{{</ notice >}}
+4. On the **App Config** page, edit the configuration file of Harbor. Pay attention to the following fields.
 
-4. Check the status of deployment, then try to login harbor by use the `expose.type` you defined.
+   `type`: The method you use to access the Harbor Service. This example uses `nodePort`.
 
-For this example, we use `http://172.23.5.6:30002` to access to harbor which defined at step 3.
+   `tls`: Specify whether you want to enable HTTPS. Set it to `false` for most cases.
 
-![active_of_harbor](/images/docs/appstore/harbor/active_of_harbor.png)
+   `externalURL`: The URL exposed to tenants.
 
-![overview_of_harbor_login](/images/docs/appstore/harbor/overview_of_harbor_login.png)
+   ![harbor-config](/images/docs/appstore/built-in-apps/harbor-app/harbor-config.jpg)
 
-### FAQ
+   {{< notice note >}}
 
-1. How to enable http login ?
+   - Don't forget to specify `externalURL`. This field can be very helpful if you have trouble accessing Harbor.
 
-* set `tls.enabled` as false in step 3. `externalURL` \'s protocol should be as same as the `expose.type.ports`.
-* if use docker login, set `externalURL` as one of `insecure-registries` in **daemon.json**, then reload docker.
-* the keywords showed in the yaml below, you should notice.
+   - For more information, see [the example configuration](#faq) in FAQ.
 
-```yaml
-## NOTICE 172.23.5.6 is the test host ip, should use your ip
-expose:
-  type: nodePort
-  tls:
-    enabled: false
-    secretName: ""
-    notarySecretName: ""
-    # commonName should modify
-    commonName: "172.23.5.6"
-  nodePort:
-    # The name of NodePort service
-    name: harbor
-    ports:
-      http:
-        # The service port Harbor listens on when serving with HTTP
-        port: 80
-        # The node port Harbor listens on when serving with HTTP
-        nodePort: 30002
-      https:
-        # The service port Harbor listens on when serving with HTTPS
-        port: 443
-        # The node port Harbor listens on when serving with HTTPS
-        nodePort: 30003
-      # Only needed when notary.enabled is set to true
-      notary:
-        # The service port Notary listens on
-        port: 4443
-        # The node port Notary listens on
-        nodePort: 30004
+   {{</ notice >}} 
 
-externalURL: http://172.23.5.6:30002
+   When you finish editing the configuration, click **Deploy** to continue.
 
-# The initial password of Harbor admin. Change it from portal after launching Harbor
-harborAdminPassword: "Harbor12345"
-# The secret key used for encryption. Must be a string of 16 chars.
-secretKey: "not-a-secure-key"
-```
+5. Wait until Harbor is up and running.
 
-2. How to enable https login ?
+   ![creating-harbor](/images/docs/appstore/built-in-apps/harbor-app/creating-harbor.jpg)
 
-    a. use self signed certificates.
-      * set `tls.enabled` as true in step 3, and edit **externalURL** properly.
-      * copy the ca certificates stored in pod `harbor-core` \'s `/etc/core/ca` to your host.
-      * trust the ca certificates by your host first, then restart docker.
+### Step 2: Access Harbor
 
-    b. use public ssl.
-      * add certificates as a secrets.
-      * set `tls.enabled` as true in step 3, and edit **externalURL** properly.
-      * edit `tls.secretName`.
+1. Based on the field `expose.type` you set in the configuration file, the access method may be different. As this example uses `nodePort` to access Harbor, visit `http://nodeIP:30002` as set in the previous step.
+
+   ![harbor-login](/images/docs/appstore/built-in-apps/harbor-app/harbor-login.jpg)
+
+   {{< notice note >}}
+
+   You may need to open the port in your security groups and configure related port forwarding rules depending on your where your Kubernetes cluster is deployed.
+
+   {{</ notice >}} 
+
+2. Log in to Harbor using the default account and password (`admin/Harbor12345`). The password is defined in the field `harborAdminPassword` in the configuration file.
+
+   ![harbor-dashboard](/images/docs/appstore/built-in-apps/harbor-app/harbor-dashboard.jpg)
+
+## FAQ
+
+1. How to enable HTTP login?
+
+   Set `tls.enabled` to `false` in step 1 above. The protocol of `externalURL` must be the same as `expose.type.ports`.
+
+   If you use Docker login, set `externalURL` to one of `insecure-registries` in `daemon.json`, then reload Docker.
+
+   Here is an example configuration file for your reference. Pay special attention to the comments.
+
+   ```yaml
+   ## NOTICE 192.168.0.9 is the example IP address and you must use your own.
+   expose:
+     type: nodePort
+     tls:
+       enabled: false
+       secretName: ""
+       notarySecretName: ""
+       commonName: "192.168.0.9"  # Change commonName to your own.
+     nodePort:
+       # The name of NodePort service
+       name: harbor
+       ports:
+         http:
+           # The service port Harbor listens on when serving with HTTP
+           port: 80
+           # The node port Harbor listens on when serving with HTTP
+           nodePort: 30002
+         https:
+           # The service port Harbor listens on when serving with HTTPS
+           port: 443
+           # The node port Harbor listens on when serving with HTTPS
+           nodePort: 30003
+         # Only needed when notary.enabled is set to true
+         notary:
+           # The service port Notary listens on
+           port: 4443
+           # The node port Notary listens on
+           nodePort: 30004
+   
+   externalURL: http://192.168.0.9:30002 # Use your own IP address.
+   
+   # The initial password of Harbor admin. Change it from portal after launching Harbor
+   harborAdminPassword: "Harbor12345"
+   # The secret key used for encryption. Must be a string of 16 chars.
+   secretKey: "not-a-secure-key"
+   ```
+
+2. How to enable HTTPS login?
+
+    a. Use self-signed certificates.
+      * Set `tls.enabled` to `true` in the configuration file in step 1, and edit `externalURL` accordingly.
+      * Copy the CA certificates stored in the Pod `harbor-core` \'s `/etc/core/ca` to your host.
+      * Trust the CA certificates by your host first, then restart Docker.
+
+    b. Use public SSL.
+      * Add certificates as a Secret.
+      * Set `tls.enabled` to `true` in the configuration file in step 1, and edit `externalURL` accordingly.
+      * Edit `tls.secretName`.
+
+For more information, see [the documentation of Harbor](https://goharbor.io/docs/2.1.0/).
