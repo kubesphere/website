@@ -1,61 +1,55 @@
 ---
-title: "Traffic Mirroring"
-keywords: 'KubeSphere, Kubernetes, traffic mirroring, istio'
+title: "流量镜像"
+keywords: 'KubeSphere, Kubernetes, 流量镜像, Istio'
 description: 'Traffic Mirroring'
 
 linkTitle: "Traffic Mirroring"
 weight: 10540
 ---
 
-Traffic mirroring, also called shadowing, is a powerful, risk-free method of testing your app versions as it sends a copy of live traffic to a service that is being mirrored. Namely, you implement a similar setup for acceptance test so that problems can be detected in advance. As mirrored traffic happens out of band of the critical request path for the primary service, your end users will not be affected during the whole process.
+流量镜像 (Traffic Mirroring)，也称为流量影子 (Traffic Shadowing)，是一种强大的、无风险的测试应用版本的方法，它将实时流量的副本发送给被镜像的服务。采用这种方法，您可以搭建一个与原环境类似的环境以进行验收测试，从而提前发现问题。由于镜像流量存在于主服务关键请求路径带外，终端用户在测试全过程不会受到影响。
 
-## Prerequisites
+## 准备工作
 
-- You need to enable [KubeSphere Service Mesh](../../../pluggable-components/service-mesh/).
-- You need to create a workspace, a project and an account (`project-regular`). The account must be invited to the project with the role of `operator`. For more information, see [Create Workspace, Project, Account and Role](../../../quick-start/create-workspace-and-project).
-- You need to enable **Application Governance** and have an available app so that you can mirror the traffic of it. The sample app used in this tutorial is Bookinfo. For more information, see [Deploy Bookinfo and Manage Traffic](../../../quick-start/deploy-bookinfo-to-k8s/).
+- 您需要启用 [KubeSphere 服务网络](../../../pluggable-components/service-mesh/)。
+- 您需要创建一个企业空间、一个项目和一个帐户（例如 `project-regular`）。该帐户必须已邀请至该项目，并具有 `operator` 角色。有关更多信息，请参阅[创建企业空间、项目、帐户和角色](../../../quick-start/create-workspace-and-project)。
+- 您需要启用**应用治理**，并有可用的应用，以便为该应用进行流量镜像。本教程以 Bookinfo 为例。有关更多信息，请参阅[部署 Bookinfo 和管理流量](../../../quick-start/deploy-bookinfo-to-k8s/)。
 
-## Create Traffic Mirroring Job
+## 创建流量镜像任务
 
-1. Log in KubeSphere as `project-regular`. Under **Categories**, click **Create Job** on the right of **Traffic Mirroring**.
+1. 以 `project-regular` 用户登录 KubeSphere 并进入项目。在左侧导航栏选择**灰度发布**，在页面右侧点击**流量镜像**右边的**发布任务**。
 
-   ![traffic-mirroring-1](/images/docs/project-user-guide/grayscale-release/traffic-mirroring/traffic-mirroring-1.jpg)
+   ![traffic-mirroring-1](/images/docs/zh-cn/project-user-guide/grayscale-release/traffic-mirroring/traffic-mirroring-1.jpg)
 
-2. Set a name for it and click **Next**.
+2. 设置发布任务的名称并点击**下一步**。
 
-   ![traffic-mirroring-2](/images/docs/project-user-guide/grayscale-release/traffic-mirroring/traffic-mirroring-2.jpg)
+   ![traffic-mirroring-2](/images/docs/zh-cn/project-user-guide/grayscale-release/traffic-mirroring/traffic-mirroring-2.jpg)
 
-3. Select your app from the drop-down list and the service of which you want to mirror the traffic. If you also use the sample app Bookinfo, select **reviews** and click **Next**.
+3. 从下拉列表中选择需要进行流量镜像的应用，选择所需的服务（本教程以 Bookinfo 应用的 reviews 服务为例），然后点击**下一步**。
 
-   ![traffic-mirroring-3](/images/docs/project-user-guide/grayscale-release/traffic-mirroring/traffic-mirroring-3.jpg)
+   ![traffic-mirroring-3](/images/docs/zh-cn/project-user-guide/grayscale-release/traffic-mirroring/traffic-mirroring-3.jpg)
 
-4. On the **Grayscale Release Version** page, add another version of it (e.g. `v2`) as shown in the image below and click **Next**:
+4. 在**灰度版本**页面，为应用添加另一个版本（例如 `v2`），然后点击**下一步**。
 
-   ![traffic-mirroring-4](/images/docs/project-user-guide/grayscale-release/traffic-mirroring/traffic-mirroring-4.jpg)
+   ![traffic-mirroring-4](/images/docs/zh-cn/project-user-guide/grayscale-release/traffic-mirroring/traffic-mirroring-4.jpg)
 
-   {{< notice note >}}
+5. 在最后一步点击**创建**。
 
-   The image version is `v2` in the screenshot.
+   ![traffic-mirroring-5](/images/docs/zh-cn/project-user-guide/grayscale-release/traffic-mirroring/traffic-mirroring-5.jpg)
 
-   {{</ notice >}} 
+6. 新建的流量镜像任务显示在**任务状态**页面。点击该任务查看详情。
 
-5. Click **Create** in the final step.
+   ![traffic-mirroring-task](/images/docs/zh-cn/project-user-guide/grayscale-release/traffic-mirroring/traffic-mirroring-task.jpg)
 
-   ![traffic-mirroring-5](/images/docs/project-user-guide/grayscale-release/traffic-mirroring/traffic-mirroring-5.jpg)
+7. 在详情页面，您可以看到流量被镜像至 `v2` 版本，同时折线图中显示实时流量。
 
-6. The traffic mirroring job created displays under the tab **Job Status**. Click it to view details.
+   ![traffic-mirroring-6](/images/docs/zh-cn/project-user-guide/grayscale-release/traffic-mirroring/traffic-mirroring-6.jpg)
 
-   ![traffic-mirroing-task](/images/docs/project-user-guide/grayscale-release/traffic-mirroring/traffic-mirroing-task.jpg)
+8. 新建的部署也显示在**工作负载**下的**部署**页面。
 
-7. You can see the traffic is being mirrored to `v2` with real-time traffic displaying in the line chart.
+   ![new-deployment](/images/docs/zh-cn/project-user-guide/grayscale-release/traffic-mirroring/new-deployment.jpg)
 
-   ![traffic-mirroring-6](/images/docs/project-user-guide/grayscale-release/traffic-mirroring/traffic-mirroring-6.jpg)
-
-8. The new **Deployment** is created as well.
-
-   ![new-deployment](/images/docs/project-user-guide/grayscale-release/traffic-mirroring/new-deployment.jpg)
-
-9. You can directly get the virtual service to view `mirror` and `weight` by executing the following command:
+9. 您可以执行以下命令查看虚拟服务的 `mirror` 和 `weight` 字段。
 
    ```bash
    kubectl -n demo-project get virtualservice -o yaml
@@ -63,12 +57,12 @@ Traffic mirroring, also called shadowing, is a powerful, risk-free method of tes
 
    {{< notice note >}} 
 
-   - When you execute the command above, replace `demo-project` with your own project (i.e. namespace) name.
-   - If you want to execute the command from the web kubectl on the KubeSphere console, you need to use the account `admin`.
+   - 请将上述命令中的 `demo-project` 修改成实际的项目（即命名空间）名称。
+   - 您需要以 `admin` 用户重新登录才能在 KubeSphere 控制台的 Web kubectl 页面执行上述命令。
 
    {{</ notice >}} 
 
-10. Expected output:
+10. 预期输出结果：
 
     ```bash
     ...
@@ -91,16 +85,16 @@ Traffic mirroring, also called shadowing, is a powerful, risk-free method of tes
           ...
     ```
 
-    This route rule sends 100% of the traffic to `v1`. The last stanza specifies that you want to mirror to the service `reviews v2`. When traffic gets mirrored, the requests are sent to the mirrored service with their Host/Authority headers appended with `-shadow`. For example, `cluster-1` becomes `cluster-1-shadow`.
+    此路由规则将 100% 流量发送至 `v1`。`mirror` 部分的字段指定将流量镜像至 `reviews v2` 服务。当流量被镜像时，发送至镜像服务的请求的 Host/Authority 头部会附带 `-shadow` 标识。例如， `cluster-1` 会变成 `cluster-1-shadow`。
 
     {{< notice note >}}
 
-These requests are mirrored as “fire and forget”, which means that the responses are discarded. You can specify the `weight` field to mirror a fraction of the traffic, instead of mirroring all requests. If this field is absent, for compatibility with older versions, all traffic will be mirrored. For more information, see [Mirroring](https://istio.io/v1.5/pt-br/docs/tasks/traffic-management/mirroring/).
+这些请求以 Fire and Forget 方式镜像，亦即请求的响应会被丢弃。您可以指定 `weight` 字段来只镜像一部分而不是全部流量。如果该字段缺失，为与旧版本兼容，所有流量都会被镜像。有关更多信息，请参阅 [Mirroring](https://istio.io/v1.5/pt-br/docs/tasks/traffic-management/mirroring/)。
 
 {{</ notice >}}
 
-## Take a Job Offline
+## 下线任务
 
-You can remove the traffic mirroring job by clicking **Job offline**, which does not affect the current app version.
+您可以点击**任务下线**移除流量镜像任务。此操作不会影响当前的应用版本。
 
-![remove-traffic-mirroring](/images/docs/project-user-guide/grayscale-release/traffic-mirroring/remove-traffic-mirroring.jpg)
+![remove-traffic-mirroring](/images/docs/zh-cn/project-user-guide/grayscale-release/traffic-mirroring/remove-traffic-mirroring.jpg)
