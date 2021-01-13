@@ -1,67 +1,67 @@
 ---
-title: "Image Registries"
-keywords: 'KubeSphere, Kubernetes, docker, Secrets'
-description: 'How to create a Secret for an image registry.'
-linkTitle: "Image Registries"
+title: "镜像仓库"
+keywords: 'KubeSphere, Kubernetes, Docker, 密钥'
+description: '如何为镜像仓库创建密钥。'
+linkTitle: "镜像仓库"
 weight: 10430
 ---
 
-A Docker image is a read-only template that can be used to deploy container services. Each image has a unique identifier (i.e. image name:tag). For example, an image can contain a complete package of an Ubuntu operating system environment with only Apache and a few applications installed. An image registry is used to store and distribute Docker images.
+Docker 镜像是一个只读的模板，可用于部署容器服务。每个镜像都有一个唯一标识符（即`镜像名称:标签`）。例如，一个镜像可以包含只安装有 Apache 和几个应用的完整的 Ubuntu 操作系统软件包。镜像仓库可用于存储和分发 Docker 镜像。
 
-This tutorial demonstrates how to create Secrets for different image registries.
+本教程演示如何为不同的镜像仓库创建密钥。
 
-## Prerequisites
+## 准备工作
 
-You need to create a workspace, a project and an account (`project-regular`). The account must be invited to the project with the role of `operator`. For more information, see [Create Workspace, Project, Account and Role](../../../quick-start/create-workspace-and-project).
+您需要创建一个企业空间、一个项目和一个帐户（例如 `project-regular`）。该帐户必须已邀请至该项目，并具有 `operator` 角色。有关更多信息，请参阅[创建企业空间、项目、帐户和角色](../../../quick-start/create-workspace-and-project)。
 
-## Create a Secret
+## 创建密钥
 
-When you create workloads, [Services](../../../project-user-guide/application-workloads/services/), [Jobs](../../../project-user-guide/application-workloads/jobs/), or [CronJobs](../../../project-user-guide/application-workloads/cronjob/), you can select images from your private registry in addition to the public registry. To use images from your private registry, you must create a Secret for it so that the registry can be integrated to KubeSphere.
+创建工作负载、[服务](../../../project-user-guide/application-workloads/services/)、[任务](../../../project-user-guide/application-workloads/jobs/)或[定时任务](../../../project-user-guide/application-workloads/cronjob/)时，除了从公共仓库选择镜像，您还可以从私有仓库选择镜像。要使用私有仓库中的镜像，您必须先为私有仓库创建密钥，以便在 KubeSphere 中集成该私有仓库。
 
-### Step 1: Open Dashboard
+### 步骤 1：进入密钥页面
 
-Log in the web console of KubeSphere as `project-regular`. Go to **Configurations** of a project, choose **Secrets** and click **Create**.
+以 `project-regular` 用户登录 KubeSphere Web 控制台并进入项目，在左侧导航栏中选择**配置中心**下的**密钥**，然后点击**创建**。
 
-![open-dashboard](/images/docs/project-user-guide/configurations/image-registries/open-dashboard.jpg)
+![open-dashboard](/images/docs/zh-cn/project-user-guide/configurations/image-registries/open-dashboard.jpg)
 
-### Step 2: Input Basic Information
+### 步骤 2：配置基本信息
 
-Specify a name for the Secret (e.g. `demo-registry-secret`) and click **Next** to continue.
+设置密钥的名称（例如 `demo-registry-secret`），然后点击**下一步**。
 
 {{< notice tip >}}
 
-You can see the Secret's manifest file in YAML format by enabling **Edit Mode** in the top right corner. KubeSphere allows you to edit the manifest file directly to create a Secret. Alternatively, you can follow the steps below to create a Secret via the dashboard.
+您可以在对话框右上角启用**编辑模式**来查看密钥的 YAML 清单文件，并通过直接编辑清单文件来创建密钥。您也可以继续执行后续步骤在控制台上创建密钥。
 
 {{</ notice >}} 
 
-![create-secret](/images/docs/project-user-guide/configurations/image-registries/create-secret.jpg)
+![create-secret](/images/docs/zh-cn/project-user-guide/configurations/image-registries/create-secret.jpg)
 
-### Step 3: Specify Image Registry Information
+### 步骤 3：配置镜像仓库信息
 
-Select **Image Registry Secret** for **Type**. To use images from your private registry as you create application workloads, you need to specify the following fields.
+将**类型**设置为**镜像仓库密钥**。要在创建应用负载时使用私有仓库中的镜像，您需要配置以下字段：
 
-- **Registry Address**. The address of the image registry that stores images for you to use when creating application workloads.
-- **User Name**. The account name you use to log in the registry.
-- **Password**. The password you use to log in the registry.
-- **Email** (Optional). Your email address.
+- **仓库地址**：镜像仓库的地址，其中包含创建应用负载时需要使用的镜像。
+- **用户名**：登录镜像仓库所需的用户名。
+- **密码**：登录镜像仓库所需的密码。
+- **邮箱**（可选）：您的邮箱地址。
 
-![image-registry-info](/images/docs/project-user-guide/configurations/image-registries/image-registry-info.jpg)
+![image-registry-info](/images/docs/zh-cn/project-user-guide/configurations/image-registries/image-registry-info.jpg)
 
-#### Add Docker Hub registry
+#### 添加 Docker Hub 仓库
 
-1. Before you add your image registry in [Docker Hub](https://hub.docker.com/), make sure you have an available Docker Hub account. On the **Secret Settings** page, input `docker.io` for **Registry Address** and enter your Docker ID and password for **User Name** and **Password**. Click **Validate** to check whether the address is available. 
+1. 在 [Docker Hub](https://hub.docker.com/) 上添加镜像仓库之前，您需要注册一个 Docker Hub 帐户。在**密钥设置**页面，将**仓库地址**设置为 `docker.io`，将**用户名**和**密码**分别设置为您的 Docker ID 和密码，然后点击**验证**以检查地址是否可用。
 
-   ![validate-registry-address](/images/docs/project-user-guide/configurations/image-registries/validate-registry-address.jpg)
+   ![validate-registry-address](/images/docs/zh-cn/project-user-guide/configurations/image-registries/validate-registry-address.jpg)
 
-2. Click **Create**. Later, the Secret will appear on the **Secrets** page. For more information about how to edit the Secret after you create it, see [Check Secret Details](../../../project-user-guide/configuration/secrets/#check-secret-details).
+2. 点击**创建**。密钥创建后会显示在**密钥**界面。有关密钥创建后如何编辑密钥，请参阅[查看密钥详情](../../../project-user-guide/configuration/secrets/#查看密钥详情)。
 
-#### Add Harbor image registry
+#### 添加 Harbor 镜像仓库
 
-[Harbor](https://goharbor.io/) is an open-source trusted cloud-native registry project that stores, signs, and scans content. Harbor extends the open-source Docker Distribution by adding the functionalities usually required by users such as security, identity and management. Harbor uses http and https to serve registry requests.
+[Harbor](https://goharbor.io/) 是一个开源的可信云原生仓库项目，用于对内容进行存储、签名和扫描。通过增加用户经常需要的功能，例如安全、身份验证和管理，Harbor 扩展了开源的 Docker Distribution。Harbor 使用 HTTP 和 HTTPS 为仓库请求提供服务。
 
-**Http**
+**HTTP**
 
-1. You need to modify the Docker configuration for all nodes within the cluster. For example, if there is an external Harbor registry and its IP address is `http://192.168.0.99`, then you need to add the field `--insecure-registry=192.168.0.99` to `/etc/systemd/system/docker.service.d/docker-options.conf`:
+1. 您需要修改集群中所有节点的 Docker 配置。例如，如果外部 Harbor 仓库的 IP 地址为 `http://192.168.0.99`，您需要在 `/etc/systemd/system/docker.service.d/docker-options.conf` 文件中增加 `--insecure-registry=192.168.0.99` 标签。
 
    ```bash
    [Service]
@@ -71,15 +71,15 @@ Select **Image Registry Secret** for **Type**. To use images from your private r
 
    {{< notice note >}} 
 
-   - Replace the image registry address with your own registry address.
+   - 请将镜像仓库的地址替换成实际的地址。
 
-   - `Environment` represents [dockerd options](https://docs.docker.com/engine/reference/commandline/dockerd/).
+   - 有关 `Environment` 字段中的标签，请参阅 [Dockerd Options](https://docs.docker.com/engine/reference/commandline/dockerd/)。
 
-   - `--insecure-registry` is required by the Docker daemon for the communication with an insecure registry. Refer to [docker docs](https://docs.docker.com/engine/reference/commandline/dockerd/#insecure-registries) for its syntax.
+   - Docker 守护进程需要 `--insecure-registry` 标签才能与不安全的仓库通信。有关该标签的更多信息，请参阅 [Docker 官方文档](https://docs.docker.com/engine/reference/commandline/dockerd/#insecure-registries)。
 
    {{</ notice >}}
 
-2. After that, reload the configuration file and restart Docker:
+2. 重新加载配置文件并重启 Docker。
 
    ```bash
    sudo systemctl daemon-reload
@@ -89,24 +89,24 @@ Select **Image Registry Secret** for **Type**. To use images from your private r
    sudo systemctl restart docker
    ```
 
-3. Go back to the **Secret Settings** page and select **Image Registry Secret** for **Type**. Input your Harbor IP address for **Registry Address** and enter the username and password.
+3. 在 KubeSphere 控制台上进入创建密钥的**密钥设置**页面，将**类型**设置为**镜像仓库密钥**，将**仓库地址**设置为您的 Harbor IP 地址，并设置用户名和密码。
 
-   ![harbor-address](/images/docs/project-user-guide/configurations/image-registries/harbor-address.jpg)
+   ![harbor-address](/images/docs/zh-cn/project-user-guide/configurations/image-registries/harbor-address.jpg)
 
    {{< notice note >}} 
 
-   If you want to use the domain name instead of the IP address with Harbor, you may need to configure the CoreDNS and nodelocaldns within the cluster.
+   如需使用 Harbor 域名而非 IP 地址，您需要在集群中配置 CoreDNS 和 nodelocaldns。
 
    {{</ notice >}} 
    
-4. Click **Create**. Later, the Secret will appear on the **Secrets** page. For more information about how to edit the Secret after you create it, see [Check Secret Details](http://localhost:1313/docs/project-user-guide/configuration/secrets/#check-secret-details).
+4. 点击**创建**。密钥创建后会显示在**密钥**页面。有关密钥创建后如何编辑密钥，请参阅[查看密钥详情](../../../project-user-guide/configuration/secrets/#查看密钥详情)。
 
-**Https**
+**HTTPS**
 
-For the integration of the https-based Harbor registry, refer to [Harbor Documentation](https://goharbor.io/docs/1.10/install-config/configure-https/). Make sure you use `docker login` to connect to your Harbor registry.
+有关如何集成基于 HTTPS 的 Harbor 仓库，请参阅 [Harbor 官方文档](https://goharbor.io/docs/1.10/install-config/configure-https/)。请确保您已使用 `docker login` 命令连接到您的 Harbor 仓库。
 
-## Use an Image Registry
+## 使用镜像仓库
 
-When you set images, you can select the private image registry if the Secret of it is created in advance. For example, click the arrow on the **Container Image** page to expand the registry list when you create a [Deployment](../../../project-user-guide/application-workloads/deployments/). After you choose the image registry, enter the image name and tag to use the image.
+如果您已提前创建了私有镜像仓库的密钥，您可以选择私有镜像仓库中的镜像。例如，创建[部署](../../../project-user-guide/application-workloads/deployments/)时，您可以在**容器镜像**页面点击**镜像**下拉列表选择一个仓库，然后输入镜像名称和标签使用镜像。
 
-![use-image-registry](/images/docs/project-user-guide/configurations/image-registries/use-image-registry.jpg)
+![use-image-registry](/images/docs/zh-cn/project-user-guide/configurations/image-registries/use-image-registry.jpg)
