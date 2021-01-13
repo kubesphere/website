@@ -136,3 +136,9 @@ openpitrix-hyperpitrix-deployment-fb76645f4-crvmm   1/1     Running     0       
 {{</ tab >}}
 
 {{</ tabs >}}
+
+## 在多集群架构中使用应用商店
+
+[在多集群架构中](../../multicluster-management/introduction/kubefed-in-kubesphere/)，一个 Host 集群（H 集群）管理所有 Member 集群（M 集群）。与 KubeSphere 中的其他组件不同，应用商店是所有集群（包括 H 集群和 M 集群）的全局应用程序池。您只需要在 H 集群上启用应用商店，便可以直接在 M 集群上使用应用商店的相关功能（无论 M 集群是否启用应用商店），例如[应用模板](../../project-user-guide/application/app-template/)和[应用仓库](../../workspace-administration/app-repository/import-helm-repository/)。
+
+但是，如果只在 M 集群上启用应用商店而没有在 H 集群上启用，您将无法在多集群架构中的任何集群上使用应用商店。

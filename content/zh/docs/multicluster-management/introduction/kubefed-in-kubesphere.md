@@ -21,3 +21,9 @@ weight: 5120
 ## 厂商无锁定
 
 KubeSphere 拥有功能强大的中央控制平面，您可以统一纳管部署在任意环境或云厂商上的 KubeSphere 集群。
+
+## 在多集群架构中使用应用商店
+
+与 KubeSphere 中的其他组件不同，[KubeSphere 应用商店](../../../pluggable-components/app-store/)是所有集群（包括 H 集群和 M 集群）的全局应用程序池。您只需要在 H 集群上启用应用商店，便可以直接在 M 集群上使用应用商店的相关功能（无论 M 集群是否启用应用商店），例如[应用模板](../../../project-user-guide/application/app-template/)和[应用仓库](../../../workspace-administration/app-repository/import-helm-repository/)。
+
+但是，如果只在 M 集群上启用应用商店而没有在 H 集群上启用，您将无法在多集群架构中的任何集群上使用应用商店。
