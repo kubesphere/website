@@ -81,7 +81,7 @@ weight: 10310
 
 {{</ notice >}} 
 
-13. 一些存储卷是动态供应的存储卷，它们的状态会在创建后立刻从**等待中**变为**准备就绪**。其他仍处于**等待中**的存储卷会在挂载至工作负载后变为**准备就绪**。存储卷是否是动态供应的存储卷取决于其存储类型。
+13. 一些存储卷是动态供应的存储卷，它们的状态会在创建后立刻从**等待中**变为**准备就绪**。其他仍处于**等待中**的存储卷会在挂载至工作负载后变为**准备就绪**。存储卷是否支持动态供应取决于其存储类型。
 
     ![local-pending](/images/docs/zh-cn/project-user-guide/volume-management/volumes/local-pending.jpg)
 
@@ -95,7 +95,7 @@ weight: 10310
 
 {{< notice note >}}
 
-关于如何创建应用负载，请参阅应用负载的相关的指南。
+关于如何创建应用负载，请参阅[应用负载](../../application-workloads/deployments)中的相关指南。
 
 {{</ notice >}}
 
@@ -103,7 +103,7 @@ weight: 10310
 
 ![volume-page](/images/docs/zh-cn/project-user-guide/volume-management/volumes/volume-page.jpg)
 
-- **添加存储卷模板**（仅对[有状态副本集](../../../project-user-guide/application-workloads/statefulsets/)可用）：存储卷模板用于动态创建 PVC。您需要配置存储卷名称、存储类型、访问模式、存储卷容量和挂载路径（以上参数都由 `volumeClaimTemplates` 字段指定），以便将 StorageClass 类型的 PVC 挂载至 Pod。
+- **添加存储卷模板**（仅对[有状态副本集](../../../project-user-guide/application-workloads/statefulsets/)可用）：存储卷模板用于动态创建 PVC。您需要设置存储卷名称、存储类型、访问模式、存储卷容量和挂载路径（以上参数都由 `volumeClaimTemplates` 字段指定），以便将对应 StorageClass 的 PVC 挂载至 Pod。
 
 - **添加存储卷**：支持 emptyDir 存储卷和 PVC。
 
@@ -115,15 +115,15 @@ weight: 10310
 
   - **临时存储卷**：用 emptyDir 存储卷挂载。
 
-    临时存储卷即 [emptyDir](https://kubernetes.io/zh/docs/concepts/storage/volumes/#emptydir) 存储卷，它在 Pod 分配到节点时创建，并且只要 Pod 在节点上运行就会一直存在。emptyDir 存储卷提供了一个空目录，可由 Pod 中的容器读写。取决于您的部署环境，emptyDir 存储卷可以存放在节点后台的任何介质上，例如机械硬盘或 SSD。当 Pod 由于某些原因从节点上移除时，emptyDir 存储卷中的数据也会被永久删除。
+    临时存储卷即 [emptyDir](https://kubernetes.io/zh/docs/concepts/storage/volumes/#emptydir) 存储卷，它在 Pod 分配到节点时创建，并且只要 Pod 在节点上运行就会一直存在。emptyDir 存储卷提供了一个空目录，可由 Pod 中的容器读写。取决于您的部署环境，emptyDir 存储卷可以存放在节点所使用的任何介质上，例如机械硬盘或 SSD。当 Pod 由于某些原因从节点上移除时，emptyDir 存储卷中的数据也会被永久删除。
 
   - **HostPath**：用 hostPath 存储卷挂载。
 
-    hostPath 存储卷将主机节点文件系统中的文件或目录挂载至 Pod。大多数 Pod 可能不需要这类存储卷，但它可以为一些应用提供了强大的逃生舱。有关更多信息，请参阅 [Kubernetes 官方文档](https://kubernetes.io/zh/docs/concepts/storage/volumes/#hostpath)。
+    hostPath 存储卷将主机节点文件系统中的文件或目录挂载至 Pod。大多数 Pod 可能不需要这类存储卷，但它可以为一些应用提供了强大的逃生舱 (Escape Hatch)。有关更多信息，请参阅 [Kubernetes 官方文档](https://kubernetes.io/zh/docs/concepts/storage/volumes/#hostpath)。
 
 - **挂载配置文件或密钥**：支持 [ConfigMap](../../../project-user-guide/configuration/configmaps/) 或[密钥 (Secret)](../../../project-user-guide/configuration/secrets/) 键值对。
 
-  [密钥](https://kubernetes.io/zh/docs/concepts/storage/volumes/#secret)存储卷用于为 Pod 提供密码、OAuth 凭证、SSH 密钥等敏感信息。密钥存储卷由 tmpfs（基于 RAM 的文件系统）支持，所以数据不会写入非易性存储中。
+  [密钥](https://kubernetes.io/zh/docs/concepts/storage/volumes/#secret)存储卷用于为 Pod 提供密码、OAuth 凭证、SSH 密钥等敏感信息。密钥存储卷由 tmpfs（基于 RAM 的文件系统）支持，所以数据不会写入非易失性存储中。
 
   [ConfigMap](https://kubernetes.io/zh/docs/concepts/storage/volumes/#configmap) 存储卷以键值对的形式存放配置数据。ConfigMap 资源可用于向 Pod  中注入配置数据。存放在 ConfigMap 对象中的数据可以由 `configMap` 类型的存储卷引用，并由 Pod 中运行的容器化应用使用。ConfigMap 通常用于以下场景：
 
@@ -145,10 +145,10 @@ weight: 10310
 
 ### 使用存储卷功能
 
-**更多操作**下拉菜单提供了三个额外功能，这些功能基于 KubeSphere 后台存储插件 `Storage Capability`。具体如下：
+**更多操作**下拉菜单提供了三个额外功能，这些功能基于 KubeSphere 的底层存储插件 `Storage Capability`。具体如下：
 
 - **存储卷克隆**：创建一个相同的存储卷。
-- **创建快照**：创建一个的存储卷快照，可用于创建其他存储卷。有关更多信息，请参阅[存储卷快照](../volume-snapshots/)。
+- **创建快照**：创建一个存储卷快照，可用于创建其他存储卷。有关更多信息，请参阅[存储卷快照](../volume-snapshots/)。
 - **存储卷扩容**：增加存储卷的容量。
 
 ![volume-detail-page](/images/docs/zh-cn/project-user-guide/volume-management/volumes/volume-detail-page.jpg)
@@ -163,7 +163,7 @@ weight: 10310
 
 ### 监控存储卷
 
-KubeSphere 从 Kubelet 获取 `Filesystem` 模式的 PVC 的指标数据（包括容量使用情况和 Inode 使用情况），从而对存储卷进行监控。
+KubeSphere 从 Kubelet 获取 `Filesystem` 模式的 PVC 的指标数据（包括容量使用情况和 inode 使用情况），从而对存储卷进行监控。
 
 ![volume-monitoring](/images/docs/zh-cn/project-user-guide/volume-management/volumes/volume-monitoring.jpg)
 
