@@ -20,13 +20,13 @@ You need to create a workspace, a project and an account (`project-regular`). Th
 
 ## Create a ConfigMap
 
-### Step 1: Open Dashboard
+### Step 1: Open the dashboard
 
 Log in to the console as `project-regular`. Go to **Configurations** of a project, choose **ConfigMaps** and click **Create**.
 
 ![create-configmap](/images/docs/project-user-guide/configurations/configmaps/create-configmap.jpg)
 
-### Step 2: Input Basic Information
+### Step 2: Input basic information
 
 Specify a name for the ConfigMap (e.g. `demo-configmap`) and click **Next** to continue.
 
@@ -38,7 +38,7 @@ You can see the ConfigMap manifest file in YAML format by enabling **Edit Mode**
 
 ![set-basic-info](/images/docs/project-user-guide/configurations/configmaps/set-basic-info.jpg)
 
-### Step 3: Input Configuration Values
+### Step 3: Input configuration values
 
 1. Under the tab **ConfigMap Settings**, configure values by clicking **Add Data**.
 

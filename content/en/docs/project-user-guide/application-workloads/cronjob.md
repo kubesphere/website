@@ -3,7 +3,6 @@ title: "CronJobs"
 keywords: "KubeSphere, Kubernetes, jobs, cronjobs"
 description: "Create a Kubernetes CronJob"
 linkTitle: "CronJobs"
-
 weight: 10260
 ---
 
@@ -17,13 +16,13 @@ You need to create a workspace, a project and an account (`project-regular`). Th
 
 ## Create a CronJob
 
-### Step 1: Open Dashboard
+### Step 1: Open the dashboard
 
 Log in to the console as `project-regular`. Go to **Jobs** of a project, choose **CronJobs** and click **Create**.
 
 ![cronjob-list](/images/docs/project-user-guide/application-workloads/cronjobs/cronjob-list.jpg)
 
-### Step 2: Input Basic Information
+### Step 2: Input basic information
 
 Enter the basic information. You can refer to the image below for each field. When you finish, click **Next**.
 
@@ -56,11 +55,11 @@ You can enable **Edit Mode** in the top right corner to see the YAML manifest of
 
 {{</ notice >}} 
 
-### Step 3: ConJob Settings (Optional)
+### Step 3: ConJob settings (Optional)
 
 Please refer to [Jobs](../jobs/#step-3-job-settings-optional).
 
-### Step 4: Set Image
+### Step 4: Set an image
 
 1. Click **Add Container Image** in **Container Image** and input `busybox` in the search bar.
 
@@ -82,7 +81,7 @@ Please refer to [Jobs](../jobs/#step-3-job-settings-optional).
 
     {{</ notice >}}
 
-### Step 5: Check Result
+### Step 5: Check results
 
 1. In the final step of **Advanced Settings**, click **Create** to finish. A new item will be added to the CronJob list if the creation is successful. Besides, you can also find Jobs under **Jobs** tab.
 
