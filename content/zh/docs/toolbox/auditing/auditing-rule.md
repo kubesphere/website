@@ -1,20 +1,20 @@
 ---
-title: "Auditing Rules"
-keywords: "Kubernetes, docker, kubesphere, auditing"
-description: "Kubernetes and KubeSphere operation auditing"
-linkTitle: "Auditing Rules"
+title: "审计规则"
+keywords: "Kubernetes, docker, kubesphere, 审计"
+description: "Kubernetes 和 KubeSphere 操作审计"
+linkTitle: "审计规则"
 weight: 15320
 ---
 
-An auditing rule defines the policy for processing auditing logs. KubeSphere Auditing Logs provide users with two CRD rules (`archiving-rule` and `alerting-rule`) for customization.
+审计规则定义了处理审计日志的策略。KubeSphere 审计日志为用户提供两种 CRD 规则（`archiving-rule` 和 `alerting-rule`）以供自定义。
 
-After you enable [KubeSphere Auditing Logs](../../../pluggable-components/auditing-logs/), log in the console with an account of `platform-admin` role. In **CRDs** on the **Cluster Management** page, input `rules.auditing.kubesphere.io` in the search bar. Click the result **Rule** as below and you can see the two CRD rules.
+启用 [KubeSphere 审计日志](../../../pluggable-components/auditing-logs/)后，使用拥有 `platform-admin` 角色的帐户登录控制台。在**集群管理**页面转到**自定义资源 CRD**，在搜索栏中输入 `rules.auditing.kubesphere.io`。点击搜索结果 **Rule**，您便可以看到这两种 CRD 规则，如下所示。
 
-![auditing-crd](/images/docs/toolbox/auditing-crd.jpg)
+![审计 CRD](/images/docs/zh-cn/toolbox/auditing/auditing-rules/auditing-crd.PNG)
 
-![alerting-archiving-rule](/images/docs/toolbox/alerting-archiving-rule.jpg)
+![告警和归档规则](/images/docs/zh-cn/toolbox/auditing/auditing-rules/alerting-archiving-rule.PNG)
 
-Below are examples of part of the rules.
+下方是部分规则的示例。
 
 ## archiving-rule
 
@@ -71,66 +71,66 @@ spec:
     type: rule
 ```
 
- Attributes | Description
+ 属性 | 描述信息 
  --- | --- 
- `name`    | The name of the rule.
- `type`    | The type of the rule; known values are `rule`, `macro`, `list`, and `alias`. 
- `desc`    | The description of the rule.
- `condition` | A filtering expression that is applied against auditing logs to check whether they match the rule. 
- `macro`   | The conditions of the macro.
- `list`    | The value of list. 
- `alias`   | The value of alias. 
- `enable`  | If it is set to `false`, the rule will not be effective. 
- `output`  | Specifies the message of alert.
- `priority` | The priority of the rule.
+ `name`    | 该规则的名称。 
+ `type`    | 该规则的类型；已知的值有 `rule`、`macro`、`list` 和 `alias`。 
+ `desc`    | 该规则的描述。 
+ `condition` | 对审计日志应用的过滤表达式，检查是否符合规则。 
+ `macro`   | 宏的条件。 
+ `list`    | List 的值。 
+ `alias`   | Alias 的值。 
+ `enable`  | 如果设置为 `false`，该规则将不会生效。 
+ `output`  | 指定告警消息。 
+ `priority` | 规则的优先级。 
 
- When an auditing log matches a rule in `archiving-rule` and the rule priority is no less than `archivingPriority`, it will be stored for further use. When an auditing log matches a rule in `alerting-rule`, if the priority of the rule is less than `alertingPriority`, it will be stored for further use; otherwise it will generate an alert which will be sent to the user.
+如果审计日志符合 `archiving-rule` 中的规则并且该规则的优先级不低于 `archivingPriority`，则会保存该日志供后续使用。如果审计日志符合 `alerting-rule` 中的规则并且该规则的优先级低于 `alertingPriority`，则会保存该日志供后续使用；否则将生成告警并发送至用户。
 
 
-## Rule Conditions
+## 规则条件（即 Condition）
 
-A `Condition` is a filtering expression that can use comparison operators (=, !=, <, <=, >, >=, contains, in, like, and regex) and can be combined using Boolean operators (and, or and not) and parentheses. Here are the supported filters.
+`Condition` 是一个过滤表达式，可以使用比较运算符（=、!=、<、<=、>、>=、contains、in、like 以及正则表达式），也可以使用布尔运算符（and、or 和 not）和括号进行组合。以下是支持的过滤器。
 
- Filter | Description
+ 过滤器 | 描述信息 
  ---    | --- 
- `Workspace`              | The workspace where the audit event happens. 
- `Devops`                 | The DevOps project where the audit event happens. 
- `Level`                  | The level of auditing logs. 
- `RequestURI`             | RequestURI is the request URI as sent by the client to a server. 
- `Verb`                   | The verb associated with the request. 
- `User.Username`          | The name that uniquely identifies this user among all active users.
- `User.Groups`            | The names of groups this user is a part of.
- `SourceIPs`              | The source IP from where the request originated and intermediate proxies. 
- `ObjectRef.Resource`     | The resource of the object associated with the request.
- `ObjectRef.Namespace`  | The namespace of the object associated with the request.
- `ObjectRef.Name`         | The name of the object associated with the request.
- `ObjectRef.Subresource`  | The subresource of the object associated with the request.
- `ResponseStatus.code`    | The suggested HTTP return code for the request. 
- `ResponseStatus.Status`  | The status of the operation. 
- `RequestReceivedTimestamp` | The time the request reaches the apiserver. 
- `StageTimestamp`         | The time the request reaches the current audit stage. 
+ `Workspace`              | 发生审计事件的企业空间。
+ `Devops`                 | 发生审计事件的 DevOps 工程。 
+ `Level`                  | 审计日志的级别。 
+ `RequestURI`             | RequestURI 是由客户端发送至服务器的请求 URI。 
+ `Verb`                   | 与该请求相关联的动词。 
+ `User.Username`          | 在所有活跃用户中唯一标识该用户的名称。 
+ `User.Groups`            | 该用户所属的组的名称。 
+ `SourceIPs`              | 该请求来源的源 IP 和中间代理。 
+ `ObjectRef.Resource`     | 与该请求相关联的对象的资源。 
+ `ObjectRef.Namespace`  | 与该请求相关联的对象的命名空间。 
+ `ObjectRef.Name`         | 与该请求相关联的对象的名称。 
+ `ObjectRef.Subresource`  | 与该请求相关联的对象的子资源。 
+ `ResponseStatus.code`    | 对该请求的建议 HTTP 返回码。 
+ `ResponseStatus.Status`  | 操作状态。 
+ `RequestReceivedTimestamp` | 该请求到达 Apiserver 的时间。 
+ `StageTimestamp`         | 该请求到达当前审计阶段的时间。 
 
- For example, to match all logs in the namespace `test`:
+ 例如，匹配命名空间 `test` 中的所有日志：
 
 ```
 ObjectRef.Namespace = "test"
 ```
 
- To match all logs in the namespaces that start with `test`:
+ 匹配命名空间中以 `test` 开头的所有日志：
 
 ```
 ObjectRef.Namespace like "test*"
 ```
 
- To match all logs happening in the latest one hour:
+匹配最近一小时内发生的所有日志：
 
 ```
 RequestReceivedTimestamp >= "2020-06-12T09:23:28.359896Z" and RequestReceivedTimestamp <= "2020-06-12T10:23:28.359896Z"
 ```
 
-## Macro
+## 宏（即 Macro）
 
-A `macro` is a rule condition snippet that can be re-used inside rules and even other macros. Macros provide a way to name common patterns and factor out redundancies in rules. Here is an example of a macro.
+`macro` 是一种规则条件片段，可以在规则甚至其他宏中复用。宏提供了一种命名常用模式的方法，并消除了规则中的冗余。以下是一个宏的示例。
 
 ```yaml
 apiVersion: auditing.kubesphere.io/v1alpha1
@@ -150,13 +150,13 @@ spec:
 
 {{< notice note >}}
 
-A `macro` can be used in rules or other macros like ${pod} or ${alerting-rule.pod}. The difference between these two methods is that ${pod} can only be used in the CRD Rule `alerting-rule`, while ${alerting-rule.pod} can be used in all CRD Rules. This principle also applies to lists and alias.
+`macro` 可用在规则中或者其他宏中，例如 ${pod} 或 ${alerting-rule.pod}。这两种方法的区别在于 ${pod} 只能用在 `alerting-rule` CRD 规则中，而 ${alerting-rule.pod} 可以用在所有 CRD 规则中。该原则也适用于 List 和 Alias。
 
 {{</ notice >}} 
 
-## List
+## 列表（即 List）
 
-A `list` is a collection of items that can be included in rules, macros, or other lists. Unlike rules and macros, lists cannot be parsed as filtering expressions. Here is an example of a list.
+`list` 是一个可以包含在规则、宏或其他 List 中的项目的集合。与规则和宏不同，List 不能被解析为过滤表达式。下面是一个 List 的示例。
 
 ```yaml
 apiVersion: auditing.kubesphere.io/v1alpha1
@@ -178,9 +178,9 @@ spec:
       - patch
 ```
 
-## Alias
+## 别名（即 Alias）
 
-An `alias` is a short name of a filter field. It can be included in rules, macros, lists, and output strings. Here is an example of an alias.
+`alias` 是一个过滤字段的简称。它可以包含在规则、宏、List 和输出字符串中。下面是一个 Alias 的示例。
 
 ```yaml
 apiVersion: auditing.kubesphere.io/v1alpha1
@@ -198,14 +198,14 @@ spec:
     alias: ObjectRef.Namespace
 ```
 
-## Output
- The `Output` string is used to format the alert message when an auditing log triggers an alert. The `Output` string can include lists and alias. Here is an example.
+## 输出（即 Output）
+当审计日志触发告警时，`Output` 字符串用于格式化告警消息。`Output` 字符串可以包括 List 和 Alias。下面是一个示例。
 
 ```yaml
 Output: ${user} ${verb} a HostNetwork Pod ${name} in ${namespace}.
 ```
 {{< notice note >}} 
 
-The fields of `user`, `verb`, `namespace`, and `name` are all aliases.
+`user`、`verb`、`namespace` 和 `name` 字段都是 Alias。
 
 {{</ notice >}} 
