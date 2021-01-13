@@ -1,80 +1,80 @@
 ---
-title: "Volume Snapshots"
-keywords: 'KubeSphere, Kubernetes, volume, snapshots'
-description: 'How to create and use volume snapshots in KubeSphere.'
-linkTitle: "Volume Snapshots"
+title: "存储卷快照"
+keywords: 'KubeSphere, Kubernetes, 存储卷, 快照'
+description: '如何在 KubeSphere 中创建和使用存储卷快照。'
+linkTitle: "存储卷快照"
 weight: 10320
 ---
 
-Many storage systems provide the ability to create a snapshot of a persistent volume. A snapshot represents a point-in-time copy of a volume. It can be used either to provision a new volume (pre-populated with the snapshot data) or to restore the existing volume to a previous state (represented by the snapshot). For more information, see [the Kubernetes documentation](https://kubernetes.io/docs/concepts/storage/volume-snapshots/).
+许多存储系统都支持为持久卷创建快照。快照是存储卷的一个即时副本，可用于供应新存储卷（预先在其中填充快照数据）或将现有存储卷恢复到创建快照时的状态。有关更多信息，请参阅 [Kubernetes 官方文档](https://kubernetes.io/zh/docs/concepts/storage/volume-snapshots/)。
 
-This tutorial demonstrates how to create and use a volume snapshot.
+本教程演示如何创建和使用存储卷快照。
 
-## Prerequisites
+## 准备工作
 
-- You need to create a workspace, a project and an account (`project-regular`). The account must be invited to the project with the role of `operator`. For more information, see [Create Workspace, Project, Account and Role](../../../quick-start/create-workspace-and-project).
+- 您需要创建一个企业空间、一个项目和一个帐户（例如 `project-regular`）。该帐户必须已邀请至该项目，并具有 `operator` 角色。有关更多信息，请参阅[创建企业空间、项目、帐户和角色](../../../quick-start/create-workspace-and-project)。
 
-- Kubernetes version 1.17+.
+- 您需要确保 Kubernetes 版本为 1.17 或更新版本。
 
-- Your underlying storage plugin supports snapshots.
-- You have an available volume so that you can create a snapshot for it. For more information, see [Volumes](../volumes/).
+- 您需要确保底层存储插件支持快照。
+- 您需要准备一个可用的存储卷以便为其创建快照。有关更多信息，请参阅[存储卷](../volumes/)。
 
-## Create a Volume Snapshot
+## 创建存储卷快照
 
-1. Log in the web console of KubeSphere as `project-regular`. On the **Volumes** page of your page, select a volume that you want to create a snapshot for.
+1. 以 `project-regular` 用户登录 KubeSphere Web 控制台并进入项目。在左侧导航栏选择**存储管理**下的**存储卷**，在页面右侧选择需要创建快照的存储卷。
 
-   ![select-volume](/images/docs/project-user-guide/volume-management/volume-snapshots/select-volume.jpg)
+   ![select-volume](/images/docs/zh-cn/project-user-guide/volume-management/volume-snapshots/select-volume.jpg)
 
-2. On the detail page, select **Create Snapshot** from the **More** drop-down list.
+2. 在存储卷详情页面，点击**更多操作**并从下拉菜单中选择**创建快照**。
 
-   ![drop-down-list-select](/images/docs/project-user-guide/volume-management/volume-snapshots/drop-down-list-select.jpg)
+   ![drop-down-list-select](/images/docs/zh-cn/project-user-guide/volume-management/volume-snapshots/drop-down-list-select.jpg)
 
-3. Set a name for the snapshot which serves as a unique identifier. Click **OK** to finish.
+3. 设置快照的名称，然后点击**确定**完成创建。快照的名称将作为快照的唯一标识符。
 
-   ![snapshot-name](/images/docs/project-user-guide/volume-management/volume-snapshots/snapshot-name.jpg)
+   ![snapshot-name](/images/docs/zh-cn/project-user-guide/volume-management/volume-snapshots/snapshot-name.jpg)
 
-4. Newly-created snapshots will appear on the **VolumeSnapshots** list.
+4. 新建的快照显示在**存储卷快照**列表中。
 
-   ![snapshot-list](/images/docs/project-user-guide/volume-management/volume-snapshots/snapshot-list.jpg)
+   ![snapshot-list](/images/docs/zh-cn/project-user-guide/volume-management/volume-snapshots/snapshot-list.jpg)
 
-## Use a Snapshot to Create a Volume
+## 用快照创建存储卷
 
-There are two ways for you to use a snapshot to create a volume.
+您可以通过两种方式用快照创建存储卷。
 
-### Create a volume from the snapshot detail page
+### 在快照详情页面创建存储卷
 
-1. Log in the web console of KubeSphere as `project-regular`. On a snapshot's detail page, click **Apply** to use the snapshot. Generally, the steps are the same as creating a volume directly.
+1. 以 `project-regular` 用户登录 KubeSphere Web 控制台，进入快照详情页面，然后点击**应用**来使用快照。其他步骤与直接创建存储卷基本相同。
 
-   ![apply-volume](/images/docs/project-user-guide/volume-management/volume-snapshots/apply-volume.jpg)
+   ![apply-volume](/images/docs/zh-cn/project-user-guide/volume-management/volume-snapshots/apply-volume.jpg)
 
-2. In the dialog that appears, set a name for the volume. Click **Next** to continue.
+2. 在弹出的对话框中设置存储卷的名称，然后点击**下一步**。
 
    {{< notice note >}}
 
-   The resource you create is a PersistentVolumeClaim (PVC).
+   您将创建一个 PersistentVolumeClaim (PVC) 资源。
 
    {{</ notice >}} 
 
-3. Select an access mode and click **Next**.
+3. 选择访问模式，然后点击**下一步**。
 
-   ![pvc-create](/images/docs/project-user-guide/volume-management/volume-snapshots/pvc-create.jpg)
+   ![pvc-create](/images/docs/zh-cn/project-user-guide/volume-management/volume-snapshots/pvc-create.jpg)
 
-4. On the **Advanced Settings** page, add metadata for the volume such as labels and annotations. Click **Create** to finish.
+4. 在**高级设置**页面，为存储卷添加元数据（例如 **Label** 和 **Annotation**），然后点击**创建**完成操作。
 
-5. You can see the volume created appear on the **Volumes** page.
+5. 新建的存储卷显示在**存储卷**页面。
 
-### Create a volume from the Volumes page
+### 在存储卷页面创建存储卷
 
-1. Log in the web console of KubeSphere as `project-regular`. On the **Volumes** page of a project, click **Create**.
+1. 以 `project-regular` 用户登录 KubeSphere Web 控制台并进入项目。在左侧导航栏选择**存储管理**下的**存储卷**，然后点击**创建**。
 
-   ![volumes-page](/images/docs/project-user-guide/volume-management/volume-snapshots/volumes-page.jpg)
+   ![volumes-page](/images/docs/zh-cn/project-user-guide/volume-management/volume-snapshots/volumes-page.jpg)
 
-2. In the dialog that appears, set a name for the volume. Click **Next** to continue.
+2. 在弹出的对话框中设置存储卷的名称，然后点击**下一步**。
 
-3. On the **Volume Settings** page, select **Create a volume by VolumeSnapshot** under the **Method** section. Select a snapshot and an access mode, and click **Next** to continue.
+3. 在**存储卷设置**页面，将**方式**设置为**通过存储卷快照创建**，选择一个存储卷快照和访问模式，然后点击**下一步**。
 
-   ![create-by-snapshot](/images/docs/project-user-guide/volume-management/volume-snapshots/create-by-snapshot.jpg)
+   ![create-by-snapshot](/images/docs/zh-cn/project-user-guide/volume-management/volume-snapshots/create-by-snapshot.jpg)
 
-4. On the **Advanced Settings** page, add metadata for the volume such as labels and annotations. Click **Create** to finish.
+4. 在**高级设置**页面，为存储卷添加元数据（例如 **Label** 和 **Annotation**），然后点击**创建**完成操作。
 
-5. You can see the volume created appear on the **Volumes** page.
+5. 新建的存储卷显示在**存储卷**页面。
