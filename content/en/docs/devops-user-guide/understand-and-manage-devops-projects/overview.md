@@ -35,7 +35,7 @@ The KubeSphere DevOps system provides you with the following features:
 
 ### KubeSphere CI/CD pipeline workflows
 
-A KubeSphere CI/CD pipeline runs on the back of the underlying Kubernetes Jenkins agents. These Jenkins agents can be dynamically scaled as they are dynamically provisioned or released based on the job status. The Jenkins master and agents run as Pods on KubeSphere nodes. The master runs on one of the nodes with its configuration data stored in a volume. Slaves run across nodes while they may not be active all the time because they are created dynamically and deleted automatically as needed.
+A KubeSphere CI/CD pipeline runs on the back of the underlying Kubernetes Jenkins agents. These Jenkins agents can be dynamically scaled as they are dynamically provisioned or released based on the job status. The Jenkins master and agents run as Pods on KubeSphere nodes. The master runs on one of the nodes with its configuration data stored in a volume. Agents run across nodes while they may not be active all the time because they are created dynamically and deleted automatically as needed.
 
 When the Jenkins master receives a building request, it dynamically creates Jenkins agents that run in Pods according to labels. At the same time, Jenkins agents will be registered in the master. After agents finish their jobs, they will be released and related Pods will be deleted as well.
 
