@@ -11,6 +11,42 @@
     </div>
 </section>
 {{ end }}
+{{ $Site := .Site }}
+{{ with .Params.sectionLink }}
+<section class="section-link">
+    <div class="common-layout">
+        {{ with .docs}}
+        <div class="left">
+            <h2>{{ .title }}</h2>
+            <p>{{ .description }}</p>
+            <ul>
+                {{ range .list }}
+                <li>
+                    {{ with $Site.GetPage . }}
+                    <a href="{{ .RelPermalink }}">{{ .LinkTitle }}</a>
+                    {{ end }}
+                </li>
+                {{ end }}
+            </ul>
+        </div>
+        {{ end }}
+        {{ with .videos}}
+        <div class="right">
+            <h2>{{ .title }}</h2>
+            <p>{{ .description }}</p>
+            <ul>
+                {{ range .list }}
+                <li>
+                    <span>{{ .text }}</span>
+                    <a href="{{ .link }}" target="_blank"></a>
+                </li>
+                {{ end }}
+            </ul>
+        </div>
+        {{ end }}
+    </div>
+</section>
+{{ end }}
 
 <section class="section-2">
     <div class="common-layout">
