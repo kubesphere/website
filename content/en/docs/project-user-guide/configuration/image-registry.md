@@ -18,13 +18,13 @@ You need to create a workspace, a project and an account (`project-regular`). Th
 
 When you create workloads, [Services](../../../project-user-guide/application-workloads/services/), [Jobs](../../../project-user-guide/application-workloads/jobs/), or [CronJobs](../../../project-user-guide/application-workloads/cronjob/), you can select images from your private registry in addition to the public registry. To use images from your private registry, you must create a Secret for it so that the registry can be integrated to KubeSphere.
 
-### Step 1: Open Dashboard
+### Step 1: Open the dashboard
 
 Log in to the web console of KubeSphere as `project-regular`. Go to **Configurations** of a project, choose **Secrets** and click **Create**.
 
 ![open-dashboard](/images/docs/project-user-guide/configurations/image-registries/open-dashboard.jpg)
 
-### Step 2: Input Basic Information
+### Step 2: Input basic information
 
 Specify a name for the Secret (e.g. `demo-registry-secret`) and click **Next** to continue.
 
@@ -36,7 +36,7 @@ You can see the Secret's manifest file in YAML format by enabling **Edit Mode** 
 
 ![create-secret](/images/docs/project-user-guide/configurations/image-registries/create-secret.jpg)
 
-### Step 3: Specify Image Registry Information
+### Step 3: Specify image registry information
 
 Select **Image Registry Secret** for **Type**. To use images from your private registry as you create application workloads, you need to specify the following fields.
 
@@ -47,7 +47,7 @@ Select **Image Registry Secret** for **Type**. To use images from your private r
 
 ![image-registry-info](/images/docs/project-user-guide/configurations/image-registries/image-registry-info.jpg)
 
-#### Add Docker Hub registry
+#### Add the Docker Hub registry
 
 1. Before you add your image registry in [Docker Hub](https://hub.docker.com/), make sure you have an available Docker Hub account. On the **Secret Settings** page, input `docker.io` for **Registry Address** and enter your Docker ID and password for **User Name** and **Password**. Click **Validate** to check whether the address is available. 
 
@@ -55,7 +55,7 @@ Select **Image Registry Secret** for **Type**. To use images from your private r
 
 2. Click **Create**. Later, the Secret will appear on the **Secrets** page. For more information about how to edit the Secret after you create it, see [Check Secret Details](../../../project-user-guide/configuration/secrets/#check-secret-details).
 
-#### Add Harbor image registry
+#### Add the Harbor image registry
 
 [Harbor](https://goharbor.io/) is an open-source trusted cloud-native registry project that stores, signs, and scans content. Harbor extends the open-source Docker Distribution by adding the functionalities usually required by users such as security, identity and management. Harbor uses http and https to serve registry requests.
 

@@ -2,7 +2,6 @@
 title: "Blue-green Deployment"
 keywords: 'KubeSphere, Kubernetes, service mesh, istio, release, blue-green deployment'
 description: 'How to implement blue-green deployment for an app.'
-
 linkTitle: "Blue-green Deployment"
 weight: 10520
 ---
@@ -19,7 +18,7 @@ The blue-green release provides a zero downtime deployment, which means the new 
 - You need to create a workspace, a project and an account (`project-regular`). The account must be invited to the project with the role of `operator`. For more information, see [Create Workspaces, Projects, Accounts and Roles](../../../quick-start/create-workspace-and-project).
 - You need to enable **Application Governance** and have an available app so that you can implement the blue-green deployment for it. The sample app used in this tutorial is Bookinfo. For more information, see [Deploy Bookinfo and Manage Traffic](../../../quick-start/deploy-bookinfo-to-k8s/).
 
-## Create Blue-green Deployment Job
+## Create a Blue-green Deployment Job
 
 1. Log in to KubeSphere as `project-regular`. Under **Categories**, click **Create Job** on the right of **Blue-green Deployment**.
 
