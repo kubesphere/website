@@ -56,16 +56,30 @@
     background-repeat: no-repeat;
     background-position: left bottom;
     background-image: url("/images/docs/26.svg");
+
+    @media only screen and (max-width: $mobile-max-width) {
+      display: block;
+      padding: 20px;
+    }
   }
 
   .left {
     flex: 1;
+    @media only screen and (max-width: $mobile-max-width) {
+      margin-bottom: 20px;
+    }
     ul { 
       margin-top: 20px;
       display: flex;
       flex-wrap: wrap;
+      @media only screen and (max-width: $mobile-max-width) {
+        display: block;
+      }
       li {
         width: 50%; 
+        @media only screen and (max-width: $mobile-max-width) {
+          width: 100%; 
+        }
         margin-bottom: 10px;
         font-size: 14px;
         line-height: 1.43;
@@ -87,7 +101,9 @@
 
   .right {
     width: 333px;
-
+    @media only screen and (max-width: $mobile-max-width) {
+      width: 100%;
+    }
     ul {
       margin-top: 20px;
       li {
