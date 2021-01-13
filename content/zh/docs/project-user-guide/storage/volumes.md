@@ -1,171 +1,170 @@
 ---
-title: "Volumes"
-keywords: 'Kubernetes, persistent volumes, persistent volume claims, volume clone, volume snapshot, volume expanding'
-description: 'How to create a volume, mount a volume and use volume features from its detail page.'
-linkTitle: "Volumes"
+title: "存储卷"
+keywords: 'Kubernetes, 持久卷, 持久卷申领, 存储卷克隆, 存储卷快照, 存储卷扩容'
+description: '如何创建存储卷、挂载存储卷和通过存储卷详情页面使用存储卷功能。'
+linkTitle: "存储卷"
 weight: 10310
 ---
 
-When you create an application workload in a project, you can create a [PersistentVolumeClaim](https://kubernetes.io/docs/concepts/storage/persistent-volumes/) (PVC) for it. A PVC allows you to create a request for storage, further provisioning persistent storage to applications. More specifically, persistent storage is managed by PersistentVolume resources.
+ 在项目中创建应用负载时，您可以为应用负载创建 [PersistentVolumeClaim (PVC)](https://kubernetes.io/zh/docs/concepts/storage/persistent-volumes/)。您可以用 PVC 创建存储请求，从而进一步为应用提供持久化存储。更具体地说，PersistentVolume 资源可用于管理持久化存储。
 
-Cluster administrators configure PersistentVolumes using storage classes. In other words, to create a PersistentVolumeClaim in a project, make sure your cluster has an available storage class. If no customized storage class is configured when you install KubeSphere, [OpenEBS](https://openebs.io/) is installed in your cluster by default to provide Local Persistent Volumes. However, it does not support dynamic volume provisioning. In a production environment, it is recommended you configure storage classes in advance to provide persistent storage services for your apps.
+集群管理员需要用存储类型 (Storage Class) 配置 PersistentVolume。也就是说，要在项目中创建 PersistentVolumeClaim，您需要确保集群中有可用的存储类型。如果在安装 KubeSphere 时没有配置自定义存储类型，集群中将默认安装 [OpenEBS](https://openebs.io/) 以提供本地持久卷。然而，OpenEBS 不支持动态存储卷供应。在生产环境中，建议您提前配置存储类型从而为应用提供持久化存储服务。
 
-This tutorial demonstrates how to create a volume, mount a volume and use volume features from its detail page.
+本教程介绍如何创建存储卷、挂载存储卷和通过存储卷详情页面使用存储卷功能。
 
-## Prerequisites
+## 准备工作
 
-- You need to create a workspace, a project and an account (`project-regular`). The account must be invited to the project with the role of `operator`. For more information, see [Create Workspace, Project, Account and Role](../../../quick-start/create-workspace-and-project).
+- 您需要创建一个企业空间、一个项目和一个帐户（例如 `project-regular`）。该帐户必须已邀请至该项目，并具有 `operator` 角色。有关更多信息，请参阅[创建企业空间、项目、帐户和角色](../../../quick-start/create-workspace-and-project)。
 
-- If you want to dynamically provision a volume, you need to [configure a storage class](../../../cluster-administration/persistent-volume-and-storage-class/) that supports dynamic provisioning.
+- 如需使用动态存储卷供应，您需要配置一个支持动态供应的[存储类型](../../../cluster-administration/persistent-volume-and-storage-class/)。
 
-## Create a Volume
+## 创建存储卷
 
-All the volumes that are created on the **Volumes** page are PersistentVolumeClaim objects. KubeSphere binds the PersistentVolumeClaim to the PersistentVolume that satisfies the request you set for the PersistentVolumeClaim, such as capacity and access mode. When you create an application workload, you can select the desired volume and mount it to your workload.
+在**存储卷**页面创建的所有存储卷都是 PersistentVolumeClaim 对象。KubeSphere 将 PersistentVolumeClaim 绑定到满足您设定的请求条件（例如容量和访问模式）的 PersistentVolume。在创建应用负载时，您可以选择所需的存储卷并将其挂载到负载。
 
-1. Log in the web console of KubeSphere and go to a project. Click **Volumes** under **Storage** from the navigation bar, and you see all volumes that have been mounted to workloads in the project.
+1. 登录 KubeSphere Web 控制台并进入项目，在左侧导航栏中点击**存储管理**下的**存储卷**。页面上显示所有已挂载至项目工作负载的存储卷。
 
-2. To create a volume, click **Create** on the **Volumes** page.
+2. 在**存储卷**页面，点击**创建**以创建存储卷。
 
-   ![create-volume](/images/docs/project-user-guide/volume-management/volumes/create-volume.jpg)
+   ![create-volume](/images/docs/zh-cn/project-user-guide/volume-management/volumes/create-volume.jpg)
 
-3. In the dialog that appears, set a name (e.g. `demo-volume`) for the volume and click **Next**.
+3. 在弹出的对话框设置存储卷的名称（例如 `demo-volume`），然后点击**下一步**。
 
-   ![basic-volume-info](/images/docs/project-user-guide/volume-management/volumes/basic-volume-info.jpg)
+   ![basic-volume-info](/images/docs/zh-cn/project-user-guide/volume-management/volumes/basic-volume-info.jpg)
 
    {{< notice note >}}
 
-   You can see the volume's manifest file in YAML format by enabling **Edit Mode** in the top right corner. KubeSphere allows you to edit the manifest file directly to create a volume. Alternatively, you can follow the steps below to create a volume via the dashboard.
+   您可以在对话框右上角启用**编辑模式**来查看存储卷的 YAML 清单文件，并通过直接编辑清单文件来创建存储卷。您也可继续执行后续步骤在控制台上创建存储卷。
 
    {{</ notice >}} 
 
-4. On the **Volume Settings** page, select a method to create a volume.
+4. 在**存储卷设置**页面，选择创建存储卷的方式。
 
-   ![volume-creation-method](/images/docs/project-user-guide/volume-management/volumes/volume-creation-method.jpg)
+   ![volume-creation-method](/images/docs/zh-cn/project-user-guide/volume-management/volumes/volume-creation-method.jpg)
 
-   - **Create a volume by StorageClass**. You can configure storage classes both [before](../../../installing-on-linux/introduction/storage-configuration/) and [after](../../../cluster-administration/persistent-volume-and-storage-class/) the installation of KubeSphere.
+   - **通过存储类型**：您可以在 KubeSphere [安装前](../../../installing-on-linux/introduction/storage-configuration/)或[安装后](../../../cluster-administration/persistent-volume-and-storage-class/)配置存储类型。
+   - **通过存储卷快照创建**：如需通过快照创建存储卷，您必须先创建存储卷快照。
 
-   - **Create a volume by VolumeSnapshot**. To use a snapshot to create a volume, you must create a volume snapshot first.
+5. 选择**通过存储类型**。有关通过存储卷快照创建存储卷的更多信息，请参阅[存储卷快照](../volume-snapshots/)。
 
-5. Select **Create a volume by StorageClass**. For more information about how to create a volume by snapshot, see [Volume Snapshots](../volume-snapshots/).
+6. 从下拉列表中选择存储类型。
 
-6. Select a storage class from the drop-down list.
+   ![select-storage-class](/images/docs/zh-cn/project-user-guide/volume-management/volumes/select-storage-class.jpg)
 
-   ![select-storage-class](/images/docs/project-user-guide/volume-management/volumes/select-storage-class.jpg)
+7. 本教程以青云QingCloud 平台提供的 `csi-standard` 标准存储类型为例。您可以根据需要选择其他存储类型。
 
-7. This tutorial uses `csi-standard`, a standard storage class provided by QingCloud Platform. You can select your own storage class.
+8. 由于一些 PersistentVolume 只支持特定的访问模式，页面上显示的访问模式会因您选择的存储类型而不同。访问模式一共有三种：
 
-8. Depending on the storage class you select, you may see different access modes in this section as some PersistentVolumes only support specific access modes. In total, there are three access modes.
+   - **ReadWriteOnce (RWO)**：存储卷以单节点读写的形式挂载。
+   - **ReadOnlyMany (ROX)**：存储卷以多节点只读的形式挂载。
+   - **ReadWriteMany (RWX)**：存储卷以多节点读写的形式挂载。
 
-   - **ReadWriteOnce (RWO)**: The volume can be mounted as read-write by a single node.
-   - **ReadOnlyMany (ROX)**: The volume can be mounted as read-only by many nodes.
-   - **ReadWriteMany (RWX)**: The volume can be mounted as read-write by many nodes.
+   选择所需的访问模式。
 
-   Select the desired access mode.
+9. 在**存储卷容量**区域设置存储卷的大小，然后点击**下一步**。
 
-9. Under **Volume Capacity**, specify the size of the volume. Click **Next** to continue.
+   ![volume-finished](/images/docs/zh-cn/project-user-guide/volume-management/volumes/volume-finished.jpg)
 
-   ![volume-finished](/images/docs/project-user-guide/volume-management/volumes/volume-finished.jpg)
+10. 在**高级设置**页面，您可以为存储卷添加元数据，例如 **Label** 和 **Annotation**。元数据可用作搜索和调度资源的标识符。
 
-10. On the **Advanced Settings** page, you can add metadata to the volume, such as **Labels** and **Annotations**. They can be used as identifiers to search and schedule resources.
+11. 点击**创建**完成存储卷创建。
 
-11. Click **Create** to finish creating a volume.
+    ![volume-finish-creation](/images/docs/zh-cn/project-user-guide/volume-management/volumes/volume-finish-creation.jpg)
 
-    ![volume-finish-creation](/images/docs/project-user-guide/volume-management/volumes/volume-finish-creation.jpg)
+12. 新建的存储卷会显示在项目的**存储卷**页面。存储卷挂载至工作负载后，**挂载**列会显示为**已挂载**。
 
-12. A created volume displays on the **Volumes** page in a project. After it is mounted to a workload, it will turn to **Mounted** under the **Mount** column.
-
-    ![volume-status](/images/docs/project-user-guide/volume-management/volumes/volume-status.jpg)
+    ![volume-status](/images/docs/zh-cn/project-user-guide/volume-management/volumes/volume-status.jpg)
 
     {{< notice note >}}
 
-Newly-created volumes will also appear on the **Volumes** page in **Cluster Management**. Generally, this section is not available to project users such as `project-regular`. Cluster administrators have the responsibility to view and keep track of created volumes in a project. Conversely, if a cluster administrator creates a volume for a project in **Cluster Management**, the volume also appears on the **Volumes** page in a project.
+新建的存储卷也会显示在**集群管理**中的**存储卷**页面。通常情况下项目用户（例如 `project-regular`）无法查看该页面。集群管理员需要查看和跟踪项目中创建的存储卷。另一方面，集群管理员在**集群管理**中为项目创建的存储卷也会显示在项目的**存储卷**页面。
 
 {{</ notice >}} 
 
-13. For some volumes, you can see the status reach **Mount** from **Pending** immediately after they are created as they are provisioned dynamically. For volumes that remain the **Pending** status, they will turn to **Mount** once they are mounted to a workload. The difference is decided by the storage class of the volume.
+13. 一些存储卷是动态供应的存储卷，它们的状态会在创建后立刻从**等待中**变为**准备就绪**。其他仍处于**等待中**的存储卷会在挂载至工作负载后变为**准备就绪**。存储卷是否支持动态供应取决于其存储类型。
 
-    ![local-pending](/images/docs/project-user-guide/volume-management/volumes/local-pending.jpg)
+    ![local-pending](/images/docs/zh-cn/project-user-guide/volume-management/volumes/local-pending.jpg)
 
-    For example, if you install KubeSphere with the default storage class (OpenEBS), you can only create local volumes, which means dynamic provisioning is not supported. This is specified by the `volumeBindingMode` field which is set to `WaitForFirstConsumer`.
+    例如，如果您使用默认的存储类型 (OpenEBS) 安装 KubeSphere，您只能创建不支持动态供应的本地存储卷。这类存储卷的绑定模式由 YAML 文件中的 `VolumeBindingMode: WaitForFirstConsumer` 字段指定。
 
     ![volumebindingmode](/images/docs/project-user-guide/volume-management/volumes/volumebindingmode.jpg)
 
-## Mount a Volume
+## 挂载存储卷
 
-When you create application workloads, such as [Deployments](../../../project-user-guide/application-workloads/deployments/), [StatefulSets](../../../project-user-guide/application-workloads/statefulsets/) and [DaemonSets](../../../project-user-guide/application-workloads/daemonsets/), you can mount volumes to them.
+创建[部署](../../../project-user-guide/application-workloads/deployments/)、[有状态副本集](../../../project-user-guide/application-workloads/statefulsets/)和[守护进程集](../../../project-user-guide/application-workloads/daemonsets/)等应用负载时，您可以为它们挂载存储卷。
 
 {{< notice note >}}
 
-This tutorial does not explain how to create workloads. For more information, see related guides in Application Workloads.
+关于如何创建应用负载，请参阅[应用负载](../../application-workloads/deployments)中的相关指南。
 
 {{</ notice >}}
 
-On the **Mount Volumes** page, you can see there are different volumes that you can mount to your workload.
+在**挂载存储**页面，您可以为工作负载挂载不同的存储卷。
 
-![volume-page](/images/docs/project-user-guide/volume-management/volumes/volume-page.jpg)
+![volume-page](/images/docs/zh-cn/project-user-guide/volume-management/volumes/volume-page.jpg)
 
-- **Add Volume Template** (Only available to [StatefulSets](../../../project-user-guide/application-workloads/statefulsets/)): A volume template is used to dynamically create a PVC. Mount the PVC of the StorageClass type to the Pod by setting the name, storage class, access mode, capacity and path, which are all indicated by the field `volumeClaimTemplates`.
+- **添加存储卷模板**（仅对[有状态副本集](../../../project-user-guide/application-workloads/statefulsets/)可用）：存储卷模板用于动态创建 PVC。您需要设置存储卷名称、存储类型、访问模式、存储卷容量和挂载路径（以上参数都由 `volumeClaimTemplates` 字段指定），以便将对应 StorageClass 的 PVC 挂载至 Pod。
 
-- **Add Volume**: Support emptyDir volumes and PVCs.
+- **添加存储卷**：支持 emptyDir 存储卷和 PVC。
 
-  In **Add Volume**, there are 3 kinds of volumes:
+  **添加存储卷**页面提供了三类存储卷：
 
-  - **Existing Volume**: Use a PVC to mount.
+  - **已有存储卷**：用 PVC 挂载。
 
-    Persistent storage volumes can be used to save users' persistent data. You need to create volumes (PVCs) in advance so that you can choose an existing volume from the list.
+    持久卷可用于保存用户的持久数据。您需要提前创建存储卷（PVC），存储卷创建后会显示在列表中供选择。
 
-  - **Temporary Volume**: Use an emptyDir volume to mount.
+  - **临时存储卷**：用 emptyDir 存储卷挂载。
 
-    The temporary storage volume represents [emptyDir](https://kubernetes.io/docs/concepts/storage/volumes/#emptydir), which is first created when a Pod is assigned to a node, and exists as long as that Pod is running on that node. An emptyDir volume offers an empty directory from which containers in the Pod can read and write. Depending on your deployment environment, an emptyDir volume can be stored on any medium that is backing the node, which could be a disk or SSD. When the Pod is removed from the node for any reason, the data in the emptyDir is deleted forever.
+    临时存储卷即 [emptyDir](https://kubernetes.io/zh/docs/concepts/storage/volumes/#emptydir) 存储卷，它在 Pod 分配到节点时创建，并且只要 Pod 在节点上运行就会一直存在。emptyDir 存储卷提供了一个空目录，可由 Pod 中的容器读写。取决于您的部署环境，emptyDir 存储卷可以存放在节点所使用的任何介质上，例如机械硬盘或 SSD。当 Pod 由于某些原因从节点上移除时，emptyDir 存储卷中的数据也会被永久删除。
 
-  - **HostPath**: Use a hostPath volume to mount.
+  - **HostPath**：用 hostPath 存储卷挂载。
 
-    A HostPath volume mounts a file or directory from the host node's filesystem into your Pod. This is not something that most Pods will need, but it offers a powerful escape hatch for some applications. For more information, refer to [the Kubernetes documentation](https://kubernetes.io/docs/concepts/storage/volumes/#hostpath).
+    hostPath 存储卷将主机节点文件系统中的文件或目录挂载至 Pod。大多数 Pod 可能不需要这类存储卷，但它可以为一些应用提供了强大的逃生舱 (Escape Hatch)。有关更多信息，请参阅 [Kubernetes 官方文档](https://kubernetes.io/zh/docs/concepts/storage/volumes/#hostpath)。
 
-- **Mount ConfigMap or Secret**: Support key-value pairs of [ConfigMaps](../../../project-user-guide/configuration/configmaps/) or [Secrets](../../../project-user-guide/configuration/secrets/).
+- **挂载配置文件或密钥**：支持 [ConfigMap](../../../project-user-guide/configuration/configmaps/) 或[密钥 (Secret)](../../../project-user-guide/configuration/secrets/) 键值对。
 
-  A [Secret](https://kubernetes.io/docs/concepts/storage/volumes/#secret) volume is used to provide sensitive information, such as passwords, OAuth tokens, and SSH keys, for Pods. Secret volumes are backed by tmpfs (a RAM-backed filesystem) so they are never written to non-volatile storage.
+  [密钥](https://kubernetes.io/zh/docs/concepts/storage/volumes/#secret)存储卷用于为 Pod 提供密码、OAuth 凭证、SSH 密钥等敏感信息。密钥存储卷由 tmpfs（基于 RAM 的文件系统）支持，所以数据不会写入非易失性存储中。
 
-  A [ConfigMap](https://kubernetes.io/docs/concepts/storage/volumes/#configmap) is used to store configuration data in the form of key-value pairs. The ConfigMap resource provides a way to inject configuration data into Pods. The data stored in a ConfigMap object can be referenced in a volume of type `configMap` and then consumed by containerized applications running in a Pod. ConfigMaps are often used in the following cases:
+  [ConfigMap](https://kubernetes.io/zh/docs/concepts/storage/volumes/#configmap) 存储卷以键值对的形式存放配置数据。ConfigMap 资源可用于向 Pod  中注入配置数据。存放在 ConfigMap 对象中的数据可以由 `configMap` 类型的存储卷引用，并由 Pod 中运行的容器化应用使用。ConfigMap 通常用于以下场景：
 
-  - Set the value of environment variables.
-  - Set command parameters in containers.
-  - Create a configuration file in volumes.
+  - 设置环境变量。
+  - 设置容器中的命令参数。
+  - 创建存储卷中的配置文件。
 
-## View Volume Details
+## 查看存储卷详情
 
-After a volume is created, you can see detailed information of it, edit it, or leverage volume features. To view volume details, click a volume on the **Volumes** page.
+存储卷创建后，您可以查看存储卷的详情、编辑存储卷和使用存储卷功能。在**存储卷**页面，点击一个存储卷名称可打开存储卷详情页面。
 
-### Edit a volume
+### 编辑存储卷
 
-On the detail page, you can click **Edit Info** to change its basic information. Click **More** and you can edit its YAML file or delete this volume.
+在存储卷详情页面，您可以点击**编辑信息**修改存储卷的基本信息。点击**更多操作**可编辑 YAML 文件或删除存储卷。
 
-To delete a volume, make sure the volume is not mounted to any workload. To unmount a volume, go to the detail page of a workload. From the **More** drop-down list, click **Edit Config Template**. Select **Volume** from the pop-up window, and click the dustbin icon to unmount it.
+如需删除存储卷，请确保存储卷未挂载至任何工作负载。如需卸载存储卷，请进入工作负载的详情页面，点击**更多操作**，从下拉菜单中选择**编辑配置模板**，在弹出的对话框中选择**存储卷**，然后点击垃圾桶图标将存储卷卸载。
 
-![delete-volume](/images/docs/project-user-guide/volume-management/volumes/delete-volume.jpg)
+![delete-volume](/images/docs/zh-cn/project-user-guide/volume-management/volumes/delete-volume.jpg)
 
-### Volume features
+### 使用存储卷功能
 
-From the **More** drop-down menu, there are three additional options provided by KubeSphere based on the underlying storage plugin, also known as `Storage Capability`. Volume features include:
+**更多操作**下拉菜单提供了三个额外功能，这些功能基于 KubeSphere 的底层存储插件 `Storage Capability`。具体如下：
 
-- Clone a volume: Create a same volume.
-- Create a volume snapshot: Create a volume snapshot which can be used to create volumes. For more information, see [Volume Snapshots](../volume-snapshots/).
-- Expand a volume: Increase the size of a volume.
+- **存储卷克隆**：创建一个相同的存储卷。
+- **创建快照**：创建一个存储卷快照，可用于创建其他存储卷。有关更多信息，请参阅[存储卷快照](../volume-snapshots/)。
+- **存储卷扩容**：增加存储卷的容量。
 
-![volume-detail-page](/images/docs/project-user-guide/volume-management/volumes/volume-detail-page.jpg)
+![volume-detail-page](/images/docs/zh-cn/project-user-guide/volume-management/volumes/volume-detail-page.jpg)
 
-For more information about `Storage Capability`, see [Design Documentation](https://github.com/kubesphere/community/blob/master/sig-storage/concepts-and-designs/storage-capability-interface.md).
+有关 `Storage Capability` 的更多信息，请参阅[设计文档](https://github.com/kubesphere/community/blob/master/sig-storage/concepts-and-designs/storage-capability-interface.md)。
 
 {{< notice note >}}
 
-Some in-tree or special CSI plugins may not be covered by `Storage Capability`. If KubeSphere does not display the correct features in your cluster, you can make adjustments according to [this guide](https://github.com/kubesphere/kubesphere/issues/2986).
+`Storage Capability` 可能尚未覆盖一些树内 (in-tree) 或特殊的 CSI 插件。如果某些功能在 KubeSphere 集群中没有正确显示，您可以按照[此文档](https://github.com/kubesphere/kubesphere/issues/2986)修改设置。
 
 {{</ notice >}} 
 
-### Volume monitoring
+### 监控存储卷
 
-KubeSphere retrieves metric data of PVCs with `Filesystem` mode from Kubelet to monitor volumes including capacity usage and inode usage.
+KubeSphere 从 Kubelet 获取 `Filesystem` 模式的 PVC 的指标数据（包括容量使用情况和 inode 使用情况），从而对存储卷进行监控。
 
-![volume-monitoring](/images/docs/project-user-guide/volume-management/volumes/volume-monitoring.jpg)
+![volume-monitoring](/images/docs/zh-cn/project-user-guide/volume-management/volumes/volume-monitoring.jpg)
 
-For more information about volume monitoring, see [Research on Volume Monitoring](https://github.com/kubesphere/kubesphere/issues/2921).
+有关存储卷监控的更多信息，请参阅 [Research on Volume Monitoring](https://github.com/kubesphere/kubesphere/issues/2921)。

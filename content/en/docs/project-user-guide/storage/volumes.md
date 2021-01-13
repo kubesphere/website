@@ -82,7 +82,7 @@ Newly-created volumes will also appear on the **Volumes** page in **Cluster Mana
 
 {{</ notice >}} 
 
-13. For some volumes, you can see the status reach **Mount** from **Pending** immediately after they are created as they are provisioned dynamically. For volumes that remain the **Pending** status, they will turn to **Mount** once they are mounted to a workload. The difference is decided by the storage class of the volume.
+13. For some volumes, you can see the status reach **Bound** from **Pending** immediately after they are created as they are provisioned dynamically. For volumes that remain the **Pending** status, they will turn to **Bound** once they are mounted to a workload. The difference is decided by the storage class of the volume.
 
     ![local-pending](/images/docs/project-user-guide/volume-management/volumes/local-pending.jpg)
 
