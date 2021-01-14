@@ -2,7 +2,6 @@
 title: "告警策略（工作负载级别）"
 keywords: 'KubeSphere, Kubernetes, 工作负载, 告警, 策略, 通知'
 description: '如何设置工作负载级别的告警策略。'
-
 linkTitle: "告警策略（工作负载级别）"
 weight: 10710
 ---
@@ -45,19 +44,19 @@ KubeSphere 支持针对节点和工作负载的告警策略。本教程演示如
    - 检查周期（**规则**下的第二个字段）：表示两次指标检查的间隔，例如 `2 分钟/周期`表示每两分钟检查一次。
    - 连续次数（**规则**下的第三个字段）：表示至少连续几次检查到指标符合条件时才触发告警。
 
-![alerting_policy_workload_level_alerting_rule](/images/docs/zh-cn/alerting/alerting_policy_workload_level_alerting_rule.png)
+   ![alerting_policy_workload_level_alerting_rule](/images/docs/zh-cn/alerting/alerting_policy_workload_level_alerting_rule.png)
 
 2. 在本示例中，将告警规则设置为`内存用量`、`1 分钟/周期`、`连续 2 次`、`>` 、`20` MiB、`重要告警`。该告警规则表示 KubeSphere 每 1 分钟检查一次内存用量，当连续 2 次检查到内存用量大于 20 MiB 时触发重要告警。
 
 3. 点击 **√** 保存规则，然后点击**下一步**。
 
-{{< notice note >}}
+   {{< notice note >}}
 
-- 您可以为以下指标创建工作负载级别的告警策略：
-    - CPU：`CPU 用量`
-    - 内存：`内存用量（包含缓存）`和`内存用量`
-    - 网络：`网络发送数据速率`和`网络接收数据速率`
-    - 工作负载：`部署副本不可用率`
+您可以为以下指标创建工作负载级别的告警策略：
+- CPU：`CPU 用量`
+- 内存：`内存用量（包含缓存）`和`内存用量`
+- 网络：`网络发送数据速率`和`网络接收数据速率`
+- 工作负载：`部署副本不可用率`
 
 {{</ notice >}}
 
@@ -66,7 +65,7 @@ KubeSphere 支持针对节点和工作负载的告警策略。本教程演示如
 1. **通知有效时间**用于设置通知邮件的发送时间，例如 `09:00` 至 `19:00`。**通知渠道**目前只支持邮箱。您可以在**通知列表**中添加被通知的成员的邮箱地址。
 1. **自定义重复规则**用于定义通知邮件的重复发送周期和重复发送次数。如果告警未被清除，通知邮件将按重复规则重复发送。您可以为不同的告警级别设置不同的重复规则。例如，将**重要告警**设置为`每 5 分钟警告一次`和`最多重发 3 次`。
 
-![alerting_policy_workload_level_notification_rule](/images/docs/zh-cn/alerting/alerting_policy_workload_level_notification_rule.png)
+   ![alerting_policy_workload_level_notification_rule](/images/docs/zh-cn/alerting/alerting_policy_workload_level_notification_rule.png)
 
 3. 点击**创建**。告警策略创建后显示在**告警策略**页面。
 
