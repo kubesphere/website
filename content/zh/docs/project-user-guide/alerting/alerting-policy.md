@@ -11,8 +11,8 @@ KubeSphere 支持针对节点和工作负载的告警策略。本教程演示如
 
 ## 准备工作
 
-- 您需要用角色为 `platform-admin` 的帐户启用 [KubeSphere 告警和通知](../../../pluggable-components/alerting-notification/)。
-- 您需要用角色为 `platform-admin` 的帐户启用[邮件服务器](../../../cluster-administration/cluster-settings/mail-server/)。
+- 您需要启用 [KubeSphere 告警和通知](../../../pluggable-components/alerting-notification/)。
+- 您需要配置[邮件服务器](../../../cluster-administration/cluster-settings/mail-server/)。
 - 您需要创建一个企业空间、一个项目和一个帐户（例如 `project-regular`）。该帐户必须已邀请至该项目，并具有 `operator` 角色。有关更多信息，请参阅[创建企业空间、项目、帐户和角色](../../../quick-start/create-workspace-and-project)。
 - 您需要确保项目中存在工作负载。如果项目中没有工作负载，请进入**应用负载**下的**应用**页面，点击**部署示例应用**快速部署一个应用。有关更多信息，请参阅[部署 Bookinfo 和管理流量](../../../quick-start/deploy-bookinfo-to-k8s/)。
 
@@ -41,7 +41,7 @@ KubeSphere 支持针对节点和工作负载的告警策略。本教程演示如
 
 ### 步骤 4：添加告警规则
 
-1. 点击**添加规则**创建告警规则。告警规则中包含指标类型、检查周期、连续次数、指标域值和告警级别等多个参数可供设置。
+1. 点击**添加规则**创建告警规则。告警规则中包含指标类型、检查周期、连续次数、指标阈值和告警级别等多个参数可供设置。
    - 检查周期（**规则**下的第二个字段）：表示两次指标检查的间隔，例如 `2 分钟/周期`表示每两分钟检查一次。
    - 连续次数（**规则**下的第三个字段）：表示至少连续几次检查到指标符合条件时才触发告警。
 
