@@ -1,183 +1,179 @@
 ---
 title: "持久卷和存储类型"
-keywords: "storage, volume, pv, pvc, storage class, csi, Ceph RBD, Glusterfs, QingCloud, "
-description: "Persistent Volume and Storage Class Management"
+keywords: "存储, 存储卷, PV, PVC, 存储类型, CSI, Ceph RBD, Glusterfs, 青云QingCloud, "
+description: "持久卷和存储类型管理"
 linkTitle: "持久卷和存储类型"
 weight: 8400
 ---
 
-This tutorial describes the basic concepts of PVs, PVCs and storage classes and demonstrates how a cluster administrator can manage storage classes and persistent volumes in KubeSphere.
+本教程对 PV、PVC 以及存储类型 (Storage Class) 的基本概念进行了说明，并演示了集群管理员如何管理 KubeSphere 中的存储类型和持久化存储卷。
 
-## Introduction
+## 介绍
 
-A PersistentVolume (PV) is a piece of storage in the cluster that has been provisioned by an administrator or dynamically provisioned using Storage Classes. PVs are volume plugins like Volumes, but have a lifecycle independent of any individual Pod that uses the PV. PVs can be provisioned either [statically](https://kubernetes.io/docs/concepts/storage/persistent-volumes/#static) or [dynamically](https://kubernetes.io/docs/concepts/storage/persistent-volumes/#dynamic).
+PersistentVolume (PV) 是集群中的一块存储，可以由管理员事先供应，或者使用存储类型来动态供应。PV 是像存储卷 (Volume) 一样的存储卷插件，但是它的生命周期独立于任何使用 PV 的 Pod。PV 可以[静态](https://kubernetes.io/zh/docs/concepts/storage/persistent-volumes/#static)供应或[动态](https://kubernetes.io/zh/docs/concepts/storage/persistent-volumes/#dynamic)供应。
 
-A PersistentVolumeClaim (PVC) is a request for storage by a user. It is similar to a Pod. Pods consume node resources and PVCs consume PV resources.
+PersistentVolumeClaim (PVC) 是用户对存储的请求。它与 Pod 类似，Pod 会消耗节点资源，而 PVC 消耗 PV 资源。
 
-KubeSphere supports [dynamic volume provisioning](https://kubernetes.io/docs/concepts/storage/dynamic-provisioning/) based on storage classes to create PVs.
+KubeSphere 支持基于存储类型的[动态卷供应](https://kubernetes.io/zh/docs/concepts/storage/dynamic-provisioning/)，以创建 PV。
 
-A [StorageClass](https://kubernetes.io/docs/concepts/storage/storage-classes) provides a way for administrators to describe the classes of storage they offer. Different classes might map to quality-of-service levels, or to backup policies, or to arbitrary policies determined by the cluster administrators. Each StorageClass has a provisioner that determines what volume plugin is used for provisioning PVs. This field must be specified. For which value to use, please read [the official Kubernetes documentation](https://kubernetes.io/docs/concepts/storage/storage-classes/#provisioner) or check with your storage administrator.
+[StorageClass](https://kubernetes.io/zh/docs/concepts/storage/storage-classes/) 是管理员描述其提供的存储类型的一种方式。不同的类型可能会映射到不同的服务质量等级或备份策略，或由集群管理员制定的任意策略。每个 StorageClass 都有一个 Provisioner，用于决定使用哪个存储卷插件来供应 PV。该字段必须指定。有关使用哪一个值，请参阅 [Kubernetes 官方文档](https://kubernetes.io/zh/docs/concepts/storage/storage-classes/#provisioner)或与您的存储管理员确认。
 
-The table below summarizes common volume plugins for various provisioners (storage systems).
+下表总结了各种 Provisioner（存储系统）常用的存储卷插件。
 
-| Type                 | Description                                                  |
+| 类型                 | 描述信息                                                     |
 | -------------------- | ------------------------------------------------------------ |
-| In-tree              | Built-in and run as part of Kubernetes, such as [RBD](https://kubernetes.io/docs/concepts/storage/storage-classes/#ceph-rbd) and [Glusterfs](https://kubernetes.io/docs/concepts/storage/storage-classes/#glusterfs). For more plugins of this kind, see [Provisioner](https://kubernetes.io/docs/concepts/storage/storage-classes/#provisioner). |
-| External-provisioner | Deployed independently from Kubernetes, but works like an in-tree plugin, such as [nfs-client](https://github.com/kubernetes-retired/external-storage/tree/master/nfs-client). For more plugins of this kind, see [External Storage](https://github.com/kubernetes-retired/external-storage). |
-| CSI                  | Container Storage Interface, a standard for exposing storage resources to workloads on COs (e.g. Kubernetes), such as [QingCloud-csi](https://github.com/yunify/qingcloud-csi) and [Ceph-CSI](https://github.com/ceph/ceph-csi). For more plugins of this kind, see [Drivers](https://kubernetes-csi.github.io/docs/drivers.html). |
+| In-tree              | 内置并作为 Kubernetes 的一部分运行，例如 [RBD](https://kubernetes.io/zh/docs/concepts/storage/storage-classes/#ceph-rbd) 和 [Glusterfs](https://kubernetes.io/zh/docs/concepts/storage/storage-classes/#glusterfs)。有关此类插件的更多信息，请参见 [Provisioner](https://kubernetes.io/zh/docs/concepts/storage/storage-classes/#provisioner)。 |
+| External-provisioner | 独立于 Kubernetes 部署，但运行上类似于树内 (in-tree) 插件，例如 [NFS 客户端](https://github.com/kubernetes-retired/external-storage/tree/master/nfs-client)。有关此类插件的更多信息，请参见 [External Storage](https://github.com/kubernetes-retired/external-storage)。 |
+| CSI                  | 容器存储接口，一种将存储资源暴露给 CO（例如 Kubernetes）上的工作负载的标准，例如[QingCloud-CSI](https://github.com/yunify/qingcloud-csi) 和 [Ceph-CSI](https://github.com/ceph/ceph-csi)。有关此类插件的更多信息，请参见 [Drivers](https://kubernetes-csi.github.io/docs/drivers.html)。 |
 
-## Prerequisites
+## 准备工作
 
-You need an account granted a role including the authorization of **Clusters Management**. For example, you can log in to the console as `admin` directly or create a new role with the authorization and assign it to an account.
+您需要一个拥有**集群管理**权限的帐户。例如，您可以直接以 `admin` 身份登录控制台，或者创建一个拥有该权限的新角色并将它分配至一个帐户。
 
-## Manage Storage Classes
+## 管理存储类型
 
-1. Click **Platform** in the top left corner and select **Clusters Management**.
+1. 点击左上角的**平台管理**，然后选择**集群管理**。
    
-    ![clusters-management-select](/images/docs/cluster-administration/persistent-volume-and-storage-class/clusters-management-select.jpg)
+    ![选择集群管理](/images/docs/zh-cn/cluster-administration/persistent-volumes-and-storage-classes/cluster-management-select.PNG)
     
-2. If you have enabled the [multi-cluster feature](../../multicluster-management) with member clusters imported, you can select a specific cluster. If you have not enabled the feature, refer to the next step directly.
+2. 如果您启用了[多集群功能](../../multicluster-management/)并导入了 Member 集群，可以选择一个特定集群。如果您未启用该功能，请直接参考下一步。
 
-3. On the **Cluster Management** page, navigate to **Storage Classes** under **Storage**, where you can create, update and delete a storage class.
+3. 在**集群管理**页面，搜寻至**存储管理**下面的**存储类型**，您可以在这里创建、更新和删除存储类型。
 
-    ![storage-class](/images/docs/cluster-administration/persistent-volume-and-storage-class/storage-class.jpg)
+    ![存储类型](/images/docs/zh-cn/cluster-administration/persistent-volumes-and-storage-classes/storage-class.PNG)
 
-4. To create a storage class, click **Create** and enter the basic information in the pop-up window. When you finish, click **Next**.
+4. 要创建一个存储类型，请点击**创建**，在弹出窗口中输入基本信息。完成后，点击**下一步**。
 
-    ![create-storage-class-basic-info](/images/docs/cluster-administration/persistent-volume-and-storage-class/create-storage-class-basic-info.png)
+    ![存储类型基本信息](/images/docs/zh-cn/cluster-administration/persistent-volumes-and-storage-classes/create-storage-class-basic-info.PNG)
 
-5. In KubeSphere, you can create storage classes for `QingCloud-CSI`, `Glusterfs` and `Ceph RBD` directly. Alternatively, you can also create customized storage classes for other storage systems based on your needs. Select a type and click **Next**.
+5. 在 KubeSphere 中，您可以直接为 `QingCloud-CSI`、`Glusterfs` 和 `Ceph RBD` 创建存储类型。或者，您也可以根据需求为其他存储系统创建自定义存储类型。请选择一个类型，然后点击**下一步**。
 
-    ![create-storage-class-storage-system](/images/docs/cluster-administration/persistent-volume-and-storage-class/create-storage-class-storage-system.png)
+    ![存储系统](/images/docs/zh-cn/cluster-administration/persistent-volumes-and-storage-classes/create-storage-class-storage-system.PNG)
 
-    ![create-storage-class-settings](/images/docs/cluster-administration/persistent-volume-and-storage-class/create-storage-class-settings.png)
+    ![存储类型设置](/images/docs/zh-cn/cluster-administration/persistent-volumes-and-storage-classes/create-storage-class-settings.PNG)
 
-### Common settings
+### 常用设置
 
-Some settings are commonly used and shared among storage classes. You can find them as dashboard properties on the console, which are also indicated by fields or annotations in the StorageClass manifest. You can see the manifest file in YAML format by enabling **Edit Mode** in the top right corner.
-Here are property descriptions of some commonly used fields in KubeSphere.
+有些设置在存储类型之间常用且共享。您可以在控制台上的仪表板属性中找到这些设置，StorageClass 清单文件中也通过字段或注解加以显示。您可以在右上角启用**编辑模式**，查看 YAML 格式的清单文件。下表是对 KubeSphere 中一些常用字段的属性说明。
 
-| Property | Description |
+| 属性 | 描述信息 |
 | :---- | :---- |
-| Allow Volume Expansion | Specified by `allowVolumeExpansion` in the manifest. When it is set to `true`, PVs can be configured to be expandable. For more information, see [Allow Volume Expansion](https://kubernetes.io/docs/concepts/storage/storage-classes/#allow-volume-expansion). |
-| Reclaiming Policy | Specified by `reclaimPolicy` in the manifest. It can be set to `Delete` or `Retain` (default). For more information, see [Reclaim Policy](https://kubernetes.io/docs/concepts/storage/storage-classes/#reclaim-policy). |
-| Storage System | Specified by `provisioner` in the manifest. It determines what volume plugin is used for provisioning PVs. For more information, see [Provisioner](https://kubernetes.io/docs/concepts/storage/storage-classes/#provisioner). |
-| Supported Access Mode | Specified by `metadata.annotations[storageclass.kubesphere.io/supported-access-modes]` in the manifest. It tells KubeSphere which [access mode](https://kubernetes.io/docs/concepts/storage/persistent-volumes/#access-modes) is supported. |
+| 允许存储卷扩容 | 在清单文件中由 `allowVolumeExpansion` 指定。若设置为 `true`，PV 则被配置为可扩容。有关更多信息，请参见[允许卷扩展](https://kubernetes.io/zh/docs/concepts/storage/storage-classes/#允许卷扩展)。 |
+| 回收机制 | 在清单文件中由 `reclaimPolicy` 指定。可设置为 `Delete` 或 `Retain`（默认）。有关更多信息，请参见[回收策略](https://kubernetes.io/zh/docs/concepts/storage/storage-classes/#回收策略)。 |
+| 存储系统 | 在清单文件中由 `provisioner` 指定。它决定使用什么存储卷插件来供应 PV。有关更多信息，请参见 [Provisioner](https://kubernetes.io/zh/docs/concepts/storage/storage-classes/#provisioner)。 |
+| 支持的访问模式 | 在清单文件中由 `metadata.annotations[storageclass.kubesphere.io/supported-access-modes]` 指定。它会向 KubeSphere 说明支持的[访问模式](https://kubernetes.io/zh/docs/concepts/storage/persistent-volumes/#access-modes)。 |
 
-For other settings, you need to provide different information for different storage plugins, which, in the manifest, are always indicated under the field `parameters`. They will be described in detail in the sections below. You can also refer to [Parameters](https://kubernetes.io/docs/concepts/storage/storage-classes/#parameters) in the official documentation of Kubernetes.
+对于其他设置，您需要为不同的存储插件提供不同的信息，它们都显示在清单文件的 `parameters` 字段下。下面将进行详细说明，您也可以参考 Kubernetes 官方文档的[参数](https://kubernetes.io/zh/docs/concepts/storage/storage-classes/#参数)部分。
 
 ### QingCloud CSI
 
-QingCloud CSI is a CSI plugin on Kubernetes for the volume of QingCloud. Storage classes of QingCloud CSI can be created on the KubeSphere console.
+QingCloud CSI 是 Kubernetes 上的 CSI 插件，供青云QingCloud 存储卷使用。KubeSphere 控制台上可以创建 QingCloud CSI 的存储类型。
 
-#### Prerequisites
+#### 准备工作
 
-- QingCloud CSI can be used on both public cloud and private cloud of QingCloud. Therefore, make sure KubeSphere has been installed on either of them so that you can use cloud volumes.
-- QingCloud CSI Plugin has been installed on your KubeSphere cluster. See [QingCloud-CSI Installation](https://github.com/yunify/qingcloud-csi#installation) for more information.
+- QingCloud CSI 在青云QingCloud 的公有云和私有云上均可使用。因此，请确保将 KubeSphere 安装至二者之一，以便可以使用云存储卷。
+- KubeSphere 集群上已经安装 QingCloud CSI 插件。有关更多信息，请参见[安装 QingCloud CSI](https://github.com/yunify/qingcloud-csi#installation)。
 
-#### Settings
+#### 设置
 
-![storage-volume-qingcloud](/images/docs/cluster-administration/persistent-volume-and-storage-class/storage-volume-qingcloud.jpg)
+![青云存储卷](/images/docs/zh-cn/cluster-administration/persistent-volumes-and-storage-classes/storage-volume-qingcloud.PNG)
 
-| Property | Description |
+| 属性 | 描述信息 |
 | :---- | :---- |
-| type     | On the QingCloud platform, 0 represents high performance volumes. 2 represents high capacity volumes. 3 represents super high performance volumes. 5 represents Enterprise Server SAN. 6 represents NeonSan HDD. 100 represents standard volumes. 200 represents enterprise SSD. |
-| maxSize  | The volume size upper limit. |
-| stepSize | The volume size increment. |
-| minSize  | The volume size lower limit. |
-| fsType   | Filesystem type of the volume: ext3, ext4 (default), xfs. |
-| tags     | The ID of QingCloud Tag resource, split by commas. |
+| type     | 在青云QingCloud 平台上，0 代表高性能型存储卷。2 代表大容量型存储卷。3 代表超高性能型存储卷。5 代表企业级服务器 SAN。6 代表 NeonSan HDD。100 代表基础型存储卷。200 代表企业级 SSD。 |
+| maxSize  | 存储卷容量上限。 |
+| stepSize | 存储卷容量增量。 |
+| minSize  | 存储卷容量下限。 |
+| fsType   | 存储卷的文件系统类型：ext3、ext4（默认）、xfs。 |
+| tags     | QingCloud Tag 资源的 ID，用逗号隔开。 |
 
-More storage class parameters can be seen in [QingCloud-CSI user guide](https://github.com/yunify/qingcloud-csi/blob/master/docs/user-guide.md#set-storage-class).
+有关存储类型参数的更多信息，请参见 [QingCloud CSI 用户指南](https://github.com/yunify/qingcloud-csi/blob/master/docs/user-guide.md#set-storage-class)。
 
 ### Glusterfs
 
-Glusterfs is an in-tree storage plugin on Kubernetes, which means you don't need to install a volume plugin additionally.
+Glusterfs 是 Kubernetes 上的一种树内存储插件，即您不需要额外安装存储卷插件。
 
-#### Prerequisites
+#### 准备工作
 
-The Glusterfs storage system has already been installed. See [GlusterFS Installation Documentation](https://www.gluster.org/install/) for more information.
+已经安装 Glusterfs 存储系统。有关更多信息，请参见 [GlusterFS 安装文档](https://www.gluster.org/install/)。
 
-#### Settings
+#### 设置
 
-| Property | Description |
+| 属性 | 描述信息 |
 | :---- | :---- |
-| resturl  | The Gluster REST service/Heketi service url which provision gluster volumes on demand. |
-| clusterid | The ID of the cluster which will be used by Heketi when provisioning the volume. |
-| restauthenabled | Gluster REST service authentication boolean that enables authentication to the REST server. |
-| restuser | The Glusterfs REST service/Heketi user who has access to create volumes in the Glusterfs Trusted Pool. |
-| secretNamespace, secretName | The Identification of Secret instance that contains user password to use when talking to Gluster REST service. |
-| gidMin, gidMax | The minimum and maximum value of GID range for the StorageClass. |
-| volumetype | The volume type and its parameters can be configured with this optional value. |
+| resturl  | Gluster REST 服务/Heketi 服务 URL，按需供应 Gluster 存储卷。 |
+| clusterid | Heketi 在供应存储卷时使用的集群的 ID。 |
+| restauthenabled | Gluster REST 服务认证 Boolean，对 REST 服务器进行认证。 |
+| restuser | 在 Glusterfs 受信池中有权限创建存储卷的 Glusterfs REST 服务/Heketi 用户。 |
+| secretNamespace, secretName | 识别 Secret 实例，包含与 Gluster REST 服务通信时使用的用户密码。 |
+| gidMin, gidMax | StorageClass GID 范围的最大值和最小值。 |
+| volumetype | 该可选值可以配置存储卷类型和其参数。 |
 
-For more information about StorageClass parameters, see [Glusterfs in Kubernetes Documentation](https://kubernetes.io/docs/concepts/storage/storage-classes/#glusterfs).
+有关 StorageClass 参数的更多信息，请参见 [Kubernetes 文档中的 Glusterfs](https://kubernetes.io/zh/docs/concepts/storage/storage-classes/#glusterfs)。
 
 ### Ceph RBD
 
-Ceph RBD is also an in-tree storage plugin on Kubernetes. The volume plugin is already in Kubernetes, 
-but the storage server must be installed before you create the storage class of Ceph RBD.
+Ceph RBD 也是 Kubernetes 上的一种树内存储插件。Kubernetes 中已经安装存储卷插件，但您必须在创建 Ceph RBD 的存储类型之前安装存储服务器。
 
-As **hyperkube** images were [deprecated since 1.17](https://github.com/kubernetes/kubernetes/pull/85094), in-tree Ceph RBD may not work without **hyperkube**.
-Nevertheless, you can use [rbd provisioner](https://github.com/kubernetes-incubator/external-storage/tree/master/ceph/rbd) as a substitute, whose format is the same as in-tree Ceph RBD. The only different parameter is `provisioner` (i.e **Storage System** on the KubeSphere console). If you want to use rbd-provisioner, the value of `provisioner` must be `ceph.com/rbd` (Input this value in **Storage System** in the image below). If you use in-tree Ceph RBD, the value must be `kubernetes.io/rbd`. 
+由于 **hyperkube** 镜像[自 1.17 版本开始已被弃用](https://github.com/kubernetes/kubernetes/pull/85094)，树内 Ceph RBD 可能无法在不使用 **hyperkube** 的 Kubernetes 上运行。不过，您可以使用 [RBD Provisioner](https://github.com/kubernetes-retired/external-storage/tree/master/ceph/rbd) 作为替代，它的格式与树内 Ceph RBD 相同。唯一不同的参数是 `provisioner`（即 KubeSphere 控制台上的**存储系统**）。如果您想使用 RBD Provisioner，`provisioner` 的值必须为 `ceph.com/rbd`（在**存储系统**中输入该值，如下图所示）。如果您使用树内 Ceph RBD，该值必须为 `kubernetes.io/rbd`。
 
-![storage-system](/images/docs/cluster-administration/persistent-volume-and-storage-class/storage-system.png)
+![存储系统](/images/docs/zh-cn/cluster-administration/persistent-volumes-and-storage-classes/storage-system.PNG)
 
-#### Prerequisites
+#### 准备工作
 
-- The Ceph server has already been installed. See [Ceph Installation Documentation](https://docs.ceph.com/en/latest/install/) for more information.
-- Install the plugin if you choose to use rbd-provisioner. Community developers provide [charts for rbd provisioner](https://github.com/kubesphere/helm-charts/tree/master/src/test/rbd-provisioner) that you can use to install rbd-provisioner by helm.
+- 已经安装 Ceph 服务器。有关更多信息，请参见 [Ceph 安装文档](https://docs.ceph.com/en/latest/install/)。
+- 如果您选择使用 RBD Provisioner，请安装插件。社区开发者提供了 [RBD Provisioner 的 Chart](https://github.com/kubesphere/helm-charts/tree/master/src/test/rbd-provisioner)，您可以通过 Helm 用这些 Chart 安装 RBD Provisioner。
 
-#### Settings
+#### 设置
 
-| Property | Description |
+| 属性 | 描述信息 |
 | :---- | :---- |
-| monitors| The Ceph monitors, comma delimited. |
-| adminId| The Ceph client ID that is capable of creating images in the pool. |
-| adminSecretName| The Secret Name for `adminId`. |
-| adminSecretNamespace| The namespace for `adminSecretName`. |
-| pool | The Ceph RBD pool. |
-| userId | The Ceph client ID that is used to map the RBD image. |
-| userSecretName | The name of Ceph Secret for `userId` to map RBD image. |
-| userSecretNamespace | The namespace for `userSecretName`. |
-| fsType | The fsType that is supported by Kubernetes. |
-| imageFormat | The Ceph RBD image format, `1` or `2`. |
-| imageFeatures| This parameter is optional and should only be used if you set `imageFormat` to `2`. |
+| monitors| Ceph 监控器，用逗号隔开。 |
+| adminId| 能够在该池中创建镜像的 Ceph 客户端 ID。 |
+| adminSecretName| `adminId` 的 Secret 名称。 |
+| adminSecretNamespace| `adminSecretName` 的命名空间。 |
+| pool | Ceph RBD 池。 |
+| userId | 用于映射 RBD 镜像的 Ceph 客户端 ID。 |
+| userSecretName | `userId` 的 Ceph Secret 名称，用于映射 RBD 镜像。 |
+| userSecretNamespace | `userSecretName` 的命名空间。 |
+| fsType | Kubernetes 支持的文件系统类型。 |
+| imageFormat | Ceph RBD 镜像格式，可设为 `1` 或 `2`。 |
+| imageFeatures| 该参数为可选，仅在 `imageFormat` 设为 `2` 时使用。 |
 
-For more information about StorageClass parameters, see [Ceph RBD in Kubernetes Documentation](https://kubernetes.io/docs/concepts/storage/storage-classes/#ceph-rbd).
+有关 StorageClass 参数的更多信息，请参见 [Kubernetes 文档中的 Ceph RBD](https://kubernetes.io/zh/docs/concepts/storage/storage-classes/#ceph-rbd)。
 
-### Custom storage classes
+### 自定义存储类型
 
-You can create custom storage classes for your storage systems if they are not directly supported by KubeSphere. The following example shows you how to create a storage class for NFS on the KubeSphere console.
+如果 KubeSphere 不直接支持您的存储系统，您可以为存储系统创建自定义存储类型。下面的示例向您演示了如何在 KubeSphere 控制台上为 NFS 创建存储类型。
 
-#### NFS Introduction
+#### NFS 介绍
 
-NFS (Net File System) is widely used on Kubernetes with the external-provisioner volume plugin
-[nfs-client](https://github.com/kubernetes-retired/external-storage/tree/master/nfs-client). You can create the storage class of nfs-client by clicking **Custom** in the image below.
+NFS（网络文件系统）广泛用于带有 [NFS-Client](https://github.com/kubernetes-retired/external-storage/tree/master/nfs-client)（External-Provisioner 存储卷插件）的 Kubernetes。您可以点击**自定义**来创建 NFS-Client 的存储类型，如下图所示。
 
-![Create Custom Storage Class](/images/storage/create-storage-class-storage-system-custom.png)
+![创建自定义存储类型](/images/docs/zh-cn/cluster-administration/persistent-volumes-and-storage-classes/create-custom-storage-class.PNG)
 
-#### Prerequisites
+#### 准备工作
 
-- An available NFS server.
-- The volume plugin nfs-client has already been installed. Community developers provide [charts for nfs-client](https://github.com/kubesphere/helm-charts/tree/master/src/main/nfs-client-provisioner) that you can use to install nfs-client by helm.
+- 有一个可用的 NFS 服务器。
+- 已经安装存储卷插件 NFS-Client。社区开发者提供了 [NFS-Client 的 Chart](https://github.com/kubesphere/helm-charts/tree/master/src/main/nfs-client-provisioner)，您可以通过 Helm 用这些 Chart 安装 NFS-Client。
 
-#### Common Settings
+#### 常用设置
 
-![custom-storage-class](/images/docs/cluster-administration/persistent-volume-and-storage-class/custom-storage-class.jpg)
+![自定义存储类型](/images/docs/zh-cn/cluster-administration/persistent-volumes-and-storage-classes/custom-storage-class.PNG)
 
-| Property | Description |
+| 属性 | 描述信息 |
 | :---- | :---- |
-| Storage System | Specified by `provisioner` in the manifest. If you install the storage class by [charts for nfs-client](https://github.com/kubesphere/helm-charts/tree/master/src/main/nfs-client-provisioner), it can be `cluster.local/nfs-client-nfs-client-provisioner`. |
-| Allow Volume Expansion | Specified by `allowVolumeExpansion` in the manifest. Select `No`. |
-| Reclaiming Policy | Specified by `reclaimPolicy` in the manifest. The value is `Delete` by default. |
-| Supported Access Mode | Specified by `.metadata.annotations.storageclass.kubesphere.io/supported-access-modes` in the manifest. `ReadWriteOnce`, `ReadOnlyMany` and `ReadWriteMany` all are selected by default. |
+| 存储系统 | 在清单文件中由 `provisioner` 指定。如果您使用 [NFS-Client 的 Chart](https://github.com/kubesphere/helm-charts/tree/master/src/main/nfs-client-provisioner) 来安装存储类型，可以设为 `cluster.local/nfs-client-nfs-client-provisioner`。 |
+| 允许存储卷扩容 | 在清单文件中由 `allowVolumeExpansion` 指定。选择 `No`。 |
+| 回收机制 | 在清单文件中由 `reclaimPolicy` 指定。默认值为 Delete。 |
+| 支持的访问模式 | 在清单文件中由 `.metadata.annotations.storageclass.kubesphere.io/supported-access-modes` 指定。默认 `ReadWriteOnce`、`ReadOnlyMany` 和 `ReadWriteMany` 全选。 |
 
-#### Parameters
+#### 参数
 
-| Key| Description | Value |
+| 键 | 描述信息 | 值 |
 | :---- | :---- |  :----|
-| archiveOnDelete | Archive pvc when deleting | `true` |
+| archiveOnDelete | 删除时存档 PVC | `true` |
 
-## Manage Volumes
+## 管理存储卷
 
-Once the storage class is created, you can create volumes with it. You can list, create, update and delete volumes in **Volumes** under **Storage** on the KubeSphere console. For more details, please see [Volume Management](../../project-user-guide/storage/volumes/).
+存储类型创建后，您可以使用它来创建存储卷。您可以在 KubeSphere 控制台上的**存储管理**下面的**存储卷**中列示、创建、更新和删除存储卷。有关更多详细信息，请参见[存储卷管理](../../project-user-guide/storage/volumes/)。
