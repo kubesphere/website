@@ -1,46 +1,50 @@
 ---
-title: "Alerting Message (Workload Level)"
-keywords: 'KubeSphere, Kubernetes, Workload, Alerting, Message, Notification'
-description: 'How to view alerting messages at the workload level.'
+title: "告警消息（工作负载级别）"
+keywords: 'KubeSphere, Kubernetes, 工作负载, 告警, 消息, 通知'
+description: '如何查看工作负载级别的告警消息。'
 
-linkTitle: "Alerting Message (Workload Level)"
+linkTitle: "告警消息（工作负载级别）"
 weight: 10720
 ---
 
-Alert messages record detailed information of alerts triggered based on alert rules, including monitoring targets, alert policies, recent notifications and comments.
+告警消息中记录着按照告警规则触发的告警的详细信息，包括监控目标、告警策略、最近通知和处理意见。
 
-## Prerequisites
+本教程演示如何查看工作负载级别的告警消息。
 
-You have created a workload-level alert policy and received alert notifications of it. If it is not ready, please refer to [Alert Policy (Workload Level)](../alerting-policy/) to create one first.
+## 准备工作
 
-## Hands-on Lab
+* 您需要启用 [KubeSphere 告警和通知](../../../pluggable-components/alerting-notification/)。
+* 您需要创建一个企业空间、一个项目和一个帐户（例如 `project-regular`）。该帐户必须已邀请至该项目，并具有 `operator` 角色。有关更多信息，请参阅[创建企业空间、项目、帐户和角色](../../../quick-start/create-workspace-and-project)。
+* 您需要创建一个工作负载级别的告警策略并接收到相关告警通知。如果尚未创建告警策略，请按照[告警策略（工作负载级别）](../alerting-policy/)创建一个告警策略。
 
-### Task 1: View Alert Message
+## 动手实验
 
-1. Log in the console and go to your project. Navigate to **Alerting Message** under **Monitoring & Alerting**, and you can see alert messages in the list. In the example of [Alert Policy (Workload Level)](../alerting-policy/), you set two monitoring targets (`reviews-v1` and `details-v1`), and both of their memory usage are higher than the threshold, so you can see two alert messages corresponding to them.
+### 步骤 1：查看告警消息
 
-![alerting_message_workload_level_list](/images/docs/alerting/alerting_message_workload_level_list.png)
+1. 以 `project-regular` 用户登录 KubeSphere 控制台并进入项目，在左侧导航栏选择**监控告警**下的**告警消息**。页面上显示告警消息列表。如果您已经完成示例教程[告警策略（工作负载级别）](../alerting-policy/)，工作负载 `reviews-v1` 和 `details-v1` 已被设置为监控目标，并且这两个工作负载的内存用量都高于设置的阈值，从而页面上会显示两个对应的告警消息。
 
-2. Select one of the alert messages to enter the detail page. In **Alerting Detail**, you can see the graph of the memory usage of the monitored workload over time, which has been continuously higher than the threshold of 20 MiB set in the alert rule, so the alert was triggered.
+   ![alerting_message_workload_level_list](/images/docs/zh-cn/alerting/alerting_message_workload_level_list.png)
 
-![alerting_message_workload_level_detail](/images/docs/alerting/alerting_message_workload_level_detail.png)
+2. 选择一个告警消息打开详情页面。**告警详情**选项卡显示被监控工作负载的内存用量随时间的变化。工作负载的内存用量持续高于设置的阈值 20 MiB，于是触发了告警。
 
-### Task 2: View Alert Policy
+   ![alerting_message_workload_level_detail](/images/docs/zh-cn/alerting/alerting_message_workload_level_detail.png)
 
-Switch to **Alerting Policy** to view the alert policy corresponding to this alert message, and you can see the triggering rule of it set in the example of [Alert Policy (Workload Level)](../alerting-policy/).
+### 步骤 2：查看告警策略
 
-![alerting_message_workload_level_policy](/images/docs/alerting/alerting_message_workload_level_policy.png)
+点击**告警策略**选项卡查看当前告警消息对应的告警策略。页面上显示示例教程[告警策略（工作负载级别）](../alerting-policy/)中设置的告警触发规则。
 
-### Task 3: View Recent Notification
+![alerting_message_workload_level_policy](/images/docs/zh-cn/alerting/alerting_message_workload_level_policy.png)
 
-1. Switch to **Recent Notification**. It can be seen that 3 notifications have been received, because the notification rule was set with a repetition period of `Alert once every 5 minutes` and retransmission of `Resend up to 3 times`.
+### 步骤 3：查看最近通知
 
-![alerting_message_workload_level_notification](/images/docs/alerting/alerting_message_workload_level_notification.png)
+1. 点击**最近通知**选项卡。页面上显示接收到 3 个通知（由于通知规则为`每 5 分钟警告一次`和`最多重发 3 次`）。
 
-2. Log in your email to see alert notification mails sent by the KubeSphere mail server. You have received a total of 6 emails. This is because the memory usage of two monitored workloads (**Deployments**) has exceeded the threshold of `20 MiB` continuously, and the notification email is sent every 5 minutes for 3 consecutive times based on the notification rule.
+   ![alerting_message_workload_level_notification](/images/docs/zh-cn/alerting/alerting_message_workload_level_notification.png)
 
-### Task 4: Add Comment
+2. 登录您的邮箱查看 KubeSphere 邮件服务器发送的告警通知邮件。您一共收到 6 封邮件，这是由于两个被监控的工作负载（或部署）的内存用量持续超过设置的阈值 `20 MiB`，同时通知规则为`每 5 分钟警告一次`和`最多重发 3 次`。
 
-Click **Comment** to add comments to current alert messages. For example, as the memory usage of workload is higher than the threshold set based on the alert rule, you can add a comment in the dialog: `Default maximum memory usage quota needs to be increased for this workload`.
+### 步骤 4：添加处理意见
 
-![alerting_message_workload_level_comment](/images/docs/alerting/alerting_message_workload_level_comment.png)
+点击页面左侧的**处理意见**为当前告警消息添加处理意见。例如，由于工作负载的内存用量高于告警规则中设置的阈值，您可以在对话框中添加如下处理意见：`此工作负载的默认内存用量上限需要提高`。
+
+![alerting_message_workload_level_comment](/images/docs/zh-cn/alerting/alerting_message_workload_level_comment.png)
