@@ -10,7 +10,7 @@ snapshot: ''
 
 In my [last post](https://kubesphere.io/blogs/install-kubernetes-using-kubekey/), I demonstrated how to set up a three-node Kubernetes cluster using [KubeKey](https://github.com/kubesphere/kubekey). As I mentioned in the article, KubeKey is a lightweight, powerful installer that is able to install Kubernetes as well as its related add-ons in a quick and convenient way. In fact, KubeKey can do way more than that as it is also an efficient tool to scale your Kubernetes cluster.
 
-On some cloud platforms, you can directly scale your cluster by increasing or decreasing the number of nodes. Usually, this does not entail complex operations as these platforms will do almost everything for you and you only need to click a few buttons. However, in some on-premises environments, you may need to manually change the number of nodes. In this article, I am going to demonstrate how to scale out and scale in your cluster using KubeKey. The process is listed as follows:
+On some cloud platforms, you can directly scale your cluster by increasing or decreasing the number of nodes. Usually, this does not entail complex operations as these platforms will do almost everything for you and you only need to click a few buttons. However, in some on-premises environments, you may need to manually change the number of nodes. In this article, I am going to demonstrate how to scale out and scale in your cluster using KubeKey. The steps are listed as follows:
 
 1. Download KubeKey.
 2. Use KubeKey to retrieve cluster information with a configuration file created automatically.
