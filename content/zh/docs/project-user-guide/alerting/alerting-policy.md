@@ -1,75 +1,75 @@
 ---
-title: "Alerting Policy (Workload Level)"
-keywords: 'KubeSphere, Kubernetes, Workload, Alerting, Policy, Notification'
-description: 'How to set alerting policies at the workload level.'
+title: "告警策略（工作负载级别）"
+keywords: 'KubeSphere, Kubernetes, 工作负载, 告警, 策略, 通知'
+description: '如何设置工作负载级别的告警策略。'
 
-linkTitle: "Alerting Policy (Workload Level)"
+linkTitle: "告警策略（工作负载级别）"
 weight: 10710
 ---
 
-## Objective
+KubeSphere 支持针对节点和工作负载的告警策略。本教程演示如何为项目中的工作负载创建告警策略并配置邮件通知。有关如何为节点配置告警策略，请参阅[告警策略（节点级别）](../../../cluster-administration/cluster-wide-alerting-and-notification/alerting-policy/)。
 
-KubeSphere provides alert policies for nodes and workloads. This guide demonstrates how you, as a project member, can create alert policies for workloads in the project and configure mail notifications. See [Alerting Policy (Node Level)](../../../cluster-administration/alerting/alerting-policy/) to learn how to configure alert policies for nodes.
+## 准备工作
 
-## Prerequisites
+- 您需要用角色为 `platform-admin` 的帐户启用 [KubeSphere 告警和通知](../../../pluggable-components/alerting-notification/)。
+- 您需要用角色为 `platform-admin` 的帐户启用[邮件服务器](../../../cluster-administration/cluster-settings/mail-server/)。
+- 您需要创建一个企业空间、一个项目和一个帐户（例如 `project-regular`）。该帐户必须已邀请至该项目，并具有 `operator` 角色。有关更多信息，请参阅[创建企业空间、项目、帐户和角色](../../../quick-start/create-workspace-and-project)。
+- 您需要确保项目中存在工作负载。如果项目中没有工作负载，请进入**应用负载**下的**应用**页面，点击**部署示例应用**快速部署一个应用。有关更多信息，请参阅[部署 Bookinfo 和管理流量](../../../quick-start/deploy-bookinfo-to-k8s/)。
 
-- [KubeSphere Alerting and Notification](../../../pluggable-components/alerting-notification/) needs to be enabled by an account granted the role `platform-admin`.
-- [Mail Server](../../../cluster-administration/cluster-settings/mail-server/) needs to be configured by an account granted the role `platform-admin`.
-- You have been invited to one project with an `operator` role.
-- You have workloads in this project. If they are not ready, go to **Applications** under **Application Workloads**, and click **Deploy Sample Application** to deploy an application quickly. For more information, see [Deploy Bookinfo and Manage Traffic](../../../quick-start/deploy-bookinfo-to-k8s/).
+## 动手实验
 
-## Hands-on Lab
+### 步骤 1：进入控制台
 
-### Task 1: Create an Alert Policy
+登录 KubeSphere 控制台并进入项目，在左侧导航栏中选择**监控告警**下的**告警策略**，然后在页面右侧点击**创建**。
 
-Log in the console and go to your project. Navigate to **Alerting Policy** under **Monitoring & Alerting**, then click **Create**.
+![alerting_policy_workload_level_create](/images/docs/zh-cn/alerting/alerting_policy_workload_level_create.png)
 
-![alerting_policy_workload_level_create](/images/docs/alerting/alerting_policy_workload_level_create.png)
+### 步骤 2：配置基本信息
 
-### Task 2: Provide Basic Information
+在弹出的对话框中配置以下信息，然后点击**下一步**。
+- **名称**：告警策略的名称，例如 `alert-demo`。该名称将用作告警策略的唯一标识符，请确保名称简洁明了。
+- **别名**：帮助您更好地区分不同的告警策略。该字段支持中文字符。
+- **描述**：告警策略的简单介绍。
 
-In the dialog that appears, fill in the basic information as follows. Click **Next** after you finish.
-- **Name**: a concise and clear name as its unique identifier, such as `alert-demo`.
-- **Alias**: to help you distinguish alert policies better. Chinese is supported.
-- **Description**: a brief introduction to the alert policy.
+![alerting_policy_workload_level_basic_info](/images/docs/zh-cn/alerting/alerting_policy_workload_level_basic_info.png)
 
-![alerting_policy_workload_level_basic_info](/images/docs/alerting/alerting_policy_workload_level_basic_info.png)
+### 步骤 3：选择监控目标
 
-### Task 3: Select Monitoring Targets
+您可以选择**部署**、**有状态副本集**和**守护进程集**三种工作负载作为监控目标。在本示例中，选择**部署**以及 `reviews-v1` 和 `details-v1` 作为监控目标，然后点击**下一步**。
 
-You can select three types of workloads as the monitoring targets: **Deployments**, **StatefulSets** and **DaemonSets**. Select **Deployments** as the type and `reviews-v1` and `details-v1` as monitoring targets, then click **Next**.
+![alerting_policy_workload_level_monitoring_target](/images/docs/zh-cn/alerting/alerting_policy_workload_level_monitoring_target.png)
 
-![alerting_policy_workload_level_monitoring_target](/images/docs/alerting/alerting_policy_workload_level_monitoring_target.png)
+### 步骤 4：添加告警规则
 
-### Task 4: Add Alerting Rules
+1. 点击**添加规则**创建告警规则。告警规则中包含指标类型、检查周期、连续次数、指标域值和告警级别等多个参数可供设置。
+   - 检查周期（**规则**下的第二个字段）：表示两次指标检查的间隔，例如 `2 分钟/周期`表示每两分钟检查一次。
+   - 连续次数（**规则**下的第三个字段）：表示至少连续几次检查到指标符合条件时才触发告警。
 
-1. Click **Add Rule** to begin to create an alerting rule. The rule defines parameters such as metric type, check period, consecutive times, metric threshold and alert level to provide rich configurations. The check period (the second field under **Rule**) means the time interval between 2 consecutive checks of the metric. For example, `2 minutes/period` means the metric is checked every two minutes. The consecutive times (the third field under **Rule**) means the number of consecutive times that the metric meets the threshold when checked. An alert is only triggered when the actual time is equal to or is greater than the number of consecutive times set in the alert policy.
+![alerting_policy_workload_level_alerting_rule](/images/docs/zh-cn/alerting/alerting_policy_workload_level_alerting_rule.png)
 
-![alerting_policy_workload_level_alerting_rule](/images/docs/alerting/alerting_policy_workload_level_alerting_rule.png)
+2. 在本示例中，将告警规则设置为`内存用量`、`1 分钟/周期`、`连续 2 次`、`>` 、`20` MiB、`重要告警`。该告警规则表示 KubeSphere 每 1 分钟检查一次内存用量，当连续 2 次检查到内存用量大于 20 MiB 时触发重要告警。
 
-2. In this example, set those parameters to `memory usage`, `1 minute/period`, `2 consecutive times`, `>` and `20` MiB for threshold and `Major Alert` for alert level. It means KubeSphere checks the memory usage every minute, and a major alert is triggered if it is larger than 20 MiB for 2 consecutive times.  
-
-3. Click **√** to save the rule when you finish and click **Next** to continue.
+3. 点击 **√** 保存规则，然后点击**下一步**。
 
 {{< notice note >}}
 
-- You can create workload-level alert policies for the following metrics:
-    - CPU: `cpu usage`
-    - Memory: `memory usage (including cache)`, `memory usage`
-    - Network: `network data transmitting rate`, `network data receiving rate`
-    - Workload Metric: `unavailable deployment replicas ratio`
+- 您可以为以下指标创建工作负载级别的告警策略：
+    - CPU：`CPU 用量`
+    - 内存：`内存用量（包含缓存）`和`内存用量`
+    - 网络：`网络发送数据速率`和`网络接收数据速率`
+    - 工作负载：`部署副本不可用率`
 
 {{</ notice >}}
 
-### Task 5: Set Notification Rule
+### 步骤 5：设置通知规则
 
-1. **Effective Notification Time Range** is used to set sending time of notification emails, such as `09:00 ~ 19:00`. **Notification Channel** currently only supports **Email**. You can add email addresses of members to be notified to **Notification List**.
-1. **Customize Repetition Rules** defines sending period and retransmission times of notification emails. If alerts have not been resolved, the notification will be sent repeatedly after a certain period of time. Different repetition rules can also be set for different levels of alerts. Since the alert level set in the previous step is `Major Alert`, select `Alert once every 5 minutes` (sending period) in the second field for **Major Alert** and `Resend up to 3 times` in the third field (retransmission times). Refer to the following image to set notification rules:
+1. **通知有效时间**用于设置通知邮件的发送时间，例如 `09:00` 至 `19:00`。**通知渠道**目前只支持邮箱。您可以在**通知列表**中添加被通知的成员的邮箱地址。
+1. **自定义重复规则**用于定义通知邮件的重复发送周期和重复发送次数。如果告警未被清除，通知邮件将按重复规则重复发送。您可以为不同的告警级别设置不同的重复规则。例如，将**重要告警**设置为`每 5 分钟警告一次`和`最多重发 3 次`。
 
-![alerting_policy_workload_level_notification_rule](/images/docs/alerting/alerting_policy_workload_level_notification_rule.png)
+![alerting_policy_workload_level_notification_rule](/images/docs/zh-cn/alerting/alerting_policy_workload_level_notification_rule.png)
 
-3. Click **Create**, and you can see that the alert policy is successfully created.
+3. 点击**创建**。告警策略创建后显示在**告警策略**页面。
 
-### Task 6: View Alert Policy
+### 步骤 6：查看告警策略
 
-After an alert policy is successfully created, you can enter its detail information page to view the status, alert rules, monitoring targets, notification rule, alert history, etc. Click **More** and select **Change Status** from the drop-down menu to enable or disable this alert policy.
+告警策略创建成功后，您可以进入其详情页面查看状态、告警规则、监控目标、通知规则、告警历史等信息。点击**更多操作**，然后从下拉菜单中选择**更改状态**可启用或禁用当前告警策略。
