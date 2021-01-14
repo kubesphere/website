@@ -29,8 +29,8 @@ spec:
 
 本教程介绍了一些常用存储插件的 **KubeKey Add-on 配置**。如果 `spec.persistence.storageClass` 为空，将安装默认 StorageClass。如果您想配置其他存储系统，请参考下面的内容。
 
-## 青云QingCloud CSI
-如果您打算在[青云QingCloud](https://www.qingcloud.com/) 上安装 KubeSphere，可以选择[青云QingCloud CSI](https://github.com/yunify/qingcloud-csi) 作为底层存储插件。下面是使用**带有 StorageClass 的 Helm Chart** 安装青云QingCloud CSI 的 KubeKey Add-on 配置示例。
+## QingCloud CSI
+如果您打算在[青云QingCloud](https://www.qingcloud.com/) 上安装 KubeSphere，可以选择 [QingCloud CSI](https://github.com/yunify/qingcloud-csi) 作为底层存储插件。下面是使用**带有 StorageClass 的 Helm Chart** 安装 QingCloud CSI 的 KubeKey Add-on 配置示例。
 
 ### Chart 配置
 ```yaml
@@ -64,10 +64,10 @@ sc:
 | Guangdong2-A/Guangdong2-B                   | gd2a/gd2b               |
 | Asia-Pacific 2-A                            | ap2a                    |
 
-如果您想配置更多值，请参见[青云QingCloud CSI Chart 配置](https://github.com/kubesphere/helm-charts/tree/master/src/test/csi-qingcloud#configuration)。
+如果您想配置更多值，请参见 [QingCloud CSI Chart 配置](https://github.com/kubesphere/helm-charts/tree/master/src/test/csi-qingcloud#configuration)。
 
 ### Add-on 配置
-将上面的 Chart 配置文件保存至本地（例如 `/root/csi-qingcloud.yaml`）。青云QingCloud CSI Add-on 配置大致为：
+将上面的 Chart 配置文件保存至本地（例如 `/root/csi-qingcloud.yaml`）。QingCloud CSI Add-on 配置可设为：
 ```yaml
 addons:
 - name: csi-qingcloud
@@ -79,8 +79,8 @@ addons:
       values: /root/csi-qingcloud.yaml
 ```
 
-## NFS 客户端
-通过 NFS 服务器，您可以选择 [NFS 客户端 Provisioner](https://github.com/kubernetes-incubator/external-storage/tree/master/nfs-client) 作为存储插件。NFS 客户端 Provisioner 会动态创建 PersistentVolume。下面是使用**带有 StorageClass 的 Helm Chart** 安装 NFS 客户端 Provisioner 的 KubeKey Add-on 配置示例。
+## NFS Client
+通过 NFS 服务器，您可以选择 [NFS-client Provisioner](https://github.com/kubernetes-incubator/external-storage/tree/master/nfs-client) 作为存储插件。NFS-client Provisioner 会动态创建 PersistentVolume。下面是使用**带有 StorageClass 的 Helm Chart** 安装 NFS-client Provisioner 的 KubeKey Add-on 配置示例。
 
 ### Chart 配置
 ```yaml
@@ -90,10 +90,10 @@ nfs:
 storageClass:
   defaultClass: false    
 ```
-如果您想配置更多值，请参见 [NFS 客户端 Chart 配置](https://github.com/kubesphere/helm-charts/tree/master/src/main/nfs-client-provisioner#configuration)。
+如果您想配置更多值，请参见 [NFS-client Chart 配置](https://github.com/kubesphere/helm-charts/tree/master/src/main/nfs-client-provisioner#configuration)。
 
 ### Add-on 配置
-将上面的 Chart 配置文件保存至本地（例如 `/root/nfs-client.yaml`）。NFS 客户端 Provisioner 的 Add-on 配置大致为：
+将上面的 Chart 配置文件保存至本地（例如 `/root/nfs-client.yaml`）。NFS-client Provisioner 的 Add-on 配置可设为：
 ```yaml
 addons:
 - name: nfs-client
@@ -109,9 +109,9 @@ addons:
 通过 Ceph 服务器，您可以选择 [Ceph RBD](https://kubernetes.io/docs/concepts/storage/storage-classes/#ceph-rbd) 或 [Ceph CSI](https://github.com/ceph/ceph-csi) 作为底层存储插件。Ceph RBD 是 Kubernetes 上的一个树内 (in-tree) 存储插件，Ceph CSI 是 CephFS RBD 的容器存储接口 (CSI) 驱动。
 
 ###  为 Ceph 选择一种插件 
-如果您使用 **14.0.0 (Nautilus)+** Ceph 集群，则优先选择 Ceph CSI RBD。部分理由如下：
+如果您使用 **14.0.0 (Nautilus)+** Ceph 集群，建议优先选择 Ceph CSI RBD。部分理由如下：
 - 树内插件在未来会被弃用。
-- Ceph RBD 在 Kubernetes 上只能通过 **hyperkube** 镜像来运行，而 **hyperkube** 镜像[自 Kubernetes 1.17 开始已经被弃用](https://github.com/kubernetes/kubernetes/pull/85094)。
+- Ceph RBD 仅能在使用 **hyperkube** 镜像的 Kubernetes 上运行，而 **hyperkube** 镜像[自 Kubernetes 1.17 开始已经被弃用](https://github.com/kubernetes/kubernetes/pull/85094)。
 - Ceph CSI 具有更多功能，例如克隆、扩容和快照。
 
 ### Ceph CSI RBD
@@ -201,7 +201,7 @@ sc:
 如果您想配置更多值，请参见 [RBD Provisioner Chart 配置](https://github.com/kubesphere/helm-charts/tree/master/src/test/rbd-provisioner#configuration)。
 
 #### Add-on 配置
-将上面的 Chart 配置文件保存至本地（例如 `/root/rbd-provisioner.yaml`）。RBD Provisioner 的 Add-on 配置大致为：
+将上面的 Chart 配置文件保存至本地（例如 `/root/rbd-provisioner.yaml`）。RBD Provisioner 的 Add-on 配置可设为：
 ```yaml
 - name: rbd-provisioner
   namespace: kube-system
