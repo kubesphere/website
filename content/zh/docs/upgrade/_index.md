@@ -11,7 +11,7 @@ icon: "/images/docs/docs.svg"
 
 ---
 
-本章演示集群管理员如何将现有的 KubeSphere 升级到 v3.0.0。
+本章演示集群管理员如何将 KubeSphere 升级到 v3.0.0。
 
 ## [概述](../upgrade/overview/)
 
@@ -19,20 +19,20 @@ icon: "/images/docs/docs.svg"
 
 ## [使用 KubeKey 升级](../upgrade/upgrade-with-kubekey/)
 
-如何使用 KubeKey 升级 Kubernetes 和 KubeSphere。
+使用 KubeKey 升级 Kubernetes 和 KubeSphere。
 
 ## [使用 ks-installer 升级](../upgrade/upgrade-with-ks-installer/)
 
-如何使用 ks-installer 升级 KubeSphere。
+使用 ks-installer 升级 KubeSphere。
 
-## [离线环境使用 KubeKey 升级](../upgrade/air-gapped-upgrade-with-kubekey/)
+## [使用 KubeKey 离线升级](../upgrade/air-gapped-upgrade-with-kubekey/)
 
-在离线环境下如何使用 KubeKey 升级 Kubernetes 和 KubeSphere。
+使用离线包升级 Kubernetes 和 KubeSphere。
 
-## [离线环境下使用 ks-installer 升级](../upgrade/air-gapped-upgrade-with-ks-installer/)
+## [使用 ks-installer 离线升级](../upgrade/air-gapped-upgrade-with-ks-installer/)
 
-在离线环境下如何使用 ks-installer 升级 KubeSphere。
+使用 ks-installer 和离线包升级 KubeSphere。
 
-## [升级后的变化](../upgrade/what-changed/)
+## [升级后的变更](../upgrade/what-changed/)
 
-了解升级后的变化。
+了解升级后的变更。
