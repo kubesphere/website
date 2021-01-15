@@ -1,54 +1,54 @@
 ---
-title: "Introduction"
-keywords: 'monitoring, prometheus, prometheus operator'
-description: 'Introduction to KubeSphere custom application monitoring.'
+title: "介绍"
+keywords: '监控, Prometheus, Prometheus Operator'
+description: 'KubeSphere 自定义应用监控介绍。'
 
-linkTitle: "Introduction"
+linkTitle: "介绍"
 weight: 10810
 ---
 
-Custom monitoring allows you to monitor and visualize custom application metrics in KubeSphere. The application can be either a third-party application, such as MySQL, Redis, and Elasticsearch, or your own applications. This section introduces the workflow of this feature.
+您可以使用 KubeSphere 的自定义监控功能以可视化的形式监控自定义应用指标。应用可以是第三方应用，例如 MySQL、Redis 和 Elasticsearch，也可以是您自己的应用。本文介绍自定义监控功能的使用流程。
 
-The KubeSphere monitoring engine is powered by Prometheus and Prometheus Operator. To integrate custom application metrics into KubeSphere, you need to go through the following steps in general.
+KubeSphere 的监控引擎基于 Prometheus 和 Prometheus Operator。总体而言，要在 KubeSphere 中集成自定义应用指标，您需要执行以下步骤：
 
-- [Expose Prometheus-Formatted Metrics](#step-1-expose-prometheus-formatted-metrics) of your application.
-- [Apply ServiceMonitor CRD](#step-2-apply-servicemonitor-crd) to hook up your application with the monitoring target.
-- [Visualize Metrics](#step-3-visualize-metrics) to compose a dashboard for viewing the custom metrics trend.
+- 为您的应用[暴露 Prometheus 格式的指标](#步骤-1暴露-prometheus-格式的指标)。
+- [应用 ServiceMonitor CRD](#步骤-2应用-servicemonitor-crd) 将应用程序与监控目标挂钩。
+- [实现指标可视化](#步骤-3实现指标可视化)从而在监控面板上查看自定义指标趋势。
 
-### Step 1: Expose Prometheus-Formatted Metrics
+### 步骤 1：暴露 Prometheus 格式的指标
 
-First of all, your application must expose Prometheus-formatted metrics. Prometheus exposition format is the de-facto format in the realm of cloud-native monitoring. Prometheus uses a [text-based exposition format](https://prometheus.io/docs/instrumenting/exposition_formats/). Depending on your application and use case, there are two ways to expose metrics:
+首先，您的应用必须暴露 Prometheus 格式的指标。Prometheus 暴露格式已经成为云原生监控领域事实上的标准格式。Prometheus 使用[基于文本的暴露格式](https://prometheus.io/docs/instrumenting/exposition_formats/)。取决于您的应用和使用场景，您可以采用以下两种方式暴露指标。
 
-#### Direct exposing
+#### 直接暴露
 
-Directly exposing Prometheus metrics from applications is a common way among cloud-native applications. It requires developers to import Prometheus client libraries in their codes and expose metrics at a specific endpoint. Many applications, such as ETCD, CoreDNS, and Istio, adopt this method.
+直接暴露 Prometheus 格式的应用指标是云原生应用的常用方式。这种方式需要开发者在代码中导入 Prometheus 客户端库并在特定的端点 (Endpoint) 暴露指标。许多应用，例如 ETCD、CoreDNS 和 Istio，都采用这种方式。
 
-The Prometheus community offers client libraries for most programming languages. Please find your language on the [Prometheus Client Libraries](https://prometheus.io/docs/instrumenting/clientlibs/) page. For Go developers, read [Instrumenting a Go application](https://prometheus.io/docs/guides/go-application/) to learn how to write a Prometheus-compliant application.
+Prometheus 社区为大多数编程语言提供了客户端库。您可以在 [Prometheus Client Libraries](https://prometheus.io/docs/instrumenting/clientlibs/) 页面查看支持的语言。使用 Go 语言的开发者可参阅 [Instrumenting a Go Application for Prometheus](https://prometheus.io/docs/guides/go-application/) 了解如何编写符合 Prometheus 规范的应用程序。
 
-The [sample web application](../examples/monitor-sample-web) is an example demonstrating how an application exposes Prometheus-formatted metrics directly.
+[示例 Web 应用](../examples/monitor-sample-web)演示了如何直接暴露 Prometheus 格式的应用指标。
 
-#### Indirect exposing
+#### 间接暴露
 
-If you don’t want to modify your code or you cannot do so because the application is provided by a third party, you can deploy an exporter which serves as an agent to scrape metric data and translate them into Prometheus format.
+如果您不希望修改代码，或者由于应用由第三方提供您无法修改代码，您可以部署一个导出器作为代理，用于抓取指标数据并将其转换成 Prometheus 格式。
 
-For most third-party applications, such as MySQL, the Prometheus community provides production-ready exporters. Please refer to [Exporters and Integrations](https://prometheus.io/docs/instrumenting/exporters/) for available exporters. In KubeSphere, it is recommended to [enable OpenPitrix](../../../pluggable-components/app-store/) and deploy exporters from the App Store. Exporters for MySQL, Elasticsearch, and Redis are all built-in items in the App Store.
+Prometheus 社区为大多数第三方应用，例如 MySQL，提供了生产就绪的导出器。您可以在 [Exporters and Integrations](https://prometheus.io/docs/instrumenting/exporters/) 页面查看可用的导出器。在 KubeSphere 中，建议[启用 OpenPitrix](../../../pluggable-components/app-store/) 并从应用商店部署导出器。应用商店中内置了面向 MySQL、Elasticsearch 和 Redis 的导出器。
 
-Please read [Monitor MySQL](../examples/monitor-mysql) to learn how to deploy a MySQL exporter and monitor MySQL metrics.
+请参阅[监控 MySQL](../examples/monitor-mysql) 了解如何部署 MySQL 导出器并监控 MySQL 指标。
 
-Writing an exporter is nothing short of instrumenting an application with Prometheus client libraries. The only difference is that exporters need to connect to applications and translate application metrics into Prometheus format.
+编写导出器与用 Prometheus 客户端库对应用进行监测类似，唯一的不同在于导出器需要连接应用并将应用指标转换成 Prometheus 格式。
 
-### Step 2: Apply ServiceMonitor CRD
+### 步骤 2：应用 ServiceMonitor CRD
 
-In the previous step, you expose metric endpoints in a Kubernetes Service object. Next, you need to inform the KubeSphere monitoring engine of your new changes.
+在上一步，您已经在 Kubernetes Service 对象中暴露了指标端点。在此步骤中您需要将这些新变更告知 KubeSphere 监控引擎。
 
-The ServiceMonitor CRD is defined by [Prometheus Operator](https://github.com/prometheus-operator/prometheus-operator). ServiceMonitor contains information about the metrics endpoints. With ServiceMonitor objects, the KubeSphere monitoring engine knows where and how to scape metrics. For each monitoring target, you apply a ServiceMonitor object to hook your application (or exporters) up to KubeSphere.
+ServiceMonitor CRD 由 [Prometheus Operator](https://github.com/prometheus-operator/prometheus-operator) 定义。ServiceMonitor 包含指标端点的信息。KubeSphere 监控引擎通过 ServiceMonitor 对象获知从何处以及如何抓取指标。对于每一个监控目标，您需要应用一个 ServiceMonitor 对象以使应用程序（或导出器）与 KubeSphere 挂钩。
 
-In KubeSphere v3.0.0, you need to pack ServiceMonitor with your applications (or exporters) into a helm chart for reuse. In future releases, KubeSphere will provide graphical interfaces for easy operation.
+在 KubeSphere v3.0.0，您需要将 ServiceMonitor 和应用（或导出器）打包到 Helm Chart 中以便重复使用。在未来的版本中，KubeSphere 将提供图形化界面以方便操作。
 
-Please read [Monitor Sample Web Application](../examples/monitor-sample-web) to learn how to pack ServiceMonitor with your application.
+请参阅[监控示例 Web 应用](../examples/monitor-sample-web)了解如何打包 ServiceMonitor 和应用。
 
-### Step 3: Visualize Metrics
+### 步骤 3：实现指标可视化
 
-Around two minutes, the KubeSphere monitoring engine starts to scape and store metrics. Then you can use PromQL to query metrics and design panels and dashboards.
+大约两分钟后，KubeSphere 监控引擎开始抓取和存储指标，随后您可以使用 PromQL 查询指标并设计操作面板和监控面板。
 
-Please read [Querying](../visualization/querying) to learn how to write a PromQL expression. For dashboard features, please read [Visualization](../visualization/overview).
+请参阅[查询](../visualization/querying)了解如何编写 PromQL 表达式。有关监控面板功能的更多信息，请参阅[可视化](../visualization/overview)。
