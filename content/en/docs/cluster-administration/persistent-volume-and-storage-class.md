@@ -33,7 +33,7 @@ You need an account granted a role including the authorization of **Clusters Man
 ## Manage Storage Classes
 
 1. Click **Platform** in the top left corner and select **Clusters Management**.
-    
+   
     ![clusters-management-select](/images/docs/cluster-administration/persistent-volume-and-storage-class/clusters-management-select.jpg)
     
 2. If you have enabled the [multi-cluster feature](../../multicluster-management) with member clusters imported, you can select a specific cluster. If you have not enabled the feature, refer to the next step directly.
@@ -68,11 +68,11 @@ For other settings, you need to provide different information for different stor
 
 ### QingCloud CSI
 
-QingCloud CSI is a CSI plugin on Kubernetes for the volume of QingCloud. Storage classes of QingCloud CSI can be created on the KubeSphere console.
+QingCloud CSI is a CSI plugin on Kubernetes for the storage service of QingCloud. Storage classes of QingCloud CSI can be created on the KubeSphere console.
 
 #### Prerequisites
 
-- QingCloud CSI can be used on both public cloud and private cloud of QingCloud. Therefore, make sure KubeSphere has been installed on either of them so that you can use cloud volumes.
+- QingCloud CSI can be used on both public cloud and private cloud of QingCloud. Therefore, make sure KubeSphere has been installed on either of them so that you can use cloud storage services.
 - QingCloud CSI Plugin has been installed on your KubeSphere cluster. See [QingCloud-CSI Installation](https://github.com/yunify/qingcloud-csi#installation) for more information.
 
 #### Settings
