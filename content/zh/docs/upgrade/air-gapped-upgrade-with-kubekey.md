@@ -1,88 +1,71 @@
 ---
 title: "使用 KubeKey 离线升级"
-keywords: "Air-Gapped, kubernetes, upgrade, kubesphere, v3.0.0"
-description: "Air-Gapped Upgrade Kubernetes and KubeSphere"
+keywords: "离线环境, kubernetes, 升级, kubesphere, v3.0.0"
+description: "离线升级 Kubernetes and KubeSphere"
 linkTitle: "使用 KubeKey 离线升级"
 weight: 7400
 ---
-Air-gapped upgrade with KubeKey is recommended for users whose KubeSphere and Kubernetes were both deployed by [All-in-One Installation](https://v2-1.docs.kubesphere.io/docs/installation/all-in-one/) or [Multi-node Installation](https://v2-1.docs.kubesphere.io/docs/installation/multi-node/). If your Kubernetes cluster was provisioned by yourself or cloud providers, please refer to [Air-Gapped Upgrade with ks-installer](../air-gapped-upgrade-with-ks-installer/).
+对于 KubeSphere 和 Kubernetes 都是通过 [All-in-One 安装](https://v2-1.docs.kubesphere.io/docs/zh-CN/installation/all-in-one/)或者[多节点安装](https://v2-1.docs.kubesphere.io/docs/zh-CN/installation/multi-node/)来部署的用户，推荐使用 KubeKey 离线升级。如果您的 Kubernetes 集群由云厂商托管或自行配置，请参考[使用 ks-installer 离线升级](../air-gapped-upgrade-with-ks-installer/)。
 
-## Prerequisites
+## 准备工作
 
-1. You need to have a KubeSphere cluster running version 2.1.1.
+1. 您需要有一个运行在 v2.1.1 版本的 KubeSphere 集群。如果您的 KubeSphere 是 v2.1.0 或更早的版本，请先升级至 v2.1.1。
 
-   {{< notice warning >}}
+2. Docker 仓库。您需要有一个 Harbor 或其他 Docker 仓库。有关更多信息，请参见[准备一个私有镜像仓库](../../installing-on-linux/introduction/air-gapped-installation/#步骤-2准备一个私有镜像仓库)。
 
-   If your KubeSphere version is v2.1.0 or earlier, please upgrade to v2.1.1 first.
+3. 请确保每个节点都可以从该 Docker 仓库拉取镜像或向其推送镜像。
 
-   {{</ notice >}}
-
-2. Docker Registry
-
-   You need to have a harbor or other Docker registry.
-
-   {{< notice tip >}}
-
-   You can [Prepare a Private Image Registry](../../installing-on-linux/introduction/air-gapped-installation/#step-2-prepare-a-private-image-registry)
-
-   {{</ notice >}}
-
-3. Make sure every node can push and pull images from the Docker Registry.
-
-4. Make sure you read [Release Notes For 3.0.0](../../release/release-v300/) carefully.
+4. 请仔细阅读 [v3.0.0 发布说明](../../release/release-v300/)。
 
    {{< notice warning >}}
 
-   In v3.0.0, KubeSphere refactors many of its components such as Fluent Bit Operator and IAM. Make sure you back up any important components in case you heavily customized them but not from console.
+   在 v3.0.0 版本中，KubeSphere 重构了许多组件，例如 Fluent Bit Operator 和 IAM。如果您的这些组件有深度自定义配置（并非通过 KubeSphere 控制台配置），请务必先备份重要组件。
 
    {{</ notice >}}
 
-5. Make your upgrade plan. Two upgrading scenarios are documented below.
 
-## Air-Gapped Upgrade KubeSphere and Kubernetes
+## 升级 KubeSphere 和 Kubernetes
 
-Upgrading steps are different for single-node clusters (all-in-one) and multi-node clusters.
+单节点集群 (All-in-One) 和多节点集群的升级步骤不同。
 
 {{< notice info >}}
 
-- Air-gapped upgrading with Kubernetes will cause helm to be upgraded from v2 to v3. If you want to continue using helm2, please back up it: `cp /usr/local/bin/helm /usr/local/bin/helm2`
-- When upgrading Kubernetes, KubeKey will upgrade from one MINOR version to the next MINOR version until the target version. For example, you may see the upgrading process going from 1.16 to 1.17 and to 1.18, instead of directly jumping to 1.18 from 1.16.
+- 升级 Kubernetes 将使 Helm 从 v2 升级到 v3。如果您想继续使用 Helm2，请先备份它：`cp /usr/local/bin/helm /usr/local/bin/helm2`。
+- 当升级 Kubernetes 时，KubeKey 将从一个小版本升级到下一个小版本，直到目标版本。例如，您会发现升级过程是从 1.16 先升级到 1.17 然后再升级到 1.18，而不是直接从 1.16 升级到 1.18。
 
 {{</ notice >}}
 
 
+### 系统要求
 
-
-### System Requirements
-
-| Systems                                                         | Minimum Requirements (Each node)            |
-| --------------------------------------------------------------- | ------------------------------------------- |
-| **Ubuntu** *16.04, 18.04*                                       | CPU: 2 Cores, Memory: 4 G, Disk Space: 40 G |
-| **Debian** *Buster, Stretch*                                    | CPU: 2 Cores, Memory: 4 G, Disk Space: 40 G |
-| **CentOS** *7.x*                                                | CPU: 2 Cores, Memory: 4 G, Disk Space: 40 G |
-| **Red Hat Enterprise Linux** *7*                                | CPU: 2 Cores, Memory: 4 G, Disk Space: 40 G |
-| **SUSE Linux Enterprise Server** *15* **/openSUSE Leap** *15.2* | CPU: 2 Cores, Memory: 4 G, Disk Space: 40 G |
+| 系统                                                         | 最低要求（每个节点）             |
+| ------------------------------------------------------------ | -------------------------------- |
+| **Ubuntu** *16.04, 18.04*                                    | CPU：2 核，内存：4 G，硬盘：40 G |
+| **Debian** *Buster, Stretch*                                 | CPU：2 核，内存：4 G，硬盘：40 G |
+| **CentOS** *7.x*                                             | CPU：2 核，内存：4 G，硬盘：40 G |
+| **Red Hat Enterprise Linux** *7*                             | CPU：2 核，内存：4 G，硬盘：40 G |
+| **SUSE Linux Enterprise Server** *15* **/openSUSE Leap** *15.2* | CPU：2 核，内存：4 G，硬盘：40 G |
 
 {{< notice note >}}
 
-[KubeKey](https://github.com/kubesphere/kubekey) uses `/var/lib/docker` as the default directory where all Docker related files, including images, are stored. It is recommended you add additional storage volumes with at least **100G** mounted to `/var/lib/docker` and `/mnt/registry` respectively. See [fdisk](https://www.computerhope.com/unix/fdisk.htm) command for reference.
+[KubeKey](https://github.com/kubesphere/kubekey) 使用 `/var/lib/docker` 作为默认路径来存储所有 Docker 相关文件（包括镜像）。建议您添加附加存储卷，分别给 `/var/lib/docker` 和 `/mnt/registry` 挂载至少 **100G**。请参见 [fdisk](https://www.computerhope.com/unix/fdisk.htm) 的参考命令。
 
 {{</ notice >}}
 
 
-### Step 1: Download KubeKey
+### 步骤 1：下载 KubeKey
 
-Similar to installing KubeSphere on Linux in an online environment, you also need to [download KubeKey](https://github.com/kubesphere/kubekey/releases) first. Download the `tar.gz` file, and transfer it to your local machine which serves as the taskbox for installation. After you uncompress the file, execute the following command to make `kk` executable:
+与在 Linux 上在线安装 KubeSphere 相似，您也需要事先[下载 KubeKey](https://github.com/kubesphere/kubekey/releases)。下载 `tar.gz` 文件，将它传输到充当任务机的本地机器上进行安装。解压文件后，执行以下命令，使 `kk` 可执行：
 
 ```bash
 chmod +x kk
 ```
 
-### Step 2: Prepare Installation Images
+### 步骤 2：准备安装镜像
 
-As you install KubeSphere and Kubernetes on Linux, you need to prepare an image package containing all the necessary images and download the Kubernetes binary file in advance.
+当您在 Linux 上安装 KubeSphere 和 Kubernetes 时，需要准备一个包含所有必需镜像的镜像包，并事先下载 Kubernetes 二进制文件。
 
-1. Download the image list file `images-list.txt` from a machine that has access to the Internet through the following command:
+1. 使用以下命令从能够访问互联网的机器上下载镜像清单文件 `images-list.txt`：
 
    ```bash
    curl -L -O https://github.com/kubesphere/ks-installer/releases/download/v3.0.0/images-list.txt
@@ -90,23 +73,23 @@ As you install KubeSphere and Kubernetes on Linux, you need to prepare an image 
 
    {{< notice note >}}
 
-   This file lists images under `##+modulename` based on different modules. You can add your own images to this file following the same rule. To view the complete file, see [Appendix](../air-gapped-installation/#image-list-of-kubesphere-v300).
+   该文件根据不同的模块列出了 `##+modulename` 下的镜像。您可以按照相同的规则把自己的镜像添加到这个文件中。要查看完整文件，请参见[附录](../../installing-on-linux/introduction/air-gapped-installation/#kubesphere-v300-镜像清单)。
 
    {{</ notice >}} 
 
-2. Download `offline-installation-tool.sh`.
+2. 下载 `offline-installation-tool.sh`。
 
    ```bash
    curl -L -O https://github.com/kubesphere/ks-installer/releases/download/v3.0.0/offline-installation-tool.sh
    ```
 
-3. Make the `.sh` file executable.
+3. 使 `.sh` 文件可执行。
 
    ```bash
    chmod +x offline-installation-tool.sh
    ```
 
-4. You can execute the command `./offline-installation-tool.sh -h` to see how to use the script:
+4. 您可以执行命令 `./offline-installation-tool.sh -h` 来查看如何使用脚本：
 
    ```bash
    root@master:/home/ubuntu# ./offline-installation-tool.sh -h
@@ -124,13 +107,13 @@ As you install KubeSphere and Kubernetes on Linux, you need to prepare an image 
      -h                     : usage message
    ```
 
-5. Download the Kubernetes binary file.
+5. 下载 Kubernetes 二进制文件。
 
    ```bash
    ./offline-installation-tool.sh -b -v v1.17.9 
    ```
 
-   If you cannot access the object storage service of Google, run the following command instead to add the environment variable to change the source.
+   如果您无法访问 Google 的对象存储服务，请运行以下命令添加环境变量以变更来源。
 
    ```bash
    export KKZONE=cn;./offline-installation-tool.sh -b -v v1.17.9 
@@ -138,15 +121,15 @@ As you install KubeSphere and Kubernetes on Linux, you need to prepare an image 
 
    {{< notice note >}}
 
-   - You can change the Kubernetes version downloaded based on your needs. Supported versions: v1.15.12, v1.16.13, v1.17.9 (default) and v1.18.6.
+   - 您可以根据自己的需求变更下载的 Kubernetes 版本。支持的版本：v1.15.12、v1.16.13、v1.17.9（默认） 以及 v1.18.6。
 
-   - You can upgrade Kubernetes from v1.16.13 to v1.17.9 by download the v1.17.9 Kubernetes binary file, but for cross-version upgrades, all intermediate version also needs to be downloaded in advance, such as if you want upgrade Kubernetes from v1.15.12 to v1.18.6, you need to download the Kubernetes v1.16.13, v1.17.9 and v1.18.6 binary file.
+   - 您可以通过下载 Kubernetes v1.17.9 二进制文件将 Kubernetes 从 v1.16.13 升级到 v1.17.9。但对于跨多个版本升级，需要事先下载所有中间版本，例如您想将 Kubernetes 从 v1.15.12 升级到 v1.18.6，则需要下载 Kubernetes v1.16.13、v1.17.9 和 v1.18.6 二进制文件。
 
-   - After you run the script, a folder `kubekey` is automatically created. Note that this file and `kk` must be placed in the same directory when you create the cluster later.
+   - 运行脚本后，会自动创建一个文件夹 `kubekey`。请注意，您稍后创建集群时，该文件和 `kk` 必须放在同一个目录下。
 
    {{</ notice >}} 
 
-6. Pull images in `offline-installation-tool.sh`.
+6. 在 `offline-installation-tool.sh` 中拉取镜像。
 
    ```bash
    ./offline-installation-tool.sh -s -l images-list.txt -d ./kubesphere-images
@@ -154,13 +137,13 @@ As you install KubeSphere and Kubernetes on Linux, you need to prepare an image 
 
    {{< notice note >}}
 
-   You can choose to pull images as needed. For example, you can delete `##k8s-images` and related images under it in `images-list.text` if you already have a Kubernetes cluster.
+   您可以根据需要选择拉取的镜像。例如，如果已有一个 Kubernetes 集群，您可以在 `images-list.text` 中删除 `##k8s-images` 和在它下面的相关镜像。
 
    {{</ notice >}} 
 
-### Step 3: Push Images to Private Registry
+### 步骤 3：推送镜像至私有仓库
 
-   Transfer your packaged image file to your local machine and execute the following command to push it to the registry.
+将打包的镜像文件传输至您的本地机器，并运行以下命令把它推送至仓库。
 
 ```bash
 ./offline-installation-tool.sh -l images-list.txt -d ./kubesphere-images -r dockerhub.kubekey.local
@@ -168,38 +151,38 @@ As you install KubeSphere and Kubernetes on Linux, you need to prepare an image 
 
    {{< notice note >}}
 
-   The domain name is `dockerhub.kubekey.local` in the command. Make sure you use your **own registry address**.
+   命令中的域名是 `dockerhub.kubekey.local`。请确保使用您**自己仓库的地址**。
 
    {{</ notice >}} 
 
-### Air-Gapped Upgrade All-in-one Cluster
+### 离线升级 All-in-One 集群
 
-#### Example Machine
-| Host Name |  IP        |           Role       |   Port  |          URL            |
-| --------- | ---------- | -------------------- | ------- | ----------------------- |
-|   master  | 192.168.1.1|  Docker Registry     |   5000  | http://192.168.1.1:5000 |
-|   master  | 192.168.1.1|  master, etcd, worker|         |                         |
+#### 示例机器
+| 主机名称 | IP          | 角色                 | 端口 | URL                     |
+| -------- | ----------- | -------------------- | ---- | ----------------------- |
+| master   | 192.168.1.1 | Docker 仓库          | 5000 | http://192.168.1.1:5000 |
+| master   | 192.168.1.1 | master、etcd、worker |      |                         |
 
-#### Versions
+#### 版本
 
-|       | Kubernetes |  KubeSphere |
-|------ | ---------- | ----------- |
-| Befor |  v1.16.13  |   v2.1.1    |
-| After |  v1.17.9   |   v3.0.0    |
+|        | Kubernetes | KubeSphere |
+| ------ | ---------- | ---------- |
+| 升级前 | v1.16.13   | v2.1.1     |
+| 升级后 | v1.17.9    | v3.0.0     |
 
-#### Upgrade a Cluster
+#### 升级集群
 
-   In this tutorial, KubeSphere is installed on multiple nodes, so you need to specify a configuration file to add host information. Besides, for air-gapped installation, pay special attention to `.spec.registry.privateRegistry`, which must be set to **your own registry address**. See the [complete YAML file](../air-gapped-installation/#2-edit-the-configuration-file) below for more information.
+本示例中，KubeSphere 安装在单个节点上，您需要指定一个配置文件以添加主机信息。此外，离线安装时，请务必将 `.spec.registry.privateRegistry` 设置为**您自己的仓库地址**。有关更多信息，请参见下面的内容。
 
-#### Create an Example Configuration File
+#### 创建示例配置文件
 
-   Execute the following command to generate an example configuration file for installation:
+执行以下命令生成示例配置文件用于安装：
 
 ```bash
 ./kk create config [--with-kubernetes version] [--with-kubesphere version] [(-f | --file) path]
 ```
 
-   For example:
+例如：
 
 ```bash
 ./kk create config --with-kubernetes v1.17.9  --with-kubesphere v3.0.0 -f config-sample.yaml
@@ -207,21 +190,21 @@ As you install KubeSphere and Kubernetes on Linux, you need to prepare an image 
 
 {{< notice note >}}
 
-Make sure the Kubernetes version is the one you downloaded.
+请确保 Kubernetes 版本和您下载的版本一致。
 
 {{</ notice >}}
 
-#### Edit the Configuration File
+#### 编辑配置文件
 
-  Edit the generated configuration file `config-sample.yaml`. Here is [an example for your reference](https://github.com/kubesphere/kubekey/blob/master/docs/config-example.md)
+编辑该配置文件 `config-sample.yaml`。请查看[供您参考的示例](https://github.com/kubesphere/kubekey/blob/master/docs/config-example.md)。
 
    {{< notice warning >}} 
 
-   For air-gapped installation, you must specify `privateRegistry`, which is `dockerhub.kubekey.local` in this example.
+离线安装时，您必须指定 `privateRegistry`，在本示例中是 `dockerhub.kubekey.local`。
 
    {{</ notice >}}
 
-   Set the `hosts` of your `config-sample.yaml` file:
+设置 `config-sample.yaml` 文件中的 `hosts`：
 
 ```yaml
   hosts:
@@ -235,7 +218,7 @@ Make sure the Kubernetes version is the one you downloaded.
     - ks.master
 ```
 
-Set the `privateRegistry` value of your `config-sample.yaml` file:
+设置 `config-sample.yaml` 文件中的 `privateRegistry`：
 ```yaml
   registry:
     registryMirrors: []
@@ -243,51 +226,51 @@ Set the `privateRegistry` value of your `config-sample.yaml` file:
     privateRegistry: dockerhub.kubekey.local
 ```
 
-#### Upgrades your single-node cluster to KubeSphere v3.0.0 and Kubernetes v1.17.9 (default)
+#### 将单节点集群升级至 KubeSphere v3.0.0 和 Kubernetes v1.17.9（默认）
 
 ```bash
 ./kk upgrade -f config-sample.yaml
 ```
 
-To upgrade Kubernetes to a specific version, please explicitly provide the version after the flag `--with-kubernetes`. Available versions are:
+要将 Kubernetes 升级至特定版本，可以在 `--with-kubernetes` 标志后明确指定版本号。以下是可用版本：
 
 - v1.15.12
-- v1.16.8, v1.16.10, v1.16.12, v1.16.13
-- v1.17.0, v1.17.4, v1.17.5, v1.17.6, v1.17.7, v1.17.8, v1.17.9
-- v1.18.3, v1.18.5, v1.18.6
+- v1.16.8、v1.16.10、v1.16.12、v1.16.13
+- v1.17.0、v1.17.4、v1.17.5、v1.17.6、v1.17.7、v1.17.8、v1.17.9
+- v1.18.3、v1.18.5、v1.18.6
 
 
-### Air-Gapped Upgrade Multi-node Cluster
+### 离线升级多节点集群
 
-#### Example Machine
-| Host Name |  IP        |           Role       |   Port  |          URL            |
-| --------- | ---------- | -------------------- | ------- | ----------------------- |
-|   master  | 192.168.1.1|  Docker Registry     |   5000  | http://192.168.1.1:5000 |
-|   master  | 192.168.1.1|  master, etcd        |         |                         |
-|   slave1  | 192.168.1.2|  worker              |         |                         |
-|   slave1  | 192.168.1.3|  worker              |         |                         |
+#### 示例机器
+| 主机名称 | IP          | 角色         | 端口 | URL                     |
+| -------- | ----------- | ------------ | ---- | ----------------------- |
+| master   | 192.168.1.1 | Docker 仓库  | 5000 | http://192.168.1.1:5000 |
+| master   | 192.168.1.1 | master、etcd |      |                         |
+| slave1   | 192.168.1.2 | worker       |      |                         |
+| slave1   | 192.168.1.3 | worker       |      |                         |
 
 
-#### Versions
+#### 版本
 
-|       | Kubernetes |  KubeSphere |
-|------ | ---------- | ----------- |
-| Befor |  v1.16.13  |   v2.1.1    |
-| After |  v1.17.9   |   v3.0.0    |
+|        | Kubernetes | KubeSphere |
+| ------ | ---------- | ---------- |
+| 升级前 | v1.16.13   | v2.1.1     |
+| 升级后 | v1.17.9    | v3.0.0     |
 
-#### Upgrade a Cluster
+#### 升级集群
 
-   In this tutorial, KubeSphere is installed on multiple nodes, so you need to specify a configuration file to add host information. Besides, for air-gapped installation, pay special attention to `.spec.registry.privateRegistry`, which must be set to **your own registry address**. See the [complete YAML file](../air-gapped-installation/#2-edit-the-configuration-file) below for more information.
+本示例中，KubeSphere 安装在多个节点上，因此您需要指定一个配置文件以添加主机信息。此外，离线安装时，请务必将 `.spec.registry.privateRegistry` 设置为**您自己的仓库地址**。有关更多信息，请参见下面的内容。
 
-#### Create an Example Configuration File
+#### 创建示例配置文件
 
-   Execute the following command to generate an example configuration file for installation:
+执行以下命令生成示例配置文件用于安装：
 
 ```bash
 ./kk create config [--with-kubernetes version] [--with-kubesphere version] [(-f | --file) path]
 ```
 
-   For example:
+例如：
 
 ```bash
 ./kk create config --with-kubernetes v1.17.9  --with-kubesphere v3.0.0 -f config-sample.yaml
@@ -295,21 +278,21 @@ To upgrade Kubernetes to a specific version, please explicitly provide the versi
 
 {{< notice note >}}
 
-Make sure the Kubernetes version is the one you downloaded.
+请确保 Kubernetes 版本和您下载的版本一致。
 
 {{</ notice >}}
 
-#### Edit the Configuration File
+#### 编辑配置文件
 
-  Edit the generated configuration file `config-sample.yaml`. Here is [an example for your reference](https://github.com/kubesphere/kubekey/blob/master/docs/config-example.md)
+编辑该配置文件 `config-sample.yaml`。请查看[供您参考的示例](https://github.com/kubesphere/kubekey/blob/master/docs/config-example.md)。
 
    {{< notice warning >}} 
 
-   For air-gapped installation, you must specify `privateRegistry`, which is `dockerhub.kubekey.local` in this example.
+离线安装时，您必须指定 `privateRegistry`，在本示例中是 `dockerhub.kubekey.local`。
 
    {{</ notice >}}
 
-   Set the `hosts` of your `config-sample.yaml` file:
+设置 `config-sample.yaml` 文件中的 `hosts`：
 
 ```yaml
   hosts:
@@ -325,7 +308,7 @@ Make sure the Kubernetes version is the one you downloaded.
     - ks.slave1
     - ks.slave2
 ```
-Set the `privateRegistry` value of your `config-sample.yaml` file:
+设置 `config-sample.yaml` 文件中的 `privateRegistry`：
 ```yaml
   registry:
     registryMirrors: []
@@ -333,16 +316,16 @@ Set the `privateRegistry` value of your `config-sample.yaml` file:
     privateRegistry: dockerhub.kubekey.local
 ```
 
-#### Upgrades your single-node cluster to KubeSphere v3.0.0 and Kubernetes v1.17.9 (default)
+#### 将多节点集群升级至 KubeSphere v3.0.0 和 Kubernetes v1.17.9（默认）
 
 ```bash
 ./kk upgrade -f config-sample.yaml
 ```
 
-To upgrade Kubernetes to a specific version, please explicitly provide the version after the flag `--with-kubernetes`. Available versions are:
+要将 Kubernetes 升级至特定版本，可以在 `--with-kubernetes` 标志后明确指定版本号。以下是可用版本：
 
 - v1.15.12
-- v1.16.8, v1.16.10, v1.16.12, v1.16.13
-- v1.17.0, v1.17.4, v1.17.5, v1.17.6, v1.17.7, v1.17.8, v1.17.9
-- v1.18.3, v1.18.5, v1.18.6
+- v1.16.8、v1.16.10、v1.16.12、v1.16.13
+- v1.17.0、v1.17.4、v1.17.5、v1.17.6、v1.17.7、v1.17.8、v1.17.9
+- v1.18.3、v1.18.5、v1.18.6
 
