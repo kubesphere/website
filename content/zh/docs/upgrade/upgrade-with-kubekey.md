@@ -96,7 +96,7 @@ chmod +x kk
 ./kk upgrade --with-kubernetes v1.17.9 --with-kubesphere v3.0.0
 ```
 
-要将 Kubernetes 升级至特定版本，可以在 `--with-kubernetes` 标志后明确指定版本号。以下是可用版本:
+要将 Kubernetes 升级至特定版本，可以在 `--with-kubernetes` 标志后明确指定版本号。以下是可用版本：
 
 - v1.15.12
 - v1.16.8、v1.16.10、v1.16.12、v1.16.13
@@ -142,7 +142,7 @@ chmod +x kk
 ./kk upgrade --with-kubernetes v1.17.9 --with-kubesphere v3.0.0 -f config-sample.yaml
 ```
 
-要将 Kubernetes 升级至特定版本，可以在 `--with-kubernetes` 标志后明确指定版本号。以下是可用版本:
+要将 Kubernetes 升级至特定版本，可以在 `--with-kubernetes` 标志后明确指定版本号。以下是可用版本：
 
 - v1.15.12
 - v1.16.8、v1.16.10、v1.16.12、v1.16.13
