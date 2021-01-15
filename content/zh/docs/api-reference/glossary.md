@@ -1,37 +1,33 @@
 ---
 title: "Glossary"
-keywords: 'kubernetes, kubesphere, devops, docker, helm, jenkins, istio, prometheus'
-description: 'KubeSphere Glossary documentation'
-
-
+keywords: 'Kubernetes, KubeSphere, devops, docker, helm, jenkins, istio, prometheus, glossary'
+description: 'KubeSphere glossary'
+linkTitle: "Glossary"
 weight: 17200
 ---
 
-This glossary includes technical terms that are specific to KubeSphere, as well as more general terms that provide useful context.
+This glossary includes general terms and technical terms that are specific to KubeSphere.
 
 ## General
 
 - **Workspace** <br>
-    A logical unit to organize a tenant's workload projects / Kubernetes namespaces, DevOps projects, manage resource access and share information within the team.
-- **System Workspace** <br>
-    The special place to organize system projects from KubeSphere, Kubernetes and optional components such as OpenPitrix, Istio, monitorng etc.
-- **Workspace member** <br>
-    The users that are invited into the workspace who have certain priviledge to work in the workspace.
+    A logical unit to organize a tenant's workload projects (i.e. Kubernetes namespaces) and DevOps projects. It also features access control of different resources and allows team members to share information.
+- **System workspace** <br>A special place to organize system projects of KubeSphere, Kubernetes and optional components such as App Store (based on OpenPitrix), service mesh (based on Istio) and monitoring.
+- **Workspace member** <br>The users that are invited to a workspace who have certain permissions to work in the workspace.
 - **Project** <br>
     A project in KubeSphere is a Kubernetes namespace.
-
-- **Multi-cluster Project** <br>
-    A project whose workload is deployed into multiple clusters.
-- **Project memeber** <br>
-    The users that are invited into the project who have certain priviledge to access the project.
+- **Multi-cluster project** <br>
+    A project whose workloads are deployed across multiple clusters.
+- **Project member** <br>
+    The users that are invited to a project who have certain permissions to work in the project.
 - **Workbench** <br>
-    The landing page for a tenant where contains authorized resources to access including workspaces, App Store, etc.
+    The landing page for a tenant containing authorized resources that they can access such as workspaces and App Store.
 - **Volume** <br>
-    A KubeSphere Volume is a Kubernetes Persistent Volume Claim (PVC)
-- **Public Cluster** <br>
-    Platform admin can set the cluster visibility, meaning who can access the cluster. A public cluster means all platform users can access the cluster, in which they are able to create and schedule resources.
+    A KubeSphere Volume is a Kubernetes PersistentVolumeClaim (PVC).
+- **Public cluster** <br>
+    Platform administrators can set cluster visibility so that a cluster is available to certain workspaces. A public cluster means all platform users can access the cluster, in which they are able to create and schedule resources.
 - **KubeKey** <br>
-    A brand-new installation tool developed in Go. It can install KubeSphere and Kubernetes separately or install them at one time.
+    A brand-new installation tool developed in Go. It is able to install KubeSphere and Kubernetes separately or install them together.
 - **ks-installer** <br>
     The package to deploy KubeSphere on existing Kubernetes clusters.
 
@@ -40,14 +36,14 @@ This glossary includes technical terms that are specific to KubeSphere, as well 
 - **OpenPitirx** <br>
     An open-source system to package, deploy and manage different types of apps.
 
-- **App Template** <br>
-    A template for a specific application that other users can deploy new application instances based on the template.
+- **App template** <br>
+    A template for a specific application that tenants can use to deploy new application instances.
 
-- **App Repo** <br>
-    A web accessible repo that hosts a bunch of application templates.
+- **App repository** <br>
+    A web accessible repository that hosts different app templates.
 
 - **App Store** <br>
-    A public place for different users to share various applications.
+    A public place for different tenants to share various applications.
     
 - **Deployment**
 
@@ -71,43 +67,47 @@ This glossary includes technical terms that are specific to KubeSphere, as well 
 
 - **Service**
 
-    A Kubernetes service is an abstraction object which defines a logical set of Pods and a policy by which to access them - sometimes called a microservice. For more information, see [Service](https://kubernetes.io/docs/concepts/services-networking/service/).
+    A Kubernetes Service is an abstraction object which defines a logical set of Pods and a policy by which to access them - sometimes called a microservice. For more information, see [Service](https://kubernetes.io/docs/concepts/services-networking/service/).
 
 ## DevOps
 
-- **DevOps Project** <br>
-    A project specific for DevOps where you can manage your pipelines and related information.
+- **DevOps project** <br>
+    A specific project for DevOps where you manage pipelines and credentials.
 
 - **SCM** <br>
-    Source Control Management, such as GitHub, Gitlab, etc.
+    Source Control Management, such as GitHub and Gitlab.
 
 - **In-SCM** <br>
     The pipeline based on a Jenkinsfile that is hosted in SCM.
 
 - **Out-of-SCM** <br>
-    The pipeline created by using graphical editing panel, which means no Jenkinsfile needed.
+    The pipeline created through graphical editing panels without a Jenkinsfile.
 
-- **CI Node** <br>
-    The specific node for pipeline or S2I, B2I. Generally, applications often need to pull a lot of dependencies during the build process. It might cause some issues like long pulling time, or unstable network causing failure. In order to make build robust, and to speed up the build by using cache, we recommend you configure one or a set of CI nodes which the system schedules the task of CI/CD pipelines or S2I/B2I builds running on.
+- **CI node** <br>
+    A specific node for pipelines, S2I jobs or B2I jobs. Generally, applications often need to pull various dependencies during the building process. It might cause some issues like long pulling time, or unstable network causing failure. To build robust pipelines and speed up the building by using caches, you configure one or a set of CI nodes to which KubeSphere schedules the tasks of CI/CD pipelines and S2I/B2I.
 
 - **B2I** <br>
-    Binary to Image. As similar as S2I, B2I is a toolkit and automated workflow for building reproducible container images from binary (e.g. Jar, War, Binary package).
+    Binary-to-Image. B2I is a toolkit and workflow for building reproducible container images from binary executables such as Jar, War, and binary packages.
+    
+- **S2I** <br>
+  
+    Source-to-Image. S2I is a toolkit and workflow for building reproducible container images from source code. S2I produces ready-to-run images by injecting source code into a container image and letting the container prepare that source code for execution.
+    
+    
 
 ## Logging, Events and Auditing
 
-- **Exact Query** <br>
-    The query method that exactly matches the keywords you type to search
+- **Exact query** <br>
+    The method to search results that perfectly match the keyword entered.
 
-- **Fuzzy Query** <br>
-    The query method that partially matches the keywords you type to search
-
-- **Audit Policy** <br>
-    Audit Policy defines a set of rules about what events should be recorded and what data they should include.
-
-- **Audit Rule** <br>
+- **Fuzzy query** <br>The method to search results that partially match the keyword entered.
+  
+- **Audit policy** <br>An audit policy defines a set of rules about what events should be recorded and what data they should include.
+  
+- **Audit rule** <br>
     An auditing rule defines how to process auditing logs.
 
-- **Audit Webhook** <br>
+- **Audit webhook** <br>
     The webhook that the Kubernetes auditing logs will be sent to.
 
 ## Monitoring, Alert and Notification
@@ -128,7 +128,7 @@ This glossary includes technical terms that are specific to KubeSphere, as well 
     The capability to collect disk logs in a container and export to stdout, which will then be collected by the system log collector.
 
 - **Notification Receiver** <br>
-    The channel to receive notification, such as email, wechat work, slack, webhook, etc.
+    The channel to receive notifications, such as email, WeChat Work, Slack and webhook.
 
 ## Router
 
@@ -136,41 +136,41 @@ This glossary includes technical terms that are specific to KubeSphere, as well 
     A KubeSphere Route is a Kubernetes Ingress.
 
 - **Gateway** <br>
-    Before creating a route, you need to enable the Internet access gateway which forwards the request to the corresponding backend service.
+    Before creating a route, you need to enable the Internet access gateway which forwards requests to the corresponding backend service.
 
 ## Service Mesh
 
-- **Canary Release** <br>
-    A graceful applicaiton release method that introduces a new version of a service and test it by sending a small percentage of traffic to it. At the same time, the old version is responsible for handling the rest of the traffic. If everything goes well, you can gradually increase the traffic sent to the new version, while simultaneously phasing out the old version. In the case of any occurring issues, it allows you to roll back to the previous version as you change the traffic percentage.
+- **Canary release** <br>
+    A graceful application release method that introduces a new version of a service and tests it by sending a small percentage of traffic to it. At the same time, the old version is responsible for handling the rest of the traffic. If everything goes well, you can gradually increase the traffic sent to the new version, while simultaneously phasing out the old version. In the case of any occurring issues, it allows you to roll back to the previous version as you change the traffic percentage.
 
-- **Blue Green Release** <br>
-   A zero downtime application deployment in that the new version can be deployed with the old one preserved. At any time, only one of the versions is active serving all the traffic, while the other one remains idle. If there is a problem with running, you can quickly roll back to the old version.
+- **Blue-green release/deployment** <br>
+   A zero downtime application deployment where the new version can be deployed with the old one preserved. At any time, only one of the versions is active serving all the traffic, while the other one remains idle. If there is a problem with running, you can quickly roll back to the old version.
 
-- **Traffic Mirroring** <br>
+- **Traffic mirroring** <br>
     A risk-free method of testing your app versions as it sends a copy of live traffic to a service that is being mirrored. It is also called shadowing.
 
-- **Application Governance** <br>
+- **Application governance** <br>
     A switch to control the tracing of your application within a project.
 
-## Multi Cluster
+## Multi-cluster Management
 
-- **Host Cluster** <br>
-    The cluster used to manage member clusters. The multi-cluster control plane is deployed on the host cluster.
+- **Host Cluster** **(H Cluster)** <br>
+    The cluster that manages Member Clusters. The multi-cluster control plane is deployed on the Host Cluster.
 
-- **Member Cluster** <br>
-    A cluster as a member of the group of the multiple clusters.
+- **Member Cluster** **(M Cluster)** <br>
+    A cluster serving as a member managed by the Host Cluster in a multi-cluster architecture.
 
-- **Direct Connection** <br>
-    The connection method between host cluster and member cluster when the kube-apiserver address of the member cluster is accessible on any node of the host cluster.
+- **Direct connection** <br>
+    A way to connect the Host Cluster and the Member Cluster when the kube-apiserver address of the Member Cluster is accessible on any node of the Host Cluster.
 
-- **Agent Connection** <br>
-    The connection method between host cluster and member cluster when the host cluster cannot access the member cluster.
+- **Agent connection** <br>
+    A way to connect the Host Cluster and the Member Cluster when the Host Cluster cannot access the Member Cluster directly.
 
 - **jwtSecret** <br>
-    The secret needed for host cluster and member cluster to communicate with each other.
+    The secret needed for the Host Cluster and the Member Cluster to communicate with each other.
 
 - **Tower** <br>
-    When using agent connection, there is a proxy component installed on host cluster and agent installed on member cluster. A tower consists of the proxy and the agent.
+    When you use agent connection, there is a proxy component installed on the Host Cluster and agent installed on the Member Cluster. Tower consists of both the proxy and the agent.
 
-- **Proxy Service Address** <br>
-    The communication service address of the host cluster required by the tower agent in member cluster when using agent connection.
+- **Proxy service address** <br>
+    The communication service address of the Host Cluster required by the tower agent in the Member Cluster when agent connection is adopted.

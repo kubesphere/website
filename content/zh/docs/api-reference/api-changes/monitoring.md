@@ -1,9 +1,8 @@
 ---
 title: "Monitoring"
 keywords: 'Kubernetes, KubeSphere, API, Monitoring'
-description: 'Monitoring'
-
-
+description: 'Monitoring API changes'
+linkTitle: "Monitoring"
 weight: 17320
 ---
 
@@ -11,17 +10,17 @@ weight: 17320
 
 The monitoring API version is bumped to `v1alpha3`.
 
-## Time format
+## Time Format
 
-The time format for query parameters must be in Unix timestamp, which is the number of seconds that has elapsed since the Unix epoch. Decimal is no longer allowed. The change affects the parameters `start`, `end` and `time`.
+The time format of query parameters must be in Unix timestamps (the number of seconds that has elapsed since the Unix epoch). Decimals are no longer allowed. The change affects the parameters `start`, `end` and `time`.
 
 ## Deprecated Metrics
 
-In KubeSphere 3.0.0, the metrics on the left have been renamed into the ones on the right.
+In KubeSphere 3.0.0, the metrics on the left have been renamed to the ones on the right.
 
 |V2.0|V3.0|
 |---|---|
-|workload_pod_cpu_usage | workload_cpu_usage|  
+|workload_pod_cpu_usage | workload_cpu_usage|
 |workload_pod_memory_usage| workload_memory_usage|
 |workload_pod_memory_usage_wo_cache | workload_memory_usage_wo_cache|
 |workload_pod_net_bytes_transmitted | workload_net_bytes_transmitted|
@@ -109,7 +108,3 @@ In addition, the field name `resource_name` has been replaced with the specific 
 }
 
 ```
-
-
-
-
