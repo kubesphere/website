@@ -6,7 +6,7 @@ linkTitle: "使用 ks-installer 升级"
 weight: 7300
 ---
 
-对于 Kubernetes 集群不是通过 [KubeSphere Installer](https://v2-1.docs.kubesphere.io/docs/zh-CN/installation/all-in-one/#第二步-准备安装包) 部署而是由云供应商托管的用户，推荐使用 ks-installer 升级。本教程**只用于升级 KubeSphere**。集群操作员应负责提前升级 Kubernetes。
+对于 Kubernetes 集群不是通过 [KubeSphere Installer](https://v2-1.docs.kubesphere.io/docs/zh-CN/installation/all-in-one/#第二步-准备安装包) 部署而是由云厂商托管的用户，推荐使用 ks-installer 升级。本教程**只用于升级 KubeSphere**。集群运维员应负责提前升级 Kubernetes。
 
 ## 准备工作
 
@@ -15,7 +15,7 @@ weight: 7300
 - 请仔细阅读 [v3.0.0 发布说明](../../release/release-v300/)。
 
    {{< notice warning >}}
-在 v3.0.0 版本中，KubeSphere 重构了许多组件，例如 Fluent Bit Operator 和 IAM。如果您不是在 KubeSphere 控制台高度自定义了这些组件，请确保先备份重要组件。
+在 v3.0.0 版本中，KubeSphere 重构了许多组件，例如 Fluent Bit Operator 和 IAM。如果您的这些组件有深度自定义配置（并非通过 KubeSphere 控制台配置），请务必先备份重要组件。
 {{</ notice >}}
 
 ## 步骤 1：下载 YAML 文件
