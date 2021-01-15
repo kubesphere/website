@@ -1,30 +1,26 @@
 ---
 title: "使用 ks-installer 升级"
-keywords: "kubernetes, upgrade, kubesphere, v3.0.0"
-description: "Upgrade KubeSphere with ks-installer"
+keywords: "kubernetes, 升级, kubesphere, v3.0.0"
+description: "使用 ks-installer 升级 KubeSphere"
 linkTitle: "使用 ks-installer 升级"
 weight: 7300
 ---
 
-ks-installer is recommended for users whose Kubernetes clusters were not set up via [KubeSphere Installer](https://v2-1.docs.kubesphere.io/docs/installation/all-in-one/#step-2-download-installer-package), but hosted by cloud vendors. This tutorial is for **upgrading KubeSphere only**. Cluster operators are responsible for upgrading Kubernetes themselves beforehand.
+对于 Kubernetes 集群不是通过 [KubeSphere Installer](https://v2-1.docs.kubesphere.io/docs/zh-CN/installation/all-in-one/#第二步-准备安装包) 部署而是由云厂商托管的用户，推荐使用 ks-installer 升级。本教程**只用于升级 KubeSphere**。集群运维员应负责提前升级 Kubernetes。
 
-## Prerequisites
+## 准备工作
 
-- You need to have a KubeSphere cluster running version 2.1.1.
+- 您需要有一个运行在 v2.1.1 版本的 KubeSphere 集群。如果您的 KubeSphere 是 v2.1.0 或更早的版本，请先升级至 v2.1.1。
 
-{{< notice warning >}}
-If your KubeSphere version is v2.1.0 or earlier, please upgrade to v2.1.1 first.
+- 请仔细阅读 [v3.0.0 发布说明](../../release/release-v300/)。
+
+   {{< notice warning >}}
+在 v3.0.0 版本中，KubeSphere 重构了许多组件，例如 Fluent Bit Operator 和 IAM。如果您的这些组件有深度自定义配置（并非通过 KubeSphere 控制台配置），请务必先备份重要组件。
 {{</ notice >}}
 
-- Make sure you read [Release Notes For 3.0.0](../../release/release-v300/) carefully.
+## 步骤 1：下载 YAML 文件
 
-{{< notice warning >}}
-In v3.0.0, KubeSphere refactors many of its components such as Fluent Bit Operator and IAM. Make sure you back up any important components in case you heavily customized them but not from console.
-{{</ notice >}}
-
-## Step 1: Download YAML files
-
-Execute the following commands to download configuration templates.
+运行以下命令下载配置文件模板。
 
 ```bash
 wget https://github.com/kubesphere/ks-installer/releases/download/v3.0.0/kubesphere-installer.yaml
@@ -34,11 +30,13 @@ wget https://github.com/kubesphere/ks-installer/releases/download/v3.0.0/kubesph
 wget https://github.com/kubesphere/ks-installer/releases/download/v3.0.0/cluster-configuration.yaml
 ```
 
-## Step 2: Modify the configuration file template
+## 步骤 2：修改配置文件
 
-Sync the changes from v2.1.1 to v3.0.0 into the config section of `cluster-configuration.yaml`. Note that the storage class and the pluggable components need to be consistent with that of v2.1.1.
+将 v2.1.1 到 v3.0.0 的变更同步至 `cluster-configuration.yaml` 中的配置部分。存储类型和可插拔组件需要与 v2.1.1 保持一致。
 
-## Step 3: Apply YAML files
+## 步骤 3：应用 YAML 文件
+
+运行以下命令升级 KubeSphere。
 
 ```bash
 kubectl apply -f kubesphere-installer.yaml
