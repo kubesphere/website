@@ -12,20 +12,30 @@ section1:
 
 sectionLink:
   docs:
-    title: Popular Documentation
-    description: Learn Docker basics and the benefits of containerizing your applications.
+    title: Get Started
+    description: Learn how to use KubeSphere with these quickstarts, tutorials, and examples. 
     list:
-      - /docs/installing-on-linux/public-cloud/install-kubesphere-on-azure-vms
-      - /docs/installing-on-linux/public-cloud/install-kubesphere-on-qingcloud-vms
-  
+      - /docs/quick-start/all-in-one-on-linux
+      - /docs/quick-start/minimal-kubesphere-on-k8s
+      - /docs/quick-start/create-workspace-and-project
+      - /docs/introduction/what-is-kubesphere
+      - /docs/pluggable-components
+      - /docs/installing-on-linux/introduction/multioverview
+      - /docs/pluggable-components/app-store
+      - /docs/pluggable-components/devops
+      - /docs/multicluster-management
+      - /docs/project-user-guide/configuration/image-registry
+      
   videos:
-    title: How do I?
-    description: Learn Docker basics and the benefits
+    title: Popular Videos
+    description: Watch video tutorials to learn about KubeSphere.
     list:
-      - link: /docs/installing-on-linux/public-cloud/install-kubesphere-on-azure-vms/
-        text: Write a Dockerfile
-      - link: /docs/installing-on-linux/public-cloud/install-kubesphere-on-azure-vms/
-        text: Write a Docker Compose file
+      - link: https://www.youtube.com/watch?v=PtVQZVb3AgE
+        text: All-in-one installation
+      - link: https://www.youtube.com/watch?v=nYOYk3VTSgo&t=9s
+        text: Multi-node installation
+      - link: https://www.youtube.com/watch?v=c3V-2RX9yGY&t=160s
+        text: A complete walkthrough to the KubeSphere DevOps system
 
 section3:
   title: Run KubeSphere and Kubernetes Stack from the Cloud Service
