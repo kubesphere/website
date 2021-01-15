@@ -6,11 +6,11 @@ linkTitle: "持久卷和存储类型"
 weight: 8400
 ---
 
-本教程对 PV、PVC 以及存储类型 (Storage Class) 的基本概念进行了说明，并演示了集群管理员如何管理 KubeSphere 中的存储类型和持久化存储卷。
+本教程对 PV、PVC 以及存储类型 (Storage Class) 的基本概念进行说明，并演示集群管理员如何管理 KubeSphere 中的存储类型和持久化存储卷。
 
 ## 介绍
 
-PersistentVolume (PV) 是集群中的一块存储，可以由管理员事先供应，或者使用存储类型来动态供应。PV 是像存储卷 (Volume) 一样的存储卷插件，但是它的生命周期独立于任何使用 PV 的 Pod。PV 可以[静态](https://kubernetes.io/zh/docs/concepts/storage/persistent-volumes/#static)供应或[动态](https://kubernetes.io/zh/docs/concepts/storage/persistent-volumes/#dynamic)供应。
+PersistentVolume (PV) 是集群中的一块存储，可以由管理员事先供应，或者使用存储类型来动态供应。PV 是像存储卷 (Volume) 一样的存储卷插件，但是它的生命周期独立于任何使用该 PV 的 Pod。PV 可以[静态](https://kubernetes.io/zh/docs/concepts/storage/persistent-volumes/#static)供应或[动态](https://kubernetes.io/zh/docs/concepts/storage/persistent-volumes/#dynamic)供应。
 
 PersistentVolumeClaim (PVC) 是用户对存储的请求。它与 Pod 类似，Pod 会消耗节点资源，而 PVC 消耗 PV 资源。
 
@@ -24,7 +24,7 @@ KubeSphere 支持基于存储类型的[动态卷供应](https://kubernetes.io/zh
 | -------------------- | ------------------------------------------------------------ |
 | In-tree              | 内置并作为 Kubernetes 的一部分运行，例如 [RBD](https://kubernetes.io/zh/docs/concepts/storage/storage-classes/#ceph-rbd) 和 [Glusterfs](https://kubernetes.io/zh/docs/concepts/storage/storage-classes/#glusterfs)。有关此类插件的更多信息，请参见 [Provisioner](https://kubernetes.io/zh/docs/concepts/storage/storage-classes/#provisioner)。 |
 | External-provisioner | 独立于 Kubernetes 部署，但运行上类似于树内 (in-tree) 插件，例如 [NFS 客户端](https://github.com/kubernetes-retired/external-storage/tree/master/nfs-client)。有关此类插件的更多信息，请参见 [External Storage](https://github.com/kubernetes-retired/external-storage)。 |
-| CSI                  | 容器存储接口，一种将存储资源暴露给 CO（例如 Kubernetes）上的工作负载的标准，例如[QingCloud-CSI](https://github.com/yunify/qingcloud-csi) 和 [Ceph-CSI](https://github.com/ceph/ceph-csi)。有关此类插件的更多信息，请参见 [Drivers](https://kubernetes-csi.github.io/docs/drivers.html)。 |
+| CSI                  | 容器存储接口，一种将存储资源暴露给 CO（例如 Kubernetes）上的工作负载的标准，例如 [QingCloud-CSI](https://github.com/yunify/qingcloud-csi) 和 [Ceph-CSI](https://github.com/ceph/ceph-csi)。有关此类插件的更多信息，请参见 [Drivers](https://kubernetes-csi.github.io/docs/drivers.html)。 |
 
 ## 准备工作
 
@@ -38,7 +38,7 @@ KubeSphere 支持基于存储类型的[动态卷供应](https://kubernetes.io/zh
     
 2. 如果您启用了[多集群功能](../../multicluster-management/)并导入了 Member 集群，可以选择一个特定集群。如果您未启用该功能，请直接参考下一步。
 
-3. 在**集群管理**页面，搜寻至**存储管理**下面的**存储类型**，您可以在这里创建、更新和删除存储类型。
+3. 在**集群管理**页面，您可以在**存储管理**下的**存储类型**中创建、更新和删除存储类型。
 
     ![存储类型](/images/docs/zh-cn/cluster-administration/persistent-volumes-and-storage-classes/storage-class.PNG)
 
@@ -61,17 +61,17 @@ KubeSphere 支持基于存储类型的[动态卷供应](https://kubernetes.io/zh
 | 允许存储卷扩容 | 在清单文件中由 `allowVolumeExpansion` 指定。若设置为 `true`，PV 则被配置为可扩容。有关更多信息，请参见[允许卷扩展](https://kubernetes.io/zh/docs/concepts/storage/storage-classes/#允许卷扩展)。 |
 | 回收机制 | 在清单文件中由 `reclaimPolicy` 指定。可设置为 `Delete` 或 `Retain`（默认）。有关更多信息，请参见[回收策略](https://kubernetes.io/zh/docs/concepts/storage/storage-classes/#回收策略)。 |
 | 存储系统 | 在清单文件中由 `provisioner` 指定。它决定使用什么存储卷插件来供应 PV。有关更多信息，请参见 [Provisioner](https://kubernetes.io/zh/docs/concepts/storage/storage-classes/#provisioner)。 |
-| 支持的访问模式 | 在清单文件中由 `metadata.annotations[storageclass.kubesphere.io/supported-access-modes]` 指定。它会向 KubeSphere 说明支持的[访问模式](https://kubernetes.io/zh/docs/concepts/storage/persistent-volumes/#access-modes)。 |
+| 支持的访问模式 | 在清单文件中由 `metadata.annotations[storageclass.kubesphere.io/supported-access-modes]` 指定。它会向 KubeSphere 表明支持的[访问模式](https://kubernetes.io/zh/docs/concepts/storage/persistent-volumes/#access-modes)。 |
 
 对于其他设置，您需要为不同的存储插件提供不同的信息，它们都显示在清单文件的 `parameters` 字段下。下面将进行详细说明，您也可以参考 Kubernetes 官方文档的[参数](https://kubernetes.io/zh/docs/concepts/storage/storage-classes/#参数)部分。
 
 ### QingCloud CSI
 
-QingCloud CSI 是 Kubernetes 上的 CSI 插件，供青云QingCloud 存储卷使用。KubeSphere 控制台上可以创建 QingCloud CSI 的存储类型。
+QingCloud CSI 是 Kubernetes 上的 CSI 插件，供青云QingCloud 存储服务使用。KubeSphere 控制台上可以创建 QingCloud CSI 的存储类型。
 
 #### 准备工作
 
-- QingCloud CSI 在青云QingCloud 的公有云和私有云上均可使用。因此，请确保将 KubeSphere 安装至二者之一，以便可以使用云存储卷。
+- QingCloud CSI 在青云QingCloud 的公有云和私有云上均可使用。因此，请确保将 KubeSphere 安装至二者之一，以便可以使用云存储服务。
 - KubeSphere 集群上已经安装 QingCloud CSI 插件。有关更多信息，请参见[安装 QingCloud CSI](https://github.com/yunify/qingcloud-csi#installation)。
 
 #### 设置
@@ -80,7 +80,7 @@ QingCloud CSI 是 Kubernetes 上的 CSI 插件，供青云QingCloud 存储卷使
 
 | 属性 | 描述信息 |
 | :---- | :---- |
-| type     | 在青云QingCloud 平台上，0 代表高性能型存储卷。2 代表大容量型存储卷。3 代表超高性能型存储卷。5 代表企业级服务器 SAN。6 代表 NeonSan HDD。100 代表基础型存储卷。200 代表企业级 SSD。 |
+| type     | 在青云QingCloud 平台上，0 代表高性能型硬盘，2 代表大容量型硬盘，3 代表超高性能型硬盘，5 代表企业级服务器 SAN，6 代表 NeonSAN HDD，100 代表基础型硬盘，200 代表企业级 SSD。 |
 | maxSize  | 存储卷容量上限。 |
 | stepSize | 存储卷容量增量。 |
 | minSize  | 存储卷容量下限。 |
@@ -113,7 +113,7 @@ Glusterfs 是 Kubernetes 上的一种树内存储插件，即您不需要额外�
 
 ### Ceph RBD
 
-Ceph RBD 也是 Kubernetes 上的一种树内存储插件。Kubernetes 中已经安装存储卷插件，但您必须在创建 Ceph RBD 的存储类型之前安装存储服务器。
+Ceph RBD 也是 Kubernetes 上的一种树内存储插件，即 Kubernetes 中已经安装该存储卷插件，但您必须在创建 Ceph RBD 的存储类型之前安装其存储服务器。
 
 由于 **hyperkube** 镜像[自 1.17 版本开始已被弃用](https://github.com/kubernetes/kubernetes/pull/85094)，树内 Ceph RBD 可能无法在不使用 **hyperkube** 的 Kubernetes 上运行。不过，您可以使用 [RBD Provisioner](https://github.com/kubernetes-retired/external-storage/tree/master/ceph/rbd) 作为替代，它的格式与树内 Ceph RBD 相同。唯一不同的参数是 `provisioner`（即 KubeSphere 控制台上的**存储系统**）。如果您想使用 RBD Provisioner，`provisioner` 的值必须为 `ceph.com/rbd`（在**存储系统**中输入该值，如下图所示）。如果您使用树内 Ceph RBD，该值必须为 `kubernetes.io/rbd`。
 
