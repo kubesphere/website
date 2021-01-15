@@ -1,47 +1,33 @@
 ---
 title: "使用 ks-installer 离线升级"
-keywords: "Air-Gapped, upgrade, kubesphere, v3.0.0"
-description: "Air-Gapped Upgrade KubeSphere"
+keywords: "离线环境, 升级, kubesphere, v3.0.0"
+description: "离线升级 KubeSphere"
 linkTitle: "使用 ks-installer 离线升级"
 weight: 7500
 ---
 
-ks-installer is recommended for users whose Kubernetes clusters were not set up via [KubeSphere Installer](https://v2-1.docs.kubesphere.io/docs/installation/all-in-one/#step-2-download-installer-package), but hosted by cloud vendors. This tutorial is for **upgrading KubeSphere only**. Cluster operators are responsible for upgrading Kubernetes themselves beforehand.
+对于 Kubernetes 集群不是通过 [KubeSphere Installer](https://v2-1.docs.kubesphere.io/docs/zh-CN/installation/all-in-one/#第二步-准备安装包) 部署而是由云厂商托管的用户，推荐使用 ks-installer。本教程**只用于升级 KubeSphere**。集群运维员应负责提前升级 Kubernetes。
 
 
-## Prerequisites
+## 准备工作
 
-- You need to have a KubeSphere cluster running version 2.1.1.
+- 您需要有一个运行在 v2.1.1 版本的 KubeSphere 集群。如果您的 KubeSphere 是 v2.1.0 或更早的版本，请先升级至 v2.1.1。
 
-{{< notice warning >}}
+- Docker 仓库。您需要有一个 Harbor 或其他 Docker 仓库。有关更多信息，请参见[准备一个私有镜像仓库](../../installing-on-linux/introduction/air-gapped-installation/#步骤-2准备一个私有镜像仓库)。
 
-If your KubeSphere version is v2.1.0 or earlier, please upgrade to v2.1.1 first.
-
-{{</ notice >}}
-
-- Docker Registry
-
-You need to have a harbor or other Docker registry.
-
-{{< notice tip >}}
-
-You can [quick start yourself docker registry](https://kubesphere.io/docs/installing-on-linux/introduction/air-gapped-installation/#step-2-prepare-a-private-image-registry)
-
-{{</ notice >}}
-
-- Make sure you read [Release Notes For 3.0.0](../../release/release-v300/) carefully.
+- 请仔细阅读 [v3.0.0 发布说明](../../release/release-v300/)。
 
 {{< notice warning >}}
 
-In v3.0.0, KubeSphere refactors many of its components such as Fluent Bit Operator and IAM. Make sure you back up any important components in case you heavily customized them but not from console.
+在 v3.0.0 版本中，KubeSphere 重构了许多组件，例如 Fluent Bit Operator 和 IAM。如果您的这些组件有深度自定义配置（并非通过 KubeSphere 控制台配置），请务必先备份重要组件。
 
 {{</ notice >}}
 
-## Step 1: Prepare Installation Images
+## 步骤 1：准备安装镜像
 
-As you install KubeSphere in an air-gapped environment, you need to prepare an image package containing all the necessary images in advance.
+当您在离线环境中安装 KubeSphere 时，需要事先准备一个包含所有必需镜像的镜像包。
 
-1. Download the image list file `images-list.txt` from a machine that has access to the Internet through the following command:
+1. 使用以下命令从能够访问互联网的机器上下载镜像清单文件 `images-list.txt`：
 
    ```bash
    curl -L -O https://github.com/kubesphere/ks-installer/releases/download/v3.0.0/images-list.txt
@@ -49,23 +35,23 @@ As you install KubeSphere in an air-gapped environment, you need to prepare an i
 
    {{< notice note >}}
 
-   This file lists images under `##+modulename` based on different modules. You can add your own images to this file following the same rule. To view the complete file, see [Appendix](../../installing-on-linux/introduction/air-gapped-installation/#image-list-of-kubesphere-v300).
+   该文件根据不同的模块列出了 `##+modulename` 下的镜像。您可以按照相同的规则把自己的镜像添加到这个文件中。要查看完整文件，请参见[附录](../../installing-on-kubernetes/on-prem-kubernetes/install-ks-on-linux-airgapped/#kubesphere-v300-镜像清单)。
 
    {{</ notice >}} 
 
-2. Download `offline-installation-tool.sh`. 
+2. 下载 `offline-installation-tool.sh`。
 
    ```bash
    curl -L -O https://github.com/kubesphere/ks-installer/releases/download/v3.0.0/offline-installation-tool.sh
    ```
 
-3. Make the `.sh` file executable.
+3. 使 `.sh` 文件可执行。
 
    ```bash
    chmod +x offline-installation-tool.sh
    ```
 
-4. You can execute the command `./offline-installation-tool.sh -h` to see how to use the script:
+4. 您可以执行命令 `./offline-installation-tool.sh -h` 来查看如何使用脚本：
 
    ```bash
    root@master:/home/ubuntu# ./offline-installation-tool.sh -h
@@ -83,7 +69,7 @@ As you install KubeSphere in an air-gapped environment, you need to prepare an i
      -h                     : usage message
    ```
 
-5. Pull images in `offline-installation-tool.sh`.
+5. 在 `offline-installation-tool.sh` 中拉取镜像。
 
    ```bash
    ./offline-installation-tool.sh -s -l images-list.txt -d ./kubesphere-images
@@ -91,13 +77,13 @@ As you install KubeSphere in an air-gapped environment, you need to prepare an i
 
    {{< notice note >}}
 
-   You can choose to pull images as needed. For example, you can delete `##k8s-images` and related images under it in `images-list.text` as you already have a Kubernetes cluster.
+   您可以根据需要选择拉取的镜像。例如，如果已经有一个 Kubernetes 集群了，您可以在 `images-list.text` 中删除 `##k8s-images` 和在它下面的相关镜像。
 
    {{</ notice >}} 
 
-## Step 2: Push Images to Private Registry
+## 步骤 2：推送镜像至您的私有仓库
 
-Transfer your packaged image file to your local machine and execute the following command to push it to the registry.
+将打包的镜像文件传输至您的本地机器，并运行以下命令把它推送至仓库。
 
 ```bash
 ./offline-installation-tool.sh -l images-list.txt -d ./kubesphere-images -r dockerhub.kubekey.local
@@ -105,22 +91,22 @@ Transfer your packaged image file to your local machine and execute the followin
 
 {{< notice note >}}
 
-The domain name is `dockerhub.kubekey.local` in the command. Make sure you use your **own registry address**.
+命令中的域名是 `dockerhub.kubekey.local`。请确保使用您**自己仓库的地址**。
 
 {{</ notice >}} 
 
-## Step 3: Download Deployment Files
+## 步骤 3：下载部署文件
 
-Similar to installing KubeSphere on an existing Kubernetes cluster in an online environment, you also need to download `cluster-configuration.yaml` and `kubesphere-installer.yaml` first.
+与在现有 Kubernetes 集群上在线安装 KubeSphere 相似，您也需要事先下载 `cluster-configuration.yaml` 和 `kubesphere-installer.yaml`。
 
-1. Execute the following commands to download these two files and transfer them to your machine that serves as the taskbox for installation.
+1. 执行以下命令下载这两个文件，并将它们传输至您充当任务机的机器，用于安装。
 
    ```bash
    curl -L -O https://github.com/kubesphere/ks-installer/releases/download/v3.0.0/cluster-configuration.yaml
    curl -L -O https://github.com/kubesphere/ks-installer/releases/download/v3.0.0/kubesphere-installer.yaml
    ```
 
-2. Edit `cluster-configuration.yaml` to add your private image registry. For example, `dockerhub.kubekey.local` is the registry address in this tutorial, then use it as the value of `.spec.local_registry` as below:
+2. 编辑 `cluster-configuration.yaml` 添加您的私有镜像仓库。例如，本教程中的仓库地址是 `dockerhub.kubekey.local`，将它用作 `.spec.local_registry` 的值，如下所示：
 
    ```yaml
    spec:
@@ -133,11 +119,11 @@ Similar to installing KubeSphere on an existing Kubernetes cluster in an online 
 
    {{< notice note >}}
 
-   You can enable pluggable components in this YAML file to explore more features of KubeSphere. Refer to [Enable Pluggle Components](../../pluggable-components) for more details.
+   您可以在该 YAML 文件中启用可插拔组件，体验 KubeSphere 的更多功能。有关详情，请参考[启用可插拔组件](../../pluggable-components/)。
 
    {{</ notice >}}
 
-3. Save `cluster-configuration.yaml` after you finish editing. Replace `ks-installer` with your **own registry address** with the following command:
+3. 编辑完成后保存 `cluster-configuration.yaml`。使用以下命令将 `ks-installer` 替换为您**自己仓库的地址**。
 
    ```bash
    sed -i "s#^\s*image: kubesphere.*/ks-installer:.*#        image: dockerhub.kubekey.local/kubesphere/ks-installer:v3.0.0#" kubesphere-installer.yaml
@@ -145,21 +131,21 @@ Similar to installing KubeSphere on an existing Kubernetes cluster in an online 
 
    {{< notice warning >}}
 
-   `dockerhub.kubekey.local` is the registry address in the command. Make sure you use your own registry address.
+   命令中的仓库地址是 `dockerhub.kubekey.local`。请确保使用您自己仓库的地址。
 
    {{</ notice >}}
 
-## Step 4: Upgrade Kubesphere
+## 步骤 4：升级 KubeSphere
 
-Execute the following commands after you make sure that all steps above are completed.
+确保上述所有步骤都已完成后，执行以下命令。
 
 ```bash
 kubectl apply -f kubesphere-installer.yaml && kubectl apply -f cluster-configuration.yaml
 ```
 
-## Step 5: Verify Installation
+## 步骤 5：验证安装
 
-When the installation finishes, you can see the content as follows:
+安装完成后，您会看到以下内容：
 
 ```bash
 #####################################################
@@ -183,12 +169,12 @@ https://kubesphere.io             20xx-xx-xx xx:xx:xx
 #####################################################
 ```
 
-Now, you will be able to access the web console of KubeSphere through `http://{IP}:30880` with the default account and password `admin/P@88w0rd`.
+现在，您可以通过 `http://{IP}:30880` 使用默认帐户和密码 `admin/P@88w0rd` 访问 KubeSphere 的 Web 控制台。
 
 {{< notice note >}}
 
-To access the console, make sure port 30880 is opened in your security group.
+要访问控制台，请确保在您的安全组中打开端口 30880。
 
 {{</ notice >}}
 
-![kubesphere-login](https://ap3.qingstor.com/kubesphere-website/docs/login.png)
+![KubeSphere 登录](/images/docs/zh-cn/upgrade/air-gapped-upgrade-with-ks-installer/kubesphere-login.PNG)
