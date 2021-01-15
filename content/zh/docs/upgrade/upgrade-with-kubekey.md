@@ -6,7 +6,7 @@ linkTitle: "使用 KubeKey 升级"
 weight: 7200
 ---
 
-对于 KubeSphere 和 Kubernetes 都是通过 [KubeSphere Installer](https://v2-1.docs.kubesphere.io/docs/zh-CN/installation/all-in-one/#第二步-准备安装包) 部署的用户，推荐使用 KubeKey 升级。如果您的 Kubernetes 是由云供应商托管或自行配置的，请参考[使用 ks-installer 升级](../upgrade-with-ks-installer)。
+对于 KubeSphere 和 Kubernetes 都是通过 [KubeSphere Installer](https://v2-1.docs.kubesphere.io/docs/zh-CN/installation/all-in-one/#第二步-准备安装包) 部署的用户，推荐使用 KubeKey 升级。如果您的 Kubernetes 集群由云厂商托管或自行配置，请参考[使用 ks-installer 升级](../upgrade-with-ks-installer)。
 
 ## 视频演示
 
@@ -72,7 +72,7 @@ chmod +x kk
 
 {{< notice warning >}}
 
-在 v3.0.0 版本中，KubeSphere 重构了许多组件，例如 Fluent Bit Operator 和 IAM。如果您不是在 KubeSphere 控制台高度自定义了这些组件，请确保先备份重要组件。
+在 v3.0.0 版本中，KubeSphere 重构了许多组件，例如 Fluent Bit Operator 和 IAM。如果您的这些组件有深度自定义配置（并非通过 KubeSphere 控制台配置），请务必先备份重要组件。
 
 {{</ notice >}}
 
@@ -80,11 +80,11 @@ chmod +x kk
 
 ## 升级 KubeSphere 和 Kubernetes
 
-对于单节点集群（All-in-One）和多节点集群，升级步骤有所不同。
+单节点集群（All-in-One）和多节点集群的升级步骤不同。
 
 {{< notice info >}}
 
-- 使用 Kubernetes 升级将使 Helm 从 v2 升级到 v3。如果您想继续使用 Helm2，请先备份它：`cp /usr/local/bin/helm /usr/local/bin/helm2`。
+- 升级 Kubernetes 将使 Helm 从 v2 升级到 v3。如果您想继续使用 Helm2，请先备份它：`cp /usr/local/bin/helm /usr/local/bin/helm2`。
 - 当升级 Kubernetes 时，KubeKey 将从一个小版本升级到下一个小版本，直到目标版本。例如，您会发现升级过程是从 1.16 先升级到 1.17 然后再升级到 1.18，而不是直接从 1.16 升级到 1.18。
 {{</ notice >}}
 
@@ -107,7 +107,7 @@ chmod +x kk
 
 #### 步骤 1：使用 KubeKey 生成配置文件
 
-运行下面的命令会基于您的集群创建一个 `config-sample.yaml` 配置文件。
+运行下面的命令会基于您的集群创建一个 `sample.yaml` 配置文件。
 
 ```bash
 ./kk create config --from-cluster
@@ -119,13 +119,13 @@ chmod +x kk
 
 {{</ notice >}}
 
-#### 步骤 2：修改配置文件模版
+#### 步骤 2：修改配置文件模板
 
-根据您的集群配置修改 `config-sample.yaml` 文件，请确保正确修改以下字段。
+根据您的集群配置修改 `sample.yaml` 文件，请确保正确修改以下字段。
 
 - `hosts`：输入主机之间的连接信息。
 - `roleGroups.etcd`：输入 etcd 节点。
-- `controlPlaneEndpoint`：输入负载均衡地址（可选）。
+- `controlPlaneEndpoint`：输入负载均衡器地址（可选）。
 - `registry`：输入镜像仓库信息（可选）。
 
 {{< notice note >}}

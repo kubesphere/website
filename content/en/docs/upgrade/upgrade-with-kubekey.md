@@ -99,7 +99,7 @@ To upgrade Kubernetes to a specific version, explicitly provide the version afte
 
 #### Step1: Generate a configuration file using KubeKey
 
-This command creates a configuration file `config-sample.yaml` from your cluster.
+This command creates a configuration file `sample.yaml` from your cluster.
 
 ```bash
 ./kk create config --from-cluster
@@ -113,7 +113,7 @@ It assumes your kubeconfig is allocated in `~/.kube/config`. You can change it w
 
 #### Step 2: Modify the configuration file template
 
-Modify `config-sample.yaml` based on your cluster configuration. Make sure you replace the following fields correctly.
+Modify `sample.yaml` based on your cluster configuration. Make sure you replace the following fields correctly.
 
 - `hosts`: Input connection information among your hosts.
 - `roleGroups.etcd`: Input etcd members.
