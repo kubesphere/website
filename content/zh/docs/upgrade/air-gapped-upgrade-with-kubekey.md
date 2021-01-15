@@ -11,7 +11,7 @@ weight: 7400
 
 1. 您需要有一个运行在 v2.1.1 版本的 KubeSphere 集群。如果您的 KubeSphere 是 v2.1.0 或更早的版本，请先升级至 v2.1.1。
 
-2. Docker 仓库。您需要有一个 Harbor 或其他 Docker 仓库。有关更多信息，请参见[准备一个私有镜像仓库](https://kubesphere.io/zh/docs/installing-on-linux/introduction/air-gapped-installation/#步骤-2准备一个私有镜像仓库)。
+2. Docker 仓库。您需要有一个 Harbor 或其他 Docker 仓库。有关更多信息，请参见[准备一个私有镜像仓库](../../installing-on-linux/introduction/air-gapped-installation/#步骤-2准备一个私有镜像仓库)。
 
 3. 请确保每个节点都可以从该 Docker 仓库拉取镜像或向其推送镜像。
 
