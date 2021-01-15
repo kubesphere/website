@@ -80,7 +80,7 @@ chmod +x kk
 
 ## 升级 KubeSphere 和 Kubernetes
 
-单节点集群（All-in-One）和多节点集群的升级步骤不同。
+单节点集群 (All-in-One) 和多节点集群的升级步骤不同。
 
 {{< notice info >}}
 
