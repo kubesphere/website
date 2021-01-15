@@ -28,7 +28,7 @@ DevOps 系统为用户提供了一个自动化的环境，应用可以自动发�
     ```
 
     {{< notice note >}}
-如果您采用 [All-in-one 安装](../../quick-start/all-in-one-on-linux/)，则不需要创建 `config-sample.yaml` 文件，因为可以直接创建集群。一般来说，All-in-one 模式是为那些刚接触 KubeSphere 并希望熟悉系统的用户而准备的，如果您想在这个模式下启用 DevOps（比如用于测试），请参考[下面的部分](#在安装后启用-devops-系统)，查看如何在安装后启用 DevOps。
+如果您采用 [All-in-one 安装](../../quick-start/all-in-one-on-linux/)，则不需要创建 `config-sample.yaml` 文件，因为可以直接创建集群。一般来说，All-in-one 模式是为那些刚接触 KubeSphere 并希望熟悉系统的用户而准备的，如果您想在这个模式下启用 DevOps（比如用于测试），请参考[下面的部分](#在安装后启用-devops)，查看如何在安装后启用 DevOps。
     {{</ notice >}}
 
 2. 在该文件中，搜寻到 `devops`，并将 `enabled` 的 `false `改为 `true`，完成后保存文件。
