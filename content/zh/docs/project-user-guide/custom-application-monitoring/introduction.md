@@ -13,15 +13,15 @@ KubeSphere 的监控引擎基于 Prometheus 和 Prometheus Operator。总体而�
 
 - 为您的应用[暴露 Prometheus 格式的指标](#步骤-1暴露-prometheus-格式的指标)。
 - [应用 ServiceMonitor CRD](#步骤-2应用-servicemonitor-crd) 将应用程序与监控目标挂钩。
-- [实现指标可视化](#步骤-3实现指标可视化)从而在仪表板上查看自定义指标趋势。
+- [实现指标可视化](#步骤-3实现指标可视化)从而在监控面板上查看自定义指标趋势。
 
 ### 步骤 1：暴露 Prometheus 格式的指标
 
-首先，您的应用必须暴露 Prometheus 格式的指标。Prometheus 展示格式已经成为云原生监控领域事实上的标准格式。Prometheus 使用[基于文本的展示格式](https://prometheus.io/docs/instrumenting/exposition_formats/)。取决于您的应用和使用场景，您可以采用以下两种方式暴露指标。
+首先，您的应用必须暴露 Prometheus 格式的指标。Prometheus 暴露格式已经成为云原生监控领域事实上的标准格式。Prometheus 使用[基于文本的暴露格式](https://prometheus.io/docs/instrumenting/exposition_formats/)。取决于您的应用和使用场景，您可以采用以下两种方式暴露指标。
 
 #### 直接暴露
 
-直接暴露 Prometheus 格式的应用指标是云原生应用的常用方式。这种方式需要开发者在代码中导入 Prometheus 客户端库并在特定的端点暴露指标。许多应用，例如 ETCD、CoreDNS 和 Istio，都采用这种方式。
+直接暴露 Prometheus 格式的应用指标是云原生应用的常用方式。这种方式需要开发者在代码中导入 Prometheus 客户端库并在特定的端点 (Endpoint) 暴露指标。许多应用，例如 ETCD、CoreDNS 和 Istio，都采用这种方式。
 
 Prometheus 社区为大多数编程语言提供了客户端库。您可以在 [Prometheus Client Libraries](https://prometheus.io/docs/instrumenting/clientlibs/) 页面查看支持的语言。使用 Go 语言的开发者可参阅 [Instrumenting a Go Application for Prometheus](https://prometheus.io/docs/guides/go-application/) 了解如何编写符合 Prometheus 规范的应用程序。
 
@@ -31,7 +31,7 @@ Prometheus 社区为大多数编程语言提供了客户端库。您可以在 [P
 
 如果您不希望修改代码，或者由于应用由第三方提供您无法修改代码，您可以部署一个导出器作为代理，用于抓取指标数据并将其转换成 Prometheus 格式。
 
-Prometheus 社区为大多数第三方应用，例如 MySQL，提供了产品就绪的导出器。您可以在 [Exporters and Integrations](https://prometheus.io/docs/instrumenting/exporters/) 页面查看可用的导出器。在 KubeSphere 中，建议[启用 OpenPitrix](../../../pluggable-components/app-store/) 并从应用商店部署导出器。应用商店中内置了面向 MySQL、Elasticsearch 和 Redis 的导出器。
+Prometheus 社区为大多数第三方应用，例如 MySQL，提供了生产就绪的导出器。您可以在 [Exporters and Integrations](https://prometheus.io/docs/instrumenting/exporters/) 页面查看可用的导出器。在 KubeSphere 中，建议[启用 OpenPitrix](../../../pluggable-components/app-store/) 并从应用商店部署导出器。应用商店中内置了面向 MySQL、Elasticsearch 和 Redis 的导出器。
 
 请参阅[监控 MySQL](../examples/monitor-mysql) 了解如何部署 MySQL 导出器并监控 MySQL 指标。
 
@@ -49,6 +49,6 @@ ServiceMonitor CRD 由 [Prometheus Operator](https://github.com/prometheus-opera
 
 ### 步骤 3：实现指标可视化
 
-大约两分钟后，KubeSphere 监控引擎开始抓取和存储指标，随后您可以使用 PromQL 查询指标并设计操作面板和仪表板。
+大约两分钟后，KubeSphere 监控引擎开始抓取和存储指标，随后您可以使用 PromQL 查询指标并设计操作面板和监控面板。
 
-请参阅[查询](../visualization/querying)了解如何编写 PromQL 表达式。有关仪表板功能的更多信息，请参阅[可视化](../visualization/overview)。
+请参阅[查询](../visualization/querying)了解如何编写 PromQL 表达式。有关监控面板功能的更多信息，请参阅[可视化](../visualization/overview)。
