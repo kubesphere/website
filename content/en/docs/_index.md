@@ -12,7 +12,7 @@ section1:
 
 sectionLink:
   docs:
-    title: Get Started
+    title: Popular Pages
     description: Learn how to use KubeSphere with these quickstarts, tutorials, and examples. 
     list:
       - /docs/quick-start/all-in-one-on-linux

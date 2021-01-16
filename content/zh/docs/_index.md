@@ -12,7 +12,7 @@ section1:
 
 sectionLink:
   docs:
-    title: 快速上手
+    title: 常用文档
     description: 通过快速入门、教程和示例等学习使用 KubeSphere。
     list:
       - /docs/quick-start/all-in-one-on-linux
