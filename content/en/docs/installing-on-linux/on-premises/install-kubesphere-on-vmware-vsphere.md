@@ -182,7 +182,7 @@ global_defs {
 vrrp_script chk_haproxy {
   script "killall -0 haproxy"
   interval 2
-  weight 2
+  weight 20
 }
 vrrp_instance haproxy-vip {
   state MASTER  
@@ -222,7 +222,7 @@ global_defs {
 vrrp_script chk_haproxy {
   script "killall -0 haproxy"
   interval 2
-  weight 2
+  weight 20
 }
 vrrp_instance haproxy-vip {
   state BACKUP
