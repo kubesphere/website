@@ -42,7 +42,7 @@ Learn how to enable Auditing to document platform events and activities.
 
 ## [KubeSphere Service Mesh](../pluggable-components/service-mesh/)
 
-Learn how to enable the Service Mesh to use different traffic management strategies for microservices governance.
+Learn how to enable KubeSphere Service Mesh to use different traffic management strategies for microservices governance.
 
 ## [Network Policies](../pluggable-components/network-policy/)
 

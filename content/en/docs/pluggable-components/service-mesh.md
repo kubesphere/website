@@ -1,7 +1,7 @@
 ---
 title: "KubeSphere Service Mesh"
 keywords: "Kubernetes, Istio, KubeSphere, service-mesh, microservices"
-description: "How to enable the KubeSphere Service Mesh"
+description: "How to enable KubeSphere Service Mesh"
 
 linkTitle: "KubeSphere Service Mesh"
 weight: 6800
@@ -9,11 +9,11 @@ weight: 6800
 
 ## What is KubeSphere Service Mesh
 
-On the basis of [Istio](https://istio.io/), the KubeSphere Service Mesh visualizes microservices governance and traffic management. It features a powerful toolkit including **circuit breaking, blue-green deployment, canary release, traffic mirroring, distributed tracing, observability and traffic control**. Developers can easily get started with the Service Mesh without any code hacking, with the learning curve of Istio greatly reduced. All features of the KubeSphere Service Mesh are designed to meet users' demand for their business.
+On the basis of [Istio](https://istio.io/), KubeSphere Service Mesh visualizes microservices governance and traffic management. It features a powerful toolkit including **circuit breaking, blue-green deployment, canary release, traffic mirroring, distributed tracing, observability and traffic control**. Developers can easily get started with KubeSphere Service Mesh without any code hacking, with the learning curve of Istio greatly reduced. All features of KubeSphere Service Mesh are designed to meet users' demand for their business.
 
 For more information, see [Grayscale Release](../../project-user-guide/grayscale-release/overview).
 
-## Enable the Service Mesh before Installation
+## Enable KubeSphere Service Mesh before Installation
 
 ### Installing on Linux
 
@@ -26,7 +26,7 @@ When you implement multi-node installation of KubeSphere on Linux, you need to c
     ```
 
     {{< notice note >}}
-If you adopt [All-in-One Installation](../../quick-start/all-in-one-on-linux/), you do not need to create a `config-sample.yaml` file as you can create a cluster directly. Generally, the all-in-one mode is for users who are new to KubeSphere and look to get familiar with the system. If you want to enable the Service Mesh in this mode (e.g. for testing purposes), refer to [the following section](#enable-service-mesh-after-installation) to see how the Service Mesh can be installed after installation.
+If you adopt [All-in-One Installation](../../quick-start/all-in-one-on-linux/), you do not need to create a `config-sample.yaml` file as you can create a cluster directly. Generally, the all-in-one mode is for users who are new to KubeSphere and look to get familiar with the system. If you want to enable KubeSphere Service Mesh in this mode (e.g. for testing purposes), refer to [the following section](#enable-service-mesh-after-installation) to see how KubeSphere Service Mesh can be installed after installation.
     {{</ notice >}}
 
 2. In this file, navigate to `servicemesh` and change `false` to `true` for `enabled`. Save the file after you finish.
@@ -67,7 +67,7 @@ The process of installing KubeSphere on Kubernetes is same as stated in the tuto
     kubectl apply -f cluster-configuration.yaml
     ```
 
-## Enable the Service Mesh after Installation
+## Enable KubeSphere Service Mesh after Installation
 
 1. Log in to the console as `admin`. Click **Platform** in the top-left corner and select **Clusters Management**.
     
