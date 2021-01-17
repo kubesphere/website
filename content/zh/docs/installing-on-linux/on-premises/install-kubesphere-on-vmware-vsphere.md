@@ -171,7 +171,7 @@ vrrp_gna_interval 0
 vrrp_script chk_haproxy {
 script "killall -0 haproxy"
 interval 2
-weight 2
+weight 20
 }
 vrrp_instance haproxy-vip {
 state MASTER  #主服务器 是MASTER
@@ -211,7 +211,7 @@ vrrp_gna_interval 0
 vrrp_script chk_haproxy {
 script "killall -0 haproxy"
 interval 2
-weight 2
+weight 20
 }
 vrrp_instance haproxy-vip {
 state BACKUP #备份服务器 是 backup
