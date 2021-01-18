@@ -79,7 +79,7 @@ Learn how to deploy GitLab through an app repository and access its service.
 
 ### [Helm Developer Guide](../application-store/app-developer-guide/helm-developer-guide/)
 
-Developer your own Helm-based app.
+Develop your own Helm-based app.
 
 ### [Helm Specifications](../application-store/app-developer-guide/helm-specification/)
 
