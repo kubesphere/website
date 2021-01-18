@@ -22,6 +22,26 @@ There can only be one H Cluster while multiple M Clusters can exist at the same 
 
 KubeSphere features a powerful, inclusive central control plane so that you can manage any KubeSphere clusters in a unified way regardless of deployment environments or cloud providers.
 
+## Resource Requirements
+
+Before you enable multi-cluster management, make sure you have enough resources in your environment.
+
+| Namespace      | Kube-federation-system | kubesphere-system |
+| -------------- | ---------------------- | ----------------- |
+| Sub-component  | 2 x controller-manger  | tower             |
+| CPU Request    | 100 m                  | 100 m             |
+| CPU Limit      | 500 m                  | 500 m             |
+| Memory Request | 64 MiB                 | 128 MiB           |
+| Memory Limit   | 512 MiB                | 256 MiB           |
+| Installation   | Optional               | Optional          |
+
+{{< notice note >}}
+
+- The request and limit of CPU and memory resources all refer to single replica.
+- After the multi-cluster feature is enabled, tower and controller-manager will be installed on the H Cluster. If you use [agent connection](../../../multicluster-management/enable-multicluster/agent-connection/), only tower is needed for M Clusters. If you use [direct connection](../../../multicluster-management/enable-multicluster/direct-connection/), no additional component is needed for M Clusters.
+
+{{</ notice >}}
+
 ## Use the App Store in a Multi-cluster Architecture
 
 Different from other components in KubeSphere, the [KubeSphere App Store](../../../pluggable-components/app-store/) serves as a global application pool for all clusters, including H Cluster and M Clusters. You only need to enable the App Store on the H Cluster and you can use functions related to the App Store on M Clusters directly (no matter whether the App Store is enabled on M Clusters or not), such as [app templates](../../../project-user-guide/application/app-template/) and [app repositories](../../../workspace-administration/app-repository/import-helm-repository/).
