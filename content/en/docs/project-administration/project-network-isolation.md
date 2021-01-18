@@ -21,7 +21,7 @@ For the implementation of the Network Policy, you can refer to [KubeSphere Netwo
 
 ## Enable/Disable Project Network Isolation
 
-1. Log in KubeSphere as `project-admin`. Go to your project and select **Network Isolation** in **Project Settings**. By default, project network isolation is disabled.
+1. Log in to KubeSphere as `project-admin`. Go to your project and select **Network Isolation** in **Project Settings**. By default, project network isolation is disabled.
 
    ![project-network-isolation](/images/docs/project-administration/project-network-isolation/project-network-isolation.jpg)
 
