@@ -3,7 +3,7 @@ title: "v3.0 新特性"
 keywords: 'Kubernetes, KubeSphere, 介绍'
 description: 'v3.0 新增了多集群管理，增强了安全性，改善了可观察性，支持了更多语言'
 linkTitle: "v3.0 新特性"
-weight: 1250
+weight: 1400
 ---
 
 KubeSphere v3.0 于 8 月底发布，该版本是 KubeSphere 至今为止最重要的版本更新，大幅增强了集群管理、可观察性、存储管理、网络管理、多租户安全、应用商店、安装部署等特性，并且进一步提升了交互设计与用户体验。关于 v3.0 新特性的详细解读，可参考博客 [KubeSphere 3.0.0 GA：面向应用的容器混合云](../../../blogs/kubesphere-3.0.0-ga-announcement/)。

@@ -3,7 +3,7 @@ title: "KubeSphere 生态工具"
 keywords: 'Kubernetes, KubeSphere, KubeSphere 生态工具'
 description: 'KubeSphere 生态工具'
 linkTitle: "KubeSphere 生态工具"
-weight: 1110
+weight: 1200
 ---
 
 ## 丰富的生态工具

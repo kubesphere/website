@@ -3,7 +3,7 @@ title: "What's New in 3.0"
 keywords: 'Kubernetes, KubeSphere, new features'
 description: "What's New in 3.0"
 linkTitle: "What's New in 3.0"
-weight: 1250
+weight: 1400
 ---
 
 Published at the end of August, 2020, KubeSphere 3.0 is the most important version by far as it improves cluster management, observability, storage management, multi-tenant security, App Store, installation, and more. For more information about detailed explanations of new features in KubeSphere 3.0, see [KubeSphere 3.0.0 GA: Born for Hybrid Cloud Apps](../../../news/kubesphere-3.0.0-ga-announcement/).
