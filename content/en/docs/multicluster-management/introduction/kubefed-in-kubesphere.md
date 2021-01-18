@@ -26,7 +26,7 @@ KubeSphere features a powerful, inclusive central control plane so that you can 
 
 Before you enable multi-cluster management, make sure you have enough resources in your environment.
 
-| Namespace      | Kube-federation-system | kubesphere-system |
+| Namespace      | kube-federation-system | kubesphere-system |
 | -------------- | ---------------------- | ----------------- |
 | Sub-component  | 2 x controller-manger  | tower             |
 | CPU Request    | 100 m                  | 100 m             |
