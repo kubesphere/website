@@ -5,7 +5,7 @@ description: '如何在 KubeSphere 中通过应用商店部署 Harbor'
 linkTitle: "在 KubeSphere 中部署 Harbor"
 weight: 14220
 ---
-[Harbor](https://goharbor.io/) 是一个开源仓库，通过各种策略和基于角色的访问控制来保护制品，确保镜像经过扫描且没有漏洞，并将镜像标记为可信。
+[Harbor](https://goharbor.io/) 是一个开源仓库，通过各种策略和基于角色的访问控制来保护制品，确保镜像经过扫描且没有漏洞，并对镜像签名使其受信。
 
 本教程演示如何从 KubeSphere 应用商店部署 [Harbor](https://goharbor.io/)。
 
@@ -64,7 +64,7 @@ weight: 14220
 
    {{< notice note >}}
 
-   您可能需要在安全组中打开该端口，并根据您的 Kubernetes 集群部署位置来配置相关端口转发规则。
+   取决于您的 Kubernetes 集群的部署位置，您可能需要在安全组中放行端口并配置相关的端口转发规则。
 
    {{</ notice >}} 
 
