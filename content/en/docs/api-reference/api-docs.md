@@ -3,7 +3,7 @@ title: "KubeSphere API"
 keywords: 'Kubernetes, KubeSphere, API'
 description: 'KubeSphere API documentation'
 linkTitle: "KubeSphere API"
-weight: 17100
+weight: 17200
 ---
 
 ## Architecture

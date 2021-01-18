@@ -21,6 +21,10 @@ Set a registry mirror to speed up image downloads during installation.
 
 Understand what Telemetry is and how to enable or disable it in KubeSphere.
 
+### [Install an Add-on through YAML Using KubeKey](../faq/installation/install-addon-through-yaml-using-kubekey/)
+
+Understand why the installation may fail when you use KubeKey to install an add-on through YAML.
+
 ## Upgrade
 
 ### [Upgrade QingCloud CSI](../faq/upgrade/upgrade-faq/)
