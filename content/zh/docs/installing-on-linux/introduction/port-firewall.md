@@ -24,6 +24,7 @@ KubeSphere 需要某些端口用于服务之间的通信。如果您的网络配
 |local-apt|TCP|allow|5080||离线环境需要|
 |rpcbind|TCP|allow|111|| 使用 NFS 时需要|
 |ipip| IPENCAP / IPIP|allow| | |Calico 需要使用 IPIP 协议 |
+|metrics-server| TCP|allow|8443|
 
 {{< notice note >}}
 当您使用 Calico 网络插件并且在云平台上使用经典网络运行集群时，您需要对源地址启用 IPENCAP 和 IPIP 协议。
