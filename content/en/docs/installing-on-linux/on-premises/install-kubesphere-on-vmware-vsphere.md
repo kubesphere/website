@@ -254,7 +254,7 @@ systemctl restart keepalived && systemctl enable keepalived
 ```
 
 ```bash
-systemctl stop keepaliv
+systemctl stop keepalived
 ```
 
 ```bash
