@@ -1,65 +1,65 @@
 ---
-title: "Deploy etcd on KubeSphere"
-keywords: 'Kubernetes, KubeSphere, etcd, app-store'
-description: 'How to deploy etcd on KubeSphere.'
-linkTitle: "Deploy etcd on KubeSphere"
+title: "在 KubeSphere 中部署 etcd"
+keywords: 'Kubernetes, KubeSphere, etcd, 应用商店'
+description: '如何在 KubeSphere 中部署 etcd。'
+linkTitle: "在 KubeSphere 中部署 etcd"
 weight: 14210
 ---
 
-Written in Go, [etcd](https://etcd.io/) is a distributed key-value store to store data that needs to be accessed by a distributed system or cluster of machines. In Kubernetes, it is the backend for service discovery and stores cluster states and configurations.
+[etcd](https://etcd.io/) 是一个采用 Go 语言编写的分布式键值存储库，用来存储供分布式系统或机器集群访问的数据。在 Kubernetes 中，etcd 是服务发现的后端，存储集群状态和配置。
 
-This tutorial walks you through an example of deploying etcd from the App Store of KubeSphere.
+本教程演示如何从 KubeSphere 应用商店部署 etcd。
 
-## Prerequisites
+## 准备工作
 
-- Please make sure you [enable the OpenPitrix system](https://kubesphere.io/docs/pluggable-components/app-store/).
-- You need to create a workspace, a project, and a user account (`project-regular`) for this tutorial. The account needs to be a platform regular user and to be invited as the project operator with the `operator` role. In this tutorial, you log in as `project-regular` and work in the project `demo-project` in the workspace `demo-workspace`. For more information, see [Create Workspace, Project, Account and Role](../../../quick-start/create-workspace-and-project/).
+- 请确保[已启用 OpenPitrix 系统](../../../pluggable-components/app-store/)。
+- 您需要创建一个企业空间、一个项目和一个用户帐户 (`project-regular`) 供本教程操作使用。该帐户需要是平台普通用户，并邀请至项目中赋予 `operator` 角色作为项目操作员。本教程中，请以 `project-regular` 身份登录控制台，在企业空间 `demo-workspace` 中的 `demo-project` 项目中进行操作。有关更多信息，请参见[创建企业空间、项目、帐户和角色](../../../quick-start/create-workspace-and-project/)。
 
-## Hands-on Lab
+## 动手实验
 
-### Step 1: Deploy etcd from App Store
+### 步骤 1：从应用商店中部署 etcd
 
-1. On the **Overview** page of the project `demo-project`, click **App Store** in the top left corner.
+1. 在 `demo-project` 项目的**概览**页面，点击左上角的**应用商店**。
 
-   ![project-overview](/images/docs/appstore/built-in-apps/etcd-app/project-overview.jpg)
+   ![项目概览](/images/docs/zh-cn/appstore/built-in-apps/deploy-etcd-on-ks/project-overview.PNG)
 
-2. Find etcd and click **Deploy** on the **App Info** page.
+2. 找到 etcd，点击**应用信息**页面上的**部署**。
 
-   ![etcd-app-store](/images/docs/appstore/built-in-apps/etcd-app/etcd-app-store.jpg)
+   ![应用商店 etcd](/images/docs/zh-cn/appstore/built-in-apps/deploy-etcd-on-ks/etcd-app-store.PNG)
 
-   ![deploy-etcd](/images/docs/appstore/built-in-apps/etcd-app/deploy-etcd.jpg)
+   ![部署 etcd](/images/docs/zh-cn/appstore/built-in-apps/deploy-etcd-on-ks/deploy-etcd.PNG)
 
-3. Set a name and select an app version. Make sure etcd is deployed in `demo-project` and click **Next**.
+3. 设置名称并选择应用版本。请确保将 etcd 部署在 `demo-project` 中，点击**下一步**。
 
-   ![deployment-location](/images/docs/appstore/built-in-apps/etcd-app/deployment-location.jpg)
+   ![部署位置](/images/docs/zh-cn/appstore/built-in-apps/deploy-etcd-on-ks/deployment-location.PNG)
 
-4. On the **App Config** page, specify the size of the persistent volume for etcd and click **Deploy**.
+4. 在**应用配置**页面，指定 etcd 的持久化存储卷大小，点击**部署**。
 
-   ![specify-volume](/images/docs/appstore/built-in-apps/etcd-app/specify-volume.jpg)
+   ![指定存储卷](/images/docs/zh-cn/appstore/built-in-apps/deploy-etcd-on-ks/specify-volume.PNG)
 
    {{< notice note >}}
 
-   To specify more values for etcd, use the toggle switch to see the app's manifest in YAML format and edit its configurations.
+   要指定 etcd 的更多值，请使用右上角的拨动开关查看 YAML 格式的应用清单文件，并编辑其配置。
 
    {{</ notice >}} 
 
-5. In **App Templates** of the **Applications** page, wait until etcd is up and running.
+5. 在**应用**页面的**应用模板**选项卡下，稍等片刻待 etcd 启动并运行。
 
-   ![etcd-running](/images/docs/appstore/built-in-apps/etcd-app/etcd-running.jpg)
+   ![etcd 运行中](/images/docs/zh-cn/appstore/built-in-apps/deploy-etcd-on-ks/etcd-running.PNG)
 
-### Step 2: Access etcd Service
+### 步骤 2：访问 etcd 服务
 
-After the app is deployed, you can use etcdctl, a command-line tool for interacting with etcd server, to access etcd on the KubeSphere console directly.
+应用部署后，您可以在 KubeSphere 控制台上使用 etcdctl 命令行工具与 etcd 服务器进行交互，直接访问 etcd。
 
-1. Navigate to **StatefulSets** in **Workloads**, click the service name of etcd.
+1. 在**工作负载**的**有状态副本集**选项卡中，点击 etcd 的服务名称。
 
-   ![etcd-statefulset](/images/docs/appstore/built-in-apps/etcd-app/etcd-statefulset.jpg)
+   ![etcd 有状态副本集](/images/docs/zh-cn/appstore/built-in-apps/deploy-etcd-on-ks/etcd-statefulset.PNG)
 
-2. Under **Pods**, expand the menu to see container details, and then click the **Terminal** icon.
+2. 在**容器组**下，展开菜单查看容器详情，然后点击**终端**图标。
 
-   ![etcd-teminal](/images/docs/appstore/built-in-apps/etcd-app/etcd-teminal.jpg)
+   ![etcd 终端](/images/docs/zh-cn/appstore/built-in-apps/deploy-etcd-on-ks/etcd-terminal.PNG)
 
-3. In the terminal, you can read and write data directly. For example, execute the following two commands respectively.
+3. 在终端中，您可以直接读写数据。例如，分别执行以下两个命令。
 
    ```bash
    etcdctl set /name kubesphere
@@ -69,8 +69,9 @@ After the app is deployed, you can use etcdctl, a command-line tool for interact
    etcdctl get /name
    ```
 
-   ![etcd-command](/images/docs/appstore/built-in-apps/etcd-app/etcd-command.jpg)
+   ![etcd 命令](/images/docs/zh-cn/appstore/built-in-apps/deploy-etcd-on-ks/etcd-command.PNG)
 
-4. For clients within the KubeSphere cluster, the etcd service can be accessed through `<app name>.<project name>.svc.<K8s domain>:2379` (e.g. `etcd-bqe0g4.demo-project.svc.cluster.local:2379` in this guide).
+4. KubeSphere 集群内的客户端可以通过 `<app name>.<project name>.svc.<K8s domain>:2379`（例如本教程中是 `etcd-rscvf6.demo-project.svc.cluster.local:2379`） 访问 etcd 服务。
 
-5. For more information, see [the official documentation of etcd](https://etcd.io/docs/v3.4.0/).
+5. 有关更多信息，请参见 [etcd 官方文档](https://etcd.io/docs/v3.4.0/)。
+
