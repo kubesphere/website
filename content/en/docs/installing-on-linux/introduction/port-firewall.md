@@ -21,8 +21,8 @@ KubeSphere requires certain ports for the communications among services. If your
 |master|TCP|allow|10250|10258|
 |dns|TCP|allow|53|
 |dns|UDP|allow|53|
-|local-registry|TCP|allow|5000||For offline environment|
-|local-apt|TCP|allow|5080||For offline environment|
+|local-registry|TCP|allow|5000||For the offline environment|
+|local-apt|TCP|allow|5080||For the offline environment|
 |rpcbind|TCP|allow|111|| Required if NFS is used|
 |ipip| IPENCAP / IPIP|allow| | |Calico needs to allow the ipip protocol |
 |metrics-server| TCP|allow| 8443 |
