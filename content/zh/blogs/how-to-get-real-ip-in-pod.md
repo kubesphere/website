@@ -219,7 +219,7 @@ LB(80/443) -> Ingress Controller(30000) -> myservice(80) -> myservice-fc55d766-x
 
 ![](../../../images/blogs/how-to-get-real-ip-in-pod/create-ingress.png)
 
-最后还需要在【平台管理】-> 【集群管理】，进入集群，在系统项目 kubesphere-logging-system 中找到 realip 项目对应的网关。
+最后还需要在【平台管理】-> 【集群管理】，进入集群，在系统项目 kubesphere-controls-system 中找到 realip 项目对应的网关。
 
 ![](../../../images/blogs/how-to-get-real-ip-in-pod/ingress.png)
 
