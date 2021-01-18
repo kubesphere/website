@@ -1,8 +1,8 @@
 ---
-title: "Multi-Tenancy in KubeSphere"
+title: "Multi-tenancy in KubeSphere"
 keywords: "Kubernetes, Kubesphere, multi-tenancy"
 description: "Understand multi-tenancy in KubeSphere."
-linkTitle: "Multi-Tenancy in KubeSphere"
+linkTitle: "Multi-tenancy in KubeSphere"
 weight: 12100
 ---
 
@@ -10,7 +10,7 @@ Kubernetes helps you orchestrate applications and schedule containers, greatly i
 
 The first and foremost challenge is how to define multi-tenancy in an enterprise and the security boundary of tenants. [The discussion about multi-tenancy](https://docs.google.com/document/d/1fj3yzmeU2eU8ZNBCUJG97dk_wC7228-e_MmdcmTNrZY) has never stopped in the Kubernetes community, while there is no definite answer to how a multi-tenant system should be structured.
 
-## Challenges in Kubernetes Multi-Tenancy
+## Challenges in Kubernetes Multi-tenancy
 
 Multi-tenancy is a common software architecture. Resources in a multi-tenant environment are shared by multiple users, also known as "tenants", with their respective data isolated from each other. The administrator of a multi-tenant cluster must minimize the damage that a compromised or malicious tenant can do to others and make sure resources are fairly allocated.
 
@@ -20,7 +20,7 @@ Logically, resource isolation mainly entails API access control and tenant-based
 
 The isolation of physical resources includes nodes and networks, while it also relates to container runtime security. For example, you can create [NetworkPolicy](../../pluggable-components/network-policy/) resources to control traffic flow and use PodSecurityPolicy objects to control container behavior. [Kata Containers](https://katacontainers.io/) provides a more secure container runtime.
 
-## Multi-Tenancy in KubeSphere
+## Multi-tenancy in KubeSphere
 
 To solve the issues above, KubeSphere provides a multi-tenant management solution based on Kubernetes.
 

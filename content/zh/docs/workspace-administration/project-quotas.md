@@ -1,8 +1,8 @@
 ---
-title: "Project Quotas"
+title: "项目配额"
 keywords: 'KubeSphere, Kubernetes, projects, quotas, resources, requests, limits'
 description: 'How to set project quotas.'
-linkTitle: "Project Quotas"
+linkTitle: "项目配额"
 weight: 9600
 ---
 

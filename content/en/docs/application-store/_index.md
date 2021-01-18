@@ -13,7 +13,7 @@ icon: "/images/docs/docs.svg"
 
 The KubeSphere App Store, powered by [OpenPitrix](https://github.com/openpitrix/openpitrix), an open-source platform that manages apps across clouds, provides users with enterprise-ready containerized solutions. You can upload your own apps through app templates or add app repositories that serve as an application tool for tenants to choose the app they want.
 
-The App Store features a highly productive integrated system for application lifecycle management, allowing users to quickly upload, release, deploy, upgrade and remove apps in ways best suit them. This is how KubeSphere empowers developers to spend less time setting up and more time developing.
+The App Store features a highly productive integrated system for application lifecycle management, allowing users to quickly upload, release, deploy, upgrade and remove apps in ways that best suit them. This is how KubeSphere empowers developers to spend less time setting up and more time developing.
 
 ## [Application Lifecycle Management](../application-store/app-lifecycle-management/)
 
@@ -74,3 +74,14 @@ You can upload app templates or add app repositories to KubeSphere so that tenan
 ### [Deploy GitLab on KubeSphere](../application-store/external-apps/gitlab-app/)
 
 Learn how to deploy GitLab through an app repository and access its service.
+
+## Application Developer Guide
+
+### [Helm Developer Guide](../application-store/app-developer-guide/helm-developer-guide/)
+
+Developer your own Helm-based app.
+
+### [Helm Specifications](../application-store/app-developer-guide/helm-specification/)
+
+Understand the chart structure and specifications.
+
