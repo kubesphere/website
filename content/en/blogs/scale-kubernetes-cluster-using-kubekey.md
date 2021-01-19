@@ -5,7 +5,7 @@ description: KubeKey allows you to scale a Kubernetes cluster in a flexible way.
 tag: 'Kubernetes, KubeKey, scaling, installer'
 createTime: '2021-01-14'
 author: 'Sherlock'
-snapshot: ''
+snapshot: 'https://ap3.qingstor.com/kubesphere-website/docs/KubeKey-lightweight-installer.png'
 ---
 
 In my [last post](https://kubesphere.io/blogs/install-kubernetes-using-kubekey/), I demonstrated how to set up a three-node Kubernetes cluster using [KubeKey](https://github.com/kubesphere/kubekey). As I mentioned in the article, KubeKey is a lightweight, powerful installer that is able to install Kubernetes as well as its related add-ons in a quick and convenient way. In fact, KubeKey can do way more than that as it is also an efficient tool to scale your Kubernetes cluster.

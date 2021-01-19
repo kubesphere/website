@@ -5,7 +5,7 @@ description: KubeKey allows you to deploy a Kubernetes cluster in the most grace
 tag: 'KubeSphere, Kubernetes, KubeKey, addons, installer'
 createTime: '2021-01-07'
 author: 'Sherlock'
-snapshot: ''
+snapshot: 'https://ap3.qingstor.com/kubesphere-website/docs/KubeKey-lightweight-installer.png'
 ---
 
 As Kubernetes is the de-facto standard in container orchestration, the installation of Kubernetes has remained one of the top challenges facing Kubernetes users, especially neophytes. Apart from Kubernetes itself, they also need to figure out how to install different tools required for the installation, such as kubelet, kubeadm and kubectl. They have been wondering if there is a tool that contains all the stacks so that they can just run only few commands for the installation.
