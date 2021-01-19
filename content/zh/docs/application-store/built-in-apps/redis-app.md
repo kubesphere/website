@@ -6,7 +6,7 @@ linkTitle: "在 KubeSphere 中部署 Redis"
 weight: 14291
 ---
 
-[Redis](https://redis.io/) 是一个开源的（符合 BSD 协议）、内存中的 (in-memory) 数据结构存储库，用作数据库、缓存和消息代理。
+[Redis](https://redis.io/) 是一个开源的（遵循 BSD 协议）、内存中的 (in-memory) 数据结构存储库，用作数据库、缓存和消息代理。
 
 本教程演示如何从 KubeSphere 应用商店部署 Redis。
 
