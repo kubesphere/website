@@ -6,7 +6,7 @@ linkTitle: "Helm Developer Guide"
 weight: 14410
 ---
 
-You can upload the Helm chart of an app to KubeSphere so that tenants with necessary permissions can deploy it. This tutorial demonstrates how prepare Helm charts using NGINX as an example.
+You can upload the Helm chart of an app to KubeSphere so that tenants with necessary permissions can deploy it. This tutorial demonstrates how to prepare Helm charts using NGINX as an example.
 
 ## Install Helm
 
