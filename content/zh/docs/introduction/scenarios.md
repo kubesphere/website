@@ -1,105 +1,104 @@
 ---
-title: "Use Cases"
-keywords: 'KubeSphere, Kubernetes, Multi-cluster, Observability, DevOps'
-description: 'Applicable in a variety of scenarios, KubeSphere provides enterprises with containerized environments with a complete set of features for management and operation.'
-
+title: "应用场景"
+keywords: 'KubeSphere, Kubernetes, 多集群, 可观察性, DevOps'
+description: 'KubeSphere 适用于多种应用场景，为企业提供全栈的云原生功能。'
+linkTitle: "应用场景"
 weight: 1700
 ---
 
-KubeSphere is applicable in a variety of scenarios. For enterprises that deploy their business system on bare metal, their business modules are tightly coupled with each other. That means it is extremely difficult for resources to be horizontally scaled. In this connection, KubeSphere provides enterprises with containerized environments with a complete set of features for management and operation. It empowers enterprises to rise to the challenges in the middle of their digital transformation, including agile software development, automated operation and maintenance, microservices governance, traffic management, autoscaling, high availability, as well as DevOps and CI/CD.
+KubeSphere 适用于多种场景，为企业提供容器化的环境，借助完善的管理和运维功能，让企业在数字化转型过程中从容应对各种挑战和各类业务场景，如多云多集群管理、敏捷软件开发、自动化运维、微服务治理、流量管理、高可用以及 DevOps 持续集成与交付等。
 
-At the same time, with the strong support for network and storage offered by QingCloud, KubeSphere is highly compatible with the existing monitoring and O&M system of enterprises. This is how they can upgrade their system for IT containerization.
+## 多集群部署
 
-## Multi-cluster Deployment
+随着容器的普及和 Kubernetes 的日渐成熟，企业内部运行多个 Kubernetes 集群已变得颇为常见。概括起来，多个集群的使用场景主要有以下几种：
 
-It is generally believed that using as few clusters as possible can reduce costs with less pressure for O&M. That said, both individuals and organizations tend to deploy multiple clusters for various reasons. For instance, the majority of enterprises may deploy their services across clusters as they need to be tested in non-production environments. Another typical example is that enterprises may separate their services based on regions, departments, and infrastructure providers by adopting multiple clusters.
+### 高可用
 
-The main reasons for employing this method fall into the following four categories:
+用户可以将应用负载部署在多个集群上，使用一个全局 VIP 或 DNS 域名将请求发送到对应的后端集群。当一个集群发生故障或无法处理请求时，将 VIP 或 DNS 记录切换至健康的集群。
 
-### High Availability
+![高可用](/images/docs/zh-cn/introduction/use-cases/高可用.png)
 
-Users can deploy workloads on multiple clusters by using a global VIP or DNS to send requests to corresponding backend clusters. When a cluster malfunctions or fails to handle requests, the VIP or DNS records can be transferred to a health cluster.
+### 低延迟
 
-![high-availability](https://ap3.qingstor.com/kubesphere-website/docs/ha.png)
+在多个地区部署集群时，可将用户请求转发至距离最近的集群处理，以此来最大限度减少网络带来的延迟。例如，在北京、上海和广州三地部署了三个 Kubernetes 集群，对于广东的用户就将请求转发至部署于广州的集群处理，这样可以减少地理距离带来的网络延迟，最大限度地实现各地一致的用户体验。
 
-### Low Latency
+### 隔离
 
-When clusters are deployed in various regions, user requests can be forwarded to the nearest cluster, greatly reducing network latency. For example, we have three Kubernetes clusters deployed in New York, Houston and Los Angeles respectively. For users in California, their requests can be forwarded to Los Angeles. This will reduce the network latency due to geographical distance, providing the best user experience possible for users in different areas.
+**故障隔离**：通常来说，多个小规模的集群比一个大规模的集群更容易隔离故障。当集群发生诸如服务中断、网络故障、资源不足引起的连锁反应等问题时，使用多个集群可以将故障隔离在特定的集群，不会向其他集群传播。
 
-### Isolation
+**业务隔离**：Kubernetes 通过命名空间来隔离应用，但这仅是逻辑上的隔离，不同命名空间之间网络互通，依旧存在资源抢占的问题。要想实现更进一步的隔离，需要额外设置诸如网络隔离策略、资源限额等。多集群可以在物理上实现彻底隔离，安全性和可靠性相比使用命名空间隔离更高。例如企业内部不同部门部署各自独立的集群、使用多个集群来分别部署开发、测试和生成环境等。
 
-**Failure Isolation**. Generally, it is much easier for multiple small clusters to isolate failures than a large cluster. In case of outages, network failures, insufficient resources or other possible resulting issues, the failure can be isolated within a certain cluster without spreading to others.
+![流水线](/images/docs/zh-cn/introduction/use-cases/流水线.png)
 
-**Business Isolation**. Although Kubernetes provides namespaces as a solution to app isolation, this method only represents the isolation in logic. This is because different namespaces are connected through the network, which means the issue of resource preemption still exists. To achieve further isolation, users need to create additional network isolation policies or set resource quotas. Using multiple clusters can achieve complete physical isolation that is more secure and reliable than the isolation through namespaces. For example, this is extremely effective when different departments within an enterprise use multiple clusters for the deployment of development, testing or production environments.
+### 避免厂商锁定
 
-![pipeline](https://ap3.qingstor.com/kubesphere-website/docs/pipeline.png)
+Kubernetes 已经成为容器编排领域的事实标准，很多企业在不同云厂商上部署集群时都避免将鸡蛋都放在一个篮子，以便可以随时迁移业务，在不同集群间伸缩。缺点是成本增加，考虑到不同厂商提供的 Kubernetes 服务对应的存储、网络接口有差异，业务迁移也非易事。
 
-### Avoid Vendor Lock-in
+为应对不同的使用场景，KubeSphere 提供统一的中央控制平面，由 Host 集群纳管 Member 集群，即多个异构的 Kubernetes 集群可以聚合在一起作为 Kubernetes 资源池。当用户部署应用程序时，可以选择应用的副本所要运行于的一个或多个 Kubernetes 集群。整个过程可以通过 KubeSphere 控制台进行管理，以可视化的方式帮助用户实现跨区域和跨集群的高可用性。
 
-Kubernetes has become the de facto standard in container orchestration. Against this backdrop, many enterprises avoid putting all eggs in one basket as they deploy clusters by using services of different cloud providers. That means they can transfer and scale their business anytime between clusters. However, it is not that easy for them to transfer their business in terms of costs, as different cloud providers feature varied Kubernetes services, including storage and network interface.
+![中央控制平面](/images/docs/zh-cn/introduction/use-cases/中央控制平面.png)
 
-KubeSphere provides its unique feature as a solution to the above four cases. Based on the Federation pattern of KubeSphere's multi-cluster feature, multiple heterogeneous Kubernetes clusters can be aggregated within a unified Kubernetes resource pool. When users deploy applications, they can decide to which Kubernetes cluster they want app replicas to be scheduled in the pool. The whole process is managed and maintained through KubeSphere. This is how KubeSphere helps users achieve multi-site high availability (across zones and clusters).
+有关更多信息，请参见[多集群管理](../../multicluster-management/)。
 
-For more information, see [Multi-cluster Management](../../multicluster-management/).
+## 多维度监控
 
-## Full-stack Observability with Streamlined O&M
+可观察性是运维团队日常工作中的重要一环，随着企业部署在云厂商平台上业务量的不断增加，运维团队所面临的压力与挑战也与日俱增。对于将业务跨云夸集群部署的企业来说，运维团队需要处理海量的数据以对各个 Kubernetes 集群进行监控与分析。此外，如何满足企业对自定义监控指标的需求也是急需解决的问题之一。
 
-Observability represents an important part in the work of Ops teams. In this regard, enterprises see increasing pressure on their Ops teams as they deploy their business on Kubernetes directly or on the platform of other cloud providers. This poses considerable challenges to Ops teams since they need to cope with extensive data.
+### 多维度集群监控
 
-### Multi-dimensional Cluster Monitoring
+当前，越来越多的企业和个人跨云部署多集群，然而，由于各个云厂商的环境不同，其所提供可观察性工具可能并不适用其他平台。从学习成本和监控的角度来说，进行跨集群管理和监控也并非易事。简而言之，运维团队急需一种统一的工具以对多集群上不同的指标实现多维度监控。
 
-Again, the adoption of multi-cluster deployment across clouds is on the rise both among individuals and enterprises. However, because they run different services, users need to learn, deploy and especially, monitor across different cloud environments. After all, the tool provided by one cloud vendor for observability may not be applicable to another. In short, Ops teams are in desperate need of a unified view across different clouds for cluster monitoring covering metrics across the board.
+![集群监控](/images/docs/zh-cn/introduction/use-cases/集群监控.jpg)
 
-### Log Query
+### 日志、事件与审计查询
 
-A comprehensive monitoring feature is meaningless without a flexible log query system. This is because users need to be able to track all the information related to their resources, such as alerting messages, node scheduling status, app deployment success, or network policy modification. All these records play an important role in making sure users can keep up with the latest development, which will inform policy decisions of their business.
+强大的可观察性系统需要由灵活的日志查询体系所支撑，帮助用户追踪集群内各类资源的完整信息，了解集群中的最新状况，例如告警消息、节点调度状态、应用部署情况以及网络策略变更等。由此，用户可对其业务做出相应的调整。
 
-### Customization
+### 自定义监控
 
-Even for resource monitoring on the same platform, the tool provided by the cloud vendor may not be a panacea. In some cases, users need to create their own standard of observability, such as the specific monitoring metrics and display form. Moreover, they need to integrate common tools to the cloud for special use, such as Prometheus, which is the de facto standard for Kubernetes monitoring. In other words, customization has become a necessity in the industry as cloud-powered applications drive business on the one hand while requiring fine-grained monitoring on the other just in case of any failure.
+即使是在同一平台进行资源监控，云厂商所提供的工具也并非适用于所有场景。在某些情况下，用户需要建立其特有的可观察性标准，例如自定义监控指标和监控形式。此外，他们还需要手动将常用工具集成至云端，如用于 Kubernetes 监控的事实标准工具 Prometheus。换言之，自定义功能已成为行业上的必要需求，不仅需要各类云原生应用提供云上业务支撑，同时也需要细粒度全监控功能，以提前检测出任何可能对业务造成影响的问题。
 
-KubeSphere features a unified platform for the management of clusters deployed across cloud providers. Apps can be deployed automatically, streamlining the process of operation and maintenance. At the same time, KubeSphere boasts powerful observability features (alerting, events, auditing, logging and notifications) with a comprehensive customized monitoring system for a wide range of resources. Users themselves can decide what resources they want to monitor in what kind of forms.
+如前文所述，KubeSphere 提供统一的中央控制平面用于跨云多集群管理，极大降低了运维成本。与此同时，KubeSphere 还具备强大的可观察性功能（告警通知、审计日志与事件）以监控多集群资源，为用户提供多维度自定义监控面板，用户可自行选择以何种形式监控任意资源。此外，KubeSphere 还配有多指标的日志、事件与审计查询功能，以可视化的形式提供基于多租户的日志检索。
 
-With KubeSphere, enterprises can focus more on business innovation as they are freed from complicated process of data collection and analysis.
+借助 KubeSphere，企业可以更多地专注于业务创新，从复杂的数据收集和分析流程中彻底解放。
 
-## Implement DevOps Practices
+## 微服务和云原生架构
 
-DevOps represents an important set of practices or methods that engage both development and Ops teams for more coordinated and efficient cooperation between them. Therefore, development, test and release can be faster, more efficient and more reliable. CI/CD pipelines in KubeSphere provide enterprises with agile development and automated O&M. Besides, the microservices feature (service mesh) in KubeSphere enables enterprises to develop, test and release services in a fine-grained way, creating an enabling environment for their implementation of DevOps. With KubeSphere, enterprises can make full use of DevOps by:
+在企业数字化转型过程中，推动应用迅速迭代的压力也与日俱增。具体来说，企业需要加快开发流程，缩短交付时间，提高更新频率。然而，现代化、云原生应用更多地以微服务的形式部署，而非从前的单体大型应用，这也给企业的应用研发与更新带来了更多的挑战。例如，微服务之间的频繁交付需要稳定、流畅的网络连接，网络延迟不仅影响系统问题性，更会降低用户体验。如何在不影响生产环境的同时进行版本更迭成为各个企业必须要解决的问题。为此，企业需要搭建一套完整的微服务架构以及时地检测并解决潜在问题。
 
-- Testing service robustness through fault injection without code hacking.
-- Decoupling Kubernetes services with credential management and access control.
-- Visualizing end-to-end monitoring process.
+KubeSphere 提供轻量级、扩展性强的微服务架构，为企业创造了充分的条件以开发云原生应用程序应对各类使用场景。基于 Istio，KubeSphere 以代码无侵入的模式提供可视化、灵活的微服务治理平台，包含各类微服务治理功能，支持熔断、灰度发布、流量管控、分布式链路追踪等，助力企业一步搭建微服务架构，实现应用云原生转型。
 
-## Service Mesh and Cloud-native Architecture
+### 可视化
 
-Enterprises are now under increasing pressure to accelerate innovation amid their digital transformation. Specifically, they need to speed up in terms of development cycle, delivery time and deployment frequency. As application architectures evolve from monolithic to microservices, enterprises are faced with a multitude of resulting challenges. For example, microservices communicate with each other frequently, which entails smooth and stable network connectivity. Among others, latency represents a key factor that affects the entire architecture and user experience. In case of any failure, a troubleshooting and identifying system also needs to be in place to respond in time. Besides, deploying distributed applications is never an easy job without highly-functional tools and infrastructure.
+由于服务网格的微服务之间会频繁进行交互，如果能以可视化的方式查看微服务之间通信，用户也能更好地了解微服务的拓扑关系。此外，分布式链路追踪对每个服务来说同样重要，能让管理者了解服务网格中调度流向和服务依赖。
 
-KubeSphere service mesh addresses a series of microservices use cases.
+### 灰度策略
 
-### Multi-cloud App Distribution
+当企业引入服务新版本时，可以在 KubeSphere 中采取不同的灰度发布策略。
 
-As mentioned above, it is not uncommon for individuals or organizations to deploy apps across Kubernetes clusters, whether on premises, public or hybrid. This may bring out significant challenges in unified traffic management, application and service scalability, DevOps pipeline automation, monitoring and so on.
+**蓝绿发布**提供零宕机部署，即在保留旧版本的同时部署新版本。在任何时候，只有其中一个版本处于活跃状态，接收所有流量，另一个版本保持空闲状态。如果运行出现问题，您可以快速回滚到旧版本。
 
-### Visualization
+**金丝雀发布**将实际流量引入新版本以测试性能和可靠性，在不影响系统稳定性的同时能够检测实际环境中存在的问题。
 
-As users deploy microservices which will communicate among themselves considerably, it will help users gain a better understanding of topological relations between microservices if the connection is highly visualized. Besides, distributed tracing is also essential for each service, providing operators with a detailed understanding of call flows and service dependencies within a mesh. 
+**流量镜像**是一种强大的、无风险的测试应用版本的方法，将实时流量的副本发送给被镜像的服务。采用这种方法，您可以搭建一个与原环境类似的环境以进行验收测试，从而提前发现问题。
 
-### Rolling Updates
+![灰度发布](/images/docs/zh-cn/introduction/use-cases/灰度发布.jpg)
 
-When enterprises introduce a new version of a service, they may adopt a canary upgrade or blue-green deployment. The new one runs side by side with the old one and a set percentage of traffic is moved to the new service for error detection and latency monitoring. If everything works fine, the traffic to the new one will gradually increase until 100% of customers are using the new version. For this type of update, KubeSphere provides three kinds of categories of grayscale release:
+## DevOps 落地实践
 
-**Blue-green Deployment**. The blue-green release provides a zero downtime deployment, which means the new version can be deployed with the old one preserved. It enables both versions to run at the same time. If there is a problem with running, you can quickly roll back to the old version.
+DevOps 是一套重要的实践和方法，让开发和运维团队能够更高效地协同工作。软件的开发、测试和发布也得以更迅速、高效和可靠。KubeSphere 中的 CI/CD 流水线为企业提供敏捷开发功能和自动化运维。同时， KubeSphere 的微服务治理功能，帮助企业以一种细粒度的方式开发、测试和发布服务，有效推动企业 DevOps 落地。借助 KubeSphere 的 DevOps 系统，企业可以：
 
-**Canary Release**. This method brings part of the actual traffic into a new version to test its performance and reliability. It can help detect potential problems in the actual environment while not affecting the overall system stability.
+- 以代码无侵入的模式通过错误注入测试服务健壮性；
+- 可视化端到端监控流程；
+- 以图形编辑面板创建流水线，无需编写 Jenkinsfile；
+- 为流水线轻松集成第三方程序，例如 SonarQube 用于代码质检。
 
-**Traffic Mirroring**. Traffic mirroring provides a more accurate way to test new versions as problems can be detected in advance while not affecting the production environment.
+![sonarqube](/images/docs/zh-cn/introduction/use-cases/sonarqube.png)
 
-With a lightweight, highly scalable microservices architecture offered by KubeSphere, enterprises are well-positioned to build their own cloud-native applications for the above scenarios. Based on Istio, a major solution to microservices, KubeSphere provides a platform for microservices governance without any hacking into code. Spring Cloud is also integrated for enterprises to build Java apps. KubeSphere also offers microservices upgrade consultations and technical support services, helping enterprises implement microservices architectures for their cloud-native transformation.
+## 裸机环境部署
 
-## Bare Metal Deployment
+有时，云端并非资源部署的最优环境。例如，当需要大量计算资源并要求硬盘高 I/O 速度时，使用专门的物理服务器可以实现更佳的性能。此外，对于一些难以迁移上云的特殊工作负载，可能还需要通过经认证的硬件运行，加以复杂的许可与支持协议，在这种情况下，企业更倾向于使用裸机环境部署应用。
 
-Sometimes, the cloud is not necessarily the ideal place for the deployment of resources. For example, physical, dedicated servers tend to function better when it comes to the cases that require considerable compute resources and high disk I/O. Besides, for some specialized workloads that are difficult to migrate to a cloud environment, certified hardware and complicated licensing and support agreements may be required.
+借助新一代轻量级安装器 [KubeKey](https://github.com/kubesphere/kubekey)，KubeSphere 帮助企业快速在裸机环境搭建容器化架构，并通过 Porter 实现流量的负载均衡。[Porter](https://github.com/kubesphere/porter) 由 KubeSphere 社区开源，专为裸机环境下的负载均衡所设计，现已加入 CNCF Landscape，是为 CNCF 所认可的构建云原生最佳实践中的重要一环。
 
-KubeSphere can help enterprises deploy a containerized architecture on bare metal, load balancing traffic with a physical switch. In this connection, [Porter](https://github.com/kubesphere/porter), a CNCF-certified cloud-native tool is born for this end. At the same time, KubeSphere, together with QingCloud VPC and QingStor NeonSAN, provides users with a complete set of features ranging from load balancing, container platform building, network management, and storage. This means virtually all aspects of the containerized architecture can be fully controlled and uniformly managed, without sacrificing the performance in virtualization.
-
-For detailed information about how KubeSphere drives the development of numerous industries, please see [Case Studies](https://kubesphere.io/case/).
+有关 KubeSphere 如何推动各行各业的发展并实现数字化转型，请参见[用户案例学习](../../../case/)。
