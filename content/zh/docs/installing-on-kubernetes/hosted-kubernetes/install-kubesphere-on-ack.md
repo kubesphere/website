@@ -170,9 +170,9 @@ shell@Alicloud:~$ cat cluster-configuration.yaml | grep VolumeSize
     prometheusVolumeSize: 20Gi       # Prometheus PVC size.
 ```
 
-编辑cluster-configuration.yaml文件，调整`openldapVolumeSize、elasticsearchMasterVolumeSize、jenkinsVolumeSize`3个卷大小为20G。
+编辑 cluster-configuration.yaml 文件，调整 `openldapVolumeSize、elasticsearchMasterVolumeSize、jenkinsVolumeSize` 3 个卷大小为 20G。
 
-执行以下命令部署kubesphere：
+执行以下命令部署 kubesphere：
 
 ```bash
 kubectl apply -f kubesphere-installer.yaml
