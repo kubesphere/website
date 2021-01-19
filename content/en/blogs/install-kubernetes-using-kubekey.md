@@ -46,7 +46,7 @@ I am going to create a cluster with three nodes on cloud. Here is my machine con
 - All nodes must be accessible through `SSH`.
 - Time synchronization for all nodes.
 - `sudo`/`curl`/`openssl` should be used in all nodes.
-- You can install docker on all nodes in advance. Alternatively, KubeKey will install docker automatically as it installs Kubernetes. An image mirror is recommended to be prepared if you have trouble downloading images from `dockerhub.io`. For more information, see [Configure registry mirrors for the Docker daemon](https://docs.docker.com/registry/recipes/mirror/#configure-the-docker-daemon).
+- You can install docker on all nodes in advance. Alternatively, KubeKey will install docker automatically as it installs Kubernetes. A registry mirror is recommended to be prepared if you have trouble downloading images from `dockerhub.io`. For more information, see [Configure registry mirrors for the Docker daemon](https://docs.docker.com/registry/recipes/mirror/#configure-the-docker-daemon).
 
 ## Dependency Requirements
 

@@ -88,7 +88,7 @@ KubeKey 可以一同安装 Kubernetes 和 KubeSphere。根据要安装的 Kubern
 {{< notice tip >}}
 
 - 建议您使用干净的操作系统（不安装任何其他软件）。否则，可能会有冲突。
-- 如果您在从 `dockerhub.io` 下载镜像时遇到问题，建议准备一个容器镜像（加速器）。请参见[为安装配置加速器](../../../faq/installation/configure-booster/)或[为 Docker Daemon 配置仓库镜像](https://docs.docker.com/registry/recipes/mirror/#configure-the-docker-daemon)。
+- 如果您在从 `dockerhub.io` 下载镜像时遇到问题，建议提前准备仓库的镜像地址（即加速器）。请参见[为安装配置加速器](../../../faq/installation/configure-booster/)或[为 Docker Daemon 配置仓库镜像](https://docs.docker.com/registry/recipes/mirror/#configure-the-docker-daemon)。
 
 {{</ notice >}}
 

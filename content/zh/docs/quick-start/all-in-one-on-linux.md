@@ -71,7 +71,7 @@ KubeKey 是用 Go 语言开发的一款全新的安装工具，代替了以前�
 {{< notice tip >}}
 
 - 建议您的操作系统处于干净状态（不安装任何其他软件），否则可能会发生冲突。
-- 如果您无法从 `dockerhub.io` 下载容器镜像，建议提前准备好容器镜像或者配置镜像加速器。有关更多信息，请参见[为安装配置加速器](../../faq/installation/configure-booster/)。
+- 如果您无法从 `dockerhub.io` 下载容器镜像，建议提前准备仓库的镜像地址（即加速器）。有关更多信息，请参见[为安装配置加速器](../../faq/installation/configure-booster/)。
 
 {{</ notice >}}
 
