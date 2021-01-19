@@ -5,7 +5,7 @@ description: '如何通过 KubeSphere 应用商店部署 Memcached'
 linkTitle: "在 KubeSphere 中部署 Memcached"
 weight: 14230
 ---
-[Memcached](https://memcached.org/) 是一个内存中的 (in-memory) 键值存储库，用于存储由数据库调用、API 调用或页面渲染产生的小块任意数据（字符串、对象）。它的 API 对大多数流行的语言均可用。
+[Memcached](https://memcached.org/) 是一个内存中的 (in-memory) 键值存储库，用于存储由数据库调用、API 调用或页面渲染产生的小块任意数据（字符串、对象）。它的 API 对大多数主流的语言均可用。
 
 本教程演示如何从 KubeSphere 应用商店部署 Memcached。
 
@@ -46,7 +46,7 @@ weight: 14230
 
    ![Memcached 服务](/images/docs/zh-cn/appstore/built-in-apps/deploy-memcached-on-ks/memcached-service.PNG)
 
-2. 在详情页面，您可以分别在**服务端口**和**容器组**下找到端口号和容器组 IP。
+2. 在详情页面，您可以分别在**服务端口**和**容器组**下找到端口号和 Pod IP。
 
    ![Memcached 端口和 Pod](/images/docs/zh-cn/appstore/built-in-apps/deploy-memcached-on-ks/memcached-port-pod.PNG)
 
