@@ -65,7 +65,7 @@ Developed in Go language, KubeKey represents a brand-new installation tool as a 
 {{< notice tip >}}
 
 - It is recommended that your OS be clean (without any other software installed). Otherwise, there may be conflicts.
-- It is recommended that a container image mirror (a booster) be prepared if you have trouble downloading images from `dockerhub.io`. For more information, see [Configure a Booster for Installation](../../faq/installation/configure-booster/).
+- It is recommended that a registry mirror (a booster) be prepared if you have trouble downloading images from `dockerhub.io`. For more information, see [Configure a Booster for Installation](../../faq/installation/configure-booster/).
 
 {{</ notice >}}
 

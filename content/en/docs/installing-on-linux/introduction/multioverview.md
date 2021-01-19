@@ -82,7 +82,7 @@ KubeKey can install Kubernetes and KubeSphere together. The dependency that need
 {{< notice tip >}}
 
 - It's recommended that your OS be clean (without any other software installed). Otherwise, there may be conflicts.
-- A container image mirror (booster) is recommended to be prepared if you have trouble downloading images from `dockerhub.io`. See [Configure a Booster for Installation](../../../faq/installation/configure-booster/) and [Configure registry mirrors for the Docker daemon](https://docs.docker.com/registry/recipes/mirror/#configure-the-docker-daemon).
+- A registry mirror (booster) is recommended to be prepared if you have trouble downloading images from `dockerhub.io`. See [Configure a Booster for Installation](../../../faq/installation/configure-booster/) and [Configure registry mirrors for the Docker daemon](https://docs.docker.com/registry/recipes/mirror/#configure-the-docker-daemon).
 
 {{</ notice >}}
 
