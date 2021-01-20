@@ -1,59 +1,59 @@
 ---
-title: "Container Limit Ranges"
-keywords: 'Kubernetes, KubeSphere, resource, quotas, limits, requests, limit ranges, containers'
-description: 'How to set default container limit ranges.'
-linkTitle: "Container Limit Ranges"
+title: "容器限制范围"
+keywords: 'Kubernetes, KubeSphere, 资源, 配额, 限制, 请求, 限制范围, 容器'
+description: '如何设置默认容器限制范围。'
+linkTitle: "容器限制范围"
 weight: 13400
 ---
 
-A container can use as much CPU and memory as set by [the resource quota for a project](../../workspace-administration/project-quotas/). At the same time, KubeSphere uses requests and limits to control resource (e.g. CPU and memory) usage for a container, also known as [LimitRanges](https://kubernetes.io/docs/concepts/policy/limit-range/) in Kubernetes. Requests make sure the container can get the resources it needs as they are specifically guaranteed and reserved. On the contrary, limits ensure that container can never use resources above a certain value.
+容器可以按照[项目资源配额](../../workspace-administration/project-quotas/)的设置来使用 CPU 和内存。同时，KubeSphere 使用请求 (request) 和限制 (limit) 来控制容器的资源（例如 CPU 和内存）使用情况，在 Kubernetes 中也称为 [LimitRange](https://kubernetes.io/zh/docs/concepts/policy/limit-range/)。请求确保容器能够获得其所需要的资源，因为这些资源已经得到明确保障和预留。相反地，限制确保容器不能使用超过特定值的资源。
 
-When you create a workload, such as a Deployment, you configure resource requests and limits for the container. To make these request and limit fields pre-populated with values, you can set default limit ranges.  
+当您创建工作负载（例如部署）时，您可以为容器配置资源请求和资源限制。要预先填充这些请求字段和限制字段的值，您可以设置默认限制范围。
 
-This tutorial demonstrates how to set default limit ranges for containers in a project.
+本教程演示如何为项目中的容器设置默认限制范围。
 
-## Prerequisites
+## 准备工作
 
-You have an available workspace, a project and an account (`project-admin`). The account must have the `admin` role at the project level. For more information, see [Create Workspaces, Projects, Accounts and Roles](../../quick-start/create-workspace-and-project/).
+您需要有一个可用的企业空间、一个项目和一个帐户 (`project-admin`)。该帐户必须在项目层级拥有 `admin` 角色。有关更多信息，请参见[创建企业空间、项目、帐户和角色](../../quick-start/create-workspace-and-project/)。
 
-## Set Default Limit Ranges
+## 设置默认限制范围
 
-1. Log in to the console as `project-admin` and go to a project. On the **Overview** page, you can see default limit ranges remain unset if the project is newly created. Click **Set** to configure limit ranges.
+1. 以 `project-admin` 身份登录控制台，进入一个项目。如果该项目是新创建的项目，您在**概览**页面上会看到默认限制范围尚未设置。点击**设置**来配置限制范围。
 
-   ![limit-ranges](/images/docs/project-administration/container-limit-ranges/limit-ranges.jpg)
+   ![限制范围](/images/docs/zh-cn/project-administration/container-limit-ranges/limit-ranges.PNG)
 
-2. In the dialog that appears, you can see that KubeSphere does not set any requests or limits by default. To set requests and limits to control CPU and memory resources, use the slider to move to a desired value or input numbers directly. Leaving a field blank means you do not set any requests or limits. 
+2. 在弹出对话框中，您可以看到 KubeSphere 默认不设置任何请求或限制。要设置请求和限制来控制 CPU 和内存资源，请移动滑块至期望的值或者直接输入数值。字段留空意味着不设置任何请求或限制。
 
-   ![default-limit-range](/images/docs/project-administration/container-limit-ranges/default-limit-range.jpg)
+   ![默认限制范围](/images/docs/zh-cn/project-administration/container-limit-ranges/default-limit-range.PNG)
 
    {{< notice note >}}
 
-   The limit can never be lower than the request.
+   限制必须大于请求。
 
    {{</ notice >}} 
 
-3. Click **OK** to finish setting limit ranges.
+3. 点击**确定**完成限制范围设置。
 
-4. Go to **Basic Info** in **Project Settings**, and you can see default limit ranges for containers in a project.
+4. 在**项目设置**下的**基本信息**页面，您可以查看项目中容器的默认限制范围。
 
-   ![view-limit-ranges](/images/docs/project-administration/container-limit-ranges/view-limit-ranges.jpg)
+   ![查看限制范围](/images/docs/zh-cn/project-administration/container-limit-ranges/view-limit-ranges.PNG)
 
-5. To change default limit ranges, click **Manage Project** on the **Basic Info** page and select **Edit Resource Default Request**.
+5. 要更改默认限制范围，请在**基本信息**页面点击**项目管理**，然后选择**编辑资源默认请求**。
 
-   ![change-limit-range](/images/docs/project-administration/container-limit-ranges/change-limit-range.jpg)
+   ![更改限制范围](/images/docs/zh-cn/project-administration/container-limit-ranges/change-limit-ranges.PNG)
 
-6. Change limit ranges directly in the dialog and click **OK**.
+6. 在弹出的对话框中直接更改限制范围，然后点击**确定**。
 
-7. When you create a workload, requests and limits of the container will be pre-populated with values.
+7. 当您创建工作负载时，容器的请求和限制将预先填充对应的值。
 
-   ![workload-values](/images/docs/project-administration/container-limit-ranges/workload-values.jpg)
+   ![工作负载默认值](/images/docs/zh-cn/project-administration/container-limit-ranges/workload-values.PNG)
 
    {{< notice note >}}
 
-   For more information, see **Resource Request** in [Container Image Settings](../../project-user-guide/application-workloads/container-image-settings/).
+   有关更多信息，请参见[容器镜像设置](../../project-user-guide/application-workloads/container-image-settings/)中的**资源请求**。
 
    {{</ notice >}}
 
-## See Also
+## 另请参见
 
-[Project Quotas](../../workspace-administration/project-quotas/)
+[项目配额](../../workspace-administration/project-quotas/)
