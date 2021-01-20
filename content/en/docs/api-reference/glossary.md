@@ -50,7 +50,7 @@ This glossary includes general terms and technical terms that are specific to Ku
 
 - **DaemonSet** <br>A DaemonSet ensures that all (or some) nodes run a copy of a Pod, such as Fluentd and Logstash. For more information, see [DaemonSets](https://kubernetes.io/docs/concepts/workloads/controllers/daemonset/).
 
-- **Job **<br>A Job creates one or more Pods and ensures that a specified number of them successfully terminate. For more information, see [Jobs](https://kubernetes.io/docs/concepts/workloads/controllers/jobs-run-to-completion/).
+- **Job** <br>A Job creates one or more Pods and ensures that a specified number of them successfully terminate. For more information, see [Jobs](https://kubernetes.io/docs/concepts/workloads/controllers/jobs-run-to-completion/).
 
 - **CronJob** <br>A CronJob creates Jobs on a time-based schedule. A CronJob object is like one line of a crontab (cron table) file. It runs a Job periodically on a given schedule. For more information, see [CronJob](https://kubernetes.io/docs/concepts/workloads/controllers/cron-jobs/).
 
