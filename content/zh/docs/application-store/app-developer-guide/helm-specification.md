@@ -53,7 +53,7 @@ dependencies: （可选）Chart 必要条件的列表。
     alias: （可选）Chart 要使用的别名。当您要多次添加同一个 Chart 时，它会很有用。
 maintainers: （可选）
   - name: （必需）维护者姓名。
-    email: （可选）维护者邮箱。
+    email: （可选）维护者电子邮件。
     url: （可选）维护者 URL。
 icon: （可选）要用作图标的 SVG 或 PNG 图片的 URL。
 appVersion: （可选）应用版本。不需要是 SemVer。
