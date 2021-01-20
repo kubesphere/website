@@ -6,7 +6,7 @@ linkTitle: "容器限制范围"
 weight: 13400
 ---
 
-容器可以按照[项目资源配额](../../workspace-administration/project-quotas/)的设置来使用 CPU 和内存。同时，KubeSphere 使用请求 (request) 和限制 (limit) 来控制容器的资源（例如 CPU 和内存）使用情况，在 Kubernetes 中也称为 [LimitRange](https://kubernetes.io/zh/docs/concepts/policy/limit-range/)。请求确保容器能够获得其所需要的资源，因为这些资源已经得到明确保障和预留。相反地，限制确保容器不能使用超过特定值的资源。
+容器所使用的 CPU 和内存资源上限由[项目资源配额](../../workspace-administration/project-quotas/)指定。同时，KubeSphere 使用请求 (Request) 和限制 (Limit) 来控制单个容器的资源（例如 CPU 和内存）使用情况，在 Kubernetes 中也称为 [LimitRange](https://kubernetes.io/zh/docs/concepts/policy/limit-range/)。请求确保容器能够获得其所需要的资源，因为这些资源已经得到明确保障和预留。相反地，限制确保容器不能使用超过特定值的资源。
 
 当您创建工作负载（例如部署）时，您可以为容器配置资源请求和资源限制。要预先填充这些请求字段和限制字段的值，您可以设置默认限制范围。
 
