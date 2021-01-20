@@ -6,7 +6,7 @@ linkTitle: "项目配额"
 weight: 9600
 ---
 
-KubeSphere 使用请求 (request) 和限制 (limit) 来控制项目中的资源（例如 CPU 和内存）使用情况，在 Kubernetes 中也称为 [ResourceQuota](https://kubernetes.io/zh/docs/concepts/policy/resource-quotas/)。请求确保项目能够获得其所需的资源，因为这些资源已经得到明确保障和预留。相反地，限制确保项目不能使用超过特定值的资源。
+KubeSphere 使用请求 (Request) 和限制 (Limit) 来控制项目中的资源（例如 CPU 和内存）使用情况，在 Kubernetes 中也称为 [ResourceQuota](https://kubernetes.io/zh/docs/concepts/policy/resource-quotas/)。请求确保项目能够获得其所需的资源，因为这些资源已经得到明确保障和预留。相反地，限制确保项目不能使用超过特定值的资源。
 
 除了 CPU 和内存，您还可以单独为其他对象设置资源配额，例如项目中的 Pod、[部署](../../project-user-guide/application-workloads/deployments/)、[任务](../../project-user-guide/application-workloads/jobs/)、[服务](../../project-user-guide/application-workloads/services/)和 [ConfigMap](../../project-user-guide/configuration/configmaps/)。
 
