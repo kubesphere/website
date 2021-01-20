@@ -245,8 +245,8 @@ KubeSphere 集群部署完成后，可登录 KubeSphere 控制台查看集群节
 
 ##### CRI-O
 
-![CRI-O](../../../images/blogs/dockershim-out-of-kubernetes/containerd.png)
+![CRI-O](../../../images/blogs/dockershim-out-of-kubernetes/cri-o.png)
 
 ##### iSula on openEuler 20.09
 
-![iSula on openEuler 20.09](../../../images/blogs/dockershim-out-of-kubernetes/containerd.png)
+![iSula on openEuler 20.09](../../../images/blogs/dockershim-out-of-kubernetes/isula.png)
