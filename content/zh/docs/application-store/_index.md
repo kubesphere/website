@@ -74,3 +74,13 @@ KubeSphere 内置了15个在 Kubernetes 上常用的精选应用。只需点击�
 ### [在 KubeSphere 中部署 GitLab](../application-store/external-apps/gitlab-app/)
 
 了解如何通过应用仓库部署 GitLab 并访问服务。
+
+## 应用开发者指南
+
+### [Helm 开发者指南](../application-store/app-developer-guide/helm-developer-guide/)
+
+开发基于 Helm 的应用。
+
+### [Helm 规范](../application-store/app-developer-guide/helm-specification/)
+
+了解 Chart 结构和规范。
