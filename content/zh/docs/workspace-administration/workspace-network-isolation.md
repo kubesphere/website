@@ -26,7 +26,7 @@ weight: 9500
 
 {{< notice note >}}
 
-当网络隔离开启时，默认允许出站流量，而不同企业空间的进站流量将被拒绝。如果您需要自定义网络策略，则需要开启[项目网络隔离](../../project-administration/project-network-isolation/)并在项目设置中添加网络策略。
+当网络隔离开启时，默认允许出站流量，而不同企业空间的进站流量将被拒绝。如果您需要自定义网络策略，则需要开启[项目网络隔离](../../project-administration/project-network-isolation/)并在**项目设置**中添加网络策略。
 
 {{</ notice >}}
 
