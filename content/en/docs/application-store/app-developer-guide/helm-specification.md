@@ -107,7 +107,7 @@ spec:
               value: {{default "minio" .Values.storage}}
 ```
 
-The above example defines a ReplicationController template in Kubernetes. There some values referenced in it which are defined in `values.yaml`.
+The above example defines a ReplicationController template in Kubernetes. There  are some values referenced in it which are defined in `values.yaml`.
 
 - `imageRegistry`: The Docker image registry.
 - `dockerTag`: The Docker image tag.
