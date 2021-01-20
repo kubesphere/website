@@ -12,7 +12,7 @@ This glossary includes general terms and technical terms that are specific to Ku
 
 - **Workspace** <br>
     A logical unit to organize a tenant's workload projects (i.e. Kubernetes namespaces) and DevOps projects. It also features access control of different resources and allows team members to share information.
-- **System workspace** <br>A special place to organize system projects of KubeSphere, Kubernetes and optional components such as App Store (based on OpenPitrix), service mesh (based on Istio) and monitoring.
+- **System workspace** <br>A special place to organize system projects of KubeSphere, Kubernetes and optional components such as App Store, service mesh and DevOps.
 - **Workspace member** <br>The users that are invited to a workspace who have certain permissions to work in the workspace.
 - **Project** <br>
     A project in KubeSphere is a Kubernetes namespace.
@@ -20,14 +20,13 @@ This glossary includes general terms and technical terms that are specific to Ku
     A project whose workloads are deployed across multiple clusters.
 - **Project member** <br>
     The users that are invited to a project who have certain permissions to work in the project.
-- **Workbench** <br>
-    The landing page for a tenant containing authorized resources that they can access such as workspaces and App Store.
+- **Workbench** <br>The landing page for a tenant. It displays authorized resources that the tenant can access such as workspaces and projects.
 - **Volume** <br>
     A KubeSphere Volume is a Kubernetes PersistentVolumeClaim (PVC).
 - **Public cluster** <br>
-    Platform administrators can set cluster visibility so that a cluster is available to certain workspaces. A public cluster means all platform users can access the cluster, in which they are able to create and schedule resources.
+    Cluster administrators can set cluster visibility so that a cluster is available to certain workspaces. A public cluster means all platform users can access the cluster, in which they are able to create and schedule resources.
 - **KubeKey** <br>
-    A brand-new installation tool developed in Go. It is able to install KubeSphere and Kubernetes separately or install them together.
+    A brand-new installation tool developed in Go. It is able to install KubeSphere and Kubernetes together or install Kubernetes only. It supports the deployment of cloud-native add-ons (YAML or Chart) as it creates a cluster. It can also be used to scale and upgrade a cluster.
 - **ks-installer** <br>
     The package to deploy KubeSphere on existing Kubernetes clusters.
 
@@ -45,29 +44,17 @@ This glossary includes general terms and technical terms that are specific to Ku
 - **App Store** <br>
     A public place for different tenants to share various applications.
     
-- **Deployment**
+- **Deployment** <br>You use a Deployment to describe a desired state. The Kubernetes Deployment controller changes the actual state to the desired state at a controlled rate. In other words, a Deployment runs multiple replicas of an application and replaces any instances if they fail. For more information, see [Deployments](https://kubernetes.io/docs/concepts/workloads/controllers/deployment/).
 
-    You use a Deployment to describe a desired state. The Kubernetes Deployment controller changes the actual state to the desired state at a controlled rate. In other words, a Deployment runs multiple replicas of an application and replaces any instances if they fail. For more information, see [Deployments](https://kubernetes.io/docs/concepts/workloads/controllers/deployment/).
+- **StatefulSet** <br>A StatefulSet is the workload object used to manage stateful applications, such as MySQL. For more information, see [StatefulSets](https://kubernetes.io/docs/concepts/workloads/controllers/statefulset/).
 
-- **StatefulSet**
+- **DaemonSet** <br>A DaemonSet ensures that all (or some) nodes run a copy of a Pod, such as Fluentd and Logstash. For more information, see [DaemonSets](https://kubernetes.io/docs/concepts/workloads/controllers/daemonset/).
 
-    A StatefulSet is the workload object used to manage stateful applications, such as MySQL. For more information, see [StatefulSets](https://kubernetes.io/docs/concepts/workloads/controllers/statefulset/).
+- **Job** <br>A Job creates one or more Pods and ensures that a specified number of them successfully terminate. For more information, see [Jobs](https://kubernetes.io/docs/concepts/workloads/controllers/jobs-run-to-completion/).
 
-- **DaemonSet**
+- **CronJob** <br>A CronJob creates Jobs on a time-based schedule. A CronJob object is like one line of a crontab (cron table) file. It runs a Job periodically on a given schedule. For more information, see [CronJob](https://kubernetes.io/docs/concepts/workloads/controllers/cron-jobs/).
 
-    A DaemonSet ensures that all (or some) nodes run a copy of a Pod, such as Fluentd and Logstash. For more information, see [DaemonSets](https://kubernetes.io/docs/concepts/workloads/controllers/daemonset/).
-
-- **Job**
-
-    A Job creates one or more Pods and ensures that a specified number of them successfully terminate. For more information, see [Jobs](https://kubernetes.io/docs/concepts/workloads/controllers/jobs-run-to-completion/).
-
-- **CronJob**
-
-    A CronJob creates Jobs on a time-based schedule. A CronJob object is like one line of a crontab (cron table) file. It runs a Job periodically on a given schedule. For more information, see [CronJob](https://kubernetes.io/docs/concepts/workloads/controllers/cron-jobs/).
-
-- **Service**
-
-    A Kubernetes Service is an abstraction object which defines a logical set of Pods and a policy by which to access them - sometimes called a microservice. For more information, see [Service](https://kubernetes.io/docs/concepts/services-networking/service/).
+- **Service** <br>A Kubernetes Service is an abstraction object which defines a logical set of Pods and a policy by which to access them - sometimes called a microservice. For more information, see [Service](https://kubernetes.io/docs/concepts/services-networking/service/).
 
 ## DevOps
 
@@ -89,11 +76,8 @@ This glossary includes general terms and technical terms that are specific to Ku
 - **B2I** <br>
     Binary-to-Image. B2I is a toolkit and workflow for building reproducible container images from binary executables such as Jar, War, and binary packages.
     
-- **S2I** <br>
-    
-    Source-to-Image. S2I is a toolkit and workflow for building reproducible container images from source code. S2I produces ready-to-run images by injecting source code into a container image and letting the container prepare that source code for execution.
-    
-    
+- **S2I** <br>Source-to-Image. S2I is a toolkit and workflow for building reproducible container images from source code. S2I produces ready-to-run images by injecting source code into a container image and letting the container prepare that source code for execution.
+  
 
 ## Logging, Events and Auditing
 
@@ -101,9 +85,9 @@ This glossary includes general terms and technical terms that are specific to Ku
     The method to search results that perfectly match the keyword entered.
 
 - **Fuzzy query** <br>The method to search results that partially match the keyword entered.
-    
+  
 - **Audit policy** <br>An audit policy defines a set of rules about what events should be recorded and what data they should include.
-    
+  
 - **Audit rule** <br>
     An auditing rule defines how to process auditing logs.
 
@@ -130,7 +114,7 @@ This glossary includes general terms and technical terms that are specific to Ku
 - **Notification Receiver** <br>
     The channel to receive notifications, such as email, WeChat Work, Slack and webhook.
 
-## Router
+## Network
 
 - **Route** <br>
     A KubeSphere Route is a Kubernetes Ingress.

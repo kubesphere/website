@@ -1,176 +1,152 @@
 ---
-title: "Glossary"
-keywords: 'Kubernetes, KubeSphere, devops, docker, helm, jenkins, istio, prometheus, glossary'
-description: 'KubeSphere glossary'
-linkTitle: "Glossary"
+title: "词汇表"
+keywords: 'Kubernetes, KubeSphere, DevOps, docker, Helm, Jenkins, Istio, Prometheus, 词汇表'
+description: 'KubeSphere 词汇表'
+linkTitle: "词汇表"
 weight: 17100
 ---
 
-This glossary includes general terms and technical terms that are specific to KubeSphere.
+本词汇表包含 KubeSphere 中专有的通用术语和技术术语。
 
-## General
+## 通用术语
 
-- **Workspace** <br>
-    A logical unit to organize a tenant's workload projects (i.e. Kubernetes namespaces) and DevOps projects. It also features access control of different resources and allows team members to share information.
-- **System workspace** <br>A special place to organize system projects of KubeSphere, Kubernetes and optional components such as App Store (based on OpenPitrix), service mesh (based on Istio) and monitoring.
-- **Workspace member** <br>The users that are invited to a workspace who have certain permissions to work in the workspace.
-- **Project** <br>
-    A project in KubeSphere is a Kubernetes namespace.
-- **Multi-cluster project** <br>
-    A project whose workloads are deployed across multiple clusters.
-- **Project member** <br>
-    The users that are invited to a project who have certain permissions to work in the project.
-- **Workbench** <br>
-    The landing page for a tenant containing authorized resources that they can access such as workspaces and App Store.
-- **Volume** <br>
-    A KubeSphere Volume is a Kubernetes PersistentVolumeClaim (PVC).
-- **Public cluster** <br>
-    Platform administrators can set cluster visibility so that a cluster is available to certain workspaces. A public cluster means all platform users can access the cluster, in which they are able to create and schedule resources.
+- **企业空间** <br>
+    管理租户工作负载项目（即 Kubernetes 中的企业空间）和 DevOps 工程的逻辑单位。不同团队的成员在企业空间中有不同的权限，可对资源执行不同的操作并共享信息。
+- **系统企业空间** <br>管理 KubeSphere、Kubernetes 以及可选组件（例如应用商店、服务网格和 DevOps 等）系统项目的特殊企业空间。
+- **企业空间成员** <br>邀请至企业空间中工作的用户，拥有特定的权限。
+- **项目** <br>
+    KubeSphere 中的项目对应 Kubernetes 中的命名空间。
+- **多集群项目** <br>
+    工作负载部署在多个集群上的项目。
+- **项目成员** <br>
+    邀请至项目中工作的用户，拥有特定的权限。
+- **工作台** <br>
+    租户的登录页面，会显示租户拥有访问权限的资源，例如企业空间和项目。
+- **存储卷** <br>
+    KubeSphere 存储卷指 Kubernetes 中的 PersistentVolumeClaim (PVC)。
+- **公开集群** <br>集群管理员可以设置集群可见性，以便企业空间可以使用所授权的集群。将集群设置为公开集群意味着所有的平台成员都可访问该集群，并在该集群中创建和调度资源。
 - **KubeKey** <br>
-    A brand-new installation tool developed in Go. It is able to install KubeSphere and Kubernetes separately or install them together.
+    以 Go 语言编写的全新安装器，可单独安装 Kubernetes 或同时安装 Kubernetes 和 KubeSphere，并支持在创建集群时部署云原生插件（YAML 或 Chart 格式），亦可用于伸缩和升级集群。
 - **ks-installer** <br>
-    The package to deploy KubeSphere on existing Kubernetes clusters.
+    在已有 Kubernetes 集群上部署 KubeSphere 的安装包。
 
-## Applications and Workloads
+## 应用程序和工作负载
 
 - **OpenPitirx** <br>
-    An open-source system to package, deploy and manage different types of apps.
+    一个用于打包、部署和管理不同类型应用的开源系统。
 
-- **App template** <br>
-    A template for a specific application that tenants can use to deploy new application instances.
+- **应用模板** <br>
+    某个应用程序的模板，租户可使用应用模板部署新的应用程序实例。
 
-- **App repository** <br>
-    A web accessible repository that hosts different app templates.
+- **应用仓库** <br>
+    基于 Web 包含不同应用模板的仓库，独立于 OpenPitrix 的外部存储而创建，例如 [MinIO](https://min.io/) 对象存储、[QingStor 对象存储](https://github.com/qingstor)以及 [AWS 对象存储](https://aws.amazon.com/cn/what-is-cloud-object-storage/)。
 
-- **App Store** <br>
-    A public place for different tenants to share various applications.
-    
-- **Deployment**
+- **应用商店** <br>应用商店包含内置应用，平台租户也可在应用商店中分享不同的应用程序。
+  
+- **部署** <br>您使用部署描述一个期望状态，Kubernetes 部署控制器会以受控速率将实际状态变更为期望状态。一个部署运行着应用程序的几个副本，它会自动替换宕机或故障的实例。有关更多信息，请参见[部署](https://kubernetes.io/zh/docs/concepts/workloads/controllers/deployment/)。
 
-    You use a Deployment to describe a desired state. The Kubernetes Deployment controller changes the actual state to the desired state at a controlled rate. In other words, a Deployment runs multiple replicas of an application and replaces any instances if they fail. For more information, see [Deployments](https://kubernetes.io/docs/concepts/workloads/controllers/deployment/).
+- **有状态副本集** <br>有状态副本集是用于管理有状态应用程序的工作负载对象，例如 MySQL。有关更多信息，请参见[有状态副本集](https://kubernetes.io/zh/docs/concepts/workloads/controllers/statefulset/)。
 
-- **StatefulSet**
+- **守护进程集** <br>守护进程集管理多组 Pod 副本，确保所有（或某些）节点运行一个 Pod 的副本，例如 Fluentd 和 Logstash。有关更多信息，请参见[守护进程集](https://kubernetes.io/zh/docs/concepts/workloads/controllers/daemonset/)。
 
-    A StatefulSet is the workload object used to manage stateful applications, such as MySQL. For more information, see [StatefulSets](https://kubernetes.io/docs/concepts/workloads/controllers/statefulset/).
+- **任务** <br>任务会创建一个或者多个 Pod，并确保指定数量的 Pod 成功结束。有关更多信息，请参见[任务](https://kubernetes.io/zh/docs/concepts/workloads/controllers/job/)。
 
-- **DaemonSet**
+- **定时任务** <br>定时任务按照特定时间或特定时间间隔运行任务，定时任务对象就像 crontab 文件中的一行。有关更多信息，请参见[定时任务](https://kubernetes.io/zh/docs/concepts/workloads/controllers/cron-jobs/)。
 
-    A DaemonSet ensures that all (or some) nodes run a copy of a Pod, such as Fluentd and Logstash. For more information, see [DaemonSets](https://kubernetes.io/docs/concepts/workloads/controllers/daemonset/).
-
-- **Job**
-
-    A Job creates one or more Pods and ensures that a specified number of them successfully terminate. For more information, see [Jobs](https://kubernetes.io/docs/concepts/workloads/controllers/jobs-run-to-completion/).
-
-- **CronJob**
-
-    A CronJob creates Jobs on a time-based schedule. A CronJob object is like one line of a crontab (cron table) file. It runs a Job periodically on a given schedule. For more information, see [CronJob](https://kubernetes.io/docs/concepts/workloads/controllers/cron-jobs/).
-
-- **Service**
-
-    A Kubernetes Service is an abstraction object which defines a logical set of Pods and a policy by which to access them - sometimes called a microservice. For more information, see [Service](https://kubernetes.io/docs/concepts/services-networking/service/).
+- **服务** <br>Kubernetes 服务是一种抽象对象，定义一组逻辑 Pod 和访问它们的策略，有时也称为微服务。有关更多信息，请参见[服务](https://kubernetes.io/zh/docs/concepts/services-networking/service/)。
 
 ## DevOps
 
-- **DevOps project** <br>
-    A specific project for DevOps where you manage pipelines and credentials.
-
-- **SCM** <br>
-    Source Control Management, such as GitHub and Gitlab.
-
+- **DevOps 工程** <br>DevOps 工程用于创建和管理流水线和凭证。
+  
+- **SCM** <br>源控制管理 (Source Control Management)，例如 GitHub 和 Gitlab。
+  
 - **In-SCM** <br>
-    The pipeline based on a Jenkinsfile that is hosted in SCM.
+    通过 SCM 工具构建基于 Jenkinsfile 的流水线。
 
 - **Out-of-SCM** <br>
-    The pipeline created through graphical editing panels without a Jenkinsfile.
+    通过图形编辑面板构建流水线，无需编写 Jenkinsfile。
 
-- **CI node** <br>
-    A specific node for pipelines, S2I jobs or B2I jobs. Generally, applications often need to pull various dependencies during the building process. It might cause some issues like long pulling time, or unstable network causing failure. To build robust pipelines and speed up the building by using caches, you configure one or a set of CI nodes to which KubeSphere schedules the tasks of CI/CD pipelines and S2I/B2I.
+- **CI 节点** <br>
+    流水线、S2I 和 B2I 任务的专用节点。一般来说，应用程序往往需要在构建过程中拉取多个依赖项，这可能会导致如拉取时间过长、网络不稳定等问题，从而使得构建失败。为了确保流水线正常运行并加快构建速度（通过缓存），您可以配置一个或一组 CI 节点以供 CI/CD 流水线和 S2I/B2I 任务专用。
 
 - **B2I** <br>
-    Binary-to-Image. B2I is a toolkit and workflow for building reproducible container images from binary executables such as Jar, War, and binary packages.
+    B2I (Binary-to-Image) 是一套从二进制可执行文件（例如 Jar 和 War 等）构建可再现容器镜像的工具和工作流。开发者和运维团队在项目打包成 War 和 Jar 这一类的制品后，可快速将制品或二进制的 Package 打包成 Docker 镜像，并发布到 DockerHub 或 Harbor 等镜像仓库中。
     
-- **S2I** <br>
+- **S2I** <br>S2I (Source-to-Image) 是一套从源代码构建可再现容器镜像的工具和工作流。通过将源代码注入容器镜像，自动将编译后的代码打包成镜像。在 KubeSphere 中支持 S2I 构建镜像，也支持以创建服务的形式，一键将源代码生成镜像推送到仓库，并创建其部署和服务最终自动发布到 Kubernetes 中。
+
+## 日志、事件和审计
+
+- **精确匹配** <br>通过完全匹配关键词查找结果的检索方式。
   
-    Source-to-Image. S2I is a toolkit and workflow for building reproducible container images from source code. S2I produces ready-to-run images by injecting source code into a container image and letting the container prepare that source code for execution.
-    
-    
-
-## Logging, Events and Auditing
-
-- **Exact query** <br>
-    The method to search results that perfectly match the keyword entered.
-
-- **Fuzzy query** <br>The method to search results that partially match the keyword entered.
+- **模糊匹配** <br>通过部分匹配关键词查找结果的检索方式。
   
-- **Audit policy** <br>An audit policy defines a set of rules about what events should be recorded and what data they should include.
+- **审计策略** <br>审计策略定义事件记录和所含数据的一系列规则。
   
-- **Audit rule** <br>
-    An auditing rule defines how to process auditing logs.
+- **审计规则** <br>
+    审计规则定义如何处理审计日志。
 
-- **Audit webhook** <br>
-    The webhook that the Kubernetes auditing logs will be sent to.
+- **审计 Webhook** <br>
+    Kubernetes 审计日志会发送至审计 Webhook。
 
-## Monitoring, Alert and Notification
+## 监控、告警和通知
 
-- **Cluster Status Monitoring** <br>
-    The monitoring of related metrics such as node status, component status, CPU, memory, network, and disk of the cluster.
+- **集群状态监控** <br>
+    监控集群中的相关指标，如节点状态、组件状态、CPU、内存、网络和硬盘等。
 
-- **Application Resource Monitoring** <br>
-    The monitoring of application resources across the platform, such as the number of projects and DevOps projects, as well as the number of workloads and services of a specific type.
+- **应用资源监控** <br>
+    监控平台上的应用程序资源，例如项目和 DevOps 工程的数量，以及特定类型的工作负载和服务的数量。
 
-- **Allocated CPU** <br>
-    The metric is calculated based on the total CPU requests of Pods, for example, on a node. It represents the amount of CPU reserved for workloads on this node, even if workloads are using fewer CPU resources.
+- **已分配 CPU** <br>
+    该指标根据节点上 Pod 的总 CPU 请求数计算得出。它表示节点上为工作负载预留的 CPU 资源，工作负载实际正在使用 CPU 资源可能低于该数值。
 
-- **Allocated Memory** <br>
-    The metric is calculated based on the total memory requests of Pods, for example, on a node. It represents the amount of memory reserved for workloads on this node, even if workloads are using fewer memory resources.
+- **已分配内存** <br>该指标根据节点上 Pod 的总内存请求计算得出。它表示节点上为工作负载预留的内存资源，工作负载实际正在使用内存资源可能低于该数值。
+  
+- **落盘日志收集** <br>
+    收集容器落盘日志并导出为 stdout，由系统日记收集器收集。
 
-- **Disk Log Collection** <br>
-    The capability to collect disk logs in a container and export to stdout, which will then be collected by the system log collector.
+- **通知接收器** <br>接收通知的渠道，如电子邮件、企业微信、Slack 和 Webhook。
 
-- **Notification Receiver** <br>
-    The channel to receive notifications, such as email, WeChat Work, Slack and webhook.
+## 网络
 
-## Router
+- **应用路由** <br>
+    KubeSphere 应用路由对应 Kubernetes 中的 Ingress。
 
-- **Route** <br>
-    A KubeSphere Route is a Kubernetes Ingress.
+- **网关** <br>
+    创建应用路由时，您需要启用外网访问网关，将请求转发至对应的后段服务。
 
-- **Gateway** <br>
-    Before creating a route, you need to enable the Internet access gateway which forwards requests to the corresponding backend service.
+## 服务网格
 
-## Service Mesh
+- **金丝雀发布** <br>
+    一种优雅的应用程序发布方式，首先您可将一小部分实际流量发送至服务的新版本进行测试。与此同时，老版本会处理剩余流量。如果一切运行正常，您可以逐渐增加发送至新版本的流量，直到最后新版本彻底接管所有流量。如果发生任何问题，您可以立刻调整流量比例，让老版本接管所有流量。
 
-- **Canary release** <br>
-    A graceful application release method that introduces a new version of a service and tests it by sending a small percentage of traffic to it. At the same time, the old version is responsible for handling the rest of the traffic. If everything goes well, you can gradually increase the traffic sent to the new version, while simultaneously phasing out the old version. In the case of any occurring issues, it allows you to roll back to the previous version as you change the traffic percentage.
+- **蓝绿部署** <br>此方式提供零宕机部署，即在保留旧版本的同时部署新版本。在任何时候，只有其中一个版本处于活跃状态，接收所有流量，另一个版本保持空闲状态。如果运行出现问题，您可以快速回滚到旧版本。
+  
+- **流量镜像** <br>
+    一种测试应用版本的零风险方式，将实时流量的副本发送给被镜像的服务，也称为流量影子 (Traffic Shadowing)。
 
-- **Blue-green release/deployment** <br>
-   A zero downtime application deployment where the new version can be deployed with the old one preserved. At any time, only one of the versions is active serving all the traffic, while the other one remains idle. If there is a problem with running, you can quickly roll back to the old version.
+- **应用治理** <br>
+    开启应用治理以在项目实现微服务的链路追踪。
 
-- **Traffic mirroring** <br>
-    A risk-free method of testing your app versions as it sends a copy of live traffic to a service that is being mirrored. It is also called shadowing.
+## 多集群管理
 
-- **Application governance** <br>
-    A switch to control the tracing of your application within a project.
+- **Host 集群（H 集群）** <br>
+    Host 集群管理 Member 集群，并提供统一的多集群中央控制平面。
 
-## Multi-cluster Management
+- **Member 集群（M 集群）** <br>
+    Member 集群在多集群架构中由 Host 集群统一管理。
 
-- **Host Cluster** **(H Cluster)** <br>
-    The cluster that manages Member Clusters. The multi-cluster control plane is deployed on the Host Cluster.
+- **直接连接** <br>
+    当 Host 集群的任意节点均可访问 Member 集群的 kube-apiserver 地址时可使用此方式直接连接 Host 集群和 Member 集群。  
 
-- **Member Cluster** **(M Cluster)** <br>
-    A cluster serving as a member managed by the Host Cluster in a multi-cluster architecture.
-
-- **Direct connection** <br>
-    A way to connect the Host Cluster and the Member Cluster when the kube-apiserver address of the Member Cluster is accessible on any node of the Host Cluster.
-
-- **Agent connection** <br>
-    A way to connect the Host Cluster and the Member Cluster when the Host Cluster cannot access the Member Cluster directly.
+- **代理连接** <br>
+    当 Host 集群无法直接连接 Member 集群时可使用代理方式连接 Host 集群和 Member 集群。
 
 - **jwtSecret** <br>
-    The secret needed for the Host Cluster and the Member Cluster to communicate with each other.
+    Host 集群和 Member 集群所需的密钥以便二者通信。
 
 - **Tower** <br>
-    When you use agent connection, there is a proxy component installed on the Host Cluster and agent installed on the Member Cluster. Tower consists of both the proxy and the agent.
+    使用代理连接时，Host 集群上会安装 proxy 组件而 Member 集群上会安装 agent，Tower 包含 proxy 和 agent。
 
-- **Proxy service address** <br>
-    The communication service address of the Host Cluster required by the tower agent in the Member Cluster when agent connection is adopted.
+- **代理服务地址** <br>
+    使用代理连接时，Member 集群上的 Tower agent 需要获取的 Host 集群的通信服务地址。
