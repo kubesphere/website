@@ -32,7 +32,7 @@ Build your app first based on [the Helm documentation](https://helm.sh/docs/topi
    cd mychart
    ```
 
-5. You can see that Helm has created related templates in the directory. For more informant, see [Create an App](../../../application-store/app-developer-guide/helm-developer-guide/#create-an-app).
+5. You can see that Helm has created related templates in the directory. For more information, see [Create an App](../../../application-store/app-developer-guide/helm-developer-guide/#create-an-app).
 
 ### Step 2: Submit an app
 

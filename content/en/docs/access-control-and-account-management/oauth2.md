@@ -86,4 +86,4 @@ To set IdentityProvider parameters, edit the ConfigMap of `kubesphere-config` in
 
    ![logged-in](/images/docs/access-control-and-account-management/oauth2-identity-provider/logged-in.png)
 
-6. After you log in the console, the account [can be invited to a workspace](../../workspace-administration/role-and-member-management/) to work in one or more projects.
+6. After you log in to the console, the account [can be invited to a workspace](../../workspace-administration/role-and-member-management/) to work in one or more projects.
