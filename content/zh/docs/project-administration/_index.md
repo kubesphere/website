@@ -1,6 +1,6 @@
 ---
 title: "项目管理"
-description: "Help you to better manage KubeSphere projects"
+description: "帮助您更好地管理 KubeSphere 项目"
 layout: "single"
 
 linkTitle: "项目管理"
@@ -10,24 +10,24 @@ icon: "/images/docs/docs.svg"
 
 ---
 
-A KubeSphere project is a Kubernetes namespace. There are two types of projects, the single-cluster project and the multi-cluster project. The former one is the regular Kubernetes namespace, while the latter is the federated namespace across multiple clusters. As a project administrator, you are responsible for project creation, limit range settings, network isolation configuration, and more.
+KubeSphere 的项目即 Kubernetes 的命名空间。项目有两种类型，即单集群项目和多集群项目。单集群项目是 Kubernetes 常规命名空间，多集群项目是跨多个集群的联邦命名空间。项目管理员负责创建项目、设置限制范围、配置网络隔离以及其他操作。
 
-## [Projects and Multi-cluster Projects](../project-administration/project-and-multicluster-project/)
+## [项目和多集群项目](../project-administration/project-and-multicluster-project/)
 
-Learn how to create different types of projects.
+了解如何创建不同类型的项目。
 
-## [Role and Member Management](../project-administration/role-and-member-management/)
+## [角色和成员管理](../project-administration/role-and-member-management/)
 
-Learn how to manage access control for a project.
+了解如何进行项目访问管理。
 
-## [Project Network Isolation](../project-administration/project-network-isolation/)
+## [项目网络隔离](../project-administration/project-network-isolation/)
 
-Understand the concept of network isolation and how to configure network policies for a project.
+了解网络隔离的概念以及如何配置项目网络策略。
 
-## [Container Limit Ranges](../project-administration/container-limit-ranges/)
+## [容器限制范围](../project-administration/container-limit-ranges/)
 
-Learn how to set default container limit ranges in a project.
+了解如何在项目中设置默认容器限制范围。
 
-## [Project Gateway](../project-administration/project-gateway/)
+## [项目网关](../project-administration/project-gateway/)
 
-Understand the concept of project gateway and how to manage it.
+了解项目网关的概念以及如何进行管理。
