@@ -11,7 +11,7 @@ icon: "/images/docs/docs.svg"
 
 ---
 
-KubeSphere 租户在企业空间中进行操作，管理项目和应用，而企业空间管理员负责管理应用仓库。拥有不同角色的租户可以进一步从应用仓库中部署和使用应用模板。他们也可以使用上传并发布至应用商店的单个应用模板。此外，管理员还控制一个企业空间的网络是否与其他企业空间相互隔离。
+KubeSphere 租户在企业空间中进行操作，管理项目和应用，而企业空间管理员负责管理应用仓库。拥有必要权限的租户可以进一步从应用仓库中部署和使用应用模板。他们也可以使用上传并发布至应用商店的单个应用模板。此外，管理员还控制一个企业空间的网络是否与其他企业空间相互隔离。
 
 本章演示企业空间管理员和租户如何在企业空间层级进行操作。
 
@@ -31,12 +31,19 @@ KubeSphere 租户在企业空间中进行操作，管理项目和应用，而企
 
 ### [上传应用至 KubeSphere 的 GitHub 仓库](../workspace-administration/app-repository/upload-app-to-public-repository/)
 
-上传您自己的应用至 KubeSphere 的公共仓库。
+上传您自己的应用至 KubeSphere 的 GitHub 仓库。
 
 ## [角色和成员管理](../workspace-administration/role-and-member-management/)
 
-自定义企业空间角色并向用户授予访问权限。
+自定义企业空间角色并将角色授予用户。
 
 ## [企业空间网络隔离](../workspace-administration/workspace-network-isolation/)
 
 在您的企业空间中开启或关闭网络策略。
+
+## [项目配额](../workspace-administration/project-quotas/)
+
+设置请求和限制，控制项目中的资源使用情况。
+
+
+
