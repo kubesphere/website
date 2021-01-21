@@ -29,7 +29,7 @@ Learn how to upload a Helm-based application as an app template to your workspac
 
 Import a Helm repository to KubeSphere to provide app templates for tenants in a workspace. 
 
-### [Upload Apps to KubeSphere Public Repository](../workspace-administration/app-repository/upload-app-to-public-repository/)
+### [Upload Apps to KubeSphere GitHub Repository](../workspace-administration/app-repository/upload-app-to-public-repository/)
 
 Upload your own apps to the public repository of KubeSphere.
 

@@ -1,6 +1,6 @@
 ---
 title: "企业空间管理和用户指南"
-description: "This chapter helps you to better manage KubeSphere workspaces."
+description: "本章帮助您更好地管理 KubeSphere 企业空间。"
 layout: "single"
 
 linkTitle: "企业空间管理和用户指南"
@@ -11,32 +11,32 @@ icon: "/images/docs/docs.svg"
 
 ---
 
-KubeSphere tenants work in a workspace to manage projects and apps. Among others, workspace administrators are responsible for the management of app repositories. Tenants of different roles can further deploy and use app templates from app repositories. They can also leverage individual app templates which are uploaded and released to the App Store. Besides, administrators also control whether the network of a workspace is isolated from others'.
+KubeSphere 租户在企业空间中进行操作，管理项目和应用，而企业空间管理员负责管理应用仓库。拥有不同角色的租户可以进一步从应用仓库中部署和使用应用模板。他们也可以使用上传并发布至应用商店的单个应用模板。此外，管理员还控制一个企业空间的网络是否与其他企业空间相互隔离。
 
-This chapter demonstrates how workspace administrators and tenants work at the workspace level.
+本章演示企业空间管理员和租户如何在企业空间层级进行操作。
 
-## [Workspace Overview](../workspace-administration/what-is-workspace/)
+## [企业空间概述](../workspace-administration/what-is-workspace/)
 
-Understand the concept of workspace in KubeSphere and learn how to create and delete a workspace.
+了解 KubeSphere 企业空间的概念以及如何创建和删除企业空间。
 
-## [Upload Helm-based Application](../workspace-administration/upload-helm-based-application/)
+## [上传基于 Helm 的应用程序](../workspace-administration/upload-helm-based-application/)
 
-Learn how to upload a Helm-based application as an app template to your workspace.
+了解如何向您的企业空间上传基于 Helm 的应用程序用作应用模板。
 
-## App Repository
+## 应用仓库
 
-### [Import Helm Repository](../workspace-administration/app-repository/import-helm-repository/)
+### [导入 Helm 仓库](../workspace-administration/app-repository/import-helm-repository/)
 
-Import a Helm repository to KubeSphere to provide app templates for tenants in a workspace. 
+导入 Helm 仓库至 KubeSphere，为企业空间中的租户提供应用模板。 
 
-### [Upload Apps to KubeSphere Public Repository](../workspace-administration/app-repository/upload-app-to-public-repository/)
+### [上传应用至 KubeSphere 的 GitHub 仓库](../workspace-administration/app-repository/upload-app-to-public-repository/)
 
-Upload your own apps to the public repository of KubeSphere.
+上传您自己的应用至 KubeSphere 的公共仓库。
 
-## [Role and Member Management](../workspace-administration/role-and-member-management/)
+## [角色和成员管理](../workspace-administration/role-and-member-management/)
 
-Customize a workspace role and grant access to users.
+自定义企业空间角色并向用户授予访问权限。
 
-## [Workspace Network Isolation](../workspace-administration/workspace-network-isolation/)
+## [企业空间网络隔离](../workspace-administration/workspace-network-isolation/)
 
-Enable or disable network policy in your workspace.
+在您的企业空间中开启或关闭网络策略。
