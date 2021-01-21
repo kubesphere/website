@@ -1,14 +1,14 @@
 ---
-title: "Upgrade QingCloud CSI"
-keywords: "Kubernetes, upgrade, KubeSphere, v3.0.0"
-description: "Upgrade QingCloud CSI"
-linkTitle: "Upgrade QingCloud CSI"
+title: "升级 QingCloud CSI"
+keywords: "Kubernetes, 升级, KubeSphere, v3.0.0"
+description: "升级 QingCloud CSI"
+linkTitle: "升级 QingCloud CSI"
 weight: 16210
 ---
 
-## Upgrade QingCloud CSI after Upgrading
+## 升级 KubeSphere 后升级 QingCloud CSI
 
-Currently QingCloud CSI cannot be upgraded by KubeKey. You can run the following command to upgrade the CSI manually after you upgrade KubeSphere:
+目前 QingCloud CSI 无法通过 KubeKey 升级。升级 KubeSphere 之后您可以运行以下命令手动升级 CSI：
 
 ```
 git clone https://github.com/yunify/qingcloud-csi.git
@@ -39,7 +39,7 @@ helm install test/csi-qingcloud --name-template csi-qingcloud --namespace kube-s
   --set config.qy_access_key_id=KEY,config.qy_secret_access_key=SECRET,config.zone=ZONE,sc.type=2
 ```
 
-Wait until the CSI controller and DaemonSet are up and running.
+等待 CSI 控制器和守护进程集启动并运行：
 
 ```
 $ kubectl get po -n kube-system | grep csi
@@ -52,7 +52,7 @@ csi-qingcloud-node-pxr56                    2/2     Running            0        
 csi-qingcloud-node-whqhk                    2/2     Running            0          24h
 ```
 
-Run the following command to check whether the CSI image version is 1.2.x:
+运行以下命令查看 CSI 镜像版本是否是 1.2.x：
 
 ```
 $ kubectl get po -n kube-system csi-qingcloud-controller-56979d46cb-qk9ck -ojson | jq '.spec.containers[].image' | grep qingcloud
