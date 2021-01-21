@@ -22,7 +22,7 @@ If you already have a standalone KubeSphere cluster installed, you can set the v
 
 - Option A - Use the web console:
 
-  Use the `admin` account to log in the console and go to **CRDs** on the **Cluster Management** page. Enter the keyword `ClusterConfiguration` and go to its detail page. Edit the YAML of `ks-installer`, which is similar to [Enable Pluggable Components](../../../pluggable-components/).
+  Use the `admin` account to log in to the console and go to **CRDs** on the **Cluster Management** page. Enter the keyword `ClusterConfiguration` and go to its detail page. Edit the YAML of `ks-installer`, which is similar to [Enable Pluggable Components](../../../pluggable-components/).
 
 - Option B - Use Kubectl:
 
@@ -88,7 +88,7 @@ If you already have a standalone KubeSphere cluster installed, you can set the v
 
 - Option A - Use the web console:
 
-  Use the  `admin` account to log in the console and go to **CRDs** on the **Cluster Management** page. Enter the keyword `ClusterConfiguration` and go to its detail page. Edit the YAML of `ks-installer`, which is similar to [Enable Pluggable Components](../../../pluggable-components/).
+  Use the  `admin` account to log in to the console and go to **CRDs** on the **Cluster Management** page. Enter the keyword `ClusterConfiguration` and go to its detail page. Edit the YAML of `ks-installer`, which is similar to [Enable Pluggable Components](../../../pluggable-components/).
 
 - Option B - Use Kubectl:
 
@@ -146,7 +146,7 @@ kubectl logs -n kubesphere-system $(kubectl get pod -n kubesphere-system -l app=
 
 ## Import a Member Cluster
 
-1. Log in the KubeSphere console as `admin` and click **Add Cluster** on the **Clusters Management** page.
+1. Log in to the KubeSphere console as `admin` and click **Add Cluster** on the **Clusters Management** page.
    
    ![add-cluster](/images/docs/multicluster-management/enable-multicluster-management-in-kubesphere/direct-connection/add-cluster.png)
 
