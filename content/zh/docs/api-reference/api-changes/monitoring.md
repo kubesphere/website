@@ -1,22 +1,22 @@
 ---
-title: "Monitoring"
-keywords: 'Kubernetes, KubeSphere, API, Monitoring'
-description: 'Monitoring API changes'
-linkTitle: "Monitoring"
+title: "监控系统"
+keywords: 'Kubernetes, KubeSphere, API, 监控系统'
+description: '监控系统 API 变更'
+linkTitle: "监控系统"
 weight: 17320
 ---
 
-## API Version
+## API 版本
 
-The monitoring API version is bumped to `v1alpha3`.
+监控系统 API 版本已提升至 `v1alpha3`。
 
-## Time Format
+## 时间格式
 
-The time format of query parameters must be in Unix timestamps (the number of seconds that has elapsed since the Unix epoch). Decimals are no longer allowed. The change affects the parameters `start`, `end` and `time`.
+查询参数的时间格式必须是 Unix 时间戳（自 Unix Epoch 以来已经过去的秒数）。不再支持使用小数。该变更影响 `start`、`end` 和 `time` 参数。
 
-## Deprecated Metrics
+## 已弃用的指标
 
-In KubeSphere 3.0.0, the metrics on the left have been renamed to the ones on the right.
+在 KubeSphere 3.0 中，下表左侧的指标已重命名为右侧的指标。
 
 |V2.0|V3.0|
 |---|---|
@@ -26,9 +26,9 @@ In KubeSphere 3.0.0, the metrics on the left have been renamed to the ones on th
 |workload_pod_net_bytes_transmitted | workload_net_bytes_transmitted|
 |workload_pod_net_bytes_received | workload_net_bytes_received|
 
-The following metrics have been deprecated and removed.
+下列指标已被弃用并移除。
 
-|Deprecated Metrics|
+|已弃用的指标|
 |---|
 |cluster_workspace_count|
 |cluster_account_count|
@@ -48,20 +48,20 @@ The following metrics have been deprecated and removed.
 |prometheus_up_sum|
 |prometheus_tsdb_head_samples_appended_rate|
 
-New metrics are introduced in KubeSphere 3.0.0.
+KubeSphere 3.0 中引入的新指标。
 
-|New Metrics|
+|新指标|
 |---|
 |kubesphere_workspace_count|
 |kubesphere_user_count|
 |kubesphere_cluser_count|
 |kubesphere_app_template_count|
 
-## Response Fields
+## 响应字段
 
-In KubeSphere 3.0.0, the response fields `metrics_level`, `status` and `errorType` are removed.
+在 KubeSphere 3.0 中，已移除响应字段 `metrics_level`、`status` 和 `errorType`。
 
-In addition, the field name `resource_name` has been replaced with the specific resource type names. These types are `node`, `workspace`, `namespace`, `workload`, `pod`, `container` and `persistentvolumeclaim`. For example, instead of `resource_name: node1`, you will get `node: node1`. See the example response below:
+另外，字段名称 `resource_name` 已替换为具体资源类型名称。这些类型是 `node`、`workspace`、`namespace`、`workload`、`pod`、`container` 和 `persistentvolumeclaim`。例如，您将获取 `node: node1`，而不是 `resource_name: node1`。请参见以下示例响应：
 
 ```json
 {
