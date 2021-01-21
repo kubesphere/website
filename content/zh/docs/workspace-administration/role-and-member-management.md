@@ -1,15 +1,12 @@
 ---
 title: "角色和成员管理"
-keywords: "Kubernetes, workspace, KubeSphere, multitenancy"
+keywords: "Kubernetes, workspace, KubeSphere, 多租户"
 description: "企业空间中的角色和成员管理"
-
 linkTitle: "角色和成员管理"
 weight: 9400
 ---
 
-本指南向您演示了如何在企业空间中管理角色和成员。有关 KubeSphere 角色的更多信息，请参见角色管理概览。
-
-在企业空间中，您可以向一个角色授权以下资源的权限：
+本指南向您演示如何在企业空间中管理角色和成员。在企业空间级别，您可以向一个角色授予以下资源的权限：
 
 - 项目
 - DevOps
