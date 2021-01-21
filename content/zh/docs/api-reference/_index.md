@@ -1,6 +1,6 @@
 ---
 title: "参考"
-description: "The glossary used by KubeSphere and how to use the KubeSphere API to build your own application"
+description: "KubeSphere 使用的词汇表以及如何使用 KubeSphere API 构建您自己的应用程序"
 layout: "single"
 
 linkTitle: "参考"
@@ -11,22 +11,22 @@ icon: "/images/docs/docs.svg"
 
 ---
 
-This chapter contains the glossary that is often used in KubeSphere and the information about the KubeSphere API.
+本章包含 KubeSphere 中的常用词汇表和有关 KubeSphere API 的信息。
 
-## [Glossary](../api-reference/glossary/)
+## [词汇表](../api-reference/glossary/)
 
-The glossary used in KubeSphere.
+KubeSphere 中使用的词汇表。
 
 ## [KubeSphere API](../api-reference/api-docs)
 
-The REST API is the fundamental fabric of KubeSphere. This guide shows you how to access the KubeSphere API server.
+REST API 是 KubeSphere 的基本结构。本指南向您展示如何访问 KubeSphere API 服务器。
 
-## API Changes
+## API 变更
 
-### [Logging](../api-reference/api-changes/logging/)
+### [日志系统](../api-reference/api-changes/logging/)
 
-The API changes of the component **logging** in KubeSphere v3.0.0.
+KubeSphere 3.0 中**日志系统**（服务组件）的 API 变更。
 
-### [Monitoring](../api-reference/api-changes/monitoring/)
+### [监控系统](../api-reference/api-changes/monitoring/)
 
-The API changes of the component **monitoring** in KubeSphere v3.0.0.
+KubeSphere 3.0 中**监控系统**（服务组件）的 API 变更。
