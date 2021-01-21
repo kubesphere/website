@@ -20,7 +20,7 @@ kubectl edit cc -n kubesphere-system ks-installer
 
 - 将 `es.externalElasticsearchUrl` 设置为弹性搜索的地址，`es.externalElasticsearchPort` 设置为它的端口号。
 
-```shell
+```yaml
 apiVersion: installer.kubesphere.io/v1alpha1
 kind: ClusterConfiguration
 metadata:
@@ -76,7 +76,7 @@ kubectl edit cc -n kubesphere-system ks-installer
 
 - 将 `es.logMaxAge` 设置为所需天数（默认为 7 天）。
 
-```shell
+```yaml
 apiVersion: installer.kubesphere.io/v1alpha1
 kind: ClusterConfiguration
 metadata:
@@ -110,7 +110,7 @@ kubectl rollout restart deploy -n kubesphere-system ks-installer
 
 要找出节点上的 Docker 根目录路径，可以运行以下命令。确保所有节点都适用相同的值。
 
-```
+```shell
 docker info -f '{{.DockerRootDir}}'
 ```
 
