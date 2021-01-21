@@ -1,27 +1,27 @@
 ---
-title: "Logging"
-keywords: 'Kubernetes, KubeSphere, API, Logging'
-description: 'Logging API changes'
-linkTitle: "Logging"
+title: "日志系统"
+keywords: 'Kubernetes, KubeSphere, API, 日志系统'
+description: '日志系统 API 变更'
+linkTitle: "日志系统"
 weight: 17310
 ---
 
-The API changes of the component **logging** in KubeSphere v3.0.0.
+KubeSphere 3.0 中**日志系统**（服务组件）的 API 变更。
 
-## Time Format
+## 时间格式
 
-The time format of query parameters must be Unix timestamps (the number of seconds that has elapsed since the Unix epoch). Milliseconds are no longer allowed. The change affects the parameters `start_time` and `end_time`.
+查询参数的时间格式必须是 Unix 时间戳（自 Unix Epoch 以来已经过去的秒数）。不再支持使用毫秒。该变更影响 `start_time` 和 `end_time` 参数。
 
-## Deprecated APIs
+## 已弃用的 API
 
-The following APIs are removed:
+下列 API 已移除：
 
 - GET  /workspaces/{workspace}
 - GET  /namespaces/{namespace}
 - GET  /namespaces/{namespace}/workloads/{workload}
 - GET  /namespaces/{namespace}/pods/{pod}
-- The whole log setting API group
+- 整个日志设置 API 组
 
 ## Fluent Bit Operator
 
-In KubeSphere 3.0.0, the whole log setting APIs are removed from the KubeSphere core since the project Fluent Bit Operator is refactored in an incompatible way. Please refer to [Fluent Bit Operator docs](https://github.com/kubesphere/fluentbit-operator) for how to configure log collection in KubeSphere 3.0.0.
+在 KubeSphere 3.0 中，由于 Fluent Bit Operator 项目已重构且不兼容，整个日志设置 API 已从 KubeSphere 内核中移除。有关如何在 KubeSphere 3.0 中配置日志收集，请参考 [Fluent Bit Operator](https://github.com/kubesphere/fluentbit-operator) 文档。
