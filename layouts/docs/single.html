@@ -234,19 +234,15 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     
         var bindClickMenu = function() {
             var sectionMenu = $(".section-menu")
-            $('.section-control').on('click', function(e){
+            $('.section-control').on('mouseenter', function(e){
                 if (sectionMenu.is(":hidden")) {
                     sectionMenu.show();
-                } else {
-                    sectionMenu.hide()
                 }
-    
-                $(document).one("click", function(){
-                    sectionMenu.hide()
-                });
-    
-                e.stopPropagation()
             })
+
+            $(document).on("click", function(){
+                sectionMenu.hide()
+            });
     
             sectionMenu.on("click", function(e){
                 e.stopPropagation();
