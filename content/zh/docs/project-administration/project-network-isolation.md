@@ -1,181 +1,181 @@
 ---
-title: "Project Network Isolation"
-keywords: 'KubeSphere, Kubernetes, Calico, Network Policy'
-description: 'Project Network Isolation'
-linkTitle: "Project Network Isolation"
+title: "项目网络隔离"
+keywords: 'KubeSphere, Kubernetes, Calico, 网络策略'
+description: '项目网络隔离'
+linkTitle: "项目网络隔离"
 weight: 13300
 ---
 
-KubeSphere project network isolation lets project administrators enforce which network traffic is allowed using different rules. This tutorial demonstrates how to enable network isolation among projects and set rules to control network traffic.
+项目网络隔离使项目管理员能够使用不同的规则来放行不同的网络流量。本教程演示如何开启项目间的网络隔离并设置规则控制网络流量。
 
-## Prerequisites
+## 准备工作
 
-- You have already enabled [Network Policies](../../pluggable-components/network-policy/).
-- You must have an available project and an account of the `admin` role (`project-admin`) at the project level. For more information, see [Create Workspace, Project, Account and Role](../../quick-start/create-workspace-and-project/).
+- 已经启用[网络策略](../../pluggable-components/network-policy/)。
+- 您必须有一个可用的项目和一个在项目层级拥有 `admin` 角色的帐户 (`project-admin`)。有关更多信息，请参见[创建企业空间、项目、帐户和角色](../../quick-start/create-workspace-and-project/)。
 
 {{< notice note >}}
 
-For the implementation of the Network Policy, you can refer to [KubeSphere NetworkPolicy](https://github.com/kubesphere/community/blob/master/sig-network/concepts-and-designs/kubesphere-network-policy.md).
+关于网络策略的实现，您可以参考 [KubeSphere NetworkPolicy](https://github.com/kubesphere/community/blob/master/sig-network/concepts-and-designs/kubesphere-network-policy.md)。
 
 {{</ notice >}}
 
-## Enable/Disable Project Network Isolation
+## 开启/关闭项目网络隔离
 
-1. Log in KubeSphere as `project-admin`. Go to your project and select **Network Isolation** in **Project Settings**. By default, project network isolation is disabled.
+1. 以 `project-admin` 身份登录 KubeSphere 控制台，进入您的项目，在**项目设置**下选择**网络隔离**。项目网络隔离默认关闭。
 
-   ![project-network-isolation](/images/docs/project-administration/project-network-isolation/project-network-isolation.jpg)
+   ![项目网络隔离](/images/docs/zh-cn/project-administration/project-network-isolation/project-network-isolation.PNG)
 
-2. To enable project network isolation, click **On**.
-
-   {{< notice note >}}
-
-   When network isolation is turned on, egress traffic will be allowed by default, while ingress traffic will be denied for different projects. But when you add an egress network policy, only traffic that matches your policy will be allowed to go out.
-
-   {{</ notice >}}
-
-3. You can also disable network isolation on this page.
-
-   ![isolation-off](/images/docs/project-administration/project-network-isolation/isolation-off.jpg)
+2. 要启用项目网络隔离，请点击**开启**。
 
    {{< notice note >}}
 
-   When network isolation is turned off, any previously created network policies will be deleted as well.
+   当网络隔离开启时，默认放行出站流量，而不同项目的进站流量将被拒绝。若您添加出站网络策略，只有符合策略的流量才会被放行。
 
    {{</ notice >}}
 
-## Set a Network Policy
+3. 您也可以在这个页面关闭网络隔离。
 
-If the default policy does not meet your needs when network isolation is enabled, you can customize your network policy to meet your needs. Currently, you can add custom network policies in KubeSphere for traffic within the cluster or incoming traffic outside the cluster.
+   ![关闭隔离](/images/docs/zh-cn/project-administration/project-network-isolation/isolation-off.PNG)
 
-### For internal traffic within the cluster
+   {{< notice note >}}
 
-Network policies at the project level within a cluster are used to control whether resources in this project can be accessed by other projects within the same cluster, and which Services you can access.
+   关闭网络隔离时，先前创建的所有网络策略都将被删除。
 
-Assume a NGINX Deployment workload has been created in another project `demo-project-2` and is exposed via the Service `nginx` on the port `80` with `TCP`. Here is an example of how to set ingress and egress traffic rules.
+   {{</ notice >}}
+
+## 设置网络策略
+
+若开启网络隔离后的默认策略无法满足您的需求，您可以自定义网络策略来满足您的需求。目前，您可以在 KubeSphere 中为集群内部的流量或来自集群外部的入站流量添加自定义网络策略。
+
+### 集群内部的流量
+
+集群内部项目层级的网络策略用于控制同一集群内的其他项目是否能访问该项目中的资源，以及您能访问哪些服务 (Service)。
+
+假设在另一个项目 `demo-project-2` 中已创建一个 NGINX 部署 (Deployment) 工作负载，并通过 `nginx` 服务使用 `TCP` 协议在 `80` 端口进行暴露。下面是如何设置入站和出站流量规则的示例。
 
 {{< notice note >}}
 
-For more information about how to create workloads, see [Deployments](../../project-user-guide/application-workloads/deployments/) and [Services](../../project-user-guide/application-workloads/services/) respectively.
+有关如何创建工作负载的更多信息，请分别参见[部署](../../project-user-guide/application-workloads/deployments/)和[服务](../../project-user-guide/application-workloads/services/)。
 
 {{</ notice >}} 
 
-#### Allow ingress traffic from workloads in a different project
+#### 放行来自不同项目的工作负载的入站流量
 
-1. On the **Network Isolation** page of your current project, select **Cluster Internal Allowlist**.
+1. 在当前项目的**网络隔离**页面，选择**集群内部白名单**选项卡。
 
-2. Click **Add Allowlist**.
+2. 点击**添加白名单**。
 
-3. Select **Ingress** under **Direction**.
+3. 在**方向**下选择**入口**。
 
-4. Select the tab **Project** under **Type**.
+4. 在**类型**下选择**项目**选项卡。
 
-5. Select the project `demo-project-2`.
+5. 选择 `demo-project-2` 项目。
 
-   ![ingress-rule](/images/docs/project-administration/project-network-isolation/ingress-rule.jpg)
+   ![入站规则](/images/docs/zh-cn/project-administration/project-network-isolation/ingress-rule.PNG)
 
-6. Click **OK** and you can see that the project is now in the allowlist.
+6. 点击**确定**，然后您可以在白名单中看到该项目。
 
-   ![ingress-rule-added](/images/docs/project-administration/project-network-isolation/ingress-rule-added.jpg)
-
-{{< notice note >}}
-
-If the network is not accessible after you set the network policy, then you need to check whether the peer project has a corresponding egress rule in it.
-
-{{</ notice >}}
-
-#### Allow egress traffic to Services in a different project
-
-1. On the **Network Isolation** page of your current project, select **Cluster Internal Allowlist**.
-
-2. Click **Add Allowlist**.
-
-3. Select **Egress** under **Direction**.
-
-4. Select the tab **Service** under **Type**.
-
-5. Select the project `demo-project-2` from the drop-down list.
-
-6. Select the Service that is allowed to receive egress traffic. In this case, check `nginx`.
-
-   ![engress-rule](/images/docs/project-administration/project-network-isolation/engress-rule.jpg)
-
-7. Click **OK** and you can see that the Service is now in the allowlist.
-
-   ![egress-rule-added](/images/docs/project-administration/project-network-isolation/egress-rule-added.jpg)
+   ![入站规则已添加](/images/docs/zh-cn/project-administration/project-network-isolation/ingress-rule-added.PNG)
 
 {{< notice note >}}
 
-When creating a Service, you must make sure that the selectors of the Service are not empty.
+如果设置网络策略后仍无法访问该网络，您需要检查对等项目是否设置有相应的出站规则。
 
 {{</ notice >}}
 
-### For incoming traffic outside the cluster
+#### 放行前往不同项目的服务的出站流量
 
-KubeSphere uses CIDR to distinguish between peers. Assume a Tomcat Deployment workload has been created in your current project and is exposed via the `NodePort` Service `demo-service` on the NodePort `80` with `TCP`. For an external client with the IP address `192.168.1.1` to access this Service, you need to add a rule for it.
+1. 在当前项目的**网络隔离**页面，选择**集群内部白名单**选项卡。
 
-#### Allow ingress traffic from an client outside the cluster
+2. 点击**添加白名单**。
 
-1. On the **Network Isolation** page of your current project, select **Cluster External IP Address** and click **Add Rule**.
+3. 在**方向**下选择**出口**。
 
-2. Select **Ingress** under **Direction**.
+4. 在**类型**下选择**服务**选项卡。
 
-3. Enter `192.168.1.1/32` for **CIDR**.
+5. 在下拉列表中选择 `demo-project-2` 项目。
 
-4. Select the protocol `TCP` and enter `80` as the port number.
+6. 选择允许接收出站流量的服务。在本例中，请选择 `nginx`。
 
-   ![ingress-CIDR](/images/docs/project-administration/project-network-isolation/ingress-CIDR.jpg)
+   ![出站规则](/images/docs/zh-cn/project-administration/project-network-isolation/egress-rule.PNG)
 
-5. Click **OK** and you can see that the rule has been added.
+7. 点击**确定**，然后您可以在白名单中看到该服务。
 
-   ![ingress-cidr-set](/images/docs/project-administration/project-network-isolation/ingress-cidr-set.jpg)
+   ![出站规则已添加](/images/docs/zh-cn/project-administration/project-network-isolation/egress-rule-added.PNG)
 
 {{< notice note >}}
 
-It is recommended to set `spec.externalTrafficPolicy` in the Service configuration to `local`, so that the source address of the packet will not change. Namely, the source address of the packet is the source address of the client.
+创建服务时，您必须确保该服务的选择器不为空。
 
 {{</ notice >}}
 
-Assume the IP address of an external client is `http://10.1.0.1:80`, then you need to set a rule for the egress traffic so that the internal Service can access it.
+### 集群外部的入站流量
 
-#### Allow egress traffic to Services outside the cluster
+KubeSphere 使用 CIDR 来区分对等方。假设当前项目中已创建一个 Tomcat 部署，并通过 `NodePort` 服务 `demo-service` 使用 `TCP` 协议在 `80` 端口进行暴露。要让 IP 地址为 `192.168.1.1` 的外部客户端访问该服务，您需要为其添加一个规则。
 
-1. On the **Network Isolation** page of your current project, select **Cluster External IP Address** and click **Add Rule**.
+#### 放行来自集群外部客户端的入站流量
 
-2. Select **Egress** under **Direction**.
+1. 在当前项目的**网络隔离**页面，选择**集群外部 IP 地址**选项卡，然后点击**添加规则**。
 
-3. Enter `10.1.0.1/32` for **CIDR**.
+2. 在**方向**下选择**入口**。
 
-4. Select the protocol `TCP` and enter `80` as the port number.
+3. 在 **CIDR** 中输入 `192.168.1.1/32`。
 
-   ![egress-CIDR](/images/docs/project-administration/project-network-isolation/egress-CIDR.jpg)
+4. 选择 `TCP` 协议并输入 `80` 作为端口号。
 
-5. Click **OK** and you can see that the rule has been added.
+   ![入站-CIDR](/images/docs/zh-cn/project-administration/project-network-isolation/ingress-CIDR.PNG)
 
-   ![egress-CIDR-added](/images/docs/project-administration/project-network-isolation/egress-CIDR-added.jpg)
+5. 点击**确定**，然后您可以看到该规则已经添加。
+
+   ![入站-CIDR-已设置](/images/docs/zh-cn/project-administration/project-network-isolation/ingress-cidr-set.PNG)
 
 {{< notice note >}}
 
-In step 4, when you select **SCTP**, you must make sure SCTP is [enabled](https://kubernetes.io/docs/concepts/services-networking/network-policies/#sctp-support).
+建议在服务配置中将 `spec.externalTrafficPolicy` 设置为 `local`，以便数据包的源地址保持不变，即数据包的源地址就是客户端的源地址。
 
 {{</ notice >}}
 
-### Best practices
+假设外部客户端的 IP 地址是 `http://10.1.0.1:80`，您需要为出站流量设置规则，以便内部服务可以访问它。
 
-To ensure that all Pods in a project are secure, a best practice is to enable network isolation. When network isolation is on, the project cannot be accessed by other projects. If your workloads need to be accessed by others, you can follow these steps:
+#### 放行前往集群外部服务的出站流量
 
-1. Set a [gateway](../project-gateway/) in **Project Settings**.
-2. Expose workloads that need to be accessed to a gateway via a Service.
-3. Allow ingress traffic from the namespace where your gateway locates.
+1. 在当前项目的**网络隔离**页面，选择**集群外部 IP 地址**选项卡，然后点击**添加规则**。
 
-If egress traffic is controlled, you should have a clear plan of what projects, Services, and IP addresses can be accessed, and then add them one by one. If you are not sure about what you want, it is recommended that you keep your network policy unchanged.
+2. 在**方向**下选择**出口**。
 
-## FAQs
+3. 在 **CIDR** 中输入 `10.1.0.1/32`。
 
-Q: Why can't the custom monitoring system of KubeSphere get data after I enabled network isolation?
+4. 选择 `TCP` 协议并输入 `80` 作为端口号。
 
-A: After you enabled custom monitoring, the KubeSphere monitoring system will access the metrics of the Pod. You need to allow ingress traffic for the KubeSphere monitoring system. Otherwise, it cannot access Pod metrics.
+   ![出站-CIDR](/images/docs/zh-cn/project-administration/project-network-isolation/egress-CIDR.PNG)
 
-KubeSphere provides a configuration item `allowedIngressNamespaces` to simplify similar configurations, which allows all projects listed in the configuration.
+5. 点击**确定**，然后您可以看到该规则已经添加。
+
+   ![出站-CIDR-已添加](/images/docs/zh-cn/project-administration/project-network-isolation/egress-CIDR-added.PNG)
+
+{{< notice note >}}
+
+在步骤 4 中，若您选择 **SCTP**，请务必确保 SCTP [已启用](https://kubernetes.io/zh/docs/concepts/services-networking/network-policies/#sctp-支持)。
+
+{{</ notice >}}
+
+### 最佳做法
+
+要确保一个项目中的所有 Pod 都安全，一个最佳做法是启用网络隔离。当网络隔离开启时，其他项目无法访问当前项目。如果需要让其他工作负载访问当前工作负载，您需要按照以下步骤操作：
+
+1. 在**项目设置**中设置[网关](../../project-administration/project-gateway/)。
+2. 通过服务将需要被访问的工作负载暴露给网关。
+3. 放行来自网关所在命名空间的入站流量。
+
+如果出站流量受控，您需要对能够访问哪些项目、服务和 IP 地址有一个清晰的计划，并逐个添加规则。如果您不确定要制定什么规则，建议保持现有网络策略不变。
+
+## 常见问题
+
+问：开启网络隔离后，为什么 KubeSphere 自定义监控系统无法获取数据？
+
+答：您启用自定义监控后，KubeSphere 监控系统将访问 Pod 的指标。您需要放行来自 KubeSphere 监控系统的入站流量，否则无法访问 Pod 指标。
+
+KubeSphere 提供 `allowedIngressNamespaces` 配置项来简化类似配置，在配置中列出的所有项目都会被放行。
 
 ```yaml
 root@node1:~# kubectl get -n kubesphere-system clusterconfigurations.installer.kubesphere.io  ks-installer -o yaml
@@ -197,10 +197,9 @@ spec:
   ...
 ```
 
-Q: Why can't I access a Service even after setting a network policy through the Service?
+问：通过服务 (Service) 设置网络策略后，为什么无法访问服务？
 
-A: When you add a network policy and access the Service via the cluster IP address, if the network is not
-   working, check the kube-proxy configuration to see if `masqueradeAll` is `false`.
+答：若您添加网络策略后通过集群 IP 地址访问服务但网络不通，请检查 kube-proxy 配置中的 `masqueradeAll` 是否为 `false`。
 
    ```yaml
    root@node1:~# kubectl get cm -n kube-system kube-proxy -o yaml
@@ -222,6 +221,6 @@ A: When you add a network policy and access the Service via the cluster IP addre
      ...
    ```
 
-Q: How do I determine the CIDR when I set the ingress rule?
+问：设置入站规则时，如何确定 CIDR？
 
-A: In Kubernetes, the source IP address of the packet is often handled by NAT, so you need to figure out what the source address of the packet will be before you add the rule. For more information, refer to [Source IP](https://github.com/kubesphere/community/blob/master/sig-network/concepts-and-designs/kubesphere-network-policy.md#source-ip).
+答：在 Kubernetes 中，数据包的源 IP 地址通常由 NAT 处理，因此您需要确定数据包的源地址，然后再添加规则。有关更多信息，请参考 [Source IP](https://github.com/kubesphere/community/blob/master/sig-network/concepts-and-designs/kubesphere-network-policy.md#source-ip)。
