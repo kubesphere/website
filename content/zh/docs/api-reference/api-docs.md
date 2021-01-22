@@ -8,7 +8,7 @@ weight: 17200
 
 ## 架构
 
-KubeSphere API 服务器为 API 对象验证和配置数据。API Server 为 REST 操作提供服务，并为集群的共享状态提供前端，其他所有组件通过它进行交互。
+KubeSphere API 服务器为 API 对象验证和配置数据。API 服务器为 REST 操作提供服务，并为集群的共享状态提供前端，其他所有组件通过它进行交互。
 
 ![ks-apiserver](/images/docs/api-reference/kubesphere-api/ks-apiserver.png)
 
@@ -54,7 +54,7 @@ curl -X POST -H 'Content-Type: application/x-www-form-urlencoded' \
 
 {{</ notice >}}
 
-如果身份正确，服务器将输出响应，如下所示。`access_token` 是访问 KubeSphere API Server 的令牌。
+如果身份正确，服务器将输出响应，如下所示。`access_token` 是访问 KubeSphere API 服务器的令牌。
 
 ```json
 {
@@ -110,7 +110,7 @@ $ curl -X GET -H "Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ
 
 {{</ notice >}}
 
-## API Reference
+## API 参考
 
 KubeSphere API Swagger JSON 文件可以在 https://github.com/kubesphere/kubesphere/tree/release-3.0/api 仓库中找到。
 
