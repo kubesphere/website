@@ -1,29 +1,29 @@
 ---
 title: "KubeSphere API"
 keywords: 'Kubernetes, KubeSphere, API'
-description: 'KubeSphere API documentation'
+description: 'KubeSphere API 文档'
 linkTitle: "KubeSphere API"
 weight: 17200
 ---
 
-## Architecture
+## 架构
 
-The KubeSphere API server validates and configures data for API objects. The API Server services REST operations and provides the frontend to the cluster's shared state through which all other components interact.
+KubeSphere API 服务器为 API 对象验证和配置数据。API 服务器为 REST 操作提供服务，并为集群的共享状态提供前端，其他所有组件通过它进行交互。
 
 ![ks-apiserver](/images/docs/api-reference/kubesphere-api/ks-apiserver.png)
 
-## Use the KubeSphere API
+## 使用 KubeSphere API
 
-KubeSphere v3.0 moves the functionalities of **ks-apigateway** and **ks-account** into **ks-apiserver** to make the architecture more compact and clear. In order to use the KubeSphere API, you need to expose **ks-apiserver** to your client.
+KubeSphere 3.0 将 **ks-apigateway** 和 **ks-account** 功能移动至 **ks-apiserver** 中，使架构更加紧凑和清晰。要使用 KubeSphere API，您需要将 **ks-apiserver** 暴露给您的客户端。
 
 
-### Step 1: Expose the KubeSphere API service
+### 步骤 1：暴露 KubeSphere API 服务
 
-If you are going to access KubeSphere inside the cluster, you can skip the following section and just use the KubeSphere API server endpoint **`http://ks-apiserver.kubesphere-system.svc`**.
+如果您要在集群内部访问 KubeSphere，可以跳过以下内容，使用 KubeSphere API 服务器 Endpoint **`http://ks-apiserver.kubesphere-system.svc`** 即可。
 
-On the other hand, you need to expose the KubeSphere API server endpoint outside the cluster first.
+如果从集群外部访问，您需要先将 KubeSphere API 服务器 Endpoint 暴露给集群外部。
 
-There are many ways to expose a Kubernetes service. For demonstration purposes, this example uses `NodePort`. Change the service type of `ks-apiserver` to `NodePort` by using the following command.
+暴露 Kubernetes 服务的方式有很多。本示例使用 `NodePort` 来演示。使用以下命令将 `ks-apiserver` 的服务类型变更为 `NodePort`。
 
 ```bash
 $ kubectl -n kubesphere-system patch service ks-apiserver -p '{"spec":{"type":"NodePort"}}'
@@ -34,11 +34,11 @@ ks-apiserver    NodePort       10.233.15.31    <none>           80:31407/TCP    
 ks-console      NodePort       10.233.3.45     <none>           80:30880/TCP         49d
 ```
 
-Now, you can access `ks-apiserver` outside the cluster through the URL like `http://[node ip]:31407`, where `[node ip]` means the IP address of any node in your cluster.
+现在，您可以从集群外部通过 URL（例如 `http://[node ip]:31407`）访问 `ks-apiserver`，其中 `[node ip]` 是您集群中任意节点的 IP 地址。
 
-### Step 2: Generate a token
+### 步骤 2：生成令牌
 
-You need to identify yourself before making any call to the API server. The following example uses the password `P#$$w0rd`. The user needs to issue a request to generate a token as below:
+您需要先验证身份，然后才能向 API 服务器发起调用。下面的示例使用的密码是 `P#$$w0rd`。用户需要发起请求来生成令牌，如下所示：
 
 ```bash
 curl -X POST -H 'Content-Type: application/x-www-form-urlencoded' \
@@ -50,11 +50,11 @@ curl -X POST -H 'Content-Type: application/x-www-form-urlencoded' \
 
 {{< notice note >}}
 
-Replace `[node ip]` with your actual IP address.
+将 `[node ip]` 替换为您的实际 IP 地址。
 
 {{</ notice >}}
 
-If the identity is correct, the server will respond as shown in the following output. `access_token` is the token to access the KubeSphere API Server.
+如果身份正确，服务器将输出响应，如下所示。`access_token` 是访问 KubeSphere API 服务器的令牌。
 
 ```json
 {
@@ -65,9 +65,9 @@ If the identity is correct, the server will respond as shown in the following ou
 }
 ```
 
-### Step 3: Make the call
+### 步骤 3：发起调用
 
-If you have everything you need to access the KubeSphere API server, make the call using the access token acquired above as shown in the following example to get the node list:
+如果您访问 KubeSphere API 服务器的准备工作都已做完，请使用上一步中获取的访问令牌来发起调用，以获取节点列表，如下所示：
 
 ```bash
 $ curl -X GET -H "Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImFkbWluIiwidWlkIjoiYTlhNjJmOTEtYWQ2Yi00MjRlLWIxNWEtZTFkOTcyNmUzNDFhIiwidG9rZW5fdHlwZSI6ImFjY2Vzc190b2tlbiIsImV4cCI6MTYwMDg1MjM5OCwiaWF0IjoxNjAwODQ1MTk4LCJpc3MiOiJrdWJlc3BoZXJlIiwibmJmIjoxNjAwODQ1MTk4fQ.Hcyf-CPMeq8XyQQLz5PO-oE1Rp1QVkOeV_5J2oX1hvU" \
@@ -106,13 +106,13 @@ $ curl -X GET -H "Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ
 
 {{< notice note >}}
 
-Replace `[node ip]` with your actual IP address.
+将 `[node ip]` 替换为您的实际 IP 地址。
 
 {{</ notice >}}
 
-## API Reference
+## API 参考
 
-The KubeSphere API swagger JSON file can be found in the repository https://github.com/kubesphere/kubesphere/tree/release-3.0/api.
+KubeSphere API Swagger JSON 文件可以在 https://github.com/kubesphere/kubesphere/tree/release-3.0/api 仓库中找到。
 
-- KubeSphere specified the API [swagger json](https://github.com/kubesphere/kubesphere/blob/release-3.0/api/ks-openapi-spec/swagger.json) file. It contains all the APIs that are only applied to KubeSphere.
-- KubeSphere specified the CRD [swagger json](https://github.com/kubesphere/kubesphere/blob/release-3.0/api/openapi-spec/swagger.json) file. It contains all the generated CRDs API documentation. It is same as Kubernetes API objects.
+- KubeSphere 已指定 API [Swagger Json](https://github.com/kubesphere/kubesphere/blob/release-3.0/api/ks-openapi-spec/swagger.json) 文件，它包含所有只适用于 KubeSphere 的 API。
+- KubeSphere 已指定 CRD [Swagger Json](https://github.com/kubesphere/kubesphere/blob/release-3.0/api/openapi-spec/swagger.json) 文件，它包含所有已生成的 CRD API 文档，与 Kubernetes API 对象相同。
