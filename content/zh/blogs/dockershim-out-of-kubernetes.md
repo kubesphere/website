@@ -53,19 +53,19 @@ CRI-O （https://cri-o.io）是由红帽发布的一款容器运行时，是面�
 
 1.  安装 runc。
 
-```
-curl -OL https://github.com/opencontainers/runc/releases/download/v1.0.0-rc92/runc.amd64
+```shell
+$ curl -OL https://github.com/opencontainers/runc/releases/download/v1.0.0-rc92/runc.amd64
 ```
 
-```
-mv runc.amd64 /usr/local/bin/runc && chmod +x /usr/local/bin/runc
+```shell
+$ mv runc.amd64 /usr/local/bin/runc && chmod +x /usr/local/bin/runc
 ```
 
 2. 安装 Containerd。
 
 下载 Containerd 安装包
 
-```
+```shell
 $ curl -OL https://github.com/containerd/containerd/releases/download/v1.4.3/containerd-1.4.3-linux-amd64.tar.gz
 
 $ tar -zxvf containerd-1.4.3-linux-amd64.tar.gz -C /usr/local
@@ -75,7 +75,7 @@ $ curl -o /etc/systemd/system/containerd.service https://raw.githubusercontent.c
 
 3. 配置 Containerd。
 
-```
+```shell
 $ mkdir -p /etc/containerd
 
 $ cat > /etc/containerd/config.toml << EOF
@@ -93,7 +93,7 @@ $ systemctl enable containerd && systemctl restart containerd
 
 4. 安装 crictl。
 
-```
+```shell
 $ VERSION="v1.19.0"
 
 $ curl -OL https://github.com/kubernetes-sigs/cri-tools/releases/download/$VERSION/crictl-$VERSION-linux-amd64.tar.gz
@@ -105,7 +105,7 @@ $ rm -f crictl-$VERSION-linux-amd64.tar.gz
 
 5. 配置 crictl。
 
-```
+```shell
 $ cat > /etc/crictl.yaml << EOF
 runtime-endpoint: unix:///run/containerd/containerd.sock
 image-endpoint: unix:///run/containerd/containerd.sock
@@ -121,7 +121,7 @@ EOF
 
 1. 安装 CRI-O。
 
-```
+```shell
 $ yum install git make
 
 $ curl -OL https://github.com/cri-o/cri-o/releases/download/v1.18.4/crio-v1.18.4.tar.gz
@@ -140,7 +140,7 @@ $ sysctl -p
 
 2. 配置 CRI-O。
 
-```
+```shell
 $ vi /etc/crio/crio.conf 
 ```
 
@@ -155,21 +155,21 @@ registries = [
 
 3. 启动 CRI-O。
 
-```
-systemctl enable crio && systemctl restart crio 
+```shell
+$ systemctl enable crio && systemctl restart crio 
 ```
 
 ### 安装 iSula（操作系统使用 openEuler 20.09）
 
 1. 安装 iSula。
 
-```
+```shell
 $ yum install iSulad -y
 ```
 
 2. 配置 iSula。
 
-```
+```shell
 $ vim /etc/isulad/daemon.json
 ```
 
@@ -187,7 +187,7 @@ $ vim /etc/isulad/daemon.json
 
 4. 启动isula。
 
-```
+```shell
 $ systemctl enable isulad && systemctl restart isulad
 ```
 
@@ -199,7 +199,7 @@ $ systemctl enable isulad && systemctl restart isulad
 
 这里暂时使用 `kubekey v1.1.0-alpha.1` 部署 Kubernetes 集群，该版本为预览版，支持多container-runtime 也会包含在后续的正式版本中。
 
-```
+```shell
 $ curl -OL https://github.com/kubesphere/kubekey/releases/download/v1.1.0-alpha.1/kubekey-v1.1.0-alpha.1-linux-amd64.tar.gz
 
 $ tar -zxvf  kubekey-v1.1.0-alpha.1-linux-amd64.tar.gz
@@ -207,17 +207,17 @@ $ tar -zxvf  kubekey-v1.1.0-alpha.1-linux-amd64.tar.gz
 
 2. 创建配置文件。
 
-```
+```shell
 ./kk create config # 默认在同级目录下生成 config-sample.yaml   
 ```
 
 3. 根据真实环境信息修改配置文件。
 
-```
+```shell
 vi config-sample.yaml  
 ```
 
-```
+```yaml
 apiVersion: kubekey.kubesphere.io/v1alpha1
 kind: Cluster
 ···
@@ -231,7 +231,7 @@ kind: Cluster
 
 4. 一键部署集群。
 
-```
+```shell
 ./kk create cluster -f config-sample.yaml  --with-kubesphere v3.0.0
 ```
 
