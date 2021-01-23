@@ -28,7 +28,7 @@ KubeSphere 拥有功能强大的中央控制平面，您可以统一纳管部署
 
 | 命名空间 | kube-federation-system | kubesphere-system |
 | -------- | ---------------------- | ----------------- |
-| 子组件   | 2 x controller-manger  | Tower             |
+| 子组件   | 2 x controller-manager  | Tower             |
 | CPU 请求 | 100 m                  | 100 m             |
 | CPU 限制 | 500 m                  | 500 m             |
 | 内存请求 | 64 MiB                 | 128 MiB           |
