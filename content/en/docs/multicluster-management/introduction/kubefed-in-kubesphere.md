@@ -28,7 +28,7 @@ Before you enable multi-cluster management, make sure you have enough resources 
 
 | Namespace      | kube-federation-system | kubesphere-system |
 | -------------- | ---------------------- | ----------------- |
-| Sub-component  | 2 x controller-manger  | tower             |
+| Sub-component  | 2 x controller-manager  | tower             |
 | CPU Request    | 100 m                  | 100 m             |
 | CPU Limit      | 500 m                  | 500 m             |
 | Memory Request | 64 MiB                 | 128 MiB           |
