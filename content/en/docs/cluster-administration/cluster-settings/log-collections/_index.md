@@ -1,5 +1,5 @@
 ---
-linkTitle: "Log collection"
+linkTitle: "Log Collections"
 weight: 8620 
 
 _build:
