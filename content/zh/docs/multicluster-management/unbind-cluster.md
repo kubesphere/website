@@ -6,7 +6,7 @@ linkTitle: "解绑集群"
 weight: 5500
 ---
 
-本教程演示如何在 KubeSphere 的中央控制平面解绑一个集群。
+本教程演示如何将集群与 KubeSphere 的中央控制平面解绑。
 
 ## 准备工作
 
