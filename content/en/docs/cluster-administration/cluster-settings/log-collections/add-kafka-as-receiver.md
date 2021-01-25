@@ -93,7 +93,7 @@ You can use [strimzi-kafka-operator](https://github.com/strimzi/strimzi-kafka-op
     strimzi-cluster-operator-7d6cd6bdf7-9cf6t    1/1     Running   0          104m
     ```
 
-    Run the follwing command to check the metadata of the Kafka cluster:
+    Run the following command to check the metadata of the Kafka cluster:
 
     ```bash
     kafkacat -L -b my-cluster-kafka-0.my-cluster-kafka-brokers.default.svc:9092,my-cluster-kafka-1.my-cluster-kafka-brokers.default.svc:9092,my-cluster-kafka-2.my-cluster-kafka-brokers.default.svc:9092
