@@ -1,39 +1,39 @@
 ---
-title: "Unbind a Cluster"
-keywords: 'Kubernetes, KubeSphere, multicluster, hybrid-cloud'
-description: 'Describe how to unbind a cluster from the KubeSphere multiple cluster management platform'
-linkTitle: "Unbind a Cluster"
+title: "解绑集群"
+keywords: 'Kubernetes, KubeSphere, 多集群, 混合云'
+description: '阐述如何从 KubeSphere 多集群管理平台解绑集群'
+linkTitle: "解绑集群"
 weight: 5500
 ---
 
-This tutorial demonstrates how to unbind a cluster from the central control plane of KubeSphere.
+本教程演示如何将集群与 KubeSphere 的中央控制平面解绑。
 
-## Prerequisites
+## 准备工作
 
-- You have enabled multi-cluster management.
-- You need an account granted a role including the authorization of **Clusters Management**. For example, you can log in the console as `admin` directly or create a new role with the authorization and assign it to an account.
+- 您已经启用多集群管理。
+- 您需要有一个拥有**集群管理**权限角色的帐户。例如，您可以直接以 `admin` 身份登录控制台，或者创建一个拥有该权限的新角色并授予至一个帐户。
 
-## Unbind a Cluster
+## 解绑集群
 
-1. Click **Platform** in the top left corner and select **Clusters Management**.
+1. 点击左上角的**平台管理**，然后选择**集群管理**。
 
-2. On the **Clusters Management** page, click the cluster that you want to remove from the central control plane.
+2. 在**集群管理**页面，请点击要从中央控制平面移除的集群。
 
-   ![clusters-management](/images/docs/multicluster-management/unbind-a-cluster/clusters-management.jpg)
+   ![集群管理](/images/docs/zh-cn/multicluster-management/unbind-a-cluster/cluster-management.PNG)
 
-3. Go to **Basic Info** under **Cluster Settings**, check **I confirm I want to unbind the cluster** and click **Unbind**.
+3. 在**集群设置**下的**基本信息**页面，请选择**我确定要执行解绑集群的操作**，然后点击**解除绑定**。
 
-   ![unbind-cluster](/images/docs/multicluster-management/unbind-a-cluster/unbind-cluster.jpg)
+   ![解绑集群](/images/docs/zh-cn/multicluster-management/unbind-a-cluster/unbind-cluster.PNG)
 
    {{< notice note >}}
 
-   After you unbind the cluster, you cannot manage it from the control plane while Kubernetes resources on the cluster will not be deleted.
+   解绑集群后，您将无法在中央控制平面管理该集群，但该集群上的 Kubernetes 资源不会被删除。
 
    {{</ notice >}} 
 
-## Unbind an Unhealthy Cluster
+## 解绑不健康的集群
 
-On some occasions, you cannot unbind a cluster by following the steps above. For example, you import a cluster with the wrong credentials and you cannot access **Cluster Settings**. In this case, execute the following command to unbind an unhealthy cluster:
+在某些情况下，您无法按照上述步骤解绑集群。例如，您导入了一个凭证错误的集群，并且无法访问**集群设置**。在这种情况下，请执行以下命令来解绑不健康的集群：
 
 ```bash
 kubectl delete <cluster name>
