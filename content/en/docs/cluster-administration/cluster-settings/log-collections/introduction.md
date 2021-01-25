@@ -84,7 +84,7 @@ You can turn a log receiver on or off without adding or deleting it. To turn a l
 
 4. A log receiver's status will be changed to **Close** if you turn it off, otherwise the status will be **Collecting**.
 
-    ![receiver-status](/images/docs/cluster-administration/cluster-settings/log-collections/receiver-status.png)
+    ![receiver-status](/images/docs/cluster-administration/cluster-settings/log-collections/introduction/receiver-status.png)
 
 ## Modify or Delete a Log Receiver
 

@@ -1,37 +1,37 @@
 ---
-title: "Add Elasticsearch as receiver (aka Collector)"
-keywords: 'kubernetes, log, elasticsearch, pod, container, fluentbit, output'
-description: 'Add Elasticsearch as log receiver to receive container logs'
-
-linkTitle: "Add Elasticsearch as Receiver"
+title: "添加 Elasticsearch 作为接收器（即收集器）"
+keywords: 'Kubernetes, log, elasticsearch, pod, container, fluentbit, output'
+description: 'Add Elasticsearch as a log receiver to receive container logs'
+linkTitle: "添加 Elasticsearch 作为接收器"
 weight: 8622
 ---
-KubeSphere supports using Elasticsearch, Kafka and Fluentd as log receivers.
-This doc will demonstrate how to add an Elasticsearch receiver.
+You can use Elasticsearch, Kafka and Fluentd as log receivers in KubeSphere. This tutorial demonstrates how to add an Elasticsearch receiver.
 
-## Prerequisite
+## Prerequisites
 
-Before adding a log receiver, you need to enable any of the `logging`, `events` or `auditing` components following [Enable Pluggable Components](https://kubesphere.io/docs/pluggable-components/). The `logging` component is enabled as an example in this doc.
+- You need an account granted a role including the authorization of **Clusters Management**. For example, you can log in to the console as `admin` directly or create a new role with the authorization and assign it to an account.
 
-1. To add a log receiver:
+- Before adding a log receiver, you need to enable any of the `logging`, `events` or `auditing` components. For more information, see [Enable Pluggable Components](../../../../pluggable-components/). `logging` is enabled as an example in this tutorial.
 
-- Login KubeSphere with an account of ***platform-admin*** role
-- Click ***Platform*** -> ***Clusters Management***
-- Select a cluster if multiple clusters exist
-- Click ***Cluster Settings*** -> ***Log Collections***
-- Log receivers can be added by clicking ***Add Log Collector***
+## Add Elasticsearch as a Receiver
 
-![Add receiver](/images/docs/cluster-administration/cluster-settings/log-collections/add-receiver.png)
+1. Log in to KubeSphere as `admin`. Click **Platform** in the top left corner and select **Clusters Management**.
 
-2. Choose ***Elasticsearch*** and fill in the Elasticsearch service address and port like below:
+2. If you have enabled the [multi-cluster feature](../../../../multicluster-management), you can select a specific cluster. If you have not enabled the feature, refer to the next step directly.
 
-![Add Elasticsearch](/images/docs/cluster-administration/cluster-settings/log-collections/add-es.png)
+3. On the **Cluster Management** page, go to **Log Collections** in **Cluster Settings**.
 
-3. Elasticsearch appears in the receiver list of ***Log Collections*** page and its status becomes ***Collecting***.
+4. Click **Add Log Collector** and choose **Elasticsearch**.
 
-![Receiver List](/images/docs/cluster-administration/cluster-settings/log-collections/receiver-list.png)
+    ![add-receiver](/images/docs/cluster-administration/cluster-settings/log-collections/add-es-as-receiver/add-receiver.png)
 
-4. Verify whether Elasticsearch is receiving logs sent from Fluent Bit:
+5. Provide the Elasticsearch service address and port as below:
 
-- Click ***Log Search*** in the ***Toolbox*** in the bottom right corner.
-- You can search logs in the logging console that appears.
+    ![add-es](/images/docs/cluster-administration/cluster-settings/log-collections/add-es-as-receiver/add-es.png)
+
+6. Elasticsearch will appear in the receiver list on the **Log Collections** page, the status of which is **Collecting**.
+
+    ![receiver-list](/images/docs/cluster-administration/cluster-settings/log-collections/add-es-as-receiver/receiver-list.png)
+
+7. To verify whether Elasticsearch is receiving logs sent from Fluent Bit, click **Log Search** in the **Toolbox** in the bottom right corner and search logs on the console. For more information, read [Log Query](../../../../toolbox/log-query/).
+
