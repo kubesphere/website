@@ -240,6 +240,10 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                 }
             })
 
+            sectionMenu.on('mouseleave', function() {
+                sectionMenu.hide();
+            })
+
             $(document).on("click", function(){
                 sectionMenu.hide()
             });
