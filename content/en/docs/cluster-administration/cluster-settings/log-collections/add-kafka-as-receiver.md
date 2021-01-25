@@ -1,46 +1,37 @@
 ---
-title: "Add Kafka as Receiver (aka Collector)"
-keywords: 'kubernetes, log, kafka, pod, container, fluentbit, output'
-description: 'KubeSphere Installation Overview'
-
-linkTitle: "Add Kafka as Receiver"
+title: "Add Kafka as a Receiver (i.e. Collector)"
+keywords: 'Kubernetes, log, kafka, pod, container, fluentbit, output'
+description: 'Add Kafka as a Receiver'
+linkTitle: "Add Kafka as a Receiver"
 weight: 8623
 ---
-KubeSphere supports using Elasticsearch, Kafka and Fluentd as log receivers.
-This doc will demonstrate:
+You can use Elasticsearch, Kafka and Fluentd as log receivers in KubeSphere. This tutorial demonstrates:
 
 - Deploy [strimzi-kafka-operator](https://github.com/strimzi/strimzi-kafka-operator) and then create a Kafka cluster and a Kafka topic by creating `Kafka` and `KafkaTopic` CRDs.
-- Add Kafka log receiver to receive logs sent from Fluent Bit.
+- Add Kafka as a log receiver to receive logs sent from Fluent Bit.
 - Verify whether the Kafka cluster is receiving logs using [Kafkacat](https://github.com/edenhill/kafkacat).
 
-## Prerequisite
+## Prerequisites
 
-Before adding a log receiver, you need to enable any of the `logging`, `events` or `auditing` components following [Enable Pluggable Components](https://kubesphere.io/docs/pluggable-components/). The `logging` component is enabled as an example in this doc.
+- You need an account granted a role including the authorization of **Clusters Management**. For example, you can log in to the console as `admin` directly or create a new role with the authorization and assign it to an account.
+- Before adding a log receiver, you need to enable any of the `logging`, `events` or `auditing` components. For more information, see [Enable Pluggable Components](../../../../pluggable-components/). `logging` is enabled as an example in this tutorial.
 
-## Step 1: Create a Kafka cluster and a Kafka topic
+## Step 1: Create a Kafka Cluster and a Kafka Topic
 
-{{< notice note >}}
+You can use [strimzi-kafka-operator](https://github.com/strimzi/strimzi-kafka-operator) to create a Kafka cluster and a Kafka topic. If you already have a Kafka cluster, you can start from the next step.
 
-If you already have a Kafka cluster, you can start from Step 2.
-
-{{</ notice >}}
-
-You can use [strimzi-kafka-operator](https://github.com/strimzi/strimzi-kafka-operator) to create a Kafka cluster and a Kafka topic
-
-1. Install [strimzi-kafka-operator](https://github.com/strimzi/strimzi-kafka-operator) to the `default` namespace:
+1. Install [strimzi-kafka-operator](https://github.com/strimzi/strimzi-kafka-operator) in the `default` namespace:
 
     ```bash
     helm repo add strimzi https://strimzi.io/charts/
+    ```
+
+    ```bash
     helm install --name kafka-operator -n default strimzi/strimzi-kafka-operator
     ```
 
-2. Create a Kafka cluster and a Kafka topic in the `default` namespace:
 
-    To deploy a Kafka cluster and create a Kafka topic, you simply need to open  the ***kubectl*** console in ***KubeSphere Toolbox*** and run the following command:
-
-    {{< notice note >}}
-The following will create Kafka and Zookeeper clusters with storage type `ephemeral` which is `emptydir` for demo purpose. You should use other storage types for production, please refer to [kafka-persistent](https://github.com/strimzi/strimzi-kafka-operator/blob/0.19.0/examples/kafka/kafka-persistent.yaml).
-    {{</ notice >}}
+2. Create a Kafka cluster and a Kafka topic in the `default` namespace by running the following commands. The commands create Kafka and Zookeeper clusters with storage type `ephemeral` which is `emptydir` for demonstration purposes. For other storage types in a production environment, refer to [kafka-persistent](https://github.com/strimzi/strimzi-kafka-operator/blob/0.19.0/examples/kafka/kafka-persistent.yaml).
 
     ```yaml
     cat <<EOF | kubectl apply -f -
@@ -87,10 +78,10 @@ The following will create Kafka and Zookeeper clusters with storage type `epheme
     EOF
     ```
 
-3. Run the following command to wait for Kafka and Zookeeper pods are all up and runing:
+3. Run the following command to check Pod status and wait for Kafka and Zookeeper are all up and running.
 
     ```bash
-    kubectl -n default get pod 
+    $ kubectl -n default get pod 
     NAME                                         READY   STATUS    RESTARTS   AGE
     my-cluster-entity-operator-f977bf457-s7ns2   3/3     Running   0          69m
     my-cluster-kafka-0                           2/2     Running   0          69m
@@ -102,31 +93,37 @@ The following will create Kafka and Zookeeper clusters with storage type `epheme
     strimzi-cluster-operator-7d6cd6bdf7-9cf6t    1/1     Running   0          104m
     ```
 
-    Then run the follwing command to find out metadata of kafka cluster
+    Run the follwing command to check the metadata of the Kafka cluster:
 
     ```bash
     kafkacat -L -b my-cluster-kafka-0.my-cluster-kafka-brokers.default.svc:9092,my-cluster-kafka-1.my-cluster-kafka-brokers.default.svc:9092,my-cluster-kafka-2.my-cluster-kafka-brokers.default.svc:9092
     ```
 
-4. Add Kafka as logs receiver:
+## Step 2: Add Kafka as a Log Receiver
 
-    Click ***Add Log Collector*** and then select ***Kafka***, input Kafka broker address and port like below:
+1. Log in to KubeSphere as `admin`. Click **Platform** in the top left corner and select **Clusters Management**.
 
-    ```bash
-    my-cluster-kafka-0.my-cluster-kafka-brokers.default.svc 9092
-    my-cluster-kafka-1.my-cluster-kafka-brokers.default.svc 9092
-    my-cluster-kafka-2.my-cluster-kafka-brokers.default.svc 9092
-    ```
+2. If you have enabled the [multi-cluster feature](../../../../multicluster-management), you can select a specific cluster. If you have not enabled the feature, refer to the next step directly.
 
-    ![Add Kafka](/images/docs/cluster-administration/cluster-settings/log-collections/add-kafka.png)
+3. On the **Cluster Management** page, go to **Log Collections** in **Cluster Settings**.
 
-5. Run the following command to verify whether the Kafka cluster is receiving logs sent from Fluent Bit:
+4. Click **Add Log Collector** and select **Kafka**. Input the Kafka broker address and port as below, and then click **OK** to continue.
 
-    ```bash
-    # Start a util container
-    kubectl run --rm utils -it --generator=run-pod/v1 --image arunvelsriram/utils bash
-    # Install Kafkacat in the util container
-    apt-get install kafkacat
-    # Run the following command to consume log messages from kafka topic: my-topic
-    kafkacat -C -b my-cluster-kafka-0.my-cluster-kafka-brokers.default.svc:9092,my-cluster-kafka-1.my-cluster-kafka-brokers.default.svc:9092,my-cluster-kafka-2.my-cluster-kafka-brokers.default.svc:9092 -t my-topic
-    ```
+   ```bash
+   my-cluster-kafka-0.my-cluster-kafka-brokers.default.svc 9092
+   my-cluster-kafka-1.my-cluster-kafka-brokers.default.svc 9092
+   my-cluster-kafka-2.my-cluster-kafka-brokers.default.svc 9092
+   ```
+
+   ![add-kafka](/images/docs/cluster-administration/cluster-settings/log-collections/add-kafka-as-receiver/add-kafka.png)
+
+5. Run the following commands to verify whether the Kafka cluster is receiving logs sent from Fluent Bit:
+
+   ```bash
+   # Start a util container
+   kubectl run --rm utils -it --generator=run-pod/v1 --image arunvelsriram/utils bash
+   # Install Kafkacat in the util container
+   apt-get install kafkacat
+   # Run the following command to consume log messages from kafka topic: my-topic
+   kafkacat -C -b my-cluster-kafka-0.my-cluster-kafka-brokers.default.svc:9092,my-cluster-kafka-1.my-cluster-kafka-brokers.default.svc:9092,my-cluster-kafka-2.my-cluster-kafka-brokers.default.svc:9092 -t my-topic
+   ```

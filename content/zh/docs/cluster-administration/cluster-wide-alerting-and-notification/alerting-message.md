@@ -1,9 +1,9 @@
 ---
-title: "告警消息(节点级别)"
+title: "告警消息（节点级别）"
 keywords: 'KubeSphere, Kubernetes, Node, Alerting, Message, Notification'
 description: '如何在节点级别查看告警信息。'
 
-linkTitle: "告警消息(节点级别)"
+linkTitle: "告警消息（节点级别）"
 weight: 8540
 ---
 
