@@ -28,7 +28,7 @@ To add a log receiver:
 
 4. Go to **Log Collections** in **Cluster Settings**.
 
-5. Click **Add Log Collector**.
+5. Click **Add Log Collector** in the **Logging** tab.
 
    ![log-collections](/images/docs/cluster-administration/cluster-settings/log-collections/introduction/log-collections.png)
 
