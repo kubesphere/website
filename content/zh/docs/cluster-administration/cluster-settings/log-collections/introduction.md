@@ -1,98 +1,98 @@
 ---
 title: "介绍"
-keywords: 'Kubernetes, log, elasticsearch, kafka, fluentd, pod, container, fluentbit, output'
-description: 'Add log receivers to receive container logs'
+keywords: 'Kubernetes, 日志, Elasticsearch, Kafka, Fluentd, Pod, 容器, Fluentbit, 输出'
+description: '添加日志接收器的一般性步骤'
 linkTitle: "介绍"
 weight: 8621
 ---
 
-KubeSphere provides a flexible log collection configuration method. Powered by [FluentBit Operator](https://github.com/kubesphere/fluentbit-operator/), users can easily add, modify, delete, enable or disable Elasticsearch, Kafka and Fluentd receivers. Once a receiver is added, logs will be sent to this receiver.
+KubeSphere 提供灵活的日志收集配置方式。基于 [FluentBit Operator](https://github.com/kubesphere/fluentbit-operator/)，用户可以轻松添加、修改、删除、启用或禁用 Elasticsearch、Kafka 和 Fluentd 接收器。接收器添加后，日志会发送至该接收器。
 
-This tutorial gives a brief introduction about the general steps of adding log receivers in KubeSphere.
+此教程简述在 KubeSphere 中添加日志接收器的一般性步骤。
 
-## Prerequisites
+## 准备工作
 
-- You need an account granted a role including the authorization of **Clusters Management**. For example, you can log in to the console as `admin` directly or create a new role with the authorization and assign it to an account.
+- 您需要一个被授予**集群管理**权限的帐户。例如，您可以直接用 `admin` 帐户登录控制台，或创建一个具有**集群管理**权限的角色然后将此角色授予一个帐户。
 
-- Before adding a log receiver, you need to enable any of the `logging`, `events` or `auditing` components. For more information, see [Enable Pluggable Components](../../../../pluggable-components/).
+- 添加日志接收器前，您需要启用组件 `logging`、`events` 或 `auditing`。有关更多信息，请参见[启用可插拔组件](../../../../pluggable-components/)。
 
-## Add a Log Receiver (i.e. Collector) for Container Logs
+## 为容器日志添加日志接收器
 
-To add a log receiver:
+若要添加日志接收器：
 
-1. Log in to the web console of KubeSphere as `admin`.
+1. 以 `admin` 身份登录 KubeSphere 的 Web 控制台。
 
-2. Click **Platform** in the top left corner and select **Clusters Management**.
+2. 点击左上角的**平台管理**，然后选择**集群管理**。
 
-3. If you have enabled the [multi-cluster feature](../../../../multicluster-management), you can select a specific cluster. If you have not enabled the feature, refer to the next step directly.
+3. 如果您启用了[多集群功能](../../../../multicluster-management)，您可以选择一个集群。如果尚未启用该功能，请直接进行下一步。
 
-4. Go to **Log Collections** in **Cluster Settings**.
+4. 选择**集群设置**下的**日志收集**。
 
-5. Click **Add Log Collector**.
+5. 在**日志**选项卡下点击**添加日志接收器**。
 
    ![log-collections](/images/docs/cluster-administration/cluster-settings/log-collections/introduction/log-collections.png)
 
    {{< notice note >}}
 
-- At most one receiver can be added for each receiver type.
-- Different types of receivers can be added simultaneously.
+- 每个接收器类型至多可以添加一个接收器。
+- 可以同时添加不同类型的接收器。
 
 {{</ notice >}}
 
-### Add Elasticsearch as a log receiver
+### 添加 Elasticsearch 作为日志接收器
 
-A default Elasticsearch receiver will be added with its service address set to an Elasticsearch cluster if `logging`, `events`, or `auditing` is enabled in [ClusterConfiguration](https://github.com/kubesphere/kubekey/blob/master/docs/config-example.md).
+如果 [ClusterConfiguration](https://github.com/kubesphere/kubekey/blob/master/docs/config-example.md) 中启用了 `logging`、`events` 或 `auditing`，则会添加默认的 Elasticsearch 接收器，服务地址会设为 Elasticsearch 集群。
 
-An internal Elasticsearch cluster will be deployed to the Kubernetes cluster if neither `externalElasticsearchUrl` nor `externalElasticsearchPort` is specified in [ClusterConfiguration](https://github.com/kubesphere/kubekey/blob/master/docs/config-example.md) when `logging`, `events` or `auditing` is enabled. The internal Elasticsearch cluster is for testing and development only. It is recommended that you configure an external Elasticsearch cluster for production.
+当  `logging`、`events` 或 `auditing` 启用时，如果 [ClusterConfiguration](https://github.com/kubesphere/kubekey/blob/master/docs/config-example.md) 中未指定 `externalElasticsearchUrl` 和 `externalElasticsearchPort`，则内置 Elasticsearch 集群会部署至 Kubernetes 集群。内置 Elasticsearch 集群仅用于测试和开发。生产环境下，建议您集成外置 Elasticsearch 集群。
 
-Log searching relies on the internal or external Elasticsearch cluster configured.
+日志查询需要依靠所配置的内置或外置 Elasticsearch 集群。
 
-If the default Elasticsearch log receiver is deleted, refer to [Add Elasticsearch as a Receiver](../add-es-as-receiver/) to add a new one.
+如果默认的 Elasticsearch 日志接收器被删除，请参考[添加 Elasticsearch 作为接收器](../add-es-as-receiver/)重新添加。
 
-### Add Kafka as a log receiver
+### 添加 Kafka 作为日志接收器
 
-Kafka is often used to receive logs and serves as a broker to other processing systems like Spark. [Add Kafka as a Receiver](../add-kafka-as-receiver) demonstrates how to add Kafka to receive Kubernetes logs.
+Kafka 往往用于接收日志，并作为 Spark 等处理系统的代理 (Broker)。[添加 Kafka 作为接收器](../add-kafka-as-receiver)演示如何添加 Kafka 接收 Kubernetes 日志。
 
-### Add Fluentd as a log receiver
+### 添加 Fluentd 作为日志接收器
 
-If you need to output logs to more places other than Elasticsearch or Kafka, you can add Fluentd as a log receiver. Fluentd has numerous output plugins which can forward logs to various destinations such as S3, MongoDB, Cassandra, MySQL, syslog, and Splunk. [Add Fluentd as a Receiver](../add-fluentd-as-receiver) demonstrates how to add Fluentd to receive Kubernetes logs.
+如果您需要将日志输出到除 Elasticsearch 或 Kafka 以外的其他地方，您可以添加 Fluentd 作为日志接收器。Fluentd 支持多种输出插件，可以将日志发送至多个目标，例如 S3、MongoDB、Cassandra、MySQL、syslog 和 Splunk 等。[添加 Fluentd 作为接收器](../add-fluentd-as-receiver)演示如何添加 Fluentd 接收 Kubernetes 日志。
 
-## Add a Log Receiver (i.e. Collector) for Events or Auditing Logs
+## 为事件或审计日志添加日志接收器
 
-Starting from KubeSphere v3.0.0, the logs of Kubernetes events and the auditing logs of Kubernetes and KubeSphere can be archived in the same way as container logs. The tab **Events** or **Auditing** on the **Log Collections** page will appear if `events` or `auditing` is enabled accordingly in [ClusterConfiguration](https://github.com/kubesphere/kubekey/blob/master/docs/config-example.md). You can go to the corresponding tab to configure log receivers for Kubernetes events or Kubernetes and KubeSphere auditing logs.
+自 KubeSphere v3.0.0 起，Kubernetes 事件和 Kubernetes 以及 KubeSphere 审计日志可以通过和容器日志相同的方式进行存档。如果在 [ClusterConfiguration](https://github.com/kubesphere/kubekey/blob/master/docs/config-example.md) 中启用了 `events` 或 `auditing`，**日志收集**页面会对应显示**事件**或**审计**选项卡。您可以前往对应选项卡为 Kubernetes 事件或 Kubernetes 以及 KubeSphere 审计日志配置日志接收器。
 
 ![log-collections-events](/images/docs/cluster-administration/cluster-settings/log-collections/introduction/log-collections-events.png)
 
-Container logs, Kubernetes events and Kubernetes and KubeSphere auditing logs should be stored in different Elasticsearch indices to be searched in KubeSphere. The index prefixes are:
+容器日志、Kubernetes 事件和 Kubernetes 以及 KubeSphere 审计日志应存储在不同的 Elasticsearch 索引中以便在 KubeSphere 中进行搜索，索引前缀如下：
 
-- `ks-logstash-log` for container logs
-- `ks-logstash-events` for Kubernetes events
-- `ks-logstash-auditing` for Kubernetes and KubeSphere auditing logs
+- 容器日志：`ks-logstash-log`
+- Kubernetes 事件：`ks-logstash-events` 
+- Kubernetes 和 KubeSphere 审计日志：`ks-logstash-auditing`
 
-## Turn a Log Receiver on or Off
+## 启用或停用日志接收器
 
-You can turn a log receiver on or off without adding or deleting it. To turn a log receiver on or off:
+无需新增或删除日志接收器，您可以随时启用或停用日志接收器，具体步骤如下：
 
-1. On the **Log Collections** page, click a log receiver and go to the receiver's detail page.
-2. Click **More** and select **Change Status**.
+1. 在**日志收集**页面，点击一个日志接收器并进入其详情页面。
+2. 点击**更多操作**并选择**更改状态**。
 
     ![more](/images/docs/cluster-administration/cluster-settings/log-collections/introduction/more.png)
 
-3. Select **Activate** or **Close** to turn the log receiver on or off.
+3. 选择**激活**或**关闭**以启用或停用该日志接收器。
 
     ![change-status](/images/docs/cluster-administration/cluster-settings/log-collections/introduction/change-status.png)
 
-4. A log receiver's status will be changed to **Close** if you turn it off, otherwise the status will be **Collecting**.
+4. 停用后，日志接收器的状态会变为**关闭**，激活时状态为**收集中**。
 
     ![receiver-status](/images/docs/cluster-administration/cluster-settings/log-collections/introduction/receiver-status.png)
 
-## Modify or Delete a Log Receiver
+## 修改或删除日志接收器
 
-You can modify a log receiver or delete it:
+您可以修改或删除日志接收器：
 
-1. On the **Log Collections** page, click a log receiver and go to the receiver's detail page.
-2. Edit a log receiver by clicking **Edit** or **Edit YAML** from the drop-down list.
+1. 在**日志收集**页面，点击一个日志接收器并进入其详情页面。
+2. 点击**编辑**或从下拉菜单中选择**编辑配置文件**以编辑日志接收器。
 
     ![more](/images/docs/cluster-administration/cluster-settings/log-collections/introduction/more.png)
 
-3. Delete a log receiver by clicking **Delete Log Collector**.
+3. 点击**删除日志接收器**进行删除。
