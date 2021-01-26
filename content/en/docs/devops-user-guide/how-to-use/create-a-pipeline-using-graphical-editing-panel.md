@@ -6,7 +6,7 @@ linkTitle: 'Create a Pipeline Using Graphical Editing Panels'
 weight: 11220
 ---
 
-A graphical editing panel in KubeSphere contains all the necessary operations used in Jenkins [stages](https://www.jenkins.io/doc/book/pipeline/#stage) and [steps](https://www.jenkins.io/doc/book/pipeline/#step). You can directly define these stages and steps on the highly responsive and interactive panel without creating any Jenkinsfile.
+A graphical editing panel in KubeSphere contains all the necessary operations used in Jenkins [stages](https://www.jenkins.io/doc/book/pipeline/#stage) and [steps](https://www.jenkins.io/doc/book/pipeline/#step). You can directly define these stages and steps on the interactive panel without creating any Jenkinsfile.
 
 This tutorial demonstrates how to create a pipeline through graphical editing panels in KubeSphere. During the whole process, you do not need to create any Jenkinsfile manually as KubeSphere will automatically generate one based on your settings on the editing panels. When the pipeline successful runs, it creates a Deployment and a Service accordingly in your development environment and pushes an image to Docker Hub.
 
@@ -214,7 +214,7 @@ This stage uses SonarQube to test your code. You can skip this stage if you do n
 
    ![timeout](/images/docs/devops-user-guide/using-devops/create-a-pipeline-using-graphical-editing-panels/timeout.jpg)
 
-9. Click **Add nesting steps** for the **timeout** step and select **waitforSonarQubeGate**. Select **Start the follow-up task after the inspection** in the pop-up dialog. Click **OK** to save it.
+9. Click **Add nesting steps** for the **timeout** step and select **waitForQualityGate**. Select **Start the follow-up task after the inspection** in the pop-up dialog. Click **OK** to save it.
 
    ![waitforqualitygate](/images/docs/devops-user-guide/using-devops/create-a-pipeline-using-graphical-editing-panels/waitforqualitygate.jpg)
 

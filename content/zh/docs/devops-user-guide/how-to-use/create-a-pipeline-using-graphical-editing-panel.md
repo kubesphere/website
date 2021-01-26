@@ -6,7 +6,7 @@ linkTitle: '使用图形编辑面板创建流水线'
 weight: 11220
 ---
 
-KubeSphere 中的图形编辑面板包含用于 Jenkins [阶段 (Stage)](https://www.jenkins.io/zh/doc/book/pipeline/#阶段) 和[步骤 (Step)](https://www.jenkins.io/zh/doc/book/pipeline/#步骤) 的所有必要操作。您可以直接在高度响应的交互式面板上定义这些阶段和步骤，无需创建任何 Jenkinsfile。
+KubeSphere 中的图形编辑面板包含用于 Jenkins [阶段 (Stage)](https://www.jenkins.io/zh/doc/book/pipeline/#阶段) 和[步骤 (Step)](https://www.jenkins.io/zh/doc/book/pipeline/#步骤) 的所有必要操作。您可以直接在交互式面板上定义这些阶段和步骤，无需创建任何 Jenkinsfile。
 
 本教程演示如何在 KubeSphere 中使用图形编辑面板创建流水线。KubeSphere 在整个过程中将根据您在编辑面板上的设置自动生成 Jenkinsfile，您无需手动创建 Jenkinsfile。待流水线成功运行，它会相应地在您的开发环境中创建一个部署 (Deployment) 和一个服务 (Service)，并将镜像推送至 Docker Hub。
 
@@ -48,7 +48,7 @@ KubeSphere 中的图形编辑面板包含用于 Jenkins [阶段 (Stage)](https:/
 
    {{</ notice >}} 
 
-   | 凭证 ID         | 类型       | 使用场所   |
+   | 凭证 ID         | 类型       | 用途       |
    | --------------- | ---------- | ---------- |
    | dockerhub-id    | 帐户凭证   | Docker Hub |
    | demo-kubeconfig | kubeconfig | Kubernetes |
@@ -200,7 +200,7 @@ KubeSphere 中的图形编辑面板包含用于 Jenkins [阶段 (Stage)](https:/
 
    ![添加嵌套步骤](/images/docs/zh-cn/devops-user-guide/use-devops/create-a-pipeline-using-graphical-editing-panel/add-nested-step.PNG)
 
-7. 点击 **shell** 并在的命令行中输入以下命令，用于 sonarqube 分支和认证，点击**确定**完成操作。
+7. 点击 **shell** 并在命令行中输入以下命令，用于 sonarqube 分支和认证，点击**确定**完成操作。
 
    ```shell
    mvn sonar:sonar -o -gs `pwd`/configuration/settings.xml -Dsonar.login=$SONAR_TOKEN
@@ -367,7 +367,7 @@ KubeSphere 中的图形编辑面板包含用于 Jenkins [阶段 (Stage)](https:/
 
    ![查看部署](/images/docs/zh-cn/devops-user-guide/use-devops/create-a-pipeline-using-graphical-editing-panel/view-deployment.PNG)
 
-3. 在**服务**页面，您可以看到示例服务通过 Nodeport 暴露其端口号。要访问服务，请访问 `node IP:port number`。
+3. 在**服务**页面，您可以看到示例服务通过 NodePort 暴露其端口号。要访问服务，请访问 `node IP:port number`。
 
    ![服务暴露](/images/docs/zh-cn/devops-user-guide/use-devops/create-a-pipeline-using-graphical-editing-panel/service-exposed.PNG)
 
