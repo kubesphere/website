@@ -31,7 +31,7 @@ You can use [strimzi-kafka-operator](https://github.com/strimzi/strimzi-kafka-op
     ```
 
 
-2. Create a Kafka cluster and a Kafka topic in the `default` namespace by running the following commands. The commands create Kafka and Zookeeper clusters with storage type `ephemeral` which is `emptydir` for demonstration purposes. For other storage types in a production environment, refer to [kafka-persistent](https://github.com/strimzi/strimzi-kafka-operator/blob/0.19.0/examples/kafka/kafka-persistent.yaml).
+2. Create a Kafka cluster and a Kafka topic in the `default` namespace by running the following commands. The commands create Kafka and Zookeeper clusters with storage type `ephemeral` which is `emptyDir` for demonstration purposes. For other storage types in a production environment, refer to [kafka-persistent](https://github.com/strimzi/strimzi-kafka-operator/blob/0.19.0/examples/kafka/kafka-persistent.yaml).
 
     ```yaml
     cat <<EOF | kubectl apply -f -
