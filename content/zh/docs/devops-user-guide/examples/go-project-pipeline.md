@@ -1,80 +1,80 @@
 ---
-title: "Build and Deploy a Go Project"
+title: "构建和部署 Go 工程"
 keywords: 'Kubernetes, docker, devops, jenkins, go, KubeSphere'
-description: 'This tutorial demonstrates how to build and deploy a Go project.'
-linkTitle: "Build and Deploy a Go Project"
+description: '本教程演示如何构建和部署 Go 工程。'
+linkTitle: "构建和部署 Go 工程"
 weight: 11410
 ---
 
-## Prerequisites
+## 准备工作
 
-- You need to [enable KubeSphere DevOps System](../../../../docs/pluggable-components/devops/).
-- You need to have a [Docker Hub](https://hub.docker.com/) account.
-- You need to create a workspace, a DevOps project, a project, and an account (`project-regular`). This account needs to be invited to the DevOps project and the project for deploying your workload with the role `operator`. For more information, see [Create Workspace, Project, Account and Role](../../../quick-start/create-workspace-and-project).
+- 您需要[启用 KubeSphere DevOps 系统](../../../pluggable-components/devops/)。
+- 您需要有一个 [Docker Hub](https://hub.docker.com/) 帐户。
+- 您需要创建一个企业空间、一个 DevOps 工程、一个项目和一个帐户 (`project-regular`)，需要邀请该帐户至 DevOps 工程和项目中并赋予 `operator` 角色，以部署工作负载。有关更多信息，请参见[创建企业空间、项目、帐户和角色](../../../quick-start/create-workspace-and-project/)。
 
-## Create Docker Hub Access Token
+## 创建 Docker Hub 访问令牌 (Token)
 
-1. Sign in [Docker Hub](https://hub.docker.com/) and select **Account Settings** from the menu in the top right corner.
+1. 登录 [Docker Hub](https://hub.docker.com/) 并在右上角的菜单中选择 **Account Settings**。
 
-   ![dockerhub-settings](/images/docs/devops-user-guide/examples/compile-and-deploy-a-go-project/dockerhub-settings.jpg)
+   ![DockerHub 设置](/images/docs/zh-cn/devops-user-guide/examples/build-and-deploy-a-go-project/dockerhub-settings.PNG)
 
-2. Click **Security** and **New Access Token**.
+2. 在左侧点击 **Security**，然后点击 **New Access Token**。
 
-   ![dockerhub-create-token](/images/docs/devops-user-guide/examples/compile-and-deploy-a-go-project/dockerhub-create-token.jpg)
+   ![DockerHub 创建令牌](/images/docs/zh-cn/devops-user-guide/examples/build-and-deploy-a-go-project/dockerhub-create-token.PNG)
 
-3. Enter the token name and click **Create**.
+3. 输入令牌名称，点击 **Create**。
 
-   ![dockerhub-token-ok](/images/docs/devops-user-guide/examples/compile-and-deploy-a-go-project/dockerhub-token-ok.jpg)
+   ![DockerHub 令牌创建完成](/images/docs/zh-cn/devops-user-guide/examples/build-and-deploy-a-go-project/dockerhub-token-ok.PNG)
 
-4. Click **Copy and Close** and remember to save the access token.
+4. 点击 **Copy and Close** 并务必保存该访问令牌。
 
-   ![dockerhub-token-copy](/images/docs/devops-user-guide/examples/compile-and-deploy-a-go-project/dockerhub-token-copy.jpg)
+   ![复制 DockerHub 令牌](/images/docs/zh-cn/devops-user-guide/examples/build-and-deploy-a-go-project/dockerhub-token-copy.PNG)
 
-## Create Credentials
+## 创建凭证
 
-You need to create credentials in KubeSphere for the access token created so that the pipeline can interact with Docker Hub for imaging pushing. Besides, you also create kubeconfig credentials for the access to the Kubernetes cluster.
+您需要在 KubeSphere 中为已创建的访问令牌创建凭证，以便流水线能够向 Docker Hub 推送镜像。此外，您还需要创建 kubeconfig 凭证，用于访问 Kubernetes 集群。
 
-1. Log in the web console of KubeSphere as `project-regular`. Go to your DevOps project and click **Create** in **Credentials**.
+1. 以 `project-regular` 身份登录 KubeSphere Web 控制台，转到您的 DevOps 工程，在**凭证**页面点击**创建**。
 
-   ![create-dockerhub-id](/images/docs/devops-user-guide/examples/compile-and-deploy-a-go-project/create-dockerhub-id.jpg)
+   ![创建 DockerHub ID](/images/docs/zh-cn/devops-user-guide/examples/build-and-deploy-a-go-project/create-dockerhub-id.PNG)
 
-2. In the dialogue that appears, set a **Credential ID**, which will be used later in the Jenkinsfile, and select **Account Credentials** for **Type**. Enter your Docker Hub account name for **Username** and the access token just created for **Token/Password**. When you finish, click **OK**.
+2. 在弹出对话框中，设置**凭证 ID**，稍后会用于 Jenkinsfile 中，**类型**选择**帐户凭证**。**用户名**输入您的 Docker Hub 帐户名称，**token / 密码**中输入刚刚创建的访问令牌。操作完成后，点击**确定**。
 
-   ![credential-docker-create](/images/docs/devops-user-guide/examples/compile-and-deploy-a-go-project/credential-docker-create.jpg)
+   ![创建 Docker 凭证](/images/docs/zh-cn/devops-user-guide/examples/build-and-deploy-a-go-project/credential-docker-create.PNG)
 
    {{< notice tip >}}
 
-For more information about how to create credentials, see [Credential Management](../../../devops-user-guide/how-to-use/credential-management/).
+有关如何创建凭证的更多信息，请参见[凭证管理](../../../devops-user-guide/how-to-use/credential-management/)。
 
    {{</ notice >}}
 
-3. Click **Create** again and select **kubeconfig** for **Type**. Note that KubeSphere automatically populates the **Content** field, which is the kubeconfig of the current user account. Set a **Credential ID** and click **OK**.
+3. 再次点击**创建**，**类型**选择 **kubeconfig**。KubeSphere 会自动填充 **Content** 字段，即当前用户帐户的 kubeconfig。设置**凭证 ID**，然后点击**确定**。
 
-   ![create-kubeconfig](/images/docs/devops-user-guide/examples/compile-and-deploy-a-go-project/create-kubeconfig.jpg)
+   ![创建 kubeconfig](/images/docs/zh-cn/devops-user-guide/examples/build-and-deploy-a-go-project/create-kubeconfig.PNG)
 
-## Create a Pipeline
+## 创建流水线
 
-With the above credentials ready, you can create a pipeline using an example Jenkinsfile as below.
+创建完上述凭证后，您可以按照以下步骤使用示例 Jenkinsfile 创建流水线。
 
-1. To create a pipeline, click **Create** on the **Pipelines** page.
+1. 要创建流水线，请在**流水线**页面点击**创建**。
 
-   ![create-pipeline](/images/docs/devops-user-guide/examples/compile-and-deploy-a-go-project/create-pipeline.jpg)
+   ![创建流水线](/images/docs/zh-cn/devops-user-guide/examples/build-and-deploy-a-go-project/create-pipeline.PNG)
 
-2. Set a name in the pop-up window and click **Next** directly.
+2. 在弹出窗口中设置名称，然后点击**下一步**。
 
-   ![set-pipeline-name](/images/docs/devops-user-guide/examples/compile-and-deploy-a-go-project/set-pipeline-name.jpg)
+   ![设置流水线名称](/images/docs/zh-cn/devops-user-guide/examples/build-and-deploy-a-go-project/set-pipeline-name.PNG)
 
-3. In this tutorial, you can use default values for all the fields. In **Advanced Settings**, click **Create** directly.
+3. 在本教程中，您可以为所有字段使用默认值。在**高级设置**页面，直接点击**创建**。
 
-   ![create-pipeline-2](/images/docs/devops-user-guide/examples/compile-and-deploy-a-go-project/create-pipeline-2.jpg)
+   ![创建流水线-2](/images/docs/zh-cn/devops-user-guide/examples/build-and-deploy-a-go-project/create-pipeline-2.PNG)
 
-## Edit Jenkinsfile
+## 编辑 Jenkinsfile
 
-1. In the pipeline list, click this pipeline to go to its detail page. Click **Edit Jenkinsfile** to define a Jenkinsfile and your pipeline runs based on it.
+1. 在流水线列表中，点击该流水线进入其详情页面。点击**编辑 Jenkinsfile** 定义一个 Jenkinsfile，流水线会基于它来运行。
 
-   ![edit-jenkinsfile](/images/docs/devops-user-guide/examples/compile-and-deploy-a-go-project/edit-jenkinsfile.jpg)
+   ![编辑 jenkinsfile](/images/docs/zh-cn/devops-user-guide/examples/build-and-deploy-a-go-project/edit-jenkinsfile.PNG)
 
-2. Copy and paste all the content below to the pop-up window as an example Jenkinsfile for your pipeline. You must replace the value of `DOCKERHUB_USERNAME`,  `DOCKERHUB_CREDENTIAL`, `KUBECONFIG_CREDENTIAL_ID`,  and `PROJECT_NAME` with yours. When you finish, click **OK**.
+2. 将以下所有内容复制并粘贴到弹出窗口中，用作流水线的示例 Jenkinsfile。您必须将 `DOCKERHUB_USERNAME`、`DOCKERHUB_CREDENTIAL`、`KUBECONFIG_CREDENTIAL_ID` 和 `PROJECT_NAME` 的值替换成您自己的值。操作完成后，点击**确定**。
 
    ```groovy
    pipeline {  
@@ -130,31 +130,31 @@ With the above credentials ready, you can create a pipeline using an example Jen
 
    {{< notice note >}}
 
-If your pipeline runs successfully, images will be pushed to Docker Hub. If you are using Harbor, you cannot pass the parameter to `docker login -u`  via the Jenkins credential with environment variables. This is because every Harbor robot account username contains a  `$` character, which will be converted to `$$` by Jenkins when used by environment variables. [Learn more](https://number1.co.za/rancher-cannot-use-harbor-robot-account-imagepullbackoff-pull-access-denied/).
+如果您的流水线成功运行，将会推送镜像至 Docker Hub。如果您使用 Harbor，则无法通过 Jenkins 凭证使用环境变量将参数传送到 `docker login -u`。这是因为每个 Harbor Robot 帐户的用户名都包含一个 `$` 字符，当用于环境变量时，Jenkins 会将其转换为 `$$`。[了解更多信息](https://number1.co.za/rancher-cannot-use-harbor-robot-account-imagepullbackoff-pull-access-denied/)。
 
    {{</ notice >}}
 
-## Run Pipeline
+## 运行流水线
 
-1. After you finish the Jenkinsfile, you can see graphical panels display on the dashboard. Click **Run** to run the pipeline.
+1. Jenkinsfile 设置完成后，您可以在仪表板上查看图形面板。点击**运行**来运行流水线。
 
-   ![run-pipeline](/images/docs/devops-user-guide/examples/compile-and-deploy-a-go-project/run-pipeline.jpg)
+   ![运行流水线](/images/docs/zh-cn/devops-user-guide/examples/build-and-deploy-a-go-project/run-pipeline.PNG)
 
-2. In **Activity**, you can see the status of the pipeline. It may take a while before it successfully runs.
+2. 在**活动**选项卡中，您可以查看流水线的状态。稍等片刻，流水线便会成功运行。
 
-   ![pipeline-running](/images/docs/devops-user-guide/examples/compile-and-deploy-a-go-project/pipeline-running.jpg)
+   ![流水线成功运行](/images/docs/zh-cn/devops-user-guide/examples/build-and-deploy-a-go-project/pipeline-running.PNG)
 
 
-## Verify Results
+## 验证结果
 
-1. A **Deployment** will be created in the project specified in the Jenkinsfile if the pipeline runs successfully.
+1. 如果流水线成功运行，则会在 Jenkinsfile 中指定的项目中创建一个**部署 (Deployment)**。
 
-   ![view-deployments](/images/docs/devops-user-guide/examples/compile-and-deploy-a-go-project/view-deployments.jpg)
+   ![查看部署](/images/docs/zh-cn/devops-user-guide/examples/build-and-deploy-a-go-project/view-deployment.PNG)
 
-2. Check whether the image is pushed to Docker Hub as shown below:
+2. 查看镜像是否已推送至 Docker Hub，如下所示：
 
-   ![docker-image-1](/images/docs/devops-user-guide/examples/compile-and-deploy-a-go-project/docker-image-1.jpg)
+   ![Docker 镜像-1](/images/docs/zh-cn/devops-user-guide/examples/build-and-deploy-a-go-project/docker-image-1.PNG)
 
-   ![docker-image-2](/images/docs/devops-user-guide/examples/compile-and-deploy-a-go-project/docker-image-2.jpg)
+   ![Docker 镜像-2](/images/docs/zh-cn/devops-user-guide/examples/build-and-deploy-a-go-project/docker-image-2.PNG)
    
    
