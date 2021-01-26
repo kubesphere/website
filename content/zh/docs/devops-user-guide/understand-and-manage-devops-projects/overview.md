@@ -31,7 +31,7 @@ KubeSphere DevOps 系统为您提供以下功能：
 
 ![流水线列表](/images/docs/zh-cn/devops-user-guide/understand-and-manage-devops-projects/overview/pipeline-list.PNG)
 
-![sonarqube-result-detail](/images/docs/devops-user-guide/understand-and-manage-devops-projects/overview/sonarqube-result-detail.jpg)
+![SonarQube 详细结果](/images/docs/zh-cn/devops-user-guide/understand-and-manage-devops-projects/overview/sonarqube-result-detail.PNG)
 
 ### KubeSphere CI/CD 流水线工作流
 
