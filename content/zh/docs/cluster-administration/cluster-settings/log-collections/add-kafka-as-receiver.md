@@ -1,26 +1,26 @@
 ---
-title: "添加 Kafka 作为接收器（即收集器）"
-keywords: 'Kubernetes, log, kafka, pod, container, fluentbit, output'
-description: 'Add Kafka as a Receiver'
+title: "添加 Kafka 作为接收器"
+keywords: 'Kubernetes, 日志, Kafka, Pod, 容器, Fluentbit, 输出'
+description: '添加 Kafka 作为接收器'
 linkTitle: "添加 Kafka 作为接收器"
 weight: 8623
 ---
-You can use Elasticsearch, Kafka and Fluentd as log receivers in KubeSphere. This tutorial demonstrates:
+您可以在 KubeSphere 中使用 Elasticsearch、Kafka 和 Fluentd 日志接收器。本教程演示：
 
-- Deploy [strimzi-kafka-operator](https://github.com/strimzi/strimzi-kafka-operator) and then create a Kafka cluster and a Kafka topic by creating `Kafka` and `KafkaTopic` CRDs.
-- Add Kafka as a log receiver to receive logs sent from Fluent Bit.
-- Verify whether the Kafka cluster is receiving logs using [Kafkacat](https://github.com/edenhill/kafkacat).
+- 部署 [strimzi-kafka-operator](https://github.com/strimzi/strimzi-kafka-operator)，然后通过创建 `Kafka` 和 `KafkaTopic` CRD 以创建 Kafka 集群和 Kafka Topic。
+- 添加 Kafka 作为日志接收器以从 Fluent Bit 接收日志。
+- 使用 [Kafkacat](https://github.com/edenhill/kafkacat) 验证 Kafka 集群是否能接收日志。
 
-## Prerequisites
+## 准备工作
 
-- You need an account granted a role including the authorization of **Clusters Management**. For example, you can log in to the console as `admin` directly or create a new role with the authorization and assign it to an account.
-- Before adding a log receiver, you need to enable any of the `logging`, `events` or `auditing` components. For more information, see [Enable Pluggable Components](../../../../pluggable-components/). `logging` is enabled as an example in this tutorial.
+- 您需要一个被授予**集群管理**权限的帐户。例如，您可以直接用 `admin` 帐户登录控制台，或创建一个具有**集群管理**权限的角色然后将此角色授予一个帐户。
+- 添加日志接收器前，您需要启用组件 `logging`、`events` 或 `auditing`。有关更多信息，请参见[启用可插拔组件](../../../../pluggable-components/)。本教程启用 `logging` 作为示例。
 
-## Step 1: Create a Kafka Cluster and a Kafka Topic
+## 步骤 1：创建 Kafka 集群和 Kafka Topic
 
-You can use [strimzi-kafka-operator](https://github.com/strimzi/strimzi-kafka-operator) to create a Kafka cluster and a Kafka topic. If you already have a Kafka cluster, you can start from the next step.
+您可以使用 [strimzi-kafka-operator](https://github.com/strimzi/strimzi-kafka-operator) 创建 Kafka 集群和 Kafka Topic。如果您已经有了一个 Kafka 集群，您可以直接从下一步开始。
 
-1. Install [strimzi-kafka-operator](https://github.com/strimzi/strimzi-kafka-operator) in the `default` namespace:
+1. 在 `default` 命名空间中安装 [strimzi-kafka-operator](https://github.com/strimzi/strimzi-kafka-operator)：
 
     ```bash
     helm repo add strimzi https://strimzi.io/charts/
@@ -31,7 +31,7 @@ You can use [strimzi-kafka-operator](https://github.com/strimzi/strimzi-kafka-op
     ```
 
 
-2. Create a Kafka cluster and a Kafka topic in the `default` namespace by running the following commands. The commands create Kafka and Zookeeper clusters with storage type `ephemeral` which is `emptydir` for demonstration purposes. For other storage types in a production environment, refer to [kafka-persistent](https://github.com/strimzi/strimzi-kafka-operator/blob/0.19.0/examples/kafka/kafka-persistent.yaml).
+2. 运行以下命令在 `default` 命名空间中创建 Kafka 集群和 Kafka Topic，该命令所创建的 Kafka 和 Zookeeper 集群的存储类型为 `ephemeral`，使用 `emptyDir` 进行演示。若要在生产环境下配置储存类型，请参见 [kafka-persistent](https://github.com/strimzi/strimzi-kafka-operator/blob/0.19.0/examples/kafka/kafka-persistent.yaml)。
 
     ```yaml
     cat <<EOF | kubectl apply -f -
@@ -78,7 +78,7 @@ You can use [strimzi-kafka-operator](https://github.com/strimzi/strimzi-kafka-op
     EOF
     ```
 
-3. Run the following command to check Pod status and wait for Kafka and Zookeeper are all up and running.
+3. 运行以下命令查看 Pod 状态，并等待 Kafka 和 Zookeeper 运行并启动。
 
     ```bash
     $ kubectl -n default get pod 
@@ -93,21 +93,21 @@ You can use [strimzi-kafka-operator](https://github.com/strimzi/strimzi-kafka-op
     strimzi-cluster-operator-7d6cd6bdf7-9cf6t    1/1     Running   0          104m
     ```
 
-    Run the following command to check the metadata of the Kafka cluster:
+    运行以下命令查看 Kafka 集群的元数据：
 
     ```bash
     kafkacat -L -b my-cluster-kafka-0.my-cluster-kafka-brokers.default.svc:9092,my-cluster-kafka-1.my-cluster-kafka-brokers.default.svc:9092,my-cluster-kafka-2.my-cluster-kafka-brokers.default.svc:9092
     ```
 
-## Step 2: Add Kafka as a Log Receiver
+## 步骤 2：添加 Kafka 作为日志接收器
 
-1. Log in to KubeSphere as `admin`. Click **Platform** in the top left corner and select **Clusters Management**.
+1. 以 `admin` 身份登录 KubeSphere 的 Web 控制台。点击左上角的**平台管理**，然后选择**集群管理**。
 
-2. If you have enabled the [multi-cluster feature](../../../../multicluster-management), you can select a specific cluster. If you have not enabled the feature, refer to the next step directly.
+2. 如果您启用了[多集群功能](../../../../multicluster-management)，您可以选择一个集群。如果尚未启用该功能，请直接进行下一步。
 
-3. On the **Cluster Management** page, go to **Log Collections** in **Cluster Settings**.
+3. 在**集群管理**页面，选择**集群设置**下的**日志收集**。
 
-4. Click **Add Log Collector** and select **Kafka**. Input the Kafka broker address and port as below, and then click **OK** to continue.
+4. 点击**添加日志接收器**并选择 **Kafka**。输入 Kafka 代理地址和端口信息，然后点击**确定**继续。
 
    ```bash
    my-cluster-kafka-0.my-cluster-kafka-brokers.default.svc 9092
@@ -117,7 +117,7 @@ You can use [strimzi-kafka-operator](https://github.com/strimzi/strimzi-kafka-op
 
    ![add-kafka](/images/docs/cluster-administration/cluster-settings/log-collections/add-kafka-as-receiver/add-kafka.png)
 
-5. Run the following commands to verify whether the Kafka cluster is receiving logs sent from Fluent Bit:
+5. 运行以下命令验证 Kafka 集群是否能从 Fluent Bit 接收日志：
 
    ```bash
    # Start a util container
