@@ -1,7 +1,7 @@
 ---
 title: "添加 Elasticsearch 作为接收器"
-keywords: 'Kubernetes, log, elasticsearch, pod, container, fluentbit, output'
-description: 'Add Elasticsearch as a log receiver to receive container logs'
+keywords: 'Kubernetes, 日志, Elasticsearch, Pod, 容器, Fluentbit, 输出'
+description: '添加 Elasticsearch 作为接收器'
 linkTitle: "添加 Elasticsearch 作为接收器"
 weight: 8622
 ---
@@ -28,7 +28,7 @@ weight: 8622
 
     ![add-es](/images/docs/cluster-administration/cluster-settings/log-collections/add-es-as-receiver/add-es.png)
 
-6. Elasticsearch 会显示在日志收集页面的接收器列表中，状态为**收集中**。
+6. Elasticsearch 会显示在**日志收集**页面的接收器列表中，状态为**收集中**。
 
     ![receiver-list](/images/docs/cluster-administration/cluster-settings/log-collections/add-es-as-receiver/receiver-list.png)
 
