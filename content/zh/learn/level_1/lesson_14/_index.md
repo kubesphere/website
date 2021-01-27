@@ -1,5 +1,5 @@
 ---
-linkTitle: Kubesphere 上发布单容器应用
+linkTitle: KubeSphere 上发布单容器应用
 weight: 14
 
 _build:
