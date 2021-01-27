@@ -1,5 +1,5 @@
 ---
-title: Kubesphere | Kubesphere 上发布单容器应用
+title: KubeSphere | KubeSphere 上发布单容器应用
 
 video: 
   snapshot: https://pek3b.qingstor.com/kubesphere-docs/png/20200206170305.png
