@@ -1,5 +1,5 @@
 ---
-title: Kubesphere | 应用调度
+title: KubeSphere | 应用调度
 
 video: 
   snapshot: https://pek3b.qingstor.com/kubesphere-docs/png/20200206170305.png
