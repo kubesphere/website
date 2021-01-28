@@ -55,7 +55,7 @@ Create an example Kubernetes namespace first so that you can add it to a workspa
 
    ![user-projects](/images/docs/faq/access-control-and-account-management/add-exisiting-namespaces-to-a-kubesphere-workspace/user-projects.jpg)
 
-2. The workspace created through kubectl does not belong to any workspace. Click the three dots on the right and select **Assign Workspace**.
+2. The namespace created through kubectl does not belong to any workspace. Click the three dots on the right and select **Assign Workspace**.
 
    ![assign-workspace](/images/docs/faq/access-control-and-account-management/add-exisiting-namespaces-to-a-kubesphere-workspace/assign-workspace.jpg)
 
