@@ -69,7 +69,7 @@ You can use the account `project-admin` to create the project. Besides, this acc
 
 ### Step 3: Create a pipeline
 
-1. Make sure you have logged in KubeSphere as `project-regular`, and then go to your DevOps project. Click **Create** in **Pipelines**.
+1. Make sure you have logged in to KubeSphere as `project-regular`, and then go to your DevOps project. Click **Create** in **Pipelines**.
 
    ![create-pipeline](/images/docs/devops-user-guide/using-devops/create-a-pipeline-using-graphical-editing-panels/create-pipeline.jpg)
 
