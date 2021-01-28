@@ -9,7 +9,7 @@ weight: 16000
 icon: "/images/docs/docs.svg"
 ---
 
-This chapter answers and summarizes the questions users ask most frequently about KubeSphere. You can find these questions in their respective sections which are divided based on KubeSphere functions.
+This chapter answers and summarizes the questions users ask most frequently about KubeSphere. You can find these questions and answers in their respective sections which are grouped based on KubeSphere functions.
 
 ## Installation
 
@@ -39,7 +39,7 @@ Questions asked frequently about the logging functionality.
 
 ### [Monitoring](../faq/observability/monitoring/)
 
-Questions asked frequently about the logging functionality.
+Questions asked frequently about the monitoring functionality.
 
 ### [Bring Your Own Prometheus](../faq/observability/byop/)
 
@@ -54,6 +54,10 @@ Reset the password of any account.
 ### [Session Timeout](../access-control/session-timeout/)
 
 Understand session timeout and customize the timeout period.
+
+### [Add existing Kubernetes namespaces to a KubeSphere Workspace](../faq/access-control/add-kubernetes-namespace-to-kubesphere-workspace/)
+
+Add you existing Kubernetes namespaces to a KubeSphere workspace.
 
 ## KubeSphere Web Console
 

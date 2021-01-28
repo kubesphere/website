@@ -9,62 +9,66 @@ weight: 16000
 icon: "/images/docs/docs.svg"
 ---
 
-This chapter answers and summarizes the questions users ask most frequently about KubeSphere. You can find these questions in their respective sections which are divided based on KubeSphere functions.
+本章节总结并回答了有关 KubeSphere 最常见的问题，问题根据 KubeSphere 的功能进行分类，您可以在对应部分找到有关的问题和答案。
 
-## Installation
+## 安装
 
-### [Configure a Booster for Installation](../faq/installation/configure-booster/)
+### [为安装配置加速器](../faq/installation/configure-booster/)
 
-Set a registry mirror to speed up image downloads during installation.
+设置仓库镜像地址加速安装时的镜像下载速度。
 
-### [Telemetry in KubeSphere](../faq/installation/telemetry/)
+### [启用或禁用 KubeSphere 中的 Telemetry](../faq/installation/telemetry/)
 
-Understand what Telemetry is and how to enable or disable it in KubeSphere.
+了解 Telemetry 并学习如何在 KubeSphere 中启用或禁用。
 
-### [Install an Add-on through YAML Using KubeKey](../faq/installation/install-addon-through-yaml-using-kubekey/)
+### [使用 KubeKey 通过 YAML 安装插件](../faq/installation/install-addon-through-yaml-using-kubekey/)
 
-Understand why the installation may fail when you use KubeKey to install an add-on through YAML.
+了解使用 KubeKey 安装 YAML 插件时可能失败的原因。
 
-## Upgrade
+## 升级
 
-### [Upgrade QingCloud CSI](../faq/upgrade/upgrade-faq/)
+### [升级 QingCloud CSI](../faq/upgrade/upgrade-faq/)
 
-Upgrade the QingCloud CSI after you upgrade KubeSphere.
+升级 KubeSphere 后升级 QingCloud CSI。
 
-## Observability
+## 可观察性
 
-### [Logging](../faq/observability/logging/)
+### [日志系统](../faq/observability/logging/)
 
-Questions asked frequently about the logging functionality.
+有关日志功能的常见问题。
 
-### [Monitoring](../faq/observability/monitoring/)
+### [监控系统](../faq/observability/monitoring/)
 
-Questions asked frequently about the logging functionality.
+有关监控功能的常见问题。
 
-### [Bring Your Own Prometheus](../faq/observability/byop/)
+### [集成您自己的 Prometheus](../faq/observability/byop/)
 
-Use your own Prometheus stack setup in KubeSphere.
+在 KubeSphere 中使用您自己的 Prometheus 堆栈设置。
 
-## Access Control and Account Management
+## 访问控制和帐户管理
 
-### [Reset the Account Password](../faq/access-control/forgot-password/)
+### [重置帐户密码](../faq/access-control/forgot-password/)
 
-Reset the password of any account.
+重置任意一个帐户的密码。
 
-### [Session Timeout](../access-control/session-timeout/)
+### [会话超时](../faq/access-control/session-timeout/)
 
-Understand session timeout and customize the timeout period.
+理解会话超时并自定义超时时间。
 
-## KubeSphere Web Console
+### [添加现有 Kubernetes 命名空间至 KubeSphere 企业空间](../faq/access-control/add-kubernetes-namespace-to-kubesphere-workspace/)
 
-### [Supported Browsers](../faq/console/console-web-browser/)
+将您现有 Kubernetes 集群中的命名空间添加至 KubeSphere 的企业空间。
 
-Use a supported web browser to access the console.
+## KubeSphere Web 控制台
 
-### [Edit System Resources on the Console](../faq/console/edit-resources-in-system-workspace/)
+### [支持的浏览器](../faq/console/console-web-browser/)
 
-Enable the editing function of system resources on the console.
+使用支持的浏览器访问控制台。
 
-### [Change the Console Language](../faq/console/change-console-language/)
+### [在控制台上编辑系统资源](../faq/console/edit-resources-in-system-workspace/)
 
-Select a desire language of the console.
+在控制台上启用对系统资源的编辑功能。
+
+### [更改控制台语言](../faq/console/change-console-language/)
+
+选择控制台的显示语言。
