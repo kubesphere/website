@@ -1,38 +1,37 @@
 ---
-title: "Panels"
-keywords: 'monitoring, prometheus, prometheus operator'
-description: 'Panels'
-
-linkTitle: "Panels"
+title: "图表"
+keywords: '监控, Prometheus, Prometheus Operator'
+description: '图表'
+linkTitle: "图表"
 weight: 10816
 ---
 
-KubeSphere currently supports two kinds of charts: text charts and graph charts.
+KubeSphere 当前支持两种图表：文本图表和图形图表。
 
-## Text
+## 文本图表
 
-A text chart is preferable for displaying a single metric value. The editing window for the text chart is composed of two parts. The upper part displays the real-time metric value, and the lower part is for editing. You can input a PromQL expression to fetch a single metric value.
+文本图表适合显示单个指标的数值。文本图表的编辑窗口包括两部分，上半部分显示指标的实时数值，下半部分可进行编辑。您可以输入 PromQL 表达式以获取单个指标的数值。
 
-- **Chart Name**: the name of the text chart.
-- **Unit**: the metric data unit.
-- **Decimal Places**: accept an integer.
-- **Monitoring Metrics**: a list of available Prometheus metrics.
+- **图表名称**：该文本图表的名称。
+- **单位**：指标数据的单位。
+- **精确位**：支持整数。
+- **监控指标**：包含可用的 Prometheus 指标。
 
-![text-chart-1](/images/docs/project-user-guide/custom-application-monitoring/text-chart-1.jpg)
+![文本图表](/images/docs/zh-cn/project-user-guide/custom-application-monitoring/visualization/charts/文本图表.jpg)
 
-## Graph
+## 图形图表
 
-A graph chart is preferable for displaying multiple metric values. The editing window for the graph chart is composed of three parts. The upper part displays real-time metric values. The left part is for setting the graph theme. The right part is for editing metrics and chart descriptions.
+图形图表适合显示多个指标的数值。图形图表的编辑窗口包括三部分，上半部分显示指标的实时数值，左侧栏用于设置图表主题，右侧栏用于编辑指标和图表描述。
 
-- **Graph Types**: support line charts and stacked charts.
-- **Chart Colors**: change line colors.
-- **Chart Name**: the name of the text chart.
-- **Description**: the chart description.
-- **Add Button**: add a new query editor.
-- **Metric Name**: legend for the line. It supports variables. For example, `{{pod}}` means using the value of the Prometheus metric label `pod` to name this line.
-- **Interval**: the step value between two data points.
-- **Monitoring Metrics**: a list of available Prometheus metrics.
-- **Unit**: the metric data unit.
-- **Decimal Places**: accept an integer.
+- **图表类型**：支持折线图和堆叠图。
+- **图表配色**：修改图表各个指标的颜色。
+- **图表名称**：图表的名称。
+- **描述信息**：图表描述。
+- **添加**：在图表中新增指标。
+- **图例名称**：图表中线条的图例名称，支持参数。例如 `{{pod}}` 表示使用 Prometheus 指标标签 `pod` 来给图表中的线条命名。
+- **间隔**：两个数据点间的步骤值 (Step Value)。
+- **监控指标**：包含可用的 Prometheus 指标。
+- **单位**：指标数据的单位。
+- **精确位**：支持整数。
 
-![graph-chart](/images/docs/project-user-guide/custom-application-monitoring/graph-chart.jpg)
+![图形图表](/images/docs/zh-cn/project-user-guide/custom-application-monitoring/visualization/charts/图形图表.jpg)
