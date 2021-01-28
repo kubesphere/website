@@ -6,7 +6,7 @@ linkTitle: "添加现有 Kubernetes 命名空间至 KubeSphere 企业空间"
 Weight: 16430
 ---
 
-Kubernetes 命名空间 (namespace) 即 KubeSphere 项目。如果您不是在 KubeSphere 控制台创建命名空间对象，则该命名空间不会直接在企业空间中显示。不过，集群管理员依然可以在**集群管理**页面查看该命名空间。同时，您也可以将该命名空间添加至企业空间。
+Kubernetes 命名空间即 KubeSphere 项目。如果您不是在 KubeSphere 控制台创建命名空间对象，则该命名空间不会直接在企业空间中显示。不过，集群管理员依然可以在**集群管理**页面查看该命名空间。同时，您也可以将该命名空间添加至企业空间。
 
 本教程演示如何添加现有 Kubernetes 命名空间至 KubeSphere 企业空间。
 
