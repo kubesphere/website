@@ -2,7 +2,6 @@
 title: "Canary Release"
 keywords: 'KubeSphere, Kubernetes, canary release, istio, service mesh'
 description: 'How to implement the canary release for an app.'
-
 linkTitle: "Canary Release"
 weight: 10530
 ---
@@ -19,7 +18,7 @@ This method serves as an efficient way to test performance and reliability of a 
 - You need to create a workspace, a project and an account (`project-regular`). The account must be invited to the project with the role of `operator`. For more information, see [Create Workspaces, Projects, Accounts and Roles](../../../quick-start/create-workspace-and-project).
 - You need to enable **Application Governance** and have an available app so that you can implement the canary release for it. The sample app used in this tutorial is Bookinfo. For more information, see [Deploy Bookinfo and Manage Traffic](../../../quick-start/deploy-bookinfo-to-k8s/).
 
-## Create Canary Release Job
+## Create a Canary Release Job
 
 1. Log in to KubeSphere as `project-regular`. Under **Categories**, click **Create Job** on the right of **Canary Release**.
 
