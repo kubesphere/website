@@ -1,6 +1,6 @@
 ---
 title: "Querying"
-keywords: 'monitoring, prometheus, prometheus operator, querying'
+keywords: 'monitoring, Prometheus, Prometheus Operator, querying'
 description: 'Querying'
 linkTitle: "Querying"
 weight: 10817
