@@ -1,21 +1,21 @@
 ---
-title: "Session Timeout"
-keywords: "Session timeout, KubeSphere, Kubernetes"
-description: "How to solve the session timeout problem."
-linkTitle: "Session Timeout"
+title: "会话超时"
+keywords: "会话超时, KubeSphere, Kubernetes"
+description: "如何解决会话超时问题"
+linkTitle: "会话超时"
 Weight: 16420
 ---
 
-A session starts as a user logs in the console of KubeSphere. You may see a message of "**Session timeout or this account is logged in elsewhere, please login again**" when the session expires.
+当用户登录 KubeSphere 的控制台时会话开始。当会话过期时，您会看到信息“**会话超时或此帐户在其他地方登录，请重新登录**”。
 
-## Inactivity Session Timeout
+## 不活跃会话超时
 
-You can control when an inactive user session expires. The default session timeout is two hours of inactivity. It means once the session timeout is reached, the user will be automatically logged out of the console. You can [configure accessTokenMaxAge and accessTokenInactivityTimeout](../../../access-control-and-account-management/configuring-authentication/#authentication-configuration) for the session timeout.
+您可以控制不活跃用户的会话超时时间，默认超时时间为两小时，即达到会话超时时间后，用户会从控制台自动登出。您可以为会话超时配置 [accessTokenMaxAge 和 accessTokenInactivityTimeout](../../../access-control-and-account-management/configuring-authentication/#authentication-configuration)。
 
-## JWT Signature Verification Failed
+## JWT 签名认证失败
 
-In a [multi-cluster environment](../../../multicluster-management/enable-multicluster/direct-connection/#prepare-a-member-cluster), `clusterRole` and `jwtSecret` must be set correctly.
+在[多集群环境](../../../multicluster-management/enable-multicluster/direct-connection/#prepare-a-member-cluster)下，您必须正确设置 `clusterRole` 和 `jwtSecret`。
 
-## Node Clock Skew 
+## 节点时钟偏移
 
-The node clock skew affects time-sensitive operations such as validating the expiration time of a user token. You can configure the server time synchronization with an NTP server. [MaximumClockSkew](../../../access-control-and-account-management/configuring-authentication/#authentication-configuration) can also be set, which defaults to 10 seconds.
+节点时钟偏移会影响时间敏感性操作，例如用户令牌 (Token) 过期时间的验证。您可以将服务器时间和 NTP 服务器进行同步。[MaximumClockSkew](../../../access-control-and-account-management/configuring-authentication/#authentication-configuration) 也可设置，默认为 10 秒。

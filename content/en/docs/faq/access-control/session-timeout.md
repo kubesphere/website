@@ -6,7 +6,7 @@ linkTitle: "Session Timeout"
 Weight: 16420
 ---
 
-A session starts as a user logs in the console of KubeSphere. You may see a message of "**Session timeout or this account is logged in elsewhere, please login again**" when the session expires.
+A session starts as a user logs in to the console of KubeSphere. You may see a message of "**Session timeout or this account is logged in elsewhere, please login again**" when the session expires.
 
 ## Inactivity Session Timeout
 
