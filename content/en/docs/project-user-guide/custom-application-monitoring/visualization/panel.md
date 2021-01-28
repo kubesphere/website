@@ -27,7 +27,7 @@ A graph is preferable for displaying multiple metric values. The editing window 
 - **Chart Colors**: Change line colors.
 - **Chart Name**: The name of the chart.
 - **Description**: The chart description.
-- **Add**: Add a new metric in the chart.
+- **Add**: Add a new query editor.
 - **Metric Name**: Legend for the line. It supports variables. For example, `{{pod}}` means using the value of the Prometheus metric label `pod` to name this line.
 - **Interval**: The step value between two data points.
 - **Monitoring Metrics**: A list of available Prometheus metrics.
