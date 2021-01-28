@@ -1,78 +1,85 @@
 ---
-title: "Overview"
-keywords: 'monitoring, prometheus, prometheus operator'
-description: 'Overview'
-
-linkTitle: "Overview"
+title: "概述"
+keywords: '监控, Prometheus, Prometheus Operator'
+description: '概述'
+linkTitle: "概述"
 weight: 10815
 ---
 
-This section introduces dashboard features. You will learn how to visualize metric data in KubeSphere for your custom applications. If you do not know how to integrate your application metrics into KubeSphere monitoring system, read [Introduction](../../introduction) first.
+本节介绍监控面板功能。您将会学习如何在 KubeSphere 中为您的自定义应用实现指标数据的可视化。如果您不知道如何将应用指标集成至 KubeSphere 的监控系统，请先参阅[介绍](../../introduction)。
 
-## Create Dashboard
+## 创建监控面板
 
-To create new dashboards for your application metrics, navigate to **Custom Monitoring** on the project **Overview** page. There are three ways to create dashboards. For MySQL, Elasticsearch, and Redis, you can use built-in templates. These templates are for demonstration purposes and are updated with KubeSphere releases. Besides, you can choose to customize dashboards from scratch.
+您可以在项目的**监控告警**下的**自定义监控**页面为应用指标创建监控面板。共有三种方式可创建监控面板：使用内置模板创建、使用空白模板进行自定义或者使用 YAML 文件创建。
 
-A KubeSphere custom monitoring dashboard can be seen as simply a YAML configuration file. The data model is heavily inspired by [Grafana](https://github.com/grafana/grafana), an open-source tool for monitoring and observability. Please find KubeSphere monitoring dashboard data model design in [kubesphere/monitoring-dashboard](https://github.com/kubesphere/monitoring-dashboard). The configuration file is portable and sharable. You are welcome to contribute dashboard templates to the KubeSphere community via [Monitoring Dashboards Gallery](https://github.com/kubesphere/monitoring-dashboard/tree/master/contrib/gallery). 
+内置模板共有三种，可分别用于 MySQL、Elasticsearch 和 Redis。这些模板仅供演示使用，并会根据 KubeSphere 新版本的发布同步更新。此外，您还可以创建自定义监控面板。
 
-![new-dashboard](/images/docs/project-user-guide/custom-application-monitoring/new-dashboard.jpg)
+KubeSphere 自定义监控面板可以视作为一个 YAML 配置文件。数据模型主要基于 [Grafana](https://github.com/grafana/grafana)（一个用于监控和可观察性的开源工具）创建，您可以在 [kubesphere/monitoring-dashboard](https://github.com/kubesphere/monitoring-dashboard) 中找到 KubeSphere 监控面板数据模型的设计。该配置文件便捷，可进行分享，欢迎您通过  [Monitoring Dashboards Gallery](https://github.com/kubesphere/monitoring-dashboard/tree/master/contrib/gallery) 对 KubeSphere 社区贡献面板模板。
 
-### From built-in templates
+![监控面板](/images/docs/zh-cn/project-user-guide/custom-application-monitoring/visualization/overview/监控面板.jpg)
 
-For a quickstart, KubeSphere provides built-in templates for MySQL, Elasticsearch, and Redis. If you want to create dashboards from built-in templates, select a template then click **Create**.
+### 使用内置模板
 
-### From scratch
+KubeSphere 为 MySQL、Elasticsearch 和 Redis 提供内置模板方便您快速创建监控面板。如果您想使用内置模板，请选择一种并点击**创建**。
 
-To start with a blank template, click **Create**. 
+### 使用空白模板
 
-### From YAML file
+若要使用空白模板，请直接点击**创建**。
 
-Toggle to **Edit Mode** in the top right corner then paste your dashboard YAML files.
+### 使用 YAML 文件
 
-![new-dashboard-2](/images/docs/project-user-guide/custom-application-monitoring/new-dashboard-2.jpg)
+打开右上角的**编辑模式**并粘贴您的面板 YAML 文件。
 
-## Dashboard Layout
+![面板配置文件](/images/docs/zh-cn/project-user-guide/custom-application-monitoring/visualization/overview/面板配置文件.jpg)
 
-The dashboard layout is composed of four parts. Global settings are on the top of the page. The left-most column is for text-based charts showing the current value of metrics. The middle column places line chart collections for visualizing metrics over a specific period. The right-most column presents detailed information in charts.
+## 面板布局
 
-### Top bar
+监控面板包括四个部分，全局设置位于页面顶部，最左侧栏以文本图表的形式显示当前指标的数值，中间栏包括多个图表，显示指标在一段时间内的变化，最右侧栏显示图表中的详细信息。
 
-On the top bar, you can configure the following settings: title, theme, time range, and refresh interval.
+### 顶部栏
 
-![dashboard-layout](/images/docs/project-user-guide/custom-application-monitoring/dashboard-layout.jpg)
+在顶部栏中，您可以配置以下设置：名称、主题、时间范围和刷新间隔。
 
-### Text chart column
+![顶部栏](/images/docs/zh-cn/project-user-guide/custom-application-monitoring/visualization/overview/顶部栏.jpg)
 
-You can add new text charts in the left-most column.
+### 文本图表栏
 
-![dashboard-layout-2](/images/docs/project-user-guide/custom-application-monitoring/dashboard-layout-2.jpg)
+您可以在最左侧栏中添加新的文本图表。
 
-### Chart display column
+![左侧文本栏](/images/docs/zh-cn/project-user-guide/custom-application-monitoring/visualization/overview/左侧文本栏.jpg)
 
-You can view charts in the middle column.
+### 图表显示栏
 
-![dashboard-layout-3](/images/docs/project-user-guide/custom-application-monitoring/dashboard-layout-3.jpg)
+您可以在中间栏中查看图表。
 
-### Detail column
+![中间栏](/images/docs/zh-cn/project-user-guide/custom-application-monitoring/visualization/overview/中间栏.jpg)
 
-You can view chart details in the right-most column. It shows the **max**, **min**, **avg** and **last** value of metrics within the specific period.
+### 详情栏
 
-![dashboard-layout-4](/images/docs/project-user-guide/custom-application-monitoring/dashboard-layout-4.jpg)
+您可以在最右侧栏中查看图表详情，包括一段时间内指标的 **max**, **min**, **avg** 和 **last** 等数值。
 
-## Edit Dashboard
+![右侧详情栏](/images/docs/zh-cn/project-user-guide/custom-application-monitoring/visualization/overview/右侧详情栏.jpg)
 
-You can edit an existing template by clicking **Edit Template** in the top right corner.
+## 编辑监控面板
 
-### Add panel
+您可以在右上角点击**编辑模板**以修改当前模板。
 
-To add text charts, click the **add icon** in the left column. To add charts, click **Add Monitoring Item** in the bottom right corner.
+### 添加图表
 
-![edit-dashboard](/images/docs/project-user-guide/custom-application-monitoring/edit-dashboard.jpg)
+若要添加文本图表，点击左侧栏中的**加号**图标。若要在中间栏添加图表，点击右下角的**添加监控项**。
 
-### Add group
+![编辑监控面板](/images/docs/zh-cn/project-user-guide/custom-application-monitoring/visualization/overview/编辑监控面板.jpg)
 
-To group monitoring items, you can drag the item into the target group. To add a new group, click **Add Monitoring Group**.
+### 添加监控组
 
-## Open Dashboard
+若要将监控项分组，您可以将右侧的项目拖放（右侧的六个点）至目标组。若要添加新的分组，点击**添加监控组**。如果您想修改监控组的位置，点击右侧的**向上**或**向下**箭头。
 
-Find and share dashboard templates in [Monitoring Dashboards Gallery](https://github.com/kubesphere/monitoring-dashboard/tree/master/contrib/gallery). It is a place for KubeSphere community users to contribute their masterpieces.
+{{< notice note >}}
+
+监控组在右侧所显示的位置和中间栏图表的位置一致。换言之，如果您修改监控组在右侧的顺序，其所对应的图表位置也会随之变化。
+
+{{</ notice >}} 
+
+## 面板模板
+
+您可以在 [Monitoring Dashboards Gallery](https://github.com/kubesphere/monitoring-dashboard/tree/master/contrib/gallery) 中找到并分享面板模板，KubeSphere 社区用户可以在这里贡献他们模板设计。
