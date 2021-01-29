@@ -18,6 +18,10 @@ In addition to installing KubeSphere on a Linux machine, you can also deploy it 
 
 {{</ notice >}}
 
+## Video Demonstration
+
+{{< youtube 6wdOBD4gyg4 >}}
+
 ## Deploy KubeSphere
 
 After you make sure your machine meets the prerequisites, you can follow the steps below to install KubeSphere.
