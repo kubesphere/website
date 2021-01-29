@@ -1,65 +1,64 @@
 ---
-title: "Canary Release"
-keywords: 'KubeSphere, Kubernetes, canary release, istio, service mesh'
-description: 'How to implement the canary release for an app.'
-
-linkTitle: "Canary Release"
+title: "金丝雀发布"
+keywords: 'KubeSphere, Kubernetes, 金丝雀发布, istio, 服务网格'
+description: '如何实现应用的金丝雀发布。'
+linkTitle: "金丝雀发布"
 weight: 10530
 ---
 
-On the back of [Istio](https://istio.io/), KubeSphere provides users with necessary control to deploy canary services. In a canary release, you introduce a new version of a service and test it by sending a small percentage of traffic to it. At the same time, the old version is responsible for handling the rest of the traffic. If everything goes well, you can gradually increase the traffic sent to the new version, while simultaneously phasing out the old version. In the case of any occurring issues, KubeSphere allows you to roll back to the previous version as you change the traffic percentage.
+KubeSphere 基于 [Istio](https://istio.io/) 向用户提供部署金丝雀服务所需的控制功能。在金丝雀发布中，您可以引入服务的新版本，并向其发送一小部分流量来进行测试。同时，旧版本负责处理其余的流量。如果一切顺利，您可以逐渐增加向新版本发送的流量，并同时逐步停用旧版本。如果出现任何问题，您可以用 KubeSphere 更改流量比例来回滚至先前版本。
 
-This method serves as an efficient way to test performance and reliability of a service. It can help detect potential problems in the actual environment while not affecting the overall system stability.
+该方法能够高效地测试服务性能和可靠性，有助于在实际环境中发现潜在问题，同时不影响系统整体稳定性。
 
-![canary-release-0](/images/docs/project-user-guide/grayscale-release/canary-release/canary-release-0.png)
+![canary-release-0](/images/docs/zh-cn/project-user-guide/grayscale-release/canary-release/canary-release-0.png)
 
-## Prerequisites
+## 准备工作
 
-- You need to enable [KubeSphere Service Mesh](../../../pluggable-components/service-mesh/).
-- You need to create a workspace, a project and an account (`project-regular`). The account must be invited to the project with the role of `operator`. For more information, see [Create Workspace, Project, Account and Role](../../../quick-start/create-workspace-and-project).
-- You need to enable **Application Governance** and have an available app so that you can implement the canary release for it. The sample app used in this tutorial is Bookinfo. For more information, see [Deploy Bookinfo and Manage Traffic](../../../quick-start/deploy-bookinfo-to-k8s/).
+- 您需要启用 [KubeSphere 服务网格](../../../pluggable-components/service-mesh/)。
+- 您需要创建一个企业空间、一个项目和一个帐户 (`project-regular`)。请务必邀请该帐户至项目中并赋予 `operator` 角色。有关更多信息，请参见[创建企业空间、项目、帐户和角色](../../../quick-start/create-workspace-and-project)。
+- 您需要开启**应用治理**并有一个可用应用，以便实现该应用的金丝雀发布。本教程中使用的示例应用是 Bookinfo。有关更多信息，请参见[部署 Bookinfo 和管理流量](../../../quick-start/deploy-bookinfo-to-k8s/)。
 
-## Create Canary Release Job
+## 创建金丝雀发布任务
 
-1. Log in KubeSphere as `project-regular`. Under **Categories**, click **Create Job** on the right of **Canary Release**.
+1. 以 `project-regular` 身份登录 KubeSphere 控制台，在**灰度策略**选项卡下，点击**金丝雀发布**右侧的**发布任务**。
 
-   ![create-canary-release](/images/docs/project-user-guide/grayscale-release/canary-release/create-canary-release.jpg)
+   ![创建金丝雀发布](/images/docs/zh-cn/project-user-guide/grayscale-release/canary-release/create-canary-release.PNG)
 
-2. Set a name for it and click **Next**.
+2. 设置名称，点击**下一步**。
 
-   ![set-task-name](/images/docs/project-user-guide/grayscale-release/canary-release/set-task-name.jpg)
+   ![设置名称](/images/docs/zh-cn/project-user-guide/grayscale-release/canary-release/set-task-name.PNG)
 
-3. Select your app from the drop-down list and the service for which you want to implement the canary release. If you also use the sample app Bookinfo, select **reviews** and click **Next**.
+3. 从下拉列表中选择您的应用和要实现金丝雀发布的服务。如果您同样使用实例应用 Bookinfo，请选择 **reviews** 并点击**下一步**。
 
-   ![cabary-release-3](/images/docs/project-user-guide/grayscale-release/canary-release/cabary-release-3.jpg)
+   ![cabary-release-3](/images/docs/zh-cn/project-user-guide/grayscale-release/canary-release/canary-release-3.PNG)
 
-4. On the **Grayscale Release Version** page, add another version of it (e.g `v2`) as shown in the image below and click **Next**:
+4. 在**灰度版本**页面，添加另一个版本（例如 `v2`）并点击下一步，如下图所示：
 
-   ![canary-release-4](/images/docs/project-user-guide/grayscale-release/canary-release/canary-release-4.jpg)
+   ![canary-release-4](/images/docs/zh-cn/project-user-guide/grayscale-release/canary-release/canary-release-4.PNG)
 
    {{< notice note >}}
 
-   The image version is `v2` in the screenshot.
+   截图中的镜像版本是 `v2`。
 
    {{</ notice >}} 
 
-5. You send traffic to these two versions (`v1` and `v2`) either by a specific percentage or by the request content such as `Http Header`, `Cookie` and `URI`. Select **Forward by traffic ratio** and drag the icon in the middle to change the percentage of traffic sent to these two versions respectively (e.g. set 50% for either one). When you finish, click **Create**.
+5. 您可以使用具体比例或者使用请求内容（例如 `Http Header`、`Cookie` 和 `URI`）分别向这两个版本（`v1` 和 `v2`）发送流量。选择**按流量比例下发**，并拖动中间的滑块来更改向这两个版本分别发送的流量比例（例如设置为各 50%）。操作完成后，点击**创建**。
 
-   ![canary-release-5](/images/docs/project-user-guide/grayscale-release/canary-release/canary-release-5.gif)
+   ![canary-release-5](/images/docs/zh-cn/project-user-guide/grayscale-release/canary-release/canary-release-5.gif)
 
-6. The canary release job created displays under the tab **Job Status**. Click it to view details.
+6. 金丝雀发布任务创建后会显示在**任务状态**选项卡下。点击该任务查看详情。
 
-   ![canary-release-job](/images/docs/project-user-guide/grayscale-release/canary-release/canary-release-job.jpg)
+   ![canary-release-job](/images/docs/zh-cn/project-user-guide/grayscale-release/canary-release/canary-release-job.PNG)
 
-7. Wait for a while and you can see half of the traffic go to each of them:
+7. 稍等片刻，您可以看到每个版本分别收到一半流量：
 
-   ![canary-release-6](/images/docs/project-user-guide/grayscale-release/canary-release/canary-release-6.jpg)
+   ![canary-release-6](/images/docs/zh-cn/project-user-guide/grayscale-release/canary-release/canary-release-6.PNG)
 
-8. The new **Deployment** is created as well.
+8. 新的**部署**也已创建。
 
-   ![deployment-list-1](/images/docs/project-user-guide/grayscale-release/canary-release/deployment-list-1.jpg)
+   ![deployment-list-1](/images/docs/zh-cn/project-user-guide/grayscale-release/canary-release/deployment-list-1.PNG)
 
-9. You can directly get the virtual service to identify the weight by executing the following command:
+9. 您可以执行以下命令直接获取虚拟服务来识别权重：
 
    ```bash
    kubectl -n demo-project get virtualservice -o yaml
@@ -67,12 +66,12 @@ This method serves as an efficient way to test performance and reliability of a 
 
    {{< notice note >}} 
 
-   - When you execute the command above, replace `demo-project` with your own project (i.e. namespace) name.
-   - If you want to execute the command from the web kubectl on the KubeSphere console, you need to use the account `admin`.
+   - 当您执行上述命令时，请将 `demo-project` 替换为您自己项目（即命名空间）的名称。
+   - 如果您想在 KubeSphere 控制台使用 Web kubectl 执行命令，则需要使用 `admin` 帐户登录。
 
    {{</ notice >}} 
 
-10. Expected output:
+10. 预期输出：
 
     ```bash
     ...
@@ -96,12 +95,12 @@ This method serves as an efficient way to test performance and reliability of a 
           ...
     ```
 
-## Take a Job Offline
+## 下线任务
 
-1. After you implement the canary release, and the result meets your expectation, you can select **Take Over** from the menu, sending all the traffic to the new version. 
+1. 您实现金丝雀发布并且结果达到预期后，可以在菜单中选择**接管所有流量**，将所有流量发送至新版本。
 
-   ![take-over-traffic](/images/docs/project-user-guide/grayscale-release/canary-release/take-over-traffic.jpg)
+   ![接管所有流量](/images/docs/zh-cn/project-user-guide/grayscale-release/canary-release/take-over-traffic.PNG)
 
-2. To remove the old version with the new version handling all the traffic, click **Job offline**.
+2. 待所有流量由新版本进行处理并要下架旧版本时，请点击**任务下线**。
 
-   ![job-offline](/images/docs/project-user-guide/grayscale-release/canary-release/job-offline.jpg)
+   ![任务下线](/images/docs/zh-cn/project-user-guide/grayscale-release/canary-release/job-offline.PNG)
