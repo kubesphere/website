@@ -15,10 +15,10 @@ KubeSphere 基于 [Istio](https://istio.io/) 向用户提供部署金丝雀服�
 ## 准备工作
 
 - 您需要启用 [KubeSphere 服务网格](../../../pluggable-components/service-mesh/)。
-- 您需要创建一个企业空间、一个项目和一个帐号 (`project-regular`)。请务必邀请该帐号至项目中并赋予 `operator` 角色。有关更多信息，请参见[创建企业空间、项目、帐户和角色](../../../quick-start/create-workspace-and-project)。
+- 您需要创建一个企业空间、一个项目和一个帐户 (`project-regular`)。请务必邀请该帐号至项目中并赋予 `operator` 角色。有关更多信息，请参见[创建企业空间、项目、帐户和角色](../../../quick-start/create-workspace-and-project)。
 - 您需要开启**应用治理**并有一个可用应用，以便实现该应用的金丝雀发布。本教程中使用的示例应用是 Bookinfo。有关更多信息，请参见[部署 Bookinfo 和管理流量](../../../quick-start/deploy-bookinfo-to-k8s/)。
 
-## 创建金丝雀发布任务 (Job)
+## 创建金丝雀发布任务
 
 1. 以 `project-regular` 身份登录 KubeSphere 控制台，在**灰度策略**选项卡下，点击**金丝雀发布**右侧的**发布任务**。
 
@@ -42,7 +42,7 @@ KubeSphere 基于 [Istio](https://istio.io/) 向用户提供部署金丝雀服�
 
    {{</ notice >}} 
 
-5. 您可以使用具体比例或者使用请求内容（例如 `Http Header`、`Cookie` 和 `URI`）分别向这两个版本（`v1` 和 `v2`）发送流量。选择**按流量比例下发**，并拖动滑块至中间来更改向这两个版本分别发送的流量比例（即设置为每个 50%）。操作完成后，点击**创建**。
+5. 您可以使用具体比例或者使用请求内容（例如 `Http Header`、`Cookie` 和 `URI`）分别向这两个版本（`v1` 和 `v2`）发送流量。选择**按流量比例下发**，并拖动中间的滑块来更改向这两个版本分别发送的流量比例（例如设置为各 50%）。操作完成后，点击**创建**。
 
    ![canary-release-5](/images/docs/zh-cn/project-user-guide/grayscale-release/canary-release/canary-release-5.gif)
 
@@ -56,7 +56,7 @@ KubeSphere 基于 [Istio](https://istio.io/) 向用户提供部署金丝雀服�
 
 8. 新的**部署**也已创建。
 
-   ![deployment-list-1](/images/docs/project-user-guide/grayscale-release/canary-release/deployment-list-1.jpg)
+   ![deployment-list-1](/images/docs/zh-cn/project-user-guide/grayscale-release/canary-release/deployment-list-1.PNG)
 
 9. 您可以执行以下命令直接获取虚拟服务来识别权重：
 
