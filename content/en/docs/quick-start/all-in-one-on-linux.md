@@ -8,6 +8,10 @@ weight: 2100
 
 For those who are new to KubeSphere and looking for a quick way to discover the platform, the all-in-one mode is your best choice to get started. It features rapid deployment and hassle-free configuration installation with KubeSphere and Kubernetes all provisioned on your machine.
 
+## Video Demonstration
+
+{{< youtube PtVQZVb3AgE >}}
+
 ## Step 1: Prepare a Linux Machine
 
 To get started with all-in-one installation, you only need to prepare one host according to the following requirements for hardware and operating system.

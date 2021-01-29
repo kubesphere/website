@@ -10,6 +10,10 @@ In a production environment, a single-node cluster cannot satisfy most of the ne
 
 This section gives you an overview of a single-master multi-node installation, including the concept, [KubeKey](https://github.com/kubesphere/kubekey/) and steps. For information about HA installation, refer to [High Availability Configurations](../ha-configuration/), [Installing on Public Cloud](../../public-cloud/install-kubesphere-on-azure-vms/) and [Installing in On-premises Environment](../../on-premises/install-kubesphere-on-bare-metal/).
 
+## Video Demonstration
+
+{{< youtube nYOYk3VTSgo >}}
+
 ## Concept
 
 A multi-node cluster is composed of at least one master node and one worker node. You can use any node as the **taskbox** to carry out the installation task. You can add additional nodes based on your needs (e.g. for high availability) both before and after the installation.

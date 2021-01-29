@@ -18,6 +18,10 @@ Read [Prerequisites](../prerequisites/) before you install KubeSphere on existin
 
 {{</ notice >}}
 
+## Video Demonstration
+
+{{< youtube 6wdOBD4gyg4 >}}
+
 ## Deploy KubeSphere
 
 After you make sure your existing Kubernetes cluster meets all the requirements, you can use kubectl to install KubeSphere with the default minimal package.
