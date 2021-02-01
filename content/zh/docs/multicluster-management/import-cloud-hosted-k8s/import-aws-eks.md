@@ -66,7 +66,7 @@ ip-10-0-8-148.cn-north-1.compute.internal   Ready    <none>   78m   v1.18.8-eks-
 ```bash
 TOKEN=$(kubectl -n kubesphere-system get secret $(kubectl -n kubesphere-system get sa kubesphere -o jsonpath='{.secrets[0].name}') -o jsonpath='{.data.token}' | base64 -d)
 kubectl config set-credentials kubesphere --token=${TOKEN}
-kubectl config set-credentials --current --user=kubesphere
+kubectl config set-context --current --user=kubesphere
 ```
 
 检查新的 kubeconfig。
