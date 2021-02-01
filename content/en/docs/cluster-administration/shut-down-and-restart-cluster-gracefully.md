@@ -50,7 +50,7 @@ You have shut down your cluster gracefully.
 {{< notice tip >}}
 Usually, a cluster can be used after restarting, but the cluster may be unavailable due to unexpected conditions. For example:
 
-- Etcd data corruption during the shutdown.
+- etcd data corruption during the shutdown.
 - Node failures.
 - Unexpected network errors.
 
