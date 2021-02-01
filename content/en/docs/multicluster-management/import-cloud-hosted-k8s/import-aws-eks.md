@@ -70,7 +70,7 @@ The following section will get token of serviceaccount `kubesphere` created by K
 ```bash
 TOKEN=$(kubectl -n kubesphere-system get secret $(kubectl -n kubesphere-system get sa kubesphere -o jsonpath='{.secrets[0].name}') -o jsonpath='{.data.token}' | base64 -d)
 kubectl config set-credentials kubesphere --token=${TOKEN}
-kubectl config set-credentials --current --user=kubesphere
+kubectl config set-context --current --user=kubesphere
 ```
 
 Check the new kubeconfig.
