@@ -1,143 +1,143 @@
 ---
-title: "Source to Image: Publish an App without a Dockerfile"
+title: "Source to Image：无需 Dockerfile 发布应用"
 keywords: 'KubeSphere, Kubernetes, Docker, S2I, Source-to-Image'
-description: 'How to publish your application using Source-to-Image.'
-linkTitle: "Source to Image: Publish an App without a Dockerfile"
+description: '如何使用 Source-to-Image 发布应用程序。'
+linkTitle: "Source to Image：无需 Dockerfile 发布应用"
 weight: 10610
 ---
 
-Source-to-Image (S2I) is a toolkit and workflow for building reproducible container images from source code. S2I produces ready-to-run images by injecting source code into a container image and letting the container prepare that source code for execution. KubeSphere integrates S2I to automatically build images and publish them to Kubernetes without any Dockerfile.
+Source-to-Image (S2I) 是一个工具箱和工作流，用于从源代码构建可再现容器镜像。S2I 通过将源代码注入容器镜像，自动将编译后的代码打包成镜像。KubeSphere 集成 S2I 来自动构建镜像，并且无需任何 Dockerfile 即可发布到 Kubernetes。
 
-This tutorial demonstrates how to use S2I to import source code of a Java sample project into KubeSphere by creating a Service. Based on the source code, the KubeSphere Image Builder will create a Docker image, push it to a target repository and publish it to Kubernetes.
+本教程演示如何通过创建服务 (Service) 使用 S2I 将 Java 示例项目的源代码导入 KubeSphere。KubeSphere Image Builder 将基于源代码创建 Docker 镜像，将其推送至目标仓库，并发布至 Kubernetes。
 
-![build-process](/images/docs/project-user-guide/image-builder/s2i-publish-app-without-dockerfile/build-process.png)
+![构建流程](/images/docs/zh-cn/project-user-guide/image-builder/source-to-image/build-process.png)
 
-## Prerequisites
+## 准备工作
 
-- You need to enable the [KubeSphere DevOps System](../../../pluggable-components/devops/) as S2I is integrated into it.
-- You need to create a [GitHub](https://github.com/) account and a [Docker Hub](http://www.dockerhub.com/) account. GitLab and Harbor are also supported. This tutorial uses a GitHub repository to provide the source code for building and pushes an image to Docker Hub.
-- You need to create a workspace, a project and an account (`project-regular`). The account must be invited to the project with the role of `operator`. For more information, see [Create Workspace, Project, Account and Role](../../../quick-start/create-workspace-and-project).
-- Set a CI dedicated node for building images. This is not mandatory but recommended for the development and production environment as it caches dependencies and reduces build time. For more information, see [Set a CI Node for Dependency Caching](../../../devops-user-guide/how-to-use/set-ci-node/).
+- 您需要启用 [KubeSphere DevOps 系统](../../../pluggable-components/devops/)，该系统已集成 S2I。
+- 您需要创建一个 [GitHub](https://github.com/) 帐户和一个 [Docker Hub](http://www.dockerhub.com/) 帐户，也支持 GitLab 和 Harbor。本教程使用 Github 仓库提供源代码，用于构建镜像并推送至 Docker Hub。
+- 您需要创建一个企业空间、一个项目和一个帐户 (`project-regular`)，请务必邀请该帐户至项目中并赋予 `operator` 角色。有关更多信息，请参见[创建企业空间、项目、帐户和角色](../../../quick-start/create-workspace-and-project)。
+- 设置一个 CI 专用节点用于构建镜像。该操作不是必需，但建议开发和生产环境进行设置，专用节点会缓存依赖项并缩短构建时间。有关更多信息，请参见[为缓存依赖项设置 CI 节点](../../../devops-user-guide/how-to-use/set-ci-node/)。
 
-## Use Source-to-Image (S2I)
+## 使用 Source-to-Image (S2I)
 
-### Step 1: Fork the example repository
+### 步骤 1：Fork 示例仓库
 
-Log in GitHub and fork the GitHub repository [devops-java-sample](https://github.com/kubesphere/devops-java-sample) to your personal GitHub account.
+登录 GitHub 并 Fork GitHub 仓库 [devops-java-sample](https://github.com/kubesphere/devops-java-sample) 至您的 GitHub 个人帐户。
 
-![fork-repository](/images/docs/project-user-guide/image-builder/s2i-publish-app-without-dockerfile/fork-repository.jpg)
+![Fork 仓库](/images/docs/zh-cn/project-user-guide/image-builder/source-to-image/fork-repository.PNG)
 
-### Step 2: Create Secrets
+### 步骤 2：创建密钥 (Secret)
 
-Log in KubeSphere as `project-regular`. Go to your project and create a Secret for Docker Hub and GitHub respectively. For more information, see [Create the Most Common Secrets](../../../project-user-guide/configuration/secrets/#create-the-most-common-secrets).
+以 `project-regular` 身份登录 KubeSphere 控制台，转到您的项目，分别为 Docker Hub 和 GitHub 创建密钥。有关更多信息，请参见[创建常用密钥](../../../project-user-guide/configuration/secrets/#创建常用密钥)。
 
 {{< notice note >}}
 
-You do not need to create the GitHub Secret if your forked repository is open to the public.
+如果您 Fork 的是公开仓库，则不需要创建 GitHub 密钥。
 
 {{</ notice >}} 
 
-### Step 3: Create a Service
+### 步骤 3：创建服务
 
-1. In the same project, navigate to **Services** under **Application Workloads** and click **Create**.
+1. 在该项目中，转到**应用负载**下的**服务**，点击**创建**。
 
-   ![create-service](/images/docs/project-user-guide/image-builder/s2i-publish-app-without-dockerfile/create-service.jpg)
+   ![创建服务](/images/docs/zh-cn/project-user-guide/image-builder/source-to-image/create-service.PNG)
 
-2. Choose **Java** under **Build a New Service from Source Code Repository**, name it `s2i-demo` and click **Next**.
+2. 选中**通过代码构建新的服务**下的 **Java**，将其命名为 `s2i-demo` 并点击**下一步**。
 
-   ![select-lang-type](/images/docs/project-user-guide/image-builder/s2i-publish-app-without-dockerfile/select-lang-type.jpg)
+   ![选择语言类型](/images/docs/zh-cn/project-user-guide/image-builder/source-to-image/select-lang-type.PNG)
 
    {{< notice note >}}
 
-   KubeSphere has integrated common S2I templates such as Java, Node.js and Python. If you want to use other languages or customize your S2I templates, see Customize S2I Templates.
+   KubeSphere 已集成常用的 S2I 模板，例如 Java、Node.js 和 Python。如果您想使用其他语言或自定义 S2I 模板，请参见自定义 S2I 模板。
 
    {{</ notice >}} 
 
-3. On the **Build Settings** page, provide the following information accordingly and click **Next**.
+3. 在**构建设置**页面，请提供以下相应信息，并点击**下一步**。
 
-   ![build-settings](/images/docs/project-user-guide/image-builder/s2i-publish-app-without-dockerfile/build-settings.jpg)
+   ![构建设置](/images/docs/zh-cn/project-user-guide/image-builder/source-to-image/build-settings.PNG)
 
-   **Service Type**: Select **Stateless Service** for this example. For more information about different Services, see [Service Type](../../../project-user-guide/application-workloads/services/#service-type).
+   **服务类型**：本示例选择**无状态服务**。有关不同服务的更多信息，请参见[服务类型](../../../project-user-guide/application-workloads/services/#服务类型)。
 
-   **Build Environment**: Select **kubesphere/java-8-centos7:v2.1.0**.
+   **构建环境**：选择 **kubesphere/java-8-centos7:v2.1.0**。
 
-   **Code URL**: The source code repository address (currently support Git). You can specify the code branch and the relative path in the source code terminal. The URL supports HTTP and HTTPS. Paste the forked repository URL (your own repository address) into this field.
+   **代码地址**：源代码仓库地址（目前支持 Git）。您可以指定代码分支和在源代码终端的相对路径。URL 支持 HTTP 和 HTTPS。在该字段粘贴已 Fork 仓库的 URL（您自己仓库的地址）。
 
-   ![copy-repo-code](/images/docs/project-user-guide/image-builder/s2i-publish-app-without-dockerfile/copy-repo-code.jpg)
+   ![复制仓库代码](/images/docs/zh-cn/project-user-guide/image-builder/source-to-image/copy-repo-code.PNG)
 
-   **Branch**: The branch that is used for image building. Enter `master` for this tutorial. You can enter `dependency` for a cache test.
+   **分支**：分支用于构建镜像。本教程中在此输入 `master`。您可以输入 `dependency` 进行缓存测试。
 
-   **Secret**: You do not need to provide any Secret for a public repository. Select the GitHub Secret if you want to use a private repository.
+   **密钥**：您不需要为公共仓库提供密钥。如果您想使用私有仓库，请选择 GitHub 密钥。
 
-   **imageName**: Customize an image name. As this tutorial will push an image to Docker Hub, enter `dockerhub_username/s2i-sample`. `dockerhub_username` is your Docker ID and make sure it has the permission to push and pull images.
+   **镜像名称**：自定义镜像名称。本教程会向 Docker Hub 推送镜像，故请输入 `dockerhub_username/s2i-sample`。`dockerhub_username` 是您的 Docker ID，请确保该 ID 有权限推送和拉取镜像。
 
-   **tag**: The image tag. Enter `latest`.
+   **tag**：镜像标签，请输入 `latest`。
 
-   **Target image repository**: Select the Docker Hub Secret as the image is pushed to Docker Hub.
+   **Target image repository**：镜像会推送至 Docker Hub，故请选择 Docker Hub 密钥。
 
-   **Advanced Settings**: You can define the code relative path. Use the default `/` for this field.
+   **高级设置**：您可以定义代码相对路径。该字段请使用默认的 `/`。
 
-4. On the **Container Settings** page, scroll down to **Service Settings** to set the access policy for the container. Select **HTTP** for **Protocol**, customize the name (for example, `http-1`), and input `8080` for both **Container Port** and **Service Port**.
+4. 在**容器设置**页面，下拉至**服务设置**，为容器设置访问策略。**协议**选择 **HTTP**，自定义名称（例如 `http-1`），**容器端口**和**服务端口**都输入 `8080`。
 
-   ![service-settings](/images/docs/project-user-guide/image-builder/s2i-publish-app-without-dockerfile/service-settings.jpg)
+   ![服务设置](/images/docs/zh-cn/project-user-guide/image-builder/source-to-image/service-settings.PNG)
 
-5. Scroll down to **Health Checker** and check it. Set a readiness probe by filling out the following parameters. Click **√** when you finish setting the probe and then click **Next** to continue.
+5. 下拉至**健康检查器**并选中，填写以下参数设置就绪探针。探针设置完成后点击 **√**，然后点击**下一步**继续。
 
-   ![health-checker](/images/docs/project-user-guide/image-builder/s2i-publish-app-without-dockerfile/health-checker.jpg)
+   ![健康检查器](/images/docs/zh-cn/project-user-guide/image-builder/source-to-image/health-checker.PNG)
 
-   **HTTP Request**: Select **HTTP** as the protocol, enter `/` as the path (root path in this tutorial), and input `8080` as the port exposed.
+   **HTTP 请求**：选择 **HTTP** 作为协议，输入 `/` 作为路径（本教程中的根路径），输入 `8080` 作为暴露端口。
 
-   **Initial Delays**: The number of seconds after the container has started before the liveness probe is initiated. Enter `30` for this field.
+   **初始延迟**：容器启动后，存活探针启动之前等待的秒数。本字段输入 `30`。
 
-   **Timeouts**: The number of seconds after which the probe times out. Enter `10` for this field.
+   **超时时间**：探针超时的秒数。本字段输入 `10`。
 
-   For other fields, use the default value directly. For more information about how to configure probes and set other parameters on the **Container Settings** page, see [Container Image Settings](../../../project-user-guide/application-workloads/container-image-settings/).
+   其他字段请直接使用默认值。有关如何在**容器设置**页面配置探针和设置其他参数的更多信息，请参见[容器镜像设置](../../../project-user-guide/application-workloads/container-image-settings/)。
 
-6. On the **Mount Volumes** page, you can add a volume for the container. For more information, see [Volumes](../../../project-user-guide/storage/volumes/). Click **Next** to continue.
+6. 在**挂载存储**页面，您可以为容器添加存储卷。有关更多信息，请参见[存储卷](../../../project-user-guide/storage/volumes/)。点击**下一步**继续。
 
-7. On the **Advanced Settings** page, check **Internet Access** and select **NodePort** as the access method. Click **Create** to finish the whole process.
+7. 在**高级设置**页面，选中**外网访问**并选择 **NodePort** 作为访问方式。点击**创建**完成整个操作过程。
 
-   ![create-finish](/images/docs/project-user-guide/image-builder/s2i-publish-app-without-dockerfile/create-finish.jpg)
+   ![创建完成](/images/docs/zh-cn/project-user-guide/image-builder/source-to-image/create-finish.PNG)
 
-8. Click **Image Builder** from the navigation bar and you can see that the example image is being built.
+8. 点击左侧导航栏的**构建镜像**，您可以看到正在构建示例镜像。
 
-   ![building](/images/docs/project-user-guide/image-builder/s2i-publish-app-without-dockerfile/building.jpg)
+   ![构建中](/images/docs/zh-cn/project-user-guide/image-builder/source-to-image/building.PNG)
 
-### Step 4: Check results
+### 步骤 4：查看结果
 
-1. Wait for a while and you can see the status of the image has reached **Successful**.
+1. 稍等片刻，您可以看到镜像状态变为**成功**。
 
    ![success-result](/images/docs/project-user-guide/image-builder/s2i-publish-app-without-dockerfile/success-result.jpg)
 
-2. Click this image to go to its detail page. Under **Job Records**, click the arrow icon on the right of a record to see building logs. You can see `Build completed successfully` at the end of the log if everything runs normally.
+2. 点击该镜像前往其详情页面。在**任务记录**下，点击记录右侧的箭头图标查看构建日志。如果一切运行正常，您可以在日志末尾看到 `Build completed successfully`。
 
    ![build-log](/images/docs/project-user-guide/image-builder/s2i-publish-app-without-dockerfile/build-log.jpg)
 
-3. Go back to the previous page, and you can see the corresponding Job, Deployment and Service of the image have been all created successfully.
+3. 回到上一层页面，您可以看到该镜像相应的任务、部署和服务都已成功创建。
 
-   #### Service
+   #### 服务
 
    ![service](/images/docs/project-user-guide/image-builder/s2i-publish-app-without-dockerfile/service.jpg)
 
-   #### Deployment
+   #### 部署
 
    ![deployment](/images/docs/project-user-guide/image-builder/s2i-publish-app-without-dockerfile/deployment.jpg)
 
-   #### Job
+   #### 任务
 
    ![job](/images/docs/project-user-guide/image-builder/s2i-publish-app-without-dockerfile/job.jpg)
 
-4. In your Docker Hub repository, you can see that KubeSphere has pushed the image to the repository with the expected tag.
+4. 在您的 Docker Hub 仓库，您可以看到 KubeSphere 已经向仓库推送了带有预期标签的镜像。
 
    ![docker-image](/images/docs/project-user-guide/image-builder/s2i-publish-app-without-dockerfile/docker-image.jpg)
 
-### Step 5: Access the S2I Service
+### 步骤 5：访问 S2I 服务
 
-1. On the **Services** page, click the S2I Service to go to its detail page.
+1. 在**服务**页面，请点击 S2I 服务前往其详情页面。
 
    ![service-detail](/images/docs/project-user-guide/image-builder/s2i-publish-app-without-dockerfile/service-detail.jpg)
 
-2. To access the Service, you can either use the endpoint with the `curl` command or visit `Node IP:Port Number`. For example:
+2. 要访问该服务，您可以执行 `curl` 命令使用 Endpoint 或者访问 `Node IP:Port Number`。例如：
 
    ```bash
    $ curl 10.10.131.44:8080
@@ -146,6 +146,6 @@ You do not need to create the GitHub Secret if your forked repository is open to
 
    {{< notice note >}}
 
-   If you want to access the Service outside the cluster, you may need to open the port in your security groups and configure port forwarding rules depending on your deployment environment.
+   如果您想从集群外访问该服务，可能需要根据您的部署环境在安全组中放行端口并配置端口转发规则。
 
    {{</ notice >}} 
