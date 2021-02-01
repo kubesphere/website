@@ -5,7 +5,7 @@ description: '监控 MySQL'
 linkTitle: "监控 MySQL"
 weight: 10812
 ---
-通过[介绍](../../../../project-user-guide/custom-application-monitoring/introduction/#间接暴露)一文，您了解到无法直接以 Prometheus 指标监控 MySQL。要以 Prometheus 格式暴露 MySQL 指标，您需要部署 MySQL 导出器 (Exporter)。
+通过[介绍](../../../../project-user-guide/custom-application-monitoring/introduction/#间接暴露)一文，您了解到无法直接将 Prometheus 指标接入 MySQL。要以 Prometheus 格式暴露 MySQL 指标，您需要部署 MySQL 导出器 (Exporter)。
 
 本教程演示如何监控 MySQL 指标并将这些指标可视化。
 
@@ -64,7 +64,7 @@ weight: 10812
 如果您使用外部导出器的 Helm Chart，请记得启用 ServiceMonitor CRD。此类 Chart 通常默认禁用 ServiceMonitor，需要手动修改。
     {{</ notice >}}
 
-4. 修改 MySQL 连接参数。MySQL 导出器需要连接到目标 MySQL。在本教程中，MySQL 以服务名 `mysql-8jkp3d` 进行安装。请将 `mysql.host` 设置为 `mysql-mysql-8jkp3d`，将 `mysql.pass` 设置为 `testing`，将 `user` 设置为 `root`，如下所示。请注意，您的 MySQL 服务创建后可能**名称不同**。
+4. 修改 MySQL 连接参数。MySQL 导出器需要连接到目标 MySQL。在本教程中，MySQL 以服务名 `mysql-8jkp3d` 进行安装。请将 `mysql.host` 设置为 `mysql-8jkp3d`，将 `mysql.pass` 设置为 `testing`，将 `user` 设置为 `root`，如下所示。请注意，您的 MySQL 服务创建后可能**名称不同**。
 
     ![Mysql 连接参数](/images/docs/zh-cn/project-user-guide/custom-application-monitoring/examples/monitor-mysql/mysql-conn-params.PNG)
 
@@ -82,16 +82,16 @@ weight: 10812
 
     ![转到自定义监控](/images/docs/zh-cn/project-user-guide/custom-application-monitoring/examples/monitor-mysql/navigate-to-custom-monitoring.PNG)
 
-2. 在弹出对话框中，将仪表板命名为 `mysql-overview` 并选择 **MySQL 模板**。点击**创建**继续。
+2. 在弹出对话框中，将监控面板命名为 `mysql-overview` 并选择 **MySQL 模板**。点击**创建**继续。
 
     ![创建 Mysql 仪表板](/images/docs/zh-cn/project-user-guide/custom-application-monitoring/examples/monitor-mysql/create-mysql-dashboard.PNG)
 
-3. 点击右上角的**保存模板**保存该模板。新创建的仪表板会在仪表板列表中显示，如下所示。
+3. 点击右上角的**保存模板**保存该模板。新创建的监控面板会在监控面板列表中显示，如下所示。
 
     ![保存 Mysql 模板](/images/docs/zh-cn/project-user-guide/custom-application-monitoring/examples/monitor-mysql/save-mysql-template.PNG)
 
     ![监控 Mysql 配置完成](/images/docs/zh-cn/project-user-guide/custom-application-monitoring/examples/monitor-mysql/monitor-mysql-done.PNG)
 
     {{< notice tip >}}
-有关仪表板字符串的更多信息，请参见[可视化](../../../../project-user-guide/custom-application-monitoring/visualization/overview/)。
+有关监控面板上各属性的更多信息，请参见[可视化](../../../../project-user-guide/custom-application-monitoring/visualization/overview/)。
     {{</ notice >}}

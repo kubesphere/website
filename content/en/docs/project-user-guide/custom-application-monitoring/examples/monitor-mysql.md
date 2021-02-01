@@ -93,5 +93,5 @@ After about two minutes, you can create a monitoring dashboard for MySQL and vis
     ![monitor-mysql-done](/images/docs/project-user-guide/custom-application-monitoring/monitor-mysql-done.jpg)
 
     {{< notice tip >}}
-For more information about dashboard strings, see [Visualization](../../../../project-user-guide/custom-application-monitoring/visualization/overview/).
+For more information about dashboard properties, see [Visualization](../../../../project-user-guide/custom-application-monitoring/visualization/overview/).
     {{</ notice >}}
