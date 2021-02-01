@@ -1,20 +1,20 @@
 ---
-title: "Binary to Image: Publish an Artifact to Kubernetes"
+title: "Binary to Image：发布制品到 Kubernetes"
 keywords: "KubeSphere, Kubernetes, Docker, B2I, Binary-to-Image"
-description: "How to publish artifacts to Kubernetes using Binary-to-Image"
-linkTitle: "Binary to Image: Publish an Artifact to Kubernetes"
+description: "如何使用 Binary-to-Image 发布制品到 Kubernetes"
+linkTitle: "Binary to Image：发布制品到 Kubernetes"
 weight: 10620
 ---
 
-Binary-to-Image (B2I) is a toolkit and workflow for building reproducible container images from binary executables such as Jar, War, and binary packages. More specifically, you upload an artifact and specify a target repository such as Docker Hub or Harbor where you want to push the image. If everything runs successfully, your image will be pushed to the target repository and your application will be automatically deployed to Kubernetes if you create a Service in the workflow.
+Binary-to-Image (B2I) 是一个工具箱和工作流，用于从二进制可执行文件（例如 Jar、War 和二进制包）构建可再现容器镜像。更确切地说，您可以上传一个制品并指定一个目标仓库，例如 Docker Hub 或者 Harbor，用于推送镜像。如果一切运行成功，会推送您的镜像至目标仓库，并且如果您在工作流中创建服务 (Service)，也会自动部署应用程序至 Kubernetes。
 
-In a B2I workflow, you do not need to write any Dockerfile. This not only reduces learning costs but improves release efficiency, which allows users to focus more on business.
+在 B2I 工作流中，您不需要编写 Dockerfile。这不仅能降低学习成本，也能提升发布效率，使用户更加专注于业务。
 
-This tutorial demonstrates two different ways to build an image based on an artifact in a B2I workflow. Ultimately, the image will be released to Docker Hub.
+本教程演示在 B2I 工作流中基于制品构建镜像的两种不同方式。最终，镜像会发布至 Docker Hub。
 
-For demonstration and testing purposes, here are some example artifacts you can use to implement the B2I workflow:
+以下是一些示例制品，用于演示和测试，您可以用来实现 B2I 工作流：
 
-| Artifact Package                                             | GitHub Repository                                            |
+| 制品包                                                       | GitHub 仓库                                                  |
 | ------------------------------------------------------------ | ------------------------------------------------------------ |
 | [b2i-war-java8.war](https://github.com/kubesphere/tutorial/raw/master/tutorial%204%20-%20s2i-b2i/b2i-war-java8.war) | [spring-mvc-showcase](https://github.com/spring-projects/spring-mvc-showcase) |
 | [b2i-war-java11.war](https://github.com/kubesphere/tutorial/raw/master/tutorial%204%20-%20s2i-b2i/b2i-war-java11.war) | [springmvc5](https://github.com/kubesphere/s2i-java-container/tree/master/tomcat/examples/springmvc5) |
@@ -22,167 +22,167 @@ For demonstration and testing purposes, here are some example artifacts you can 
 | [b2i-jar-java11.jar](https://github.com/kubesphere/tutorial/raw/master/tutorial%204%20-%20s2i-b2i/b2i-jar-java11.jar) | [ java-maven-example](https://github.com/kubesphere/s2i-java-container/tree/master/java/examples/maven) |
 | [b2i-jar-java8.jar](https://github.com/kubesphere/tutorial/raw/master/tutorial%204%20-%20s2i-b2i/b2i-jar-java8.jar) | [devops-java-sample](https://github.com/kubesphere/devops-java-sample) |
 
-## Prerequisites
+## 准备工作
 
-- You have enabled the [KubeSphere DevOps System](../../installation/install-devops).
-- You need to create a [Docker Hub](http://www.dockerhub.com/) account. GitLab and Harbor are also supported.
-- You need to create a workspace, a project and an account (`project-regular`). The account must be invited to the project with the role of `operator`. For more information, see [Create Workspace, Project, Account and Role](../../../quick-start/create-workspace-and-project).
-- Set a CI dedicated node for building images. This is not mandatory but recommended for the development and production environment as it caches dependencies and reduces build time. For more information, see [Set a CI Node for Dependency Caching](../../../devops-user-guide/how-to-use/set-ci-node/).
+- 您已启用 [KubeSphere DevOps 系统](../../../pluggable-components/devops/)。
+- 您需要创建一个 [Docker Hub](http://www.dockerhub.com/) 帐户，也支持 GitLab 和 Harbor。
+- 您需要创建一个企业空间、一个项目和一个帐户 (`project-regular`)，请务必邀请该帐户至项目中并赋予 `operator` 角色。有关更多信息，请参见[创建企业空间、项目、帐户和角色](../../../quick-start/create-workspace-and-project)。
+- 设置一个 CI 专用节点用于构建镜像。该操作不是必需，但建议开发和生产环境进行设置，专用节点会缓存依赖项并缩短构建时间。有关更多信息，请参见[为缓存依赖项设置 CI 节点](../../../devops-user-guide/how-to-use/set-ci-node/)。
 
-## Create a Service Using Binary-to-Image (B2I)
+## 使用 Binary-to-Image (B2I) 创建服务
 
-The steps below show how to upload an artifact, build an image and release it to Kubernetes by creating a Service in a B2I workflow.
+下图中的步骤展示了如何在 B2I 工作流中通过创建服务来上传制品、构建镜像并将其发布至 Kubernetes。
 
-![service-build](/images/docs/project-user-guide/image-builder/b2i-publish-artifact-to-kubernetes/service-build.png)
+![服务构建](/images/docs/zh-cn/project-user-guide/image-builder/binary-to-image/service-build.png)
 
-### Step 1: Create a Docker Hub Secret
+### 步骤 1：创建 Docker Hub 密钥
 
-You must create a Docker Hub Secret so that the Docker image created through B2I can be push to Docker Hub. Log in KubeSphere as `project-regular`, go to your project and create a Secret for Docker Hub. For more information, see [Create the Most Common Secrets](../../../project-user-guide/configuration/secrets/#create-the-most-common-secrets).
+您必须创建 Docker Hub 密钥，以便将通过 B2I 创建的 Docker 镜像推送至 Docker Hub。以 `project-regular` 身份登录 KubeSphere，转到您的项目并创建一个 Docker Hub 密钥。有关更多信息，请参见[创建常用密钥](../../../project-user-guide/configuration/secrets/#创建常用密钥)。
 
-### Step 2: Create a Service
+### 步骤 2：创建服务
 
-1. In the same project, navigate to **Services** under **Application Workloads** and click **Create**.
+1. 在该项目中，转到**应用负载**下的**服务**，点击**创建**。
 
-   ![create-service](/images/docs/project-user-guide/image-builder/b2i-publish-artifact-to-kubernetes/create-service.jpg)
+   ![创建服务](/images/docs/zh-cn/project-user-guide/image-builder/binary-to-image/create-service.PNG)
 
-2. Scroll down to **Build a New Service through the Artifact** and select **war**. This tutorial use the [spring-mvc-showcase](https://github.com/spring-projects/spring-mvc-showcase) project as a sample and uploads a war artifact to KubeSphere. Set a name, such as `b2i-war-java8`, and click **Next**.
+2. 下拉至**通过制品构建新的服务**，选择 **war**。本教程使用 [spring-mvc-showcase](https://github.com/spring-projects/spring-mvc-showcase) 项目作为示例并上传 war 制品至 KubeSphere。设置一个名称，例如 `b2i-war-java8`，点击**下一步**。
 
-3. On the **Build Settings** page, provide the following information accordingly and click **Next**.
+3. 在**构建设置**页面，请提供以下相应信息，并点击**下一步**。
 
-   ![build-settings](/images/docs/project-user-guide/image-builder/b2i-publish-artifact-to-kubernetes/build-settings.jpg)
+   ![构建设置](/images/docs/zh-cn/project-user-guide/image-builder/binary-to-image/build-settings.PNG)
 
-   **Service Type**: Select **Stateless Service** for this example. For more information about different Services, see [Service Type](../../../project-user-guide/application-workloads/services/#service-type).
+   **服务类型**：本示例选择**无状态服务**。有关不同服务的更多信息，请参见[服务类型](../../../project-user-guide/application-workloads/services/#服务类型)。
 
-   **Upload Artifact**: Upload the war artifact ([b2i-war-java8](https://github.com/kubesphere/tutorial/raw/master/tutorial%204%20-%20s2i-b2i/b2i-war-java8.war)).
+   **上传制品**：上传 war 制品 ([b2i-war-java8](https://github.com/kubesphere/tutorial/raw/master/tutorial%204%20-%20s2i-b2i/b2i-war-java8.war))。
 
-   **Build Environment**: Select **kubesphere/tomcat85-java8-centos7:v2.1.0**.
+   **构建环境**：选择 **kubesphere/tomcat85-java8-centos7:v2.1.0**.
 
-   **imageName**: Enter `<DOCKERHUB_USERNAME>/<IMAGE NAME>` or `<HARBOR-PROJECT_NAME>/<IMAGE NAME>` as the image name.
+   **镜像名称**：输入 `<DOCKERHUB_USERNAME>/<IMAGE NAME>` 或 `<HARBOR-PROJECT_NAME>/<IMAGE NAME>` 作为镜像名称。
 
-   **tag**: The image tag. Enter `latest`.
+   **tag**：镜像标签，请输入 `latest`。
 
-   **Target image repository**: Select the Docker Hub Secret as the image is pushed to Docker Hub.
+   **Target image repository**：镜像会推送至 Docker Hub，故请选择 Docker Hub 密钥。
    
-4. On the **Container Settings** page, scroll down to **Service Settings** to set the access policy for the container. Select **HTTP** for **Protocol**, customize the name (for example, `http-port`), and input `8080` for both **Container Port** and **Service Port**. Click **Next** to continue.
+4. 在**容器设置**页面，下拉至**服务设置**，为容器设置访问策略。**协议**选择 **HTTP**，自定义名称（例如 `http-port`），**容器端口**和**服务端口**都输入 `8080`。点击**下一步**继续。
 
-   ![container-settings](/images/docs/project-user-guide/image-builder/b2i-publish-artifact-to-kubernetes/container-settings.jpg)
+   ![容器设置](/images/docs/zh-cn/project-user-guide/image-builder/binary-to-image/container-settings.PNG)
 
    {{< notice note >}}
 
-   For more information about how to set other parameters on the **Container Settings** page, see [Container Image Settings](../../../project-user-guide/application-workloads/container-image-settings/).
+   有关如何在**容器设置**页面设置其他参数的更多信息，请参见[容器镜像设置](../../../project-user-guide/application-workloads/container-image-settings/)。
 
    {{</ notice >}} 
 
-5. On the **Mount Volumes** page, you can add a volume for the container. For more information, see [Volumes](../../../project-user-guide/storage/volumes/). Click **Next** to continue.
+5. 在**挂载存储**页面，您可以为容器添加存储卷。有关更多信息，请参见[存储卷](../../../project-user-guide/storage/volumes/)。
 
-6. On the **Advanced Settings** page, check **Internet Access** and select **NodePort** as the access method. Click **Create** to finish the whole process.
+6. 在**高级设置**页面，选中**外网访问**并选择 **NodePort** 作为访问方式。点击**创建**完成整个操作过程。
 
-   ![advanced-settings](/images/docs/project-user-guide/image-builder/b2i-publish-artifact-to-kubernetes/advanced-settings.jpg)
+   ![高级设置](/images/docs/zh-cn/project-user-guide/image-builder/binary-to-image/advanced-settings.PNG)
 
-7. Click **Image Builder** from the navigation bar and you can see that the example image is being built.![building](/images/docs/project-user-guide/image-builder/b2i-publish-artifact-to-kubernetes/building.jpg)
+7. 点击左侧导航栏的**构建镜像**，您可以看到正在构建示例镜像。![building](/images/docs/project-user-guide/image-builder/b2i-publish-artifact-to-kubernetes/building.jpg)
 
 
-### Step 3: Check results
+### 步骤 3：查看结果
 
-1. Wait for a while and you can see the status of the image has reached **Successful**.
+1. 稍等片刻，您可以看到镜像状态变为**成功**。
 
    ![successful](/images/docs/project-user-guide/image-builder/b2i-publish-artifact-to-kubernetes/successful.jpg)
 
-2. Click this image to go to its detail page. Under **Job Records**, click the arrow icon on the right of a record to see building logs. You can see `Build completed successfully` at the end of the log if everything runs normally.
+2. 点击该镜像前往其详情页面。在**任务记录**下，点击记录右侧的箭头图标查看构建日志。如果一切运行正常，您可以在日志末尾看到 `Build completed successfully`。
 
    ![inspect-logs](/images/docs/project-user-guide/image-builder/b2i-publish-artifact-to-kubernetes/inspect-logs.jpg)
 
-3. Go back to the previous page, and you can see the corresponding Job, Deployment and Service of the image have all been created successfully.
+3. 回到上一层页面，您可以看到该镜像相应的任务、部署和服务都已成功创建。
 
-   #### Service
+   #### 服务
 
    ![service](/images/docs/project-user-guide/image-builder/b2i-publish-artifact-to-kubernetes/service.jpg)
 
-   #### Deployment
+   #### 部署
 
    ![deployment](/images/docs/project-user-guide/image-builder/b2i-publish-artifact-to-kubernetes/deployment.jpg)
 
-   #### Job
+   #### 任务
 
    ![job](/images/docs/project-user-guide/image-builder/b2i-publish-artifact-to-kubernetes/job.jpg)
 
-4. In your Docker Hub repository, you can see that KubeSphere has pushed the image to the repository with the expected tag.
+4. 在您的 Docker Hub 仓库，您可以看到 KubeSphere 已经向仓库推送了带有预期标签的镜像。
 
    ![docker-image](/images/docs/project-user-guide/image-builder/b2i-publish-artifact-to-kubernetes/docker-image.jpg)
 
-### Step 4: Access the B2I Service
+### 步骤 4：访问 B2I 服务
 
-1. On the **Services** page, click the B2I Service to go to its detail page, where you can see the port number has been exposed.
+1. 在**服务**页面，请点击 B2I 服务前往其详情页面，您可以查看暴露的端口号。
 
    ![exposed-port](/images/docs/project-user-guide/image-builder/b2i-publish-artifact-to-kubernetes/exposed-port.jpg)
 
-2. Access the Service at `http://{$Node IP}:{$NodePort}/{$Binary-Package-Name}/`.
+2. 通过 `http://{$Node IP}:{$NodePort}/{$Binary-Package-Name}/` 访问服务。
 
    ![access-service](/images/docs/project-user-guide/image-builder/b2i-publish-artifact-to-kubernetes/access-service.jpg)
 
    {{< notice note >}}
 
-   You may need to open the port in your security groups and configure port forwarding rules depending on your deployment environment.
+   取决于您的部署环境，您可能需要在安全组中放行端口并配置端口转发规则。
 
    {{</ notice >}} 
 
-## Use the Image Builder to build an image
+## 使用 Image Builder 构建镜像
 
-The example above implements the entire workflow of B2I by creating a Service. Alternatively, you can use the Image Builder directly to build an image based on an artifact while this method will not publish the image to Kubernetes.
+前述示例通过创建服务来实现整个 B2I 工作流。此外，您也可以直接使用 Image Builder 基于制品构建镜像，但这个方式不会将镜像发布至 Kubernetes。
 
-![build-binary](/images/docs/project-user-guide/image-builder/b2i-publish-artifact-to-kubernetes/build-binary.png)
+![build-binary](/images/docs/zh-cn/project-user-guide/image-builder/binary-to-image/build-binary.png)
 
 {{< notice note >}}
 
-Make sure you have created a Secret for Docker Hub. For more information, see [Create the Most Common Secrets](../../../project-user-guide/configuration/secrets/#create-the-most-common-secrets).
+请确保您已经创建了 Docker Hub 密钥。有关更多信息，请参见[创建常用密钥](../../../project-user-guide/configuration/secrets/#创建常用密钥)。
 
 {{</ notice >}} 
 
-### Step 1: Upload an artifact
+### 步骤 1：上传制品
 
-1. Log in KubeSphere as `project-regular` and go to your project.
+1. 以 `project-regular` 身份登录 KubeSphere，转到您的项目。
 
-2. Select **Image Builder** from the navigation bar and click **Create**.
+2. 在左侧导航栏中选择**构建镜像**，然后点击**创建**。
 
-   ![image-builder](/images/docs/project-user-guide/image-builder/b2i-publish-artifact-to-kubernetes/image-builder.jpg)
+   ![image-builder](/images/docs/zh-cn/project-user-guide/image-builder/binary-to-image/image-builder.PNG)
 
-3. In the dialog that appears, select **binary** and click **Next**.
+3. 在弹出对话框中，选择 **binary** 并点击**下一步**。
 
-   ![upload-artifact](/images/docs/project-user-guide/image-builder/b2i-publish-artifact-to-kubernetes/upload-artifact.jpg)
+   ![upload-artifact](/images/docs/zh-cn/project-user-guide/image-builder/binary-to-image/upload-artifact.PNG)
 
-4. On the **Build Settings** page, provide the following information accordingly and click **Create**.
+4. 在**构建设置**页面，请提供以下相应信息，然后点击**创建**。
 
-   ![buidling-settings-2](/images/docs/project-user-guide/image-builder/b2i-publish-artifact-to-kubernetes/buidling-settings-2.jpg)
+   ![buidling-settings-2](/images/docs/zh-cn/project-user-guide/image-builder/binary-to-image/building-settings-2.PNG)
 
-   **Upload Artifact**: Download [b2i-binary](https://github.com/kubesphere/tutorial/raw/master/tutorial%204%20-%20s2i-b2i/b2i-binary) and upload it to KubeSphere.
+   **上传制品**：下载 [b2i-binary](https://github.com/kubesphere/tutorial/raw/master/tutorial%204%20-%20s2i-b2i/b2i-binary) 并上传至 KubeSphere。
 
-   **Build Environment**: Select **kubesphere/s2i-binary:v2.1.0**.
+   **构建环境**：选择 **kubesphere/s2i-binary:v2.1.0**。
 
-   **imageName**: Customize an image name.
+   **镜像名称**：自定义镜像名称。
 
-   **tag**: The image tag. Enter `latest`.
+   **tag**：镜像标签，请输入 `latest`。
 
-   **Target image repository**: Select the Docker Hub Secret as the image is pushed to Docker Hub.
+   **Target image repository**：镜像会推送至 Docker Hub，故请选择 Docker Hub 密钥。
 
-5. On the **Image Builder** page, you can see that the image is being built.
+5. 在**构建镜像**页面，您可以看到正在构建镜像。
 
    ![building-status](/images/docs/project-user-guide/image-builder/b2i-publish-artifact-to-kubernetes/building-status.jpg)
 
-### Step 2: Check results
+### 步骤 2：检查结果
 
-1. Wait for a while and you can see the status of the image has reached **Successful**.
+1. 稍等片刻，您可以看到镜像状态变为**成功**。
 
    ![image-success](/images/docs/project-user-guide/image-builder/b2i-publish-artifact-to-kubernetes/image-success.jpg)
 
-2. Click this image to go to its detail page. Under **Job Records**, click the arrow icon on the right of a record to see building logs. You can see `Build completed successfully` at the end of the log if everything runs normally.
+2. 点击该镜像前往其详情页面。在**任务记录**下，点击记录右侧的箭头图标查看构建日志。如果一切运行正常，您可以在日志末尾看到 `Build completed successfully`。
 
    ![inspect-log](/images/docs/project-user-guide/image-builder/b2i-publish-artifact-to-kubernetes/inspect-log.jpg)
 
-3. Go back to the previous page, and you can see the corresponding Job of the image has been created successfully.
+3. 回到上一层页面，您可以看到该镜像相应的任务已成功创建。
 
    ![job-created](/images/docs/project-user-guide/image-builder/b2i-publish-artifact-to-kubernetes/job-created.jpg)
 
-4. In your Docker Hub repository, you can see that KubeSphere has pushed the image to the repository with the expected tag.
+4. 在您的 Docker Hub 仓库，您可以看到 KubeSphere 已经向仓库推送了带有预期标签的镜像。
 
    ![docker-image-pushed](/images/docs/project-user-guide/image-builder/b2i-publish-artifact-to-kubernetes/docker-image-pushed.jpg)
 
