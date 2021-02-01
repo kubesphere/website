@@ -11,7 +11,7 @@ This section walks you through monitoring a sample web application. The applicat
 ## Prerequisites
 
 - Please make sure you [enable the OpenPitrix system](../../../../pluggable-components/app-store/).
-- You need to create a workspace, a project, and a user account for this tutorial. For more information, see [Create Workspaces, Projects, Accounts and Roles](../../../../quick-start/create-workspace-and-project/). The account needs to be a platform regular user and to be invited as the workspace self provisioner with the `self-provisioner` role. Namely, create an account `workspace-self-provisioner` of the `self-provisioner` role, and use this account to create a project (e.g. `test`). In this tutorial, you log in as `workspace-self-provisioner` and work in the project `test` in the workspace `demo-workspace`.
+- You need to create a workspace, a project, and a user account for this tutorial. For more information, see [Create Workspaces, Projects, Accounts and Roles](../../../../quick-start/create-workspace-and-project/). The account needs to be a platform regular user and to be invited to the workspace with the `self-provisioner` role. Namely, create an account `workspace-self-provisioner` of the `self-provisioner` role, and use this account to create a project (e.g. `test`). In this tutorial, you log in as `workspace-self-provisioner` and work in the project `test` in the workspace `demo-workspace`.
 
 - Knowledge of Helm charts and [PromQL](https://prometheus.io/docs/prometheus/latest/querying/examples/).
 
@@ -27,7 +27,7 @@ In this tutorial, you use the made-ready image `kubespheredev/promethues-example
 
 ### Step 2: Pack the application into a Helm chart
 
-Pack the Deployment, Service, and ServiceMonitor YAML template into a Helm chat for reuse. In the Deployment and Service template, you define the sample web container and the port for the metrics endpoint. ServiceMonitor is a custom resource defined and used by Prometheus Operator. It connects your application and KubeSphere monitoring engine (Prometheus) so that the engine knows where and how to scrape metrics. In future releases, KubeSphere will provide a graphical user interface for easy operation.
+Pack the Deployment, Service, and ServiceMonitor YAML template into a Helm chart for reuse. In the Deployment and Service template, you define the sample web container and the port for the metrics endpoint. ServiceMonitor is a custom resource defined and used by Prometheus Operator. It connects your application and KubeSphere monitoring engine (Prometheus) so that the engine knows where and how to scrape metrics. In future releases, KubeSphere will provide a graphical user interface for easy operation.
 
 Find the source code in the folder `helm` in [kubesphere/prometheus-example-app](https://github.com/kubesphere/prometheus-example-app). The Helm chart package is made ready and is named `prometheus-example-app-0.1.0.tgz`. Please download the .tgz file and you will use it in the next step.
 
@@ -53,7 +53,7 @@ Find the source code in the folder `helm` in [kubesphere/prometheus-example-app]
 
 ### Step 4: Deploy the sample web application
 
-You need to deploy the sample web application into `demo`. For demonstration purposes, you can simply run a test deployment.
+You need to deploy the sample web application into `test`. For demonstration purposes, you can simply run a test deployment.
 
 1. Click `prometheus-example-app`.
 
