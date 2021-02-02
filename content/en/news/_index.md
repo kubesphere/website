@@ -10,6 +10,10 @@ section1:
 
 section2:
   news:
+    - title: 'Recap: KubeSphere & Friends 2020 Meetup'
+      description: KubeSphere and Friends 2020 Meetup attracted more than 100 individual community members and honored guests to share their ideas and experiences on cloud-native and Kubernetes.
+      image: /images/news/meetup-2020/Snip20210201_8.png
+      link: 'kubesphere-meetup-2020'
     - title: 'KubeSphere is Now Available as an AWS Quick Start'
       description: KubeSphere expands collaboration with Amazon Web Services to further accelerate the cloud-native technology transformation.
       image: https://ap3.qingstor.com/kubesphere-website/docs/kubesphere-aws.png
