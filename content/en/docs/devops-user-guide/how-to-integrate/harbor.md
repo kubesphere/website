@@ -1,128 +1,132 @@
 ---
-title: "How to integrate Harbor in Pipeline"
-keywords: 'kubernetes, docker, devops, jenkins, harbor'
-description: ''
-linkTitle: "Integrate Harbor in Pipeline"
+title: "Integrate Harbor into Pipelines"
+keywords: 'Kubernetes, Docker, DevOps, Jenkins, Harbor'
+description: 'How to integrate Harbor into pipelines'
+linkTitle: "Integrate Harbor into Pipelines"
 weight: 11320
 ---
 
+This tutorial demonstrates how to integrate Harbor into KubeSphere pipelines.
+
 ## Prerequisites
 
-- You need to [enable KubeSphere DevOps System](../../../../docs/pluggable-components/devops/).
-- You need to create a workspace, a DevOps project, and a **project-regular** user account, and this account needs to be invited into a DevOps project. See [create-workspace-and-project](../../../../docs/quick-start/create-workspace-and-project).
-- You need to have installed **Harbor** already. 
+- You need to [enable the KubeSphere DevOps System](../../../pluggable-components/devops/).
+- You need to create a workspace, a DevOps project, and an account (`project-regular`). This account needs to be invited to the DevOps project with the `operator` role. See [Create Workspaces, Projects, Accounts and Roles](../../../quick-start/create-workspace-and-project/) if they are not ready.
 
-## Install  Harbor
+## Install Harbor
 
-It is highly recommended that you install harbor [by application store](). You can also install harbor manally by helm3.
+It is highly recommended that you install Harbor through [the App Store of KubeSphere](../../../application-store/built-in-apps/harbor-app/). Alternatively, install Harbor manually through Helm3.
 
 ```bash
 helm repo add harbor https://helm.goharbor.io
-# for qucik taste, you can expose harbor by nodeport and disable tls.
-# set externalURL as one of your node ip and make sure it can be accessed by jenkins.
+# For a qucik start, you can expose Harbor by nodeport and disable tls.
+# Set externalURL to one of your node ip and make sure it can be accessed by jenkins.
 helm install harbor-release harbor/harbor --set expose.type=nodePort,externalURL=http://$ip:30002,expose.tls.enabled=false
 ```
 
-After several minutes, open your browser and visit http:$node_ip:30003. Enter **admin** and **Harbor12345** , then click **LOG** **IN**.
+## Get Harbor Credentials
 
-![](/images/devops/harbor-login.png)
+1. After Harbor is installed, visit `NodeIP:30002` and log in to the console with the default account and password (`admin/Harbor12345`). Go to **Projects** and click **NEW PROJECT**.
 
-Click **NEW** **PROJECT** , enter the project name, then click **ok**.
+   ![harbor-projects](/images/docs/devops-user-guide/tool-integration/integrate-harbor-into-pipeline/harbor-projects.jpg)
 
-## Get Harbor credential
+2. Set a name and click **OK**.
 
-![](/images/devops/harbor-new-project.png)
+   ![set-name](/images/docs/devops-user-guide/tool-integration/integrate-harbor-into-pipeline/set-name.png)
 
-![](/images/devops/harbor-project-ok.png)
+3. Click the project you just created, and select **NEW ROBOT ACCOUNT** in **Robot Accounts**.
 
-Click your project name you just created, find the **Robot Accounts** tab, then click **NEW ROBOT ACCOUNT**.
+   ![robot-account](/images/docs/devops-user-guide/tool-integration/integrate-harbor-into-pipeline/robot-account.png)
 
-![](/images/devops/harbor-robot-account.png)
+4. Enter the name of the robot account and save it.
 
-Enter the name of the robot account, then save it.
+   ![robot-account-name](/images/docs/devops-user-guide/tool-integration/integrate-harbor-into-pipeline/robot-account-name.png)
 
-![](/images/devops/harbor-robot-account-ok.png)
+5. Click **EXPORT TO FILE** to save the token.
 
-Click **EXPORT TO FILE** to save the credential.
+   ![export-to-file](/images/docs/devops-user-guide/tool-integration/integrate-harbor-into-pipeline/export-to-file.png)
 
-![](/images/devops/harbor-robot-account-save.png)
+## Create Credentials
 
-### Create Credentials
+1. Log in to KubeSphere as `project-regular`, go to your DevOps project and create credentials for Harbor in **Credentials** under **Project Management**.
 
-Log in to KubeSphere, enter into the created DevOps project and create the following credential under **Project Management → Credentials**:
+   ![create-credentials](/images/docs/devops-user-guide/tool-integration/integrate-harbor-into-pipeline/create-credentials.png)
 
-![](/images/devops/ks-console-create-credential.png)
+2. On the **Create Credentials** page, set a credential ID and select **Account Credentials** for **Type**. The **Username** field must be the same as the value of `name` in the Json file you just downloaded and input the value of `token` in the file for **Token/Password**.
 
-The **Username** is the name field of the json file you just saved. **Password**  takes the token field.
+   ![credentials-page](/images/docs/devops-user-guide/tool-integration/integrate-harbor-into-pipeline/credentials-page.png)
 
-![](/images/devops/ks-console-credential-ok.png)
+3. Click **OK** to save it.
 
-## Create a pipeline
+## Create a Pipeline
 
-![](/images/devops/ks-console-create-pipline.png)
+1. Go to the **Pipelines** page and click **Create**. Provide the basic information in the dialog that appears and click **Next**.
 
-Fill in the pipeline's basic information in the pop-up window,  enter the name of pipelne and set the others as default value.
+   ![basic-info](/images/docs/devops-user-guide/tool-integration/integrate-harbor-into-pipeline/basic-info.png)
 
-![](/images/devops/create-pipline-2.png)
+2. Use default values in **Advanced Settings** and click **Create**.
 
-![](/images/devops/create-pipline-3.png)
+   ![advanced-settings](/images/docs/devops-user-guide/tool-integration/integrate-harbor-into-pipeline/advanced-settings.png)
 
-## Edit jenkins file
+## Edit the Jenkinsfile
 
-Click **Edit Jenkins File** button under your pipeline and paste the following text into the pop-up window. You need to replace **REGISTRY**, **HARBOR_NAMESPACE**, **APP_NAME**, **HARBOR_CREDENTIAL** as yours.
+1. Click the pipeline to go to its detail page and click **Edit Jenkinsfile**.
 
-```pipeline {
-pipeline {  
-  agent {
-    node {
-      label 'maven'
-    }
-  }
-  
-  environment {
-    // the address of your harbor registry
-    REGISTRY = '103.61.38.55:30002'
-    // the project name
-    // make sure your robot account have enough access to the project
-    HARBOR_NAMESPACE = 'ks-devops-harbor'
-    // docker image name
-    APP_NAME = 'docker-example'
-    // ‘yuswift’ is the credential id you created on ks console
-    HARBOR_CREDENTIAL = credentials('yuswift')
-  }
-  
-  stages {
-    stage('docker login') {
-      steps{
-        container ('maven') {
-          // replace the username behind -u and do not forget ''
-          sh '''echo $HARBOR_CREDENTIAL_PSW | docker login $REGISTRY -u 'robot$yuswift2018' --password-stdin'''
-            }
-          }  
-        }
-        
-    stage('build & push') {
-      steps {
-        container ('maven') {
-          sh 'git clone https://github.com/kstaken/dockerfile-examples.git'
-          sh 'cd dockerfile-examples/rethinkdb && docker build -t $REGISTRY/$HARBOR_NAMESPACE/$APP_NAME:devops-test .'
-          sh 'docker push  $REGISTRY/$HARBOR_NAMESPACE/$APP_NAME:devops-test'
-          }
-        }
-      }
-    }
-  }
+   ![edit-jenkinsfile](/images/docs/devops-user-guide/tool-integration/integrate-harbor-into-pipeline/edit-jenkinsfile.png)
 
-```
+2. Copy and paste the following content into the Jenkinsfile. Note that you must replace the value of `REGISTRY`, `HARBOR_NAMESPACE`, `APP_NAME`, and `HARBOR_CREDENTIAL`.
 
-> Note: 
->
-> - You can pass the parameter to `docker login -u ` via jenkins credential with environment variable. However, every harbor-robot-account username contains a "\$" character, which will be converted into "\$$" by jenkins when used by environment varibles. See more about [this](https://number1.co.za/rancher-cannot-use-harbor-robot-account-imagepullbackoff-pull-access-denied/).
+   ```groovy
+   pipeline {  
+     agent {
+       node {
+         label 'maven'
+       }
+     }
+     
+     environment {
+       // the address of your harbor registry
+       REGISTRY = '103.61.38.55:30002'
+       // the project name
+       // make sure your robot account have enough access to the project
+       HARBOR_NAMESPACE = 'ks-devops-harbor'
+       // docker image name
+       APP_NAME = 'docker-example'
+       // ‘yuswift’ is the credential id you created on ks console
+       HARBOR_CREDENTIAL = credentials('yuswift')
+     }
+     
+     stages {
+       stage('docker login') {
+         steps{
+           container ('maven') {
+             // replace the Docker Hub username behind -u and do not forget ''. You can also use a Docker Hub token. 
+             sh '''echo $HARBOR_CREDENTIAL_PSW | docker login $REGISTRY -u 'robot$yuswift2018' --password-stdin'''
+               }
+             }  
+           }
+           
+       stage('build & push') {
+         steps {
+           container ('maven') {
+             sh 'git clone https://github.com/kstaken/dockerfile-examples.git'
+             sh 'cd dockerfile-examples/rethinkdb && docker build -t $REGISTRY/$HARBOR_NAMESPACE/$APP_NAME:devops-test .'
+             sh 'docker push  $REGISTRY/$HARBOR_NAMESPACE/$APP_NAME:devops-test'
+             }
+           }
+         }
+       }
+     }
+   
+   
+   ```
 
-![](/images/devops/edit-jenkins-file.png)
+   {{< notice note >}}
 
-## Run the pipeline
+   You can pass the parameter to `docker login -u ` via Jenkins credentials with environment variables. However, every Harbor robot account's username contains a "\$" character, which will be converted into "\$$" by Jenkins when used by environment variables. [Learn more](https://number1.co.za/rancher-cannot-use-harbor-robot-account-imagepullbackoff-pull-access-denied/).
 
-After you have saved the jenkins file, click the **Run** button. If everything goes well, you will see image have been pushed into your harbor registry by jenkins.
+   {{</ notice >}} 
 
-![](/images/devops/run-pipline.png)
+## Run the Pipeline
+
+Save the Jenkinsfile and KubeSphere automatically creates all stages and steps on the graphical editing panels. Click **Run** to execute the pipeline. If everything goes well, the image will be pushed to your Harbor registry by Jenkins.
