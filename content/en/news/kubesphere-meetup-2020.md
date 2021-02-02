@@ -4,15 +4,15 @@ title: 'Recap: KubeSphere & Friends 2020 Meetup'
 keywords: KubeSphere, Community, Meetup, Kubernetes
 description: KubeSphere and Friends 2020 Meetup attracted more than 100 individual community members and honored guests to share their ideas and experiences on cloud-native and Kubernetes.
 createTime: '2021-02-02'
-author: 'Feynman, Sherlock'
+author: 'Feynman, Sherlock, Lindsay'
 
 ---
 
 ![Snip20210201_8](/images/news/meetup-2020/Snip20210201_8.png)
 
-Around the latest technology trend – 'cloud-native,' the annual event KubeSphere and Friends 2020, also known as Kubernetes and Cloud-Native Meetup, was held on December 19th, 2020 in Beijing, attracting more than one hundred Kubernetes enthusiasts and KubeSphere community members.
+Around the latest technology trend – cloud-native, the annual event KubeSphere and Friends 2020, also known as Kubernetes and Cloud-Native Meetup, was held on December 19th, 2020 in Beijing, attracting more than 100 Kubernetes enthusiasts and KubeSphere community members.
 
-Not only did our individual community members participate in the event, our guests from CNCF and AWS, and other enterprise users all shared their ideas and experiences from different perspectives.
+Not only did developers from the KubeSphere team participate in the event, our guests from CNCF and AWS, and other enterprise users all shared their ideas and experiences from different perspectives.
 
 
 
@@ -34,7 +34,7 @@ Not only did our individual community members participate in the event, our gues
 
 
 
-We also provided on-site workshops to discuss and try the most common use features of KubeSphere.
+We also provided on-site DevOps workshop to discuss and try the most common use features of KubeSphere.
 
  ![Snip20210201_20](/images/news/meetup-2020/Snip20210201_20.png)
 
@@ -42,7 +42,7 @@ We also provided on-site workshops to discuss and try the most common use featur
 
  
 
-KubeSphere has been recognized by many uses across the world and has developed a more diversified and vibrant community. Though so many passionate users could not present at the event in person, they generously shared their experience and expectations for KubeSphere in videos. 
+KubeSphere has been recognized by many users across the world and has developed  more diversified and vibrant community. Though so many passionate users could not present at the event in person, they generously shared their experience and expectations for KubeSphere in videos. 
 
 
 
@@ -60,5 +60,5 @@ More importantly, we look to further renew and strengthen our bonds and values i
 
  ![Snip20210201_26](/images/news/meetup-2020/Snip20210201_26.png)
 
-The meetup was a great success and it was not possible without community members. Thank you all for your support and see your next year in the meetup.
+The meetup was a great success and it was not possible without community members. Thank you all for your support and see you next year in the meetup.
 
