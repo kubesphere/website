@@ -48,6 +48,6 @@ weight: 8540
 
 ### 任务 4：添加处理意见
 
-点击**处理意见**将处理意见添加到当前告警消息。例如，由于节点的内存利用率高于告警规则中设置的阈值，因此您可以在下面的对话框中添加处理意见：`节点需要添加污点标记，并且不允许将新的容器组调度到该节点`。
+点击**处理意见**将处理意见添加到当前告警消息。例如，由于节点的内存利用率高于告警规则中设置的阈值，因此您可以在下面的对话框中添加处理意见：`节点需要添加污点，并且不允许将新的 Pod 调度到该节点`。
 
-![处理意见](/images/docs/zh-cn/cluster-administration/cluster-wide-alerting-and-notification/alerting-message-node-level/alerting_message_node_level_comment.png)
+![处理意见](/images/docs/zh-cn/cluster-administration/cluster-wide-alerting-and-notification/alerting-message-node-level/alerting_message_node_level_comment.PNG)
