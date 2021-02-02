@@ -34,7 +34,7 @@ Not only did developers from the KubeSphere team participate in the event, our g
 
 
 
-We also provided on-site DevOps workshop to discuss and try the most common use features of KubeSphere.
+We also provided an on-site DevOps workshop to discuss and try the most common use features of KubeSphere.
 
  ![Snip20210201_20](/images/news/meetup-2020/Snip20210201_20.png)
 
@@ -42,7 +42,7 @@ We also provided on-site DevOps workshop to discuss and try the most common use 
 
  
 
-KubeSphere has been recognized by many users across the world and has developed  more diversified and vibrant community. Though so many passionate users could not present at the event in person, they generously shared their experience and expectations for KubeSphere in videos. 
+KubeSphere has been recognized by many users across the world and has developed a diversified and vibrant community. Though so many passionate users could not present at the event in person, they generously shared their experience and expectations for KubeSphere in videos. 
 
 
 
