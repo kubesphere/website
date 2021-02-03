@@ -30,9 +30,9 @@ I am going to create a cluster with three nodes on cloud. Here is my machine con
 
 | Host IP     | Host Name | Role         | System                                    |
 | ----------- | --------- | ------------ | ----------------------------------------- |
-| 192.168.0.2 | master    | master, etcd | CentOS 7.5, 8 Core, 8 G Memory, 50 G Disk |
-| 192.168.0.3 | worker1   | worker       | CentOS 7.5, 8 Core, 8 G Memory, 50 G Disk |
-| 192.168.0.4 | worker2   | worker       | CentOS 7.5, 8 Core, 8 G Memory, 50 G Disk |
+| 192.168.0.2 | master    | master, etcd | CentOS 7.5, 8 Cores, 8 G Memory, 50 G Disk |
+| 192.168.0.3 | worker1   | worker       | CentOS 7.5, 8 Cores, 8 G Memory, 50 G Disk |
+| 192.168.0.4 | worker2   | worker       | CentOS 7.5, 8 Cores, 8 G Memory, 50 G Disk |
 
 {{< notice note >}}
 
