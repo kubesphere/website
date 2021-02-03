@@ -65,7 +65,7 @@ icon: "/images/docs/docs.svg"
 
 了解集群日志收集的基础知识，包括工具和一般步骤。
 
-#### [将 Elasticsearch 作为接收器](../cluster-administration/cluster-settings/log-collections/add-es-as-receiver/)
+#### [添加 Elasticsearch 作为接收器](../cluster-administration/cluster-settings/log-collections/add-es-as-receiver/)
 
 了解如何添加 Elasticsearch 来接收日志、事件或审计日志。
 
