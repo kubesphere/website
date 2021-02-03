@@ -23,9 +23,9 @@ Here is my node information of the existing Kubernetes cluster.
 
 | Host IP     | Host Name | Role         | System                                    |
 | ----------- | --------- | ------------ | ----------------------------------------- |
-| 192.168.0.2 | master    | master, etcd | CentOS 7.5, 8 Core, 8 G Memory, 50 G Disk |
-| 192.168.0.3 | worker1   | worker       | CentOS 7.5, 8 Core, 8 G Memory, 50 G Disk |
-| 192.168.0.4 | worker2   | worker       | CentOS 7.5, 8 Core, 8 G Memory, 50 G Disk |
+| 192.168.0.2 | master    | master, etcd | CentOS 7.5, 8 Cores, 8 G Memory, 50 G Disk |
+| 192.168.0.3 | worker1   | worker       | CentOS 7.5, 8 Cores, 8 G Memory, 50 G Disk |
+| 192.168.0.4 | worker2   | worker       | CentOS 7.5, 8 Cores, 8 G Memory, 50 G Disk |
 
 ```bash
 $ kubectl get nodes
@@ -39,7 +39,7 @@ Here is the node that will be added to the cluster first and then removed from t
 
 | Host IP     | Host Name | Role   | System                                    |
 | ----------- | --------- | ------ | ----------------------------------------- |
-| 192.168.0.5 | worker3   | worker | CentOS 7.5, 8 Core, 8 G Memory, 50 G Disk |
+| 192.168.0.5 | worker3   | worker | CentOS 7.5, 8 Cores, 8 G Memory, 50 G Disk |
 
 For more information about requirements for nodes, network, and dependencies, [see my last post](https://kubesphere.io/blogs/install-kubernetes-using-kubekey/#node-requirements).
 
