@@ -2,7 +2,7 @@
 title: "Account Login Failure"
 keywords: "login failure, account is not active, KubeSphere, Kubernetes"
 description: "How to solve the issue of login failure"
-linkTitle: "Account Login Failures"
+linkTitle: "Account Login Failure"
 Weight: 16440
 ---
 

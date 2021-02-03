@@ -333,11 +333,11 @@ This stage uses SonarQube to test your code. You can skip this stage if you do n
 
    ![pipeline-successful](/images/docs/devops-user-guide/using-devops/create-a-pipeline-using-graphical-editing-panels/pipeline-successful.jpg)
 
-4. Log out of KubeSphere and log back in the console as `project-admin`. Go to your DevOps project and click the pipeline `graphical-pipeline`. Under the **Activity** tab, click the record to be reviewed. To approve the pipeline, click **Proceed**.
+4. Log out of KubeSphere and log back in to the console as `project-admin`. Go to your DevOps project and click the pipeline `graphical-pipeline`. Under the **Activity** tab, click the record to be reviewed. To approve the pipeline, click **Proceed**.
 
 ### Step 6: View pipeline details
 
-1. Log back in the console as `project-regular`. Go to your DevOps project and click the pipeline `graphical-pipeline`. Under the **Activity** tab, click the record marked with **Success** under **Status**.
+1. Log in to the console as `project-regular`. Go to your DevOps project and click the pipeline `graphical-pipeline`. Under the **Activity** tab, click the record marked with **Success** under **Status**.
 
 2. If everything runs successfully, you can see that all stages are completed.
 
