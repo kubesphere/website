@@ -9,13 +9,13 @@ weight: 10260
 
 定时任务 (CronJob) 对于创建周期性和重复性任务非常有用，例如运行备份或发送电子邮件。定时任务还可以在特定时间或间隔执行单个任务，例如在集群可能处于空闲状态时执行任务。
 
-有关更多信息，请参见 [Kubernetes 官方文档](https://kubernetes.io/zh/docs/concepts/workloads/controllers/cron-jobs/).
+有关更多信息，请参见 [Kubernetes 官方文档](https://kubernetes.io/zh/docs/concepts/workloads/controllers/cron-jobs/)。
 
 ## 准备工作
 
 您需要创建一个企业空间、一个项目以及一个帐户 (`project-regular`)。必须邀请该帐户至该项目中并赋予 `operator` 角色。有关更多信息，请参见[创建企业空间、项目、帐户和角色](../../../quick-start/create-workspace-and-project)。
 
-## 创建 CronJob
+## 创建定时任务
 
 ### 步骤 1：打开仪表板
 
@@ -43,8 +43,8 @@ weight: 10260
 - **高级设置 (执行参数)**:
   
   - **启动 Job 的期限（秒）**：由清单文件中的 `.spec.startingDeadlineSeconds` 指定，此可选字段表示如果由于任何原因错过计划时间，定时任务启动所需的最大秒数。错过执行的定时任务将被计为失败。如果未指定此字段，则此定时任务没有启动期限。
-  - **保留完成 Job 数**：由清单文件中的 `.spec.successfulJobsHistoryLimit` 指定，此字段表示要保留的定时任务执行成功的次数。这是区分显式零和未指定的指针。默认值为 3。
-  - **保留失败 Job 数**：由清单文件中的 `.spec.failedJobsHistoryLimit` 指定，此字段表示要保留的定时任务执行失败的次数。这是区分显式零和未指定的指针。默认值为 1。
+  - **保留完成 Job 数**：由清单文件中的 `.spec.successfulJobsHistoryLimit` 指定，此字段表示要保留的定时任务执行成功的次数，用于区分显式零和未指定这两种情况。默认值为 3。
+  - **保留失败 Job 数**：由清单文件中的 `.spec.failedJobsHistoryLimit` 指定，此字段表示要保留的定时任务执行失败的次数，用于区分显式零和未指定这两种情况。默认值为 1。
   - **并发策略**：由 `.spec.concurrencyPolicy` 指定，它表示如何处理任务的并发执行。有效值为：
       - **Allow** (默认值)：允许定时任务并发运行。
       - **Forbid**：禁止并发运行，如果前一个运行还没有完成，则跳过下一个运行。
@@ -76,7 +76,7 @@ weight: 10260
 
     {{< notice note >}}
 
-- 此示例定时任务打印字母 `KubeSphere`。有关设置镜像的更多信息，请参见[容器镜像设置](../container-image-settings/)。
+- 此示例定时任务输出 `KubeSphere`。有关设置镜像的更多信息，请参见[容器镜像设置](../container-image-settings/)。
 - 有关**重启策略**的更多信息，请参见[任务](../jobs/#步骤-4设置镜像)。
 - 您可以跳过本教程的**挂载存储**和**高级设置**。有关更多信息，请参见部署一文中的[挂载存储卷](../deployments/#步骤-4挂载存储卷)和[配置高级设置](../deployments/#步骤-5配置高级设置)。
 
@@ -84,7 +84,7 @@ weight: 10260
 
 ### 步骤 5：检查结果
 
-1. 在最后一步**高级设置**中，点击**创建**完成操作。如果创建成功，定时任务列表中将添加一个新条目。此外，您还可以在**任务**标签下查看任务。
+1. 在最后一步**高级设置**中，点击**创建**完成操作。如果创建成功，定时任务列表中将添加一个新条目。此外，您还可以在**任务**选项卡下查看任务。
 
     ![定时任务列表](/images/docs/zh-cn/project-user-guide/application-workloads/cronjobs/cronjob-list-new.png)
 
@@ -110,7 +110,7 @@ weight: 10260
 
 - **编辑信息**：编辑基本信息，但无法编辑该定时任务的`名称`。
 - **暂停/启动**：暂停或启动该定时任务。暂停定时任务将告知控制器暂停后续执行任务，但已经启动的执行不受影响。
-- **编辑配置文件**：以 YAML 格式编辑该定时任务的配置。
+- **编辑配置文件**：编辑该定时任务的 YAML 文件配置。
 - **删除**：删除该定时任务，然后返回定时任务列表页面。
 
 ![定时任务操作](/images/docs/zh-cn/project-user-guide/application-workloads/cronjobs/cronjob-action.png)
