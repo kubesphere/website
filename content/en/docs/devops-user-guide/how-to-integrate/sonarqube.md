@@ -210,7 +210,7 @@ To integrate SonarQube into your pipeline, you must install SonarQube Server fir
 
    ![sonarqube-jenkins-settings](/images/docs/devops-user-guide/tool-integration/integrate-sonarqube-into-pipeline/sonarqube-jenkins-settings.jpg)
 
-### Step 6: Add sonarqubeUrl to the KubeSphere Console
+### Step 6: Add sonarqubeURL to the KubeSphere Console
 
 You need to specify `sonarqubeURL` so that you can access SonarQube directly from the KubeSphere console.
 
