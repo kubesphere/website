@@ -80,14 +80,12 @@
   translation: 警告
 - id: Search Documentation
   translation: 搜索文档
-<<<<<<< HEAD
 - id: ALL
   translation: 全部
 - id: Watch replay
   translation: 观看回放
 - id: View details
   translation: 了解详情
-=======
 - id: Course theme
   translation: 课程主题
 - id: Course benefits
@@ -112,4 +110,3 @@
   translation: PPT 课件
 - id: Self-test
   translation: 考题自测
->>>>>>> d4a6636bac745647faa029e1e080542e9b423fda
