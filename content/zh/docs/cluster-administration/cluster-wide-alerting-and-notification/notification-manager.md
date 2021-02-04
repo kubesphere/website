@@ -1,37 +1,36 @@
 ---
-title: "Manage multi-tenant notifications with Notification Manager"
-keywords: "kubernetes, KubeSphere, notification manager, email, wechat, slack"
-description: "K8s native notification management with multi-tenancy support"
-
+title: "使用 Notification Manager 管理多租户通知"
+keywords: "Kubernetes, KubeSphere, Notification Manager, email, 微信, slack"
+description: "支持多租户的 K8s 原生通知管理"
 linkTitle: "Notification Manager"
-weight: 2020
+weight: 8520
 ---
 
-[Notification Manager](https://github.com/kubesphere/notification-manager) manages notifications in KubeSphere. It receives alerts or notifications from different senders and then sends notifications to different users.
+[Notification Manager](https://github.com/kubesphere/notification-manager) 管理 KubeSphere 中的通知。它接收来自不同发送器的告警或者通知，然后将通知发送给不同用户。
 
-Supported senders includes:
+支持的发送器包括：
 
 - Prometheus Alertmanager
-- Custom sender (Coming soon)
+- 自定义发送器（即将上线）
 
-Supported receivers includes:
+支持的接收器包括：
 
-- Email
-- [Wechat Work](https://work.weixin.qq.com/)
+- 电子邮件
+- [企业微信](https://work.weixin.qq.com/)
 - Slack
-- Webhook (Coming soon)
+- Webhook（即将上线）
 
-![Notification Manager](/images/docs/cluster-administration/cluster-settings/cluster-wide-alerting-and-notification/notification-manager.png)
+![notification-manager](/images/docs/cluster-administration/cluster-wide-alerting-and-notification/notification-manager/notification-manager.png)
 
-## QuickStart
+## 快速入门
 
-### Config Prometheus Alertmanager to send alerts to Notification Manager
+### 配置 Prometheus Alertmanager 向 Notification Manager 发送告警
 
-Notification Manager uses port `19093` and API path `/api/v2/alerts` to receive alerts sent from Prometheus Alertmanager of Kubesphere.
+Notification Manager 使用端口 `19093` 和 API 路径 `/api/v2/alerts` 来接收由 KubeSphere 的 Prometheus Alertmanager 发送的告警。
 
-To receive Alertmanager alerts, **KubeSphere already added Alertmanager webhook and route configurations like below** ( by editing the Secret alertmanager-main in the namespace `kubesphere-monitoring-system` ):
+为了接收 Alertmanager 告警，**KubeSphere 已添加如下所示的 Alertmanager Webhook 和路由配置**（编辑命名空间 `kubesphere-monitoring-system` 中的密钥 `alertmanager-main`）：
 
-Send Prometheus alerts to Notification Manager:
+将 Prometheus 告警发送至 Notification Manager：
 
 ```yaml
     "receivers":
@@ -45,7 +44,7 @@ Send Prometheus alerts to Notification Manager:
         "receiver": "prometheus"
 ```
 
-Send event alerts to Notification Manager:
+将事件告警发送至 Notification Manager：
 
 ```yaml
     "receivers":
@@ -61,7 +60,7 @@ Send event alerts to Notification Manager:
         "group_interval": "30s"
 ```
 
-Send auditing alerts to Notification Manager:
+将审计告警发送至 Notification Manager：
 
 ```yaml
     "receivers":
@@ -79,17 +78,17 @@ Send auditing alerts to Notification Manager:
 
 {{< notice note >}}
 
-The above is the default configuration. If you do not want to receive a certain type of alert, you can delete the corresponding configuration.
+以上所示为默认配置。如果您不想接收某种类型的告警，可以删除相应配置。
 
 {{</ notice >}}
 
-### Configure receivers
+### 配置接收器
 
-Notification Manager now supports three types of receivers: Email, WeChat Work and Slack. Only the administrator can configure receivers.
+Notification Manager 目前支持三种类型的接收器：电子邮件、企业微信和 Slack。只有管理员才能配置接收器。
 
-#### Email
+#### 电子邮件
 
-If a tenant named **test-user** who wants to receive notifications from email, just create an email receiver like this.
+如果一个名为 `test-user` 的租户想接收电子邮件通知，请创建一个电子邮件接收器，如下所示：
 
 ```yaml
 cat <<EOF | kubectl apply -f -
@@ -146,7 +145,7 @@ spec:
 EOF
 ```
 
-The emailConfigSelector is a selector to select EmailConfig for email receiver, if the emailConfigSelector is not set, receiver will use the default email config. You can create a default email config like this.
+`emailConfigSelector` 是一个选择器，用于选择电子邮件接收器的 `EmailConfig`。如果没有设置 `emailConfigSelector`，接收器将使用默认电子邮件配置。您可以创建一个默认电子邮件配置，如下所示：
 
 ```yaml
 cat <<EOF | kubectl apply -f -
@@ -183,7 +182,7 @@ spec:
 EOF
 ```
 
-Email receivers with label `type: tenant` only receive notifications from the namespace to which the specified tenant user has access. If you want them to receive notifications from all namespaces or even without a namespace label, you can create a global email receiver with label `type: global` as below::
+带有 `type: tenant` 标签的电子邮件接收器只接收来自指定租户可以访问的命名空间的通知。如果您想让接收器接收来自所有命名空间的通知，或者不带命名空间标签，您可以创建一个全局电子邮件接收器，标签为 `type: global`，如下所示：
 
 ```yaml
 cat <<EOF | kubectl apply -f -
@@ -203,14 +202,13 @@ EOF
 
 {{< notice note >}}
 
-Global email receiver will use the default email config.
+全局电子邮件接收器将使用默认电子邮件配置。
 
 {{</ notice >}}
 
-#### Wechat Work
+#### 企业微信
 
-Notification Manager supports sending notification to Wechat Work. 
-If a tenant named **test-user** who wants to receive notifications from Wechat Work, just create a wechat receiver like this.
+Notification Manager 支持向企业微信发送通知。如果一个名为 `test-user` 的租户想接收企业微信通知，请创建一个微信接收器，如下所示：
 
 ```yaml
 cat <<EOF | kubectl apply -f -
@@ -268,14 +266,14 @@ EOF
 
 {{< notice info >}}
 
-- wechatApiCorpId is the id of your Wechat Work. 
-- wechatApiAgentId is the id of app sending message to user in your Wechat Work
-- wechatApiSecret is the secret of this app, you can get these two parameters in App Management of your Wechat Work. 
-- Any user, party or tag who wants to receive notifications must be in the allowed users list of this app.
+- `wechatApiCorpId` 即您的企业微信 ID。
+- `wechatApiAgentId` 即在您的企业微信中向用户发送消息的应用的 ID。
+- `wechatApiSecret` 即该应用的密钥。您可以在企业微信的**应用管理**中获取这两个参数。
+- 想接收通知的任意用户、团体或标签必须在该应用的允许用户列表中。
 
 {{</ notice >}}
 
-The wechatConfigSelector is a selector to select WechatConfig for wechat receiver, if the wechatConfigSelector is not set, wechat receiver will use the default wechat config. You can create a default wechat config like this.
+`wechatConfigSelector` 是一个选择器，用于选择微信接收器的 `WechatConfig`。如果没有设置 `wechatConfigSelector`，微信接收器将使用默认微信配置。您可以创建一个默认微信配置，如下所示：
 
 ```yaml
 cat <<EOF | kubectl apply -f -
@@ -309,7 +307,7 @@ spec:
 EOF
 ```
 
-Wechat receivers with label `type: tenant` can only receive notifications from the namespace to which the specified tenant user has access. If you want them to receive notifications from all namespaces or even without a namespace label, you can create a global wechat receiver with label `type: global` as below:
+带有 `type: tenant` 标签的微信接收器只接收来自指定租户可以访问的命名空间的通知。如果您想让接收器接收来自所有命名空间的通知，或者不带命名空间标签，您可以创建一个全局微信接收器，标签为 `type: global`，如下所示：
 
 ```yaml
 cat <<EOF | kubectl apply -f -
@@ -332,13 +330,13 @@ EOF
 
 {{< notice note >}}
 
-Global wechat receiver will use the default wechat config.
+全局微信接收器将使用默认微信配置。
 
 {{</ notice >}}
 
 #### Slack
 
-Notification Manager supports sending notification to slack channels. If a tenant named **test-user** who wants to receive notifications from slack, just create a slack receiver like this.
+Notification Manager 支持向 Slack 频道发送通知。如果一个名为 `test-user` 的租户想接收 Slack 通知，请创建一个 Slack 接收器，如下所示：
 
 ```yaml
 cat <<EOF | kubectl apply -f -
@@ -389,13 +387,13 @@ EOF
 
 {{< notice info>}}
 
-- Slack token is the OAuth Access Token or Bot User OAuth Access Token when you create a slack app.
-- This app must have the scope chat:write. 
-- The user who creates the app or bot user must be in the channel to which you want to send notifications.
+- 当您创建 Slack 应用时，Slack 令牌为 OAuth 访问令牌或者 Bot 用户 OAuth 访问令牌。
+- 该应用必须有作用域 [chat:write](https://api.slack.com/scopes/chat:write)。
+- 创建该应用的用户或者 Bot 用户必须在您想发送通知的频道中。
 
 {{</ notice >}}
 
-The slackConfigSelector is a selector to select SlackConfig for slack receiver, if the slackConfigSelector is not set, slack receiver will use the default slack config. You can create a default slack config like this.
+`slackConfigSelector` 是一个选择器，用于选择 Slack 接收器的 `SlackConfig`。如果没有设置 `slackConfigSelector`，Slack 接收器将使用默认 Slack 配置。您可以创建一个默认 Slack 配置，如下所示：
 
 ```yaml
 cat <<EOF | kubectl apply -f -
@@ -426,7 +424,7 @@ spec:
 EOF
 ```
 
-Slack receivers with label `type: tenant` can only receive notifications from the namespace to which the specified tenant user has access. If you want them to receive notifications from all namespaces or even without a namespace label, you can create a global slack receiver with label `type: global` as below:
+带有 `type: tenant` 标签的 Slack 接收器只接收来自指定租户可以访问的命名空间的通知。如果您想让接收器接收来自所有命名空间的通知，或者不带命名空间标签，您可以创建一个全局 Slack 接收器，标签为 `type: global`，如下所示：
 
 ```yaml
 cat <<EOF | kubectl apply -f -
@@ -445,6 +443,6 @@ EOF
 
 {{< notice note>}}
 
-Global slack receiver will use the default slack config.
+全局 Slack 接收器将使用默认 Slack 配置。
 
 {{</ notice >}}

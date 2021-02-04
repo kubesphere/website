@@ -1,162 +1,299 @@
 ---
-title: "App Lifecycle Management"
-keywords: 'kubernetes, kubesphere, app-store'
+title: "Application Lifecycle Management"
+keywords: 'Kubernetes, KubeSphere, app-store'
 description: 'App Lifecycle Management'
-
-
-weight: 2240
+linkTitle: 'Application Lifecycle Management'
+weight: 14100
 ---
 
-KubeSphere integrates open-source project [OpenPitrix](https://github.com/openpitrix/openpitrix) to set up the App Store which provide the full lifecycle of application management. App Store supports two kinds of application deployment as follows:
+KubeSphere integrates [OpenPitrix](https://github.com/openpitrix/openpitrix), an open-source multi-cloud application management platform, to set up the App Store, managing applications throughout their entire lifecycle. The App Store supports two kinds of application deployment:
 
-> - **Application template** provides a way for developers and ISVs to share applications with users in a workspace. It also supports importing third-party application repositories within workspace.
-> - **Composing application** means users can quickly compose multiple microservices into a complete application through the one-stop console.
+- **App templates** provide a way for developers and independent software vendors (ISVs) to share applications with users in a workspace. You can also import third-party app repositories within a workspace.
+- **Composing apps** help users quickly build a complete application using multiple microservices to compose it. KubeSphere allows users to select existing services or create new services to create a composing app on the one-stop console.
 
-![App Store](/images/application-templates/app-store.png)
+![app-store](/images/docs/appstore/application-lifecycle-management/app-store.png)
 
-## Objective
-
-In this tutorial, we will walk you through how to use [EMQ X](https://www.emqx.io/) as a demo application to demonstrate the **global application store** and **application lifecycle management** including upload / submit / review / test / release / upgrade / delete application templates.
+Using [Redis](https://redis.io/) as an example application, this tutorial demonstrates how to manage the app throughout the entire lifecycle, including submission, review, test, release, upgrade and removal.
 
 ## Prerequisites
 
-- You need to install [App Store (OpenPitrix)](../../pluggable-components/app-store).
-- You need to create a workspace and a project, see [Create Workspace, Project, Account and Role](../../quick-start/create-workspace-and-project/).
+- You need to enable [KubeSphere App Store (OpenPitrix)](../../pluggable-components/app-store/).
+- You need to create a workspace, a project and an account (`project-regular`). For more information, see [Create Workspaces, Projects, Accounts and Roles](../../quick-start/create-workspace-and-project/).
 
 ## Hands-on Lab
 
-### Step 1: Create Customized Role and Account
+### Step 1: Create a customized role and account
 
-In this step, we will create two accounts, i.e., `isv` for ISVs and `reviewer` for app technical reviewers.
+You need to create two accounts first, one for ISVs (`isv`) and the other (`reviewer`) for app technical reviewers.
 
-1.1. First of all, we need to create a role for app reviewers. Log in KubeSphere console with the account `admin`, go to **Platform → Access Control → Account Roles**, then click **Create** and name it `app-review`, choose **App Templates Management** and **App Templates View**  in the authorization settings list, then click **Create**.
+1. Log in to the KubeSphere console with the account `admin`. Click **Platform** in the top left corner and select **Access Control**. In **Account Roles**, click **Create**.
 
-![Authorization Settings](/images/application-templates/create-roles.png)
+   ![create-role](/images/docs/appstore/application-lifecycle-management/create-role.jpg)
 
-1.2. Create an account `reviewer`, and grant the role of **app-review** to it.
+2. Set a name for the role, such as `app-review`, and click **Edit Authorization**.
 
-1.3. Similarly, create an account `isv`, and grant the role of **platform-regular** to it.
+   ![app-review-name](/images/docs/appstore/application-lifecycle-management/app-review-name.jpg)
 
-![Create Accounts](/images/application-templates/create-accounts.png)
+3. In **Apps Management**, choose **App Templates Management** and **App Templates View**  in the authorization list, then click **OK**.
 
-1.4. Invite the accounts that we created above to an existing workspace such as `demo-workspace`, and grant them the role of `workspace-admin`.
+   ![create-roles](/images/docs/appstore/application-lifecycle-management/create-roles.png)
 
-### Step 2: Upload and Submit Application
+   {{< notice note >}}
 
-2.1. Log in KubeSphere with `isv`, enter the workspace. We are going to upload the EMQ X app to this workspace. First please download [EMQ X chart v1.0.0](https://github.com/kubesphere/tutorial/raw/master/tutorial%205%20-%20app-store/emqx-v1.0.0-rc.1.tgz) and click **Upload Template** by choosing **App Templates**.
+   The account granted the role `app-review` is able to view the App Store on the platform and manage apps, including review and removal.
 
-> Note we are going to upload a newer version of EMQ X to demo the upgrade feature later on.
+   {{</ notice >}} 
 
-![App Templates](/images/application-templates/app-templates.png)
+4. As the role is ready now, you need to create an account and grant the role of `app-review` to it. In **Accounts**, click **Create**. Provide the required information and click **OK**.
 
-2.2. Click **Upload**, then click **Upload Helm Chart Package** to upload the chart.
+   ![create-review-role](/images/docs/appstore/application-lifecycle-management/create-review-role.jpg)
 
-![Upload Template](/images/application-templates/upload-templates.png)
+5. Similarly, create another account `isv`, and grant the role of `platform-regular` to it.
 
-2.3. Click **OK**. Now download [EMQ Icon](https://github.com/kubesphere/tutorial/raw/master/tutorial%205%20-%20app-store/emqx-logo.png) and click **Upload icon** to upload App logo. Click **OK** when you are done.
+   ![account-ready](/images/docs/appstore/application-lifecycle-management/account-ready.jpg)
 
-![EMQ Template](/images/application-templates/upload-icons.png)
+6. Invite both accounts created above to an existing workspace such as `demo-workspace`, and grant them the role of `workspace-admin`.
 
-2.4. At this point, you will be able to see the status displays `draft`, which means this app is under developing. The uploaded app is visible for all members in the same workspace.
+### Step 2: Upload and submit an application
 
-![Template List](/images/application-templates/app-templates-draft.png)
+1. Log in to KubeSphere as `isv` and go to your workspace. You need to upload the example app Redis to this workspace so that it can be used later. First, download the app [Redis 11.3.4](https://github.com/kubesphere/tutorial/raw/master/tutorial%205%20-%20app-store/redis-11.3.4.tgz) and click **Upload Template** in **App Templates**.
 
-2.5. Enter app template detailed page by clicking on EMQ X from the list. You can edit the basic information of this app by clicking **Edit Info**.
+   ![upload-app](/images/docs/appstore/application-lifecycle-management/upload-app.jpg)
 
-![Edit Template](/images/application-templates/edit-template.png)
+   {{< notice note >}}
 
-2.6. You can customize the app's basic information by filling in the table as the following screenshot.
+   In this example, a new version of Redis will be uploaded later to demonstrate the upgrade feature.
 
-![Customize Template](/images/application-templates/edit-app-info.png)
+   {{</ notice >}} 
 
-2.7. Save your changes, then you can test this application by deploying to Kubernetes. Click on the **Test Deploy** button.
+2. In the dialog that appears, click **Upload Helm Chart Package** to upload the chart file. Click **OK** to continue.
 
-![Save Template](/images/application-templates/test-deploy.png)
+   ![upload-template](/images/docs/appstore/application-lifecycle-management/upload-template.jpg)
 
-2.8. Select cluster and project that you want to deploy into, check app config then click **Deploy**.
+3. Basic information of the app displays under **App Info**. To upload an icon for the app, click **Upload icon**. You can also skip it and click **OK** directly.
 
-![Deploy Template](/images/application-templates/select-deploy-location.png)
+   {{< notice note >}}
 
-![Template Instance](/images/application-templates/app-deploy.png)
+   Maximum accepted resolutions of the app icon: 96 x 96 pixels.
 
-2.9. Wait for a few minutes, then switch to the tab **Deployed Instances**. You will find EMQ X App has been deployed successfully.
+   {{</ notice >}} 
 
-![Template Instance](/images/application-templates/deploy-instance.png)
+   ![upload-icon](/images/docs/appstore/application-lifecycle-management/upload-icon.jpg)
 
-2.10. At this point, you can click `Submit Review` to submit this application to `reviewer`.
+4. The app displays in the template list with the status **draft** after successfully uploaded, which means this app is under development. The uploaded app is visible to all members in the same workspace.
 
-![Submit Template](/images/application-templates/submit-review.png)
+   ![app-draft](/images/docs/appstore/application-lifecycle-management/app-draft.jpg)
 
-2.11. As shown in the following graph, the app status has been changed to `Submitted`. Now app reviewer can review it.
+5. Go to the detail page of the app template by clicking Redis from the list. You can edit the basic information of this app by clicking **Edit Info**.
 
-![Template Status](/images/application-templates/submitted.png)
+   ![edit-app-template](/images/docs/appstore/application-lifecycle-management/edit-app-template.jpg)
 
-### Step 3: Review Application
+6. You can customize the app's basic information by specifying the fields in the pop-up window.
 
-3.1. Log out, then use `reviewer` account to log in KubeSphere. Navigate to **Platform → App Store Management → App Review**.
+   ![edit-app-information](/images/docs/appstore/application-lifecycle-management/edit-app-information.jpg)
 
-![Review List](/images/application-templates/app-review.png)
+7. Click **OK** to save your changes, then you can test this application by deploying it to Kubernetes. Click the draft version to expand the menu and select **Test Deploy**.
 
-3.2. Click **Review** by clicking the vertical three dots at the end of app item in the list, then you start to review the app's basic information, introduction, chart file and updated logs from the pop-up windows.
+   ![test-deployment](/images/docs/appstore/application-lifecycle-management/test-deployment.jpg)
 
-![EMQ Info](/images/application-templates/review.png)
+   {{< notice note >}} 
 
-3.3. It is the reviewer's responsibility to judge if the app satisfies the criteria of the Global App Store or not, if yes, then click `Pass`; otherwise, `Reject` it.
+   If you don't want to test the app, you can submit it for review directly. However, it is recommended that you test your app deployment and function first before you submit it for review, especially in a production environment. This helps you detect any problems in advance and accelerate the review process. 
 
-### Step 4: Release Application to Store
+   {{</ notice >}} 
 
-4.1. Log out and switch to use `isv` to log in KubeSphere. Now `isv` can release the EMQ X application to the global application store which means all users in this platform can find and deploy this application.
+8. Select the cluster and project to which you want to deploy the app, set up different configurations for the app, and then click **Deploy**.
 
-4.2. Enter the demo workspace and navigate to the EMQ X app from the template list. Enter the detailed page and expand the version list, then click **Release to Store**, choose **OK** in the pop-up windows.
+   ![deployment-place](/images/docs/appstore/application-lifecycle-management/deployment-place.jpg)
 
-![Release EMQ](/images/application-templates/release-app.png)
+   ![deploying-app](/images/docs/appstore/application-lifecycle-management/deploying-app.jpg)
 
-4.3. At this point, EMQ X has been released to application store.
+   {{< notice note >}}
 
-![Audit Records](/images/application-templates/aduit-records.png)
+   Some apps can be deployed with all configurations set in a form. You can use the toggle switch to see its YAML file, which contains all parameters you need to specify in the form. 
 
-4.4. Go to **App Store** in the top menu, you will see the app in the list.
+   {{</ notice >}} 
 
-![EMQ on Store](/images/application-templates/emqx.png)
+9. Wait for a few minutes, then switch to the tab **Deployed Instances**. You will find that Redis has been deployed successfully.
 
-4.5. At this point, we can use any role of users to access EMQ X application. Click into the application detailed page to go through its basic information. You can click **Deploy** button to deploy the application to Kubernetes.
+   ![deployed-instance-success](/images/docs/appstore/application-lifecycle-management/deployed-instance-success.jpg)
 
-![Deploy EMQ](/images/application-templates/deploy-emqx.png)
+10. After you test the app with no issues found, you can click **Submit Review** to submit this application for review.
 
-### Step 5: Create Application Category
+    ![submit-for-review](/images/docs/appstore/application-lifecycle-management/submit-for-review.jpg)
 
-Depending on the business needs, `Reviewer` can create multiple categories for different types of applications. It is similar as tag and can be used in application store to filter applications, e.g. Big data, Middleware, IoT, etc.
+    {{< notice note >}}
+    
 
-As for EMQ X application, we can create a category and name it `IOT`. First switch back to the user `Reviewer`, go to **Platform → App  Store Management → App Categories**
+The version number must start with a number and contain decimal points.
 
-![Create Category](/images/application-templates/iot-category.png)
+{{</ notice >}}
 
-Then click **Uncategorized** and find EMQ X, change its category to `IOT` and save it.
+11. After the app is submitted, the app status will change to **Submitted**. Now app reviewers can review it.
 
-> Note usually reviewer should create necessary categories in advance according to the requirements of the store. Then ISVs categorize their applications as appropriate before submitting for review.
+    ![submitted-app](/images/docs/appstore/application-lifecycle-management/submitted-app.jpg)
 
-![Categorize EMQ](/images/application-templates/iot-emqx.png)
+### Step 3: Review the application
 
-### Step 6: Add New Version
+1. Log out of KubeSphere and log back in as `reviewer`. Click **Platform** in the top left corner and select **App Store Management**. On the **App Review** page, the app submitted in the previous step displays under the tab **Unprocessed**.
 
-6.1. KubeSphere supports adding new versions of existing applications for users to quickly upgrade. Let's continue to use `isv` account and enter the EMQ X template page in the workspace.
+   ![app-to-be-reviewed](/images/docs/appstore/application-lifecycle-management/app-to-be-reviewed.jpg)
 
-![Create New Version](/images/application-templates/emqx-active.png)
+2. To review this app, click it to inspect the app information, introduction, chart file and update logs from the pop-up window.
 
-6.2. Download [EMQ X v4.0.2](https://github.com/kubesphere/tutorial/raw/master/tutorial%205%20-%20app-store/emqx-v4.0.2.tgz), then click on the **New Version** on the right, upload the package that you just downloaded.
+   ![reviewing](/images/docs/appstore/application-lifecycle-management/reviewing.jpg)
 
-![Upload New Version](/images/application-templates/emqx-new-version.png)
+3. It is the responsibility of the reviewer to decide whether the app meets the criteria to be released to the App Store. Click **Pass** to approve it or **Reject** to deny an app submission.
 
-6.3. Click **OK** when you upload successfully.
+### Step 4: Release the application to the App Store
 
-![New Version Info](/images/application-templates/upload-emqx-new-version.png)
+After the app is approved, `isv` can release the Redis application to the App Store, allowing all users on the platform to find and deploy this application.
 
-6.4. At this point, you can test the new version and submit it to `Reviewer`. This process is similar to the one for the first version.
+1. Log out of KubeSphere and log back in as `isv`. Go to your workspace and click Redis on the **App Templates** page. On its detail page, expand the version menu, then click **Release to Store**. In the pop-up prompt, click **OK** to confirm.
 
-![Submit New Version](/images/application-templates/upload-emqx-new-version.png)
+   ![app-templates-page](/images/docs/appstore/application-lifecycle-management/app-templates-page.jpg)
 
-6.5. After you submit the new version, the rest of process regarding review and release are also similar to the first version that we demonstrated above.
+2. Under **Audit Records**, you can see the app status. **Active** means it is available in the App Store.
+
+   ![app-active](/images/docs/appstore/application-lifecycle-management/app-active.jpg)
+
+3. Click **View in Store** to go to its **App Info** page in the App Store. Alternatively, click **App Store** in the top left corner and you can also see the app.
+
+   ![redis](/images/docs/appstore/application-lifecycle-management/redis.jpg)
+
+   {{< notice note >}}
+
+   You may see two Redis apps in the App Store, one of which is a built-in app in KubeSphere. Note that a newly-released app displays at the beginning of the list in the App Store.
+
+   {{</ notice >}} 
+
+4. Now, users in the workspace can deploy Redis from the App Store. To deploy the app to Kubernetes, click the app to go to its **App Info** page, and click **Deploy**.
+
+   ![deploy-redis](/images/docs/appstore/application-lifecycle-management/deploy-redis.jpg)
+
+### Step 5: Create an app category
+
+`reviewer` can create multiple categories for different types of applications based on their function and usage. It is similar to setting tags and categories can be used in the App Store as filters, such as Big Data, Middleware, and IoT.
+
+1. Log in to KubeSphere as `reviewer`. To create a category, go to the **App Store Management** page and click the plus icon in **App Categories**.
+
+   ![app-category](/images/docs/appstore/application-lifecycle-management/app-category.jpg)
+
+2. Set a name and icon for the category in the dialog, then click **OK**. For Redis, you can input `Database` for the field **Category Name**.
+
+   ![set-app-type](/images/docs/appstore/application-lifecycle-management/set-app-type.jpg)
+
+   {{< notice note >}}
+
+   Usually, an app reviewer creates necessary categories in advance and ISVs select the category in which an app appears before submitting it for review. A newly-created category has no app in it.
+
+   {{</ notice >}} 
+
+3. As the category is created, you can assign the category to your app. In **Uncategorized**, select Redis and click **Change Category**. 
+
+   ![set-category-for-app](/images/docs/appstore/application-lifecycle-management/set-category-for-app.jpg)
+
+4. In the dialog, select the category (**Database**) from the drop-down list and click **OK**.
+
+   ![confirm-category](/images/docs/appstore/application-lifecycle-management/confirm-category.jpg)
+
+5. The app displays in the category as expected.
+
+   ![app-in-category-list-expected](/images/docs/appstore/application-lifecycle-management/app-in-category-list-expected.jpg)
+
+### Step 6: Add a new version
+
+To allow workspace users to upgrade apps, you need to add new app versions to KubeSphere first. Follow the steps below to add a new version for the example app.
+
+1. Log in to KubeSphere as `isv` again and navigate to **App Templates**. Click the app Redis in the list.
+
+   ![redis-new-version](/images/docs/appstore/application-lifecycle-management/redis-new-version.jpg)
+
+2. Download [Redis 12.0.0](https://github.com/kubesphere/tutorial/raw/master/tutorial%205%20-%20app-store/redis-12.0.0.tgz), which is a new version of Redis for demonstration in this tutorial. In the tab **Versions**, click **New Version** on the right to upload the package you just downloaded.
+
+   ![new-version-redis](/images/docs/appstore/application-lifecycle-management/new-version-redis.jpg)
+
+3. Click **Upload Helm Chart Package** and click **OK** after it is uploaded.
+
+   ![upload-new-redis-version](/images/docs/appstore/application-lifecycle-management/upload-new-redis-version.jpg)
+
+4. The new app version displays in the version list. You can click it to expand the menu and test the new version. Besides, you can also submit it for review and release it to the App Store, which is the same as the steps shown above.
+
+   ![uploaded-new-version](/images/docs/appstore/application-lifecycle-management/uploaded-new-version.jpg)
+
+   ![see-new-version](/images/docs/appstore/application-lifecycle-management/see-new-version.jpg)
 
 ### Step 7: Upgrade
 
-After the new version has been released to application store, all users can upgrade from this application.
+After a new version is released to the App Store, all users can upgrade this application to the new version.
+
+{{< notice note >}}
+
+To follow the steps below, you must deploy an app of one of its old versions first. In this example, Redis 11.3.4 was already deployed in the project `demo-project` and its new version 12.0.0 was released to the App Store.
+
+{{</ notice >}} 
+
+1. Log in to KubeSphere as `project-regular`, navigate to the **Applications** page of the project, and click the app to be upgraded.
+
+   ![app-to-be-upgraded](/images/docs/appstore/application-lifecycle-management/app-to-be-upgraded.jpg)
+
+2. Under **App Template**, select **Version Info**. You can see all released app versions in the list. The app version you are using currently is marked with **Current Version**. To upgrade your app to a specific version, click **Upgrade** on the right of the version number.
+
+   {{< notice note >}}
+
+   You must move your cursor onto the app version to see the **Upgrade** button.
+
+   {{</ notice >}} 
+
+   ![upgrade-an-app](/images/docs/appstore/application-lifecycle-management/upgrade-an-app.jpg)
+
+3. On the **Applications** page, you can see that the app is being upgraded. The status will change to **active** when the upgrade finishes.
+
+   ![version-upgraded](/images/docs/appstore/application-lifecycle-management/version-upgraded.jpg)
+
+   ![upgrade-finish](/images/docs/appstore/application-lifecycle-management/upgrade-finish.jpg)
+
+### Step 8: Suspend the application
+
+You can choose to remove an app entirely from the App Store or suspend a specific app version.
+
+1. Log in to KubeSphere as `reviewer`. Click **Platform** in the top left corner and go to **App Store Management**. On the **App Store** page, click Redis.
+
+   ![remove-app](/images/docs/appstore/application-lifecycle-management/remove-app.jpg)
+
+2. On the detail page, click **Suspend App** and select **OK** in the dialog to confirm the operation to remove the app from the App Store.
+
+   ![suspend-app](/images/docs/appstore/application-lifecycle-management/suspend-app.jpg)
+
+   {{< notice note >}}
+
+   Removing an app from the App Store does not affect tenants who are using the app.
+
+   {{</ notice >}} 
+
+3. To make the app available in the App Store again, click **Activate App**.
+
+   ![activate-app](/images/docs/appstore/application-lifecycle-management/activate-app.jpg)
+
+4. To suspend a specific app version, expand the version menu and click **Suspend Version**. In the dialog that appears, click **OK** to confirm.
+
+   ![suspend-version](/images/docs/appstore/application-lifecycle-management/suspend-version.jpg)
+
+   {{< notice note >}}
+
+   After an app version is suspended, this version is not available in the App Store. Suspending an app version does not affect tenants who are using this version.
+
+   {{</ notice >}}
+
+5. To make the app version available in the App Store again, click **Activate Version**.
+
+   ![activate-version](/images/docs/appstore/application-lifecycle-management/activate-version.jpg)
+
+   
+
+   
+
+   
+
+   
+

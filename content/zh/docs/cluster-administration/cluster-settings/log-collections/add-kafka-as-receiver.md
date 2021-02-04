@@ -1,133 +1,129 @@
 ---
-title: "Add Kafka as Receiver (aka Collector)"
-keywords: 'kubernetes, log, kafka, pod, container, fluentbit, output'
-description: 'KubeSphere Installation Overview'
-
-linkTitle: "Add Kafka as Receiver"
-weight: 2300
+title: "添加 Kafka 作为接收器"
+keywords: 'Kubernetes, 日志, Kafka, Pod, 容器, Fluentbit, 输出'
+description: '添加 Kafka 作为接收器'
+linkTitle: "添加 Kafka 作为接收器"
+weight: 8623
 ---
-KubeSphere supports using Elasticsearch, Kafka and Fluentd as log receivers.
-This doc will demonstrate:
+您可以在 KubeSphere 中使用 Elasticsearch、Kafka 和 Fluentd 日志接收器。本教程演示：
 
-- Deploy [strimzi-kafka-operator](https://github.com/strimzi/strimzi-kafka-operator) and then create a Kafka cluster and a Kafka topic by creating `Kafka` and `KafkaTopic` CRDs.
-- Add Kafka log receiver to receive logs sent from Fluent Bit
-- Verify whether the Kafka cluster is receiving logs using [Kafkacat](https://github.com/edenhill/kafkacat)
+- 部署 [strimzi-kafka-operator](https://github.com/strimzi/strimzi-kafka-operator)，然后通过创建 `Kafka` 和 `KafkaTopic` CRD 以创建 Kafka 集群和 Kafka Topic。
+- 添加 Kafka 作为日志接收器以从 Fluent Bit 接收日志。
+- 使用 [Kafkacat](https://github.com/edenhill/kafkacat) 验证 Kafka 集群是否能接收日志。
 
-## Prerequisite
+## 准备工作
 
-Before adding a log receiver, you need to enable any of the `logging`, `events` or `auditing` components following [Enable Pluggable Components](https://kubesphere.io/docs/pluggable-components/). The `logging` component is enabled as an example in this doc.
+- 您需要一个被授予**集群管理**权限的帐户。例如，您可以直接用 `admin` 帐户登录控制台，或创建一个具有**集群管理**权限的角色然后将此角色授予一个帐户。
+- 添加日志接收器前，您需要启用组件 `logging`、`events` 或 `auditing`。有关更多信息，请参见[启用可插拔组件](../../../../pluggable-components/)。本教程启用 `logging` 作为示例。
 
-## Step 1: Create a Kafka cluster and a Kafka topic
+## 步骤 1：创建 Kafka 集群和 Kafka Topic
 
-{{< notice note >}}
+您可以使用 [strimzi-kafka-operator](https://github.com/strimzi/strimzi-kafka-operator) 创建 Kafka 集群和 Kafka Topic。如果您已经有了一个 Kafka 集群，您可以直接从下一步开始。
 
-If you already have a Kafka cluster, you can start from Step 2.
+1. 在 `default` 命名空间中安装 [strimzi-kafka-operator](https://github.com/strimzi/strimzi-kafka-operator)：
 
-{{</ notice >}}
+    ```bash
+    helm repo add strimzi https://strimzi.io/charts/
+    ```
 
-You can use [strimzi-kafka-operator](https://github.com/strimzi/strimzi-kafka-operator) to create a Kafka cluster and a Kafka topic
+    ```bash
+    helm install --name kafka-operator -n default strimzi/strimzi-kafka-operator
+    ```
 
-1. Install [strimzi-kafka-operator](https://github.com/strimzi/strimzi-kafka-operator) to the `default` namespace:
 
-```bash
-helm repo add strimzi https://strimzi.io/charts/
-helm install --name kafka-operator -n default strimzi/strimzi-kafka-operator
-```
+2. 运行以下命令在 `default` 命名空间中创建 Kafka 集群和 Kafka Topic，该命令所创建的 Kafka 和 Zookeeper 集群的存储类型为 `ephemeral`，使用 `emptyDir` 进行演示。若要在生产环境下配置储存类型，请参见 [kafka-persistent](https://github.com/strimzi/strimzi-kafka-operator/blob/0.19.0/examples/kafka/kafka-persistent.yaml)。
 
-2. Create a Kafka cluster and a Kafka topic in the `default` namespace:
+    ```yaml
+    cat <<EOF | kubectl apply -f -
+    apiVersion: kafka.strimzi.io/v1beta1
+    kind: Kafka
+    metadata:
+      name: my-cluster
+      namespace: default
+    spec:
+      kafka:
+        version: 2.5.0
+        replicas: 3
+        listeners:
+          plain: {}
+          tls: {}
+        config:
+          offsets.topic.replication.factor: 3
+          transaction.state.log.replication.factor: 3
+          transaction.state.log.min.isr: 2
+          log.message.format.version: '2.5'
+        storage:
+          type: ephemeral
+      zookeeper:
+        replicas: 3
+        storage:
+          type: ephemeral
+      entityOperator:
+        topicOperator: {}
+        userOperator: {}
+    ---
+    apiVersion: kafka.strimzi.io/v1beta1
+    kind: KafkaTopic
+    metadata:
+      name: my-topic
+      namespace: default
+      labels:
+        strimzi.io/cluster: my-cluster
+    spec:
+      partitions: 3
+      replicas: 3
+      config:
+        retention.ms: 7200000
+        segment.bytes: 1073741824
+    EOF
+    ```
 
-To deploy a Kafka cluster and create a Kafka topic, you simply need to open  the ***kubectl*** console in ***KubeSphere Toolbox*** and run the following command:
+3. 运行以下命令查看 Pod 状态，并等待 Kafka 和 Zookeeper 运行并启动。
 
-{{< notice note >}}
+    ```bash
+    $ kubectl -n default get pod 
+    NAME                                         READY   STATUS    RESTARTS   AGE
+    my-cluster-entity-operator-f977bf457-s7ns2   3/3     Running   0          69m
+    my-cluster-kafka-0                           2/2     Running   0          69m
+    my-cluster-kafka-1                           2/2     Running   0          69m
+    my-cluster-kafka-2                           2/2     Running   0          69m
+    my-cluster-zookeeper-0                       1/1     Running   0          71m
+    my-cluster-zookeeper-1                       1/1     Running   1          71m
+    my-cluster-zookeeper-2                       1/1     Running   1          71m
+    strimzi-cluster-operator-7d6cd6bdf7-9cf6t    1/1     Running   0          104m
+    ```
 
-The following will create Kafka and Zookeeper clusters with storage type `ephemeral` which is `emptydir` for demo purpose. You should use other storage types for production, please refer to [kafka-persistent](https://github.com/strimzi/strimzi-kafka-operator/blob/0.19.0/examples/kafka/kafka-persistent.yaml)
+    运行以下命令查看 Kafka 集群的元数据：
 
-{{</ notice >}}
+    ```bash
+    kafkacat -L -b my-cluster-kafka-0.my-cluster-kafka-brokers.default.svc:9092,my-cluster-kafka-1.my-cluster-kafka-brokers.default.svc:9092,my-cluster-kafka-2.my-cluster-kafka-brokers.default.svc:9092
+    ```
 
-```yaml
-cat <<EOF | kubectl apply -f -
-apiVersion: kafka.strimzi.io/v1beta1
-kind: Kafka
-metadata:
-  name: my-cluster
-  namespace: default
-spec:
-  kafka:
-    version: 2.5.0
-    replicas: 3
-    listeners:
-      plain: {}
-      tls: {}
-    config:
-      offsets.topic.replication.factor: 3
-      transaction.state.log.replication.factor: 3
-      transaction.state.log.min.isr: 2
-      log.message.format.version: '2.5'
-    storage:
-      type: ephemeral
-  zookeeper:
-    replicas: 3
-    storage:
-      type: ephemeral
-  entityOperator:
-    topicOperator: {}
-    userOperator: {}
----
-apiVersion: kafka.strimzi.io/v1beta1
-kind: KafkaTopic
-metadata:
-  name: my-topic
-  namespace: default
-  labels:
-    strimzi.io/cluster: my-cluster
-spec:
-  partitions: 3
-  replicas: 3
-  config:
-    retention.ms: 7200000
-    segment.bytes: 1073741824
-EOF
-```
+## 步骤 2：添加 Kafka 作为日志接收器
 
-3. Run the following command to wait for Kafka and Zookeeper pods are all up and runing:
+1. 以 `admin` 身份登录 KubeSphere 的 Web 控制台。点击左上角的**平台管理**，然后选择**集群管理**。
 
-```bash
-kubectl -n default get pod 
-NAME                                         READY   STATUS    RESTARTS   AGE
-my-cluster-entity-operator-f977bf457-s7ns2   3/3     Running   0          69m
-my-cluster-kafka-0                           2/2     Running   0          69m
-my-cluster-kafka-1                           2/2     Running   0          69m
-my-cluster-kafka-2                           2/2     Running   0          69m
-my-cluster-zookeeper-0                       1/1     Running   0          71m
-my-cluster-zookeeper-1                       1/1     Running   1          71m
-my-cluster-zookeeper-2                       1/1     Running   1          71m
-strimzi-cluster-operator-7d6cd6bdf7-9cf6t    1/1     Running   0          104m
-```
+2. 如果您启用了[多集群功能](../../../../multicluster-management)，您可以选择一个集群。如果尚未启用该功能，请直接进行下一步。
 
-Then run the follwing command to find out metadata of kafka cluster
+3. 在**集群管理**页面，选择**集群设置**下的**日志收集**。
 
-```bash
-kafkacat -L -b my-cluster-kafka-0.my-cluster-kafka-brokers.default.svc:9092,my-cluster-kafka-1.my-cluster-kafka-brokers.default.svc:9092,my-cluster-kafka-2.my-cluster-kafka-brokers.default.svc:9092
-```
+4. 点击**添加日志接收器**并选择 **Kafka**。输入 Kafka 代理地址和端口信息，然后点击**确定**继续。
 
-4. Add Kafka as logs receiver:
-Click ***Add Log Collector*** and then select ***Kafka***, input Kafka broker address and port like below:
+   ```bash
+   my-cluster-kafka-0.my-cluster-kafka-brokers.default.svc 9092
+   my-cluster-kafka-1.my-cluster-kafka-brokers.default.svc 9092
+   my-cluster-kafka-2.my-cluster-kafka-brokers.default.svc 9092
+   ```
 
-```bash
-my-cluster-kafka-0.my-cluster-kafka-brokers.default.svc 9092
-my-cluster-kafka-1.my-cluster-kafka-brokers.default.svc 9092
-my-cluster-kafka-2.my-cluster-kafka-brokers.default.svc 9092
-```
+   ![add-kafka](/images/docs/cluster-administration/cluster-settings/log-collections/add-kafka-as-receiver/add-kafka.png)
 
-![Add Kafka](/images/docs/cluster-administration/cluster-settings/log-collections/add-kafka.png)
+5. 运行以下命令验证 Kafka 集群是否能从 Fluent Bit 接收日志：
 
-5. Run the following command to verify whether the Kafka cluster is receiving logs sent from Fluent Bit:
-
-```bash
-# Start a util container
-kubectl run --rm utils -it --generator=run-pod/v1 --image arunvelsriram/utils bash
-# Install Kafkacat in the util container
-apt-get install kafkacat
-# Run the following command to consume log messages from kafka topic: my-topic
-kafkacat -C -b my-cluster-kafka-0.my-cluster-kafka-brokers.default.svc:9092,my-cluster-kafka-1.my-cluster-kafka-brokers.default.svc:9092,my-cluster-kafka-2.my-cluster-kafka-brokers.default.svc:9092 -t my-topic
-```
+   ```bash
+   # Start a util container
+   kubectl run --rm utils -it --generator=run-pod/v1 --image arunvelsriram/utils bash
+   # Install Kafkacat in the util container
+   apt-get install kafkacat
+   # Run the following command to consume log messages from kafka topic: my-topic
+   kafkacat -C -b my-cluster-kafka-0.my-cluster-kafka-brokers.default.svc:9092,my-cluster-kafka-1.my-cluster-kafka-brokers.default.svc:9092,my-cluster-kafka-2.my-cluster-kafka-brokers.default.svc:9092 -t my-topic
+   ```

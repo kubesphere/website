@@ -1,13 +1,13 @@
 ---
-title: "Kubernetes Cluster Configuration"
-keywords: 'KubeSphere, kubernetes, docker, cluster, jenkins, prometheus'
-description: 'Configure cluster parameters before installing'
+title: "Kubernetes 集群配置"
+keywords: 'KubeSphere, kubernetes, docker, 集群, jenkins, prometheus'
+description: '用 KubeKey 安装集群之前配置 Kubernetes 参数'
 
-linkTitle: "Kubernetes Cluster Configuration"
-weight: 2130
+linkTitle: "Kubernetes 集群配置"
+weight: 3160
 ---
 
-This tutorial explains how to customize the Kubernetes cluster configurations in `config-example.yaml` when you start to use [KubeKey](https://github.com/kubesphere/kubekey) to provision a cluster. You can reference the following section to understand each parameter.
+本教程介绍使用 [KubeKey](https://github.com/kubesphere/kubekey) 安装集群时，如何在 `config-sample.yaml` 文件中配置 Kubernetes 集群参数（[多节点安装时](../multioverview/)需要此文件）。文件中每个参数的说明如下：
 
 ```yaml
 ######################### Kubernetes #########################

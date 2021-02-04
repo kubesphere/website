@@ -1,112 +1,79 @@
 ---
-title: "Overview"
+title: "概述"
 keywords: 'Kubernetes, KubeSphere, Linux, Installation'
-description: 'Overview of Installing KubeSphere on Linux'
+description: '介绍在 Linux 上安装 KubeSphere 的各种方式'
 
-linkTitle: "Overview"
-weight: 2110
+linkTitle: "概述"
+weight: 3110
 ---
 
-For the installation on Linux, KubeSphere can be installed both in clouds and in on-premises environments, such as AWS EC2, Azure VM and bare metal. Users can install KubeSphere on Linux hosts as they provision fresh Kubernetes clusters. The installation process is easy and friendly. Meanwhile, KubeSphere offers not only the online installer, or [KubeKey](https://github.com/kubesphere/kubekey), but also an air-gapped installation solution for the environment with no Internet access.
+对于在 Linux 上的安装，KubeSphere 既可以安装在云中也可以安装在本地环境中，例如 AWS EC2，Azure VM 和裸机。用户可以在 Linux 主机上安装全新的 Kubernetes 和 KubeSphere 集群，安装过程简单而友好。同时，KubeSphere 不仅提供在线安装工具即 [KubeKey](https://github.com/kubesphere/kubekey)，而且还为无法访问 Internet 的环境提供了离线的安装解决方案。
 
-As an open-source project on [GitHub](https://github.com/kubesphere), KubeSphere is home to a community with thousands of users. Many of them are running KubeSphere for their production workloads.
+作为 [GitHub](https://github.com/kubesphere) 上的开源项目，KubeSphere 是一个有成千上万的社区用户的聚集地，他们中的许多人已经把 KubeSphere 运行在生产环境中。
 
-Users are provided with multiple installation options. Please note not all options are mutually exclusive. For instance, you can deploy KubeSphere with minimal packages on multiple nodes in an air-gapped environment.
+KubeSphere 有多钟安装方式，请注意，这些安装方式不是互斥的。例如，您可以在离线环境中的多个节点上以最小化方式部署 KubeSphere。
 
-- [All-in-One](../../../quick-start/all-in-one-on-linux/): Install KubeSphere on a single node. It is only for users to quickly get familiar with KubeSphere.
-- [Multi-Node](../multioverview/): Install KubeSphere on multiple nodes. It is for testing or development.
-- [Air-gapped Installation on Linux](../air-gapped-installation): All images of KubeSphere have been encapsulated into a package. It is convenient for air-gapped installation on Linux machines.
-- High Availability Installation: Install high availability KubeSphere on multiple nodes which is used for the production environment.
-- Minimal Packages: Only install the minimum required system components of KubeSphere. Here is the minimum resource requirement:
-  - 2vCPUs
+- [All-in-One](../../../quick-start/all-in-one-on-linux/)：在单个节点上安装 KubeSphere，仅用于用户快速熟悉 KubeSphere。
+- [多节点安装](../multioverview/)：在多个节点上安装单 master 的 KubeSphere，用于测试或开发。
+- [离线安装](../air-gapped-installation/)：把 KubeSphere 的所有镜像打包用于没有互联网连接的离线环境下安装。
+- [高可用安装](../ha-configuration/)：多个节点上安装主节点高可用 KubeSphere，用于生产环境。
+- 最小化安装：仅安装 KubeSphere 所需的最少系统组件。以下是最低资源要求:
+  - 2 CPUs
   - 4GB RAM
   - 40GB Storage
-- Full Packages: Install all available system components of KubeSphere such as DevOps, service mesh, and alerting.
+- [全家桶安装](../../../pluggable-components/)：安装 KubeSphere 的所有可插拔系统组件，例如 DevOps，ServiceMesh 和告警等。
 
-For the installation on Kubernetes, see Overview of Installing on Kubernetes.
+有关在 Kubernetes 上进行安装，请参阅[在 Kubernetes 上安装 KubeSphere 概述](../../../installing-on-kubernetes/introduction/overview/)。
 
-## Before Installation
+## 安装前
 
-- As images will be pulled and operating systems will be downloaded from the Internet, your environment must have Internet access. Otherwise, you need to use the air-gapped installer instead.
-- For all-in-one installation, the only one node is both the master and the worker.
-- For multi-node installation, you need to specify the node roles in the configuration file before installation.
-- Your linux host must have OpenSSH Server installed.
-- Please check [Port Requirements](../port-firewall) before installation.
+- 由于需要从网络上下载镜像，因此您的环境必须可以访问 Internet。否则，需要改用离线方式安装。
+- 对于 All-in-One 安装，唯一的节点既是主节点也是工作节点。
+- 对于多节点安装，需要在安装之前在配置文件中指定节点角色。
+- Linux 主机必须已安装 OpenSSH 服务。
+- 在安装之前，请检查[端口要求](../port-firewall)。
 
 ## KubeKey
 
-Developed in Go language, KubeKey represents a brand-new installation tool as a replacement for the ansible-based installer used before. KubeKey provides users with flexible installation choices, as they can install KubeSphere and Kubernetes separately or install them at one time, which is convenient and efficient.
+KubeKey 是用 Go 语言开发的，是一种全新的安装工具，可以替代以前使用的基于 ansible 的安装程序。KubeKey 为用户提供了灵活的安装选择，它既可以分别安装 KubeSphere 和 Kubernetes 也可以一次性同时安装它们，这既方便又高效。
 
-Three scenarios to use KubeKey:
+KubeKey 的三种使用场景：
 
-- Install Kubernetes only;
-- Install Kubernetes and KubeSphere together in one command;
-- Install Kubernetes first, and deploy KubeSphere on it using [ks-installer](https://github.com/kubesphere/ks-installer).
+- 仅安装 Kubernetes;
+- 在一个命令中同时安装 Kubernetes 和 KubeSphere;
+- 先安装好 Kubernetes，然后使用 [ks-installer](https://github.com/kubesphere/ks-installer) 部署 KubeSphere。
 
-{{< notice note >}}
+## 快速安装用于开发和测试
 
-If you have existing Kubernetes clusters, please refer to [Installing on Kubernetes](../../../installing-on-kubernetes/).
+自 v2.1.0 起，KubeSphere 升级为松耦合系统架构，默认情况下，KubeKey 仅安装必要的组件，这样安装速度既快而且资源消耗也最少。如果要启用增强的可插拔功能，请参阅[可插拔组件概述](../../../pluggable-components/)了解详细信息。
 
-{{</ notice >}} 
+快速安装 KubeSphere 仅用于开发或测试，因为默认情况下它使用了 [openEBS](https://openebs.io/) 的[本地卷](https://kubernetes.io/docs/concepts/storage/volumes/#local)作为存储类型。如果需要在生产环境安装，请参阅[高可用配置安装](../ha-configuration/)。
 
-## Quick Installation for Development and Testing
+- **All-in-one**，只需一个命令即可进行单节点零配置安装。
+- **多节点安装**，使用默认存储类（本地卷）在多个机器上安装 KubeSphere，并不需要单独安装存储服务（例如 Ceph 和 GlusterFS）。
 
-KubeSphere has decoupled some components since v2.1.0. KubeKey only installs necessary components by default as this way features fast installation and minimal resource consumption. If you want to enable enhanced pluggable functionalities, see [Enable Pluggable Components](../../../pluggable-components/) for details.
+## 可插拔组件概述
 
-The quick installation of KubeSphere is only for development or testing since it uses local volume for storage by default. If you want a production installation, see HA Cluster Configuration.
-
-- **All-in-one**. It means a single-node hassle-free installation with just one command.
-- **Multi-node**. It allows you to install KubeSphere on multiple instances using the default storage class (local volume), which means it is not required to install storage server such as Ceph and GlusterFS.
-
-{{< notice note >}}
-
-For air-gapped installation, please refer to [this tutorial](../air-gapped-installation/).
-
-{{</ notice >}} 
-
-## Install HA KubeSphere on Linux
-
-KubeKey allows users to install a highly available cluster for production. Users need to configure load balancers and persistent storage services in advance.
-
-- [Persistent Storage Configuration](../storage-configuration): By default, KubeKey uses [Local Volume](https://kubernetes.io/docs/concepts/storage/volumes/#local) based on [openEBS](https://openebs.io/) to provide storage services with dynamic provisioning in Kubernetes clusters. It is convenient for the quick installation of a testing environment. In a production environment, it must have a storage server set up. Please refer to [Persistent Storage Configuration](../storage-configuration) for details.
-- Load Balancer Configuration for HA installation: Before you get started with multi-node installation in a production environment, you need to configure load balancers. Cloud load balancers, Nginx and `HAproxy + Keepalived` all work for the installation.
-
-For more information, see HA Cluster Configuration. You can also see the specific step of HA installations across major cloud providers in Installing on Public Cloud.
-
-## Overview of Pluggable Components
-
-KubeSphere has decoupled some core feature components since v2.1.0. These components are designed to be pluggable, which means you can enable any of them both before and after the installation. By default, KubeKey does not install these pluggable components. For more information, see [Enable Pluggable Components](../../../pluggable-components/).
+前面说过，自 v2.1.0 起，KubeSphere 变为松耦合系统架构。一些系统功能被设计为可插拔的组件，您可以在安装之前或之后启用它们。默认情况下，KubeKey 不安装这些可插拔组件，有关更多信息，请参见[启用可插拔组件](../../../pluggable-components/)。
 
 ![Pluggable Components](https://pek3b.qingstor.com/kubesphere-docs/png/20191207140846.png)
 
-## Storage Configuration Instruction
+## 存储配置说明
 
-The following links explain how to configure different types of persistent storage services. Please refer to [Storage Configuration Instruction](../storage-configuration) for detailed instructions regarding how to configure the storage class in KubeSphere.
+KubeSphere 的存储既可以在安装之前配置也可以在安装之后添加，同时，KubeSphere 既支持一些开源的存储产品比如 Ceph, GlusterFS 等，也支持商业化的存储方案。有关如何在安装 KubeSphere 之前配置存储类的详细说明请看[配置持久化存储](../storage-configuration)。安装 KubeSphere 之后如何添加存储类型请参阅[添加新的存储类型](../../../cluster-administration/persistent-volume-and-storage-class/)。
 
-- [NFS](https://kubernetes.io/docs/concepts/storage/volumes/#nfs)
-- [GlusterFS](https://www.gluster.org/)
-- [Ceph RBD](https://ceph.com/)
-- [QingCloud Block Storage](https://docs.qingcloud.com/product/storage/volume/)
-- [QingStor NeonSAN](https://docs.qingcloud.com/product/storage/volume/super_high_performance_shared_volume/)
+## 集群运维
 
-## Cluster Operation and Maintenance
+### 添加新节点
 
-### Add New Nodes
+集群资源在使用过程通常因为负载的提高需要增加节点，尤其是在生产环境中，使用 KubeKey，可以方便地扩展节点的数量。有关更多信息，请参阅[添加新节点](../../../installing-on-linux/cluster-operation/add-new-nodes/)。
 
-With KubeKey, you can scale the number of nodes to meet higher resource needs after the installation, especially in a production environment. For more information, see [Add New Nodes](../../../installing-on-linux/cluster-operation/add-new-nodes/).
+### 删除节点
 
-### Remove Nodes
+同样，负载降低常常需要删除节点节省资源。首先需要清空该节点负载，然后再删除。有关更多信息，请参阅[删除节点](../../cluster-operation/remove-nodes)。
 
-You need to drain a node before you remove. For more information, see Remove Nodes.
+## 卸载
 
-### Add New Storage Classes
+卸载 KubeSphere 和 Kubernetes 意味着删除整个集群，这是不可逆的，请谨慎操作。
 
-KubeKey allows you to set a new storage class after the installation. You can set different storage classes for KubeSphere itself and your workloads.
-
-For more information, see Add New Storage Classes.
-
-## Uninstalling
-
-Uninstalling KubeSphere means it will be removed from the machines, which is irreversible. Please be cautious with the operation.
-
-For more information, see [Uninstalling](../../../installing-on-linux/uninstalling/uninstalling-kubesphere-and-kubernetes/).
+有关更多信息，请参见[卸载 KubeSphere 和 Kubernetes](../../../installing-on-linux/uninstalling/uninstalling-kubesphere-and-kubernetes/)。

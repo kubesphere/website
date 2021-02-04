@@ -1,93 +1,125 @@
 ---
-title: "Deploy KubeSphere on AKS"
-keywords: "KubeSphere, Kubernetes, Installation, Azure, AKS"
-description: "How to deploy KubeSphere on AKS"
+title: "在 Azure AKS 上部署 KubeSphere"
+keywords: "KubeSphere, Kubernetes, 安装, Azure, AKS"
+description: "如何在 AKS 上部署 KubeSphere"
 
-weight: 2270
+weight: 4210
 ---
 
-This guide walks you through the steps of deploying KubeSphere on [Azure Kubernetes Service](https://docs.microsoft.com/en-us/azure/aks/).
+本文演示在 [Azure Kubernetes Service](https://docs.microsoft.com/en-us/azure/aks/) 上部署 KubeSphere 的步骤。
 
-## Prepare an AKS cluster
+## 准备 AKS 集群
 
-Azure can help you implement infrastructure as code by providing resource deployment automation options. Commonly adopted tools include [ARM templates](https://docs.microsoft.com/en-us/azure/azure-resource-manager/templates/overview) and [Azure CLI](https://docs.microsoft.com/en-us/cli/azure/what-is-azure-cli?view=azure-cli-latest). In this guide, we will use Azure CLI to create all the resources that are needed for the installation of KubeSphere.
+Azure 可以通过提供自动化部署资源功能从而实现基础设施即代码的能力，常用的工具包括 [ARM templates](https://docs.microsoft.com/en-us/azure/azure-resource-manager/templates/overview) 和 [Azure CLI](https://docs.microsoft.com/en-us/cli/azure/what-is-azure-cli?view=azure-cli-latest)。在本指南中，我们将使用 Azure CLI 创建安装 KubeSphere 所需的所有资源。
 
-### Use Azure Cloud Shell
-You don't have to install Azure CLI on your machine as Azure provides a web-based terminal. Click the Cloud Shell button on the menu bar at the upper right corner in Azure portal.
+### 使用 Azure Cloud Shell
 
-![Cloud Shell](/images/docs/aks/aks-launch-icon.png)
+由于 Azure 提供了基于 Web 的终端，因此您不必在计算机上安装 Azure CLI。单击 Azure 门户右上角菜单栏上的 Cloud Shell 按钮。
 
-Select **Bash** Shell.
+![Cloud Shell](/images/docs/zh-cn/installing-on-kubernetes/hosted-kubernetes/install-kubesphere-on-aks/aks-launch-icon.png)
 
-![Bash Shell](/images/docs/aks/aks-choices-bash.png)
-### Create a Resource Group
+选择 **Bash** Shell。
 
-An Azure resource group is a logical group in which Azure resources are deployed and managed. The following example creates a resource group named `KubeSphereRG` in the location `westus`. 
+![Bash Shell](/images/docs/zh-cn/installing-on-kubernetes/hosted-kubernetes/install-kubesphere-on-aks/aks-choices-bash.png)
+
+### 创建资源组
+
+Azure 资源组是在其中部署和管理 Azure 资源的逻辑组。以下示例在`westus`区域中创建一个名为`KubeSphereRG`的资源组。
 
 ```bash
 az group create --name KubeSphereRG --location westus
 ```
 
-### Create an AKS Cluster
-Use the command `az aks create` to create an AKS cluster. The following example creates a cluster named `KuberSphereCluster` with three nodes. This will take several minutes to complete.
+### 创建一个 AKS 集群
+
+使用`az aks create`命令创建 AKS 集群。以下示例创建一个名为`KuberSphereCluster`的集群，该集群具有三个节点，需要等待几分钟完成。
 
 ```bash
 az aks create --resource-group KubeSphereRG --name KuberSphereCluster --node-count 3 --enable-addons monitoring --generate-ssh-keys
 ```
+
 {{< notice note >}}
 
-You can use `--node-vm-size` or `-s` option to change the size of Kubernetes nodes. Default: Standard_DS2_v2 (2vCPU, 7GB memory). For more options, see [az aks create](https://docs.microsoft.com/en-us/cli/azure/aks?view=azure-cli-latest#az-aks-create).
+您可以使用`--node-vm-size`或`-s`选项来更改 Kubernetes 节点的大小，默认值是 Standard_DS2_v2（2v CPU，7GB 内存）。有关更多选项，请参见 [az aks create](https://docs.microsoft.com/en-us/cli/azure/aks?view=azure-cli-latest#az-aks-create)。
 
-{{</ notice >}} 
+{{</ notice >}}
 
-### Connect to the Cluster
+### 连接集群
 
-To configure kubectl to connect to the Kubernetes cluster, use the command `az aks get-credentials`. This command downloads credentials and configures the Kubernetes CLI to use them.
+为了能够使用 kubectl 操作该 Kubernetes 集群，需要执行`az aks get-credentials`命令，该命令下载 Kubernetes CLI 将要使用到的凭据和配置。
 
 ```bash
 az aks get-credentials --resource-group KubeSphereRG --name KuberSphereCluster
 ```
 
+查看节点信息
+
 ```bash
-kebesphere@Azure:~$ kubectl get nodes
+$ kubectl get nodes
 NAME                                STATUS   ROLES   AGE   VERSION
-aks-nodepool1-23754246-vmss000000   Ready    agent   38m   v1.16.13
+aks-nodepool1-27194461-vmss000000   Ready    agent   77s   v1.17.13
+aks-nodepool1-27194461-vmss000001   Ready    agent   63s   v1.17.13
+aks-nodepool1-27194461-vmss000002   Ready    agent   65s   v1.17.13
 ```
-### Check Azure Resources in the Portal
-After you execute all the commands above, you can see there are 2 Resource Groups created in Azure Portal.
 
-![Resource groups](/images/docs/aks/aks-create-command.png)
+### 在门户中检查 Azure 资源
 
-Azure Kubernetes Services itself will be placed in KubeSphereRG. 
+执行完以上所有命令后，您可以看到在 Azure Portal 中创建了 2 个资源组。
 
-![Azure Kubernetes Services](/images/docs/aks/aks-dashboard.png)
+![Resource groups](/images/docs/zh-cn/installing-on-kubernetes/hosted-kubernetes/install-kubesphere-on-aks/aks-create-command.png)
 
-All the other Resources will be placed in MC_KubeSphereRG_KuberSphereCluster_westus, such as VMs, Load Balancer and Virtual Network.
+查看资源组详情
 
-![Azure Kubernetes Services](/images/docs/aks/aks-all-resources.png)
+```bash
+$ az group show --resource-group KubeSphereRG
+{
+  "id": "/subscriptions/6017690f-c286-4a8f-123e-c53e2f3bc7b5/resourceGroups/KubeSphereRG",
+  "location": "westus",
+  "managedBy": null,
+  "name": "KubeSphereRG",
+  "properties": {
+    "provisioningState": "Succeeded"
+  },
+  "tags": null,
+  "type": "Microsoft.Resources/resourceGroups"
+}
+```
 
-## Deploy KubeSphere on AKS
-To start deploying KubeSphere, use the following command.
+Azure Kubernetes Services 本身将放置在`KubeSphereRG`中。
+
+![Azure Kubernetes Services](/images/docs/zh-cn/installing-on-kubernetes/hosted-kubernetes/install-kubesphere-on-aks/aks-dashboard.png)
+
+所有其他资源都将放置在`MC_KubeSphereRG_KuberSphereCluster_westus`中，例如 VM，负载均衡器和虚拟网络。
+
+![Azure Kubernetes Services](/images/docs/zh-cn/installing-on-kubernetes/hosted-kubernetes/install-kubesphere-on-aks/aks-all-resources.png)
+
+## 在 AKS 上部署 KubeSphere
+
+请使用以下命令开始部署 KubeSphere。
+
 ```bash
 kubectl apply -f https://github.com/kubesphere/ks-installer/releases/download/v3.0.0/kubesphere-installer.yaml
-```
-```bash
+
 kubectl apply -f https://github.com/kubesphere/ks-installer/releases/download/v3.0.0/cluster-configuration.yaml
 ```
-You can inspect the logs of installation through the following command:
+
+可以通过以下命令检查安装日志：
 
 ```bash
 kubectl logs -n kubesphere-system $(kubectl get pod -n kubesphere-system -l app=ks-install -o jsonpath='{.items[0].metadata.name}') -f
 ```
 
-## Access KubeSphere Console
+## 访问 KubeSphere 控制台
 
-To access KubeSphere console from a public IP address, you need to change the service type to `LoadBalancer`.
+要从公共 IP 地址访问 KubeSphere 控制台，需要将服务类型更改为`LoadBalancer`。
+
 ```bash
 kubectl edit service ks-console -n kubesphere-system
 ```
-Find the following section and change the type to `LoadBalancer`.
-```bash
+
+找到以下部分，并将类型更改为`LoadBalancer`。
+
+```yaml
 spec:
   clusterIP: 10.0.78.113
   externalTrafficPolicy: Cluster
@@ -106,12 +138,19 @@ spec:
 status:
   loadBalancer: {}
 ```
-After saving the configuration of ks-console service, you can use the following command to get the public IP address (under `EXTERNAL-IP`). Use the IP address to access the console with the default account and password (`admin/P@88w0rd`).
+
+保存 ks-console 服务的配置后，可以使用以下命令获取公共 IP 地址（在下方 EXTERNAL-IP）。
+
 ```bash
-kebesphere@Azure:~$ kubectl get svc/ks-console -n kubesphere-system
+$ kubectl get svc/ks-console -n kubesphere-system
 NAME         TYPE           CLUSTER-IP    EXTERNAL-IP   PORT(S)        AGE
 ks-console   LoadBalancer   10.0.181.93   13.86.xxx.xxx   80:30194/TCP   13m       6379/TCP       10m
 ```
-## Enable Pluggable Components (Optional)
 
-The example above demonstrates the process of a default minimal installation. For pluggable components, you can enable them either before or after the installation. See [Enable Pluggable Components](../../../pluggable-components/) for details.
+使用 external-ip 地址用默认帐户和密码（admin/P@88w0rd）访问控制台。在集群概述页面中，您可以看到如下图所示的仪表板。
+
+![aks-cluster](/images/docs/zh-cn/installing-on-kubernetes/hosted-kubernetes/install-kubesphere-on-aks/aks-cluster.png)
+
+## 启用可插拔组件（可选）
+
+上面的示例演示了默认的最小安装过程，对于可插拔组件，可以在安装之前或之后启用它们。有关详细信息，请参见[启用可插拔组件](../../../pluggable-components/)。

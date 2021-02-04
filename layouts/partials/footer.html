@@ -146,6 +146,14 @@
         });
     }
 
+    var bindAddPadding = function() {
+        var close = $('#close-join')
+        if (close.length > 0) {
+            $('.main-section').addClass('padding')
+        }
+    }
+
+    bindAddPadding()
     // bindLayLoad()
     bindSubmit()
     bindHideMessage()

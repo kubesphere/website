@@ -4,7 +4,7 @@ keywords: "Kubernetes, upgrade, KubeSphere, v3.0.0"
 description: "Understand what will be changed after upgrade."
 
 linkTitle: "Changes after Upgrade"
-weight: 4025
+weight: 7600
 ---
 
 This section covers the changes after upgrade for existing settings in previous versions. If you want to know all the new features and enhancements in KubeSphere 3.0.0, see [Release Notes for 3.0.0](../../release/release-v300/) directly.

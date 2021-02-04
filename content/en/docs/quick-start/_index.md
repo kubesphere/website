@@ -5,7 +5,7 @@ layout: "single"
 
 linkTitle: "Quickstarts"
 
-weight: 1500
+weight: 2000
 
 icon: "/images/docs/docs.svg"
 
@@ -21,7 +21,7 @@ Learn how to install KubeSphere on Linux with a minimal installation package. Th
 
 Learn how to install KubeSphere on existing Kubernetes clusters with a minimal installation package. Your Kubernetes clusters can be hosted on cloud or on-premises.
 
-## [Create Workspace, Project, Account and Role](../quick-start/create-workspace-and-project/)
+## [Create Workspaces, Projects, Accounts and Roles](../quick-start/create-workspace-and-project/)
 
 Understand how you can take advantage of multi-tenant system in KubeSphere for fine-grained access control at different levels.
 

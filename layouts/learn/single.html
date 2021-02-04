@@ -1,0 +1,91 @@
+{{ define "main" }}
+
+<section class="section-1">
+    <div class="common-layout">
+        <span><a href='{{( .GetPage "/learn").RelPermalink}}'>← {{ i18n "Cloud Native Technology Class"}}</a></span> / <span>{{ .CurrentSection.LinkTitle }}</span>
+    </div>
+</section>
+
+<section class="section-2">
+    <div class="common-layout">
+        <div class="left">
+            {{ with .Params.video }}
+            <video id="lesson-video" src="{{ .videoUrl }}" poster="{{ .snapshot }}" controls onplaying="handlePlayVideo()" onpause="handlePauseVideo()"></video>
+            {{ end }}
+
+            {{ with .Params.time }}
+            <p class="date"><span class="time"></span>{{ . }}</p>
+            {{ else }}
+            <p class="date"><span class="time"></span>{{ .CurrentSection.Params.time }}</p>
+            {{ end }}
+
+            {{ with .Params.pdfUrl }}
+                <div class="pdf-div">
+                    <iframe src="{{ . }}" frameborder="0"></iframe>
+                </div>
+            {{ end }}
+        </div>
+        <div class="right">
+            {{ $relPermalink := .RelPermalink }}
+
+            {{ with .Site.GetPage "/learn" }}
+                {{ range .Sections }}
+                    {{ range .Sections}}
+                        <div class="lesson-div">
+                            <p class='{{ if eq (.GetPage "video").RelPermalink $relPermalink }}active{{ end }}'>
+                                <a href='{{ (.GetPage "video").RelPermalink }}'>
+                                    {{ .LinkTitle }}
+                                    {{ if eq (.GetPage "video").RelPermalink $relPermalink }}
+                                    <span id="play-icon" class="play-span">
+                                        <span></span>
+                                        <span></span>
+                                        <span></span>
+                                    </span>
+                                    {{ else }}
+                                    <span class="icon"></span>
+                                    {{ end }}
+                                </a>
+                            </p>
+                            <div class="lesson-link-div">
+                                {{ with .GetPage "content" }}
+                                <a class="lesson {{ if eq .RelPermalink $relPermalink }} active {{ end }}" href="{{ .RelPermalink }}">
+                                    <span></span>
+                                    <p>{{ i18n "warnGraphic explanation" }}</p>
+                                </a>
+                                {{ end }}
+
+                                {{ with .GetPage "courseware" }}
+                                <a class="courseware {{ if eq .RelPermalink $relPermalink }} active {{ end }}" href="{{ .RelPermalink }}">
+                                    <span></span>
+                                    <p>{{ i18n "PPT courseware" }}</p>
+                                </a>
+                                {{ end }}
+                                
+                                {{ with .GetPage "examination" }}
+                                <a class="examination {{ if eq .RelPermalink $relPermalink }} active {{ end }}" href="{{ .RelPermalink }}">
+                                    <span></span>
+                                    <p>{{ i18n "Self-test" }}</p>
+                                </a>
+                                {{ end }}
+                            </div>
+                        </div>
+                        
+                    {{ end }}
+                {{ end }}
+            {{ end }} 
+        </div>
+    </div>
+    
+</section>
+<script>
+    var icon = $("#play-icon")
+
+    var handlePlayVideo = function() {
+        icon.addClass('playing')
+    }
+
+    var handlePauseVideo = function() {
+        icon.removeClass('playing')
+    }
+</script>
+{{ end }}

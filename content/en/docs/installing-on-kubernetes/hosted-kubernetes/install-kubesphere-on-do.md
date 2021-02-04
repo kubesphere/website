@@ -3,7 +3,7 @@ title: "Deploy KubeSphere on DigitalOcean"
 keywords: 'Kubernetes, KubeSphere, DigitalOcean, Installation'
 description: 'How to install KubeSphere on DigitalOcean'
 
-weight: 2265
+weight: 4230
 ---
 
 ![KubeSphere+DOKS](/images/docs/do/KubeSphere-DOKS.png)
@@ -106,7 +106,7 @@ Now that KubeSphere is installed, you can access the web console of KubeSphere b
 
   {{</ notice >}}
 
-- Log in the console with the default account and password (`admin/P@88w0rd`). In the cluster overview page, you can see the dashboard as shown in the following image.
+- Log in to the console with the default account and password (`admin/P@88w0rd`). In the cluster overview page, you can see the dashboard as shown in the following image.
 
   ![doks-cluster](/images/docs/do/doks-cluster.png)
 

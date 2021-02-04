@@ -1,42 +1,65 @@
 ---
-title: "Memcached App"
+title: "Deploy Memcached on KubeSphere"
 keywords: 'Kubernetes, KubeSphere, Memcached, app-store'
-description: 'How to use built-in Memcached Object Storage'
-
-
-weight: 2242
+description: 'How to deploy Memcached on KubeSphere through the App Store'
+linkTitle: "Deploy Memcached on KubeSphere"
+weight: 14230
 ---
-[Memcached](https://memcached.org/) is designed for large data caches. Its API is available for most popular languages. This guide will show you one-click deployment for Memcached in Kubenetes .
+[Memcached](https://memcached.org/) is an in-memory key-value store for small chunks of arbitrary data (strings, objects) from results of database calls, API calls, or page rendering. Its API is available for the majority of popular languages.
+
+This tutorial walks you through an example of deploying Memcached from the App Store of KubeSphere.
 
 ## Prerequisites
 
-- You have enabled [KubeSphere App Store](../../pluggable-components/app-store)
-- You have completed the tutorial in [Create Workspace, Project, Account and Role](../../quick-start/create-workspace-and-project/). Now switch to use `project-regular` account to log in and enter into `demo-peoject`.
+- Please make sure you [enable the OpenPitrix system](https://kubesphere.io/docs/pluggable-components/app-store/).
+- You need to create a workspace, a project, and a user account (`project-regular`) for this tutorial. The account needs to be a platform regular user and to be invited as the project operator with the `operator` role. In this tutorial, you log in as `project-regular` and work in the project `demo-project` in the workspace `demo-workspace`. For more information, see [Create Workspaces, Projects, Accounts and Roles](../../../quick-start/create-workspace-and-project/).
 
 ## Hands-on Lab
 
-### Common steps
+### Step 1: Deploy Memcached from the App Store
 
-1. Choose Memcached template `From App Store`.
+1. On the **Overview** page of the project `demo-project`, click **App Store** in the top left corner.
 
-![choose_memcached_from_app_store](/images/docs/appstore/memcached/choose_memcached_from_app_store.png)
+   ![in-app-store](/images/docs/appstore/built-in-apps/memcached-app/in-app-store.jpg)
 
-2. Check app info and click `Deploy` button.
+2. Find Memcached and click **Deploy** on the **App Info** page.
 
-![deploy_minio](/images/docs/appstore/memcached/deploy_memcached.png)
+   ![memcached-app-store](/images/docs/appstore/built-in-apps/memcached-app/memcached-app-store.jpg)
 
-3. Select app version and deployment location, then go to **Next → Deploy**
+   ![deploying-memcached](/images/docs/appstore/built-in-apps/memcached-app/deploying-memcached.jpg)
 
-![deploy_memcached_confirm](/images/docs/appstore/memcached/deploy_memcached_confirm.png)
+3. Set a name and select an app version. Make sure Memcached is deployed in `demo-project` and click **Next**.
 
-4. Wait for a few minutes, then you will see the application memcached showing active on the application list.
+   ![deployment-confirm](/images/docs/appstore/built-in-apps/memcached-app/deployment-confirm.jpg)
 
-![memcached_active](/images/docs/appstore/memcached/memcached_active.png)
+4. In **App Config**, you can use the default configuration or customize the configuration by editing the YAML file directly. Click **Deploy** to continue.
 
-5. Click into Memcached application, and then enter into its workload page and get the pod IP.
+   ![edit-config](/images/docs/appstore/built-in-apps/memcached-app/edit-config.jpg)
 
-![View Memcached Detail](/images/docs/appstore/memcached/view_memcached_workload.png)
+5. Wait until Memcached is up and running.
 
-6. Because Memcached service type is headless, we should connect it inside cluster with pod IP got previously and default port `11211`.
+   ![memcached-running](/images/docs/appstore/built-in-apps/memcached-app/memcached-running.jpg)
 
-![Connect Memcached](/images/docs/appstore/memcached/connect_memcached.png)
+### Step 2: Access Memcached
+
+1. Navigate to **Services**, and click the service name of Memcached.
+
+   ![memcached-service](/images/docs/appstore/built-in-apps/memcached-app/memcached-service.jpg)
+
+2. On the detail page, you can find the port number and Pod IP under **Service Ports** and **Pods** respectively.
+
+   ![memcached-port-pod](/images/docs/appstore/built-in-apps/memcached-app/memcached-port-pod.jpg)
+
+3. As the Memcached service is headless, access it inside the cluster through the Pod IP and port number. The basic syntax of Memcached `telnet` command is `telnet HOST PORT`. For example:
+
+   ```bash
+   # telnet 10.10.235.3 11211
+   Trying 10.10.235.3...
+   Connected to 10.10.235.3.
+   Escape character is '^]'.
+   set runoob 0 900 9
+   memcached
+   STORED
+   ```
+
+4. For more information, see [Memcached](https://memcached.org/).

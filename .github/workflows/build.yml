@@ -4,6 +4,8 @@ on:
   push:
     branches:
       - master
+  schedule: # run 8:00 AM Beijing Time everyday
+    - cron: '0 0 * * *'
 
 jobs:
   deploy:
@@ -20,6 +22,16 @@ jobs:
         with:
           hugo-version: '0.71.1'
           extended: true
+
+      - name: Sync to gitee
+        uses: Yikun/hub-mirror-action@master
+        with:
+          src: github/kubesphere
+          dst: gitee/kubesphere
+          white_list: 'website'
+          dst_key: ${{ secrets.GITEE_PRIVATE_KEY }}
+          dst_token: ${{ secrets.GITEE_TOKEN}}
+          account_type: org
 
       - name: Build English Website
         run: hugo --environment upstream --minify

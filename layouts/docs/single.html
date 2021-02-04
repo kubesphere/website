@@ -12,7 +12,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 <!-- End Google Tag Manager (noscript) -->
 {{ end }}  
 {{- partial "header.html" . -}}
-<main class='main-section {{ if eq .Site.Language.Lang "zh"}} padding{{ end }}'>
+<main class='main-section padding'>
     <section class='section-1 bg-cover'>
         <div class="common-layout">
             {{ partial "breadcrumb.html" . }}
@@ -234,19 +234,19 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     
         var bindClickMenu = function() {
             var sectionMenu = $(".section-menu")
-            $('.section-control').on('click', function(e){
+            $('.section-control').on('mouseenter', function(e){
                 if (sectionMenu.is(":hidden")) {
                     sectionMenu.show();
-                } else {
-                    sectionMenu.hide()
                 }
-    
-                $(document).one("click", function(){
-                    sectionMenu.hide()
-                });
-    
-                e.stopPropagation()
             })
+
+            sectionMenu.on('mouseleave', function() {
+                sectionMenu.hide();
+            })
+
+            $(document).on("click", function(){
+                sectionMenu.hide()
+            });
     
             sectionMenu.on("click", function(e){
                 e.stopPropagation();
@@ -310,5 +310,4 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     </div>
 </footer>
 </body>
-
 </html>

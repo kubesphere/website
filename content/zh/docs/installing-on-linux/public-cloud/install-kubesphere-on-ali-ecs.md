@@ -3,7 +3,7 @@ title: "KubeSphere 在阿里云 ECS 高可用实例"
 keywords: "Kubesphere 安装， 阿里云， ECS， 高可用性， 高可用性，  负载均衡器"
 description: "本教程用于安装高可用性集群"
 
-Weight: 2230
+Weight: 3240
 ---
 
 对于生产环境，我们需要考虑集群的高可用性。本文教你部署如何在多台阿里 ECS 实例快速部署一套高可用的生产环境。要满足 Kubernetes 集群服务需要做到高可用，需要保证 kube-apiserver 的 HA ，可使用以下下列两种方式：
@@ -84,11 +84,49 @@ controlPlaneEndpoint:
 
 下载可执行安装程序 `kk` 至一台目标机器：
 
-```
-wget -c https://kubesphere.io/download/kubekey-v1.0.0-linux-amd64.tar.gz -O - | tar -xz
+{{< tabs >}}
+
+{{< tab "如果您能正常访问 GitHub/Googleapis" >}}
+
+从 [GitHub Release Page](https://github.com/kubesphere/kubekey/releases) 下载 KubeKey 或直接使用以下命令。
+
+```bash
+curl -sfL https://get-kk.kubesphere.io | VERSION=v1.0.1 sh -
 ```
 
-给 `kk` 授予可执行权限：
+{{</ tab >}}
+
+{{< tab "如果您访问 GitHub/Googleapis 受限" >}}
+
+先执行以下命令以确保您从正确的区域下载 KubeKey。
+
+```bash
+export KKZONE=cn
+```
+
+执行以下命令下载 KubeKey。
+
+```bash
+curl -sfL https://get-kk.kubesphere.io | VERSION=v1.0.1 sh -
+```
+
+{{< notice note >}}
+
+在您下载 KubeKey 后，如果您将其传至新的机器，且访问 Googleapis 同样受限，在您执行以下步骤之前请务必再次执行 `export KKZONE=cn` 命令。
+
+{{</ notice >}} 
+
+{{</ tab >}}
+
+{{</ tabs >}}
+
+{{< notice note >}}
+
+执行以上命令会下载最新版 KubeKey (v1.0.1)，您可以修改命令中的版本号下载指定版本。
+
+{{</ notice >}} 
+
+为 `kk` 添加可执行权限：
 
 ```bash
 chmod +x kk

@@ -4,7 +4,7 @@ keywords: "kubesphere, kubernetes, docker, helm, jenkins, istio, prometheus, dev
 description: "KubeSphere architecture"
 
 linkTitle: "Architecture"
-weight: 1300
+weight: 1500
 ---
 
 ## Separation of frontend and backend
@@ -41,6 +41,6 @@ KubeSphere separates [frontend](https://github.com/kubesphere/console) from [bac
 
 ## Service Components
 
-Each component has many services, see [Service Components](../../infrastructure/components) for more details.
+Each component has many services. See [Overview](../../pluggable-components/overview/) for more details.
 
 ![Service Components](https://pek3b.qingstor.com/kubesphere-docs/png/20191017163549.png)

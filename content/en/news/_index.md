@@ -10,6 +10,18 @@ section1:
 
 section2:
   news:
+    - title: 'Recap: KubeSphere & Friends 2020 Meetup'
+      description: KubeSphere and Friends 2020 Meetup attracted more than 100 individual community members and honored guests to share their ideas and experiences on cloud-native and Kubernetes.
+      image: /images/news/meetup-2020/Snip20210201_8.png
+      link: 'kubesphere-meetup-2020'
+    - title: 'KubeSphere is Now Available as an AWS Quick Start'
+      description: KubeSphere expands collaboration with Amazon Web Services to further accelerate the cloud-native technology transformation.
+      image: https://ap3.qingstor.com/kubesphere-website/docs/kubesphere-aws.png
+      link: 'kubesphere-available-on-aws-quickstart'
+    - title: 'KubeSphere and Cigo Cloud Partner on Providing Container Services and Building a Developer Community in Africa'
+      description: KubeSphere and Cigo Cloud work to empower African users on the cloud and promote a local developer community.
+      image: https://ap3.qingstor.com/kubesphere-website/docs/cigo-cloud.png
+      link: 'kubesphere-cigo-partnership'
     - title: 'KubeSphere 3.0.0 GA: Born for Hybrid Cloud Apps'
       description: That's a Killer! KubeSphere 3.0.0 is Now Generally Available!
       image: https://ap3.qingstor.com/kubesphere-website/docs/20200830101950.png

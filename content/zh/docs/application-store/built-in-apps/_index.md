@@ -1,6 +1,6 @@
 ---
-linkTitle: "Built-in Applications"
-weight: 2200
+linkTitle: "内置应用"
+weight: 14200
 
 _build:
     render: false

@@ -3,7 +3,7 @@ title: "Deploy KubeSphere on GKE"
 keywords: 'Kubernetes, KubeSphere, GKE, Installation'
 description: 'How to install KubeSphere on GKE'
 
-weight: 2265
+weight: 4240
 ---
 
 ![KubeSphere+GKE](https://pek3b.qingstor.com/kubesphere-docs/png/20191123145223.png)
@@ -59,7 +59,7 @@ This guide walks you through the steps of deploying KubeSphere on [Google Kubern
 
 - When the installation finishes, you can see the following message:
 
-  ```bash
+  ```yaml
   #####################################################
   ###              Welcome to KubeSphere!           ###
   #####################################################
@@ -99,7 +99,7 @@ Now that KubeSphere is installed, you can access the web console of KubeSphere b
 
   {{</ notice >}}
 
-- Log in the console with the default account and password (`admin/P@88w0rd`). In the cluster overview page, you can see the dashboard as shown in the following image.
+- Log in to the console with the default account and password (`admin/P@88w0rd`). In the cluster overview page, you can see the dashboard as shown in the following image.
 
   ![gke-cluster](https://ap3.qingstor.com/kubesphere-website/docs/gke-cluster.png)
 

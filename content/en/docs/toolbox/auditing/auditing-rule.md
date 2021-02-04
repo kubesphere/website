@@ -1,15 +1,14 @@
 ---
-title: "Auditing Rule"
+title: "Auditing Rules"
 keywords: "Kubernetes, docker, kubesphere, auditing"
 description: "Kubernetes and KubeSphere operation auditing"
-
-linkTitle: "Auditing Rule"
-weight: 4912
+linkTitle: "Auditing Rules"
+weight: 15320
 ---
 
 An auditing rule defines the policy for processing auditing logs. KubeSphere Auditing Logs provide users with two CRD rules (`archiving-rule` and `alerting-rule`) for customization.
 
-After you enable [KubeSphere Auditing Logs](../../../pluggable-components/auditing-logs/), log in the console with an account of `platform-admin` role. In **CRDs** on the **Cluster Management** page, input `rules.auditing.kubesphere.io` in the search bar. Click the result **Rule** as below and you can see the two CRD rules.
+After you enable [KubeSphere Auditing Logs](../../../pluggable-components/auditing-logs/), log in to the console with an account of `platform-admin` role. In **CRDs** on the **Cluster Management** page, input `rules.auditing.kubesphere.io` in the search bar. Click the result **Rule** as below and you can see the two CRD rules.
 
 ![auditing-crd](/images/docs/toolbox/auditing-crd.jpg)
 
@@ -85,10 +84,10 @@ spec:
  `output`  | Specifies the message of alert.
  `priority` | The priority of the rule.
 
- When an auditing log matches a rule in `archiving-rule` and the rule priority is no less than `archivingPriority`, it will be stored for further use. When an auditing log matches a rule in `alerting-rule`, if the priority of the rule is less than `alertingPriority`, it will be stored for further use; otherwise it will generate an alert which will be sent to the user.
+When an auditing log matches a rule in `archiving-rule` and the rule priority is no less than `archivingPriority`, it will be stored for further use. When an auditing log matches a rule in `alerting-rule`, if the priority of the rule is less than `alertingPriority`, it will be stored for further use; otherwise it will generate an alert which will be sent to the user.
 
 
-## Rule Condition
+## Rule Conditions
 
 A `Condition` is a filtering expression that can use comparison operators (=, !=, <, <=, >, >=, contains, in, like, and regex) and can be combined using Boolean operators (and, or and not) and parentheses. Here are the supported filters.
 
@@ -111,19 +110,19 @@ A `Condition` is a filtering expression that can use comparison operators (=, !=
  `RequestReceivedTimestamp` | The time the request reaches the apiserver. 
  `StageTimestamp`         | The time the request reaches the current audit stage. 
 
- For example, to match all logs in the namespace `test`:
+For example, to match all logs in the namespace `test`:
 
 ```
 ObjectRef.Namespace = "test"
 ```
 
- To match all logs in the namespaces that start with `test`:
+To match all logs in the namespaces that start with `test`:
 
 ```
 ObjectRef.Namespace like "test*"
 ```
 
- To match all logs happening in the latest one hour:
+To match all logs happening in the latest one hour:
 
 ```
 RequestReceivedTimestamp >= "2020-06-12T09:23:28.359896Z" and RequestReceivedTimestamp <= "2020-06-12T10:23:28.359896Z"
@@ -200,7 +199,7 @@ spec:
 ```
 
 ## Output
- The `Output` string is used to format the alert message when an auditing log triggers an alert. The `Output` string can include lists and alias. Here is an example.
+The `Output` string is used to format the alerting message when an auditing log triggers an alert. The `Output` string can include lists and alias. Here is an example.
 
 ```yaml
 Output: ${user} ${verb} a HostNetwork Pod ${name} in ${namespace}.

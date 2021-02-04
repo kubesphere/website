@@ -4,7 +4,7 @@ keywords: "Kubernetes, KubeSphere, taints, nodes, labels, requests, limits"
 description: "Kubernetes Node Management"
 
 linkTitle: "Node Management"
-weight: 200
+weight: 8100
 ---
 
 Kubernetes runs your workloads by placing containers into Pods to run on nodes. A node may be a virtual or physical machine, depending on the cluster. Each node contains the services necessary to run Pods, managed by the control plane. For more information about nodes, see the [official documentation of Kubernetes](https://kubernetes.io/docs/concepts/architecture/nodes/).
@@ -13,7 +13,7 @@ This tutorial demonstrates what a cluster administrator can view and do for node
 
 ## Prerequisites
 
-You need an account granted a role including the authorization of **Clusters Management**. For example, you can log in the console as `admin` directly or create a new role with the authorization and assign it to an account.
+You need an account granted a role including the authorization of **Clusters Management**. For example, you can log in to the console as `admin` directly or create a new role with the authorization and assign it to an account.
 
 ## Node Status
 

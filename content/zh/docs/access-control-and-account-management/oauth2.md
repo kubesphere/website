@@ -3,7 +3,7 @@ title: "OAuth2 Identity Provider"
 keywords: 'kubernetes, kubesphere, OAuth2, Identity Provider'
 description: 'OAuth2 Identity Provider'
 
-weight: 2240
+weight: 12200
 ---
 
 ## 概览

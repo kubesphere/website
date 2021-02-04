@@ -1,53 +1,86 @@
 ---
-title: "Deploy Applications from App Store"
-keywords: 'kubernetes, chart, helm, KubeSphere, application'
-description: 'Deploy Applications from App Store'
-
-
-weight: 2209
+title: "Deploy Apps from the App Store"
+keywords: 'Kubernetes, chart, helm, KubeSphere, application, App Store'
+description: 'How to deploy apps from the App Store.'
+linkTitle: "Deploy Apps from the App Store"
+weight: 10130
 ---
 
-The application template is the storage, delivery, and management approach for the application in KubeSphere. The application template is built on the [Helm](https://helm.sh/) packaging specification and delivered through a unified public or private application repository. The application can be composed of one or more Kubernetes workloads and services according to the application's characteristics.
+The [App Store](../../../application-store/) is also the public app repository on the platform, which means every tenant on the platform can view the applications in the Store regardless of which workspace they belong to. The App Store contains 15 featured enterprise-ready containerized apps and apps released by tenants from different workspaces on the platform. Any authenticated users can deploy applications from the Store. This is different from private app repositories which are only accessible to tenants in the workspace where private app repositories are imported.
 
-Application templates visualize and provide deployment and management capabilities in KubeSphere, enabling users to quickly deploy applications to pointed projects based on application templates. The application template can serve as a middleware and business system created by the enterprise, which could be shared between the teams. It can also be used as the basis for constructing industry delivery standards, delivery processes and paths according to industry characteristics. 
+This tutorial demonstrates how to quickly deploy [NGINX](https://www.nginx.com/) from the KubeSphere App Store powered by [OpenPitrix](https://github.com/openpitrix/openpitrix) and access its service through NodePort.
 
-Before using an application template, you need to add an application repository in advance. KubeSphere built an application repository service based on [OpenPitrix](https://openpitrix.io). Before using the application template, you need to upload the Helm application package to the object storage, then add an application repository in KubeSphere. It will automatically loads all the applications as App template under this repository, as described in [Add Application Repository](../deploy-app-from-repo).
+## Prerequisites
 
-![Use Application Template Flow](/images/application-templates/app-template-en.png)
+- You have enabled [OpenPitirx (App Store)](../../../pluggable-components/app-store).
+- You need to create a workspace, a project, and a user account (`project-regular`) for this tutorial. The account needs to be a platform regular user invited to the project with the `operator` role. For more information, see [Create Workspaces, Projects, Accounts and Roles](../../../quick-start/create-workspace-and-project/).
 
-In addition, application templates can also be combined with OpenPitrix's application lifecycle management capabilities to support docking ISV, and regular users through application uploading, application review, deployment testing, application publishing, application version management and more, finnaly build a public or private application store where offers application services for KubeSphere. Companies can also build industry-wide public or internal application stores to enable standardized one-click delivery of applications, see [OpenPitrix Official Documentation](https://openpitrix.io/docs/v0.4/zh-CN/manual-guide/introduction).
+## Hands-on Lab
 
-## Application List
+### Step 1: Deploy NGINX from the App Store
 
-In all projects, an **application** portal is provided, which serves as an entry point for the application template. Once the application is deployed, it can also be used as a list of applications to manage all applications under the current project.
+1. On the **Overview** page of the project `demo-project`, click **App Store** in the top left corner.
 
-![Application List](/images/application-templates/app-portal.png)
+   ![app-store](/images/docs/project-user-guide/applications/deploy-apps-from-app-store/app-store.jpg)
 
-Click **Deploy New Application** to go to the **App Templates** page.
+   {{< notice note >}}
 
-## Application Template
+   You can also click **Deploy New Application** and select **From App Store** to go to the App Store.
 
-### Add a sample repository
+   {{</ notice >}} 
 
-As mentioned earlier, before using an application template, the cluster admin needs to pre-add the available application repository so that users can access and deploy the application in the application template.
+2. Find NGINX and click **Deploy** on the **App Info** page.
 
-This document provides a sample application repository just for demonstration. Users can upload application packages in the object storage and add application repositories as needed.
+   ![nginx-in-app-store](/images/docs/project-user-guide/applications/deploy-apps-from-app-store/nginx-in-app-store.jpg)
 
-1. Sign in with the cluster admin account to the KubeSphere and go into the target workspace, then choose **App Management → App Repos** to enter the list page.
+   ![deploy-nginx](/images/docs/project-user-guide/applications/deploy-apps-from-app-store/deploy-nginx.jpg)
 
-![Adding a sample repository](/images/application-templates/add-repo.png)
+3. Set a name and select an app version. Make sure NGINX is deployed in `demo-project` and click **Next**.
 
-2. Click **Add Repo** button.
+   ![confirm-deployment](/images/docs/project-user-guide/applications/deploy-apps-from-app-store/confirm-deployment.jpg)
 
-3. Fill in the basic information in the pop-up window, select https for the URL, fill in the blank with `https://helm-chart-repo.pek3a.qingstor.com/kubernetes-charts/`, then click the **Validate** button. After the validation is passed, click **OK** to complete it.
+4. In **App Config**, specify the number of replicas to deploy for the app and enable Ingress based on your needs. When you finish, click **Deploy**.
 
-![basic information](/images/application-templates/validate-repo.png)
-![repo list](https://pek3b.qingstor.com/kubesphere-docs/png/20190311145335.png)
+   ![edit-config-nginx](/images/docs/project-user-guide/applications/deploy-apps-from-app-store/edit-config-nginx.jpg)
 
-### Access the application templates
+   ![manifest-file](/images/docs/project-user-guide/applications/deploy-apps-from-app-store/manifest-file.jpg)
 
-Log out and switch to sign in with project-regular account, the normal user of the project and go into the target project, then choose  **Application Workloads → Applications → Deploy New Application → From App Templates → docs-demo-repo**, you can see that all the applications in the sample application repository have been imported into the application template, then you will be able to browse or search for the desired app for one-click deployment to the desired project.
+   {{< notice note >}}
 
-![Access the application templates](/images/application-templates/deploy-new-application.png)
+   To specify more values for NGINX, use the toggle switch to see the app’s manifest in YAML format and edit its configurations. 
 
-![Choose the application templates](/images/application-templates/choose-new-application.png)
+   {{</ notice >}}
+
+5. Wait until NGINX is up and running.
+
+   ![nginx-running](/images/docs/project-user-guide/applications/deploy-apps-from-app-store/nginx-running.jpg)
+
+### Step 2: Access NGINX
+
+To access NGINX outside the cluster, you need to expose the app through NodePort first.
+
+1. Go to **Services** and click the service name of NGINX.
+
+   ![nginx-service](/images/docs/project-user-guide/applications/deploy-apps-from-app-store/nginx-service.jpg)
+
+2. On the service detail page, click **More** and select **Edit Internet Access** from the drop-down menu.
+
+   ![edit-internet-access](/images/docs/project-user-guide/applications/deploy-apps-from-app-store/edit-internet-access.jpg)
+
+3. Select **NodePort** for **Access Method** and click **OK**. For more information, see [Project Gateway](../../../project-administration/project-gateway/).
+
+   ![nodeport](/images/docs/project-user-guide/applications/deploy-apps-from-app-store/nodeport.jpg)
+
+4. Under **Service Ports**, you can see the port is exposed.
+
+   ![exposed-port](/images/docs/project-user-guide/applications/deploy-apps-from-app-store/exposed-port.jpg)
+
+5. Access NGINX through `{$NodeIP}:{$Nodeport}`.
+
+   ![access-nginx](/images/docs/project-user-guide/applications/deploy-apps-from-app-store/access-nginx.jpg)
+
+   {{< notice note >}}
+
+   You may need to open the port in your security groups and configure related port forwarding rules depending on your where your Kubernetes cluster is deployed.
+
+   {{</ notice >}} 

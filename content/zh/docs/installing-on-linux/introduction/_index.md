@@ -1,6 +1,6 @@
 ---
-linkTitle: "Introduction"
-weight: 2100
+linkTitle: "简介"
+weight: 3100
 
 _build:
     render: false

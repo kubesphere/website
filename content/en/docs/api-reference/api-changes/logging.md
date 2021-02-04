@@ -1,15 +1,16 @@
 ---
 title: "Logging"
 keywords: 'Kubernetes, KubeSphere, API, Logging'
-description: 'Logging'
-
-
-weight: 250
+description: 'Logging API changes'
+linkTitle: "Logging"
+weight: 17310
 ---
 
-## Time format
+The API changes of the component **logging** in KubeSphere v3.0.0.
 
-The time format for query parameters must be in Unix timestamp, which is the number of seconds that have elapsed since the Unix epoch. Millisecond is no longer allowed. The change affects the parameters `start_time` and `end_time`.
+## Time Format
+
+The time format of query parameters must be Unix timestamps (the number of seconds that has elapsed since the Unix epoch). Milliseconds are no longer allowed. The change affects the parameters `start_time` and `end_time`.
 
 ## Deprecated APIs
 

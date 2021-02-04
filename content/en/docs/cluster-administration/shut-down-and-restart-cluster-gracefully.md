@@ -4,7 +4,7 @@ description: "Demonstrate how to shut down and restart Kubernetes clusters grace
 layout: "single"
 
 linkTitle: "Cluster Shutdown and Restart"
-weight: 5000
+weight: 8800
 
 icon: "/images/docs/docs.svg"
 ---
@@ -19,7 +19,7 @@ Usually, it is recommended to maintain your nodes one by one instead of restarti
 - Take an [etcd backup](https://github.com/etcd-io/etcd/blob/master/Documentation/op-guide/recovery.md#snapshotting-the-keyspace) prior to shutting down a cluster.
 - SSH [passwordless login](https://man.openbsd.org/ssh.1#AUTHENTICATION) is set up between hosts.
 
-## Shutting Down Cluster
+## Shut Down a Cluster
 {{< notice tip >}}
 
 - You must back up your etcd data before you shut down the cluster as your cluster can be restored if you encounter any issues when restarting the cluster.
@@ -27,11 +27,11 @@ Usually, it is recommended to maintain your nodes one by one instead of restarti
 
 {{</ notice >}}
 
-### Step 1: Get Node List
+### Step 1: Get the node list
 ```bash
 nodes=$(kubectl get nodes -o name)
 ```
-### Step 2: Shut Down All Nodes
+### Step 2: Shut down all nodes
 ```bash
 for node in ${nodes[@]}
 do
@@ -41,7 +41,7 @@ done
 ```
 Then you can shut down other cluster dependencies, such as external storage.
 
-## Restart Cluster Gracefully
+## Restart a Cluster Gracefully
 You can restart a cluster gracefully after shutting down the cluster gracefully.
 
 ### Prerequisites
@@ -50,23 +50,23 @@ You have shut down your cluster gracefully.
 {{< notice tip >}}
 Usually, a cluster can be used after restarting, but the cluster may be unavailable due to unexpected conditions. For example:
 
-- Etcd data corruption during the shutdown.
+- etcd data corruption during the shutdown.
 - Node failures.
 - Unexpected network errors.
 
 {{</ notice >}}
 
-### Step 1: Check All Cluster Dependencies' Status
+### Step 1: Check all cluster dependencies' status
 Ensure all cluster dependencies are ready, such as external storage.
-### Step 2: Power on Cluster Machines
+### Step 2: Power on cluster machines
 Wait for the cluster to be up and running, which may take about 10 minutes.
-### Step 3: Check All Master Nodes' Status
+### Step 3: Check all master nodes' status
 Check the status of core components, such as etcd services, and make sure everything is ready.
 ```bash
 kubectl get nodes -l node-role.kubernetes.io/master
 ```
 
-### Step 4: Check All Worker Nodes' Status
+### Step 4: Check all worker nodes' status
 ```bash
 kubectl get nodes -l node-role.kubernetes.io/worker
 ```

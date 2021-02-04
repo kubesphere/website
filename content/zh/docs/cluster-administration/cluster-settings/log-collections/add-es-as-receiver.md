@@ -1,37 +1,36 @@
 ---
-title: "Add Elasticsearch as receiver (aka Collector)"
-keywords: 'kubernetes, log, elasticsearch, pod, container, fluentbit, output'
-description: 'Add Elasticsearch as log receiver to receive container logs'
-
-linkTitle: "Add Elasticsearch as Receiver"
-weight: 2200
+title: "添加 Elasticsearch 作为接收器"
+keywords: 'Kubernetes, 日志, Elasticsearch, Pod, 容器, Fluentbit, 输出'
+description: '添加 Elasticsearch 作为接收器'
+linkTitle: "添加 Elasticsearch 作为接收器"
+weight: 8622
 ---
-KubeSphere supports using Elasticsearch, Kafka and Fluentd as log receivers.
-This doc will demonstrate how to add an Elasticsearch receiver.
+您可以在 KubeSphere 中使用 Elasticsearch、Kafka 和 Fluentd 日志接收器。本教程演示如何添加 Elasticsearch 接收器。
 
-## Prerequisite
+## 准备工作
 
-Before adding a log receiver, you need to enable any of the `logging`, `events` or `auditing` components following [Enable Pluggable Components](https://kubesphere.io/docs/pluggable-components/). The `logging` component is enabled as an example in this doc.
+- 您需要一个被授予**集群管理**权限的帐户。例如，您可以直接用 `admin` 帐户登录控制台，或创建一个具有**集群管理**权限的角色然后将此角色授予一个帐户。
+- 添加日志接收器前，您需要启用组件 `logging`、`events` 或 `auditing`。有关更多信息，请参见[启用可插拔组件](../../../../pluggable-components/)。本教程启用 `logging` 作为示例。
 
-1. To add a log receiver:
+## 添加 Elasticsearch 作为接收器
 
-- Login KubeSphere with an account of ***platform-admin*** role
-- Click ***Platform*** -> ***Clusters Management***
-- Select a cluster if multiple clusters exist
-- Click ***Cluster Settings*** -> ***Log Collections***
-- Log receivers can be added by clicking ***Add Log Collector***
+1. 以 `admin` 身份登录 KubeSphere 的 Web 控制台。点击左上角的**平台管理**，然后选择**集群管理**。
 
-![Add receiver](/images/docs/cluster-administration/cluster-settings/log-collections/add-receiver.png)
+2. 如果您启用了[多集群功能](../../../../multicluster-management)，您可以选择一个集群。如果尚未启用该功能，请直接进行下一步。
 
-2. Choose ***Elasticsearch*** and fill in the Elasticsearch service address and port like below:
+3. 在**集群管理**页面，选择**集群设置**下的**日志收集**。
 
-![Add Elasticsearch](/images/docs/cluster-administration/cluster-settings/log-collections/add-es.png)
+4. 点击**添加日志接收器**并选择 **Elasticsearch**。
 
-3. Elasticsearch appears in the receiver list of ***Log Collections*** page and its status becomes ***Collecting***.
+    ![add-receiver](/images/docs/cluster-administration/cluster-settings/log-collections/add-es-as-receiver/add-receiver.png)
 
-![Receiver List](/images/docs/cluster-administration/cluster-settings/log-collections/receiver-list.png)
+5. 提供 Elasticsearch 服务地址和端口信息，如下所示：
 
-4. Verify whether Elasticsearch is receiving logs sent from Fluent Bit:
+    ![add-es](/images/docs/cluster-administration/cluster-settings/log-collections/add-es-as-receiver/add-es.png)
 
-- Click ***Log Search*** in the ***Toolbox*** in the bottom right corner.
-- You can search logs in the logging console that appears.
+6. Elasticsearch 会显示在**日志收集**页面的接收器列表中，状态为**收集中**。
+
+    ![receiver-list](/images/docs/cluster-administration/cluster-settings/log-collections/add-es-as-receiver/receiver-list.png)
+
+7. 若要验证 Elasticsearch 是否从 Fluent Bit 接收日志，从右下角的**工具箱**中点击**日志查询**，在控制台中搜索日志。有关更多信息，请参阅[日志查询](../../../../toolbox/log-query/)。
+

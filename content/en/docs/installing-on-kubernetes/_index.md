@@ -4,7 +4,7 @@ description: "Demonstrate how to install KubeSphere on Kubernetes either hosted 
 layout: "single"
 
 linkTitle: "Installing on Kubernetes"
-weight: 2500
+weight: 4000
 
 icon: "/images/docs/docs.svg"
 ---
@@ -69,8 +69,6 @@ Learn how to deploy KubeSphere on Oracle Cloud Infrastructure Container Engine f
 
 Explore the best practice of installing KubeSphere in an air-gapped environment.
 
-## Uninstalling
-
-### [Uninstalling KubeSphere from Kubernetes](../installing-on-kubernetes/uninstalling/uninstalling-kubesphere-from-k8s/)
+## [Uninstall KubeSphere from Kubernetes](../installing-on-kubernetes/uninstall-kubesphere-from-k8s/)
 
 Remove KubeSphere from Kubernetes clusters.

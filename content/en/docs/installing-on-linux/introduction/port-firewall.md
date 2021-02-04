@@ -4,7 +4,7 @@ keywords: 'Kubernetes, KubeSphere, port-requirements, firewall-rules'
 description: 'Port requirements in KubeSphere'
 
 linkTitle: "Port Requirements"
-weight: 2120
+weight: 3140
 ---
 
 
@@ -21,10 +21,12 @@ KubeSphere requires certain ports for the communications among services. If your
 |master|TCP|allow|10250|10258|
 |dns|TCP|allow|53|
 |dns|UDP|allow|53|
-|local-registry|TCP|allow|5000||For offline environment|
-|local-apt|TCP|allow|5080||For offline environment|
+|local-registry|TCP|allow|5000||For the offline environment|
+|local-apt|TCP|allow|5080||For the offline environment|
 |rpcbind|TCP|allow|111|| Required if NFS is used|
 |ipip| IPENCAP / IPIP|allow| | |Calico needs to allow the ipip protocol |
+|metrics-server| TCP|allow| 8443 |
+
 
 {{< notice note >}}
 When you use the Calico network plugin and run your cluster in a classic network on cloud, you need to enable both IPENCAP and IPIP protocol for the source IP.

@@ -1,66 +1,76 @@
 ---
-title: "etcd App"
-keywords: 'kubernetes, kubesphere, etcd, app-store'
-description: 'How to use etcd'
-
-
-weight: 2240
+title: "Deploy etcd on KubeSphere"
+keywords: 'Kubernetes, KubeSphere, etcd, app-store'
+description: 'How to deploy etcd on KubeSphere.'
+linkTitle: "Deploy etcd on KubeSphere"
+weight: 14210
 ---
 
-# Objective
+Written in Go, [etcd](https://etcd.io/) is a distributed key-value store to store data that needs to be accessed by a distributed system or cluster of machines. In Kubernetes, it is the backend for service discovery and stores cluster states and configurations.
 
-This tutorial shows you how to quickly deploy an [etcd](https://etcd.io) application using templates from KubeSphere App Store (Powered by OpenPitrix). The demonstration includes importing application repository, sharing and deploying apps within a workspace.
+This tutorial walks you through an example of deploying etcd from the App Store of KubeSphere.
 
-# Prerequisites
+## Prerequisites
 
-- You have enabled [KubeSphere Application Store](/docs/pluggable-components/app-store/)
-- You have completed the tutorial [Create Workspace, Project, Account and Role](/docs/quick-start/create-workspace-and-project/). The account needs to be a platform regular user and to be invited as the project operator with the `operator` role. In this tutorial, we'll work in the project `project-apps` of the workspace `ws-apps`.
+- Please make sure you [enable the OpenPitrix system](https://kubesphere.io/docs/pluggable-components/app-store/).
+- You need to create a workspace, a project, and a user account (`project-regular`) for this tutorial. The account needs to be a platform regular user and to be invited as the project operator with the `operator` role. In this tutorial, you log in as `project-regular` and work in the project `demo-project` in the workspace `demo-workspace`. For more information, see [Create Workspaces, Projects, Accounts and Roles](../../../quick-start/create-workspace-and-project/).
 
-# Hands-on Lab
+## Hands-on Lab
 
-## Step 1: Browse Apps
+### Step 1: Deploy etcd from the App Store
 
-1.1. Sign in KubeSphere as a workspace regular account (`ws-apps-regular` for this guide), then enter into project `project-apps`.
+1. On the **Overview** page of the project `demo-project`, click **App Store** in the top left corner.
 
-1.2. Click **Application Workloads → Applications**, click **Deploy New Application**.
+   ![project-overview](/images/docs/appstore/built-in-apps/etcd-app/project-overview.jpg)
 
-![Deploy App](/images/docs/appstore/etcd/deploy-app.png)
+2. Find etcd and click **Deploy** on the **App Info** page.
 
-1.3. Choose **From App Store**. Click `etcd`.
+   ![etcd-app-store](/images/docs/appstore/built-in-apps/etcd-app/etcd-app-store.jpg)
 
-![Deploy etcd](/images/docs/appstore/etcd/deploy-etcd.png)
+   ![deploy-etcd](/images/docs/appstore/built-in-apps/etcd-app/deploy-etcd.jpg)
 
-## Step 2: Deploy etcd Application
+3. Set a name and select an app version. Make sure etcd is deployed in `demo-project` and click **Next**.
 
-2.1. Click **Deploy** at the top right, customize app name if needed, and then click **Next**.
+   ![deployment-location](/images/docs/appstore/built-in-apps/etcd-app/deployment-location.jpg)
 
-![Deploy etcd Info](/images/docs/appstore/etcd/deploy-etcd-info.png)
+4. On the **App Config** page, specify the size of the persistent volume for etcd and click **Deploy**.
 
-2.2. Customize the persistent volume size, and then click **Deploy**.
+   ![specify-volume](/images/docs/appstore/built-in-apps/etcd-app/specify-volume.jpg)
 
-![etcd configuration](/images/docs/appstore/etcd/deploy-etcd-conf.png)
+   {{< notice note >}}
 
-2.3. Wait for a few minutes, then you will see the application showing `active` in the application list.
+   To specify more values for etcd, use the toggle switch to see the app's manifest in YAML format and edit its configurations.
 
-![etcd Active](/images/docs/appstore/etcd/deploy-etcd-done.png)
+   {{</ notice >}} 
 
-## Step 3: Access the etcd Service
+5. In **App Templates** of the **Applications** page, wait until etcd is up and running.
 
-3.1. We can interact with etcd by etcdctl CLI tool within the etcd pod. Click the deployed app and enter the terminal.
+   ![etcd-running](/images/docs/appstore/built-in-apps/etcd-app/etcd-running.jpg)
 
-![etcd workload](/images/docs/appstore/etcd/access-etcd-workload.png)
+### Step 2: Access the etcd Service
 
-![etcd pod](/images/docs/appstore/etcd/access-etcd-pod.png)
+After the app is deployed, you can use etcdctl, a command-line tool for interacting with etcd server, to access etcd on the KubeSphere console directly.
 
-![etcd terminal](/images/docs/appstore/etcd/access-etcd-terminal.png)
+1. Navigate to **StatefulSets** in **Workloads**, and click the service name of etcd.
 
-3.2. Write and read some data.
+   ![etcd-statefulset](/images/docs/appstore/built-in-apps/etcd-app/etcd-statefulset.jpg)
 
-```
-etcdctl set /name kubesphere
-etcdctl get /name
-```
+2. Under **Pods**, expand the menu to see container details, and then click the **Terminal** icon.
 
-![etcd data](/images/docs/appstore/etcd/access-etcd-data.png)
+   ![etcd-teminal](/images/docs/appstore/built-in-apps/etcd-app/etcd-teminal.jpg)
 
-3.3. For clients within the KubeSphere cluster, etcd service can be accessed through `<app name>.<project name>.svc.<K8s domain>:2379` (`etcd-ca9w6t.project-apps.svc.cluster.local:2379` for this guide).
+3. In the terminal, you can read and write data directly. For example, execute the following two commands respectively.
+
+   ```bash
+   etcdctl set /name kubesphere
+   ```
+
+   ```bash
+   etcdctl get /name
+   ```
+
+   ![etcd-command](/images/docs/appstore/built-in-apps/etcd-app/etcd-command.jpg)
+
+4. For clients within the KubeSphere cluster, the etcd service can be accessed through `<app name>.<project name>.svc.<K8s domain>:2379` (e.g. `etcd-bqe0g4.demo-project.svc.cluster.local:2379` in this guide).
+
+5. For more information, see [the official documentation of etcd](https://etcd.io/docs/v3.4.0/).

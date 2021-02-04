@@ -1,10 +1,10 @@
 ---
-title: "Kubernetes Cluster Configuration"
+title: "Kubernetes Cluster Configurations"
 keywords: 'KubeSphere, Kubernetes, docker, cluster, configuration'
 description: 'Configure cluster parameters before installing'
 
-linkTitle: "Kubernetes Cluster Configuration"
-weight: 2130
+linkTitle: "Kubernetes Cluster Configurations"
+weight: 3160
 ---
 
 This tutorial explains how to customize Kubernetes cluster configurations in `config-sample.yaml` (needed for [Multi-node Installation](../multioverview/)) when you use [KubeKey](https://github.com/kubesphere/kubekey) to provision a cluster. You can refer to the following section to understand each parameter.

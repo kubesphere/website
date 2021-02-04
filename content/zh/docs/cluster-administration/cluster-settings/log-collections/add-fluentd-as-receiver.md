@@ -1,33 +1,32 @@
 ---
-title: "Add Fluentd as Receiver (aka Collector)"
-keywords: 'kubernetes, log, fluentd, pod, container, fluentbit, output'
-description: 'KubeSphere Installation Overview'
-
-linkTitle: "Add Fluentd as Receiver"
-weight: 2400
+title: "添加 Fluentd 作为接收器"
+keywords: 'Kubernetes, 日志, Fluentd, Pod, 容器, Fluentbit, 输出'
+description: '添加 Fluentd 作为接收器'
+linkTitle: "添加 Fluentd 作为接收器"
+weight: 8624
 ---
-KubeSphere supports using Elasticsearch, Kafka and Fluentd as log receivers.
-This doc will demonstrate:
+您可以在 KubeSphere 中使用 Elasticsearch、Kafka 和 Fluentd 日志接收器。本教程演示：
 
-- How to deploy Fluentd as deployment and create corresponding service and configmap.
-- How to add Fluentd as a log receiver to receive logs sent from Fluent Bit and then output to stdout.
-- How to verify if Fluentd receives logs successfully.
+- 创建 Fluentd 部署以及对应的服务和 ConfigMap。
+- 添加 Fluentd 作为日志接收器以接收来自 Fluent Bit 的日志，并输出为 stdout（标准输出）。
+- 验证 Fluentd 能否成功接收日志。
 
-## Prerequisites
+## 准备工作
 
-- Before adding a log receiver, you need to enable any of the `logging`, `events` or `auditing` components following [Enable Pluggable Components](https://kubesphere.io/docs/pluggable-components/). The `logging` component is enabled as an example in this doc.
-- To configure log collection, you should use an account of ***platform-admin*** role.
+- 您需要一个被授予**集群管理**权限的帐户。例如，您可以直接用 `admin` 帐户登录控制台，或创建一个具有**集群管理**权限的角色然后将此角色授予一个帐户。
 
-## Step 1: Deploy Fluentd as a deployment
+- 添加日志接收器前，您需要启用组件 `logging`、`events` 或 `auditing`。有关更多信息，请参见[启用可插拔组件](../../../../pluggable-components/)。本教程启用 `logging` 作为示例。
 
-Usually, Fluentd is deployed as a daemonset in K8s to collect container logs on each node. KubeSphere chooses Fluent Bit for this purpose because of its low memory footprint. Besides, Fluentd features numerous output plugins. Hence, KubeSphere chooses to deploy Fluentd as a deployment to forward logs it receives from Fluent Bit to more destinations such as S3, MongoDB, Cassandra, MySQL, syslog and Splunk.
+## 步骤 1：创建 Fluentd 部署
 
-To deploy Fluentd as a deployment, you simply need to open  the ***kubectl*** console in ***KubeSphere Toolbox*** and run the following command:
+由于内存消耗低，KubeSphere 选择 Fluent Bit。Fluentd 一般在 Kubernetes 中以守护进程集的形式部署，在每个节点上收集容器日志。此外，Fluentd 支持多个插件。因此，Fluentd 会以部署的形式在 KubeSphere 中创建，将从 Fluent Bit 接收到的日志发送到多个目标，例如 S3、MongoDB、Cassandra、MySQL、syslog 和 Splunk 等。
+
+执行以下命令：
 
 {{< notice note >}}
 
-- The following command will deploy Fluentd deployment, service and configmap into the `default` namespace and add a filter to Fluentd configmap to exclude logs from the `default` namespace to avoid Fluent Bit and Fluentd loop logs collection.
-- You'll need to change all these `default` to the namespace you selected if you want to deploy to a different namespace.
+- 以下命令将在默认命名空间 `default` 中创建 Fluentd 部署、服务和 ConfigMap，并为该 Fluentd ConfigMap 添加 `filter` 以排除 `default` 命名空间中的日志，避免 Fluent Bit 和 Fluentd 重复日志收集。
+- 如果您想要将 Fluentd 部署至其他命名空间，请修改以下命令中的命名空间名称。
 
 {{</ notice >}}
 
@@ -58,7 +57,7 @@ data:
     </filter>
 
     # Send received logs to stdout for demo/test purpose only
-    # Various output plugins are supported to output logs to S3, MongoDB, Cassandra, MySQL, syslog and Splunk etc.
+    # Various output plugins are supported to output logs to S3, MongoDB, Cassandra, MySQL, syslog, Splunk, etc.
     <match **>
       @type stdout
     </match>
@@ -121,35 +120,36 @@ spec:
 EOF
 ```
 
-## Step 2: Add Fluentd as log receiver (aka collector)
+## 步骤 2：添加 Fluentd 作为日志接收器
 
-1. To add a log receiver:
+1. 以 `admin` 身份登录 KubeSphere 的 Web 控制台。点击左上角的**平台管理**，然后选择**集群管理**。
+2. 如果您启用了[多集群功能](../../../../multicluster-management)，您可以选择一个集群。如果尚未启用该功能，请直接进行下一步。
+3. 在**集群管理**页面，选择**集群设置**下的**日志收集**。
 
-- Login KubeSphere with an account of ***platform-admin*** role
-- Click ***Platform*** -> ***Clusters Management***
-- Select a cluster if multiple clusters exist
-- Click ***Cluster Settings*** -> ***Log Collections***
-- Log receivers can be added by clicking ***Add Log Collector***
+4. 点击**添加日志接收器**并选择 **Fluentd**。
 
-![Add receiver](/images/docs/cluster-administration/cluster-settings/log-collections/add-receiver.png)
+   ![add-receiver](/images/docs/cluster-administration/cluster-settings/log-collections/add-fluentd-as-receiver/add-receiver.png)
 
-2. Choose ***Fluentd*** and fill in the Fluentd service address and port like below:
+5. 输入 **Fluentd** 服务地址和端口信息，如下所示：
 
-![Add Fluentd](/images/docs/cluster-administration/cluster-settings/log-collections/add-fluentd.png)
+   ![add-fluentd](/images/docs/cluster-administration/cluster-settings/log-collections/add-fluentd-as-receiver/add-fluentd.png)
 
-3. Fluentd appears in the receiver list of ***Log Collections*** UI and its status shows ***Collecting***.
+6. Fluentd 会显示在**日志收集**页面的接收器列表中，状态为**收集中**。
 
-![Receiver List](/images/docs/cluster-administration/cluster-settings/log-collections/receiver-list.png)
+   ![receiver-list](/images/docs/cluster-administration/cluster-settings/log-collections/add-fluentd-as-receiver/receiver-list.png)
 
+## 步骤 3：验证 Fluentd 能否从 Fluent Bit 接收日志
 
-4. Verify whether Fluentd is receiving logs sent from Fluent Bit:
+1. 在**集群管理**页面点击**应用负载**。
 
-- Click ***Application Workloads*** in the ***Cluster Management*** UI.
-- Select ***Workloads*** and then select the `default` namespace in the ***Workload*** - ***Deployments*** tab
-- Click the ***fluentd*** item and then click the ***fluentd-xxxxxxxxx-xxxxx*** pod
-- Click the ***fluentd*** container
-- In the ***fluentd*** container page, select the ***Container Logs*** tab
+2. 点击**工作负载**，并从**部署**选项卡下的下拉菜单中选择 `default` 项目。
 
-You'll see logs begin to scroll up continuously.
+3. 点击 **fluentd** 项目并选择 **fluentd-xxxxxxxxx-xxxxx** Pod。
 
-![Container Logs](/images/docs/cluster-administration/cluster-settings/log-collections/container-logs.png)
+4. 点击 **fluentd** 容器。
+
+5. 在 **fluentd** 容器页面，选择**容器日志**选项卡。
+
+6. 您可以看到日志持续滚动输出。
+
+   ![container-logs](/images/docs/cluster-administration/cluster-settings/log-collections/add-fluentd-as-receiver/container-logs.png)

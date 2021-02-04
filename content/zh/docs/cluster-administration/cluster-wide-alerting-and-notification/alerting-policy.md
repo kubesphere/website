@@ -1,100 +1,99 @@
 ---
-title: "Alerting Policy (Node Level)"
-keywords: 'KubeSphere, Kubernetes, Node, Alerting, Policy, Notification'
-description: 'How to set alerting policies at the node level.'
+title: "告警策略（节点级别）"
+keywords: 'KubeSphere, Kubernetes, 节点, 告警, 策略, 通知'
+description: '如何在节点级别设置告警策略。'
 
-linkTitle: "Alerting Policy (Node Level)"
-weight: 4160
+linkTitle: "告警策略（节点级别）"
+weight: 8530
 ---
 
-## Objective
+## 目标
 
-KubeSphere provides alert policies for nodes and workloads. This guide demonstrates how you can create alert policies for nodes in the cluster and configure mail notifications. See [Alerting Policy (Workload Level)](../../../project-user-guide/alerting/alerting-policy/) to learn how to configure alert policies for workloads.
+KubeSphere 为节点和工作负载提供告警策略。本指南演示如何为集群中的节点创建告警策略以及如何配置电子邮件通知。如需了解如何为工作负载配置告警策略，请参见[告警策略（工作负载级别）](../../../project-user-guide/alerting/alerting-policy/)。
 
-## Prerequisites
+## 准备工作
 
-- [KubeSphere Alerting and Notification](../../../pluggable-components/alerting-notification/) needs to be enabled.
-- [Mail Server](../../../cluster-administration/cluster-settings/mail-server/) needs to be configured.
+- 您需要启用 [KubeSphere 告警和通知系统](../../../pluggable-components/alerting-notification/)。
+- 您需要配置[邮件服务器](../../../cluster-administration/cluster-settings/mail-server/)。
 
-## Hands-on Lab
+## 动手实验
 
-### Task 1: Create an Alert Policy
+### 任务 1：创建一个告警策略
 
-1. Log in the console with one account granted the role `platform-admin`.
+1. 使用具有 `platform-admin` 角色的帐户登录控制台。
 
-2. Click **Platform** in the top left corner and select **Clusters Management**.
+2. 点击左上角的**平台管理**，然后选择**集群管理**。
 
-    ![alerting_policy_node_level_guide](/images/docs/alerting/alerting_policy_node_level_guide.png)
+    ![选择集群管理](/images/docs/zh-cn/cluster-administration/cluster-wide-alerting-and-notification/alerting-policy-node-level/alerting_policy_node_level_guide.png)
 
-3. Select a cluster from the list and enter it (If you do not enable the [multi-cluster feature](../../../multicluster-management/), you will directly go to the **Overview** page).
+3. 从列表中选择一个集群并进入该集群（如果您未启用[多集群功能](../../../multicluster-management/)，则将直接转到**概览**页面）。
 
-4. Navigate to **Alerting Policies** under **Monitoring & Alerting**, and click **Create**.
+4. 转到**监控告警**下的**告警策略**，点击**创建**.
 
-    ![alerting_policy_node_level_create](/images/docs/alerting/alerting_policy_node_level_create.png)
+    ![点击创建](/images/docs/zh-cn/cluster-administration/cluster-wide-alerting-and-notification/alerting-policy-node-level/alerting_policy_node_level_create.png)
 
-### Task 2: Provide Basic Information
+### 任务 2：提供基本信息
 
-In the dialog that appears, fill in the basic information as follows. Click **Next** after you finish.
+在弹出对话框中，填写如下基本信息。完成操作后，点击**下一步**。
 
-- **Name**: a concise and clear name as its unique identifier, such as `alert-demo`.
-- **Alias**: to help you distinguish alert policies better. Chinese is supported.
-- **Description**: a brief introduction to the alert policy.
+- **名称**：该告警策略的简明名称，例如 `alert-demo`，用作其唯一标识符。
+- **别名**：帮助您更好地区分告警策略，支持中文。
+- **描述信息**：告警策略的简要介绍。
 
-![alerting_policy_node_level_basic_info](/images/docs/alerting/alerting_policy_node_level_basic_info.png)
+![基本信息](/images/docs/zh-cn/cluster-administration/cluster-wide-alerting-and-notification/alerting-policy-node-level/alerting_policy_node_level_basic_info.png)
 
-### Task 3: Select Monitoring Targets
+### 任务 3：选择监控目标
 
-Select several nodes in the node list or use Node Selector to choose a group of nodes as the monitoring targets. Here a node is selected for the convenience of demonstration. Click **Next** when you finish.
+在节点列表中选择节点，或使用**节点选择器**选择一组节点作为监控目标。为了方便演示，此处选择一个节点。完成操作后，点击**下一步**。
 
-![alerting_policy_node_level_monitoring_target](/images/docs/alerting/alerting_policy_node_level_monitoring_target.png)
-
-{{< notice note >}}
-
-You can sort nodes in the node list from the drop-down menu through the following three ways: `Sort By CPU`, `Sort By Memory`,  `Sort By Pod Utilization`.
-
-{{</ notice >}}
-
-### Task 4: Add Alerting Rules
-
-1. Click **Add Rule** to begin to create an alerting rule. The rule defines parameters such as metric type, check period, consecutive times, metric threshold and alert level to provide rich configurations. The check period (the second field under **Rule**) means the time interval between 2 consecutive checks of the metric. For example, `2 minutes/period` means the metric is checked every two minutes. The consecutive times (the third field under **Rule**) means the number of consecutive times that the metric meets the threshold when checked. An alert is only triggered when the actual time is equal to or is greater than the number of consecutive times set in the alert policy.
-
-    ![alerting_policy_node_level_alerting_rule](/images/docs/alerting/alerting_policy_node_level_alerting_rule.png)
-
-2. In this example, set those parameters to `memory utilization rate`, `1 minute/period`, `2 consecutive times`, `>` and `50%`, and `Major Alert` in turn. It means KubeSphere checks the memory utilization rate every minute, and a major alert is triggered if it is larger than 50% for 2 consecutive times.  
-
-3. Click **√** to save the rule when you finish and click **Next** to continue.
+![监控目标](/images/docs/zh-cn/cluster-administration/cluster-wide-alerting-and-notification/alerting-policy-node-level/alerting_policy_node_level_monitoring_target.png)
 
 {{< notice note >}}
 
-You can create node-level alert policies for the following metrics:
-
-- CPU: `cpu utilization rate`, `cpu load average 1 minute`, `cpu load average 5 minutes`, `cpu load average 15 minutes`
-- Memory: `memory utilization rate`, `memory available`
-- Disk: `inode utilization rate`, `disk space available`, `local disk space utilization rate`, `disk write throughput`, `disk read throughput`, `disk read iops`, `disk write iops`
-- Network: `network data transmitting rate`, `network data receiving rate`
-- Pod: `pod abnormal ratio`, `pod utilization rate`
+您可以在下拉菜单中通过以下三种方式对节点列表中的节点进行排序：`按 CPU 使用率排行`、`按内存使用率排行`、`按容器组用量排行`。
 
 {{</ notice >}}
 
-### Task 5: Set Notification Rule
+### 任务 4：添加告警规则
 
-1. **Effective Notification Time Range** is used to set sending time of notification emails, such as `09:00 ~ 19:00`. **Notification Channel** currently only supports **Email**. You can add email addresses of members to be notified to **Notification List**.
+1. 点击**添加规则**创建告警规则。告警规则定义指标类型、检查周期、连续次数、指标阈值和告警级别等多个参数，可提供丰富配置。检查周期（**规则**下的第二个字段）表示两次连续指标检查之间的时间间隔。例如，`2 分钟/周期`表示每 2 分钟检查一次指标。连续次数（**规则**下的第三个字段）表示检查的指标满足阈值的连续次数。只有当实际次数等于或大于告警策略中设置的连续次数时，才会触发告警。
 
-2. **Customize Repetition Rules** defines sending period and retransmission times of notification emails. If alerts have not been resolved, the notification will be sent repeatedly after a certain period of time. Different repetition rules can also be set for different levels of alerts. Since the alert level set in the previous step is `Major Alert`, select `Alert once every 5 miniutes` (sending period) in the second field for **Major Alert** and `Resend up to 3 times` in the third field (retransmission times). Refer to the following image to set notification rules:
+    ![告警规则](/images/docs/zh-cn/cluster-administration/cluster-wide-alerting-and-notification/alerting-policy-node-level/alerting_policy_node_level_alerting_rule.png)
 
-    ![alerting_policy_node_level_notification_rule](/images/docs/alerting/alerting_policy_node_level_notification_rule.png)
+2. 在本示例中，将这些参数分别设置为`内存利用率`、`1 分钟/周期`、`连续2次`、`>`、`50％` 和`重要告警`。这意味着 KubeSphere 会每 1 分钟检查一次内存利用率，如果连续 2 次大于 50%，则会触发此重要告警。
 
-3. Click **Create**, and you can see that the alert policy is successfully created.
+3. 完成操作后，点击 **√** 保存规则，然后点击**下一步**继续。
 
 {{< notice note >}}
 
-*Waiting Time for Alerting* **=** *Check Period* **x** *Consecutive Times*. For example, if the check period is 1 minute/period, and the number of consecutive times is 2, you need to wait for 2 minutes before the alert message appears.
+您可以为以下指标创建节点级别的告警策略：
+
+- CPU：`CPU利用率`、`CPU 1分钟平均负载`、`CPU 5分钟平均负载`、`CPU 15分钟平均负载`
+- 内存：`内存利用率`、`可用内存`
+- 磁盘：`inode利用率`、`本地磁盘可用空间`、`本地磁盘空间利用率`、`本地磁盘写入吞吐量`、`本地磁盘读取吞吐量`、`本地磁盘读取IOPS`、`本地磁盘写入IOPS`
+- 网络：`网络发送数据速率`、`网络接收数据速率`
+- 容器组：`容器组异常率`、`容器组利用率`
 
 {{</ notice >}}
 
-### Task 6: View Alert Policy
+### 任务 5：设置通知规则
 
-After an alert policy is successfully created, you can enter its detail information page to view the status, alert rules, monitoring targets, notification rule, alert history, etc. Click **More** and select **Change Status** from the drop-down menu to enable or disable this alert policy.
+1. **通知有效时间**用于设置通知电子邮件的发送时间，例如 `09:00` 至 `19:00`。 **通知渠道**目前仅支持**邮箱**。您可以在**通知列表**中添加要通知的成员的邮箱地址。
 
-![alerting-policy-node-level-detail-page](/images/docs/alerting/alerting-policy-node-level-detail-page.png)
+2. **自定义重复规则**用于定义通知邮件的发送周期和重发次数。如果告警未被解除，则会在一段时间后重复发送通知。不同级别的告警还可以设置不同的重复规则。上一步中设置的告警级别为`重要告警`，因此在**重要告警**的第二个字段选择`每 5 分钟警告一次`（发送周期），并在第三个字段中选择`最多重发3次`（重发次数）。请参考下图设置通知规则：
 
+    ![通知规则](/images/docs/zh-cn/cluster-administration/cluster-wide-alerting-and-notification/alerting-policy-node-level/alerting_policy_node_level_notification_rule.PNG)
+
+3. 点击**创建**，您可以看到告警策略已成功创建。
+
+{{< notice note >}}
+
+*告警等待时间* **=** *检查周期* **x** *连续次数*。例如，如果检查周期为 1 分钟/周期，并且连续次数为 2，则需要等待 2 分钟后才会显示告警消息。
+
+{{</ notice >}}
+
+### 任务 6：查看告警策略
+
+成功创建告警策略后，您可以进入其详情页面查看状态、告警规则、监控目标、通知规则和告警历史等信息。点击**更多操作**，然后从下拉菜单中选择**更改状态**可以启用或禁用此告警策略。
+
+![详情页面](/images/docs/zh-cn/cluster-administration/cluster-wide-alerting-and-notification/alerting-policy-node-level/alerting-policy-node-level-detail-page.png)

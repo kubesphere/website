@@ -1,54 +1,53 @@
 ---
-title: "Alerting Message (Node Level)"
-keywords: 'KubeSphere, Kubernetes, Node, Alerting, Message, Notification'
-description: 'How to view alerting messages at the node level.'
+title: "告警消息（节点级别）"
+keywords: 'KubeSphere, Kubernetes, 节点, 告警, 消息, 通知'
+description: '如何在节点级别查看告警消息。'
 
-linkTitle: "Alerting Message (Node Level)"
-weight: 4170
+linkTitle: "告警消息（节点级别）"
+weight: 8540
 ---
 
-Alert messages record detailed information of alerts triggered based on alert rules, including monitoring targets, alert policies, recent notifications and comments.
+告警消息会记录按照告警规则触发的告警的详细信息，包括监控目标、告警策略、最近通知和处理意见。
+## 准备工作
 
-## Prerequisites
+您已创建节点级别的告警策略并收到该策略的告警通知。如果尚未准备就绪，请先参考[告警策略（节点级别）](../alerting-policy/)创建一个告警策略。
 
-You have created a node-level alert policy and received alert notifications of it. If it is not ready, please refer to [Alert Policy (Node Level)](../alerting-policy/) to create one first.
+## 动手实验
 
-## Hands-on Lab
+### 任务 1：查看告警信息
 
-### Task 1: View Alert Message
+1. 使用具有 `platform-admin` 角色的帐户登录控制台。
 
-1. Log in the console with one account granted the role `platform-admin`.
+2. 点击左上角的**平台管理**，然后选择**集群管理**。
 
-2. Click **Platform** in the top left corner and select **Clusters Management**.
+    ![选择集群管理](/images/docs/zh-cn/cluster-administration/cluster-wide-alerting-and-notification/alerting-message-node-level/alerting_message_node_level_guide.png)
 
-    ![alerting_message_node_level_guide](/images/docs/alerting/alerting_message_node_level_guide.png)
+3. 从列表中选择一个集群并进入该集群（如果您未启用[多集群功能](../../../multicluster-management/)，则将直接转到**概览**页面）。
 
-3. Select a cluster from the list and enter it (If you do not enable the [multi-cluster feature](../../../multicluster-management/), you will directly go to the **Overview** page).
+4. 转到**监控告警**下的**告警消息**，您可以在列表中看到告警消息。在[告警策略（节点级别）](../alerting-policy/)的示例中，您将一个节点设置为监控目标并且它的内存利用率高于 `50%` 的阈值，因此您可以看到它的告警消息。
 
-4. Navigate to **Alerting Messages** under **Monitoring & Alerting**, and you can see alert messages in the list. In the example of [Alert Policy (Node Level)](../alerting-policy/), you set one node as the monitoring target, and its memory utilization rate is higher than the threshold of `50%`, so you can see an alert message of it.
+    ![告警消息列表](/images/docs/zh-cn/cluster-administration/cluster-wide-alerting-and-notification/alerting-message-node-level/alerting_message_node_level_list.png)
 
-    ![alerting_message_node_level_list](/images/docs/alerting/alerting_message_node_level_list.png)
+5. 点击该告警消息进入详情页面。在**告警详情**中，您可以看到节点的内存利用率随时间变化的图表，该图表显示内存一直高于告警规则中设置的 `50％` 的阈值，因此触发了告警。
 
-5. Click the alert message to enter the detail page. In **Alerting Detail**, you can see the graph of memory utilization rate of the node over time, which has been continuously higher than the threshold of `50%` set in the alert rule, so the alert was triggered.
+    ![告警详情](/images/docs/zh-cn/cluster-administration/cluster-wide-alerting-and-notification/alerting-message-node-level/alerting_message_node_level_detail.png)
 
-    ![alerting_message_node_level_detail](/images/docs/alerting/alerting_message_node_level_detail.png)
+### 任务 2：查看告警策略
 
-### Task 2: View Alert Policy
+切换到**告警策略**查看与此告警消息相对应的告警策略，您可以在[告警策略（节点级别）](../alerting-policy/)示例中看到设置的触发规则。
 
-Switch to **Alerting Policy** to view the alert policy corresponding to this alert message, and you can see the triggering rule of it set in the example of [Alert Policy (Node Level)](../alerting-policy/).
+![告警策略](/images/docs/zh-cn/cluster-administration/cluster-wide-alerting-and-notification/alerting-message-node-level/alerting_message_node_level_policy.png)
 
-![alerting_message_node_level_policy](/images/docs/alerting/alerting_message_node_level_policy.png)
+### 任务 3：查看最近通知
 
-### Task 3: View Recent Notification
+1. 切换到**最近通知**。您可以看到已收到 3 条通知，因为该通知规则设置的重复周期为`每 5 分钟警告1次`和`最多重发3次`。
 
-1. Switch to **Recent Notification**. It can be seen that 3 notifications have been received, because the notification rule was set with a repetition period of `Alert once every 5 minutes` and retransmission of `Resend up to 3 times`.
+    ![告警通知](/images/docs/zh-cn/cluster-administration/cluster-wide-alerting-and-notification/alerting-message-node-level/alerting_message_node_level_notification.png)
 
-    ![alerting_message_node_level_notification](/images/docs/alerting/alerting_message_node_level_notification.png)
+2. 登录到您配置的邮箱，查看 KubeSphere 邮件服务器发送的告警通知邮件。您一共会收到 3 封邮件。
 
-2. Log in your email to see alert notification mails sent by the KubeSphere mail server. You have received a total of 3 emails.
+### 任务 4：添加处理意见
 
-### Task 4: Add Comment
+点击**处理意见**将处理意见添加到当前告警消息。例如，由于节点的内存利用率高于告警规则中设置的阈值，因此您可以在下面的对话框中添加处理意见：`节点需要添加污点，并且不允许将新的 Pod 调度到该节点`。
 
-Click **Comment** to add comments to current alert messages. For example, as memory utilization rate of the node is higher than the threshold set based on the alert rule, you can add a comment in the dialog below: `The node needs to be tainted and new pod is not allowed to be scheduled to it`.
-
-![alerting_message_node_level_comment](/images/docs/alerting/alerting_message_node_level_comment.png)
+![处理意见](/images/docs/zh-cn/cluster-administration/cluster-wide-alerting-and-notification/alerting-message-node-level/alerting_message_node_level_comment.PNG)

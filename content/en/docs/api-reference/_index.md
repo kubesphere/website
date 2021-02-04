@@ -1,16 +1,32 @@
 ---
-title: "KubeSphere API"
-description: "How to use KubeSphere API to build your own application"
+title: "Reference"
+description: "The glossary used by KubeSphere and how to use the KubeSphere API to build your own application"
 layout: "single"
 
-linkTitle: "API Documentation"
+linkTitle: "Reference"
 
-weight: 8100
+weight: 17000
 
 icon: "/images/docs/docs.svg"
 
 ---
 
-## [API Documentation](./kubesphere-api/)
+This chapter contains the glossary that is often used in KubeSphere and the information about the KubeSphere API.
 
-The REST API is the fundamental fabric of KubeSphere. This page show you how to access KubeSphere API server.
+## [Glossary](../api-reference/glossary/)
+
+The glossary used in KubeSphere.
+
+## [KubeSphere API](../api-reference/api-docs)
+
+The REST API is the fundamental fabric of KubeSphere. This guide shows you how to access the KubeSphere API server.
+
+## API Changes
+
+### [Logging](../api-reference/api-changes/logging/)
+
+The API changes of the component **logging** in KubeSphere v3.0.0.
+
+### [Monitoring](../api-reference/api-changes/monitoring/)
+
+The API changes of the component **monitoring** in KubeSphere v3.0.0.

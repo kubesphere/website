@@ -2,17 +2,15 @@
 title: "StatefulSets"
 keywords: 'KubeSphere, Kubernetes, StatefulSets, dashboard, service'
 description: 'Kubernetes StatefulSets'
-
-weight: 2240
+linkTitle: "StatefulSets"
+weight: 10220
 ---
 
-As workload API objects used to manage stateful applications, StatefulSets are responsible for the deploying and scaling of a set of Pods, and provides guarantees about the ordering and uniqueness of these Pods.
+As a workload API object, a StatefulSet is used to manage stateful applications. It is responsible for the deploying, scaling of a set of Pods, and guarantees the ordering and uniqueness of these Pods.
 
-Like a Deployment, a StatefulSet manages Pods that are based on an identical container specification. Unlike a Deployment, a StatefulSet maintains a sticky identity for each of their Pods. These pods are created from the same specification, but are not interchangeable: each has a persistent identifier that it maintains across any rescheduling.
+Like a Deployment, a StatefulSet manages Pods that are based on an identical container specification. Unlike a Deployment, a StatefulSet maintains a sticky identity for each of their Pods. These Pods are created from the same specification, but are not interchangeable: each has a persistent identifier that it maintains across any rescheduling.
 
-If you want to use storage volumes to provide persistence for your workload, you can use a StatefulSet as part of the solution. Although individual Pods in a StatefulSet are susceptible to failure, the persistent Pod identifiers make it easier to match existing volumes to the new Pods that replace any that have failed. For more information, see the [official documentation of Kubernetes](https://kubernetes.io/docs/concepts/workloads/controllers/statefulset/).
-
-## Use StatefulSets
+If you want to use storage volumes to provide persistence for your workload, you can use a StatefulSet as part of the solution. Although individual Pods in a StatefulSet are susceptible to failure, the persistent Pod identifiers make it easier to match existing volumes to the new Pods that replace any that have failed.
 
 StatefulSets are valuable for applications that require one or more of the following.
 
@@ -21,57 +19,58 @@ StatefulSets are valuable for applications that require one or more of the follo
 - Ordered, graceful deployment, and scaling.
 - Ordered, automated rolling updates.
 
+For more information, see the [official documentation of Kubernetes](https://kubernetes.io/docs/concepts/workloads/controllers/statefulset/).
+
 ## Prerequisites
 
-- You need to create a workspace, a project and an account (`project-regular`). Please refer to [Create Workspace, Project, Account and Role](../../../quick-start/create-workspace-and-project) if they are not ready yet.
-- You need to sign in with `project-admin` account and invite `project-regular` to the corresponding project. Please refer to [these steps to invite a member](../../../quick-start/create-workspace-and-project#task-3-create-a-project).
+You need to create a workspace, a project and an account (`project-regular`). The account must be invited to the project with the role of `operator`. For more information, see [Create Workspaces, Projects, Accounts and Roles](../../../quick-start/create-workspace-and-project).
 
 ## Create a StatefulSet
 
-In KubeSphere, a **Headless** service is also created when you create a StatefulSet. You can find the headless service in **Services** under **Application Workloads** in a project.
+In KubeSphere, a **Headless** service is also created when you create a StatefulSet. You can find the headless service in [Services](../services/) under **Application Workloads** in a project.
 
-### Step 1: Open Dashboard
+### Step 1: Open the dashboard
 
-Log in the console as `project-regular`. Go to **Workloads** of a project, choose **StatefulSets** and click **Create**.
+Log in to the console as `project-regular`. Go to **Application Workloads** of a project, select **Workloads**, and click **Create** under the tab **StatefulSets**.
 
 ![statefulsets](/images/docs/project-user-guide/workloads/statefulsets.jpg)
 
-### Step 2: Input Basic Information
+### Step 2: Input basic information
 
 Specify a name for the StatefulSet (e.g. `demo-stateful`) and click **Next** to continue.
 
 ![statefulsets](/images/docs/project-user-guide/workloads/statefulsets_form_1.jpg)
 
-### Step 3: Set Image
+### Step 3: Set an image
 
 1. Before you set an image, define the number of replicated Pods in **Pod Replicas** by clicking the **plus** or **minus** icon, which is indicated by the `.spec.replicas` field in the manifest file.
 
-{{< notice tip >}}
+    {{< notice tip >}}
 
 You can see the StatefulSet manifest file in YAML format by enabling **Edit Mode** in the top right corner. KubeSphere allows you to edit the manifest file directly to create a StatefulSet. Alternatively, you can follow the steps below to create a StatefulSet via the dashboard.
 
-{{</ notice >}}
+    {{</ notice >}}
+    
+    ![statefulsets](/images/docs/project-user-guide/workloads/statefulsets_form_2.jpg)
 
-![statefulsets](/images/docs/project-user-guide/workloads/statefulsets_form_2.jpg)
+2. Click the **Add Container Image** box.
 
-2. Click the **Add Container Image** area.
+    ![statefulsets](/images/docs/project-user-guide/workloads/statefulsets_form_2_container_btn.jpg)
 
-![statefulsets](/images/docs/project-user-guide/workloads/statefulsets_form_2_container_btn.jpg)
+3. Input an image name from public Docker Hub or from a [private repository](../../configuration/image-registry/) you specified. For example, input `nginx` in the search bar and press **Enter**.
 
-3. You can input an image name to use the image from public Docker Hub or select an image from a private repository you want to use. For example, input `nginx` in the search bar and press **Enter**.
+    ![statefulsets](/images/docs/project-user-guide/workloads/statefulsets_form_2_container_1.jpg)
 
-![statefulsets](/images/docs/project-user-guide/workloads/statefulsets_form_2_container_1.jpg)
-
-{{< notice note >}} 
+    {{< notice note >}}
 
 - Remember to press **Enter** on your keyboard after you input an image name in the search bar.
-- If you want to use your private image repository, you should create a Docker Hub secret first in **Secrets** under **Configurations**.
+- If you want to use your private image repository, you should [create an Image Registry Secret](../../configuration/image-registry/) first in **Secrets** under **Configurations**.
 
-{{</ notice >}} 
+    {{</ notice >}}
 
 4. Set requests and limits for CPU and memory resources based on your needs. For more information, see [Resource Request and Resource Limit in Container Image Settings](../container-image-settings/#add-container-image).
 
-![statefulset-request-limit](/images/docs/project-user-guide/workloads/statefulset-request-limit.jpg)
+    ![statefulset-request-limit](/images/docs/project-user-guide/workloads/statefulset-request-limit.jpg)
 
 5. Click **Use Default Ports** for **Service Settings** or you can customize **Protocol**, **Name** and **Container Port**.
 
@@ -83,47 +82,15 @@ You can see the StatefulSet manifest file in YAML format by enabling **Edit Mode
 
 9. Select a deployment mode. For more information, see [Deployment Mode](../container-image-settings/#deployment-mode).
 
-10. Click **Next** to go to the next step when you finish setting the container image.
+10. Click **Next** to continue when you finish setting the container image.
 
-### Step 4: Mount Volumes
+### Step 4: Mount volumes
 
-StatefulSets can use the volume template, but you must create it in **Storage** in advance. KubeSphere provides users with 3 methods to mount volumes:
+StatefulSets can use the volume template, but you must create it in **Storage** in advance. For more information about volumes, visit [Volumes](../../storage/volumes/#mount-a-volume). When you finish, click **Next** to continue.
 
 ![statefulsets](/images/docs/project-user-guide/workloads/statefulsets_form_3.jpg)
 
-- **Add Volume Template**: A volume template is used to dynamically create a PV. Mount the PV of the StorageClass type to the Pod by setting the name, storage class, access mode, capacity and path, which are all indicated in the field `volumeClaimTemplates`.
-
-- **Add Volume**: Support EmptyDir and PersistentVolumeClaim.
-
-  In **Add Volume** there are 3 kinds of volumes:
-
-  - **Existing Volume**: Use *PVC* to mount.
-
-    Persistent storage volumes can be used to save users' persistent data. You need to create volumes in advance so that you can choose an existing volume from the list.
-
-  - **Temporary Volume**: Use *emptyDir* to mount.
-
-    The temporary storage volume represents [emptyDir](https://kubernetes.cn/docs/concepts/storage/volumes/#emptydir), which is first created when a Pod is assigned to a node, and exists as long as that Pod is running on that node. When a Pod is removed from a node for any reason, the data in the emptyDir is deleted forever.
-
-  - **HostPath**: Use *HostPath* to mount.
-
-    A HostPath volume mounts a file or directory from the host node's filesystem into your Pod. This is not something that most Pods will need, but it offers a powerful escape hatch for some applications.
-
-- **Mount ConfigMap or Secret**: Support key-value pairs ​​in ConfigMap or Secret.
-
-  A secret volume is used to pass sensitive information, such as passwords, to Pods. Secret volumes are backed by tmpfs (a RAM-backed filesystem) so they are never written to non-volatile storage.
-
-  A ConfigMap is used to store configuration data in the form of key-value pairs. The ConfigMap resource provides a way to inject configuration data into Pods. The data stored in a ConfigMap object can be referenced in a volume of type ConfigMap and then consumed by containerized applications running in a Pod. ConfigMaps are often used in the following cases:
-
-  - Set the value of the environment variable.
-  - Set command parameters in the container.
-  - Create a config file in the volume.
-
-For more information about volumes, please visit [Volumes](../../storage/volumes).
-
-When you finish, click **Next** to continue.
-
-### Step 5: Configure Advanced Settings
+### Step 5: Configure advanced settings
 
 You can set a policy for node scheduling and add metadata in this section. When you finish, click **Create** to complete the whole process of creating a StatefulSet.
 
@@ -139,46 +106,46 @@ You can set a policy for node scheduling and add metadata in this section. When 
 
 ## Check StatefulSet Details
 
-### Detail Page
+### Detail page
 
-1. After a StatefulSet is created, it displays in the list as below. You can click the three dots on the right to display what other operations about this StatefulSet you can do.
+1. After a StatefulSet is created, it displays in the list as below. You can click the three dots on the right to select actions from the menu to modify your StatefulSet.
 
-![statefulsets](/images/docs/project-user-guide/workloads/statefulsets_list.jpg)
+    ![statefulsets](/images/docs/project-user-guide/workloads/statefulsets_list.jpg)
 
-- **Edit**: View and edit the basic data.
-- **Edit YAMl**: View, upload, download, or update the YAML file.
-- **Redeploy**: Redeploy the StatefulSet.
-- **Delete**: Delete the StatefulSet.
+    - **Edit**: View and edit the basic information.
+    - **Edit YAMl**: View, upload, download, or update the YAML file.
+    - **Redeploy**: Redeploy the StatefulSet.
+    - **Delete**: Delete the StatefulSet.
 
 2. Click the name of the StatefulSet and you can go to its detail page.
 
-![statefulsets](/images/docs/project-user-guide/workloads/statefulsets_detail.jpg)
+    ![statefulsets](/images/docs/project-user-guide/workloads/statefulsets_detail.jpg)
 
 3. Click **More** to display what operations about this StatefulSet you can do.
 
-![statefulsets](/images/docs/project-user-guide/workloads/statefulsets_detail_operation_btn.png)
+    ![statefulsets](/images/docs/project-user-guide/workloads/statefulsets_detail_operation_btn.png)
 
-- **Revision Rollback**: Select the revision to roll back.
-- **Edit Service**: Set the port to expose the container image and the service port.
-- **Edit Config Template**: Configure update strategies, containers and volumes.
-- **Edit YAML**: View, upload, download, or update the YAML file.
-- **Redeploy**: Redeploy this StatefulSet.
-- **Delete**: Delete the StatefulSet, and return to the StatefulSet list page.
+    - **Revision Rollback**: Select the revision to roll back.
+    - **Edit Service**: Set the port to expose the container image and the service port.
+    - **Edit Config Template**: Configure update strategies, containers and volumes.
+    - **Edit YAML**: View, upload, download, or update the YAML file.
+    - **Redeploy**: Redeploy this StatefulSet.
+    - **Delete**: Delete the StatefulSet, and return to the StatefulSet list page.
 
 4. Click the **Resource Status** tab to view the port and Pod information of a StatefulSet.
 
-![statefulsets](/images/docs/project-user-guide/workloads/statefulsets_detail_state.png)
+    ![statefulsets](/images/docs/project-user-guide/workloads/statefulsets_detail_state.png)
 
-- **Replica Status**: Click the arrow in the image to increase or decrease the number of Pod replicas.
-- **Pod detail**
+    - **Replica Status**: Click the arrow in the image to increase or decrease the number of Pod replicas.
+    - **Pod detail**
 
-  ![statefulsets](/images/docs/project-user-guide/workloads/statefulsets_detail_pod.png)
+        ![statefulsets](/images/docs/project-user-guide/workloads/statefulsets_detail_pod.png)
 
-  - The Pod list provides detailed information of the Pod (status, node, Pod IP and resource usage).
-  - You can view the container information by clicking a Pod item.
-  - Click the container log icon to view output logs of the container.
-  - You can view the Pod detail page by clicking the Pod name.
+        - The Pod list provides detailed information of the Pod (status, node, Pod IP and resource usage).
+        - You can view the container information by clicking a Pod item.
+        - Click the container log icon to view output logs of the container.
+        - You can view the Pod detail page by clicking the Pod name.
 
-### Revision Records
+### Revision records
 
 After the resource template of workload is changed, a new log will be generated and Pods will be rescheduled for a version update. The latest 10 versions will be saved by default. You can implement a redeployment based on the change log.

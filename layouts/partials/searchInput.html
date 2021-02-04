@@ -14,6 +14,7 @@ docsearch({
   inputSelector: '#search',
   algoliaOptions: {
       facetFilters: [`lang:${language}`],
+      hitsPerPage: 10,
   },
   transformData: function(hits) {
     hits.forEach(hit => {

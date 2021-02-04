@@ -1,15 +1,15 @@
 ---
-title: "Changes after Upgrade"
-keywords: "Kubernetes, upgrade, KubeSphere, v3.0.0"
-description: "Understand what will be changed after upgrade."
+title: "升级后的变更"
+keywords: "Kubernetes, 升级, KubeSphere, v3.0.0"
+description: "了解升级后的变更。"
 
-linkTitle: "Changes after Upgrade"
-weight: 4025
+linkTitle: "升级后的变更"
+weight: 7600
 ---
 
-This section covers the changes after upgrade for existing settings in previous versions. If you want to know all the new features and enhancements in KubeSphere 3.0.0, see [Release Notes for 3.0.0](../../release/release-v300/) directly.
+本文说明先前版本现有设置在升级后的变更。如果您想了解 KubeSphere 3.0.0 的所有新功能和优化，请直接参见 [v3.0.0 发布说明](../../release/release-v300/)。
 
-## Access Control
+## 访问控制
 
-The definition of custom roles has been simplified. Some closely-related permission items have been aggregated into permission groups. Custom roles will not change during the upgrade and can be used directly after the upgrade if they conform to new policy rules for authorization assignment. Otherwise, you need to modify them manually by adding authorization to these roles.
+自定义角色的定义得到简化。一些紧密关联的权限项已整合进权限组。自定义角色在升级过程中不会改变，并且如果自定义角色符合权限分配的新策略规则，升级后可以直接使用。否则，您需要手动修改这些角色，为他们添加权限。
 

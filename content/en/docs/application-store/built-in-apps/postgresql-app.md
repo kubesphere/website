@@ -1,50 +1,82 @@
 ---
-title: "PostgreSQL App"
+title: "Deploy PostgreSQL on KubeSphere"
 keywords: 'Kubernetes, KubeSphere, PostgreSQL, app-store'
-description: 'How to use built-in PostgreSQL'
-
-
-weight: 2242
+description: 'How to deploy PostgreSQL from the App Store of KubeSphere'
+linkTitle: "Deploy PostgreSQL on KubeSphere"
+weight: 14280
 ---
-[PostgreSQL](https://www.postgresql.org/) is a powerful, open source object-relational database system which is famous for reliability, feature robustness, and performance. This guide will show you one-click deployment for PostgreSQL in Kubenetes .
+
+[PostgreSQL](https://www.postgresql.org/) is a powerful, open-source object-relational database system which is famous for reliability, feature robustness, and performance.
+
+This tutorial walks you through an example of how to deploy PostgreSQL from the App Store of KubeSphere.
 
 ## Prerequisites
 
-- You have enabled [KubeSphere App Store](../../pluggable-components/app-store)
-- You have completed the tutorial in [Create Workspace, Project, Account and Role](../../quick-start/create-workspace-and-project/). Now switch to use `project-regular` account to log in and enter into `demo-peoject`.
+- Please make sure you [enable the OpenPitrix system](../../../pluggable-components/app-store/).
+- You need to create a workspace, a project, and a user account (`project-regular`) for this tutorial. The account needs to be a platform regular user and to be invited as the project operator with the `operator` role. In this tutorial, you log in as `project-regular` and work in the project `demo-project` in the workspace `demo-workspace`. For more information, see [Create Workspaces, Projects, Accounts and Roles](../../../quick-start/create-workspace-and-project/).
 
 ## Hands-on Lab
 
-### Common steps
+### Step 1: Deploy PostgreSQL from the App Store
 
-1. Choose PostgreSQL template `From App Store`.
+1. On the **Overview** page of the project `demo-project`, click **App Store** in the top left corner.
 
-![choose_postgresql_from_app_store](/images/docs/appstore/postgresql/choose_postgresql_from_app_store.png)
+   ![click-app-store](/images/docs/appstore/built-in-apps/postgresql-app/click-app-store.jpg)
 
-2. Check app info and click `Deploy` button.
+2. Find PostgreSQL and click **Deploy** on the **App Info** page.
 
-![deploy_minio](/images/docs/appstore/postgresql/deploy_postgresql.png)
+   ![postgresql-in-app-store](/images/docs/appstore/built-in-apps/postgresql-app/postgresql-in-app-store.jpg)
 
-3. Select app version and deployment location, then go to **Next → Deploy**
+   ![deploy-postgresql](/images/docs/appstore/built-in-apps/postgresql-app/deploy-postgresql.jpg)
 
-![deploy_postgresql_confirm](/images/docs/appstore/postgresql/deploy_postgresql_confirm.png)
+3. Set a name and select an app version. Make sure PostgreSQL is deployed in `demo-project` and click **Next**.
 
-4. Wait for a few minutes, then you will see the application postgresql showing active on the application list.
+   ![deploy-postgresql-2](/images/docs/appstore/built-in-apps/postgresql-app/deploy-postgresql-2.jpg)
 
-![postgresql_active](/images/docs/appstore/postgresql/postgresql_active.png)
+4. In **App Config**, specify persistent volumes for the app and record the username and the password which will be used later to access the app. When you finish, click **Deploy**.
 
-5. Click into PostgreSQL application, and then enter into its service page.
+   ![set-config](/images/docs/appstore/built-in-apps/postgresql-app/set-config.jpg)
 
-![View PostgreSQL Detail](/images/docs/appstore/postgresql/view_postgresql_service.png)
+   {{< notice note >}} 
 
-6. In this page, make sure its deployment and Pod are running, then click **More → Edit Internet Access**, and select **NodePort** in the dropdown list, click **OK** to save it.
+   To specify more values for PostgreSQL, use the toggle switch to see the app’s manifest in YAML format and edit its configurations.
 
-![Expose PostgreSQL Service](/images/docs/appstore/postgresql/expose_postgresql_service.png)
+   {{</ notice >}} 
 
-7.Go to **App Template  → Configuration Files** and get rootUsername and rootPassword from `values.yaml`.
+5. Wait until PostgreSQL is up and running.
 
-![Get PostgreSQL rootUsername/rootPassword](/images/docs/appstore/postgresql/get_postgresql_secret.png)
+   ![postgresql-ready](/images/docs/appstore/built-in-apps/postgresql-app/postgresql-ready.jpg)
 
-8. In this step, we can connect PostgreSQL db outside cluster using host: ${Node IP}, port: ${NODEPORT}, with the rootUsername and rootPassword we got previously.
+### Step 2: Access the PostgreSQL Database
 
-![Connect PostgreSQL](/images/docs/appstore/postgresql/connect_postgresql.png)
+To access PostgreSQL outside the cluster, you need to expose the app through NodePort first.
+
+1. Go to **Services** and click the service name of PostgreSQL.
+
+   ![access-postgresql](/images/docs/appstore/built-in-apps/postgresql-app/access-postgresql.jpg)
+
+2. Click **More** and select **Edit Internet Access** from the drop-down menu.
+
+   ![edit-internet-access](/images/docs/appstore/built-in-apps/postgresql-app/edit-internet-access.jpg)
+
+3. Select **NodePort** for **Access Method** and click **OK**. For more information, see [Project Gateway](../../../project-administration/project-gateway/).
+
+   ![nodeport](/images/docs/appstore/built-in-apps/postgresql-app/nodeport.jpg)
+
+4. Under **Service Ports**, you can see the port is exposed, which will be used in the next step to access the PostgreSQL database.
+
+   ![port-number](/images/docs/appstore/built-in-apps/postgresql-app/port-number.jpg)
+
+5. Expand the Pod menu under **Pods** and click the Terminal icon. In the pop-up window, enter commands directly to access the database.
+
+   ![container-terminal](/images/docs/appstore/built-in-apps/postgresql-app/container-terminal.jpg)
+
+   ![postgresql-output](/images/docs/appstore/built-in-apps/postgresql-app/postgresql-output.jpg)
+
+   {{< notice note >}}
+
+   You can also use a third-party application such as SQLPro Studio to connect to the database. You may need to open the port in your security groups and configure related port forwarding rules depending on your where your Kubernetes cluster is deployed.
+
+   {{</ notice >}} 
+
+6. For more information, see [the official documentation of PostgreSQL](https://www.postgresql.org/docs/).

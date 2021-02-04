@@ -4,20 +4,20 @@ keywords: 'Kubernetes, KubeSphere, VMware-vSphere, installation'
 description: 'How to install KubeSphere on VMware vSphere Linux machines.'
 
 
-weight: 2260
+weight: 3310
 ---
 
 ## Introduction
 
 For a production environment, we need to consider the high availability of the cluster. If the key components (e.g. kube-apiserver, kube-scheduler, and kube-controller-manager) are all running on the same master node, Kubernetes and KubeSphere will be unavailable once the master node goes down. Therefore, we need to set up a high-availability cluster by provisioning load balancers with multiple master nodes. You can use any cloud load balancer, or any hardware load balancer (e.g. F5). In addition, Keepalived and [HAProxy](https://www.haproxy.com/), or Nginx is also an alternative for creating high-availability clusters.
 
-This tutorial walks you through an example of how to create Keepalived and HAProxy, and implement high availability of master and etcd nodes using the load balancers.
+This tutorial walks you through an example of how to create Keepalived and HAProxy, and implement high availability of master and etcd nodes using the load balancers on VMware vSphere.
 
 ## Prerequisites
 
-- Please make sure that you already know how to install KubeSphere with a multi-node cluster by following the [guide](https://github.com/kubesphere/kubekey). For the detailed information about the config yaml file that is used for installation, see [Multi-node Installation](../../../installing-on-linux/introduction/multioverview/). This tutorial focuses more on how to configure load balancers.
+- Please make sure that you already know how to install KubeSphere with a multi-node cluster by following the [guide](../../introduction/multioverview/). This tutorial focuses more on how to configure load balancers.
 - You need a VMware vSphere account to create VMs.
-- Considering data persistence, for a production environment, we recommend you to prepare persistent storage and create a StorageClass in advance. For development and testing, you can use the integrated OpenEBS to provision LocalPV as the storage service directly.
+- Considering data persistence, for a production environment, we recommend you to prepare persistent storage and create a **default** StorageClass in advance. For development and testing, you can use the integrated OpenEBS to provision LocalPV as the storage service directly.
 
 ## Architecture
 
@@ -25,8 +25,7 @@ This tutorial walks you through an example of how to create Keepalived and HAPro
 
 ## Prepare Linux Hosts
 
-This tutorial creates 8 virtual machines of **CentOS Linux release 7.6.1810 (Core)** with the default minimal installation. Every machine has 2 Cores, 4 GB memory and 40 G disk space.
-
+This tutorial creates 8 virtual machines of **CentOS Linux release 7.6.1810 (Core)** for the default minimal installation. Every machine has 2 Cores, 4 GB memory and 40 G disk space.
 
 | Host IP | Host Name | Role |
 | --- | --- | --- |
@@ -40,56 +39,55 @@ This tutorial creates 8 virtual machines of **CentOS Linux release 7.6.1810 (Cor
 |10.10.71.77|lb-0|lb (Keepalived + HAProxy)|
 |10.10.71.66|lb-1|lb (Keepalived + HAProxy)|
 
-{{< notice warning >}}
+{{< notice note >}}
 You do not need to create a virtual machine for `vip` (i.e. Virtual IP) above, so only 8 virtual machines need to be created.
 {{</ notice >}}
 
-Create virtual machines in the VMware Host Client. You can follow the New Virtual Machine wizard to create a virtual machine to place in the VMware Host Client inventory.
+You can follow the New Virtual Machine wizard to create a virtual machine to place in the VMware Host Client inventory.
 
 ![create](/images/docs/vsphere/kubesphereOnVsphere-en-0-1-create.png)
 
-In the first step **Select a creation type**, you can deploy a virtual machine from an OVF or OVA file, or register an existing virtual machine directly.
+1. In the first step **Select a creation type**, you can deploy a virtual machine from an OVF or OVA file, or register an existing virtual machine directly.
 
-![kubesphereOnVsphere-en-0-1-1-create-type](/images/docs/vsphere/kubesphereOnVsphere-en-0-1-1-create-type.png)
+    ![kubesphereOnVsphere-en-0-1-1-create-type](/images/docs/vsphere/kubesphereOnVsphere-en-0-1-1-create-type.png)
 
-When you create a new virtual machine, provide a unique name for the  virtual machine to distinguish it from existing virtual machines on the  host you are managing.
+2. When you create a new virtual machine, provide a unique name for the  virtual machine to distinguish it from existing virtual machines on the  host you are managing.
 
-![kubesphereOnVsphere-en-0-1-2-name](/images/docs/vsphere/kubesphereOnVsphere-en-0-1-2-name.png)
+    ![kubesphereOnVsphere-en-0-1-2-name](/images/docs/vsphere/kubesphereOnVsphere-en-0-1-2-name.png)
 
-Select a compute resource and storage (datastore) for the configuration and disk files. You can select the  datastore that has the most suitable properties, such as size, speed,  and availability, for your virtual machine storage.
+3. Select a compute resource and storage (datastore) for the configuration and disk files. You can select the  datastore that has the most suitable properties, such as size, speed,  and availability, for your virtual machine storage.
 
-![kubesphereOnVsphere-en-0-1-3-resource](/images/docs/vsphere/kubesphereOnVsphere-en-0-1-3-resource.png)
+    ![kubesphereOnVsphere-en-0-1-3-resource](/images/docs/vsphere/kubesphereOnVsphere-en-0-1-3-resource.png)
 
-![kubesphereOnVsphere-en-0-1-4-storage](/images/docs/vsphere/kubesphereOnVsphere-en-0-1-4-storage.png)
+    ![kubesphereOnVsphere-en-0-1-4-storage](/images/docs/vsphere/kubesphereOnVsphere-en-0-1-4-storage.png)
 
-![kubesphereOnVsphere-en-0-1-5-compatibility](/images/docs/vsphere/kubesphereOnVsphere-en-0-1-5-compatibility.png)
+    ![kubesphereOnVsphere-en-0-1-5-compatibility](/images/docs/vsphere/kubesphereOnVsphere-en-0-1-5-compatibility.png)
 
-Select a guest operating system. The wizard will provide the appropriate defaults for the operating system installation.
+4. Select a guest operating system. The wizard will provide the appropriate defaults for the operating system installation.
 
-![kubesphereOnVsphere-en-0-1-6-system](/images/docs/vsphere/kubesphereOnVsphere-en-0-1-6-system.png)
+    ![kubesphereOnVsphere-en-0-1-6-system](/images/docs/vsphere/kubesphereOnVsphere-en-0-1-6-system.png)
 
-Before you finish deploying a new virtual machine, you have the option to set **Virtual Hardware** and **VM Options**. You can refer to the images below for part of the fields.
+5. Before you finish deploying a new virtual machine, you have the option to set **Virtual Hardware** and **VM Options**. You can refer to the images below for part of the fields.
 
-![kubesphereOnVsphere-en-0-1-7-hardware-1](/images/docs/vsphere/kubesphereOnVsphere-en-0-1-7-hardware-1.png)
+    ![kubesphereOnVsphere-en-0-1-7-hardware-1](/images/docs/vsphere/kubesphereOnVsphere-en-0-1-7-hardware-1.png)
 
-![kubesphereOnVsphere-en-0-1-7-hardware-2](/images/docs/vsphere/kubesphereOnVsphere-en-0-1-7-hardware-2.png)
+    ![kubesphereOnVsphere-en-0-1-7-hardware-2](/images/docs/vsphere/kubesphereOnVsphere-en-0-1-7-hardware-2.png)
 
-![kubesphereOnVsphere-en-0-1-7-hardware-3](/images/docs/vsphere/kubesphereOnVsphere-en-0-1-7-hardware-3.png)
+    ![kubesphereOnVsphere-en-0-1-7-hardware-3](/images/docs/vsphere/kubesphereOnVsphere-en-0-1-7-hardware-3.png)
 
-![kubesphereOnVsphere-en-0-1-7-hardware-4](/images/docs/vsphere/kubesphereOnVsphere-en-0-1-7-hardware-4.png)
+    ![kubesphereOnVsphere-en-0-1-7-hardware-4](/images/docs/vsphere/kubesphereOnVsphere-en-0-1-7-hardware-4.png)
 
-In **Ready to complete** page, you review the configuration selections that you have made for the virtual machine. Click **Finish** at the bottom right corner to continue. 
+6. In **Ready to complete** page, you review the configuration selections that you have made for the virtual machine. Click **Finish** at the bottom right corner to continue.
 
-![kubesphereOnVsphere-en-0-1-8](/images/docs/vsphere/kubesphereOnVsphere-en-0-1-8.png)
+    ![kubesphereOnVsphere-en-0-1-8](/images/docs/vsphere/kubesphereOnVsphere-en-0-1-8.png)
 
+## Install a Load Balancer using Keepalived and HAProxy
 
-## Install a Load Balancer using Keepalived and HAProxy (Optional)
+For a production environment, you have to prepare an external load balancer for your multiple-master cluster. If you do not have a load balancer, you can install it using Keepalived and HAProxy. If you are provisioning a development or testing environment by installing a single-master cluster, please skip this section.
 
-For a production environment, you have to prepare an external load balancer. If you do not have a load balancer, you can install it using Keepalived and HAProxy. If you are provisioning a development or testing environment, please skip this section.
+### Yum Install
 
-###  Yum Install
-
-host lb-0 (10.10.71.77) and host lb-1 (10.10.71.66).
+host lb-0 (`10.10.71.77`) and host lb-1 (`10.10.71.66`).
 
 ```bash
 yum install keepalived haproxy psmisc -y
@@ -97,15 +95,15 @@ yum install keepalived haproxy psmisc -y
 
 ### Configure HAProxy
 
-On the servers with IP 10.10.71.77 and 10.10.71.66, configure HAProxy as follows.
+On the servers with IP `10.10.71.77` and `10.10.71.66`, configure HAProxy as follows.
 
-{{< notice note >}} 
+{{< notice note >}}
 
 The configuration of the two lb machines is the same. Please pay attention to the backend service address.
 
-{{</ notice >}} 
+{{</ notice >}}
 
-```bash
+```yaml
 # HAProxy Configure /etc/haproxy/haproxy.cfg
 global
     log         127.0.0.1 local2
@@ -148,21 +146,25 @@ backend kube-apiserver
     server kube-apiserver-2 10.10.71.73:6443 check
     server kube-apiserver-3 10.10.71.62:6443 check
 ```
+
 Check grammar first before you start it.
 
 ```bash
 haproxy -f /etc/haproxy/haproxy.cfg -c
 ```
-Restart HAProxy and execute the command below to enable HAProxy:
+
+Restart HAProxy and execute the command below to enable HAProxy.
 
 ```bash
 systemctl restart haproxy && systemctl enable haproxy
 ```
+
 Stop HAProxy.
 
 ```bash
 systemctl stop haproxy
 ```
+
 ### Configure Keepalived
 
 Main HAProxy 77 lb-0-10.10.71.77 (/etc/keepalived/keepalived.conf).
@@ -171,7 +173,7 @@ Main HAProxy 77 lb-0-10.10.71.77 (/etc/keepalived/keepalived.conf).
 global_defs {
   notification_email {
   }
-  smtp_connect_timeout 30   
+  smtp_connect_timeout 30
   router_id LVS_DEVEL01
   vrrp_skip_check_adv_addr
   vrrp_garp_interval 0
@@ -180,21 +182,21 @@ global_defs {
 vrrp_script chk_haproxy {
   script "killall -0 haproxy"
   interval 2
-  weight 2
+  weight 20
 }
 vrrp_instance haproxy-vip {
   state MASTER  
   priority 100  
-  interface ens192                       
+  interface ens192
   virtual_router_id 60
   advert_int 1
   authentication {
     auth_type PASS
     auth_pass 1111
   }
-  unicast_src_ip 10.10.71.77     
+  unicast_src_ip 10.10.71.77
   unicast_peer {
-    10.10.71.66                      
+    10.10.71.66
   }
   virtual_ipaddress {
     #vip
@@ -205,6 +207,7 @@ vrrp_instance haproxy-vip {
   }
 }
 ```
+
 Remark HAProxy 66 lb-1-10.10.71.66 (/etc/keepalived/keepalived.conf).
 
 ```bash
@@ -219,21 +222,21 @@ global_defs {
 vrrp_script chk_haproxy {
   script "killall -0 haproxy"
   interval 2
-  weight 2
+  weight 20
 }
 vrrp_instance haproxy-vip {
   state BACKUP
   priority 90
-  interface ens192                        
+  interface ens192
   virtual_router_id 60
   advert_int 1
   authentication {
     auth_type PASS
     auth_pass 1111
   }
-  unicast_src_ip 10.10.71.66      
+  unicast_src_ip 10.10.71.66
   unicast_peer {
-    10.10.71.77                        
+    10.10.71.77
   }
   virtual_ipaddress {
     10.10.71.67/24
@@ -243,14 +246,15 @@ vrrp_instance haproxy-vip {
   }
 }
 ```
+
 Start keepalived and enable keepalived.
 
 ```bash
-systemctl restart keepalived && systemctl enable keepalived   
+systemctl restart keepalived && systemctl enable keepalived
 ```
 
 ```bash
-systemctl stop keepaliv
+systemctl stop keepalived
 ```
 
 ```bash
@@ -285,33 +289,51 @@ systemctl status -l keepalived
 
 ## Download KubeKey
 
-[Kubekey](https://github.com/kubesphere/kubekey) is the next-gen installer which provides an easy, fast and flexible way to install Kubernetes and KubeSphere v3.0.0.
+[Kubekey](https://github.com/kubesphere/kubekey) is the brand-new installer which provides an easy, fast and flexible way to install Kubernetes and KubeSphere v3.0.0.
 
 Follow the step below to download KubeKey.
 
 {{< tabs >}}
 
-{{< tab "For users with good network connections to GitHub" >}}
+{{< tab "Good network connections to GitHub/Googleapis" >}}
 
-Download KubeKey from [GitHub Release Page](https://github.com/kubesphere/kubekey/releases/tag/v1.0.0) or use the following command directly.
+Download KubeKey from its [GitHub Release Page](https://github.com/kubesphere/kubekey/releases) or use the following command directly.
 
 ```bash
-wget https://github.com/kubesphere/kubekey/releases/download/v1.0.0/kubekey-v1.0.0-linux-amd64.tar.gz -O - | tar -xz
+curl -sfL https://get-kk.kubesphere.io | VERSION=v1.0.1 sh -
 ```
 
 {{</ tab >}}
 
-{{< tab "For users with poor network connections to GitHub" >}}
+{{< tab "Poor network connections to GitHub/Googleapis" >}}
 
-Download KubeKey using the following command:
+Run the following command first to make sure you download KubeKey from the correct zone.
 
 ```bash
-wget -c https://kubesphere.io/download/kubekey-v1.0.0-linux-amd64.tar.gz -O - | tar -xz
+export KKZONE=cn
 ```
+
+Run the following command to download KubeKey:
+
+```bash
+curl -sfL https://get-kk.kubesphere.io | VERSION=v1.0.1 sh -
+```
+
+{{< notice note >}}
+
+After you download KubeKey, if you transfer it to a new machine also with poor network connections to Googleapis, you must run `export KKZONE=cn` again before you proceed with the steps below.
+
+{{</ notice >}} 
 
 {{</ tab >}}
 
 {{</ tabs >}}
+
+{{< notice note >}}
+
+The commands above download the latest release (v1.0.1) of KubeKey. You can change the version number in the command to download a specific version.
+
+{{</ notice >}} 
 
 Make `kk` executable:
 
@@ -319,7 +341,7 @@ Make `kk` executable:
 chmod +x kk
 ```
 
-## Create a Multi-node Cluster
+## Create a High Availability Cluster
 
 With KubeKey, you can install Kubernetes and KubeSphere together. You have the option to create a multi-node cluster by customizing parameters in the configuration file.
 
@@ -329,13 +351,16 @@ Create a Kubernetes cluster with KubeSphere installed (e.g. `--with-kubesphere v
 ./kk create config --with-kubernetes v1.17.9 --with-kubesphere v3.0.0
 ```
 
-{{< notice note >}} 
+{{< notice note >}}
 
-The following Kubernetes versions have been fully tested with KubeSphere: v1.15.12, v1.16.13, v1.17.9 (default) and v1.18.6.
+- The following Kubernetes versions have been fully tested with KubeSphere: v1.15.12, v1.16.13, v1.17.9 (default) and v1.18.6.
 
-{{</ notice >}} 
+- If you do not add the flag `--with-kubesphere` in the command in this step, KubeSphere will not be deployed unless you install it using the `addons` field in the configuration file or add this flag again when you use `./kk create cluster` later.
+- If you add the flag `--with-kubesphere` without specifying a KubeSphere version, the latest version of KubeSphere will be installed.
 
-A default file **config-sample.yaml** will be created. Modify it according to your environment.
+{{</ notice >}}
+
+A default file `config-sample.yaml` will be created. Modify it according to your environment.
 
 ```bash
 vi config-sample.yaml
@@ -370,7 +395,7 @@ spec:
   controlPlaneEndpoint:
     domain: lb.kubesphere.local
     # vip
-    address: "10.10.71.67"                    
+    address: "10.10.71.67"
     port: "6443"
   kubernetes:
     version: v1.17.9
@@ -437,7 +462,7 @@ spec:
   alerting:                # Whether to install KubeSphere alerting system. It enables Users to customize alerting policies to send messages to receivers in time with different time intervals and alerting levels to choose from.
     enabled: false
   auditing:                # Whether to install KubeSphere audit log system. It provides a security-relevant chronological set of records，recording the sequence of activities happened in platform, initiated by different tenants.
-    enabled: false         
+    enabled: false
   devops:                  # Whether to install KubeSphere DevOps System. It provides out-of-box CI/CD system based on Jenkins, and automated workflow tools including Source-to-Image & Binary-to-Image
     enabled: false
     jenkinsMemoryLim: 2Gi      # Jenkins memory limit
@@ -461,7 +486,7 @@ spec:
   multicluster:
     clusterRole: none  # host | member | none  # You can install a solo cluster, or specify it as the role of host or member cluster
   networkpolicy:       # Network policies allow network isolation within the same cluster, which means firewalls can be set up between certain instances (Pods).
-    enabled: false     
+    enabled: false
   notification:        # It supports notification management in multi-tenant Kubernetes clusters. It allows you to set AlertManager as its sender, and receivers include Email, Wechat Work, and Slack.
     enabled: false
   openpitrix:          # Whether to install KubeSphere App Store. It provides an application store for Helm-based applications, and offer application lifecycle management
@@ -469,13 +494,14 @@ spec:
   servicemesh:         # Whether to install KubeSphere Service Mesh (Istio-based). It provides fine-grained traffic management, observability and tracing, and offer visualization for traffic topology
     enabled: false
 ```
+
 Create a cluster using the configuration file you customized above:
 
 ```bash
 ./kk create cluster -f config-sample.yaml
 ```
 
-#### Verify the Multi-node Installation
+## Verify the Multi-node Installation
 
 Inspect the logs of installation by executing the command below:
 
@@ -485,7 +511,7 @@ kubectl logs -n kubesphere-system $(kubectl get pod -n kubesphere-system -l app=
 
 If you can see the welcome log return, it means the installation is successful. Your cluster is up and running.
 
-```bash
+```yaml
 **************************************************
 #####################################################
 ###              Welcome to KubeSphere!           ###
@@ -505,9 +531,10 @@ https://kubesphere.io             2020-08-15 23:32:12
 #####################################################
 ```
 
-#### Log in the Console
+### Log in to the Console
 
-You will be able to use default account and password `admin/P@88w0rd` to log in the console `http://{$IP}:30880` to take a tour of KubeSphere. Please change the default password after login.
+You will be able to use default account and password `admin/P@88w0rd` to log in to the console `http://{$IP}:30880` to take a tour of KubeSphere. Please change the default password after login.
 
-#### Enable Pluggable Components (Optional)
+## Enable Pluggable Components (Optional)
+
 The example above demonstrates the process of a default minimal installation. To enable other components in KubeSphere, see [Enable Pluggable Components](../../../pluggable-components/) for more details.

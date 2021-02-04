@@ -12,7 +12,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 <!-- End Google Tag Manager (noscript) -->
 {{ end }}
 {{- partial "header.html" . -}}
-<main class='main-section {{ if eq .Site.Language.Lang "zh"}} padding{{ end }}'>
+<main class='main-section'>
     {{- block "main" . }}{{- end }}
 </main>
 {{- partial "footer.html" . -}}

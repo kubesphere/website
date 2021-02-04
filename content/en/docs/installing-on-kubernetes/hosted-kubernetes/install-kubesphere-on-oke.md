@@ -3,7 +3,7 @@ title: "Deploy KubeSphere on Oracle OKE"
 keywords: 'Kubernetes, KubeSphere, OKE, Installation, Oracle-cloud'
 description: 'How to install KubeSphere on Oracle OKE'
 
-weight: 2275
+weight: 4260
 ---
 
 This guide walks you through the steps of deploying KubeSphere on [Oracle Kubernetes Engine](https://www.oracle.com/cloud/compute/container-engine-kubernetes.html).
@@ -81,7 +81,7 @@ This guide walks you through the steps of deploying KubeSphere on [Oracle Kubern
 
 - When the installation finishes, you can see the following message:
 
-  ```bash
+  ```yaml
   #####################################################
   ###              Welcome to KubeSphere!           ###
   #####################################################
@@ -140,7 +140,7 @@ Now that KubeSphere is installed, you can access the web console of KubeSphere e
 
   ![console-service](https://ap3.qingstor.com/kubesphere-website/docs/console-service.png)
 
-- Log in the console through the external IP address with the default account and password (`admin/P@88w0rd`). In the cluster overview page, you can see the dashboard shown below:
+- Log in to the console through the external IP address with the default account and password (`admin/P@88w0rd`). In the cluster overview page, you can see the dashboard shown below:
 
   ![kubesphere-oke-dashboard](https://ap3.qingstor.com/kubesphere-website/docs/kubesphere-oke-dashboard.png)
 

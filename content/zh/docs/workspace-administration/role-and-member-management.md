@@ -1,93 +1,90 @@
 ---
-title: "Role and Member Management"
-keywords: "Kubernetes, workspace, KubeSphere, multitenancy"
-description: "Role and Member Management in a Workspace"
-
-linkTitle: "Role and Member Management"
-weight: 200
+title: "角色和成员管理"
+keywords: "Kubernetes, workspace, KubeSphere, 多租户"
+description: "企业空间中的角色和成员管理"
+linkTitle: "角色和成员管理"
+weight: 9400
 ---
 
-This guide demonstrates how to manage roles and members in your workspace. For more information about KubeSphere roles, see Overview of Role Management.
+本指南向您演示如何在企业空间中管理角色和成员。在企业空间级别，您可以向一个角色授予以下资源的权限：
 
-In workspace scope, you can grant the following resources' permissions to a role:
-
-- Projects
+- 项目
 - DevOps
-- Access Control
-- Apps Management
-- Workspace Settings
+- 访问控制
+- 应用管理
+- 企业空间设置
 
-## Prerequisites
+## 准备工作
 
-At least one workspace has been created, such as `demo-workspace`. Besides, you need an account of the `workspace-admin` role (e.g. `ws-admin`) at the workspace level. See [Create Workspace, Project, Account and Role](../../quick-start/create-workspace-and-project/) if it is not ready yet.
+至少已创建一个企业空间，例如 `demo-workspace`。您还需要准备一个帐户（如 `ws-admin`），该帐户在企业空间层级拥有 `workspace-admin` 角色。如果不清楚怎样进行准备工作，请参见[创建企业空间、项目、帐户和角色](../../quick-start/create-workspace-and-project/)。
 
 {{< notice note >}} 
 
-The actual role name follows a naming convention: `workspace name-role name`. For example, for a workspace named `demo-workspace`, the actual role name of the role `workspace-admin` is `demo-workspace-admin`.
+实际角色名称的格式：`workspace name-role name`。例如，在名为 `demo-workspace` 的企业空间中，角色 `admin` 的实际角色名称为 `demo-workspace-admin`。
 
 {{</ notice >}} 
 
-## Built-in Roles
+## 内置角色
 
-In **Workspace Roles**, there are four available built-in roles as shown below. Built-in roles are created automatically by KubeSphere when a workspace is created and they cannot be edited or deleted. You can only review permissions and authorized users.
+在**企业角色**中，列出了如下所示的四个可用内置角色。创建企业空间时，KubeSphere 会自动创建内置角色，并且内置角色无法进行编辑或删除。您只能查看权限和授权用户。
 
-| Built-in Roles     | Description                                                  |
+| **内置角色** | **描述信息**                                          |
 | ------------------ | ------------------------------------------------------------ |
-| workspace-viewer | The viewer in the workspace who can view all resources in the workspace. |
-| workspace-self-provisioner     | The regular user in the workspace who can create projects and DevOps projects. |
-| workspace-regular   | The regular user in the workspace who cannot create projects or DevOps projects. |
-| workspace-admin     | The administrator in the workspace who can perform any action on any resource. It gives full control over all resources in the workspace. |
+| workspace-viewer | 企业空间的观察者，可以查看企业空间下所有的资源信息。 |
+| workspace-self-provisioner     | 企业空间普通成员，可以在企业空间下创建项目和 DevOps 工程。 |
+| workspace-regular   | 企业空间普通成员，无法在企业空间下创建项目和 DevOps 工程。 |
+| workspace-admin     | 企业空间管理员，可对任何资源进行任意操作。它可以充分管理企业空间下所有的资源。 |
 
-1. In **Workspace Roles** , click  `workspace-admin` and you can see the role detail as shown below.
+1. 在**企业角色**中，点击 `workspace-admin` 就可以查看如下所示的角色详情。
 
-![invite member](/images/docs/ws-admin/workspace_role_detail.png)
+   ![企业成员详情](/images/docs/zh-cn/workspace-administration-and-user-guide/role-and-member-management/workspace-role-detail.PNG)
 
-2. You can switch to **Authorized Users** tab to see all the users that are granted a `workspace-admin` role.
+2. 您可以切换到**授权用户**标签页，查看被授予 `workspace-admin` 角色的所有用户。
 
-## Create a Workspace Role
+## 创建企业角色
 
-1. Log in the console as `ws-admin` and go to **Workspace Roles** in **Workspace Settings**.
+1. 以 `ws-admin` 身份登录控制台，转到**企业空间设置**下的**企业角色**。
 
-{{< notice note >}}
+   {{< notice note >}}
 
-The account `ws-admin` is used as an example. As long as the account you are using is granted a role including the authorization of **Workspace Members View**, **Workspace Roles Management** and **Workspace Roles View** in **Access Control** at the workspace level, it can create a workspace role.
+此处使用 `ws-admin` 帐户作为示例。只要帐户在企业空间层级被授予的角色拥有**访问控制**下的**成员查看**、**角色查看**以及**角色管理**权限，您就可以使用该帐户创建企业角色。
 
-{{</ notice >}} 
+   {{</ notice >}} 
 
-2. In **Workspace Roles**, click **Create** and set a **Role Identifier**. In this example, a role named `workspace-projects-admin` will be created. Click **Edit Authorization** to continue.
+2. 在**企业角色**中，点击**创建**并设置**角色标识符**。本示例将创建一个名为 `workspace-projects-admin` 的角色。点击**编辑权限**继续。
 
-![Create a workspace role](/images/docs/ws-admin/workspace_role_create_step1.png)
+   ![创建企业角色步骤一](/images/docs/zh-cn/workspace-administration-and-user-guide/role-and-member-management/workspace-role-create-step1.PNG)
 
-3. In **Projects management**, select the authorization that you want the user granted this role to have. For example, **Projects Create**, **Projects Management**, and **Projects View** are selected for this role. Click **OK** to finish.
+3. 在**项目管理**中，选择该角色所包含的权限。本示例中，为该角色选择了**项目创建**、**项目管理**和**项目查看**。点击**确定**完成操作。
 
-![Edit Authorization](/images/docs/ws-admin/workspace_role_create_step2.png)
+   ![编辑权限](/images/docs/zh-cn/workspace-administration-and-user-guide/role-and-member-management/workspace-role-create-step2.PNG)
 
-{{< notice note >}} 
+   {{< notice note >}} 
 
-**Depend on** means the major authorization (the one listed after **Depend on**) needs to be selected first so that the affiliated authorization can be assigned.
+**依赖于**意味着当前授权项依赖列出的授权项，系统会自动选上该依赖项。
 
-{{</ notice >}} 
+   {{</ notice >}} 
 
-4. Newly-created roles will be listed in **Workspace Roles**. You can click the three dots on the right to edit it.
+4. 新创建的角色将在**企业角色**中列出。您可以点击右侧的三个点对其进行编辑。
 
-![Edit Roles](/images/docs/ws-admin/workspace_role_edit.png)
+   ![编辑角色](/images/docs/zh-cn/workspace-administration-and-user-guide/role-and-member-management/workspace-role-edit.PNG)
 
-{{< notice note >}} 
+   {{< notice note >}} 
 
-The role of `workspace-projects-admin` is only granted **Projects Create**, **Projects Management**, and **Projects View**, which may not satisfy your need. This example is only for demonstration purpose. You can create customized roles based on your needs.
+本示例中仅为 `workspace-projects-admin` 角色授予了**项目创建**、**项目管理**和**项目查看**权限用作演示。如果您有更多需求，可以按需创建自定义角色。
 
-{{</ notice >}} 
+   {{</ notice >}} 
 
-## Invite a New Member
+## 邀请新成员
 
-1. In **Workspace Settings**, select **Workspace Members** and click **Invite Member**.
-2. Invite a user to the workspace. Grant the role `workspace-projects-admin` to the user. 
+1. 在**企业空间设置**中，转到**企业成员**，再点击**邀请成员**。
+2. 邀请一名成员加入企业空间，并为其授予 `workspace-projects-admin` 角色。
 
-![invite member](/images/docs/ws-admin/workspace_invite_user.png)
+   ![邀请成员](/images/docs/zh-cn/workspace-administration-and-user-guide/role-and-member-management/workspace-invite-user.PNG)
 
 
-3. After you add a user to the workspace, click **OK**. In **Workspace Members**, you can see the newly invited member listed.
-4. You can also change the role of an existing member by editing it or remove it from the workspace.
+3. 将成员加入企业空间后，点击**确定**。您可以在**企业成员**列表中查看新邀请的成员。
+4. 您也可以编辑现有成员以更改其角色或将其从企业空间中移除。
 
-![edit member role](/images/docs/ws-admin/workspace_user_edit.png)
+   ![编辑成员角色](/images/docs/zh-cn/workspace-administration-and-user-guide/role-and-member-management/workspace-user-edit.PNG)
 

@@ -1,34 +1,28 @@
 ---
 title: "Direct Connection"
 keywords: 'Kubernetes, KubeSphere, multicluster, hybrid-cloud, direct-connection'
-description: 'Overview'
-
-weight: 3011
+description: 'How to manage multiple clusters using direct connection.'
+titleLink: "Direct Connection"
+weight: 5210
 ---
 
-## Prerequisites
+If the kube-apiserver address of the Member Cluster (M Cluster) is accessible on any node of the Host Cluster (H Cluster), you can adopt **Direction Connection**. This method is applicable when the kube-apiserver address of the M Cluster can be exposed or H Cluster and M Cluster are in the same private network or subnet.
 
-You have already installed at least two KubeSphere clusters. Please refer to [Installing on Linux](../../../installing-on-linux) or [Installing on Kubernetes](../../../installing-on-kubernetes) if they are not ready yet.
+To use the multi-cluster feature using direct connection, you must have at least two clusters serving as the H Cluster and the M Cluster respectively. A cluster can be defined as the H Cluster or the M Cluster either before or after you install KubeSphere. For more information about installing KubeSphere, refer to [Installing on Linux](../../../installing-on-linux) and [Installing on Kubernetes](../../../installing-on-kubernetes).
 
-{{< notice note >}}
-Multi-cluster management requires Kubesphere to be installed on the target clusters. If you have an existing cluster, you can deploy KubeSphere on it with a minimal installation so that it can be imported. See [Minimal KubeSphere on Kubernetes](../../../quick-start/minimal-kubesphere-on-k8s/) for details.
-{{</ notice >}}
+## Prepare a Host Cluster
 
-## Direct Connection
-
-If the kube-apiserver address of Member Cluster (hereafter referred to as **M** Cluster) is accessible on any node of the Host Cluster (hereafter referred to as **H** Cluster), you can adopt **Direction Connection**. This method is applicable when the kube-apiserver address of M Cluster can be exposed or H Cluster and M Cluster are in the same private network or subnet.
-
-### Prepare a Host Cluster
+A host cluster provides you with the central control plane and you can only define one host cluster.
 
 {{< tabs >}}
 
 {{< tab "KubeSphere has been installed" >}}
 
-If you already have a standalone KubeSphere installed, you can set the value of  `clusterRole` to `host` by editing the cluster configuration. You need to **wait for a while** so that the change can take effect.
+If you already have a standalone KubeSphere cluster installed, you can set the value of  `clusterRole` to `host` by editing the cluster configuration.
 
-- Option A - Use Web Console:
+- Option A - Use the web console:
 
-  Use `admin` account to log in the console and go to **CRDs** on the **Cluster Management** page. Enter the keyword `ClusterConfiguration` and go to its detail page. Edit the YAML of `ks-installer`, which is similar to [Enable Pluggable Components](../../../pluggable-components/).
+  Use the `admin` account to log in to the console and go to **CRDs** on the **Cluster Management** page. Enter the keyword `ClusterConfiguration` and go to its detail page. Edit the YAML of `ks-installer`, which is similar to [Enable Pluggable Components](../../../pluggable-components/).
 
 - Option B - Use Kubectl:
 
@@ -36,23 +30,31 @@ If you already have a standalone KubeSphere installed, you can set the value of 
   kubectl edit cc ks-installer -n kubesphere-system
   ```
 
-Scroll down and set the value of `clusterRole` to `host`, then click **Update** (if you use the web console) to make it effective:
+In the YAML file of `ks-installer`, navigate to `multicluster`, set the value of `clusterRole` to `host`, then click **Update** (if you use the web console) to make it effective:
 
 ```yaml
 multicluster:
   clusterRole: host
 ```
+
+You need to **wait for a while** so that the change can take effect.
 
 {{</ tab >}}
 
 {{< tab "KubeSphere has not been installed" >}}
 
-There is no big difference than installing a standalone KubeSphere if you define a host cluster before installation. Please note that the `clusterRole` in `config-sample.yaml` or `cluster-configuration.yaml` has to be set as follows:
+You can define a host cluster before you install KubeSphere either on Linux or on an existing Kubernetes cluster. If you want to [install KubeSphere on Linux](../../../installing-on-linux/introduction/multioverview/#1-create-an-example-configuration-file), you use a `config-sample.yaml` file. If you want to [install KubeSphere on an existing Kubernetes cluster](../../../installing-on-kubernetes/introduction/overview/#deploy-kubesphere), you use two YAML files, one of which is `cluster-configuration.yaml`. To set a host cluster, change the value of `clusterRole` to `host` in `config-sample.yaml` or `cluster-configuration.yaml` accordingly before you install KubeSphere.
 
 ```yaml
 multicluster:
   clusterRole: host
 ```
+
+{{< notice note >}}
+
+If you install KubeSphere on a single-node cluster ([All-in-One](../../../quick-start/all-in-one-on-linux/)), you do not need to create a `config-sample.yaml` file. In this case, you can set a host cluster after KubeSphere is installed.
+
+{{</ notice >}} 
 
 {{</ tab >}}
 
@@ -64,9 +66,9 @@ You can use **kubectl** to retrieve the installation logs to verify the status b
 kubectl logs -n kubesphere-system $(kubectl get pod -n kubesphere-system -l app=ks-install -o jsonpath='{.items[0].metadata.name}') -f
 ```
 
-### Prepare a Member Cluster
-  
-In order to manage the member cluster within the **host cluster**, you need to make `jwtSecret` the same between them. Therefore, you need to get it first from the **host cluster** by the following command.
+## Prepare a Member Cluster
+
+In order to manage the member cluster from the **host cluster**, you need to make `jwtSecret` the same between them. Therefore, get it first by excuting the following command on the **host cluster**.
 
 ```bash
 kubectl -n kubesphere-system get cm kubesphere-config -o yaml | grep -v "apiVersion" | grep jwtSecret
@@ -82,11 +84,11 @@ jwtSecret: "gfIwilcc0WjNGKJ5DLeksf2JKfcLgTZU"
 
 {{< tab "KubeSphere has been installed" >}}
 
-If you already have a standalone KubeSphere installed, you can set the value of  `clusterRole` to `member` by editing the cluster configuration. You need to **wait for a while** so that the change can take effect.
+If you already have a standalone KubeSphere cluster installed, you can set the value of  `clusterRole` to `member` by editing the cluster configuration.
 
-- Option A - Use Web Console:
+- Option A - Use the web console:
 
-  Use `admin` account to log in the console and go to **CRDs** on the **Cluster Management** page. Enter the keyword `ClusterConfiguration` and go to its detail page. Edit the YAML of `ks-installer`, which is similar to [Enable Pluggable Components](../../../pluggable-components/).
+  Use the  `admin` account to log in to the console and go to **CRDs** on the **Cluster Management** page. Enter the keyword `ClusterConfiguration` and go to its detail page. Edit the YAML of `ks-installer`, which is similar to [Enable Pluggable Components](../../../pluggable-components/).
 
 - Option B - Use Kubectl:
 
@@ -94,7 +96,7 @@ If you already have a standalone KubeSphere installed, you can set the value of 
   kubectl edit cc ks-installer -n kubesphere-system
   ```
 
-Input the corresponding `jwtSecret` shown above:
+In the YAML file of `ks-installer`, input the corresponding `jwtSecret` shown above:
 
 ```yaml
 authentication:
@@ -108,23 +110,29 @@ multicluster:
   clusterRole: member
 ```
 
+You need to **wait for a while** so that the change can take effect.
+
 {{</ tab >}}
 
 {{< tab "KubeSphere has not been installed" >}}
 
-There is no big difference than installing a standalone KubeSphere if you define a member cluster before installation. Please note that the `clusterRole` in `config-sample.yaml` or `cluster-configuration.yaml` has to be set as follows:
+You can define a member cluster before you install KubeSphere either on Linux or on an existing Kubernetes cluster. If you want to [install KubeSphere on Linux](../../../installing-on-linux/introduction/multioverview/#1-create-an-example-configuration-file), you use a `config-sample.yaml` file. If you want to [install KubeSphere on an existing Kubernetes cluster](../../../installing-on-kubernetes/introduction/overview/#deploy-kubesphere), you use two YAML files, one of which is `cluster-configuration.yaml`. To set a member cluster, input the value of `jwtSecret` shown above and change the value of `clusterRole` to `member` in `config-sample.yaml` or `cluster-configuration.yaml` accordingly before you install KubeSphere.
 
 ```yaml
 authentication:
   jwtSecret: gfIwilcc0WjNGKJ5DLeksf2JKfcLgTZU
 ```
 
-Scroll down and set the value of `clusterRole` to `member`:
-
 ```yaml
 multicluster:
   clusterRole: member
 ```
+
+{{< notice note >}}
+
+If you install KubeSphere on a single-node cluster ([All-in-One](../../../quick-start/all-in-one-on-linux/)), you do not need to create a `config-sample.yaml` file. In this case, you can set a member cluster after KubeSphere is installed.
+
+{{</ notice >}} 
 
 {{</ tab >}}
 
@@ -136,21 +144,26 @@ You can use **kubectl** to retrieve the installation logs to verify the status b
 kubectl logs -n kubesphere-system $(kubectl get pod -n kubesphere-system -l app=ks-install -o jsonpath='{.items[0].metadata.name}') -f
 ```
 
-### Import Cluster
+## Import a Member Cluster
 
-1. Open the H Cluster dashboard and click **Add Cluster**.
-  ![Add Cluster](https://ap3.qingstor.com/kubesphere-website/docs/20200827231611.png)
+1. Log in to the KubeSphere console as `admin` and click **Add Cluster** on the **Clusters Management** page.
+   
+   ![add-cluster](/images/docs/multicluster-management/enable-multicluster-management-in-kubesphere/direct-connection/add-cluster.png)
 
 2. Enter the basic information of the cluster to be imported and click **Next**.
-  ![Import Cluster](https://ap3.qingstor.com/kubesphere-website/docs/20200827211842.png)
 
-3. In **Connection Method**, select **Direct Connection to Kubernetes cluster**.  
+     ![cluster-info](/images/docs/multicluster-management/enable-multicluster-management-in-kubesphere/direct-connection/cluster-info.png)
 
-4. [Retrieve the KubeConfig](../retrieve-kubeconfig), copy the KubeConfig of the Member Cluster and paste it into the box.
-  {{< notice tip >}}
-  Please make sure the `server` address in KubeConfig is accessible on any node of the H Cluster.
-  {{</ notice >}}
-  ![import a cluster - direct connection](/images/docs/direct_import_en.png)
+3. In **Connection Method**, select **Direct Connection to Kubernetes cluster**, copy the KubeConfig of the member cluster and paste it into the box.
 
-5. Click **Import** and wait for cluster initialization to finish.
-  ![Azure AKS](https://ap3.qingstor.com/kubesphere-website/docs/20200827231650.png)
+     {{< notice note >}}
+
+Make sure the `server` address in KubeConfig is accessible on any node of the host cluster.
+
+     {{</ notice >}}
+    
+     ![kubeconfig](/images/docs/multicluster-management/enable-multicluster-management-in-kubesphere/direct-connection/kubeconfig.jpg)
+
+4. Click **Import** and wait for cluster initialization to finish.
+   
+     ![cluster-imported](/images/docs/multicluster-management/enable-multicluster-management-in-kubesphere/direct-connection/cluster-imported.png)

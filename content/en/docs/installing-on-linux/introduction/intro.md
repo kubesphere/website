@@ -2,76 +2,60 @@
 title: "Overview"
 keywords: 'Kubernetes, KubeSphere, Linux, Installation'
 description: 'Overview of Installing KubeSphere on Linux'
-
 linkTitle: "Overview"
-weight: 2110
+weight: 3110
 ---
 
-For the installation on Linux, KubeSphere can be installed both in clouds and in on-premises environments, such as AWS EC2, Azure VM and bare metal. Users can install KubeSphere on Linux hosts as they provision fresh Kubernetes clusters. The installation process is easy and friendly. Meanwhile, KubeSphere offers not only the online installer, or [KubeKey](https://github.com/kubesphere/kubekey), but also an air-gapped installation solution for the environment with no Internet access.
+As an open-source project on [GitHub](https://github.com/kubesphere), KubeSphere is home to a community with thousands of users. Many of them are running KubeSphere for their production workloads. For the installation on Linux, KubeSphere can be deployed both in clouds and in on-premises environments, such as AWS EC2, Azure VM and bare metal.
 
-As an open-source project on [GitHub](https://github.com/kubesphere), KubeSphere is home to a community with thousands of users. Many of them are running KubeSphere for their production workloads.
+The installation process is easy and friendly as KubeSphere provides users with [KubeKey](https://github.com/kubesphere/kubekey), a lightweight installer that supports the installation of Kubernetes, KubeSphere and related add-ons. KubeKey not only helps users to create clusters online but also serves as an air-gapped installation solution for the environment with no Internet access.
 
-Users are provided with multiple installation options. Please note not all options are mutually exclusive. For instance, you can deploy KubeSphere with minimal packages on multiple nodes in an air-gapped environment.
+Here is a list of available installation options.
 
-- [All-in-One](../../../quick-start/all-in-one-on-linux/): Install KubeSphere on a single node. It is only for users to quickly get familiar with KubeSphere.
-- [Multi-Node](../multioverview/): Install KubeSphere on multiple nodes. It is for testing or development.
-- [Air-gapped Installation on Linux](../air-gapped-installation): All images of KubeSphere have been encapsulated into a package. It is convenient for air-gapped installation on Linux machines.
-- High Availability Installation: Install high availability KubeSphere on multiple nodes which is used for the production environment.
+- [All-in-one installation](../../../quick-start/all-in-one-on-linux/): Install KubeSphere on a single node. It is only for users to quickly get familiar with KubeSphere.
+- [Multi-node installation](../multioverview/): Install KubeSphere on multiple nodes. It is for testing or development.
+- [Air-gapped installation on Linux](../air-gapped-installation): All images of KubeSphere have been encapsulated into a package. It is convenient for air-gapped installation on Linux machines.
+- [High availability installation](../ha-configuration/): Install a highly-available KubeSphere cluster with multiple nodes which is used for the production environment.
 - Minimal Packages: Only install the minimum required system components of KubeSphere. Here is the minimum resource requirement:
-  - 2vCPUs
+  - 2 CPUs
   - 4GB RAM
   - 40GB Storage
 - [Full Packages](../../../pluggable-components/): Install all available system components of KubeSphere such as DevOps, service mesh, and alerting.
 
-For the installation on Kubernetes, see Overview of Installing on Kubernetes.
+{{< notice note >}}
+
+Not all options are mutually exclusive. For instance, you can deploy KubeSphere with the minimal package on multiple nodes in an air-gapped environment.
+
+{{</ notice >}} 
+
+If you have an existing Kubernetes cluster, see [Overview of Installing on Kubernetes](../../../installing-on-kubernetes/introduction/overview/).
 
 ## Before Installation
 
-- As images will be pulled and operating systems will be downloaded from the Internet, your environment must have Internet access. Otherwise, you need to use the air-gapped installer instead.
+- As images will be pulled from the Internet, your environment must have Internet access. Otherwise, you need to [install KubeSphere in an air-gapped environment](../air-gapped-installation/).
 - For all-in-one installation, the only one node is both the master and the worker.
-- For multi-node installation, you need to specify the node roles in the configuration file before installation.
-- Your linux host must have OpenSSH Server installed.
-- Please check [Port Requirements](../port-firewall) before installation.
+- For multi-node installation, you need to provide host information in a configuration file.
+- Your Linux host must have OpenSSH Server installed.
+- See [Port Requirements](../port-firewall) before installation.
 
 ## KubeKey
 
-Developed in Go language, KubeKey represents a brand-new installation tool as a replacement for the ansible-based installer used before. KubeKey provides users with flexible installation choices, as they can install KubeSphere and Kubernetes separately or install them at one time, which is convenient and efficient.
+Developed in Go language, KubeKey represents a brand-new installation tool as a replacement for the ansible-based installer used before. KubeKey provides users with flexible installation choices, as they can install KubeSphere and Kubernetes separately or install them together, which is convenient and efficient.
 
-Three scenarios to use KubeKey:
+There are several scenarios to use KubeKey:
 
 - Install Kubernetes only;
 - Install Kubernetes and KubeSphere together in one command;
-- Install Kubernetes first, and deploy KubeSphere on it using [ks-installer](https://github.com/kubesphere/ks-installer).
-
-{{< notice note >}}
-
-If you have existing Kubernetes clusters, please refer to [Installing on Kubernetes](../../../installing-on-kubernetes/).
-
-{{</ notice >}} 
+- Install Kubernetes first, and deploy KubeSphere on it using [ks-installer](https://github.com/kubesphere/ks-installer);
+- Scale a cluster;
+- Upgrade a cluster;
+- Install Kubernetes-related add-ons (Chart or YAML).
 
 ## Quick Installation for Development and Testing
 
 KubeSphere has decoupled some components since v2.1.0. KubeKey only installs necessary components by default as this way features fast installation and minimal resource consumption. If you want to enable enhanced pluggable functionalities, see [Enable Pluggable Components](../../../pluggable-components/) for details.
 
-The quick installation of KubeSphere is only for development or testing since it uses local volume for storage by default. If you want a production installation, see HA Cluster Configuration.
-
-- **All-in-one**. It means a single-node hassle-free installation with just one command.
-- **Multi-node**. It allows you to install KubeSphere on multiple instances using the default storage class (local volume), which means it is not required to install storage server such as Ceph and GlusterFS.
-
-{{< notice note >}}
-
-For air-gapped installation, please refer to [this tutorial](../air-gapped-installation/).
-
-{{</ notice >}} 
-
-## Install HA KubeSphere on Linux
-
-KubeKey allows users to install a highly available cluster for production. Users need to configure load balancers and persistent storage services in advance.
-
-- [Persistent Storage Configuration](../storage-configuration): By default, KubeKey uses [Local Volume](https://kubernetes.io/docs/concepts/storage/volumes/#local) based on [openEBS](https://openebs.io/) to provide storage services with dynamic provisioning in Kubernetes clusters. It is convenient for the quick installation of a testing environment. In a production environment, it must have a storage server set up. Please refer to [Persistent Storage Configuration](../storage-configuration) for details.
-- Load Balancer Configuration for HA installation: Before you get started with multi-node installation in a production environment, you need to configure load balancers. Cloud load balancers, Nginx and `HAproxy + Keepalived` all work for the installation.
-
-For more information, see HA Cluster Configuration. You can also see the specific step of HA installations across major cloud providers in Installing on Public Cloud.
+The quick installation of KubeSphere is only for development or testing since it uses [Local Volume](https://kubernetes.io/docs/concepts/storage/volumes/#local) based on [openEBS](https://openebs.io/) to provide storage services by default. If you want a production installation, see [High Availability Configurations](../ha-configuration/).
 
 ## Overview of Pluggable Components
 
@@ -79,34 +63,24 @@ KubeSphere has decoupled some core feature components since v2.1.0. These compon
 
 ![Pluggable Components](https://pek3b.qingstor.com/kubesphere-docs/png/20191207140846.png)
 
-## Storage Configuration Instruction
+## Storage Configurations
 
-The following links explain how to configure different types of persistent storage services. Please refer to [Storage Configuration Instruction](../storage-configuration) for detailed instructions regarding how to configure the storage class in KubeSphere.
+KubeSphere allows you to configure persistent storage services both before and after installation. Meanwhile, KubeSphere supports a variety of open-source storage solutions (for example, Ceph and GlusterFS) as well as commercial storage products. Refer to [Persistent Storage Configurations](../storage-configuration) for detailed instructions regarding how to configure the storage class before you install KubeSphere.
 
-- [NFS](https://kubernetes.io/docs/concepts/storage/volumes/#nfs)
-- [GlusterFS](https://www.gluster.org/)
-- [Ceph RBD](https://ceph.com/)
-- [QingCloud Block Storage](https://docs.qingcloud.com/product/storage/volume/)
-- [QingStor NeonSAN](https://docs.qingcloud.com/product/storage/volume/super_high_performance_shared_volume/)
+For more information about how to set different storage classes for your workloads after you install KubeSphere, see [Persistent Volumes and Storage Classes](../../../cluster-administration/persistent-volume-and-storage-class/).
 
 ## Cluster Operation and Maintenance
 
-### Add New Nodes
+### Add new nodes
 
-With KubeKey, you can scale the number of nodes to meet higher resource needs after the installation, especially in a production environment. For more information, see [Add New Nodes](../../../installing-on-linux/cluster-operation/add-new-nodes/).
+With KubeKey, you can increase the number of nodes to meet higher resource needs after the installation, especially in a production environment. For more information, see [Add New Nodes](../../../installing-on-linux/cluster-operation/add-new-nodes/).
 
-### Remove Nodes
+### Remove nodes
 
-You need to drain a node before you remove. For more information, see Remove Nodes.
-
-### Add New Storage Classes
-
-KubeKey allows you to set a new storage class after the installation. You can set different storage classes for KubeSphere itself and your workloads.
-
-For more information, see Add New Storage Classes.
+You need to drain a node before you remove it. For more information, see [Remove Nodes](../../../installing-on-linux/cluster-operation/remove-nodes/).
 
 ## Uninstalling
 
-Uninstalling KubeSphere means it will be removed from the machines, which is irreversible. Please be cautious with the operation.
+Uninstalling KubeSphere means it will be removed from your machine, which is irreversible. Please be cautious with the operation.
 
-For more information, see [Uninstalling](../../../installing-on-linux/uninstalling/uninstalling-kubesphere-and-kubernetes/).
+For more information, see [Uninstall KubeSphere and Kubernetes](../../../installing-on-linux/uninstall-kubesphere-and-kubernetes/).

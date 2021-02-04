@@ -1,44 +1,50 @@
 ---
-title: "Upload Helm-based Application"
-keywords: "kubernetes, helm, kubesphere, openpitrix, application"
-description: "Upload Helm-based Application"
-
-linkTitle: "Upload Helm-based Application"
-weight: 50
+title: "Upload Helm-based Applications"
+keywords: "Kubernetes, helm, KubeSphere, openpitrix, application"
+description: "How to upload Helm-based applications to KubeSphere."
+linkTitle: "Upload Helm-based Applications"
+weight: 9200
 ---
 
-KubeSphere provides full lifecycle management for applications. You can upload or create new app templates and test them quickly. In addition, you can publish your apps to [App Store](../../application-store/) so that other users can deploy with one click. You can upload [Helm Chart](https://helm.sh/) to develop app templates.
+KubeSphere provides full lifecycle management for applications. Among other things, workspace administrators can upload or create new app templates and test them quickly. Furthermore, they publish well-tested apps to [App Store](../../application-store/) so that other users can deploy them with one click. To develop app templates, workspace administrators need to upload packaged [Helm charts](https://helm.sh/) to KubeSphere first.
+
+This tutorial demonstrates how to develop an app template by uploading a packaged Helm chart.
 
 ## Prerequisites
 
-You need to create a workspace and `project-admin` account. Please refer to the [Create Workspace, Project, Account and Role](../../quick-start/create-workspace-and-project/) if not yet.
+- You need to enable the [KubeSphere App Store (OpenPitrix)](../../pluggable-components/app-store/).
+- You need to create a workspace and a user account (`project-admin`). The account must be invited to the workspace with the role of `workspace-self-provisioner`. For more information, refer to [Create Workspaces, Projects, Accounts and Roles](../../quick-start/create-workspace-and-project/).
 
 ## Hands-on Lab
 
-1. Sign in with `project-admin` account. Go to the workspace, open `Apps Management` and go to `App Templates`, then click the `Create` button.
+1. Log in to KubeSphere as `project-admin`. In your workspace, go to **App Templates** under **Apps Management**, and click **Upload Template**. 
 
-    ![Create App Template](/images/application-templates/create-app.png)
+    ![upload-app-template](/images/docs/workspace-administration/upload-helm-based-application/upload-app-template.jpg)
 
-2. Click the `Upload` button.
+2. In the dialog that appears, click **Upload Helm Chart Package**. You can upload your own Helm chart or download the [Nginx chart](/files/application-templates/nginx-0.1.0.tgz) and use it as an example for the following steps.
 
-    ![Upload](/images/application-templates/upload-app1.png)
+    ![upload-helm](/images/docs/workspace-administration/upload-helm-based-application/upload-helm.jpg)
 
-3. Assuming you've already developed a Helm chart locally, or you can download the example [Nginx package](/files/application-templates/nginx-0.1.0.tgz) here.
+3. After the package is uploaded, click **OK** to continue.
 
-    ![Upload Nginx](/images/application-templates/upload-app2.png)
+    ![confirm-upload](/images/docs/workspace-administration/upload-helm-based-application/confirm-upload.jpg)
 
-4. Select the Helm chart file you have finished developing locally and click `OK` to proceed to the next step.
+4. Basic information of the app displays under **App Info**. To upload an icon for the app, click **Upload icon**. You can also skip it and click **OK** directly.
 
-    ![Upload Nginx](/images/application-templates/upload-app3.png)
+    ![upload-icon](/images/docs/workspace-administration/upload-helm-based-application/upload-icon.jpg)
+    
+    {{< notice note >}}
 
-    ![Upload Nginx](/images/application-templates/upload-app4.png)
+Maximum accepted resolutions of the app icon: 96 x 96 pixels.
 
-5. Now that you have successfully uploaded a Helm package, you can click on its name to go to its detail page.
+{{</ notice >}}
 
-    ![App list](/images/application-templates/app-list.png)
+5. The app displays in the template list with the status **draft** after successfully uploaded, which means this app is under development. The uploaded app is visible to all members in the same workspace.
 
-6. On the versions list tab, you can click on the corresponding version to test the deployment.
+    ![draft-app](/images/docs/workspace-administration/upload-helm-based-application/draft-app.jpg)
 
-    ![App detail page](/images/application-templates/app-detail-test-deploy.png)
+6. Click the app and the page opens with the **Versions** tab selected. Click the draft version to expand the menu, where you can see options to delete the version, test it, or submit it for review.
 
-You can also publish your application to App Store by following the [tutorial](../../application-store/app-lifecycle-management/) once you've fully tested your application.
+    ![version-page](/images/docs/workspace-administration/upload-helm-based-application/version-page.jpg)
+
+7. For more information about how to release your app to the App Store, refer to [Application Lifecycle Management](../../application-store/app-lifecycle-management/#step-2-upload-and-submit-application).

@@ -4,7 +4,7 @@ keywords: "kubesphere, kubernetes, docker, tencent, tke"
 description: "介绍如何在腾讯云 TKE 上部署 KubeSphere 3.0"
 
 
-weight: 2250
+weight: 4270
 ---
 
 本指南将介绍如何在[腾讯云 TKE](https://cloud.tencent.com/document/product/457/6759) 上部署并使用 KubeSphere 3.0.0 平台。
@@ -14,8 +14,9 @@ weight: 2250
 ### 创建 Kubernetes 集群
 首先按使用环境的资源需求[创建 Kubernetes 集群](https://cloud.tencent.com/document/product/457/32189)，满足以下一些条件即可（如已有环境并满足条件可跳过本节内容）：
 
-- KubeSphere 3.0.0 默认支持的 Kubernetes 版本为 `1.15.x`, `1.16.x`, `1.17.x`, `1.18.x`，需要选择其中支持的版本进行集群创建（如 `1.16.3`, `1.18.4`）；
-- 工作节点机型配置规格方面选择 `SA2.LARGE8` 的 `4核｜8GB` 配置即可，并按需扩展工作节点数量（通常生产环境需要 3 个及以上工作节点）。
+- KubeSphere 3.0.0 默认支持的 Kubernetes 版本为 `1.15.x`, `1.16.x`, `1.17.x`, `1.18.x`，需要选择其中支持的版本进行集群创建（如 `1.16.3`, `1.18.4`）。
+- 如果老集群版本不大于1.15.0，需要操作控制台先升级master节点然后升级node节点，依次升级至符合要求版本即可。
+- 工作节点机型配置规格方面选择 `标准型S5` 的 `4核｜8GB` 配置即可，并按需扩展工作节点数量（通常生产环境需要 3 个及以上工作节点）。
 
 ### 创建公网 kubectl 证书
 
@@ -41,16 +42,43 @@ Server Version: version.Info{Major:"1", Minor:"18+", GitVersion:"v1.18.4-tke.2",
 - 使用 kubectl 执行以下命令安装 KubeSphere：
 
 ```bash
-kubectl apply -f https://raw.githubusercontent.com/kubesphere/ks-installer/master/deploy/kubesphere-installer.yaml
+kubectl apply -f https://github.com/kubesphere/ks-installer/releases/download/v3.0.0/kubesphere-installer.yaml
 ```
 
-- 本地创建名为 `cluster-configuration.yaml` 的文件：
+- 下载集群配置文件
+
+```bash
+wget https://github.com/kubesphere/ks-installer/releases/download/v3.0.0/cluster-configuration.yaml
+```
+
+  {{< notice tip >}}
+
+腾讯云创建云硬盘大小必须为 10 的倍数，且普通云硬盘/高性能云硬盘最小是 10G，SSD/HSSD 云硬盘最小是 20G。Kubernetes 集群创建完成后会自动创建好普通云硬盘的 StoragClass，这里示例将直接使用默认的普通云硬盘。
+
+  {{</ notice >}}
+
+- 修改集群配置文件，PVC 修改为 10G 的倍数（1倍n倍都可以），其他可拔插组件如果开启也需要调整，开启哪个调整哪个即可，默认最小化安装未开启可插拔组件。
 
 ```bash
 vim cluster-configuration.yaml
+//默认值
+  common:
+    mysqlVolumeSize: 20Gi # MySQL PVC size.
+    minioVolumeSize: 20Gi # Minio PVC size.
+    etcdVolumeSize: 20Gi  # etcd PVC size.
+    openldapVolumeSize: 2Gi   # openldap PVC size.
+    redisVolumSize: 2Gi # Redis PVC size.
+
+//修改后的值，PVC 为 10G 的倍数（1倍n倍都可以），其他可拔插组件如果开启也需要调整
+  common:
+    mysqlVolumeSize: 20Gi # MySQL PVC size.
+    minioVolumeSize: 20Gi # Minio PVC size.
+    etcdVolumeSize: 20Gi  # etcd PVC size.
+    openldapVolumeSize: 10Gi   # openldap PVC size.
+    redisVolumSize: 10Gi # Redis PVC size.
 ```
 
-- 复制此[文件](https://raw.githubusercontent.com/kubesphere/ks-installer/master/deploy/cluster-configuration.yaml)中的内容到 `cluster-configuration.yaml` 中，默认最小化安装未开启可插拔组件，然后执行以下命令：
+- 然后执行以下命令部署：
 
 ```bash
 kubectl apply -f cluster-configuration.yaml
@@ -97,7 +125,20 @@ kubectl logs -n kubesphere-system $(kubectl get pod -n kubesphere-system -l app=
 
 ![console.png](/images/docs/tencent-tke/console.png)
 
+
+{{< notice tip >}}
+
+若您用 admin 账号无法登录控制台，界面显示 “Internal error occurred: account is not active” 且 `ks-controller-manager` pod 日志显示 “tls: bad certificate”，则需要更新一下 `ks-controller-manager` 的证书：
+
+```bash
+kubectl apply -f https://raw.githubusercontent.com/kubesphere/ks-installer/2c4b479ec65110f7910f913734b3d069409d72a8/roles/ks-core/prepare/files/ks-init/users.iam.kubesphere.io.yaml
+kubectl apply -f https://raw.githubusercontent.com/kubesphere/ks-installer/2c4b479ec65110f7910f913734b3d069409d72a8/roles/ks-core/prepare/files/ks-init/webhook-secret.yaml
+kubectl -n kubesphere-system rollout restart deploy ks-controller-manager
+```
+
+{{</ notice >}}
+
 ### 通过 KubeSphere 开启附加组件
-KubeSphere 平台外网可访问后，接下来的操作即可都在平台内完成。开启附加组件的操作可以参考社区文档 - `KubeSphere 3.0 界面开启可插拔组件安装`。
+以上示例演示了默认的最小安装过程，要在 KubeSphere 中启用其他组件，请参阅[启用可插拔组件](../../../pluggable-components/)。
 全部附加组件开启并安装成功后，进入集群管理界面，可以得到如下界面呈现效果，特别是在 `服务组件` 部分可以看到已经开启的各个基础和附加组件：
 ![console-full.png](/images/docs/tencent-tke/console-full.png)

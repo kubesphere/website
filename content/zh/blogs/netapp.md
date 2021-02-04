@@ -41,13 +41,13 @@ snapshot: 'https://pek3b.qingstor.com/kubesphere-docs/png/20190930151339.png'
 
 * 下载安装包trident-installer-19.07.0.tar.gz，解压进入trident-installer目录，执行trident安装指令:
 
-```
+```bash
 $ ./tridentctl install -n trident
 ```
 
 * 结合ontap的提供的参数创建第一个后端vi backend.json。
 
-```
+```json
 {
     "version": 1,
     "storageDriverName": "ontap-nas",
@@ -62,7 +62,7 @@ $ ./tridentctl install -n trident
 
 * 生成后端卷
 
-```
+```bash
 $ ./tridentctl -n trident create backend -f backend.json
 ```
 
@@ -70,7 +70,7 @@ $ ./tridentctl -n trident create backend -f backend.json
 
 **storage-class-ontapnas.yaml**
 
-```
+```yaml
 apiVersion: storage.k8s.io/v1
 kind: StorageClass
 metadata:
@@ -86,7 +86,7 @@ parameters:
 
 * 在 Kubernetes 集群中创建名为 `kubesphere-system` 和 `kubesphere-monitoring-system` 的 namespace。
 
-```
+```bash
 $ cat <<EOF | kubectl create -f -
 ---
 apiVersion: v1
@@ -103,7 +103,7 @@ EOF
 
 * 创建 Kubernetes 集群 CA 证书的 Secret。
 
-```
+```bash
 $ kubectl -n kubesphere-system create secret generic kubesphere-ca  \
 --from-file=ca.crt=/etc/kubernetes/pki/ca.crt  \
 --from-file=ca.key=/etc/kubernetes/pki/ca.key
@@ -111,16 +111,18 @@ $ kubectl -n kubesphere-system create secret generic kubesphere-ca  \
 
 * 若 etcd 已经配置过证书，则参考如下创建（以下命令适用于 Kubeadm 创建的 Kubernetes 集群环境）：
 
-```
+```bash
 $ kubectl -n kubesphere-monitoring-system create secret generic kube-etcd-client-certs  \
 --from-file=etcd-client-ca.crt=/etc/kubernetes/pki/etcd/ca.crt  \
 --from-file=etcd-client.crt=/etc/kubernetes/pki/etcd/healthcheck-client.crt  \
 --from-file=etcd-client.key=/etc/kubernetes/pki/etcd/healthcheck-client.key
 ```
 
-* 修改kubesphere.yaml中存储的设置参数和对应的参数即可
+* 修改kubesphere.yaml中存储的设置参数和对应的参数即可。
 
-`kubectl apply -f kubesphere.yaml`
+```bash
+kubectl apply -f kubesphere.yaml
+```
 
 * 访问 KubeSphere UI 界面，默认帐密：`admin/P@88w0rd`。
 

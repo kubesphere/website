@@ -5,7 +5,7 @@ layout: "single"
 
 linkTitle: "Multi-cluster Management"
 
-weight: 3000
+weight: 5000
 
 icon: "/images/docs/docs.svg"
 ---
@@ -18,7 +18,7 @@ This chapter demonstrates how to use the multi-cluster feature of KubeSphere to 
 
 Gain a basic understanding of multi-cluster management, such as its common use cases, and the benefits that KubeSphere can bring with its multi-cluster feature.
 
-### [Kubernetes Federation in KubeSphere](../multicluster-management/introduction/kubefed-in-kubesphere/)
+### [KubeSphere Federation](../multicluster-management/introduction/kubefed-in-kubesphere/)
 
 Understand the fundamental concept of Kubernetes federation in KubeSphere, including M clusters and H clusters.
 
@@ -52,11 +52,6 @@ Learn how to import an Amazon Elastic Kubernetes Service cluster.
 
 Learn how to import a Kubernetes cluster created with kubeadm.
 
-## Remove Cluster
-
-### [Remove a Cluster from KubeSphere](../multicluster-management/remove-cluster/kubefed-in-kubesphere/)
+## [Unbind a Cluster](../multicluster-management/unbind-cluster/)
 
 Learn how to unbind a cluster from your cluster pool in KubeSphere.
-
-
-

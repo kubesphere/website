@@ -5,7 +5,7 @@ layout: "single"
 
 linkTitle: "多集群管理"
 
-weight: 3000
+weight: 5000
 
 icon: "/images/docs/docs.svg"
 ---
@@ -14,15 +14,15 @@ icon: "/images/docs/docs.svg"
 
 本章演示如何使用 KubeSphere 的多集群功能导入异构集群以进行统一的管理。
 
-### [概要](../multicluster-management/introduction/overview/)
+### [概述](../multicluster-management/introduction/overview/)
 
 对多集群管理有个基本的了解，例如多集群管理的常见用例，以及 KubeSphere 可以通过多集群功能带来的好处。
 
-### [KubeSphere 中的 Kubernetes 联邦](../multicluster-management/introduction/kubefed-in-kubesphere/)
+### [KubeSphere 联邦](../multicluster-management/introduction/kubefed-in-kubesphere/)
 
 了解 KubeSphere 中的 Kubernetes 联邦的基本概念，包括 M 集群和 H 集群。
 
-## 直接连接
+## 启用多集群
 
 ### [直接连接](../multicluster-management/enable-multicluster/direct-connection/)
 
@@ -52,11 +52,6 @@ icon: "/images/docs/docs.svg"
 
 了解如何导入通过 kubeadm 创建的 Kubernetes 集群。
 
-## 删除集群
-
-### [从 KubeSphere 删除集群](../multicluster-management/remove-cluster/kubefed-in-kubesphere/)
+## [解绑集群](../multicluster-management/unbind-cluster/)
 
 了解如何从 KubeSphere 的集群池中解除集群的绑定。
-
-
-

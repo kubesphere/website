@@ -1,6 +1,6 @@
 ---
-linkTitle: "Cluster-wide Alerting and Notification"
-weight: 2000
+linkTitle: "集群告警和通知"
+weight: 8500
 
 _build:
     render: false

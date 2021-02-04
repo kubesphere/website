@@ -33,14 +33,14 @@ section2:
 
     - title: 为什么我们选择 KubeSphere
       contentList:
-        - content: 借助 KubeSphere 提供的对开发者友好的向导式操作界面，我们能轻松地监控从基础设施到应用程序的资源消耗情况。由此，ZaloPay 商户平台在 KubeSphere 上也已经稳定运行了半年。KubeSphere 提供了一系列功能，整合并打包了云原生技术栈，例如开箱即用的应用程序生命周期管理功能、监控日志、多租户以及告警通知等。由于每个功能和组件都可拔插，我们可以根据自己的需求去启用。
+        - content: 借助 KubeSphere 提供的对开发者友好的向导式操作界面，我们能轻松地监控从基础设施到应用程序的资源消耗情况。由此，ZaloPay 商户平台在 KubeSphere 上也已经稳定运行了半年。KubeSphere 提供了一系列功能，整合并打包了云原生技术栈，例如开箱即用的应用程序生命周期管理功能、监控日志、多租户以及告警通知等。由于每个功能和组件都可插拔，我们可以根据自己的需求去启用。
       image: https://pek3b.qingstor.com/kubesphere-docs/png/20200619224814.png
 
     - type: 1
       contentList:
         - content: 对开发者友好的 Web 控制台
         - content: 多维度监控功能
-        - content: 功能丰富且可拔插
+        - content: 功能丰富且可插拔
 
     - title: 如何实现 DevOps
       contentList:

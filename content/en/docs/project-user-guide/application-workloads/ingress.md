@@ -3,7 +3,7 @@ title: "Routes"
 keywords: "kubesphere, kubernetes, route, ingress"
 description: "How to create a route in KubeSphere"
 
-weight: 2260
+weight: 10270
 ---
 
 Route is the kubernetes [Ingress](https://kubernetes.io/docs/concepts/services-networking/ingress/#what-is-ingress).

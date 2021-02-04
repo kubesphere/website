@@ -1,6 +1,6 @@
 ---
-linkTitle: "Installing on On-premises Kubernetes"
-weight: 2300
+linkTitle: "在本地 Kubernetes 上安装"
+weight: 4300
 
 _build:
     render: false

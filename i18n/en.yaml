@@ -80,9 +80,36 @@
   translation: Warning
 - id: Search Documentation
   translation: Search Documentation
+<<<<<<< HEAD
 - id: ALL
   translation: ALL
 - id: Watch replay
   translation: Watch replay
 - id: View details
   translation: View details
+=======
+- id: Course theme
+  translation: Course theme
+- id: Course benefits
+  translation: Course benefits
+- id: Video tutorial
+  translation: Video tutorial
+- id: Graphic Course
+  translation: Graphic Course
+- id: Start learning
+  translation: Start learning
+- id: View graphic
+  translation: View graphic
+- id: Apply for the job
+  translation: Apply for the job
+- id: View more jobs
+  translation: View more jobs
+- id: Cloud Native Technology Class
+  translation: Cloud Native Technology Class
+- id: warnGraphic explanation
+  translation: Graphic explanation
+- id: PPT courseware
+  translation: PPT courseware
+- id: Self-test
+  translation: Self-test
+>>>>>>> d4a6636bac745647faa029e1e080542e9b423fda
