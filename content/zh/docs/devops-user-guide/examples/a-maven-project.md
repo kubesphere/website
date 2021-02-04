@@ -1,30 +1,30 @@
 ---
-title: "How to Build and Deploy a Maven Project"
+title: "构建和部署 Maven 工程"
 keywords: 'kubernetes, docker, devops, jenkins, maven'
-description: ''
-linkTitle: "Build And Deploy A Maven Project"
+description: '如何构建和部署 Maven 工程'
+linkTitle: "构建和部署 Maven 工程"
 weight: 11430
 ---
 
-## Prerequisites
+## 准备工作
 
-- You need to [enable KubeSphere DevOps System](../../../../docs/pluggable-components/devops/).
-- You need to create [DockerHub](http://www.dockerhub.com/) account.
-- You need to create a workspace, a DevOps project, and a user account, and this account needs to be invited into the DevOps project as the role of `maintainer`.
+- 您需要[启用 KubeSphere DevOps 系统](../../../pluggable-components/devops/)。
+- 您需要有一个 [Docker Hub](http://www.dockerhub.com/) 帐户。
+- 您需要创建一个企业空间、一个 DevOps 工程和一个用户帐户，并需要邀请该帐户至 DevOps 工程中并赋予 `operator` 角色。有关更多信息，请参见[创建企业空间、项目、帐户和角色](../../../quick-start/create-workspace-and-project/)。
 
-## Workflow for Maven Project
+## Maven 工程的工作流
 
-As is shown in the graph, there is the workflow for a Maven project in KubeSphere DevOps, which uses the pipeline of Jenkins to build and deploy the Maven project. All steps are defined in the pipeline.
+KubeSphere DevOps 中有针对 Maven 工程的工作流，如下图所示，它使用 Jenkins 流水线来构建和部署 Maven 工程。所有步骤均在流水线中进行定义。
 
-When running, Jenkins Master creates a Pod to run the pipeline. Kubernetes creates the Pod as the agent of Jenkins Master, and the Pod will be destoryed after pipeline finished. The main process is to clone code, build & push image, and deploy the workload.
+![maven-project-jenkins](/images/docs/zh-cn/devops-user-guide/examples/build-and-deploy-maven-project/maven-project-jenkins.png)
 
-![workflow](/images/devops/maven-project-jenkins.png)
+首先，Jenkins Master 创建一个 Pod 来运行流水线。Kubernetes 创建 Pod 作为 Jenkins Master 的 Agent，该 Pod 会在流水线完成之后进行销毁。主要流程包括克隆代码、构建和推送镜像以及部署工作负载。
 
-## Default Configurations in Jenkins
+## Jenkins 中的默认配置
 
-### Maven Version
+### Maven 版本
 
-Execute the following command in the Maven builder container to get version info.
+在 Maven 构建器 (Builder) 容器中执行以下命令获取版本信息。
 
 ```bash
 mvn --version
@@ -36,136 +36,134 @@ Java home: /usr/lib/jvm/java-1.8.0-openjdk-1.8.0.232.b09-0.el7_7.i386/jre
 Default locale: en_US, platform encoding: UTF-8
 ```
 
-### Maven Cache
+### Maven 缓存
 
-Jenkins Agent mounts the directories by Docker Volume on the node. So the pipeline can cache some spicial directory such as `/root/.m2`, which is used for the Maven building and the default cache directory for Maven tools in KubeSphere DevOps so that the dependency packages are downloaded and cached on the node.
+Jenkins Agent 通过节点上的 Docker 存储卷 (Volume) 挂载目录。流水线可以缓存一些特殊目录，例如 `/root/.m2`，这些特殊目录用于 Maven 构建并在 KubeSphere DevOps 中用作 Maven 工具的默认缓存目录，以便依赖项包下载和缓存到节点上。
 
-### Global Maven Settings in Jenkins Agent
+### Jenkins Agent 中的全局 Maven 设置
 
-The default Maven settings file path is `maven` and the configuration file path is `/opt/apache-maven-3.5.3/conf/settings.xml`. Execute the following command to get the content of Maven settings.
+Maven 设置的默认文件路径是 `maven`，配置文件路径是 `/opt/apache-maven-3.5.3/conf/settings.xml`。执行以下命令获取 Maven 的设置内容。
 
 ```bash
 kubectl get cm -n kubesphere-devops-system ks-devops-agent -o yaml
 ```
 
-### Network of Maven Pod
+### Maven Pod 的网络
 
-The Pod labeled `maven` uses the docker-in-docker network to run the pipeline. That is, the `/var/run/docker.sock` in the node is mounted into the Maven container.
+具有 `maven` 标签的 Pod 使用 docker-in-docker 网络来运行流水线，即，节点中的 `/var/run/docker.sock` 被挂载至该 Maven 容器。
 
-## A Maven Pipeline Example
+## Maven 流水线示例
 
-### Prepare for the Maven Project
+### Maven 工程准备工作
 
-- ensure build the Maven project successfully on the development device.
-- add the Dockerfile file into the project repo for building the image, refer to <https://github.com/kubesphere/devops-java-sample/blob/master/Dockerfile-online>.
-- add the yaml file into the project repo for deploy the workload, refer to <https://github.com/kubesphere/devops-java-sample/tree/master/deploy/dev-ol>. If there are different environments, you need to prepare multiple deployment files.
+- 确保您在开发设备上成功构建 Maven 工程。
+- 添加 Dockerfile 至工程仓库以构建镜像。有关更多信息，请参考 <https://github.com/kubesphere/devops-java-sample/blob/master/Dockerfile-online>。
+- 添加 YAML 文件至工程仓库以部署工作负载。有关更多信息，请参考 <https://github.com/kubesphere/devops-java-sample/tree/master/deploy/dev-ol>。如果有多个不同环境，您需要准备多个部署文件。
 
-### Create the Credentials
+### 创建凭证
 
-- dockerhub-id. A *Account Credentials* for registry, e.g DockerHub.
-- demo-kuebconfig. A *Kubeconfig Credential* for deploying workloads.
+| 凭证 ID         | 类型       | 用途                  |
+| --------------- | ---------- | --------------------- |
+| dockerhub-id    | 帐户凭证   | 仓库，例如 Docker Hub |
+| demo-kubeconfig | kubeconfig | 部署工作负载          |
 
-For details, please refer to the [Credentials Management](../../how-to-use/credential-management/).
+有关详细信息，请参考[凭证管理](../../how-to-use/credential-management/)。
 
-![view credential list](/images/devops/view-credential-list.png)
+![查看凭证列表](/images/docs/zh-cn/devops-user-guide/examples/build-and-deploy-maven-project/view-credential-lists.PNG)
 
-### Create the Project for Workloads
+### 为工作负载创建一个项目
 
-In this demo, all of workloads are deployed under `kubesphere-sample-dev`. So you need to create the project `kubesphere-sample-dev` in advance.
+在本示例中，所有工作负载都部署在 `kubesphere-sample-dev` 项目中。您必须事先创建 `kubesphere-sample-dev` 项目。
 
-![view namespace](/images/devops/view-namespace.png)
+![查看项目](/images/docs/zh-cn/devops-user-guide/examples/build-and-deploy-maven-project/view-namespace.PNG)
 
-### Create the Pipeline for the Maven Project
+### 为 Maven 工程创建一个流水线
 
-At first, create a *DevOps Project* and a *Pipeline* refer to [Create a Pipeline - using Graphical Editing Panel](../../how-to-use/create-a-pipeline-using-graphical-editing-panel).
+1. 在您的 DevOps 工程中，转到**流水线**页面并点击**创建**。有关更多信息，请参见[使用图形编辑面板创建流水线](../../how-to-use/create-a-pipeline-using-graphical-editing-panel)。
 
-Secondly, click *Edit Jenkinsfile* button under your pipeline.
+2. 转到该流水线的详情页面，点击**编辑 Jenkinsfile**。
 
-![edit jenkinsfile](/images/devops/edit-jenkinsfile.png)
+   ![编辑 Jenkinsfile](/images/docs/zh-cn/devops-user-guide/examples/build-and-deploy-maven-project/edit-jenkinsfile.PNG)
 
-Paste the following text into the pop-up window and save it.
+3. 复制粘贴以下内容至弹出窗口。您必须将 `DOCKERHUB_NAMESPACE` 的值替换为您自己的值，完成操作后进行保存。
 
-```groovy
-pipeline {
-  agent {
-    node {
-      label 'maven'
-    }
-  }
+   ```groovy
+   pipeline {
+     agent {
+       node {
+         label 'maven'
+       }
+     }
+   
+       parameters {
+           string(name:'TAG_NAME',defaultValue: '',description:'')
+       }
+   
+       environment {
+           DOCKER_CREDENTIAL_ID = 'dockerhub-id'
+           KUBECONFIG_CREDENTIAL_ID = 'demo-kubeconfig'
+           REGISTRY = 'docker.io'
+           // need to replace by yourself dockerhub namespace
+           DOCKERHUB_NAMESPACE = 'shaowenchen'
+           APP_NAME = 'devops-java-sample'
+           BRANCH_NAME = 'dev'
+       }
+   
+       stages {
+           stage ('checkout scm') {
+               steps {
+                   git branch: 'master', url: "https://github.com/kubesphere/devops-java-sample.git"
+               }
+           }
+   
+           stage ('unit test') {
+               steps {
+                   container ('maven') {
+                       sh 'mvn clean -o -gs `pwd`/configuration/settings.xml test'
+                   }
+               }
+           }
+   
+           stage ('build & push') {
+               steps {
+                   container ('maven') {
+                       sh 'mvn -o -Dmaven.test.skip=true -gs `pwd`/configuration/settings.xml clean package'
+                       sh 'docker build -f Dockerfile-online -t $REGISTRY/$DOCKERHUB_NAMESPACE/$APP_NAME:SNAPSHOT-$BRANCH_NAME-$BUILD_NUMBER .'
+                       withCredentials([usernamePassword(passwordVariable : 'DOCKER_PASSWORD' ,usernameVariable : 'DOCKER_USERNAME' ,credentialsId : "$DOCKER_CREDENTIAL_ID" ,)]) {
+                           sh 'echo "$DOCKER_PASSWORD" | docker login $REGISTRY -u "$DOCKER_USERNAME" --password-stdin'
+                           sh 'docker push  $REGISTRY/$DOCKERHUB_NAMESPACE/$APP_NAME:SNAPSHOT-$BRANCH_NAME-$BUILD_NUMBER'
+                       }
+                   }
+               }
+           }
+   
+           stage('deploy to dev') {
+             steps {
+               kubernetesDeploy(configs: 'deploy/dev-ol/**', enableConfigSubstitution: true, kubeconfigId: "$KUBECONFIG_CREDENTIAL_ID")
+             }
+           }
+       }
+   }
+   ```
 
-    parameters {
-        string(name:'TAG_NAME',defaultValue: '',description:'')
-    }
+4. 保存该 Jenkinsfile，您可以看到图形编辑面板上已自动创建阶段和步骤。
 
-    environment {
-        DOCKER_CREDENTIAL_ID = 'dockerhub-id'
-        KUBECONFIG_CREDENTIAL_ID = 'demo-kubeconfig'
-        REGISTRY = 'docker.io'
-        // need to replace by yourself dockerhub namespace
-        DOCKERHUB_NAMESPACE = 'shaowenchen'
-        APP_NAME = 'devops-java-sample'
-        BRANCH_NAME = 'dev'
-    }
+   ![查看 Jenkinsfile](/images/docs/zh-cn/devops-user-guide/examples/build-and-deploy-maven-project/view-edit-jenkinsfile.PNG)
 
-    stages {
-        stage ('checkout scm') {
-            steps {
-                git branch: 'master', url: "https://github.com/kubesphere/devops-java-sample.git"
-            }
-        }
+### 运行和测试
 
-        stage ('unit test') {
-            steps {
-                container ('maven') {
-                    sh 'mvn clean -o -gs `pwd`/configuration/settings.xml test'
-                }
-            }
-        }
+1. 点击运行并在 `TAG_NAME` 中输入内容，运行流水线。
 
-        stage ('build & push') {
-            steps {
-                container ('maven') {
-                    sh 'mvn -o -Dmaven.test.skip=true -gs `pwd`/configuration/settings.xml clean package'
-                    sh 'docker build -f Dockerfile-online -t $REGISTRY/$DOCKERHUB_NAMESPACE/$APP_NAME:SNAPSHOT-$BRANCH_NAME-$BUILD_NUMBER .'
-                    withCredentials([usernamePassword(passwordVariable : 'DOCKER_PASSWORD' ,usernameVariable : 'DOCKER_USERNAME' ,credentialsId : "$DOCKER_CREDENTIAL_ID" ,)]) {
-                        sh 'echo "$DOCKER_PASSWORD" | docker login $REGISTRY -u "$DOCKER_USERNAME" --password-stdin'
-                        sh 'docker push  $REGISTRY/$DOCKERHUB_NAMESPACE/$APP_NAME:SNAPSHOT-$BRANCH_NAME-$BUILD_NUMBER'
-                    }
-                }
-            }
-        }
+   ![运行 Maven 流水线](/images/docs/zh-cn/devops-user-guide/examples/build-and-deploy-maven-project/run-maven-pipeline.PNG)
 
-        stage('deploy to dev') {
-          steps {
-            kubernetesDeploy(configs: 'deploy/dev-ol/**', enableConfigSubstitution: true, kubeconfigId: "$KUBECONFIG_CREDENTIAL_ID")
-          }
-        }
-    }
-}
-```
+2. 待流水线运行完成，您可以看到下图所示内容。
 
-After saving, you will get this.
+   ![查看流水线运行结果](/images/docs/zh-cn/devops-user-guide/examples/build-and-deploy-maven-project/view-result-maven-pipeline.PNG)
 
-![view jenkinsfile](/images/devops/view-edit-jenkinsfile.png)
+3. 在 `kubesphere-sample-dev` 项目中，已创建新的工作负载。
 
-### Run and test
+   ![查看工作负载](/images/docs/zh-cn/devops-user-guide/examples/build-and-deploy-maven-project/view-result-maven-workload.PNG)
 
-Click `run` and type `TAG_NAME` to run the pipeline.
+4. 您可以查看服务 (Service) 的访问地址，如下所示。
 
-![run maven pipeling](/images/devops/run-maven-pipeline.png)
-
-After the run is complete, you can see the following figure.
-
-![view result](/images/devops/view-result-maven-pipeline.png)
-
-Under the project of `kubesphere-sample-dev`, there are new workloads created. 
-
-![maven workload](/images/devops/view-result-maven-workload.png)
-
-You can view the access address of the service through service.
-
-![maven service](/images/devops/view-result-maven-workload-svc.png)
-
-## Summary
-
-This document is not a getting-started document. It introduces some configurations for building Maven projects on the KubeSphere DevOps Platform. At the same time, a example flow of the Maven project is provided. In your case, you are free to add new steps to improve the pipeline.
+   ![查看服务](/images/docs/zh-cn/devops-user-guide/examples/build-and-deploy-maven-project/view-result-maven-workload-svc.PNG)
