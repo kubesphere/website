@@ -6,7 +6,7 @@ linkTitle: "将 SonarQube 集成到流水线"
 weight: 11310
 ---
 
-[SonarQube](https://www.sonarqube.org/) 是一种主流的代码质量持续监测工具。您可以将其用于代码库的静态和动态分析。SonarQube 集成到 KubeSphere 流水线后，如果在运行的流水线中检测到问题，您可以直接在仪表板上查看常见代码问题，例如 bug 和漏洞。
+[SonarQube](https://www.sonarqube.org/) 是一种主流的代码质量持续检测工具。您可以将其用于代码库的静态和动态分析。SonarQube 集成到 KubeSphere 流水线后，如果在运行的流水线中检测到问题，您可以直接在仪表板上查看常见代码问题，例如 Bug 和漏洞。
 
 本教程演示如何将 SonarQube 集成到流水线中。在[使用 Jenkinsfile 创建流水线](../../../devops-user-guide/how-to-use/create-a-pipeline-using-jenkinsfile/)之前，请先参考以下步骤。
 
@@ -210,7 +210,7 @@ weight: 11310
 
    ![sonarqube-jenkins-settings](/images/docs/zh-cn/devops-user-guide/tool-integration/integrate-sonarqube-into-pipelines/sonarqube-jenkins-settings.png)
 
-### 步骤 6：将 sonarqubeUrl 添加到 KubeSphere 控制台
+### 步骤 6：将 sonarqubeURL 添加到 KubeSphere 控制台
 
 您需要指定 `sonarqubeURL`，以便可以直接从 KubeSphere 控制台访问 SonarQube。
 
@@ -255,11 +255,11 @@ kubectl -n kubesphere-system rollout restart deploy ks-console
 
    ![SonarQube 创建项目](/images/docs/zh-cn/devops-user-guide/tool-integration/integrate-sonarqube-into-pipelines/sonarqube-create-project.png)
 
-2. Enter a project key, such as `java-demo`, and click **Set Up**.输入项目密钥，例如 `java-demo`，然后点击 **Set Up**。
+2. 输入工程密钥，例如 `java-demo`，然后点击 **Set Up**。
 
    ![Jenkins 项目密钥](/images/docs/zh-cn/devops-user-guide/tool-integration/integrate-sonarqube-into-pipelines/jenkins-projet-key.png)
 
-3. Enter a project name, such as `java-sample`, and click **Generate**.输入项目名称，例如 `java-sample`，然后点击 **Generate**。
+3. 输入工程名称，例如 `java-sample`，然后点击 **Generate**。
 
    ![创建令牌](/images/docs/zh-cn/devops-user-guide/tool-integration/integrate-sonarqube-into-pipelines/generate-a-token.png)
 
