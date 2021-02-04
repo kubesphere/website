@@ -10,6 +10,10 @@ If the kube-apiserver address of the Member Cluster (M Cluster) is accessible on
 
 To use the multi-cluster feature using direct connection, you must have at least two clusters serving as the H Cluster and the M Cluster respectively. A cluster can be defined as the H Cluster or the M Cluster either before or after you install KubeSphere. For more information about installing KubeSphere, refer to [Installing on Linux](../../../installing-on-linux) and [Installing on Kubernetes](../../../installing-on-kubernetes).
 
+## Video Demonstration
+
+{{< youtube i-yWU4izFPo >}}
+
 ## Prepare a Host Cluster
 
 A host cluster provides you with the central control plane and you can only define one host cluster.
