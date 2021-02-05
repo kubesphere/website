@@ -6,7 +6,7 @@ linkTitle: "Role and Member Management"
 weight: 11130
 ---
 
-This guide demonstrates how to manage roles and members in your DevOps project. For more information about KubeSphere roles, see Overview of Role Management.
+This guide demonstrates how to manage roles and members in your DevOps project.
 
 In DevOps project scope, you can grant the following resources' permissions to a role:
 
