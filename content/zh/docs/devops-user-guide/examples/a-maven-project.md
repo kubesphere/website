@@ -1,6 +1,6 @@
 ---
 title: "构建和部署 Maven 工程"
-keywords: 'kubernetes, docker, devops, jenkins, maven'
+keywords: 'Kubernetes, Docker, DevOps, Jenkins, Maven'
 description: '如何构建和部署 Maven 工程'
 linkTitle: "构建和部署 Maven 工程"
 weight: 11430
@@ -18,7 +18,7 @@ KubeSphere DevOps 中有针对 Maven 工程的工作流，如下图所示，它�
 
 ![maven-project-jenkins](/images/docs/zh-cn/devops-user-guide/examples/build-and-deploy-maven-project/maven-project-jenkins.png)
 
-首先，Jenkins Master 创建一个 Pod 来运行流水线。Kubernetes 创建 Pod 作为 Jenkins Master 的 Agent，该 Pod 会在流水线完成之后进行销毁。主要流程包括克隆代码、构建和推送镜像以及部署工作负载。
+首先，Jenkins Master 创建一个 Pod 来运行流水线。Kubernetes 创建 Pod 作为 Jenkins Master 的 Agent，该 Pod 会在流水线完成之后销毁。主要流程包括克隆代码、构建和推送镜像以及部署工作负载。
 
 ## Jenkins 中的默认配置
 
@@ -50,7 +50,7 @@ kubectl get cm -n kubesphere-devops-system ks-devops-agent -o yaml
 
 ### Maven Pod 的网络
 
-具有 `maven` 标签的 Pod 使用 docker-in-docker 网络来运行流水线，即，节点中的 `/var/run/docker.sock` 被挂载至该 Maven 容器。
+具有 `maven` 标签的 Pod 使用 docker-in-docker 网络来运行流水线，即节点中的 `/var/run/docker.sock` 被挂载至该 Maven 容器。
 
 ## Maven 流水线示例
 
