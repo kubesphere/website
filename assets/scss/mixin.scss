@@ -55,3 +55,128 @@
   align-items: center;
 }
 
+@mixin TypographyTitle($fontWeight: $font-bold) {
+  font-family: $font-family-id;
+  font-style: normal;
+  font-stretch: normal;
+  letter-spacing: normal;
+  font-weight: $fontWeight;
+}
+
+@mixin TypographyTitleH1($color: $dark-color06) {
+  font-size: 40px;
+  line-height: 1.4;
+  @include TypographyTitle();
+  color: $color;
+}
+
+@mixin TypographyTitleH2($color: $dark-color06) {
+  font-size: 32px;
+  line-height: 1.38;
+  @include TypographyTitle();
+  color: $color;
+}
+
+@mixin TypographyTitleH3($color: $dark-color06) {
+  font-size: 24px;
+  line-height: 1.33;
+  @include TypographyTitle();
+  color: $color;
+}
+
+@mixin TypographyTitleH4($color: $dark-color06) {
+  font-size: 20px;
+  line-height: 1.4;
+  @include TypographyTitle();
+  color: $color;
+}
+
+@mixin TypographyTitleH5($color: $dark-color06) {
+  font-size: 14px;
+  line-height: 1.43;
+  @include TypographyTitle(bold);
+  color: $color;
+}
+
+@mixin TypographyTitleH6($color: $dark-color06) {
+  font-size: $size-small;
+  line-height: 1.67;
+  @include TypographyTitle(bold);
+  color: $color;
+}
+
+@mixin TypographySymbolText($color: $dark-color06) {
+  font-family: $font-family;
+  font-size: $size-small;
+  font-weight: $font-bold;
+  font-style: normal;
+  font-stretch: normal;
+  line-height: 1.67;
+  letter-spacing: normal;
+  color: $color;
+}
+
+@mixin TypographyParagraphCode($color: #363e4a) {
+  font-family: Monaco;
+  font-size: $size-small;
+  font-weight: normal;
+  font-style: normal;
+  font-stretch: normal;
+  line-height: 2;
+  letter-spacing: normal;
+  color: $color;
+}
+
+@mixin TypographyParagraph($color: $dark-color07) {
+  font-family: $font-family-id;
+  font-size: $size-small;
+  font-weight: normal;
+  font-style: normal;
+  font-stretch: normal;
+  line-height: 1.67;
+  letter-spacing: normal;
+  color: $color;
+}
+
+@mixin common-flex {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+@mixin absolute-center {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+@mixin product-container {
+  width: 277px;
+  height: 172px;
+  padding: 12px;
+  border-radius: 3px;
+  border: solid 1px $light-color06;
+  cursor: pointer;
+  
+  &:hover {
+    box-shadow: 0 4px 8px 0 rgba(36, 46, 66, 0.2);
+    border: solid 1px $dark-color01;
+  }
+}
+
+@mixin common-layout {
+  position: relative;
+  width: 1140px;
+  margin: 0 auto;
+  padding-left: 260px;
+  
+  @media only screen and (max-width: $width-01) {
+    width: 100%;
+  }
+
+  @media only screen and (max-width: $width-02) {
+    padding: 10px;
+    padding-top: 20px;
+  }
+}

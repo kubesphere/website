@@ -80,6 +80,12 @@
   translation: Warning
 - id: Search Documentation
   translation: Search Documentation
+- id: ALL
+  translation: ALL
+- id: Watch replay
+  translation: Watch replay
+- id: View details
+  translation: View details
 - id: Course theme
   translation: Course theme
 - id: Course benefits
