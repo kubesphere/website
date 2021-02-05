@@ -10,7 +10,7 @@ KubeSphere comes with several pre-installed customized monitoring components inc
 
 ## Steps to Bring Your Own Prometheus
 
-To use your own Prometheus stack setup, the steps are listed as below:
+To use your own Prometheus stack setup, perform the following steps:
 
 1. Uninstall the customized Prometheus stack of KubeSphere
 
