@@ -10,7 +10,7 @@ KubeSphere 自带一些预装的自定义监控组件，包括 Prometheus Operat
 
 ## 集成您自己的 Prometheus 的步骤
 
-要使用您自己的 Prometheus 堆栈设置，请参照下列步骤：
+要使用您自己的 Prometheus 堆栈设置，请执行以下步骤：
 
 1. 卸载 KubeSphere 的自定义 Prometheus 堆栈
 
@@ -72,7 +72,7 @@ Prometheus 堆栈可以通过多种方式进行安装。下面的步骤演示如
    cd ~ && git clone https://github.com/prometheus-operator/kube-prometheus.git && cd kube-prometheus && git checkout tags/v0.6.0 -b v0.6.0
    ```
 
-2. 配置命名空间 `monitoring`，安装 Prometheus Operator 和相应角色：
+2. 设置命名空间 `monitoring`，安装 Prometheus Operator 和相应角色：
 
    ```bash
    kubectl apply -f manifests/setup/
@@ -143,7 +143,7 @@ KubeSphere 3.0 使用 Prometheus Operator 来管理 Prometheus/Alertmanager 配�
    kubectl apply -f ./prometheus-serviceKubeControllerManager.yaml
    ```
 
-5. 在您自己的命名空间中查找 Prometheus CR，通常即 Kubernetes。
+5. 在您自己的命名空间中查找 Prometheus CR，通常为 Kubernetes。
 
    ```bash
    kubectl -n <your own namespace> get prometheus
