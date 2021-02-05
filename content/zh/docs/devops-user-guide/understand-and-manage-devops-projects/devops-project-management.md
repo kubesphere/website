@@ -34,7 +34,7 @@ weight: 11120
 
 ## 查看 DevOps 工程
 
-点击刚刚创建的 DevOps 工程，转到其详情页面。具有不同权限的租户可以在 DevOps 工程中执行各种任务，包括创建 CI/CD 流水线和凭据以及管理帐户和角色。
+点击刚刚创建的 DevOps 工程，转到其详情页面。具有不同权限的租户可以在 DevOps 工程中执行各种任务，包括创建 CI/CD 流水线和凭证以及管理帐户和角色。
 
 ![DevOps 详情页面](/images/docs/zh-cn/devops-user-guide/understand-and-manage-devops-projects/devops-project-management/devops-detail-page.PNG)
 
