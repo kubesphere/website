@@ -45,7 +45,7 @@ weight: 11120
 
 ### 凭证
 
-具有所需权限的 DevOps 工程用户可以为与外部环境进行交互的流水线配置凭据。 一旦用户在 DevOps 工程中添加了这些凭据，DevOps 工程就可以使用凭据与第三方应用程序（例如 GitHub，GitLab 和 Docker Hub）进行交互。 有关更多信息，请参阅[凭据管理](../credential-management/)。
+具有所需权限的 DevOps 工程用户可以为与外部环境进行交互的流水线配置凭据。 一旦用户在 DevOps 工程中添加了这些凭据，DevOps 工程就可以使用凭据与第三方应用程序（例如 GitHub，GitLab 和 Docker Hub）进行交互。 有关更多信息，请参阅[凭证管理](../../../devops-user-guide/how-to-use/credential-management/)。
 
 ### 成员和角色
 

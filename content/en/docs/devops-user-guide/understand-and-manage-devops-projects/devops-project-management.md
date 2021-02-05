@@ -44,7 +44,7 @@ A pipeline entails a collection of plugins that allow you to constantly and cons
 
 ### Credentials
 
-A DevOps project user with required permissions can configure credentials for pipelines for the interaction with external environments. Once the user adds these credentials in a DevOps project, the credentials can be used by the DevOps project to interact with third-party applications, such as GitHub, GitLab and Docker Hub. For more information, see [Credential Management](../credential-management/).
+A DevOps project user with required permissions can configure credentials for pipelines for the interaction with external environments. Once the user adds these credentials in a DevOps project, the credentials can be used by the DevOps project to interact with third-party applications, such as GitHub, GitLab and Docker Hub. For more information, see [Credential Management](../../../devops-user-guide/how-to-use/credential-management/).
 
 ### Members and roles
 

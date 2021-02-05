@@ -262,7 +262,7 @@ Before you start to create your Kubernetes cluster, make sure you have tested th
 
 ## Use KubeKey to Create a Kubernetes Cluster
 
-[KubeKey](https://github.com/kubesphere/kubekey) is an efficient and convenient tool to create a Kubernetes cluster. If you are not familiar with KubeKey, have a look at my previous articles about using KubeKey to [create a three-node cluster](http://localhost:1313/blogs/install-kubernetes-using-kubekey/) and scale your cluster.
+[KubeKey](https://github.com/kubesphere/kubekey) is an efficient and convenient tool to create a Kubernetes cluster. If you are not familiar with KubeKey, have a look at my previous articles about using KubeKey to [create a three-node cluster](https://kubesphere.io/blogs/install-kubernetes-using-kubekey/) and scale your cluster.
 
 1. Download KubeKey from its [GitHub Release Page](https://github.com/kubesphere/kubekey/releases) or use the following command to download KubeKey version 1.0.1. You only need to download KubeKey to one of your machines (e.g. `master1`) that serves as the **taskbox** for installation.
 
