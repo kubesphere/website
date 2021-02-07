@@ -11,7 +11,7 @@ weight: 3110
 
 作为 [GitHub](https://github.com/kubesphere) 上的开源项目，KubeSphere 是一个有成千上万的社区用户的聚集地，他们中的许多人已经把 KubeSphere 运行在生产环境中。
 
-KubeSphere 有多钟安装方式，请注意，这些安装方式不是互斥的。例如，您可以在离线环境中的多个节点上以最小化方式部署 KubeSphere。
+KubeSphere 有多种安装方式，请注意，这些安装方式不是互斥的。例如，您可以在离线环境中的多个节点上以最小化方式部署 KubeSphere。
 
 - [All-in-One](../../../quick-start/all-in-one-on-linux/)：在单个节点上安装 KubeSphere，仅用于用户快速熟悉 KubeSphere。
 - [多节点安装](../multioverview/)：在多个节点上安装单 master 的 KubeSphere，用于测试或开发。
