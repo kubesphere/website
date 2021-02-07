@@ -6,7 +6,7 @@ linkTitle: "选择 Jenkins Agent"
 weight: 11250
 ---
 
-`agent` 部分指定整个流水线或特定阶段 (Stage) 将在 Jenkins 环境中执行的位置，具体取决于该 `agent` 部分的放置位置。该部分必须在 `pipeline` 块的顶层进行定义，但是阶段级别的使用是可选的。有关更多信息，请参见 [Jenkins 官方文档](https://www.jenkins.io/zh/doc/book/pipeline/syntax/#代理)。
+`agent` 部分指定整个流水线或特定阶段 (Stage) 将在 Jenkins 环境中执行的位置，具体取决于该 `agent` 部分的放置位置。该部分必须在 `pipeline` 块的顶层进行定义，但是阶段级别的使用为可选。有关更多信息，请参见 [Jenkins 官方文档](https://www.jenkins.io/zh/doc/book/pipeline/syntax/#代理)。
 
 ## 内置 podTemplate
 
@@ -44,7 +44,7 @@ spec:
 }
 ```
 
-同时，KubeSphere 内置了一些 podTemplate，使用户可以避免编写 YAML 文件，极大降低学习成本。
+同时，KubeSphere 内置了一些 podTemplate，用户无需编写 YAML 文件，极大降低学习成本。
 
 在目前版本中，KubeSphere 内置了 4 种类型的 podTemplate：`base`、`nodejs`、`maven` 和 `go`，并且在 Pod 中提供隔离的 Docker 环境。
 
