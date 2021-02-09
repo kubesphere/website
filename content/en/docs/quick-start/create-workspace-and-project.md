@@ -134,7 +134,7 @@ In this step, you create a project using the account `project-admin` created in 
 
    ![click-demo-project](/images/docs/quickstart/create-workspaces-projects-accounts/click-demo-project.png)
 
-4. On the **Overview** page of the project, the project quota remains unset by default. You can click **Set** and specify resource requests and limits based on your needs (e.g. 1 core for CPU and 1000Gi for memory).
+4. On the **Overview** page of the project, the project quota remains unset by default. You can click **Set** and specify [resource requests and limits](../../workspace-administration/project-quotas/) as needed (e.g. 1 core for CPU and 1000Gi for memory).
 
    ![quota](/images/docs/quickstart/create-workspaces-projects-accounts/quota.png)
 
