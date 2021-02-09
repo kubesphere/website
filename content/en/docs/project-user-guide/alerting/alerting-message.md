@@ -25,7 +25,7 @@ This tutorial demonstrates how to view alerting messages at the workload level.
 
    ![alerting_message_workload_level_list](/images/docs/alerting/alerting_message_workload_level_list.png)
 
-2. Select one of the alerting messages to enter the detail page. In **Alerting Detail**, you can see the graph of the memory usage of the monitored workload over time, which has been continuously higher than the threshold of 20 MiB set in the alert rule, so the alert was triggered.
+2. Select one of the alerting messages to go to its detail page. In **Alerting Detail**, you can see the graph of the memory usage of the monitored workload over time, which has been continuously higher than the threshold of 20 MiB set in the alert rule, so the alert was triggered.
 
    ![alerting_message_workload_level_detail](/images/docs/alerting/alerting_message_workload_level_detail.png)
 

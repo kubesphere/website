@@ -140,7 +140,7 @@ KubeSphere 的多租户系统分三个层级，即**群集**、**企业空间**�
 
    ![查看项目](/images/docs/zh-cn/quickstart/create-workspaces-projects-accounts/查看项目.jpg)
 
-4. 在项目的**概览**页面，默认情况下未设置项目配额。您可以点击**设置**并根据需要指定资源请求和限制（例如：CPU 和内存的限制分别设为 1 Core 和 1000 Gi）。
+4. 在项目的**概览**页面，默认情况下未设置项目配额。您可以点击**设置**并根据需要指定[资源请求和限制](../../workspace-administration/project-quotas/)（例如：CPU 和内存的限制分别设为 1 Core 和 1000 Gi）。
 
    ![项目概览](/images/docs/zh-cn/quickstart/create-workspaces-projects-accounts/项目概览.jpg)
 

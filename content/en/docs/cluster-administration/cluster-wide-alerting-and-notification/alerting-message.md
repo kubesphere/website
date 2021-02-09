@@ -28,7 +28,7 @@ You have created a node-level alerting policy and received alert notifications o
 
     ![alerting_message_node_level_list](/images/docs/alerting/alerting_message_node_level_list.png)
 
-5. Click the alerting message to enter the detail page. In **Alerting Detail**, you can see the graph of memory utilization rate of the node over time, which has been continuously higher than the threshold of `50%` set in the alert rule, so the alert was triggered.
+5. Click the alerting message to go to its detail page. In **Alerting Detail**, you can see the graph of memory utilization rate of the node over time, which has been continuously higher than the threshold of `50%` set in the alert rule, so the alert was triggered.
 
     ![alerting_message_node_level_detail](/images/docs/alerting/alerting_message_node_level_detail.png)
 
