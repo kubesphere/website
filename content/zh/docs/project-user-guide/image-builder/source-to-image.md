@@ -107,35 +107,35 @@ Source-to-Image (S2I) 是一个工具箱和工作流，用于从源代码构建�
 
 1. 稍等片刻，您可以看到镜像状态变为**成功**。
 
-   ![success-result](/images/docs/project-user-guide/image-builder/s2i-publish-app-without-dockerfile/success-result.jpg)
+   ![构建成功](/images/docs/zh-cn/project-user-guide/image-builder/source-to-image/successful-result.PNG)
 
 2. 点击该镜像前往其详情页面。在**任务记录**下，点击记录右侧的箭头图标查看构建日志。如果一切运行正常，您可以在日志末尾看到 `Build completed successfully`。
 
-   ![build-log](/images/docs/project-user-guide/image-builder/s2i-publish-app-without-dockerfile/build-log.jpg)
+   ![构建日志](/images/docs/zh-cn/project-user-guide/image-builder/source-to-image/build-log.PNG)
 
 3. 回到上一层页面，您可以看到该镜像相应的任务、部署和服务都已成功创建。
 
    #### 服务
 
-   ![service](/images/docs/project-user-guide/image-builder/s2i-publish-app-without-dockerfile/service.jpg)
+   ![service](/images/docs/zh-cn/project-user-guide/image-builder/source-to-image/service.PNG)
 
    #### 部署
 
-   ![deployment](/images/docs/project-user-guide/image-builder/s2i-publish-app-without-dockerfile/deployment.jpg)
+   ![deployment](/images/docs/zh-cn/project-user-guide/image-builder/source-to-image/deployment.PNG)
 
    #### 任务
 
-   ![job](/images/docs/project-user-guide/image-builder/s2i-publish-app-without-dockerfile/job.jpg)
+   ![job](/images/docs/zh-cn/project-user-guide/image-builder/source-to-image/job.PNG)
 
 4. 在您的 Docker Hub 仓库，您可以看到 KubeSphere 已经向仓库推送了带有预期标签的镜像。
 
-   ![docker-image](/images/docs/project-user-guide/image-builder/s2i-publish-app-without-dockerfile/docker-image.jpg)
+   ![Docker 镜像](/images/docs/zh-cn/project-user-guide/image-builder/source-to-image/docker-image.PNG)
 
 ### 步骤 5：访问 S2I 服务
 
 1. 在**服务**页面，请点击 S2I 服务前往其详情页面。
 
-   ![service-detail](/images/docs/project-user-guide/image-builder/s2i-publish-app-without-dockerfile/service-detail.jpg)
+   ![Service 详情](/images/docs/zh-cn/project-user-guide/image-builder/source-to-image/service-detail.PNG)
 
 2. 要访问该服务，您可以执行 `curl` 命令使用 Endpoint 或者访问 `Node IP:Port Number`。例如：
 
