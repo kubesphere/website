@@ -61,7 +61,7 @@ There are eight stages as shown below in this example pipeline.
    | github-id       | Account Credentials | GitHub       |
    | demo-kubeconfig | kubeconfig          | Kubernetes   |
 
-2. You need to create an additional credential ID (`sonar-token`) for SonarQube, which is used in stage 3 (SonarQube analysis) mentioned above. Refer to [Create SonarQube Token for New Project](../../../devops-user-guide/how-to-integrate/sonarqube/#create-sonarqube-token-for-new-project) to use the token for the **secret** field below. Click **OK** to finish.
+2. You need to create an additional credential ID (`sonar-token`) for SonarQube, which is used in stage 3 (SonarQube analysis) mentioned above. Refer to [Create SonarQube Token for New Project](../../../devops-user-guide/how-to-integrate/sonarqube/#create-a-sonarqube-token-for-a-new-project) to use the token for the **secret** field below. Click **OK** to finish.
 
    ![sonar-token](/images/docs/devops-user-guide/using-devops/create-a-pipeline-using-a-jenkinsfile/sonar-token.jpg)
 
@@ -121,7 +121,7 @@ The account `project-admin` needs to be created in advance since it is the revie
    | kubesphere-sample-dev  | development environment |
    | kubesphere-sample-prod | production environment  |
 
-2. Check the project list. You have two projects and one DevOps project as below:
+2. After those projects are created, they will be listed in the project list as below:
 
    ![project-list](/images/docs/devops-user-guide/using-devops/create-a-pipeline-using-a-jenkinsfile/project-list.jpg)
 
@@ -207,8 +207,8 @@ The account `project-admin` needs to be created in advance since it is the revie
 
    {{< notice note >}} 
 
-   - If you do need see any activity on this page, you need to refresh your browser manually or click **Scan Repository** from the drop-down menu (the **More** button).
-   - The tag name is used to generate releases and images with the tag in GitHub and Docker Hub. An existing tag name cannot be used again for the field TAG_NAME. Otherwise, the pipeline will not be running successfully.
+   - If you do not see any activity on this page, you need to refresh your browser manually or click **Scan Repository** from the drop-down menu (the **More** button).
+   - The tag name is used to generate releases and images with the tag in GitHub and Docker Hub. An existing tag name cannot be used again for the field `TAG_NAME`. Otherwise, the pipeline will not be running successfully.
 
    {{</ notice >}}
 
@@ -246,13 +246,13 @@ The account `project-admin` needs to be created in advance since it is the revie
 
 ### Step 7: Verify results
 
-1. Once you successfully executed the pipeline, click **Code Quality** to check the results through  SonarQube as follows.
+1. Once you successfully executed the pipeline, click **Code Quality** to check the results through SonarQube as follows.
 
    ![sonarqube-result-detail-1.jpg](/images/docs/devops-user-guide/tool-integration/integrate-sonarqube-into-pipeline/sonarqube-result-detail-1.jpg.jpg)
 
    ![sonarqube-result-detail](/images/docs/devops-user-guide/tool-integration/integrate-sonarqube-into-pipeline/sonarqube-result-detail.jpg)
 
-2. The Docker image built through the pipeline has also been successfully pushed to Docker Hub, as it is  defined in the Jenkinsfile. In Docker Hub, you will find the image with the tag `v0.0.2` that is specified before the pipeline runs.
+2. The Docker image built through the pipeline has also been successfully pushed to Docker Hub, as it is defined in the Jenkinsfile. In Docker Hub, you will find the image with the tag `v0.0.2` that is specified before the pipeline runs.
 
    ![docker-hub-result](/images/docs/devops-user-guide/tool-integration/integrate-sonarqube-into-pipeline/docker-hub-result.jpg)
 
@@ -260,7 +260,7 @@ The account `project-admin` needs to be created in advance since it is the revie
 
    ![github-result](/images/docs/devops-user-guide/tool-integration/integrate-sonarqube-into-pipeline/github-result.jpg)
 
-4. The sample application will be deployed to `kubesphere-sample-dev` and `kubesphere-sample-prod` with  corresponding Deployments and Services created. Go to these two projects and here are the expected result:
+4. The sample application will be deployed to `kubesphere-sample-dev` and `kubesphere-sample-prod` with corresponding Deployments and Services created. Go to these two projects and here are the expected result:
 
    | Environment | URL | Namespace | Deployment | Service |
    | :--- | :--- | :--- | :--- | :--- |
