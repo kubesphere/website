@@ -1,21 +1,19 @@
 ---
 title: "DevOps 用户指南"
-description: "如何使用 KubeSphere DevOps"
+description: "开始使用 KubeSphere DevOps 工程"
 layout: "single"
 
 linkTitle: "DevOps 用户指南"
 weight: 11000
 
 icon: "/images/docs/docs.svg"
-
 ---
 
+您可以使用 KubeSphere DevOps 系统在 Kubernetes 集群上部署和管理 CI/CD 任务以及相关的工作负载。本章演示如何在 DevOps 工程中进行管理和操作，包括运行流水线、创建凭证和集成工具等等。
 
-您可以使用 KubeSphere DevOps 系统在 Kubernetes 集群上部署和管理 CI/CD 任务以及相关的工作负载。本章演示了如何在 DevOps 工程中进行管理和工作，包括运行流水线、创建凭据和集成工具。
+您安装 DevOps 组件时，会自动部署 Jenkins。您可以在 KubeSphere 中像以前一样通过 Jenkinsfile 构建流水线，保持一致的用户体验。此外，KubeSphere 还提供图形编辑面板，可以将整个流程可视化，为您直观地呈现流水线在每个阶段的运行状态。
 
-在安装 DevOps 组件时，将自动部署 Jenkins。KubeSphere 为您提供一致的用户体验，因为您可以像以前一样通过 Jenkinsfile 建立流水线。此外，KubeSphere 还具有高度实时化的图形编辑面板，可以可视化整个流程，为您提供一个直观的视图，方便您了解流水线在每个阶段的运行状态。
-
-## 理解和管理 DevOps 工程
+## 了解和管理 DevOps 工程
 
 ### [概述](../devops-user-guide/understand-and-manage-devops-projects/overview/)
 
@@ -55,21 +53,21 @@ icon: "/images/docs/docs.svg"
 
 设置电子邮件服务器以接收有关您 Jenkins 流水线的通知。
 
-### [为依赖缓存设置 CI 节点](../devops-user-guide/how-to-use/set-ci-node/)
+### [为依赖项缓存设置 CI 节点](../devops-user-guide/how-to-use/set-ci-node/)
 
-配置专门用于持续集成 (CI) 的一个或一组节点从而加快流水线中的构建过程。
+配置专门用于持续集成 (CI) 的一个或一组节点，加快流水线中的构建过程。
 
 ### [流水线设置](../devops-user-guide/how-to-use/pipeline-settings/)
 
-理解 DevOps 工程中流水线的各个属性。
+了解 DevOps 工程中流水线的各个属性。
 
 ## 工具集成
 
-### [将 SonarQube 集成到流水线中](../devops-user-guide/how-to-integrate/sonarqube/)
+### [将 SonarQube 集成到流水线](../devops-user-guide/how-to-integrate/sonarqube/)
 
 将 SonarQube 集成到流水线中进行代码质量分析。
 
-### [将 Harbor 集成到流水线中](../devops-user-guide/how-to-integrate/harbor/)
+### [将 Harbor 集成到流水线](../devops-user-guide/how-to-integrate/harbor/)
 
 将 Harbor 集成到流水线中并向您的 Harbor 仓库推送镜像。
 
@@ -79,10 +77,10 @@ icon: "/images/docs/docs.svg"
 
 学习如何使用 KubeSphere 流水线构建并部署 Go 工程。
 
+### [使用 Jenkinsfile 在多集群项目中部署应用](../devops-user-guide/examples/multi-cluster-project-example/)
+
+学习如何使用基于 Jenkinsfile 的流水线在多集群项目中部署应用。
+
 ### [构建和部署 Maven 工程](../devops-user-guide/examples/a-maven-project/)
 
 学习如何使用 KubeSphere 流水线构建并部署 Maven 工程。
-
-### [使用 Jenkinsfile 在多集群项目中部署应用](../devops-user-guide/examples/multi-cluster-project-example/)
-
-学习如何使用 KubeSphere 流水线基于 Jenkinsfile 在多集群项目中部署应用。

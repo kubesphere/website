@@ -11,7 +11,7 @@ icon: "/images/docs/docs.svg"
 
 To deploy and manage your CI/CD tasks and related workloads on your Kubernetes clusters, you use the KubeSphere DevOps system. This chapter demonstrates how to manage and work in DevOps projects, including running pipelines, creating credentials, and integrating tools.
 
-As you install the DevOps component, Jenkins is automatically deployed. KubeSphere provides you with a consistent user experience as you can build a pipeline through the Jenkinsfile just as you did before. Besides, KubeSphere features a highly responsive graphical dashboard that visualizes the whole process, presenting you with a straightforward view of how your pipeline is running at what stage.
+As you install the DevOps component, Jenkins is automatically deployed. KubeSphere provides you with a consistent user experience as you can build a pipeline through the Jenkinsfile just as you did before. Besides, KubeSphere features graphical editing panels that visualizes the whole process, presenting you with a straightforward view of how your pipeline is running at what stage.
 
 ## Understand and Manage DevOps Projects
 
@@ -69,7 +69,7 @@ Integrate SonarQube into your pipeline for code quality analysis.
 
 ### [Integrate Harbor in Pipelines](../devops-user-guide/how-to-integrate/harbor/)
 
-Integrate Harbor to push an image to your Harbor registry using a KubeSphere pipeline.
+Integrate Harbor into your pipeline to push images to your Harbor registry.
 
 ## Examples
 
@@ -77,10 +77,10 @@ Integrate Harbor to push an image to your Harbor registry using a KubeSphere pip
 
 Learn how to build and deploy a Go project using a KubeSphere pipeline.
 
+### [Deploy Apps in a Multi-cluster Project Using a Jenkinsfile](../devops-user-guide/examples/multi-cluster-project-example/)
+
+Learn how to deploy apps in a multi-cluster project using a Jenkinsfile-based pipeline.
+
 ### [Build and Deploy a Maven Project](../devops-user-guide/examples/a-maven-project/)
 
 Learn how to build and deploy a Maven project using a KubeSphere pipeline.
-
-### [Deploy Apps in a Multi-cluster Project Using a Jenkinsfile](../devops-user-guide/examples/multi-cluster-project-example/)
-
-Learn how to deploy a multi-cluster project using a KubeSphere Jenkinsfile-based pipeline.
