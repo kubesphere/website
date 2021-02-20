@@ -264,6 +264,13 @@ section3:
           - icon: '/images/contribution/calicq39.jpg'
           - icon: '/images/contribution/calicq7.jpg'
 
+      - name: 'Advocacy and Outreach'
+        icon: '/images/contribution/testing.svg'
+        iconActive: '/images/contribution/testing-active.svg'
+        content: 'We discuss advocacy, outreach, events, social media promotion, and attract new people to join KubeSphere community'
+        link: 'https://github.com/kubesphere/community/tree/master/sig-advocacy-and-outreach'
+        linkContent: 'Join SIG - Advocacy and Outreach →'
+
 sectionCalendar:
   iframeUrl: https://calendar.google.com/calendar/embed?src=kubesphere%40gmail.com&ctz=Asia%2FShanghai
 
