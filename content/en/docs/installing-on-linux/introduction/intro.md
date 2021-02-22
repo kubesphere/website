@@ -40,16 +40,7 @@ If you have an existing Kubernetes cluster, see [Overview of Installing on Kuber
 
 ## KubeKey
 
-Developed in Go language, KubeKey represents a brand-new installation tool as a replacement for the ansible-based installer used before. KubeKey provides users with flexible installation choices, as they can install KubeSphere and Kubernetes separately or install them together, which is convenient and efficient.
-
-There are several scenarios to use KubeKey:
-
-- Install Kubernetes only;
-- Install Kubernetes and KubeSphere together in one command;
-- Install Kubernetes first, and deploy KubeSphere on it using [ks-installer](https://github.com/kubesphere/ks-installer);
-- Scale a cluster;
-- Upgrade a cluster;
-- Install Kubernetes-related add-ons (Chart or YAML).
+[KubeKey](https://github.com/kubesphere/kubekey) provides an efficient approach to the installation and configuration of your cluster. You can use it to create, scale, and upgrade your Kubernetes cluster. It also allows you to install cloud-native add-ons (YAML or Chart) as you set up your cluster. For more information, see [KubeKey](../kubekey).
 
 ## Quick Installation for Development and Testing
 
