@@ -47,7 +47,7 @@ KubeSphere 中可以创建两种类型的流水线：一种是本教程中介绍
 
 ### 步骤 1：创建凭证
 
-1. 以 `project-regular` 身份登陆 KubeSphere 控制台。转到您的 DevOps 工程，在**工程管理**下的**凭证**页面创建以下凭证。有关如何创建凭证的更多信息，请参见[凭证管理](../../../devops-user-guide/how-to-use/credential-management/)。
+1. 以 `project-regular` 身份登录 KubeSphere 控制台。转到您的 DevOps 工程，在**工程管理**下的**凭证**页面创建以下凭证。有关如何创建凭证的更多信息，请参见[凭证管理](../../../devops-user-guide/how-to-use/credential-management/)。
 
    {{< notice note >}}
 
@@ -61,7 +61,7 @@ KubeSphere 中可以创建两种类型的流水线：一种是本教程中介绍
    | github-id       | 帐户凭证   | GitHub     |
    | demo-kubeconfig | kubeconfig | Kubernetes |
 
-2. 您还需要为 SonarQube 创建一个凭证 ID (`sonar-token`)，用于上述的阶段 3（SonarQube 分析）中使用。请参考[为新工程创建 SonarQube 令牌 (Token)](../../../devops-user-guide/how-to-integrate/sonarqube/#为新工程创建-sonarqube-token)，在下图所示的**密钥**字段中输入令牌。点击**确定**完成操作。
+2. 您还需要为 SonarQube 创建一个凭证 ID (`sonar-token`)，用于上述的阶段 3（SonarQube 分析）。请参考[为新工程创建 SonarQube 令牌 (Token)](../../../devops-user-guide/how-to-integrate/sonarqube/#为新工程创建-sonarqube-token)，在下图所示的**密钥**字段中输入令牌。点击**确定**完成操作。
 
    ![Sonar 令牌](/images/docs/zh-cn/devops-user-guide/use-devops/create-a-pipeline-using-a-jenkinsfile/sonar-token.PNG)
 
@@ -90,7 +90,7 @@ KubeSphere 中可以创建两种类型的流水线：一种是本教程中介绍
    | KUBECONFIG\_CREDENTIAL\_ID | demo-kubeconfig | 您在 KubeSphere 中为 kubeconfig 设置的**凭证 ID**，用于访问运行中的 Kubernetes 集群。 |
    | REGISTRY | docker.io | 默认为 `docker.io`，用作推送镜像的地址。 |
    | DOCKERHUB\_NAMESPACE | your-dockerhub-account | 请替换为您的 Docker Hub 帐户名，也可以替换为该帐户下的 Organization 名称。 |
-   | GITHUB\_ACCOUNT | your-github-account | 请替换为您的 GitHub 帐户名。例如，如果您的 GitHub 地址是 `https://github.com/kubesphere/`，则您的 Github 帐户名为 `kubesphere`，也可以替换为该帐户下的 Organization 名称。 |
+   | GITHUB\_ACCOUNT | your-github-account | 请替换为您的 GitHub 帐户名。例如，如果您的 GitHub 地址是 `https://github.com/kubesphere/`，则您的 GitHub 帐户名为 `kubesphere`，也可以替换为该帐户下的 Organization 名称。 |
    | APP\_NAME | devops-java-sample | 应用名称。 |
    | SONAR\_CREDENTIAL\_ID | sonar-token | 您在 KubeSphere 中为 SonarQube 令牌设置的**凭证 ID**，用于代码质量检测。 |
 
@@ -135,7 +135,7 @@ KubeSphere 中可以创建两种类型的流水线：一种是本教程中介绍
 
    ![创建流水线-2](/images/docs/zh-cn/devops-user-guide/use-devops/create-a-pipeline-using-a-jenkinsfile/create-pipeline-2.PNG)
 
-3. 如果您没有 GitHub 令牌，请在 **GitHub** 选项卡中点击 **获取 Token** 生成一个新的 GitHub 令牌。将令牌粘贴到文本框中，点击**确认**。
+3. 如果您没有 GitHub 令牌，请在 **GitHub** 选项卡中点击**获取 Token** 生成一个新的 GitHub 令牌。将令牌粘贴到文本框中，点击**确认**。
 
    ![生成 GitHub 令牌-1](/images/docs/zh-cn/devops-user-guide/use-devops/create-a-pipeline-using-a-jenkinsfile/generate-github-token-1.PNG)
 
@@ -183,7 +183,7 @@ KubeSphere 中可以创建两种类型的流水线：一种是本教程中介绍
 
    ![Jenkinsfile-online](/images/docs/zh-cn/devops-user-guide/use-devops/create-a-pipeline-using-a-jenkinsfile/jenkinsfile-online.PNG)
 
-8. 在**扫描 Repo Trigger**中，点击**如果没有扫描触发，则定期扫描**并设置时间间隔为 **5 分钟**。点击**创建**完成配置。
+8. 在**扫描 Repo Trigger** 中，点击**如果没有扫描触发，则定期扫描**并设置时间间隔为 **5 分钟**。点击**创建**完成配置。
 
    ![高级设置](/images/docs/zh-cn/devops-user-guide/use-devops/create-a-pipeline-using-a-jenkinsfile/advanced-settings.PNG)
 
@@ -208,7 +208,7 @@ KubeSphere 中可以创建两种类型的流水线：一种是本教程中介绍
    {{< notice note >}} 
 
    - 如果您在此页面上未看到任何活动，则需要手动刷新浏览器或点击下拉菜单（**更多操作**按钮）中的**扫描远程分支**。
-   - 标签名称用于在 GitHub 和 Docker Hub 中使用标签生成发布和镜像。现有标签名称不能再次用于字段 `TAG_NAME`。否则，流水线将无法成功运行。
+   - 标签名称用于在 GitHub 和 Docker Hub 中指代新生成的发布版本和镜像。现有标签名称不能再次用于字段 `TAG_NAME`。否则，流水线将无法成功运行。
 
    {{</ notice >}}
 
@@ -218,7 +218,7 @@ KubeSphere 中可以创建两种类型的流水线：一种是本教程中介绍
 
    {{< notice note >}}
 
-   活动失败可能由不同因素所引起。本示例中，在上述步骤中编辑分支环境变量时，仅更改了 sonarqube 分支的 Jenkinsfile。相反地，依赖项和 master 分支中的这些变量保持不变（即，错误的 GitHub 和 Docker Hub 帐户），从而导致失败。您可以点击该活动，查看其日志中的详细信息。导致失败的其他原因可能是网络问题、Jenkinsfile 中的编码不正确等等。
+   活动失败可能由不同因素所引起。本示例中，在上述步骤中编辑分支环境变量时，仅更改了 sonarqube 分支的 Jenkinsfile。相反地，dependency 和 master 分支中的这些变量保持不变（使用了错误的 GitHub 和 Docker Hub 帐户），从而导致失败。您可以点击该活动，查看其日志中的详细信息。导致失败的其他原因可能是网络问题、Jenkinsfile 中的编码不正确等等。
 
    {{</ notice >}} 
 
@@ -246,7 +246,7 @@ KubeSphere 中可以创建两种类型的流水线：一种是本教程中介绍
 
 ### 步骤 7：验证结果
 
-1. 成功完成流水线后，点击**代码质量**通过 SonarQube 查看结果，如下所示。
+1. 流水线成功运行后，点击**代码质量**通过 SonarQube 查看结果，如下所示。
 
    ![SonarQube 结果详情](/images/docs/zh-cn/devops-user-guide/use-devops/create-a-pipeline-using-a-jenkinsfile/sonarqube-result-detail-1.PNG)
 
@@ -256,7 +256,7 @@ KubeSphere 中可以创建两种类型的流水线：一种是本教程中介绍
 
    ![Docker Hub 镜像](/images/docs/zh-cn/devops-user-guide/use-devops/create-a-pipeline-using-a-jenkinsfile/docker-hub-result.PNG)
 
-3. 同时，GitHub 中已生成一个新标签和一个新发布。
+3. 同时，GitHub 中已生成一个新标签和一个新发布版本。
 
    ![GitHub 结果](/images/docs/zh-cn/devops-user-guide/use-devops/create-a-pipeline-using-a-jenkinsfile/github-result.PNG)
 
