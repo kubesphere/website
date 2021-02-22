@@ -79,46 +79,46 @@ Binary-to-Image (B2I) 是一个工具箱和工作流，用于从二进制可执�
 
    ![高级设置](/images/docs/zh-cn/project-user-guide/image-builder/binary-to-image/advanced-settings.PNG)
 
-7. 点击左侧导航栏的**构建镜像**，您可以看到正在构建示例镜像。![building](/images/docs/project-user-guide/image-builder/b2i-publish-artifact-to-kubernetes/building.jpg)
+7. 点击左侧导航栏的**构建镜像**，您可以看到正在构建示例镜像。![构建中](/images/docs/zh-cn/project-user-guide/image-builder/binary-to-image/building.PNG)
 
 
 ### 步骤 3：查看结果
 
 1. 稍等片刻，您可以看到镜像状态变为**成功**。
 
-   ![successful](/images/docs/project-user-guide/image-builder/b2i-publish-artifact-to-kubernetes/successful.jpg)
+   ![构建成功](/images/docs/zh-cn/project-user-guide/image-builder/binary-to-image/successful.PNG)
 
 2. 点击该镜像前往其详情页面。在**任务记录**下，点击记录右侧的箭头图标查看构建日志。如果一切运行正常，您可以在日志末尾看到 `Build completed successfully`。
 
-   ![inspect-logs](/images/docs/project-user-guide/image-builder/b2i-publish-artifact-to-kubernetes/inspect-logs.jpg)
+   ![查看日志](/images/docs/zh-cn/project-user-guide/image-builder/binary-to-image/inspect-logs.PNG)
 
 3. 回到上一层页面，您可以看到该镜像相应的任务、部署和服务都已成功创建。
 
    #### 服务
 
-   ![service](/images/docs/project-user-guide/image-builder/b2i-publish-artifact-to-kubernetes/service.jpg)
+   ![service](/images/docs/zh-cn/project-user-guide/image-builder/binary-to-image/service.PNG)
 
    #### 部署
 
-   ![deployment](/images/docs/project-user-guide/image-builder/b2i-publish-artifact-to-kubernetes/deployment.jpg)
+   ![deployment](/images/docs/zh-cn/project-user-guide/image-builder/binary-to-image/deployment.PNG)
 
    #### 任务
 
-   ![job](/images/docs/project-user-guide/image-builder/b2i-publish-artifact-to-kubernetes/job.jpg)
+   ![job](/images/docs/zh-cn/project-user-guide/image-builder/binary-to-image/job.PNG)
 
 4. 在您的 Docker Hub 仓库，您可以看到 KubeSphere 已经向仓库推送了带有预期标签的镜像。
 
-   ![docker-image](/images/docs/project-user-guide/image-builder/b2i-publish-artifact-to-kubernetes/docker-image.jpg)
+   ![Docker 镜像](/images/docs/zh-cn/project-user-guide/image-builder/binary-to-image/docker-image.PNG)
 
 ### 步骤 4：访问 B2I 服务
 
 1. 在**服务**页面，请点击 B2I 服务前往其详情页面，您可以查看暴露的端口号。
 
-   ![exposed-port](/images/docs/project-user-guide/image-builder/b2i-publish-artifact-to-kubernetes/exposed-port.jpg)
+   ![端口暴露](/images/docs/zh-cn/project-user-guide/image-builder/binary-to-image/exposed-port.PNG)
 
 2. 通过 `http://{$Node IP}:{$NodePort}/{$Binary-Package-Name}/` 访问服务。
 
-   ![access-service](/images/docs/project-user-guide/image-builder/b2i-publish-artifact-to-kubernetes/access-service.jpg)
+   ![访问服务](/images/docs/zh-cn/project-user-guide/image-builder/binary-to-image/access-service.PNG)
 
    {{< notice note >}}
 
@@ -166,23 +166,23 @@ Binary-to-Image (B2I) 是一个工具箱和工作流，用于从二进制可执�
 
 5. 在**构建镜像**页面，您可以看到正在构建镜像。
 
-   ![building-status](/images/docs/project-user-guide/image-builder/b2i-publish-artifact-to-kubernetes/building-status.jpg)
+   ![构建状态](/images/docs/zh-cn/project-user-guide/image-builder/binary-to-image/building-status.PNG)
 
 ### 步骤 2：检查结果
 
 1. 稍等片刻，您可以看到镜像状态变为**成功**。
 
-   ![image-success](/images/docs/project-user-guide/image-builder/b2i-publish-artifact-to-kubernetes/image-success.jpg)
+   ![构建成功](/images/docs/zh-cn/project-user-guide/image-builder/binary-to-image/image-success.PNG)
 
 2. 点击该镜像前往其详情页面。在**任务记录**下，点击记录右侧的箭头图标查看构建日志。如果一切运行正常，您可以在日志末尾看到 `Build completed successfully`。
 
-   ![inspect-log](/images/docs/project-user-guide/image-builder/b2i-publish-artifact-to-kubernetes/inspect-log.jpg)
+   ![查看日志](/images/docs/zh-cn/project-user-guide/image-builder/binary-to-image/inspect-log.PNG)
 
 3. 回到上一层页面，您可以看到该镜像相应的任务已成功创建。
 
-   ![job-created](/images/docs/project-user-guide/image-builder/b2i-publish-artifact-to-kubernetes/job-created.jpg)
+   ![Job 已创建](/images/docs/zh-cn/project-user-guide/image-builder/binary-to-image/job-created.PNG)
 
 4. 在您的 Docker Hub 仓库，您可以看到 KubeSphere 已经向仓库推送了带有预期标签的镜像。
 
-   ![docker-image-pushed](/images/docs/project-user-guide/image-builder/b2i-publish-artifact-to-kubernetes/docker-image-pushed.jpg)
+   ![Docker 镜像已推送](/images/docs/zh-cn/project-user-guide/image-builder/binary-to-image/docker-image-pushed.PNG)
 
