@@ -1,9 +1,9 @@
 ---
-title: "High Availability Configurations"
+title: "Set up an HA Cluster Using a Load Balancer"
 keywords: 'KubeSphere, Kubernetes, HA, high availability, installation, configuration'
 description: 'How to configure a high-availability Kubernetes cluster.'
-linkTitle: "High Availability Configurations"
-weight: 3150
+linkTitle: "Set up an HA Cluster Using a Load Balancer"
+weight: 3210
 ---
 
 You can set up a single-master Kubernetes cluster with KubeSphere installed based on the tutorial of [Multi-node Installation](../multioverview/). Single-master clusters may be sufficient for development and testing in most cases. For a production environment, however, you need to consider the high availability of the cluster. If key components (for example, kube-apiserver, kube-scheduler, and kube-controller-manager) are all running on the same master node, Kubernetes and KubeSphere will be unavailable once the master node goes down. Therefore, you need to set up a high-availability cluster by provisioning load balancers with multiple master nodes. You can use any cloud load balancer, or any hardware load balancer (e.g. F5). In addition, Keepalived and [HAproxy](https://www.haproxy.com/), or Nginx is also an alternative for creating high-availability clusters.
@@ -14,7 +14,7 @@ This tutorial demonstrates the general configurations of a high-availability clu
 
 Make sure you have prepared six Linux machines before you begin, with three of them serving as master nodes and the other three as worker nodes. The following image shows details of these machines, including their private IP address and role. For more information about system and network requirements, see [Multi-node Installation](../multioverview/#step-1-prepare-linux-hosts).
 
-![ha-architecture](/images/docs/installing-on-linux/introduction/ha-configurations/ha-architecture.png)
+![ha-architecture](/images/docs/installing-on-linux/high-availability-configurations/set-up-ha-cluster-using-lb/ha-architecture.png)
 
 ## Configure a Load Balancer
 
