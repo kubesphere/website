@@ -389,7 +389,7 @@ Before you start to create your Kubernetes cluster, make sure you have tested th
 
 ## Summary
 
-Creating a highly available Kubernetes cluster is not just about business applications running without downtime. It is also about selecting the correct tools and use them to set up the cluster with high availability in the most graceful and efficient way. Why not try Keepalived, HAproxy and KubeKey? Perhaps they will give you the answer you have been seeking for so long. 
+Creating a highly available Kubernetes cluster is not just about business applications running without downtime. It is also about selecting the correct tools and using them to set up the cluster with high availability in the most graceful and efficient way. Why not try Keepalived, HAproxy and KubeKey? Perhaps they will give you the answer you have been seeking for so long. 
 
 ## Reference
 
