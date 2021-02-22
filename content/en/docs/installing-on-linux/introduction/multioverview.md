@@ -8,7 +8,7 @@ weight: 3130
 
 In a production environment, a single-node cluster cannot satisfy most of the needs as the cluster has limited resources with insufficient compute capabilities. Thus, single-node clusters are not recommended for large-scale data processing. Besides, a cluster of this kind is not available with high availability as it only has one node. On the other hand, a multi-node architecture is the most common and preferred choice in terms of application deployment and distribution.
 
-This section gives you an overview of a single-master multi-node installation, including the concept, [KubeKey](https://github.com/kubesphere/kubekey/) and steps. For information about HA installation, refer to [High Availability Configurations](../ha-configuration/), [Installing on Public Cloud](../../public-cloud/install-kubesphere-on-azure-vms/) and [Installing in On-premises Environment](../../on-premises/install-kubesphere-on-bare-metal/).
+This section gives you an overview of a single-master multi-node installation, including the concept, [KubeKey](https://github.com/kubesphere/kubekey/) and steps. For information about HA installation, refer to [High Availability Configurations](../../../installing-on-linux/high-availability-configurations/ha-configuration/), [Installing on Public Cloud](../../public-cloud/install-kubesphere-on-azure-vms/) and [Installing in On-premises Environment](../../on-premises/install-kubesphere-on-bare-metal/).
 
 ## Video Demonstration
 

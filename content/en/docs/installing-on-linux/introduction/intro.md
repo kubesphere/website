@@ -15,7 +15,7 @@ Here is a list of available installation options.
 - [All-in-one installation](../../../quick-start/all-in-one-on-linux/): Install KubeSphere on a single node. It is only for users to quickly get familiar with KubeSphere.
 - [Multi-node installation](../multioverview/): Install KubeSphere on multiple nodes. It is for testing or development.
 - [Air-gapped installation on Linux](../air-gapped-installation): All images of KubeSphere have been encapsulated into a package. It is convenient for air-gapped installation on Linux machines.
-- [High availability installation](../ha-configuration/): Install a highly-available KubeSphere cluster with multiple nodes which is used for the production environment.
+- [High availability installation](../../../installing-on-linux/high-availability-configurations/ha-configuration/): Install a highly-available KubeSphere cluster with multiple nodes which is used for the production environment.
 - Minimal Packages: Only install the minimum required system components of KubeSphere. Here is the minimum resource requirement:
   - 2 CPUs
   - 4GB RAM
@@ -46,7 +46,7 @@ If you have an existing Kubernetes cluster, see [Overview of Installing on Kuber
 
 KubeSphere has decoupled some components since v2.1.0. KubeKey only installs necessary components by default as this way features fast installation and minimal resource consumption. If you want to enable enhanced pluggable functionalities, see [Enable Pluggable Components](../../../pluggable-components/) for details.
 
-The quick installation of KubeSphere is only for development or testing since it uses [Local Volume](https://kubernetes.io/docs/concepts/storage/volumes/#local) based on [openEBS](https://openebs.io/) to provide storage services by default. If you want a production installation, see [High Availability Configurations](../ha-configuration/).
+The quick installation of KubeSphere is only for development or testing since it uses [Local Volume](https://kubernetes.io/docs/concepts/storage/volumes/#local) based on [openEBS](https://openebs.io/) to provide storage services by default. If you want a production installation, see [High Availability Configurations](../../../installing-on-linux/high-availability-configurations/ha-configuration/).
 
 ## Overview of Pluggable Components
 
