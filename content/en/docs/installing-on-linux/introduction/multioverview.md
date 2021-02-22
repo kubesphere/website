@@ -3,7 +3,7 @@ title: "Multi-node Installation"
 keywords: 'Multi-node, Installation, KubeSphere'
 description: 'Explain how to install KubeSphere on multiple nodes'
 linkTitle: "Multi-node Installation"
-weight: 3120
+weight: 3130
 ---
 
 In a production environment, a single-node cluster cannot satisfy most of the needs as the cluster has limited resources with insufficient compute capabilities. Thus, single-node clusters are not recommended for large-scale data processing. Besides, a cluster of this kind is not available with high availability as it only has one node. On the other hand, a multi-node architecture is the most common and preferred choice in terms of application deployment and distribution.
@@ -20,19 +20,6 @@ A multi-node cluster is composed of at least one master node and one worker node
 
 - **Master**. A master node generally hosts the control plane that controls and manages the whole system.
 - **Worker**. Worker nodes run the actual applications deployed on them.
-
-## Why KubeKey
-
-If you are not familiar with Kubernetes components, you may find it difficult to set up a highly-functional multi-node Kubernetes cluster. Starting from the version 3.0.0, KubeSphere uses a brand-new installer called KubeKey to replace the old ansible-based installer. Developed in Go language, KubeKey allows users to quickly deploy a multi-node architecture.
-
-For users who do not have an existing Kubernetes cluster, they only need to create a configuration file with few commands and add node information (e.g. IP address and node roles) in it after KubeKey is downloaded. With one command, the installation will start and no additional operation is needed.
-
-### Motivation
-
-- The previous ansible-based installer has a bunch of software dependencies such as Python. KubeKey is developed in Go language to get rid of the problem in a variety of environments, making sure the installation is successful.
-- KubeKey uses Kubeadm to install Kubernetes clusters on nodes in parallel as much as possible in order to reduce installation complexity and improve efficiency. It will greatly save installation time compared to the older installer.
-- With KubeKey, users can scale clusters from an all-in-one cluster to a multi-node cluster, even an HA cluster.
-- KubeKey aims to install clusters as an object, i.e., CaaO.
 
 ## Step 1: Prepare Linux Hosts
 
@@ -100,7 +87,7 @@ This example includes three hosts as below with the master node serving as the t
 
 ## Step 2: Download KubeKey
 
-Follow the step below to download KubeKey.
+Follow the step below to download [KubeKey](../kubekey).
 
 {{< tabs >}}
 
