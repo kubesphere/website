@@ -33,15 +33,12 @@ A Route on KubeSphere is the same as an [Ingress](https://kubernetes.io/docs/con
 
    {{< notice note >}}
 
-   If **Access Method** is set to **LoadBalancer**:
-
-   * On [QingCloud Kubernetes Engine (QKE)](https://appcenter.qingcloud.com/apps/app-cmgbd5k2), you need to [add annotations](https://github.com/yunify/qingcloud-cloud-controller-manager/blob/v1.3.4/docs/configure.md) in the **Set Gateway** dialog box to use the QingCloud load balancer plugin. The external IP address assigned by the QingCloud load balancer plugin can be directly used to access the Route from outside your private network.
-   * On other infrastructure platforms, you need to enable the load balancer plugin of your platform according to the plugin user guide.
+   If **Access Method** is set to **LoadBalancer**, you may need to enable the load balancer plugin in your environment according to the plugin user guide.
 
    {{</ notice >}}
 
    ![access-method-nodeport](/images/docs/project-user-guide/application-workloads/routes/access-method-nodeport.png)
-   
+
    ![access-method-loadbalancer](/images/docs/project-user-guide/application-workloads/routes/access-method-loadbalancer.png)
 
 ## Create a Route
