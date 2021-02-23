@@ -136,7 +136,7 @@ If you need to access the Route from outside your private network by using eithe
 
 * You may need to configure traffic forwarding and firewall policies in your infrastructure environment so that the gateway address and port number of the Route can be accessed.
 * If **Auto Generate** is selected in the [route rule configuration](#step-2-configure-route-rules), you may need to manually [edit the Route rules](#edit-the-route) to change the gateway address in the Route domain name to the external IP address of your private network.
-* If **Specify Domain** is selected in the [route rule configuration](http://localhost:1313/docs/project-user-guide/application-workloads/routes/#step-2-configure-route-rules), you may need to change the configuration on your DNS server or in the `hosts` file of your client machine so that the domain name can be resolved into the external IP address of your private network. 
+* If **Specify Domain** is selected in the [route rule configuration](#step-2-configure-route-rules), you may need to change the configuration on your DNS server or in the `hosts` file of your client machine so that the domain name can be resolved into the external IP address of your private network. 
 
 {{</ notice >}}
 
