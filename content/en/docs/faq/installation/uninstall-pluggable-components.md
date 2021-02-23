@@ -134,3 +134,8 @@ kubectl delete devopsprojects --all 2>/dev/null
 kubectl delete ns kubesphere-devops-system
 ```
 
+{{< notice note >}} 
+
+For the component NetworkPolicy, disabling it does not require uninstalling the component as its controller is now inside `ks-controller-manager`. If you want to remove it from the KubeSphere console, change `networkPolicy.enabled` to `false` in `ks-installer`.
+
+{{</ notice >}} 
