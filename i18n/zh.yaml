@@ -60,6 +60,8 @@
   translation: 最新更新
 - id: What’s on this Page
   translation: 页面内容
+- id: Content
+  translation: 目录
 - id: Previous
   translation: 上一篇
 - id: Next
