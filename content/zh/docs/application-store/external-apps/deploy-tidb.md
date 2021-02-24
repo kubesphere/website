@@ -1,8 +1,8 @@
 ---
-title: "Deploy TiDB Operator and a TiDB Cluster on KubeSphere"
+title: "在 KubeSphere 中部署 TiDB Operator 和 TiDB 集群"
 keywords: 'KubeSphere, Kubernetes, TiDB, TiDB Operator, TiDB Cluster'
-description: 'How to deploy TiDB Operator and a TiDB Cluster on KubeSphere'
-linkTitle: "Deploy TiDB Operator and a TiDB Cluster"
+description: '如何在 KubeSphere 中部署 TiDB Operator 和 TiDB 集群'
+linkTitle: "部署 TiDB Operator 和 TiDB 集群"
 weight: 14320
 ---
 
