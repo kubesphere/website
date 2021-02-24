@@ -25,7 +25,7 @@ Monitor node status and learn how to add node labels or taints.
 
 ## [Cluster Status Monitoring](../cluster-administration/cluster-status-monitoring/)
 
-Monitor how a cluster is functioning based on different metrics, including physical resources, ETCD, and APIServer.
+Monitor how a cluster is functioning based on different metrics, including physical resources, etcd, and APIServer.
 
 ## [Application Resources Monitoring](../cluster-administration/application-resources-monitoring/)
 

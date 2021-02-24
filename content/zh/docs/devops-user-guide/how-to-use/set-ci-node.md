@@ -1,62 +1,63 @@
 ---
-title: "为缓存依赖项设置 CI 节点"
-keywords: 'Kubernetes, docker, KubeSphere, Jenkins, cicd, pipeline, dependency cache'
-description: '如何为 KubeSphere 流水线的缓存依赖项设置 CI 节点'
-linkTitle: "为缓存依赖项设置 CI 节点"
+title: "为依赖项缓存设置 CI 节点"
+keywords: 'Kubernetes, Docker, KubeSphere, Jenkins, CICD, 流水线, 依赖项缓存'
+description: '如何为 KubeSphere 流水线依赖项缓存设置 CI 节点。'
+linkTitle: "为依赖项缓存设置 CI 节点"
 weight: 11270
 ---
 
-通常，在构建应用程序时需要提取不同的依赖关系。 这可能会导致某些问题，例如较长的拉取时间和网络的不稳定会进一步导致构建失败。 为了为您的流水线提供更可靠和稳定的环境，您可以配置一个或一组专门用于持续集成（CI）的节点。 这些 CI 节点可以通过使用缓存来加快构建过程。</br>
-本教程演示如何设置 CI 节点，以便 KubeSphere 调度流水线的任务，并在这些节点上构建 S2I / B2I。
+通常情况下，构建应用程序的过程中需要拉取不同的依赖项。这可能会导致某些问题，例如拉取时间长和网络不稳定，这会进一步导致构建失败。要为您的流水线提供更可靠和稳定的环境，您可以配置一个节点或一组节点，专门用于持续集成 (CI)。这些 CI 节点可以通过使用缓存来加快构建过程。
 
-## 前提条件
+本教程演示如何设置 CI 节点，以便 KubeSphere 将流水线的任务以及 S2I/B2I 构建的任务调度到这些节点。
 
-您需要一个被授予**集群管理**角色的帐户。 例如，您可以直接以 `admin` 身份登录控制台或使用授权创建新角色并将其分配给帐户。
+## 准备工作
+
+您需要一个具有**集群管理**权限的帐户。例如，您可以直接以 `admin` 身份登录控制台或者创建一个具有该权限的新角色并将该新角色其分配给一个帐户。
 
 ## 标记 CI 节点
 
-1. 单击左上角的**平台管理**，然后选择**集群管理**。
+1. 点击左上角的**平台管理**，然后选择**集群管理**。
 
-![clusters-management](/images/docs/devops-user-guide-zh/set-ci-node-for-dependency-cache-zh/clusters-management.png)
+   ![集群管理](/images/docs/zh-cn/devops-user-guide/use-devops/set-ci-node-for-dependency-caching/clusters-management.png)
 
-2. 如果您已经在导入成员集群时启用了[多集群特性](../../../multicluster-management)，那么您可以选择一个特定集群以查看其应用程序资源。 如果尚未启用该特性，请直接参考下一步。
+2. 如果您已经启用[多集群功能](../../../multicluster-management)并已导入 Member 集群，那么您可以选择一个特定集群以查看其节点。如果尚未启用该功能，请直接参考下一步。
 
-3. 导航到**节点管理**下的**群集节点**，您可以在其中查看当前集群中的现有节点。
+3. 转到**节点管理**下的**集群节点**，您可以在其中查看当前集群中的现有节点。
 
-![Node Management](/images/docs/devops-user-guide-zh/set-ci-node-for-dependency-cache-zh/set-node-1.png)
+   ![节点管理](/images/docs/zh-cn/devops-user-guide/use-devops/set-ci-node-for-dependency-caching/node-management.png)
 
-4. 从列表中选择一个节点以运行 CI 任务。 例如，在此处选择 `node2`，然后单击它以转到其详细信息页面。 单击**更多操作**，然后选择**编辑标签**。
+4. 从列表中选择一个节点用来运行 CI 任务。例如，在此处选择 `node02`，点击它以转到其详情页面。点击**更多操作**，然后选择**编辑标签**。
 
-![Select CI Node](/images/docs/devops-user-guide-zh/set-ci-node-for-dependency-cache-zh/set-node-2.png)
+   ![选择 CI 节点](/images/docs/zh-cn/devops-user-guide/use-devops/set-ci-node-for-dependency-caching/select-ci-node.png)
 
-5. 在出现的对话框中，单击**添加标签**。 使用键 `node-role.kubernetes.io/worker` 和值 `ci` 添加新标签，然后单击**保存**。
+5. 在弹出对话框中，点击 **Add 标签**。使用键 `node-role.kubernetes.io/worker` 和值 `ci` 添加新标签，然后点击**保存**。
 
-![Add CI Label](/images/docs/devops-user-guide-zh/set-ci-node-for-dependency-cache-zh/set-node-3.png)
+   ![添加 CI 标签](/images/docs/zh-cn/devops-user-guide/use-devops/set-ci-node-for-dependency-caching/add-ci-label.png)
 
-{{< notice note >}} 
+   {{< notice note >}} 
 
-节点可能已经有空值的键,这种情况下您可以直接补充值 `ci`。
+   节点可能已经有空值的键，这种情况下您可以直接补充值 `ci`。
 
-{{</ notice >}} 
+   {{</ notice >}} 
 
 ## 给 CI 节点添加污点
 
-流水线和 S2I/B2I 工作流基本上是根据[节点亲和性](https://kubernetes.io/docs/concepts/configuration/assign-pod-node/#node-affinity)调度到该节点。 如果要将节点专用于 CI 任务，这意味着不允许为其安排其他工作负载，则可以在该节点上添加[污点](https://kubernetes.io/docs/concepts/configuration/taint-and-toleration/)。
+流水线和 S2I/B2I 工作流基本上会根据[节点亲和性](https://kubernetes.io/zh/docs/concepts/scheduling-eviction/assign-pod-node/#node-affinity)调度到该节点。如果要将节点专用于 CI 任务，即不允许将其他工作负载调度到该节点，您可以在该节点上添加[污点](https://kubernetes.io/zh/docs/concepts/scheduling-eviction/taint-and-toleration/)。
 
-1. 单击**更多操作**，然后选择**污染管理**。
+1. 点击**更多操作**，然后选择**污点管理**。
 
-![Select CI Node](/images/docs/devops-user-guide-zh/set-ci-node-for-dependency-cache-zh/set-node-4.png)
+   ![选择污点管理](/images/docs/zh-cn/devops-user-guide/use-devops/set-ci-node-for-dependency-caching/select-taint-management.png)
 
-2. 单击**添加污点**，然后输入键 `node.kubernetes.io/ci` 而不指定值。 您可以根据需要选择 `不允许调度 (NoSchedule)` 或 `(尽量不调度) PreferNoSchedule` 。
+2. 点击**添加污点**，然后输入键 `node.kubernetes.io/ci` 而不指定值。您可以根据需要选择 `不允许调度 (NoSchedule)` 或 `尽量不调度 (PreferNoSchedule)` 。
 
-![Add Taint](/images/docs/devops-user-guide-zh/set-ci-node-for-dependency-cache-zh/set-node-5.png)
+   ![添加污点](/images/docs/zh-cn/devops-user-guide/use-devops/set-ci-node-for-dependency-caching/add-taint.png)
 
-3. 单击**保存**。 KubeSphere 将根据您设置的污点安排任务。 您现在可以回到DevOps工作流上工作。
+3. 点击**保存**。KubeSphere 将根据您设置的污点调度任务。您现在可以回到 DevOps 流水线上进行操作。
 
-![Taint Result](/images/docs/devops-user-guide-zh/set-ci-node-for-dependency-cache-zh/set-node-6.png)
+   ![污点已添加](/images/docs/zh-cn/devops-user-guide/use-devops/set-ci-node-for-dependency-caching/taint-result.png)
 
-{{< notice tip >}}
+   {{< notice tip >}} 
 
-本教程还介绍了与节点管理有关的操作。 有关详细信息，请参阅[节点管理](../../../cluster-administration/nodes/)。
+   本教程还涉及与节点管理有关的操作。有关详细信息，请参见[节点管理](../../../cluster-administration/nodes/)。
 
-{{</ notice >}}
+   {{</ notice >}}

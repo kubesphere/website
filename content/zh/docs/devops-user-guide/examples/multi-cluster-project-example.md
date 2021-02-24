@@ -152,4 +152,4 @@ weight: 11420
 
 保存 Jenkinsfile 后，点击**运行**。如果一切顺利，您会在您的多集群项目中看到部署 (Deployment) 工作负载。
 
-![multi-cluster-ok](/images/docs/devops-user-guide/examples/compile-and-deploy-a-go-multi-cluster-project/multi-cluster-ok.png)
+![Deployment](/images/docs/zh-cn/devops-user-guide/examples/deploy-apps-in-multicluster-project-using-jenkinsfile/multi-cluster-ok.PNG)

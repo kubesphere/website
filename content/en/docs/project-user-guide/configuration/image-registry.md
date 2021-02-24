@@ -99,7 +99,7 @@ Select **Image Registry Secret** for **Type**. To use images from your private r
 
    {{</ notice >}} 
    
-4. Click **Create**. Later, the Secret will appear on the **Secrets** page. For more information about how to edit the Secret after you create it, see [Check Secret Details](http://localhost:1313/docs/project-user-guide/configuration/secrets/#check-secret-details).
+4. Click **Create**. Later, the Secret will appear on the **Secrets** page. For more information about how to edit the Secret after you create it, see [Check Secret Details](../../project-user-guide/configuration/secrets/#check-secret-details).
 
 **Https**
 

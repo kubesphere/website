@@ -51,7 +51,7 @@ The request and limit of CPU and memory resources all refer to single replica.
 | -------------- | ------------------------------------------------------------ | ---------------------------- | ---------------------------- |
 | Sub-component  | 2 x Prometheus                                               | 3 x Alertmanager             | Notification Manager         |
 | CPU Request    | 100 m                                                        | 10 m                         | 100 m                        |
-| CPU Limit      | 4 core                                                       |                              | 500 m                        |
+| CPU Limit      | 4 cores                                                      |                              | 500 m                        |
 | Memory Request | 400 MiB                                                      | 30 MiB                       | 20 MiB                       |
 | Memory Limit   | 8 GiB                                                        |                              | 1 GiB                        |
 | Installation   | Required                                                     | Required                     | Required                     |

@@ -17,7 +17,7 @@ Using [Redis](https://redis.io/) as an example application, this tutorial demons
 
 ## Prerequisites
 
-- You need to enable [KubeSphere App Store (OpenPitrix)](../../pluggable-components/app-store/).
+- You need to enable the [KubeSphere App Store (OpenPitrix)](../../pluggable-components/app-store/).
 - You need to create a workspace, a project and an account (`project-regular`). For more information, see [Create Workspaces, Projects, Accounts and Roles](../../quick-start/create-workspace-and-project/).
 
 ## Hands-on Lab
@@ -135,7 +135,7 @@ The version number must start with a number and contain decimal points.
 
 ### Step 3: Review the application
 
-1. Log out and log back in KubeSphere as `reviewer`. Click **Platform** in the top left corner and select **App Store Management**. On the **App Review** page, the app submitted in the previous step displays under the tab **Unprocessed**.
+1. Log out of KubeSphere and log back in as `reviewer`. Click **Platform** in the top left corner and select **App Store Management**. On the **App Review** page, the app submitted in the previous step displays under the tab **Unprocessed**.
 
    ![app-to-be-reviewed](/images/docs/appstore/application-lifecycle-management/app-to-be-reviewed.jpg)
 
@@ -149,7 +149,7 @@ The version number must start with a number and contain decimal points.
 
 After the app is approved, `isv` can release the Redis application to the App Store, allowing all users on the platform to find and deploy this application.
 
-1. Log out and log back in KubeSphere as `isv`. Go to your workspace and click Redis on the **App Templates** page. On its detail page, expand the version menu, then click **Release to Store**. In the pop-up prompt, click **OK** to confirm.
+1. Log out of KubeSphere and log back in as `isv`. Go to your workspace and click Redis on the **App Templates** page. On its detail page, expand the version menu, then click **Release to Store**. In the pop-up prompt, click **OK** to confirm.
 
    ![app-templates-page](/images/docs/appstore/application-lifecycle-management/app-templates-page.jpg)
 

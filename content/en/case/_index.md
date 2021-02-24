@@ -81,11 +81,31 @@ section3:
           icon: 'images/case/section6-99kvm.jpg'
         - name: 'mile-works'
           icon: 'images/case/section6-mile-works.jpg'
+        - name: 'uisee'
+          icon: 'images/case/section6-uisee.png'
+        - name: 'hongya'
+          icon: 'images/case/section6-hongya.png'
+        - name: 'ruijie'
+          icon: 'images/case/section6-ruijie.png'
+        - name: 'supaur'
+          icon: 'images/case/section6-supaur.png'
+        - name: 'supaur'
+          icon: 'images/case/section6-xiaodiketang.png'
 
     - name: 'Internet'
       children:
         - name: 'sina'
           icon: 'images/case/section6-sina.jpg'
+
+    - name: 'Logistics'
+      children:
+        - name: 'ZTO'
+          icon: 'images/case/section6-zto.png'
+
+    - name: 'MCN'
+      children:
+        - name: 'yaowang'
+          icon: 'images/case/section6-yaowang.png'
 
 
   bottomContent:

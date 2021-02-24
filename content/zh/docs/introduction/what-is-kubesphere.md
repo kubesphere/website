@@ -22,7 +22,7 @@ KubeSphere 为用户屏蔽了基础设施底层复杂的技术细节，帮助企
 
 ## 支持在任意平台运行 KubeSphere
 
-作为一个灵活的轻量级容器 PaaS 平台，KubeSphere 对不同云生态系统的支持非常友好，因为它没有对原生 Kubernetes 本身有任何的侵入 (Hack)。换句话说，KubeSphere 可以**部署并运行在任何基础架构以及所有版本兼容的 Kubernetes 集群**之上，包括虚拟机、物理机、数据中心、公有云和混合云等。
+作为一个灵活的轻量级容器 PaaS 平台，KubeSphere 对不同云生态系统的支持非常友好，因为它对原生 Kubernetes 本身没有任何的侵入 (Hack)。换句话说，KubeSphere 可以**部署并运行在任何基础架构以及所有版本兼容的 Kubernetes 集群**之上，包括虚拟机、物理机、数据中心、公有云和混合云等。
 
 您可以选择在公有云和托管 Kubernetes 集群（例如阿里云、AWS、青云QingCloud、腾讯云、华为云等）上安装 KubeSphere，**还可以导入和纳管已有的 Kubernetes 集群**。
 

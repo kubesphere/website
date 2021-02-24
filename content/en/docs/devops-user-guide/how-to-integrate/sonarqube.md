@@ -44,6 +44,12 @@ To integrate SonarQube into your pipeline, you must install SonarQube Server fir
    helm upgrade --install sonarqube sonarqube --repo https://charts.kubesphere.io/main -n kubesphere-devops-system  --create-namespace --set service.type=NodePort
    ```
 
+   {{< notice note >}}
+
+   Make sure you use Helm 3 to install SonarQube Server.
+
+   {{</ notice >}}
+
 3. You will get this prompt:
 
    ![sonarqube-install](/images/docs/devops-user-guide/tool-integration/integrate-sonarqube-into-pipeline/sonarqube-install.png)
@@ -210,7 +216,7 @@ To integrate SonarQube into your pipeline, you must install SonarQube Server fir
 
    ![sonarqube-jenkins-settings](/images/docs/devops-user-guide/tool-integration/integrate-sonarqube-into-pipeline/sonarqube-jenkins-settings.jpg)
 
-### Step 6: Add sonarqubeUrl to the KubeSphere Console
+### Step 6: Add sonarqubeURL to the KubeSphere Console
 
 You need to specify `sonarqubeURL` so that you can access SonarQube directly from the KubeSphere console.
 

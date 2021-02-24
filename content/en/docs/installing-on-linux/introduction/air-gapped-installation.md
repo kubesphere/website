@@ -3,7 +3,7 @@ title: "Air-gapped Installation"
 keywords: 'Air-gapped, Installation, KubeSphere'
 description: 'How to install KubeSphere in an air-gapped environment.'
 linkTitle: "Air-gapped Installation"
-weight: 3130
+weight: 3140
 ---
 
 The air-gapped installation is almost the same as the online installation except that you must create a local registry to host Docker images. This tutorial demonstrates how to install KubeSphere and Kubernetes in an air-gapped environment.

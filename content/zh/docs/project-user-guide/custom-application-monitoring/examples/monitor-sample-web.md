@@ -1,119 +1,118 @@
 ---
-title: "Monitor Sample Web"
-keywords: 'monitoring, prometheus, prometheus operator'
-description: 'Monitor Sample Web'
-
-linkTitle: "Monitor Sample Web"
+title: "监控示例 Web 应用程序"
+keywords: '监控, prometheus, prometheus operator'
+description: '监控示例 Web 应用程序'
+linkTitle: "监控示例 Web 应用程序"
 weight: 10813
 ---
 
-This section walks you through monitoring a sample web application. The application is instrumented with Prometheus Go client in its code. Therefore, it can expose metrics directly without the help of exporters.
+本教程演示如何监控示例 Web 应用程序。该应用程序在代码中已接入 Prometheus Go 客户端，因此可以直接暴露指标，无需使用导出器 (Exporter)。
 
-## Prerequisites
+## 准备工作
 
-- Please make sure you [enable the OpenPitrix system](../../../../pluggable-components/app-store/).
-- You need to create a workspace, a project, and a user account for this tutorial. For more information, see [Create Workspace, Project, Account and Role](../../../../quick-start/create-workspace-and-project/). The account needs to be a platform regular user and to be invited as the workspace self provisioner with the `self-provisioner` role. Namely, create an account `workspace-self-provisioner` of the `self-provisioner` role, and use this account to create a project (e.g. `test`). In this tutorial, you log in as `workspace-self-provisioner` and work in the project `test` in the workspace `demo-workspace`.
+- 请确保[已启用 OpenPitrix 系统](../../../../pluggable-components/app-store/)。
+- 您需要创建一个企业空间、一个项目和一个帐户。有关更多信息，请参见[创建企业空间、项目、帐户和角色](../../../../quick-start/create-workspace-and-project/)。该帐户需要是平台普通用户，邀请至该企业空间中并赋予 `self-provisioner` 角色。故请创建一个 `workspace-self-provisioner` 帐户，赋予 `self-provisioner` 角色，并使用该帐户创建一个项目（例如 `test`）。在本教程中，您以 `workspace-self-provisioner` 身份登录控制台，并在 `demo-workspace` 企业空间的 `test` 项目中进行操作。
 
-- Knowledge of Helm Chart and [PromQL](https://prometheus.io/docs/prometheus/latest/querying/examples/).
+- 了解 Helm Chart 和 [PromQL](https://prometheus.io/docs/prometheus/latest/querying/examples/)。
 
-## Hands-on Lab
+## 动手实验
 
-### Step 1: Prepare Sample Web Application Image
+### 步骤 1：准备示例 Web 应用程序的镜像
 
-First, prepare the sample web application image. The sample web application exposes a user-defined metric called `myapp_processed_ops_total`. It is a counter type metric that counts the number of operations that have been processed by far. The counter increases automatically by one every 2 seconds.
+示例 Web 应用程序暴露一个名为 `myapp_processed_ops_total` 的用户定义指标。这是一个计数器型指标，计算已处理操作的数量。计数器每 2 秒自动增加 1。
 
-This sample application exposes application-specific metrics via the endpoint `http://localhost:2112/metrics`.
+该示例应用程序通过 Endpoint `http://localhost:2112/metrics` 暴露应用具体指标。
 
-In this tutorial, you use the made-ready image `kubespheredev/promethues-example-app`. The source code can be found in [kubesphere/prometheus-example-app](https://github.com/kubesphere/prometheus-example-app). You can also follow [Instrument A Go Application For Prometheus](https://prometheus.io/docs/guides/go-application/) in the official documentation of Prometheus.
+在本教程中，您可以使用现成的镜像 `kubespheredev/promethues-example-app`。源代码请见 [kubesphere/prometheus-example-app](https://github.com/kubesphere/prometheus-example-app)。您也可以按照 Prometheus 官方文档 [Instrument A Go Application For Prometheus](https://prometheus.io/docs/guides/go-application/) 进行操作。
 
-### Step 2: Pack the Application into a Helm Chart
+### 步骤 2：将应用程序打包成 Helm Chart
 
-Pack the Deployment, Service, and ServiceMonitor YAML template into a helm chat for reuse. In the Deployment and Service template, you define sample web container and the port for the metrics endpoint. ServiceMonitor is a custom resource defined and used by Prometheus Operator. It connects your application and KubeSphere monitoring engine (Prometheus) so that the engine knows where and how to scrape metrics. In future releases, KubeSphere will provide a graphical user interface for easy operation.
+将部署、服务和 ServiceMonitor 的 YAML 模板打包成一个 Helm Chart 用来复用。在部署和服务模板中，您可以为指标 Endpoint 定义示例 Web 容器和端口。ServiceMonitor 是由 Prometheus Operator 定义和使用的自定义资源，它连接您的应用程序和 KubeSphere 监控引擎 (Prometheus)，以便监控引擎知道抓取指标的位置和方式。KubeSphere 在未来发布版本中将提供易于操作的图形用户界面。
 
-Find the source code in the folder `helm` in [kubesphere/prometheus-example-app](https://github.com/kubesphere/prometheus-example-app). The helm chart package is made ready and is named as `prometheus-example-app-0.1.0.tgz`. Please download the .tgz file and you will use it in the next step.
+源代码请见 [kubesphere/prometheus-example-app](https://github.com/kubesphere/prometheus-example-app) 的 `helm` 文件夹。Helm Chart 包已准备完成并命名为 `prometheus-example-app-0.1.0.tgz`。请下载该 .tgz 文件，用于下面的步骤。
 
-### Step 3: Upload the Helm Chart
+### 步骤 3：上传 Helm Chart
 
-1. Go to the workspace **Overview** page of `demo-workspace` and navigate to **App Templates**.
+1. 在 `demo-workspace` 企业空间的**概览**页面上转到**应用模板**。
 
-    ![app-template-create](/images/docs/project-user-guide/custom-application-monitoring/app-template-create.jpg)
+    ![创建应用模板](/images/docs/zh-cn/project-user-guide/custom-application-monitoring/examples/monitor-sample-web-app/app-template-create.PNG)
 
-2. Click **Create** and upload `prometheus-example-app-0.1.0.tgz` as images below.
+2. 点击**创建**，上传 `prometheus-example-app-0.1.0.tgz` 作为镜像，如下所示。
 
-    ![click-create-app-template](/images/docs/project-user-guide/custom-application-monitoring/click-create-app-template.jpg)
+    ![click-create-app-template](/images/docs/zh-cn/project-user-guide/custom-application-monitoring/examples/monitor-sample-web-app/click-create-app-template.PNG)
 
-    ![click-upload-app-template](/images/docs/project-user-guide/custom-application-monitoring/click-upload-app-template.jpg)
+    ![click-upload-app-template](/images/docs/zh-cn/project-user-guide/custom-application-monitoring/examples/monitor-sample-web-app/click-upload-app-template.PNG)
 
-    ![click-upload-app-template-2](/images/docs/project-user-guide/custom-application-monitoring/click-upload-app-template-2.jpg)
+    ![click-upload-app-template-2](/images/docs/zh-cn/project-user-guide/custom-application-monitoring/examples/monitor-sample-web-app/click-upload-app-template-2.PNG)
 
-    ![click-upload-app-template-4](/images/docs/project-user-guide/custom-application-monitoring/click-upload-app-template-4.jpg)
+    ![click-upload-app-template-4](/images/docs/zh-cn/project-user-guide/custom-application-monitoring/examples/monitor-sample-web-app/click-upload-app-template-4.PNG)
 
-    ![click-upload-app-template-5](/images/docs/project-user-guide/custom-application-monitoring/click-upload-app-template-5.jpg)
+    ![click-upload-app-template-5](/images/docs/zh-cn/project-user-guide/custom-application-monitoring/examples/monitor-sample-web-app/click-upload-app-template-5.PNG)
 
-    ![click-upload-app-template-6](/images/docs/project-user-guide/custom-application-monitoring/click-upload-app-template-6.jpg)
+    ![click-upload-app-template-6](/images/docs/zh-cn/project-user-guide/custom-application-monitoring/examples/monitor-sample-web-app/click-upload-app-template-6.PNG)
 
-### Step 4: Deploy Sample Web Application
+### 步骤 4：部署示例 Web 应用程序
 
-You need to deploy the sample web application into `demo`. For demonstration purposes, you can simply run a test deployment.
+您需要将示例 Web 应用程序部署至 `test` 项目，可以简单运行一个测试部署用于演示。
 
-1. Click `prometheus-example-app`.
+1. 点击 `prometheus-example-app`。
 
-    ![deploy-sample-web-1](/images/docs/project-user-guide/custom-application-monitoring/deploy-sample-web-1.jpg)
+    ![部署示例 Web 应用-1](/images/docs/zh-cn/project-user-guide/custom-application-monitoring/examples/monitor-sample-web-app/deploy-sample-web-1.PNG)
 
-2. Expand the menu and click **Test Deploy**.
+2. 展开菜单，点击**测试部署**。
 
-    ![deploy-sample-web-2](/images/docs/project-user-guide/custom-application-monitoring/deploy-sample-web-2.jpg)
+    ![部署示例 Web 应用-2](/images/docs/zh-cn/project-user-guide/custom-application-monitoring/examples/monitor-sample-web-app/deploy-sample-web-2.PNG)
 
-    ![deploy-sample-web-3](/images/docs/project-user-guide/custom-application-monitoring/deploy-sample-web-3.jpg)
+    ![部署示例 Web 应用-3](/images/docs/zh-cn/project-user-guide/custom-application-monitoring/examples/monitor-sample-web-app/deploy-sample-web-3.PNG)
 
-3. Make sure you deploy the sample web application in `test` and click **Next**.
+3. 请确保将示例 Web 应用程序部署至 `test` 项目，点击**下一步**。
 
-    ![deploy-sample-web-4](/images/docs/project-user-guide/custom-application-monitoring/deploy-sample-web-4.jpg)
+    ![部署示例 Web 应用-4](/images/docs/zh-cn/project-user-guide/custom-application-monitoring/examples/monitor-sample-web-app/deploy-sample-web-4.PNG)
 
-4. Make sure `serviceMonitor.enabled` is set to `true` and click **Deploy**.
+4. 请确保将 `serviceMonitor.enabled` 设置为 `true`，点击**部署**。
 
-    ![deploy-sample-web-5](/images/docs/project-user-guide/custom-application-monitoring/deploy-sample-web-5.jpg)
+    ![部署示例 Web 应用-5](/images/docs/zh-cn/project-user-guide/custom-application-monitoring/examples/monitor-sample-web-app/deploy-sample-web-5.PNG)
 
-    ![deploy-sample-web-6](/images/docs/project-user-guide/custom-application-monitoring/deploy-sample-web-6.jpg)
+    ![部署示例 Web 应用-6](/images/docs/zh-cn/project-user-guide/custom-application-monitoring/examples/monitor-sample-web-app/deploy-sample-web-6.PNG)
 
-5. In **Workloads** of the project `test`, wait until the sample web application is up and running.
+5. 在 `test` 项目的**工作负载**下，稍等片刻待示例 Web 应用程序启动并运行。
 
-    ![create-dashboard-1](/images/docs/project-user-guide/custom-application-monitoring/create-dashboard-1.jpg)
+    ![创建仪表板-1](/images/docs/zh-cn/project-user-guide/custom-application-monitoring/examples/monitor-sample-web-app/create-dashboard-1.PNG)
 
-### Step 5: Create Dashboard
+### 步骤 5：创建监控面板
 
-This section guides you on how to create a dashboard from scratch. You will create a text chart showing the total number of processed operations and a line chart for displaying the operation rate.
+该部分演示如何从零创建监控面板。您需要创建一个显示已处理操作总数的文本图表和一个显示操作率的折线图。
 
-1. Navigate to **Custom Monitoring** and click **Create**.
+1. 转到**自定义监控**，点击**创建**。
 
-    ![create-dashboard-2](/images/docs/project-user-guide/custom-application-monitoring/create-dashboard-2.jpg)
+    ![创建仪表板-2](/images/docs/zh-cn/project-user-guide/custom-application-monitoring/examples/monitor-sample-web-app/create-dashboard-2.PNG)
 
-2. Set a name (e.g. `sample-web`) and click **Create**.
+2. 设置名称（例如 `sample-web`），点击**创建**。
 
-    ![create-dashboard-3](/images/docs/project-user-guide/custom-application-monitoring/create-dashboard-3.jpg)
+    ![创建仪表板-3](/images/docs/zh-cn/project-user-guide/custom-application-monitoring/examples/monitor-sample-web-app/create-dashboard-3.PNG)
 
-3. Enter a title in the top left corner (e.g. `Sample Web Overview`).
+3. 在左上角输入标题（例如 `示例 Web 概览`）。
 
-    ![create-dashboard-4](/images/docs/project-user-guide/custom-application-monitoring/create-dashboard-4.jpg)
+    ![创建仪表板-4](/images/docs/zh-cn/project-user-guide/custom-application-monitoring/examples/monitor-sample-web-app/create-dashboard-4.PNG)
 
-4. Click the **plus icon** on the left column to create a text chart.
+4. 点击左列的**加号图标**，创建文本图表。
 
-    ![create-dashboard-5](/images/docs/project-user-guide/custom-application-monitoring/create-dashboard-5.jpg)
+    ![创建仪表板-5](/images/docs/zh-cn/project-user-guide/custom-application-monitoring/examples/monitor-sample-web-app/create-dashboard-5.PNG)
 
-5. Type the PromQL expression `myapp_processed_ops_total` in the field **Monitoring Metrics** and give a chart name (e.g. `Operation Count`). Click **√** in the bottom right corner to continue.
+5. 在**监控指标**字段输入 PromQL 表达式 `myapp_processed_ops_total`，并设置图表名称（例如 `操作数`）。点击右下角的 **√** 继续。
 
-    ![create-dashboard-6](/images/docs/project-user-guide/custom-application-monitoring/create-dashboard-6.jpg)
+    ![创建仪表板-6](/images/docs/zh-cn/project-user-guide/custom-application-monitoring/examples/monitor-sample-web-app/create-dashboard-6.PNG)
 
-6. Click **Add Monitoring Item** to create a line chart.
+6. 点击**添加监控项**，创建折线图。
 
-    ![create-dashboard-7](/images/docs/project-user-guide/custom-application-monitoring/create-dashboard-7.jpg)
+    ![创建仪表板-7](/images/docs/zh-cn/project-user-guide/custom-application-monitoring/examples/monitor-sample-web-app/create-dashboard-7.PNG)
 
-    ![create-dashboard-8](/images/docs/project-user-guide/custom-application-monitoring/create-dashboard-8.jpg)
+    ![创建仪表板-8](/images/docs/zh-cn/project-user-guide/custom-application-monitoring/examples/monitor-sample-web-app/create-dashboard-8.PNG)
 
-7. Type the PromQL expression `irate(myapp_processed_ops_total[3m])` for **Monitoring Metrics** and name the chart `Operation Rate`. To improve the appearance, you can set **Metric Name** to `{{service}}`. It will name each line with the value of the metric label `service`. Next, set **Decimal Places** to `2` so that the result will be truncated to two decimal places.
+7. 在**监控指标**中输入 PromQL 表达式 `irate(myapp_processed_ops_total[3m])` 并将图表命名为 `操作率`。要改进外观，可以将**图例名称**设置为 `{{service}}`。它会用图例标签 `service` 的值命名每一段折线。然后将**精确位**设置为 `2`，以便将结果保留两位小数。
 
-    ![create-dashboard-9](/images/docs/project-user-guide/custom-application-monitoring/create-dashboard-9.jpg)
+    ![创建仪表板-9](/images/docs/zh-cn/project-user-guide/custom-application-monitoring/examples/monitor-sample-web-app/create-dashboard-9.PNG)
 
-8. Click **Save Template** to save it.
+8. 点击**保存模板**进行保存。
 
-    ![create-dashboard-10](/images/docs/project-user-guide/custom-application-monitoring/create-dashboard-10.jpg)
+    ![创建仪表板-10](/images/docs/zh-cn/project-user-guide/custom-application-monitoring/examples/monitor-sample-web-app/create-dashboard-10.PNG)

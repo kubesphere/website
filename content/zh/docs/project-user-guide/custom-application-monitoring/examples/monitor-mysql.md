@@ -1,98 +1,97 @@
 ---
-title: "Monitor MySQL"
-keywords: 'monitoring, prometheus, prometheus operator'
-description: 'Monitor MySQL'
-
-linkTitle: "Monitor MySQL"
+title: "监控 MySQL"
+keywords: '监控, Prometheus, Prometheus operator'
+description: '监控 MySQL'
+linkTitle: "监控 MySQL"
 weight: 10812
 ---
-From the [Introduction](../../introduction#indirect-exposing) section, you know it is not feasible to instrument MySQL with Prometheus metrics directly. To expose MySQL metrics in Prometheus format, you need to deploy MySQL exporter instead.
+通过[介绍](../../../../project-user-guide/custom-application-monitoring/introduction/#间接暴露)一文，您了解到无法直接将 Prometheus 指标接入 MySQL。要以 Prometheus 格式暴露 MySQL 指标，您需要部署 MySQL 导出器 (Exporter)。
 
-This tutorial walks you through an example of how to monitor MySQL metrics and visualize them.
+本教程演示如何监控 MySQL 指标并将这些指标可视化。
 
-## Prerequisites
+## 准备工作
 
-- Please make sure you [enable the OpenPitrix system](https://kubesphere.io/docs/pluggable-components/app-store/). MySQL and MySQL exporter will be deployed from the App Store.
-- You need to create a workspace, a project, and a user account for this tutorial. For more information, see [Create Workspace, Project, Account and Role](../../../../quick-start/create-workspace-and-project/). The account needs to be a platform regular user and to be invited as the project operator with the `operator` role. In this tutorial, you log in as `project-operator` and work in the project `demo` in the workspace `demo-workspace`.
+- 请确保已[启用 OpenPitrix 系统](../../../../pluggable-components/app-store/)。MySQL 和 MySQL 导出器将通过应用商店来部署。
+- 您需要创建一个企业空间、一个项目和一个帐户。有关更多信息，请参见[创建企业空间、项目、帐户和角色](../../../../quick-start/create-workspace-and-project/)。该帐户需要是平台普通用户，将其邀请至项目中并赋予 `operator` 角色作为项目操作员。在本教程中，您以 `project-operator` 身份登录控制台，在 `demo-workspace` 企业空间中的 `demo` 项目下进行操作。
 
-## Hands-on Lab
+## 动手实验
 
-### Step 1: Deploy MySQL
+### 步骤 1：部署 MySQL
 
-To begin with, you [deploy MySQL from the App Store](../../../../application-store/built-in-apps/mysql-app/) and set the root password to `testing`. Please make sure you are landing on the **Overview** page of the project `demo`.
+首先，请[从应用商店部署 MySQL](../../../../application-store/built-in-apps/mysql-app/)，将 Root 密码设置为 `testing`。
 
-1. Go to **App Store**.
+1. 转到 `demo` 项目，点击左上角的**应用商店**。
 
-    ![go-to-app-store](/images/docs/project-user-guide/custom-application-monitoring/go-to-app-store.jpg)
+    ![转到应用商店](/images/docs/zh-cn/project-user-guide/custom-application-monitoring/examples/monitor-mysql/go-to-app-store.PNG)
 
-2. Find **MySQL** and click **Deploy**.
+2. 找到 **MySQL**，点击**部署**。
 
-    ![find-mysql](/images/docs/project-user-guide/custom-application-monitoring/find-mysql.jpg)
+    ![找到 MySQL](/images/docs/zh-cn/project-user-guide/custom-application-monitoring/examples/monitor-mysql/find-mysql.PNG)
 
-    ![click-deploy](/images/docs/project-user-guide/custom-application-monitoring/click-deploy.jpg)
+    ![点击部署](/images/docs/zh-cn/project-user-guide/custom-application-monitoring/examples/monitor-mysql/click-deploy.PNG)
 
-3. Make sure MySQL is deployed in `demo` and click **Next**.
+3. 请确保将 MySQL 部署在 `demo` 项目，点击**下一步**。
 
-    ![click-next](/images/docs/project-user-guide/custom-application-monitoring/click-next.jpg)
+    ![点击下一步](/images/docs/zh-cn/project-user-guide/custom-application-monitoring/examples/monitor-mysql/click-next.PNG)
 
-4. Uncomment the `mysqlRootPassword` field and click **Deploy**.
+4. 取消 `mysqlRootPassword` 字段的注解，点击**部署**。
 
-    ![uncomment-mysqlRootPassword](/images/docs/project-user-guide/custom-application-monitoring/uncomment-mysqlRootPassword.jpg)
+    ![取消 mysqlRootPassword 注解](/images/docs/zh-cn/project-user-guide/custom-application-monitoring/examples/monitor-mysql/uncommet-mysqlrootpassword.PNG)
 
-5. Wait until MySQL is up and running.
+5. 稍等片刻待 MySQL 启动并运行。
 
-    ![check-if-mysql-is-running](/images/docs/project-user-guide/custom-application-monitoring/check-if-mysql-is-running.jpg)
+    ![Mysql 运行中](/images/docs/zh-cn/project-user-guide/custom-application-monitoring/examples/monitor-mysql/check-if-mysql-running.PNG)
 
-### Step 2: Deploy MySQL exporter
+### 步骤 2：部署 MySQL 导出器
 
-You need to deploy MySQL exporter in `demo` on the same cluster. MySQL exporter is responsible for querying MySQL status and reports the data in Prometheus format.
+您需要在同一个集群上的 `demo` 项目中部署 MySQL 导出器。MySQL 导出器负责查询 MySQL 状态并报告 Prometheus 格式的数据。
 
-1. Go to **App Store** and find **MySQL exporter**.
+1. 转到**应用商店**，找到 **MySQL exporter**。
 
-    ![find-mysql-exporter](/images/docs/project-user-guide/custom-application-monitoring/find-mysql-exporter.jpg) 
+    ![找到 Mysql Exporter](/images/docs/zh-cn/project-user-guide/custom-application-monitoring/examples/monitor-mysql/find-mysql-exporter.PNG) 
 
-    ![exporter-click-deploy](/images/docs/project-user-guide/custom-application-monitoring/exporter-click-deploy.jpg)
+    ![Exporter 点击部署](/images/docs/zh-cn/project-user-guide/custom-application-monitoring/examples/monitor-mysql/exporter-click-deploy.PNG)
 
-2. Deploy MySQL exporter in `demo` again.
+2. 部署 MySQL 导出器至 `demo` 项目。
 
-    ![exporter-click-next](/images/docs/project-user-guide/custom-application-monitoring/exporter-click-next.jpg)
+    ![Exporter 点击下一步](/images/docs/zh-cn/project-user-guide/custom-application-monitoring/examples/monitor-mysql/exporter-click-next.PNG)
 
-3. Make sure `serviceMonitor.enabled` is set to `true`. The built-in MySQL exporter sets it to `true` by default, so you don't have to manually modify `serviceMonitor.enabled`.
+3. 请确保将 `serviceMonitor.enabled` 设为 `true`。内置 MySQL 导出器默认将其设置为 `true`，故您无需手动修改 `serviceMonitor.enabled`。
 
-    ![set-servicemonitor-to-true](/images/docs/project-user-guide/custom-application-monitoring/set-servicemonitor-to-true.jpg)
+    ![设置 servicemonitor 为 true](/images/docs/zh-cn/project-user-guide/custom-application-monitoring/examples/monitor-mysql/set-servicemonitor-to-true.PNG)
 
     {{< notice warning >}}
-Don't forget to enable the SericeMonitor CRD if you are using external exporter helm charts. Those charts usually disable ServiceMonitor by default and require manual modification.
+如果您使用外部导出器的 Helm Chart，请记得启用 ServiceMonitor CRD。此类 Chart 通常默认禁用 ServiceMonitor，需要手动修改。
     {{</ notice >}}
 
-4. Modify MySQL connection parameters. MySQL exporter needs to connect to the target MySQL. In this tutorial, MySQL is installed with the service name `mysql-a8xgvx`. Set `mysql.host` to `mysql-a8xgvx`, `mysql.pass` to `testing`, and `user` to `root` as below. Note that your MySQL service may be created with **a different name**.
+4. 修改 MySQL 连接参数。MySQL 导出器需要连接到目标 MySQL。在本教程中，MySQL 以服务名 `mysql-8jkp3d` 进行安装。请将 `mysql.host` 设置为 `mysql-8jkp3d`，将 `mysql.pass` 设置为 `testing`，将 `user` 设置为 `root`，如下所示。请注意，您的 MySQL 服务创建后可能**名称不同**。
 
-    ![mysql-conn-params](/images/docs/project-user-guide/custom-application-monitoring/mysql-conn-params.jpg)
+    ![Mysql 连接参数](/images/docs/zh-cn/project-user-guide/custom-application-monitoring/examples/monitor-mysql/mysql-conn-params.PNG)
 
-5. Click **Deploy** and wait until MySQL exporter is up and running.
+5. 点击**部署**，稍等片刻待 MySQL 导出器启动并运行。
 
-    ![exporter-click-deploy-2](/images/docs/project-user-guide/custom-application-monitoring/exporter-click-deploy-2.jpg)
+    ![Exporter 点击部署-2](/images/docs/zh-cn/project-user-guide/custom-application-monitoring/examples/monitor-mysql/exporter-click-deploy-2.PNG)
 
-    ![exporter-is-running](/images/docs/project-user-guide/custom-application-monitoring/exporter-is-running.jpg)
+    ![Exporter 运行中](/images/docs/zh-cn/project-user-guide/custom-application-monitoring/examples/monitor-mysql/exporter-is-running.PNG)
 
-### Step 3: Create Dashboard
+### 步骤 3：创建监控面板
 
-After about two minutes, you can create a monitoring dashboard for MySQL and visualize metrics in real time.
+大约两分钟后，您可以为 MySQL 创建监控面板，并将指标实时可视化。
 
-1. Navigate to **Custom Monitoring** under **Monitoring  & Alerting** and click **Create**.
+1. 转到**监控告警**下的**自定义监控**，点击**创建**。
 
-    ![navigate-to-custom-monitoring](/images/docs/project-user-guide/custom-application-monitoring/navigate-to-custom-monitoring.jpg)
+    ![转到自定义监控](/images/docs/zh-cn/project-user-guide/custom-application-monitoring/examples/monitor-mysql/navigate-to-custom-monitoring.PNG)
 
-2. In the dialogue that appears, name the dashboard as `mysql-overview` and choose **MySQL template**. Click **Create** to continue.
+2. 在弹出对话框中，将监控面板命名为 `mysql-overview` 并选择 **MySQL 模板**。点击**创建**继续。
 
-    ![create-mysql-dashboard](/images/docs/project-user-guide/custom-application-monitoring/create-mysql-dashboard.jpg)
+    ![创建 Mysql 仪表板](/images/docs/zh-cn/project-user-guide/custom-application-monitoring/examples/monitor-mysql/create-mysql-dashboard.PNG)
 
-3. Save the template by clicking **Save Template** in the top right corner. A newly-created dashboard displays in the dashboard list as below.
+3. 点击右上角的**保存模板**保存该模板。新创建的监控面板会在监控面板列表中显示，如下所示。
 
-    ![save-mysql-template](/images/docs/project-user-guide/custom-application-monitoring/save-mysql-template.jpg)
+    ![保存 Mysql 模板](/images/docs/zh-cn/project-user-guide/custom-application-monitoring/examples/monitor-mysql/save-mysql-template.PNG)
 
-    ![monitor-mysql-done](/images/docs/project-user-guide/custom-application-monitoring/monitor-mysql-done.jpg)
+    ![监控 Mysql 配置完成](/images/docs/zh-cn/project-user-guide/custom-application-monitoring/examples/monitor-mysql/monitor-mysql-done.PNG)
 
     {{< notice tip >}}
-For more information about dashboard strings, see [Visualization](../../../../project-user-guide/custom-application-monitoring/visualization/overview/).
+有关监控面板上各属性的更多信息，请参见[可视化](../../../../project-user-guide/custom-application-monitoring/visualization/overview/)。
     {{</ notice >}}

@@ -36,7 +36,7 @@ KubeSphere provides alerting policies for nodes and workloads. This guide demons
 In the dialog that appears, fill in the basic information as follows. Click **Next** after you finish.
 
 - **Name**: a concise and clear name as its unique identifier, such as `alert-demo`.
-- **Alias**: to help you distinguish alerting policies better. Chinese is supported.
+- **Alias**: to help you distinguish alerting policies better.
 - **Description**: a brief introduction to the alerting policy.
 
 ![alerting_policy_node_level_basic_info](/images/docs/alerting/alerting_policy_node_level_basic_info.png)

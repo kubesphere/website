@@ -61,7 +61,7 @@ You need to deploy MySQL exporter in `demo` on the same cluster. MySQL exporter 
     ![set-servicemonitor-to-true](/images/docs/project-user-guide/custom-application-monitoring/set-servicemonitor-to-true.jpg)
 
     {{< notice warning >}}
-Don't forget to enable the SericeMonitor CRD if you are using external exporter Helm charts. Those charts usually disable ServiceMonitor by default and require manual modification.
+Don't forget to enable the ServiceMonitor CRD if you are using external exporter Helm charts. Those charts usually disable ServiceMonitor by default and require manual modification.
     {{</ notice >}}
 
 4. Modify MySQL connection parameters. MySQL exporter needs to connect to the target MySQL. In this tutorial, MySQL is installed with the service name `mysql-a8xgvx`. Set `mysql.host` to `mysql-a8xgvx`, `mysql.pass` to `testing`, and `user` to `root` as below. Note that your MySQL service may be created with **a different name**.
@@ -93,5 +93,5 @@ After about two minutes, you can create a monitoring dashboard for MySQL and vis
     ![monitor-mysql-done](/images/docs/project-user-guide/custom-application-monitoring/monitor-mysql-done.jpg)
 
     {{< notice tip >}}
-For more information about dashboard strings, see [Visualization](../../../../project-user-guide/custom-application-monitoring/visualization/overview/).
+For more information about dashboard properties, see [Visualization](../../../../project-user-guide/custom-application-monitoring/visualization/overview/).
     {{</ notice >}}

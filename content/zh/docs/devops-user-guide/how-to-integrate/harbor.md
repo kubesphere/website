@@ -1,130 +1,132 @@
 ---
-title: "如何将 Harbor 集成到流水线"
-keywords: 'kubernetes, docker, devops, jenkins, harbor'
-description: ''
+title: "将 Harbor 集成到流水线"
+keywords: 'Kubernetes, Docker, DevOps, Jenkins, Harbor'
+description: '如何将 Harbor 集成到流水线'
 linkTitle: "将 Harbor 集成到流水线"
 weight: 11320
 ---
 
-## 先决条件
+本教程演示如何将 Harbor 集成到 KubeSphere 流水线。
 
-- 您需要[启用 KubeSphere DevOps 系统](../../../../docs/pluggable-components/devops/)。
-- 您需要创建一个企业空间，一个 DevOps 项目和一个项目**常规帐户（project-regular）**，并且需要将此帐户邀请到 DevOps 项目中。 请参阅创建[企业空间和项目](../../../../docs/quick-start/create-workspace-and-project)。
-- 您已经安装 **Harbor**。
+## 准备工作
+
+- 您需要启用 [KubeSphere DevOps 系统](../../../pluggable-components/devops/)。
+- 您需要创建一个企业空间、一个 DevOps 工程和一个帐户 (`project-regular`)。需要邀请该帐户至 DevOps 工程并赋予 `operator` 角色。如果尚未创建，请参见[创建企业空间、项目、帐户和角色](../../../quick-start/create-workspace-and-project/)。
 
 ## 安装 Harbor
 
-强烈建议您通过应用程序商店安装 Harbor。你也可以通过 helm3 手动安装 Harbor。
+强烈建议您通过 [KubeSphere 应用商店](../../../application-store/built-in-apps/harbor-app/)安装 Harbor。或者，您可以使用 Helm3 手动安装 Harbor。
 
 ```bash
 helm repo add harbor https://helm.goharbor.io
-# for qucik taste, you can expose harbor by nodeport and disable tls.
-# set externalURL as one of your node ip and make sure it can be accessed by jenkins.
+# For a qucik start, you can expose Harbor by nodeport and disable tls.
+# Set externalURL to one of your node ip and make sure it can be accessed by jenkins.
 helm install harbor-release harbor/harbor --set expose.type=nodePort,externalURL=http://$ip:30002,expose.tls.enabled=false
 ```
 
-几分钟后，打开浏览器并访问 `http://$node_ip:30003`  输入 **admin** 和 **Harbor12345**，然后单击 **log in** 登录。
-
-![harbor-login](/images/devops-zh/harbor-login.png)
-
-单击**新建项目**，输入项目名称，然后单击**确定**。
-
 ## 获取 Harbor 凭证
 
-![harbor-new-project](/images/devops-zh/harbor-new-project.png)
+1. 安装 Harbor 后，请访问 `NodeIP:30002` 并使用默认帐户和密码 (`admin/Harbor12345`) 登录控制台。转到**项目**并点击**新建项目**。
 
-![harbor-project-ok](/images/devops-zh/harbor-project-ok.png)
+   ![Harbor 项目](/images/docs/zh-cn/devops-user-guide/tool-integration/integrate-harbor-into-pipelines/harbor-projects.png)
 
-单击您刚刚创建的项目名称，找到**机器人帐户**选项卡，然后单击**添加机器人帐户**。
+2. 设置名称并点击**确定**。
 
-![harbor-robot-account](/images/devops-zh/harbor-robot-account.png)
+   ![设置名称](/images/docs/zh-cn/devops-user-guide/tool-integration/integrate-harbor-into-pipelines/set-name.png)
 
-输入机器人帐户的名称，然后保存。
+3. 点击刚刚创建的项目，在**机器人帐户**选项卡下选择**添加机器人帐户**。
 
-![harbor-robot-account-ok](/images/devops-zh/harbor-robot-account-ok.png)
+   ![机器人帐户](/images/docs/zh-cn/devops-user-guide/tool-integration/integrate-harbor-into-pipelines/robot-account.png)
 
-单击**导出到文件中**以保存凭证。
+4. 输入机器人帐户的名称并保存。
 
-![harbor-robot-account-save](/images/devops-zh/harbor-robot-account-save.png)
+   ![设置名称](/images/docs/zh-cn/devops-user-guide/tool-integration/integrate-harbor-into-pipelines/robot-account-name.png)
 
-### 创建凭证
+5. 点击**导出到文件中**，保存该令牌。
 
-登录到 KubeSphere，进入创建的 DevOps 项目，并在**工程管理**→**凭证**下创建以下**凭证**：
+   ![导出到文件](/images/docs/zh-cn/devops-user-guide/tool-integration/integrate-harbor-into-pipelines/export-to-file.png)
 
-![ks-console-create-credential](/images/devops-zh/ks-console-create-credential.png)
+## 创建凭证
 
-用户名是您刚刚保存的 json 文件的 `name` 字段内容。 密码使用 `token` 字段内容。
+1. 以 `project-regular` 身份登录 KubeSphere 控制台，转到您的 DevOps 工程，在**工程管理**下的**凭证**页面为 Harbor 创建凭证。
 
-![ks-console-credential-ok](/images/devops-zh/ks-console-credential-ok.png)
+   ![创建凭证](/images/docs/zh-cn/devops-user-guide/tool-integration/integrate-harbor-into-pipelines/create-credentials.PNG)
+
+2. 在**创建凭证**页面，设置凭证 ID，**类型**选择**帐户凭证**。**用户名**字段必须和您刚刚下载的 Json 文件中 `name` 的值相同，并在 **token / 密码**中输入该文件中 `token` 的值。
+
+   ![凭证页面](/images/docs/zh-cn/devops-user-guide/tool-integration/integrate-harbor-into-pipelines/credentials-page.png)
+
+3. 点击**确定**以保存。
 
 ## 创建流水线
 
-![ks-console-create-pipline](/images/devops-zh/ks-console-create-pipline.png)
+1. 转到**流水线**页面，点击**创建**。在弹出对话框中输入基本信息，然后点击**下一步**。
 
-在弹出窗口中填写流水线的基本信息，输入流水线的名称，然后将其他名称设置为默认值。
+   ![基本信息](/images/docs/zh-cn/devops-user-guide/tool-integration/integrate-harbor-into-pipelines/basic-info.png)
 
-![create-pipline-2](/images/devops-zh/create-pipline-2.png)
+2. **高级设置**中使用默认值，点击**创建**。
 
-![create-pipline-3](/images/devops-zh/create-pipline-3.png)
+   ![高级设置](/images/docs/zh-cn/devops-user-guide/tool-integration/integrate-harbor-into-pipelines/advanced-settings.PNG)
 
 ## 编辑 Jenkinsfile
 
-单击流水线下的**编辑 Jenkinsfile** 按钮，然后将以下文本粘贴到弹出窗口中。 您需要替换环境变量 REGISTRY，HARBOR_NAMESPACE，APP_NAME，HARBOR_CREDENTIAL。
+1. 点击该流水线进入其详情页面，然后点击**编辑 Jenkinsfile**。
 
-![editJenkinsfile](/images/devops-zh/edit-Jenkinsfile.png)
+   ![编辑 jenkinsfile](/images/docs/zh-cn/devops-user-guide/tool-integration/integrate-harbor-into-pipelines/edit-jenkinsfile.PNG)
 
-```pipeline {
-pipeline {  
-  agent {
-    node {
-      label 'maven'
-    }
-  }
-  
-  environment {
-    // the address of your harbor registry
-    REGISTRY = '103.61.38.55:30002'
-    // the project name
-    // make sure your robot account have enough access to the project
-    HARBOR_NAMESPACE = 'ks-devops-harbor'
-    // docker image name
-    APP_NAME = 'docker-example'
-    // ‘yuswift’ is the credential id you created on ks console
-    HARBOR_CREDENTIAL = credentials('yuswift')
-  }
-  
-  stages {
-    stage('docker login') {
-      steps{
-        container ('maven') {
-          // replace the username behind -u and do not forget
-          sh '''echo $HARBOR_CREDENTIAL | docker login $REGISTRY -u 'robot$yuswift2018' --password-stdin'''
-            }
-          }  
-        }
-        
-    stage('build & push') {
-      steps {
-        container ('maven') {
-          sh 'git clone https://github.com/kstaken/dockerfile-examples.git'
-          sh 'cd dockerfile-examples/rethinkdb && docker build -t $REGISTRY/$HARBOR_NAMESPACE/$APP_NAME:devops-test .'
-          sh 'docker push  $REGISTRY/$HARBOR_NAMESPACE/$APP_NAME:devops-test'
-          }
-        }
-      }
-    }
-  }
+2. 将以下内容复制粘贴至 Jenkinsfile。请注意，您必须替换 `REGISTRY`、`HARBOR_NAMESPACE`、`APP_NAME` 和 `HARBOR_CREDENTIAL` 的值。
 
-```
+   ```groovy
+   pipeline {  
+     agent {
+       node {
+         label 'maven'
+       }
+     }
+     
+     environment {
+       // the address of your harbor registry
+       REGISTRY = '103.61.38.55:30002'
+       // the project name
+       // make sure your robot account have enough access to the project
+       HARBOR_NAMESPACE = 'ks-devops-harbor'
+       // docker image name
+       APP_NAME = 'docker-example'
+       // ‘yuswift’ is the credential id you created on ks console
+       HARBOR_CREDENTIAL = credentials('yuswift')
+     }
+     
+     stages {
+       stage('docker login') {
+         steps{
+           container ('maven') {
+             // replace the Docker Hub username behind -u and do not forget ''. You can also use a Docker Hub token. 
+             sh '''echo $HARBOR_CREDENTIAL_PSW | docker login $REGISTRY -u 'robot$yuswift2018' --password-stdin'''
+               }
+             }  
+           }
+           
+       stage('build & push') {
+         steps {
+           container ('maven') {
+             sh 'git clone https://github.com/kstaken/dockerfile-examples.git'
+             sh 'cd dockerfile-examples/rethinkdb && docker build -t $REGISTRY/$HARBOR_NAMESPACE/$APP_NAME:devops-test .'
+             sh 'docker push  $REGISTRY/$HARBOR_NAMESPACE/$APP_NAME:devops-test'
+             }
+           }
+         }
+       }
+     }
+   
+   
+   ```
 
-  {{< notice note >}}
+   {{< notice note >}}
 
-您可以通过带有环境变量的 jenkins 凭证将参数传递给 docker login -u。但是，每个 harbor-robot-account 用户名都包含一个 “$” 字符，当被环境变量使用时，jenkins 将其转换为 “$$”。查看更多[相关信息](https://number1.co.za/rancher-cannot-use-harbor-robot-account-imagepullbackoff-pull-access-denied/)。
+   您可以通过带有环境变量的 Jenkins 凭证来传送参数至 `docker login -u`。但是，每个 Harbor 机器人帐户的用户名都包含一个 `$` 字符，当用于环境变量时，Jenkins 会将其转换为 `$$`。[了解更多](https://number1.co.za/rancher-cannot-use-harbor-robot-account-imagepullbackoff-pull-access-denied/)。
 
-   {{</ notice >}}
+   {{</ notice >}} 
 
 ## 运行流水线
 
-保存完 jenkinsfile 后，单击**运行**按钮。 如果一切顺利，您会看到 jenkins 将镜像推送到 Harbor 仓库中。
-
-![run-pipline](/images/devops-zh/run-pipline.png)
+保存该 Jenkinsfile，KubeSphere 会自动在图形编辑面板上创建所有阶段和步骤。点击**运行**来执行该流水线。如果一切运行正常，Jenkins 将推送镜像至您的 Harbor 仓库。
