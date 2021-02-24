@@ -44,6 +44,12 @@ weight: 11310
    helm upgrade --install sonarqube sonarqube --repo https://charts.kubesphere.io/main -n kubesphere-devops-system  --create-namespace --set service.type=NodePort
    ```
 
+   {{< notice note >}}
+
+   请您确保使用 Helm 3 安装 SonarQube Server。
+
+   {{</ notice >}}
+
 3. 您会获取以下提示内容：
 
    ![安装 SonarQube](/images/docs/zh-cn/devops-user-guide/tool-integration/integrate-sonarqube-into-pipelines/sonarqube-install.png)
