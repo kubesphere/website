@@ -17,6 +17,10 @@ This chapter demonstrates how to use KubeKey to provision a production-ready Kub
 
 Explore the general content in this chapter, including installation preparation, installation tool and method, as well as storage setting.
 
+### [KubeKey](../installing-on-linux/introduction/kubekey/)
+
+Understand what KubeKey is and how it works to help you create, scale and upgrade your Kubernetes cluster.
+
 ### [Multi-node Installation](../installing-on-linux/introduction/multioverview/)
 
 Learn the general steps of installing KubeSphere and Kubernetes on a multi-node cluster.
@@ -29,23 +33,23 @@ Learn how to install KubeSphere and Kubernetes in an air-gapped environment.
 
 Understand the specific port requirements for different services in KubeSphere.
 
-### [Kubernetes Cluster Configuration](../installing-on-linux/introduction/vars/)
+### [Kubernetes Cluster Configurations](../installing-on-linux/introduction/vars/)
 
-Customize your setting in the configuration file for your cluster.
+Customize your Kubernetes settings in the configuration file for your cluster.
 
-### [Persistent Storage Configuration](../installing-on-linux/introduction/storage-configuration/)
+### [Persistent Storage Configurations](../installing-on-linux/introduction/storage-configuration/)
 
 Add different storage classes to your cluster with KubeKey, such as Ceph RBD and Glusterfs.
 
-## Installing in On-premises Environments
+## High Availability Configurations
 
-### [Deploy KubeSphere on VMware vSphere](../installing-on-linux/on-premises/install-kubesphere-on-vmware-vsphere/)
+### [Set up an HA Cluster Using a Load Balancer](../installing-on-linux/high-availability-configurations/ha-configuration/)
 
-Learn how to create a high-availability cluster on VMware vSphere.
+Learn how to create a highly available cluster using a load balancer.
 
-### [Deploy KubeSphere on Bare Metal](../installing-on-linux/on-premises/install-kubesphere-on-bare-metal/)
+### [Set up an HA Cluster Using Keepalived and HAproxy](../installing-on-linux/high-availability-configurations/set-up-ha-cluster-using-keepalived-haproxy/)
 
-Learn how to create a multi-node cluster with one master on bare metal.
+Learn how to create a highly available cluster using Keepalived and HAproxy.
 
 ## Installing on Public Cloud
 
@@ -57,13 +61,23 @@ Learn how to create a high-availability cluster on Azure virtual machines.
 
 Learn how to create a high-availability cluster on QingCloud platform.
 
-## Add/Delete Nodes
+## Installing in On-premises Environments
+
+### [Deploy KubeSphere on VMware vSphere](../installing-on-linux/on-premises/install-kubesphere-on-vmware-vsphere/)
+
+Learn how to create a high-availability cluster on VMware vSphere.
+
+### [Deploy KubeSphere on Bare Metal](../installing-on-linux/on-premises/install-kubesphere-on-bare-metal/)
+
+Learn how to create a multi-node cluster with one master on bare metal.
+
+## Add and Delete Nodes
 
 ### [Add New Nodes](../installing-on-linux/cluster-operation/add-new-nodes/)
 
 Add more nodes to scale out your cluster.
 
-### [Remove Nodes](../installing-on-linux/cluster-operation/remove-nodes/)
+### [Delete Nodes](../installing-on-linux/cluster-operation/remove-nodes/)
 
 Cordon a node and even delete a node to scale in your cluster.
 
