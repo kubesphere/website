@@ -1,22 +1,27 @@
 ---
-title: "Remove the Built-in Applications in KubeSphere"
+title: "Remove Built-in Apps in KubeSphere"
 keywords: "KubeSphere, OpenPitrix, Application, App"
-description: "How to remove the built-in applications in KubeSphere"
+description: "How to remove built-in apps in KubeSphere"
 linkTitle: "Remove Built-in Apps in KubeSphere"
 Weight: 16910
 ---
 
-As an open-source and app-centric container platform, KubeSphere integrates 15 built-in apps in the App Store that is based on [OpenPitrix](https://github.com/openpitrix/openpitrix).
+As an open-source and app-centric container platform, KubeSphere integrates 15 built-in apps in the App Store that is based on [OpenPitrix](https://github.com/openpitrix/openpitrix). They are accessible to all tenants in a workspace, while you can also remove them from the App Store. This tutorial demonstrates how to remove a built-in app from the App Store.
 
-If you want to remove the built-in apps in KubeSphere, you have to use the account `admin` with the default role of `platform-admin` to log in to the web console of KubeSphere, and then follow the steps as below:
+## Prerequisites
 
-1. Click **Platform** in the upper left corner, and then select **App Store Management**.
+- You need to use an account with the role of `platform-admin` (e.g. `admin`) for this tutorial.
+- You need to [enable the App Store](../../../pluggable-components/app-store/).
+
+## Remove a Built-in App
+
+1. Log in to the web console of KubeSphere as `admin`, click **Platform** in the upper left corner, and then select **App Store Management**.
 
    ![click-platform](/images/docs/zh-cn/faq/applications/remove-built-in-apps/click-platform.PNG)
 
    ![select-app-store-management](/images/docs/zh-cn/faq/applications/remove-built-in-apps/select-app-store-management.PNG)
 
-2. In the **App Store** page, you can see all 15 built-in apps displayed in the list. Click **tomcat** to go to its detail page.
+2. In the **App Store** page, you can see all 15 built-in apps displayed in the list. Select an app that you want to remove from the App Store. For example, click **tomcat** to go to its detail page.
 
    ![click-tomcat](/images/docs/zh-cn/faq/applications/remove-built-in-apps/click-tomcat.PNG)
 
