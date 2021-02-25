@@ -21,7 +21,7 @@ Below you will find some of the most viewed and helpful pages in this chapter. I
 
 {{< popularPage icon="/images/docs/brand-icons/aks.jpg" title="Deploy KubeSphere on AKS" description="Provision KubeSphere on existing Kubernetes clusters on AKS." link="../installing-on-kubernetes/hosted-kubernetes/install-kubesphere-on-aks/" >}}
 
-{{< popularPage icon="/images/docs/brand-icons/huawei.svg" title="Deploy KubeSphere on CCE" description="Provision KubeSphere on existing Kubernetes clusters on Huawei CCE." link="../installing-on-kubernetes/hosted-kubernetes/install-ks-on-huawei-cce/" >}}
+{{< popularPage icon="/images/docs/brand-icons/huawei.svg" title="Deploy KubeSphere on CCE" description="Provision KubeSphere on existing Kubernetes clusters on Huawei CCE." link="../installing-on-kubernetes/hosted-kubernetes/install-kubesphere-on-huaweicloud-cce/" >}}
 
 {{< popularPage icon="/images/docs/brand-icons/oracle.jpg" title="Deploy KubeSphere on Oracle OKE" description="Provision KubeSphere on existing Kubernetes clusters on OKE." link="../installing-on-kubernetes/hosted-kubernetes/install-kubesphere-on-oke/" >}}
 

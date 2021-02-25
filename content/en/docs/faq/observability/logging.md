@@ -19,7 +19,7 @@ This page contains some of the frequently asked questions about logging.
 
 ## How to change the log store to the external Elasticsearch and shut down the internal Elasticsearch
 
-If you are using the KubeSphere internal Elasticsearch and want to change it to your external alternate, follow the steps below. If you haven't enabled the logging system, refer to [KubeSphere Logging System](../../logging/) to setup your external Elasticsearch directly.
+If you are using the KubeSphere internal Elasticsearch and want to change it to your external alternate, follow the steps below. If you haven't enabled the logging system, refer to [KubeSphere Logging System](../../../pluggable-components/logging/) to setup your external Elasticsearch directly.
 
 1. First, you need to update the KubeKey configuration. Execute the following command:
 

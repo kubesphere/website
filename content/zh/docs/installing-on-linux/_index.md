@@ -80,9 +80,3 @@ icon: "/images/docs/docs.svg"
 ## [卸载 KubeSphere 和 Kubernetes](../installing-on-linux/uninstall-kubesphere-and-kubernetes/)
 
 从机器上删除 KubeSphere 和 Kubernetes。
-
-## 常用指南
-
-以下是本章节中的常用指南，建议您优先参考。
-
-{{< popularPage icon="/images/docs/qingcloud-2.svg" title="Deploy KubeSphere on QingCloud" description="Provision an HA KubeSphere cluster on QingCloud." link="../installing-on-linux/public-cloud/kubesphere-on-qingcloud-instance/" >}}
