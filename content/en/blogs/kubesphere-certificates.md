@@ -5,16 +5,16 @@ keyword: 'Community, Open Source, Contribution, KubeSphere'
 description: 'KubeSphere Community Steering Committee would like to express gratitude to KubeSphere Member, KubeSphere Ambassador, KubeSphere Talented Speaker, and KubeSphere Contributor in 2020'
 createTime: '2021-02-11'
 author: 'Feynman Zhou'
-snapshot: '/static/images/en/meetup-2020/kubesphere-meetup.png
+snapshot: '/images/blogs/en/meetup-2020/kubesphere-meetup.png'
 ---
 
 
 
-It’s highly appreciated that the KubeSphere community has nearly 100 contributors joined by February. Voted and approved by the KubeSphere Community Technical Committee and the KubeSphere Steering Committee, 10 Ambassadors, 15 Talented Speakers, 22 outstanding contributors, and 6 active contributors with remarkable contributions were selected throughout the year.  
+It’s highly appreciated that the KubeSphere community has nearly 100 contributors  by February 2021. Voted and approved by the KubeSphere Community Technical Committee and the KubeSphere Steering Committee, 10 Ambassadors, 15 Talented Speakers, 22 outstanding contributors, and 6 active contributors with remarkable contributions were selected throughout the year.  
 
 
 
-### Vote of Thanks
+## Vote of Thanks
 
 KubeSphere Community Steering Committee would like to express gratitude to KubeSphere Member, KubeSphere Ambassador, KubeSphere Talented Speaker, and KubeSphere Contributor, and extend the sincerest greetings to all the members who have participated in the open-source contribution of the KubeSphere community. Therefore, we prepare an exclusive gift for you.
 
@@ -22,9 +22,9 @@ KubeSphere Community Steering Committee would like to express gratitude to KubeS
 
 ## KubeSphere Member
 
-KubeSphere Member is granted to members who have deeply participated in the open-source contribution of the KubeSphere community.       Those members have independently completed one or more feature development, document writing and testing, also helped actively recommend KubeSphere in various communities and promote open source technology. Now we have invited all of them to join the KubeSphere GitHub.
+KubeSphere Member is granted to members who have deeply participated in the open-source contribution of the KubeSphere community. Those members have independently completed one or more feature development, document writing and testing, also helped actively recommend KubeSphere in various communities and promote open source technology. Now we have invited all of them to join KubeSphere GitHub.
 
-| 姓名 | 证书 |
+| Name | Certificate |
 | ---- | ---- |
 |Jie Chen|[Download Certificate](https://kubesphere-community.pek3b.qingstor.com/images/certificates/member-chenjie.png) |
 |Ling Li|[Download Certificate](https://kubesphere-community.pek3b.qingstor.com/images/certificates/member-liling.png) |
@@ -35,7 +35,7 @@ KubeSphere Member is granted to members who have deeply participated in the open
 
 ## KubeSphere Talented Speaker
 
-KubeSphere Talented Speakers are awarded to outstanding lecturers who have conducted public technology sharing at KubeSphere Open-Source Live, KubeSphere Meetup 2020, and CNCF Webinar. They are excellent KubeSphere evangelists and splendid speakers.
+KubeSphere Talented Speakers are awarded to outstanding lecturers who have conducted public technology presenation at KubeSphere Open-Source Live, KubeSphere Meetup 2020, and CNCF Webinar. They are excellent KubeSphere evangelists and splendid speakers.
 
 | Name | Certificate |
 | ---- | ---- |
@@ -57,7 +57,7 @@ KubeSphere Talented Speakers are awarded to outstanding lecturers who have condu
 
 ## KubeSphere Ambassador
 
-KubeSphere Ambassador is awarded to technical evangelists who are helping to grow the KubeSphere community. The following members have shared KubeSphere practical cases and technical articles in the KubeSphere community many times to help more users to get to know the application scenarios and best practices of KubeSphere.
+KubeSphere Ambassador is awarded to technical evangelists who are helping grow the KubeSphere community. The following members have shared KubeSphere practical cases and technical articles in the KubeSphere community many times to help more users to get to know the application scenarios and best practices of KubeSphere.
 
 | Name | Certificate |
 | ---- | ---- |
@@ -101,7 +101,7 @@ KubeSphere Contributor is for members who have participated in KubeSphere’s op
 |Hongbing Pei|[Download Certificate](https://kubesphere-community.pek3b.qingstor.com/images/certificates/contributor-peihongbing.png) |
 |Xinyang Xie|[Download Certificate](https://kubesphere-community.pek3b.qingstor.com/images/certificates/contributor-xiexinyang.png) |
 
-Many community contributors from all over the world have silently submitted Pull Requests on GitHub. We still don’t know the names or contact information of these Contributors，so we express our appreciation to them in the Readme of the project repository.
+Many community contributors from all over the world have silently submitted Pull Requests on GitHub. We still don’t know the names or contact information of these contributors，so we express our appreciation to them in the Readme of the project repository.
 
 We have sent an exclusive gift to acknowledge all members who have participated in the KubeSphere community. If you have submitted a Pull Request that has been merged, but your name is not mentioned in the list, please contact us freely, and we will send you the certificate and a souvenir. 
 
