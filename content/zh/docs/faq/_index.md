@@ -27,7 +27,7 @@ icon: "/images/docs/docs.svg"
 
 ## 升级
 
-### [升级 QingCloud CSI](../faq/upgrade/upgrade-faq/)
+### [升级 QingCloud CSI](../faq/upgrade/qingcloud-csi-upgrade/)
 
 升级 KubeSphere 后升级 QingCloud CSI。
 
