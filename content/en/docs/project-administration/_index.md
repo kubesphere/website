@@ -31,3 +31,7 @@ Learn how to set default container limit ranges in a project.
 ## [Project Gateway](../project-administration/project-gateway/)
 
 Understand the concept of project gateway and how to manage it.
+
+## [Disk Log Collection](../project-administration/disk-log-collection/)
+
+Enable disk log collection so that you can collect, manage and analyze logs in a unified way.

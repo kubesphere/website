@@ -31,3 +31,7 @@ KubeSphere 的项目即 Kubernetes 的命名空间。项目有两种类型，即
 ## [项目网关](../project-administration/project-gateway/)
 
 了解项目网关的概念以及如何进行管理。
+
+## [落盘日志收集](../project-administration/disk-log-collection/)
+
+启用落盘日志收集，对日志进行统一收集、管理和分析。
