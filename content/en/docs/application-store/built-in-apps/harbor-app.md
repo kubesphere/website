@@ -46,7 +46,7 @@ This tutorial walks you through an example of deploying [Harbor](https://goharbo
 
    - Don't forget to specify `externalURL`. This field can be very helpful if you have trouble accessing Harbor.
 
-   - For more information, see [the example configuration](#faq) in FAQ.
+   - Make sure you use the HTTP protocol and its corresponding `nodePort` in this tutorial. For more information, see [the example configuration](#faq) in FAQ.
 
    {{</ notice >}} 
 
