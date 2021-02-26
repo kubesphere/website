@@ -13,7 +13,7 @@ KubeSphere 2.0.2 was released on July 9, 2019, which fixes known bugs and enhanc
 
 ### Enhanced Features
 
-- [API docs](/api-reference/api-docs/) are available on the official website.
+- [API docs](../../api-reference/api-docs/) are available on the official website.
 - Block brute-force attacks.
 - Standardize the maximum length of resource names.
 - Upgrade the gateway of project (Ingress Controller) to the version of 0.24.1. Support Ingress grayscale release.

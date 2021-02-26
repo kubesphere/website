@@ -55,7 +55,7 @@ Learn how to deploy KubeSphere on DigitalOcean.
 
 Learn how to deploy KubeSphere on Google Kubernetes Engine.
 
-### [Deploy KubeSphere on Huawei CCE](../installing-on-kubernetes/hosted-kubernetes/install-ks-on-huawei-cce/)
+### [Deploy KubeSphere on Huawei CCE](../installing-on-kubernetes/hosted-kubernetes/install-kubesphere-on-huaweicloud-cce/)
 
 Learn how to deploy KubeSphere on Huawei Cloud Container Engine.
 
