@@ -27,7 +27,7 @@ To deploy an app in KubeSphere, tenants can go to the App Store and select the a
 
 ### Use the same app name
 
-1. If you try to deploy a new redis app with the same app name as `redis-1`, you can see the following error prompt in the upper right corner.
+1. If you try to deploy a new Redis app with the same app name as `redis-1`, you can see the following error prompt in the upper right corner.
 
    ![error-prompt](/images/docs/faq/applications/use-the-same-app-name-after-deletion/error-prompt.PNG)
 
@@ -43,6 +43,6 @@ To deploy an app in KubeSphere, tenants can go to the App Store and select the a
 
    ![confirm-delete](/images/docs/faq/applications/use-the-same-app-name-after-deletion/confirm-delete.PNG)
 
-5. Now, you can deploy a new redis app with the same app name as `redis-1`.
+5. Now, you can deploy a new Redis app with the same app name as `redis-1`.
 
    ![new-redis-app](/images/docs/faq/applications/use-the-same-app-name-after-deletion/new-redis-app.PNG)
