@@ -165,7 +165,7 @@ KubeSphere 的多租户系统分三个层级，即**群集**、**企业空间**�
 8. 在**外网访问**下，可以在页面上看到网关地址以及 http/https 的端口。
 
    {{< notice note >}}
-如果要使用 `LoadBalancer` 暴露服务，则需要使用云厂商的 LoadBalancer 插件。如果您的 Kubernetes 集群在裸机环境中运行，建议使用 [Porter](https://github.com/kubesphere/porter) 作为 LoadBalancer 插件。
+如果要使用 `LoadBalancer` 暴露服务，则需要使用云厂商的 LoadBalancer 插件。如果您的 Kubernetes 集群在裸机环境中运行，建议使用 [PorterLB](https://github.com/kubesphere/porter) 作为 LoadBalancer 插件。
    {{</ notice >}}
 
    ![完成网关设置](/images/docs/zh-cn/quickstart/create-workspaces-projects-accounts/完成网关设置.jpg)
