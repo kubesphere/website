@@ -72,3 +72,9 @@ icon: "/images/docs/docs.svg"
 ### [更改控制台语言](../faq/console/change-console-language/)
 
 选择控制台的显示语言。
+
+## 应用程序
+
+### [下架 KubeSphere 中的内置应用](../applications/remove-built-in-apps/)
+
+了解如何下架 KubeSphere 中的内置应用。
