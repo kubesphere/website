@@ -68,7 +68,7 @@ Telemetry 在安装 KubeSphere 时默认启用。同时，您也可以在安装�
 2. 选择**集群管理**，在左侧导航栏中点击**自定义资源 CRD**。
 
     {{< notice note >}}
-如果[多集群功能](../../multicluster-management/)已经启用，您需要先选择一个集群。
+如果[多集群功能](../../../multicluster-management/)已经启用，您需要先选择一个集群。
     {{</ notice >}}
 
 3. 在搜索框中输入 `clusterconfiguration`，点击搜索结果打开详情页。

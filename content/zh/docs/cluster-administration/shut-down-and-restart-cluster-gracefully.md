@@ -17,7 +17,7 @@ icon: "/images/docs/docs.svg"
 
 ## 准备工作
 
-- 请先进行 [etcd 备份](https://github.com/etcd-io/etcd/blob/master/Documentation/op-guide/recovery.md#snapshotting-the-keyspace)，再关闭集群。
+- 请先进行 [etcd 备份](https://etcd.io/docs/current/op-guide/recovery/#snapshotting-the-keyspace)，再关闭集群。
 - 主机之间已设置 SSH [免密登录](https://man.openbsd.org/ssh.1#AUTHENTICATION)。
 
 ## 关闭集群
@@ -86,4 +86,4 @@ kubectl get nodes -l node-role.kubernetes.io/master
 kubectl get nodes -l node-role.kubernetes.io/worker
 ```
 
-如果您的集群重启失败，请尝试[恢复 etcd 集群](https://github.com/etcd-io/etcd/blob/master/Documentation/op-guide/recovery.md#restoring-a-cluster)。
+如果您的集群重启失败，请尝试[恢复 etcd 集群](https://etcd.io/docs/current/op-guide/recovery/#restoring-a-cluster)。
