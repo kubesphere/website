@@ -4,7 +4,7 @@ tag: 'KubeSphere,Community'
 keyword: 'Community, Open Source, Contribution, KubeSphere'
 description: 'KubeSphere Community Steering Committee would like to express gratitude to KubeSphere Member, KubeSphere Ambassador, KubeSphere Talented Speaker, and KubeSphere Contributor in 2020'
 createTime: '2021-02-11'
-author: 'Feynman Zhou'
+author: 'Feynman Zhou,Lindsay Liu'
 snapshot: '/images/blogs/en/meetup-2020/kubesphere-meetup.png'
 ---
 
@@ -16,13 +16,13 @@ It’s highly appreciated that the KubeSphere community has nearly 100 contribut
 
 ## Vote of Thanks
 
-KubeSphere Community Steering Committee would like to express gratitude to KubeSphere Member, KubeSphere Ambassador, KubeSphere Talented Speaker, and KubeSphere Contributor, and extend the sincerest greetings to all the members who have participated in the open-source contribution of the KubeSphere community. Therefore, we prepare an exclusive gift for you.
+KubeSphere Community Steering Committee would like to express gratitude to KubeSphere Members, KubeSphere Ambassadors, KubeSphere Talented Speakers, and KubeSphere Contributors, and extend the sincerest greetings to all the members who participated in the open-source contribution to the KubeSphere community. Therefore, we prepare an exclusive gift for you.
 
 ![合影](https://pek3b.qingstor.com/kubesphere-community/images/20210211222956.png)
 
 ## KubeSphere Member
 
-KubeSphere Member is granted to members who have deeply participated in the open-source contribution of the KubeSphere community. Those members have independently completed one or more feature development, document writing and testing, also helped actively recommend KubeSphere in various communities and promote open source technology. Now we have invited all of them to join KubeSphere GitHub.
+KubeSphere Members are granted to members who have deeply participated in the open-source contribution to the KubeSphere community. These members have independently developed or tested one or more features, written or translated documents, or helped to promote KubeSphere and open-source technologies in various communities. Now we have invited all of them to join KubeSphere GitHub.
 
 | Name | Certificate |
 | ---- | ---- |
@@ -35,7 +35,7 @@ KubeSphere Member is granted to members who have deeply participated in the open
 
 ## KubeSphere Talented Speaker
 
-KubeSphere Talented Speakers are awarded to outstanding lecturers who have conducted public technology presenation at KubeSphere Open-Source Live, KubeSphere Meetup 2020, and CNCF Webinar. They are excellent KubeSphere evangelists and splendid speakers.
+KubeSphere Talented Speakers are awarded to outstanding lecturers who have conducted public technology presenations at KubeSphere Open-Source Live, KubeSphere Meetup 2020, and CNCF Webinar. They are excellent KubeSphere evangelists and splendid speakers.
 
 | Name | Certificate |
 | ---- | ---- |
@@ -57,7 +57,7 @@ KubeSphere Talented Speakers are awarded to outstanding lecturers who have condu
 
 ## KubeSphere Ambassador
 
-KubeSphere Ambassador is awarded to technical evangelists who are helping grow the KubeSphere community. The following members have shared KubeSphere practical cases and technical articles in the KubeSphere community many times to help more users to get to know the application scenarios and best practices of KubeSphere.
+KubeSphere Ambassadors are awarded to technical evangelists who are helping to grow the KubeSphere community. The following members have shared KubeSphere practical cases and technical articles in the KubeSphere community many times to help more users to get to know the application scenarios and best practices of KubeSphere.
 
 | Name | Certificate |
 | ---- | ---- |
@@ -74,7 +74,7 @@ KubeSphere Ambassador is awarded to technical evangelists who are helping grow t
 
 ## KubeSphere Contributor
 
-KubeSphere Contributor is for members who have participated in KubeSphere’s open-source project in 2020 or published high-quality technical blogs on the KubeSphere Chinese forum, as well as members who help to submit and fix bugs.。
+KubeSphere Contributors are for members who have participated in KubeSphere’s open-source projects in 2020 or published high-quality technical blogs on the KubeSphere Chinese forum, as well as members who help to submit and fix bugs.
 
 | Name | Certificate |
 | ---- | ---- |
