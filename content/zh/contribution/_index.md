@@ -16,7 +16,7 @@ section2:
       children:
         - content: '下载 KubeSphere'
           link: '../../../zh/docs/quick-start/all-in-one-on-linux/'
-        - content: '快速开始'
+        - content: '快速入门'
           link: '../../../zh/docs/quick-start/create-workspace-and-project/'
         - content: '视频教程'
           link: '../videos'
@@ -59,10 +59,10 @@ section2:
             content: ' 作为项目的一员，Lead 具有丰富的经验，并且是位积极活跃的项目审阅者。'
 
           - name: 'Member'
-            content: 'Member 对项目做出重大贡献，并帮助我们审阅其他贡献者的PR'
+            content: 'Member 对项目做出重大贡献，并帮助我们审阅其他贡献者的 PR。'
 
           - name: 'Contributor'
-            content: '提交过一次重要PR且被合并到 KubeSphere 项目下的用户都将成为 Contributor'
+            content: '提交过一次重要 PR 且被合并到 KubeSphere 项目下的用户都将成为 Contributor。'
 
       - name: '用户调查小组'
         icon: 'images/contribution/user.svg'
@@ -79,7 +79,7 @@ section2:
 section3:
   interestGroup:
     title: '加入您的特殊兴趣小组'
-    content: '如果您对某一个主题感兴趣，可以加入我们的 SIG。 在那里您可以找到与您感兴趣的主题所相关的一切内容。'
+    content: '如果您对某一个主题感兴趣，可以加入我们的 SIG。在那里您可以找到与您感兴趣的主题所相关的一切内容。'
     children:
       - name: 'Apps'
         icon: '/images/contribution/apps.svg'
@@ -279,7 +279,7 @@ section4:
 
       - title: '成为 Contributor'
         icon: 'images/contribution/group-2.png'
-        content: 'KubeSphere 100% 开放源代码，并由社区推动。 我们非常感谢对代码和文档做出贡献的用户！ 为了表达谢意，我们将为有突出贡献者赠送贡献者T恤。'
+        content: 'KubeSphere 100% 开放源代码，并由社区推动。 我们非常感谢对代码和文档做出贡献的用户！为了表达谢意，我们将为有突出贡献者赠送贡献者 T 恤。'
         link: 'https://github.com/kubesphere/community/blob/master/ROLES.md#kubesphere-community-roles'
         linkContent: '成为 KubeSphere Contributor →'
 

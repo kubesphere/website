@@ -35,7 +35,7 @@ KubeSphere Members are granted to members who have deeply participated in the op
 
 ## KubeSphere Talented Speaker
 
-KubeSphere Talented Speakers are awarded to outstanding lecturers who have conducted public technology presenations at KubeSphere Open-Source Live, KubeSphere Meetup 2020, and CNCF Webinar. They are excellent KubeSphere evangelists and splendid speakers.
+KubeSphere Talented Speakers are awarded to outstanding lecturers who have conducted public technology presentations at KubeSphere Open-Source Live, KubeSphere Meetup 2020, and CNCF Webinar. They are excellent KubeSphere evangelists and splendid speakers.
 
 | Name | Certificate |
 | ---- | ---- |
