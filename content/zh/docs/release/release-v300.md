@@ -120,7 +120,7 @@ weight: 18100
   | MySQL                  | 5.7.30      | 1.6.6         |
   | MySQL Exporter         | 0.11.0      | 0.5.3         |
   | Nginx                  | 1.18.0      | 1.3.2         |
-  | Porter                 | 0.3-alpha   | 0.1.3         |
+  | PorterLB                 | 0.3-alpha   | 0.1.3         |
   | PostgreSQL             | 12.0        | 0.3.2         |
   | RabbitMQ               | 3.8.1       | 0.3.0         |
   | Redis                  | 5.0.5       | 0.3.2         |

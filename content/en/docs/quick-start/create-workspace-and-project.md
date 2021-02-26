@@ -159,7 +159,7 @@ The user granted the role `operator` will be a project maintainer who can manage
 8. Under **Internet Access**, it can be seen that the Gateway Address and the NodePort of http and https all display on the page.
 
    {{< notice note >}}
-If you want to expose services using the type `LoadBalancer`, you need to use the LoadBalancer plugin of cloud providers. If your Kubernetes cluster is running in a bare metal environment, it is recommended that you use [Porter](https://github.com/kubesphere/porter) as the LoadBalancer plugin.
+If you want to expose services using the type `LoadBalancer`, you need to use the LoadBalancer plugin of cloud providers. If your Kubernetes cluster is running in a bare metal environment, it is recommended that you use [PorterLB](https://github.com/kubesphere/porter) as the LoadBalancer plugin.
    {{</ notice >}}
 
    ![nodeport-setting](/images/docs/quickstart/create-workspaces-projects-accounts/nodeport-setting.png)
