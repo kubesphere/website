@@ -1,10 +1,10 @@
 ---
 title: 'Come on! Your Exclusive Certificate is Ready'
-tag: 'KubeSphere,Community'
+tag: 'KubeSphere, Community'
 keyword: 'Community, Open Source, Contribution, KubeSphere'
 description: 'KubeSphere Community Steering Committee would like to express gratitude to KubeSphere Member, KubeSphere Ambassador, KubeSphere Talented Speaker, and KubeSphere Contributor in 2020'
 createTime: '2021-02-11'
-author: 'Feynman Zhou,Lindsay Liu'
+author: 'Feynman Zhou, Lindsay Liu'
 snapshot: '/images/blogs/en/meetup-2020/kubesphere-meetup.png'
 ---
 
@@ -74,7 +74,7 @@ KubeSphere Ambassadors are awarded to technical evangelists who are helping to g
 
 ## KubeSphere Contributor
 
-KubeSphere Contributors are for members who have participated in KubeSphere’s open-source projects in 2020 or published high-quality technical blogs on the KubeSphere Chinese forum, as well as members who help to submit and fix bugs.
+KubeSphere Contributors are for members who have participated in KubeSphere’s open-source projects or published high-quality technical blogs on the KubeSphere Chinese forum, as well as members who have helped to submit and fix bugs.
 
 | Name | Certificate |
 | ---- | ---- |
