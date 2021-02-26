@@ -86,3 +86,7 @@ Select a desire language of the console.
 ### [Remove Built-in Apps in KubeSphere](../faq/applications/remove-built-in-apps/)
 
 Learn how to remove built-in apps from the KubeSphere App Store.
+
+### [Reuse the Same App Name after Its Deletion](../faq/applications/reuse-the-same-app-name-after-deletion/)
+
+Learn how to reuse the same app name after its deletion.

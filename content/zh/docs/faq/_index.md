@@ -78,3 +78,7 @@ icon: "/images/docs/docs.svg"
 ### [下架 KubeSphere 中的内置应用](../applications/remove-built-in-apps/)
 
 了解如何下架 KubeSphere 中的内置应用。
+
+### [删除应用后复用相同应用名称](../faq/applications/reuse-the-same-app-name-after-deletion/)
+
+了解如何在删除应用后复用相同应用名称。

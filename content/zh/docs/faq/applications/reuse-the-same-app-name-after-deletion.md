@@ -1,8 +1,8 @@
 ---
-title: "Use the Same App Name after Its Deletion"
-keywords: "KubeSphere, OpenPitrix, Application, App"
-description: "How to use the same app name after its deletion"
-linkTitle: "Use the Same App Name after Its Deletion"
+title: "删除应用后复用相同应用名称"
+keywords: "KubeSphere, OpenPitrix, 应用程序, 应用"
+description: "如何在删除应用后复用相同应用名称"
+linkTitle: "删除应用后复用相同应用名称"
 Weight: 16920
 ---
 
@@ -13,7 +13,7 @@ To deploy an app in KubeSphere, tenants can go to the App Store and select the a
 - You need to use an account invited to your project with the role of `operator`. This tutorial uses the account `project-regular` for demonstration purposes. For more information, refer to [Create Workspaces, Projects, Accounts and Roles](../../../quick-start/create-workspace-and-project/).
 - You need to [enable the App Store](../../../pluggable-components/app-store/).
 
-## Use the Same App Name
+## Reuse the Same App Name
 
 ### Deploy an app from the App Store
 
@@ -25,7 +25,7 @@ To deploy an app in KubeSphere, tenants can go to the App Store and select the a
 
    ![delete-redis-1](/images/docs/faq/applications/use-the-same-app-name-after-deletion/delete-redis-1.PNG)
 
-### Use the same app name
+### Reuse the same app name
 
 1. If you try to deploy a new redis app with the same app name as `redis-1`, you can see the following error prompt in the upper right corner.
 
