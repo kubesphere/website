@@ -79,6 +79,10 @@ KubeSphere 内置了15个在 Kubernetes 上常用的精选应用。只需点击�
 
 了解如何在 KubeSphere 中部署 TiDB Operator 和 TiDB 集群。
 
+### [在 KubeSphere 中部署 MeterSphere](../application-store/external-apps/deploy-metersphere/)
+
+了解如何在 KubeSphere 中部署 MeterSphere。
+
 ## 应用开发者指南
 
 ### [Helm 开发者指南](../application-store/app-developer-guide/helm-developer-guide/)

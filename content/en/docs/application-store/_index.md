@@ -79,6 +79,10 @@ Learn how to deploy GitLab through an app repository and access its service.
 
 Learn how to deploy TiDB Operator and a TiDB Cluster on KubeSphere.
 
+### [Deploy MeterSphere on KubeSphere](../application-store/external-apps/deploy-metersphere/)
+
+Learn how to deploy MeterSphere on KubeSphere.
+
 ## Application Developer Guide
 
 ### [Helm Developer Guide](../application-store/app-developer-guide/helm-developer-guide/)
