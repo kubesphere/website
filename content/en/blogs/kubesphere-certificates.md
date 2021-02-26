@@ -18,7 +18,7 @@ It’s highly appreciated that the KubeSphere community has nearly 100 contribut
 
 KubeSphere Community Steering Committee would like to express gratitude to KubeSphere Members, KubeSphere Ambassadors, KubeSphere Talented Speakers, and KubeSphere Contributors, and extend the sincerest greetings to all the members who participated in the open-source contribution to the KubeSphere community. Therefore, we prepare an exclusive gift for you.
 
-![合影](https://pek3b.qingstor.com/kubesphere-community/images/20210211222956.png)
+![kubesphere-community](https://pek3b.qingstor.com/kubesphere-community/images/20210211222956.png)
 
 ## KubeSphere Member
 
