@@ -89,4 +89,4 @@ Remove KubeSphere and Kubernetes from your machines.
 
 Below you will find some of the most viewed and helpful pages in this chapter. It is highly recommended that you refer to them first.
 
-{{< popularPage icon="/images/docs/qingcloud-2.svg" title="Deploy KubeSphere on QingCloud" description="Provision an HA KubeSphere cluster on QingCloud." link="../installing-on-linux/public-cloud/kubesphere-on-qingcloud-instance/" >}}
+{{< popularPage icon="/images/docs/qingcloud-2.svg" title="Deploy KubeSphere on QingCloud" description="Provision an HA KubeSphere cluster on QingCloud." link="../installing-on-linux/public-cloud/install-kubesphere-on-qingcloud-vms/" >}}

@@ -32,3 +32,8 @@ Traffic mirroring copies live production traffic and sends it to a mirrored serv
 - Test clusters. You can use production traffic of instances for cluster testing.
 - Test databases. You can use an empty database to store and load data.
 
+{{< notice note >}}
+
+The current KubeSphere version does not support grayscale release strategies for multi-cluster apps.
+
+{{</ notice >}} 

@@ -6,13 +6,13 @@ linkTitle: "Set up an HA Cluster Using a Load Balancer"
 weight: 3210
 ---
 
-You can set up a single-master Kubernetes cluster with KubeSphere installed based on the tutorial of [Multi-node Installation](../multioverview/). Single-master clusters may be sufficient for development and testing in most cases. For a production environment, however, you need to consider the high availability of the cluster. If key components (for example, kube-apiserver, kube-scheduler, and kube-controller-manager) are all running on the same master node, Kubernetes and KubeSphere will be unavailable once the master node goes down. Therefore, you need to set up a high-availability cluster by provisioning load balancers with multiple master nodes. You can use any cloud load balancer, or any hardware load balancer (e.g. F5). In addition, Keepalived and [HAproxy](https://www.haproxy.com/), or Nginx is also an alternative for creating high-availability clusters.
+You can set up a single-master Kubernetes cluster with KubeSphere installed based on the tutorial of [Multi-node Installation](../../../installing-on-linux/introduction/multioverview/). Single-master clusters may be sufficient for development and testing in most cases. For a production environment, however, you need to consider the high availability of the cluster. If key components (for example, kube-apiserver, kube-scheduler, and kube-controller-manager) are all running on the same master node, Kubernetes and KubeSphere will be unavailable once the master node goes down. Therefore, you need to set up a high-availability cluster by provisioning load balancers with multiple master nodes. You can use any cloud load balancer, or any hardware load balancer (e.g. F5). In addition, Keepalived and [HAproxy](https://www.haproxy.com/), or Nginx is also an alternative for creating high-availability clusters.
 
 This tutorial demonstrates the general configurations of a high-availability cluster as you install KubeSphere on Linux.
 
 ## Architecture
 
-Make sure you have prepared six Linux machines before you begin, with three of them serving as master nodes and the other three as worker nodes. The following image shows details of these machines, including their private IP address and role. For more information about system and network requirements, see [Multi-node Installation](../multioverview/#step-1-prepare-linux-hosts).
+Make sure you have prepared six Linux machines before you begin, with three of them serving as master nodes and the other three as worker nodes. The following image shows details of these machines, including their private IP address and role. For more information about system and network requirements, see [Multi-node Installation](../../../installing-on-linux/introduction/multioverview/#step-1-prepare-linux-hosts).
 
 ![ha-architecture](/images/docs/installing-on-linux/high-availability-configurations/set-up-ha-cluster-using-lb/ha-architecture.png)
 
@@ -31,7 +31,7 @@ You must create a load balancer in your environment to listen (also known as lis
 
 - Make sure your load balancer at least listens on the port of apiserver.
 
-- You may need to open ports in your security group to ensure external traffic is not blocked depending on where your cluster is deployed. For more information, see [Port Requirements](../port-firewall/).
+- You may need to open ports in your security group to ensure external traffic is not blocked depending on where your cluster is deployed. For more information, see [Port Requirements](../../../installing-on-linux/introduction/port-firewall/).
 - You can configure both internal and external load balancers on some cloud platforms. After assigning a public IP address to the external load balancer, you can use the IP address to access the cluster.
 - For more information about how to configure load balancers, see “Installing on Public Cloud” to see specific steps on major public cloud platforms.
 
@@ -140,7 +140,7 @@ spec:
     - node3
 ```
 
-For more information about different fields in this configuration file, see [Kubernetes Cluster Configurations](../vars/) and [Multi-node Installation](../multioverview/#2-edit-the-configuration-file).
+For more information about different fields in this configuration file, see [Kubernetes Cluster Configurations](../../../installing-on-linux/introduction/vars/) and [Multi-node Installation](../../../installing-on-linux/introduction/multioverview/#2-edit-the-configuration-file).
 
 ### Configure the load balancer
 
@@ -163,7 +163,7 @@ For more information about different fields in this configuration file, see [Kub
 
 ### Persistent storage plugin configurations
 
-For a production environment, you need to prepare persistent storage and configure the storage plugin (e.g. CSI) in `config-sample.yaml` to define which storage service you want to use. For more information, see [Persistent Storage Configurations](../storage-configuration/).
+For a production environment, you need to prepare persistent storage and configure the storage plugin (e.g. CSI) in `config-sample.yaml` to define which storage service you want to use. For more information, see [Persistent Storage Configurations](../../../installing-on-linux/introduction/storage-configuration/).
 
 ### Enable pluggable components (Optional)
 

@@ -16,7 +16,7 @@ Usually, it is recommended to maintain your nodes one by one instead of restarti
 {{</ notice >}}
 
 ## Prerequisites
-- Take an [etcd backup](https://github.com/etcd-io/etcd/blob/master/Documentation/op-guide/recovery.md#snapshotting-the-keyspace) prior to shutting down a cluster.
+- Take an [etcd backup](https://etcd.io/docs/current/op-guide/recovery/#snapshotting-the-keyspace) prior to shutting down a cluster.
 - SSH [passwordless login](https://man.openbsd.org/ssh.1#AUTHENTICATION) is set up between hosts.
 
 ## Shut Down a Cluster
@@ -71,4 +71,4 @@ kubectl get nodes -l node-role.kubernetes.io/master
 kubectl get nodes -l node-role.kubernetes.io/worker
 ```
 
-If your cluster fails to restart, please try to [restore the etcd cluster](https://github.com/etcd-io/etcd/blob/master/Documentation/op-guide/recovery.md#restoring-a-cluster).
+If your cluster fails to restart, please try to [restore the etcd cluster](https://etcd.io/docs/current/op-guide/recovery/#restoring-a-cluster).

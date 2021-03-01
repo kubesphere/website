@@ -25,9 +25,17 @@ Understand what Telemetry is and how to enable or disable it in KubeSphere.
 
 Understand why the installation may fail when you use KubeKey to install an add-on through YAML.
 
+### [Uninstall Pluggable Components from KubeSphere](../faq/installation/uninstall-pluggable-components/)
+
+Learn how to uninstall each pluggable component in KubeSphere.
+
+### [SSH Connection Failure](../faq/installation/ssh-connection-failure/)
+
+Understand why the SSH connection may fail when you use KubeKey to create a cluster.
+
 ## Upgrade
 
-### [Upgrade QingCloud CSI](../faq/upgrade/upgrade-faq/)
+### [Upgrade QingCloud CSI](../faq/upgrade/qingcloud-csi-upgrade/)
 
 Upgrade the QingCloud CSI after you upgrade KubeSphere.
 
@@ -51,7 +59,7 @@ Use your own Prometheus stack setup in KubeSphere.
 
 Reset the password of any account.
 
-### [Session Timeout](../access-control/session-timeout/)
+### [Session Timeout](../faq/access-control/session-timeout/)
 
 Understand session timeout and customize the timeout period.
 
@@ -72,3 +80,13 @@ Enable the editing function of system resources on the console.
 ### [Change the Console Language](../faq/console/change-console-language/)
 
 Select a desire language of the console.
+
+## Applications
+
+### [Remove Built-in Apps in KubeSphere](../faq/applications/remove-built-in-apps/)
+
+Learn how to remove built-in apps from the KubeSphere App Store.
+
+### [Reuse the Same App Name after Its Deletion](../faq/applications/reuse-the-same-app-name-after-deletion/)
+
+Learn how to reuse the same app name after its deletion.

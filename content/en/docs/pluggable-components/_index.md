@@ -47,3 +47,7 @@ Learn how to enable KubeSphere Service Mesh to use different traffic management 
 ## [Network Policies](../pluggable-components/network-policy/)
 
 Learn how to enable Network Policies to control traffic flow at the IP address or port level.
+
+## [Metrics Server](../pluggable-components/metrics-server/)
+
+Learn how to enable the Metrics Server to use HPA to autoscale a Deployment.

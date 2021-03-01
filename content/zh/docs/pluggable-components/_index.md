@@ -47,3 +47,7 @@ icon: "/images/docs/docs.svg"
 ## [网络策略](../pluggable-components/network-policy/)
 
 了解如何启用网络策略来控制 IP 地址或端口级别的流量。
+
+## [Metrics Server](../pluggable-components/metrics-server/)
+
+了解如何启用 Metrics Server 以使用 HPA 对部署进行自动伸缩。
