@@ -279,7 +279,7 @@ section4:
 
       - title: '成为 Contributor'
         icon: 'images/contribution/group-2.png'
-        content: 'KubeSphere 100% 开放源代码，并由社区推动。 我们非常感谢对代码和文档做出贡献的用户！为了表达谢意，我们将为有突出贡献者赠送贡献者 T 恤。'
+        content: 'KubeSphere 100% 开放源代码，并由社区推动。我们非常感谢对代码和文档做出贡献的用户！为了表达谢意，我们将为有突出贡献者赠送贡献者 T 恤。'
         link: 'https://github.com/kubesphere/community/blob/master/ROLES.md#kubesphere-community-roles'
         linkContent: '成为 KubeSphere Contributor →'
 
