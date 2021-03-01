@@ -144,6 +144,12 @@ To delete a volume, make sure the volume is not mounted to any workload. To unmo
 
 ![delete-volume](/images/docs/project-user-guide/volume-management/volumes/delete-volume.jpg)
 
+If the status of a volume remains **Terminating** for a long time after you clicked **Delete**, manually delete it by using the following command:
+
+```bash
+kubectl patch pvc <pvc-name> -p '{"metadata":{"finalizers":null}}'
+```
+
 ### Volume features
 
 From the **More** drop-down menu, there are three additional options provided by KubeSphere based on the underlying storage plugin, also known as `Storage Capability`. Volume features include:

@@ -143,6 +143,12 @@ weight: 10310
 
 ![delete-volume](/images/docs/zh-cn/project-user-guide/volume-management/volumes/delete-volume.jpg)
 
+在您点击**删除**后，如果存储卷的状态长时间保持为**删除中**，请使用以下命令手动删除：
+
+```bash
+kubectl patch pvc <pvc-name> -p '{"metadata":{"finalizers":null}}'
+```
+
 ### 使用存储卷功能
 
 **更多操作**下拉菜单提供了三个额外功能，这些功能基于 KubeSphere 的底层存储插件 `Storage Capability`。具体如下：
