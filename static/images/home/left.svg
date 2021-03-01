@@ -1,9 +1,1 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="53" height="53" viewBox="0 0 53 53">
-    <defs>
-        <radialGradient id="prefix__a" cx="50%" cy="30.036%" r="104.967%" fx="50%" fy="30.036%">
-            <stop offset="0%" stop-color="#FFF"/>
-            <stop offset="100%" stop-color="#CCD3DB"/>
-        </radialGradient>
-    </defs>
-    <circle cx="26.5" cy="297.5" r="26.5" fill="url(#prefix__a)" fill-rule="evenodd" transform="translate(0 -271)"/>
-</svg>
+<svg xmlns="http://www.w3.org/2000/svg" width="53" height="53" viewBox="0 0 53 53"><defs><radialGradient id="prefix__a" cx="50%" cy="30.036%" r="104.967%" fx="50%" fy="30.036%"><stop offset="0%" stop-color="#FFF"/><stop offset="100%" stop-color="#CCD3DB"/></radialGradient></defs><circle cx="26.5" cy="297.5" r="26.5" fill="url(#prefix__a)" fill-rule="evenodd" transform="translate(0 -271)"/></svg>
