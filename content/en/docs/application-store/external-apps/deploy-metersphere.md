@@ -57,7 +57,7 @@ This tutorial demonstrates how to deploy MeterSphere on KubeSphere.
 
    ![change-value](/images/docs/appstore/external-apps/deploy-metersphere/change-value.PNG)
 
-7. Wait for MeterSphere app to be up and running.
+7. Wait for MeterSphere to be up and running.
 
    ![metersphere-running](/images/docs/appstore/external-apps/deploy-metersphere/metersphere-running.PNG)
 
@@ -85,6 +85,6 @@ This tutorial demonstrates how to deploy MeterSphere on KubeSphere.
 
    {{< notice note >}}
 
-   You may need to open the port in your security groups and configure related port forwarding rules depending on where your Kubernetes cluster is deployed. Make sure to use your own `NodeIP`.
+   You may need to open the port in your security groups and configure related port forwarding rules depending on where your Kubernetes cluster is deployed. Make sure you use your own `NodeIP`.
 
    {{</ notice >}}
