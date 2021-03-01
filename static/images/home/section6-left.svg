@@ -1,18 +1,1 @@
-<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="162" height="158" viewBox="0 0 162 158">
-    <defs>
-        <linearGradient id="prefix__c" x1="50%" x2="50%" y1="0%" y2="100%">
-            <stop offset="0%" stop-color="#75D49A"/>
-            <stop offset="100%" stop-color="#54CA82"/>
-        </linearGradient>
-        <filter id="prefix__a" width="183.9%" height="194.1%" x="-41.9%" y="-32.4%" filterUnits="objectBoundingBox">
-            <feOffset dy="16" in="SourceAlpha" result="shadowOffsetOuter1"/>
-            <feGaussianBlur in="shadowOffsetOuter1" result="shadowBlurOuter1" stdDeviation="15"/>
-            <feColorMatrix in="shadowBlurOuter1" values="0 0 0 0 0.384313725 0 0 0 0 0.807843137 0 0 0 0 0.552941176 0 0 0 0.3 0"/>
-        </filter>
-        <path id="prefix__b" d="M718 5285.175l36.198 20.9c3.404 1.965 5.5 5.596 5.5 9.526v41.798c0 3.93-2.096 7.561-5.5 9.526l-36.198 20.9c-3.403 1.965-7.597 1.965-11 0l-36.198-20.9c-3.404-1.965-5.5-5.596-5.5-9.526v-41.798c0-3.93 2.096-7.561 5.5-9.526l36.198-20.9c3.403-1.965 7.597-1.965 11 0z"/>
-    </defs>
-    <g fill="none" fill-rule="evenodd" opacity=".348" transform="rotate(21 14624.781 1011.203)">
-        <use fill="#000" filter="url(#prefix__a)" xlink:href="#prefix__b"/>
-        <use fill="url(#prefix__c)" xlink:href="#prefix__b"/>
-    </g>
-</svg>
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="162" height="158" viewBox="0 0 162 158"><defs><linearGradient id="prefix__c" x1="50%" x2="50%" y1="0%" y2="100%"><stop offset="0%" stop-color="#75D49A"/><stop offset="100%" stop-color="#54CA82"/></linearGradient><filter id="prefix__a" width="183.9%" height="194.1%" x="-41.9%" y="-32.4%" filterUnits="objectBoundingBox"><feOffset dy="16" in="SourceAlpha" result="shadowOffsetOuter1"/><feGaussianBlur in="shadowOffsetOuter1" result="shadowBlurOuter1" stdDeviation="15"/><feColorMatrix in="shadowBlurOuter1" values="0 0 0 0 0.384313725 0 0 0 0 0.807843137 0 0 0 0 0.552941176 0 0 0 0.3 0"/></filter><path id="prefix__b" d="M718 5285.175l36.198 20.9c3.404 1.965 5.5 5.596 5.5 9.526v41.798c0 3.93-2.096 7.561-5.5 9.526l-36.198 20.9c-3.403 1.965-7.597 1.965-11 0l-36.198-20.9c-3.404-1.965-5.5-5.596-5.5-9.526v-41.798c0-3.93 2.096-7.561 5.5-9.526l36.198-20.9c3.403-1.965 7.597-1.965 11 0z"/></defs><g fill="none" fill-rule="evenodd" opacity=".348" transform="rotate(21 14624.781 1011.203)"><use fill="#000" filter="url(#prefix__a)" xlink:href="#prefix__b"/><use fill="url(#prefix__c)" xlink:href="#prefix__b"/></g></svg>

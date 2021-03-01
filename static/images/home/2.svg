@@ -1,16 +1,1 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="134" height="133" viewBox="0 0 134 133">
-    <defs>
-        <linearGradient id="prefix__b" x1="55.736%" x2="59.766%" y1="100%" y2="-29.411%">
-            <stop offset="0%" stop-color="#ECAF24"/>
-            <stop offset="100%" stop-color="#FFF8CB"/>
-        </linearGradient>
-        <linearGradient id="prefix__a" x1="50%" x2="50%" y1="0%" y2="100%">
-            <stop offset="0%" stop-color="#FFF" stop-opacity="0"/>
-            <stop offset="100%" stop-color="#FFF" stop-opacity=".426"/>
-        </linearGradient>
-    </defs>
-    <g fill="none" fill-rule="evenodd" stroke="url(#prefix__a)" transform="translate(1)">
-        <circle cx="55" cy="55" r="55" fill="url(#prefix__b)" opacity=".65"/>
-        <circle cx="99" cy="99" r="33" opacity=".702"/>
-    </g>
-</svg>
+<svg xmlns="http://www.w3.org/2000/svg" width="134" height="133" viewBox="0 0 134 133"><defs><linearGradient id="prefix__b" x1="55.736%" x2="59.766%" y1="100%" y2="-29.411%"><stop offset="0%" stop-color="#ECAF24"/><stop offset="100%" stop-color="#FFF8CB"/></linearGradient><linearGradient id="prefix__a" x1="50%" x2="50%" y1="0%" y2="100%"><stop offset="0%" stop-color="#FFF" stop-opacity="0"/><stop offset="100%" stop-color="#FFF" stop-opacity=".426"/></linearGradient></defs><g fill="none" fill-rule="evenodd" stroke="url(#prefix__a)" transform="translate(1)"><circle cx="55" cy="55" r="55" fill="url(#prefix__b)" opacity=".65"/><circle cx="99" cy="99" r="33" opacity=".702"/></g></svg>

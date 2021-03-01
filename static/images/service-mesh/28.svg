@@ -1,16 +1,1 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="685" height="428" viewBox="0 0 685 428">
-    <defs>
-        <linearGradient id="prefix__a" x1="0%" x2="100%" y1="45.194%" y2="50%">
-            <stop offset="0%" stop-color="#FFF" stop-opacity="0"/>
-            <stop offset="100%" stop-color="#F7B500"/>
-        </linearGradient>
-        <linearGradient id="prefix__b" x1="2.08%" x2="100%" y1="45.278%" y2="50%">
-            <stop offset="0%" stop-color="#FFF" stop-opacity="0"/>
-            <stop offset="100%" stop-color="#F7B500"/>
-        </linearGradient>
-    </defs>
-    <g fill="none" fill-rule="evenodd">
-        <path fill="url(#prefix__a)" d="M169 0L962 543.044 962 551.998 169 703z" opacity=".3" transform="translate(-7 -12)"/>
-        <path fill="url(#prefix__b)" d="M0 70L634 490.436 634 498.632 0 633z" transform="translate(-7 -12)"/>
-    </g>
-</svg>
+<svg xmlns="http://www.w3.org/2000/svg" width="685" height="428" viewBox="0 0 685 428"><defs><linearGradient id="prefix__a" x1="0%" x2="100%" y1="45.194%" y2="50%"><stop offset="0%" stop-color="#FFF" stop-opacity="0"/><stop offset="100%" stop-color="#F7B500"/></linearGradient><linearGradient id="prefix__b" x1="2.08%" x2="100%" y1="45.278%" y2="50%"><stop offset="0%" stop-color="#FFF" stop-opacity="0"/><stop offset="100%" stop-color="#F7B500"/></linearGradient></defs><g fill="none" fill-rule="evenodd"><path fill="url(#prefix__a)" d="M169 0L962 543.044 962 551.998 169 703z" opacity=".3" transform="translate(-7 -12)"/><path fill="url(#prefix__b)" d="M0 70L634 490.436 634 498.632 0 633z" transform="translate(-7 -12)"/></g></svg>

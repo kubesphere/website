@@ -1,9 +1,1 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="515" height="502" viewBox="0 0 515 502">
-    <defs>
-        <linearGradient id="prefix__a" x1="35.858%" x2="26.061%" y1="76.876%" y2="24.3%">
-            <stop offset="0%" stop-color="#ECAF24"/>
-            <stop offset="100%" stop-color="#FFF8CB" stop-opacity="0"/>
-        </linearGradient>
-    </defs>
-    <path fill="url(#prefix__a)" fill-rule="evenodd" d="M202.481 138L655.634 252 0 677.132z" opacity=".4" transform="rotate(180 257.317 338.566)"/>
-</svg>
+<svg xmlns="http://www.w3.org/2000/svg" width="515" height="502" viewBox="0 0 515 502"><defs><linearGradient id="prefix__a" x1="35.858%" x2="26.061%" y1="76.876%" y2="24.3%"><stop offset="0%" stop-color="#ECAF24"/><stop offset="100%" stop-color="#FFF8CB" stop-opacity="0"/></linearGradient></defs><path fill="url(#prefix__a)" fill-rule="evenodd" d="M202.481 138L655.634 252 0 677.132z" opacity=".4" transform="rotate(180 257.317 338.566)"/></svg>

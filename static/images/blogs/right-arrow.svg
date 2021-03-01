@@ -1,6 +1,1 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="94" height="94" viewBox="0 0 94 94">
-    <g fill="none" fill-rule="evenodd" transform="translate(15 11)">
-        <circle cx="32" cy="32" r="32" fill="currentColor" stroke="#CCD3DB"/>
-        <path fill="#CCD3DB" fill-rule="nonzero" d="M20 34.267c0 .25.2.453.448.454h12.925l-2.205 5.659a.458.458 0 0 0 .147.528c.16.123.382.123.542-.002l10.968-8.547a.456.456 0 0 0 0-.719l-10.968-8.546a.444.444 0 0 0-.542-.002.457.457 0 0 0-.147.528l2.206 5.66-12.926-.001a.45.45 0 0 0-.447.453L20 34.267z"/>
-    </g>
-</svg>
+<svg xmlns="http://www.w3.org/2000/svg" width="94" height="94" viewBox="0 0 94 94"><g fill="none" fill-rule="evenodd" transform="translate(15 11)"><circle cx="32" cy="32" r="32" fill="currentColor" stroke="#CCD3DB"/><path fill="#CCD3DB" fill-rule="nonzero" d="M20 34.267c0 .25.2.453.448.454h12.925l-2.205 5.659a.458.458 0 0 0 .147.528c.16.123.382.123.542-.002l10.968-8.547a.456.456 0 0 0 0-.719l-10.968-8.546a.444.444 0 0 0-.542-.002.457.457 0 0 0-.147.528l2.206 5.66-12.926-.001a.45.45 0 0 0-.447.453L20 34.267z"/></g></svg>
