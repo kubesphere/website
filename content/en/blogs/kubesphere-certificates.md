@@ -109,7 +109,7 @@ We have sent an exclusive gift to acknowledge all members who have participated 
 
 In addition to the contributors listed above, the KubeSphere community would like to express our thanks to developers from the AWS Community, Apache APISIX, Apache SkyWalking, DockOne Community, K8s Chinese Community, Ruijie Networks, WeDataSphere Open Source Community (WeBank), CASI Cloud, Jenkins Chinese, TesterHome, SegmentFault, Istio Community, KubeEdge community, openEuler community, Zhongtong Express, and all community partners.
 
-![](https://ap3.qingstor.com/kubesphere-website/docs/20201229150707.png)
+![](/Users/lindsy/Desktop/20201229150707.png)
 
 ## Looking Ahead
 
