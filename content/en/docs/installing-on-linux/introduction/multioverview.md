@@ -178,7 +178,7 @@ A default file `config-sample.yaml` will be created if you do not change the nam
 
 {{< notice note >}}
 
-To customize Kubernetes related parameters please refer to [Kubernetes Cluster Configurations](../vars/).
+To customize Kubernetes related parameters, refer to [Kubernetes Cluster Configurations](../vars/).
 
 {{</ notice >}}
 
@@ -235,7 +235,8 @@ List all your machines under `hosts` and add their detailed information as above
 
 {{< notice tip >}} 
 
-Before you install KubeSphere, you can use the information provided under `hosts` (for example, IP addresses and passwords) to test the network connection between the taskbox and other instances using SSH.
+- Before you install KubeSphere, you can use the information provided under `hosts` (for example, IP addresses and passwords) to test the network connection between the taskbox and other instances using SSH.
+- Make sure port 6443 is not being used by other services before the installation. Otherwise, it may cause conflicts as the default port of the API server is 6443.
 
 {{</ notice >}}
 
