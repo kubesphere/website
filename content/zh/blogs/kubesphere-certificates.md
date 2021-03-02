@@ -5,7 +5,7 @@ keyword: '社区, 开源, 贡献, KubeSphere'
 description: 'KubeSphere 社区管理委员会向此次获得 2020 年度评选产生的 KubeSphere Member、 KubeSphere Ambassador、KubeSphere Talented Speaker、KubeSphere Contributor 成员致谢。'
 createTime: '2021-02-11'
 author: '周鹏飞'
-snapshot: 'https://pek3b.qingstor.com/kubesphere-community/images/20210211222956.png'
+snapshot: '/images/blogs/en/meetup-2020/kubesphere-meetup.png'
 ---
 
 <video controls="controls" style="width: 100% !important; height: auto !important;">
@@ -28,11 +28,11 @@ KubeSphere Member 是授予给深度参与了 KubeSphere 社区开源贡献的�
 
 | 姓名 | 证书 |
 | ---- | ---- |
-|Jie Chen|[点击查看下载证书](https://kubesphere-community.pek3b.qingstor.com/images/certificates/member-chenjie.png) |    
-|Ling Li|[点击查看下载证书](https://kubesphere-community.pek3b.qingstor.com/images/certificates/member-liling.png) |     
+|Jie Chen|[点击查看下载证书](https://kubesphere-community.pek3b.qingstor.com/images/certificates/member-chenjie.png) |
+|Ling Li|[点击查看下载证书](https://kubesphere-community.pek3b.qingstor.com/images/certificates/member-liling.png) |
 |Honglei Shen|[点击查看下载证书](https://kubesphere-community.pek3b.qingstor.com/images/certificates/member-shenhonglei.png) |
 |Turtle Chang|[点击查看下载证书](https://kubesphere-community.pek3b.qingstor.com/images/certificates/member-turtlechang.png) |
-|Jian Zhang|[点击查看下载证书](https://kubesphere-community.pek3b.qingstor.com/images/certificates/member-zhagnjian.png) | 
+|Jian Zhang|[点击查看下载证书](https://kubesphere-community.pek3b.qingstor.com/images/certificates/member-zhagnjian.png) |
 |Kai Zhang|[点击查看下载证书](https://kubesphere-community.pek3b.qingstor.com/images/certificates/member-zhangkai.png) |
 
 ## KubeSphere Talented Speaker
@@ -41,20 +41,20 @@ KubeSphere Talented Speaker 是授予在 KubeSphere 社区云原生技术直播�
 
 | 姓名 | 证书 |
 | ---- | ---- |
-|Benjamin Huo|[点击查看下载证书](https://kubesphere-community.pek3b.qingstor.com/images/certificates/speaker-benjaminhuo.png) | 
-|Tian Fang|[点击查看下载证书](https://kubesphere-community.pek3b.qingstor.com/images/certificates/speaker-fangtian.png) |    
-|Leo Liu|[点击查看下载证书](https://kubesphere-community.pek3b.qingstor.com/images/certificates/speaker-leoliu.png) |      
-|Lei Song|[点击查看下载证书](https://kubesphere-community.pek3b.qingstor.com/images/certificates/speaker-songlei.png) |     
+|Benjamin Huo|[点击查看下载证书](https://kubesphere-community.pek3b.qingstor.com/images/certificates/speaker-benjaminhuo.png) |
+|Tian Fang|[点击查看下载证书](https://kubesphere-community.pek3b.qingstor.com/images/certificates/speaker-fangtian.png) |
+|Leo Liu|[点击查看下载证书](https://kubesphere-community.pek3b.qingstor.com/images/certificates/speaker-leoliu.png) |
+|Lei Song|[点击查看下载证书](https://kubesphere-community.pek3b.qingstor.com/images/certificates/speaker-songlei.png) |
 |Juan Xu|[点击查看下载证书](https://kubesphere-community.pek3b.qingstor.com/images/certificates/speaker-xujuan.png)|
 |Zhanling Chen|[点击查看下载证书](https://kubesphere-community.pek3b.qingstor.com/images/certificates/speaker-chenzhanling.png) |
-|Jeff Zhang|[点击查看下载证书](https://kubesphere-community.pek3b.qingstor.com/images/certificates/speaker-jeffzhang.png) |   
-|Yueliang Liu|[点击查看下载证书](https://kubesphere-community.pek3b.qingstor.com/images/certificates/speaker-liuyueliang.png) | 
-|Tally Lee|[点击查看下载证书](https://kubesphere-community.pek3b.qingstor.com/images/certificates/speaker-tallylee.png) |    
+|Jeff Zhang|[点击查看下载证书](https://kubesphere-community.pek3b.qingstor.com/images/certificates/speaker-jeffzhang.png) |
+|Yueliang Liu|[点击查看下载证书](https://kubesphere-community.pek3b.qingstor.com/images/certificates/speaker-liuyueliang.png) |
+|Tally Lee|[点击查看下载证书](https://kubesphere-community.pek3b.qingstor.com/images/certificates/speaker-tallylee.png) |
 |Xiaofei Yang|[点击查看下载证书](https://kubesphere-community.pek3b.qingstor.com/images/certificates/speaker-yangxiaofei.png) |
-|Jiong Duan|[点击查看下载证书](https://kubesphere-community.pek3b.qingstor.com/images/certificates/speaker-duanjiong.png) |   
-|Wanjun Lei|[点击查看下载证书](https://kubesphere-community.pek3b.qingstor.com/images/certificates/speaker-leiwanjun.png) |   
-|Michael Yuan|[点击查看下载证书](https://kubesphere-community.pek3b.qingstor.com/images/certificates/speaker-michaelyuan.png) | 
-|Wenhu Wang|[点击查看下载证书](https://kubesphere-community.pek3b.qingstor.com/images/certificates/speaker-wangwenhu.png) |   
+|Jiong Duan|[点击查看下载证书](https://kubesphere-community.pek3b.qingstor.com/images/certificates/speaker-duanjiong.png) |
+|Wanjun Lei|[点击查看下载证书](https://kubesphere-community.pek3b.qingstor.com/images/certificates/speaker-leiwanjun.png) |
+|Michael Yuan|[点击查看下载证书](https://kubesphere-community.pek3b.qingstor.com/images/certificates/speaker-michaelyuan.png) |
+|Wenhu Wang|[点击查看下载证书](https://kubesphere-community.pek3b.qingstor.com/images/certificates/speaker-wangwenhu.png) |
 |Ke Zhou|[点击查看下载证书](https://kubesphere-community.pek3b.qingstor.com/images/certificates/speaker-zhouke.png) |
 
 ## KubeSphere Ambassador
@@ -63,14 +63,14 @@ KubeSphere Ambassador 是授予在帮助 KubeSphere 社区积极布道的技术�
 
 | 姓名 | 证书 |
 | ---- | ---- |
-|Guoyou Li|[点击查看下载证书](https://kubesphere-community.pek3b.qingstor.com/images/certificates/ambassador-liguoyou.png) |  
-|Pahud|[点击查看下载证书](https://kubesphere-community.pek3b.qingstor.com/images/certificates/ambassador-pahud.png) |     
+|Guoyou Li|[点击查看下载证书](https://kubesphere-community.pek3b.qingstor.com/images/certificates/ambassador-liguoyou.png) |
+|Pahud|[点击查看下载证书](https://kubesphere-community.pek3b.qingstor.com/images/certificates/ambassador-pahud.png) |
 |Hengjun Wei|[点击查看下载证书](https://kubesphere-community.pek3b.qingstor.com/images/certificates/ambassador-weihengjun.png) |
-|Lei Xue|[点击查看下载证书](https://kubesphere-community.pek3b.qingstor.com/images/certificates/ambassador-xuelei.png) |    
+|Lei Xue|[点击查看下载证书](https://kubesphere-community.pek3b.qingstor.com/images/certificates/ambassador-xuelei.png) |
 |Yang Yang|[点击查看下载证书](https://kubesphere-community.pek3b.qingstor.com/images/certificates/ambassador-yangyang.png)|
-|Xingmin Lu|[点击查看下载证书](https://kubesphere-community.pek3b.qingstor.com/images/certificates/ambassador-luxingmin.png) | 
-|Haitao Pan|[点击查看下载证书](https://kubesphere-community.pek3b.qingstor.com/images/certificates/ambassador-panhaitao.png) | 
-|Will Zhang|[点击查看下载证书](https://kubesphere-community.pek3b.qingstor.com/images/certificates/ambassador-willzhang.png) | 
+|Xingmin Lu|[点击查看下载证书](https://kubesphere-community.pek3b.qingstor.com/images/certificates/ambassador-luxingmin.png) |
+|Haitao Pan|[点击查看下载证书](https://kubesphere-community.pek3b.qingstor.com/images/certificates/ambassador-panhaitao.png) |
+|Will Zhang|[点击查看下载证书](https://kubesphere-community.pek3b.qingstor.com/images/certificates/ambassador-willzhang.png) |
 |Xinglin Xue|[点击查看下载证书](https://kubesphere-community.pek3b.qingstor.com/images/certificates/ambassador-xuexinglin.png) |
 |Haili Zhang|[点击查看下载证书](https://kubesphere-community.pek3b.qingstor.com/images/certificates/ambassador-zhanghaili.png) |
 
@@ -80,27 +80,27 @@ KubeSphere Contributor 是授予 2020 年参与过 KubeSphere 开源贡献的成
 
 | 姓名 | 证书 |
 | ---- | ---- |
-|Ader Fu|[点击查看下载证书](https://kubesphere-community.pek3b.qingstor.com/images/certificates/contributor-aderfu.png) |  
+|Ader Fu|[点击查看下载证书](https://kubesphere-community.pek3b.qingstor.com/images/certificates/contributor-aderfu.png) |
 |Howie Zhang|[点击查看下载证书](https://kubesphere-community.pek3b.qingstor.com/images/certificates/contributor-howiezhang.png) |
-|Wenbin Liao|[点击查看下载证书](https://kubesphere-community.pek3b.qingstor.com/images/certificates/contributor-liaowenbin.png) |   
-|Renee Teng|[点击查看下载证书](https://kubesphere-community.pek3b.qingstor.com/images/certificates/contributor-reneeteng.png) |    
+|Wenbin Liao|[点击查看下载证书](https://kubesphere-community.pek3b.qingstor.com/images/certificates/contributor-liaowenbin.png) |
+|Renee Teng|[点击查看下载证书](https://kubesphere-community.pek3b.qingstor.com/images/certificates/contributor-reneeteng.png) |
 |Hui Zhang|[点击查看下载证书](https://kubesphere-community.pek3b.qingstor.com/images/certificates/contributor-zhanghui.png)|
-|Changjie Fu|[点击查看下载证书](https://kubesphere-community.pek3b.qingstor.com/images/certificates/contributor-fuchangjie.png) |    
-|Tao Hu|[点击查看下载证书](https://kubesphere-community.pek3b.qingstor.com/images/certificates/contributor-hutao.png) |        
+|Changjie Fu|[点击查看下载证书](https://kubesphere-community.pek3b.qingstor.com/images/certificates/contributor-fuchangjie.png) |
+|Tao Hu|[点击查看下载证书](https://kubesphere-community.pek3b.qingstor.com/images/certificates/contributor-hutao.png) |
 |Ruichao Lin|[点击查看下载证书](https://kubesphere-community.pek3b.qingstor.com/images/certificates/contributor-linruichao.png) |
-|The Way|[点击查看下载证书](https://kubesphere-community.pek3b.qingstor.com/images/certificates/contributor-theway.png) | 
+|The Way|[点击查看下载证书](https://kubesphere-community.pek3b.qingstor.com/images/certificates/contributor-theway.png) |
 |Wei Zhang|[点击查看下载证书](https://kubesphere-community.pek3b.qingstor.com/images/certificates/contributor-zhangwei.png) |
-|Huihui Fu|[点击查看下载证书](https://kubesphere-community.pek3b.qingstor.com/images/certificates/contributor-fuhuihui.png)|      
-|Jack Zhou|[点击查看下载证书](https://kubesphere-community.pek3b.qingstor.com/images/certificates/contributor-jackzhou.png)|      
-|Gang Liu|[点击查看下载证书](https://kubesphere-community.pek3b.qingstor.com/images/certificates/contributor-liugang.png)|       
+|Huihui Fu|[点击查看下载证书](https://kubesphere-community.pek3b.qingstor.com/images/certificates/contributor-fuhuihui.png)|
+|Jack Zhou|[点击查看下载证书](https://kubesphere-community.pek3b.qingstor.com/images/certificates/contributor-jackzhou.png)|
+|Gang Liu|[点击查看下载证书](https://kubesphere-community.pek3b.qingstor.com/images/certificates/contributor-liugang.png)|
 |Wei Wang|[点击查看下载证书](https://kubesphere-community.pek3b.qingstor.com/images/certificates/contributor-wangwei.png) |
-|Shiwen Gong|[点击查看下载证书](https://kubesphere-community.pek3b.qingstor.com/images/certificates/contributor-gongshiwen.png) |   
-|Chen Jin|[点击查看下载证书](https://kubesphere-community.pek3b.qingstor.com/images/certificates/contributor-jinchen.png) |      
-|Junjie Ma|[点击查看下载证书](https://kubesphere-community.pek3b.qingstor.com/images/certificates/contributor-majunjie.png) |     
+|Shiwen Gong|[点击查看下载证书](https://kubesphere-community.pek3b.qingstor.com/images/certificates/contributor-gongshiwen.png) |
+|Chen Jin|[点击查看下载证书](https://kubesphere-community.pek3b.qingstor.com/images/certificates/contributor-jinchen.png) |
+|Junjie Ma|[点击查看下载证书](https://kubesphere-community.pek3b.qingstor.com/images/certificates/contributor-majunjie.png) |
 |Zehuai Wang|[点击查看下载证书](https://kubesphere-community.pek3b.qingstor.com/images/certificates/contributor-wangzehuai.png) |
-|Shanjie Han|[点击查看下载证书](https://kubesphere-community.pek3b.qingstor.com/images/certificates/contributor-hanshanjie.png) |   
+|Shanjie Han|[点击查看下载证书](https://kubesphere-community.pek3b.qingstor.com/images/certificates/contributor-hanshanjie.png) |
 |Yuanpeng Liang|[点击查看下载证书](https://kubesphere-community.pek3b.qingstor.com/images/certificates/contributor-liangyuanpeng.png) |
-|Hongbing Pei|[点击查看下载证书](https://kubesphere-community.pek3b.qingstor.com/images/certificates/contributor-peihongbing.png) |  
+|Hongbing Pei|[点击查看下载证书](https://kubesphere-community.pek3b.qingstor.com/images/certificates/contributor-peihongbing.png) |
 |Xinyang Xie|[点击查看下载证书](https://kubesphere-community.pek3b.qingstor.com/images/certificates/contributor-xiexinyang.png) |
 
 还有很多默默在 GitHub 提交过 Pull Request 的来自全球各地的社区贡献者，我们尚且还不知道这些 Contributor 的名字或联系方式，社区已在项目仓库 Readme 公开致谢。我们给所有参与过 KubeSphere 开源贡献的成员都送上了一份定制 Logo 的纪念周边，如果你正好也给社区提交过 Pull Request 并被社区合并，但没有出现在上述公开名单中，请微信联系助手小 KK `kubesphere`，我们将为您定制 KubeSphere 证书与纪念周边。

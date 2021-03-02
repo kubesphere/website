@@ -35,15 +35,11 @@ Not only did developers from the KubeSphere team participate in the event, our g
 
 
 We also provided an on-site DevOps workshop to discuss and try the most common use features of KubeSphere.
-
  ![Snip20210201_20](/images/news/meetup-2020/Snip20210201_20.png)
 
 ![Snip20210201_22](/images/news/meetup-2020/Snip20210201_22.png)
 
- 
-
 KubeSphere has been recognized by many users across the world and has developed a diversified and vibrant community. Though so many passionate users could not present at the event in person, they generously shared their experience and expectations for KubeSphere in videos. 
-
 
 
 <iframe width="677" height="381" src="https://www.youtube.com/embed/fPE2uloVw8A" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
