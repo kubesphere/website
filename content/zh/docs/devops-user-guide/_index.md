@@ -71,6 +71,10 @@ icon: "/images/docs/docs.svg"
 
 将 Harbor 集成到流水线中并向您的 Harbor 仓库推送镜像。
 
+### [将 MeterSphere 集成到流水线](../devops-user-guide/how-to-integrate/integrate-metersphere/)
+
+将 MeterSphere 集成到流水线中进行持续测试。
+
 ## 示例
 
 ### [构建和部署 Go 工程](../devops-user-guide/examples/go-project-pipeline/)
