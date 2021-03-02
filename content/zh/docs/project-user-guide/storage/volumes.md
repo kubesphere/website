@@ -155,7 +155,7 @@ kubectl patch pvc <pvc-name> -p '{"metadata":{"finalizers":null}}'
 
 - **存储卷克隆**：创建一个相同的存储卷。
 - **创建快照**：创建一个存储卷快照，可用于创建其他存储卷。有关更多信息，请参阅[存储卷快照](../volume-snapshots/)。
-- **存储卷扩容**：增加存储卷的容量。
+- **存储卷扩容**：增加存储卷的容量。请注意，您无法在控制台上减少存储卷的大小，因为数据可能会因此丢失。
 
 ![volume-detail-page](/images/docs/zh-cn/project-user-guide/volume-management/volumes/volume-detail-page.jpg)
 

@@ -156,7 +156,7 @@ From the **More** drop-down menu, there are three additional options provided by
 
 - Clone a volume: Create a same volume.
 - Create a volume snapshot: Create a volume snapshot which can be used to create volumes. For more information, see [Volume Snapshots](../volume-snapshots/).
-- Expand a volume: Increase the size of a volume.
+- Expand a volume: Increase the size of a volume. Keep in mind that you cannot reduce the size of a volume on the console due to possible data loss. 
 
 ![volume-detail-page](/images/docs/project-user-guide/volume-management/volumes/volume-detail-page.jpg)
 
