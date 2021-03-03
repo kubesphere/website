@@ -20,7 +20,7 @@ section2:
         - content: 'In accordance with the 2019 Digital Transformation Strategy of Foxconn (Made in China 2025, Industry 4.0), our operation team is faced with the following challenges:'
         - content: 'Technologically, we need to:'
         - content: 1. Support private cloud, public cloud and hybrid cloud.
-        - content: 2. Manage thousands of microservices and support nearly 700 old SLA services.
+        - content: 2. Manage hundreds of microservices and support nearly 700 old SLA services.
         - content: 3. Support big data architectures from edge computing to data analysis.
         - content: 4. Support extensive data storage and data analysis.
         - content: 'However, the current architecture cannot meet the demands above with existing issues listed below:'
