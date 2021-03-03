@@ -1,41 +1,41 @@
 ---
 title: "KubeKey"
-keywords: 'KubeKey, Installation, KubeSphere'
-description: 'Understand KubeKey'
+keywords: 'KubeKey，安装，KubeSphere'
+description: '了解 KubeKey'
 linkTitle: "KubeKey"
 weight: 3120
 ---
 
-Developed in Go, [KubeKey](https://github.com/kubesphere/kubekey) represents a brand-new installation tool as a replacement for the ansible-based installer used before. KubeKey provides you with flexible installation choices, as you can install Kubernetes only or install both Kubernetes and KubeSphere.
+[KubeKey](https://github.com/kubesphere/kubekey) （由 Go 语言开发）是一种全新的安装工具，可以替代以前使用的基于 ansible 的安装程序。KubeKey 为您提供灵活的安装选择，您可以仅安装 Kubernetes，也可以同时安装 Kubernetes 和 KubeSphere。
 
-There are several scenarios to use KubeKey:
+KubeKey 的几种使用场景：
 
-- Install Kubernetes only;
-- Install Kubernetes and KubeSphere together in one command;
-- Scale a cluster;
-- Upgrade a cluster;
-- Install Kubernetes-related add-ons (Chart or YAML).
+- 仅安装 Kubernetes；
+- 在一个命令中同时安装 Kubernetes 和 KubeSphere；
+- 括缩集群；
+- 升级集群；
+- 安装 Kubernetes 相关的插件（Chart 或 YAML）。
 
-## How Does KubeKey Work
+## KubeKey 如何运作
 
-After you download KubeKey, you use an executable called `kk` to perform different operations. No matter you use it to create, scale or upgrade a cluster, you must prepare a configuration file using `kk` beforehand. This configuration file contains basic parameters of your cluster, such as host information, network configurations (CNI plugin and Pod and Service CIDR), registry mirrors, add-ons (YAML or Chart) and pluggable component options (if you install KubeSphere). For more information, see [an example configuration file](https://github.com/kubesphere/kubekey/blob/master/docs/config-example.md).
+下载 KubeKey 之后，您可以使用可执行文件 `kk` 来进行不同的操作。无论您是使用它来创建，扩缩还是升级集群，都必须事先使用 `kk` 准备配置文件。此配置文件包含集群的基本参数，例如主机信息，网络配置（CNI 插件以及 Pod 和 Service CIDR），仓库镜像，插件（YAML 或 Chart）和可插拔组件选项（前提是安装了  KubeSphere）。更多信息，参见[示例配置文件](https://github.com/kubesphere/kubekey/blob/master/docs/config-example.md)。
 
-With the configuration file in place, you execute the `./kk` command with varied flags for different operations. After that, KubeKey automatically installs Docker and pulls all the necessary images for installation. When the installation is complete, you can also inspect installation logs.
+准备好配置文件后，您将使用带有不同标志的 `./kk` 命令来进行不同的操作。这之后，KubeKey 会自动安装 Docker，并拉取所有必要的镜像以进行安装。安装完成后，您还可以检查安装日志。
 
-## Why KubeKey
+## 为什么选择 KubeKey
 
-- The previous ansible-based installer has a bunch of software dependencies such as Python. KubeKey is developed in Go language to get rid of the problem in a variety of environments, making sure the installation is successful.
-- KubeKey supports multiple installation options, such as [all-in-one installation](../../../quick-start/all-in-one-on-linux/), [multi-node installation](../multioverview/), and [air-gapped installation](../air-gapped-installation/).
-- KubeKey uses Kubeadm to install Kubernetes clusters on nodes in parallel as much as possible in order to reduce installation complexity and improve efficiency. It greatly saves installation time compared to the older installer.
-- KubeKey aims to install clusters as an object, i.e., CaaO.
+- 以前基于 ansible 的安装程序依赖于许多软件，例如 Python。KubeKey 由 Go 语言开发，可以消除在多种环境中出现的问题，确保成功安装。
+- KubeKey 支持多种安装选项，例如[all-in-one](../../../quick-start/all-in-one-on-linux/)，[多节点安装](../multioverview/)，以及[离线安装](../air-gapped-installation/).
+- KubeKey 使用 Kubeadm 在节点上尽可能多地并行安装 Kubernetes 集群，使安装更简便，提高效率。与旧版的安装程序相比，它极大地节省了安装时间。
+- KubeKey 旨在将群集作为对象来进行安装，即 CaaO。
 
-## Download KubeKey
+## 下载 KubeKey
 
 {{< tabs >}}
 
-{{< tab "Good network connections to GitHub/Googleapis" >}}
+{{< tab "如果您能正常访问 GitHub/Googleapis" >}}
 
-Download KubeKey from its [GitHub Release Page](https://github.com/kubesphere/kubekey/releases) or use the following command directly.
+从[GitHub Release Page](https://github.com/kubesphere/kubekey/releases)下载 KubeKey 或者直接运行以下命令。
 
 ```bash
 curl -sfL https://get-kk.kubesphere.io | VERSION=v1.0.1 sh -
@@ -43,15 +43,15 @@ curl -sfL https://get-kk.kubesphere.io | VERSION=v1.0.1 sh -
 
 {{</ tab >}}
 
-{{< tab "Poor network connections to GitHub/Googleapis" >}}
+{{< tab "P如果您访问 GitHub/Googleapis受限" >}}
 
-Run the following command first to make sure you download KubeKey from the correct zone.
+首先运行以下命令，以确保您从正确的区域下载 KubeKey。
 
 ```bash
 export KKZONE=cn
 ```
 
-Run the following command to download KubeKey:
+运行以下命令来下载 KubeKey：
 
 ```bash
 curl -sfL https://get-kk.kubesphere.io | VERSION=v1.0.1 sh -
@@ -59,7 +59,7 @@ curl -sfL https://get-kk.kubesphere.io | VERSION=v1.0.1 sh -
 
 {{< notice note >}}
 
-After you download KubeKey, if you transfer it to a new machine also with poor network connections to Googleapis, you must run `export KKZONE=cn` again before you proceed with the steps below.
+下载 KubeKey 之后，如果您将其转移到访问 Googleapis 受限的新机器上，就必须再次运行 `export KKZONE=cn`，然后继续执行以下步骤。
 
 {{</ notice >}} 
 
@@ -69,6 +69,6 @@ After you download KubeKey, if you transfer it to a new machine also with poor n
 
 {{< notice note >}}
 
-The commands above download the latest release (v1.0.1) of KubeKey. You can change the version number in the command to download a specific version.
+通过以上的命令，可以下载 KubeKey 的最新发布 (v1.0.1) 。您可以更改命令中的版本号来下载特定的版本。
 
 {{</ notice >}}
