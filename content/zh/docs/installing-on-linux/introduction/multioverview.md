@@ -8,7 +8,7 @@ weight: 3120
 
 在生产环境中，单节点集群由于集群资源有限并且计算能力不足，无法满足大部分需求。因此，不建议在处理大规模数据时使用单节点集群。此外，这类集群只有一个节点，因此也不具有高可用性。相比之下，在应用程序部署和分发方面，多节点架构是最常见的首选架构。
 
-本节概述了单主节点式多节点安装，包括概念、[KubeKey](https://github.com/kubesphere/kubekey/) 和操作步骤。有关高可用安装的信息，请参考[高可用配置](../../../installing-on-linux/introduction/ha-configuration/)、[在公有云上安装](../../../installing-on-linux/public-cloud/install-kubesphere-on-azure-vms/)和[在本地环境中安装](../../../installing-on-linux/on-premises/install-kubesphere-on-bare-metal/)。
+本节概述了单主节点式多节点安装，包括概念、[KubeKey](https://github.com/kubesphere/kubekey/) 和操作步骤。有关高可用安装的信息，请参考[高可用配置](../../../installing-on-linux/high-availability-configurations/ha-configuration/)、[在公有云上安装](../../../installing-on-linux/public-cloud/install-kubesphere-on-azure-vms/)和[在本地环境中安装](../../../installing-on-linux/on-premises/install-kubesphere-on-bare-metal/)。
 
 ## 视频演示
 
@@ -263,7 +263,7 @@ spec:
 
 #### controlPlaneEndpoint（仅适用于高可用安装）
 
-`controlPlaneEndpoint` 使您可以为高可用集群定义外部负载均衡器。当且仅当安装多个主节点时，才需要准备和配置外部负载均衡器。请注意，`config-sample.yaml` 中的地址和端口应缩进两个空格，`address` 应为 VIP。有关详细信息，请参见[高可用配置](../../../installing-on-linux/introduction/ha-configuration/)。
+`controlPlaneEndpoint` 使您可以为高可用集群定义外部负载均衡器。当且仅当安装多个主节点时，才需要准备和配置外部负载均衡器。请注意，`config-sample.yaml` 中的地址和端口应缩进两个空格，`address` 应为 VIP。有关详细信息，请参见[高可用配置](../../../installing-on-linux/high-availability-configurations/ha-configuration/)。
 
 #### addons
 

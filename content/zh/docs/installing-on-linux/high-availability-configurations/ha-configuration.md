@@ -1,8 +1,8 @@
 ---
-title: "高可用配置"
+title: "使用负载均衡器创建高可用集群"
 keywords: 'KubeSphere, Kubernetes, HA, 高可用, 安装, 配置'
 description: '如何配置一个高可用 Kubernetes 集群。'
-linkTitle: "高可用配置"
+linkTitle: "使用负载均衡器创建高可用集群"
 weight: 3150
 ---
 
@@ -211,4 +211,3 @@ spec:
    https://kubesphere.io             2020-xx-xx xx:xx:xx
    #####################################################
    ```
-
