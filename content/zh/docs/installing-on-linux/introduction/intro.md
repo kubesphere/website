@@ -16,7 +16,7 @@ KubeSphere 有多种安装方式，请注意，这些安装方式不是互斥的
 - [All-in-One](../../../quick-start/all-in-one-on-linux/)：在单个节点上安装 KubeSphere，仅用于用户快速熟悉 KubeSphere。
 - [多节点安装](../multioverview/)：在多个节点上安装单 master 的 KubeSphere，用于测试或开发。
 - [离线安装](../air-gapped-installation/)：把 KubeSphere 的所有镜像打包用于没有互联网连接的离线环境下安装。
-- [高可用安装](../ha-configuration/)：多个节点上安装主节点高可用 KubeSphere，用于生产环境。
+- [高可用安装](../../../installing-on-linux/high-availability-configurations/ha-configuration/)：多个节点上安装主节点高可用 KubeSphere，用于生产环境。
 - 最小化安装：仅安装 KubeSphere 所需的最少系统组件。以下是最低资源要求:
   - 2 CPUs
   - 4GB RAM
@@ -47,7 +47,7 @@ KubeKey 的三种使用场景：
 
 自 v2.1.0 起，KubeSphere 升级为松耦合系统架构，默认情况下，KubeKey 仅安装必要的组件，这样安装速度既快而且资源消耗也最少。如果要启用增强的可插拔功能，请参阅[可插拔组件概述](../../../pluggable-components/)了解详细信息。
 
-快速安装 KubeSphere 仅用于开发或测试，因为默认情况下它使用了 [openEBS](https://openebs.io/) 的[本地卷](https://kubernetes.io/docs/concepts/storage/volumes/#local)作为存储类型。如果需要在生产环境安装，请参阅[高可用配置安装](../ha-configuration/)。
+快速安装 KubeSphere 仅用于开发或测试，因为默认情况下它使用了 [openEBS](https://openebs.io/) 的[本地卷](https://kubernetes.io/docs/concepts/storage/volumes/#local)作为存储类型。如果需要在生产环境安装，请参阅[高可用配置安装](../../../installing-on-linux/high-availability-configurations/ha-configuration/)。
 
 - **All-in-one**，只需一个命令即可进行单节点零配置安装。
 - **多节点安装**，使用默认存储类（本地卷）在多个机器上安装 KubeSphere，并不需要单独安装存储服务（例如 Ceph 和 GlusterFS）。
