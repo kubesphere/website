@@ -1,8 +1,7 @@
 ---
 title: "准备工作"
 keywords: "KubeSphere, Kubernetes, 安装, 准备工作"
-description: "在现有Kubernetes上安装KubeSphere的准备工作"
-
+description: "在现有 Kubernetes 上安装 KubeSphere 的准备工作"
 linkTitle: "准备工作"
 weight: 4120
 ---
