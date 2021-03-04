@@ -34,7 +34,7 @@ This tutorial demonstrates how to integrate MeterSphere into KubeSphere pipeline
 
 ### Step 2: Install MeterSphere plugin on Jenkins
 
-1. Log in to the Jenkins console and click **Manage Jenkins**. For more information about how to log in to Jenkins console, refer to [Integrate SonarQube into Pipelines](../sonarqube/#step-5-add-the-sonarqube-server-to-jenkins).
+1. Log in to the Jenkins console and click **Manage Jenkins**. For more information about how to log in to the Jenkins console, refer to [Integrate SonarQube into Pipelines](../sonarqube/#step-5-add-the-sonarqube-server-to-jenkins).
 
    ![click-manage-jenkins](/images/docs/devops-user-guide/tool-integration/integrate-metersphere/click-manage-jenkins.PNG)
 
@@ -88,7 +88,7 @@ This tutorial demonstrates how to integrate MeterSphere into KubeSphere pipeline
 
    {{< notice note >}}
 
-   This tutorial uses the workspace `demo-workspace` and the project `demo` from MeterSphere for demonstration purposes. You need to create workspaces and projects, and configure test cases on MeterSphere first, or there will not be available items from the drop-down lists shown in above image. For more information about how to use MeterSphere, refer to [MeterSphere GitHub website](https://github.com/metersphere/metersphere/blob/master/README-EN.md).
+   This tutorial uses the workspace `demo-workspace` and the project `demo` from MeterSphere for demonstration purposes. You need to create workspaces and projects, and configure test cases on MeterSphere first, or there will not be available items from the drop-down lists shown in the above image. For more information about how to use MeterSphere, refer to [MeterSphere GitHub website](https://github.com/metersphere/metersphere/blob/master/README-EN.md).
 
    {{</ notice >}}
 
