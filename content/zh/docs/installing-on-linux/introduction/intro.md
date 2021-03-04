@@ -7,7 +7,7 @@ linkTitle: "概述"
 weight: 3110
 ---
 
-KubeSphere 是 [GitHub](https://github.com/kubesphere) 上的一个开源项目，可供成千上万名社区用户使用。很多社区用户都在使用 KubeSphere来运行生产工作负载。对于在 Linux 上的安装，KubeSphere 既可以部署在云端，也可以部署在本地环境中，例如 **AWS EC2**，**Azure VM** 和裸机。
+KubeSphere 是 [GitHub](https://github.com/kubesphere) 上的一个开源项目，可供成千上万名社区用户使用。很多社区用户都在使用 KubeSphere来运行生产工作负载。对于在 Linux 上的安装，KubeSphere 既可以部署在云端，也可以部署在本地环境中，例如 AWS EC2，Azure VM 和裸机。
 
 KubeSphere 为用户提供轻量级安装程序 [KubeKey](https://github.com/kubesphere/kubekey)（该程序支持安装 Kubernetes、KubeSphere 及相关插件），安装过程简单而友好。KubeKey 不仅能帮助用户在线创建集群，还能作为无网络连接环境中的离线安装解决方案。
 
