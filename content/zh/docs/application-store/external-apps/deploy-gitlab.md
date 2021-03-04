@@ -73,7 +73,7 @@ This tutorial demonstrates how to deploy GitLab on KubeSphere.
 
    {{< notice note >}}
 
-   The `demo-project` refers to the project name where GitLab is deployed. Make sure you use your own project name.
+   `demo-project` refers to the project name where GitLab is deployed. Make sure you use your own project name.
 
    {{</ notice >}}
 
@@ -123,20 +123,20 @@ This tutorial demonstrates how to deploy GitLab on KubeSphere.
 
    {{< notice note >}}
 
-   - The `192.168.4.3` and `demo-project` refer to the NodeIP and project name respectively where GitLab is deployed. Make sure you use your own NodeIP and project name.
+   - `192.168.4.3` and `demo-project` refer to the NodeIP and project name respectively where GitLab is deployed. Make sure you use your own NodeIP and project name.
    - You can use any IP address of the nodes in your Kubernetes cluster.
 
    {{</ notice >}}
 
 ### Step 5: Access GitLab
 
-1. Go to **Services** under **Application Workloads**, input `nginx-ingress-controller` in the search bar, and then press **Enter** on your keyboard to search the Service. You can see the Service and its type is set to `NodePort` by default and the port `32618` that you can use to access GitLab.
+1. Go to **Services** under **Application Workloads**, input `nginx-ingress-controller` in the search bar, and then press **Enter** on your keyboard to search the Service. You can see the Service is being exposed through port `32618`, which you can use to access GitLab.
 
    ![search-service](/images/docs/appstore/external-apps/deploy-gitlab/search-service.PNG)
 
    {{< notice note >}}
 
-   The port number shown on your console may be different from the port `32618` in this tutorial. Make sure you use your own port number.
+   The port number shown on your console may be different. Make sure you use your own port number.
 
    {{</ notice >}}
 
