@@ -73,7 +73,7 @@ You can upload app templates or add app repositories to KubeSphere so that tenan
 
 ### [Deploy GitLab on KubeSphere](../application-store/external-apps/gitlab-app/)
 
-Learn how to deploy GitLab through an app repository and access its service.
+Learn how to deploy GitLab on KubeSphere and access its service.
 
 ### [Deploy TiDB Operator and a TiDB Cluster on KubeSphere](../application-store/external-apps/deploy-tidb/)
 
