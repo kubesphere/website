@@ -35,7 +35,7 @@ KubeSphere 为用户提供轻量级安装程序 [KubeKey](https://github.com/kub
 
 ## KubeKey
 
-[KubeKey](https://github.com/kubesphere/kubekey) 为群集的安装和配置提供了一种有效的方法。您可以使用它来创建、扩缩和升级 Kubernetes 集群。它也允许您在设置集群时安装云原生组件（YAML 或 Chart）。有关更多信息，请参见 [KubeKey](../../installing-on-linux/introduction/kubekey/)。
+[KubeKey](https://github.com/kubesphere/kubekey) 为集群的安装和配置提供了一种有效的方法。您可以使用它来创建、扩缩和升级 Kubernetes 集群。它也允许您在设置集群时安装云原生组件（YAML 或 Chart）。有关更多信息，请参见 [KubeKey](../../installing-on-linux/introduction/kubekey/)。
 
 ## 快速安装以用于开发和测试
 
