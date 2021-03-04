@@ -18,11 +18,11 @@ This tutorial demonstrates how to integrate MeterSphere into KubeSphere pipeline
 
 ### Step 1: Create API Keys on MeterSphere
 
-1. Log in to MeterSphere console. Go to **API Keys** under **Personal Info** and click **Create** to create API Keys.
+1. Log in to the MeterSphere console. Go to **API Keys** under **Personal Info** and click **Create** to create API Keys.
 
    ![create-api-keys](/images/docs/devops-user-guide/tool-integration/integrate-metersphere/create-api-keys.PNG)
 
-2. You can view the API Keys after it is created. Copy the **Access Key**.
+2. You can view the API Keys after they are created. Copy the **Access Key**.
 
    ![api-key-created](/images/docs/devops-user-guide/tool-integration/integrate-metersphere/api-key-created.PNG)
 
@@ -34,11 +34,11 @@ This tutorial demonstrates how to integrate MeterSphere into KubeSphere pipeline
 
 ### Step 2: Install MeterSphere plugin on Jenkins
 
-1. Log in to Jenkins console and click **Manage Jenkins**. For more information about how to log in to Jenkins console, refer to [Integrate SonarQube into Pipelines](../sonarqube/#step-5-add-the-sonarqube-server-to-jenkins).
+1. Log in to the Jenkins console and click **Manage Jenkins**. For more information about how to log in to Jenkins console, refer to [Integrate SonarQube into Pipelines](../sonarqube/#step-5-add-the-sonarqube-server-to-jenkins).
 
    ![click-manage-jenkins](/images/docs/devops-user-guide/tool-integration/integrate-metersphere/click-manage-jenkins.PNG)
 
-2. On the Manage Jenkins page, scroll down to **Manage Plugins** and click it.
+2. On the **Manage Jenkins** page, scroll down to **Manage Plugins** and click it.
 
    ![click-manage-plugins](/images/docs/devops-user-guide/tool-integration/integrate-metersphere/click-manage-plugins.PNG)
 
@@ -54,7 +54,7 @@ This tutorial demonstrates how to integrate MeterSphere into KubeSphere pipeline
 
    ![installation-success](/images/docs/devops-user-guide/tool-integration/integrate-metersphere/installation-success.PNG)
 
-6. Wait until Jenkins finishes restarting, log in and go to **Manage Plugins** under **Manage Jenkins** again. On the **Installed** tab, you can find the MeterSphere plugin just installed.
+6. Once Jenkins finishes restarting, log in and go to **Manage Plugins** in **Manage Jenkins** again. On the **Installed** tab, you can find the MeterSphere plugin just installed.
 
    ![installed-tab](/images/docs/devops-user-guide/tool-integration/integrate-metersphere/installed-tab.PNG)
 
@@ -66,7 +66,7 @@ This tutorial demonstrates how to integrate MeterSphere into KubeSphere pipeline
 
    ![click-new-item](/images/docs/devops-user-guide/tool-integration/integrate-metersphere/click-new-item.PNG)
 
-2. Set `metersphere-test` for the item name and select **Pipeline**. Click OK to continue.
+2. Set `metersphere-test` for the item name and select **Pipeline**. Click **OK** to continue.
 
    ![set-item-info](/images/docs/devops-user-guide/tool-integration/integrate-metersphere/set-item-info.PNG)
 
@@ -88,7 +88,7 @@ This tutorial demonstrates how to integrate MeterSphere into KubeSphere pipeline
 
    {{< notice note >}}
 
-   This tutorial uses the workspace `demo-workspace` and the project `demo` for demonstration purposes. You can create workspaces and projects and configure test cases on MeterSphere based on you needs. For more information about how to use MeterSphere, refer to [MeterSphere GitHub website](https://github.com/metersphere/metersphere/blob/master/README-EN.md).
+   This tutorial uses the workspace `demo-workspace` and the project `demo` from MeterSphere for demonstration purposes. You need to create workspaces and projects, and configure test cases on MeterSphere first, or there will not be available items from the drop-down lists shown in above image. For more information about how to use MeterSphere, refer to [MeterSphere GitHub website](https://github.com/metersphere/metersphere/blob/master/README-EN.md).
 
    {{</ notice >}}
 
@@ -133,6 +133,12 @@ This tutorial demonstrates how to integrate MeterSphere into KubeSphere pipeline
    ```
 
    ![pipeline-script](/images/docs/devops-user-guide/tool-integration/integrate-metersphere/pipeline-script.PNG)
+
+   {{< notice note >}}
+
+   Make sure you change the values of the following fields to the values generated on your Jenkins console: `msAccessKey`, `msSecretKey`, `msEndpoint`, `projectId`, `testCaseId` and `workspaceId`.
+
+   {{</ notice >}}
 
 5. Click **Run** to run the pipeline.
 
