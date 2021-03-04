@@ -71,6 +71,10 @@ Integrate SonarQube into your pipeline for code quality analysis.
 
 Integrate Harbor into your pipeline to push images to your Harbor registry.
 
+### [Integrate MeterSphere into Pipelines](../devops-user-guide/how-to-integrate/integrate-metersphere/)
+
+Integrate MeterSphere into your pipelines for continuous testing.
+
 ## Examples
 
 ### [Build and Deploy a Go Project](../devops-user-guide/examples/go-project-pipeline/)
