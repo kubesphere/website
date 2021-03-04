@@ -15,7 +15,7 @@ KubeSphere 承诺为用户提供即插即用架构，您可以轻松地将 KubeS
 
 {{< notice note >}}
 
-在现有 Kubernetes 群集上安装 KubeSphere 之前，请参阅[准备工作](../prerequisites/)。
+在现有 Kubernetes 集群上安装 KubeSphere 之前，请参阅[准备工作](../prerequisites/)。
 
 {{</ notice >}}
 
@@ -27,7 +27,7 @@ KubeSphere 承诺为用户提供即插即用架构，您可以轻松地将 KubeS
 
 ## 部署 KubeSphere
 
-确保现有的 Kubernetes 群集满足所有要求之后，您可以使用 kubectl 以默认最小安装包来安装 KubeSphere。
+确保现有的 Kubernetes 集群满足所有要求之后，您可以使用 kubectl 以默认最小安装包来安装 KubeSphere。
 
 1. 执行以下命令以开始安装：
 
