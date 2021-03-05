@@ -1,9 +1,9 @@
 ---
 title: "Install NFS Client"
 keywords: 'KubeSphere, Kubernetes, storage, installation, configurations, NFS'
-description: '.'
+description: 'Use KubeKey to set up a KubeSphere cluster and configure NFS storage.'
 linkTitle: "Install NFS Client"
-weight: 3220
+weight: 3330
 ---
 
 This tutorial demonstrates how to set up a KubeSphere cluster and configure NFS storage.
@@ -215,7 +215,7 @@ chmod +x kk
    #####################################################
    ```
 
-## Verify Installation
+## Step 4: Verify Installation
 
 You can verify that NFS-client has been successfully installed either from the command line or from the KubeSphere web console.
 
@@ -247,32 +247,11 @@ You can verify that NFS-client has been successfully installed either from the c
    kubectl get pod -n kube-system
    ```
 
-   Note that `nfs-client` is installed in the namespace `kube-system`. Expected output:
+   Note that `nfs-client` is installed in the namespace `kube-system`. Expected output (exclude irrelevant Pods):
 
    ```bash
    NAME                                                 READY   STATUS    RESTARTS   AGE
-   calico-kube-controllers-59d85c5c84-ckrpb             1/1     Running   0          16m
-   calico-node-td5cw                                    1/1     Running   0          16m
-   calico-node-v2w2x                                    1/1     Running   0          16m
-   calico-node-xwrd5                                    1/1     Running   0          16m
-   coredns-74d59cc5c6-b764l                             1/1     Running   0          16m
-   coredns-74d59cc5c6-p47m7                             1/1     Running   0          16m
-   kube-apiserver-client1                               1/1     Running   0          16m
-   kube-controller-manager-client1                      1/1     Running   0          16m
-   kube-proxy-2t7n9                                     1/1     Running   0          16m
-   kube-proxy-4wkcr                                     1/1     Running   0          16m
-   kube-proxy-f5f67                                     1/1     Running   0          16m
-   kube-scheduler-client1                               1/1     Running   0          16m
-   metrics-server-5ddd98b7f9-lndw6                      1/1     Running   0          12m
    nfs-client-nfs-client-provisioner-6fc95f4f79-92lsh   1/1     Running   0          16m
-   nodelocaldns-4gfhf                                   1/1     Running   0          16m
-   nodelocaldns-f55st                                   1/1     Running   0          16m
-   nodelocaldns-swprm                                   1/1     Running   0          16m
-   openebs-localpv-provisioner-84956ddb89-q5x6c         1/1     Running   0          16m
-   openebs-ndm-m2g44                                    1/1     Running   0          16m
-   openebs-ndm-mb49d                                    1/1     Running   0          16m
-   openebs-ndm-operator-6896cbf7b8-4h8jz                1/1     Running   1          16m
-   snapshot-controller-0                                1/1     Running   0          11m
    ```
 
 ### KubeSphere console
@@ -281,7 +260,14 @@ You can verify that NFS-client has been successfully installed either from the c
 
 2. Go to **Pods** in **Application Workloads** and select `kube-system` from the project drop-down list. You can see that the Pod of `nfs-client` is up and running.
 
-   ![nfs-pod](/images/docs/installing-on-linux/persistent-storage-configurations/nfs-pod.png)
+   ![nfs-pod](/images/docs/installing-on-linux/persistent-storage-configurations/nfs-client/nfs-pod.png)
 
 3. Go to **Storage Classes** under **Storage**, and you can see available storage classes in your cluster.
 
+   ![nfs-storage-class](/images/docs/installing-on-linux/persistent-storage-configurations/nfs-client/nfs-storage-class.png)
+   
+   {{< notice note >}}
+   
+   For more information about how to create volumes on the KubeSphere console, see [Volumes](../../../project-user-guide/storage/volumes/).
+   
+   {{</ notice >}} 
