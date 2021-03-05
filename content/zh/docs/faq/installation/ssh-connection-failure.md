@@ -33,7 +33,7 @@ Failed to connect to xx.xxx.xx.xxx: could not establish connection to xx.xxx.xx.
     - {name: master, address: 192.168.0.2, internalAddress: 192.168.0.2, port: 8022, user: ubuntu, password: Testing123}
   ```
 
-- SSH 连接不受限于 `/etc/ssh/sshd_config`。例如，`PasswordAuthentication` 应设置为 `true`。
+-  `/etc/ssh/sshd_config` 文件中没有限制 SSH 连接。例如，`PasswordAuthentication` 应设置为 `true`。
 
 - 您使用的用户名、密码或密钥正确。请注意，用户必须拥有 sudo 权限。
 
