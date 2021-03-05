@@ -82,3 +82,9 @@ icon: "/images/docs/docs.svg"
 ### [删除应用后复用相同应用名称](../faq/applications/reuse-the-same-app-name-after-deletion/)
 
 了解如何在删除应用后复用相同应用名称。
+
+## 多集群管理
+
+### [恢复 Host 集群对 Member 集群的访问](../faq/multi-cluster-management/host-cluster-access-member-cluster/)
+
+了解如何恢复 Host 集群对 Member 集群的访问。
