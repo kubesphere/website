@@ -18,7 +18,7 @@ KubeSphere 支持用于[部署](../../project-user-guide/application-workloads/d
 
 ### 在 **Kubernetes** 上安装
 
-[在 Kubernetes 上安装 KubeSphere](../../installing-on-kubernetes/introduction/overview/) 教程中演示了在 Kubernetes 上安装 KubeSphere 的流程。要想安装可选组件 Metrics Server，您可以先在 [cluster-configuration.yaml](https://github.com/kubesphere/ks-installer/releases/download/v3.0.0/cluster-configuration.yaml) 文件中先启用该组件。
+[在 Kubernetes 上安装 KubeSphere](../../installing-on-kubernetes/introduction/overview/) 教程中演示了在 Kubernetes 上安装 KubeSphere 的流程。若想安装可选组件 Metrics Server，您可以先在 [cluster-configuration.yaml](https://github.com/kubesphere/ks-installer/releases/download/v3.0.0/cluster-configuration.yaml) 文件中先启用该组件。
 
 1. 下载文件 [cluster-configuration.yaml](https://github.com/kubesphere/ks-installer/releases/download/v3.0.0/cluster-configuration.yaml)，并打开文件进行编辑。
 
@@ -48,7 +48,7 @@ KubeSphere 支持用于[部署](../../project-user-guide/application-workloads/d
 
 ## 在安装后启用 Metrics Server
 
-1. 以 `admin` 身份登陆控制台。点击左上角**平台管理**，选择**集群管理**。
+1. 以 `admin` 身份登录控制台。点击左上角**平台管理**，选择**集群管理**。
    
     ![clusters-management](/images/docs/zh-cn/enable-pluggable-components/kubesphere-metrics-server/clusters-management.png)
     
