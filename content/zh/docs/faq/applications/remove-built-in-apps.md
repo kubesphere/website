@@ -17,25 +17,25 @@ Weight: 16910
 
 1. 以 `admin` 身份登陆 Web 控制台，点击左上角**平台管理**，然后选择**应用商店管理**。
 
-   ![click-platform](/images/docs/faq/applications/remove-built-in-apps/click-platform.PNG)
+   ![click-platform](/images/docs/zh-cn/faq/remove-built-in-apps/click-platform.png)
 
-   ![select-app-store-management](/images/docs/faq/applications/remove-built-in-apps/select-app-store-management.PNG)
+   ![select-app-store-management](/images/docs/zh-cn/faq/remove-built-in-apps/select-app-store-management.png)
 
 2. 在**应用商店**页面，您可以看到列表中展示了 15 个内置应用。选择您想要从应用商店中移除的应用，例如，点击 **tomcat** 跳转到其详情页面。
 
-   ![click-tomcat](/images/docs/faq/applications/remove-built-in-apps/click-tomcat.PNG)
+   ![click-tomcat](/images/docs/zh-cn/faq/remove-built-in-apps/click-tomcat.png)
 
 3. 在 tomcat 的详情页面，点击**下架应用**以移除应用。
 
-   ![suspend-tomcat](/images/docs/faq/applications/remove-built-in-apps/suspend-tomcat.PNG)
+   ![suspend-tomcat](/images/docs/zh-cn/faq/remove-built-in-apps/suspend-tomcat.png)
 
 4. 在出现的对话框中，点击**确定**以确认您的操作。
 
-   ![confirm-suspend](/images/docs/faq/applications/remove-built-in-apps/confirm-suspend.PNG)
+   ![confirm-suspend](/images/docs/zh-cn/faq/remove-built-in-apps/confirm-suspend.png)
 
 5. 要想在应用商店中再次购买该应用，请点击**上架应用**，然后点击**确定**以确认您的操作。
 
-   ![activate-tomcat](/images/docs/faq/applications/remove-built-in-apps/activate-tomcat.PNG)
+   ![activate-tomcat](/images/docs/zh-cn/faq/remove-built-in-apps/activate-tomcat.png)
 
    {{< notice note >}}
 
