@@ -20,7 +20,7 @@ kubectl -n kubesphere-system logs ks-apiserver-7c9c9456bd-qv6bs
 
 {{< notice note >}}
 
-`ks-apiserver-7c9c9456bd-qv6bs` refers to the pod ID on that Member Cluster. Make sure you use the ID of your own pod.
+`ks-apiserver-7c9c9456bd-qv6bs` refers to the Pod ID on that Member Cluster. Make sure you use the ID of your own Pod.
 
 {{</ notice >}}
 
