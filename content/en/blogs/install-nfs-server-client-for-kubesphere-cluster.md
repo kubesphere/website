@@ -18,7 +18,7 @@ Network File System (NFS) provides you with remote access to files and directori
 
 You can install [NFS-client Provisioner](https://github.com/kubernetes-incubator/external-storage/tree/master/nfs-client) as a storage plugin for your Kubernetes cluster while you must configure an NFS server beforehand. Here is how it works: an NFS client mounts a directory on the server machine so that files residing on the NFS server are accessible to the NFS client. The directory, which you create on the server and share with your client, is also called an **exported directory**. To ensure that your client can access the directory smoothly, you must grant the access to them with several commands which I will show you later.
 
-At the same time, to make sure your client machines can use the NFS storage service, a component called `nfs-common` needs to be installed on all the client machines.
+At the same time, a component called `nfs-common` (for Debian-based Linux distributions) or `nfs-utils` (for CentOS-based Linux distributions) needs to be installed on all the client machines to provide essential NFS client libraries and utilities.
 
 ## How Does KubeKey Use NFS-client Configurations
 
@@ -30,7 +30,7 @@ As I said above, you can use KubeKey to install different add-ons by Chart or YA
 In this article, I will use the second way for demonstration. The general steps are:
 
 1. Set up an NFS server.
-2. Install `nfs-common` on all the client machines in your cluster and create a separate configuration file for NFS-client Provisioner on one of the client machines that servers as the taskbox for installation.
+2. Install `nfs-common` or `nfs-utils` on all the client machines in your cluster and create a separate configuration file for NFS-client Provisioner on one of the client machines that servers as the taskbox for installation.
 3. Download KubeKey on the taskbox.
 4. Use KubeKey to create your cluster configuration file (`config-sample.yaml`) and edit it.
 5. Install Kubernetes, KubeSphere and NFS-client Provisioner including the storage class.
@@ -306,32 +306,11 @@ You can verify that NFS-client has been successfully installed either from the c
    kubectl get pod -n kube-system
    ```
 
-   Note that `nfs-client` is installed in the namespace `kube-system`. Expected output:
+   Note that `nfs-client` is installed in the namespace `kube-system`. Expected output (exclude irrelevant Pods):
 
-   ```
+   ```bash
    NAME                                                 READY   STATUS    RESTARTS   AGE
-   calico-kube-controllers-59d85c5c84-ckrpb             1/1     Running   0          16m
-   calico-node-td5cw                                    1/1     Running   0          16m
-   calico-node-v2w2x                                    1/1     Running   0          16m
-   calico-node-xwrd5                                    1/1     Running   0          16m
-   coredns-74d59cc5c6-b764l                             1/1     Running   0          16m
-   coredns-74d59cc5c6-p47m7                             1/1     Running   0          16m
-   kube-apiserver-client1                               1/1     Running   0          16m
-   kube-controller-manager-client1                      1/1     Running   0          16m
-   kube-proxy-2t7n9                                     1/1     Running   0          16m
-   kube-proxy-4wkcr                                     1/1     Running   0          16m
-   kube-proxy-f5f67                                     1/1     Running   0          16m
-   kube-scheduler-client1                               1/1     Running   0          16m
-   metrics-server-5ddd98b7f9-lndw6                      1/1     Running   0          12m
    nfs-client-nfs-client-provisioner-6fc95f4f79-92lsh   1/1     Running   0          16m
-   nodelocaldns-4gfhf                                   1/1     Running   0          16m
-   nodelocaldns-f55st                                   1/1     Running   0          16m
-   nodelocaldns-swprm                                   1/1     Running   0          16m
-   openebs-localpv-provisioner-84956ddb89-q5x6c         1/1     Running   0          16m
-   openebs-ndm-m2g44                                    1/1     Running   0          16m
-   openebs-ndm-mb49d                                    1/1     Running   0          16m
-   openebs-ndm-operator-6896cbf7b8-4h8jz                1/1     Running   1          16m
-   snapshot-controller-0                                1/1     Running   0          11m
    ```
 
 ### KubeSphere console
@@ -345,3 +324,9 @@ You can verify that NFS-client has been successfully installed either from the c
 3. Go to **Pods** under **Application Workloads**, the Pod of `nfs-client` is also functioning well in the `kube-system` namespace.
 
    ![nfs-client-pod](/images/blogs/en/install-nfs-server-client-for-kubesphere-cluster/nfs-client-pod.png)
+   
+4. You can create a PVC in a project and verify the persistent volume bound to it can be mounted to a workload successfully.
+
+   ![nfs-client-pvc](/images/blogs/en/install-nfs-server-client-for-kubesphere-cluster/nfs-client-pvc.png)
+
+   For more information about how to create a PVC on the KubeSphere console, see [Volumes](https://kubesphere.io/docs/project-user-guide/storage/volumes/).
