@@ -6,43 +6,43 @@ linkTitle: "删除应用后复用相同应用名称"
 Weight: 16920
 ---
 
-To deploy an app in KubeSphere, tenants can go to the App Store and select the available app based on their needs. However, tenants could experience errors when deploying an app with the same app name as that of the deleted one. This tutorial demonstrates how to use the same app name after its deletion.
+若要在 KubeSphere 中部署应用，租户可以进入应用商店，根据自己的需求选择可用的应用。但是，租户在部署与被删除的应用名称相同的应用时，可能会遇到错误。本教程演示了如何在删除应用后复用相同应用名称。
 
-## Prerequisites
+## 准备工作
 
-- You need to use an account invited to your project with the role of `operator`. This tutorial uses the account `project-regular` for demonstration purposes. For more information, refer to [Create Workspaces, Projects, Accounts and Roles](../../../quick-start/create-workspace-and-project/).
-- You need to [enable the App Store](../../../pluggable-components/app-store/).
+- 您需要使用被邀请到项目中、且具有 `operator` 角色的帐户。本教程使用 `project-regular` 帐户进行演示。有关更多信息，请参考[创建企业空间、项目、帐户和角色](../../../quick-start/create-workspace-and-project/)。
+- 您需要[启用应用商店](../../../pluggable-components/app-store/)。
 
-## Reuse the Same App Name
+## 复用相同应用名称
 
-### Deploy an app from the App Store
+### 从应用商店部署应用
 
-1. Log in to the web console of KubeSphere as `project-regular` and deploy an app from the App Store. This tutorial uses Redis as an example app and set the app name as `redis-1`. For more information about how to deploy Redis, refer to [Deploy Redis on KubeSphere](../../../application-store/built-in-apps/redis-app/).
+1. 以 `project-regular` 身份登录 KubeSphere 的 Web 控制台，从应用商店部署应用。本教程使用 Redis 作为示例应用，将应用名称设置为 redis-1。有关更多如何部署 Redis 的信息，请参考[在 KubeSphere 上部署 Redis](../../../application-store/built-in-apps/redis-app/)。
 
    ![redis-1](/images/docs/faq/applications/use-the-same-app-name-after-deletion/redis-1.PNG)
 
-2. Click the app to go to its detail page, and then click **Delete** to delete it.
+2. 点击该应用访问其详情页，然后点击**删除**以删除应用。
 
    ![delete-redis-1](/images/docs/faq/applications/use-the-same-app-name-after-deletion/delete-redis-1.PNG)
 
-### Reuse the same app name
+### 复用相同应用名称
 
-1. If you try to deploy a new redis app with the same app name as `redis-1`, you can see the following error prompt in the upper right corner.
+1. 如果您尝试使用与 `redis-1` 相同的应用名称来部署新的 Redis 应用，您会在右上角看到以下错误提示。
 
    ![error-prompt](/images/docs/faq/applications/use-the-same-app-name-after-deletion/error-prompt.PNG)
 
-2. In your project, go to **Secrets** under **Configurations**, and input `redis-1` in the search bar to search the Secret.
+2. 在您的项目中，进入**配置**下的**密钥**，在搜索栏输入 `redis-1` 以选择密钥。
 
    ![search-secret](/images/docs/faq/applications/use-the-same-app-name-after-deletion/search-secret.PNG)
 
-3. Click the Secret to go to its detail page, and click **More** to select **Delete** from the drop-down menu.
+3. 点击密钥以访问其详情页，点击**更多**从下拉菜单中选择**删除**。
 
    ![delete-secret](/images/docs/faq/applications/use-the-same-app-name-after-deletion/delete-secret.PNG)
 
-4. In the dialog that appears, input the Secret name and click **OK** to delete it.
+4. 在出现的对话框中，输入密钥名称，点击**确认**以删除密钥。
 
    ![confirm-delete](/images/docs/faq/applications/use-the-same-app-name-after-deletion/confirm-delete.PNG)
 
-5. Now, you can deploy a new redis app with the same app name as `redis-1`.
+5. 现在，您可以使用和 `redis-1` 相同的应用名称部署新的 redis 应用。
 
    ![new-redis-app](/images/docs/faq/applications/use-the-same-app-name-after-deletion/new-redis-app.PNG)
