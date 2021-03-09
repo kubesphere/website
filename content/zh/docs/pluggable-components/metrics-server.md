@@ -8,7 +8,7 @@ weight: 6910
 
 ## 什么是 Metrics Server
 
-KubeSphere 支持用于[部署](../../project-user-guide/application-workloads/deployments/)的 Pod 弹性伸缩程序 (HPA)。在 KubeSphere 中，Metrics Server 控制着 HPA 是否启用。您可以根据不同类型的度量标准（例如 CPU 和内存使用率，以及最小和最大副本数），使用 HPA 对象对部署 (Deployment) 自动伸缩。通过这种方式，HPA 可以帮助确保您的应用程序在不同情况下都能平稳、一致地运行。
+KubeSphere 支持用于[部署](../../project-user-guide/application-workloads/deployments/)的 Pod 弹性伸缩程序 (HPA)。在 KubeSphere 中，Metrics Server 控制着 HPA 是否启用。您可以根据不同类型的指标（例如 CPU 和内存使用率，以及最小和最大副本数），使用 HPA 对象对部署 (Deployment) 自动伸缩。通过这种方式，HPA 可以帮助确保您的应用程序在不同情况下都能平稳、一致地运行。
 
 ## 在安装前启用 Metrics Server
 
@@ -52,7 +52,7 @@ KubeSphere 支持用于[部署](../../project-user-guide/application-workloads/d
    
     ![clusters-management](/images/docs/zh-cn/enable-pluggable-components/kubesphere-metrics-server/clusters-management.png)
     
-2. 点击**自定义资源CRDs**，在搜索栏中输入 `clusterconfiguration`。点击搜索结果查看详情页。
+2. 点击**自定义资源 CRD**，在搜索栏中输入 `clusterconfiguration`。点击搜索结果查看详情页。
 
     {{< notice info >}}
     自定义资源 (CRD) 能让用户创建新的资源类型，而无需添加其他 API 服务器。用户可以像其他原生 Kubernetes 对象一样使用这些资源。
