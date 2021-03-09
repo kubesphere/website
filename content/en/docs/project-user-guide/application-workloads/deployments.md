@@ -141,3 +141,35 @@ You can set a policy for node scheduling and add metadata in this section. When 
 ### Revision records
 
 After the resource template of workload is changed, a new log will be generated and Pods will be rescheduled for a version update. The latest 10 versions will be saved by default. You can implement a redeployment based on the change log.
+
+### Matadata
+
+Click the **Metadata** tab to view the labels and annotations of the Deployment.
+
+![deployments](/images/docs/project-user-guide/workloads/deployments_metadata.png)
+
+### Monitoring
+
+1. Click the **Monitoring** tab to view the CPU usage, memory usage, outbound traffic, and inbound traffic of the Deployment.
+
+   ![deployments](/images/docs/project-user-guide/workloads/deployments_monitoring.png)
+
+2. Click the drop-down menu in the top-right corner to customize the time range and time interval.
+
+   ![deployments](/images/docs/project-user-guide/workloads/deployments_time_range.png)
+
+3. Click <img src="/images/docs/project-user-guide/workloads/deployments_autorefresh_start.png" width="20px" />/<img src="/images/docs/project-user-guide/workloads/deployments_autorefresh_stop.png" width="20px" /> in the top-right corner to start/stop automatic data refreshing.
+
+4. Click <img src="/images/docs/project-user-guide/workloads/deployments_refresh.png" width="20px" /> in the top-right corner to manually refresh the data.
+
+### Environment variables
+
+Click the **Environment Variables** tab to view the environment variables of the Deployment.
+
+![deployments](/images/docs/project-user-guide/workloads/deployments_env_variable.png)
+
+### Events
+
+Click the **Events** tab to view the events of the Deployment.
+
+![deployments](/images/docs/project-user-guide/workloads/deployments_events.png)
