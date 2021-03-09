@@ -1,48 +1,48 @@
 ---
 title: "落盘日志收集"
-keywords: 'KubeSphere, Kubernetes, project, disk, log, collection'
+keywords: 'KubeSphere, Kubernetes, 项目, 落盘, 日志, 收集'
 description: '落盘日志收集'
 linkTitle: "落盘日志收集"
 weight: 13600
 ---
 
-KubeSphere supports multiple log collection methods so that Ops teams can collect, manage and analyze logs in a unified and flexible way.
+KubeSphere 支持多种日志收集方式，使运维团队能够以灵活统一的方式收集、管理和分析日志。
 
-This tutorial demonstrates how to collect disk logs for an example app.
+本教程演示了如何为示例应用收集落盘日志。
 
-## Prerequisites
+## 准备工作
 
-You need to create a workspace, a project and an account (`project-admin`). The account must be invited to the project with the role of `admin` at the project level. For more information, see [Create Workspaces, Projects, Accounts and Roles](../../quick-start/create-workspace-and-project).
+您需要创建企业空间、项目和帐户 (`project-admin`)。该帐户必须被邀请到项目中，并在项目级别担任 `admin` 角色。有关更多信息，请参见[创建企业空间、项目、帐户和角色](../../quick-start/create-workspace-and-project)。
 
-## Enable Disk Log Collection
+## 启用落盘日志收集
 
-1. Log in to the web console of KubeSphere as `project-admin` and go to your project.
+1. 以 `project-admin` 身份登录 KubeSphere 的 Web 控制台，进入项目。
 
-2. From the left navigation bar, select **Advanced Settings** in **Project Settings**. Under **Disk Log Collection**, enable the feature through the toggle switch.
+2. 在左侧导航栏中，选择**项目设置**中的**高级设置**。在**落盘日志收集**一栏下，通过切换开关以启用该功能。
 
-   ![enable-disk-log-collection](/images/docs/project-administration/disk-log-collection/enable-disk-log-collection.png)
+   ![enable-disk-collection](/images/docs/zh-cn/project-administration/disk-log-collection/enable-disk-collection.png)
 
-## Create a Deployment
+## 创建部署
 
-1. From the left navigation bar, select **Workloads** in **Application Workloads**. Under the **Deployments** tab,  click **Create**.
+1. 在左侧导航栏中，选择**应用负载**中的**工作负载**。在**部署**选项下，点击**创建**。
 
-2. In the dialog that appears, set a name for the Deployment (e.g. `demo-deployment`) and click **Next**.
+2. 在出现的对话框中，设置部署的名称（例如 `demo-deployment`），再点击**下一步**。
 
-3. Under **Container Image**, click **Add Container Image**.
+3. 在**容器镜像**下，点击**添加容器镜像**。
 
-4. Enter `alpine` in the search bar to use the image (tag: `latest`) as an example.
+4. 在搜索栏中输入 `alpine`，以该镜像（标签：`latest`）作为示例。
 
-   ![alpine-image](/images/docs/project-administration/disk-log-collection/alpine-image.png)
+   ![alpine-image](/images/docs/zh-cn/project-administration/disk-log-collection/alpine-image.png)
 
-5. Scroll down to **Start Command** and check it. Input the following values for **Run Command** and **Parameters** respectively, click **√**, and then click **Next**.
+5. 向下滚动到**启动命令**，进行检查。输入下列数值分别**运行命令**和**参数**，点击 **√**，然后点击**下一步**。
 
-   **Run Command**
+   **运行命令**
 
    ```bash
    /bin/sh
    ```
 
-   **Parameters**
+   **参数**
 
    ```bash
    -c,if [ ! -d /data/log ];then mkdir -p /data/log;fi; while true; do date >> /data/log/app-test.log; sleep 30;done
@@ -50,41 +50,41 @@ You need to create a workspace, a project and an account (`project-admin`). The 
 
    {{< notice note >}}
 
-   The command and parameters above mean that the date information will be exported to `app-test.log` in `/data/log` every 30 seconds.
+   以上命令及参数意味着每 30 秒将日期信息导出到 `/data/log` 的 `app-test.log` 中。
 
    {{</ notice >}} 
 
-   ![run-command](/images/docs/project-administration/disk-log-collection/run-command.png)
+   ![run-command](/images/docs/zh-cn/project-administration/disk-log-collection/run-command.png)
 
-6. On the **Mount Volumes** tab, enable **Disk Log Collection** and click **Add Volume**.
+6. 在**挂载存储**选项下，启用**落盘日志收集**，点击**添加存储卷**。
 
-   ![mount-volumes](/images/docs/project-administration/disk-log-collection/mount-volumes.png)
+   ![mount-volumes](/images/docs/zh-cn/project-administration/disk-log-collection/mount-volumes.png)
    
-7. On the **Temporary Volume** tab, input a name for the volume (e.g. `demo-disk-log-collection`) and set the access mode and path. Refer to the image below as an example.
+7. 在**临时存储卷**选项下，输入存储卷名称（例如 `demo-disk-log-collection`），并设置访问模式和路径。请参考以下示例。
 
-   ![volume-example](/images/docs/project-administration/disk-log-collection/volume-example.png)
+   ![volume-example](/images/docs/zh-cn/project-administration/disk-log-collection/volume-example.png)
 
-   Click **√**, and then click **Next** to continue.
+   点击 **√**，然后点击**下一步**继续。
 
-8. Click **Create** in **Advanced Settings** to finish the process.
+8. 点击**高级设置**中的**创建**以完成创建。
 
    {{< notice note >}}
 
-   For more information, see [Deployments](../../project-user-guide/application-workloads/deployments/).
+   有关更多信息，请参见[部署](../../project-user-guide/application-workloads/deployments/)。
 
    {{</ notice >}} 
 
-## View Logs
+## 查看日志
 
-1. Under the **Deployments** tab, click the Deployment just created to go to its detail page.
+1. 在**部署**选项下，点击刚才创建的部署以访问其详情页。
 
-2. In **Resource Status**, click the arrow on the right to view container details, and then click the log icon of `logsidecar-container` (filebeat container) to inspect disk logs.
+2. 在**资源状态**中，点击右侧的箭头查看容器详情，然后点击 `logsidecar-container`（filebeat 容器）日志图标以检查落盘日志。
 
-   ![container-log](/images/docs/project-administration/disk-log-collection/container-log.png)
+   ![container-log](/images/docs/zh-cn/project-administration/disk-log-collection/container-log.png)
 
-   ![inspect-logs](/images/docs/project-administration/disk-log-collection/inspect-logs.png)
+   ![inspect-logs](/images/docs/zh-cn/project-administration/disk-log-collection/inspect-logs.png)
 
-3. Alternatively, you can also use the **Log Search** function from **Toolbox** in the bottom right corner to view stdout logs. For example, use the Pod name of the Deployment for a fuzzy query:
+3. 或者，您也可以使用右下角**工具箱**中的**日志查询**功能来查看标准输出日志。例如，使用该部署的 Pod 名称进行模糊匹配：
 
-   ![fuzzy-match](/images/docs/project-administration/disk-log-collection/fuzzy-match.png)
+   ![fuzzy-match](/images/docs/zh-cn/project-administration/disk-log-collection/fuzzy-match.png)
 
