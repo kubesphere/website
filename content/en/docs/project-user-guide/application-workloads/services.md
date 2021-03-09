@@ -192,3 +192,25 @@ This value is specified by `.spec.type`. If you select **LoadBalancer**, you nee
     - You can view the container information by clicking a Pod item.
     - Click the container log icon to view output logs of the container.
     - You can view the Pod detail page by clicking the Pod name.
+
+### Resource status
+
+1. Click the **Resource Status** tab to view information about the Service ports and Pods.
+
+   ![services](/images/docs/project-user-guide/workloads/services_resource_status.png)
+
+2. In the **Pods** area, click <img src="/images/docs/project-user-guide/workloads/services_refresh_pods.png" width="20px" /> to refresh the Pod information, and click <img src="/images/docs/project-user-guide/workloads/services_display_containers.png" width="20px" />/<img src="/images/docs/project-user-guide/workloads/services_hide_containers.png" width="20px" /> to display/hide the containers in each Pod.
+
+   ![services](/images/docs/project-user-guide/workloads/services_pods.png)
+
+### Metadata
+
+Click the **Metadata** tab to view the labels and annotations of the Service.
+
+![services](/images/docs/project-user-guide/workloads/services_metadata.png)
+
+### Events
+
+Click the **Events** tab to view the events of the Service.
+
+![services](/images/docs/project-user-guide/workloads/services_events.png)
