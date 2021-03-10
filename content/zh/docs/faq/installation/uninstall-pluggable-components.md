@@ -79,7 +79,7 @@ kubectl delete svc -n kubesphere-alerting-system notification
 
 {{</ notice >}} 
 
-## Service Mesh
+## 服务网格
 
 ```bash
 helm -n istio-system delete istio-init
