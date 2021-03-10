@@ -12,7 +12,7 @@ KubeSphere 支持多种日志收集方式，使运维团队能够以灵活统一
 
 ## 准备工作
 
-您需要创建企业空间、项目和帐户 (`project-admin`)。该帐户必须被邀请到项目中，并在项目级别担任 `admin` 角色。有关更多信息，请参见[创建企业空间、项目、帐户和角色](../../quick-start/create-workspace-and-project)。
+您需要创建企业空间、项目和帐户 (`project-admin`)。该帐户必须被邀请到项目中，并在项目级别具有 `admin` 角色。有关更多信息，请参见[创建企业空间、项目、帐户和角色](../../quick-start/create-workspace-and-project)。
 
 ## 启用落盘日志收集
 
@@ -24,7 +24,7 @@ KubeSphere 支持多种日志收集方式，使运维团队能够以灵活统一
 
 ## 创建部署
 
-1. 在左侧导航栏中，选择**应用负载**中的**工作负载**。在**部署**选项下，点击**创建**。
+1. 在左侧导航栏中，选择**应用负载**中的**工作负载**。在**部署**选项卡下，点击**创建**。
 
 2. 在出现的对话框中，设置部署的名称（例如 `demo-deployment`），再点击**下一步**。
 
@@ -34,7 +34,7 @@ KubeSphere 支持多种日志收集方式，使运维团队能够以灵活统一
 
    ![alpine-image](/images/docs/zh-cn/project-administration/disk-log-collection/alpine-image.png)
 
-5. 向下滚动到**启动命令**，进行检查。输入下列数值分别**运行命令**和**参数**，点击 **√**，然后点击**下一步**。
+5. 向下滚动并勾选**启动命令**。在**运行命令**和**参数**中分别输入以下值，点击 **√**，然后点击**下一步**。
 
    **运行命令**
 
@@ -56,11 +56,11 @@ KubeSphere 支持多种日志收集方式，使运维团队能够以灵活统一
 
    ![run-command](/images/docs/zh-cn/project-administration/disk-log-collection/run-command.png)
 
-6. 在**挂载存储**选项下，启用**落盘日志收集**，点击**添加存储卷**。
+6. 在**挂载存储**选项卡下，启用**落盘日志收集**，点击**添加存储卷**。
 
    ![mount-volumes](/images/docs/zh-cn/project-administration/disk-log-collection/mount-volumes.png)
    
-7. 在**临时存储卷**选项下，输入存储卷名称（例如 `demo-disk-log-collection`），并设置访问模式和路径。请参考以下示例。
+7. 在**临时存储卷**选项卡下，输入存储卷名称（例如 `demo-disk-log-collection`），并设置访问模式和路径。请参考以下示例。
 
    ![volume-example](/images/docs/zh-cn/project-administration/disk-log-collection/volume-example.png)
 
@@ -76,7 +76,7 @@ KubeSphere 支持多种日志收集方式，使运维团队能够以灵活统一
 
 ## 查看日志
 
-1. 在**部署**选项下，点击刚才创建的部署以访问其详情页。
+1. 在**部署**选项卡下，点击刚才创建的部署以访问其详情页。
 
 2. 在**资源状态**中，点击右侧的箭头查看容器详情，然后点击 `logsidecar-container`（filebeat 容器）日志图标以检查落盘日志。
 
