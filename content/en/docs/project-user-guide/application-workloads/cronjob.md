@@ -103,7 +103,9 @@ Please refer to [Jobs](../jobs/#step-3-job-settings-optional).
 
     ![container-log-2](/images/docs/project-user-guide/application-workloads/cronjobs/container-log-2.jpg)
 
-## CronJob Operations
+## Check CronJob Details
+
+### Operations
 
 On the CronJob detail page, you can manage the CronJob after it is created.
 
@@ -113,3 +115,21 @@ On the CronJob detail page, you can manage the CronJob after it is created.
 - **Delete**: Delete the CronJob, and return to the CronJob list page.
 
 ![cronjob-action](/images/docs/project-user-guide/application-workloads/cronjobs/cronjob-action.jpg)
+
+### Job records
+
+Click the **Job Records** tab to view the records of the CronJob.
+
+![job-records](/images/docs/project-user-guide/application-workloads/cronjobs/job-records.png)
+
+ ### Metadata
+
+Click the **Metadata** tab to view the labels and annotations of the CronJob.
+
+![metadata](/images/docs/project-user-guide/application-workloads/cronjobs/job-records.png)
+
+### Events
+
+Click the **Events** tab to view the events of the CronJob.
+
+![events](/images/docs/project-user-guide/application-workloads/cronjobs/events.png)
