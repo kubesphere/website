@@ -152,7 +152,9 @@ You can rerun the Job if it fails, the reason of which displays under **Messages
 
     {{</ notice >}}
 
-## Job Operations
+## Check Job Details
+
+### Operations
 
 On the Job detail page, you can manage the Job after it is created.
 
@@ -162,3 +164,37 @@ On the Job detail page, you can manage the Job after it is created.
 - **Delete**: Delete the Job and return to the Job list page.
 
 ![job-operation](/images/docs/project-user-guide/application-workloads/jobs/job-operation.jpg)
+
+### Execution records
+
+1. Click the **Execution Records** tab to view the execution records of the Job.
+
+   ![execution-records](/images/docs/project-user-guide/application-workloads/jobs/execution-records.png)
+
+2. Click <img src="/images/docs/project-user-guide/application-workloads/jobs/refresh.png" width="20px" /> to refresh the execution records.
+
+### Resource status
+
+1. Click the **Resource Status** tab to view the Pods of the Job.
+
+   ![resource-status](/images/docs/project-user-guide/application-workloads/jobs/resource-status.png)
+
+2. Click <img src="/images/docs/project-user-guide/application-workloads/jobs/refresh.png" width="20px" /> to refresh the Pod information, and click <img src="/images/docs/project-user-guide/application-workloads/jobs/display.png" width="20px" />/<img src="/images/docs/project-user-guide/application-workloads/jobs/hide.png" width="20px" /> to display/hide the containers in each Pod.
+
+### Metadata
+
+Click the **Metadata** tab to view the labels and annotations of the Job.
+
+![metadata](/images/docs/project-user-guide/application-workloads/jobs/metadata.png)
+
+### Environment variables
+
+Click the **Environment Variables** tab to view the environment variables of the Job.
+
+![env-variable](/images/docs/project-user-guide/application-workloads/jobs/env-variable.png)
+
+### Events
+
+Click the **Events** tab to view the events of the Job.
+
+![events](/images/docs/project-user-guide/application-workloads/jobs/events.png)
