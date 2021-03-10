@@ -167,3 +167,4 @@ Click the **Environment Variables** tab to view the environment variables of the
 Click the **Events** tab to view the events of the DaemonSet.
 
 ![daemonsets](/images/docs/project-user-guide/workloads/daemonsets_events.png)
+
