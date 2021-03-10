@@ -57,7 +57,7 @@ weight: 14291
 
    ![Redis 终端](/images/docs/zh-cn/appstore/built-in-apps/redis-app/redis-terminal.PNG)
 
-3. 在弹出窗口的终端中运行 `reds-cli` 命令来使用该应用。
+3. 在弹出窗口的终端中运行 `redis-cli` 命令来使用该应用。
 
    ![使用 Redis](/images/docs/zh-cn/appstore/built-in-apps/redis-app/use-redis.PNG)
 
