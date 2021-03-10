@@ -35,7 +35,8 @@ KubeSphere 自带一些预装的自定义监控组件，包括 Prometheus Operat
    kubectl -n kubesphere-system exec $(kubectl get pod -n kubesphere-system -l app=ks-install -o jsonpath='{.items[0].metadata.name}') -- kubectl delete -f /kubesphere/kubesphere/prometheus/prometheus-rules-v1.16\+.yaml 2>/dev/null
    kubectl -n kubesphere-system exec $(kubectl get pod -n kubesphere-system -l app=ks-install -o jsonpath='{.items[0].metadata.name}') -- kubectl delete -f /kubesphere/kubesphere/prometheus/prometheus-rules.yaml 2>/dev/null
    kubectl -n kubesphere-system exec $(kubectl get pod -n kubesphere-system -l app=ks-install -o jsonpath='{.items[0].metadata.name}') -- kubectl delete -f /kubesphere/kubesphere/prometheus/prometheus 2>/dev/null
-   kubectl -n kubesphere-system exec $(kubectl get pod -n kubesphere-system -l app=ks-install -o jsonpath='{.items[0].metadata.name}') -- kubectl delete -f /kubesphere/kubesphere/prometheus/init/ 2>/dev/null
+   # Uncomment this line if you don't have Prometheus managed by Prometheus Operator in other namespaces.
+   # kubectl -n kubesphere-system exec $(kubectl get pod -n kubesphere-system -l app=ks-install -o jsonpath='{.items[0].metadata.name}') -- kubectl delete -f /kubesphere/kubesphere/prometheus/init/ 2>/dev/null
    ```
 
 2. 删除 Prometheus 使用的 PVC。
