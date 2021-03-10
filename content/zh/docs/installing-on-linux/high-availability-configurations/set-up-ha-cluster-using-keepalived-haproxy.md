@@ -16,11 +16,11 @@ weight: 3220
 
 ## 集群架构
 
-示例集群有三个主节点，三个工作节点，两个用于负载均衡的节点，以及一个虚拟 IP 地址。本示例中的虚拟 IP 地址也可称为“浮动 IP 地址”。这意味着在节点故障的情况下，可以在节点之间传递 IP 地址以实现故障转移，从而实现高可用。
+示例集群有三个主节点，三个工作节点，两个用于负载均衡的节点，以及一个虚拟 IP 地址。本示例中的虚拟 IP 地址也可称为“浮动 IP 地址”。这意味着在节点故障的情况下，该 IP 地址可在节点之间漂移，从而实现高可用。
 
 ![architecture-ha-k8s-cluster](/images/docs/installing-on-linux/high-availability-configurations/set-up-ha-cluster-using-keepalived-haproxy/architecture-ha-k8s-cluster.png)
 
-请注意，在本示例中，Keepalived 和 HAproxy 没有安装在任何主节点上。但您也可以这样做，并同时实现高可用。也就是说，配置两个用于负载均衡的特定节点（您可以按需增加更多此类节点）会更加安全。这两个节点上只安装 Keepalived 和 HAproxy，以避免与任何 Kubernetes 组件和服务的潜在冲突。
+请注意，在本示例中，Keepalived 和 HAproxy 没有安装在任何主节点上。但您也可以这样做，并同时实现高可用。然而，配置两个用于负载均衡的特定节点（您可以按需增加更多此类节点）会更加安全。这两个节点上只安装 Keepalived 和 HAproxy，以避免与任何 Kubernetes 组件和服务的潜在冲突。
 
 ## 准备主机
 
@@ -52,7 +52,7 @@ yum install keepalived haproxy psmisc -y
 
 ### HAproxy
 
-1. HAproxy 的配置与用于负载均衡的两台机器上的配置相同。运行以下命令来配置 HAproxy。
+1. 在两台用于负载均衡的机器上运行以下命令以配置 Proxy（两台机器的 Proxy 配置相同）：
 
    ```bash
    vi /etc/haproxy/haproxy.cfg
@@ -103,7 +103,7 @@ yum install keepalived haproxy psmisc -y
    systemctl restart haproxy
    ```
 
-4. 通过重启使 HAproxy 持久：
+4. 使 HAproxy 在开机后自动运行：
 
    ```bash
    systemctl enable haproxy
@@ -178,7 +178,7 @@ yum install keepalived haproxy psmisc -y
    systemctl restart keepalived
    ```
 
-4. 通过重启使 Keepalived 持久：
+4. 使 Keepalived 在开机后自动运行：
 
    ```bash
    systemctl enable haproxy
@@ -234,7 +234,7 @@ yum install keepalived haproxy psmisc -y
           valid_lft forever preferred_lft forever
    ```
 
-4. 理论上讲，若配置成功，虚拟 IP 会将故障转移到另一台机器 (`lb2`) 上。在 `lb2` 上运行以下命令，这是预期的输出：
+4. 理论上讲，若配置成功，该虚拟 IP 会漂移到另一台机器 (`lb2`) 上。在 `lb2` 上运行以下命令，这是预期的输出：
 
    ```bash
    [root@lb2 ~]# ip a s
@@ -254,7 +254,7 @@ yum install keepalived haproxy psmisc -y
           valid_lft forever preferred_lft forever
    ```
 
-5. 如上图所示，高可用已经配置成功。
+5. 如上所示，高可用已经配置成功。
 
 ## 使用 KubeKey 创建 Kubernetes 集群
 
@@ -316,10 +316,10 @@ chmod +x kk
 
 {{< notice note >}}
 
-- 经过 KubeSphere 全面测试的 Kubernetes 版本有：v1.15.12、v1.16.13、v1.17.9（默认）和v1.18.6。
+- 在 KubeSphere 上充分测试过的 Kubernetes 版本有：v1.15.12、v1.16.13、v1.17.9（默认）和 v1.18.6。
 
 - 如果您没有在本步骤的命令中添加标志 `--with-kubesphere`，那么除非您使用配置文件中的 `addons` 字段进行安装，或者稍后使用 `./kk create cluster` 时再添加该标志，否则 KubeSphere 将不会被部署。
-- 如果您在未指定 KubeSphere 版本的情况下添加 `--with-kubesphere` 标志，则会安装最新版本的 KubeSphere。
+- 如果您添加标志 `--with-kubesphere` 时未指定 KubeSphere 版本，则会安装最新版本的 KubeSphere。
 
 {{</ notice >}}
 
@@ -367,7 +367,7 @@ spec:
 
 {{< notice note >}}
 
-- 请使用您自己的 VIP address 来替换 `controlPlaneEndpoint.address` 的值。
+- 请使用您自己的 VIP 地址来替换 `controlPlaneEndpoint.address` 的值。
 - 有关更多本配置文件中不同参数的信息，请参见[多节点安装](../../../installing-on-linux/introduction/multioverview/#2-edit-the-configuration-file)。
 
 {{</ notice >}} 
@@ -388,7 +388,7 @@ spec:
    kubectl logs -n kubesphere-system $(kubectl get pod -n kubesphere-system -l app=ks-install -o jsonpath='{.items[0].metadata.name}') -f
    ```
 
-2. 看到以下信息时，表明 HA 集群已成功创建。
+2. 看到以下信息时，表明高可用集群已成功创建。
 
    ```bash
    #####################################################
