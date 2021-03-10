@@ -142,7 +142,9 @@ If you need to access the Route from outside your private network by using eithe
 
 {{</ notice >}}
 
-## Edit the Route
+## Check Route Details
+
+### Operations
 
 1. Choose **Routes** in **Application Workloads** on the left navigation bar and click the name of the Route on the right.
 
@@ -156,3 +158,22 @@ If you need to access the Route from outside your private network by using eithe
    * **Delete**: Delete the Route and return to the Route list page.
 
    ![edit-route](/images/docs/project-user-guide/application-workloads/routes/edit-route.png)
+
+### Resource status
+
+Click the **Resource Status** tab to view the Route rules.
+
+![resource-status](/images/docs/project-user-guide/application-workloads/routes/resource-status.png)
+
+### Metadata
+
+Click the **Metadata** tab to view the labels and annotations of the Route.
+
+![metadata](/images/docs/project-user-guide/application-workloads/routes/metadata.png)
+
+### Events
+
+Click the **Events** tab to view the events of the Route.
+
+![events](/images/docs/project-user-guide/application-workloads/routes/events.png)
+
