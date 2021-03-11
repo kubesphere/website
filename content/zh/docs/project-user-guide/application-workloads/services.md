@@ -195,11 +195,11 @@ weight: 10240
 
 ### 资源状态
 
-1. 点击**资源状态**选项卡以查看服务端口和容器组信息。
+1. 点击**资源状态**选项卡以查看服务端口和 Pod 信息。
 
    ![services-resource-status](/images/docs/zh-cn/project-user-guide/application-workloads/services/services-resource-status.png)
 
-2. 在容器组区域，点击 <img src="/images/docs/zh-cn/project-user-guide/application-workloads/services/services_refresh_pods.png" width="20px" /> 以刷新容器组信息，点击 <img src="/images/docs/zh-cn/project-user-guide/application-workloads/services/services_display_containers.png" width="20px" />/<img src="/images/docs/zh-cn/project-user-guide/application-workloads/services/services_hide_containers.png" width="20px" /> 以显示或隐藏每个容器组中的容器。
+2. 在**容器组**区域，点击 <img src="/images/docs/zh-cn/project-user-guide/application-workloads/services/services_refresh_pods.png" width="20px" /> 以刷新 Pod 信息，点击 <img src="/images/docs/zh-cn/project-user-guide/application-workloads/services/services_display_containers.png" width="20px" />/<img src="/images/docs/zh-cn/project-user-guide/application-workloads/services/services_hide_containers.png" width="20px" /> 以显示或隐藏每个 Pod 中的容器。
 
    ![services](/images/docs/zh-cn/project-user-guide/application-workloads/services/services-pods.png)
 
