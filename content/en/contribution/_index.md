@@ -15,9 +15,9 @@ section2:
       icon2: 'images/contribution/37.png'
       children:
         - content: 'Download KubeSphere'
-          link: '../../../docs/quick-start/all-in-one-on-linux/'
+          link: '/docs/quick-start/all-in-one-on-linux/'
         - content: 'Quickstart'
-          link: '../../../docs/quick-start/create-workspace-and-project/'
+          link: '/docs/quick-start/create-workspace-and-project/'
         - content: 'Tutorial Videos'
           link: '../videos'
 

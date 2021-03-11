@@ -15,9 +15,9 @@ section2:
       icon2: 'images/contribution/37.png'
       children:
         - content: '下载 KubeSphere'
-          link: '../../../zh/docs/quick-start/all-in-one-on-linux/'
+          link: '/docs/quick-start/all-in-one-on-linux/'
         - content: '快速入门'
-          link: '../../../zh/docs/quick-start/create-workspace-and-project/'
+          link: '/docs/quick-start/create-workspace-and-project/'
         - content: '视频教程'
           link: '../videos'
 
