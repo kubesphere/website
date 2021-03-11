@@ -192,3 +192,25 @@ weight: 10240
     - 您可以点击 Pod 条目查看容器信息。
     - 点击容器日志图标查看容器的输出日志。
     - 您可以点击 Pod 名称查看 Pod 详情页面。
+
+### 资源状态
+
+1. 点击**资源状态**选项卡以查看服务端口和容器组信息。
+
+   ![services-resource-status](/images/docs/zh-cn/project-user-guide/application-workloads/services/services-resource-status.png)
+
+2. 在容器组区域，点击 <img src="/images/docs/zh-cn/project-user-guide/application-workloads/services/services_refresh_pods.png" width="20px" /> 以刷新容器组信息，点击 <img src="/images/docs/zh-cn/project-user-guide/application-workloads/services/services_display_containers.png" width="20px" />/<img src="/images/docs/zh-cn/project-user-guide/application-workloads/services/services_hide_containers.png" width="20px" /> 以显示或隐藏每个容器组中的容器。
+
+   ![services](/images/docs/zh-cn/project-user-guide/application-workloads/services/services-pods.png)
+
+### 元数据
+
+点击**元数据**选项卡以查看服务的标签和注解。
+
+![services](/images/docs/zh-cn/project-user-guide/application-workloads/services/services-matadata.png)
+
+### 事件
+
+点击**事件**选项卡以查看服务的事件。
+
+![services](/images/docs/zh-cn/project-user-guide/application-workloads/services/services-events.png)
