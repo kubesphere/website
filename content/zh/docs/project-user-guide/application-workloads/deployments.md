@@ -146,30 +146,30 @@ weight: 10210
 
 点击**元数据**选项卡以查看部署的标签和注解。
 
-![deployments](/images/docs/zh-cn/project-user-guide/application-workloads/statefulsets/deployments-matadata.png)
+![deployments](/images/docs/zh-cn/project-user-guide/application-workloads/deployments/deployments-matadata.png)
 
 ### 监控
 
 1. 点击**监控**选项卡以查看部署的 CPU 使用量、内存使用量、网络流出速率和网络流入速率。
 
-   ![deployments-monitoring](/images/docs/zh-cn/project-user-guide/application-workloads/statefulsets/deployments-monitoring.png)
+   ![deployments-monitoring](/images/docs/zh-cn/project-user-guide/application-workloads/deployments/deployments-monitoring.png)
 
 2. 点击右上角的下拉菜单以自定义时间范围和时间间隔。
 
-   ![deployments](/images/docs/zh-cn/project-user-guide/application-workloads/statefulsets/deployments-time-range.png)
+   ![deployments](/images/docs/zh-cn/project-user-guide/application-workloads/deployments/deployments-time-range.png)
 
-3. 点击右上角的 <img src="/images/docs/zh-cn/project-user-guide/application-workloads/statefulsets/statefulsets_autorefresh_start.png" width="20px" />/<img src="/images/docs/zh-cn/project-user-guide/application-workloads/statefulsets/statefulsets_autorefresh_stop.png" width="20px" /> 以开始或停止数据自动刷新。 
+3. 点击右上角的 <img src="/images/docs/zh-cn/project-user-guide/application-workloads/deployments/deployments_autorefresh_start.png" width="20px" />/<img src="/images/docs/zh-cn/project-user-guide/application-workloads/deployments/deployments_autorefresh_stop.png" width="20px" /> 以开始或停止数据自动刷新。 
 
-4. 点击右上角的 <img src="/images/docs/zh-cn/project-user-guide/application-workloads/statefulsets/statefulsets_refresh.png" width="20px" /> 以手动刷新数据。
+4. 点击右上角的 <img src="/images/docs/zh-cn/project-user-guide/application-workloads/deployments/deployments_refresh.png" width="20px" /> 以手动刷新数据。
 
 ### 环境变量
 
 点击**环境变量**选项卡以查看部署的环境变量。
 
-![deployments](/images/docs/zh-cn/project-user-guide/application-workloads/statefulsets/deployments-env-variables.png)
+![deployments](/images/docs/zh-cn/project-user-guide/application-workloads/deployments/deployments-env-variables.png)
 
 ### 事件
 
 点击**事件**选项卡以查看部署的事件。
 
-![deployments](/images/docs/zh-cn/project-user-guide/application-workloads/statefulsets/deployments-events.png)
+![deployments](/images/docs/zh-cn/project-user-guide/application-workloads/deployments/deployments-events.png)
