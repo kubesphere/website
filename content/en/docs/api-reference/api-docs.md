@@ -116,3 +116,5 @@ The KubeSphere API swagger JSON file can be found in the repository https://gith
 
 - KubeSphere specified the API [swagger json](https://github.com/kubesphere/kubesphere/blob/release-3.0/api/ks-openapi-spec/swagger.json) file. It contains all the APIs that are only applied to KubeSphere.
 - KubeSphere specified the CRD [swagger json](https://github.com/kubesphere/kubesphere/blob/release-3.0/api/openapi-spec/swagger.json) file. It contains all the generated CRDs API documentation. It is same as Kubernetes API objects.
+
+You can explore the KubeSphere API document from [here](https://kubesphere.io/api/kubesphere) as well.
