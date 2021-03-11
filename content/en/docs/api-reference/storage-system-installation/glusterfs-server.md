@@ -14,13 +14,13 @@ Once you have GlusterFS and Heketi set up, you can install GlusterFS on your cli
 
 ## Prepare GlusterFS Nodes
 
-There are three server machines of Ubuntu 16.04 in this example with each having two attached disks.
+There are three server machines of Ubuntu 16.04 in this example with each having one attached disk.
 
-| Hostname | IP Address  | Operating System                   | Device                           |
-| -------- | ----------- | ---------------------------------- | -------------------------------- |
-| server1  | 192.168.0.2 | Ubuntu 16.04, 4 Cores, 4 GB Memory | /dev/vdc 100 GB, /dev/vdd 300 GB |
-| server2  | 192.168.0.3 | Ubuntu 16.04, 4 Cores, 4 GB Memory | /dev/vdc 100 GB, /dev/vdd 300 GB |
-| server3  | 192.168.0.4 | Ubuntu 16.04, 4 Cores, 4 GB Memory | /dev/vdc 100 GB, /dev/vdd 300 GB |
+| Hostname | IP Address  | Operating System                   | Device          |
+| -------- | ----------- | ---------------------------------- | --------------- |
+| server1  | 192.168.0.2 | Ubuntu 16.04, 4 Cores, 4 GB Memory | /dev/vdd 300 GB |
+| server2  | 192.168.0.3 | Ubuntu 16.04, 4 Cores, 4 GB Memory | /dev/vdd 300 GB |
+| server3  | 192.168.0.4 | Ubuntu 16.04, 4 Cores, 4 GB Memory | /dev/vdd 300 GB |
 
 {{< notice note >}}
 
@@ -49,10 +49,11 @@ There are three server machines of Ubuntu 16.04 in this example with each having
    
    {{< notice note >}}
    
+
 Make sure password authentication is enabled in the file `/etc/ssh/sshd_config` (the value of `PasswordAuthentication` should be `yes`).
-   
+
 {{</ notice >}} 
-   
+
 3. Change the root user password of `server2` and `server3` as well.
 
 ### Add hosts file entries
@@ -206,11 +207,17 @@ The above commands may be slightly different if you do no install GlusterFS on U
 
 As GlusterFS itself does not provide a way for API calls, you can install [Heketi](https://github.com/heketi/heketi) to manage the lifecycle of GlusterFS volumes with a RESTful API for Kubernetes calls. In this way, your Kubernetes cluster can dynamically provision GlusterFS volumes. Heketi v7.0.0 will be installed in this example. For more information about available Heketi versions, see its [Release Page](https://github.com/heketi/heketi/releases/).
 
-1. Download Heketi.
+1. Download Heketi on `server1`.
 
    ```bash
    wget https://github.com/heketi/heketi/releases/download/v7.0.0/heketi-v7.0.0.linux.amd64.tar.gz
    ```
+
+   {{< notice note >}}
+
+   You can also install Heketi on a separate machine.
+
+   {{</ notice >}} 
 
 2. Unzip the file.
 
