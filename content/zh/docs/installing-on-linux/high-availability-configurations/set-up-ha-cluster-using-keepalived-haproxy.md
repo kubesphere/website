@@ -1,50 +1,50 @@
 ---
 title: "使用 Keepalived 和 HAproxy 创建高可用集群"
-keywords: 'KubeSphere, Kubernetes, HA, high availability, installation, configuration, Keepalived, HAproxy'
-description: 'How to configure a high-availability Kubernetes cluster using Keepalived and HAproxy.'
+keywords: 'KubeSphere, Kubernetes, HA, 高可用, 安装, 配置, Keepalived, HAproxy'
+description: '如何使用 Keepalived 和 HAproxy 配置高可用 Kubernetes 集群'
 linkTitle: "使用 Keepalived 和 HAproxy 创建高可用集群"
 weight: 3220
 ---
 
-A highly available Kubernetes cluster ensures your applications run without outages which is required for production. In this connection, there are plenty of ways for you to choose from to achieve high availability.
+高可用 Kubernetes 集群能够确保应用程序在运行时不会出现服务中断，这也是生产的需求之一。为此，有很多方法可供选择以实现高可用。
 
-This tutorial demonstrates how to configure Keepalived and HAproxy for load balancing and achieve high availability. The steps are listed as below:
+本教程演示了如何配置 Keepalived 和 HAproxy 使负载均衡、实现高可用。步骤如下：
 
-1. Prepare hosts.
-2. Configure Keepalived and HAproxy.
-3. Use KubeKey to set up a Kubernetes cluster and install KubeSphere.
+1. 准备主机。
+2. 配置 Keepalived 和 HAproxy。
+3. 使用 KubeKey 创建 Kubernetes 集群，并安装 KubeSphere。
 
-## Cluster Architecture
+## 集群架构
 
-The example cluster has three master nodes, three worker nodes, two nodes for load balancing and one virtual IP address. The virtual IP address in this example may also be called "a floating IP address". That means in the event of node failures, the IP address can be passed between nodes allowing for failover, thus achieving high availability.
+示例集群有三个主节点，三个工作节点，两个用于负载均衡的节点，以及一个虚拟 IP 地址。本示例中的虚拟 IP 地址也可称为“浮动 IP 地址”。这意味着在节点故障的情况下，该 IP 地址可在节点之间漂移，从而实现高可用。
 
 ![architecture-ha-k8s-cluster](/images/docs/installing-on-linux/high-availability-configurations/set-up-ha-cluster-using-keepalived-haproxy/architecture-ha-k8s-cluster.png)
 
-Notice that in this example, Keepalived and HAproxy are not installed on any of the master nodes. Admittedly, you can do that and high availability can also be achieved. That said, configuring two specific nodes for load balancing (You can add more nodes of this kind as needed) is more secure. Only Keepalived and HAproxy will be installed on these two nodes, avoiding any potential conflicts with any Kubernetes components and services.
+请注意，在本示例中，Keepalived 和 HAproxy 没有安装在任何主节点上。但您也可以这样做，并同时实现高可用。然而，配置两个用于负载均衡的特定节点（您可以按需增加更多此类节点）会更加安全。这两个节点上只安装 Keepalived 和 HAproxy，以避免与任何 Kubernetes 组件和服务的潜在冲突。
 
-## Prepare Hosts
+## 准备主机
 
-| IP Address  | Hostname | Role                 |
-| ----------- | -------- | -------------------- |
-| 172.16.0.2  | lb1      | Keepalived & HAproxy |
-| 172.16.0.3  | lb2      | Keepalived & HAproxy |
-| 172.16.0.4  | master1  | master, etcd         |
-| 172.16.0.5  | master2  | master, etcd         |
-| 172.16.0.6  | master3  | master, etcd         |
-| 172.16.0.7  | worker1  | worker               |
-| 172.16.0.8  | worker2  | worker               |
-| 172.16.0.9  | worker3  | worker               |
-| 172.16.0.10 |          | Virtual IP address   |
+| IP 地址     | 主机名  | 角色                 |
+| ----------- | ------- | -------------------- |
+| 172.16.0.2  | lb1     | Keepalived & HAproxy |
+| 172.16.0.3  | lb2     | Keepalived & HAproxy |
+| 172.16.0.4  | master1 | master, etcd         |
+| 172.16.0.5  | master2 | master, etcd         |
+| 172.16.0.6  | master3 | master, etcd         |
+| 172.16.0.7  | worker1 | worker               |
+| 172.16.0.8  | worker2 | worker               |
+| 172.16.0.9  | worker3 | worker               |
+| 172.16.0.10 |         | 虚拟 IP 地址         |
 
-For more information about requirements for nodes, network, and dependencies, see [Multi-node Installation](../../../installing-on-linux/introduction/multioverview/#step-1-prepare-linux-hosts).
+有关更多节点、网络、依赖项等要求的信息，请参见[多节点安装](../../../installing-on-linux/introduction/multioverview/#step-1-prepare-linux-hosts)。
 
-## Configure Load Balancing
+## 配置负载均衡
 
-[Keepalived](https://www.keepalived.org/) provides a VRPP implementation and allows you to configure Linux machines for load balancing, preventing single points of failure. [HAProxy](http://www.haproxy.org/), providing reliable, high performance load balancing, works perfectly with Keepalived.
+[Keepalived](https://www.keepalived.org/) 提供 VRPP 实现，并允许您配置 Linux 机器使负载均衡，预防单点故障。[HAProxy](http://www.haproxy.org/) 提供可靠、高性能的负载均衡，能与 Keepalived 完美配合。
 
-As Keepalived and HAproxy are installed on `lb1` and `lb2`, if either one goes down, the virtual IP address (i.e. the floating IP address) will be automatically associated with another node so that the cluster is still functioning well, thus achieving high availability. If you want, you can add more nodes all with Keepalived and HAproxy installed for that purpose.
+由于 `lb1` 和 `lb2` 上安装了 Keepalived 和 HAproxy，如果其中一个节点故障，虚拟 IP 地址（即浮动 IP 地址）将自动与另一个节点关联，使群集仍然可以正常运行，从而实现高可用。若有需要，也可以此为目的，添加更多安装 Keepalived 和 HAproxy 的节点。
 
-Run the following command to install Keepalived and HAproxy first.
+先运行以下命令安装 Keepalived 和 HAproxy。
 
 ```bash
 yum install keepalived haproxy psmisc -y
@@ -52,13 +52,13 @@ yum install keepalived haproxy psmisc -y
 
 ### HAproxy
 
-1. The configuration of HAproxy is exactly the same on the two machines for load balancing. Run the following command to configure HAproxy.
+1. 在两台用于负载均衡的机器上运行以下命令以配置 Proxy（两台机器的 Proxy 配置相同）：
 
    ```bash
    vi /etc/haproxy/haproxy.cfg
    ```
 
-2. Here is an example configuration for your reference (Pay attention to the `server` field. Note that `6443` is the `apiserver` port):
+2. 以下是示例配置，供您参考（请注意 `server` 字段。请记住 `6443` 是 `apiserver` 端口）：
 
    ```bash
    global
@@ -97,31 +97,31 @@ yum install keepalived haproxy psmisc -y
        server kube-apiserver-3 172.16.0.6:6443 check # Replace the IP address with your own.
    ```
 
-3. Save the file and run the following command to restart HAproxy.
+3. 保存文件并运行以下命令以重启 HAproxy。
 
    ```bash
    systemctl restart haproxy
    ```
 
-4. Make it persist through reboots:
+4. 使 HAproxy 在开机后自动运行：
 
    ```bash
    systemctl enable haproxy
    ```
 
-5. Make sure you configure HAproxy on the other machine (`lb2`) as well.
+5. 确保您在另一台机器 (`lb2`) 上也配置了 HAproxy。
 
 ### Keepalived
 
-Keepalived must be installed on both machines while the configuration of them is slightly different.
+两台机器上必须都安装 Keepalived，但在配置上略有不同。
 
-1. Run the following command to configure Keepalived.
+1. 运行以下命令以配置 Keepalived。
 
    ```bash
    vi /etc/keepalived/keepalived.conf
    ```
 
-2. Here is an example configuration (`lb1`) for your reference:
+2. 以下是示例配置 (`lb1`)，供您参考：
 
    ```bash
    global_defs {
@@ -166,31 +166,31 @@ Keepalived must be installed on both machines while the configuration of them is
 
    {{< notice note >}} 
 
-   - For the `interface` field, you must provide your own network card information. You can run `ifconfig` on your machine to get the value.
+   - 对于 `interface` 字段，您必须提供自己的网卡信息。您可以在机器上运行 `ifconfig` 以获取该值。
 
-   - The IP address provided for `unicast_src_ip` is the IP address of your current machine. For other machines where HAproxy and Keepalived are also installed for load balancing, their IP address must be input for the field `unicast_peer`.
+   - 为 `unicast_src_ip` 提供的 IP 地址是您当前机器的 IP 地址。对于也安装了 HAproxy 和 Keepalived 进行负载均衡的其他机器，必须在字段 `unicast_peer` 中输入其 IP 地址。
 
      {{</ notice >}} 
 
-3. Save the file and run the following command to restart Keepalived.
+3. 保存文件并运行以下命令以重启 Keepalived。
 
    ```bash
    systemctl restart keepalived
    ```
 
-4. Make it persist through reboots:
+4. 使 Keepalived 在开机后自动运行：
 
    ```bash
    systemctl enable haproxy
    ```
 
-5. Make sure you configure Keepalived on the other machine (`lb2`) as well.
+5. 确保您在另一台机器 (`lb2`) 上也配置了 Keepalived。
 
-## Verify High Availability
+## 验证高可用
 
-Before you start to create your Kubernetes cluster, make sure you have tested the high availability. 
+在开始创建 Kubernetes 集群之前，请确保已经测试了高可用。
 
-1. On the machine `lb1`, run the following command:
+1. 在机器  `lb1` 上，运行以下命令：
 
    ```bash
    [root@lb1 ~]# ip a s
@@ -210,13 +210,13 @@ Before you start to create your Kubernetes cluster, make sure you have tested th
           valid_lft forever preferred_lft forever
    ```
 
-2. As you can see above, the virtual IP address is successfully added. Simulate a failure on this node:
+2. 如上图所示，虚拟 IP 地址已经成功添加。模拟此节点上的故障：
 
    ```bash
    systemctl stop haproxy
    ```
 
-3. Check the floating IP address again and you can see it disappear on `lb1`.
+3. 再次检查浮动 IP 地址，您可以看到该地址在 `lb1` 上消失了。
 
    ```bash
    [root@lb1 ~]# ip a s
@@ -234,7 +234,7 @@ Before you start to create your Kubernetes cluster, make sure you have tested th
           valid_lft forever preferred_lft forever
    ```
 
-4. Theoretically, the virtual IP will be failed over to the other machine (`lb2`) if the configuration is successful. On `lb2`, run the following command and here is the expected output:
+4. 理论上讲，若配置成功，该虚拟 IP 会漂移到另一台机器 (`lb2`) 上。在 `lb2` 上运行以下命令，这是预期的输出：
 
    ```bash
    [root@lb2 ~]# ip a s
@@ -254,17 +254,17 @@ Before you start to create your Kubernetes cluster, make sure you have tested th
           valid_lft forever preferred_lft forever
    ```
 
-5. As you can see above, high availability is successfully configured.
+5. 如上所示，高可用已经配置成功。
 
-## Use KubeKey to Create a Kubernetes Cluster
+## 使用 KubeKey 创建 Kubernetes 集群
 
-[KubeKey](https://github.com/kubesphere/kubekey) is an efficient and convenient tool to create a Kubernetes cluster. Follow the steps below to download KubeKey.
+[KubeKey](https://github.com/kubesphere/kubekey) 是一款用来创建 Kubernetes 集群的工具，高效而便捷。请按照以下步骤下载 KubeKey。
 
 {{< tabs >}}
 
-{{< tab "Good network connections to GitHub/Googleapis" >}}
+{{< tab "如果您能正常访问 GitHub/Googleapis" >}}
 
-Download KubeKey from its [GitHub Release Page](https://github.com/kubesphere/kubekey/releases) or use the following command directly.
+从 [GitHub Release Page](https://github.com/kubesphere/kubekey/releases) 下载 KubeKey 或者直接使用以下命令。
 
 ```bash
 curl -sfL https://get-kk.kubesphere.io | VERSION=v1.0.1 sh -
@@ -272,15 +272,15 @@ curl -sfL https://get-kk.kubesphere.io | VERSION=v1.0.1 sh -
 
 {{</ tab >}}
 
-{{< tab "Poor network connections to GitHub/Googleapis" >}}
+{{< tab "如果您访问 GitHub/Googleapis 受限" >}}
 
-Run the following command first to make sure you download KubeKey from the correct zone.
+首先运行以下命令，以确保您从正确的区域下载 KubeKey。
 
 ```bash
 export KKZONE=cn
 ```
 
-Run the following command to download KubeKey:
+运行以下命令来下载 KubeKey：
 
 ```bash
 curl -sfL https://get-kk.kubesphere.io | VERSION=v1.0.1 sh -
@@ -288,7 +288,7 @@ curl -sfL https://get-kk.kubesphere.io | VERSION=v1.0.1 sh -
 
 {{< notice note >}}
 
-After you download KubeKey, if you transfer it to a new machine also with poor network connections to Googleapis, you must run `export KKZONE=cn` again before you proceed with the steps below.
+下载 KubeKey 之后，如果您将其转移到访问 Googleapis 受限的新机器上，请务必再次运行 `export KKZONE=cn`，然后继续执行以下步骤。
 
 {{</ notice >}} 
 
@@ -298,17 +298,17 @@ After you download KubeKey, if you transfer it to a new machine also with poor n
 
 {{< notice note >}}
 
-The commands above download the latest release (v1.0.1) of KubeKey. You can change the version number in the command to download a specific version.
+通过以上命令，可以下载 KubeKey 的最新版本 (v1.0.1)。您可以更改命令中的版本号来下载特定的版本。
 
 {{</ notice >}} 
 
-Make `kk` executable:
+使 `kk` 成为可执行文件：
 
 ```bash
 chmod +x kk
 ```
 
-Create an example configuration file with default configurations. Here Kubernetes v1.17.9 is used as an example.
+使用默认配置创建一个示例配置文件。此处以 Kubernetes v1.17.9 作为示例。
 
 ```bash
 ./kk create config --with-kubesphere v3.0.0 --with-kubernetes v1.17.9
@@ -316,24 +316,24 @@ Create an example configuration file with default configurations. Here Kubernete
 
 {{< notice note >}}
 
-- Kubernetes versions that have been fully tested with KubeSphere: v1.15.12, v1.16.13, v1.17.9 (default), and v1.18.6.
+- 在 KubeSphere 上充分测试过的 Kubernetes 版本：v1.15.12、v1.16.13、v1.17.9（默认）和 v1.18.6。
 
-- If you do not add the flag `--with-kubesphere` in the command in this step, KubeSphere will not be deployed unless you install it using the `addons` field in the configuration file or add this flag again when you use `./kk create cluster` later.
-- If you add the flag `--with-kubesphere` without specifying a KubeSphere version, the latest version of KubeSphere will be installed.
+- 如果您没有在本步骤的命令中添加标志 `--with-kubesphere`，那么除非您使用配置文件中的 `addons` 字段进行安装，或者稍后使用 `./kk create cluster` 时再添加该标志，否则 KubeSphere 将不会被部署。
+- 如果您添加标志 `--with-kubesphere` 时未指定 KubeSphere 版本，则会安装最新版本的 KubeSphere。
 
 {{</ notice >}}
 
-## Deploy KubeSphere and Kubernetes
+## 部署 KubeSphere 和 Kubernetes
 
-After you run the commands above, a configuration file `config-sample.yaml` will be created. Edit the file to add machine information, configure the load balancer and more.
+运行上述命令后，将创建配置文件 `config-sample.yaml`。编辑文件以添加机器信息、配置负载均衡器等。
 
 {{< notice note >}}
 
-The file name may be different if you customize it.
+如果自定义文件名，那么文件名可能会有所不同。
 
 {{</ notice >}} 
 
-### config-sample.yaml example
+### config-sample.yaml 示例
 
 ```yaml
 ...
@@ -367,28 +367,28 @@ spec:
 
 {{< notice note >}}
 
-- Replace the value of `controlPlaneEndpoint.address` with your own VIP address.
-- For more information about different parameters in this configuration file, see [Multi-node Installation](../../../installing-on-linux/introduction/multioverview/#2-edit-the-configuration-file).
+- 请使用您自己的 VIP 地址来替换 `controlPlaneEndpoint.address` 的值。
+- 有关更多本配置文件中不同参数的信息，请参见[多节点安装](../../../installing-on-linux/introduction/multioverview/#2-edit-the-configuration-file)。
 
 {{</ notice >}} 
 
-### Start installation
+### 开始安装
 
-After you complete the configuration, you can execute the following command to start the installation:
+完成配置之后，可以执行以下命令开始安装：
 
 ```bash
 ./kk create cluster -f config-sample.yaml
 ```
 
-### Verify installation
+### 验证安装
 
-1. Run the following command to inspect the logs of installation.
+1. 运行以下命令以检查安装日志。
 
    ```bash
    kubectl logs -n kubesphere-system $(kubectl get pod -n kubesphere-system -l app=ks-install -o jsonpath='{.items[0].metadata.name}') -f
    ```
 
-2. When you see the following message, it means your HA cluster is successfully created.
+2. 看到以下信息时，表明高可用集群已成功创建。
 
    ```bash
    #####################################################
