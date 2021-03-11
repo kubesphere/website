@@ -316,7 +316,7 @@ chmod +x kk
 
 {{< notice note >}}
 
-- 在 KubeSphere 上充分测试过的 Kubernetes 版本有：v1.15.12、v1.16.13、v1.17.9（默认）和 v1.18.6。
+- 在 KubeSphere 上充分测试过的 Kubernetes 版本：v1.15.12、v1.16.13、v1.17.9（默认）和 v1.18.6。
 
 - 如果您没有在本步骤的命令中添加标志 `--with-kubesphere`，那么除非您使用配置文件中的 `addons` 字段进行安装，或者稍后使用 `./kk create cluster` 时再添加该标志，否则 KubeSphere 将不会被部署。
 - 如果您添加标志 `--with-kubesphere` 时未指定 KubeSphere 版本，则会安装最新版本的 KubeSphere。
