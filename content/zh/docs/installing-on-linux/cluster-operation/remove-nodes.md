@@ -1,9 +1,8 @@
 ---
 title: "删除节点"
-keywords: 'kubernetes, kubesphere, scale, delete-nodes'
-description: '如何删除 KubeSphere 工作节点'
-
-
+keywords: 'Kubernetes, KubeSphere, 水平扩缩, 删除节点'
+description: '如何从现有集群删除节点'
+linkTitle: "删除节点"
 weight: 3420
 ---
 
@@ -23,7 +22,7 @@ weight: 3420
 
 ## 删除节点
 
-1. 若要删除节点，您需要首先准备集群的配置文件（即在[设置集群](../../introduction/multioverview/#1-create-an-example-configuration-file)时创建的集群）。如果您没有该配置文件，请使用 [KubeKey](https://github.com/kubesphere/kubekey) 检索群集信息（将默认创建文件 `sample.yaml`）。
+1. 若要删除节点，您需要首先准备集群的配置文件（即在[设置集群](../../introduction/multioverview/#1-create-an-example-configuration-file)时所用的配置文件）。如果您没有该配置文件，请使用 [KubeKey](https://github.com/kubesphere/kubekey) 检索群集信息（将默认创建文件 `sample.yaml`）。
 
    ```bash
    ./kk create config --from-cluster
