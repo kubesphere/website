@@ -182,4 +182,3 @@ weight: 10220
 点击**事件**查看有状态副本集的事件。
 
 ![statefulsets](/images/docs/zh-cn/project-user-guide/application-workloads/statefulsets/statefulsets-events.png)
-
