@@ -46,6 +46,10 @@ Learn how to import an Alibaba Cloud Kubernetes cluster.
 
 Learn how to import an Amazon Elastic Kubernetes Service cluster.
 
+### [Import a Google GKE Cluster](../multicluster-management/import-cloud-hosted-k8s/import-gke/)
+
+Learn how to import a Google Kubernetes Engine cluster.
+
 ## Import On-prem Kubernetes Cluster
 
 ### [Import Kubeadm Kubernetes Cluster](../multicluster-management/import-on-prem-k8s/import-kubeadm-k8s/)
