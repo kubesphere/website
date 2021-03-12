@@ -151,3 +151,34 @@ weight: 10220
 
 修改工作负载的资源模板后，会生成一个新的日志并重新调度 Pod 进行版本更新。默认保存 10 个最近的版本。您可以根据修改日志进行重新部署。
 
+### 元数据
+
+点击**元数据**选项卡以查看有状态副本集的标签和注解。
+
+![statefulsets](/images/docs/zh-cn/project-user-guide/application-workloads/statefulsets/statefulsets-matadata.png)
+
+### 监控
+
+1. 点击**监控**选项卡以查看有状态副本集的 CPU 使用量、内存使用量、网络流出速率和网络流入速率。
+
+   ![statefulsets](/images/docs/zh-cn/project-user-guide/application-workloads/statefulsets/statefulsets-monitoring.png)
+
+2. 点击右上角的下拉菜单以自定义时间范围和时间间隔。
+
+   ![statefulsets](/images/docs/zh-cn/project-user-guide/application-workloads/statefulsets/statefulsets-time-range.png)
+
+3. 点击右上角的 <img src="/images/docs/zh-cn/project-user-guide/application-workloads/statefulsets/statefulsets_autorefresh_start.png" alt="statefulsets_autorefresh_start" width="20px" />/<img src="/images/docs/zh-cn/project-user-guide/application-workloads/statefulsets/statefulsets_autorefresh_stop.png" width="20px" /> 以开始或停止自动刷新数据。
+
+4. 点击右上角的 <img src="/images/docs/zh-cn/project-user-guide/application-workloads/statefulsets/statefulsets_refresh.png" width="20px" /> 以手动刷新数据。
+
+### 环境变量
+
+点击**环境变量**选项卡查看有状态副本集的环境变量。
+
+![statefulsets](/images/docs/zh-cn/project-user-guide/application-workloads/statefulsets/statefulsets-evn-variables.png)
+
+### 事件
+
+点击**事件**查看有状态副本集的事件。
+
+![statefulsets](/images/docs/zh-cn/project-user-guide/application-workloads/statefulsets/statefulsets-events.png)
