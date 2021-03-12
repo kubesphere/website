@@ -136,3 +136,35 @@ weight: 10230
 ### 版本记录
 
 修改工作负载的资源模板后，会生成一个新的日志并重新调度 Pod 进行版本更新。默认保存 10 个最近的版本。您可以根据修改日志进行重新部署。
+
+### 元数据
+
+点击**元数据**选项卡以查看守护进程集的标签和注解。
+
+![daemonsets](/images/docs/zh-cn/project-user-guide/application-workloads/daemonsets/daemonsets_metadata.png)
+
+### 监控
+
+1. 点击**监控**选项卡以查看 CPU 使用量、内存使用量、网络流入速率和网络流出速率。
+
+   ![daemonsets](/images/docs/zh-cn/project-user-guide/application-workloads/daemonsets/daemonsets_monitoring.png)
+
+2. 点击右上角的下拉菜单以自定义时间范围和时间间隔。
+
+   ![daemonsets_time_range](/images/docs/zh-cn/project-user-guide/application-workloads/daemonsets/daemonsets_time_range.png)
+
+3. 点击右上角的 <img src="/images/docs/zh-cn/project-user-guide/application-workloads/daemonsets/daemonsets_autorefresh_start.png" width="20px" />/<img src="/images/docs/zh-cn/project-user-guide/application-workloads/daemonsets/daemonsets_autorefresh_stop.png" width="20px" /> 以开始或停止自动刷新数据。
+
+4. 点击右上角的 <img src="/images/docs/zh-cn/project-user-guide/application-workloads/daemonsets/daemonsets_refresh.png" width="20px" /> 以手动刷新数据。
+
+### 环境变量
+
+点击**环境变量**选项卡以查看守护进程集的环境变量。
+
+![daemonsets](/images/docs/zh-cn/project-user-guide/application-workloads/daemonsets/daemonsets_env_variable.png)
+
+### 事件
+
+点击**事件**以查看守护进程集的事件。
+
+![daemonsets](/images/docs/zh-cn/project-user-guide/application-workloads/daemonsets/daemonsets_events.png)
