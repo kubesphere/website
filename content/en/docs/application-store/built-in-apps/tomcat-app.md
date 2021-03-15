@@ -56,7 +56,7 @@ This tutorial walks you through an example of deploying Tomcat from the App Stor
 
 ### Step 3: Access a Tomcat Project from Your Browser
 
-To access a Tomcat project outside the cluster, you need to expose the app through NodePort first.
+To access a Tomcat project outside the cluster, you need to expose the app through a NodePort first.
 
 1. Go to **Services** and click the service name of Tomcat.
 

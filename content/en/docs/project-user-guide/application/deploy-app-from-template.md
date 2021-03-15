@@ -87,7 +87,7 @@ This tutorial demonstrates how to quickly deploy [Grafana](https://grafana.com/)
 
 ### Step 3: Expose the Grafana Service
 
-To access Grafana outside the cluster, you need to expose the app through NodePort first.
+To access Grafana outside the cluster, you need to expose the app through a NodePort first.
 
 1. Go to **Services** and click the service name of Grafana.
 

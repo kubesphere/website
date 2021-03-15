@@ -19,7 +19,7 @@ This page contains some of the frequently asked questions about monitoring.
 
 ## How to access the Prometheus console in KubeSphere
 
-The KubeSphere monitoring engine is powered by Prometheus. For debugging purposes, you may want to access the built-in Prometheus service via NodePort. Run the following command to change the service type to `NodePort`:
+The KubeSphere monitoring engine is powered by Prometheus. For debugging purposes, you may want to access the built-in Prometheus service through a NodePort. Run the following command to change the service type to `NodePort`:
 
 ```bash
 kubectl edit svc -n kubesphere-monitoring-system prometheus-k8s

@@ -315,7 +315,7 @@ You can verify that NFS-client has been successfully installed either from the c
 
 ### KubeSphere console
 
-1. The `ks-console` Service is being exposed via NodePort. Log in to the console at `<node IP>:30880` with the default account and password (`admin/P@88w0rd`). You may need to open the port in your security groups and configure relevant port forwarding rules depending on your environment.
+1. The `ks-console` Service is being exposed through a NodePort. Log in to the console at `<node IP>:30880` with the default account and password (`admin/P@88w0rd`). You may need to open the port in your security groups and configure relevant port forwarding rules depending on your environment.
 
 2. Click **Platform** in the top left corner and go to **Cluster Management**. In **Storage Classes** under **Storage**, you can see two storage classes:
 

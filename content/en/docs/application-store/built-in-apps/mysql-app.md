@@ -57,7 +57,7 @@ This tutorial walks you through an example of deploying MySQL from the App Store
 
 ### Step 3: Access the MySQL Database outside the Cluster
 
-To access MySQL outside the cluster, you need to expose the app through NodePort first.
+To access MySQL outside the cluster, you need to expose the app through a NodePort first.
 
 1. Go to **Services** and click the service name of MySQL.
 
