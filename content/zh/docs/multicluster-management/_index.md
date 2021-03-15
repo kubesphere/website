@@ -46,6 +46,10 @@ icon: "/images/docs/docs.svg"
 
 了解如何导入 Amazon Elastic Kubernetes 服务集群。
 
+### [导入 Google GKE 集群](../multicluster-management/import-cloud-hosted-k8s/import-gke/)
+
+了解如何导入 Google Kubernetes Engine 集群。
+
 ## 导入本地 Kubernetes 集群
 
 ### [导入 Kubeadm Kubernetes 集群](../multicluster-management/import-on-prem-k8s/import-kubeadm-k8s/)
