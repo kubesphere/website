@@ -131,7 +131,7 @@ weight: 14320
 
    {{< notice note >}}
 
-   只有字段 `storageClassName` 被更改为提供外部持久化存储。若想在单个节点上部署每个 TiDB 组件（例如 [TiKV](https://docs.pingcap.com/tidb/dev/tidb-architecture#tikv-server) 和 [Placement Driver](https://docs.pingcap.com/tidb/dev/tidb-architecture#placement-driver-pd-server)），请指定 `nodeAffinity` 字段。
+   此处仅更改字段 `storageClassName` 以提供外部持久化存储。若想在单个节点上部署每个 TiDB 组件（例如 [TiKV](https://docs.pingcap.com/tidb/dev/tidb-architecture#tikv-server) 和 [Placement Driver](https://docs.pingcap.com/tidb/dev/tidb-architecture#placement-driver-pd-server)），请指定 `nodeAffinity` 字段。
 
    {{</ notice >}} 
 
@@ -199,7 +199,7 @@ weight: 14320
 
    {{< notice note >}}
 
-   您可能需要在安全组中打开端口，并根据 Kubernetes 群集的部署位置来配置相关的端口转发规则。
+   根据 Kubernetes 集群部署位置的不同，您可能需要在安全组中打开端口，并配置相关的端口转发规则。
 
    {{</ notice >}}
 
