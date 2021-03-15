@@ -43,7 +43,7 @@ You need to deploy KubeSphere on your EKS cluster first. For more information ab
 
    ![click-edit](/images/docs/multicluster-management/import-cloud-hosted-k8s/import-gke/click-edit.png)
 
-5. In the YAML file of `ks-installer`, change the value of `jwtSecret` to the corresponding value shown above and set the value of `clusterRole` to `member`.
+5. In the YAML file of `ks-installer`, change the value of `jwtSecret` to the corresponding value shown above and set the value of `clusterRole` to `member`. Click **Update** to save your changes.
 
    ```yaml
    authentication:
@@ -63,7 +63,7 @@ You need to deploy KubeSphere on your EKS cluster first. For more information ab
 
 ### Step 3: Create a new kubeconfig file
 
-1. [Amazon EKS](https://docs.aws.amazon.com/eks/index.html) doesn’t provide a built-in kubeconfig file as a standard kubeadm cluster does. Nevertheless, you can create a kubeconfig file by referring to this [documentation](https://docs.aws.amazon.com/eks/latest/userguide/create-kubeconfig.html). The generated kubeconfig file will be like the following:
+1. [Amazon EKS](https://docs.aws.amazon.com/eks/index.html) doesn’t provide a built-in kubeconfig file as a standard kubeadm cluster does. Nevertheless, you can create a kubeconfig file by referring to this [document](https://docs.aws.amazon.com/eks/latest/userguide/create-kubeconfig.html). The generated kubeconfig file will be like the following:
 
    ```yaml
    apiVersion: v1
