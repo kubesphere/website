@@ -112,3 +112,4 @@ The button **Add Route Rule** is not visible if the project gateway is not set.
    ![review-page](/images/docs/project-user-guide/applications/create-a-microservices-based-app/review-page.png)
 
    
+
