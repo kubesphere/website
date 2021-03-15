@@ -79,7 +79,7 @@ This document uses HPA based on CPU usage as an example. Operations for HPA base
 
 ## Verify HPA
 
-This section uses a Deployment that sends requests the HPA Service to verify that HPA automatically adjusts the number of Pods to meet the resource usage target.
+This section uses a Deployment that sends requests to the HPA Service to verify that HPA automatically adjusts the number of Pods to meet the resource usage target.
 
 ### Create a load generator Deployment
 
