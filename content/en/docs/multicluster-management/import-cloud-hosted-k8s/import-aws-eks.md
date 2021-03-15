@@ -1,135 +1,183 @@
 ---
-title: "Import AWS EKS Cluster"
-keywords: 'Kubernetes, KubeSphere, multicluster, Amazon eks'
-description: 'Import AWS EKS Cluster'
-
-
+title: "Import an AWS EKS Cluster"
+keywords: 'Kubernetes, KubeSphere, multicluster, Amazon EKS'
+description: 'How to import an AWS EKS cluster'
+titleLink: "Import an AWS EKS Cluster"
 weight: 5320
 ---
 
-In this section, we are going to show you how to import EKS to KubeSphere using [direct connection](../../enable-multicluster/direct-connection) method. 
+This tutorial demonstrates how to import an AWS EKS cluster through the [direct connection](../../../multicluster-management/enable-multicluster/direct-connection/) method. If you want to use the agent connection method, refer to [Agent Connection](../../../multicluster-management/enable-multicluster/agent-connection/).
 
-{{< notice note >}}
-If you are planning to import EKS using [agent connection](../../enable-multicluster/agent-connection), then you can skip this section and follow the [doc](../../enable-multicluster/agent-connection) step by step. 
-{{</ notice >}}
+## Prerequisites
 
-[Amazon EKS](https://docs.aws.amazon.com/eks/index.html) doesn't provide a built-in kubeconfig file as a standard kubeadm cluster did. But you can create kubeconfig automatically by referring to this [doc](https://docs.aws.amazon.com/eks/latest/userguide/create-kubeconfig.html). The generated kubeconfig will be like the following,
+- You have a Kubernetes cluster with KubeSphere installed, and prepared this cluster as the Host Cluster. For more information about how to prepare a Host Cluster, refer to [Prepare a Host Cluster](../../../multicluster-management/enable-multicluster/direct-connection/#prepare-a-host-cluster).
+- You have an EKS cluster to be used as the Member Cluster.
 
-```yaml
-apiVersion: v1
-clusters:
-- cluster:
-    server: <endpoint-url>
-    certificate-authority-data: <base64-encoded-ca-cert>
-  name: kubernetes
-contexts:
-- context:
-    cluster: kubernetes
-    user: aws
-  name: aws
-current-context: aws
-kind: Config
-preferences: {}
-users:
-- name: aws
-  user:
-    exec:
-      apiVersion: client.authentication.k8s.io/v1alpha1
-      command: aws
-      args:
-        - "eks"
-        - "get-token"
-        - "--cluster-name"
-        - "<cluster-name>"
-        # - "--role"
-        # - "<role-arn>"
-      # env:
-        # - name: AWS_PROFILE
-        #   value: "<aws-profile>"
-```
+## Import an EKS Cluster
 
-Looks good, only there is one problem with automatically generated kubeconfig, it requires command `aws` (aws cli tools) to be installed on every computer that wants to use this kubeconfig. 
+### Step 1: Deploy KubeSphere on your EKS Cluster
 
-## Create a new kubeconfig without `aws` command
-Let's say you have an EKS cluster which already has KubeSphere installed. And you've created a automatically generated kubeconfig following the above [documentation](https://docs.aws.amazon.com/eks/latest/userguide/create-kubeconfig.html). So now we can access EKS from your local computer.
+You need to deploy KubeSphere on your EKS cluster first. For more information about how to deploy KubeSphere on EKS, refer to [Deploy KubeSphere on AWS EKS](../../../installing-on-kubernetes/hosted-kubernetes/install-kubesphere-on-eks/#install-kubesphere-on-eks).
 
-```shell
-~:# kubectl get node
-```
+### Step 2: Prepare the EKS Member Cluster
 
-The output is similar to this:
-```
-NAME                                        STATUS   ROLES    AGE   VERSION
-ip-10-0-47-38.cn-north-1.compute.internal   Ready    <none>   11h   v1.18.8-eks-7c9bda
-ip-10-0-8-148.cn-north-1.compute.internal   Ready    <none>   78m   v1.18.8-eks-7c9bda
-```
-The above command will show you your EKS cluster nodes. 
+1. In order to manage the Member Cluster from the Host Cluster, you need to make `jwtSecret` the same between them. Therefore, get it first by executing the following command on your Host Cluster.
 
-The following section will get token of serviceaccount `kubesphere` created by KubeSphere. It has cluster admin access to the cluster, we are going to use it as our new kubeconfig token.
+   ```bash
+   kubectl -n kubesphere-system get cm kubesphere-config -o yaml | grep -v "apiVersion" | grep jwtSecret
+   ```
 
-```bash
-TOKEN=$(kubectl -n kubesphere-system get secret $(kubectl -n kubesphere-system get sa kubesphere -o jsonpath='{.secrets[0].name}') -o jsonpath='{.data.token}' | base64 -d)
-kubectl config set-credentials kubesphere --token=${TOKEN}
-kubectl config set-context --current --user=kubesphere
-```
+   The output is similar to the following:
 
-Check the new kubeconfig.
-```
-~:# cat ~/.kube/config
-```
+   ```yaml
+   jwtSecret: "QVguGh7qnURywHn2od9IiOX6X8f8wK8g"
+   ```
 
-If everything works perfectly, you'll see the new kubeconfig looks like the following. Pay attention to the user section, you can find we insert a new user `KubeSphere` and set it our current-context user.
+2. Log in to the KubeSphere console of the EKS cluster as `admin`. Click **Platform** in the upper left corner and then select **Clusters Management**.
 
-```yaml
-apiVersion: v1
-clusters:
-- cluster:
-    certificate-authority-data: LS0tLS1CRUdJTiBDRVJUSUZ...S0tLQo=
-    server: https://*.sk1.cn-north-1.eks.amazonaws.com.cn
-  name: arn:aws-cn:eks:cn-north-1:660450875567:cluster/EKS-LUSLVMT6
-contexts:
-- context:
-    cluster: arn:aws-cn:eks:cn-north-1:660450875567:cluster/EKS-LUSLVMT6
-    user: kubesphere
-  name: arn:aws-cn:eks:cn-north-1:660450875567:cluster/EKS-LUSLVMT6
-current-context: arn:aws-cn:eks:cn-north-1:660450875567:cluster/EKS-LUSLVMT6
-kind: Config
-preferences: {}
-users:
-- name: arn:aws-cn:eks:cn-north-1:660450875567:cluster/EKS-LUSLVMT6
-  user:
-    exec:
-      apiVersion: client.authentication.k8s.io/v1alpha1
-      args:
-      - --region
-      - cn-north-1
-      - eks
-      - get-token
-      - --cluster-name
-      - EKS-LUSLVMT6
-      command: aws
-      env: null
-- name: kubesphere
-  user:
-    token: eyJhbGciOiJSUzI1NiIsImtpZCI6ImlCRHF4SlE5a0JFNDlSM2xKWnY1Vkt5NTJrcDNqRS1Ta25IYkg1akhNRmsifQ.eyJpc3M................9KQtFULW544G-FBwURd6ArjgQ3Ay6NHYWZe3gWCHLmag9gF-hnzxequ7oN0LiJrA-al1qGeQv-8eiOFqX3RPCQgbybmix8qw5U6f-Rwvb47-xA
-```
+3. Go to **CRDs**, input `ClusterConfiguration` in the search bar, and then press **Enter** on your keyboard. Click **ClusterConfiguration** to go to its detail page.
 
-Double check our new kubeconfig do has the access to EKS.
-```shell
-~:# kubectl get nodes
-```
+   ![search-config](/images/docs/multicluster-management/import-cloud-hosted-k8s/import-gke/search-config.png)
 
-The output is similar to this:
-```
-NAME                                        STATUS   ROLES    AGE   VERSION
-ip-10-0-47-38.cn-north-1.compute.internal   Ready    <none>   11h   v1.18.8-eks-7c9bda
-ip-10-0-8-148.cn-north-1.compute.internal   Ready    <none>   78m   v1.18.8-eks-7c9bda
-```
+4. Click the three dots on the right and then select **Edit YAML** to edit `ks-installer`. 
 
-After new kubeconfig is created, we can use it to directly import EKS to KubeSphere. Don't forget to [sync](https://github.com/kubesphere/community/blob/master/sig-multicluster/how-to-setup-multicluster-on-kubesphere/README.md#MemberCluster) `jwtSecret` with host cluster
+   ![click-edit](/images/docs/multicluster-management/import-cloud-hosted-k8s/import-gke/click-edit.png)
 
-![eks import](/images/docs/eks-kubeconfig.png)
+5. In the YAML file of `ks-installer`, change the value of `jwtSecret` to the corresponding value shown above and set the value of `clusterRole` to `member`.
 
-And wola!
+   ```yaml
+   authentication:
+     jwtSecret: QVguGh7qnURywHn2od9IiOX6X8f8wK8g
+   ```
 
-![eks overview](/images/docs/eks-overview.png)
+   ```yaml
+   multicluster:
+     clusterRole: member
+   ```
+
+   {{< notice note >}}
+
+   Make sure you use the value of your own `jwtSecret`. You need to wait for a while so that the changes can take effect.
+
+   {{</ notice >}}
+
+### Step 3: Create a new kubeconfig file
+
+1. [Amazon EKS](https://docs.aws.amazon.com/eks/index.html) doesn’t provide a built-in kubeconfig file as a standard kubeadm cluster does. Nevertheless, you can create a kubeconfig file by referring to this [documentation](https://docs.aws.amazon.com/eks/latest/userguide/create-kubeconfig.html). The generated kubeconfig file will be like the following:
+
+   ```yaml
+   apiVersion: v1
+   clusters:
+   - cluster:
+       server: <endpoint-url>
+       certificate-authority-data: <base64-encoded-ca-cert>
+     name: kubernetes
+   contexts:
+   - context:
+       cluster: kubernetes
+       user: aws
+     name: aws
+   current-context: aws
+   kind: Config
+   preferences: {}
+   users:
+   - name: aws
+     user:
+       exec:
+         apiVersion: client.authentication.k8s.io/v1alpha1
+         command: aws
+         args:
+           - "eks"
+           - "get-token"
+           - "--cluster-name"
+           - "<cluster-name>"
+           # - "--role"
+           # - "<role-arn>"
+         # env:
+           # - name: AWS_PROFILE
+           #   value: "<aws-profile>"
+   ```
+
+   However, this automatically generated kubeconfig file requires the command `aws` (aws CLI tools) to be installed on every commputer that wants to use this kubeconfig.
+
+2. Run the following commands on your local computer to get the token of the serviceaccount `kubesphere` created by KubeSphere. It has the cluster admin access to the cluster and will be used as the new kubeconfig token.
+
+   ```bash
+   TOKEN=$(kubectl -n kubesphere-system get secret $(kubectl -n kubesphere-system get sa kubesphere -o jsonpath='{.secrets[0].name}') -o jsonpath='{.data.token}' | base64 -d)
+   kubectl config set-credentials kubesphere --token=${TOKEN}
+   kubectl config set-context --current --user=kubesphere
+   ```
+
+3. Retrieve the new kubeconfig file by running the following command:
+
+   ```bash
+   cat ~/.kube/config
+   ```
+
+   The output is similar to the following and you can see that a new user `kubesphere` is inserted and set as the current-context user:
+
+   ```yaml
+   apiVersion: v1
+   clusters:
+   - cluster:
+       certificate-authority-data: LS0tLS1CRUdJTiBDRVJUSUZ...S0tLQo=
+       server: https://*.sk1.cn-north-1.eks.amazonaws.com.cn
+     name: arn:aws-cn:eks:cn-north-1:660450875567:cluster/EKS-LUSLVMT6
+   contexts:
+   - context:
+       cluster: arn:aws-cn:eks:cn-north-1:660450875567:cluster/EKS-LUSLVMT6
+       user: kubesphere
+     name: arn:aws-cn:eks:cn-north-1:660450875567:cluster/EKS-LUSLVMT6
+   current-context: arn:aws-cn:eks:cn-north-1:660450875567:cluster/EKS-LUSLVMT6
+   kind: Config
+   preferences: {}
+   users:
+   - name: arn:aws-cn:eks:cn-north-1:660450875567:cluster/EKS-LUSLVMT6
+     user:
+       exec:
+         apiVersion: client.authentication.k8s.io/v1alpha1
+         args:
+         - --region
+         - cn-north-1
+         - eks
+         - get-token
+         - --cluster-name
+         - EKS-LUSLVMT6
+         command: aws
+         env: null
+   - name: kubesphere
+     user:
+       token: eyJhbGciOiJSUzI1NiIsImtpZCI6ImlCRHF4SlE5a0JFNDlSM2xKWnY1Vkt5NTJrcDNqRS1Ta25IYkg1akhNRmsifQ.eyJpc3M................9KQtFULW544G-FBwURd6ArjgQ3Ay6NHYWZe3gWCHLmag9gF-hnzxequ7oN0LiJrA-al1qGeQv-8eiOFqX3RPCQgbybmix8qw5U6f-Rwvb47-xA
+   ```
+
+   You can run the following command to check that the new kubeconfig does have access to the EKS cluster.
+
+   ```shell
+   kubectl get nodes
+   ```
+
+   The output is simialr to this:
+
+   ```
+   NAME                                        STATUS   ROLES    AGE   VERSION
+   ip-10-0-47-38.cn-north-1.compute.internal   Ready    <none>   11h   v1.18.8-eks-7c9bda
+   ip-10-0-8-148.cn-north-1.compute.internal   Ready    <none>   78m   v1.18.8-eks-7c9bda
+   ```
+
+### Step 4: Import the EKS Member Cluster
+
+1. Log in to the KubeSphere console on your Host Cluster as `admin`. Click **Platform** in the upper left corner and then select **Clusters Management**. On the **Clusters Management** page, click **Add Cluster**.
+
+   ![click-add-cluster](/images/docs/multicluster-management/import-cloud-hosted-k8s/import-gke/click-add-cluster.png)
+
+2. Input the basic information based on your needs and click **Next**.
+
+   ![input-info](/images/docs/multicluster-management/import-cloud-hosted-k8s/import-eks/input-info.png)
+
+3. In **Connection Method**, select **Direct connection to Kubernetes cluster**. Fill in the new kubeconfig file of the EKS Member Cluster and then click **Import**.
+
+   ![eks-kubeconfig](/images/docs/multicluster-management/import-cloud-hosted-k8s/import-eks/eks-kubeconfig.png)
+
+4. Wait for cluster initialization to finish.
+
+   ![eks-overview](/images/docs/multicluster-management/import-cloud-hosted-k8s/import-eks/eks-overview.png)
