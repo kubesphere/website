@@ -79,7 +79,7 @@ This document uses HPA based on CPU usage as an example. Operations for HPA base
 
 ## Verify HPA
 
-This section verifies whether HPA functions properly.
+This section uses a Deployment that sends requests the HPA Service to verify that HPA automatically adjusts the number of Pods to meet the resource usage target.
 
 ### Create a load generator Deployment
 
@@ -95,7 +95,7 @@ This section verifies whether HPA functions properly.
 
    ![busybox](/images/docs/project-user-guide/application-workloads/horizontal-pod-autoscaling/busybox.png)
 
-4. Scroll down in the dialog box, select **Start Command**, set **Run Command** to `sh,-c` and **Parameters** to `while true; do wget -q -O- http://<Target Service>.<Target project>.svc.cluster.local; done` (for example, `while true; do wget -q -O- http://hpa.demo-project.svc.cluster.local; done`).
+4. Scroll down in the dialog box, select **Start Command**, and set **Run Command** to `sh,-c` and **Parameters** to `while true; do wget -q -O- http://<Target Service>.<Target project>.svc.cluster.local; done` (for example, `while true; do wget -q -O- http://hpa.demo-project.svc.cluster.local; done`).
 
    ![start-command](/images/docs/project-user-guide/application-workloads/horizontal-pod-autoscaling/start-command.png)
 
