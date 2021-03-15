@@ -6,9 +6,9 @@ linkTitle: "构建基于微服务的应用"
 weight: 10140
 ---
 
-由于每个微服务都在处理应用的一部分功能，因此一个应用可以被划分为不同的组件。这些组件彼此独立，具有各自的职责和局限。在 KubeSphere 中，这类应用被称为**自制应用**，可以通过新创建的服务或者现有服务来构建自制应用。
+由于每个微服务都在处理应用的一部分功能，因此一个应用可以被划分为不同的组件。这些组件彼此独立，具有各自的职责和局限。在 KubeSphere 中，这类应用被称为**自制应用**，用户可以通过新创建的服务或者现有服务来构建自制应用。
 
-本教程演示了如何创建基于微服务的应用 Bookinfo（包含四种服务），以及如何设置自定义域名以访问该程序。
+本教程演示了如何创建基于微服务的应用 Bookinfo（包含四种服务），以及如何设置自定义域名以访问该应用。
 
 ## 准备工作
 
@@ -47,11 +47,11 @@ weight: 10140
 
 6. 点击**使用默认端口**。有关更多镜像设置的信息，请参见[容器镜像设置](../../../project-user-guide/application-workloads/container-image-settings/)。点击右下角的 **√** 和下一步以继续操作。
 
-7. 在**挂在存储**页面，[添加存储卷](../../../project-user-guide/storage/volumes/)或点击**下一步**以继续操作。
+7. 在**挂载存储**页面，[添加存储卷](../../../project-user-guide/storage/volumes/)或点击**下一步**以继续操作。
 
-8. 在**高级设置**页面，直接点击添加。
+8. 在**高级设置**页面，直接点击**添加**。
 
-9. 同样，为该应用添加其他三个微服务。以下是镜像信息：
+9. 同样，为该应用添加其他三个微服务。以下是相应的镜像信息：
 
    | 服务       | 名称      | 镜像                                             |
    | ---------- | --------- | ------------------------------------------------ |
@@ -77,7 +77,7 @@ weight: 10140
 
 13. 等待应用达到**就绪**状态。
 
-    ![status-active](/images/docs/project-user-guide/applications/create-a-microservices-based-app/status-active.png)
+    ![status-active](/images/docs/zh-cn/project-user-guide/applications/create-a-microservices-based-app/status-active.png)
 
 ## 访问应用
 
@@ -97,9 +97,9 @@ weight: 10140
 
 3. 在**应用组件**中，点击**点击访问**以访问该应用。
 
-   ![click-to-visit](/images/docs/project-user-guide/applications/create-a-microservices-based-app/click-to-visit.png)
+   ![click-to-visit](/images/docs/zh-cn/project-user-guide/applications/create-a-microservices-based-app/click-to-visit.png)
 
-   ![dashboard](/images/docs/project-user-guide/applications/create-a-microservices-based-app/dashboard.png)
+   ![dashboard](/images/docs/zh-cn/project-user-guide/applications/create-a-microservices-based-app/dashboard.png)
 
    {{< notice note >}}
 
@@ -109,4 +109,5 @@ weight: 10140
 
 4. 分别点击**普通用户**和**测试用户**以查看其他**服务**。
 
-   ![review-page](/images/docs/project-user-guide/applications/create-a-microservices-based-app/review-page.png)
+   ![review-page](/images/docs/zh-cn/project-user-guide/applications/create-a-microservices-based-app/review-page.png)
+
