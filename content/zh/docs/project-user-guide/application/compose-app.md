@@ -1,6 +1,6 @@
 ---
 title: "构建基于微服务的应用"
-keywords: 'KubeSphere, Kubernetes, service mesh, 微服务'
+keywords: 'KubeSphere, Kubernetes, 服务网格, 微服务'
 description: '构建基于微服务的应用'
 linkTitle: "构建基于微服务的应用"
 weight: 10140
@@ -41,11 +41,11 @@ weight: 10140
 
    {{< notice note >}}
 
-   输入镜像名称之后，必须按下键盘上的 **Enter** 键。
+   输入镜像名称之后，必须按下键盘上的**回车**键。
 
    {{</ notice >}} 
 
-6. 点击**使用默认端口**。有关更多镜像设置的信息，请参见[容器镜像设置](../../../project-user-guide/application-workloads/container-image-settings/)。点击右下角的 **√** 和下一步以继续操作。
+6. 点击**使用默认端口**。有关更多镜像设置的信息，请参见[容器镜像设置](../../../project-user-guide/application-workloads/container-image-settings/)。点击右下角的 **√** 和**下一步**以继续操作。
 
 7. 在**挂载存储**页面，[添加存储卷](../../../project-user-guide/storage/volumes/)或点击**下一步**以继续操作。
 
@@ -107,7 +107,7 @@ weight: 10140
 
    {{</ notice >}}
 
-4. 分别点击**普通用户**和**测试用户**以查看其他**服务**。
+4. 分别点击 **Normal user** 和 **Test user** 以查看其他**服务**。
 
    ![review-page](/images/docs/zh-cn/project-user-guide/applications/create-a-microservices-based-app/review-page.png)
 
