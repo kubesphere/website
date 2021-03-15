@@ -52,7 +52,7 @@ You've completed all steps in [Tutorial 1](admin-quick-start.md).
 
 ![](https://pek3b.qingstor.com/kubesphere-docs/png/20190717150124.png)
 
-3.2. Next we are going to expose this service outside of the cluster via NodePort. Enter into its service e.g. `grafana-l47bmc`, then click **More → Edit Internet Access**.
+3.2. Next we are going to expose this service outside of the cluster through a NodePort. Enter into its service e.g. `grafana-l47bmc`, then click **More → Edit Internet Access**.
 
 ![](https://pek3b.qingstor.com/kubesphere-docs/png/20190717150338.png)
 

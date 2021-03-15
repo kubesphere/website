@@ -367,7 +367,7 @@ On the **Code Quality** page, view the code analysis result of this example pipe
 
    ![view-deployment](/images/docs/devops-user-guide/using-devops/create-a-pipeline-using-graphical-editing-panels/view-deployment.jpg)
 
-3. In **Services**, you can find the port number of the example Service is exposed through NodePort. To access the Service, visit `node IP:port number`.
+3. In **Services**, you can find the port number of the example Service is exposed through a NodePort. To access the Service, visit `node IP:port number`.
 
    ![service-exposed](/images/docs/devops-user-guide/using-devops/create-a-pipeline-using-graphical-editing-panels/service-exposed.jpg)
 

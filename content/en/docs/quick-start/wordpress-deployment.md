@@ -174,7 +174,7 @@ In **Workloads**, check the status of `wordpress-v1` and `mysql-v1` in **Deploym
 
 ![mysql-running](/images/docs/quickstart/wordpress-deployment/mysql-running.png)
 
-### Step 5: Access WordPress through NodePort
+### Step 5: Access WordPress through a NodePort
 
 1. To access the Service outside the cluster, navigate to **Services** first. Click the three dots on the right of `wordpress` and select **Edit Internet Access**.
 
