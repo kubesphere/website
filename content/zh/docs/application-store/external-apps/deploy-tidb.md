@@ -1,31 +1,31 @@
 ---
 title: "在 KubeSphere 中部署 TiDB Operator 和 TiDB 集群"
-keywords: 'KubeSphere, Kubernetes, TiDB, TiDB Operator, TiDB Cluster'
+keywords: 'KubeSphere, Kubernetes, TiDB, TiDB Operator, TiDB 集群'
 description: '如何在 KubeSphere 中部署 TiDB Operator 和 TiDB 集群'
 linkTitle: "部署 TiDB Operator 和 TiDB 集群"
 weight: 14320
 ---
 
-[TiDB](https://en.pingcap.com/) is a cloud-native, open-source NewSQL database that supports Hybrid Transactional and Analytical Processing (HTAP) workloads. It features horizontal scalability, strong consistency, and high availability.
+[TiDB](https://en.pingcap.com/) 是一个支持混合事务和分析处理 (HTAP) 工作负载的云原生、开源 NewSQL 数据库，具有水平扩缩性、强一致性以及高可用性。
 
-This tutorial demonstrates how to deploy TiDB Operator and a TiDB Cluster on KubeSphere.
+本教程演示了如何在 KubeSphere 上部署 TiDB Operator 和 TiDB 集群。
 
-## Prerequisites
+## **准备工作**
 
-- You need to enable [the OpenPitrix system](../../../pluggable-components/app-store/).
-- You need to create a workspace, a project, and two user accounts (`ws-admin` and `project-regular`) for this tutorial. The account `ws-admin` must be granted the role of `workspace-admin` in the workspace, and the account `project-regular` must be invited to the project with the role of `operator`. If they are not ready, refer to [Create Workspaces, Projects, Accounts and Roles](../../../quick-start/create-workspace-and-project/).
+- 您需要启用 [OpenPitrix 系统](../../../pluggable-components/app-store/)。
+- 您需要为本教程创建一个企业空间、一个项目和两个帐户（`ws-admin` 和 `project-regular`）。帐户 `ws-admin` 必须在企业空间中被赋予 `workspace-admin` 角色，帐户 `project-regular` 必须被邀请至项目中赋予 `operator` 角色。若还未创建好，请参考[创建企业空间、项目、帐户和角色](../../../quick-start/create-workspace-and-project/)。
 
-## Hands-on Lab
+## **动手实验**
 
-### Step 1: Install TiDB Operator CRD
+### **步骤** **1**：安装 **TiDB Operator CRD**
 
-1. Log in to KubeSphere Web console as `admin`, and use **Kubectl** from the **Toolbox** in the bottom right corner to execute the following command to install TiDB Operator CRD:
+1. 以 `admin` 身份登录 KubeSphere 的 Web 控制台，使用右下角**工具箱**中的 **Kubectl** 执行以下命令来安装 TiDB Operator CRD：
 
    ```bash
    kubectl apply -f https://raw.githubusercontent.com/pingcap/tidb-operator/v1.1.6/manifests/crd.yaml
    ```
 
-2. You can see the expected output as below:
+2. 预期输出如下所示：
 
    ```bash
    customresourcedefinition.apiextensions.k8s.io/tidbclusters.pingcap.com created
@@ -37,83 +37,83 @@ This tutorial demonstrates how to deploy TiDB Operator and a TiDB Cluster on Kub
    customresourcedefinition.apiextensions.k8s.io/tidbclusterautoscalers.pingcap.com created
    ```
 
-### Step 2: Add an app repository
+### **步骤** **2**：添加应用仓库
 
-1. Log out of KubeSphere and log back in as `ws-admin`. In your workspace, go to **App Repos** under **Apps Management**, and then click **Add Repo**.
+1. 登出 KubeSphere，再以 `ws-admin` 身份登录。在企业空间中，访问**应用管理**下的**应用仓库**，然后点击**添加仓库**。
 
-   ![add-repo](/images/docs/appstore/external-apps/deploy-tidb-operator-and-cluster/add-repo.PNG)
+   ![add-repo](/images/docs/zh-cn/appstore/external-apps/deploy-tidb-operator-and-cluster/add-repo.png)
 
-2. In the dialog that appears, enter `pingcap` for the app repository name and `https://charts.pingcap.org` for the PingCAP Helm repository URL. Click **Validate** to verify the URL and you will see a green check mark next to the URL if it is available. Click **OK** to continue.
+2. 在出现的对话框中，输入 `pingcap` 作为应用仓库名称，输入 `https://charts.pingcap.org` 作为 PingCAP Helm 仓库的 URL。点击**验证**以验证 URL，如果可用，您将会在 URL 旁边看到一个绿色的对号。点击**确定**以继续。
 
-   ![add-pingcap-repo](/images/docs/appstore/external-apps/deploy-tidb-operator-and-cluster/add-pingcap-repo.PNG)
+   ![add-pingcap-repo](/images/docs/zh-cn/appstore/external-apps/deploy-tidb-operator-and-cluster/add-pingcap-repo.png)
 
-3. Your repository displays in the list after successfully imported to KubeSphere.
+3. 将仓库成功导入到 KubeSphere 之后，它将显示在列表中。
 
-   ![added-pingcap-repo](/images/docs/appstore/external-apps/deploy-tidb-operator-and-cluster/added-pingcap-repo.PNG)
+   ![added-pingcap-repo](/images/docs/zh-cn/appstore/external-apps/deploy-tidb-operator-and-cluster/added-pingcap-repo.png)
 
-### Step 3: Deploy TiDB Operator
+### **步骤** **3**：部署 **TiDB Operator**
 
-1. Log out of KubeSphere and log back in as `project-regular`. In your project, go to **Applications** under **Application Workloads** and click **Deploy New Application**.
+1. 登出 KubeSphere，再以 `project-regular` 身份登录。在您的项目中，访问**应用负载**下的**应用**，点击**部署新应用**。
 
-   ![deploy-app](/images/docs/appstore/external-apps/deploy-tidb-operator-and-cluster/deploy-app.PNG)
+   ![deploy-app](/images/docs/zh-cn/appstore/external-apps/deploy-tidb-operator-and-cluster/deploy-app.png)
 
-2. In the dialog that appears, select **From App Templates**.
+2. 在出现的对话框中，选择**来自应用模板**。
 
-   ![from-app-templates](/images/docs/appstore/external-apps/deploy-tidb-operator-and-cluster/from-app-templates.PNG)
+   ![from-app-templates](/images/docs/zh-cn/appstore/external-apps/deploy-tidb-operator-and-cluster/from-app-templates.png)
 
-3. Select `pingcap` from the drop-down list, then click **tidb-operator**.
+3. 从下拉菜单中选择 `pingcap`，然后点击 **tidb-operator**。
 
-   ![click-tidb-operator](/images/docs/appstore/external-apps/deploy-tidb-operator-and-cluster/click-tidb-operator.PNG)
+   ![click-tidb-operator](/images/docs/zh-cn/appstore/external-apps/deploy-tidb-operator-and-cluster/click-tidb-operator.png)
 
    {{< notice note >}}
 
-   This tutorial only demonstrates how to deploy TiDB Operator and a TiDB cluster. You can also deploy other tools based on your needs.
+   本教程仅演示如何部署 TiDB Operator 和 TiDB 集群。您也可以按需部署其他工具。
 
    {{</ notice >}}
 
-4. On the **Chart Files** tab, you can view the configuration from the console directly or download the default `values.yaml` file by clicking the icon in the upper right corner. Under **Versions**, select a version number from the drop-down list and click **Deploy**.
+4. 在**配置文件**选项卡，您可以直接从控制台查看配置，也可以通过点击右上角的图标以下载默认 `values.yaml` 文件。在**版本**下，从下拉菜单中选择一个版本号，点击**部署**。
 
-   ![select-version](/images/docs/appstore/external-apps/deploy-tidb-operator-and-cluster/select-version.PNG)
+   ![select-version](/images/docs/zh-cn/appstore/external-apps/deploy-tidb-operator-and-cluster/select-version.png)
 
-5. On the **Basic Info** page, confirm the app name, app version, and deployment location. Click **Next** to continue.
+5. 在**基本信息**页面，确认应用名称、应用版本以及部署位置。点击**下一步**以继续。
 
-   ![basic-info](/images/docs/appstore/external-apps/deploy-tidb-operator-and-cluster/basic-info.PNG)
+   ![basic-info](/images/docs/zh-cn/appstore/external-apps/deploy-tidb-operator-and-cluster/basic-info.png)
 
-6. On the **App Config** page, you can either edit the `values.yaml` file, or click **Deploy** directly with the default configurations.
+6. 在**应用配置**页面，您可以编辑 `values.yaml` 文件，也可以直接点击**部署**使用默认配置。
 
-   ![check-config-file](/images/docs/appstore/external-apps/deploy-tidb-operator-and-cluster/check-config-file.PNG)
+   ![check-config-file](/images/docs/zh-cn/appstore/external-apps/deploy-tidb-operator-and-cluster/check-config-file.png)
 
-7. Wait for TiDB Operator to be up and running.
+7. 等待 TiDB Operator 正常运行。
 
-   ![tidb-operator-running](/images/docs/appstore/external-apps/deploy-tidb-operator-and-cluster/tidb-operator-running.PNG)
+   ![tidb-operator-running](/images/docs/zh-cn/appstore/external-apps/deploy-tidb-operator-and-cluster/tidb-operator-running.png)
 
-8. Go to **Workloads**, and you can see two Deployments created for TiDB Operator.
+8. 访问**工作负载**，可以看到为 TiDB Operator 创建的两个部署。
 
-   ![tidb-deployment](/images/docs/appstore/external-apps/deploy-tidb-operator-and-cluster/tidb-deployment.PNG)
+   ![tidb-deployment](/images/docs/zh-cn/appstore/external-apps/deploy-tidb-operator-and-cluster/tidb-deployment.png)
 
-### Step 4: Deploy a TiDB cluster
+### **步骤** **4：部署** **TiDB** **集群**
 
-The process of deploying a TiDB cluster is similar to deploying TiDB Operator.
+部署 TiDB 集群的过程与部署 TiDB Operator 的过程相似。
 
-1. Go to **Applications** under **Application Workloads**, click **Deploy New Application** again, and then select **From App Templates**.
+1. 访问**应用负载**下的**应用**，再次点击**部署新应用**，然后选择**来自应用模板**。
 
-   ![deploy-app-again](/images/docs/appstore/external-apps/deploy-tidb-operator-and-cluster/deploy-app-again.PNG)
+   ![deploy-app-again](/images/docs/zh-cn/appstore/external-apps/deploy-tidb-operator-and-cluster/deploy-app-again.png)
 
-   ![from-app-templates-2](/images/docs/appstore/external-apps/deploy-tidb-operator-and-cluster/from-app-templates-2.PNG)
+   ![from-app-templates-2](/images/docs/zh-cn/appstore/external-apps/deploy-tidb-operator-and-cluster/from-app-templates-2.png)
 
-2. From the PingCAP repository, click **tidb-cluster**.
+2. 在 PingCAP 仓库中，点击 **tidb-cluster**。
 
-   ![click-tidb-cluster](/images/docs/appstore/external-apps/deploy-tidb-operator-and-cluster/click-tidb-cluster.PNG)
+   ![click-tidb-cluster](/images/docs/zh-cn/appstore/external-apps/deploy-tidb-operator-and-cluster/click-tidb-cluster.png)
 
-3. On the **Chart Files** tab, you can view the configuration and download the `values.yaml` file. Click **Deploy** to continue.
+3. 在**配置文件**选项卡，可以查看配置和下载 `values.yaml` 文件。点击**部署**以继续。
 
-   ![download-yaml-file](/images/docs/appstore/external-apps/deploy-tidb-operator-and-cluster/download-yaml-file.PNG)
+   ![download-yaml-file](/images/docs/zh-cn/appstore/external-apps/deploy-tidb-operator-and-cluster/download-yaml-file.png)
 
-4. On the **Basic Info** page, confirm the app name, app version, and deployment location. Click **Next** to continue.
+4. 在**基本信息**页面，确认应用名称、应用版本和部署位置。点击**下一步**以继续。
 
-   ![tidb-cluster-info](/images/docs/appstore/external-apps/deploy-tidb-operator-and-cluster/tidb-cluster-info.PNG)
+   ![tidb-cluster-info](/images/docs/zh-cn/appstore/external-apps/deploy-tidb-operator-and-cluster/tidb-cluster-info.png)
 
-5. Some TiDB components require [persistent volumes](../../../cluster-administration/persistent-volume-and-storage-class/). You can run the following command to view your storage classes.
+5. 一些 TiDB 组件需要[持久卷](../../../cluster-administration/persistent-volume-and-storage-class/)。您可以运行以下命令查看存储类型。
 
    ```
    / # kubectl get sc
@@ -125,73 +125,73 @@ The process of deploying a TiDB cluster is similar to deploying TiDB Operator.
    csi-super-high-perf        csi-qingcloud   Delete          Immediate           true                   71m
    ```
 
-6. On the **App Config** page, change the default value of the field `storageClassName` from `local-storage` to the name of your storage class. For example, you can change it to `csi-qingcloud` based on the above output.
+6. 在**应用配置**页面，将字段 `storageClassName` 的默认值从 `local-storage` 更改为您的存储类型名称。例如，您可以根据以上输出将其更改为 `csi-qingcloud`。
 
-   ![tidb-cluster-config](/images/docs/appstore/external-apps/deploy-tidb-operator-and-cluster/tidb-cluster-config.PNG)
+   ![tidb-cluster-config](/images/docs/zh-cn/appstore/external-apps/deploy-tidb-operator-and-cluster/tidb-cluster-config.png)
 
    {{< notice note >}}
 
-   Only the field `storageClassName` is changed to provide external persistent storage. If you want to deploy each TiDB component, such as [TiKV](https://docs.pingcap.com/tidb/dev/tidb-architecture#tikv-server) and [Placement Driver](https://docs.pingcap.com/tidb/dev/tidb-architecture#placement-driver-pd-server), to individual nodes, specify the field `nodeAffinity`.
+   此处仅更改字段 `storageClassName` 以提供外部持久化存储。若想在单个节点上部署每个 TiDB 组件（例如 [TiKV](https://docs.pingcap.com/tidb/dev/tidb-architecture#tikv-server) 和 [Placement Driver](https://docs.pingcap.com/tidb/dev/tidb-architecture#placement-driver-pd-server)），请指定 `nodeAffinity` 字段。
 
    {{</ notice >}} 
 
-7. Click **Deploy** and you can see two apps in the list as shown below:
+7. 点击**部署**，然后就可以在列表中看到如下所示的两个应用：
 
-   ![tidb-cluster-app-running](/images/docs/appstore/external-apps/deploy-tidb-operator-and-cluster/tidb-cluster-app-running.PNG)
+   ![tidb-cluster-app-running](/images/docs/zh-cn/appstore/external-apps/deploy-tidb-operator-and-cluster/tidb-cluster-app-running.png)
 
-### Step 5: View TiDB cluster status
+## 步骤 5：查看 TiDB 集群状态
 
-1. Go to **Workloads** under **Application Workloads**, and verify that all TiDB cluster Deployments are up and running.
+1. 访问**应用负载**下的**工作负载**，确认所有的 TiDB 集群部署都在正常运行。
 
    ![tidb-cluster-deployments-running](/images/docs/appstore/external-apps/deploy-tidb-operator-and-cluster/tidb-cluster-deployments-running.PNG)
 
-2. Switch to the **StatefulSets** tab, and you can see TiDB, TiKV and PD are up and running.
+2. 切换到**有状态副本集**选项卡，可以看到 TiDB、TiKV 和 PD 均正常运行。
 
    ![tidb-statefulsets](/images/docs/appstore/external-apps/deploy-tidb-operator-and-cluster/tidb-statefulsets.PNG)
 
    {{< notice note >}}
 
-   TiKV and TiDB will be created automatically and it may take a while before they display in the list.
+   TiKV 和 TiDB 会自动创建，可能要过一段时间才能在列表中显示。
 
    {{</ notice >}}
 
-3. Click a single StatefulSet to go to its detail page. You can see the metrics in line charts over a period of time under the **Monitoring** tab.
+3. 点击单个有状态副本集以访问其详情页。在**监控**选项卡下，可以看到一段时间内以折线图显示的指标。
 
-   TiDB metrics:
+   TiDB 指标：
 
    ![tidb-metrics](/images/docs/appstore/external-apps/deploy-tidb-operator-and-cluster/tidb-metrics.PNG)
 
-   TiKV metrics:
+   TiKV 指标：
 
    ![tikv-metrics](/images/docs/appstore/external-apps/deploy-tidb-operator-and-cluster/tikv-metrics.PNG)
 
-   PD metrics:
+   PD 指标：
 
    ![pd-metrics](/images/docs/appstore/external-apps/deploy-tidb-operator-and-cluster/pd-metrics.PNG)
 
-4. In **Pods** under **Application Workloads**, you can see the TiDB cluster contains two TiDB Pods, three TiKV Pods, and three PD Pods.
+4. 在**应用负载**下的**容器组**中，可以看到 TiDB 集群包含两个 TiDB Pod、三个 TiKV Pod 和三个 PD Pod。
 
    ![tidb-pod-list](/images/docs/appstore/external-apps/deploy-tidb-operator-and-cluster/tidb-pod-list.PNG)
 
-5. In **Volumes** under **Storage**, you can see TiKV and PD are using persistent volumes.
+5. 在**存储管理**下的**存储卷**中，可以看到 TiKV 和 PD 都在使用持久卷。
 
    ![tidb-storage-usage](/images/docs/appstore/external-apps/deploy-tidb-operator-and-cluster/tidb-storage-usage.PNG)
 
-6. Volume usage is also monitored. Click a volume item to go to its detail page. Here is an example of TiKV:
+6. 同时，也会监控存储卷的使用情况。点击一个存储卷以访问其详情页。以 TiKV 为例：
 
    ![tikv-volume-status](/images/docs/appstore/external-apps/deploy-tidb-operator-and-cluster/tikv-volume-status.PNG)
 
-7. On the **Overview** page of the project, you can see a list of resource usage in the current project.
+7. 在项目的**概览**页面，可以看到当前项目的资源使用情况列表。
 
    ![tidb-project-resource-usage](/images/docs/appstore/external-apps/deploy-tidb-operator-and-cluster/tidb-project-resource-usage.PNG)
 
-### Step 6: Access the TiDB cluster
+### 步骤 6: 访问 TiDB 集群
 
-1. Go to **Services** under **Application Workloads**, and you can see detailed information of all Services. As the Service type is set to `NodePort` by default, you can access it through the Node IP address outside the cluster.
+1. 访问**应用负载**下的**服务**，可以看到所有服务的详细信息。由于服务类型默认设置为 `NodePort`，因此您可以通过集群外部的 Node IP 地址进行访问。
 
    ![tidb-service](/images/docs/appstore/external-apps/deploy-tidb-operator-and-cluster/tidb-service.PNG)
 
-3. TiDB integrates Prometheus and Grafana to monitor performance of the database cluster. For example, you can access Grafana through `{$NodeIP}:{Nodeport}` to view metrics.
+3. TiDB 集成了 Prometheus 和 Grafana 以监控数据库集群的性能。例如，您可以通过 `{$ NodeIP}：{Nodeport}` 访问 Grafana 以查看指标。
 
    ![tidb-service-grafana](/images/docs/appstore/external-apps/deploy-tidb-operator-and-cluster/tidb-service-grafana.PNG)
 
@@ -199,7 +199,7 @@ The process of deploying a TiDB cluster is similar to deploying TiDB Operator.
 
    {{< notice note >}}
 
-   You may need to open the port in your security groups and configure related port forwarding rules depending on where your Kubernetes cluster is deployed.
+   根据 Kubernetes 集群部署位置的不同，您可能需要在安全组中打开端口，并配置相关的端口转发规则。
 
    {{</ notice >}}
 
