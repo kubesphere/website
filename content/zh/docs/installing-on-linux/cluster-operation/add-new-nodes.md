@@ -6,15 +6,15 @@ linkTitle: "添加新节点"
 weight: 3410
 ---
 
-KubeSphere 使用一段时间之后，由于工作负载不断增加，您可能需要水平扩缩集群。自 KubeSphere v3.0.0 起，您可以使用全新的安装程序 [KubeKey](https://github.com/kubesphere/kubekey) 将新节点添加到集群。从根本上说，该操作是基于 Kubelet 的注册机制。换言之，新节点将自动加入现有的 Kubernetes 集群。KubeSphere 支持混合环境，这意味着新添加的主机操作系统可以是 CentOS 或者 Ubuntu。
+KubeSphere 使用一段时间之后，由于工作负载不断增加，您可能需要水平扩展集群。自 KubeSphere v3.0.0 起，您可以使用全新的安装程序 [KubeKey](https://github.com/kubesphere/kubekey) 将新节点添加到集群。从根本上说，该操作是基于 Kubelet 的注册机制。换言之，新节点将自动加入现有的 Kubernetes 集群。KubeSphere 支持混合环境，这意味着新添加的主机操作系统可以是 CentOS 或者 Ubuntu。
 
-本教程演示了如何将新节点添加到单节点集群。若要水平扩缩多节点集群，操作步骤基本相同。
+本教程演示了如何将新节点添加到单节点集群。若要水平扩展多节点集群，操作步骤基本相同。
 
 ## 准备工作
 
 - 您需要一个单节点集群。有关更多信息，请参见[在 Linux 上以 All-in-One 模式安装 KubeSphere](../../../quick-start/all-in-one-on-linux/)。
 
-- 您需要已经[下载了 KubeKey](../../../installing-on-linux/introduction/multioverview/#step-2-download-kubekey)。
+- 您需要已经[下载了 KubeKey](../../../installing-on-linux/introduction/multioverview/#步骤-2下载-kubekey)。
 
 ## 添加工作节点
 
@@ -52,7 +52,7 @@ KubeSphere 使用一段时间之后，由于工作负载不断增加，您可能
 
    {{< notice note >}}
 
-- 有关更多配置文件的信息，请参见[编辑配置文件](../../../installing-on-linux/introduction/multioverview/#2-edit-the-configuration-file)。
+- 有关更多配置文件的信息，请参见[编辑配置文件](../../../installing-on-linux/introduction/multioverview/#2-编辑配置文件)。
 
 - 添加新节点时，请勿修改现有节点的主机名。
 
