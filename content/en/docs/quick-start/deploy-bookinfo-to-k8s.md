@@ -107,3 +107,4 @@ Do not copy the content above directly to your local host file. Replace it with 
 
 KubeSphere provides three kinds of grayscale strategies based on Istio, including [blue-green deployment](../../project-user-guide/grayscale-release/blue-green-deployment/), [canary release](../../project-user-guide/grayscale-release/canary-release/) and [traffic mirroring](../../project-user-guide/grayscale-release/traffic-mirroring/).
     {{</ notice >}}
+
