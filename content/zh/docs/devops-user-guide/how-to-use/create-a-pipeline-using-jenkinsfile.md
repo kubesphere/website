@@ -179,6 +179,12 @@ KubeSphere 中可以创建两种类型的流水线：一种是本教程中介绍
    - **PR 本身的源代码版本**：根据 PR 本身的源代码创建并运行流水线。
    - **发现 PR 时会创建两个流水线**：KubeSphere 创建两个流水线，一个流水线使用 PR 与目标分支合并后的源代码版本，另一个使用 PR 本身的源代码版本。
 
+   {{< notice note >}}
+
+   您需要选择 GitHub 作为代码仓库才能启用此处的**行为策略**设置。
+
+   {{</ notice >}}
+
 7. 向下滚动到**脚本路径**。该字段指定代码仓库中的 Jenkinsfile 路径。它表示仓库的根目录。如果文件位置变更，则脚本路径也需要更改。请将其更改为 `Jenkinsfile-online`，这是示例仓库中位于根目录下的 Jenkinsfile 的文件名。
 
    ![Jenkinsfile-online](/images/docs/zh-cn/devops-user-guide/use-devops/create-a-pipeline-using-a-jenkinsfile/jenkinsfile-online.PNG)
