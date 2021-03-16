@@ -30,7 +30,7 @@ WordPress（使用 PHP 语言编写）是免费、开源的内容管理系统，
 
 #### 创建 MySQL 密钥
 
-环境变量 `WORDPRESS_DB_PASSWORD` 是连接到 WordPress 数据库的密码。在该步骤中，您需要创建一个密钥来保存将在 MySQL Pod 模板中使用的环境变量。
+环境变量 `WORDPRESS_DB_PASSWORD` 是连接到 WordPress 数据库的密码。在此步骤中，您需要创建一个密钥来保存将在 MySQL Pod 模板中使用的环境变量。
 
 1. 使用 `project-regular` 帐户登录 KubeSphere 控制台，访问 `demo-project` 的详情页并导航到**配置中心**。在**密钥**中，点击右侧的**创建**。
 
