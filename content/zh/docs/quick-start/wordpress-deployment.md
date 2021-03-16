@@ -171,7 +171,7 @@ WordPress（使用 PHP 语言编写）是免费、开源的内容管理系统，
 
 ### 步骤 5：通过 NodePort 访问 WordPress
 
-1. 若要访问集群外的服务，请首先导航到**服务**。点击 `wordpress` 右侧的三个点后，选择**编辑外网访问**。
+1. 若要在集群外访问服务，请首先导航到**服务**。点击 `wordpress` 右侧的三个点后，选择**编辑外网访问**。
 
     ![edit-internet-access](/images/docs/zh-cn/quickstart/wordpress-deployment/edit-internet-access.png)
 
