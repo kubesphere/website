@@ -6,7 +6,7 @@ description: "本教程用于安装高可用性集群"
 Weight: 3230
 ---
 
-由于对于生产环境，我们需要考虑集群的高可用性。教你部署如何在华为云 ECS 实例服务快速部署一套高可用的生产环境
+由于对于生产环境，我们需要考虑集群的高可用性。教您部署如何在华为云 ECS 实例服务快速部署一套高可用的生产环境
 Kubernetes 服务需要做到高可用，需要保证 kube-apiserver 的 HA ，推荐华为云负载均衡器服务.
 
 ## 前提条件
@@ -273,7 +273,7 @@ spec:
 如本文开头的前提条件所说，对于生产环境，我们建议您准备持久性存储，可参考以下说明进行配置。若搭建开发和测试，您可以直接使用默认集成的 OpenEBS 准备 LocalPV，则可以跳过这小节。
 
 {{< notice note >}}
-如果你有已有存储服务端，例如华为云可使用 [弹性文件存储（SFS）](https://support.huaweicloud.com/productdesc-sfs/zh-cn_topic_0034428718.html) 来作为存储服务。继续编辑上述 `config-sample.yaml` 文件，找到 `[addons]` 字段，这里支持定义任何持久化存储的插件或客户端，如 CSI、NFS Client、Ceph、GlusterFS，您可以根据您自己的持久化存储服务类型，并参考 [持久化存储服务](https://kubesphere.com.cn/docs/installing-on-linux/introduction/storage-configuration/) 中对应的示例 yaml 文件进行设置。
+如果您有已有存储服务端，例如华为云可使用 [弹性文件存储（SFS）](https://support.huaweicloud.com/productdesc-sfs/zh-cn_topic_0034428718.html) 来作为存储服务。继续编辑上述 `config-sample.yaml` 文件，找到 `[addons]` 字段，这里支持定义任何持久化存储的插件或客户端，如 CSI、NFS Client、Ceph、GlusterFS，您可以根据您自己的持久化存储服务类型，并参考 [持久化存储服务](https://kubesphere.com.cn/docs/installing-on-linux/introduction/storage-configuration/) 中对应的示例 yaml 文件进行设置。
 {{</ notice >}}
 
 ###  执行命令创建集群

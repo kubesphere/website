@@ -91,7 +91,7 @@ WordPress（使用 PHP 语言编写）是免费、开源的内容管理系统，
     ![add-container](/images/docs/zh-cn/quickstart/wordpress-deployment/add-container.png)
 
     {{< notice note >}}
-    在**高级设置**中，请确保内存限制不小于 1000 Mi，否则 MySQL 可能因内存不足而无法启动。
+在**高级设置**中，请确保内存限制不小于 1000 Mi，否则 MySQL 可能因内存不足而无法启动。
     {{</ notice >}}
 
 8. 向下滚动到**环境变量**，点击**引用配置文件或密匙**。输入名称 `MYSQL_ROOT_PASSWORD`，然后选择资源 `mysql-secret` 和前面步骤中创建的密钥 `MYSQL_ROOT_PASSWORD`，完成后点击 **√** 保存配置，最后点击**下一步**继续。
@@ -128,7 +128,7 @@ WordPress（使用 PHP 语言编写）是免费、开源的内容管理系统，
     - 点击**添加环境变量**，分别输入 `WORDPRESS_DB_HOST` 和 `mysql` 作为键 (Key) 和值 (Value)。
 
     {{< notice warning >}}
-    对于此处添加的第二个环境变量，该值必须与步骤 5 中创建 MySQL 有状态服务设置的名称完全相同。否则，WordPress 将无法连接到 MySQL 对应的数据库。
+对于此处添加的第二个环境变量，该值必须与步骤 5 中创建 MySQL 有状态服务设置的名称完全相同。否则，WordPress 将无法连接到 MySQL 对应的数据库。
     {{</ notice >}}
 
     ![environment-varss](/images/docs/zh-cn/quickstart/wordpress-deployment/environment-varss.png)
