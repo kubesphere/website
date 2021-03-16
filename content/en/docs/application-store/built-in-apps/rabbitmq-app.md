@@ -50,7 +50,7 @@ This tutorial walks you through an example of how to deploy RabbitMQ from the Ap
 
 ### Step 2: Access the RabbitMQ Dashboard
 
-To access RabbitMQ outside the cluster, you need to expose the app through NodePort first.
+To access RabbitMQ outside the cluster, you need to expose the app through a NodePort first.
 
 1. Go to **Services** and click the service name of RabbitMQ.
 

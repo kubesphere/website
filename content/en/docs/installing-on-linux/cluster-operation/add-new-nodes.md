@@ -153,3 +153,4 @@ The steps of adding master nodes are generally the same as adding worker nodes w
    ```bash
    ./kk add nodes -f sample.yaml
    ```
+

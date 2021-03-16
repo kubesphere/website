@@ -1,7 +1,7 @@
 ---
 title: "创建并部署 WordPress"
 keywords: 'KubeSphere, Kubernetes, 应用, WordPress'
-description: '创建并部署 WordPress.'
+description: '创建并部署 WordPress。'
 linkTitle: "创建并部署 WordPress"
 weight: 2500
 ---

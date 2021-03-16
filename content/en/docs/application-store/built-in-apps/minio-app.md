@@ -42,7 +42,7 @@ This tutorial walks you through an example of deploying MinIO from the App Store
 
 ### Step 2: Access the MinIO Browser
 
-To access MinIO outside the cluster, you need to expose the app through NodePort first.
+To access MinIO outside the cluster, you need to expose the app through a NodePort first.
 
 1. Go to **Services** and click the service name of MinIO.
 

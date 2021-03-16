@@ -118,7 +118,7 @@ Now that KubeSphere is installed, you can access the web console of KubeSphere e
 
   {{< notice tip >}}
 
-  It can be seen above that the service `ks-console` is being exposed through NodePort, which means you can access the console directly via `NodeIP:NodePort` (the public IP address of any node is applicable). You may need to open port `30880` in firewall rules.
+  It can be seen above that the service `ks-console` is being exposed through a NodePort, which means you can access the console directly via `NodeIP:NodePort` (the public IP address of any node is applicable). You may need to open port `30880` in firewall rules.
 
   {{</ notice >}}
 

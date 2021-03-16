@@ -179,6 +179,12 @@ The account `project-admin` needs to be created in advance since it is the revie
    - **Source code version of PR itself**. A pipeline is created and runs based on the source code of the PR itself.
    - **Two pipelines are created when a PR is discovered**. KubeSphere creates two pipelines, one based on the source code after the PR is merged into the target branch, and the other based on the source code of the PR itself.
 
+   {{< notice note >}}
+
+   You have to choose GitHub as your code repository to enable the settings of **Behavioral strategy** here.
+
+   {{</ notice >}}
+
 7. Scroll down to **Script Path**. The field specifies the Jenkinsfile path in the code repository. It indicates the repository's root directory. If the file location changes, the script path also needs to be changed. Please change it to `Jenkinsfile-online`, which is the file name of Jenkinsfile in the example repository located in the root directory.
 
    ![jenkinsfile-online](/images/docs/devops-user-guide/using-devops/create-a-pipeline-using-a-jenkinsfile/jenkinsfile-online.jpg)
