@@ -16,7 +16,7 @@ kubectl edit svc -n kubesphere-monitoring-system prometheus-k8s
 
 ## Node Exporter 引起的主机端口 9100 冲突
 
-如果有进程占用主机端口 9100，`kubespher-monitoring-system` 下的 Node Exporter 会崩溃。为了解决冲突，你需要终止进程或将 Node Exporter 换到另一个可用端口。
+如果有进程占用主机端口 9100，`kubespher-monitoring-system` 下的 Node Exporter 会崩溃。为了解决冲突，您需要终止进程或将 Node Exporter 换到另一个可用端口。
 
 要采用另一个主机端口，例如 `29100`，运行以下命令，将所有 `9100` 替换为 `29100`（需要更改 5 处）。
 
@@ -57,7 +57,7 @@ kubectl edit svc -n kubesphere-monitoring-system prometheus-k8s
 
 ## 与现有的 Prometheus Operator 相冲突
 
-如果你已经自行部署了 Prometheus Operator，请确保在安装 KubeSphere 之前将 Prometheus Operator 删除。否则，可能会出现 KubeSphere 内置的 Prometheus Operator 选择重复的 ServiceMonitor 对象的冲突。
+如果您已经自行部署了 Prometheus Operator，请确保在安装 KubeSphere 之前将 Prometheus Operator 删除。否则，可能会出现 KubeSphere 内置的 Prometheus Operator 选择重复的 ServiceMonitor 对象的冲突。
 
 ## 如何修改监控数据保留天数
 

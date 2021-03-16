@@ -1,8 +1,8 @@
 ---
-title: "部署和访问 Bookinfo"
+title: "部署并访问 Bookinfo"
 keywords: 'KubeSphere, Kubernetes, Bookinfo, Istio'
 description: '在 K8s 上部署 Bookinfo 并通过 NodePort 访问该应用'
-linkTitle: "部署和访问 Bookinfo"
+linkTitle: "部署并访问 Bookinfo"
 weight: 2400
 ---
 
@@ -51,7 +51,7 @@ Bookinfo 应用由以下四个独立的微服务组成，其中 **reviews** 微�
 
     {{< notice note >}}
 
-    KubeSphere 会自动创建主机名。若要更改主机名，请将鼠标悬停在默认路由规则上，然后点击铅笔图标进行编辑。有关更多信息，请参见[创建基于微服务的应用](../../project-user-guide/application/compose-app/)。
+KubeSphere 会自动创建主机名。若要更改主机名，请将鼠标悬停在默认路由规则上，然后点击铅笔图标进行编辑。有关更多信息，请参见[创建基于微服务的应用](../../project-user-guide/application/compose-app/)。
 
     {{</ notice >}}
 
@@ -60,7 +60,7 @@ Bookinfo 应用由以下四个独立的微服务组成，其中 **reviews** 微�
     ![running](/images/docs/zh-cn/quickstart/deploy-bookinfo-to-k8s/running.png)
 
     {{< notice note >}}
-    可能需要等几分钟才能看到部署正常运行。
+可能需要等几分钟才能看到部署正常运行。
     {{</ notice >}}
 
 ### 步骤 2：访问 Bookinfo
@@ -82,13 +82,15 @@ Bookinfo 应用由以下四个独立的微服务组成，其中 **reviews** 微�
 4. 在本地 hosts 文件 (`/etc/hosts`) 中添加一个条目将主机名映射到对应的 IP 地址，例如：
 
     ```bash
-    139.198.19.38 productpage.demo-project.192.168.0.2.nip.io
+    139.198.19.38 productpage.demo-project.192.168.0.4.nip.io
     ```
     
-{{< notice warning >}}
-    请勿直接复制上述内容到本地 hosts 文件，请将其替换成您自己的 IP 地址与主机名。
-{{</ notice >}}
+    {{< notice warning >}}
     
+请勿直接复制上述内容到本地 hosts 文件，请将其替换成您自己的 IP 地址与主机名。
+{{</ notice >}}
+ 
+
 5. 完成后，点击**点击访问**按钮访问该应用。
 
     ![click-to-visit](/images/docs/zh-cn/quickstart/deploy-bookinfo-to-k8s/click-to-visit.png)
@@ -101,7 +103,7 @@ Bookinfo 应用由以下四个独立的微服务组成，其中 **reviews** 微�
 
     ![ratings-page](/images/docs/zh-cn/quickstart/deploy-bookinfo-to-k8s/ratings-page.png)
 
-{{< notice note >}}
+    {{< notice note >}}
 
 KubeSphere 基于 Istio 提供了三种灰度策略，包括[蓝绿部署](../../project-user-guide/grayscale-release/blue-green-deployment/)，[金丝雀发布](../../project-user-guide/grayscale-release/canary-release/)和[流量镜像](../../project-user-guide/grayscale-release/traffic-mirroring/)。
     {{</ notice >}}

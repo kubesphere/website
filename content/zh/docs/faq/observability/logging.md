@@ -8,7 +8,7 @@ weight: 16310
 
 ## 如何将日志存储改为外部弹性搜索并关闭内部弹性搜索
 
-如果您使用的是 KubeSphere 内部的 Elasticsearch，并且想把它改成您的外部备用，请按照下面的指南操作。否则，如果你还没有启用日志系统，请到[启用日志系统](.../.../logging/)直接设置外部 Elasticsearch。
+如果您使用的是 KubeSphere 内部的 Elasticsearch，并且想把它改成您的外部备用，请按照下面的指南操作。否则，如果您还没有启用日志系统，请到[启用日志系统](.../.../logging/)直接设置外部 Elasticsearch。
 
 首先，更新 KubeKey 配置。
 
@@ -54,7 +54,7 @@ status:
 kubectl rollout restart deploy -n kubesphere-system ks-installer
 ```
 
-最后，要删除内部的 Elasticsearch，请运行以下命令。请确认你已经备份了内部 Elasticsearch 中的数据。
+最后，要删除内部的 Elasticsearch，请运行以下命令。请确认您已经备份了内部 Elasticsearch 中的数据。
 
 ```shell
 helm uninstall -n kubesphere-logging-system elasticsearch-logging
@@ -66,7 +66,7 @@ helm uninstall -n kubesphere-logging-system elasticsearch-logging
 
 ## 如何修改日志数据保留天数
 
-你需要更新 KubeKey 配置并重新运行 ks-installer。
+您需要更新 KubeKey 配置并重新运行 ks-installer。
 
 ```shell
 kubectl edit cc -n kubesphere-system ks-installer
@@ -106,7 +106,7 @@ kubectl rollout restart deploy -n kubesphere-system ks-installer
 
 ## 无法从工具箱中的某些节点上的工作负载中找出日志
 
-如果你采用[多节点安装](.../.../installing-on-linux/introduction/multioverview/)，并且使用符号链接作为 Docker 根目录，请确保所有节点遵循完全相同的符号链接。日志代理在 DaemonSet 中部署到节点上。容器日志路径的任何差异都可能导致该节点上的收集失败。
+如果您采用[多节点安装](.../.../installing-on-linux/introduction/multioverview/)，并且使用符号链接作为 Docker 根目录，请确保所有节点遵循完全相同的符号链接。日志代理在 DaemonSet 中部署到节点上。容器日志路径的任何差异都可能导致该节点上的收集失败。
 
 要找出节点上的 Docker 根目录路径，可以运行以下命令。确保所有节点都适用相同的值。
 
