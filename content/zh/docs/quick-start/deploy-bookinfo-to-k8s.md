@@ -10,7 +10,7 @@ weight: 2400
 
 *Istio 的流量路由规则可以让您很容易地控制服务之间的流量和 API 调用。Istio 简化了服务级别属性的配置，比如熔断器、超时、重试等，并且能轻松地设置重要的任务，如 A/B 测试、金丝雀发布、基于流量百分比切分的概率发布等。它还提供了开箱即用的故障恢复特性，有助于增强应用的健壮性，从而更好地应对被依赖的服务或网络发生故障的情况。*
 
-为了给用户提供管理微服务的一致体验，KubeSphere 在容器平台上集成了 Istio。本教程演示了如何部署由四个独立的微服务组成的示例应用程序 Bookinfo，以及如何通过 NodePort访问该应用。
+为了给用户提供管理微服务的一致体验，KubeSphere 在容器平台上集成了 Istio。本教程演示了如何部署由四个独立的微服务组成的示例应用程序 Bookinfo，以及如何通过 NodePort 访问该应用。
 
 ## 准备工作
 
@@ -43,7 +43,7 @@ Bookinfo 应用由以下四个独立的微服务组成，其中 **reviews** 微�
 
 ### 步骤 1：部署 Bookinfo
 
-1. 使用账户 `project-regular` 登录控制台并访问项目 (`demo-project`)。导航到**应用负载**下的**应用**，点击右侧的**部署示例应用**。
+1. 使用帐户 `project-regular` 登录控制台并访问项目 (`demo-project`)。导航到**应用负载**下的**应用**，点击右侧的**部署示例应用**。
 
 2. 在出现的对话框中点击**下一步**，其中必填字段已经预先填好，相关组件也已经设置完成。您无需修改设置，只需在最后一页（**外网访问**）点击**创建**。
 
@@ -51,7 +51,7 @@ Bookinfo 应用由以下四个独立的微服务组成，其中 **reviews** 微�
 
     {{< notice note >}}
 
-    KubeSphere 会自动创建主机名。若要更改主机名，请将鼠标悬停在默认路由规则上，然后点击铅笔图标进行编辑。有关更多信息，请参见[创建基于微服务的应用程序](../../ project-user-guide / application / compose-app /)。
+    KubeSphere 会自动创建主机名。若要更改主机名，请将鼠标悬停在默认路由规则上，然后点击铅笔图标进行编辑。有关更多信息，请参见[创建基于微服务的应用](../../project-user-guide/application/compose-app/)。
 
     {{</ notice >}}
 
@@ -77,19 +77,18 @@ Bookinfo 应用由以下四个独立的微服务组成，其中 **reviews** 微�
 
     ![detail-page](/images/docs/zh-cn/quickstart/deploy-bookinfo-to-k8s/detail-page.png)
 
-3. 由于将通过 NodePort 在集群外访问该应用，因此您需要在安全组中为出站流量开放上图中的端口（在本例中，端口号为 `30305`），并按需设置任意端口转发规则。
+3. 由于将通过 NodePort 在集群外访问该应用，因此您需要在安全组中为出站流量开放上图中的端口（在本例中，端口号为 `30305`），并按需设置端口转发规则。
 
-4. 通过添加一个条目将主机名映射到对应的公网 IP 来编辑本地主机文件 (`/etc/hosts`)。例如：
+4. 在本地 hosts 文件 (`/etc/hosts`) 中添加一个条目将主机名映射到对应的 IP 地址，例如：
 
     ```bash
-    # {Public IP} {hostname}
     139.198.19.38 productpage.demo-project.192.168.0.2.nip.io
     ```
-
-    {{< notice warning >}}
-不要直接复制上述内容到本地主机文件，请将其替换成您自己环境的公网 IP 与主机名。
-    {{</ notice >}}
-
+    
+{{< notice warning >}}
+    请勿直接复制上述内容到本地 hosts 文件，请将其替换成您自己的 IP 地址与主机名。
+{{</ notice >}}
+    
 5. 完成后，点击**点击访问**按钮访问该应用。
 
     ![click-to-visit](/images/docs/zh-cn/quickstart/deploy-bookinfo-to-k8s/click-to-visit.png)
@@ -98,7 +97,7 @@ Bookinfo 应用由以下四个独立的微服务组成，其中 **reviews** 微�
 
     ![normal-user](/images/docs/zh-cn/quickstart/deploy-bookinfo-to-k8s/normal-user.png)
 
-7. 在下图中，您可以注意到 **Book Reviews** 板块仅出现 **Reviewer1** 和 **Reviewer2**，并且没有任何评级内容，因为这是当前应用版本的状态。若想探索更多流量管理相关的功能，您可以为该应用实现[金丝雀发布](../../project-user-guide/grayscale-release/canary-release/)。
+7. 在下图中，您可以注意到 **Book Reviews** 板块仅出现 **Reviewer1** 和 **Reviewer2**，并且没有任何评级内容，因为这是当前应用版本的状态。若想探索更多流量管理相关的功能，您可以为该应用执行[金丝雀发布](../../project-user-guide/grayscale-release/canary-release/)。
 
     ![ratings-page](/images/docs/zh-cn/quickstart/deploy-bookinfo-to-k8s/ratings-page.png)
 
