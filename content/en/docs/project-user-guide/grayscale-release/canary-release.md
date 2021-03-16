@@ -152,3 +152,4 @@ If everything runs smoothly, you can bring all the traffic to the new version.
 3. Access Bookinfo again and refresh the browser several times. You can find that it only shows the result of **reviews v2** (i.e. ratings with black stars).
 
    ![finish-canary-release](/images/docs/project-user-guide/grayscale-release/canary-release/finish-canary-release.png)
+
