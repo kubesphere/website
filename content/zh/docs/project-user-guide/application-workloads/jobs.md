@@ -1,7 +1,7 @@
 ---
 title: 任务
 keywords: "KubeSphere, Kubernetes, docker, 任务"
-description: "Create a Kubernetes Job"
+description: "创建 Kubernetes 任务"
 linkTitle: "任务"
 
 weight: 10250
@@ -146,7 +146,9 @@ weight: 10250
 
     {{</ notice >}}
 
-## 任务操作
+## 查看任务详情
+
+### 任务操作
 
 在任务详情页面上，您可以在任务创建后对其进行管理。
 
@@ -157,3 +159,36 @@ weight: 10250
 
 ![任务操作](/images/docs/zh-cn/project-user-guide/application-workloads/jobs/job-operation.PNG)
 
+### 执行记录
+
+1. 点击**执行记录**选项卡查看任务的执行记录。
+
+   ![execution-records](/images/docs/zh-cn/project-user-guide/application-workloads/jobs/execution-records.png)
+
+2. 点击 <img src="/images/docs/zh-cn/project-user-guide/application-workloads/jobs/refresh.png" width="20px" /> 刷新执行记录。
+
+### 资源状态
+
+1. 点击**资源状态**选项卡查看任务的容器组。
+
+   ![resource-status](/images/docs/zh-cn/project-user-guide/application-workloads/jobs/resource-status.png)
+
+2. 点击 <img src="/images/docs/zh-cn/project-user-guide/application-workloads/jobs/refresh.png" width="20px" /> 刷新容器组信息，点击 <img src="/images/docs/zh-cn/project-user-guide/application-workloads/jobs/display.png" width="20px" />/<img src="/images/docs/zh-cn/project-user-guide/application-workloads/jobs/hide.png" width="20px" /> 显示或隐藏每个容器组中的容器。
+
+### 元数据
+
+点击**元数据**选项卡查看任务的标签和注解。
+
+![metadata](/images/docs/zh-cn/project-user-guide/application-workloads/jobs/metadata.png)
+
+### 环境变量
+
+点击**环境变量**选项卡查看任务的环境变量。
+
+![env-variable](/images/docs/zh-cn/project-user-guide/application-workloads/jobs/env-variable.png)
+
+### 事件
+
+点击**事件**选项卡查看任务的事件。
+
+![events](/images/docs/zh-cn/project-user-guide/application-workloads/jobs/events.png)
