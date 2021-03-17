@@ -104,7 +104,9 @@ weight: 10260
 
     ![容器日志-2](/images/docs/zh-cn/project-user-guide/application-workloads/cronjobs/container-log-2.png)
 
-## 定时任务操作
+## 查看定时任务详情
+
+### 定时任务操作
 
 在定时任务详情页面上，您可以在创建定时任务之后对其进行管理。
 
@@ -114,3 +116,22 @@ weight: 10260
 - **删除**：删除该定时任务，然后返回定时任务列表页面。
 
 ![定时任务操作](/images/docs/zh-cn/project-user-guide/application-workloads/cronjobs/cronjob-action.png)
+
+### 任务记录
+
+点击**任务记录**选项卡查看定时任务的记录。
+
+![任务记录](/images/docs/zh-cn/project-user-guide/application-workloads/cronjobs/job-records.png)
+
+### 元数据
+
+点击**元数据**选项卡查看定时任务的标签和注解。
+
+![元数据](/images/docs/zh-cn/project-user-guide/application-workloads/cronjobs/metadata.png)
+
+### 事件
+
+点击**事件**选项卡查看定时任务的事件。
+
+![事件](/images/docs/zh-cn/project-user-guide/application-workloads/cronjobs/events.png)
+
