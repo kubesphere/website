@@ -11,11 +11,11 @@ icon: "/images/docs/docs.svg"
 
 ---
 
-快速入门中包括六个动手实验操作，帮助您快速了解 KubeSphere。强烈建议您仔细阅读这些教程，探索 KubeSphere 的基本功能。
+快速入门中包括六个动手实验操作，能够帮助您快速了解 KubeSphere。强烈建议您仔细阅读这些教程，探索 KubeSphere 的基本功能。
 
-## [在 Linux 上使用 All-in-One 模式安装](../quick-start/all-in-one-on-linux/)
+## [在 Linux 上以 All-in-One 模式安装 KubeSphere](../quick-start/all-in-one-on-linux/)
 
-了解在 Linux 上如何使用最小安装包安装 KubeSphere。本教程为您理解容器平台提供了基本的入门知识，为学习以下指南奠定基础。
+了解在 Linux 上如何使用最小安装包安装 KubeSphere。本教程为您理解容器平台提供了基础入门知识，为学习以下指南奠定基础。
 
 ## [在 Kubernetes 上最小化安装 KubeSphere](../quick-start/minimal-kubesphere-on-k8s/)
 
