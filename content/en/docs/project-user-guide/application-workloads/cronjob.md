@@ -126,7 +126,7 @@ Click the **Job Records** tab to view the records of the CronJob.
 
 Click the **Metadata** tab to view the labels and annotations of the CronJob.
 
-![metadata](/images/docs/project-user-guide/application-workloads/cronjobs/job-records.png)
+![metadata](/images/docs/project-user-guide/application-workloads/cronjobs/metadata.png)
 
 ### Events
 
