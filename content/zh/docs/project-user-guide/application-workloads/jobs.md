@@ -173,7 +173,7 @@ weight: 10250
 
    ![resource-status](/images/docs/zh-cn/project-user-guide/application-workloads/jobs/resource-status.png)
 
-2. 点击 <img src="/images/docs/zh-cn/project-user-guide/application-workloads/jobs/refresh.png" width="20px" /> 刷新容器组信息，点击 <img src="/images/docs/zh-cn/project-user-guide/application-workloads/jobs/display.png" width="20px" />/<img src="/images/docs/zh-cn/project-user-guide/application-workloads/jobs/hide.png" width="20px" /> 显示或隐藏每个容器组中的容器。
+2. 点击 <img src="/images/docs/zh-cn/project-user-guide/application-workloads/jobs/refresh.png" width="20px" /> 刷新 Pod 信息，点击 <img src="/images/docs/zh-cn/project-user-guide/application-workloads/jobs/display.png" width="20px" />/<img src="/images/docs/zh-cn/project-user-guide/application-workloads/jobs/hide.png" width="20px" /> 显示或隐藏每个 Pod 中的容器。
 
 ### 元数据
 
