@@ -81,6 +81,16 @@ Enable the editing function of system resources on the console.
 
 Select a desire language of the console.
 
+## Multi-cluster Management
+
+### [Restore the Host Cluster Access to A Member Cluster](../faq/multi-cluster-management/host-cluster-access-member-cluster/)
+
+Learn how to restore the Host Cluster access to a Member Cluster.
+
+## DevOps
+
+### [Install Plugins to Jenkins in KubeSphere](../faq/devops/install-jenkins-plugins/)
+
 ## Applications
 
 ### [Remove Built-in Apps in KubeSphere](../faq/applications/remove-built-in-apps/)
@@ -90,9 +100,3 @@ Learn how to remove built-in apps from the KubeSphere App Store.
 ### [Reuse the Same App Name after Its Deletion](../faq/applications/reuse-the-same-app-name-after-deletion/)
 
 Learn how to reuse the same app name after its deletion.
-
-## Multi-cluster Management
-
-### [Restore the Host Cluster Access to A Member Cluster](../faq/multi-cluster-management/host-cluster-access-member-cluster/)
-
-Learn how to restore the Host Cluster access to a Member Cluster.
