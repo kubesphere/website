@@ -46,7 +46,7 @@ KubeSphere 为用户提供轻量级安装程序 [KubeKey](https://github.com/kub
 
 自 v2.1.0 以来，KubeSphere 已经解耦了一些组件。默认情况下，KubeKey 仅安装必要的组件，这样安装速度快，资源消耗也最少。如果要启用增强的可插拔功能，请参见[启用可插拔组件](../../../pluggable-components/)了解详细信息。
 
-快速安装 KubeSphere 仅用于开发或测试，因为默认情况下它使用了基于 [openEBS](https://openebs.io/) 的 [Local 卷](https://kubernetes.io/zh/docs/concepts/storage/volumes/#local)提供储存服务。如果需要在生产环境安装，请参见[高可用配置安装](../../../installing-on-linux/high-availability-configurations/ha-configuration/)。
+快速安装 KubeSphere 仅用于开发或测试，因为默认情况下它使用了基于 [openEBS](https://openebs.io/) 的 [Local Volume](https://kubernetes.io/zh/docs/concepts/storage/volumes/#local)提供储存服务。如果需要在生产环境安装，请参见[高可用配置安装](../../../installing-on-linux/high-availability-configurations/ha-configuration/)。
 
 ## 可插拔组件概述
 
