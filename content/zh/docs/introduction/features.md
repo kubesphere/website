@@ -158,7 +158,7 @@ KubeSphere 通过可视化界面操作监控、运维功能，可简化操作和
 
 ## 多种网络解决方案
 
-- 支持 Calico、Flannel 等开源网络方案。所
+- 支持 Calico、Flannel 等开源网络方案。
 
 - [PorterLB](https://github.com/kubesphere/porter)，是由 KubeSphere 开发团队设计、经过 CNCF 认证的一款适用于物理机部署 Kubernetes 的负载均衡插件。 主要特点：
 
