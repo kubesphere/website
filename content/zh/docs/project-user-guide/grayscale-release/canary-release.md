@@ -20,7 +20,7 @@ KubeSphere 基于 [Istio](https://istio.io/) 向用户提供部署金丝雀服�
 
 ## 步骤 1：创建金丝雀发布任务
 
-1. 以 `project-regular` 身份登录 KubeSphere 控制台，在**灰度发布**选项卡下，点击**金丝雀发布**右侧的**发布任务**。
+1. 以 `project-regular` 身份登录 KubeSphere 控制台，在**灰度策略**选项卡下，点击**金丝雀发布**右侧的**发布任务**。
 
    ![创建金丝雀发布](/images/docs/zh-cn/project-user-guide/grayscale-release/canary-release/create-canary-release.PNG)
 
