@@ -59,7 +59,7 @@ This tutorial demonstrates how to import an Aliyun ACK cluster through the [dire
 
 ### Step 2: Get the kubeconfig file
 
-Log in to the web console of Aliyun. Go to **Clusters** under **Container Service - Kubernetes**, click your cluster to go to its detal page, and then select the **Connection Information** tab. You can see the kubeconfig file under the **Public Access** tab. Copy the contents of the kubeconfig file.
+Log in to the web console of Aliyun. Go to **Clusters** under **Container Service - Kubernetes**, click your cluster to go to its detail page, and then select the **Connection Information** tab. You can see the kubeconfig file under the **Public Access** tab. Copy the contents of the kubeconfig file.
 
 ![kubeconfig](/images/docs/multicluster-management/import-cloud-hosted-k8s/import-ack/kubeconfig.png)
 
