@@ -4,3 +4,4 @@ baseURL = "https://kubesphere.io"
 
 addGoogleAnalytics = true
 addGoogleTag = true
+hotjarTracking = true
