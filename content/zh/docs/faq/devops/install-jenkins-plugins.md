@@ -8,6 +8,12 @@ Weight: 16810
 
 The KubeSphere DevOps System offers containerized CI/CD functions based on Jenkins. The primary means of enhancing the functionality of Jenkins is to install plugins. This tutorial demonstrates how to install plugins on the Jenkins dashboard.
 
+{{< notice warning >}}
+
+Not all Jenkins plugins have good maintaining support. Some plugins may lead to issues in Jenkins or even cause serious problems in KubeSphere. It is highly recommended that you make a backup before installing any plugin and run testing in another environment if you can.
+
+{{</ notice >}}
+
 ## Prerequisites
 
 You need to enable [the KubeSphere DevOps system](../../../pluggable-components/devops/).
