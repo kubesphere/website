@@ -1,24 +1,32 @@
 ---
-title: "Routes"
-keywords: "kubesphere, kubernetes, route, ingress"
-description: "How to create a route in KubeSphere"
+title: "路由"
+keywords: "kubesphere, kubernetes, 路由, 应用路由"
+description: "如何在 KubeSphere 中创建路由"
 
 weight: 10270
 ---
 
 Route is the kubernetes [Ingress](https://kubernetes.io/docs/concepts/services-networking/ingress/#what-is-ingress).
 
+路由就是 kubernetes 的 [Ingress](https://kubernetes.io/docs/concepts/services-networking/ingress/#what-is-ingress)（应用路由）。
+
 A Route provides a way to aggregate services, and you can expose the cluster's internal services to the outside through an externally accessible IP address.
 
-## Prerequisites
+路由提供了一种聚合服务的方式，您可以通过外部访问的 IP 地址将集群的内部服务暴露给外部。
 
-- You need to create a workspace, project and `project-regular` account. Please refer to the [Getting Started with Multi-tenant Management](../../../quick-start/create-workspace-and-project) if not yet.
-- You need to sign in with `project-admin` account and invite `project-regular` to enter the corresponding project if not yet. Please refer to [Invite Member](../../../quick-start/create-workspace-and-project#task-3-create-a-project).
+## 准备工作
+
+- 您需要创建一个企业空间、一个项目以及 `project-regular` 帐户。若还未创建好，请参考[创建企业空间、项目、帐户和角色](../../../quick-start/create-workspace-and-project)。
+
+- 您需要以 `project-admin` 帐户登录KubeSphere 控制台，并邀请 `project-regular` 进入相应的项目。若还未准备好，请参考[邀请成员](../../../quick-start/create-workspace-and-project#task-3-create-a-project)。
+
 - Before creating a route, the gateway of the project should be configured. Please refer to [Set Gateway](#set-gateway)
 
-## Create a Route
+  在创建路由之前，需要对项目的网关进行配置。请参考[设置网关](#set-gateway)。
 
-### Step 1: Open Modal
+## 创建路由
+
+### 步骤 1：Open Modal
 
 1. Go to **Application Workloads** and click **Routes**.
 2. Click **Create** button to open the modal.
