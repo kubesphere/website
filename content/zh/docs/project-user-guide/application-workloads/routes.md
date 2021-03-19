@@ -7,13 +7,13 @@ weight: 10270
 
 本文档介绍了如何在 KubeSphere 上创建、使用和编辑应用路由。
 
-KubeSphere 上的应用路由和 Kubernetes 上的 [Ingress](https://kubernetes.io/docs/concepts/services-networking/ingress/#what-is-ingress)（应用路由）相同，您可以使用应用路由和单个 IP 地址来聚合和暴露多个服务。
+KubeSphere 上的应用路由和 Kubernetes 上的 [Ingress](https://kubernetes.io/docs/concepts/services-networking/ingress/#what-is-ingress) 相同，您可以使用应用路由和单个 IP 地址来聚合和暴露多个服务。
 
 ## 准备工作
 
-- 您需要创建一个企业空间、一个项目以及两个帐户（例如，`project-admin` 和 `project-regular`）。在此项目中，`project-admin` 必须具有 `admin` 角色，`project-regular` 必须具有 `operator` 角色。有关更多信息，请参见[创建企业空间、项目、帐户和角色](/zh/docs/quick-start/create-workspace-and-project/)。
-- 若要以 HTTPS 模式访问应用路由，则需要[创建密钥](/zh/docs/project-user-guide/configuration/secrets/)用于加密，密钥中需要包含 `tls.crt`（TLS 证书）和 `tls.key`（TLS 私钥）。
-- 您需要[创建至少一个服务](/zh/docs/project-user-guide/application-workloads/services/)。本文档使用演示服务作为示例，该服务会将 Pod 名称返回给外部请求。
+- 您需要创建一个企业空间、一个项目以及两个帐户（例如，`project-admin` 和 `project-regular`）。在此项目中，`project-admin` 必须具有 `admin` 角色，`project-regular` 必须具有 `operator` 角色。有关更多信息，请参见[创建企业空间、项目、帐户和角色](../../../quick-start/create-workspace-and-project/)。
+- 若要以 HTTPS 模式访问应用路由，则需要[创建密钥](../../../project-user-guide/configuration/secrets/)用于加密，密钥中需要包含 `tls.crt`（TLS 证书）和 `tls.key`（TLS 私钥）。
+- 您需要[创建至少一个服务](../../../project-user-guide/application-workloads/services/)。本文档使用演示服务作为示例，该服务会将 Pod 名称返回给外部请求。
 
 ## 配置应用路由访问方式
 
@@ -100,19 +100,19 @@ KubeSphere 上的应用路由和 Kubernetes 上的 [Ingress](https://kubernetes.
 
 2. 在**规则**区域获取域名和服务路径，在**详情**区域获取网关地址。
 
-   * 如果[应用路由访问方式](#configure-the-route-access-method)设置为 NodePort，则会使用 Kubernetes 集群节点的 IP 地址作为网关地址，NodePort 位于在域名之后。
+   * 如果[应用路由访问方式](#配置应用路由访问方式)设置为 NodePort，则会使用 Kubernetes 集群节点的 IP 地址作为网关地址，NodePort 位于域名之后。
 
      ![obtain-address-nodeport](/images/docs/zh-cn/project-user-guide/application-workloads/routes/obtain-address-nodeport.png)
 
-   * 如果[应用路由访问方式](#configure-the-route-access-method)设置为 LoadBalancer，则网关地址由负载均衡器插件指定。
+   * 如果[应用路由访问方式](#配置应用路由访问方式)设置为 LoadBalancer，则网关地址由负载均衡器插件指定。
 
      ![obtain-address-loadbalancer](/images/docs/zh-cn/project-user-guide/application-workloads/routes/obtain-address-loadbalancer.png)
 
 ## 配置域名解析
 
-若在[配置路由规则](#step-2-configure-route-rules)中选择**自动生成**，则不需要配置域名解析，域名会自动由 [nip.io](https://nip.io/) 解析为网关地址。
+若在[配置路由规则](#步骤-2配置路由规则)中选择**自动生成**，则不需要配置域名解析，域名会自动由 [nip.io](https://nip.io/) 解析为网关地址。
 
-若在[配置路由规则](#step-2-configure-route-rules)中选择**指定域名**，则需要在 DNS 服务器配置域名解析，或者在客户端机器上将`<路由网关地址> <路由域名>`添加到  `etc/hosts` 文件。
+若在[配置路由规则](#步骤-2配置路由规则)中选择**指定域名**，则需要在 DNS 服务器配置域名解析，或者在客户端机器上将`<路由网关地址> <路由域名>`添加到  `etc/hosts` 文件。
 
 ## 访问应用路由
 
@@ -137,8 +137,8 @@ KubeSphere 上的应用路由和 Kubernetes 上的 [Ingress](https://kubernetes.
 如果您需要使用 NodePort 或 LoadBalancer 从私有网络外部访问应用路由，具体取决于您的网络环境：
 
 * 您可能需要在基础设施环境中配置流量转发和防火墙规则，以便访问应用路由的网关地址和端口号。
-* 若在[配置路由规则](#step-2-configure-route-rules)中选择**自动生成**，则可能需要手动[编辑路由规则](#edit-the-route)将路由域名中的网关地址改为您私有网络的外部 IP 地址。
-* 若在[配置路由规则](#step-2-configure-route-rules)中选择**指定域名**，则可能需要改变 DNS 服务器上或者客户端机器 `etc/hosts` 文件中的配置，以便将域名解析为您私有网络的外部 IP 地址。
+* 若在[配置路由规则](#步骤-2配置路由规则)中选择**自动生成**，则可能需要手动[编辑路由规则](#编辑路由规则)将路由域名中的网关地址改为您私有网络的外部 IP 地址。
+* 若在[配置路由规则](#步骤-2配置路由规则)中选择**指定域名**，则可能需要改变 DNS 服务器上或者客户端机器 `etc/hosts` 文件中的配置，以便将域名解析为您私有网络的外部 IP 地址。
 
 {{</ notice >}}
 
