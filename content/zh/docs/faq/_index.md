@@ -73,6 +73,18 @@ icon: "/images/docs/docs.svg"
 
 选择控制台的显示语言。
 
+## 多集群管理
+
+### [恢复 Host 集群对 Member 集群的访问](../faq/multi-cluster-management/host-cluster-access-member-cluster/)
+
+了解如何恢复 Host 集群对 Member 集群的访问。
+
+## DevOps
+
+### [为 KubeSphere 中的 Jenkins 安装插件](../faq/devops/install-jenkins-plugins/)
+
+了解如何为 KubeSphere 中的 Jenkins 安装插件。
+
 ## 应用程序
 
 ### [下架 KubeSphere 中的内置应用](../faq/applications/remove-built-in-apps/)
@@ -82,9 +94,3 @@ icon: "/images/docs/docs.svg"
 ### [删除应用后复用相同应用名称](../faq/applications/reuse-the-same-app-name-after-deletion/)
 
 了解如何在删除应用后复用相同应用名称。
-
-## 多集群管理
-
-### [恢复 Host 集群对 Member 集群的访问](../faq/multi-cluster-management/host-cluster-access-member-cluster/)
-
-了解如何恢复 Host 集群对 Member 集群的访问。
