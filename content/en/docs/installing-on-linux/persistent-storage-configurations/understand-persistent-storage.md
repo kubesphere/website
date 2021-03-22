@@ -38,8 +38,8 @@ For more information, see [add-ons](https://github.com/kubesphere/kubekey/blob/v
 
 KubeKey supports the installation of different storage plugins and storage classes. No matter what storage systems you will be installing, you can specify whether it is a default storage class in its configuration file. If KubeKey detects that no default storage class is specified, it will install [OpenEBS](https://github.com/openebs/openebs) by default.
 
-OpenEBS Dynamic Local PV provisioner can create Kubernetes Local Persistent Volumes using a unique HostPath (directory) on the node to persist data. It is very convenient for users to get started with KubeSphere when they have no specific storage system. However, in production, it is highly recommended that you install your own persistent storage and configure the corresponding storage plugin and storage class to dynamically provision volumes.
+OpenEBS Dynamic Local PV provisioner can create Kubernetes Local Persistent Volumes using a unique HostPath (directory) on the node to persist data. It is very convenient for users to get started with KubeSphere when they have no specific storage system.
 
 ## Multi-storage Solutions
 
-If you intend to install more than one storage plugins, only set one of them as the default one with the storage class name you want KubeSphere to use. Otherwise, KubeKey will be confused about which storage class to use.
+If you intend to install more than one storage plugins, only one of them can be set as the default storage class. Otherwise, KubeKey will be confused about which storage class to use.
