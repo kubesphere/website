@@ -13,23 +13,23 @@ section2:
   icon: images/case/left.svg
   caseList:
     - icon: "images/case/case5.jpg"
-      content: "Anchnet is a leading Next-generation Cloud Managed Service Provider (Cloud MSP) in China, providing cloud native technologies and solutions for customers."
+      content: "安畅网络是中国市场领先的下一代云托管服务商（Cloud MSP），为客户提供云原生技术和解决方案。"
       link: "anchnet"
 
     - icon: "images/case/case3.jpg"
-      content: "Aqara is owned by Lumi United Technology, headquartered in China, with over 300 Aqara service providers and 300 smart home showrooms."
+      content: "Aqara 隶属于绿米联创科技有限公司，总部位于中国，拥有 300 多家 Aqara 服务提供商和 300 多家智能家居展厅。"
       link: "aqara"
 
     - icon: "images/case/case1.jpg"
-      content: "Founded in 2012, Benlai is an e-commerce website focused on food, including fruits and vegetables."
+      content: "本来生活网创办于 2012 年，是一家生鲜电商平台，提供蔬菜、水果、海鲜等优质生鲜果蔬食材食品网购服务。"
       link: "benlai"
 
     - icon: "images/case/case2.jpg"
-      content: "Huaxia Bank Co., Ltd. is a publicly traded commercial bank in China. It is based in Beijing and was founded in 1992."
+      content: "华夏银行股份有限公司是一家上市商业银行，于 1992 年在北京成立。"
       link: "huaxia-bank"
 
     - icon: "images/case/maxnerva.jpg"
-      content: "Maxnerva Technology Services, HK.0103 is affiliated and invested by Foxconn Technology Group."
+      content: "云智汇科技服务有限公司是富士康科技集团投资成立的子公司。"
       link: "maxnerva"
 
     - icon: "images/case/vng.jpg"
