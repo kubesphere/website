@@ -1,59 +1,59 @@
 ---
-title: "Deploy GitLab on KubeSphere"
-keywords: 'KubeSphere, Kubernetes, GitLab, App Store'
-description: 'How to deploy GitLab on KubeSphere'
-linkTitle: "Deploy GitLab on KubeSphere"
+title: "在 KubeSphere 上部署 GitLab"
+keywords: 'KubeSphere, Kubernetes, GitLab, 应用商店'
+description: '如何在 KubeSphere 上部署 GitLab'
+linkTitle: "在 KubeSphere 上部署 GitLab"
 weight: 14310
 ---
 
-[GitLab](https://about.gitlab.com/) is an open-source end-to-end software development platform with built-in version control, issue tracking, code review, CI/CD, and more.
+[GitLab](https://about.gitlab.com/) 是一个端到端的开源软件开发平台，具有内置的版本控制、问题追踪、代码审查、CI/CD 等功能。
 
-This tutorial demonstrates how to deploy GitLab on KubeSphere.
+本教程演示了如何在 KubeSphere 上部署 GitLab。
 
-## Prerequisites
+## 准备工作
 
-- You need to enable [the OpenPitrix system](../../../pluggable-components/app-store/).
-- You need to create a workspace, a project, and two user accounts (`ws-admin` and `project-regular`) for this tutorial. The account `ws-admin` must be granted the role of `workspace-admin` in the workspace, and the account `project-regular` must be invited to the project with the role of `operator`. If they are not ready, refer to [Create Workspaces, Projects, Accounts and Roles](../../../quick-start/create-workspace-and-project/).
+- 您需要启用 [OpenPitrix 系统](../../../pluggable-components/app-store/)。
+- 您需要为本教程创建一个企业空间、一个项目以及两个帐户（`ws-admin` 和 `project-regular`）。在企业空间中，`ws-admin` 帐户必须被赋予 `workspace-admin` 角色，`project-regular` 帐户必须被赋予 `operator` 角色。如果还未创建好，请参考[创建企业空间、项目、帐户和角色](../../../quick-start/create-workspace-and-project/)。
 
-## Hands-on Lab
+## 动手实验
 
-### Step 1: Add an app repository
+### 步骤 1：添加应用仓库
 
-1. Log in to KubeSphere as `ws-admin`. In your workspace, go to **App Repos** under **Apps Management**, and then click **Add Repo**.
+1. 以 `ws-admin` 身份登录 KubeSphere。在企业空间中，访问**应用管理**下的**应用仓库**，然后点击**添加仓库**。
 
-   ![add-repo](/images/docs/appstore/external-apps/deploy-gitlab/add-repo.PNG)
+   ![add-repo](/images/docs/zh-cn/appstore/external-apps/deploy-gitlab/add-repo.png)
 
-2. In the dialog that appears, enter `main` for the app repository name and `https://charts.kubesphere.io/main` for the app repository URL. Click **Validate** to verify the URL and you will see a green check mark next to the URL if it is available. Click **OK** to continue.
+2. 在出现的对话框中，输入 `main` 作为应用仓库名称，输入 `https://charts.kubesphere.io/main` 作为应用仓库 URL。点击**验证**来验证 URL，如果可用，则会在 URL 右侧看到一个绿色的对号。点击**确定**继续操作。
 
-   ![add-main-repo](/images/docs/appstore/external-apps/deploy-gitlab/add-main-repo.PNG)
+   ![add-main-repo](/images/docs/zh-cn/appstore/external-apps/deploy-gitlab/add-main-repo.png)
 
-3. The repository displays in the list after successfully imported to KubeSphere.
+3. 仓库成功导入到 KubeSphere 后，会显示在列表里。
 
-   ![added-main-repo](/images/docs/appstore/external-apps/deploy-gitlab/added-main-repo.PNG)
+   ![added-main-repo](/images/docs/zh-cn/appstore/external-apps/deploy-gitlab/added-main-repo.png)
 
-### Step 2: Deploy GitLab
+### 步骤 2：部署 GitLab
 
-1. Log out of KubeSphere and log back in as `project-regular`. In your project, go to **Applications** under **Application Workloads** and click **Deploy New Application**.
+1. 登出 KubeSphere，再以 `project-regular` 登录。在您的项目中，访问**应用负载**下的**应用**，然后点击**部署新应用**。
 
-   ![deploy-app](/images/docs/appstore/external-apps/deploy-gitlab/deploy-app.PNG)
+   ![deploy-app](/images/docs/zh-cn/appstore/external-apps/deploy-gitlab/deploy-app.png)
 
-2. In the dialog that appears, select **From App Templates**.
+2. 在出现的对话框中，选择**来自应用模板**。
 
-   ![from-app-templates](/images/docs/appstore/external-apps/deploy-gitlab/from-app-templates.PNG)
+   ![from-app-templates](/images/docs/zh-cn/appstore/external-apps/deploy-gitlab/from-app-templates.png)
 
-3. Select `main` from the drop-down list, then click **gitlab**.
+3. 从下拉菜单中选择 `main`，然后点击 **gitlab**。
 
-   ![click-gitlab](/images/docs/appstore/external-apps/deploy-gitlab/click-gitlab.PNG)
+   ![click-gitlab](/images/docs/zh-cn/appstore/external-apps/deploy-gitlab/click-gitlab.png)
 
-4. On the **App Info** tab and the **Chart Files** tab, you can view the default configuration from the console. Click **Deploy** to continue.
+4. 在**应用信息**选项卡和**配置文件**选项卡，可以看到控制台的默认配置。点击**部署**继续。
 
-   ![view-config](/images/docs/appstore/external-apps/deploy-gitlab/view-config.PNG)
+   ![view-config](/images/docs/zh-cn/appstore/external-apps/deploy-gitlab/view-config.png)
 
-5. On the **Basic Info** page, you can view the app name, app version, and deployment location. Click **Next** to continue.
+5. 在**基本信息**页面，可以看到应用名称、应用版本以及部署位置。点击**下一步**继续。
 
-   ![basic-info](/images/docs/appstore/external-apps/deploy-gitlab/basic-info.PNG)
+   ![basic-info](/images/docs/zh-cn/appstore/external-apps/deploy-gitlab/basic-info.png)
 
-6. On the **App Config** page, use the following configurations to replace the default configurations, and then click **Deploy**.
+6. 在**应用配置**页面，使用以下配置替换默认配置，然后点击**部署**。
 
    ```yaml
    global:
@@ -69,19 +69,19 @@ This tutorial demonstrates how to deploy GitLab on KubeSphere.
            enabled: false
    ```
 
-   ![change-value](/images/docs/appstore/external-apps/deploy-gitlab/change-value.PNG)
+   ![change-value](/images/docs/zh-cn/appstore/external-apps/deploy-gitlab/change-value.png)
 
    {{< notice note >}}
 
-   `demo-project` refers to the project name where GitLab is deployed. Make sure you use your own project name.
+   `demo-project` 指的是部署 GitLab 的项目名称，请确保使用您自己的项目名称。
 
    {{</ notice >}}
 
-7. Wait for GitLab to be up and running.
+7. 等待 GitLab 正常运行。
 
    ![gitlab-running](/images/docs/appstore/external-apps/deploy-gitlab/gitlab-running.PNG)
 
-8. Go to **Workloads**, and you can see all the Deployments and StatefulSets created for GitLab.
+8. 访问**工作负载**，可以看到为 GitLab 创建的所有部署和有状态副本集。
 
    ![deployments-running](/images/docs/appstore/external-apps/deploy-gitlab/deployments-running.PNG)
 
@@ -89,33 +89,33 @@ This tutorial demonstrates how to deploy GitLab on KubeSphere.
 
    {{< notice note >}}
 
-   It may take a while before all the Deployments and StatefulSets are up and running.
+   可能需要过一段时间才能看到所有部署和有状态副本集正常运行。
 
    {{</ notice >}}
 
-### Step 3: Get the root user's password
+### 步骤 3：获取 root 用户的密码
 
-1. Go to **Secrets** under **Configurations**, input `gitlab-initial-root-password` in the search bar, and then press **Enter** on your keyboard to search the Secret.
+1. 访问**配置中心**的密钥，在搜索栏输入 `gitlab-initial-root-password`，然后按下键盘上的**回车键**来搜索密钥。
 
    ![search-secret](/images/docs/appstore/external-apps/deploy-gitlab/search-secret.PNG)
 
-2. Click the Secret to go to its detail page, and then click the eye icon in the upper right corner to view the password. Make sure you copy it.
+2. 点击密钥访问其详情页，然后点击右上角的眼睛图标查看密码。请确保将密码进行复制。
 
    ![click-eye-icon](/images/docs/appstore/external-apps/deploy-gitlab/click-eye-icon.PNG)
 
    ![password](/images/docs/appstore/external-apps/deploy-gitlab/password.PNG)
 
-### Step 4: Edit the hosts file
+### 步骤 4：编辑 hosts 文件
 
-1. Find the hosts file on your local machine.
+1. 在本地机器上找到 hosts 文件。
 
    {{< notice note >}}
 
-   The path of hosts file is `/etc/hosts` for Linux, or `c:\windows\system32\drivers\etc\hosts` for Windows.
+   对于 Linux，hosts 文件的路径是 `/etc/hosts`；对于 Windows，则是 `c:\windows\system32\drivers\etc\hosts`。
 
    {{</ notice >}}
 
-2. Add the following item into the hosts file.
+2. 将以下条目添加进 hosts 文件中。
 
    ```
    192.168.4.3  gitlab.demo-project.svc.cluster.local
@@ -123,24 +123,24 @@ This tutorial demonstrates how to deploy GitLab on KubeSphere.
 
    {{< notice note >}}
 
-   - `192.168.4.3` and `demo-project` refer to the NodeIP and project name respectively where GitLab is deployed. Make sure you use your own NodeIP and project name.
-   - You can use any IP address of the nodes in your Kubernetes cluster.
+   - `192.168.4.3` 和 `demo-project` 分别指的是部署 GitLab 的 NodeIP 和项目名称，请确保使用自己的 NodeIP 和项目名称。
+   - 您可以使用自己 Kubernetes 集群中任意节点的 IP 地址。
 
    {{</ notice >}}
 
-### Step 5: Access GitLab
+### 步骤 5：访问 GitLab
 
-1. Go to **Services** under **Application Workloads**, input `nginx-ingress-controller` in the search bar, and then press **Enter** on your keyboard to search the Service. You can see the Service is being exposed through port `32618`, which you can use to access GitLab.
+1. 访问**应用负载**下的**服务**，在搜索栏输入 `nginx-ingress-controller`，然后按下键盘上的**回车键**搜索该服务，可以看到通过端口 `32618` 暴露的服务，您可以使用该端口访问 GitLab。
 
    ![search-service](/images/docs/appstore/external-apps/deploy-gitlab/search-service.PNG)
 
    {{< notice note >}}
 
-   The port number shown on your console may be different. Make sure you use your own port number.
+   在不同控制台上显示的端口号可能不同，请您确保使用自己的端口号。
 
    {{</ notice >}}
 
-2. Access GitLab through `http://gitlab.demo-project.svc.cluster.local:32618` using the root account and its initial password (`root/LAtonWwrzFvbAW560gaZ0oty6slpkCcywzzCCpeqql9bxIjJBMSGys43zSwq3d9I`).
+2. 通过 `http://gitlab.demo-project.svc.cluster.local:32618` 使用 root 帐户及其初始密码 (`root/LAtonWwrzFvbAW560gaZ0oty6slpkCcywzzCCpeqql9bxIjJBMSGys43zSwq3d9I`) 访问 GitLab。
 
    ![access-gitlab](/images/docs/appstore/external-apps/deploy-gitlab/access-gitlab.PNG)
 
@@ -148,6 +148,7 @@ This tutorial demonstrates how to deploy GitLab on KubeSphere.
 
    {{< notice note >}}
 
-   You may need to open the port in your security groups and configure related port forwarding rules depending on where your Kubernetes cluster is deployed.
+   根据您 Kubernetes 集群部署位置的不同，您可能需要在安全组中打开端口，并配置相关的端口转发规则。
    
    {{</ notice >}}
+
