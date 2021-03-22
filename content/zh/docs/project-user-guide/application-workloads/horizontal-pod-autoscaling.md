@@ -8,14 +8,14 @@ weight: 10290
 
 本文档描述了如何在 KubeSphere 上配置 Pod 弹性伸缩 (HPA)。
 
-HPA 功能会自动调整 Pod 的数量，将 Pod 的平均资源使用（CPU 和内存）保持在预设值附近。有关 HPA 功能的详细情况，请参见 [Kubernetes 官方文档](https://kubernetes.io/docs/tasks/run-application/horizontal-pod-autoscale/)。
+HPA 功能会自动调整 Pod 的数量，将 Pod 的平均资源使用（CPU 和内存）保持在预设值附近。有关 HPA 功能的详细情况，请参见 [Kubernetes 官方文档](https://kubernetes.io/zh/docs/tasks/run-application/horizontal-pod-autoscale/)。
 
 本文档使用基于 CPU 使用率的 HPA 作为示例，基于内存使用量的 HPA 操作与其相似。
 
 ## 准备工作
 
-- 您需要[启用 Metrics Server](/zh/docs/pluggable-components/metrics-server/)。
-- 您需要创建一个企业空间、一个项目以及一个帐户（例如，`project-regular`）。`project-regular` 必须被邀请至此项目中，并被赋予 `operator` 角色。有关更多信息，请参见[创建企业空间、项目、帐户和角色](/zh/docs/quick-start/create-workspace-and-project/)。
+- 您需要[启用 Metrics Server](../../../pluggable-components/metrics-server/)。
+- 您需要创建一个企业空间、一个项目以及一个帐户（例如，`project-regular`）。`project-regular` 必须被邀请至此项目中，并被赋予 `operator` 角色。有关更多信息，请参见[创建企业空间、项目、帐户和角色](../../../quick-start/create-workspace-and-project/)。
 
 ## 创建服务
 
@@ -41,7 +41,7 @@ HPA 功能会自动调整 Pod 的数量，将 Pod 的平均资源使用（CPU �
 
    {{< notice note >}}
 
-   * 若要使用基于 CPU 使用率的 HPA，就必须为每个容器设置 CPU 请求，即为每个容器预留的最低 CPU 资源（有关详细信息，请参见 [Kubernetes 官方文档](https://kubernetes.io/docs/concepts/configuration/manage-resources-containers/)）。HPA 功能会将 Pod 平均 CPU 使用率与 Pod 平均 CPU 请求的目标比率进行比较。
+   * 若要使用基于 CPU 使用率的 HPA，就必须为每个容器设置 CPU 请求，即为每个容器预留的最低 CPU 资源（有关详细信息，请参见 [Kubernetes 官方文档](https://kubernetes.io/zh/docs/tasks/run-application/horizontal-pod-autoscale/)）。HPA 功能会将 Pod 平均 CPU 使用率与 Pod 平均 CPU 请求的目标比率进行比较。
    * 若要使用基于内存使用量的 HPA，则不需要配置内存请求。
 
    {{</ notice >}}
@@ -127,7 +127,7 @@ HPA 功能会自动调整 Pod 的数量，将 Pod 的平均资源使用（CPU �
 
 ## 编辑 HPA 配置
 
-您可以重复[配置 HPA](#configure-hpa) 中的步骤来编辑 HPA 配置。
+您可以重复[配置 HPA](#配置-hpa) 中的步骤来编辑 HPA 配置。
 
 ## 取消 HPA
 
