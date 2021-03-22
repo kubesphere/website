@@ -1,67 +1,67 @@
 ---
-title: "在 KubeSphere 中部署 MeterSphere"
+title: "在 KubeSphere 上部署 MeterSphere"
 keywords: 'KubeSphere, Kubernetes, 应用程序, MeterSphere'
-description: '如何在 KubeSphere 中部署 MeterSphere'
-linkTitle: "在 KubeSphere 中部署 MeterSphere"
+description: '如何在 KubeSphere 上部署 MeterSphere'
+linkTitle: "在 KubeSphere 上部署 MeterSphere"
 weight: 14330
 ---
 
-MeterSphere is an open-source, one-stop, and enterprise-level continuous testing platform. It features test tracking, interface testing, and performance testing.
+MeterSphere 是一站式的开源企业级连续测试平台，涵盖测试跟踪、界面测试和性能测试等功能。
 
-This tutorial demonstrates how to deploy MeterSphere on KubeSphere.
+本教程演示了如何在 KubeSphere 上部署 MeterSphere。
 
-## Prerequisites
+## 准备工作
 
-- You need to enable [the OpenPitrix system](../../../pluggable-components/app-store/).
-- You need to create a workspace, a project, and two user accounts (`ws-admin` and `project-regular`) for this tutorial. The account `ws-admin` must be granted the role of `workspace-admin` in the workspace, and the account `project-regular` must be invited to the project with the role of `operator`. If they are not ready, refer to [Create Workspaces, Projects, Accounts and Roles](../../../quick-start/create-workspace-and-project/).
+- 您需要启用 [OpenPitrix 系统](../../../pluggable-components/app-store/)。
+- 您需要为本教程创建一个企业空间、一个项目以及两个帐户（`ws-admin` 和 `project-regular`）。在企业空间中，`ws-admin` 帐户必须被赋予 `workspace-admin` 角色，`project-regular` 帐户必须被赋予 `operator` 角色。如果还未创建好，请参考[创建企业空间、项目、帐户和角色](../../../quick-start/create-workspace-and-project/)。
 
-## Hands-on Lab
+## **动手实验**
 
-### Step 1: Add an app repository
+### **步骤** **1**：添加应用仓库
 
-1. Log in to KubeSphere as `ws-admin`. In your workspace, go to **App Repos** under **Apps Management**, and then click **Add Repo**.
+1. 以 `ws-admin` 身份登录 KubeSphere。在企业空间中，访问**应用管理**下的**应用仓库**，然后点击**添加仓库**。
 
-   ![add-repo](/images/docs/appstore/external-apps/deploy-metersphere/add-repo.PNG)
+   ![add-repo](/images/docs/zh-cn/appstore/external-apps/deploy-metersphere/add-repo.png)
 
-2. In the dialog that appears, enter `metersphere` for the app repository name and `https://charts.kubesphere.io/test` for the MeterSphere repository URL. Click **Validate** to verify the URL and you will see a green check mark next to the URL if it is available. Click **OK** to continue.
+2. 在出现的对话框中，输入 `metersphere` 作为应用仓库名称，输入 `https://charts.kubesphere.io/test` 作为应用仓库 URL。点击**验证**来验证 URL，如果可用，则会在 URL 右侧看到一个绿色的对号。点击**确定**继续操作。
 
-   ![add-metersphere-repo](/images/docs/appstore/external-apps/deploy-metersphere/add-metersphere-repo.PNG)
+   ![add-metersphere-repo](/images/docs/zh-cn/appstore/external-apps/deploy-metersphere/add-metersphere-repo.png)
 
-3. Your repository displays in the list after successfully imported to KubeSphere.
+3. 仓库成功导入到 KubeSphere 后，会显示在列表里。
 
-   ![added-metersphere-repo](/images/docs/appstore/external-apps/deploy-metersphere/added-metersphere-repo.PNG)
+   ![added-metersphere-repo](/images/docs/zh-cn/appstore/external-apps/deploy-metersphere/added-metersphere-repo.png)
 
-### Step 2: Deploy MeterSphere
+### **步骤** 2：部署 MeterSphere
 
-1. Log out of KubeSphere and log back in as `project-regular`. In your project, go to **Applications** under **Application Workloads** and click **Deploy New Application**.
+1. 登出 KubeSphere，再以 `project-regular` 登录。在您的项目中，访问**应用负载**下的**应用**，然后点击**部署新应用**。
 
-   ![deploy-app](/images/docs/appstore/external-apps/deploy-metersphere/deploy-app.PNG)
+   ![deploy-app](/images/docs/zh-cn/appstore/external-apps/deploy-metersphere/deploy-app.png)
 
-2. In the dialog that appears, select **From App Templates**.
+2. 在出现的对话框中，选择**来自应用模板**。
 
-   ![from-app-templates](/images/docs/appstore/external-apps/deploy-metersphere/from-app-templates.PNG)
+   ![from-app-templates](/images/docs/zh-cn/appstore/external-apps/deploy-metersphere/from-app-templates.png)
 
-3. Select `metersphere` from the drop-down list, then click **metersphere-chart**.
+3. 从下拉菜单中选择 `metersphere`，然后点击 **metersphere-chart**。
 
-   ![click-metersphere](/images/docs/appstore/external-apps/deploy-metersphere/click-metersphere.PNG)
+   ![click-metersphere](/images/docs/zh-cn/appstore/external-apps/deploy-metersphere/click-metersphere.png)
 
-4. On the **App Info** tab and the **Chart Files** tab, you can view the default configuration from the console. Click **Deploy** to continue.
+4. 在**应用信息**选项卡和**配置文件**选项卡，可以看到控制台的默认配置。点击**部署**继续。
 
-   ![view-config](/images/docs/appstore/external-apps/deploy-metersphere/view-config.PNG)
+   ![view-config](/images/docs/zh-cn/appstore/external-apps/deploy-metersphere/view-config.png)
 
-5. On the **Basic Info** page, you can view the app name, app version, and deployment location. Click **Next** to continue.
+5. 在**基本信息**页面，可以看到应用名称、应用版本以及部署位置。点击**下一步**继续。
 
-   ![basic-info](/images/docs/appstore/external-apps/deploy-metersphere/basic-info.PNG)
+   ![basic-info](/images/docs/zh-cn/appstore/external-apps/deploy-metersphere/basic-info.png)
 
-6. On the **App Config** page, change the value of `imageTag` from `master` to `v1.6`, and then click **Deploy**.
+6. 在**应用配置**页面，将 `imageTag` 的值从 `master` 改为 `v1.6`，然后点击**部署**。
 
-   ![change-value](/images/docs/appstore/external-apps/deploy-metersphere/change-value.PNG)
+   ![change-value](/images/docs/zh-cn/appstore/external-apps/deploy-metersphere/change-value.png)
 
-7. Wait for MeterSphere app to be up and running.
+7. 等待 MeterSphere 应用正常运行。
 
    ![metersphere-running](/images/docs/appstore/external-apps/deploy-metersphere/metersphere-running.PNG)
 
-8. Go to **Workloads**, and you can see two Deployments and three StatefulSets created for MeterSphere.
+8. 访问**工作负载**，可以看到为 MeterSphere 创建的所有部署和有状态副本集。
 
    ![deployments-running](/images/docs/appstore/external-apps/deploy-metersphere/deployments-running.PNG)
    
@@ -69,22 +69,22 @@ This tutorial demonstrates how to deploy MeterSphere on KubeSphere.
    
    {{< notice note >}}
    
-   It may take a while before all the Deployments and StatefulSets are up and running.
+   可能需要过一段时间才能看到所有部署和有状态副本集正常运行。
    
    {{</ notice >}}
 
-### Step 3: Access MeterSphere
+### 步骤 3：访问 MeterSphere
 
-1. Go to **Services** under **Application Workloads**, and you can see the MeterSphere Service and its type is set to `NodePort` by default. 
+1. 问**应用负载**下的**服务**，可以看到 MeterSphere 服务，其服务类型默认设置为 `NodePort`。
 
    ![metersphere-service](/images/docs/appstore/external-apps/deploy-metersphere/metersphere-service.PNG)
 
-2. You can access MeterSphere through `{$NodeIP}:{NodePort}` using the default account and password (`admin/metersphere`).
+2. 您可以通过 `{$NodeIP}:{NodePort}` 使用默认帐户及密码 (`admin/metersphere`) 访问 MeterSphere。
 
    ![login-metersphere](/images/docs/appstore/external-apps/deploy-metersphere/login-metersphere.PNG)
 
    {{< notice note >}}
 
-   You may need to open the port in your security groups and configure related port forwarding rules depending on where your Kubernetes cluster is deployed. Make sure to use your own `NodeIP`.
+   根据您 Kubernetes 集群部署位置的不同，您可能需要在安全组中打开端口，并配置相关的端口转发规则。请确保使用自己的 `NodeIP`。
 
    {{</ notice >}}
