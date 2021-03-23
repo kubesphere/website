@@ -269,7 +269,7 @@ spec:
 - QingStor CSI
 - 未来版本将支持更多插件
 
-请确保在安装前配置了存储插件。在安装过程中，KubeKey 将为相关的工作负载创建 StorageClass 和持久卷。有关更多信息，请参见[持久化存储配置](../../../installing-on-linux/introduction/storage-configuration/)。
+请确保在安装前配置了存储插件。在安装过程中，KubeKey 将为相关的工作负载创建 StorageClass 和持久卷。有关更多信息，请参见[持久化存储配置](../../../installing-on-linux/persistent-storage-configurations/understand-persistent-storage/)。
 
 ### 步骤 7：启用可插拔组件（可选）
 
@@ -337,6 +337,6 @@ https://kubesphere.io             2020-08-13 10:50:24
 
 [Kubernetes 集群配置](../../../installing-on-linux/introduction/vars/)
 
-[持久化存储配置](../../../installing-on-linux/introduction/storage-configuration/)
+[持久化存储配置](../../../installing-on-linux/persistent-storage-configurations/understand-persistent-storage/)
 
 [启用可插拔组件](../../../pluggable-components/)

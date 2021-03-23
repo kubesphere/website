@@ -56,7 +56,7 @@ KubeSphere has decoupled some core feature components since v2.1.0. These compon
 
 ## Storage Configurations
 
-KubeSphere allows you to configure persistent storage services both before and after installation. Meanwhile, KubeSphere supports a variety of open-source storage solutions (for example, Ceph and GlusterFS) as well as commercial storage products. Refer to [Persistent Storage Configurations](../storage-configuration) for detailed instructions regarding how to configure the storage class before you install KubeSphere.
+KubeSphere allows you to configure persistent storage services both before and after installation. Meanwhile, KubeSphere supports a variety of open-source storage solutions (for example, Ceph and GlusterFS) as well as commercial storage products. Refer to [Persistent Storage Configurations](../../../installing-on-linux/persistent-storage-configurations/understand-persistent-storage/) for detailed instructions regarding how to configure the storage class before you install KubeSphere.
 
 For more information about how to set different storage classes for your workloads after you install KubeSphere, see [Persistent Volumes and Storage Classes](../../../cluster-administration/persistent-volume-and-storage-class/).
 

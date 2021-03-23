@@ -42,7 +42,7 @@ weight: 10310
 
    ![volume-creation-method](/images/docs/zh-cn/project-user-guide/volume-management/volumes/volume-creation-method.jpg)
 
-   - **通过存储类型**：您可以在 KubeSphere [安装前](../../../installing-on-linux/introduction/storage-configuration/)或[安装后](../../../cluster-administration/persistent-volume-and-storage-class/)配置存储类型。
+   - **通过存储类型**：您可以在 KubeSphere [安装前](../../../installing-on-linux/persistent-storage-configurations/understand-persistent-storage/)或[安装后](../../../cluster-administration/persistent-volume-and-storage-class/)配置存储类型。
    - **通过存储卷快照创建**：如需通过快照创建存储卷，您必须先创建存储卷快照。
 
 5. 选择**通过存储类型**。有关通过存储卷快照创建存储卷的更多信息，请参阅[存储卷快照](../volume-snapshots/)。

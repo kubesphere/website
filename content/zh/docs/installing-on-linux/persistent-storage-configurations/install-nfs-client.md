@@ -1,8 +1,8 @@
 ---
-title: "Install NFS Client"
+title: "安装 NFS Client"
 keywords: 'KubeSphere, Kubernetes, storage, installation, configurations, NFS'
 description: 'Use KubeKey to set up a KubeSphere cluster and configure NFS storage.'
-linkTitle: "Install NFS Client"
+linkTitle: "安装 NFS Client"
 weight: 3330
 ---
 

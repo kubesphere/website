@@ -209,7 +209,7 @@ The public load balancer is used directly instead of an internal load balancer d
 
 ### Persistent Storage Plugin Configuration
 
-See [Storage Configuration](../storage-configuration) for details.
+See [Storage Configuration](../../../installing-on-linux/persistent-storage-configurations/understand-persistent-storage/) for details.
 
 ### Configure the Network Plugin
 

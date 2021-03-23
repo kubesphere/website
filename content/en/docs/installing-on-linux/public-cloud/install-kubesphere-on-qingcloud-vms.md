@@ -270,7 +270,7 @@ For testing or development, you can skip this part. KubeKey will use the integra
 - QingStor CSI
 - More plugins will be supported in future releases
 
-Make sure you have configured the storage plugin before you get started. KubeKey will create a StorageClass and persistent volumes for related workloads during the installation. For more information, see [Persistent Storage Configurations](../../../installing-on-linux/introduction/storage-configuration/).
+Make sure you have configured the storage plugin before you get started. KubeKey will create a StorageClass and persistent volumes for related workloads during the installation. For more information, see [Persistent Storage Configurations](../../../installing-on-linux/persistent-storage-configurations/understand-persistent-storage/).
 
 ### Step 7: Enable pluggable components (Optional)
 
@@ -338,6 +338,6 @@ To verify if the cluster is highly available, you can turn off an instance on pu
 
 [Kubernetes Cluster Configurations](../../../installing-on-linux/introduction/vars/)
 
-[Persistent Storage Configurations](../../../installing-on-linux/introduction/storage-configuration/)
+[Persistent Storage Configurations](../../../installing-on-linux/persistent-storage-configurations/understand-persistent-storage/)
 
 [Enable Pluggable Components](../../../pluggable-components/)

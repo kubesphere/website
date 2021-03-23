@@ -164,7 +164,7 @@ spec:
 
 ### 持久化存储插件配置
 
-在生产环境中，您需要准备持久化存储并在 `config-sample.yaml` 中配置存储插件（例如 CSI），以明确您想使用哪一种存储服务。有关更多信息，请参见[持久化存储配置](../../../installing-on-linux/introduction/storage-configuration/)。
+在生产环境中，您需要准备持久化存储并在 `config-sample.yaml` 中配置存储插件（例如 CSI），以明确您想使用哪一种存储服务。有关更多信息，请参见[持久化存储配置](../../../installing-on-linux/persistent-storage-configurations/understand-persistent-storage/)。
 
 ### 启用可插拔组件（可选）
 
