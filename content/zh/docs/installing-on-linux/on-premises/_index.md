@@ -1,6 +1,6 @@
 ---
 linkTitle: "在本地环境中安装"
-weight: 3300
+weight: 3500
 
 _build:
     render: false
