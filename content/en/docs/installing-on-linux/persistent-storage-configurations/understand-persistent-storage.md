@@ -25,7 +25,7 @@ Some storage systems require you to prepare a storage server in advance to provi
 
 ## How Does KubeKey Install Different Storage Systems
 
-KubeKey creates [a configuration file](../../../installing-on-linux/introduction/multioverview/#2-edit-the-configuration-file) (`config-sample.yaml` by default) for your cluster which contains all the necessary parameters you can define for different resources, including various add-ons. Different storage systems, such as NFS storage and GlusterFS, can also be installed as add-ons by Helm charts or YAML. To let KubeKey install them in the desired way, you must provide KubeKey with necessary configurations of these storage systems.
+KubeKey creates [a configuration file](../../../installing-on-linux/introduction/multioverview/#2-edit-the-configuration-file) (`config-sample.yaml` by default) for your cluster which contains all the necessary parameters you can define for different resources, including various add-ons. Different storage systems, such as NFS and GlusterFS, can also be installed as add-ons by Helm charts or YAML. To let KubeKey install them in the desired way, you must provide KubeKey with necessary configurations of these storage systems.
 
 There are generally two ways for you to let KubeKey apply configurations of the storage system to be installed.
 
@@ -38,7 +38,7 @@ For more information, see [add-ons](https://github.com/kubesphere/kubekey/blob/v
 
 KubeKey supports the installation of different storage plugins and storage classes. No matter what storage systems you will be installing, you can specify whether it is a default storage class in its configuration file. If KubeKey detects that no default storage class is specified, it will install [OpenEBS](https://github.com/openebs/openebs) by default.
 
-OpenEBS Dynamic Local PV provisioner can create Kubernetes Local Persistent Volumes using a unique HostPath (directory) on the node to persist data. It is very convenient for users to get started with KubeSphere when they have no specific storage system.
+OpenEBS Dynamic Local PV provisioner can create Kubernetes Local Persistent Volumes using a unique HostPath (directory) on the node to persist data. It is very convenient for users to get started with OpenEBS when they have no specific storage system.
 
 ## Multi-storage Solutions
 
