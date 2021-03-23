@@ -6,25 +6,25 @@ linkTitle: "搭建 GlusterFS 服务器"
 weight: 17420
 ---
 
-[GlusterFS](https://kubernetes.io/zh/docs/concepts/storage/volumes/#glusterfs) 是开源的分布式文件系统，您能使用 GlusterFS 将 `glusterfs` 卷挂载到 Pod。如果 `glusterfs` 卷中预先填充了数据，则可以在 Kubernetes 集群中的 Pod 之间共享这些数据。
+[GlusterFS](https://kubernetes.io/zh/docs/concepts/storage/volumes/#glusterfs) 是开源的分布式文件系统，您能使用 GlusterFS 将 `glusterfs` 存储卷挂载到 Pod。如果 `glusterfs` 存储卷中预先填充了数据，则可以在 Kubernetes 集群中的 Pod 之间共享这些数据。
 
 本教程演示了如何在三台服务器机器上配置 GlusterFS 以及如何安装 [Heketi](https://github.com/heketi/heketi) 来管理 GlusterFS 集群。
 
-GlusterFS 和 Heketi 搭建好之后，就可以在客户端机器上安装 GlusterFS，还可以使用 KubeKey 创建一个存储类型为 GlusterFS 的 KubeSphere 集群。
+GlusterFS 和 Heketi 搭建好之后，就可以在客户端机器上安装 GlusterFS，并使用 KubeKey 创建一个存储类型为 GlusterFS 的 KubeSphere 集群。
 
 ## 准备 GlusterFS 节点
 
 本示例中包含三台 Ubuntu 16.04 服务器机器，每台服务器都有一个附带的磁盘。
 
-| 主机名  | IP 地址     | 操作系统                         | 设备            |
-| ------- | ----------- | -------------------------------- | --------------- |
-| server1 | 192.168.0.2 | Ubuntu 16.04, 4 Cores, 4 GB 内存 | /dev/vdd 300 GB |
-| server2 | 192.168.0.3 | Ubuntu 16.04, 4 Cores, 4 GB 内存 | /dev/vdd 300 GB |
-| server3 | 192.168.0.4 | Ubuntu 16.04, 4 Cores, 4 GB 内存 | /dev/vdd 300 GB |
+| 主机名  | IP 地址     | 操作系统                      | 设备            |
+| ------- | ----------- | ----------------------------- | --------------- |
+| server1 | 192.168.0.2 | Ubuntu 16.04，4 核，4 GB 内存 | /dev/vdd 300 GB |
+| server2 | 192.168.0.3 | Ubuntu 16.04，4 核，4 GB 内存 | /dev/vdd 300 GB |
+| server3 | 192.168.0.4 | Ubuntu 16.04，4 核，4 GB 内存 | /dev/vdd 300 GB |
 
 {{< notice note >}}
 
-- Heketi 将安装在 `server1` 上，该服务器提供 RESTful 管理界面来管理 GlusterFS 卷的生命周期。您也可以将 Heketi 安装在不同的服务器机器上。
+- Heketi 将安装在 `server1` 上，该服务器提供 RESTful 管理接口来管理 GlusterFS 存储卷的生命周期。您也可以将 Heketi 安装在不同的服务器机器上。
 
 - 若需要更多存储空间，请在服务器上加装存储磁盘。
 - 数据将保存到 `/dev/vdd`（块设备），必须是没有经过分区或格式化的原始块设备。
@@ -56,7 +56,7 @@ GlusterFS 和 Heketi 搭建好之后，就可以在客户端机器上安装 Glus
 
 3. `server2` 和 `server3` 的 root 用户密码也需要进行更改。
 
-### 添加主机文件条目
+### 添加 hosts 文件条目
 
 1. 在所有服务器机器上配置 DNS 或编辑 `/etc/hosts` 文件，添加相应的主机名和 IP 地址：
 
@@ -173,7 +173,7 @@ GlusterFS 和 Heketi 搭建好之后，就可以在客户端机器上安装 Glus
 
 ## 创建 GlusterFS 集群
 
-1. 在 `server1` 上运行以下命令安装其他节点并创建集群。
+1. 在 `server1` 上运行以下命令添加其他节点并创建集群。
 
    ```bash
    gluster peer probe server2
@@ -205,7 +205,7 @@ GlusterFS 和 Heketi 搭建好之后，就可以在客户端机器上安装 Glus
 
 ## 安装 Heketi
 
-由于 GlusterFS 本身不提供 API 调用的方法，因此您可以安装 [Heketi](https://github.com/heketi/heketi)，通过用于 Kubernetes 调用的 RESTful API 来管理 GlusterFS 卷的生命周期。这样，您的 Kubernetes 集群就可以动态地配置 GlusterFS 卷。在此示例中将会安装 Heketi v7.0.0。有关 Heketi 可用版本的更多信息，请参见其[发布页面](https://github.com/heketi/heketi/releases/)。
+由于 GlusterFS 本身不提供 API 调用的方法，因此您可以安装 [Heketi](https://github.com/heketi/heketi)，通过用于 Kubernetes 调用的 RESTful API 来管理 GlusterFS 存储卷的生命周期。这样，您的 Kubernetes 集群就可以动态地配置 GlusterFS 存储卷。在此示例中将会安装 Heketi v7.0.0。有关 Heketi 可用版本的更多信息，请参见其[发布页面](https://github.com/heketi/heketi/releases/)。
 
 1. 在 `server1` 上下载 Heketi。
 
@@ -267,7 +267,7 @@ GlusterFS 和 Heketi 搭建好之后，就可以在客户端机器上安装 Glus
    mkdir -p /etc/heketi
    ```
 
-5. Create a JSON file for Heketi configurations.创建 JSON 文件以配置 Heketi。
+5. 创建 JSON 文件以配置 Heketi。
 
    ```
    vi /etc/heketi/heketi.json
@@ -344,7 +344,7 @@ GlusterFS 和 Heketi 搭建好之后，就可以在客户端机器上安装 Glus
 
    {{< notice note >}}
 
-   在安装 GlusterFS 作为 KubeSphere 集群的存储类型时，必须提供帐户 `admin` 及其`密钥`值。
+   在安装 GlusterFS 作为 KubeSphere 集群的存储类型时，必须提供帐户 `admin` 及其 `Secret` 值。
 
    {{</ notice >}} 
 
