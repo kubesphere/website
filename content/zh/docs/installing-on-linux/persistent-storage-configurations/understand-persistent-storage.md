@@ -6,40 +6,40 @@ linkTitle: "安装持久化存储"
 weight: 3310
 ---
 
-Persistent volumes are a **must** for installing KubeSphere. When you use [KubeKey](../../../installing-on-linux/introduction/kubekey/) to set up a KubeSphere cluster, you can install different storage systems as [add-ons](https://github.com/kubesphere/kubekey/blob/v1.0.0/docs/addons.md). The general steps of installing KubeSphere by KubeKey on Linux are:
+持久化存储是安装 KubeSphere 的**必备条件**。使用 [KubeKey](../../../installing-on-linux/introduction/kubekey/) 搭建 KubeSphere 集群时，可以安装不同的存储系统作为[插件](https://github.com/kubesphere/kubekey/blob/v1.0.0/docs/addons.md)。在 Linux 上通过 KubeKey 安装 KubeSphere 的一般步骤如下：
 
-1. Install Kubernetes.
-2. Install any provided add-ons.
-3. Install KubeSphere by [ks-installer](https://github.com/kubesphere/ks-installer).
+1. 安装 Kubernetes。
+2. 安装所提供的任何插件。
+3. 通过 [ks-installer](https://github.com/kubesphere/ks-installer) 安装 KubeSphere。
 
-In the second step, an available StorageClass **must** be installed. It includes:
+在第 2 步中，**必须**安装可用的 StorageClass，包括：
 
-- The StorageClass itself
-- The storage plugin for the StorageClass if necessary
+- StorageClass 本身
+- 必要情况下，还需为 StorageClass 安装存储插件
 
 {{< notice note >}}
 
-Some storage systems require you to prepare a storage server in advance to provide external storage services. 
+某些存储系统需要您预先准备存储服务器，以提供外部存储服务。
 
 {{</ notice >}} 
 
-## How Does KubeKey Install Different Storage Systems
+## KubeKey 如何安装不同的存储系统
 
-KubeKey creates [a configuration file](../../../installing-on-linux/introduction/multioverview/#2-edit-the-configuration-file) (`config-sample.yaml` by default) for your cluster which contains all the necessary parameters you can define for different resources, including various add-ons. Different storage systems, such as NFS storage and GlusterFS, can also be installed as add-ons by Helm charts or YAML. To let KubeKey install them in the desired way, you must provide KubeKey with necessary configurations of these storage systems.
+KubeKey 会为集群创建[一个配置文件](../../../installing-on-linux/introduction/multioverview/#2-编辑配置文件)（默认为 `config-sample.yaml`），其中包含定义不同资源（包括各种插件）的全部必要参数。NFS storage 和 GlusterFS 等不同的存储系统也能通过 Helm Chart 或 YAML 作为插件进行安装。若要让 KubeKey 以预期的方式来安装这些存储系统，就必须为 KubeKey 提供这些存储系统的必要配置。
 
-There are generally two ways for you to let KubeKey apply configurations of the storage system to be installed.
+通常，有两种方法能使 KubeKey 应用即将安装的存储系统的配置。
 
-1. Input necessary parameters under the `addons` field directly in `config-sample.yaml`.
-2. Create a separate configuration file for your add-on to list all the necessary parameters and provide the path of the file in `config-sample.yaml` so that KubeKey can reference it during installation.
+1. 直接在 `config-sample.yaml` 中的 `addons` 字段下输入必要的参数。
+2. 为插件创建一个单独的配置文件，列出所有必要的参数，并在 `config-sample.yaml` 中提供文件的路径，以便 KubeKey 在安装过程中引用该路径。
 
-For more information, see [add-ons](https://github.com/kubesphere/kubekey/blob/v1.0.0/docs/addons.md).
+有关更多信息，请参见[插件](https://github.com/kubesphere/kubekey/blob/v1.0.0/docs/addons.md)。
 
-## Default Storage Class
+## 默认存储类型
 
-KubeKey supports the installation of different storage plugins and storage classes. No matter what storage systems you will be installing, you can specify whether it is a default storage class in its configuration file. If KubeKey detects that no default storage class is specified, it will install [OpenEBS](https://github.com/openebs/openebs) by default.
+KubeKey 支持安装不同的存储插件和存储类型。无论您要安装哪种存储系统，都可以在其配置文件中指定是否设为默认存储类型。如果 KubeKey 检测到未指定默认存储类型，则将默认安装 [OpenEBS](https://github.com/openebs/openebs)。
 
-OpenEBS Dynamic Local PV provisioner can create Kubernetes Local Persistent Volumes using a unique HostPath (directory) on the node to persist data. It is very convenient for users to get started with KubeSphere when they have no specific storage system.
+OpenEBS 本地 PV 动态供应器可以使用节点上的唯一 HostPath（目录）来创建 Kubernetes 本地持久卷，以持久化数据。用户没有特定的存储系统时，使用 KubeSphere 上手会非常方便。
 
-## Multi-storage Solutions
+## 多样化存储解决方案
 
-If you intend to install more than one storage plugins, only one of them can be set as the default storage class. Otherwise, KubeKey will be confused about which storage class to use.
+如果打算安装多个存储插件，那么只能将其中一个设置为默认存储类型。否则，KubeKey 将无法识别使用哪种存储类型。
