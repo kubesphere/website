@@ -3,7 +3,7 @@ title: "Delete Nodes"
 keywords: 'Kubernetes, KubeSphere, scale-in, remove-nodes'
 description: 'How to remove nodes from an existing cluster.'
 linkTitle: "Delete Nodes"
-weight: 3420
+weight: 3620
 ---
 
 ## Cordon a Node

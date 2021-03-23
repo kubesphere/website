@@ -2,7 +2,6 @@
 title: "Kubernetes Cluster Configurations"
 keywords: 'KubeSphere, Kubernetes, docker, cluster, configuration'
 description: 'Configure cluster parameters before installing'
-
 linkTitle: "Kubernetes Cluster Configurations"
 weight: 3160
 ---

@@ -4,7 +4,7 @@ keywords: 'Kubernetes, KubeSphere, port-requirements, firewall-rules'
 description: 'Port requirements in KubeSphere'
 
 linkTitle: "Port Requirements"
-weight: 3140
+weight: 3150
 ---
 
 
