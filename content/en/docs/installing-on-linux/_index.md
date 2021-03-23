@@ -37,10 +37,6 @@ Understand the specific port requirements for different services in KubeSphere.
 
 Customize your Kubernetes settings in the configuration file for your cluster.
 
-### [Persistent Storage Configurations](../installing-on-linux/introduction/storage-configuration/)
-
-Add different storage classes to your cluster with KubeKey, such as Ceph RBD and Glusterfs.
-
 ## High Availability Configurations
 
 ### [Set up an HA Cluster Using a Load Balancer](../installing-on-linux/high-availability-configurations/ha-configuration/)
@@ -50,6 +46,28 @@ Learn how to create a highly available cluster using a load balancer.
 ### [Set up an HA Cluster Using Keepalived and HAproxy](../installing-on-linux/high-availability-configurations/set-up-ha-cluster-using-keepalived-haproxy/)
 
 Learn how to create a highly available cluster using Keepalived and HAproxy.
+
+## Persistent Storage Configurations
+
+### [Understand Persistent Storage Installation](../installing-on-linux/persistent-storage-configurations/understand-persistent-storage/)
+
+Understand how to use KubeKey to install different storage systems.
+
+### [Install QingCloud CSI](../installing-on-linux/persistent-storage-configurations/install-qingcloud-csi/)
+
+Use KubeKey to create a cluster with QingCloud CSI providing storage services.
+
+### [Install NFS Client](../installing-on-linux/persistent-storage-configurations/install-nfs-client/)
+
+Use KubeKey to create a cluster with NFS Client providing storage services.
+
+### [Install GlusterFS](../installing-on-linux/persistent-storage-configurations/install-gluster-fs/)
+
+Use KubeKey to create a cluster with GlusterFS providing storage services.
+
+### [Install Ceph](../installing-on-linux/persistent-storage-configurations/install-ceph-csi-rbd/)
+
+Use KubeKey to create a cluster with Ceph providing storage services.
 
 ## Installing on Public Cloud
 
