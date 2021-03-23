@@ -1,76 +1,76 @@
 ---
-title: "安装 QingCloud CSI"
-keywords: 'KubeSphere, Kubernetes, QingCloud CSI, installation, configurations, storage'
-description: 'How to create a KubeSphere create with QingCloud CSI providing storage services.'
-linkTitle: "安装 QingCloud CSI"
+title: "安装青云QingCloud CSI"
+keywords: 'KubeSphere, Kubernetes, 青云QingCloud CSI, 安装, 配置, 存储'
+description: '如何创建使用青云QingCloud SCI 提供存储服务的 KubeSphere.'
+linkTitle: "安装青云QingCloud CSI"
 weight: 3320
 ---
 
-If you plan to install KubeSphere on [QingCloud](https://www.qingcloud.com/), [QingCloud CSI](https://github.com/yunify/qingcloud-csi) can be chosen as the underlying storage plugin. 
+如果您打算在[青云QingCloud](https://www.qingcloud.com/) 上安装 KubeSphere，可以选择[青云QingCloud CSI](https://github.com/yunify/qingcloud-csi) 作为底层存储插件。
 
-This tutorial demonstrates how to use KubeKey to set up a KubeSphere cluster and configure QingCloud CSI to provide storage services.
+本教程演示了如何使用 KubeKey 搭建 KubeSphere 集群及配置青云QingCloud CSI 以提供存储服务。
 
-## Prerequisites
+## 准备工作
 
-Your cluster nodes are created on [QingCloud Platform](https://intl.qingcloud.com/).
+您需要在[青云QingCloud 平台](https://intl.qingcloud.com/)上创建集群节点。
 
-## Step 1: Create Access Keys on QingCloud Platform
+## 步骤 1：在青云QingCloud 平台上创建 API 密钥
 
-To make sure the platform can create cloud disks for your cluster, you need to provide the access key (`qy_access_key_id` and `qy_secret_access_key`) in a separate configuration file of QingCloud CSI.
+若要确保平台可以为集群创建云磁盘，就需要在单独的青云QingCloud CSI 配置文件中提供 API 密钥（`qy_access_key_id` 和 `qy_secret_access_key`）。
 
-1. Log in to the web console of [QingCloud](https://console.qingcloud.com/login) and select **Access Key** from the drop-down list in the top right corner.
+1. 登录[青云QingCloud](https://console.qingcloud.com/login) 的 Web 控制台，从右上角的下拉菜单中选择 **API 密钥**。
 
    ![access-key](/images/docs/installing-on-linux/introduction/persistent-storage-configuration/access-key.jpg)
 
-2. Click **Create** to generate keys. Download the key after it is created, which is stored in a csv file.
+2. 点击**创建**生成密钥。创建完成后，下载密钥，该密钥存储在一个 csv 文件中。
 
-## Step 2: Create a Configuration File for QingCloud CSI
+## 步骤 2：为青云QingCloud CSI 创建配置文件
 
-The separate configuration file contains all parameters of QingCloud CSI which will be used by KubeKey during installation.
+单独的配置文件中包含青云QingCloud CSI 的全部参数，KubeKey 将在安装过程中使用这些参数。
 
-1. Go to one of the nodes (taskbox) where you want to download KubeKey later and run the following command to create a configuration file.
+1. 访问您稍后想要下载 KubeKey 到其上的节点（任务机），运行以下命令创建配置文件。
 
    ```
    vi csi-qingcloud.yaml
    ```
 
-   An example configuration file:
+   示例配置文件：
 
    ```yaml
    config:
-     qy_access_key_id: "MBKTPXWCIRIEDQYQKXYL"    # Replace it with your own key id.
-     qy_secret_access_key: "cqEnHYZhdVCVif9qCUge3LNUXG1Cb9VzKY2RnBdX"  # Replace it with your own access key.
-     zone: "pek3a"  # Lowercase letters only.
+     qy_access_key_id: "MBKTPXWCIRIEDQYQKXYL"    #请替换为您自己的密钥 id。
+     qy_secret_access_key: "cqEnHYZhdVCVif9qCUge3LNUXG1Cb9VzKY2RnBdX"  #请替换为您自己的 API 密钥。
+     zone: "pek3a"  #仅支持小写字母。
    sc:
-     isDefaultClass: true # Set it as the default storage class.
+     isDefaultClass: true #将其设置为默认存储类型。
    ```
 
-2. The field `zone` specifies where your cloud disks are created. On QingCloud Platform, you must select a zone before you create them.
+2. 字段 `zone` 会指定云磁盘创建的可用区。在青云QingCloud 平台，您必须在创建云磁盘之前指定一个可用区。
 
    ![storage-zone](/images/docs/installing-on-linux/introduction/persistent-storage-configuration/storage-zone.jpg)
 
-   Make sure the value you specify for `zone` matches the region ID below:
+   请确保为 `zone` 指定的值与以下区域 ID 匹配：
 
-   | Zone                                        | Region ID               |
+   | 可用区                                      | 区域 ID                 |
    | ------------------------------------------- | ----------------------- |
    | Shanghai1-A/Shanghai1-B                     | sh1a/sh1b               |
    | Beijing3-A/Beijing3-B/Beijing3-C/Beijing3-D | pek3a/pek3b/pek3c/pek3d |
    | Guangdong2-A/Guangdong2-B                   | gd2a/gd2b               |
    | Asia-Pacific 2-A                            | ap2a                    |
 
-   If you want to configure more values, see [chart configuration for QingCloud CSI](https://github.com/kubesphere/helm-charts/tree/master/src/test/csi-qingcloud#configuration).
+   如果想要配置更多的值，请参见[青云QingCloud CSI Chart 配置](https://github.com/kubesphere/helm-charts/tree/master/src/test/csi-qingcloud#configuration)。
    
-3. Save the file.
+3. 保存文件。
 
-## Step 3: Download KubeKey
+## 步骤 3：下载 KubeKey
 
-Follow the steps below to download [KubeKey](../kubekey) on the taskbox.
+根据以下步骤在任务机上下载 [KubeKey](../../../installing-on-linux/introduction/kubekey/)。
 
 {{< tabs >}}
 
-{{< tab "Good network connections to GitHub/Googleapis" >}}
+{{< tab "能够正常访问 GitHub/Googleapis" >}}
 
-Download KubeKey from its [GitHub Release Page](https://github.com/kubesphere/kubekey/releases) or use the following command directly.
+从 [GitHub Release Page](https://github.com/kubesphere/kubekey/releases) 下载 KubeKey 或者直接运行以下命令。
 
 ```bash
 curl -sfL https://get-kk.kubesphere.io | VERSION=v1.0.1 sh -
@@ -78,15 +78,15 @@ curl -sfL https://get-kk.kubesphere.io | VERSION=v1.0.1 sh -
 
 {{</ tab >}}
 
-{{< tab "Poor network connections to GitHub/Googleapis" >}}
+{{< tab "访问 GitHub/Googleapis 受限" >}}
 
-Run the following command first to make sure you download KubeKey from the correct zone.
+首先运行以下命令，确保您从正确的区域下载 KubeKey。
 
 ```bash
 export KKZONE=cn
 ```
 
-Run the following command to download KubeKey:
+运行以下命令下载 KubeKey：
 
 ```bash
 curl -sfL https://get-kk.kubesphere.io | VERSION=v1.0.1 sh -
@@ -94,7 +94,7 @@ curl -sfL https://get-kk.kubesphere.io | VERSION=v1.0.1 sh -
 
 {{< notice note >}}
 
-After you download KubeKey, if you transfer it to a new machine also with poor network connections to Googleapis, you must run `export KKZONE=cn` again before you proceed with the steps below.
+下载 KubeKey 之后，如果您将其转移到访问 Googleapis 受限的新机器上，请务必再次运行 `export KKZONE=cn`，然后继续执行以下步骤。
 
 {{</ notice >}} 
 
@@ -104,19 +104,19 @@ After you download KubeKey, if you transfer it to a new machine also with poor n
 
 {{< notice note >}}
 
-The commands above download the latest release (v1.0.1) of KubeKey. You can change the version number in the command to download a specific version.
+通过以上的命令，可以下载 KubeKey 的最新版本 (v1.0.1)。您可以更改命令中的版本号来下载特定的版本。
 
 {{</ notice >}}
 
-Make `kk` executable:
+使 `kk` 可执行：
 
 ```bash
 chmod +x kk
 ```
 
-## Step 4: Create a Cluster
+## 步骤 4：创建集群
 
-1. Specify a Kubernetes version and a KubeSphere version that you want to install. For example:
+1. 指定您想要安装的 Kubernetes 版本和 KubeSphere 版本，例如：
 
    ```bash
    ./kk create config --with-kubernetes v1.17.9 --with-kubesphere v3.0.0
@@ -124,14 +124,14 @@ chmod +x kk
 
    {{< notice note >}}
 
-   - Supported Kubernetes versions: v1.15.12, v1.16.13, v1.17.9 (default), v1.18.6.
+   - 支持的 Kubernetes 版本：v1.15.12，v1.16.13，v1.17.9（默认），v1.18.6。
 
-   - If you do not add the flag `--with-kubesphere` in the command in this step, KubeSphere will not be deployed unless you install it using the `addons` field in the configuration file or add this flag again when you use `./kk create cluster` later.
-   - If you add the flag `--with-kubesphere` without specifying a KubeSphere version, the latest version of KubeSphere will be installed.
+   - 如果您在此步骤的命令中不添加标志 `--with-kubesphere`，则不会部署 KubeSphere，只能使用配置文件中的 `addons` 字段安装，或者在您后续使用 `./kk create cluster` 命令时再次添加这个标志。
+   - 如果您添加标志 `--with-kubesphere` 时不指定 KubeSphere 版本，则会安装最新版本的 KubeSphere。
 
    {{</ notice >}}
 
-2. A default file `config-sample.yaml` will be created if you do not customize the name. Edit the file.
+2. 如果您不自定义名称，将创建默认文件 `config-sample.yaml`。编辑文件：
 
    ```bash
    vi config-sample.yaml
@@ -180,27 +180,27 @@ chmod +x kk
    ...
    ```
 
-3. Pay special attention to the field of `addons`, under which you must provide the information of QingCloud CSI. For more information about each parameter in this file, see [Multi-node Installation](../../../installing-on-linux/introduction/multioverview/#2-edit-the-configuration-file).
+3. 请特别注意 `addons` 字段，您必须在该字段下提供青云QingCloud CSI 的信息。有关文件中每个参数的更多信息，请参见[多节点安装](../../../installing-on-linux/introduction/multioverview/#2-edit-the-configuration-file)。
 
    {{< notice note >}}
 
-   KubeKey will install QingCloud CSI by Helm charts together with its StorageClass.
+   KubeKey 将通过 Helm Chart 安装青云QingCloud CSI 及其 StorageClass。
 
    {{</ notice >}}
 
-4. Save the file and execute the following command to install Kubernetes and KubeSphere:
+4. 保存文件，执行以下命令安装 Kubernetes 和 KubeSphere：
 
    ```bash
    ./kk create cluster -f config-sample.yaml
    ```
 
-5. When the installation finishes, you can inspect installation logs with the following command:
+5. 安装完成后，可以使用以下命令检查安装日志：
 
    ```bash
    kubectl logs -n kubesphere-system $(kubectl get pod -n kubesphere-system -l app=ks-install -o jsonpath='{.items[0].metadata.name}') -f
    ```
 
-   Expected output:
+   预期输出：
 
    ```bash
    #####################################################
@@ -224,32 +224,32 @@ chmod +x kk
    #####################################################
    ```
 
-## Step 5: Verify Installation
+## 步骤 5：验证安装
 
-You can verify that QingCloud CSI has been successfully installed either from the command line or from the KubeSphere web console.
+您可以使用命令行或者通过 KubeSphere 的 Web 控制台来验证青云QingCloud CSI 是否安装成功。
 
-### Command line
+### 命令行
 
-1. Run the following command to check your storage class.
+1. 运行以下命令检查存储类型。
 
    ```bash
    kubectl get sc
    ```
 
-   Expected output:
+   预期输出：
 
    ```bash
    NAME                      PROVISIONER              RECLAIMPOLICY   VOLUMEBINDINGMODE      ALLOWVOLUMEEXPANSION   AGE
    csi-qingcloud (default)   disk.csi.qingcloud.com   Delete          WaitForFirstConsumer   true                   28m
    ```
 
-2. Run the following command to check the statuses of Pods.
+2. 运行以下命令检查 Pod 的状态。
 
    ```bash
    kubectl get pod -n kube-system
    ```
 
-   Note that `csi-qingcloud` is installed in the namespace `kube-system`. Expected output (exclude other irrelevant Pods):
+   请注意，`csi-qingcloud` 安装在命名空间 `kube-system` 中，预期输出（不包括其他无关 Pod）：
 
    ```bash
    NAME                                       READY   STATUS    RESTARTS   AGE
@@ -259,20 +259,20 @@ You can verify that QingCloud CSI has been successfully installed either from th
    csi-qingcloud-node-sptdb                   2/2     Running   0          28m
    ```
 
-### KubeSphere console
+### KubeSphere 控制台
 
-1. Log in to the web console as `admin` with the default account and password at `<NodeIP>:30880`. Click **Platform** in the top left corner and select **Clusters Management**.
+1. 以 `admin` 身份在 `<NodeIP>:30880` 使用默认帐户和密码登录 Web 控制台。点击左上角的**平台管理**，选择**集群管理**。
 
-2. Go to **Pods** in **Application Workloads** and select `kube-system` from the project drop-down list. You can see that the Pods of `csi-qingcloud` are up and running.
+2. 访问**工作负载**中的**容器组**，从下拉菜单中选择 `kube-system`。可以看到 `csi-qingcloud` 的 Pod 正常运行。
 
    ![qingcloud-csi-pod](/images/docs/installing-on-linux/persistent-storage-configurations/qingcloud-csi/qingcloud-csi-pod.png)
 
-3. Go to **Storage Classes** under **Storage**, and you can see available storage classes in your cluster.
+3. 访问**存储管理**下的**存储类型**，可以看到集群中可用的存储类型。
 
    ![qingcloud-csi-storage-class](/images/docs/installing-on-linux/persistent-storage-configurations/qingcloud-csi/qingcloud-csi-storage-class.png)
    
    {{< notice note >}}
    
-   For more information about how to create volumes on the KubeSphere console, see [Volumes](../../../project-user-guide/storage/volumes/).
+   有关如何在 KubeSphere 控制台创建存储卷的更多信息，请参见[存储卷](../../../project-user-guide/storage/volumes/)。
    
    {{</ notice >}} 
