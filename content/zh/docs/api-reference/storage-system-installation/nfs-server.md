@@ -8,11 +8,11 @@ weight: 17410
 
 KubeSphere 支持存储插件 [NFS-client Provisioner](https://github.com/kubernetes-incubator/external-storage/tree/master/nfs-client)。若想使用该插件，必须预先配置 NFS 服务器。NFS 服务器配置完成后，NFS 客户端会在服务器机器上挂载目录，以便 NFS 客户端访问 NFS 服务器上的文件，即您需要创建并输出客户端机器可以访问的目录。
 
-NFS 服务器机器就绪后，您可以使用 [KubeKey](../../../installing-on-linux/introduction/kubekey/) 通过 Helm Chart 来安装 NFS-client Provisioner 以及 Kubernetes 和 KubeSphere。在安装过程中，必须在 KubeKey 使用的 Chart 配置中提供 NFS 服务器的输出目录。
+NFS 服务器机器就绪后，您可以使用 [KubeKey](../../../installing-on-linux/introduction/kubekey/) 通过 Helm Chart 来安装 NFS-client Provisioner 以及 Kubernetes 和 KubeSphere。您必须在 Chart 配置中提供 NFS 服务器的输出目录以便 KubeKey 在安装时使用。
 
 {{< notice note >}}
 
-安装 KubeSphere 集群后，您还可以创建 NFS 客户端的存储类型。
+您也可以在安装 KubeSphere 集群后创建 NFS-client 的存储类型。
 
 {{</ notice >}} 
 
@@ -46,7 +46,7 @@ NFS 客户端将在服务器机器上挂载一个目录，该目录已由 NFS �
    sudo mkdir -p /mnt/demo
    ```
 
-2. 出于演示目的，请删除该文件夹的限制性权限，这样所有客户端都可以访问该目录。
+2. 出于演示目的，请移除该文件夹的限制性权限，这样所有客户端都可以访问该目录。
 
    ```bash
    sudo chown nobody:nogroup /mnt/demo
@@ -70,7 +70,7 @@ NFS 客户端将在服务器机器上挂载一个目录，该目录已由 NFS �
    /mnt/demo clientIP(rw,sync,no_subtree_check)
    ```
 
-   如果您有多台客户端机器，则可以将它们的客户端信息全部添加到文件中。或者，在文件中指定一个子网，这样文件中的所有客户端都可以访问 NFS 服务器。例如：
+   如果您有多台客户端机器，则可以将它们的客户端信息全部添加到文件中。或者，在文件中指定一个子网，以便该子网中的所有客户端都可以访问 NFS 服务器。例如：
 
    ```bash
    /mnt/demo 192.168.0.0/24(rw,sync,no_subtree_check)
