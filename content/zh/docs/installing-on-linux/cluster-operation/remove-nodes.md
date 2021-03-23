@@ -3,7 +3,7 @@ title: "删除节点"
 keywords: 'Kubernetes, KubeSphere, 水平扩缩, 删除节点'
 description: '如何从现有集群删除节点'
 linkTitle: "删除节点"
-weight: 3420
+weight: 3620
 ---
 
 ## 停止调度节点

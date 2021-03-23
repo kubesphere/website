@@ -3,7 +3,7 @@ title: "在裸机上安装 KubeSphere"
 keywords: 'Kubernetes, KubeSphere, 裸机'
 description: '如何在裸机上安装 KubeSphere。'
 linkTitle: "在裸机上安装 KubeSphere"
-weight: 3320
+weight: 3520
 ---
 
 ## 介绍
