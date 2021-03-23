@@ -407,7 +407,7 @@ spec:
   registry:
     registryMirrors: []
     insecureRegistries: []
-  addons: [] # add your persistent storage and LoadBalancer plugin configuration here if you have, see https://kubesphere.io/docs/installing-on-linux/introduction/storage-configuration/
+  addons: []
 
 ···
 # 其它配置可以在安装后之后根据需要进行修改
@@ -417,7 +417,7 @@ spec:
 
 如本文开头的前提条件所说，对于生产环境，我们建议您准备持久性存储，可参考以下说明进行配置。若搭建开发和测试环境，您可以跳过这小节，直接使用默认集成的 OpenEBS 的 LocalPV 存储。
 
-继续编辑上述`config-sample.yaml`文件，找到`[addons]`字段，这里支持定义任何持久化存储的插件或客户端，如 NFS Client、Ceph、GlusterFS、CSI，根据您自己的持久化存储服务类型，并参考 [持久化存储服务](../../introduction/storage-configuration/) 中对应的示例 yaml 文件进行设置。
+继续编辑上述`config-sample.yaml`文件，找到`[addons]`字段，这里支持定义任何持久化存储的插件或客户端，如 NFS Client、Ceph、GlusterFS、CSI，根据您自己的持久化存储服务类型，并参考 [持久化存储服务](../../../installing-on-linux/persistent-storage-configurations/understand-persistent-storage/) 中对应的示例 yaml 文件进行设置。
 
 #### 执行创建集群
 

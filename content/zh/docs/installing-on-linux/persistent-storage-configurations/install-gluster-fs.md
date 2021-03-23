@@ -1,8 +1,8 @@
 ---
-title: "Install GlusterFS"
+title: "安装 GlusterFS"
 keywords: 'KubeSphere, Kubernetes, GlusterFS, installation, configurations, storage'
 description: 'How to create a KubeSphere create with GlusterFS providing storage services.'
-linkTitle: "Install GlusterFS"
+linkTitle: "安装 GlusterFS"
 weight: 3340
 ---
 

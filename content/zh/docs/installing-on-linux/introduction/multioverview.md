@@ -254,7 +254,7 @@ spec:
 
 #### addons
 
-您可以在 `config-sample.yaml` 的 `addons` 字段下指定存储，从而自定义持久化存储插件，例如 NFS 客户端、Ceph RBD、GlusterFS 等。有关更多信息，请参见[持久化存储配置](../../../installing-on-linux/introduction/storage-configuration/)。
+您可以在 `config-sample.yaml` 的 `addons` 字段下指定存储，从而自定义持久化存储插件，例如 NFS 客户端、Ceph RBD、GlusterFS 等。有关更多信息，请参见[持久化存储配置](../../../installing-on-linux/persistent-storage-configurations/understand-persistent-storage/)。
 
 {{< notice note >}}
 

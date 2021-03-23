@@ -42,7 +42,7 @@ All the volumes that are created on the **Volumes** page are PersistentVolumeCla
 
    ![volume-creation-method](/images/docs/project-user-guide/volume-management/volumes/volume-creation-method.jpg)
 
-   - **Create a volume by StorageClass**. You can configure storage classes both [before](../../../installing-on-linux/introduction/storage-configuration/) and [after](../../../cluster-administration/persistent-volume-and-storage-class/) the installation of KubeSphere.
+   - **Create a volume by StorageClass**. You can configure storage classes both [before](../../../installing-on-linux/persistent-storage-configurations/understand-persistent-storage/) and [after](../../../cluster-administration/persistent-volume-and-storage-class/) the installation of KubeSphere.
 
    - **Create a volume by VolumeSnapshot**. To use a snapshot to create a volume, you must create a volume snapshot first.
 

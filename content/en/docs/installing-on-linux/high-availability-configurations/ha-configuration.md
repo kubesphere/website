@@ -163,7 +163,7 @@ For more information about different fields in this configuration file, see [Kub
 
 ### Persistent storage plugin configurations
 
-For a production environment, you need to prepare persistent storage and configure the storage plugin (e.g. CSI) in `config-sample.yaml` to define which storage service you want to use. For more information, see [Persistent Storage Configurations](../../../installing-on-linux/introduction/storage-configuration/).
+For a production environment, you need to prepare persistent storage and configure the storage plugin (e.g. CSI) in `config-sample.yaml` to define which storage service you want to use. For more information, see [Persistent Storage Configurations](../../../installing-on-linux/persistent-storage-configurations/understand-persistent-storage/).
 
 ### Enable pluggable components (Optional)
 
