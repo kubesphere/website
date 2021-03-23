@@ -6,47 +6,47 @@ linkTitle: "搭建 NFS 服务器"
 weight: 17410
 ---
 
-KubeSphere supports [NFS-client Provisioner](https://github.com/kubernetes-incubator/external-storage/tree/master/nfs-client) as a storage plugin. In order to use it, you must configure the NFS server in advance. With the NFS server in place, an NFS client mounts a directory on the server machine so that files residing on the NFS server are accessible to the NFS client. Namely, you need to create and export a directory that your client machine can access.
+KubeSphere 支持存储插件 [NFS-client Provisioner](https://github.com/kubernetes-incubator/external-storage/tree/master/nfs-client)。若想使用该插件，必须预先配置 NFS 服务器。NFS 服务器配置完成后，NFS 客户端会在服务器机器上挂载目录，以便 NFS 客户端访问 NFS 服务器上的文件，即您需要创建并输出客户端机器可以访问的目录。
 
-Once your NFS server machine is ready, you can use [KubeKey](../../../installing-on-linux/introduction/kubekey/) to install NFS-client Provisioner by Helm charts together with Kubernetes and KubeSphere. The exported directory of your NFS server must be provided in your Chart configurations used by KubeKey during installation.
+NFS 服务器机器就绪后，您可以使用 [KubeKey](../../../installing-on-linux/introduction/kubekey/) 通过 Helm Chart 来安装 NFS-client Provisioner 以及 Kubernetes 和 KubeSphere。您必须在 Chart 配置中提供 NFS 服务器的输出目录以便 KubeKey 在安装时使用。
 
 {{< notice note >}}
 
-You can also create the storage class of NFS-client after you install a KubeSphere cluster.
+您也可以在安装 KubeSphere 集群后创建 NFS-client 的存储类型。
 
 {{</ notice >}} 
 
-This tutorial demonstrates how to install the NFS server on Ubuntu 16.04 as an example.
+本教程演示了如何安装 NFS 服务器，以 Ubuntu 16.04 为例。
 
-## Install and Configure an NFS Server
+## 安装及配置 NFS 服务器
 
-### Step 1: Install the NFS kernel server
+### 步骤 1：安装 NFS 服务器 (NFS kernel server)
 
-To set up your server machine, you must install the NFS kernel server on it.
+若要设置服务器机器，就必须在机器上安装 NFS 服务器。
 
-1. Run the following command so that you will be using the latest package on Ubuntu for installation.
+1. 运行以下命令，使用 Ubuntu 上的最新软件包进行安装。
 
    ```bash
    sudo apt-get update
    ```
 
-2. Install the NFS kernel server.
+2. 安装 NFS 服务器。
 
    ```bash
    sudo apt install nfs-kernel-server
    ```
 
-### Step 2: Create an export directory
+### 步骤 2：创建输出目录
 
-Your NFS client will mount a directory on the server machine which has been exported by the NFS server.
+NFS 客户端将在服务器机器上挂载一个目录，该目录已由 NFS 服务器输出。
 
-1. Run the following command to specify a mount folder name (for example, `/mnt/demo`).
+1. 运行以下命令来指定挂载文件夹名称（例如，`/mnt/demo`）。
 
    ```bash
    sudo mkdir -p /mnt/demo
    ```
 
-2. For demonstration purposes, remove restrictive permissions of the folder so that all your clients can access the directory.
+2. 出于演示目的，请移除该文件夹的限制性权限，这样所有客户端都可以访问该目录。
 
    ```bash
    sudo chown nobody:nogroup /mnt/demo
@@ -56,21 +56,21 @@ Your NFS client will mount a directory on the server machine which has been expo
    sudo chmod 777 /mnt/demo
    ```
 
-### Step 3: Grant your client machine access to the NFS server
+### 步骤 3：授予客户端机器访问 NFS 服务器的权限
 
-1. Run the following command:
+1. 运行以下命令：
 
    ```bash
    sudo nano /etc/exports
    ```
 
-2. Add your client information to the file.
+2. 将客户端信息添加到文件中。
 
    ```bash
    /mnt/demo clientIP(rw,sync,no_subtree_check)
    ```
 
-   If you have multiple client machines, you can add them all in the file. Alternatively, specify a subnet in the file so that all the clients within it can access the NFS server. For example:
+   如果您有多台客户端机器，则可以将它们的客户端信息全部添加到文件中。或者，在文件中指定一个子网，以便该子网中的所有客户端都可以访问 NFS 服务器。例如：
 
    ```bash
    /mnt/demo 192.168.0.0/24(rw,sync,no_subtree_check)
@@ -78,23 +78,23 @@ Your NFS client will mount a directory on the server machine which has been expo
 
    {{< notice note >}}
 
-   - `rw`: Read and write operations. The client machine will have both read and write access to the volume.
-   - `sync`: Changes will be written to disk and memory.
-   - `no_subtree_check`: Prevent subtree checking. It disables the security verification required for a client to mount permitted subdirectories.
+   - `rw`：读写操作。客户端机器拥有对存储卷的读写权限。
+   - `sync`：更改将被写入磁盘和内存中。
+   - `no_subtree_check`：防止子树检查，即禁用客户端挂载允许的子目录所需的安全验证。
 
    {{</ notice >}}
 
-3. Save the file when you finish editing it.
+3. 编辑完成后，请保存文件。
 
-### Step 4: Apply the configuration
+### 步骤 4：应用配置
 
-1. Run the following command to export your shared directory.
+1. 运行以下命令输出共享目录。
 
    ```bash
    sudo exportfs -a
    ```
 
-2. Restart the NFS kernel server.
+2. 重启 NFS 服务器。
 
    ```bash
    sudo systemctl restart nfs-kernel-server
