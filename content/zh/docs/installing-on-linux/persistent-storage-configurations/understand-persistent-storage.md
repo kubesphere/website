@@ -25,7 +25,7 @@ weight: 3310
 
 ## KubeKey 如何安装不同的存储系统
 
-KubeKey 会为集群创建[一个配置文件](../../../installing-on-linux/introduction/multioverview/#2-编辑配置文件)（默认为 `config-sample.yaml`），其中包含定义不同资源（包括各种插件）的全部必要参数。NFS storage 和 GlusterFS 等不同的存储系统也能通过 Helm Chart 或 YAML 作为插件进行安装。若要让 KubeKey 以预期的方式来安装这些存储系统，就必须为 KubeKey 提供这些存储系统的必要配置。
+KubeKey 会为集群创建[一个配置文件](../../../installing-on-linux/introduction/multioverview/#2-编辑配置文件)（默认为 `config-sample.yaml`），其中包含定义不同资源（包括各种插件）的全部必要参数。NFS 和 GlusterFS 等不同的存储系统也能通过 Helm Chart 或 YAML 作为插件进行安装。若要让 KubeKey 以预期的方式来安装这些存储系统，就必须为 KubeKey 提供这些存储系统的必要配置。
 
 通常，有两种方法能使 KubeKey 应用即将安装的存储系统的配置。
 
@@ -38,8 +38,8 @@ KubeKey 会为集群创建[一个配置文件](../../../installing-on-linux/intr
 
 KubeKey 支持安装不同的存储插件和存储类型。无论您要安装哪种存储系统，都可以在其配置文件中指定是否设为默认存储类型。如果 KubeKey 检测到未指定默认存储类型，则将默认安装 [OpenEBS](https://github.com/openebs/openebs)。
 
-OpenEBS 本地 PV 动态供应器可以使用节点上的唯一 HostPath（目录）来创建 Kubernetes 本地持久卷，以持久化数据。用户没有特定的存储系统时，使用 KubeSphere 上手会非常方便。
+OpenEBS 本地 PV 动态供应器可以使用节点上的唯一 HostPath（目录）来创建 Kubernetes 本地持久卷，以持久化数据。用户没有特定的存储系统时，可以通过默认的 OpenEBS 快速上手。
 
-## 多样化存储解决方案
+## 多存储解决方案
 
 如果打算安装多个存储插件，那么只能将其中一个设置为默认存储类型。否则，KubeKey 将无法识别使用哪种存储类型。
