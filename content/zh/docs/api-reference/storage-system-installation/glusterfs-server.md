@@ -1,47 +1,47 @@
 ---
- title: "搭建 GlusterFS 服务器"
+title: "搭建 GlusterFS 服务器"
 keywords: 'Kubernetes, KubeSphere, GlusterFS'
 description: '如何搭建 GlusterFS 服务器'
 linkTitle: "搭建 GlusterFS 服务器"
 weight: 17420
 ---
 
-As an open-source distributed file system, [GlusterFS](https://kubernetes.io/docs/concepts/storage/volumes/#glusterfs) allows you to mount `glusterfs` volumes to your Pods. If a `glusterfs` volume is pre-populated with data, they can be shared among your Pods in a Kubernetes cluster.
+[GlusterFS](https://kubernetes.io/zh/docs/concepts/storage/volumes/#glusterfs) 是开源的分布式文件系统，您能使用 GlusterFS 将 `glusterfs` 存储卷挂载到 Pod。如果 `glusterfs` 存储卷中预先填充了数据，则可以在 Kubernetes 集群中的 Pod 之间共享这些数据。
 
-This tutorial demonstrates how to configure GlusterFS on three server machines and install [Heketi](https://github.com/heketi/heketi) to manage your GlusterFS cluster.
+本教程演示了如何在三台服务器机器上配置 GlusterFS 以及如何安装 [Heketi](https://github.com/heketi/heketi) 来管理 GlusterFS 集群。
 
-Once you have GlusterFS and Heketi set up, you can install GlusterFS on your client machine and use KubeKey to create a KubeSphere cluster with GlusterFS as a storage class.
+GlusterFS 和 Heketi 搭建好之后，就可以在客户端机器上安装 GlusterFS，并使用 KubeKey 创建一个存储类型为 GlusterFS 的 KubeSphere 集群。
 
-## Prepare GlusterFS Nodes
+## 准备 GlusterFS 节点
 
-There are three server machines of Ubuntu 16.04 in this example with each having one attached disk.
+本示例中包含三台 Ubuntu 16.04 服务器机器，每台服务器都有一个附带的磁盘。
 
-| Hostname | IP Address  | Operating System                   | Device          |
-| -------- | ----------- | ---------------------------------- | --------------- |
-| server1  | 192.168.0.2 | Ubuntu 16.04, 4 Cores, 4 GB Memory | /dev/vdd 300 GB |
-| server2  | 192.168.0.3 | Ubuntu 16.04, 4 Cores, 4 GB Memory | /dev/vdd 300 GB |
-| server3  | 192.168.0.4 | Ubuntu 16.04, 4 Cores, 4 GB Memory | /dev/vdd 300 GB |
+| 主机名  | IP 地址     | 操作系统                      | 设备            |
+| ------- | ----------- | ----------------------------- | --------------- |
+| server1 | 192.168.0.2 | Ubuntu 16.04，4 核，4 GB 内存 | /dev/vdd 300 GB |
+| server2 | 192.168.0.3 | Ubuntu 16.04，4 核，4 GB 内存 | /dev/vdd 300 GB |
+| server3 | 192.168.0.4 | Ubuntu 16.04，4 核，4 GB 内存 | /dev/vdd 300 GB |
 
 {{< notice note >}}
 
-- Heketi will be installed on `server1`, which provides a RESTful management interface to manage the lifecycle of GlusterFS volumes. You can install it on a separate machine as well.
+- Heketi 将安装在 `server1` 上，该服务器提供 RESTful 管理接口来管理 GlusterFS 存储卷的生命周期。您也可以将 Heketi 安装在不同的服务器机器上。
 
-- Attach more block storage disks to your server machine if you need more storage space.
-- Data will be saved to `/dev/vdd` (block device), which must be original without partitioning or formatting.
+- 若需要更多存储空间，请在服务器上加装存储磁盘。
+- 数据将保存到 `/dev/vdd`（块设备），必须是没有经过分区或格式化的原始块设备。
 
 {{</ notice >}} 
 
-## Set up Passwordless SSH Login
+## 设置无密码 SSH 登录
 
-### Configure root login
+### 配置 root 登录
 
-1. Log in to `server1` and switch to the root user.
+1. 登录 `server1` 并切换到 root 用户。
 
    ```bash
    sudo -i
    ```
    
-2. Change the root user password:
+2. 更改 root 用户密码：
 
    ```bash
    passwd
@@ -50,15 +50,15 @@ There are three server machines of Ubuntu 16.04 in this example with each having
    {{< notice note >}}
    
 
-Make sure password authentication is enabled in the file `/etc/ssh/sshd_config` (the value of `PasswordAuthentication` should be `yes`).
+请确保在文件 `/etc/ssh/sshd_config` 中启用了密码认证（`PasswordAuthentication` 的值应该为 `yes`）。
 
 {{</ notice >}} 
 
-3. Change the root user password of `server2` and `server3` as well.
+3. `server2` 和 `server3` 的 root 用户密码也需要进行更改。
 
-### Add hosts file entries
+### 添加 hosts 文件条目
 
-1. Configure your DNS or edit the `/etc/hosts` file on all server machines to add their hostnames and IP addresses:
+1. 在所有服务器机器上配置 DNS 或编辑 `/etc/hosts` 文件，添加相应的主机名和 IP 地址：
 
    ```bash
    vi /etc/hosts
@@ -71,17 +71,17 @@ Make sure password authentication is enabled in the file `/etc/ssh/sshd_config` 
    192.168.0.4  server3
    ```
 
-2. Make sure you add the above entries to the `hosts` file of all server machines.
+2. 请确保将以上条目添加到所有服务器机器的 `hosts` 文件中。
 
-### Configure passwordless SSH login
+### 配置无密码 SSH 登录
 
-1. On `server1`, create a key by running the following command. Press **Enter** directly for all the prompts.
+1. 通过运行以下命令在 `server1` 上创建密钥。直接按**回车键**跳过所有提示。
 
    ```bash
    ssh-keygen
    ```
 
-2. Copy the key to all GlusterFS nodes.
+2. 将密钥复制到所有 GlusterFS 节点。
 
    ```bash
    ssh-copy-id root@server1
@@ -95,7 +95,7 @@ Make sure password authentication is enabled in the file `/etc/ssh/sshd_config` 
    ssh-copy-id root@server3
    ```
 
-3. Verify that you can access all server machines from `server1` through passwordless login.
+3. 请验证您可以从 `server1` 通过无密码登录访问所有服务器机器。
 
    ```bash
    ssh root@server1
@@ -109,33 +109,33 @@ Make sure password authentication is enabled in the file `/etc/ssh/sshd_config` 
    ssh root@server3
    ```
 
-## Install GlusterFS on All Server Machines
+## 在所有服务器机器上安装 GlusterFS
 
-1. On `server1`, run the following command to install `software-properties-common`.
+1. 运行以下命令在 `server1` 上安装 `software-properties-common`。
 
    ```bash
    apt-get install software-properties-common
    ```
 
-2. Add the community GlusterFS PPA.
+2. 添加社区 GlusterFS PPA。
 
    ```bash
    add-apt-repository ppa:gluster/glusterfs-7
    ```
 
-3. Make sure you are using the latest package.
+3. 请确保使用的是最新安装包。
 
    ```bash
    apt-get update
    ```
 
-4. Install the GlusterFS server.
+4. 安装 GlusterFS 服务器。
 
    ```bash
    apt-get install glusterfs-server -y
    ```
 
-5. Make sure you run the above commands on `server2` and `server3` as well and verify the version on all machines.
+5. 请确保也在 `server2` 和 `server3` 上运行上述命令，并在所有机器上验证安装包版本。
 
    ```text
    glusterfs -V
@@ -143,13 +143,13 @@ Make sure password authentication is enabled in the file `/etc/ssh/sshd_config` 
 
 {{< notice note >}}
 
-The above commands may be slightly different if you do no install GlusterFS on Ubuntu. For more information, see [the Gluster documentation](https://docs.gluster.org/en/latest/Install-Guide/Install/#installing-gluster).
+如果您是在 Ubuntu 之外的其他系统上安装 GlusterFS，那么上述命令可能会略有不同。有关更多信息，请参见 [Gluster 文档](https://docs.gluster.org/en/latest/Install-Guide/Install/#installing-gluster)。
 
 {{</ notice >}} 
 
-## Load Kernel Modules
+## 加载内核模块
 
-1. Run the following commands to load three necessary kernel modules on `server1`.
+1. 运行以下命令在 `server1` 上加载三个必要的内核模块。
 
    ```bash
    echo dm_thin_pool | sudo tee -a /etc/modules
@@ -163,17 +163,17 @@ The above commands may be slightly different if you do no install GlusterFS on U
    echo dm_mirror | sudo tee -a /etc/modules
    ```
 
-2. Intall `thin-provisioning-tools`.
+2. 安装 `thin-provisioning-tools`。
 
    ```bash
    apt-get -y install thin-provisioning-tools
    ```
 
-3. Make sure you run the above commands on `server2` and `server3` as well.
+3. 请确保您也在 `server2` 和 `server3` 上运行以上命令。
 
-## Create a GlusterFS Cluster
+## 创建 GlusterFS 集群
 
-1. Run the following command on `server1` to add other nodes and create a cluster.
+1. 在 `server1` 上运行以下命令添加其他节点并创建集群。
 
    ```bash
    gluster peer probe server2
@@ -183,13 +183,13 @@ The above commands may be slightly different if you do no install GlusterFS on U
    gluster peer probe server3
    ```
 
-2. Verify that all nodes in the cluster are connected successfully.
+2. 请验证集群中的所有节点均已成功连接。
 
    ```bash
    gluster peer status
    ```
 
-3. Expected output:
+3. 预计输出如下：
 
    ```bash
    Number of Peers: 2
@@ -203,11 +203,11 @@ The above commands may be slightly different if you do no install GlusterFS on U
    State: Peer in Cluster (Connected)
    ```
 
-## Install Heketi
+## 安装 Heketi
 
-As GlusterFS itself does not provide a way for API calls, you can install [Heketi](https://github.com/heketi/heketi) to manage the lifecycle of GlusterFS volumes with a RESTful API for Kubernetes calls. In this way, your Kubernetes cluster can dynamically provision GlusterFS volumes. Heketi v7.0.0 will be installed in this example. For more information about available Heketi versions, see its [Release Page](https://github.com/heketi/heketi/releases/).
+由于 GlusterFS 本身不提供 API 调用的方法，因此您可以安装 [Heketi](https://github.com/heketi/heketi)，通过用于 Kubernetes 调用的 RESTful API 来管理 GlusterFS 存储卷的生命周期。这样，您的 Kubernetes 集群就可以动态地配置 GlusterFS 存储卷。在此示例中将会安装 Heketi v7.0.0。有关 Heketi 可用版本的更多信息，请参见其[发布页面](https://github.com/heketi/heketi/releases/)。
 
-1. Download Heketi on `server1`.
+1. 在 `server1` 上下载 Heketi。
 
    ```bash
    wget https://github.com/heketi/heketi/releases/download/v7.0.0/heketi-v7.0.0.linux.amd64.tar.gz
@@ -215,11 +215,11 @@ As GlusterFS itself does not provide a way for API calls, you can install [Heket
 
    {{< notice note >}}
 
-   You can also install Heketi on a separate machine.
+   您也可以在单独的机器上安装 Heketi。
 
    {{</ notice >}} 
 
-2. Unzip the file.
+2. 将文件解压缩。
 
    ```
    tar -xf heketi-v7.0.0.linux.amd64.tar.gz
@@ -237,7 +237,7 @@ As GlusterFS itself does not provide a way for API calls, you can install [Heket
    cp heketi-cli /usr/bin
    ```
    
-3. Create a Heketi service file.
+3. 创建 Heketi 服务文件。
 
    ```
    vi /lib/systemd/system/heketi.service
@@ -257,7 +257,7 @@ As GlusterFS itself does not provide a way for API calls, you can install [Heket
    WantedBy=multi-user.target
    ```
 
-4. Create Heketi folders.
+4. 创建 Heketi 文件夹。
 
    ```bash
    mkdir -p /var/lib/heketi
@@ -267,13 +267,13 @@ As GlusterFS itself does not provide a way for API calls, you can install [Heket
    mkdir -p /etc/heketi
    ```
 
-5. Create a JSON file for Heketi configurations.
+5. 创建 JSON 文件以配置 Heketi。
 
    ```
    vi /etc/heketi/heketi.json
    ```
 
-   An example file:
+   示例文件：
 
    ```json
    {
@@ -344,23 +344,23 @@ As GlusterFS itself does not provide a way for API calls, you can install [Heket
 
    {{< notice note >}}
 
-   The account `admin` and its `key` value must be provided when you install GlusterFS as a storage class of your KubeSphere cluster.
+   在安装 GlusterFS 作为 KubeSphere 集群的存储类型时，必须提供帐户 `admin` 及其 `Secret` 值。
 
    {{</ notice >}} 
 
-6. Start Heketi.
+6. 启动 Heketi。
 
    ```bash
    systemctl start heketi
    ```
 
-7. Check the status of Heketi.
+7. 检查 Heketi 的状态。
 
    ```bash
    systemctl status heketi
    ```
 
-   If you can see `active (running)`, it means the installation is successful. Expected output:
+   如果出现了 `active (running)`，则意味着安装成功。预计输出：
 
    ```bash
    ● heketi.service - Heketi Server
@@ -384,25 +384,25 @@ As GlusterFS itself does not provide a way for API calls, you can install [Heket
    Mar 09 13:04:30 server1 heketi[9282]: Listening on port 8080
    ```
 
-8. Enable Heketi.
+8. 启用 Heketi。
 
    ```bash
    systemctl enable heketi
    ```
 
-   Expected output:
+   预计输出：
 
    ```bash
    Created symlink from /etc/systemd/system/multi-user.target.wants/heketi.service to /lib/systemd/system/heketi.service.
    ```
 
-9. Create a topology configuration file for Heketi. It contains the information of clusters, nodes, and disks added to Heketi.
+9. 为 Heketi 创建拓扑配置文件，该文件包含添加到 Heketi 的群集、节点和磁盘的信息。
 
    ```bash
    vi /etc/heketi/topology.json
    ```
 
-   An example file:
+   示例文件：
 
    ```json
       {
@@ -465,12 +465,12 @@ As GlusterFS itself does not provide a way for API calls, you can install [Heket
 
    {{< notice note >}} 
 
-   - Replace the IP addresses above with your own.
-   - Add your own disk name for `devices`.
+   - 请使用您自己的 IP 替换上述 IP 地址。
+   - 请在 `devices` 一栏添加您自己的磁盘名称。
 
    {{</ notice >}} 
 
-10. Load the Heketi JSON file.
+10. 加载 Heketi JSON 文件。
 
     ```bash
     export HEKETI_CLI_SERVER=http://localhost:8080
@@ -480,7 +480,7 @@ As GlusterFS itself does not provide a way for API calls, you can install [Heket
     heketi-cli topology load --json=/etc/heketi/topology.json
     ```
 
-    Expected output:
+    预计输出：
 
     ```bash
     Creating cluster ... ID: 2d9e11adede04fe6d07cb81c5a1a7ea4
@@ -494,13 +494,13 @@ As GlusterFS itself does not provide a way for API calls, you can install [Heket
     		Adding device /dev/vdd ... OK
     ```
 
-11. The above output displays both your cluster ID and node ID. Run the following command to view your cluster information.
+11. 以上输出同时显示了集群 ID 和节点 ID。运行以下命令查看集群信息。
 
     ```bash
     heketi-cli cluster info 2d9e11adede04fe6d07cb81c5a1a7ea4 # Use your own cluster ID.
     ```
 
-    Expected output:
+    预计输出：
 
     ```bash
     Cluster id: 2d9e11adede04fe6d07cb81c5a1a7ea4
