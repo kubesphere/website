@@ -1,7 +1,7 @@
 ---
 title: "安装 QingCloud CSI"
 keywords: 'KubeSphere, Kubernetes, QingCloud CSI, 安装, 配置, 存储'
-description: '如何创建使用 QingCloud SCI 提供存储服务的 KubeSphere.'
+description: '如何创建使用 QingCloud CSI 提供存储服务的 KubeSphere.'
 linkTitle: "安装 QingCloud CSI"
 weight: 3320
 ---
