@@ -1,46 +1,46 @@
 ---
 title: "安装 NFS Client"
-keywords: 'KubeSphere, Kubernetes, storage, installation, configurations, NFS'
-description: 'Use KubeKey to set up a KubeSphere cluster and configure NFS storage.'
+keywords: 'KubeSphere, Kubernetes, 存储, 安装, 配置, NFS'
+description: '使用 KubeKey 搭建 KubeSphere 集群并配置 NFS 存储.'
 linkTitle: "安装 NFS Client"
 weight: 3330
 ---
 
-This tutorial demonstrates how to set up a KubeSphere cluster and configure NFS storage.
+本教程演示了如何搭建 KubeSphere 集群并配置 NFS 存储。
 
 {{< notice note >}}
 
-Ubuntu 16.04 is used as an example in this tutorial.
+本教程以 Ubuntu 16.04 为例。
 
 {{</ notice >}}
 
-## Prerequisites
+## 准备工作
 
-You must have an NFS server ready providing external storage services. Make sure you have created and exported a directory on the NFS server which your permitted client machines can access. For more information, see [Set up an NFS Server](../../../api-reference/storage-system-installation/nfs-server/).
+您必须准备好提供外部存储服务的 NFS 服务器。请确保已在客户端机器允许访问的 NFS 服务器上创建并导出目录。有关更多信息，请参见[搭建 NFS 服务器](../../../api-reference/storage-system-installation/nfs-server/)。
 
-## Step 1: Configure the Client Machine
+## 步骤 1：配置客户端机器
 
-Install `nfs-common` on all of the clients. It provides necessary NFS functions while you do not need to install any server components.
+请在所有客户端上安装 `nfs-common`，它提供必要的 NFS 功能，而无需安装其他服务器组件。
 
-1. Execute the following command to make sure you are using the latest package.
+1. 执行以下命令确保使用最新软件包。
 
    ```bash
    sudo apt-get update
    ```
 
-2. Install `nfs-common` on all the clients.
+2. 在所有客户端上安装 `nfs-common`。
 
    ```bash
    sudo apt-get install nfs-common
    ```
 
-3. Go to one of the client machines (taskbox) where you want to download KubeKey later. Create a configuration file that contains all the necessary parameters of your NFS server which will be referenced by KubeKey during installation.
+3. 访问稍后想要下载 KubeKey 到其上的一台客户端机器（任务机）。创建一个配置文件，其中包含 NFS 服务器的全部必要参数，KubeKey 将在安装过程中引用该参数。
 
    ```bash
    vi nfs-client.yaml
    ```
 
-   An example configuration file:
+   示例配置文件：
 
    ```yaml
    nfs:
@@ -52,22 +52,22 @@ Install `nfs-common` on all of the clients. It provides necessary NFS functions 
 
    {{< notice note >}}
 
-   - If you want to configure more values, see [chart configurations for NFS-client](https://github.com/kubesphere/helm-charts/tree/master/src/main/nfs-client-provisioner#configuration).
-   - The `storageClass.defaultClass` field controls whether you want to set the storage class of NFS-client Provisioner as the default one. If you input `false` for it, KubeKey will install [OpenEBS](https://github.com/openebs/openebs) to provide local volumes, while they are not provisioned dynamically as you create workloads on your cluster. After you install KubeSphere, you can change the default storage class on the console directly.
+   - 如果想要配置更多的值，请参见 [NFS-client Chart 配置](https://github.com/kubesphere/helm-charts/tree/master/src/main/nfs-client-provisioner#configuration)。
+   - `storageClass.defaultClass` 字段决定是否将 NFS-client Provisioner 的存储类型设置为默认存储类型。如果您输入 `false`，KubeKey 将安装 [OpenEBS](https://github.com/openebs/openebs) 来提供本地存储卷，您在集群上创建工作负载时，不会动态供应本地存储卷。安装 KubeSphere 之后，您可以直接在控制台上更改默认存储类型。
 
    {{</ notice >}}
 
-4. Save the file.
+4. 保存文件。
 
-## Step 2: Download KubeKey
+## 步骤 2：下载 KubeKey
 
-Follow the steps below to download [KubeKey](../kubekey) on the taskbox.
+根据以下步骤在任务机上下载 [KubeKey](../../../installing-on-linux/introduction/kubekey/)。
 
 {{< tabs >}}
 
-{{< tab "Good network connections to GitHub/Googleapis" >}}
+{{< tab "如果您能正常访问 GitHub/Googleapis" >}}
 
-Download KubeKey from its [GitHub Release Page](https://github.com/kubesphere/kubekey/releases) or use the following command directly.
+从 [GitHub Release Page](https://github.com/kubesphere/kubekey/releases) 下载 KubeKey 或者直接运行以下命令。
 
 ```bash
 curl -sfL https://get-kk.kubesphere.io | VERSION=v1.0.1 sh -
@@ -75,15 +75,15 @@ curl -sfL https://get-kk.kubesphere.io | VERSION=v1.0.1 sh -
 
 {{</ tab >}}
 
-{{< tab "Poor network connections to GitHub/Googleapis" >}}
+{{< tab "如果您访问 GitHub/Googleapis 受限" >}}
 
-Run the following command first to make sure you download KubeKey from the correct zone.
+首先运行以下命令，确保您从正确的区域下载 KubeKey。
 
 ```bash
 export KKZONE=cn
 ```
 
-Run the following command to download KubeKey:
+运行以下命令来下载 KubeKey：
 
 ```bash
 curl -sfL https://get-kk.kubesphere.io | VERSION=v1.0.1 sh -
@@ -91,7 +91,7 @@ curl -sfL https://get-kk.kubesphere.io | VERSION=v1.0.1 sh -
 
 {{< notice note >}}
 
-After you download KubeKey, if you transfer it to a new machine also with poor network connections to Googleapis, you must run `export KKZONE=cn` again before you proceed with the steps below.
+下载 KubeKey 之后，如果您将其转移到访问 Googleapis 受限的新机器上，请务必再次运行 `export KKZONE=cn`，然后继续执行以下步骤。
 
 {{</ notice >}} 
 
@@ -101,19 +101,19 @@ After you download KubeKey, if you transfer it to a new machine also with poor n
 
 {{< notice note >}}
 
-The commands above download the latest release (v1.0.1) of KubeKey. You can change the version number in the command to download a specific version.
+通过以上命令，可以下载 KubeKey 的最新版本 (v1.0.1)。您可以更改命令中的版本号来下载特定的版本。
 
 {{</ notice >}}
 
-Make `kk` executable:
+使 `kk` 可执行：
 
 ```bash
 chmod +x kk
 ```
 
-## Step 3: Create a Cluster
+## 步骤 3：创建集群
 
-1. Specify a Kubernetes version and a KubeSphere version that you want to install. For example:
+1. 指定您想要安装的 Kubernetes 版本和 KubeSphere 版本，例如：
 
    ```bash
    ./kk create config --with-kubernetes v1.17.9 --with-kubesphere v3.0.0
@@ -121,14 +121,14 @@ chmod +x kk
 
    {{< notice note >}}
 
-   - Supported Kubernetes versions: v1.15.12, v1.16.13, v1.17.9 (default), v1.18.6.
+   - 支持的 Kubernetes 版本：v1.15.12，v1.16.13，v1.17.9（默认），v1.18.6。
 
-   - If you do not add the flag `--with-kubesphere` in the command in this step, KubeSphere will not be deployed unless you install it using the `addons` field in the configuration file or add this flag again when you use `./kk create cluster` later.
-   - If you add the flag `--with-kubesphere` without specifying a KubeSphere version, the latest version of KubeSphere will be installed.
+   - 如果您在此步骤的命令中不添加标志 `--with-kubesphere`，则不会部署 KubeSphere，只能使用配置文件中的 `addons` 字段安装，或者在您后续使用 `./kk create cluster` 命令时再次添加这个标志。
+   - 如果您添加标志 `--with-kubesphere` 时不指定 KubeSphere 版本，则会安装最新版本的 KubeSphere。
 
    {{</ notice >}}
 
-4. A default file `config-sample.yaml` will be created if you do not customize the name. Edit the file.
+4. 如果您不自定义名称，将创建默认文件 `config-sample.yaml`。编辑文件：
 
    ```bash
    vi config-sample.yaml
@@ -177,21 +177,21 @@ chmod +x kk
    ...             
    ```
 
-5. Pay special attention to the field of `addons`, under which you must provide the information of NFS-client. For more information about each parameter in this file, see [Multi-node Installation](../../../installing-on-linux/introduction/multioverview/#2-edit-the-configuration-file).
+5. 请特别注意 `addons` 字段，您必须在该字段下提供 NFS-client 的信息。有关文件中每个参数的更多信息，请参见[多节点安装](../../../installing-on-linux/introduction/multioverview/#2-edit-the-configuration-file)。
 
-6. Save the file and execute the following command to install Kubernetes and KubeSphere:
+6. 保存文件，执行一下命令安装 Kubernetes 和 KubeSphere：
 
    ```bash
    ./kk create cluster -f config-sample.yaml
    ```
 
-7. When the installation finishes, you can inspect installation logs with the following command:
+7. 安装完成后，可以使用以下命令检查安装日志：
 
    ```bash
    kubectl logs -n kubesphere-system $(kubectl get pod -n kubesphere-system -l app=ks-install -o jsonpath='{.items[0].metadata.name}') -f
    ```
 
-   Expected output:
+   预期输出：
 
    ```bash
    #####################################################
@@ -215,19 +215,19 @@ chmod +x kk
    #####################################################
    ```
 
-## Step 4: Verify Installation
+## 步骤 4：验证安装
 
-You can verify that NFS-client has been successfully installed either from the command line or from the KubeSphere web console.
+您可以使用命令行或者从 KubeSphere 的 Web 控制台来验证  NFS-client 是否安装成功。
 
-### Command line
+### 命令行
 
-1. Run the following command to check your storage class.
+1. 运行以下命令检查存储类型：
 
    ```bash
    kubectl get sc
    ```
 
-   Expected output:
+   预计输出：
 
    ```bash
    NAME              PROVISIONER                                       RECLAIMPOLICY   VOLUMEBINDINGMODE      ALLOWVOLUMEEXPANSION   AGE
@@ -237,37 +237,37 @@ You can verify that NFS-client has been successfully installed either from the c
 
    {{< notice note >}}
 
-   If you set `nfs-client` as the default storage class, OpenEBS will not be installed by KubeKey.
+   若将 `nfs-client` 设置为默认存储类型，KubeKey 则不会安装 OpenEBS。
 
    {{</ notice >}} 
 
-2. Run the following command to check the statuses of Pods.
+2. 运行以下命令检查 Pod 的状态。
 
    ```bash
    kubectl get pod -n kube-system
    ```
 
-   Note that `nfs-client` is installed in the namespace `kube-system`. Expected output (exclude irrelevant Pods):
+   请注意，`nfs-client` 安装在命名空间 `kube-system` 中，预期输出（不包括无关 Pod）：
 
    ```bash
    NAME                                                 READY   STATUS    RESTARTS   AGE
    nfs-client-nfs-client-provisioner-6fc95f4f79-92lsh   1/1     Running   0          16m
    ```
 
-### KubeSphere console
+### KubeSphere 控制台
 
-1. Log in to the web console as `admin` with the default account and password at `<NodeIP>:30880`. Click **Platform** in the top left corner and select **Clusters Management**.
+1. 以 `admin` 身份在 `<NodeIP>:30880` 使用默认帐户和密码登录 Web 控制台。点击左上角的**平台管理**，选择**集群管理**。
 
-2. Go to **Pods** in **Application Workloads** and select `kube-system` from the project drop-down list. You can see that the Pod of `nfs-client` is up and running.
+2. 访问**应用负载**中的**容器组**，从下拉菜单中选择 `kube-system`，可以看到 `nfs-client` 的 Pod 正常运行。
 
-   ![nfs-pod](/images/docs/installing-on-linux/persistent-storage-configurations/nfs-client/nfs-pod.png)
+   ![nfs-pod](/images/docs/zh-cn/installing-on-linux/persistent-storage-configurations/nfs-client/nfs-pod.png)
 
-3. Go to **Storage Classes** under **Storage**, and you can see available storage classes in your cluster.
+3. Go to **Storage Classes** under **Storage**, and you can see available storage classes in your cluster.访问**存储管理**下的**存储类型**，可以看到集群中可用的存储类型。
 
-   ![nfs-storage-class](/images/docs/installing-on-linux/persistent-storage-configurations/nfs-client/nfs-storage-class.png)
+   ![nfs-storage-class](/images/docs/zh-cn/installing-on-linux/persistent-storage-configurations/nfs-client/nfs-storage-class.png)
    
    {{< notice note >}}
    
-   For more information about how to create volumes on the KubeSphere console, see [Volumes](../../../project-user-guide/storage/volumes/).
+   有关如何在 KubeSphere 控制台上创建存储卷的更多信息，请参见[存储卷](../../../project-user-guide/storage/volumes/)。
    
    {{</ notice >}} 
