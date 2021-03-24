@@ -64,7 +64,7 @@ The separate configuration file contains all parameters of QingCloud CSI which w
 
 ## Step 3: Download KubeKey
 
-Follow the steps below to download [KubeKey](../kubekey) on the taskbox.
+Follow the steps below to download [KubeKey](../../../installing-on-linux/introduction/kubekey/) on the taskbox.
 
 {{< tabs >}}
 
@@ -261,7 +261,7 @@ You can verify that QingCloud CSI has been successfully installed either from th
 
 ### KubeSphere console
 
-1. Log in to the web console as `admin` with the default account and password at `<NodeIP>:30880`. Click **Platform** in the top left corner and select **Clusters Management**.
+1. Log in to the web console with the default account and password (`admin/P@88w0rd`) at `<NodeIP>:30880`. Click **Platform** in the top left corner and select **Clusters Management**.
 
 2. Go to **Pods** in **Application Workloads** and select `kube-system` from the project drop-down list. You can see that the Pods of `csi-qingcloud` are up and running.
 
