@@ -34,7 +34,7 @@ weight: 3330
    sudo apt-get install nfs-common
    ```
 
-3. 访问稍后想要下载 KubeKey 到其上的一台客户端机器（任务机）。创建一个配置文件，其中包含 NFS 服务器的全部必要参数，KubeKey 将在安装过程中引用该参数。
+3. 访问稍后想要下载 KubeKey 到其上的一台客户端机器（任务机）。创建一个配置文件，其中包含 NFS 服务器的全部必要参数，KubeKey 将在安装过程中引用该文件。
 
    ```bash
    vi nfs-client.yaml
@@ -177,9 +177,9 @@ chmod +x kk
    ...             
    ```
 
-5. 请特别注意 `addons` 字段，您必须在该字段下提供 NFS-client 的信息。有关文件中每个参数的更多信息，请参见[多节点安装](../../../installing-on-linux/introduction/multioverview/#2-edit-the-configuration-file)。
+5. 请特别注意 `addons` 字段，您必须在该字段下提供 NFS-client 的信息。有关文件中每个参数的更多信息，请参见[多节点安装](../../../installing-on-linux/introduction/multioverview/#2-编辑配置文件)。
 
-6. 保存文件，执行一下命令安装 Kubernetes 和 KubeSphere：
+6. 保存文件，执行以下命令安装 Kubernetes 和 KubeSphere：
 
    ```bash
    ./kk create cluster -f config-sample.yaml
@@ -227,7 +227,7 @@ chmod +x kk
    kubectl get sc
    ```
 
-   预计输出：
+   预期输出：
 
    ```bash
    NAME              PROVISIONER                                       RECLAIMPOLICY   VOLUMEBINDINGMODE      ALLOWVOLUMEEXPANSION   AGE
@@ -262,7 +262,7 @@ chmod +x kk
 
    ![nfs-pod](/images/docs/zh-cn/installing-on-linux/persistent-storage-configurations/nfs-client/nfs-pod.png)
 
-3. Go to **Storage Classes** under **Storage**, and you can see available storage classes in your cluster.访问**存储管理**下的**存储类型**，可以看到集群中可用的存储类型。
+3. 访问**存储管理**下的**存储类型**，可以看到集群中可用的存储类型。
 
    ![nfs-storage-class](/images/docs/zh-cn/installing-on-linux/persistent-storage-configurations/nfs-client/nfs-storage-class.png)
    
