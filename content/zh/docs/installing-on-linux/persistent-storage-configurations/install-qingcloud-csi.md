@@ -1,14 +1,14 @@
 ---
-title: "安装青云QingCloud CSI"
-keywords: 'KubeSphere, Kubernetes, 青云QingCloud CSI, 安装, 配置, 存储'
-description: '如何创建使用青云QingCloud SCI 提供存储服务的 KubeSphere.'
-linkTitle: "安装青云QingCloud CSI"
+title: "安装 QingCloud CSI"
+keywords: 'KubeSphere, Kubernetes, QingCloud CSI, 安装, 配置, 存储'
+description: '如何创建使用 QingCloud SCI 提供存储服务的 KubeSphere.'
+linkTitle: "安装 QingCloud CSI"
 weight: 3320
 ---
 
-如果您打算在[青云QingCloud](https://www.qingcloud.com/) 上安装 KubeSphere，可以选择[青云QingCloud CSI](https://github.com/yunify/qingcloud-csi) 作为底层存储插件。
+如果您打算在[青云QingCloud](https://www.qingcloud.com/) 上安装 KubeSphere，可以选择 [QingCloud CSI](https://github.com/yunify/qingcloud-csi) 作为底层存储插件。
 
-本教程演示了如何使用 KubeKey 搭建 KubeSphere 集群及配置青云QingCloud CSI 以提供存储服务。
+本教程演示了如何使用 KubeKey 搭建 KubeSphere 集群及配置 QingCloud CSI 以提供存储服务。
 
 ## 准备工作
 
@@ -16,7 +16,7 @@ weight: 3320
 
 ## 步骤 1：在青云QingCloud 平台上创建 API 密钥
 
-若要确保该平台可以为集群创建云磁盘，就需要在单独的青云QingCloud CSI 配置文件中提供 API 密钥（`qy_access_key_id` 和 `qy_secret_access_key`）。
+若要确保该平台可以为集群创建云磁盘，就需要在单独的 QingCloud CSI 配置文件中提供 API 密钥（`qy_access_key_id` 和 `qy_secret_access_key`）。
 
 1. 登录[青云QingCloud](https://console.qingcloud.com/login) 的 Web 控制台，从右上角的下拉菜单中选择 **API 密钥**。
 
@@ -24,9 +24,9 @@ weight: 3320
 
 2. 点击**创建**生成密钥。创建完成后，下载密钥，该密钥存储在一个 csv 文件中。
 
-## 步骤 2：为青云QingCloud CSI 创建配置文件
+## 步骤 2：为 QingCloud CSI 创建配置文件
 
-单独的配置文件中包含青云QingCloud CSI 的全部参数，KubeKey 将在安装过程中使用这些参数。
+单独的配置文件中包含 QingCloud CSI 的全部参数，KubeKey 将在安装过程中使用这些参数。
 
 1. 访问您稍后想要下载 KubeKey 到其上的节点（任务机），运行以下命令创建配置文件。
 
@@ -58,7 +58,7 @@ weight: 3320
    | 广东2区-A/广东2区-B                     | gd2a/gd2b               |
    | 亚太2区-A                               | ap2a                    |
 
-   如果想要配置更多的值，请参见[青云QingCloud CSI Chart 配置](https://github.com/kubesphere/helm-charts/tree/master/src/test/csi-qingcloud#configuration)。
+   如果想要配置更多的值，请参见 [QingCloud CSI Chart 配置](https://github.com/kubesphere/helm-charts/tree/master/src/test/csi-qingcloud#configuration)。
    
 3. 保存文件。
 
@@ -68,7 +68,7 @@ weight: 3320
 
 {{< tabs >}}
 
-{{< tab "能够正常访问 GitHub/Googleapis" >}}
+{{< tab "如果您能够正常访问 GitHub/Googleapis" >}}
 
 从 [GitHub Release Page](https://github.com/kubesphere/kubekey/releases) 下载 KubeKey 或者直接运行以下命令。
 
@@ -78,7 +78,7 @@ curl -sfL https://get-kk.kubesphere.io | VERSION=v1.0.1 sh -
 
 {{</ tab >}}
 
-{{< tab "访问 GitHub/Googleapis 受限" >}}
+{{< tab "如果您访问 GitHub/Googleapis 受限" >}}
 
 首先运行以下命令，确保您从正确的区域下载 KubeKey。
 
@@ -180,11 +180,11 @@ chmod +x kk
    ...
    ```
 
-3. 请特别注意 `addons` 字段，您必须在该字段下提供青云QingCloud CSI 的信息。有关文件中每个参数的更多信息，请参见[多节点安装](../../../installing-on-linux/introduction/multioverview/#2-编辑配置文件)。
+3. 请特别注意 `addons` 字段，您必须在该字段下提供 QingCloud CSI 的信息。有关文件中每个参数的更多信息，请参见[多节点安装](../../../installing-on-linux/introduction/multioverview/#2-编辑配置文件)。
 
    {{< notice note >}}
 
-   KubeKey 将通过 Helm Chart 安装青云QingCloud CSI 及其 StorageClass。
+   KubeKey 将通过 Helm Chart 安装 QingCloud CSI 及其 StorageClass。
 
    {{</ notice >}}
 
@@ -226,7 +226,7 @@ chmod +x kk
 
 ## 步骤 5：验证安装
 
-您可以使用命令行或者通过 KubeSphere 的 Web 控制台来验证青云QingCloud CSI 是否安装成功。
+您可以使用命令行或者通过 KubeSphere 的 Web 控制台来验证 QingCloud CSI 是否安装成功。
 
 ### 命令行
 
