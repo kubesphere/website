@@ -16,7 +16,7 @@ weight: 3320
 
 ## 步骤 1：在青云QingCloud 平台上创建 API 密钥
 
-若要确保平台可以为集群创建云磁盘，就需要在单独的青云QingCloud CSI 配置文件中提供 API 密钥（`qy_access_key_id` 和 `qy_secret_access_key`）。
+若要确保该平台可以为集群创建云磁盘，就需要在单独的青云QingCloud CSI 配置文件中提供 API 密钥（`qy_access_key_id` 和 `qy_secret_access_key`）。
 
 1. 登录[青云QingCloud](https://console.qingcloud.com/login) 的 Web 控制台，从右上角的下拉菜单中选择 **API 密钥**。
 
@@ -45,18 +45,18 @@ weight: 3320
      isDefaultClass: true #将其设置为默认存储类型。
    ```
 
-2. 字段 `zone` 会指定云磁盘创建的可用区。在青云QingCloud 平台，您必须在创建云磁盘之前指定一个可用区。
+2. 字段 `zone` 指定云磁盘创建的可用区。在青云QingCloud 平台，您必须在创建云磁盘之前指定一个可用区。
 
    ![storage-zone](/images/docs/zh-cn/installing-on-linux/persistent-storage-configurations/qingcloud-csi/storage-zone.jpg)
 
    请确保为 `zone` 指定的值与以下区域 ID 匹配：
 
-   | 可用区                                      | 区域 ID                 |
-   | ------------------------------------------- | ----------------------- |
-   | Shanghai1-A/Shanghai1-B                     | sh1a/sh1b               |
-   | Beijing3-A/Beijing3-B/Beijing3-C/Beijing3-D | pek3a/pek3b/pek3c/pek3d |
-   | Guangdong2-A/Guangdong2-B                   | gd2a/gd2b               |
-   | Asia-Pacific 2-A                            | ap2a                    |
+   | 可用区                                  | 区域 ID                 |
+   | --------------------------------------- | ----------------------- |
+   | 上海1区-A/上海1区-B                     | sh1a/sh1b               |
+   | 北京3区-A/北京3区-B/北京3区-C/北京3区-D | pek3a/pek3b/pek3c/pek3d |
+   | 广东2区-A/广东2区-B                     | gd2a/gd2b               |
+   | 亚太2区-A                               | ap2a                    |
 
    如果想要配置更多的值，请参见[青云QingCloud CSI Chart 配置](https://github.com/kubesphere/helm-charts/tree/master/src/test/csi-qingcloud#configuration)。
    
@@ -180,7 +180,7 @@ chmod +x kk
    ...
    ```
 
-3. 请特别注意 `addons` 字段，您必须在该字段下提供青云QingCloud CSI 的信息。有关文件中每个参数的更多信息，请参见[多节点安装](../../../installing-on-linux/introduction/multioverview/#2-edit-the-configuration-file)。
+3. 请特别注意 `addons` 字段，您必须在该字段下提供青云QingCloud CSI 的信息。有关文件中每个参数的更多信息，请参见[多节点安装](../../../installing-on-linux/introduction/multioverview/#2-编辑配置文件)。
 
    {{< notice note >}}
 
@@ -261,7 +261,7 @@ chmod +x kk
 
 ### KubeSphere 控制台
 
-1. 以 `admin` 身份在 `<NodeIP>:30880` 使用默认帐户和密码登录 Web 控制台。点击左上角的**平台管理**，选择**集群管理**。
+1. 使用默认帐户和密码 (`admin/P@88w0rd`) 通过 `<NodeIP>:30880` 登录 Web 控制台。点击左上角的**平台管理**，选择**集群管理**。
 
 2. 访问**工作负载**中的**容器组**，从下拉菜单中选择 `kube-system`。可以看到 `csi-qingcloud` 的 Pod 正常运行。
 
