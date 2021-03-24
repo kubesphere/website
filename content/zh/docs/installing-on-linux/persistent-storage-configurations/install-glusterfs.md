@@ -6,13 +6,13 @@ linkTitle: "安装 GlusterFS"
 weight: 3340
 ---
 
-[GlusterFS](https://kubernetes.io/docs/concepts/storage/storage-classes/#glusterfs) 是 Kubernetes 中的树内存储插件。因此，您只需要安装存储类型。
+[GlusterFS](https://kubernetes.io/docs/concepts/storage/storage-classes/#glusterfs) 是 Kubernetes 中的树内 (in-tree) 存储插件。因此，您只需要安装存储类型。
 
 本教程演示了如何使用 KubeKey 搭建 KubeSphere 集群并配置 GlusterFS 以提供存储服务。
 
 {{< notice note >}}
 
-本教程以Ubuntu 16.04 为例。
+本教程以 Ubuntu 16.04 为例。
 
 {{</ notice >}} 
 
@@ -74,7 +74,7 @@ weight: 3340
      namespace: kube-system
    type: kubernetes.io/glusterfs
    data:
-     key: "MTIzNDU2"    #请替换为您自己的密钥。Base64编码。
+     key: "MTIzNDU2"    #请替换为您自己的密钥。Base64 编码。
    ---
    apiVersion: storage.k8s.io/v1
    kind: StorageClass
@@ -88,7 +88,7 @@ weight: 3340
      gidMax: "50000"
      gidMin: "40000"
      restauthenabled: "true"
-     resturl: "http://192.168.0.2:8080"    #Gluster REST 服务/Heketi 服务 url 可按需供应 gluster 存储卷。请替换为您自己的 url。
+     resturl: "http://192.168.0.2:8080"    #Gluster REST 服务/Heketi 服务 URL 可按需供应 gluster 存储卷。请替换为您自己的 URL。
      restuser: admin
      secretName: heketi-secret
      secretNamespace: kube-system
@@ -102,7 +102,7 @@ weight: 3340
    {{< notice note >}}
 
    - 请使用字段 `storageclass.beta.kubernetes.io/is-default-class` 将 `glusterfs` 设置为默认存储类型。如果选择 `false`，KubeKey 将会安装 OpenEBS 作为默认存储类型。
-   - 有关存储类型清单中参数的更多信息，请参见 [Kubernetes 文档](https://kubernetes.io/docs/concepts/storage/storage-classes/#glusterfs)。
+   - 有关存储类型清单中参数的更多信息，请参见 [Kubernetes 文档](https://kubernetes.io/zh/docs/concepts/storage/storage-classes/#glusterfs)。
 
    {{</ notice >}} 
 
@@ -225,7 +225,7 @@ chmod +x kk
    ...
    ```
    
-3. 请特别注意 `addons` 字段，您必须在该字段下提供要创建的存储类型以及 Heketi 密钥的信息。有关文件中每个参数的更多信息，请参见[多节点安装](../../../installing-on-linux/introduction/multioverview/#2-edit-the-configuration-file)。
+3. 请特别注意 `addons` 字段，您必须在该字段下提供要创建的存储类型以及 Heketi 密钥的信息。有关文件中每个参数的更多信息，请参见[多节点安装](../../../installing-on-linux/introduction/multioverview/#2-编辑配置文件)。
 
 4. 保存文件，执行以下命令安装 Kubernetes 和 KubeSphere：
 
@@ -284,7 +284,7 @@ glusterfs (default)   kubernetes.io/glusterfs   Delete          Immediate       
 
 ### KubeSphere 控制台
 
-1. 以 `admin` 身份在 `<NodeIP>:30880` 使用默认帐户和密码登录 Web 控制台。点击左上角的**平台管理**，选择**集群管理**。
+1. 使用默认帐户和密码 (`admin/P@88w0rd`) 通过 `<NodeIP>:30880` 登录 Web 控制台。点击左上角的**平台管理**，选择**集群管理**。
 
 3. 访问**存储管理**下的**存储卷**，可以看到 PVC 正在使用。
 
