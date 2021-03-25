@@ -3,7 +3,7 @@ title: '你真的理解 K8s 中的 requests 和 limits 吗？'
 tag: 'Kubernetes,KubeSphere,schedule,monitoring'
 createTime: '2021-01-01'
 author: '饶云坤'
-snapshot: ''
+snapshot: 'https://pek3b.qingstor.com/kubesphere-community/images/cover.png'
 ---
 
 在 K8s 集群中部署资源的时候，你是否经常遇到以下情形：
