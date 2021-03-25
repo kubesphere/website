@@ -61,7 +61,7 @@ Install `nfs-common` on all of the clients. It provides necessary NFS functions 
 
 ## Step 2: Download KubeKey
 
-Follow the steps below to download [KubeKey](../kubekey) on the taskbox.
+Follow the steps below to download [KubeKey](../../../installing-on-linux/introduction/kubekey/) on the taskbox.
 
 {{< tabs >}}
 
