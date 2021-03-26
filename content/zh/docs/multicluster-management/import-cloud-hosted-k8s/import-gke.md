@@ -1,49 +1,49 @@
 ---
-title: "Import a Google GKE Cluster"
-keywords: 'Kubernetes, KubeSphere, multicluster, Google GKE'
-description: 'How to import a Google GKE Cluster'
-titleLink: "Import a Google GKE Cluster"
+title: "导入 Google GKE 集群"
+keywords: 'Kubernetes, KubeSphere, 多集群, Google GKE'
+description: '如何导入 Google GKE 集群'
+titleLink: "导入 Google GKE 集群"
 weight: 5330
 ---
 
-This tutorial demonstrates how to import a GKE cluster through the [direct connection](../../../multicluster-management/enable-multicluster/direct-connection/) method. If you want to use the agent connection method, refer to [Agent Connection](../../../multicluster-management/enable-multicluster/agent-connection/).
+本教程演示如何使用[直接连接](../../../multicluster-management/enable-multicluster/direct-connection/)方法导入 GKE 集群。如果您想使用代理连接方法，请参考[代理连接](../../../multicluster-management/enable-multicluster/agent-connection/)。
 
-## Prerequisites
+## **准备工作**
 
-- You have a Kubernetes cluster with KubeSphere installed, and prepared this cluster as the Host Cluster. For more information about how to prepare a Host Cluster, refer to [Prepare a Host Cluster](../../../multicluster-management/enable-multicluster/direct-connection/#prepare-a-host-cluster).
-- You have a GKE cluster to be used as the Member Cluster.
+- 您需要准备一个已安装 KubeSphere 的 Kubernetes 集群，并将该集群设置为 Host 集群。有关如何准备 Host 集群的更多信息，请参考[准备 Host 集群](../../../multicluster-management/enable-multicluster/direct-connection/#准备-host-集群)。
+- 您需要准备一个 GKE 集群，用作 Member 集群。
 
-## Import a GKE Cluster
+## **导入** **GKE** **集群**
 
-### Step 1: Deploy KubeSphere on your GKE Cluster
+### **步骤 1：在** **GKE** **集群上部署 KubeSphere**
 
-You need to deploy KubeSphere on your GKE cluster first. For more information about how to deploy KubeSphere on GKE, refer to [Deploy KubeSphere on GKE](../../../installing-on-kubernetes/hosted-kubernetes/install-kubesphere-on-gke/).
+您需要首先在 GKE 集群上部署 KubeSphere。有关如何在 GKE 上部署 KubeSphere 的更多信息，请参考[在 Google GKE 上部署 KubeSphere](../../../installing-on-kubernetes/hosted-kubernetes/install-kubesphere-on-gke/)。
 
-### Step 2: Prepare the GKE Member Cluster
+### **步骤 2：准备** **GKE Member** **集群**
 
-1. In order to manage the Member Cluster from the Host Cluster, you need to make `jwtSecret` the same between them. Therefore, get it first by executing the following command on your Host Cluster.
+1. 为了通过 Host 集群管理 Member 集群，您需要使它们之间的 `jwtSecret` 相同。首先，在 Host 集群上执行以下命令获取 `jwtSecret`。
 
    ```bash
    kubectl -n kubesphere-system get cm kubesphere-config -o yaml | grep -v "apiVersion" | grep jwtSecret
    ```
 
-   The output is similar to the following:
+   输出类似如下：
 
    ```yaml
    jwtSecret: "QVguGh7qnURywHn2od9IiOX6X8f8wK8g"
    ```
 
-2. Log in to the KubeSphere console on GKE as `admin`. Click **Platform** in the upper left corner and then select **Clusters Management**.
+2. 以 `admin` 身份登录 GKE 的 KubeSphere Web 控制台。点击左上角的**平台管理**，选择**集群管理**。
 
-3. Go to **CRDs**, input `ClusterConfiguration` in the search bar, and then press **Enter** on your keyboard. Click **ClusterConfiguration** to go to its detail page.
+3. 访问**自定义资源 CRD**，在搜索栏中输入 `ClusterConfiguration`，然后按下键盘上的**回车键**。点击 **ClusterConfiguration** 访问其详情页。
 
-   ![search-config](/images/docs/multicluster-management/import-cloud-hosted-k8s/import-gke/search-config.png)
+   ![search-config](/images/docs/zh-cn/multicluster-management/import-cloud-hosted-k8s/import-gke/search-config.png)
 
-4. Click the three dots on the right and then select **Edit YAML** to edit `ks-installer`. 
+4. 点击右侧的三个点，选择**编辑配置文件**来编辑 `ks-installer`。
 
-   ![click-edit](/images/docs/multicluster-management/import-cloud-hosted-k8s/import-gke/click-edit.png)
+   ![click-edit](/images/docs/zh-cn/multicluster-management/import-cloud-hosted-k8s/import-gke/click-edit.png)
 
-5. In the YAML file of `ks-installer`, change the value of `jwtSecret` to the corresponding value shown above and set the value of `clusterRole` to `member`.
+5. 在 `ks-installer` 的 YAML 文件中，将 `jwtSecret` 的值改为如上所示的相应值，将 `clusterRole` 的值改为 `member`。
 
    ```yaml
    authentication:
@@ -57,13 +57,13 @@ You need to deploy KubeSphere on your GKE cluster first. For more information ab
 
    {{< notice note >}}
 
-   Make sure you use the value of your own `jwtSecret`. You need to wait for a while so that the changes can take effect.
+   请确保使用自己的 `jwtSecret`。您需要等待一段时间使更改生效。
 
    {{</ notice >}}
 
-### Step 3: Create a new kubeconfig file
+### **步骤 3：创建新的** **kubeconfig** **文件**
 
-1. Run the following commands on your GKE Cloud Shell Terminal:
+1. 在 GKE Cloud Shell 终端运行以下命令：
 
    ```bash
    TOKEN=$(kubectl -n kubesphere-system get secret $(kubectl -n kubesphere-system get sa kubesphere -o jsonpath='{.secrets[0].name}') -o jsonpath='{.data.token}' | base64 -d)
@@ -71,13 +71,13 @@ You need to deploy KubeSphere on your GKE cluster first. For more information ab
    kubectl config set-context --current --user=kubesphere
    ```
 
-2. Retrieve the new kubeconfig file by running the following command:
+2. 运行以下命令获取新的 kubeconfig 文件：
 
    ```bash
    cat ~/.kube/config
    ```
 
-   The output is similar to the following:
+   输出类似如下：
 
    ```yaml
    apiVersion: v1
@@ -109,20 +109,20 @@ You need to deploy KubeSphere on your GKE cluster first. For more information ab
        token: eyJhbGciOiJSUzI1NiIsImtpZCI6InNjOFpIb3RrY3U3bGNRSV9NWV8tSlJzUHJ4Y2xnMDZpY3hhc1BoVy0xTGsifQ.eyJpc3MiOiJrdWJlcm5ldGVzL3NlcnZpY2VhY2NvdW50Iiwia3ViZXJuZXRlcy5pby9zZXJ2aWNlYWNjb3VudC9uYW1lc3BhY2UiOiJrdWJlc3BoZXJlLXN5c3RlbSIsImt1YmVybmV0ZXMuaW8vc2VydmljZWFjY291bnQvc2VjcmV0Lm5hbWUiOiJrdWJlc3BoZXJlLXRva2VuLXpocmJ3Iiwia3ViZXJuZXRlcy5pby9zZXJ2aWNlYWNjb3VudC9zZXJ2aWNlLWFjY291bnQubmFtZSI6Imt1YmVzcGhlcmUiLCJrdWJlcm5ldGVzLmlvL3NlcnZpY2VhY2NvdW50L3NlcnZpY2UtYWNjb3VudC51aWQiOiIyMGFmZGI1Ny01MTBkLTRjZDgtYTAwYS1hNDQzYTViNGM0M2MiLCJzdWIiOiJzeXN0ZW06c2VydmljZWFjY291bnQ6a3ViZXNwaGVyZS1zeXN0ZW06a3ViZXNwaGVyZSJ9.ic6LaS5rEQ4tXt_lwp7U_C8rioweP-ZdDjlIZq91GOw9d6s5htqSMQfTeVlwTl2Bv04w3M3_pCkvRzMD0lHg3mkhhhP_4VU0LIo4XeYWKvWRoPR2kymLyskAB2Khg29qIPh5ipsOmGL9VOzD52O2eLtt_c6tn-vUDmI_Zw985zH3DHwUYhppGM8uNovHawr8nwZoem27XtxqyBkqXGDD38WANizyvnPBI845YqfYPY5PINPYc9bQBFfgCovqMZajwwhcvPqS6IpG1Qv8TX2lpuJIK0LLjiKaHoATGvHLHdAZxe_zgAC2cT_9Ars3HIN4vzaSX0f-xP--AcRgKVSY9g
    ```
 
-### Step 4: Import the GKE Member Cluster
+### **步骤 4：导入** **GKE Member** **集群**
 
-1. Log in to the KubeSphere console on your Host Cluster as `admin`. Click **Platform** in the upper left corner and then select **Clusters Management**. On the **Clusters Management** page, click **Add Cluster**.
+1. 以 `admin` 身份登录 Host 集群的 KubeSphere Web 控制台。点击左上角的**平台管理**，选择**集群管理**。在**集群管理**页面，点击**添加集群**。
 
-   ![click-add-cluster](/images/docs/multicluster-management/import-cloud-hosted-k8s/import-gke/click-add-cluster.png)
+   ![click-add-cluster](/images/docs/zh-cn/multicluster-management/import-cloud-hosted-k8s/import-gke/click-add-cluster.png)
 
-2. Input the basic information based on your needs and click **Next**.
+2. 按需输入基本信息，然后点击**下一步**。
 
-   ![input-info](/images/docs/multicluster-management/import-cloud-hosted-k8s/import-gke/input-info.png)
+   ![input-info](/images/docs/zh-cn/multicluster-management/import-cloud-hosted-k8s/import-gke/input-info.png)
 
-3. In **Connection Method**, select **Direct connection to Kubernetes cluster**. Fill in the new kubeconfig file of the GKE Member Cluster and then click **Import**.
+3. **连接方式**选择**直接连接 Kubernetes 集群**。填写 GKE Member 集群的新 KubeConfig，然后点击**导入**。
 
-   ![select-method](/images/docs/multicluster-management/import-cloud-hosted-k8s/import-gke/select-method.png)
+   ![select-method](/images/docs/zh-cn/multicluster-management/import-cloud-hosted-k8s/import-gke/select-method.png)
 
-4. Wait for cluster initialization to finish.
+4. 等待集群初始化完成。
 
-   ![gke-cluster-imported](/images/docs/multicluster-management/import-cloud-hosted-k8s/import-gke/gke-cluster-imported.png)
+   ![gke-cluster-imported](/images/docs/zh-cn/multicluster-management/import-cloud-hosted-k8s/import-gke/gke-cluster-imported.png)
