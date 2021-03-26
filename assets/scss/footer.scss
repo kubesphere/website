@@ -10,9 +10,9 @@
 
   & > .footer-main {
     & > .up-main {
-      & > div {
-        display: inline-block;
-        vertical-align: top;
+      display: flex;
+      @media only screen and (max-width: $mobile-max-width) {
+        flex-direction: column;
       }
       .left-div {
 
@@ -34,7 +34,7 @@
         }
 
         div {
-          width: 360px;
+          width: 358px;
           height: 48px;
           margin-top: 20px;
           border-radius: 24px;
@@ -42,7 +42,7 @@
           background-color: #f5f8f9;
 
           input {
-            width: 209px;
+            width: 207px;
             height: 20px;
             font-size: 14px;
             margin-left: 16px;
@@ -86,22 +86,17 @@
         }
       }
       .right-div {
-        margin-left: 60px;
-        width: 732px;
+        flex: 1;
+        margin-left: 30px;
 
         @media only screen and (max-width: $mobile-max-width) {
-          display: block;
           width: 100%;
           margin-left: 0px;
         }
 
         & > ul {
-          @media only screen and (max-width: $mobile-max-width) {
-            justify-content: start;
-          }
           li {
-            margin-right: 32px;
-
+            max-width: 170px;
             @media only screen and (max-width: $mobile-max-width) {
               margin-top: 20px;
             }
@@ -120,8 +115,9 @@
 
         a {
           display: block;
-          line-height: 2;
+          line-height: 1.2;
           color: #919aa3;
+          margin-bottom: 14px;
 
           &:hover {
             color: #55bc8a;
