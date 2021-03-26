@@ -6,52 +6,52 @@ css: scss/case-detail.scss
 
 section1:
   title: Hua Xia Bank
-  content: Hua Xia Bank was established in 1992. As a financial institution, Huaxia Bank is in progress of FinTech transformation in order to provide technology leading financial services to customers.
+  content: As a financial institution established in 1992, Hua Xia Bank is committed to providing financial services amid its FinTech transformation by using industry-leading technologies.
 
 section2:
   listLeft:
-    - title: 'Company Introduction'
+    - title: 'Introduction'
       contentList:
-        - content: Hua Xia Bank started operation in Beijing in October 1992 when China ushered in the program of opening up and reform led by Chief Architect Deng Xiaoping. The Bank became a nationwide joint stock commercial bank after restructuring in March, 1995. In September, 2003, Hua Xia Bank went public as the fifth of Chinese banks listed on the Shanghai Stock Exchange (Stock Ticker:600015).
+        - content: Hua Xia Bank started operation in Beijing in October 1992 when China just opened to the world. It became a nationwide joint-stock commercial bank after restructuring in March 1995. In September 2003, Hua Xia Bank went public as the fifth Chinese bank to be listed on the Shanghai Stock Exchange (Stock Ticker:600015).
       image: https://pek3b.qingstor.com/kubesphere-docs/png/20200611164953.png
 
     - title: 'Background'
       contentList:
-        - content: As a financial institution, Huaxia Bank is in progress of FinTech transformation in order to provide technology leading financial services to customers.
-        - content: In their bank, there are more than 40 first-tier branches nationwide. Each branch has their local banking businesses with many requirements required to be delivered fast. Besides, there are many applications like fund supervision, ETC, payment systems in each branch written in different languages such as C/C++, Java, Python, etc, using traditional monolithic architecture, and deployed on VMs. Moreover, they have a large custom snowflake ecosystem in their development, where each tool needs its own configuration and deployment.
+        - content: As a financial institution, Hua Xia Bank is committed to providing financial services amid its FinTech transformation by using industry-leading technologies.
+        - content: Hua Xia Bank boasts over 40 first-tier branches nationwide. Each of them has its local banking business which requires fast and secure delivery. Besides, there are many applications covering fund supervision, ETC and payment in each branch written in different languages such as C/C++, Java, and Python. They are deployed using traditional monolithic architectures on VMs. Although Hua Xia Bank has a large custom snowflake ecosystem for development, each tool needs to be configured and deployed separately in the ecosystem.
       image:
 
-    - title: 'Adopt KubeSphere as the Platform Solution'
+    - title: 'Adopting KubeSphere as the Platform Solution'
       contentList:
-        - content: Huaxia Bank chooses to migrate applications to Kubernetes. we introduces KubeSphere to enhance the Kubernetes platform abilities. With the unified portal to connect DevOps, microservices management and Kubernetes platform in KubeSphere, it help us more easier to adopt cloud native stack. KubeSphere is pretty developer-friendly for novices. With using Istio service mesh, we can easily implement the grayscale release. KubeSphere brings the simplified DevOps workflows to us, and the built-in roles are designed for developers and operators.
-        - content: Additionally, observability is very critical in daily development and operations. KubeSphere provides centralized log search and monitoring features, which helps us to locate the issues and bottlenecks between different microservices.
+        - content: As Hua Xia Bank works to migrate its applications to Kubernetes, we have introduced KubeSphere, a developer-friendly distributed operating system, to enhance Kubernetes abilities. With a unified platform to integrate DevOps and manage microservices on top of Kubernetes, KubeSphere has equipped us with a cloud-native stack. Among other things, by using the Istio service mesh, we can easily implement varied grayscale strategies. With its fine-grained access control for projects and DevOps projects, developers and operators can focus on resources accessible to them and we can specify customized roles as needed.
+        - content: Additionally, observability also remains one of our key focuses in daily development and operations. As such, KubeSphere provides centralized log search and monitoring features, empowering us to quickly locate issues and bottlenecks between different microservices.
       image:
 
-    - title: 'Kubernetes is tailored for microservices architecture'
+    - title: 'Kubernetes is Tailored for Microservices Architectures'
       contentList:
-        - content: As the first team in our bank to adopt Kubernetes since 2019, we are committed to leading FinTech transformation to make technologies boosting financial business innovations. Fortunately, several experimental projects prove that Kubernetes is tailored for microservices architecture, and Kubernetes is a great time-saver for multiple branches in our bank.
-        - content: 'When branch developers see how quickly containers could be spun up compared to the VMs process, all branches try to run their applications in containers and ship them in Kubernetes. With Kubernetes and KubeSphere platform, the release process goes from several hours to several minutes, and time to market has also been improved significantly.'
+        - content: As the first team in our bank to adopt Kubernetes since 2019, we have been committed to boosting financial business as we work to innovate for FinTech transformation. Fortunately, several experimental projects have proven that Kubernetes is tailored for microservices architectures, and it is a great time-saver for multiple branches in our bank.
+        - content: After seeing how quickly containers could be spun up compared to the VMs process, branch developers are looking to run their applications in containers and migrate them to Kubernetes. With both Kubernetes and KubeSphere, we have greatly improved release efficiency (hours to minutes) and accelerated the time to market.
       image:
 
     - type: 1
       contentList:
-        - content: Time to market has been improved significantly
-        - content: boosting financial business innovations
-        - content: Pretty developer-friendly for novices
+        - content: Faster Time to Market
+        - content: Improved Business
+        - content: Beginner-friendly
 
-    - title: 'Cloud Native is a Great Way to Accelerate the FinTech Transformation'
+    - title: 'Cloud-Native is a Great Way to Accelerate the FinTech Transformation'
       contentList:
-        - content: When it comes to the benefits to the ecosystem, we have demonstrated cloud native is great way to accelerate the FinTech transformation. We, as a pioneer in our bank, give some best practices to other projects. Today, developers can quickly deploy, ship code and release their applications written in different languages and frameworks smoothly. Kubernetes provides the tools all we need in the cloud native ecosystem in a consistent way.  
+        - content: When it comes to the benefits to the ecosystem, we think cloud-native represents a great way to accelerate our FinTech transformation. In this connection, we, as pioneers in our bank, have provided some best practices to other projects. Thanks to cloud-native tools of Kubernetes, our developers can quickly deploy and release their applications written in different languages and frameworks while enjoying consistent user experiences.
       image:
 
     - type: 2
-      content: 'With Kubernetes and KubeSphere platform, the release process goes from several hours to several minutes, and time to market has also been improved significantly.'
+      content: 'With both Kubernetes and KubeSphere, we have greatly improved release efficiency (hours to minutes) and accelerated the time to market.'
       author: 'Hua Xia Bank'
 
-    - title: About KubeSphere
+    - title: Working Together
       contentList:
-        - content: KubeSphere unifies many cloud native technologies and tools, including Docker, Istio mesh, DevOps, monitoring, logging, etc. We have demonstrated a best practice of using Kubernetes and KubeSphere with multiple branches in our bank.
-        - content: As for banking industry, most applications must be fault tolerant, highly available and reliable, we demonstrated that even running these applications on Kubernetes can achieve these stringent requirements simultaneously. We hope our user case study will help to promote the wide adoption of Kubernetes in the banking industry.
+        - content: KubeSphere integrates a variety of cloud-native technologies and tools, including Docker, Istio, DevOps and OpenPitrix. We have identified some best practices for using Kubernetes and KubeSphere in our bank.
+        - content: For banking, most applications must be fault-tolerant, highly available, and reliable, and Kubernetes has much to offer in these aspects. We hope that our case can also be part of the success story in the Kubernetes community as we work together to promote cloud-native adoption.
       image:
 
   rightPart:
@@ -64,7 +64,7 @@ section2:
       - title: CLOUD TYPE
         content: Private
       - title: CHALLENGES
-        content: High availability, Efficiency, Data Security
+        content: High Availability, Efficiency, Data Security
       - title: ADOPTED FEATURES
         content: Istio Mesh, DevOps, Kubernetes
 
