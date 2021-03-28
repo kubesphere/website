@@ -5,46 +5,46 @@ layout: "scenario"
 css: "scss/scenario.scss"
 
 section1:
-  title: KubeSphere allows you to build visualizations simply and intuitively.
-  content: KubeSphere provides rich observability from infrastructure to applications. It integrates your favorite tools for multi-dimensional monitoring metrics, multi-tenant log query and collection, alerting and notification.
+  title: KubeSphere 助您轻松实现可视化
+  content: KubeSphere 提供了丰富的可视化功能，覆盖从基础设施到应用的广阔领域。此外，KubeSphere 还集成了许多常用的工具，支持多维度监控指标、多租户日志查询和收集、告警和通知等功能。
   image: /images/observability/banner.jpg
 
 image: /images/observability/observability.jpg
 
 section2:
-  title: Discoverability, Observability, Security, Everything You Need in One Platform
+  title: 可发现性、可观察性、安全性：一站式集成您所需的所有特性
   list:
-    - title: Multi-dimensional Monitoring
+    - title: 多维度监控
       image: /images/observability/multi-dimensional-monitoring.png
       contentList:
-        - content: <span>Infrastructure monitoring</span> provides K8s control plane and cluster node metrics
-        - content: <span>Application resources monitoring</span> includes CPU, memory, network and storage metrics
-        - content: <span>Resource usage ranking</span> by node, workspace and project
-        - content: <span>Service component monitoring</span> for users to quickly locate component failures
-        - content: <span>Custom metrics support</span> includes application custom metrics dashboard (in v3.0.0)
+        - content: <span>基础设施监控</span> 提供 Kubernetes 控制平面和集群节点指标
+        - content: <span>应用资源监控</span> 支持 CPU、内存、网络和存储等监控指标
+        - content: <span>资源用量排行</span> 提供节点、企业空间和项目的资源用量排行情况
+        - content: <span>服务组件监控</span> 支持快速定位组件故障
+        - content: <span>自定义监控指标</span> 提供自定义应用指标监控面板（v3.0.0）
 
-    - title: Log Query and Collection
+    - title: 日志查询和收集
       image: /images/observability/log-query-and-collection.png
       contentList:
-        - content: <span>Multi-tenant log management</span> ensures different tenants can only see their own log information
-        - content: <span>Multi-level log queries</span> include projects, workloads, Pods, containers and keywords, supporting drilling into each level to locate the issues
-        - content: <span>Support multiple log collection platforms</span>, such as Elasticsearch, Kafka and Fluentd
-        - content: <span>Service component monitoring</span> for users to quickly locate component failures
+        - content: <span>多租户日志管理</span> 实现不同租户日志分权分域
+        - content: <span>多层次日志查询</span> 按项目、工作负载、容器组、容器和关键字查询日志，从多层次定位问题
+        - content: <span>多日志收集平台</span> 支持 Elasticsearch、Kafka 和 Fluentd 等平台
+        - content: <span>服务组件监控</span> 支持快速定位组件故障
 
-    - title: Flexible Alerting and Notification
+    - title: 灵活告警和通知
       image: /images/observability/flexible-alerting-and-notification.png
       contentList:
-        - content: <span>Rich alerting rules</span> based on multi-tenancy and multi-dimensional monitoring metrics
-        - content: <span>Flexible alerting policy</span> allows you to customize an alerting policy that contains multiple alerting rules
-        - content: Multi-level monitoring metrics for alerting, ranging from infrastructure to workloads
-        - content: <span>Flexible alerting rules</span> allow you to customize the detection period, duration and alerting priority of monitoring metrics
-        - content: <span>Integration with AlertManager</span> supports multiple notification channels (in v3.0.0)
+        - content: <span>丰富告警规则</span> 提供多租户多维度的监控指标
+        - content: <span>灵活告警策略</span> 支持自定义包含多条告警规则的告警策略
+        - content: <span>多级监控指标</span> 覆盖从基础设施到工作负载的广阔领域
+        - content: <span>灵活告警规则</span> 支持自定义指标的监控时段、时长和告警优先级
+        - content: <span>集成 AlertManager</span> 支持多种通知渠道（v3.0.0）
 
 section3:
-  title: See Cloud Native Observability in KubeSphere
+  title: 观看 KubeSphere 云原生可观察性演示
   videoLink: https://www.youtube.com/embed/uf0TTowc56I
-  content: Want to get started in action by following the hands-on lab?
-  btnContent: Start Hands-on Lab
+  content: 想自己动手体验实际操作？
+  btnContent: 开始动手实验
   link: https://kubesphere.com.cn/docs/pluggable-components/
   bgLeft: /images/service-mesh/3-2.svg
   bgRight: /images/service-mesh/3.svg
