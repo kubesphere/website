@@ -9,7 +9,6 @@ baseURL = "https://kubesphere-v3.netlify.app"
     unsafe= true
 
 [Taxonomies]
-  series = "series"
 
 [params]
 logo = "images/logo.svg"
