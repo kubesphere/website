@@ -1,4 +1,4 @@
-baseURL = "https://kubesphere-v3.netlify.app"
+baseURL = "https://kubesphere.io"
 
 [markup]
   [markup.tableOfContents]
@@ -8,6 +8,8 @@ baseURL = "https://kubesphere-v3.netlify.app"
   [markup.goldmark.renderer]
     unsafe= true
 
+[Taxonomies]
+  series = "series"
 
 [params]
 logo = "images/logo.svg"
