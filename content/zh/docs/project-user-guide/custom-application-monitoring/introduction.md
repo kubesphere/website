@@ -25,7 +25,7 @@ KubeSphere 的监控引擎基于 Prometheus 和 Prometheus Operator。总体而�
 
 Prometheus 社区为大多数编程语言提供了客户端库。您可以在 [Prometheus Client Libraries](https://prometheus.io/docs/instrumenting/clientlibs/) 页面查看支持的语言。使用 Go 语言的开发者可参阅 [Instrumenting a Go Application for Prometheus](https://prometheus.io/docs/guides/go-application/) 了解如何编写符合 Prometheus 规范的应用程序。
 
-[示例 Web 应用](../examples/monitor-sample-web)演示了如何直接暴露 Prometheus 格式的应用指标。
+[示例 Web 应用](../examples/monitor-sample-web/)演示了如何直接暴露 Prometheus 格式的应用指标。
 
 #### 间接暴露
 
@@ -33,7 +33,7 @@ Prometheus 社区为大多数编程语言提供了客户端库。您可以在 [P
 
 Prometheus 社区为大多数第三方应用，例如 MySQL，提供了生产就绪的导出器。您可以在 [Exporters and Integrations](https://prometheus.io/docs/instrumenting/exporters/) 页面查看可用的导出器。在 KubeSphere 中，建议[启用 OpenPitrix](../../../pluggable-components/app-store/) 并从应用商店部署导出器。应用商店中内置了面向 MySQL、Elasticsearch 和 Redis 的导出器。
 
-请参阅[监控 MySQL](../examples/monitor-mysql) 了解如何部署 MySQL 导出器并监控 MySQL 指标。
+请参阅[监控 MySQL](../examples/monitor-mysql/) 了解如何部署 MySQL 导出器并监控 MySQL 指标。
 
 编写导出器与用 Prometheus 客户端库对应用进行监测类似，唯一的不同在于导出器需要连接应用并将应用指标转换成 Prometheus 格式。
 
@@ -45,10 +45,10 @@ ServiceMonitor CRD 由 [Prometheus Operator](https://github.com/prometheus-opera
 
 在 KubeSphere v3.0.0，您需要将 ServiceMonitor 和应用（或导出器）打包到 Helm Chart 中以便重复使用。在未来的版本中，KubeSphere 将提供图形化界面以方便操作。
 
-请参阅[监控示例 Web 应用](../examples/monitor-sample-web)了解如何打包 ServiceMonitor 和应用。
+请参阅[监控示例 Web 应用](../examples/monitor-sample-web/)了解如何打包 ServiceMonitor 和应用。
 
 ### 步骤 3：实现指标可视化
 
 大约两分钟后，KubeSphere 监控引擎开始抓取和存储指标，随后您可以使用 PromQL 查询指标并设计操作面板和监控面板。
 
-请参阅[查询](../visualization/querying)了解如何编写 PromQL 表达式。有关监控面板功能的更多信息，请参阅[可视化](../visualization/overview)。
+请参阅[查询](../visualization/querying/)了解如何编写 PromQL 表达式。有关监控面板功能的更多信息，请参阅[可视化](../visualization/overview/)。

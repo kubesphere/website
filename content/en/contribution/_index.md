@@ -19,7 +19,7 @@ section2:
         - content: 'Quickstart'
           link: '/docs/quick-start/create-workspace-and-project/'
         - content: 'Tutorial Videos'
-          link: '../videos'
+          link: '../videos/'
 
     - name: 'Contribute'
       icon1: 'images/contribution/contribute.svg'
@@ -274,7 +274,7 @@ section4:
       - title: 'Be an Ambassador'
         icon: 'images/contribution/group-1.png'
         content: 'You will be a public-facing community representative. We will provide you with resources to help you be successful as a speaker, or a writer.'
-        link: 'request'
+        link: 'request/'
         linkContent: 'Become a KubeSphere Ambassador →'
 
       - title: 'Be a Contributor'

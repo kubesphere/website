@@ -26,7 +26,7 @@ In KubeSphere, stateful and stateless Services are created with a virtual IP by 
 
 ## Prerequisites
 
-You need to create a workspace, a project and an account (`project-regular`). The account must be invited to the project with the role of `operator`. For more information, see [Create Workspaces, Projects, Accounts and Roles](../../../quick-start/create-workspace-and-project).
+You need to create a workspace, a project and an account (`project-regular`). The account must be invited to the project with the role of `operator`. For more information, see [Create Workspaces, Projects, Accounts and Roles](../../../quick-start/create-workspace-and-project/).
 
 ## Service Types
 
@@ -36,11 +36,11 @@ As shown in the image below, KubeSphere provides three basic methods to create a
 
 - **Stateless Service**
 
-  Stateless Services are the most commonly used Services in container services. They define the Pod template to control the Pod status, including rolling updates and rollbacks. A **Deployment** workload is also created when you create a stateless Service. For more information about stateless Services, see [Deployments](../../application-workloads/deployments).
+  Stateless Services are the most commonly used Services in container services. They define the Pod template to control the Pod status, including rolling updates and rollbacks. A **Deployment** workload is also created when you create a stateless Service. For more information about stateless Services, see [Deployments](../../application-workloads/deployments/).
 
 - **Stateful Service**
 
-  Stateful Services are used to manage stateful applications, ensuring ordered and graceful deployment and scaling. They also provide stable persistent storage and network identifiers. A **StatefulSet** workload is also created when you create a stateful Service. For more information about stateful Services, see [StatefulSets](../../application-workloads/statefulsets).
+  Stateful Services are used to manage stateful applications, ensuring ordered and graceful deployment and scaling. They also provide stable persistent storage and network identifiers. A **StatefulSet** workload is also created when you create a stateful Service. For more information about stateful Services, see [StatefulSets](../../application-workloads/statefulsets/).
 
 - **External Service**
 

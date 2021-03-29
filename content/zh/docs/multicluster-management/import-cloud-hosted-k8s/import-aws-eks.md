@@ -7,10 +7,10 @@ description: '导入 AWS EKS 集群'
 weight: 5320
 ---
 
-在本节中，我们将向您展示如何使用[直接连接](../../enable-multicluster/direct-connection)方法将 EKS 导入 KubeSphere。
+在本节中，我们将向您展示如何使用[直接连接](../../enable-multicluster/direct-connection/)方法将 EKS 导入 KubeSphere。
 
 {{< notice note >}}
-如果您打算使用[代理连接](../../enable-multicluster/agent-connection)导入 EKS，则可以跳过本章节并按照[代理连接](../../enable-multicluster/agent-connection)的文档逐步进行。
+如果您打算使用[代理连接](../../enable-multicluster/agent-connection/)导入 EKS，则可以跳过本章节并按照[代理连接](../../enable-multicluster/agent-connection/)的文档逐步进行。
 {{</ notice >}}
 
 [Amazon EKS](https://docs.aws.amazon.com/eks/index.html)不像标准 kubeadm 集群那样提供内置的 kubeconfig 文件。但是您可以通过参考此[文档](https://docs.aws.amazon.com/eks/latest/userguide/create-kubeconfig.html)自动创建 kubeconfig。生成的 kubeconfig 将如下所示，

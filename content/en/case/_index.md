@@ -14,27 +14,27 @@ section2:
   caseList:
     - icon: "images/case/case5.jpg"
       content: "Anchnet is a leading Next-generation Cloud Managed Service Provider (Cloud MSP) in China, providing cloud native technologies and solutions for customers."
-      link: "anchnet"
+      link: "anchnet/"
 
     - icon: "images/case/case3.jpg"
       content: "Aqara is owned by Lumi United Technology, headquartered in China, with over 300 Aqara service providers and 300 smart home showrooms."
-      link: "aqara"
+      link: "aqara/"
 
     - icon: "images/case/case1.jpg"
       content: "Founded in 2012, Benlai is an e-commerce website focused on food, including fruits and vegetables."
-      link: "benlai"
+      link: "benlai/"
 
     - icon: "images/case/case2.jpg"
       content: "Huaxia Bank Co., Ltd. is a publicly traded commercial bank in China. It is based in Beijing and was founded in 1992."
-      link: "huaxia-bank"
+      link: "huaxia-bank/"
 
     - icon: "images/case/maxnerva.jpg"
       content: "Maxnerva Technology Services, HK.0103 is affiliated and invested by Foxconn Technology Group."
-      link: "maxnerva"
+      link: "maxnerva/"
 
     - icon: "images/case/vng.jpg"
       content: "VNG has seen 14 years of continuous development and expansion to become one of the leading IT companies in Vietnam and Southeast Asia."
-      link: "vng"
+      link: "vng/"
 
 section3:
   title: 'Various Industries are Powered by KubeSphere'

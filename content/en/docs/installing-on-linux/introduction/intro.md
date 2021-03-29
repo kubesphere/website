@@ -14,7 +14,7 @@ Here is a list of available installation options.
 
 - [All-in-one installation](../../../quick-start/all-in-one-on-linux/): Install KubeSphere on a single node. It is only for users to quickly get familiar with KubeSphere.
 - [Multi-node installation](../multioverview/): Install KubeSphere on multiple nodes. It is for testing or development.
-- [Air-gapped installation on Linux](../air-gapped-installation): All images of KubeSphere have been encapsulated into a package. It is convenient for air-gapped installation on Linux machines.
+- [Air-gapped installation on Linux](../air-gapped-installation/): All images of KubeSphere have been encapsulated into a package. It is convenient for air-gapped installation on Linux machines.
 - [High availability installation](../../../installing-on-linux/high-availability-configurations/ha-configuration/): Install a highly-available KubeSphere cluster with multiple nodes which is used for the production environment.
 - Minimal Packages: Only install the minimum required system components of KubeSphere. Here is the minimum resource requirement:
   - 2 CPUs
@@ -36,7 +36,7 @@ If you have an existing Kubernetes cluster, see [Overview of Installing on Kuber
 - For all-in-one installation, the only one node is both the master and the worker.
 - For multi-node installation, you need to provide host information in a configuration file.
 - Your Linux host must have OpenSSH Server installed.
-- See [Port Requirements](../port-firewall) before installation.
+- See [Port Requirements](../port-firewall/) before installation.
 
 ## KubeKey
 

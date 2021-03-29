@@ -18,7 +18,7 @@ You need an account granted a role including the authorization of **Clusters Man
 
     ![Platform](/images/docs/cluster-administration/cluster-status-monitoring/platform.png)
 
-2. If you have enabled the [multi-cluster feature](../../multicluster-management) with member clusters imported, you can select a specific cluster to view its application resources. If you have not enabled the feature, refer to the next step directly.
+2. If you have enabled the [multi-cluster feature](../../multicluster-management/) with member clusters imported, you can select a specific cluster to view its application resources. If you have not enabled the feature, refer to the next step directly.
 
     ![Clusters Management](/images/docs/cluster-administration/cluster-status-monitoring/clusters-management.png)
 

@@ -17,7 +17,7 @@ You can use Elasticsearch, Kafka and Fluentd as log receivers in KubeSphere. Thi
 
 1. Log in to KubeSphere as `admin`. Click **Platform** in the top left corner and select **Clusters Management**.
 
-2. If you have enabled the [multi-cluster feature](../../../../multicluster-management), you can select a specific cluster. If you have not enabled the feature, refer to the next step directly.
+2. If you have enabled the [multi-cluster feature](../../../../multicluster-management/), you can select a specific cluster. If you have not enabled the feature, refer to the next step directly.
 
 3. On the **Cluster Management** page, go to **Log Collections** in **Cluster Settings**.
 

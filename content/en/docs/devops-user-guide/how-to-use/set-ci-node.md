@@ -20,7 +20,7 @@ You need an account granted a role including the authorization of **Clusters Man
 
    ![clusters-management](/images/docs/devops-user-guide/using-devops/set-ci-node-for-dependency-cache/clusters-management.jpg)
 
-2. If you have enabled the [multi-cluster feature](../../../multicluster-management) with member clusters imported, you can select a specific cluster to view its nodes. If you have not enabled the feature, refer to the next step directly.
+2. If you have enabled the [multi-cluster feature](../../../multicluster-management/) with member clusters imported, you can select a specific cluster to view its nodes. If you have not enabled the feature, refer to the next step directly.
 
 3. Navigate to **Cluster Nodes** under **Nodes**, where you can see existing nodes in the current cluster.
 
