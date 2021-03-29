@@ -12,7 +12,7 @@ Jenkinsfile 是一个文本文件，它包含 Jenkins 流水线的定义，并�
 
 {{< notice note >}}
 
-KubeSphere 中可以创建两种类型的流水线：一种是本教程中介绍的基于 SCM 中 Jenkinsfile 创建的流水线，另一种是[通过图形编辑面板创建的流水线](../create-a-pipeline-using-graphical-editing-panel)。Jenkinsfile in SCM 需要源代码管理 (SCM) 中有内置 Jenkinsfile，换句话说，Jenkinsfile 作为 SCM 的一部分。KubeSphere DevOps 系统会根据代码仓库的现有 Jenkinsfile 自动构建 CI/CD 流水线。您可以定义工作流，例如 `stage` 和 `step`。
+KubeSphere 中可以创建两种类型的流水线：一种是本教程中介绍的基于 SCM 中 Jenkinsfile 创建的流水线，另一种是[通过图形编辑面板创建的流水线](../create-a-pipeline-using-graphical-editing-panel/)。Jenkinsfile in SCM 需要源代码管理 (SCM) 中有内置 Jenkinsfile，换句话说，Jenkinsfile 作为 SCM 的一部分。KubeSphere DevOps 系统会根据代码仓库的现有 Jenkinsfile 自动构建 CI/CD 流水线。您可以定义工作流，例如 `stage` 和 `step`。
 
 {{</ notice >}} 
 

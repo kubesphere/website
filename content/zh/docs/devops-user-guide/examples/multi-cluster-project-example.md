@@ -11,7 +11,7 @@ weight: 11420
 - 您需要[启用多集群功能](../../../../docs/multicluster-management/)。
 - 您需要有一个 [Docker Hub](https://hub.docker.com/) 帐户。
 - 您需要[启用 KubeSphere DevOps 系统](../../../../docs/pluggable-components/devops/)。
-- 您需要创建一个多集群企业空间，在 **Host** 集群上创建一个 DevOps 工程，创建一个多集群项目（本教程中，该多集群项目创建于 Host 集群和一个 Member 集群上），并创建一个帐户 (`project-regular`)，需要邀请该帐户至 DevOps 工程和多集群项目中，并赋予 `operator` 角色。有关更多信息，请参见[创建企业空间、项目、帐户和角色](../../../quick-start/create-workspace-and-project)、[多集群管理](../../../multicluster-management)和[多集群项目](../../../project-administration/project-and-multicluster-project/#多集群项目)。
+- 您需要创建一个多集群企业空间，在 **Host** 集群上创建一个 DevOps 工程，创建一个多集群项目（本教程中，该多集群项目创建于 Host 集群和一个 Member 集群上），并创建一个帐户 (`project-regular`)，需要邀请该帐户至 DevOps 工程和多集群项目中，并赋予 `operator` 角色。有关更多信息，请参见[创建企业空间、项目、帐户和角色](../../../quick-start/create-workspace-and-project/)、[多集群管理](../../../multicluster-management/)和[多集群项目](../../../project-administration/project-and-multicluster-project/#多集群项目)。
 
 ## 创建 Docker Hub 访问令牌 (Token)
 

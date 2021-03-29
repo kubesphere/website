@@ -24,7 +24,7 @@ To add a log receiver:
 
 2. Click **Platform** in the top left corner and select **Clusters Management**.
 
-3. If you have enabled the [multi-cluster feature](../../../../multicluster-management), you can select a specific cluster. If you have not enabled the feature, refer to the next step directly.
+3. If you have enabled the [multi-cluster feature](../../../../multicluster-management/), you can select a specific cluster. If you have not enabled the feature, refer to the next step directly.
 
 4. Go to **Log Collections** in **Cluster Settings**.
 
@@ -51,11 +51,11 @@ If the default Elasticsearch log receiver is deleted, refer to [Add Elasticsearc
 
 ### Add Kafka as a log receiver
 
-Kafka is often used to receive logs and serves as a broker to other processing systems like Spark. [Add Kafka as a Receiver](../add-kafka-as-receiver) demonstrates how to add Kafka to receive Kubernetes logs.
+Kafka is often used to receive logs and serves as a broker to other processing systems like Spark. [Add Kafka as a Receiver](../add-kafka-as-receiver/) demonstrates how to add Kafka to receive Kubernetes logs.
 
 ### Add Fluentd as a log receiver
 
-If you need to output logs to more places other than Elasticsearch or Kafka, you can add Fluentd as a log receiver. Fluentd has numerous output plugins which can forward logs to various destinations such as S3, MongoDB, Cassandra, MySQL, syslog, and Splunk. [Add Fluentd as a Receiver](../add-fluentd-as-receiver) demonstrates how to add Fluentd to receive Kubernetes logs.
+If you need to output logs to more places other than Elasticsearch or Kafka, you can add Fluentd as a log receiver. Fluentd has numerous output plugins which can forward logs to various destinations such as S3, MongoDB, Cassandra, MySQL, syslog, and Splunk. [Add Fluentd as a Receiver](../add-fluentd-as-receiver/) demonstrates how to add Fluentd to receive Kubernetes logs.
 
 ## Add a Log Receiver (i.e. Collector) for Events or Auditing Logs
 

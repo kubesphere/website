@@ -279,6 +279,6 @@ kubectl -n kubesphere-system rollout restart deploy ks-console
 
 ## 在 KubeSphere 控制台查看结果
 
-您[使用图形编辑面板创建流水线](../../how-to-use/create-a-pipeline-using-graphical-editing-panel)或[使用 Jenkinsfile 创建流水线](../../how-to-use/create-a-pipeline-using-jenkinsfile)之后，可以查看代码质量分析的结果。如果 SonarQube 成功运行，您可能会看到下图所示结果。
+您[使用图形编辑面板创建流水线](../../how-to-use/create-a-pipeline-using-graphical-editing-panel/)或[使用 Jenkinsfile 创建流水线](../../how-to-use/create-a-pipeline-using-jenkinsfile/)之后，可以查看代码质量分析的结果。如果 SonarQube 成功运行，您可能会看到下图所示结果。
 
 ![sonarqube-view-result](/images/docs/zh-cn/devops-user-guide/tool-integration/integrate-sonarqube-into-pipelines/sonarqube-view-result.png)

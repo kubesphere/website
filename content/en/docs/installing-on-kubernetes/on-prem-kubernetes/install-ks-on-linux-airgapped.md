@@ -178,7 +178,7 @@ Similar to installing KubeSphere on an existing Kubernetes cluster in an online 
 
    {{< notice note >}}
 
-   You can enable pluggable components in this YAML file to explore more features of KubeSphere. Refer to [Enable Pluggle Components](../../../pluggable-components) for more details.
+   You can enable pluggable components in this YAML file to explore more features of KubeSphere. Refer to [Enable Pluggle Components](../../../pluggable-components/) for more details.
 
    {{</ notice >}}
 

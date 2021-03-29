@@ -110,7 +110,7 @@ The separate configuration file contains all parameters of GlusterFS storage whi
 
 ## Step 3: Download KubeKey
 
-Follow the steps below to download [KubeKey](../../../installing-on-linux/introduction/kubekey) on the taskbox.
+Follow the steps below to download [KubeKey](../../../installing-on-linux/introduction/kubekey/) on the taskbox.
 
 {{< tabs >}}
 

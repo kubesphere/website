@@ -20,7 +20,7 @@ Weight: 11260
 
    ![集群管理](/images/docs/zh-cn/devops-user-guide/use-devops/set-email-server-for-kubesphere-pipelines/clusters-management.png)
 
-2. 如果您已经启用[多集群功能](../../../multicluster-management)并已导入 Member 集群，那么您可以选择一个特定集群以查看其节点。如果尚未启用该功能，请直接参考下一步。
+2. 如果您已经启用[多集群功能](../../../multicluster-management/)并已导入 Member 集群，那么您可以选择一个特定集群以查看其节点。如果尚未启用该功能，请直接参考下一步。
 
 3. 转到**应用负载**下的**工作负载**，然后从下拉列表中选择 **kubesphere-devops-system** 项目。点击 **ks-jenkins** 右侧的三个点以编辑其 YAML 配置文件。
 

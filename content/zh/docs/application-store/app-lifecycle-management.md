@@ -17,7 +17,7 @@ KubeSphere 集成了 [OpenPitrix](https://github.com/openpitrix/openpitrix)（�
 
 ## 准备工作
 
-- 您需要启用 [KubeSphere 应用商店 (OpenPitrix)](../../pluggable-components/app-store)。
+- 您需要启用 [KubeSphere 应用商店 (OpenPitrix)](../../pluggable-components/app-store/)。
 - 您需要创建一个企业空间、一个项目以及一个帐户 (`project-regular`)。有关更多信息，请参见[创建企业空间、项目、帐户和角色](../../quick-start/create-workspace-and-project/)。
 
 ## 动手实验

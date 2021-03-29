@@ -36,4 +36,4 @@ A brand-new installer [KubeKey](https://github.com/kubesphere/kubekey) is introd
 
 ## KubeKey or ks-installer
 
-[ks-installer](https://github.com/kubesphere/ks-installer/tree/master) was the main installation tool as of KubeSphere v2. For users whose Kubernetes clusters were NOT deployed via [KubeSphere Installer](https://v2-1.docs.kubesphere.io/docs/installation/all-in-one/#step-2-download-installer-package), they should choose ks-installer to upgrade KubeSphere. For example, if your Kubernetes is hosted by cloud vendors or self provisioned, refer to [Upgrade with ks-installer](../upgrade-with-ks-installer).
+[ks-installer](https://github.com/kubesphere/ks-installer/tree/master) was the main installation tool as of KubeSphere v2. For users whose Kubernetes clusters were NOT deployed via [KubeSphere Installer](https://v2-1.docs.kubesphere.io/docs/installation/all-in-one/#step-2-download-installer-package), they should choose ks-installer to upgrade KubeSphere. For example, if your Kubernetes is hosted by cloud vendors or self provisioned, refer to [Upgrade with ks-installer](../upgrade-with-ks-installer/).
