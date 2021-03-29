@@ -1,18 +1,18 @@
 ---
-title: "Restore the Host Cluster Access to A Member Cluster"
-keywords: "Kubernetes, KubeSphere, Multi-cluster, Host Cluster, Member Cluster"
-description: "How to restore the Host Cluster access to a Member Cluster"
-linkTitle: "Restore the Host Cluster Access to A Member Cluster"
+title: "恢复 Host 集群对 Member 集群的访问权限"
+keywords: "Kubernetes, KubeSphere, 多集群, Host 集群, Member 集群"
+description: "如何恢复 Host 集群对 Member 集群的访问权限"
+linkTitle: "恢复 Host 集群对 Member 集群的访问权限"
 Weight: 16710
 ---
 
-KubeSphere features [multi-cluster maganement](../../../multicluster-management/introduction/kubefed-in-kubesphere/) and tenants with necessary permissions (usually cluster administrators) can access the central control plane from the Host Cluster to manage all the Member Clusters. It is highly recommended that you manage your resources across your cluster through the Host Cluster.
+[多集群管理](../../../multicluster-management/introduction/kubefed-in-kubesphere/)是 KubeSphere 的一大特色，拥有必要权限的租户（通常是集群管理员）能够从 Host 集群访问中央控制平面，以管理全部 Member 集群。强烈建议您通过 Host 集群管理整个集群的资源。
 
-This tutorial demomstrates how to restore the Host Cluster access to a Member Cluster.
+本教程演示如何恢复 Host 集群对 Member 集群的访问权限。
 
-## Possible Error Message
+## 可能出现的错误信息
 
-If you can't access a Member Cluster from the central control plane and your browser keeps redirecting you to the login page of KubeSphere, run the following command on that Member Cluster to get the logs of the ks-apiserver.
+如果您无法从中央控制平面访问 Member 集群，并且浏览器一直将您重新定向到 KubeSphere 的登录页面，请在该 Member 集群上运行以下命令来获取 ks-apiserver 的日志。
 
 ```
 kubectl -n kubesphere-system logs ks-apiserver-7c9c9456bd-qv6bs
@@ -20,11 +20,11 @@ kubectl -n kubesphere-system logs ks-apiserver-7c9c9456bd-qv6bs
 
 {{< notice note >}}
 
-`ks-apiserver-7c9c9456bd-qv6bs` refers to the Pod ID on that Member Cluster. Make sure you use the ID of your own Pod.
+`ks-apiserver-7c9c9456bd-qv6bs` 指的是该 Member 集群上的 Pod ID。请确保您使用自己的 Pod ID。
 
 {{</ notice >}}
 
-You will probably see the following error message:
+您可能会看到以下错误信息：
 
 ```
 E0305 03:46:42.105625       1 token.go:65] token not found in cache
@@ -38,34 +38,34 @@ E0305 03:47:34.502751       1 jwt_token.go:45] token not found in cache
 E0305 03:47:34.502764       1 authentication.go:60] Unable to authenticate the request due to error: token not found in cache
 ```
 
-## Solution
+## 解决方案
 
-### Step 1: Verify the jwtSecret
+### 步骤 1：验证 jwtSecret
 
-Run the following command on your Host Cluster and Member Cluser respectively to confirm whether their jwtSecrets are identical.
+分别在 Host 集群和 Member 集群上运行以下命令，确认它们的 jwtSecret 是否相同。
 
 ```
 kubectl -n kubesphere-system get cm kubesphere-config -o yaml | grep -v “apiVersion” | grep jwtSecret
 ```
 
-### Step 2: Modify `accessTokenMaxAge`
+### 步骤 2：更改 `accessTokenMaxAge`
 
-Make sure the jwtSecrets are identical, then run the following command on that Member Cluster to get the value of `accessTokenMaxAge`. 
+请确保 Host 集群和 Member 集群的 jwtSecret 相同，然后在该 Member 集群上运行以下命令获取 `accessTokenMaxAge` 的值。
 
 ```
 kubectl -n kubesphere-system get cm kubesphere-config -o yaml | grep -v "apiVersion" | grep accessTokenMaxAge
 ```
 
-If the value is not `0`, run the following command to modify the value of `accessTokenMaxAge`.
+如果该值不为 `0`，请运行以下命令更改 `accessTokenMaxAge` 的值。
 
 ```
 kubectl -n kubesphere-system edit cm kubesphere-config -o yaml
 ```
 
-After you modified the value of `accessTokenMaxAge` to `0`, run the following command to restart the ks-apiserver.
+将 `accessTokenMaxAge` 的值更改为 `0` 之后，运行以下命令重启 ks-apiserver。
 
 ```
 kubectl -n kubesphere-system rollout restart deploy ks-apiserver
 ```
 
-Now, you can access that Member Cluster from the central control plane again.
+现在，您可以再次从中央控制平面访问该 Member 集群。
