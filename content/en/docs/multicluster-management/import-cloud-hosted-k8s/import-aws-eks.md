@@ -100,7 +100,7 @@ You need to deploy KubeSphere on your EKS cluster first. For more information ab
 
    However, this automatically generated kubeconfig file requires the command `aws` (aws CLI tools) to be installed on every computer that wants to use this kubeconfig.
 
-2. Run the following commands on your local computer to get the token of the serviceaccount `kubesphere` created by KubeSphere. It has the cluster admin access to the cluster and will be used as the new kubeconfig token.
+2. Run the following commands on your local computer to get the token of the ServiceAccount `kubesphere` created by KubeSphere. It has the cluster admin access to the cluster and will be used as the new kubeconfig token.
 
    ```bash
    TOKEN=$(kubectl -n kubesphere-system get secret $(kubectl -n kubesphere-system get sa kubesphere -o jsonpath='{.secrets[0].name}') -o jsonpath='{.data.token}' | base64 -d)
