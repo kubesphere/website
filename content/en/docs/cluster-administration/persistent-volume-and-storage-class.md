@@ -36,7 +36,7 @@ You need an account granted a role including the authorization of **Clusters Man
    
     ![clusters-management-select](/images/docs/cluster-administration/persistent-volume-and-storage-class/clusters-management-select.jpg)
     
-2. If you have enabled the [multi-cluster feature](../../multicluster-management) with member clusters imported, you can select a specific cluster. If you have not enabled the feature, refer to the next step directly.
+2. If you have enabled the [multi-cluster feature](../../multicluster-management/) with member clusters imported, you can select a specific cluster. If you have not enabled the feature, refer to the next step directly.
 
 3. On the **Cluster Management** page, navigate to **Storage Classes** under **Storage**, where you can create, update and delete a storage class.
 

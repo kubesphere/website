@@ -20,7 +20,7 @@ The built-in Jenkins cannot share the same email configuration with the platform
 
    ![clusters-management](/images/docs/devops-user-guide/using-devops/jenkins-email/clusters-management.jpg)
 
-2. If you have enabled the [multi-cluster feature](../../../multicluster-management) with member clusters imported, you can select a specific cluster to view its nodes. If you have not enabled the feature, refer to the next step directly.
+2. If you have enabled the [multi-cluster feature](../../../multicluster-management/) with member clusters imported, you can select a specific cluster to view its nodes. If you have not enabled the feature, refer to the next step directly.
 
 3. Go to **Workloads** under **Application Workloads**, and choose the project **kubesphere-devops-system** from the drop-down list. Click the three dots on the right of **ks-jenkins** to edit its YAML.
 

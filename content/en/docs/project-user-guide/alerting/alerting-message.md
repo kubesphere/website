@@ -13,7 +13,7 @@ This tutorial demonstrates how to view alerting messages at the workload level.
 ## Prerequisites
 
 - You have enabled [KubeSphere Alerting and Notification](../../../pluggable-components/alerting-notification/).
-- You need to create a workspace, a project and an account (`project-regular`). The account must be invited to the project with the role of `operator`. For more information, see [Create Workspaces, Projects, Accounts and Roles](../../../quick-start/create-workspace-and-project).
+- You need to create a workspace, a project and an account (`project-regular`). The account must be invited to the project with the role of `operator`. For more information, see [Create Workspaces, Projects, Accounts and Roles](../../../quick-start/create-workspace-and-project/).
 
 - You have created a workload-level alerting policy and received alert notifications of it. If it is not ready, refer to [Alerting Policy (Workload Level)](../alerting-policy/) to create one first.
 

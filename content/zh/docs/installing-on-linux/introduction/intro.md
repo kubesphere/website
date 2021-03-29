@@ -36,7 +36,7 @@ KubeSphere 为用户提供轻量级安装程序 [KubeKey](https://github.com/kub
 - 对于 All-in-One，唯一的节点既是主节点，也是工作节点。
 - 对于多节点安装，需要在配置文件中提供主机信息。
 - Linux 主机必须已安装 OpenSSH Server。
-- 在安装之前，请参见[端口要求](../port-firewall)。
+- 在安装之前，请参见[端口要求](../port-firewall/)。
 
 ## KubeKey
 
@@ -68,7 +68,7 @@ KubeSphere 为用户提供轻量级安装程序 [KubeKey](https://github.com/kub
 
 ### 删除节点
 
-您需要清空节点负载，然后再删除节点。有关更多信息，请参见[删除节点](../../cluster-operation/remove-nodes)。
+您需要清空节点负载，然后再删除节点。有关更多信息，请参见[删除节点](../../cluster-operation/remove-nodes/)。
 
 ## 卸载
 

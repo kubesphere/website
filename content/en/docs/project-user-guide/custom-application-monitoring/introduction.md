@@ -24,7 +24,7 @@ Directly exposing Prometheus metrics from applications is a common way among clo
 
 The Prometheus community offers client libraries for most programming languages. Find your language on the [Prometheus Client Libraries](https://prometheus.io/docs/instrumenting/clientlibs/) page. For Go developers, read [Instrumenting a Go application](https://prometheus.io/docs/guides/go-application/) to learn how to write a Prometheus-compliant application.
 
-The [sample web application](../examples/monitor-sample-web) is an example demonstrating how an application exposes Prometheus-formatted metrics directly.
+The [sample web application](../examples/monitor-sample-web/) is an example demonstrating how an application exposes Prometheus-formatted metrics directly.
 
 #### Indirect exposing
 
@@ -32,7 +32,7 @@ If you don’t want to modify your code or you cannot do so because the applicat
 
 For most third-party applications, such as MySQL, the Prometheus community provides production-ready exporters. Refer to [Exporters and Integrations](https://prometheus.io/docs/instrumenting/exporters/) for available exporters. In KubeSphere, it is recommended to [enable OpenPitrix](../../../pluggable-components/app-store/) and deploy exporters from the App Store. Exporters for MySQL, Elasticsearch, and Redis are all built-in apps in the App Store.
 
-Please read [Monitor MySQL](../examples/monitor-mysql) to learn how to deploy a MySQL exporter and monitor MySQL metrics.
+Please read [Monitor MySQL](../examples/monitor-mysql/) to learn how to deploy a MySQL exporter and monitor MySQL metrics.
 
 Writing an exporter is nothing short of instrumenting an application with Prometheus client libraries. The only difference is that exporters need to connect to applications and translate application metrics into Prometheus format.
 
@@ -44,10 +44,10 @@ The ServiceMonitor CRD is defined by [Prometheus Operator](https://github.com/pr
 
 In KubeSphere v3.0.0, you need to pack ServiceMonitor with your applications (or exporters) into a Helm chart for reuse. In future releases, KubeSphere will provide graphical interfaces for easy operation.
 
-Please read [Monitor a Sample Web Application](../examples/monitor-sample-web) to learn how to pack ServiceMonitor with your application.
+Please read [Monitor a Sample Web Application](../examples/monitor-sample-web/) to learn how to pack ServiceMonitor with your application.
 
 ### Step 3: Visualize Metrics
 
 Around two minutes, the KubeSphere monitoring engine starts to scape and store metrics. Then you can use PromQL to query metrics and design panels and dashboards.
 
-Please read [Querying](../visualization/querying) to learn how to write a PromQL expression. For dashboard features, please read [Visualization](../visualization/overview).
+Please read [Querying](../visualization/querying/) to learn how to write a PromQL expression. For dashboard features, please read [Visualization](../visualization/overview/).

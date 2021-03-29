@@ -14,7 +14,7 @@ weight: 10720
 ## 准备工作
 
 * 您需要启用 [KubeSphere 告警和通知](../../../pluggable-components/alerting-notification/)。
-* 您需要创建一个企业空间、一个项目和一个帐户（例如 `project-regular`）。该帐户必须已邀请至该项目，并具有 `operator` 角色。有关更多信息，请参阅[创建企业空间、项目、帐户和角色](../../../quick-start/create-workspace-and-project)。
+* 您需要创建一个企业空间、一个项目和一个帐户（例如 `project-regular`）。该帐户必须已邀请至该项目，并具有 `operator` 角色。有关更多信息，请参阅[创建企业空间、项目、帐户和角色](../../../quick-start/create-workspace-and-project/)。
 * 您需要创建一个工作负载级别的告警策略并接收到相关告警通知。如果尚未创建告警策略，请按照[告警策略（工作负载级别）](../alerting-policy/)创建一个告警策略。
 
 ## 动手实验

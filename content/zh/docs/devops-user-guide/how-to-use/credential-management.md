@@ -84,4 +84,4 @@ weight: 11230
 
 [使用 Jenkinsfile 创建流水线](../create-a-pipeline-using-jenkinsfile/)
 
-[使用图形编辑面板创建流水线](../create-a-pipeline-using-graphical-editing-panel)
+[使用图形编辑面板创建流水线](../create-a-pipeline-using-graphical-editing-panel/)
