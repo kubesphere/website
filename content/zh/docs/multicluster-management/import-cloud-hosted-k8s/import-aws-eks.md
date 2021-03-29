@@ -21,7 +21,7 @@ weight: 5320
 
 ### **步骤 2：准备 EKS Member 集群**
 
-1. 为了通过 Host 集群管理 Member 集群，您需要使它们之间的 `jwtSecret` 相同。首先，需要在 Host 集群上执行以下命令获取 `jwtSecret`。首先，需要在 Host 集群上执行以下命令获取 `jwtSecret`。
+1. 为了通过 Host 集群管理 Member 集群，您需要使它们之间的 `jwtSecret` 相同。首先，需要在 Host 集群上执行以下命令获取 `jwtSecret`。
 
    ```bash
    kubectl -n kubesphere-system get cm kubesphere-config -o yaml | grep -v "apiVersion" | grep jwtSecret
@@ -108,13 +108,13 @@ weight: 5320
    kubectl config set-context --current --user=kubesphere
    ```
 
-3. 运行以下命令检索新的 kubeconfig 文件：
+3. 运行以下命令获取新的 kubeconfig 文件：
 
    ```bash
    cat ~/.kube/config
    ```
 
-   输出类似如下，可以看到插入了新用户 `kubesphere` 并已将其设置为了当前集群环境上下文用户：
+   输出类似如下，可以看到已插入新用户 `kubesphere` 并已将其设置为当前集群环境上下文用户：
 
    ```yaml
    apiVersion: v1
