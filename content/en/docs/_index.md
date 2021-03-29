@@ -15,16 +15,16 @@ sectionLink:
     title: Popular Pages
     description: Learn how to use KubeSphere with these quickstarts, tutorials, and examples. 
     list:
-      - /docs/quick-start/all-in-one-on-linux
-      - /docs/quick-start/minimal-kubesphere-on-k8s
-      - /docs/quick-start/create-workspace-and-project
-      - /docs/introduction/what-is-kubesphere
-      - /docs/pluggable-components
-      - /docs/installing-on-linux/introduction/multioverview
-      - /docs/pluggable-components/app-store
-      - /docs/pluggable-components/devops
-      - /docs/multicluster-management
-      - /docs/project-user-guide/configuration/image-registry
+      - /docs/quick-start/all-in-one-on-linux/
+      - /docs/quick-start/minimal-kubesphere-on-k8s/
+      - /docs/quick-start/create-workspace-and-project/
+      - /docs/introduction/what-is-kubesphere/
+      - /docs/pluggable-components/
+      - /docs/installing-on-linux/introduction/multioverview/
+      - /docs/pluggable-components/app-store/
+      - /docs/pluggable-components/devops/
+      - /docs/multicluster-management/
+      - /docs/project-user-guide/configuration/image-registry/
       
   videos:
     title: Popular Videos

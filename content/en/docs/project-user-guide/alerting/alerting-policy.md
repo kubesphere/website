@@ -12,7 +12,7 @@ KubeSphere provides alerting policies for nodes and workloads. This tutorial dem
 
 - You have enabled [KubeSphere Alerting and Notification](../../../pluggable-components/alerting-notification/).
 - You have configured the [Mail server](../../../cluster-administration/cluster-settings/mail-server/).
-- You need to create a workspace, a project and an account (`project-regular`). The account must be invited to the project with the role of `operator`. For more information, see [Create Workspaces, Projects, Accounts and Roles](../../../quick-start/create-workspace-and-project).
+- You need to create a workspace, a project and an account (`project-regular`). The account must be invited to the project with the role of `operator`. For more information, see [Create Workspaces, Projects, Accounts and Roles](../../../quick-start/create-workspace-and-project/).
 - You have workloads in this project. If they are not ready, go to **Applications** under **Application Workloads**, and click **Deploy Sample Application** to deploy an application quickly. For more information, see [Deploy Bookinfo and Manage Traffic](../../../quick-start/deploy-bookinfo-to-k8s/).
 
 ## Hands-on Lab

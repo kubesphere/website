@@ -23,7 +23,7 @@ Cluster nodes are only accessible to cluster administrators. Some node metrics a
 
     ![clusters-management-select](/images/docs/cluster-administration/node-management/clusters-management-select.jpg)
 
-2. If you have enabled the [multi-cluster feature](../../multicluster-management) with member clusters imported, you can select a specific cluster to view its nodes. If you have not enabled the feature, refer to the next step directly.
+2. If you have enabled the [multi-cluster feature](../../multicluster-management/) with member clusters imported, you can select a specific cluster to view its nodes. If you have not enabled the feature, refer to the next step directly.
 
     ![select-a-cluster](/images/docs/cluster-administration/node-management/select-a-cluster.jpg)
 

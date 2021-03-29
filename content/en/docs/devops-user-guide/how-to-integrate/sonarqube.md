@@ -279,6 +279,6 @@ You need a SonarQube token so that your pipeline can communicate with SonarQube 
 
 ## View Results on the KubeSphere Console
 
-After you [create a pipeline using the graphical editing panel](../../how-to-use/create-a-pipeline-using-graphical-editing-panel) or [create a pipeline using a Jenkinsfile](../../how-to-use/create-a-pipeline-using-jenkinsfile), you can view the result of code quality analysis. For example, you may see an image as below if SonarQube runs successfully.
+After you [create a pipeline using the graphical editing panel](../../how-to-use/create-a-pipeline-using-graphical-editing-panel/) or [create a pipeline using a Jenkinsfile](../../how-to-use/create-a-pipeline-using-jenkinsfile/), you can view the result of code quality analysis. For example, you may see an image as below if SonarQube runs successfully.
 
 ![sonarqube-view-result](/images/docs/devops-user-guide/tool-integration/integrate-sonarqube-into-pipeline/sonarqube-view-result.jpg)

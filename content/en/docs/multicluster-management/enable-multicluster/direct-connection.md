@@ -8,7 +8,7 @@ weight: 5210
 
 If the kube-apiserver address of the Member Cluster (M Cluster) is accessible on any node of the Host Cluster (H Cluster), you can adopt **Direction Connection**. This method is applicable when the kube-apiserver address of the M Cluster can be exposed or H Cluster and M Cluster are in the same private network or subnet.
 
-To use the multi-cluster feature using direct connection, you must have at least two clusters serving as the H Cluster and the M Cluster respectively. A cluster can be defined as the H Cluster or the M Cluster either before or after you install KubeSphere. For more information about installing KubeSphere, refer to [Installing on Linux](../../../installing-on-linux) and [Installing on Kubernetes](../../../installing-on-kubernetes).
+To use the multi-cluster feature using direct connection, you must have at least two clusters serving as the H Cluster and the M Cluster respectively. A cluster can be defined as the H Cluster or the M Cluster either before or after you install KubeSphere. For more information about installing KubeSphere, refer to [Installing on Linux](../../../installing-on-linux/) and [Installing on Kubernetes](../../../installing-on-kubernetes/).
 
 ## Video Demonstration
 

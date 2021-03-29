@@ -48,7 +48,7 @@ footer:
     - title: 开源社区
       list:
         - content: 参与贡献
-          link: contribution
+          link: contribution/
         - content: 案例学习
           link: case/
         - content: 合作伙伴

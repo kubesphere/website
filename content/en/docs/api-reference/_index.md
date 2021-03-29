@@ -17,7 +17,7 @@ This chapter contains the glossary that is often used in KubeSphere and the info
 
 The glossary used in KubeSphere.
 
-## [KubeSphere API](../api-reference/api-docs)
+## [KubeSphere API](../api-reference/api-docs/)
 
 The REST API is the fundamental fabric of KubeSphere. This guide shows you how to access the KubeSphere API server.
 

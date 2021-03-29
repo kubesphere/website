@@ -14,27 +14,27 @@ section2:
   caseList:
     - icon: "images/case/case5.jpg"
       content: "安畅网络是中国市场领先的下一代云托管服务商（Cloud MSP），为客户提供云原生技术和解决方案。"
-      link: "anchnet"
+      link: "anchnet/"
 
     - icon: "images/case/case3.jpg"
       content: "Aqara 隶属于绿米联创科技有限公司，总部位于中国，拥有 300 多家 Aqara 服务提供商和 300 多家智能家居展厅。"
-      link: "aqara"
+      link: "aqara/"
 
     - icon: "images/case/case1.jpg"
       content: "本来生活网创办于 2012 年，是一家生鲜电商平台，提供蔬菜、水果、海鲜等优质生鲜果蔬食材食品网购服务。"
-      link: "benlai"
+      link: "benlai/"
 
     - icon: "images/case/case2.jpg"
       content: "华夏银行股份有限公司是一家上市商业银行，于 1992 年在北京成立。"
-      link: "huaxia-bank"
+      link: "huaxia-bank/"
 
     - icon: "images/case/maxnerva.jpg"
       content: "云智汇科技服务有限公司是富士康科技集团投资成立的子公司。"
-      link: "maxnerva"
+      link: "maxnerva/"
 
     - icon: "images/case/vng.jpg"
       content: "通过 14 年不断的发展，VNG 已成为越南和整个东南亚地区的 IT 领导企业之一。"
-      link: "vng"
+      link: "vng/"
 
 section3:
   title: 'KubeSphere 助力各行各业'

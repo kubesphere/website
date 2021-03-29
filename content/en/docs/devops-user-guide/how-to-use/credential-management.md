@@ -19,7 +19,7 @@ Currently, you can store the following 4 types of credentials in a DevOps projec
 - **Secret Text**: Secret content in a file.
 - **kubeconfig**: It is used to configure cross-cluster authentication. If you select this type, the dialog will auto-populate the field with the kubeconfig file of the current Kubernetes cluster.
 
-This tutorial demonstrates how to create and manage credentials in a DevOps project. For more information about how credentials are used, see [Create a Pipeline Using a Jenkinsfile](../create-a-pipeline-using-jenkinsfile/) and [Create a Pipeline Using Graphical Editing Panels](../create-a-pipeline-using-graphical-editing-panel).
+This tutorial demonstrates how to create and manage credentials in a DevOps project. For more information about how credentials are used, see [Create a Pipeline Using a Jenkinsfile](../create-a-pipeline-using-jenkinsfile/) and [Create a Pipeline Using Graphical Editing Panels](../create-a-pipeline-using-graphical-editing-panel/).
 
 ## Prerequisites
 
@@ -84,4 +84,4 @@ A file that is used to configure access to clusters is called a kubeconfig file.
 
 [Create a Pipeline Using a Jenkinsfile](../create-a-pipeline-using-jenkinsfile/)
 
-[Create a Pipeline Using Graphical Editing Panels](../create-a-pipeline-using-graphical-editing-panel)
+[Create a Pipeline Using Graphical Editing Panels](../create-a-pipeline-using-graphical-editing-panel/)

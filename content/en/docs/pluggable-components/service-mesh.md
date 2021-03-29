@@ -11,7 +11,7 @@ weight: 6800
 
 On the basis of [Istio](https://istio.io/), KubeSphere Service Mesh visualizes microservices governance and traffic management. It features a powerful toolkit including **circuit breaking, blue-green deployment, canary release, traffic mirroring, distributed tracing, observability and traffic control**. Developers can easily get started with KubeSphere Service Mesh without any code hacking, with the learning curve of Istio greatly reduced. All features of KubeSphere Service Mesh are designed to meet users' demand for their business.
 
-For more information, see [Grayscale Release](../../project-user-guide/grayscale-release/overview).
+For more information, see [Grayscale Release](../../project-user-guide/grayscale-release/overview/).
 
 ## Enable KubeSphere Service Mesh before Installation
 

@@ -59,13 +59,13 @@ MeterSphere 是一站式的开源企业级连续测试平台，涵盖测试跟�
 
 7. 等待 MeterSphere 应用正常运行。
 
-   ![metersphere-running](/images/docs/appstore/external-apps/deploy-metersphere/metersphere-running.PNG)
+   ![metersphere-running](/images/docs/zh-cn/appstore/external-apps/deploy-metersphere/metersphere-running.png)
 
 8. 访问**工作负载**，可以看到为 MeterSphere 创建的所有部署和有状态副本集。
 
-   ![deployments-running](/images/docs/appstore/external-apps/deploy-metersphere/deployments-running.PNG)
+   ![deployments-running](/images/docs/zh-cn/appstore/external-apps/deploy-metersphere/deployments-running.png)
    
-   ![statefulsets-running](/images/docs/appstore/external-apps/deploy-metersphere/statefulsets-running.PNG)
+   ![statefulsets-running](/images/docs/zh-cn/appstore/external-apps/deploy-metersphere/statefulsets-running.png)
    
    {{< notice note >}}
    
@@ -77,11 +77,11 @@ MeterSphere 是一站式的开源企业级连续测试平台，涵盖测试跟�
 
 1. 问**应用负载**下的**服务**，可以看到 MeterSphere 服务，其服务类型默认设置为 `NodePort`。
 
-   ![metersphere-service](/images/docs/appstore/external-apps/deploy-metersphere/metersphere-service.PNG)
+   ![metersphere-service](/images/docs/zh-cn/appstore/external-apps/deploy-metersphere/metersphere-service.png)
 
 2. 您可以通过 `{$NodeIP}:{NodePort}` 使用默认帐户及密码 (`admin/metersphere`) 访问 MeterSphere。
 
-   ![login-metersphere](/images/docs/appstore/external-apps/deploy-metersphere/login-metersphere.PNG)
+   ![login-metersphere](/images/docs/zh-cn/appstore/external-apps/deploy-metersphere/login-metersphere.png)
 
    {{< notice note >}}
 
