@@ -6,7 +6,7 @@ linkTitle: "Overview"
 weight: 10815
 ---
 
-This section introduces monitoring dashboard features. You will learn how to visualize metric data in KubeSphere for your custom apps. If you do not know how to integrate your app metrics into the KubeSphere monitoring system, read [Introduction](../../introduction) first.
+This section introduces monitoring dashboard features. You will learn how to visualize metric data in KubeSphere for your custom apps. If you do not know how to integrate your app metrics into the KubeSphere monitoring system, read [Introduction](../../introduction/) first.
 
 ## Create a Monitoring Dashboard
 

@@ -24,7 +24,7 @@ KubeSphere 提供灵活的日志收集配置方式。基于 [FluentBit Operator]
 
 2. 点击左上角的**平台管理**，然后选择**集群管理**。
 
-3. 如果您启用了[多集群功能](../../../../multicluster-management)，您可以选择一个集群。如果尚未启用该功能，请直接进行下一步。
+3. 如果您启用了[多集群功能](../../../../multicluster-management/)，您可以选择一个集群。如果尚未启用该功能，请直接进行下一步。
 
 4. 选择**集群设置**下的**日志收集**。
 
@@ -51,11 +51,11 @@ KubeSphere 提供灵活的日志收集配置方式。基于 [FluentBit Operator]
 
 ### 添加 Kafka 作为日志接收器
 
-Kafka 往往用于接收日志，并作为 Spark 等处理系统的代理 (Broker)。[添加 Kafka 作为接收器](../add-kafka-as-receiver)演示如何添加 Kafka 接收 Kubernetes 日志。
+Kafka 往往用于接收日志，并作为 Spark 等处理系统的代理 (Broker)。[添加 Kafka 作为接收器](../add-kafka-as-receiver/)演示如何添加 Kafka 接收 Kubernetes 日志。
 
 ### 添加 Fluentd 作为日志接收器
 
-如果您需要将日志输出到除 Elasticsearch 或 Kafka 以外的其他地方，您可以添加 Fluentd 作为日志接收器。Fluentd 支持多种输出插件，可以将日志发送至多个目标，例如 S3、MongoDB、Cassandra、MySQL、syslog 和 Splunk 等。[添加 Fluentd 作为接收器](../add-fluentd-as-receiver)演示如何添加 Fluentd 接收 Kubernetes 日志。
+如果您需要将日志输出到除 Elasticsearch 或 Kafka 以外的其他地方，您可以添加 Fluentd 作为日志接收器。Fluentd 支持多种输出插件，可以将日志发送至多个目标，例如 S3、MongoDB、Cassandra、MySQL、syslog 和 Splunk 等。[添加 Fluentd 作为接收器](../add-fluentd-as-receiver/)演示如何添加 Fluentd 接收 Kubernetes 日志。
 
 ## 为事件或审计日志添加日志接收器
 

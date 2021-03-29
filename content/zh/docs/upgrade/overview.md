@@ -35,4 +35,4 @@ KubeSphere v3.0.0 采用了全新的 [KubeKey](https://github.com/kubesphere/kub
 
 ## 用 KubeKey 还是 ks-installer 升级
 
-[ks-installer](https://github.com/kubesphere/ks-installer/tree/master) 曾是 KubeSphere v2 的主要安装工具。对于未使用 [KubeSphere Installer](https://v2-1.docs.kubesphere.io/docs/zh-CN/installation/all-in-one/#第二步-准备安装包) 部署 Kubernetes 集群的用户，应选择使用 ks-installer 升级 KubeSphere。例如，如果您的 Kubernetes 是由云供应商托管或自行配置的，请参考[使用 ks-installer 升级](../upgrade-with-ks-installer)。
+[ks-installer](https://github.com/kubesphere/ks-installer/tree/master) 曾是 KubeSphere v2 的主要安装工具。对于未使用 [KubeSphere Installer](https://v2-1.docs.kubesphere.io/docs/zh-CN/installation/all-in-one/#第二步-准备安装包) 部署 Kubernetes 集群的用户，应选择使用 ks-installer 升级 KubeSphere。例如，如果您的 Kubernetes 是由云供应商托管或自行配置的，请参考[使用 ks-installer 升级](../upgrade-with-ks-installer/)。

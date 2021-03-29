@@ -15,7 +15,7 @@ icon: "/images/docs/docs.svg"
 
 The glossary used in KubeSphere.
 
-## [API Documentation](../reference/api-docs)
+## [API Documentation](../reference/api-docs/)
 
 The REST API is the fundamental fabric of KubeSphere. This guide shows you how to access KubeSphere API server.
 

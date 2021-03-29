@@ -110,7 +110,7 @@ weight: 3340
 
 ## 步骤 3：下载 KubeKey
 
-根据以下步骤在任务机上下载 [KubeKey](../../../installing-on-linux/introduction/kubekey)。
+根据以下步骤在任务机上下载 [KubeKey](../../../installing-on-linux/introduction/kubekey/)。
 
 {{< tabs >}}
 

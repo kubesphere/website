@@ -17,7 +17,7 @@ icon: "/images/docs/docs.svg"
 
 KubeSphere 中使用的词汇表。
 
-## [KubeSphere API](../api-reference/api-docs)
+## [KubeSphere API](../api-reference/api-docs/)
 
 REST API 是 KubeSphere 的基本结构。本指南向您展示如何访问 KubeSphere API 服务器。
 

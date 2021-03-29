@@ -79,7 +79,7 @@ In this example, all workloads are deployed in `kubesphere-sample-dev`. You must
 
 ### Create a pipeline for the Maven project
 
-1. Go to **Pipelines** of your DevOps project and click **Create**. For more information, see [Create a Pipeline - using Graphical Editing Panel](../../how-to-use/create-a-pipeline-using-graphical-editing-panel).
+1. Go to **Pipelines** of your DevOps project and click **Create**. For more information, see [Create a Pipeline - using Graphical Editing Panel](../../how-to-use/create-a-pipeline-using-graphical-editing-panel/).
 
 2. Go to the detail page of the pipeline and click **Edit Jenkinsfile**.
 

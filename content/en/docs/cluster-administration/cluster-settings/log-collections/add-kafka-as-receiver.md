@@ -103,7 +103,7 @@ You can use [strimzi-kafka-operator](https://github.com/strimzi/strimzi-kafka-op
 
 1. Log in to KubeSphere as `admin`. Click **Platform** in the top left corner and select **Clusters Management**.
 
-2. If you have enabled the [multi-cluster feature](../../../../multicluster-management), you can select a specific cluster. If you have not enabled the feature, refer to the next step directly.
+2. If you have enabled the [multi-cluster feature](../../../../multicluster-management/), you can select a specific cluster. If you have not enabled the feature, refer to the next step directly.
 
 3. On the **Cluster Management** page, go to **Log Collections** in **Cluster Settings**.
 
