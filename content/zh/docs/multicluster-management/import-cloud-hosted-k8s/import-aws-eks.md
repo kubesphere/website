@@ -1,6 +1,6 @@
 ---
 title: "导入 AWS EKS 集群"
-keywords: 'Kubernetes, KubeSphere, 多集群, Amazon eks'
+keywords: 'Kubernetes, KubeSphere, 多集群, Amazon EKS'
 description: '导入 AWS EKS 集群'
 titleLink: "导入 AWS EKS 集群"
 weight: 5320
@@ -17,7 +17,7 @@ weight: 5320
 
 ### **步骤 1：在 EKS 集群上部署 KubeSphere**
 
-您需要首先在 EKS 集群上部署 KubeSphere。有关如何在 EKS 上部署 KubeSphere 的更多信息，请参考[在 AWS EKS 上部署 KubeSphere](../../../installing-on-kubernetes/hosted-kubernetes/install-kubesphere-on-eks/#install-kubesphere-on-eks)。
+您需要首先在 EKS 集群上部署 KubeSphere。有关如何在 EKS 上部署 KubeSphere 的更多信息，请参考[在 AWS EKS 上部署 KubeSphere](../../../installing-on-kubernetes/hosted-kubernetes/install-kubesphere-on-eks/#在-eks-上安装-kubesphere)。
 
 ### **步骤 2：准备 EKS Member 集群**
 
@@ -114,7 +114,7 @@ weight: 5320
    cat ~/.kube/config
    ```
 
-   输出类似如下，可以看到已插入新用户 `kubesphere` 并已将其设置为当前集群环境上下文用户：
+   输出类似如下，可以看到已插入新用户 `kubesphere` 并已将其设置为当前集群环境上下文 (current-context) 用户：
 
    ```yaml
    apiVersion: v1
