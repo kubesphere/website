@@ -46,7 +46,7 @@ After a workspace is created, you can allocate additional clusters to the worksp
 
 1. Log in to KubeSphere with an account that has the permission to manage clusters, such as `admin`.
 
-2. Click **Platform** in the top left corner and select **Clusters Management**. Select a cluster from the list to view cluster information.
+2. Click **Platform** in the top left corner and select **Cluster Management**. Select a cluster from the list to view cluster information.
 
 3. In **Cluster Settings** from the navigation bar, select **Cluster Visibility**.
 

@@ -104,7 +104,7 @@ By default, ks-installer will install Elasticsearch internally if Logging is ena
 
 ## Enable Logging after Installation
 
-1. Log in to the console as `admin`. Click **Platform** in the top-left corner and select **Clusters Management**.
+1. Log in to the console as `admin`. Click **Platform** in the top-left corner and select **Cluster Management**.
    
    ![clusters-management](/images/docs/enable-pluggable-components/kubesphere-logging-system/clusters-management.png)
 

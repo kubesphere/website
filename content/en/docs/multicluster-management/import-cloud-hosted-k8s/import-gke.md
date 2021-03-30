@@ -33,7 +33,7 @@ You need to deploy KubeSphere on your GKE cluster first. For more information ab
    jwtSecret: "QVguGh7qnURywHn2od9IiOX6X8f8wK8g"
    ```
 
-2. Log in to the KubeSphere console on GKE as `admin`. Click **Platform** in the upper left corner and then select **Clusters Management**.
+2. Log in to the KubeSphere console on GKE as `admin`. Click **Platform** in the upper left corner and then select **Cluster Management**.
 
 3. Go to **CRDs**, input `ClusterConfiguration` in the search bar, and then press **Enter** on your keyboard. Click **ClusterConfiguration** to go to its detail page.
 
@@ -111,7 +111,7 @@ You need to deploy KubeSphere on your GKE cluster first. For more information ab
 
 ### Step 4: Import the GKE Member Cluster
 
-1. Log in to the KubeSphere console on your Host Cluster as `admin`. Click **Platform** in the upper left corner and then select **Clusters Management**. On the **Clusters Management** page, click **Add Cluster**.
+1. Log in to the KubeSphere console on your Host Cluster as `admin`. Click **Platform** in the upper left corner and then select **Cluster Management**. On the **Cluster Management** page, click **Add Cluster**.
 
    ![click-add-cluster](/images/docs/multicluster-management/import-cloud-hosted-k8s/import-gke/click-add-cluster.png)
 
