@@ -2,10 +2,10 @@
 <ul class="common-flex-layout">
     {{ range $sections }}
     <li>
-        <h2>
+        <p>
             <span><img src="{{ .Params.icon }}" alt="{{ .LinkTitle }}"></span>
             <a href="{{ .RelPermalink }}">{{ .LinkTitle }}</a>
-        </h2>
+        </p>
         {{ $page_list := (union (where .Pages ".Params._build.render" "!=" false) .Sections).ByWeight }}
         {{ $length := len $page_list}}
         <ul>

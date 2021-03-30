@@ -53,12 +53,6 @@ footer:
           link: https://kubesphere.io
         - content: China Site
           link: https://kubesphere.com.cn/
-        - content: Europe Site
-          link: https://kubesphere.eu
-        - content: Turkey Site
-          link: https://kubesphereturkey.com
-        - content: Spain Site
-          link: https://kubesphere.es
 
     - title: Products and Services
       list:
