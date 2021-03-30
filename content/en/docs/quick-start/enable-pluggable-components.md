@@ -1,5 +1,5 @@
 ---
-title: "Enable Pluggable Components"
+title: "Enable Pluggable Components — Quickstarts"
 keywords: 'KubeSphere, Kubernetes, pluggable, components'
 description: 'Enable Pluggable Components'
 linkTitle: "Enable Pluggable Components"
