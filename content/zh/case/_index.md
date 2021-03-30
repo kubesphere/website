@@ -41,14 +41,14 @@ section3:
   tip: 全部
   icon: images/common/hexagon.svg
   caseType:
-    - name: '电子商务'
+    - name: '电商'
       children:
         - name: 'aqara'
           icon: 'images/case/section6-aqara.jpg'
         - name: 'benlai'
           icon: 'images/case/section6-benlai.jpg'
 
-    - name: '金融'
+    - name: '银行'
       children:
         - name: 'huaxia-bank'
           icon: 'images/case/section6-huaxia-bank.jpg'
@@ -81,15 +81,35 @@ section3:
           icon: 'images/case/section6-99kvm.jpg'
         - name: 'mile-works'
           icon: 'images/case/section6-mile-works.jpg'
+        - name: 'uisee'
+          icon: 'images/case/section6-uisee.png'
+        - name: 'hongya'
+          icon: 'images/case/section6-hongya.png'
+        - name: 'ruijie'
+          icon: 'images/case/section6-ruijie.png'
+        - name: 'supaur'
+          icon: 'images/case/section6-supaur.png'
+        - name: 'supaur'
+          icon: 'images/case/section6-xiaodiketang.png'
 
     - name: '互联网'
       children:
         - name: 'sina'
           icon: 'images/case/section6-sina.jpg'
 
+    - name: '物流'
+      children:
+        - name: 'ZTO'
+          icon: 'images/case/section6-zto.png'
+
+    - name: 'MCN'
+      children:
+        - name: 'yaowang'
+          icon: 'images/case/section6-yaowang.png'
+
 
   bottomContent:
-    content: Want your logo up there? Just
-    linkContent: email you company's logo to us →
+    content: 希望在 KubeSphere 官网展示您的 Logo 或分享您的使用案例？
+    linkContent: 欢迎给我们发邮件 →
     link: mailto:kubesphere@gmail.com
 ---
