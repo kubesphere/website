@@ -65,7 +65,7 @@ If you install KubeSphere on Linux, see [Disable Telemetry after Installation](.
 
 1. Log in to the console as `admin` and click **Platform** in the top left corner.
 
-2. Select **Clusters Management** and navigate to **CRDs**.
+2. Select **Cluster Management** and navigate to **CRDs**.
 
     {{< notice note >}}
 If you have enabled [the multi-cluster feature](../../../multicluster-management/), you need to select a cluster first.

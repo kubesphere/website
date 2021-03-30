@@ -83,7 +83,7 @@ Whether you install KubeSphere on Linux or on Kubernetes, you can check the stat
 
 The KubeSphere web console provides a convenient way for users to view and operate on different resources. To enable pluggable components after installation, you only need to make few adjustments on the console directly. For those who are accustomed to the Kubernetes command-line tool, kubectl, they will have no difficulty in using KubeSphere as the tool is integrated into the console.
 
-1. Log in to the console as `admin`. Click **Platform** in the top-left corner and select **Clusters Management**.
+1. Log in to the console as `admin`. Click **Platform** in the top-left corner and select **Cluster Management**.
 
     ![clusters-management](/images/docs/quickstart/enable-pluggable-components/clusters-management.png)
 

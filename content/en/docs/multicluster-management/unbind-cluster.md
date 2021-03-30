@@ -11,13 +11,13 @@ This tutorial demonstrates how to unbind a cluster from the central control plan
 ## Prerequisites
 
 - You have enabled multi-cluster management.
-- You need an account granted a role including the authorization of **Clusters Management**. For example, you can log in to the console as `admin` directly or create a new role with the authorization and assign it to an account.
+- You need an account granted a role including the authorization of **Cluster Management**. For example, you can log in to the console as `admin` directly or create a new role with the authorization and assign it to an account.
 
 ## Unbind a Cluster
 
-1. Click **Platform** in the top left corner and select **Clusters Management**.
+1. Click **Platform** in the top left corner and select **Cluster Management**.
 
-2. On the **Clusters Management** page, click the cluster that you want to remove from the central control plane.
+2. On the **Cluster Management** page, click the cluster that you want to remove from the central control plane.
 
    ![clusters-management](/images/docs/multicluster-management/unbind-a-cluster/clusters-management.jpg)
 

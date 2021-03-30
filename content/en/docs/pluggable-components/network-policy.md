@@ -75,7 +75,7 @@ The process of installing KubeSphere on Kubernetes is same as stated in the tuto
 
 ## Enable the Network Policy after Installation
 
-1. Log in to the console as `admin`. Click **Platform** in the top-left corner and select **Clusters Management**.
+1. Log in to the console as `admin`. Click **Platform** in the top-left corner and select **Cluster Management**.
    
     ![clusters-management](/images/docs/enable-pluggable-components/network-policies/clusters-management.png)
     

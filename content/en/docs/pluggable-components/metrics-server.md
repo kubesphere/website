@@ -49,7 +49,7 @@ If you install KubeSphere on some cloud hosted Kubernetes engines, it is probabl
 
 ## Enable the Metrics Server after Installation
 
-1. Log in to the console as `admin`. Click **Platform** in the top-left corner and select **Clusters Management**.
+1. Log in to the console as `admin`. Click **Platform** in the top-left corner and select **Cluster Management**.
    
     ![clusters-management](/images/docs/enable-pluggable-components/metrics-server/clusters-management.png)
     

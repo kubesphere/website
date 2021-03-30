@@ -223,7 +223,7 @@ kubectl logs -n kubesphere-system $(kubectl get pod -n kubesphere-system -l app=
 
 ## Import a Member Cluster
 
-1. Log in to the KubeSphere console as `admin` and click **Add Cluster** on the **Clusters Management** page.
+1. Log in to the KubeSphere console as `admin` and click **Add Cluster** on the **Cluster Management** page.
    
    ![add-cluster](/images/docs/multicluster-management/enable-multicluster-management-in-kubesphere/agent-connection/add-cluster.png)
 

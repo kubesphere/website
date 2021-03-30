@@ -69,7 +69,7 @@ The process of installing KubeSphere on Kubernetes is same as stated in the tuto
 
 ## Enable KubeSphere Service Mesh after Installation
 
-1. Log in to the console as `admin`. Click **Platform** in the top-left corner and select **Clusters Management**.
+1. Log in to the console as `admin`. Click **Platform** in the top-left corner and select **Cluster Management**.
     
     ![clusters-management](/images/docs/enable-pluggable-components/kubesphere-service-mesh/clusters-management.png)
     
