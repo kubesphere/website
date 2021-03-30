@@ -16,7 +16,7 @@ weight: 3330
 
 ## 准备工作
 
-您必须准备好提供外部存储服务的 NFS 服务器。请确保已在客户端机器允许访问的 NFS 服务器上创建并导出目录。有关更多信息，请参见[搭建 NFS 服务器](../../../api-reference/storage-system-installation/nfs-server/)。
+您必须准备好提供外部存储服务的 NFS 服务器。请确保已在客户端机器允许访问的 NFS 服务器上创建并导出目录。有关更多信息，请参见[搭建 NFS 服务器](../../../reference/storage-system-installation/nfs-server/)。
 
 ## 步骤 1：配置客户端机器
 

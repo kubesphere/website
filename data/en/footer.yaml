@@ -37,7 +37,7 @@ footer:
         - content: Tutorial
           link: '../../../docs/quick-start/create-workspace-and-project/'
         - content: API Documentation
-          link: '../../../docs/api-reference/api-docs/'
+          link: '../../../docs/reference/api-docs/'
 
     - title: Community
       list:

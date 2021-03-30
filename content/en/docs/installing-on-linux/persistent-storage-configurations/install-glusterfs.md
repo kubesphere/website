@@ -18,7 +18,7 @@ Ubuntu 16.04 is used as an example in this tutorial.
 
 ## Prerequisites
 
-You have set up your GlusterFS cluster and configured Heketi. For more information, see [Set up a GlusterFS Server](../../../api-reference/storage-system-installation/glusterfs-server/).
+You have set up your GlusterFS cluster and configured Heketi. For more information, see [Set up a GlusterFS Server](../../../reference/storage-system-installation/glusterfs-server/).
 
 ## Step 1: Configure the Client Machine
 
