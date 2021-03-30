@@ -1,5 +1,5 @@
 ---
-title: "Monitoring"
+title: "Observability — Monitoring FAQ"
 keywords: "Kubernetes, Prometheus, KubeSphere, Monitoring"
 description: "FAQ about monitoring"
 linkTitle: "Monitoring"
