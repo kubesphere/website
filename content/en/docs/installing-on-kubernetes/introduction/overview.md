@@ -1,5 +1,5 @@
 ---
-title: "Installing KubeSphere on Kubernetes Overview"
+title: "Installing KubeSphere on Kubernetes — Overview"
 keywords: "KubeSphere, Kubernetes, Installation"
 description: "Overview of KubeSphere Installation on Kubernetes"
 linkTitle: "Overview"
