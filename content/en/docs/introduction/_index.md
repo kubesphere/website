@@ -1,5 +1,5 @@
 ---
-title: "Introduction"
+title: "Introduction to KubeSphere"
 description: "Help you to better understand KubeSphere with detailed graphics and contents"
 layout: "single"
 
