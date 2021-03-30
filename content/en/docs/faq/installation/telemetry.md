@@ -37,7 +37,7 @@ If you install KubeSphere on Linux, see [Disable Telemetry after Installation](.
 
 {{</ notice >}}
 
-1. Download the file [cluster-configuration.yaml](https://github.com/kubesphere/ks-installer/releases/download/v3.0.0/cluster-configuration.yaml) and open it for editing:
+1. Download the file [cluster-configuration.yaml](https://github.com/kubesphere/ks-installer/releases/download/v3.0.0/cluster-configuration.yaml) and edit it:
 
     ```bash
     vi cluster-configuration.yaml
