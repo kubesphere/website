@@ -15,16 +15,16 @@ sectionLink:
     title: 常用文档
     description: 通过快速入门、教程和示例等学习使用 KubeSphere。
     list:
-      - /docs/quick-start/all-in-one-on-linux/
-      - /docs/quick-start/minimal-kubesphere-on-k8s/
-      - /docs/quick-start/create-workspace-and-project/
-      - /docs/introduction/what-is-kubesphere/
-      - /docs/pluggable-components/
-      - /docs/installing-on-linux/introduction/multioverview/
-      - /docs/pluggable-components/app-store/
-      - /docs/pluggable-components/devops/
-      - /docs/multicluster-management/
-      - /docs/project-user-guide/configuration/image-registry/
+      - /docs/quick-start/all-in-one-on-linux
+      - /docs/quick-start/minimal-kubesphere-on-k8s
+      - /docs/quick-start/create-workspace-and-project
+      - /docs/introduction/what-is-kubesphere
+      - /docs/pluggable-components
+      - /docs/installing-on-linux/introduction/multioverview
+      - /docs/pluggable-components/app-store
+      - /docs/pluggable-components/devops
+      - /docs/multicluster-management
+      - /docs/project-user-guide/configuration/image-registry
       
   videos:
     title: 视频教程
