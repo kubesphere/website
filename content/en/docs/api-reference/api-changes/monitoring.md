@@ -1,5 +1,5 @@
 ---
-title: "Monitoring"
+title: "Monitoring API changes"
 keywords: 'Kubernetes, KubeSphere, API, Monitoring'
 description: 'Monitoring API changes'
 linkTitle: "Monitoring"
