@@ -8,6 +8,7 @@ baseURL = "https://kubesphere-v3.netlify.app"
   [markup.goldmark.renderer]
     unsafe= true
 
+[Taxonomies]
 
 [params]
 logo = "images/logo.svg"
