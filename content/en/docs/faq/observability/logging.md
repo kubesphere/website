@@ -1,5 +1,5 @@
 ---
-title: "Logging"
+title: "Observability — Logging FAQ"
 keywords: "Kubernetes, Elasticsearch, KubeSphere, Logging, logs"
 description: "FAQ about logging"
 linkTitle: "Logging"
