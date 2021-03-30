@@ -10,7 +10,7 @@ weight: 6700
 
 KubeSphere Auditing Log System provides a security-relevant chronological set of records documenting the sequence of activities related to individual users, managers, or other components of the system. Each request to KubeSphere generates an event that is then written to a webhook and processed according to a certain rule.
 
-For more information, see [Auditing Log Query](../../toolbox/auditing/auditing-query).
+For more information, see [Auditing Log Query](../../toolbox/auditing/auditing-query/).
 
 ## Enable Auditing Logs before Installation
 
@@ -61,7 +61,7 @@ By default, KubeKey will install Elasticsearch internally if Auditing is enabled
 
 The process of installing KubeSphere on Kubernetes is same as stated in the tutorial of [Installing KubeSphere on Kubernetes](../../installing-on-kubernetes/introduction/overview/) except the optional component Auditing needs to be enabled first in the [cluster-configuration.yaml](https://github.com/kubesphere/ks-installer/releases/download/v3.0.0/cluster-configuration.yaml) file.
 
-1. Download the file [cluster-configuration.yaml](https://github.com/kubesphere/ks-installer/releases/download/v3.0.0/cluster-configuration.yaml) and open it for editing.
+1. Download the file [cluster-configuration.yaml](https://github.com/kubesphere/ks-installer/releases/download/v3.0.0/cluster-configuration.yaml) and edit it.
 
     ```bash
     vi cluster-configuration.yaml
@@ -100,7 +100,7 @@ By default, ks-installer will install Elasticsearch internally if Auditing is en
 
 ## Enable Auditing Logs after Installation
 
-1. Log in to the console as `admin`. Click **Platform** in the top-left corner and select **Clusters Management**.
+1. Log in to the console as `admin`. Click **Platform** in the top-left corner and select **Cluster Management**.
    
     ![clusters-management](/images/docs/enable-pluggable-components/kubesphere-auditing-logs/clusters-management.png)
     

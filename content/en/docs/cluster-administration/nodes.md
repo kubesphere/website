@@ -13,17 +13,17 @@ This tutorial demonstrates what a cluster administrator can view and do for node
 
 ## Prerequisites
 
-You need an account granted a role including the authorization of **Clusters Management**. For example, you can log in to the console as `admin` directly or create a new role with the authorization and assign it to an account.
+You need an account granted a role including the authorization of **Cluster Management**. For example, you can log in to the console as `admin` directly or create a new role with the authorization and assign it to an account.
 
 ## Node Status
 
 Cluster nodes are only accessible to cluster administrators. Some node metrics are very important to clusters. Therefore, it is the administrator's responsibility to watch over these numbers and make sure nodes are available. Follow the steps below to view node status.
 
-1. Click **Platform** in the top left corner and select **Clusters Management**.
+1. Click **Platform** in the top left corner and select **Cluster Management**.
 
     ![clusters-management-select](/images/docs/cluster-administration/node-management/clusters-management-select.jpg)
 
-2. If you have enabled the [multi-cluster feature](../../multicluster-management) with member clusters imported, you can select a specific cluster to view its nodes. If you have not enabled the feature, refer to the next step directly.
+2. If you have enabled the [multi-cluster feature](../../multicluster-management/) with member clusters imported, you can select a specific cluster to view its nodes. If you have not enabled the feature, refer to the next step directly.
 
     ![select-a-cluster](/images/docs/cluster-administration/node-management/select-a-cluster.jpg)
 

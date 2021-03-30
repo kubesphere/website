@@ -10,7 +10,7 @@ weight: 6400
 
 KubeSphere provides a powerful, holistic and easy-to-use logging system for log collection, query and management. It covers logs at varied levels, including tenants, infrastructure resources, and applications. Users can search logs from different dimensions, such as project, workload, Pod and keyword. Compared with Kibana, the tenant-based logging system of KubeSphere features better isolation and security among tenants as tenants can only view their own logs. Apart from KubeSphere's own logging system, the container platform also allows users to add third-party log collectors, such as Elasticsearch, Kafka and Fluentd.
 
-For more information, see [Log Query](../../toolbox/log-query).
+For more information, see [Log Query](../../toolbox/log-query/).
 
 ## Enable Logging before Installation
 
@@ -65,7 +65,7 @@ By default, KubeKey will install Elasticsearch internally if Logging is enabled.
 
 The process of installing KubeSphere on Kubernetes is same as stated in the tutorial of [Installing KubeSphere on Kubernetes](../../installing-on-kubernetes/introduction/overview/) except the optional component Logging needs to be enabled first in the [cluster-configuration.yaml](https://github.com/kubesphere/ks-installer/releases/download/v3.0.0/cluster-configuration.yaml) file.
 
-1. Download the file [cluster-configuration.yaml](https://github.com/kubesphere/ks-installer/releases/download/v3.0.0/cluster-configuration.yaml) and open it for editing.
+1. Download the file [cluster-configuration.yaml](https://github.com/kubesphere/ks-installer/releases/download/v3.0.0/cluster-configuration.yaml) and edit it.
 
     ```bash
     vi cluster-configuration.yaml
@@ -104,7 +104,7 @@ By default, ks-installer will install Elasticsearch internally if Logging is ena
 
 ## Enable Logging after Installation
 
-1. Log in to the console as `admin`. Click **Platform** in the top-left corner and select **Clusters Management**.
+1. Log in to the console as `admin`. Click **Platform** in the top-left corner and select **Cluster Management**.
    
    ![clusters-management](/images/docs/enable-pluggable-components/kubesphere-logging-system/clusters-management.png)
 

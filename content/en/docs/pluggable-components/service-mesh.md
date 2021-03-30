@@ -11,7 +11,7 @@ weight: 6800
 
 On the basis of [Istio](https://istio.io/), KubeSphere Service Mesh visualizes microservices governance and traffic management. It features a powerful toolkit including **circuit breaking, blue-green deployment, canary release, traffic mirroring, distributed tracing, observability and traffic control**. Developers can easily get started with KubeSphere Service Mesh without any code hacking, with the learning curve of Istio greatly reduced. All features of KubeSphere Service Mesh are designed to meet users' demand for their business.
 
-For more information, see [Grayscale Release](../../project-user-guide/grayscale-release/overview).
+For more information, see [Grayscale Release](../../project-user-guide/grayscale-release/overview/).
 
 ## Enable KubeSphere Service Mesh before Installation
 
@@ -46,7 +46,7 @@ If you adopt [All-in-One Installation](../../quick-start/all-in-one-on-linux/), 
 
 The process of installing KubeSphere on Kubernetes is same as stated in the tutorial of [Installing KubeSphere on Kubernetes](../../installing-on-kubernetes/introduction/overview/) except the optional component Service Mesh needs to be enabled first in the [cluster-configuration.yaml](https://github.com/kubesphere/ks-installer/releases/download/v3.0.0/cluster-configuration.yaml) file.
 
-1. Download the file [cluster-configuration.yaml](https://github.com/kubesphere/ks-installer/releases/download/v3.0.0/cluster-configuration.yaml) and open it for editing.
+1. Download the file [cluster-configuration.yaml](https://github.com/kubesphere/ks-installer/releases/download/v3.0.0/cluster-configuration.yaml) and edit it.
 
     ```bash
     vi cluster-configuration.yaml
@@ -69,7 +69,7 @@ The process of installing KubeSphere on Kubernetes is same as stated in the tuto
 
 ## Enable KubeSphere Service Mesh after Installation
 
-1. Log in to the console as `admin`. Click **Platform** in the top-left corner and select **Clusters Management**.
+1. Log in to the console as `admin`. Click **Platform** in the top-left corner and select **Cluster Management**.
     
     ![clusters-management](/images/docs/enable-pluggable-components/kubesphere-service-mesh/clusters-management.png)
     

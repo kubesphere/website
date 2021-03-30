@@ -17,8 +17,7 @@ weight: 8300
 
 1. 点击左上角的**平台管理**，然后选择**集群管理**。
 ![Platform](/images/docs/zh-cn/cluster-administration/application-resources-monitoring/platform.png)
-2. 如果您已启用了[多集群功能](../../multicluster-management
-)并已导入了 Member 集群，您可以选择一个集群以查看其应用程序资源。如果尚未启用该功能，请直接进行下一步。
+2. 如果您已启用了[多集群功能](../../multicluster-management/)并已导入了 Member 集群，您可以选择一个集群以查看其应用程序资源。如果尚未启用该功能，请直接进行下一步。
 ![Clusters Management](/images/docs/zh-cn/cluster-administration/application-resources-monitoring/clusters-management.png)
 3. 在左侧导航栏选择**监控告警**下的**应用资源**以查看应用资源概览，包括集群中所有资源使用情况的汇总信息。
     ![Resource Usage](/images/docs/zh-cn/cluster-administration/application-resources-monitoring/application-resources-monitoring.png)

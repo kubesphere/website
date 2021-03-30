@@ -20,9 +20,6 @@ footer:
         - content: 多云应用管理平台
           link: 'https://openpitrix.io/'
 
-        - content: Fluent-Bit 管理日志
-          link: 'https://github.com/kubesphere/fluentbit-operator'
-
     - title: 资源
       list:
         - content: 开源项目
@@ -48,7 +45,7 @@ footer:
     - title: 开源社区
       list:
         - content: 参与贡献
-          link: contribution
+          link: contribution/
         - content: 案例学习
           link: case/
         - content: 合作伙伴
@@ -61,3 +58,14 @@ footer:
           link: https://kubesphere.com.cn/forum
         - content: 全球站
           link: https://kubesphere.io
+
+    - title: 产品与服务
+      list:
+        - content: KubeSphere on AWS
+          link: 'https://aws.amazon.com/cn/quickstart/architecture/qingcloud-kubesphere/'
+        - content: KubeSphere on QingCloud(QKE)
+          link: 'https://www.qingcloud.com/products/kubesphereqke'
+        - content: 云原生应用服务平台
+          link: 'https://kubesphere.cloud'
+        - content: 业务合作与咨询
+          link: 'https://jinshuju.net/f/tPUldX'

@@ -49,7 +49,7 @@ If you adopt [All-in-One Installation](../../quick-start/all-in-one-on-linux/), 
 
 The process of installing KubeSphere on Kubernetes is same as stated in the tutorial of [Installing KubeSphere on Kubernetes](../../installing-on-kubernetes/introduction/overview/) except the optional component App Store needs to be enabled first in the [cluster-configuration.yaml](https://github.com/kubesphere/ks-installer/releases/download/v3.0.0/cluster-configuration.yaml) file.
 
-1. Download the file [cluster-configuration.yaml](https://github.com/kubesphere/ks-installer/releases/download/v3.0.0/cluster-configuration.yaml) and open it for editing.
+1. Download the file [cluster-configuration.yaml](https://github.com/kubesphere/ks-installer/releases/download/v3.0.0/cluster-configuration.yaml) and edit it.
 
     ```bash
     vi cluster-configuration.yaml
@@ -72,7 +72,7 @@ The process of installing KubeSphere on Kubernetes is same as stated in the tuto
 
 ## Enable the App Store after Installation
 
-1. Log in to the console as `admin`. Click **Platform** in the top-left corner and select **Clusters Management**.
+1. Log in to the console as `admin`. Click **Platform** in the top-left corner and select **Cluster Management**.
    
    ![clusters-management](/images/docs/enable-pluggable-components/kubesphere-app-store/clusters-management.png)
 

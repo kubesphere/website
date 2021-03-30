@@ -26,7 +26,7 @@ Workspace network isolation is disabled by default. You can turn on network isol
 
 {{< notice note >}}
 
-When network isolation is turned on, egress traffic will be allowed by default, while ingress traffic will be denied for different workspaces. If you need to customize your network policy, you need to turn on [Project Network Isolation](../../project-administration/project-network-isolation) and add a network policy in **Project Settings**.
+When network isolation is turned on, egress traffic will be allowed by default, while ingress traffic will be denied for different workspaces. If you need to customize your network policy, you need to turn on [Project Network Isolation](../../project-administration/project-network-isolation/) and add a network policy in **Project Settings**.
 
 {{</ notice >}}
 

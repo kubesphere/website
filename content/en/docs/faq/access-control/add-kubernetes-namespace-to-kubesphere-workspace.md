@@ -12,7 +12,7 @@ This tutorial demonstrates how to add an existing Kubernetes namespace to a Kube
 
 ## Prerequisites
 
-- You need an account granted a role including the authorization of **Clusters Management**. For example, you can log in to the console as `admin` directly or create a new role with the authorization and assign it to an account.
+- You need an account granted a role including the authorization of **Cluster Management**. For example, you can log in to the console as `admin` directly or create a new role with the authorization and assign it to an account.
 
 - You have an available workspace so that the namespace can be assigned to it. For more information, see [Create Workspaces, Projects, Accounts and Roles](../../../quick-start/create-workspace-and-project/).
 

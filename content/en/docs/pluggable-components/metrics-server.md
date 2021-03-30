@@ -20,7 +20,7 @@ When you use KubeKey to create a configuration file for your cluster, the Metric
 
 The process of installing KubeSphere on Kubernetes is stated in the tutorial of [Installing KubeSphere on Kubernetes](../../installing-on-kubernetes/introduction/overview/). To install the optional component Metrics Server, you can enable it first in the [cluster-configuration.yaml](https://github.com/kubesphere/ks-installer/releases/download/v3.0.0/cluster-configuration.yaml) file.
 
-1. Download the file [cluster-configuration.yaml](https://github.com/kubesphere/ks-installer/releases/download/v3.0.0/cluster-configuration.yaml) and open it for editing.
+1. Download the file [cluster-configuration.yaml](https://github.com/kubesphere/ks-installer/releases/download/v3.0.0/cluster-configuration.yaml) and edit it.
 
     ```bash
     vi cluster-configuration.yaml
@@ -49,7 +49,7 @@ If you install KubeSphere on some cloud hosted Kubernetes engines, it is probabl
 
 ## Enable the Metrics Server after Installation
 
-1. Log in to the console as `admin`. Click **Platform** in the top-left corner and select **Clusters Management**.
+1. Log in to the console as `admin`. Click **Platform** in the top-left corner and select **Cluster Management**.
    
     ![clusters-management](/images/docs/enable-pluggable-components/metrics-server/clusters-management.png)
     

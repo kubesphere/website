@@ -12,15 +12,15 @@ The built-in Jenkins cannot share the same email configuration with the platform
 ## Prerequisites
 
 - You need to enable the [KubeSphere DevOps System](../../../pluggable-components/devops/).
-- You need an account granted a role including the authorization of **Clusters Management**. For example, you can log in to the console as `admin` directly or create a new role with the authorization and assign it to an account.
+- You need an account granted a role including the authorization of **Cluster Management**. For example, you can log in to the console as `admin` directly or create a new role with the authorization and assign it to an account.
 
 ## Set the Email Server
 
-1. Click **Platform** in the top left corner and select **Clusters Management**.
+1. Click **Platform** in the top left corner and select **Cluster Management**.
 
    ![clusters-management](/images/docs/devops-user-guide/using-devops/jenkins-email/clusters-management.jpg)
 
-2. If you have enabled the [multi-cluster feature](../../../multicluster-management) with member clusters imported, you can select a specific cluster to view its nodes. If you have not enabled the feature, refer to the next step directly.
+2. If you have enabled the [multi-cluster feature](../../../multicluster-management/) with member clusters imported, you can select a specific cluster to view its nodes. If you have not enabled the feature, refer to the next step directly.
 
 3. Go to **Workloads** under **Application Workloads**, and choose the project **kubesphere-devops-system** from the drop-down list. Click the three dots on the right of **ks-jenkins** to edit its YAML.
 

@@ -12,15 +12,15 @@ This tutorial demonstrates how you set CI nodes so that KubeSphere schedules tas
 
 ## Prerequisites
 
-You need an account granted a role including the authorization of **Clusters Management**. For example, you can log in to the console as `admin` directly or create a new role with the authorization and assign it to an account.
+You need an account granted a role including the authorization of **Cluster Management**. For example, you can log in to the console as `admin` directly or create a new role with the authorization and assign it to an account.
 
 ## Label a CI Node
 
-1. Click **Platform** in the top left corner and select **Clusters Management**.
+1. Click **Platform** in the top left corner and select **Cluster Management**.
 
    ![clusters-management](/images/docs/devops-user-guide/using-devops/set-ci-node-for-dependency-cache/clusters-management.jpg)
 
-2. If you have enabled the [multi-cluster feature](../../../multicluster-management) with member clusters imported, you can select a specific cluster to view its nodes. If you have not enabled the feature, refer to the next step directly.
+2. If you have enabled the [multi-cluster feature](../../../multicluster-management/) with member clusters imported, you can select a specific cluster to view its nodes. If you have not enabled the feature, refer to the next step directly.
 
 3. Navigate to **Cluster Nodes** under **Nodes**, where you can see existing nodes in the current cluster.
 

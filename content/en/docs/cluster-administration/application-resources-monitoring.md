@@ -11,17 +11,17 @@ In addition to monitoring data at the physical resource level, cluster administr
 
 ## Prerequisites
 
-You need an account granted a role including the authorization of **Clusters Management**. For example, you can log in to the console as `admin` directly or create a new role with the authorization and assign it to an account.
+You need an account granted a role including the authorization of **Cluster Management**. For example, you can log in to the console as `admin` directly or create a new role with the authorization and assign it to an account.
 
 ## Resource Usage
 
-1. Click **Platform** in the top left corner and select **Clusters Management**.
+1. Click **Platform** in the top left corner and select **Cluster Management**.
 
     ![Platform](/images/docs/cluster-administration/cluster-status-monitoring/platform.png)
 
-2. If you have enabled the [multi-cluster feature](../../multicluster-management) with member clusters imported, you can select a specific cluster to view its application resources. If you have not enabled the feature, refer to the next step directly.
+2. If you have enabled the [multi-cluster feature](../../multicluster-management/) with member clusters imported, you can select a specific cluster to view its application resources. If you have not enabled the feature, refer to the next step directly.
 
-    ![Clusters Management](/images/docs/cluster-administration/cluster-status-monitoring/clusters-management.png)
+    ![Cluster Management](/images/docs/cluster-administration/cluster-status-monitoring/clusters-management.png)
 
 3. Choose **Application Resources** under **Monitoring & Alerting** to see the overview of application resource monitoring, including the summary of the usage of all resources in the cluster, as shown in the following figure.
 

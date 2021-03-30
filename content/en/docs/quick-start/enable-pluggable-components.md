@@ -59,7 +59,7 @@ If you adopt [All-in-one Installation](../../quick-start/all-in-one-on-linux/), 
 
 When you install KubeSphere on Kubernetes, you need to use [ks-installer](https://github.com/kubesphere/ks-installer/) by applying two yaml files as below.
 
-1. First download the file [cluster-configuration.yaml](https://github.com/kubesphere/ks-installer/releases/download/v3.0.0/cluster-configuration.yaml) and open it for editing.
+1. First download the file [cluster-configuration.yaml](https://github.com/kubesphere/ks-installer/releases/download/v3.0.0/cluster-configuration.yaml) and edit it.
 
     ```bash
     vi cluster-configuration.yaml
@@ -83,7 +83,7 @@ Whether you install KubeSphere on Linux or on Kubernetes, you can check the stat
 
 The KubeSphere web console provides a convenient way for users to view and operate on different resources. To enable pluggable components after installation, you only need to make few adjustments on the console directly. For those who are accustomed to the Kubernetes command-line tool, kubectl, they will have no difficulty in using KubeSphere as the tool is integrated into the console.
 
-1. Log in to the console as `admin`. Click **Platform** in the top-left corner and select **Clusters Management**.
+1. Log in to the console as `admin`. Click **Platform** in the top-left corner and select **Cluster Management**.
 
     ![clusters-management](/images/docs/quickstart/enable-pluggable-components/clusters-management.png)
 

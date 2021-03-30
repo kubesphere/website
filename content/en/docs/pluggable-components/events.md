@@ -10,7 +10,7 @@ weight: 6500
 
 KubeSphere events allow users to keep track of what is happening inside a cluster, such as node scheduling status and image pulling result. They will be accurately recorded with the specific reason, status and message displayed in the web console. To query events, users can quickly launch the web Toolkit and enter related information in the search bar with different filters (e.g keyword and project) available. Events can also be archived to third-party tools, such as Elasticsearch, Kafka or Fluentd.
 
-For more information, see [Event Query](../../toolbox/events-query).
+For more information, see [Event Query](../../toolbox/events-query/).
 
 ## Enable Events before Installation
 
@@ -63,7 +63,7 @@ By default, KubeKey will install Elasticsearch internally if Events is enabled. 
 
 The process of installing KubeSphere on Kubernetes is same as stated in the tutorial of [Installing KubeSphere on Kubernetes](../../installing-on-kubernetes/introduction/overview/) except the optional component Events needs to be enabled first in the [cluster-configuration.yaml](https://github.com/kubesphere/ks-installer/releases/download/v3.0.0/cluster-configuration.yaml) file.
 
-1. Download the file [cluster-configuration.yaml](https://github.com/kubesphere/ks-installer/releases/download/v3.0.0/cluster-configuration.yaml) and open it for editing.
+1. Download the file [cluster-configuration.yaml](https://github.com/kubesphere/ks-installer/releases/download/v3.0.0/cluster-configuration.yaml) and edit it.
 
     ```bash
     vi cluster-configuration.yaml
@@ -102,7 +102,7 @@ By default, ks-installer will install Elasticsearch internally if Events is enab
 
 ## Enable Events after Installation
 
-1. Log in to the console as `admin`. Click **Platform** in the top-left corner and select **Clusters Management**.
+1. Log in to the console as `admin`. Click **Platform** in the top-left corner and select **Cluster Management**.
    
     ![clusters-management](/images/docs/enable-pluggable-components/kubesphere-events/clusters-management.png)
     

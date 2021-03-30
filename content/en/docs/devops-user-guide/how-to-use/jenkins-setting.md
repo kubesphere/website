@@ -20,11 +20,11 @@ You have enabled [the KubeSphere DevOps System](../../../pluggable-components/de
 
 It is recommended that you configure Jenkins in KubeSphere through Configuration-as-Code (CasC). The built-in Jenkins CasC file is stored as a [ConfigMap](../../../project-user-guide/configuration/configmaps/).
 
-1. Log in to KubeSphere as `admin`. Click **Platform** in the top left corner and select **Clusters Management**.
+1. Log in to KubeSphere as `admin`. Click **Platform** in the top left corner and select **Cluster Management**.
 
    ![cluster-management](/images/docs/devops-user-guide/using-devops/jenkins-system-settings/cluster-management.jpg)
 
-2. If you have enabled the [multi-cluster feature](../../../multicluster-management) with member clusters imported, you can select a specific cluster to edit the ConfigMap. If you have not enabled the feature, refer to the next step directly.
+2. If you have enabled the [multi-cluster feature](../../../multicluster-management/) with member clusters imported, you can select a specific cluster to edit the ConfigMap. If you have not enabled the feature, refer to the next step directly.
 
 3. From the navigation bar, select **ConfigMaps** under **Configurations**. On the **ConfigMaps** page, select `kubesphere-devops-system` from the drop-down list and click `jenkins-casc-config`.
 

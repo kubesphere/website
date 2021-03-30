@@ -2,13 +2,13 @@ footer:
   list:
     - title: Scenarios
       list:
-        - content: Embrace DevOps
+        - content: DevOps
           link: devops/
 
-        - content: Microservices on K8s
+        - content: Microservices
           link: service-mesh/
 
-        - content: Cloud Native Observability
+        - content: Observability
           link: observability/
 
         - content: Bare Metal LoadBalancer
@@ -16,11 +16,6 @@ footer:
 
         - content: Multi-cloud Apps Mgmt
           link: 'https://github.com/openpitrix/openpitrix'
-
-        - content: Logging management
-          link: 'https://github.com/kubesphere/fluentbit-operator'
-
-
 
     - title: Resources
       list:
@@ -58,3 +53,14 @@ footer:
           link: https://kubesphere.io
         - content: China Site
           link: https://kubesphere.com.cn/
+          
+    - title: Products and Services
+      list:
+        - content: KubeSphere on QingCloud(QKE)
+          link: 'https://www.qingcloud.com/products/kubesphereqke'
+        - content: KubeSphere on AWS
+          link: 'https://aws.amazon.com/quickstart/architecture/qingcloud-kubesphere/'
+        - content: Cloud application service platform
+          link: 'https://kubesphere.cloud'
+        - content: Cooperation and consulting
+          link: 'https://jinshuju.net/f/tPUldX'

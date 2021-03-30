@@ -363,31 +363,31 @@ hasChildren = true
   [[languages.tr.menu.main]]
   parent = "Kaynaklar"
   name = "Open Source Projeler"
-  URL = "projects"
+  URL = "projects/"
   weight = 1
 
   [[languages.tr.menu.main]]
   parent = "Kaynaklar"
   name = "KubeCon & QCon"
-  URL = "conferences"
+  URL = "conferences/"
   weight = 2
 
   [[languages.tr.menu.main]]
   parent = "Kaynaklar"
   name = "Blog Yazıları"
-  URL = "blogs"
+  URL = "blogs/"
   weight = 3
 
   [[languages.tr.menu.main]]
   parent = "Kaynaklar"
   name = "Videolar"
-  URL = "videos"
+  URL = "videos/"
   weight = 4
 
 [[languages.tr.menu.main]]
 weight = 4
 name = "Dokümantasyon"
-URL = "docs"
+URL = "docs/"
 
 [[languages.tr.menu.main]]
 weight = 5
@@ -396,17 +396,17 @@ name = "Topluluk"
     [[languages.tr.menu.main]]
     parent = "Topluluk"
     name = "Contribution"
-    URL = "contribution"
+    URL = "contribution/"
     weight = 1
 
     [[languages.tr.menu.main]]
     parent = "Topluluk"
     name = "Case Studies"
-    URL = "case"
+    URL = "case/"
     weight = 2
 
     [[languages.tr.menu.main]]
     parent = "Topluluk"
     name = "Partnerler"
-    URL = "partner"
+    URL = "partner/"
     weight = 3

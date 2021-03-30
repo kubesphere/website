@@ -10,7 +10,7 @@ section1:
 
 section2:
   image: /images/live/friend.jpeg
-  url: ./test
+  url: ./test/
 
   notice:
     title: KubeSphere 在直播电商行业的多集群应用实践

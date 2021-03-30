@@ -19,7 +19,7 @@ section2:
         - content: '快速入门'
           link: '/docs/quick-start/create-workspace-and-project/'
         - content: '视频教程'
-          link: '../videos'
+          link: '../videos/'
 
     - name: '贡献'
       icon1: 'images/contribution/contribute.svg'
@@ -274,7 +274,7 @@ section4:
       - title: '成为 Ambassador'
         icon: 'images/contribution/group-1.png'
         content: '您将会成为面向公众用户的 KubeSphere 社区代表。我们将为您提供资源，以帮助您成为一名成功的演讲者或作者。'
-        link: 'request'
+        link: 'request/'
         linkContent: '成为 KubeSphere Ambassador →'
 
       - title: '成为 Contributor'

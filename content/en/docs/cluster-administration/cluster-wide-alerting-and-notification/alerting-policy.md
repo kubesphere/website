@@ -21,7 +21,7 @@ KubeSphere provides alerting policies for nodes and workloads. This guide demons
 
 1. Log in to the console with one account granted the role `platform-admin`.
 
-2. Click **Platform** in the top left corner and select **Clusters Management**.
+2. Click **Platform** in the top left corner and select **Cluster Management**.
 
     ![alerting_policy_node_level_guide](/images/docs/alerting/alerting_policy_node_level_guide.png)
 

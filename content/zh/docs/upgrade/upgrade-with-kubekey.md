@@ -6,7 +6,7 @@ linkTitle: "使用 KubeKey 升级"
 weight: 7200
 ---
 
-对于 KubeSphere 和 Kubernetes 都是通过 [KubeSphere Installer](https://v2-1.docs.kubesphere.io/docs/zh-CN/installation/all-in-one/#第二步-准备安装包) 部署的用户，推荐使用 KubeKey 升级。如果您的 Kubernetes 集群由云厂商托管或自行配置，请参考[使用 ks-installer 升级](../upgrade-with-ks-installer)。
+对于 KubeSphere 和 Kubernetes 都是通过 [KubeSphere Installer](https://v2-1.docs.kubesphere.io/docs/zh-CN/installation/all-in-one/#第二步-准备安装包) 部署的用户，推荐使用 KubeKey 升级。如果您的 Kubernetes 集群由云厂商托管或自行配置，请参考[使用 ks-installer 升级](../upgrade-with-ks-installer/)。
 
 ## 视频演示
 
