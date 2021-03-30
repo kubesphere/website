@@ -18,7 +18,7 @@ weight: 3340
 
 ## 准备工作
 
-您需要搭建 GlusterFS 集群并配置 Heketi。有关更多信息，请参见[搭建 GlusterFS 服务器](../../../api-reference/storage-system-installation/glusterfs-server/)。
+您需要搭建 GlusterFS 集群并配置 Heketi。有关更多信息，请参见[搭建 GlusterFS 服务器](../../../reference/storage-system-installation/glusterfs-server/)。
 
 ## 步骤 1：配置客户端机器
 

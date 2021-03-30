@@ -16,7 +16,7 @@ Ubuntu 16.04 is used as an example in this tutorial.
 
 ## Prerequisites
 
-You must have an NFS server ready providing external storage services. Make sure you have created and exported a directory on the NFS server which your permitted client machines can access. For more information, see [Set up an NFS Server](../../../api-reference/storage-system-installation/nfs-server/).
+You must have an NFS server ready providing external storage services. Make sure you have created and exported a directory on the NFS server which your permitted client machines can access. For more information, see [Set up an NFS Server](../../../reference/storage-system-installation/nfs-server/).
 
 ## Step 1: Configure the Client Machine
 
