@@ -1,5 +1,5 @@
 ---
-title: "Air-gapped Installation"
+title: "Air-gapped Installation On Linux"
 keywords: 'Air-gapped, Installation, KubeSphere'
 description: 'How to install KubeSphere in an air-gapped environment.'
 linkTitle: "Air-gapped Installation"
