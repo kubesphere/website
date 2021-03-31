@@ -1,5 +1,5 @@
 ---
-title: "Overview"
+title: "Upgrade — Overview"
 keywords: "Kubernetes, upgrade, KubeSphere, v3.0.0, upgrade"
 description: "KubeSphere Upgrade Overview"
 linkTitle: "Overview"
