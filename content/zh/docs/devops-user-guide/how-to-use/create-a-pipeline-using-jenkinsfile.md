@@ -201,9 +201,15 @@ KubeSphere 中可以创建两种类型的流水线：一种是本教程中介绍
 
 ### 步骤 5：运行流水线
 
-1. 流水线创建后，将显示在下图所示的列表中。点击该流水线进入其详情页面。
+1. 流水线创建后，将显示在下图所示的列表中。**同步状态**栏显示 KubeSphere 与 Jenkins 的同步结果，如果同步成功，您会看到该栏显示**成功**图标。点击该流水线进入其详情页面。
 
    ![流水线列表](/images/docs/zh-cn/devops-user-guide/use-devops/create-a-pipeline-using-a-jenkinsfile/pipeline-list.PNG)
+
+   {{< notice note >}}
+
+   您可以点击该流水线右侧的三个点，然后选择**复制流水线**来创建该流水线的副本。如果您需要同时运行多个不包含多分支的流水线，您可以全部选中这些流水线，然后点击**运行**来批量运行它们。
+
+   {{</ notice >}}
 
 2. 在**活动**选项卡下，正在扫描三个分支。点击右侧的**运行**，流水线将根据您设置的行为策略来运行。从下拉列表中选择 **sonarqube**，然后添加标签号，例如 `v0.0.2`。点击**确定**触发新活动。
 
@@ -239,6 +245,12 @@ KubeSphere 中可以创建两种类型的流水线：一种是本教程中介绍
    input(id: 'release-image-with-tag', message: 'release image with tag?', submitter: 'project-admin,project-admin1')
    ···
    ```
+   
+   {{< notice note >}}
+   
+   在 KubeSphere 3.1 中，只有流水线创建者、拥有该工程管理员角色的帐户或者您指定的帐户才有权限继续或终止流水线。
+   
+   {{</ notice >}}
 
 ### 步骤 6：检查流水线状态
 

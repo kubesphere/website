@@ -96,10 +96,16 @@ KubeSphere 中的图形编辑面板包含用于 Jenkins [阶段 (Stage)](https:/
 4. 创建的流水线会显示在列表中。
 
    ![流水线列表](/images/docs/zh-cn/devops-user-guide/use-devops/create-a-pipeline-using-graphical-editing-panel/pipeline-list.PNG)
+   
+   {{< notice note >}}
+   
+   **同步状态**栏显示 KubeSphere 与 Jenkins 的同步结果，如果同步成功，您会看到该栏显示**成功**图标。
+   
+   {{</ notice >}}
 
 ### 步骤 4：编辑流水线
 
-点击流水线进入其详情页面。要使用图形编辑面板，请点击**流水线**选项卡下的**编辑流水线**。该流水线包括六个阶段，请按照以下步骤设置每个阶段。
+点击流水线进入其详情页面。要使用图形编辑面板，请点击**流水线**选项卡下的**编辑流水线**。在弹出对话框中，点击**自定义流水线**。该流水线包括六个阶段，请按照以下步骤设置每个阶段。
 
 ![编辑流水线](/images/docs/zh-cn/devops-user-guide/use-devops/create-a-pipeline-using-graphical-editing-panel/edit-pipeline.PNG)
 
@@ -108,6 +114,14 @@ KubeSphere 中的图形编辑面板包含用于 Jenkins [阶段 (Stage)](https:/
 您也可以点击**编辑 Jenkinsfile** 手动为流水线创建一个 Jenkinsfile。
 
 {{</ notice >}} 
+
+![click-custom-pipeline](/images/docs/zh-cn/devops-user-guide/use-devops/create-a-pipeline-using-graphical-editing-panel/click-custom-pipeline.png)
+
+{{< notice note >}}
+
+您也可以点击**持续集成 (CI)** 和**持续集成&交付 (CI/CD)** 来使用 KubeSphere 提供的内置流水线模板。
+
+{{</ notice >}}
 
 #### 阶段 1：拉取源代码 (Checkout SCM)
 
@@ -302,6 +316,12 @@ KubeSphere 中的图形编辑面板包含用于 Jenkins [阶段 (Stage)](https:/
 
    ![输入信息](/images/docs/zh-cn/devops-user-guide/use-devops/create-a-pipeline-using-graphical-editing-panel/input-message.PNG)
 
+   {{< notice note >}}
+
+   在 KubeSphere 3.1 中，只有流水线创建者、拥有该工程管理员角色的帐户或者您在该步骤指定的帐户才有权限继续或终止流水线。
+
+   {{</ notice >}}
+
 3. 再次点击 **Deploy to Dev** 阶段下的**添加步骤**。在列表中选择 **kubernetesDeploy** 并在弹出对话框中填写以下字段。点击**确定**保存操作。
 
    - **Kubeconfig**：选择您创建的 Kubeconfig，例如 `demo-kubeconfig`。
@@ -320,6 +340,12 @@ KubeSphere 中的图形编辑面板包含用于 Jenkins [阶段 (Stage)](https:/
 5. 待您完成上述步骤，请在右下角点击**确认**和**保存**。随后，您可以看到该流水线有完整的工作流，并且每个阶段也清晰列示。当您用图形编辑面板定义流水线时，KubeSphere 会自动创建相应的 Jenkinsfile。点击**编辑 Jenkinsfile** 查看该 Jenkinsfile。
 
    ![流水线设置完成](/images/docs/zh-cn/devops-user-guide/use-devops/create-a-pipeline-using-graphical-editing-panel/pipeline-done.PNG)
+   
+   {{< notice note >}}
+   
+   在**流水线**页面，您可以点击该流水线右侧的三个点，然后选择**复制流水线**来创建该流水线的副本。如果您需要同时运行多个不包含多分支的流水线，您可以全部选中这些流水线，然后点击**运行**来批量运行它们。
+   
+   {{</ notice >}}
 
 ### 步骤 5：运行流水线
 
