@@ -1,5 +1,5 @@
 ---
-title: "Logging API changes"
+title: "Logging API"
 keywords: 'Kubernetes, KubeSphere, API, Logging'
 description: 'Logging API changes'
 linkTitle: "Logging"
