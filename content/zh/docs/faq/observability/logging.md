@@ -1,130 +1,139 @@
 ---
-title: "日志系统"
-keywords: "Kubernetes, Elasticsearch, KubeSphere, 日志系统, 日志"
-description: "关于日志系统的常见问题"
-linkTitle: "日志系统"
+title: "日志"
+keywords: "Kubernetes, Elasticsearch, KubeSphere, 日志"
+description: "关于日志的常见问题"
+linkTitle: "日志"
 weight: 16310
 ---
 
-## 如何将日志存储改为外部弹性搜索并关闭内部弹性搜索
+本页包含一些关于日志的常见问题。
 
-如果您使用的是 KubeSphere 内部的 Elasticsearch，并且想把它改成您的外部备用，请按照下面的指南操作。否则，如果您还没有启用日志系统，请到[启用日志系统](.../.../logging/)直接设置外部 Elasticsearch。
+- [如何将日志存储改为外部 Elasticsearch 并关闭内部 Elasticsearch](../../observability/logging/#如何将日志存储改为外部-elasticsearch-并关闭内部-elasticsearch)
+- [如何在启用 X-Pack Security 的情况下将日志存储改为 Elasticsearch](../../observability/logging/#如何在启用-x-pack-security-的情况下将日志存储改为-elasticsearch)
+- [如何修改日志数据保留期限](../../observability/logging/#如何修改日志数据保留期限)
+- [无法使用工具箱找到某些节点上工作负载的日志](../../observability/logging/#无法使用工具箱找到某些节点上工作负载的日志)
+- [工具箱中的日志查询页面在加载时卡住](../../observability/logging/#工具箱中的日志查询页面在加载时卡住)
+- [工具箱显示今天没有日志记录](../../observability/logging/#工具箱显示今天没有日志记录)
+- [在工具箱中查看日志时，报告内部服务器错误](../../observability/logging/#在工具箱中查看日志时报告内部服务器错误)
+- [如何让 KubeSphere 只收集指定工作负载的日志](../../observability/logging/#如何让-kubesphere-只收集指定工作负载的日志)
 
-首先，更新 KubeKey 配置。
+## 如何将日志存储改为外部 Elasticsearch 并关闭内部 Elasticsearch
 
-```shell
-kubectl edit cc -n kubesphere-system ks-installer
-```
+如果您使用的是 KubeSphere 内部的 Elasticsearch，并且想把它改成您的外部 Elasticsearch，请按照以下步骤操作。如果您还没有启用日志系统，请参考 [KubeSphere 日志系统](../../../pluggable-components/logging/)直接设置外部 Elasticsearch。
 
-- 将如下 `es.elasticsearchDataXXX`、`es.elasticsearchMasterXXX` 和 `status.logging` 的注释取消。
+1. 首先，请执行以下命令更新 KubeKey 配置：
 
-- 将 `es.externalElasticsearchUrl` 设置为弹性搜索的地址，`es.externalElasticsearchPort` 设置为它的端口号。
+   ```bash
+   kubectl edit cc -n kubesphere-system ks-installer
+   ```
 
-```yaml
-apiVersion: installer.kubesphere.io/v1alpha1
-kind: ClusterConfiguration
-metadata:
-  name: ks-installer
-  namespace: kubesphere-system
-  ...
-spec:
-  ...
-  common:
-    es:
-      # elasticsearchDataReplicas: 1
-      # elasticsearchDataVolumeSize: 20Gi
-      # elasticsearchMasterReplicas: 1
-      # elasticsearchMasterVolumeSize: 4Gi
-      elkPrefix: logstash
-      logMaxAge: 7
-      externalElasticsearchUrl: <192.168.0.2>
-      externalElasticsearchPort: <9200>
-  ...
-status:
-  ...
-  # logging:
-  #  enabledTime: 2020-08-10T02:05:13UTC
-  #  status: enabled
-  ...
-```
+2. 将 `es.elasticsearchDataXXX`、`es.elasticsearchMasterXXX` 和 `status.logging` 的注释取消，将 `es.externalElasticsearchUrl` 设置为 Elasticsearch 的地址，将 `es.externalElasticsearchPort` 设置为其端口号。以下示例供您参考：
 
-然后，重新运行 ks-installer。
+   ```yaml
+   apiVersion: installer.kubesphere.io/v1alpha1
+   kind: ClusterConfiguration
+   metadata:
+     name: ks-installer
+     namespace: kubesphere-system
+     ...
+   spec:
+     ...
+     common:
+       es:
+         # elasticsearchDataReplicas: 1
+         # elasticsearchDataVolumeSize: 20Gi
+         # elasticsearchMasterReplicas: 1
+         # elasticsearchMasterVolumeSize: 4Gi
+         elkPrefix: logstash
+         logMaxAge: 7
+         externalElasticsearchUrl: <192.168.0.2>
+         externalElasticsearchPort: <9200>
+     ...
+   status:
+     ...
+     # logging:
+     #  enabledTime: 2020-08-10T02:05:13UTC
+     #  status: enabled
+     ...
+   ```
 
-```shell
-kubectl rollout restart deploy -n kubesphere-system ks-installer
-```
+3. 重新运行 `ks-installer`。
 
-最后，要删除内部的 Elasticsearch，请运行以下命令。请确认您已经备份了内部 Elasticsearch 中的数据。
+   ```bash
+   kubectl rollout restart deploy -n kubesphere-system ks-installer
+   ```
 
-```shell
-helm uninstall -n kubesphere-logging-system elasticsearch-logging
-```
+4. 运行以下命令删除内部 Elasticsearch，请确认您已备份内部 Elasticsearch 中的数据。
+
+   ```bash
+   helm uninstall -n kubesphere-logging-system elasticsearch-logging
+   ```
 
 ## 如何在启用 X-Pack Security 的情况下将日志存储改为 Elasticsearch
 
-目前，KubeSphere 不支持与启用 X-Pack Security 的 Elasticsearch 集成。此功能即将推出。
+KubeSphere 暂不支持启用 X-Pack Security 的 Elasticsearch 集成，此功能即将推出。
 
-## 如何修改日志数据保留天数
+## 如何修改日志数据保留期限
 
-您需要更新 KubeKey 配置并重新运行 ks-installer。
+您需要更新 KubeKey 配置并重新运行 `ks-installer`。
 
-```shell
-kubectl edit cc -n kubesphere-system ks-installer
-```
+1. 执行以下命令：
 
-- 将如下 `status.logging` 的注释取消。
+   ```bash
+   kubectl edit cc -n kubesphere-system ks-installer
+   ```
 
-- 将 `es.logMaxAge` 设置为所需天数（默认为 7 天）。
+2. 将 `status.logging` 的注释取消，将 `es.logMaxAge` 的值设置为所需保留期限（默认为 7 天）。
 
-```yaml
-apiVersion: installer.kubesphere.io/v1alpha1
-kind: ClusterConfiguration
-metadata:
-  name: ks-installer
-  namespace: kubesphere-system
-  ...
-spec:
-  ...
-  common:
-    es:
-      ...
-      logMaxAge: <7>
-  ...
-status:
-  ...
-  # logging:
-  #  enabledTime: 2020-08-10T02:05:13UTC
-  #  status: enabled
-  ...
-```
+   ```yaml
+   apiVersion: installer.kubesphere.io/v1alpha1
+   kind: ClusterConfiguration
+   metadata:
+     name: ks-installer
+     namespace: kubesphere-system
+     ...
+   spec:
+     ...
+     common:
+       es:
+         ...
+         logMaxAge: <7>
+     ...
+   status:
+     ...
+     # logging:
+     #  enabledTime: 2020-08-10T02:05:13UTC
+     #  status: enabled
+     ...
+   ```
 
-- 重新运行 ks-installer。
+3. 重新运行 `ks-installer`。
 
-```shell
-kubectl rollout restart deploy -n kubesphere-system ks-installer
-```
+   ```bash
+   kubectl rollout restart deploy -n kubesphere-system ks-installer
+   ```
 
-## 无法从工具箱中的某些节点上的工作负载中找出日志
+## 无法使用工具箱找到某些节点上工作负载的日志
 
-如果您采用[多节点安装](.../.../installing-on-linux/introduction/multioverview/)，并且使用符号链接作为 Docker 根目录，请确保所有节点遵循完全相同的符号链接。日志代理在 DaemonSet 中部署到节点上。容器日志路径的任何差异都可能导致该节点上的收集失败。
+如果您采用[多节点安装](../../../installing-on-linux/introduction/multioverview)部署 KubeSphere，并且使用符号链接作为 Docker 根目录，请确保所有节点遵循完全相同的符号链接。日志代理以守护进程集的形式部署到节点上。容器日志路径的任何差异都可能导致该节点上日志收集失败。
 
-要找出节点上的 Docker 根目录路径，可以运行以下命令。确保所有节点都适用相同的值。
+若要找出节点上的 Docker 根目录路径，您可以运行以下命令。请确保所有节点都适用相同的值。
 
 ```shell
 docker info -f '{{.DockerRootDir}}'
 ```
 
-## 工具箱中的日志查看页面在加载中卡住
+## 工具箱中的日志查询页面在加载时卡住
 
-如果您发现日志搜索在加载中卡住，请检查您使用的存储系统。例如，配置不当的 NFS 存储系统可能会导致此问题。
+如果您发现日志查询页面在加载时卡住，请检查您所使用的存储系统。例如，配置不当的 NFS 存储系统可能会导致此问题。
 
 ## 工具箱显示今天没有日志记录
 
-请检查您的日志容量是否超过了 Elasticsearch 的存储容量限制。如果是，请增加 Elasticsearch 的磁盘容量。
+请检查您的日志存储卷是否超过了 Elasticsearch 的存储限制。如果是，请增加 Elasticsearch 的磁盘存储卷容量。
 
-## 在工具箱中查看日志时，报告服务器内部错误
+## 在工具箱中查看日志时，报告内部服务器错误
 
-如果您在工具箱中观察到内部服务器错误，可能有几个原因导致此问题。
+如果您在工具箱中看到内部服务器错误，可能有以下几个原因：
 
 - 网络分区
 - 无效的 Elasticsearch 主机和端口
@@ -132,12 +141,12 @@ docker info -f '{{.DockerRootDir}}'
 
 ## 如何让 KubeSphere 只收集指定工作负载的日志
 
-KubeSphere 的日志代理是由 Fluent Bit 提供的，您需要更新 Fluent Bit 配置来排除某些工作负载的日志。要修改 Fluent Bit 输入配置，请运行以下命令：
+KubeSphere 的日志代理由 Fluent Bit 所提供，您需要更新 Fluent Bit 配置来排除某些工作负载的日志。若要修改 Fluent Bit 输入配置，请运行以下命令：
 
 ```shell
 kubectl edit input -n kubesphere-logging-system tail
 ```
 
-更新 `Input.Spec.Tail.ExcludePath` 字段。例如，将路径设置为 `/var/log/containers/*_kube*-system_*.log`，以排除系统组件的任何日志。
+更新 `Input.Spec.Tail.ExcludePath` 字段。例如，将路径设置为 `/var/log/containers/*_kube*-system_*.log`，以排除系统组件的全部日志。
 
-更多信息请阅读项目 [Fluent Bit Operator](https://github.com/kubesphere/fluentbit-operator)。
+有关更多信息，请参见 [Fluent Bit Operator](https://github.com/kubesphere/fluentbit-operator)。
