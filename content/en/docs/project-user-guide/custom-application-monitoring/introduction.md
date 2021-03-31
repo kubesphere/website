@@ -1,5 +1,5 @@
 ---
-title: "Introduction"
+title: "Introduction to Custom Application Monitoring"
 keywords: 'monitoring, prometheus, prometheus operator'
 description: 'Introduction to KubeSphere custom application monitoring.'
 linkTitle: "Introduction"
