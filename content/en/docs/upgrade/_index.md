@@ -1,7 +1,7 @@
 ---
 title: "Upgrade"
 description: "Upgrade KubeSphere and Kubernetes"
-layout: "single"
+layout: "second"
 
 linkTitle: "Upgrade"
 
