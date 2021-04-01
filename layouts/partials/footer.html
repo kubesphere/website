@@ -58,7 +58,12 @@
                             <p>进群请备注 “公司 - 姓名”</p>
                         </div>
                     </a> -->
+                    {{ if .Site.Params.bilibiliLink }}
+                    <a class='bilibili-a' href="{{ .Site.Params.bilibiliLink }}" target="_blank" rel="noopener noreferrer"></a>
+                    {{ end }}
+                    {{ if .Site.Params.youtubeLink }}
                     <a class='youtube-a' href="{{ .Site.Params.youtubeLink }}" target="_blank" rel="noopener noreferrer"></a>
+                    {{ end }}
                     <a class='slack-a' href="{{ .Site.Params.slackLink }}" target="_blank" rel="noopener noreferrer"></a>
                     <a class='github-a' href="{{ .Site.Params.githubLink }}" target="_blank" rel="noopener noreferrer"></a>
                     <a class='medium-a' href="{{ .Site.Params.mediumLink }}" target="_blank" rel="noopener noreferrer"></a>

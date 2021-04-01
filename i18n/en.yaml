@@ -110,3 +110,11 @@
   translation: PPT courseware
 - id: Self-test
   translation: Self-test
+- id: Join Us
+  translation: Join us!
+- id: Join Us Content
+  translation: Join KubeSphere Community  !  Connect with us  on Slack channel or WeChat group!
+- id: Join Slack
+  translation: Join Slack
+- id: Join Wechat
+  translation: Scan the QR code
