@@ -1,5 +1,5 @@
 ---
-title: "Role and Member Management"
+title: "Role and Member Management In Your Workspace"
 keywords: "Kubernetes, workspace, KubeSphere, multitenancy"
 description: "Role and Member Management in a Workspace"
 linkTitle: "Role and Member Management"

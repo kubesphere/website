@@ -1,5 +1,5 @@
 ---
-title: "Overview"
+title: "Monitoring Dashboard — Overview"
 keywords: 'monitoring, prometheus, prometheus operator'
 description: 'Overview'
 linkTitle: "Overview"

@@ -1,5 +1,5 @@
 ---
-title: "Introduction"
+title: "Introduction to Log Collections"
 keywords: 'Kubernetes, log, elasticsearch, kafka, fluentd, pod, container, fluentbit, output'
 description: 'Add log receivers to receive container logs'
 linkTitle: "Introduction"

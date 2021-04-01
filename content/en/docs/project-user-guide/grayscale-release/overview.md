@@ -1,5 +1,5 @@
 ---
-title: "Overview"
+title: "Grayscale Release — Overview"
 keywords: 'Kubernetes, KubeSphere, grayscale release, overview, service mesh'
 description: 'An overview of grayscale release.'
 linkTitle: "Overview"

@@ -1,5 +1,5 @@
 ---
-title: "observability"
+title: "Kubernetes Observability on KubeSphere"
 layout: "scenario"
 
 css: "scss/scenario.scss"
