@@ -201,6 +201,27 @@
 </div>
 {{ end }} -->
 
+<div class="join-us">
+  <img class="close" src="/images/home/close.svg" alt="close">
+  <img class="modalImage" src="/images/home/modal-content.svg" alt="icon"></img>
+  <h2>{{ i18n "Join Us" }}</h2>
+  <p>{{ i18n "Join Us Content" }}</p>
+  <div>
+    <div class="slack">
+      <img src="/images/home/slack.svg"></img>
+      <p>
+        <a href="{{ .Site.Params.slackLink }}" target="_blank">
+          {{ i18n "Join Slack" }}
+        </a>
+      </p>
+    </div>
+    <div class="wechat">
+      <img src="/images/home/wechat.svg"></img>
+      <p>{{ i18n "Join Wechat" }}</p>
+    </div>
+  </div>
+</div>
+
 <script>
   var bindMouseLeftLi = function() {
     $('.section-3 .left-li').mouseenter(function() {
@@ -226,10 +247,16 @@
     })
   }
 
+  var bindCount = function() {
+    setTimeout(function() {
+      $('.join-us').fadeIn()
+    }, 10000)
+  }
+
   var bindClose = function() {
-    $('.meet-div .close').click(function(e) {
+    $('.join-us .close').click(function(e) {
       e.stopPropagation()
-      $('.meet-div').hide()
+      $('.join-us').fadeOut()
     })
   }
 
@@ -240,6 +267,7 @@
   }
   bindMouseLeftLi()
   bindResize()
+  bindCount()
   bindClose()
   bindMeet()
 </script>
