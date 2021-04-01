@@ -116,9 +116,9 @@ spec:
 
 ### 查看结果
 
-![](https://pek3b.qingstor.com/kubesphere-community/images/查看结果-1.png)
+![](https://pek3b.qingstor.com/kubesphere-community/images/firstresult.png)
 
-![](https://pek3b.qingstor.com/kubesphere-community/images/查看结果-2.png)
+![](https://pek3b.qingstor.com/kubesphere-community/images/secondresult.png)
 
 
 
