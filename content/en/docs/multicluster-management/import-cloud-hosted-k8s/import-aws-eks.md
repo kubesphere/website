@@ -1,7 +1,7 @@
 ---
 title: "Import an AWS EKS Cluster"
 keywords: 'Kubernetes, KubeSphere, multicluster, Amazon EKS'
-description: 'How to import an AWS EKS cluster'
+description: 'Learn how to import an Amazon Elastic Kubernetes Service cluster.'
 titleLink: "Import an AWS EKS Cluster"
 weight: 5320
 ---

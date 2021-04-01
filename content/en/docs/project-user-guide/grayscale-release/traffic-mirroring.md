@@ -1,7 +1,7 @@
 ---
 title: "Traffic Mirroring"
 keywords: 'KubeSphere, Kubernetes, traffic mirroring, istio'
-description: 'Traffic Mirroring'
+description: 'Learn how to conduct a traffic mirroring job in KubeSphere.'
 linkTitle: "Traffic Mirroring"
 weight: 10540
 ---

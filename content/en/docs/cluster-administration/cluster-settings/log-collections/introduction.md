@@ -1,7 +1,7 @@
 ---
 title: "Introduction to Log Collections"
 keywords: 'Kubernetes, log, elasticsearch, kafka, fluentd, pod, container, fluentbit, output'
-description: 'Add log receivers to receive container logs'
+description: 'Learn the basics of cluster log collections, including tools and general steps.'
 linkTitle: "Introduction"
 weight: 8621
 ---

@@ -1,7 +1,7 @@
 ---
 title: "Installing on Linux — Overview"
 keywords: 'Kubernetes, KubeSphere, Linux, Installation'
-description: 'Overview of Installing KubeSphere on Linux'
+description: 'Explore the general content in this chapter, including installation preparation, installation tool and method, as well as storage setting.'
 linkTitle: "Overview"
 weight: 3110
 ---

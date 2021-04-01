@@ -1,7 +1,7 @@
 ---
 title: "DaemonSets"
 keywords: 'KubeSphere, Kubernetes, DaemonSet, workload'
-description: 'Kubernetes DaemonSets'
+description: 'Learn basic concepts of DaemonSets and how to create DaemonSets in KubeSphere.'
 linkTitle: "DaemonSets"
 weight: 10230
 ---

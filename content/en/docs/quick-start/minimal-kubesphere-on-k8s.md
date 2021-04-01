@@ -1,7 +1,7 @@
 ---
 title: "Minimal KubeSphere on Kubernetes"
 keywords: 'KubeSphere, Kubernetes, Minimal, Installation'
-description: 'Minimal Installation of KubeSphere on Kubernetes'
+description: 'Install KubeSphere on an existing Kubernetes cluster with a minimal installation package. Your Kubernetes cluster can be hosted on cloud or on-premises.'
 linkTitle: "Minimal KubeSphere on Kubernetes"
 weight: 2200
 ---

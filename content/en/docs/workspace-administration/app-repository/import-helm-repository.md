@@ -1,7 +1,7 @@
 ---
 title: "Import a Helm Repository"
 keywords: "Kubernetes, helm, KubeSphere, application"
-description: "Import a Helm Repository into KubeSphere"
+description: "Import a Helm repository to KubeSphere to provide app templates for tenants in a workspace."
 linkTitle: "Import a Helm Repository"
 weight: 9310
 ---

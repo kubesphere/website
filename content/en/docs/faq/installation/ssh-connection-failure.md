@@ -1,7 +1,7 @@
 ---
 title: "SSH Connection Failure"
 keywords: "Installation, SSH, KubeSphere, Kubernetes"
-description: "SSH Connection Failure"
+description: "Understand why the SSH connection may fail when you use KubeKey to create a cluster."
 linkTitle: "SSH Connection Failure"
 Weight: 16600
 ---

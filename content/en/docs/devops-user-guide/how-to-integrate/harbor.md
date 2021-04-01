@@ -1,7 +1,7 @@
 ---
 title: "Integrate Harbor into Pipelines"
 keywords: 'Kubernetes, Docker, DevOps, Jenkins, Harbor'
-description: 'How to integrate Harbor into pipelines'
+description: 'Integrate Harbor into your pipeline to push images to your Harbor registry.'
 linkTitle: "Integrate Harbor into Pipelines"
 weight: 11320
 ---

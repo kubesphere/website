@@ -1,7 +1,7 @@
 ---
 title: "KubeSphere App Store"
 keywords: "Kubernetes, KubeSphere, app-store, OpenPitrix"
-description: "How to Enable KubeSphere App Store"
+description: "Learn how to enable the KubeSphere App Store to share data and apps internally and set industry standards of delivery process externally."
 linkTitle: "KubeSphere App Store"
 weight: 6200
 ---

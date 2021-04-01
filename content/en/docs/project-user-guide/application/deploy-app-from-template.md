@@ -1,7 +1,7 @@
 ---
 title: "Deploy Apps from App Templates"
 keywords: 'Kubernetes, chart, helm, KubeSphere, application, app templates'
-description: 'How to deploy apps from app templates in a private repository.'
+description: 'Learn how to deploy an application from a Helm-based template.'
 linkTitle: "Deploy Apps from App Templates"
 weight: 10120
 ---

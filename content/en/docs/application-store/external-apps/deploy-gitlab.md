@@ -1,7 +1,7 @@
 ---
 title: "Deploy GitLab on KubeSphere"
 keywords: 'KubeSphere, Kubernetes, GitLab, App Store'
-description: 'How to deploy GitLab on KubeSphere'
+description: 'Learn how to deploy GitLab on KubeSphere and access its service.'
 linkTitle: "Deploy GitLab on KubeSphere"
 weight: 14310
 ---

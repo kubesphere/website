@@ -1,7 +1,7 @@
 ---
 title: "Integrate SonarQube into Pipelines"
 keywords: 'Kubernetes, KubeSphere, devops, jenkins, sonarqube, pipeline'
-description: 'This tutorial demonstrates how to integrate SonarQube into pipelines.'
+description: 'Integrate SonarQube into your pipeline for code quality analysis.'
 linkTitle: "Integrate SonarQube into Pipelines"
 weight: 11310
 ---

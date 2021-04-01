@@ -1,7 +1,7 @@
 ---
 title: "Manage Alerts with Alertmanager in KubeSphere"
 keywords: 'Kubernetes, Prometheus, Alertmanager, alerting'
-description: 'Manage alerts with Alertmanager in KubeSphere'
+description: 'Learn how to manage alerts with Alertmanager in KubeSphere.'
 linkTitle: "Alertmanager in KubeSphere"
 weight: 8510
 ---

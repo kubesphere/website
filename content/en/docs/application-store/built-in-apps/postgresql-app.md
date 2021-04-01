@@ -1,7 +1,7 @@
 ---
 title: "Deploy PostgreSQL on KubeSphere"
 keywords: 'Kubernetes, KubeSphere, PostgreSQL, app-store'
-description: 'How to deploy PostgreSQL from the App Store of KubeSphere'
+description: 'Learn how to deploy PostgreSQL from the App Store of KubeSphere and access its service.'
 linkTitle: "Deploy PostgreSQL on KubeSphere"
 weight: 14280
 ---

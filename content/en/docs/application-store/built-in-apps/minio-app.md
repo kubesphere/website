@@ -1,7 +1,7 @@
 ---
 title: "Deploy MinIO on KubeSphere"
 keywords: 'Kubernetes, KubeSphere, Minio, app-store'
-description: 'How to deploy Minio on KubeSphere from the App Store of KubeSphere'
+description: 'Learn how to deploy Minio from the App Store of KubeSphere and access its service.'
 linkTitle: "Deploy MinIO on KubeSphere"
 weight: 14240
 ---

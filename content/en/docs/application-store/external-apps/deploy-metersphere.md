@@ -1,7 +1,7 @@
 ---
 title: "Deploy MeterSphere on KubeSphere"
 keywords: 'KubeSphere, Kubernetes, Applications, MeterSphere'
-description: 'How to deploy MeterSphere on KubeSphere'
+description: 'Learn how to deploy MeterSphere on KubeSphere.'
 linkTitle: "Deploy MeterSphere on KubeSphere"
 weight: 14330
 ---

@@ -1,7 +1,7 @@
 ---
 title: "Deploy KubeSphere on Azure VM Instance"
 keywords: "KubeSphere, Installation, HA, high availability, load balancer, Azure"
-description: "The tutorial is for installing a high-availability cluster on Azure."
+description: "Learn how to create a high-availability cluster on Azure virtual machines."
 
 Weight: 3410
 ---

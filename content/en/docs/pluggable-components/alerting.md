@@ -1,7 +1,7 @@
 ---
 title: "KubeSphere Alerting"
 keywords: "Kubernetes, alertmanager, KubeSphere, alerting"
-description: "How to enable KubeSphere Alerting"
+description: "Learn how to enable Alerting and Notification to identify any potential issues in advance before they take a toll on your business."
 linkTitle: "KubeSphere Alerting"
 weight: 6600
 ---

@@ -1,7 +1,7 @@
 ---
 title: "Install an Add-on through YAML Using KubeKey"
 keywords: "Installer, KubeKey, KubeSphere, Kubernetes, add-ons"
-description: "Fail to install an add-on through YAML using KubeKey"
+description: "Understand why the installation may fail when you use KubeKey to install an add-on through YAML."
 linkTitle: "Install an Add-on through YAML Using KubeKey"
 Weight: 16400
 ---

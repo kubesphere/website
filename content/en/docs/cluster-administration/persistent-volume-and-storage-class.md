@@ -1,7 +1,7 @@
 ---
 title: "Persistent Volumes and Storage Classes"
 keywords: "storage, volume, pv, pvc, storage class, csi, Ceph RBD, Glusterfs, QingCloud, "
-description: "Persistent Volume and Storage Class Management"
+description: "Learn basic concepts of PVs, PVCs and storage classes, and demonstrate how to manage storage classes and PVCs in KubeSphere."
 linkTitle: "Persistent Volumes and Storage Classes"
 weight: 8400
 ---

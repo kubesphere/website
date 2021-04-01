@@ -1,7 +1,7 @@
 ---
 title: "Add Fluentd as a Receiver (i.e. Collector)"
 keywords: 'Kubernetes, log, fluentd, pod, container, fluentbit, output'
-description: 'Add Fluentd as a Receiver'
+description: 'Learn how to add Fluentd to receive logs, events or auditing logs.'
 linkTitle: "Add Fluentd as a Receiver"
 weight: 8624
 ---

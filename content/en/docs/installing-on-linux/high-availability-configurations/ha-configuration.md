@@ -1,7 +1,7 @@
 ---
 title: "Set up an HA Cluster Using a Load Balancer"
 keywords: 'KubeSphere, Kubernetes, HA, high availability, installation, configuration'
-description: 'How to configure a high-availability Kubernetes cluster.'
+description: 'Learn how to create a highly available cluster using a load balancer.'
 linkTitle: "Set up an HA Cluster Using a Load Balancer"
 weight: 3210
 ---

@@ -1,7 +1,7 @@
 ---
 title: "Manage Multi-Tenant Notifications with Notification Manager"
 keywords: "Kubernetes, KubeSphere, Notification Manager, email, wechat, slack"
-description: "K8s native notification management with multi-tenancy support"
+description: "Learn how to manage notifications with Notification Manager."
 linkTitle: "Notification Manager"
 weight: 8520
 ---

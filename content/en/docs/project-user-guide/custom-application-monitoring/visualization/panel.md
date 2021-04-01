@@ -1,7 +1,7 @@
 ---
 title: "Charts"
 keywords: 'monitoring, Prometheus, Prometheus Operator'
-description: 'Charts'
+description: 'Explore dashboard properties and chart metrics.'
 linkTitle: "Charts"
 weight: 10816
 ---

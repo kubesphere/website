@@ -1,7 +1,7 @@
 ---
 title: "KubeSphere Logging System"
 keywords: "Kubernetes, Elasticsearch, KubeSphere, Logging, logs"
-description: "How to enable the KubeSphere Logging System"
+description: "Learn how to enable Logging to leverage the tenant-based system for log collection, query and management."
 linkTitle: "KubeSphere Logging System"
 weight: 6400
 ---

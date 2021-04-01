@@ -1,7 +1,7 @@
 ---
 title: "Auditing Rules"
 keywords: "Kubernetes, docker, kubesphere, auditing"
-description: "Kubernetes and KubeSphere operation auditing"
+description: "Understand the auditing rule and how to customize a rule for processing auditing logs."
 linkTitle: "Auditing Rules"
 weight: 15320
 ---

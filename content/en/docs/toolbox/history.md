@@ -1,7 +1,7 @@
 ---
 title: "History"
 keywords: 'KubeSphere, Kubernetes, history'
-description: 'View browsing history from the toolbox.'
+description: 'Learn how to quickly switch between the resources you access in your workspace.'
 linkTitle: "History"
 weight: 15500
 ---

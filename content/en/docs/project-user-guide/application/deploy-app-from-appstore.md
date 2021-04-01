@@ -1,7 +1,7 @@
 ---
 title: "Deploy Apps from the App Store"
 keywords: 'Kubernetes, chart, helm, KubeSphere, application, App Store'
-description: 'How to deploy apps from the App Store.'
+description: 'Learn how to deploy an application from the App Store.'
 linkTitle: "Deploy Apps from the App Store"
 weight: 10130
 ---

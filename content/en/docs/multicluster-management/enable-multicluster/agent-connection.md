@@ -1,7 +1,7 @@
 ---
 title: "Agent Connection"
 keywords: 'Kubernetes, KubeSphere, multicluster, agent-connection'
-description: 'How to manage multiple clusters using an agent.'
+description: 'Understand the general steps of importing clusters through agent connection.'
 titleLink: "Agent Connection"
 weight: 5220
 ---

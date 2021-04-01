@@ -1,7 +1,7 @@
 ---
 title: "Set up an HA Cluster Using Keepalived and HAproxy"
 keywords: 'KubeSphere, Kubernetes, HA, high availability, installation, configuration, Keepalived, HAproxy'
-description: 'How to configure a high-availability Kubernetes cluster using Keepalived and HAproxy.'
+description: 'Learn how to create a highly available cluster using Keepalived and HAproxy.'
 linkTitle: "Set up an HA Cluster Using Keepalived and HAproxy"
 weight: 3220
 ---

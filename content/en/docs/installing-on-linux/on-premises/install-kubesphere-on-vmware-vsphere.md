@@ -1,7 +1,7 @@
 ---
 title: "Deploy KubeSphere on VMware vSphere"
 keywords: 'Kubernetes, KubeSphere, VMware-vSphere, installation'
-description: 'How to install KubeSphere on VMware vSphere Linux machines.'
+description: 'Learn how to create a high-availability cluster on VMware vSphere.'
 
 
 weight: 3510

@@ -1,7 +1,7 @@
 ---
 title: "Air-Gapped Upgrade with ks-installer"
 keywords: "Air-Gapped, upgrade, kubesphere, v3.0.0"
-description: "Air-Gapped Upgrade KubeSphere"
+description: "Use ks-installer and offline package to upgrade KubeSphere."
 linkTitle: "Air-Gapped Upgrade with ks-installer"
 weight: 7500
 ---

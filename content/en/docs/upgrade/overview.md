@@ -1,7 +1,7 @@
 ---
 title: "Upgrade — Overview"
 keywords: "Kubernetes, upgrade, KubeSphere, v3.0.0, upgrade"
-description: "KubeSphere Upgrade Overview"
+description: "Understand what you need to pay attention to before the upgrade, such as versions and upgrade tools."
 linkTitle: "Overview"
 weight: 7100
 ---

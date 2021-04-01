@@ -1,7 +1,7 @@
 ---
 title: "Install QingCloud CSI"
 keywords: 'KubeSphere, Kubernetes, QingCloud CSI, installation, configurations, storage'
-description: 'How to create a KubeSphere create with QingCloud CSI providing storage services.'
+description: 'Use KubeKey to create a cluster with QingCloud CSI providing storage services.'
 linkTitle: "Install QingCloud CSI"
 weight: 3320
 ---

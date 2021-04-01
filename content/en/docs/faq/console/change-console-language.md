@@ -1,7 +1,7 @@
 ---
 title: "Change the Console Language"
 keywords: "FAQ, console, KubeSphere, Kubernetes, language"
-description: "How to change the console language."
+description: "Select a desire language of the console."
 linkTitle: "Change the Console Language"
 Weight: 16530
 ---

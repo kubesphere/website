@@ -1,7 +1,7 @@
 ---
 title: "Querying"
 keywords: 'monitoring, Prometheus, Prometheus Operator, querying'
-description: 'Querying'
+description: 'Learn how to specify monitoring metrics.'
 linkTitle: "Querying"
 weight: 10817
 ---

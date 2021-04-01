@@ -1,7 +1,7 @@
 ---
 title: "Add New Nodes"
 keywords: 'Kubernetes, KubeSphere, scale-out, add-nodes'
-description: 'How to add new nodes to an existing cluster.'
+description: 'Add more nodes to scale out your cluster.'
 linkTitle: "Add New Nodes"
 weight: 3610
 ---

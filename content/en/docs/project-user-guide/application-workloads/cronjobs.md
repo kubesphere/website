@@ -1,7 +1,7 @@
 ---
 title: "CronJobs"
 keywords: "KubeSphere, Kubernetes, jobs, cronjobs"
-description: "Create a Kubernetes CronJob"
+description: "Learn basic concepts of CronJobs and how to create CronJobs in KubeSphere."
 linkTitle: "CronJobs"
 weight: 10260
 ---
