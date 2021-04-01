@@ -47,7 +47,7 @@ icon: "/images/docs/docs.svg"
 
 ### [在裸机上部署](../installing-on-linux/on-premises/install-kubesphere-on-bare-metal/)
 
-了解如何在裸机上部署一个单 master 的多节点 KubeSohere 集群。
+了解如何在裸机上部署一个单 master 的多节点 KubeSphere 集群。
 
 ## 在公有云上安装 KubeSphere
 
