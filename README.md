@@ -1,6 +1,10 @@
 # KubeSphere Website
 
-This project uses [Hugo](https://gohugo.io/) to build the new website for KubeSphere.
+We are working on two branches in this repository: master and release-3.0.
+
+The master branch contains KubeSphere Doc 3.1 which will be released together with KubeSphere 3.1. The frontend website currently displays content based on the branch release-3.0. If the pull request you submit applies to both branches, use the command `cherry-pick` to submit the same pull request.
+
+This project uses [Hugo](https://gohugo.io/) to build the KubeSphere website.
 
 ## Contribute
 
@@ -55,13 +59,51 @@ git commit -s -m "xxx"
 
 ### Preview a pull request
 
-Click **Details** as shown in the image below, which will direct you to the website homepage. Navigate to the part you want to preview.
-
-![](https://ap3.qingstor.com/kubesphere-website/docs/preview-pr-github.png)
-
-If the button above does not appear, go to **Files changed** tab. Click the three dots of the md file you want to preview as shown below. Please note that this method can only give you a preview on the GitHub instead of on the website.
+Go to **Files changed** tab. Click the three dots of the md file you want to preview as shown below. Please note that this method can only give you a preview on the GitHub instead of on the website.
 
 ![view-file](https://ap3.qingstor.com/kubesphere-website/docs/view-file-github.png)
+
+### Cherry Pick a Commit
+
+The command `cherry-pick` allows you to pick a commit in a branch and integrate it into another branch. For example, we are working on both the master branch and the release-3.0 branch. If the pull request you submit to the master branch applies to the release-3.0 branch as well:
+
+In the master branch, find and copy the commit ID of your pull request.
+
+```
+git log
+```
+
+Checkout to the release-3.0 branch:
+
+```
+git checkout release-3.0
+```
+
+Rebase first:
+
+```bash
+git pull --rebase upstream release-3.0
+```
+
+Use the branch release-3.0 to checkout a new branch:
+
+```bash
+git checkout -b test
+```
+
+Cherry pick:
+
+```bash
+git cherry-pick <CommitID>
+```
+
+Push it:
+
+```bash
+git push -u origin test
+```
+
+When you submit the pull request, make sure you submit it to the release-3.0 branch.
 
 ## Localizing 
 
