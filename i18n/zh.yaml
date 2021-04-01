@@ -110,3 +110,11 @@
   translation: PPT 课件
 - id: Self-test
   translation: 考题自测
+- id: Join Us
+  translation: 欢迎加入！
+- id: Join Us Content
+  translation: 加入 KubeSphere 社区，在 Slack 或微信群与开发者和用户保持沟通！
+- id: Join Slack
+  translation: 加入 Slack
+- id: Join Wechat
+  translation: 扫码加入微信群
