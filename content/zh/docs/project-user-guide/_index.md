@@ -1,7 +1,7 @@
 ---
 title: "项目用户指南"
 description: "帮助您更好地管理 KubeSphere 项目中的资源"
-layout: "single"
+layout: "second"
 
 linkTitle: "项目用户指南"
 weight: 10000

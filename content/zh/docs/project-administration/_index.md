@@ -1,7 +1,7 @@
 ---
 title: "项目管理"
 description: "帮助您更好地管理 KubeSphere 项目"
-layout: "single"
+layout: "second"
 
 linkTitle: "项目管理"
 weight: 13000
