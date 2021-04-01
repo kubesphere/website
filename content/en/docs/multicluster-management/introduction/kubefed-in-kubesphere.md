@@ -1,7 +1,7 @@
 ---
 title: "KubeSphere Federation"
 keywords: 'Kubernetes, KubeSphere, federation, multicluster, hybrid-cloud'
-description: 'Overview'
+description: 'Understand the fundamental concept of Kubernetes federation in KubeSphere, including M clusters and H clusters.'
 linkTitle: "KubeSphere Federation"
 weight: 5120
 ---

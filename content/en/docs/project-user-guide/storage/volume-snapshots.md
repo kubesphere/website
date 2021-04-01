@@ -1,7 +1,7 @@
 ---
 title: "Volume Snapshots"
 keywords: 'KubeSphere, Kubernetes, volume, snapshots'
-description: 'How to create and use volume snapshots in KubeSphere.'
+description: 'Learn how to manage a snapshot of a persistent volume in KubeSphere.'
 linkTitle: "Volume Snapshots"
 weight: 10320
 ---

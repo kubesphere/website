@@ -1,7 +1,7 @@
 ---
 title: "Understand Persistent Storage Installation"
 keywords: 'KubeSphere, Kubernetes, storage, installation, configuration'
-description: 'Understand persistent storage'
+description: 'Understand how to use KubeKey to install different storage systems.'
 linkTitle: "Understand Persistent Storage Installation"
 weight: 3310
 ---

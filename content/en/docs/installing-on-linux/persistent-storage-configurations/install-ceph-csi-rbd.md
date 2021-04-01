@@ -1,7 +1,7 @@
 ---
 title: "Install Ceph"
 keywords: 'KubeSphere, Kubernetes, Ceph, installation, configurations, storage'
-description: 'How to create a KubeSphere create with Ceph providing storage services.'
+description: 'Use KubeKey to create a cluster with Ceph providing storage services.'
 linkTitle: "Install Ceph"
 weight: 3350
 ---

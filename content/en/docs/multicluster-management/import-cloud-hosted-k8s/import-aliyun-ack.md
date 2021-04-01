@@ -1,7 +1,7 @@
 ---
 title: "Import an Aliyun ACK Cluster"
 keywords: 'Kubernetes, KubeSphere, multicluster, Aliyun ACK'
-description: 'How to import an Aliyun ACK Cluster'
+description: 'Learn how to import an Alibaba Cloud Kubernetes cluster.'
 titleLink: "Import an Aliyun ACK Cluster"
 weight: 5310
 ---

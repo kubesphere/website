@@ -1,7 +1,7 @@
 ---
 title: "Helm Developer Guide"
 keywords: 'Kubernetes, KubeSphere, helm, development'
-description: 'Helm developer guide'
+description: 'Develop your own Helm-based app.'
 linkTitle: "Helm Developer Guide"
 weight: 14410
 ---

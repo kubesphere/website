@@ -1,7 +1,7 @@
 ---
 title: "Monitor MySQL"
 keywords: 'monitoring, Prometheus, Prometheus operator'
-description: 'Monitor MySQL'
+description: 'Deploy MySQL and MySQL Exporter and create a dashboard to monitor the app.'
 linkTitle: "Monitor MySQL"
 weight: 10812
 ---

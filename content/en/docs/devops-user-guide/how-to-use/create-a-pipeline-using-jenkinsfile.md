@@ -1,7 +1,7 @@
 ---
 title: "Create a Pipeline Using a Jenkinsfile"
 keywords: 'KubeSphere, Kubernetes, docker, spring boot, Jenkins, devops, ci/cd, pipeline'
-description: "How to create a pipeline using a Jenkinsfile."
+description: "Learn how to create and run a pipeline by using an example Jenkinsfile."
 linkTitle: "Create a Pipeline Using a Jenkinsfile"
 weight: 11210
 ---

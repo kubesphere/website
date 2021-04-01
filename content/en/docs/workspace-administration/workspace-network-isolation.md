@@ -1,7 +1,7 @@
 ---
 title: "Workspace Network Isolation"
 keywords: 'KubeSphere, Kubernetes, Calico, Network Policy'
-description: 'Workspace Network Isolation'
+description: 'Enable or disable the network policy in your workspace.'
 linkTitle: "Workspace Network Isolation"
 weight: 9500
 ---

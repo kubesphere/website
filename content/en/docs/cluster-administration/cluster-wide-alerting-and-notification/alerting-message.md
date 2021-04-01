@@ -1,7 +1,7 @@
 ---
 title: "Alerting Messages (Node Level)"
 keywords: 'KubeSphere, Kubernetes, Node, Alerting, Message, Notification'
-description: 'How to view alerting messages at the node level.'
+description: 'Learn how to view alerting policies and deal with alerting messages for nodes.'
 linkTitle: "Alerting Messages (Node Level)"
 weight: 8540
 ---

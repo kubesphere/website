@@ -1,7 +1,7 @@
 ---
 title: "Image Registries"
 keywords: 'KubeSphere, Kubernetes, docker, Secrets'
-description: 'How to create a Secret for an image registry.'
+description: 'Learn how to create an image registry in KubeSphere.'
 linkTitle: "Image Registries"
 weight: 10430
 ---

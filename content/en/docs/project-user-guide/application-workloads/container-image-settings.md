@@ -1,7 +1,7 @@
 ---
 title: "Container Image Settings"
 keywords: 'KubeSphere, Kubernetes, image, workload, setting, container'
-description: 'How to set container images in KubeSphere.'
+description: 'Learn different properties on the dashboard in detail as you set container images for your workload.'
 linkTitle: "Container Image Settings"
 weight: 10280
 ---

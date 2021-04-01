@@ -1,7 +1,7 @@
 ---
 title: "Restore the Host Cluster Access to A Member Cluster"
 keywords: "Kubernetes, KubeSphere, Multi-cluster, Host Cluster, Member Cluster"
-description: "How to restore the Host Cluster access to a Member Cluster"
+description: "Learn how to restore the Host Cluster access to a Member Cluster."
 linkTitle: "Restore the Host Cluster Access to A Member Cluster"
 Weight: 16710
 ---

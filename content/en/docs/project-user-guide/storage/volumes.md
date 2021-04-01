@@ -1,7 +1,7 @@
 ---
 title: "Volumes"
 keywords: 'Kubernetes, persistent volumes, persistent volume claims, volume clone, volume snapshot, volume expanding'
-description: 'How to create a volume, mount a volume and use volume features from its detail page.'
+description: 'Learn how to create, edit, and mount a volume in KubeSphere.'
 linkTitle: "Volumes"
 weight: 10310
 ---

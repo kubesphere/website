@@ -1,7 +1,7 @@
 ---
 title: "Introduction to Custom Application Monitoring"
 keywords: 'monitoring, prometheus, prometheus operator'
-description: 'Introduction to KubeSphere custom application monitoring.'
+description: 'Introduce the KubeSphere custom monitoring feature and metric exposing, including exposing methods and ServiceMonitor CRD.'
 linkTitle: "Introduction"
 weight: 10810
 ---

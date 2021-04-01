@@ -1,7 +1,7 @@
 ---
 title: "Helm Specifications"
 keywords: 'Kubernetes, KubeSphere, Helm, specifications'
-description: 'Helm Specifications'
+description: 'Understand the chart structure and specifications.'
 linkTitle: "Helm Specifications"
 weight: 14420
 ---

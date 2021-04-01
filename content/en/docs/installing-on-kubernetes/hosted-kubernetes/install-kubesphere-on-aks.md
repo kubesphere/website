@@ -1,7 +1,7 @@
 ---
 title: "Deploy KubeSphere on AKS"
 keywords: "KubeSphere, Kubernetes, Installation, Azure, AKS"
-description: "How to deploy KubeSphere on AKS"
+description: "Learn how to deploy KubeSphere on Azure Kubernetes Service."
 
 weight: 4210
 ---

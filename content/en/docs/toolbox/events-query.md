@@ -1,7 +1,7 @@
 ---
 title: "Event Query"
 keywords: 'KubeSphere, Kubernetes, Event, Query'
-description: 'How to perform event query in KubeSphere.'
+description: 'Understand how you can perform quick event queries to keep track of the latest events of your cluster.'
 linkTitle: "Event Query"
 weight: 15200
 ---

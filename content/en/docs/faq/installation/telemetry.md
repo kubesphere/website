@@ -1,7 +1,7 @@
 ---
 title: "Telemetry in KubeSphere"
 keywords: "Installer, Telemetry, KubeSphere, Kubernetes"
-description: "Telemetry collects aggregate information of KubeSphere installation."
+description: "Understand what Telemetry is and how to enable or disable it in KubeSphere."
 linkTitle: "Telemetry in KubeSphere"
 Weight: 16300
 ---

@@ -1,7 +1,7 @@
 ---
 title: "Deploy MySQL on KubeSphere"
 keywords: 'KubeSphere, Kubernetes, Installation, MySQL'
-description: 'How to deploy MySQL on KubeSphere through App Store'
+description: 'Learn how to deploy MySQL from the App Store of KubeSphere and access its service.'
 
 link title: "Deploy MySQL"
 weight: 14260

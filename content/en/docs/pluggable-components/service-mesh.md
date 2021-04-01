@@ -1,7 +1,7 @@
 ---
 title: "KubeSphere Service Mesh"
 keywords: "Kubernetes, Istio, KubeSphere, service-mesh, microservices"
-description: "How to enable KubeSphere Service Mesh"
+description: "Learn how to enable KubeSphere Service Mesh to use different traffic management strategies for microservices governance."
 
 linkTitle: "KubeSphere Service Mesh"
 weight: 6800
@@ -70,7 +70,7 @@ The process of installing KubeSphere on Kubernetes is same as stated in the tuto
 ## Enable KubeSphere Service Mesh after Installation
 
 1. Log in to the console as `admin`. Click **Platform** in the top-left corner and select **Clusters Management**.
-    
+
     ![clusters-management](/images/docs/enable-pluggable-components/kubesphere-service-mesh/clusters-management.png)
     
 2. Click **CRDs** and enter `clusterconfiguration` in the search bar. Click the result to view its detail page.

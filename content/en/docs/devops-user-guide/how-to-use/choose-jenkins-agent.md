@@ -1,7 +1,7 @@
 ---
 title: "Choose Jenkins Agent" 
 keywords: 'Kubernetes, KubeSphere, docker, devops, jenkins, agent'
-description: 'This tutorial introduces Jenkins agents and built-in podTemplates in KubeSphere.'
+description: 'Specify the Jenkins agent and use the built-in podTemplate for your pipeline.'
 linkTitle: "Choose Jenkins Agent"
 weight: 11250
 ---

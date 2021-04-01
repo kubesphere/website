@@ -1,7 +1,7 @@
 ---
 title: "Container Limit Ranges"
 keywords: 'Kubernetes, KubeSphere, resource, quotas, limits, requests, limit ranges, containers'
-description: 'How to set default container limit ranges.'
+description: 'Learn how to set default container limit ranges in a project.'
 linkTitle: "Container Limit Ranges"
 weight: 13400
 ---

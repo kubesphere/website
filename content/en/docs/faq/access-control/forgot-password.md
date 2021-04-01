@@ -1,7 +1,7 @@
 ---
 title: "Reset the Account Password"
 keywords: "Forgot, Password, KubeSphere, Kubernetes"
-description: "How to reset the password if you forgot it."
+description: "Reset the password of any account."
 linkTitle: "Reset the Account Password"
 Weight: 16410
 ---

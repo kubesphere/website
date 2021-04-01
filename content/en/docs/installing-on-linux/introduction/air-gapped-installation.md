@@ -1,7 +1,7 @@
 ---
 title: "Air-gapped Installation On Linux"
 keywords: 'Air-gapped, Installation, KubeSphere'
-description: 'How to install KubeSphere in an air-gapped environment.'
+description: 'Learn how to install KubeSphere and Kubernetes in an air-gapped environment.'
 linkTitle: "Air-gapped Installation"
 weight: 3140
 ---

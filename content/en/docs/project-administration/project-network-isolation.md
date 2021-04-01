@@ -1,7 +1,7 @@
 ---
 title: "Project Network Isolation"
 keywords: 'KubeSphere, Kubernetes, Calico, Network Policy'
-description: 'Project Network Isolation'
+description: 'Understand the concept of network isolation and how to configure network policies for a project.'
 linkTitle: "Project Network Isolation"
 weight: 13300
 ---

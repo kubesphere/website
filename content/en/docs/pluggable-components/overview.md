@@ -1,7 +1,7 @@
 ---
 title: "Enable Pluggable Components — Overview"
 keywords: "Kubernetes, KubeSphere, pluggable-components, overview"
-description: "Overview of installing pluggable components."
+description: "Develop a basic understanding of key components in KubeSphere, including features and resource consumption."
 linkTitle: "Overview"
 weight: 6100
 ---

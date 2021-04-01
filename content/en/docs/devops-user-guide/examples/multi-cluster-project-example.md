@@ -1,7 +1,7 @@
 ---
 title: "Deploy Apps in a Multi-cluster Project Using a Jenkinsfile"
 keywords: 'Kubernetes, KubeSphere, docker, devops, jenkins, multi-cluster'
-description: 'This tutorial demonstrates how to deploy apps in a multi-cluster project using a Jenkinsfile.'
+description: 'Learn how to deploy apps in a multi-cluster project using a Jenkinsfile-based pipeline.'
 linkTitle: "Deploy Apps in a Multi-cluster Project Using a Jenkinsfile"
 weight: 11420
 ---

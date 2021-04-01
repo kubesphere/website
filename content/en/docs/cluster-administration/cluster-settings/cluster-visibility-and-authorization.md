@@ -1,7 +1,7 @@
 ---
 title: "Cluster Visibility and Authorization"
 keywords: "Cluster Visibility, Cluster Management"
-description: "Cluster Visibility"
+description: "Learn how to set up cluster visibility and authorization."
 linkTitle: "Cluster Visibility and Authorization"
 weight: 8610
 ---

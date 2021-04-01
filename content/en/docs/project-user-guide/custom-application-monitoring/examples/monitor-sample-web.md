@@ -1,7 +1,7 @@
 ---
 title: "Monitor a Sample Web Application"
 keywords: 'monitoring, prometheus, prometheus operator'
-description: 'Monitor a Sample Web Application'
+description: 'Use a Helm chart to deploy a sample web app and create a dashboard to monitor the app.'
 linkTitle: "Monitor a Sample Web Application"
 weight: 10813
 ---

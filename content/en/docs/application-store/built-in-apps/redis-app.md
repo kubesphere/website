@@ -1,7 +1,7 @@
 ---
 title: "Deploy Redis on KubeSphere"
 keywords: 'KubeSphere, Kubernetes, Installation, Redis'
-description: 'How to deploy Redis from the App Store of KubeSphere'
+description: 'Learn how to deploy Redis from the App Store of KubeSphere and access its service.'
 linkTitle: "Deploy Redis on KubeSphere"
 weight: 14291
 ---

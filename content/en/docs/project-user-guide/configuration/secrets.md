@@ -1,7 +1,7 @@
 ---
 title: "Secrets"
 keywords: 'KubeSphere, Kubernetes, Secrets'
-description: 'How to create a Secret in KubeSphere.'
+description: 'Learn how to create a Secret in KubeSphere.'
 linkTitle: "Secrets"
 weight: 10410
 ---

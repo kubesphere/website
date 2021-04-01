@@ -1,7 +1,7 @@
 ---
 title: "Deploy Tomcat on KubeSphere"
 keywords: 'KubeSphere, Kubernetes, Installation, Tomcat'
-description: 'How to deploy Tomcat on KubeSphere through App Store'
+description: 'Learn how to deploy Tomcat from the App Store of KubeSphere and access its service.'
 linkTitle: "Deploy Tomcat on KubeSphere"
 weight: 14292
 ---

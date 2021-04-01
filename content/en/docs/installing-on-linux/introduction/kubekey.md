@@ -1,7 +1,7 @@
 ---
 title: "KubeKey"
 keywords: 'KubeKey, Installation, KubeSphere'
-description: 'Understand KubeKey'
+description: 'Understand what KubeKey is and how it works to help you create, scale and upgrade your Kubernetes cluster.'
 linkTitle: "KubeKey"
 weight: 3120
 ---

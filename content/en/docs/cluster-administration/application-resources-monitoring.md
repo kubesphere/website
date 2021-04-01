@@ -1,7 +1,7 @@
 ---
 title: "Application Resources Monitoring"
 keywords: "Kubernetes, KubeSphere, resources, monitoring"
-description: "Monitor application resources in KubeSphere"
+description: "Monitor application resources across the cluster, such as the number of Deployments and CPU usage of different projects."
 
 linkTitle: "Application Resources Monitoring"
 weight: 8300

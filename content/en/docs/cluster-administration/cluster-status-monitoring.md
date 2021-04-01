@@ -1,7 +1,7 @@
 ---
 title: "Cluster Status Monitoring"
 keywords: "Kubernetes, KubeSphere, status, monitoring"
-description: "Monitor cluster resources in KubeSphere"
+description: "Monitor how a cluster is functioning based on different metrics, including physical resources, etcd, and APIServer."
 linkTitle: "Cluster Status Monitoring"
 weight: 8200
 ---

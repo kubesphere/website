@@ -1,7 +1,7 @@
 ---
 title: "Workspace Overview"
 keywords: "Kubernetes, KubeSphere, workspace"
-description: "This tutorial introduces the concept of workspace and demonstrates how to create and delete a workspace."
+description: "Understand the concept of workspaces in KubeSphere and learn how to create and delete a workspace."
 
 linkTitle: "Workspace Overview"
 weight: 9100

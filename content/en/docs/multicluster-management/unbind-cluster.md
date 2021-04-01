@@ -1,7 +1,7 @@
 ---
 title: "Unbind a Cluster"
 keywords: 'Kubernetes, KubeSphere, multicluster, hybrid-cloud'
-description: 'Describe how to unbind a cluster from the KubeSphere multiple cluster management platform'
+description: 'Learn how to unbind a cluster from your cluster pool in KubeSphere.'
 linkTitle: "Unbind a Cluster"
 weight: 5500
 ---

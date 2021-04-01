@@ -1,7 +1,7 @@
 ---
 title: "Build and Deploy a Go Project"
 keywords: 'Kubernetes, docker, devops, jenkins, go, KubeSphere'
-description: 'This tutorial demonstrates how to build and deploy a Go project.'
+description: 'Learn how to build and deploy a Go project using a KubeSphere pipeline.'
 linkTitle: "Build and Deploy a Go Project"
 weight: 11410
 ---

@@ -1,7 +1,7 @@
 ---
 title: "Disk Log Collection"
 keywords: 'KubeSphere, Kubernetes, project, disk, log, collection'
-description: 'Disk Log Collection'
+description: 'Enable disk log collection so that you can collect, manage and analyze logs in a unified way.'
 linkTitle: "Disk Log Collection"
 weight: 13600
 ---

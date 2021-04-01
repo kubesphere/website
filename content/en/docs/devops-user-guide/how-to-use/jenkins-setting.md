@@ -1,7 +1,7 @@
 ---
 title: "Jenkins System Settings"
 keywords: 'Kubernetes, KubeSphere, Jenkins, CasC'
-description: 'How to set up Jenkins in KubeSphere.'
+description: 'Learn how to customize your Jenkins settings.'
 linkTitle: 'Jenkins System Settings'
 Weight: 11240
 ---

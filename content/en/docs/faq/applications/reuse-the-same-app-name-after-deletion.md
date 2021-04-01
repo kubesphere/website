@@ -1,7 +1,7 @@
 ---
 title: "Reuse the Same App Name after Its Deletion"
 keywords: "KubeSphere, OpenPitrix, Application, App"
-description: "How to reuse the same app name after its deletion"
+description: "Learn how to reuse the same app name after its deletion."
 linkTitle: "Reuse the Same App Name after Its Deletion"
 Weight: 16920
 ---

@@ -1,7 +1,7 @@
 ---
 title: "Platform Settings"
 keywords: 'KubeSphere, Kubernetes, customize, platform'
-description: 'How to Customize KubeSphere Platform Information.'
+description: 'Customize platform settings such as logo and title.'
 linkTitle: "Platform Settings"
 weight: 8700
 ---

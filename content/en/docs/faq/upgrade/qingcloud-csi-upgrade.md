@@ -1,7 +1,7 @@
 ---
 title: "Upgrade QingCloud CSI"
 keywords: "Kubernetes, upgrade, KubeSphere, v3.0.0"
-description: "Upgrade QingCloud CSI"
+description: "Upgrade the QingCloud CSI after you upgrade KubeSphere."
 linkTitle: "Upgrade QingCloud CSI"
 weight: 16210
 ---
