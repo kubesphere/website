@@ -1,7 +1,7 @@
 ---
 title: "Deploy KubeSphere on Bare Metal"
 keywords: 'Kubernetes, KubeSphere, bare-metal'
-description: 'How to install KubeSphere on bare metal.'
+description: 'Learn how to create a multi-node cluster with one master on bare metal.'
 linkTitle: "Deploy KubeSphere on Bare Metal"
 weight: 3520
 ---

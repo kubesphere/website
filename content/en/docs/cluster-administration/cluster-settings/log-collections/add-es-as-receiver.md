@@ -1,7 +1,7 @@
 ---
 title: "Add Elasticsearch as a Receiver (i.e. Collector)"
 keywords: 'Kubernetes, log, elasticsearch, pod, container, fluentbit, output'
-description: 'Add Elasticsearch as a log receiver to receive container logs'
+description: 'Learn how to add Elasticsearch to receive logs, events or auditing logs.'
 linkTitle: "Add Elasticsearch as a Receiver"
 weight: 8622
 ---

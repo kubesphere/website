@@ -1,7 +1,7 @@
 ---
 title: "Configure Authentication"
 keywords: "LDAP, identity provider"
-description: "How to configure authentication"
+description: "Learn how to set up authentication in KubeSphere."
 
 linkTitle: "Configure Authentication"
 weight: 12200

@@ -1,7 +1,7 @@
 ---
 title: "Application Lifecycle Management"
 keywords: 'Kubernetes, KubeSphere, app-store'
-description: 'App Lifecycle Management'
+description: 'Manage your app across the entire lifecycle, including submission, review, test, release, upgrade and removal.'
 linkTitle: 'Application Lifecycle Management'
 weight: 14100
 ---

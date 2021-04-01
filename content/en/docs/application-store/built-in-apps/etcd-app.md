@@ -1,7 +1,7 @@
 ---
 title: "Deploy etcd on KubeSphere"
 keywords: 'Kubernetes, KubeSphere, etcd, app-store'
-description: 'How to deploy etcd on KubeSphere.'
+description: 'Learn how to deploy etcd from the App Store of KubeSphere and access its service.'
 linkTitle: "Deploy etcd on KubeSphere"
 weight: 14210
 ---

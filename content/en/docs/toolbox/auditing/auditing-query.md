@@ -1,7 +1,7 @@
 ---
 title: "Auditing Log Query"
 keywords: "Kubernetes, KubeSphere, auditing, log, query"
-description: "How to perform queries of auditing logs in KubeSphere."
+description: "Understand how you can perform quick auditing log queries to keep track of the latest auditing information of your cluster."
 linkTitle: "Auditing Log Query"
 weight: 15330
 ---

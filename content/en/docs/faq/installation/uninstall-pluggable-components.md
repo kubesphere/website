@@ -1,7 +1,7 @@
 ---
 title: "Uninstall Pluggable Components from KubeSphere"
 keywords: "Installer, uninstall, KubeSphere, Kubernetes"
-description: "How to uninstall pluggable components from KubeSphere"
+description: "Learn how to uninstall each pluggable component in KubeSphere."
 linkTitle: "Uninstall Pluggable Components from KubeSphere"
 Weight: 16500
 ---

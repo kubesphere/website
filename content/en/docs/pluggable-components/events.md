@@ -1,7 +1,7 @@
 ---
 title: "KubeSphere Events"
 keywords: "Kubernetes, events, KubeSphere, k8s-events"
-description: "How to enable KubeSphere Events"
+description: "Learn how to enable Events to keep track of everything that is happening on the platform."
 linkTitle: "KubeSphere Events"
 weight: 6500
 ---

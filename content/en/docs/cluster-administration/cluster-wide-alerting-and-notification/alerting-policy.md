@@ -1,7 +1,7 @@
 ---
 title: "Alerting Policies (Node Level)"
 keywords: 'KubeSphere, Kubernetes, Node, Alerting, Policy, Notification'
-description: 'How to set alerting policies at the node level.'
+description: 'Learn how to set alerting policies for nodes.'
 linkTitle: "Alerting Policies (Node Level)"
 weight: 8530
 ---

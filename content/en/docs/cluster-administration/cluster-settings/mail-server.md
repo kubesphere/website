@@ -1,7 +1,7 @@
 ---
 title: "Mail Server"
 keywords: 'KubeSphere, Kubernetes, Notification, Mail Server'
-description: 'Mail Server'
+description: 'Customize your email address settings to receive notifications of any alert.'
 
 linkTitle: "Mail Server"
 weight: 8630

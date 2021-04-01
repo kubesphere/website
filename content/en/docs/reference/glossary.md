@@ -1,7 +1,7 @@
 ---
 title: "Glossary"
 keywords: 'Kubernetes, KubeSphere, devops, docker, helm, jenkins, istio, prometheus, glossary'
-description: 'KubeSphere glossary'
+description: 'The glossary used in KubeSphere.'
 linkTitle: "Glossary"
 weight: 17100
 ---

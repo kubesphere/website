@@ -1,7 +1,7 @@
 ---
 title: "Air-Gapped Upgrade with KubeKey"
 keywords: "Air-Gapped, kubernetes, upgrade, kubesphere, v3.0.0"
-description: "Air-Gapped Upgrade Kubernetes and KubeSphere"
+description: "Use the offline package to upgrade Kubernetes and KubeSphere."
 linkTitle: "Air-Gapped Upgrade with KubeKey"
 weight: 7400
 ---

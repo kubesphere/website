@@ -1,7 +1,7 @@
 ---
 title: "Observability — Monitoring FAQ"
 keywords: "Kubernetes, Prometheus, KubeSphere, Monitoring"
-description: "FAQ about monitoring"
+description: "Questions asked frequently about the monitoring functionality."
 linkTitle: "Monitoring"
 weight: 16320
 ---

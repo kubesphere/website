@@ -1,7 +1,7 @@
 ---
 title: "Deploy KubeSphere on GKE"
 keywords: 'Kubernetes, KubeSphere, GKE, Installation'
-description: 'How to install KubeSphere on GKE'
+description: 'Learn how to deploy KubeSphere on Google Kubernetes Engine.'
 
 weight: 4240
 ---

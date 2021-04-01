@@ -1,7 +1,7 @@
 ---
 title: "Import a Google GKE Cluster"
 keywords: 'Kubernetes, KubeSphere, multicluster, Google GKE'
-description: 'How to import a Google GKE Cluster'
+description: 'Learn how to import a Google Kubernetes Engine cluster.'
 titleLink: "Import a Google GKE Cluster"
 weight: 5330
 ---

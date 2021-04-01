@@ -1,7 +1,7 @@
 ---
 title: "Integrate MeterSphere into Pipelines"
 keywords: 'Kubernetes, Docker, DevOps, Jenkins, MeterSphere'
-description: 'How to integrate MeterSphere into pipelines'
+description: 'Integrate MeterSphere into your pipelines for continuous testing.'
 linkTitle: "Integrate MeterSphere into Pipelines"
 weight: 11330
 ---

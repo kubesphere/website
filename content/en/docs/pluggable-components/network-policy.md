@@ -1,7 +1,7 @@
 ---
 title: "Network Policies"
 keywords: "Kubernetes, KubeSphere, NetworkPolicy"
-description: "How to enable the Network Policy"
+description: "Learn how to enable Network Policies to control traffic flow at the IP address or port level."
 linkTitle: "Network Policies"
 weight: 6900
 ---

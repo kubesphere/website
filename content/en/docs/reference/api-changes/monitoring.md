@@ -1,7 +1,7 @@
 ---
 title: "Monitoring"
 keywords: 'Kubernetes, KubeSphere, API, Monitoring'
-description: 'Monitoring API changes'
+description: 'The API changes of the component **monitoring** in KubeSphere v3.0.0.'
 linkTitle: "Monitoring"
 weight: 17320
 ---

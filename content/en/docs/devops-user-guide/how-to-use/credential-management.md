@@ -1,7 +1,7 @@
 ---
 title: "Credential Management"
 keywords: 'Kubernetes, docker, credential, KubeSphere, devops'
-description: 'This tutorial demonstrates how to manage credentials in a DevOps project.'
+description: 'Create credentials so that your pipelines can communicate with third-party applications or websites.'
 linkTitle: "Credential Management"
 weight: 11230
 ---

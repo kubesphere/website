@@ -1,7 +1,7 @@
 ---
 title: "Changes after Upgrade"
 keywords: "Kubernetes, upgrade, KubeSphere, v3.0.0"
-description: "Understand what will be changed after upgrade."
+description: "Understand what will be changed after the upgrade."
 
 linkTitle: "Changes after Upgrade"
 weight: 7600

@@ -1,7 +1,7 @@
 ---
 title: "KubeSphere API"
 keywords: 'Kubernetes, KubeSphere, API'
-description: 'KubeSphere API documentation'
+description: 'The REST API is the fundamental fabric of KubeSphere. This guide shows you how to access the KubeSphere API server.'
 linkTitle: "KubeSphere API"
 weight: 17200
 ---

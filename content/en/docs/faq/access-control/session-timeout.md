@@ -1,7 +1,7 @@
 ---
 title: "Session Timeout"
 keywords: "Session timeout, KubeSphere, Kubernetes"
-description: "How to solve the session timeout problem."
+description: "Understand session timeout and customize the timeout period."
 linkTitle: "Session Timeout"
 Weight: 16420
 ---

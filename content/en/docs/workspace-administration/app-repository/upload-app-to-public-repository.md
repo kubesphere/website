@@ -1,7 +1,7 @@
 ---
 title: "Upload Apps to the KubeSphere GitHub Repository"
 keywords: "Kubernetes, helm, KubeSphere, application"
-description: "How to upload apps to the KubeSphere GitHub repository."
+description: "Upload your own apps to the GitHub repository of KubeSphere."
 linkTitle: "Upload Apps to the KubeSphere GitHub Repository"
 weight: 9320
 ---

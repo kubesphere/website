@@ -1,7 +1,7 @@
 ---
 title: "KubeSphere Auditing Logs"
 keywords: "Kubernetes, auditing, KubeSphere, logs"
-description: "How to enable KubeSphere Auditing Logs"
+description: "Learn how to enable Auditing to document platform events and activities."
 linkTitle: "KubeSphere Auditing Logs"
 weight: 6700
 ---

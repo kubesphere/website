@@ -1,7 +1,7 @@
 ---
 title: "Upload Helm-based Applications"
 keywords: "Kubernetes, helm, KubeSphere, openpitrix, application"
-description: "How to upload Helm-based applications to KubeSphere."
+description: "Learn how to upload a Helm-based application as an app template to your workspace."
 linkTitle: "Upload Helm-based Applications"
 weight: 9200
 ---

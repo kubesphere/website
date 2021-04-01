@@ -1,7 +1,7 @@
 ---
 title: "Deploy NGINX on KubeSphere"
 keywords: 'KubeSphere, Kubernetes, Installation, NGINX'
-description: 'How to deploy NGINX from the App Store of KubeSphere'
+description: 'Learn how to deploy NGINX from the App Store of KubeSphere and access its service.'
 linkTitle: "Deploy NGINX on KubeSphere"
 weight: 14270
 ---

@@ -1,6 +1,6 @@
 ---
 title: "Cluster Shutdown and Restart"
-description: "Demonstrate how to shut down and restart Kubernetes clusters gracefully"
+description: "Learn how to gracefully shut down your cluster and restart it."
 layout: "single"
 
 linkTitle: "Cluster Shutdown and Restart"

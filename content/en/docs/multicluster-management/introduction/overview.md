@@ -1,7 +1,7 @@
 ---
 title: "Multi-cluster Management — Overview"
 keywords: 'Kubernetes, KubeSphere, multicluster, hybrid-cloud'
-description: 'Overview'
+description: 'Gain a basic understanding of multi-cluster management, such as its common use cases, and the benefits that KubeSphere can bring with its multi-cluster feature.'
 linkTitle: "Overview"
 weight: 5110
 ---

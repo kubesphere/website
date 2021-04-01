@@ -1,7 +1,7 @@
 ---
 title: "Services"
 keywords: 'KubeSphere, Kubernetes, services, workloads'
-description: 'Create a KubeSphere Service'
+description: 'Learn basic concepts of Services and how to create Services in KubeSphere.'
 linkTitle: "Services"
 weight: 10240
 ---

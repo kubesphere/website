@@ -1,7 +1,7 @@
 ---
 title: "Deploy RabbitMQ on KubeSphere"
 keywords: 'KubeSphere, RabbitMQ, Kubernetes, Installation'
-description: 'How to deploy RabbitMQ on KubeSphere through App Store'
+description: 'Learn how to deploy RabbitMQ from the App Store of KubeSphere and access its service.'
 linkTitle: "Deploy RabbitMQ on KubeSphere"
 weight: 14290
 ---

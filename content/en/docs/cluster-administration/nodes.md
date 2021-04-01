@@ -1,7 +1,7 @@
 ---
 title: "Node Management"
 keywords: "Kubernetes, KubeSphere, taints, nodes, labels, requests, limits"
-description: "Kubernetes Node Management"
+description: "Monitor node status and learn how to add node labels or taints."
 
 linkTitle: "Node Management"
 weight: 8100

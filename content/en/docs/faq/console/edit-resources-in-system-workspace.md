@@ -1,7 +1,7 @@
 ---
 title: "Edit System Resources on the Console"
 keywords: "system, resources, KubeSphere, Kubernetes"
-description: "How to edit system resources on the console."
+description: "Enable the editing function of system resources on the console."
 linkTitle: 'Edit System Resources on the Console'
 Weight: 16520
 ---
