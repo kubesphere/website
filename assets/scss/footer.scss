@@ -190,6 +190,14 @@
           }
         }
 
+        .bilibili-a {
+          background-image: url("/images/footer/bilibili.svg");
+
+          &:hover {
+            background-image: url("/images/footer/bilibili-hover.svg");
+          }
+        }
+
         .facebook-a {
           background-image: url("/images/footer/facebook.svg");
 
