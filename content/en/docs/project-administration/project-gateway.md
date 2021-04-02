@@ -1,7 +1,7 @@
 ---
 title: "Project Gateway"
 keywords: 'KubeSphere, Kubernetes, project, gateway, NodePort, LoadBalancer'
-description: 'How to set a project gateway in KubeSphere.'
+description: 'Understand the concept of project gateway and how to manage it.'
 linkTitle: "Project Gateway"
 weight: 13500
 ---

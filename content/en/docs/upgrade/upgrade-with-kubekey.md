@@ -1,7 +1,7 @@
 ---
 title: "Upgrade with KubeKey"
 keywords: "Kubernetes, upgrade, KubeSphere, v3.0.0, KubeKey"
-description: "Upgrade KubeSphere with kubekey"
+description: "Use KubeKey to upgrade Kubernetes and KubeSphere."
 linkTitle: "Upgrade with KubeKey"
 weight: 7200
 ---

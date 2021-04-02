@@ -1,7 +1,7 @@
 ---
 title: "Observability — Logging FAQ"
 keywords: "Kubernetes, Elasticsearch, KubeSphere, Logging, logs"
-description: "FAQ about logging"
+description: "Questions asked frequently about the logging functionality."
 linkTitle: "Logging"
 weight: 16310
 ---

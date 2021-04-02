@@ -1,7 +1,7 @@
 ---
 title: "Enable Pluggable Components — Quickstarts"
 keywords: 'KubeSphere, Kubernetes, pluggable, components'
-description: 'Enable Pluggable Components'
+description: 'Install pluggable components of KubeSphere so that you can explore the container platform in an all-around way. Pluggable components can be enabled both before and after the installation.'
 linkTitle: "Enable Pluggable Components"
 weight: 2600
 ---

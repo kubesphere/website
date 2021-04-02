@@ -1,7 +1,7 @@
 ---
 title: "Projects and Multi-cluster Projects"
 keywords: 'KubeSphere, Kubernetes, project, multicluster-project'
-description: 'This tutorial introduces projects and multi-cluster projects.'
+description: 'Learn how to create different types of projects.'
 
 linkTitle: "Projects and Multi-cluster Projects"
 weight: 13100

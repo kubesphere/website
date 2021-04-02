@@ -1,7 +1,7 @@
 ---
 title: "Deploy MongoDB on KubeSphere"
 keywords: 'KubeSphere, Kubernetes, Installation, MongoDB'
-description: 'How to deploy MongoDB from the App Store of KubeSphere'
+description: 'Learn how to deploy MongoDB from the App Store of KubeSphere and access its service.'
 linkTitle: "Deploy MongoDB on KubeSphere"
 weight: 14250
 ---

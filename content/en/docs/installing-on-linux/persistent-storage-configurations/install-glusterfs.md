@@ -1,7 +1,7 @@
 ---
 title: "Install GlusterFS"
 keywords: 'KubeSphere, Kubernetes, GlusterFS, installation, configurations, storage'
-description: 'How to create a KubeSphere create with GlusterFS providing storage services.'
+description: 'Use KubeKey to create a cluster with GlusterFS providing storage services.'
 linkTitle: "Install GlusterFS"
 weight: 3340
 ---

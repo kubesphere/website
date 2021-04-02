@@ -1,7 +1,7 @@
 ---
 title: "Configure a Booster for Installation"
 keywords: 'KubeSphere, booster, installation, faq'
-description: 'How to configure a booster for installation'
+description: 'Set a registry mirror to speed up image downloads during installation.'
 linkTitle: "Configure a Booster for Installation"
 weight: 16200
 ---

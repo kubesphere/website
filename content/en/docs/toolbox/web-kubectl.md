@@ -1,7 +1,7 @@
 ---
 title: "Web Kubectl"
 keywords: 'KubeSphere, Kubernetes, kubectl, cli'
-description: 'Use kubectl from toolbox'
+description: 'The web kubectl tool is integrated into KubeSphere to provide consistent user experiences for Kubernetes users.'
 linkTitle: "Web Kubectl"
 weight: 15400
 ---

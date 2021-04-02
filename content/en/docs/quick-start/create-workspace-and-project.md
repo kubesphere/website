@@ -1,7 +1,7 @@
 ---
 title: "Create Workspaces, Projects, Accounts and Roles"
 keywords: 'KubeSphere, Kubernetes, Multi-tenant, Workspace, Account, Role, Project'
-description: 'Create Workspaces, Projects, Accounts and Roles'
+description: 'Leverage the multi-tenant system of KubeSphere for fine-grained access control at different levels.'
 linkTitle: "Create Workspaces, Projects, Accounts and Roles"
 weight: 2300
 ---

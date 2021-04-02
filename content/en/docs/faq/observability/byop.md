@@ -1,7 +1,7 @@
 ---
 title: "Bring Your Own Prometheus"
 keywords: "Monitoring, Prometheus, node-exporter, kube-state-metrics, KubeSphere, Kubernetes"
-description: "Use your own Prometheus stack for KubeSphere monitoring"
+description: "Use your own Prometheus stack setup in KubeSphere."
 linkTitle: "Bring Your Own Prometheus"
 Weight: 16330
 ---

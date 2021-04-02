@@ -1,7 +1,7 @@
 ---
 title: "Add Kafka as a Receiver (i.e. Collector)"
 keywords: 'Kubernetes, log, kafka, pod, container, fluentbit, output'
-description: 'Add Kafka as a Receiver'
+description: 'Learn how to add Kafka to receive logs, events or auditing logs.'
 linkTitle: "Add Kafka as a Receiver"
 weight: 8623
 ---

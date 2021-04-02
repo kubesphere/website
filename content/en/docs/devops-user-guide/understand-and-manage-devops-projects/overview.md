@@ -1,7 +1,7 @@
 ---
 title: "DevOps — Overview"
 keywords: 'Kubernetes, KubeSphere, DevOps, overview'
-description: 'This tutorial gives an overview of the KubeSphere DevOps system.'
+description: 'Develop a basic understanding of DevOps.'
 linkTitle: "Overview"
 weight: 11110
 ---

@@ -1,7 +1,7 @@
 ---
 title: "Direct Connection"
 keywords: 'Kubernetes, KubeSphere, multicluster, hybrid-cloud, direct-connection'
-description: 'How to manage multiple clusters using direct connection.'
+description: 'Understand the general steps of importing clusters through direct connection.'
 titleLink: "Direct Connection"
 weight: 5210
 ---

@@ -1,7 +1,7 @@
 ---
 title: "Create a Pipeline Using Graphical Editing Panels"
 keywords: 'KubeSphere, Kubernetes, jenkins, cicd, graphical pipelines'
-description: 'How to create a pipeline using graphical editing panels.'
+description: 'Learn how to create and run a pipeline by using the graphical editing panel of KubeSphere.'
 linkTitle: 'Create a Pipeline Using Graphical Editing Panels'
 weight: 11220
 ---

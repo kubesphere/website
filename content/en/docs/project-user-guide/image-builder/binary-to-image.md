@@ -1,7 +1,7 @@
 ---
 title: "Binary to Image: Publish an Artifact to Kubernetes"
 keywords: "KubeSphere, Kubernetes, Docker, B2I, Binary-to-Image"
-description: "How to publish artifacts to Kubernetes using Binary-to-Image"
+description: "Use B2I to import an artifact and push it to a target repository."
 linkTitle: "Binary to Image: Publish an Artifact to Kubernetes"
 weight: 10620
 ---

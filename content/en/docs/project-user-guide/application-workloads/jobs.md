@@ -1,7 +1,7 @@
 ---
 title: "Jobs"
 keywords: "KubeSphere, Kubernetes, docker, jobs"
-description: "Create a Kubernetes Job"
+description: "Learn basic concepts of Jobs and how to create Jobs in KubeSphere."
 linkTitle: "Jobs"
 
 weight: 10250

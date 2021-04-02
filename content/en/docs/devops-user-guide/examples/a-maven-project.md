@@ -1,7 +1,7 @@
 ---
 title: "Build and Deploy a Maven Project"
 keywords: 'kubernetes, docker, devops, jenkins, maven'
-description: 'How to build and deploy a Maven project'
+description: 'Learn how to build and deploy a Maven project using a KubeSphere pipeline.'
 linkTitle: "Build and Deploy a Maven Project"
 weight: 11430
 ---

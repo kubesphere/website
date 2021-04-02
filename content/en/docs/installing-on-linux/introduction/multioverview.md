@@ -1,7 +1,7 @@
 ---
 title: "Multi-node Installation"
 keywords: 'Multi-node, Installation, KubeSphere'
-description: 'Explain how to install KubeSphere on multiple nodes'
+description: 'Learn the general steps of installing KubeSphere and Kubernetes on a multi-node cluster.'
 linkTitle: "Multi-node Installation"
 weight: 3130
 ---

@@ -1,7 +1,7 @@
 ---
 title: "Remove Built-in Apps in KubeSphere"
 keywords: "KubeSphere, OpenPitrix, Application, App"
-description: "How to remove built-in apps in KubeSphere"
+description: "Learn how to remove built-in apps from the KubeSphere App Store."
 linkTitle: "Remove Built-in Apps in KubeSphere"
 Weight: 16910
 ---

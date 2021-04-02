@@ -1,7 +1,7 @@
 ---
 title: "Canary Release"
 keywords: 'KubeSphere, Kubernetes, canary release, istio, service mesh'
-description: 'How to implement the canary release for an app.'
+description: 'Learn how to deploy a canary service in KubeSphere.'
 linkTitle: "Canary Release"
 weight: 10530
 ---

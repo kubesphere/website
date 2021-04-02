@@ -1,7 +1,7 @@
 ---
 title: "Monitoring Dashboard — Overview"
 keywords: 'monitoring, prometheus, prometheus operator'
-description: 'Overview'
+description: 'Understand the general steps of creating a monitoring dashboard as well as its layout.'
 linkTitle: "Overview"
 weight: 10815
 ---

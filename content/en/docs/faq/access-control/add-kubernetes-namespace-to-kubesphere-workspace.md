@@ -1,7 +1,7 @@
 ---
 title: "Add existing Kubernetes namespaces to a KubeSphere Workspace"
 keywords: "namespace, project, KubeSphere, Kubernetes"
-description: "Add existing Kubernetes namespaces to a KubeSphere Workspace"
+description: "Add you existing Kubernetes namespaces to a KubeSphere workspace."
 linkTitle: "Add existing Kubernetes namespaces to a KubeSphere Workspace"
 Weight: 16430
 ---

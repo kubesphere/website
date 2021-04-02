@@ -1,7 +1,7 @@
 ---
 title: "Receive and Customize Auditing Logs"
 keywords: "Kubernetes, KubeSphere, auditing, log, customize, receive"
-description: "How to receive and customize KubeSphere and Kubernetes auditing logs."
+description: "Learn how to receive and customize auditing logs."
 linkTitle: "Receive and Customize Auditing Logs"
 weight: 15310
 ---

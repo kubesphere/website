@@ -1,7 +1,7 @@
 ---
 title: "Alerting Message (Workload Level)"
 keywords: 'KubeSphere, Kubernetes, Workload, Alerting, Message, Notification'
-description: 'How to view alerting messages at the workload level.'
+description: 'Learn how to view alerting policies for workloads.'
 linkTitle: "Alerting Message (Workload Level)"
 weight: 10720
 ---

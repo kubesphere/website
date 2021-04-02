@@ -1,7 +1,7 @@
 ---
 title: "Installing KubeSphere on Kubernetes — Overview"
 keywords: "KubeSphere, Kubernetes, Installation"
-description: "Overview of KubeSphere Installation on Kubernetes"
+description: "Develop a basic understanding of the general steps of deploying KubeSphere on existing Kubernetes clusters."
 linkTitle: "Overview"
 weight: 4110
 ---

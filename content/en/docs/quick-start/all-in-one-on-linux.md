@@ -1,7 +1,7 @@
 ---
 title: "All-in-One Installation on Linux"
 keywords: 'KubeSphere, Kubernetes, All-in-one, Installation'
-description: 'All-in-One Installation on Linux'
+description: 'Install KubeSphere on Linux with a minimal installation package. The tutorial serves as a basic kick-starter for you to understand the container platform, paving the way for learning the following guides.'
 linkTitle: "All-in-One Installation on Linux"
 weight: 2100
 ---

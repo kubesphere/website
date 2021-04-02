@@ -1,7 +1,7 @@
 ---
 title: "Prerequisites"
 keywords: "KubeSphere, Kubernetes, Installation, Prerequisites"
-description: "The prerequisites of installing KubeSphere on existing Kubernetes"
+description: "Make sure your environment where existing Kubernetes clusters run meets the prerequisites before installation."
 linkTitle: "Prerequisites"
 weight: 4120
 ---

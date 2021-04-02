@@ -1,7 +1,7 @@
 ---
 title: "Logging"
 keywords: 'Kubernetes, KubeSphere, API, Logging'
-description: 'Logging API changes'
+description: 'The API changes of the component **logging** in KubeSphere v3.0.0.'
 linkTitle: "Logging"
 weight: 17310
 ---

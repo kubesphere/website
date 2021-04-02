@@ -1,7 +1,7 @@
 ---
 title: "Supported Browsers"
 keywords: "FAQ, console, KubeSphere, Kubernetes"
-description: "Supported browsers of KubeSphere."
+description: "Use a supported web browser to access the console."
 linkTitle: "Supported Browsers"
 Weight: 16510
 ---

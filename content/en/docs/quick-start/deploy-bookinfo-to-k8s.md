@@ -1,7 +1,7 @@
 ---
 title: "Deploy and Access Bookinfo"
 keywords: 'KubeSphere, Kubernetes, Bookinfo, Istio'
-description: 'Deploy a Bookinfo on K8s and access the app through a NodePort'
+description: 'Explore the basics of KubeSphere service mesh by deploying an example application Bookinfo.'
 linkTitle: "Deploy and Access Bookinfo"
 weight: 2400
 ---

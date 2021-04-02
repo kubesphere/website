@@ -1,7 +1,7 @@
 ---
 title: "Multi-tenancy in KubeSphere"
 keywords: "Kubernetes, Kubesphere, multi-tenancy"
-description: "Understand multi-tenancy in KubeSphere."
+description: "Understand the multi-tenant architecture in KubeSphere."
 linkTitle: "Multi-tenancy in KubeSphere"
 weight: 12100
 ---

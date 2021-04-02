@@ -1,7 +1,7 @@
 ---
 title: "Set a CI Node for Dependency Caching"
 keywords: 'Kubernetes, docker, KubeSphere, Jenkins, cicd, pipeline, dependency cache'
-description: 'How to set a CI node for dependency caching of KubeSphere pipelines.'
+description: 'Configure a node or a group of nodes specifically for continuous integration (CI) to speed up the building process in a pipeline.'
 linkTitle: "Set a CI Node for Dependency Caching"
 weight: 11270
 ---
