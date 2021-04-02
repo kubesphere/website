@@ -1,7 +1,7 @@
 ---
 title: "密钥"
 keywords: 'KubeSphere, Kubernetes, 密钥'
-description: '如何在 KubeSphere 中创建密钥'
+description: '了解如何在 KubeSphere 中创建密钥。'
 linkTitle: "密钥"
 weight: 10410
 ---

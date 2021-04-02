@@ -1,7 +1,7 @@
 ---
 title: "告警策略（工作负载级别）"
 keywords: 'KubeSphere, Kubernetes, 工作负载, 告警, 策略, 通知'
-description: '如何设置工作负载级别的告警策略。'
+description: '了解如何为工作负载设置告警策略。'
 linkTitle: "告警策略（工作负载级别）"
 weight: 10710
 ---

@@ -1,7 +1,7 @@
 ---
 title: "概述"
 keywords: 'Kubernetes, KubeSphere, Linux, 安装'
-description: '关于在 Linux 上安装 KubeSphere 的概述'
+description: '浏览本章的概述，包括安装准备，安装工具和方法以及存储设置。'
 linkTitle: "概述"
 weight: 3110
 ---

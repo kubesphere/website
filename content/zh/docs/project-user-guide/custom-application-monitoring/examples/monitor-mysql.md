@@ -1,7 +1,7 @@
 ---
 title: "监控 MySQL"
 keywords: '监控, Prometheus, Prometheus operator'
-description: '监控 MySQL'
+description: '部署 MySQL 和 MySQL Exporter 并为该应用程序创建监控面板。'
 linkTitle: "监控 MySQL"
 weight: 10812
 ---

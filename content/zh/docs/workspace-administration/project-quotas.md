@@ -1,7 +1,7 @@
 ---
 title: "项目配额"
 keywords: 'KubeSphere, Kubernetes, 项目, 配额, 资源, 请求, 限制'
-description: '如何设置项目配额。'
+description: '设置请求和限制，控制项目中的资源使用情况。'
 linkTitle: "项目配额"
 weight: 9600
 ---

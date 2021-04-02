@@ -1,7 +1,7 @@
 ---
 title: "使用 Jenkinsfile 创建流水线"
 keywords: 'KubeSphere, Kubernetes, Docker, Spring Boot, Jenkins, DevOps, CI/CD, 流水线'
-description: "如何使用 Jenkinsfile 创建流水线。"
+description: "学习如何使用示例 Jenkinsfile 创建并运行流水线。"
 linkTitle: "使用 Jenkinsfile 创建流水线"
 weight: 11210
 ---

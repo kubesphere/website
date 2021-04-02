@@ -1,7 +1,7 @@
 ---
 title: "从 Kubernetes 上卸载 KubeSphere"
 keywords: 'Kubernetes, KubeSphere, 卸载, 移除集群'
-description: '如何从 Kubernetes 上卸载 KubeSphere'
+description: '从 Kubernetes 集群中删除 KubeSphere。'
 LinkTitle: "从 Kubernetes 上卸载 KubeSphere"
 weight: 4400
 ---

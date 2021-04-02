@@ -1,7 +1,7 @@
 ---
 title: "节点管理"
 keywords: "Kubernetes, KubeSphere, 污点, 节点, 标签, 请求, 限制"
-description: "Kubernetes 节点管理"
+description: "监控节点状态并了解如何添加节点标签和污点。"
 
 linkTitle: "节点管理"
 weight: 8100

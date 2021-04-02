@@ -1,7 +1,7 @@
 ---
 title: "概述"
 keywords: "Kubernetes, 升级, KubeSphere, v3.0.0, 升级"
-description: "KubeSphere 升级概述"
+description: "了解升级之前需要注意的事项，例如版本和升级工具。"
 linkTitle: "概述"
 weight: 7100
 ---

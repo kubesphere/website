@@ -1,7 +1,7 @@
 ---
 title: "创建企业空间、项目、帐户和角色"
 keywords: 'KubeSphere, Kubernetes, 多租户, 企业空间, 帐户, 角色, 项目'
-description: '创建企业空间、项目、帐户和角色快速指南'
+description: '了解如何利用 KubeSphere 中的多租户功能在不同级别进行细粒度访问控制。'
 linkTitle: "创建企业空间、项目、帐户和角色"
 weight: 2300
 ---

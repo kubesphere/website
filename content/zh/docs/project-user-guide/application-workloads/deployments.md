@@ -1,7 +1,7 @@
 ---
 title: "部署"
 keywords: 'KubeSphere, Kubernetes, 部署, 工作负载'
-description: 'Kubernetes 部署'
+description: '了解部署的基本概念以及如何在 KubeSphere 中创建部署。'
 linkTitle: "部署"
 
 weight: 10210

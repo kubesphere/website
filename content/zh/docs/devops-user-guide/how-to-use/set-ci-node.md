@@ -1,7 +1,7 @@
 ---
 title: "为依赖项缓存设置 CI 节点"
 keywords: 'Kubernetes, Docker, KubeSphere, Jenkins, CICD, 流水线, 依赖项缓存'
-description: '如何为 KubeSphere 流水线依赖项缓存设置 CI 节点。'
+description: '配置专门用于持续集成 (CI) 的一个或一组节点，加快流水线中的构建过程。'
 linkTitle: "为依赖项缓存设置 CI 节点"
 weight: 11270
 ---

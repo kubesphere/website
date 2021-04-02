@@ -1,7 +1,7 @@
 ---
 title: "图表"
 keywords: '监控, Prometheus, Prometheus Operator'
-description: '图表'
+description: '探索仪表板属性和图表指标。'
 linkTitle: "图表"
 weight: 10816
 ---

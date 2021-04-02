@@ -1,7 +1,7 @@
 ---
 title: "介绍"
 keywords: '监控, Prometheus, Prometheus Operator'
-description: 'KubeSphere 自定义应用监控介绍。'
+description: '介绍 KubeSphere 自定义监控功能和指标暴露，包括暴露方法和 ServiceMonitor CRD。'
 
 linkTitle: "介绍"
 weight: 10810

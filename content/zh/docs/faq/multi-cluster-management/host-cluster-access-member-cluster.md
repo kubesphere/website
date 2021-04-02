@@ -1,7 +1,7 @@
 ---
 title: "恢复 Host 集群对 Member 集群的访问权限"
 keywords: "Kubernetes, KubeSphere, 多集群, Host 集群, Member 集群"
-description: "如何恢复 Host 集群对 Member 集群的访问权限"
+description: "了解如何恢复 Host 集群对 Member 集群的访问。"
 linkTitle: "恢复 Host 集群对 Member 集群的访问权限"
 Weight: 16710
 ---

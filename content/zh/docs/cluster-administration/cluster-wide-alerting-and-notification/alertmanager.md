@@ -1,7 +1,7 @@
 ---
 title: "在 KubeSphere 中使用 Alertmanager 管理告警"
 keywords: 'Kubernetes, Prometheus, Alertmanager, 告警'
-description: '在 KubeSphere 中使用 Alertmanager 管理告警'
+description: '了解如何在 KubeSphere 中使用 Alertmanager 管理告警。'
 linkTitle: "KubeSphere 中的 Alertmanager"
 weight: 8510
 ---

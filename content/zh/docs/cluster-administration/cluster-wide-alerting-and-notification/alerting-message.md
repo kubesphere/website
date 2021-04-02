@@ -1,7 +1,7 @@
 ---
 title: "告警消息（节点级别）"
 keywords: 'KubeSphere, Kubernetes, 节点, 告警, 消息, 通知'
-description: '如何在节点级别查看告警消息。'
+description: '了解如何查看节点的告警策略并处理告警消息。'
 
 linkTitle: "告警消息（节点级别）"
 weight: 8540

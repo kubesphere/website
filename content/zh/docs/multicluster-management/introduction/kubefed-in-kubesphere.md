@@ -1,7 +1,7 @@
 ---
 title: "KubeSphere 联邦"
 keywords: 'Kubernetes, KubeSphere, 联邦, 多集群, 混合云'
-description: '概述'
+description: '了解 KubeSphere 中的 Kubernetes 联邦的基本概念，包括 M 集群和 H 集群。'
 linkTitle: "KubeSphere 联邦"
 weight: 5120
 ---

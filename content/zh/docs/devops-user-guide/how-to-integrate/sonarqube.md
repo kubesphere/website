@@ -1,7 +1,7 @@
 ---
 title: "将 SonarQube 集成到流水线"
 keywords: 'Kubernetes, KubeSphere, devops, jenkins, sonarqube, 流水线'
-description: '本教程演示如何将 SonarQube 集成到流水线。'
+description: '将 SonarQube 集成到流水线中进行代码质量分析。'
 linkTitle: "将 SonarQube 集成到流水线"
 weight: 11310
 ---

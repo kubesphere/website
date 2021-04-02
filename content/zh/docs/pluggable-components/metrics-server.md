@@ -1,7 +1,7 @@
 ---
 title: "Metrics Server"
 keywords: "Kubernetes, KubeSphere, Metrics Server"
-description: "如何启用 Metrics Server"
+description: "了解如何启用 Metrics Server 以使用 HPA 对部署进行自动伸缩。"
 linkTitle: "Metrics Server"
 weight: 6910
 ---

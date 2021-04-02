@@ -1,7 +1,7 @@
 ---
 title: "更改控制台语言"
 keywords: "FAQ, 控制台, KubeSphere, Kubernetes, 语言"
-description: "如何更改控制台语言。"
+description: "选择控制台的显示语言。"
 linkTitle: "更改控制台语言"
 Weight: 16530
 ---

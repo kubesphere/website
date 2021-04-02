@@ -1,7 +1,7 @@
 ---
 title: "蓝绿部署"
 keywords: 'KubeSphere, Kubernetes, 服务网格, istio, 发布, 蓝绿部署'
-description: '如何实现应用的蓝绿部署。'
+description: '了解如何在 KubeSphere 中发布蓝绿部署。'
 
 linkTitle: "蓝绿部署"
 weight: 10520

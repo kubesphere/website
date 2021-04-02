@@ -1,7 +1,7 @@
 ---
 title: "在 KubeSphere 中部署 MinIO"
 keywords: 'Kubernetes, KubeSphere, Minio, 应用商店'
-description: '如何通过 KubeSphere 应用商店部署 MinIO'
+description: '了解如何从 KubeSphere 应用商店中部署 Minio 并访问服务。'
 linkTitle: "在 KubeSphere 中部署 MinIO"
 weight: 14240
 ---

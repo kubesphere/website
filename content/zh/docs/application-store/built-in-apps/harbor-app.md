@@ -1,7 +1,7 @@
 ---
 title: "在 KubeSphere 中部署 Harbor"
 keywords: 'Kubernetes, KubeSphere, Harbor, 应用商店'
-description: '如何在 KubeSphere 中通过应用商店部署 Harbor'
+description: '了解如何从 KubeSphere 应用商店中部署 Harbor 并访问服务。'
 linkTitle: "在 KubeSphere 中部署 Harbor"
 weight: 14220
 ---

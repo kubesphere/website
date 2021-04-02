@@ -1,7 +1,7 @@
 ---
 title: "从应用商店部署应用"
 keywords: 'Kubernetes, chart, helm, KubeSphere, application, App Store'
-description: '如何从应用商店部署应用。'
+description: '了解如何从应用商店中部署应用程序。'
 linkTitle: "从应用商店部署应用"
 weight: 10130
 ---

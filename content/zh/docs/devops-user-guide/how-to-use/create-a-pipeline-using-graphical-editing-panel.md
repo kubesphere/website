@@ -1,7 +1,7 @@
 ---
 title: "使用图形编辑面板创建流水线"
 keywords: 'KubeSphere, Kubernetes, Jenkins, CICD, 图形化流水线'
-description: '如何使用图形编辑面板创建流水线。'
+description: '学习如何使用 KubeSphere 图形编辑面板创建并运行流水线。'
 linkTitle: '使用图形编辑面板创建流水线'
 weight: 11220
 ---

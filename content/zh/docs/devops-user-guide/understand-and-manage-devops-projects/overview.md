@@ -1,7 +1,7 @@
 ---
 title: "概述"
 keywords: 'Kubernetes, KubeSphere, DevOps, 概述'
-description: '本教程概括说明 KubeSphere DevOps 系统。'
+description: '了解 DevOps 的基本知识。'
 linkTitle: "概述"
 weight: 11110
 ---

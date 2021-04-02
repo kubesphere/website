@@ -1,7 +1,7 @@
 ---
 title: "Helm 规范"
 keywords: 'Kubernetes, KubeSphere, Helm, 规范'
-description: 'Helm 规范'
+description: '了解 Chart 结构和规范。'
 linkTitle: "Helm 规范"
 weight: 14420
 ---

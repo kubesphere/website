@@ -1,7 +1,7 @@
 ---
 title: "使用 Notification Manager 管理多租户通知"
 keywords: "Kubernetes, KubeSphere, Notification Manager, email, 微信, slack"
-description: "支持多租户的 K8s 原生通知管理"
+description: "了解如何使用 Notification Manager 管理通知。"
 linkTitle: "Notification Manager"
 weight: 8520
 ---

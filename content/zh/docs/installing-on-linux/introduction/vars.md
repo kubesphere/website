@@ -1,7 +1,7 @@
 ---
 title: "Kubernetes 集群配置"
 keywords: 'KubeSphere, kubernetes, docker, 集群, jenkins, prometheus'
-description: '用 KubeKey 安装集群之前配置 Kubernetes 参数'
+description: '在集群的配置文件中添加自定义设置。'
 
 linkTitle: "Kubernetes 集群配置"
 weight: 3160

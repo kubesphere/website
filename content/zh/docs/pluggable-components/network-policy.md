@@ -1,7 +1,7 @@
 ---
 title: "网络策略"
 keywords: "Kubernetes, KubeSphere, NetworkPolicy"
-description: "如何启用网络策略"
+description: "了解如何启用网络策略来控制 IP 地址或端口级别的流量。"
 linkTitle: "网络策略"
 weight: 6900
 ---

@@ -1,7 +1,7 @@
 ---
 title: "应用路由"
 keywords: "KubeSphere, Kubernetes, 路由, 应用路由"
-description: "如何在 KubeSphere 上创建路由"
+description: "了解应用路由（即 Ingress）的基本概念以及如何在 KubeSphere 中创建应用路由。"
 weight: 10270
 ---
 

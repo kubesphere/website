@@ -1,7 +1,7 @@
 ---
 title: "使用 KubeKey 升级"
 keywords: "Kubernetes, 升级, KubeSphere, v3.0.0, KubeKey"
-description: "使用 KubeKey 升级 KubeSphere"
+description: "使用 KubeKey 升级 Kubernetes 和 KubeSphere。"
 linkTitle: "使用 KubeKey 升级"
 weight: 7200
 ---

@@ -1,7 +1,7 @@
 ---
 title: "端口要求"
 keywords: 'Kubernetes, KubeSphere, 端口要求, 防火墙规则'
-description: 'KubeSphere 组件通讯端口要求'
+description: '了解 KubeSphere 中不同服务的特定端口要求。'
 
 linkTitle: "端口要求"
 weight: 3150

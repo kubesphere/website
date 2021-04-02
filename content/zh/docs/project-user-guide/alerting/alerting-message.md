@@ -1,7 +1,7 @@
 ---
 title: "告警消息（工作负载级别）"
 keywords: 'KubeSphere, Kubernetes, 工作负载, 告警, 消息, 通知'
-description: '如何查看工作负载级别的告警消息。'
+description: '了解如何查看工作负载的告警策略。'
 
 linkTitle: "告警消息（工作负载级别）"
 weight: 10720

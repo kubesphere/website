@@ -1,7 +1,7 @@
 ---
 title: "镜像仓库"
 keywords: 'KubeSphere, Kubernetes, Docker, 密钥'
-description: '如何为镜像仓库创建密钥。'
+description: '了解如何在 KubeSphere 中创建镜像仓库。'
 linkTitle: "镜像仓库"
 weight: 10430
 ---
