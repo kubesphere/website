@@ -190,7 +190,7 @@ After you finish the above steps, you know that users can be granted different r
 
    {{< notice note >}}
 
-   * In this example, the role `clusters-admin` contains the permissions Cluster Management and Cluster Viewing.
+   * In this example, the role `clusters-admin` contains the permissions **Cluster Management** and **Cluster Viewing**.
    * Some permissions depend on other permissions. The dependency is specified by the **Depends on** field under each permission.
    * When a permission is selected, the permission it depends on is automatically selected.
    * To deselect a permission, you need to deselect its subordinate permissions first.
