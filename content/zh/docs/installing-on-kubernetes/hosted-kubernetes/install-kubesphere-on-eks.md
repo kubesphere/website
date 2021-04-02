@@ -60,7 +60,7 @@ aws-cli/2.1.2 Python/3.7.3 Linux/4.18.0-193.6.3.el8_2.x86_64 exe/x86_64.centos.8
         - 私有：仅启用对集群的 Kubernetes API server 端点的专用访问。来自集群 VPC 内部的 Kubernetes API 请求使用这个私有 VPC 端点。
 
             {{< notice note >}}
-    如果创建的 VPC 没有出站 Internet 访问，则必须启用私有访问。
+如果创建的 VPC 没有出站 Internet 访问，则必须启用私有访问。
             {{</ notice >}}
 
         - 公有和私有：启用公有和私有访问。

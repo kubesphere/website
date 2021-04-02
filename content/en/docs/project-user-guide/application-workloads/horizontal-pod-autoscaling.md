@@ -71,7 +71,7 @@ This document uses HPA based on CPU usage as an example. Operations for HPA base
 
    {{< notice note >}}
 
-   Ensure that the cluster can provide sufficient resource for all Pods when the number of Pods reaches the maximum. Otherwise, the creation of some Pods will fail.
+   Ensure that the cluster can provide sufficient resources for all Pods when the number of Pods reaches the maximum. Otherwise, the creation of some Pods will fail.
 
    {{</ notice >}}
 
