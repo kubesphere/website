@@ -1,7 +1,7 @@
 ---
 title: "在青云QingCloud 主机上部署 KubeSphere"
 keywords: "KubeSphere, 安装, HA, 高可用性, LoadBalancer"
-description: "本教程介绍如何在青云QingCloud 主机上安装高可用集群。"
+description: "了解如何在青云QingCloud 平台上创建高可用 KubeSphere 集群。"
 linkTitle: "在青云QingCloud 主机上部署 KubeSphere"
 Weight: 3420
 ---

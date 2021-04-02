@@ -1,7 +1,7 @@
 ---
 title: "角色和成员管理"
 keywords: "Kubernetes, workspace, KubeSphere, 多租户"
-description: "企业空间中的角色和成员管理"
+description: "自定义企业空间角色并将角色授予用户。"
 linkTitle: "角色和成员管理"
 weight: 9400
 ---

@@ -1,7 +1,7 @@
 ---
 title: "会话超时"
 keywords: "会话超时, KubeSphere, Kubernetes"
-description: "如何解决会话超时问题"
+description: "理解会话超时并自定义超时时间。"
 linkTitle: "会话超时"
 Weight: 16420
 ---

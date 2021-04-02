@@ -1,7 +1,7 @@
 ---
 title: "事件查询"
 keywords: 'KubeSphere, Kubernetes, 事件, 查询'
-description: '如何在 KubeSphere 中进行事件查询。'
+description: '了解如何快速执行事件查询，追踪集群的最新事件。'
 linkTitle: "事件查询"
 weight: 15200
 ---

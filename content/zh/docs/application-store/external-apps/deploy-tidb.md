@@ -1,7 +1,7 @@
 ---
 title: "在 KubeSphere 中部署 TiDB Operator 和 TiDB 集群"
 keywords: 'KubeSphere, Kubernetes, TiDB, TiDB Operator, TiDB 集群'
-description: '如何在 KubeSphere 中部署 TiDB Operator 和 TiDB 集群'
+description: '了解如何在 KubeSphere 中部署 TiDB Operator 和 TiDB 集群。'
 linkTitle: "部署 TiDB Operator 和 TiDB 集群"
 weight: 14320
 ---

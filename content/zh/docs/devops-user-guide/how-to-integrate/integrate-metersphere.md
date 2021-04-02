@@ -1,7 +1,7 @@
 ---
 title: "将 MeterSphere 集成到流水线"
 keywords: 'Kubernetes, Docker, DevOps, Jenkins, MeterSphere'
-description: '如何将 MeterSphere 集成到流水线'
+description: '将 MeterSphere 集成到流水线中进行持续测试。'
 linkTitle: "将 MeterSphere 集成到流水线"
 weight: 11330
 ---

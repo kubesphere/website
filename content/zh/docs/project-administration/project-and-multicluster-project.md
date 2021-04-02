@@ -1,7 +1,7 @@
 ---
 title: "项目和多集群项目"
 keywords: 'KubeSphere, Kubernetes, 项目, 多集群项目'
-description: '本教程介绍项目和多集群项目。'
+description: '了解如何创建不同类型的项目。'
 
 linkTitle: "项目和多集群项目"
 weight: 13100

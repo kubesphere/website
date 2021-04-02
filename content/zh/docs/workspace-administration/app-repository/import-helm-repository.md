@@ -1,7 +1,7 @@
 ---
 title: "导入 Helm 仓库"
 keywords: "Kubernetes, Helm, KubeSphere, 应用程序"
-description: "向 KubeSphere 导入 Helm 仓库"
+description: "导入 Helm 仓库至 KubeSphere，为企业空间中的租户提供应用模板。"
 
 linkTitle: "导入 Helm 仓库"
 weight: 9310

@@ -1,7 +1,7 @@
 ---
 title: "接收和自定义审计日志"
 keywords: "Kubernetes, KubeSphere, 审计, 日志, 自定义, 接收"
-description: "如何接收并自定义 KubeSphere 和 Kubernetes 审计日志。"
+description: "了解如何接收和自定义审计日志。"
 linkTitle: "接收和自定义审计日志"
 weight: 15310
 ---

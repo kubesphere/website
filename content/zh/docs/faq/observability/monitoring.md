@@ -1,7 +1,7 @@
 ---
 title: "监控"
 keywords: "Kubernetes, Prometheus, KubeSphere, 监控"
-description: "关于监控的常见问题"
+description: "有关监控功能的常见问题。"
 linkTitle: "监控"
 weight: 16320
 ---

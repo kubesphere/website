@@ -1,7 +1,7 @@
 ---
 title: "守护进程集"
 keywords: 'KubeSphere, Kubernetes, 守护进程集, 工作负载'
-description: 'Kubernetes 守护进程集'
+description: '了解守护进程集的基本概念以及如何在 KubeSphere 中创建守护进程集。'
 linkTitle: "守护进程集"
 
 weight: 10230

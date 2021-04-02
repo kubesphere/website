@@ -1,7 +1,7 @@
 ---
 title: "应用资源监控"
 keywords: "Kubernetes, KubeSphere, 资源, 监控"
-description: "在 KubeSphere 监控应用资源。"
+description: "监控集群中的应用资源，例如不同项目的部署数量和 CPU 使用情况。"
 linkTitle: "应用资源监控"
 weight: 8300
 ---

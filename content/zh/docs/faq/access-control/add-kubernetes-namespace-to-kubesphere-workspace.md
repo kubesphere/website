@@ -1,7 +1,7 @@
 ---
 title: "添加现有 Kubernetes 命名空间至 KubeSphere 企业空间"
 keywords: "命名空间, 项目, KubeSphere, Kubernetes"
-description: "添加现有 Kubernetes 命名空间至 KubeSphere 企业空间"
+description: "将您现有 Kubernetes 集群中的命名空间添加至 KubeSphere 的企业空间。"
 linkTitle: "添加现有 Kubernetes 命名空间至 KubeSphere 企业空间"
 Weight: 16430
 ---

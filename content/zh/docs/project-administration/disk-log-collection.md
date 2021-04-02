@@ -1,7 +1,7 @@
 ---
 title: "落盘日志收集"
 keywords: 'KubeSphere, Kubernetes, 项目, 落盘, 日志, 收集'
-description: '落盘日志收集'
+description: '启用落盘日志收集，对日志进行统一收集、管理和分析。'
 linkTitle: "落盘日志收集"
 weight: 13600
 ---

@@ -1,7 +1,7 @@
 ---
 title: "企业空间网络隔离"
 keywords: 'KubeSphere, Kubernetes, Calico, 网络策略'
-description: '企业空间网络隔离'
+description: '在您的企业空间中开启或关闭网络策略。'
 linkTitle: "企业空间网络隔离"
 weight: 9500
 ---

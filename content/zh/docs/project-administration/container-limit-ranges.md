@@ -1,7 +1,7 @@
 ---
 title: "容器限制范围"
 keywords: 'Kubernetes, KubeSphere, 资源, 配额, 限制, 请求, 限制范围, 容器'
-description: '如何设置默认容器限制范围。'
+description: '了解如何在项目中设置默认容器限制范围。'
 linkTitle: "容器限制范围"
 weight: 13400
 ---

@@ -1,7 +1,7 @@
 ---
 title: "直接连接"
 keywords: 'Kubernetes, KubeSphere, 多集群, 混合云, 直接连接'
-description: '如何使用直接连接方式管理多集群'
+description: '了解通过直接连接导入集群的一般步骤。'
 linkTitle: "直接连接"
 weight: 5210
 ---

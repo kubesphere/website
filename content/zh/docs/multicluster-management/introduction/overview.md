@@ -1,7 +1,7 @@
 ---
 title: "概述"
 keywords: 'Kubernetes, KubeSphere, 多集群, 混合云'
-description: '概述'
+description: '对多集群管理有个基本的了解，例如多集群管理的常见用例，以及 KubeSphere 可以通过多集群功能带来的好处。'
 linkTitle: "概述"
 weight: 5110
 ---

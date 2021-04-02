@@ -1,7 +1,7 @@
 ---
 title: "告警策略（节点级别）"
 keywords: 'KubeSphere, Kubernetes, 节点, 告警, 策略, 通知'
-description: '如何在节点级别设置告警策略。'
+description: '了解如何为节点设置告警策略。'
 
 linkTitle: "告警策略（节点级别）"
 weight: 8530

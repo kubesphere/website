@@ -1,7 +1,7 @@
 ---
 title: "添加 Elasticsearch 作为接收器"
 keywords: 'Kubernetes, 日志, Elasticsearch, Pod, 容器, Fluentbit, 输出'
-description: '添加 Elasticsearch 作为接收器'
+description: '了解如何添加 Elasticsearch 来接收日志、事件或审计日志。'
 linkTitle: "添加 Elasticsearch 作为接收器"
 weight: 8622
 ---

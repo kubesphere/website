@@ -1,7 +1,7 @@
 ---
 title: "KubeSphere 事件系统"
 keywords: "Kubernetes, 事件, KubeSphere, k8s-events"
-description: "如何启用 KubeSphere 事件系统"
+description: "了解如何启用 KubeSphere 事件模块来跟踪平台上发生的所有事件。"
 linkTitle: "KubeSphere 事件系统"
 weight: 6500
 ---

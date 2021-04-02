@@ -1,7 +1,7 @@
 ---
 title: "凭证管理"
 keywords: 'Kubernetes, Docker, 凭证, KubeSphere, DevOps'
-description: '本教程演示如何在 DevOps 工程中管理凭证。'
+description: '创建凭证以便您的流水线可以与第三方应用程序或网站进行交互。'
 linkTitle: "凭证管理"
 weight: 11230
 ---

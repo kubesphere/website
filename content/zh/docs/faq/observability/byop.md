@@ -1,7 +1,7 @@
 ---
 title: "集成您自己的 Prometheus"
 keywords: "监控, Prometheus, node-exporter, kube-state-metrics, KubeSphere, Kubernetes"
-description: "将您自己的 Prometheus 堆栈用于 KubeSphere 监控"
+description: "在 KubeSphere 中使用您自己的 Prometheus 堆栈设置。"
 linkTitle: "集成您自己的 Prometheus"
 Weight: 16330
 ---

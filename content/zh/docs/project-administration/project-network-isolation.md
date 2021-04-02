@@ -1,7 +1,7 @@
 ---
 title: "项目网络隔离"
 keywords: 'KubeSphere, Kubernetes, Calico, 网络策略'
-description: '项目网络隔离'
+description: '了解网络隔离的概念以及如何配置项目网络策略。'
 linkTitle: "项目网络隔离"
 weight: 13300
 ---

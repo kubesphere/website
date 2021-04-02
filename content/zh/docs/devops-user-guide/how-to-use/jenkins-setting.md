@@ -1,7 +1,7 @@
 ---
 title: "Jenkins 系统设置"
 keywords: 'Kubernetes, KubeSphere, Jenkins, CasC'
-description: '如何在 KubeSphere 中设置 Jenkins。'
+description: '了解如何自定义您的 Jenkins 设置。'
 linkTitle: 'Jenkins 系统设置'
 Weight: 11240
 ---

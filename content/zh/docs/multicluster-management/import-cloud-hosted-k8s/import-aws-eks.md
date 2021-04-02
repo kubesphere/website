@@ -1,7 +1,7 @@
 ---
 title: "导入 AWS EKS 集群"
 keywords: 'Kubernetes, KubeSphere, 多集群, Amazon EKS'
-description: '导入 AWS EKS 集群'
+description: '了解如何导入 Amazon Elastic Kubernetes 服务集群。'
 titleLink: "导入 AWS EKS 集群"
 weight: 5320
 ---

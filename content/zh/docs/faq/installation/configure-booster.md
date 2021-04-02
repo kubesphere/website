@@ -1,7 +1,7 @@
 ---
 title: "为安装配置加速器"
 keywords: 'KubeSphere, 加速器, 安装, FAQ'
-description: '如何为安装配置加速器'
+description: '设置仓库镜像地址加速安装时的镜像下载速度。'
 linkTitle: "为安装配置加速器"
 weight: 16200
 ---

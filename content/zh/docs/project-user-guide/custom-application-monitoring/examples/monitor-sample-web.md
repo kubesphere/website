@@ -1,7 +1,7 @@
 ---
 title: "监控示例 Web 应用程序"
 keywords: '监控, prometheus, prometheus operator'
-description: '监控示例 Web 应用程序'
+description: '使用 Helm Chart 来部署示例 Web 应用程序并为该应用程序创建监控面板。'
 linkTitle: "监控示例 Web 应用程序"
 weight: 10813
 ---

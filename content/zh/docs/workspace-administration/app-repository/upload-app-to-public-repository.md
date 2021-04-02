@@ -1,7 +1,7 @@
 ---
 title: "上传应用至 KubeSphere 的 GitHub 仓库"
 keywords: "Kubernetes, Helm, KubeSphere, 应用程序"
-description: "如何上传应用至 KubeSphere 的 GitHub 仓库"
+description: "上传您自己的应用至 KubeSphere 的 GitHub 仓库。"
 linkTitle: "上传应用至 KubeSphere 的 GitHub 仓库"
 weight: 9320
 ---

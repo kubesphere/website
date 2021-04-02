@@ -1,7 +1,7 @@
 ---
 title: "Install Plugins to Jenkins in KubeSphere"
 keywords: "KubeSphere, Kubernetes, DevOps, Jenkins, Plugin"
-description: "How to install plugins to Jenkins in KubeSphere"
+description: "了解如何为 KubeSphere 中的 Jenkins 安装插件。"
 linkTitle: "Install Plugins to Jenkins in KubeSphere"
 Weight: 16810
 ---

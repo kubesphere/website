@@ -1,7 +1,7 @@
 ---
 title: "获取 KubeConfig"
 keywords: 'Kubernetes, KubeSphere, 多集群, 混合云, kubeconfig'
-description: '如何从 Kuberenetes 集群中获取 KubeConfig'
+description: '获取通过直接连接导入集群所需的 KubeConfig。'
 linkTitle: "获取 KubeConfig"
 weight: 5230
 ---

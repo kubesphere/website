@@ -1,7 +1,7 @@
 ---
 title: "在 KubeSphere 中部署 etcd"
 keywords: 'Kubernetes, KubeSphere, etcd, 应用商店'
-description: '如何在 KubeSphere 中部署 etcd。'
+description: '了解如何从 KubeSphere 应用商店中部署 etcd 并访问服务。'
 linkTitle: "在 KubeSphere 中部署 etcd"
 weight: 14210
 ---

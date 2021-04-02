@@ -1,7 +1,7 @@
 ---
 title: "概述"
 keywords: '监控, Prometheus, Prometheus Operator'
-description: '概述'
+description: '了解创建监控仪表板的一般步骤及其布局。'
 linkTitle: "概述"
 weight: 10815
 ---

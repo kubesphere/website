@@ -1,7 +1,7 @@
 ---
 title: "项目网关"
 keywords: 'KubeSphere, Kubernetes, 项目, 网关, NodePort, LoadBalancer'
-description: '如何在 KubeSphere 中设置项目网关。'
+description: '了解项目网关的概念以及如何进行管理。'
 linkTitle: "项目网关"
 weight: 13500
 ---

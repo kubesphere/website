@@ -1,7 +1,7 @@
 ---
 title: "在 KubeSphere 中部署 Tomcat"
 keywords: 'KubeSphere, Kubernetes, 安装, Tomcat'
-description: '如何通过应用商店在 KubeSphere 中部署 Tomcat'
+description: '了解如何从 KubeSphere 应用商店中部署 Tomcat 并访问服务。'
 
 link title: "在 KubeSphere 中部署 Tomcat"
 weight: 14292

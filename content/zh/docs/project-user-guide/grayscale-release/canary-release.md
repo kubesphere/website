@@ -1,7 +1,7 @@
 ---
 title: "金丝雀发布"
 keywords: 'KubeSphere, Kubernetes, 金丝雀发布, istio, 服务网格'
-description: '如何实现应用的金丝雀发布。'
+description: '了解如何在 KubeSphere 中部署金丝雀服务。'
 linkTitle: "金丝雀发布"
 weight: 10530
 ---

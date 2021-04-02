@@ -1,7 +1,7 @@
 ---
 title: "邮件服务器"
 keywords: 'KubeSphere, Kubernetes, 通知, 邮件服务器'
-description: '邮件服务器'
+description: '自定义您的电子邮件地址设置，以接收来自告警的通知。'
 
 linkTitle: "邮件服务器"
 weight: 8630

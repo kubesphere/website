@@ -1,7 +1,7 @@
 ---
 title: "在 DigitalOcean 上部署 KubeSphere"
 keywords: 'Kubernetes, KubeSphere, DigitalOcean, 安装'
-description: '介绍如何在 DigitalOcean 上部署 KubeSphere'
+description: '了解如何在 DigitalOcean 上部署 KubeSphere。'
 
 weight: 4230
 ---

@@ -1,7 +1,7 @@
 ---
 title: "构建和部署 Go 工程"
 keywords: 'Kubernetes, docker, devops, jenkins, go, KubeSphere'
-description: '本教程演示如何构建和部署 Go 工程。'
+description: '学习如何使用 KubeSphere 流水线构建并部署 Go 工程。'
 linkTitle: "构建和部署 Go 工程"
 weight: 11410
 ---

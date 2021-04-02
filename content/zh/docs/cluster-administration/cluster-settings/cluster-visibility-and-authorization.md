@@ -1,7 +1,7 @@
 ---
 title: "集群可见性和授权"
 keywords: "集群可见性, 集群管理"
-description: "集群可见性"
+description: "了解如何设置集群可见性和授权。"
 linkTitle: "集群可见性和授权"
 weight: 8610
 ---

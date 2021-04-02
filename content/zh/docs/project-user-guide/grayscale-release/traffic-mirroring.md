@@ -1,7 +1,7 @@
 ---
 title: "流量镜像"
 keywords: 'KubeSphere, Kubernetes, 流量镜像, Istio'
-description: '流量镜像'
+description: '了解如何在 KubeSphere 中执行流量镜像任务。'
 linkTitle: "流量镜像"
 weight: 10540
 ---

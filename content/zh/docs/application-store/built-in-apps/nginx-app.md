@@ -1,7 +1,7 @@
 ---
 title: "在 KubeSphere 中部署 NGINX"
 keywords: 'KubeSphere, Kubernetes, 安装, NGINX'
-description: '如何从 KubeSphere 应用商店部署 NGINX'
+description: '了解如何从 KubeSphere 应用商店中部署 NGINX 并访问服务。'
 linkTitle: "在 KubeSphere 中部署 NGINX"
 weight: 14270
 ---

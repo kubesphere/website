@@ -1,7 +1,7 @@
 ---
 title: "审计规则"
 keywords: "Kubernetes, docker, kubesphere, 审计"
-description: "Kubernetes 和 KubeSphere 操作审计"
+description: "了解审计规则以及如何自定义有关处理审计日志的规则。"
 linkTitle: "审计规则"
 weight: 15320
 ---

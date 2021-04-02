@@ -1,7 +1,7 @@
 ---
 title: "使用 KubeKey 离线升级"
 keywords: "离线环境, kubernetes, 升级, kubesphere, v3.0.0"
-description: "离线升级 Kubernetes and KubeSphere"
+description: "使用离线包升级 Kubernetes 和 KubeSphere。"
 linkTitle: "使用 KubeKey 离线升级"
 weight: 7400
 ---

@@ -1,7 +1,7 @@
 ---
 title: "审计日志查询"
 keywords: "Kubernetes, KubeSphere, 审计, 日志, 查询"
-description: "如何在 KubeSphere 中查询审计日志。"
+description: "了解如何快速执行审计日志查询，追踪集群的最新审计信息。"
 linkTitle: "审计日志查询"
 weight: 15330
 ---

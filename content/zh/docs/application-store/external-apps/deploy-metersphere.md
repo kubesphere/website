@@ -1,7 +1,7 @@
 ---
 title: "在 KubeSphere 上部署 MeterSphere"
 keywords: 'KubeSphere, Kubernetes, 应用程序, MeterSphere'
-description: '如何在 KubeSphere 上部署 MeterSphere'
+description: '了解如何在 KubeSphere 中部署 MeterSphere。'
 linkTitle: "在 KubeSphere 上部署 MeterSphere"
 weight: 14330
 ---

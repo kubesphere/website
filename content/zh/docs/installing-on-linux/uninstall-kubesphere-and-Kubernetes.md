@@ -1,7 +1,7 @@
 ---
 title: "卸载 KubeSphere 和 Kubernetes"
 keywords: 'kubernetes, kubesphere, uninstalling, remove-cluster'
-description: '如何删除 KubeSphere 和 Kubernetes 集群'
+description: '从机器上删除 KubeSphere 和 Kubernetes。'
 
 
 weight: 3700
