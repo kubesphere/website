@@ -1,7 +1,7 @@
 ---
 title: "Configure Email Notifications"
 keywords: 'KubeSphere, Kubernetes, custom, platform'
-description: 'Configure your email server and add recipients to receive email notifications for alerting policies.'
+description: 'Configure your email server and add recipients to receive email notifications from alerting policies, kube-events, and kube-auditing.'
 linkTitle: "Configure Email Notifications"
 weight: 8721
 ---
@@ -32,7 +32,7 @@ This tutorial demonstrates how to configure your email server and add recipients
 
 1. Under **Recipient Settings**, enter a recipient's email address and click **Add**.
 
-2. After it is added, the email address of a recipient will be listed under **Recipient Settings**. You can add multiple recipients so that all of them will be able to receive email notifications of alerts.
+2. After it is added, the email address of a recipient will be listed under **Recipient Settings**. You can add up to 50 recipients and all of them will be able to receive email notifications of alerts.
 
 3. To remove a recipient, hover over the email address you want to remove, then click the trash bin icon that appears.
 
@@ -55,7 +55,7 @@ The image below is an email notification example:
 {{< notice note >}}
 
 - If you update your email server configuration, KubeSphere will send email notifications based on the latest configuration.
-- By default, KubeSphere sends notifications for the same alert about every 12 hours. The notification repeat interval is controlled by `group_interval`, `group_wait` and `repeat_interval` in the Secret `alertmanager-main` in the project `kubesphere-monitoring-system`. You can customize these values but keep in mind that the actual time interval may be slightly different.
+- By default, KubeSphere sends notifications for the same alert about every 12 hours. The notification repeat interval is mainly controlled by `repeat_interval` in the Secret `alertmanager-main` in the project `kubesphere-monitoring-system`. You can customize the interval as needed.
 - As KubeSphere has built-in alerting policies, if you do not set any customized alerting policies, your recipient can still receive email notifications once a built-in alerting policy is triggered.
 
 {{</ notice >}} 
