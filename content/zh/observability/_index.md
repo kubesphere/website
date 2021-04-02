@@ -6,7 +6,7 @@ css: "scss/scenario.scss"
 
 section1:
   title: KubeSphere 助您轻松实现可视化
-  content: KubeSphere 提供了丰富的可视化功能，覆盖从基础设施到应用的广阔领域。此外，KubeSphere 还集成了许多常用的工具，支持多维度监控指标、多租户日志查询和收集、告警和通知等功能。
+  content: KubeSphere 提供了丰富的可视化功能，支持从基础设施到应用的多维度指标监控。此外，KubeSphere 还集成了许多常用的工具，包括多租户日志查询和收集、告警和通知等功能。
   image: /images/observability/banner.jpg
 
 image: /images/observability/observability.jpg
@@ -36,7 +36,7 @@ section2:
       contentList:
         - content: <span>丰富告警规则</span> 提供多租户多维度的监控指标
         - content: <span>灵活告警策略</span> 支持自定义包含多条告警规则的告警策略
-        - content: <span>多级监控指标</span> 覆盖从基础设施到工作负载的广阔领域
+        - content: <span>多级监控指标</span> 覆盖从基础设施到工作负载的多级资源监控
         - content: <span>灵活告警规则</span> 支持自定义指标的监控时段、时长和告警优先级
         - content: <span>集成 AlertManager</span> 支持多种通知渠道（v3.0.0）
 
