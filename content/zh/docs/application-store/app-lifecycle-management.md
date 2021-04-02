@@ -1,7 +1,7 @@
 ---
 title: "应用程序生命周期管理"
 keywords: 'Kubernetes, KubeSphere, 应用商店'
-description: '应用程序生命周期管理'
+description: '您可以跨整个生命周期管理应用，包括提交、审核、测试、发布、升级和下架。'
 linkTitle: '应用程序生命周期管理'
 weight: 14100
 ---

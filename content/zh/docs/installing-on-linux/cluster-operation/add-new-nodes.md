@@ -1,7 +1,7 @@
 ---
 title: "添加新节点"
 keywords: 'Kubernetes, KubeSphere, 水平扩缩, 添加节点'
-description: '如何将新节点添加到现有集群'
+description: '添加更多节点以扩展集群。'
 linkTitle: "添加新节点"
 weight: 3610
 ---

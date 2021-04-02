@@ -1,7 +1,7 @@
 ---
 title: "在 KubeSphere 中部署 PostgreSQL"
 keywords: 'Kubernetes, KubeSphere, PostgreSQL, 应用商店'
-description: '如何从 KubeSphere 的应用商店部署 PostgreSQL'
+description: '了解如何从 KubeSphere 应用商店中部署 PostgreSQL 并访问服务。'
 linkTitle: "在 KubeSphere 中部署 PostgreSQL"
 weight: 14280  
 ---

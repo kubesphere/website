@@ -1,7 +1,7 @@
 ---
 title: "构建和部署 Maven 工程"
 keywords: 'Kubernetes, Docker, DevOps, Jenkins, Maven'
-description: '如何构建和部署 Maven 工程'
+description: '学习如何使用 KubeSphere 流水线构建并部署 Maven 工程。'
 linkTitle: "构建和部署 Maven 工程"
 weight: 11430
 ---

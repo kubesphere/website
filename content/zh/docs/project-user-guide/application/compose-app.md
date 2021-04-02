@@ -1,7 +1,7 @@
 ---
 title: "构建基于微服务的应用"
 keywords: 'KubeSphere, Kubernetes, 服务网格, 微服务'
-description: '构建基于微服务的应用'
+description: '了解如何从零开始构建基于微服务的应用程序。'
 linkTitle: "构建基于微服务的应用"
 weight: 10140
 ---

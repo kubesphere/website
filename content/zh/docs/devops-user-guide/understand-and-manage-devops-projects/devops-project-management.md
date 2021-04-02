@@ -1,7 +1,7 @@
 ---
 title: "DevOps 工程管理"
 keywords: 'Kubernetes, KubeSphere, DevOps, Jenkins'
-description: '如何创建和管理 DevOps 工程'
+description: '创建并管理 DevOps 工程，了解 DevOps 工程中的各项基本元素。'
 linkTitle: "DevOps 工程管理"
 weight: 11120
 ---

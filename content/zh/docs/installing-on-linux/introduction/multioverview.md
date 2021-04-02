@@ -1,7 +1,7 @@
 ---
 title: "多节点安装"
 keywords: '多节点, 安装, KubeSphere'
-description: '说明如何多节点安装 KubeSphere'
+description: '了解在多节点集群上安装 KubeSphere 和 Kubernetes 的一般步骤。'
 linkTitle: "多节点安装"
 weight: 3120
 ---

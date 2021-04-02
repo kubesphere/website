@@ -1,7 +1,7 @@
 ---
 title: "日志查询"
 keywords: 'KubeSphere, Kubernetes, 日志'
-description: '在工具箱中查询 Kubernetes 日志'
+description: '了解如何快速执行日志查询，追踪集群的最新日志。'
 linkTitle: "日志查询"
 weight: 15100
 ---

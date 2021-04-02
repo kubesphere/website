@@ -1,7 +1,7 @@
 ---
 title: "创建并部署 WordPress"
 keywords: 'KubeSphere, Kubernetes, 应用, WordPress'
-description: '创建并部署 WordPress。'
+description: '了解在 KubeSphere 中部署示例应用程序的整个流程，包括创建凭证、创建存储卷、组件设置等。'
 linkTitle: "创建并部署 WordPress"
 weight: 2500
 ---

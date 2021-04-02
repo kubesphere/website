@@ -1,7 +1,7 @@
 ---
 title: "Helm 开发者指南"
 keywords: 'Kubernetes, KubeSphere, Helm, 开发'
-description: 'Helm 开发者指南'
+description: '开发基于 Helm 的应用。'
 linkTitle: "Helm 开发者指南"
 weight: 14410
 ---

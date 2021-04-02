@@ -1,7 +1,7 @@
 ---
 title: "在 KubeSphere 上部署 GitLab"
 keywords: 'KubeSphere, Kubernetes, GitLab, 应用商店'
-description: '如何在 KubeSphere 上部署 GitLab'
+description: '了解如何在 KubeSphere 中部署 GitLab 并访问服务。'
 linkTitle: "在 KubeSphere 上部署 GitLab"
 weight: 14310
 ---

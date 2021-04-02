@@ -1,7 +1,7 @@
 ---
 title: "移除 KubeSphere 中的内置应用"
 keywords: "KubeSphere, OpenPitrix, 应用程序, 应用"
-description: "怎样移除 KubeSphere 中的内置应用"
+description: "了解如何下架 KubeSphere 中的内置应用。"
 linkTitle: "移除 KubeSphere 中的内置应用"
 Weight: 16910
 ---

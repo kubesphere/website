@@ -1,7 +1,7 @@
 ---
 title: "容器镜像设置"
 keywords: 'KubeSphere, Kubernetes, 镜像, 工作负载, 设置, 容器'
-description: '如何在 KubeSphere 中设置容器镜像。'
+description: '在为工作负载设置容器镜像时，详细了解仪表板上的不同属性。'
 
 weight: 10280
 ---

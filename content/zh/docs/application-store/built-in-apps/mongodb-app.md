@@ -1,7 +1,7 @@
 ---
 title: "在 KubeSphere 中部署 MongoDB"
 keywords: 'KubeSphere, Kubernetes, 安装, MongoDB'
-description: '如何从 KubeSphere 应用商店部署 MongoDB'
+description: '了解如何从 KubeSphere 应用商店中部署 MongoDB 并访问服务。'
 linkTitle: "在 KubeSphere 中部署 MongoDB"
 weight: 14250
 ---

@@ -1,7 +1,7 @@
 ---
 title: "介绍"
 keywords: 'Kubernetes, 日志, Elasticsearch, Kafka, Fluentd, Pod, 容器, Fluentbit, 输出'
-description: '添加日志接收器的一般性步骤'
+description: '了解集群日志收集的基础知识，包括工具和一般步骤。'
 linkTitle: "介绍"
 weight: 8621
 ---

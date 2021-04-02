@@ -1,7 +1,7 @@
 ---
 title: "KubeSphere 在阿里云 ECS 高可用实例"
 keywords: "Kubesphere 安装， 阿里云， ECS， 高可用性， 高可用性，  负载均衡器"
-description: "本教程用于安装高可用性集群"
+description: "了解如何在阿里云虚拟机上创建高可用的 KubeSphere 集群。"
 
 Weight: 3240
 ---

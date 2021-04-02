@@ -1,7 +1,7 @@
 ---
 title: "企业空间概述"
 keywords: "Kubernetes, KubeSphere, workspace"
-description: "本教程介绍了企业空间的概念，并演示了如何创建和删除企业空间。"
+description: "了解 KubeSphere 企业空间的概念以及如何创建和删除企业空间。"
 
 linkTitle: "企业空间概述"
 weight: 9100

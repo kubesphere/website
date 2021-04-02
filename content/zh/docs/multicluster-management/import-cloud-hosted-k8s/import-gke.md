@@ -1,7 +1,7 @@
 ---
 title: "导入 Google GKE 集群"
 keywords: 'Kubernetes, KubeSphere, 多集群, Google GKE'
-description: '如何导入 Google GKE 集群'
+description: '了解如何导入 Google Kubernetes Engine 集群。'
 titleLink: "导入 Google GKE 集群"
 weight: 5330
 ---

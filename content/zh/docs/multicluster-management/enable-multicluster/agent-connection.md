@@ -1,7 +1,7 @@
 ---
 title: "代理连接"
 keywords: 'Kubernetes, KubeSphere, 多集群, 代理连接'
-description: '如何使用代理来管理多集群'
+description: '了解通过代理连接导入集群的一般步骤。'
 linkTitle: "代理连接"
 weight: 5220
 ---

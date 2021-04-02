@@ -1,7 +1,7 @@
 ---
 title: "在 Google GKE上部署 KubeSphere"
 keywords: 'Kubernetes, KubeSphere, GKE, 安装'
-description: '介绍如何在 Google GKE上部署 KubeSphere'
+description: '了解如何在 Google Kubernetes Engine 上部署 KubeSphere。'
 
 weight: 4240
 ---

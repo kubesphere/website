@@ -1,7 +1,7 @@
 ---
 title: "角色和成员管理"
 keywords: 'KubeSphere, Kubernetes, 角色, 成员, 管理, 项目'
-description: '项目中的角色和成员管理'
+description: '了解如何进行项目访问管理。'
 
 linkTitle: "角色和成员管理"
 weight: 13200

@@ -1,7 +1,7 @@
 ---
 title: "KubeSphere 中的多租户"
 keywords: "Kubernetes, KubeSphere, 多租户"
-description: "理解 KubeSphere 中的多租户"
+description: "理解 KubeSphere 中的多租户架构。"
 linkTitle: "KubeSphere 中的多租户"
 weight: 12100
 ---

@@ -1,7 +1,7 @@
 ---
 title: "集群状态监控"
 keywords: "Kubernetes, KubeSphere, 状态, 监控"
-description: "监控 KubeSphere 集群资源"
+description: "根据不同的指标（包括物理资源、etcd 和 APIServer）监控集群如何运行。"
 linkTitle: "集群状态监控"
 weight: 8200
 ---

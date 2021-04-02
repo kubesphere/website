@@ -1,7 +1,7 @@
 ---
 title: "Web Kubectl"
 keywords: 'KubeSphere, Kubernetes, kubectl, cli'
-description: '使用工具箱中的 Kubectl'
+description: 'KubeSphere 中集成了 Web Kubectl 工具，为 Kubernetes 用户提供一致的用户体验。'
 linkTitle: "Web Kubectl"
 weight: 15400
 ---

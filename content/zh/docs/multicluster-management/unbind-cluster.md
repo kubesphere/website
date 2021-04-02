@@ -1,7 +1,7 @@
 ---
 title: "解绑集群"
 keywords: 'Kubernetes, KubeSphere, 多集群, 混合云'
-description: '阐述如何从 KubeSphere 多集群管理平台解绑集群'
+description: '了解如何从 KubeSphere 的集群池中解除集群的绑定。'
 linkTitle: "解绑集群"
 weight: 5500
 ---

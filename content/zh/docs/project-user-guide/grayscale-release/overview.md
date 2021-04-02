@@ -1,7 +1,7 @@
 ---
 title: "概述"
 keywords: 'Kubernetes, KubeSphere, 灰度发布, 概述, 服务网格'
-description: '灰度发布概述。'
+description: '了解灰度发布的基本概念。'
 linkTitle: "概述"
 weight: 10510
 ---

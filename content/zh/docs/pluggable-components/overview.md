@@ -1,7 +1,7 @@
 ---
 title: "概述"
 keywords: "Kubernetes, KubeSphere, 可插拔组件, 概述"
-description: "可插拔组件的安装概述。"
+description: "了解 KubeSphere 中的关键组件以及对应的资源消耗。"
 linkTitle: "概述"
 weight: 6100
 ---

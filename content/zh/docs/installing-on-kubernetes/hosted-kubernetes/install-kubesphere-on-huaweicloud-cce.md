@@ -1,7 +1,7 @@
 ---
 title: "在华为云 CCE 上安装 KubeSphere"
 keywords: "kubesphere, kubernetes, docker, huawei, cce"
-description: "介绍如何在华为云 CCE 容器引擎上部署 KubeSphere 3.0"
+description: "了解如何在华为云容器引擎上部署 KubeSphere。"
 
 
 weight: 4250

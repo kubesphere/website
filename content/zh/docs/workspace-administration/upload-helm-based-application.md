@@ -1,7 +1,7 @@
 ---
 title: "上传基于 Helm 的应用程序"
 keywords: "Kubernetes, Helm, KubeSphere, OpenPitrix, 应用程序"
-description: "如何向 KubeSphere 上传基于 Helm 的应用程序"
+description: "了解如何向您的企业空间上传基于 Helm 的应用程序用作应用模板。"
 linkTitle: "上传基于 Helm 的应用程序"
 weight: 9200
 ---

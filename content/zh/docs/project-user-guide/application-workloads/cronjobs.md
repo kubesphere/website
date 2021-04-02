@@ -1,7 +1,7 @@
 ---
 title: "定时任务"
 keywords: "KubeSphere, Kubernetes, 任务, 定时任务"
-description: "创建 KubeSphere 定时任务"
+description: "了解定时任务的基本概念以及如何在 KubeSphere 中创建定时任务。"
 linkTitle: "定时任务"
 
 weight: 10260

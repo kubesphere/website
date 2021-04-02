@@ -1,7 +1,7 @@
 ---
 title: "在 KubeSphere 中部署 Memcached"
 keywords: 'Kubernetes, KubeSphere, Memcached, 应用商店'
-description: '如何通过 KubeSphere 应用商店部署 Memcached'
+description: '了解如何从 KubeSphere 应用商店中部署 Memcached 并访问服务。'
 linkTitle: "在 KubeSphere 中部署 Memcached"
 weight: 14230
 ---

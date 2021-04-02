@@ -1,7 +1,7 @@
 ---
 title: "查询"
 keywords: '监控, Prometheus, Prometheus Operator, 查询'
-description: '查询'
+description: '了解如何指定监控指标。'
 linkTitle: "查询"
 weight: 10817
 ---

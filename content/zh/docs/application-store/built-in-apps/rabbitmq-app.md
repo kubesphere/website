@@ -1,7 +1,7 @@
 ---
 title: "在 KubeSphere 中部署 RabbitMQ"
 keywords: 'KubeSphere, RabbitMQ, Kubernetes, 安装'
-description: '如何通过应用商店在 KubeSphere 中部署 RabbitMQ'
+description: '了解如何从 KubeSphere 应用商店中部署 RabbitMQ 并访问服务。'
 
 link title: "在 KubeSphere 中部署 RabbitMQ"
 weight: 14290

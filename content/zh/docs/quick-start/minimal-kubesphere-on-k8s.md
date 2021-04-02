@@ -1,7 +1,7 @@
 ---
 title: "在 Kubernetes 上最小化安装 KubeSphere"
 keywords: 'KubeSphere, Kubernetes, 最小化安装'
-description: '在已有 Kubernetes 集群上安装最小化 KubeSphere'
+description: '了解在现有 Kubernetes 集群上如何使用最小安装包安装 KubeSphere。您可以使用托管在云服务器上或者安装在本地的 Kubernetes 集群。'
 linkTitle: "在 Kubernetes 上最小化安装 KubeSphere"
 weight: 2200
 ---

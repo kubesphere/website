@@ -1,7 +1,7 @@
 ---
 title: "导入阿里云 ACK 集群"
 keywords: 'Kubernetes, KubeSphere, 多集群, 阿里云 ACK'
-description: '如何导入阿里云 ACK 集群'
+description: '了解如何导入阿里云 Kubernetes 集群。'
 titleLink: "导入阿里云 ACK 集群"
 weight: 5310
 ---

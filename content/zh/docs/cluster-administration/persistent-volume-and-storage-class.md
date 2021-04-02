@@ -1,7 +1,7 @@
 ---
 title: "持久卷和存储类型"
 keywords: "存储, 存储卷, PV, PVC, 存储类型, CSI, Ceph RBD, Glusterfs, 青云QingCloud, "
-description: "持久卷和存储类型管理"
+description: "了解 PV、PVC 和存储类型的基本概念，并演示如何在 KubeSphere 中管理存储类型和 PVC。"
 linkTitle: "持久卷和存储类型"
 weight: 8400
 ---

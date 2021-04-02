@@ -1,7 +1,7 @@
 ---
 title: "存储卷快照"
 keywords: 'KubeSphere, Kubernetes, 存储卷, 快照'
-description: '如何在 KubeSphere 中创建和使用存储卷快照。'
+description: '了解如何在 KubeSphere 中管理持久卷的快照。'
 linkTitle: "存储卷快照"
 weight: 10320
 ---
