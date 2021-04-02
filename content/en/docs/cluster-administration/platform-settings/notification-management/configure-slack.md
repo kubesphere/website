@@ -1,7 +1,7 @@
 ---
 title: "Configure Slack Notifications"
 keywords: 'KubeSphere, Kubernetes, Slack, notifications'
-description: 'Configure Slack notifications and add channels to receive notifications for alerting policies.'
+description: 'Configure Slack notifications and add channels to receive notifications from alerting policies, kube-events, and kube-auditing.'
 linkTitle: "Configure Slack Notifications"
 weight: 8724
 ---
@@ -79,7 +79,7 @@ The image below is a Slack notification example:
 {{< notice note >}}
 
 - If you update your Slack notification configuration, KubeSphere will send notifications based on the latest configuration.
-- By default, KubeSphere sends notifications for the same alert about every 12 hours. The notification repeat interval is controlled by `group_interval`, `group_wait` and `repeat_interval` in the Secret `alertmanager-main` in the project `kubesphere-monitoring-system`. You can customize these values but keep in mind that the actual time interval may be slightly different.
+- By default, KubeSphere sends notifications for the same alert about every 12 hours. The notification repeat interval is mainly controlled by `repeat_interval` in the Secret `alertmanager-main` in the project `kubesphere-monitoring-system`. You can customize the interval as needed.
 - As KubeSphere has built-in alerting policies, if you do not set any customized alerting policies, your Slack channel can still receive notifications once a built-in alerting policy is triggered.
 
 {{</ notice >}} 
