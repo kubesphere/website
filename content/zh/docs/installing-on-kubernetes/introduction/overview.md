@@ -1,7 +1,7 @@
 ---
 title: "概述"
 keywords: "KubeSphere, Kubernetes, 安装"
-description: "在已有 Kubernetes 集群上部署 KubeSphere 的一般步骤"
+description: "了解在已有 Kubernetes 集群上部署 KubeSphere 的一般步骤。"
 
 linkTitle: "概述"
 weight: 4110

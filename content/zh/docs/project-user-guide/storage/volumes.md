@@ -1,7 +1,7 @@
 ---
 title: "存储卷"
 keywords: 'Kubernetes, 持久卷, 持久卷申领, 存储卷克隆, 存储卷快照, 存储卷扩容'
-description: '如何创建存储卷、挂载存储卷和通过存储卷详情页面使用存储卷功能。'
+description: '了解如何在 KubeSphere 中创建、编辑和挂载存储卷。'
 linkTitle: "存储卷"
 weight: 10310
 ---

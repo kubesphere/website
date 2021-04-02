@@ -1,7 +1,7 @@
 ---
 title: "服务"
 keywords: 'KubeSphere, Kubernetes, 服务, 工作负载'
-description: '创建 KubeSphere 服务'
+description: '了解服务的基本概念以及如何在 KubeSphere 中创建服务。'
 linkTitle: "服务"
 weight: 10240
 ---

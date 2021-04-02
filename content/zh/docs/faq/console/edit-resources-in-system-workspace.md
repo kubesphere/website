@@ -1,7 +1,7 @@
 ---
 title: "在控制台上编辑系统资源"
 keywords: "系统, 资源, KubeSphere, Kubernetes"
-description: "如何在控制台上编辑系统资源。"
+description: "在控制台上启用对系统资源的编辑功能。"
 linkTitle: '在控制台上编辑系统资源'
 Weight: 16520
 ---

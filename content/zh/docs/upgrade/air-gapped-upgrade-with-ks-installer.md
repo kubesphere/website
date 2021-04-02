@@ -1,7 +1,7 @@
 ---
 title: "使用 ks-installer 离线升级"
 keywords: "离线环境, 升级, kubesphere, v3.0.0"
-description: "离线升级 KubeSphere"
+description: "使用 ks-installer 和离线包升级 KubeSphere。"
 linkTitle: "使用 ks-installer 离线升级"
 weight: 7500
 ---

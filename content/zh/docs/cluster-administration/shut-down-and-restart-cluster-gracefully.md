@@ -1,6 +1,6 @@
 ---
 title: "关闭和重启集群"
-description: "演示如何平稳地关闭和重启 Kubernetes 集群"
+description: "了解如何平稳地关闭和重启集群。"
 layout: "single"
 
 linkTitle: "关闭和重启集群"

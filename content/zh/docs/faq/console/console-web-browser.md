@@ -1,7 +1,7 @@
 ---
 title: "支持的浏览器"
 keywords: "FAQ, 控制台, KubeSphere, Kubernetes"
-description: "KubeSphere 支持的浏览器."
+description: "使用支持的浏览器访问控制台。"
 linkTitle: "支持的浏览器"
 Weight: 16510
 ---

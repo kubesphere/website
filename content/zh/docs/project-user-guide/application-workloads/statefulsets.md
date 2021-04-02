@@ -1,7 +1,7 @@
 ---
 title: "有状态副本集"
 keywords: 'KubeSphere, Kubernetes, 有状态副本集, 仪表板, 服务'
-description: 'Kubernetes StatefulSets'
+description: '了解有状态副本集的基本概念以及如何在 KubeSphere 中创建有状态副本集。'
 linkTitle: "有状态副本集"
 
 weight: 10220

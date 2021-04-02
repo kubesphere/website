@@ -1,7 +1,7 @@
 ---
 title: "在 KubeSphere 中部署 MySQL"
 keywords: 'KubeSphere, Kubernetes, 安装, MySQL'
-description: '如何通过应用商店在 KubeSphere 中部署 MySQL'
+description: '了解如何从 KubeSphere 应用商店中部署 MySQL 并访问服务。'
 
 link title: "在 KubeSphere 中部署 MySQL"
 weight: 14260

@@ -1,7 +1,7 @@
 ---
 title: "历史记录"
 keywords: 'KubeSphere, Kubernetes, 历史记录'
-description: '在工具箱中查看浏览历史记录。'
+description: '了解如何快速切换在企业空间中访问的资源。'
 linkTitle: "历史记录"
 weight: 15500
 ---

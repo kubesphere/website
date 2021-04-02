@@ -1,7 +1,7 @@
 ---
 title: "KubeSphere 日志系统"
 keywords: "Kubernetes, Elasticsearch, KubeSphere, 日志系统, 日志"
-description: "如何启用 KubeSphere 日志系统"
+description: "了解如何启用日志，利用基于租户的系统进行日志收集、查询和管理。"
 linkTitle: "KubeSphere 日志系统"
 weight: 6400
 ---

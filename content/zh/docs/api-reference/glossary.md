@@ -1,7 +1,7 @@
 ---
 title: "词汇表"
 keywords: 'Kubernetes, KubeSphere, DevOps, docker, Helm, Jenkins, Istio, Prometheus, 词汇表'
-description: 'KubeSphere 词汇表'
+description: 'KubeSphere 中使用的词汇表。'
 linkTitle: "词汇表"
 weight: 17100
 ---

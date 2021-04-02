@@ -1,7 +1,7 @@
 ---
 title: "从应用模板部署应用"
 keywords: 'Kubernetes, chart, helm, KubeSphere, 应用程序, 应用模板'
-description: '如何从私有应用仓库的应用模板部署应用。'
+description: '了解如何使用基于 Helm 的模板部署应用程序。'
 linkTitle: "从应用模板部署应用"
 
 weight: 10120

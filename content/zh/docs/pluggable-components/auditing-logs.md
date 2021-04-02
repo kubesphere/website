@@ -1,7 +1,7 @@
 ---
 title: "KubeSphere 审计日志"
 keywords: "Kubernetes, 审计, KubeSphere, 日志"
-description: "如何启用 KubeSphere 审计日志"
+description: "了解如何启用审计来记录平台事件和活动。"
 linkTitle: "KubeSphere 审计日志"
 weight: 6700
 ---

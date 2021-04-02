@@ -1,7 +1,7 @@
 ---
 title: "启用可插拔组件"
 keywords: 'KubeSphere，Kubernetes，可插拔功能组件'
-description: '启用可插拔组件'
+description: '了解如何在 KubeSphere 上启用可插拔组件，以便您全方位地探索 KubeSphere。安装前和安装后均可启用可插拔组件。'
 linkTitle: "启用可插拔组件"
 weight: 2600
 ---

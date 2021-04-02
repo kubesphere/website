@@ -1,7 +1,7 @@
 ---
 title: 任务
 keywords: "KubeSphere, Kubernetes, docker, 任务"
-description: "创建 Kubernetes 任务"
+description: "了解任务的基本概念以及如何在 KubeSphere 中创建任务。"
 linkTitle: "任务"
 
 weight: 10250

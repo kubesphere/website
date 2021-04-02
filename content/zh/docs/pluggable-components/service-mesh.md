@@ -1,7 +1,7 @@
 ---
 title: "KubeSphere 服务网格"
 keywords: "Kubernetes, Istio, KubeSphere, 服务网格, 微服务"
-description: "如何启用 KubeSphere 服务网格"
+description: "了解如何启用服务网格，从而提供不同的流量管理策略进行微服务治理。"
 
 linkTitle: "KubeSphere 服务网格"
 weight: 6800

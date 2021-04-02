@@ -1,7 +1,7 @@
 ---
 title: "KubeSphere 告警和通知系统"
 keywords: "Kubernetes, alertmanager, KubeSphere, 告警, 通知"
-description: "如何启用告警和通知系统"
+description: "了解如何启用告警和通知功能，以便在潜在问题对您的业务造成影响之前提前识别这些问题。"
 linkTitle: "KubeSphere 告警和通知"
 weight: 6600
 ---

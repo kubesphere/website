@@ -1,7 +1,7 @@
 ---
 title: "在 Azure AKS 上部署 KubeSphere"
 keywords: "KubeSphere, Kubernetes, 安装, Azure, AKS"
-description: "如何在 AKS 上部署 KubeSphere"
+description: "了解如何在 Azure Kubernetes 服务上部署 KubeSphere。"
 
 weight: 4210
 ---

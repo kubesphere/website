@@ -1,7 +1,7 @@
 ---
 title: "删除应用后复用相同应用名称"
 keywords: "KubeSphere, OpenPitrix, 应用程序, 应用"
-description: "如何在删除应用后复用相同应用名称"
+description: "了解如何在删除应用后复用相同应用名称。"
 linkTitle: "删除应用后复用相同应用名称"
 Weight: 16920
 ---

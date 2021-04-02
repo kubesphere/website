@@ -1,7 +1,7 @@
 ---
 title: "KubeSphere 应用商店"
 keywords: "Kubernetes, KubeSphere, app-store, OpenPitrix"
-description: "如何启用 KubeSphere 应用商店"
+description: "了解如何启用应用商店，一个可以在内部实现数据和应用共享、并制定应用交付流程的行业标准的组件。"
 
 linkTitle: "KubeSphere 应用商店"
 weight: 6200

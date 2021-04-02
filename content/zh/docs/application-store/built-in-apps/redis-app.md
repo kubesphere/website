@@ -1,7 +1,7 @@
 ---
 title: "在 KubeSphere 中部署 Redis"
 keywords: 'KubeSphere, Kubernetes, 安装, Redis'
-description: '如何从 KubeSphere 应用商店部署 Redis'
+description: '了解如何从 KubeSphere 应用商店中部署 Redis 并访问服务。'
 linkTitle: "在 KubeSphere 中部署 Redis"
 weight: 14291
 ---

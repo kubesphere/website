@@ -1,7 +1,7 @@
 ---
 title: "部署并访问 Bookinfo"
 keywords: 'KubeSphere, Kubernetes, Bookinfo, Istio'
-description: '在 K8s 上部署 Bookinfo 并通过 NodePort 访问该应用'
+description: '通过部署示例应用程序 Bookinfo 来探索 KubeSphere 服务网格的基本功能。'
 linkTitle: "部署并访问 Bookinfo"
 weight: 2400
 ---
@@ -87,9 +87,10 @@ KubeSphere 会自动创建主机名。若要更改主机名，请将鼠标悬停
     
     {{< notice warning >}}
     
+
 请勿直接复制上述内容到本地 hosts 文件，请将其替换成您自己的 IP 地址与主机名。
 {{</ notice >}}
- 
+
 
 5. 完成后，点击**点击访问**按钮访问该应用。
 

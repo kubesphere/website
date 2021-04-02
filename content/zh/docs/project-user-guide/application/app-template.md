@@ -1,7 +1,7 @@
 ---
 title: "应用模板"
 keywords: 'Kubernetes, chart, Helm, KubeSphere, 应用程序, 仓库, 模板'
-description: '应用模板是什么。'
+description: '了解应用模板的概念以及它们如何在企业内部帮助部署应用程序。'
 linkTitle: "应用模板"
 weight: 10110
 ---
