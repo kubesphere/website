@@ -97,11 +97,6 @@ KubeSphere 中的图形编辑面板包含用于 Jenkins [阶段 (Stage)](https:/
 
    ![流水线列表](/images/docs/zh-cn/devops-user-guide/use-devops/create-a-pipeline-using-graphical-editing-panel/pipeline-list.PNG)
    
-   {{< notice note >}}
-   
-   **同步状态**栏显示 KubeSphere 与 Jenkins 的同步结果，如果同步成功，您会看到该栏显示**成功**图标。
-   
-   {{</ notice >}}
 
 ### 步骤 4：编辑流水线
 
@@ -318,7 +313,7 @@ KubeSphere 中的图形编辑面板包含用于 Jenkins [阶段 (Stage)](https:/
 
    {{< notice note >}}
 
-   在 KubeSphere 3.1 中，只有流水线创建者、拥有该工程管理员角色的帐户或者您在该步骤指定的帐户才有权限继续或终止流水线。
+   在 KubeSphere 3.1 中，能够运行流水线的帐户也能够继续或终止该流水线。此外，流水线创建者、拥有该工程管理员角色的帐户或者您指定的帐户也有权限继续或终止流水线。
 
    {{</ notice >}}
 

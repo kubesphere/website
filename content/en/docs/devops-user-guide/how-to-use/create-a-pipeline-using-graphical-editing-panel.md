@@ -97,11 +97,6 @@ You can use the account `project-admin` to create the project. Besides, this acc
 
    ![pipeline-list](/images/docs/devops-user-guide/using-devops/create-a-pipeline-using-graphical-editing-panels/pipeline-list.jpg)
    
-   {{< notice note >}}
-   
-   The **Sync Status** colume shows the synchronization result between KubeSphere and Jenkins, and you can see the icon of **Success** if the synchronization is successful.
-   
-   {{</ notice >}}
 
 ### Step 4: Edit the pipeline
 
@@ -318,7 +313,7 @@ This stage uses SonarQube to test your code. You can skip this stage if you do n
 
    {{< notice note >}}
 
-   In KubeSphere v3.1, only pipeline creator, account with the role of admin in the project, or the account you specify in the step will have the authority to continue or terminate the pipeline.
+   In KubeSphere v3.1, the account that can run the pipeline will be able to continue or terminate the pipeline if there is no approver specified. Moreover, pipeline creator, account with the role of admin in the project, or the account you specify will have the authority to continue or terminate the pipeline.
 
    {{</ notice >}}
 

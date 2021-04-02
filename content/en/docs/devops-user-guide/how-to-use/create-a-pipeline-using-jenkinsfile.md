@@ -201,7 +201,7 @@ The account `project-admin` needs to be created in advance since it is the revie
 
 ### Step 5: Run a pipeline
 
-1. After a pipeline is created, it displays in the list below. The **Sync Status** colume shows the synchronization result between KubeSphere and Jenkins, and you can see the icon of **Success** if the synchronization is successful. Click it to go to its detail page.
+1. After a pipeline is created, it displays in the list below. Click it to go to its detail page.
 
    ![pipeline-list](/images/docs/devops-user-guide/using-devops/create-a-pipeline-using-a-jenkinsfile/pipeline-list.jpg)
 
@@ -248,7 +248,7 @@ The account `project-admin` needs to be created in advance since it is the revie
    
    {{< notice note >}}
    
-   In KubeSphere v3.1, only pipeline creator, account with the role of admin in the project, or the account you specify will have the authority to continue or terminate the pipeline.
+   In KubeSphere v3.1, the account that can run the pipeline will be able to continue or terminate the pipeline if there is no approver specified. Moreover, pipeline creator, account with the role of admin in the project, or the account you specify will have the authority to continue or terminate the pipeline.
    
    {{</ notice >}}
 
