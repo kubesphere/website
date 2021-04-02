@@ -174,24 +174,40 @@ KubeSphere 的多租户系统分三个层级，即**群集**、**企业空间**�
 
 完成上述步骤后，您已了解可以为不同级别的用户授予不同角色。先前步骤中使用的角色都是 KubeSphere 提供的内置角色。在此步骤中，您将学习如何创建自定义角色以满足工作需求。
 
-1. 再次以 `admin` 身份登录控制台，然后转到**访问控制**。
-2. **帐户角色**中列出了四个系统角色，无法删除或编辑。点击**创建**并设置**角色标识符**。在本示例将创建一个名为 `roles-manager` 的角色。
+1. 再次以 `admin` 身份登录 KubeSphere Web 控制台，转到**访问控制**。
 
-   ![创建角色](/images/docs/zh-cn/quickstart/create-workspaces-projects-accounts/创建角色.jpg)
-
-   {{< notice note >}}
-建议您输入角色说明解释此角色的用途。此处创建的角色将仅负责角色管理，包括添加和删除角色。
-   {{</ notice >}}
-
-   点击**编辑权限**继续。
-
-3. 在**访问控制**中，选择该角色所拥有的权限。例如，本示例选择**帐户查看**、**角色管理**和**角色查看**。点击**确定**完成创建。
-
-   ![编辑权限](/images/docs/zh-cn/quickstart/create-workspaces-projects-accounts/编辑权限.jpg)
+2. 点击左侧导航栏中的**帐户角色**，再点击右侧的**创建**。
 
    {{< notice note >}}
-某些权限**依赖于**其他权限。要选择从属的权限，必须选择其依赖的权限。
+
+   **帐户角色**页面的预设角色无法编辑或删除。
+
    {{</ notice >}}
+
+3. 在**创建帐户角色**对话框中，设置角色标识符（例如，`clusters-admin`）、角色名称和描述信息，然后点击**编辑权限**。
+
+   {{< notice note >}}
+
+   本示例演示如何创建负责集群管理的角色。
+
+   {{</ notice >}}
+
+4. 在**编辑权限**对话框中，设置角色权限（例如，选择**集群管理**）并点击**确定**。
+
+   {{< notice note >}}
+
+   * 在本示例中，角色 `clusters-admin` 包含**集群管理**和**集群查看**权限。
+   * 一些权限依赖于其他权限，依赖项由每项权限下的**依赖于**字段指定。
+   * 选择权限后，将自动选择它所依赖的权限。
+   * 若要取消选择权限，则需要首先取消选择其从属权限。
+
+   {{</ notice >}}
+
+5. On the **Account Roles** page, you can click the name of the created role to view the role details and click <img src="/images/docs/quickstart/create-workspaces-projects-accounts/operation-icon.png" width="20px" align="center"> to edit or delete the role.在**帐户角色**页面，可以点击所创建角色的名称查看角色详情，点击以编辑或删除角色。
+
+6. On the **Accounts** page, you can assign the role to an account when you create an account or edit an existing account.在**帐户管理**页面，
+
+
 
 4. 新创建的角色将列于**帐户角色**中，可以点击右侧的三个点对其进行编辑。
 
