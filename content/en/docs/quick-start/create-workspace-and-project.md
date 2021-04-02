@@ -6,7 +6,7 @@ linkTitle: "Create Workspaces, Projects, Accounts and Roles"
 weight: 2300
 ---
 
-This quickstart demonstrates how to create workspaces, roles and user accounts which are required for the other tutorials. Meanwhile, you will learn how to create projects and DevOps projects within your workspace where your workloads are running. After this tutorial, you will become familiar with the multi-tenant management system of KubeSphere.
+This quickstart demonstrates how to create workspaces, roles and user accounts which are required for other tutorials. Meanwhile, you will learn how to create projects and DevOps projects within your workspace where your workloads are running. After this tutorial, you will become familiar with the multi-tenant management system of KubeSphere.
 
 ## Prerequisites
 
