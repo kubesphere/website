@@ -168,37 +168,39 @@ If you want to expose services using the type `LoadBalancer`, you need to use th
 
 After you finish the above steps, you know that users can be granted different roles at different levels. The roles used in previous steps are all built-in ones created by KubeSphere itself. In this step, you will learn how to define a customized role to meet the needs in your work.
 
-1. Log in to the console as `admin` again and go to **Access Control**.
+1. Log in to the KubeSphere web console as `admin` again and go to **Access Control**. 
 
-2. In **Account Roles**, there are four system roles listed which cannot be deleted or edited. Click **Create** and set a **Role Identifier**. In this example, a role named `roles-manager` will be created.
-
-   ![customized-role](/images/docs/quickstart/create-workspaces-projects-accounts/customized-role.png)
+2. Click **Account Roles** on the left navigation bar and **Create** on the right.
 
    {{< notice note >}}
-It is recommended you enter a description for the role as it explains what the role is used for. The role created here will be responsible for role management only, including adding and deleting roles.
+
+   The preset roles on the **Account Roles** page cannot be edited and deleted.
+
    {{</ notice >}}
 
-   Click **Edit Authorization** to continue.
-
-3. In **Access Control**, select the authorization that you want this role to contain. For example, **Users View**, **Roles Management** and **Roles View** are selected for this role. Click **OK** to finish.
-
-   ![edit-authorization](/images/docs/quickstart/create-workspaces-projects-accounts/edit-authorization.png)
+3. In the **Create Account Role** dialog box, set the name (for example, `clusters-admin`), alias, and description of the role, and click **Edit Permissions**.
 
    {{< notice note >}}
-   **Depend on** means the major authorization (the one listed after **Depend on**) needs to be selected first so that the affiliated authorization can be assigned.
+
+   This example demonstrates how to create a role responsible for cluster management.
+
    {{</ notice >}}
 
-4. Newly-created roles will be listed in **Account Roles**. You can click the three dots on the right to edit it.
-
-   ![roles-manager](/images/docs/quickstart/create-workspaces-projects-accounts/roles-manager.png)
-
-5. In **Accounts**, you can add a new account and grant it the role `roles-manager` or change the role of an existing account to `roles-manager` by editing it.
-
-   ![edit-role](/images/docs/quickstart/create-workspaces-projects-accounts/edit-role.png)
+4. In the **Edit Permissions** dialog box, set the role permissions (for example, select **Cluster Management**) and click **OK**.
 
    {{< notice note >}}
-   The role of `roles-manager` overlaps with `users-manager` while the latter is also capable of user management. This example is only for demonstration purposes. You can create customized roles based on your needs.
+
+   * In this example, the role `clusters-admin` contains the permissions **Cluster Management** and **Cluster Viewing**.
+   * Some permissions depend on other permissions. The dependency is specified by the **Depends on** field under each permission.
+   * When a permission is selected, the permission it depends on is automatically selected.
+   * To deselect a permission, you need to deselect its subordinate permissions first.
+
    {{</ notice >}}
+
+5. On the **Account Roles** page, you can click the name of the created role to view the role details and click <img src="/images/docs/quickstart/create-workspaces-projects-accounts/operation-icon.png" width="20px" align="center"> to edit or delete the role.
+
+6. On the **Accounts** page, you can assign the role to an account when you create an account or edit an existing account.
+
 
 ### Step 5: Create a DevOps project (Optional)
 
