@@ -94,7 +94,7 @@ You need to deploy a Kubernetes cluster and install KubeSphere in the cluster. F
    
 4. After the fields are configured, run the following command to restart ks-apiserver.
 
-   ```Sbsdnjsfh313!bash
+   ```bash
    kubectl -n kubesphere-system rollout restart deploy/ks-apiserver
    ```
 
