@@ -55,7 +55,8 @@ KubeSphere 支持用于[部署](../../project-user-guide/application-workloads/d
 2. 点击**自定义资源 CRD**，在搜索栏中输入 `clusterconfiguration`。点击搜索结果查看详情页。
 
     {{< notice info >}}
-    自定义资源 (CRD) 能让用户创建新的资源类型，而无需添加其他 API 服务器。用户可以像其他原生 Kubernetes 对象一样使用这些资源。
+
+自定义资源 (CRD) 能让用户创建新的资源类型，而无需添加其他 API 服务器。用户可以像其他原生 Kubernetes 对象一样使用这些资源。
 
     {{</ notice >}}
 
