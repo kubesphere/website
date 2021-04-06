@@ -12,11 +12,6 @@ weight: 2300
 
 KubeSphere 需要安装在您的机器中。
 
-## 视频演示
-
-<video controls="controls" style="width: 100% !important; height: auto !important;">
-  <source type="video/mp4" src="https://kubesphere-docs.pek3b.qingstor.com/website/docs-v3.0/%E5%BF%AB%E9%80%9F%E5%85%A5%E9%97%A8_1_%E5%88%9B%E5%BB%BA%E4%BC%81%E4%B8%9A%E7%A9%BA%E9%97%B4%E9%A1%B9%E7%9B%AE%E8%B4%A6%E6%88%B7%E5%92%8C%E8%A7%92%E8%89%B2.mp4">
-</video>
 
 ## 预计时间
 
@@ -24,9 +19,9 @@ KubeSphere 需要安装在您的机器中。
 
 ## 架构
 
-KubeSphere 的多租户系统分三个层级，即**群集**、**企业空间**和**项目**。KubeSphere 中的项目等同于 Kubernetes 的[命名空间](https://kubernetes.io/zh/docs/concepts/overview/working-with-objects/namespaces/)。
+KubeSphere 的多租户系统分**三个**层级，即集群、企业空间和项目。KubeSphere 中的项目等同于 Kubernetes 的[命名空间](https://kubernetes.io/zh/docs/concepts/overview/working-with-objects/namespaces/)。
 
-您需要创建一个新的企业空间进行操作，而不是使用系统企业空间，该企业空间中运行着系统资源，绝大部分仅供查看。出于安全考虑，强烈建议给不同的租户授予不同的权限在企业空间中进行协作。
+您需要创建一个新的[企业空间](../../workspace-administration/what-is-workspace/)进行操作，而不是使用系统企业空间，系统企业空间中运行着系统资源，绝大部分仅供查看。出于安全考虑，强烈建议给不同的租户授予不同的权限在企业空间中进行协作。
 
 您可以在一个 KubeSphere 集群中创建多个企业空间，每个企业空间下可以创建多个项目。KubeSphere 为每个级别默认设有多个内置角色。此外，您还可以创建拥有自定义权限的角色。KubeSphere 多层次结构适用于具有不同团队或组织以及每个团队中需要不同角色的企业用户。
 
@@ -36,7 +31,7 @@ KubeSphere 的多租户系统分三个层级，即**群集**、**企业空间**�
 
 安装 KubeSphere 之后，您需要向平台添加具有不同角色的用户，以便他们可以针对自己授权的资源在不同的层级进行工作。一开始，系统默认只有一个帐户 `admin`，具有 `platform-admin` 角色。在本步骤中，您将创建一个帐户 `user-manager`，然后使用 `user-manager` 创建新帐户。
 
-1. 使用默认帐户和密码 (`admin/P@88w0rd`) 以 `admin` 身份登录 Web 控制台。
+1. 以 `admin` 身份使用默认帐户和密码 (`admin/P@88w0rd`) 登录 Web 控制台。
 
    {{< notice tip >}}
    出于安全考虑，强烈建议您在首次登录控制台时更改密码。若要更改密码，在右上角的下拉菜单中选择**个人设置**，在**密码设置**中设置新密码，您也可以在**个人设置**中修改控制台语言。
@@ -86,7 +81,7 @@ KubeSphere 的多租户系统分三个层级，即**群集**、**企业空间**�
 
 ### 步骤 2：创建企业空间
 
-在此步骤中，您需要使用上一个步骤中创建的帐户 `ws-manager` 创建一个企业空间。作为管理项目、DevOps 工程和组织成员的基本逻辑单元，企业空间是 KubeSphere 多租户系统的基础。
+在本步骤中，您需要使用上一个步骤中创建的帐户 `ws-manager` 创建一个企业空间。作为管理项目、DevOps 工程和组织成员的基本逻辑单元，企业空间是 KubeSphere 多租户系统的基础。
 
 1. 以 `ws-manager` 身份登录 KubeSphere，它具有管理平台上所有企业空间的权限。点击左上角的**平台管理**，选择**访问控制**。在**企业空间**中，可以看到仅列出了一个默认企业空间 `system-workspace`，即系统企业空间，其中运行着与系统相关的组件和服务，您无法删除该企业空间。
 
@@ -154,7 +149,7 @@ KubeSphere 的多租户系统分三个层级，即**群集**、**企业空间**�
 具有 `operator` 角色的用户是项目维护者，可以管理项目中除用户和角色以外的资源。
    {{</ notice >}}
 
-6. 在创建[路由](../../project-user-guide/application-workloads/ingress/)（即 Kubernetes 中的 [Ingress](https://kubernetes.io/docs/concepts/services-networking/ingress/)）之前，需要启用该项目的网关。网关是在项目中运行的 [NGINX Ingress 控制器](https://github.com/kubernetes/ingress-nginx)。若要设置网关，请转到**项目设置**中的**高级设置**，然后点击**设置网关**。此步骤中仍使用帐户 `project-admin`。
+6. 在创建[应用路由](../../project-user-guide/application-workloads/routes/)（即 Kubernetes 中的 [Ingress](https://kubernetes.io/docs/concepts/services-networking/ingress/)）之前，需要启用该项目的网关。网关是在项目中运行的 [NGINX Ingress 控制器](https://github.com/kubernetes/ingress-nginx)。若要设置网关，请转到**项目设置**中的**高级设置**，然后点击**设置网关**。此步骤中仍使用帐户 `project-admin`。
 
    ![设置网关](/images/docs/zh-cn/quickstart/create-workspaces-projects-accounts/设置网关.jpg)
 
@@ -203,23 +198,9 @@ KubeSphere 的多租户系统分三个层级，即**群集**、**企业空间**�
 
    {{</ notice >}}
 
-5. On the **Account Roles** page, you can click the name of the created role to view the role details and click <img src="/images/docs/quickstart/create-workspaces-projects-accounts/operation-icon.png" width="20px" align="center"> to edit or delete the role.在**帐户角色**页面，可以点击所创建角色的名称查看角色详情，点击以编辑或删除角色。
+5. 在**帐户角色**页面，可以点击所创建角色的名称查看角色详情，点击<img src="/images/docs/zh-cn/quickstart/create-workspaces-projects-accounts/operation-icon.png" width="20px" align="center">以编辑或删除角色。
 
-6. On the **Accounts** page, you can assign the role to an account when you create an account or edit an existing account.在**帐户管理**页面，
-
-
-
-4. 新创建的角色将列于**帐户角色**中，可以点击右侧的三个点对其进行编辑。
-
-   ![编辑角色](/images/docs/zh-cn/quickstart/create-workspaces-projects-accounts/编辑角色.jpg)
-
-5. 在**帐户管理**中，添加一个新帐户并授予其 `roles-manager` 角色，您也可以通过编辑将现有帐户的角色更改为 `roles-manager`。
-
-   ![编辑帐户角色](/images/docs/zh-cn/quickstart/create-workspaces-projects-accounts/编辑帐户角色.jpg)
-
-   {{< notice note >}}
-`roles-manager` 的角色与 `users-manager` 重叠，而后者还可以进行用户管理。本示例仅用于演示目的，您可以根据需要创建自定义角色。
-   {{</ notice >}}
+6. 在**帐户管理**页面，可以在创建帐户或编辑现有帐户时为帐户分配角色。
 
 ### 步骤 5：创建 DevOps 工程（可选）
 
