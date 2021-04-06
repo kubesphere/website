@@ -64,7 +64,7 @@ A Custom Resource Definition (CRD) allows users to create a new type of resource
 
     {{< notice note >}}
 
-    `metering` needs to be aligned with other pluggable components in the YAML file.
+`metering` needs to be aligned with other pluggable components in the YAML file.
 
     {{</ notice >}} 
 
