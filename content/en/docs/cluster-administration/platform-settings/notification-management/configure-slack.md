@@ -46,7 +46,7 @@ You must provide the Slack token on the console for authentication so that KubeS
 
 5. Under **Channel Settings**, enter a Slack channel where you want to receive notifications and click **Add**.
 
-6. After it is added, the channel will be listed under **Channel List**. You can add multiple channels so that all of them will be able to receive notifications of alerts.
+6. After it is added, the channel will be listed under **Channel List**. You can add up to 20 channels and all of them will be able to receive notifications of alerts.
 
    {{< notice note >}}
 
