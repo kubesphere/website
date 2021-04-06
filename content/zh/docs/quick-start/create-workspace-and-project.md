@@ -198,9 +198,9 @@ KubeSphere 的多租户系统分**三个**层级，即集群、企业空间和�
 
    {{</ notice >}}
 
-5. 在**帐户角色**页面，可以点击所创建角色的名称查看角色详情，点击<img src="/images/docs/zh-cn/quickstart/create-workspaces-projects-accounts/operation-icon.png" width="20px" align="center">以编辑或删除角色。
+5. 在**帐户角色**页面，可以点击所创建角色的名称查看角色详情，点击 <img src="/images/docs/zh-cn/quickstart/create-workspaces-projects-accounts/operation-icon.png" width="20px" align="center"> 以编辑或删除该角色。
 
-6. 在**帐户管理**页面，可以在创建帐户或编辑现有帐户时为帐户分配角色。
+6. 在**帐户管理**页面，可以在创建帐户或编辑现有帐户时为帐户分配该角色。
 
 ### 步骤 5：创建 DevOps 工程（可选）
 
