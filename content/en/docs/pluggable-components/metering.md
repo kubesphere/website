@@ -12,7 +12,7 @@ KubeSphere Metering helps you track information about resource usage at differen
 
 ## Enable KubeSphere Metering before Installation
 
-### **Installing on Kubernetes**
+### Installing on Kubernetes
 
 As you [install KubeSphere on Kubernetes](../../installing-on-kubernetes/introduction/overview/), you can enable KubeSphere Metering first in the [cluster-configuration.yaml](https://github.com/kubesphere/ks-installer/releases/download/v3.0.0/cluster-configuration.yaml) file.
 
