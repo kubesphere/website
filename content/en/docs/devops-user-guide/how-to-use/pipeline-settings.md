@@ -6,7 +6,7 @@ linkTitle: "Pipeline Settings"
 weight: 11280
 ---
 
-When you create a pipeline, you can customize its configurations through various settings. This document illustrates the settings when creating a pipeline.
+When you create a pipeline, you can customize its configurations through various settings. This document illustrates these settings in detail.
 
 ## Prerequisites
 
@@ -19,7 +19,7 @@ When you create a pipeline, you can customize its configurations through various
 
 ![basic-info-tab](/images/docs/devops-user-guide/using-devops/pipeline-settings/basic-info-tab.png)
 
-On the **Basic Info** tab, you can customize the following information:
+On the **Basic Information** tab, you can customize the following information:
 
 - **Name**. The name of the pipeline. Pipelines in the same DevOps project must have different names.
 
@@ -77,7 +77,7 @@ On the **Basic Info** tab, you can customize the following information:
 
 If you selected a code repository, you can customize the following configurations on the **Advanced Settings** tab:
 
-**Branches Settings**
+**Branch Settings**
 
 ![branch-settings](/images/docs/devops-user-guide/using-devops/pipeline-settings/branch-settings.png)
 
@@ -136,7 +136,7 @@ The field of **Script Path** specifies the Jenkinsfile path in the code reposito
 
 ![scan-repo-trigger](/images/docs/devops-user-guide/using-devops/pipeline-settings/scan-repo-trigger.png)
 
-You can check **Enable regular expressions, ignoring names that do not match the provided regular expression (including branches and PR, etc.)** to specify a regular expression as the trigger for scanning the code repository.
+You can check **Enable regular expressions, ignoring names that do not match the provided regular expression (including branches and PRs)** to specify a regular expression as the trigger for scanning the code repository.
 
 You can also check **If not, scan regularly** and set the scan interval from the drop-down list.
 
@@ -168,7 +168,7 @@ If you don't select a code repository, you can customize the following configura
 
 ![build-settings](/images/docs/devops-user-guide/using-devops/pipeline-settings/build-settings.png)
 
-**Discard old builds** determines when the build records under the branch will be discarded. The build record includes the console output, archive artifacts, and other metadata related to a particular build. Keeping less builds saves disk space used by Jenkins. KubeSphere provides two options to determine when old builds are discarded:
+**Discard old builds** determines when the build records under the branch will be discarded. The build record includes the console output, archived artifacts, and other metadata related to a particular build. Keeping fewer builds saves disk space used by Jenkins. KubeSphere provides two options to determine when old builds are discarded:
 
 - **Days to keep build**. The build will be discarded after a certain number of days.
 
@@ -186,7 +186,7 @@ If you don't select a code repository, you can customize the following configura
 
 ![parametric-build](/images/docs/devops-user-guide/using-devops/pipeline-settings/parametric-build.png)
 
-The parameterized build process allows you to pass in one or more parameters when you start to run a pipeline. KubeSphere provides five types of parameters by default, including **String**, **Text**, **Boolean**, **Choice**, and **Password**. When parameterizing a project, the build is replaced with a parameterized build, which prompts the user to enter a value for each defined parameter.
+The parameterized build process allows you to pass in one or more parameters when you start to run a pipeline. KubeSphere provides five types of parameters by default, including **String**, **Text**, **Boolean**, **Choice**, and **Password**. When you parameterize a project, the build is replaced with a parameterized build, which prompts the user to enter a value for each defined parameter.
 
 **Build Trigger**
 
