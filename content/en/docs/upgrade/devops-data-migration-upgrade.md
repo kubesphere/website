@@ -1,8 +1,8 @@
 ---
-title: "DevOps Data Migration during Upgrade"
+title: "KubeSphere DevOps Data Migration during Upgrade"
 keywords: "Kubernetes, Upgrade, KubeSphere, v2.1.0, v3.0.0, DevOps"
-description: "Understand the DevOps data migration and its risks during upgrade."
-linkTitle: "DevOps Data Migration during Upgrade"
+description: "Understand the KubeSphere DevOps data migration and its risks during upgrade."
+linkTitle: "KubeSphere DevOps Data Migration during Upgrade"
 weight: 7700
 ---
 
