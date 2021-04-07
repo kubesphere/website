@@ -39,7 +39,7 @@ On the **Basic Info** tab, you can customize the following information:
 
   {{</ tab >}}
 
-  {{< tab "GitHub" >}}
+  {{< tab "GitLab" >}}
 
   ![code-source-gitlab](/images/docs/devops-user-guide/using-devops/pipeline-settings/code-source-gitlab.png)
 
@@ -124,7 +124,7 @@ In **Behavioral strategy**, KubeSphere offers four strategies by default. As a J
 - **Contributors**. The users who make contributions to the PR.
 - **Everyone**. Every user who can access the PR.
 - **From users with Admin or Write permission**. Only from users with Admin or Write permission to the PR.
-- **Nobody**.
+- **Nobody**. If you select this option, no PR will be discovered despite the option you select in **Pull Strategy**.
 
 **Script Path**
 
@@ -158,7 +158,7 @@ You can select a pipeline from the drop-down list for **When Create Pipeline** a
 
 ![webhook-push](/images/docs/devops-user-guide/using-devops/pipeline-settings/webhook-push.png)
 
-**Webhook Push** is an efficient way to allow pipelines to discover changes in the remote code repository and automatically trigger a new running. Webhook should be the primary method to trigger Jenkins automatic scanning for GitHub and Git (e.g. GitLab), while 
+**Webhook Push** is an efficient way to allow pipelines to discover changes in the remote code repository and automatically trigger a new running. Webhook should be the primary method to trigger Jenkins automatic scanning for GitHub and Git (e.g. GitLab). 
 
 ### Advanced Settings with No Code Repository Selected
 
@@ -168,7 +168,7 @@ If you don't select a code repository, you can customize the following configura
 
 ![build-settings](/images/docs/devops-user-guide/using-devops/pipeline-settings/build-settings.png)
 
-**Discard Old Builds** determines when the build records under the branch will be discarded. The build record includes the console output, archive artifacts, and other metadata related to a particular build. Keeping less builds saves disk space used by Jenkins. KubeSphere provides two options to determine when old builds are discarded:
+**Discard old builds** determines when the build records under the branch will be discarded. The build record includes the console output, archive artifacts, and other metadata related to a particular build. Keeping less builds saves disk space used by Jenkins. KubeSphere provides two options to determine when old builds are discarded:
 
 - **Days to keep build**. The build will be discarded after a certain number of days.
 
@@ -180,7 +180,7 @@ If you don't select a code repository, you can customize the following configura
 
   {{</ notice >}}
 
-- **No Concurrent Builds**. If you check this option, you cannot run multiple builds concurrently.
+- **No concurrent builds**. If you check this option, you cannot run multiple builds concurrently.
 
 **Parametric Build**
 
@@ -192,8 +192,8 @@ The parameterized build process allows you to pass in one or more parameters whe
 
 ![build-trigger-2](/images/docs/devops-user-guide/using-devops/pipeline-settings/build-trigger-2.png)
 
-- **Scheduled Build**. It enables builds with a specified schedule. You can click **CRON** to refer to the detailed cron syntax.
-- **Trigger a Remote Build (for example, using a script)**. If you need to access a predefined URL to remotely trigger the build, you have to check it and provide an authentication token so that only the user who has the token can remotely trigger the build.
+- **Scheduled build**. It enables builds with a specified schedule. You can click **CRON** to refer to the detailed cron syntax.
+- **Trigger a remote build (for example, using a script)**. If you need to access a predefined URL to remotely trigger the build, you have to check it and provide an authentication token so that only the user who has the token can remotely trigger the build.
 
 
 
