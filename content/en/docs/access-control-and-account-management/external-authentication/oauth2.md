@@ -3,7 +3,7 @@ title: "OAuth2 Identity Providers"
 keywords: 'Kubernetes, KubeSphere, OAuth2, Identity Provider'
 description: 'Integrate external OAuth2 providers with KubeSphere using the standard OAuth2 protocol.'
 linkTitle: "OAuth2 Identity Providers"
-weight: 12220
+weight: 12230
 ---
 
 ## Overview
