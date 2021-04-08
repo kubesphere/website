@@ -108,3 +108,29 @@ iptables-hphgf                                    1/1     Running   0          5
 {{</ tab >}}
 
 {{</ tabs >}}
+
+## Custom Configurations
+
+After you enable KubeEdge, you can manually create a [ConfigMap](../../project-user-guide/configuration/configmaps/) to customize some configurations, such as the download URL of `keadm` and the version of KubeEdge. Local configurations will be dynamically updated based on the ConfigMap.
+
+Here is an example of the ConfigMap:
+
+```yaml
+apiVersion: v1
+data:
+  region: zh
+  url: ""
+  version: v1.6.1 # The default installed version of KubeEdge.
+kind: ConfigMap
+metadata:
+  annotations:
+    kubectl.kubernetes.io/last-applied-configuration: |
+      {"apiVersion":"v1","data":{"region":"zh","url":"","version":"v1.6.1"},"kind":"ConfigMap","metadata":{"annotations":{},"name":"edge-watcher-config","namespace":"kubeedge"}}
+  creationTimestamp: "2021-03-25T06:42:01Z"
+  name: edge-watcher-config
+  namespace: kubeedge
+  resourceVersion: "4767885"
+  selfLink: /api/v1/namespaces/kubeedge/configmaps/edge-watcher-config
+  uid: 1cbb26c8-51be-438d-ac3c-8d99024abc4c
+```
+

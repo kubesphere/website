@@ -16,7 +16,7 @@ For more information about different components of KubeEdge, see [the KubeEdge d
 
 {{</ notice >}} 
 
-After an edge node joins your cluster, the native KubeEdge cloud component requires you to manually configure iptables so that you can use commands such as `kubectl logs` and `kubectl exec`. In this connection, KubeSphere features an efficient and convenient way to add edge nodes to a Kubernetes cluster. It uses supporting components (for example, EdgeWatcher and IPTables-Operator) to automatically configure iptables.
+After an edge node joins your cluster, the native KubeEdge cloud component requires you to manually configure iptables so that you can use commands such as `kubectl logs` and `kubectl exec`. In this connection, KubeSphere features an efficient and convenient way to add edge nodes to a Kubernetes cluster. It uses supporting components (for example, EdgeWatcher) to automatically configure iptables.
 
 ![edge-watcher](/images/docs/installing-on-linux/add-and-delete-nodes/add-edge-nodes/edge-watcher.png)
 
@@ -25,10 +25,18 @@ This tutorial demonstrates how to add an edge node to your cluster.
 ## Prerequisites
 
 - You have enabled [KubeEdge](../../../pluggable-components/kubeedge/).
-- You have an available node to serve as an edge node with [Docker](https://docs.docker.com/engine/install/) 19.03.12 or later installed. The node can run either Ubuntu (recommended) or CentOS. This tutorial uses Ubuntu 18.04 as an example.
+- You have an available node to serve as an edge node. The node can run either Ubuntu (recommended) or CentOS. This tutorial uses Ubuntu 18.04 as an example.
 - Edge nodes, unlike Kubernetes cluster nodes, should work in a separate network.
 
 ## Configure an Edge Node
+
+You need to install a container runtime and configure EdgeMesh on your edge node.
+
+### Install a container runtime
+
+[KubeEdge](https://docs.kubeedge.io/en/docs/) supports several container runtimes including Docker, containerd, CRI-O and Virtlet. For more information, see [the KubeEdge documentation](https://docs.kubeedge.io/en/docs/advanced/cri/).
+
+### Configure EdgeMesh
 
 Perform the following steps to configure [EdgeMesh](https://kubeedge.io/en/docs/advanced/edgemesh/) on your edge node.
 
