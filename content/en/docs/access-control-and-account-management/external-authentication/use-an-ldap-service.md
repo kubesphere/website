@@ -80,7 +80,19 @@ This document describes how to use an LDAP service as an external identity provi
      iam.kubesphere.io/origin-uid: <LDAP username>
    ```
 
-5. Go to the KubeSphere login page and enter the username and password of an LDAP user to log in.
+5. After the fields are configured, run the following command to restart ks-apiserver.
+
+   ```bash
+   kubectl -n kubesphere-system rollout restart deploy/ks-apiserver
+   ```
+   
+   {{< notice note >}}
+   
+   The KubeSphere web console is unavailable during the restart of ks-apiserver. Please wait until the restart is complete.
+   
+   {{</ notice >}}
+   
+6. Go to the KubeSphere login page and enter the username and password of an LDAP user to log in.
 
    {{< notice note >}}
 
