@@ -119,18 +119,17 @@ Here is an example of the ConfigMap:
 apiVersion: v1
 data:
   region: zh
-  url: ""
+  uri: ""
   version: v1.6.1 # The default installed version of KubeEdge.
 kind: ConfigMap
 metadata:
-  annotations:
-    kubectl.kubernetes.io/last-applied-configuration: |
-      {"apiVersion":"v1","data":{"region":"zh","url":"","version":"v1.6.1"},"kind":"ConfigMap","metadata":{"annotations":{},"name":"edge-watcher-config","namespace":"kubeedge"}}
-  creationTimestamp: "2021-03-25T06:42:01Z"
   name: edge-watcher-config
   namespace: kubeedge
-  resourceVersion: "4767885"
-  selfLink: /api/v1/namespaces/kubeedge/configmaps/edge-watcher-config
-  uid: 1cbb26c8-51be-438d-ac3c-8d99024abc4c
 ```
 
+{{< notice note >}}
+
+- You can specify `zh` or `en` for the field `region`. `zh` is the default value and the default download link is `https://kubeedge.pek3b.qingstor.com/bin/v1.6.1/$arch/keadm-v1.6.1-linux-$arch.tar.gz`. If you set `region` to `en`, the download link will be `https://github.com/kubeedge/kubeedge/releases/download/v1.6.1/keadm-v1.6.1-linux-amd64.tar.gz`.
+- You can customize the download link by defining `uri`.
+
+{{</ notice >}} 
