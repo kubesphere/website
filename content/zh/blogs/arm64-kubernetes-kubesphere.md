@@ -1,5 +1,5 @@
 ---
-title: '三步搞定 ARM64 离线部署 Kubernetess + KubeSphere'
+title: '三步搞定 ARM64 离线部署 Kubernetes + KubeSphere'
 tag: 'Kubernetes,KubeSphere,arm'
 createTime: '2021-03-29'
 author: '郭峰'
@@ -14,7 +14,7 @@ KubeSphere 作为一款深受国内外开发者所喜爱的开源容器平台，
 
 ### 环境准备
 #### 节点
-kubeSphere 支持的操作系统包括：
+KubeSphere 支持的操作系统包括：
 - Ubuntu 16.04, 18.04
 - Debian Buster, Stretch
 - CentOS/RHEL 7
