@@ -14,7 +14,7 @@ When you upgrade KubeSphere from v2.1 to v3.0, the issues you may encounter in D
 
 ![devops-2-1-architecture](/images/docs/upgrade/devops-data-migration-upgrade/devops-2-1-architecture.png)
 
-In KubeSphere v2.1, the DevOps data are stored in Jenkins, while MySQL in KubeSphere stores authorization information and corresponding relations among projects, pipelines, and users. Frontend users make calls to the Api Gateway to get authentication from the ks-apiserver and then connect to Jenkins.
+In KubeSphere v2.1, the DevOps data are stored in Jenkins, while MySQL in KubeSphere stores authorization information and corresponding relations among projects, pipelines, and users. Frontend users make calls to the Api Gateway to get authentication from ks-apiserver and then connect to Jenkins.
 
 Another special type is `/kapis/jenkins.kubesphere.io`, which is directly passed to Jenkins through the Api Gateway and mainly used when archive files are downloaded.
 
@@ -34,7 +34,7 @@ When you upgrade KubeSphere from v2.1 to v3.0, the process of data migration fol
 2. Retrieve information about pipelines and credentials from Jenkins.
 3. Serialize the above information into a YAML file.
 4. Back up the YAML resource object to the MinIO object storage.
-5. Use the `kubectl apply` command to apply those pipeline resources.
+5. Use the `kubectl apply` command to apply these pipeline resources.
 6. Authorizations migration.
 
 Data comparison before and after the migration:
@@ -58,7 +58,7 @@ For the pipelines created on the KubeSphere DevOps page, migration can be carrie
 
 ### Migration through a Job
 
-Follow the upgrade process as normal. This plan applys to the scenario where DevOps operations are only performed on the KubeSphere DevOps page. You can upgrade KubeSphere directly, and if there is no DevOps resources available after the upgrade, rerun the upgrade.
+This plan applies to the scenario where DevOps operations are only performed on the KubeSphere DevOps page. You can upgrade KubeSphere directly, and if there is no DevOps resources available after the upgrade, rerun the upgrade.
 
 ### No migration for the previous data
 
