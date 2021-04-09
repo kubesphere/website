@@ -27,7 +27,7 @@ On the **Basic Info** tab, you can customize the following information:
 
 - **Description**. The additional information to describe the pipeline. Description is limited to 256 characters.
 
-- **Code Repository (optional)**. You can select a code repository as the code source for the pipeline. In KubeSphere v3.0, you can select GitHub, Git, SVN, and Bitbucket Server as the code source.
+- **Code Repository (optional)**. You can select a code repository as the code source for the pipeline. In KubeSphere v3.0, you can select GitHub, Git, SVN, or Bitbucket Server as the code source.
 
   {{< tabs >}}
 
@@ -139,7 +139,7 @@ You can select a pipeline from the drop-down list for **When Create Pipeline** a
 
 - **clone depth**. The number of commits to fetch when you clone.
 - **Pipeline clone timeout (in minutes)**. The number of minutes before which the cloning process has to complete.
-- **Whether to enable shallow clone**. Enable the shallow clone or not. If you enable it, the codes cloned will not contain tags.
+- **Whether to enable shallow clone**. If you enable it, the codes cloned will not contain tags.
 
 **Webhook**
 
