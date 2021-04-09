@@ -47,7 +47,7 @@ CRI-O （https://cri-o.io）是由红帽发布的一款容器运行时，是面�
 
 首先部署 Container-runtime、Containerd、CRI-O、iSula 任选其一，注意集群中所有节点container-runtime 应保持一致。
 
-## 部署 Contaner-runtime
+## 部署 Container-runtime
 
 ### Containerd
 
