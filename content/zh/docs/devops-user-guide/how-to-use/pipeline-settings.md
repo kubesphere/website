@@ -10,7 +10,7 @@ weight: 11280
 
 ## 准备工作
 
-- 您需要创建一个企业空间、一个 DevOps 工程以及一个帐户 (`project-regular`)，必需邀请该帐户至该 DevOps 工程中并赋予 `operator` 角色。有关更多信息，请参考[创建企业空间、项目、帐户和角色](../../../quick-start/create-workspace-and-project/)。
+- 您需要创建一个企业空间、一个 DevOps 工程以及一个帐户 (`project-regular`)，必须邀请该帐户至该 DevOps 工程中并赋予 `operator` 角色。有关更多信息，请参考[创建企业空间、项目、帐户和角色](../../../quick-start/create-workspace-and-project/)。
 - 您需要[启用 KubeSphere DevOps 系统](../../../pluggable-components/devops/)。
 
 ## 流水线设置
@@ -21,13 +21,13 @@ weight: 11280
 
 在**基本信息**选项卡，您可以自定义以下信息：
 
-- **名称**：Pipeline 的名称，同一个项目内 Pipeline 不能重名。
+- **名称**：流水线的名称，同一个 DevOps 工程内的流水线不能重名。
 
-- **项目**：将根据项目资源进行分组，可以按项目对资源进行查看管理。
+- **工程**：将根据工程资源进行分组，可以按工程对资源进行查看管理。
 
-- **描述信息**：描述 Pipeline 的附加信息，描述信息不超过 256 个字符。
+- **描述信息**：描述流水线的附加信息，描述信息不超过 256 个字符。
 
-- **代码仓库（可选）**：可以选择一个代码仓库作为 Pipeline 的代码源。在 KubeSphere v3.0 中，您可以选择 GitHub、Git、SVN 或者 Bitbucket Server 作为代码源。
+- **代码仓库（可选）**：可以选择一个代码仓库作为流水线的代码源。在 KubeSphere v3.0 中，您可以选择 GitHub、Git、SVN 或者 Bitbucket Server 作为代码源。
 
   {{< tabs >}}
 
@@ -43,7 +43,7 @@ weight: 11280
 
   ![code-git](/images/docs/zh-cn/devops-user-guide/use-devops/pipeline-settings/code-git.png)
 
-  如果选择 **Git**，则必须指定仓库 URL。如果仓库代码需要凭证，则必须指定凭证。您也可以选择**新建凭证**来创建新的凭证。完成所有操作后，记得点击 **√** 图标。
+  如果选择 **Git**，则必须指定仓库 URL。如果获取仓库代码需要凭证，则必须指定凭证。您也可以选择**新建凭证**来创建新的凭证。完成所有操作后，记得点击 **√** 图标。
 
   {{</ tab >}}
 
@@ -73,11 +73,11 @@ weight: 11280
 
 ![branch-settings](/images/docs/zh-cn/devops-user-guide/use-devops/pipeline-settings/branch-settings.png)
 
-**丢弃旧的分支**意味着分支构建记录将一起被丢弃。分支构建记录包括控制台输出、存档工件以及与特定构建相关的其他元数据。保留较少的构建可以节省 Jenkins 所使用的磁盘空间。KubeSphere 提供两个选项来确定何时丢弃旧的分支：
+**丢弃旧的分支**意味着分支记录将一起被丢弃。分支构建记录包括控制台输出、存档制品以及与特定分支相关的其他元数据。保留较少的分支可以节省 Jenkins 所使用的磁盘空间。KubeSphere 提供两个选项来确定何时丢弃旧的分支：
 
 - **保留分支的天数**：如果分支达到保留的天数，将进行删除。
 
-- **保留分支的最大个数**：如果分支达到保留的个数，将进行删除。
+- **保留分支的最大个数**：如果分支达到保留的个数，将删除最旧的分支。
 
   {{< notice note >}}
 
@@ -123,7 +123,7 @@ weight: 11280
 
 ![scan-repo-trigger](/images/docs/zh-cn/devops-user-guide/use-devops/pipeline-settings/scan-repo-trigger.png)
 
-您可以勾选**启用正式表达式，将忽略与提供的正式表达式不匹配的名称（包括分支与 PR 等）**，将正式表达式作为扫描代码分支的触发器。
+您可以勾选**启用正则表达式，将忽略与提供的正则表达式不匹配的名称（包括分支与 PR 等）**，将正则表达式作为扫描代码分支的触发器。
 
 您也可以勾选**如果没有扫描触发，则定期扫描**，并从下拉列表中设置扫描时间间隔。
 
@@ -139,13 +139,13 @@ weight: 11280
 
 - **克隆深度**：克隆时需要提取的 commit 数量。
 - **流水线 clone 超时时间（单位：分钟）**：完成克隆过程所需要的时长（以分钟为单位）。
-- **是否开启浅克隆**：字面意思。如果您开启浅克隆，则克隆的代码不会包含标签。
+- **是否开启浅克隆**：如果您开启浅克隆，则克隆的代码不会包含标签。
 
 **Webhook 推送**
 
 ![webhook](/images/docs/zh-cn/devops-user-guide/use-devops/pipeline-settings/webhook.png)
 
-**Webhook** 能有效允许流水线发现远程代码仓库中的更改，并自动触发新一轮运行。Webhook 应成为触发 Jenkins 自动扫描 GitHub 和 Git（例如 GitLab）的主要方法。
+**Webhook** 能有效地让流水线发现远程代码仓库中的更改，并自动触发新一轮运行。Webhook 应成为触发 Jenkins 自动扫描 GitHub 和 Git（例如 GitLab）的主要方法。
 
 ### 不选择代码仓库后进行高级设置
 
@@ -155,11 +155,11 @@ weight: 11280
 
 ![build-settings](/images/docs/zh-cn/devops-user-guide/use-devops/pipeline-settings/build-settings.png)
 
-**丢弃旧的构建**确定何时应丢弃项目的构建记录。构建记录包括控制台输出、存档工件以及与特定构建相关的其他元数据。保留较少的构建可以节省 Jenkins 所使用的磁盘空间。KubeSphere 提供两个选项来确定应何时丢弃旧的构建：
+**丢弃旧的构建**确定何时应丢弃分支下的构建记录。构建记录包括控制台输出、存档制品以及与特定构建相关的其他元数据。保留较少的构建可以节省 Jenkins 所使用的磁盘空间。KubeSphere 提供两个选项来确定应何时丢弃旧的构建：
 
 - **保留构建的天数**：如果构建达到保留的天数，将进行删除。
 
-- **保留构建的最大个数**：如果构建超过一定的数量，将丢弃旧的构建。
+- **保留构建的最大个数**：如果构建超过一定的数量，将丢弃最旧的构建。
 
   {{< notice note >}}
 
