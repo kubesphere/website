@@ -1,186 +1,186 @@
 ---
-title: "Pipeline Settings"
-keywords: 'KubeSphere, Kubernetes, Docker, Jenkins, Pipelines'
+title: "流水线设置"
+keywords: 'KubeSphere, Kubernetes, Docker, Jenkins, 流水线'
 description: '了解 DevOps 工程中流水线的各个属性。'
-linkTitle: "Pipeline Settings"
+linkTitle: "流水线设置"
 weight: 11280
 ---
 
-When you create a pipeline, you can customize its configurations through various settings. This document illustrates these settings in detail.
+创建流水线时，可以通过各种设置来自定义流水线配置。本文档对这些设置进行详细阐述。
 
-## Prerequisites
+## 准备工作
 
-- You need to create a workspace, a DevOps project and an account (`project-regular`). This account must be invited to the DevOps project with the `operator` role. For more information, refer to [Create Workspaces, Projects, Accounts and Roles](../../../quick-start/create-workspace-and-project/).
-- You need to [enable the KubeSphere DevOps System](../../../pluggable-components/devops/).
+- 您需要创建一个企业空间、一个 DevOps 工程以及一个帐户 (`project-regular`)，必须邀请该帐户至该 DevOps 工程中并赋予 `operator` 角色。有关更多信息，请参考[创建企业空间、项目、帐户和角色](../../../quick-start/create-workspace-and-project/)。
+- 您需要[启用 KubeSphere DevOps 系统](../../../pluggable-components/devops/)。
 
-## Pipeline Settings
+## 流水线设置
 
-### Basic Information
+### 基本信息
 
-![basic-info-tab](/images/docs/devops-user-guide/using-devops/pipeline-settings/basic-info-tab.png)
+![basic-info-tab](/images/docs/zh-cn/devops-user-guide/use-devops/pipeline-settings/basic-info-tab.png)
 
-On the **Basic Info** tab, you can customize the following information:
+在**基本信息**选项卡，您可以自定义以下信息：
 
-- **Name**. The name of the pipeline. Pipelines in the same DevOps project must have different names.
+- **名称**：流水线的名称，同一个 DevOps 工程内的流水线不能重名。
 
-- **Project**. Projects will be grouped by their resources, which you can view and manage by project.
+- **工程**：将根据工程资源进行分组，可以按工程对资源进行查看管理。
 
-- **Description**. The additional information to describe the pipeline. Description is limited to 256 characters.
+- **描述信息**：描述流水线的附加信息，描述信息不超过 256 个字符。
 
-- **Code Repository (optional)**. You can select a code repository as the code source for the pipeline. In KubeSphere v3.0, you can select GitHub, Git, SVN, and Bitbucket Server as the code source.
+- **代码仓库（可选）**：可以选择一个代码仓库作为流水线的代码源。在 KubeSphere v3.0 中，您可以选择 GitHub、Git、SVN 或者 Bitbucket Server 作为代码源。
 
   {{< tabs >}}
 
   {{< tab "GitHub" >}}
 
-  ![code-source-github](/images/docs/devops-user-guide/using-devops/pipeline-settings/code-source-github.png)
+  ![code-source-github](/images/docs/zh-cn/devops-user-guide/use-devops/pipeline-settings/code-source-github.png)
 
-  If you select **GitHub**, you have to specify the token for accessing GitHub. You can click **Get Token** to generate a new token on GitHub. Click **Confirm** after entering the token and you can view your repository on the right. Click the **√** icon after you finish all operations.
+  如果选择 **GitHub**，则必须指定用于访问 GitHub 的令牌。您可以点击**获取 Token** 以在 GitHub 上生成新令牌。输入令牌后，点击**确认**便可以在右侧查看您的仓库。完成所有操作后，记得点击 **√** 图标。
 
   {{</ tab >}}
 
   {{< tab "Git" >}}
 
-  ![code-git](/images/docs/devops-user-guide/using-devops/pipeline-settings/code-git.png)
+  ![code-git](/images/docs/zh-cn/devops-user-guide/use-devops/pipeline-settings/code-git.png)
 
-  If you select **Git**, you have to specify the repository URL. You need to specify a credential if it is needed for obtaining repository codes. You can also click **Create a credential** to create a new credential. Click the **√** icon after you finish all operations.
+  如果选择 **Git**，则必须指定仓库 URL。如果获取仓库代码需要凭证，则必须指定凭证。您也可以选择**新建凭证**来创建新的凭证。完成所有操作后，记得点击 **√** 图标。
 
   {{</ tab >}}
 
   {{< tab "SVN" >}}
 
-  ![code-source-svn](/images/docs/devops-user-guide/using-devops/pipeline-settings/code-source-svn.png)
+  ![code-source-svn](/images/docs/zh-cn/devops-user-guide/use-devops/pipeline-settings/code-source-svn.png)
 
-  If you select **SVN**, you have to specify the repository URL and the credential. You can also specify the branch included and excluded based on your needs. Click the **√** icon after you finish all operations.
+  如果选择 **SVN**，则必须指定远程仓库地址和凭证。您也可以按需指定包括分支或者排除分支。完成所有操作后，记得点击 **√** 图标。
 
   {{</ tab >}}
 
   {{< tab "Bitbucket Server" >}}
 
-  ![code-source-bitbucket](/images/docs/devops-user-guide/using-devops/pipeline-settings/code-source-bitbucket.png)
+  ![code-source-bitbucket](/images/docs/zh-cn/devops-user-guide/use-devops/pipeline-settings/code-source-bitbucket.png)
 
-  If you select **Bitbucket Server**, you have to specify the Bitbucket server, username, and password. Click **Confirm** after entering the information. Click the **√** icon after you finish all operations.
+  如果选择 **Bitbucket Server**，则必须指定 Bitbucket Server、用户名以及密码。信息输入完成后，点击**确认**。完成所有操作后，记得点击 **√** 图标。
 
   {{</ tab >}}
 
   {{</ tabs >}}
 
-### Advanced Settings with A Code Repository Selected
+### 选择代码仓库后进行高级设置
 
-If you selected a code repository, you can customize the following configurations on the **Advanced Settings** tab:
+如果选择了代码仓库，则可以在**高级设置**选项卡上自定义以下配置：
 
-**Branch Settings**
+**分支设置**
 
-![branch-settings](/images/docs/devops-user-guide/using-devops/pipeline-settings/branch-settings.png)
+![branch-settings](/images/docs/zh-cn/devops-user-guide/use-devops/pipeline-settings/branch-settings.png)
 
-**Discard old branch** means that the branch record will be discarded all together. The branch record includes console output, archived artifacts and other relevant metadata of specific branches. Fewer branches mean that you can save the disk space that Jenkins is using. KubeSphere provides two options to determine when old branches are discarded:
+**丢弃旧的分支**意味着分支记录将一起被丢弃。分支构建记录包括控制台输出、存档制品以及与特定分支相关的其他元数据。保留较少的分支可以节省 Jenkins 所使用的磁盘空间。KubeSphere 提供两个选项来确定何时丢弃旧的分支：
 
-- **Days to keep old branches**. Branches will be discarded after a certain number of days.
+- **保留分支的天数**：如果分支达到保留的天数，将进行删除。
 
-- **Maximum number of branches to keep**. The oldest branches will be discarded after branches reach a certain amount.
-
-  {{< notice note >}}
-
-  **Days to keep old branches** and **Maximum number of branches to keep** apply to branches at the same time. As long as a branch meets the condition of either field, it will be discarded. For example, if you specify 2 as the number of retention days and 3 as the maximum number of branches, any branches that exceed either number will be discarded. KubeSphere prepopulates these two fields with -1 by default, which means deleted branches will be discarded.
-
-  {{</ notice >}}
-
-**Behavioral strategy**
-
-![behavioral-strategy](/images/docs/devops-user-guide/using-devops/pipeline-settings/behavioral-strategy.png)
-
-In **Behavioral strategy**, KubeSphere offers three strategies by default. As a Jenkins pipeline runs, the Pull Request (PR) submitted by developers will also be regarded as a separate branch.
-
-**Discover Branches**
-
-- **Exclude branches that are also filed as PRs**. The source branch is not scanned such as the origin’s master branch. These branches need to be merged.
-- **Only branches that are also filed as PRs**. Only scan the PR branch.
-- **All branches**. Pull all the branches from the repository origin.
-
-**Discover PR from Origin**
-
-- **Source code version of PR merged with target branch**. A pipeline is created and runs based on the source code after the PR is merged into the target branch.
-- **Source code version of PR itself**. A pipeline is created and runs based on the source code of the PR itself.
-- **Two pipelines are created when a PR is discovered**. KubeSphere creates two pipelines, one based on the source code after the PR is merged into the target branch, and the other based on the source code of the PR itself.
-
-**Discover PR from Forks**
-
-- **Source code version of PR merged with target branch**. A pipeline is created and runs based on the source code after the PR is merged into the target branch.
-- **Source code version of PR itself**. A pipeline is created and runs based on the source code of the PR itself.
-- **Two pipelines are created when a PR is discovered**. KubeSphere creates two pipelines, one based on the source code after the PR is merged into the target branch, and the other based on the source code of the PR itself.
-- **Contributors**. The users who make contributions to the PR.
-- **Everyone**. Every user who can access the PR.
-- **From users with Admin or Write permission**. Only from users with Admin or Write permission to the PR.
-- **Nobody**. If you select this option, no PR will be discovered despite the option you select in **Pull Strategy**.
-
-**Script Path**
-
-![script-path](/images/docs/devops-user-guide/using-devops/pipeline-settings/script-path.png)
-
-The field of **Script Path** specifies the Jenkinsfile path in the code repository. It indicates the repository’s root directory. If the file location changes, the script path also needs to be changed.
-
-**Scan Repo Trigger**
-
-![scan-repo-trigger](/images/docs/devops-user-guide/using-devops/pipeline-settings/scan-repo-trigger.png)
-
-You can check **Enable regular expressions, ignoring names that do not match the provided regular expression (including branches and PRs)** to specify a regular expression as the trigger for scanning the code repository.
-
-You can also check **If not, scan regularly** and set the scan interval from the drop-down list.
-
-**Build Trigger**
-
-![build-trigger](/images/docs/devops-user-guide/using-devops/pipeline-settings/build-trigger.png)
-
-You can select a pipeline from the drop-down list for **When Create Pipeline** and **When Delete Pipeline** so that when a new pipeline is created or a pipeline is deleted, the tasks in the specified pipeline can be automatically triggered.
-
-**Git Clone Options**
-
-![git-clone-options](/images/docs/devops-user-guide/using-devops/pipeline-settings/git-clone-options.png)
-
-- **clone depth**. The number of commits to fetch when you clone.
-- **Pipeline clone timeout (in minutes)**. The number of minutes before which the cloning process has to complete.
-- **Whether to enable shallow clone**. Enable the shallow clone or not. If you enable it, the codes cloned will not contain tags.
-
-**Webhook**
-
-![webhook](/images/docs/devops-user-guide/using-devops/pipeline-settings/webhook.png)
-
-**Webhook** is an efficient way to allow pipelines to discover changes in the remote code repository and automatically trigger a new running. Webhook should be the primary method to trigger Jenkins automatic scanning for GitHub and Git (e.g. GitLab). 
-
-### Advanced Settings with No Code Repository Selected
-
-If you don't select a code repository, you can customize the following configurations on the **Advanced Settings** tab:
-
-**Build Settings**
-
-![build-settings](/images/docs/devops-user-guide/using-devops/pipeline-settings/build-settings.png)
-
-**Discard old builds** determines when the build records under the branch will be discarded. The build record includes the console output, archived artifacts, and other metadata related to a particular build. Keeping fewer builds saves disk space used by Jenkins. KubeSphere provides two options to determine when old builds are discarded:
-
-- **Days to keep build**. The build will be discarded after a certain number of days.
-
-- **Maximum number of builds to keep**. If the existing number of builds exceeds the maximum number, the oldest build will be discarded.
+- **保留分支的最大个数**：如果分支达到保留的个数，将删除最旧的分支。
 
   {{< notice note >}}
 
-  These two conditions apply to the build at the same time. If either one is met first, the build will be discarded.
+  **保留分支的天数**和**保留分支的最大个数**同时适用于分支。只要分支满足任一字段的条件，则将被丢弃。例如，如果将保留分支的天数指定为 2，将保留分支的最大个数指定为 3，那么超过任一数目的分支将被丢弃。KubeSphere 默认用 -1 预先填充这两个字段，这意味着删除的分支将被丢弃。
 
   {{</ notice >}}
 
-- **No concurrent builds**. If you check this option, you cannot run multiple builds concurrently.
+**行为策略**
 
-**Parametric Build**
+![behavioral-strategy](/images/docs/zh-cn/devops-user-guide/use-devops/pipeline-settings/behavioral-strategy.png)
 
-![parametric-build](/images/docs/devops-user-guide/using-devops/pipeline-settings/parametric-build.png)
+在**行为策略**中，KubeSphere 默认提供三种策略。Jenkins 流水线运行时，开发者提交的 PR (Pull Request) 也将被视为单独的分支。
 
-The parameterized build process allows you to pass in one or more parameters when you start to run a pipeline. KubeSphere provides five types of parameters by default, including **String**, **Text**, **Boolean**, **Choice**, and **Password**. When you parameterize a project, the build is replaced with a parameterized build, which prompts the user to enter a value for each defined parameter.
+**发现分支**
 
-**Build Trigger**
+- **排除也作为 PR 提交的分支**：不像扫描原仓库 master 分支那样扫描源分支，这些分支需要合并。
+- **只有被提交为 PR 的分支**：只扫描 PR 分支。
+- **所有分支**：从原仓库中拉取所有分支。
 
-![build-trigger-2](/images/docs/devops-user-guide/using-devops/pipeline-settings/build-triger-2.png)
+**从原仓库中发现 PR**
 
-- **Scheduled build**. It enables builds with a specified schedule. You can click **CRON** to refer to the detailed cron syntax.
-- **Trigger a remote build (for example, using a script)**. If you need to access a predefined URL to remotely trigger the build, you have to check it and provide an authentication token so that only the user who has the token can remotely trigger the build.
+- **PR 与目标分支合并后的源代码版本**：PR 合并到目标分支后，将基于源代码创建并运行流水线。
+- **PR 本身的源代码版本**：根据 PR 本身的源代码创建并运行流水线。
+- **当 PR 被发现时会创建两个流水线**：KubeSphere 会创建两个流水线，一个流水线使用 PR 本身的源代码版本，一个流水线使用 PR 与目标分支合并后的源代码版本。
+
+**从 Fork 仓库中发现 PR**
+
+- **PR 与目标分支合并后的源代码版本**：PR 合并到目标分支后，将基于源代码创建并运行流水线。
+- **PR 本身的源代码版本**：根据 PR 本身的源代码创建并运行流水线。
+- **当 PR 被发现时会创建两个流水线**：KubeSphere 会创建两个流水线，一个流水线使用 PR 本身的源代码版本，一个流水线使用 PR 与目标分支合并后的源代码版本。
+- **贡献者**：对 PR 做出贡献的用户。
+- **所有人**：每个可以访问 PR 的用户。
+- **管理员或有编辑权限的用户**：仅限于对 PR 具有管理员或编辑权限的用户。
+- **无**：如果选择此选项，那么无论在**拉取策略**中选择了哪个选项，都不会发现 PR。
+
+**脚本路径**
+
+![script-path](/images/docs/zh-cn/devops-user-guide/use-devops/pipeline-settings/script-path.png)
+
+**脚本路径**字段指定代码仓库中的 Jenkinsfile 路径，它指代仓库的根目录。如果文件位置发生更改，则脚本路径也需要更改。
+
+**扫描 Repo Trigger**
+
+![scan-repo-trigger](/images/docs/zh-cn/devops-user-guide/use-devops/pipeline-settings/scan-repo-trigger.png)
+
+您可以勾选**启用正则表达式，将忽略与提供的正则表达式不匹配的名称（包括分支与 PR 等）**，将正则表达式作为扫描代码分支的触发器。
+
+您也可以勾选**如果没有扫描触发，则定期扫描**，并从下拉列表中设置扫描时间间隔。
+
+**构建触发器**
+
+![build-trigger](/images/docs/zh-cn/devops-user-guide/use-devops/pipeline-settings/build-trigger.png)
+
+您可以从**当创建流水线**和**当删除流水线**的下拉列表中选择一个流水线，以便在创建或删除流水线时自动触发指定流水线中的任务。
+
+**Git 克隆参数**
+
+![git-clone-options](/images/docs/zh-cn/devops-user-guide/use-devops/pipeline-settings/git-clone-options.png)
+
+- **克隆深度**：克隆时需要提取的 commit 数量。
+- **流水线 clone 超时时间（单位：分钟）**：完成克隆过程所需要的时长（以分钟为单位）。
+- **是否开启浅克隆**：如果您开启浅克隆，则克隆的代码不会包含标签。
+
+**Webhook 推送**
+
+![webhook](/images/docs/zh-cn/devops-user-guide/use-devops/pipeline-settings/webhook.png)
+
+**Webhook** 能有效地让流水线发现远程代码仓库中的更改，并自动触发新一轮运行。Webhook 应成为触发 Jenkins 自动扫描 GitHub 和 Git（例如 GitLab）的主要方法。
+
+### 不选择代码仓库后进行高级设置
+
+如果不选择代码仓库，则可以在**高级设置**选项卡上自定义以下配置：
+
+**构建设置**
+
+![build-settings](/images/docs/zh-cn/devops-user-guide/use-devops/pipeline-settings/build-settings.png)
+
+**丢弃旧的构建**确定何时应丢弃分支下的构建记录。构建记录包括控制台输出、存档制品以及与特定构建相关的其他元数据。保留较少的构建可以节省 Jenkins 所使用的磁盘空间。KubeSphere 提供两个选项来确定应何时丢弃旧的构建：
+
+- **保留构建的天数**：如果构建达到保留的天数，将进行删除。
+
+- **保留构建的最大个数**：如果构建超过一定的数量，将丢弃最旧的构建。
+
+  {{< notice note >}}
+
+  这两种条件同时适用于构建。如果首先满足任一条件，构建将会被删除。
+
+  {{</ notice >}}
+
+- **不允许并发构建**：如果勾选此选项，则不能并发运行多个构建。
+
+**参数化构建**
+
+![parametric-build](/images/docs/zh-cn/devops-user-guide/use-devops/pipeline-settings/parametric-build.png)
+
+参数化的构建过程允许您在开始运行流水线时传入一个或多个参数。KubeSphere 默认提供五种参数类型，包括**字符串参数 (String)**、**文本 (Text)**、**布尔值 (Boolean)**、**选项参数 (Choice)** 以及**密码参数 (Password)**。当参数化项目时，构建会被替换为参数化构建，其中将提示用户为每个定义的参数输入值。
+
+**构建触发器**
+
+![build-trigger-2](/images/docs/zh-cn/devops-user-guide/use-devops/pipeline-settings/build-trigger-2.png)
+
+- **定时构建**：允许定期执行构建。您可以点击 **CRON** 来参照详细的 cron 语法。
+- **触发远程构建（例如，使用脚本）**：如果您需要访问预定义的 URL 来远程触发构建，则必须勾选该选项并提供身份验证令牌，这样只有拥有令牌的用户才能远程触发构建。
 
 
 
