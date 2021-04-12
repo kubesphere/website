@@ -12,22 +12,22 @@ A department in a workspace is a logical unit used for permission control. You c
 
 ## Prerequisites
 
-- You need to [create a workspace and an account](../../quick-start/create-workspace-and-project/) assigned the `workspace-admin` role in the workspace. This document uses the demo-ws workspace and the `ws-admin` account as an example.
+- You need to [create a workspace and an account](../../quick-start/create-workspace-and-project/) assigned the `workspace-admin` role in the workspace. This document uses the `demo-ws` workspace and the `ws-admin` account as an example.
 - To set project roles or DevOps project roles in a department, you need to [create at least one project or DevOps project](../../quick-start/create-workspace-and-project/) in the workspace.
 
 ## Create a Department
 
-1. Log in to the KubeSphere web console as `ws-admin` and go to the demo-ws workspace.
+1. Log in to the KubeSphere web console as `ws-admin` and go to the `demo-ws` workspace.
 
-2. On the left navigation bar, choose **Department Management** under **Workspace Settings**, and click **Set Departments** on the right.
+2. On the left navigation bar, choose **Department Management** under **Workspace Settings**, and click **Set Department** on the right.
 
-3. In the **Set Departments** dialog box, set the fields and click **OK** to create a department.
+3. In the **Set Department** dialog box, set the following fields and click **OK** to create a department.
 
    {{< notice note >}}
 
    * If a department has already been created in the workspace, you can click **Create Department** to add more departments to the workspace.
 
-   * You can create multiple departments and multiple sub-departments in each department.
+   * You can create multiple departments and multiple sub-departments in each department. To create a subdepartment, select a department on the left department tree and click **Create Department** on the right.
 
    {{</ notice >}}
 
@@ -47,7 +47,8 @@ A department in a workspace is a logical unit used for permission control. You c
 
    {{< notice note >}}
 
-   If permissions provided by the department overlap with existing permissions of the user, new permissions are added to the user. Existing permissions of the user are not affected.
+   * If permissions provided by the department overlap with existing permissions of the user, new permissions are added to the user. Existing permissions of the user are not affected.
+   * Users assigned to a department can perform operations according to the workspace role, project roles, and DevOps project roles associated with the department without being invited to the workspace, projects, and DevOps projects.
 
    {{</ notice >}}
 
@@ -58,15 +59,15 @@ A department in a workspace is a logical unit used for permission control. You c
 
 ## Delete and Edit a Department
 
-1. On the **Department Management** page, click **Set Departments**.
+1. On the **Department Management** page, click **Set Department**.
 
-2. In the **Set Department** dialog box, on the left, click the upper-level of the department to be edited or deleted.
+2. In the **Set Department** dialog box, on the left, click the upper level of the department to be edited or deleted.
 
 3. Click <img src="/images/docs/workspace-administration/department-management/edit.png" height="20px"> on the right of the department to edit it.
 
    {{< notice note >}}
 
-   For details, see to [Create a Department](#create-a-department).
+   For details, see [Create a Department](#create-a-department).
 
    {{</ notice >}}
 
