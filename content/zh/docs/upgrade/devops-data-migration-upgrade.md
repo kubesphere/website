@@ -1,12 +1,12 @@
 ---
-title: "升级时 KubeSphere DevOps 的数据迁移"
+title: "升级 KubeSphere DevOps 时的数据迁移"
 keywords: "Kubernetes, 升级, KubeSphere, v2.1.0, v3.0.0, DevOps"
-description: "了解升级时 KubeSphere DevOps 的数据迁移及其风险."
-linkTitle: "升级时 KubeSphere DevOps 的数据迁移"
+description: "了解升级 KubeSphere DevOps 时的数据迁移及其风险."
+linkTitle: "升级 KubeSphere DevOps 时的数据迁移"
 weight: 7700
 ---
 
-将 KubeSphere 从 v2.1 升级到 v3.0 时，可能会遇到主要由 DevOps 架构发生变化而引发的问题。本文档介绍 DevOps 架构的变化以及数据迁移的方案和风险。
+将 KubeSphere 从 v2.1 升级到 v3.0 时，在 DevOps 中可能遇到的问题大部分是因其架构发生了变化。本文档介绍 DevOps 架构的变化以及数据迁移的方案和风险。
 
 ## DevOps 架构对比
 
@@ -56,7 +56,7 @@ weight: 7700
 
 对于在 KubeSphere DevOps 页面创建的流水线，正常迁移即可。但在迁移过程中，直接在 Jenkins 面板上创建的流水线配置可能会丢失。
 
-### 通过任务迁移
+### 通过任务 (Job) 迁移
 
 本方案适用于仅在 KubeSphere DevOps 页面上执行 DevOps 操作的场景。您可以直接升级 KubeSphere，如果在升级之后没有可用的 DevOps 资源，请重新运行升级。
 
