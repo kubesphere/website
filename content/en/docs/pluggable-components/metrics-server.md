@@ -14,11 +14,34 @@ KubeSphere supports Horizontal Pod Autoscalers (HPA) for [Deployments](../../pro
 
 ### Installing on Linux
 
-When you use KubeKey to create a configuration file for your cluster, the Metrics Server is enabled by default in the file. Namely, you do not need to manually enable it before you install KubeSphere on Linux.
+When you implement multi-node installation of KubeSphere on Linux, you need to create a configuration file, which lists all KubeSphere components.
+
+1. In the tutorial of [Installing KubeSphere on Linux](../../installing-on-linux/introduction/multioverview/), you create a default file `config-sample.yaml`. Modify the file by executing the following command:
+
+   ```bash
+   vi config-sample.yaml
+   ```
+
+   {{< notice note >}}
+   If you adopt [All-in-One Installation](../../quick-start/all-in-one-on-linux/), you do not need to create a `config-sample.yaml` file as you can create a cluster directly. Generally, the all-in-one mode is for users who are new to KubeSphere and look to get familiar with the system. If you want to enable the Metrics Server in this mode (e.g. for testing purposes), refer to [the following section](#enable-devops-after-installation) to see how the Metrics Server can be installed after installation.
+   {{</ notice >}}
+
+2. In this file, navigate to `metrics_server` and change `false` to `true` for `enabled`. Save the file after you finish.
+
+   ```yaml
+   metrics_server:
+     enabled: true # Change "false" to "true"
+   ```
+
+3. Create a cluster using the configuration file:
+
+   ```bash
+   ./kk create cluster -f config-sample.yaml
+   ```
 
 ### **Installing on Kubernetes**
 
-The process of installing KubeSphere on Kubernetes is stated in the tutorial of [Installing KubeSphere on Kubernetes](../../installing-on-kubernetes/introduction/overview/). To install the optional component Metrics Server, you can enable it first in the [cluster-configuration.yaml](https://github.com/kubesphere/ks-installer/releases/download/v3.0.0/cluster-configuration.yaml) file.
+As you [install KubeSphere on Kubernetes](../../installing-on-kubernetes/introduction/overview/), you can enable the Metrics Server first in the [cluster-configuration.yaml](https://github.com/kubesphere/ks-installer/releases/download/v3.0.0/cluster-configuration.yaml) file.
 
 1. Download the file [cluster-configuration.yaml](https://github.com/kubesphere/ks-installer/releases/download/v3.0.0/cluster-configuration.yaml) and edit it.
 
@@ -67,7 +90,7 @@ A Custom Resource Definition (CRD) allows users to create a new type of resource
 
     ```yaml
     metrics_server:
-        enabled: true # Change "false" to "true"
+      enabled: true # Change "false" to "true"
     ```
 
 5. You can use the web kubectl to check the installation process by executing the following command:

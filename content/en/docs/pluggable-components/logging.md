@@ -36,7 +36,7 @@ When you install KubeSphere on Linux, you need to create a configuration file, w
 
     ```yaml
     logging:
-        enabled: true # Change "false" to "true"
+      enabled: true # Change "false" to "true"
     ```
 
     {{< notice note >}}
@@ -63,7 +63,7 @@ By default, KubeKey will install Elasticsearch internally if Logging is enabled.
 
 ### **Installing on Kubernetes**
 
-The process of installing KubeSphere on Kubernetes is same as stated in the tutorial of [Installing KubeSphere on Kubernetes](../../installing-on-kubernetes/introduction/overview/) except the optional component Logging needs to be enabled first in the [cluster-configuration.yaml](https://github.com/kubesphere/ks-installer/releases/download/v3.0.0/cluster-configuration.yaml) file.
+As you [install KubeSphere on Kubernetes](../../installing-on-kubernetes/introduction/overview/), you can enable KubeSphere Logging first in the [cluster-configuration.yaml](https://github.com/kubesphere/ks-installer/releases/download/v3.0.0/cluster-configuration.yaml) file.
 
 1. Download the file [cluster-configuration.yaml](https://github.com/kubesphere/ks-installer/releases/download/v3.0.0/cluster-configuration.yaml) and edit it.
 
@@ -75,7 +75,7 @@ The process of installing KubeSphere on Kubernetes is same as stated in the tuto
 
     ```yaml
     logging:
-        enabled: true # Change "false" to "true"
+      enabled: true # Change "false" to "true"
     ```
 
     {{< notice note >}}
@@ -124,7 +124,7 @@ A Custom Resource Definition (CRD) allows users to create a new type of resource
 
     ```yaml
     logging:
-        enabled: true # Change "false" to "true"
+      enabled: true # Change "false" to "true"
     ```
 
     {{< notice note >}}By default, Elasticsearch will be installed internally if Logging is enabled. For a production environment, it is highly recommended that you set the following values in this yaml file if you want to enable Logging, especially `externalElasticsearchUrl` and `externalElasticsearchPort`. Once you provide the following information, KubeSphere will integrate your external Elasticsearch directly instead of installing an internal one.
