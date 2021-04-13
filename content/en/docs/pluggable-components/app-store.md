@@ -36,6 +36,7 @@ If you adopt [All-in-One Installation](../../quick-start/all-in-one-on-linux/), 
 
     ```yaml
     openpitrix:
+      store:
         enabled: true # Change "false" to "true"
     ```
 
@@ -47,7 +48,7 @@ If you adopt [All-in-One Installation](../../quick-start/all-in-one-on-linux/), 
 
 ### **Installing on Kubernetes**
 
-The process of installing KubeSphere on Kubernetes is same as stated in the tutorial of [Installing KubeSphere on Kubernetes](../../installing-on-kubernetes/introduction/overview/) except the optional component App Store needs to be enabled first in the [cluster-configuration.yaml](https://github.com/kubesphere/ks-installer/releases/download/v3.0.0/cluster-configuration.yaml) file.
+As you [install KubeSphere on Kubernetes](../../installing-on-kubernetes/introduction/overview/), you can enable the KubeSphere App Store first in the [cluster-configuration.yaml](https://github.com/kubesphere/ks-installer/releases/download/v3.0.0/cluster-configuration.yaml) file.
 
 1. Download the file [cluster-configuration.yaml](https://github.com/kubesphere/ks-installer/releases/download/v3.0.0/cluster-configuration.yaml) and edit it.
 
@@ -59,6 +60,7 @@ The process of installing KubeSphere on Kubernetes is same as stated in the tuto
 
     ```yaml
     openpitrix:
+      store:
         enabled: true # Change "false" to "true"
     ```
 
@@ -92,6 +94,7 @@ A Custom Resource Definition (CRD) allows users to create a new type of resource
 
     ```yaml
     openpitrix:
+      store:
         enabled: true # Change "false" to "true"
     ```
 

@@ -39,7 +39,7 @@ If you adopt [All-in-One Installation](../../quick-start/all-in-one-on-linux/), 
 
     ```yaml
     networkpolicy:
-        enabled: true # Change "false" to "true"
+      enabled: true # Change "false" to "true"
     ```
 
 3. Create a cluster using the configuration file:
@@ -50,7 +50,7 @@ If you adopt [All-in-One Installation](../../quick-start/all-in-one-on-linux/), 
 
 ### **Installing on Kubernetes**
 
-The process of installing KubeSphere on Kubernetes is same as stated in the tutorial of [Installing KubeSphere on Kubernetes](../../installing-on-kubernetes/introduction/overview/) except the optional component Network Policy needs to be enabled first in the [cluster-configuration.yaml](https://github.com/kubesphere/ks-installer/releases/download/v3.0.0/cluster-configuration.yaml) file.
+As you [install KubeSphere on Kubernetes](../../installing-on-kubernetes/introduction/overview/), you can enable the Network Policy first in the [cluster-configuration.yaml](https://github.com/kubesphere/ks-installer/releases/download/v3.0.0/cluster-configuration.yaml) file.
 
 1. Download the file [cluster-configuration.yaml](https://github.com/kubesphere/ks-installer/releases/download/v3.0.0/cluster-configuration.yaml) and edit it.
 
@@ -62,7 +62,7 @@ The process of installing KubeSphere on Kubernetes is same as stated in the tuto
 
     ```yaml
     networkpolicy:
-        enabled: true # Change "false" to "true"
+      enabled: true # Change "false" to "true"
     ```
 
 3. Execute the following commands to start installation:
@@ -93,7 +93,7 @@ A Custom Resource Definition (CRD) allows users to create a new type of resource
 
     ```yaml
     networkpolicy:
-        enabled: true # Change "false" to "true"
+      enabled: true # Change "false" to "true"
     ```
 
 5. You can use the web kubectl to check the installation process by executing the following command:

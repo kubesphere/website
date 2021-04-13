@@ -32,7 +32,7 @@ If you adopt [All-in-One Installation](../../quick-start/all-in-one-on-linux/), 
 
     ```yaml
     auditing:
-        enabled: true # Change "false" to "true"
+      enabled: true # Change "false" to "true"
     ```
 
     {{< notice note >}}
@@ -59,7 +59,7 @@ By default, KubeKey will install Elasticsearch internally if Auditing is enabled
 
 ### **Installing on Kubernetes**
 
-The process of installing KubeSphere on Kubernetes is same as stated in the tutorial of [Installing KubeSphere on Kubernetes](../../installing-on-kubernetes/introduction/overview/) except the optional component Auditing needs to be enabled first in the [cluster-configuration.yaml](https://github.com/kubesphere/ks-installer/releases/download/v3.0.0/cluster-configuration.yaml) file.
+As you [install KubeSphere on Kubernetes](../../installing-on-kubernetes/introduction/overview/), you can enable KubeSphere Auditing first in the [cluster-configuration.yaml](https://github.com/kubesphere/ks-installer/releases/download/v3.0.0/cluster-configuration.yaml) file.
 
 1. Download the file [cluster-configuration.yaml](https://github.com/kubesphere/ks-installer/releases/download/v3.0.0/cluster-configuration.yaml) and edit it.
 
@@ -71,7 +71,7 @@ The process of installing KubeSphere on Kubernetes is same as stated in the tuto
 
     ```yaml
     auditing:
-        enabled: true # Change "false" to "true"
+      enabled: true # Change "false" to "true"
     ```
 
     {{< notice note >}}
@@ -118,7 +118,7 @@ A Custom Resource Definition (CRD) allows users to create a new type of resource
 
     ```yaml
     auditing:
-        enabled: true # Change "false" to "true"
+      enabled: true # Change "false" to "true"
     ```
 
     {{< notice note >}}
