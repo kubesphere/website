@@ -1,98 +1,98 @@
 ---
-title: "KubeSphere DevOps Data Migration during Upgrade"
-keywords: "Kubernetes, Upgrade, KubeSphere, v2.1.0, v3.0.0, DevOps"
-description: "Understand KubeSphere DevOps data migration and its risks during upgrade."
-linkTitle: "KubeSphere DevOps Data Migration during Upgrade"
+title: "升级 KubeSphere DevOps 时的数据迁移"
+keywords: "Kubernetes, 升级, KubeSphere, v2.1.0, v3.0.0, DevOps"
+description: "了解升级 KubeSphere DevOps 时的数据迁移及其风险。"
+linkTitle: "升级 KubeSphere DevOps 时的数据迁移"
 weight: 7700
 ---
 
-When you upgrade KubeSphere from v2.1 to v3.0, the issues you may encounter in DevOps are mainly caused by the changes in the DevOps architecture. This document illustrates the changes in the DevOps architecture and explores data migration plans and risks.
+将 KubeSphere 从 v2.1 升级到 v3.0 时，在 DevOps 中可能遇到的问题大部分是因其架构发生了变化。本文档介绍 DevOps 架构的变化以及数据迁移的方案和风险。
 
-## DevOps Architecture Comparison
+## DevOps 架构对比
 
-### DevOps in KubeSphere v2.1
+### KubeSphere v2.1 的 DevOps
 
-![devops-2-1-architecture](/images/docs/upgrade/devops-data-migration-upgrade/devops-2-1-architecture.png)
+![devops-2-1-architecture](/images/docs/zh-cn/upgrade/devops-data-migration-upgrade/devops-2-1-architecture.png)
 
-In KubeSphere v2.1, the DevOps data are stored in Jenkins, while MySQL in KubeSphere stores authorization information and corresponding relations among projects, pipelines, and users. Frontend users make calls to the Api Gateway to get authentication from ks-apiserver and then connect to Jenkins.
+在 KubeSphere v2.1 中，DevOps 数据存储在 Jenkins 中，而 KubeSphere 中的 MySQL 则存储权限信息以及工程、流水线和用户之间的对应关系。前端用户通过调用 Api Gateway 获取 ks-apiserver 授权，然后连接到 Jenkins。
 
-Another special type is `/kapis/jenkins.kubesphere.io`, which is directly passed to Jenkins through the Api Gateway and mainly used when archive files are downloaded.
+另一种特殊的类型是 `/kapis/jenkins.kubesphere.io`，即直接通过 Api Gateway 传到 Jenkins，这种方法主要在已下载存档文件时使用。
 
-### DevOps in KubeSphere v3.0
+### KubeSphere v3.0 的 DevOps
 
-![devops-3-0-architecture](/images/docs/upgrade/devops-data-migration-upgrade/devops-3-0-architecture.png)
+![devops-3-0-architecture](/images/docs/zh-cn/upgrade/devops-data-migration-upgrade/devops-3-0-architecture.png)
 
-In KubeSphere v3.0, the DevOps data are stored in CustomResourceDefinitions (CRDs). The data in the CRDs are synchronized to Jenkins in an one-way direction, and any previous data with the same name will be overwritten. There are mainly two types of operation - creation and triggering.
+在 KubeSphere v3.0 中，DevOps 数据存储在自定义资源 (CRD) 中。CRD 中的数据会单向同步到 Jenkins，任何先前的同名数据都将被覆盖。用户主要可以进行两类操作：创建类型的操作和触发类型的操作。
 
-Creation mainly involves three CRD types, including DevOps projects, pipelines and credentials. Users make calls at the frontend to the interface of ks-apiserver to create resources and store them in etcd, and then ks-controller-manager keeps synchronizing those objects to Jenkins. Triggering mainly entails instant actions, including running a pipeline and reviewing a pipeline. Users make calls at the frontend to ks-apiserver, and then, after data conversion, directly make calls to the Jenkins API.
+创建类型的操作主要涉及三种 CRD 类型的创建，包括 DevOps 工程、流水线和凭证。用户在前端调用 ks-apiserver 接口来创建资源并将其存储到 etcd 中，ks-controller-manager 持续将这些对象同步到 Jenkins。触发类型的操作主要涉及瞬时动作，包括运行流水线、审核流水线等。用户在前端调用 ks-apiserver，并在数据转换后直接调用 Jenkins API。
 
-## Data Migration Logic
+## 数据迁移逻辑
 
-When you upgrade KubeSphere from v2.1 to v3.0, the process of data migration follows the steps shown below:
+将 KubeSphere 从 v2.1 升级到 v3.0 时，数据迁移的逻辑主要如下：
 
-1. Retrieve information about DevOps directories from MySQL.
-2. Retrieve information about pipelines and credentials from Jenkins.
-3. Serialize the above information into a YAML file.
-4. Back up the YAML resource object to the MinIO object storage.
-5. Use the `kubectl apply` command to apply these pipeline resources.
-6. Authorizations migration.
+1. 从 MySQL 获取 DevOps 目录的信息。
+2. 从 Jenkins 获取流水线、凭证等信息。
+3. 将以上信息序列化到一个 YAML 文件中。
+4. 将 YAML 对象资源备份到 MinIO 对象存储中。
+5. 使用 `kubectl apply` 命令应用这些流水线资源。
+6. 权限迁移。
 
-Data comparison before and after the migration:
+迁移前后的数据对比：
 
-|    Resources    |  v2.1   | v3.0 |
-| :-------------: | :-----: | :--: |
-| DevOps projects |  MySQL  | CRD  |
-|    Pipelines    | Jenkins | CRD  |
-|   Credentials   | Jenkins | CRD  |
-| Authorizations  |  MySQL  | CRD  |
+|    资源     |  v2.1   | v3.0 |
+| :---------: | :-----: | :--: |
+| DevOps 工程 |  MySQL  | CRD  |
+|   流水线    | Jenkins | CRD  |
+|    凭证     | Jenkins | CRD  |
+|    权限     |  MySQL  | CRD  |
 
 {{< notice warning>}}
 
-You must back up the data in advance because the data in Jenkins will be overwritten by ks-controller-manager once the CRDs are created during data migration. You can use Velero to make a PVC-level backup, or back up the `/var/jenkins_home` directory of the Jenkins Pod directly.
+您必须预先备份数据，因为在数据迁移过程中一旦 CRD 被创建，Jenkins 中的数据将会被 ks-controller-manager 覆盖。您可以使用 Velero 进行 PVC 级别的备份，也可以直接备份 Jenkins Pod 的 `/var/jenkins_home` 目录。
 
 {{</ notice >}}
 
-## Data Migration Plans and Risks
+## 数据迁移方案和风险
 
-For the pipelines created on the KubeSphere DevOps page, migration can be carried out as normal. However, the pipeline configurations directly made on the Jenkins dashboard might get lost during the migration.
+对于在 KubeSphere DevOps 页面创建的流水线，正常迁移即可。但在迁移过程中，直接在 Jenkins 面板上创建的流水线配置可能会丢失。
 
-### Migration through a Job
+### 通过任务 (Job) 迁移
 
-This plan applies to the scenario where DevOps operations are only performed on the KubeSphere DevOps page. You can upgrade KubeSphere directly, and if there is no DevOps resources available after the upgrade, rerun the upgrade.
+本方案适用于仅在 KubeSphere DevOps 页面上执行 DevOps 操作的场景。您可以直接升级 KubeSphere，如果在升级之后没有可用的 DevOps 资源，请重新运行升级。
 
-### No migration for the previous data
+### 不迁移先前的数据
 
-KubeSphere DevOps is compatible with most Jenkins configurations, while some on the Jenkins dashboard are not supported by KubeSphere DevOps as shown below:
+KubeSphere DevOps 兼容大部分 Jenkins 配置，但 Jenkins 面板上也有一些 KubeSphere DevOps 不支持的配置，如下所示：
 
-![configurations-not-supported](/images/docs/upgrade/devops-data-migration-upgrade/configurations-not-supported.png)
+![configurations-not-supported](/images/docs/zh-cn/upgrade/devops-data-migration-upgrade/configurations-not-supported.png)
 
-These configurations will be cleared after data migration. Even if they are added again after the data migration, they will still be cleared when you edit a pipeline next time.
+数据迁移之后，这些配置将被清除。即使在数据迁移之后再添加以上配置，这些配置仍会在您下一次编辑流水线时被清除。
 
 {{< notice note >}}
 
-Generally speaking, you cannot specify these configurations in a Jenkinsfile as they are not part of the logic as a pipeline runs.
+一般来说，您不能在 Jenkinsfile 中指定这些配置，因为这些配置不属于运行流水线的逻辑。
 
 {{</ notice >}}
 
-If you have specific needs for these configurations, you can keep your previous data unmigrated and manage new pipelines on the KubeSphere DevOps page. 
+如果对这些配置有特定需求，您可以保持先前的数据不迁移，并在 KubeSphere DevOps 页面上管理新的流水线。
 
 {{< notice warning >}}
 
-Do not create pipelines with the same name under one DevOps project, or the data in Jenkins will be overwritten.
+请勿在同一个 DevOps 工程中创建名称相同的流水线，否则 Jenkins 中的数据将会被覆盖。
 
 {{</ notice >}}
 
-### Partial migration
+### 部分迁移
 
-If you only have few configurations to be specified on the Jenkins dashboard, you can use KubeSphere DevOps to manage pipelines directly. For these users, they can make a backup first and then migrate part of the data by using a Job while fixing pipelines with special configurations later.
+如果只有少数配置需要在 Jenkins 面板上指定，用户可以直接使用 KubeSphere DevOps 管理流水线。对于这些用户，可以首先进行备份，然后使用任务来迁移部分数据，稍后再修复具有特殊配置的流水线。
 
-If there is a high requirement for availability, users can reuse the previous DevOps project and manually create a new pipeline with a different name to run it for testing. If the new pipeline runs successfully, users can delete the previous pipeline.
+如果对可用性有较高的需求，用户可以复用先前的 DevOps 工程，手动创建并运行名称不同的新流水线用于测试。如果新的流水线成功运行，用户可以删除先前的流水线。
 
 {{< notice info >}}
 
-You can use the command `kubectl get devopsprojects --all-namespaces` and `kubectl get pipelines --all-namespaces` to check the migration results.
+您可以使用 `kubectl get devopsprojects --all-namespaces` 和 `kubectl get pipelines --all-namespaces` 命令查看迁移结果。
 
-You can also use the following command to rerun the Job for migration.
+您也可以使用以下命令反复运行任务以进行迁移。
 
 ```
 kubectl -n kubesphere-system get job ks-devops-migration -o json | jq 'del(.spec.selector)' | jq 'del(.spec.template.metadata.labels)' | kubectl replace --force -f -
