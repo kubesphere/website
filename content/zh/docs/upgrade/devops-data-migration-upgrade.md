@@ -1,7 +1,7 @@
 ---
 title: "升级 KubeSphere DevOps 时的数据迁移"
 keywords: "Kubernetes, 升级, KubeSphere, v2.1.0, v3.0.0, DevOps"
-description: "了解升级 KubeSphere DevOps 时的数据迁移及其风险."
+description: "了解升级 KubeSphere DevOps 时的数据迁移及其风险。"
 linkTitle: "升级 KubeSphere DevOps 时的数据迁移"
 weight: 7700
 ---
