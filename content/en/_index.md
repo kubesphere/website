@@ -28,7 +28,7 @@ section2:
 
     - name: Rich Features
       icon: /images/home/feature-rich.svg
-      content: Deliver DevOps, service mesh, [observability](https://kubesphere.io/observability/), application management, multi-tenancy, storage and networking management in a unified platform.
+      content: Deliver DevOps, service mesh, <a class='inner-a' target='_blank' href='observability/'>observability</a>, application management, multi-tenancy, storage and networking management in a unified platform.
 
     - name: Modular & Pluggable
       icon: /images/home/modular-pluggable.svg
@@ -113,7 +113,7 @@ section4:
 
     - name: DevOps System
       icon: /images/home/dev-ops.svg
-      content: Out-of-box CI/CD based on Jenkins, and automated [DevOps workflow](https://kubesphere.io/devops/) tools including Source-to-Image & Binary-to-Image
+      content: Out-of-box CI/CD based on Jenkins, and automated <a class='inner-a' target='_blank' href='devops/'>DevOps workflow</a> tools including Source-to-Image & Binary-to-Image
       link: "devops/"
       color: orange
 
