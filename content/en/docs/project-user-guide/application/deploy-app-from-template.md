@@ -12,7 +12,7 @@ This tutorial demonstrates how to quickly deploy [Grafana](https://grafana.com/)
 
 ## Prerequisites
 
-- You have enabled [OpenPitirx (App Store)](../../../pluggable-components/app-store/).
+- You have enabled [OpenPitrix (App Store)](../../../pluggable-components/app-store/).
 - You have completed the tutorial of [Create Workspaces, Projects, Accounts and Roles](../../../quick-start/create-workspace-and-project/). Namely, you must have a workspace, a project and two user accounts (`ws-admin` and `project-regular`). `ws-admin` must be granted the role of `workspace-admin` in the workspace and `project-regular` must be granted the role of `operator` in the project.
 
 ## Hands-on Lab
