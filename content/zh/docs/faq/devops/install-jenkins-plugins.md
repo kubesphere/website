@@ -1,28 +1,28 @@
 ---
-title: "Install Plugins to Jenkins in KubeSphere"
-keywords: "KubeSphere, Kubernetes, DevOps, Jenkins, Plugin"
+title: "为 KubeSphere 中的 Jenkins 安装插件"
+keywords: "KubeSphere, Kubernetes, DevOps, Jenkins, 插件"
 description: "了解如何为 KubeSphere 中的 Jenkins 安装插件。"
-linkTitle: "Install Plugins to Jenkins in KubeSphere"
+linkTitle: "为 KubeSphere 中的 Jenkins 安装插件"
 Weight: 16810
 ---
 
-The KubeSphere DevOps System offers containerized CI/CD functions based on Jenkins. The primary means of enhancing the functionality of Jenkins is to install plugins. This tutorial demonstrates how to install plugins on the Jenkins dashboard.
+KubeSphere DevOps 系统提供基于 Jenkins 的容器化 CI/CD 功能，而提升 Jenkins 功能的主要方法就是安装插件。本教程介绍如何在 Jenkins 面板上安装插件。
 
 {{< notice warning >}}
 
-Not all Jenkins plugins have good maintaining support. Some plugins may lead to issues in Jenkins or even cause serious problems in KubeSphere. It is highly recommended that you make a backup before installing any plugin and run testing in another environment if you can.
+并非所有的 Jenkins 插件都拥有良好的维护支持。一些插件可能会导致 Jenkins 出现问题，甚至导致 KubeSphere 出现严重问题。强烈建议您在安装任意插件之前进行备份，若条件允许，先在其他环境进行测试。
 
 {{</ notice >}}
 
-## Prerequisites
+## 准备工作
 
-You need to enable [the KubeSphere DevOps system](../../../pluggable-components/devops/).
+您需要启用 [KubeSphere DevOps 系统](../../../pluggable-components/devops/)。
 
-## Install Plugins
+## 安装插件
 
-### Step 1: Get the address of Jenkins
+### 步骤 1：获取 Jenkins 地址
 
-1. Run the following command to get the address of Jenkins.
+1. 运行以下命令获取 Jenkins 的地址。
 
    ```bash
    export NODE_PORT=$(kubectl get --namespace kubesphere-devops-system -o jsonpath="{.spec.ports[0].nodePort}" services ks-jenkins)
@@ -30,7 +30,7 @@ You need to enable [the KubeSphere DevOps system](../../../pluggable-components/
    echo http://$NODE_IP:$NODE_PORT
    ```
 
-2. You can get the output similar to the following. You can access the Jenkins dashboard through the address with your own KubeSphere account and password (e.g. `admin/P@88w0rd`).
+2. 您会得到类似如下的输出。您可以通过输出的地址使用自己的 KubeSphere 帐户和密码（例如 `admin/P@88w0rd`）访问 Jenkins 面板。
 
    ```
    http://192.168.0.4:30180
@@ -38,42 +38,42 @@ You need to enable [the KubeSphere DevOps system](../../../pluggable-components/
 
    {{< notice note >}}
 
-   Make sure you use your own address of Jenkins. You may also need to open the port in your security groups and configure related port forwarding rules depending on where your Kubernetes cluster is deployed.
+   请确保使用自己的 Jenkins 地址。根据您 Kubernetes 集群部署位置的不同，您可能需要在安全组中打开端口，并配置相关的端口转发规则。
 
    {{</ notice >}}
 
-### Step 2: Install plugins on the Jenkins dashboard
+### 步骤 2：在 Jenkins 面板上安装插件
 
-1. Log in to the Jenkins dashboard and click **Manage Jenkins**.
+1. 登录 Jenkins 面板，点击**系统管理**。
 
-   ![click-manage-jenkins](/images/docs/faq/devops/install-plugins-to-jenkins/click-manage-jenkins.png)
+   ![click-manage-jenkins](/images/docs/zh-cn/faq/devops/install-plugins-to-jenkins/click-manage-jenkins.png)
 
-2. On the **Manage Jenkins** page, scroll down to **Manage Plugins** and click it.
+2. 在**系统管理**页面，下滑到**插件管理**并点击。
 
-   ![click-manage-plugins](/images/docs/faq/devops/install-plugins-to-jenkins/click-manage-plugins.png)
+   ![click-manage-plugins](/images/docs/zh-cn/faq/devops/install-plugins-to-jenkins/click-manage-plugins.png)
 
-3. Select the **Available** tab and you can see all the available plugins listed on the page. You can also use the **Filter** in the upper right corner to search for the plugins you need. Check the checkbox next to the plugin you need, and then click **Install without restart** or **Download now and install after restart** based on your needs.
+3. 点击**可选插件**选项卡，可以看到在该页面列出的全部可选插件。您也可以使用右上角的**过滤**功能搜索所需插件。勾选所需插件旁边的复选框，然后按需点击**直接安装**或**下载待重启后安装**。
 
-   ![available-plugins](/images/docs/faq/devops/install-plugins-to-jenkins/available-plugins.png)
+   ![available-plugins](/images/docs/zh-cn/faq/devops/install-plugins-to-jenkins/available-plugins.png)
 
    {{< notice note >}}
 
-   Jenkins plugins are inter-dependent. You may also need to install dependencies when you install a plugin.
+   Jenkins 的插件相互依赖。安装插件时，您可能还需要安装其依赖项。
 
    {{</ notice >}}
 
-4. If you downloaded an HPI file in advance, you can also select the **Advanced** tab and upload the HPI file to install it as a plugin.
+4. 如果已预先下载 HPI 文件，您也可以点击**高级**选项卡，上传该 HPI 文件作为插件进行安装。
 
-   ![click-advanced-tab](/images/docs/faq/devops/install-plugins-to-jenkins/click-advanced-tab.png)
+   ![click-advanced-tab](/images/docs/zh-cn/faq/devops/install-plugins-to-jenkins/click-advanced-tab.png)
 
-5. On the **Installed** tab, you can view all the plugins installed, and the plugins that are safe to uninstall will have the **Uninstall** button shown on the right.
+5. 在**已安装**选项卡，可以查看已安装的全部插件。能够安全卸载的插件将会在右侧显示**卸载**按钮。
 
-   ![installed-plugins](/images/docs/faq/devops/install-plugins-to-jenkins/installed-plugins.png)
+   ![installed-plugins](/images/docs/zh-cn/faq/devops/install-plugins-to-jenkins/installed-plugins.png)
 
-6. On the **Updates** tab, you can install the updates for plugins by checking the checkbox of a plugin and then click the **Download now and install after restart** button. You can also click the **Check now** button to check for updates.
+6. 在**可更新**选项卡，先勾选插件左侧的复选框，再点击**下载待重启后安装**，即可安装更新的插件。您也可以点击**立即获取**按钮检查更新。
 
-   ![update-plugins](/images/docs/faq/devops/install-plugins-to-jenkins/update-plugins.png)
+   ![update-plugins](/images/docs/zh-cn/faq/devops/install-plugins-to-jenkins/update-plugins.png)
 
-## See Also
+## 另请参见
 
-[Managing Plugins](https://www.jenkins.io/doc/book/managing/plugins/)
+[管理插件](https://www.jenkins.io/zh/doc/book/managing/plugins/)
