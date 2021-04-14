@@ -22,7 +22,7 @@ Strictly speaking, what’s actually happening is that dockershim is being remov
 
 Dockershim was a temporary solution proposed by the Kubernetes community to add support for Docker so that it could serve as its container runtime. Dockershim deprecation only means the code maintenance of Dockershim in the code repository of Kubernetes will stop. This is because Dockershim has become a heavy burden on the Kubernetes maintainers. After this change, the Kubernetes community will be able to maintain the Kubernetes Container Runtime Interface (CRI) only. In fact, all CRI-compliant runtimes can be the runtime for Kubernetes, such as CRI-O and containerd.
 
-Currently, the KubeSphere container platform is using Docker as the container runtime of Kubernetes. Meanwhile, it also supports any CRI-compliant implementations. For KubeSphere and Docker users, dockershim deprecation does not affect the existing KubeSphere system and will not take any toll on your cluster or on your business. KubeSphere users can continue to use Docker which has already been tested at scale.
+Currently, the KubeSphere [container platform](https://kubesphere.io/) is using Docker as the container runtime of Kubernetes. Meanwhile, it also supports any CRI-compliant implementations. For KubeSphere and Docker users, dockershim deprecation does not affect the existing KubeSphere system and will not take any toll on your cluster or on your business. KubeSphere users can continue to use Docker which has already been tested at scale.
 
 In future releases, other KubeSphere components, such as DevOps, will support these container runtimes and you will be able to use these CRI implementations.
 
