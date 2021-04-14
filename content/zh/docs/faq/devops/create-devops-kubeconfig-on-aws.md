@@ -1,24 +1,24 @@
 ---
-title: "Create a DevOps Kubeconfig on AWS"
+title: "在 AWS 上创建 DevOps Kubeconfig"
 keywords: "KubeSphere, Kubernetes, DevOps, Kubeconfig, AWS"
-description: "How to create a DevOps kubeconfig on AWS"
-linkTitle: "Create a DevOps Kubeconfig on AWS"
+description: "如何在 AWS 上创建 DevOps Kubeconfig"
+linkTitle: "在 AWS 上创建 DevOps Kubeconfig"
 Weight: 16820
 ---
 
-If you have trouble deploying applications into your project when running a pipeline on your AWS cluster with KubeSphere installed, it may be caused by the issue of DevOps kubeconfig. This tutorial demonstrates how to create a DevOps kubeconfig on AWS.
+在已安装 KubeSphere 的 AWS 集群上运行流水线时，如果无法将应用部署到项目中，可能是因 DevOps kubeconfig 出问题所导致。本教程介绍如何在 AWS 上创建 DevOps kubeconfig。
 
-## Prerequisites
+## 准备工作
 
-- You have an AWS cluster with KubeSphere installed. For more information about how to install KubeSphere on AWS, refer to [Deploy KubeSphere on AWS EKS](../../../installing-on-kubernetes/hosted-kubernetes/install-kubesphere-on-eks/).
-- You have enabled [the KubeSphere DevOps system](../../../pluggable-components/devops/).
-- You have a project available for deploying applications. This tutorial uses the project `kubesphere-sample-dev` as an example.
+- 您需要准备一个已安装 KubeSphere 的 AWS 集群。有关如何在 AWS 上安装 KubeSphere 的更多信息，请参考[在 AWS EKS 上部署 KubeSphere](../../../installing-on-kubernetes/hosted-kubernetes/install-kubesphere-on-eks/)。
+- 您需要启用 [KubeSphere DevOps 系统](../../../pluggable-components/devops/)。
+- 您需要准备一个可以部署应用的项目。本教程以 `kubesphere-sample-dev` 项目为例。
 
-## Create a DevOps Kubeconfig
+## 创建 DevOps Kubeconfig
 
-### Step 1: Create a Service Account
+### 步骤 1：创建 ServiceAccount
 
-1. Create a `devops-deploy.yaml` file on your AWS cluster and enter the following contents.
+1. 在您的 AWS 集群上创建 `devops-deploy.yaml` 文件并输入以下内容。
 
    ```yaml
    ---
@@ -56,32 +56,32 @@ If you have trouble deploying applications into your project when running a pipe
      namespace: kubesphere-sample-dev
    ```
 
-2. Run the following command to apply the YAML file.
+2. 运行以下命令应用该 YAML 文件。
 
    ```bash
    kubectl apply -f devops-deploy.yaml
    ```
 
-### Step 2: Get the Service Account Token
+### 步骤 2：获取 ServiceAccount 令牌
 
-1. Run the following command to get the Service Account token.
+1. 运行以下命令获取 ServiceAccount 的令牌。
 
    ```bash
    export TOKEN_NAME=$(kubectl -n kubesphere-sample-dev get sa devops-deploy -o jsonpath='{.secrets[0].name}')
    kubectl -n kubesphere-sample-dev get secret "${TOKEN_NAME}" -o jsonpath='{.data.token}' | base64 -d
    ```
 
-2. The output is similar to the following:
+2. 输出类似如下：
 
-   ![get-token](/images/docs/faq/devops/create-devops-kubeconfig-on-aws/get-token.jpg)
+   ![get-token](/images/docs/zh-cn/faq/devops/create-devops-kubeconfig-on-aws/get-token.jpg)
 
-### Step 3: Create a DevOps kubeconfig
+### 步骤 3：创建 DevOps kubeconfig
 
-1. Log in to your KubeSphere console of the AWS cluster and go to your DevOps project. Go to **Credentials** under **Project Management**, and then click **Create**. You can name this kubeconfig based on your needs.
+1. 登录 AWS 集群的 KubeSphere 控制台，访问您的 DevOps 工程。转到**工程管理**下的**凭证**，然后点击**创建**。您可以按需输入该 kubeconfig 的**凭证 ID**。
 
-   ![create-kubeconfig](/images/docs/faq/devops/create-devops-kubeconfig-on-aws/create-kubeconfig.png)
+   ![create-kubeconfig](/images/docs/zh-cn/faq/devops/create-devops-kubeconfig-on-aws/create-kubeconfig.png)
 
-2. In the **Content** text box, pay attention to the following contents:
+2. 在 **Content** 文本框中，请注意以下内容：
 
    ```
    user:
@@ -89,7 +89,7 @@ If you have trouble deploying applications into your project when running a pipe
        client-key-data: LS0tLS1CRUdJTiBQUk...
    ```
 
-   You have to replace them with the token retrieved in step 2, then click **OK** to create the kubeconfig.
+   您需要将其替换为在步骤 2 中获取的令牌，然后点击**确定**创建 kubeconfig。
 
    ```bash
    user:
@@ -98,7 +98,7 @@ If you have trouble deploying applications into your project when running a pipe
 
    {{< notice note >}}
 
-   Make sure you use your own token.
+   请确保使用您自己的令牌。
 
    {{</ notice >}}
 
