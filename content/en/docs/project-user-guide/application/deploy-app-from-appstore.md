@@ -12,7 +12,7 @@ This tutorial demonstrates how to quickly deploy [NGINX](https://www.nginx.com/)
 
 ## Prerequisites
 
-- You have enabled [OpenPitirx (App Store)](../../../pluggable-components/app-store/).
+- You have enabled [OpenPitrix (App Store)](../../../pluggable-components/app-store/).
 - You need to create a workspace, a project, and a user account (`project-regular`) for this tutorial. The account needs to be a platform regular user invited to the project with the `operator` role. For more information, see [Create Workspaces, Projects, Accounts and Roles](../../../quick-start/create-workspace-and-project/).
 
 ## Hands-on Lab
