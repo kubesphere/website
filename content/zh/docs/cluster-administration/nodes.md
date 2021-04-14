@@ -20,13 +20,14 @@ Kubernetes 将容器放入 Pod 中并在节点上运行，从而运行工作负�
 只有集群管理员可以访问集群节点。由于一些节点指标对集群非常重要，集群管理员应监控这些指标并确保节点可用。请按照以下步骤查看节点状态。
 
 1. 点击左上角的**平台管理**，然后选择**集群管理**。
-   ![clusters-management-select](/images/docs/zh-cn/cluster-administration/node-management/clusters-management-select.png)
+   ![clusters-select](/images/docs/zh-cn/cluster-administration/node-management/clusters-select.png)
 
 2. 如果您已启用了[多集群功能](../../multicluster-management/)并已导入了 Member 集群，您可以选择一个特定集群以查看其节点信息。如果尚未启用该功能，请直接进行下一步。
-![select-a-cluster](/images/docs/zh-cn/cluster-administration/node-management/select-a-cluster.png)
-   
+    ![cluster-management1](/images/docs/zh-cn/cluster-administration/node-management/cluster-management1.png)
+
 3. 在左侧导航栏中选择**节点管理**下的**集群节点**，查看节点的状态详情。
-   ![Node Status](/images/docs/zh-cn/cluster-administration/node-management/node_status.png)
+
+   ![Node-Status](/images/docs/zh-cn/cluster-administration/node-management/Node-Status.png)
 
    - **名称**：节点的名称和子网 IP 地址。
    - **状态**：节点的当前状态，标识节点是否可用。
@@ -45,21 +46,23 @@ Kubernetes 将容器放入 Pod 中并在节点上运行，从而运行工作负�
 
 点击列表中的一个节点打开节点详情页面。
 
-![Node Detail](/images/docs/zh-cn/cluster-administration/node-management/node_detail.png)
+![Node-Detail](/images/docs/zh-cn/cluster-administration/node-management/Node-Detail.png)
 
 - **停止调度/启用调度**：您可以在节点重启或维护期间将节点标记为不可调度。Kubernetes 调度器不会将新 Pod 调度到标记为不可调度的节点。但这不会影响节点上现有工作负载。在 KubeSphere 中，您可以点击节点详情页面的**停止调度**将节点标记为不可调度。再次点击此按钮（**启用调度**）可将节点标记为可调度。
+
 - **标签**：您可以利用节点标签将 Pod 分配给特定节点。首先标记节点（例如，用 `node-role.kubernetes.io/gpu-node` 标记 GPU 节点），然后在[创建工作负载](../../project-user-guide/application-workloads/deployments/#步骤-5配置高级设置)时在**高级设置**中添加此标签，从而使 Pod 在 GPU 节点上运行。要添加节点标签，请点击**更多操作**，然后选择**编辑标签**。
-   ![drop-down-list-node](/images/docs/zh-cn/cluster-administration/node-management/drop-down-list-node.png)
-
-   ![Label Node](/images/docs/zh-cn/cluster-administration/node-management/label_node.png)
-
-   ![Assign pods to nodes](/images/docs/zh-cn/cluster-administration/node-management/assign_pods_to_node.png)
-
+   
+    ![node-drop-down-list](/images/docs/zh-cn/cluster-administration/node-management/node-drop-down-list.png)
+   
+  ![label-node](/images/docs/zh-cn/cluster-administration/node-management/label-node.png)
+   
+  ![assign_pods_to_node1](/images/docs/zh-cn/cluster-administration/node-management/assign_pods_to_node1.png)
+   
 - **污点**：污点允许节点排斥一些 Pod。您可以在节点详情页面添加或删除节点污点。要添加或删除污点，请点击**更多操作**，然后从下拉菜单中选择**污点管理**。
   
-   ![taint-management](/images/docs/zh-cn/cluster-administration/node-management/taint-management.png)
+   ![manage-taint](/images/docs/zh-cn/cluster-administration/node-management/manage-taint.png)
 
-   ![add-taints](/images/docs/zh-cn/cluster-administration/node-management/add-taints.png)
+   ![add-taint](/images/docs/zh-cn/cluster-administration/node-management/add-taint.png)
 
     {{< notice note >}}
 请谨慎添加污点，因为它们可能会导致意外行为从而导致服务不可用。有关更多信息，请参阅[污点和容忍度](https://kubernetes.io/zh/docs/concepts/scheduling-eviction/taint-and-toleration/)。
