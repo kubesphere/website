@@ -23,7 +23,7 @@ A multi-node cluster is composed of at least one master node and one worker node
 
 ## Step 1: Prepare Linux Hosts
 
-Please see the requirements for hardware and operating system shown below. To get started with multi-node installation in this demo, you need to prepare at least three hosts according to the following requirements. It is possible to install KubeSphere on two nodes with enough resources planned.
+Please see the requirements for hardware and operating system shown below. To get started with multi-node installation in this demo, you need to prepare at least three hosts according to the following requirements. It is possible to install [KubeSphere container platform](https://kubesphere.io/) on two nodes with enough resources planned.
 
 ### System requirements
 
