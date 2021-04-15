@@ -97,7 +97,7 @@ To upgrade Kubernetes to a specific version, explicitly provide the version afte
 
 ### Multi-node cluster
 
-#### Step1: Generate a configuration file using KubeKey
+#### Step 1: Generate a configuration file using KubeKey
 
 This command creates a configuration file `sample.yaml` from your cluster.
 
