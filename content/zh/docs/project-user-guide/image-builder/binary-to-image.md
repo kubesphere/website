@@ -55,7 +55,7 @@ Binary-to-Image (B2I) 是一个工具箱和工作流，用于从二进制可执�
 
    **上传制品**：上传 war 制品 ([b2i-war-java8](https://github.com/kubesphere/tutorial/raw/master/tutorial%204%20-%20s2i-b2i/b2i-war-java8.war))。
 
-   **构建环境**：选择 **kubesphere/tomcat85-java8-centos7:v2.1.0**.
+   **构建环境**：选择 **kubesphere/tomcat85-java8-centos7:v2.1.0**。
 
    **镜像名称**：输入 `<DOCKERHUB_USERNAME>/<IMAGE NAME>` 或 `<HARBOR-PROJECT_NAME>/<IMAGE NAME>` 作为镜像名称。
 
