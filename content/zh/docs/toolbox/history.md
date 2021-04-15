@@ -3,7 +3,7 @@ title: "历史记录"
 keywords: 'KubeSphere, Kubernetes, 历史记录'
 description: '了解如何快速切换在企业空间中访问的资源。'
 linkTitle: "历史记录"
-weight: 15500
+weight: 15600
 ---
 
 当您在多个企业空间或项目中进行操作，您的 Web 浏览器会记录您最新访问的路径。

@@ -3,7 +3,7 @@ title: "History"
 keywords: 'KubeSphere, Kubernetes, history'
 description: 'Learn how to quickly switch between the resources you access in your workspace.'
 linkTitle: "History"
-weight: 15500
+weight: 15600
 ---
 
 When you work in multiple workspaces or projects, your web browser will record the latest path you visited. 
