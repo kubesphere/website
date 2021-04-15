@@ -106,7 +106,7 @@ Click the pipeline to go to its detail page. To use graphical editing panels, cl
 
 {{< notice note >}}
 
-You can also click **Edit Jenkinsfile** to create a Jenkinsfile manually for your pipeline.
+The pipeline detail page shows **Sync Status**. It reflects the synchronization result between KubeSphere and Jenkins, and you can see the **Success** icon if the synchronization is successful. You can also click **Edit Jenkinsfile** to create a Jenkinsfile manually for your pipeline.
 
 {{</ notice >}}
 

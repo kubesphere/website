@@ -114,7 +114,7 @@ KubeSphere 中的图形编辑面板包含用于 Jenkins [阶段 (Stage)](https:/
 
 {{< notice note >}}
 
-您也可以点击**持续集成 (CI)** 和**持续集成&交付 (CI/CD)** 来使用 KubeSphere 提供的内置流水线模板。
+流水线详情页面会显示**同步状态**，它是 KubeSphere 和 Jenkins 之间的同步结果。若同步成功，您会看到**成功**图标。您也可以点击**持续集成 (CI)** 和**持续集成&交付 (CI/CD)** 来使用 KubeSphere 提供的内置流水线模板。
 
 {{</ notice >}}
 
