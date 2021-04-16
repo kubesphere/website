@@ -32,7 +32,7 @@ This glossary includes general terms and technical terms that are specific to Ku
 
 ## Applications and Workloads
 
-- **OpenPitirx** <br>
+- **OpenPitrix** <br>
     An open-source system to package, deploy and manage different types of apps.
 
 - **App template** <br>
