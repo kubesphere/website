@@ -77,7 +77,7 @@ section3:
         - content: Support operation in application store, including metering and billing for applications (coming soon)
 
 section4:
-  title: Kubernetes Platform Key Features
+  title: Key Features of Kubernetes Platform
   content: If you are seeking an open source project that rivals a commercial product, KubeSphere is your choice. <br> <br>The <a class='inner-a' target='_blank' href='https://github.com/kubesphere/kubesphere/blob/master/docs/roadmap.md'>RoadMap</a> lists the planned features and everyone is welcome to raise a proposal and contribute your ideas.
   children:
     - name: Provisioning Kubernetes
