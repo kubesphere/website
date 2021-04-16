@@ -83,3 +83,4 @@ The image below is a Slack notification example:
 - As KubeSphere has built-in alerting policies, if you do not set any customized alerting policies, your Slack channel can still receive notifications once a built-in alerting policy is triggered.
 
 {{</ notice >}} 
+
