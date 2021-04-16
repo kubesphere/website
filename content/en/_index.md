@@ -15,8 +15,8 @@ section1:
   downloadLink2: "https://kubesphere.io/docs/quick-start/all-in-one-on-linux/"
 
 section2:
-  title: One Platform for Full Stack Solutions
-  content: KubeSphere is also a multi-tenant enterprise-grade container platform with full-stack automated IT operation and streamlined DevOps workflows. It provides developer-friendly wizard web UI, helping enterprises to build out a more robust and feature-rich platform, which includes the most common functionalities needed for enterprise Kubernetes strategies.
+  title: One Kubernetes Platform for Full Stack Solutions
+  content: KubeSphere is also a multi-tenant enterprise-grade Kubernetes container platform with full-stack automated IT operation and streamlined DevOps workflows. It provides developer-friendly wizard web UI, helping enterprises to build out a more robust and feature-rich platform, which includes the most common functionalities needed for enterprise Kubernetes strategies.
   children:
     - name: Open Source
       icon: /images/home/open-source.svg
@@ -28,7 +28,7 @@ section2:
 
     - name: Rich Features
       icon: /images/home/feature-rich.svg
-      content: Deliver DevOps, service mesh, observability, application management, multi-tenancy, storage and networking management in a unified platform.
+      content: Deliver DevOps, service mesh, <a class='inner-a' target='_blank' href='observability/'>observability</a>, application management, multi-tenancy, storage and networking management in a unified platform.
 
     - name: Modular & Pluggable
       icon: /images/home/modular-pluggable.svg
@@ -37,7 +37,7 @@ section2:
 
 
 section3:
-  title: Benefits to Different Teams
+  title: Benefits of Kubernetes Platform to Different Teams
   content: Multi-tenancy enables different teams to securely deploy and maintain containerized applications from the cloud to the edge. It allows developers to deploy code with several clicks on the friendly console, and brings integrated observability and powerful DevOps strategies for the Ops team. It also helps the Infra team to install and maintain Kubernetes cluster with efficient, flexible network solutions which avoids locking teams into a single-vendor ecosystem.
   children:
     - name: Infra Team
@@ -77,7 +77,7 @@ section3:
         - content: Support operation in application store, including metering and billing for applications (coming soon)
 
 section4:
-  title: Key Features
+  title: Key Features of Kubernetes Platform
   content: If you are seeking an open source project that rivals a commercial product, KubeSphere is your choice. <br> <br>The <a class='inner-a' target='_blank' href='https://github.com/kubesphere/kubesphere/blob/master/docs/roadmap.md'>RoadMap</a> lists the planned features and everyone is welcome to raise a proposal and contribute your ideas.
   children:
     - name: Provisioning Kubernetes
@@ -113,7 +113,7 @@ section4:
 
     - name: DevOps System
       icon: /images/home/dev-ops.svg
-      content: Out-of-box CI/CD based on Jenkins, and automated workflow tools including Source-to-Image & Binary-to-Image
+      content: Out-of-box CI/CD based on Jenkins, and automated <a class='inner-a' target='_blank' href='devops/'>DevOps workflow</a> tools including Source-to-Image & Binary-to-Image
       link: "devops/"
       color: orange
 
