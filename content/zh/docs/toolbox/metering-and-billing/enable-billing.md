@@ -10,7 +10,7 @@ weight: 15420
 
 默认计费功能是关闭的，可以通过以下步骤开启计费功能：
 
-1. 在 configmap `ks-metering-config` 中指定不同资源类型的价格（初始为-1）
+1. 在 ConfigMap `ks-metering-config` 中指定不同资源类型的价格（初始为-1）
 
 ```shell
 # kubectl edit cm ks-metering-config -n kubesphere-system
@@ -34,7 +34,7 @@ metadata:
   namespace: kubesphere-system
 ```
 
-> 上面定义了包含货币单位在内的价格信息：货币目前支持人民币 (CNY) 和美元 (USD) ，举例来说，上面配置的含义是 CPU 每 core 每小时 1.5 美元，内存每 GB 每小时 5 美元， ingress 网络流量每 MB 每小时 1 美元， egress 网络流量每 MB 每小时 1 美元， PVC 每 GB 每小时 2.1 美元。
+> 上面定义了包含货币单位在内的价格信息：货币目前支持人民币 (CNY) 和美元 (USD) ，如果指定其他币种，则前端统一显示人民币。举例来说，上面配置的含义是 CPU 每 core 每小时 1.5 美元，内存每 GB 每小时 5 美元， ingress 网络流量每 MB 每小时 1 美元， egress 网络流量每 MB 每小时 1 美元， PVC 每 GB 每小时 2.1 美元。
 
 2. 重启 ks-apiserver
 
