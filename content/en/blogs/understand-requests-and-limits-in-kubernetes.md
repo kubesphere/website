@@ -30,7 +30,7 @@ resources:
         memory: 100Mi
 ```
 
-Requests are the smallest amount of resources a container needs. For example, for a container running Spring Boot business, the requests specified must be the minimum amount of resources that a Java Virtual Machine (JVM) needs to consume in the container image. If you set `requests.memory` to `10Mi` for the Pod, obviously, it is not reasonable in this case. The memory resources the JVM is actually using will exceed the value of `requests.memory` (also known as OOM), resulting in the continuous restart of the Pod.
+Requests define the smallest amount of resources a container needs. For example, for a container running Spring Boot business, the requests specified must be the minimum amount of resources that a Java Virtual Machine (JVM) needs to consume in the container image. If you only specify a low memory request, the odds are that the Kubernetes scheduler tends to schedule the Pod to the node which doesn’t have sufficient resources to run the JVM. Namely, the Pod cannot use more memory which the JVM bootup process needs. As a result, the Pod keeps restarting.
 
 On the other hand, limits determine the maximum amount of resources that a container can use, preventing resource shortage or machine crashes due to excessive resource consumption. If it is set to `0`, it means no resource limit for the container. In particular, if you set `limits` without specifying `requests`, Kubernetes considers the value of `requests` is the same as that of `limits` by default.
 
