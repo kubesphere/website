@@ -55,7 +55,7 @@ weight: 8721
 {{< notice note >}}
 
 - 如果您更新了邮件服务器配置，KubeSphere 将根据最新配置发送邮件通知。
-- 默认情况下，KubeSphere 大约每 12 个小时发送相同告警的通知。告警重复间隔期主要由 `kubesphere-monitoring-system` 项目中 `alertmanager-main` 密钥的 `repeat_interval` 所控制。您可以按需自定义间隔期。
+- 默认情况下，KubeSphere 大约每 12 小时针对同一告警发送通知。告警重复间隔期主要由 `kubesphere-monitoring-system` 项目中 `alertmanager-main` 密钥的 `repeat_interval` 所控制。您可以按需自定义间隔期。
 - KubeSphere 拥有内置告警策略，在不设置任何自定义告警策略的情况下，只要内置告警策略被触发，您的接收人仍能收到邮件通知。
 
 {{</ notice >}} 
