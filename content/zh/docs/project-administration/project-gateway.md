@@ -6,7 +6,7 @@ linkTitle: "项目网关"
 weight: 13500
 ---
 
-KubeSphere 项目中的网关是一个[ NGINX Ingress 控制器](https://www.nginx.com/products/nginx/kubernetes-ingres-controller)。KubeSphere 内置的用于 HTTP 负载均衡的机制称为[路由](../../project-user-guide/application-workloads/ingress/)，它定义了从外部到集群服务的连接规则。如需允许从外部访问服务，用户可创建路由资源来定义 URI 路径、后端服务名称等信息。
+KubeSphere 项目中的网关是一个[ NGINX Ingress 控制器](https://www.nginx.com/products/nginx/kubernetes-ingres-controller)。KubeSphere 内置的用于 HTTP 负载均衡的机制称为[应用路由](../../project-user-guide/application-workloads/routes/)，它定义了从外部到集群服务的连接规则。如需允许从外部访问服务，用户可创建路由资源来定义 URI 路径、后端服务名称等信息。
 
 在 KubeSphere 3.0，项目网关单独运行，即每个项目都有自己的 Ingress 控制器。在下一个发布版本中，KubeSphere 除了提供项目范围的网关外，还将提供集群范围的网关，使得所有项目都能共享相同的网关。
 
@@ -45,7 +45,7 @@ KubeSphere 项目中的网关是一个[ NGINX Ingress 控制器](https://www.ngi
 - `http://EIP:32734`
 - `https://EIP:32471`
 
-当创建[路由](../../project-user-guide/application-workloads/ingress/) (Ingress) 时，您可以自定义主机名用于访问服务。例如，如果您的路由中配置了服务的主机名，请访问：
+当创建[路由](../../project-user-guide/application-workloads/routes/) (Ingress) 时，您可以自定义主机名用于访问服务。例如，如果您的路由中配置了服务的主机名，请访问：
 
 - `http://demo.kubesphere.io:32734`
 - `https://demo.kubesphere.io:32471`
