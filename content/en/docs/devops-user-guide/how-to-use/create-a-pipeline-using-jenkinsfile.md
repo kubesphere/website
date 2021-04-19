@@ -298,7 +298,7 @@ The account `project-admin` needs to be created in advance since it is the revie
 2. Use the **web kubectl** from **Toolbox** in the bottom right corner by executing the following command:
 
    ```bash
-   $ curl 10.10.128.169:8080
+   curl 10.10.128.169:8080
    ```
 
 3. Expected output:
