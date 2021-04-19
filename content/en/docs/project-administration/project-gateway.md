@@ -6,7 +6,7 @@ linkTitle: "Project Gateway"
 weight: 13500
 ---
 
-A gateway in a KubeSphere project is an [NGINX Ingress controller](https://www.nginx.com/products/nginx/kubernetes-ingress-controller). KubeSphere has a built‑in configuration for HTTP load balancing, called [Routes](../../project-user-guide/application-workloads/ingress/). A Route defines rules for external connections to Services within a cluster. Users who need to provide external access to their Services create a Route resource that defines rules, including the URI path, backing service name, and other information.
+A gateway in a KubeSphere project is an [NGINX Ingress controller](https://www.nginx.com/products/nginx/kubernetes-ingress-controller). KubeSphere has a built‑in configuration for HTTP load balancing, called [Routes](../../project-user-guide/application-workloads/routes/). A Route defines rules for external connections to Services within a cluster. Users who need to provide external access to their Services create a Route resource that defines rules, including the URI path, backing service name, and other information.
 
 In KubeSphere 3.0, a project gateway works independently for itself. In other words, every project has its own Ingress controller. In the next release, KubeSphere will provide a cluster-scope gateway in addition to the project-scope gateway, allowing all projects to share the same gateway.
 
