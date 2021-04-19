@@ -45,7 +45,7 @@ For example, to access your Service with an elastic IP address (EIP), visit:
 - `http://EIP:32734`
 - `https://EIP:32471`
 
-When you create a [Route](../../project-user-guide/application-workloads/ingress/) (Ingress), you can customize a host name to access your Service. For example, to access your Service with the host name set in your Route, visit:
+When you create a [Route](../../project-user-guide/application-workloads/routes/) (Ingress), you can customize a host name to access your Service. For example, to access your Service with the host name set in your Route, visit:
 
 - `http://demo.kubesphere.io:32734`
 - `https://demo.kubesphere.io:32471`

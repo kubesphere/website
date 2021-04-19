@@ -45,7 +45,7 @@ KubeSphere 项目中的网关是一个[ NGINX Ingress 控制器](https://www.ngi
 - `http://EIP:32734`
 - `https://EIP:32471`
 
-当创建[路由](../../project-user-guide/application-workloads/ingress/) (Ingress) 时，您可以自定义主机名用于访问服务。例如，如果您的路由中配置了服务的主机名，请访问：
+当创建[路由](../../project-user-guide/application-workloads/routes/) (Ingress) 时，您可以自定义主机名用于访问服务。例如，如果您的路由中配置了服务的主机名，请访问：
 
 - `http://demo.kubesphere.io:32734`
 - `https://demo.kubesphere.io:32471`
