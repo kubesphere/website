@@ -19,7 +19,7 @@ This component runs on each node, monitoring the change in the service object in
 If the access is required outside the cluster, or to expose the service to users, Kubernetes Service provides two methods: NodePort and LoadBalancer. Besides, Ingress is also a very common option to expose services.
 
 ### NodePort
-If the service type is set to NodePort, kube-proxy will apply for a port for the service which is above 3000 (by default). Iptables rules will be configured for all the hosts in the cluster. In this way, users can access the service through any node in the cluster with the assigned port. Please see the image below:
+If the service type is set to NodePort, kube-proxy will apply for a port for the service which is above 30000 (by default). Iptables rules will be configured for all the hosts in the cluster. In this way, users can access the service through any node in the cluster with the assigned port. Please see the image below:
 
 ![NodePort](https://pek3b.qingstor.com/kubesphere-docs/png/20200611115837.png)
 
