@@ -1,5 +1,7 @@
 baseURL = "https://kubesphere-v3.netlify.app"
 
+enableRobotsTXT = true
+
 [markup]
   [markup.tableOfContents]
     endLevel = 3

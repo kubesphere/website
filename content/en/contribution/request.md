@@ -1,7 +1,7 @@
 ---
 title: "contribution request"
 layout: "request"
-
+disallow: true
 css: "scss/contribution.scss"
 
 section1:
