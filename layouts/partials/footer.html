@@ -91,6 +91,17 @@
         </div>
     </div>
 
+    <div class="cookie">
+        <div class="common-layout">
+            <p>
+                {{ i18n "Cookie Statement" ("/privacy" | relLangURL) | safeHTML }}
+              </p>
+              <button>
+                {{ i18n "Accept and continue" }}
+              </button>
+        </div>
+    </div>
+
 </footer>
 
 <script>
@@ -157,8 +168,23 @@
         }
     }
 
+    var bindHideCookie = function() {
+        var hasAuth = localStorage.getItem("hasAuth")
+        var cookieElement = $('.cookie')
+        if (hasAuth) {
+            cookieElement.hide()
+        } else {
+            cookieElement.show()
+        }
+        cookieElement.find('button').on('click', function() {
+            localStorage.setItem("hasAuth", '1')
+            cookieElement.hide()
+        })
+    }
+
     bindAddPadding()
     // bindLayLoad()
     bindSubmit()
     bindHideMessage()
+    bindHideCookie()
 </script>
