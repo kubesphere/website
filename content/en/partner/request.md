@@ -2,7 +2,7 @@
 title: "partner request"
 
 layout: "request"
-
+disallow: true
 css: "scss/partner.scss"
 
 section1:
