@@ -26,7 +26,7 @@ weight: 15420
       retentionDay: 7d
       billing:
         priceInfo:
-          currencyUnit: "CNY"
+          currencyUnit: "USD"
           cpuPerCorePerHour: 1.5
           memPerGigabytesPerHour: 5
           ingressNetworkTrafficPerMegabytesPerHour: 1
@@ -36,7 +36,7 @@ kind: ConfigMap
 ...
 ```
 
-> 可以通过配置 `retentionDay` 和 `billing` 相关参数来开启计费功能。其中 `retentionDay` 参数需要与 Prometheus 中的 `retention` 参数保持一致。 而 `billing` 部分包含货币单位在内的价格信息：货币目前支持人民币 (CNY) 和美元 (USD) ，如果指定其他币种，则前端统一显示人民币。举例来说，上面配置的含义是 CPU 每 core 每小时 1.5 美元，内存每 GB 每小时 5 美元， ingress 网络流量每 MB 每小时 1 美元， egress 网络流量每 MB 每小时 1 美元， PVC 每 GB 每小时 2.1 美元。
+> 可以通过配置 `retentionDay` 和 `billing` 相关参数来开启计费功能。其中 `retentionDay` 参数需要与 Prometheus 中的 `retention` 参数保持一致。 而 `billing` 部分包含货币单位在内的价格信息：货币目前支持人民币 (CNY) 和美元 (USD) ，如果指定其他币种，则前端统一显示美元。举例来说，上面配置的含义是 CPU 每 core 每小时 1.5 美元，内存每 GB 每小时 5 美元， ingress 网络流量每 MB 每小时 1 美元， egress 网络流量每 MB 每小时 1 美元， PVC 每 GB 每小时 2.1 美元。
 
 
 2. 重启 ks-apiserver
