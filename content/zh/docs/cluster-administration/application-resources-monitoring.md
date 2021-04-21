@@ -16,13 +16,18 @@ weight: 8300
 ## 使用情况
 
 1. 点击左上角的**平台管理**，然后选择**集群管理**。
-![Platform](/images/docs/zh-cn/cluster-administration/application-resources-monitoring/platform.png)
+  ![Platform](/images/docs/zh-cn/cluster-administration/application-resources-monitoring/platform.png)
+
 2. 如果您已启用了[多集群功能](../../multicluster-management/)并已导入了 Member 集群，您可以选择一个集群以查看其应用程序资源。如果尚未启用该功能，请直接进行下一步。
-![Clusters Management](/images/docs/zh-cn/cluster-administration/application-resources-monitoring/clusters-management.png)
+  ![Clusters Management](/images/docs/zh-cn/cluster-administration/application-resources-monitoring/clusters-management.png)
+
 3. 在左侧导航栏选择**监控告警**下的**应用资源**以查看应用资源概览，包括集群中所有资源使用情况的汇总信息。
-    ![Resource Usage](/images/docs/zh-cn/cluster-administration/application-resources-monitoring/application-resources-monitoring.png)
+    
+    ![application-resources-monitoring1](/images/docs/zh-cn/cluster-administration/application-resources-monitoring/application-resources-monitoring1.png)
+    
 4. **集群资源使用情况**和**应用资源用量**提供最近 7 天的监控数据，并支持自定义时间范围查询。
     ![Time Range](/images/docs/zh-cn/cluster-administration/application-resources-monitoring/time-range.png)
+
 5. 点击特定资源以查看特定时间段内的使用详情和趋势，例如**集群资源使用情况**下的 **CPU**。在详情页面，您可以按项目查看特定的监控数据，以及自定义时间范围查看资源的确切使用情况。
     ![Cluster Resources Usage](/images/docs/zh-cn/cluster-administration/application-resources-monitoring/cluster-resources-monitoring.png)
 
