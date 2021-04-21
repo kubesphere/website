@@ -3,6 +3,8 @@ title: "Grayscale Release — Overview"
 keywords: 'Kubernetes, KubeSphere, grayscale release, overview, service mesh'
 description: 'Understand the basic concept of grayscale release.'
 linkTitle: "Overview"
+aliases: 
+    - "/docs/project-user-guide/grayscale/overview/"
 weight: 10510
 ---
 

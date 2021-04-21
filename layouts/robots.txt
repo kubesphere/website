@@ -1,4 +1,6 @@
 User-agent: *
+Disallow: /docs/cluster-administration/platform-settings/customize-basic-information/
+Disallow: /docs/project-user-guide/grayscale/overview/
 {{ range .Pages }}
 {{ if .Params.disallow }}
 Disallow: {{ .RelPermalink }}
