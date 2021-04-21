@@ -3,6 +3,8 @@ title: "Platform Settings"
 keywords: 'KubeSphere, Kubernetes, customize, platform'
 description: 'Customize platform settings such as logo and title.'
 linkTitle: "Platform Settings"
+aliases: 
+    - "/docs/cluster-administration/platform-settings/customize-basic-information/"
 weight: 8700
 ---
 
