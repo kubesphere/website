@@ -6,4 +6,4 @@ linkTitle: "平台设置"
 weight: 8700
 ---
 
-KubeSphere 是一款基于 Kubernetes 的开源企业级容器平台，出于版权与品牌保护的原因，修改 KubeSphere 平台的 Logo 与平台名称等相关信息需要获得商业授权，请联系 kubesphere@yunify.com 获取商业授权。
+KubeSphere 是一款基于 Kubernetes 的开源企业级容器平台，同时也提供定制化服务，例如修改 KubeSphere 平台的 Logo 与平台名称等相关信息。如需获得定制化服务，请联系 [support@kubesphere.cloud](mailto:support@kubesphere.cloud) 或访问 https://kubesphere.cloud/。
