@@ -2,6 +2,9 @@
 title: "Routes"
 keywords: "KubeSphere, Kubernetes, Route, Ingress"
 description: "Learn basic concepts of Routes (i.e. Ingress) and how to create Routes in KubeSphere."
+linktitle: "Routes"
+aliases: 
+    - "/docs/project-user-guide/application-workloads/ingress/"
 weight: 10270
 ---
 

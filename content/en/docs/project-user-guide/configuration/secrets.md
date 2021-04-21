@@ -3,6 +3,8 @@ title: "Secrets"
 keywords: 'KubeSphere, Kubernetes, Secrets'
 description: 'Learn how to create a Secret in KubeSphere.'
 linkTitle: "Secrets"
+aliases: 
+    - "/docs/project-user-guide/configuration/secrets/"
 weight: 10410
 ---
 

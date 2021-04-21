@@ -1,6 +1,32 @@
 User-agent: *
 Disallow: /docs/cluster-administration/platform-settings/customize-basic-information/
 Disallow: /docs/project-user-guide/grayscale/overview/
+Disallow: /docs/project-user-guide/application-workloads/app-template/
+Disallow: /docs/project-user-guide/application-workloads/composing-app/
+Disallow: /docs/project-user-guide/application-workloads/deployments/
+Disallow: /docs/project-user-guide/application-workloads/statefulsets/
+Disallow: /docs/project-user-guide/application-workloads/daemonsets/
+Disallow: /docs/project-user-guide/application-workloads/jobs/
+Disallow: /docs/project-user-guide/application-workloads/cronjobs/
+Disallow: /docs/project-user-guide/application-workloads/services/
+Disallow: /docs/project-user-guide/application-workloads/ingress/
+Disallow: /docs/project-user-guide/storage/volume/
+Disallow: /docs/project-user-guide/configuration/secrets/
+Disallow: /docs/project-user-guide/configuration/configmaps/
+Disallow: /docs/project-user-guide/configuration/image-registry/
+Disallow: /docs/project-user-guide/grayscale-release/overview/
+Disallow: /docs/project-administration/project-gateway/
+Disallow: /docs/project-administration/project-quota/
+Disallow: /docs/project-administration/project-roles/
+Disallow: /docs/project-administration/project-members/
+Disallow: /docs/cluster-administration/nodes/
+Disallow: /docs/cluster-administration/storageclass/
+Disallow: /docs/devops-user-guide/introduction/pipeline/
+Disallow: /docs/devops-user-guide/introduction/credential/
+Disallow: /docs/application-store/app-developer-guide/helm-specification/
+Disallow: /docs/application-store/app-developer-guide/helm-developer-guide/
+Disallow: /docs/multicluster-management/enable-multicluster/retrieve-kubeconfig/
+Disallow: /docs/project-user-guide/application-workloads/s2i-template/
 {{ range .Pages }}
 {{ if .Params.disallow }}
 Disallow: {{ .RelPermalink }}

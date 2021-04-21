@@ -3,6 +3,8 @@ title: "StatefulSets"
 keywords: 'KubeSphere, Kubernetes, StatefulSets, dashboard, service'
 description: 'Learn basic concepts of StatefulSets and how to create StatefulSets in KubeSphere.'
 linkTitle: "StatefulSets"
+aliases: 
+    - "/docs/project-user-guide/application-workloads/statefulsets/"
 weight: 10220
 ---
 

@@ -3,7 +3,8 @@ title: "Deployments"
 keywords: 'KubeSphere, Kubernetes, Deployments, workload'
 description: 'Learn basic concepts of Deployments and how to create Deployments in KubeSphere.'
 linkTitle: "Deployments"
-
+aliases: 
+    - "/docs/project-user-guide/application-workloads/deployments/"
 weight: 10210
 ---
 

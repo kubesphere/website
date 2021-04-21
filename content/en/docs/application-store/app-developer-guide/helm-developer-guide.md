@@ -3,6 +3,8 @@ title: "Helm Developer Guide"
 keywords: 'Kubernetes, KubeSphere, helm, development'
 description: 'Develop your own Helm-based app.'
 linkTitle: "Helm Developer Guide"
+aliases: 
+    - "/docs/application-store/app-developer-guide/helm-developer-guide/"
 weight: 14410
 ---
 
