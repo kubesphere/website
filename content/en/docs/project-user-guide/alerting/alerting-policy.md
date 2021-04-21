@@ -6,68 +6,59 @@ linkTitle: "Alerting Policy (Workload Level)"
 weight: 10710
 ---
 
-KubeSphere provides alerting policies for nodes and workloads. This tutorial demonstrates how to create alerting policies for workloads in the project and configure mail notifications. See [Alerting Policy (Node Level)](../../../cluster-administration/cluster-wide-alerting-and-notification/alerting-policy/) to learn how to configure alerting policies for nodes.
+KubeSphere provides alerting policies for nodes and workloads. This tutorial demonstrates how to create alerting policies for workloads in a project. See [Alerting Policy (Node Level)](../../../cluster-administration/cluster-wide-alerting-and-notification/alerting-policy/) to learn how to configure alerting policies for nodes.
 
 ## Prerequisites
 
-- You have enabled [KubeSphere Alerting and Notification](../../../pluggable-components/alerting-notification/).
-- You have configured the [Mail server](../../../cluster-administration/cluster-settings/mail-server/).
+- You have enabled [KubeSphere Alerting](../../../pluggable-components/alerting/).
+- To receive alert notifications, you must configure a [notification channel](../../../cluster-administration/platform-settings/notification-management/configure-email/) beforehand.
 - You need to create a workspace, a project and an account (`project-regular`). The account must be invited to the project with the role of `operator`. For more information, see [Create Workspaces, Projects, Accounts and Roles](../../../quick-start/create-workspace-and-project/).
-- You have workloads in this project. If they are not ready, go to **Applications** under **Application Workloads**, and click **Deploy Sample Application** to deploy an application quickly. For more information, see [Deploy Bookinfo and Manage Traffic](../../../quick-start/deploy-bookinfo-to-k8s/).
+- You have workloads in this project. If they are not ready, see [Deploy and Access Bookinfo](../../../quick-start/deploy-bookinfo-to-k8s/) to create a sample app.
 
-## Hands-on Lab
+## Create an Alerting Policy
 
-### Step 1: Open the dashboard
+1. Log in to the console as `project-regular` and go to your project. Navigate to **Alerting Policies** under **Monitoring & Alerting**, then click **Create**.
 
-Log in to the console as `project-regular` and go to your project. Navigate to **Alerting Policy** under **Monitoring & Alerting**, then click **Create**.
+2. In the dialog that appears, provide the basic information as follows. Click **Next** to continue.
 
-![alerting_policy_workload_level_create](/images/docs/alerting/alerting_policy_workload_level_create.png)
+   - **Name**. A concise and clear name as its unique identifier, such as `alert-demo`.
+   - **Alias**. Help you distinguish alerting policies better.
+   - **Description**. A brief introduction to the alerting policy.
+   - **Duration (Minutes)**. An alert will be firing when the conditions defined for an alerting policy are met at any give point in the time range.
+   - **Type**. The alert type. Allowed values include **Warning**, **Major** and **Critical**.
 
-### Step 2: Provide basic information
+3. On the **Alerting Rule** tab, you can use the rule template or create a custom rule. To use the template, fill in the following fields.
 
-In the dialog that appears, fill in the basic information as follows. Click **Next** after you finish.
-- **Name**: a concise and clear name as its unique identifier, such as `alert-demo`.
-- **Alias**: to help you distinguish alerting policies better.
-- **Description**: a brief introduction to the alerting policy.
+   - **Resource Type**. Select the resource type you want to monitor, such as **Deployment**, **StatefulSet** and **DaemonSet**.
+   - **Monitoring Target**. Depending on the resource type you select, the target can be different. You cannot see any target if you do not have any workload in the project.
+   - **Alerting Rule**. Define a rule for the alerting policy. These rules are based on Prometheus expressions and an alert will be triggered when conditions are met. You can monitor objects such as CPU and memory.
 
-![alerting_policy_workload_level_basic_info](/images/docs/alerting/alerting_policy_workload_level_basic_info.png)
-
-### Step 3: Select monitoring targets
-
-You can select three types of workloads as the monitoring targets: **Deployments**, **StatefulSets** and **DaemonSets**. Select **Deployments** as the type and `reviews-v1` and `details-v1` as monitoring targets, then click **Next**.
-
-![alerting_policy_workload_level_monitoring_target](/images/docs/alerting/alerting_policy_workload_level_monitoring_target.png)
-
-### Step 4: Add an alerting rule
-
-1. Click **Add Rule** to begin to create an alerting rule. The rule defines parameters such as metric type, check period, consecutive times, metric threshold and alert level to provide rich configurations. The check period (the second field under **Rule**) means the time interval between 2 consecutive checks of the metric. For example, `2 minutes/period` means the metric is checked every two minutes. The consecutive times (the third field under **Rule**) means the number of consecutive times that the metric meets the threshold when checked. An alert is only triggered when the actual time is equal to or is greater than the number of consecutive times set in the alerting policy.
-
-   ![alerting_policy_workload_level_alerting_rule](/images/docs/alerting/alerting_policy_workload_level_alerting_rule.png)
-
-2. In this example, set those parameters to `memory usage`, `1 minute/period`, `2 consecutive times`, `>` and `20` MiB for threshold and `Major Alert` for alert level. It means KubeSphere checks the memory usage every minute, and a major alert is triggered if it is larger than 20 MiB for 2 consecutive times.  
-
-3. Click **√** to save the rule when you finish and click **Next** to continue.
+   ![rule-template](/images/docs/project-user-guide/alerting/rule-template.png)
 
    {{< notice note >}}
 
-You can create workload-level alerting policies for the following metrics:
-- CPU: `cpu usage`
-- Memory: `memory usage (including cache)`, `memory usage`
-- Network: `network data transmitting rate`, `network data receiving rate`
-- Workload Metric: `unavailable deployment replicas ratio`
+   You can create a custom rule with PromQL by entering an expression in the **Monitoring Metrics** field (autocompletion supported). For more information, see [Query Prometheus](https://prometheus.io/docs/prometheus/latest/querying/basics/). 
 
-{{</ notice >}}
+   {{</ notice >}} 
 
-### Step 5: Set a notification rule
+   Click **Next** to continue.
 
-1. **Effective Notification Time Range** is used to set sending time of notification emails, such as `09:00 ~ 19:00`. **Notification Channel** currently only supports **Email**. You can add email addresses of members to be notified to **Notification List**.
+4. On the **Notification Settings** tab, enter the alert summary and message to be included in your notification, then click **Create**.
 
-1. **Customize Repetition Rules** defines sending period and retransmission times of notification emails. If alerts have not been resolved, the notification will be sent repeatedly after a certain period of time. Different repetition rules can also be set for different levels of alerts. Since the alert level set in the previous step is `Major Alert`, select `Alert once every 5 minutes` (sending period) in the second field for **Major Alert** and `Resend up to 3 times` in the third field (retransmission times). Refer to the following image to set notification rules:
+5. An alerting policy will be **Inactive** when just created. If conditions in the rule expression are met, it will reach **Pending** first, then turn to **Firing** if conditions keep to be met in the given time range.
 
-   ![alerting_policy_workload_level_notification_rule](/images/docs/alerting/alerting_policy_workload_level_notification_rule.png)
+## Edit an Alerting Policy
 
-3. Click **Create**, and you can see that the alerting policy is successfully created.
+To edit an alerting policy after it is created, on the **Alerting Policies** page, click <img src="/images/docs/project-user-guide/alerting/edit-alerting-policy.png" height="20px"> on the right.
 
-### Step 6: View the alerting policy
+1. Click **Edit** from the drop-down menu and edit the alerting policy following the same steps as you create it. Click **Update** on the **Notification Settings** page to save it.
 
-After an alerting policy is successfully created, you can go to its detail page to view the status, alert rules, monitoring targets, notification rule, alert history, etc. Click **More** and select **Change Status** from the drop-down menu to enable or disable this alerting policy.
+   ![alert-policy-created](/images/docs/project-user-guide/alerting/alert-policy-created.png)
+
+2. Click **Delete** from the drop-down menu to delete it.
+
+## View an Alerting Policy
+
+Click an alerting policy on the **Alerting Policies** page to see its detail information, including alerting rules and alerting messages. You can also see the rule expression which is based on the template you when creating the alerting policy.
+
+Under **Monitoring**, the **Alert Monitoring** chart shows the actual usage or amount of resources over time. **Notification Settings** displays the customized message you set in notifications. 
