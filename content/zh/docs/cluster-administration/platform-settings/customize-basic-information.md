@@ -1,8 +1,8 @@
 ---
-title: "平台设置"
+title: "自定义平台信息"
 keywords: 'KubeSphere, Kubernetes, 自定义, 平台'
-description: '如何自定义 KubeSphere 平台信息'
-linkTitle: "平台设置"
+description: '自定义 KubeSphere 平台信息，包括平台 Logo 等。'
+linkTitle: "自定义平台信息"
 weight: 8700
 ---
 
