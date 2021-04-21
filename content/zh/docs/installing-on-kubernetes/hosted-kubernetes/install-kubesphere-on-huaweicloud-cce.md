@@ -94,7 +94,7 @@ kubectl apply -f https://github.com/kubesphere/ks-installer/releases/download/v3
 
 ![为 KubeSphere 控制台配置负载均衡访问](/images/docs/huawei-cce/zh/edit-ks-console-svc.png)
 
-通过负载均衡绑定公网访问后，即可使用给定的访问地址进行访问，进入到 KubeSphere 的登陆界面并使用默认账号（用户名 `admin`，密码 `P@88w0rd`）即可登陆平台：
+通过负载均衡绑定公网访问后，即可使用给定的访问地址进行访问，进入到 KubeSphere 的登录界面并使用默认账号（用户名 `admin`，密码 `P@88w0rd`）即可登录平台：
 
 ![登录 KubeSphere 平台](/images/docs/huawei-cce/zh/login-ks-console.png)
 
