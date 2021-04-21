@@ -21,7 +21,7 @@ This tutorial demonstrates how to enable KubeSphere Billing to view the cost of 
    | Parameter                                  | Description                                                  |
    | ------------------------------------------ | ------------------------------------------------------------ |
    | `retentionDay`                             | `retentionDay` determines the date range displayed on the **Metering and Billing** page for users. The value of this parameter must be the same as the value of `retention` in [Prometheus](../../../faq/observability/monitoring/#how-to-change-the-monitoring-data-retention-period). |
-   | `currencyUnit`                             | The currency that displays on the **Metering and Billing** page. Currently allowed values are `CNY` (Renminbi) and `USD` (US dollars). If you specify other currencies, the console will display cost in CNY by default. |
+   | `currencyUnit`                             | The currency that displays on the **Metering and Billing** page. Currently allowed values are `CNY` (Renminbi) and `USD` (US dollars). If you specify other currencies, the console will display cost in USD by default. |
    | `cpuPerCorePerHour`                        | The unit price of CPU per core/hour.                         |
    | `memPerGigabytesPerHour`                   | The unit price of memory per GB/hour.                        |
    | `ingressNetworkTrafficPerMegabytesPerHour` | The unit price of ingress network per MB/hour.               |
