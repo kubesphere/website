@@ -76,7 +76,7 @@ Similar to S2I, Binary-to-Image (B2I) is a toolkit and automated workflow for bu
 
 You just need to upload your application binary package, and specify the image registry to which you want to push. The rest is exactly the same as S2I.
 
-For more information, see [DevOps Administration](../../devops-user-guide/).
+For more information, see [DevOps User Guide](../../devops-user-guide/).
 
 ## Istio-based Service Mesh
 
@@ -134,7 +134,7 @@ KubeSphere features a self-updating monitoring system with graphical interfaces 
 - **Enhanced auditing security**. As KubeSphere features fine-grained management of user authorization, resources and network can be completely isolated to ensure data security. The comprehensive auditing feature allows users to search for activities related to any operation or alert.
 - **Diversified notification methods**. Emails represent a key approach for users to receive notifications of relevant activities they want to know. They can be sent based on the rule set by users themselves, who are able to customize the sender email address and their receiver lists. Besides, other channels, such as Slack and WeChat, are also supported to meet the need of our users. In this connection, KubeSphere provides users with more notification preferences as they are updated on the latest development in KubeSphere no matter what channel they select.
 
-For more information, please see [Project Administration and Usage](../../project-administration/).
+For more information, please see [Project User Guide](../../project-administration/).
 
 ## Log Query and Collection
 
