@@ -170,6 +170,12 @@ KubeSphere 集成了 [OpenPitrix](https://github.com/openpitrix/openpitrix)（�
 4. 现在，企业空间中的用户可以从应用商店中部署 Redis。要将应用部署至 Kubernetes，请点击应用转到**应用信息**页面，然后点击**部署**。
 
    ![部署 redis](/images/docs/zh-cn/appstore/application-lifecycle-management/deploy-redis.PNG)
+   
+   {{< notice note >}}
+   
+   如果您在部署应用时遇到问题，**状态**栏显示为**失败**，您可以将光标移至**失败**图标上方查看错误信息。
+   
+   {{</ notice >}}
 
 ### 步骤五：创建应用分类
 
@@ -235,23 +241,27 @@ KubeSphere 集成了 [OpenPitrix](https://github.com/openpitrix/openpitrix)（�
 
 1. 以 `project-regular` 身份登录 KubeSphere，搜寻到项目的**应用**页面，点击要升级的应用。
 
-   ![待升级应用](/images/docs/zh-cn/appstore/application-lifecycle-management/app-to-be-upgraded.PNG)
+   ![待升级应用](/images/docs/zh-cn/appstore/application-lifecycle-management/app-to-be-upgraded.png)
 
-2. 在**应用模板**选项卡下，选择**版本信息**。您可以在列表中查看所有已发布的应用版本。您正在使用的应用版本标注为**当前版本**。要将应用升级至特定版本，点击版本号右侧的**升级**。
+2. 点击**更多操作**，在下拉菜单中选择**编辑模板**。
+
+   ![编辑模板](/images/docs/zh-cn/appstore/application-lifecycle-management/edit-template.png)
+
+3. 在弹出窗口中，您可以查看应用配置 YAML 文件。在右侧的下拉列表中选择新版本，您可以自定义新版本的 YAML 文件。在本教程中，点击**更新**，直接使用默认配置。
+
+   ![升级应用](/images/docs/zh-cn/appstore/application-lifecycle-management/upgrade-an-app.png)
 
    {{< notice note >}}
 
-   您必须把光标移至应用版本上才能看到**升级**按钮。
+   您可以在右侧的下拉列表中选择与左侧相同的版本，通过 YAML 文件自定义当前应用的配置。
 
-   {{</ notice >}} 
+   {{</ notice >}}
 
-   ![升级应用](/images/docs/zh-cn/appstore/application-lifecycle-management/upgrade-an-app.PNG)
+4. 在**应用**页面，您会看到应用正在升级中。升级完成后，应用状态会变成**运行中**。
 
-3. 在**应用**页面，您会看到应用正在升级中。升级完成后，应用状态会变成**活跃**。
+   ![版本升级](/images/docs/zh-cn/appstore/application-lifecycle-management/version-upgraded.png)
 
-   ![版本升级](/images/docs/zh-cn/appstore/application-lifecycle-management/version-upgraded.PNG)
-
-   ![升级完成](/images/docs/zh-cn/appstore/application-lifecycle-management/upgrade-finish.PNG)
+   ![升级完成](/images/docs/zh-cn/appstore/application-lifecycle-management/upgrade-finish.png)
 
 ### 步骤八：下架应用程序
 

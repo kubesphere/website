@@ -170,6 +170,12 @@ After the app is approved, `isv` can release the Redis application to the App St
 4. Now, users in the workspace can deploy Redis from the App Store. To deploy the app to Kubernetes, click the app to go to its **App Info** page, and click **Deploy**.
 
    ![deploy-redis](/images/docs/appstore/application-lifecycle-management/deploy-redis.jpg)
+   
+   {{< notice note >}}
+   
+   If you have trouble deploying an application and the **Status** column shows **Failed**, you can hover your cursor over the **Failed** icon to see the error message.
+   
+   {{</ notice >}}
 
 ### Step 5: Create an app category
 
@@ -233,25 +239,29 @@ To follow the steps below, you must deploy an app of one of its old versions fir
 
 {{</ notice >}} 
 
-1. Log in to KubeSphere as `project-regular`, navigate to the **Applications** page of the project, and click the app to be upgraded.
+1. Log in to KubeSphere as `project-regular`, navigate to the **Apps** page of the project, and click the app to be upgraded.
 
-   ![app-to-be-upgraded](/images/docs/appstore/application-lifecycle-management/app-to-be-upgraded.jpg)
+   ![app-to-be-upgraded](/images/docs/appstore/application-lifecycle-management/app-to-be-upgraded.png)
 
-2. Under **App Template**, select **Version Info**. You can see all released app versions in the list. The app version you are using currently is marked with **Current Version**. To upgrade your app to a specific version, click **Upgrade** on the right of the version number.
+2. Click **More** and select **Edit Template** from the drop-down menu.
+
+   ![edit-template](/images/docs/appstore/application-lifecycle-management/edit-template.png)
+
+3. In the window that appears, you can see the YAML file of application configurations. Select the new version from the drop-down list on the right. You can customize the YAML file of the new version. In this tutorial, click **Update** to use the default configurations directly.
+
+   ![upgrade-app](/images/docs/appstore/application-lifecycle-management/upgrade-app.png)
 
    {{< notice note >}}
 
-   You must move your cursor onto the app version to see the **Upgrade** button.
+   You can select the same version from the drop-down list on the right as that on the left to customize current application configurations through the YAML file.
 
-   {{</ notice >}} 
+   {{</ notice >}}
 
-   ![upgrade-an-app](/images/docs/appstore/application-lifecycle-management/upgrade-an-app.jpg)
+4. On the **Apps** page, you can see that the app is being upgraded. The status will change to **Running** when the upgrade finishes.
 
-3. On the **Applications** page, you can see that the app is being upgraded. The status will change to **active** when the upgrade finishes.
+   ![version-upgraded](/images/docs/appstore/application-lifecycle-management/version-upgraded.png)
 
-   ![version-upgraded](/images/docs/appstore/application-lifecycle-management/version-upgraded.jpg)
-
-   ![upgrade-finish](/images/docs/appstore/application-lifecycle-management/upgrade-finish.jpg)
+   ![upgrade-finish](/images/docs/appstore/application-lifecycle-management/upgrade-finish.png)
 
 ### Step 8: Suspend the application
 
