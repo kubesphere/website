@@ -8,7 +8,7 @@ author: 'Sherlock'
 snapshot: 'https://ap3.qingstor.com/kubesphere-website/docs/KubeKey-lightweight-installer.png'
 ---
 
-In my previous articles, I talked about how to use [KubeKey](https://github.com/kubesphere/kubekey) to set up and scale a Kubernetes cluster. As you may already know, KubeKey can do way more than that. You can also use KubeKey to install [KubeSphere](https://kubesphere.io/), a container platform running on top of Kubernetes with streamlined DevOps workflows, unified multi-cluster management and more. Besides, KubeKey is able to install cloud-native add-ons by Chart or YAML files.
+In my previous articles, I talked about how to use [KubeKey](https://github.com/kubesphere/kubekey) to set up and scale a Kubernetes cluster. As you may already know, KubeKey can do way more than that. You can also use KubeKey to install KubeSphere, a [container platform](https://kubesphere.io/) running on top of Kubernetes with streamlined DevOps workflows, unified multi-cluster management and more. Besides, KubeKey is able to install cloud-native add-ons by Chart or YAML files.
 
 Among other things, storage represents one of, if not the most important element as you set up a Kubernetes cluster. Kubernetes itself supports multiple storage solutions, such as NFS-client, Ceph CSI and GlusterFS (in-tree). In this article, I am going to show you how to use KubeKey to create a Kubernetes and KubeSphere cluster with [NFS-client Provisioner](https://github.com/kubernetes-incubator/external-storage/tree/master/nfs-client) providing external storage.
 
