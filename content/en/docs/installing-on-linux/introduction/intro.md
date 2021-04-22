@@ -18,8 +18,8 @@ Here is a list of available installation options.
 - [High availability installation](../../../installing-on-linux/high-availability-configurations/ha-configuration/): Install a highly-available KubeSphere cluster with multiple nodes which is used for the production environment.
 - Minimal Packages: Only install the minimum required system components of KubeSphere. Here is the minimum resource requirement:
   - 2 CPUs
-  - 4GB RAM
-  - 40GB Storage
+  - 4 GB RAM
+  - 40 GB Storage
 - [Full Packages](../../../pluggable-components/): Install all available system components of KubeSphere such as DevOps, service mesh, and alerting.
 
 {{< notice note >}}

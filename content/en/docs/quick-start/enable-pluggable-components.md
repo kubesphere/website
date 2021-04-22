@@ -33,7 +33,7 @@ For more information about each component, see [Overview of Enable Pluggable Com
 
 ## Enable Pluggable Components before Installation
 
-### **Installing on Linux**
+### Installing on Linux
 
 When you implement multi-node installation of KubeSphere on Linux, you need to create a configuration file, which lists all KubeSphere components.
 
