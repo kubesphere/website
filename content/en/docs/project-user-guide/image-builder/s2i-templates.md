@@ -6,15 +6,15 @@ linkTitle: "Customize S2I Templates"
 weight: 10640
 ---
 
-Once you have understood the workflow and logic of Source-to-Image (S2I), you can customize Builder Image templates (i.e. S2I/B2I templates) based on your projects to extend S2I capabilities. KubeSphere provides several common Builder Image templates, such as [Python](https://github.com/kubesphere/s2i-python-container/) and [Java](https://github.com/kubesphere/s2i-java-container/).
+Once you have understood the workflow and logic of Source-to-Image (S2I), you can customize Image Builder templates (i.e. S2I/B2I templates) based on your projects to extend S2I capabilities. KubeSphere provides several common Image Builder templates, such as [Python](https://github.com/kubesphere/s2i-python-container/) and [Java](https://github.com/kubesphere/s2i-java-container/).
 
-This tutorial demonstrates how to create a Builder Image that contains an Nginx service. If you need to use Runtime Image in your project, refer to [this document](https://github.com/kubesphere/s2irun/blob/master/docs/runtime_image.md) for more information about how to create a Runtime Image.
+This tutorial demonstrates how to create an Image Builder that contains an Nginx service. If you need to use Runtime Image in your project, refer to [this document](https://github.com/kubesphere/s2irun/blob/master/docs/runtime_image.md) for more information about how to create a Runtime Image.
 
 ## Prerequisites
 
 S2I template customization can be divided into two parts.
 
-- Part 1: S2I Builder Image customization
+- Part 1: S2I Image Builder customization
   - assemble (required): the `assemble` script that builds application artifacts from source code.
   - run (required): the `run` script that executes an application.
   - save-artifacts (optional): the `save-artifacts` script that manages all dependencies in an incremental building process.
@@ -26,11 +26,11 @@ You need to have the required elements for S2I template customization ready in a
 
 {{< notice note >}}
 
-The Builder Image is compatible with that of OpenShift, and you can reuse it in KubeSphere. For more information about S2I Builder Image, refer to [S2IRun](https://github.com/kubesphere/s2irun/blob/master/docs/builder_image.md#s2i-builder-image-requirements).
+The Image Builder is compatible with that of OpenShift, and you can reuse it in KubeSphere. For more information about S2I Image Builder, refer to [S2IRun](https://github.com/kubesphere/s2irun/blob/master/docs/builder_image.md#s2i-builder-image-requirements).
 
 {{</ notice >}}
 
-## Create a Builder Image
+## Create an Image Builder
 
 ### Step 1: Prepare S2I directory
 
@@ -44,7 +44,7 @@ The Builder Image is compatible with that of OpenShift, and you can reuse it in 
    $ cp s2i /usr/local/bin
    ```
 
-2. This tutorial uses `nginx-centos7` as the name of the Builder Image. Run the `s2i create` command to initialize the base directory structure.
+2. This tutorial uses `nginx-centos7` as the name of the Image Builder. Run the `s2i create` command to initialize the base directory structure.
 
    ```bash
    s2i create nginx-centos7 s2i-builder-docs
@@ -54,22 +54,22 @@ The Builder Image is compatible with that of OpenShift, and you can reuse it in 
 
    ```
    s2i-builder-docs/
-      Dockerfile - a standard Dockerfile to define the Builder Image
-      Makefile - a script for testing and building the Builder Image
+      Dockerfile - a standard Dockerfile to define the Image Builder
+      Makefile - a script for testing and building the Image Builder
       test/
-         run - a script that runs the application to test whether the Builder Image is working properly
+         run - a script that runs the application to test whether the Image Builder is working properly
          test-app/ - directory of the test application
       s2i/bin
          assemble - a script that builds the application
          run - a script that runs the application
-         usage - a script that prints the usage of the Builder Image
+         usage - a script that prints the usage of the Image Builder
    ```
 
 ### Step 2: Modify the Dockerfile
 
 A Dockerfile installs all of the necessary tools and libraries that are needed to build and run an application. This file will also copy the S2I scripts into the output image.
 
-Modify the Dockerfile as follows to define the Builder Image.
+Modify the Dockerfile as follows to define the Image Builder.
 
 #### Dockerfile
 
@@ -83,7 +83,7 @@ LABEL maintainer="Runze Xia <runzexia@yunify.com>"
 # Define the current version of the application
 ENV NGINX_VERSION=1.6.3
 
-# Set the labels that are used for KubeSphere to describe the builder image.
+# Set the labels that are used for KubeSphere to describe the Image Builder.
 LABEL io.k8s.description="Nginx Webserver" \
       io.k8s.display-name="Nginx 1.6.3" \
       io.kubesphere.expose-services="8080:http" \
@@ -98,7 +98,7 @@ RUN yum install -y epel-release && \
 RUN sed -i 's/80/8080/' /etc/nginx/nginx.conf
 RUN sed -i 's/user nginx;//' /etc/nginx/nginx.conf
 
-# Copy the S2I scripts to /usr/libexec/s2i in the Builder Image
+# Copy the S2I scripts to /usr/libexec/s2i in the Image Builder
 COPY ./s2i/bin/ /usr/libexec/s2i
 
 RUN chown -R 1001:1001 /usr/share/nginx
@@ -186,19 +186,19 @@ S2I scripts will use the flags defined in the Dockerfile as parameters. If you n
    ```bash
    IMAGE_NAME = kubespheredev/nginx-centos7-s2ibuilder-sample
    
-   # Create a builder image named above based on the Dockerfile that was created previously.
+   # Create an Image Builder named above based on the Dockerfile that was created previously.
    .PHONY: build
    build:
    	docker build -t $(IMAGE_NAME) .
    
-   # The builder image can be tested using the following commands:
+   # The Image Builder can be tested using the following commands:
    .PHONY: test
    test:
    	docker build -t $(IMAGE_NAME)-candidate .
    	IMAGE_NAME=$(IMAGE_NAME)-candidate test/run
    ```
 
-2. Run the `make build` command to build the Builder Image for Nginx.
+2. Run the `make build` command to build the Image Builder for Nginx.
 
    ```bash
    $ make build
@@ -230,7 +230,7 @@ S2I scripts will use the flags defined in the Dockerfile as parameters. If you n
    Successfully tagged kubespheredev/nginx-centos7-s2ibuilder-sample:latest
    ```
 
-3. With the Builder Image created, run the following command to create an application image.
+3. With the Image Builder created, run the following command to create an application image.
 
    ```bash
    $ s2i build ./test/test-app kubespheredev/nginx-centos7-s2ibuilder-sample:latest sample-app
@@ -240,7 +240,7 @@ S2I scripts will use the flags defined in the Dockerfile as parameters. If you n
 
    {{< notice note >}}
 
-   Following the logic defined in the `assemble` script, S2I creates an application image using the Builder Image as a base and injecting the source code from the `test/test-app` directory.
+   Following the logic defined in the `assemble` script, S2I creates an application image using the Image Builder as a base and injecting the source code from the `test/test-app` directory.
 
    {{</ notice >}}
 
@@ -256,7 +256,7 @@ S2I scripts will use the flags defined in the Dockerfile as parameters. If you n
 
 ### Step 5: Push image and create S2I template
 
-Once you finish testing the S2I Builder Image locally, you can push the image to your custom image repository. You also need to create a YAML file as the S2I Builder template as follows.
+Once you finish testing the S2I Image Builder locally, you can push the image to your custom image repository. You also need to create a YAML file as the S2I Builder template as follows.
 
 #### s2ibuildertemplate.yaml
 
@@ -272,7 +272,7 @@ spec:
   containerInfo:
     - builderImage: kubespheredev/nginx-centos7-s2ibuilder-sample
   codeFramework: nginx # type of code framework
-  defaultBaseImage: kubespheredev/nginx-centos7-s2ibuilder-sample # default Builder Image (can be replaced by customized image)
+  defaultBaseImage: kubespheredev/nginx-centos7-s2ibuilder-sample # default Image Builder (can be replaced by customized image)
   version: 0.0.1 # Builder template version
   description: "This is a S2I builder template for Nginx builds whose result can be run directly without any further application server.." # Builder template description
 ```
@@ -304,15 +304,15 @@ Refer to the following detailed descriptions of S2I template parameters. The req
 
 | Parameter                                  | Type     | Definition                                                   |
 | ------------------------------------------ | -------- | ------------------------------------------------------------ |
-| *containerInfo                             | []struct | The information about Builder Image.                         |
-| *containerInfo.builderImage                | string   | S2I Builder Image, such as kubesphere/java-8-centos7:v2.1.0. |
+| *containerInfo                             | []struct | The information about Image Builder.                         |
+| *containerInfo.builderImage                | string   | S2I Image Builder, such as kubesphere/java-8-centos7:v2.1.0. |
 | containerInfo.runtimeImage                 | string   | S2I Runtime Image, such as kubesphere/java-8-runtime:v2.1.0. |
 | containerInfo.buildVolumes                 | []string | The information about mounted volume. The format is "volume_name:mount_path", such as ["s2i_java_cache:/tmp/artifacts","test_cache:test_path"]. |
 | containerInfo.runtimeArtifacts             | []struct | The list of original path and target path for the output artifact; only add it for phased building. |
-| containerInfo.runtimeArtifacts.source      | string   | The original path of artifact in Builder Image.              |
+| containerInfo.runtimeArtifacts.source      | string   | The original path of artifact in Image Builder.              |
 | containerInfo.runtimeArtifacts.destination | string   | The target path of artifact in Runtime Image.                |
 | containerInfo.runtimeArtifacts.keep        | bool     | Whether to keep the data in the output image.                |
-| *defaultBaseImage                          | string   | The default Builder Image.                                   |
+| *defaultBaseImage                          | string   | The default Image Builder.                                   |
 | *codeFramework                             | string   | The code framework type, such as Java, Ruby.                 |
 | environment                                | []struct | The list of environment variables in the building process.   |
 | environment.key                            | string   | The name of environment variables.                           |
