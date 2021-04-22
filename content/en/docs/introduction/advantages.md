@@ -75,7 +75,7 @@ On the back of Istio, KubeSphere features multiple grayscale strategies. All the
 - **Comprehensive**. KubeSphere provides users with a well-diversified portfolio of solutions to traffic management, including canary release, blue-green deployment, traffic mirroring and circuit breaking.
 - **Visualized**. With a highly interactive web console, KubeSphere allows users to view how microservices interconnect with each other in a straightforward way. This helps users to monitor apps, locate failures, and improve performance.
 
-KubeSphere aims to make service-to-service calls within the microservices architecture reliable and fast. For more information, see Project Administration and Usage.
+KubeSphere aims to make service-to-service calls within the microservices architecture reliable and fast. For more information, see [Project User Guide](../../project-user-guide/).
 
 ### Vibrant open source community
 

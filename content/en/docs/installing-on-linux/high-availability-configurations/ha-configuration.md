@@ -33,7 +33,7 @@ You must create a load balancer in your environment to listen (also known as lis
 
 - You may need to open ports in your security group to ensure external traffic is not blocked depending on where your cluster is deployed. For more information, see [Port Requirements](../../../installing-on-linux/introduction/port-firewall/).
 - You can configure both internal and external load balancers on some cloud platforms. After assigning a public IP address to the external load balancer, you can use the IP address to access the cluster.
-- For more information about how to configure load balancers, see “Installing on Public Cloud” to see specific steps on major public cloud platforms.
+- For more information about how to configure load balancers, see [Installing on Public Cloud](../../../installing-on-linux/public-cloud/install-kubesphere-on-azure-vms/) to see specific steps on major public cloud platforms.
 
 {{</ notice >}} 
 
@@ -181,7 +181,7 @@ After you complete the configuration, you can execute the following command to s
 
 ### Verify installation
 
-1. Run the following command to Inspect the logs of installation.
+1. Run the following command to inspect the logs of installation.
 
    ```bash
    kubectl logs -n kubesphere-system $(kubectl get pod -n kubesphere-system -l app=ks-install -o jsonpath='{.items[0].metadata.name}') -f
