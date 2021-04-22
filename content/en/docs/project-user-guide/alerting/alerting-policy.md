@@ -33,7 +33,7 @@ KubeSphere provides alerting policies for nodes and workloads. This tutorial dem
    - **Monitoring Target**. Depending on the resource type you select, the target can be different. You cannot see any target if you do not have any workload in the project.
    - **Alerting Rule**. Define a rule for the alerting policy. These rules are based on Prometheus expressions and an alert will be triggered when conditions are met. You can monitor objects such as CPU and memory.
 
-   ![rule-template](/images/docs/project-user-guide/alerting/rule-template.png)
+   ![rule-template](/images/docs/project-user-guide/alerting/alerting-policies/rule-template.png)
 
    {{< notice note >}}
 
@@ -49,16 +49,18 @@ KubeSphere provides alerting policies for nodes and workloads. This tutorial dem
 
 ## Edit an Alerting Policy
 
-To edit an alerting policy after it is created, on the **Alerting Policies** page, click <img src="/images/docs/project-user-guide/alerting/edit-alerting-policy.png" height="20px"> on the right.
+To edit an alerting policy after it is created, on the **Alerting Policies** page, click <img src="/images/docs/project-user-guide/alerting/alerting-policies/edit-alerting-policy.png" height="20px"> on the right.
 
 1. Click **Edit** from the drop-down menu and edit the alerting policy following the same steps as you create it. Click **Update** on the **Notification Settings** page to save it.
 
-   ![alert-policy-created](/images/docs/project-user-guide/alerting/alert-policy-created.png)
+   ![alert-policy-created](/images/docs/project-user-guide/alerting/alerting-policies/alert-policy-created.png)
 
-2. Click **Delete** from the drop-down menu to delete it.
+2. Click **Delete** from the drop-down menu to delete an alerting policy.
 
 ## View an Alerting Policy
 
-Click an alerting policy on the **Alerting Policies** page to see its detail information, including alerting rules and alerting messages. You can also see the rule expression which is based on the template you when creating the alerting policy.
+Click an alerting policy on the **Alerting Policies** page to see its detail information, including alerting rules and alerting messages. You can also see the rule expression which is based on the template you use when creating the alerting policy.
 
-Under **Monitoring**, the **Alert Monitoring** chart shows the actual usage or amount of resources over time. **Notification Settings** displays the customized message you set in notifications. 
+Under **Monitoring**, the **Alert Monitoring** chart shows the actual usage or amount of resources over time. **Notification Settings** displays the customized message you set in notifications.
+
+![alerting-policy-detail](/images/docs/project-user-guide/alerting/alerting-policies/alerting-policy-detail.png)
