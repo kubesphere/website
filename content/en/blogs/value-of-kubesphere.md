@@ -14,7 +14,7 @@ As **a promising newcomer** of the cloud native family, KubeSphere has gained wi
 
 ## For Enterprises
 
-KubeSphere is a **multi-tenant** container platform built on Kubernetes with applications at its core. It is capable of full stack IT automated operation and maintenance, streamlining the DevOps workflow for enterprises. KubeSphere not only helps enterprises quickly establish a Kubernetes cluster in public cloud or private data center, but also provides a set of multi-functional wizard interfaces.
+KubeSphere is a **multi-tenant** [container platform built on Kubernetes](https://kubesphere.io/) with applications at its core. It is capable of full stack IT automated operation and maintenance, streamlining the DevOps workflow for enterprises. KubeSphere not only helps enterprises quickly establish a Kubernetes cluster in public cloud or private data center, but also provides a set of multi-functional wizard interfaces.
 
 KubeSphere enables enterprises to build a feature-rich container platform equipped with the great flexibility and agile deployment of Kubernetes. The platform also offers outstanding solutions to storage, network and stability, creating the same user experience as IaaS. For example, KubeSphere 2.1.1 supports the integration of Alibaba Cloud and Tencent Cloud block storage plugin. In this version, public cloud storage can be mounted to Pod, providing more stable and persistent storage for stateful applications.
 
