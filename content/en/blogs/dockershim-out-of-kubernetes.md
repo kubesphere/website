@@ -24,7 +24,7 @@ Dockershim was a temporary solution proposed by the Kubernetes community to add 
 
 Currently, the KubeSphere [Container Platform](https://kubesphere.io/) is using Docker as the container runtime of Kubernetes. Meanwhile, it also supports any CRI-compliant implementations. For KubeSphere and Docker users, dockershim deprecation does not affect the existing KubeSphere system and will not take any toll on your cluster or on your business. KubeSphere users can continue to use Docker which has already been tested at scale.
 
-In future releases, other KubeSphere components, such as DevOps, will support these container runtimes and you will be able to use these CRI implementations.
+In future releases, other KubeSphere components, such as [DevOps](https://kubesphere.io/devops/), will support these container runtimes and you will be able to use these CRI implementations.
 
 ### The next game changer: containerd, CRI-O, and iSula
 
