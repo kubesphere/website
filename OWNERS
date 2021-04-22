@@ -1,22 +1,16 @@
 approvers:
-    - zryfish #oncall
+    - Sherlock113 #oncall
+    - zryfish
     - rayzhou2017
     - FeynmanZhou
 
 reviewers:
+    - Sherlock113
     - rayzhou2017
     - zryfish
     - benjaminhuo
     - calvinyv
     - FeynmanZhou
-    - huanggze
-    - huojiao2006
-    - Ma-Dan
-    - magicsong
     - pixiake
-    - runzexia
     - wansir
-    - wnxn
     - zheng1
-    - soulseen
-    - shaowenchen
