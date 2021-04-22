@@ -9,7 +9,7 @@ weight: 1300
 
 ## Overview
 
-As an open source container platform, KubeSphere provides enterprises with a robust, secure and feature-rich platform, boasting the most common functionalities needed for enterprises adopting Kubernetes, such as multi-cluster deployment and management, network policy configuration, Service Mesh (Istio-based), DevOps projects (CI/CD), security management, Source-to-Image and Binary-to-Image, multi-tenant management, multi-dimensional monitoring, log query and collection, alerting and notification, auditing, application management, and image registry management.
+As an [open source container platform](https://kubesphere.io/), KubeSphere provides enterprises with a robust, secure and feature-rich platform, boasting the most common functionalities needed for enterprises adopting Kubernetes, such as multi-cluster deployment and management, network policy configuration, Service Mesh (Istio-based), DevOps projects (CI/CD), security management, Source-to-Image and Binary-to-Image, multi-tenant management, multi-dimensional monitoring, log query and collection, alerting and notification, auditing, application management, and image registry management.
 
 It also supports various open source storage and network solutions, as well as cloud storage services. For example, KubeSphere presents users with a powerful cloud-native tool [PorterLB](https://porterlb.io/), a CNCF-certified load balancer developed for bare metal Kubernetes clusters.
 
