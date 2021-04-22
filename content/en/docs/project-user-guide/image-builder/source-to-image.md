@@ -3,8 +3,6 @@ title: "Source to Image: Publish an App without a Dockerfile"
 keywords: 'KubeSphere, Kubernetes, Docker, S2I, Source-to-Image'
 description: 'Use S2I to import a Java sample project in KubeSphere, create an image and publish it to Kubernetes.'
 linkTitle: "Source to Image: Publish an App without a Dockerfile"
-aliases: 
-    - "/docs/project-user-guide/application-workloads/s2i-template/"
 weight: 10610
 ---
 
