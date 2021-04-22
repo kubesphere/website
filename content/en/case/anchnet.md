@@ -44,7 +44,7 @@ section2:
 
     - title: CI/CD in KubeSphere
       contentList:
-        - content: Currently, the Dev environment is for collaborative development. With GitLab CI and GitOPS, automatic deployment can be achieved from end to end. Meanwhile, the DevOps pipeline of KubeSphere for the official environment makes it possible to release apps without any scaling.
+        - content: Currently, the Dev environment is for collaborative development. With GitLab CI and GitOPS, automatic deployment can be achieved from end to end. Meanwhile, the [DevOps](https://kubesphere.io/devops/) pipeline of KubeSphere for the official environment makes it possible to release apps without any scaling.
       image: https://pek3b.qingstor.com/kubesphere-docs/png/20200611180737.png
 
     - title: Introduce Argo CD, looking forward to Tekton
