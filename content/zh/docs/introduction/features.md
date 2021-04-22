@@ -46,7 +46,7 @@ KubeSphere 作为开源的企业级全栈化容器平台，为用户提供了一
 
 KubeSphere 允许用户跨集群部署应用程序。更重要的是，还可以将应用程序配置为在特定群集上运行。此外，多集群功能与行业领先的应用程序管理平台 [OpenPitrix](https://github.com/openpitrix/openpitrix) 配合使用，使用户可以在整个生命周期内管理应用程序，包括发行、移除和分发。
 
-有关更多信息，请参阅 [多集群管理](../../multicluster-management/)。
+有关更多信息，请参阅[多集群管理](../../multicluster-management/)。
 
 ## DevOps支持
 
@@ -76,7 +76,7 @@ S2I 允许用户将服务发布到 Kubernetes，而无需编写 Dockerfile。只
 
 用户只需要上传应用程序二进制包，并指定要推送到的镜像仓库即可。其余部分与 S2I 完全相同。
 
-有关更多信息，请参阅 [DevOps 管理](../../devops-user-guide/)。
+有关更多信息，请参阅 [DevOps 用户指南](../../devops-user-guide/)。
 
 ## 基于 Istio 的服务网络
 
@@ -91,7 +91,7 @@ KubeSphere 服务网络为分布式应用程序提供细粒度的流量管理、
 - **流量镜像**：流量镜像也叫作影子流量，是指通过一定的配置将线上的真实流量复制一份到镜像服务中去，我们通过流量镜像转发以达到在不影响线上服务的情况下对流量或请求内容做具体分析的目的，它的设计思想是只做转发而不接收响应（fire and forget），使团队能够以最小的风险进行生产变更。
 - **断路器**： 允许用户设置服务内单个主机的呼叫限制，例如并发连接数或对该主机的呼叫失败次数。
 
-有关更多信息，请参见 [灰度发布](../../project-user-guide/grayscale-release/overview/)。
+有关更多信息，请参见[灰度发布](../../project-user-guide/grayscale-release/overview/)。
 
 ### 可视化
 
@@ -109,7 +109,7 @@ KubeSphere 服务网络具有可视化微服务之间的连接以及它们如何
 - **统一认证**：KubeSphere 与 LDAP 或 AD 协议的中央身份验证系统兼容。还支持单点登录 (SSO)，以实现租户身份的统一身份验证。
 - **授权系统**：它分为三个级别：集群，企业空间和项目。 KubeSphere 确保可以共享资源，同时完全隔离多个级别的不同角色以确保资源安全。
 
-有关更多信息，请参见企业空间中的 [角色和成员管理](../../workspace-administration/release-v210/)。
+有关更多信息，请参见企业空间中的[角色和成员管理](../../workspace-administration/role-and-member-management/)。
 
 ## 可观察性
 
@@ -135,7 +135,7 @@ KubeSphere 通过可视化界面操作监控、运维功能，可简化操作和
 - **增强审计安全性**：由于 KubeSphere 具有对用户授权的细粒度管理，因此可以将资源和网络完全隔离以确保数据安全。 全面的审核功能使用户可以搜索与任何操作或告警相关的活动。
 - **多种通知方式**：电子邮件是用户接收想要了解的相关活动的通知的一种关键方法。 可以根据用户自己设置的规则发送邮件，用户可以自定义发件人电子邮件地址及其收件人列表。 此外，还支持其他渠道，例如 Slack 和 WeChat。 因此，无论用户选择哪种渠道，KubeSphere都会为用户提供更多的通知首选项，因为他们会根据KubeSphere的最新开发进行更新。
 
-有关更多信息，请参见 [项目用户手册](../../project-user-guide/)。
+有关更多信息，请参见[项目用户指南](../../project-user-guide/)。
 
 ## 日志查询与收集
 
@@ -170,4 +170,4 @@ KubeSphere 通过可视化界面操作监控、运维功能，可简化操作和
   6. 通过 CRD 动态配置BGP服务器 (v0.3.0)
   7. 通过 CRD 动态配置BGP对等 (v0.3.0)
 
-  有关 PorterLB 的更多信息，请参见 [本文](https://kubesphere.io/conferences/porter/)。
+  有关 PorterLB 的更多信息，请参见[本文](https://kubesphere.io/conferences/porter/)。

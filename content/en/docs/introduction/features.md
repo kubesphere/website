@@ -76,7 +76,7 @@ Similar to S2I, Binary-to-Image (B2I) is a toolkit and automated workflow for bu
 
 You just need to upload your application binary package, and specify the image registry to which you want to push. The rest is exactly the same as S2I.
 
-For more information, see DevOps Administration.
+For more information, see [DevOps User Guide](../../devops-user-guide/).
 
 ## Istio-based Service Mesh
 
@@ -91,7 +91,7 @@ KubeSphere service mesh provides fine-grained traffic management, observability,
 - **Traffic mirroring** enables teams to bring changes to production with as little risk as possible. Mirroring sends a copy of live traffic to a mirrored service.
 - **Circuit breaker** allows users to set limits for calls to individual hosts within a service, such as the number of concurrent connections or how many times calls to this host have failed.
 
-For more information, see Grayscale Release.
+For more information, see [Grayscale Release](../../project-user-guide/grayscale-release/overview/).
 
 ### Visualization
 
@@ -109,7 +109,7 @@ In KubeSphere, resources (e.g. clusters) can be shared between tenants. First, a
 - **Unified authentication**. For enterprises, KubeSphere is compatible with their central authentication system that is base on LDAP or AD protocol. Single sign-on (SSO) is also supported to achieve unified authentication of tenant identity.
 - **Authorization system**. It is organized into three levels: cluster, workspace and project. KubeSphere ensures resources can be shared while different roles at multiple levels are completely isolated for resource security.
 
-For more information, see Role and Member Management in Workspace.
+For more information, see [Role and Member Management in Workspace](../../workspace-administration/role-and-member-management/).
 
 ## Observability
 
@@ -134,7 +134,7 @@ KubeSphere features a self-updating monitoring system with graphical interfaces 
 - **Enhanced auditing security**. As KubeSphere features fine-grained management of user authorization, resources and network can be completely isolated to ensure data security. The comprehensive auditing feature allows users to search for activities related to any operation or alert.
 - **Diversified notification methods**. Emails represent a key approach for users to receive notifications of relevant activities they want to know. They can be sent based on the rule set by users themselves, who are able to customize the sender email address and their receiver lists. Besides, other channels, such as Slack and WeChat, are also supported to meet the need of our users. In this connection, KubeSphere provides users with more notification preferences as they are updated on the latest development in KubeSphere no matter what channel they select.
 
-For more information, please see Project Administration and Usage.
+For more information, please see [Project User Guide](../../project-user-guide/).
 
 ## Log Query and Collection
 
