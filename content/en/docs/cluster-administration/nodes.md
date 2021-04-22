@@ -4,8 +4,6 @@ keywords: "Kubernetes, KubeSphere, taints, nodes, labels, requests, limits"
 description: "Monitor node status and learn how to add node labels or taints."
 
 linkTitle: "Node Management"
-aliases: 
-    - "/docs/cluster-administration/nodes/"
 weight: 8100
 ---
 

@@ -3,8 +3,6 @@ title: "Image Registries"
 keywords: 'KubeSphere, Kubernetes, docker, Secrets'
 description: 'Learn how to create an image registry in KubeSphere.'
 linkTitle: "Image Registries"
-aliases: 
-    - "/docs/project-user-guide/configuration/image-registry/"
 weight: 10430
 ---
 

@@ -3,8 +3,6 @@ title: "Jobs"
 keywords: "KubeSphere, Kubernetes, docker, jobs"
 description: "Learn basic concepts of Jobs and how to create Jobs in KubeSphere."
 linkTitle: "Jobs"
-aliases: 
-    - "/docs/project-user-guide/application-workloads/jobs/"
 weight: 10250
 ---
 

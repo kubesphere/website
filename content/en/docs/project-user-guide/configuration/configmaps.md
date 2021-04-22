@@ -3,8 +3,6 @@ title: "ConfigMaps"
 keywords: 'KubeSphere, Kubernetes, ConfigMaps'
 description: 'Learn how to create a ConfigMap in KubeSphere.'
 linkTitle: "ConfigMaps"
-aliases: 
-    - "/docs/project-user-guide/configuration/configmaps/"
 weight: 10420
 ---
 

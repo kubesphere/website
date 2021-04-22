@@ -3,8 +3,6 @@ title: "Retrieve KubeConfig"
 keywords: 'Kubernetes, KubeSphere, multicluster, hybrid-cloud, kubeconfig'
 description: 'Retrieve the KubeConfig which is needed for cluster importing through direct connection.'
 titleLink: "Retrieve KubeConfig"
-aliases: 
-    - "/docs/multicluster-management/enable-multicluster/retrieve-kubeconfig/"
 weight: 5230
 ---
 
