@@ -3,6 +3,8 @@ title: "App Templates"
 keywords: 'Kubernetes, chart, Helm, KubeSphere, application, repository, template'
 description: 'Understand the concept of app templates and how they can help to deploy applications within enterprises.'
 linkTitle: "App Templates"
+aliases: 
+    - "/docs/project-user-guide/application-workloads/app-template/"
 weight: 10110
 ---
 

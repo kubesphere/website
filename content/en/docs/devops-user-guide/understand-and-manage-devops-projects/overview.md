@@ -3,6 +3,8 @@ title: "DevOps — Overview"
 keywords: 'Kubernetes, KubeSphere, DevOps, overview'
 description: 'Develop a basic understanding of DevOps.'
 linkTitle: "Overview"
+aliases: 
+    - "/docs/devops-user-guide/introduction/pipeline/"
 weight: 11110
 ---
 

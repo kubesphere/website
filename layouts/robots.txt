@@ -1,6 +1,16 @@
 User-agent: *
 Disallow: /docs/cluster-administration/platform-settings/customize-basic-information/
 Disallow: /docs/project-user-guide/grayscale/overview/
+Disallow: /docs/project-user-guide/application-workloads/app-template/
+Disallow: /docs/project-user-guide/application-workloads/composing-app/
+Disallow: /docs/project-user-guide/application-workloads/ingress/
+Disallow: /docs/project-user-guide/storage/volume/
+Disallow: /docs/project-administration/project-quota/
+Disallow: /docs/project-administration/project-roles/
+Disallow: /docs/project-administration/project-members/
+Disallow: /docs/cluster-administration/storageclass/
+Disallow: /docs/devops-user-guide/introduction/pipeline/
+Disallow: /docs/devops-user-guide/introduction/credential/
 {{ range .Pages }}
 {{ if .Params.disallow }}
 Disallow: {{ .RelPermalink }}

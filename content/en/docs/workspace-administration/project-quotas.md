@@ -3,6 +3,8 @@ title: "Project Quotas"
 keywords: 'KubeSphere, Kubernetes, projects, quotas, resources, requests, limits'
 description: 'Set requests and limits to control resource usage in a project.'
 linkTitle: "Project Quotas"
+aliases: 
+    - "/docs/project-administration/project-quota/"
 weight: 9600
 ---
 

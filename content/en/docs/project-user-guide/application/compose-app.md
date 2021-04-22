@@ -3,6 +3,8 @@ title: "Create a Microservices-based App"
 keywords: 'KubeSphere, Kubernetes, service mesh, microservices'
 description: 'Learn how to compose a microservice-based application from scratch.'
 linkTitle: "Create a Microservices-based App"
+aliases:
+    - "/docs/project-user-guide/application-workloads/composing-app/"
 weight: 10140
 ---
 

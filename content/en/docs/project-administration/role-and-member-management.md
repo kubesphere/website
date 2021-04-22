@@ -2,7 +2,9 @@
 title: "Role and Member Management In Your Project"
 keywords: 'KubeSphere, Kubernetes, role, member, management, project'
 description: 'Learn how to manage access control for a project.'
-
+aliases: 
+    - "/docs/project-administration/project-roles/"
+    - "/docs/project-administration/project-members/"
 linkTitle: "Role and Member Management"
 weight: 13200
 ---
