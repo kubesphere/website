@@ -91,7 +91,7 @@ KubeSphere service mesh provides fine-grained traffic management, observability,
 - **Traffic mirroring** enables teams to bring changes to production with as little risk as possible. Mirroring sends a copy of live traffic to a mirrored service.
 - **Circuit breaker** allows users to set limits for calls to individual hosts within a service, such as the number of concurrent connections or how many times calls to this host have failed.
 
-For more information, see Grayscale Release.
+For more information, see [Grayscale Release](../../project-user-guide/grayscale-release/overview/).
 
 ### Visualization
 
