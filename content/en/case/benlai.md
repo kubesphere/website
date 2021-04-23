@@ -46,7 +46,7 @@ section2:
 
     - title: 'Level 1: DevOps Tool Selection'
       contentList:
-        - content: As we began to learn DevOps, an open-source platform KubeSphere had come to our awareness. KubeSphere is an enterprise-grade container platform built on Kubernetes with applications as its kernel. It supports multiple business scenarios, including agile development and automated O&M, DevOps, microservices governance, grayscale release, multi-tenant management, monitoring and alerting, log query and collection, application store, storage management and network management.
+        - content: As we began to learn [DevOps](https://kubesphere.io/devops/), an open-source platform KubeSphere had come to our awareness. KubeSphere is an [enterprise-grade container platform](https://kubesphere.io/) built on Kubernetes with applications as its kernel. It supports multiple business scenarios, including agile development and automated O&M, DevOps, microservices governance, grayscale release, multi-tenant management, monitoring and alerting, log query and collection, application store, storage management and network management.
         - content: The Jenkins-based DevOps pipeline built in KubeSphere is very appropriate for us to use as it provides all necessary cloud native tools across the whole ecosystem for O&M.
         - content: Therefore, we began to create a proper CI/CD process by learning the operation, grammar and plugins related to KubeSphere and Jenkins. With the support of KubeSphere container platform, our level 1 CI/CD process had taken shape.
         - content: At Level 1, we successfully achieved some processes, such as code pulling, application programming, pushing images to a local repository and deploying them to a Kubernetes cluster.

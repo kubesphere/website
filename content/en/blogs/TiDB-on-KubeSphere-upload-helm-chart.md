@@ -8,7 +8,7 @@ author: 'Will, Feynman, Sherlock'
 snapshot: 'https://ap3.qingstor.com/kubesphere-website/docs/tidb-architecture.png'
 ---
 
-[My last blog](https://kubesphere.io/blogs/tidb-on-kubesphere-using-qke/) talked about how to deploy TiDB Operator and a TiDB cluster on KubeSphere. After you add an app repository to KubeSphere, apps within the repository are provided as app templates on the container platform. Tenants in the same workspace can deploy these app templates if they have necessary permissions. However, if you want these apps to be available to all workspace tenants, I recommend you release apps to the public repository of KubeSphere, also known as the KubeSphere App Store.
+[My last blog](https://kubesphere.io/blogs/tidb-on-kubesphere-using-qke/) talked about how to deploy TiDB Operator and a TiDB cluster on KubeSphere. After you add an app repository to KubeSphere, apps within the repository are provided as app templates on the [container platform](https://kubesphere.io/). Tenants in the same workspace can deploy these app templates if they have necessary permissions. However, if you want these apps to be available to all workspace tenants, I recommend you release apps to the public repository of KubeSphere, also known as the KubeSphere App Store.
 
 In this article, I will demonstrate another way to upload an app to KubeSphere and release it to the App Store.
 

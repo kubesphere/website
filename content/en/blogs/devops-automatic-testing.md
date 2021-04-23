@@ -26,7 +26,7 @@ Based on Jenkins, KubeSphere provides a one-stop DevOps system for the use cases
 
 The built-in DevOps system of KubeSphere smoothly combines application development and automated release with the container platform. It also supports the integration of third-party private image registries and code repositories, which brings improved CI/CD functions under private scenarios and provides end-to-end user experiences.
 
-Nevertheless, it is rarely known to users that KubeSphere DevOps can also be used to build automated testing systems, so that automated **unit testing, API testing, and UI testing** can have great convenience and the work of testers can be more efficient.
+Nevertheless, it is rarely known to users that [KubeSphere DevOps](https://kubesphere.io/devops/) can also be used to build automated testing systems, so that automated **unit testing, API testing, and UI testing** can have great convenience and the work of testers can be more efficient.
 
 ## Unit Testing
 
