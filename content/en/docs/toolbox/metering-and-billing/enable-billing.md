@@ -24,8 +24,8 @@ This tutorial demonstrates how to enable KubeSphere Billing to view the cost of 
    | `currencyUnit`                             | The currency that displays on the **Metering and Billing** page. Currently allowed values are `CNY` (Renminbi) and `USD` (US dollars). If you specify other currencies, the console will display cost in USD by default. |
    | `cpuPerCorePerHour`                        | The unit price of CPU per core/hour.                         |
    | `memPerGigabytesPerHour`                   | The unit price of memory per GB/hour.                        |
-   | `ingressNetworkTrafficPerMegabytesPerHour` | The unit price of ingress network per MB/hour.               |
-   | `egressNetworkTrafficPerMegabytesPerHour`  | The unit price of egress network per MB/hour.                |
+   | `ingressNetworkTrafficPerMegabytesPerHour` | The unit price of ingress traffic per MB/hour.               |
+   | `egressNetworkTrafficPerMegabytesPerHour`  | The unit price of egress traffic per MB/hour.                |
    | `pvcPerGigabytesPerHour`                   | The unit price of PVC per GB/hour. Note that KubeSphere calculates the total cost of volumes based on the storage capacity PVCs request regardless of the actual storage in use. |
 
    The following is an example for your reference:
