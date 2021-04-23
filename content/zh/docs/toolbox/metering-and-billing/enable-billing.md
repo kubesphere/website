@@ -24,8 +24,8 @@ weight: 15420
    | `currencyUnit`                             | **资源消费统计**页面显示的货币单位。目前可用的单位有 `CNY`（人民币）和 `USD`（美元）。若指定其他货币，控制台将默认以美元为单位显示消费情况。 |
    | `cpuPerCorePerHour`                        | 每内核/小时的 CPU 单价。                                     |
    | `memPerGigabytesPerHour`                   | 每 GB/小时的内存单价。                                       |
-   | `ingressNetworkTrafficPerMegabytesPerHour` | 每 MB/小时的应用路由（Ingress）网络单价。                    |
-   | `egressNetworkTrafficPerMegabytesPerHour`  | 每 MB/小时的 egress 网络单价。                               |
+   | `ingressNetworkTrafficPerMegabytesPerHour` | 每 MB/小时的入站流量单价。                                   |
+   | `egressNetworkTrafficPerMegabytesPerHour`  | 每 MB/小时的出站流量单价。                                   |
    | `pvcPerGigabytesPerHour`                   | 每 GB/小时的 PVC 单价。请注意，无论实际使用的存储是多少，KubeSphere 都会根据 PVC 请求的存储容量来计算存储卷的总消费情况。 |
 
    以下示例供您参考：
