@@ -62,19 +62,19 @@ This tutorial demonstrates how to use these two pipeline templates.
 
 ### Step 3: Edit the pipeline
 
-Click the pipeline to go to its detail page, and then click **Edit Pipeline** under the **Pipeline** tab. In the dialog that appears, click the pipeline template for continuous integration.
+1. Click the pipeline to go to its detail page, and then click **Edit Pipeline** under the **Pipeline** tab. In the dialog that appears, click the pipeline template for continuous integration.
 
-![edit-ci-pipeline](/images/docs/devops-user-guide/using-devops/use-pipeline-templates/edit-ci-pipeline.png)
+   ![edit-ci-pipeline](/images/docs/devops-user-guide/using-devops/use-pipeline-templates/edit-ci-pipeline.png)
 
-![ci-template](/images/docs/devops-user-guide/using-devops/use-pipeline-templates/ci-template.png)
+   ![ci-template](/images/docs/devops-user-guide/using-devops/use-pipeline-templates/ci-template.png)
 
-On the graphical editing panel, there are two predefined stages with built-in steps. You can customize these steps based on your needs.
+2. On the graphical editing panel, there are two predefined stages with built-in steps. You can customize these steps based on your needs.
 
-![ci-stages](/images/docs/devops-user-guide/using-devops/use-pipeline-templates/ci-stages.png)
+   ![ci-stages](/images/docs/devops-user-guide/using-devops/use-pipeline-templates/ci-stages.png)
 
-For example, you can select **maven** from the **label** drop-down list.
+3. For example, you can select **maven** from the **label** drop-down list.
 
-![select-maven](/images/docs/devops-user-guide/using-devops/use-pipeline-templates/select-maven.png)
+   ![select-maven](/images/docs/devops-user-guide/using-devops/use-pipeline-templates/select-maven.png)
 
 #### Stage 1: clone code
 
@@ -154,7 +154,7 @@ For example, you can select **maven** from the **label** drop-down list.
 
    ![param-input-ci](/images/docs/devops-user-guide/using-devops/use-pipeline-templates/param-input-ci.png)
 
-3. After a while, you can see the status of the pipeline shown as success.
+3. After a while, you can see the status of the pipeline shown as **Success**.
 
    ![ci-success](/images/docs/devops-user-guide/using-devops/use-pipeline-templates/ci-success.png)
 
@@ -208,7 +208,7 @@ In the graphical editing panel, there are six predefined stages with built-in st
 
 #### Stage 4: push latest
 
-1. Click push latest to select this stage, and then click the wrench icon on the right of the first **sh** step.
+1. Click **push latest** to select this stage, and then click the wrench icon on the right of the first **sh** step.
 
    ![click-sh-cicd](/images/docs/devops-user-guide/using-devops/use-pipeline-templates/click-sh-cicd.png)
 
@@ -250,7 +250,7 @@ In the graphical editing panel, there are six predefined stages with built-in st
 
    ![cicd-param](/images/docs/devops-user-guide/using-devops/use-pipeline-templates/cicd-param.png)
 
-3. After a while, you can see the status of the pipeline shown as success.
+3. After a while, you can see the status of the pipeline shown as **Success**.
 
    ![cicd-success](/images/docs/devops-user-guide/using-devops/use-pipeline-templates/cicd-success.png)
 
