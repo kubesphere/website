@@ -113,7 +113,7 @@ weight: 50
 
 ### 应用商店及应用
 
-- 新增 MySQL 高可用集群应用：XenonDB
+- 新增 MySQL 高可用集群应用：[XenonDB](https://github.com/radondb/xenondb)
 - 支持修改已部署的应用模板
 - 支持查看应用模板部署失败的原因 [#3036](https://github.com/kubesphere/kubesphere/issues/3036) [#3001](https://github.com/kubesphere/kubesphere/issues/3001) [#2951](https://github.com/kubesphere/kubesphere/issues/2951) 
 - 支持批量删除应用模板
