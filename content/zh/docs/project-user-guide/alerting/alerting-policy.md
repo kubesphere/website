@@ -10,8 +10,8 @@ KubeSphere 支持针对节点和工作负载的告警策略。本教程演示如
 
 ## 准备工作
 
-- 您需要启用 [KubeSphere 告警和通知系统](../../../pluggable-components/alerting/)。
-- 若想接收告警通知，您需要预先配置[邮件通知](../../../cluster-administration/platform-settings/notification-management/configure-email/)。
+- 您需要启用 [KubeSphere 告警系统](../../../pluggable-components/alerting/)。
+- 若想接收告警通知，您需要预先配置一个[通知渠道](../../../cluster-administration/platform-settings/notification-management/configure-email/)。
 - 您需要创建一个企业空间、一个项目和一个帐户（例如 `project-regular`）。该帐户必须已邀请至该项目，并具有 `operator` 角色。有关更多信息，请参见[创建企业空间、项目、帐户和角色](../../../quick-start/create-workspace-and-project/)。
 - 您需要确保项目中存在工作负载。如果项目中没有工作负载，请参见[部署并访问 Bookinfo](../../../quick-start/deploy-bookinfo-to-k8s/) 来创建示例应用。
 
@@ -37,7 +37,7 @@ KubeSphere 支持针对节点和工作负载的告警策略。本教程演示如
 
    {{< notice note >}}
 
-   您可以在**监控指标**字段输入表达式（支持自动补全），以使用 PromQL 创建自定义规则。有关更多信息，请参见 [Query Prometheus](https://prometheus.io/docs/prometheus/latest/querying/basics/)。
+   您可以在**监控指标**字段输入表达式（支持自动补全），以使用 PromQL 创建自定义规则。有关更多信息，请参见 [Querying Prometheus](https://prometheus.io/docs/prometheus/latest/querying/basics/)。
 
    {{</ notice >}} 
 
@@ -49,7 +49,7 @@ KubeSphere 支持针对节点和工作负载的告警策略。本教程演示如
 
 ## 编辑告警策略
 
-若要在创建后编辑告警策略，点击**告警策略**页面右侧的<img src="/images/docs/zh-cn/project-user-guide/alerting/alerting-policies/edit-alerting-policy.png" height="20px">。
+若要在创建后编辑告警策略，点击**告警策略**页面右侧的 <img src="/images/docs/zh-cn/project-user-guide/alerting/alerting-policies/edit-alerting-policy.png" height="20px">。
 
 1. 点击下拉菜单中的**编辑**，根据与创建时相同的步骤来编辑告警策略。点击**通知设置**页面的**更新**保存更改。
 
