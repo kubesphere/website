@@ -20,7 +20,7 @@ Lighthouse is originally derived from Prow. Currently, Lighthouse supports the c
 
 The differences between these two tools lie in the following two aspects:
 
-- Lighthouse uses `Jenkins-x/go-scm`, which supports more Git providers, not just limited to GitHub.
+- Lighthouse uses `jenkins-x/go-scm`, which supports more Git providers, not just limited to GitHub.
 - Lighthouse uses its own `LighthouseJob` CRD rather than a `ProwJob` CRD.
 
 ## Prerequisites
