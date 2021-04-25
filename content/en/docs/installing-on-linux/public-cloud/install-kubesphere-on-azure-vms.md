@@ -38,7 +38,7 @@ Those VMs will be attached to a load balancer. There are two predefined rules in
 
 | Service | Protocol | Rule | Backend Port | Frontend Port/Ports | Pools |
 |---|---|---|---|---|---|
-| ssh | TCP | Inbound NAT | 22 |50200, 50201,50202, 50100~50199| Master, Node |
+| ssh | TCP | Inbound NAT | 22 |50200, 50201, 50202, 50100~50199| Master, Node |
 | apiserver | TCP | Load Balancing | 6443 | 6443 | Master |
 | ks-console | TCP | Load Balancing | 30880 | 30880 | Master |
 | http | TCP | Load Balancing | 80 | 80 | Node |

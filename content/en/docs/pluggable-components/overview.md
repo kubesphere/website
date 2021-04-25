@@ -59,7 +59,7 @@ The request and limit of CPU and memory resources all refer to single replica.
 
 {{< notice note >}}
 
-The KubeSphere monitoring system is not a pluggable component. It is installed by default. The resource request and limit of it are also listed on this page for your reference as it is closed related to other components such as logging.
+The KubeSphere monitoring system is not a pluggable component. It is installed by default. The resource request and limit of it are also listed on this page for your reference as it is closely related to other components such as logging.
 
 {{</ notice >}} 
 
