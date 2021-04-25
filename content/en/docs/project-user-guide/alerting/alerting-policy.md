@@ -37,7 +37,7 @@ KubeSphere provides alerting policies for nodes and workloads. This tutorial dem
 
    {{< notice note >}}
 
-   You can create a custom rule with PromQL by entering an expression in the **Monitoring Metrics** field (autocompletion supported). For more information, see [Query Prometheus](https://prometheus.io/docs/prometheus/latest/querying/basics/). 
+   You can create a custom rule with PromQL by entering an expression in the **Monitoring Metrics** field (autocompletion supported). For more information, see [Querying Prometheus](https://prometheus.io/docs/prometheus/latest/querying/basics/). 
 
    {{</ notice >}} 
 
