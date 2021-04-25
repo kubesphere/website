@@ -142,3 +142,4 @@ weight: 50
 - 修复点击 "Docker Container Registry Credentials"时的报错问题 [#1269](https://github.com/kubesphere/console/issues/1269)
 - 修复英文控制台显示中文代码质量检查结果的问题 [#1278](https://github.com/kubesphere/console/issues/1278)
 - 修复 Jenkinsfile 中包含布尔值时的显示报错问题 [#3043](https://github.com/kubesphere/kubesphere/issues/3043)
+- 修复当 PVC 不含有 StorageClassName 时存储管理页面无法显示的问题 [#1109](https://github.com/kubesphere/ks-installer/issues/1109)
