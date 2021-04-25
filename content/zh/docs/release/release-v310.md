@@ -37,18 +37,18 @@ weight: 50
 ### 认证和权限管理
  - 新用户首次登录，可修改预分配的密码
  - 通过第三方平台登录 KubeSphere，需确认账户信息
- - 支持 [CAS](https://apereo.github.io/cas/5.0.x/protocol/CAS-Protocol-Specification.html) 标识提供者 [#3047](https://github.com/kubesphere/kubesphere/issues/3047)
- - 支持 [OIDC](https://openid.net/specs/openid-connect-core-1_0.html) 标识提供者 [#2941](https://github.com/kubesphere/kubesphere/issues/2941)
- - 支持 IDaaS(Alibaba Cloud Identity as a Service) 标识提供者 [#2997](https://github.com/kubesphere/kubesphere/pull/2997)
+ - 支持 [CAS](https://apereo.github.io/cas/5.0.x/protocol/CAS-Protocol-Specification.html) 身份提供商 [#3047](https://github.com/kubesphere/kubesphere/issues/3047)
+ - 支持 [OIDC](https://openid.net/specs/openid-connect-core-1_0.html) 身份提供商 [#2941](https://github.com/kubesphere/kubesphere/issues/2941)
+ - 支持 IDaaS(Alibaba Cloud Identity as a Service) 身份提供商 [#2997](https://github.com/kubesphere/kubesphere/pull/2997)
  - 支持 Service Account 管理，可给 Service Account 分配角色 [#3211](https://github.com/kubesphere/kubesphere/issues/3211)
- - 改善与 LDAP 标识提供者的集成，支持 LDAPS 和搜索过滤（search filter）[#2970](https://github.com/kubesphere/kubesphere/issues/2970)
- - 改善标识提供者插件，简化标识提供者的配置 [#2970](https://github.com/kubesphere/kubesphere/issues/2970)
+ - 改善 LDAP 认证插件，支持 LDAPS 和搜索过滤（search filter）[#2970](https://github.com/kubesphere/kubesphere/issues/2970) [#3766](https://github.com/kubesphere/kubesphere/issues/3766)
+ - 改善认证插件，简化身份提供商的配置 [#2970](https://github.com/kubesphere/kubesphere/issues/2970)
 
 
 ### 多租户管理
  - 支持用户组管理，可邀请指定用户组至企业空间或者项目 [#2940](https://github.com/kubesphere/kubesphere/issues/2940)
- - 支持企业空间配额，与 Kubernetes 资源配额 [ResourceQuota](https://kubernetes.io/docs/concepts/policy/resource-quotas/) 保持一致，可限制指定企业空间下所有项目所消耗的资源 [#2939](https://github.com/kubesphere/kubesphere/issues/2939)
- - 删除企业空间时，提示是否删除级联资源的，确认后再删除 [#3192](https://github.com/kubesphere/kubesphere/issues/3192)
+ - 支持企业空间配额，与 Kubernetes 资源配额 [ResourceQuota](https://kubernetes.io/docs/concepts/policy/resource-quotas/) 保持一致，可限制企业空间的资源用量 [#2939](https://github.com/kubesphere/kubesphere/issues/2939)
+ - 支持级联删除，删除企业空间时，提示是否删除级联资源的，确认后再删除 [#3192](https://github.com/kubesphere/kubesphere/issues/3192)
 
 ### 网络
  - 新增支持 Kube-OVN 插件
@@ -122,21 +122,21 @@ weight: 50
 ## 废弃或移除的功能
 
 ## 问题修复
- - 修复容器日志不支持ANSI Color的问题 [#1322](https://github.com/kubesphere/kubesphere/issues/3044)
- - 修复以“kube”起始命名的项目（namespace）下的微服务应用无法获取istio 相关的监控数据的问题 [#3126](https://github.com/kubesphere/kubesphere/issues/3162) 
- - 修复部署工作负载时的 bad_certificate 错误 [#3112](https://github.com/kubesphere/kubesphere/issues/3112)
- - 修复 viewer 可打开容器终端的安全隐患 [#3041](https://github.com/kubesphere/kubesphere/issues/3041)
- - 修复级联资源无法被删除的问题 [#2912](https://github.com/kubesphere/kubesphere/issues/2912)
-- 修复 admission webhook 的自签名依赖于 legacy Common Name field 的问题 [#2928](https://github.com/kubesphere/kubesphere/issues/2928)
+- 修复账户无法登录的问题 [#3132](https://github.com/kubesphere/kubesphere/issues/3132) [3357](https://github.com/kubesphere/kubesphere/issues/3357)
+- 修复容器日志不支持ANSI Color的问题 [#1322](https://github.com/kubesphere/kubesphere/issues/3044)
+- 修复以“kube”起始命名的项目（namespace）下的微服务应用无法获取istio 相关的监控数据的问题 [#3126](https://github.com/kubesphere/kubesphere/issues/3162) 
+- 修复 viewer 可进入容器终端的安全隐患 [#3041](https://github.com/kubesphere/kubesphere/issues/3041)
+- 修复级联资源无法被删除的问题 [#2912](https://github.com/kubesphere/kubesphere/issues/2912)
+- 修复 Kubernetes 1.19 及以上版本无法正常使用的问题 [#2928](https://github.com/kubesphere/kubesphere/issues/2928) [#2928](https://github.com/kubesphere/kubesphere/issues/2928)
 - 修复微服务应用“监控”按钮无效的问题 [#1394](https://github.com/kubesphere/console/issues/1394)
 - 修复灰度发布的服务名不能与微服务应用的标签名相同的问题 [#3128](https://github.com/kubesphere/kubesphere/issues/3128)
 - 修复微服务应用状态无法更新的问题 [#3241](https://github.com/kubesphere/kubesphere/issues/3241)
 - 修复 host 和 member 集群在有同名企业空间的情况下，member 集群下的企业空间被删除的问题 [#3169](https://github.com/kubesphere/kubesphere/issues/3169)
 - 修复通过 proxy 方式下联邦多集群连接断开的问题 [#3202](https://github.com/kubesphere/kubesphere/pull/3203)
 - 修正多集群状态显示问题 [#3135](https://github.com/kubesphere/kubesphere/issues/3135)
-- 修复依赖于 legacy Common Name field 的证书调用 Webhook 失败的问题 [#2928](https://github.com/kubesphere/kubesphere/issues/2928)
+- 修复 DevOps 流水线中无法部署工作负载的问题 [#3112](https://github.com/kubesphere/kubesphere/issues/3112)
 - 修复 DevOps 工程管理员无法下载 artifacts 的问题 [#3088](https://github.com/kubesphere/kubesphere/issues/3083)
-- 修复由于用户数据不一致导致的无法创建流水线的问题 [#3105](https://github.com/kubesphere/kubesphere/issues/3105)
+- 修复 DevOps 无法创建流水线的问题 [#3105](https://github.com/kubesphere/kubesphere/issues/3105)
 - 修复多集群下流水线触发的问题 [#2626](https://kubesphere.com.cn/forum/d/2626-webhook-jenkins)
 - 修复某些情况下编辑流水线时导致的数据丢失问题 [#1270](https://github.com/kubesphere/console/issues/1270)
 - 修复点击 "Docker Container Registry Credentials"时的报错问题 [#1269](https://github.com/kubesphere/console/issues/1269)
