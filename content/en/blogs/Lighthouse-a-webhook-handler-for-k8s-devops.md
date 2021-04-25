@@ -42,10 +42,6 @@ Lighthouse uses Helm Chart packages for external release.
 2. Use the following commands to install or upgrade Lighthouse.
 
    ```bash
-   # Helm v2
-   helm upgrade --install my-lighthouse --namespace lighthouse jenkins-x/lighthouse
-   
-   # Helm v3
    helm upgrade --install my-lighthouse --namespace lighthouse jenkins-x/lighthouse
    ```
 
@@ -69,7 +65,7 @@ Lighthouse provides detailed installation and configuration documentation for Je
 
 ## How to Port Prow Plugins to Lighthouse
 
-If you have any Prow plugins you wish to use but have not yet ported to Lighthouse, there's a simple and easy way for it.
+If you have any Prow plugins you wish to use but have not yet been ported to Lighthouse, there's a simple and easy way for it.
 
 Since Lighthouse reuses the Prow plugin source code and configuration files, the logic to follow in porting plugins is to switch imports of `k8s.io/test-infra/prow` to `github.com/jenkins-x/lighthouse/pkg/prow`, and then modify the structs form of GitHub Client. For example, change `github.PullRequest` to `scm.PullRequest`.
 
