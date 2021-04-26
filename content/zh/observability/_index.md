@@ -1,5 +1,5 @@
 ---
-title: "可观察性"
+title: "可观测性"
 layout: "scenario"
 
 css: "scss/scenario.scss"
@@ -12,7 +12,7 @@ section1:
 image: /images/observability/observability.jpg
 
 section2:
-  title: 可发现性、可观察性、安全性：一站式集成您所需的所有特性
+  title: 可发现性、可观测性、安全性：一站式集成您所需的所有特性
   list:
     - title: 多维度监控
       image: /images/observability/multi-dimensional-monitoring.png
@@ -41,7 +41,7 @@ section2:
         - content: <span>集成 AlertManager</span> 支持多种通知渠道（v3.0.0）
 
 section3:
-  title: 观看 KubeSphere 云原生可观察性演示
+  title: 观看 KubeSphere 云原生可观测性演示
   videoLink: https://www.youtube.com/embed/uf0TTowc56I
   content: 想自己动手体验实际操作？
   btnContent: 开始动手实验

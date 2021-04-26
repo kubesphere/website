@@ -16,8 +16,8 @@ list:
         link: porter/
         image: https://pek3b.qingstor.com/kubesphere-docs/png/20200611115347.png
 
-      - name: 云原生可观察性之日志管理
-        summary: 日志通常含有非常有价值的信息，日志管理是云原生可观察性的重要组成部分。不同于物理机或虚拟机，在容器与 Kubernetes 环境中，日志有标准的输出方式(stdout…
+      - name: 云原生可观测性之日志管理
+        summary: 日志通常含有非常有价值的信息，日志管理是云原生可观测性的重要组成部分。不同于物理机或虚拟机，在容器与 Kubernetes 环境中，日志有标准的输出方式(stdout…
         author: 霍秉杰，马丹
         link: logging/
         image: https://pek3b.qingstor.com/kubesphere-docs/png/20200607224942.png
