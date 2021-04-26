@@ -28,7 +28,7 @@ section2:
 
     - name: 功能丰富
       icon: /images/home/feature-rich.svg
-      content: 在一个平台统一纳管 DevOps、云原生可观察性、服务网格、应用生命周期、多租户、多集群、存储与网络
+      content: 在一个平台统一纳管 DevOps、云原生可观测性、服务网格、应用生命周期、多租户、多集群、存储与网络
 
     - name: 模块化 & 可插拔
       icon: /images/home/modular-pluggable.svg
@@ -38,7 +38,7 @@ section2:
 
 section3:
   title: 不同团队的受益
-  content: 平台内置的多租户设计，让不同的团队能够在一个平台中不同的企业空间下，更安全地从云端到边缘部署云原生应用。开发者通过界面点击即可快速部署项目，平台内置丰富的云原生可观察性与 DevOps 工具集帮助运维人员定位问题和快速交付。KubeSphere 还能帮助基础设施团队在数据中心与多个云上高效地部署与运维多集群，避免单一云厂商绑定。
+  content: 平台内置的多租户设计，让不同的团队能够在一个平台中不同的企业空间下，更安全地从云端到边缘部署云原生应用。开发者通过界面点击即可快速部署项目，平台内置丰富的云原生可观测性与 DevOps 工具集帮助运维人员定位问题和快速交付。KubeSphere 还能帮助基础设施团队在数据中心与多个云上高效地部署与运维多集群，避免单一云厂商绑定。
   children:
     - name: 基础设施团队
       content: 实现从云端到数据中心自动化部署、扩容与升级集群
@@ -62,7 +62,7 @@ section3:
       content: 构建一站式企业级的 DevOps 架构与可视化运维能力
       icon: /images/home/71.svg
       children:
-        - content: 提供从平台到应用维度的日志、监控、事件、审计、告警与通知，实现集中式与多租户隔离的可观察性
+        - content: 提供从平台到应用维度的日志、监控、事件、审计、告警与通知，实现集中式与多租户隔离的可观测性
         - content: 简化应用的持续集成、测试、审核、发布、升级与弹性扩缩容
         - content: 为云原生应用提供基于微服务的灰度发布、流量管理、网络拓扑与追踪
         - content: 提供易用的界面命令终端与图形化操作面板，满足不同使用习惯的运维人员
@@ -105,7 +105,7 @@ section4:
       link: "service-mesh/"
       color: red
 
-    - name: 丰富的可观察性
+    - name: 丰富的可观测性
       icon: /images/home/rich.svg
       content: 提供多维度与多租户的监控、日志、事件、审计搜索，支持多种告警策略与通知渠道，支持日志转发
       link: "observability/"
@@ -131,7 +131,7 @@ section4:
 
     - name: 多集群管理
       icon: /images/home/management.svg
-      content: 跨多云与多集群统一分发应用，提供集群高可用与灾备的最佳实践，支持跨级群的可观察性
+      content: 跨多云与多集群统一分发应用，提供集群高可用与灾备的最佳实践，支持跨级群的可观测性
       link: "/docs/multicluster-management/introduction/overview/"
       color: orange
 
