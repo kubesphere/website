@@ -20,7 +20,7 @@ APM 无疑是在大规模的微服务开发与运维场景下是必不可少的�
 
 ## 为什么选择 Apache SkyWalking
 
- 社区拥有很丰富的 APM 解决方案，比如著名的 Pinpoint、Zipkin、SkyWalking、CAT 等。在经过一番调研后，KubeSphere 选择将 **Apache SkyWalking** 作为面向 Kubernetes 的 APM 开源解决方案，将 Apache SkyWalking 集成到了 KubeSphere，作为应用模板在 **KubeSphere 容器平台** 提供给用户一键部署至 Kubernetes 的能力，进一步增强在微服务应用维度的可观察性。
+ 社区拥有很丰富的 APM 解决方案，比如著名的 Pinpoint、Zipkin、SkyWalking、CAT 等。在经过一番调研后，KubeSphere 选择将 **Apache SkyWalking** 作为面向 Kubernetes 的 APM 开源解决方案，将 Apache SkyWalking 集成到了 KubeSphere，作为应用模板在 **KubeSphere 容器平台** 提供给用户一键部署至 Kubernetes 的能力，进一步增强在微服务应用维度的可观测性。
 
  ![](https://pek3b.qingstor.com/kubesphere-docs/png/20200311122646.png)
 

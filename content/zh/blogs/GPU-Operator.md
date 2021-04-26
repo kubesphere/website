@@ -476,7 +476,7 @@ $ kubectl apply -f custom/gpu-servicemonitor.yaml
 
 #### `KubeSphere 3.0`
 
-如果部署的 KubeSphere 版本是`KubeSphere 3.0`，需要简单地配置以下几个步骤，便可顺利完成可观察性监控。
+如果部署的 KubeSphere 版本是`KubeSphere 3.0`，需要简单地配置以下几个步骤，便可顺利完成可观测性监控。
 
 首先， 登录`kubsphere console`后，创建一个企业空间名称为`ks-monitoring-demo`, 名称可按需创建;
 
