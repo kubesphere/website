@@ -1,7 +1,7 @@
 ---
 title: "KubeCon and CloudNativeCon Europe 2021 is coming! Welcome to join us!"
 keywords: "KubeCon, CloudNativeCon, KubeSphere, Kubernetes"
-description: "KubeSphere team will bring a presentation at the Data on Kubernetes Day of KubeCon and CloudNativeCon Europe 2021."
+description: "The KubeSphere team will give a presentation at the Data on Kubernetes Day of KubeCon and CloudNativeCon Europe 2021."
 createTime: "2021-04-20"
 author: "LindSay, Feynman"
 ---
@@ -10,18 +10,18 @@ author: "LindSay, Feynman"
 
 ![kubecon-eu-banner](/images/news/kubecon-eu/kubecon-news-banner.png)
 
-[KubeCon and CloudNativeCon Europe 2021](https://events.linuxfoundation.org/kubecon-cloudnativecon-europe/), the Cloud Native Computing Foundation’s flagship conference，gathers adopters and technologists from leading open source and cloud-native communities virtually from May 4 – 7, 2021.
+[KubeCon and CloudNativeCon Europe 2021](https://events.linuxfoundation.org/kubecon-cloudnativecon-europe/), the Cloud Native Computing Foundation’s flagship conference, gathers adopters and technologists from leading open source and cloud-native communities virtually from May 4 – 7, 2021.
 
-Invited by the Data on Kubernetes Community, KubeSphere Community is excited to announce that we will be presented at the Data on Kubernetes Day and give a speech about the KubeSphere Container Platform.
+Invited by the Data on Kubernetes Community, the KubeSphere Community is excited to announce that we will be present at the Data on Kubernetes Day and give a speech about the KubeSphere Container Platform.
 
-Let's meet at the event and share experience, demo, and best practice!
+Let's meet at the event and share experience, demo, and best practices!
 
 ## Agenda
 
 - Pain points for enterprises to implement Kubernetes in production
-- Introduction to KubeSphere open source ecosystem: KubeSphere, KubeKey, PorterLB, KubeEye
+- Introduction to the open source ecosystem of KubeSphere: KubeSphere, KubeKey, PorterLB, and KubeEye
 - Demo: Implementing Kubernetes multi-cluster management and Cloud-Native observability on KubeSphere
-- KubeSphere Community Growth: Present and Future
+- KubeSphere Community Growth: Today and Tomorrow
 
 ## Time
 

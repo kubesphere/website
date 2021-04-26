@@ -11,7 +11,7 @@ section1:
 section2:
   news:
     - title: 'KubeCon and CloudNativeCon Europe 2021 is coming! Welcome to join us!'
-      description: KubeSphere team will bring a presentation at the Data on Kubernetes Day of KubeCon and CloudNativeCon Europe 2021.
+      description: The KubeSphere team will give a presentation at the Data on Kubernetes Day of KubeCon and CloudNativeCon Europe 2021.
       image: /images/news/kubecon-eu/kubecon-news-banner.png
       link: 'join-us-at-kubecon-eu-2021/'
     - title: 'Recap: KubeSphere & Friends 2020 Meetup'
