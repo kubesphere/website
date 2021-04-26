@@ -190,7 +190,7 @@ hasChildren = true
 
   [[languages.zh.menu.main]]
   parent = "应用场景"
-  name = "构建丰富的云原生可观察性"
+  name = "构建丰富的云原生可观测性"
   URL = "observability/"
   weight = 8
 
