@@ -30,7 +30,7 @@ weight: 4230
 
 {{< notice note >}}
 
-- KubeSphere 3.0.0 支持的 Kubernetes 版本：1.15.x，1.16.x，1.17.x，1.18.x。
+- 如需在 Kubernetes 上安装 KubeSphere v3.1.0，您的 Kubernetes 版本必须为：v1.17.x，v1.18.x，v1.19.x 或 v1.20.x。
 - 此示例中包括 3 个节点。您可以根据自己的需求添加更多节点，尤其是在生产环境中。
 - 机器类型 Standard/4 GB/2 vCPU 仅用于最小化安装的，如果您计划启用多个可插拔组件或将集群用于生产，建议将节点升级到规格更大的类型（例如，CPU-Optimized /8 GB /4 vCPUs）。DigitalOcean 是基于工作节点类型来配置主节点，而对于标准节点，API server 可能会很快会变得无响应。
 

@@ -15,8 +15,8 @@ weight: 4250
 
 首先按使用环境的资源需求创建 Kubernetes 集群，满足以下一些条件即可（如已有环境并满足条件可跳过本节内容）：
 
-- KubeSphere 3.0.0 默认支持的 Kubernetes 版本为 `1.15.x`, `1.16.x`, `1.17.x`, `1.18.x`，选择支持的版本创建集群（如 `v1.15.11`, `v1.17.9`）；
-- 需要确保 Kubernetes 集群所使用的云主机的网络正常工作，可以通过在创建集群的同时**自动创建**或**使用已有**弹性 IP；或者在集群创建后自行配置网络（如配置 [NAT 网关](https://support.huaweicloud.com/natgateway/)）；
+- 如需在 Kubernetes 上安装 KubeSphere v3.1.0，您的 Kubernetes 版本必须为：v1.17.x，v1.18.x，v1.19.x 或 v1.20.x。
+- 需要确保 Kubernetes 集群所使用的云主机的网络正常工作，可以通过在创建集群的同时**自动创建**或**使用已有**弹性 IP；或者在集群创建后自行配置网络（如配置 [NAT 网关](https://support.huaweicloud.com/natgateway/)）。
 - 工作节点规格建议选择 `s3.xlarge.2` 的 `4核｜8GB` 配置，并按需扩展工作节点数量（通常生产环境需要 3 个及以上工作节点）。
 
 ### 创建公网 kubectl 证书
