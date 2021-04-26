@@ -38,6 +38,7 @@ weight: 50
 - 支持调度工作负载至边缘节点
 
 ### 认证和权限管理
+
 - 新用户首次登录，提示修改初始密码
 - 通过第三方平台登录 KubeSphere，需确认账户信息
 - 支持 [CAS](https://apereo.github.io/cas/5.0.x/protocol/CAS-Protocol-Specification.html) 身份提供商 [#3047](https://github.com/kubesphere/kubesphere/issues/3047)
@@ -74,7 +75,7 @@ weight: 50
 
 #### 监控
 
-- 支持图形化方式配置 ServiceMonitor [#1031](https://github.com/kubesphere/console/pull/1301) 
+- 支持图形化方式配置 ServiceMonitor [#1031](https://github.com/kubesphere/console/pull/1301)
 - 支持 PromQL auto-completion 和 syntax highlighting [#1307](https://github.com/kubesphere/console/pull/1307)
 - 支持集群层级的自定义监控 [#3193](https://github.com/kubesphere/kubesphere/pull/3193)
 - kube-scheduler 与 kube-controller-manager 数据抓取由 http 端口 10251/10252 改为 https 端口 10259/10257[#1367](https://github.com/kubesphere/ks-installer/pull/1367)
@@ -85,7 +86,7 @@ weight: 50
 - 支持平台及项目层级的告警规则 [#3181](https://github.com/kubesphere/kubesphere/pull/3181)
 - 支持显示告警规则的实时告警状态 [#3181](https://github.com/kubesphere/kubesphere/pull/3181)
 
-#### 通知管理 
+#### 通知管理
 
 - 新增 钉钉、 企业微信、Slack、Webhook 通知方式，其提供图形化管理[#3066](https://github.com/kubesphere/kubesphere/issues/3066)
 
@@ -114,7 +115,7 @@ weight: 50
 
 - 新增 MySQL 高可用集群应用：[XenonDB](https://github.com/radondb/xenondb)
 - 支持修改已部署的应用模板
-- 支持查看应用模板部署失败的原因 [#3036](https://github.com/kubesphere/kubesphere/issues/3036) [#3001](https://github.com/kubesphere/kubesphere/issues/3001) [#2951](https://github.com/kubesphere/kubesphere/issues/2951) 
+- 支持查看应用模板部署失败的原因 [#3036](https://github.com/kubesphere/kubesphere/issues/3036) [#3001](https://github.com/kubesphere/kubesphere/issues/3001) [#2951](https://github.com/kubesphere/kubesphere/issues/2951)
 - 支持批量删除应用模板
 
 ### 微服务治理
@@ -122,7 +123,7 @@ weight: 50
 - 支持图形化流量方向检测，图像化方式显示应用（composed application）流量的流入/流出 [#3153](https://github.com/kubesphere/kubesphere/issues/3153)
 - 支持 Kiali 附加组件，用户可以通过 Kiali直接管理 istio [#3106](https://github.com/kubesphere/kubesphere/issues/3106)
 - 支持 Nginx Ingress Gateway 的监控，新增 nginx ingress controller 的监控指标 [#1205](https://github.com/kubesphere/ks-installer/pull/1205)
-- 支持在创建应用时添加应用路由 [#1426](https://github.com/kubesphere/console/issues/1426) 
+- 支持在创建应用时添加应用路由 [#1426](https://github.com/kubesphere/console/issues/1426)
 - 升级 istio 至 1.6.10 [#3326](https://github.com/kubesphere/kubesphere/issues/3236)
 
 ### 计量计费
@@ -134,7 +135,7 @@ weight: 50
 
 - 升级 Kubernetes 版本依赖，从 v1.17 调整至 v1.18 [#3274](https://github.com/kubesphere/kubesphere/issues/3274)
 - 升级 Prometheus client_golang 版本依赖至 v1.5.1，升级 Prometheus 版本依赖至 v1.8.2 [3097](https://github.com/kubesphere/kubesphere/pull/3097)
-- 基于 CRD 重构应用管理框架 OpenPitrix 并修复原有架构导致的问题 [#3036](https://github.com/kubesphere/kubesphere/issues/3036) [#3001](https://github.com/kubesphere/kubesphere/issues/3001) [#2995](https://github.com/kubesphere/kubesphere/issues/2995) [#2981](https://github.com/kubesphere/kubesphere/issues/2981) [#2954](https://github.com/kubesphere/kubesphere/issues/2954) [#2951](https://github.com/kubesphere/kubesphere/issues/2951) [#2783](https://github.com/kubesphere/kubesphere/issues/2783) [#2713](https://github.com/kubesphere/kubesphere/issues/2713) [#2700](https://github.com/kubesphere/kubesphere/issues/2700) [#1903](https://github.com/kubesphere/kubesphere/issues/1903) 
+- 基于 CRD 重构应用管理框架 OpenPitrix 并修复原有架构导致的问题 [#3036](https://github.com/kubesphere/kubesphere/issues/3036) [#3001](https://github.com/kubesphere/kubesphere/issues/3001) [#2995](https://github.com/kubesphere/kubesphere/issues/2995) [#2981](https://github.com/kubesphere/kubesphere/issues/2981) [#2954](https://github.com/kubesphere/kubesphere/issues/2954) [#2951](https://github.com/kubesphere/kubesphere/issues/2951) [#2783](https://github.com/kubesphere/kubesphere/issues/2783) [#2713](https://github.com/kubesphere/kubesphere/issues/2713) [#2700](https://github.com/kubesphere/kubesphere/issues/2700) [#1903](https://github.com/kubesphere/kubesphere/issues/1903)
 - 告警架构调整，不再使用 MySQL, Redis, Etcd 等组件以及旧版告警规则格式。改为使用 Thanos Ruler 配合 Prometheus 内置告警规则进行告警管理，新版告警兼容 Prometheus 告警规则。KubeSphere v3.0.0 中旧版告警规则会在升级到 v3.1.0 后自动迁移为新版告警规则。
 - 通知架构调整，不再使用 MySQL, Redis, Etcd 等组件。 改为使用 [Notification Manager](https://github.com/kubesphere/notification-manager/) 以 CRD 的方式配置通知渠道。通知渠道设置由告警规则级别调整为集群级别，且多集群仅需设置一次通知渠道。
 
@@ -146,7 +147,7 @@ weight: 50
 ## 问题修复
 - 修复账户无法登录的问题 [#3132](https://github.com/kubesphere/kubesphere/issues/3132) [3357](https://github.com/kubesphere/kubesphere/issues/3357)
 - 修复容器日志不支持ANSI Color的问题 [#1322](https://github.com/kubesphere/kubesphere/issues/3044)
-- 修复以“kube”起始命名的项目（namespace）下的微服务应用无法获取istio 相关的监控数据的问题 [#3126](https://github.com/kubesphere/kubesphere/issues/3162) 
+- 修复以“kube”起始命名的项目（namespace）下的微服务应用无法获取istio 相关的监控数据的问题 [#3126](https://github.com/kubesphere/kubesphere/issues/3162)
 - 修复 viewer 可进入容器终端的安全隐患 [#3041](https://github.com/kubesphere/kubesphere/issues/3041)
 - 修复级联资源无法被删除的问题 [#2912](https://github.com/kubesphere/kubesphere/issues/2912)
 - 修复 Kubernetes 1.19 及以上版本无法正常使用的问题 [#2928](https://github.com/kubesphere/kubesphere/issues/2928) [#2928](https://github.com/kubesphere/kubesphere/issues/2928)
@@ -165,3 +166,13 @@ weight: 50
 - 修复英文控制台显示中文代码质量检查结果的问题 [#1278](https://github.com/kubesphere/console/issues/1278)
 - 修复 Jenkinsfile 中包含布尔值时的显示报错问题 [#3043](https://github.com/kubesphere/kubesphere/issues/3043)
 - 修复当 PVC 不含有 StorageClassName 时存储管理页面无法显示的问题 [#1109](https://github.com/kubesphere/ks-installer/issues/1109)
+
+## UI页面优化
+
+- 优化首页的 Loading 效果
+- 优化 kubectl 为独立页面
+- 优化可视化流水线的配置显示
+- 优化流水线的运行状态的错误显示
+- 优化代码仓库的筛选方式
+- 优化节点调度策略的设置方式
+- 优化部署模式的设置方式
