@@ -18,7 +18,7 @@ weight: 50
 
 ### 集群管理
 
-- member 集群管理服务轻量化，移除 redis、ldap 等组件 [#3056](https://github.com/kubesphere/kubesphere/issues/3056)
+- Member 集群管理服务轻量化，移除 Redis、OpenLDAP 等组件 [#3056](https://github.com/kubesphere/kubesphere/issues/3056)
 - 简化添加集群的操作，并验证集群配置（如 jwtSecret）有效性 [#3232](https://github.com/kubesphere/kubesphere/issues/3232)
 - 可按需配置集群控制器同步时间段 [#3213](https://github.com/kubesphere/kubesphere/issues/3213)
 - 重构集群控制器，优化逻辑  [#3234](https://github.com/kubesphere/kubesphere/issues/3234)
@@ -38,20 +38,19 @@ weight: 50
 - 支持调度工作负载至边缘节点
 
 ### 认证和权限管理
-- 新用户首次登录，可修改预分配的密码
+- 新用户首次登录，提示修改初始密码
 - 通过第三方平台登录 KubeSphere，需确认账户信息
 - 支持 [CAS](https://apereo.github.io/cas/5.0.x/protocol/CAS-Protocol-Specification.html) 身份提供商 [#3047](https://github.com/kubesphere/kubesphere/issues/3047)
 - 支持 [OIDC](https://openid.net/specs/openid-connect-core-1_0.html) 身份提供商 [#2941](https://github.com/kubesphere/kubesphere/issues/2941)
 - 支持 IDaaS(Alibaba Cloud Identity as a Service) 身份提供商 [#2997](https://github.com/kubesphere/kubesphere/pull/2997)
-- 支持 Service Account 管理，可给 Service Account 分配角色 [#3211](https://github.com/kubesphere/kubesphere/issues/3211)
-- 改善 LDAP 认证插件，支持 LDAPS 和搜索过滤（search filter）[#2970](https://github.com/kubesphere/kubesphere/issues/2970) [#3766](https://github.com/kubesphere/kubesphere/issues/3766)
-- 改善认证插件，简化身份提供商的配置 [#2970](https://github.com/kubesphere/kubesphere/issues/2970)
+- 支持 Service Account 管理 [#3211](https://github.com/kubesphere/kubesphere/issues/3211)
+- 改善 LDAP 认证插件，支持 LDAPS 和搜索过滤 [#2970](https://github.com/kubesphere/kubesphere/issues/2970) [#3766](https://github.com/kubesphere/kubesphere/issues/3766)
+- 改善认证插件，简化身份提供商的配置方式 [#2970](https://github.com/kubesphere/kubesphere/issues/2970)
 
 
 ### 多租户管理
-- 支持用户组管理，可邀请指定用户组至企业空间或者项目 [#2940](https://github.com/kubesphere/kubesphere/issues/2940)
+- 支持用户组管理，可将用户组添加至企业空间或项目参与协同 [#2940](https://github.com/kubesphere/kubesphere/issues/2940)
 - 支持企业空间配额，与 Kubernetes 资源配额 [ResourceQuota](https://kubernetes.io/docs/concepts/policy/resource-quotas/) 保持一致，可限制企业空间的资源用量 [#2939](https://github.com/kubesphere/kubesphere/issues/2939)
-- 支持级联删除，删除企业空间时，提示是否删除级联资源的，确认后再删除 [#3192](https://github.com/kubesphere/kubesphere/issues/3192)
 
 ### 网络
 
@@ -142,6 +141,7 @@ weight: 50
 ## 废弃或移除的功能
 
 - 依赖 MySQL, Redis, Etcd 等组件的旧版告警与通知被新版告警与通知替代。
+- 容器终端 WebSocket API 发生变更。[#3041](https://github.com/kubesphere/kubesphere/issues/3041)
 
 ## 问题修复
 - 修复账户无法登录的问题 [#3132](https://github.com/kubesphere/kubesphere/issues/3132) [3357](https://github.com/kubesphere/kubesphere/issues/3357)
@@ -150,8 +150,6 @@ weight: 50
 - 修复 viewer 可进入容器终端的安全隐患 [#3041](https://github.com/kubesphere/kubesphere/issues/3041)
 - 修复级联资源无法被删除的问题 [#2912](https://github.com/kubesphere/kubesphere/issues/2912)
 - 修复 Kubernetes 1.19 及以上版本无法正常使用的问题 [#2928](https://github.com/kubesphere/kubesphere/issues/2928) [#2928](https://github.com/kubesphere/kubesphere/issues/2928)
-- 修复部署工作负载时的 bad_certificate 错误 [#3112](https://github.com/kubesphere/kubesphere/issues/3112)
-- 修复 admission webhook 的自签名依赖于 legacy Common Name field 的问题 [#2928](https://github.com/kubesphere/kubesphere/issues/2928)
 - 修复微服务应用“监控”按钮无效的问题 [#1394](https://github.com/kubesphere/console/issues/1394)
 - 修复灰度发布的服务名不能与微服务应用的标签名相同的问题 [#3128](https://github.com/kubesphere/kubesphere/issues/3128)
 - 修复微服务应用状态无法更新的问题 [#3241](https://github.com/kubesphere/kubesphere/issues/3241)
