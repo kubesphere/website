@@ -2,81 +2,78 @@
 title: "Release Notes for 3.1.0"
 keywords: "Kubernetes, KubeSphere, release-notes"
 description: "KubeSphere Release Notes for 3.1.0"
-
 linkTitle: "Release Notes - 3.1.0"
-weight: 50
+weight: 18100
 ---
 
-## 如何获取 v3.1.0
+## How to Install v3.1.0
 
 - [Install KubeSphere v3.1.0 on Linux](https://github.com/kubesphere/kubekey)
 - [Install KubeSphere v3.1.0 on existing Kubernetes](https://github.com/kubesphere/ks-installer)
 
-# Release Notes
+## New Features and Enhancements
 
-## 新功能及增强
+### Cluster management
 
-### 集群管理
+- Simplified the steps to import Member Clusters with configuration validation (e.g. `jwtSecret`) added. ([#3232](https://github.com/kubesphere/kubesphere/issues/3232))
+- Refactored the cluster controller and optimized the logic. ([#3234](https://github.com/kubesphere/kubesphere/issues/3234))
+- Upgraded the built-in web Kubectl, the version of which is now consistent with your Kubernetes cluster version. ([#3103](https://github.com/kubesphere/kubesphere/issues/3103))
+- Support customized resynchronization period of cluster controller. ([#3213](https://github.com/kubesphere/kubesphere/issues/3213))
+- Support lightweight installation of Member Clusters without components such as Redis and OpenLDAP. ([#3056](https://github.com/kubesphere/kubesphere/issues/3056))
+- Support high availability of Tower agent and server. ([#31](https://github.com/kubesphere/tower/issues/31))
 
-- Member 集群管理服务轻量化，移除 Redis、OpenLDAP 等组件 [#3056](https://github.com/kubesphere/kubesphere/issues/3056)
-- 简化添加集群的操作，并验证集群配置（如 jwtSecret）有效性 [#3232](https://github.com/kubesphere/kubesphere/issues/3232)
-- 可按需配置集群控制器同步时间段 [#3213](https://github.com/kubesphere/kubesphere/issues/3213)
-- 重构集群控制器，优化逻辑  [#3234](https://github.com/kubesphere/kubesphere/issues/3234)
-- 支持以高可用方式运行 Tower 管理和代理服务 [#31](https://github.com/kubesphere/tower/issues/31)
-- 升级工具箱中的 Kubectl 且与 Kubernetes 集群版本保持一致 [#3103](https://github.com/kubesphere/kubesphere/issues/3103)
+### KubeEdge integration
 
-#### 边缘节点管理
+You can now enable KubeEdge in your cluster and manage edge nodes on the KubeSphere console. ([#3070](https://github.com/kubesphere/kubesphere/issues/3070))
 
-##### 集成 KubeEdge [#3070](https://github.com/kubesphere/kubesphere/issues/3070)
+- Support the installation of both cloud and edge modules of KubeEdge.
+- Support adding KubeEdge through the KubeSphere console.
+- The logs and monitoring data of edge nodes can be collected.
+- The network of edge nodes can be configured automatically as they join or leave a cluster.
+- Taints can be added automatically as an edge node joins your cluster.
+- You can use `nodeAffinity` to prevent cloud workloads (for example, DaemonSets) from being deployed to edge nodes. ([#1295](https://github.com/kubesphere/ks-installer/pull/1295), [#1297](https://github.com/kubesphere/ks-installer/pull/1297) and [#1300](https://github.com/kubesphere/ks-installer/pull/1300))
+- Support the deployment of workloads on edge nodes.
 
-- 支持 KubeEdge 云端组件的安装部署
-- 支持 KubeEdge 边缘节点的添加
-- 支持边缘节点的日志和监控数据采集
-- 支持边缘节点网络配置自动化的加入和退出
-- 边缘节点在加入集群时，支持自动添加污点
-- 支持通过添加 nodeAffinity 禁止云端工作负载(如 Daemonset)调度到边缘节点 [#1295](https://github.com/kubesphere/ks-installer/pull/1295) [#1297](https://github.com/kubesphere/ks-installer/pull/1297) [1300](https://github.com/kubesphere/ks-installer/pull/1300)
-- 支持调度工作负载至边缘节点
-
-### 认证和权限管理
-- 新用户首次登录，提示修改初始密码
-- 通过第三方平台登录 KubeSphere，需确认账户信息
-- 支持 [CAS](https://apereo.github.io/cas/5.0.x/protocol/CAS-Protocol-Specification.html) 身份提供商 [#3047](https://github.com/kubesphere/kubesphere/issues/3047)
-- 支持 [OIDC](https://openid.net/specs/openid-connect-core-1_0.html) 身份提供商 [#2941](https://github.com/kubesphere/kubesphere/issues/2941)
-- 支持 IDaaS(Alibaba Cloud Identity as a Service) 身份提供商 [#2997](https://github.com/kubesphere/kubesphere/pull/2997)
-- 支持 Service Account 管理 [#3211](https://github.com/kubesphere/kubesphere/issues/3211)
-- 改善 LDAP 认证插件，支持 LDAPS 和搜索过滤 [#2970](https://github.com/kubesphere/kubesphere/issues/2970) [#3766](https://github.com/kubesphere/kubesphere/issues/3766)
-- 改善认证插件，简化身份提供商的配置方式 [#2970](https://github.com/kubesphere/kubesphere/issues/2970)
+### Authorization and authentication management 
+- New users now see a prompt to change the old password when first logging in to KubeSphere.
+- New users now need to confirm account information when logging in to KubeSphere through a third party.
+- Added ServiceAccount management. ([#3211](https://github.com/kubesphere/kubesphere/issues/3211))
+- Improved the LDAP authentication plugin and added support for LDAPS and search filtering. ([#2970](https://github.com/kubesphere/kubesphere/issues/2970) and [#3766](https://github.com/kubesphere/kubesphere/issues/3766))
+- Improved the identify provider plugin and simplified the configuration of identify providers. ([#2970](https://github.com/kubesphere/kubesphere/issues/2970))
+- Support [CAS](https://apereo.github.io/cas/5.0.x/protocol/CAS-Protocol-Specification.html) as an available identity provider. ([#3047](https://github.com/kubesphere/kubesphere/issues/3047))
+- Support [OIDC](https://openid.net/specs/openid-connect-core-1_0.html) as an available identity provider. ([#2941](https://github.com/kubesphere/kubesphere/issues/2941))
+- Support IDaaS (Alibaba Cloud Identity as a Service) as an available identity provider. ([#2997](https://github.com/kubesphere/kubesphere/pull/2997))
 
 
-### 多租户管理
-- 支持用户组管理，可将用户组添加至企业空间或项目参与协同 [#2940](https://github.com/kubesphere/kubesphere/issues/2940)
-- 支持企业空间配额，可限制企业空间的资源用量 [#2939](https://github.com/kubesphere/kubesphere/issues/2939)
+### Multi-tenant management
+- Users now can configure departments in a workspace and assign users to the department. All users in the department can have the same role in a project or DevOps project. ([#2940](https://github.com/kubesphere/kubesphere/issues/2940))
+- Support workspace quotas which are used to manage resource usage of a workspace. ([#2939](https://github.com/kubesphere/kubesphere/issues/2939))
 
-### 网络
+### Network
 
-- 新增支持 Kube-OVN 插件
-- 支持 Calico IP 池管理 [#3057](https://github.com/kubesphere/kubesphere/issues/3057)
-- 支持为 Deployment 指定静态 IP [#3058](https://github.com/kubesphere/kubesphere/issues/3058)
-- 支持网络可视化 [#3061](https://github.com/kubesphere/kubesphere/issues/3061) [#583](https://github.com/kubesphere/kubesphere/issues/583)
+- Added Kube-OVN.
+- Support Calico IP pool management. ([#3057](https://github.com/kubesphere/kubesphere/issues/3057))
+- Support visual network topology. ([#3061](https://github.com/kubesphere/kubesphere/issues/3061) and [#583](https://github.com/kubesphere/kubesphere/issues/583))
+- A static IP address can be assigned to a Deployment now. ([#3058](https://github.com/kubesphere/kubesphere/issues/3058))
 
-### 可观测性
+### Observability
 
-- 优化集成已有 Prometheus 服务对接方式 [#3068](https://github.com/kubesphere/kubesphere/issues/3068) [#1164](https://github.com/kubesphere/ks-installer/pull/1164) [Guide](https://kubesphere.io/docs/faq/observability/byop/)
-- 新增 Thanos Ruler (Thanos v0.18.0) 用于新版告警
-- 升级 Prometheus 至 v2.26.0
-- 升级 Prometheus Operator 至 v0.42.1
-- 升级 kube-state-metrics 至 v1.9.7
-- 升级 metrics-server 至 v0.4.2
-- 升级 Notification Manager 至 v1.0.0 [Releases](https://github.com/kubesphere/notification-manager/releases)
-- 升级 FluentBit Operator 至 v0.5.0 [Releases](https://github.com/kubesphere/fluentbit-operator/releases)
-- 升级 FluentBit 至 v1.6.9
-- 升级 KubeEvents 至 v0.2.0
+- Improved the current method of Prometheus integration. ([#3068](https://github.com/kubesphere/kubesphere/issues/3068) and [#1164](https://github.com/kubesphere/ks-installer/pull/1164); [guide](/docs/faq/observability/byop/))
+- Added Thanos Ruler (Thanos v0.18.0) for the new alerting function.
+- Upgraded Prometheus to v2.26.0.
+- Upgraded Prometheus Operator to v0.42.1.
+- Upgraded kube-state-metrics to v1.9.7.
+- Upgraded metrics-server to v0.4.2.
+- Upgraded Notification Manager to v1.0.0. ([Releases](https://github.com/kubesphere/notification-manager/releases))
+- Upgraded FluentBit Operator to v0.5.0. ([Releases](https://github.com/kubesphere/fluentbit-operator/releases))
+- Upgraded FluentBit to v1.6.9.
+- Upgraded KubeEvents to v0.2.0.
 
-#### 监控
+#### Monitoring
 
-- 支持图形化方式配置 ServiceMonitor [#1031](https://github.com/kubesphere/console/pull/1301) 
-- 支持 PromQL auto-completion 和 syntax highlighting [#1307](https://github.com/kubesphere/console/pull/1307)
-- 支持集群层级的自定义监控 [#3193](https://github.com/kubesphere/kubesphere/pull/3193)
+- Support configurations of ServiceMonitor on the KubeSphere console. ([#1031](https://github.com/kubesphere/console/pull/1301))
+- Support PromQL auto-completion and syntax highlighting. ([#1307](https://github.com/kubesphere/console/pull/1307))
+- Support customized monitoring at the cluster level. ([#3193](https://github.com/kubesphere/kubesphere/pull/3193))
 - kube-scheduler 与 kube-controller-manager 数据抓取由 http 端口 10251/10252 改为 https 端口 10259/10257[#1367](https://github.com/kubesphere/ks-installer/pull/1367)
 
 #### 告警
