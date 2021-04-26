@@ -119,12 +119,12 @@ chmod +x kk
 1. Specify a Kubernetes version and a KubeSphere version that you want to install. For example:
 
    ```bash
-   ./kk create config --with-kubernetes v1.17.9 --with-kubesphere v3.0.0
+   ./kk create config --with-kubernetes v1.20.4 --with-kubesphere v3.1.0
    ```
 
    {{< notice note >}}
 
-   - Supported Kubernetes versions: v1.15.12, v1.16.13, v1.17.9 (default), v1.18.6.
+   - Recommended Kubernetes versions for KubeSphere v3.1.0: v1.17.9, v1.18.8, v1.19.8 and v1.20.4. If you do not specify a Kubernetes version, KubeKey will install Kubernetes v1.19.8 by default. For more information about supported Kubernetes versions, see [Support Matrix](/docs/installing-on-linux/introduction/kubekey/#support-matrix).
 
    - If you do not add the flag `--with-kubesphere` in the command in this step, KubeSphere will not be deployed unless you install it using the `addons` field in the configuration file or add this flag again when you use `./kk create cluster` later.
    - If you add the flag `--with-kubesphere` without specifying a KubeSphere version, the latest version of KubeSphere will be installed.

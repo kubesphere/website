@@ -10,7 +10,7 @@ In addition to installing KubeSphere on a Linux machine, you can also deploy it 
 
 {{< notice note >}}
 
-- To install KubeSphere on Kubernetes, your Kubernetes version must be `1.15.x, 1.16.x, 1.17.x, or 1.18.x`.
+- To install KubeSphere v3.1.0 on Kubernetes, your Kubernetes version must be v1.17.x, v1.18.x, v1.19.x or v1.20.x.
 - Make sure your machine meets the minimal hardware requirement: CPU > 1 Core, Memory > 2 G.
 - A **default** Storage Class in your Kubernetes cluster needs to be configured before the installation.
 - The CSR signing feature is activated in `kube-apiserver` when it is started with the `--cluster-signing-cert-file` and `--cluster-signing-key-file` parameters. See [RKE installation issue](https://github.com/kubesphere/kubesphere/issues/1925#issuecomment-591698309).
