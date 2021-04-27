@@ -5,67 +5,68 @@ description: Migrate to Microservices using KubeSphere in FinTech Transformation
 css: scss/case-detail.scss
 
 section1:
-  title: Hua Xia Bank
-  content: Hua Xia Bank was established in 1992. As a financial institution, Huaxia Bank is in progress of FinTech transformation in order to provide technology leading financial services to customers.
+  title: 华夏银行
+  content: 华夏银行成立于1992年。作为一家金融机构，华夏银行正在进行金融科技转型，为客户提供技术领先的金融服务。
+
 
 section2:
   listLeft:
-    - title: 'Company Introduction'
+    - title: '公司简介'
       contentList:
-        - content: Hua Xia Bank started operation in Beijing in October 1992 when China ushered in the program of opening up and reform led by Chief Architect Deng Xiaoping. The Bank became a nationwide joint stock commercial bank after restructuring in March, 1995. In September, 2003, Hua Xia Bank went public as the fifth of Chinese banks listed on the Shanghai Stock Exchange (Stock Ticker:600015).
+        - content: 在改革开放总设计师邓小平的关心支持下，华夏银行于 1992 年 10 月在北京成立。1995 年 3 月，实行股份制改造；2003 年 9 月，首次公开发行股票并上市交易（股票代码：600015），成为全国第五家上市银行。
       image: https://pek3b.qingstor.com/kubesphere-docs/png/20200611164953.png
 
-    - title: 'Background'
+    - title: '背景'
       contentList:
-        - content: As a financial institution, Huaxia Bank is in progress of FinTech transformation in order to provide technology leading financial services to customers.
-        - content: In their bank, there are more than 40 first-tier branches nationwide. Each branch has their local banking businesses with many requirements required to be delivered fast. Besides, there are many applications like fund supervision, ETC, payment systems in each branch written in different languages such as C/C++, Java, Python, etc, using traditional monolithic architecture, and deployed on VMs. Moreover, they have a large custom snowflake ecosystem in their development, where each tool needs its own configuration and deployment.
+        - content: 作为一家金融机构，华夏银行正在进行金融科技转型，为客户提供技术领先的金融服务。
+        - content: 该银行在全国有 40 多家一线分行。每个分行都有自己的本地银行业务，需要快速交付需求。此外，每个分行的很多应用，如基金监管、ETC、支付系统等，使用不同的语言编写，如 C/ C++、Java、Python 等，使用传统的单片架构，部署在虚拟机上。此外，华夏银行自研了大型的 Snowflake 生态系统，每种工具需要分别配置与部署。
       image:
 
-    - title: 'Adopt KubeSphere as the Platform Solution'
+    - title: '采用 KubeSphere 作为平台解决方案'
       contentList:
-        - content: Huaxia Bank chooses to migrate applications to Kubernetes. we introduces KubeSphere to enhance the Kubernetes platform abilities. With the unified portal to connect DevOps, microservices management and Kubernetes platform in KubeSphere, it help us more easier to adopt cloud native stack. KubeSphere is pretty developer-friendly for novices. With using Istio service mesh, we can easily implement the grayscale release. KubeSphere brings the simplified DevOps workflows to us, and the built-in roles are designed for developers and operators.
-        - content: Additionally, observability is very critical in daily development and operations. KubeSphere provides centralized log search and monitoring features, which helps us to locate the issues and bottlenecks between different microservices.
+        - content: 华夏银行选择将应用迁移到 Kubernetes。 我们引入了 KubeSphere 来增强 Kubernetes 平台的能力。通过统一门户连接 KubeSphere 中的 DevOps、 微服务管理和 Kubernetes 平台，我们能更轻松地采用云原生技术栈。KubeSphere 对于新的开发人员是十分友好的。 使用 Istio service mesh，我们可以很轻松地实现灰度发布。 KubeSphere 简化了 DevOps 的工作流，并且其内置角色是为开发人员和操作人员设计的。
+        - content: 此外，可观察性在日常开发和操作中非常重要。KubeSphere 提供集中的日志搜索和监控功能，这有助于我们定位不同微服务之间的问题和瓶颈。
       image:
 
-    - title: 'Kubernetes is tailored for microservices architecture'
+    - title: 'Kubernetes 是为微服务架构量身定制的'
       contentList:
-        - content: As the first team in our bank to adopt Kubernetes since 2019, we are committed to leading FinTech transformation to make technologies boosting financial business innovations. Fortunately, several experimental projects prove that Kubernetes is tailored for microservices architecture, and Kubernetes is a great time-saver for multiple branches in our bank.
-        - content: 'When branch developers see how quickly containers could be spun up compared to the VMs process, all branches try to run their applications in containers and ship them in Kubernetes. With Kubernetes and KubeSphere platform, the release process goes from several hours to several minutes, and time to market has also been improved significantly.'
+        - content: 作为我行自 2019 年以来第一个采用 Kubernetes 的团队，我们致力于引领金融科技转型，让科技助推金融业务创新。幸运的是，几个实验项目证明 Kubernetes 是为微服务架构量身定制的，而且 Kubernetes 为我行的多个分行节省了大量时间。
+        - content: '当分行开发人员看到，与虚拟机进程相比，容器的运行速度有多快时，所有分行都开始尝试在容器中运行应用，并在  Kubernetes 中发布。通过 Kubernetes 和 KubeSphere 平台，发布过程从小时级提升到分钟级，上线时间得到了显著改善。'
       image:
 
     - type: 1
       contentList:
-        - content: Time to market has been improved significantly
-        - content: boosting financial business innovations
-        - content: Pretty developer-friendly for novices
+        - content: 上线时间显著改善
+        - content: 推动金融业务创新
+        - content: 对新手开发人员友好
 
-    - title: 'Cloud Native is a Great Way to Accelerate the FinTech Transformation'
+    - title: '云原生是加速金融科技转型的利器'
       contentList:
-        - content: When it comes to the benefits to the ecosystem, we have demonstrated cloud native is great way to accelerate the FinTech transformation. We, as a pioneer in our bank, give some best practices to other projects. Today, developers can quickly deploy, ship code and release their applications written in different languages and frameworks smoothly. Kubernetes provides the tools all we need in the cloud native ecosystem in a consistent way.  
+        - content: 说到对生态系统的好处，我们已经证明了原生云是加速金融科技转型的好方法。作为我行的先驱，我们为其他项目提供了一些最佳实践。如今，开发人员可以快速地部署、发布用不同语言和框架编写的应用程序。Kubernetes 以一致的方式提供了我们在云原生生态系统中所需要的所有工具。 
       image:
 
     - type: 2
-      content: 'With Kubernetes and KubeSphere platform, the release process goes from several hours to several minutes, and time to market has also been improved significantly.'
-      author: 'Hua Xia Bank'
+      content: '通过 Kubernetes 和 KubeSphere 平台，发布过程从小时级提升到分钟级，上线时间得到了显著改善。'
+      author: '华夏银行'
 
-    - title: About KubeSphere
+    - title: 关于 KubeSphere
       contentList:
-        - content: KubeSphere unifies many cloud native technologies and tools, including Docker, Istio mesh, DevOps, monitoring, logging, etc. We have demonstrated a best practice of using Kubernetes and KubeSphere with multiple branches in our bank.
-        - content: As for banking industry, most applications must be fault tolerant, highly available and reliable, we demonstrated that even running these applications on Kubernetes can achieve these stringent requirements simultaneously. We hope our user case study will help to promote the wide adoption of Kubernetes in the banking industry.
+        - content: KubeSphere 整合了很多云原生技术和工具，包括 Docker、Istio mesh、DevOps、监控、日志等。 我们已经演示了在过个分行中使用 Kubernetes 和 KubeSphere 的最佳实践。
+        - content: 对银行业来说，大多数应用必须是容错率高、高可用性和高可靠性的。我们证明了即使在 Kubernetes 上运行这些应用也可以实现这些严格的要求。我们希望我们的用户案例研究，能够促进 Kubernetes 在银行业的采用。
       image:
 
   rightPart:
     icon: /images/case/section6-huaxia-bank.jpg
     list:
-      - title: INDUSTRY
-        content: Finance
-      - title: LOCATION
-        content: China
-      - title: CLOUD TYPE
-        content: Private
-      - title: CHALLENGES
-        content: High availability, Efficiency, Data Security
-      - title: ADOPTED FEATURES
+      - title: 行业
+        content: 金融
+      - title: 地点
+        content: 中国
+      - title: 云类型
+        content: 私有云
+      - title: 挑战
+        content: 高可用性、高效率、数据安全
+      - title: 采用功能
         content: Istio Mesh, DevOps, Kubernetes
 
 ---
