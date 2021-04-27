@@ -1,7 +1,7 @@
 ---
 title: "KubeKey"
 keywords: 'KubeKey，安装，KubeSphere'
-description: '了解 KubeKey'
+description: '了解 KubeKey 概念以及 KubeKey 如何帮您创建、扩缩和升级 Kubernetes 集群。'
 linkTitle: "KubeKey"
 weight: 3120
 ---
@@ -72,3 +72,18 @@ curl -sfL https://get-kk.kubesphere.io | VERSION=v1.0.1 sh -
 通过以上的命令，可以下载 KubeKey 的最新版本 (v1.0.1)。您可以更改命令中的版本号来下载特定的版本。
 
 {{</ notice >}}
+
+## 支持矩阵
+
+若需使用 KubeKey 来安装 Kubernetes 和 KubeSphere v3.1.0，请参见下表以查看所有受支持的 Kubernetes 版本。
+
+| KubeSphere 版本 | 受支持的 Kubernetes 版本                                     |
+| --------------- | ------------------------------------------------------------ |
+| v3.1.0          | v1.17.0，v1.17.4，v1.17.5，v1.17.6，v1.17.7，v1.17.8，v1.17.9，v1.18.3，v1.18.5，v1.18.6，v1.18.8，v1.19.0，v1.19.8，v1.19.9，v1.20.4 |
+
+{{< notice note >}} 
+
+- 您也可以运行 `./kk version --show-supported-k8s`，查看能使用 KubeKey 安装的所有受支持的 Kubernetes 版本。
+- 能使用 KubeKey 安装的 Kubernetes 版本与 KubeSphere v3.1.0 支持的 Kubernetes 版本不同。如需[在现有 Kubernetes 集群上安装 KubeSphere v3.1.0](../../../installing-on-kubernetes/introduction/overview/)，您的 Kubernetes 版本必须为 v1.17.x，v1.18.x，v1.19.x 或 v1.20.x。
+
+{{</ notice >}} 
