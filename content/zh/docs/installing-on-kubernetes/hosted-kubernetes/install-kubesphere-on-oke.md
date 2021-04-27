@@ -134,7 +134,7 @@ KubeSphere 安装完成后，您可以通过 `NodePort` 或 `LoadBalancer` 的�
 
     ![console-service](https://ap3.qingstor.com/kubesphere-website/docs/console-service.png)
 
-6. 访问此外部 IP 地址并通过默认的账号和密码 (`admin/P@88w0rd`) 登录 Web 控制台。在**集群管理**页面，您可以看到集群概览。
+6. 访问此外部 IP 地址并通过默认的帐户和密码 (`admin/P@88w0rd`) 登录 Web 控制台。在**集群管理**页面，您可以看到集群概览。
 
     ![概览页面](/images/docs/zh-cn/installing-on-kubernetes/hosted-kubernetes/install-kubesphere-on-oke/概览页面.jpg)
 
