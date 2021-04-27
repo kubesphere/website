@@ -144,14 +144,14 @@ Make `kk` executable:
 chmod +x kk
 ```
 
-2. Create an example configuration file with default configurations. Here Kubernetes v1.17.9 is used as an example.
+2. Create an example configuration file with default configurations. Here Kubernetes v1.20.4 is used as an example.
 
 ```bash
-./kk create config --with-kubesphere v3.0.0 --with-kubernetes v1.17.9
+./kk create config --with-kubesphere v3.1.0 --with-kubernetes v1.20.4
 ```
 {{< notice note >}}
 
-- These Kubernetes versions have been fully tested with KubeSphere: v1.15.12, v1.16.13, v1.17.9 (default), and v1.18.6.
+- Recommended Kubernetes versions for KubeSphere v3.1.0: v1.17.9, v1.18.8, v1.19.8 and v1.20.4. If you do not specify a Kubernetes version, KubeKey will install Kubernetes v1.19.8 by default. For more information about supported Kubernetes versions, see [Support Matrix](/docs/installing-on-linux/introduction/kubekey/#support-matrix).
 
 - If you do not add the flag `--with-kubesphere` in the command in this step, KubeSphere will not be deployed unless you install it using the `addons` field in the configuration file or add this flag again when you use `./kk create cluster` later.
 

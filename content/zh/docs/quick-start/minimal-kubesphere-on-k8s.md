@@ -10,7 +10,7 @@ weight: 2200
 
 {{< notice note >}}
 
-- 支持的 Kubernetes 版本：1.15.x、1.16.x、1.17.x 或 1.18.x；
+- 如需在 Kubernetes 上安装 KubeSphere v.3.1.0，您的 Kubernetes 版本必须为：1.17.x、1.18.x、1.19.x 或 1.20.x；
 - 确保您的机器满足最低硬件要求：CPU > 1 核，内存 > 2 G；
 - 在安装之前，需要配置 Kubernetes 集群中的**默认**存储类型；
 - 当使用 `--cluster-signing-cert-file` 和 `--cluster-signing-key-file` 参数启动时，在 `kube-apiserver` 中会激活 CSR 签名功能。请参见 [RKE 安装问题](https://github.com/kubesphere/kubesphere/issues/1925#issuecomment-591698309)；

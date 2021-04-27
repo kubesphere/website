@@ -97,7 +97,7 @@ chmod +x kk
 
 {{< notice note >}}
 
-- Recommended Kubernetes versions for KubeSphere v3.1.0: v1.17.9, v1.18.8, v1.19.8 and v1.20.4. If you do not specify a Kubernetes version, KubeKey will install Kubernetes v1.19.8 by default. For more information about supported Kubernetes versions, see [Support Matrix](/docs/installing-on-linux/introduction/kubekey/#support-matrix).安装 KubeSphere v3.1.0 的推荐 Kubernetes 版本有：v1.17.9，v1.18.8，v1.19.8 和 v1.20.4。如果不指定 Kubernetes 版本，KubeKey 将默认安装 Kubernetes v1.19.8。有关所支持的 Kubernetes 版本的更多信息，请参见 [Support Matrix](/docs/installing-on-linux/introduction/kubekey/#support-matrix)。
+- 安装 KubeSphere v3.1.0 的建议 Kubernetes 版本：v1.17.9，v1.18.8，v1.19.8 以及 v1.20.4。如果不指定 Kubernetes 版本，KubeKey 将默认安装 Kubernetes v1.19.8。有关受支持的 Kubernetes 版本的更多信息，请参见[支持矩阵](../../docs/installing-on-linux/introduction/kubekey/#支持矩阵)。
 
 - 如果您在这一步的命令中不添加标志 `--with-kubesphere`，则不会部署 KubeSphere，只能使用配置文件中的 `addons` 字段安装，或者在您后续使用 `./kk create cluster` 命令时再次添加这个标志。
 
