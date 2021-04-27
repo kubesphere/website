@@ -2,17 +2,14 @@
 title: "Release Notes for 3.1.0"
 keywords: "Kubernetes, KubeSphere, release-notes"
 description: "KubeSphere Release Notes for 3.1.0"
-
 linkTitle: "Release Notes - 3.1.0"
-weight: 50
+weight: 18100
 ---
 
 ## 如何获取 v3.1.0
 
 - [Install KubeSphere v3.1.0 on Linux](https://github.com/kubesphere/kubekey)
 - [Install KubeSphere v3.1.0 on existing Kubernetes](https://github.com/kubesphere/ks-installer)
-
-# Release Notes
 
 ## 新功能及增强
 
@@ -25,9 +22,9 @@ weight: 50
 - 支持以高可用方式运行 Tower 管理和代理服务 [#31](https://github.com/kubesphere/tower/issues/31)
 - 升级工具箱中的 Kubectl 且与 Kubernetes 集群版本保持一致 [#3103](https://github.com/kubesphere/kubesphere/issues/3103)
 
-#### 边缘节点管理
+### 边缘节点管理
 
-##### 集成 KubeEdge [#3070](https://github.com/kubesphere/kubesphere/issues/3070)
+#### 集成 KubeEdge [#3070](https://github.com/kubesphere/kubesphere/issues/3070)
 
 - 支持 KubeEdge 云端组件的安装部署
 - 支持 KubeEdge 边缘节点的添加
@@ -40,7 +37,7 @@ weight: 50
 ### 认证和权限管理
 
 - 新用户首次登录，提示修改初始密码
-- 通过第三方平台登录 KubeSphere，需确认账户信息
+- 通过第三方平台登录 KubeSphere，需确认帐户信息
 - 支持 [CAS](https://apereo.github.io/cas/5.0.x/protocol/CAS-Protocol-Specification.html) 身份提供商 [#3047](https://github.com/kubesphere/kubesphere/issues/3047)
 - 支持 [OIDC](https://openid.net/specs/openid-connect-core-1_0.html) 身份提供商 [#2941](https://github.com/kubesphere/kubesphere/issues/2941)
 - 支持 IDaaS (Alibaba Cloud Identity as a Service) 身份提供商 [#2997](https://github.com/kubesphere/kubesphere/pull/2997)
@@ -131,6 +128,16 @@ weight: 50
 - 支持集群、企业空间和应用级别的应用消耗量统计 [#3062](https://github.com/kubesphere/kubesphere/issues/3062)
 - 通过 ConfigMap 方式可为计量资源配置计费单价
 
+### UI 页面优化
+
+- 优化首页的 Loading 效果
+- 优化 kubectl 为独立页面
+- 优化可视化流水线的配置显示
+- 优化流水线的运行状态的错误显示
+- 优化代码仓库的筛选方式
+- 优化节点调度策略的设置方式
+- 优化部署模式的设置方式
+
 ## 重要的技术调整
 
 - 升级 Kubernetes 版本依赖，从 v1.17 调整至 v1.18 [#3274](https://github.com/kubesphere/kubesphere/issues/3274)
@@ -145,7 +152,7 @@ weight: 50
 - 容器终端 WebSocket API 发生变更 [#3041](https://github.com/kubesphere/kubesphere/issues/3041)
 
 ## 问题修复
-- 修复账户无法登录的问题 [#3132](https://github.com/kubesphere/kubesphere/issues/3132) [3357](https://github.com/kubesphere/kubesphere/issues/3357)
+- 修复帐户无法登录的问题 [#3132](https://github.com/kubesphere/kubesphere/issues/3132) [3357](https://github.com/kubesphere/kubesphere/issues/3357)
 - 修复容器日志不支持ANSI Color的问题 [#1322](https://github.com/kubesphere/kubesphere/issues/3044)
 - 修复以 `kube` 起始命名的项目（即 Namespace）下的微服务应用无法获取 Istio 相关的监控数据的问题 [#3126](https://github.com/kubesphere/kubesphere/issues/3162) 
 - 修复 Viewer 可进入容器终端的安全隐患 [#3041](https://github.com/kubesphere/kubesphere/issues/3041)
@@ -166,13 +173,3 @@ weight: 50
 - 修复英文控制台显示中文代码质量检查结果的问题 [#1278](https://github.com/kubesphere/console/issues/1278)
 - 修复 Jenkinsfile 中包含布尔值时的显示报错问题 [#3043](https://github.com/kubesphere/kubesphere/issues/3043)
 - 修复当 PVC 不含有 `StorageClassName` 时存储管理页面无法显示的问题 [#1109](https://github.com/kubesphere/ks-installer/issues/1109)
-
-## UI 页面优化
-
-- 优化首页的 Loading 效果
-- 优化 kubectl 为独立页面
-- 优化可视化流水线的配置显示
-- 优化流水线的运行状态的错误显示
-- 优化代码仓库的筛选方式
-- 优化节点调度策略的设置方式
-- 优化部署模式的设置方式

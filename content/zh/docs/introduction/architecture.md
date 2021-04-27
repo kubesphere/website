@@ -35,7 +35,7 @@ KubeSphere 将 [前端](https://github.com/kubesphere/console) 与 [后端](http
 | Redis | 将 ks-console 与 ks-account 的数据存储在内存中的存储系统。|
 | MySQL | 集群后端组件的数据库，监控、告警、DevOps、OpenPitrix 共用 MySQL 服务。|
 | PostgreSQL | SonarQube 和 Harbor 的后端数据库。|
-| OpenLDAP | 负责集中存储和管理用户账号信息与对接外部的 LDAP。|
+| OpenLDAP | 负责集中存储和管理用户帐户信息与对接外部的 LDAP。|
 | Storage | 内置 CSI 插件对接云平台存储服务，可选安装开源的 NFS/Ceph/Gluster 的客户端。|
 | Network | 可选安装 Calico/Flannel 等开源的网络插件，支持对接云平台 SDN。|
 
