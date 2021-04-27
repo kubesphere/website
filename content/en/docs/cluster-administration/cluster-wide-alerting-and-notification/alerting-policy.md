@@ -8,11 +8,13 @@ weight: 8530
 
 KubeSphere provides alerting policies for nodes and workloads. This tutorial demonstrates how to create alerting policies for nodes in a cluster. See [Alerting Policy (Workload Level)](../../../project-user-guide/alerting/alerting-policy/) to learn how to configure alerting policies for workloads.
 
+KubeSphere also has built-in policies which will trigger alerts if conditions defined for these policies are met. On the **Built-in Policies** tab, you can click a policy to see its details. Note that they cannot be directly deleted or edited on the console.
+
 ## Prerequisites
 
 - You have enabled [KubeSphere Alerting](../../../pluggable-components/alerting/).
 - To receive alert notifications, you must configure a [notification channel](../../../cluster-administration/platform-settings/notification-management/configure-email/) beforehand.
-- You need to create an account (`cluster-admin`) and grant it with the `clusters-admin` role. For more information, see [Create Workspaces, Projects, Accounts and Roles](../../../quick-start/create-workspace-and-project/#step-4-create-a-role).
+- You need to create an account (`cluster-admin`) and grant it the `clusters-admin` role. For more information, see [Create Workspaces, Projects, Accounts and Roles](../../../quick-start/create-workspace-and-project/#step-4-create-a-role).
 - You have workloads in your cluster. If they are not ready, see [Deploy and Access Bookinfo](../../../quick-start/deploy-bookinfo-to-k8s/) to create a sample app.
 
 ## Create an Alerting Policy
