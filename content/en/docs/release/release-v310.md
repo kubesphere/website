@@ -13,7 +13,7 @@ weight: 18100
 
 ## New Features and Enhancements
 
-### Cluster management
+### Multi-cluster management
 
 - Simplified the steps to import Member Clusters with configuration validation (e.g. `jwtSecret`) added. ([#3232](https://github.com/kubesphere/kubesphere/issues/3232))
 - Refactored the cluster controller and optimized the logic. ([#3234](https://github.com/kubesphere/kubesphere/issues/3234))
