@@ -6,94 +6,62 @@ linkTitle: "Alerting Policies (Node Level)"
 weight: 8530
 ---
 
-## Objective
-
-KubeSphere provides alerting policies for nodes and workloads. This guide demonstrates how you can create alerting policies for nodes in the cluster and configure mail notifications. See [Alerting Policy (Workload Level)](../../../project-user-guide/alerting/alerting-policy/) to learn how to configure alerting policies for workloads.
+KubeSphere provides alerting policies for nodes and workloads. This tutorial demonstrates how to create alerting policies for nodes in a cluster. See [Alerting Policy (Workload Level)](../../../project-user-guide/alerting/alerting-policy/) to learn how to configure alerting policies for workloads.
 
 ## Prerequisites
 
-- [KubeSphere Alerting and Notification](../../../pluggable-components/alerting-notification/) needs to be enabled.
-- [Mail Server](../../../cluster-administration/cluster-settings/mail-server/) needs to be configured.
+- You have enabled [KubeSphere Alerting](../../../pluggable-components/alerting/).
+- To receive alert notifications, you must configure a [notification channel](../../../cluster-administration/platform-settings/notification-management/configure-email/) beforehand.
+- You need to create an account (`clusters-admin`) and grant it with the `clusters-admin` role. For more information, see [Create Workspaces, Projects, Accounts and Roles](../../../quick-start/create-workspace-and-project/#step-4-create-a-role).
+- You have workloads in your cluster. If they are not ready, see [Deploy and Access Bookinfo](../../../quick-start/deploy-bookinfo-to-k8s/) to create a sample app.
 
-## Hands-on Lab
+## Create an Alerting Policy
 
-### Task 1: Create an alerting policy
+1. Log in to the console as `clusters-admin`. Click **Platform** in the top left corner, and then click **Cluster Management**.
 
-1. Log in to the console with one account granted the role `platform-admin`.
+2. Navigate to **Alerting Policies** under **Monitoring & Alerting**, and then click **Create**.
 
-2. Click **Platform** in the top left corner and select **Cluster Management**.
+   ![click-create](/images/docs/cluster-administration/cluster-wide-alerting-and-notification/alerting-policies-node-level/click-create.png)
 
-    ![alerting_policy_node_level_guide](/images/docs/alerting/alerting_policy_node_level_guide.png)
+3. In the dialog that appears, provide the basic information as follows. Click **Next** to continue.
 
-3. Select a cluster from the list and enter it (If you do not enable the [multi-cluster feature](../../../multicluster-management/), you will directly go to the **Overview** page).
+   - **Name**. A concise and clear name as its unique identifier, such as `node-alert`.
+   - **Alias**. Help you distinguish alerting policies better.
+   - **Duration (Minutes)**. An alert will be firing when the conditions defined for an alerting policy are met at any give point in the time range.
+   - **Severity**. Allowed values include **Warning**, **Error** and **Critical**, providing an indication of how serious an alert is.
+   - **Description**. A brief introduction to the alerting policy.
 
-4. Navigate to **Alerting Policies** under **Monitoring & Alerting**, and click **Create**.
+4. On the **Alerting Rule** tab, you can use the rule template or create a custom rule. To use the template, fill in the following fields and click **Next** to continue.
 
-    ![alerting_policy_node_level_create](/images/docs/alerting/alerting_policy_node_level_create.png)
+   - **Monitoring Target**. Select a node in your cluster for monitoring.
+   - **Alerting Rule**. Define a rule for the alerting policy. The rules provided in the drop-down list are based on Prometheus expressions and an alert will be triggered when conditions are met. You can monitor objects such as CPU and memory.
 
-### Task 2: Provide basic information
+   ![alert-rule](/images/docs/cluster-administration/cluster-wide-alerting-and-notification/alerting-policies-node-level/alert-rule.png)
 
-In the dialog that appears, fill in the basic information as follows. Click **Next** after you finish.
+   {{< notice note >}}
 
-- **Name**: a concise and clear name as its unique identifier, such as `alert-demo`.
-- **Alias**: to help you distinguish alerting policies better.
-- **Description**: a brief introduction to the alerting policy.
+   You can create a custom rule with PromQL by entering an expression in the **Monitoring Metrics** field (autocompletion supported). For more information, see [Querying Prometheus](https://prometheus.io/docs/prometheus/latest/querying/basics/). 
 
-![alerting_policy_node_level_basic_info](/images/docs/alerting/alerting_policy_node_level_basic_info.png)
+   {{</ notice >}} 
 
-### Task 3: Select monitoring targets
+5. On the **Notification Settings** tab, enter the alert summary and message to be included in your notification, then click **Create**.
 
-Select several nodes in the node list or use Node Selector to choose a group of nodes as the monitoring targets. Here a node is selected for the convenience of demonstration. Click **Next** when you finish.
+6. An alerting policy will be **Inactive** when just created. If conditions in the rule expression are met, it will reach **Pending** first, and then turn to **Firing** if conditions keep to be met in the given time range.
 
-![alerting_policy_node_level_monitoring_target](/images/docs/alerting/alerting_policy_node_level_monitoring_target.png)
+## Edit an Alerting Policy
 
-{{< notice note >}}
+To edit an alerting policy after it is created, on the **Alerting Policies** page, click <img src="/images/docs/cluster-administration/cluster-wide-alerting-and-notification/alerting-policies-node-level/edit-policy.png" height="25px"> on the right.
 
-You can sort nodes in the node list from the drop-down menu through the following three ways: `Sort By CPU`, `Sort By Memory`,  `Sort By Pod Utilization`.
+1. Click **Edit** from the drop-down menu and edit the alerting policy following the same steps as you create it. Click **Update** on the **Notification Settings** page to save it.
 
-{{</ notice >}}
+   ![click-edit](/images/docs/cluster-administration/cluster-wide-alerting-and-notification/alerting-policies-node-level/click-edit.png)
 
-### Task 4: Add alerting rules
+2. Click **Delete** from the drop-down menu to delete an alerting policy.
 
-1. Click **Add Rule** to begin to create an alerting rule. The rule defines parameters such as metric type, check period, consecutive times, metric threshold and alert level to provide rich configurations. The check period (the second field under **Rule**) means the time interval between 2 consecutive checks of the metric. For example, `2 minutes/period` means the metric is checked every two minutes. The consecutive times (the third field under **Rule**) means the number of consecutive times that the metric meets the threshold when checked. An alert is only triggered when the actual time is equal to or is greater than the number of consecutive times set in the alerting policy.
+## View an Alerting Policy
 
-    ![alerting_policy_node_level_alerting_rule](/images/docs/alerting/alerting_policy_node_level_alerting_rule.png)
+Click an alerting policy on the **Alerting Policies** page to see its detail information, including alerting rules and alerting messages. You can also see the rule expression which is based on the template you use when creating the alerting policy.
 
-2. In this example, set those parameters to `memory utilization rate`, `1 minute/period`, `2 consecutive times`, `>` and `50%`, and `Major Alert` in turn. It means KubeSphere checks the memory utilization rate every minute, and a major alert is triggered if it is larger than 50% for 2 consecutive times.  
+Under **Monitoring**, the **Alert Monitoring** chart shows the actual usage or amount of resources over time. **Notification Settings** displays the customized message you set in notifications.
 
-3. Click **√** to save the rule when you finish and click **Next** to continue.
-
-{{< notice note >}}
-
-You can create node-level alerting policies for the following metrics:
-
-- CPU: `cpu utilization rate`, `cpu load average 1 minute`, `cpu load average 5 minutes`, `cpu load average 15 minutes`
-- Memory: `memory utilization rate`, `memory available`
-- Disk: `inode utilization rate`, `disk space available`, `local disk space utilization rate`, `disk write throughput`, `disk read throughput`, `disk read iops`, `disk write iops`
-- Network: `network data transmitting rate`, `network data receiving rate`
-- Pod: `pod abnormal ratio`, `pod utilization rate`
-
-{{</ notice >}}
-
-### Task 5: Set notification rules
-
-1. **Effective Notification Time Range** is used to set sending time of notification emails, such as `09:00 ~ 19:00`. **Notification Channel** currently only supports **Email**. You can add email addresses of members to be notified to **Notification List**.
-
-2. **Customize Repetition Rules** defines sending period and retransmission times of notification emails. If alerts have not been resolved, the notification will be sent repeatedly after a certain period of time. Different repetition rules can also be set for different levels of alerts. Since the alert level set in the previous step is `Major Alert`, select `Alert once every 5 miniutes` (sending period) in the second field for **Major Alert** and `Resend up to 3 times` in the third field (retransmission times). Refer to the following image to set notification rules:
-
-    ![alerting_policy_node_level_notification_rule](/images/docs/alerting/alerting_policy_node_level_notification_rule.png)
-
-3. Click **Create**, and you can see that the alerting policy is successfully created.
-
-{{< notice note >}}
-
-*Waiting Time for Alerting* **=** *Check Period* **x** *Consecutive Times*. For example, if the check period is 1 minute/period, and the number of consecutive times is 2, you need to wait for 2 minutes before the alerting message appears.
-
-{{</ notice >}}
-
-### Task 6: View alerting policies
-
-After an alerting policy is successfully created, you can enter its detail information page to view the status, alert rules, monitoring targets, notification rule, alert history, etc. Click **More** and select **Change Status** from the drop-down menu to enable or disable this alerting policy.
-
-![alerting-policy-node-level-detail-page](/images/docs/alerting/alerting-policy-node-level-detail-page.png)
-
+![alert-detail](/images/docs/cluster-administration/cluster-wide-alerting-and-notification/alerting-policies-node-level/alert-detail.png)
