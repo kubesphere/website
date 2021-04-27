@@ -245,15 +245,15 @@ chmod +x kk
 
 您可用使用 KubeKey 同时安装 Kubernetes 和 KubeSphere，通过自定义配置文件中的参数创建多节点集群。
 
-创建安装有 KubeSphere 的 Kubernetes 集群（例如使用 `--with-kubesphere v3.0.0`）：
+创建安装有 KubeSphere 的 Kubernetes 集群（例如使用 `--with-kubesphere v3.1.0`）：
 
 ```bash
-./kk create config --with-kubernetes v1.17.9 --with-kubesphere v3.0.0
+./kk create config --with-kubernetes v1.20.4 --with-kubesphere v3.1.0
 ```
 
 {{< notice note >}} 
 
-- 在 KubeSphere 上充分测试过的 Kubernetes 版本：v1.15.12、v1.16.13、v1.17.9（默认）和 v1.18.6。
+- 安装 KubeSphere v3.1.0 的建议 Kubernetes 版本：v1.17.9，v1.18.8，v1.19.8 以及 v1.20.4。如果不指定 Kubernetes 版本，KubeKey 将默认安装 Kubernetes v1.19.8。有关受支持的 Kubernetes 版本的更多信息，请参见[支持矩阵](/docs/installing-on-linux/introduction/kubekey/#支持矩阵)。
 
 - 如果您在这一步的命令中不添加标志 `--with-kubesphere`，则不会部署 KubeSphere，只能使用配置文件中的 `addons` 字段安装 KubeSphere，或者在您后续使用 `./kk create cluster` 命令时再次添加该标志。
 - 如果您添加标志 `--with-kubesphere` 时不指定 KubeSphere 版本，则会安装最新版本的 KubeSphere。

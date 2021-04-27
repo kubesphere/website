@@ -138,12 +138,12 @@ chmod +x kk
 若要同时安装 Kubernetes 和 KubeSphere，可参考以下示例命令：
 
 ```bash
-./kk create cluster --with-kubernetes v1.17.9 --with-kubesphere v3.0.0
+./kk create cluster --with-kubernetes v1.20.4 --with-kubesphere v3.1.0
 ```
 
 {{< notice note >}}
 
-- 支持的 Kubernetes 版本：*v1.15.12*, *v1.16.13*, *v1.17.9* (默认), *v1.18.6*。
+- 安装 KubeSphere v3.1.0 的建议 Kubernetes 版本：v1.17.9，v1.18.8，v1.19.8 以及 v1.20.4。如果不指定 Kubernetes 版本，KubeKey 将默认安装 Kubernetes v1.19.8。有关受支持的 Kubernetes 版本的更多信息，请参见[支持矩阵](/docs/installing-on-linux/introduction/kubekey/#支持矩阵)。
 - 一般来说，对于 All-in-One 安装，您无需更改任何配置。
 - 如果您在这一步的命令中不添加标志 `--with-kubesphere`，则不会部署 KubeSphere，KubeKey 将只安装 Kubernetes。如果您添加标志 `--with-kubesphere` 时不指定 KubeSphere 版本，则会安装最新版本的 KubeSphere。
 - KubeKey 会默认安装 [OpenEBS](https://openebs.io/) 为开发和测试环境提供 LocalPV 以方便新用户。对于其他存储类型，请参见[持久化存储配置](../../installing-on-linux/persistent-storage-configurations/understand-persistent-storage/)。

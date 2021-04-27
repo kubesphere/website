@@ -90,7 +90,7 @@ yum install keepalived haproxy psmisc -y
 
 ### 配置 HAProxy
 
-在 IP 为`10.10.71.77`与`10.10.71.66`的服务器上按如下参数配置 HAProxy (两台 lb 机器配置一致即可，注意后端服务地址)。
+在 IP 为 `10.10.71.77` 与 `10.10.71.66` 的服务器上按如下参数配置 HAProxy (两台 lb 机器配置一致即可，注意后端服务地址)。
 
 ```yaml
 # HAProxy Configure /etc/haproxy/haproxy.cfg
@@ -338,12 +338,12 @@ chmod +x kk
 创建配置文件（一个示例配置文件）。
 
 ```bash
-./kk create config --with-kubesphere v3.0.0 --with-kubernetes v1.17.9
+./kk create config --with-kubernetes v1.19.8 --with-kubesphere v3.1.0
 ```
 
 {{< notice note >}}
 
-- 经过充分测试的 Kubernetes 版本有：v1.15.12，v1.16.13，v1.17.9（默认），v1.18.6，您可以根据需要指定版本。
+- 安装 KubeSphere v3.1.0 的建议 Kubernetes 版本：v1.17.9，v1.18.8，v1.19.8 以及 v1.20.4。如果不指定 Kubernetes 版本，KubeKey 将默认安装 Kubernetes v1.19.8。有关受支持的 Kubernetes 版本的更多信息，请参见[支持矩阵](/docs/installing-on-linux/introduction/kubekey/#支持矩阵)。
 
 - 如果您在这一步的命令中不添加标志 `--with-kubesphere`，则不会部署 KubeSphere，只能使用配置文件中的 `addons` 字段安装，或者在您后续使用 `./kk create cluster` 命令时再次添加这个标志。
 
