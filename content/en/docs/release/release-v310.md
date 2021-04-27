@@ -68,6 +68,7 @@ You can now enable KubeEdge in your cluster and manage edge nodes on the KubeSph
 - Upgraded FluentBit Operator to v0.5.0. ([Releases](https://github.com/kubesphere/fluentbit-operator/releases))
 - Upgraded FluentBit to v1.6.9.
 - Upgraded KubeEvents to v0.2.0.
+- Upgraded Kube-Auditing to v0.1.2.
 
 #### Monitoring
 
