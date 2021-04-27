@@ -69,6 +69,7 @@ weight: 18100
 - 升级 FluentBit Operator 至 v0.5.0 [Releases](https://github.com/kubesphere/fluentbit-operator/releases)
 - 升级 FluentBit 至 v1.6.9
 - 升级 KubeEvents 至 v0.2.0
+- 升级 Kube-Auditing 至 v0.1.2
 
 #### 监控
 
