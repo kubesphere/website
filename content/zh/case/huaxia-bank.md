@@ -31,12 +31,12 @@ section2:
     - title: 'Kubernetes 是为微服务架构量身定制的'
       contentList:
         - content: 作为我行自 2019 年以来第一个采用 Kubernetes 的团队，我们致力于引领金融科技转型，让科技助推金融业务创新。幸运的是，几个实验项目证明 Kubernetes 是为微服务架构量身定制的，而且 Kubernetes 为我行的多个分行节省了大量时间。
-        - content: '当分行开发人员看到，与虚拟机进程相比，容器的运行速度有多快时，所有分行都开始尝试在容器中运行应用，并在  Kubernetes 中发布。通过 Kubernetes 和 KubeSphere 平台，发布过程从小时级提升到分钟级，上市时间得到了显著改善。'
+        - content: '当分行开发人员看到，与虚拟机进程相比，容器的运行速度有多快时，所有分行都开始尝试在容器中运行应用，并在  Kubernetes 中发布。通过 Kubernetes 和 KubeSphere 平台，发布过程从小时级提升到分钟级，上线时间得到了显著改善。'
       image:
 
     - type: 1
       contentList:
-        - content: 上市时间显著改善
+        - content: 上线时间显著改善
         - content: 推动金融业务创新
         - content: 对新手开发人员友好
 
@@ -46,7 +46,7 @@ section2:
       image:
 
     - type: 2
-      content: '通过 Kubernetes 和 KubeSphere 平台，发布过程从小时级提升到分钟级，上市时间得到了显著改善。'
+      content: '通过 Kubernetes 和 KubeSphere 平台，发布过程从小时级提升到分钟级，上线时间得到了显著改善。'
       author: '华夏银行'
 
     - title: 关于 KubeSphere
