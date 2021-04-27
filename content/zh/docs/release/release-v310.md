@@ -13,7 +13,7 @@ weight: 18100
 
 ## 新功能及增强
 
-### 集群管理
+### 多集群管理
 
 - Member 集群管理服务轻量化，移除 Redis、OpenLDAP 等组件 [#3056](https://github.com/kubesphere/kubesphere/issues/3056)
 - 简化添加集群的操作，并验证集群配置（如 jwtSecret）有效性 [#3232](https://github.com/kubesphere/kubesphere/issues/3232)
