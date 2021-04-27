@@ -34,7 +34,7 @@ weight: 50
 - 支持边缘节点的日志和监控数据采集
 - 支持边缘节点网络配置自动化的加入和退出
 - 边缘节点在加入集群时，支持自动添加污点
-- 支持通过添加 nodeAffinity 禁止云端工作负载(如 Daemonset)调度到边缘节点 [#1295](https://github.com/kubesphere/ks-installer/pull/1295) [#1297](https://github.com/kubesphere/ks-installer/pull/1297) [1300](https://github.com/kubesphere/ks-installer/pull/1300)
+- 支持通过添加 nodeAffinity 禁止云端工作负载（如 DaemonSet）调度到边缘节点 [#1295](https://github.com/kubesphere/ks-installer/pull/1295) [#1297](https://github.com/kubesphere/ks-installer/pull/1297) [1300](https://github.com/kubesphere/ks-installer/pull/1300)
 - 支持调度工作负载至边缘节点
 
 ### 认证和权限管理
@@ -43,7 +43,7 @@ weight: 50
 - 通过第三方平台登录 KubeSphere，需确认账户信息
 - 支持 [CAS](https://apereo.github.io/cas/5.0.x/protocol/CAS-Protocol-Specification.html) 身份提供商 [#3047](https://github.com/kubesphere/kubesphere/issues/3047)
 - 支持 [OIDC](https://openid.net/specs/openid-connect-core-1_0.html) 身份提供商 [#2941](https://github.com/kubesphere/kubesphere/issues/2941)
-- 支持 IDaaS(Alibaba Cloud Identity as a Service) 身份提供商 [#2997](https://github.com/kubesphere/kubesphere/pull/2997)
+- 支持 IDaaS (Alibaba Cloud Identity as a Service) 身份提供商 [#2997](https://github.com/kubesphere/kubesphere/pull/2997)
 - 支持 Service Account 管理 [#3211](https://github.com/kubesphere/kubesphere/issues/3211)
 - 改善 LDAP 认证插件，支持 LDAPS 和搜索过滤 [#2970](https://github.com/kubesphere/kubesphere/issues/2970) [#3766](https://github.com/kubesphere/kubesphere/issues/3766)
 - 改善认证插件，简化身份提供商的配置方式 [#2970](https://github.com/kubesphere/kubesphere/issues/2970)
@@ -51,7 +51,7 @@ weight: 50
 
 ### 多租户管理
 - 支持用户组管理，可将用户组添加至企业空间或项目参与协同 [#2940](https://github.com/kubesphere/kubesphere/issues/2940)
-- 支持企业空间配额，与 Kubernetes 资源配额 [ResourceQuota](https://kubernetes.io/docs/concepts/policy/resource-quotas/) 保持一致，可限制企业空间的资源用量 [#2939](https://github.com/kubesphere/kubesphere/issues/2939)
+- 支持企业空间配额，可限制企业空间的资源用量 [#2939](https://github.com/kubesphere/kubesphere/issues/2939)
 
 ### 网络
 
@@ -75,10 +75,10 @@ weight: 50
 
 #### 监控
 
-- 支持图形化方式配置 ServiceMonitor [#1031](https://github.com/kubesphere/console/pull/1301)
-- 支持 PromQL auto-completion 和 syntax highlighting [#1307](https://github.com/kubesphere/console/pull/1307)
+- 支持图形化方式配置 ServiceMonitor [#1031](https://github.com/kubesphere/console/pull/1301) 
+- 支持 PromQL Auto-completion 和 Syntax Highlighting [#1307](https://github.com/kubesphere/console/pull/1307)
 - 支持集群层级的自定义监控 [#3193](https://github.com/kubesphere/kubesphere/pull/3193)
-- kube-scheduler 与 kube-controller-manager 数据抓取由 http 端口 10251/10252 改为 https 端口 10259/10257[#1367](https://github.com/kubesphere/ks-installer/pull/1367)
+- kube-scheduler 与 kube-controller-manager 数据抓取由 HTTP 端口 10251/10252 改为 HTTPS 端口 10259/10257 [#1367](https://github.com/kubesphere/ks-installer/pull/1367)
 
 #### 告警
 
@@ -88,17 +88,17 @@ weight: 50
 
 #### 通知管理
 
-- 新增 钉钉、 企业微信、Slack、Webhook 通知方式，其提供图形化管理[#3066](https://github.com/kubesphere/kubesphere/issues/3066)
+- 新增钉钉、企业微信、Slack 和 Webhook 通知方式，提供图形化管理 [#3066](https://github.com/kubesphere/kubesphere/issues/3066)
 
 #### 日志
 
 - 支持将日志输出到 [Loki](https://github.com/kubesphere/fluentbit-operator/blob/master/docs/plugins/output/loki.md) [#39](https://github.com/kubesphere/fluentbit-operator/pull/39)
 - 支持收集 kubelet/docker/containerd 的日志 [#38](https://github.com/kubesphere/fluentbit-operator/pull/38)
-- 支持收集 [auditd](https://github.com/kubesphere/fluentbit-operator#auditd)的日志 [#45](https://github.com/kubesphere/fluentbit-operator/pull/45)
+- 支持收集 [auditd](https://github.com/kubesphere/fluentbit-operator#auditd) 的日志 [#45](https://github.com/kubesphere/fluentbit-operator/pull/45)
 
 ### DevOps
 
-- 支持 Gitlab 多分支流水线 [#3100](https://github.com/kubesphere/kubesphere/issues/3100)
+- 支持 GitLab 多分支流水线 [#3100](https://github.com/kubesphere/kubesphere/issues/3100)
 - 可同时启动并运行多条流水线 [#1811](https://github.com/kubesphere/kubesphere/issues/1811)
 - 支持流水线复制 [#3053](https://github.com/kubesphere/kubesphere/issues/3053)
 - 新增权限可控的流水线审核机制 [#2483](https://github.com/kubesphere/kubesphere/issues/2483) [#3006](https://github.com/kubesphere/kubesphere/issues/3006)
@@ -109,7 +109,7 @@ weight: 50
 - 优化创建流水线的交互体验 [#1283](https://github.com/kubesphere/console/issues/1283)
 - 优化 S2I 错误提示信息 [#140](https://github.com/kubesphere/s2ioperator/issues/140)
 - 升级 Jenkins 至 2.249.1 [#2618](https://github.com/kubesphere/kubesphere/issues/2618)
-- 调整 Jenkins 部署方式为 Jenkins distribution [#2182](https://github.com/kubesphere/kubesphere/issues/2182)
+- 调整 Jenkins 部署方式为 Jenkins Distribution [#2182](https://github.com/kubesphere/kubesphere/issues/2182)
 
 ### 应用商店及应用
 
@@ -120,11 +120,11 @@ weight: 50
 
 ### 微服务治理
 
-- 支持图形化流量方向检测，图像化方式显示应用（composed application）流量的流入/流出 [#3153](https://github.com/kubesphere/kubesphere/issues/3153)
-- 支持 Kiali 附加组件，用户可以通过 Kiali直接管理 istio [#3106](https://github.com/kubesphere/kubesphere/issues/3106)
-- 支持 Nginx Ingress Gateway 的监控，新增 nginx ingress controller 的监控指标 [#1205](https://github.com/kubesphere/ks-installer/pull/1205)
-- 支持在创建应用时添加应用路由 [#1426](https://github.com/kubesphere/console/issues/1426)
-- 升级 istio 至 1.6.10 [#3326](https://github.com/kubesphere/kubesphere/issues/3236)
+- 支持图形化流量方向检测，图像化方式显示应用 (Composing App) 流量的流入/流出 [#3153](https://github.com/kubesphere/kubesphere/issues/3153)
+- 支持 Kiali 附加组件，用户可以通过 Kiali 直接管理 Istio [#3106](https://github.com/kubesphere/kubesphere/issues/3106)
+- 支持 NGINX Ingress Gateway 的监控，新增 NGINX Ingress Controller 的监控指标 [#1205](https://github.com/kubesphere/ks-installer/pull/1205)
+- 支持在创建应用时添加应用路由 [#1426](https://github.com/kubesphere/console/issues/1426) 
+- 升级 Istio 至 1.6.10 [#3326](https://github.com/kubesphere/kubesphere/issues/3236)
 
 ### 计量计费
 
@@ -135,39 +135,39 @@ weight: 50
 
 - 升级 Kubernetes 版本依赖，从 v1.17 调整至 v1.18 [#3274](https://github.com/kubesphere/kubesphere/issues/3274)
 - 升级 Prometheus client_golang 版本依赖至 v1.5.1，升级 Prometheus 版本依赖至 v1.8.2 [3097](https://github.com/kubesphere/kubesphere/pull/3097)
-- 基于 CRD 重构应用管理框架 OpenPitrix 并修复原有架构导致的问题 [#3036](https://github.com/kubesphere/kubesphere/issues/3036) [#3001](https://github.com/kubesphere/kubesphere/issues/3001) [#2995](https://github.com/kubesphere/kubesphere/issues/2995) [#2981](https://github.com/kubesphere/kubesphere/issues/2981) [#2954](https://github.com/kubesphere/kubesphere/issues/2954) [#2951](https://github.com/kubesphere/kubesphere/issues/2951) [#2783](https://github.com/kubesphere/kubesphere/issues/2783) [#2713](https://github.com/kubesphere/kubesphere/issues/2713) [#2700](https://github.com/kubesphere/kubesphere/issues/2700) [#1903](https://github.com/kubesphere/kubesphere/issues/1903)
-- 告警架构调整，不再使用 MySQL, Redis, Etcd 等组件以及旧版告警规则格式。改为使用 Thanos Ruler 配合 Prometheus 内置告警规则进行告警管理，新版告警兼容 Prometheus 告警规则。KubeSphere v3.0.0 中旧版告警规则会在升级到 v3.1.0 后自动迁移为新版告警规则。
-- 通知架构调整，不再使用 MySQL, Redis, Etcd 等组件。 改为使用 [Notification Manager](https://github.com/kubesphere/notification-manager/) 以 CRD 的方式配置通知渠道。通知渠道设置由告警规则级别调整为集群级别，且多集群仅需设置一次通知渠道。
+- 基于 CRD 重构应用管理框架 OpenPitrix 并修复原有架构导致的问题 [#3036](https://github.com/kubesphere/kubesphere/issues/3036) [#3001](https://github.com/kubesphere/kubesphere/issues/3001) [#2995](https://github.com/kubesphere/kubesphere/issues/2995) [#2981](https://github.com/kubesphere/kubesphere/issues/2981) [#2954](https://github.com/kubesphere/kubesphere/issues/2954) [#2951](https://github.com/kubesphere/kubesphere/issues/2951) [#2783](https://github.com/kubesphere/kubesphere/issues/2783) [#2713](https://github.com/kubesphere/kubesphere/issues/2713) [#2700](https://github.com/kubesphere/kubesphere/issues/2700) [#1903](https://github.com/kubesphere/kubesphere/issues/1903) 
+- 告警架构调整，不再使用 MySQL、Redis 和 etcd 等组件以及旧版告警规则格式。改为使用 Thanos Ruler 配合 Prometheus 内置告警规则进行告警管理，新版告警兼容 Prometheus 告警规则。KubeSphere v3.0.0 中旧版告警规则会在升级到 v3.1.0 后自动迁移为新版告警规则
+- 通知架构调整，不再使用 MySQL、Redis 和 etcd 等组件。改为使用 [Notification Manager](https://github.com/kubesphere/notification-manager/) 以 CRD 的方式配置通知渠道。通知渠道设置由告警规则级别调整为集群级别，且多集群仅需设置一次通知渠道
 
 ## 废弃或移除的功能
 
-- 依赖 MySQL, Redis, Etcd 等组件的旧版告警与通知被新版告警与通知替代。
-- 容器终端 WebSocket API 发生变更。[#3041](https://github.com/kubesphere/kubesphere/issues/3041)
+- 依赖 MySQL、Redis 和 etcd 等组件的旧版告警与通知被新版告警与通知替代
+- 容器终端 WebSocket API 发生变更 [#3041](https://github.com/kubesphere/kubesphere/issues/3041)
 
 ## 问题修复
 - 修复账户无法登录的问题 [#3132](https://github.com/kubesphere/kubesphere/issues/3132) [3357](https://github.com/kubesphere/kubesphere/issues/3357)
 - 修复容器日志不支持ANSI Color的问题 [#1322](https://github.com/kubesphere/kubesphere/issues/3044)
-- 修复以“kube”起始命名的项目（namespace）下的微服务应用无法获取istio 相关的监控数据的问题 [#3126](https://github.com/kubesphere/kubesphere/issues/3162)
-- 修复 viewer 可进入容器终端的安全隐患 [#3041](https://github.com/kubesphere/kubesphere/issues/3041)
+- 修复以 `kube` 起始命名的项目（即 Namespace）下的微服务应用无法获取 Istio 相关的监控数据的问题 [#3126](https://github.com/kubesphere/kubesphere/issues/3162) 
+- 修复 Viewer 可进入容器终端的安全隐患 [#3041](https://github.com/kubesphere/kubesphere/issues/3041)
 - 修复级联资源无法被删除的问题 [#2912](https://github.com/kubesphere/kubesphere/issues/2912)
 - 修复 Kubernetes 1.19 及以上版本无法正常使用的问题 [#2928](https://github.com/kubesphere/kubesphere/issues/2928) [#2928](https://github.com/kubesphere/kubesphere/issues/2928)
-- 修复微服务应用“监控”按钮无效的问题 [#1394](https://github.com/kubesphere/console/issues/1394)
+- 修复微服务应用**监控**按钮无效的问题 [#1394](https://github.com/kubesphere/console/issues/1394)
 - 修复灰度发布的服务名不能与微服务应用的标签名相同的问题 [#3128](https://github.com/kubesphere/kubesphere/issues/3128)
 - 修复微服务应用状态无法更新的问题 [#3241](https://github.com/kubesphere/kubesphere/issues/3241)
-- 修复 host 和 member 集群在有同名企业空间的情况下，member 集群下的企业空间被删除的问题 [#3169](https://github.com/kubesphere/kubesphere/issues/3169)
-- 修复通过 proxy 方式下联邦多集群连接断开的问题 [#3202](https://github.com/kubesphere/kubesphere/pull/3203)
+- 修复 Host 和 Member 集群在有同名企业空间的情况下，Member 集群下的企业空间被删除的问题 [#3169](https://github.com/kubesphere/kubesphere/issues/3169)
+- 修复通过 Proxy 方式下联邦多集群连接断开的问题 [#3202](https://github.com/kubesphere/kubesphere/pull/3203)
 - 修正多集群状态显示问题 [#3135](https://github.com/kubesphere/kubesphere/issues/3135)
 - 修复 DevOps 流水线中无法部署工作负载的问题 [#3112](https://github.com/kubesphere/kubesphere/issues/3112)
-- 修复 DevOps 工程管理员无法下载 artifacts 的问题 [#3088](https://github.com/kubesphere/kubesphere/issues/3083)
+- 修复 DevOps 工程管理员无法下载 Artifact 的问题 [#3088](https://github.com/kubesphere/kubesphere/issues/3083)
 - 修复 DevOps 无法创建流水线的问题 [#3105](https://github.com/kubesphere/kubesphere/issues/3105)
 - 修复多集群下流水线触发的问题 [#2626](https://kubesphere.com.cn/forum/d/2626-webhook-jenkins)
 - 修复某些情况下编辑流水线时导致的数据丢失问题 [#1270](https://github.com/kubesphere/console/issues/1270)
-- 修复点击 "Docker Container Registry Credentials"时的报错问题 [#1269](https://github.com/kubesphere/console/issues/1269)
+- 修复点击 **Docker Container Registry Credentials** 时的报错问题 [#1269](https://github.com/kubesphere/console/issues/1269)
 - 修复英文控制台显示中文代码质量检查结果的问题 [#1278](https://github.com/kubesphere/console/issues/1278)
 - 修复 Jenkinsfile 中包含布尔值时的显示报错问题 [#3043](https://github.com/kubesphere/kubesphere/issues/3043)
-- 修复当 PVC 不含有 StorageClassName 时存储管理页面无法显示的问题 [#1109](https://github.com/kubesphere/ks-installer/issues/1109)
+- 修复当 PVC 不含有 `StorageClassName` 时存储管理页面无法显示的问题 [#1109](https://github.com/kubesphere/ks-installer/issues/1109)
 
-## UI页面优化
+## UI 页面优化
 
 - 优化首页的 Loading 效果
 - 优化 kubectl 为独立页面
