@@ -1,6 +1,6 @@
 ---
 title: "Release Notes for 3.1.0"
-keywords: "Kubernetes, KubeSphere, release-notes"
+keywords: "Kubernetes, KubeSphere, release notes"
 description: "KubeSphere Release Notes for 3.1.0"
 linkTitle: "Release Notes - 3.1.0"
 weight: 18100
@@ -9,7 +9,7 @@ weight: 18100
 ## How to Install v3.1.0
 
 - [Install KubeSphere v3.1.0 on Linux](https://github.com/kubesphere/kubekey)
-- [Install KubeSphere v3.1.0 on existing Kubernetes](https://github.com/kubesphere/ks-installer)
+- [Install KubeSphere v3.1.0 on an existing Kubernetes cluster](https://github.com/kubesphere/ks-installer)
 
 ## New Features and Enhancements
 
@@ -28,18 +28,18 @@ You can now enable KubeEdge in your cluster and manage edge nodes on the KubeSph
 
 - Support the installation of both cloud and edge modules of KubeEdge.
 - Support adding KubeEdge through the KubeSphere console.
+- Support the deployment of workloads on edge nodes.
 - The logs and monitoring data of edge nodes can be collected.
 - The network of edge nodes can be configured automatically as they join or leave a cluster.
 - Taints can be added automatically as an edge node joins your cluster.
 - You can use `nodeAffinity` to prevent cloud workloads (for example, DaemonSets) from being deployed to edge nodes. ([#1295](https://github.com/kubesphere/ks-installer/pull/1295), [#1297](https://github.com/kubesphere/ks-installer/pull/1297) and [#1300](https://github.com/kubesphere/ks-installer/pull/1300))
-- Support the deployment of workloads on edge nodes.
 
 ### Authorization and authentication management 
-- New users now see a prompt to change the old password when first logging in to KubeSphere.
-- New users now need to confirm account information when logging in to KubeSphere through a third party.
 - Added ServiceAccount management. ([#3211](https://github.com/kubesphere/kubesphere/issues/3211))
 - Improved the LDAP authentication plugin and added support for LDAPS and search filtering. ([#2970](https://github.com/kubesphere/kubesphere/issues/2970) and [#3766](https://github.com/kubesphere/kubesphere/issues/3766))
 - Improved the identify provider plugin and simplified the configuration of identify providers. ([#2970](https://github.com/kubesphere/kubesphere/issues/2970))
+- New users now see a prompt to change the old password when first logging in to KubeSphere.
+- New users now need to confirm account information when logging in to KubeSphere through a third party.
 - Support [CAS](https://apereo.github.io/cas/5.0.x/protocol/CAS-Protocol-Specification.html) as an available identity provider. ([#3047](https://github.com/kubesphere/kubesphere/issues/3047))
 - Support [OIDC](https://openid.net/specs/openid-connect-core-1_0.html) as an available identity provider. ([#2941](https://github.com/kubesphere/kubesphere/issues/2941))
 - Support IDaaS (Alibaba Cloud Identity as a Service) as an available identity provider. ([#2997](https://github.com/kubesphere/kubesphere/pull/2997))
@@ -74,91 +74,101 @@ You can now enable KubeEdge in your cluster and manage edge nodes on the KubeSph
 - Support configurations of ServiceMonitor on the KubeSphere console. ([#1031](https://github.com/kubesphere/console/pull/1301))
 - Support PromQL auto-completion and syntax highlighting. ([#1307](https://github.com/kubesphere/console/pull/1307))
 - Support customized monitoring at the cluster level. ([#3193](https://github.com/kubesphere/kubesphere/pull/3193))
-- kube-scheduler 与 kube-controller-manager 数据抓取由 http 端口 10251/10252 改为 https 端口 10259/10257[#1367](https://github.com/kubesphere/ks-installer/pull/1367)
+- Changed the HTTP ports of kube-scheduler and kube-controller-manager from `10251` and `10252` to the HTTPS ports of `10259` and `10257` respectively for data scraping. ([#1367](https://github.com/kubesphere/ks-installer/pull/1367))
 
-#### 告警
+#### Alerting
 
-- 支持 Prometheus 风格的告警规则配置管理 [#3181](https://github.com/kubesphere/kubesphere/pull/3181)
-- 支持平台及项目层级的告警规则 [#3181](https://github.com/kubesphere/kubesphere/pull/3181)
-- 支持显示告警规则的实时告警状态 [#3181](https://github.com/kubesphere/kubesphere/pull/3181)
+- Prometheus-style alerting rules can be managed and configured now. ([#3181](https://github.com/kubesphere/kubesphere/pull/3181))
+- Support alerting rules at the platform level and project level. ([#3181](https://github.com/kubesphere/kubesphere/pull/3181))
+- Support real-time display of alerting rule status. ([#3181](https://github.com/kubesphere/kubesphere/pull/3181))
 
-#### 通知管理 
+#### Notification management
 
-- 新增 钉钉、 企业微信、Slack、Webhook 通知方式，其提供图形化管理[#3066](https://github.com/kubesphere/kubesphere/issues/3066)
+- Added new notification channels on the console including DingTalk, WeCom, Slack and Webhook to receive notifications. ([#3066](https://github.com/kubesphere/kubesphere/issues/3066))
 
-#### 日志
+#### Logging
 
-- 支持将日志输出到 [Loki](https://github.com/kubesphere/fluentbit-operator/blob/master/docs/plugins/output/loki.md) [#39](https://github.com/kubesphere/fluentbit-operator/pull/39)
-- 支持收集 kubelet/docker/containerd 的日志 [#38](https://github.com/kubesphere/fluentbit-operator/pull/38)
-- 支持收集 [auditd](https://github.com/kubesphere/fluentbit-operator#auditd)的日志 [#45](https://github.com/kubesphere/fluentbit-operator/pull/45)
+- Logs can be exported to [Loki](https://github.com/kubesphere/fluentbit-operator/blob/master/docs/plugins/output/loki.md) now. ([#39](https://github.com/kubesphere/fluentbit-operator/pull/39))
+- Support kubelet, Docker, and containerd log collection. ([#38](https://github.com/kubesphere/fluentbit-operator/pull/38))
+- Support [auditd](https://github.com/kubesphere/fluentbit-operator#auditd) log collection. ([#45](https://github.com/kubesphere/fluentbit-operator/pull/45))
 
 ### DevOps
 
-- 支持 Gitlab 多分支流水线 [#3100](https://github.com/kubesphere/kubesphere/issues/3100)
-- 可同时启动并运行多条流水线 [#1811](https://github.com/kubesphere/kubesphere/issues/1811)
-- 支持流水线复制 [#3053](https://github.com/kubesphere/kubesphere/issues/3053)
-- 新增权限可控的流水线审核机制 [#2483](https://github.com/kubesphere/kubesphere/issues/2483) [#3006](https://github.com/kubesphere/kubesphere/issues/3006)
-- 访问 DevOps 工程首页可查看流水线运行状态 [#3007](https://github.com/kubesphere/kubesphere/issues/3007)
-- 支持通过流水线 Tag 触发流水线运行 [#3051](https://github.com/kubesphere/kubesphere/issues/3051)
-- 支持 S2I Webhook [#6](https://github.com/kubesphere/s2ioperator/issues/6)
-- 优化在输入错误的流水线定时参数时的提示信息 [#2919](https://github.com/kubesphere/kubesphere/issues/2919)
-- 优化创建流水线的交互体验 [#1283](https://github.com/kubesphere/console/issues/1283)
-- 优化 S2I 错误提示信息 [#140](https://github.com/kubesphere/s2ioperator/issues/140)
-- 升级 Jenkins 至 2.249.1 [#2618](https://github.com/kubesphere/kubesphere/issues/2618)
-- 调整 Jenkins 部署方式为 Jenkins distribution [#2182](https://github.com/kubesphere/kubesphere/issues/2182)
+- Improved the error message of pipeline cron text. ([#2919](https://github.com/kubesphere/kubesphere/issues/2919))
+- Improved the interactive experience of creating pipelines. ([#1283](https://github.com/kubesphere/console/issues/1283))
+- Improved S2I error messages. ([#140](https://github.com/kubesphere/s2ioperator/issues/140))
+- Upgraded Jenkins to 2.249.1. ([#2618](https://github.com/kubesphere/kubesphere/issues/2618))
+- Added an approval mechanism for pipelines. Accounts with necessary permissions can review pipelines and approve them. ([#2483](https://github.com/kubesphere/kubesphere/issues/2483) and [#3006](https://github.com/kubesphere/kubesphere/issues/3006))
+- Multiple pipelines can be started and run at the same time. ([#1811](https://github.com/kubesphere/kubesphere/issues/1811))
+- The pipeline status can be viewed on the DevOps project **Pipelines** page. ([#3007](https://github.com/kubesphere/kubesphere/issues/3007))
+- Pipelines can be triggered by tags now. ([#3051](https://github.com/kubesphere/kubesphere/issues/3051))
+- Support pipeline cloning. ([#3053](https://github.com/kubesphere/kubesphere/issues/3053))
+- Support GitLab multi-branch pipelines. ([#3100](https://github.com/kubesphere/kubesphere/issues/3100))
+- Support S2I Webhook. ([#6](https://github.com/kubesphere/s2ioperator/issues/6))
+- Jenkins in KubeSphere is now deployed as a distribution ([#2182](https://github.com/kubesphere/kubesphere/issues/2182)).
 
-### 应用商店及应用
+### App Store and apps
 
-- 新增 MySQL 高可用集群应用：[XenonDB](https://github.com/radondb/xenondb)
-- 支持修改已部署的应用模板
-- 支持查看应用模板部署失败的原因 [#3036](https://github.com/kubesphere/kubesphere/issues/3036) [#3001](https://github.com/kubesphere/kubesphere/issues/3001) [#2951](https://github.com/kubesphere/kubesphere/issues/2951) 
-- 支持批量删除应用模板
+- The reason for app template deployment failure is now available for check. ([#3036](https://github.com/kubesphere/kubesphere/issues/3036), [#3001](https://github.com/kubesphere/kubesphere/issues/3001) and [#2951](https://github.com/kubesphere/kubesphere/issues/2951))
+- Support batch deleting of app templates.
+- Support editing of deployed app templates.
+- A new built-in app [XenonDB](https://github.com/radondb/xenondb) is now available in the App Store. Based on MySQL, it is an open-source tool that provides high availability cluster solutions.
 
-### 微服务治理
+### Microservices governance
 
-- 支持图形化流量方向检测，图像化方式显示应用（composed application）流量的流入/流出 [#3153](https://github.com/kubesphere/kubesphere/issues/3153)
-- 支持 Kiali 附加组件，用户可以通过 Kiali直接管理 istio [#3106](https://github.com/kubesphere/kubesphere/issues/3106)
-- 支持 Nginx Ingress Gateway 的监控，新增 nginx ingress controller 的监控指标 [#1205](https://github.com/kubesphere/ks-installer/pull/1205)
-- 支持在创建应用时添加应用路由 [#1426](https://github.com/kubesphere/console/issues/1426) 
-- 升级 istio 至 1.6.10 [#3326](https://github.com/kubesphere/kubesphere/issues/3236)
+- The KubeSphere console now displays the traffic direction of microservices in composing apps. ([#3153](https://github.com/kubesphere/kubesphere/issues/3153))
+- Support Kiali. Users can now manage Istio directly through Kiali. ([#3106](https://github.com/kubesphere/kubesphere/issues/3106))
+- Support NGINX Ingress Gateway monitoring with NGINX Ingress Controller metrics added. ([#1205](https://github.com/kubesphere/ks-installer/pull/1205))
+- A route can be added now when an app is created. ([#1426](https://github.com/kubesphere/console/issues/1426))
+- Upgraded Istio to 1.6.10. ([#3326](https://github.com/kubesphere/kubesphere/issues/3236))
 
-### 计量计费
+### Metering and billing
 
-- 支持集群、企业空间和应用级别的应用消耗量统计 [#3062](https://github.com/kubesphere/kubesphere/issues/3062)
-- 通过 ConfigMap 方式可为计量资源配置计费单价
+- Users now can see resource consumption of different resources at different levels, such as clusters, workspaces, and apps. ([#3062](https://github.com/kubesphere/kubesphere/issues/3062))
+- The resource price can be set in a ConfigMap to provide billing information of resources on the console.
 
-## 重要的技术调整
+### KubeSphere console UI
 
-- 升级 Kubernetes 版本依赖，从 v1.17 调整至 v1.18 [#3274](https://github.com/kubesphere/kubesphere/issues/3274)
-- 升级 Prometheus client_golang 版本依赖至 v1.5.1，升级 Prometheus 版本依赖至 v1.8.2 [3097](https://github.com/kubesphere/kubesphere/pull/3097)
-- 基于 CRD 重构应用管理框架 OpenPitrix 并修复原有架构导致的问题 [#3036](https://github.com/kubesphere/kubesphere/issues/3036) [#3001](https://github.com/kubesphere/kubesphere/issues/3001) [#2995](https://github.com/kubesphere/kubesphere/issues/2995) [#2981](https://github.com/kubesphere/kubesphere/issues/2981) [#2954](https://github.com/kubesphere/kubesphere/issues/2954) [#2951](https://github.com/kubesphere/kubesphere/issues/2951) [#2783](https://github.com/kubesphere/kubesphere/issues/2783) [#2713](https://github.com/kubesphere/kubesphere/issues/2713) [#2700](https://github.com/kubesphere/kubesphere/issues/2700) [#1903](https://github.com/kubesphere/kubesphere/issues/1903) 
-- 告警架构调整，不再使用 MySQL, Redis, Etcd 等组件以及旧版告警规则格式。改为使用 Thanos Ruler 配合 Prometheus 内置告警规则进行告警管理，新版告警兼容 Prometheus 告警规则。KubeSphere v3.0.0 中旧版告警规则会在升级到 v3.1.0 后自动迁移为新版告警规则。
-- 通知架构调整，不再使用 MySQL, Redis, Etcd 等组件。 改为使用 [Notification Manager](https://github.com/kubesphere/notification-manager/) 以 CRD 的方式配置通知渠道。通知渠道设置由告警规则级别调整为集群级别，且多集群仅需设置一次通知渠道。
+- Improved homepage loading.
+- Improved pipeline configurations on graphical editing panels.
+- Improved error messages of pipeline status.
+- Improved the way code repositories are filtered.
+- Improved the configuration of node scheduling policies.
+- Improved deployment configurations.
+- Relocated the built-in web kubectl to a separate page.
 
-## 废弃或移除的功能
+## Major Technical Adjustments
 
-- 依赖 MySQL, Redis, Etcd 等组件的旧版告警与通知被新版告警与通知替代。
-- 容器终端 WebSocket API 发生变更。[#3041](https://github.com/kubesphere/kubesphere/issues/3041)
+- Upgraded Kubernetes version dependencies from v1.17 to v1.18. ([#3274](https://github.com/kubesphere/kubesphere/issues/3274))
+- Upgraded the Prometheus client_golang version dependency to v1.5.1 and Prometheus version dependency to v1.8.2. ([#3097](https://github.com/kubesphere/kubesphere/pull/3097))
+- Refactored OpenPitrix based on CRDs and fixed some issues caused by the original architecture. ([#3036](https://github.com/kubesphere/kubesphere/issues/3036), [#3001](https://github.com/kubesphere/kubesphere/issues/3001), [#2995](https://github.com/kubesphere/kubesphere/issues/2995), [#2981](https://github.com/kubesphere/kubesphere/issues/2981), [#2954](https://github.com/kubesphere/kubesphere/issues/2954), [#2951](https://github.com/kubesphere/kubesphere/issues/2951), [#2783](https://github.com/kubesphere/kubesphere/issues/2783), [#2713](https://github.com/kubesphere/kubesphere/issues/2713), [#2700](https://github.com/kubesphere/kubesphere/issues/2700) and [#1903](https://github.com/kubesphere/kubesphere/issues/1903))
+- Refactored the previous alerting system with old alerting rules deprecated and removed its dependency on MySQL, Redis, etcd and other components. The new alerting system works based on Thanos Ruler and the build-in rules of Prometheus. Old alerting rules in KubeSphere v3.0.0 will be automatically changed to new alerting rules in KubeSphere v3.1.0 after upgrading.
+- Refactored the notification system and removed its dependency on MySQL, Redis, etcd and other components. Notification channels are now configured for the entire cluster based on [Notification Manager](https://github.com/kubesphere/notification-manager/) in CRDs. In a multi-cluster architecture, if a notification channel is set for the Host cluster, it works for all Member Clusters.
 
-## 问题修复
-- 修复账户无法登录的问题 [#3132](https://github.com/kubesphere/kubesphere/issues/3132) [3357](https://github.com/kubesphere/kubesphere/issues/3357)
-- 修复容器日志不支持ANSI Color的问题 [#1322](https://github.com/kubesphere/kubesphere/issues/3044)
-- 修复以“kube”起始命名的项目（namespace）下的微服务应用无法获取istio 相关的监控数据的问题 [#3126](https://github.com/kubesphere/kubesphere/issues/3162) 
-- 修复 viewer 可进入容器终端的安全隐患 [#3041](https://github.com/kubesphere/kubesphere/issues/3041)
-- 修复级联资源无法被删除的问题 [#2912](https://github.com/kubesphere/kubesphere/issues/2912)
-- 修复 Kubernetes 1.19 及以上版本无法正常使用的问题 [#2928](https://github.com/kubesphere/kubesphere/issues/2928) [#2928](https://github.com/kubesphere/kubesphere/issues/2928)
-- 修复微服务应用“监控”按钮无效的问题 [#1394](https://github.com/kubesphere/console/issues/1394)
-- 修复灰度发布的服务名不能与微服务应用的标签名相同的问题 [#3128](https://github.com/kubesphere/kubesphere/issues/3128)
-- 修复微服务应用状态无法更新的问题 [#3241](https://github.com/kubesphere/kubesphere/issues/3241)
-- 修复 host 和 member 集群在有同名企业空间的情况下，member 集群下的企业空间被删除的问题 [#3169](https://github.com/kubesphere/kubesphere/issues/3169)
-- 修复通过 proxy 方式下联邦多集群连接断开的问题 [#3202](https://github.com/kubesphere/kubesphere/pull/3203)
-- 修正多集群状态显示问题 [#3135](https://github.com/kubesphere/kubesphere/issues/3135)
-- 修复 DevOps 流水线中无法部署工作负载的问题 [#3112](https://github.com/kubesphere/kubesphere/issues/3112)
-- 修复 DevOps 工程管理员无法下载 artifacts 的问题 [#3088](https://github.com/kubesphere/kubesphere/issues/3083)
-- 修复 DevOps 无法创建流水线的问题 [#3105](https://github.com/kubesphere/kubesphere/issues/3105)
-- 修复多集群下流水线触发的问题 [#2626](https://kubesphere.com.cn/forum/d/2626-webhook-jenkins)
-- 修复某些情况下编辑流水线时导致的数据丢失问题 [#1270](https://github.com/kubesphere/console/issues/1270)
-- 修复点击 "Docker Container Registry Credentials"时的报错问题 [#1269](https://github.com/kubesphere/console/issues/1269)
-- 修复英文控制台显示中文代码质量检查结果的问题 [#1278](https://github.com/kubesphere/console/issues/1278)
-- 修复 Jenkinsfile 中包含布尔值时的显示报错问题 [#3043](https://github.com/kubesphere/kubesphere/issues/3043)
-- 修复当 PVC 不含有 StorageClassName 时存储管理页面无法显示的问题 [#1109](https://github.com/kubesphere/ks-installer/issues/1109)
+## Deprecated or Removed Features
+
+- The legacy alerting and notification system dependent on MySQL, Redis, etcd and other components is replaced by the new alerting and notification function.
+- Changed the container terminal WebSocket API. ([#3041](https://github.com/kubesphere/kubesphere/issues/3041))
+
+## Bug Fixes
+- Fixed account login failures. ([#3132](https://github.com/kubesphere/kubesphere/issues/3132) and [#3357](https://github.com/kubesphere/kubesphere/issues/3357))
+- Fixed an issue where ANSI colors were not supported in container logs. ([#1322](https://github.com/kubesphere/kubesphere/issues/3044))
+- Fixed an issue where the Istio-related monitoring data of a microservices-based app could not be scraped if its project name started with `kube`. ([#3126](https://github.com/kubesphere/kubesphere/issues/3162))
+- Fixed an issue where viewers at different levels could use the container terminal. ([#3041](https://github.com/kubesphere/kubesphere/issues/3041))
+- Fixed a deletion failure issue of cascade resources in a multi-cluster architecture. ([#2912](https://github.com/kubesphere/kubesphere/issues/2912))
+- Fixed the incompatibility issue with Kubernetes 1.19 and above. ([#2928](https://github.com/kubesphere/kubesphere/issues/2928) and [#2928](https://github.com/kubesphere/kubesphere/issues/2928))
+- Fixed the invalid button to view Service monitoring data. ([#1394](https://github.com/kubesphere/console/issues/1394))
+- Fixed an issue where the grayscale release Service name could not be the same as the app label. ([#3128](https://github.com/kubesphere/kubesphere/issues/3128))
+- Fixed an issue where the status of microservices-based app could not be updated. ([#3241](https://github.com/kubesphere/kubesphere/issues/3241))
+- Fixed an issue where a workspace in a Member Cluster would be deleted if its name was the same as a workspace in the Host Cluster. ([#3169](https://github.com/kubesphere/kubesphere/issues/3169))
+- Fixed the connection failure between clusters if agent connection is used. ([#3202](https://github.com/kubesphere/kubesphere/pull/3203))
+- Fixed a multi-cluster status display issue. ([#3135](https://github.com/kubesphere/kubesphere/issues/3135))
+- Fixed the workload deployment failure in DevOps pipelines. ([#3112](https://github.com/kubesphere/kubesphere/issues/3112))
+- Fixed an issue where the account with the  `admin` role in a DevOps project could not download artifacts. ([#3088](https://github.com/kubesphere/kubesphere/issues/3083))
+- Fixed an issue of DevOps pipeline creation failure. ([#3105](https://github.com/kubesphere/kubesphere/issues/3105))
+- Fixed an issue of triggering pipelines in a multi-cluster architecture. ([#2626](https://kubesphere.com.cn/forum/d/2626-webhook-jenkins))
+- Fixed an issue of data loss when a pipeline was edited. ([#1270](https://github.com/kubesphere/console/issues/1270))
+- Fixed a display issue of **Docker Container Register Credentials**. ([#1269](https://github.com/kubesphere/console/issues/1269))
+- Fixed a localization issue of Chinese unit in the code analysis result. ([#1278](https://github.com/kubesphere/console/issues/1278))
+- Fixed a display issue caused by Boolean values in Jenkinsfiles. ([#3043](https://github.com/kubesphere/kubesphere/issues/3043))
+- Fixed a display issue on the **Storage Management** page caused by the lack of `StorageClassName` in a PVC. ([#1109](https://github.com/kubesphere/ks-installer/issues/1109))
