@@ -38,6 +38,7 @@ weight: 50
 - 支持调度工作负载至边缘节点
 
 ### 认证和权限管理
+
 - 新用户首次登录，提示修改初始密码
 - 通过第三方平台登录 KubeSphere，需确认账户信息
 - 支持 [CAS](https://apereo.github.io/cas/5.0.x/protocol/CAS-Protocol-Specification.html) 身份提供商 [#3047](https://github.com/kubesphere/kubesphere/issues/3047)
@@ -85,7 +86,7 @@ weight: 50
 - 支持平台及项目层级的告警规则 [#3181](https://github.com/kubesphere/kubesphere/pull/3181)
 - 支持显示告警规则的实时告警状态 [#3181](https://github.com/kubesphere/kubesphere/pull/3181)
 
-#### 通知管理 
+#### 通知管理
 
 - 新增钉钉、企业微信、Slack 和 Webhook 通知方式，提供图形化管理 [#3066](https://github.com/kubesphere/kubesphere/issues/3066)
 
@@ -114,7 +115,7 @@ weight: 50
 
 - 新增 MySQL 高可用集群应用：[XenonDB](https://github.com/radondb/xenondb)
 - 支持修改已部署的应用模板
-- 支持查看应用模板部署失败的原因 [#3036](https://github.com/kubesphere/kubesphere/issues/3036) [#3001](https://github.com/kubesphere/kubesphere/issues/3001) [#2951](https://github.com/kubesphere/kubesphere/issues/2951) 
+- 支持查看应用模板部署失败的原因 [#3036](https://github.com/kubesphere/kubesphere/issues/3036) [#3001](https://github.com/kubesphere/kubesphere/issues/3001) [#2951](https://github.com/kubesphere/kubesphere/issues/2951)
 - 支持批量删除应用模板
 
 ### 微服务治理
@@ -165,3 +166,13 @@ weight: 50
 - 修复英文控制台显示中文代码质量检查结果的问题 [#1278](https://github.com/kubesphere/console/issues/1278)
 - 修复 Jenkinsfile 中包含布尔值时的显示报错问题 [#3043](https://github.com/kubesphere/kubesphere/issues/3043)
 - 修复当 PVC 不含有 `StorageClassName` 时存储管理页面无法显示的问题 [#1109](https://github.com/kubesphere/ks-installer/issues/1109)
+
+## UI 页面优化
+
+- 优化首页的 Loading 效果
+- 优化 kubectl 为独立页面
+- 优化可视化流水线的配置显示
+- 优化流水线的运行状态的错误显示
+- 优化代码仓库的筛选方式
+- 优化节点调度策略的设置方式
+- 优化部署模式的设置方式
