@@ -43,7 +43,7 @@ The end-to-end architecture of the application is shown below. See [Bookinfo App
 
 ### Step 1: Deploy Bookinfo
 
-1. Log in to the console as `project-regular` and go to your project (`demo-project`). Navigate to **Applications** under **Application Workloads**, and click **Deploy Sample Application** on the right.
+1. Log in to the console as `project-regular` and go to your project (`demo-project`). Navigate to **Apps** under **Application Workloads**, and click **Deploy Sample App** on the right.
 
 2. Click **Next** in the dialog that appears where required fields are pre-populated and relevant components are already set. You do not need to change the settings and just click **Create** on the final page (**Internet Access**).
 
@@ -57,7 +57,7 @@ KubeSphere creates the hostname automatically. To change the hostname, hover ove
 
 3. In **Workloads**, verify that the statuses of all four Deployments reach `running`, which means the app has been created successfully.
 
-    ![running](/images/docs/quickstart/deploy-bookinfo-to-k8s/running.png)
+    ![running1](/images/docs/quickstart/deploy-bookinfo-to-k8s/running1.png)
 
     {{< notice note >}}
 It may take a few minutes before the Deployments are up and running.
@@ -65,24 +65,23 @@ It may take a few minutes before the Deployments are up and running.
 
 ### Step 2: Access Bookinfo
 
-1. In **Applications**, go to **Composing App** and click the app `bookinfo` to see its detailed information.
+1. In **Apps**, go to **Composing Apps** and click the app `bookinfo` to see its detailed information.
 
-    ![click-bookinfo](/images/docs/quickstart/deploy-bookinfo-to-k8s/click-bookinfo.png)
+    ![click-bookinfo1](/images/docs/quickstart/deploy-bookinfo-to-k8s/click-bookinfo1.png)
 
-    {{< notice note >}}
-If you do not see the app in the list, refresh your page.
+    {{< notice note >}}If you do not see the app in the list, refresh your page.
     {{</ notice >}}
 
 2. On the detail page, record the hostname and port number of the app which will be used to access Bookinfo.
 
-    ![detail-page](/images/docs/quickstart/deploy-bookinfo-to-k8s/detail-page.png)
+    ![detail-page1](/images/docs/quickstart/deploy-bookinfo-to-k8s/detail-page1.png)
 
-3. As the app will be accessed outside the cluster through a NodePort, you need to open the port in the image above (in this case, it is `32277`) in your security group for outbound traffic and set any port forwarding rules if necessary.
+3. As the app will be accessed outside the cluster through a NodePort, you need to open the port in the image above (in this case, it is `32535`) in your security group for outbound traffic and set any port forwarding rules if necessary.
 
 4. Edit your local host file (`/etc/hosts`) by adding an entry in it to map the hostname to the IP address. For example:
 
     ```bash
-    139.198.19.38 productpage.demo-project.192.168.0.2.nip.io
+    139.198.179.20 productpage.demo-project.192.168.0.2.nip.io
     ```
 
     {{< notice note >}}
@@ -92,7 +91,7 @@ Do not copy the content above directly to your local host file. Replace it with 
 
 5. When you finish, click the button **Click to visit** to access the app.
 
-    ![click-to-visit](/images/docs/quickstart/deploy-bookinfo-to-k8s/click-to-visit.png)
+    ![click-to-visit1](/images/docs/quickstart/deploy-bookinfo-to-k8s/click-to-visit1.png)
 
 6. On the app detail page, click **Normal user** in the bottom-left corner.
 
