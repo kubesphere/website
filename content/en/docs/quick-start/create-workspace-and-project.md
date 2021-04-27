@@ -33,10 +33,10 @@ After KubeSphere is installed, you need to add different users with varied roles
 1. Log in to the web console as `admin` with the default account and password (`admin/P@88w0rd`).
 
    {{< notice tip >}}
-For account security, it is highly recommended that you change your password the first time you log in to the console. To change your password, select **User Settings** in the drop-down menu in the top right corner. In **Password Setting**, set a new password. You also can change the console language in **User Settings**.
+   For account security, it is highly recommended that you change your password the first time you log in to the console. To change your password, select **User Settings** in the drop-down menu in the top right corner. In **Password Setting**, set a new password. You also can change the console language in **User Settings**.
    {{</ notice >}}
 
-   ![chang-password](/images/docs/quickstart/create-workspaces-projects-accounts/chang-password.jpg)
+   ![chang-password1](/images/docs/quickstart/create-workspaces-projects-accounts/chang-password1.png)
 
 2. After you log in to the console, click **Platform** in the top-left corner and select **Access Control**.
 
@@ -136,21 +136,21 @@ In this step, you create a project using the account `project-admin` created in 
 
 4. On the **Overview** page of the project, the project quota remains unset by default. You can click **Set** and specify [resource requests and limits](../../workspace-administration/project-quotas/) as needed (e.g. 1 core for CPU and 1000Gi for memory).
 
-   ![quota](/images/docs/quickstart/create-workspaces-projects-accounts/quota.png)
+   ![quota1](/images/docs/quickstart/create-workspaces-projects-accounts/quota1.png)
 
-   ![specify-project-quota](/images/docs/quickstart/create-workspaces-projects-accounts/specify-project-quota.png)
+   ![specify-project-quota1](/images/docs/quickstart/create-workspaces-projects-accounts/specify-project-quota1.png)
 
 5. Invite `project-regular` to this project and grant this user the role `operator`. Refer to the image below for specific steps.
 
-   ![invite-project-member](/images/docs/quickstart/create-workspaces-projects-accounts/invite-project-member.png)
+   ![invite-project-member1](/images/docs/quickstart/create-workspaces-projects-accounts/invite-project-member1.png)
 
    {{< notice info >}}
-The user granted the role `operator` will be a project maintainer who can manage resources other than users and roles in the project.
+   The user granted the role `operator` will be a project maintainer who can manage resources other than users and roles in the project.
    {{</ notice >}}
 
 6. Before creating a [Route](../../project-user-guide/application-workloads/ingress/) which is [Ingress](https://kubernetes.io/docs/concepts/services-networking/ingress/) in Kubernetes, you need to enable a gateway for this project. The gateway is an [NGINX Ingress controller](https://github.com/kubernetes/ingress-nginx) running in the project. To set a gateway, go to **Advanced Settings** in **Project Settings** and click **Set Gateway**. The account `project-admin` is still used in this step.
 
-   ![set-gateway](/images/docs/quickstart/create-workspaces-projects-accounts/set-gateway.png)
+   ![set-gateway1](/images/docs/quickstart/create-workspaces-projects-accounts/set-gateway1.png)
 
 7. Choose the access method **NodePort** and click **Save**.
 
@@ -162,7 +162,7 @@ The user granted the role `operator` will be a project maintainer who can manage
 If you want to expose services using the type `LoadBalancer`, you need to use the LoadBalancer plugin of cloud providers. If your Kubernetes cluster is running in a bare metal environment, it is recommended that you use [PorterLB](https://github.com/kubesphere/porter) as the LoadBalancer plugin.
    {{</ notice >}}
 
-   ![nodeport-setting](/images/docs/quickstart/create-workspaces-projects-accounts/nodeport-setting.png)
+   ![nodeport-setting1](/images/docs/quickstart/create-workspaces-projects-accounts/nodeport-setting1.png)
 
 ### Step 4: Create a role
 

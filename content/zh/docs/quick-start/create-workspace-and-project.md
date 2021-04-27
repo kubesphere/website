@@ -37,7 +37,7 @@ KubeSphere 的多租户系统分**三个**层级，即集群、企业空间和�
    出于安全考虑，强烈建议您在首次登录控制台时更改密码。若要更改密码，在右上角的下拉菜单中选择**个人设置**，在**密码设置**中设置新密码，您也可以在**个人设置**中修改控制台语言。
    {{</ notice >}}
 
-   ![设置密码](/images/docs/zh-cn/quickstart/create-workspaces-projects-accounts/设置密码.jpg)
+   ![设置密码1](/images/docs/zh-cn/quickstart/create-workspaces-projects-accounts/设置密码1.png)
 
 2. 登录控制台后，点击左上角的**平台管理**，然后选择**访问控制**。
 
@@ -58,7 +58,7 @@ KubeSphere 的多租户系统分**三个**层级，即集群、企业空间和�
 
 3. 在**帐户管理**中，点击**创建**。在弹出窗口中，提供所有必要信息（带有*标记），然后在**角色**字段选择 `users-manager`。请参考下图示例。
 
-   ![创建帐户](/images/docs/zh-cn/quickstart/create-workspaces-projects-accounts/创建帐户.jpg)
+   ![创建帐户1](/images/docs/zh-cn/quickstart/create-workspaces-projects-accounts/创建帐户1.png)
 
    完成后，点击**确定**。新创建的帐户将显示在**帐户管理**中的帐户列表中。
 
@@ -77,7 +77,7 @@ KubeSphere 的多租户系统分**三个**层级，即集群、企业空间和�
 
 5. 查看创建的四个帐户。
 
-   ![帐户列表](/images/docs/zh-cn/quickstart/create-workspaces-projects-accounts/帐户列表.jpg)
+   ![帐户列表1](/images/docs/zh-cn/quickstart/create-workspaces-projects-accounts/帐户列表1.png)
 
 ### 步骤 2：创建企业空间
 
@@ -85,7 +85,7 @@ KubeSphere 的多租户系统分**三个**层级，即集群、企业空间和�
 
 1. 以 `ws-manager` 身份登录 KubeSphere，它具有管理平台上所有企业空间的权限。点击左上角的**平台管理**，选择**访问控制**。在**企业空间**中，可以看到仅列出了一个默认企业空间 `system-workspace`，即系统企业空间，其中运行着与系统相关的组件和服务，您无法删除该企业空间。
 
-   ![创建企业空间](/images/docs/zh-cn/quickstart/create-workspaces-projects-accounts/创建企业空间.jpg)
+   ![创建企业空间1](/images/docs/zh-cn/quickstart/create-workspaces-projects-accounts/创建企业空间1.png)
 
 2. 点击右侧的**创建**，将新企业空间命名为 `demo-workspace`，并将用户 `ws-admin` 设置为企业空间管理员，如下图所示：
 
@@ -137,25 +137,25 @@ KubeSphere 的多租户系统分**三个**层级，即集群、企业空间和�
 
 4. 在项目的**概览**页面，默认情况下未设置项目配额。您可以点击**设置**并根据需要指定[资源请求和限制](../../workspace-administration/project-quotas/)（例如：CPU 和内存的限制分别设为 1 Core 和 1000 Gi）。
 
-   ![项目概览](/images/docs/zh-cn/quickstart/create-workspaces-projects-accounts/项目概览.jpg)
+   ![项目概览1](/images/docs/zh-cn/quickstart/create-workspaces-projects-accounts/项目概览1.png)
 
-   ![设置配额](/images/docs/zh-cn/quickstart/create-workspaces-projects-accounts/设置配额.jpg)
+   ![设置配额1](/images/docs/zh-cn/quickstart/create-workspaces-projects-accounts/设置配额1.png)
 
 5. 邀请 `project-regular` 至该项目，并授予该用户 `operator` 角色。请参考下图以了解具体步骤。
 
-   ![邀请成员至项目](/images/docs/zh-cn/quickstart/create-workspaces-projects-accounts/邀请成员至项目.jpg)
+   ![邀请成员至项目1](/images/docs/zh-cn/quickstart/create-workspaces-projects-accounts/邀请成员至项目1.png)
 
    {{< notice info >}}
-具有 `operator` 角色的用户是项目维护者，可以管理项目中除用户和角色以外的资源。
+   具有 `operator` 角色的用户是项目维护者，可以管理项目中除用户和角色以外的资源。
    {{</ notice >}}
 
 6. 在创建[应用路由](../../project-user-guide/application-workloads/routes/)（即 Kubernetes 中的 [Ingress](https://kubernetes.io/docs/concepts/services-networking/ingress/)）之前，需要启用该项目的网关。网关是在项目中运行的 [NGINX Ingress 控制器](https://github.com/kubernetes/ingress-nginx)。若要设置网关，请转到**项目设置**中的**高级设置**，然后点击**设置网关**。此步骤中仍使用帐户 `project-admin`。
 
-   ![设置网关](/images/docs/zh-cn/quickstart/create-workspaces-projects-accounts/设置网关.jpg)
+   ![设置网关1](/images/docs/zh-cn/quickstart/create-workspaces-projects-accounts/设置网关1.png)
 
 7. 选择访问方式 **NodePort**，然后点击**保存**。
 
-   ![nodeport](/images/docs/zh-cn/quickstart/create-workspaces-projects-accounts/nodeport.jpg)
+   ![nodeport1](/images/docs/zh-cn/quickstart/create-workspaces-projects-accounts/nodeport1.png)
 
 8. 在**外网访问**下，可以在页面上看到网关地址以及 http/https 的端口。
 
@@ -163,7 +163,7 @@ KubeSphere 的多租户系统分**三个**层级，即集群、企业空间和�
 如果要使用 `LoadBalancer` 暴露服务，则需要使用云厂商的 LoadBalancer 插件。如果您的 Kubernetes 集群在裸机环境中运行，建议使用 [PorterLB](https://github.com/kubesphere/porter) 作为 LoadBalancer 插件。
    {{</ notice >}}
 
-   ![完成网关设置](/images/docs/zh-cn/quickstart/create-workspaces-projects-accounts/完成网关设置.jpg)
+   ![完成网关设置1](/images/docs/zh-cn/quickstart/create-workspaces-projects-accounts/完成网关设置1.png)
 
 ### 步骤 4：创建角色
 
@@ -212,18 +212,18 @@ KubeSphere 的多租户系统分**三个**层级，即集群、企业空间和�
 
 1. 以 `project-admin` 身份登录控制台，在 **DevOps 工程**中，点击**创建**。
 
-   ![devops-工程](/images/docs/zh-cn/quickstart/create-workspaces-projects-accounts/devops-工程.jpg)
+   ![devops-工程1](/images/docs/zh-cn/quickstart/create-workspaces-projects-accounts/devops-工程1.png)
 
 2. 输入 DevOps 工程名称（例如 `demo-devops`），然后点击**确定**，也可以为该工程添加别名和描述。
 
-   ![创建-devops-工程](/images/docs/zh-cn/quickstart/create-workspaces-projects-accounts/创建-devops-工程.jpg)
+   ![创建-devops-工程1](/images/docs/zh-cn/quickstart/create-workspaces-projects-accounts/创建-devops-工程1.png)
 
 3. 在 **DevOps 工程**中，点击刚创建的工程查看其详细信息。
 
-   ![工程列表](/images/docs/zh-cn/quickstart/create-workspaces-projects-accounts/工程列表.jpg)
+   ![工程列表1](/images/docs/zh-cn/quickstart/create-workspaces-projects-accounts/工程列表1.png)
 
 4. 转到**工程管理**，然后选择**工程成员**。点击**邀请成员**授予 `project-regular` 用户 `operator` 的角色，允许其创建流水线和凭证。
 
-   ![邀请-devops-成员](/images/docs/zh-cn/quickstart/create-workspaces-projects-accounts/邀请-devops-成员.jpg)
+   ![邀请-devops-成员1](/images/docs/zh-cn/quickstart/create-workspaces-projects-accounts/邀请-devops-成员1.png)
 
 至此，您已熟悉 KubeSphere 的多租户管理系统。在其他教程中，`project-regular` 帐户还将用于演示如何在项目或 DevOps 工程中创建应用程序和资源。
