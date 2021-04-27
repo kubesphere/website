@@ -57,7 +57,7 @@ KubeSphere 会自动创建主机名。若要更改主机名，请将鼠标悬停
 
 3. 在**工作负载**中，确保这四个部署都处于`运行中`状态，这意味着该应用已经成功创建。
 
-    ![running](/images/docs/zh-cn/quickstart/deploy-bookinfo-to-k8s/running.png)
+    ![running1](/images/docs/zh-cn/quickstart/deploy-bookinfo-to-k8s/running1.png)
 
     {{< notice note >}}
 可能需要等几分钟才能看到部署正常运行。
@@ -67,22 +67,21 @@ KubeSphere 会自动创建主机名。若要更改主机名，请将鼠标悬停
 
 1. 在**应用**中，访问**自制应用**，点击应用 `bookinfo` 查看其详细信息。
 
-    ![click-bookinfo](/images/docs/zh-cn/quickstart/deploy-bookinfo-to-k8s/click-bookinfo.png)
+    ![click-bookinfo1](/images/docs/zh-cn/quickstart/deploy-bookinfo-to-k8s/click-bookinfo1.png)
 
-    {{< notice note >}}
-如果您没有在列表中看到该应用，请刷新页面。
+    {{< notice note >}}如果您没有在列表中看到该应用，请刷新页面。
     {{</ notice >}}
 
 2. 详细信息页面中显示了用于访问 Bookinfo 应用的主机名和端口号。
 
-    ![detail-page](/images/docs/zh-cn/quickstart/deploy-bookinfo-to-k8s/detail-page.png)
+    ![detail-page1](/images/docs/zh-cn/quickstart/deploy-bookinfo-to-k8s/detail-page1.png)
 
-3. 由于将通过 NodePort 在集群外访问该应用，因此您需要在安全组中为出站流量开放上图中的端口（在本例中，端口号为 `30305`），并按需设置端口转发规则。
+3. 由于将通过 NodePort 在集群外访问该应用，因此您需要在安全组中为出站流量开放上图中的端口（在本例中，端口号为 `32535`），并按需设置端口转发规则。
 
 4. 在本地 hosts 文件 (`/etc/hosts`) 中添加一个条目将主机名映射到对应的 IP 地址，例如：
 
     ```bash
-    139.198.19.38 productpage.demo-project.192.168.0.4.nip.io
+    139.198.178.20 productpage.demo-project.192.168.0.2.nip.io
     ```
     
     {{< notice warning >}}
@@ -94,7 +93,7 @@ KubeSphere 会自动创建主机名。若要更改主机名，请将鼠标悬停
 
 5. 完成后，点击**点击访问**按钮访问该应用。
 
-    ![click-to-visit](/images/docs/zh-cn/quickstart/deploy-bookinfo-to-k8s/click-to-visit.png)
+    ![click-to-visit1](/images/docs/zh-cn/quickstart/deploy-bookinfo-to-k8s/click-to-visit1.png)
 
 6. 在应用详情页面，点击左下角的 **Normal user**。
 
