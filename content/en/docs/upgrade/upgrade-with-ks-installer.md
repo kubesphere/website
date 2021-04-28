@@ -20,7 +20,7 @@ ks-installer is recommended for users whose Kubernetes clusters were not set up 
 Run the following command to upgrade your cluster.
 
 ```bash
-kubectl apply -f https://github.com/kubesphere/ks-installer/releases/download/v3.0.0/kubesphere-installer.yaml
+kubectl apply -f https://github.com/kubesphere/ks-installer/releases/download/v3.1.0/kubesphere-installer.yaml
 ```
 
 ## Enable Pluggable Components
