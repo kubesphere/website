@@ -7,93 +7,65 @@ linkTitle: "告警策略（节点级别）"
 weight: 8530
 ---
 
-## 目标
+KubeSphere 为节点和工作负载提供告警策略。本教程演示如何为集群中的节点创建告警策略。如需了解如何为工作负载配置告警策略，请参见[告警策略（工作负载级别）](../../../project-user-guide/alerting/alerting-policy/)。
 
-KubeSphere 为节点和工作负载提供告警策略。本指南演示如何为集群中的节点创建告警策略以及如何配置电子邮件通知。如需了解如何为工作负载配置告警策略，请参见[告警策略（工作负载级别）](../../../project-user-guide/alerting/alerting-policy/)。
+KubeSphere 还具有内置策略，一旦满足为这些策略定义的条件，将会触发告警。 在**内置策略**选项卡，您可以点击任一策略查看其详情。请注意，这些策略不能直接在控制台上进行删除或编辑。
 
 ## 准备工作
 
-- 您需要启用 [KubeSphere 告警和通知系统](../../../pluggable-components/alerting-notification/)。
-- 您需要配置[邮件服务器](../../../cluster-administration/cluster-settings/mail-server/)。
+- 您需要启用 [KubeSphere 告警系统](../../../pluggable-components/alerting)。
+- 如需接收告警通知，您需要预先配置一个[通知渠道](../../../cluster-administration/platform-settings/notification-management/configure-email/)。
+- 您需要创建一个帐户 (`cluster-admin`) 并授予其 `clusters-admin` 角色。有关更多信息，请参见[创建企业空间、项目、帐户和角色](../../../quick-start/create-workspace-and-project/#step-4-create-a-role)。
+- 您需要确保集群中存在工作负载。如果尚未就绪，请参见[部署并访问 Bookinfo](../../../quick-start/deploy-bookinfo-to-k8s/) 创建一个示例应用。
 
-## 动手实验
+## 创建告警策略
 
-### 任务 1：创建一个告警策略
+1. 使用 `cluster-admin` 用户登录控制台。点击左上角的**平台管理**，然后点击**集群管理**。
 
-1. 使用具有 `platform-admin` 角色的帐户登录控制台。
+2. 导航至**监控告警**下的**告警策略**，然后点击**创建**。
 
-2. 点击左上角的**平台管理**，然后选择**集群管理**。
+   ![click-create](/images/docs/zh-cn/cluster-administration/cluster-wide-alerting-and-notification/alerting-policy-node-level/click-create.png)
 
-    ![选择集群管理](/images/docs/zh-cn/cluster-administration/cluster-wide-alerting-and-notification/alerting-policy-node-level/alerting_policy_node_level_guide.png)
+3. 在出现的对话框中，填写以下基本信息。点击**下一步**继续。
 
-3. 从列表中选择一个集群并进入该集群（如果您未启用[多集群功能](../../../multicluster-management/)，则将直接转到**概览**页面）。
+   - **名称**：使用简明名称作为其唯一标识符，例如 `node-alert`。
+   - **别名**：帮助您更好地识别告警策略。
+   - **告警持续时间（分钟）**：若在告警持续时间内的任意时间点均满足为告警策略定义的条件，告警将会触发。
+   - **告警级别**：提供的值包括**一般告警**、**重要告警**和**危险告警**，代表告警的严重程度。
+   - **描述信息**：对告警策略的简要介绍。
 
-4. 转到**监控告警**下的**告警策略**，点击**创建**.
+4. 在**告警规则**选项卡，您可以使用规则模板或创建自定义规则。如需使用规则模板，请填写以下字段，然后点击**下一步**继续。
 
-    ![点击创建](/images/docs/zh-cn/cluster-administration/cluster-wide-alerting-and-notification/alerting-policy-node-level/alerting_policy_node_level_create.png)
+   - **监控目标**：选择集群中的一个节点进行监控。
+   - **告警规则**：为告警策略定义一个规则。下拉菜单中提供的规则基于 Prometheus 表达式，满足条件时将会触发告警。您可以对 CPU、内存等对象进行监控。
 
-### 任务 2：提供基本信息
+   ![alert-rule](/images/docs/zh-cn/cluster-administration/cluster-wide-alerting-and-notification/alerting-policy-node-level/alert-rule.png)
 
-在弹出对话框中，填写如下基本信息。完成操作后，点击**下一步**。
+   {{< notice note >}}
 
-- **名称**：该告警策略的简明名称，例如 `alert-demo`，用作其唯一标识符。
-- **别名**：帮助您更好地区分告警策略，支持中文。
-- **描述信息**：告警策略的简要介绍。
+   您可以在**监控指标**字段输入表达式（支持自动补全），以使用 PromQL 创建自定义规则。有关更多信息，请参见 [Querying Prometheus](https://prometheus.io/docs/prometheus/latest/querying/basics/)。
 
-![基本信息](/images/docs/zh-cn/cluster-administration/cluster-wide-alerting-and-notification/alerting-policy-node-level/alerting_policy_node_level_basic_info.png)
+   {{</ notice >}} 
 
-### 任务 3：选择监控目标
+5. 在**通知设置**选项卡，输入想要包含在通知中的告警标题和消息，点击**创建**。
 
-在节点列表中选择节点，或使用**节点选择器**选择一组节点作为监控目标。为了方便演示，此处选择一个节点。完成操作后，点击**下一步**。
+6. 告警策略刚创建后将显示为**未触发**状态；一旦满足规则表达式中的条件，则会首先达到**待触发**状态；满足告警条件的时间达到告警持续时间后，将变为**触发中**状态。
 
-![监控目标](/images/docs/zh-cn/cluster-administration/cluster-wide-alerting-and-notification/alerting-policy-node-level/alerting_policy_node_level_monitoring_target.png)
+## 编辑告警策略
 
-{{< notice note >}}
+如需在创建后编辑告警策略，在**告警策略**页面点击右侧的 <img src="/images/docs/zh-cn/cluster-administration/cluster-wide-alerting-and-notification/alerting-policy-node-level/edit-policy.png" height="25px">。
 
-您可以在下拉菜单中通过以下三种方式对节点列表中的节点进行排序：`按 CPU 使用率排行`、`按内存使用率排行`、`按容器组用量排行`。
+1. 点击下拉菜单中的**编辑**，根据与创建时相同的步骤来编辑告警策略。点击**通知设置**页面的**更新**保存更改。
 
-{{</ notice >}}
+   ![click-edit](/images/docs/zh-cn/cluster-administration/cluster-wide-alerting-and-notification/alerting-policy-node-level/click-edit.png)
 
-### 任务 4：添加告警规则
+2. 点击下拉菜单中的**删除**以删除告警策略。
 
-1. 点击**添加规则**创建告警规则。告警规则定义指标类型、检查周期、连续次数、指标阈值和告警级别等多个参数，可提供丰富配置。检查周期（**规则**下的第二个字段）表示两次连续指标检查之间的时间间隔。例如，`2 分钟/周期`表示每 2 分钟检查一次指标。连续次数（**规则**下的第三个字段）表示检查的指标满足阈值的连续次数。只有当实际次数等于或大于告警策略中设置的连续次数时，才会触发告警。
+## 查看告警策略
 
-    ![告警规则](/images/docs/zh-cn/cluster-administration/cluster-wide-alerting-and-notification/alerting-policy-node-level/alerting_policy_node_level_alerting_rule.png)
+在**告警策略**页面，点击一个告警策略查看其详情，包括告警规则和告警消息。您还可以看到创建告警策略时基于所使用模板的告警规则表达式。
 
-2. 在本示例中，将这些参数分别设置为`内存利用率`、`1 分钟/周期`、`连续2次`、`>`、`50％` 和`重要告警`。这意味着 KubeSphere 会每 1 分钟检查一次内存利用率，如果连续 2 次大于 50%，则会触发此重要告警。
+在**监控**下，**告警监控**图显示一段时间内的实际资源使用情况或使用量。**通知设置**显示您在通知中设置的自定义消息。
 
-3. 完成操作后，点击 **√** 保存规则，然后点击**下一步**继续。
+![alert-detail](/images/docs/zh-cn/cluster-administration/cluster-wide-alerting-and-notification/alerting-policy-node-level/alert-detail.png)
 
-{{< notice note >}}
-
-您可以为以下指标创建节点级别的告警策略：
-
-- CPU：`CPU利用率`、`CPU 1分钟平均负载`、`CPU 5分钟平均负载`、`CPU 15分钟平均负载`
-- 内存：`内存利用率`、`可用内存`
-- 磁盘：`inode利用率`、`本地磁盘可用空间`、`本地磁盘空间利用率`、`本地磁盘写入吞吐量`、`本地磁盘读取吞吐量`、`本地磁盘读取IOPS`、`本地磁盘写入IOPS`
-- 网络：`网络发送数据速率`、`网络接收数据速率`
-- 容器组：`容器组异常率`、`容器组利用率`
-
-{{</ notice >}}
-
-### 任务 5：设置通知规则
-
-1. **通知有效时间**用于设置通知电子邮件的发送时间，例如 `09:00` 至 `19:00`。 **通知渠道**目前仅支持**邮箱**。您可以在**通知列表**中添加要通知的成员的邮箱地址。
-
-2. **自定义重复规则**用于定义通知邮件的发送周期和重发次数。如果告警未被解除，则会在一段时间后重复发送通知。不同级别的告警还可以设置不同的重复规则。上一步中设置的告警级别为`重要告警`，因此在**重要告警**的第二个字段选择`每 5 分钟警告一次`（发送周期），并在第三个字段中选择`最多重发3次`（重发次数）。请参考下图设置通知规则：
-
-    ![通知规则](/images/docs/zh-cn/cluster-administration/cluster-wide-alerting-and-notification/alerting-policy-node-level/alerting_policy_node_level_notification_rule.PNG)
-
-3. 点击**创建**，您可以看到告警策略已成功创建。
-
-{{< notice note >}}
-
-*告警等待时间* **=** *检查周期* **x** *连续次数*。例如，如果检查周期为 1 分钟/周期，并且连续次数为 2，则需要等待 2 分钟后才会显示告警消息。
-
-{{</ notice >}}
-
-### 任务 6：查看告警策略
-
-成功创建告警策略后，您可以进入其详情页面查看状态、告警规则、监控目标、通知规则和告警历史等信息。点击**更多操作**，然后从下拉菜单中选择**更改状态**可以启用或禁用此告警策略。
-
-![详情页面](/images/docs/zh-cn/cluster-administration/cluster-wide-alerting-and-notification/alerting-policy-node-level/alerting-policy-node-level-detail-page.png)
