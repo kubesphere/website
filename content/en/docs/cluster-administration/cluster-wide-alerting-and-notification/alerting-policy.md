@@ -29,7 +29,7 @@ KubeSphere also has built-in policies which will trigger alerts if conditions de
 
    - **Name**. A concise and clear name as its unique identifier, such as `node-alert`.
    - **Alias**. Help you distinguish alerting policies better.
-   - **Duration (Minutes)**. An alert will be firing when the conditions defined for an alerting policy are met at any give point in the time range.
+   - **Duration (Minutes)**. An alert will be firing when the conditions defined for an alerting policy are met at any given point in the time range.
    - **Severity**. Allowed values include **Warning**, **Error** and **Critical**, providing an indication of how serious an alert is.
    - **Description**. A brief introduction to the alerting policy.
 

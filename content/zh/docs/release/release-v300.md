@@ -1,5 +1,5 @@
 ---
-title: "Release Notes For 3.0.0"
+title: "Release Notes for 3.0.0"
 keywords: "Kubernetes, KubeSphere, release-notes"
 description: "KubeSphere Release Notes for 3.0.0"
 

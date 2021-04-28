@@ -22,7 +22,7 @@ weight: 15420
    | ------------------------------------------ | ------------------------------------------------------------ |
    | `retentionDay`                             | `retentionDay` 决定用户的**资源消费统计**页面显示的日期范围。该参数的值必须与 [Prometheus](../../../faq/observability/monitoring/#how-to-change-the-monitoring-data-retention-period) 中 `retention` 的值相同。 |
    | `currencyUnit`                             | **资源消费统计**页面显示的货币单位。目前可用的单位有 `CNY`（人民币）和 `USD`（美元）。若指定其他货币，控制台将默认以美元为单位显示消费情况。 |
-   | `cpuPerCorePerHour`                        | 每内核/小时的 CPU 单价。                                     |
+   | `cpuPerCorePerHour`                        | 每核/小时的 CPU 单价。                                     |
    | `memPerGigabytesPerHour`                   | 每 GB/小时的内存单价。                                       |
    | `ingressNetworkTrafficPerMegabytesPerHour` | 每 MB/小时的入站流量单价。                                   |
    | `egressNetworkTrafficPerMegabytesPerHour`  | 每 MB/小时的出站流量单价。                                   |

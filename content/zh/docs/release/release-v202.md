@@ -1,7 +1,7 @@
 ---
-title: "Release Notes For 2.0.2"
+title: "Release Notes for 2.0.2"
 keywords: "kubernetes, docker, kubesphere, jenkins, istio, prometheus"
-description: "KubeSphere Release Notes For 2.0.2"
+description: "KubeSphere Release Notes for 2.0.2"
 
 linkTitle: "Release Notes - 2.0.2"
 weight: 18500
