@@ -67,3 +67,4 @@ Click an alerting policy on the **Alerting Policies** page to see its detail inf
 Under **Monitoring**, the **Alert Monitoring** chart shows the actual usage or amount of resources over time. **Notification Settings** displays the customized message you set in notifications.
 
 ![alert-detail](/images/docs/cluster-administration/cluster-wide-alerting-and-notification/alerting-policies-node-level/alert-detail.png)
+
