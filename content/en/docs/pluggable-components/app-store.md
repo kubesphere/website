@@ -149,3 +149,7 @@ openpitrix-hyperpitrix-deployment-fb76645f4-crvmm   1/1     Running     0       
 [In a multi-cluster architecture](../../multicluster-management/introduction/kubefed-in-kubesphere/), you have one Host Cluster (H Cluster) managing all Member Clusters (M Clusters). Different from other components in KubeSphere, the App Store serves as a global application pool for all clusters, including H Cluster and M Clusters. You only need to enable the App Store on the H Cluster and you can use functions related to the App Store on M Clusters directly (no matter whether the App Store is enabled on M Clusters or not), such as [app templates](../../project-user-guide/application/app-template/) and [app repositories](../../workspace-administration/app-repository/import-helm-repository/).
 
 However, if you only enable the App Store on M Clusters without enabling it on the H Cluster, you will not be able to use the App Store on any cluster in the multi-cluster architecture.
+
+## Access the App Store
+
+After the App Store is installed, all users can access it by clicking **App Store** in the top left corner. You can even access it without logging in to the console by visiting `<NodeIP>:30880/apps`.
