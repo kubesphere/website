@@ -144,7 +144,7 @@ You need to create two projects, such as `kubesphere-sample-dev` and `kubesphere
 
    | Environment | URL                         | Namespace              | Deployment    | Service       |
    | ----------- | --------------------------- | ---------------------- | ------------- | ------------- |
-   | Development | `http://{NodeIP}:{$30861}`  | kubesphere-sample-dev  | ks-sample-dev | ks-sample-dev |
+   | Development | `http://{$NodeIP}:{$30861}` | kubesphere-sample-dev  | ks-sample-dev | ks-sample-dev |
    | Production  | `http://{$NodeIP}:{$30961}` | kubesphere-sample-prod | ks-sample     | ks-sample     |
 
    ![deployment](/images/docs/devops-user-guide/using-devops/gitlab-multibranch-pipeline/deployment.png)
