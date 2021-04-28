@@ -18,6 +18,35 @@ After you enable KubeEdge, you can [add edge nodes to your cluster](../../instal
 
 ## Enable KubeEdge before Installation
 
+### Installing on Linux
+
+When you implement multi-node installation of KubeSphere on Linux, you need to create a configuration file, which lists all KubeSphere components.
+
+1. In the tutorial of [Installing KubeSphere on Linux](../../installing-on-linux/introduction/multioverview/), you create a default file `config-sample.yaml`. Modify the file by executing the following command:
+
+   ```bash
+   vi config-sample.yaml
+   ```
+
+   {{< notice note >}}
+   If you adopt [All-in-One Installation](../../quick-start/all-in-one-on-linux/), you do not need to create a `config-sample.yaml` file as you can create a cluster directly. Generally, the all-in-one mode is for users who are new to KubeSphere and look to get familiar with the system. If you want to enable KubeEdge in this mode (e.g. for testing purposes), refer to [the following section](#enable-kubeedge-after-installation) to see how KubeEdge can be installed after installation.
+   {{</ notice >}}
+
+2. In this file, navigate to `kubeedge.enabled` and change `false` to `true`.
+
+   ```yaml
+   kubeedge:
+     enabled: true # Change "false" to "true".
+   ```
+
+3. Set the value of `kubeedge.cloudCore.cloudHub.advertiseAddress` to the public IP address of your cluster or an IP address that can be accessed by edge nodes. Save the file when you finish editing.
+
+4. Create a cluster using the configuration file:
+
+   ```bash
+   ./kk create cluster -f config-sample.yaml
+   ```
+
 ### Installing on Kubernetes
 
 As you [install KubeSphere on Kubernetes](../../installing-on-kubernetes/introduction/overview/), you can enable KubeEdge first in the [cluster-configuration.yaml](https://github.com/kubesphere/ks-installer/releases/download/v3.0.0/cluster-configuration.yaml) file.
