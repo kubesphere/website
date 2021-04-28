@@ -29,7 +29,7 @@ Telemetry 在安装 KubeSphere 时默认启用。同时，您也可以在安装�
 
 ### 安装前禁用 Telemetry
 
-在现有 Kubernetes 集群上安装 KubeSphere 时，您需要下载 [cluster-configuration.yaml](https://github.com/kubesphere/ks-installer/releases/download/v3.0.0/cluster-configuration.yaml) 文件用于配置集群。如需禁用 Telemetry，请勿直接执行 `kubectl apply -f` 命令应用该文件。
+在现有 Kubernetes 集群上安装 KubeSphere 时，您需要下载 [cluster-configuration.yaml](https://github.com/kubesphere/ks-installer/releases/download/v3.1.0/cluster-configuration.yaml) 文件用于配置集群。如需禁用 Telemetry，请勿直接执行 `kubectl apply -f` 命令应用该文件。
 
 {{< notice note >}}
 
@@ -37,7 +37,7 @@ Telemetry 在安装 KubeSphere 时默认启用。同时，您也可以在安装�
 
 {{</ notice >}}
 
-1. 下载 [cluster-configuration.yaml](https://github.com/kubesphere/ks-installer/releases/download/v3.0.0/cluster-configuration.yaml) 文件并打开编辑。
+1. 下载 [cluster-configuration.yaml](https://github.com/kubesphere/ks-installer/releases/download/v3.1.0/cluster-configuration.yaml) 文件并打开编辑。
 
     ```bash
     vi cluster-configuration.yaml
@@ -56,7 +56,7 @@ Telemetry 在安装 KubeSphere 时默认启用。同时，您也可以在安装�
 3. 保存文件并执行如下命令开始安装：
 
     ```bash
-    kubectl apply -f https://github.com/kubesphere/ks-installer/releases/download/v3.0.0/kubesphere-installer.yaml
+    kubectl apply -f https://github.com/kubesphere/ks-installer/releases/download/v3.1.0/kubesphere-installer.yaml
     
     kubectl apply -f cluster-configuration.yaml
     ```

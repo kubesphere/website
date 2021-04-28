@@ -48,7 +48,7 @@ You must create a load balancer in your environment to listen (also known as lis
 Download KubeKey from its [GitHub Release Page](https://github.com/kubesphere/kubekey/releases) or use the following command directly.
 
 ```bash
-curl -sfL https://get-kk.kubesphere.io | VERSION=v1.0.1 sh -
+curl -sfL https://get-kk.kubesphere.io | VERSION=v1.1.0 sh -
 ```
 
 {{</ tab >}}
@@ -64,7 +64,7 @@ export KKZONE=cn
 Run the following command to download KubeKey:
 
 ```bash
-curl -sfL https://get-kk.kubesphere.io | VERSION=v1.0.1 sh -
+curl -sfL https://get-kk.kubesphere.io | VERSION=v1.1.0 sh -
 ```
 
 {{< notice note >}}
@@ -79,7 +79,7 @@ After you download KubeKey, if you transfer it to a new machine also with poor n
 
 {{< notice note >}}
 
-The commands above download the latest release (v1.0.1) of KubeKey. You can change the version number in the command to download a specific version.
+The commands above download the latest release (v1.1.0) of KubeKey. You can change the version number in the command to download a specific version.
 
 {{</ notice >}} 
 
