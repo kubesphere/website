@@ -24,7 +24,7 @@ KubeSphere provides alerting policies for nodes and workloads. This tutorial dem
    - **Name**. A concise and clear name as its unique identifier, such as `alert-demo`.
    - **Alias**. Help you distinguish alerting policies better.
    - **Description**. A brief introduction to the alerting policy.
-   - **Duration (Minutes)**. An alert will be firing when the conditions defined for an alerting policy are met at any give point in the time range.
+   - **Duration (Minutes)**. An alert will be firing when the conditions defined for an alerting policy are met at any given point in the time range.
    - **Severity**. Allowed values include **Warning**, **Error** and **Critical**, providing an indication of how serious an alert is.
 
 3. On the **Alerting Rule** tab, you can use the rule template or create a custom rule. To use the template, fill in the following fields.
