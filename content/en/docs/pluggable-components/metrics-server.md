@@ -1,7 +1,7 @@
 ---
 title: "Metrics Server"
 keywords: "Kubernetes, KubeSphere, Metrics Server"
-description: "Learn how to enable the Metrics Server to use HPA to autoscale a Deployment."
+description: "Learn how to enable Metrics Server to use HPA to autoscale a Deployment."
 linkTitle: "Metrics Server"
 weight: 6910
 ---
