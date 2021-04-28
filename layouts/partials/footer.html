@@ -168,8 +168,19 @@
         }
     }
 
+    var docCookies = {
+        getItem: function (sKey) {
+            return decodeURIComponent(document.cookie.replace(new RegExp("(?:(?:^|.*;)\\s*" + encodeURIComponent(sKey).replace(/[-.+*]/g, "\\$&") + "\\s*\\=\\s*([^;]*).*$)|^.*$"), "$1")) || null;
+        },
+        setItem: function (sKey, sValue) {
+            if (!sKey || /^(?:expires|max\-age|path|domain|secure)$/i.test(sKey)) { return false; }
+            document.cookie = encodeURIComponent(sKey) + "=" + encodeURIComponent(sValue)
+            return true;
+        },
+    };
+
     var bindHideCookie = function() {
-        var hasAuth = localStorage.getItem("hasAuth")
+        var hasAuth = docCookies.getItem("hasAuth")
         var cookieElement = $('.cookie')
         if (hasAuth) {
             cookieElement.hide()
@@ -177,7 +188,7 @@
             cookieElement.show()
         }
         cookieElement.find('button').on('click', function() {
-            localStorage.setItem("hasAuth", '1')
+            docCookies.setItem("hasAuth", '1')
             cookieElement.hide()
         })
     }
