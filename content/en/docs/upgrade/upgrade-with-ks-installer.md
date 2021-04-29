@@ -26,3 +26,4 @@ kubectl apply -f https://github.com/kubesphere/ks-installer/releases/download/v3
 ## Enable Pluggable Components
 
 You can [enable new pluggable components](../../pluggable-components/overview/) of KubeSphere v3.1.0 after the upgrade to explore more features of the container platform.
+
