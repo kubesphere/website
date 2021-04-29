@@ -6,22 +6,16 @@ linkTitle: "使用 ks-installer 离线升级"
 weight: 7500
 ---
 
-对于 Kubernetes 集群不是通过 [KubeSphere Installer](https://v2-1.docs.kubesphere.io/docs/zh-CN/installation/all-in-one/#第二步-准备安装包) 部署而是由云厂商托管的用户，推荐使用 ks-installer。本教程**只用于升级 KubeSphere**。集群运维员应负责提前升级 Kubernetes。
+对于 Kubernetes 集群不是通过 [KubeKey](../../installing-on-linux/introduction/kubekey/) 部署而是由云厂商托管或自行部署的用户，推荐使用 ks-installer。本教程**只用于升级 KubeSphere**。集群运维员应负责提前升级 Kubernetes。
 
 
 ## 准备工作
 
-- 您需要有一个运行在 v2.1.1 版本的 KubeSphere 集群。如果您的 KubeSphere 是 v2.1.0 或更早的版本，请先升级至 v2.1.1。
-
+- 您需要有一个运行 KubeSphere v3.0.0 的集群。如果您的 KubeSphere 是 v2.1.1 或更早的版本，请先升级至 v3.0.0。
+- 请仔细阅读 [Release Notes for 3.1.0](../../release/release-v310/)。
+- 提前备份所有重要的组件。
 - Docker 仓库。您需要有一个 Harbor 或其他 Docker 仓库。有关更多信息，请参见[准备一个私有镜像仓库](../../installing-on-linux/introduction/air-gapped-installation/#步骤-2准备一个私有镜像仓库)。
-
-- 请仔细阅读 [v3.0.0 发布说明](../../release/release-v300/)。
-
-{{< notice warning >}}
-
-在 v3.0.0 版本中，KubeSphere 重构了许多组件，例如 Fluent Bit Operator 和 IAM。如果您的这些组件有深度自定义配置（并非通过 KubeSphere 控制台配置），请务必先备份重要组件。
-
-{{</ notice >}}
+- KubeSphere v3.1.0 支持的 Kubernetes 版本：v1.17.x、v1.18.x、v1.19.x 和 v1.20.x。
 
 ## 步骤 1：准备安装镜像
 
@@ -30,19 +24,19 @@ weight: 7500
 1. 使用以下命令从能够访问互联网的机器上下载镜像清单文件 `images-list.txt`：
 
    ```bash
-   curl -L -O https://github.com/kubesphere/ks-installer/releases/download/v3.0.0/images-list.txt
+   curl -L -O https://github.com/kubesphere/ks-installer/releases/download/v3.1.0/images-list.txt
    ```
 
    {{< notice note >}}
 
-   该文件根据不同的模块列出了 `##+modulename` 下的镜像。您可以按照相同的规则把自己的镜像添加到这个文件中。要查看完整文件，请参见[附录](../../installing-on-kubernetes/on-prem-kubernetes/install-ks-on-linux-airgapped/#kubesphere-v300-镜像清单)。
+   该文件根据不同的模块列出了 `##+modulename` 下的镜像。您可以按照相同的规则把自己的镜像添加到这个文件中。要查看完整文件，请参见[附录](../../installing-on-kubernetes/on-prem-kubernetes/install-ks-on-linux-airgapped/#kubesphere-v310-镜像清单)。
 
    {{</ notice >}} 
 
 2. 下载 `offline-installation-tool.sh`。
 
    ```bash
-   curl -L -O https://github.com/kubesphere/ks-installer/releases/download/v3.0.0/offline-installation-tool.sh
+   curl -L -O https://github.com/kubesphere/ks-installer/releases/download/v3.1.0/offline-installation-tool.sh
    ```
 
 3. 使 `.sh` 文件可执行。
@@ -95,18 +89,23 @@ weight: 7500
 
 {{</ notice >}} 
 
-## 步骤 3：下载部署文件
+## 步骤 3：下载 ks-installer
 
-与在现有 Kubernetes 集群上在线安装 KubeSphere 相似，您也需要事先下载 `cluster-configuration.yaml` 和 `kubesphere-installer.yaml`。
+与在现有 Kubernetes 集群上在线安装 KubeSphere 相似，您需要事先下载 `kubesphere-installer.yaml`。
 
-1. 执行以下命令下载这两个文件，并将它们传输至您充当任务机的机器，用于安装。
+1. 执行以下命令下载 ks-installer，并将其传输至您充当任务机的机器，用于安装。
 
    ```bash
-   curl -L -O https://github.com/kubesphere/ks-installer/releases/download/v3.0.0/cluster-configuration.yaml
-   curl -L -O https://github.com/kubesphere/ks-installer/releases/download/v3.0.0/kubesphere-installer.yaml
+   curl -L -O https://github.com/kubesphere/ks-installer/releases/download/v3.1.0/kubesphere-installer.yaml
+   ```
+   
+2. 验证您已在 `cluster-configuration.yaml` 中的 `spec.local_registry` 字段指定了私有镜像仓库地址。请注意，如果您的已有集群通过离线安装方式搭建，您应该已配置了此地址。如果您的集群采用在线安装方式搭建而需要进行离线升级，执行以下命令编辑您已有 KubeSphere v3.0.0 集群的 `cluster-configuration.yaml` 文件，并添加私有镜像仓库地址：
+
+   ```bash
+   kubectl edit cc -n kubesphere-system
    ```
 
-2. 编辑 `cluster-configuration.yaml` 添加您的私有镜像仓库。例如，本教程中的仓库地址是 `dockerhub.kubekey.local`，将它用作 `.spec.local_registry` 的值，如下所示：
+   例如，本教程中的仓库地址是 `dockerhub.kubekey.local`，将它用作 `.spec.local_registry` 的值，如下所示：
 
    ```yaml
    spec:
@@ -117,16 +116,10 @@ weight: 7500
      local_registry: dockerhub.kubekey.local # Add this line manually; make sure you use your own registry address.
    ```
 
-   {{< notice note >}}
-
-   您可以在该 YAML 文件中启用可插拔组件，体验 KubeSphere 的更多功能。有关详情，请参考[启用可插拔组件](../../pluggable-components/)。
-
-   {{</ notice >}}
-
 3. 编辑完成后保存 `cluster-configuration.yaml`。使用以下命令将 `ks-installer` 替换为您**自己仓库的地址**。
 
    ```bash
-   sed -i "s#^\s*image: kubesphere.*/ks-installer:.*#        image: dockerhub.kubekey.local/kubesphere/ks-installer:v3.0.0#" kubesphere-installer.yaml
+   sed -i "s#^\s*image: kubesphere.*/ks-installer:.*#        image: dockerhub.kubekey.local/kubesphere/ks-installer:v3.1.0#" kubesphere-installer.yaml
    ```
 
    {{< notice warning >}}
@@ -140,7 +133,7 @@ weight: 7500
 确保上述所有步骤都已完成后，执行以下命令。
 
 ```bash
-kubectl apply -f kubesphere-installer.yaml && kubectl apply -f cluster-configuration.yaml
+kubectl apply -f kubesphere-installer.yaml
 ```
 
 ## 步骤 5：验证安装

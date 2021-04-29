@@ -6,22 +6,16 @@ linkTitle: "Air-Gapped Upgrade with ks-installer"
 weight: 7500
 ---
 
-ks-installer is recommended for users whose Kubernetes clusters were not set up through the [KubeSphere Installer](https://v2-1.docs.kubesphere.io/docs/installation/all-in-one/#step-2-download-installer-package), but hosted by cloud vendors. This tutorial is for **upgrading KubeSphere only**. Cluster operators are responsible for upgrading Kubernetes themselves beforehand.
+ks-installer is recommended for users whose Kubernetes clusters were not set up by [KubeKey](../../installing-on-linux/introduction/kubekey/), but hosted by cloud vendors or created by themselves. This tutorial is for **upgrading KubeSphere only**. Cluster operators are responsible for upgrading Kubernetes beforehand.
 
 
 ## Prerequisites
 
-- You need to have a KubeSphere cluster running version 2.1.1. If your KubeSphere version is v2.1.0 or earlier, upgrade to v2.1.1 first.
-
+- You need to have a KubeSphere cluster running v3.0.0. If your KubeSphere version is v2.1.1 or earlier, upgrade to v3.0.0 first.
+- Read [Release Notes for 3.1.0](../../release/release-v310/) carefully.
+- Back up any important component beforehand.
 - A Docker registry. You need to have a Harbor or other Docker registries. For more information, see [Prepare a Private Image Registry](../../installing-on-linux/introduction/air-gapped-installation/#step-2-prepare-a-private-image-registry).
-
-- Make sure you read [Release Notes For 3.0.0](../../release/release-v300/) carefully.
-
-{{< notice warning >}}
-
-In v3.0.0, KubeSphere refactors many of its components such as Fluent Bit Operator and IAM. Make sure you back up any important components if you heavily customized them but not from the console.
-
-{{</ notice >}}
+- Supported Kubernetes versions of KubeSphere v3.1.0: v1.17.x, v1.18.x, v1.19.x or v1.20.x.
 
 ## Step 1: Prepare Installation Images
 
@@ -30,19 +24,19 @@ As you install KubeSphere in an air-gapped environment, you need to prepare an i
 1. Download the image list file `images-list.txt` from a machine that has access to Internet through the following command:
 
    ```bash
-   curl -L -O https://github.com/kubesphere/ks-installer/releases/download/v3.0.0/images-list.txt
+   curl -L -O https://github.com/kubesphere/ks-installer/releases/download/v3.1.0/images-list.txt
    ```
 
    {{< notice note >}}
 
-   This file lists images under `##+modulename` based on different modules. You can add your own images to this file following the same rule. To view the complete file, see [Appendix](../../installing-on-linux/introduction/air-gapped-installation/#image-list-of-kubesphere-v300).
+   This file lists images under `##+modulename` based on different modules. You can add your own images to this file following the same rule. To view the complete file, see [Appendix](../../installing-on-linux/introduction/air-gapped-installation/#image-list-of-kubesphere-v310).
 
    {{</ notice >}} 
 
 2. Download `offline-installation-tool.sh`. 
 
    ```bash
-   curl -L -O https://github.com/kubesphere/ks-installer/releases/download/v3.0.0/offline-installation-tool.sh
+   curl -L -O https://github.com/kubesphere/ks-installer/releases/download/v3.1.0/offline-installation-tool.sh
    ```
 
 3. Make the `.sh` file executable.
@@ -95,18 +89,23 @@ The domain name is `dockerhub.kubekey.local` in the command. Make sure you use y
 
 {{</ notice >}} 
 
-## Step 3: Download Deployment Files
+## Step 3: Download ks-installer
 
-Similar to installing KubeSphere on an existing Kubernetes cluster in an online environment, you also need to download `cluster-configuration.yaml` and `kubesphere-installer.yaml` first.
+Similar to installing KubeSphere on an existing Kubernetes cluster in an online environment, you also need to download `kubesphere-installer.yaml`.
 
-1. Execute the following commands to download these two files and transfer them to your machine that serves as the taskbox for installation.
+1. Execute the following command to download ks-installer and transfer it to your machine that serves as the taskbox for installation.
 
    ```bash
-   curl -L -O https://github.com/kubesphere/ks-installer/releases/download/v3.0.0/cluster-configuration.yaml
-   curl -L -O https://github.com/kubesphere/ks-installer/releases/download/v3.0.0/kubesphere-installer.yaml
+   curl -L -O https://github.com/kubesphere/ks-installer/releases/download/v3.1.0/kubesphere-installer.yaml
+   ```
+   
+2. Verify that you have specified your private image registry in `spec.local_registry` in `cluster-configuration.yaml`. Note that if your existing cluster was installed in an air-gapped environment, you may already have this field specified. Otherwise, run the following command to edit `cluster-configuration.yaml` of your existing KubeSphere v3.0.0 cluster and add the private image registry:
+
+   ```
+   kubectl edit cc -n kubesphere-system
    ```
 
-2. Edit `cluster-configuration.yaml` to add your private image registry. For example, `dockerhub.kubekey.local` is the registry address in this tutorial, then use it as the value of `.spec.local_registry` as below:
+   For example, `dockerhub.kubekey.local` is the registry address in this tutorial, then use it as the value of `.spec.local_registry` as below:
 
    ```yaml
    spec:
@@ -117,16 +116,10 @@ Similar to installing KubeSphere on an existing Kubernetes cluster in an online 
      local_registry: dockerhub.kubekey.local # Add this line manually; make sure you use your own registry address.
    ```
 
-   {{< notice note >}}
-
-   You can enable pluggable components in this YAML file to explore more features of KubeSphere. Refer to [Enable Pluggle Components](../../pluggable-components/) for more details.
-
-   {{</ notice >}}
-
 3. Save `cluster-configuration.yaml` after you finish editing it. Replace `ks-installer` with your **own registry address** with the following command:
 
    ```bash
-   sed -i "s#^\s*image: kubesphere.*/ks-installer:.*#        image: dockerhub.kubekey.local/kubesphere/ks-installer:v3.0.0#" kubesphere-installer.yaml
+   sed -i "s#^\s*image: kubesphere.*/ks-installer:.*#        image: dockerhub.kubekey.local/kubesphere/ks-installer:v3.1.0#" kubesphere-installer.yaml
    ```
 
    {{< notice warning >}}
@@ -137,10 +130,10 @@ Similar to installing KubeSphere on an existing Kubernetes cluster in an online 
 
 ## Step 4: Upgrade KubeSphere
 
-Execute the following commands after you make sure that all steps above are completed.
+Execute the following command after you make sure that all steps above are completed.
 
 ```bash
-kubectl apply -f kubesphere-installer.yaml && kubectl apply -f cluster-configuration.yaml
+kubectl apply -f kubesphere-installer.yaml
 ```
 
 ## Step 5: Verify Installation

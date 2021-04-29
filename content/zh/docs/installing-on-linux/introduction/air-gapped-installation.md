@@ -9,11 +9,6 @@ weight: 3130
 
 离线安装几乎与在线安装相同，不同之处是您必须创建一个本地仓库来托管 Docker 镜像。本教程演示了如何在离线环境安装 KubeSphere 和 Kubernetes。
 
-## 视频演示
-
-<video controls="controls" style="width: 100% !important; height: auto !important;">
-  <source type="video/mp4" src="https://kubesphere-docs.pek3b.qingstor.com/website/docs-v3.0/%E5%AE%89%E8%A3%85%E4%B8%8E%E9%83%A8%E7%BD%B2_5_%E7%A6%BB%E7%BA%BF%E9%83%A8%E7%BD%B2%E5%A4%9A%E8%8A%82%E7%82%B9KubeSphere%E9%9B%86%E7%BE%A4.mp4">
-</video>
 
 ## 步骤 1：准备 Linux 主机
 
@@ -145,7 +140,7 @@ docker run -d \
 
 ## 步骤 3：下载 KubeKey
 
-与在 Linux 上在线安装 KubeSphere 相似，您也需要事先[下载 KubeKey](https://github.com/kubesphere/kubekey/releases)。下载 `tar.gz` 文件，将它传输到充当任务机的本地机器上进行安装。解压文件后，执行以下命令，使 `kk` 可执行。
+与在 Linux 上在线安装 KubeSphere 相似，您需要事先[下载 KubeKey v1.1.0](https://github.com/kubesphere/kubekey/releases)。下载 `tar.gz` 文件，将它传输到充当任务机的本地机器上进行安装。解压文件后，执行以下命令，使 `kk` 可执行。
 
 ```bash
 chmod +x kk
@@ -158,19 +153,19 @@ chmod +x kk
 1. 使用以下命令从能够访问互联网的机器上下载镜像清单文件 `images-list.txt`：
 
    ```bash
-   curl -L -O https://github.com/kubesphere/ks-installer/releases/download/v3.0.0/images-list.txt
+   curl -L -O https://github.com/kubesphere/ks-installer/releases/download/v3.1.0/images-list.txt
    ```
 
    {{< notice note >}}
 
-   该文件根据不同的模块列出了 `##+modulename` 下的镜像。您可以按照相同的规则把自己的镜像添加到这个文件中。要查看完整文件，请参见[附录](../air-gapped-installation/#kubesphere-v300-镜像清单)。
+   该文件根据不同的模块列出了 `##+modulename` 下的镜像。您可以按照相同的规则把自己的镜像添加到这个文件中。要查看完整文件，请参见[附录](../air-gapped-installation/#kubesphere-v310-镜像清单)。
 
    {{</ notice >}} 
 
 2. 下载 `offline-installation-tool.sh`。
 
    ```bash
-   curl -L -O https://github.com/kubesphere/ks-installer/releases/download/v3.0.0/offline-installation-tool.sh
+   curl -L -O https://github.com/kubesphere/ks-installer/releases/download/v3.1.0/offline-installation-tool.sh
    ```
 
 3. 使 `.sh` 文件可执行。
@@ -258,7 +253,7 @@ chmod +x kk
 例如：
 
 ```bash
-./kk create config --with-kubesphere -f config-sample.yaml
+./kk create config --with-kubernetes v1.17.9 --with-kubesphere v3.1.0 -f config-sample.yaml
 ```
 
 {{< notice note >}}
@@ -301,7 +296,7 @@ spec:
   controlPlaneEndpoint:
     domain: lb.kubesphere.local
     address: ""
-    port: "6443"
+    port: 6443
   kubernetes:
     version: v1.17.9
     imageRepo: kubesphere
@@ -316,6 +311,7 @@ spec:
     privateRegistry: dockerhub.kubekey.local  # Add the private image registry address here. 
   addons: []
 
+
 ---
 apiVersion: installer.kubesphere.io/v1alpha1
 kind: ClusterConfiguration
@@ -323,34 +319,48 @@ metadata:
   name: ks-installer
   namespace: kubesphere-system
   labels:
-    version: v3.0.0
+    version: v3.1.0
 spec:
-  local_registry: ""
   persistence:
     storageClass: ""
   authentication:
     jwtSecret: ""
+  zone: ""
+  local_registry: ""
   etcd:
-    monitoring: true
+    monitoring: false
     endpointIps: localhost
     port: 2379
     tlsEnable: true
   common:
-    es:
-      elasticsearchDataVolumeSize: 20Gi
-      elasticsearchMasterVolumeSize: 4Gi
-      elkPrefix: logstash
-      logMaxAge: 7
-    mysqlVolumeSize: 20Gi
-    minioVolumeSize: 20Gi
-    etcdVolumeSize: 20Gi
-    openldapVolumeSize: 2Gi
+    redis:
+      enabled: false
     redisVolumSize: 2Gi
+    openldap:
+      enabled: false
+    openldapVolumeSize: 2Gi
+    minioVolumeSize: 20Gi
+    monitoring:
+      endpoint: http://prometheus-operated.kubesphere-monitoring-system.svc:9090
+    es:
+      elasticsearchMasterVolumeSize: 4Gi
+      elasticsearchDataVolumeSize: 20Gi
+      logMaxAge: 7
+      elkPrefix: logstash
+      basicAuth:
+        enabled: false
+        username: ""
+        password: ""
+      externalElasticsearchUrl: ""
+      externalElasticsearchPort: ""
   console:
-    enableMultiLogin: false  # enable/disable multi login
+    enableMultiLogin: true
     port: 30880
   alerting:
     enabled: false
+    # thanosruler:
+    #   replicas: 1
+    #   resources: {}
   auditing:
     enabled: false
   devops:
@@ -368,22 +378,57 @@ spec:
       replicas: 2
   logging:
     enabled: false
-    logsidecarReplicas: 2
+    logsidecar:
+      enabled: true
+      replicas: 2
   metrics_server:
-    enabled: true
+    enabled: false
   monitoring:
+    storageClass: ""
     prometheusMemoryRequest: 400Mi
     prometheusVolumeSize: 20Gi
   multicluster:
-    clusterRole: none  # host | member | none
-  networkpolicy:
-    enabled: false
+    clusterRole: none
+  network:
+    networkpolicy:
+      enabled: false
+    ippool:
+      type: none
+    topology:
+      type: none
   notification:
     enabled: false
   openpitrix:
-    enabled: false
+    store:
+      enabled: false
   servicemesh:
     enabled: false
+  kubeedge:
+    enabled: false
+    cloudCore:
+      nodeSelector: {"node-role.kubernetes.io/worker": ""}
+      tolerations: []
+      cloudhubPort: "10000"
+      cloudhubQuicPort: "10001"
+      cloudhubHttpsPort: "10002"
+      cloudstreamPort: "10003"
+      tunnelPort: "10004"
+      cloudHub:
+        advertiseAddress:
+          - ""
+        nodeLimit: "100"
+      service:
+        cloudhubNodePort: "30000"
+        cloudhubQuicNodePort: "30001"
+        cloudhubHttpsNodePort: "30002"
+        cloudstreamNodePort: "30003"
+        tunnelNodePort: "30004"
+    edgeWatcher:
+      nodeSelector: {"node-role.kubernetes.io/worker": ""}
+      tolerations: []
+      edgeWatcherAgent:
+        nodeSelector: {"node-role.kubernetes.io/worker": ""}
+        tolerations: []
 ```
 
 {{< notice info >}}
@@ -445,149 +490,151 @@ https://kubesphere.io             20xx-xx-xx xx:xx:xx
 
 ## 附录
 
-### KubeSphere v3.0.0 镜像清单
+### KubeSphere v3.1.0 镜像清单
 
 ```txt
 ##k8s-images
-kubesphere/kube-apiserver:v1.17.9          
-kubesphere/kube-scheduler:v1.17.9          
-kubesphere/kube-proxy:v1.17.9              
-kubesphere/kube-controller-manager:v1.17.9 
-kubesphere/kube-apiserver:v1.18.6          
-kubesphere/kube-scheduler:v1.18.6          
-kubesphere/kube-proxy:v1.18.6              
-kubesphere/kube-controller-manager:v1.18.6 
-kubesphere/kube-apiserver:v1.16.13         
-kubesphere/kube-scheduler:v1.16.13         
-kubesphere/kube-proxy:v1.16.13             
-kubesphere/kube-controller-manager:v1.16.13
-kubesphere/kube-apiserver:v1.15.12         
-kubesphere/kube-scheduler:v1.15.12         
-kubesphere/kube-proxy:v1.15.12             
-kubesphere/kube-controller-manager:v1.15.12
-kubesphere/pause:3.1                       
-kubesphere/pause:3.2                       
-kubesphere/etcd:v3.3.12                    
-calico/kube-controllers:v3.15.1            
-calico/node:v3.15.1                        
-calico/cni:v3.15.1                         
-calico/pod2daemon-flexvol:v3.15.1          
-coredns/coredns:1.6.9                      
-kubesphere/k8s-dns-node-cache:1.15.12      
-kubesphere/node-disk-manager:0.5.0         
-kubesphere/node-disk-operator:0.5.0        
-kubesphere/provisioner-localpv:1.10.0      
-kubesphere/linux-utils:1.10.0
+kubesphere/kube-apiserver:v1.20.4
+kubesphere/kube-scheduler:v1.20.4
+kubesphere/kube-proxy:v1.20.4
+kubesphere/kube-controller-manager:v1.20.4
+kubesphere/kube-apiserver:v1.19.8
+kubesphere/kube-scheduler:v1.19.8
+kubesphere/kube-proxy:v1.19.8
+kubesphere/kube-controller-manager:v1.19.8
+kubesphere/kube-apiserver:v1.18.6
+kubesphere/kube-scheduler:v1.18.6
+kubesphere/kube-proxy:v1.18.6
+kubesphere/kube-controller-manager:v1.18.6
+kubesphere/kube-apiserver:v1.17.9
+kubesphere/kube-scheduler:v1.17.9
+kubesphere/kube-proxy:v1.17.9
+kubesphere/kube-controller-manager:v1.17.9
+kubesphere/pause:3.1
+kubesphere/pause:3.2
+kubesphere/etcd:v3.4.13
+calico/cni:v3.16.3
+calico/kube-controllers:v3.16.3
+calico/node:v3.16.3
+calico/pod2daemon-flexvol:v3.16.3
+coredns/coredns:1.6.9
+kubesphere/k8s-dns-node-cache:1.15.12
+openebs/provisioner-localpv:2.3.0
+openebs/linux-utils:2.3.0
 kubesphere/nfs-client-provisioner:v3.1.0-k8s1.11
-
-##ks-core-images
-kubesphere/ks-apiserver:v3.0.0                  
-kubesphere/ks-console:v3.0.0                    
-kubesphere/ks-controller-manager:v3.0.0         
-kubesphere/ks-installer:v3.0.0                  
-kubesphere/etcd:v3.2.18                         
-kubesphere/kubectl:v1.0.0
-kubesphere/ks-upgrade:v3.0.0
-kubesphere/ks-devops:flyway-v3.0.0                       
-redis:5.0.5-alpine                              
-alpine:3.10.4                                   
-haproxy:2.0.4                                   
-mysql:8.0.11                                    
-nginx:1.14-alpine                               
-minio/minio:RELEASE.2019-08-07T01-59-21Z        
-minio/mc:RELEASE.2019-08-07T23-14-43Z           
-mirrorgooglecontainers/defaultbackend-amd64:1.4 
-kubesphere/nginx-ingress-controller:0.24.1      
-osixia/openldap:1.3.0                           
-csiplugin/snapshot-controller:v2.0.1            
-kubesphere/kubefed:v0.3.0                       
-kubesphere/tower:v0.1.0                         
-kubesphere/prometheus-config-reloader:v0.38.3   
-kubesphere/prometheus-operator:v0.38.3          
-prom/alertmanager:v0.21.0                       
-prom/prometheus:v2.20.1                         
-kubesphere/node-exporter:ks-v0.18.1             
-jimmidyson/configmap-reload:v0.3.0              
-kubesphere/notification-manager-operator:v0.1.0 
-kubesphere/notification-manager:v0.1.0          
-kubesphere/metrics-server:v0.3.7                
-kubesphere/kube-rbac-proxy:v0.4.1               
-kubesphere/kube-state-metrics:v1.9.6
-
-##ks-logging-images                 
-kubesphere/elasticsearch-oss:6.7.0-1      
-kubesphere/elasticsearch-curator:v5.7.6 
-kubesphere/fluentbit-operator:v0.2.0       
-kubesphere/fluentbit-operator:migrator     
-kubesphere/fluent-bit:v1.4.6             
-elastic/filebeat:6.7.0  
-kubesphere/kube-auditing-operator:v0.1.0   
-kubesphere/kube-auditing-webhook:v0.1.0    
-kubesphere/kube-events-exporter:v0.1.0     
-kubesphere/kube-events-operator:v0.1.0     
-kubesphere/kube-events-ruler:v0.1.0        
+##csi-images
+csiplugin/csi-neonsan:v1.2.0
+csiplugin/csi-neonsan-ubuntu:v1.2.0
+csiplugin/csi-neonsan-centos:v1.2.0
+csiplugin/csi-provisioner:v1.5.0
+csiplugin/csi-attacher:v2.1.1
+csiplugin/csi-resizer:v0.4.0
+csiplugin/csi-snapshotter:v2.0.1
+csiplugin/csi-node-driver-registrar:v1.2.0
+csiplugin/csi-qingcloud:v1.2.0
+##kubesphere-images
+kubesphere/ks-apiserver:v3.1.0
+kubesphere/ks-console:v3.1.0
+kubesphere/ks-controller-manager:v3.1.0
+kubesphere/ks-installer:v3.1.0
+kubesphere/kubectl:v1.17.0
+kubesphere/kubectl:v1.18.0
+kubesphere/kubectl:v1.19.0
+kubesphere/kubectl:v1.20.0
+redis:5.0.5-alpine
+alpine:3.10.4
+haproxy:2.0.4
+nginx:1.14-alpine
+minio/minio:RELEASE.2019-08-07T01-59-21Z
+minio/mc:RELEASE.2019-08-07T23-14-43Z
+mirrorgooglecontainers/defaultbackend-amd64:1.4
+kubesphere/nginx-ingress-controller:v0.35.0
+osixia/openldap:1.3.0
+csiplugin/snapshot-controller:v2.0.1
+kubesphere/kubefed:v0.7.0
+kubesphere/tower:v0.2.0
+kubesphere/prometheus-config-reloader:v0.42.1
+kubesphere/prometheus-operator:v0.42.1
+prom/alertmanager:v0.21.0
+prom/prometheus:v2.26.0
+prom/node-exporter:v0.18.1
+kubesphere/ks-alerting-migration:v3.1.0
+jimmidyson/configmap-reload:v0.3.0
+kubesphere/notification-manager-operator:v1.0.0
+kubesphere/notification-manager:v1.0.0
+kubesphere/metrics-server:v0.4.2
+kubesphere/kube-rbac-proxy:v0.8.0
+kubesphere/kube-state-metrics:v1.9.7
+openebs/provisioner-localpv:2.3.0
+thanosio/thanos:v0.18.0
+grafana/grafana:7.4.3
+##kubesphere-logging-images
+kubesphere/elasticsearch-oss:6.7.0-1
+kubesphere/elasticsearch-curator:v5.7.6
+kubesphere/fluentbit-operator:v0.5.0
+kubesphere/fluentbit-operator:migrator
+kubesphere/fluent-bit:v1.6.9
+elastic/filebeat:6.7.0
+kubesphere/kube-auditing-operator:v0.1.2
+kubesphere/kube-auditing-webhook:v0.1.2
+kubesphere/kube-events-exporter:v0.1.0
+kubesphere/kube-events-operator:v0.1.0
+kubesphere/kube-events-ruler:v0.2.0
 kubesphere/log-sidecar-injector:1.1
 docker:19.03
-
 ##istio-images
-istio/citadel:1.4.8                         
-istio/galley:1.4.8                          
-istio/kubectl:1.4.8                         
-istio/mixer:1.4.8                           
-istio/pilot:1.4.8                           
-istio/proxyv2:1.4.8                         
-istio/sidecar_injector:1.4.8                
-jaegertracing/jaeger-agent:1.17             
-jaegertracing/jaeger-collector:1.17         
-jaegertracing/jaeger-operator:1.17.1        
+istio/pilot:1.6.10
+istio/proxyv2:1.6.10
+jaegertracing/jaeger-agent:1.17
+jaegertracing/jaeger-collector:1.17
+jaegertracing/jaeger-es-index-cleaner:1.17
+jaegertracing/jaeger-operator:1.17.1
 jaegertracing/jaeger-query:1.17
-jaegertracing/jaeger-es-index-cleaner:1.17.1
-
-##ks-devops-images
-jenkins/jenkins:2.176.2                     
-jenkins/jnlp-slave:3.27-1                   
-kubesphere/jenkins-uc:v3.0.0                
-kubesphere/s2ioperator:v2.1.1               
-kubesphere/s2irun:v2.1.1                    
-kubesphere/builder-base:v2.1.0              
-kubesphere/builder-nodejs:v2.1.0            
-kubesphere/builder-maven:v2.1.0             
-kubesphere/builder-go:v2.1.0                
-kubesphere/s2i-binary:v2.1.0                
-kubesphere/tomcat85-java11-centos7:v2.1.0   
-kubesphere/tomcat85-java11-runtime:v2.1.0   
-kubesphere/tomcat85-java8-centos7:v2.1.0    
-kubesphere/tomcat85-java8-runtime:v2.1.0    
-kubesphere/java-11-centos7:v2.1.0           
-kubesphere/java-8-centos7:v2.1.0            
-kubesphere/java-8-runtime:v2.1.0            
-kubesphere/java-11-runtime:v2.1.0           
-kubesphere/nodejs-8-centos7:v2.1.0          
-kubesphere/nodejs-6-centos7:v2.1.0          
-kubesphere/nodejs-4-centos7:v2.1.0          
-kubesphere/python-36-centos7:v2.1.0         
-kubesphere/python-35-centos7:v2.1.0         
-kubesphere/python-34-centos7:v2.1.0         
+kubesphere/kiali:v1.26.1
+kubesphere/kiali-operator:v1.26.1
+##kubesphere-devops-images
+kubesphere/ks-jenkins:2.249.1
+jenkins/jnlp-slave:3.27-1
+kubesphere/s2ioperator:v3.1.0
+kubesphere/s2irun:v2.1.1
+kubesphere/builder-base:v2.1.0
+kubesphere/builder-nodejs:v2.1.0
+kubesphere/builder-maven:v2.1.0
+kubesphere/builder-go:v2.1.0
+kubesphere/s2i-binary:v2.1.0
+kubesphere/tomcat85-java11-centos7:v2.1.0
+kubesphere/tomcat85-java11-runtime:v2.1.0
+kubesphere/tomcat85-java8-centos7:v2.1.0
+kubesphere/tomcat85-java8-runtime:v2.1.0
+kubesphere/java-11-centos7:v2.1.0
+kubesphere/java-8-centos7:v2.1.0
+kubesphere/java-8-runtime:v2.1.0
+kubesphere/java-11-runtime:v2.1.0
+kubesphere/nodejs-8-centos7:v2.1.0
+kubesphere/nodejs-6-centos7:v2.1.0
+kubesphere/nodejs-4-centos7:v2.1.0
+kubesphere/python-36-centos7:v2.1.0
+kubesphere/python-35-centos7:v2.1.0
+kubesphere/python-34-centos7:v2.1.0
 kubesphere/python-27-centos7:v2.1.0
-kubesphere/notification:flyway_v2.1.2       
-kubesphere/notification:v2.1.2              
-kubesphere/alert-adapter:v3.0.0             
-kubesphere/alerting-dbinit:v3.0.0           
-kubesphere/alerting:v2.1.2
-
+kubesphere/notification:flyway_v2.1.2
+kubesphere/notification:v2.1.2
 ##openpitrix-images
-openpitrix/generate-kubeconfig:v0.5.0       
-openpitrix/openpitrix:flyway-v0.5.0         
-openpitrix/openpitrix:v0.5.0                
-openpitrix/release-app:v0.5.0
-
-##example-images
-kubesphere/examples-bookinfo-productpage-v1:1.13.0
-kubesphere/examples-bookinfo-reviews-v1:1.13.0
-kubesphere/examples-bookinfo-reviews-v2:1.13.0
-kubesphere/examples-bookinfo-reviews-v3:1.13.0
-kubesphere/examples-bookinfo-details-v1:1.13.0
-kubesphere/examples-bookinfo-ratings-v1:1.13.0
+kubesphere/openpitrix-jobs:v3.1.0
+##weave-scope-images
+weaveworks/scope:1.13.0
+##kubeedge-images
+kubeedge/cloudcore:v1.6.1
+kubesphere/edge-watcher:v0.1.0
+kubesphere/kube-rbac-proxy:v0.5.0
+kubesphere/edge-watcher-agent:v0.1.0
+##example-images-images
+kubesphere/examples-bookinfo-productpage-v1:1.16.2
+kubesphere/examples-bookinfo-reviews-v1:1.16.2
+kubesphere/examples-bookinfo-reviews-v2:1.16.2
+kubesphere/examples-bookinfo-reviews-v3:1.16.2
+kubesphere/examples-bookinfo-details-v1:1.16.2
+kubesphere/examples-bookinfo-ratings-v1:1.16.3
 busybox:1.31.1
 joosthofman/wget:1.0
 kubesphere/netshoot:v1.0
@@ -597,17 +644,6 @@ mirrorgooglecontainers/hpa-example:latest
 java:openjdk-8-jre-alpine
 fluent/fluentd:v1.4.2-2.0
 perl:latest
-
-##csi-images
-csiplugin/csi-neonsan:v1.2.0 
-csiplugin/csi-neonsan-ubuntu:v1.2.0
-csiplugin/csi-neonsan-centos:v1.2.0
-csiplugin/csi-provisioner:v1.5.0
-csiplugin/csi-attacher:v2.1.1
-csiplugin/csi-resizer:v0.4.0
-csiplugin/csi-snapshotter:v2.0.1
-csiplugin/csi-node-driver-registrar:v1.2.0
-csiplugin/csi-qingcloud:v1.2.0
 ```
 
 
