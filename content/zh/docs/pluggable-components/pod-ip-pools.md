@@ -16,14 +16,14 @@ weight: 6920
 
 在 Linux 上多节点安装 KubeSphere 时，您需要创建一个配置文件，该文件会列出所有 KubeSphere 组件。
 
-1. 根据[在 Linux 上安装 KubeSphere](../../installing-on-linux/introduction/multioverview/) 教程，您需要创建一个默认文件 `config-sample.yaml`。执行以下命令修改该文件：
+1. [在 Linux 上安装 KubeSphere](../../installing-on-linux/introduction/multioverview/) 时，您需要创建一个默认文件 `config-sample.yaml`。执行以下命令修改该文件：
 
    ```bash
    vi config-sample.yaml
    ```
 
    {{< notice note >}}
-   如果您采用 [All-in-one 安装](../../quick-start/all-in-one-on-linux/)，则不需要创建 `config-sample.yaml` 文件，因为可以直接创建集群。一般来说，All-in-one 模式是为那些刚接触 KubeSphere 并希望熟悉系统的用户而准备的。如果您想在这个模式下启用日志系统（比如用于测试），请参考[下面的部分](#在安装后启用容器组-ip-池)，查看如何在安装后启用容器组 IP 池。
+   如果您采用 [All-in-one 安装](../../quick-start/all-in-one-on-linux/)，则不需要创建 `config-sample.yaml` 文件，因为可以直接创建集群。一般来说，All-in-one 模式针对那些刚接触 KubeSphere 并希望熟悉系统的用户。如果您想在该模式下启用容器组 IP 池（比如用于测试），请参考[下面的部分](#在安装后启用容器组-ip-池)，查看如何在安装后启用容器组 IP 池。
 
    {{</ notice >}}
 
@@ -32,7 +32,7 @@ weight: 6920
    ```yaml
    network:
      ippool:
-       type: calico # 将 “none” 更改为 “calico”。
+       type: calico # 将“none”更改为“calico”。
    ```
 
 3. 使用该配置文件创建一个集群：
@@ -43,7 +43,7 @@ weight: 6920
 
 ### **在 Kubernetes 上安装**
 
-通过[在 Kubernetes 上安装 KubeSphere](../../installing-on-kubernetes/introduction/overview/)，您可以在 [cluster-configuration.yaml](https://github.com/kubesphere/ks-installer/releases/download/v3.1.0/cluster-configuration.yaml) 文件中首先启用容器组 IP 池。
+[在 Kubernetes 上安装 KubeSphere](../../installing-on-kubernetes/introduction/overview/) 时，您可以在 [cluster-configuration.yaml](https://github.com/kubesphere/ks-installer/releases/download/v3.1.0/cluster-configuration.yaml) 文件中首先启用容器组 IP 池。
 
 1. 下载 [cluster-configuration.yaml](https://github.com/kubesphere/ks-installer/releases/download/v3.1.0/cluster-configuration.yaml) 文件并进行编辑。
 
@@ -56,7 +56,7 @@ weight: 6920
     ```yaml
     network:
       ippool:
-        type: calico # 将 “none” 更改为 “calico”。
+        type: calico # 将“none”更改为“calico”。
     ```
 
 3. 执行以下命令开始安装。
@@ -84,7 +84,7 @@ weight: 6920
     ```yaml
     network:
       ippool:
-        type: calico # 将 “none” 更改为 “calico”。
+        type: calico # 将“none”更改为“calico”。
     ```
 
 5. 您可以使用 Web Kubectl 执行以下命令查看安装过程：
@@ -99,7 +99,7 @@ weight: 6920
 
 ## 验证组件的安装
 
-在**集群管理**页面，您可以在**网络管理**下看到**容器组 IP 池**来进行验证。
+在**集群管理**页面，您可以在**网络管理**下看到**容器组 IP 池**。
 
 ![pod-ip-pool](/images/docs/zh-cn/enable-pluggable-components/pod-ip-pools/pod-ip-pool.png)
 
