@@ -87,4 +87,8 @@ section4:
     - icon: "images/partner/webank.jpg"
       partnerType: "App provider"
       content: 'WeBank, The 1st digital bank in China and initiated by Tencent, offers wealth management and financing services through different online platforms.'
+   
+    - icon: "images/partner/cloudnative-community.jpg"
+      partnerType: "Go-to-market"
+      content: 'Cloud Native Community is an neutral, cloud native end user community founded on May 12, 2020 by CNCF ambassadors and open source opinion leaders to promote cloud native technologies and build a developer ecosystem.'
 ---
