@@ -23,7 +23,7 @@ weight: 6920
    ```
 
    {{< notice note >}}
-   如果您采用 [All-in-one 安装](../../quick-start/all-in-one-on-linux/)，则不需要创建 `config-sample.yaml` 文件，因为可以直接创建集群。一般来说，All-in-one 模式是为那些刚接触 KubeSphere 并希望熟悉系统的用户而准备的。如果您想在这个模式下启用日志系统（比如用于测试），请参考[下面的部分](#在安装后启用容器组-ip-池)，查看如何在安装后启用服务拓扑图。
+   如果您采用 [All-in-one 安装](../../quick-start/all-in-one-on-linux/)，则不需要创建 `config-sample.yaml` 文件，因为可以直接创建集群。一般来说，All-in-one 模式是为那些刚接触 KubeSphere 并希望熟悉系统的用户而准备的。如果您想在这个模式下启用日志系统（比如用于测试），请参考[下面的部分](#在安装后启用容器组-ip-池)，查看如何在安装后启用容器组 IP 池。
 
    {{</ notice >}}
 
