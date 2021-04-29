@@ -1,66 +1,65 @@
 ---
-title: "服务拓扑"
-keywords: "Kubernetes, KubeSphere, 服务, 拓扑"
-description: "了解如何启用服务拓扑，基于 Weave Scope 查看 Pod 的上下文详情。"
-linkTitle: "服务拓扑"
+title: "服务拓扑图"
+keywords: "Kubernetes, KubeSphere, 服务, 拓扑图"
+description: "了解如何启用服务拓扑图，以基于 Weave Scope 查看 Pod 的上下文详情。"
+linkTitle: "服务拓扑图"
 weight: 6915
 ---
 
-## 什么是服务拓扑
+## 什么是服务拓扑图
 
-You can enable Service Topology to integrate [Weave Scope](https://www.weave.works/oss/scope/), a visualization and monitoring tool for Docker and Kubernetes. Weave Scope uses established APIs to collect information to build a topology of your apps and containers. The Service topology displays in your project, providing you with visual representations of connections based on traffic.
+您可以启用服务拓扑图以集成 [Weave Scope](https://www.weave.works/oss/scope/)（ Docker 和 Kubernetes 的可视化和监控工具）。Weave Scope 使用既定的 API 收集信息，为应用和容器构建拓扑图。服务拓扑图将显示在您的项目中，为您提供基于流量的连接的可视化呈现。
 
-您可以启用服务拓扑来集成 [Weave Scope](https://www.weave.works/oss/scope/)（ Docker 和 Kubernetes 的可视化和监控工具）。Weave Scope 使用已建立的 API 收集信息，为应用和容器建立拓扑。服务拓扑将显示在您的项目中，为您提供基于流量的直观连接表示。
+## 安装前启用服务拓扑图
 
-## Enable Service Topology before Installation
+### 在 Linux 上安装
 
-### Installing on Linux
+在 Linux 上多节点安装 KubeSphere 时，您需要创建一个配置文件，该文件会列出所有 KubeSphere 组件。
 
-When you implement multi-node installation of KubeSphere on Linux, you need to create a configuration file, which lists all KubeSphere components.
-
-1. In the tutorial of [Installing KubeSphere on Linux](../../installing-on-linux/introduction/multioverview/), you create a default file `config-sample.yaml`. Modify the file by executing the following command:
+1. 根据[在 Linux 上安装 KubeSphere](../../installing-on-linux/introduction/multioverview/) 教程，您需要创建一个默认文件 `config-sample.yaml`。执行以下命令修改该文件：
 
    ```bash
    vi config-sample.yaml
    ```
 
    {{< notice note >}}
-   If you adopt [All-in-One Installation](../../quick-start/all-in-one-on-linux/), you do not need to create a `config-sample.yaml` file as you can create a cluster directly. Generally, the all-in-one mode is for users who are new to KubeSphere and look to get familiar with the system. If you want to enable Service Topology in this mode (e.g. for testing purposes), refer to [the following section](#enable-service-topology-after-installation) to see how Service Topology can be installed after installation.
+   如果您采用 [All-in-one 安装](../../quick-start/all-in-one-on-linux/)，则不需要创建 `config-sample.yaml` 文件，因为可以直接创建集群。一般来说，All-in-one 模式是为那些刚接触 KubeSphere 并希望熟悉系统的用户而准备的。如果您想在这个模式下启用日志系统（比如用于测试），请参考[下面的部分](#在安装后启用服务拓扑图)，查看如何在安装后启用服务拓扑图。
+
    {{</ notice >}}
 
-2. In this file, navigate to `network.topology.type` and change `none` to `weave-scope`. Save the file after you finish.
+2. 在该文件中，搜寻到 `network.topology.type`，然后将 `none` 改为 `weave-scope`。完成后保存文件。
 
    ```yaml
    network:
      topology:
-       type: weave-scope # Change "none" to "weave-scope".
+       type: weave-scope # 将 “none” 更改为 “weave-scope”。
    ```
 
-3. Create a cluster using the configuration file:
+3. 使用该配置文件创建一个集群：
 
    ```bash
    ./kk create cluster -f config-sample.yaml
    ```
 
-### **Installing on Kubernetes**
+### **在 Kubernetes 上安装**
 
-As you [install KubeSphere on Kubernetes](../../installing-on-kubernetes/introduction/overview/), you can enable Service Topology first in the [cluster-configuration.yaml](https://github.com/kubesphere/ks-installer/releases/download/v3.0.0/cluster-configuration.yaml) file.
+通过[在 Kubernetes 上安装 KubeSphere](../../installing-on-kubernetes/introduction/overview/)，您可以在 [cluster-configuration.yaml](https://github.com/kubesphere/ks-installer/releases/download/v3.0.0/cluster-configuration.yaml) 文件中首先启用服务拓扑图。
 
-1. Download the file [cluster-configuration.yaml](https://github.com/kubesphere/ks-installer/releases/download/v3.0.0/cluster-configuration.yaml) and edit it.
+1. 下载 [cluster-configuration.yaml](https://github.com/kubesphere/ks-installer/releases/download/v3.0.0/cluster-configuration.yaml) 文件并进行编辑。
 
     ```bash
     vi cluster-configuration.yaml
     ```
 
-2. In this local `cluster-configuration.yaml` file, navigate to `network.topology.type` and enable it by changing `none` to `weave-scope`. Save the file after you finish.
+2. 在本地 `cluster-configuration.yaml` 文件中，搜寻到 `network.topology.type`，将 `none` 更改为 `weave-scope`以启用服务拓扑图。完成后保存文件。
 
     ```yaml
     network:
       topology:
-        type: weave-scope # Change "none" to "weave-scope".
+        type: weave-scope # 将 “none” 更改为 “weave-scope”。
     ```
 
-3. Execute the following commands to start installation:
+3. 执行以下命令开始安装。
 
     ```bash
     kubectl apply -f https://github.com/kubesphere/ks-installer/releases/download/v3.0.0/kubesphere-installer.yaml
@@ -68,57 +67,57 @@ As you [install KubeSphere on Kubernetes](../../installing-on-kubernetes/introdu
     ```
 
 
-## Enable Service Topology after Installation
+## 在安装后启用服务拓扑图
 
-1. Log in to the console as `admin`. Click **Platform** in the top-left corner and select **Cluster Management**.
+1. 使用 `admin` 用户登录控制台。点击左上角的**平台管理**，然后选择**集群管理**。
 
-2. Click **CRDs** and enter `clusterconfiguration` in the search bar. Click the result to view its detail page.
+2. 点击**自定义资源 CRD** ，然后在搜索栏中输入 `clusterconfiguration`。点击搜索结果查看其详情页。
 
     {{< notice info >}}
-A Custom Resource Definition (CRD) allows users to create a new type of resources without adding another API server. They can use these resources like any other native Kubernetes objects.
+自定义资源定义 (CRD) 允许用户在不新增 API 服务器的情况下创建一种新的资源类型，用户可以像使用其他 Kubernetes 原生对象一样使用这些自定义资源。
     {{</ notice >}}
 
-3. In **Resource List**, click the three dots on the right of `ks-installer` and select **Edit YAML**.
+3. 在**资源列表**中，点击 `ks-installer` 右侧的三个点，然后选择**编辑配置文件**。
 
-4. In this YAML file, navigate to `network` and change `network.topology.type` to `weave-scope`. After you finish, click **Update** in the bottom-right corner to save the configuration.
+4. 在该配置文件中，搜寻到 `network`，将 `network.topology.type` 改为 `weave-scope`。完成后，点击右下角的**更新**保存配置。
 
     ```yaml
     network:
       topology:
-        type: weave-scope # Change "none" to "weave-scope".
+        type: weave-scope # 将 “none” 更改为 “weave-scope”。
     ```
 
-5. You can use the web kubectl to check the installation process by executing the following command:
+5. 您可以使用 Web Kubectl 执行以下命令查看安装过程：
 
     ```bash
     kubectl logs -n kubesphere-system $(kubectl get pod -n kubesphere-system -l app=ks-install -o jsonpath='{.items[0].metadata.name}') -f
     ```
 
     {{< notice tip >}}
-You can find the web kubectl tool by clicking the hammer icon in the bottom-right corner of the console.
+您可以通过点击控制台右下角的锤子图标来找到 Web kubectl 工具。
     {{</ notice >}}
 
-## Verify the Installation of the Component
+## 验证组件的安装
 
 {{< tabs >}}
 
-{{< tab "Verify the component on the dashboard" >}}
+{{< tab "在仪表板中验证组件的安装" >}}
 
-Go to one of your project, navigate to **Services** under **Application Workloads**, and you can see a topology of your **Services** on the **Topology** tab.
+进入一个项目中，导航到**应用负载**下的**服务**，即可看到**拓扑图**选项卡下**服务**的拓扑图。
 
-![topology](/images/docs/enable-pluggable-components/service-topology/topology.png)
+![topology1](/images/docs/zh-cn/enable-pluggable-components/service-topology/topology1.png)
 
 {{</ tab >}}
 
-{{< tab "Verify the component through kubectl" >}}
+{{< tab "通过 Kubectl 验证组件的安装" >}}
 
-Execute the following command to check the status of Pods:
+执行以下命令来检查 Pod 的状态：
 
 ```bash
 kubectl get pod -n weave
 ```
 
-The output may look as follows if the component runs successfully:
+如果组件运行成功，输出结果可能如下：
 
 ```bash
 NAME                                        READY   STATUS    RESTARTS   AGE
