@@ -12,7 +12,7 @@ KubeSphere v3.1.0 is compatible with Kubernetes 1.17.x, 1.18.x, 1.19.x and 1.20.
 
 - Before you upgrade your cluster to KubeSphere v3.1.0, you need to have a KubeSphere cluster running v3.0.0.
 - If your exiting KubeSphere v3.0.0 cluster is installed on Kubernetes 1.17.x+, you can choose to only upgrade KubeSphere to v3.1.0 or upgrade Kubernetes (to a higher version) and KubeSphere (to v3.1.0) at the same time.
-- If your existing KubeSphere v3.0.0 cluster is installed on Kubernetes 1.16.x or earlier, you have to upgrade Kubernetes (to 1.17.x+) and KubeSphere (to v3.1.0 ) at the same time.
+- If your existing KubeSphere v3.0.0 cluster is installed on Kubernetes 1.16.x or earlier, you have to upgrade Kubernetes (to 1.17.x+) and KubeSphere (to v3.1.0) at the same time.
 
 ## Before the Upgrade
 

@@ -5,23 +5,15 @@ description: "使用离线包升级 Kubernetes 和 KubeSphere。"
 linkTitle: "使用 KubeKey 离线升级"
 weight: 7400
 ---
-对于 KubeSphere 和 Kubernetes 都是通过 [All-in-One 安装](https://v2-1.docs.kubesphere.io/docs/zh-CN/installation/all-in-one/)或者[多节点安装](https://v2-1.docs.kubesphere.io/docs/zh-CN/installation/multi-node/)来部署的用户，推荐使用 KubeKey 离线升级。如果您的 Kubernetes 集群由云厂商托管或自行配置，请参考[使用 ks-installer 离线升级](../air-gapped-upgrade-with-ks-installer/)。
+对于 KubeSphere 和 Kubernetes 都是通过 [KubeKey](../../installing-on-linux/introduction/kubekey/) 部署的用户，推荐使用 KubeKey 离线升级。如果您的 Kubernetes 集群由云厂商托管或自行配置，请参考[使用 ks-installer 离线升级](../air-gapped-upgrade-with-ks-installer/)。
 
 ## 准备工作
 
-1. 您需要有一个运行在 v2.1.1 版本的 KubeSphere 集群。如果您的 KubeSphere 是 v2.1.0 或更早的版本，请先升级至 v2.1.1。
-
-2. Docker 仓库。您需要有一个 Harbor 或其他 Docker 仓库。有关更多信息，请参见[准备一个私有镜像仓库](../../installing-on-linux/introduction/air-gapped-installation/#步骤-2准备一个私有镜像仓库)。
-
-3. 请确保每个节点都可以从该 Docker 仓库拉取镜像或向其推送镜像。
-
-4. 请仔细阅读 [v3.0.0 发布说明](../../release/release-v300/)。
-
-   {{< notice warning >}}
-
-   在 v3.0.0 版本中，KubeSphere 重构了许多组件，例如 Fluent Bit Operator 和 IAM。如果您的这些组件有深度自定义配置（并非通过 KubeSphere 控制台配置），请务必先备份重要组件。
-
-   {{</ notice >}}
+- 您需要有一个运行 KubeSphere v3.0.0 的集群。如果您的 KubeSphere 是 v2.1.1 或更早的版本，请先升级至 v3.0.0。
+- 请仔细阅读 [Release Notes for 3.1.0](../../release/release-v310/)。
+- 提前备份所有重要的组件。
+- Docker 仓库。您需要有一个 Harbor 或其他 Docker 仓库。有关更多信息，请参见[准备一个私有镜像仓库](../../installing-on-linux/introduction/air-gapped-installation/#步骤-2准备一个私有镜像仓库)。
+- 请确保每个节点都可以从该 Docker 仓库拉取镜像或向其推送镜像。
 
 
 ## 升级 KubeSphere 和 Kubernetes
@@ -30,8 +22,7 @@ weight: 7400
 
 {{< notice info >}}
 
-- 升级 Kubernetes 将使 Helm 从 v2 升级到 v3。如果您想继续使用 Helm2，请先备份它：`cp /usr/local/bin/helm /usr/local/bin/helm2`。
-- 当升级 Kubernetes 时，KubeKey 将从一个小版本升级到下一个小版本，直到目标版本。例如，您会发现升级过程是从 1.16 先升级到 1.17 然后再升级到 1.18，而不是直接从 1.16 升级到 1.18。
+当升级 Kubernetes 时，KubeKey 将从一个小版本升级到下一个小版本，直到目标版本。例如，您会发现升级过程是从 1.16 先升级到 1.17 然后再升级到 1.18，而不是直接从 1.16 升级到 1.18。
 
 {{</ notice >}}
 
@@ -55,7 +46,7 @@ weight: 7400
 
 ### 步骤 1：下载 KubeKey
 
-与在 Linux 上在线安装 KubeSphere 相似，您也需要事先[下载 KubeKey](https://github.com/kubesphere/kubekey/releases)。下载 `tar.gz` 文件，将它传输到充当任务机的本地机器上进行安装。解压文件后，执行以下命令，使 `kk` 可执行：
+与在 Linux 上在线安装 KubeSphere 相似，您需要事先[下载 KubeKey v1.1.0](https://github.com/kubesphere/kubekey/releases)。下载 `tar.gz` 文件，将它传输到充当任务机的本地机器上进行安装。解压文件后，执行以下命令，使 `kk` 可执行：
 
 ```bash
 chmod +x kk
@@ -68,19 +59,19 @@ chmod +x kk
 1. 使用以下命令从能够访问互联网的机器上下载镜像清单文件 `images-list.txt`：
 
    ```bash
-   curl -L -O https://github.com/kubesphere/ks-installer/releases/download/v3.0.0/images-list.txt
+   curl -L -O https://github.com/kubesphere/ks-installer/releases/download/v3.1.0/images-list.txt
    ```
 
    {{< notice note >}}
 
-   该文件根据不同的模块列出了 `##+modulename` 下的镜像。您可以按照相同的规则把自己的镜像添加到这个文件中。要查看完整文件，请参见[附录](../../installing-on-linux/introduction/air-gapped-installation/#kubesphere-v300-镜像清单)。
+   该文件根据不同的模块列出了 `##+modulename` 下的镜像。您可以按照相同的规则把自己的镜像添加到这个文件中。要查看完整文件，请参见[附录](../../installing-on-linux/introduction/air-gapped-installation/#kubesphere-v310-镜像清单)。
 
    {{</ notice >}} 
 
 2. 下载 `offline-installation-tool.sh`。
 
    ```bash
-   curl -L -O https://github.com/kubesphere/ks-installer/releases/download/v3.0.0/offline-installation-tool.sh
+   curl -L -O https://github.com/kubesphere/ks-installer/releases/download/v3.1.0/offline-installation-tool.sh
    ```
 
 3. 使 `.sh` 文件可执行。
@@ -167,8 +158,8 @@ chmod +x kk
 
 |        | Kubernetes | KubeSphere |
 | ------ | ---------- | ---------- |
-| 升级前 | v1.16.13   | v2.1.1     |
-| 升级后 | v1.17.9    | v3.0.0     |
+| 升级前 | v1.16.13   | v3.0.0     |
+| 升级后 | v1.17.9    | v3.1.0     |
 
 #### 升级集群
 
@@ -185,7 +176,7 @@ chmod +x kk
 例如：
 
 ```bash
-./kk create config --with-kubernetes v1.17.9  --with-kubesphere v3.0.0 -f config-sample.yaml
+./kk create config --with-kubernetes v1.17.9 --with-kubesphere v3.1.0 -f config-sample.yaml
 ```
 
 {{< notice note >}}
@@ -226,7 +217,7 @@ chmod +x kk
     privateRegistry: dockerhub.kubekey.local
 ```
 
-#### 将单节点集群升级至 KubeSphere v3.0.0 和 Kubernetes v1.17.9（默认）
+#### 将单节点集群升级至 KubeSphere v3.1.0 和 Kubernetes v1.17.9
 
 ```bash
 ./kk upgrade -f config-sample.yaml
@@ -234,10 +225,10 @@ chmod +x kk
 
 要将 Kubernetes 升级至特定版本，可以在 `--with-kubernetes` 标志后明确指定版本号。以下是可用版本：
 
-- v1.15.12
-- v1.16.8、v1.16.10、v1.16.12、v1.16.13
-- v1.17.0、v1.17.4、v1.17.5、v1.17.6、v1.17.7、v1.17.8、v1.17.9
-- v1.18.3、v1.18.5、v1.18.6
+- v1.17.0, v1.17.4, v1.17.5, v1.17.6, v1.17.7, v1.17.8, v1.17.9
+- v1.18.3, v1.18.5, v1.18.6, v1.18.8
+- v1.19.0, v1.19.8, v1.19.9
+- v1.20.4
 
 
 ### 离线升级多节点集群
@@ -255,8 +246,8 @@ chmod +x kk
 
 |        | Kubernetes | KubeSphere |
 | ------ | ---------- | ---------- |
-| 升级前 | v1.16.13   | v2.1.1     |
-| 升级后 | v1.17.9    | v3.0.0     |
+| 升级前 | v1.16.13   | v3.0.0     |
+| 升级后 | v1.17.9    | v3.1.0     |
 
 #### 升级集群
 
@@ -273,7 +264,7 @@ chmod +x kk
 例如：
 
 ```bash
-./kk create config --with-kubernetes v1.17.9  --with-kubesphere v3.0.0 -f config-sample.yaml
+./kk create config --with-kubernetes v1.17.9 --with-kubesphere v3.1.0 -f config-sample.yaml
 ```
 
 {{< notice note >}}
@@ -316,7 +307,7 @@ chmod +x kk
     privateRegistry: dockerhub.kubekey.local
 ```
 
-#### 将多节点集群升级至 KubeSphere v3.0.0 和 Kubernetes v1.17.9（默认）
+#### 将多节点集群升级至 KubeSphere v3.1.0 和 Kubernetes v1.17.9
 
 ```bash
 ./kk upgrade -f config-sample.yaml
@@ -324,8 +315,8 @@ chmod +x kk
 
 要将 Kubernetes 升级至特定版本，可以在 `--with-kubernetes` 标志后明确指定版本号。以下是可用版本：
 
-- v1.15.12
-- v1.16.8、v1.16.10、v1.16.12、v1.16.13
-- v1.17.0、v1.17.4、v1.17.5、v1.17.6、v1.17.7、v1.17.8、v1.17.9
-- v1.18.3、v1.18.5、v1.18.6
+- v1.17.0, v1.17.4, v1.17.5, v1.17.6, v1.17.7, v1.17.8, v1.17.9
+- v1.18.3, v1.18.5, v1.18.6, v1.18.8
+- v1.19.0, v1.19.8, v1.19.9
+- v1.20.4
 
