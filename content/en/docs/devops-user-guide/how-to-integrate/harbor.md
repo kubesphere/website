@@ -73,7 +73,7 @@ You have to configure Docker to disregard security for your Harbor registry.
 
    {{< notice note >}}
 
-   It is suggested that you use this solution for isolated testing or in a tightly controlled, air-gapped environment. For more information, refer to [Deploy a plain HTTP registry](https://docs.docker.com/registry/insecure/#deploy-a-plain-http-registry). After you finish the above operations, you can also use the images in your Harbor registry when deploying workloads in your project. You need to create an image Secret for your Harbor registry, and then select your Harbor registry and enter the absolute path of your images in the **Container Image** tab to search for images.
+   It is suggested that you use this solution for isolated testing or in a tightly controlled, air-gapped environment. For more information, refer to [Deploy a plain HTTP registry](https://docs.docker.com/registry/insecure/#deploy-a-plain-http-registry). After you finish the above operations, you can also use the images in your Harbor registry when deploying workloads in your project. You need to create an image Secret for your Harbor registry, and then select your Harbor registry and enter the absolute path of your images in **Container Settings** under the **Container Image** tab to search for your images.
 
    {{</ notice >}}
 
