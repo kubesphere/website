@@ -118,3 +118,7 @@
   translation: Join Slack
 - id: Join Wechat
   translation: Scan the QR code
+- id: Cookie Statement
+  translation: Your privacy is important to us. We use cookies to remember subscription details, optimize site functionality, and deliver content tailored to your interests. To find out more, see our <a href="{{.}}">privacy policy</a>.
+- id: Accept and continue
+  translation: Accept and continue

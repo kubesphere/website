@@ -91,6 +91,17 @@
         </div>
     </div>
 
+    <div class="cookie">
+        <div class="common-layout">
+            <p>
+                {{ i18n "Cookie Statement" ("/privacy" | relLangURL) | safeHTML }}
+              </p>
+              <button>
+                {{ i18n "Accept and continue" }}
+              </button>
+        </div>
+    </div>
+
 </footer>
 
 <script>
@@ -157,8 +168,34 @@
         }
     }
 
+    var docCookies = {
+        getItem: function (sKey) {
+            return decodeURIComponent(document.cookie.replace(new RegExp("(?:(?:^|.*;)\\s*" + encodeURIComponent(sKey).replace(/[-.+*]/g, "\\$&") + "\\s*\\=\\s*([^;]*).*$)|^.*$"), "$1")) || null;
+        },
+        setItem: function (sKey, sValue) {
+            if (!sKey || /^(?:expires|max\-age|path|domain|secure)$/i.test(sKey)) { return false; }
+            document.cookie = encodeURIComponent(sKey) + "=" + encodeURIComponent(sValue)
+            return true;
+        },
+    };
+
+    var bindHideCookie = function() {
+        var hasAuth = docCookies.getItem("hasAuth")
+        var cookieElement = $('.cookie')
+        if (hasAuth) {
+            cookieElement.hide()
+        } else {
+            cookieElement.show()
+        }
+        cookieElement.find('button').on('click', function() {
+            docCookies.setItem("hasAuth", '1')
+            cookieElement.hide()
+        })
+    }
+
     bindAddPadding()
     // bindLayLoad()
     bindSubmit()
     bindHideMessage()
+    bindHideCookie()
 </script>

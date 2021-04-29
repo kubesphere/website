@@ -118,3 +118,7 @@
   translation: 加入 Slack
 - id: Join Wechat
   translation: 扫码加入微信群
+- id: Cookie Statement
+  translation: 您的隐私对我们很重要。我们使用Cookie来记住订阅详细信息，优化网站功能并交付根据您的兴趣量身定制的内容。要了解更多信息，请参阅我们的<a href="{{.}}">隐私政策</a>.
+- id: Accept and continue
+  translation: 接受并继续
