@@ -270,7 +270,7 @@ The account `project-admin` needs to be created in advance since it is the revie
 
    | Environment | URL | Namespace | Deployment | Service |
    | :--- | :--- | :--- | :--- | :--- |
-   | Development | `http://{NodeIP}:{$30861}` | kubesphere-sample-dev | ks-sample-dev | ks-sample-dev |
+   | Development | `http://{$NodeIP}:{$30861}` | kubesphere-sample-dev | ks-sample-dev | ks-sample-dev |
    | Production | `http://{$NodeIP}:{$30961}` | kubesphere-sample-prod | ks-sample | ks-sample |
 
    #### Deployments

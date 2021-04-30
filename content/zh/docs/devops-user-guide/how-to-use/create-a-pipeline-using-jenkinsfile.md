@@ -270,7 +270,7 @@ KubeSphere 中可以创建两种类型的流水线：一种是本教程中介绍
 
    | 环境 | URL | 命名空间 | 部署 | 服务 |
    | :--- | :--- | :--- | :--- | :--- |
-   | Development | `http://{NodeIP}:{$30861}` | kubesphere-sample-dev | ks-sample-dev | ks-sample-dev |
+   | Development | `http://{$NodeIP}:{$30861}` | kubesphere-sample-dev | ks-sample-dev | ks-sample-dev |
    | Production | `http://{$NodeIP}:{$30961}` | kubesphere-sample-prod | ks-sample | ks-sample |
 
    #### 部署
