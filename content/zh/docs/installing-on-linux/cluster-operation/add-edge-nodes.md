@@ -32,7 +32,7 @@ After an edge node joins your cluster, the native KubeEdge cloud component requi
 
 ## 配置边缘节点
 
-You need to install a container runtime and configure EdgeMesh on your edge node.您需要在边缘节点上安装容器运行时并配置 EdgeMesh。
+您需要在边缘节点上安装容器运行时并配置 EdgeMesh。
 
 ### 安装容器运行时
 
@@ -76,7 +76,9 @@ You need to install a container runtime and configure EdgeMesh on your edge node
 
 To make sure edge nodes can successfully talk to your cluster, you must forward ports for outside traffic to get into your network. Specifically, map an external port to the corresponding internal IP address (master node) and port based on the table below. Besides, you also need to create firewall rules to allow traffic to these ports (`10000` to `10004`).
 
-| 字段                | 外部端口 | 字段                    | 内部端口 |
+如需确保边缘节点可以成功地与集群通信，您必须转发端口，以便外部流量进入您的网络。具体来说，根据下表将外网端口映射到相应的内网 IP 地址（主节点）和端口。此外，您还需要创建防火墙规则以允许流量进入这些端口（`10000` 至 `10004`）。
+
+| 字段                | 外网端口 | 字段                    | 内网端口 |
 | ------------------- | -------- | ----------------------- | -------- |
 | `cloudhubPort`      | `10000`  | `cloudhubNodePort`      | `30000`  |
 | `cloudhubQuicPort`  | `10001`  | `cloudhubQuicNodePort`  | `30001`  |
