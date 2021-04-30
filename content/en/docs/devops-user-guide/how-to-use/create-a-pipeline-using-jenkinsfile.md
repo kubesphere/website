@@ -65,9 +65,13 @@ There are eight stages as shown below in this example pipeline.
 
    ![sonar-token](/images/docs/devops-user-guide/using-devops/create-a-pipeline-using-a-jenkinsfile/sonar-token.jpg)
 
-3. In total, you have four credentials in the list.
+3. You also need to create a GitHub personal access token with the permission as shown in the below image, and then use the generated token to create another Account Credentials, for example, `github-token`, in your DevOps project. 
 
-   ![credential-list](/images/docs/devops-user-guide/using-devops/create-a-pipeline-using-a-jenkinsfile/credential-list.jpg)
+   ![github-token-scope](/images/docs/devops-user-guide/using-devops/create-a-pipeline-using-a-jenkinsfile/github-token-scope.png)
+
+4. In total, you have five credentials in the list.
+
+   ![credential-list](/images/docs/devops-user-guide/using-devops/create-a-pipeline-using-a-jenkinsfile/credential-list.png)
 
 ### Step 2: Modify the Jenkinsfile in your GitHub repository
 
@@ -77,7 +81,7 @@ There are eight stages as shown below in this example pipeline.
 
 2. In your own GitHub repository of **devops-java-sample**, click the file `Jenkinsfile-online` in the root directory.
 
-   ![jenkins-edit-1](/images/docs/devops-user-guide/using-devops/create-a-pipeline-using-a-jenkinsfile/jenkins-edit-1.jpg)
+   ![jenkins-edit-1](/images/docs/devops-user-guide/using-devops/create-a-pipeline-using-a-jenkinsfile/jenkins-edit-1.png)
 
 3. Click the edit icon on the right to edit environment variables.
 
@@ -123,7 +127,7 @@ The account `project-admin` needs to be created in advance since it is the revie
 
 2. After those projects are created, they will be listed in the project list as below:
 
-   ![project-list](/images/docs/devops-user-guide/using-devops/create-a-pipeline-using-a-jenkinsfile/project-list.jpg)
+   ![project-list](/images/docs/devops-user-guide/using-devops/create-a-pipeline-using-a-jenkinsfile/project-list.png)
 
 ### Step 4: Create a pipeline
 
@@ -133,17 +137,15 @@ The account `project-admin` needs to be created in advance since it is the revie
 
 2. Provide the basic information in the dialog that appears. Name it `jenkinsfile-in-scm` and select a code repository.
 
-   ![create-pipeline-2](/images/docs/devops-user-guide/using-devops/create-a-pipeline-using-a-jenkinsfile/create-pipeline-2.jpg)
+   ![create-pipeline-2](/images/docs/devops-user-guide/using-devops/create-a-pipeline-using-a-jenkinsfile/create-pipeline-2.png)
 
-3. In the tab **GitHub**, click **Get Token** to generate a new GitHub token if you do not have one. Paste the token to the box and click **Confirm**.
+3. In the **GitHub** tab, select **github-token** from the drop-down list, and then click **Confirm** to select your repository.
 
-   ![generate-github-token-1](/images/docs/devops-user-guide/using-devops/create-a-pipeline-using-a-jenkinsfile/generate-github-token-1.jpg)
+   ![select-token](/images/docs/devops-user-guide/using-devops/create-a-pipeline-using-a-jenkinsfile/select-token.png)
 
-   ![generate-github-token-2](/images/docs/devops-user-guide/using-devops/create-a-pipeline-using-a-jenkinsfile/generate-github-token-2.jpg)
+4. Choose your GitHub account. All the repositories related to this token will be listed on the right. Select **devops-java-sample** and click **Select This Repository**. Click **Next** to continue.
 
-4. Choose your GitHub account. All the repositories related to this token will be listed on the right. Select **devops-java-sample** and click **Select this repo**. Click **Next** to continue.
-
-   ![select-repo](/images/docs/devops-user-guide/using-devops/create-a-pipeline-using-a-jenkinsfile/select-repo.jpg)
+   ![select-repo](/images/docs/devops-user-guide/using-devops/create-a-pipeline-using-a-jenkinsfile/select-repo.png)
 
 5. In **Advanced Settings**, check the box next to **Discard old branch**. In this tutorial, you can use the default value of **Days to keep old branches** and **Maximum number branches to keep**.
 
@@ -163,7 +165,7 @@ The account `project-admin` needs to be created in advance since it is the revie
 
 6. In **Behavioral strategy**, KubeSphere offers three strategies by default. You can delete **Discover PR from Forks** as this strategy will not be used in this example. You do not need to change the setting and can use the default value directly.
 
-   ![remove-behavioral-strategy](/images/docs/devops-user-guide/using-devops/create-a-pipeline-using-a-jenkinsfile/remove-behavioral-strategy.jpg)
+   ![remove-behavioral-strategy](/images/docs/devops-user-guide/using-devops/create-a-pipeline-using-a-jenkinsfile/remove-behavioral-strategy.png)
 
    As a Jenkins pipeline runs, the Pull Request (PR) submitted by developers will also be regarded as a separate branch.
 
@@ -203,11 +205,11 @@ The account `project-admin` needs to be created in advance since it is the revie
 
 1. After a pipeline is created, it displays in the list below. Click it to go to its detail page.
 
-   ![pipeline-list](/images/docs/devops-user-guide/using-devops/create-a-pipeline-using-a-jenkinsfile/pipeline-list.jpg)
+   ![pipeline-list](/images/docs/devops-user-guide/using-devops/create-a-pipeline-using-a-jenkinsfile/pipeline-list.png)
 
 2. Under **Activity**, three branches are being scanned. Click **Run** on the right and the pipeline runs based on the behavioral strategy you set. Select **sonarqube** from the drop-down list and add a tag number such as `v0.0.2`. Click **OK** to trigger a new activity.
 
-   ![pipeline-detail](/images/docs/devops-user-guide/using-devops/create-a-pipeline-using-a-jenkinsfile/pipeline-detail.jpg)
+   ![pipeline-detail](/images/docs/devops-user-guide/using-devops/create-a-pipeline-using-a-jenkinsfile/pipeline-detail.png)
 
    ![tag-name](/images/docs/devops-user-guide/using-devops/create-a-pipeline-using-a-jenkinsfile/tag-name.jpg)
 
@@ -220,7 +222,7 @@ The account `project-admin` needs to be created in advance since it is the revie
 
 3. Wait for a while and you can see some activities stop and some fail. Click the first one to view details.
 
-   ![activity-failure](/images/docs/devops-user-guide/using-devops/create-a-pipeline-using-a-jenkinsfile/activity-failure.jpg)
+   ![activity-failure](/images/docs/devops-user-guide/using-devops/create-a-pipeline-using-a-jenkinsfile/activity-faliure.png)
 
    {{< notice note >}}
 
@@ -230,7 +232,7 @@ The account `project-admin` needs to be created in advance since it is the revie
 
 4. The pipeline pauses at the stage `deploy to dev`. You need to click **Proceed** manually. Note that the pipeline will be reviewed three times as `deploy to dev`, `push with tag`, and `deploy to production` are defined in the Jenkinsfile respectively.
 
-   ![pipeline-proceed](/images/docs/devops-user-guide/using-devops/create-a-pipeline-using-a-jenkinsfile/pipeline-proceed.jpg)
+   ![pipeline-proceed](/images/docs/devops-user-guide/using-devops/create-a-pipeline-using-a-jenkinsfile/pipeline-proceed.png)
 
    In a development or production environment, it requires someone who has higher authority (e.g. release manager) to review the pipeline, images, as well as the code analysis result. They have the authority to determine whether the pipeline can go to the next stage. In the Jenkinsfile, you use the section `input` to specify who reviews the pipeline. If you want to specify a user (e.g. `project-admin`) to review it, you can add a field in the Jenkinsfile. If there are multiple users, you need to use commas to separate them as follows:
 
@@ -244,7 +246,7 @@ The account `project-admin` needs to be created in advance since it is the revie
 
 1. In **Task Status**, you can see how a pipeline is running. Please note that the pipeline will keep initializing for several minutes after it is just created. There are eight stages in the sample pipeline and they have been defined separately in [Jenkinsfile-online](https://github.com/kubesphere/devops-java-sample/blob/sonarqube/Jenkinsfile-online).
 
-   ![inspect-pipeline-log-1](/images/docs/devops-user-guide/using-devops/create-a-pipeline-using-a-jenkinsfile/inspect-pipeline-log-1.jpg)
+   ![inspect-pipeline-log-1](/images/docs/devops-user-guide/using-devops/create-a-pipeline-using-a-jenkinsfile/inspect-pipeline-log-1.png)
 
 2. Check the pipeline running logs by clicking **Show Logs** in the top right corner. You can see the dynamic log output of the pipeline, including any errors that may stop the pipeline from running. For each stage, you click it to inspect logs, which can be downloaded to your local machine for further analysis.
 
@@ -254,17 +256,17 @@ The account `project-admin` needs to be created in advance since it is the revie
 
 1. Once you successfully executed the pipeline, click **Code Quality** to check the results through SonarQube as follows.
 
-   ![sonarqube-result-detail-1.jpg](/images/docs/devops-user-guide/tool-integration/integrate-sonarqube-into-pipeline/sonarqube-result-detail-1.jpg.jpg)
+   ![code-quality](/images/docs/devops-user-guide/using-devops/create-a-pipeline-using-a-jenkinsfile/code-quality.png)
 
-   ![sonarqube-result-detail](/images/docs/devops-user-guide/tool-integration/integrate-sonarqube-into-pipeline/sonarqube-result-detail.jpg)
+   ![sonarqube-result-detail](/images/docs/devops-user-guide/using-devops/create-a-pipeline-using-a-jenkinsfile/sonarqube-result-detail.png)
 
 2. The Docker image built through the pipeline has also been successfully pushed to Docker Hub, as it is defined in the Jenkinsfile. In Docker Hub, you will find the image with the tag `v0.0.2` that is specified before the pipeline runs.
 
-   ![docker-hub-result](/images/docs/devops-user-guide/tool-integration/integrate-sonarqube-into-pipeline/docker-hub-result.jpg)
+   ![docker-hub-result](/images/docs/devops-user-guide/using-devops/create-a-pipeline-using-a-jenkinsfile/docker-hub-result.png)
 
 3. At the same time, a new tag and a new release have been generated in GitHub.
 
-   ![github-result](/images/docs/devops-user-guide/tool-integration/integrate-sonarqube-into-pipeline/github-result.jpg)
+   ![github-result](/images/docs/devops-user-guide/using-devops/create-a-pipeline-using-a-jenkinsfile/github-result.png)
 
 4. The sample application will be deployed to `kubesphere-sample-dev` and `kubesphere-sample-prod` with corresponding Deployments and Services created. Go to these two projects and here are the expected result:
 
@@ -275,11 +277,11 @@ The account `project-admin` needs to be created in advance since it is the revie
 
    #### Deployments
 
-   ![pipeline-deployments](/images/docs/devops-user-guide/tool-integration/integrate-sonarqube-into-pipeline/pipeline-deployments.jpg)
+   ![pipeline-deployments](/images/docs/devops-user-guide/using-devops/create-a-pipeline-using-a-jenkinsfile/pipeline-deployments.png)
 
    #### Services
 
-   ![devops-prod](/images/docs/devops-user-guide/tool-integration/integrate-sonarqube-into-pipeline/devops-prod.jpg)
+   ![devops-prod](/images/docs/devops-user-guide/using-devops/create-a-pipeline-using-a-jenkinsfile/devops-prod.png)
 
    {{< notice note >}}
 
@@ -291,14 +293,14 @@ The account `project-admin` needs to be created in advance since it is the revie
 
 1. To access the Service, log in to KubeSphere as `admin` to use the **web kubectl** from **Toolbox**. Go to the project `kubesphere-sample-dev`, and select `ks-sample-dev` in **Services** under **Application Workloads**. The endpoint can be used to access the Service.
 
-   ![sample-app-result-check](/images/docs/devops-user-guide/tool-integration/integrate-sonarqube-into-pipeline/sample-app-result-check.jpg)
+   ![click-service](/images/docs/devops-user-guide/using-devops/create-a-pipeline-using-a-jenkinsfile/click-service.png)
    
-   ![access-endpoint](/images/docs/devops-user-guide/tool-integration/integrate-sonarqube-into-pipeline/access-endpoint.jpg)
+   ![access-endpoint](/images/docs/devops-user-guide/using-devops/create-a-pipeline-using-a-jenkinsfile/access-endpoint.png)
 
 2. Use the **web kubectl** from **Toolbox** in the bottom right corner by executing the following command:
 
    ```bash
-   curl 10.10.128.169:8080
+   curl 10.233.120.230:8080
    ```
 
 3. Expected output:
@@ -316,7 +318,7 @@ The account `project-admin` needs to be created in advance since it is the revie
 4. Similarly, you can test the Service in the project `kubesphere-sample-prod` and you will see the same result.
 
    ```bash
-   $ curl 10.10.128.170:8080
+   $ curl 10.233.120.236:8080
    Really appreciate your star, that's the power of our life.
    ```
 
