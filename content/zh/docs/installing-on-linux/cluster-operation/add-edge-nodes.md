@@ -111,11 +111,11 @@ KubeSphere 利用 [KubeEdge](https://kubeedge.io/zh/) 将原生容器化应用�
 
    {{</ notice >}} 
 
-   ![edge-node-dialog](/images/docs/zh-cn/installing-on-linux/add-and-delete-nodes/add-edge-nodes/edge-node-dialog.png)
+   ![edge-node1](/images/docs/zh-cn/installing-on-linux/add-and-delete-nodes/add-edge-nodes/edge-node1.png)
 
 5. 关闭对话框，刷新页面，您将看到边缘节点显示在列表中。
 
-   ![edge-node-added](/images/docs/zh-cn/installing-on-linux/add-and-delete-nodes/add-edge-nodes/edge-node-added.png)
+   ![edge-node-2](/images/docs/zh-cn/installing-on-linux/add-and-delete-nodes/add-edge-nodes/edge-node-2.png)
 
    {{< notice note >}}
 
