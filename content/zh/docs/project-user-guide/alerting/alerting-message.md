@@ -7,44 +7,24 @@ linkTitle: "告警消息（工作负载级别）"
 weight: 10720
 ---
 
-告警消息中记录着按照告警规则触发的告警的详细信息，包括监控目标、告警策略、最近通知和处理意见。
-
-本教程演示如何查看工作负载级别的告警消息。
+告警消息中记录着按照告警规则触发的告警的详细信息。本教程演示如何查看工作负载级别的告警消息。
 
 ## 准备工作
 
-* 您需要启用 [KubeSphere 告警和通知](../../../pluggable-components/alerting-notification/)。
-* 您需要创建一个企业空间、一个项目和一个帐户（例如 `project-regular`）。该帐户必须已邀请至该项目，并具有 `operator` 角色。有关更多信息，请参阅[创建企业空间、项目、帐户和角色](../../../quick-start/create-workspace-and-project/)。
-* 您需要创建一个工作负载级别的告警策略并接收到相关告警通知。如果尚未创建告警策略，请按照[告警策略（工作负载级别）](../alerting-policy/)创建一个告警策略。
+* 您需要启用 [KubeSphere 告警系统](../../../pluggable-components/alerting/)。
+* 您需要创建一个企业空间、一个项目和一个帐户 (`project-regular`)。该帐户必须已邀请至该项目，并具有 `operator` 角色。有关更多信息，请参见[创建企业空间、项目、帐户和角色](../../../quick-start/create-workspace-and-project/)。
+* 您需要创建一个工作负载级别的告警策略并且已经触发该告警。有关更多信息，请按考[告警策略（工作负载级别）](../alerting-policy/)。
 
-## 动手实验
+## 查看告警消息
 
-### 步骤 1：查看告警消息
+1. 使用 `project-regular` 帐户登录控制台并进入您的项目，导航到**监控告警**下的**告警消息**。
 
-1. 以 `project-regular` 用户登录 KubeSphere 控制台并进入项目，在左侧导航栏选择**监控告警**下的**告警消息**。页面上显示告警消息列表。如果您已经完成示例教程[告警策略（工作负载级别）](../alerting-policy/)，工作负载 `reviews-v1` 和 `details-v1` 已被设置为监控目标，并且这两个工作负载的内存用量都高于设置的阈值，从而页面上会显示两个对应的告警消息。
+2. 在**告警消息**页面，可以看到列表中的全部告警消息。第一列显示您在告警通知中定义的标题和消息。如需查看某一告警消息的详情，点击该告警策略的名称，然后在出现的页面上点击**告警消息**选项卡。
 
-   ![alerting_message_workload_level_list](/images/docs/zh-cn/alerting/alerting_message_workload_level_list.png)
+   ![alerting-messages](/images/docs/zh-cn/project-user-guide/alerting/alerting-messages/alerting-messages.png)
 
-2. 选择一个告警消息打开详情页面。**告警详情**选项卡显示被监控工作负载的内存用量随时间的变化。工作负载的内存用量持续高于设置的阈值 20 MiB，于是触发了告警。
+3. 在**告警消息**选项卡，您可以看到告警级别、告警资源以及告警激活时间。
 
-   ![alerting_message_workload_level_detail](/images/docs/zh-cn/alerting/alerting_message_workload_level_detail.png)
+## 查看通知
 
-### 步骤 2：查看告警策略
-
-点击**告警策略**选项卡查看当前告警消息对应的告警策略。页面上显示示例教程[告警策略（工作负载级别）](../alerting-policy/)中设置的告警触发规则。
-
-![alerting_message_workload_level_policy](/images/docs/zh-cn/alerting/alerting_message_workload_level_policy.png)
-
-### 步骤 3：查看最近通知
-
-1. 点击**最近通知**选项卡。页面上显示接收到 3 个通知（由于通知规则为`每 5 分钟警告一次`和`最多重发 3 次`）。
-
-   ![alerting_message_workload_level_notification](/images/docs/zh-cn/alerting/alerting_message_workload_level_notification.png)
-
-2. 登录您的邮箱查看 KubeSphere 邮件服务器发送的告警通知邮件。您一共收到 6 封邮件，这是由于两个被监控的工作负载（或部署）的内存用量持续超过设置的阈值 `20 MiB`，同时通知规则为`每 5 分钟警告一次`和`最多重发 3 次`。
-
-### 步骤 4：添加处理意见
-
-点击页面左侧的**处理意见**为当前告警消息添加处理意见。例如，由于工作负载的内存用量高于告警规则中设置的阈值，您可以在对话框中添加如下处理意见：`此工作负载的默认内存用量上限需要提高`。
-
-![alerting_message_workload_level_comment](/images/docs/zh-cn/alerting/alerting_message_workload_level_comment.png)
+如果需要接收告警通知（例如，邮件和 Slack 消息），则须先配置[一个通知渠道](../../../cluster-administration/platform-settings/notification-management/configure-email/)。
