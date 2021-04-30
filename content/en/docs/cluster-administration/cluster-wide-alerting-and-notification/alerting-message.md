@@ -27,3 +27,4 @@ Alerting messages record detailed information of alerts triggered based on the a
 ## View Notifications
 
 If you also want to receive alert notifications (for example, email and Slack messages), you need to configure [a notification channel](../../../cluster-administration/platform-settings/notification-management/configure-email/) first.
+
