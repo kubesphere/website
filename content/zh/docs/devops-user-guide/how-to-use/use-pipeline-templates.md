@@ -1,33 +1,33 @@
 ---
-title: "Use Pipeline Templates"
-keywords: 'KubeSphere, Kubernetes, Jenkins, Graphical Pipelines, Pipeline Templates'
-description: 'Understand how to use pipeline templates on KubeSphere.'
-linkTitle: "Use Pipeline Templates"
+title: "使用流水线模板"
+keywords: 'KubeSphere, Kubernetes, Jenkins, 图形化流水线, 流水线模板'
+description: '了解如何在 KubeSphere 上使用流水线模板。'
+linkTitle: "使用流水线模板"
 weight: 11290
 ---
 
-KubeSphere offers a graphical editing panel where the stages and steps of a Jenkins pipeline can be defined through interactive operations. In KubeSphere v3.1, two built-in pipeline templates are provided as frameworks of continuous integration (CI) and continuous delivery (CD).
+KubeSphere 提供图形编辑面板，您可以通过交互式操作定义 Jenkins 流水线的阶段和步骤。KubeSphere v3.1 中提供两个内置流水线模板，作为持续集成 (CI) 和持续交付 (CD) 的框架。
 
-When you have a pipeline created in your DevOps project on KubeSphere, you can click the pipeline to go to its detail page, and then click **Edit Pipeline** to select a pipeline template based on your needs. This document illustrates the concept of these two pipeline templates.
+在 KubeSphere 的 DevOps 工程中创建了流水线后，您可以点击该流水线查看其详情，然后点击**编辑流水线**按需选择一个流水线模板。本文档对这两个流水线模板的概念进行阐述。
 
-## CI Pipeline Template
+## CI 流水线模板
 
-![ci-template](/images/docs/devops-user-guide/using-devops/use-pipeline-templates/ci-template.png)
+![ci-template](/images/docs/zh-cn/devops-user-guide/use-devops/use-pipeline-templates/ci-template.png)
 
-![ci-stages](/images/docs/devops-user-guide/using-devops/use-pipeline-templates/ci-stages.png)
+![ci-stages](/images/docs/zh-cn/devops-user-guide/use-devops/use-pipeline-templates/ci-stages.png)
 
-The CI pipeline template contains two stages. The **clone code** stage checks out code and the **build & push** stage builds an image and pushes it to Docker Hub. You need to create the credentials for your code repository and your Docker Hub registry in advance, and then set the URL of your repository and these credentials in corresponding steps. After you finish editing, the pipeline is ready to run.
+CI 流水线模板包含两个阶段。**clone code** 阶段用于校验代码，**build & push** 阶段用于构建镜像并将镜像推送至 Docker Hub。您需要预先为代码仓库和 Docker Hub 仓库创建凭证，然后在相应的步骤中设置仓库的 URL 以及凭证。完成编辑后，流水线即可开始运行。
 
-## CI & CD Pipeline Template
+## CI & CD 流水线模板
 
-![cicd-template](/images/docs/devops-user-guide/using-devops/use-pipeline-templates/cicd-template.png)
+![cicd-template](/images/docs/zh-cn/devops-user-guide/use-devops/use-pipeline-templates/cicd-template.png)
 
-![cicd-stages](/images/docs/devops-user-guide/using-devops/use-pipeline-templates/cicd-stages.png)
+![cicd-stages](/images/docs/zh-cn/devops-user-guide/use-devops/use-pipeline-templates/cicd-stages.png)
 
-The CI & CD pipeline template contains six stages. For more information about each stage, refer to [Create a Pipeline Using a Jenkinsfile](../create-a-pipeline-using-jenkinsfile/#pipeline-overview) where you can find similar stages and the descriptions. You need to create credentials for your code repository, your Docker Hub registry, and the kubeconfig of your cluster in advance, and then set the URL of your repository and these credentials in corresponding steps. After you finish editing, the pipeline is ready to run.
+CI & CD 流水线模板包含六个阶段。有关每个阶段的更多信息，请参考[使用 Jenkinsfile 创建流水线](../create-a-pipeline-using-jenkinsfile/#pipeline-overview)，您可以在该文档中找到相似的阶段及描述。您需要预先为代码仓库、Docker Hub 仓库和集群的 kubeconfig 创建凭证，然后在相应的步骤中设置仓库的 URL 以及凭证。完成编辑后，流水线即可开始运行。
 
 {{< notice info >}}
 
-You can also customize the stages and steps in the pipeline templates based on your needs. For more information about how to use the graphical editing panel, refer to [Create a Pipeline Using Graphical Editing Panels](../create-a-pipeline-using-graphical-editing-panel/).
+您还可以按需在流水线模板中自定义步骤和阶段。有关如何使用图形编辑面板的更多信息，请参考[使用 Jenkinsfile 创建流水线](../create-a-pipeline-using-graphical-editing-panel/)。
 
 {{</ notice >}}
