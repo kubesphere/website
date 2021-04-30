@@ -6,7 +6,7 @@ linkTitle: "添加边缘节点"
 weight: 3630
 ---
 
-KubeSphere 利用 [KubeEdge](https://kubeedge.io/en/) 将原生容器化应用程序编排功能扩展到边缘的主机。通过单独的云和边缘核心模块，KubeEdge 提供完整的边缘计算解决方案，但安装过程可能较为繁琐。
+KubeSphere 利用 [KubeEdge](https://kubeedge.io/zh/) 将原生容器化应用程序编排功能扩展到边缘的主机。通过单独的云端和边端核心模块，KubeEdge 提供完整的边缘计算解决方案，但安装过程可能较为繁琐。
 
 ![kubeedge_arch](/images/docs/installing-on-linux/add-and-delete-nodes/add-edge-nodes/kubeedge_arch.png)
 
@@ -16,13 +16,11 @@ KubeSphere 利用 [KubeEdge](https://kubeedge.io/en/) 将原生容器化应用�
 
 {{</ notice >}} 
 
-After an edge node joins your cluster, the native KubeEdge cloud component requires you to manually configure iptables so that you can use commands such as `kubectl logs` and `kubectl exec`. In this connection, KubeSphere features an efficient and convenient way to add edge nodes to a Kubernetes cluster. It uses supporting components (for example, EdgeWatcher) to automatically configure iptables.
-
-边缘节点加入集群后，原生 KubeEdge 云组件要求手动配置 iptables，以便您可以使用 `kubectl logs` 和 `kubectl exec` 等命令。在这方面，KubeSphere 能够提供一种高效便捷的方法将边缘节点添加到 Kubernetes 集群。它使用所支持的组件（例如，EdgeWatcher）来自动配置 iptables。
+边缘节点加入集群后，原生 KubeEdge 云组件要求手动配置 iptables，以便您使用 `kubectl logs` 和 `kubectl exec` 等命令。就此，KubeSphere 能够提供一种高效便捷的方法将边缘节点添加到 Kubernetes 集群。它使用所支持的组件来自动配置 iptables（例如，EdgeWatcher）。
 
 ![edge-watcher](/images/docs/installing-on-linux/add-and-delete-nodes/add-edge-nodes/edge-watcher.png)
 
-本教程演示如何将边缘节点添加到集群中。
+本教程演示如何将边缘节点添加到集群。
 
 ## 准备工作
 
@@ -74,9 +72,7 @@ After an edge node joins your cluster, the native KubeEdge cloud component requi
 
 ## 创建防火墙规则和端口转发规则
 
-To make sure edge nodes can successfully talk to your cluster, you must forward ports for outside traffic to get into your network. Specifically, map an external port to the corresponding internal IP address (master node) and port based on the table below. Besides, you also need to create firewall rules to allow traffic to these ports (`10000` to `10004`).
-
-如需确保边缘节点可以成功地与集群通信，您必须转发端口，以便外部流量进入您的网络。具体来说，根据下表将外网端口映射到相应的内网 IP 地址（主节点）和端口。此外，您还需要创建防火墙规则以允许流量进入这些端口（`10000` 至 `10004`）。
+若要确保边缘节点可以成功地与集群通信，您必须转发端口，以便外部流量进入您的网络。您可以根据下表将外网端口映射到相应的内网 IP 地址（主节点）和端口。此外，您还需要创建防火墙规则来允许流量进入这些端口（`10000` 至 `10004`）。
 
 | 字段                | 外网端口 | 字段                    | 内网端口 |
 | ------------------- | -------- | ----------------------- | -------- |
@@ -102,7 +98,7 @@ To make sure edge nodes can successfully talk to your cluster, you must forward 
 
    {{< notice note >}} 
 
-   - The internal IP address is only used for inter-node communication and you do not necessarily need to use the actual internal IP address of the edge node. As long as the IP address is successfully validated, you can use it.内网 IP 地址仅用于节点间通信，您不一定需要使用边缘节点的真实内网 IP 地址。只要 IP 地址验证成功，您就可以使用该节点。
+   - 内网 IP 地址仅用于节点间通信，您不一定要使用边缘节点的真实内网 IP 地址。只要 IP 地址验证成功，您就可以使用该节点。
    - 建议您勾选方框添加默认污点。
 
    {{</ notice >}} 
