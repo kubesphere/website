@@ -41,7 +41,7 @@ weight: 6920
    ./kk create cluster -f config-sample.yaml
    ```
 
-### **在 Kubernetes 上安装**
+### 在 Kubernetes 上安装
 
 [在 Kubernetes 上安装 KubeSphere](../../installing-on-kubernetes/introduction/overview/) 时，您可以在 [cluster-configuration.yaml](https://github.com/kubesphere/ks-installer/releases/download/v3.1.0/cluster-configuration.yaml) 文件中首先启用容器组 IP 池。
 
