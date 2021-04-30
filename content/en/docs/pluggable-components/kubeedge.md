@@ -95,6 +95,12 @@ A Custom Resource Definition (CRD) allows users to create a new type of resource
 
 5. Set the value of `kubeedge.cloudCore.cloudHub.advertiseAddress` to the public IP address of your cluster or an IP address that can be accessed by edge nodes. After you finish, click **Update** in the bottom-right corner to save the configuration.
 
+    {{< notice note >}}
+
+The `kubeedge` section is not included in `cluster-configuration.yaml` if your cluster is upgraded from KubeSphere v3.0.0. For more information, see [how to enable KubeEdge after upgrade](#enable-kubeedge-after-upgrade).
+
+    {{</ notice >}} 
+
 6. You can use the web kubectl to check the installation process by executing the following command:
 
     ```bash
@@ -104,6 +110,45 @@ A Custom Resource Definition (CRD) allows users to create a new type of resource
     {{< notice tip >}}
 You can find the web kubectl tool by clicking the hammer icon in the bottom-right corner of the console.
     {{</ notice >}}
+
+## Enable KubeEdge after Upgrade
+
+If your KubeSphere v3.1.0 cluster is upgraded from KubeSphere v3.0.0, add the following content in `cluster-configuration.yaml` and enable `kubeedge` as shown in the steps above.
+
+```yaml
+  kubeedge:
+    enabled: false
+    cloudCore:
+      nodeSelector: {"node-role.kubernetes.io/worker": ""}
+      tolerations: []
+      cloudhubPort: "10000"
+      cloudhubQuicPort: "10001"
+      cloudhubHttpsPort: "10002"
+      cloudstreamPort: "10003"
+      tunnelPort: "10004"
+      cloudHub:
+        advertiseAddress:
+          - ""            
+        nodeLimit: "100"
+      service:
+        cloudhubNodePort: "30000"
+        cloudhubQuicNodePort: "30001"
+        cloudhubHttpsNodePort: "30002"
+        cloudstreamNodePort: "30003"
+        tunnelNodePort: "30004"
+    edgeWatcher:
+      nodeSelector: {"node-role.kubernetes.io/worker": ""}
+      tolerations: []
+      edgeWatcherAgent:
+        nodeSelector: {"node-role.kubernetes.io/worker": ""}
+        tolerations: []
+```
+
+{{< notice warning >}}
+
+Do not add the `kubeedge` section in `cluster-configuration.yaml` before the upgrade.
+
+{{</ notice >}} 
 
 ## Verify the Installation of the Component
 

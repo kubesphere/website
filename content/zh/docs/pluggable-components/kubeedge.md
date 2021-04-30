@@ -96,6 +96,12 @@ KubeEdge 的组件在两个单独的位置运行——云上和边缘节点上�
 
 5. 将 `kubeedge.cloudCore.cloudHub.advertiseAddress` 的值设置为群集的公共 IP 地址或边缘节点可以访问的 IP 地址。完成后，点击右下角的**更新**保存配置。
 
+     {{< notice note >}}
+
+如果您的集群是从 KubeSphere v3.0.0 升级而来，`cluster-configuration.yaml` 中不会包含 KubeEdge 的配置。有关更多信息，请参见[如何在升级后启用 KubeEdge](#在升级后启用-kubeedge)。
+
+{{</ notice >}} 
+
 6. 您可以使用 Web Kubectl 执行以下命令查看安装过程：
 
     ```bash
@@ -105,6 +111,45 @@ KubeEdge 的组件在两个单独的位置运行——云上和边缘节点上�
     {{< notice tip >}}
 您可以通过点击控制台右下角的锤子图标来找到 Web kubectl 工具。
     {{</ notice >}}
+
+## 在升级后启用 KubeEdge
+
+如果您的 KubeSphere v3.1.0 集群是从 KubeSphere v3.0.0 的集群升级而来，请按照以上步骤编辑 `cluster-configuration.yaml` 并手动添加以下配置，再启用 KubeEdge。
+
+```yaml
+  kubeedge:
+    enabled: false
+    cloudCore:
+      nodeSelector: {"node-role.kubernetes.io/worker": ""}
+      tolerations: []
+      cloudhubPort: "10000"
+      cloudhubQuicPort: "10001"
+      cloudhubHttpsPort: "10002"
+      cloudstreamPort: "10003"
+      tunnelPort: "10004"
+      cloudHub:
+        advertiseAddress:
+          - ""            
+        nodeLimit: "100"
+      service:
+        cloudhubNodePort: "30000"
+        cloudhubQuicNodePort: "30001"
+        cloudhubHttpsNodePort: "30002"
+        cloudstreamNodePort: "30003"
+        tunnelNodePort: "30004"
+    edgeWatcher:
+      nodeSelector: {"node-role.kubernetes.io/worker": ""}
+      tolerations: []
+      edgeWatcherAgent:
+        nodeSelector: {"node-role.kubernetes.io/worker": ""}
+        tolerations: []
+```
+
+{{< notice warning >}}
+
+请勿在升级前直接在 `cluster-configuration.yaml` 中直接添加 KubeEdge 的配置。
+
+{{</ notice >}} 
 
 ## 验证组件的安装
 
