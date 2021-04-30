@@ -6,9 +6,9 @@ linkTitle: "添加边缘节点"
 weight: 3630
 ---
 
-KubeSphere 利用 [KubeEdge](https://kubeedge.io/zh/) 将原生容器化应用程序编排功能扩展到边缘的主机。通过单独的云端和边端核心模块，KubeEdge 提供完整的边缘计算解决方案，但安装过程可能较为繁琐。
+KubeSphere 利用 [KubeEdge](https://kubeedge.io/zh/) 将原生容器化应用程序编排功能扩展到边缘的主机。KubeEdge 拥有单独的云端和边端核心模块，提供完整的边缘计算解决方案，但安装过程可能较为繁琐。
 
-![kubeedge_arch](/images/docs/installing-on-linux/add-and-delete-nodes/add-edge-nodes/kubeedge_arch.png)
+![kubeedge_arch](/images/docs/zh-cn/installing-on-linux/add-and-delete-nodes/add-edge-nodes/kubeedge_arch.png)
 
 {{< notice note >}}
 
@@ -18,7 +18,7 @@ KubeSphere 利用 [KubeEdge](https://kubeedge.io/zh/) 将原生容器化应用�
 
 边缘节点加入集群后，原生 KubeEdge 云组件要求手动配置 iptables，以便您使用 `kubectl logs` 和 `kubectl exec` 等命令。就此，KubeSphere 能够提供一种高效便捷的方法将边缘节点添加到 Kubernetes 集群。它使用所支持的组件来自动配置 iptables（例如，EdgeWatcher）。
 
-![edge-watcher](/images/docs/installing-on-linux/add-and-delete-nodes/add-edge-nodes/edge-watcher.png)
+![edge-watcher](/images/docs/zh-cn/installing-on-linux/add-and-delete-nodes/add-edge-nodes/edge-watcher.png)
 
 本教程演示如何将边缘节点添加到集群。
 
@@ -72,7 +72,7 @@ KubeSphere 利用 [KubeEdge](https://kubeedge.io/zh/) 将原生容器化应用�
 
 ## 创建防火墙规则和端口转发规则
 
-若要确保边缘节点可以成功地与集群通信，您必须转发端口，以便外部流量进入您的网络。您可以根据下表将外网端口映射到相应的内网 IP 地址（主节点）和端口。此外，您还需要创建防火墙规则来允许流量进入这些端口（`10000` 至 `10004`）。
+若要确保边缘节点可以成功地与集群通信，您必须转发端口，以便外部流量进入您的网络。您可以根据下表将外网端口映射到相应的内网 IP 地址（主节点）和端口。此外，您还需要创建防火墙规则以允许流量进入这些端口（`10000` 至 `10004`）。
 
 | 字段                | 外网端口 | 字段                    | 内网端口 |
 | ------------------- | -------- | ----------------------- | -------- |
@@ -111,15 +111,15 @@ KubeSphere 利用 [KubeEdge](https://kubeedge.io/zh/) 将原生容器化应用�
 
    {{</ notice >}} 
 
-   ![edge-node-dialog](/images/docs/installing-on-linux/add-and-delete-nodes/add-edge-nodes/edge-node-dialog.png)
+   ![edge-node-dialog](/images/docs/zh-cn/installing-on-linux/add-and-delete-nodes/add-edge-nodes/edge-node-dialog.png)
 
 5. 关闭对话框，刷新页面，您将看到边缘节点显示在列表中。
 
-   ![edge-node-added](/images/docs/installing-on-linux/add-and-delete-nodes/add-edge-nodes/edge-node-added.png)
+   ![edge-node-added](/images/docs/zh-cn/installing-on-linux/add-and-delete-nodes/add-edge-nodes/edge-node-added.png)
 
    {{< notice note >}}
 
-   After an edge node is added, if you cannot see CPU and memory resource usage on the **Edge Nodes** page, make sure [Metrics Server](../../../pluggable-components/metrics-server/) 0.4.1 or later is installed in your cluster.边缘节点添加后，如果在**边缘节点**页面查看不到 CPU 和内存资源使用情况，请确保集群中安装的 [Metrics Server](../../../pluggable-components/metrics-server/) 为 0.4.1及以上。
+   添加边缘节点后，如果在**边缘节点**页面查看不到 CPU 和内存资源使用情况，请确保集群中安装的 [Metrics Server](../../../pluggable-components/metrics-server/) 为 0.4.1及以上。
 
    {{</ notice >}}
 
@@ -143,7 +143,7 @@ KubeSphere 利用 [KubeEdge](https://kubeedge.io/zh/) 将原生容器化应用�
 
    {{< notice note >}}
 
-   If you cannot delete the tmpfs-mounted folder, restart the node or unmount the folder first.如果无法删除 tmpfs 挂载的文件夹，请重启节点或先取消挂载该文件夹。
+   如果无法删除 tmpfs 挂载的文件夹，请重启节点或先取消挂载该文件夹。
 
    {{</ notice >}} 
 
