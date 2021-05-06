@@ -35,7 +35,7 @@ On the **Basic Information** tab, you can customize the following information:
 
   ![code-source-github](/images/docs/devops-user-guide/using-devops/pipeline-settings/code-source-github.png)
 
-  If you select **GitHub**, you have to specify the token for accessing GitHub. You can click **Get Token** to generate a new token on GitHub. Click **Confirm** after entering the token and you can view your repository on the right. Click the **√** icon after you finish all operations.
+  If you select **GitHub**, you have to specify the token for accessing GitHub. If you have created a credential with your GitHub token in advance, you can select it from the drop-down list, or you can click **Create a credential** to create a new one. Click **Confirm** after selecting the token and you can view your repository on the right. Click the **√** icon after you finish all operations.
 
   {{</ tab >}}
 
