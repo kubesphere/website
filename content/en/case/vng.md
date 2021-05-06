@@ -31,7 +31,7 @@ section2:
         - content: We install [KubeSphere Container Platform](https://kubesphere.io/) on our existing Kubernetes cluster, and we have two Kubernetes clusters for sandbox and production respectively. For data privacy, our clusters are all deployed on bare metal machines. We install the highly available cluster using HAProxy to balance the traffic load.
       image: https://pek3b.qingstor.com/kubesphere-docs/png/20200619223626.png
 
-    - title: Why We Choose KubeShpere
+    - title: Why We Choose KubeSphere
       contentList:
         - content: Thanks to the developer-friendly web console provided by KubeSphere, we can easily monitor the resource consumption range from infrastructure to applications. Hence, we've been running merchant platform of ZaloPay on KubeSphere very steadily for half a year. KubeSphere also offers a portfolio which integrates and packages the cloud native stack, and provides out-of-box application lifecycle management, monitoring, logging, multi-tenancy, alerting and notification. As each feature and component is pluggable, we can enable them based on our needs.
       image: https://pek3b.qingstor.com/kubesphere-docs/png/20200619224814.png
