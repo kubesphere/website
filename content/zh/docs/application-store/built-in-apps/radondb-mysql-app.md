@@ -41,7 +41,7 @@ weight: 14293
 
 ### 步骤 2：访问 RadonDB MySQL
 
-1. 打开**应用负载** > **服务**页面，点击 RadonDB MySQL 服务名称。
+1. 进入**应用负载**下的**服务**页面，点击 RadonDB MySQL 服务名称。
 
    ![RadonDB MySQL 服务](/images/docs/zh-cn/appstore/built-in-apps/radondb-mysql-app/radondb-mysql-service.png)
 
