@@ -34,7 +34,7 @@ KubeSphere 利用 [KubeEdge](https://kubeedge.io/zh/) 将原生容器化应用�
 
 ### 安装容器运行时
 
-[KubeEdge](https://docs.kubeedge.io/zh/docs/) 支持多种容器运行时，包括 Docker，containerd，CRI-O 和 Virtlet。有关更多信息，请参见 [KubeEdge 文档](https://docs.kubeedge.io/zh/docs/advanced/cri/)。
+[KubeEdge](https://docs.kubeedge.io/zh/docs/) 支持多种容器运行时，包括 Docker、containerd、CRI-O 和 Virtlet。有关更多信息，请参见 [KubeEdge 文档](https://docs.kubeedge.io/zh/docs/advanced/cri/)。
 
 ### 配置 EdgeMesh
 
