@@ -1,39 +1,39 @@
 ---
-title: "S2I Workflow and Logic"
+title: "S2I 工作流程和逻辑"
 keywords: 'KubeSphere, Kubernetes, Docker, S2I, Source-to-Image'
-description: 'Understand how S2I works and why it works in the expected way.'
-linkTitle: "S2I Workflow and Logic"
+description: '了解 S2I 的工作原理及其为何以预期的方式工作。'
+linkTitle: "S2I 工作流程和逻辑"
 weight: 10630
 ---
 
-Source-to-Image (S2I) is an automation tool for building images from source code. S2I injects source code into an Image Builder for compiling and then automatically packages the compiled code into a Docker image.
+Source-to-Image (S2I) 是一个将源代码构建成镜像的自动化工具。S2I 将源代码放入负责编译的镜像构建器 (Image Builder) 中，然后自动将编译后的代码打包成 Docker 镜像。
 
-For more information about how to use S2I in KubeSphere, refer to [Source to Image: Publish an App without a Dockerfile](../source-to-image/). Besides, you can refer to the code repositories [S2IOperator](https://github.com/kubesphere/s2ioperator#source-to-image-operator) and [S2IRun](https://github.com/kubesphere/s2irun#s2irun) for more details.
+有关如何在 KubeSphere 中使用 S2I 的更多信息，请参考 [Source to Image：无需 Dockerfile 发布应用](../source-to-image/)。此外，您还可以参考代码仓库 [S2IOperator](https://github.com/kubesphere/s2ioperator#source-to-image-operator) 和 [S2IRun](https://github.com/kubesphere/s2irun#s2irun) 查看更多详细信息。
 
-## S2I Workflow and Logic
+## S2I 工作流程和逻辑
 
-### Image Builder
+### 镜像构建器
 
-For interpreted languages like Python and Ruby, the build-time and runtime environments for an application are typically the same. For example, a Ruby-based Image Builder usually contains Bundler, Rake, Apache, GCC, and other packages needed to set up a runtime environment. The following diagram describes the build workflow.
+对于 Python 和 Ruby 等解释型语言，程序的构建环境和运行时环境通常是相同的。例如，基于 Ruby 的景象构建器通常包含 Bundler、Rake、Apache、GCC 以及其他构建运行时环境的安装包。构建的工作流程如下图所示：
 
-![s2i-builder](/images/docs/project-user-guide/image-builder/s2i-intro/s2i-builder.png)
+![s2i-builder](/images/docs/zh-cn/project-user-guide/image-builder/s2i-intro/s2i-builder.png)
 
-### How S2I works
+### S2I 工作原理
 
-S2I performs the following steps:
+S2I 执行以下步骤：
 
-1. Start a container from the Image Builder with the application source code injected into a specified directory.
-2. Execute the `assemble` script from the Image Builder to build that source code into a ready-to-run application by installing dependencies and moving the source code into a working directory.
-3. Set the `run` script provided by the Image Builder as the image entrypoint for starting the container, and then commit a new image as the application image to meet user needs.
+1. 根据镜像构建器运行容器，并将应用程序的源代码注入到指定目录中。
+2. 执行镜像构建器中的 `assemble` 脚本，通过安装依赖项以及将源代码转移到工作目录下，将源代码构建成可直接运行的应用程序。
+3. 将镜像构建器中提供的 `run` 脚本设置为启动容器的镜像入口点，然后提交新的镜像作为供用户使用的应用程序镜像。
 
-See the S2I workflow chart as below.
+S2I 流程图如下：
 
-![s2i-flow](/images/docs/project-user-guide/image-builder/s2i-intro/s2i-flow.png)
+![s2i-flow](/images/docs/zh-cn/project-user-guide/image-builder/s2i-intro/s2i-flow.png)
 
-### Runtime Image
+### 运行时镜像
 
-For compiled languages like Go, C, C++, or Java, the dependencies necessary for compiling will increase the size of resulting images. To build slimmer images, S2I uses a phased build workflow with unnecessary files removed from images. An artifact, which is an executable like a Jar file or binary file, will be extracted when building finishes in the Image Builder, and then injected into a Runtime Image for execution.
+对于 Go、C、C++、Java 等编译型语言，编译时所需的依赖项会增加最终镜像的大小。为构建更轻量的镜像，S2I 实行分阶段构建，并从镜像中移除非必要的文件。镜像构建器完成构建后会导出制品，制品可能是 Jar 文件或二进制文件等可执行文件，然后会将制品注入运行时镜像 (Runtime Image) 用于执行。
 
-See the building workflow as below.
+构建的工作流程如下：
 
-![s2i-runtime-build](/images/docs/project-user-guide/image-builder/s2i-intro/s2i-runtime-build.png)
+![s2i-runtime-build](/images/docs/zh-cn/project-user-guide/image-builder/s2i-intro/s2i-runtime-build.png)
