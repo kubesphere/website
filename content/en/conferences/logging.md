@@ -65,7 +65,7 @@ FluentBit Operator provides great flexibility for KubeSphere in the addition/del
 
 ## Multi-Tenant Log Management
 
-The Kubernetes community has paid much attention to the feature of multi-tenancy, with a wide range of solutions available to use, such as soft multi-tenancy and hard multi-tenancy. The specific approach to log management also differs. In Loki, multi-tenancy is supported through the Tenant ID while KubeSphere achieves tenant isolation through workspaces. Now, let’s take a quick look at some practices of KubeShpere in multi-tenant log management (In KubeSphere v2.1, great enhancements were made in its logging function, such as a better support of Chinese log search and automatic sidecar injection for the collection of logs in the disk).
+The Kubernetes community has paid much attention to the feature of multi-tenancy, with a wide range of solutions available to use, such as soft multi-tenancy and hard multi-tenancy. The specific approach to log management also differs. In Loki, multi-tenancy is supported through the Tenant ID while KubeSphere achieves tenant isolation through workspaces. Now, let’s take a quick look at some practices of KubeSphere in multi-tenant log management (In KubeSphere v2.1, great enhancements were made in its logging function, such as a better support of Chinese log search and automatic sidecar injection for the collection of logs in the disk).
 
 It can be seen below that KubeSphere boasts a 3-tier multi-tenant architecture based on RBAC, with different roles in Cluster, Workspace and Project respectively.
 
