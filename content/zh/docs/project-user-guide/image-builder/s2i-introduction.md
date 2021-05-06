@@ -6,7 +6,7 @@ linkTitle: "S2I 工作流程和逻辑"
 weight: 10630
 ---
 
-Source-to-Image (S2I) 是一个将源代码构建成镜像的自动化工具。S2I 将源代码放入负责编译的镜像构建器 (Image Builder) 中，然后自动将编译后的代码打包成 Docker 镜像。
+Source-to-Image (S2I) 是一个将源代码构建成镜像的自动化工具。S2I 将源代码注入负责编译的镜像构建器 (Image Builder) 中，然后自动将编译后的代码打包成 Docker 镜像。
 
 有关如何在 KubeSphere 中使用 S2I 的更多信息，请参考 [Source to Image：无需 Dockerfile 发布应用](../source-to-image/)。此外，您还可以参考代码仓库 [S2IOperator](https://github.com/kubesphere/s2ioperator#source-to-image-operator) 和 [S2IRun](https://github.com/kubesphere/s2irun#s2irun) 查看更多详细信息。
 
