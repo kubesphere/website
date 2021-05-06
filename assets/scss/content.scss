@@ -71,6 +71,10 @@
 
       .content {
 
+        iframe {
+          max-width: 100%;
+        }
+
         .md-body {
           font-size: 16px;
           line-height: 2.29;
