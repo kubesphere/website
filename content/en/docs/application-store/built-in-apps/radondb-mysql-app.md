@@ -39,7 +39,7 @@ This tutorial demonstrates how to deploy RadonDB MySQL from the App Store of Kub
 
    ![RadonDB MySQL-running](/images/docs/appstore/built-in-apps/radondb-mysql-app/radondb-mysql-running.png)
 
-### Step 2: Access the RadonDB MySQL
+### Step 2: Access RadonDB MySQL
 
 1. In **Services** under **Application Workloads**, click the Service name of RadonDB MySQL.
 
@@ -53,4 +53,4 @@ This tutorial demonstrates how to deploy RadonDB MySQL from the App Store of Kub
 
    ![Access RadonDB MySQL](/images/docs/appstore/built-in-apps/radondb-mysql-app/radondb-mysql-service-terminal.png)
 
-4. If you want to access RadonDB MySQL outside the cluster, see [the open-source project of RadonDB MySQL](https://github.com/radondb/radondb-mysql-kubernetes) in details.
+4. If you want to access RadonDB MySQL outside the cluster, see [the open-source project of RadonDB MySQL](https://github.com/radondb/radondb-mysql-kubernetes) in detail.
