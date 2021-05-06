@@ -1,7 +1,7 @@
 ---
 title: "S2I 工作流程和逻辑"
 keywords: 'KubeSphere, Kubernetes, Docker, S2I, Source-to-Image'
-description: '了解 S2I 的工作原理及其为何以预期的方式工作。'
+description: '了解 S2I 的工作原理及其为何按照预期工作。'
 linkTitle: "S2I 工作流程和逻辑"
 weight: 10630
 ---
@@ -14,7 +14,7 @@ Source-to-Image (S2I) 是一个将源代码构建成镜像的自动化工具。S
 
 ### 镜像构建器
 
-对于 Python 和 Ruby 等解释型语言，程序的构建环境和运行时环境通常是相同的。例如，基于 Ruby 的景象构建器通常包含 Bundler、Rake、Apache、GCC 以及其他构建运行时环境的安装包。构建的工作流程如下图所示：
+对于 Python 和 Ruby 等解释型语言，程序的构建环境和运行时环境通常是相同的。例如，基于 Ruby 的镜像构建器通常包含 Bundler、Rake、Apache、GCC 以及其他构建运行时环境所需的安装包。构建的工作流程如下图所示：
 
 ![s2i-builder](/images/docs/zh-cn/project-user-guide/image-builder/s2i-intro/s2i-builder.png)
 
