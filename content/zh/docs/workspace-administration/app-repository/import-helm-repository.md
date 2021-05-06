@@ -25,7 +25,7 @@ KubeSphere 构建的应用仓库可以让用户使用基于 Helm Chart 的 Kuber
 
     ![添加仓库](/images/docs/zh-cn/workspace-administration-and-user-guide/app-repository/import-helm-repository/app-repo.PNG)
 
-2. 在弹出的对话框中，输入应用仓库名称并添加仓库 URL。例如，输入 `https://charts.kubeshpere.io/main`。
+2. 在弹出的对话框中，输入应用仓库名称并添加仓库 URL。例如，输入 `https://charts.kubesphere.io/main`。
 
     ![应用信息对话框](/images/docs/zh-cn/workspace-administration-and-user-guide/app-repository/import-helm-repository/app-info-dialogue.png)
 
