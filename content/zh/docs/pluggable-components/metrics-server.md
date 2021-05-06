@@ -16,7 +16,7 @@ KubeSphere 支持用于[部署](../../project-user-guide/application-workloads/d
 
 使用 KubeKey 为集群创建配置文件时，该文件会默认启用 Metrics Server。即在 Linux 上安装 KubeSphere 之前，您无需手动启用 Metrics Server。
 
-### 在 **Kubernetes** 上安装
+### 在 Kubernetes 上安装
 
 [在 Kubernetes 上安装 KubeSphere](../../installing-on-kubernetes/introduction/overview/) 教程中演示了在 Kubernetes 上安装 KubeSphere 的流程。若想安装可选组件 Metrics Server，您可以先在 [cluster-configuration.yaml](https://github.com/kubesphere/ks-installer/releases/download/v3.1.0/cluster-configuration.yaml) 文件中先启用该组件。
 

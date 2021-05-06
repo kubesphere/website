@@ -39,7 +39,7 @@ When you implement multi-node installation of KubeSphere on Linux, you need to c
    ./kk create cluster -f config-sample.yaml
    ```
 
-### **Installing on Kubernetes**
+### Installing on Kubernetes
 
 As you [install KubeSphere on Kubernetes](../../installing-on-kubernetes/introduction/overview/), you can enable the Metrics Server first in the [cluster-configuration.yaml](https://github.com/kubesphere/ks-installer/releases/download/v3.1.0/cluster-configuration.yaml) file.
 
