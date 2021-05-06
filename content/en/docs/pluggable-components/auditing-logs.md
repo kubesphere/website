@@ -57,7 +57,7 @@ By default, KubeKey will install Elasticsearch internally if Auditing is enabled
     ./kk create cluster -f config-sample.yaml
     ```
 
-### **Installing on Kubernetes**
+### Installing on Kubernetes
 
 As you [install KubeSphere on Kubernetes](../../installing-on-kubernetes/introduction/overview/), you can enable KubeSphere Auditing first in the [cluster-configuration.yaml](https://github.com/kubesphere/ks-installer/releases/download/v3.1.0/cluster-configuration.yaml) file.
 
