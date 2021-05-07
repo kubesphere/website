@@ -30,7 +30,7 @@ helm install harbor-release harbor/harbor --set expose.type=nodePort,externalURL
 
    ![harbor-projects](/images/docs/devops-user-guide/tool-integration/integrate-harbor-into-pipeline/harbor-projects.jpg)
 
-2. Set a name and click **OK**.
+2. Set a name (`ks-devops-harbor`) and click **OK**.
 
    ![set-name](/images/docs/devops-user-guide/tool-integration/integrate-harbor-into-pipeline/set-name.png)
 
@@ -38,7 +38,7 @@ helm install harbor-release harbor/harbor --set expose.type=nodePort,externalURL
 
    ![robot-account](/images/docs/devops-user-guide/tool-integration/integrate-harbor-into-pipeline/robot-account.png)
 
-4. Enter the name of the robot account and save it.
+4. Set a name (`robot-test`) for the robot account and save it.
 
    ![robot-account-name](/images/docs/devops-user-guide/tool-integration/integrate-harbor-into-pipeline/robot-account-name.png)
 
@@ -46,13 +46,44 @@ helm install harbor-release harbor/harbor --set expose.type=nodePort,externalURL
 
    ![export-to-file](/images/docs/devops-user-guide/tool-integration/integrate-harbor-into-pipeline/export-to-file.png)
 
+## Enable Insecure Registry
+
+You have to configure Docker to disregard security for your Harbor registry.
+
+1. Run the `vim /etc/docker/daemon.json` command on your host to edit the `daemon.json` file, enter the following contents, and save the changes.
+
+   ```json
+   {
+     "insecure-registries" : ["103.61.38.55:30002"]
+   }
+   ```
+
+   {{< notice note >}}
+
+   Make sure you replace `103.61.38.55:30002` with your Harbor registry address. The default location of the `daemon.json` file is `/etc/docker/daemon.json` on Linux or `C:\ProgramData\docker\config\daemon.json` on Windows.
+
+   {{</ notice >}}
+
+2. Run the following commands to restart Docker for the changes to take effect.
+
+   ```bash
+   sudo systemctl daemon-reload
+   sudo systemctl restart docker
+   ```
+
+   {{< notice note >}}
+
+   It is suggested that you use this solution for isolated testing or in a tightly controlled, air-gapped environment. For more information, refer to [Deploy a plain HTTP registry](https://docs.docker.com/registry/insecure/#deploy-a-plain-http-registry). After you finish the above operations, you can also use the images in your Harbor registry when deploying workloads in your project. You need to create an image Secret for your Harbor registry, and then select your Harbor registry and enter the absolute path of your images in **Container Settings** under the **Container Image** tab to search for your images.
+
+   {{</ notice >}}
+
 ## Create Credentials
 
 1. Log in to KubeSphere as `project-regular`, go to your DevOps project and create credentials for Harbor in **Credentials** under **Project Management**.
 
    ![create-credentials](/images/docs/devops-user-guide/tool-integration/integrate-harbor-into-pipeline/create-credentials.png)
 
-2. On the **Create Credentials** page, set a credential ID and select **Account Credentials** for **Type**. The **Username** field must be the same as the value of `name` in the Json file you just downloaded and input the value of `token` in the file for **Token/Password**.
+2. On the **Create Credentials** page, set a credential ID (`robot-test`) and select **Account Credentials** for **Type**. The **Username** field must be the same as the value of `name` in the JSON file you just downloaded and input the value of `token` in the file for **Token/Password**.
 
    ![credentials-page](/images/docs/devops-user-guide/tool-integration/integrate-harbor-into-pipeline/credentials-page.png)
 
@@ -60,7 +91,7 @@ helm install harbor-release harbor/harbor --set expose.type=nodePort,externalURL
 
 ## Create a Pipeline
 
-1. Go to the **Pipelines** page and click **Create**. Provide the basic information in the dialog that appears and click **Next**.
+1. Go to the **Pipelines** page and click **Create**. In the **Basic Information** tab, enter a name (`demo-pipeline`) for the pipeline and click **Next**.
 
    ![basic-info](/images/docs/devops-user-guide/tool-integration/integrate-harbor-into-pipeline/basic-info.png)
 
@@ -74,7 +105,7 @@ helm install harbor-release harbor/harbor --set expose.type=nodePort,externalURL
 
    ![edit-jenkinsfile](/images/docs/devops-user-guide/tool-integration/integrate-harbor-into-pipeline/edit-jenkinsfile.png)
 
-2. Copy and paste the following content into the Jenkinsfile. Note that you must replace the value of `REGISTRY`, `HARBOR_NAMESPACE`, `APP_NAME`, and `HARBOR_CREDENTIAL`.
+2. Copy and paste the following contents into the Jenkinsfile. Note that you must replace the values of `REGISTRY`, `HARBOR_NAMESPACE`, `APP_NAME`, and `HARBOR_CREDENTIAL` with your own values.
 
    ```groovy
    pipeline {  
@@ -92,8 +123,8 @@ helm install harbor-release harbor/harbor --set expose.type=nodePort,externalURL
        HARBOR_NAMESPACE = 'ks-devops-harbor'
        // docker image name
        APP_NAME = 'docker-example'
-       // ‘yuswift’ is the credential id you created on ks console
-       HARBOR_CREDENTIAL = credentials('yuswift')
+       // ‘robot-test’ is the credential ID you created on the KubeSphere console
+       HARBOR_CREDENTIAL = credentials('robot-test')
      }
      
      stages {
@@ -101,7 +132,7 @@ helm install harbor-release harbor/harbor --set expose.type=nodePort,externalURL
          steps{
            container ('maven') {
              // replace the Docker Hub username behind -u and do not forget ''. You can also use a Docker Hub token. 
-             sh '''echo $HARBOR_CREDENTIAL_PSW | docker login $REGISTRY -u 'robot$yuswift2018' --password-stdin'''
+             sh '''echo $HARBOR_CREDENTIAL_PSW | docker login $REGISTRY -u 'robot$robot-test' --password-stdin'''
                }
              }  
            }
@@ -129,4 +160,6 @@ helm install harbor-release harbor/harbor --set expose.type=nodePort,externalURL
 
 ## Run the Pipeline
 
-Save the Jenkinsfile and KubeSphere automatically creates all stages and steps on the graphical editing panels. Click **Run** to execute the pipeline. If everything goes well, the image will be pushed to your Harbor registry by Jenkins.
+Save the Jenkinsfile and KubeSphere automatically creates all stages and steps on the graphical editing panel. Click **Run** to run the pipeline. If everything goes well, the image will be pushed to your Harbor registry by Jenkins.
+
+![image-pushed](/images/docs/devops-user-guide/tool-integration/integrate-harbor-into-pipeline/image-pushed.png)
