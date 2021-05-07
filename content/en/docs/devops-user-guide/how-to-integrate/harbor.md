@@ -60,7 +60,7 @@ You have to configure Docker to disregard security for your Harbor registry.
 
    {{< notice note >}}
 
-   Make sure you replace `103.61.38.55:30002` with your Harbor registry address. The default location of the `daemon.json` file is `/etc/docker/daemon.json` on Linux or `C:\ProgramData\docker\config\daemon.json` on Windows Server.
+   Make sure you replace `103.61.38.55:30002` with your Harbor registry address. The default location of the `daemon.json` file is `/etc/docker/daemon.json` on Linux or `C:\ProgramData\docker\config\daemon.json` on Windows.
 
    {{</ notice >}}
 
@@ -123,7 +123,7 @@ You have to configure Docker to disregard security for your Harbor registry.
        HARBOR_NAMESPACE = 'ks-devops-harbor'
        // docker image name
        APP_NAME = 'docker-example'
-       // ‘robot-test’ is the credential id you created on ks console
+       // ‘robot-test’ is the credential ID you created on the KubeSphere console
        HARBOR_CREDENTIAL = credentials('robot-test')
      }
      
