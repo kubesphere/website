@@ -207,6 +207,13 @@ The account `project-admin` needs to be created in advance since it is the revie
 
    ![pipeline-list](/images/docs/devops-user-guide/using-devops/create-a-pipeline-using-a-jenkinsfile/pipeline-list.png)
 
+   {{< notice note >}}
+
+   - You can click the three dots on the right side of the pipeline and then select **Copy Pipeline** to create a copy of it. If you need to concurrently run multiple pipelines that don't contain multiple branches, you can select all of these pipelines and then click **Run** to run them in a batch.
+   - The pipeline detail page shows **Sync Status**. It reflects the synchronization result between KubeSphere and Jenkins, and you can see the **Success** icon if the synchronization is successful.  
+
+   {{</ notice >}} 
+
 2. Under **Activity**, three branches are being scanned. Click **Run** on the right and the pipeline runs based on the behavioral strategy you set. Select **sonarqube** from the drop-down list and add a tag number such as `v0.0.2`. Click **OK** to trigger a new activity.
 
    ![pipeline-detail](/images/docs/devops-user-guide/using-devops/create-a-pipeline-using-a-jenkinsfile/pipeline-detail.png)
@@ -241,6 +248,12 @@ The account `project-admin` needs to be created in advance since it is the revie
    input(id: 'release-image-with-tag', message: 'release image with tag?', submitter: 'project-admin,project-admin1')
    ···
    ```
+   
+   {{< notice note >}}
+   
+   In KubeSphere v3.1, the account that can run a pipeline will be able to continue or terminate the pipeline if there is no reviewer specified. Pipeline creators, accounts with the role of `admin` in the project, or the account you specify will be able to continue or terminate the pipeline.
+   
+   {{</ notice >}}
 
 ### Step 6: Check pipeline status
 
