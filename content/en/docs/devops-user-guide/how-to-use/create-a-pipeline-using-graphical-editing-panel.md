@@ -99,13 +99,21 @@ You can use the account `project-admin` to create the project. Besides, this acc
 
 ### Step 4: Edit the pipeline
 
-Click the pipeline to go to its detail page. To use graphical editing panels, click **Edit Pipeline** under the tab **Pipeline**. This pipeline consists of six stages. Follow the steps below to set each stage.
+Click the pipeline to go to its detail page. To use graphical editing panels, click **Edit Pipeline** under the tab **Pipeline**. In the dialog that appears, click **Custom Pipeline**. This pipeline consists of six stages. Follow the steps below to set each stage.
 
 ![edit-pipeline](/images/docs/devops-user-guide/using-devops/create-a-pipeline-using-graphical-editing-panels/edit-pipeline.jpg)
 
 {{< notice note >}}
 
-You can also click **Edit Jenkinsfile** to create a Jenkinsfile manually for your pipeline.
+The pipeline detail page shows **Sync Status**. It reflects the synchronization result between KubeSphere and Jenkins, and you can see the **Success** icon if the synchronization is successful. You can also click **Edit Jenkinsfile** to create a Jenkinsfile manually for your pipeline.
+
+{{</ notice >}}
+
+![click-custom-pipeline](/images/docs/devops-user-guide/using-devops/create-a-pipeline-using-graphical-editing-panels/click-custom-pipeline.png)
+
+{{< notice note >}}
+
+You can also click **Continuous Integration (CI)** and **Continuous Integration & Delivery (CI/CD)** to use the built-in pipeline templates provided by KubeSphere.
 
 {{</ notice >}} 
 
@@ -170,7 +178,6 @@ Pipelines include [declarative pipelines](https://www.jenkins.io/doc/book/pipeli
    ![shell](/images/docs/devops-user-guide/using-devops/create-a-pipeline-using-graphical-editing-panels/shell.jpg)
    
    ![unit-test-set](/images/docs/devops-user-guide/using-devops/create-a-pipeline-using-graphical-editing-panels/unit-test-set.jpg)
-   
 
 #### Stage 3: Code analysis (Optional)
 
@@ -302,6 +309,12 @@ This stage uses SonarQube to test your code. You can skip this stage if you do n
 
    ![input-message](/images/docs/devops-user-guide/using-devops/create-a-pipeline-using-graphical-editing-panels/input-message.jpg)
 
+   {{< notice note >}}
+
+   In KubeSphere v3.1, the account that can run a pipeline will be able to continue or terminate the pipeline if there is no reviewer specified. Pipeline creators, accounts with the role of `admin` in a project, or the account you specify will be able to continue or terminate a pipeline.
+
+   {{</ notice >}}
+
 3. Click **Add Step** under the **Deploy to Dev** stage again. Select **kubernetesDeploy** from the list and fill in the following fields in the dialog. Click **OK** to save it.
 
    - **Kubeconfig**: Select the Kubeconfig you created, such as `demo-kubeconfig`.
@@ -320,6 +333,12 @@ This stage uses SonarQube to test your code. You can skip this stage if you do n
 5. When you finish the steps above, click **Confirm** and **Save** in the bottom right corner. You can see the pipeline now has a complete workflow with each stage clearly listed on the pipeline. When you define a pipeline using the graphical editing panel, KubeSphere automatically creates its corresponding Jenkinsfile. Click **Edit Jenkinsfile** to view the Jenkinsfile.
 
    ![pipeline-done](/images/docs/devops-user-guide/using-devops/create-a-pipeline-using-graphical-editing-panels/pipeline-done.jpg)
+   
+   {{< notice note >}}
+   
+   On the **Pipelines** page, you can click the three dots on the right side of the pipeline and then select **Copy Pipeline** to create a copy of it. If you need to concurrently run multiple pipelines that don't contain multiple branches, you can select all of these pipelines and then click **Run** to run them in a batch. 
+   
+   {{</ notice >}}
 
 ### Step 5: Run a pipeline
 
