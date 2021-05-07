@@ -123,7 +123,7 @@ You have to configure Docker to disregard security for your Harbor registry.
        HARBOR_NAMESPACE = 'ks-devops-harbor'
        // docker image name
        APP_NAME = 'docker-example'
-       // ‘yuswift’ is the credential id you created on ks console
+       // ‘robot-test’ is the credential id you created on ks console
        HARBOR_CREDENTIAL = credentials('robot-test')
      }
      
