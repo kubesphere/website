@@ -1,33 +1,33 @@
 ---
-title: "Pipeline Settings"
-keywords: 'KubeSphere, Kubernetes, Docker, Jenkins, Pipelines'
-description: 'Understand various pipeline properties in a DevOps project.'
-linkTitle: "Pipeline Settings"
+title: "流水线设置"
+keywords: 'KubeSphere, Kubernetes, Docker, Jenkins, 流水线'
+description: '了解 DevOps 工程中流水线的各个属性。'
+linkTitle: "流水线设置"
 weight: 11280
 ---
 
-When you create a pipeline, you can customize its configurations through various settings. This document illustrates these settings in detail.
+创建流水线时，可以通过各种设置来自定义流水线配置。本文档对这些设置进行详细阐述。
 
-## Prerequisites
+## 准备工作
 
-- You need to create a workspace, a DevOps project and an account (`project-regular`). This account must be invited to the DevOps project with the `operator` role. For more information, refer to [Create Workspaces, Projects, Accounts and Roles](../../../quick-start/create-workspace-and-project/).
-- You need to [enable the KubeSphere DevOps System](../../../pluggable-components/devops/).
+- 您需要创建一个企业空间、一个 DevOps 工程以及一个帐户 (`project-regular`)，必须邀请该帐户至该 DevOps 工程中并赋予 `operator` 角色。有关更多信息，请参考 [创建企业空间、项目、帐户和角色](../../../quick-start/create-workspace-and-project/)。
+- 您需要[启用 KubeSphere DevOps 系统](../../../pluggable-components/devops/)。
 
-## Pipeline Settings
+## 流水线设置
 
-### Basic Information
+### 基本信息
 
 ![basic-info-tab](/images/docs/devops-user-guide/using-devops/pipeline-settings/basic-info-tab.png)
 
-On the **Basic Information** tab, you can customize the following information:
+在**基本信息**选项卡，您可以自定义以下信息：
 
-- **Name**. The name of the pipeline. Pipelines in the same DevOps project must have different names.
+- **Name**：流水线的名称，同一个 DevOps 工程内的流水线不能重名。
 
-- **Project**. Projects will be grouped by their resources, which you can view and manage by project.
+- **Project**：Projects will be grouped by their resources, which you can view and manage by project.将根据工程资源进行分组，可以按工程对资源进行查看管理。
 
-- **Description**. The additional information to describe the pipeline. Description is limited to 256 characters.
+- **Description**：The additional information to describe the pipeline. Description is limited to 256 characters.描述流水线的附加信息，描述信息不超过 256 个字符。
 
-- **Code Repository (optional)**. You can select a code repository as the code source for the pipeline. In KubeSphere v3.1, you can select GitHub, GitLab, Bitbucket, Git, and SVN as the code source.
+- **Code Repository (optional)**：You can select a code repository as the code source for the pipeline. In KubeSphere v3.1, you can select GitHub, GitLab, Bitbucket, Git, and SVN as the code source.可以选择一个代码仓库作为流水线的代码源。在 KubeSphere v3.1 中，您可以选择 GitHub、Git、SVN 或者 Bitbucket Server 作为代码源。
 
   {{< tabs >}}
 
@@ -36,6 +36,8 @@ On the **Basic Information** tab, you can customize the following information:
   ![code-source-github](/images/docs/devops-user-guide/using-devops/pipeline-settings/code-source-github.png)
 
   If you select **GitHub**, you have to specify the token for accessing GitHub. If you have created a credential with your GitHub token in advance, you can select it from the drop-down list, or you can click **Create a credential** to create a new one. Click **Confirm** after selecting the token and you can view your repository on the right. Click the **√** icon after you finish all operations.
+
+  如果选择 **GitHub**，则必须指定用于访问 GitHub 的令牌。如果您预先使用您的 GitHub 令牌 (token) 创建了凭证，您可以从下拉菜单中选取该凭证，或者点击**创建凭证**来创建新凭证。选择令牌后，点击**确认**，即可在右侧查看您的仓库。完成所有操作后，记得点击 **√** 图标。
 
   {{</ tab >}}
 
@@ -70,7 +72,7 @@ On the **Basic Information** tab, you can customize the following information:
   If you select **SVN**, you have to specify the repository URL and the credential. You can also specify the branch included and excluded based on your needs. Click the **√** icon after you finish all operations.
 
   {{</ tab >}}
-
+  
   {{</ tabs >}}
 
 ### Advanced Settings with A Code Repository Selected
