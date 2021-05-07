@@ -96,7 +96,6 @@ You can use the account `project-admin` to create the project. Besides, this acc
 4. The pipeline created will appear in the list.
 
    ![pipeline-list](/images/docs/devops-user-guide/using-devops/create-a-pipeline-using-graphical-editing-panels/pipeline-list.jpg)
-   
 
 ### Step 4: Edit the pipeline
 
@@ -179,7 +178,6 @@ Pipelines include [declarative pipelines](https://www.jenkins.io/doc/book/pipeli
    ![shell](/images/docs/devops-user-guide/using-devops/create-a-pipeline-using-graphical-editing-panels/shell.jpg)
    
    ![unit-test-set](/images/docs/devops-user-guide/using-devops/create-a-pipeline-using-graphical-editing-panels/unit-test-set.jpg)
-   
 
 #### Stage 3: Code analysis (Optional)
 
@@ -313,7 +311,7 @@ This stage uses SonarQube to test your code. You can skip this stage if you do n
 
    {{< notice note >}}
 
-   In KubeSphere v3.1, the account that can run the pipeline will be able to continue or terminate the pipeline if there is no approver specified. Moreover, pipeline creator, account with the role of admin in the project, or the account you specify will have the authority to continue or terminate the pipeline.
+   In KubeSphere v3.1, the account that can run a pipeline will be able to continue or terminate the pipeline if there is no reviewer specified. Pipeline creators, accounts with the role of `admin` in a project, or the account you specify will be able to continue or terminate a pipeline.
 
    {{</ notice >}}
 
@@ -338,7 +336,7 @@ This stage uses SonarQube to test your code. You can skip this stage if you do n
    
    {{< notice note >}}
    
-   On the **Pipelines** page, you can click the three dots on the right side of the pipeline and then select **Copy Pipeline** to create a copy of it. If you need to concurrently run multiple pipelines that don't contain multiple branches, you can select all of those pipelines and then click **Run** to run them in a batch. 
+   On the **Pipelines** page, you can click the three dots on the right side of the pipeline and then select **Copy Pipeline** to create a copy of it. If you need to concurrently run multiple pipelines that don't contain multiple branches, you can select all of these pipelines and then click **Run** to run them in a batch. 
    
    {{</ notice >}}
 

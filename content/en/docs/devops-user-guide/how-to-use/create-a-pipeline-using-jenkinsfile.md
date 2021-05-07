@@ -207,7 +207,7 @@ The account `project-admin` needs to be created in advance since it is the revie
 
    {{< notice note >}}
 
-   - You can click the three dots on the right side of the pipeline and then select **Copy Pipeline** to create a copy of it. If you need to concurrently run multiple pipelines that don't contain multiple branches, you can select all of those pipelines and then click **Run** to run them in a batch.
+   - You can click the three dots on the right side of the pipeline and then select **Copy Pipeline** to create a copy of it. If you need to concurrently run multiple pipelines that don't contain multiple branches, you can select all of these pipelines and then click **Run** to run them in a batch.
    - The pipeline detail page shows **Sync Status**. It reflects the synchronization result between KubeSphere and Jenkins, and you can see the **Success** icon if the synchronization is successful.  
 
    {{</ notice >}} 
@@ -249,7 +249,7 @@ The account `project-admin` needs to be created in advance since it is the revie
    
    {{< notice note >}}
    
-   In KubeSphere v3.1, the account that can run the pipeline will be able to continue or terminate the pipeline if there is no approver specified. Moreover, pipeline creator, account with the role of admin in the project, or the account you specify will have the authority to continue or terminate the pipeline.
+   In KubeSphere v3.1, the account that can run a pipeline will be able to continue or terminate the pipeline if there is no reviewer specified. Pipeline creators, accounts with the role of `admin` in the project, or the account you specify will be able to continue or terminate the pipeline.
    
    {{</ notice >}}
 
