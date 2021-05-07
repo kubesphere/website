@@ -1,8 +1,8 @@
 # KubeSphere Website
 
-We are working on two branches in this repository: master and release-3.0.
+This repository contains two branches that we are working on: master and release-3.0.
 
-The master branch contains KubeSphere Doc 3.1 which will be released together with KubeSphere 3.1. The frontend website currently displays content based on the branch release-3.0. If the pull request you submit applies to both branches, use the command `cherry-pick` to submit the same pull request.
+The master branch contains KubeSphere Doc 3.1 which has been released together with KubeSphere 3.1. The frontend website currently displays content based on the master branch. If the pull request you submit applies to both the master branch and the release-3.0 branch, use the command `cherry-pick` to submit the same pull request.
 
 This project uses [Hugo](https://gohugo.io/) to build the KubeSphere website.
 
