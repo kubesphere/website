@@ -105,7 +105,7 @@ helm install harbor-release harbor/harbor --set expose.type=nodePort,externalURL
 
    ![edit-jenkinsfile1](/images/docs/zh-cn/devops-user-guide/tool-integration/integrate-harbor-into-pipelines/edit-jenkinsfile1.png)
 
-2. 将以下内容复制粘贴至 Jenkinsfile。请注意，您必须替换 `REGISTRY`、`HARBOR_NAMESPACE`、`APP_NAME` 和 `HARBOR_CREDENTIAL` 为您自己的值。
+2. 将以下内容复制粘贴至 Jenkinsfile。请注意，您必须将 `REGISTRY`、`HARBOR_NAMESPACE`、`APP_NAME` 和 `HARBOR_CREDENTIAL` 替换为您自己的值。
 
    ```groovy
    pipeline {  
