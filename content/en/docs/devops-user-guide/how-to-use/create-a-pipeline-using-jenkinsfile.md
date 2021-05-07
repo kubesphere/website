@@ -65,9 +65,15 @@ There are eight stages as shown below in this example pipeline.
 
    ![sonar-token](/images/docs/devops-user-guide/using-devops/create-a-pipeline-using-a-jenkinsfile/sonar-token.jpg)
 
-3. You also need to create a GitHub personal access token with the permission as shown in the below image, and then use the generated token to create another Account Credentials, for example, `github-token`, in your DevOps project. 
+3. You also need to create a GitHub personal access token with the permission as shown in the below image, and then use the generated token to create Account Credentials (for example, `github-token`) for GitHub authentication in your DevOps project. 
 
    ![github-token-scope](/images/docs/devops-user-guide/using-devops/create-a-pipeline-using-a-jenkinsfile/github-token-scope.png)
+
+   {{< notice note >}}
+
+   To create a GitHub personal access token, go to **Settings** of your GitHub account, click **Developer settings**, select **Personal access tokens**, and click **Generate new token**.
+
+   {{</ notice >}}
 
 4. In total, you have five credentials in the list.
 
