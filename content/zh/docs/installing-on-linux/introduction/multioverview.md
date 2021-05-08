@@ -25,7 +25,7 @@ weight: 3120
 
 ## 步骤 1：准备 Linux 主机
 
-请参见下表列出的硬件和操作系统要求。若要开始本节演示中的多节点安装，您需要按照下列要求准备至少三台主机。如果计划的资源足够，也可以将 KubeSphere 安装在两个节点上。
+请参见下表列出的硬件和操作系统要求。在本教程所演示多节点安装示例中，您需要按照下列要求准备至少三台主机。如果您节点的资源充足，也可以将 [KubeSphere 容器平台](https://kubesphere.com.cn/)安装在两个节点上。
 
 ### 系统要求
 
@@ -214,12 +214,20 @@ spec:
 
 `internalAddress`：实例的私有 IP 地址。
 
-- 在本教程中，端口 22 是 SSH 的默认端口，因此您无需将它添加至该 YAML 文件中。否则，您需要在 IP 地址后添加对应端口号。例如：
+此外，您必须提供用于连接至每台实例的登录信息，以下示例供您参考：
+
+- 使用密码登录示例：
 
   ```yaml
   hosts:
     - {name: master, address: 192.168.0.2, internalAddress: 192.168.0.2, port: 8022, user: ubuntu, password: Testing123}
   ```
+
+  {{< notice note >}}
+
+  在本教程中，端口 `22` 是 SSH 的默认端口，因此您无需将它添加至该 YAML 文件中。否则，您需要在 IP 地址后添加对应端口号，如上所示。
+
+  {{</ notice >}} 
 
 - 默认 root 用户示例：
 
@@ -238,7 +246,7 @@ spec:
 {{< notice tip >}} 
 
 - 在安装 KubeSphere 之前，您可以使用 `hosts` 下提供的信息（例如 IP 地址和密码）通过 SSH 的方式测试任务机和其他实例之间的网络连接。
-- 在安装前，请确保端口 6443 没有被其他服务占用，否则在安装时会产生冲突（6443 为 API 服务器的默认端口）。
+- 在安装前，请确保端口 `6443` 没有被其他服务占用，否则在安装时会产生冲突（`6443` 为 API 服务器的默认端口）。
 
 {{</ notice >}}
 
@@ -256,11 +264,7 @@ spec:
 
 您可以在 `config-sample.yaml` 的 `addons` 字段下指定存储，从而自定义持久化存储插件，例如 NFS 客户端、Ceph RBD、GlusterFS 等。有关更多信息，请参见[持久化存储配置](../../../installing-on-linux/persistent-storage-configurations/understand-persistent-storage/)。
 
-{{< notice note >}}
-
-KubeSphere 会默认安装 [OpenEBS](https://openebs.io/)，为开发和测试环境配置 [LocalPV](https://kubernetes.io/docs/concepts/storage/volumes/#local)，方便新用户使用。在本多节点安装示例中，使用了默认存储类型（本地存储卷）。对于生产环境，请使用 NFS/Ceph/GlusterFS/CSI 或者商业存储产品作为持久化存储解决方案。
-
-{{</ notice >}}
+KubeSphere 会默认安装 [OpenEBS](https://openebs.io/)，为开发和测试环境配置 [LocalPV](https://kubernetes.io/docs/concepts/storage/volumes/#local)，方便新用户使用。在本多节点安装示例中，使用了默认存储类型（本地存储卷）。对于生产环境，您可以使用 NFS/Ceph/GlusterFS/CSI 或者商业存储产品作为持久化存储解决方案。
 
 {{< notice tip >}}
 
@@ -311,11 +315,11 @@ https://kubesphere.io             20xx-xx-xx xx:xx:xx
 #####################################################
 ```
 
-现在，您可以通过 `http://{IP}:30880`（例如，您可以使用 EIP）使用帐户和密码 `admin/P@88w0rd` 访问 KubeSphere 的 Web 控制台。
+现在，您可以通过 `<NodeIP:30880` 使用默认帐户和密码 (`admin/P@88w0rd`) 访问 KubeSphere 的 Web 控制台。
 
 {{< notice note >}}
 
-若要访问控制台，您可能需要根据您的环境配置端口转发规则。还请确保在您的安全组中打开了端口 30880。
+若要访问控制台，您可能需要根据您的环境配置端口转发规则。还请确保在您的安全组中打开了端口 `30880`。
 
 {{</ notice >}}
 
@@ -325,7 +329,11 @@ https://kubesphere.io             20xx-xx-xx xx:xx:xx
 
 KubeKey 不会启用 kubectl 自动补全功能，请参见以下内容并将其打开：
 
-**准备工作**：请确保已安装 bash-autocompletion 并可以正常工作。
+{{< notice note >}}
+
+请确保已安装 bash-autocompletion 并可以正常工作。
+
+{{</ notice >}}
 
 ```bash
 # Install bash-completion
@@ -340,5 +348,5 @@ kubectl completion bash >/etc/bash_completion.d/kubectl
 
 详细信息[见此](https://kubernetes.io/docs/tasks/tools/install-kubectl/#enabling-shell-autocompletion)。
 
-## 演示
+## 代码演示
 <script src="https://asciinema.org/a/364501.js" id="asciicast-364501" async></script>
