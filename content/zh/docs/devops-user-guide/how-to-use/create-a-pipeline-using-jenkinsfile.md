@@ -65,13 +65,13 @@ KubeSphere 中可以创建两种类型的流水线：一种是本教程中介绍
 
    ![Sonar 令牌](/images/docs/zh-cn/devops-user-guide/use-devops/create-a-pipeline-using-a-jenkinsfile/sonar-token.PNG)
 
-3. 您还需要创建具有如下图所示权限的 GitHub 个人访问令牌 (PAT) ，然后在 DevOps 项目中，使用生成的令牌创建用于 GitHub 认证的帐户凭证（例如，`github-token`）。
+3. 您还需要创建具有如下图所示权限的 GitHub 个人访问令牌 (PAT)，然后在 DevOps 项目中，使用生成的令牌创建用于 GitHub 认证的帐户凭证（例如，`github-token`）。
 
    ![github-token-scope](/images/docs/zh-cn/devops-user-guide/use-devops/create-a-pipeline-using-a-jenkinsfile/github-token-scope.png)
    
    {{< notice note >}}
    
-   如需创建 GitHub 个人访问令牌，请转到您 GitHub 账户的 **Settings**，点击 **Developer settings**，选择 **Personal access tokens**，然后点击 **Generate new token**。
+   如需创建 GitHub 个人访问令牌，请转到您 GitHub 帐户的 **Settings**，点击 **Developer settings**，选择 **Personal access tokens**，然后点击 **Generate new token**。
    
    {{</ notice >}}
    
