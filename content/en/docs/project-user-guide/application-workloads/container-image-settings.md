@@ -165,7 +165,7 @@ Configure environment variables for Pods in the form of key-value pairs.
 ![envi-var](/images/docs/project-user-guide/workloads/envi-var.jpg)
 
 - name: The name of the environment variable, specified by `env.name`.
-- value: The value of the variable reference, specified by `env.value`.
+- value: The value of the variable referenced, specified by `env.value`.
 - type: The type of environment variables. It supports customization, configuration items, keys, and variable/variable references.
 
 For more information about the command, please visit [Pod variable](https://kubernetes.io/docs/tasks/inject-data-application/environment-variable-expose-pod-information/?spm=a2c4g.11186623.2.20.16704b3e9qHXPb).

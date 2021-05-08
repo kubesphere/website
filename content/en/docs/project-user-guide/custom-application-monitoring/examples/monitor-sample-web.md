@@ -59,7 +59,7 @@ You need to deploy the sample web application into `test`. For demonstration pur
 
     ![deploy-sample-web-1](/images/docs/project-user-guide/custom-application-monitoring/deploy-sample-web-1.jpg)
 
-2. Expand the menu and click **Test Deploy**.
+2. Expand the menu and click **Test Deployment**.
 
     ![deploy-sample-web-2](/images/docs/project-user-guide/custom-application-monitoring/deploy-sample-web-2.jpg)
 

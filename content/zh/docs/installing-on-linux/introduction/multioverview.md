@@ -250,7 +250,7 @@ spec:
 
 #### controlPlaneEndpoint（仅适用于高可用安装）
 
-您可以用 `controlPlaneEndpoint` 为高可用集群定义外部负载均衡器。当且仅当安装多个主节点时，才需要准备和配置外部负载均衡器。请注意，`config-sample.yaml` 中的地址和端口应缩进两个空格，`address` 应为 VIP。有关详细信息，请参见[高可用配置](../../../installing-on-linux/high-availability-configurations/ha-configuration/)。
+您需要在 `controlPlaneEndpoint` 部分为高可用集群提供外部负载均衡器信息。当且仅当您安装多个主节点时，才需要准备和配置外部负载均衡器。请注意，`config-sample.yaml` 中的地址和端口应缩进两个空格，`address` 应为您的负载均衡器地址。有关详细信息，请参见[高可用配置](../../../installing-on-linux/high-availability-configurations/ha-configuration/)。
 
 #### addons
 

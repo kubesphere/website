@@ -68,7 +68,7 @@ Follow the same steps above to create a WordPress Secret `wordpress-secret` with
 
    ![composing-app1](/images/docs/quickstart/wordpress-deployment/composing-app1.png)
 
-2. Enter the basic information (e.g. input `wordpress` for Application Name) and click **Next**.
+2. Enter the basic information (e.g. `wordpress` for **App Name**) and click **Next**.
 
    ![basic-info1](/images/docs/quickstart/wordpress-deployment/basic-info1.png)
 

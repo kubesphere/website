@@ -248,7 +248,7 @@ List all your machines under `hosts` and add their detailed information as above
 
 #### controlPlaneEndpoint (for HA installation only)
 
-`controlPlaneEndpoint` allows you to define an external load balancer for an HA cluster. You need to prepare and configure an external load balancer if and only if you need to install multiple master nodes. Please note that the address and port should be indented by two spaces in `config-sample.yaml`, and `address` should be VIP. See [HA Configuration](../ha-configuration/) for details.
+The `controlPlaneEndpoint` is where you provide your external load balancer information for an HA cluster. You need to prepare and configure the external load balancer if and only if you need to install multiple master nodes. Please note that the address and port should be indented by two spaces in `config-sample.yaml`, and `address` should be your load balancer's IP address. See [HA Configurations](../../../installing-on-linux/high-availability-configurations/ha-configuration/) for details.
 
 #### addons
 

@@ -157,7 +157,7 @@ For more information about different fields in this configuration file, see [Kub
 
 - The address and port should be indented by two spaces in `config-sample.yaml`.
 - In most cases, you need to provide the **private IP address** of the load balancer for the field `address`. However, different cloud providers may have different configurations for load balancers. For example, if you configure a Server Load Balancer (SLB) on Alibaba Cloud, the platform assigns a public IP address to the SLB, which means you need to specify the public IP address for the field `address`.
-- The domain name of the load balancer is `lb.kubesphere.local` by default for internal access. If you need to change the domain name, please uncomment and modify it.
+- The domain name of the load balancer is `lb.kubesphere.local` by default for internal access.
 
 {{</ notice >}}
 

@@ -196,7 +196,7 @@ To integrate SonarQube into your pipeline, you must install SonarQube Server fir
 
    {{< notice note >}}
 
-   You may need to set up necessary port forwarding rules and open the port `30180` to access Jenkins in your security groups depending on where your instances are deployed.
+   You may need to set up necessary port forwarding rules and open port `30180` to access Jenkins in your security groups depending on where your instances are deployed.
 
    {{</ notice >}} 
 
