@@ -12,9 +12,13 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 <!-- End Google Tag Manager (noscript) -->
 {{ end }}  
 {{- partial "header.html" . -}}
+{{ $version := .Site.Params.version }}
+
 <main class='main-section padding'>
     <section class='section-1 bg-cover'>
         <div class="common-layout">
+            {{ partial "versionTip" ( dict "version" $version  ) }}
+
             {{ partial "breadcrumb.html" . }}
     
             <div class="title-div">
