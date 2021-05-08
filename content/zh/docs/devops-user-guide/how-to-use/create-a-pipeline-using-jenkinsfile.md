@@ -65,23 +65,33 @@ KubeSphere 中可以创建两种类型的流水线：一种是本教程中介绍
 
    ![Sonar 令牌](/images/docs/zh-cn/devops-user-guide/use-devops/create-a-pipeline-using-a-jenkinsfile/sonar-token.PNG)
 
-3. 您可以在列表中看到已创建的四个凭证。
+3. 您还需要创建具有如下图所示权限的 GitHub 个人访问令牌 (PAT)，然后在 DevOps 项目中，使用生成的令牌创建用于 GitHub 认证的帐户凭证（例如，`github-token`）。
 
-   ![凭证列表](/images/docs/zh-cn/devops-user-guide/use-devops/create-a-pipeline-using-a-jenkinsfile/credential-list.PNG)
+   ![github-token-scope](/images/docs/zh-cn/devops-user-guide/use-devops/create-a-pipeline-using-a-jenkinsfile/github-token-scope.png)
+   
+   {{< notice note >}}
+   
+   如需创建 GitHub 个人访问令牌，请转到您 GitHub 帐户的 **Settings**，点击 **Developer settings**，选择 **Personal access tokens**，然后点击 **Generate new token**。
+   
+   {{</ notice >}}
+   
+4. 您可以在列表中看到已创建的五个凭证。
+
+   ![credential-list1](/images/docs/zh-cn/devops-user-guide/use-devops/create-a-pipeline-using-a-jenkinsfile/credential-list1.png)
 
 ### 步骤 2：在 GitHub 仓库中修改 Jenkinsfile
 
 1. 登录 GitHub 并 Fork GitHub 仓库 [devops-java-sample](https://github.com/kubesphere/devops-java-sample) 至您的 GitHub 个人帐户。
 
-   ![Fork GitHub 仓库](/images/docs/zh-cn/devops-user-guide/use-devops/create-a-pipeline-using-a-jenkinsfile/fork-github-repo.PNG)
+   ![fork-github-repo1](/images/docs/zh-cn/devops-user-guide/use-devops/create-a-pipeline-using-a-jenkinsfile/fork-github-repo1.png)
 
 2. 在您自己的 GitHub 仓库 **devops-java-sample** 中，点击根目录中的文件 `Jenkinsfile-online`。
 
-   ![编辑 Jenkinsfile](/images/docs/zh-cn/devops-user-guide/use-devops/create-a-pipeline-using-a-jenkinsfile/jenkins-edit-1.PNG)
+   ![jenkins-edit--1](/images/docs/zh-cn/devops-user-guide/use-devops/create-a-pipeline-using-a-jenkinsfile/jenkins-edit--1.png)
 
 3. 点击右侧的编辑图标，编辑环境变量。
 
-   ![编辑 Jenkinsfile](/images/docs/zh-cn/devops-user-guide/use-devops/create-a-pipeline-using-a-jenkinsfile/jenkins-edit-2.PNG)
+   ![jenkins-edit--2](/images/docs/zh-cn/devops-user-guide/use-devops/create-a-pipeline-using-a-jenkinsfile/jenkins-edit--2.png)
 
    | 条目 | 值 | 描述信息 |
    | :--- | :--- | :--- |
@@ -102,7 +112,7 @@ KubeSphere 中可以创建两种类型的流水线：一种是本教程中介绍
 
 4. 编辑环境变量后，点击页面底部的 **Commit changes**，更新 SonarQube 分支中的文件。
 
-   ![提交更改](/images/docs/zh-cn/devops-user-guide/use-devops/create-a-pipeline-using-a-jenkinsfile/commit-changes.PNG)
+   ![commit-changes1](/images/docs/zh-cn/devops-user-guide/use-devops/create-a-pipeline-using-a-jenkinsfile/commit-changes1.png)
 
 ### 步骤 3：创建项目
 
@@ -131,15 +141,13 @@ KubeSphere 中可以创建两种类型的流水线：一种是本教程中介绍
 
    ![创建流水线](/images/docs/zh-cn/devops-user-guide/use-devops/create-a-pipeline-using-a-jenkinsfile/create-pipeline.PNG)
 
-2. 在弹出对话框中填入基本信息，将其命名为 `jenkinsfile-in-scm` 并选择代码仓库。
+2. 在弹出对话框中填入基本信息，将其命名为 `jenkinsfile-in-scm` 并选择一个代码仓库。
 
    ![创建流水线-2](/images/docs/zh-cn/devops-user-guide/use-devops/create-a-pipeline-using-a-jenkinsfile/create-pipeline-2.PNG)
 
-3. 如果您没有 GitHub 令牌，请在 **GitHub** 选项卡中点击**获取 Token** 生成一个新的 GitHub 令牌。将令牌粘贴到文本框中，点击**确认**。
+3. 在 **GitHub** 选项卡，从下拉菜单中选择 **github-token**，然后点击**确认**来选择您的仓库。
 
-   ![生成 GitHub 令牌-1](/images/docs/zh-cn/devops-user-guide/use-devops/create-a-pipeline-using-a-jenkinsfile/generate-github-token-1.PNG)
-
-   ![生成 GitHub 令牌-2](/images/docs/zh-cn/devops-user-guide/use-devops/create-a-pipeline-using-a-jenkinsfile/generate-github-token-2.PNG)
+   ![select-token1](/images/docs/zh-cn/devops-user-guide/use-devops/create-a-pipeline-using-a-jenkinsfile/select-token1.png)
 
 4. 选择您的 GitHub 帐户，与该令牌相关的所有仓库将在右侧列出。选择 **devops-java-sample** 并点击**选择此仓库**，点击**下一步**继续。
 
@@ -161,9 +169,9 @@ KubeSphere 中可以创建两种类型的流水线：一种是本教程中介绍
    
    {{</ notice >}} 
 
-6. 在**行为策略**中，KubeSphere 默认提供三种策略。本示例中不会使用**从 Fork 仓库中发现 PR** 这条策略，因此您可以删除该策略。您无需修改设置，可以直接使用默认值。
+6. 在**行为策略**中，KubeSphere 默认提供四种策略。本示例中不会使用**从 Fork 仓库中发现 PR** 这条策略，因此您可以删除该策略。您无需修改设置，可以直接使用默认值。
 
-   ![删除行为策略](/images/docs/zh-cn/devops-user-guide/use-devops/create-a-pipeline-using-a-jenkinsfile/remove-behavioral-strategy.PNG)
+   ![remove-behavioral-strategy1](/images/docs/zh-cn/devops-user-guide/use-devops/create-a-pipeline-using-a-jenkinsfile/remove-behavioral-strategy1.png)
 
    Jenkins 流水线运行时，开发者提交的 Pull Request (PR) 也将被视为一个单独的分支。
 
@@ -207,10 +215,10 @@ KubeSphere 中可以创建两种类型的流水线：一种是本教程中介绍
 
    {{< notice note >}}
 
-   - 您可以点击该流水线右侧的三个点，然后选择**复制流水线**来创建该流水线的副本。如果您需要同时运行多个不包含多分支的流水线，您可以全部选中这些流水线，然后点击**运行**来批量运行它们。
-   - 流水线详情页面会显示**同步状态**，它是 KubeSphere 和 Jenkins 之间的同步结果。若同步成功，您会看到**成功**图标。
+   - 您可以点击该流水线右侧的三个点，然后选择**复制流水线**来创建该流水线的副本。如需并发运行不包含多分支的多个流水线，您可以将这些流水线全选，然后点击**运行**来批量运行它们。
+   - 流水线详情页显示**同步状态**，即 KubeSphere 和 Jenkins 的同步结果。若同步成功，您会看到**成功**图标中打上绿色的对号。
 
-   {{</ notice >}}
+   {{</ notice >}} 
 
 2. 在**活动**选项卡下，正在扫描三个分支。点击右侧的**运行**，流水线将根据您设置的行为策略来运行。从下拉列表中选择 **sonarqube**，然后添加标签号，例如 `v0.0.2`。点击**确定**触发新活动。
 
@@ -249,7 +257,7 @@ KubeSphere 中可以创建两种类型的流水线：一种是本教程中介绍
    
    {{< notice note >}}
    
-   在 KubeSphere 3.1 中，能够运行流水线的帐户也能够继续或终止该流水线。此外，流水线创建者、拥有该工程管理员角色的帐户或者您指定的帐户也有权限继续或终止流水线。
+   在 KubeSphere 3.1 中，如果不指定审核员，那么能够运行流水线的帐户也能够继续或终止该流水线。流水线创建者、在该工程中具有 `admin` 角色的帐户或者您指定的帐户也有权限继续或终止流水线。
    
    {{</ notice >}}
 
@@ -311,7 +319,7 @@ KubeSphere 中可以创建两种类型的流水线：一种是本教程中介绍
 2. 在右下角的**工具箱**中使用 **Web Kubectl** 执行以下命令：
 
    ```bash
-   curl 10.233.109.33:8080
+   curl 10.233.120.230:8080
    ```
 
 3. 预期输出:
@@ -329,7 +337,7 @@ KubeSphere 中可以创建两种类型的流水线：一种是本教程中介绍
 4. 同样地，您可以在项目 `kubesphere-sample-prod` 中测试服务，您将看到相同的输出结果。
 
    ```bash
-   $ curl 10.233.109.2:8080
+   $ curl 10.233.120.236:8080
    Really appreciate your star, that's the power of our life.
    ```
 
