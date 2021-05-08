@@ -1,62 +1,66 @@
 ---
-title: "Create a Multi-branch Pipeline with GitLab"
-keywords: 'KubeSphere, Kubernetes, GitLab, Jenkins, Pipelines'
-description: 'Learn how to create a multi-branch pipeline with GitLab on KubeSphere.'
-linkTitle: "Create a Multi-branch Pipeline with GitLab"
+title: "使用 GitLab 创建多分支流水线"
+keywords: 'KubeSphere, Kubernetes, GitLab, Jenkins, 流水线'
+description: '了解如何使用 GitLab 在 KubeSphere 上创建多分支流水线。'
+linkTitle: "使用 GitLab 创建多分支流水线"
 weight: 11291
 ---
 
 [GitLab](https://about.gitlab.com/) is an open source code repository platform that provides public and private repositories. It is a complete DevOps platform that enables professionals to perform their tasks in a project.
 
+[GitLab](https://about.gitlab.com/) 是一个提供公有和私有仓库的开源代码仓库平台，也是一个完整的 DevOps 平台，专业人士能够使用 GitLab 在项目中执行任务。
+
 In KubeSphere v3.1, you can create a multi-branch pipeline with GitLab in your DevOps project. This tutorial demonstrates how to create a multi-branch pipeline with GitLab.
 
-## Prerequisites
+在 KubeSphere v3.1 种，您可以使用 GitLab 在您的 DevOps 工程中创建多分支流水线。本教程介绍如何使用 GitLab 创建多分支流水线。
 
-- You need to have a [GitLab](https://gitlab.com/users/sign_in) account and a [Docker Hub](https://hub.docker.com/) account.
-- You need to [enable the KubeSphere DevOps system](../../../pluggable-components/devops/).
-- You need to create a workspace, a DevOps project and an account (`project-regular`). This account must be invited to the DevOps project with the `operator` role. For more information, refer to [Create Workspaces, Projects, Accounts and Roles](../../../quick-start/create-workspace-and-project/).
+## 准备工作
 
-## Hands-on Lab
+- 您需要准备一个 [GitLab](https://gitlab.com/users/sign_in) 帐户以及一个 [Docker Hub](https://hub.docker.com/) 帐户。
+- 您需要[启用 KubeSphere DevOps 系统](../../../pluggable-components/devops/)。
+- 您需要创建一个企业空间、一个 DevOps 项目以及一个帐户 (`project-regular`)，该帐户必须被邀请至该 DevOps 工程中并赋予 `operator` 角色。有关更多信息，请参考[创建企业空间、项目、帐户和角色](../../../quick-start/create-workspace-and-project/)。
 
-### Step 1: Create credentials
+## 动手实验
 
-1. Log in to the KubeSphere console as `project-regular`. Go to your DevOps project and create the following credentials in **Credentials** under **Project Management**. For more information about how to create credentials, see [Credential Management](../../../devops-user-guide/how-to-use/credential-management/).
+### 步骤 1：创建凭证
+
+1. 使用 `project-regular` 用户登录 KubeSphere 控制台。转到您的 DevOps 工程，在**工程管理**下的**凭证**中创建以下凭证。有关更多如何创建凭证的信息，请参见[凭证管理](../../../devops-user-guide/how-to-use/credential-management/)。
 
    {{< notice note >}}
 
-   If there are any special characters such as `@` and `$` in your account or password, they can cause errors as a pipeline runs because they may not be recognized. In this case, you need to encode your account or password on some third-party websites first, such as [urlencoder](https://www.urlencoder.org/). After that, copy and paste the output for your credential information.
+   如果您的帐户或密码中包含任何特殊字符，例如 `@` 和 `$`，则可能会因为无法识别而在流水线运行时导致错误。在此情况下，您需要先在第三方网站（例如 [urlencoder](https://www.urlencoder.org/)）上对帐户或密码进行编码，然后将输出结果复制粘贴作为您的凭证信息。
 
    {{</ notice >}} 
 
-   | Credential ID   | Type                | Where to use |
-   | --------------- | ------------------- | ------------ |
-   | dockerhub-id    | Account Credentials | Docker Hub   |
-   | gitlab-id       | Account Credentials | GitLab       |
-   | demo-kubeconfig | kubeconfig          | Kubernetes   |
+   | 凭证 ID         | 类型       | 用途       |
+   | --------------- | ---------- | ---------- |
+   | dockerhub-id    | 帐户凭证   | Docker Hub |
+   | gitlab-id       | 帐户凭证   | GitLab     |
+   | demo-kubeconfig | kubeconfig | Kubernetes |
 
-2. After creation, you can see the credentials in the list.
+2. 创建完成后，您可以在列表中看到所有凭证。
 
    ![credential-created](/images/docs/devops-user-guide/using-devops/gitlab-multibranch-pipeline/credential-created.png)
 
-### Step 2: Modify the Jenkinsfile in your GitLab repository
+### 步骤 2：在 GitLab 仓库中编辑 Jenkinsfile
 
-1. Log in to GitLab and create a public project. Click **Import project/repository**, select **Repo by URL** to enter the URL of [devops-java-sample](https://github.com/kubesphere/devops-java-sample), select **Public** for **Visibility Level**, and then click **Create project**.
+1. Log in to GitLab and create a public project. Click **Import project/repository**, select **Repo by URL** to enter the URL of [devops-java-sample](https://github.com/kubesphere/devops-java-sample), select **Public** for **Visibility Level**, and then click **Create project**.登录 GitLab 并创建一个公有项目。点击
 
    ![click-import-project](/images/docs/devops-user-guide/using-devops/gitlab-multibranch-pipeline/click-import-project.png)
 
    ![use-git-url](/images/docs/devops-user-guide/using-devops/gitlab-multibranch-pipeline/use-git-url.png)
 
-2. In the project just created, create a new branch from the master branch and name it `gitlab-demo`.
+2. In the project just created, create a new branch from the master branch and name it `gitlab-demo`.在刚刚创建的项目中，从 master 分支创建一个新分支，命名为 `gitlab-demo`。
 
    ![new-branch](/images/docs/devops-user-guide/using-devops/gitlab-multibranch-pipeline/new-branch.png)
 
-3. In the `gitlab-demo` branch, click the file `Jenkinsfile-online` in the root directory.
+3. In the `gitlab-demo` branch, click the file `Jenkinsfile-online` in the root directory.在 `gitlab-demo` 分支中，点击根目录中的 `Jenkinsfile-online` 文件。
 
    ![click-jenkinsfile](/images/docs/devops-user-guide/using-devops/gitlab-multibranch-pipeline/click-jenkinsfile.png)
 
-4. Click **Edit**, change `GITHUB_CREDENTIAL_ID`, `GITHUB_ACCOUNT`, and `@github.com` to `GITLAB_CREDENTIAL_ID`, `GITLAB_ACCOUNT`, and `@gitlab.com` respectively, and then edit the following items. You also need to change the value of `branch` in the `push latest` and `deploy to dev` stages to `gitlab-demo`.
+4. Click **Edit**, change `GITHUB_CREDENTIAL_ID`, `GITHUB_ACCOUNT`, and `@github.com` to `GITLAB_CREDENTIAL_ID`, `GITLAB_ACCOUNT`, and `@gitlab.com` respectively, and then edit the following items. You also need to change the value of `branch` in the `push latest` and `deploy to dev` stages to `gitlab-demo`.点击**编辑**，分别将 `GITHUB_CREDENTIAL_ID`、`GITHUB_ACCOUNT` 以及 `@github.com` 更改为 `GITLAB_CREDENTIAL_ID`、`GITLAB_ACCOUNT` 以及 `@gitlab.com`，然后编辑以下条目。您还需要将 `push latest` 和 `deploy to dev` 中 `branch` 的值更改为 `gitlab-demo`。
 
-   | Item                 | Value     | Description                                                  |
+   | 条目                 | 值        | 描述信息                                                     |
    | -------------------- | --------- | ------------------------------------------------------------ |
    | GITLAB_CREDENTIAL_ID | gitlab-id | The **Credential ID** you set in KubeSphere for your GitLab account. It is used to push tags to your GitLab repository. |
    | DOCKERHUB_NAMESPACE  | felixnoo  | Replace it with your Docker Hub’s account name. It can be the Organization name under the account. |
@@ -64,19 +68,21 @@ In KubeSphere v3.1, you can create a multi-branch pipeline with GitLab in your D
 
    {{< notice note >}}
 
-   For more information about the environment variables in the Jenkinsfile, refer to [Create a Pipeline Using a Jenkinsfile](../create-a-pipeline-using-jenkinsfile/#step-2-modify-the-jenkinsfile-in-your-github-repository).
+   有关 Jenkinsfile 中环境变量的更多信息，请参考[使用 Jenkinsfile 创建流水线](../create-a-pipeline-using-jenkinsfile/#step-2-modify-the-jenkinsfile-in-your-github-repository)。
 
    {{</ notice >}}
 
-5. Click **Commit changes** to update this file.
+5. Click **Commit changes** to update this file.点击 **Commit changes** 更新该文件。
 
    ![commit-changes](/images/docs/devops-user-guide/using-devops/gitlab-multibranch-pipeline/commit-changes.png)
 
-### Step 3: Create projects
+### 步骤 3：创建项目
 
 You need to create two projects, such as `kubesphere-sample-dev` and `kubesphere-sample-prod`, which represent the development environment and the production environment respectively. For more information, refer to [Create a Pipeline Using a Jenkinsfile](../create-a-pipeline-using-jenkinsfile/#step-3-create-projects).
 
-### Step 4: Create a pipeline
+您需要创建两个项目，例如 `kubesphere-sample-dev` 和 `kubesphere-sample-prod`，这两个项目分别代表开发环境和测试环境。有关更多信息，请参考[使用 Jenkinsfile 创建流水线](../create-a-pipeline-using-jenkinsfile/#step-2-modify-the-jenkinsfile-in-your-github-repository)。
+
+### 步骤 4：创建流水线
 
 1. Log in to the KubeSphere web console as `project-regular`. Go to your DevOps project and click **Create** to create a new pipeline.
 
