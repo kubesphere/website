@@ -6,7 +6,7 @@ linkTitle: "Deploy ClickHouse Operator and a ClickHouse Cluster on KubeSphere"
 weight: 14340
 ---
 
-[ClickHouse](https://clickhouse.tech/) is a column-oriented database management system (DBMS) for online analytical processing of queries (OLAP). ClickHouse on QingCloud is a ClickHouse cluster application deeply customized with features including automated cluster management, data redistribution in clusters, and excellent performance with less cost.
+[ClickHouse](https://clickhouse.tech/) is a column-oriented database management system (DBMS) for online analytical processing of queries (OLAP). ClickHouse on QingCloud is a deeply customized ClickHouse cluster application maintaining ClickHouse cluster functions and featuring automated cluster management, data redistribution in clusters, and excellent performance with less cost.
 
 This tutorial demonstrates how to deploy ClickHouse Operator and a ClickHouse Cluster on KubeSphere.
 
@@ -72,7 +72,7 @@ This tutorial demonstrates how to deploy ClickHouse Operator and a ClickHouse Cl
 
 ### Step 2: Add an app repository
 
-1. Log out of KubeSphere and log back in as `ws-admin`. In **demo-workspace**, go to **App Repositories** under **App Management**, and then click **Add**.
+1. Log out of KubeSphere and log back in as `ws-admin`. In `demo-workspace`, go to **App Repositories** under **App Management**, and then click **Add**.
 
    ![add-repo](/images/docs/appstore/external-apps/deploy-clickhouse/add-repo.png)
 
@@ -86,7 +86,7 @@ This tutorial demonstrates how to deploy ClickHouse Operator and a ClickHouse Cl
 
 ### Step 3: Deploy a ClickHouse Cluster
 
-1. Log out of KubeSphere and log back in as `project-regular`. In **demo-project**, go to **Apps** under **Application Workloads** and click **Deploy New App**.
+1. Log out of KubeSphere and log back in as `project-regular`. In `demo-project`, go to **Apps** under **Application Workloads** and click **Deploy New App**.
 
    ![click-deploy-new-app](/images/docs/appstore/external-apps/deploy-clickhouse/click-deploy-new-app.png)
 
