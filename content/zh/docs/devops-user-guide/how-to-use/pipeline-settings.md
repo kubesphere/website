@@ -51,7 +51,7 @@ weight: 11280
 
   ![code-source-bitbucket1](/images/docs/zh-cn/devops-user-guide/use-devops/pipeline-settings/code-source-bitbucket1.png)
 
-  如果选择 **Bitbucket**，则需要指定 Bitbucket Server 和凭证。如果获取仓库代码需要凭证，则需要指定一个凭证。您也可以点击**新建凭证**来添加新凭证。完成所有操作后，记得点击 **√** 图标。
+  如果选择 **Bitbucket**，则需要输入您的 Bitbucket Server。您可以预先使用您的 Bitbucket 用户名和密码创建一个凭证，或者点击**创建凭证**来创建一个新凭证。输入信息后点击**确认**，即可在右侧看到您的仓库。完成所有操作后，记得点击 **√** 图标。
 
   {{</ tab >}}
 
