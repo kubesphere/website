@@ -19,7 +19,7 @@ It is highly recommended that you install Harbor through [the App Store of KubeS
 
 ```bash
 helm repo add harbor https://helm.goharbor.io
-# For a qucik start, you can expose Harbor by nodeport and disable tls.
+# For a quick start, you can expose Harbor by nodeport and disable tls.
 # Set externalURL to one of your node ip and make sure it can be accessed by jenkins.
 helm install harbor-release harbor/harbor --set expose.type=nodePort,externalURL=http://$ip:30002,expose.tls.enabled=false
 ```
