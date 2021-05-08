@@ -6,7 +6,7 @@ linkTitle: "All-in-One Installation on Linux"
 weight: 2100
 ---
 
-For those who are new to KubeSphere and looking for a quick way to discover the [container platform](https://kubesphere.io/), the all-in-one mode is your best choice to get started. It features rapid deployment and hassle-free configuration installation with KubeSphere and Kubernetes all provisioned on your machine.
+For those who are new to KubeSphere and looking for a quick way to discover the [container platform](https://kubesphere.io/), the all-in-one mode is your best choice to get started. It features rapid deployment and hassle-free configurations with KubeSphere and Kubernetes all provisioned on your machine.
 
 ## Video Demonstration
 
@@ -148,9 +148,7 @@ To create a Kubernetes cluster with KubeSphere installed, refer to the following
 
 {{</ notice >}}
 
-After you execute the command, you will see a table as below for environment check. For details, read [Node requirements](#node-requirements) and [Dependency requirements](#dependency-requirements) above. Input `yes` to continue.
-
-![environment-check](/images/docs/quickstart/all-in-one-installation/environment-check.png)
+After you execute the command, you will see a table for environment check. For details, read [Node requirements](#node-requirements) and [Dependency requirements](#dependency-requirements) above. Input `yes` to continue.
 
 ## Step 4: Verify the Installation
 
@@ -164,7 +162,7 @@ Input the following command to check the result.
 kubectl logs -n kubesphere-system $(kubectl get pod -n kubesphere-system -l app=ks-install -o jsonpath='{.items[0].metadata.name}') -f
 ```
 
-The output displays the IP address and port number of the web console, which is exposed through `NodePort 30880` by default. Now, you can access the console through `EIP:30880` with the default account and password (`admin/P@88w0rd`).
+The output displays the IP address and port number of the web console, which is exposed through `NodePort 30880` by default. Now, you can access the console at `<NodeIP>:30880` with the default account and password (`admin/P@88w0rd`).
 
 ```bash
 #####################################################
