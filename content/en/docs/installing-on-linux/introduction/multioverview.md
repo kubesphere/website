@@ -23,7 +23,7 @@ A multi-node cluster is composed of at least one master node and one worker node
 
 ## Step 1: Prepare Linux Hosts
 
-Please see the requirements for hardware and operating system shown below. To get started with multi-node installation in this demo, you need to prepare at least three hosts according to the following requirements. It is possible to install [KubeSphere Container Platform](https://kubesphere.io/) on two nodes with enough resources planned.
+Please see the requirements for hardware and operating system shown below. To get started with multi-node installation in this tutorial, you need to prepare at least three hosts according to the following requirements. It is possible to install the [KubeSphere Container Platform](https://kubesphere.io/) on two nodes if they have sufficient resources.
 
 ### System requirements
 
@@ -56,7 +56,7 @@ The path `/var/lib/docker` is mainly used to store the container data, and will 
 
 ### Dependency requirements
 
-KubeKey can install Kubernetes and KubeSphere together. The dependency that needs to be installed may be different based on the Kubernetes version to be installed. You can refer to the list below to see if you need to install relevant dependencies on your node in advance. 
+KubeKey can install Kubernetes and KubeSphere together. The dependency that needs to be installed may be different based on the Kubernetes version to be installed. You can refer to the list below to see if you need to install relevant dependencies on your node in advance.
 
 | Dependency  | Kubernetes Version ≥ 1.18 | Kubernetes Version < 1.18 |
 | ----------- | ------------------------- | ------------------------- |
@@ -212,12 +212,20 @@ List all your machines under `hosts` and add their detailed information as above
 
 `internalAddress`: The private IP address of the instance.
 
-- In this tutorial, port 22 is the default port of SSH so you do not need to add it in the YAML file. Otherwise, you need to add the port number after the IP address. For example:
+At the same time, you must provide the login information used to connect to each instance. Here are some examples:
+
+- For password login:
 
   ```yaml
   hosts:
     - {name: master, address: 192.168.0.2, internalAddress: 192.168.0.2, port: 8022, user: ubuntu, password: Testing123}
   ```
+
+  {{< notice note >}}
+
+  In this tutorial, port `22` is the default port of SSH so you do not need to add it in the YAML file. Otherwise, you need to add the port number after the IP address as above.
+
+  {{</ notice >}} 
 
 - For the default root user:
 
@@ -236,7 +244,7 @@ List all your machines under `hosts` and add their detailed information as above
 {{< notice tip >}} 
 
 - Before you install KubeSphere, you can use the information provided under `hosts` (for example, IP addresses and passwords) to test the network connection between the taskbox and other instances using SSH.
-- Make sure port 6443 is not being used by other services before the installation. Otherwise, it may cause conflicts as the default port of the API server is 6443.
+- Make sure port `6443` is not being used by other services before the installation. Otherwise, it may cause conflicts as the default port of the API server is `6443`.
 
 {{</ notice >}}
 
@@ -254,11 +262,7 @@ The `controlPlaneEndpoint` is where you provide your external load balancer info
 
 You can customize persistent storage plugins (e.g. NFS Client, Ceph RBD, and GlusterFS) by specifying storage under the field `addons` in `config-sample.yaml`. For more information, see [Persistent Storage Configurations](../../../installing-on-linux/persistent-storage-configurations/understand-persistent-storage/).
 
-{{< notice note >}}
-
-KubeKey will install [OpenEBS](https://openebs.io/) to provision [LocalPV](https://kubernetes.io/docs/concepts/storage/volumes/#local) for development and testing environment by default, which is convenient for new users. In this example of multi-node installation, the default storage class (local volume) is used. For production, please use NFS/Ceph/GlusterFS/CSI or commercial products as persistent storage solutions.
-
-{{</ notice >}}
+KubeKey will install [OpenEBS](https://openebs.io/) to provision [LocalPV](https://kubernetes.io/docs/concepts/storage/volumes/#local) for development and testing environment by default, which is convenient for new users. In this example of multi-node installation, the default storage class (local volume) is used. For production, you can use NFS/Ceph/GlusterFS/CSI or commercial products as persistent storage solutions.
 
 {{< notice tip >}}
 
@@ -309,11 +313,11 @@ https://kubesphere.io             20xx-xx-xx xx:xx:xx
 #####################################################
 ```
 
-Now, you will be able to access the web console of KubeSphere at `http://{IP}:30880` (e.g. you can use the EIP) with the account and password `admin/P@88w0rd`.
+Now, you will be able to access the web console of KubeSphere at `<NodeIP>:30880` with the default account and password (`admin/P@88w0rd`).
 
 {{< notice note >}}
 
-To access the console, you may need to configure port forwarding rules depending on your environment. Please also make sure port 30880 is opened in your security group.
+To access the console, you may need to configure port forwarding rules depending on your environment. Please also make sure port `30880` is opened in your security group.
 
 {{</ notice >}}
 
@@ -323,7 +327,11 @@ To access the console, you may need to configure port forwarding rules depending
 
 KubeKey doesn't enable kubectl autocompletion. See the content below and turn it on:
 
-**Prerequisite**: make sure bash-autocompletion is installed and works.
+{{< notice note >}}
+
+Make sure bash-autocompletion is installed and works.
+
+{{</ notice >}}
 
 ```bash
 # Install bash-completion
@@ -338,5 +346,5 @@ kubectl completion bash >/etc/bash_completion.d/kubectl
 
 Detailed information can be found [here](https://kubernetes.io/docs/tasks/tools/install-kubectl/#enabling-shell-autocompletion).
 
-## Demo
+## Code Demonstration
 <script src="https://asciinema.org/a/368752.js" id="asciicast-368752" async></script>
