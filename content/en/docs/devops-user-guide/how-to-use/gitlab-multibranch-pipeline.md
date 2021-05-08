@@ -153,7 +153,7 @@ You need to create two projects, such as `kubesphere-sample-dev` and `kubesphere
 
    {{< notice note >}}
 
-   You may need to open the port in your security groups so that you can access the app with the URL. For more information, refer to [access the example Service](../create-a-pipeline-using-jenkinsfile/#step-8-access-the-example-service).
+   You may need to open the port in your security groups so that you can access the app with the URL. For more information, refer to [Access the example Service](../create-a-pipeline-using-jenkinsfile/#step-8-access-the-example-service).
 
    {{</ notice >}}
 
