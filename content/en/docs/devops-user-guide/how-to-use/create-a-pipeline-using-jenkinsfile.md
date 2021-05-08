@@ -139,7 +139,7 @@ The account `project-admin` needs to be created in advance since it is the revie
 
 1. Log out of KubeSphere and log back in as `project-regular`. Go to the DevOps project `demo-devops` and click **Create** to build a new pipeline.
 
-   ![create-pipeline](/images/docs/devops-user-guide/using-devops/create-a-pipeline-using-a-jenkinsfile/create-pipeline.jpg)
+   ![create-a-pipeline1](/images/docs/devops-user-guide/using-devops/create-a-pipeline-using-a-jenkinsfile/create-a-pipeline1.png)
 
 2. Provide the basic information in the dialog that appears. Name it `jenkinsfile-in-scm` and select a code repository.
 
@@ -155,7 +155,7 @@ The account `project-admin` needs to be created in advance since it is the revie
 
 5. In **Advanced Settings**, check the box next to **Discard old branch**. In this tutorial, you can use the default value of **Days to keep old branches** and **Maximum number branches to keep**.
 
-   ![branch-settings](/images/docs/devops-user-guide/using-devops/create-a-pipeline-using-a-jenkinsfile/branch-settings.jpg)
+   ![branch-settings-1](/images/docs/devops-user-guide/using-devops/create-a-pipeline-using-a-jenkinsfile/branch-settings-1.png)
 
    Discarding old branches means that you will discard the branch record all together. The branch record includes console output, archived artifacts and other relevant metadata of specific branches. Fewer branches mean that you can save the disk space that Jenkins is using. KubeSphere provides two options to determine when old branches are discarded:
 
@@ -164,12 +164,12 @@ The account `project-admin` needs to be created in advance since it is the revie
    - Maximum number of branches to keep. The oldest branches will be discarded after branches reach a certain amount.
 
    {{< notice note >}}
-   
+
    **Days to keep old branches** and **Maximum number of branches to keep** apply to branches at the same time. As long as a branch meets the condition of either field, it will be discarded. For example, if you specify 2 as the number of retention days and 3 as the maximum number of branches, any branches that exceed either number will be discarded. KubeSphere repopulates these two fields with -1 by default, which means deleted branches will be discarded.
-   
+
    {{</ notice >}} 
 
-6. In **Behavioral strategy**, KubeSphere offers three strategies by default. You can delete **Discover PR from Forks** as this strategy will not be used in this example. You do not need to change the setting and can use the default value directly.
+6. In **Behavioral strategy**, KubeSphere offers four strategies by default. You can delete **Discover PR from Forks** as this strategy will not be used in this example. You do not need to change the setting and can use the default value directly.
 
    ![remove-behavioral-strategy](/images/docs/devops-user-guide/using-devops/create-a-pipeline-using-a-jenkinsfile/remove-behavioral-strategy.png)
 
@@ -199,7 +199,7 @@ The account `project-admin` needs to be created in advance since it is the revie
 
 8. In **Scan Repo Trigger**, check **If not, scan regularly** and set the interval to **5 minutes**. Click **Create** to finish.
 
-   ![advanced-setting](/images/docs/devops-user-guide/using-devops/create-a-pipeline-using-a-jenkinsfile/advanced-setting.jpg)
+   ![advanced-setting1](/images/docs/devops-user-guide/using-devops/create-a-pipeline-using-a-jenkinsfile/advanced-setting1.png)
 
    {{< notice note >}}
 
@@ -212,13 +212,6 @@ The account `project-admin` needs to be created in advance since it is the revie
 1. After a pipeline is created, it displays in the list below. Click it to go to its detail page.
 
    ![pipeline-list](/images/docs/devops-user-guide/using-devops/create-a-pipeline-using-a-jenkinsfile/pipeline-list.png)
-
-   {{< notice note >}}
-
-   - You can click the three dots on the right side of the pipeline and then select **Copy Pipeline** to create a copy of it. If you need to concurrently run multiple pipelines that don't contain multiple branches, you can select all of these pipelines and then click **Run** to run them in a batch.
-   - The pipeline detail page shows **Sync Status**. It reflects the synchronization result between KubeSphere and Jenkins, and you can see the **Success** icon if the synchronization is successful.  
-
-   {{</ notice >}} 
 
    {{< notice note >}}
 
