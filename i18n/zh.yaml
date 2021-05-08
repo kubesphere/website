@@ -118,3 +118,7 @@
   translation: 加入 Slack
 - id: Join Wechat
   translation: 扫码加入微信群
+- id: Version Tip
+  translation: 您正在查看 KubeSphere 版本的文档：{{ .version }}
+- id: Version Description
+  translation: KubeSphere {{ .version }} 版本的文档已不再维护。您现在看到的版本来自于一份静态的快照。如需查阅最新文档，请点击 <a href='https://kubesphere.io/zh/docs' target='_blank'>最新版本</a>。

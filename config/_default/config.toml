@@ -13,6 +13,9 @@ enableRobotsTXT = true
 [Taxonomies]
 
 [params]
+
+version = "v3.0.0"
+
 logo = "images/logo.svg"
 
 githubUrl = "https://github.com/kubesphere/website"

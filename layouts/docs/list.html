@@ -1,8 +1,9 @@
 {{ define "main" }}
-
+{{ $version := .Site.Params.version }}
 {{ with .Params.section1 }}
 <section class='section-1 bg-cover' style='background-image: url("{{ .image }}");'>
     <div class="title-div common-layout">
+        {{ partial "versionTip" ( dict "version" $version  ) }}
         <h1 class="title-h1">{{ .title }}</h1>
         <p class="common-p">{{ .content }}</p>
         <div class="search-div">

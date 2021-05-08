@@ -118,3 +118,7 @@
   translation: Join Slack
 - id: Join Wechat
   translation: Scan the QR code
+- id: Version Tip
+  translation: You are viewing documentation for KubeSphere version:{{ .version }}
+- id: Version Description
+  translation: KubeSphere {{ .version }} documentation is no longer actively maintained. The version you are currently viewing is a static snapshot. For up-to-date documentation, see <a href='https://kubesphere.io/docs' target='_blank'>the latest version</a>.

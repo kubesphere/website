@@ -1,0 +1,10 @@
+{{ if .version }}
+<div class="version-tip">
+    <p>
+      {{ i18n "Version Tip" (dict "version" .version) }}
+    </p>
+    <p>
+      {{ i18n "Version Description" (dict "version" .version) | safeHTML }}
+    </p>
+</div>
+{{ end }}

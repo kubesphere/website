@@ -402,3 +402,32 @@ section {
   /* Avoid pushing up the copy buttons. */
   margin: 0;
 }
+
+.version-tip {
+  padding: 20px;
+  margin: 20px 0;
+  background-image: linear-gradient(to left,#e7d44e,#ecaf24);
+  border-radius: 4px;
+  color: #3d3e49;
+
+  p {
+    font-size: 14px;
+    font-weight: 400;
+
+    &:first-child {
+      font-size: 20px;
+      margin-bottom: .5rem;
+      font-weight: 500;
+      line-height: 1.2;
+    }
+  }
+
+  a {
+    color: #3d3e49;
+    text-decoration: underline;
+
+    &:hover {
+      color: #55bc8a;
+    }
+  }
+}
