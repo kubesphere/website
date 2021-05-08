@@ -22,15 +22,15 @@ weight: 2100
 
 |  操作系统                                                |  最低要求                        |
 | ------------------------------------------------------ | ------------------------------------------- |
-| **Ubuntu** *16.04, 18.04*                                      | CPU: 2 Cores, Memory: 4 G, Disk Space: 40 G |
-| **Debian** *Buster, Stretch*                                   | CPU: 2 Cores, Memory: 4 G, Disk Space: 40 G |
-| **CentOS** *7*.x                                               | CPU: 2 Cores, Memory: 4 G, Disk Space: 40 G |
-| **Red Hat Enterprise Linux** *7*                               | CPU: 2 Cores, Memory: 4 G, Disk Space: 40 G |
-| **SUSE Linux Enterprise Server** *15*/**openSUSE Leap** *15.2* | CPU: 2 Cores, Memory: 4 G, Disk Space: 40 G |
+| **Ubuntu** *16.04, 18.04*                                      | CPU：2 核，内存：4 G，磁盘空间：40 G |
+| **Debian** *Buster, Stretch*                                   | CPU：2 核，内存：4 G，磁盘空间：40 G |
+| **CentOS** *7*.x                                               | CPU：2 核，内存：4 G，磁盘空间：40 G |
+| **Red Hat Enterprise Linux** *7*                               | CPU：2 核，内存：4 G，磁盘空间：40 G |
+| **SUSE Linux Enterprise Server** *15*/**openSUSE Leap** *15.2* | CPU：2 核，内存：4 G，磁盘空间：40 G |
 
 {{< notice note >}}
 
-以上的系统要求和以下的说明适用于没有启用任何可选组件的默认最小化安装。如果您的机器至少有 8 Core CPU 和 16 G 内存，则建议启用所有组件。有关更多信息，请参见[启用可插拔组件](../../pluggable-components/)。
+以上的系统要求和以下的说明适用于没有启用任何可选组件的默认最小化安装。如果您的机器至少有 8 核 CPU 和 16 G 内存，则建议启用所有组件。有关更多信息，请参见[启用可插拔组件](../../pluggable-components/)。
 
 {{</ notice >}}
 
@@ -150,9 +150,7 @@ chmod +x kk
 
 {{</ notice >}}
 
-执行该命令后，您将看到以下表格，用于环境检查。有关详细信息，请参见[节点要求](#节点要求)和[依赖项要求](#依赖项要求)。输入 `yes` 继续安装流程。
-
-![environment-check](/images/docs/zh-cn/quickstart/all-in-one-on-linux/environment-check.png)
+执行该命令后，KubeKey 将检查您的安装环境，结果显示在一张表格中。有关详细信息，请参见[节点要求](#节点要求)和[依赖项要求](#依赖项要求)。输入 `yes` 继续安装流程。
 
 ## 步骤 4：验证安装结果
 
@@ -166,7 +164,7 @@ chmod +x kk
 kubectl logs -n kubesphere-system $(kubectl get pod -n kubesphere-system -l app=ks-install -o jsonpath='{.items[0].metadata.name}') -f
 ```
 
-输出信息会显示 Web 控制台的 IP 地址和端口号，默认的 NodePort 是 `30880`。现在，您可以使用默认的帐户和密码 (`admin /P@88w0rd`) 通过 `EIP：30880` 访问控制台。
+输出信息会显示 Web 控制台的 IP 地址和端口号，默认的 NodePort 是 `30880`。现在，您可以使用默认的帐户和密码 (`admin/P@88w0rd`) 通过 `<NodeIP>:30880` 访问控制台。
 
 ```bash
 #####################################################
