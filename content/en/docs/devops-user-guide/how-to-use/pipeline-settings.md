@@ -51,7 +51,7 @@ On the **Basic Information** tab, you can customize the following information:
 
   ![code-source-bitbucket](/images/docs/devops-user-guide/using-devops/pipeline-settings/code-source-bitbucket.png)
 
-  If you select **Bitbucket**, you have to specify the Bitbucket server, username, and password. Click **Confirm** after entering the information. Click the **√** icon after you finish all operations.
+  If you select **Bitbucket**, you have to enter your Bitbucket server. You can create a credential with your Bitbucket username and password in advance and then select the credential from the drop-down list, or you can click **Create a credential** to create a new one. Click **Confirm** after entering the information and you can view your repository on the right. Click the **√** icon after you finish all operations.
 
   {{</ tab >}}
 
