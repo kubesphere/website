@@ -62,7 +62,7 @@ After you modified `jenkins-casc-config`, you need to reload your updated system
 
    {{< notice note >}}
 
-   You may need to set up necessary port forwarding rules and open the port `30180` to access Jenkins in your security groups depending on where your instances are deployed.
+   You may need to set up necessary port forwarding rules and open port `30180` to access Jenkins in your security groups depending on where your instances are deployed.
 
    {{</ notice >}} 
 

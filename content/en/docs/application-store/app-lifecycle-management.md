@@ -92,7 +92,7 @@ You need to create two accounts first, one for ISVs (`isv`) and the other (`revi
 
    ![edit-app-information](/images/docs/appstore/application-lifecycle-management/edit-app-information.jpg)
 
-7. Click **OK** to save your changes, then you can test this application by deploying it to Kubernetes. Click the draft version to expand the menu and select **Test Deploy**.
+7. Click **OK** to save your changes, then you can test this application by deploying it to Kubernetes. Click the draft version to expand the menu and select **Test Deployment**.
 
    ![test-deployment](/images/docs/appstore/application-lifecycle-management/test-deployment.jpg)
 
