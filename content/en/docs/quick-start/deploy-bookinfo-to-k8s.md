@@ -47,7 +47,7 @@ The end-to-end architecture of the application is shown below. See [Bookinfo App
 
 2. Click **Next** in the dialog that appears where required fields are pre-populated and relevant components are already set. You do not need to change the settings and just click **Create** on the final page (**Internet Access**).
 
-    ![create-bookinfo](/images/docs/quickstart/deploy-bookinfo-to-k8s/create-bookinfo.png)
+    ![create-bookinfo1](/images/docs/quickstart/deploy-bookinfo-to-k8s/create-bookinfo1.png)
 
     {{< notice note >}}
 
