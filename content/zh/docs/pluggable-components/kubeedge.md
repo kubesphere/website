@@ -114,7 +114,7 @@ KubeEdge 的组件在两个单独的位置运行——云上和边缘节点上�
 
 ## 在升级后启用 KubeEdge
 
-如果您的 KubeSphere v3.1.0 集群是从 KubeSphere v3.0.0 的集群升级而来，请按照以上步骤编辑 `cluster-configuration.yaml` 并手动添加以下配置，再启用 KubeEdge。
+如果您的 KubeSphere v3.1.0 集群是从 KubeSphere v3.0.0 的集群升级而来，请按照[以上步骤](#在安装后启用-kubeedge)编辑 `cluster-configuration.yaml`（即 CRD `clusterconfiguration`）并手动添加以下配置，再启用 KubeEdge。
 
 ```yaml
   kubeedge:

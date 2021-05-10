@@ -113,7 +113,7 @@ You can find the web kubectl tool by clicking the hammer icon in the bottom-righ
 
 ## Enable KubeEdge after Upgrade
 
-If your KubeSphere v3.1.0 cluster is upgraded from KubeSphere v3.0.0, add the following content in `cluster-configuration.yaml` and enable `kubeedge` as shown in the steps above.
+If your KubeSphere v3.1.0 cluster is upgraded from KubeSphere v3.0.0, add the following content in `cluster-configuration.yaml` (i.e. the `clusterconfiguration` CRD) and enable `kubeedge` as shown [in the steps above](#enable-kubeedge-after-installation).
 
 ```yaml
   kubeedge:
