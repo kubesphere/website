@@ -8,7 +8,7 @@ weight: 15420
 
 本教程介绍如何启用 KubeSphere 的计费功能，以查看集群中不同资源的消费情况。计费功能默认不启用，因此您需要在 ConfigMap 中手动添加价格信息。
 
-## 启用计费
+请按照以下步骤启用 KubeSphere 的计费功能。
 
 1. 运行以下命令编辑 ConfigMap `kubesphere-config`：
 
