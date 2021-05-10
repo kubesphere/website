@@ -90,7 +90,7 @@ You need to create two projects, such as `kubesphere-sample-dev` and `kubesphere
 
    {{< notice note >}}
 
-   If you want to use a private repository from GitLab, you need to create an access token with API and read_repository permissions on GitLab, create a credential for accessing GitLab on the Jenkins dashboard, and then add the credential in **GitLab Server** under **Configure System**. For more information about how to log in to Jenkins, refer to [Jenkins System Settings](../how-to-integrate/sonarqube/#step-5-add-the-sonarqube-server-to-jenkins).
+   If you want to use a private repository from GitLab, you need to create an access token with API and read_repository permissions on GitLab, create a credential for accessing GitLab on the Jenkins dashboard, and then add the credential in **GitLab Server** under **Configure System**. For more information about how to log in to Jenkins, refer to [Jenkins System Settings](../jenkins-setting/#log-in-to-jenkins-to-reload-configurations).
 
    {{</ notice >}}
 
