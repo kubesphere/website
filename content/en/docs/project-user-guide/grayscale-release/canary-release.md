@@ -15,6 +15,7 @@ This method serves as an efficient way to test performance and reliability of a 
 ## Prerequisites
 
 - You need to enable [KubeSphere Service Mesh](../../../pluggable-components/service-mesh/).
+- You need to enable [KubeSphere Logging](../../../pluggable-components/logging/) so that you can use the Tracing feature.
 - You need to create a workspace, a project and an account (`project-regular`). The account must be invited to the project with the role of `operator`. For more information, see [Create Workspaces, Projects, Accounts and Roles](../../../quick-start/create-workspace-and-project/).
 - You need to enable **Application Governance** and have an available app so that you can implement the canary release for it. The sample app used in this tutorial is Bookinfo. For more information, see [Deploy and Access Bookinfo](../../../quick-start/deploy-bookinfo-to-k8s/).
 
@@ -152,4 +153,3 @@ If everything runs smoothly, you can bring all the traffic to the new version.
 3. Access Bookinfo again and refresh the browser several times. You can find that it only shows the result of **reviews v2** (i.e. ratings with black stars).
 
    ![finish-canary-release](/images/docs/project-user-guide/grayscale-release/canary-release/finish-canary-release.png)
-
