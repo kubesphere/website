@@ -124,5 +124,5 @@ Save the above chart config locally (e.g. `/root/rbd-provisioner.yaml`). The add
     chart:
       name: rbd-provisioner
       repo: https://charts.kubesphere.io/test
-      values: /root/rbd-provisioner.yaml
+      valuesFile: /root/rbd-provisioner.yaml
 ```
