@@ -54,7 +54,7 @@ weight: 11291
 
    ![gitlab-demo](/images/docs/zh-cn/devops-user-guide/use-devops/gitlab-multibranch-pipeline/gitlab-demo.png)
 
-4. 点击**编辑**，分别将 `GITHUB_CREDENTIAL_ID`、`GITHUB_ACCOUNT` 以及 `@github.com` 更改为 `GITLAB_CREDENTIAL_ID`、`GITLAB_ACCOUNT` 以及 `@gitlab.com`，然后编辑以下条目。您还需要将 `push latest` 和 `deploy to dev` 中 `branch` 的值更改为 `gitlab-demo`。
+4. 点击**编辑**，分别将 `GITHUB_CREDENTIAL_ID`、`GITHUB_ACCOUNT` 以及 `@github.com` 更改为 `GITLAB_CREDENTIAL_ID`、`GITLAB_ACCOUNT` 以及 `@gitlab.com`，然后编辑下表所列条目。您还需要将 `push latest` 和 `deploy to dev` 中 `branch` 的值更改为 `gitlab-demo`。
 
    | 条目                 | 值        | 描述信息                                                     |
    | -------------------- | --------- | ------------------------------------------------------------ |
@@ -64,7 +64,7 @@ weight: 11291
 
    {{< notice note >}}
 
-   有关 Jenkinsfile 中环境变量的更多信息，请参考[使用 Jenkinsfile 创建流水线](../create-a-pipeline-using-jenkinsfile/#step-2-modify-the-jenkinsfile-in-your-github-repository)。
+   有关 Jenkinsfile 中环境变量的更多信息，请参考[使用 Jenkinsfile 创建流水线](../create-a-pipeline-using-jenkinsfile/#步骤-2在-github-仓库中修改-jenkinsfile)。
 
    {{</ notice >}}
 
@@ -74,7 +74,7 @@ weight: 11291
 
 ### 步骤 3：创建项目
 
-您需要创建两个项目，例如 `kubesphere-sample-dev` 和 `kubesphere-sample-prod`，这两个项目分别代表开发环境和测试环境。有关更多信息，请参考[使用 Jenkinsfile 创建流水线](../create-a-pipeline-using-jenkinsfile/#step-2-modify-the-jenkinsfile-in-your-github-repository)。
+您需要创建两个项目，例如 `kubesphere-sample-dev` 和 `kubesphere-sample-prod`，这两个项目分别代表开发环境和测试环境。有关更多信息，请参考[使用 Jenkinsfile 创建流水线](../create-a-pipeline-using-jenkinsfile/#步骤-3创建项目)。
 
 ### 步骤 4：创建流水线
 
@@ -90,7 +90,7 @@ weight: 11291
 
    {{< notice note >}}
 
-   如需使用 GitLab 私有仓库，则须在 GitLab 上创建拥有 API 和 read_repository 权限的个人访问令牌，在 Jenkins 面板上创建访问 GitLab 的凭证，然后在**系统配置**下的 **GitLab 服务**中添加该凭证。有关如何登录 Jenkins 的更多信息，请参考 [Jenkins 系统设置](../how-to-integrate/sonarqube/#step-5-add-the-sonarqube-server-to-jenkins)。
+   如需使用 GitLab 私有仓库，则须在 GitLab 上创建拥有 API 和 read_repository 权限的个人访问令牌，在 Jenkins 面板上创建访问 GitLab 的凭证，然后在**系统配置**下的 **GitLab 服务**中添加该凭证。有关如何登录 Jenkins 的更多信息，请参考 [Jenkins 系统设置](../jenkins-setting/#登录-jenkins-重新加载配置)。
 
    {{</ notice >}}
 
