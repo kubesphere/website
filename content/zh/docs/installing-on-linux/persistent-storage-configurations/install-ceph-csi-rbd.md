@@ -87,7 +87,7 @@ addons:
     chart:
       name: ceph-csi-rbd
       repo: https://ceph.github.io/csi-charts
-      values: /root/ceph-csi-rbd.yaml
+      valuesFile: /root/ceph-csi-rbd.yaml
 - name: ceph-csi-rbd-sc
   sources:
     yaml:
