@@ -6,7 +6,7 @@ linkTitle: "Understand Persistent Storage Installation"
 weight: 3310
 ---
 
-Persistent volumes are a **must** for installing KubeSphere. When you use [KubeKey](../../../installing-on-linux/introduction/kubekey/) to set up a KubeSphere cluster, you can install different storage systems as [add-ons](https://github.com/kubesphere/kubekey/blob/v1.0.0/docs/addons.md). The general steps of installing KubeSphere by KubeKey on Linux are:
+Persistent volumes are a **must** for installing KubeSphere. When you use [KubeKey](../../../installing-on-linux/introduction/kubekey/) to set up a KubeSphere cluster, you can install different storage systems as [add-ons](https://github.com/kubesphere/kubekey/blob/master/docs/addons.md). The general steps of installing KubeSphere by KubeKey on Linux are:
 
 1. Install Kubernetes.
 2. Install any provided add-ons.
@@ -32,7 +32,7 @@ There are generally two ways for you to let KubeKey apply configurations of the 
 1. Input necessary parameters under the `addons` field directly in `config-sample.yaml`.
 2. Create a separate configuration file for your add-on to list all the necessary parameters and provide the path of the file in `config-sample.yaml` so that KubeKey can reference it during installation.
 
-For more information, see [add-ons](https://github.com/kubesphere/kubekey/blob/v1.0.0/docs/addons.md).
+For more information, see [add-ons](https://github.com/kubesphere/kubekey/blob/master/docs/addons.md).
 
 ## Default Storage Class
 

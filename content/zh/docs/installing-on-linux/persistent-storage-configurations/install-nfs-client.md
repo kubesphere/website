@@ -173,7 +173,7 @@ chmod +x kk
          chart:
            name: nfs-client-provisioner
            repo: https://charts.kubesphere.io/main
-           values: /home/ubuntu/nfs-client.yaml # Use the path of your own NFS-client configuration file.
+           valuesFile: /home/ubuntu/nfs-client.yaml # Use the path of your own NFS-client configuration file.
    ...             
    ```
 

@@ -6,7 +6,7 @@ linkTitle: "安装持久化存储"
 weight: 3310
 ---
 
-持久化存储是安装 KubeSphere 的**必备条件**。使用 [KubeKey](../../../installing-on-linux/introduction/kubekey/) 搭建 KubeSphere 集群时，可以安装不同的存储系统作为[插件](https://github.com/kubesphere/kubekey/blob/v1.0.0/docs/addons.md)。在 Linux 上通过 KubeKey 安装 KubeSphere 的一般步骤如下：
+持久化存储是安装 KubeSphere 的**必备条件**。使用 [KubeKey](../../../installing-on-linux/introduction/kubekey/) 搭建 KubeSphere 集群时，可以安装不同的存储系统作为[插件](https://github.com/kubesphere/kubekey/blob/master/docs/addons.md)。在 Linux 上通过 KubeKey 安装 KubeSphere 的一般步骤如下：
 
 1. 安装 Kubernetes。
 2. 安装所提供的任何插件。
@@ -32,7 +32,7 @@ KubeKey 会为集群创建[一个配置文件](../../../installing-on-linux/intr
 1. 直接在 `config-sample.yaml` 中的 `addons` 字段下输入必要的参数。
 2. 为插件创建一个单独的配置文件，列出所有必要的参数，并在 `config-sample.yaml` 中提供文件的路径，以便 KubeKey 在安装过程中引用该路径。
 
-有关更多信息，请参见[插件](https://github.com/kubesphere/kubekey/blob/v1.0.0/docs/addons.md)。
+有关更多信息，请参见[插件](https://github.com/kubesphere/kubekey/blob/master/docs/addons.md)。
 
 ## 默认存储类型
 
