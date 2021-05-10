@@ -8,7 +8,7 @@ weight: 15420
 
 This tutorial demonstrates how to enable KubeSphere Billing to view the cost of different resources in your cluster. By default, the Billing function is disabled so you need to manually add the price information in a ConfigMap.
 
-## Enable Billing
+Perform the steps below to enable KubeSphere Billing.
 
 1. Edit the ConfigMap `kubesphere-config` by running the following command:
 
