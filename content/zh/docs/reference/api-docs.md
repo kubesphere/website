@@ -10,7 +10,7 @@ weight: 17200
 
 KubeSphere API 服务器为 API 对象验证和配置数据。API 服务器为 REST 操作提供服务，并为集群的共享状态提供前端，其他所有组件通过它进行交互。
 
-![ks-apiserver](/images/docs/api-reference/kubesphere-api/ks-apiserver.png)
+![ks-apiserver](/images/docs/zh-cn/reference/kubesphere-api/ks-apiserver.png)
 
 ## 使用 KubeSphere API
 
