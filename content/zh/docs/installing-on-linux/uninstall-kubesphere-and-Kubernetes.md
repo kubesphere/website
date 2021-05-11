@@ -16,7 +16,7 @@ weight: 3700
     ./kk delete cluster
     ```
 
-- 如果是使用高级模式安装的 KubeSphere （[使用配置文件创建](../introduction/multioverview/)）：
+- 如果是使用高级模式安装的 KubeSphere（[使用配置文件创建](../introduction/multioverview/)）：
 
     ```bash
     ./kk delete cluster [-f config-sample.yaml]
