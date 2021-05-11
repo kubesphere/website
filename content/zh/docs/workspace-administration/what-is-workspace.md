@@ -60,9 +60,6 @@ weight: 9100
 
    {{< notice warning >}}
 
-   企业空间删除后将无法恢复，并且企业空间下的资源也同时会被销毁。
+   [企业空间删除后将无法恢复](../../faq/notices/delete-workspace)，并且企业空间下的资源也同时会被销毁。
 
    {{</ notice >}}
-
-   
-

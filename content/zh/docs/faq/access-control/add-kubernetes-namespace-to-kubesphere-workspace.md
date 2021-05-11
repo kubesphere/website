@@ -20,34 +20,13 @@ Kubernetes 命名空间即 KubeSphere 项目。如果您不是在 KubeSphere 控
 
 首先，创建一个示例 Kubernetes 命名空间，以便稍后将其添加至企业空间。
 
-1. 执行以下命令创建一个名为 `demo-namespace` 的文件。
+执行以下命令创建一个名为 `demo-namespace` 的命名空间。
 
-   ```bash
-   vi demo-namespace.json
-   ```
+```bash
+kubectl create ns demo-namespace
+```
 
-2. 在该文件中输入以下内容然后保存。
-
-   ```json
-   {
-     "apiVersion": "v1",
-     "kind": "Namespace",
-     "metadata": {
-       "name": "demo-namespace",
-       "labels": {
-         "name": "demo-namespace"
-       }
-     }
-   }
-   ```
-
-3. 创建命名空间。
-
-   ```bash
-   kubectl create -f demo-namespace.json
-   ```
-
-   有关创建 Kubernetes 命名空间的更多信息，请参见[命名空间演练](https://kubernetes.io/zh/docs/tasks/administer-cluster/namespaces-walkthrough/)。
+有关创建 Kubernetes 命名空间的更多信息，请参见[命名空间演练](https://kubernetes.io/zh/docs/tasks/administer-cluster/namespaces-walkthrough/)。
 
 ## 添加命名空间至 KubeSphere 企业空间
 
