@@ -21,7 +21,7 @@ weight: 2600
 | `openpitrix`       | KubeSphere 应用商店                  | 基于 Helm 的应用程序商店，允许用户管理应用的整个生命周期。|
 | `servicemesh`      | KubeSphere 服务网格 (基于 Istio) | 提供细粒度的流量治理、可观测性、流量追踪以及可视化流量拓扑图。 |
 | `ippool` | 容器组 IP 池 | 创建容器组 IP 池并从 IP 池中分配 IP 地址到 Pod。 |
-| `topology` | 服务拓扑图 | 集成 [Weave Scope](https://www.weave.works/oss/scope/) 以查看应用和容器的服务到服务通信（拓扑图）。 |
+| `topology` | 服务拓扑图 | 集成 [Weave Scope](https://www.weave.works/oss/scope/) 以查看应用和容器的服务间通信（拓扑图）。 |
 
 有关每个组件的更多信息，请参见[启用可插拔组件概述](../../pluggable-components/overview/)。
 
