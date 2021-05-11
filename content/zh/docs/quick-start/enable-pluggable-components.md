@@ -1,37 +1,40 @@
 ---
 title: "启用可插拔组件"
-keywords: 'KubeSphere，Kubernetes，可插拔功能组件'
+keywords: 'KubeSphere，Kubernetes，可插拔，组件'
 description: '了解如何在 KubeSphere 上启用可插拔组件，以便您全方位地探索 KubeSphere。安装前和安装后均可启用可插拔组件。'
 linkTitle: "启用可插拔组件"
 weight: 2600
 ---
 
-本教程演示如何在安装前或安装后启用 KubeSphere 的可插拔组件。KubeSphere 具有以下列出的十个可插拔组件。
+本教程演示如何在安装前或安装后启用 KubeSphere 的可插拔组件。请参照下表了解 KubeSphere 的全部可插拔组件。
 
 | 配置项 | 功能组件               | 描述                                                  |
 | ------------------ | ------------------------------------- | ------------------------------------------------------------ |
-| alerting           | KubeSphere 告警系统          | 使用户能够自定义告警策略，及时向接收器发送告警信息。支持自定义告警信息发送间隔以及告警级别。 |
-| auditing           | KubeSphere 审计日志系统           | KubeSphere 审计日志系统提供了一套与安全相关并按时间顺序排列的记录，记录了平台上不同租户的活动。 |
-| devops             | KubeSphere DevOps 系统              | 基于 Jenkins 提供开箱即用的 CI/CD 功能，提供一站式 DevOps 方案，内置 Jenkins 流水线与 B2I & S2I。 |
-| events             | KubeSphere 事件系统              | 提供一个图形化的 Web 控制台，用于导出、过滤和警告多租户 Kubernetes 集群中的 Kubernetes 事件。|
-| logging            | KubeSphere 日志系统             | 在统一的控制台中提供灵活的日志查询、收集和管理功能。可以添加第三方日志收集器，例如 Elasticsearch、Kafka 和 Fluentd。 |
-| metrics_server     | HPA                                   | 根据设定指标对 Pod 数量进行动态伸缩，使运行在上面的服务对指标的变化有一定的自适应能力。|
-| networkpolicy      | 网络策略                        | 可以在同一个集群内部之间设置网络策略（比如限制或阻止某些实例 Pod 之间的网络请求）。|
-| notification       | KubeSphere 通知系统        | 允许用户将 [Alertmanager](../../cluster-administration/cluster-wide-alerting-and-notification/alertmanager/) 发送出来的告警通知到不同渠道，包括电子邮件、企业微信和 Slack（最新版本的 [Notification Manager](https://github.com/kubesphere/notification-manager) 支持钉钉和 Webhook）。 |
-| openpitrix         | KubeSphere 应用商店                  | 基于 Helm 的应用程序商店，允许用户管理应用的整个生命周期。|
-| servicemesh        | KubeSphere 服务网格 (基于 Istio) | 支持灰度发布、流量拓扑、流量治理、流量跟踪。|
+| `alerting`         | KubeSphere 告警系统          | 可以为工作负载和节点自定义告警策略。告警策略被触发后，告警消息会通过不同的渠道（例如，邮件和 Slack）发送至接收人。 |
+| `auditing`         | KubeSphere 审计日志系统           | 提供一套与安全相关并按时间顺序排列的记录，记录平台上不同租户的活动。 |
+| `devops`           | KubeSphere DevOps 系统              | 基于 Jenkins 提供开箱即用的 CI/CD 功能，提供一站式 DevOps 方案、内置 Jenkins 流水线与 B2I & S2I。 |
+| `events`           | KubeSphere 事件系统              | 提供一个图形化的 Web 控制台，用于导出、过滤和警告多租户 Kubernetes 集群中的 Kubernetes 事件。|
+| `logging`          | KubeSphere 日志系统             | 在统一的控制台中提供灵活的日志查询、收集和管理功能。可以添加第三方日志收集器，例如 Elasticsearch、Kafka 和 Fluentd。 |
+| `metrics_server`  | HPA                                   | 根据设定指标对 Pod 数量进行动态伸缩，使运行在上面的服务对指标的变化有一定的自适应能力。|
+| `networkpolicy`    | 网络策略                        | 可以在同一个集群内部之间设置网络策略（比如限制或阻止某些实例 Pod 之间的网络请求）。|
+| `kubeedge` | KubeEdge | 为集群添加边缘节点并在这些节点上运行工作负载。 |
+| `openpitrix`       | KubeSphere 应用商店                  | 基于 Helm 的应用程序商店，允许用户管理应用的整个生命周期。|
+| `servicemesh`      | KubeSphere 服务网格 (基于 Istio) | 提供细粒度的流量治理、可观测性、流量追踪以及可视化流量拓扑图。 |
+| `ippool` | 容器组 IP 池 | 创建容器组 IP 池并从 IP 池中分配 IP 地址到 Pod。 |
+| `topology` | 服务拓扑图 | 集成 [Weave Scope](https://www.weave.works/oss/scope/) 以查看应用和容器的服务间通信（拓扑图）。 |
 
 有关每个组件的更多信息，请参见[启用可插拔组件概述](../../pluggable-components/overview/)。
 
 {{< notice note >}}
 
-- 如果您使用 KubeKey 在 Linux 上安装 KubeSphere，默认情况下，除了 `metrics_server` 之外，不会启用上述组件。但是，如果在现有的 Kubernetes 集群上安装 KubeSphere，`metrics_server` 则默认禁用。这是因为您的环境可能已经安装了该组件，特别是对于云托管的 Kubernetes 集群。
 - `multicluster` 不在本教程中介绍。如果要启用此功能，则需要为 `clusterRole` 设置相应的值。有关详细信息，请参见[多群集管理](../../multicluster-management/)。
 - 在安装前，请确保您的机器符合硬件要求。如果想启用所有的可插拔组件，请参考推荐机器配置：CPU ≥ 8 Core，内存 ≥ 16 G，磁盘空间 ≥ 100 G。
 
 {{</ notice >}}
 
 ## 在安装前启用可插拔组件
+
+对于大多数可插拔组件，您可以按照以下步骤来启用。如需启用 [KubeEdge](../../pluggable-components/kubeedge/)、[容器组 IP 池](../../pluggable-components/pod-ip-pools/)以及[服务拓扑图](../../pluggable-components/service-topology/)，请直接参照相应的教程。
 
 ### **在 Linux 上安装**
 
@@ -82,6 +85,12 @@ weight: 2600
 ## 在安装后启用可插拔组件
 
 用户可以使用 KubeSphere Web 控制台查看和操作不同的资源。要在安装后启用可插拔组件，只需要在控制台中进行略微调整。对于那些习惯使用 Kubernetes 命令行工具 kubectl 的人来说，由于该工具已集成到控制台中，因此使用 KubeSphere 将毫无困难。
+
+{{< notice note >}}
+
+如需启用 [KubeEdge](../../pluggable-components/kubeedge/)、[容器组 IP 池](../../pluggable-components/pod-ip-pools/)以及[服务拓扑图](../../pluggable-components/service-topology/)，请直接参照相应的教程。
+
+{{</ notice >}} 
 
 1. 以 `admin` 身份登录控制台。点击左上角的**平台管理** ，然后选择**集群管理**。
 

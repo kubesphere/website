@@ -20,7 +20,7 @@ This tutorial demonstrates how to enable pluggable components of KubeSphere both
 | `kubeedge`       | KubeEdge                              | Add edge nodes to your cluster and run workloads on them.    |
 | `openpitrix`     | KubeSphere App Store                  | Provide an app store for Helm-based applications and allow users to manage apps throughout the entire lifecycle. |
 | `servicemesh`    | KubeSphere Service Mesh (Istio-based) | Provide fine-grained traffic management, observability and tracing, and visualized traffic topology. |
-| `ippool`         | Node IP Pool                          | Create Pod IP Pools and assign IP addresses from the Pools to your Pods. |
+| `ippool`         | Pod IP Pool                           | Create Pod IP Pools and assign IP addresses from the Pools to your Pods. |
 | `topology`       | Service Topology                      | Integrate [Weave Scope](https://www.weave.works/oss/scope/) to view service-to-service communication (topology) of your apps and containers. |
 
 For more information about each component, see [Overview of Enable Pluggable Components](../../pluggable-components/overview/).
@@ -34,7 +34,7 @@ For more information about each component, see [Overview of Enable Pluggable Com
 
 ## Enable Pluggable Components before Installation
 
-For most of the pluggable components, you can follow the steps below to enable them. If you need to enable [KubeEdge](../../pluggable-components/kubeedge/), [Node IP Pools](../../pluggable-components/pod-ip-pools/) and [Service Topology](../../pluggable-components/service-topology/), refer to the corresponding tutorials directly.
+For most of the pluggable components, you can follow the steps below to enable them. If you need to enable [KubeEdge](../../pluggable-components/kubeedge/), [Pod IP Pools](../../pluggable-components/pod-ip-pools/) and [Service Topology](../../pluggable-components/service-topology/), refer to the corresponding tutorials directly.
 
 ### Installing on Linux
 
@@ -88,7 +88,7 @@ The KubeSphere web console provides a convenient way for users to view and opera
 
 {{< notice note >}}
 
-If you need to enable [KubeEdge](../../pluggable-components/kubeedge/), [Node IP Pools](../../pluggable-components/pod-ip-pools/) and [Service Topology](../../pluggable-components/service-topology/), refer to the corresponding tutorials directly.
+If you need to enable [KubeEdge](../../pluggable-components/kubeedge/), [Pod IP Pools](../../pluggable-components/pod-ip-pools/) and [Service Topology](../../pluggable-components/service-topology/), refer to the corresponding tutorials directly.
 
 {{</ notice >}} 
 
