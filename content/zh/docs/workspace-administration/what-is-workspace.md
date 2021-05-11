@@ -2,7 +2,6 @@
 title: "企业空间概述"
 keywords: "Kubernetes, KubeSphere, workspace"
 description: "了解 KubeSphere 企业空间的概念以及如何创建和删除企业空间。"
-
 linkTitle: "企业空间概述"
 weight: 9100
 ---
@@ -44,6 +43,34 @@ weight: 9100
 
 ## 删除企业空间
 
+在 KubeSphere 中，可以通过企业空间对项目进行分组管理，企业空间下项目的生命周期会受到企业空间的影响。具体来说，企业空间删除之后，企业空间下的项目及关联的资源也同时会被销毁。
+
+删除企业空间之前，请先确定您是否要解绑部分关键项目。
+
+### 删除前解绑项目
+
+若要删除企业空间并保留其中的部分项目，删除前请先执行以下命令：
+
+```
+kubectl label ns <namespace> kubesphere.io/workspace- && kubectl patch ns <namespace>   -p '{"metadata":{"ownerReferences":[]}}' --type=merge
+```
+
+{{< notice note >}} 
+
+以上命令会移除与企业空间关联的 Label 并移除 ownerReferences。之后，您可以将解绑的项目重新[分配给新的企业空间](../../faq/access-control/add-kubernetes-namespace-to-kubesphere-workspace/)。
+
+{{</ notice >}} 
+
+### 在控制台上删除企业空间
+
+从企业空间解绑关键项目后，您可以按照以下步骤删除企业空间。
+
+{{< notice note >}} 
+
+如果您使用 kubectl 删除企业空间资源对象，请务必谨慎操作。
+
+{{</ notice >}} 
+
 1. 在企业空间页面，转到**企业空间设置**菜单下的**基本信息**。在**基本信息**页面，您可以查看该企业空间的基本信息，例如项目数量和成员数量。
 
    ![企业空间基本信息](/images/docs/zh-cn/workspace-administration-and-user-guide/workspace-overview/workspace-basic-info.PNG)
@@ -54,12 +81,10 @@ weight: 9100
 
    {{</ notice >}} 
 
-2. 要删除企业空间，先勾选**确定删除企业空间**，然后点击**删除**。
-
-   ![删除企业空间](/images/docs/zh-cn/workspace-administration-and-user-guide/workspace-overview/delete-workspace.PNG)
+2. 若要删除企业空间，先勾选**确定删除企业空间**，然后点击**删除**。
 
    {{< notice warning >}}
 
-   [企业空间删除后将无法恢复](../../faq/notices/delete-workspace)，并且企业空间下的资源也同时会被销毁。
+   企业空间删除后将无法恢复，并且企业空间下的资源也同时会被销毁。
 
    {{</ notice >}}

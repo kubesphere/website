@@ -18,36 +18,13 @@ This tutorial demonstrates how to add an existing Kubernetes namespace to a Kube
 
 ## Create a Kubernetes Namespace
 
-Create an example Kubernetes namespace first so that you can add it to a workspace later.
+Create an example Kubernetes namespace first so that you can add it to a workspace later. Execute the following command:
 
-1. Execute the following command to create a file named `demo-namespace`.
+```bash
+kubectl create ns demo-namespace
+```
 
-   ```bash
-   vi demo-namespace.json
-   ```
-
-2. Input the following content in the file and save it.
-
-   ```json
-   {
-     "apiVersion": "v1",
-     "kind": "Namespace",
-     "metadata": {
-       "name": "demo-namespace",
-       "labels": {
-         "name": "demo-namespace"
-       }
-     }
-   }
-   ```
-
-3. Create the namespace.
-
-   ```bash
-   kubectl create -f demo-namespace.json
-   ```
-
-   For more information about creating a Kubernetes namespace, see [Namespaces Walkthrough](https://kubernetes.io/docs/tasks/administer-cluster/namespaces-walkthrough/).
+For more information about creating a Kubernetes namespace, see [Namespaces Walkthrough](https://kubernetes.io/docs/tasks/administer-cluster/namespaces-walkthrough/).
 
 ## Add the Namespace to a KubeSphere Workspace
 
