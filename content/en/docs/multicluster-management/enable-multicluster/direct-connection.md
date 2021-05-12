@@ -158,11 +158,11 @@ kubectl logs -n kubesphere-system $(kubectl get pod -n kubesphere-system -l app=
 
      ![cluster-info](/images/docs/multicluster-management/enable-multicluster-management-in-kubesphere/direct-connection/cluster-info.png)
 
-3. In **Connection Method**, select **Direct Connection**, and copy the kubeconfig of the member cluster and paste it into the box. You can also click **Edit Mode** in the top right corner to edit the kubeconfig of the member cluster in YAML format.
+3. In **Connection Method**, select **Direct Connection**, and copy the kubeconfig of the Member Cluster and paste it into the box. You can also click **Edit Mode** in the top right corner to edit the kubeconfig of the Member Cluster in YAML format.
 
      {{< notice note >}}
 
-Make sure the `server` address in KubeConfig is accessible on any node of the host cluster.
+Make sure the `server` address in KubeConfig is accessible on any node of the Host Cluster.
 
      {{</ notice >}}
     
