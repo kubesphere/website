@@ -22,7 +22,7 @@ This tutorial demonstrates how to configure S2I and B2I webhooks.
 
 1. Log in to the KubeSphere web console as `admin`. Click **Platform** in the top left corner and then select **Cluster Management**.
 
-2. In **Services** under **Application Workloads**, select **kubesphere-devops-system** from the drop-down list and click **s2ioperator-trigger-service** to go to its details page.
+2. In **Services** under **Application Workloads**, select **kubesphere-devops-system** from the drop-down list and click **s2ioperator-trigger-service** to go to its detail page.
 
    ![s2i-trigger-service](/images/docs/project-user-guide/image-builder/s2i-and-b2i-webhooks/s2i-trigger-service.png)
 
@@ -48,11 +48,11 @@ This tutorial demonstrates how to configure S2I and B2I webhooks.
 
 1. Log out of KubeSphere and log back in as `project-regular`. Go to `demo-project`.
 
-2. In **Image Builder**, click the S2I Image Builder to go to its details page.
+2. In **Image Builder**, click the S2I Image Builder to go to its detail page.
 
    ![click-s2i](/images/docs/project-user-guide/image-builder/s2i-and-b2i-webhooks/click-s2i.png)
 
-3. You can see an auto-generated link shown in **Remote Trigger Link**. Copy the contents of `/s2itrigger/v1alpha1/general/namespaces/demo-project/s2ibuilders/felixnoo-s2i-sample-latest-zhd/` as it will be included in the S2I webhook URL.
+3. You can see an auto-generated link shown in **Remote Trigger Link**. Copy `/s2itrigger/v1alpha1/general/namespaces/demo-project/s2ibuilders/felixnoo-s2i-sample-latest-zhd/` as it will be included in the S2I webhook URL.
 
    ![s2i-trigger-link](/images/docs/project-user-guide/image-builder/s2i-and-b2i-webhooks/s2i-trigger-link.png)
 
@@ -66,7 +66,7 @@ This tutorial demonstrates how to configure S2I and B2I webhooks.
 
    {{< notice note >}}
 
-   `<IP>` is your own IP address, `<Service NodePort>` is the NodePort you get in step 1, and `/s2itrigger/v1alpha1/general/namespaces/demo-project/s2ibuilders/felixnoo-s2i-sample-latest-zhd/` is from the S2I remote trigger link. Make sure you use your own IP, Service NodePort and S2I remote trigger link. You may also need to configure necessary port forwarding rules and open port in your security groups depending on where your Kubernetes clusters are deployed.
+   `<IP>` is your own IP address, `<Service NodePort>` is the NodePort you get in step 1, and `/s2itrigger/v1alpha1/general/namespaces/demo-project/s2ibuilders/felixnoo-s2i-sample-latest-zhd/` is from the S2I remote trigger link. Make sure you use your own IP, Service NodePort and S2I remote trigger link. You may also need to configure necessary port forwarding rules and open the port in your security groups depending on where your Kubernetes cluster is deployed.
 
    {{</ notice >}}
 
@@ -80,11 +80,11 @@ This tutorial demonstrates how to configure S2I and B2I webhooks.
 
 ## Configure a B2I Webhook
 
-The method of configuring B2I webhook is the same as configuring S2I webhook.
+You can follow the same steps to configure a B2I webhook.
 
 1. Expose the S2I trigger Service.
 
-2. View the **Remote Trigger Link** in the details page of your B2I Image Builder.
+2. View the **Remote Trigger Link** in the detail page of your B2I Image Builder.
 
    ![b2i-trigger-link](/images/docs/project-user-guide/image-builder/s2i-and-b2i-webhooks/b2i-trigger-link.png)
 
@@ -94,7 +94,7 @@ The method of configuring B2I webhook is the same as configuring S2I webhook.
 
    {{< notice note >}}
 
-   You may need to configure necessary port forwarding rules and open port in your security groups depending on where your Kubernetes clusters are deployed.
+   You may need to configure necessary port forwarding rules and open the port in your security groups depending on where your Kubernetes cluster is deployed.
 
    {{</ notice >}}
 
