@@ -44,19 +44,45 @@ You have an account granted the role of `workspaces-manager`, such as `ws-manage
 
 ## Delete a Workspace
 
-1. In your workspace, go to **Basic Info** under **Workspace Settings**. On the **Basic Info** page, you can see the general information of the workspace, such as the number of projects and members.
+In KubeSphere, you use a workspace to group and manage different projects, which means the lifecycle of a project is dependent on the workspace. More specifically, all the projects and related resources in a workspace will be deleted if the workspace is deleted.
 
-   ![workspace-basic-info](/images/docs/workspace-administration/workspace-overview/workspace-basic-info.jpg)
+Before you delete a workspace, decide whether you want to unbind some key projects.
+
+### Unbind projects before deletion
+
+To delete a workspace while preserving some projects in it, run the following command first:
+
+```bash
+kubectl label ns <namespace> kubesphere.io/workspace- && kubectl patch ns <namespace>   -p '{"metadata":{"ownerReferences":[]}}' --type=merge
+```
+
+{{< notice note >}} 
+
+The command above removes labels associated with the workspace and removes ownerReferences. After that, you can [assign an unbound project to a new workspace](../../faq/access-control/add-kubernetes-namespace-to-kubesphere-workspace/).
+
+{{</ notice >}} 
+
+### Delete a workspace on the console
+
+After you unbind necessary projects from a workspace, perform the following steps to delete a workspace.
+
+{{< notice note >}} 
+
+Be extremely cautious about deleting a workspace if you use kubectl to delete workspace resource objects directly.
+
+{{</ notice >}} 
+
+1. In your workspace, go to **Basic Information** under **Workspace Settings**. On the **Basic Information** page, you can see the general information of the workspace, such as the number of projects and members.
+
+   ![workspace-basic-information](/images/docs/workspace-administration/workspace-overview/workspace-basic-information.png)
 
    {{< notice note >}}
 
-   On this page, you can click **Edit Info** to change the basic information of the workspace (excluding the workspace name) and turn on/off [Network Isolation](../../workspace-administration/workspace-network-isolation/).
+   On this page, you can click **Edit Information** to change the basic information of the workspace (excluding the workspace name) and turn on/off [Network Isolation](../../workspace-administration/workspace-network-isolation/).
 
    {{</ notice >}} 
 
-2. To delete the workspace, check **Sure to delete the workspace** and click **Delete**.
-
-   ![delete-workspace](/images/docs/workspace-administration/workspace-overview/delete-workspace.jpg)
+2. To delete the workspace, check **Delete Workspace** and click **Delete**.
 
    {{< notice warning >}}
 
@@ -64,5 +90,4 @@ You have an account granted the role of `workspaces-manager`, such as `ws-manage
 
    {{</ notice >}}
 
-   
 
