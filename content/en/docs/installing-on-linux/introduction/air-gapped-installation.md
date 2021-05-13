@@ -35,7 +35,6 @@ Please see the requirements for hardware and operating system shown below. To ge
 - All nodes must be accessible through `SSH`.
 - Time synchronization for all nodes.
 - `sudo`/`curl`/`openssl` should be used in all nodes.
-- `docker` must be installed by yourself in an offline environment.
 
 
 KubeKey can install Kubernetes and KubeSphere together. The dependency that needs to be installed may be different based on the Kubernetes version to be installed. You can refer to the list below to see if you need to install relevant dependencies on your node in advance.
@@ -54,10 +53,22 @@ KubeKey can install Kubernetes and KubeSphere together. The dependency that need
 
 {{</ notice >}} 
 
+### Container runtimes
+
+Your cluster must have an available container runtime. For air-gapped installation, you must install Docker or other container runtimes by yourself before you create a cluster.
+
+| Supported Container Runtime | Version |
+| --------------------------- | ------- |
+| Docker                      | 19.3.8+ |
+| containerd (experimental, not fully tested)   | Latest  |
+| CRI-O (experimental, not fully tested)        | Latest  |
+| iSula (experimental, not fully tested)        | Latest  |
+
 ### Network and DNS requirements
 
 - Make sure the DNS address in `/etc/resolv.conf` is available. Otherwise, it may cause some issues of DNS in clusters.
 - If your network configuration uses Firewall or Security Group, you must ensure infrastructure components can communicate with each other through specific ports. It's recommended that you turn off the firewall. For more information, refer to [Port Requirements](../port-firewall/).
+- Supported CNI plugins: Calico and Flannel. Others (such as Cilium and Kube-OVN) may also work but note that they have not been fully tested.
 
 ### Example machines
 
