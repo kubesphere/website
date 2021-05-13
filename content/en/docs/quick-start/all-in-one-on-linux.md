@@ -41,12 +41,7 @@ The system requirements above and the instructions below are for the default min
 
 Your cluster must have an available container runtime. If you use KubeKey to set up a cluster, KubeKey will install the latest version of Docker by default. Alternatively, you can install Docker or other container runtimes by yourself before you create a cluster.
 
-| Supported Container Runtime | Version |
-| --------------------------- | ------- |
-| Docker                      | 19.3.8+ |
-| containerd (experimental, not fully tested)   | Latest  |
-| CRI-O (experimental, not fully tested)        | Latest  |
-| iSula (experimental, not fully tested)        | Latest  |
+{{< content "container-runtime-requirements.md" >}}
 
 {{< notice note >}}
 
@@ -56,26 +51,15 @@ A container runtime must be installed in advance if you want to deploy KubeSpher
 
 ### Dependency requirements
 
-KubeKey can install Kubernetes and KubeSphere together. The dependency that needs to be installed may be different based on the Kubernetes version to be installed. You can refer to the list below to see if you need to install relevant dependencies on your node in advance.
-
-| Dependency  | Kubernetes Version ≥ 1.18 | Kubernetes Version < 1.18 |
-| ----------- | ------------------------- | ------------------------- |
-| `socat`     | Required                  | Optional but recommended  |
-| `conntrack` | Required                  | Optional but recommended  |
-| `ebtables`  | Optional but recommended  | Optional but recommended  |
-| `ipset`     | Optional but recommended  | Optional but recommended  |
-
-{{< notice info >}}
-
-Developed in Go language, KubeKey represents a brand-new installation tool as a replacement for the ansible-based installer used before. KubeKey provides users with flexible installation choices, as they can install KubeSphere and Kubernetes separately or install them at one time, which is convenient and efficient.
-
-{{</ notice >}}
+{{< content "common/dependency-requirements.md" >}}
 
 ### Network and DNS requirements
 
 - Make sure the DNS address in `/etc/resolv.conf` is available. Otherwise, it may cause some issues of DNS in the cluster.
 - If your network configuration uses firewall rules or security groups, you must ensure infrastructure components can communicate with each other through specific ports. It is recommended that you turn off the firewall. For more information, see [Port Requirements](../../installing-on-linux/introduction/port-firewall/).
 - Supported CNI plugins: Calico and Flannel. Others (such as Cilium and Kube-OVN) may also work but note that they have not been fully tested.
+
+{{< content "common/network-requirements.md" >}}
 
 {{< notice tip >}}
 
@@ -87,6 +71,12 @@ Developed in Go language, KubeKey represents a brand-new installation tool as a 
 ## Step 2: Download KubeKey
 
 Follow the steps below to download KubeKey.
+
+{{< notice info >}}
+
+Developed in Go language, KubeKey represents a brand-new installation tool as a replacement for the ansible-based installer used before. KubeKey provides users with flexible installation choices, as they can install KubeSphere and Kubernetes separately or install them at one time, which is convenient and efficient.
+
+{{</ notice >}}
 
 {{< tabs >}}
 
