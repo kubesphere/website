@@ -43,3 +43,14 @@ OpenEBS Dynamic Local PV provisioner can create Kubernetes Local Persistent Volu
 ## Multi-storage Solutions
 
 If you intend to install more than one storage plugins, only one of them can be set as the default storage class. Otherwise, KubeKey will be confused about which storage class to use.
+
+## Supported CSI Plugins
+
+Kubernetes has announced that in-tree volume plugins will be removed from Kubernetes in version 1.21. For more information, see [Kubernetes In-Tree to CSI Volume Migration Moves to Beta](https://kubernetes.io/blog/2019/12/09/kubernetes-1-17-feature-csi-migration-beta/). Therefore, it is recommended that you install CSI plugins instead.
+
+Supported CSI plugins:
+
+- [neonsan-csi](https://github.com/yunify/qingstor-csi)
+- [qingcloud-csi](../install-qingcloud-csi/)
+- [ceph-csi](../install-ceph-csi-rbd/)
+- [nfs-client-provisioner](../install-nfs-client/)

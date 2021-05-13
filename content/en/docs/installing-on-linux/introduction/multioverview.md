@@ -46,11 +46,21 @@ The path `/var/lib/docker` is mainly used to store the container data, and will 
 - All nodes must be accessible through `SSH`.
 - Time synchronization for all nodes.
 - `sudo`/`curl`/`openssl` should be used in all nodes.
-- `docker` can be installed by yourself or by KubeKey.
+
+### Container runtimes
+
+Your cluster must have an available container runtime. If you use KubeKey to set up a cluster, KubeKey will install the latest version of Docker by default. Alternatively, you can install Docker or other container runtimes by yourself before you create a cluster.
+
+| Supported Container Runtime | Version |
+| --------------------------- | ------- |
+| Docker                      | 19.3.8+ |
+| containerd (experimental, not fully tested)   | Latest  |
+| CRI-O (experimental, not fully tested)        | Latest  |
+| iSula (experimental, not fully tested)        | Latest  |
 
 {{< notice note >}}
 
-`docker` must be installed in advance if you want to deploy KubeSphere in an offline environment.
+A container runtime must be installed in advance if you want to deploy KubeSphere in an offline environment.
 
 {{</ notice >}}
 
@@ -69,6 +79,7 @@ KubeKey can install Kubernetes and KubeSphere together. The dependency that need
 
 - Make sure the DNS address in `/etc/resolv.conf` is available. Otherwise, it may cause some issues of DNS in clusters.
 - If your network configuration uses firewall rules or security groups, you must ensure infrastructure components can communicate with each other through specific ports. It's recommended that you turn off the firewall or follow the guide [Port Requirements](../port-firewall/).
+- Supported CNI plugins: Calico and Flannel. Others (such as Cilium and Kube-OVN) may also work but note that they have not been fully tested.
 
 {{< notice tip >}}
 
