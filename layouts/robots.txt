@@ -11,6 +11,7 @@ Disallow: /docs/project-administration/project-members/
 Disallow: /docs/cluster-administration/storageclass/
 Disallow: /docs/devops-user-guide/introduction/pipeline/
 Disallow: /docs/devops-user-guide/introduction/credential/
+Disallow: /docs/project-user-guide/application-workloads/s2i-template/
 {{ range .Pages }}
 {{ if .Params.disallow }}
 Disallow: {{ .RelPermalink }}
