@@ -72,7 +72,7 @@ For more information about requirements for nodes, network, and dependencies, [s
    ./kk create config --from-cluster
    ```
 
-    The flag `--from-cluster` is used to get the exiting cluster's information.
+    The flag `--from-cluster` is used to get the existing cluster's information.
 
 2. The above command creates a configuration file, which is `sample.yaml` by default. Open the file and you can see some fields are pre-populated with values. Add the information of the new node and verify if other fields are set correctly.
 
