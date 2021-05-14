@@ -22,7 +22,7 @@ weight: 3620
 
 ## 删除节点
 
-1. 若要删除节点，您需要首先准备集群的配置文件（即在[设置集群](../../introduction/multioverview/#1-create-an-example-configuration-file)时所用的配置文件）。如果您没有该配置文件，请使用 [KubeKey](https://github.com/kubesphere/kubekey) 检索群集信息（将默认创建文件 `sample.yaml`）。
+1. 若要删除节点，您需要首先准备集群的配置文件（即在[设置集群](../../introduction/multioverview/#1-create-an-example-configuration-file)时所用的配置文件）。如果您没有该配置文件，请使用 [KubeKey](https://github.com/kubesphere/kubekey) 检索集群信息（将默认创建文件 `sample.yaml`）。
 
    ```bash
    ./kk create config --from-cluster

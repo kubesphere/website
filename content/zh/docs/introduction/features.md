@@ -23,7 +23,7 @@ KubeSphere 作为开源的企业级全栈化容器平台，为用户提供了一
 
 ### 部署 Kubernetes 集群
 
-[KubeKey](https://github.com/kubesphere/kubekey) 允许用户直接在基础架构上部署 Kubernetes，为 Kubernetes 群集提供高可用性。建议在生产环境至少配置三个主节点。
+[KubeKey](https://github.com/kubesphere/kubekey) 允许用户直接在基础架构上部署 Kubernetes，为 Kubernetes 集群提供高可用性。建议在生产环境至少配置三个主节点。
 
 ### Kubernetes 资源管理
 
@@ -42,9 +42,9 @@ KubeSphere 作为开源的企业级全栈化容器平台，为用户提供了一
 借助 KubeSphere的图形化 Web 控制台，用户可以管理底层的基础架构，例如添加或删除集群。可以使用相同的方式管理部署在任何基础架构（例如 Amazon EKS和Google Kubernetes Engine）上的异构集群。
 
 - **独立**：可以在 KubeSphere 容器平台中维护和管理独立部署的 Kubernetes 集群。
-- **联邦**：多个 Kubernetes 集群可以聚合在一起作为 Kubernetes 资源池。当用户部署应用程序时，副本可以部署在资源池中的不同 Kubernetes 群集上。由此，跨区域和多群集实现了高可用性。
+- **联邦**：多个 Kubernetes 集群可以聚合在一起作为 Kubernetes 资源池。当用户部署应用程序时，副本可以部署在资源池中的不同 Kubernetes 集群上。由此，跨区域和多集群实现了高可用性。
 
-KubeSphere 允许用户跨集群部署应用程序。更重要的是，还可以将应用程序配置为在特定群集上运行。此外，多集群功能与行业领先的应用程序管理平台 [OpenPitrix](https://github.com/openpitrix/openpitrix) 配合使用，使用户可以在整个生命周期内管理应用程序，包括发行、移除和分发。
+KubeSphere 允许用户跨集群部署应用程序。更重要的是，还可以将应用程序配置为在特定集群上运行。此外，多集群功能与行业领先的应用程序管理平台 [OpenPitrix](https://github.com/openpitrix/openpitrix) 配合使用，使用户可以在整个生命周期内管理应用程序，包括发行、移除和分发。
 
 有关更多信息，请参阅 [多集群管理](../../multicluster-management/)。
 
@@ -103,7 +103,7 @@ KubeSphere 服务网络具有可视化微服务之间的连接以及它们如何
 
 ## 多租户管理
 
-在 KubeSphere 中，资源（例如群集）可以在租户之间共享。首先，管理员或运维人员需要使用不同的权限设置不同的帐户角色。可以将这些角色分配给平台中的成员，以对各种资源执行特定的操作。同时，由于 KubeSphere 完全隔离了租户，因此它们根本不会相互影响。
+在 KubeSphere 中，资源（例如集群）可以在租户之间共享。首先，管理员或运维人员需要使用不同的权限设置不同的帐户角色。可以将这些角色分配给平台中的成员，以对各种资源执行特定的操作。同时，由于 KubeSphere 完全隔离了租户，因此它们根本不会相互影响。
 
 - **多租户**：它提供了基于角色的细粒度身份验证和三层授权的系统。
 - **统一认证**：KubeSphere 与 LDAP 或 AD 协议的中央身份验证系统兼容。还支持单点登录 (SSO)，以实现租户身份的统一身份验证。

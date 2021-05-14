@@ -21,7 +21,7 @@ KubeSphere 将 [前端](https://github.com/kubesphere/console) 与 [后端](http
 | ks-console | 提供 KubeSphere 的控制台服务。|
 | ks-controller-manager | 实现业务逻辑的，例如创建企业空间时，为其创建对应的权限；或创建服务策略时，生成对应的 Istio 配置等。|
 | metrics-server | Kubernetes 的监控组件，从每个节点的 Kubelet 采集指标信息。|
-| Prometheus | 提供群集，节点，工作负载，API对象的监视指标和服务。|
+| Prometheus | 提供集群，节点，工作负载，API对象的监视指标和服务。|
 | Elasticsearch | 提供集群的日志索引、查询、数据管理等服务，在安装时也可对接您已有的 ES 减少资源消耗。|
 | Fluent Bit | 提供日志接收与转发，可将采集到的⽇志信息发送到 ElasticSearch、Kafka。 |
 | Jenkins | 提供 CI/CD 流水线服务。|
