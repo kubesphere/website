@@ -31,3 +31,7 @@ This page summarizes the some requirements for installing and using KubeSphere.
 ## Supported CSI Plugins
 
 {{< content "common/csi-plugins.md" >}}
+
+## Supported Web Browsers for Accessing the Console
+
+![console-browser](/images/docs/reference/environment-requirements/console-browser.png)
