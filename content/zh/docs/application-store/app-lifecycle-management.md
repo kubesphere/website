@@ -102,7 +102,7 @@ KubeSphere 集成了 [OpenPitrix](https://github.com/openpitrix/openpitrix)（�
 
    {{</ notice >}} 
 
-8. 选择要部署应用的群集和项目，为应用设置不同的配置，然后点击**部署**。
+8. 选择要部署应用的集群和项目，为应用设置不同的配置，然后点击**部署**。
 
    ![部署位置](/images/docs/zh-cn/appstore/application-lifecycle-management/deployment-place.PNG)
 

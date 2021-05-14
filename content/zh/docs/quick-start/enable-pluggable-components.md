@@ -26,7 +26,7 @@ weight: 2600
 {{< notice note >}}
 
 - 如果您使用 KubeKey 在 Linux 上安装 KubeSphere，默认情况下，除了 `metrics_server` 之外，不会启用上述组件。但是，如果在现有的 Kubernetes 集群上安装 KubeSphere，`metrics_server` 则默认禁用。这是因为您的环境可能已经安装了该组件，特别是对于云托管的 Kubernetes 集群。
-- `multicluster` 不在本教程中介绍。如果要启用此功能，则需要为 `clusterRole` 设置相应的值。有关详细信息，请参见[多群集管理](../../multicluster-management/)。
+- `multicluster` 不在本教程中介绍。如果要启用此功能，则需要为 `clusterRole` 设置相应的值。有关详细信息，请参见[多集群管理](../../multicluster-management/)。
 - 在安装前，请确保您的机器符合硬件要求。如果想启用所有的可插拔组件，请参考推荐机器配置：CPU ≥ 8 Core，内存 ≥ 16 G，磁盘空间 ≥ 100 G。
 
 {{</ notice >}}

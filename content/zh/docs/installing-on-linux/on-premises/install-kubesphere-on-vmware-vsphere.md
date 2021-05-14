@@ -1,7 +1,7 @@
 ---
 title: "在 VMware vSphere 安装 KubeSphere"
 keywords: 'kubernetes, kubesphere, VMware vSphere, installation'
-description: '了解如何在 VMware vSphere 上创建高可用 KubeSphere 群集。'
+description: '了解如何在 VMware vSphere 上创建高可用 KubeSphere 集群。'
 
 weight: 3510
 ---

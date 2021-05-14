@@ -9,7 +9,7 @@ weight: 13100
 
 KubeSphere 中的一个项目是一个 Kubernetes [命名空间](https://kubernetes.io/zh/docs/concepts/overview/working-with-objects/namespaces/)，用于将资源划分成互不重叠的分组。这一功能可在多个租户之间分配集群资源，从而是一种逻辑分区功能。
 
-多集群项目跨集群运行，能为用户提供高可用性，并在问题发生时将问题隔离在某个集群内，避免影响业务。有关更多信息，请参见[多群集管理](../../multicluster-management/)。
+多集群项目跨集群运行，能为用户提供高可用性，并在问题发生时将问题隔离在某个集群内，避免影响业务。有关更多信息，请参见[多集群管理](../../multicluster-management/)。
 
 本章介绍项目管理的基本操作，如创建项目和删除项目。
 
@@ -29,7 +29,7 @@ KubeSphere 中的一个项目是一个 Kubernetes [命名空间](https://kuberne
 
     {{< notice note >}}
 
-- 您可以在**集群**下拉列表中更改创建项目的集群。该下拉列表只有在启用多群集功能后才可见。
+- 您可以在**集群**下拉列表中更改创建项目的集群。该下拉列表只有在启用多集群功能后才可见。
 
 - 如果页面上没有**创建**按钮，则表示您的企业空间没有可用的集群。您需要联系平台管理员或集群管理员，以便在集群中创建企业空间资源。平台管理员或集群管理员需要在**集群管理**页面设置[**集群可见性**](../../cluster-administration/cluster-settings/cluster-visibility-and-authorization/)，才能将集群分配给企业空间。
 
