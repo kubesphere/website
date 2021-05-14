@@ -396,7 +396,7 @@ GlusterFS 和 Heketi 搭建好之后，就可以在客户端机器上安装 Glus
    Created symlink from /etc/systemd/system/multi-user.target.wants/heketi.service to /lib/systemd/system/heketi.service.
    ```
 
-9. 为 Heketi 创建拓扑配置文件，该文件包含添加到 Heketi 的群集、节点和磁盘的信息。
+9. 为 Heketi 创建拓扑配置文件，该文件包含添加到 Heketi 的集群、节点和磁盘的信息。
 
    ```bash
    vi /etc/heketi/topology.json

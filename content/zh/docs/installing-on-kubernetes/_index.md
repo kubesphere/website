@@ -9,7 +9,7 @@ weight: 4000
 icon: "/images/docs/docs.svg"
 ---
 
-本章演示如何在云或本地托管的现有 Kubernetes 群集上部署 KubeSphere 。作为容器编排的高度灵活的解决方案，KubeSphere 允许用户在所有 Kubernetes 引擎上部署并使用其服务。
+本章演示如何在云或本地托管的现有 Kubernetes 集群上部署 KubeSphere 。作为容器编排的高度灵活的解决方案，KubeSphere 允许用户在所有 Kubernetes 引擎上部署并使用其服务。
 ## 最受欢迎的页面
 
 在下面的章节中，您将找到一些最受欢迎的页面。强烈建议您先参考它们。
