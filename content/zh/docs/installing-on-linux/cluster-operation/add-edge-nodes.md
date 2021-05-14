@@ -1,7 +1,7 @@
 ---
 title: "添加边缘节点"
 keywords: 'Kubernetes, KubeSphere, KubeEdge'
-description: '将边缘节点添加到群集。'
+description: '将边缘节点添加到集群。'
 linkTitle: "添加边缘节点"
 weight: 3630
 ---

@@ -27,7 +27,7 @@ weight: 2600
 
 {{< notice note >}}
 
-- `multicluster` 不在本教程中介绍。如果要启用此功能，则需要为 `clusterRole` 设置相应的值。有关详细信息，请参见[多群集管理](../../multicluster-management/)。
+- `multicluster` 不在本教程中介绍。如果要启用此功能，则需要为 `clusterRole` 设置相应的值。有关详细信息，请参见[多集群管理](../../multicluster-management/)。
 - 在安装前，请确保您的机器符合硬件要求。如果想启用所有的可插拔组件，请参考推荐机器配置：CPU ≥ 8 Core，内存 ≥ 16 G，磁盘空间 ≥ 100 G。
 
 {{</ notice >}}

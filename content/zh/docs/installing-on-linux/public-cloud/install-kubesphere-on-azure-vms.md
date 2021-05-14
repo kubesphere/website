@@ -1,7 +1,7 @@
 ---
 title: "在Azure VM实例上部署KubeSphere"
 keywords: "KubeSphere, Installation, HA, high availability, load balancer, Azure"
-description: "了解如何在 Azure 虚拟机上创建高可用 KubeSphere 群集。"
+description: "了解如何在 Azure 虚拟机上创建高可用 KubeSphere 集群。"
 
 Weight: 3410
 ---
