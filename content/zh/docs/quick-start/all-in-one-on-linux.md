@@ -38,13 +38,18 @@ weight: 2100
 
 - 节点必须能够通过 `SSH` 连接。
 - 节点上可以使用 `sudo`/`curl`/`openssl` 命令。
-- `docker` 可以由您自己安装或由 [KubeKey](https://github.com/kubesphere/kubekey) 安装。
 
-  {{< notice note >}}
+### 容器运行时
 
-如果您想离线安装 KubeSphere，请务必提前安装好 `docker`。
+您的集群必须有一个可用的容器运行时。如果您使用 KubeKey 搭建集群，KubeKey 会默认安装最新版本的 Docker。或者，您也可以在创建集群前手动安装 Docker 或其他容器运行时。
 
-  {{</ notice >}}
+{{< content "common/container-runtime-requirements.md" >}}
+
+{{< notice note >}}
+
+如果您想在离线环境中部署 KubeSphere，请务必提前安装一个容器运行时。
+
+{{</ notice >}}
 
 ### 依赖项要求
 
@@ -65,8 +70,7 @@ KubeKey 是用 Go 语言开发的一款全新的安装工具，代替了以前�
 
 ### 网络和 DNS 要求
 
-- 必须确保 `/etc/resolv.conf` 中的 DNS 配置可用，否则集群中的 DNS 可能会有问题。
-- 如果您的网络配置使用了防火墙或安全组，请确保基础设施组件可以通过特定端口相互通信。有关更多信息，请参见[端口要求](../../installing-on-linux/introduction/port-firewall/)关闭防火墙。
+{{< content "common/network-requirements.md" >}}
 
 {{< notice tip >}}
 

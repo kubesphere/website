@@ -43,3 +43,7 @@ OpenEBS 本地 PV 动态供应器可以使用节点上的唯一 HostPath（目�
 ## 多存储解决方案
 
 如果打算安装多个存储插件，那么只能将其中一个设置为默认存储类型。否则，KubeKey 将无法识别使用哪种存储类型。
+
+## 支持的 CSI 插件
+
+{{< content "common/csi-plugins.md" >}}
