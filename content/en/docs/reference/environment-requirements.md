@@ -6,17 +6,28 @@ linkTitle: "Environment Requirements"
 weight: 17500
 ---
 
-This page summarizes the environment requirements for KubeSphere installation.
+This page summarizes the some requirements for installing and using KubeSphere.
 
-## Installing KubeSphere on Linux
+## System Requirements
 
+{{< content "common/system-requirements.md" >}}
 
-
-
-
-
-
-### Dependency requirements
+## Dependency Requirements
 
 {{< content "common/dependency-requirements.md" >}}
 
+## Container Runtime Requirements
+
+{{< content "common/container-runtime-requirements.md" >}}
+
+## Network Requirements
+
+{{< content "common/network-requirements.md" >}}
+
+## Supported Kubernetes Versions
+
+{{< content "common/kubernetes-versions.md" >}}
+
+## Supported CSI Plugins
+
+{{< content "common/csi-plugins.md" >}}
