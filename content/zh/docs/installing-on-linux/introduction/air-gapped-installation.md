@@ -37,7 +37,6 @@ weight: 3130
 - 所有节点必须都能通过 `SSH` 访问。
 - 所有节点时间同步。
 - 所有节点都应使用 `sudo`/`curl`/`openssl`。
-- 请您务必在离线环境中安装 `docker`。
 
 
 KubeKey 能够同时安装 Kubernetes 和 KubeSphere。根据要安装的 Kubernetes 版本，需要安装的依赖项可能会不同。您可以参考下方列表，查看是否需要提前在您的节点上安装相关依赖项。
@@ -56,10 +55,15 @@ KubeKey 能够同时安装 Kubernetes 和 KubeSphere。根据要安装的 Kubern
 
 {{</ notice >}} 
 
+### 容器运行时
+
+您的集群必须有一个可用的容器运行时。在离线环境中创建集群之前，您必须手动安装 Docker 或其他容器运行时。
+
+{{< content "common/container-runtime-requirements" >}}
+
 ### 网络和 DNS 要求
 
-- 请确保 `/etc/resolv.conf` 中的 DNS 地址可用，否则可能会导致集群中的 DNS 出问题。
-- 如果您的网络配置使用防火墙或者安全组，请务必确保基础设施组件能够通过特定端口相互通信。建议您关闭防火墙。有关更多信息，请参考[端口要求](../port-firewall/)。
+{{< content "common/network-requirements" >}}
 
 ### 示例机器
 
