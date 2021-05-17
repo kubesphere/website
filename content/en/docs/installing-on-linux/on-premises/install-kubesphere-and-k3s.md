@@ -1,7 +1,7 @@
 ---
 title: "Deploy K3s and KubeSphere"
 keywords: 'Kubernetes, KubeSphere, K3s'
-description: 'Use KubeKey to install K3s and KubeSphere.'
+description: 'Learn how to use KubeKey to install K3s and KubeSphere.'
 linkTitle: "Deploy K3s and KubeSphere"
 weight: 3530
 ---
