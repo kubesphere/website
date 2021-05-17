@@ -59,7 +59,7 @@ KubeSphere 承诺为用户提供即插即用架构，您可以轻松地将 KubeS
 
 {{< notice tip >}}
 
-- 您可以在 KuberSphere 安装之前或之后启用可插拔组件。请参考示例文件 [cluster-configuration.yaml](https://github.com/kubesphere/ks-installer/blob/master/deploy/cluster-configuration.yaml) 获取更多详细信息。
+- 您可以在 KubeSphere 安装之前或之后启用可插拔组件。请参考示例文件 [cluster-configuration.yaml](https://github.com/kubesphere/ks-installer/blob/master/deploy/cluster-configuration.yaml) 获取更多详细信息。
 - 请确保集群中有足够的 CPU 和内存。
 - 强烈建议安装这些可插拔组件，以体验 KubeSphere 提供的全栈功能。
 
