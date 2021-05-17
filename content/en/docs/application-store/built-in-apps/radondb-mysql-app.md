@@ -31,7 +31,7 @@ This tutorial demonstrates how to deploy RadonDB MySQL from the App Store of Kub
 
    ![confirm-deployment](/images/docs/appstore/built-in-apps/radondb-mysql-app/confirm-deployment.png)
 
-4. In **App Configurations**, uncomment the `mysqlRootPassword` field and customize the password. Make sure you record the username and the password which will be used to access the app. When you finish, click **Deploy**.
+4. In **App Configurations**, you can use the default configuration or customize the configuration by editing the YAML file directly. When you finish, click **Deploy**.
 
    ![set-app-configuration](/images/docs/appstore/built-in-apps/radondb-mysql-app/set-app-configuration.png)
 
