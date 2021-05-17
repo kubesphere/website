@@ -187,7 +187,7 @@ Make sure the Kubernetes version is the one you downloaded.
 
 #### Edit the configuration file
 
-Edit the configuration file `config-sample.yaml`. Here is [an example for your reference](https://github.com/kubesphere/kubekey/blob/master/docs/config-example.md).
+Edit the configuration file `config-sample.yaml`. Here is [an example for your reference](https://github.com/kubesphere/kubekey/blob/release-1.1/docs/config-example.md).
 
    {{< notice warning >}} 
 
@@ -275,7 +275,7 @@ Make sure the Kubernetes version is the one you downloaded.
 
 #### Edit the configuration file
 
-Edit the configuration file `config-sample.yaml`. Here is [an example for your reference](https://github.com/kubesphere/kubekey/blob/master/docs/config-example.md).
+Edit the configuration file `config-sample.yaml`. Here is [an example for your reference](https://github.com/kubesphere/kubekey/blob/release-1.1/docs/config-example.md).
 
    {{< notice warning >}} 
 

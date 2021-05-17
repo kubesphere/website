@@ -184,7 +184,7 @@ spec:
     - node000001
     - node000002
 ```
-For a complete configuration sample explanation, please see [this file](https://github.com/kubesphere/kubekey/blob/master/docs/config-example.md).
+For a complete configuration sample explanation, please see [this file](https://github.com/kubesphere/kubekey/blob/release-1.1/docs/config-example.md).
 
 ### Configure the Load Balancer
 
