@@ -31,7 +31,7 @@ weight: 14293
 
    ![确认部署](/images/docs/zh-cn/appstore/built-in-apps/radondb-mysql-app/confirm-deployment.png)
 
-4. 在**应用配置**页面，取消对 `mysqlRootPassword` 字段的注释并设置密码，并记录用户名和密码用于访问该应用。操作完成后，点击**部署**。
+4. 在**应用配置**页面，您可以使用默认配置，或者编辑 YAML 文件以自定义配置。点击**部署**继续。
 
    ![设置应用配置](/images/docs/zh-cn/appstore/built-in-apps/radondb-mysql-app/set-app-configuration.png)
 
