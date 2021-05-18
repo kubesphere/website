@@ -121,21 +121,14 @@ kubectl get pod -n istio-system
 The output may look as follows if the component runs successfully:
 
 ```bash
-NAME                                     READY   STATUS      RESTARTS   AGE
-istio-citadel-7f676f76d7-n2rsr           1/1     Running     0          1h29m
-istio-galley-78688b475c-kvkbx            1/1     Running     0          1h29m
-istio-ingressgateway-8569f8dcb-rmvl5     1/1     Running     0          1h29m
-istio-init-crd-10-1.4.8-fpvwg            0/1     Completed   0          1h43m
-istio-init-crd-11-1.4.8-5rc4g            0/1     Completed   0          1h43m
-istio-init-crd-12-1.4.8-62zmp            0/1     Completed   0          1h43m
-istio-init-crd-14-1.4.8-ngq4d            0/1     Completed   0          1h43m
-istio-pilot-67fd55d974-g5bn2             2/2     Running     4          1h29m
-istio-policy-668894cffc-8tpt4            2/2     Running     7          1h29m
-istio-sidecar-injector-9c4d79658-g7fzf   1/1     Running     0          1h29m
-istio-telemetry-57fc886bf8-kx5rj         2/2     Running     7          1h29m
-jaeger-collector-76bf54b467-2fh2v        1/1     Running     0          1h17m
-jaeger-operator-7559f9d455-k26xz         1/1     Running     0          1h29m
-jaeger-query-b478c5655-s57k8             2/2     Running     0          1h17m
+NAME                                    READY   STATUS    RESTARTS   AGE
+istio-ingressgateway-78dbc5fbfd-f4cwt   1/1     Running   0          9m5s
+istiod-1-6-10-7db56f875b-mbj5p          1/1     Running   0          10m
+jaeger-collector-76bf54b467-k8blr       1/1     Running   0          6m48s
+jaeger-operator-7559f9d455-89hqm        1/1     Running   0          7m
+jaeger-query-b478c5655-4lzrn            2/2     Running   0          6m48s
+kiali-f9f7d6f9f-gfsfl                   1/1     Running   0          4m1s
+kiali-operator-7d5dc9d766-qpkb6         1/1     Running   0          6m53s
 ```
 
 {{</ tab >}}
