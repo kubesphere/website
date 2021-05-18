@@ -14,7 +14,30 @@ KubeSphere 支持用于[部署](../../project-user-guide/application-workloads/d
 
 ### 在 Linux 上安装
 
-使用 KubeKey 为集群创建配置文件时，该文件会默认启用 Metrics Server。即在 Linux 上安装 KubeSphere 之前，您无需手动启用 Metrics Server。
+当您在 Linux 上安装多节点 KubeSphere 时，首先需要创建一个配置文件，该文件列出了所有 KubeSphere 组件。
+
+1. 基于[在 Linux 上安装 KubeSphere](../../installing-on-linux/introduction/multioverview/) 的教程，您需要创建一个默认文件 `config-sample.yaml`，通过执行以下命令修改该文件：
+
+   ```bash
+   vi config-sample.yaml
+   ```
+
+   {{< notice note >}}
+   如果您采用 [All-in-One 安装](../../quick-start/all-in-one-on-linux/)，则不需要创建 `config-sample.yaml` 文件，因为可以直接创建集群。一般来说，All-in-One 模式是为那些刚接触 KubeSphere 并希望熟悉系统的用户而准备的。如果您想在这个模式下启用 Metrics Server（比如用于测试），请参考[下面的部分](#在安装后启用应用商店)，查看如何在安装后启用 Metrics Server。
+   {{</ notice >}}
+
+2. 在该文件中，搜寻到 `metrics_server`，并将 `enabled` 的 `false` 改为 `true`，完成后保存文件。
+
+   ```yaml
+   metrics_server:
+     enabled: true # Change "false" to "true"
+   ```
+
+3. 使用该配置文件创建集群：
+
+   ```bash
+   ./kk create cluster -f config-sample.yaml
+   ```
 
 ### 在 Kubernetes 上安装
 
@@ -89,22 +112,9 @@ KubeSphere 支持用于[部署](../../project-user-guide/application-workloads/d
 kubectl get pod -n kube-system
 ```
 
-如果 Metrics Server 安装成功，那么集群可能会返回以下输出 (`metrics-server-5ddd98b7f9-jjdln`)：
+如果 Metrics Server 安装成功，那么集群可能会返回以下输出（不包括无关 Pod）：
 
 ```bash
-NAME                                           READY   STATUS    RESTARTS   AGE
-calico-kube-controllers-59d85c5c84-m4blq       1/1     Running   0          28m
-calico-node-nqzcp                              1/1     Running   0          28m
-coredns-74d59cc5c6-8djtt                       1/1     Running   0          28m
-coredns-74d59cc5c6-jv65g                       1/1     Running   0          28m
-kube-apiserver-master                          1/1     Running   0          29m
-kube-controller-manager-master                 1/1     Running   0          29m
-kube-proxy-6qjz7                               1/1     Running   0          28m
-kube-scheduler-master                          1/1     Running   0          29m
-metrics-server-5ddd98b7f9-jjdln                1/1     Running   0          7m17s
-nodelocaldns-8wbfm                             1/1     Running   0          28m
-openebs-localpv-provisioner-84956ddb89-dxbnx   1/1     Running   0          28m
-openebs-ndm-operator-6896cbf7b8-xwcth          1/1     Running   1          28m
-openebs-ndm-pf47z                              1/1     Running   0          28m
-snapshot-controller-0                          1/1     Running   0          22m
+NAME                                        READY   STATUS    RESTARTS   AGE
+metrics-server-6c767c9f94-hfsb7             1/1     Running   0          9m38s
 ```

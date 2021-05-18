@@ -53,7 +53,7 @@ KubeSphere 事件系统使用户能够跟踪集群内部发生的事件，例如
       externalElasticsearchPort: # The port of external Elasticsearch
     ```
 
-3. 使用配置文件创建集群：
+3. 使用该配置文件创建集群：
 
     ```bash
     ./kk create cluster -f config-sample.yaml

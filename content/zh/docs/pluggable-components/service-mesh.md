@@ -36,7 +36,7 @@ KubeSphere 服务网格基于 [Istio](https://istio.io/)，将微服务治理和
         enabled: true # Change "false" to "true"
     ```
 
-3. 使用配置文件创建集群：
+3. 使用该配置文件创建集群：
 
     ```bash
     ./kk create cluster -f config-sample.yaml
