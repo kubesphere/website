@@ -36,7 +36,7 @@ You use KubeSphere **Metering and Billing** to:
 
 - Track detailed resource consumption at different levels on a unified dashboard.
 - Specify a date range to view data within a specific billing cycle.
-- Customize the prices of multiple resources, such as CPU, memory and VPCs.
+- Customize the prices of multiple resources, including CPU, memory, storage and network traffic.
 - Make better-informed decisions on cluster resource planning.
 - Identify opportunities for workload changes that can optimize your spending.
 - Export metering and billing data for further analysis.
@@ -88,7 +88,7 @@ The new KubeSphere DevOps System has been further stabilized to improve user exp
 
 - Clone a pipeline.
 - Run pipelines in a batch.
-- Create a multi-branch pipeline with GitLab.
+- [Create a multi-branch pipeline with GitLab](https://kubesphere.io/docs/devops-user-guide/how-to-use/gitlab-multibranch-pipeline/).
 - [Use built-in CI/CD templates](https://kubesphere.io/docs/devops-user-guide/how-to-use/use-pipeline-templates/).
 
 ![pipeline-templates](/images/blogs/en/kubesphere-3.1.0-ga-announcement/pipeline-templates.png)
