@@ -45,14 +45,14 @@ KubeSphere 为日志收集、查询和管理提供了一个强大的、全面的
 
     ```yaml
     es:  # Storage backend for logging, tracing, events and auditing.
-      elasticsearchMasterReplicas: 1   # total number of master nodes, it's not allowed to use even number
-      elasticsearchDataReplicas: 1     # total number of data nodes
-      elasticsearchMasterVolumeSize: 4Gi   # Volume size of Elasticsearch master nodes
-      elasticsearchDataVolumeSize: 20Gi    # Volume size of Elasticsearch data nodes
-      logMaxAge: 7                     # Log retention time in built-in Elasticsearch, it is 7 days by default.
+      elasticsearchMasterReplicas: 1   # The total number of master nodes. Even numbers are not allowed.
+      elasticsearchDataReplicas: 1     # The total number of data nodes.
+      elasticsearchMasterVolumeSize: 4Gi   # The volume size of Elasticsearch master nodes.
+      elasticsearchDataVolumeSize: 20Gi    # The volume size of Elasticsearch data nodes.
+      logMaxAge: 7                     # Log retention day in built-in Elasticsearch. It is 7 days by default.
       elkPrefix: logstash              # The string making up index names. The index name will be formatted as ks-<elk_prefix>-log
-      externalElasticsearchUrl: # The URL of external Elasticsearch
-      externalElasticsearchPort: # The port of external Elasticsearch
+      externalElasticsearchUrl: # The URL of external Elasticsearch.
+      externalElasticsearchPort: # The port of external Elasticsearch.
     ```
 
 3. 使用配置文件创建一个集群：
@@ -84,14 +84,14 @@ KubeSphere 为日志收集、查询和管理提供了一个强大的、全面的
 
     ```yaml
     es:  # Storage backend for logging, tracing, events and auditing.
-      elasticsearchMasterReplicas: 1   # total number of master nodes, it's not allowed to use even number
-      elasticsearchDataReplicas: 1     # total number of data nodes
-      elasticsearchMasterVolumeSize: 4Gi   # Volume size of Elasticsearch master nodes
-      elasticsearchDataVolumeSize: 20Gi    # Volume size of Elasticsearch data nodes
-      logMaxAge: 7                     # Log retention time in built-in Elasticsearch, it is 7 days by default.
+      elasticsearchMasterReplicas: 1   # The total number of master nodes. Even numbers are not allowed.
+      elasticsearchDataReplicas: 1     # The total number of data nodes.
+      elasticsearchMasterVolumeSize: 4Gi   # The volume size of Elasticsearch master nodes.
+      elasticsearchDataVolumeSize: 20Gi    # The volume size of Elasticsearch data nodes.
+      logMaxAge: 7                     # Log retention day in built-in Elasticsearch. It is 7 days by default.
       elkPrefix: logstash              # The string making up index names. The index name will be formatted as ks-<elk_prefix>-log
-      externalElasticsearchUrl: # The URL of external Elasticsearch
-      externalElasticsearchPort: # The port of external Elasticsearch
+      externalElasticsearchUrl: # The URL of external Elasticsearch.
+      externalElasticsearchPort: # The port of external Elasticsearch.
     ```
 
 3. 执行以下命令开始安装：
@@ -133,14 +133,14 @@ KubeSphere 为日志收集、查询和管理提供了一个强大的、全面的
 
     ```yaml
     es:  # Storage backend for logging, tracing, events and auditing.
-      elasticsearchMasterReplicas: 1   # total number of master nodes, it's not allowed to use even number
-      elasticsearchDataReplicas: 1     # total number of data nodes
-      elasticsearchMasterVolumeSize: 4Gi   # Volume size of Elasticsearch master nodes
-      elasticsearchDataVolumeSize: 20Gi    # Volume size of Elasticsearch data nodes
-      logMaxAge: 7                     # Log retention time in built-in Elasticsearch, it is 7 days by default.
+      elasticsearchMasterReplicas: 1   # The total number of master nodes. Even numbers are not allowed.
+      elasticsearchDataReplicas: 1     # The total number of data nodes.
+      elasticsearchMasterVolumeSize: 4Gi   # The volume size of Elasticsearch master nodes.
+      elasticsearchDataVolumeSize: 20Gi    # The volume size of Elasticsearch data nodes.
+      logMaxAge: 7                     # Log retention day in built-in Elasticsearch. It is 7 days by default.
       elkPrefix: logstash              # The string making up index names. The index name will be formatted as ks-<elk_prefix>-log
-      externalElasticsearchUrl: # The URL of external Elasticsearch
-      externalElasticsearchPort: # The port of external Elasticsearch
+      externalElasticsearchUrl: # The URL of external Elasticsearch.
+      externalElasticsearchPort: # The port of external Elasticsearch.
     ```
 
 5. 您可以使用 Web Kubectl 工具执行以下命令来检查安装过程：
@@ -163,7 +163,7 @@ KubeSphere 为日志收集、查询和管理提供了一个强大的、全面的
 
 进入**服务组件**，检查 **Logging** 的状态，可以看到如下类似图片：
 
-![日志系统](/images/docs/zh-cn/enable-pluggable-components/kubesphere-logging-system/logging.PNG)
+![logging](/images/docs/zh-cn/enable-pluggable-components/kubesphere-logging-system/logging.png)
 
 {{</ tab >}}
 
@@ -179,13 +179,15 @@ kubectl get pod -n kubesphere-logging-system
 
 ```bash
 NAME                                          READY   STATUS    RESTARTS   AGE
-elasticsearch-logging-data-0                  1/1     Running   0          9m33s
-elasticsearch-logging-data-1                  1/1     Running   0          5m12s
-elasticsearch-logging-discovery-0             1/1     Running   0          9m33s
-fluent-bit-qpvrf                              1/1     Running   0          4m56s
-fluentbit-operator-5bf7687b88-z7bgg           1/1     Running   0          9m26s
-logsidecar-injector-deploy-667c6c9579-662pm   2/2     Running   0          8m56s
-logsidecar-injector-deploy-667c6c9579-tjckn   2/2     Running   0          8m56s
+elasticsearch-logging-data-0                  1/1     Running   0          87m
+elasticsearch-logging-data-1                  1/1     Running   0          85m
+elasticsearch-logging-discovery-0             1/1     Running   0          87m
+fluent-bit-bsw6p                              1/1     Running   0          40m
+fluent-bit-smb65                              1/1     Running   0          40m
+fluent-bit-zdz8b                              1/1     Running   0          40m
+fluentbit-operator-9b69495b-bbx54             1/1     Running   0          40m
+logsidecar-injector-deploy-667c6c9579-cs4t6   2/2     Running   0          38m
+logsidecar-injector-deploy-667c6c9579-klnmf   2/2     Running   0          38m
 ```
 
 {{</ tab >}}
