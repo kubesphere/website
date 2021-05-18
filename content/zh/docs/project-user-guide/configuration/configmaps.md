@@ -92,7 +92,7 @@ Kubernetes [ConfigMap](https://kubernetes.io/docs/concepts/configuration/configm
 
 ## 使用 ConfigMap
 
-在创建工作负载、[服务](../../../project-user-guide/application-workloads/services/)、[任务](../../../project-user-guide/application-workloads/jobs/)或[定时任务](../../../project-user-guide/application-workloads/cronjob/)时，您可以用 ConfigMap 为容器添加环境变量。您可以在**容器镜像**页面勾选**环境变量**，点击**引用配置文件或密钥**，然后从下拉列表中选择一个 ConfigMap。
+在创建工作负载、[服务](../../../project-user-guide/application-workloads/services/)、[任务](../../../project-user-guide/application-workloads/jobs/)或[定时任务](../../../project-user-guide/application-workloads/cronjobs/)时，您可以用 ConfigMap 为容器添加环境变量。您可以在**容器镜像**页面勾选**环境变量**，点击**引用配置文件或密钥**，然后从下拉列表中选择一个 ConfigMap。
 
 ![use-configmap](/images/docs/zh-cn/project-user-guide/configurations/configmaps/use-configmap.jpg)
 

@@ -92,6 +92,6 @@ You can see the ConfigMap manifest file in YAML format by enabling **Edit Mode**
 
 ## Use a ConfigMap
 
-When you create workloads, [Services](../../../project-user-guide/application-workloads/services/), [Jobs](../../../project-user-guide/application-workloads/jobs/) or [CronJobs](../../../project-user-guide/application-workloads/cronjob/), you may need to add environment variables for containers. On the **Container Image** page, check **Environment Variables** and click **Use ConfigMap or Secret** to use a ConfigMap from the list.
+When you create workloads, [Services](../../../project-user-guide/application-workloads/services/), [Jobs](../../../project-user-guide/application-workloads/jobs/) or [CronJobs](../../../project-user-guide/application-workloads/cronjobs/), you may need to add environment variables for containers. On the **Container Image** page, check **Environment Variables** and click **Use ConfigMap or Secret** to use a ConfigMap from the list.
 
 ![use-configmap](/images/docs/project-user-guide/configurations/configmaps/use-configmap.jpg)

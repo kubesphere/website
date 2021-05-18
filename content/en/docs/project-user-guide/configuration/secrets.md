@@ -110,7 +110,7 @@ As mentioned above, KubeSphere automatically converts the value of a key into it
 
 ## Use a Secret
 
-Generally, you need to use a Secret when you create workloads, [Services](../../../project-user-guide/application-workloads/services/), [Jobs](../../../project-user-guide/application-workloads/jobs/) or [CronJobs](../../../project-user-guide/application-workloads/cronjob/). For example, you can select a Secret for a code repository. For more information, see [Image Registries](../image-registry/).
+Generally, you need to use a Secret when you create workloads, [Services](../../../project-user-guide/application-workloads/services/), [Jobs](../../../project-user-guide/application-workloads/jobs/) or [CronJobs](../../../project-user-guide/application-workloads/cronjobs/). For example, you can select a Secret for a code repository. For more information, see [Image Registries](../image-registry/).
 
 ![use-secret-repository](/images/docs/project-user-guide/configurations/secrets/use-secret-repository.jpg)
 

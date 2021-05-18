@@ -34,6 +34,6 @@ With the open-source model, the KubeSphere community advances development in an 
 
 ## Landscape
 
-KubeSphere is a member of CNCF and a [Kubernetes Conformance Certified platform](https://www.cncf.io/certification/software-conformance/#logos), further enriching [CNCF CLOUD NATIVE Landscape](https://landscape.cncf.io/landscape=observability-and-analysis&license=apache-license-2-0).
+KubeSphere is a member of CNCF and a [Kubernetes Conformance Certified platform](https://www.cncf.io/certification/software-conformance/#logos), further enriching [CNCF CLOUD NATIVE Landscape](https://landscape.cncf.io/?landscape=observability-and-analysis&license=apache-license-2-0).
 
 ![cncf-landscape](/images/docs/introduction/what-is-kubesphere/cncf-landscape.png)
