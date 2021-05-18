@@ -8,9 +8,9 @@ weight: 6200
 
 ## What is KubeSphere App Store
 
-As an open-source and app-centric container platform, KubeSphere provides users with a Helm-based app store for application lifecycle management on the back of [OpenPitrix](https://github.com/openpitrix/openpitrix), an open-source web-based system to package, deploy and manage different types of apps. The KubeSphere App Store allows ISVs, developers and users to upload, test, deploy and release apps with just several clicks in a one-stop shop.
+As an open-source and app-centric container platform, KubeSphere provides users with a Helm-based App Store for application lifecycle management on the back of [OpenPitrix](https://github.com/openpitrix/openpitrix), an open-source web-based system to package, deploy and manage different types of apps. The KubeSphere App Store allows ISVs, developers and users to upload, test, deploy and release apps with just several clicks in a one-stop shop.
 
-Internally, the KubeSphere App Store can serve as a place for different teams to share data, middleware, and office applications. Externally, it is conducive to setting industry standards of building and delivery. By default, there are 15 built-in apps in the App Store. After you enable this feature, you can add more apps with app templates.
+Internally, the KubeSphere App Store can serve as a place for different teams to share data, middleware, and office applications. Externally, it is conducive to setting industry standards of building and delivery. By default, there are 16 built-in apps in the App Store. After you enable this feature, you can add more apps with app templates.
 
 ![app-store](/images/docs/enable-pluggable-components/kubesphere-app-store/app-store.png)
 
@@ -113,43 +113,18 @@ You can find the web kubectl tool by clicking the hammer icon in the bottom-righ
 
 ## Verify the Installation of the Component
 
-{{< tabs >}}
+After you log in to the console, if you can see **App Store** in the top left corner and 16 built-in apps in it, it means the installation is successful.
 
-{{< tab "Verify the component on the dashboard" >}}
+![app-store](/images/docs/enable-pluggable-components/kubesphere-app-store/app-store.png)
 
-Go to **Components** and check the status of **OpenPitrix**. You may see an image as follows:
+{{< notice note >}}
 
-![openpitrix](/images/docs/enable-pluggable-components/kubesphere-app-store/openpitrix.png)
+You can even access the App Store without logging in to the console by visiting `<NodeIP>:30880/apps`.
 
-{{</ tab >}}
-
-{{< tab "Verify the component through kubectl" >}}
-
-Execute the following command to check the status of Pods:
-
-```bash
-kubectl get pod -n openpitrix-system
-```
-
-The output may look as follows if the component runs successfully:
-
-```bash
-NAME                                                READY   STATUS      RESTARTS   AGE
-hyperpitrix-generate-kubeconfig-pznht               0/2     Completed   0          1h6m
-hyperpitrix-release-app-job-hzdjf                   0/1     Completed   0          1h6m
-openpitrix-hyperpitrix-deployment-fb76645f4-crvmm   1/1     Running     0          1h6m
-```
-
-{{</ tab >}}
-
-{{</ tabs >}}
+{{</ notice >}} 
 
 ## Use the App Store in a Multi-cluster Architecture
 
 [In a multi-cluster architecture](../../multicluster-management/introduction/kubefed-in-kubesphere/), you have one Host Cluster (H Cluster) managing all Member Clusters (M Clusters). Different from other components in KubeSphere, the App Store serves as a global application pool for all clusters, including H Cluster and M Clusters. You only need to enable the App Store on the H Cluster and you can use functions related to the App Store on M Clusters directly (no matter whether the App Store is enabled on M Clusters or not), such as [app templates](../../project-user-guide/application/app-template/) and [app repositories](../../workspace-administration/app-repository/import-helm-repository/).
 
 However, if you only enable the App Store on M Clusters without enabling it on the H Cluster, you will not be able to use the App Store on any cluster in the multi-cluster architecture.
-
-## Access the App Store
-
-After the App Store is installed, all users can access it by clicking **App Store** in the top left corner. You can even access it without logging in to the console by visiting `<NodeIP>:30880/apps`.

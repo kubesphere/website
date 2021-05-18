@@ -6,7 +6,7 @@ linkTitle: "移除 KubeSphere 中的内置应用"
 Weight: 16910
 ---
 
-作为一个以应用为中心的开源容器平台，KubeSphere 在基于 [OpenPitrix](https://github.com/openpitrix/openpitrix) 的应用商店中集成了 15 个内置应用。这些应用可供企业空间内的所有租户使用，但您也可以将这些应用从应用商店中移除。本教程为您演示怎样从应用商店中移除内置应用。
+作为一个以应用为中心的开源容器平台，KubeSphere 在基于 [OpenPitrix](https://github.com/openpitrix/openpitrix) 的应用商店中集成了 16 个内置应用。这些应用可供企业空间内的所有租户使用，但您也可以将这些应用从应用商店中移除。本教程为您演示怎样从应用商店中移除内置应用。
 
 ## 准备工作
 
@@ -21,7 +21,7 @@ Weight: 16910
 
    ![select-app-store-management](/images/docs/zh-cn/faq/remove-built-in-apps/select-app-store-management.png)
 
-2. 在**应用商店**页面，您可以看到列表中展示了 15 个内置应用。选择您想要从应用商店中移除的应用，例如，点击 **tomcat** 跳转到其详情页面。
+2. 在**应用商店**页面，您可以看到列表中展示了 16 个内置应用。选择您想要从应用商店中移除的应用，例如，点击 **tomcat** 跳转到其详情页面。
 
    ![click-tomcat](/images/docs/zh-cn/faq/remove-built-in-apps/click-tomcat.png)
 
