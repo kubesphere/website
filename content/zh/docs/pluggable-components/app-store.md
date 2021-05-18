@@ -11,9 +11,9 @@ weight: 6200
 
 作为一个开源的、以应用为中心的容器平台，KubeSphere 在 [OpenPitrix](https://github.com/openpitrix/openpitrix) 的基础上，为用户提供了一个基于 Helm 的应用商店，用于应用生命周期管理。OpenPitrix 是一个开源的 Web 平台，用于打包、部署和管理不同类型的应用。KubeSphere 应用商店让 ISV、开发者和用户能够在一站式服务中只需点击几下就可以上传、测试、部署和发布应用。
 
-对内，KubeSphere 应用商店可以作为不同团队共享数据、中间件和办公应用的场所。对外，有利于设立构建和交付的行业标准。默认情况下，应用商店中内置了 15 个应用。启用该功能后，您可以通过应用模板添加更多应用。
+对内，KubeSphere 应用商店可以作为不同团队共享数据、中间件和办公应用的场所。对外，有利于设立构建和交付的行业标准。默认情况下，应用商店中内置了 16 个应用。启用该功能后，您可以通过应用模板添加更多应用。
 
-![应用商店](/images/docs/zh-cn/enable-pluggable-components/kubesphere-app-store/app-store.PNG)
+![app-store](/images/docs/zh-cn/enable-pluggable-components/kubesphere-app-store/app-store.png)
 
 有关更多信息，请参阅[应用商店](../../application-store/)。
 
@@ -109,43 +109,20 @@ weight: 6200
 
 ## 验证组件的安装
 
-{{< tabs >}}
+After you log in to the console, if you can see **App Store** in the top left corner and 16 built-in apps in it, it means the installation is successful.
 
-{{< tab "在仪表板中验证组件的安装" >}}
+在您登录控制台后，如果您能看到页面左上角的**应用商店**以及其中的 16 个内置应用，则说明安装成功。
 
-进入**服务组件**，检查 **OpenPitrix** 的状态，可以看到如下类似图片：
+![app-store](/images/docs/zh-cn/enable-pluggable-components/kubesphere-app-store/app-store.png)
 
-![openpitrix](/images/docs/zh-cn/enable-pluggable-components/kubesphere-app-store/openpitrix.PNG)
+{{< notice note >}}
 
-{{</ tab >}}
+您可以在不登录控制台的情况下直接访问 `<NodeIP>:30880/apps` 进入应用商店。
 
-{{< tab "通过 kubectl 验证组件的安装" >}}
-
-执行以下命令来检查 Pod 的状态：
-
-```bash
-kubectl get pod -n openpitrix-system
-```
-
-如果组件运行成功，输出结果如下：
-
-```bash
-NAME                                                READY   STATUS      RESTARTS   AGE
-hyperpitrix-generate-kubeconfig-pznht               0/2     Completed   0          1h6m
-hyperpitrix-release-app-job-hzdjf                   0/1     Completed   0          1h6m
-openpitrix-hyperpitrix-deployment-fb76645f4-crvmm   1/1     Running     0          1h6m
-```
-
-{{</ tab >}}
-
-{{</ tabs >}}
+{{</ notice >}} 
 
 ## 在多集群架构中使用应用商店
 
 [在多集群架构中](../../multicluster-management/introduction/kubefed-in-kubesphere/)，一个 Host 集群（H 集群）管理所有 Member 集群（M 集群）。与 KubeSphere 中的其他组件不同，应用商店是所有集群（包括 H 集群和 M 集群）的全局应用程序池。您只需要在 H 集群上启用应用商店，便可以直接在 M 集群上使用应用商店的相关功能（无论 M 集群是否启用应用商店），例如[应用模板](../../project-user-guide/application/app-template/)和[应用仓库](../../workspace-administration/app-repository/import-helm-repository/)。
 
 但是，如果只在 M 集群上启用应用商店而没有在 H 集群上启用，您将无法在多集群架构中的任何集群上使用应用商店。
-
-## 访问应用商店
-
-应用商店安装后，所有用户都可以通过点击左上角的**应用商店**进行访问。您也可以在不登录控制台的情况下直接访问 `<NodeIP>:30880/apps` 进入应用商店。
