@@ -111,22 +111,9 @@ Execute the following command to verify that the Pod of Metrics Server is up and
 kubectl get pod -n kube-system
 ```
 
-If the Metrics Server is successfully installed, your cluster may return the following output (`metrics-server-5ddd98b7f9-jjdln`):
+If the Metrics Server is successfully installed, your cluster may return the following output (excluding irrelevant Pods):
 
 ```bash
-NAME                                           READY   STATUS    RESTARTS   AGE
-calico-kube-controllers-59d85c5c84-m4blq       1/1     Running   0          28m
-calico-node-nqzcp                              1/1     Running   0          28m
-coredns-74d59cc5c6-8djtt                       1/1     Running   0          28m
-coredns-74d59cc5c6-jv65g                       1/1     Running   0          28m
-kube-apiserver-master                          1/1     Running   0          29m
-kube-controller-manager-master                 1/1     Running   0          29m
-kube-proxy-6qjz7                               1/1     Running   0          28m
-kube-scheduler-master                          1/1     Running   0          29m
-metrics-server-5ddd98b7f9-jjdln                1/1     Running   0          7m17s
-nodelocaldns-8wbfm                             1/1     Running   0          28m
-openebs-localpv-provisioner-84956ddb89-dxbnx   1/1     Running   0          28m
-openebs-ndm-operator-6896cbf7b8-xwcth          1/1     Running   1          28m
-openebs-ndm-pf47z                              1/1     Running   0          28m
-snapshot-controller-0                          1/1     Running   0          22m
+NAME                                        READY   STATUS    RESTARTS   AGE
+metrics-server-6c767c9f94-hfsb7             1/1     Running   0          9m38s
 ```

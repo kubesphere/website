@@ -51,7 +51,7 @@ KubeSphere 审计日志系统提供了一套与安全相关并按时间顺序排
       externalElasticsearchPort: # The port of external Elasticsearch
     ```
 
-3. 使用配置文件创建集群：
+3. 使用该配置文件创建集群：
 
     ```bash
     ./kk create cluster -f config-sample.yaml

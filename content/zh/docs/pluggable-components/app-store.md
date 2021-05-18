@@ -30,7 +30,7 @@ weight: 6200
     ```
 
     {{< notice note >}}
-如果您采用 [All-in-one 安装](../../quick-start/all-in-one-on-linux/)，则不需要创建 `config-sample.yaml` 文件，因为可以直接创建集群。一般来说，All-in-one 模式是为那些刚接触 KubeSphere 并希望熟悉系统的用户而准备的。如果您想在这个模式下启用应用商店（比如用于测试），请参考[下面的部分](#在安装后启用应用商店)，查看如何在安装后启用应用商店。
+如果您采用 [All-in-One 安装](../../quick-start/all-in-one-on-linux/)，则不需要创建 `config-sample.yaml` 文件，因为可以直接创建集群。一般来说，All-in-One 模式是为那些刚接触 KubeSphere 并希望熟悉系统的用户而准备的。如果您想在这个模式下启用应用商店（比如用于测试），请参考[下面的部分](#在安装后启用应用商店)，查看如何在安装后启用应用商店。
     {{</ notice >}}
 
 2. 在该文件中，搜寻到 `openpitrix`，并将 `enabled` 的 `false` 改为 `true`，完成后保存文件。
@@ -40,7 +40,7 @@ weight: 6200
         enabled: true # Change "false" to "true"
     ```
 
-3. 使用配置文件创建集群：
+3. 使用该配置文件创建集群：
 
     ```bash
     ./kk create cluster -f config-sample.yaml
