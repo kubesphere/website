@@ -110,7 +110,7 @@ DevOps 系统为用户提供了一个自动化的环境，应用可以自动发�
 
 进入**服务组件**，检查 **DevOps** 的状态，可以看到如下类似图片：
 
-![devops](/images/docs/zh-cn/enable-pluggable-components/kubesphere-devops-system/devops.PNG)
+![devops](/images/docs/zh-cn/enable-pluggable-components/kubesphere-devops-system/devops.png)
 
 {{</ tab >}}
 
@@ -125,10 +125,9 @@ kubectl get pod -n kubesphere-devops-system
 如果组件运行成功，输出结果如下：
 
 ```bash
-NAME                                       READY   STATUS    RESTARTS   AGE
-ks-jenkins-68b8949bb-jcvkt                 1/1     Running   0          1h3m
-s2ioperator-0                              1/1     Running   1          1h3m
-uc-jenkins-update-center-8c898f44f-hqv78   1/1     Running   0          1h14m
+NAME                          READY   STATUS    RESTARTS   AGE
+ks-jenkins-5cbbfbb975-hjnll   1/1     Running   0          40m
+s2ioperator-0                 1/1     Running   0          41m
 ```
 
 {{</ tab >}}
