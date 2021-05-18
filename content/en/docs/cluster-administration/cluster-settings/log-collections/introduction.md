@@ -41,9 +41,9 @@ To add a log receiver:
 
 ### Add Elasticsearch as a log receiver
 
-A default Elasticsearch receiver will be added with its service address set to an Elasticsearch cluster if `logging`, `events`, or `auditing` is enabled in [ClusterConfiguration](https://github.com/kubesphere/kubekey/blob/master/docs/config-example.md).
+A default Elasticsearch receiver will be added with its service address set to an Elasticsearch cluster if `logging`, `events`, or `auditing` is enabled in [ClusterConfiguration](https://github.com/kubesphere/kubekey/blob/release-1.1/docs/config-example.md).
 
-An internal Elasticsearch cluster will be deployed to the Kubernetes cluster if neither `externalElasticsearchUrl` nor `externalElasticsearchPort` is specified in [ClusterConfiguration](https://github.com/kubesphere/kubekey/blob/master/docs/config-example.md) when `logging`, `events` or `auditing` is enabled. The internal Elasticsearch cluster is for testing and development only. It is recommended that you configure an external Elasticsearch cluster for production.
+An internal Elasticsearch cluster will be deployed to the Kubernetes cluster if neither `externalElasticsearchUrl` nor `externalElasticsearchPort` is specified in [ClusterConfiguration](https://github.com/kubesphere/kubekey/blob/release-1.1/docs/config-example.md) when `logging`, `events` or `auditing` is enabled. The internal Elasticsearch cluster is for testing and development only. It is recommended that you configure an external Elasticsearch cluster for production.
 
 Log searching relies on the internal or external Elasticsearch cluster configured.
 
@@ -59,7 +59,7 @@ If you need to output logs to more places other than Elasticsearch or Kafka, you
 
 ## Add a Log Receiver (i.e. Collector) for Events or Auditing Logs
 
-Starting from KubeSphere v3.0.0, the logs of Kubernetes events and the auditing logs of Kubernetes and KubeSphere can be archived in the same way as container logs. The tab **Events** or **Auditing** on the **Log Collections** page will appear if `events` or `auditing` is enabled accordingly in [ClusterConfiguration](https://github.com/kubesphere/kubekey/blob/master/docs/config-example.md). You can go to the corresponding tab to configure log receivers for Kubernetes events or Kubernetes and KubeSphere auditing logs.
+Starting from KubeSphere v3.0.0, the logs of Kubernetes events and the auditing logs of Kubernetes and KubeSphere can be archived in the same way as container logs. The tab **Events** or **Auditing** on the **Log Collections** page will appear if `events` or `auditing` is enabled accordingly in [ClusterConfiguration](https://github.com/kubesphere/kubekey/blob/release-1.1/docs/config-example.md). You can go to the corresponding tab to configure log receivers for Kubernetes events or Kubernetes and KubeSphere auditing logs.
 
 ![log-collections-events](/images/docs/cluster-administration/cluster-settings/log-collections/introduction/log-collections-events.png)
 
