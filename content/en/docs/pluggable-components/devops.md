@@ -127,10 +127,9 @@ kubectl get pod -n kubesphere-devops-system
 The output may look as follows if the component runs successfully:
 
 ```bash
-NAME                                       READY   STATUS    RESTARTS   AGE
-ks-jenkins-68b8949bb-jcvkt                 1/1     Running   0          1h3m
-s2ioperator-0                              1/1     Running   1          1h3m
-uc-jenkins-update-center-8c898f44f-hqv78   1/1     Running   0          1h14m
+NAME                          READY   STATUS    RESTARTS   AGE
+ks-jenkins-5cbbfbb975-hjnll   1/1     Running   0          40m
+s2ioperator-0                 1/1     Running   0          41m
 ```
 
 {{</ tab >}}
