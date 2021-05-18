@@ -105,7 +105,7 @@ You can use [strimzi-kafka-operator](https://github.com/strimzi/strimzi-kafka-op
 
 2. If you have enabled the [multi-cluster feature](../../../../multicluster-management/), you can select a specific cluster. If you have not enabled the feature, refer to the next step directly.
 
-3. On the **Cluster Management** page, go to **Log Collections** in **Cluster Settings**.
+3. On the **Cluster Management** page, go to **Log Collection** in **Cluster Settings**.
 
 4. Click **Add Log Collector** and select **Kafka**. Input the Kafka broker address and port as below, and then click **OK** to continue.
 

@@ -124,7 +124,7 @@ EOF
 
 1. Log in to KubeSphere as `admin`. Click **Platform** in the top left corner and select **Cluster Management**.
 2. If you have enabled the [multi-cluster feature](../../../../multicluster-management/), you can select a specific cluster. If you have not enabled the feature, refer to the next step directly.
-3. On the **Cluster Management** page, go to **Log Collections** in **Cluster Settings**.
+3. On the **Cluster Management** page, go to **Log Collection** in **Cluster Settings**.
 
 4. Click **Add Log Collector** and choose **Fluentd**.
 
@@ -134,7 +134,7 @@ EOF
 
    ![add-fluentd](/images/docs/cluster-administration/cluster-settings/log-collections/add-fluentd-as-receiver/add-fluentd.png)
 
-6. Fluentd will appear in the receiver list on the **Log Collections** page, the status of which is **Collecting**.
+6. Fluentd will appear in the receiver list on the **Log Collection** page, the status of which is **Collecting**.
 
    ![receiver-list](/images/docs/cluster-administration/cluster-settings/log-collections/add-fluentd-as-receiver/receiver-list.png)
 

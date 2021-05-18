@@ -1,5 +1,5 @@
 ---
-title: "Introduction to Log Collections"
+title: "Introduction to Log Collection"
 keywords: 'Kubernetes, log, elasticsearch, kafka, fluentd, pod, container, fluentbit, output'
 description: 'Learn the basics of cluster log collections, including tools and general steps.'
 linkTitle: "Introduction"
@@ -16,7 +16,7 @@ This tutorial gives a brief introduction about the general steps of adding log r
 
 - Before adding a log receiver, you need to enable any of the `logging`, `events` or `auditing` components. For more information, see [Enable Pluggable Components](../../../../pluggable-components/).
 
-## Add a Log Receiver (i.e. Collector) for Container Logs
+## Add a Log Receiver for Container Logs
 
 To add a log receiver:
 
@@ -26,11 +26,11 @@ To add a log receiver:
 
 3. If you have enabled the [multi-cluster feature](../../../../multicluster-management/), you can select a specific cluster. If you have not enabled the feature, refer to the next step directly.
 
-4. Go to **Log Collections** in **Cluster Settings**.
+4. Go to **Log Collection** in **Cluster Settings**.
 
-5. Click **Add Log Collector** in the **Logging** tab.
+5. Click **Add Log Receiver** on the **Logging** tab.
 
-   ![log-collections](/images/docs/cluster-administration/cluster-settings/log-collections/introduction/log-collections.png)
+   ![log-collection](/images/docs/cluster-administration/cluster-settings/log-collections/introduction/log-collection.png)
 
    {{< notice note >}}
 
@@ -57,9 +57,9 @@ Kafka is often used to receive logs and serves as a broker to other processing s
 
 If you need to output logs to more places other than Elasticsearch or Kafka, you can add Fluentd as a log receiver. Fluentd has numerous output plugins which can forward logs to various destinations such as S3, MongoDB, Cassandra, MySQL, syslog, and Splunk. [Add Fluentd as a Receiver](../add-fluentd-as-receiver/) demonstrates how to add Fluentd to receive Kubernetes logs.
 
-## Add a Log Receiver (i.e. Collector) for Events or Auditing Logs
+## Add a Log Receiver for Events or Auditing Logs
 
-Starting from KubeSphere v3.0.0, the logs of Kubernetes events and the auditing logs of Kubernetes and KubeSphere can be archived in the same way as container logs. The tab **Events** or **Auditing** on the **Log Collections** page will appear if `events` or `auditing` is enabled accordingly in [ClusterConfiguration](https://github.com/kubesphere/kubekey/blob/release-1.1/docs/config-example.md). You can go to the corresponding tab to configure log receivers for Kubernetes events or Kubernetes and KubeSphere auditing logs.
+Starting from KubeSphere v3.0.0, the logs of Kubernetes events and the auditing logs of Kubernetes and KubeSphere can be archived in the same way as container logs. The tab **Events** or **Auditing** on the **Log Collection** page will appear if `events` or `auditing` is enabled accordingly in [ClusterConfiguration](https://github.com/kubesphere/kubekey/blob/release-1.1/docs/config-example.md). You can go to the corresponding tab to configure log receivers for Kubernetes events or Kubernetes and KubeSphere auditing logs.
 
 ![log-collections-events](/images/docs/cluster-administration/cluster-settings/log-collections/introduction/log-collections-events.png)
 
@@ -73,7 +73,7 @@ Container logs, Kubernetes events and Kubernetes and KubeSphere auditing logs sh
 
 You can turn a log receiver on or off without adding or deleting it. To turn a log receiver on or off:
 
-1. On the **Log Collections** page, click a log receiver and go to the receiver's detail page.
+1. On the **Log Collection** page, click a log receiver and go to the receiver's detail page.
 2. Click **More** and select **Change Status**.
 
     ![more](/images/docs/cluster-administration/cluster-settings/log-collections/introduction/more.png)
@@ -90,7 +90,7 @@ You can turn a log receiver on or off without adding or deleting it. To turn a l
 
 You can modify a log receiver or delete it:
 
-1. On the **Log Collections** page, click a log receiver and go to the receiver's detail page.
+1. On the **Log Collection** page, click a log receiver and go to the receiver's detail page.
 2. Edit a log receiver by clicking **Edit** or **Edit YAML** from the drop-down list.
 
     ![more](/images/docs/cluster-administration/cluster-settings/log-collections/introduction/more.png)
