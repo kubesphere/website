@@ -32,7 +32,7 @@ KubeSphere 审计日志系统提供了一套与安全相关并按时间顺序排
 
     ```yaml
     auditing:
-        enabled: true # Change "false" to "true"
+      enabled: true # 将“false”更改为“true”。
     ```
 
     {{< notice note >}}
@@ -71,7 +71,7 @@ KubeSphere 审计日志系统提供了一套与安全相关并按时间顺序排
 
     ```yaml
     auditing:
-        enabled: true # Change "false" to "true"
+      enabled: true # 将“false”更改为“true”。
     ```
 
     {{< notice note >}}
@@ -118,7 +118,7 @@ KubeSphere 审计日志系统提供了一套与安全相关并按时间顺序排
 
     ```yaml
     auditing:
-        enabled: true # Change "false" to "true"
+      enabled: true # 将“false”更改为“true”。
     ```
 
     {{< notice note >}}

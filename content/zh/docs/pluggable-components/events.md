@@ -34,7 +34,7 @@ KubeSphere 事件系统使用户能够跟踪集群内部发生的事件，例如
 
     ```yaml
     events:
-        enabled: true # Change "false" to "true"
+      enabled: true # 将“false”更改为“true”。
     ```
 
     {{< notice note >}}
@@ -73,7 +73,7 @@ KubeSphere 事件系统使用户能够跟踪集群内部发生的事件，例如
 
     ```yaml
     events:
-        enabled: true # Change "false" to "true"
+      enabled: true # 将“false”更改为“true”。
     ```
 
     {{< notice note >}}
@@ -122,7 +122,7 @@ KubeSphere 事件系统使用户能够跟踪集群内部发生的事件，例如
 
     ```yaml
     events:
-        enabled: true # Change "false" to "true"
+      enabled: true # 将“false”更改为“true”。
     ```
 
     {{< notice note >}}

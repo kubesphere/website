@@ -32,7 +32,7 @@ If you adopt [All-in-One Installation](../../quick-start/all-in-one-on-linux/), 
 
     ```yaml
     auditing:
-      enabled: true # Change "false" to "true"
+      enabled: true # Change "false" to "true".
     ```
 
     {{< notice note >}}
@@ -71,7 +71,7 @@ As you [install KubeSphere on Kubernetes](../../installing-on-kubernetes/introdu
 
     ```yaml
     auditing:
-      enabled: true # Change "false" to "true"
+      enabled: true # Change "false" to "true".
     ```
 
     {{< notice note >}}
@@ -118,7 +118,7 @@ A Custom Resource Definition (CRD) allows users to create a new type of resource
 
     ```yaml
     auditing:
-      enabled: true # Change "false" to "true"
+      enabled: true # Change "false" to "true".
     ```
 
     {{< notice note >}}

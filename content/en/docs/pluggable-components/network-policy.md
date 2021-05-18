@@ -35,11 +35,12 @@ When you implement multi-node installation of KubeSphere on Linux, you need to c
 If you adopt [All-in-One Installation](../../quick-start/all-in-one-on-linux/), you do not need to create a `config-sample.yaml` file as you can create a cluster directly. Generally, the all-in-one mode is for users who are new to KubeSphere and look to get familiar with the system. If you want to enable the Network Policy in this mode (e.g. for testing purposes), refer to [the following section](#enable-network-policy-after-installation) to see how the Network Policy can be installed after installation.
     {{</ notice >}}
 
-2. In this file, navigate to `networkpolicy` and change `false` to `true` for `enabled`. Save the file after you finish.
+2. In this file, navigate to `network.networkpolicy` and change `false` to `true` for `enabled`. Save the file after you finish.
 
     ```yaml
-    networkpolicy:
-      enabled: true # Change "false" to "true"
+    network:
+      networkpolicy:
+        enabled: true # Change "false" to "true".
     ```
 
 3. Create a cluster using the configuration file:
@@ -58,11 +59,12 @@ As you [install KubeSphere on Kubernetes](../../installing-on-kubernetes/introdu
     vi cluster-configuration.yaml
     ```
 
-2. In this local `cluster-configuration.yaml` file, navigate to `networkpolicy` and enable it by changing `false` to `true` for `enabled`. Save the file after you finish.
+2. In this local `cluster-configuration.yaml` file, navigate to `network.networkpolicy` and enable it by changing `false` to `true` for `enabled`. Save the file after you finish.
 
     ```yaml
-    networkpolicy:
-      enabled: true # Change "false" to "true"
+    network:
+      networkpolicy:
+        enabled: true # Change "false" to "true".
     ```
 
 3. Execute the following commands to start installation:
@@ -89,11 +91,12 @@ A Custom Resource Definition (CRD) allows users to create a new type of resource
 
     ![edit-yaml](/images/docs/enable-pluggable-components/network-policies/edit-yaml.png)
 
-4. In this yaml file, navigate to `networkpolicy` and change `false` to `true` for `enabled`. After you finish, click **Update** in the bottom-right corner to save the configuration.
+4. In this yaml file, navigate to `network.networkpolicy` and change `false` to `true` for `enabled`. After you finish, click **Update** in the bottom-right corner to save the configuration.
 
     ```yaml
-    networkpolicy:
-      enabled: true # Change "false" to "true"
+    network:
+      networkpolicy:
+        enabled: true # Change "false" to "true".
     ```
 
 5. You can use the web kubectl to check the installation process by executing the following command:

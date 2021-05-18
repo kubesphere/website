@@ -30,7 +30,7 @@ weight: 6600
 
     ```yaml
     alerting:
-        enabled: true # 将“false”更改为“true”。
+      enabled: true # 将“false”更改为“true”。
     ```
     
 3. 使用该配置文件创建集群：
@@ -53,7 +53,7 @@ weight: 6600
 
     ```yaml
     alerting:
-        enabled: true # 将“false”更改为“true”。
+      enabled: true # 将“false”更改为“true”。
     ```
     
 3. 执行以下命令开始安装：
@@ -84,7 +84,7 @@ weight: 6600
 
     ```yaml
     alerting:
-        enabled: true # 将“false”更改为“true”。
+      enabled: true # 将“false”更改为“true”。
     ```
     
 5. 您可以使用 Web Kubectl 工具执行以下命令来检查安装过程：

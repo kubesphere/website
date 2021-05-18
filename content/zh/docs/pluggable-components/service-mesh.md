@@ -33,7 +33,7 @@ KubeSphere 服务网格基于 [Istio](https://istio.io/)，将微服务治理和
 
     ```yaml
     servicemesh:
-        enabled: true # Change "false" to "true"
+      enabled: true # 将“false”更改为“true”。
     ```
 
 3. 使用该配置文件创建集群：
@@ -56,7 +56,7 @@ KubeSphere 服务网格基于 [Istio](https://istio.io/)，将微服务治理和
 
     ```yaml
     servicemesh:
-        enabled: true # Change "false" to "true"
+      enabled: true # 将“false”更改为“true”。
     ```
 
 3. 执行以下命令开始安装：
@@ -86,7 +86,7 @@ KubeSphere 服务网格基于 [Istio](https://istio.io/)，将微服务治理和
 
     ```yaml
     servicemesh:
-        enabled: true # Change "false" to "true"
+      enabled: true # 将“false”更改为“true”。
     ```
 
 5. 您可以执行以下命令，使用 Web Kubectl 工具来检查安装过程：

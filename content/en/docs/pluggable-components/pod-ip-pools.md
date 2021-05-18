@@ -31,7 +31,7 @@ When you implement multi-node installation of KubeSphere on Linux, you need to c
    ```yaml
    network:
      ippool:
-       type: calico # Change "none" to "calico"
+       type: calico # Change "none" to "calico".
    ```
 
 3. Create a cluster using the configuration file:
@@ -55,7 +55,7 @@ As you [install KubeSphere on Kubernetes](../../installing-on-kubernetes/introdu
     ```yaml
     network:
       ippool:
-        type: calico # Change "none" to "calico"
+        type: calico # Change "none" to "calico".
     ```
 
 3. Execute the following commands to start installation:
@@ -83,7 +83,7 @@ A Custom Resource Definition (CRD) allows users to create a new type of resource
     ```yaml
     network:
       ippool:
-        type: calico # Change "none" to "calico"
+        type: calico # Change "none" to "calico".
     ```
 
 5. You can use the web kubectl to check the installation process by executing the following command:
