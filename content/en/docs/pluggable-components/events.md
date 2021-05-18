@@ -34,7 +34,7 @@ If you adopt [All-in-One Installation](../../quick-start/all-in-one-on-linux/), 
 
     ```yaml
     events:
-      enabled: true # Change "false" to "true"
+      enabled: true # Change "false" to "true".
     ```
 
     {{< notice note >}}
@@ -73,7 +73,7 @@ As you [install KubeSphere on Kubernetes](../../installing-on-kubernetes/introdu
 
     ```yaml
     events:
-      enabled: true # Change "false" to "true"
+      enabled: true # Change "false" to "true".
     ```
 
     {{< notice note >}}
@@ -122,7 +122,7 @@ A Custom Resource Definition (CRD) allows users to create a new type of resource
 
     ```yaml
     events:
-      enabled: true # Change "false" to "true"
+      enabled: true # Change "false" to "true".
     ```
 
     {{< notice note >}}

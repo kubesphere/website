@@ -35,11 +35,12 @@ weight: 6900
 如果您采用 [All-in-One 安装](../../quick-start/all-in-one-on-linux/)，则不需要创建 `config-sample.yaml` 文件，因为可以直接创建集群。一般来说，All-in-One 模式是为那些刚接触 KubeSphere 并希望熟悉系统的用户而准备的。如果您想在该模式下启用网络策略（例如用于测试），可以参考[下面的部分](#在安装后启用网络策略)，查看如何在安装后启用网络策略。
     {{</ notice >}}
 
-2. 在该文件中，搜寻到 `networkpolicy`，并将 `enabled` 的 `false` 改为 `true`。完成后保存文件。
+2. 在该文件中，搜寻到 `network.networkpolicy`，并将 `enabled` 的 `false` 改为 `true`。完成后保存文件。
 
     ```yaml
-    networkpolicy:
-        enabled: true # Change "false" to "true"
+    network:
+      networkpolicy:
+        enabled: true # 将“false”更改为“true”。
     ```
 
 3. 使用配置文件创建一个集群：
@@ -58,11 +59,12 @@ weight: 6900
     vi cluster-configuration.yaml
     ```
 
-2. 在该本地 `cluster-configuration.yaml` 文件中，搜寻到 `networkpolicy`，并将  `enabled` 的 `false` 改为 `true`，启用该功能。完成后保存文件。
+2. 在该本地 `cluster-configuration.yaml` 文件中，搜寻到 `network.networkpolicy`，并将 `enabled` 的 `false` 改为 `true`，启用该功能。完成后保存文件。
 
     ```yaml
-    networkpolicy:
-        enabled: true # Change "false" to "true"
+    network:
+      networkpolicy:
+        enabled: true # 将“false”更改为“true”。
     ```
 
 3. 执行以下命令开始安装：
@@ -89,11 +91,12 @@ weight: 6900
 
     ![编辑 YAML](/images/docs/zh-cn/enable-pluggable-components/network-policies/edit-yaml.PNG)
 
-4. 在该 YAML 文件中，搜寻到 `networkpolicy`，将 `enabled` 的 `false` 改为 `true`。完成后，点击右下角的**更新**，保存配置。
+4. 在该 YAML 文件中，搜寻到 `network.networkpolicy`，将 `enabled` 的 `false` 改为 `true`。完成后，点击右下角的**更新**，保存配置。
 
     ```yaml
-    networkpolicy:
-        enabled: true # Change "false" to "true"
+    network:
+      networkpolicy:
+        enabled: true # 将“false”更改为“true”。
     ```
 
 5. 您可以执行以下命令，使用 Web Kubectl 工具来检查安装过程：

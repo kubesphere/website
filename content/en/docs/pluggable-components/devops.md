@@ -34,7 +34,7 @@ If you adopt [All-in-One Installation](../../quick-start/all-in-one-on-linux/), 
 
     ```yaml
     devops:
-      enabled: true # Change "false" to "true"
+      enabled: true # Change "false" to "true".
     ```
 
 3. Create a cluster using the configuration file:
@@ -57,7 +57,7 @@ As you [install KubeSphere on Kubernetes](../../installing-on-kubernetes/introdu
 
     ```yaml
     devops:
-      enabled: true # Change "false" to "true"
+      enabled: true # Change "false" to "true".
     ```
 
 3. Execute the following commands to start installation:
@@ -89,7 +89,7 @@ A Custom Resource Definition (CRD) allows users to create a new type of resource
 
     ```yaml
     devops:
-      enabled: true # Change "false" to "true"
+      enabled: true # Change "false" to "true".
     ```
 
 5. You can use the web kubectl to check the installation process by executing the following command:
