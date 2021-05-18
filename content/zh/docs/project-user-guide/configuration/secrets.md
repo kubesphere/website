@@ -110,7 +110,7 @@ Kubernetes [密钥 (Secret)](https://kubernetes.io/zh/docs/concepts/configuratio
 
 ## 使用密钥
 
-通常情况下，在创建工作负载、[服务](../../../project-user-guide/application-workloads/services/)、[任务](../../../project-user-guide/application-workloads/jobs/)或[定时任务](../../../project-user-guide/application-workloads/cronjob/)时，您需要使用密钥。例如，您可以为代码仓库选择密钥。有关更多信息，请参阅[镜像仓库](../image-registry/)。
+通常情况下，在创建工作负载、[服务](../../../project-user-guide/application-workloads/services/)、[任务](../../../project-user-guide/application-workloads/jobs/)或[定时任务](../../../project-user-guide/application-workloads/cronjobs/)时，您需要使用密钥。例如，您可以为代码仓库选择密钥。有关更多信息，请参阅[镜像仓库](../image-registry/)。
 
 ![use-secret-repository](/images/docs/zh-cn/project-user-guide/configurations/secrets/use-secret-repository.jpg)
 

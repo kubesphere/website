@@ -16,7 +16,7 @@ Docker 镜像是一个只读的模板，可用于部署容器服务。每个镜�
 
 ## 创建密钥
 
-创建工作负载、[服务](../../../project-user-guide/application-workloads/services/)、[任务](../../../project-user-guide/application-workloads/jobs/)或[定时任务](../../../project-user-guide/application-workloads/cronjob/)时，除了从公共仓库选择镜像，您还可以从私有仓库选择镜像。要使用私有仓库中的镜像，您必须先为私有仓库创建密钥，以便在 KubeSphere 中集成该私有仓库。
+创建工作负载、[服务](../../../project-user-guide/application-workloads/services/)、[任务](../../../project-user-guide/application-workloads/jobs/)或[定时任务](../../../project-user-guide/application-workloads/cronjobs/)时，除了从公共仓库选择镜像，您还可以从私有仓库选择镜像。要使用私有仓库中的镜像，您必须先为私有仓库创建密钥，以便在 KubeSphere 中集成该私有仓库。
 
 ### 步骤 1：进入密钥页面
 

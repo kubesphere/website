@@ -67,7 +67,7 @@ You need to deploy a Kubernetes cluster and install KubeSphere in the cluster. F
 
    * `multipleLogin`: Whether multiple users are allowed to log in from different locations. The default value is `true`.
 
-   * `jwtSecret`: Secret used to sign user tokens. In a multi-cluster environment, all clusters must [use the same Secret](../../multicluster-management/enable-multicluster/direct-connection/#prepare-a-member-cluster). 
+   * `jwtSecret`: Secret used to sign user tokens. In a multi-cluster environment, all clusters must [use the same Secret](../../../multicluster-management/enable-multicluster/direct-connection/#prepare-a-member-cluster). 
 
    * `oauthOptions`: OAuth settings.
      * `accessTokenMaxAge`: Access token lifetime. For member clusters in a multi-cluster environment, the default value is `0h`, which means access tokens never expire. For other clusters, the default value is `2h`.

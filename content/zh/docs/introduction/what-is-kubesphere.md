@@ -34,6 +34,6 @@ KubeSphere 可以在不修改用户当前的资源或资产、不影响其业务
 
 ## 云原生 Landscape
 
-KubeSphere 是 CNCF 基金会成员并且通过了 [Kubernetes 一致性认证](https://www.cncf.io/certification/software-conformance/#logos)，进一步丰富了 [CNCF 云原生的生态](https://landscape.cncf.io/landscape=observability-and-analysis&license=apache-license-2-0)。
+KubeSphere 是 CNCF 基金会成员并且通过了 [Kubernetes 一致性认证](https://www.cncf.io/certification/software-conformance/#logos)，进一步丰富了 [CNCF 云原生的生态](https://landscape.cncf.io/?landscape=observability-and-analysis&license=apache-license-2-0)。
 
 ![cncf-landscape](/images/docs/zh-cn/introduction/what-is-kubesphere/cncf-landscape.png)

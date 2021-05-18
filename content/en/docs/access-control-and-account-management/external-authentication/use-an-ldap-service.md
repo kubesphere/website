@@ -51,7 +51,7 @@ This document describes how to use an LDAP service as an external identity provi
                mailAttribute: mail
    ```
 
-2. Configure fields other than `oauthOptions:identityProviders` in the `data:kubesphere.yaml:authentication` section. For details, see [Set Up External Authentication](./set-up-external-authentication/).
+2. Configure fields other than `oauthOptions:identityProviders` in the `data:kubesphere.yaml:authentication` section. For details, see [Set Up External Authentication](../set-up-external-authentication/).
 
 3. Configure fields in `oauthOptions:identityProviders` section.
 

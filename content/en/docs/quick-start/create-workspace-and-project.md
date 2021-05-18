@@ -148,7 +148,7 @@ In this step, you create a project using the account `project-admin` created in 
    The user granted the role `operator` will be a project maintainer who can manage resources other than users and roles in the project.
    {{</ notice >}}
 
-6. Before creating a [Route](../../project-user-guide/application-workloads/ingress/) which is [Ingress](https://kubernetes.io/docs/concepts/services-networking/ingress/) in Kubernetes, you need to enable a gateway for this project. The gateway is an [NGINX Ingress controller](https://github.com/kubernetes/ingress-nginx) running in the project. To set a gateway, go to **Advanced Settings** in **Project Settings** and click **Set Gateway**. The account `project-admin` is still used in this step.
+6. Before creating a [Route](../../project-user-guide/application-workloads/routes/) which is [Ingress](https://kubernetes.io/docs/concepts/services-networking/ingress/) in Kubernetes, you need to enable a gateway for this project. The gateway is an [NGINX Ingress controller](https://github.com/kubernetes/ingress-nginx) running in the project. To set a gateway, go to **Advanced Settings** in **Project Settings** and click **Set Gateway**. The account `project-admin` is still used in this step.
 
    ![set-gateway1](/images/docs/quickstart/create-workspaces-projects-accounts/set-gateway1.png)
 
