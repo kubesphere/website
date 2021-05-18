@@ -13,7 +13,7 @@ weight: 6200
 
 对内，KubeSphere 应用商店可以作为不同团队共享数据、中间件和办公应用的场所。对外，有利于设立构建和交付的行业标准。默认情况下，应用商店中内置了 16 个应用。启用该功能后，您可以通过应用模板添加更多应用。
 
-![app-store](/images/docs/zh-cn/enable-pluggable-components/kubesphere-app-store/app-store.png)
+![app-store](/images/docs/zh-cn/enable-pluggable-components/kubesphere-app-store/app-store-page.png)
 
 有关更多信息，请参阅[应用商店](../../application-store/)。
 
@@ -109,11 +109,9 @@ weight: 6200
 
 ## 验证组件的安装
 
-After you log in to the console, if you can see **App Store** in the top left corner and 16 built-in apps in it, it means the installation is successful.
-
 在您登录控制台后，如果您能看到页面左上角的**应用商店**以及其中的 16 个内置应用，则说明安装成功。
 
-![app-store](/images/docs/zh-cn/enable-pluggable-components/kubesphere-app-store/app-store.png)
+![app-store](/images/docs/zh-cn/enable-pluggable-components/kubesphere-app-store/app-store-page.png)
 
 {{< notice note >}}
 
