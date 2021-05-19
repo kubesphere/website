@@ -43,14 +43,14 @@ KubeSphere 事件系统使用户能够跟踪集群内部发生的事件，例如
 
     ```yaml
     es:  # Storage backend for logging, tracing, events and auditing.
-      elasticsearchMasterReplicas: 1   # total number of master nodes, it's not allowed to use even number
-      elasticsearchDataReplicas: 1     # total number of data nodes
-      elasticsearchMasterVolumeSize: 4Gi   # Volume size of Elasticsearch master nodes
-      elasticsearchDataVolumeSize: 20Gi    # Volume size of Elasticsearch data nodes
-      logMaxAge: 7                     # Log retention time in built-in Elasticsearch, it is 7 days by default.
-      elkPrefix: logstash              # The string making up index names. The index name will be formatted as ks-<elk_prefix>-log
-      externalElasticsearchUrl: # The URL of external Elasticsearch
-      externalElasticsearchPort: # The port of external Elasticsearch
+      elasticsearchMasterReplicas: 1   # The total number of master nodes. Even numbers are not allowed.
+      elasticsearchDataReplicas: 1     # The total number of data nodes.
+      elasticsearchMasterVolumeSize: 4Gi   # The volume size of Elasticsearch master nodes.
+      elasticsearchDataVolumeSize: 20Gi    # The volume size of Elasticsearch data nodes.
+      logMaxAge: 7                     # Log retention day in built-in Elasticsearch. It is 7 days by default.
+      elkPrefix: logstash              # The string making up index names. The index name will be formatted as ks-<elk_prefix>-log.
+      externalElasticsearchUrl: # The URL of external Elasticsearch.
+      externalElasticsearchPort: # The port of external Elasticsearch.
     ```
 
 3. 使用该配置文件创建集群：
@@ -82,14 +82,14 @@ KubeSphere 事件系统使用户能够跟踪集群内部发生的事件，例如
 
     ```yaml
     es:  # Storage backend for logging, tracing, events and auditing.
-      elasticsearchMasterReplicas: 1   # total number of master nodes, it's not allowed to use even number
-      elasticsearchDataReplicas: 1     # total number of data nodes
-      elasticsearchMasterVolumeSize: 4Gi   # Volume size of Elasticsearch master nodes
-      elasticsearchDataVolumeSize: 20Gi    # Volume size of Elasticsearch data nodes
-      logMaxAge: 7                     # Log retention time in built-in Elasticsearch, it is 7 days by default.
-      elkPrefix: logstash              # The string making up index names. The index name will be formatted as ks-<elk_prefix>-log
-      externalElasticsearchUrl: # The URL of external Elasticsearch
-      externalElasticsearchPort: # The port of external Elasticsearch
+      elasticsearchMasterReplicas: 1   # The total number of master nodes. Even numbers are not allowed.
+      elasticsearchDataReplicas: 1     # The total number of data nodes.
+      elasticsearchMasterVolumeSize: 4Gi   # The volume size of Elasticsearch master nodes.
+      elasticsearchDataVolumeSize: 20Gi    # The volume size of Elasticsearch data nodes.
+      logMaxAge: 7                     # Log retention day in built-in Elasticsearch. It is 7 days by default.
+      elkPrefix: logstash              # The string making up index names. The index name will be formatted as ks-<elk_prefix>-log.
+      externalElasticsearchUrl: # The URL of external Elasticsearch.
+      externalElasticsearchPort: # The port of external Elasticsearch.
     ```
 
 3. 执行以下命令开始安装：
@@ -132,14 +132,14 @@ KubeSphere 事件系统使用户能够跟踪集群内部发生的事件，例如
 
     ```yaml
     es:  # Storage backend for logging, tracing, events and auditing.
-      elasticsearchMasterReplicas: 1   # total number of master nodes, it's not allowed to use even number
-      elasticsearchDataReplicas: 1     # total number of data nodes
-      elasticsearchMasterVolumeSize: 4Gi   # Volume size of Elasticsearch master nodes
-      elasticsearchDataVolumeSize: 20Gi    # Volume size of Elasticsearch data nodes
-      logMaxAge: 7                     # Log retention time in built-in Elasticsearch, it is 7 days by default.
-      elkPrefix: logstash              # The string making up index names. The index name will be formatted as ks-<elk_prefix>-log
-      externalElasticsearchUrl: # The URL of external Elasticsearch
-      externalElasticsearchPort: # The port of external Elasticsearch
+      elasticsearchMasterReplicas: 1   # The total number of master nodes. Even numbers are not allowed.
+      elasticsearchDataReplicas: 1     # The total number of data nodes.
+      elasticsearchMasterVolumeSize: 4Gi   # The volume size of Elasticsearch master nodes.
+      elasticsearchDataVolumeSize: 20Gi    # The volume size of Elasticsearch data nodes.
+      logMaxAge: 7                     # Log retention day in built-in Elasticsearch. It is 7 days by default.
+      elkPrefix: logstash              # The string making up index names. The index name will be formatted as ks-<elk_prefix>-log.
+      externalElasticsearchUrl: # The URL of external Elasticsearch.
+      externalElasticsearchPort: # The port of external Elasticsearch.
     ```
 
 5. 您可以使用 Web Kubectl 工具执行以下命令来检查安装过程：
@@ -160,11 +160,9 @@ KubeSphere 事件系统使用户能够跟踪集群内部发生的事件，例如
 
 {{< tab "在仪表板中验证组件的安装" >}}
 
-如果您同时启用了日志系统和事件系统，可以在**服务组件**的 **Logging** 中查看事件系统状态。您可以看到如下图所示界面：
+验证您可以使用右下角**工具箱**中的**事件查询**功能。
 
-![事件系统](/images/docs/zh-cn/enable-pluggable-components/kubesphere-events/events.PNG)
-
-如果只启用事件系统而不安装日志系统，则无法看到上图所示界面，因为不会显示 **Logging** 按钮。
+![event-search](/images/docs/zh-cn/enable-pluggable-components/kubesphere-events/event-search.png)
 
 {{</ tab >}}
 
@@ -179,16 +177,20 @@ kubectl get pod -n kubesphere-logging-system
 如果组件运行成功，输出结果如下：
 
 ```bash
-NAME                                  READY   STATUS    RESTARTS   AGE
-elasticsearch-logging-data-0          1/1     Running   0          11m
-elasticsearch-logging-data-1          1/1     Running   0          6m48s
-elasticsearch-logging-discovery-0     1/1     Running   0          11m
-fluent-bit-ljlsl                      1/1     Running   0          6m30s
-fluentbit-operator-5bf7687b88-85vxv   1/1     Running   0          11m
-ks-events-exporter-5cb959c74b-rc4lm   2/2     Running   0          7m1s
-ks-events-operator-7d46fcccc9-8vvsh   1/1     Running   0          10m
-ks-events-ruler-97f756879-lg65t       2/2     Running   0          7m1s
-ks-events-ruler-97f756879-ptbkr       2/2     Running   0          7m1s
+NAME                                          READY   STATUS    RESTARTS   AGE
+elasticsearch-logging-data-0                  1/1     Running   0          155m
+elasticsearch-logging-data-1                  1/1     Running   0          154m
+elasticsearch-logging-discovery-0             1/1     Running   0          155m
+fluent-bit-bsw6p                              1/1     Running   0          108m
+fluent-bit-smb65                              1/1     Running   0          108m
+fluent-bit-zdz8b                              1/1     Running   0          108m
+fluentbit-operator-9b69495b-bbx54             1/1     Running   0          109m
+ks-events-exporter-5cb959c74b-gx4hw           2/2     Running   0          7m55s
+ks-events-operator-7d46fcccc9-4mdzv           1/1     Running   0          8m
+ks-events-ruler-8445457946-cl529              2/2     Running   0          7m55s
+ks-events-ruler-8445457946-gzlm9              2/2     Running   0          7m55s
+logsidecar-injector-deploy-667c6c9579-cs4t6   2/2     Running   0          106m
+logsidecar-injector-deploy-667c6c9579-klnmf   2/2     Running   0          106m
 ```
 
 {{</ tab >}}
