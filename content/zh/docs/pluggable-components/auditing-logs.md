@@ -41,14 +41,14 @@ KubeSphere 审计日志系统提供了一套与安全相关并按时间顺序排
 
     ```yaml
     es:  # Storage backend for logging, tracing, events and auditing.
-      elasticsearchMasterReplicas: 1   # total number of master nodes, it's not allowed to use even number
-      elasticsearchDataReplicas: 1     # total number of data nodes
-      elasticsearchMasterVolumeSize: 4Gi   # Volume size of Elasticsearch master nodes
-      elasticsearchDataVolumeSize: 20Gi    # Volume size of Elasticsearch data nodes
-      logMaxAge: 7                     # Log retention time in built-in Elasticsearch, it is 7 days by default.
-      elkPrefix: logstash              # The string making up index names. The index name will be formatted as ks-<elk_prefix>-log
-      externalElasticsearchUrl: # The URL of external Elasticsearch
-      externalElasticsearchPort: # The port of external Elasticsearch
+      elasticsearchMasterReplicas: 1   # The total number of master nodes. Even numbers are not allowed.
+      elasticsearchDataReplicas: 1     # The total number of data nodes.
+      elasticsearchMasterVolumeSize: 4Gi   # The volume size of Elasticsearch master nodes.
+      elasticsearchDataVolumeSize: 20Gi    # The volume size of Elasticsearch data nodes.
+      logMaxAge: 7                     # Log retention day in built-in Elasticsearch. It is 7 days by default.
+      elkPrefix: logstash              # The string making up index names. The index name will be formatted as ks-<elk_prefix>-log.
+      externalElasticsearchUrl: # The URL of external Elasticsearch.
+      externalElasticsearchPort: # The port of external Elasticsearch.
     ```
 
 3. 使用该配置文件创建集群：
@@ -80,14 +80,14 @@ KubeSphere 审计日志系统提供了一套与安全相关并按时间顺序排
 
     ```yaml
     es:  # Storage backend for logging, tracing, events and auditing.
-      elasticsearchMasterReplicas: 1   # total number of master nodes, it's not allowed to use even number
-      elasticsearchDataReplicas: 1     # total number of data nodes
-      elasticsearchMasterVolumeSize: 4Gi   # Volume size of Elasticsearch master nodes
-      elasticsearchDataVolumeSize: 20Gi    # Volume size of Elasticsearch data nodes
-      logMaxAge: 7                     # Log retention time in built-in Elasticsearch, it is 7 days by default.
-      elkPrefix: logstash              # The string making up index names. The index name will be formatted as ks-<elk_prefix>-log
-      externalElasticsearchUrl: # The URL of external Elasticsearch
-      externalElasticsearchPort: # The port of external Elasticsearch
+      elasticsearchMasterReplicas: 1   # The total number of master nodes. Even numbers are not allowed.
+      elasticsearchDataReplicas: 1     # The total number of data nodes.
+      elasticsearchMasterVolumeSize: 4Gi   # The volume size of Elasticsearch master nodes.
+      elasticsearchDataVolumeSize: 20Gi    # The volume size of Elasticsearch data nodes.
+      logMaxAge: 7                     # Log retention day in built-in Elasticsearch. It is 7 days by default.
+      elkPrefix: logstash              # The string making up index names. The index name will be formatted as ks-<elk_prefix>-log.
+      externalElasticsearchUrl: # The URL of external Elasticsearch.
+      externalElasticsearchPort: # The port of external Elasticsearch.
     ```
 
 3. 执行以下命令开始安装：
@@ -127,14 +127,14 @@ KubeSphere 审计日志系统提供了一套与安全相关并按时间顺序排
 
     ```yaml
     es:  # Storage backend for logging, tracing, events and auditing.
-      elasticsearchMasterReplicas: 1   # total number of master nodes, it's not allowed to use even number
-      elasticsearchDataReplicas: 1     # total number of data nodes
-      elasticsearchMasterVolumeSize: 4Gi   # Volume size of Elasticsearch master nodes
-      elasticsearchDataVolumeSize: 20Gi    # Volume size of Elasticsearch data nodes
-      logMaxAge: 7                     # Log retention time in built-in Elasticsearch, it is 7 days by default.
-      elkPrefix: logstash              # The string making up index names. The index name will be formatted as ks-<elk_prefix>-log
-      externalElasticsearchUrl: # The URL of external Elasticsearch
-      externalElasticsearchPort: # The port of external Elasticsearch
+      elasticsearchMasterReplicas: 1   # The total number of master nodes. Even numbers are not allowed.
+      elasticsearchDataReplicas: 1     # The total number of data nodes.
+      elasticsearchMasterVolumeSize: 4Gi   # The volume size of Elasticsearch master nodes.
+      elasticsearchDataVolumeSize: 20Gi    # The volume size of Elasticsearch data nodes.
+      logMaxAge: 7                     # Log retention day in built-in Elasticsearch. It is 7 days by default.
+      elkPrefix: logstash              # The string making up index names. The index name will be formatted as ks-<elk_prefix>-log.
+      externalElasticsearchUrl: # The URL of external Elasticsearch.
+      externalElasticsearchPort: # The port of external Elasticsearch.
     ```
 
 5. 可以执行以下命令，使用 Web Kubectl 工具来检查安装过程：
@@ -153,11 +153,9 @@ KubeSphere 审计日志系统提供了一套与安全相关并按时间顺序排
 
 {{< tab "在仪表板中验证组件的安装" >}}
 
-如果同时启用了日志系统和审计功能，您可以在**服务组件**的 **Logging** 中查看审计状态。您可以看到如下图所示界面：
+验证您可以使用右下角**工具箱**中的**操作审计**功能。
 
-![审计](/images/docs/zh-cn/enable-pluggable-components/kubesphere-auditing-logs/auditing.PNG)
-
-如果只启用审计功能而不安装日志系统，则无法看到上图所示界面，因为不会显示 **Logging** 按钮。
+![auditing-operating](/images/docs/zh-cn/enable-pluggable-components/kubesphere-auditing-logs/auditing-operating.png)
 
 {{</ tab >}}
 
