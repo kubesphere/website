@@ -41,14 +41,14 @@ By default, KubeKey will install Elasticsearch internally if Auditing is enabled
 
     ```yaml
     es:  # Storage backend for logging, tracing, events and auditing.
-      elasticsearchMasterReplicas: 1   # total number of master nodes, it's not allowed to use even number
-      elasticsearchDataReplicas: 1     # total number of data nodes
-      elasticsearchMasterVolumeSize: 4Gi   # Volume size of Elasticsearch master nodes
-      elasticsearchDataVolumeSize: 20Gi    # Volume size of Elasticsearch data nodes
-      logMaxAge: 7                     # Log retention time in built-in Elasticsearch, it is 7 days by default.
-      elkPrefix: logstash              # The string making up index names. The index name will be formatted as ks-<elk_prefix>-log
-      externalElasticsearchUrl: # The URL of external Elasticsearch
-      externalElasticsearchPort: # The port of external Elasticsearch
+      elasticsearchMasterReplicas: 1   # The total number of master nodes. Even numbers are not allowed.
+      elasticsearchDataReplicas: 1     # The total number of data nodes.
+      elasticsearchMasterVolumeSize: 4Gi   # The volume size of Elasticsearch master nodes.
+      elasticsearchDataVolumeSize: 20Gi    # The volume size of Elasticsearch data nodes.
+      logMaxAge: 7                     # Log retention day in built-in Elasticsearch. It is 7 days by default.
+      elkPrefix: logstash              # The string making up index names. The index name will be formatted as ks-<elk_prefix>-log.
+      externalElasticsearchUrl: # The URL of external Elasticsearch.
+      externalElasticsearchPort: # The port of external Elasticsearch.
     ```
 
 3. Create a cluster using the configuration file:
@@ -80,14 +80,14 @@ By default, ks-installer will install Elasticsearch internally if Auditing is en
 
     ```yaml
     es:  # Storage backend for logging, tracing, events and auditing.
-      elasticsearchMasterReplicas: 1   # total number of master nodes, it's not allowed to use even number
-      elasticsearchDataReplicas: 1     # total number of data nodes
-      elasticsearchMasterVolumeSize: 4Gi   # Volume size of Elasticsearch master nodes
-      elasticsearchDataVolumeSize: 20Gi    # Volume size of Elasticsearch data nodes
-      logMaxAge: 7                     # Log retention time in built-in Elasticsearch, it is 7 days by default.
-      elkPrefix: logstash              # The string making up index names. The index name will be formatted as ks-<elk_prefix>-log
-      externalElasticsearchUrl: # The URL of external Elasticsearch
-      externalElasticsearchPort: # The port of external Elasticsearch
+      elasticsearchMasterReplicas: 1   # The total number of master nodes. Even numbers are not allowed.
+      elasticsearchDataReplicas: 1     # The total number of data nodes.
+      elasticsearchMasterVolumeSize: 4Gi   # The volume size of Elasticsearch master nodes.
+      elasticsearchDataVolumeSize: 20Gi    # The volume size of Elasticsearch data nodes.
+      logMaxAge: 7                     # Log retention day in built-in Elasticsearch. It is 7 days by default.
+      elkPrefix: logstash              # The string making up index names. The index name will be formatted as ks-<elk_prefix>-log.
+      externalElasticsearchUrl: # The URL of external Elasticsearch.
+      externalElasticsearchPort: # The port of external Elasticsearch.
     ```
 
 3. Execute the following commands to start installation:
@@ -127,14 +127,14 @@ By default, Elasticsearch will be installed internally if Auditing is enabled. F
 
     ```yaml
     es:  # Storage backend for logging, tracing, events and auditing.
-      elasticsearchMasterReplicas: 1   # total number of master nodes, it's not allowed to use even number
-      elasticsearchDataReplicas: 1     # total number of data nodes
-      elasticsearchMasterVolumeSize: 4Gi   # Volume size of Elasticsearch master nodes
-      elasticsearchDataVolumeSize: 20Gi    # Volume size of Elasticsearch data nodes
-      logMaxAge: 7                     # Log retention time in built-in Elasticsearch, it is 7 days by default.
-      elkPrefix: logstash              # The string making up index names. The index name will be formatted as ks-<elk_prefix>-log
-      externalElasticsearchUrl: # The URL of external Elasticsearch
-      externalElasticsearchPort: # The port of external Elasticsearch
+      elasticsearchMasterReplicas: 1   # The total number of master nodes. Even numbers are not allowed.
+      elasticsearchDataReplicas: 1     # The total number of data nodes.
+      elasticsearchMasterVolumeSize: 4Gi   # The volume size of Elasticsearch master nodes.
+      elasticsearchDataVolumeSize: 20Gi    # The volume size of Elasticsearch data nodes.
+      logMaxAge: 7                     # Log retention day in built-in Elasticsearch. It is 7 days by default.
+      elkPrefix: logstash              # The string making up index names. The index name will be formatted as ks-<elk_prefix>-log.
+      externalElasticsearchUrl: # The URL of external Elasticsearch.
+      externalElasticsearchPort: # The port of external Elasticsearch.
     ```
 
 5. You can use the web kubectl to check the installation process by executing the following command:
@@ -153,11 +153,9 @@ You can find the web kubectl tool by clicking the hammer icon in the bottom-righ
 
 {{< tab "Verify the component on the dashboard" >}}
 
-If you enable both Logging and Auditing, you can check the status of Auditing in **Logging** in **Components**. You may see an image as follows:
+Verify that you can use the **Auditing Operating** function from the **Toolbox** in the bottom right corner.
 
-![auditing](/images/docs/enable-pluggable-components/kubesphere-auditing-logs/auditing.png)
-
-If you only enable Auditing without Logging installed, you cannot see the image above as the button **Logging** will not display.
+![auditing-operating](/images/docs/enable-pluggable-components/kubesphere-auditing-logs/auditing-operating.png)
 
 {{</ tab >}}
 
