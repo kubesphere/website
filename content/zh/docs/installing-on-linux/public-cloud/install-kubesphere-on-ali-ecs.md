@@ -218,7 +218,7 @@ metadata:
 
 {{< notice note >}}
 - 继续编辑上述 `config-sample.yaml` 文件，找到 `[addons]` 字段，这里支持定义任何持久化存储的插件或客户端，如 CSI (
-alibaba-cloud-csi-driver)、NFS Client、Ceph、GlusterFS，您可以根据您自己的持久化存储服务类型，并参考 [持久化存储服务](../../../installing-on-linux/persistent-storage-configurations/understand-persistent-storage/) 中对应的示例 yaml 文件进行设置。
+alibaba-cloud-csi-driver)、NFS Client、Ceph、GlusterFS，您可以根据您自己的持久化存储服务类型，并参考 [持久化存储服务](../../../installing-on-linux/persistent-storage-configurations/understand-persistent-storage/) 中对应的示例 YAML 文件进行设置。
 - 只需要将 CSI 存储插件安装时需要 apply 的所有 yaml 文件在 `[addons]` 中列出即可，注意预先参考 [Alibaba Cloud Kubernetes CSI Plugin](https://github.com/kubernetes-sigs/alibaba-cloud-csi-driver#alibaba-cloud-kubernetes-csi-plugin)，选择您需要的存储类型的 CSI 插件，如 Cloud Disk CSI Plugin、NAS CSI Plugin、NAS CSI Plugin、OSS CSI Plugin，然后在 CSI 的相关 yaml 中配置对接阿里云的相关信息。
 {{</ notice >}}
 

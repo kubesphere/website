@@ -90,7 +90,7 @@ A Custom Resource Definition (CRD) allows users to create a new type of resource
 
     ![edit-yaml](/images/docs/enable-pluggable-components/kubesphere-app-store/edit-yaml.png)
 
-4. In this yaml file, navigate to `openpitrix` and change `false` to `true` for `enabled`. After you finish, click **Update** in the bottom-right corner to save the configuration.
+4. In this YAML file, navigate to `openpitrix` and change `false` to `true` for `enabled`. After you finish, click **Update** in the bottom-right corner to save the configuration.
 
     ```yaml
     openpitrix:

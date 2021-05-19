@@ -81,7 +81,7 @@ A Custom Resource Definition (CRD) allows users to create a new type of resource
 3. In **Resource List**, click the three dots on the right of `ks-installer` and select **Edit YAML**.
     ![edit-yaml](/images/docs/enable-pluggable-components/kubesphere-service-mesh/edit-yaml.png)
 
-4. In this yaml file, navigate to `servicemesh` and change `false` to `true` for `enabled`. After you finish, click **Update** in the bottom-right corner to save the configuration.
+4. In this YAML file, navigate to `servicemesh` and change `false` to `true` for `enabled`. After you finish, click **Update** in the bottom-right corner to save the configuration.
 
     ```yaml
     servicemesh:

@@ -63,6 +63,7 @@ weight: 6915
 
     ```bash
     kubectl apply -f https://github.com/kubesphere/ks-installer/releases/download/v3.1.0/kubesphere-installer.yaml
+    
     kubectl apply -f cluster-configuration.yaml
     ```
 
