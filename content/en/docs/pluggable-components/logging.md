@@ -45,14 +45,14 @@ By default, KubeKey will install Elasticsearch internally if Logging is enabled.
 
     ```yaml
     es:  # Storage backend for logging, tracing, events and auditing.
-      elasticsearchMasterReplicas: 1   # total number of master nodes, it's not allowed to use even number
-      elasticsearchDataReplicas: 1     # total number of data nodes
-      elasticsearchMasterVolumeSize: 4Gi   # Volume size of Elasticsearch master nodes
-      elasticsearchDataVolumeSize: 20Gi    # Volume size of Elasticsearch data nodes
-      logMaxAge: 7                     # Log retention time in built-in Elasticsearch, it is 7 days by default.
+      elasticsearchMasterReplicas: 1   # The total number of master nodes. Even numbers are not allowed.
+      elasticsearchDataReplicas: 1     # The total number of data nodes.
+      elasticsearchMasterVolumeSize: 4Gi   # The volume size of Elasticsearch master nodes.
+      elasticsearchDataVolumeSize: 20Gi    # The volume size of Elasticsearch data nodes.
+      logMaxAge: 7                     # Log retention day in built-in Elasticsearch. It is 7 days by default.
       elkPrefix: logstash              # The string making up index names. The index name will be formatted as ks-<elk_prefix>-log
-      externalElasticsearchUrl: # The URL of external Elasticsearch
-      externalElasticsearchPort: # The port of external Elasticsearch
+      externalElasticsearchUrl: # The URL of external Elasticsearch.
+      externalElasticsearchPort: # The port of external Elasticsearch.
     ```
 
 3. Create a cluster using the configuration file:
@@ -84,14 +84,14 @@ By default, ks-installer will install Elasticsearch internally if Logging is ena
 
     ```yaml
     es:  # Storage backend for logging, tracing, events and auditing.
-      elasticsearchMasterReplicas: 1   # total number of master nodes, it's not allowed to use even number
-      elasticsearchDataReplicas: 1     # total number of data nodes
-      elasticsearchMasterVolumeSize: 4Gi   # Volume size of Elasticsearch master nodes
-      elasticsearchDataVolumeSize: 20Gi    # Volume size of Elasticsearch data nodes
-      logMaxAge: 7                     # Log retention time in built-in Elasticsearch, it is 7 days by default.
+      elasticsearchMasterReplicas: 1   # The total number of master nodes. Even numbers are not allowed.
+      elasticsearchDataReplicas: 1     # The total number of data nodes.
+      elasticsearchMasterVolumeSize: 4Gi   # The volume size of Elasticsearch master nodes.
+      elasticsearchDataVolumeSize: 20Gi    # The volume size of Elasticsearch data nodes.
+      logMaxAge: 7                     # Log retention day in built-in Elasticsearch. It is 7 days by default.
       elkPrefix: logstash              # The string making up index names. The index name will be formatted as ks-<elk_prefix>-log
-      externalElasticsearchUrl: # The URL of external Elasticsearch
-      externalElasticsearchPort: # The port of external Elasticsearch
+      externalElasticsearchUrl: # The URL of external Elasticsearch.
+      externalElasticsearchPort: # The port of external Elasticsearch.
     ```
 
 3. Execute the following commands to start installation:
@@ -133,14 +133,14 @@ A Custom Resource Definition (CRD) allows users to create a new type of resource
     
     ```yaml
     es:  # Storage backend for logging, tracing, events and auditing.
-      elasticsearchMasterReplicas: 1   # total number of master nodes, it's not allowed to use even number
-      elasticsearchDataReplicas: 1     # total number of data nodes
-      elasticsearchMasterVolumeSize: 4Gi   # Volume size of Elasticsearch master nodes
-      elasticsearchDataVolumeSize: 20Gi    # Volume size of Elasticsearch data nodes
-      logMaxAge: 7                     # Log retention time in built-in Elasticsearch, it is 7 days by default.
+      elasticsearchMasterReplicas: 1   # The total number of master nodes. Even numbers are not allowed.
+      elasticsearchDataReplicas: 1     # The total number of data nodes.
+      elasticsearchMasterVolumeSize: 4Gi   # The volume size of Elasticsearch master nodes.
+      elasticsearchDataVolumeSize: 20Gi    # The volume size of Elasticsearch data nodes.
+      logMaxAge: 7                     # Log retention day in built-in Elasticsearch. It is 7 days by default.
       elkPrefix: logstash              # The string making up index names. The index name will be formatted as ks-<elk_prefix>-log
-      externalElasticsearchUrl: # The URL of external Elasticsearch
-      externalElasticsearchPort: # The port of external Elasticsearch
+      externalElasticsearchUrl: # The URL of external Elasticsearch.
+      externalElasticsearchPort: # The port of external Elasticsearch.
     ```
 
 5. You can use the web kubectl to check the installation process by executing the following command:
@@ -179,13 +179,15 @@ The output may look as follows if the component runs successfully:
 
 ```bash
 NAME                                          READY   STATUS    RESTARTS   AGE
-elasticsearch-logging-data-0                  1/1     Running   0          9m33s
-elasticsearch-logging-data-1                  1/1     Running   0          5m12s
-elasticsearch-logging-discovery-0             1/1     Running   0          9m33s
-fluent-bit-qpvrf                              1/1     Running   0          4m56s
-fluentbit-operator-5bf7687b88-z7bgg           1/1     Running   0          9m26s
-logsidecar-injector-deploy-667c6c9579-662pm   2/2     Running   0          8m56s
-logsidecar-injector-deploy-667c6c9579-tjckn   2/2     Running   0          8m56s
+elasticsearch-logging-data-0                  1/1     Running   0          87m
+elasticsearch-logging-data-1                  1/1     Running   0          85m
+elasticsearch-logging-discovery-0             1/1     Running   0          87m
+fluent-bit-bsw6p                              1/1     Running   0          40m
+fluent-bit-smb65                              1/1     Running   0          40m
+fluent-bit-zdz8b                              1/1     Running   0          40m
+fluentbit-operator-9b69495b-bbx54             1/1     Running   0          40m
+logsidecar-injector-deploy-667c6c9579-cs4t6   2/2     Running   0          38m
+logsidecar-injector-deploy-667c6c9579-klnmf   2/2     Running   0          38m
 ```
 
 {{</ tab >}}
