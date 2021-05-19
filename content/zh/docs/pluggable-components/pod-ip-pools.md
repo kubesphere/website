@@ -63,6 +63,7 @@ weight: 6920
 
     ```bash
     kubectl apply -f https://github.com/kubesphere/ks-installer/releases/download/v3.1.0/kubesphere-installer.yaml
+    
     kubectl apply -f cluster-configuration.yaml
     ```
 
@@ -102,4 +103,3 @@ weight: 6920
 在**集群管理**页面，您可以在**网络管理**下看到**容器组 IP 池**。
 
 ![pod-ip-pool](/images/docs/zh-cn/enable-pluggable-components/pod-ip-pools/pod-ip-pool.png)
-

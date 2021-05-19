@@ -50,7 +50,7 @@ By default, KubeKey will install Elasticsearch internally if Logging is enabled.
       elasticsearchMasterVolumeSize: 4Gi   # The volume size of Elasticsearch master nodes.
       elasticsearchDataVolumeSize: 20Gi    # The volume size of Elasticsearch data nodes.
       logMaxAge: 7                     # Log retention day in built-in Elasticsearch. It is 7 days by default.
-      elkPrefix: logstash              # The string making up index names. The index name will be formatted as ks-<elk_prefix>-log
+      elkPrefix: logstash              # The string making up index names. The index name will be formatted as ks-<elk_prefix>-log.
       externalElasticsearchUrl: # The URL of external Elasticsearch.
       externalElasticsearchPort: # The port of external Elasticsearch.
     ```
@@ -89,7 +89,7 @@ By default, ks-installer will install Elasticsearch internally if Logging is ena
       elasticsearchMasterVolumeSize: 4Gi   # The volume size of Elasticsearch master nodes.
       elasticsearchDataVolumeSize: 20Gi    # The volume size of Elasticsearch data nodes.
       logMaxAge: 7                     # Log retention day in built-in Elasticsearch. It is 7 days by default.
-      elkPrefix: logstash              # The string making up index names. The index name will be formatted as ks-<elk_prefix>-log
+      elkPrefix: logstash              # The string making up index names. The index name will be formatted as ks-<elk_prefix>-log.
       externalElasticsearchUrl: # The URL of external Elasticsearch.
       externalElasticsearchPort: # The port of external Elasticsearch.
     ```
@@ -120,7 +120,7 @@ A Custom Resource Definition (CRD) allows users to create a new type of resource
 
     ![edit-yaml](/images/docs/enable-pluggable-components/kubesphere-logging-system/edit-yaml.png)
 
-4. In this yaml file, navigate to `logging` and change `false` to `true` for `enabled`. After you finish, click **Update** in the bottom-right corner to save the configuration.
+4. In this YAML file, navigate to `logging` and change `false` to `true` for `enabled`. After you finish, click **Update** in the bottom-right corner to save the configuration.
 
     ```yaml
     logging:
@@ -138,7 +138,7 @@ A Custom Resource Definition (CRD) allows users to create a new type of resource
       elasticsearchMasterVolumeSize: 4Gi   # The volume size of Elasticsearch master nodes.
       elasticsearchDataVolumeSize: 20Gi    # The volume size of Elasticsearch data nodes.
       logMaxAge: 7                     # Log retention day in built-in Elasticsearch. It is 7 days by default.
-      elkPrefix: logstash              # The string making up index names. The index name will be formatted as ks-<elk_prefix>-log
+      elkPrefix: logstash              # The string making up index names. The index name will be formatted as ks-<elk_prefix>-log.
       externalElasticsearchUrl: # The URL of external Elasticsearch.
       externalElasticsearchPort: # The port of external Elasticsearch.
     ```
