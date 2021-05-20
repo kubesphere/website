@@ -1,0 +1,87 @@
+---
+title: "Manage a Multi-cluster Environment on KubeSphere"
+keywords: 'Kubernetes, KubeSphere, federation, multicluster, hybrid-cloud'
+description: 'Understand how to manage a multi-cluster environment on KubeSphere.'
+linkTitle: "Manage a Multi-cluster Environment on KubeSphere"
+weight: 16710
+---
+
+KubeSphere provides an easy-to-use multi-cluster feature to help you [build your multi-cluster environment on KubeSphere](../../../multicluster-management/). This guide illustrates how to manage a multi-cluster environment on KubeSphere.
+
+## Prerequisites
+
+- Make sure your Kubernetes clusters are installed with KubeSphere before you use them as your Host Cluster and Member Clusters. 
+
+- Make sure the cluster role is set correctly on your Host Cluster and Member Clusters respectively, and the `jwtSecret` is the same between them.
+
+- It is recommended that your Member Cluster is a clean environment where no resources have been created on it before it is imported to the Host Cluster.
+
+
+## Manage your KubeSphere Multi-cluster Environment
+
+Once you build a multi-cluster environment on KubeSphere, you can manage it through the central control plane from your Host Cluster as you can select a specific cluster when creating resources. You need to avoid creating resources on your Host Cluster to prevent it from overloading. It is not recommended to log in to the KubeSphere web console of your Member Clusters to create resources on them as these resources won't be synchronized to your Host Cluster for management.
+
+### Resource Management
+
+It is recommended that you don't change a current Host Cluster to a Member Cluster or the other way round. If a Member Cluster has been imported to a Host Cluster before, you have to use the same cluster name when unbinding and importing it to a new Host Cluster.
+
+If you have to unbind a Member Cluster (e.g. `rohan`) and import it to a new Host Cluster, you can follow the steps as below to host the existing workspace on the Member Cluster to the new Host Cluster.
+
+1. Create a workspace on the Host Cluster with the same name as that of the Member Cluster. Make sure you select the Member Cluster when creating the workspace.
+
+   ![select-member-cluster](/images/docs/faq/multi-cluster-management/manage-multi-cluster/select-member-cluster.png)
+
+2. Run the following command on the Host Cluster to view resources status. If you can see the Member Cluster in `status.clusters` and there are no abnormal outputs in `status.conditions`, the workspace on the Member Cluster is successfully managed by the Host Cluster.
+
+   ```bash
+   kubectl get federatedworkspace <workspace name> -o yaml
+   ```
+
+   ![view-member-cluster-info](/images/docs/faq/multi-cluster-management/manage-multi-cluster/view-member-cluster-info.png)
+
+3. Run the following command on the Member Cluster to clear redundant data.
+
+   ```bash
+   kubectl delete workspacetemplate <workspace name>
+   ```
+
+   {{< notice note >}}
+
+   Make sure the workspace on the Member Cluster is successfully managed by the Host Cluster before you run this command.
+
+   {{</ notice >}}
+
+If you want to import the Member Cluster to a new Host Cluster while retaining existing projects (i.e. namespaces), you can follow the steps as below.
+
+1. Run the following command on the Member Cluster to unbind the projects to be retained from your workspace.
+
+   ```bash
+   kubectl label ns <namespace> kubesphere.io/workspace- && kubectl patch ns <namespace>   -p '{"metadata":{"ownerReferences":[]}}' --type=merge
+   ```
+
+2. Run the following command on the Member Cluster to clear your workspace.
+
+   ```bash
+   kubectl delete workspacetemplate <workspace name>
+   ```
+
+3. When you create a workspace on the new Host Cluster and authorize the Member Cluster to this workspace, run the following command on the Member Cluster to bind the projects retained to the workspace.
+
+   ```bash
+   kuebctl label ns <namespace> kubesphere.io/workspace=<workspace name>
+   ```
+
+### Account Management
+
+The accounts you create through the central control plane from your Host Cluster will be synchronized to Member Clusters. 
+
+You can create workspaces and [authorize different clusters to them](../../../cluster-administration/cluster-settings/cluster-visibility-and-authorization/). After that, you can invite different accounts to these workspaces per access requirements for these accounts. Besides, you can also invite different accounts after [creating multi-cluster projects](../../../project-administration/project-and-multicluster-project/#multi-cluster-projects) with different clusters authorized. In this way, you can let different accounts access different clusters.
+
+### KubeSphere Components Management
+
+KubeSphere provides some pluggable components that you can enable based on your needs. In a multi-cluster environment, you can choose to enable these components on your Host Cluster or Member Cluster.
+
+For example, you only need to enable App Store on your Host Cluster and you can use functions related to the App Store on your Member Clusters directly. For other components, when you enable them on your Host Cluster, you still have to manually enable the same components on your Member Cluster to implement the same features. Besides, you can also enable components only on your Member Cluster to implement corresponding features solely on your Member Cluster.
+
+For more information about how to enable pluggable components, refer to [Enable Pluggable Components](../../../pluggable-components/).
+
