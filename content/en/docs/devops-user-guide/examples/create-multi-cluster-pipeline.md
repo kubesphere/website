@@ -12,42 +12,43 @@ This tutorial demonstrates how to create a multi-cluster pipeline on KubeSphere.
 
 ## Prerequisites
 
-- You need to have three Kubernetes clusters with KubeSphere installed. Choose one cluster as your Host Cluster and the other two as your Member Clusters. For more information about cluster roles, refer to [KubeSphere Federation](../../../multicluster-management/introduction/kubefed-in-kubesphere/).
+- You need to have three Kubernetes clusters with KubeSphere installed. Choose one cluster as your Host Cluster and the other two as your Member Clusters. For more information about cluster roles and how to enable a multi-cluster environment on KubeSphere, refer to [Multi-cluster Management](../../../multicluster-management/).
+- You need to set your Member Clusters as [public clusters](../../../cluster-administration/cluster-settings/cluster-visibility-and-authorization/#make-a-cluster-public). Alternatively, you can [set cluster visibility after a workspace is created](../../../cluster-administration/cluster-settings/cluster-visibility-and-authorization/#set-cluster-visibility-after-a-workspace-is-created).
 - You need to [enable the KubeSphere DevOps system](../../../pluggable-components/devops/) on your Host Cluster.
 - You need to integrate SonarQube into your pipeline. For more information, refer to [Integrate SonarQube into Pipelines](../../how-to-integrate/sonarqube/).
-- You need to create four accounts: `ws-manager`, `ws-admin`, `project-admin`, and `project-regular`, and grant these accounts different roles. For more information, refer to [Create Workspaces, Projects, Accounts and Roles](../../../quick-start/create-workspace-and-project/#step-1-create-an-account).
+- You need to create four accounts on your Host Cluster: `ws-manager`, `ws-admin`, `project-admin`, and `project-regular`, and grant these accounts different roles. For more information, refer to [Create Workspaces, Projects, Accounts and Roles](../../../quick-start/create-workspace-and-project/#step-1-create-an-account).
 
-## User Case Overview
+## Workflow Overview
 
-This tutorial uses a demo user case where different deployment environments are isolated through three clusters. See the diagram as below.
+This tutorial uses three clusters to serve as three isolated environments in the workflow. See the diagram as below.
 
 ![use-case-for-multi-cluster](/images/docs/devops-user-guide/examples/create-multi-cluster-pipeline/use-case-for-multi-cluster.png)
 
-The three clusters are used as development cluster, testing cluster, and production cluster respectively. Once codes get submitted to a Git repository, a pipeline will be triggered to run through the following stages—unit test, code analysis, image building and pushing, and deployment to development cluster. Developers will manage the development cluster for self-testing and validation. When developers give an approval, the pipeline will proceed to the stage of deployment to testing cluster for stricter validation. Finally, the pipeline, with necessary approval ready, will reach the stage of deployment to production cluster to provide services externally. 
+The three clusters are used for development, testing, and production respectively. Once codes get submitted to a Git repository, a pipeline will be triggered to run through the following stages—`Unit Test`, `SonarQube Analysis`, `Build & Push`, and `Deploy to Development Cluster`. Developers use the development cluster for self-testing and validation. When developers give approval, the pipeline will proceed to the stage of `Deploy to Testing Cluster` for stricter validation. Finally, the pipeline, with necessary approval ready, will reach the stage of `Deploy to Production Cluster` to provide services externally. 
 
 ## Hands-on Lab
 
 ### Step 1: Prepare clusters
 
-This tutorial uses three clusters as described in the table below. You can log in to the cluster to be used as the Host Cluster as `admin` to set up your multi-cluster environment by referring to [Direct Connection](../../../multicluster-management/enable-multicluster/direct-connection/) or [Agent Connection](../../../multicluster-management/enable-multicluster/agent-connection/). Make sure you set the Member clusters as [public clusters](../../../cluster-administration/cluster-settings/cluster-visibility-and-authorization/#make-a-cluster-public). The below operations will be carried out on the Host Cluster.
+See the table below for the role of each cluster. 
 
-| Cluster Name | Cluster Role   | Description                                                  |
-| ------------ | -------------- | ------------------------------------------------------------ |
-| host         | Host Cluster   | Cluster for testing. The DevOps component needs to be enabled. |
-| shire        | Member Cluster | Cluster for production                                       |
-| rohan        | Member Cluster | Cluster for development                                      |
+| Cluster Name | Cluster Role   | Usage       |
+| ------------ | -------------- | ----------- |
+| host         | Host Cluster   | Testing     |
+| shire        | Member Cluster | Production  |
+| rohan        | Member Cluster | Development |
 
 {{< notice note >}}
 
-These Kubernetes clusters can be hosted in different cloud providers and their Kubernetes versions can also vary. Recommended Kubernetes versions for KubeSphere v3.1.0: v1.17.9, v1.18.8, v1.19.8 and v1.20.4.
+These Kubernetes clusters can be hosted across different cloud providers and their Kubernetes versions can also vary. Recommended Kubernetes versions for KubeSphere v3.1.0: v1.17.9, v1.18.8, v1.19.8 and v1.20.4.
 
 {{</ notice >}}
 
 ### Step 2: Create a workspace
 
-1. Log out of the console and log back in as `ws-manager`. On the **Workspaces** page, click **Create**.
+1. Log in to the web console of the Host Cluster as `ws-manager`. On the **Workspaces** page, click **Create**.
 
-2. On the **Basic Information** page, name the workspace as `devops-multicluster`, select `ws-admin` for **Administrator**, and click **Next**.
+2. On the **Basic Information** page, name the workspace `devops-multicluster`, select `ws-admin` for **Administrator**, and click **Next**.
 
    ![create-workspace](/images/docs/devops-user-guide/examples/create-multi-cluster-pipeline/create-workspace.png)
 
@@ -81,15 +82,15 @@ These Kubernetes clusters can be hosted in different cloud providers and their K
 
 You must create the projects as shown in the table below in advance. Make sure you invite the account `project-regular` to these projects with the role `operator`. For more information about how to create a project, refer to [Create Workspaces, Projects, Accounts and Roles](../../../quick-start/create-workspace-and-project/#step-3-create-a-project).
 
-| Cluster Name | Description             | Project Name           |
-| ------------ | ----------------------- | ---------------------- |
-| host         | Cluster for testing     | kubesphere-sample-prod |
-| shire        | Cluster for production  | kubesphere-sample-prod |
-| rohan        | Cluster for development | kubesphere-sample-dev  |
+| Cluster Name | Usage       | Project Name           |
+| ------------ | ----------- | ---------------------- |
+| host         | Testing     | kubesphere-sample-prod |
+| shire        | Production  | kubesphere-sample-prod |
+| rohan        | Development | kubesphere-sample-dev  |
 
 ### Step 5: Create credentials
 
-1. Log out of the console and log back in as `project-regular`. On the **DevOps Projects** page, click the DevOps project **multicluster-demo**.
+1. Log out of the console and log back in as `project-regular`. On the **DevOps Projects** page, click the DevOps project `multicluster-demo`.
 
 2. On the **DevOps Credentials** page, you need to create the credentials as shown in the table below. For more information about how to create credentials, refer to [Credential Management](../../how-to-use/credential-management/#create-credentials) and [Create a Pipeline Using a Jenkinsfile](../../how-to-use/create-a-pipeline-using-jenkinsfile/#step-1-create-credentials).
 
@@ -246,7 +247,7 @@ You must create the projects as shown in the table below in advance. Make sure y
 
    ![pipeline-logs](/images/docs/devops-user-guide/examples/create-multi-cluster-pipeline/pipeline-logs.png)
 
-4. Once the pipeline run successfully, click **Code Quality** to check the results through SonarQube.
+4. Once the pipeline runs successfully, click **Code Quality** to check the results through SonarQube.
 
    ![sonarqube-result](/images/docs/devops-user-guide/examples/create-multi-cluster-pipeline/sonarqube-result.png)
 
