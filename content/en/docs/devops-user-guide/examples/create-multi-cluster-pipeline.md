@@ -12,7 +12,7 @@ This tutorial demonstrates how to create a multi-cluster pipeline on KubeSphere.
 
 ## Prerequisites
 
-- You need to have three Kubernetes clusters with KubeSphere installed. Choose one cluster as your Host Cluster and the other two as your Member Clusters. For more information about cluster roles and how to enable a multi-cluster environment on KubeSphere, refer to [Multi-cluster Management](../../../multicluster-management/).
+- You need to have three Kubernetes clusters with KubeSphere installed. Choose one cluster as your Host Cluster and the other two as your Member Clusters. For more information about cluster roles and how to build a multi-cluster environment on KubeSphere, refer to [Multi-cluster Management](../../../multicluster-management/).
 - You need to set your Member Clusters as [public clusters](../../../cluster-administration/cluster-settings/cluster-visibility-and-authorization/#make-a-cluster-public). Alternatively, you can [set cluster visibility after a workspace is created](../../../cluster-administration/cluster-settings/cluster-visibility-and-authorization/#set-cluster-visibility-after-a-workspace-is-created).
 - You need to [enable the KubeSphere DevOps system](../../../pluggable-components/devops/) on your Host Cluster.
 - You need to integrate SonarQube into your pipeline. For more information, refer to [Integrate SonarQube into Pipelines](../../how-to-integrate/sonarqube/).
