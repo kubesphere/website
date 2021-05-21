@@ -6,7 +6,7 @@ linkTitle: "Uninstall KubeSphere from Kubernetes"
 weight: 4400
 ---
 
-You can uninstall KubeSphere from your existing Kubernetes cluster by using [kubesphere-delete.sh](https://github.com/kubesphere/ks-installer/blob/master/scripts/kubesphere-delete.sh). Copy it from the [GitHub source file](https://raw.githubusercontent.com/kubesphere/ks-installer/master/scripts/kubesphere-delete.sh) and execute this script on your local machine.
+You can uninstall KubeSphere from your existing Kubernetes cluster by using [kubesphere-delete.sh](https://github.com/kubesphere/ks-installer/blob/release-3.1/scripts/kubesphere-delete.sh). Copy it from the [GitHub source file](https://raw.githubusercontent.com/kubesphere/ks-installer/release-3.1/scripts/kubesphere-delete.sh) and execute this script on your local machine.
 
 {{< notice warning >}}
 
