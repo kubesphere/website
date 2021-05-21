@@ -70,7 +70,7 @@ As you [install KubeSphere on Kubernetes](../../installing-on-kubernetes/introdu
 
     ```bash
     kubectl apply -f https://github.com/kubesphere/ks-installer/releases/download/v3.1.0/kubesphere-installer.yaml
-
+    
     kubectl apply -f cluster-configuration.yaml
     ```
 
@@ -182,6 +182,12 @@ iptables-hphgf                                    1/1     Running   0          5
 {{</ tab >}}
 
 {{</ tabs >}}
+
+{{< notice note >}}
+
+CloudCore may malfunction (`CrashLoopBackOff`) if `kubeedge.cloudCore.cloudHub.advertiseAddress` was not set when you enabled KubeEdge. In this case, run `kubectl -n kubeedge edit cm cloudcore` to add the public IP address of your cluster or an IP address that can be accessed by edge nodes.
+
+{{</ notice >}} 
 
 ## Custom Configurations
 

@@ -71,7 +71,7 @@ KubeEdge 的组件在两个单独的位置运行——云上和边缘节点上�
 
     ```bash
     kubectl apply -f https://github.com/kubesphere/ks-installer/releases/download/v3.1.0/kubesphere-installer.yaml
-
+    
     kubectl apply -f cluster-configuration.yaml
     ```
 
@@ -183,6 +183,12 @@ iptables-hphgf                                    1/1     Running   0          5
 {{</ tab >}}
 
 {{</ tabs >}}
+
+{{< notice note >}}
+
+如果您在启用 KubeEdge 时未设置 `kubeedge.cloudCore.cloudHub.advertiseAddress`，则 CloudCore 无法正常运行 (`CrashLoopBackOff`)。在这种情况下，请运行 `kubectl -n kubeedge edit cm cloudcore` 添加集群的公共 IP 地址或边缘节点可以访问的 IP 地址。
+
+{{</ notice >}} 
 
 ## 自定义配置
 

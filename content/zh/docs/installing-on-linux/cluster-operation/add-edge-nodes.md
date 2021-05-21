@@ -36,6 +36,12 @@ KubeSphere 利用 [KubeEdge](https://kubeedge.io/zh/) 将原生容器化应用�
 
 [KubeEdge](https://docs.kubeedge.io/zh/docs/) 支持多种容器运行时，包括 Docker、containerd、CRI-O 和 Virtlet。有关更多信息，请参见 [KubeEdge 文档](https://docs.kubeedge.io/zh/docs/advanced/cri/)。
 
+{{< notice note >}}
+
+如果您的边缘节点使用 Docker 作为容器运行时，为确保 KubeSphere 可以获取 Pod 指标，请务必在边缘节点上安装 Docker v19.3.0 或更高版本。
+
+{{</ notice >}} 
+
 ### 配置 EdgeMesh
 
 执行以下步骤以在边缘节点上配置 [EdgeMesh](https://kubeedge.io/zh/docs/advanced/edgemesh/)。
@@ -122,6 +128,37 @@ KubeSphere 利用 [KubeEdge](https://kubeedge.io/zh/) 将原生容器化应用�
    添加边缘节点后，如果在**边缘节点**页面查看不到 CPU 和内存资源使用情况，请确保您的集群中已安装 [Metrics Server](../../../pluggable-components/metrics-server/) 0.4.1 或以上版本。
 
    {{</ notice >}}
+   
+6. 边缘节点加入集群后，部分 Pod 在调度至该边缘节点上后可能会一直处于 `Pending` 状态。由于部分守护进程集（例如，Calico）有强容忍度，在当前版本中 (KubeSphere v3.1.0)，您需要手动 Patch Pod 以防止它们调度至该边缘节点。
+
+   ```bash
+   #!/bin/bash
+   
+   NodeSelectorPatchJson='{"spec":{"template":{"spec":{"nodeSelector":{"node-role.kubernetes.io/master": "","node-role.kubernetes.io/worker": ""}}}}}'
+   
+   NoShedulePatchJson='{"spec":{"template":{"spec":{"affinity":{"nodeAffinity":{"requiredDuringSchedulingIgnoredDuringExecution":{"nodeSelectorTerms":[{"matchExpressions":[{"key":"node-role.kubernetes.io/edge","operator":"DoesNotExist"}]}]}}}}}}}'
+   
+   edgenode="edgenode"
+   if [ $1 ]; then
+           edgenode="$1"
+   fi
+   
+   
+   namespaces=($(kubectl get pods -A -o wide |egrep -i $edgenode | awk '{print $1}' ))
+   pods=($(kubectl get pods -A -o wide |egrep -i $edgenode | awk '{print $2}' ))
+   length=${#namespaces[@]}
+   
+   
+   for((i=0;i<$length;i++));  
+   do
+           ns=${namespaces[$i]}
+           pod=${pods[$i]}
+           resources=$(kubectl -n $ns describe pod $pod | grep "Controlled By" |awk '{print $3}')
+           echo "Patching for ns:"${namespaces[$i]}",resources:"$resources
+           kubectl -n $ns patch $resources --type merge --patch "$NoShedulePatchJson"
+           sleep 1
+   done
+   ```
 
 ## 移除边缘节点
 
