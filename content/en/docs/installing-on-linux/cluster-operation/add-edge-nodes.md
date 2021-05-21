@@ -36,6 +36,12 @@ You need to install a container runtime and configure EdgeMesh on your edge node
 
 [KubeEdge](https://docs.kubeedge.io/en/docs/) supports several container runtimes including Docker, containerd, CRI-O and Virtlet. For more information, see [the KubeEdge documentation](https://docs.kubeedge.io/en/docs/advanced/cri/).
 
+{{< notice note >}}
+
+If you use Docker as the container runtime for your edge node, Docker v19.3.0 or later must be installed so that KubeSphere can get Pod metrics of it.
+
+{{</ notice >}} 
+
 ### Configure EdgeMesh
 
 Perform the following steps to configure [EdgeMesh](https://kubeedge.io/en/docs/advanced/edgemesh/) on your edge node.
@@ -122,6 +128,37 @@ To make sure edge nodes can successfully talk to your cluster, you must forward 
    After an edge node is added, if you cannot see CPU and memory resource usage on the **Edge Nodes** page, make sure [Metrics Server](../../../pluggable-components/metrics-server/) 0.4.1 or later is installed in your cluster.
 
    {{</ notice >}}
+   
+6. After an edge node joins your cluster, some Pods may be scheduled to it while they remains in the `Pending` state on the edge node. Due to the tolerations some DaemonSets (for example, Calico) have, you need to manually patch some Pods so that they will not be schedule to the edge node.
+
+   ```bash
+   #!/bin/bash
+   
+   NodeSelectorPatchJson='{"spec":{"template":{"spec":{"nodeSelector":{"node-role.kubernetes.io/master": "","node-role.kubernetes.io/worker": ""}}}}}'
+   
+   NoShedulePatchJson='{"spec":{"template":{"spec":{"affinity":{"nodeAffinity":{"requiredDuringSchedulingIgnoredDuringExecution":{"nodeSelectorTerms":[{"matchExpressions":[{"key":"node-role.kubernetes.io/edge","operator":"DoesNotExist"}]}]}}}}}}}'
+   
+   edgenode="edgenode"
+   if [ $1 ]; then
+           edgenode="$1"
+   fi
+   
+   
+   namespaces=($(kubectl get pods -A -o wide |egrep -i $edgenode | awk '{print $1}' ))
+   pods=($(kubectl get pods -A -o wide |egrep -i $edgenode | awk '{print $2}' ))
+   length=${#namespaces[@]}
+   
+   
+   for((i=0;i<$length;i++));  
+   do
+           ns=${namespaces[$i]}
+           pod=${pods[$i]}
+           resources=$(kubectl -n $ns describe pod $pod | grep "Controlled By" |awk '{print $3}')
+           echo "Patching for ns:"${namespaces[$i]}",resources:"$resources
+           kubectl -n $ns patch $resources --type merge --patch "$NoShedulePatchJson"
+           sleep 1
+   done
+   ```
 
 ## Remove an Edge Node
 
