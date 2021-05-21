@@ -25,32 +25,6 @@ Once you build a multi-cluster environment on KubeSphere, you can manage it thro
 
 It is recommended that you don't change a current Host Cluster to a Member Cluster or the other way round. If a Member Cluster has been imported to a Host Cluster before, you have to use the same cluster name when unbinding and importing it to a new Host Cluster.
 
-If you have to unbind a Member Cluster (e.g. `rohan`) and import it to a new Host Cluster, you can follow the steps as below to host the existing workspace on the Member Cluster to the new Host Cluster.
-
-1. Create a workspace on the Host Cluster with the same name as that of the Member Cluster. Make sure you select the Member Cluster when creating the workspace.
-
-   ![select-member-cluster](/images/docs/faq/multi-cluster-management/manage-multi-cluster/select-member-cluster.png)
-
-2. Run the following command on the Host Cluster to view resources status. If you can see the Member Cluster in `status.clusters` and there are no abnormal outputs in `status.conditions`, the workspace on the Member Cluster is successfully managed by the Host Cluster.
-
-   ```bash
-   kubectl get federatedworkspace <workspace name> -o yaml
-   ```
-
-   ![view-member-cluster-info](/images/docs/faq/multi-cluster-management/manage-multi-cluster/view-member-cluster-info.png)
-
-3. Run the following command on the Member Cluster to clear redundant data.
-
-   ```bash
-   kubectl delete workspacetemplate <workspace name>
-   ```
-
-   {{< notice note >}}
-
-   Make sure the workspace on the Member Cluster is successfully managed by the Host Cluster before you run this command.
-
-   {{</ notice >}}
-
 If you want to import the Member Cluster to a new Host Cluster while retaining existing projects (i.e. namespaces), you can follow the steps as below.
 
 1. Run the following command on the Member Cluster to unbind the projects to be retained from your workspace.
