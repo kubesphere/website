@@ -506,6 +506,10 @@ kubesphere/kube-apiserver:v1.19.8
 kubesphere/kube-scheduler:v1.19.8
 kubesphere/kube-proxy:v1.19.8
 kubesphere/kube-controller-manager:v1.19.8
+kubesphere/kube-apiserver:v1.19.9
+kubesphere/kube-scheduler:v1.19.9
+kubesphere/kube-proxy:v1.19.9
+kubesphere/kube-controller-manager:v1.19.9
 kubesphere/kube-apiserver:v1.18.6
 kubesphere/kube-scheduler:v1.18.6
 kubesphere/kube-proxy:v1.18.6
@@ -541,10 +545,7 @@ kubesphere/ks-apiserver:v3.1.0
 kubesphere/ks-console:v3.1.0
 kubesphere/ks-controller-manager:v3.1.0
 kubesphere/ks-installer:v3.1.0
-kubesphere/kubectl:v1.17.0
-kubesphere/kubectl:v1.18.0
 kubesphere/kubectl:v1.19.0
-kubesphere/kubectl:v1.20.0
 redis:5.0.5-alpine
 alpine:3.10.4
 haproxy:2.0.4
@@ -601,10 +602,10 @@ kubesphere/ks-jenkins:2.249.1
 jenkins/jnlp-slave:3.27-1
 kubesphere/s2ioperator:v3.1.0
 kubesphere/s2irun:v2.1.1
-kubesphere/builder-base:v2.1.0
-kubesphere/builder-nodejs:v2.1.0
-kubesphere/builder-maven:v2.1.0
-kubesphere/builder-go:v2.1.0
+kubesphere/builder-base:v3.1.0
+kubesphere/builder-nodejs:v3.1.0
+kubesphere/builder-maven:v3.1.0
+kubesphere/builder-go:v3.1.0
 kubesphere/s2i-binary:v2.1.0
 kubesphere/tomcat85-java11-centos7:v2.1.0
 kubesphere/tomcat85-java11-runtime:v2.1.0
@@ -621,8 +622,6 @@ kubesphere/python-36-centos7:v2.1.0
 kubesphere/python-35-centos7:v2.1.0
 kubesphere/python-34-centos7:v2.1.0
 kubesphere/python-27-centos7:v2.1.0
-kubesphere/notification:flyway_v2.1.2
-kubesphere/notification:v2.1.2
 ##openpitrix-images
 kubesphere/openpitrix-jobs:v3.1.0
 ##weave-scope-images
