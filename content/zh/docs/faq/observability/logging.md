@@ -69,6 +69,17 @@ weight: 16310
    helm uninstall -n kubesphere-logging-system elasticsearch-logging
    ```
 
+5. 如果启用了istio，需要修改Jaeger配置。
+
+```
+$ kubectl -n istio-system edit jaeger 
+...
+ options:
+      es:
+        index-prefix: logstash
+        server-urls: http://elasticsearch-logging-data.kubesphere-logging-system.svc:9200  # 修改为外部地址
+```
+
 ## 如何在启用 X-Pack Security 的情况下将日志存储改为 Elasticsearch
 
 KubeSphere 暂不支持启用 X-Pack Security 的 Elasticsearch 集成，此功能即将推出。
