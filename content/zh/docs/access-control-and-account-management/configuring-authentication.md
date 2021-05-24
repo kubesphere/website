@@ -1,136 +1,103 @@
 ---
-title: "Configure Authentication"
+title: "认证配置"
 keywords: "LDAP, identity provider"
 description: "How to configure authentication"
 
-linkTitle: "Configure Authentication"
+linkTitle: "认证配置"
 weight: 12200
 ---
 
-## Objective
+KubeSphere 包含一个内置的 OAuth 服务和账户系统。用户通过获取 OAuth 访问令牌以对 API 进行身份验证。
 
-This guide demonstrates how to set up authentication. You can use external identity providers such as LDAP or Active Directory for KubeSphere.
+## 认证配置
 
-## Prerequisites
+作为管理员，您可以通过以下命令修改认证配置:
 
-KubeSphere needs to be installed in your machines.
-
-## Overview
-
-KubeSphere includes a built-in OAuth server. Users obtain OAuth access tokens to authenticate themselves to the API.
-
-As an administrator, you can configure OAuth by editing configmap to specify an identity provider.
-
-
-
-
-## Authentication Configuration
-
-KubeSphere has an internal account management system. You can modify the kubesphere authentication configuration by the following command:
-
-*Example Configuration*:
 
 ```bash
-kubectl -n kubesphere-system edit cm kubesphere-config
+kubectl -n kubesphere-system edit cc ks-installer
 ```
+
+*配置示例*:
 
 ```yaml
-apiVersion: v1
-data:
-  kubesphere.yaml: |
-    authentication:
-      authenticateRateLimiterMaxTries: 10
-      authenticateRateLimiterDuration: 10m0s
-      loginHistoryRetentionPeriod: 168h
-      maximumClockSkew: 10s
-      multipleLogin: true
-      jwtSecret: "xxxxxxxxxxxx"
-      oauthOptions:
-        accessTokenMaxAge: 1h
-        accessTokenInactivityTimeout: 30m
-        identityProviders:
-          ...
+apiVersion: installer.kubesphere.io/v1alpha1
+kind: ClusterConfiguration
+metadata:
+  name: ks-installer
+spec:
+  authentication:
+    jwtSecret: ********************************
+    authenticateRateLimiterMaxTries: 10
+    authenticateRateLimiterDuration: 10m
+    oauthOptions:
+      accessTokenInactivityTimeout: 30m
+      accessTokenMaxAge: 1h
+      identityProviders:
+      - mappingMethod: auto
+        name: github
+        type: GitHubIdentityProvider
+        provider:
+...
 ```
 
-For the above example:
+参数释意：
 
-| Parameter | Description |
-|-----------|-------------|
-| authenticateRateLimiterMaxTries | AuthenticateRateLimiter defines under which circumstances we will block user. |
-| authenticateRateLimiterDuration | A user will be blocked if his/her failed login attempt reaches AuthenticateRateLimiterMaxTries in AuthenticateRateLimiterDuration for about AuthenticateRateLimiterDuration. |
-| loginHistoryRetentionPeriod | Retention login history, records beyond this amount will be deleted. |
-| maximumClockSkew |  Controls the maximum allowed clock skew when performing time-sensitive operations, such as validating the expiration time of a user token. The default value for maximum clock skew is `10 seconds`. |
-| multipleLogin |  Allow multiple users login from different location at the same time. The default value for multiple login is `true`. |
-| jwtSecret | Secret to sign user token. Multi-cluster environments [need to use the same secret](../../multicluster-management/enable-multicluster/direct-connection/#prepare-a-member-cluster). |
-| accessTokenMaxAge |  AccessTokenMaxAge control the lifetime of access tokens. The default lifetime is 2 hours. Setting the `accessTokenMaxAge` to 0 means the token will not expire, it will be set to 0 when the cluster role is member. |
-| accessTokenInactivityTimeout | Inactivity timeout for tokens. The value represents the maximum amount of time that can occur between consecutive uses of the token. Tokens become invalid if they are not used within this temporal window. The user will need to acquire a new token to regain access once a token times out. |
+* `authenticateRateLimiterMaxTries`: `authenticateLimiterDuration`指定的期间内允许的最大连续登录失败次数。如果用户连续登录失败次数达到限制，则该用户将被封禁。 
 
+* `authenticateRateLimiterDuration`: 作用于 `authenticateRateLimiterMaxTries`。
 
-After modifying the identity provider configuration, you need to restart the ks-apiserver.
+* `loginHistoryRetentionPeriod`: 用户登录记录保留期限，过期条目将被自动删除。 
+
+* `maximumClockSkew`: 控制执行对时间敏感的操作（例如验证用户令牌的过期时间）时允许的最大时钟偏移，默认值为10秒。
+
+* `multipleLogin`: 允许多个用户同时从不同位置登录，默认值为 `true`。
+
+* `jwtSecret`: 签发用户令牌的密钥，最小长度为32个字符。[多集群环境需要注意的事项](../../multicluster-management/enable-multicluster/direct-connection/#prepare-a-member-cluster)。
+
+`oauthOptions`: OAuth settings
+  * `accessTokenMaxAge`: 访问令牌有效期。对于多集群环境中的成员集群，默认值为 `0h`，这意味着访问令牌永不过期。对于其他集群，默认值为 `2h`。
+  * `accessTokenInactivityTimeout`: 令牌空闲超时时间。该值表示令牌过期后，刷新用户令牌最大的间隔时间，如果不在此时间窗口内刷新用户身份令牌，用户将需要重新登录以获得访问权。
+  * `identityProviders`: Identity providers
+    * `name`: 身份提供者的名称。
+    * `type`: 身份提供者的类型。
+    * `mappingMethod`: 账户映射方式. 值可以是 `auto` 或者 `lookup`。
+     * 默认值为 `auto`, 通过第三方账户登录时会自动创建关联账户。
+     * 如果值为 `lookup`, 你需要手动关联第三方账户与KubeSphere账户。
+    * `provider`: Identity provider 配置，此部分中的字段根据身份提供的类型而异。
+
+当您修改上述配置后，需要等待配置生效，可以通过以下命令查看相关进度及日志：
 
 ```bash
-kubectl -n kubesphere-system rollout restart deploy/ks-apiserver
+ kubectl -n kubesphere-system logs -l app=ks-installer -f
 ```
 
-## Identity Providers
+如果 `mappingMethod` 设置为 `lookup`, 可以通过以下命令进行账户关联。 如果 `mappingMethod` 是 `auto` 你可以跳过这个部分。
 
-You can define additional authentication configuration in the `identityProviders `section.
+   ```bash
+   kubectl edit user <KubeSphere username>
+   ```
+   
+   ```yaml
+   labels:
+     iam.kubesphere.io/identify-provider: <Identity provider name>
+     iam.kubesphere.io/origin-uid: <Third-party username>
+   ```
 
-### LDAP Authentication
+## 身份提供者
 
-Set LDAPIdentityProvider in the identityProviders section to validate username and password against an LDAPv3 server using simple bind authentication.
+您可以在 `identityProviders` 部分中配置多个身份提供者（IdentityProvider, IdP）。身份提供者会对用户进行认证，并向 KubeSphere 提供身份令牌。
 
-During authentication, the LDAP directory is searched for an entry that matches the provided username. If a single unique match is found, a simple bind is attempted using the DN of the entry plus the provided password.
+KubeSphere 默认提供了以下几种类型的身份提供者：
 
-There are four parameters common to all identity providers:
+* [LDAPIdentityProvider](../ldap-identity-provider)
 
-| Parameter | Description |
-|-----------|-------------|
-| name | The name of the identity provider is associated with the user label. |
-| mappingMethod | The account mapping configuration. You can use different mapping methods, such as:<br/>- `auto`: The default value. The user account will be automatically created and mapped if the login is successful. <br/>- `lookup`: Using this method requires you to manually provision accounts. |
+* [OIDCIdentityProvider]()
 
-*Example Configuration Using LDAPIdentityProvider*:
+* [GitHubIdentityProvider]()
 
-```yaml
-apiVersion: v1
-data:
-  kubesphere.yaml: |
-    authentication:
-      authenticateRateLimiterMaxTries: 10
-      authenticateRateLimiterDuration: 10m0s
-      loginHistoryRetentionPeriod: 168h
-      maximumClockSkew: 10s
-      multipleLogin: true
-      jwtSecret: "xxxxxxxxxxxx"
-      oauthOptions:
-        accessTokenMaxAge: 1h
-        accessTokenInactivityTimeout: 30m
-        identityProviders:
-        - name: ldap
-          type: LDAPIdentityProvider
-          mappingMethod: auto
-          provider:
-            host: 192.168.0.2:389
-            managerDN: uid=root,cn=users,dc=nas
-            managerPassword: 4p4@XuP#dP6U
-            userSearchBase: cn=users,dc=nas
-            loginAttribute: uid
-            mailAttribute: mail
-```
+* [CASIdentityProvider]()
 
-For the above example:
+* [AliyunIDaaSProvider]()
 
-| Parameter | Description |
-|-----------|-------------|
-| host | The name and port of the LDAP server. |
-| managerDN | DN to use to bind during the search phase. |
-| managerPassword | Password to use to bind during the search phase. |
-| userSearchBase | The search base is the distinguished name (DN) of a level of the directory tree below which all users can be found.  |
-| loginAttribute | User naming attributes identify user objects, will be mapped to KubeSphere account name. |
-| mailAttribute | The mail attribute will be mapped to the KubeSphere account. |
-
-{{< notice tip >}}
-
-LDAPS is not supported now. Planned at `v3.1.0`.
-
-{{</ notice >}}
+您也可以拓展 KubeSphere OAuth2 认证插件与您的账户系统进行集成。
