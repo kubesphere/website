@@ -68,6 +68,17 @@ If you are using the KubeSphere internal Elasticsearch and want to change it to 
    ```bash
    helm uninstall -n kubesphere-logging-system elasticsearch-logging
    ```
+   
+5. Change the configuration of Jaeger if Istio is enabled.
+
+   ```yaml
+   $ kubectl -n istio-system edit jaeger 
+   ...
+    options:
+         es:
+           index-prefix: logstash
+           server-urls: http://elasticsearch-logging-data.kubesphere-logging-system.svc:9200  # Change it to the external address.
+   ```
 
 ## How to change the log store to Elasticsearch with X-Pack Security enabled
 
