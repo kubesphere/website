@@ -19,15 +19,11 @@ weight: 10140
 
 1. 登录 KubeSphere 的 Web 控制台，导航到项目**应用负载**中的**应用**。在**自制应用**选项卡中，点击**构建自制应用**。
 
-   ![create-composing-app](/images/docs/zh-cn/project-user-guide/applications/create-a-microservices-based-app/create-composing-app.png)
-
 2. 设置应用名称（例如 `bookinfo`）并点击**下一步**。
 
 3. 在**服务组件**页面，您需要构建自制应用的微服务。点击**添加服务**，选择**无状态服务**。
 
 4. 设置服务名称（例如 `productpage`）并点击**下一步**。
-
-   ![product-page](/images/docs/zh-cn/project-user-guide/applications/create-a-microservices-based-app/product-page.png)
 
    {{< notice note >}}
 
@@ -36,8 +32,6 @@ weight: 10140
    {{</ notice >}} 
 
 5. 点击**容器镜像**下的**添加容器镜像**，在搜索栏中输入 `kubesphere/examples-bookinfo-productpage-v1:1.13.0` 以使用 Docker Hub 镜像。
-
-   ![container-image](/images/docs/zh-cn/project-user-guide/applications/create-a-microservices-based-app/container-image.png)
 
    {{< notice note >}}
 
@@ -61,8 +55,6 @@ weight: 10140
 
 10. 添加微服务完成后，点击**下一步**。
 
-    ![microservices-done](/images/docs/zh-cn/project-user-guide/applications/create-a-microservices-based-app/microservices-done.png)
-
 11. 在**外网访问**页面，点击**添加路由规则**。在**指定域名**选项卡中，为您的应用设置域名（例如 `demo.bookinfo`）并在**协议**字段选择 `http`。在`路径`一栏，选择服务 `productpage` 以及端口 `9080`。点击**确定**以继续操作。
 
     ![route](/images/docs/zh-cn/project-user-guide/applications/create-a-microservices-based-app/route.png)
@@ -77,7 +69,6 @@ weight: 10140
 
 13. 等待应用达到**就绪**状态。
 
-    ![status-active](/images/docs/zh-cn/project-user-guide/applications/create-a-microservices-based-app/status-active.png)
 
 ## 访问应用
 
