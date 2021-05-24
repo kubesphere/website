@@ -6,9 +6,9 @@ linkTitle: "存储卷"
 weight: 10310
 ---
 
- 在项目中创建应用负载时，您可以为应用负载创建 [PersistentVolumeClaim (PVC)](https://kubernetes.io/zh/docs/concepts/storage/persistent-volumes/)。您可以用 PVC 创建存储请求，从而进一步为应用提供持久化存储。更具体地说，PersistentVolume 资源可用于管理持久化存储。
+ 在项目中创建应用负载时，您可以为应用负载创建 [PersistentVolumeClaim (PVC)](https://kubernetes.io/zh/docs/concepts/storage/persistent-volumes/)。PVC 可用于创建存储请求，从而进一步为应用提供持久化存储。更具体地说，PersistentVolume 资源可用于管理持久化存储。
 
-集群管理员需要用存储类型 (Storage Class) 配置 PersistentVolume。也就是说，要在项目中创建 PersistentVolumeClaim，您需要确保集群中有可用的存储类型。如果在安装 KubeSphere 时没有配置自定义存储类型，集群中将默认安装 [OpenEBS](https://openebs.io/) 以提供本地持久卷。然而，OpenEBS 不支持动态存储卷供应。在生产环境中，建议您提前配置存储类型从而为应用提供持久化存储服务。
+集群管理员需要用存储类型 (Storage Class) 配置 PersistentVolume。也就是说，要在项目中创建 PersistentVolumeClaim，您的集群中必须要有可用的存储类型。如果在安装 KubeSphere 时没有配置自定义存储类型，集群中将默认安装 [OpenEBS](https://openebs.io/) 以提供本地持久卷。然而，OpenEBS 不支持动态存储卷供应。在生产环境中，建议您提前配置存储类型从而为应用提供持久化存储服务。
 
 本教程介绍如何创建存储卷、挂载存储卷和通过存储卷详情页面使用存储卷功能。
 
@@ -22,15 +22,11 @@ weight: 10310
 
 在**存储卷**页面创建的所有存储卷都是 PersistentVolumeClaim 对象。KubeSphere 将 PersistentVolumeClaim 绑定到满足您设定的请求条件（例如容量和访问模式）的 PersistentVolume。在创建应用负载时，您可以选择所需的存储卷并将其挂载到负载。
 
-1. 登录 KubeSphere Web 控制台并进入项目，在左侧导航栏中点击**存储管理**下的**存储卷**。页面上显示所有已挂载至项目工作负载的存储卷。
+1. 以 `project-regular` 身份登录 KubeSphere Web 控制台并进入项目，在左侧导航栏中点击**存储管理**下的**存储卷**。页面上显示所有已挂载至项目工作负载的存储卷。
 
 2. 在**存储卷**页面，点击**创建**以创建存储卷。
 
-   ![create-volume](/images/docs/zh-cn/project-user-guide/volume-management/volumes/create-volume.jpg)
-
 3. 在弹出的对话框设置存储卷的名称（例如 `demo-volume`），然后点击**下一步**。
-
-   ![basic-volume-info](/images/docs/zh-cn/project-user-guide/volume-management/volumes/basic-volume-info.jpg)
 
    {{< notice note >}}
 
@@ -40,20 +36,16 @@ weight: 10310
 
 4. 在**存储卷设置**页面，选择创建存储卷的方式。
 
-   ![volume-creation-method](/images/docs/zh-cn/project-user-guide/volume-management/volumes/volume-creation-method.jpg)
-
    - **通过存储类型**：您可以在 KubeSphere [安装前](../../../installing-on-linux/persistent-storage-configurations/understand-persistent-storage/)或[安装后](../../../cluster-administration/persistent-volume-and-storage-class/)配置存储类型。
+   
    - **通过存储卷快照创建**：如需通过快照创建存储卷，您必须先创建存储卷快照。
-
-5. 选择**通过存储类型**。有关通过存储卷快照创建存储卷的更多信息，请参阅[存储卷快照](../volume-snapshots/)。
-
-6. 从下拉列表中选择存储类型。
+   
+   选择**通过存储类型**。有关通过存储卷快照创建存储卷的更多信息，请参阅[存储卷快照](../volume-snapshots/)。
+5. 从下拉列表中选择存储类型。本教程以青云QingCloud 平台提供的 `csi-standard` 标准存储类型为例。您可以根据需要选择其他存储类型。
 
    ![select-storage-class](/images/docs/zh-cn/project-user-guide/volume-management/volumes/select-storage-class.jpg)
 
-7. 本教程以青云QingCloud 平台提供的 `csi-standard` 标准存储类型为例。您可以根据需要选择其他存储类型。
-
-8. 由于一些 PersistentVolume 只支持特定的访问模式，页面上显示的访问模式会因您选择的存储类型而不同。访问模式一共有三种：
+6. 由于一些 PersistentVolume 只支持特定的访问模式，页面上显示的访问模式会因您选择的存储类型而不同。访问模式一共有三种：
 
    - **ReadWriteOnce (RWO)**：存储卷以单节点读写的形式挂载。
    - **ReadOnlyMany (ROX)**：存储卷以多节点只读的形式挂载。
@@ -61,17 +53,13 @@ weight: 10310
 
    选择所需的访问模式。
 
-9. 在**存储卷容量**区域设置存储卷的大小，然后点击**下一步**。
+7. 在**存储卷容量**区域设置存储卷的大小，然后点击**下一步**。
 
-   ![volume-finished](/images/docs/zh-cn/project-user-guide/volume-management/volumes/volume-finished.jpg)
+8. 在**高级设置**页面，您可以为存储卷添加元数据，例如 **Label** 和 **Annotation**。元数据可用作搜索和调度资源的标识符。
 
-10. 在**高级设置**页面，您可以为存储卷添加元数据，例如 **Label** 和 **Annotation**。元数据可用作搜索和调度资源的标识符。
+9. 点击**创建**完成存储卷创建。
 
-11. 点击**创建**完成存储卷创建。
-
-    ![volume-finish-creation](/images/docs/zh-cn/project-user-guide/volume-management/volumes/volume-finish-creation.jpg)
-
-12. 新建的存储卷会显示在项目的**存储卷**页面。存储卷挂载至工作负载后，**挂载**列会显示为**已挂载**。
+10. 新建的存储卷会显示在项目的**存储卷**页面。存储卷挂载至工作负载后，**挂载**列会显示为**已挂载**。
 
     ![volume-status](/images/docs/zh-cn/project-user-guide/volume-management/volumes/volume-status.jpg)
 
@@ -81,7 +69,7 @@ weight: 10310
 
 {{</ notice >}} 
 
-13. 一些存储卷是动态供应的存储卷，它们的状态会在创建后立刻从**等待中**变为**准备就绪**。其他仍处于**等待中**的存储卷会在挂载至工作负载后变为**准备就绪**。存储卷是否支持动态供应取决于其存储类型。
+11. 一些存储卷是动态供应的存储卷，它们的状态会在创建后立刻从**等待中**变为**准备就绪**。其他仍处于**等待中**的存储卷会在挂载至工作负载后变为**准备就绪**。存储卷是否支持动态供应取决于其存储类型。
 
     ![local-pending](/images/docs/zh-cn/project-user-guide/volume-management/volumes/local-pending.jpg)
 
