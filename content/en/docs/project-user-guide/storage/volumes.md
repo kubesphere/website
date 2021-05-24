@@ -6,9 +6,9 @@ linkTitle: "Volumes"
 weight: 10310
 ---
 
-When you create an application workload in a project, you can create a [PersistentVolumeClaim](https://kubernetes.io/docs/concepts/storage/persistent-volumes/) (PVC) for it. A PVC allows you to create a request for storage, further provisioning persistent storage to applications. More specifically, persistent storage is managed by PersistentVolume resources.
+When you create an application workload in a project, you can create a [PersistentVolumeClaim](https://kubernetes.io/docs/concepts/storage/persistent-volumes/) (PVC) for it. A PVC allows you to create a storage request, further provisioning persistent storage to applications. More specifically, persistent storage is managed by PersistentVolume resources.
 
-Cluster administrators configure PersistentVolumes using storage classes. In other words, to create a PersistentVolumeClaim in a project, make sure your cluster has an available storage class. If no customized storage class is configured when you install KubeSphere, [OpenEBS](https://openebs.io/) is installed in your cluster by default to provide Local Persistent Volumes. However, it does not support dynamic volume provisioning. In a production environment, it is recommended you configure storage classes in advance to provide persistent storage services for your apps.
+Cluster administrators configure PersistentVolumes using storage classes. In other words, to create a PersistentVolumeClaim in a project, your cluster must have an available storage class. If no customized storage class is configured when you install KubeSphere, [OpenEBS](https://openebs.io/) is installed in your cluster by default to provide Local Persistent Volumes. However, it does not support dynamic volume provisioning. In a production environment, it is recommended you configure storage classes in advance to provide persistent storage services for your apps.
 
 This tutorial demonstrates how to create a volume, mount a volume and use volume features from its detail page.
 
@@ -20,17 +20,13 @@ This tutorial demonstrates how to create a volume, mount a volume and use volume
 
 ## Create a Volume
 
-All the volumes that are created on the **Volumes** page are PersistentVolumeClaim objects. KubeSphere binds the PersistentVolumeClaim to the PersistentVolume that satisfies the request you set for the PersistentVolumeClaim, such as capacity and access mode. When you create an application workload, you can select the desired volume and mount it to your workload.
+All the volumes that are created on the **Volumes** page are PersistentVolumeClaim objects. KubeSphere binds a PersistentVolumeClaim to a PersistentVolume that satisfies the request you set for the PersistentVolumeClaim, such as capacity and access mode. When you create an application workload, you can select the desired volume and mount it to your workload.
 
-1. Log in to the web console of KubeSphere and go to a project. Click **Volumes** under **Storage** from the navigation bar, and you see all volumes that have been mounted to workloads in the project.
+1. Log in to the web console of KubeSphere as `project-regular` and go to a project. Click **Volumes** under **Storage** from the navigation bar, and you see all volumes that have been mounted to workloads in the project.
 
 2. To create a volume, click **Create** on the **Volumes** page.
 
-   ![create-volume](/images/docs/project-user-guide/volume-management/volumes/create-volume.jpg)
-
 3. In the dialog that appears, set a name (e.g. `demo-volume`) for the volume and click **Next**.
-
-   ![basic-volume-info](/images/docs/project-user-guide/volume-management/volumes/basic-volume-info.jpg)
 
    {{< notice note >}}
 
@@ -40,21 +36,17 @@ All the volumes that are created on the **Volumes** page are PersistentVolumeCla
 
 4. On the **Volume Settings** page, select a method to create a volume.
 
-   ![volume-creation-method](/images/docs/project-user-guide/volume-management/volumes/volume-creation-method.jpg)
-
    - **Create a volume by StorageClass**. You can configure storage classes both [before](../../../installing-on-linux/persistent-storage-configurations/understand-persistent-storage/) and [after](../../../cluster-administration/persistent-volume-and-storage-class/) the installation of KubeSphere.
 
    - **Create a volume by VolumeSnapshot**. To use a snapshot to create a volume, you must create a volume snapshot first.
 
-5. Select **Create a volume by StorageClass**. For more information about how to create a volume by snapshot, see [Volume Snapshots](../volume-snapshots/).
+   Select **Create a volume by StorageClass** in this example. For more information about how to create a volume by snapshot, see [Volume Snapshots](../volume-snapshots/).
 
-6. Select a storage class from the drop-down list.
+5. Select a storage class from the drop-down list. This tutorial uses `csi-standard`, a standard storage class provided by QingCloud Platform. You can select your own storage class.
 
    ![select-storage-class](/images/docs/project-user-guide/volume-management/volumes/select-storage-class.jpg)
 
-7. This tutorial uses `csi-standard`, a standard storage class provided by QingCloud Platform. You can select your own storage class.
-
-8. Depending on the storage class you select, you may see different access modes in this section as some PersistentVolumes only support specific access modes. In total, there are three access modes.
+6. Depending on the storage class you select, you may see different access modes in this section as some PersistentVolumes only support specific access modes. In total, there are three access modes.
 
    - **ReadWriteOnce (RWO)**: The volume can be mounted as read-write by a single node.
    - **ReadOnlyMany (ROX)**: The volume can be mounted as read-only by many nodes.
@@ -62,17 +54,13 @@ All the volumes that are created on the **Volumes** page are PersistentVolumeCla
 
    Select the desired access mode.
 
-9. Under **Volume Capacity**, specify the size of the volume. Click **Next** to continue.
+7. Under **Volume Capacity**, specify the size of the volume. Click **Next** to continue.
 
-   ![volume-finished](/images/docs/project-user-guide/volume-management/volumes/volume-finished.jpg)
+8. On the **Advanced Settings** page, you can add metadata to the volume, such as **Labels** and **Annotations**. They can be used as identifiers to search for and schedule resources.
 
-10. On the **Advanced Settings** page, you can add metadata to the volume, such as **Labels** and **Annotations**. They can be used as identifiers to search and schedule resources.
+9. Click **Create** to finish creating a volume.
 
-11. Click **Create** to finish creating a volume.
-
-    ![volume-finish-creation](/images/docs/project-user-guide/volume-management/volumes/volume-finish-creation.jpg)
-
-12. A created volume displays on the **Volumes** page in a project. After it is mounted to a workload, it will turn to **Mounted** under the **Mount** column.
+10. A created volume displays on the **Volumes** page in a project. After it is mounted to a workload, it will turn to **Mounted** under the **Mount** column.
 
     ![volume-status](/images/docs/project-user-guide/volume-management/volumes/volume-status.jpg)
 
@@ -82,7 +70,7 @@ Newly-created volumes will also appear on the **Volumes** page in **Cluster Mana
 
 {{</ notice >}} 
 
-13. For some volumes, you can see the status reach **Bound** from **Pending** immediately after they are created as they are provisioned dynamically. For volumes that remain the **Pending** status, they will turn to **Bound** once they are mounted to a workload. The difference is decided by the storage class of the volume.
+11. For some volumes, you can see the status reach **Bound** from **Pending** immediately after they are created as they are provisioned dynamically. For volumes that remain in the **Pending** status, they will turn to **Bound** once they are mounted to a workload. The difference is decided by the storage class of the volume.
 
     ![local-pending](/images/docs/project-user-guide/volume-management/volumes/local-pending.jpg)
 
@@ -138,7 +126,7 @@ After a volume is created, you can see detailed information of it, edit it, or l
 
 ### Edit a volume
 
-On the detail page, you can click **Edit Info** to change its basic information. Click **More** and you can edit its YAML file or delete this volume.
+On the detail page, you can click **Edit Information** to change its basic information. Click **More** and you can edit its YAML file or delete this volume.
 
 To delete a volume, make sure the volume is not mounted to any workload. To unmount a volume, go to the detail page of a workload. From the **More** drop-down list, click **Edit Config Template**. Select **Volume** from the pop-up window, and click the dustbin icon to unmount it.
 
