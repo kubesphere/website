@@ -8,14 +8,14 @@ weight: 3110
 
 KubeSphere 是 [GitHub](https://github.com/kubesphere) 上的一个开源项目，是成千上万名社区用户的聚集地。很多用户都在使用 KubeSphere 运行工作负载。对于在 Linux 上的安装，KubeSphere 既可以部署在云端，也可以部署在本地环境中，例如 AWS EC2、Azure VM 和裸机等。
 
-KubeSphere 为用户提供轻量级安装程序 [KubeKey](https://github.com/kubesphere/kubekey)（该程序支持安装 Kubernetes、KubeSphere 及相关插件），安装过程简单而友好。KubeKey 不仅能帮助用户在线创建集群，还能作为无网络连接环境中的离线安装解决方案。
+KubeSphere 为用户提供轻量级安装程序 [KubeKey](https://github.com/kubesphere/kubekey)（该程序支持安装 Kubernetes、KubeSphere 及相关插件），安装过程简单而友好。KubeKey 不仅能帮助用户在线创建集群，还能作为离线安装解决方案。
 
 以下是可用的安装选项：
 
 - [All-in-One](../../../quick-start/all-in-one-on-linux/)：在单个节点上安装 KubeSphere（仅为让用户快速熟悉 KubeSphere）。
 - [多节点安装](../multioverview/)：在多个节点上安装 KubeSphere（用于测试或开发）。
 - [在 Linux 上离线安装](../air-gapped-installation/)：将 KubeSphere 的所有镜像打包（便于在 Linux 上进行离线安装）。
-- [高可用安装](../../../installing-on-linux/high-availability-configurations/ha-configuration/)：安装具有多个节点的高可用 KubeSphere 集群，该集群用于生产环境中。
+- [高可用安装](../../../installing-on-linux/high-availability-configurations/ha-configuration/)：安装具有多个节点的高可用 KubeSphere 集群，该集群用于生产环境。
 - 最小化安装：仅安装 KubeSphere 所需的最少系统组件。以下是最低资源要求：
   - 2 个 CPU
   - 4 GB 运行内存
@@ -35,7 +35,6 @@ KubeSphere 为用户提供轻量级安装程序 [KubeKey](https://github.com/kub
 - 由于需要从互联网上拉取镜像，因此必须在联网环境下进行。否则，需要改用[离线环境安装 KubeSphere](../../installing-on-linux/introduction/air-gapped-installation/)。
 - 对于 All-in-One，唯一的节点既是主节点，也是工作节点。
 - 对于多节点安装，需要在配置文件中提供主机信息。
-- Linux 主机必须已安装 OpenSSH Server。
 - 在安装之前，请参见[端口要求](../port-firewall/)。
 
 ## KubeKey
@@ -47,12 +46,6 @@ KubeSphere 为用户提供轻量级安装程序 [KubeKey](https://github.com/kub
 自 v2.1.0 以来，KubeSphere 已经解耦了一些组件。默认情况下，KubeKey 仅安装必要的组件，这样安装速度快，资源消耗也最少。如果要启用增强的可插拔功能，请参见[启用可插拔组件](../../../pluggable-components/)了解详细信息。
 
 快速安装 KubeSphere 仅用于开发或测试，因为默认情况下它使用了基于 [openEBS](https://openebs.io/) 的 [Local Volume](https://kubernetes.io/zh/docs/concepts/storage/volumes/#local) 提供储存服务。如果需要在生产环境安装，请参见[高可用配置安装](../../../installing-on-linux/high-availability-configurations/ha-configuration/)。
-
-## 可插拔组件概述
-
-自 v2.1.0 起，KubeSphere 解耦了一些核心组件。这些组件设计为可插拔组件，您可以在安装之前或之后启用任意组件。默认情况下，KubeKey 不安装这些可插拔组件。有关更多信息，请参见[启用可插拔组件](../../../pluggable-components/)。
-
-![Pluggable Components](https://pek3b.qingstor.com/kubesphere-docs/png/20191207140846.png)
 
 ## 存储配置
 
