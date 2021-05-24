@@ -44,6 +44,12 @@ KubeSphere metering helps you track resource consumption within a given cluster 
    ![node-page](/images/docs/toolbox/metering-and-billing/view-resource-consumption/node-page.png)
    
    ![pod-page](/images/docs/toolbox/metering-and-billing/view-resource-consumption/pod-page.png)
+   
+   {{< notice note >}}
+   
+   To export the metering and billing data of an object as a CSV file, check the box on the left and click **✓**.
+   
+   {{</ notice >}} 
 
 ## View Workspace (Project) Resource Consumption
 
