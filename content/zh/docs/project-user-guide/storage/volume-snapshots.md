@@ -23,19 +23,12 @@ weight: 10320
 
 1. 以 `project-regular` 用户登录 KubeSphere Web 控制台并进入项目。在左侧导航栏选择**存储管理**下的**存储卷**，在页面右侧选择需要创建快照的存储卷。
 
-   ![select-volume](/images/docs/zh-cn/project-user-guide/volume-management/volume-snapshots/select-volume.jpg)
-
 2. 在存储卷详情页面，点击**更多操作**并从下拉菜单中选择**创建快照**。
 
-   ![drop-down-list-select](/images/docs/zh-cn/project-user-guide/volume-management/volume-snapshots/drop-down-list-select.jpg)
-
-3. 设置快照的名称，然后点击**确定**完成创建。快照的名称将作为快照的唯一标识符。
-
-   ![snapshot-name](/images/docs/zh-cn/project-user-guide/volume-management/volume-snapshots/snapshot-name.jpg)
+3. 在出现的对话框中，设置快照的名称，然后点击**确定**完成创建。快照的名称将作为快照的唯一标识符。
 
 4. 新建的快照显示在**存储卷快照**列表中。
 
-   ![snapshot-list](/images/docs/zh-cn/project-user-guide/volume-management/volume-snapshots/snapshot-list.jpg)
 
 ## 用快照创建存储卷
 
@@ -55,11 +48,9 @@ weight: 10320
 
    {{</ notice >}} 
 
-3. 选择访问模式，然后点击**下一步**。
+3. 在**存储卷设置**选项卡中，选择访问模式，然后点击**下一步**。
 
-   ![pvc-create](/images/docs/zh-cn/project-user-guide/volume-management/volume-snapshots/pvc-create.jpg)
-
-4. 在**高级设置**页面，为存储卷添加元数据（例如 **Label** 和 **Annotation**），然后点击**创建**完成操作。
+4. 在**高级设置**选项卡中，为存储卷添加元数据（例如 **Label** 和 **Annotation**），然后点击**创建**完成操作。
 
 5. 新建的存储卷显示在**存储卷**页面。
 
@@ -67,14 +58,10 @@ weight: 10320
 
 1. 以 `project-regular` 用户登录 KubeSphere Web 控制台并进入项目。在左侧导航栏选择**存储管理**下的**存储卷**，然后点击**创建**。
 
-   ![volumes-page](/images/docs/zh-cn/project-user-guide/volume-management/volume-snapshots/volumes-page.jpg)
-
 2. 在弹出的对话框中设置存储卷的名称，然后点击**下一步**。
 
-3. 在**存储卷设置**页面，将**方式**设置为**通过存储卷快照创建**，选择一个存储卷快照和访问模式，然后点击**下一步**。
+3. 在**存储卷设置**选项卡中，将**方式**设置为**通过存储卷快照创建**，选择一个存储卷快照和访问模式，然后点击**下一步**。
 
-   ![create-by-snapshot](/images/docs/zh-cn/project-user-guide/volume-management/volume-snapshots/create-by-snapshot.jpg)
-
-4. 在**高级设置**页面，为存储卷添加元数据（例如 **Label** 和 **Annotation**），然后点击**创建**完成操作。
+4. 在**高级设置**选项卡中，为存储卷添加元数据（例如 **Label** 和 **Annotation**），然后点击**创建**完成操作。
 
 5. 新建的存储卷显示在**存储卷**页面。
