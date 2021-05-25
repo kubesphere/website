@@ -103,7 +103,7 @@ kubectl logs -n kubesphere-system $(kubectl get pod -n kubesphere-system -l app=
 
 ![nodeport.png](/images/docs/tencent-tke/nodeport.png)
 
-- 由于服务安装时默认开启 NodePort 且端口为 30880，浏览器输入 `<公网 IP>:30880` ，并以默认账号（用户名 `admin`，密码 `P@88w0rd`）即可登录控制台。
+- 由于服务安装时默认开启 NodePort 且端口为 30880，浏览器输入 `<公网 IP>:30880` ，并以默认帐户（用户名 `admin`，密码 `P@88w0rd`）即可登录控制台。
 
 ![console.png](/images/docs/tencent-tke/console.png)
 
@@ -121,14 +121,14 @@ kubectl logs -n kubesphere-system $(kubectl get pod -n kubesphere-system -l app=
 
 ![loadbalancer3.png](/images/docs/tencent-tke/loadbalancer3.png)
 
-- 浏览器输入 `<LoadBalancer 公网 IP>:<映射端口>`，并以默认账号（用户名 `admin`，密码 `P@88w0rd`）即可登录控制台。
+- 浏览器输入 `<LoadBalancer 公网 IP>:<映射端口>`，并以默认帐户（用户名 `admin`，密码 `P@88w0rd`）即可登录控制台。
 
 ![console.png](/images/docs/tencent-tke/console.png)
 
 
 {{< notice tip >}}
 
-若您用 admin 账号无法登录控制台，界面显示 “Internal error occurred: account is not active” 且 `ks-controller-manager` pod 日志显示 “tls: bad certificate”，则需要更新一下 `ks-controller-manager` 的证书：
+若您用 admin 帐户无法登录控制台，界面显示 “Internal error occurred: account is not active” 且 `ks-controller-manager` pod 日志显示 “tls: bad certificate”，则需要更新一下 `ks-controller-manager` 的证书：
 
 ```bash
 kubectl apply -f https://raw.githubusercontent.com/kubesphere/ks-installer/2c4b479ec65110f7910f913734b3d069409d72a8/roles/ks-core/prepare/files/ks-init/users.iam.kubesphere.io.yaml

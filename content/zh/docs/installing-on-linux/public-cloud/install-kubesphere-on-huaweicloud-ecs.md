@@ -282,7 +282,7 @@ spec:
  # 指定配置文件创建集群
  ./kk create cluster --with-kubesphere v3.0.0 -f master-HA.yaml
 
- # 查看 KubeSphere 安装日志  -- 直到出现控制台的访问地址和登录账号
+ # 查看 KubeSphere 安装日志  -- 直到出现控制台的访问地址和登录帐户
 kubectl logs -n kubesphere-system $(kubectl get pod -n kubesphere-system -l app=ks-install -o jsonpath='{.items[0].metadata.name}') -f
  ```
 
@@ -308,7 +308,7 @@ https://kubesphere.io             2020-08-28 01:25:54
 #####################################################
 ```
 
-访问公网 IP + Port 为部署后的使用情况，使用默认账号密码 (`admin/P@88w0rd`)，文章组件安装为最大化，登录点击`平台管理>集群管理`可看到下图安装组件列表和机器情况。
+访问公网 IP + Port 为部署后的使用情况，使用默认帐户密码 (`admin/P@88w0rd`)，文章组件安装为最大化，登录点击`平台管理>集群管理`可看到下图安装组件列表和机器情况。
 
 
 ## 如何自定义开启可插拔组件
