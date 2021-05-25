@@ -1,7 +1,7 @@
 ---
 title: "安装持久化存储"
 keywords: 'KubeSphere, Kubernetes, 存储, 安装, 配置'
-description: '理解持久化存储'
+description: '理解持久化存储。'
 linkTitle: "安装持久化存储"
 weight: 3310
 ---

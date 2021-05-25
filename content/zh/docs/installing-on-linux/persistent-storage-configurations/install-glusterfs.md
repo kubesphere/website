@@ -1,7 +1,7 @@
 ---
 title: "安装 GlusterFS"
 keywords: 'KubeSphere, Kubernetes, GlusterFS, 安装, 配置, 存储'
-description: '如何创建 GlusterFS 提供存储服务的 KubeSphere.'
+description: '使用 KubeKey 搭建 KubeSphere 集群并配置 GlusterFS 存储。'
 linkTitle: "安装 GlusterFS"
 weight: 3340
 ---

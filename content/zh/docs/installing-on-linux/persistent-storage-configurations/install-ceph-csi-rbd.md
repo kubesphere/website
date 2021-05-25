@@ -1,7 +1,7 @@
 ---
 title: "安装 Ceph"
 keywords: 'KubeSphere, Kubernetes, Ceph, installation, configurations, storage'
-description: 'How to create a KubeSphere create with Ceph providing storage services.'
+description: 'How to create a KubeSphere cluster with Ceph providing storage services.'
 linkTitle: "安装 Ceph"
 weight: 3350
 ---
