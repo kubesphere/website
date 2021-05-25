@@ -7,7 +7,7 @@ linkTitle: "认证配置"
 weight: 12200
 ---
 
-KubeSphere 包含一个内置的 OAuth 服务和账户系统。用户通过获取 OAuth 访问令牌以对 API 进行身份验证。
+KubeSphere 包含一个内置的 OAuth 服务和帐户系统。用户通过获取 OAuth 访问令牌以对 API 进行身份验证。
 
 ## 认证配置
 
@@ -61,9 +61,9 @@ spec:
   * `identityProviders`: Identity providers
     * `name`: 身份提供者的名称。
     * `type`: 身份提供者的类型。
-    * `mappingMethod`: 账户映射方式. 值可以是 `auto` 或者 `lookup`。
-     * 默认值为 `auto`, 通过第三方账户登录时会自动创建关联账户。
-     * 如果值为 `lookup`, 你需要手动关联第三方账户与KubeSphere账户。
+    * `mappingMethod`: 帐户映射方式. 值可以是 `auto` 或者 `lookup`。
+     * 默认值为 `auto`, 通过第三方帐户登录时会自动创建关联帐户。
+     * 如果值为 `lookup`, 你需要手动关联第三方帐户与KubeSphere帐户。
     * `provider`: Identity provider 配置，此部分中的字段根据身份提供的类型而异。
 
 当您修改上述配置后，需要等待配置生效，可以通过以下命令查看相关进度及日志：
@@ -72,7 +72,7 @@ spec:
  kubectl -n kubesphere-system logs -l app=ks-installer -f
 ```
 
-如果 `mappingMethod` 设置为 `lookup`, 可以通过以下命令进行账户关联。 如果 `mappingMethod` 是 `auto` 你可以跳过这个部分。
+如果 `mappingMethod` 设置为 `lookup`, 可以通过以下命令进行帐户关联。 如果 `mappingMethod` 是 `auto` 你可以跳过这个部分。
 
    ```bash
    kubectl edit user <KubeSphere username>
@@ -100,4 +100,4 @@ KubeSphere 默认提供了以下几种类型的身份提供者：
 
 * [AliyunIDaaSProvider]()
 
-您也可以拓展 KubeSphere OAuth2 认证插件与您的账户系统进行集成。
+您也可以拓展 KubeSphere OAuth2 认证插件与您的帐户系统进行集成。
