@@ -1,7 +1,7 @@
 ---
 title: "Uninstall KubeSphere from Kubernetes"
 keywords: 'Kubernetes, KubeSphere, uninstall, remove-cluster'
-description: 'Remove KubeSphere from Kubernetes clusters.'
+description: 'Remove KubeSphere from a Kubernetes cluster.'
 linkTitle: "Uninstall KubeSphere from Kubernetes"
 weight: 4400
 ---
