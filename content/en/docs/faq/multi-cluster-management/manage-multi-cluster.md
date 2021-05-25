@@ -23,7 +23,7 @@ Once you build a multi-cluster environment on KubeSphere, you can manage it thro
 
 ### Resource Management
 
-It is recommended that you don't change a Host Cluster to a Member Cluster or the other way round. If a Member Cluster has been imported to a Host Cluster before, you have to use the same cluster name when importing it to a new Host Cluster after unbinding it from the previous Host Cluster.
+It is not recommended that you change a Host Cluster to a Member Cluster or the other way round. If a Member Cluster has been imported to a Host Cluster before, you have to use the same cluster name when importing it to a new Host Cluster after unbinding it from the previous Host Cluster.
 
 If you want to import the Member Cluster to a new Host Cluster while retaining existing projects (i.e. namespaces), you can follow the steps as below.
 
