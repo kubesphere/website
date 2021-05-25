@@ -1,7 +1,7 @@
 ---
 title: "离线安装"
 keywords: 'Kubernetes, KubeSphere, 离线, 安装'
-description: '探索在 air-gapped 的环境中安装 KubeSphere 的最佳实践。'
+description: '了解在离线环境中安装 KubeSphere 的最佳实践。'
 
 linkTitle: "离线安装"
 weight: 4310

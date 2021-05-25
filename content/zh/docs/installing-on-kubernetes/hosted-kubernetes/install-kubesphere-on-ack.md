@@ -1,7 +1,7 @@
 ---
 title: "在阿里云 ACK 上安装 KubeSphere"
 keywords: "kubesphere, kubernetes, docker, aliyun, ack"
-description: "介绍如何在阿里云容器服务 ACK 上部署 KubeSphere 3.0"
+description: "了解如何在阿里云容器服务 ACK 上部署 KubeSphere。"
 
 
 weight: 4250
