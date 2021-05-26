@@ -97,9 +97,9 @@
             </div>
             <h3><a href="{{ .url }}">{{ .title }}</a></h3>
             {{ if ge now.Unix $over}}
-                <button class="over-btn">{{ i18n "Watch replay" }}</button>
+                <a href="{{ .url }}"><button class="over-btn">{{ i18n "Watch replay" }}</button></a>
             {{ else }}
-                <button class="notice-btn">{{ i18n "View details" }}</button>
+                <a href="{{ .url }}"><button class="notice-btn">{{ i18n "View details" }}</button></a>
             {{ end }}
         </div>
         {{ end }}
