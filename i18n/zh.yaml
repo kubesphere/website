@@ -84,6 +84,8 @@
   translation: 全部
 - id: Watch replay
   translation: 观看回放
+- id: Watch live
+  translation: 观看直播
 - id: View details
   translation: 了解详情
 - id: Course theme
