@@ -65,9 +65,8 @@ header.navigation {
       }
       button {
         position: absolute;
-        top: 50%;
-        left: 50%;
-        transform: translate(-50%, -50%);
+        right: 20px;
+        bottom: 20px;
         padding: 10px 20px;
         border-radius: 28px;
         font-size: 16px;
