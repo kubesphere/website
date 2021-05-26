@@ -26,11 +26,11 @@ If you use the account `project-admin` (an account of the `admin` role at the pr
 
 1. Log in to the console as `ws-admin` and go to a project. On the **Overview** page, you can see project quotas remain unset if the project is newly created. Click **Set** to configure quotas.
 
-   ![project-quotas](/images/docs/workspace-administration/project-quotas/project-quotas.jpg)
+   ![project-quotas](/images/docs/workspace-administration/project-quotas/project-quotas.png)
 
-2. In the dialog that appears, you can see that KubeSphere does not set any requests or limits for a project by default. To set requests and limits to control CPU and memory resources, use the slider to move to a desired value or input numbers directly. Leaving a field blank means you do not set any requests or limits. 
+2. In the dialog that appears, you can see that KubeSphere does not set any requests or limits for a project by default. To set requests and limits to control CPU and memory resources, use the slider to move to a desired value or enter numbers directly. Leaving a field blank means you do not set any requests or limits. 
 
-   ![set-project-quotas](/images/docs/workspace-administration/project-quotas/set-project-quotas.jpg)
+   ![set-project-quotas](/images/docs/workspace-administration/project-quotas/set-project-quotas.png)
 
    {{< notice note >}}
 
@@ -38,21 +38,17 @@ If you use the account `project-admin` (an account of the `admin` role at the pr
 
    {{</ notice >}} 
 
-3. To set quotas for other resources, click **Add quota item** and select an object from the list.
+3. To set quotas for other resources, click **Add Quota Item** and select an object from the list.
 
-   ![set-other-resouce-quotas](/images/docs/workspace-administration/project-quotas/set-other-resouce-quotas.jpg)
+   ![set-other-resouce-quotas](/images/docs/workspace-administration/project-quotas/set-other-resouce-quotas.png)
 
 4. Click **OK** to finish setting quotas.
 
-5. Go to **Basic Info** in **Project Settings**, and you can see all resource quotas for the project.
+5. Go to **Basic Information** in **Project Settings**, and you can see all resource quotas for the project.
 
-   ![resrouce-quotas](/images/docs/workspace-administration/project-quotas/resrouce-quotas.jpg)
+6. To change project quotas, click **Manage Project** on the **Basic Information** page and select **Edit Quota**.
 
-6. To change project quotas, click **Manage Project** on the **Basic Info** page and select **Edit Quota**.
-
-   ![edit-quotas](/images/docs/workspace-administration/project-quotas/edit-quotas.jpg)
-
-7. Change project quotas directly on the **Project Quota** page and click **OK**.
+7. Change project quotas directly in the dialog that appears and click **OK**.
 
 ## See Also
 
