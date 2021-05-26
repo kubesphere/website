@@ -18,11 +18,11 @@ weight: 9500
 
   {{</ notice >}}
 
-## Enable/Disable Workspace Network Isolation
+## Enable or Disable Workspace Network Isolation
 
-Workspace network isolation is disabled by default. You can turn on network isolation in **Basic Info** under **Workspace Settings**.
+Workspace network isolation is disabled by default. You can turn on network isolation in **Basic Information** under **Workspace Settings**.
 
-![workspace-isolation](/images/docs/workspace-administration/workspace-network-isolation/workspace-isolation.jpg)
+![workspace-isolation](/images/docs/workspace-administration/workspace-network-isolation/workspace-isolation.png)
 
 {{< notice note >}}
 
@@ -30,7 +30,7 @@ When network isolation is turned on, egress traffic will be allowed by default, 
 
 {{</ notice >}}
 
-You can also disable network isolation on the **Basic Info** page.
+You can also disable network isolation on the **Basic Information** page.
 
 ## Best Practice
 

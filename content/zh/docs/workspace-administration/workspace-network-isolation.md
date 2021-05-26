@@ -18,11 +18,11 @@ weight: 9500
 
   {{</ notice >}}
 
-## 开启/关闭企业空间网络隔离
+## 开启或关闭企业空间网络隔离
 
 企业空间网络隔离默认关闭。您可以在**企业空间设置**下的**基本信息**页面开启网络隔离。
 
-![企业空间隔离](/images/docs/zh-cn/workspace-administration-and-user-guide/workspace-network-isolation/workspace-isolation.PNG)
+![workspace-isolation-page](/images/docs/zh-cn/workspace-administration-and-user-guide/workspace-network-isolation/workspace-isolation-page.png)
 
 {{< notice note >}}
 
