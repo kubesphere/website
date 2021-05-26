@@ -6,8 +6,6 @@ linkTitle: "容器组 IP 池"
 weight: 6920
 ---
 
-## 什么是容器组 IP 池
-
 容器组 IP 池用于规划 Pod 网络地址空间，每个容器组 IP 池之间的地址空间不能重叠。创建工作负载时，可选择特定的容器组 IP 池，这样创建出的 Pod 将从该容器组 IP 池中分配 IP。
 
 ## 安装前启用容器组 IP 池
@@ -78,7 +76,7 @@ weight: 6920
 自定义资源定义 (CRD) 允许用户在不新增 API 服务器的情况下创建一种新的资源类型，用户可以像使用其他 Kubernetes 原生对象一样使用这些自定义资源。
     {{</ notice >}}
 
-3. 在**资源列表**中，点击 `ks-installer` 右侧的三个点，然后选择**编辑配置文件**。
+3. 在**资源列表**中，点击 `ks-installer` 右侧的 <img src="/images/docs/zh-cn/enable-pluggable-components/pod-ip-pools/three-dots.png" height="20px">，然后选择**编辑配置文件**。
 
 4. 在该配置文件中，搜寻到 `network`，将 `network.ippool.type` 更改为 `calico`。完成后，点击右下角的**更新**保存配置。
 
@@ -94,8 +92,9 @@ weight: 6920
     kubectl logs -n kubesphere-system $(kubectl get pod -n kubesphere-system -l app=ks-install -o jsonpath='{.items[0].metadata.name}') -f
     ```
 
-    {{< notice tip >}}
-您可以通过点击控制台右下角的锤子图标来找到 Web kubectl 工具。
+    {{< notice note >}}
+
+您可以通过点击控制台右下角的 <img src="/images/docs/zh-cn/enable-pluggable-components/pod-ip-pools/hammer.png" height="20px"> 来找到 Web kubectl 工具。
     {{</ notice >}}
 
 ## 验证组件的安装

@@ -6,8 +6,6 @@ linkTitle: "服务拓扑图"
 weight: 6915
 ---
 
-## 什么是服务拓扑图
-
 您可以启用服务拓扑图以集成 [Weave Scope](https://www.weave.works/oss/scope/)（Docker 和 Kubernetes 的可视化和监控工具）。Weave Scope 使用既定的 API 收集信息，为应用和容器构建拓扑图。服务拓扑图显示在您的项目中，将服务之间的连接关系可视化。
 
 ## 安装前启用服务拓扑图
@@ -78,7 +76,7 @@ weight: 6915
 自定义资源定义 (CRD) 允许用户在不新增 API 服务器的情况下创建一种新的资源类型，用户可以像使用其他 Kubernetes 原生对象一样使用这些自定义资源。
     {{</ notice >}}
 
-3. 在**资源列表**中，点击 `ks-installer` 右侧的三个点，然后选择**编辑配置文件**。
+3. 在**资源列表**中，点击 `ks-installer` 右侧的 <img src="/images/docs/zh-cn/enable-pluggable-components/service-topology/three-dots.png" height="20px">，然后选择**编辑配置文件**。
 
 4. 在该配置文件中，搜寻到 `network`，将 `network.topology.type` 更改为 `weave-scope`。完成后，点击右下角的**更新**保存配置。
 
@@ -94,8 +92,9 @@ weight: 6915
     kubectl logs -n kubesphere-system $(kubectl get pod -n kubesphere-system -l app=ks-install -o jsonpath='{.items[0].metadata.name}') -f
     ```
 
-    {{< notice tip >}}
-您可以通过点击控制台右下角的锤子图标来找到 Web kubectl 工具。
+    {{< notice note >}}
+
+您可以通过点击控制台右下角的 <img src="/images/docs/zh-cn/enable-pluggable-components/service-topology/hammer.png" height="20px"> 来找到 Web kubectl 工具。
     {{</ notice >}}
 
 ## 验证组件的安装
@@ -106,7 +105,7 @@ weight: 6915
 
 进入一个项目中，导航到**应用负载**下的**服务**，即可看到**拓扑图**选项卡下**服务**的拓扑图。
 
-![topology1](/images/docs/zh-cn/enable-pluggable-components/service-topology/topology1.png)
+![topology1](/images/docs/zh-cn/enable-pluggable-components/service-topology/topology.png)
 
 {{</ tab >}}
 

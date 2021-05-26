@@ -6,8 +6,6 @@ linkTitle: "Metrics Server"
 weight: 6910
 ---
 
-## 什么是 Metrics Server
-
 KubeSphere 支持用于[部署](../../project-user-guide/application-workloads/deployments/)的 Pod 弹性伸缩程序 (HPA)。在 KubeSphere 中，Metrics Server 控制着 HPA 是否启用。您可以根据不同类型的指标（例如 CPU 和内存使用率，以及最小和最大副本数），使用 HPA 对象对部署 (Deployment) 自动伸缩。通过这种方式，HPA 可以帮助确保您的应用程序在不同情况下都能平稳、一致地运行。
 
 ## 在安装前启用 Metrics Server
@@ -60,12 +58,11 @@ KubeSphere 支持用于[部署](../../project-user-guide/application-workloads/d
 
     ```bash
     kubectl apply -f https://github.com/kubesphere/ks-installer/releases/download/v3.1.0/kubesphere-installer.yaml
-
+    
     kubectl apply -f cluster-configuration.yaml
     ```
     
     {{< notice note >}}
-    
 
 如果您在某些云托管的 Kubernetes 引擎上安装 KubeSphere，那么很可能您的环境中已经安装了 Metrics Server。在这种情况下，不建议您在 `cluster-configuration.yaml` 中启用 Metrics Server，因为这可能会在安装过程中引起冲突。    {{</ notice >}} 
 
@@ -73,8 +70,6 @@ KubeSphere 支持用于[部署](../../project-user-guide/application-workloads/d
 
 1. 以 `admin` 身份登录控制台。点击左上角**平台管理**，选择**集群管理**。
    
-    ![clusters-management](/images/docs/zh-cn/enable-pluggable-components/kubesphere-metrics-server/clusters-management.png)
-    
 2. 点击**自定义资源 CRD**，在搜索栏中输入 `clusterconfiguration`。点击搜索结果查看详情页。
 
     {{< notice info >}}
@@ -83,9 +78,7 @@ KubeSphere 支持用于[部署](../../project-user-guide/application-workloads/d
 
     {{</ notice >}}
 
-3. 在**资源列表**中，点击 `ks-installer` 右侧的三个点，选择**编辑配置文件**。
-
-    ![edit-yaml](/images/docs/zh-cn/enable-pluggable-components/kubesphere-metrics-server/edit-yaml.png)
+3. 在**资源列表**中，点击 `ks-installer` 右侧的 <img src="/images/docs/zh-cn/enable-pluggable-components/metrics-server/three-dots.png" height="20px">，选择**编辑配置文件**。
 
 4. 在该 YAML 文件中，导航到 `metrics_server`，在 `enabled` 一行将 `false` 更改为 `true`。完成后，点击右下角的**更新**以保存配置。
 
@@ -100,8 +93,9 @@ KubeSphere 支持用于[部署](../../project-user-guide/application-workloads/d
     kubectl logs -n kubesphere-system $(kubectl get pod -n kubesphere-system -l app=ks-install -o jsonpath='{.items[0].metadata.name}') -f
     ```
 
-    {{< notice tip >}}
-可以通过点击控制台右下角的锤子图标找到 kubectl 工具。
+    {{< notice note >}}
+
+可以通过点击控制台右下角的 <img src="/images/docs/zh-cn/enable-pluggable-components/metrics-server/hammer.png" height="20px"> 找到 kubectl 工具。
     {{</ notice >}}
 
 ## 验证组件的安装

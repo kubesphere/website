@@ -6,8 +6,6 @@ linkTitle: "Service Topology"
 weight: 6915
 ---
 
-## What is Service Topology
-
 You can enable Service Topology to integrate [Weave Scope](https://www.weave.works/oss/scope/), a visualization and monitoring tool for Docker and Kubernetes. Weave Scope uses established APIs to collect information to build a topology of your apps and containers. The Service topology displays in your project, providing you with visual representations of connections based on traffic.
 
 ## Enable Service Topology before Installation
@@ -77,7 +75,7 @@ As you [install KubeSphere on Kubernetes](../../installing-on-kubernetes/introdu
 A Custom Resource Definition (CRD) allows users to create a new type of resources without adding another API server. They can use these resources like any other native Kubernetes objects.
     {{</ notice >}}
 
-3. In **Resource List**, click the three dots on the right of `ks-installer` and select **Edit YAML**.
+3. In **Resource List**, click <img src="/images/docs/enable-pluggable-components/service-topology/three-dots.png" height="20px"> on the right of `ks-installer` and select **Edit YAML**.
 
 4. In this YAML file, navigate to `network` and change `network.topology.type` to `weave-scope`. After you finish, click **Update** in the bottom-right corner to save the configuration.
 
@@ -93,8 +91,9 @@ A Custom Resource Definition (CRD) allows users to create a new type of resource
     kubectl logs -n kubesphere-system $(kubectl get pod -n kubesphere-system -l app=ks-install -o jsonpath='{.items[0].metadata.name}') -f
     ```
 
-    {{< notice tip >}}
-You can find the web kubectl tool by clicking the hammer icon in the bottom-right corner of the console.
+    {{< notice note >}}
+
+You can find the web kubectl tool by clicking <img src="/images/docs/enable-pluggable-components/service-topology/hammer.png" height="20px"> in the bottom-right corner of the console.
     {{</ notice >}}
 
 ## Verify the Installation of the Component

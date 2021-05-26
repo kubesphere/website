@@ -6,8 +6,6 @@ linkTitle: "KubeSphere 日志系统"
 weight: 6400
 ---
 
-## 什么是 KubeSphere 日志系统
-
 KubeSphere 为日志收集、查询和管理提供了一个强大的、全面的、易于使用的日志系统。它涵盖了不同层级的日志，包括租户、基础设施资源和应用。用户可以从项目、工作负载、Pod 和关键字等不同维度对日志进行搜索。与 Kibana 相比，KubeSphere 基于租户的日志系统中，每个租户只能查看自己的日志，从而可以在租户之间提供更好的隔离性和安全性。除了 KubeSphere 自身的日志系统，该容器平台还允许用户添加第三方日志收集器，如 Elasticsearch、Kafka 和 Fluentd。
 
 有关更多信息，请参见[日志查询](../../toolbox/log-query/)。
@@ -98,7 +96,7 @@ KubeSphere 为日志收集、查询和管理提供了一个强大的、全面的
 
     ```bash
     kubectl apply -f https://github.com/kubesphere/ks-installer/releases/download/v3.1.0/kubesphere-installer.yaml
-
+    
     kubectl apply -f cluster-configuration.yaml
     ```
 
@@ -106,19 +104,15 @@ KubeSphere 为日志收集、查询和管理提供了一个强大的、全面的
 
 1. 以 `admin` 身份登录控制台。点击左上角的**平台管理**，选择**集群管理**。
    
-   ![集群管理](/images/docs/zh-cn/enable-pluggable-components/kubesphere-logging-system/clusters-management.png)
-
 2. 点击**自定义资源 CRD**，在搜索栏中输入 `clusterconfiguration`。点击结果查看其详细页面。
 
     {{< notice info >}}
 
-自定义资源定义（CRD）允许用户在不增加额外 API 服务器的情况下创建一种新的资源类型，用户可以像使用其他 Kubernetes 原生对象一样使用这些自定义资源。
+自定义资源定义 (CRD) 允许用户在不增加额外 API 服务器的情况下创建一种新的资源类型，用户可以像使用其他 Kubernetes 原生对象一样使用这些自定义资源。
 
 {{</ notice >}}
 
-3. 在**资源列表**中，点击 `ks-installer` 右边的三个点，选择**编辑配置文件**。
-
-    ![编辑 yaml](/images/docs/zh-cn/enable-pluggable-components/kubesphere-logging-system/edit-yaml.PNG)
+3. 在**资源列表**中，点击 `ks-installer` 右侧的 <img src="/images/docs/zh-cn/enable-pluggable-components/kubesphere-logging-system/three-dots.png" height="20px">，选择**编辑配置文件**。
 
 4. 在该 YAML 文件中，搜寻到 `logging`，将 `enabled` 的 `false` 改为 `true`。完成后，点击右下角的**更新**，保存配置。
 
@@ -149,9 +143,9 @@ KubeSphere 为日志收集、查询和管理提供了一个强大的、全面的
     kubectl logs -n kubesphere-system $(kubectl get pod -n kubesphere-system -l app=ks-install -o jsonpath='{.items[0].metadata.name}') -f
     ```
 
-    {{< notice tip >}}
+    {{< notice note >}}
 
-您可以通过点击控制台右下角的锤子图标找到 Web Kubectl 工具。
+您可以通过点击控制台右下角的 <img src="/images/docs/zh-cn/enable-pluggable-components/kubesphere-logging-system/hammer.png" height="20px"> 找到 Web Kubectl 工具。
 
 {{</ notice >}}
 

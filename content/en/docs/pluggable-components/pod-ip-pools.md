@@ -6,8 +6,6 @@ linkTitle: "Pod IP Pools"
 weight: 6920
 ---
 
-## What are Pod IP Pools
-
 A Pod IP Pool is used to manage the Pod network address space, and the address space between each Pod IP Pool cannot overlap. When you create a workload, you can select a specific Pod IP Pool, so that created Pods will be assigned IP addresses from this Pod IP Pool.
 
 ## Enable Pod IP Pools before Installation
@@ -77,7 +75,7 @@ As you [install KubeSphere on Kubernetes](../../installing-on-kubernetes/introdu
 A Custom Resource Definition (CRD) allows users to create a new type of resources without adding another API server. They can use these resources like any other native Kubernetes objects.
     {{</ notice >}}
 
-3. In **Resource List**, click the three dots on the right of `ks-installer` and select **Edit YAML**.
+3. In **Resource List**, click <img src="/images/docs/enable-pluggable-components/pod-ip-pools/three-dots.png" height="20px"> on the right of `ks-installer` and select **Edit YAML**.
 
 4. In this YAML file, navigate to `network` and change `network.ippool.type` to `calico`. After you finish, click **Update** in the bottom-right corner to save the configuration.
 
@@ -93,8 +91,9 @@ A Custom Resource Definition (CRD) allows users to create a new type of resource
     kubectl logs -n kubesphere-system $(kubectl get pod -n kubesphere-system -l app=ks-install -o jsonpath='{.items[0].metadata.name}') -f
     ```
 
-    {{< notice tip >}}
-You can find the web kubectl tool by clicking the hammer icon in the bottom-right corner of the console.
+    {{< notice note >}}
+
+You can find the web kubectl tool by clicking <img src="/images/docs/enable-pluggable-components/pod-ip-pools/hammer.png" height="20px"> in the bottom-right corner of the console.
     {{</ notice >}}
 
 ## Verify the Installation of the Component

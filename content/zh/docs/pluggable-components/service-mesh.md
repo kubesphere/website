@@ -2,12 +2,9 @@
 title: "KubeSphere 服务网格"
 keywords: "Kubernetes, Istio, KubeSphere, 服务网格, 微服务"
 description: "了解如何启用服务网格，从而提供不同的流量管理策略进行微服务治理。"
-
 linkTitle: "KubeSphere 服务网格"
 weight: 6800
 ---
-
-## 什么是 KubeSphere 服务网格
 
 KubeSphere 服务网格基于 [Istio](https://istio.io/)，将微服务治理和流量管理可视化。它拥有强大的工具包，包括**熔断机制、蓝绿部署、金丝雀发布、流量镜像、分布式链路追踪、可观测性和流量控制**等。KubeSphere 服务网格支持代码无侵入的微服务治理，帮助开发者快速上手，Istio 的学习曲线也极大降低。KubeSphere 服务网格的所有功能都旨在满足用户的业务需求。
 
@@ -63,7 +60,7 @@ KubeSphere 服务网格基于 [Istio](https://istio.io/)，将微服务治理和
 
     ```bash
     kubectl apply -f https://github.com/kubesphere/ks-installer/releases/download/v3.1.0/kubesphere-installer.yaml
-
+    
     kubectl apply -f cluster-configuration.yaml
     ```
 
@@ -71,17 +68,14 @@ KubeSphere 服务网格基于 [Istio](https://istio.io/)，将微服务治理和
 
 1. 以 `admin` 身份登录控制台。点击左上角的**平台管理**，选择**集群管理**。
    
-    ![集群管理](/images/docs/zh-cn/enable-pluggable-components/kubesphere-service-mesh/clusters-management.png)
-    
 2. 点击**自定义资源 CRD**，在搜索栏中输入 `clusterconfiguration`。点击结果查看其详细页面。
 
     {{< notice info >}}
 自定义资源定义 (CRD) 允许用户在不新增 API 服务器的情况下创建一种新的资源类型，用户可以像使用其他 Kubernetes 原生对象一样使用这些自定义资源。
     {{</ notice >}}
 
-3. 在**资源列表**中，点击 `ks-installer` 右边的三个点，选择**编辑配置文件**。
-    ![编辑 YAML](/images/docs/zh-cn/enable-pluggable-components/kubesphere-service-mesh/edit-yaml.PNG)
-
+3. 在**资源列表**中，点击 `ks-installer` 右侧的 <img src="/images/docs/zh-cn/enable-pluggable-components/kubesphere-service-mesh/three-dots.png" height="20px">，选择**编辑配置文件**。
+   
 4. 在该 YAML 文件中，搜寻到 `servicemesh`，将 `enabled` 的 `false` 改为 `true`。完成后，点击右下角的**更新**，保存配置。
 
     ```yaml
@@ -95,8 +89,9 @@ KubeSphere 服务网格基于 [Istio](https://istio.io/)，将微服务治理和
     kubectl logs -n kubesphere-system $(kubectl get pod -n kubesphere-system -l app=ks-install -o jsonpath='{.items[0].metadata.name}') -f
     ```
 
-    {{< notice tip >}}
-您可以通过点击控制台右下角的锤子图标找到 Web Kubectl 工具。
+    {{< notice note >}}
+    
+您可以通过点击控制台右下角的 <img src="/images/docs/zh-cn/enable-pluggable-components/kubesphere-service-mesh/hammer.png" height="20px"> 找到 Web Kubectl 工具。
     {{</ notice >}}
 
 ## 验证组件的安装
