@@ -45,7 +45,9 @@ You use KubeSphere **Metering and Billing** to:
 
 ![metering-and-billing-2](/images/blogs/en/kubesphere-3.1.0-ga-announcement/metering-and-billing-2.png)
 
-Going forward, the KubeSphere Container Platform seeks to provide a more comprehensive operational system for metering and billing.
+<iframe width="560" height="315" src="https://www.youtube.com/embed/z1VrkAvdCi4" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+Going forward, the [KubeSphere Container Platform](http://kubesphere.io/) seeks to provide a more comprehensive operational system for metering and billing.
 
 ### Edge node management
 
@@ -80,6 +82,8 @@ Observability has remained a central focus for us from day one as we work to hel
 
 ![notification](/images/blogs/en/kubesphere-3.1.0-ga-announcement/notification.png)
 
+<iframe width="560" height="315" src="https://www.youtube.com/embed/rheLUnCCbsA" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
 ### DevOps
 
 [KubeSphere DevOps](https://kubesphere.io/docs/devops-user-guide/understand-and-manage-devops-projects/overview/) is one of the most used - if not the most used - functions among KubeSphere users as it automates software release processes. Since its integration into KubeSphere, it has greatly increased enterprises' ability to deliver applications and services with speed and security.
@@ -95,6 +99,8 @@ The new KubeSphere DevOps System has been further stabilized to improve user exp
 
 The CI/CD templates we provide can be used in most cases directly while you can edit them as needed. As part of our effort to offer out-of-the-box features, these templates will help you build and deliver products  more rapidly and reliably.
 
+<iframe width="560" height="315" src="https://www.youtube.com/embed/MU5LdM83x9s" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
 ### Microservices governance
 
 KubeSphere provides a variety of traffic governance solutions based on Istio, including grayscale release, circuiting breaking, and distributed tracing. As we renew our commitment to visualization and observability, we have enhanced microservices governance features:
@@ -106,6 +112,8 @@ KubeSphere provides a variety of traffic governance solutions based on Istio, in
 - Users can now manage Istio directly through Kiali.
 
 ![microservices](/images/blogs/en/kubesphere-3.1.0-ga-announcement/microservices.png)
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/XRwCA819c90" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
 ### Installation
 
