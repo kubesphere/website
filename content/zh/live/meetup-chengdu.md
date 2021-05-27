@@ -1,6 +1,7 @@
 ---
 title: KubeSphere and Friends | Kubernetes and Cloud Native Meetup ——成都站
-description:
+description: 为了跟社区新老朋友们零距离交流，我们将联合 CNCF 和其他合作伙伴，从五月到七月，在上海、杭州、深圳、成都这四个城市分别为大家带来技术的交流与碰撞。2021 年继上海站首次 Meetup 火爆全场之后，我们将依旧延续 KubeSphere and Friends 的主题，于 6 月 19 日在成都为大家带来 Kubernetes and Cloud Native Meetup。
+keywords: KubeSphere,Meetup,Chengdu
 css: scss/live-detail.scss
 
 section1:

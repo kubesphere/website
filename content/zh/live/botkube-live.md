@@ -1,6 +1,7 @@
 ---
 title: 基于 KubeSphere 与 BotKube 搭建 K8s 多集群监控告警体系
-description:
+description: 本次技术分享介绍了驭势科技如何采用 KubeSphere 及相关云原生技术应对无人驾驶的业务场景，实现应用的持续发布与持续集成，以及企业在早期对容器平台选型的思考。并进一步演示如何使用 KubeSphere 纳管多个 Kubernetes 集群，结合开源的 BotKube 工具快速搭建多集群监控告警体系，以实现无人驾驶场景云脑服务的监控告警。
+keywords:  KubeSphere,BotKube,Kubernetes,monitoring,notification
 css: scss/live-detail.scss
 
 section1:

@@ -1,6 +1,7 @@
 ---
 title: KubeSphere and Friends | Kubernetes and Cloud Native Meetup ——上海站
-description:
+description: KubeSphere and Friends 2021，Kubernetes and Cloud Native Meetup 首站上海站顺利举办，围绕“云原生、边缘云、微服务、DevOps”等火热话题，来自 IT、金融、物流、媒体等行业技术大牛、嘉宾以及社区伙伴带来最新的思考与实践。
+keywords: KubeSphere,Meetup,Shanghai
 css: scss/live-detail.scss
 
 section1:

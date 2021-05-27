@@ -1,6 +1,7 @@
 ---
 title: CNCF 网研会：使用 PorterLB 和 KubeSphere 在物理机 K8s 轻松暴露服务
-description:
+description: PorterLB 允许在裸金属 Kubernetes 集群对外暴露服务，使用户获得与云端暴露服务的一致体验。用户可以使用开源的 KubeSphere 一键安装部署 PorterLB 至 Kubernetes 物理机集群，轻松对外管理和暴露 LoadBalancer 类型的服务。
+keywords: PoterLB,KubeSphere,Kubernetes,cluster
 css: scss/live-detail.scss
 
 section1:

@@ -1,6 +1,7 @@
 ---
 title: Kubernetes 混合云在教育服务行业的最佳实践
-description:
+description: 本次技术分享将介绍北京红亚科技如何使用 QKE (KubeSphere) 纳管多个 ACK 集群，满足跨多云与多集群实现应用的统一部署分发的应用场景，并将公司所有在线教育 SaaS 应用全面上线 Kubernetes，服务于全国 600 多所高校。
+keywords: KubeSphere,ACK,QKE,SaaS,multicluster
 css: scss/live-detail.scss
 
 section1:
