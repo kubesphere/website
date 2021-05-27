@@ -39,7 +39,7 @@ section3:
   videoLink: https://www.youtube.com/embed/EkGWtwcsdE4
   content: 想自己动手体验实际操作？
   btnContent: 开始动手实验
-  link: https://kubesphere.com.cn/docs/pluggable-components/service-mesh/
+  link: docs/pluggable-components/service-mesh/
   bgLeft: /images/service-mesh/3-2.svg
   bgRight: /images/service-mesh/3.svg
 ---

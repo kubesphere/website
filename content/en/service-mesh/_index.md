@@ -39,7 +39,7 @@ section3:
   videoLink: https://www.youtube.com/embed/EkGWtwcsdE4
   content: Want to get started in action by following the hands-on lab?
   btnContent: Start Hands-on Lab
-  link: https://kubesphere.io/docs/pluggable-components/service-mesh/
+  link: docs/pluggable-components/service-mesh/
   bgLeft: /images/service-mesh/3-2.svg
   bgRight: /images/service-mesh/3.svg
 ---

@@ -122,3 +122,7 @@
   translation: Your privacy is important to us. We use cookies to remember subscription details, optimize site functionality, and deliver content tailored to your interests. To find out more, see our <a href="{{.}}">privacy policy</a>.
 - id: Accept and continue
   translation: Accept and continue
+- id: Install on Kubernetes
+  translation: Install on Kubernetes
+- id: Install on Linux
+  translation: Install on Linux

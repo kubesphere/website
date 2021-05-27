@@ -46,7 +46,7 @@ section3:
   image: /images/service-mesh/15.jpg
   content: 想自己动手体验实际操作？
   btnContent: 开始动手实验
-  link: https://kubesphere.com.cn/docs/pluggable-components/devops/
+  link: docs/pluggable-components/devops/
   bgLeft: /images/service-mesh/3-2.svg
   bgRight: /images/service-mesh/3.svg
 ---

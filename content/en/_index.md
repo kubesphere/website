@@ -9,10 +9,6 @@ section1:
   title: KubeSphere Container Platform
   topic: The Kubernetes platform tailored for hybrid multicloud
   content: KubeSphere is a distributed operating system managing cloud native applications with Kubernetes as its kernel, and provides plug-and-play architecture for the seamless integration of third-party applications to boost its ecosystem.
-  btnContent1: Install on Kubernetes
-  downloadLink1: "https://kubesphere.io/docs/quick-start/minimal-kubesphere-on-k8s/"
-  btnContent2: Install on Linux
-  downloadLink2: "https://kubesphere.io/docs/quick-start/all-in-one-on-linux/"
 
 section2:
   title: One Kubernetes Platform for Full Stack Solutions
