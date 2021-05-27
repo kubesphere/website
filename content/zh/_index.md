@@ -9,10 +9,6 @@ section1:
   title: KubeSphere 容器平台
   topic: 面向云原生应用的<br>容器混合云
   content: KubeSphere 愿景是打造一个以 Kubernetes 为内核的云原生分布式操作系统，它的架构可以非常方便地使第三方应用与云原生生态组件进行即插即用（plug-and-play）的集成，支持云原生应用在多云与多集群的统一分发和运维管理。
-  btnContent1: 在 Kubernetes 安装
-  downloadLink1: "https://kubesphere.com.cn/docs/quick-start/minimal-kubesphere-on-k8s/"
-  btnContent2: 在 Linux 安装
-  downloadLink2: "https://kubesphere.com.cn/docs/quick-start/all-in-one-on-linux/"
 
 section2:
   title: 全栈的平台级解决方案
