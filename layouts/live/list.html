@@ -14,6 +14,7 @@
       <div class="live-2-left">
           <a href="{{ .url }}">
             <img src="{{ .image }}" alt="">
+            <button>{{ i18n "View details" }}</button>
           </a>
       </div>
       <div class="live-2-right">
@@ -113,7 +114,7 @@
         <div class="left-div">
             <h2>{{ .title }}</h2>
             <p>{{ .content }}</p>
-            <a class="btn-a" href="{{ .url }}">{{ .btn }}</a>
+            <a class="btn-a" href="{{ .url }}" target="_blank">{{ .btn }}</a>
         </div>
         <img src="{{ .image }}" alt="">
     </div>
