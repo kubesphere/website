@@ -6,8 +6,6 @@ linkTitle: "KubeEdge"
 weight: 6930
 ---
 
-## What is KubeEdge
-
 [KubeEdge](https://kubeedge.io/en/) is an open-source system for extending native containerized application orchestration capabilities to hosts at edge. It supports multiple edge protocols and looks to provide unified management of cloud and edge applications and resources.
 
 KubeEdge has components running in two separate places - cloud and edge nodes. The components running on the cloud, collectively known as CloudCore, include Controllers and Cloud Hub. Cloud Hub serves as the gateway for the requests sent by edge nodes while Controllers function as orchestrators. The components running on edge nodes, collectively known as EdgeCore, include EdgeHub, EdgeMesh, MetadataManager, and DeviceTwin. For more information, see [the KubeEdge website](https://kubeedge.io/en/).
@@ -84,7 +82,7 @@ As you [install KubeSphere on Kubernetes](../../installing-on-kubernetes/introdu
 A Custom Resource Definition (CRD) allows users to create a new type of resources without adding another API server. They can use these resources like any other native Kubernetes objects.
     {{</ notice >}}
 
-3. In **Resource List**, click the three dots on the right of `ks-installer` and select **Edit YAML**.
+3. In **Resource List**, click <img src="/images/docs/enable-pluggable-components/kubeedge/three-dots.png" height="20px"> on the right of `ks-installer` and select **Edit YAML**.
    
 4. In this YAML file, navigate to `kubeedge.enabled` and enable it by setting it to `true`.
 
@@ -107,8 +105,9 @@ The `kubeedge` section is not included in `cluster-configuration.yaml` if your c
     kubectl logs -n kubesphere-system $(kubectl get pod -n kubesphere-system -l app=ks-install -o jsonpath='{.items[0].metadata.name}') -f
     ```
 
-    {{< notice tip >}}
-You can find the web kubectl tool by clicking the hammer icon in the bottom-right corner of the console.
+    {{< notice note >}}
+
+You can find the web kubectl tool by clicking <img src="/images/docs/enable-pluggable-components/kubeedge/hammer.png" height="20px"> in the bottom-right corner of the console.
     {{</ notice >}}
 
 ## Enable KubeEdge after Upgrade

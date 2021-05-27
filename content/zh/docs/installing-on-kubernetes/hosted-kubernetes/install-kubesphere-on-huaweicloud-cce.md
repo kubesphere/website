@@ -104,7 +104,7 @@ kubectl apply -f https://github.com/kubesphere/ks-installer/releases/download/v3
 
 {{< notice warning >}}
 
-在开启 Istio 组件之前，由于自定义资源定义（CRD）冲突的问题，需要先删除华为 CCE 自带的 `applications.app.k8s.io` ，最直接的方式是通过 kubectl 工具来完成：
+在开启 Istio 组件之前，由于自定义资源定义 (CRD) 冲突的问题，需要先删除华为 CCE 自带的 `applications.app.k8s.io` ，最直接的方式是通过 kubectl 工具来完成：
 
 ```bash
 kubectl delete crd applications.app.k8s.io

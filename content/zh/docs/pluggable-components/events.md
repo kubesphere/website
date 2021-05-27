@@ -6,8 +6,6 @@ linkTitle: "KubeSphere 事件系统"
 weight: 6500
 ---
 
-## 什么是 KubeSphere 事件系统
-
 KubeSphere 事件系统使用户能够跟踪集群内部发生的事件，例如节点调度状态和镜像拉取结果。这些事件会被准确记录下来，并在 Web 控制台中显示具体的原因、状态和信息。要查询事件，用户可以快速启动 Web 工具箱，在搜索栏中输入相关信息，并有不同的过滤器（如关键字和项目）可供选择。事件也可以归档到第三方工具，例如 Elasticsearch、Kafka 或 Fluentd。
 
 有关更多信息，请参见[事件查询](../../toolbox/events-query/)。
@@ -96,7 +94,7 @@ KubeSphere 事件系统使用户能够跟踪集群内部发生的事件，例如
 
     ```bash
     kubectl apply -f https://github.com/kubesphere/ks-installer/releases/download/v3.1.0/kubesphere-installer.yaml
-
+    
     kubectl apply -f cluster-configuration.yaml
     ```
 
@@ -104,8 +102,6 @@ KubeSphere 事件系统使用户能够跟踪集群内部发生的事件，例如
 
 1. 以 `admin` 身份登录控制台。点击左上角的**平台管理**，选择**集群管理**。
    
-    ![集群管理](/images/docs/zh-cn/enable-pluggable-components/kubesphere-events/clusters-management.png)
-    
 2. 点击**自定义资源 CRD**，在搜索栏中输入 `clusterconfiguration`。点击结果查看其详细页面。
 
     {{< notice info >}}
@@ -114,9 +110,7 @@ KubeSphere 事件系统使用户能够跟踪集群内部发生的事件，例如
 
 {{</ notice >}}
 
-3. 在**资源列表**中，点击 `ks-installer` 右边的三个点，选择**编辑配置文件**。
-
-     ![编辑 YAML](/images/docs/zh-cn/enable-pluggable-components/kubesphere-events/edit-yaml.PNG)
+3. 在**资源列表**中，点击 `ks-installer` 右侧的 <img src="/images/docs/zh-cn/enable-pluggable-components/kubesphere-events/three-dots.png" height="20px">，选择**编辑配置文件**。
 
 4. 在该 YAML 文件中，搜寻到 `events`，将 `enabled` 的 `false` 改为 `true`。完成后，点击右下角的**更新**，保存配置。
 
@@ -148,9 +142,9 @@ KubeSphere 事件系统使用户能够跟踪集群内部发生的事件，例如
     kubectl logs -n kubesphere-system $(kubectl get pod -n kubesphere-system -l app=ks-install -o jsonpath='{.items[0].metadata.name}') -f
     ```
 
-    {{< notice tip >}}
+    {{< notice note >}}
 
-您可以通过点击控制台右下角的锤子图标找到 Web Kubectl 工具。
+您可以通过点击控制台右下角的 <img src="/images/docs/zh-cn/enable-pluggable-components/kubesphere-events/hammer.png" height="20px"> 找到 Web Kubectl 工具。
 
 {{</ notice >}}
 

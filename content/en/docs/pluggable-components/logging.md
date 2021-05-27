@@ -6,8 +6,6 @@ linkTitle: "KubeSphere Logging System"
 weight: 6400
 ---
 
-## What is KubeSphere Logging System
-
 KubeSphere provides a powerful, holistic and easy-to-use logging system for log collection, query and management. It covers logs at varied levels, including tenants, infrastructure resources, and applications. Users can search logs from different dimensions, such as project, workload, Pod and keyword. Compared with Kibana, the tenant-based logging system of KubeSphere features better isolation and security among tenants as tenants can only view their own logs. Apart from KubeSphere's own logging system, the container platform also allows users to add third-party log collectors, such as Elasticsearch, Kafka and Fluentd.
 
 For more information, see [Log Query](../../toolbox/log-query/).
@@ -98,7 +96,7 @@ By default, ks-installer will install Elasticsearch internally if Logging is ena
 
     ```bash
     kubectl apply -f https://github.com/kubesphere/ks-installer/releases/download/v3.1.0/kubesphere-installer.yaml
-
+    
     kubectl apply -f cluster-configuration.yaml
     ```
 
@@ -106,8 +104,6 @@ By default, ks-installer will install Elasticsearch internally if Logging is ena
 
 1. Log in to the console as `admin`. Click **Platform** in the top-left corner and select **Cluster Management**.
    
-   ![clusters-management](/images/docs/enable-pluggable-components/kubesphere-logging-system/clusters-management.png)
-
 2. Click **CRDs** and enter `clusterconfiguration` in the search bar. Click the result to view its detail page.
 
     {{< notice info >}}
@@ -116,9 +112,7 @@ A Custom Resource Definition (CRD) allows users to create a new type of resource
 
 {{</ notice >}}
 
-3. In **Resource List**, click the three dots on the right of `ks-installer` and select **Edit YAML**.
-
-    ![edit-yaml](/images/docs/enable-pluggable-components/kubesphere-logging-system/edit-yaml.png)
+3. In **Resource List**, click <img src="/images/docs/enable-pluggable-components/kubesphere-logging-system/three-dots.png" height="20px"> on the right of `ks-installer` and select **Edit YAML**.
 
 4. In this YAML file, navigate to `logging` and change `false` to `true` for `enabled`. After you finish, click **Update** in the bottom-right corner to save the configuration.
 
@@ -149,9 +143,9 @@ A Custom Resource Definition (CRD) allows users to create a new type of resource
     kubectl logs -n kubesphere-system $(kubectl get pod -n kubesphere-system -l app=ks-install -o jsonpath='{.items[0].metadata.name}') -f
     ```
 
-    {{< notice tip >}}
+    {{< notice note >}}
 
-You can find the web kubectl tool by clicking the hammer icon in the bottom-right corner of the console.
+You can find the web kubectl tool by clicking <img src="/images/docs/enable-pluggable-components/kubesphere-logging-system/hammer.png" height="20px"> in the bottom-right corner of the console.
 
 {{</ notice >}}
 

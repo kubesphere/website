@@ -6,9 +6,7 @@ linkTitle: "KubeSphere 告警系统"
 weight: 6600
 ---
 
-## 什么是 KubeSphere 告警系统
-
-告警是可观测性的重要构件，与监控和日志密切相关。KubeSphere 中的告警系统与其主动式故障通知 (Proactive Failure Notification) 系统相结合，使用户可以基于告警策略了解感兴趣的活动。当达到某个指标的预定义阈值时，会向预先配置的收件人发出告警。因此，您需要预先配置通知方式，包括邮件、Slack、钉钉、企业微信和 Webhook。有了功能强大的告警和通知系统，您就可以迅速发现并提前解决潜在问题，避免您的业务受影响。
+告警是可观测性的重要组成部分，与监控和日志密切相关。KubeSphere 中的告警系统与其主动式故障通知 (Proactive Failure Notification) 系统相结合，使用户可以基于告警策略了解感兴趣的活动。当达到某个指标的预定义阈值时，会向预先配置的收件人发出告警。因此，您需要预先配置通知方式，包括邮件、Slack、钉钉、企业微信和 Webhook。有了功能强大的告警和通知系统，您就可以迅速发现并提前解决潜在问题，避免您的业务受影响。
 
 ## 在安装前启用告警系统
 
@@ -60,7 +58,7 @@ weight: 6600
 
     ```bash
     kubectl apply -f https://github.com/kubesphere/ks-installer/releases/download/v3.1.0/kubesphere-installer.yaml
-
+    
     kubectl apply -f cluster-configuration.yaml
     ```
 
@@ -68,17 +66,13 @@ weight: 6600
 
 1. 使用 `admin` 用户登录控制台。点击左上角的**平台管理**，选择**集群管理**。
    
-    ![cluster-management1](/images/docs/zh-cn/enable-pluggable-components/kubesphere-alerting-and-notification/cluster-management1.png)
-    
 2. 点击**自定义资源 CRD**，在搜索栏中输入 `clusterconfiguration`。点击结果查看其详细页面。
 
     {{< notice info >}}
 自定义资源定义 (CRD) 允许用户在不新增 API 服务器的情况下创建一种新的资源类型，用户可以像使用其他 Kubernetes 原生对象一样使用这些自定义资源。
     {{</ notice >}}
 
-3. 在**资源列表**中，点击 `ks-installer` 右边的三个点，选择**编辑配置文件**。
-
-    ![edit-yaml1](/images/docs/zh-cn/enable-pluggable-components/kubesphere-alerting-and-notification/edit-yaml1.png)
+3. 在**资源列表**中，点击 `ks-installer` 右侧的 <img src="/images/docs/zh-cn/enable-pluggable-components/kubesphere-alerting/three-dots.png" height="20px">，选择**编辑配置文件**。
 
 4. 在该 YAML 文件中，搜寻到 `alerting`，将 `enabled` 的 `false` 更改为 `true`。完成后，点击右下角的**更新**，保存配置。
 
@@ -93,12 +87,13 @@ weight: 6600
     kubectl logs -n kubesphere-system $(kubectl get pod -n kubesphere-system -l app=ks-install -o jsonpath='{.items[0].metadata.name}') -f
     ```
 
-    {{< notice tip >}}
-您可以通过点击控制台右下角的锤子图标找到 Web Kubectl 工具。
+    {{< notice note >}}
+
+您可以通过点击控制台右下角的 <img src="/images/docs/zh-cn/enable-pluggable-components/kubesphere-alerting/hammer.png" height="20px"> 找到 Web Kubectl 工具。
     {{</ notice >}}
 
 ## 验证组件的安装
 
 如果您在**集群管理**页面可以看到**告警消息**和**告警策略**，说明安装成功，因为安装组件之后才会显示这两部分。
 
-![alerting1](/images/docs/zh-cn/enable-pluggable-components/kubesphere-alerting-and-notification/alerting1.png)
+![alerting-section](/images/docs/zh-cn/enable-pluggable-components/kubesphere-alerting/alerting-section.png)
