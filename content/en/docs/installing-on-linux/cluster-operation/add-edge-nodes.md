@@ -36,12 +36,6 @@ You need to install a container runtime and configure EdgeMesh on your edge node
 
 [KubeEdge](https://docs.kubeedge.io/en/docs/) supports several container runtimes including Docker, containerd, CRI-O and Virtlet. For more information, see [the KubeEdge documentation](https://docs.kubeedge.io/en/docs/advanced/cri/).
 
-{{< notice note >}}
-
-If you use Docker as the container runtime for your edge node, Docker v19.3.0 or later must be installed so that KubeSphere can get Pod metrics of it.
-
-{{</ notice >}} 
-
 ### Configure EdgeMesh
 
 Perform the following steps to configure [EdgeMesh](https://kubeedge.io/en/docs/advanced/edgemesh/) on your edge node.
@@ -159,6 +153,29 @@ To make sure edge nodes can successfully talk to your cluster, you must forward 
            sleep 1
    done
    ```
+
+## Custom Configurations
+
+To customize some configurations of an edge node, such as download URL and KubeEdge version, create a [ConfigMap](../../../project-user-guide/configuration/configmaps/) as below:
+
+```yaml
+apiVersion: v1
+data:
+  region: zh # Download region.
+  version: v1.6.2 # The version of KubeEdge to be installed. Allowed values are v1.5.0, v1.6.0, v1.6.1 and v1.6.2 (default).
+kind: ConfigMap
+metadata:
+  name: edge-watcher-config
+  namespace: kubeedge
+```
+
+{{< notice note >}}
+
+- You can specify `zh` or `en` for the field `region`. `zh` is the default value and the default download link is `https://kubeedge.pek3b.qingstor.com/bin/v1.6.1/$arch/keadm-v1.6.1-linux-$arch.tar.gz`. If you set `region` to `en`, the download link will be `https://github.com/kubesphere/kubeedge/releases/download/v1.6.1-kubesphere/keadm-v1.6.1-linux-amd64.tar.gz`.
+- The ConfigMap does not affect the configurations of exiting edge nodes in your cluster. It is only used to change the KubeEdge configurations to be used on a new edge node. More specifically, it decides [the command automatically created by KubeSphere mentioned above](#add-an-edge-node) which needs to be executed on the edge node.
+- While you can change the KubeEdge version to be installed on an edge node, it is recommended that the cloud and edge modules have the same KubeEdge version.
+
+{{</ notice >}}
 
 ## Remove an Edge Node
 

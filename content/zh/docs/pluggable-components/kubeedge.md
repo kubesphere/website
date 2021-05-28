@@ -187,27 +187,4 @@ iptables-hphgf                                    1/1     Running   0          5
 
 如果您在启用 KubeEdge 时未设置 `kubeedge.cloudCore.cloudHub.advertiseAddress`，则 CloudCore 无法正常运行 (`CrashLoopBackOff`)。在这种情况下，请运行 `kubectl -n kubeedge edit cm cloudcore` 添加集群的公共 IP 地址或边缘节点可以访问的 IP 地址。
 
-{{</ notice >}} 
-
-## 自定义配置
-
-启用 KubeEdge 后，您可以手动创建一个 [ConfigMap](../../project-user-guide/configuration/configmaps/) 来自定义某些配置，比如 `keadm` 的下载 URL、KubeEdge 的版本等等。本地配置将基于该 ConfigMap 进行动态更新。
-
-以下是 ConfigMap 的示例：
-
-```yaml
-apiVersion: v1
-data:
-  region: zh # 下载区域。
-  version: v1.6.1 # KubeEdge 的默认安装版本。
-kind: ConfigMap
-metadata:
-  name: edge-watcher-config
-  namespace: kubeedge
-```
-
-{{< notice note >}}
-
-对于 `region` 字段，您可以指定 `zh` 或 `en`。默认值为 `zh`，默认下载链接为 `https://kubeedge.pek3b.qingstor.com/bin/v1.6.1/$arch/keadm-v1.6.1-linux-$arch.tar.gz`。若将 `region` 设置为 `en`，下载链接将变为 `https://github.com/kubesphere/kubeedge/releases/download/v1.6.1-kubesphere/keadm-v1.6.1-linux-amd64.tar.gz`。
-
-{{</ notice >}} 
+{{</ notice >}}

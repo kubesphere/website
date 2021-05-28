@@ -36,12 +36,6 @@ KubeSphere 利用 [KubeEdge](https://kubeedge.io/zh/) 将原生容器化应用�
 
 [KubeEdge](https://docs.kubeedge.io/zh/docs/) 支持多种容器运行时，包括 Docker、containerd、CRI-O 和 Virtlet。有关更多信息，请参见 [KubeEdge 文档](https://docs.kubeedge.io/zh/docs/advanced/cri/)。
 
-{{< notice note >}}
-
-如果您的边缘节点使用 Docker 作为容器运行时，为确保 KubeSphere 可以获取 Pod 指标，请务必在边缘节点上安装 Docker v19.3.0 或更高版本。
-
-{{</ notice >}} 
-
 ### 配置 EdgeMesh
 
 执行以下步骤以在边缘节点上配置 [EdgeMesh](https://kubeedge.io/zh/docs/advanced/edgemesh/)。
@@ -159,6 +153,29 @@ KubeSphere 利用 [KubeEdge](https://kubeedge.io/zh/) 将原生容器化应用�
            sleep 1
    done
    ```
+
+## 自定义配置
+
+若要对边缘节点的部分配置（例如下载 URL 和 KubeEdge 版本）自定义，您可以如下创建一个 [ConfigMap](../../../project-user-guide/configuration/configmaps/)：
+
+```yaml
+apiVersion: v1
+data:
+  region: zh # 下载区域。
+  version: v1.6.1 # KubeEdge 的安装版本。可用的值包括 v1.5.0、v1.6.0、v1.6.1 和 v1.6.2（默认）。
+kind: ConfigMap
+metadata:
+  name: edge-watcher-config
+  namespace: kubeedge
+```
+
+{{< notice note >}}
+
+- 对于 `region` 字段，您可以指定 `zh` 或 `en`。默认值为 `zh`，默认下载链接为 `https://kubeedge.pek3b.qingstor.com/bin/v1.6.1/$arch/keadm-v1.6.1-linux-$arch.tar.gz`。若将 `region` 设置为 `en`，下载链接将变为 `https://github.com/kubesphere/kubeedge/releases/download/v1.6.1-kubesphere/keadm-v1.6.1-linux-amd64.tar.gz`。
+- 该 ConfigMap 不会影响您集群中现有边缘节点的配置，仅用于修改新添加的边缘节点的配置。确切地说，该 ConfigMap 会决定上文中[由 KubeSphere 自动生成的命令](#添加边缘节点)，即您之后在边缘节点上需要运行的命令。
+- 虽然您可以变更在边缘节点上安装的 KubeEdge 版本，建议您的云端和边端组件使用相同的 KubeEdge 版本。
+
+{{</ notice >}}
 
 ## 移除边缘节点
 
