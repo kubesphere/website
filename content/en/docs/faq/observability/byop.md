@@ -1,5 +1,5 @@
 ---
-title: "Install Your Own Prometheus"
+title: "Bring Your Own Prometheus"
 keywords: "Monitoring, Prometheus, node-exporter, kube-state-metrics, KubeSphere, Kubernetes"
 description: "Use your own Prometheus stack setup in KubeSphere."
 linkTitle: "Bring Your Own Prometheus"
