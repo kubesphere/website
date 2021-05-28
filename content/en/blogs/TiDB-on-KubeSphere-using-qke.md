@@ -14,7 +14,7 @@ In a world where Kubernetes has become the de facto standard to build applicatio
 
 ![tidb-architecture](https://ap3.qingstor.com/kubesphere-website/docs/tidb-architecture.png)
 
-In addition to TiDB, I am also using [KubeSphere](https://kubesphere.io/), an open-source distributed operating system that manages cloud-native applications with [Kubernetes](https://kubernetes.io/) as its kernel. It provides a plug-and-play architecture for the seamless integration of third-party applications to boost its ecosystem. [KubeSphere can be run anywhere](https://kubesphere.io/docs/introduction/what-is-kubesphere/#run-kubesphere-everywhere) as it is highly pluggable without any hacking into Kubernetes.
+In addition to TiDB, I am also using KubeSphere [Container Platform](https://kubesphere.io/), an open-source distributed operating system that manages cloud-native applications with [Kubernetes](https://kubernetes.io/) as its kernel. It provides a plug-and-play architecture for the seamless integration of third-party applications to boost its ecosystem. [KubeSphere can be run anywhere](https://kubesphere.io/docs/introduction/what-is-kubesphere/#run-kubesphere-everywhere) as it is highly pluggable without any hacking into Kubernetes.
 
 ![KubeSphere-structure-comp](https://ap3.qingstor.com/kubesphere-website/docs/KubeSphere-structure-comp.png)
 
