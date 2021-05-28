@@ -30,15 +30,11 @@ kubectl create ns demo-namespace
 
 1. 以 `admin` 身份登录 KubeSphere 控制台，转到**集群管理**页面。点击**项目管理**，您可以查看在当前集群中运行的所有项目（即命名空间），包括前述刚刚创建的项目。
 
-   ![用户项目](/images/docs/zh-cn/faq/access-control-and-account-management/add-kubernetes-namespace-to-kubesphere-workspace/user-projects.PNG)
-
-2. 通过 kubectl 创建的命名空间不属于任何企业空间。请点击右侧的三个点，选择**分配企业空间**。
+2. 通过 kubectl 创建的命名空间不属于任何企业空间。请点击右侧的 <img src="/images/docs/zh-cn/faq/access-control-and-account-management/add-kubernetes-namespace-to-kubesphere-workspace/three-dots.png" height="20px">，选择**分配企业空间**。
 
    ![分配企业空间](/images/docs/zh-cn/faq/access-control-and-account-management/add-kubernetes-namespace-to-kubesphere-workspace/assign-workspace.PNG)
 
-3. 在弹出对话框中，选择一个企业空间，并为该项目选择一个项目管理员，然后点击**确定**。
-
-   ![选择企业空间](/images/docs/zh-cn/faq/access-control-and-account-management/add-kubernetes-namespace-to-kubesphere-workspace/select-workspace.PNG)
+3. 在弹出的对话框中，为该项目选择一个**目标企业空间**和**项目管理员**，然后点击**确定**。
 
 4. 转到您的企业空间，可以在**项目管理**页面看到该项目已显示。
 

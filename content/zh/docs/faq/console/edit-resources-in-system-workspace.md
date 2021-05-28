@@ -35,7 +35,7 @@ Weight: 16520
        kubernetes: v1.17.9
        openpitrix: v0.3.5
      enableKubeConfig: true
-     systemWorkspace: "$"  # Add this line manually.
+     systemWorkspace: "$"  # 请手动添加此行。
    ```
 
 4. 执行如下命令重新部署 `ks-console`，并等待 Pod 重建。
