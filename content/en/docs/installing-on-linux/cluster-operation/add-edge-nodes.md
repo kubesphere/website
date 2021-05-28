@@ -36,6 +36,12 @@ You need to install a container runtime and configure EdgeMesh on your edge node
 
 [KubeEdge](https://docs.kubeedge.io/en/docs/) supports several container runtimes including Docker, containerd, CRI-O and Virtlet. For more information, see [the KubeEdge documentation](https://docs.kubeedge.io/en/docs/advanced/cri/).
 
+{{< notice note >}}
+
+If you use Docker as the container runtime for your edge node, Docker v19.3.0 or later must be installed so that KubeSphere can get Pod metrics of it.
+
+{{</ notice >}}
+
 ### Configure EdgeMesh
 
 Perform the following steps to configure [EdgeMesh](https://kubeedge.io/en/docs/advanced/edgemesh/) on your edge node.
@@ -162,7 +168,7 @@ To customize some configurations of an edge node, such as download URL and KubeE
 apiVersion: v1
 data:
   region: zh # Download region.
-  version: v1.6.2 # The version of KubeEdge to be installed. Allowed values are v1.5.0, v1.6.0, v1.6.1 and v1.6.2 (default).
+  version: v1.6.1 # The version of KubeEdge to be installed. Allowed values are v1.5.0, v1.6.0, v1.6.1 (default) and v1.6.2.
 kind: ConfigMap
 metadata:
   name: edge-watcher-config
@@ -207,10 +213,14 @@ Before you remove an edge node, delete all your workloads running on it.
    kubectl delete node <edgenode-name>
    ```
 
-3. To uninstall KubeEdge from your cluster, run the following command:
+3. To uninstall KubeEdge from your cluster, run the following commands:
 
    ```bash
    helm uninstall kubeedge -n kubeedge
+   ```
+   
+   ```bash
+   kubectl delete ns kubeedge
    ```
    
    {{< notice note >}}

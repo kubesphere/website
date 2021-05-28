@@ -36,6 +36,12 @@ KubeSphere 利用 [KubeEdge](https://kubeedge.io/zh/) 将原生容器化应用�
 
 [KubeEdge](https://docs.kubeedge.io/zh/docs/) 支持多种容器运行时，包括 Docker、containerd、CRI-O 和 Virtlet。有关更多信息，请参见 [KubeEdge 文档](https://docs.kubeedge.io/zh/docs/advanced/cri/)。
 
+{{< notice note >}}
+
+如果您的边缘节点使用 Docker 作为容器运行时，为确保 KubeSphere 可以获取 Pod 指标，请务必在边缘节点上安装 Docker v19.3.0 或更高版本。
+
+{{</ notice >}}
+
 ### 配置 EdgeMesh
 
 执行以下步骤以在边缘节点上配置 [EdgeMesh](https://kubeedge.io/zh/docs/advanced/edgemesh/)。
@@ -162,7 +168,7 @@ KubeSphere 利用 [KubeEdge](https://kubeedge.io/zh/) 将原生容器化应用�
 apiVersion: v1
 data:
   region: zh # 下载区域。
-  version: v1.6.1 # KubeEdge 的安装版本。可用的值包括 v1.5.0、v1.6.0、v1.6.1 和 v1.6.2（默认）。
+  version: v1.6.1 # KubeEdge 的安装版本。可用的值包括 v1.5.0、v1.6.0、v1.6.1（默认）和 v1.6.2。
 kind: ConfigMap
 metadata:
   name: edge-watcher-config
@@ -211,6 +217,10 @@ metadata:
 
    ```bash
    helm uninstall kubeedge -n kubeedge
+   ```
+   
+   ```bash
+   kubectl delete ns kubeedge
    ```
    
    {{< notice note >}}
