@@ -13,13 +13,13 @@ weight: 5320
 - 您需要准备一个已安装 KubeSphere 的 Kubernetes 集群，并将其设置为 Host 集群。有关如何准备 Host 集群的更多信息，请参考[准备 Host 集群](../../../multicluster-management/enable-multicluster/direct-connection/#准备-host-集群)。
 - 您需要准备一个 EKS 集群，用作 Member 集群。
 
-## **导入 EKS 集群**
+## 导入 EKS 集群
 
-### **步骤 1：在 EKS 集群上部署 KubeSphere**
+### 步骤 1：在 EKS 集群上部署 KubeSphere
 
 您需要首先在 EKS 集群上部署 KubeSphere。有关如何在 EKS 上部署 KubeSphere 的更多信息，请参考[在 AWS EKS 上部署 KubeSphere](../../../installing-on-kubernetes/hosted-kubernetes/install-kubesphere-on-eks/#在-eks-上安装-kubesphere)。
 
-### **步骤 2：准备 EKS Member 集群**
+### 步骤 2：准备 EKS Member 集群
 
 1. 为了通过 Host 集群管理 Member 集群，您需要使它们之间的 `jwtSecret` 相同。首先，需要在 Host 集群上执行以下命令获取 `jwtSecret`。
 
@@ -61,7 +61,7 @@ weight: 5320
 
    {{</ notice >}}
 
-### **步骤 3：创建新的 kubeconfig 文件**
+### 步骤 3：创建新的 kubeconfig 文件
 
 1. [Amazon EKS](https://docs.aws.amazon.com/zh_cn/eks/index.html) 不像标准的 kubeadm 集群那样提供内置的 kubeconfig 文件。但您可以参考此[文档](https://docs.aws.amazon.com/zh_cn/eks/latest/userguide/create-kubeconfig.html)创建 kubeconfig 文件。生成的 kubeconfig 文件类似如下：
 
@@ -164,7 +164,7 @@ weight: 5320
    ip-10-0-8-148.cn-north-1.compute.internal   Ready    <none>   78m   v1.18.8-eks-7c9bda
    ```
 
-### **步骤 4：导入 EKS Member 集群**
+### 步骤 4：导入 EKS Member 集群
 
 1. 以 `admin` 身份登录 Host 集群的 KubeSphere Web 控制台。点击左上角的**平台管理**，然后选择**集群管理**。在**集群管理**页面，点击**添加集群**。
 

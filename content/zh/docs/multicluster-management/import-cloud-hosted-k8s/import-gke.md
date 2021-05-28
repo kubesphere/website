@@ -13,13 +13,13 @@ weight: 5330
 - 您需要准备一个已安装 KubeSphere 的 Kubernetes 集群，并将该集群设置为 Host 集群。有关如何准备 Host 集群的更多信息，请参考[准备 Host 集群](../../../multicluster-management/enable-multicluster/direct-connection/#准备-host-集群)。
 - 您需要准备一个 GKE 集群，用作 Member 集群。
 
-## **导入** **GKE** **集群**
+## 导入 GKE 集群
 
-### **步骤 1：在** **GKE** **集群上部署 KubeSphere**
+### 步骤 1：在 GKE 集群上部署 KubeSphere
 
 您需要首先在 GKE 集群上部署 KubeSphere。有关如何在 GKE 上部署 KubeSphere 的更多信息，请参考[在 Google GKE 上部署 KubeSphere](../../../installing-on-kubernetes/hosted-kubernetes/install-kubesphere-on-gke/)。
 
-### **步骤 2：准备** **GKE Member** **集群**
+### 步骤 2：准备 GKE Member 集群
 
 1. 为了通过 Host 集群管理 Member 集群，您需要使它们之间的 `jwtSecret` 相同。首先，在 Host 集群上执行以下命令获取 `jwtSecret`。
 
@@ -61,7 +61,7 @@ weight: 5330
 
    {{</ notice >}}
 
-### **步骤 3：创建新的** **kubeconfig** **文件**
+### 步骤 3：创建新的 kubeconfig 文件
 
 1. 在 GKE Cloud Shell 终端运行以下命令：
 
@@ -109,7 +109,7 @@ weight: 5330
        token: eyJhbGciOiJSUzI1NiIsImtpZCI6InNjOFpIb3RrY3U3bGNRSV9NWV8tSlJzUHJ4Y2xnMDZpY3hhc1BoVy0xTGsifQ.eyJpc3MiOiJrdWJlcm5ldGVzL3NlcnZpY2VhY2NvdW50Iiwia3ViZXJuZXRlcy5pby9zZXJ2aWNlYWNjb3VudC9uYW1lc3BhY2UiOiJrdWJlc3BoZXJlLXN5c3RlbSIsImt1YmVybmV0ZXMuaW8vc2VydmljZWFjY291bnQvc2VjcmV0Lm5hbWUiOiJrdWJlc3BoZXJlLXRva2VuLXpocmJ3Iiwia3ViZXJuZXRlcy5pby9zZXJ2aWNlYWNjb3VudC9zZXJ2aWNlLWFjY291bnQubmFtZSI6Imt1YmVzcGhlcmUiLCJrdWJlcm5ldGVzLmlvL3NlcnZpY2VhY2NvdW50L3NlcnZpY2UtYWNjb3VudC51aWQiOiIyMGFmZGI1Ny01MTBkLTRjZDgtYTAwYS1hNDQzYTViNGM0M2MiLCJzdWIiOiJzeXN0ZW06c2VydmljZWFjY291bnQ6a3ViZXNwaGVyZS1zeXN0ZW06a3ViZXNwaGVyZSJ9.ic6LaS5rEQ4tXt_lwp7U_C8rioweP-ZdDjlIZq91GOw9d6s5htqSMQfTeVlwTl2Bv04w3M3_pCkvRzMD0lHg3mkhhhP_4VU0LIo4XeYWKvWRoPR2kymLyskAB2Khg29qIPh5ipsOmGL9VOzD52O2eLtt_c6tn-vUDmI_Zw985zH3DHwUYhppGM8uNovHawr8nwZoem27XtxqyBkqXGDD38WANizyvnPBI845YqfYPY5PINPYc9bQBFfgCovqMZajwwhcvPqS6IpG1Qv8TX2lpuJIK0LLjiKaHoATGvHLHdAZxe_zgAC2cT_9Ars3HIN4vzaSX0f-xP--AcRgKVSY9g
    ```
 
-### **步骤 4：导入** **GKE Member** **集群**
+### 步骤 4：导入 GKE Member 集群
 
 1. 以 `admin` 身份登录 Host 集群的 KubeSphere Web 控制台。点击左上角的**平台管理**，选择**集群管理**。在**集群管理**页面，点击**添加集群**。
 
