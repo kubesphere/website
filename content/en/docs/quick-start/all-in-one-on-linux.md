@@ -1,5 +1,5 @@
 ---
-title: "All-in-One Installation on Linux"
+title: "All-in-one Installation of Kubernetes and KubeSphere on Linux"
 keywords: 'KubeSphere, Kubernetes, All-in-one, Installation'
 description: 'Install KubeSphere on Linux with a minimal installation package. The tutorial serves as a basic kick-starter for you to understand the container platform, paving the way for learning the following guides.'
 linkTitle: "All-in-One Installation on Linux"
@@ -163,7 +163,7 @@ After you execute the command, you will see a table for environment check. For d
 
 ## Step 4: Verify the Installation
 
-When you see the output as below, it means the installation finishes.
+When you see the output as below, it means the installation of Kubernetes and KubeSphere finishes.
 
 ![Installation-complete](/images/docs/quickstart/all-in-one-installation/Installation-complete.png)
 
