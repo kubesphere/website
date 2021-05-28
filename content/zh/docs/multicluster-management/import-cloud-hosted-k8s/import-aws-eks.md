@@ -61,7 +61,7 @@ weight: 5320
 
    {{</ notice >}}
 
-### 步骤 3：创建新的 kubeconfig 文件
+### 步骤 3：创建新的 KubeConfig 文件
 
 1. [Amazon EKS](https://docs.aws.amazon.com/zh_cn/eks/index.html) 不像标准的 kubeadm 集群那样提供内置的 KubeConfig 文件。但您可以参考此[文档](https://docs.aws.amazon.com/zh_cn/eks/latest/userguide/create-kubeconfig.html)创建 KubeConfig 文件。生成的 KubeConfig 文件类似如下：
 

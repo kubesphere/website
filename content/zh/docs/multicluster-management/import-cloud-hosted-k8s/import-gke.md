@@ -61,7 +61,7 @@ weight: 5330
 
    {{</ notice >}}
 
-### 步骤 3：创建新的 kubeconfig 文件
+### 步骤 3：创建新的 KubeConfig 文件
 
 1. 在 GKE Cloud Shell 终端运行以下命令：
 
