@@ -35,7 +35,7 @@ This tutorial demonstrates how to import an Aliyun ACK cluster through the [dire
 
    ![search-config](/images/docs/multicluster-management/import-cloud-hosted-k8s/import-ack/search-config.png)
 
-4. Click the three dots on the right and then select **Edit YAML** to edit `ks-installer`. 
+4. Click <img src="/images/docs/multicluster-management/import-cloud-hosted-k8s/import-ack/three-dots.png" height="20px"> on the right and then select **Edit YAML** to edit `ks-installer`. 
 
    ![click-edit](/images/docs/multicluster-management/import-cloud-hosted-k8s/import-ack/click-edit.png)
 
@@ -73,7 +73,7 @@ Log in to the web console of Aliyun. Go to **Clusters** under **Container Servic
 
    ![input-info](/images/docs/multicluster-management/import-cloud-hosted-k8s/import-ack/input-info.png)
 
-3. In **Connection Method**, select **Direct connection to Kubernetes cluster**. Fill in the kubeconfig file of the ACK Member Cluster and then click **Import**.
+3. In **Connection Method**, select **Direct Connection**. Fill in the kubeconfig file of the ACK Member Cluster and then click **Create**.
 
    ![select-method](/images/docs/multicluster-management/import-cloud-hosted-k8s/import-ack/select-method.png)
 

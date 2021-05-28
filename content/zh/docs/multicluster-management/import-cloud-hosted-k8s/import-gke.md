@@ -39,7 +39,7 @@ weight: 5330
 
    ![search-config](/images/docs/zh-cn/multicluster-management/import-cloud-hosted-k8s/import-gke/search-config.png)
 
-4. 点击右侧的三个点，选择**编辑配置文件**来编辑 `ks-installer`。
+4. 点击右侧的 <img src="/images/docs/zh-cn/multicluster-management/import-cloud-hosted-k8s/import-gke/three-dots.png" height="20px">，选择**编辑配置文件**来编辑 `ks-installer`。
 
    ![click-edit](/images/docs/zh-cn/multicluster-management/import-cloud-hosted-k8s/import-gke/click-edit.png)
 
@@ -119,7 +119,7 @@ weight: 5330
 
    ![input-info](/images/docs/zh-cn/multicluster-management/import-cloud-hosted-k8s/import-gke/input-info.png)
 
-3. **连接方式**选择**直接连接 Kubernetes 集群**。填写 GKE Member 集群的新 KubeConfig，然后点击**导入**。
+3. **连接方式**选择**直接连接 Kubernetes 集群**。填写 GKE Member 集群的新 KubeConfig，然后点击**创建**。
 
    ![select-method](/images/docs/zh-cn/multicluster-management/import-cloud-hosted-k8s/import-gke/select-method.png)
 

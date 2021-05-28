@@ -39,7 +39,7 @@ You need to deploy KubeSphere on your GKE cluster first. For more information ab
 
    ![search-config](/images/docs/multicluster-management/import-cloud-hosted-k8s/import-gke/search-config.png)
 
-4. Click the three dots on the right and then select **Edit YAML** to edit `ks-installer`. 
+4. Click <img src="/images/docs/multicluster-management/import-cloud-hosted-k8s/import-gke/three-dots.png" height="20px"> on the right and then select **Edit YAML** to edit `ks-installer`. 
 
    ![click-edit](/images/docs/multicluster-management/import-cloud-hosted-k8s/import-gke/click-edit.png)
 
@@ -119,7 +119,7 @@ You need to deploy KubeSphere on your GKE cluster first. For more information ab
 
    ![input-info](/images/docs/multicluster-management/import-cloud-hosted-k8s/import-gke/input-info.png)
 
-3. In **Connection Method**, select **Direct connection to Kubernetes cluster**. Fill in the new kubeconfig file of the GKE Member Cluster and then click **Import**.
+3. In **Connection Method**, select **Direct Connection**. Fill in the new kubeconfig file of the GKE Member Cluster and then click **Create**.
 
    ![select-method](/images/docs/multicluster-management/import-cloud-hosted-k8s/import-gke/select-method.png)
 
