@@ -40,11 +40,11 @@ Writing an exporter is nothing short of instrumenting an application with Promet
 
 In the previous step, you expose metric endpoints in a Kubernetes Service object. Next, you need to inform the KubeSphere monitoring engine of your new changes.
 
-The ServiceMonitor CRD is defined by [Prometheus Operator](https://github.com/prometheus-operator/prometheus-operator). ServiceMonitor contains information about the metrics endpoints. With ServiceMonitor objects, the KubeSphere monitoring engine knows where and how to scape metrics. For each monitoring target, you apply a ServiceMonitor object to hook your application (or exporters) up to KubeSphere.
+The ServiceMonitor CRD is defined by [Prometheus Operator](https://github.com/prometheus-operator/prometheus-operator). A ServiceMonitor contains information about the metrics endpoints. With ServiceMonitor objects, the KubeSphere monitoring engine knows where and how to scape metrics. For each monitoring target, you apply a ServiceMonitor object to hook your application (or exporters) up to KubeSphere.
 
-In KubeSphere v3.0.0, you need to pack ServiceMonitor with your applications (or exporters) into a Helm chart for reuse. In future releases, KubeSphere will provide graphical interfaces for easy operation.
+In KubeSphere v3.0.0, you need to pack a ServiceMonitor with your applications (or exporters) into a Helm chart for reuse. In future releases, KubeSphere will provide graphical interfaces for easy operation.
 
-Please read [Monitor a Sample Web Application](../examples/monitor-sample-web/) to learn how to pack ServiceMonitor with your application.
+Please read [Monitor a Sample Web Application](../examples/monitor-sample-web/) to learn how to pack a ServiceMonitor with your application.
 
 ### Step 3: Visualize Metrics
 
