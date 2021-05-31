@@ -21,17 +21,11 @@ This method serves as an efficient way to test performance and reliability of a 
 
 ## Step 1: Create a Canary Release Job
 
-1. Log in to KubeSphere as `project-regular`. Under **Categories**, click **Create Job** on the right of **Canary Release**.
-
-   ![create-canary-release](/images/docs/project-user-guide/grayscale-release/canary-release/create-canary-release.jpg)
+1. Log in to KubeSphere as `project-regular` and navigate to **Grayscale Release**. Under **Categories**, click **Create Job** on the right of **Canary Release**.
 
 2. Set a name for it and click **Next**.
 
-   ![set-task-name](/images/docs/project-user-guide/grayscale-release/canary-release/set-task-name.jpg)
-
-3. Select your app from the drop-down list and the Service for which you want to implement the canary release. If you also use the sample app Bookinfo, select **reviews** and click **Next**.
-
-   ![cabary-release-3](/images/docs/project-user-guide/grayscale-release/canary-release/cabary-release-3.jpg)
+3. On the **Grayscale Release Components** tab, select your app from the drop-down list and the Service for which you want to implement the canary release. If you also use the sample app Bookinfo, select **reviews** and click **Next**.
 
 4. On the **Grayscale Release Version** tab, add another version of it (e.g `kubesphere/examples-bookinfo-reviews-v2:1.13.0`; change `v1` to `v2`) as shown in the image below and click **Next**:
 
