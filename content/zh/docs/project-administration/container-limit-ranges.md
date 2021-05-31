@@ -18,11 +18,9 @@ weight: 13400
 
 ## 设置默认限制范围
 
-1. 以 `project-admin` 身份登录控制台，进入一个项目。如果该项目是新创建的项目，您在**概览**页面上会看到默认限制范围尚未设置。点击**设置**来配置限制范围。
+1. 以 `project-admin` 身份登录控制台，进入一个项目。如果该项目是新创建的项目，您在**概览**页面上会看到默认限制范围尚未设置。点击**容器资源默认请求未设置**旁的**设置**来配置限制范围。
 
-   ![限制范围](/images/docs/zh-cn/project-administration/container-limit-ranges/limit-ranges.PNG)
-
-2. 在弹出对话框中，您可以看到 KubeSphere 默认不设置任何请求或限制。要设置请求和限制来控制 CPU 和内存资源，请移动滑块至期望的值或者直接输入数值。字段留空意味着不设置任何请求或限制。
+2. 在弹出的对话框中，您可以看到 KubeSphere 默认不设置任何请求或限制。要设置请求和限制来控制 CPU 和内存资源，请移动滑块至期望的值或者直接输入数值。字段留空意味着不设置任何请求或限制。
 
    ![默认限制范围](/images/docs/zh-cn/project-administration/container-limit-ranges/default-limit-range.PNG)
 
@@ -39,8 +37,6 @@ weight: 13400
    ![查看限制范围](/images/docs/zh-cn/project-administration/container-limit-ranges/view-limit-ranges.PNG)
 
 5. 要更改默认限制范围，请在**基本信息**页面点击**项目管理**，然后选择**编辑资源默认请求**。
-
-   ![更改限制范围](/images/docs/zh-cn/project-administration/container-limit-ranges/change-limit-ranges.PNG)
 
 6. 在弹出的对话框中直接更改限制范围，然后点击**确定**。
 
