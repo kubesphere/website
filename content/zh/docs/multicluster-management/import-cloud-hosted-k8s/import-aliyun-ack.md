@@ -35,7 +35,7 @@ weight: 5310
 
    ![search-config](/images/docs/zh-cn/multicluster-management/import-cloud-hosted-k8s/import-ack/search-config.png)
 
-4. 点击右侧的三个点，选择**编辑配置文件**来编辑 `ks-installer`。
+4. 点击右侧的 <img src="/images/docs/zh-cn/multicluster-management/import-cloud-hosted-k8s/import-ack/three-dots.png" height="20px">，选择**编辑配置文件**来编辑 `ks-installer`。
 
    ![click-edit](/images/docs/zh-cn/multicluster-management/import-cloud-hosted-k8s/import-ack/click-edit.png)
 
@@ -57,9 +57,9 @@ weight: 5310
 
    {{</ notice >}}
 
-### 步骤 2：获取 kubeconfig 文件
+### 步骤 2：获取 KubeConfig 文件
 
-登录阿里云的控制台。访问**容器服务 - Kubernetes** 下的**集群**，点击您的集群访问其详情页，然后选择**连接信息**选项卡。您可以看到**公网访问**选项卡下的 kubeconfig 文件。复制 kubeconfig 文件的内容。
+登录阿里云的控制台。访问**容器服务 - Kubernetes** 下的**集群**，点击您的集群访问其详情页，然后选择**连接信息**选项卡。您可以看到**公网访问**选项卡下的 KubeConfig 文件。复制 KubeConfig 文件的内容。
 
 ![kubeconfig](/images/docs/zh-cn/multicluster-management/import-cloud-hosted-k8s/import-ack/kubeconfig.png)
 
@@ -73,7 +73,7 @@ weight: 5310
 
    ![input-info](/images/docs/zh-cn/multicluster-management/import-cloud-hosted-k8s/import-ack/input-info.png)
 
-3. **连接方式**选择**直接连接 Kubernetes 集群**。填写 ACK Member 集群的 KubeConfig，然后点击**导入**。
+3. **连接方式**选择**直接连接 Kubernetes 集群**。填写 ACK Member 集群的 KubeConfig，然后点击**创建**。
 
    ![select-method](/images/docs/zh-cn/multicluster-management/import-cloud-hosted-k8s/import-ack/select-method.png)
 

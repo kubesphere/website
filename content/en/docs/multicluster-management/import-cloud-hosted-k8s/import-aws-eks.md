@@ -37,11 +37,11 @@ You need to deploy KubeSphere on your EKS cluster first. For more information ab
 
 3. Go to **CRDs**, input `ClusterConfiguration` in the search bar, and then press **Enter** on your keyboard. Click **ClusterConfiguration** to go to its detail page.
 
-   ![search-config](/images/docs/multicluster-management/import-cloud-hosted-k8s/import-gke/search-config.png)
+   ![search-config](/images/docs/multicluster-management/import-cloud-hosted-k8s/import-eks/search-config.png)
 
-4. Click the three dots on the right and then select **Edit YAML** to edit `ks-installer`. 
+4. Click <img src="/images/docs/multicluster-management/import-cloud-hosted-k8s/import-eks/three-dots.png" height="20px"> on the right and then select **Edit YAML** to edit `ks-installer`. 
 
-   ![click-edit](/images/docs/multicluster-management/import-cloud-hosted-k8s/import-gke/click-edit.png)
+   ![click-edit](/images/docs/multicluster-management/import-cloud-hosted-k8s/import-eks/click-edit.png)
 
 5. In the YAML file of `ks-installer`, change the value of `jwtSecret` to the corresponding value shown above and set the value of `clusterRole` to `member`. Click **Update** to save your changes.
 
@@ -168,13 +168,13 @@ You need to deploy KubeSphere on your EKS cluster first. For more information ab
 
 1. Log in to the KubeSphere console on your Host Cluster as `admin`. Click **Platform** in the upper left corner and then select **Cluster Management**. On the **Cluster Management** page, click **Add Cluster**.
 
-   ![click-add-cluster](/images/docs/multicluster-management/import-cloud-hosted-k8s/import-gke/click-add-cluster.png)
+   ![click-add-cluster](/images/docs/multicluster-management/import-cloud-hosted-k8s/import-eks/click-add-cluster.png)
 
 2. Input the basic information based on your needs and click **Next**.
 
    ![input-info](/images/docs/multicluster-management/import-cloud-hosted-k8s/import-eks/input-info.png)
 
-3. In **Connection Method**, select **Direct connection to Kubernetes cluster**. Fill in the new kubeconfig file of the EKS Member Cluster and then click **Import**.
+3. In **Connection Method**, select **Direct Connection**. Fill in the new kubeconfig file of the EKS Member Cluster and then click **Create**.
 
    ![eks-kubeconfig](/images/docs/multicluster-management/import-cloud-hosted-k8s/import-eks/eks-kubeconfig.png)
 

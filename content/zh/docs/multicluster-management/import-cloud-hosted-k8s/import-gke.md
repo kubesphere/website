@@ -8,7 +8,7 @@ weight: 5330
 
 本教程演示如何使用[直接连接](../../../multicluster-management/enable-multicluster/direct-connection/)方法导入 GKE 集群。如果您想使用代理连接方法，请参考[代理连接](../../../multicluster-management/enable-multicluster/agent-connection/)。
 
-## **准备工作**
+## 准备工作
 
 - 您需要准备一个已安装 KubeSphere 的 Kubernetes 集群，并将该集群设置为 Host 集群。有关如何准备 Host 集群的更多信息，请参考[准备 Host 集群](../../../multicluster-management/enable-multicluster/direct-connection/#准备-host-集群)。
 - 您需要准备一个 GKE 集群，用作 Member 集群。
@@ -39,7 +39,7 @@ weight: 5330
 
    ![search-config](/images/docs/zh-cn/multicluster-management/import-cloud-hosted-k8s/import-gke/search-config.png)
 
-4. 点击右侧的三个点，选择**编辑配置文件**来编辑 `ks-installer`。
+4. 点击右侧的 <img src="/images/docs/zh-cn/multicluster-management/import-cloud-hosted-k8s/import-gke/three-dots.png" height="20px">，选择**编辑配置文件**来编辑 `ks-installer`。
 
    ![click-edit](/images/docs/zh-cn/multicluster-management/import-cloud-hosted-k8s/import-gke/click-edit.png)
 
@@ -61,7 +61,7 @@ weight: 5330
 
    {{</ notice >}}
 
-### 步骤 3：创建新的 kubeconfig 文件
+### 步骤 3：创建新的 KubeConfig 文件
 
 1. 在 GKE Cloud Shell 终端运行以下命令：
 
@@ -71,7 +71,7 @@ weight: 5330
    kubectl config set-context --current --user=kubesphere
    ```
 
-2. 运行以下命令获取新的 kubeconfig 文件：
+2. 运行以下命令获取新的 KubeConfig 文件：
 
    ```bash
    cat ~/.kube/config
@@ -119,7 +119,7 @@ weight: 5330
 
    ![input-info](/images/docs/zh-cn/multicluster-management/import-cloud-hosted-k8s/import-gke/input-info.png)
 
-3. **连接方式**选择**直接连接 Kubernetes 集群**。填写 GKE Member 集群的新 KubeConfig，然后点击**导入**。
+3. **连接方式**选择**直接连接 Kubernetes 集群**。填写 GKE Member 集群的新 KubeConfig，然后点击**创建**。
 
    ![select-method](/images/docs/zh-cn/multicluster-management/import-cloud-hosted-k8s/import-gke/select-method.png)
 

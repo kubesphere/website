@@ -223,13 +223,13 @@ kubectl logs -n kubesphere-system $(kubectl get pod -n kubesphere-system -l app=
    
    ![添加集群](/images/docs/zh-cn/multicluster-management/enable-multicluster-management-in-kubesphere/agent-connection/add-cluster.PNG)
 
-2. 输入要导入的集群的基本信息，然后点击**下一步**。
+2. 在**导入集群**页面输入要导入的集群的基本信息。您也可以点击右上角的**编辑模式**以 YAML 格式查看并编辑基本信息。编辑完成后，点击**下一步**。
 
      ![集群信息](/images/docs/zh-cn/multicluster-management/enable-multicluster-management-in-kubesphere/agent-connection/cluster-info.PNG)
 
-3. 在**连接方式**，选择**集群连接代理**，然后点击**导入**。H 集群生成的代理部署会显示在控制台上。
+3. 在**连接方式**，选择**集群连接代理**，然后点击**创建**。H 集群为代理部署 (Deployment) 生成的 YAML 配置文件会显示在控制台上。
 
-     ![代理连接](/images/docs/zh-cn/multicluster-management/enable-multicluster-management-in-kubesphere/agent-connection/agent-en.PNG)
+     ![代理连接](/images/docs/zh-cn/multicluster-management/enable-multicluster-management-in-kubesphere/agent-connection/select-agent-connection.png)
 
 4. 根据指示在 M 集群中创建一个 `agent.yaml` 文件，然后将代理部署复制并粘贴到该文件中。在该节点上执行 `kubectl create -f agent.yaml` 然后等待代理启动并运行。请确保 M 集群可以访问代理地址。
 
