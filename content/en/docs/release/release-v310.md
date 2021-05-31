@@ -72,7 +72,7 @@ You can now enable KubeEdge in your cluster and manage edge nodes on the KubeSph
 
 #### Monitoring
 
-- Support configurations of ServiceMonitor on the KubeSphere console. ([#1031](https://github.com/kubesphere/console/pull/1301))
+- Support configurations of ServiceMonitors on the KubeSphere console. ([#1031](https://github.com/kubesphere/console/pull/1301))
 - Support PromQL auto-completion and syntax highlighting. ([#1307](https://github.com/kubesphere/console/pull/1307))
 - Support customized monitoring at the cluster level. ([#3193](https://github.com/kubesphere/kubesphere/pull/3193))
 - Changed the HTTP ports of kube-scheduler and kube-controller-manager from `10251` and `10252` to the HTTPS ports of `10259` and `10257` respectively for data scraping. ([#1367](https://github.com/kubesphere/ks-installer/pull/1367))
