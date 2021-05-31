@@ -166,4 +166,4 @@ kubectl logs -n kubesphere-system $(kubectl get pod -n kubesphere-system -l app=
 
 4. 点击**创建**，然后等待集群初始化完成。
    
-     ![已导入的集群](/images/docs/zh-cn/multicluster-management/enable-multicluster-management-in-kubesphere/direct-connection/cluster-imported.png)
+     ![已导入的集群](/images/docs/zh-cn/multicluster-management/enable-multicluster-management-in-kubesphere/direct-connection/cluster-imported.PNG)
