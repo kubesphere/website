@@ -21,19 +21,13 @@ weight: 10520
 
 ## 创建蓝绿部署任务
 
-1. 以 `project-regular` 身份登录 KubeSphere，在**灰度策略**选项卡下，点击**蓝绿部署**右侧的**发布任务**。
-
-   ![blue-green-1](/images/docs/zh-cn/project-user-guide/grayscale-release/blue-green-deployment/blue-green-1.PNG)
+1. 以 `project-regular` 身份登录 KubeSphere，转到**灰度发布**页面，在**灰度策略**选项卡下，点击**蓝绿部署**右侧的**发布任务**。
 
 2. 输入名称然后点击**下一步**。
 
-   ![blue-green-2](/images/docs/zh-cn/project-user-guide/grayscale-release/blue-green-deployment/blue-green-2.PNG)
+3. 在**灰度组件**选项卡，从下拉列表选择您的应用以及想实现蓝绿部署的服务。如果您也使用示例应用 Bookinfo，请选择 **reviews** 并点击**下一步**。
 
-3. 从下拉列表选择您的应用以及想实现蓝绿部署的服务。如果您也使用示例应用 Bookinfo，请选择 **reviews** 并点击**下一步**。
-
-   ![blue-green-3](/images/docs/zh-cn/project-user-guide/grayscale-release/blue-green-deployment/blue-green-3.PNG)
-
-4. 如下图所示，在**灰度版本**页面，为其添加另一个版本（例如 `v2`），然后点击**下一步**：
+4. 如下图所示，在**灰度版本**选项卡，添加另一个版本（例如 `v2`），然后点击**下一步**：
 
    ![blue-green-4](/images/docs/zh-cn/project-user-guide/grayscale-release/blue-green-deployment/blue-green-4.PNG)
 
@@ -43,9 +37,7 @@ weight: 10520
 
    {{</ notice >}} 
 
-5. 要让应用版本 `v2` 接管所有流量，请选择**接管所有流量**，然后点击**创建**。
-
-   ![blue-green-5](/images/docs/zh-cn/project-user-guide/grayscale-release/blue-green-deployment/blue-green-5.PNG)
+5. 在**策略配置**选项卡，要让应用版本 `v2` 接管所有流量，请选择**接管所有流量**，然后点击**创建**。
 
 6. 蓝绿部署任务创建后，会显示在**任务状态**选项卡下。点击可查看详情。
 
