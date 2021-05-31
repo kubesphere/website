@@ -21,19 +21,13 @@ KubeSphere 基于 [Istio](https://istio.io/) 向用户提供部署金丝雀服�
 
 ## 步骤 1：创建金丝雀发布任务
 
-1. 以 `project-regular` 身份登录 KubeSphere 控制台，在**灰度策略**选项卡下，点击**金丝雀发布**右侧的**发布任务**。
-
-   ![创建金丝雀发布](/images/docs/zh-cn/project-user-guide/grayscale-release/canary-release/create-canary-release.PNG)
+1. 以 `project-regular` 身份登录 KubeSphere 控制台，转到**灰度发布**页面，在**灰度策略**选项卡下，点击**金丝雀发布**右侧的**发布任务**。
 
 2. 设置任务名称，点击**下一步**。
 
-   ![设置名称](/images/docs/zh-cn/project-user-guide/grayscale-release/canary-release/set-task-name.PNG)
+3. 在**灰度组件**选项卡，从下拉列表中选择您的应用和要实现金丝雀发布的服务。如果您同样使用示例应用 Bookinfo，请选择 **reviews** 并点击**下一步**。
 
-3. 从下拉列表中选择您的应用和要实现金丝雀发布的服务。如果您同样使用示例应用 Bookinfo，请选择 **reviews** 并点击**下一步**。
-
-   ![cabary-release-3](/images/docs/zh-cn/project-user-guide/grayscale-release/canary-release/canary-release-3.PNG)
-
-4. 在**灰度版本**页面，添加另一个版本（例如 `kubesphere/examples-bookinfo-reviews-v2:1.13.0`；将 `v1` 改为 `v2`）并点击**下一步**，如下图所示：
+4. 在**灰度版本**选项卡，添加另一个版本（例如 `kubesphere/examples-bookinfo-reviews-v2:1.13.0`；将 `v1` 改为 `v2`）并点击**下一步**，如下图所示：
 
    ![canary-release-4](/images/docs/zh-cn/project-user-guide/grayscale-release/canary-release/canary-release-4.PNG)
 
