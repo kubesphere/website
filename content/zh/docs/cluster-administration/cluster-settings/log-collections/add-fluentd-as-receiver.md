@@ -104,8 +104,8 @@ apiVersion: v1
 kind: Service
 metadata:
   labels:
-    app: fluentd-svc
-  name: fluentd-svc
+    app: fluentd
+  name: fluentd
   namespace: default
 spec:
   ports:
