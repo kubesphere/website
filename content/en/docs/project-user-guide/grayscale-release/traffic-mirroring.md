@@ -16,19 +16,13 @@ Traffic mirroring, also called shadowing, is a powerful, risk-free method of tes
 
 ## Create a Traffic Mirroring Job
 
-1. Log in to KubeSphere as `project-regular`. Under **Categories**, click **Create Job** on the right of **Traffic Mirroring**.
-
-   ![traffic-mirroring-1](/images/docs/project-user-guide/grayscale-release/traffic-mirroring/traffic-mirroring-1.jpg)
+1. Log in to KubeSphere as `project-regular` and navigate to **Grayscale Release**. Under **Categories**, click **Create Job** on the right of **Traffic Mirroring**.
 
 2. Set a name for it and click **Next**.
 
-   ![traffic-mirroring-2](/images/docs/project-user-guide/grayscale-release/traffic-mirroring/traffic-mirroring-2.jpg)
+3. On the **Grayscale Release Components** tab, select your app from the drop-down list and the Service of which you want to mirror the traffic. If you also use the sample app Bookinfo, select **reviews** and click **Next**.
 
-3. Select your app from the drop-down list and the service of which you want to mirror the traffic. If you also use the sample app Bookinfo, select **reviews** and click **Next**.
-
-   ![traffic-mirroring-3](/images/docs/project-user-guide/grayscale-release/traffic-mirroring/traffic-mirroring-3.jpg)
-
-4. On the **Grayscale Release Version** page, add another version of it (e.g. `v2`) as shown in the image below and click **Next**:
+4. On the **Grayscale Release Version** tab, add another version of it (e.g. `v2`) as shown in the image below and click **Next**:
 
    ![traffic-mirroring-4](/images/docs/project-user-guide/grayscale-release/traffic-mirroring/traffic-mirroring-4.jpg)
 
@@ -38,9 +32,7 @@ Traffic mirroring, also called shadowing, is a powerful, risk-free method of tes
 
    {{</ notice >}} 
 
-5. Click **Create** in the final step.
-
-   ![traffic-mirroring-5](/images/docs/project-user-guide/grayscale-release/traffic-mirroring/traffic-mirroring-5.jpg)
+5. On the **Policy Config** tab, click **Create**.
 
 6. The traffic mirroring job created displays under the tab **Job Status**. Click it to view details.
 
