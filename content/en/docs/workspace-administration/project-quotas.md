@@ -48,7 +48,13 @@ If you use the account `project-admin` (an account of the `admin` role at the pr
 
 6. To change project quotas, click **Manage Project** on the **Basic Information** page and select **Edit Quota**.
 
-7. Change project quotas directly in the dialog that appears and click **OK**.
+   {{< notice note >}}
+
+   For [a multi-cluster project](../../project-administration/project-and-multicluster-project/#multi-cluster-projects), the option **Edit Quota** does not display in the **Manage Project** drop-down menu. To set quotas for a multi-cluster project, go to **Quota Management** under **Project Settings** and click **Edit Quota**. Note that as a multi-cluster project runs across clusters, you can set resource quotas on different clusters separately.
+
+   {{</ notice >}} 
+
+7. Change project quotas in the dialog that appears and click **OK**.
 
 ## See Also
 
