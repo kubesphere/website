@@ -168,7 +168,7 @@ Keepalived must be installed on both machines while the configuration of them is
 
    - For the `interface` field, you must provide your own network card information. You can run `ifconfig` on your machine to get the value.
 
-   - The IP address provided for `unicast_src_ip` is the IP address of your current machine. For other machines where HAproxy and Keepalived are also installed for load balancing, their IP address must be input for the field `unicast_peer`.
+   - The IP address provided for `unicast_src_ip` is the IP address of your current machine. For other machines where HAproxy and Keepalived are also installed for load balancing, their IP address must be provided for the field `unicast_peer`.
 
      {{</ notice >}} 
 

@@ -95,7 +95,7 @@ This tutorial demonstrates how to deploy GitLab on KubeSphere.
 
 ### Step 3: Get the root user's password
 
-1. Go to **Secrets** under **Configurations**, input `gitlab-initial-root-password` in the search bar, and then press **Enter** on your keyboard to search the Secret.
+1. Go to **Secrets** under **Configurations**, enter `gitlab-initial-root-password` in the search bar, and then press **Enter** on your keyboard to search the Secret.
 
    ![search-secret](/images/docs/appstore/external-apps/deploy-gitlab/search-secret.PNG)
 
@@ -130,7 +130,7 @@ This tutorial demonstrates how to deploy GitLab on KubeSphere.
 
 ### Step 5: Access GitLab
 
-1. Go to **Services** under **Application Workloads**, input `nginx-ingress-controller` in the search bar, and then press **Enter** on your keyboard to search the Service. You can see the Service is being exposed through port `32618`, which you can use to access GitLab.
+1. Go to **Services** under **Application Workloads**, enter `nginx-ingress-controller` in the search bar, and then press **Enter** on your keyboard to search the Service. You can see the Service is being exposed through port `32618`, which you can use to access GitLab.
 
    ![search-service](/images/docs/appstore/external-apps/deploy-gitlab/search-service.PNG)
 

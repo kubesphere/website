@@ -5,12 +5,12 @@ This style guide provides a set of editorial guidelines for those who are writin
 ## **Basic Rules**
 
 - Write clearly, concisely and precisely.
-- English is the preferred language to use when you write documentation. If you are not sure whether you are writing correctly, you can use grammar checkers (e.g. [grammarly](https://www.grammarly.com/)). Although they are not 100% accurate, they can help you get rid of most of the wording issues. That said, Chinese is also acceptable if you really don't know how to express your meaning in English.
+- English is the preferred language to use when you write documentation. If you are not sure whether you are writing correctly, you can use grammar checkers (for example, [grammarly](https://www.grammarly.com/)). Although they are not 100% accurate, they can help you get rid of most of the wording issues. That said, Chinese is also acceptable if you really don't know how to express your meaning in English.
 - It is recommended that you use more images or diagrams to show UI functions and logical relations with tools such as [draw.io](https://draw.io).
 
 ## Preparation Notice
 
-Before you start writing the specific steps for a feature, state clearly what should be ready in advance, such as necessary components, accounts or roles (do not tell readers to use `admin` for all the operations, which is unreasonable in reality for different tenants), or a specific environment. You can add this part at the beginning of a tutorial or put it in a separate part (e.g. **Prerequisites**).
+Before you start writing the specific steps for a feature, state clearly what should be ready in advance, such as necessary components, accounts or roles (do not tell readers to use `admin` for all the operations, which is unreasonable in reality for different tenants), or a specific environment. You can add this part at the beginning of a tutorial or put it in a separate part (for example, **Prerequisites**).
 
 ## Paragraphs
 
@@ -34,7 +34,7 @@ Give a title first before you write a paragraph. It can be grouped into differen
 ```
 
 - Heading 1: The title of a tutorial. You do not need to add this type of title in the main body as it is already defined at the beginning in the value `title`.
-- Heading 2: The title of a major part in the tutorial. Make sure you capitalize each word in Heading 2, except prepositions, articles, conjunctions and words that are commonly written with a lower case letter at the beginning (e.g. macOS).
+- Heading 2: The title of a major part in the tutorial. Make sure you capitalize each word in Heading 2, except prepositions, articles, conjunctions and words that are commonly written with a lowercase letter at the beginning (for example, macOS).
 - Heading 3: A subtitle under Heading 2. You only need to capitalize the first word for Heading 3.
 - Heading 4: This is rarely used as Heading 2 and Heading 3 will do in most cases. Make sure if Heading 4 is really needed before you use it.
 - Do not add any periods after each heading.
@@ -42,7 +42,7 @@ Give a title first before you write a paragraph. It can be grouped into differen
 ## Images
 
 - When you submit your md files to GitHub, make sure you add related image files that appear in md files in the pull request as well. Please save your image files in static/images/docs. You can create a folder in the directory to save your images.
-- If you want to add remarks (e.g. put a box on a UI button), use the color **green**. As some screenshot apps does not support the color picking function for a specific color code, as long as the color is **similar** to #09F709, #00FF00, #09F709 or #09F738, it is acceptable.
+- If you want to add remarks (for example, put a box on a UI button), use the color **green**. As some screenshot apps does not support the color picking function for a specific color code, as long as the color is **similar** to #09F709, #00FF00, #09F709 or #09F738, it is acceptable.
 - Image format: PNG.
 - Make sure images in your guide match the content. For example, you mention that users need to log in to KubeSphere using an account of a role; this means the account that displays in your image is expected to be the one you are talking about. It confuses your readers if the content you are describing is not consistent with the image used.
 - Recommended: [Xnip](https://xnipapp.com/) for Mac and [Sniptool](https://www.reasyze.com/sniptool/) for Windows.
@@ -71,7 +71,7 @@ Use a **period** or a **conjunction** between two **complete** sentences.
 
 ### **Bold**
 
-- Mark any UI text (e.g. a button) in bold.
+- Mark any UI text (for example, a button) in bold.
 
 
 | Do                                                           | Don't                                                        |
@@ -139,7 +139,7 @@ registry:
 ./kk create config --with-kubesphere --with-kubernetes v1.17.9
 ```
 
-- If the comment is used for all the code (e.g. serving as a header for explanations), put the comment at the beginning above the code. For example:
+- If the comment is used for all the code (for example, serving as a header for explanations), put the comment at the beginning above the code. For example:
 
 ```yaml
 # Internal LB config example

@@ -107,7 +107,7 @@ You can use [strimzi-kafka-operator](https://github.com/strimzi/strimzi-kafka-op
 
 3. On the **Cluster Management** page, go to **Log Collections** in **Cluster Settings**.
 
-4. Click **Add Log Collector** and select **Kafka**. Input the Kafka broker address and port as below, and then click **OK** to continue.
+4. Click **Add Log Collector** and select **Kafka**. Enter the Kafka broker address and port as below, and then click **OK** to continue.
 
    ```bash
    my-cluster-kafka-0.my-cluster-kafka-brokers.default.svc 9092

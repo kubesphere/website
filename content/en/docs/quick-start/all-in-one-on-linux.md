@@ -159,7 +159,7 @@ To create a Kubernetes cluster with KubeSphere installed, refer to the following
 
 {{</ notice >}}
 
-After you execute the command, you will see a table for environment check. For details, read [Node requirements](#node-requirements) and [Dependency requirements](#dependency-requirements) above. Input `yes` to continue.
+After you execute the command, you will see a table for environment check. For details, read [Node requirements](#node-requirements) and [Dependency requirements](#dependency-requirements) above. Type `yes` to continue.
 
 ## Step 4: Verify the Installation
 
@@ -167,7 +167,7 @@ When you see the output as below, it means the installation finishes.
 
 ![Installation-complete](/images/docs/quickstart/all-in-one-installation/Installation-complete.png)
 
-Input the following command to check the result.
+Run the following command to check the result.
 
 ```bash
 kubectl logs -n kubesphere-system $(kubectl get pod -n kubesphere-system -l app=ks-install -o jsonpath='{.items[0].metadata.name}') -f

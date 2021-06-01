@@ -31,7 +31,7 @@ This tutorial demonstrates how to import an Aliyun ACK cluster through the [dire
 
 2. Log in to the KubeSphere console of the ACK cluster as `admin`. Click **Platform** in the upper left corner and then select **Cluster Management**.
 
-3. Go to **CRDs**, input `ClusterConfiguration` in the search bar, and then press **Enter** on your keyboard. Click **ClusterConfiguration** to go to its detail page.
+3. Go to **CRDs**, enter `ClusterConfiguration` in the search bar, and then press **Enter** on your keyboard. Click **ClusterConfiguration** to go to its detail page.
 
    ![search-config](/images/docs/multicluster-management/import-cloud-hosted-k8s/import-ack/search-config.png)
 
@@ -69,7 +69,7 @@ Log in to the web console of Aliyun. Go to **Clusters** under **Container Servic
 
    ![click-add-cluster](/images/docs/multicluster-management/import-cloud-hosted-k8s/import-ack/click-add-cluster.png)
 
-2. Input the basic information based on your needs and click **Next**.
+2. Enter the basic information based on your needs and click **Next**.
 
    ![input-info](/images/docs/multicluster-management/import-cloud-hosted-k8s/import-ack/input-info.png)
 

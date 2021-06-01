@@ -71,7 +71,7 @@ If you install KubeSphere on Linux, see [Disable Telemetry after Installation](.
 If you have enabled [the multi-cluster feature](../../../multicluster-management/), you need to select a cluster first.
     {{</ notice >}}
 
-3. Input `clusterconfiguration` in the search bar and click the result to go to its detail page.
+3. Enter `clusterconfiguration` in the search bar and click the result to go to its detail page.
 
     ![edit-crd](/images/docs/faq/telemetry-in-kubesphere/edit-crd.jpg)
 

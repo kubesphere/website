@@ -78,7 +78,7 @@ The steps of creating a stateful Service and a stateless Service are basically t
 
 {{</ notice >}} 
 
-### Step 2: Input basic information
+### Step 2: Enter basic information
 
 1. In the dialog that appears, you can see the field **Version** prepopulated with `v1`. You need to define a name for the Service, such as `demo-service`. When you finish, click **Next** to continue.
 

@@ -35,7 +35,7 @@ This tutorial demonstrates how to collect disk logs for an example app.
 
    ![alpine-image](/images/docs/project-administration/disk-log-collection/alpine-image.png)
 
-5. Scroll down to **Start Command** and check it. Input the following values for **Run Command** and **Parameters** respectively, click **√**, and then click **Next**.
+5. Scroll down to **Start Command** and check it. Enter the following values for **Run Command** and **Parameters** respectively, click **√**, and then click **Next**.
 
    **Run Command**
 
@@ -61,7 +61,7 @@ This tutorial demonstrates how to collect disk logs for an example app.
 
    ![mount-volumes](/images/docs/project-administration/disk-log-collection/mount-volumes.png)
    
-7. On the **Temporary Volume** tab, input a name for the volume (for example, `demo-disk-log-collection`) and set the access mode and path. Refer to the image below as an example.
+7. On the **Temporary Volume** tab, enter a name for the volume (for example, `demo-disk-log-collection`) and set the access mode and path. Refer to the image below as an example.
 
    ![volume-example](/images/docs/project-administration/disk-log-collection/volume-example.png)
 

@@ -22,7 +22,7 @@ Log in to the console as `project-regular`. Go to **Jobs** of a project, choose 
 
 ![cronjob-list](/images/docs/project-user-guide/application-workloads/cronjobs/cronjob-list.jpg)
 
-### Step 2: Input basic information
+### Step 2: Enter basic information
 
 Enter the basic information. You can refer to the image below for each field. When you finish, click **Next**.
 
@@ -30,7 +30,7 @@ Enter the basic information. You can refer to the image below for each field. Wh
 
 - **Name**: The name of the CronJob, which is also the unique identifier.
 - **Alias**: The alias name of the CronJob, making resources easier to identify.
-- **Schedule**: It runs a Job periodically on a given time-based schedule. Please see [CRON](https://en.wikipedia.org/wiki/Cron) for grammar reference. Some preset CRON statements are provided in KubeSphere to simplify the input. This field is specified by `.spec.schedule`. For this CronJob, input `*/1 * * * *`, which means it runs once per minute.
+- **Schedule**: It runs a Job periodically on a given time-based schedule. Please see [CRON](https://en.wikipedia.org/wiki/Cron) for grammar reference. Some preset CRON statements are provided in KubeSphere to simplify the input. This field is specified by `.spec.schedule`. For this CronJob, enter `*/1 * * * *`, which means it runs once per minute.
 
   | Type        | CRON        |
   | ----------- | ----------- |
@@ -61,7 +61,7 @@ Please refer to [Jobs](../jobs/#step-3-job-settings-optional).
 
 ### Step 4: Set an image
 
-1. Click **Add Container Image** in **Container Image** and input `busybox` in the search bar.
+1. Click **Add Container Image** in **Container Image** and enter `busybox` in the search bar.
 
     ![input-busybox](/images/docs/project-user-guide/application-workloads/cronjobs/input-busybox.jpg)
 

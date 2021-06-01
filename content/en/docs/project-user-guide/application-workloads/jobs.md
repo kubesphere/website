@@ -25,7 +25,7 @@ Log in to the console as `project-regular`. Go to **Jobs** under **Application W
 
 ![create-job](/images/docs/project-user-guide/application-workloads/jobs/create-job.jpg)
 
-### Step 2: Input basic information
+### Step 2: Enter basic information
 
 Enter the basic information. Refer to the image below as an example.
 
@@ -62,7 +62,7 @@ You can set the values in this step as below or click **Next** to use the defaul
 
     ![add-container-image-job](/images/docs/project-user-guide/application-workloads/jobs/add-container-image-job.png)
 
-3. On the same page, scroll down to **Start Command**. Input the following commands in the box which computes pi to 2000 places then prints it. Click **√** in the bottom right corner and select **Next** to continue.
+3. On the same page, scroll down to **Start Command**. Enter the following commands in the box which computes pi to 2000 places then prints it. Click **√** in the bottom right corner and select **Next** to continue.
 
     ```bash
     perl,-Mbignum=bpi,-wle,print bpi(2000)

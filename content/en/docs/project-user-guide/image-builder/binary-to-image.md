@@ -63,7 +63,7 @@ You must create a Docker Hub Secret so that the Docker image created through B2I
 
    **Target image repository**: Select the Docker Hub Secret as the image is pushed to Docker Hub.
    
-4. On the **Container Settings** page, scroll down to **Service Settings** to set the access policy for the container. Select **HTTP** for **Protocol**, customize the name (for example, `http-port`), and input `8080` for both **Container Port** and **Service Port**. Click **Next** to continue.
+4. On the **Container Settings** page, scroll down to **Service Settings** to set the access policy for the container. Select **HTTP** for **Protocol**, customize the name (for example, `http-port`), and enter `8080` for both **Container Port** and **Service Port**. Click **Next** to continue.
 
    ![container-settings](/images/docs/project-user-guide/image-builder/b2i-publish-artifact-to-kubernetes/container-settings.jpg)
 

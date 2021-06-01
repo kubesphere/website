@@ -23,7 +23,7 @@ Log in to the console as `project-regular`. Go to **Application Workloads** of a
 
 ![deployments](/images/docs/project-user-guide/workloads/deployments.png)
 
-### Step 2: Input basic information
+### Step 2: Enter basic information
 
 Specify a name for the Deployment (for example, `demo-deployment`) and click **Next** to continue.
 
@@ -43,13 +43,13 @@ You can see the Deployment manifest file in YAML format by enabling **Edit Mode*
 
     ![deployments](/images/docs/project-user-guide/workloads/deployments_form_2_container_btn.jpg)
 
-3. Input an image name from public Docker Hub or from a [private repository](../../configuration/image-registry/) you specified. For example, input `nginx` in the search bar and press **Enter**.
+3. Enter an image name from public Docker Hub or from a [private repository](../../configuration/image-registry/) you specified. For example, enter `nginx` in the search bar and press **Enter**.
 
     ![deployments](/images/docs/project-user-guide/workloads/deployments_form_2_container_1.jpg)
 
     {{< notice note >}}
 
-- Remember to press **Enter** on your keyboard after you input an image name in the search bar.
+- Remember to press **Enter** on your keyboard after you enter an image name in the search bar.
 - If you want to use your private image repository, you should [create an Image Registry Secret](../../configuration/image-registry/) first in **Secrets** under **Configurations**.
 
     {{</ notice >}}

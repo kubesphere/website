@@ -127,7 +127,7 @@ Pipelines include [declarative pipelines](https://www.jenkins.io/doc/book/pipeli
 
 {{</ notice >}}
 
-1. On the graphical editing panel, select **node** from the **Type** drop-down list and input `maven` for **label**.
+1. On the graphical editing panel, select **node** from the **Type** drop-down list and enter `maven` for **label**.
 
    {{< notice note >}}
 
@@ -191,7 +191,7 @@ This stage uses SonarQube to test your code. You can skip this stage if you do n
 
    ![maven-container](/images/docs/devops-user-guide/using-devops/create-a-pipeline-using-graphical-editing-panels/maven-container.jpg)
 
-3. Click **Add nesting steps** under the `maven` container to add a nested step. Click **withCredentials** and select the SonarQube token (`sonar-token`) from the **Credential ID** list. Input `SONAR_TOKEN` for **Text Variable**, then click **OK**.
+3. Click **Add nesting steps** under the `maven` container to add a nested step. Click **withCredentials** and select the SonarQube token (`sonar-token`) from the **Credential ID** list. Enter `SONAR_TOKEN` for **Text Variable**, then click **OK**.
 
    ![sonarqube-credentials](/images/docs/devops-user-guide/using-devops/create-a-pipeline-using-graphical-editing-panels/sonarqube-credentials.jpg)
 
@@ -215,7 +215,7 @@ This stage uses SonarQube to test your code. You can skip this stage if you do n
 
    ![sonarqube-shell-new](/images/docs/devops-user-guide/using-devops/create-a-pipeline-using-graphical-editing-panels/sonarqube-shell-new.jpg)
 
-8. Click **Add nesting steps** (the third one) for the **container** step directly and select **timeout**. Input `1` for time and select **Hours** for unit. Click **OK** to finish.
+8. Click **Add nesting steps** (the third one) for the **container** step directly and select **timeout**. Enter `1` for time and select **Hours** for unit. Click **OK** to finish.
 
    ![add-nested-step-2](/images/docs/devops-user-guide/using-devops/create-a-pipeline-using-graphical-editing-panels/add-nested-step-2.jpg)
 
