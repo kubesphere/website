@@ -30,7 +30,7 @@ All the volumes that are created on the **Volumes** page are PersistentVolumeCla
 
    ![create-volume](/images/docs/project-user-guide/volume-management/volumes/create-volume.jpg)
 
-3. In the dialog that appears, set a name (e.g. `demo-volume`) for the volume and click **Next**.
+3. In the dialog that appears, set a name (for example, `demo-volume`) for the volume and click **Next**.
 
    ![basic-volume-info](/images/docs/project-user-guide/volume-management/volumes/basic-volume-info.jpg)
 

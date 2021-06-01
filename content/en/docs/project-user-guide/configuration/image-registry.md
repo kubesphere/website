@@ -26,7 +26,7 @@ Log in to the web console of KubeSphere as `project-regular`. Go to **Configurat
 
 ### Step 2: Input basic information
 
-Specify a name for the Secret (e.g. `demo-registry-secret`) and click **Next** to continue.
+Specify a name for the Secret (for example, `demo-registry-secret`) and click **Next** to continue.
 
 {{< notice tip >}}
 

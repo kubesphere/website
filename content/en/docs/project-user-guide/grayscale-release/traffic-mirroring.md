@@ -28,7 +28,7 @@ Traffic mirroring, also called shadowing, is a powerful, risk-free method of tes
 
    ![traffic-mirroring-3](/images/docs/project-user-guide/grayscale-release/traffic-mirroring/traffic-mirroring-3.jpg)
 
-4. On the **Grayscale Release Version** page, add another version of it (e.g. `v2`) as shown in the image below and click **Next**:
+4. On the **Grayscale Release Version** page, add another version of it (for example, `v2`) as shown in the image below and click **Next**:
 
    ![traffic-mirroring-4](/images/docs/project-user-guide/grayscale-release/traffic-mirroring/traffic-mirroring-4.jpg)
 

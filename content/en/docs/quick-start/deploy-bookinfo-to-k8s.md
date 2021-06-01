@@ -23,7 +23,7 @@ To provide consistent user experiences of managing microservices, KubeSphere int
   Log in to the console as `project-admin` and go to your project. Navigate to **Advanced Settings** under **Project Settings**, click **Edit**, and select **Edit Gateway**. In the dialog that appears, flip on the toggle switch next to **Application Governance**.
 
   {{< notice note >}}
-You need to enable **Application Governance** so that you can use the Tracing feature. Once it is enabled, check whether an annotation (e.g. `nginx.ingress.kubernetes.io/service-upstream: true`) is added for your Route (Ingress) if the Route is inaccessible.
+You need to enable **Application Governance** so that you can use the Tracing feature. Once it is enabled, check whether an annotation (for example, `nginx.ingress.kubernetes.io/service-upstream: true`) is added for your Route (Ingress) if the Route is inaccessible.
   {{</ notice >}}
 
 ## What is Bookinfo

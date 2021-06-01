@@ -23,7 +23,7 @@ This tutorial demonstrates how to create a microservices-based app Bookinfo, whi
 
    ![create-composing-app](/images/docs/project-user-guide/applications/create-a-microservices-based-app/create-composing-app.png)
 
-2. Set a name for the app (e.g. `bookinfo`) and click **Next**.
+2. Set a name for the app (for example, `bookinfo`) and click **Next**.
 
 3. On the **Components** page, you need to create microservices that compose the app. Click **Add Service** and select **Stateless Service**.
 
@@ -65,7 +65,7 @@ This tutorial demonstrates how to create a microservices-based app Bookinfo, whi
 
     ![microservices-done](/images/docs/project-user-guide/applications/create-a-microservices-based-app/microservices-done.png)
 
-11. On the **Internet Access** page, click **Add Route Rule**. In the **Specify Domain** tab, set a domain name for your app (e.g. `demo.bookinfo`) and select `http` in the **Protocol** field. For `Paths`, select the Service `productpage` and port `9080`. Click **OK** to continue.
+11. On the **Internet Access** page, click **Add Route Rule**. In the **Specify Domain** tab, set a domain name for your app (for example, `demo.bookinfo`) and select `http` in the **Protocol** field. For `Paths`, select the Service `productpage` and port `9080`. Click **OK** to continue.
 
     ![route](/images/docs/project-user-guide/applications/create-a-microservices-based-app/route.png)
 

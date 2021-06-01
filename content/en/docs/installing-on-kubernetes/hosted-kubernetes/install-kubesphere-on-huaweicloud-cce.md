@@ -14,7 +14,7 @@ This guide walks you through the steps of deploying KubeSphere on [Huaiwei CCE](
 
 First, create a Kubernetes cluster based on the requirements below.
 
-- KubeSphere 3.0.0 supports Kubernetes `1.15.x`, `1.16.x`, `1.17.x`, and `1.18.x`. Select a version and create the cluster, e.g. `v1.15.11` or `v1.17.9`.
+- KubeSphere 3.0.0 supports Kubernetes `1.15.x`, `1.16.x`, `1.17.x`, and `1.18.x`. Select a version and create the cluster, for example, `v1.15.11` or `v1.17.9`.
 - Ensure the cloud computing network for your Kubernetes cluster works, or use an elastic IP when you use **Auto Create** or **Select Existing**. You can also configure the network after the cluster is created. Refer to [NAT Gateway](https://support.huaweicloud.com/en-us/productdesc-natgateway/en-us_topic_0086739762.html).
 - Select `s3.xlarge.2` `4-core｜8GB` for nodes and add more if necessary (3 and more nodes are required for a production environment).
 

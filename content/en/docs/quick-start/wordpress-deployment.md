@@ -36,7 +36,7 @@ The environment variable `WORDPRESS_DB_PASSWORD` is the password to connect to t
 
    ![create-secrets](/images/docs/quickstart/wordpress-deployment/create-secrets.png)
 
-2. Enter the basic information (e.g. name it `mysql-secret`) and click **Next**. On the next page, select **Default** for **Type** and click **Add Data** to add a key-value pair. Input the Key (`MYSQL_ROOT_PASSWORD`) and Value (`123456`) as below and click **√** in the bottom-right corner to confirm. When you finish, click **Create** to continue.
+2. Enter the basic information (for example, name it `mysql-secret`) and click **Next**. On the next page, select **Default** for **Type** and click **Add Data** to add a key-value pair. Input the Key (`MYSQL_ROOT_PASSWORD`) and Value (`123456`) as below and click **√** in the bottom-right corner to confirm. When you finish, click **Create** to continue.
 
    ![key-value](/images/docs/quickstart/wordpress-deployment/key-value.png)
 
@@ -52,7 +52,7 @@ Follow the same steps above to create a WordPress Secret `wordpress-secret` with
 
    ![volumes](/images/docs/quickstart/wordpress-deployment/volumes.png)
 
-2. Enter the basic information of the volume (e.g. name it `wordpress-pvc`) and click **Next**.
+2. Enter the basic information of the volume (for example, name it `wordpress-pvc`) and click **Next**.
 
 3. In **Volume Settings**, you need to choose an available **Storage Class**, and set **Access Mode** and **Volume Capacity**. You can use the default value directly as shown below. Click **Next** to continue.
 
@@ -68,7 +68,7 @@ Follow the same steps above to create a WordPress Secret `wordpress-secret` with
 
    ![composing-app](/images/docs/quickstart/wordpress-deployment/composing-app.png)
 
-2. Enter the basic information (e.g. input `wordpress` for Application Name) and click **Next**.
+2. Enter the basic information (for example, input `wordpress` for Application Name) and click **Next**.
 
    ![basic-info](/images/docs/quickstart/wordpress-deployment/basic-info.png)
 
@@ -78,7 +78,7 @@ Follow the same steps above to create a WordPress Secret `wordpress-secret` with
 
 4. Define a service type for the component. Select **Stateful Service** here.
 
-5. Enter the name for the stateful service (e.g. **mysql**) and click **Next**.
+5. Enter the name for the stateful service (for example, **mysql**) and click **Next**.
 
    ![mysqlname](/images/docs/quickstart/wordpress-deployment/mysqlname.png)
 

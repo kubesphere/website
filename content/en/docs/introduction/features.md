@@ -39,7 +39,7 @@ The next-gen installer [KubeKey](https://github.com/kubesphere/kubekey) provides
 
 As the IT world sees a growing number of cloud-native applications reshaping software portfolios for enterprises, users tend to deploy their clusters across locations, geographies, and clouds. Against this backdrop, KubeSphere has undergone a significant upgrade to address the pressing need of users with its brand-new multi-cluster feature.
 
-With KubeSphere, users can manage the infrastructure underneath, such as adding or deleting clusters. Heterogeneous clusters deployed on any infrastructure (e.g. Amazon EKS and Google Kubernetes Engine) can be managed in a unified way. This is made possible by a central control plane of KubeSphere with two efficient management approaches available.
+With KubeSphere, users can manage the infrastructure underneath, such as adding or deleting clusters. Heterogeneous clusters deployed on any infrastructure (for example, Amazon EKS and Google Kubernetes Engine) can be managed in a unified way. This is made possible by a central control plane of KubeSphere with two efficient management approaches available.
 
 - **Solo**. Independently deployed Kubernetes clusters can be maintained and managed together in KubeSphere container platform.
 - **Federation**. Multiple Kubernetes clusters can be aggregated together as a Kubernetes resource pool. When users deploy applications, replicas can be deployed on different Kubernetes clusters in the pool. In this regard, high availability is achieved across zones and clusters.
@@ -72,7 +72,7 @@ S2I allows you to publish your service to Kubernetes without writing a Dockerfil
 
 ### Binary-to-Image
 
-Similar to S2I, Binary-to-Image (B2I) is a toolkit and automated workflow for building reproducible container images from binary (e.g. Jar, War, Binary package).
+Similar to S2I, Binary-to-Image (B2I) is a toolkit and automated workflow for building reproducible container images from binary (for example, Jar, War, Binary package).
 
 You just need to upload your application binary package, and specify the image registry to which you want to push. The rest is exactly the same as S2I.
 
@@ -103,7 +103,7 @@ Based on Jaeger, KubeSphere service mesh enables users to track how services int
 
 ## Multi-tenant Management
 
-In KubeSphere, resources (e.g. clusters) can be shared between tenants. First, administrators or managers need to set different account roles with different authorizations. After that, members in the platform can be assigned with these roles to perform specific actions on varied resources. Meanwhile, as KubeSphere completely isolates tenants, they will not affect each other at all.
+In KubeSphere, resources (for example, clusters) can be shared between tenants. First, administrators or managers need to set different account roles with different authorizations. After that, members in the platform can be assigned with these roles to perform specific actions on varied resources. Meanwhile, as KubeSphere completely isolates tenants, they will not affect each other at all.
 
 - **Multi-tenancy**. It provides role-based fine-grained authentication in a unified way and a three-tier authorization system.
 - **Unified authentication**. For enterprises, KubeSphere is compatible with their central authentication system that is base on LDAP or AD protocol. Single sign-on (SSO) is also supported to achieve unified authentication of tenant identity.

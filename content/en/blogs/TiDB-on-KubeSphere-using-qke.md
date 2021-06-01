@@ -58,7 +58,7 @@ Therefore, I select QingCloud Kubernetes Engine (QKE) to prepare the environment
    customresourcedefinition.apiextensions.k8s.io/tidbclusterautoscalers.pingcap.com created
    ```
 
-5. Now, let's get back to the **Access Control** page where all the workspaces are listed. Before I proceed, first I need to create a new workspace (e.g. `dev-workspace`).
+5. Now, let's get back to the **Access Control** page where all the workspaces are listed. Before I proceed, first I need to create a new workspace (for example, `dev-workspace`).
 
    In a workspace, different users have different permissions to perform varied tasks in projects. Usually, a department-wide project requires a multi-tenant system so that everyone is responsible for their own part. For demonstration purposes, I use the account `admin` in this example. You can [see the official documentation of KubeSphere](https://kubesphere.io/docs/quick-start/create-workspace-and-project/) to know more about how the multi-tenant system works.
 

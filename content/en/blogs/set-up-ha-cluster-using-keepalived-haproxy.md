@@ -8,7 +8,7 @@ author: 'Pixiake, Sherlock'
 snapshot: 'https://ap3.qingstor.com/kubesphere-website/docs/architecture-ha-k8s-cluster.png'
 ---
 
-A highly available Kubernetes cluster ensures your applications run without outages which is required for production. In this connection, there are plenty of ways for you to choose from to achieve high availability. For example, if your cluster is deployed on cloud (e.g. Google Cloud and AWS), you can create load balancers on these platforms directly. At the same time, Keepalived, HAproxy and NGINX are also possible alternatives for you to achieve load balancing.
+A highly available Kubernetes cluster ensures your applications run without outages which is required for production. In this connection, there are plenty of ways for you to choose from to achieve high availability. For example, if your cluster is deployed on cloud (for example, Google Cloud and AWS), you can create load balancers on these platforms directly. At the same time, Keepalived, HAproxy and NGINX are also possible alternatives for you to achieve load balancing.
 
 In this article, I am going to use Keepalived and HAproxy for load balancing and achieve high availability. The steps are listed as below:
 
@@ -264,7 +264,7 @@ Before you start to create your Kubernetes cluster, make sure you have tested th
 
 [KubeKey](https://github.com/kubesphere/kubekey) is an efficient and convenient tool to create a Kubernetes cluster. If you are not familiar with KubeKey, have a look at my previous articles about using KubeKey to [create a three-node cluster](https://kubesphere.io/blogs/install-kubernetes-using-kubekey/) and scale your cluster.
 
-1. Download KubeKey from its [GitHub Release Page](https://github.com/kubesphere/kubekey/releases) or use the following command to download KubeKey version 1.0.1. You only need to download KubeKey to one of your machines (e.g. `master1`) that serves as the **taskbox** for installation.
+1. Download KubeKey from its [GitHub Release Page](https://github.com/kubesphere/kubekey/releases) or use the following command to download KubeKey version 1.0.1. You only need to download KubeKey to one of your machines (for example, `master1`) that serves as the **taskbox** for installation.
 
    ```bash
    curl -sfL https://get-kk.kubesphere.io | VERSION=v1.0.1 sh -

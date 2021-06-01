@@ -212,7 +212,7 @@ func (f *Fit) Filter(ctx context.Context, cycleState *framework.CycleState, pod 
 }
 ```
 
-It can be seen from the code above that the scheduler (schedule thread) calculates the resources required by the Pod to be scheduled. Specifically, it calculates the total requests of init containers and the total requests of working containers respectively according to Pod specifications. The greater one will be used. Note that for lightweight virtual machines (e.g. kata-container), their own resource consumption of virtualization needs to be counted in caches. In the following `Filter` stage, all nodes will be checked to see if they meet the conditions.
+It can be seen from the code above that the scheduler (schedule thread) calculates the resources required by the Pod to be scheduled. Specifically, it calculates the total requests of init containers and the total requests of working containers respectively according to Pod specifications. The greater one will be used. Note that for lightweight virtual machines (for example, kata-container), their own resource consumption of virtualization needs to be counted in caches. In the following `Filter` stage, all nodes will be checked to see if they meet the conditions.
 
 {{< notice note >}}
 

@@ -18,7 +18,7 @@ groups:
       - title: OpenPitrix
         icon: 'https://pek3b.qingstor.com/kubesphere-docs/png/20200607231502.png'
         link: 'https://github.com/openpitrix/openpitrix'
-        description: OpenPitrix is an open source multi-cloud application management platform. It is useful in packing, deploying and managing applications of different kinds (e.g. traditional, microservice and serverless) in multiple cloud platforms, including AWS, Kubernetes, QingCloud and VMWare.
+        description: OpenPitrix is an open source multi-cloud application management platform. It is useful in packing, deploying and managing applications of different kinds (for example, traditional, microservice and serverless) in multiple cloud platforms, including AWS, Kubernetes, QingCloud and VMWare.
 
   - name: Service Proxy
     children:
