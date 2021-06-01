@@ -17,7 +17,7 @@ section2:
 
     - title: Transfer Platform
       contentList:
-        - content: SmartAnt is a one-stop, lightweight transfer platform that helps users to transfer their business to the cloud in a rapid and convenient fashion. With visualized interfaces, SmartAnt supports one-click data transfer (e.g. host, database, and object storage), which has fundamentally solved the problem in the traditional ways of cloud transfer.
+        - content: SmartAnt is a one-stop, lightweight transfer platform that helps users to transfer their business to the cloud in a rapid and convenient fashion. With visualized interfaces, SmartAnt supports one-click data transfer (for example, host, database, and object storage), which has fundamentally solved the problem in the traditional ways of cloud transfer.
       image:
 
     - title: Basic Architecture Development

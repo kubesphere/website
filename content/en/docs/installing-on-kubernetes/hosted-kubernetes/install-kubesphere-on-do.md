@@ -18,11 +18,11 @@ A Kubernetes cluster in DO is a prerequisite for installing KubeSphere. Go to yo
 
 You need to select:
 
-1. Kubernetes version (e.g. *1.18.6-do.0*)
-2. Datacenter region (e.g. *Frankfurt*)
-3. VPC network (e.g. *default-fra1*)
-4. Cluster capacity (e.g. 2 standard nodes with 2 vCPUs and 4GB of RAM each)
-5. A name for the cluster (e.g. *kubesphere-3*)
+1. Kubernetes version (for example, *1.18.6-do.0*)
+2. Datacenter region (for example, *Frankfurt*)
+3. VPC network (for example, *default-fra1*)
+4. Cluster capacity (for example, 2 standard nodes with 2 vCPUs and 4GB of RAM each)
+5. A name for the cluster (for example, *kubesphere-3*)
 
 ![config-cluster-do](/images/docs/do/config-cluster-do.png)
 

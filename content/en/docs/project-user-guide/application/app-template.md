@@ -8,7 +8,7 @@ aliases:
 weight: 10110
 ---
 
-An app template serves as a way for users to upload, deliver and manage apps. Generally, an app is composed of one or more Kubernetes workloads (e.g. [Deployments](../../../project-user-guide/application-workloads/deployments/), [StatefulSets](../../../project-user-guide/application-workloads/statefulsets/) and [DaemonSets](../../../project-user-guide/application-workloads/daemonsets/)) and [Services](../../../project-user-guide/application-workloads/services/) based on how it functions and communicates with the external environment. Apps that are uploaded as app templates are built based on a [Helm](https://helm.sh/) package.
+An app template serves as a way for users to upload, deliver and manage apps. Generally, an app is composed of one or more Kubernetes workloads (for example, [Deployments](../../../project-user-guide/application-workloads/deployments/), [StatefulSets](../../../project-user-guide/application-workloads/statefulsets/) and [DaemonSets](../../../project-user-guide/application-workloads/daemonsets/)) and [Services](../../../project-user-guide/application-workloads/services/) based on how it functions and communicates with the external environment. Apps that are uploaded as app templates are built based on a [Helm](https://helm.sh/) package.
 
 ## How App Templates Work
 
@@ -32,7 +32,7 @@ KubeSphere deploys app repository services based on [OpenPitrix](https://github.
 
 ## Why App Templates
 
-App templates enable users to deploy and manage apps in a visualized way. Internally, they play an important role as shared resources (e.g. databases, middleware and operating systems) created by enterprises for the coordination and cooperation within teams. Externally, app templates set industry standards of building and delivery. Users can take advantage of app templates in different scenarios to meet their own needs through one-click deployment.
+App templates enable users to deploy and manage apps in a visualized way. Internally, they play an important role as shared resources (for example, databases, middleware and operating systems) created by enterprises for the coordination and cooperation within teams. Externally, app templates set industry standards of building and delivery. Users can take advantage of app templates in different scenarios to meet their own needs through one-click deployment.
 
 In addition, as OpenPitrix is integrated to KubeSphere to provide application management across the entire lifecycle, the platform allows ISVs, developers and regular users to all participate in the process. Backed by the multi-tenant system of KubeSphere, each tenant is only responsible for their own part, such as app uploading, app review, release, test, and version management. Ultimately, enterprises can build their own App Store and enrich their application pools with their customized standards. As such, apps can also be delivered in a standardized fashion.
 

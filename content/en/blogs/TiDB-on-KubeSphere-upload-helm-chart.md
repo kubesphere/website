@@ -101,7 +101,7 @@ Now that you have Helm charts ready, you can upload them to KubeSphere as app te
 
 ## Releasing Apps to the App Store
 
-[App templates](https://kubesphere.io/docs/project-user-guide/application/app-template/) enable users to deploy and manage apps in a visualized way. Internally, they play an important role as shared resources (e.g. databases, middleware and operating systems) created by enterprises for the coordination and cooperation within teams.
+[App templates](https://kubesphere.io/docs/project-user-guide/application/app-template/) enable users to deploy and manage apps in a visualized way. Internally, they play an important role as shared resources (for example, databases, middleware and operating systems) created by enterprises for the coordination and cooperation within teams.
 
 You can release apps you have uploaded to KubeSphere to the public repository, also known as the App Store. In this way, all tenants on the platform can see these apps and deploy them if they have necessary permissions regardless of the workspace they belong to.
 

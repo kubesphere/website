@@ -16,7 +16,7 @@ This guide demonstrates how to manage roles and members in your workspace. At th
 
 ## Prerequisites
 
-At least one workspace has been created, such as `demo-workspace`. Besides, you need an account of the `workspace-admin` role (e.g. `ws-admin`) at the workspace level. See [Create Workspaces, Projects, Accounts and Roles](../../quick-start/create-workspace-and-project/) if they are not ready yet.
+At least one workspace has been created, such as `demo-workspace`. Besides, you need an account of the `workspace-admin` role (for example, `ws-admin`) at the workspace level. See [Create Workspaces, Projects, Accounts and Roles](../../quick-start/create-workspace-and-project/) if they are not ready yet.
 
 {{< notice note >}} 
 

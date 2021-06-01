@@ -47,7 +47,7 @@ Kubernetes itself does not provide the way to expose services through Ingress. R
 
 Ingress is the most used method in a business environment than NodePort and LoadBalancer. The reasons include:
 
-1. Compared with the load balancing way of kube-proxy, Ingress Controller is more capable (e.g. traffic control and security strategy).
+1. Compared with the load balancing way of kube-proxy, Ingress Controller is more capable (for example, traffic control and security strategy).
 2. It is more direct to identify services through domains; large port numbers in NodePort are also not needed for Ingress.
 
 Nevertheless, the following problems need to be solved for Ingress:

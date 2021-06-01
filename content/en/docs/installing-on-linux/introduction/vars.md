@@ -30,6 +30,6 @@ kubernetes:
   registry:
     registryMirrors: []   # For users who need to speed up downloads.
     insecureRegistries: [] # Set an address of insecure image registry. See https://docs.docker.com/registry/insecure/
-    privateRegistry: ""   # Configure a private image registry for air-gapped installation (e.g. docker local registry or Harbor).
-  addons: []  # You can specify any add-ons with one or more Helm Charts or YAML files in this field (e.g. CSI plugins or cloud provider plugins).
+    privateRegistry: ""   # Configure a private image registry for air-gapped installation (for example, docker local registry or Harbor).
+  addons: []  # You can specify any add-ons with one or more Helm Charts or YAML files in this field (for example, CSI plugins or cloud provider plugins).
 ```

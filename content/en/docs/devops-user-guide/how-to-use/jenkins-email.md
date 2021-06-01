@@ -39,7 +39,7 @@ The built-in Jenkins cannot share the same email configuration with the platform
    | Environment Variable Name | Description                      |
    | ------------------------- | -------------------------------- |
    | EMAIL\_SMTP\_HOST         | SMTP server address              |
-   | EMAIL\_SMTP\_PORT         | SMTP server port (e.g. 25)       |
+   | EMAIL\_SMTP\_PORT         | SMTP server port (for example, 25)       |
    | EMAIL\_FROM\_ADDR         | Email sender address             |
    | EMAIL\_FROM\_NAME         | Email sender name                |
    | EMAIL\_FROM\_PASS         | Email sender password            |

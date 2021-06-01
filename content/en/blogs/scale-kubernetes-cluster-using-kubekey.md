@@ -124,7 +124,7 @@ For more information about requirements for nodes, network, and dependencies, [s
 
    {{< notice note >}}
 
-   - You are not allowed to modify the host name of existing nodes (e.g. master) when adding new nodes.
+   - You are not allowed to modify the host name of existing nodes (for example, master) when adding new nodes.
 
    - For more information about different parameters in the configuration file, see my [last article](https://kubesphere.io/blogs/install-kubernetes-using-kubekey/#install-kubernetes).
 

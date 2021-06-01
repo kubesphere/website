@@ -17,7 +17,7 @@ As an essential part of observability, logs play an important role in developmen
 
 In the environment of physical or virtual machines, logs are generally exported as files and managed by users. This makes it difficult for centralized management and analysis. On the contrary, container technologies, such as Kubernetes and Docker, can export logs directly to stdout, providing great convenience for the centralized management and analysis of logs.
 
-The general logging architecture offered by the official website of Kubernetes is shown below, including logging agent, backend services and frontend console. Mature solutions (e.g. ELK/EFK) and the open source tool Loki launched in 2018 in the cloud native area share a similar architecture. More details will be provided below on the contribution of ELK/EFK, [Loki](https://github.com/grafana/loki) and [KubeSphere](https://github.com/kubesphere/kubesphere) in this regard.
+The general logging architecture offered by the official website of Kubernetes is shown below, including logging agent, backend services and frontend console. Mature solutions (for example, ELK/EFK) and the open source tool Loki launched in 2018 in the cloud native area share a similar architecture. More details will be provided below on the contribution of ELK/EFK, [Loki](https://github.com/grafana/loki) and [KubeSphere](https://github.com/kubesphere/kubesphere) in this regard.
 
 ![](https://pek3b.qingstor.com/kubesphere-docs/png/20191001090839.png)
 
@@ -102,7 +102,7 @@ As a logging solution that answers the call of the cloud native times, Loki has 
 
 ## Prospect
 
-The way Kubernetes is structured makes it possible for the centralized management of logs. In this connection, an increasing number of outstanding log management methods have empowered users to better dig out the value of log data, with greater observability achieved. As an open source platform based on Kubernetes, KubeSphere will work to improve the existing logging solutions of Kubernetes (e.g. multi-cluster log management and log alert). On top of that, it will also pay close and continuous attention to Loki, the log aggregation system inspired by Prometheus, and strives to be an active player in its development. This is how it works to integrate the most cutting-edge technology of log management into KubeSphere for users around the world.
+The way Kubernetes is structured makes it possible for the centralized management of logs. In this connection, an increasing number of outstanding log management methods have empowered users to better dig out the value of log data, with greater observability achieved. As an open source platform based on Kubernetes, KubeSphere will work to improve the existing logging solutions of Kubernetes (for example, multi-cluster log management and log alert). On top of that, it will also pay close and continuous attention to Loki, the log aggregation system inspired by Prometheus, and strives to be an active player in its development. This is how it works to integrate the most cutting-edge technology of log management into KubeSphere for users around the world.
 
 ## Relevant Information
 

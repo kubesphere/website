@@ -24,7 +24,7 @@ Log in to the console as `project-regular`. Go to **Application Workloads** of a
 
 ### Step 2: Input basic information
 
-Specify a name for the Deployment (e.g. `demo-deployment`) and click **Next** to continue.
+Specify a name for the Deployment (for example, `demo-deployment`) and click **Next** to continue.
 
 ![deployments](/images/docs/project-user-guide/workloads/deployments_form_1.jpg)
 

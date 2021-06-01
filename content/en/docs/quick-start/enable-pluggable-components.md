@@ -44,7 +44,7 @@ When you implement multi-node installation of KubeSphere on Linux, you need to c
     ```
 
     {{< notice note >}}
-If you adopt [All-in-one Installation](../../quick-start/all-in-one-on-linux/), you do not need to create a `config-sample.yaml` file as you can create a cluster directly. Generally, the all-in-one mode is for users who are new to KubeSphere and look to get familiar with the system. If you want to enable pluggable components in this mode (e.g. for testing purpose), refer to the [following section](#enable-pluggable-components-after-installation) to see how pluggable components can be installed after installation.
+If you adopt [All-in-one Installation](../../quick-start/all-in-one-on-linux/), you do not need to create a `config-sample.yaml` file as you can create a cluster directly. Generally, the all-in-one mode is for users who are new to KubeSphere and look to get familiar with the system. If you want to enable pluggable components in this mode (for example, for testing purpose), refer to the [following section](#enable-pluggable-components-after-installation) to see how pluggable components can be installed after installation.
     {{</ notice >}}
 
 2. In this file, enable the pluggable components you want to install by changing `false` to `true` for `enabled`. Here is [the complete file](https://github.com/kubesphere/kubekey/blob/release-1.0/docs/config-example.md) for your reference. Save the file after you finish.

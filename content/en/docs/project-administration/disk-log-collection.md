@@ -27,7 +27,7 @@ This tutorial demonstrates how to collect disk logs for an example app.
 
 1. From the left navigation bar, select **Workloads** in **Application Workloads**. Under the **Deployments** tab,  click **Create**.
 
-2. In the dialog that appears, set a name for the Deployment (e.g. `demo-deployment`) and click **Next**.
+2. In the dialog that appears, set a name for the Deployment (for example, `demo-deployment`) and click **Next**.
 
 3. Under **Container Image**, click **Add Container Image**.
 
@@ -61,7 +61,7 @@ This tutorial demonstrates how to collect disk logs for an example app.
 
    ![mount-volumes](/images/docs/project-administration/disk-log-collection/mount-volumes.png)
    
-7. On the **Temporary Volume** tab, input a name for the volume (e.g. `demo-disk-log-collection`) and set the access mode and path. Refer to the image below as an example.
+7. On the **Temporary Volume** tab, input a name for the volume (for example, `demo-disk-log-collection`) and set the access mode and path. Refer to the image below as an example.
 
    ![volume-example](/images/docs/project-administration/disk-log-collection/volume-example.png)
 

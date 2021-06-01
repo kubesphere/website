@@ -42,7 +42,7 @@ This method serves as an efficient way to test performance and reliability of a 
 
    {{</ notice >}} 
 
-5. You send traffic to these two versions (`v1` and `v2`) either by a specific percentage or by the request content such as `Http Header`, `Cookie` and `URI`. Select **Forward by traffic ratio** and drag the icon in the middle to change the percentage of traffic sent to these two versions respectively (e.g. set 50% for either one). When you finish, click **Create**.
+5. You send traffic to these two versions (`v1` and `v2`) either by a specific percentage or by the request content such as `Http Header`, `Cookie` and `URI`. Select **Forward by traffic ratio** and drag the icon in the middle to change the percentage of traffic sent to these two versions respectively (for example, set 50% for either one). When you finish, click **Create**.
 
    ![canary-release-5](/images/docs/project-user-guide/grayscale-release/canary-release/canary-release-5.gif)
 
@@ -119,7 +119,7 @@ Now that you have two available app versions, access the app to verify the canar
 
    ![traffic-management](/images/docs/project-user-guide/grayscale-release/canary-release/traffic-management.png)
 
-3. Click a component (e.g. **reviews**) and you can see the information of traffic monitoring on the right, displaying real-time data of **Traffic**, **Success rate** and **Duration**.
+3. Click a component (for example, **reviews**) and you can see the information of traffic monitoring on the right, displaying real-time data of **Traffic**, **Success rate** and **Duration**.
 
    ![topology](/images/docs/project-user-guide/grayscale-release/canary-release/topology.png)
 

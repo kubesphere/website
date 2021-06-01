@@ -244,7 +244,7 @@ chmod +x kk
 
 With KubeKey, you can install Kubernetes and KubeSphere together. You have the option to create a multi-node cluster by customizing parameters in the configuration file.
 
-Create a Kubernetes cluster with KubeSphere installed (e.g. `--with-kubesphere v3.0.0`):
+Create a Kubernetes cluster with KubeSphere installed (for example, `--with-kubesphere v3.0.0`):
 
 ```bash
 ./kk create config --with-kubernetes v1.17.9 --with-kubesphere v3.0.0

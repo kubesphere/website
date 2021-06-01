@@ -16,7 +16,7 @@ This section gives you an overview of a single-master multi-node installation, i
 
 ## Concept
 
-A multi-node cluster is composed of at least one master node and one worker node. You can use any node as the **taskbox** to carry out the installation task. You can add additional nodes based on your needs (e.g. for high availability) both before and after the installation.
+A multi-node cluster is composed of at least one master node and one worker node. You can use any node as the **taskbox** to carry out the installation task. You can add additional nodes based on your needs (for example, for high availability) both before and after the installation.
 
 - **Master**. A master node generally hosts the control plane that controls and manages the whole system.
 - **Worker**. Worker nodes run the actual applications deployed on them.
@@ -166,7 +166,7 @@ Here are some examples for your reference:
   ./kk create config [-f ~/myfolder/abc.yaml]
   ```
 
-- You can specify a KubeSphere version that you want to install (e.g. `--with-kubesphere v3.0.0`).
+- You can specify a KubeSphere version that you want to install (for example, `--with-kubesphere v3.0.0`).
 
   ```bash
   ./kk create config --with-kubesphere [version]
@@ -252,7 +252,7 @@ List all your machines under `hosts` and add their detailed information as above
 
 #### addons
 
-You can customize persistent storage plugins (e.g. NFS Client, Ceph RBD, and GlusterFS) by specifying storage under the field `addons` in `config-sample.yaml`. For more information, see [Persistent Storage Configurations](../../../installing-on-linux/persistent-storage-configurations/understand-persistent-storage/).
+You can customize persistent storage plugins (for example, NFS Client, Ceph RBD, and GlusterFS) by specifying storage under the field `addons` in `config-sample.yaml`. For more information, see [Persistent Storage Configurations](../../../installing-on-linux/persistent-storage-configurations/understand-persistent-storage/).
 
 {{< notice note >}}
 
@@ -309,7 +309,7 @@ https://kubesphere.io             20xx-xx-xx xx:xx:xx
 #####################################################
 ```
 
-Now, you will be able to access the web console of KubeSphere at `http://{IP}:30880` (e.g. you can use the EIP) with the account and password `admin/P@88w0rd`.
+Now, you will be able to access the web console of KubeSphere at `http://{IP}:30880` (for example, you can use the EIP) with the account and password `admin/P@88w0rd`.
 
 {{< notice note >}}
 

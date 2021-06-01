@@ -48,7 +48,7 @@ For more information about requirements for nodes, network, and dependencies, [s
 
 ## Prepare Load Balancers
 
-You can use any cloud load balancers or hardware load balancers (e.g. F5). In addition, Keepalived and [HAproxy](https://www.haproxy.com/), or Nginx is also an alternative for creating high-availability clusters. In this example, I have an internal load balancer with a listener that listens on port `6443` (`api-server`) and an external load balancer with a listener that listens on the port of the Kubernetes dashboard.
+You can use any cloud load balancers or hardware load balancers (for example, F5). In addition, Keepalived and [HAproxy](https://www.haproxy.com/), or Nginx is also an alternative for creating high-availability clusters. In this example, I have an internal load balancer with a listener that listens on port `6443` (`api-server`) and an external load balancer with a listener that listens on the port of the Kubernetes dashboard.
 
 ## Download KubeKey
 
@@ -131,7 +131,7 @@ You can use any cloud load balancers or hardware load balancers (e.g. F5). In ad
 
    {{< notice note >}}
 
-   - You are not allowed to modify the host name of existing nodes (e.g. `master1`) when adding new nodes.
+   - You are not allowed to modify the host name of existing nodes (for example, `master1`) when adding new nodes.
    - For more information about different parameters in the configuration file, see [this article](https://kubesphere.io/blogs/install-kubernetes-using-kubekey/#install-kubernetes).
 
    {{</ notice >}} 

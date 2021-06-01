@@ -28,7 +28,7 @@ Log in to the console as `project-regular`. Go to **Configurations** of a projec
 
 ### Step 2: Input basic information
 
-Specify a name for the ConfigMap (e.g. `demo-configmap`) and click **Next** to continue.
+Specify a name for the ConfigMap (for example, `demo-configmap`) and click **Next** to continue.
 
 {{< notice tip >}}
 

@@ -126,7 +126,7 @@ In this step, you create a project using the account `project-admin` created in 
 
    ![kubesphere-projects](/images/docs/quickstart/create-workspaces-projects-accounts/kubesphere-projects.png)
 
-2. Enter the project name (e.g. `demo-project`) and click **OK** to finish. You can also add an alias and description for the project.
+2. Enter the project name (for example, `demo-project`) and click **OK** to finish. You can also add an alias and description for the project.
 
    ![demo-project](/images/docs/quickstart/create-workspaces-projects-accounts/demo-project.png)
 
@@ -134,7 +134,7 @@ In this step, you create a project using the account `project-admin` created in 
 
    ![click-demo-project](/images/docs/quickstart/create-workspaces-projects-accounts/click-demo-project.png)
 
-4. On the **Overview** page of the project, the project quota remains unset by default. You can click **Set** and specify [resource requests and limits](../../workspace-administration/project-quotas/) as needed (e.g. 1 core for CPU and 1000Gi for memory).
+4. On the **Overview** page of the project, the project quota remains unset by default. You can click **Set** and specify [resource requests and limits](../../workspace-administration/project-quotas/) as needed (for example, 1 core for CPU and 1000Gi for memory).
 
    ![quota](/images/docs/quickstart/create-workspaces-projects-accounts/quota.png)
 
@@ -212,7 +212,7 @@ To create a DevOps project, you must install the KubeSphere DevOps system in adv
 
    ![devops](/images/docs/quickstart/create-workspaces-projects-accounts/devops.png)
 
-2. Enter the DevOps project name (e.g. `demo-devops`) and click **OK**. You can also add an alias and description for the project.
+2. Enter the DevOps project name (for example, `demo-devops`) and click **OK**. You can also add an alias and description for the project.
 
    ![devops-project](/images/docs/quickstart/create-workspaces-projects-accounts/devops-project.png)
 
