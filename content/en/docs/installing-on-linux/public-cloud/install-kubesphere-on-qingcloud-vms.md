@@ -8,7 +8,7 @@ Weight: 3420
 
 ## Introduction
 
-For a production environment, you need to consider the high availability of the cluster. If key components (e.g. kube-apiserver, kube-scheduler, and kube-controller-manager) are all running on the same master node, Kubernetes and KubeSphere will be unavailable once the master node goes down. Therefore, you need to set up a high-availability cluster by provisioning load balancers with multiple master nodes. You can use any cloud load balancer, or any hardware load balancer (e.g. F5). In addition, Keepalived and [HAproxy](https://www.haproxy.com/), or Nginx is also an alternative for creating high-availability clusters.
+For a production environment, you need to consider the high availability of the cluster. If key components (for example, kube-apiserver, kube-scheduler, and kube-controller-manager) are all running on the same master node, Kubernetes and KubeSphere will be unavailable once the master node goes down. Therefore, you need to set up a high-availability cluster by provisioning load balancers with multiple master nodes. You can use any cloud load balancer, or any hardware load balancer (for example, F5). In addition, Keepalived and [HAproxy](https://www.haproxy.com/), or Nginx is also an alternative for creating high-availability clusters.
 
 This tutorial walks you through an example of how to create two [QingCloud load balancers](https://docs.qingcloud.com/product/network/loadbalancer), serving as the internal load balancer and external load balancer respectively, and of how to implement high availability of master and etcd nodes using the load balancers.
 
@@ -253,7 +253,7 @@ Kubekey provides some fields and parameters to allow the cluster administrator t
 
 ### Step 6: Persistent storage plugin configurations
 
-Considering data persistence in a production environment, you need to prepare persistent storage and configure the storage plugin (e.g. CSI) in `config-sample.yaml` to define which storage service you want.
+Considering data persistence in a production environment, you need to prepare persistent storage and configure the storage plugin (for example, CSI) in `config-sample.yaml` to define which storage service you want.
 
 {{< notice note >}}
 

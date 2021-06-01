@@ -26,7 +26,7 @@ All the volumes that are created on the **Volumes** page are PersistentVolumeCla
 
 2. To create a volume, click **Create** on the **Volumes** page.
 
-3. In the dialog that appears, set a name (e.g. `demo-volume`) for the volume and click **Next**.
+3. In the dialog that appears, set a name (for example, `demo-volume`) for the volume and click **Next**.
 
    {{< notice note >}}
 

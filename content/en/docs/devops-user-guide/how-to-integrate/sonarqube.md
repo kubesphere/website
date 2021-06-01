@@ -190,7 +190,7 @@ To integrate SonarQube into your pipeline, you must install SonarQube Server fir
    http://192.168.0.4:30180
    ```
 
-3. Access Jenkins with the address `http://{$Public IP}:30180`. When KubeSphere is installed, the Jenkins dashboard is also installed by default. Besides, Jenkins is configured with KubeSphere LDAP, which means you can log in to Jenkins with KubeSphere accounts (e.g. `admin/P@88w0rd`) directly. For more information about configuring Jenkins, see [Jenkins System Settings](../../../devops-user-guide/how-to-use/jenkins-setting/).
+3. Access Jenkins with the address `http://{$Public IP}:30180`. When KubeSphere is installed, the Jenkins dashboard is also installed by default. Besides, Jenkins is configured with KubeSphere LDAP, which means you can log in to Jenkins with KubeSphere accounts (for example, `admin/P@88w0rd`) directly. For more information about configuring Jenkins, see [Jenkins System Settings](../../../devops-user-guide/how-to-use/jenkins-setting/).
 
    ![jenkins-login-page](/images/docs/devops-user-guide/tool-integration/integrate-sonarqube-into-pipeline/jenkins-login-page.jpg)
 

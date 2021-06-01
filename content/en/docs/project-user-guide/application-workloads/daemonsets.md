@@ -32,7 +32,7 @@ Log in to the console as `project-regular`. Go to **Application Workloads** of a
 
 ### Step 2: Input basic information
 
-Specify a name for the DaemonSet (e.g. `demo-daemonset`) and click **Next** to continue.
+Specify a name for the DaemonSet (for example, `demo-daemonset`) and click **Next** to continue.
 
 ![daemonsets](/images/docs/project-user-guide/workloads/daemonsets_form_1.jpg)
 

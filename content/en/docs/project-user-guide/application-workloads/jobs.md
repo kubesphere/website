@@ -145,7 +145,7 @@ You can rerun the Job if it fails, the reason of which displays under **Messages
 
     {{< notice tip >}}
 
-- In **Resource Status**, the Pod list provides the Pod's detailed information (e.g. creation time, node, Pod IP and monitoring data).
+- In **Resource Status**, the Pod list provides the Pod's detailed information (for example, creation time, node, Pod IP and monitoring data).
 - You can view the container information by clicking the Pod.
 - Click the container log icon to view the output logs of the container.
 - You can view the Pod detail page by clicking the Pod name.

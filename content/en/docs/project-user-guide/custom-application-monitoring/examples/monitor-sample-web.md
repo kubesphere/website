@@ -11,7 +11,7 @@ This section walks you through monitoring a sample web application. The applicat
 ## Prerequisites
 
 - Please make sure you [enable the OpenPitrix system](../../../../pluggable-components/app-store/).
-- You need to create a workspace, a project, and a user account for this tutorial. For more information, see [Create Workspaces, Projects, Accounts and Roles](../../../../quick-start/create-workspace-and-project/). The account needs to be a platform regular user and to be invited to the workspace with the `self-provisioner` role. Namely, create an account `workspace-self-provisioner` of the `self-provisioner` role, and use this account to create a project (e.g. `test`). In this tutorial, you log in as `workspace-self-provisioner` and work in the project `test` in the workspace `demo-workspace`.
+- You need to create a workspace, a project, and a user account for this tutorial. For more information, see [Create Workspaces, Projects, Accounts and Roles](../../../../quick-start/create-workspace-and-project/). The account needs to be a platform regular user and to be invited to the workspace with the `self-provisioner` role. Namely, create an account `workspace-self-provisioner` of the `self-provisioner` role, and use this account to create a project (for example, `test`). In this tutorial, you log in as `workspace-self-provisioner` and work in the project `test` in the workspace `demo-workspace`.
 
 - Knowledge of Helm charts and [PromQL](https://prometheus.io/docs/prometheus/latest/querying/examples/).
 
@@ -87,11 +87,11 @@ This section guides you on how to create a dashboard from scratch. You will crea
 
     ![create-dashboard-2](/images/docs/project-user-guide/custom-application-monitoring/create-dashboard-2.jpg)
 
-2. Set a name (e.g. `sample-web`) and click **Create**.
+2. Set a name (for example, `sample-web`) and click **Create**.
 
     ![create-dashboard-3](/images/docs/project-user-guide/custom-application-monitoring/create-dashboard-3.jpg)
 
-3. Enter a title in the top left corner (e.g. `Sample Web Overview`).
+3. Enter a title in the top left corner (for example, `Sample Web Overview`).
 
     ![create-dashboard-4](/images/docs/project-user-guide/custom-application-monitoring/create-dashboard-4.jpg)
 
@@ -99,7 +99,7 @@ This section guides you on how to create a dashboard from scratch. You will crea
 
     ![create-dashboard-5](/images/docs/project-user-guide/custom-application-monitoring/create-dashboard-5.jpg)
 
-5. Type the PromQL expression `myapp_processed_ops_total` in the field **Monitoring Metrics** and give a chart name (e.g. `Operation Count`). Click **√** in the bottom right corner to continue.
+5. Type the PromQL expression `myapp_processed_ops_total` in the field **Monitoring Metrics** and give a chart name (for example, `Operation Count`). Click **√** in the bottom right corner to continue.
 
     ![create-dashboard-6](/images/docs/project-user-guide/custom-application-monitoring/create-dashboard-6.jpg)
 

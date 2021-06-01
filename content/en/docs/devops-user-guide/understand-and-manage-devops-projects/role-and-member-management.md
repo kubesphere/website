@@ -17,7 +17,7 @@ In DevOps project scope, you can grant the following resources' permissions to a
 
 ## Prerequisites
 
-At least one DevOps project has been created, such as `demo-devops`. Besides, you need an account of the `admin` role (e.g. `devops-admin`) at the DevOps project level. 
+At least one DevOps project has been created, such as `demo-devops`. Besides, you need an account of the `admin` role (for example, `devops-admin`) at the DevOps project level. 
 
 ## Built-in Roles
 
@@ -31,7 +31,7 @@ In **Project Roles**, there are three available built-in roles as shown below. B
 
 ## Create a DevOps Project Role
 
-1. Log in to the console as `devops-admin` and select a DevOps project (e.g. `demo-devops`) under **DevOps Projects** list.
+1. Log in to the console as `devops-admin` and select a DevOps project (for example, `demo-devops`) under **DevOps Projects** list.
 
    {{< notice note >}}
 
