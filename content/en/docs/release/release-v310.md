@@ -15,7 +15,7 @@ weight: 18100
 
 ### Multi-cluster management
 
-- Simplified the steps to import Member Clusters with configuration validation (e.g. `jwtSecret`) added. ([#3232](https://github.com/kubesphere/kubesphere/issues/3232))
+- Simplified the steps to import Member Clusters with configuration validation (for example, `jwtSecret`) added. ([#3232](https://github.com/kubesphere/kubesphere/issues/3232))
 - Refactored the cluster controller and optimized the logic. ([#3234](https://github.com/kubesphere/kubesphere/issues/3234))
 - Upgraded the built-in web Kubectl, the version of which is now consistent with your Kubernetes cluster version. ([#3103](https://github.com/kubesphere/kubesphere/issues/3103))
 - Support customized resynchronization period of cluster controller. ([#3213](https://github.com/kubesphere/kubesphere/issues/3213))

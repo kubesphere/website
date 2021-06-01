@@ -22,7 +22,7 @@ Traffic mirroring, also called shadowing, is a powerful, risk-free method of tes
 
 3. On the **Grayscale Release Components** tab, select your app from the drop-down list and the Service of which you want to mirror the traffic. If you also use the sample app Bookinfo, select **reviews** and click **Next**.
 
-4. On the **Grayscale Release Version** tab, add another version of it (e.g. `v2`) as shown in the image below and click **Next**:
+4. On the **Grayscale Release Version** tab, add another version of it (for example, `v2`) as shown in the image below and click **Next**:
 
    ![traffic-mirroring-4](/images/docs/project-user-guide/grayscale-release/traffic-mirroring/traffic-mirroring-4.jpg)
 

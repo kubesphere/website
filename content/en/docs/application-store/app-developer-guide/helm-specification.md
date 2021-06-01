@@ -45,7 +45,7 @@ dependencies: (Optional) A list of the chart requirements.
   - name: The name of the chart, such as nginx.
     version: The version of the chart, such as "1.2.3".
     repository: The repository URL ("https://example.com/charts") or alias ("@repo-name").
-    condition: (Optional) A yaml path that resolves to a boolean, used for enabling/disabling charts (e.g. subchart1.enabled ).
+    condition: (Optional) A yaml path that resolves to a boolean, used for enabling/disabling charts (for example, subchart1.enabled ).
     tags: (Optional)
       - Tags can be used to group charts for enabling/disabling together.
     import-values: (Optional)

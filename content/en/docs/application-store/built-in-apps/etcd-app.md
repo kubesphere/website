@@ -71,6 +71,6 @@ After the app is deployed, you can use etcdctl, a command-line tool for interact
 
    ![etcd-command](/images/docs/appstore/built-in-apps/etcd-app/etcd-command.jpg)
 
-4. For clients within the KubeSphere cluster, the etcd service can be accessed through `<app name>.<project name>.svc.<K8s domain>:2379` (e.g. `etcd-bqe0g4.demo-project.svc.cluster.local:2379` in this guide).
+4. For clients within the KubeSphere cluster, the etcd service can be accessed through `<app name>.<project name>.svc.<K8s domain>:2379` (for example, `etcd-bqe0g4.demo-project.svc.cluster.local:2379` in this guide).
 
 5. For more information, see [the official documentation of etcd](https://etcd.io/docs/v3.4.0/).

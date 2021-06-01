@@ -37,7 +37,7 @@ Log in to the console as `project-regular`. Go to **Application Workloads** of a
 
 ### Step 2: Input basic information
 
-Specify a name for the StatefulSet (e.g. `demo-stateful`) and click **Next** to continue.
+Specify a name for the StatefulSet (for example, `demo-stateful`) and click **Next** to continue.
 
 ![statefulsets](/images/docs/project-user-guide/workloads/statefulsets_form_1.jpg)
 

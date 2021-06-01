@@ -22,7 +22,7 @@ You need to create a workspace, a project and an account (`project-regular`). Th
 
 1. Log in to the console as `project-regular`. Go to **Configurations** of a project, choose **ConfigMaps** and click **Create**.
 
-2. In the dialog that appears, specify a name for the ConfigMap (e.g. `demo-configmap`) and click **Next** to continue.
+2. In the dialog that appears, specify a name for the ConfigMap (for example, `demo-configmap`) and click **Next** to continue.
 
    {{< notice tip >}}
 

@@ -158,7 +158,7 @@ You can select a pipeline from the drop-down list for **When Create Pipeline** a
 
 ![webhook-push](/images/docs/devops-user-guide/using-devops/pipeline-settings/webhook-push.png)
 
-**Webhook Push** is an efficient way to allow pipelines to discover changes in the remote code repository and automatically trigger a new running. Webhook should be the primary method to trigger Jenkins automatic scanning for GitHub and Git (e.g. GitLab). 
+**Webhook Push** is an efficient way to allow pipelines to discover changes in the remote code repository and automatically trigger a new running. Webhook should be the primary method to trigger Jenkins automatic scanning for GitHub and Git (for example, GitLab). 
 
 ### Advanced Settings with No Code Repository Selected
 

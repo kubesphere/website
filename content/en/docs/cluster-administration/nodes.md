@@ -51,7 +51,7 @@ Click a node from the list and you can go to its detail page.
 ![Node Detail](/images/docs/cluster-administration/node-management/node_detail.png)
 
 - **Cordon/Uncordon**: Marking a node as unschedulable is very useful during a node reboot or other maintenance. The Kubernetes scheduler will not schedule new Pods to this node if it's been marked unschedulable. Besides, this does not affect existing workloads already on the node. In KubeSphere, you mark a node as unschedulable by clicking **Cordon** on the node detail page. The node will be schedulable if you click the button (**Uncordon**) again.
-- **Labels**: Node labels can be very useful when you want to assign Pods to specific nodes. Label a node first (e.g. label GPU nodes with `node-role.kubernetes.io/gpu-node`), and then add the label in **Advanced Settings** [when you create a workload](../../project-user-guide/application-workloads/deployments/#step-5-configure-advanced-settings) so that you can allow Pods to run on GPU nodes explicitly. To add node labels, click **More** and select **Edit Labels**.
+- **Labels**: Node labels can be very useful when you want to assign Pods to specific nodes. Label a node first (for example, label GPU nodes with `node-role.kubernetes.io/gpu-node`), and then add the label in **Advanced Settings** [when you create a workload](../../project-user-guide/application-workloads/deployments/#step-5-configure-advanced-settings) so that you can allow Pods to run on GPU nodes explicitly. To add node labels, click **More** and select **Edit Labels**.
 
     ![drop-down-list-node](/images/docs/cluster-administration/node-management/drop-down-list-node.jpg)
 

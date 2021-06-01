@@ -78,7 +78,7 @@ Docker needs to be installed in advance for this method.
    registry:
        registryMirrors: [] # For users who need to speed up downloads
        insecureRegistries: [] # Set an address of insecure image registry. See https://docs.docker.com/registry/insecure/
-       privateRegistry: "" # Configure a private image registry for air-gapped installation (e.g. docker local registry or Harbor)
+       privateRegistry: "" # Configure a private image registry for air-gapped installation (for example, docker local registry or Harbor)
    ```
 
 2. Input the registry mirror address above and save the file. For more information about the installation process, see [Multi-node Installation](../../../installing-on-linux/introduction/multioverview/). 
