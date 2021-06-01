@@ -61,7 +61,7 @@ This tutorial demonstrates how to quickly deploy [Grafana](https://grafana.com/)
 
    {{</ notice >}} 
 
-4. Input `Grafana` in the search bar to find the app, and then click it to deploy it.
+4. Enter `Grafana` in the search bar to find the app, and then click it to deploy it.
 
    ![search-grafana](/images/docs/project-user-guide/applications/deploy-apps-from-app-templates/search-grafana.jpg)
 

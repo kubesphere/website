@@ -185,7 +185,7 @@ After the app is approved, `isv` can release the Redis application to the App St
 
    ![app-category](/images/docs/appstore/application-lifecycle-management/app-category.jpg)
 
-2. Set a name and icon for the category in the dialog, then click **OK**. For Redis, you can input `Database` for the field **Category Name**.
+2. Set a name and icon for the category in the dialog, then click **OK**. For Redis, you can enter `Database` for the field **Category Name**.
 
    ![set-app-type](/images/docs/appstore/application-lifecycle-management/set-app-type.jpg)
 

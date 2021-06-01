@@ -113,7 +113,7 @@ Generally, there is always a LoadBalancer solution in the public cloud, and the 
     tower      LoadBalancer    10.233.63.191   <pending>  8080:30721/TCP            16h
     ```
 
-2. Add the value of `proxyPublishAddress` to the configuration file of `ks-installer` and input the public IP address (`139.198.120.120` in this tutorial) and port number as follows.
+2. Add the value of `proxyPublishAddress` to the configuration file of `ks-installer` and provide the public IP address (`139.198.120.120` in this tutorial) and port number as follows.
 
     - Option A - Use the web console:
 
@@ -173,7 +173,7 @@ If you already have a standalone KubeSphere cluster installed, you can set the v
   kubectl edit cc ks-installer -n kubesphere-system
   ```
 
-In the YAML file of `ks-installer`, input the corresponding `jwtSecret` shown above:
+In the YAML file of `ks-installer`, enter the corresponding `jwtSecret` shown above:
 
 ```yaml
 authentication:
@@ -193,7 +193,7 @@ You need to **wait for a while** so that the change can take effect.
 
 {{< tab "KubeSphere has not been installed" >}}
 
-You can define a member cluster before you install KubeSphere either on Linux or on an existing Kubernetes cluster. If you want to [install KubeSphere on Linux](../../../installing-on-linux/introduction/multioverview/#1-create-an-example-configuration-file), you use a `config-sample.yaml` file. If you want to [install KubeSphere on an existing Kubernetes cluster](../../../installing-on-kubernetes/introduction/overview/#deploy-kubesphere), you use two YAML files, one of which is `cluster-configuration.yaml`. To set a member cluster, input the value of `jwtSecret` shown above and change the value of `clusterRole` to `member` in `config-sample.yaml` or `cluster-configuration.yaml` accordingly before you install KubeSphere.
+You can define a member cluster before you install KubeSphere either on Linux or on an existing Kubernetes cluster. If you want to [install KubeSphere on Linux](../../../installing-on-linux/introduction/multioverview/#1-create-an-example-configuration-file), you use a `config-sample.yaml` file. If you want to [install KubeSphere on an existing Kubernetes cluster](../../../installing-on-kubernetes/introduction/overview/#deploy-kubesphere), you use two YAML files, one of which is `cluster-configuration.yaml`. To set a member cluster, enter the value of `jwtSecret` shown above and change the value of `clusterRole` to `member` in `config-sample.yaml` or `cluster-configuration.yaml` accordingly before you install KubeSphere.
 
 ```yaml
 authentication:

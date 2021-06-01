@@ -83,7 +83,7 @@ You have to configure Docker to disregard security for your Harbor registry.
 
    ![create-credentials](/images/docs/devops-user-guide/tool-integration/integrate-harbor-into-pipeline/create-credentials.png)
 
-2. On the **Create Credentials** page, set a credential ID (`robot-test`) and select **Account Credentials** for **Type**. The **Username** field must be the same as the value of `name` in the JSON file you just downloaded and input the value of `token` in the file for **Token/Password**.
+2. On the **Create Credentials** page, set a credential ID (`robot-test`) and select **Account Credentials** for **Type**. The **Username** field must be the same as the value of `name` in the JSON file you just downloaded and enter the value of `token` in the file for **Token/Password**.
 
    ![credentials-page](/images/docs/devops-user-guide/tool-integration/integrate-harbor-into-pipeline/credentials-page.png)
 

@@ -24,7 +24,7 @@ Log in to the web console of KubeSphere as `project-regular`. Go to **Configurat
 
 ![open-dashboard](/images/docs/project-user-guide/configurations/image-registries/open-dashboard.jpg)
 
-### Step 2: Input basic information
+### Step 2: Enter basic information
 
 Specify a name for the Secret (for example, `demo-registry-secret`) and click **Next** to continue.
 
@@ -49,7 +49,7 @@ Select **Image Registry Secret** for **Type**. To use images from your private r
 
 #### Add the Docker Hub registry
 
-1. Before you add your image registry in [Docker Hub](https://hub.docker.com/), make sure you have an available Docker Hub account. On the **Secret Settings** page, input `docker.io` for **Registry Address** and enter your Docker ID and password for **User Name** and **Password**. Click **Validate** to check whether the address is available. 
+1. Before you add your image registry in [Docker Hub](https://hub.docker.com/), make sure you have an available Docker Hub account. On the **Secret Settings** page, enter `docker.io` for **Registry Address** and enter your Docker ID and password for **User Name** and **Password**. Click **Validate** to check whether the address is available. 
 
    ![validate-registry-address](/images/docs/project-user-guide/configurations/image-registries/validate-registry-address.jpg)
 
@@ -89,7 +89,7 @@ Select **Image Registry Secret** for **Type**. To use images from your private r
    sudo systemctl restart docker
    ```
 
-3. Go back to the **Secret Settings** page and select **Image Registry Secret** for **Type**. Input your Harbor IP address for **Registry Address** and enter the username and password.
+3. Go back to the **Secret Settings** page and select **Image Registry Secret** for **Type**. Enter your Harbor IP address for **Registry Address** and enter the username and password.
 
    ![harbor-address](/images/docs/project-user-guide/configurations/image-registries/harbor-address.jpg)
 

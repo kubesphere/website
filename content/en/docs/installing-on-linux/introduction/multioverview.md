@@ -219,7 +219,7 @@ List all your machines under `hosts` and add their detailed information as above
 
 `name`: The hostname of the instance.
 
-`address`: The IP address you use for the connection between the taskbox and other instances through SSH. This can be either the public IP address or the private IP address depending on your environment. For example, some cloud platforms provide every instance with a public IP address which you use to access instances through SSH. In this case, you can input the public IP address for this field.
+`address`: The IP address you use for the connection between the taskbox and other instances through SSH. This can be either the public IP address or the private IP address depending on your environment. For example, some cloud platforms provide every instance with a public IP address which you use to access instances through SSH. In this case, you can provide the public IP address for this field.
 
 `internalAddress`: The private IP address of the instance.
 

@@ -30,17 +30,17 @@ After you click **Add Container Image**, you will see an image as below.
 
 #### Image Search Bar
 
-You can click the cube icon on the right to select an image from the list or input an image name to search it. KubeSphere provides Docker Hub images and your private image repository. If you want to use your private image repository, you need to create an Image Registry Secret first in **Secrets** under **Configurations**.
+You can click the cube icon on the right to select an image from the list or enter an image name to search it. KubeSphere provides Docker Hub images and your private image repository. If you want to use your private image repository, you need to create an Image Registry Secret first in **Secrets** under **Configurations**.
 
 {{< notice note >}} 
 
-Remember to press **Enter** on your keyboard after you input an image name in the search bar.
+Remember to press **Enter** on your keyboard after you enter an image name in the search bar.
 
 {{</ notice >}} 
 
 #### Image Tag
 
-You can input a tag like `imagename:tag`. If you do not specify it, it will default to the latest version.
+You can enter a tag like `imagename:tag`. If you do not specify it, it will default to the latest version.
 
 #### Container Name
 

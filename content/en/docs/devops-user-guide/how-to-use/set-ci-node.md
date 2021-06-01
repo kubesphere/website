@@ -36,7 +36,7 @@ You need an account granted a role including the authorization of **Cluster Mana
 
    {{< notice note >}} 
 
-   The node may already have the key without a value. You can input the value `ci` directly.
+   The node may already have the key without a value. You can enter the value `ci` directly.
 
    {{</ notice >}} 
 
