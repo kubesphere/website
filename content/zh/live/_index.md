@@ -15,9 +15,9 @@ section2:
   notice:
     title: Kubernetes and Cloud Native Meetup ——成都站
     timeIcon: /images/live/clock.svg
-    time: 2021/06/19 14:00 – 18:00
+    time: 2021/06/19 13:00 – 18:00
     baseIcon: /images/live/base.svg
-    base: 线上 + 线下
+    base: 四川省成都市高新区天府大道中段 500 号天祥广场 B 座 45A + 线上
     tag: 预告
     url: ./meetup-chengdu/
 
@@ -28,6 +28,55 @@ section2:
 
 section3:
   videos:
+    - title: 初识云原生 FaaS 平台及 Serverless 生态
+      link: //player.bilibili.com/player.html?aid=248447658&bvid=BV1Dv411V7Ku&cid=347150253&page=1&high_quality=1
+      snapshot: https://pek3b.qingstor.com/kubesphere-community/images/Faas-serverless.png
+      type: iframe
+      createTime: 2021.05.29
+      group: Meetup
+
+    - title: 基于 KubeSphere 的 Nebula Graph 多云架构管理实践
+      link: //player.bilibili.com/player.html?aid=460886659&bvid=BV1u5411M7hr&cid=347153258&page=1&high_quality=1
+      snapshot: https://pek3b.qingstor.com/kubesphere-community/images/nebulagraph.png
+      type: iframe
+      createTime: 2021.05.29
+      group: Meetup
+
+    - title: KubeSphere + KubeEdge——打造云原生边缘计算服务
+      link: //player.bilibili.com/player.html?aid=845966924&bvid=BV1654y137iR&cid=347155149&page=1&high_quality=1
+      snapshot: https://pek3b.qingstor.com/kubesphere-community/images/KubeSphere-KubeEdge.png
+      type: iframe
+      createTime: 2021.05.29
+      group: Meetup
+
+    - title: SegmentFault 基于 K8s 的容器化与持续交付实践
+      link: //player.bilibili.com/player.html?aid=888493519&bvid=BV1TK4y137XE&cid=347158829&page=1&high_quality=1
+      snapshot: https://pek3b.qingstor.com/kubesphere-community/images/SegmentFault-hangzhou.png
+      type: iframe
+      createTime: 2021.05.29
+      group: Meetup
+
+    - title: 如何利用云原生架构控制系统复杂度-从构建云原生向量搜索 Milvus 讲起
+      link: //player.bilibili.com/player.html?aid=758412870&bvid=BV1A64y1R7iy&cid=347160163&page=1&high_quality=1
+      snapshot: https://pek3b.qingstor.com/kubesphere-community/images/Milvus-hangzhou.png
+      type: iframe
+      createTime: 2021.05.29
+      group: Meetup
+
+    - title: 基于 Kubernetes 的新一代 MySQL 高可用架构实现方案
+      link: //player.bilibili.com/player.html?aid=333433521&bvid=BV1YA41137MQ&cid=347162028&page=1&high_quality=1
+      snapshot: https://pek3b.qingstor.com/kubesphere-community/images/MySQL-hangzhou.png
+      type: iframe
+      createTime: 2021.05.29
+      group: Meetup
+
+    - title: “开源社区运营与治理”圆桌交流
+      link: //player.bilibili.com/player.html?aid=630940249&bvid=BV1Yb4y1Z7Fv&cid=347162824&page=1&high_quality=1
+      snapshot: https://pek3b.qingstor.com/kubesphere-community/images/round-table.png
+      type: iframe
+      createTime: 2021.05.29
+      group: Meetup
+
     - title: 跳离云原生深水区，KubeSphere 带你远航
       link: //player.bilibili.com/player.html?aid=375675566&bvid=BV1Fo4y117xt&cid=340529916&page=1&high_quality=1
       snapshot: https://pek3b.qingstor.com/kubesphere-community/images/yuanhang-kubesphere.jpeg
