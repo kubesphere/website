@@ -19,7 +19,7 @@ Before you start writing the specific steps for a feature, state clearly what sh
 - It is recommended that you use an ordered list to organize your paragraphs for a specific operation. This is to tell your readers what step they are in and they can have a clear view of the overall process. For example:
 
 1. Go to **Application Workloads** and click **Workloads**.
-2. Click **Create** on the right to create a deployment.
+2. Click **Create** on the right to create a Deployment.
 3. Enter the basic information and click **Next**.
 
 ## Titles
@@ -129,8 +129,6 @@ When describing the UI, you can use the following prepositions.
     </tr>
   </tbody>
   </table>
-
-
 ### Code
 
 - For short commands, you can just put them within ``. This is often used when you only need to tell readers about a short command or it is sufficient to express your meaning just with the command in a sentence.
