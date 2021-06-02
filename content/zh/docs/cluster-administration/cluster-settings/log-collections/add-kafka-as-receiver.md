@@ -103,21 +103,25 @@ weight: 8623
 
 1. 以 `admin` 身份登录 KubeSphere 的 Web 控制台。点击左上角的**平台管理**，然后选择**集群管理**。
 
-2. 如果您启用了[多集群功能](../../../../multicluster-management/)，您可以选择一个集群。如果尚未启用该功能，请直接进行下一步。
+   {{< notice note >}}
 
-3. 在**集群管理**页面，选择**集群设置**下的**日志收集**。
+   如果您启用了[多集群功能](../../../../multicluster-management/)，您可以选择一个集群。
 
-4. 点击**添加日志接收器**并选择 **Kafka**。输入 Kafka 代理地址和端口信息，然后点击**确定**继续。
+   {{</ notice >}} 
 
-   ```bash
-   my-cluster-kafka-0.my-cluster-kafka-brokers.default.svc 9092
-   my-cluster-kafka-1.my-cluster-kafka-brokers.default.svc 9092
-   my-cluster-kafka-2.my-cluster-kafka-brokers.default.svc 9092
-   ```
+2. 在**集群管理**页面，选择**集群设置**下的**日志收集**。
 
-   ![add-kafka](/images/docs/cluster-administration/cluster-settings/log-collections/add-kafka-as-receiver/add-kafka.png)
+3. 点击**添加日志接收器**并选择 **Kafka**。输入 Kafka 代理地址和端口信息，然后点击**确定**继续。
 
-5. 运行以下命令验证 Kafka 集群是否能从 Fluent Bit 接收日志：
+   | 地址                                                    | 端口 |
+   | ------------------------------------------------------- | ---- |
+   | my-cluster-kafka-0.my-cluster-kafka-brokers.default.svc | 9092 |
+   | my-cluster-kafka-1.my-cluster-kafka-brokers.default.svc | 9092 |
+   | my-cluster-kafka-2.my-cluster-kafka-brokers.default.svc | 9092 |
+
+   ![add-kafka](/images/docs/zh-cn/cluster-administration/cluster-settings/log-collection/add-kafka-as-receiver/add-kafka.png)
+
+4. 运行以下命令验证 Kafka 集群是否能从 Fluent Bit 接收日志：
 
    ```bash
    # Start a util container
