@@ -81,6 +81,6 @@ If you have enabled [the multi-cluster feature](../../../multicluster-management
 
 {{< notice note >}}
 
-If you want to enable Telemetry again, you can update `ks-installer` by deleting  `telemetry_enabled: false` or changing it to  `telemetry_enabled: true`.
+If you want to enable Telemetry again, you can update `ks-installer` by deleting `telemetry_enabled: false` or changing it to `telemetry_enabled: true`.
 
 {{</ notice >}}
