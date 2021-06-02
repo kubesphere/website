@@ -19,7 +19,7 @@ This tutorial walks you through an example of how to deploy PostgreSQL from the 
 
 ### Step 1: Deploy PostgreSQL from the App Store
 
-1. On the **Overview** page of the project `demo-project`, click **App Store** in the top left corner.
+1. On the **Overview** page of the project `demo-project`, click **App Store** in the top-left corner.
 
    ![click-app-store](/images/docs/appstore/built-in-apps/postgresql-app/click-app-store.jpg)
 

@@ -16,7 +16,7 @@ The built-in Jenkins cannot share the same email configuration with the platform
 
 ## Set the Email Server
 
-1. Click **Platform** in the top left corner and select **Cluster Management**.
+1. Click **Platform** in the top-left corner and select **Cluster Management**.
 
    ![clusters-management](/images/docs/devops-user-guide/using-devops/jenkins-email/clusters-management.jpg)
 

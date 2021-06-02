@@ -154,7 +154,7 @@ You can find the web kubectl tool by clicking <img src="/images/docs/enable-plug
 
 {{< tab "Verify the component on the dashboard" >}}
 
-Verify that you can use the **Event Search** function from the **Toolbox** in the bottom right corner.
+Verify that you can use the **Event Search** function from the **Toolbox** in the bottom-right corner.
 
 ![event-search](/images/docs/enable-pluggable-components/kubesphere-events/event-search.png)
 

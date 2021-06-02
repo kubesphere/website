@@ -77,7 +77,7 @@ You can follow the New Virtual Machine wizard to create a virtual machine to pla
 
     ![kubesphereOnVsphere-en-0-1-7-hardware-4](/images/docs/vsphere/kubesphereOnVsphere-en-0-1-7-hardware-4.png)
 
-6. In **Ready to complete** page, you review the configuration selections that you have made for the virtual machine. Click **Finish** at the bottom right corner to continue.
+6. In **Ready to complete** page, you review the configuration selections that you have made for the virtual machine. Click **Finish** at the bottom-right corner to continue.
 
     ![kubesphereOnVsphere-en-0-1-8](/images/docs/vsphere/kubesphereOnVsphere-en-0-1-8.png)
 

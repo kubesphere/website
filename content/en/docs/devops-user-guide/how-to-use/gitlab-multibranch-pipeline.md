@@ -84,7 +84,7 @@ You need to create two projects, such as `kubesphere-sample-dev` and `kubesphere
 
    ![create-pipeline](/images/docs/devops-user-guide/using-devops/gitlab-multibranch-pipeline/create-pipeline.png)
 
-3. In the **GitLab** tab, select the default option `https://gitlab.com` for GitLab Server, enter the username of the GitLab project owner for **Owner**, and then select the `devops-java-sample` repository from the drop-down list for **Repository Name**. Click the tick icon in the bottom right corner and then click **Next**.
+3. In the **GitLab** tab, select the default option `https://gitlab.com` for GitLab Server, enter the username of the GitLab project owner for **Owner**, and then select the `devops-java-sample` repository from the drop-down list for **Repository Name**. Click the tick icon in the bottom-right corner and then click **Next**.
 
    ![select-gitlab](/images/docs/devops-user-guide/using-devops/gitlab-multibranch-pipeline/select-gitlab.png)
 
@@ -122,7 +122,7 @@ You need to create two projects, such as `kubesphere-sample-dev` and `kubesphere
 
 ### Step 6: Check the pipeline status
 
-1. In the **Task Status** tab, you can see how a pipeline is running. Check the pipeline running logs by clicking **Show Logs** in the top right corner.
+1. In the **Task Status** tab, you can see how a pipeline is running. Check the pipeline running logs by clicking **Show Logs** in the top-right corner.
 
    ![check-log](/images/docs/devops-user-guide/using-devops/gitlab-multibranch-pipeline/check-log.png)
 

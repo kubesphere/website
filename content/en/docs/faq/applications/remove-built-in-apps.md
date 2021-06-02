@@ -15,7 +15,7 @@ As an open-source and app-centric container platform, KubeSphere integrates 16 b
 
 ## Remove a Built-in App
 
-1. Log in to the web console of KubeSphere as `admin`, click **Platform** in the upper left corner, and then select **App Store Management**.
+1. Log in to the web console of KubeSphere as `admin`, click **Platform** in the upper-left corner, and then select **App Store Management**.
 
    ![click-platform](/images/docs/faq/applications/remove-built-in-apps/click-platform.PNG)
 

@@ -243,7 +243,7 @@ You must create the projects as shown in the table below in advance. Make sure y
 
    ![pipeline-success](/images/docs/devops-user-guide/examples/create-multi-cluster-pipeline/pipeline-success.png)
 
-3. Check the pipeline running logs by clicking **Show Logs** in the upper right corner. For each stage, you click it to inspect logs, which can be downloaded to your local machine for further analysis.
+3. Check the pipeline running logs by clicking **Show Logs** in the upper-right corner. For each stage, you click it to inspect logs, which can be downloaded to your local machine for further analysis.
 
    ![pipeline-logs](/images/docs/devops-user-guide/examples/create-multi-cluster-pipeline/pipeline-logs.png)
 

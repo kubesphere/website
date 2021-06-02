@@ -148,7 +148,7 @@ You can find the web kubectl tool by clicking <img src="/images/docs/enable-plug
 
 {{< tab "Verify the component on the dashboard" >}}
 
-Verify that you can use the **Auditing Operating** function from the **Toolbox** in the bottom right corner.
+Verify that you can use the **Auditing Operating** function from the **Toolbox** in the bottom-right corner.
 
 ![auditing-operating](/images/docs/enable-pluggable-components/kubesphere-auditing-logs/auditing-operating.png)
 

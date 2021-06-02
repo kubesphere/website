@@ -32,7 +32,7 @@ Specify a name for the Secret (for example, `demo-secret`) and click **Next** to
 
 {{< notice tip >}}
 
-You can see the Secret's manifest file in YAML format by enabling **Edit Mode** in the top right corner. KubeSphere allows you to edit the manifest file directly to create a Secret. Alternatively, you can follow the steps below to create a Secret via the dashboard.
+You can see the Secret's manifest file in YAML format by enabling **Edit Mode** in the top-right corner. KubeSphere allows you to edit the manifest file directly to create a Secret. Alternatively, you can follow the steps below to create a Secret via the dashboard.
 
 {{</ notice >}} 
 
@@ -76,7 +76,7 @@ You can see the Secret's manifest file in YAML format by enabling **Edit Mode** 
 
    ![input-key](/images/docs/project-user-guide/configurations/secrets/input-key.jpg)
 
-3. Click **√** in the bottom right corner to confirm. You can continue to add key-value pairs to the Secret or click **Create** to finish the creation. For more information about how to use the Secret, see [Compose and Deploy WordPress](../../../quick-start/wordpress-deployment/#task-3-create-an-application).
+3. Click **√** in the bottom-right corner to confirm. You can continue to add key-value pairs to the Secret or click **Create** to finish the creation. For more information about how to use the Secret, see [Compose and Deploy WordPress](../../../quick-start/wordpress-deployment/#task-3-create-an-application).
 
 ## Check Secret Details
 

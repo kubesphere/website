@@ -16,7 +16,7 @@ You need an account granted a role including the authorization of **Cluster Mana
 
 ## Label a CI Node
 
-1. Click **Platform** in the top left corner and select **Cluster Management**.
+1. Click **Platform** in the top-left corner and select **Cluster Management**.
 
    ![clusters-management](/images/docs/devops-user-guide/using-devops/set-ci-node-for-dependency-cache/clusters-management.jpg)
 

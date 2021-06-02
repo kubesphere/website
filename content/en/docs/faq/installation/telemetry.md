@@ -64,7 +64,7 @@ If you install KubeSphere on Linux, see [Disable Telemetry after Installation](.
 
 ### Disable Telemetry after installation
 
-1. Log in to the console as `admin` and click **Platform** in the top left corner.
+1. Log in to the console as `admin` and click **Platform** in the top-left corner.
 
 2. Select **Cluster Management** and navigate to **CRDs**.
 

@@ -227,7 +227,7 @@ kubectl logs -n kubesphere-system $(kubectl get pod -n kubesphere-system -l app=
    
    ![add-cluster](/images/docs/multicluster-management/enable-multicluster-management-in-kubesphere/agent-connection/add-cluster.png)
 
-2. Enter the basic information of the cluster to be imported on the **Import Cluster** page. You can also click **Edit Mode** in the top right corner to view and edit the basic information in YAML format. After you finish editing, click **Next**.
+2. Enter the basic information of the cluster to be imported on the **Import Cluster** page. You can also click **Edit Mode** in the top-right corner to view and edit the basic information in YAML format. After you finish editing, click **Next**.
 
      ![cluster-info](/images/docs/multicluster-management/enable-multicluster-management-in-kubesphere/agent-connection/cluster-info.png)
 

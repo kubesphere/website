@@ -28,7 +28,7 @@ To start with a blank template, click **Create**.
 
 ### From a YAML file
 
-Toggle to **Edit Mode** in the top right corner then paste your dashboard YAML file.
+Toggle to **Edit Mode** in the top-right corner then paste your dashboard YAML file.
 
 ![new-dashboard-2](/images/docs/project-user-guide/custom-application-monitoring/new-dashboard-2.jpg)
 
@@ -62,11 +62,11 @@ You can view chart details in the right-most column. It shows the **max**, **min
 
 ## Edit the monitoring dashboard
 
-You can modify an existing template by clicking **Edit Template** in the top right corner.
+You can modify an existing template by clicking **Edit Template** in the top-right corner.
 
 ### Add a chart
 
-To add text charts, click the **add icon** in the left column. To add charts in the middle column, click **Add Monitoring Item** in the bottom right corner.
+To add text charts, click the **add icon** in the left column. To add charts in the middle column, click **Add Monitoring Item** in the bottom-right corner.
 
 ![edit-dashboard](/images/docs/project-user-guide/custom-application-monitoring/edit-dashboard.jpg)
 

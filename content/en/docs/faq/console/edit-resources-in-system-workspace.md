@@ -18,7 +18,7 @@ Editing resources in `system-workspace` may cause unexpected results, such as Ku
 
 ## Edit the Console Configuration
 
-1. Log in to KubeSphere as `admin`. Click the hammer icon in the bottom right corner and select **Kubectl**.
+1. Log in to KubeSphere as `admin`. Click the hammer icon in the bottom-right corner and select **Kubectl**.
 
 2. Execute the following command:
 

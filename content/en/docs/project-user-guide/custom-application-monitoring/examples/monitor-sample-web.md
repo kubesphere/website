@@ -91,7 +91,7 @@ This section guides you on how to create a dashboard from scratch. You will crea
 
     ![create-dashboard-3](/images/docs/project-user-guide/custom-application-monitoring/create-dashboard-3.jpg)
 
-3. Enter a title in the top left corner (for example, `Sample Web Overview`).
+3. Enter a title in the top-left corner (for example, `Sample Web Overview`).
 
     ![create-dashboard-4](/images/docs/project-user-guide/custom-application-monitoring/create-dashboard-4.jpg)
 
@@ -99,7 +99,7 @@ This section guides you on how to create a dashboard from scratch. You will crea
 
     ![create-dashboard-5](/images/docs/project-user-guide/custom-application-monitoring/create-dashboard-5.jpg)
 
-5. Type the PromQL expression `myapp_processed_ops_total` in the field **Monitoring Metrics** and give a chart name (for example, `Operation Count`). Click **√** in the bottom right corner to continue.
+5. Type the PromQL expression `myapp_processed_ops_total` in the field **Monitoring Metrics** and give a chart name (for example, `Operation Count`). Click **√** in the bottom-right corner to continue.
 
     ![create-dashboard-6](/images/docs/project-user-guide/custom-application-monitoring/create-dashboard-6.jpg)
 

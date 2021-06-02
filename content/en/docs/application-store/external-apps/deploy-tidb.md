@@ -19,7 +19,7 @@ This tutorial demonstrates how to deploy TiDB Operator and a TiDB Cluster on Kub
 
 ### Step 1: Install TiDB Operator CRD
 
-1. Log in to the KubeSphere Web console as `admin`, and use **Kubectl** from the **Toolbox** in the bottom right corner to execute the following command to install TiDB Operator CRD:
+1. Log in to the KubeSphere Web console as `admin`, and use **Kubectl** from the **Toolbox** in the bottom-right corner to execute the following command to install TiDB Operator CRD:
 
    ```bash
    kubectl apply -f https://raw.githubusercontent.com/pingcap/tidb-operator/v1.1.6/manifests/crd.yaml
@@ -71,7 +71,7 @@ This tutorial demonstrates how to deploy TiDB Operator and a TiDB Cluster on Kub
 
    {{</ notice >}}
 
-4. On the **Chart Files** tab, you can view the configuration from the console directly or download the default `values.yaml` file by clicking the icon in the upper right corner. Under **Versions**, select a version number from the drop-down list and click **Deploy**.
+4. On the **Chart Files** tab, you can view the configuration from the console directly or download the default `values.yaml` file by clicking the icon in the upper-right corner. Under **Versions**, select a version number from the drop-down list and click **Deploy**.
 
    ![select-version](/images/docs/appstore/external-apps/deploy-tidb-operator-and-cluster/select-version.PNG)
 

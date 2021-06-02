@@ -18,7 +18,7 @@ This tutorial walks you through an example of deploying MinIO from the App Store
 
 ### Step 1: Deploy MinIO from the App Store
 
-1. On the **Overview** page of the project `demo-project`, click **App Store** in the top left corner.
+1. On the **Overview** page of the project `demo-project`, click **App Store** in the top-left corner.
 
    ![minio-app](/images/docs/appstore/built-in-apps/minio-app/minio-app.jpg)
 

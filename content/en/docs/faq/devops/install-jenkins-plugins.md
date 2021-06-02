@@ -52,7 +52,7 @@ You need to enable [the KubeSphere DevOps system](../../../pluggable-components/
 
    ![click-manage-plugins](/images/docs/faq/devops/install-plugins-to-jenkins/click-manage-plugins.png)
 
-3. Select the **Available** tab and you can see all the available plugins listed on the page. You can also use the **Filter** in the upper right corner to search for the plugins you need. Check the checkbox next to the plugin you need, and then click **Install without restart** or **Download now and install after restart** based on your needs.
+3. Select the **Available** tab and you can see all the available plugins listed on the page. You can also use the **Filter** in the upper-right corner to search for the plugins you need. Check the checkbox next to the plugin you need, and then click **Install without restart** or **Download now and install after restart** based on your needs.
 
    ![available-plugins](/images/docs/faq/devops/install-plugins-to-jenkins/available-plugins.png)
 

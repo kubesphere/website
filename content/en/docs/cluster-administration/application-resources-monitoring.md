@@ -15,7 +15,7 @@ You need an account granted a role including the authorization of **Cluster Mana
 
 ## Resource Usage
 
-1. Click **Platform** in the top left corner and select **Cluster Management**.
+1. Click **Platform** in the top-left corner and select **Cluster Management**.
 
     ![Platform](/images/docs/cluster-administration/cluster-status-monitoring/platform.png)
 

@@ -169,7 +169,7 @@ We surely can create an application through the Web UI, but let's use the CLI to
 
    ![argocd-service](/images/blogs/en/argo-cd-a-tool-for-devops/argocd-service.png)
 
-3. Click it to see its details. You can also click the icon in the upper right corner to view its topology diagram.
+3. Click it to see its details. You can also click the icon in the upper-right corner to view its topology diagram.
 
    ![argocd-topology](/images/blogs/en/argo-cd-a-tool-for-devops//argocd-topology.png)
 

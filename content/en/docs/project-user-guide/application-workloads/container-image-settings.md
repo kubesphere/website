@@ -10,7 +10,7 @@ When you create Deployments, StatefulSets or DaemonSets, you need to specify a c
 
 {{< notice tip >}}
 
-You can enable **Edit Mode** in the top right corner to see corresponding values in the manifest file (YAML format) of properties on the dashboard.
+You can enable **Edit Mode** in the top-right corner to see corresponding values in the manifest file (YAML format) of properties on the dashboard.
 
 {{</ notice >}}
 
@@ -274,7 +274,7 @@ A security context defines privilege and access control settings for a Pod or Co
 
 ### Deployment Mode
 
-You can select different deployment modes to switch between inter-pod affinity and inter-pod anti-affinity. In Kubernetes, inter-pod affinity is specified as field `podAffinity` of field `affinity` while inter-pod anti-affinity is specified as field `podAntiAffinity` of field `affinity`. In KubeSphere, both `podAffinity` and `podAntiAffinity` are set to `preferredDuringSchedulingIgnoredDuringExecution`. You can enable **Edit Mode** in the top right corner to see field details.
+You can select different deployment modes to switch between inter-pod affinity and inter-pod anti-affinity. In Kubernetes, inter-pod affinity is specified as field `podAffinity` of field `affinity` while inter-pod anti-affinity is specified as field `podAntiAffinity` of field `affinity`. In KubeSphere, both `podAffinity` and `podAntiAffinity` are set to `preferredDuringSchedulingIgnoredDuringExecution`. You can enable **Edit Mode** in the top-right corner to see field details.
 
 - **Pod Decentralized Deployment** represents anti-affinity.
 - **Pod Aggregation Deployment** represents affinity.

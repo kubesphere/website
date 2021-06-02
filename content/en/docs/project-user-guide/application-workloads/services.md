@@ -90,7 +90,7 @@ The steps of creating a stateful Service and a stateless Service are basically t
 
     {{< notice tip >}}
 
-The value of **Name** is used in both configurations, one for Deployment and the other for Service. You can see the manifest file of the Deployment and the Service by enabling **Edit Mode** in the top right corner. Below is an example file for your reference.
+The value of **Name** is used in both configurations, one for Deployment and the other for Service. You can see the manifest file of the Deployment and the Service by enabling **Edit Mode** in the top-right corner. Below is an example file for your reference.
 
     {{</ notice>}}
     

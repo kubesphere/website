@@ -32,7 +32,7 @@ You need an account granted a role including the authorization of **Cluster Mana
 
 ## Manage Storage Classes
 
-1. Click **Platform** in the top left corner and select **Cluster Management**.
+1. Click **Platform** in the top-left corner and select **Cluster Management**.
    
     ![clusters-management-select](/images/docs/cluster-administration/persistent-volume-and-storage-class/clusters-management-select.jpg)
     
@@ -54,7 +54,7 @@ You need an account granted a role including the authorization of **Cluster Mana
 
 ### Common settings
 
-Some settings are commonly used and shared among storage classes. You can find them as dashboard properties on the console, which are also indicated by fields or annotations in the StorageClass manifest. You can see the manifest file in YAML format by enabling **Edit Mode** in the top right corner.
+Some settings are commonly used and shared among storage classes. You can find them as dashboard properties on the console, which are also indicated by fields or annotations in the StorageClass manifest. You can see the manifest file in YAML format by enabling **Edit Mode** in the top-right corner.
 Here are property descriptions of some commonly used fields in KubeSphere.
 
 | Property | Description |

@@ -40,7 +40,7 @@ Therefore, I select QingCloud Kubernetes Engine (QKE) to prepare the environment
 
    ![cluster-management](https://ap3.qingstor.com/kubesphere-website/docs/20201026175447.png)
 
-3. Use the built-in **Web Kubectl** from the Toolkit in the bottom right corner to execute the following command to install TiDB Operator CRD:
+3. Use the built-in **Web Kubectl** from the Toolkit in the bottom-right corner to execute the following command to install TiDB Operator CRD:
 
    ```bash
    kubectl apply -f https://raw.githubusercontent.com/pingcap/tidb-operator/v1.1.6/manifests/crd.yaml
