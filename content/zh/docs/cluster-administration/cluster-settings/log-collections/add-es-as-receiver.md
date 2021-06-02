@@ -16,21 +16,21 @@ weight: 8622
 
 1. 以 `admin` 身份登录 KubeSphere 的 Web 控制台。点击左上角的**平台管理**，然后选择**集群管理**。
 
-2. 如果您启用了[多集群功能](../../../../multicluster-management/)，您可以选择一个集群。如果尚未启用该功能，请直接进行下一步。
+    {{< notice note >}}
 
-3. 在**集群管理**页面，选择**集群设置**下的**日志收集**。
+如果您启用了[多集群功能](../../../../multicluster-management/)，您可以选择一个集群。
 
-4. 点击**添加日志接收器**并选择 **Elasticsearch**。
+{{</ notice >}} 
 
-    ![add-receiver](/images/docs/cluster-administration/cluster-settings/log-collections/add-es-as-receiver/add-receiver.png)
+2. 在**集群管理**页面，选择**集群设置**下的**日志收集**。
 
-5. 提供 Elasticsearch 服务地址和端口信息，如下所示：
+3. 点击**添加日志接收器**并选择 **Elasticsearch**。
 
-    ![add-es](/images/docs/cluster-administration/cluster-settings/log-collections/add-es-as-receiver/add-es.png)
+4. 提供 Elasticsearch 服务地址和端口信息，如下所示：
 
-6. Elasticsearch 会显示在**日志收集**页面的接收器列表中，状态为**收集中**。
+    ![add-es](/images/docs/zh-cn/cluster-administration/cluster-settings/log-collection/add-es-as-receiver/add-es.png)
 
-    ![receiver-list](/images/docs/cluster-administration/cluster-settings/log-collections/add-es-as-receiver/receiver-list.png)
+5. Elasticsearch 会显示在**日志收集**页面的接收器列表中，状态为**收集中**。
 
-7. 若要验证 Elasticsearch 是否从 Fluent Bit 接收日志，从右下角的**工具箱**中点击**日志查询**，在控制台中搜索日志。有关更多信息，请参阅[日志查询](../../../../toolbox/log-query/)。
+6. 若要验证 Elasticsearch 是否从 Fluent Bit 接收日志，从右下角的**工具箱**中点击**日志查询**，在控制台中搜索日志。有关更多信息，请参阅[日志查询](../../../../toolbox/log-query/)。
 

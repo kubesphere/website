@@ -24,13 +24,15 @@ KubeSphere 提供灵活的日志收集配置方式。基于 [FluentBit Operator]
 
 2. 点击左上角的**平台管理**，然后选择**集群管理**。
 
-3. 如果您启用了[多集群功能](../../../../multicluster-management/)，您可以选择一个集群。如果尚未启用该功能，请直接进行下一步。
+   {{< notice note >}}
 
-4. 选择**集群设置**下的**日志收集**。
+   如果您启用了[多集群功能](../../../../multicluster-management/)，您可以选择一个集群。
 
-5. 在**日志**选项卡下点击**添加日志接收器**。
+   {{</ notice >}} 
 
-   ![log-collections](/images/docs/cluster-administration/cluster-settings/log-collections/introduction/log-collections.png)
+3. 选择**集群设置**下的**日志收集**。
+
+4. 在**日志**选项卡下点击**添加日志接收器**。
 
    {{< notice note >}}
 
@@ -61,8 +63,6 @@ Kafka 往往用于接收日志，并作为 Spark 等处理系统的代理 (Broke
 
 自 KubeSphere v3.0.0 起，Kubernetes 事件和 Kubernetes 以及 KubeSphere 审计日志可以通过和容器日志相同的方式进行存档。如果在 [ClusterConfiguration](https://github.com/kubesphere/kubekey/blob/release-1.1/docs/config-example.md) 中启用了 `events` 或 `auditing`，**日志收集**页面会对应显示**事件**或**审计**选项卡。您可以前往对应选项卡为 Kubernetes 事件或 Kubernetes 以及 KubeSphere 审计日志配置日志接收器。
 
-![log-collections-events](/images/docs/cluster-administration/cluster-settings/log-collections/introduction/log-collections-events.png)
-
 容器日志、Kubernetes 事件和 Kubernetes 以及 KubeSphere 审计日志应存储在不同的 Elasticsearch 索引中以便在 KubeSphere 中进行搜索，索引前缀如下：
 
 - 容器日志：`ks-logstash-log`
@@ -76,15 +76,10 @@ Kafka 往往用于接收日志，并作为 Spark 等处理系统的代理 (Broke
 1. 在**日志收集**页面，点击一个日志接收器并进入其详情页面。
 2. 点击**更多操作**并选择**更改状态**。
 
-    ![more](/images/docs/cluster-administration/cluster-settings/log-collections/introduction/more.png)
-
 3. 选择**激活**或**关闭**以启用或停用该日志接收器。
-
-    ![change-status](/images/docs/cluster-administration/cluster-settings/log-collections/introduction/change-status.png)
 
 4. 停用后，日志接收器的状态会变为**关闭**，激活时状态为**收集中**。
 
-    ![receiver-status](/images/docs/cluster-administration/cluster-settings/log-collections/introduction/receiver-status.png)
 
 ## 修改或删除日志接收器
 
@@ -92,7 +87,5 @@ Kafka 往往用于接收日志，并作为 Spark 等处理系统的代理 (Broke
 
 1. 在**日志收集**页面，点击一个日志接收器并进入其详情页面。
 2. 点击**编辑**或从下拉菜单中选择**编辑配置文件**以编辑日志接收器。
-
-    ![more](/images/docs/cluster-administration/cluster-settings/log-collections/introduction/more.png)
 
 3. 点击**删除日志接收器**进行删除。
