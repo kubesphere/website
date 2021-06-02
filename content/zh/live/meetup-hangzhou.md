@@ -1,39 +1,118 @@
 ---
 title: KubeSphere and Friends | Kubernetes and Cloud Native Meetup ——杭州站
-description: 为了跟社区新老朋友们零距离交流，我们将联合 CNCF 和其他合作伙伴，从五月到七月，在上海、杭州、深圳、成都这四个城市分别为大家带来技术的交流与碰撞。2021 年继上海站首次 Meetup 火爆全场之后，我们将依旧延续 KubeSphere and Friends 的主题，于 5 月 29 日杭州为大家带来 Kubernetes and Cloud Native Meetup。
-keywords: KubeSphere,Meetup,Hangzhou
+description: KubeSphere and Friends 2021，Kubernetes and Cloud Native Meetup 第二站杭州站顺利举办，围绕“云原生、边缘云、Serverless、DevOps”等火热话题，来自 IT、KubeEdge 社区、SementFault（思否）社区等行业技术大牛、嘉宾以及社区伙伴带来最新的思考与实践。
+keywords: KubeSphere,Meetup,Hangzhou,Serverless,FaaS,OpenFunction,KubeEdge
 css: scss/live-detail.scss
 
 section1:
-  snapshot: https://pek3b.qingstor.com/kubesphere-community/images/meetup-hangzhou-kv.png
-  liveUrl: http://live.bilibili.com/22580654
+  snapshot: 
+  videoUrl: 
   type: iframe
-  time: 2021-05-29 14:00-18:00
+  time: 2021-05-29 13:00-18:00
   timeIcon: /images/live/clock.svg
-  base: 浙江省杭州市拱墅区丰潭路430号丰元国际大厦A座硬趣空间地下一层 + 线上直播
+  base: 浙江省杭州市拱墅区丰潭路 430 号丰元国际大厦 A 座硬趣空间地下一层 + 线上同步直播
   baseIcon: /images/live/base.svg
 ---
+<center>KubeSphere and Friends 2021</center>
 
-## 背景
+<center>Kubernetes and Cloud Native Meetup</center>
 
-以容器技术和容器编排为基础的云原生应用，被越来越多的企业用户接受和使用，并且在生产环境中使用容器技术的比例逐年增加。KubeSphere 作为一款面向应用的开源容器混合云，经过 3 年的发展和 10 个版本的迭代，收获了一百多位开源贡献者，超过十万次下载，并有数千名社区用户用 KubeSphere 作为企业容器云平台。
+<center>第二站杭州站顺利举办🎉🎉🎉</center>
 
-KubeSphere 之所以能够如此快速发展，得益于开源社区带来的天然优势，以及社区里长期活跃的用户、贡献者积极参与社区，帮助推动产品和社区快速成长，我们坚持认为 KubeSphere 开源社区的每一位用户和贡献者朋友都是 KubeSphere 生态中的重要组成部分。
+<center>围绕“云原生、边缘云、Serverless、DevOps”等火热话题</center>
 
-为了跟社区新老朋友们零距离交流，我们将联合 CNCF 和其他合作伙伴，从五月到七月，在上海、杭州、深圳、成都这四个城市分别为大家带来技术的交流与碰撞。2021 年继上海站首次 Meetup 火爆全场之后，我们将依旧延续 KubeSphere and Friends 的主题，于 5 月 29 日杭州为大家带来 Kubernetes and Cloud Native Meetup。
+<center>来自 IT、KubeEdge 社区、SementFault（思否）社区等行业技术大牛、嘉宾</center>
 
-## 活动议程
+<center>以及社区伙伴带来最新的思考与实践</center>
 
-![agenda](https://pek3b.qingstor.com/kubesphere-community/images/agenda-hangzhou.png)
+<center>都有哪些令人难忘的精彩环节和瞬间呢？</center>
 
-## 直播参与
+<center>一起来看看</center>
 
-我们将会在青云官方直播间、“KubeSphere” 视频号、B 站以及“青云QingCloud” 视频号等多个平台进行同步直播。您可以选择其中任一平台进行观看。
+<center>↓</center>
 
-青云官方直播间和 “KubeSphere” B 站平台将进行 4 轮抽奖，您可以在观看直播的同时，还有机会获得 KubeSphere 定制周边纪念品以及 Kubernetes 技术丛书。
+## OpenFunction 开源：初识云原生 FaaS 平台及 Serverless 生态
 
-另外，您还可以参与“分享有礼”活动。扫码后点击“邀请”分享海报，带领小伙伴一起参与线上直播。截止到 5 月 29 日 18：00 ，排行榜前 10 名的小伙伴将获得 KubeSphere 定制周边礼品。
+![](https://pek3b.qingstor.com/kubesphere-community/images/ben-hangzhou.jpeg)
 
-所以，除了可以在线上观看各位技术大牛的分享之外，还可以参与有奖活动“抢夺”精美礼品。机会难得，抓紧扫描下方海报中的二维码报名参与吧！
+讲师：霍秉杰
 
-![live](https://pek3b.qingstor.com/kubesphere-community/images/live-hangzhoumeetup.png)
+个人介绍：KubeSphere 架构师
+
+演讲概要：以 Kubernetes 为代表的云原生技术极大的推动了 Serverless 的发展与落地，但目前现有的开源 FaaS 平台都没有充分利用这些云原生 Serverless 技术， OpenFunction 的出现则弥补了这方面的空白。
+
+<iframe width="760" height="380" src="https://player.bilibili.com/player.html?aid=248447658&bvid=BV1Dv411V7Ku&cid=347150253&page=1&high_quality=1" scrolling="no" border="0" frameborder="no" framespacing="0" allowfullscreen="true"> </iframe>
+
+## 基于 KubeSphere 的 Nebula Graph 多云架构管理实践
+
+![](https://pek3b.qingstor.com/kubesphere-community/images/qiaolei-hangzhou.jpeg)
+
+讲师：乔雷
+
+个人介绍：Nebula Graph 图数据库工程师
+
+演讲概要：在当下的云原生时代，Kubernetes 早已是容器编排领域的事实标准，Nebula Graph 也同样使用 Kubernetes 来编排，KubeSphere 作为我们的多 K8s 集群管理平台，在集群管理上发挥着至关重要的作用。
+
+<iframe width="760" height="380" src="https://player.bilibili.com/player.html?aid=460886659&bvid=BV1u5411M7hr&cid=347153258&page=1&high_quality=1" scrolling="no" border="0" frameborder="no" framespacing="0" allowfullscreen="true"> </iframe>
+
+## KubeSphere + KubeEdge: 打造云原生边缘计算服务
+
+![](https://pek3b.qingstor.com/kubesphere-community/images/xufei-hangzhou.jpeg)
+
+![](https://pek3b.qingstor.com/kubesphere-community/images/ben-hangzhou.jpeg)
+
+讲师：徐飞、霍秉杰
+
+个人介绍：KubeEdge 社区 Maintainer、KubeSphere 架构师
+
+演讲概要：KubeEdge 是非常流行的边缘计算平台，但是缺少开源容器管理平台在云端控制层面的的支持，此外需要经过较复杂和繁琐的配置才能实现边缘节点纳管及和可观测，KubeSphere 在与 KubeEdge 集成的过程中，着重解决了上述问题，使得 KubeEdge 纳管边缘节点更加方便，并自动实现边缘节点及工作负载的可观测。
+
+<iframe width="760" height="380" src="https://player.bilibili.com/player.html?aid=845966924&bvid=BV1654y137iR&cid=347155149&page=1&high_quality=1" scrolling="no" border="0" frameborder="no" framespacing="0" allowfullscreen="true"> </iframe>
+
+## SegmentFault 基于 Kubernetes 的容器化与持续交付实践
+
+![](https://pek3b.qingstor.com/kubesphere-community/images/qining-hangzhou.jpeg)
+
+讲师：祁宁
+
+个人介绍：SementFault（思否）CTO & 联合创始人
+
+演讲概要：SegmentFault（思否）是目前中文领域最大的编程问答交流社区平台，为了进一步扩大互联网业务的规模，我们将思否社区的 Web 与后端服务进行微服务与容器化改造，并结合 KubeSphere 完成了互联网业务在 Kubernetes 平台的快速发布与自动化管理。
+
+<iframe width="760" height="380" src="https://player.bilibili.com/player.html?aid=888493519&bvid=BV1TK4y137XE&cid=347158829&page=1&high_quality=1" scrolling="no" border="0" frameborder="no" framespacing="0" allowfullscreen="true"> </iframe>
+
+## 如何利用云原生架构控制系统复杂度-从构建云原生向量搜索 Milvus 讲起
+
+![](https://pek3b.qingstor.com/kubesphere-community/images/luanxiaofan-hangzhou.jpeg)
+
+讲师：栾小凡
+
+个人介绍：Zilliz 工程总监
+
+演讲概要：分布式系统的最大敌人就是复杂性，通过云原生架构设计就可以极大降低系统的复杂度，也更加易扩展，易于理解和维护。
+
+<iframe width="760" height="380" src="https://player.bilibili.com/player.html?aid=758412870&bvid=BV1A64y1R7iy&cid=347160163&page=1&high_quality=1" scrolling="no" border="0" frameborder="no" framespacing="0" allowfullscreen="true"> </iframe>
+
+## 基于 Kubernetes 的新一代 MySQL 高可用架构实现方案
+
+![](https://pek3b.qingstor.com/kubesphere-community/images/gaoriyao-1.png)
+
+讲师：高日耀
+
+个人介绍：资深 MySQL 内核研发
+
+演讲概要：MySQL 是世界上最流行的数据库，从物理机到私有云公有云都有它的身影，但是基于 k8s 的 MySQL 高可用集群还是一片处女地。RadonDB MySQL 是基于 MySQL 的高可用、云原生的解决方案，在容器化方面进行了一些探索，支持主从秒级切换，确保业务高可用。主节点发生故障时，集群自动响应并选出新的主节点，从节点发生故障可自动重建并与主节点保持一致。
+
+<iframe width="760" height="380" src="https://player.bilibili.com/player.html?aid=333433521&bvid=BV1YA41137MQ&cid=347162028&page=1&high_quality=1" scrolling="no" border="0" frameborder="no" framespacing="0" allowfullscreen="true"> </iframe>
+
+## “开源社区运营与治理”圆桌交流
+
+![](https://pek3b.qingstor.com/kubesphere-community/images/roundtable-hangzhou.jpeg)
+
+本次圆桌交流主要讨论了两个话题：
+- 参与开源项目贡献给个人开发者和企业带来的好处是什么？
+- 如何评估开源项目和开源社区的健康程度和活跃度？如何提升开源社区的健康与活跃程度？
+
+<iframe width="760" height="380" src="https://player.bilibili.com/player.html?aid=630940249&bvid=BV1Yb4y1Z7Fv&cid=347162824&page=1&high_quality=1" scrolling="no" border="0" frameborder="no" framespacing="0" allowfullscreen="true"> </iframe>
+
+> 杭州站 Meetup 圆满收官！可扫描官网底部二维码关注 「KubeSphere云原生」 公众号，后台回复 “2021 杭州” 获取下载链接。

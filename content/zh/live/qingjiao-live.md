@@ -38,3 +38,6 @@ section1:
 - 统一认证实践：基于 KubeSphere 开发 Oauth 插件
 
 - 基于 KubeSphere 的应用自定义监控实践
+
+
+![直播海报](https://pek3b.qingstor.com/kubesphere-community/images/qingjiao-live-poster.jpg)

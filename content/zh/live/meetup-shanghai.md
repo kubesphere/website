@@ -1,14 +1,14 @@
 ---
 title: KubeSphere and Friends | Kubernetes and Cloud Native Meetup ——上海站
 description: KubeSphere and Friends 2021，Kubernetes and Cloud Native Meetup 首站上海站顺利举办，围绕“云原生、边缘云、微服务、DevOps”等火热话题，来自 IT、金融、物流、媒体等行业技术大牛、嘉宾以及社区伙伴带来最新的思考与实践。
-keywords: KubeSphere,Meetup,Shanghai
+keywords: KubeSphere,Meetup,Shanghai,多集群,Kubernetes,DevOps
 css: scss/live-detail.scss
 
 section1:
   snapshot: 
   videoUrl: 
   type: iframe
-  time: 2021-05-13 13:00-18:00
+  time: 2021-05-15 13:00-18:00
   timeIcon: /images/live/clock.svg
   base: 上海市虹口区杨树浦路 188 号 2 号楼 102 赤兔创业咖啡 + 线上同步直播
   baseIcon: /images/live/base.svg
@@ -115,4 +115,4 @@ section1:
 
 <iframe width="760" height="380" src="https://player.bilibili.com/player.html?aid=205642662&bvid=BV1Jh411v7jc&cid=340549646&page=1&high_quality=1" scrolling="no" border="0" frameborder="no" framespacing="0" allowfullscreen="true"> </iframe>
 
-> 上海站 Meetup 圆满收官！分享内容可关注 「KubeSphere云原生」 公众号后台回复 “2021上海” 获取下载链接。
+> 上海站 Meetup 圆满收官！可扫描官网底部二维码关注 「KubeSphere云原生」 公众号，后台回复 “2021 上海” 获取下载链接。
