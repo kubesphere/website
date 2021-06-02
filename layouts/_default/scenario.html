@@ -3,13 +3,14 @@
 <section class='section-1 bg-cover' style='background-image: url("{{ .image }}");'>
   <div class="title-div common-layout">
     <h1 class="title-h1">{{ .title }}</h1>
+    <p class="common-p {{ if (and .showDownload (not .inCenter)) }} left-p {{ end }}">{{ .content }}</p>
+    {{ if .content2 }}
+    <p class="common-p {{ if (and .showDownload (not .inCenter)) }} left-p {{ end }}">{{ .content2 }}</p>
+    {{ end }}
     {{ if .showDownload }}
-    <p class="common-p left-p">{{ .content }}</p>
-    <div class="download-div">
+    <div class="download-div {{ if .inCenter }} center {{ end }}">
       {{ partial "downloadButton" . }}
     </div>
-    {{ else }}
-    <p class="common-p">{{ .content }}</p>
     {{ end }}
   </div>
 </section>

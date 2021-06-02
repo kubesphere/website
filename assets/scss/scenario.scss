@@ -12,12 +12,8 @@ html {
   .title-div {
     position: relative;
     padding-bottom: 68px;
-    h1 {
-      width: 1060px;
-    }
 
     p {
-      width: 1060px;
       margin-top: 25px;
       letter-spacing: -0.04px;
       color: #ffffff;
@@ -32,6 +28,13 @@ html {
       position: absolute;
       right: 0;
       bottom: 64px;
+    }
+
+    .center {
+      position: relative;
+      margin-top: 32px;
+      text-align: center;
+      bottom: 0;
     }
 
     @media only screen and (max-width: $mobile-max-width) {
