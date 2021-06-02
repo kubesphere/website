@@ -16,7 +16,7 @@ You need to enable the [KubeSphere Logging System](../../pluggable-components/lo
 
 ## Enter the Log Query Interface
 
-1. The log query function is available for all users. Log in to the console with any account, hover over the **Toolbox** in the lower right corner and select **Log Search**.
+1. The log query function is available for all users. Log in to the console with any account, hover over the **Toolbox** in the lower-right corner and select **Log Search**.
 
     ![log-query-guide](/images/docs/toolbox/log-query/log-query-guide.png)
 

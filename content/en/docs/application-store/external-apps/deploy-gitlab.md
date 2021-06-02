@@ -99,7 +99,7 @@ This tutorial demonstrates how to deploy GitLab on KubeSphere.
 
    ![search-secret](/images/docs/appstore/external-apps/deploy-gitlab/search-secret.PNG)
 
-2. Click the Secret to go to its detail page, and then click the eye icon in the upper right corner to view the password. Make sure you copy it.
+2. Click the Secret to go to its detail page, and then click the eye icon in the upper-right corner to view the password. Make sure you copy it.
 
    ![click-eye-icon](/images/docs/appstore/external-apps/deploy-gitlab/click-eye-icon.PNG)
 

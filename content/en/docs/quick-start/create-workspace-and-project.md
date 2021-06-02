@@ -33,7 +33,7 @@ After KubeSphere is installed, you need to add different users with varied roles
 1. Log in to the web console as `admin` with the default account and password (`admin/P@88w0rd`).
 
    {{< notice tip >}}
-   For account security, it is highly recommended that you change your password the first time you log in to the console. To change your password, select **User Settings** in the drop-down menu in the top right corner. In **Password Setting**, set a new password. You also can change the console language in **User Settings**.
+   For account security, it is highly recommended that you change your password the first time you log in to the console. To change your password, select **User Settings** in the drop-down menu in the top-right corner. In **Password Setting**, set a new password. You also can change the console language in **User Settings**.
    {{</ notice >}}
 
    ![chang-password1](/images/docs/quickstart/create-workspaces-projects-accounts/chang-password1.png)

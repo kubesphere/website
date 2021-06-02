@@ -14,7 +14,7 @@ weight: 11410
 
 ## Create a Docker Hub Access Token
 
-1. Log in to [Docker Hub](https://hub.docker.com/) and select **Account Settings** from the menu in the top right corner.
+1. Log in to [Docker Hub](https://hub.docker.com/) and select **Account Settings** from the menu in the top-right corner.
 
    ![dockerhub-settings](/images/docs/devops-user-guide/examples/compile-and-deploy-a-go-project/dockerhub-settings.jpg)
 

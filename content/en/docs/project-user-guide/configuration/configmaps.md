@@ -26,7 +26,7 @@ You need to create a workspace, a project and an account (`project-regular`). Th
 
    {{< notice tip >}}
 
-You can see the ConfigMap manifest file in YAML format by enabling **Edit Mode** in the top right corner. KubeSphere allows you to edit the manifest file directly to create a ConfigMap. Alternatively, you can follow the steps below to create a ConfigMap via the dashboard.
+You can see the ConfigMap manifest file in YAML format by enabling **Edit Mode** in the top-right corner. KubeSphere allows you to edit the manifest file directly to create a ConfigMap. Alternatively, you can follow the steps below to create a ConfigMap via the dashboard.
 
 {{</ notice >}} 
 
@@ -44,7 +44,7 @@ You can see the ConfigMap manifest file in YAML format by enabling **Edit Mode**
 
 {{</ notice >}} 
 
-5. Click **√** in the bottom right corner to save it and click **Add Data** again if you want to add more key-value pairs.
+5. Click **√** in the bottom-right corner to save it and click **Add Data** again if you want to add more key-value pairs.
 
 6. Click **Create** to generate the ConfigMap.
 

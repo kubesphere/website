@@ -105,7 +105,7 @@ Now that you have Helm charts ready, you can upload them to KubeSphere as app te
 
 You can release apps you have uploaded to KubeSphere to the public repository, also known as the App Store. In this way, all tenants on the platform can see these apps and deploy them if they have necessary permissions regardless of the workspace they belong to.
 
-1. Click **Platform** in the top left corner and select **Access Control**.
+1. Click **Platform** in the top-left corner and select **Access Control**.
 
 2. On the **Workspaces** page, click the workspace where you have uploaded the Helm charts above.
 
@@ -119,7 +119,7 @@ You can release apps you have uploaded to KubeSphere to the public repository, a
 
    ![detail-page](https://ap3.qingstor.com/kubesphere-website/docs/20201201150948.png)
 
-5. After the app is submitted for review, I need to approve it before it can be released to the App Store. Click **Platform** in the top left corner and select **App Store Management**.
+5. After the app is submitted for review, I need to approve it before it can be released to the App Store. Click **Platform** in the top-left corner and select **App Store Management**.
 
    ![app-store-management](https://ap3.qingstor.com/kubesphere-website/docs/20201201152220.png)
 
@@ -131,7 +131,7 @@ You can release apps you have uploaded to KubeSphere to the public repository, a
 
    ![approve-app](https://ap3.qingstor.com/kubesphere-website/docs/20201201152734.png)
 
-8. After the app is approved, you can release it to the App Store. Click **Platform** in the top left corner,  select **Access Control**, and go back to your workspace. Select **App Templates** from the navigation bar and click **tidb-operator**.
+8. After the app is approved, you can release it to the App Store. Click **Platform** in the top-left corner,  select **Access Control**, and go back to your workspace. Select **App Templates** from the navigation bar and click **tidb-operator**.
 
    ![tidb-operator-app-template](https://ap3.qingstor.com/kubesphere-website/docs/20201201153102.png)
 
@@ -141,7 +141,7 @@ You can release apps you have uploaded to KubeSphere to the public repository, a
 
     ![release-prompt](https://ap3.qingstor.com/kubesphere-website/docs/20201201153423.png)
 
-11. To view the app released, click **App Store** in the top left corner and you can see it in the App Store. Likewise, you can deploy **tidb-cluster** to the App Store by following the same step.
+11. To view the app released, click **App Store** in the top-left corner and you can see it in the App Store. Likewise, you can deploy **tidb-cluster** to the App Store by following the same step.
 
     ![tidb-operator](https://ap3.qingstor.com/kubesphere-website/docs/20201201154211.png)
 

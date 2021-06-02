@@ -14,11 +14,11 @@ This tutorial demonstrates how to use web kubectl to operate on and manage clust
 
 ## Use Web Kubectl
 
-1. Log in to KubeSphere with an account granted the `platform-admin` role, hover over the **Toolbox** in the lower right corner and select **Kubectl**.
+1. Log in to KubeSphere with an account granted the `platform-admin` role, hover over the **Toolbox** in the lower-right corner and select **Kubectl**.
 
     ![web-kubectl-enter](/images/docs/web-kubectl/web-kubectl-enter.png)
 
-2. You can see the kubectl interface as shown in the pop-up window. If you have enabled the multi-cluster feature, you need to select the target cluster first from the drop-down list in the upper right corner. This drop-down list is not visible if the multi-cluster feature is not enabled.
+2. You can see the kubectl interface as shown in the pop-up window. If you have enabled the multi-cluster feature, you need to select the target cluster first from the drop-down list in the upper-right corner. This drop-down list is not visible if the multi-cluster feature is not enabled.
 
     ![web-kubectl-cluster-select](/images/docs/web-kubectl/web-kubectl-cluster-select.png)
 

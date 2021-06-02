@@ -27,7 +27,7 @@ This tutorial demonstrates how to create a microservices-based app Bookinfo, whi
 
    {{< notice note >}}
 
-   You can create a Service on the dashboard directly or enable **Edit Mode** in the top right corner to edit the YAML file.
+   You can create a Service on the dashboard directly or enable **Edit Mode** in the top-right corner to edit the YAML file.
 
    {{</ notice >}} 
 
@@ -39,7 +39,7 @@ This tutorial demonstrates how to create a microservices-based app Bookinfo, whi
 
    {{</ notice >}} 
 
-6. Click **Use Default Ports**. For more information about image settings, see [Container Image Settings](../../../project-user-guide/application-workloads/container-image-settings/). Click **√** in the bottom right corner and **Next** to continue.
+6. Click **Use Default Ports**. For more information about image settings, see [Container Image Settings](../../../project-user-guide/application-workloads/container-image-settings/). Click **√** in the bottom-right corner and **Next** to continue.
 
 7. On the **Mount Volumes** page, [add a volume](../../../project-user-guide/storage/volumes/) or click **Next** to continue.
 

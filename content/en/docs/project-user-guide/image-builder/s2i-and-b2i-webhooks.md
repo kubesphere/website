@@ -20,7 +20,7 @@ This tutorial demonstrates how to configure S2I and B2I webhooks.
 
 ### Step 1: Expose the S2I trigger Service
 
-1. Log in to the KubeSphere web console as `admin`. Click **Platform** in the top left corner and then select **Cluster Management**.
+1. Log in to the KubeSphere web console as `admin`. Click **Platform** in the top-left corner and then select **Cluster Management**.
 
 2. In **Services** under **Application Workloads**, select **kubesphere-devops-system** from the drop-down list and click **s2ioperator-trigger-service** to go to its detail page.
 

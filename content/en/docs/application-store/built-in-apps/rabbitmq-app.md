@@ -18,7 +18,7 @@ This tutorial walks you through an example of how to deploy RabbitMQ from the Ap
 
 ### Step 1: Deploy RabbitMQ from the App Store
 
-1. On the **Overview** page of the project `demo-project`, click **App Store** in the top left corner.
+1. On the **Overview** page of the project `demo-project`, click **App Store** in the top-left corner.
 
    ![rabbitmq01](/images/docs/appstore/built-in-apps/rabbitmq-app/rabbitmq01.jpg)
 

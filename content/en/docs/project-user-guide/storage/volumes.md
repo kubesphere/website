@@ -30,7 +30,7 @@ All the volumes that are created on the **Volumes** page are PersistentVolumeCla
 
    {{< notice note >}}
 
-   You can see the volume's manifest file in YAML format by enabling **Edit Mode** in the top right corner. KubeSphere allows you to edit the manifest file directly to create a volume. Alternatively, you can follow the steps below to create a volume via the dashboard.
+   You can see the volume's manifest file in YAML format by enabling **Edit Mode** in the top-right corner. KubeSphere allows you to edit the manifest file directly to create a volume. Alternatively, you can follow the steps below to create a volume via the dashboard.
 
    {{</ notice >}} 
 

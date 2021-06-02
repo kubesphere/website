@@ -26,7 +26,7 @@ Using [Redis](https://redis.io/) as an example application, this tutorial demons
 
 You need to create two accounts first, one for ISVs (`isv`) and the other (`reviewer`) for app technical reviewers.
 
-1. Log in to the KubeSphere console with the account `admin`. Click **Platform** in the top left corner and select **Access Control**. In **Account Roles**, click **Create**.
+1. Log in to the KubeSphere console with the account `admin`. Click **Platform** in the top-left corner and select **Access Control**. In **Account Roles**, click **Create**.
 
    ![create-role](/images/docs/appstore/application-lifecycle-management/create-role.jpg)
 
@@ -135,7 +135,7 @@ The version number must start with a number and contain decimal points.
 
 ### Step 3: Review the application
 
-1. Log out of KubeSphere and log back in as `reviewer`. Click **Platform** in the top left corner and select **App Store Management**. On the **App Review** page, the app submitted in the previous step displays under the tab **Unprocessed**.
+1. Log out of KubeSphere and log back in as `reviewer`. Click **Platform** in the top-left corner and select **App Store Management**. On the **App Review** page, the app submitted in the previous step displays under the tab **Unprocessed**.
 
    ![app-to-be-reviewed](/images/docs/appstore/application-lifecycle-management/app-to-be-reviewed.jpg)
 
@@ -157,7 +157,7 @@ After the app is approved, `isv` can release the Redis application to the App St
 
    ![app-active](/images/docs/appstore/application-lifecycle-management/app-active.jpg)
 
-3. Click **View in Store** to go to its **App Info** page in the App Store. Alternatively, click **App Store** in the top left corner and you can also see the app.
+3. Click **View in Store** to go to its **App Info** page in the App Store. Alternatively, click **App Store** in the top-left corner and you can also see the app.
 
    ![redis](/images/docs/appstore/application-lifecycle-management/redis.jpg)
 
@@ -267,7 +267,7 @@ To follow the steps below, you must deploy an app of one of its old versions fir
 
 You can choose to remove an app entirely from the App Store or suspend a specific app version.
 
-1. Log in to KubeSphere as `reviewer`. Click **Platform** in the top left corner and go to **App Store Management**. On the **App Store** page, click Redis.
+1. Log in to KubeSphere as `reviewer`. Click **Platform** in the top-left corner and go to **App Store Management**. On the **App Store** page, click Redis.
 
    ![remove-app](/images/docs/appstore/application-lifecycle-management/remove-app.jpg)
 

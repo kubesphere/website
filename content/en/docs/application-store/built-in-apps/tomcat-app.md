@@ -18,7 +18,7 @@ This tutorial walks you through an example of deploying Tomcat from the App Stor
 
 ### Step 1: Deploy Tomcat from the App Store
 
-1. On the **Overview** page of the project `demo-project`, click **App Store** in the top left corner.
+1. On the **Overview** page of the project `demo-project`, click **App Store** in the top-left corner.
 
    ![go-to-app-store](/images/docs/appstore/built-in-apps/tomcat-app/tomcat-app01.jpg)
 

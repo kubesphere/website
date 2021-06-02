@@ -62,7 +62,7 @@ You can set the values in this step as below or click **Next** to use the defaul
 
     ![add-container-image-job](/images/docs/project-user-guide/application-workloads/jobs/add-container-image-job.png)
 
-3. On the same page, scroll down to **Start Command**. Enter the following commands in the box which computes pi to 2000 places then prints it. Click **√** in the bottom right corner and select **Next** to continue.
+3. On the same page, scroll down to **Start Command**. Enter the following commands in the box which computes pi to 2000 places then prints it. Click **√** in the bottom-right corner and select **Next** to continue.
 
     ```bash
     perl,-Mbignum=bpi,-wle,print bpi(2000)
@@ -76,7 +76,7 @@ For more information about setting images, see [Container Image Settings](../con
 
 ### Step 5: Inspect the Job manifest (optional)
 
-1. Enable **Edit Mode** in the top right corner which displays the manifest file of the Job. You can see all the values are set based on what you have specified in the previous steps.
+1. Enable **Edit Mode** in the top-right corner which displays the manifest file of the Job. You can see all the values are set based on what you have specified in the previous steps.
 
     ```yaml
     apiVersion: batch/v1

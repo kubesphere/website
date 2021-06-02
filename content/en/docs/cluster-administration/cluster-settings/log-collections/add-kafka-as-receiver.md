@@ -101,7 +101,7 @@ You can use [strimzi-kafka-operator](https://github.com/strimzi/strimzi-kafka-op
 
 ## Step 2: Add Kafka as a Log Receiver
 
-1. Log in to KubeSphere as `admin`. Click **Platform** in the top left corner and select **Cluster Management**.
+1. Log in to KubeSphere as `admin`. Click **Platform** in the top-left corner and select **Cluster Management**.
 
    {{< notice note >}}
 

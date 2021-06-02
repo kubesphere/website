@@ -154,11 +154,11 @@ kubectl logs -n kubesphere-system $(kubectl get pod -n kubesphere-system -l app=
    
    ![add-cluster](/images/docs/multicluster-management/enable-multicluster-management-in-kubesphere/direct-connection/add-cluster.png)
 
-2. Enter the basic information of the cluster to be imported on the **Import Cluster** page. You can also click **Edit Mode** in the top right corner to view and edit the basic information in YAML format. After you finish editing, click **Next**.
+2. Enter the basic information of the cluster to be imported on the **Import Cluster** page. You can also click **Edit Mode** in the top-right corner to view and edit the basic information in YAML format. After you finish editing, click **Next**.
 
      ![cluster-info](/images/docs/multicluster-management/enable-multicluster-management-in-kubesphere/direct-connection/cluster-info.png)
 
-3. In **Connection Method**, select **Direct Connection**, and copy the kubeconfig of the Member Cluster and paste it into the box. You can also click **Edit Mode** in the top right corner to edit the kubeconfig of the Member Cluster in YAML format.
+3. In **Connection Method**, select **Direct Connection**, and copy the kubeconfig of the Member Cluster and paste it into the box. You can also click **Edit Mode** in the top-right corner to edit the kubeconfig of the Member Cluster in YAML format.
 
      {{< notice note >}}
 

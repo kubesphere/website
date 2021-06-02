@@ -30,7 +30,7 @@ Specify a name for the Secret (for example, `demo-registry-secret`) and click **
 
 {{< notice tip >}}
 
-You can see the Secret's manifest file in YAML format by enabling **Edit Mode** in the top right corner. KubeSphere allows you to edit the manifest file directly to create a Secret. Alternatively, you can follow the steps below to create a Secret via the dashboard.
+You can see the Secret's manifest file in YAML format by enabling **Edit Mode** in the top-right corner. KubeSphere allows you to edit the manifest file directly to create a Secret. Alternatively, you can follow the steps below to create a Secret via the dashboard.
 
 {{</ notice >}} 
 

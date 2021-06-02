@@ -19,7 +19,7 @@ This tutorial walks you through an example of deploying etcd from the App Store 
 
 ### Step 1: Deploy etcd from the App Store
 
-1. On the **Overview** page of the project `demo-project`, click **App Store** in the top left corner.
+1. On the **Overview** page of the project `demo-project`, click **App Store** in the top-left corner.
 
    ![project-overview](/images/docs/appstore/built-in-apps/etcd-app/project-overview.jpg)
 

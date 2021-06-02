@@ -20,7 +20,7 @@ This tutorial walks you through an example of how to monitor MySQL metrics and v
 
 To begin with, you [deploy MySQL from the App Store](../../../../application-store/built-in-apps/mysql-app/) and set the root password to `testing`.
 
-1. Go to the project `demo` and click **App Store** in the top left corner.
+1. Go to the project `demo` and click **App Store** in the top-left corner.
 
     ![go-to-app-store](/images/docs/project-user-guide/custom-application-monitoring/go-to-app-store.jpg)
 
@@ -86,7 +86,7 @@ After about two minutes, you can create a monitoring dashboard for MySQL and vis
 
     ![create-mysql-dashboard](/images/docs/project-user-guide/custom-application-monitoring/create-mysql-dashboard.jpg)
 
-3. Save the template by clicking **Save Template** in the top right corner. A newly-created dashboard displays in the dashboard list as below.
+3. Save the template by clicking **Save Template** in the top-right corner. A newly-created dashboard displays in the dashboard list as below.
 
     ![save-mysql-template](/images/docs/project-user-guide/custom-application-monitoring/save-mysql-template.jpg)
 

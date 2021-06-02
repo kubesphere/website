@@ -106,7 +106,7 @@ You can find the web kubectl tool by clicking <img src="/images/docs/enable-plug
 
 ## Verify the Installation of the Component
 
-After you log in to the console, if you can see **App Store** in the top left corner and 16 built-in apps in it, it means the installation is successful.
+After you log in to the console, if you can see **App Store** in the top-left corner and 16 built-in apps in it, it means the installation is successful.
 
 ![app-store](/images/docs/enable-pluggable-components/kubesphere-app-store/app-store.png)
 

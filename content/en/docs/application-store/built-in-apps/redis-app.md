@@ -19,7 +19,7 @@ This tutorial walks you through an example of deploying Redis from the App Store
 
 ### Step 1: Deploy Redis from the App Store
 
-1. On the **Overview** page of the project `demo-project`, click **App Store** in the top left corner.
+1. On the **Overview** page of the project `demo-project`, click **App Store** in the top-left corner.
 
    ![app-store](/images/docs/appstore/built-in-apps/redis-app/app-store.jpg)
 

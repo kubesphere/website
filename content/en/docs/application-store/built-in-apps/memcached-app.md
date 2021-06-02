@@ -18,7 +18,7 @@ This tutorial walks you through an example of deploying Memcached from the App S
 
 ### Step 1: Deploy Memcached from the App Store
 
-1. On the **Overview** page of the project `demo-project`, click **App Store** in the top left corner.
+1. On the **Overview** page of the project `demo-project`, click **App Store** in the top-left corner.
 
    ![in-app-store](/images/docs/appstore/built-in-apps/memcached-app/in-app-store.jpg)
 

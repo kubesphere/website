@@ -267,7 +267,7 @@ The account `project-admin` needs to be created in advance since it is the revie
 
    ![inspect-pipeline-log-1](/images/docs/devops-user-guide/using-devops/create-a-pipeline-using-a-jenkinsfile/inspect-pipeline-log-1.png)
 
-2. Check the pipeline running logs by clicking **Show Logs** in the top right corner. You can see the dynamic log output of the pipeline, including any errors that may stop the pipeline from running. For each stage, you click it to inspect logs, which can be downloaded to your local machine for further analysis.
+2. Check the pipeline running logs by clicking **Show Logs** in the top-right corner. You can see the dynamic log output of the pipeline, including any errors that may stop the pipeline from running. For each stage, you click it to inspect logs, which can be downloaded to your local machine for further analysis.
 
    ![inspect-pipeline-log-2](/images/docs/devops-user-guide/using-devops/create-a-pipeline-using-a-jenkinsfile/inspect-pipeline-log-2.jpg)
 
@@ -316,7 +316,7 @@ The account `project-admin` needs to be created in advance since it is the revie
    
    ![access-endpoint](/images/docs/devops-user-guide/using-devops/create-a-pipeline-using-a-jenkinsfile/access-endpoint.png)
 
-2. Use the **web kubectl** from **Toolbox** in the bottom right corner by executing the following command:
+2. Use the **web kubectl** from **Toolbox** in the bottom-right corner by executing the following command:
 
    ```bash
    curl 10.233.120.230:8080

@@ -22,7 +22,7 @@ To add a log receiver:
 
 1. Log in to the web console of KubeSphere as `admin`.
 
-2. Click **Platform** in the top left corner and select **Cluster Management**.
+2. Click **Platform** in the top-left corner and select **Cluster Management**.
 
    {{< notice note >}}
 

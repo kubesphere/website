@@ -90,7 +90,7 @@ To integrate SonarQube into your pipeline, you must install SonarQube Server fir
 
    ![access-sonarqube-console](/images/docs/devops-user-guide/tool-integration/integrate-sonarqube-into-pipeline/access-sonarqube-console.jpg)
 
-3. Click **Log in** in the top right corner and use the default account `admin/admin`.
+3. Click **Log in** in the top-right corner and use the default account `admin/admin`.
 
    ![log-in-page](/images/docs/devops-user-guide/tool-integration/integrate-sonarqube-into-pipeline/log-in-page.jpg)
 

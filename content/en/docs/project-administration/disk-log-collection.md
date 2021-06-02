@@ -85,7 +85,7 @@ This tutorial demonstrates how to collect disk logs for an example app.
 
    ![inspect-logs](/images/docs/project-administration/disk-log-collection/inspect-logs.png)
 
-3. Alternatively, you can also use the **Log Search** function from **Toolbox** in the bottom right corner to view stdout logs. For example, use the Pod name of the Deployment for a fuzzy query:
+3. Alternatively, you can also use the **Log Search** function from **Toolbox** in the bottom-right corner to view stdout logs. For example, use the Pod name of the Deployment for a fuzzy query:
 
    ![fuzzy-match](/images/docs/project-administration/disk-log-collection/fuzzy-match.png)
 

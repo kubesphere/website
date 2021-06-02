@@ -19,7 +19,7 @@ You need an account granted a role including the authorization of **Cluster Mana
 
 Cluster nodes are only accessible to cluster administrators. Some node metrics are very important to clusters. Therefore, it is the administrator's responsibility to watch over these numbers and make sure nodes are available. Follow the steps below to view node status.
 
-1. Click **Platform** in the top left corner and select **Cluster Management**.
+1. Click **Platform** in the top-left corner and select **Cluster Management**.
 
     ![clusters-management-select](/images/docs/cluster-administration/node-management/clusters-management-select.jpg)
 

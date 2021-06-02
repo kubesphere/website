@@ -51,7 +51,7 @@ Enter the basic information. You can refer to the image below for each field. Wh
 
 {{< notice note >}} 
 
-You can enable **Edit Mode** in the top right corner to see the YAML manifest of this CronJob.
+You can enable **Edit Mode** in the top-right corner to see the YAML manifest of this CronJob.
 
 {{</ notice >}} 
 
