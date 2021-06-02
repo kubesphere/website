@@ -2,7 +2,7 @@
 
 This style guide provides a set of editorial guidelines for those who are writing documentation for KubeSphere.
 
-## **Basic Rules**
+## Basic Rules
 
 - Write clearly, concisely and precisely.
 - English is the preferred language to use when you write documentation. If you are not sure whether you are writing correctly, you can use grammar checkers (for example, [grammarly](https://www.grammarly.com/)). Although they are not 100% accurate, they can help you get rid of most of the wording issues. That said, Chinese is also acceptable if you really don't know how to express your meaning in English.
@@ -69,7 +69,7 @@ Use a **period** or a **conjunction** between two **complete** sentences.
 | Check the status of the component. You can see it is running normally. | Check the status of the component, you can see it is running normally. |
 | Check the status of the component, and you can see it is running normally. | Check the status of the component, you can see it is running normally. |
 
-### **Bold**
+### Bold
 
 - Mark any UI text (for example, a button) in bold.
 
@@ -84,7 +84,54 @@ Use a **period** or a **conjunction** between two **complete** sentences.
 
 KubeSphere is a **distributed operating system managing cloud-native applications** with Kubernetes as its kernel.
 
-### **Code**
+### Prepositions
+
+When describing the UI, you can use the following prepositions.
+
+<table>
+  <thead>
+    <tr>
+      <th width="15%">Preposition</th>
+      <th width="15%">UI element</th>
+      <th width="70%">Recommended</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>in</td>
+      <td>
+        <p>dialogs</p>
+        <p>fields</p>
+        <p>lists</p>
+        <p>menus</p>
+        <p>sidebars</p>
+        <p>windows</p>
+      </td>
+      <td>
+        <p>In the <b>Delete User</b> dialog, enter the name and click <b>OK</b>.</p>
+        <p>In the <b>Name</b> field, enter <code>demo-name</code>.</p>
+        <p>In the <b>Language</b> drop-down list, select a desired language.</p>
+        <p>In the <b>More</b> menu, click <b>Delete</b>.</p>
+        <p>Click <b>Volumes</b> under <b>Storage</b> in the sidebar.</p>
+        <p>In the <b>Metering and Billing</b> window, click <b>View Consumption</b>.</p>
+      </td>
+    </tr>
+    <tr>
+      <td>on</td>
+      <td>
+        <p>pages</p>
+        <p>tabs</p>
+      </td>
+      <td>
+        <p>On the <b>Volumes</b> page, click <b>Create</b>.</p>
+        <p>On the <b>Deployments</b> tab, click <b>Create</b>.</p>
+      </td>
+    </tr>
+  </tbody>
+  </table>
+
+
+### Code
 
 - For short commands, you can just put them within ``. This is often used when you only need to tell readers about a short command or it is sufficient to express your meaning just with the command in a sentence.
 
