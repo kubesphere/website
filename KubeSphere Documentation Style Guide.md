@@ -6,7 +6,7 @@ This style guide provides a set of editorial guidelines for those who are writin
 
 - Write clearly, concisely and precisely.
 - English is the preferred language to use when you write documentation. If you are not sure whether you are writing correctly, you can use grammar checkers (for example, [grammarly](https://www.grammarly.com/)). Although they are not 100% accurate, they can help you get rid of most of the wording issues. That said, Chinese is also acceptable if you really don't know how to express your meaning in English.
-- It is recommended that you use more images or diagrams to show UI functions and logical relations with tools such as [draw.io](https://draw.io).
+- Recommended image or diagram tools: [draw.io](https://draw.io) and [Visio](https://www.microsoft.com/en-ww/microsoft-365/visio/flowchart-software/).
 
 ## Preparation Notice
 
@@ -51,11 +51,12 @@ Give a title first before you write a paragraph. It can be grouped into differen
 ## Tone
 
 - Do not use “we”. Address the reader as “you” directly. Using “we” in a sentence can be confusing, because the reader might not know whether they are part of the “we” you are describing. You can also use words like users, developers, administrators and engineers, depending on the feature you are describing.
-- Do not use words which can imply a specific gender, including he, him, his, himself, she, her, hers and herself.
 
-| Do                                                           | Don't                                                        |
-| ------------------------------------------------------------ | ------------------------------------------------------------ |
-| The component has been installed. You can now use the feature. | The component has been installed. We can now use the feature. |
+  | Do                                                           | Don't                                                        |
+  | ------------------------------------------------------------ | ------------------------------------------------------------ |
+  | The component has been installed. You can now use the feature. | The component has been installed. We can now use the feature. |
+
+- Do not use words which can imply a specific gender, including he, him, his, himself, she, her, hers and herself.
 
 ## Format
 
@@ -73,12 +74,11 @@ Use a **period** or a **conjunction** between two **complete** sentences.
 
 - Mark any UI text (for example, a button) in bold.
 
-
-| Do                                                           | Don't                                                        |
-| ------------------------------------------------------------ | ------------------------------------------------------------ |
-| In the top-right corner of this page, click **Save**.        | In the top-right corner of this page, click Save.            |
-| In **Workspaces**, you can see all your workspaces listed.   | In Workspaces, you can see all your workspaces listed.       |
-| On the **Create Project** Page, click **OK** in the bottom-right corner to continue. | On the Create Project Page, click OK in the bottom-right corner to continue. |
+  | Do                                                           | Don't                                                        |
+  | ------------------------------------------------------------ | ------------------------------------------------------------ |
+  | In the top-right corner of this page, click **Save**.        | In the top-right corner of this page, click Save.            |
+  | In **Workspaces**, you can see all your workspaces listed.   | In Workspaces, you can see all your workspaces listed.       |
+  | On the **Create Project** Page, click **OK** in the bottom-right corner to continue. | On the Create Project Page, click OK in the bottom-right corner to continue. |
 
 - Mark the content of great importance or deserving special attention to readers in bold. For example:
 
@@ -135,66 +135,64 @@ When describing the UI, you can use the following prepositions.
 
 - For short commands, you can just put them within ``. This is often used when you only need to tell readers about a short command or it is sufficient to express your meaning just with the command in a sentence.
 
-
-| Do                                                | Don't                                           |
-| ------------------------------------------------- | ----------------------------------------------- |
-| You can use `kubectl get pods` to list your pods. | You can use kubectl get pods to list your pods. |
+  | Do                                                | Don't                                           |
+  | ------------------------------------------------- | ----------------------------------------------- |
+  | You can use `kubectl get pods` to list your Pods. | You can use kubectl get pods to list your Pods. |
 
 - Alternatively, you can use code fences so that readers can copy them directly, especially for long commands. For example:
 
+  Run the following command to edit the configuration of `ks-console`:
 
-Execute the following command to edit the configuration of `ks-console`:
-
-```bash
-kubectl edit svc ks-console -o yaml -n kubesphere-system
-```
+  ```bash
+  kubectl edit svc ks-console -o yaml -n kubesphere-system
+  ```
 
 - For values, strings, fields or parameters in yaml files, put them within ``.
 
-| Do                                                           | Don't                                                        |
-| ------------------------------------------------------------ | ------------------------------------------------------------ |
-| Change the value of `auditing.enabled` to `false` to stop receiving auditing logs from KubeSphere. | Change the value of auditing.enabled to false to stop receiving auditing logs from KubeSphere. |
+  | Do                                                           | Don't                                                        |
+  | ------------------------------------------------------------ | ------------------------------------------------------------ |
+  | Change the value of `auditing.enabled` to `false` to stop receiving auditing logs from KubeSphere. | Change the value of auditing.enabled to false to stop receiving auditing logs from KubeSphere. |
 
 - Put all path and file names within ``.
 
   However, if the file name itself contains a link, do not put it within ``.
+  
+  | Do                         | Don't                    |
+  | -------------------------- | ------------------------ |
+  | `/root/csi-qingcloud.yaml` | /root/csi-qingcloud.yaml |
+  | `config-sample.yaml`       | config-sample.yaml       |
+  | `/var/lib/docker`          | /var/lib/docker          |
 
-| Do                         | Don't                    |
-| -------------------------- | ------------------------ |
-| `/root/csi-qingcloud.yaml` | /root/csi-qingcloud.yaml |
-| `config-sample.yaml`       | config-sample.yaml       |
-| `/var/lib/docker`          | /var/lib/docker          |
+- Put workspace names, project names, account names, and role names within ``.
 
-- Put account names or role names within ``.
-
-| Do                                                     | Don't                                                |
-| ------------------------------------------------------ | ---------------------------------------------------- |
-| Log in to the console as `admin`.                         | Log in to the console as admin.                         |
-| The account will be assigned the role `users-manager`. | The account will be assigned the role users-manager. |
+  | Do                                                     | Don't                                                |
+  | ------------------------------------------------------ | ---------------------------------------------------- |
+  | Log in to the console as `admin`.                      | Log in to the console as admin.                      |
+  | The account will be assigned the role `users-manager`. | The account will be assigned the role users-manager. |
 
 ### Code Comments
 
 - If the comment is used only for a specific value, put the comment on the same line of the code. However, if the code is too long and putting the comment on the same line is not appropriate in terms of reading experience, you can put the code comment above the code. For example:
 
-```yaml
-registry:
-  registryMirrors: []   # For users who need to speed up downloads.
-```
+  ```yaml
+  registry:
+    registryMirrors: []   # For users who need to speed up downloads.
+  ```
 
-```bash
-# Assume your original Kubernetes cluster is v1.17.9
-./kk create config --with-kubesphere --with-kubernetes v1.17.9
-```
+  ```bash
+  # Assume your original Kubernetes cluster is v1.17.9
+  ./kk create config --with-kubesphere --with-kubernetes v1.17.9
+  ```
 
 - If the comment is used for all the code (for example, serving as a header for explanations), put the comment at the beginning above the code. For example:
 
-```yaml
-# Internal LB config example
-  controlPlaneEndpoint:
-    domain: lb.kubesphere.local
-    address: "192.168.0.253"
-    port: "6443"
-```
+  ```yaml
+  # Internal LB config example
+    controlPlaneEndpoint:
+      domain: lb.kubesphere.local
+      address: "192.168.0.253"
+      port: "6443"
+  ```
 
 ### Variables
 
