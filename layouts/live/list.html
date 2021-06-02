@@ -143,12 +143,13 @@
     var bindClickVideoLi = function() {
         $('.video-ul').on('click', 'li', function(ev) {
             var link = $(this).data('link')
-            var type = $(this).data('type')
-            if (type === 'video') {
-                showVideo(link)
-            } else if (type === 'iframe') {
-                showIframe(link)
-            }
+            window.open(link)
+            // var type = $(this).data('type')
+            // if (type === 'video') {
+            //     showVideo(link)
+            // } else if (type === 'iframe') {
+            //     showIframe(link)
+            // }
         })
     }
 
