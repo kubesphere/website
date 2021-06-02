@@ -36,7 +36,7 @@ Docker needs to be installed in advance for this method.
 
 {{</ notice >}} 
 
-1. Execute the following commands:
+1. Run the following commands:
 
    ```bash
    sudo mkdir -p /etc/docker
@@ -58,7 +58,7 @@ Docker needs to be installed in advance for this method.
 
    Make sure you replace the address within the quotation mark above with your own Booster URL.
 
-   {{</ notice >}} 
+   {{</ notice >}}
 
 3. Save the file and reload Docker by executing the following commands so that the change can take effect.
 
@@ -76,12 +76,18 @@ Docker needs to be installed in advance for this method.
 
    ```yaml
    registry:
-       registryMirrors: [] # For users who need to speed up downloads
-       insecureRegistries: [] # Set an address of insecure image registry. See https://docs.docker.com/registry/insecure/
-       privateRegistry: "" # Configure a private image registry for air-gapped installation (for example, docker local registry or Harbor)
+     registryMirrors: []
+     insecureRegistries: []
+     privateRegistry: ""
    ```
 
-2. Enter the registry mirror address above and save the file. For more information about the installation process, see [Multi-node Installation](../../../installing-on-linux/introduction/multioverview/). 
+   {{< notice note >}}
+
+   For more information about each parameter under the `registry` section, see [Kubernetes Cluster Configurations](../../../installing-on-linux/introduction/vars/).
+
+   {{</ notice >}} 
+
+2. Provide the registry mirror address as the value of `registryMirrors` and save the file. For more information about installation, see [Multi-node Installation](../../../installing-on-linux/introduction/multioverview/). 
 
 {{< notice note >}}
 
