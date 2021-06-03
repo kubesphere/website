@@ -162,14 +162,14 @@ weight: 14340
 3. 执行如下命令，访问 ClickHouse 集群，并可通过 `show databases` 命令查看数据库。
 
    ```bash
-   kubectl exec -it <pod name> -n <project name> --clickhouse-client --user=<user name> --password=<user password>
+   kubectl exec -it <pod name> -n <project name> -- clickhouse-client --user=<user name> --password=<user password>
    ```
 
    {{< notice note >}}
 
    - 以下命令示例中 **pod name** 为 `chi-clickhouse-app-all-nodes-0-1-0` ，**project name** 为 `demo-project`，**user name** 为 `clickhouse`，**password** 为  `clickh0use0perator`。
 
-   - **pod name** 可在**应用负载**的**容器组**下获取。
+   - 可在**应用负载**的**容器组**下获取 **pod name**。
 
    {{</ notice >}}
 
