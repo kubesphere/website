@@ -20,17 +20,17 @@ weight: 14220
 
 1. 在 `demo-project` 项目的**概览**页面，点击左上角的**应用商店**。
 
-   ![应用商店](/images/docs/zh-cn/appstore/built-in-apps/deploy-harbor-on-ks/app-store.png)
+   ![应用商店](/images/docs/zh-cn/appstore/built-in-apps/deploy-harbor-on-ks/app-store-1.PNG)
 
 2. 找到 Harbor，点击**应用信息**页面上的**部署**。
 
-   ![寻找 Harbor](/images/docs/zh-cn/appstore/built-in-apps/deploy-harbor-on-ks/find-harbor.png)
+   ![寻找 Harbor](/images/docs/zh-cn/appstore/built-in-apps/deploy-harbor-on-ks/find-harbor-2.PNG)
 
-   ![点击部署](/images/docs/zh-cn/appstore/built-in-apps/deploy-harbor-on-ks/click-deploy.png)
+   ![点击部署](/images/docs/zh-cn/appstore/built-in-apps/deploy-harbor-on-ks/click-deploy-3.PNG)
 
 3. 设置名称并选择应用版本。请确保将 Harbor 部署在 `demo-project` 中，点击**下一步**。
 
-   ![部署 Harbor](/images/docs/zh-cn/appstore/built-in-apps/deploy-harbor-on-ks/deploy-harbor.png)
+   ![部署 Harbor](/images/docs/zh-cn/appstore/built-in-apps/deploy-harbor-on-ks/deploy-harbor-4.PNG)
 
 4. 在**应用配置**页面，编辑 Harbor 的配置文件，请注意以下字段。
 
@@ -40,7 +40,7 @@ weight: 14220
 
    `externalURL`：暴露给租户的 URL。
 
-   ![配置 Harbor](/images/docs/zh-cn/appstore/built-in-apps/deploy-harbor-on-ks/harbor-config.png)
+   ![配置 Harbor](/images/docs/zh-cn/appstore/built-in-apps/deploy-harbor-on-ks/harbor-config-5.PNG)
 
    {{< notice note >}}
 
@@ -54,13 +54,13 @@ weight: 14220
 
 5. 稍等片刻待 Harbor 启动并运行。
 
-   ![创建 Harbor](/images/docs/zh-cn/appstore/built-in-apps/deploy-harbor-on-ks/creating-harbor.png)
+   ![创建 Harbor](/images/docs/zh-cn/appstore/built-in-apps/deploy-harbor-on-ks/creating-harbor-6.PNG)
 
 ### 步骤 2：访问 Harbor
 
 1. 基于配置文件中 `expose.type` 字段的设置，访问方式可能会不同。本示例使用 `nodePort` 访问 Harbor，按照先前步骤中的设置，访问 `http://nodeIP:30002`。
 
-   ![登录 Harbor](/images/docs/zh-cn/appstore/built-in-apps/deploy-harbor-on-ks/harbor-login.PNG)
+   ![登录 Harbor](/images/docs/zh-cn/appstore/built-in-apps/deploy-harbor-on-ks/harbor-login-7.PNG)
 
    {{< notice note >}}
 
@@ -70,7 +70,7 @@ weight: 14220
 
 2. 使用默认帐户和密码 (`admin/Harbor12345`) 登录 Harbor。密码由配置文件中的 `harborAdminPassword` 字段定义。
 
-   ![Harbor 仪表板](/images/docs/zh-cn/appstore/built-in-apps/deploy-harbor-on-ks/harbor-dashboard.jpg)
+   ![Harbor 仪表板](/images/docs/zh-cn/appstore/built-in-apps/deploy-harbor-on-ks/harbor-dashboard-8.jpg)
 
 ## 常见问题
 

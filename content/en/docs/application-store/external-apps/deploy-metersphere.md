@@ -21,51 +21,51 @@ This tutorial demonstrates how to deploy MeterSphere on KubeSphere.
 
 1. Log in to KubeSphere as `ws-admin`. In your workspace, go to **App Repositories** under **App Management**, and then click **Add**.
 
-   ![add-repo](/images/docs/appstore/external-apps/deploy-metersphere/add-repo.png)
+   ![add-repo](/images/docs/appstore/external-apps/deploy-metersphere/add-repo.PNG)
 
 2. In the dialog that appears, enter `metersphere` for the app repository name and `https://charts.kubesphere.io/test` for the MeterSphere repository URL. Click **Validate** to verify the URL and you will see a green check mark next to the URL if it is available. Click **OK** to continue.
 
-   ![add-metersphere-repo](/images/docs/appstore/external-apps/deploy-metersphere/add-metersphere-repo.png)
+   ![add-metersphere-repo](/images/docs/appstore/external-apps/deploy-metersphere/add-metersphere-repo.PNG)
 
 3. Your repository displays in the list after successfully imported to KubeSphere.
 
-   ![added-metersphere-repo](/images/docs/appstore/external-apps/deploy-metersphere/added-metersphere-repo.png)
+   ![added-metersphere-repo](/images/docs/appstore/external-apps/deploy-metersphere/added-metersphere-repo.PNG)
 
 ### Step 2: Deploy MeterSphere
 
 1. Log out of KubeSphere and log back in as `project-regular`. In your project, go to **Apps** under **Application Workloads** and click **Deploy New App**.
 
-   ![deploy-app](/images/docs/appstore/external-apps/deploy-metersphere/deploy-app.png)
+   ![deploy-app](/images/docs/appstore/external-apps/deploy-metersphere/deploy-app.PNG)
 
 2. In the dialog that appears, select **From App Templates**.
 
-   ![from-app-templates](/images/docs/appstore/external-apps/deploy-metersphere/from-app-templates.png)
+   ![from-app-templates](/images/docs/appstore/external-apps/deploy-metersphere/from-app-templates.PNG)
 
 3. Select `metersphere` from the drop-down list, then click **metersphere-chart**.
 
-   ![click-metersphere](/images/docs/appstore/external-apps/deploy-metersphere/click-metersphere.png)
+   ![click-metersphere](/images/docs/appstore/external-apps/deploy-metersphere/click-metersphere.PNG)
 
 4. On the **App Information** tab and the **Chart Files** tab, you can view the default configuration from the console. Click **Deploy** to continue.
 
-   ![view-config](/images/docs/appstore/external-apps/deploy-metersphere/view-config.png)
+   ![view-config](/images/docs/appstore/external-apps/deploy-metersphere/view-config.PNG)
 
 5. On the **Basic Information** page, you can view the app name, app version, and deployment location. Click **Next** to continue.
 
-   ![basic-info](/images/docs/appstore/external-apps/deploy-metersphere/basic-info.png)
+   ![basic-info](/images/docs/appstore/external-apps/deploy-metersphere/basic-info.PNG)
 
 6. On the **App Configurations** page, change the value of `imageTag` from `master` to `v1.6`, and then click **Deploy**.
 
-   ![change-value](/images/docs/appstore/external-apps/deploy-metersphere/change-value.png)
+   ![change-value](/images/docs/appstore/external-apps/deploy-metersphere/change-value.PNG)
 
 7. Wait for MeterSphere to be up and running.
 
-   ![metersphere-running](/images/docs/appstore/external-apps/deploy-metersphere/metersphere-running.png)
+   ![metersphere-running](/images/docs/appstore/external-apps/deploy-metersphere/metersphere-running.PNG)
 
 8. Go to **Workloads**, and you can see two Deployments and three StatefulSets created for MeterSphere.
 
-   ![deployments-running](/images/docs/appstore/external-apps/deploy-metersphere/deployments-running.png)
+   ![deployments-running](/images/docs/appstore/external-apps/deploy-metersphere/deployments-running.PNG)
    
-   ![statefulsets-running](/images/docs/appstore/external-apps/deploy-metersphere/statefulsets-running.png)
+   ![statefulsets-running](/images/docs/appstore/external-apps/deploy-metersphere/statefulsets-running.PNG)
    
    {{< notice note >}}
    
@@ -77,11 +77,11 @@ This tutorial demonstrates how to deploy MeterSphere on KubeSphere.
 
 1. Go to **Services** under **Application Workloads**, and you can see the MeterSphere Service and its type is set to `NodePort` by default. 
 
-   ![metersphere-service](/images/docs/appstore/external-apps/deploy-metersphere/metersphere-service.png)
+   ![metersphere-service](/images/docs/appstore/external-apps/deploy-metersphere/metersphere-service.PNG)
 
 2. You can access MeterSphere through `<NodeIP>:<NodePort>` using the default account and password (`admin/metersphere`).
 
-   ![login-metersphere](/images/docs/appstore/external-apps/deploy-metersphere/login-metersphere.png)
+   ![login-metersphere](/images/docs/appstore/external-apps/deploy-metersphere/login-metersphere.PNG)
 
    {{< notice note >}}
 

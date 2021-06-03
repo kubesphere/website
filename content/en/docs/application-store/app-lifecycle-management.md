@@ -34,7 +34,7 @@ You need to create two accounts first, one for ISVs (`isv`) and the other (`revi
 
    ![app-review-name](/images/docs/appstore/application-lifecycle-management/app-review-name.png)
 
-3. In **App Management**, choose **App Template Management** and **App Template Viewing** in the authorization list, then click **OK**.
+3. In **App Management**, choose **App Template Management** and **App Template Viewing** in the permission list, then click **OK**.
 
    ![create-roles](/images/docs/appstore/application-lifecycle-management/create-roles.png)
 

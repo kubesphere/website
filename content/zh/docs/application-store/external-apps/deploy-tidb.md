@@ -140,7 +140,7 @@ weight: 14320
 
    ![tidb-cluster-app-running](/images/docs/zh-cn/appstore/external-apps/deploy-tidb-operator-and-cluster/tidb-cluster-app-running.png)
 
-## 步骤 5：查看 TiDB 集群状态
+### 步骤 5：查看 TiDB 集群状态
 
 1. 访问**应用负载**下的**工作负载**，确认所有的 TiDB 集群部署都在正常运行。
 
