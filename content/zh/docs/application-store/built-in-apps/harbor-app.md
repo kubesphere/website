@@ -20,17 +20,17 @@ weight: 14220
 
 1. 在 `demo-project` 项目的**概览**页面，点击左上角的**应用商店**。
 
-   ![应用商店](/images/docs/zh-cn/appstore/built-in-apps/deploy-harbor-on-ks/app-store.PNG)
+   ![应用商店](/images/docs/zh-cn/appstore/built-in-apps/deploy-harbor-on-ks/app-store.png)
 
 2. 找到 Harbor，点击**应用信息**页面上的**部署**。
 
-   ![寻找 Harbor](/images/docs/zh-cn/appstore/built-in-apps/deploy-harbor-on-ks/find-harbor.PNG)
+   ![寻找 Harbor](/images/docs/zh-cn/appstore/built-in-apps/deploy-harbor-on-ks/find-harbor.png)
 
-   ![点击部署](/images/docs/zh-cn/appstore/built-in-apps/deploy-harbor-on-ks/click-deploy.PNG)
+   ![点击部署](/images/docs/zh-cn/appstore/built-in-apps/deploy-harbor-on-ks/click-deploy.png)
 
 3. 设置名称并选择应用版本。请确保将 Harbor 部署在 `demo-project` 中，点击**下一步**。
 
-   ![部署 Harbor](/images/docs/zh-cn/appstore/built-in-apps/deploy-harbor-on-ks/deploy-harbor.PNG)
+   ![部署 Harbor](/images/docs/zh-cn/appstore/built-in-apps/deploy-harbor-on-ks/deploy-harbor.png)
 
 4. 在**应用配置**页面，编辑 Harbor 的配置文件，请注意以下字段。
 
@@ -40,7 +40,7 @@ weight: 14220
 
    `externalURL`：暴露给租户的 URL。
 
-   ![配置 Harbor](/images/docs/zh-cn/appstore/built-in-apps/deploy-harbor-on-ks/harbor-config.PNG)
+   ![配置 Harbor](/images/docs/zh-cn/appstore/built-in-apps/deploy-harbor-on-ks/harbor-config.png)
 
    {{< notice note >}}
 
@@ -54,7 +54,7 @@ weight: 14220
 
 5. 稍等片刻待 Harbor 启动并运行。
 
-   ![创建 Harbor](/images/docs/zh-cn/appstore/built-in-apps/deploy-harbor-on-ks/creating-harbor.PNG)
+   ![创建 Harbor](/images/docs/zh-cn/appstore/built-in-apps/deploy-harbor-on-ks/creating-harbor.png)
 
 ### 步骤 2：访问 Harbor
 
@@ -83,40 +83,40 @@ weight: 14220
    下面是示例配置文件，供您参考。请注意阅读注解。
 
    ```yaml
-   ## NOTICE 192.168.0.9 is the example IP address and you must use your own.
+   ## 请注意，192.168.0.9 是示例 IP 地址，您必须使用自己的地址。 
    expose:
      type: nodePort
      tls:
        enabled: false
        secretName: ""
        notarySecretName: ""
-       commonName: "192.168.0.9"  # Change commonName to your own.
+       commonName: "192.168.0.9"  # 将 commonName 更改成您自己的值。
      nodePort:
-       # The name of NodePort service
+       # NodePort 服务的名称。
        name: harbor
        ports:
          http:
-           # The service port Harbor listens on when serving with HTTP
+           # 使用 HTTP 服务时，Harbor 监听的服务端口。
            port: 80
-           # The node port Harbor listens on when serving with HTTP
+           # 使用 HTTP 服务时，Harbor 监听的节点端口。
            nodePort: 30002
          https:
-           # The service port Harbor listens on when serving with HTTPS
+           # 使用 HTTPS 服务时，Harbor 监听的服务端口。
            port: 443
-           # The node port Harbor listens on when serving with HTTPS
+           # 使用 HTTPS 服务时，Harbor 监听的服务端口。
            nodePort: 30003
-         # Only needed when notary.enabled is set to true
+         # 仅在 notary.enabled 设置为 true 时需要此配置。
          notary:
-           # The service port Notary listens on
+           # Notary 监听的服务端口。
            port: 4443
-           # The node port Notary listens on
+           # Notary 监听的节点端口。
            nodePort: 30004
    
-   externalURL: http://192.168.0.9:30002 # Use your own IP address.
+   externalURL: http://192.168.0.9:30002 # 使用您自己的 IP 地址。
    
-   # The initial password of Harbor admin. Change it from portal after launching Harbor
+   # Harbor admin 的初始密码。启动 Harbor 后可以通过主页修改。
    harborAdminPassword: "Harbor12345"
-   # The secret key used for encryption. Must be a string of 16 chars.
+   # 用于加密的密钥，必须是包含 16 个字符的字符串。
    secretKey: "not-a-secure-key"
    ```
 

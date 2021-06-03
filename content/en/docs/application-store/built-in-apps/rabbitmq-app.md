@@ -18,25 +18,25 @@ This tutorial walks you through an example of how to deploy RabbitMQ from the Ap
 
 ### Step 1: Deploy RabbitMQ from the App Store
 
-1. On the **Overview** page of the project `demo-project`, click **App Store** in the top left corner.
+1. On the **Overview** page of the project `demo-project`, click **App Store** in the top-left corner.
 
-   ![rabbitmq01](/images/docs/appstore/built-in-apps/rabbitmq-app/rabbitmq01.jpg)
+   ![rabbitmq01](/images/docs/appstore/built-in-apps/rabbitmq-app/rabbitmq01.png)
 
-2. Find RabbitMQ and click **Deploy** on the **App Info** page.
+2. Find RabbitMQ and click **Deploy** on the **App Information** page.
 
-   ![find-rabbitmq](/images/docs/appstore/built-in-apps/rabbitmq-app/rabbitmq02.jpg)
+   ![find-rabbitmq](/images/docs/appstore/built-in-apps/rabbitmq-app/rabbitmq02.png)
 
-   ![click-deploy](/images/docs/appstore/built-in-apps/rabbitmq-app/rabbitmq021.jpg)
+   ![click-deploy](/images/docs/appstore/built-in-apps/rabbitmq-app/rabbitmq021.png)
 
 3. Set a name and select an app version. Make sure RabbitMQ is deployed in `demo-project` and click **Next**.
 
-   ![rabbitmq03](/images/docs/appstore/built-in-apps/rabbitmq-app/rabbitmq03.jpg)
+   ![rabbitmq03](/images/docs/appstore/built-in-apps/rabbitmq-app/rabbitmq03.png)
 
-4. In **App Config**, you can use the default configuration directly or customize the configuration either by specifying fields in a form or editing the YAML file. Record the value of **Root Username** and the value of **Root Password**, which will be used later for login. Click **Deploy** to continue.
+4. In **App Configurations**, you can use the default configuration directly or customize the configuration either by specifying fields in a form or editing the YAML file. Record the value of **Root Username** and the value of **Root Password**, which will be used later for login. Click **Deploy** to continue.
 
-   ![rabbitMQ11](/images/docs/appstore/built-in-apps/rabbitmq-app/rabbitMQ11.jpg)
+   ![rabbitMQ11](/images/docs/appstore/built-in-apps/rabbitmq-app/rabbitMQ11.png)
 
-   ![rabbitMQ04](/images/docs/appstore/built-in-apps/rabbitmq-app/rabbitMQ04.jpg)
+   ![rabbitMQ04](/images/docs/appstore/built-in-apps/rabbitmq-app/rabbitMQ04.png)
 
    {{< notice tip >}}
 
@@ -46,7 +46,7 @@ This tutorial walks you through an example of how to deploy RabbitMQ from the Ap
 
 5. Wait until RabbitMQ is up and running.
 
-   ![check-if-rabbitmq-is-running](/images/docs/appstore/built-in-apps/rabbitmq-app/rabbitmq05.jpg)
+   ![check-if-rabbitmq-is-running](/images/docs/appstore/built-in-apps/rabbitmq-app/rabbitmq05.png)
 
 ### Step 2: Access the RabbitMQ Dashboard
 
@@ -54,24 +54,24 @@ To access RabbitMQ outside the cluster, you need to expose the app through a Nod
 
 1. Go to **Services** and click the service name of RabbitMQ.
 
-   ![go-to-services](/images/docs/appstore/built-in-apps/rabbitmq-app/rabbitmq06.jpg)
+   ![go-to-services](/images/docs/appstore/built-in-apps/rabbitmq-app/rabbitmq06.png)
 
 2. Click **More** and select **Edit Internet Access** from the drop-down menu.
 
-   ![rabbitmq07](/images/docs/appstore/built-in-apps/rabbitmq-app/rabbitmq07.jpg)
+   ![rabbitmq07](/images/docs/appstore/built-in-apps/rabbitmq-app/rabbitmq07.png)
 
 3. Select **NodePort** for **Access Method** and click **OK**. For more information, see [Project Gateway](../../../project-administration/project-gateway/). 
 
-   ![rabbitmq08](/images/docs/appstore/built-in-apps/rabbitmq-app/rabbitmq08.jpg)
+   ![rabbitmq08](/images/docs/appstore/built-in-apps/rabbitmq-app/rabbitmq08.png)
 
 4. Under **Service Ports**, you can see ports are exposed.
 
-   ![rabbitmq09](/images/docs/appstore/built-in-apps/rabbitmq-app/rabbitmq09.jpg)
+   ![rabbitmq09](/images/docs/appstore/built-in-apps/rabbitmq-app/rabbitmq09.png)
 
-5. Access RabbitMQ **management** through `{$NodeIP}:{$Nodeport}`. Note that the username and password are those you set in **Step 1**.
-   ![rabbitmq-dashboard](/images/docs/appstore/built-in-apps/rabbitmq-app/rabbitmq-dashboard.jpg)
+5. Access RabbitMQ **management** through `<NodeIP>:<NodePort>`. Note that the username and password are those you set in **Step 1**.
+   ![rabbitmq-dashboard](/images/docs/appstore/built-in-apps/rabbitmq-app/rabbitmq-dashboard.png)
 
-   ![rabbitma-dashboard-detail](/images/docs/appstore/built-in-apps/rabbitmq-app/rabbitma-dashboard-detail.jpg)
+   ![rabbitma-dashboard-detail](/images/docs/appstore/built-in-apps/rabbitmq-app/rabbitma-dashboard-detail.png)
 
    {{< notice note >}}
 

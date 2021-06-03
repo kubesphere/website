@@ -60,9 +60,9 @@ version: 0.1.0
 该 `values.yaml` 文件的示例：
 
 ```yaml
-# Default values for test.
-# This is a YAML-formatted file.
-# Declare variables to be passed into your templates.
+# 默认值仅供测试使用。
+# 此文件为 YAML 格式。
+# 对要传入您的模板的变量进行声明。
 
 replicaCount: 1
 
@@ -92,10 +92,10 @@ ingress:
   #      - chart-example.local
 
 resources: {}
-  # We usually recommend not to specify default resources and to leave this as a conscious
-  # choice for the user. This also increases chances charts run on environments with little
-  # resources, such as Minikube. If you do want to specify resources, uncomment the following
-  # lines, adjust them as necessary, and remove the curly braces after 'resources:'.
+  # 通常不建议对默认资源进行指定，用户可以去主动选择是否指定。
+  # 这也有助于 Charts 在资源较少的环境上运行，例如 Minikube。
+  # 如果您要指定资源，请将下面几行内容取消注释，
+  # 按需调整，并删除 'resources:' 后面的大括号。
   # limits:
   #  cpu: 100m
   #  memory: 128Mi

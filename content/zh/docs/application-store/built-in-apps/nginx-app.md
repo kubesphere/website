@@ -21,23 +21,23 @@ weight: 14270
 
 1. 在 `demo-project` 项目的**概览**页面，点击左上角的**应用商店**。
 
-   ![应用商店](/images/docs/zh-cn/appstore/built-in-apps/nginx-app/app-store.PNG)
+   ![应用商店](/images/docs/zh-cn/appstore/built-in-apps/nginx-app/app-store.png)
 
 2. 找到 NGINX，点击**应用信息**页面上的**部署**。
 
-   ![应用商店中的 Nginx](/images/docs/zh-cn/appstore/built-in-apps/nginx-app/nginx-in-app-store.PNG)
+   ![应用商店中的 Nginx](/images/docs/zh-cn/appstore/built-in-apps/nginx-app/nginx-in-app-store.png)
 
-   ![部署 Nginx](/images/docs/zh-cn/appstore/built-in-apps/nginx-app/deploy-nginx.PNG)
+   ![部署 Nginx](/images/docs/zh-cn/appstore/built-in-apps/nginx-app/deploy-nginx.png)
 
 3. 设置名称并选择应用版本。请确保将 NGINX 部署在 `demo-project` 中，点击**下一步**。
 
-   ![确认部署](/images/docs/zh-cn/appstore/built-in-apps/nginx-app/confirm-deployment.PNG)
+   ![确认部署](/images/docs/zh-cn/appstore/built-in-apps/nginx-app/confirm-deployment.png)
 
 4. 在**应用配置**页面，指定要为该应用部署的副本数量，根据需要启用应用路由 (Ingress)。操作完成后，点击**部署**。
 
-   ![编辑 Nginx 配置](/images/docs/zh-cn/appstore/built-in-apps/nginx-app/edit-config-nginx.PNG)
+   ![编辑 Nginx 配置](/images/docs/zh-cn/appstore/built-in-apps/nginx-app/edit-config-nginx.png)
 
-   ![清单文件](/images/docs/zh-cn/appstore/built-in-apps/nginx-app/manifest-file.PNG)
+   ![清单文件](/images/docs/zh-cn/appstore/built-in-apps/nginx-app/manifest-file.png)
 
    {{< notice note >}}
 
@@ -47,7 +47,7 @@ weight: 14270
 
 5. 稍等片刻待 NGINX 启动并运行。
 
-   ![Nginx 运行中](/images/docs/zh-cn/appstore/built-in-apps/nginx-app/nginx-running.PNG)
+   ![Nginx 运行中](/images/docs/zh-cn/appstore/built-in-apps/nginx-app/nginx-running.png)
 
 ### 步骤 2：访问 NGINX
 
@@ -55,21 +55,21 @@ weight: 14270
 
 1. 转到**服务**页面，点击 NGINX 的服务名称。
 
-   ![Nginx 服务](/images/docs/zh-cn/appstore/built-in-apps/nginx-app/nginx-service.PNG)
+   ![Nginx 服务](/images/docs/zh-cn/appstore/built-in-apps/nginx-app/nginx-service.png)
 
 2. 在服务详情页面，点击**更多操作**，在下拉菜单中选择**编辑外网访问**。
 
-   ![编辑外网访问](/images/docs/zh-cn/appstore/built-in-apps/nginx-app/edit-internet-access.PNG)
+   ![编辑外网访问](/images/docs/zh-cn/appstore/built-in-apps/nginx-app/edit-internet-access.png)
 
 3. **访问方式**选择 **NodePort**，然后点击**确定**。有关更多信息，请参见[项目网关](../../../project-administration/project-gateway/)。
 
-   ![nodeport](/images/docs/zh-cn/appstore/built-in-apps/nginx-app/nodeport.PNG)
+   ![nodeport](/images/docs/zh-cn/appstore/built-in-apps/nginx-app/nodeport.png)
 
 4. 在**服务端口**下，您可以查看已暴露的端口。
 
-   ![暴露端口](/images/docs/zh-cn/appstore/built-in-apps/nginx-app/exposed-port.PNG)
+   ![暴露端口](/images/docs/zh-cn/appstore/built-in-apps/nginx-app/exposed-port.png)
 
-5. 通过 `{$NodeIP}:{$Nodeport}` 访问 NGINX。
+5. 通过 `<NodeIP>:<NodePort>` 访问 NGINX。
 
    ![访问 Nginx](/images/docs/zh-cn/appstore/built-in-apps/nginx-app/access-nginx.PNG)
 

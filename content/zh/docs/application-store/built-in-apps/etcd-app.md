@@ -21,17 +21,17 @@ weight: 14210
 
 1. 在 `demo-project` 项目的**概览**页面，点击左上角的**应用商店**。
 
-   ![项目概览](/images/docs/zh-cn/appstore/built-in-apps/deploy-etcd-on-ks/project-overview.PNG)
+   ![项目概览](/images/docs/zh-cn/appstore/built-in-apps/deploy-etcd-on-ks/project-overview.png)
 
 2. 找到 etcd，点击**应用信息**页面上的**部署**。
 
-   ![应用商店 etcd](/images/docs/zh-cn/appstore/built-in-apps/deploy-etcd-on-ks/etcd-app-store.PNG)
+   ![应用商店 etcd](/images/docs/zh-cn/appstore/built-in-apps/deploy-etcd-on-ks/etcd-app-store.png)
 
-   ![部署 etcd](/images/docs/zh-cn/appstore/built-in-apps/deploy-etcd-on-ks/deploy-etcd.PNG)
+   ![部署 etcd](/images/docs/zh-cn/appstore/built-in-apps/deploy-etcd-on-ks/deploy-etcd.png)
 
 3. 设置名称并选择应用版本。请确保将 etcd 部署在 `demo-project` 中，点击**下一步**。
 
-   ![部署位置](/images/docs/zh-cn/appstore/built-in-apps/deploy-etcd-on-ks/deployment-location.PNG)
+   ![部署位置](/images/docs/zh-cn/appstore/built-in-apps/deploy-etcd-on-ks/deployment-location.png)
 
 4. 在**应用配置**页面，指定 etcd 的持久化存储卷大小，点击**部署**。
 
@@ -45,7 +45,7 @@ weight: 14210
 
 5. 在**应用**页面的**应用模板**选项卡下，稍等片刻待 etcd 启动并运行。
 
-   ![etcd 运行中](/images/docs/zh-cn/appstore/built-in-apps/deploy-etcd-on-ks/etcd-running.PNG)
+   ![etcd 运行中](/images/docs/zh-cn/appstore/built-in-apps/deploy-etcd-on-ks/etcd-running.png)
 
 ### 步骤 2：访问 etcd 服务
 
@@ -53,11 +53,11 @@ weight: 14210
 
 1. 在**工作负载**的**有状态副本集**选项卡中，点击 etcd 的服务名称。
 
-   ![etcd 有状态副本集](/images/docs/zh-cn/appstore/built-in-apps/deploy-etcd-on-ks/etcd-statefulset.PNG)
+   ![etcd 有状态副本集](/images/docs/zh-cn/appstore/built-in-apps/deploy-etcd-on-ks/etcd-statefulset.png)
 
 2. 在**容器组**下，展开菜单查看容器详情，然后点击**终端**图标。
 
-   ![etcd 终端](/images/docs/zh-cn/appstore/built-in-apps/deploy-etcd-on-ks/etcd-terminal.PNG)
+   ![etcd 终端](/images/docs/zh-cn/appstore/built-in-apps/deploy-etcd-on-ks/etcd-terminal.png)
 
 3. 在终端中，您可以直接读写数据。例如，分别执行以下两个命令。
 

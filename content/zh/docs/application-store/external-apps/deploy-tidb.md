@@ -12,6 +12,7 @@ weight: 14320
 
 ## **准备工作**
 
+- 您需要准备至少 3 个可调度的节点。
 - 您需要启用 [OpenPitrix 系统](../../../pluggable-components/app-store/)。
 - 您需要为本教程创建一个企业空间、一个项目和两个帐户（`ws-admin` 和 `project-regular`）。帐户 `ws-admin` 必须在企业空间中被赋予 `workspace-admin` 角色，帐户 `project-regular` 必须被邀请至项目中赋予 `operator` 角色。若还未创建好，请参考[创建企业空间、项目、帐户和角色](../../../quick-start/create-workspace-and-project/)。
 
@@ -125,7 +126,7 @@ weight: 14320
    csi-super-high-perf        csi-qingcloud   Delete          Immediate           true                   71m
    ```
 
-6. 在**应用配置**页面，将字段 `storageClassName` 的默认值从 `local-storage` 更改为您的存储类型名称。例如，您可以根据以上输出将其更改为 `csi-qingcloud`。
+6. 在**应用配置**页面，将所有 `storageClassName` 字段的默认值从 `local-storage` 更改为您的存储类型名称。例如，您可以根据以上输出将这些默认值更改为 `csi-standard`。
 
    ![tidb-cluster-config](/images/docs/zh-cn/appstore/external-apps/deploy-tidb-operator-and-cluster/tidb-cluster-config.png)
 
@@ -143,11 +144,11 @@ weight: 14320
 
 1. 访问**应用负载**下的**工作负载**，确认所有的 TiDB 集群部署都在正常运行。
 
-   ![tidb-cluster-deployments-running](/images/docs/appstore/external-apps/deploy-tidb-operator-and-cluster/tidb-cluster-deployments-running.PNG)
+   ![tidb-cluster-deployments-running](/images/docs/zh-cn/appstore/external-apps/deploy-tidb-operator-and-cluster/tidb-cluster-deployments-running.png)
 
 2. 切换到**有状态副本集**选项卡，可以看到 TiDB、TiKV 和 PD 均正常运行。
 
-   ![tidb-statefulsets](/images/docs/appstore/external-apps/deploy-tidb-operator-and-cluster/tidb-statefulsets.PNG)
+   ![tidb-statefulsets](/images/docs/zh-cn/appstore/external-apps/deploy-tidb-operator-and-cluster/tidb-statefulsets.png)
 
    {{< notice note >}}
 
@@ -159,43 +160,43 @@ weight: 14320
 
    TiDB 指标：
 
-   ![tidb-metrics](/images/docs/appstore/external-apps/deploy-tidb-operator-and-cluster/tidb-metrics.PNG)
+   ![tidb-metrics](/images/docs/zh-cn/appstore/external-apps/deploy-tidb-operator-and-cluster/tidb-metrics.png)
 
    TiKV 指标：
 
-   ![tikv-metrics](/images/docs/appstore/external-apps/deploy-tidb-operator-and-cluster/tikv-metrics.PNG)
+   ![tikv-metrics](/images/docs/zh-cn/appstore/external-apps/deploy-tidb-operator-and-cluster/tikv-metrics.png)
 
    PD 指标：
 
-   ![pd-metrics](/images/docs/appstore/external-apps/deploy-tidb-operator-and-cluster/pd-metrics.PNG)
+   ![pd-metrics](/images/docs/zh-cn/appstore/external-apps/deploy-tidb-operator-and-cluster/pd-metrics.png)
 
 4. 在**应用负载**下的**容器组**中，可以看到 TiDB 集群包含两个 TiDB Pod、三个 TiKV Pod 和三个 PD Pod。
 
-   ![tidb-pod-list](/images/docs/appstore/external-apps/deploy-tidb-operator-and-cluster/tidb-pod-list.PNG)
+   ![tidb-pod-list](/images/docs/zh-cn/appstore/external-apps/deploy-tidb-operator-and-cluster/tidb-pod-list.png)
 
 5. 在**存储管理**下的**存储卷**中，可以看到 TiKV 和 PD 都在使用持久卷。
 
-   ![tidb-storage-usage](/images/docs/appstore/external-apps/deploy-tidb-operator-and-cluster/tidb-storage-usage.PNG)
+   ![tidb-storage-usage](/images/docs/zh-cn/appstore/external-apps/deploy-tidb-operator-and-cluster/tidb-storage-usage.png)
 
 6. 同时，也会监控存储卷的使用情况。点击一个存储卷以访问其详情页。以 TiKV 为例：
 
-   ![tikv-volume-status](/images/docs/appstore/external-apps/deploy-tidb-operator-and-cluster/tikv-volume-status.PNG)
+   ![tikv-volume-status](/images/docs/zh-cn/appstore/external-apps/deploy-tidb-operator-and-cluster/tikv-volume-status.png)
 
 7. 在项目的**概览**页面，可以看到当前项目的资源使用情况列表。
 
-   ![tidb-project-resource-usage](/images/docs/appstore/external-apps/deploy-tidb-operator-and-cluster/tidb-project-resource-usage.PNG)
+   ![tidb-project-resource-usage](/images/docs/zh-cn/appstore/external-apps/deploy-tidb-operator-and-cluster/tidb-project-resource-usage.png)
 
 ### 步骤 6: 访问 TiDB 集群
 
 1. 访问**应用负载**下的**服务**，可以看到所有服务的详细信息。由于服务类型默认设置为 `NodePort`，因此您可以通过集群外部的 Node IP 地址进行访问。
 
-   ![tidb-service](/images/docs/appstore/external-apps/deploy-tidb-operator-and-cluster/tidb-service.PNG)
+   ![tidb-service](/images/docs/zh-cn/appstore/external-apps/deploy-tidb-operator-and-cluster/tidb-service.png)
 
-3. TiDB 集成了 Prometheus 和 Grafana 以监控数据库集群的性能。例如，您可以通过 `{$ NodeIP}：{Nodeport}` 访问 Grafana 以查看指标。
+3. TiDB 集成了 Prometheus 和 Grafana 以监控数据库集群的性能。例如，您可以通过 `<NodeIP>:<NodePort>` 访问 Grafana 以查看指标。
 
-   ![tidb-service-grafana](/images/docs/appstore/external-apps/deploy-tidb-operator-and-cluster/tidb-service-grafana.PNG)
+   ![tidb-service-grafana](/images/docs/zh-cn/appstore/external-apps/deploy-tidb-operator-and-cluster/tidb-service-grafana.png)
 
-   ![tidb-grafana](/images/docs/appstore/external-apps/deploy-tidb-operator-and-cluster/tidb-grafana.PNG)
+   ![tidb-grafana](/images/docs/zh-cn/appstore/external-apps/deploy-tidb-operator-and-cluster/tidb-grafana.png)
 
    {{< notice note >}}
 

@@ -11,7 +11,7 @@ KubeSphere 集成了 [OpenPitrix](https://github.com/openpitrix/openpitrix)（�
 - **应用模板**：这种方式让开发者和独立软件供应商 (ISV) 能够与企业空间中的用户共享应用程序。您也可以在企业空间中导入第三方应用仓库。
 - **自制应用**：这种方式帮助用户使用多个微服务来快速构建一个完整的应用程序。KubeSphere 让用户可以选择现有服务或者创建新的服务，用于在一站式控制台上创建自制应用。
 
-![应用商店](/images/docs/zh-cn/appstore/application-lifecycle-management/app-store.PNG)
+![应用商店](/images/docs/zh-cn/appstore/application-lifecycle-management/app-store.png)
 
 本教程使用 [Redis](https://redis.io/) 作为示例应用程序，演示如何进行应用全生命周期管理，包括提交、审核、测试、发布、升级和下架。
 
@@ -28,15 +28,15 @@ KubeSphere 集成了 [OpenPitrix](https://github.com/openpitrix/openpitrix)（�
 
 1. 使用 `admin` 帐户登录 KubeSphere 控制台。点击左上角的**平台管理**，选择**访问控制**。转到**帐户角色**，点击**创建**。
 
-   ![创建角色](/images/docs/zh-cn/appstore/application-lifecycle-management/create-role.PNG)
+   ![创建角色](/images/docs/zh-cn/appstore/application-lifecycle-management/create-role.png)
 
 2. 为角色设置一个名称，例如 `app-review`，然后点击**编辑权限**。
 
-   ![设置名称](/images/docs/zh-cn/appstore/application-lifecycle-management/app-review-name.PNG)
+   ![设置名称](/images/docs/zh-cn/appstore/application-lifecycle-management/app-review-name.png)
 
 3. 转到**应用管理**，选择权限列表中的**应用商店管理**和**应用商店查看**，然后点击**确定**。
 
-   ![创建角色](/images/docs/zh-cn/appstore/application-lifecycle-management/create-roles.PNG)
+   ![创建角色](/images/docs/zh-cn/appstore/application-lifecycle-management/create-roles.png)
 
    {{< notice note >}}
 
@@ -44,13 +44,13 @@ KubeSphere 集成了 [OpenPitrix](https://github.com/openpitrix/openpitrix)（�
 
    {{</ notice >}} 
 
-4. 创建角色后，您需要创建一个帐户，把 `app-review` 角色授予它。转到**帐户管理**，点击**创建**。输入必需的信息，然后点击**确定**。
+4. 创建角色后，您需要创建一个帐户，并授予 `app-review` 角色。转到**帐户管理**，点击**创建**。输入必需的信息，然后点击**确定**。
 
-   ![创建审核帐户](/images/docs/zh-cn/appstore/application-lifecycle-management/create-review-role.PNG)
+   ![创建审核帐户](/images/docs/zh-cn/appstore/application-lifecycle-management/create-review-role.png)
 
 5. 再创建另一个帐户 `isv`，把 `platform-regular` 角色授予它。
 
-   ![帐户已创建](/images/docs/zh-cn/appstore/application-lifecycle-management/account-ready.PNG)
+   ![帐户已创建](/images/docs/zh-cn/appstore/application-lifecycle-management/account-ready.png)
 
 6. 邀请上面创建好的两个帐户进入现有的企业空间，例如 `demo-workspace`，并授予它们 `workspace-admin` 角色。
 
@@ -58,7 +58,7 @@ KubeSphere 集成了 [OpenPitrix](https://github.com/openpitrix/openpitrix)（�
 
 1. 以 `isv` 身份登录控制台，转到您的企业空间。您需要上传示例应用 Redis 至该企业空间，供后续使用。首先，下载应用 [Redis 11.3.4](https://github.com/kubesphere/tutorial/raw/master/tutorial%205%20-%20app-store/redis-11.3.4.tgz)，然后转到**应用模板**，点击**上传模板**。
 
-   ![上传应用](/images/docs/zh-cn/appstore/application-lifecycle-management/upload-app.PNG)
+   ![上传应用](/images/docs/zh-cn/appstore/application-lifecycle-management/upload-app.png)
 
    {{< notice note >}}
 
@@ -68,7 +68,7 @@ KubeSphere 集成了 [OpenPitrix](https://github.com/openpitrix/openpitrix)（�
 
 2. 在弹出的对话框中，点击**上传 Helm 配置文件**上传 Chart 文件。点击**确定**继续。
 
-   ![上传模板](/images/docs/zh-cn/appstore/application-lifecycle-management/upload-template.PNG)
+   ![上传模板](/images/docs/zh-cn/appstore/application-lifecycle-management/upload-template.png)
 
 3. **应用信息**下显示了应用的基本信息。要上传应用的图标，点击**上传图标**。您也可以跳过上传图标，直接点击**确定**。
 
@@ -78,23 +78,23 @@ KubeSphere 集成了 [OpenPitrix](https://github.com/openpitrix/openpitrix)（�
 
    {{</ notice >}} 
 
-   ![上传图标](/images/docs/zh-cn/appstore/application-lifecycle-management/upload-icon.PNG)
+   ![上传图标](/images/docs/zh-cn/appstore/application-lifecycle-management/upload-icon.png)
 
 4. 成功上传后，模板列表中会列出应用，状态为**开发中**，意味着该应用正在开发中。上传的应用对同一企业空间下的所有成员均可见。
 
-   ![应用开发中](/images/docs/zh-cn/appstore/application-lifecycle-management/app-draft.PNG)
+   ![应用开发中](/images/docs/zh-cn/appstore/application-lifecycle-management/app-draft.png)
 
 5. 点击列表中的 Redis 进入应用模板详情页面。您可以点击**编辑信息**来编辑该应用的基本信息。
 
-   ![编辑应用模板](/images/docs/zh-cn/appstore/application-lifecycle-management/edit-app-template.PNG)
+   ![编辑应用模板](/images/docs/zh-cn/appstore/application-lifecycle-management/edit-app-template.png)
 
 6. 您可以通过在弹出窗口中指定字段来自定义应用的基本信息。
 
-   ![编辑应用信息](/images/docs/zh-cn/appstore/application-lifecycle-management/edit-app-information.PNG)
+   ![编辑应用信息](/images/docs/zh-cn/appstore/application-lifecycle-management/edit-app-information.png)
 
 7. 点击**确定**保存更改，然后您可以通过将其部署到 Kubernetes 来测试该应用程序。点击待提交版本展开菜单，选择**测试部署**。
 
-   ![测试部署](/images/docs/zh-cn/appstore/application-lifecycle-management/test-deployment.PNG)
+   ![测试部署](/images/docs/zh-cn/appstore/application-lifecycle-management/test-deployment.png)
 
    {{< notice note >}} 
 
@@ -104,9 +104,9 @@ KubeSphere 集成了 [OpenPitrix](https://github.com/openpitrix/openpitrix)（�
 
 8. 选择要部署应用的集群和项目，为应用设置不同的配置，然后点击**部署**。
 
-   ![部署位置](/images/docs/zh-cn/appstore/application-lifecycle-management/deployment-place.PNG)
+   ![部署位置](/images/docs/zh-cn/appstore/application-lifecycle-management/deployment-place.png)
 
-   ![部署应用](/images/docs/zh-cn/appstore/application-lifecycle-management/deploying-app.PNG)
+   ![部署应用](/images/docs/zh-cn/appstore/application-lifecycle-management/deploying-app.png)
 
    {{< notice note >}}
 
@@ -116,14 +116,13 @@ KubeSphere 集成了 [OpenPitrix](https://github.com/openpitrix/openpitrix)（�
 
 9. 稍等几分钟，切换到**部署实例**选项卡。您会看到 Redis 已经部署成功。
 
-   ![部署实例成功](/images/docs/zh-cn/appstore/application-lifecycle-management/deployed-instance-success.PNG)
+   ![部署实例成功](/images/docs/zh-cn/appstore/application-lifecycle-management/deployed-instance-success.png)
 
 10. 测试应用并且没有发现问题后，便可以点击**提交审核**，提交该应用程序进行审核。
 
-    ![提交审核](/images/docs/zh-cn/appstore/application-lifecycle-management/submit-for-review.PNG)
+    ![提交审核](/images/docs/zh-cn/appstore/application-lifecycle-management/submit-for-review.png)
 
     {{< notice note >}}
-    
 
 版本号必须以数字开头并包含小数点。
 
@@ -131,17 +130,17 @@ KubeSphere 集成了 [OpenPitrix](https://github.com/openpitrix/openpitrix)（�
 
 11. 应用提交后，它的状态会变成**等待审核**。现在，应用审核员便可以进行审核。
 
-    ![应用已提交](/images/docs/zh-cn/appstore/application-lifecycle-management/submitted-app.PNG)
+    ![应用已提交](/images/docs/zh-cn/appstore/application-lifecycle-management/submitted-app.png)
 
 ### 步骤三：审核应用程序
 
 1. 登出控制台，然后以 `reviewer` 身份重新登录 KubeSphere。点击左上角的**平台管理**，选择**应用商店管理**。在**应用审核**页面，上一步中提交的应用会显示在**待处理**选项卡下。
 
-   ![应用待审核](/images/docs/zh-cn/appstore/application-lifecycle-management/app-to-be-reviewed.PNG)
+   ![应用待审核](/images/docs/zh-cn/appstore/application-lifecycle-management/app-to-be-reviewed.png)
 
 2. 点击该应用进行审核，在弹出窗口中查看应用信息、介绍、配置文件和更新日志。
 
-   ![审核中](/images/docs/zh-cn/appstore/application-lifecycle-management/reviewing.PNG)
+   ![审核中](/images/docs/zh-cn/appstore/application-lifecycle-management/reviewing.png)
 
 3. 审核员的职责是决定该应用是否符合发布至应用商店的标准。点击**通过**来批准，或者点击**拒绝**来拒绝提交的应用。
 
@@ -151,15 +150,15 @@ KubeSphere 集成了 [OpenPitrix](https://github.com/openpitrix/openpitrix)（�
 
 1. 登出控制台，然后以 `isv` 身份重新登录 KubeSphere。转到您的企业空间，点击**应用模板**页面上的 Redis。在详情页面上展开版本菜单，然后点击**发布到商店**。在弹出的提示框中，点击**确定**以确认操作。
 
-   ![应用模板页面](/images/docs/zh-cn/appstore/application-lifecycle-management/app-templates-page.PNG)
+   ![应用模板页面](/images/docs/zh-cn/appstore/application-lifecycle-management/app-templates-page.png)
 
 2. 在**应用审核**下，您可以查看应用状态。**已上架**意味着它在应用商店中可用。
 
-   ![应用已上架](/images/docs/zh-cn/appstore/application-lifecycle-management/app-active.PNG)
+   ![应用已上架](/images/docs/zh-cn/appstore/application-lifecycle-management/app-active.png)
 
 3. 点击**在商店查看**转到应用商店的**应用信息**页面，或者点击左上角的**应用商店**也可以查看该应用。
 
-   ![redis](/images/docs/zh-cn/appstore/application-lifecycle-management/redis.PNG)
+   ![redis](/images/docs/zh-cn/appstore/application-lifecycle-management/redis.png)
 
    {{< notice note >}}
 
@@ -169,7 +168,7 @@ KubeSphere 集成了 [OpenPitrix](https://github.com/openpitrix/openpitrix)（�
 
 4. 现在，企业空间中的用户可以从应用商店中部署 Redis。要将应用部署至 Kubernetes，请点击应用转到**应用信息**页面，然后点击**部署**。
 
-   ![部署 redis](/images/docs/zh-cn/appstore/application-lifecycle-management/deploy-redis.PNG)
+   ![部署 redis](/images/docs/zh-cn/appstore/application-lifecycle-management/deploy-redis.png)
    
    {{< notice note >}}
    
@@ -181,13 +180,13 @@ KubeSphere 集成了 [OpenPitrix](https://github.com/openpitrix/openpitrix)（�
 
 `reviewer` 可以根据不同类型应用程序的功能和用途创建多个分类。这类似于设置标签，可以在应用商店中将分类用作筛选器，例如大数据、中间件和物联网等。
 
-1. 以 `reviewer` 身份登录 KubeSphere。要创建分类，请转到**应用商店管理**页面，再点击**应用分类**页面中的加号图标。
+1. 以 `reviewer` 身份登录 KubeSphere。要创建分类，请转到**应用商店管理**页面，再点击**应用分类**页面中的 <img src="/images/docs/zh-cn/appstore/application-lifecycle-management/plus.png" height="20px">。
 
-   ![应用分类](/images/docs/zh-cn/appstore/application-lifecycle-management/app-category.PNG)
+   ![应用分类](/images/docs/zh-cn/appstore/application-lifecycle-management/app-category.png)
 
 2. 在弹出的对话框中设置分类名称和图标，然后点击**确定**。对于 Redis，您可以将**分类名称**设置为 `Database`。
 
-   ![设置应用分类](/images/docs/zh-cn/appstore/application-lifecycle-management/set-app-type.PNG)
+   ![设置应用分类](/images/docs/zh-cn/appstore/application-lifecycle-management/set-app-type.png)
 
    {{< notice note >}}
 
@@ -197,15 +196,15 @@ KubeSphere 集成了 [OpenPitrix](https://github.com/openpitrix/openpitrix)（�
 
 3. 创建好分类后，您可以给您的应用分配分类。在**未分类**中选择 Redis，点击**调整分类**。
 
-   ![设置分类](/images/docs/zh-cn/appstore/application-lifecycle-management/set-category-for-app.PNG)
+   ![设置分类](/images/docs/zh-cn/appstore/application-lifecycle-management/set-category-for-app.png)
 
 4. 在弹出对话框的下拉列表中选择分类 (**Database**) 然后点击**确定**。
 
-   ![确认分类](/images/docs/zh-cn/appstore/application-lifecycle-management/confirm-category.PNG)
+   ![确认分类](/images/docs/zh-cn/appstore/application-lifecycle-management/confirm-category.png)
 
 5. 该应用便会显示在对应分类中。
 
-   ![分类显示](/images/docs/zh-cn/appstore/application-lifecycle-management/app-in-category-list-expected.PNG)
+   ![分类显示](/images/docs/zh-cn/appstore/application-lifecycle-management/app-in-category-list-expected.png)
 
 ### 步骤六：添加新版本
 
@@ -213,21 +212,19 @@ KubeSphere 集成了 [OpenPitrix](https://github.com/openpitrix/openpitrix)（�
 
 1. 再次以 `isv` 身份登录 KubeSphere，搜寻到**应用模板**，点击列表中的 Redis 应用。
 
-   ![redis 新版本](/images/docs/zh-cn/appstore/application-lifecycle-management/redis-new-version.PNG)
-
 2. 下载 [Redis 12.0.0](https://github.com/kubesphere/tutorial/raw/master/tutorial%205%20-%20app-store/redis-12.0.0.tgz)，这是 Redis 的一个新版本，本教程用它来演示。在**版本**选项卡中点击右侧的**添加版本**，上传您刚刚下载的文件包。
 
-   ![新版本](/images/docs/zh-cn/appstore/application-lifecycle-management/new-version-redis.PNG)
+   ![新版本](/images/docs/zh-cn/appstore/application-lifecycle-management/new-version-redis.png)
 
 3. 点击**上传 Helm 配置文件**，上传完成后点击**确定**。
 
-   ![上传 redis 新版本](/images/docs/zh-cn/appstore/application-lifecycle-management/upload-new-redis-version.PNG)
+   ![上传 redis 新版本](/images/docs/zh-cn/appstore/application-lifecycle-management/upload-new-redis-version.png)
 
 4. 新的应用版本会显示在版本列表中。您可以通过点击来展开菜单并测试新的版本。另外，您也可以提交审核并发布至应用商店，操作步骤和上面说明的一样。
 
-   ![上传新版本](/images/docs/zh-cn/appstore/application-lifecycle-management/uploaded-new-version.PNG)
+   ![上传新版本](/images/docs/zh-cn/appstore/application-lifecycle-management/uploaded-new-version.png)
 
-   ![查看新版本](/images/docs/zh-cn/appstore/application-lifecycle-management/see-new-version.PNG)
+   ![查看新版本](/images/docs/zh-cn/appstore/application-lifecycle-management/see-new-version.png)
 
 ### 步骤七：升级
 
@@ -269,11 +266,11 @@ KubeSphere 集成了 [OpenPitrix](https://github.com/openpitrix/openpitrix)（�
 
 1. 以 `reviewer` 身份登录 KubeSphere。点击左上角的**平台管理**，选择**应用商店管理**。在**应用商店**页面，点击 Redis。
 
-   ![下架应用](/images/docs/zh-cn/appstore/application-lifecycle-management/remove-app.PNG)
+   ![下架应用](/images/docs/zh-cn/appstore/application-lifecycle-management/remove-app.png)
 
 2. 在详情页面，点击**下架应用**，在弹出的对话框中选择**确定**，确认将应用从应用商店下架的操作。
 
-   ![应用下架](/images/docs/zh-cn/appstore/application-lifecycle-management/suspend-app.PNG)
+   ![应用下架](/images/docs/zh-cn/appstore/application-lifecycle-management/suspend-app.png)
 
    {{< notice note >}}
 
@@ -283,11 +280,11 @@ KubeSphere 集成了 [OpenPitrix](https://github.com/openpitrix/openpitrix)（�
 
 3. 要让应用再次在应用商店可用，点击**上架应用**。
 
-   ![上架应用](/images/docs/zh-cn/appstore/application-lifecycle-management/activate-app.PNG)
+   ![上架应用](/images/docs/zh-cn/appstore/application-lifecycle-management/activate-app.png)
 
 4. 要下架应用的特定版本，展开版本菜单，点击**下架版本**。在弹出的对话框中，点击**确定**以确认操作。
 
-   ![下架版本](/images/docs/zh-cn/appstore/application-lifecycle-management/suspend-version.PNG)
+   ![下架版本](/images/docs/zh-cn/appstore/application-lifecycle-management/suspend-version.png)
 
    {{< notice note >}}
 
@@ -297,7 +294,7 @@ KubeSphere 集成了 [OpenPitrix](https://github.com/openpitrix/openpitrix)（�
 
 5. 要让应用版本再次在应用商店可用，点击**上架版本**。
 
-   ![上架版本](/images/docs/zh-cn/appstore/application-lifecycle-management/activate-version.PNG)
+   ![上架版本](/images/docs/zh-cn/appstore/application-lifecycle-management/activate-version.png)
 
    
 

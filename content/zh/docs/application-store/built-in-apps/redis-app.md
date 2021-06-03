@@ -21,21 +21,21 @@ weight: 14291
 
 1. 在 `demo-project` 项目的**概览**页面，点击左上角的**应用商店**。
 
-   ![应用商店](/images/docs/zh-cn/appstore/built-in-apps/redis-app/app-store.PNG)
+   ![应用商店](/images/docs/zh-cn/appstore/built-in-apps/redis-app/app-store.png)
 
 2. 找到 Redis，点击**应用信息**页面上的**部署**。
 
-   ![应用商店中的 Redis](/images/docs/zh-cn/appstore/built-in-apps/redis-app/redis-in-app-store.PNG)
+   ![应用商店中的 Redis](/images/docs/zh-cn/appstore/built-in-apps/redis-app/redis-in-app-store.png)
 
-   ![部署 Redis](/images/docs/zh-cn/appstore/built-in-apps/redis-app/deploy-redis.PNG)
+   ![部署 Redis](/images/docs/zh-cn/appstore/built-in-apps/redis-app/deploy-redis.png)
 
 3. 设置名称并选择应用版本。请确保将 Redis 部署在 `demo-project` 中，点击**下一步**。
 
-   ![确认部署](/images/docs/zh-cn/appstore/built-in-apps/redis-app/confirm-deployment.PNG)
+   ![确认部署](/images/docs/zh-cn/appstore/built-in-apps/redis-app/confirm-deployment.png)
 
 4. 在**应用配置**页面，为应用指定持久化存储卷和密码。操作完成后，点击**部署**。
 
-   ![配置 Redis](/images/docs/zh-cn/appstore/built-in-apps/redis-app/config-redis.PNG)
+   ![配置 Redis](/images/docs/zh-cn/appstore/built-in-apps/redis-app/config-redis.png)
 
    {{< notice note >}}
 
@@ -45,20 +45,20 @@ weight: 14291
 
 5. 稍等片刻待 Redis 启动并运行。
 
-   ![redis 运行中](/images/docs/zh-cn/appstore/built-in-apps/redis-app/redis-running.PNG)
+   ![redis 运行中](/images/docs/zh-cn/appstore/built-in-apps/redis-app/redis-running.png)
 
 ### 步骤 2：访问 Redis 终端
 
 1. 转到**服务**页面，点击 Redis 的服务名称。
 
-   ![访问 Redis](/images/docs/zh-cn/appstore/built-in-apps/redis-app/access-redis.PNG)
+   ![访问 Redis](/images/docs/zh-cn/appstore/built-in-apps/redis-app/access-redis.png)
 
 2. 在**容器组**中展开菜单查看容器详情，随后点击**终端**图标。
 
-   ![Redis 终端](/images/docs/zh-cn/appstore/built-in-apps/redis-app/redis-terminal.PNG)
+   ![Redis 终端](/images/docs/zh-cn/appstore/built-in-apps/redis-app/redis-terminal.png)
 
 3. 在弹出窗口的终端中运行 `redis-cli` 命令来使用该应用。
 
-   ![使用 Redis](/images/docs/zh-cn/appstore/built-in-apps/redis-app/use-redis.PNG)
+   ![使用 Redis](/images/docs/zh-cn/appstore/built-in-apps/redis-app/use-redis.png)
 
 4. 有关更多信息，请参见 [Redis 官方文档](https://redis.io/documentation)。
