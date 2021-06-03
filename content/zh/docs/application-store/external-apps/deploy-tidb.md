@@ -12,6 +12,7 @@ weight: 14320
 
 ## **准备工作**
 
+- 您需要准备至少 3 个可调度的节点。
 - 您需要启用 [OpenPitrix 系统](../../../pluggable-components/app-store/)。
 - 您需要为本教程创建一个企业空间、一个项目和两个帐户（`ws-admin` 和 `project-regular`）。帐户 `ws-admin` 必须在企业空间中被赋予 `workspace-admin` 角色，帐户 `project-regular` 必须被邀请至项目中赋予 `operator` 角色。若还未创建好，请参考[创建企业空间、项目、帐户和角色](../../../quick-start/create-workspace-and-project/)。
 
@@ -125,7 +126,7 @@ weight: 14320
    csi-super-high-perf        csi-qingcloud   Delete          Immediate           true                   71m
    ```
 
-6. 在**应用配置**页面，将字段 `storageClassName` 的默认值从 `local-storage` 更改为您的存储类型名称。例如，您可以根据以上输出将其更改为 `csi-qingcloud`。
+6. 在**应用配置**页面，将所有 `storageClassName` 字段的默认值从 `local-storage` 更改为您的存储类型名称。例如，您可以根据以上输出将这些默认值更改为 `csi-standard`。
 
    ![tidb-cluster-config](/images/docs/zh-cn/appstore/external-apps/deploy-tidb-operator-and-cluster/tidb-cluster-config.png)
 
