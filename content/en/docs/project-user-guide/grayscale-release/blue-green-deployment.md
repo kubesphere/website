@@ -20,19 +20,13 @@ The blue-green release provides a zero downtime deployment, which means the new 
 
 ## Create a Blue-green Deployment Job
 
-1. Log in to KubeSphere as `project-regular`. Under **Categories**, click **Create Job** on the right of **Blue-green Deployment**.
-
-   ![blue-green-1](/images/docs/project-user-guide/grayscale-release/blue-green-deployment/blue-green-1.jpg)
+1. Log in to KubeSphere as `project-regular` and navigate to **Grayscale Release**. Under **Categories**, click **Create Job** on the right of **Blue-green Deployment**.
 
 2. Set a name for it and click **Next**.
 
-   ![blue-green-2](/images/docs/project-user-guide/grayscale-release/blue-green-deployment/blue-green-2.jpg)
+3. On the **Grayscale Release Components** tab, select your app from the drop-down list and the Service for which you want to implement the blue-green deployment. If you also use the sample app Bookinfo, select **reviews** and click **Next**.
 
-3. Select your app from the drop-down list and the service for which you want to implement the blue-green deployment. If you also use the sample app Bookinfo, select **reviews** and click **Next**.
-
-   ![blue-green-3](/images/docs/project-user-guide/grayscale-release/blue-green-deployment/blue-green-3.jpg)
-
-4. On the **Grayscale Release Version** page, add another version of it (e.g `v2`) as shown in the image below and click **Next**:
+4. On the **Grayscale Release Version** tab, add another version (e.g `v2`) as shown in the image below and click **Next**:
 
    ![blue-green-4](/images/docs/project-user-guide/grayscale-release/blue-green-deployment/blue-green-4.jpg)
 
@@ -42,9 +36,7 @@ The blue-green release provides a zero downtime deployment, which means the new 
 
    {{</ notice >}} 
 
-5. To allow the app version `v2` to take over all the traffic, select **Take over all traffic** and click **Create**.
-
-   ![blue-green-5](/images/docs/project-user-guide/grayscale-release/blue-green-deployment/blue-green-5.jpg)
+5. On the **Policy Config** tab, to allow the app version `v2` to take over all the traffic, select **Take over all traffic** and click **Create**.
 
 6. The blue-green deployment job created displays under the tab **Job Status**. Click it to view details.
 

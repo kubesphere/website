@@ -19,7 +19,7 @@ KubeSphere also has built-in policies which will trigger alerts if conditions de
 
 ## Create an Alerting Policy
 
-1. Log in to the console as `cluster-admin`. Click **Platform** in the top left corner, and then click **Cluster Management**.
+1. Log in to the console as `cluster-admin`. Click **Platform** in the top-left corner, and then click **Cluster Management**.
 
 2. Navigate to **Alerting Policies** under **Monitoring & Alerting**, and then click **Create**.
 

@@ -56,7 +56,7 @@ This is basically the same as what I did last time as we need to make sure all o
 
    - As NFS itself does not have an internal provisioner, I will be using NFS-client Provisioner for dynamic provisioning of volumes.
 
-   - `kubectl` is integrated into the console of KubeSphere. You can run commands with it from **Toolbox** in the bottom right corner of the KubeSphere dashboard.
+   - `kubectl` is integrated into the console of KubeSphere. You can run commands with it from **Toolbox** in the bottom-right corner of the KubeSphere dashboard.
 
    {{</ notice >}} 
 
@@ -113,7 +113,7 @@ To mount a volume to your workload, you need to create a [PersistentVolumeClaim]
 
    {{< notice note >}}
 
-   To create workloads in KubeSphere, you can create and apply YAML files just as what you did before (**Edit Mode** in the top right corner). At the same time, you can also set parameters for your workloads on the KubeSphere dashboard one by one. I will not talk about the whole process in detail as this article is mainly about how to configure storage and create volumes. Have a look at [the KubeSphere documentation](https://kubesphere.io/docs/project-user-guide/application-workloads/deployments/) to learn more about how to create workloads. 
+   To create workloads in KubeSphere, you can create and apply YAML files just as what you did before (**Edit Mode** in the top-right corner). At the same time, you can also set parameters for your workloads on the KubeSphere dashboard one by one. I will not talk about the whole process in detail as this article is mainly about how to configure storage and create volumes. Have a look at [the KubeSphere documentation](https://kubesphere.io/docs/project-user-guide/application-workloads/deployments/) to learn more about how to create workloads. 
 
    {{</ notice >}} 
 

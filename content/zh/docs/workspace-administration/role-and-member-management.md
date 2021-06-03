@@ -41,7 +41,7 @@ weight: 9400
 
    ![role-details](/images/docs/zh-cn/workspace-administration-and-user-guide/role-and-member-management/role-details.png)
 
-2. 点击**授权用户**选项卡，查看被授予该角色的所有用户。
+2. 点击**授权用户**选项卡，查看所有被授予该角色的用户。
 
 ## 创建企业角色
 

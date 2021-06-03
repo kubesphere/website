@@ -10,7 +10,7 @@ When you create Deployments, StatefulSets or DaemonSets, you need to specify a c
 
 {{< notice tip >}}
 
-You can enable **Edit Mode** in the top right corner to see corresponding values in the manifest file (YAML format) of properties on the dashboard.
+You can enable **Edit Mode** in the top-right corner to see corresponding values in the manifest file (YAML format) of properties on the dashboard.
 
 {{</ notice >}}
 
@@ -30,17 +30,17 @@ After you click **Add Container Image**, you will see an image as below.
 
 #### Image Search Bar
 
-You can click the cube icon on the right to select an image from the list or input an image name to search it. KubeSphere provides Docker Hub images and your private image repository. If you want to use your private image repository, you need to create an Image Registry Secret first in **Secrets** under **Configurations**.
+You can click the cube icon on the right to select an image from the list or enter an image name to search it. KubeSphere provides Docker Hub images and your private image repository. If you want to use your private image repository, you need to create an Image Registry Secret first in **Secrets** under **Configurations**.
 
 {{< notice note >}} 
 
-Remember to press **Enter** on your keyboard after you input an image name in the search bar.
+Remember to press **Enter** on your keyboard after you enter an image name in the search bar.
 
 {{</ notice >}} 
 
 #### Image Tag
 
-You can input a tag like `imagename:tag`. If you do not specify it, it will default to the latest version.
+You can enter a tag like `imagename:tag`. If you do not specify it, it will default to the latest version.
 
 #### Container Name
 
@@ -274,7 +274,7 @@ A security context defines privilege and access control settings for a Pod or Co
 
 ### Deployment Mode
 
-You can select different deployment modes to switch between inter-pod affinity and inter-pod anti-affinity. In Kubernetes, inter-pod affinity is specified as field `podAffinity` of field `affinity` while inter-pod anti-affinity is specified as field `podAntiAffinity` of field `affinity`. In KubeSphere, both `podAffinity` and `podAntiAffinity` are set to `preferredDuringSchedulingIgnoredDuringExecution`. You can enable **Edit Mode** in the top right corner to see field details.
+You can select different deployment modes to switch between inter-pod affinity and inter-pod anti-affinity. In Kubernetes, inter-pod affinity is specified as field `podAffinity` of field `affinity` while inter-pod anti-affinity is specified as field `podAntiAffinity` of field `affinity`. In KubeSphere, both `podAffinity` and `podAntiAffinity` are set to `preferredDuringSchedulingIgnoredDuringExecution`. You can enable **Edit Mode** in the top-right corner to see field details.
 
 - **Pod Decentralized Deployment** represents anti-affinity.
 - **Pod Aggregation Deployment** represents affinity.

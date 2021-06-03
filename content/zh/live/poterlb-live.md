@@ -16,11 +16,13 @@ section1:
 
 ## 分享人介绍
 
-段炯 —— 原 KubeSphere 容器平台容器网络研发工程师
+段炯 —— KubeSphere 容器平台容器网络研发工程师
 
-个人简介：段炯原是青云 QingCloud 的一名高级容器网络研发工程师，他是开源项目 PorterLB 和 KubeSphere 核心维护者，也是 Kubernetes 和 OpenStack 网络领域的专家，他参与设计了 KubeSphere 开源容器平台的 Network Policy 相关功能。
+个人简介：段炯是青云 QingCloud 的一名高级容器网络研发工程师，他是开源项目 PorterLB 和 KubeSphere 核心维护者，也是 Kubernetes 和 OpenStack 网络领域的专家，他参与设计了 KubeSphere 开源容器平台的 Network Policy 相关功能。
 
 ## 摘要
+
+![porter](https://pek3b.qingstor.com/kubesphere-community/images/porter-1.jpg)
 
 众所周知，公有云 (如 AWS、GCP) 通常提供负载均衡器来分配 IP 在托管 Kubernetes 集群暴露服务。然而，Kubernetes 并没有为物理机环境提供负载均衡器，这使得物理机在生态系统中处于二等公民的地位。
 

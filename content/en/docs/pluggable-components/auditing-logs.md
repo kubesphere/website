@@ -23,7 +23,7 @@ When you implement multi-node installation KubeSphere on Linux, you need to crea
     ```
 
     {{< notice note >}}
-If you adopt [All-in-One Installation](../../quick-start/all-in-one-on-linux/), you do not need to create a `config-sample.yaml` file as you can create a cluster directly. Generally, the all-in-one mode is for users who are new to KubeSphere and look to get familiar with the system. If you want to enable Auditing in this mode (e.g. for testing purposes), refer to [the following section](#enable-auditing-logs-after-installation) to see how Auditing can be installed after installation.
+If you adopt [All-in-One Installation](../../quick-start/all-in-one-on-linux/), you do not need to create a `config-sample.yaml` file as you can create a cluster directly. Generally, the all-in-one mode is for users who are new to KubeSphere and look to get familiar with the system. If you want to enable Auditing in this mode (for example, for testing purposes), refer to [the following section](#enable-auditing-logs-after-installation) to see how Auditing can be installed after installation.
     {{</ notice >}}
 
 2. In this file, navigate to `auditing` and change `false` to `true` for `enabled`. Save the file after you finish.
@@ -148,7 +148,7 @@ You can find the web kubectl tool by clicking <img src="/images/docs/enable-plug
 
 {{< tab "Verify the component on the dashboard" >}}
 
-Verify that you can use the **Auditing Operating** function from the **Toolbox** in the bottom right corner.
+Verify that you can use the **Auditing Operating** function from the **Toolbox** in the bottom-right corner.
 
 ![auditing-operating](/images/docs/enable-pluggable-components/kubesphere-auditing-logs/auditing-operating.png)
 

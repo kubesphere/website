@@ -24,7 +24,7 @@ The table below summarizes common volume plugins for various provisioners (stora
 | -------------------- | ------------------------------------------------------------ |
 | In-tree              | Built-in and run as part of Kubernetes, such as [RBD](https://kubernetes.io/docs/concepts/storage/storage-classes/#ceph-rbd) and [Glusterfs](https://kubernetes.io/docs/concepts/storage/storage-classes/#glusterfs). For more plugins of this kind, see [Provisioner](https://kubernetes.io/docs/concepts/storage/storage-classes/#provisioner). |
 | External-provisioner | Deployed independently from Kubernetes, but works like an in-tree plugin, such as [nfs-client](https://github.com/kubernetes-retired/external-storage/tree/master/nfs-client). For more plugins of this kind, see [External Storage](https://github.com/kubernetes-retired/external-storage). |
-| CSI                  | Container Storage Interface, a standard for exposing storage resources to workloads on COs (e.g. Kubernetes), such as [QingCloud-csi](https://github.com/yunify/qingcloud-csi) and [Ceph-CSI](https://github.com/ceph/ceph-csi). For more plugins of this kind, see [Drivers](https://kubernetes-csi.github.io/docs/drivers.html). |
+| CSI                  | Container Storage Interface, a standard for exposing storage resources to workloads on COs (for example, Kubernetes), such as [QingCloud-csi](https://github.com/yunify/qingcloud-csi) and [Ceph-CSI](https://github.com/ceph/ceph-csi). For more plugins of this kind, see [Drivers](https://kubernetes-csi.github.io/docs/drivers.html). |
 
 ## Prerequisites
 
@@ -32,7 +32,7 @@ You need an account granted a role including the authorization of **Cluster Mana
 
 ## Manage Storage Classes
 
-1. Click **Platform** in the top left corner and select **Cluster Management**.
+1. Click **Platform** in the top-left corner and select **Cluster Management**.
    
     ![clusters-management-select](/images/docs/cluster-administration/persistent-volume-and-storage-class/clusters-management-select.jpg)
     
@@ -54,7 +54,7 @@ You need an account granted a role including the authorization of **Cluster Mana
 
 ### Common settings
 
-Some settings are commonly used and shared among storage classes. You can find them as dashboard properties on the console, which are also indicated by fields or annotations in the StorageClass manifest. You can see the manifest file in YAML format by enabling **Edit Mode** in the top right corner.
+Some settings are commonly used and shared among storage classes. You can find them as dashboard properties on the console, which are also indicated by fields or annotations in the StorageClass manifest. You can see the manifest file in YAML format by enabling **Edit Mode** in the top-right corner.
 Here are property descriptions of some commonly used fields in KubeSphere.
 
 | Property | Description |
@@ -118,7 +118,7 @@ Ceph RBD is also an in-tree storage plugin on Kubernetes. The volume plugin is a
 but the storage server must be installed before you create the storage class of Ceph RBD.
 
 As **hyperkube** images were [deprecated since 1.17](https://github.com/kubernetes/kubernetes/pull/85094), in-tree Ceph RBD may not work without **hyperkube**.
-Nevertheless, you can use [rbd provisioner](https://github.com/kubernetes-incubator/external-storage/tree/master/ceph/rbd) as a substitute, whose format is the same as in-tree Ceph RBD. The only different parameter is `provisioner` (i.e **Storage System** on the KubeSphere console). If you want to use rbd-provisioner, the value of `provisioner` must be `ceph.com/rbd` (Input this value in **Storage System** in the image below). If you use in-tree Ceph RBD, the value must be `kubernetes.io/rbd`. 
+Nevertheless, you can use [rbd provisioner](https://github.com/kubernetes-incubator/external-storage/tree/master/ceph/rbd) as a substitute, whose format is the same as in-tree Ceph RBD. The only different parameter is `provisioner` (i.e **Storage System** on the KubeSphere console). If you want to use rbd-provisioner, the value of `provisioner` must be `ceph.com/rbd` (Enter this value in **Storage System** in the image below). If you use in-tree Ceph RBD, the value must be `kubernetes.io/rbd`. 
 
 ![storage-system](/images/docs/cluster-administration/persistent-volume-and-storage-class/storage-system.png)
 

@@ -24,6 +24,8 @@ section1:
 
 并进一步演示如何使用 KubeSphere 纳管多个 Kubernetes 集群，结合开源的 BotKube 工具快速搭建多集群监控告警体系，以实现无人驾驶场景云脑服务的监控告警。
 
+![Botkube poster](https://pek3b.qingstor.com/kubesphere-community/images/Botkube-live-poster.jpg)
+
 ## 下载 PPT
 
-关注 「KubeSphere 云原生」公众号，后台回复 0114 即可下载 PPT。
+可扫描官网底部二维码，关注 「KubeSphere 云原生」公众号，后台回复 0114 即可下载 PPT。

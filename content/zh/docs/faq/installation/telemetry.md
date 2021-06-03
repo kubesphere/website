@@ -25,7 +25,7 @@ Telemetry 收集已安装 KubeSphere 集群的大小、KubeSphere 和 Kubernetes
 
 ## 禁用 Telemetry
 
-Telemetry 在安装 KubeSphere 时默认启用。同时，您也可以在安装前或安装后禁用 Telemetry。
+在安装 KubeSphere 时 Telemetry 默认启用。同时，您也可以在安装前或安装后禁用 Telemetry。
 
 ### 安装前禁用 Telemetry
 
@@ -37,7 +37,7 @@ Telemetry 在安装 KubeSphere 时默认启用。同时，您也可以在安装�
 
 {{</ notice >}}
 
-1. 下载 [cluster-configuration.yaml](https://github.com/kubesphere/ks-installer/releases/download/v3.1.0/cluster-configuration.yaml) 文件并打开编辑。
+1. 下载 [cluster-configuration.yaml](https://github.com/kubesphere/ks-installer/releases/download/v3.1.0/cluster-configuration.yaml) 文件并编辑。
 
     ```bash
     vi cluster-configuration.yaml
@@ -47,13 +47,14 @@ Telemetry 在安装 KubeSphere 时默认启用。同时，您也可以在安装�
 
     ```yaml
       openpitrix:
-        enabled: false
+        store:
+          enabled: false
       servicemesh:
         enabled: false
-      telemetry_enabled: false # Add this line here to disable Telemetry.
+      telemetry_enabled: false # 请手动添加此行以禁用 Telemetry。
     ```
 
-3. 保存文件并执行如下命令开始安装：
+3. 保存文件并执行以下命令开始安装：
 
     ```bash
     kubectl apply -f https://github.com/kubesphere/ks-installer/releases/download/v3.1.0/kubesphere-installer.yaml
@@ -73,15 +74,10 @@ Telemetry 在安装 KubeSphere 时默认启用。同时，您也可以在安装�
 
 3. 在搜索框中输入 `clusterconfiguration`，点击搜索结果打开详情页。
 
-    ![edit-crd](/images/docs/zh-cn/faq/telemetry-in-kubesphere/edit-crd.jpg)
-
-4. 点击 `ks-installer` 右边的三个点，并选择**编辑配置文件**。
-
-    ![edit-ks-installer](/images/docs/zh-cn/faq/telemetry-in-kubesphere/edit-ks-installer.jpg)
+4. 点击 `ks-installer` 右侧的 <img src="/images/docs/zh-cn/faq/installation/telemetry-in-kubesphere/three-dots.png" height="20px">，并选择**编辑配置文件**。
 
 5. 在文件末尾添加 `telemetry_enabled: false` 字段，点击**更新**。
 
-    ![enable-telemetry](/images/docs/zh-cn/faq/telemetry-in-kubesphere/enable-telemetry.jpg)
 
 {{< notice note >}}
 

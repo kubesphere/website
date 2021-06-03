@@ -3,7 +3,7 @@ title: "企业组织"
 keywords: 'KubeSphere, Kubernetes, 部门, 角色, 权限, 用户组'
 description: '在企业空间中创建部门，将用户分配到不同部门中并授予权限。'
 linkTitle: "企业组织"
-weight: 9700
+weight: 9800
 ---
 
 本文档介绍如何管理企业空间中的部门。

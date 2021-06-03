@@ -12,7 +12,7 @@ This tutorial demonstrates how to configure your email server and add recipients
 
 1. Log in to the web console with an account granted the role  `platform-admin`.
 
-2. Click **Platform** in the top left corner and select **Platform Settings**.
+2. Click **Platform** in the top-left corner and select **Platform Settings**.
 
 3. Navigate to **Email** under **Notification Management**.
 

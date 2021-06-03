@@ -27,7 +27,7 @@ This tutorial demonstrates how to collect disk logs for an example app.
 
 1. From the left navigation bar, select **Workloads** in **Application Workloads**. Under the **Deployments** tab,  click **Create**.
 
-2. In the dialog that appears, set a name for the Deployment (e.g. `demo-deployment`) and click **Next**.
+2. In the dialog that appears, set a name for the Deployment (for example, `demo-deployment`) and click **Next**.
 
 3. Under **Container Image**, click **Add Container Image**.
 
@@ -35,7 +35,7 @@ This tutorial demonstrates how to collect disk logs for an example app.
 
    ![alpine-image](/images/docs/project-administration/disk-log-collection/alpine-image.png)
 
-5. Scroll down to **Start Command** and check it. Input the following values for **Run Command** and **Parameters** respectively, click **√**, and then click **Next**.
+5. Scroll down to **Start Command** and check it. Enter the following values for **Run Command** and **Parameters** respectively, click **√**, and then click **Next**.
 
    **Run Command**
 
@@ -61,7 +61,7 @@ This tutorial demonstrates how to collect disk logs for an example app.
 
    ![mount-volumes](/images/docs/project-administration/disk-log-collection/mount-volumes.png)
    
-7. On the **Temporary Volume** tab, input a name for the volume (e.g. `demo-disk-log-collection`) and set the access mode and path. Refer to the image below as an example.
+7. On the **Temporary Volume** tab, enter a name for the volume (for example, `demo-disk-log-collection`) and set the access mode and path. Refer to the image below as an example.
 
    ![volume-example](/images/docs/project-administration/disk-log-collection/volume-example.png)
 
@@ -85,7 +85,7 @@ This tutorial demonstrates how to collect disk logs for an example app.
 
    ![inspect-logs](/images/docs/project-administration/disk-log-collection/inspect-logs.png)
 
-3. Alternatively, you can also use the **Log Search** function from **Toolbox** in the bottom right corner to view stdout logs. For example, use the Pod name of the Deployment for a fuzzy query:
+3. Alternatively, you can also use the **Log Search** function from **Toolbox** in the bottom-right corner to view stdout logs. For example, use the Pod name of the Deployment for a fuzzy query:
 
    ![fuzzy-match](/images/docs/project-administration/disk-log-collection/fuzzy-match.png)
 

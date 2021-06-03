@@ -27,7 +27,7 @@ When you implement multi-node installation of KubeSphere on Linux, you need to c
     ```
 
     {{< notice note >}}
-If you adopt [All-in-One Installation](../../quick-start/all-in-one-on-linux/), you do not need to create a `config-sample.yaml` file as you can create a cluster directly. Generally, the all-in-one mode is for users who are new to KubeSphere and look to get familiar with the system. If you want to enable the App Store in this mode (e.g. for testing purposes), refer to [the following section](#enable-app-store-after-installation) to see how the App Store can be installed after installation.
+If you adopt [All-in-One Installation](../../quick-start/all-in-one-on-linux/), you do not need to create a `config-sample.yaml` file as you can create a cluster directly. Generally, the all-in-one mode is for users who are new to KubeSphere and look to get familiar with the system. If you want to enable the App Store in this mode (for example, for testing purposes), refer to [the following section](#enable-app-store-after-installation) to see how the App Store can be installed after installation.
     {{</ notice >}}
 
 2. In this file, navigate to `openpitrix` and change `false` to `true` for `enabled`. Save the file after you finish.
@@ -106,7 +106,7 @@ You can find the web kubectl tool by clicking <img src="/images/docs/enable-plug
 
 ## Verify the Installation of the Component
 
-After you log in to the console, if you can see **App Store** in the top left corner and 16 built-in apps in it, it means the installation is successful.
+After you log in to the console, if you can see **App Store** in the top-left corner and 16 built-in apps in it, it means the installation is successful.
 
 ![app-store](/images/docs/enable-pluggable-components/kubesphere-app-store/app-store.png)
 

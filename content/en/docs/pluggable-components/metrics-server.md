@@ -21,7 +21,7 @@ When you implement multi-node installation of KubeSphere on Linux, you need to c
    ```
 
    {{< notice note >}}
-   If you adopt [All-in-One Installation](../../quick-start/all-in-one-on-linux/), you do not need to create a `config-sample.yaml` file as you can create a cluster directly. Generally, the all-in-one mode is for users who are new to KubeSphere and look to get familiar with the system. If you want to enable the Metrics Server in this mode (e.g. for testing purposes), refer to [the following section](#enable-devops-after-installation) to see how the Metrics Server can be installed after installation.
+   If you adopt [All-in-One Installation](../../quick-start/all-in-one-on-linux/), you do not need to create a `config-sample.yaml` file as you can create a cluster directly. Generally, the all-in-one mode is for users who are new to KubeSphere and look to get familiar with the system. If you want to enable the Metrics Server in this mode (for example, for testing purposes), refer to [the following section](#enable-devops-after-installation) to see how the Metrics Server can be installed after installation.
    {{</ notice >}}
 
 2. In this file, navigate to `metrics_server` and change `false` to `true` for `enabled`. Save the file after you finish.

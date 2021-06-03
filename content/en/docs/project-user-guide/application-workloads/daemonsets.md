@@ -30,9 +30,9 @@ Log in to the console as `project-regular`. Go to **Application Workloads** of a
 
 ![daemonsets](/images/docs/project-user-guide/workloads/daemonsets.jpg)
 
-### Step 2: Input basic information
+### Step 2: Enter basic information
 
-Specify a name for the DaemonSet (e.g. `demo-daemonset`) and click **Next** to continue.
+Specify a name for the DaemonSet (for example, `demo-daemonset`) and click **Next** to continue.
 
 ![daemonsets](/images/docs/project-user-guide/workloads/daemonsets_form_1.jpg)
 
@@ -42,13 +42,13 @@ Specify a name for the DaemonSet (e.g. `demo-daemonset`) and click **Next** to c
 
     ![daemonsets](/images/docs/project-user-guide/workloads/daemonsets_form_2_container_btn.jpg)
 
-2. Input an image name from public Docker Hub or from a [private repository](../../configuration/image-registry/) you specified. For example, input `fluentd` in the search bar and press **Enter**.
+2. Enter an image name from public Docker Hub or from a [private repository](../../configuration/image-registry/) you specified. For example, enter `fluentd` in the search bar and press **Enter**.
 
     ![daemonsets](/images/docs/project-user-guide/workloads/daemonsets_form_2_container_1.jpg)
 
     {{< notice note >}}
 
-- Remember to press **Enter** on your keyboard after you input an image name in the search bar.
+- Remember to press **Enter** on your keyboard after you enter an image name in the search bar.
 - If you want to use your private image repository, you should [create an Image Registry Secret](../../configuration/image-registry/) first in **Secrets** under **Configurations**.
 
     {{</ notice >}}
@@ -61,7 +61,7 @@ Specify a name for the DaemonSet (e.g. `demo-daemonset`) and click **Next** to c
 
 5. Select a policy for image pulling from the drop-down menu. For more information, see [Image Pull Policy in Container Image Settings](../container-image-settings/#add-container-image).
 
-6. For other settings (**Health Checker**, **Start Command**, **Environment Variables**, **Container Security Context** and **Sync Host Timezone**), you can configure them on the dashboard as well. For more information, see detailed explanations of these properties in [Container Image Settings](../container-image-settings/#add-container-image). When you finish, click **√** in the bottom right corner to continue.
+6. For other settings (**Health Checker**, **Start Command**, **Environment Variables**, **Container Security Context** and **Sync Host Timezone**), you can configure them on the dashboard as well. For more information, see detailed explanations of these properties in [Container Image Settings](../container-image-settings/#add-container-image). When you finish, click **√** in the bottom-right corner to continue.
 
 7. Select an update strategy from the drop-down menu. It is recommended you choose **RollingUpdate**. For more information, see [Update Strategy](../container-image-settings/#update-strategy).
 

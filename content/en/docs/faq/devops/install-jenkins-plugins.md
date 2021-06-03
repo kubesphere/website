@@ -30,7 +30,7 @@ You need to enable [the KubeSphere DevOps system](../../../pluggable-components/
    echo http://$NODE_IP:$NODE_PORT
    ```
 
-2. You can get the output similar to the following. You can access the Jenkins dashboard through the address with your own KubeSphere account and password (e.g. `admin/P@88w0rd`).
+2. You can get the output similar to the following. You can access the Jenkins dashboard through the address with your own KubeSphere account and password (for example, `admin/P@88w0rd`).
 
    ```
    http://192.168.0.4:30180
@@ -52,7 +52,7 @@ You need to enable [the KubeSphere DevOps system](../../../pluggable-components/
 
    ![click-manage-plugins](/images/docs/faq/devops/install-plugins-to-jenkins/click-manage-plugins.png)
 
-3. Select the **Available** tab and you can see all the available plugins listed on the page. You can also use the **Filter** in the upper right corner to search for the plugins you need. Check the checkbox next to the plugin you need, and then click **Install without restart** or **Download now and install after restart** based on your needs.
+3. Select the **Available** tab and you can see all the available plugins listed on the page. You can also use the **Filter** in the upper-right corner to search for the plugins you need. Check the checkbox next to the plugin you need, and then click **Install without restart** or **Download now and install after restart** based on your needs.
 
    ![available-plugins](/images/docs/faq/devops/install-plugins-to-jenkins/available-plugins.png)
 

@@ -20,7 +20,7 @@ You have enabled [the KubeSphere DevOps System](../../../pluggable-components/de
 
 It is recommended that you configure Jenkins in KubeSphere through Configuration-as-Code (CasC). The built-in Jenkins CasC file is stored as a [ConfigMap](../../../project-user-guide/configuration/configmaps/).
 
-1. Log in to KubeSphere as `admin`. Click **Platform** in the top left corner and select **Cluster Management**.
+1. Log in to KubeSphere as `admin`. Click **Platform** in the top-left corner and select **Cluster Management**.
 
    ![cluster-management](/images/docs/devops-user-guide/using-devops/jenkins-system-settings/cluster-management.jpg)
 
@@ -56,7 +56,7 @@ After you modified `jenkins-casc-config`, you need to reload your updated system
    http://192.168.0.4:30180
    ```
 
-3. Access Jenkins at `http://Node IP:Port Number`. When KubeSphere is installed, the Jenkins dashboard is also installed by default. Besides, Jenkins is configured with KubeSphere LDAP, which means you can log in to Jenkins with KubeSphere accounts (e.g. `admin/P@88w0rd`) directly.
+3. Access Jenkins at `http://Node IP:Port Number`. When KubeSphere is installed, the Jenkins dashboard is also installed by default. Besides, Jenkins is configured with KubeSphere LDAP, which means you can log in to Jenkins with KubeSphere accounts (for example, `admin/P@88w0rd`) directly.
 
    ![jenkins-dashboard](/images/docs/devops-user-guide/using-devops/jenkins-system-settings/jenkins-dashboard.jpg)
 

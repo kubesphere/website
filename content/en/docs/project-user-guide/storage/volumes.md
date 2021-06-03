@@ -26,11 +26,11 @@ All the volumes that are created on the **Volumes** page are PersistentVolumeCla
 
 2. To create a volume, click **Create** on the **Volumes** page.
 
-3. In the dialog that appears, set a name (e.g. `demo-volume`) for the volume and click **Next**.
+3. In the dialog that appears, set a name (for example, `demo-volume`) for the volume and click **Next**.
 
    {{< notice note >}}
 
-   You can see the volume's manifest file in YAML format by enabling **Edit Mode** in the top right corner. KubeSphere allows you to edit the manifest file directly to create a volume. Alternatively, you can follow the steps below to create a volume via the dashboard.
+   You can see the volume's manifest file in YAML format by enabling **Edit Mode** in the top-right corner. KubeSphere allows you to edit the manifest file directly to create a volume. Alternatively, you can follow the steps below to create a volume via the dashboard.
 
    {{</ notice >}} 
 
