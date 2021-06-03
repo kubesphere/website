@@ -6,7 +6,7 @@ linkTitle: "Telemetry in KubeSphere"
 Weight: 16300
 ---
 
-Telemetry collects aggregate information about the size of KubeSphere clusters installed, KubeSphere and Kubernetes versions, components enabled, cluster running time, error logs, etc. KubeSphere promises that the information is only used by the KubeSphere community to improve products and will not be shared with any third parties.
+Telemetry collects aggregate information about the size of KubeSphere clusters installed, KubeSphere and Kubernetes versions, components enabled, cluster running time, error logs and so on. KubeSphere promises that the information is only used by the KubeSphere community to improve products and will not be shared with any third parties.
 
 ## What Information Is Collected
 
@@ -29,7 +29,7 @@ Telemetry is enabled by default when you install KubeSphere, while you also have
 
 ### Disable Telemetry before installation
 
-When you install KubeSphere on existing Kubernetes clusters, you need to download the file [cluster-configuration.yaml](https://github.com/kubesphere/ks-installer/releases/download/v3.1.0/cluster-configuration.yaml) for cluster setting. If you want to disable Telemetry, do not use `kubectl apply -f` directly for this file.
+When you install KubeSphere on an existing Kubernetes cluster, you need to download the file [cluster-configuration.yaml](https://github.com/kubesphere/ks-installer/releases/download/v3.1.0/cluster-configuration.yaml) for cluster settings. If you want to disable Telemetry, do not run `kubectl apply -f` directly for this file.
 
 {{< notice note >}}
 
@@ -43,27 +43,28 @@ If you install KubeSphere on Linux, see [Disable Telemetry after Installation](.
     vi cluster-configuration.yaml
     ```
 
-2. In this local cluster-configuration.yaml file, scroll down to the bottom of the file and add the value `telemetry_enabled: false` as follows:
+2. In this local `cluster-configuration.yaml` file, scroll down to the bottom of the file and add `telemetry_enabled: false` as follows:
 
     ```yaml
       openpitrix:
-        enabled: false
+        store:
+          enabled: false
       servicemesh:
         enabled: false
-      telemetry_enabled: false # Add this line here to disable Telemetry.
+      telemetry_enabled: false # Add this line manually to disable Telemetry.
     ```
 
-3. Save the file after you finish and execute the following commands to start installation.
+3. Save the file and run the following commands to start installation.
 
     ```bash
     kubectl apply -f https://github.com/kubesphere/ks-installer/releases/download/v3.1.0/kubesphere-installer.yaml
-
+    
     kubectl apply -f cluster-configuration.yaml
     ```
 
 ### Disable Telemetry after installation
 
-1. Log in to the console as `admin` and click **Platform** in the top left corner.
+1. Log in to the console as `admin` and click **Platform** in the top-left corner.
 
 2. Select **Cluster Management** and navigate to **CRDs**.
 
@@ -71,20 +72,15 @@ If you install KubeSphere on Linux, see [Disable Telemetry after Installation](.
 If you have enabled [the multi-cluster feature](../../../multicluster-management/), you need to select a cluster first.
     {{</ notice >}}
 
-3. Input `clusterconfiguration` in the search bar and click the result to go to its detail page.
+3. Enter `clusterconfiguration` in the search bar and click the result to go to its detail page.
 
-    ![edit-crd](/images/docs/faq/telemetry-in-kubesphere/edit-crd.jpg)
+4. Click <img src="/images/docs/faq/installation/telemetry-in-kubesphere/three-dots.png" height="20px"> on the right of `ks-installer` and select **Edit YAML**.
 
-4. Click the three dots on the right of `ks-installer` and select **Edit YAML**.
+5. Scroll down to the bottom of the file, add `telemetry_enabled: false`, and then click **Update**.
 
-    ![edit-ks-installer](/images/docs/faq/telemetry-in-kubesphere/edit-ks-installer.jpg)
-
-5. Scroll down to the bottom of the file and add the value `telemetry_enabled: false`. When you finish, click **Update**.
-
-    ![enable-telemetry](/images/docs/faq/telemetry-in-kubesphere/enable-telemetry.jpg)
 
 {{< notice note >}}
 
-If you want to enable Telemetry again, you can update `ks-installer` by deleting the value  `telemetry_enabled: false` or changing it to  `telemetry_enabled: true`.
+If you want to enable Telemetry again, you can update `ks-installer` by deleting `telemetry_enabled: false` or changing it to `telemetry_enabled: true`.
 
 {{</ notice >}}

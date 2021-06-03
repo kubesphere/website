@@ -36,7 +36,7 @@ You must provide the Slack token on the console for authentication so that KubeS
 
 1. Log in to the web console with an account granted the role `platform-admin`.
 
-2. Click **Platform** in the top left corner and select **Platform Settings**.
+2. Click **Platform** in the top-left corner and select **Platform Settings**.
 
 3. Navigate to **Slack** under **Notification Management**.
 

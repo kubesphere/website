@@ -14,7 +14,7 @@ Azure can help you implement infrastructure as code by providing resource deploy
 
 ### Use Azure Cloud Shell
 
-You don't have to install Azure CLI on your machine as Azure provides a web-based terminal. Click the Cloud Shell button on the menu bar at the upper right corner in Azure portal.
+You don't have to install Azure CLI on your machine as Azure provides a web-based terminal. Click the Cloud Shell button on the menu bar at the upper-right corner in Azure portal.
 
 ![Cloud Shell](/images/docs/aks/aks-launch-icon.png)
 

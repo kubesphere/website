@@ -90,7 +90,7 @@ To make sure edge nodes can successfully talk to your cluster, you must forward 
 
 ## Add an Edge Node
 
-1. Log in to the console as `admin` and click **Platform** in the top left corner.
+1. Log in to the console as `admin` and click **Platform** in the top-left corner.
 
 2. Select **Cluster Management** and navigate to **Edge Nodes** under **Node Management**.
 

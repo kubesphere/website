@@ -54,7 +54,7 @@ Automation represents a key part of implementing DevOps. With automatic, streaml
 
 **Jenkins-powered**. The KubeSphere DevOps system is built with Jenkins as the engine, which is abundant in plugins. On top of that, Jenkins provides an enabling environment for extension development, making it possible for the DevOps team to work smoothly across the whole process (developing, testing, building, deploying, monitoring, logging, notifying, etc.) in a unified platform. The KubeSphere account can also be used for the built-in Jenkins, meeting the demand of enterprises for multi-tenant isolation of CI/CD pipelines and unified authentication.
 
-**Convenient built-in tools**. Users can easily take advantage of automation tools (e.g. Binary-to-Image and Source-to-Image) even without a thorough understanding of how Docker or Kubernetes works. They only need to submit a registry address or upload binary files (e.g. JAR/WAR/Binary). Ultimately, services will be released to Kubernetes automatically without any coding in a Dockerfile.
+**Convenient built-in tools**. Users can easily take advantage of automation tools (for example, Binary-to-Image and Source-to-Image) even without a thorough understanding of how Docker or Kubernetes works. They only need to submit a registry address or upload binary files (for example, JAR/WAR/Binary). Ultimately, services will be released to Kubernetes automatically without any coding in a Dockerfile.
 
 For more information, see [DevOps User Guide](../../devops-user-guide/).
 
@@ -85,7 +85,7 @@ The KubeSphere community has the capabilities and technical know-how to help you
 
 **Partners**. KubeSphere partners play a critical role in KubeSphere's go-to-market strategy. They can be app developers, technology companies, cloud providers or go-to-market partners, all of whom drive the community ahead in their respective aspects.
 
-**Ambassadors**. As community representatives, ambassadors promote KubeSphere in a variety of ways (e.g. activities, blogs and user cases) so that more people can join the community.
+**Ambassadors**. As community representatives, ambassadors promote KubeSphere in a variety of ways (for example, activities, blogs and user cases) so that more people can join the community.
 
 **Contributors**. KubeSphere contributors help the whole community by contributing to code or documentation. You don't need to be an expert while you can still make a difference even it is a minor code fix or language improvement.
 

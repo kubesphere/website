@@ -15,9 +15,9 @@ section2:
   notice:
     title: Kubernetes and Cloud Native Meetup ——成都站
     timeIcon: /images/live/clock.svg
-    time: 2021/06/19 14:00 – 18:00
+    time: 2021/06/19 13:00 – 18:00
     baseIcon: /images/live/base.svg
-    base: 线上 + 线下
+    base: 四川省成都市高新区天府大道中段 500 号天祥广场 B 座 45A + 线上
     tag: 预告
     url: ./meetup-chengdu/
 
@@ -28,71 +28,120 @@ section2:
 
 section3:
   videos:
+    - title: 初识云原生 FaaS 平台及 Serverless 生态
+      link: ./faas-hangzhou/
+      snapshot: https://pek3b.qingstor.com/kubesphere-community/images/Faas-serverless.png
+      type: iframe
+      createTime: 2021.05.29
+      group: Meetup
+
+    - title: 基于 KubeSphere 的 Nebula Graph 多云架构管理实践
+      link: ./nebulagraph-hangzhou/
+      snapshot: https://pek3b.qingstor.com/kubesphere-community/images/nebulagraph.png
+      type: iframe
+      createTime: 2021.05.29
+      group: Meetup
+
+    - title: KubeSphere + KubeEdge——打造云原生边缘计算服务
+      link: ./kubeedge-hangzhou/
+      snapshot: https://pek3b.qingstor.com/kubesphere-community/images/KubeSphere-KubeEdge.png
+      type: iframe
+      createTime: 2021.05.29
+      group: Meetup
+
+    - title: SegmentFault 基于 K8s 的容器化与持续交付实践
+      link: ./segmentfault/
+      snapshot: https://pek3b.qingstor.com/kubesphere-community/images/SegmentFault-hangzhou.png
+      type: iframe
+      createTime: 2021.05.29
+      group: Meetup
+
+    - title: 如何利用云原生架构控制系统复杂度-从构建云原生向量搜索 Milvus 讲起
+      link: ./milvus-hangzhou/
+      snapshot: https://pek3b.qingstor.com/kubesphere-community/images/Milvus-hangzhou.png
+      type: iframe
+      createTime: 2021.05.29
+      group: Meetup
+
+    - title: 基于 Kubernetes 的新一代 MySQL 高可用架构实现方案
+      link: ./mysql-hangzhou/
+      snapshot: https://pek3b.qingstor.com/kubesphere-community/images/MySQL-hangzhou.png
+      type: iframe
+      createTime: 2021.05.29
+      group: Meetup
+
+    - title: “开源社区运营与治理”圆桌交流
+      link: ./roundtable-hangzhou/
+      snapshot: https://pek3b.qingstor.com/kubesphere-community/images/round-table.png
+      type: iframe
+      createTime: 2021.05.29
+      group: Meetup
+
     - title: 跳离云原生深水区，KubeSphere 带你远航
-      link: //player.bilibili.com/player.html?aid=375675566&bvid=BV1Fo4y117xt&cid=340529916&page=1&high_quality=1
+      link: ./ray-shanghai/
       snapshot: https://pek3b.qingstor.com/kubesphere-community/images/yuanhang-kubesphere.jpeg
       type: iframe
       createTime: 2021.05.15
       group: Meetup
 
     - title: 混合云下的 K8s 多集群管理及应用部署
-      link: //player.bilibili.com/player.html?aid=248246237&bvid=BV17v411L7tG&cid=340534276&page=1&high_quality=1
+      link: ./multicluster-shanghai/
       snapshot: https://pek3b.qingstor.com/kubesphere-community/images/multicluster-kubesphere.jpeg
       type: iframe
       createTime: 2021.05.15
       group: Meetup
 
     - title: Kubernetes 在媒体直播行业的落地实践
-      link: //player.bilibili.com/player.html?aid=205640169&bvid=BV1Jh411v7kG&cid=340538245&page=1&high_quality=1
+      link: ./medialive-shanghai/
       snapshot: https://pek3b.qingstor.com/kubesphere-community/images/kubesphere-live.jpeg
       type: iframe
       createTime: 2021.05.15
       group: Meetup
 
     - title: 在云原生场景下构建企业级存储方案
-      link: //player.bilibili.com/player.html?aid=503177493&bvid=BV1uN411Z7J1&cid=340539595&page=1&high_quality=1
+      link: ./neonio-shanghai/
       snapshot: https://pek3b.qingstor.com/kubesphere-community/images/qingstor-meetup.jpeg
       type: iframe
       createTime: 2021.05.15
       group: Meetup
 
     - title: MySQL on K8s：开源开放的高可用容器编排方案
-      link: //player.bilibili.com/player.html?aid=205670397&bvid=BV1bh411v7Ph&cid=340545938&page=1&high_quality=1
+      link: ./mysql-shanghai/
       snapshot: https://pek3b.qingstor.com/kubesphere-community/images/MySQLonkubernetes.jpeg
       type: iframe
       createTime: 2021.05.15
       group: Meetup      
 
     - title: 中通快递关键业务和复杂架构挑战下的 K8S 集群服务暴露实践
-      link: //player.bilibili.com/player.html?aid=760635980&bvid=BV1Z64y1C75y&cid=340544087&page=1&high_quality=1
+      link: ./zhongtong-shanghai/
       snapshot: https://pek3b.qingstor.com/kubesphere-community/images/cluster-zhongtong.jpeg
       type: iframe
       createTime: 2021.05.15
       group: Meetup    
 
     - title: 基于云原生架构下的 DevOps 实践
-      link: //player.bilibili.com/player.html?aid=205642662&bvid=BV1Jh411v7jc&cid=340549646&page=1&high_quality=1
+      link: ./devops-shanghai/
       snapshot: https://pek3b.qingstor.com/kubesphere-community/images/DevOps-cloudnative.jpeg
       type: iframe
       createTime: 2021.05.15
       group: Meetup 
 
     - title: KubeSphere v3.1 开源社区交流会直播回放
-      link: //player.bilibili.com/player.html?aid=247784540&bvid=BV1Bv411L7Hx&cid=331253914&page=1&high_quality=1
+      link: ./3.1-live/
       snapshot: https://pek3b.qingstor.com/kubesphere-community/images/v3.1-live.png
       type: iframe
       createTime: 2021.04.30
       group: 直播回放
 
     - title: 基于 KubeSphere 与 BotKube 搭建 K8s 多集群监控告警体系
-      link: //player.bilibili.com/player.html?aid=501141287&bvid=BV13K411u7w9&cid=282696732&page=1&high_quality=1
+      link: ./botkube-live/
       snapshot: https://pek3b.qingstor.com/kubesphere-community/images/botkube-kubesphere.jpeg
       type: iframe
       createTime: 2021.01.15
       group: 直播回放
 
     - title: 企业级云原生多租户通知系统 Notification Manager
-      link: //player.bilibili.com/player.html?aid=373555176&bvid=BV1Eo4y1f7Mi&cid=277936370&page=1&high_quality=1
+      link: ./nm-live/
       snapshot: https://pek3b.qingstor.com/kubesphere-community/images/notification-kubesphere.jpeg
       type: iframe
       createTime: 2021.01.06
@@ -113,7 +162,7 @@ section3:
       group: Meetup
 
     - title: 使用（KubeSphere）QKE管理多个ACK集群
-      link: //player.bilibili.com/player.html?aid=801598359&bvid=BV1Xy4y1n764&cid=294877842&page=1&high_quality=1
+      link: ./qke-ack/
       snapshot: https://pek3b.qingstor.com/kubesphere-community/images/qke-akc.jpeg
       type: iframe
       createTime: 2020.12.19
@@ -127,7 +176,7 @@ section3:
       group: Meetup
 
     - title: 云原生的 WebAssembly 能取代 Docker 吗？
-      link: //player.bilibili.com/player.html?aid=374255852&bvid=BV1wo4y1R7x2&cid=302625819&page=1&high_quality=1
+      link: ./webassembly/
       snapshot: https://pek3b.qingstor.com/kubesphere-community/images/webassembly-docker.jpeg
       type: iframe
       createTime: 2020.12.19
@@ -148,7 +197,7 @@ section3:
       group: 直播回放
 
     - title: CNCF 网研会：使用 PorterLB 和 KubeSphere 在物理机 Kubernetes 轻松暴露服务
-      link: //player.bilibili.com/player.html?aid=885471683&bvid=BV17K4y177YG&cid=261965895&page=1&high_quality=1
+      link: ./poterlb-live/
       snapshot: https://pek3b.qingstor.com/kubesphere-community/images/duan-kubesphere.jpeg
       type: iframe
       createTime: 2020.12.02
@@ -162,7 +211,7 @@ section3:
       group: 直播回放
 
     - title: Kubernetes 混合云在教育服务行业的最佳实践
-      link: //player.bilibili.com/player.html?aid=500396313&bvid=BV14K411V7Zw&cid=259917913&page=1&high_quality=1
+      link: ./qingjiao-live/
       snapshot: https://pek3b.qingstor.com/kubesphere-community/images/luxingmin-zhibo.jpeg
       type: iframe
       createTime: 2020.11.26

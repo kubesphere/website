@@ -130,7 +130,7 @@ This tutorial demonstrates how to deploy GitLab on KubeSphere.
 
 ### Step 5: Access GitLab
 
-1. Go to **Services** under **Application Workloads**, input `nginx-ingress-controller` in the search bar, and then press **Enter** on your keyboard to search the Service. You can see the Service is being exposed through port `32618`, which you can use to access GitLab.
+1. Go to **Services** under **Application Workloads**, enter `nginx-ingress-controller` in the search bar, and then press **Enter** on your keyboard to search the Service. You can see the Service is being exposed through port `32618`, which you can use to access GitLab.
 
    ![search-service](/images/docs/appstore/external-apps/deploy-gitlab/search-service.PNG)
 

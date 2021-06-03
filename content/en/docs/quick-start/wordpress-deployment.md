@@ -36,7 +36,7 @@ The environment variable `WORDPRESS_DB_PASSWORD` is the password to connect to t
 
    ![create-secrets1](/images/docs/quickstart/wordpress-deployment/create-secrets1.png)
 
-2. Enter the basic information (e.g. name it `mysql-secret`) and click **Next**. On the next page, select **Opaque (Default)** for **Type** and click **Add Data** to add a key-value pair. Input the Key (`MYSQL_ROOT_PASSWORD`) and Value (`123456`) as below and click **√** in the bottom-right corner to confirm. When you finish, click **Create** to continue.
+2. Enter the basic information (for example, name it `mysql-secret`) and click **Next**. On the next page, select **Opaque (Default)** for **Type** and click **Add Data** to add a key-value pair. Enter the Key (`MYSQL_ROOT_PASSWORD`) and Value (`123456`) as below and click **√** in the bottom-right corner to confirm. When you finish, click **Create** to continue.
 
    ![key-value1](/images/docs/quickstart/wordpress-deployment/key-value1.png)
 
@@ -52,7 +52,7 @@ Follow the same steps above to create a WordPress Secret `wordpress-secret` with
 
    ![volumes1](/images/docs/quickstart/wordpress-deployment/volumes1.png)
 
-2. Enter the basic information of the volume (e.g. name it `wordpress-pvc`) and click **Next**.
+2. Enter the basic information of the volume (for example, name it `wordpress-pvc`) and click **Next**.
 
 3. In **Volume Settings**, you need to choose an available **Storage Class**, and set **Access Mode** and **Volume Capacity**. You can use the default value directly as shown below. Click **Next** to continue.
 
@@ -68,7 +68,7 @@ Follow the same steps above to create a WordPress Secret `wordpress-secret` with
 
    ![composing-app1](/images/docs/quickstart/wordpress-deployment/composing-app1.png)
 
-2. Enter the basic information (e.g. `wordpress` for **App Name**) and click **Next**.
+2. Enter the basic information (for example, `wordpress` for **App Name**) and click **Next**.
 
    ![basic-info1](/images/docs/quickstart/wordpress-deployment/basic-info1.png)
 
@@ -78,7 +78,7 @@ Follow the same steps above to create a WordPress Secret `wordpress-secret` with
 
 4. Define a service type for the component. Select **Stateful Service** here.
 
-5. Enter the name for the stateful service (e.g. **mysql**) and click **Next**.
+5. Enter the name for the stateful service (for example, **mysql**) and click **Next**.
 
    ![mysqlname1](/images/docs/quickstart/wordpress-deployment/mysqlname1.png)
 
@@ -96,11 +96,11 @@ In **Advanced Settings**, make sure the memory limit is no less than 1000 Mi or 
 
 {{</ notice >}} 
 
-8. Scroll down to **Environment Variables** and click **Use ConfigMap or Secret**. Input the name `MYSQL_ROOT_PASSWORD` and choose the resource `mysql-secret` and the key `MYSQL_ROOT_PASSWORD` created in the previous step. Click **√** after you finish and **Next** to continue.
+8. Scroll down to **Environment Variables** and click **Use ConfigMap or Secret**. Enter the name `MYSQL_ROOT_PASSWORD` and choose the resource `mysql-secret` and the key `MYSQL_ROOT_PASSWORD` created in the previous step. Click **√** after you finish and **Next** to continue.
 
    ![environment-var1](/images/docs/quickstart/wordpress-deployment/environment-var1.png)
 
-9. Select **Add Volume Template** in **Mount Volumes**. Input the value of **Volume Name** (`mysql`) and **Mount Path** (mode: `ReadAndWrite`, path: `/var/lib/mysql`) as below:
+9. Select **Add Volume Template** in **Mount Volumes**. Enter the value of **Volume Name** (`mysql`) and **Mount Path** (mode: `ReadAndWrite`, path: `/var/lib/mysql`) as below:
 
    ![volume-template1](/images/docs/quickstart/wordpress-deployment/volume-template1.png)
 
@@ -146,7 +146,7 @@ For the second environment variable added here, the value must be exactly the sa
 
     ![choose-existing-volume1](/images/docs/quickstart/wordpress-deployment/choose-existing-volume1.png)
 
-16. Select `wordpress-pvc` created in the previous step, set the mode as `ReadAndWrite`, and input `/var/www/html` as its mount path. Click **√** to save it and **Next** to continue.
+16. Select `wordpress-pvc` created in the previous step, set the mode as `ReadAndWrite`, and enter `/var/www/html` as its mount path. Click **√** to save it and **Next** to continue.
 
     ![mount-volume-page1](/images/docs/quickstart/wordpress-deployment/mount-volume-page1.png)
 

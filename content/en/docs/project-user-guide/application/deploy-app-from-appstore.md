@@ -19,7 +19,7 @@ This tutorial demonstrates how to quickly deploy [NGINX](https://www.nginx.com/)
 
 ### Step 1: Deploy NGINX from the App Store
 
-1. On the **Overview** page of the project `demo-project`, click **App Store** in the top left corner.
+1. On the **Overview** page of the project `demo-project`, click **App Store** in the top-left corner.
 
    ![app-store](/images/docs/project-user-guide/applications/deploy-apps-from-app-store/app-store.jpg)
 

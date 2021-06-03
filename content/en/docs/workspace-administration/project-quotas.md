@@ -6,7 +6,7 @@ linkTitle: "Project Quotas"
 weight: 9600
 ---
 
-KubeSphere uses requests and limits to control resource (e.g. CPU and memory) usage in a project, also known as [ResourceQuotas](https://kubernetes.io/docs/concepts/policy/resource-quotas/) in Kubernetes. Requests make sure a project can get the resources it needs as they are specifically guaranteed and reserved. On the contrary, limits ensure that a project can never use resources above a certain value.
+KubeSphere uses requests and limits to control resource (for example, CPU and memory) usage in a project, also known as [ResourceQuotas](https://kubernetes.io/docs/concepts/policy/resource-quotas/) in Kubernetes. Requests make sure a project can get the resources it needs as they are specifically guaranteed and reserved. On the contrary, limits ensure that a project can never use resources above a certain value.
 
 Besides CPU and memory, you can also set resource quotas for other objects separately such as Pods, [Deployments](../../project-user-guide/application-workloads/deployments/), [Jobs](../../project-user-guide/application-workloads/jobs/), [Services](../../project-user-guide/application-workloads/services/) and [ConfigMaps](../../project-user-guide/configuration/configmaps/) in a project.
 
@@ -48,7 +48,13 @@ If you use the account `project-admin` (an account of the `admin` role at the pr
 
 6. To change project quotas, click **Manage Project** on the **Basic Information** page and select **Edit Quota**.
 
-7. Change project quotas directly in the dialog that appears and click **OK**.
+   {{< notice note >}}
+
+   For [a multi-cluster project](../../project-administration/project-and-multicluster-project/#multi-cluster-projects), the option **Edit Quota** does not display in the **Manage Project** drop-down menu. To set quotas for a multi-cluster project, go to **Quota Management** under **Project Settings** and click **Edit Quota**. Note that as a multi-cluster project runs across clusters, you can set resource quotas on different clusters separately.
+
+   {{</ notice >}} 
+
+7. Change project quotas in the dialog that appears and click **OK**.
 
 ## See Also
 

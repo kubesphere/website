@@ -17,7 +17,7 @@ KubeSphere metering helps you track resource consumption within a given cluster 
 
 **Cluster Resource Consumption** contains resource usage information of clusters (and nodes included), such as CPU, memory and storage.
 
-1. Log in to the KubeSphere console as `admin`, click the hammer icon in the bottom right corner and select **Metering and Billing**.
+1. Log in to the KubeSphere console as `admin`, click the hammer icon in the bottom-right corner and select **Metering and Billing**.
 
 2. Click **View Consumption** in the **Cluster Resource Consumption** section.
 
@@ -55,7 +55,7 @@ KubeSphere metering helps you track resource consumption within a given cluster 
 
 **Workspace (Project) Resource Consumption** contains resource usage information of workspaces (and projects included), such as CPU, memory and storage.
 
-1. Log in to the KubeSphere console as `admin`, click the hammer icon in the bottom right corner and select **Metering and Billing**.
+1. Log in to the KubeSphere console as `admin`, click the hammer icon in the bottom-right corner and select **Metering and Billing**.
 
 2. Click **View Consumption** in the **Workspace (Project) Resource Consumption** section.
 

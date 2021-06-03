@@ -24,7 +24,7 @@ When you install KubeSphere on Linux, you need to create a configuration file, w
 
     {{< notice note >}}
 
-- If you adopt [All-in-One Installation](../../quick-start/all-in-one-on-linux/), you do not need to create a `config-sample.yaml` file as you can create a cluster directly. Generally, the all-in-one mode is for users who are new to KubeSphere and look to get familiar with the system. If you want to enable Logging in this mode (e.g. for testing purposes), refer to [the following section](#enable-logging-after-installation) to see how Logging can be installed after installation.
+- If you adopt [All-in-One Installation](../../quick-start/all-in-one-on-linux/), you do not need to create a `config-sample.yaml` file as you can create a cluster directly. Generally, the all-in-one mode is for users who are new to KubeSphere and look to get familiar with the system. If you want to enable Logging in this mode (for example, for testing purposes), refer to [the following section](#enable-logging-after-installation) to see how Logging can be installed after installation.
 
 - If you adopt [Multi-node Installation](../../installing-on-linux/introduction/multioverview/) and are using symbolic links for docker root directory, make sure all nodes follow the exactly same symbolic links. Logging agents are deployed in DaemonSets onto nodes. Any discrepancy in container log path may cause collection failures on that node.
 

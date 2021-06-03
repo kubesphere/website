@@ -127,7 +127,7 @@ Pipelines include [declarative pipelines](https://www.jenkins.io/doc/book/pipeli
 
 {{</ notice >}}
 
-1. On the graphical editing panel, select **node** from the **Type** drop-down list and input `maven` for **label**.
+1. On the graphical editing panel, select **node** from the **Type** drop-down list and enter `maven` for **label**.
 
    {{< notice note >}}
 
@@ -191,7 +191,7 @@ This stage uses SonarQube to test your code. You can skip this stage if you do n
 
    ![maven-container](/images/docs/devops-user-guide/using-devops/create-a-pipeline-using-graphical-editing-panels/maven-container.jpg)
 
-3. Click **Add nesting steps** under the `maven` container to add a nested step. Click **withCredentials** and select the SonarQube token (`sonar-token`) from the **Credential ID** list. Input `SONAR_TOKEN` for **Text Variable**, then click **OK**.
+3. Click **Add nesting steps** under the `maven` container to add a nested step. Click **withCredentials** and select the SonarQube token (`sonar-token`) from the **Credential ID** list. Enter `SONAR_TOKEN` for **Text Variable**, then click **OK**.
 
    ![sonarqube-credentials](/images/docs/devops-user-guide/using-devops/create-a-pipeline-using-graphical-editing-panels/sonarqube-credentials.jpg)
 
@@ -215,7 +215,7 @@ This stage uses SonarQube to test your code. You can skip this stage if you do n
 
    ![sonarqube-shell-new](/images/docs/devops-user-guide/using-devops/create-a-pipeline-using-graphical-editing-panels/sonarqube-shell-new.jpg)
 
-8. Click **Add nesting steps** (the third one) for the **container** step directly and select **timeout**. Input `1` for time and select **Hours** for unit. Click **OK** to finish.
+8. Click **Add nesting steps** (the third one) for the **container** step directly and select **timeout**. Enter `1` for time and select **Hours** for unit. Click **OK** to finish.
 
    ![add-nested-step-2](/images/docs/devops-user-guide/using-devops/create-a-pipeline-using-graphical-editing-panels/add-nested-step-2.jpg)
 
@@ -330,7 +330,7 @@ This stage uses SonarQube to test your code. You can skip this stage if you do n
 
    {{</ notice >}} 
 
-5. When you finish the steps above, click **Confirm** and **Save** in the bottom right corner. You can see the pipeline now has a complete workflow with each stage clearly listed on the pipeline. When you define a pipeline using the graphical editing panel, KubeSphere automatically creates its corresponding Jenkinsfile. Click **Edit Jenkinsfile** to view the Jenkinsfile.
+5. When you finish the steps above, click **Confirm** and **Save** in the bottom-right corner. You can see the pipeline now has a complete workflow with each stage clearly listed on the pipeline. When you define a pipeline using the graphical editing panel, KubeSphere automatically creates its corresponding Jenkinsfile. Click **Edit Jenkinsfile** to view the Jenkinsfile.
 
    ![pipeline-done](/images/docs/devops-user-guide/using-devops/create-a-pipeline-using-graphical-editing-panels/pipeline-done.jpg)
    
@@ -362,7 +362,7 @@ This stage uses SonarQube to test your code. You can skip this stage if you do n
 
    ![complete](/images/docs/devops-user-guide/using-devops/create-a-pipeline-using-graphical-editing-panels/complete.jpg)
 
-3. Click **Show Logs** in the top right corner to inspect all the logs. Click each stage to see detailed logs of it. You can debug any problems based on the logs which also can be downloaded locally for further analysis.
+3. Click **Show Logs** in the top-right corner to inspect all the logs. Click each stage to see detailed logs of it. You can debug any problems based on the logs which also can be downloaded locally for further analysis.
 
    ![inspect-logs](/images/docs/devops-user-guide/using-devops/create-a-pipeline-using-graphical-editing-panels/inspect-logs.jpg)
 

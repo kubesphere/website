@@ -19,7 +19,7 @@ This tutorial demonstrates how to create a microservices-based app Bookinfo, whi
 
 1. Log in to the web console of KubeSphere and navigate to **Apps** in **Application Workloads** of your project. On the **Composing Apps** tab, click **Create Composing App**.
 
-2. Set a name for the app (e.g. `bookinfo`) and click **Next**.
+2. Set a name for the app (for example, `bookinfo`) and click **Next**.
 
 3. On the **Components** page, you need to create microservices that compose the app. Click **Add Service** and select **Stateless Service**.
 
@@ -27,7 +27,7 @@ This tutorial demonstrates how to create a microservices-based app Bookinfo, whi
 
    {{< notice note >}}
 
-   You can create a Service on the dashboard directly or enable **Edit Mode** in the top right corner to edit the YAML file.
+   You can create a Service on the dashboard directly or enable **Edit Mode** in the top-right corner to edit the YAML file.
 
    {{</ notice >}} 
 
@@ -39,7 +39,7 @@ This tutorial demonstrates how to create a microservices-based app Bookinfo, whi
 
    {{</ notice >}} 
 
-6. Click **Use Default Ports**. For more information about image settings, see [Container Image Settings](../../../project-user-guide/application-workloads/container-image-settings/). Click **√** in the bottom right corner and **Next** to continue.
+6. Click **Use Default Ports**. For more information about image settings, see [Container Image Settings](../../../project-user-guide/application-workloads/container-image-settings/). Click **√** in the bottom-right corner and **Next** to continue.
 
 7. On the **Mount Volumes** page, [add a volume](../../../project-user-guide/storage/volumes/) or click **Next** to continue.
 
@@ -55,7 +55,7 @@ This tutorial demonstrates how to create a microservices-based app Bookinfo, whi
 
 10. When you finish adding microservices, click **Next**.
 
-11. On the **Internet Access** page, click **Add Route Rule**. On the **Specify Domain** tab, set a domain name for your app (e.g. `demo.bookinfo`) and select `http` in the **Protocol** field. For `Paths`, select the Service `productpage` and port `9080`. Click **OK** to continue.
+11. On the **Internet Access** page, click **Add Route Rule**. On the **Specify Domain** tab, set a domain name for your app (for example, `demo.bookinfo`) and select `http` in the **Protocol** field. For `Paths`, select the Service `productpage` and port `9080`. Click **OK** to continue.
 
     ![route](/images/docs/project-user-guide/applications/create-a-microservices-based-app/route.png)
 

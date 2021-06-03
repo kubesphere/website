@@ -53,7 +53,7 @@ Install `nfs-common` on all of the clients. It provides necessary NFS functions 
    {{< notice note >}}
 
    - If you want to configure more values, see [chart configurations for NFS-client](https://github.com/kubesphere/helm-charts/tree/master/src/main/nfs-client-provisioner#configuration).
-   - The `storageClass.defaultClass` field controls whether you want to set the storage class of NFS-client Provisioner as the default one. If you input `false` for it, KubeKey will install [OpenEBS](https://github.com/openebs/openebs) to provide local volumes, while they are not provisioned dynamically as you create workloads on your cluster. After you install KubeSphere, you can change the default storage class on the console directly.
+   - The `storageClass.defaultClass` field controls whether you want to set the storage class of NFS-client Provisioner as the default one. If you enter `false` for it, KubeKey will install [OpenEBS](https://github.com/openebs/openebs) to provide local volumes, while they are not provisioned dynamically as you create workloads on your cluster. After you install KubeSphere, you can change the default storage class on the console directly.
 
    {{</ notice >}}
 
@@ -256,7 +256,7 @@ You can verify that NFS-client has been successfully installed either from the c
 
 ### KubeSphere console
 
-1. Log in to the web console as `admin` with the default account and password at `<NodeIP>:30880`. Click **Platform** in the top left corner and select **Cluster Management**.
+1. Log in to the web console as `admin` with the default account and password at `<NodeIP>:30880`. Click **Platform** in the top-left corner and select **Cluster Management**.
 
 2. Go to **Pods** in **Application Workloads** and select `kube-system` from the project drop-down list. You can see that the Pod of `nfs-client` is up and running.
 

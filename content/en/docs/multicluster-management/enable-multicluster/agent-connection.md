@@ -6,7 +6,7 @@ titleLink: "Agent Connection"
 weight: 5220
 ---
 
-The component [Tower](https://github.com/kubesphere/tower) of KubeSphere is used for agent connection. Tower is a tool for network connection between clusters through the agent. If the Host Cluster (H Cluster) cannot access the Member Cluster (M Cluster) directly, you can expose the proxy service address of the H cluster. This enables the M Cluster to connect to the H Cluster through the agent. This method is applicable when the M Cluster is in a private environment (e.g. IDC) and the H Cluster is able to expose the proxy service. The agent connection is also applicable when your clusters are distributed across different cloud providers.
+The component [Tower](https://github.com/kubesphere/tower) of KubeSphere is used for agent connection. Tower is a tool for network connection between clusters through the agent. If the Host Cluster (H Cluster) cannot access the Member Cluster (M Cluster) directly, you can expose the proxy service address of the H cluster. This enables the M Cluster to connect to the H Cluster through the agent. This method is applicable when the M Cluster is in a private environment (for example, IDC) and the H Cluster is able to expose the proxy service. The agent connection is also applicable when your clusters are distributed across different cloud providers.
 
 To use the multi-cluster feature using an agent, you must have at least two clusters serving as the H Cluster and the M Cluster respectively. A cluster can be defined as the H Cluster or the M Cluster either before or after you install KubeSphere. For more information about installing KubeSphere, refer to [Installing on Linux](../../../installing-on-linux/) and [Installing on Kubernetes](../../../installing-on-kubernetes/).
 
@@ -113,7 +113,7 @@ Generally, there is always a LoadBalancer solution in the public cloud, and the 
     tower      LoadBalancer    10.233.63.191   <pending>  8080:30721/TCP            16h
     ```
 
-2. Add the value of `proxyPublishAddress` to the configuration file of `ks-installer` and input the public IP address (`139.198.120.120` in this tutorial) and port number as follows.
+2. Add the value of `proxyPublishAddress` to the configuration file of `ks-installer` and provide the public IP address (`139.198.120.120` in this tutorial) and port number as follows.
 
     - Option A - Use the web console:
 
@@ -173,7 +173,7 @@ If you already have a standalone KubeSphere cluster installed, you can set the v
   kubectl edit cc ks-installer -n kubesphere-system
   ```
 
-In the YAML file of `ks-installer`, input the corresponding `jwtSecret` shown above:
+In the YAML file of `ks-installer`, enter the corresponding `jwtSecret` shown above:
 
 ```yaml
 authentication:
@@ -193,7 +193,7 @@ You need to **wait for a while** so that the change can take effect.
 
 {{< tab "KubeSphere has not been installed" >}}
 
-You can define a member cluster before you install KubeSphere either on Linux or on an existing Kubernetes cluster. If you want to [install KubeSphere on Linux](../../../installing-on-linux/introduction/multioverview/#1-create-an-example-configuration-file), you use a `config-sample.yaml` file. If you want to [install KubeSphere on an existing Kubernetes cluster](../../../installing-on-kubernetes/introduction/overview/#deploy-kubesphere), you use two YAML files, one of which is `cluster-configuration.yaml`. To set a member cluster, input the value of `jwtSecret` shown above and change the value of `clusterRole` to `member` in `config-sample.yaml` or `cluster-configuration.yaml` accordingly before you install KubeSphere.
+You can define a member cluster before you install KubeSphere either on Linux or on an existing Kubernetes cluster. If you want to [install KubeSphere on Linux](../../../installing-on-linux/introduction/multioverview/#1-create-an-example-configuration-file), you use a `config-sample.yaml` file. If you want to [install KubeSphere on an existing Kubernetes cluster](../../../installing-on-kubernetes/introduction/overview/#deploy-kubesphere), you use two YAML files, one of which is `cluster-configuration.yaml`. To set a member cluster, enter the value of `jwtSecret` shown above and change the value of `clusterRole` to `member` in `config-sample.yaml` or `cluster-configuration.yaml` accordingly before you install KubeSphere.
 
 ```yaml
 authentication:
@@ -227,7 +227,7 @@ kubectl logs -n kubesphere-system $(kubectl get pod -n kubesphere-system -l app=
    
    ![add-cluster](/images/docs/multicluster-management/enable-multicluster-management-in-kubesphere/agent-connection/add-cluster.png)
 
-2. Enter the basic information of the cluster to be imported on the **Import Cluster** page. You can also click **Edit Mode** in the top right corner to view and edit the basic information in YAML format. After you finish editing, click **Next**.
+2. Enter the basic information of the cluster to be imported on the **Import Cluster** page. You can also click **Edit Mode** in the top-right corner to view and edit the basic information in YAML format. After you finish editing, click **Next**.
 
      ![cluster-info](/images/docs/multicluster-management/enable-multicluster-management-in-kubesphere/agent-connection/cluster-info.png)
 

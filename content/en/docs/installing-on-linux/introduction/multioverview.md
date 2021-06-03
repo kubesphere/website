@@ -16,7 +16,7 @@ This section gives you an overview of a single-master multi-node installation, i
 
 ## Concept
 
-A multi-node cluster is composed of at least one master node and one worker node. You can use any node as the **taskbox** to carry out the installation task. You can add additional nodes based on your needs (e.g. for high availability) both before and after the installation.
+A multi-node cluster is composed of at least one master node and one worker node. You can use any node as the **taskbox** to carry out the installation task. You can add additional nodes based on your needs (for example, for high availability) both before and after the installation.
 
 - **Master**. A master node generally hosts the control plane that controls and manages the whole system.
 - **Worker**. Worker nodes run the actual applications deployed on them.
@@ -177,7 +177,7 @@ Here are some examples for your reference:
   ./kk create config [-f ~/myfolder/abc.yaml]
   ```
 
-- You can specify a KubeSphere version that you want to install (e.g. `--with-kubesphere v3.1.0`).
+- You can specify a KubeSphere version that you want to install (for example, `--with-kubesphere v3.1.0`).
 
   ```bash
   ./kk create config --with-kubesphere [version]
@@ -219,7 +219,7 @@ List all your machines under `hosts` and add their detailed information as above
 
 `name`: The hostname of the instance.
 
-`address`: The IP address you use for the connection between the taskbox and other instances through SSH. This can be either the public IP address or the private IP address depending on your environment. For example, some cloud platforms provide every instance with a public IP address which you use to access instances through SSH. In this case, you can input the public IP address for this field.
+`address`: The IP address you use for the connection between the taskbox and other instances through SSH. This can be either the public IP address or the private IP address depending on your environment. For example, some cloud platforms provide every instance with a public IP address which you use to access instances through SSH. In this case, you can provide the public IP address for this field.
 
 `internalAddress`: The private IP address of the instance.
 
@@ -278,7 +278,7 @@ The `controlPlaneEndpoint` is where you provide your external load balancer info
 
 #### addons
 
-You can customize persistent storage plugins (e.g. NFS Client, Ceph RBD, and GlusterFS) by specifying storage under the field `addons` in `config-sample.yaml`. For more information, see [Persistent Storage Configurations](../../../installing-on-linux/persistent-storage-configurations/understand-persistent-storage/).
+You can customize persistent storage plugins (for example, NFS Client, Ceph RBD, and GlusterFS) by specifying storage under the field `addons` in `config-sample.yaml`. For more information, see [Persistent Storage Configurations](../../../installing-on-linux/persistent-storage-configurations/understand-persistent-storage/).
 
 KubeKey will install [OpenEBS](https://openebs.io/) to provision [LocalPV](https://kubernetes.io/docs/concepts/storage/volumes/#local) for development and testing environment by default, which is convenient for new users. In this example of multi-node installation, the default storage class (local volume) is used. For production, you can use NFS/Ceph/GlusterFS/CSI or commercial products as persistent storage solutions.
 

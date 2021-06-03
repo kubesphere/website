@@ -30,7 +30,7 @@ You need to create a workspace, a project and an account (`project-admin`). The 
    
    **LoadBalancer**: You can access Services with a single IP address through the gateway.
    
-3. You can also enable **Application Governance** on the **Set Gateway** page. You need to enable **Application Governance** so that you can use the Tracing feature and use [different grayscale release strategies](../../project-user-guide/grayscale-release/overview/). Once it is enabled, check whether an annotation (e.g. `nginx.ingress.kubernetes.io/service-upstream: true`) is added for your route (Ingress) if the route is inaccessible.
+3. You can also enable **Application Governance** on the **Set Gateway** page. You need to enable **Application Governance** so that you can use the Tracing feature and use [different grayscale release strategies](../../project-user-guide/grayscale-release/overview/). Once it is enabled, check whether an annotation (for example, `nginx.ingress.kubernetes.io/service-upstream: true`) is added for your route (Ingress) if the route is inaccessible.
 
 4. After you select an access method, click **Save**.
 

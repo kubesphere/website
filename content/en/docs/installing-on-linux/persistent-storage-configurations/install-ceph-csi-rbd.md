@@ -77,7 +77,7 @@ mountOptions:
 
 #### Add-on configurations
 
-Save the above chart config and StorageClass locally (e.g. `/root/ceph-csi-rbd.yaml` and `/root/ceph-csi-rbd-sc.yaml`). The add-on configuration can be set like:
+Save the above chart config and StorageClass locally (for example, `/root/ceph-csi-rbd.yaml` and `/root/ceph-csi-rbd-sc.yaml`). The add-on configuration can be set like:
 
 ```yaml
 addons: 
@@ -115,7 +115,7 @@ If you want to configure more values, see [chart configuration for rbd-provision
 
 #### Add-on configurations
 
-Save the above chart config locally (e.g. `/root/rbd-provisioner.yaml`). The add-on config for rbd provisioner cloud be like: 
+Save the above chart config locally (for example, `/root/rbd-provisioner.yaml`). The add-on config for rbd provisioner cloud be like: 
 
 ```yaml
 - name: rbd-provisioner

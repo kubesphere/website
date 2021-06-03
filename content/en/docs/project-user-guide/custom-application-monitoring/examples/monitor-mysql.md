@@ -20,7 +20,7 @@ This tutorial walks you through an example of how to monitor MySQL metrics and v
 
 To begin with, you [deploy MySQL from the App Store](../../../../application-store/built-in-apps/mysql-app/) and set the root password to `testing`.
 
-1. Go to the project `demo` and click **App Store** in the top left corner.
+1. Go to the project `demo` and click **App Store** in the top-left corner.
 
     ![go-to-app-store](/images/docs/project-user-guide/custom-application-monitoring/go-to-app-store.jpg)
 
@@ -61,7 +61,7 @@ You need to deploy MySQL exporter in `demo` on the same cluster. MySQL exporter 
     ![set-servicemonitor-to-true](/images/docs/project-user-guide/custom-application-monitoring/set-servicemonitor-to-true.jpg)
 
     {{< notice warning >}}
-Don't forget to enable the ServiceMonitor CRD if you are using external exporter Helm charts. Those charts usually disable ServiceMonitor by default and require manual modification.
+Don't forget to enable the ServiceMonitor CRD if you are using external exporter Helm charts. Those charts usually disable ServiceMonitors by default and require manual modification.
     {{</ notice >}}
 
 4. Modify MySQL connection parameters. MySQL exporter needs to connect to the target MySQL. In this tutorial, MySQL is installed with the service name `mysql-a8xgvx`. Set `mysql.host` to `mysql-a8xgvx`, `mysql.pass` to `testing`, and `user` to `root` as below. Note that your MySQL service may be created with **a different name**.
@@ -86,7 +86,7 @@ After about two minutes, you can create a monitoring dashboard for MySQL and vis
 
     ![create-mysql-dashboard](/images/docs/project-user-guide/custom-application-monitoring/create-mysql-dashboard.jpg)
 
-3. Save the template by clicking **Save Template** in the top right corner. A newly-created dashboard displays in the dashboard list as below.
+3. Save the template by clicking **Save Template** in the top-right corner. A newly-created dashboard displays in the dashboard list as below.
 
     ![save-mysql-template](/images/docs/project-user-guide/custom-application-monitoring/save-mysql-template.jpg)
 

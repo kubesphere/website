@@ -29,7 +29,7 @@ KubeKey creates [a configuration file](../../../installing-on-linux/introduction
 
 There are generally two ways for you to let KubeKey apply configurations of the storage system to be installed.
 
-1. Input necessary parameters under the `addons` field directly in `config-sample.yaml`.
+1. Enter necessary parameters under the `addons` field directly in `config-sample.yaml`.
 2. Create a separate configuration file for your add-on to list all the necessary parameters and provide the path of the file in `config-sample.yaml` so that KubeKey can reference it during installation.
 
 For more information, see [add-ons](https://github.com/kubesphere/kubekey/blob/master/docs/addons.md).

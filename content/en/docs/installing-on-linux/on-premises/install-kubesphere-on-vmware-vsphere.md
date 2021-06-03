@@ -9,7 +9,7 @@ weight: 3510
 
 ## Introduction
 
-For a production environment, we need to consider the high availability of the cluster. If the key components (e.g. kube-apiserver, kube-scheduler, and kube-controller-manager) are all running on the same master node, Kubernetes and KubeSphere will be unavailable once the master node goes down. Therefore, we need to set up a high-availability cluster by provisioning load balancers with multiple master nodes. You can use any cloud load balancer, or any hardware load balancer (e.g. F5). In addition, Keepalived and [HAProxy](https://www.haproxy.com/), or Nginx is also an alternative for creating high-availability clusters.
+For a production environment, we need to consider the high availability of the cluster. If the key components (for example, kube-apiserver, kube-scheduler, and kube-controller-manager) are all running on the same master node, Kubernetes and KubeSphere will be unavailable once the master node goes down. Therefore, we need to set up a high-availability cluster by provisioning load balancers with multiple master nodes. You can use any cloud load balancer, or any hardware load balancer (for example, F5). In addition, Keepalived and [HAProxy](https://www.haproxy.com/), or Nginx is also an alternative for creating high-availability clusters.
 
 This tutorial walks you through an example of how to create Keepalived and HAProxy, and implement high availability of master and etcd nodes using the load balancers on VMware vSphere.
 
@@ -77,7 +77,7 @@ You can follow the New Virtual Machine wizard to create a virtual machine to pla
 
     ![kubesphereOnVsphere-en-0-1-7-hardware-4](/images/docs/vsphere/kubesphereOnVsphere-en-0-1-7-hardware-4.png)
 
-6. In **Ready to complete** page, you review the configuration selections that you have made for the virtual machine. Click **Finish** at the bottom right corner to continue.
+6. In **Ready to complete** page, you review the configuration selections that you have made for the virtual machine. Click **Finish** at the bottom-right corner to continue.
 
     ![kubesphereOnVsphere-en-0-1-8](/images/docs/vsphere/kubesphereOnVsphere-en-0-1-8.png)
 
@@ -345,7 +345,7 @@ chmod +x kk
 
 With KubeKey, you can install Kubernetes and KubeSphere together. You have the option to create a multi-node cluster by customizing parameters in the configuration file.
 
-Create a Kubernetes cluster with KubeSphere installed (e.g. `--with-kubesphere v3.1.0`):
+Create a Kubernetes cluster with KubeSphere installed (for example, `--with-kubesphere v3.1.0`):
 
 ```bash
 ./kk create config --with-kubernetes v1.19.8 --with-kubesphere v3.1.0

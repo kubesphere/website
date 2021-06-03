@@ -100,7 +100,7 @@ If you already have a standalone KubeSphere cluster installed, you can set the v
   kubectl edit cc ks-installer -n kubesphere-system
   ```
 
-In the YAML file of `ks-installer`, input the corresponding `jwtSecret` shown above:
+In the YAML file of `ks-installer`, enter the corresponding `jwtSecret` shown above:
 
 ```yaml
 authentication:
@@ -120,7 +120,7 @@ You need to **wait for a while** so that the change can take effect.
 
 {{< tab "KubeSphere has not been installed" >}}
 
-You can define a member cluster before you install KubeSphere either on Linux or on an existing Kubernetes cluster. If you want to [install KubeSphere on Linux](../../../installing-on-linux/introduction/multioverview/#1-create-an-example-configuration-file), you use a `config-sample.yaml` file. If you want to [install KubeSphere on an existing Kubernetes cluster](../../../installing-on-kubernetes/introduction/overview/#deploy-kubesphere), you use two YAML files, one of which is `cluster-configuration.yaml`. To set a member cluster, input the value of `jwtSecret` shown above and change the value of `clusterRole` to `member` in `config-sample.yaml` or `cluster-configuration.yaml` accordingly before you install KubeSphere.
+You can define a member cluster before you install KubeSphere either on Linux or on an existing Kubernetes cluster. If you want to [install KubeSphere on Linux](../../../installing-on-linux/introduction/multioverview/#1-create-an-example-configuration-file), you use a `config-sample.yaml` file. If you want to [install KubeSphere on an existing Kubernetes cluster](../../../installing-on-kubernetes/introduction/overview/#deploy-kubesphere), you use two YAML files, one of which is `cluster-configuration.yaml`. To set a member cluster, enter the value of `jwtSecret` shown above and change the value of `clusterRole` to `member` in `config-sample.yaml` or `cluster-configuration.yaml` accordingly before you install KubeSphere.
 
 ```yaml
 authentication:
@@ -154,11 +154,11 @@ kubectl logs -n kubesphere-system $(kubectl get pod -n kubesphere-system -l app=
    
    ![add-cluster](/images/docs/multicluster-management/enable-multicluster-management-in-kubesphere/direct-connection/add-cluster.png)
 
-2. Enter the basic information of the cluster to be imported on the **Import Cluster** page. You can also click **Edit Mode** in the top right corner to view and edit the basic information in YAML format. After you finish editing, click **Next**.
+2. Enter the basic information of the cluster to be imported on the **Import Cluster** page. You can also click **Edit Mode** in the top-right corner to view and edit the basic information in YAML format. After you finish editing, click **Next**.
 
      ![cluster-info](/images/docs/multicluster-management/enable-multicluster-management-in-kubesphere/direct-connection/cluster-info.png)
 
-3. In **Connection Method**, select **Direct Connection**, and copy the kubeconfig of the Member Cluster and paste it into the box. You can also click **Edit Mode** in the top right corner to edit the kubeconfig of the Member Cluster in YAML format.
+3. In **Connection Method**, select **Direct Connection**, and copy the kubeconfig of the Member Cluster and paste it into the box. You can also click **Edit Mode** in the top-right corner to edit the kubeconfig of the Member Cluster in YAML format.
 
      {{< notice note >}}
 

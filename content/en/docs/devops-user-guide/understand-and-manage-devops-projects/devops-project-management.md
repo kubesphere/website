@@ -48,7 +48,7 @@ A DevOps project user with required permissions can configure credentials for pi
 
 ### Members and roles
 
-Similar to a project, a DevOps project also requires users to be granted different roles before they can work in the DevOps project. Project administrators (e.g. `project-admin`) are responsible for inviting tenants and granting them different roles. For more information, see [Role and Member Management](../role-and-member-management/).
+Similar to a project, a DevOps project also requires users to be granted different roles before they can work in the DevOps project. Project administrators (for example, `project-admin`) are responsible for inviting tenants and granting them different roles. For more information, see [Role and Member Management](../role-and-member-management/).
 
 ## Edit or Delete a DevOps Project
 

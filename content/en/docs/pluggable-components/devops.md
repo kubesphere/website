@@ -8,7 +8,7 @@ weight: 6300
 
 The KubeSphere DevOps System is designed for CI/CD workflows in Kubernetes. Based on [Jenkins](https://jenkins.io/), it provides one-stop solutions to help both development and Ops teams build, test and publish apps to Kubernetes in a straight-forward way. It also features plugin management, [Binary-to-Image (B2I)](../../project-user-guide/image-builder/binary-to-image/), [Source-to-Image (S2I)](../../project-user-guide/image-builder/source-to-image/), code dependency caching, code quality analysis, pipeline logging, etc.
 
-The DevOps System offers an enabling environment for users as apps can be automatically released to the same platform. It is also compatible with third-party private image registries (e.g. Harbor) and code repositories (e.g. GitLab/GitHub/SVN/BitBucket). As such, it creates excellent user experiences by providing users with comprehensive, visualized CI/CD pipelines which are extremely useful in air-gapped environments.
+The DevOps System offers an enabling environment for users as apps can be automatically released to the same platform. It is also compatible with third-party private image registries (for example, Harbor) and code repositories (for example, GitLab/GitHub/SVN/BitBucket). As such, it creates excellent user experiences by providing users with comprehensive, visualized CI/CD pipelines which are extremely useful in air-gapped environments.
 
 For more information, see [DevOps User Guide](../../devops-user-guide/).
 
@@ -25,7 +25,7 @@ When you implement multi-node installation of KubeSphere on Linux, you need to c
     ```
 
     {{< notice note >}}
-If you adopt [All-in-One Installation](../../quick-start/all-in-one-on-linux/), you do not need to create a `config-sample.yaml` file as you can create a cluster directly. Generally, the all-in-one mode is for users who are new to KubeSphere and look to get familiar with the system. If you want to enable DevOps in this mode (e.g. for testing purposes), refer to [the following section](#enable-devops-after-installation) to see how DevOps can be installed after installation.
+If you adopt [All-in-One Installation](../../quick-start/all-in-one-on-linux/), you do not need to create a `config-sample.yaml` file as you can create a cluster directly. Generally, the all-in-one mode is for users who are new to KubeSphere and look to get familiar with the system. If you want to enable DevOps in this mode (for example, for testing purposes), refer to [the following section](#enable-devops-after-installation) to see how DevOps can be installed after installation.
     {{</ notice >}}
 
 2. In this file, navigate to `devops` and change `false` to `true` for `enabled`. Save the file after you finish.
