@@ -6,3 +6,4 @@ addGoogleAnalytics = true
 addGoogleTag = true
 hotjarTracking = true
 youtubeLink = "https://www.youtube.com/channel/UCyTdUQUYjf7XLjxECx63Hpw"
+addLinkedin = true
