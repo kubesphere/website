@@ -98,37 +98,42 @@ When describing the UI, you can use the following prepositions.
   </thead>
   <tbody>
     <tr>
-      <td>in</td>
-      <td>
-        <p>dialogs</p>
-        <p>fields</p>
-        <p>lists</p>
-        <p>menus</p>
-        <p>sidebars</p>
-        <p>windows</p>
-      </td>
-      <td>
-        <p>In the <b>Delete User</b> dialog, enter the name and click <b>OK</b>.</p>
-        <p>In the <b>Name</b> field, enter <code>demo-name</code>.</p>
-        <p>In the <b>Language</b> drop-down list, select a desired language.</p>
-        <p>In the <b>More</b> menu, click <b>Delete</b>.</p>
-        <p>Click <b>Volumes</b> under <b>Storage</b> in the sidebar.</p>
-        <p>In the <b>Metering and Billing</b> window, click <b>View Consumption</b>.</p>
-      </td>
+      <td rowspan="6">in</td>
+      <td>dialogs</td>
+      <td>In the <b>Delete User</b> dialog, enter the name and click <b>OK</b>.</td>
     </tr>
     <tr>
-      <td>on</td>
-      <td>
-        <p>pages</p>
-        <p>tabs</p>
-      </td>
-      <td>
-        <p>On the <b>Volumes</b> page, click <b>Create</b>.</p>
-        <p>On the <b>Deployments</b> tab, click <b>Create</b>.</p>
-      </td>
+      <td>fields</td>
+      <td>In the <b>Name</b> field, enter <code>demo-name</code>.</td>
+    </tr>
+    <tr>
+      <td>lists</td>
+      <td>In the <b>Language</b> drop-down list, select a desired language.</td>
+    </tr>
+    <tr>
+      <td>menus</td>
+      <td>In the <b>More</b> menu, click <b>Delete</b>.</td>
+    </tr>
+    <tr>
+      <td>sidebars</td>
+      <td>Click <b>Volumes</b> under <b>Storage</b> in the sidebar.</td>
+    </tr>
+    <tr>
+      <td>windows</td>
+      <td>In the <b>Metering and Billing</b> window, click <b>View Consumption</b>.</td>
+    </tr>
+    <tr>
+      <td rowspan="2">on</td>
+      <td>pages</td>
+      <td>On the <b>Volumes</b> page, click <b>Create</b>.</td>
+    </tr>
+     <tr>
+      <td>tabs</td>
+      <td>On the <b>Deployments</b> tab, click <b>Create</b>.</td>
     </tr>
   </tbody>
-  </table>
+</table>  
+
 ### Code
 
 - For short commands, you can just put them within ``. This is often used when you only need to tell readers about a short command or it is sufficient to express your meaning just with the command in a sentence.
