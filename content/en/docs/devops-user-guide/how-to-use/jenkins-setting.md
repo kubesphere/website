@@ -82,7 +82,7 @@ After you modified `jenkins-casc-config`, you need to reload your updated system
 
    ![configuration-as-code](/images/docs/devops-user-guide/using-devops/jenkins-system-settings/configuration-as-code.png)
 
-6. To reload configurations that you have modified in the ConfigMap, click **Apply new configuration**. Note that the CasC configuration can only be applied once after Jenkins is rescheduled.
+6. To reload configurations that you have modified in the ConfigMap, click **Apply new configuration**.
 
    ![apply-config](/images/docs/devops-user-guide/using-devops/jenkins-system-settings/apply-config.png)
 

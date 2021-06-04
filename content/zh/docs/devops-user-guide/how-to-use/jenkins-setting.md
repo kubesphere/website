@@ -82,7 +82,7 @@ KubeSphere 默认安装 Jenkins Configuration as Code 插件，您可以通过 Y
 
    ![configuration-as-code](/images/docs/zh-cn/devops-user-guide/use-devops/jenkins-system-settings/configuration-as-code.png)
 
-6. 要重新加载 ConfigMap 中已修改的配置，请点击**应用新配置**。Jenkins 重新调度后，CasC 配置只能应用一次。
+6. 要重新加载 ConfigMap 中已修改的配置，请点击**应用新配置**。
 
    ![应用配置](/images/docs/zh-cn/devops-user-guide/use-devops/jenkins-system-settings/apply-config.png)
 
