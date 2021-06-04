@@ -30,7 +30,7 @@ It is recommended that you configure Jenkins in KubeSphere through Configuration
 
 1. Log in to KubeSphere as `admin`. Click **Platform** in the top left corner and select **Cluster Management**.
 
-   ![cluster-management](/images/docs/devops-user-guide/using-devops/jenkins-system-settings/cluster-management.jpg)
+   ![cluster-management](/images/docs/devops-user-guide/using-devops/jenkins-system-settings/cluster-management.png)
 
 2. If you have enabled the [multi-cluster feature](../../../multicluster-management/) with member clusters imported, you can select a specific cluster to edit the ConfigMap. If you have not enabled the feature, refer to the next step directly.
 
