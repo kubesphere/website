@@ -18,28 +18,32 @@ weight: 9100
 
 ## 创建企业空间
 
-1. 以 `ws-manager` 身份登录 KubeSphere Web 控制台。在**访问控制**页面，您可以查看平台上的所有企业空间。列表中已列出默认企业空间 `system-workspace`，该企业空间包含所有系统项目。
+1. 以 `ws-manager` 身份登录 KubeSphere Web 控制台。在**企业空间**页面，您可以查看平台上的所有企业空间。点击**创建**。
 
-2. 点击**创建**。
+   ![workspace-list-1](/images/docs/zh-cn/workspace-administration-and-user-guide/workspace-overview/workspace-list-1.png)
 
-   ![企业空间列表](/images/docs/zh-cn/workspace-administration-and-user-guide/workspace-overview/workspace-list.PNG)
+   {{< notice note >}}
 
-3. **在基本信息**页面，为创建的企业空间输入名称，并从下拉菜单中选择一名企业空间管理员。点击**创建**以继续。
+   列表中已列出默认企业空间 `system-workspace`，该企业空间包含所有系统项目。
 
-   ![输入企业空间信息](/images/docs/zh-cn/workspace-administration-and-user-guide/workspace-overview/provide-workspace-info.PNG)
+   {{</ notice >}}
+
+2. 在**基本信息**页面，为创建的企业空间输入名称，并从下拉菜单中选择一名企业空间管理员。点击**创建**以继续。
+
+   ![set-workspace-info](/images/docs/zh-cn/workspace-administration-and-user-guide/workspace-overview/set-workspace-info.png)
 
    - **企业空间名称**：为企业空间设置一个专属名称。
    - **别名**：该企业空间的另一种名称。
    - **企业空间管理员**：管理该企业空间的帐户。
    - **描述信息**：企业空间的简短介绍。
 
-4. 新创建的企业空间将在下图所示的列表中列出。
+3. 新创建的企业空间将在下图所示的列表中列出。
 
-   ![创建的企业空间](/images/docs/zh-cn/workspace-administration-and-user-guide/workspace-overview/created-workspace.PNG)
+   ![workspace-created](/images/docs/zh-cn/workspace-administration-and-user-guide/workspace-overview/workspace-created.png)
 
-5. 点击该企业空间，您就可以在**概览**页面查看企业空间中的资源状态。
+4. 点击该企业空间，您可以在**概览**页面查看企业空间中的资源状态。
 
-   ![企业空间概览](/images/docs/zh-cn/workspace-administration-and-user-guide/workspace-overview/workspace-overview.PNG)
+   ![workspace-overview-4](/images/docs/zh-cn/workspace-administration-and-user-guide/workspace-overview/workspace-overview-4.png)
 
 ## 删除企业空间
 
@@ -73,7 +77,7 @@ kubectl label ns <namespace> kubesphere.io/workspace- && kubectl patch ns <names
 
 1. 在企业空间页面，转到**企业空间设置**菜单下的**基本信息**。在**基本信息**页面，您可以查看该企业空间的基本信息，例如项目数量和成员数量。
 
-   ![企业空间基本信息](/images/docs/zh-cn/workspace-administration-and-user-guide/workspace-overview/workspace-basic-info.PNG)
+   ![delete-workspace](/images/docs/zh-cn/workspace-administration-and-user-guide/workspace-overview/delete-workspace.png)
 
    {{< notice note >}}
 
