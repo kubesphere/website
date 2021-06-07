@@ -19,28 +19,32 @@ You have an account granted the role of `workspaces-manager`, such as `ws-manage
 
 ## Create a Workspace
 
-1. Log in to the web console of KubeSphere as `ws-manager`. On the **Access Control** page, you can see all workspaces on the platform. By default, you have at least one workspace `system-workspace` in the list which contains all system projects.
+1. Log in to the web console of KubeSphere as `ws-manager`. On the **Workspaces** page, you can see all workspaces on the platform. Click **Create**.
 
-2. Click **Create**.
+   ![workspaces-list](/images/docs/workspace-administration/workspace-overview/workspaces-list.png)
 
-   ![workspace-list](/images/docs/workspace-administration/workspace-overview/workspace-list.jpg)
+   {{< notice note >}}
 
-3. On the **Basic Info** page, specify a name for the workspace and select a workspace manager from the list. Click **Create** to continue.
+   By default, you have at least one workspace `system-workspace` in the list which contains all system projects.
 
-   ![provide-workspace-info](/images/docs/workspace-administration/workspace-overview/provide-workspace-info.jpg)
+   {{</ notice >}}
 
-   - **Workspace Name**: Set a name for the workspace which serves as a unique identifier.
+2. On the **Basic Information** page, specify a name for the workspace and select an administrator from the drop-down list. Click **Create** to continue.
+
+   ![set-workspace-info](/images/docs/workspace-administration/workspace-overview/set-workspace-info.png)
+
+   - **Name**: Set a name for the workspace which serves as a unique identifier.
    - **Alias**: An alias name for the workspace.
-   - **Workspace Manager**: The person who administrates the workspace.
+   - **Administrator**: The account that administrates the workspace.
    - **Description**: A brief introduction of the workspace.
 
-4. A newly-created workspace displays in the list as below.
+3. The workspace created appears in the list as shown below.
 
-   ![created-workspace](/images/docs/workspace-administration/workspace-overview/created-workspace.jpg)
+   ![workspace-created](/images/docs/workspace-administration/workspace-overview/workspace-created.png)
 
-5. Click the workspace and you can see resource status in the workspace on the **Overview** page.
+4. Click the workspace and you can see resource status in the workspace on the **Overview** page.
 
-   ![workspace-overview](/images/docs/workspace-administration/workspace-overview/workspace-overview.jpg)
+   ![workspace-overview](/images/docs/workspace-administration/workspace-overview/workspace-overview.png)
 
 ## Delete a Workspace
 
@@ -89,5 +93,4 @@ Be extremely cautious about deleting a workspace if you use kubectl to delete wo
    A workspace cannot be restored after it is deleted and resources in the workspace will also be removed.
 
    {{</ notice >}}
-
 
