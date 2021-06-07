@@ -21,21 +21,21 @@ This tutorial walks you through an example of deploying MongoDB from the App Sto
 
 1. On the **Overview** page of the project `demo-project`, click **App Store** in the top-left corner.
 
-   ![app-store](/images/docs/appstore/built-in-apps/mongodb-app/app-store.jpg)
+   ![app-store](/images/docs/appstore/built-in-apps/mongodb-app/app-store.png)
 
-2. Find MongoDB and click **Deploy** on the **App Info** page.
+2. Find MongoDB and click **Deploy** on the **App Information** page.
 
-   ![mongodb-in-app-store](/images/docs/appstore/built-in-apps/mongodb-app/mongodb-in-app-store.jpg)
+   ![mongodb-in-app-store](/images/docs/appstore/built-in-apps/mongodb-app/mongodb-in-app-store.png)
 
-   ![deploy-mongodb](/images/docs/appstore/built-in-apps/mongodb-app/deploy-mongodb.jpg)
+   ![deploy-mongodb](/images/docs/appstore/built-in-apps/mongodb-app/deploy-mongodb.png)
 
 3. Set a name and select an app version. Make sure MongoDB is deployed in `demo-project` and click **Next**.
 
-   ![confirm-deployment](/images/docs/appstore/built-in-apps/mongodb-app/confirm-deployment.jpg)
+   ![confirm-deployment](/images/docs/appstore/built-in-apps/mongodb-app/confirm-deployment.png)
 
-4. In **App Config**, specify persistent volumes for the app and record the username and the password which will be used to access the app. When you finish, click **Deploy**.
+4. In **App Configurations**, specify persistent volumes for the app and record the username and the password which will be used to access the app. When you finish, click **Deploy**.
 
-   ![set-app-configuration](/images/docs/appstore/built-in-apps/mongodb-app/set-app-configuration.jpg)
+   ![set-app-configuration](/images/docs/appstore/built-in-apps/mongodb-app/set-app-configuration.png)
 
    {{< notice note >}}
 
@@ -45,17 +45,17 @@ This tutorial walks you through an example of deploying MongoDB from the App Sto
 
 5. Wait until MongoDB is up and running.
 
-   ![mongodb-running](/images/docs/appstore/built-in-apps/mongodb-app/mongodb-running.jpg)
+   ![mongodb-running](/images/docs/appstore/built-in-apps/mongodb-app/mongodb-running.png)
 
 ### Step 2: Access the MongoDB Terminal
 
 1. Go to **Services** and click the service name of MongoDB.
 
-   ![mongodb-service](/images/docs/appstore/built-in-apps/mongodb-app/mongodb-service.jpg)
+   ![mongodb-service](/images/docs/appstore/built-in-apps/mongodb-app/mongodb-service.png)
 
 2. Under **Pods**, expand the menu to see container details, and then click the **Terminal** icon.
 
-   ![mongodb-terminal](/images/docs/appstore/built-in-apps/mongodb-app/mongodb-terminal.jpg)
+   ![mongodb-terminal](/images/docs/appstore/built-in-apps/mongodb-app/mongodb-terminal.png)
 
 3. In the pop-up window, enter commands in the terminal directly to use the app.
 

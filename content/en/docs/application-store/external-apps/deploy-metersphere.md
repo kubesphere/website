@@ -19,7 +19,7 @@ This tutorial demonstrates how to deploy MeterSphere on KubeSphere.
 
 ### Step 1: Add an app repository
 
-1. Log in to KubeSphere as `ws-admin`. In your workspace, go to **App Repos** under **Apps Management**, and then click **Add Repo**.
+1. Log in to KubeSphere as `ws-admin`. In your workspace, go to **App Repositories** under **App Management**, and then click **Add**.
 
    ![add-repo](/images/docs/appstore/external-apps/deploy-metersphere/add-repo.PNG)
 
@@ -33,7 +33,7 @@ This tutorial demonstrates how to deploy MeterSphere on KubeSphere.
 
 ### Step 2: Deploy MeterSphere
 
-1. Log out of KubeSphere and log back in as `project-regular`. In your project, go to **Applications** under **Application Workloads** and click **Deploy New Application**.
+1. Log out of KubeSphere and log back in as `project-regular`. In your project, go to **Apps** under **Application Workloads** and click **Deploy New App**.
 
    ![deploy-app](/images/docs/appstore/external-apps/deploy-metersphere/deploy-app.PNG)
 
@@ -45,15 +45,15 @@ This tutorial demonstrates how to deploy MeterSphere on KubeSphere.
 
    ![click-metersphere](/images/docs/appstore/external-apps/deploy-metersphere/click-metersphere.PNG)
 
-4. On the **App Info** tab and the **Chart Files** tab, you can view the default configuration from the console. Click **Deploy** to continue.
+4. On the **App Information** tab and the **Chart Files** tab, you can view the default configuration from the console. Click **Deploy** to continue.
 
    ![view-config](/images/docs/appstore/external-apps/deploy-metersphere/view-config.PNG)
 
-5. On the **Basic Info** page, you can view the app name, app version, and deployment location. Click **Next** to continue.
+5. On the **Basic Information** page, you can view the app name, app version, and deployment location. Click **Next** to continue.
 
    ![basic-info](/images/docs/appstore/external-apps/deploy-metersphere/basic-info.PNG)
 
-6. On the **App Config** page, change the value of `imageTag` from `master` to `v1.6`, and then click **Deploy**.
+6. On the **App Configurations** page, change the value of `imageTag` from `master` to `v1.6`, and then click **Deploy**.
 
    ![change-value](/images/docs/appstore/external-apps/deploy-metersphere/change-value.PNG)
 
@@ -79,7 +79,7 @@ This tutorial demonstrates how to deploy MeterSphere on KubeSphere.
 
    ![metersphere-service](/images/docs/appstore/external-apps/deploy-metersphere/metersphere-service.PNG)
 
-2. You can access MeterSphere through `{$NodeIP}:{NodePort}` using the default account and password (`admin/metersphere`).
+2. You can access MeterSphere through `<NodeIP>:<NodePort>` using the default account and password (`admin/metersphere`).
 
    ![login-metersphere](/images/docs/appstore/external-apps/deploy-metersphere/login-metersphere.PNG)
 

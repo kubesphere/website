@@ -20,19 +20,19 @@ This tutorial walks you through an example of deploying [Harbor](https://goharbo
 
 1. On the **Overview** page of the project `demo-project`, click **App Store** in the top-left corner.
 
-   ![app-store](/images/docs/appstore/built-in-apps/harbor-app/app-store.jpg)
+   ![app-store](/images/docs/appstore/built-in-apps/harbor-app/app-store.png)
 
-2. Find Harbor and click **Deploy** on the **App Info** page.
+2. Find Harbor and click **Deploy** on the **App Information** page.
 
-   ![find-harbor](/images/docs/appstore/built-in-apps/harbor-app/find-harbor.jpg)
+   ![find-harbor](/images/docs/appstore/built-in-apps/harbor-app/find-harbor.png)
 
-   ![click-deploy](/images/docs/appstore/built-in-apps/harbor-app/click-deploy.jpg)
+   ![click-deploy](/images/docs/appstore/built-in-apps/harbor-app/click-deploy.png)
 
 3. Set a name and select an app version. Make sure Harbor is deployed in `demo-project` and click **Next**.
 
-   ![deploy-harbor](/images/docs/appstore/built-in-apps/harbor-app/deploy-harbor.jpg)
+   ![deploy-harbor](/images/docs/appstore/built-in-apps/harbor-app/deploy-harbor.png)
 
-4. On the **App Config** page, edit the configuration file of Harbor. Pay attention to the following fields.
+4. On the **App Configurations** page, edit the configuration file of Harbor. Pay attention to the following fields.
 
    `type`: The method you use to access the Harbor Service. This example uses `nodePort`.
 
@@ -40,7 +40,7 @@ This tutorial walks you through an example of deploying [Harbor](https://goharbo
 
    `externalURL`: The URL exposed to tenants.
 
-   ![harbor-config](/images/docs/appstore/built-in-apps/harbor-app/harbor-config.jpg)
+   ![harbor-config](/images/docs/appstore/built-in-apps/harbor-app/harbor-config.png)
 
    {{< notice note >}}
 
@@ -54,11 +54,11 @@ This tutorial walks you through an example of deploying [Harbor](https://goharbo
 
 5. Wait until Harbor is up and running.
 
-   ![creating-harbor](/images/docs/appstore/built-in-apps/harbor-app/creating-harbor.jpg)
+   ![creating-harbor](/images/docs/appstore/built-in-apps/harbor-app/creating-harbor.png)
 
 ### Step 2: Access Harbor
 
-1. Based on the field `expose.type` you set in the configuration file, the access method may be different. As this example uses `nodePort` to access Harbor, visit `http://nodeIP:30002` as set in the previous step.
+1. Based on the field `expose.type` you set in the configuration file, the access method may be different. As this example uses `nodePort` to access Harbor, visit `http://<NodeIP>:30002` as set in the previous step.
 
    ![harbor-login](/images/docs/appstore/built-in-apps/harbor-app/harbor-login.jpg)
 

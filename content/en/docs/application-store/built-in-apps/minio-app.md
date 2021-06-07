@@ -20,25 +20,25 @@ This tutorial walks you through an example of deploying MinIO from the App Store
 
 1. On the **Overview** page of the project `demo-project`, click **App Store** in the top-left corner.
 
-   ![minio-app](/images/docs/appstore/built-in-apps/minio-app/minio-app.jpg)
+   ![minio-app](/images/docs/appstore/built-in-apps/minio-app/minio-app.png)
 
-2. Find MinIO and click **Deploy** on the **App Info** page.
+2. Find MinIO and click **Deploy** on the **App Information** page.
 
-   ![minio-in-app-store](/images/docs/appstore/built-in-apps/minio-app/minio-in-app-store.jpg)
+   ![minio-in-app-store](/images/docs/appstore/built-in-apps/minio-app/minio-in-app-store.png)
 
-   ![deploy-minio](/images/docs/appstore/built-in-apps/minio-app/deploy-minio.jpg)
+   ![deploy-minio](/images/docs/appstore/built-in-apps/minio-app/deploy-minio.png)
 
 3. Set a name and select an app version. Make sure MinIO is deployed in `demo-project` and click **Next**.
 
-   ![minio-deploy](/images/docs/appstore/built-in-apps/minio-app/minio-deploy.jpg)
+   ![minio-deploy](/images/docs/appstore/built-in-apps/minio-app/minio-deploy.png)
 
-4. In **App Config**, you can use the default configuration or customize the configuration by editing the YAML file directly. Click **Deploy** to continue.
+4. In **App Configurations**, you can use the default configuration or customize the configuration by editing the YAML file directly. Click **Deploy** to continue.
 
-   ![deloy-minio-2](/images/docs/appstore/built-in-apps/minio-app/deloy-minio-2.jpg)
+   ![deloy-minio-2](/images/docs/appstore/built-in-apps/minio-app/deloy-minio-2.png)
 
 5. Wait until MinIO is up and running.
 
-   ![minio-in-list](/images/docs/appstore/built-in-apps/minio-app/minio-in-list.jpg)
+   ![minio-in-list](/images/docs/appstore/built-in-apps/minio-app/minio-in-list.png)
 
 ### Step 2: Access the MinIO Browser
 
@@ -46,31 +46,31 @@ To access MinIO outside the cluster, you need to expose the app through a NodePo
 
 1. Go to **Services** and click the service name of MinIO.
 
-   ![minio-detail](/images/docs/appstore/built-in-apps/minio-app/minio-detail.jpg)
+   ![minio-detail](/images/docs/appstore/built-in-apps/minio-app/minio-detail.png)
 
 2. Click **More** and select **Edit Internet Access** from the drop-down menu.
 
-   ![edit-internet-access](/images/docs/appstore/built-in-apps/minio-app/edit-internet-access.jpg)
+   ![edit-internet-access](/images/docs/appstore/built-in-apps/minio-app/edit-internet-access.png)
 
 3. Select **NodePort** for **Access Method** and click **OK**. For more information, see [Project Gateway](../../../project-administration/project-gateway/).
 
-   ![nodeport](/images/docs/appstore/built-in-apps/minio-app/nodeport.jpg)
+   ![nodeport](/images/docs/appstore/built-in-apps/minio-app/nodeport.png)
 
 4. Under **Service Ports**, you can see the port is exposed.
 
-   ![port-exposed](/images/docs/appstore/built-in-apps/minio-app/port-exposed.jpg)
+   ![port-exposed](/images/docs/appstore/built-in-apps/minio-app/port-exposed.png)
 
-5. To access the MinIO browser, you need `accessKey` and `secretKey`, which are specified in the configuration file of MinIO. Go to **App Templates** in **Applications**, click MinIO, and you can find the value of these two fields under the tab **Configuration Files**.
+5. To access the MinIO browser, you need `accessKey` and `secretKey`, which are specified in the configuration file of MinIO. Go to **App Templates** in **Apps**, click MinIO, and you can find the value of these two fields under the tab **Configuration Files**.
 
-   ![template-list](/images/docs/appstore/built-in-apps/minio-app/template-list.jpg)
+   ![template-list](/images/docs/appstore/built-in-apps/minio-app/template-list.png)
 
-   ![config-file](/images/docs/appstore/built-in-apps/minio-app/config-file.jpg)
+   ![config-file](/images/docs/appstore/built-in-apps/minio-app/config-file.png)
 
-6. Access the MinIO browser through `{$NodeIP}:{$Nodeport}` using `accessKey` and `secretKey`.
+6. Access the MinIO browser through `<NodeIP>:<NodePort>` using `accessKey` and `secretKey`.
 
-   ![minio-browser](/images/docs/appstore/built-in-apps/minio-app/minio-browser.jpg)
+   ![minio-browser](/images/docs/appstore/built-in-apps/minio-app/minio-browser.png)
 
-   ![minio-browser-interface](/images/docs/appstore/built-in-apps/minio-app/minio-browser-interface.jpg)
+   ![minio-browser-interface](/images/docs/appstore/built-in-apps/minio-app/minio-browser-interface.png)
 
    {{< notice note >}}
 

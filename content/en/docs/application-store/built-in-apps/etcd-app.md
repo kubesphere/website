@@ -21,21 +21,21 @@ This tutorial walks you through an example of deploying etcd from the App Store 
 
 1. On the **Overview** page of the project `demo-project`, click **App Store** in the top-left corner.
 
-   ![project-overview](/images/docs/appstore/built-in-apps/etcd-app/project-overview.jpg)
+   ![project-overview](/images/docs/appstore/built-in-apps/etcd-app/project-overview.png)
 
-2. Find etcd and click **Deploy** on the **App Info** page.
+2. Find etcd and click **Deploy** on the **App Information** page.
 
-   ![etcd-app-store](/images/docs/appstore/built-in-apps/etcd-app/etcd-app-store.jpg)
+   ![etcd-app-store](/images/docs/appstore/built-in-apps/etcd-app/etcd-app-store.png)
 
-   ![deploy-etcd](/images/docs/appstore/built-in-apps/etcd-app/deploy-etcd.jpg)
+   ![deploy-etcd](/images/docs/appstore/built-in-apps/etcd-app/deploy-etcd.png)
 
 3. Set a name and select an app version. Make sure etcd is deployed in `demo-project` and click **Next**.
 
-   ![deployment-location](/images/docs/appstore/built-in-apps/etcd-app/deployment-location.jpg)
+   ![deployment-location](/images/docs/appstore/built-in-apps/etcd-app/deployment-location.png)
 
-4. On the **App Config** page, specify the size of the persistent volume for etcd and click **Deploy**.
+4. On the **App Configurations** page, specify the size of the persistent volume for etcd and click **Deploy**.
 
-   ![specify-volume](/images/docs/appstore/built-in-apps/etcd-app/specify-volume.jpg)
+   ![specify-volume](/images/docs/appstore/built-in-apps/etcd-app/specify-volume.png)
 
    {{< notice note >}}
 
@@ -43,9 +43,9 @@ This tutorial walks you through an example of deploying etcd from the App Store 
 
    {{</ notice >}} 
 
-5. In **App Templates** of the **Applications** page, wait until etcd is up and running.
+5. In **App Templates** of the **Apps** page, wait until etcd is up and running.
 
-   ![etcd-running](/images/docs/appstore/built-in-apps/etcd-app/etcd-running.jpg)
+   ![etcd-running](/images/docs/appstore/built-in-apps/etcd-app/etcd-running.png)
 
 ### Step 2: Access the etcd Service
 
@@ -53,11 +53,11 @@ After the app is deployed, you can use etcdctl, a command-line tool for interact
 
 1. Navigate to **StatefulSets** in **Workloads**, and click the service name of etcd.
 
-   ![etcd-statefulset](/images/docs/appstore/built-in-apps/etcd-app/etcd-statefulset.jpg)
+   ![etcd-statefulset](/images/docs/appstore/built-in-apps/etcd-app/etcd-statefulset.png)
 
 2. Under **Pods**, expand the menu to see container details, and then click the **Terminal** icon.
 
-   ![etcd-teminal](/images/docs/appstore/built-in-apps/etcd-app/etcd-teminal.jpg)
+   ![etcd-terminal](/images/docs/appstore/built-in-apps/etcd-app/etcd-terminal.png)
 
 3. In the terminal, you can read and write data directly. For example, execute the following two commands respectively.
 
@@ -69,7 +69,7 @@ After the app is deployed, you can use etcdctl, a command-line tool for interact
    etcdctl get /name
    ```
 
-   ![etcd-command](/images/docs/appstore/built-in-apps/etcd-app/etcd-command.jpg)
+   ![etcd-command](/images/docs/appstore/built-in-apps/etcd-app/etcd-command.png)
 
 4. For clients within the KubeSphere cluster, the etcd service can be accessed through `<app name>.<project name>.svc.<K8s domain>:2379` (for example, `etcd-bqe0g4.demo-project.svc.cluster.local:2379` in this guide).
 

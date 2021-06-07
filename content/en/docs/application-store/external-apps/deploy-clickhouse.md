@@ -98,7 +98,7 @@ This tutorial demonstrates how to deploy ClickHouse Operator and a ClickHouse Cl
 
    ![clickhouse-cluster](/images/docs/appstore/external-apps/deploy-clickhouse/clickhouse-cluster.png)
 
-4. In the **Chart Files** tab, you can view the configuration and download the `values.yaml` file. Click **Deploy** to continue.
+4. On the **Chart Files** tab, you can view the configuration and download the `values.yaml` file. Click **Deploy** to continue.
 
    ![chart-tab](/images/docs/appstore/external-apps/deploy-clickhouse/chart-tab.png)
 
@@ -106,7 +106,7 @@ This tutorial demonstrates how to deploy ClickHouse Operator and a ClickHouse Cl
 
    ![basic-info](/images/docs/appstore/external-apps/deploy-clickhouse/basic-info.png)
 
-6. In the **App Configurations** tab, you can change the YAML file to customize configurations. In this tutorial, click **Deploy** to use the default configurations.
+6. On the **App Configurations** tab, you can change the YAML file to customize configurations. In this tutorial, click **Deploy** to use the default configurations.
 
    ![click-deploy](/images/docs/appstore/external-apps/deploy-clickhouse/click-deploy.png)
 

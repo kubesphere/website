@@ -21,21 +21,21 @@ This tutorial walks you through an example of how to deploy PostgreSQL from the 
 
 1. On the **Overview** page of the project `demo-project`, click **App Store** in the top-left corner.
 
-   ![click-app-store](/images/docs/appstore/built-in-apps/postgresql-app/click-app-store.jpg)
+   ![click-app-store](/images/docs/appstore/built-in-apps/postgresql-app/click-app-store.png)
 
-2. Find PostgreSQL and click **Deploy** on the **App Info** page.
+2. Find PostgreSQL and click **Deploy** on the **App Information** page.
 
-   ![postgresql-in-app-store](/images/docs/appstore/built-in-apps/postgresql-app/postgresql-in-app-store.jpg)
+   ![postgresql-in-app-store](/images/docs/appstore/built-in-apps/postgresql-app/postgresql-in-app-store.png)
 
-   ![deploy-postgresql](/images/docs/appstore/built-in-apps/postgresql-app/deploy-postgresql.jpg)
+   ![deploy-postgresql](/images/docs/appstore/built-in-apps/postgresql-app/deploy-postgresql.png)
 
 3. Set a name and select an app version. Make sure PostgreSQL is deployed in `demo-project` and click **Next**.
 
-   ![deploy-postgresql-2](/images/docs/appstore/built-in-apps/postgresql-app/deploy-postgresql-2.jpg)
+   ![deploy-postgresql-2](/images/docs/appstore/built-in-apps/postgresql-app/deploy-postgresql-2.png)
 
-4. In **App Config**, specify persistent volumes for the app and record the username and the password which will be used later to access the app. When you finish, click **Deploy**.
+4. In **App Configurations**, specify persistent volumes for the app and record the username and the password which will be used later to access the app. When you finish, click **Deploy**.
 
-   ![set-config](/images/docs/appstore/built-in-apps/postgresql-app/set-config.jpg)
+   ![set-config](/images/docs/appstore/built-in-apps/postgresql-app/set-config.png)
 
    {{< notice note >}} 
 
@@ -45,7 +45,7 @@ This tutorial walks you through an example of how to deploy PostgreSQL from the 
 
 5. Wait until PostgreSQL is up and running.
 
-   ![postgresql-ready](/images/docs/appstore/built-in-apps/postgresql-app/postgresql-ready.jpg)
+   ![postgresql-ready](/images/docs/appstore/built-in-apps/postgresql-app/postgresql-ready.png)
 
 ### Step 2: Access the PostgreSQL Database
 
@@ -53,25 +53,25 @@ To access PostgreSQL outside the cluster, you need to expose the app through a N
 
 1. Go to **Services** and click the service name of PostgreSQL.
 
-   ![access-postgresql](/images/docs/appstore/built-in-apps/postgresql-app/access-postgresql.jpg)
+   ![access-postgresql](/images/docs/appstore/built-in-apps/postgresql-app/access-postgresql.png)
 
 2. Click **More** and select **Edit Internet Access** from the drop-down menu.
 
-   ![edit-internet-access](/images/docs/appstore/built-in-apps/postgresql-app/edit-internet-access.jpg)
+   ![edit-internet-access](/images/docs/appstore/built-in-apps/postgresql-app/edit-internet-access.png)
 
 3. Select **NodePort** for **Access Method** and click **OK**. For more information, see [Project Gateway](../../../project-administration/project-gateway/).
 
-   ![nodeport](/images/docs/appstore/built-in-apps/postgresql-app/nodeport.jpg)
+   ![nodeport](/images/docs/appstore/built-in-apps/postgresql-app/nodeport.png)
 
 4. Under **Service Ports**, you can see the port is exposed, which will be used in the next step to access the PostgreSQL database.
 
-   ![port-number](/images/docs/appstore/built-in-apps/postgresql-app/port-number.jpg)
+   ![port-number](/images/docs/appstore/built-in-apps/postgresql-app/port-number.png)
 
 5. Expand the Pod menu under **Pods** and click the Terminal icon. In the pop-up window, enter commands directly to access the database.
 
-   ![container-terminal](/images/docs/appstore/built-in-apps/postgresql-app/container-terminal.jpg)
+   ![container-terminal](/images/docs/appstore/built-in-apps/postgresql-app/container-terminal.png)
 
-   ![postgresql-output](/images/docs/appstore/built-in-apps/postgresql-app/postgresql-output.jpg)
+   ![postgresql-output](/images/docs/appstore/built-in-apps/postgresql-app/postgresql-output.png)
 
    {{< notice note >}}
 
