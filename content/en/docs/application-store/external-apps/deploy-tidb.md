@@ -12,6 +12,7 @@ This tutorial demonstrates how to deploy TiDB Operator and a TiDB Cluster on Kub
 
 ## Prerequisites
 
+- You need to have at least 3 schedulable nodes.
 - You need to enable [the OpenPitrix system](../../../pluggable-components/app-store/).
 - You need to create a workspace, a project, and two user accounts (`ws-admin` and `project-regular`) for this tutorial. The account `ws-admin` must be granted the role of `workspace-admin` in the workspace, and the account `project-regular` must be invited to the project with the role of `operator`. If they are not ready, refer to [Create Workspaces, Projects, Accounts and Roles](../../../quick-start/create-workspace-and-project/).
 
@@ -125,7 +126,7 @@ The process of deploying a TiDB cluster is similar to deploying TiDB Operator.
    csi-super-high-perf        csi-qingcloud   Delete          Immediate           true                   71m
    ```
 
-6. On the **App Config** page, change the default value of the field `storageClassName` from `local-storage` to the name of your storage class. For example, you can change it to `csi-qingcloud` based on the above output.
+6. On the **App Config** page, change all the default values of the field `storageClassName` from `local-storage` to the name of your storage class. For example, you can change them to `csi-standard` based on the above output.
 
    ![tidb-cluster-config](/images/docs/appstore/external-apps/deploy-tidb-operator-and-cluster/tidb-cluster-config.PNG)
 
