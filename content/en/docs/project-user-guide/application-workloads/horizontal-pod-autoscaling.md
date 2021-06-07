@@ -1,14 +1,14 @@
 ---
-title: "Horizontal Pod Autoscaling"
+title: "Kubernetes HPA (Horizontal Pod Autoscaling) on KubeSphere"
 keywords: "Horizontal, Pod, Autoscaling, Autoscaler"
-description: "How to configure Horizontal Pod Autoscaling on KubeSphere."
+description: "How to configure Kubernetes Horizontal Pod Autoscaling on KubeSphere."
 weight: 10290
 
 ---
 
 This document describes how to configure Horizontal Pod Autoscaling (HPA) on KubeSphere.
 
-The HPA feature automatically adjusts the number of Pods to maintain average resource usage (CPU and memory) of Pods around preset values. For details about how HPA functions, see the [official Kubernetes document](https://kubernetes.io/docs/tasks/run-application/horizontal-pod-autoscale/).
+The Kubernetes HPA feature automatically adjusts the number of Pods to maintain average resource usage (CPU and memory) of Pods around preset values. For details about how HPA functions, see the [official Kubernetes document](https://kubernetes.io/docs/tasks/run-application/horizontal-pod-autoscale/).
 
 This document uses HPA based on CPU usage as an example. Operations for HPA based on memory usage are similar.
 
@@ -50,7 +50,7 @@ This document uses HPA based on CPU usage as an example. Operations for HPA base
 
 7. Click **Next** on the **Mount Volumes** tab and click **Create** on the **Advanced Settings** tab.
 
-## Configure HPA
+## Configure Kubernetes HPA
 
 1. Choose **Deployments** in **Workloads** on the left navigation bar and click the HPA Deployment (for example, hpa-v1) on the right.
 

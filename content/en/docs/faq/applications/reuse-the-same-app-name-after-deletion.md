@@ -27,11 +27,11 @@ To deploy an app in KubeSphere, tenants can go to the App Store and select the a
 
 ### Reuse the same app name
 
-1. If you try to deploy a new Redis app with the same app name as `redis-1`, you can see the following error prompt in the upper right corner.
+1. If you try to deploy a new Redis app with the same app name as `redis-1`, you can see the following error prompt in the upper-right corner.
 
    ![error-prompt](/images/docs/faq/applications/use-the-same-app-name-after-deletion/error-prompt.PNG)
 
-2. In your project, go to **Secrets** under **Configurations**, and input `redis-1` in the search bar to search the Secret.
+2. In your project, go to **Secrets** under **Configurations**, and enter `redis-1` in the search bar to search the Secret.
 
    ![search-secret](/images/docs/faq/applications/use-the-same-app-name-after-deletion/search-secret.PNG)
 
@@ -39,7 +39,7 @@ To deploy an app in KubeSphere, tenants can go to the App Store and select the a
 
    ![delete-secret](/images/docs/faq/applications/use-the-same-app-name-after-deletion/delete-secret.PNG)
 
-4. In the dialog that appears, input the Secret name and click **OK** to delete it.
+4. In the dialog that appears, enter the Secret name and click **OK** to delete it.
 
    ![confirm-delete](/images/docs/faq/applications/use-the-same-app-name-after-deletion/confirm-delete.PNG)
 

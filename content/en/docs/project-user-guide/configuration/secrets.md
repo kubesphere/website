@@ -26,13 +26,13 @@ Log in to the console as `project-regular`. Go to **Configurations** of a projec
 
 ![create-secrets](/images/docs/project-user-guide/configurations/secrets/create-secrets.jpg)
 
-### Step 2: Input basic information
+### Step 2: Enter basic information
 
-Specify a name for the Secret (e.g. `demo-secret`) and click **Next** to continue.
+Specify a name for the Secret (for example, `demo-secret`) and click **Next** to continue.
 
 {{< notice tip >}}
 
-You can see the Secret's manifest file in YAML format by enabling **Edit Mode** in the top right corner. KubeSphere allows you to edit the manifest file directly to create a Secret. Alternatively, you can follow the steps below to create a Secret via the dashboard.
+You can see the Secret's manifest file in YAML format by enabling **Edit Mode** in the top-right corner. KubeSphere allows you to edit the manifest file directly to create a Secret. Alternatively, you can follow the steps below to create a Secret via the dashboard.
 
 {{</ notice >}} 
 
@@ -46,7 +46,7 @@ You can see the Secret's manifest file in YAML format by enabling **Edit Mode** 
 
    {{< notice note >}}
 
-   For all Secret types, values for all keys under the field `data` in the manifest must be base64-encoded strings. After you specify values on the KubeSphere dashboard, KubeSphere converts them into corresponding base64 character values in the YAML file. For example, if you input `password` and `hello123` for **Key** and **Value** respectively on the **Edit Data** page when you create the default type of Secret, the actual value displaying in the YAML file is `aGVsbG8xMjM=` (i.e. `hello123` in base64 format), automatically created by KubeSphere.
+   For all Secret types, values for all keys under the field `data` in the manifest must be base64-encoded strings. After you specify values on the KubeSphere dashboard, KubeSphere converts them into corresponding base64 character values in the YAML file. For example, if you enter `password` and `hello123` for **Key** and **Value** respectively on the **Edit Data** page when you create the default type of Secret, the actual value displaying in the YAML file is `aGVsbG8xMjM=` (i.e. `hello123` in base64 format), automatically created by KubeSphere.
 
    {{</ notice >}} 
 
@@ -66,17 +66,17 @@ You can see the Secret's manifest file in YAML format by enabling **Edit Mode** 
 
      ![account-password-secret](/images/docs/project-user-guide/configurations/secrets/account-password-secret.jpg)
 
-   - **Custom**. You can input [any type of Secrets supported by Kubernetes](https://kubernetes.io/docs/concepts/configuration/secret/#secret-types) in the box. Click **Add Data** to add key-value pairs for it.
+   - **Custom**. You can enter [any type of Secrets supported by Kubernetes](https://kubernetes.io/docs/concepts/configuration/secret/#secret-types) in the box. Click **Add Data** to add key-value pairs for it.
 
      ![custom-secret](/images/docs/project-user-guide/configurations/secrets/custom-secret.jpg)
 
-2. For this tutorial, select the default type of Secret. Click **Add Data** and input the **Key** (`MYSQL_ROOT_PASSWORD`) and **Value** (`123456`) as below to specify a Secret for MySQL. 
+2. For this tutorial, select the default type of Secret. Click **Add Data** and enter the **Key** (`MYSQL_ROOT_PASSWORD`) and **Value** (`123456`) as below to specify a Secret for MySQL. 
 
    ![add-data](/images/docs/project-user-guide/configurations/secrets/add-data.jpg)
 
    ![input-key](/images/docs/project-user-guide/configurations/secrets/input-key.jpg)
 
-3. Click **√** in the bottom right corner to confirm. You can continue to add key-value pairs to the Secret or click **Create** to finish the creation. For more information about how to use the Secret, see [Compose and Deploy WordPress](../../../quick-start/wordpress-deployment/#task-3-create-an-application).
+3. Click **√** in the bottom-right corner to confirm. You can continue to add key-value pairs to the Secret or click **Create** to finish the creation. For more information about how to use the Secret, see [Compose and Deploy WordPress](../../../quick-start/wordpress-deployment/#task-3-create-an-application).
 
 ## Check Secret Details
 

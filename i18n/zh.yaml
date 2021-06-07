@@ -84,8 +84,12 @@
   translation: 全部
 - id: Watch replay
   translation: 观看回放
+- id: Watch live
+  translation: 观看直播
 - id: View details
   translation: 了解详情
+- id: Wonderful review
+  translation: 精彩回顾
 - id: Course theme
   translation: 课程主题
 - id: Course benefits
@@ -122,3 +126,7 @@
   translation: 您的隐私对我们很重要。我们使用Cookie来记住订阅详细信息，优化网站功能并交付根据您的兴趣量身定制的内容。要了解更多信息，请参阅我们的<a href="{{.}}">隐私政策</a>.
 - id: Accept and continue
   translation: 接受并继续
+- id: Install on Kubernetes
+  translation: 在 Kubernetes 安装
+- id: Install on Linux
+  translation: 在 Linux 安装

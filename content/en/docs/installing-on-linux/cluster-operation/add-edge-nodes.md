@@ -40,7 +40,7 @@ You need to install a container runtime and configure EdgeMesh on your edge node
 
 If you use Docker as the container runtime for your edge node, Docker v19.3.0 or later must be installed so that KubeSphere can get Pod metrics of it.
 
-{{</ notice >}} 
+{{</ notice >}}
 
 ### Configure EdgeMesh
 
@@ -90,7 +90,7 @@ To make sure edge nodes can successfully talk to your cluster, you must forward 
 
 ## Add an Edge Node
 
-1. Log in to the console as `admin` and click **Platform** in the top left corner.
+1. Log in to the console as `admin` and click **Platform** in the top-left corner.
 
 2. Select **Cluster Management** and navigate to **Edge Nodes** under **Node Management**.
 
@@ -160,6 +160,29 @@ To make sure edge nodes can successfully talk to your cluster, you must forward 
    done
    ```
 
+## Custom Configurations
+
+To customize some configurations of an edge node, such as download URL and KubeEdge version, create a [ConfigMap](../../../project-user-guide/configuration/configmaps/) as below:
+
+```yaml
+apiVersion: v1
+data:
+  region: zh # Download region.
+  version: v1.6.1 # The version of KubeEdge to be installed. Allowed values are v1.5.0, v1.6.0, v1.6.1 (default) and v1.6.2.
+kind: ConfigMap
+metadata:
+  name: edge-watcher-config
+  namespace: kubeedge
+```
+
+{{< notice note >}}
+
+- You can specify `zh` or `en` for the field `region`. `zh` is the default value and the default download link is `https://kubeedge.pek3b.qingstor.com/bin/v1.6.1/$arch/keadm-v1.6.1-linux-$arch.tar.gz`. If you set `region` to `en`, the download link will be `https://github.com/kubesphere/kubeedge/releases/download/v1.6.1-kubesphere/keadm-v1.6.1-linux-amd64.tar.gz`.
+- The ConfigMap does not affect the configurations of exiting edge nodes in your cluster. It is only used to change the KubeEdge configurations to be used on a new edge node. More specifically, it decides [the command automatically created by KubeSphere mentioned above](#add-an-edge-node) which needs to be executed on the edge node.
+- While you can change the KubeEdge version to be installed on an edge node, it is recommended that the cloud and edge modules have the same KubeEdge version.
+
+{{</ notice >}}
+
 ## Remove an Edge Node
 
 Before you remove an edge node, delete all your workloads running on it.
@@ -190,10 +213,14 @@ Before you remove an edge node, delete all your workloads running on it.
    kubectl delete node <edgenode-name>
    ```
 
-3. To uninstall KubeEdge from your cluster, run the following command:
+3. To uninstall KubeEdge from your cluster, run the following commands:
 
    ```bash
    helm uninstall kubeedge -n kubeedge
+   ```
+   
+   ```bash
+   kubectl delete ns kubeedge
    ```
    
    {{< notice note >}}

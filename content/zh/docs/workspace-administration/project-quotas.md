@@ -46,13 +46,15 @@ KubeSphere 使用请求 (Request) 和限制 (Limit) 来控制项目中的资源�
 
 5. 在**项目设置**下的**基本信息**页面，您可以查看该项目的所有资源配额。
 
-   ![资源配额](/images/docs/zh-cn/workspace-administration-and-user-guide/project-quotas/resource-quotas.PNG)
-
 6. 要更改项目配额，请在**基本信息**页面点击**项目管理**，然后选择**编辑配额**。
 
-   ![编辑配额](/images/docs/zh-cn/workspace-administration-and-user-guide/project-quotas/edit-quotas.PNG)
+   {{< notice note >}}
 
-7. 在**项目配额**页面直接更改项目配额，然后点击**确定**。
+   对于[多集群项目](../../project-administration/project-and-multicluster-project/#多集群项目)，**项目管理**下拉菜单中不会显示**编辑配额**选项。若要为多集群项目设置配额，前往**项目设置**下的**配额管理**，并点击**编辑配额**。请注意，由于多集群项目跨集群运行，您可以为多集群项目针对不同集群分别设置资源配额。
+
+   {{</ notice >}} 
+
+7. 在**项目配额**页面更改项目配额，然后点击**确定**。
 
 ## 另请参见
 

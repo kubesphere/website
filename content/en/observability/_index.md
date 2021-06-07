@@ -8,6 +8,8 @@ section1:
   title: KubeSphere allows you to build visualizations simply and intuitively.
   content: KubeSphere provides rich observability from infrastructure to applications. It integrates your favorite tools for multi-dimensional monitoring metrics, multi-tenant log query and collection, alerting and notification.
   image: /images/observability/banner.jpg
+  showDownload: true
+
 
 image: /images/observability/observability.jpg
 
@@ -43,9 +45,7 @@ section2:
 section3:
   title: See Cloud Native Observability in KubeSphere
   videoLink: https://www.youtube.com/embed/uf0TTowc56I
-  content: Want to get started in action by following the hands-on lab?
-  btnContent: Start Hands-on Lab
-  link: https://kubesphere.io/docs/pluggable-components/
+  showDownload: true
   bgLeft: /images/service-mesh/3-2.svg
   bgRight: /images/service-mesh/3.svg
 ---

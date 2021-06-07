@@ -4,6 +4,16 @@
     <div>
       {{ with .Params.section1 }}
 
+      {{ if .liveUrl }}
+      <div class="live-div">
+        <a href="{{ .liveUrl }}" target="_blank">
+          <img src="{{ .snapshot }}" alt="snapshot">
+          <button>{{ i18n "Watch live" }}</button>
+        </a>
+      </div>
+
+      {{ end }}
+
       {{ if .videoUrl }}
       <div class="video-div">
         {{ if eq .type "iframe" }}
@@ -19,9 +29,9 @@
       </div>
       {{ end }}
       <div class="time-div">
-        <img src="{{ .timeIcon }}" alt="">
+        <img src="{{ .timeIcon }}" alt="icon">
         <span>{{ .time }}</span>
-        <img src="{{ .baseIcon }}" alt="">
+        <img src="{{ .baseIcon }}" alt="icon">
         <span>{{ .base }}</span>
       </div>
       {{ end }}

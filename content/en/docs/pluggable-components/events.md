@@ -6,8 +6,6 @@ linkTitle: "KubeSphere Events"
 weight: 6500
 ---
 
-## What are KubeSphere Events
-
 KubeSphere events allow users to keep track of what is happening inside a cluster, such as node scheduling status and image pulling result. They will be accurately recorded with the specific reason, status and message displayed in the web console. To query events, users can quickly launch the web Toolkit and enter related information in the search bar with different filters (e.g keyword and project) available. Events can also be archived to third-party tools, such as Elasticsearch, Kafka or Fluentd.
 
 For more information, see [Event Query](../../toolbox/events-query/).
@@ -26,7 +24,7 @@ When you implement multi-node installation of KubeSphere on Linux, you need to c
 
     {{< notice note >}}
 
-If you adopt [All-in-One Installation](../../quick-start/all-in-one-on-linux/), you do not need to create a `config-sample.yaml` file as you can create a cluster directly. Generally, the all-in-one mode is for users who are new to KubeSphere and look to get familiar with the system. If you want to enable Events in this mode (e.g. for testing purposes), refer to [the following section](#enable-events-after-installation) to see how Events can be [installed after installation](#enable-events-after-installation).
+If you adopt [All-in-One Installation](../../quick-start/all-in-one-on-linux/), you do not need to create a `config-sample.yaml` file as you can create a cluster directly. Generally, the all-in-one mode is for users who are new to KubeSphere and look to get familiar with the system. If you want to enable Events in this mode (for example, for testing purposes), refer to [the following section](#enable-events-after-installation) to see how Events can be [installed after installation](#enable-events-after-installation).
 
 {{</ notice >}}
 
@@ -96,7 +94,7 @@ By default, ks-installer will install Elasticsearch internally if Events is enab
 
     ```bash
     kubectl apply -f https://github.com/kubesphere/ks-installer/releases/download/v3.1.0/kubesphere-installer.yaml
-
+    
     kubectl apply -f cluster-configuration.yaml
     ```
 
@@ -104,8 +102,6 @@ By default, ks-installer will install Elasticsearch internally if Events is enab
 
 1. Log in to the console as `admin`. Click **Platform** in the top-left corner and select **Cluster Management**.
    
-    ![clusters-management](/images/docs/enable-pluggable-components/kubesphere-events/clusters-management.png)
-    
 2. Click **CRDs** and enter `clusterconfiguration` in the search bar. Click the result to view its detail page.
 
     {{< notice info >}}
@@ -114,9 +110,7 @@ A Custom Resource Definition (CRD) allows users to create a new type of resource
 
 {{</ notice >}}
 
-3. In **Resource List**, click the three dots on the right of `ks-installer` and select **Edit YAML**.
-
-     ![edit-yaml](/images/docs/enable-pluggable-components/kubesphere-events/edit-yaml.png)
+3. In **Resource List**, click <img src="/images/docs/enable-pluggable-components/kubesphere-events/three-dots.png" height="20px"> on the right of `ks-installer` and select **Edit YAML**.
 
 4. In this YAML file, navigate to `events` and change `false` to `true` for `enabled`. After you finish, click **Update** in the bottom-right corner to save the configuration.
 
@@ -148,9 +142,9 @@ By default, Elasticsearch will be installed internally if Events is enabled. For
     kubectl logs -n kubesphere-system $(kubectl get pod -n kubesphere-system -l app=ks-install -o jsonpath='{.items[0].metadata.name}') -f
     ```
 
-    {{< notice tip >}}
+    {{< notice note >}}
 
-You can find the web kubectl tool by clicking the hammer icon in the bottom-right corner of the console.
+You can find the web kubectl tool by clicking <img src="/images/docs/enable-pluggable-components/kubesphere-events/hammer.png" height="20px"> in the bottom-right corner of the console.
 
 {{</ notice >}}
 
@@ -160,7 +154,7 @@ You can find the web kubectl tool by clicking the hammer icon in the bottom-righ
 
 {{< tab "Verify the component on the dashboard" >}}
 
-Verify that you can use the **Event Search** function from the **Toolbox** in the bottom right corner.
+Verify that you can use the **Event Search** function from the **Toolbox** in the bottom-right corner.
 
 ![event-search](/images/docs/enable-pluggable-components/kubesphere-events/event-search.png)
 

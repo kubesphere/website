@@ -190,7 +190,7 @@ weight: 11310
    http://10.77.1.201:30180
    ```
 
-3. 请使用地址 `http://Public IP:30180` 访问 Jenkins。安装 KubeSphere 时，默认情况下也会安装 Jenkins 仪表板。此外，Jenkins 还配置有 KubeSphere LDAP，这意味着您可以直接使用 KubeSphere 帐户（例如 `admin/P@88w0rd`）登录 Jenkins。有关配置 Jenkins 的更多信息，请参见 [Jenkins 系统设置](../../../devops-user-guide/how-to-use/jenkins-setting/)。
+3. 请使用地址 `http://{$Public IP}:30180` 访问 Jenkins。安装 KubeSphere 时，默认情况下也会安装 Jenkins 仪表板。此外，Jenkins 还配置有 KubeSphere LDAP，这意味着您可以直接使用 KubeSphere 帐户（例如 `admin/P@88w0rd`）登录 Jenkins。有关配置 Jenkins 的更多信息，请参见 [Jenkins 系统设置](../../../devops-user-guide/how-to-use/jenkins-setting/)。
 
    ![Jenkins 登录页面](/images/docs/zh-cn/devops-user-guide/tool-integration/integrate-sonarqube-into-pipelines/jenkins-login-page.png)
 
@@ -200,11 +200,11 @@ weight: 11310
 
    {{</ notice >}} 
 
-4. 点击左侧的 **Manage Jenkins**。
+4. 点击左侧的**系统管理**。
 
    ![管理 Jenkins](/images/docs/zh-cn/devops-user-guide/tool-integration/integrate-sonarqube-into-pipelines/manage-jenkins.png)
 
-5. 向下翻页找到并点击 **Configure System**。
+5. 向下翻页找到并点击**系统配置**。
 
    ![configure-system](/images/docs/zh-cn/devops-user-guide/tool-integration/integrate-sonarqube-into-pipelines/configure-system.png)
 
@@ -212,9 +212,17 @@ weight: 11310
 
    ![添加 SonarQube](/images/docs/zh-cn/devops-user-guide/tool-integration/integrate-sonarqube-into-pipelines/add-sonarqube.png)
 
-7. 输入 **Name**、**Server URL** (`http://Node IP:port`) 和 **Server authentication token**（SonarQube 管理管理员令牌）。点击 **Apply** 完成操作。
+7. 输入 **Name** 和 **Server URL** (`http://{$Node IP}:{$NodePort}`)。点击**添加**，选择 **Jenkins**，然后在弹出对话框中用 SonarQube 管理员令牌创建凭证（如下方第二张截图所示）。创建凭证后，从 **Server authentication token** 旁边的下拉列表中选择该凭证。点击**应用**完成操作。
 
    ![sonarqube-jenkins-settings](/images/docs/zh-cn/devops-user-guide/tool-integration/integrate-sonarqube-into-pipelines/sonarqube-jenkins-settings.png)
+   
+   ![add-credentials](/images/docs/zh-cn/devops-user-guide/tool-integration/integrate-sonarqube-into-pipelines/add-credentials.png)
+   
+   {{< notice note >}}
+   
+   如果点击**添加**按钮无效（Jenkins 已知问题），您可以前往**系统管理**下的 **Manage Credentials** 并点击 **Stores scoped to Jenkins** 下的 **Jenkins**，再点击**全局凭据 (unrestricted)**，然后点击左侧导航栏的**添加凭据**，参考上方第二张截图用 SonarQube 管理员令牌添加凭证。添加凭证后，从 **Server authentication token** 旁边的下拉列表中选择该凭证。
+   
+   {{</ notice >}}
 
 ### 步骤 6：将 sonarqubeURL 添加到 KubeSphere 控制台
 

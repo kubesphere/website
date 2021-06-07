@@ -1,5 +1,5 @@
 ---
-title: "All-in-One Installation on Linux"
+title: "All-in-one Installation of Kubernetes and KubeSphere on Linux"
 keywords: 'KubeSphere, Kubernetes, All-in-one, Installation'
 description: 'Install KubeSphere on Linux with a minimal installation package. The tutorial serves as a basic kick-starter for you to understand the container platform, paving the way for learning the following guides.'
 linkTitle: "All-in-One Installation on Linux"
@@ -159,15 +159,15 @@ To create a Kubernetes cluster with KubeSphere installed, refer to the following
 
 {{</ notice >}}
 
-After you execute the command, you will see a table for environment check. For details, read [Node requirements](#node-requirements) and [Dependency requirements](#dependency-requirements) above. Input `yes` to continue.
+After you execute the command, you will see a table for environment check. For details, read [Node requirements](#node-requirements) and [Dependency requirements](#dependency-requirements) above. Type `yes` to continue.
 
 ## Step 4: Verify the Installation
 
-When you see the output as below, it means the installation finishes.
+When you see the output as below, it means the installation of Kubernetes and KubeSphere finishes.
 
 ![Installation-complete](/images/docs/quickstart/all-in-one-installation/Installation-complete.png)
 
-Input the following command to check the result.
+Run the following command to check the result.
 
 ```bash
 kubectl logs -n kubesphere-system $(kubectl get pod -n kubesphere-system -l app=ks-install -o jsonpath='{.items[0].metadata.name}') -f

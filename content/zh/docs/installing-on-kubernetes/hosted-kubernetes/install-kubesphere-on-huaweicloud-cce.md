@@ -94,7 +94,7 @@ kubectl apply -f https://github.com/kubesphere/ks-installer/releases/download/v3
 
 ![为 KubeSphere 控制台配置负载均衡访问](/images/docs/huawei-cce/zh/edit-ks-console-svc.png)
 
-通过负载均衡绑定公网访问后，即可使用给定的访问地址进行访问，进入到 KubeSphere 的登录界面并使用默认账号（用户名 `admin`，密码 `P@88w0rd`）即可登录平台：
+通过负载均衡绑定公网访问后，即可使用给定的访问地址进行访问，进入到 KubeSphere 的登录界面并使用默认帐户（用户名 `admin`，密码 `P@88w0rd`）即可登录平台：
 
 ![登录 KubeSphere 平台](/images/docs/huawei-cce/zh/login-ks-console.png)
 
@@ -104,7 +104,7 @@ kubectl apply -f https://github.com/kubesphere/ks-installer/releases/download/v3
 
 {{< notice warning >}}
 
-在开启 Istio 组件之前，由于自定义资源定义（CRD）冲突的问题，需要先删除华为 CCE 自带的 `applications.app.k8s.io` ，最直接的方式是通过 kubectl 工具来完成：
+在开启 Istio 组件之前，由于自定义资源定义 (CRD) 冲突的问题，需要先删除华为 CCE 自带的 `applications.app.k8s.io` ，最直接的方式是通过 kubectl 工具来完成：
 
 ```bash
 kubectl delete crd applications.app.k8s.io

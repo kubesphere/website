@@ -1,35 +1,125 @@
 ---
 title: "Kubernetes Cluster Configurations"
-keywords: 'KubeSphere, Kubernetes, docker, cluster, configuration'
+keywords: 'Kubernetes, cluster, configuration, KubeKey'
 description: 'Customize your Kubernetes settings in the configuration file for your cluster.'
 linkTitle: "Kubernetes Cluster Configurations"
 weight: 3160
 ---
 
-This tutorial explains how to customize Kubernetes cluster configurations in `config-sample.yaml` (needed for [Multi-node Installation](../multioverview/)) when you use [KubeKey](https://github.com/kubesphere/kubekey) to provision a cluster. You can refer to the following section to understand each parameter.
+When creating a Kubernetes cluster, you can use [KubeKey](../kubekey/) to define a configuration file (`config-sample.yaml`) which contains basic information of your cluster. Refer to the following example for Kubernetes-related parameters in the configuration file.
 
 ```yaml
-######################### Kubernetes #########################
-
-kubernetes:
-    version: v1.17.9 # The default k8s version is v1.17.9; you can specify 1.15.2, v1.16.13 or v1.18.6 based on your needs.
-    imageRepo: kubesphere  # DockerHub Repo
-    clusterName: cluster.local # Kubernetes Cluster Name
-    masqueradeAll: false  # masqueradeAll tells kube-proxy to SNAT everything if using the pure iptables proxy mode. [Default: false]
-    maxPods: 110  # maxPods is the number of pods that can run on this Kubelet. [Default: 110]
-    nodeCidrMaskSize: 24  # Internal network node size allocation. This is the size allocated to each node in your network. [Default: 24]
-    proxyMode: ipvs  # The mode specifies which proxy mode to use. [Default: ipvs]
+  kubernetes:
+    version: v1.19.8
+    imageRepo: kubesphere
+    clusterName: cluster.local
+    masqueradeAll: false
+    maxPods: 110
+    nodeCidrMaskSize: 24
+    proxyMode: ipvs
   network:
-    plugin: calico   # Calico by default. KubeSphere Network Policy is based on Calico. You can also specify Flannel based on your needs.
+    plugin: calico
     calico:
-      ipipMode: Always  # IPIP Mode to use for the IPv4 POOL created at start up. If it is set to a value other than Never, vxlanMode should be set to "Never". [Always | CrossSubnet | Never] [Default: Always]
-      vxlanMode: Never  # VXLAN Mode to use for the IPv4 POOL created at start up. If it is set to a value other than Never, ipipMode should be set to "Never". [Always | CrossSubnet | Never] [Default: Never]
-      vethMTU: 1440  # The maximum transmission unit (MTU) setting determines the largest packet size that can be transmitted through your network. [Default: 1440]
-    kubePodsCIDR: 10.233.64.0/18    # A valid CIDR range for Kubernetes pod subnet. It should not overlap with node subnet, and it should not overlap with Kubernetes services subnet.
-    kubeServiceCIDR: 10.233.0.0/18  # A valid CIDR range for Kubernetes services. It should not overlap with node subnet, and it should not overlap with Kubernetes pod subnet.
+      ipipMode: Always
+      vxlanMode: Never
+      vethMTU: 1440
+    kubePodsCIDR: 10.233.64.0/18
+    kubeServiceCIDR: 10.233.0.0/18
   registry:
-    registryMirrors: []   # For users who need to speed up downloads.
-    insecureRegistries: [] # Set an address of insecure image registry. See https://docs.docker.com/registry/insecure/
-    privateRegistry: ""   # Configure a private image registry for air-gapped installation (e.g. docker local registry or Harbor).
-  addons: []  # You can specify any add-ons with one or more Helm Charts or YAML files in this field (e.g. CSI plugins or cloud provider plugins).
+    registryMirrors: []
+    insecureRegistries: []
+    privateRegistry: ""
+  addons: []
 ```
+
+The below table describes the above parameters in detail.
+
+  <table border="1">
+   <tbody>
+   <tr>
+     <th width='140'>Parameter</th>
+     <th>Description</th>
+   </tr>
+   <tr>
+     <th colSpan='2'><code>kubernetes</code></th>
+   </tr>
+   <tr>
+     <td><code>version</code></td>
+     <td>The Kubernetes version to be installed. If you do not specify a Kubernetes version, {{< contentLink "docs/installing-on-linux/introduction/kubekey" "KubeKey" >}} v1.1.0 will install Kubernetes v1.19.8 by default. For more information, see {{< contentLink "docs/installing-on-linux/introduction/kubekey/#support-matrix" "Support Matrix" >}}.</td>
+   </tr>
+   <tr>
+     <td><code>imageRepo</code></td>
+     <td>The Docker Hub repository where images will be downloaded.</td>
+   </tr>
+   <tr>
+     <td><code>clusterName</code></td>
+     <td>The Kubernetes cluster name.</td>
+   </tr>
+   <tr>
+     <td><code>masqueradeAll</code>*</td>
+     <td><code>masqueradeAll</code> tells kube-proxy to SNAT everything if using the pure iptables proxy mode. It defaults to <code>false</code>.</td>
+   </tr>
+   <tr>
+     <td><code>maxPods</code>*</td>
+     <td>The maximum number of Pods that can run on this Kubelet. It defaults to <code>110</code>.</td>
+   </tr>
+   <tr>
+     <td><code>nodeCidrMaskSize</code>*</td>
+     <td>The mask size for node CIDR in your cluster. It defaults to <code>24</code>.</td>
+   </tr>
+   <tr>
+     <td><code>proxyMode</code>*</td>
+     <td>The proxy mode to use. It defaults to <code>ipvs</code>.</td>
+   </tr>
+   <tr>
+     <th colSpan='2'><code>network</code></th>
+   </tr>
+   <tr>
+     <td><code>plugin</code></td>
+     <td>The CNI plugin to use. KubeKey installs Calico by default while you can also specify Flannel. Note that some features can only be used when Calico is adopted as the CNI plugin, such as Pod IP Pools.</td>
+   </tr>
+   <tr>
+     <td><code>calico.ipipMode</code>*</td>
+     <td>The IPIP Mode to use for the IPv4 POOL created at startup. If it is set to a value other than <code>Never</code>, <code>vxlanMode</code> should be set to <code>Never</code>. Allowed values are <code>Always</code>, <code>CrossSubnet</code> and <code>Never</code>. It defaults to <code>Always</code>.</td>
+   </tr>
+   <tr>
+     <td><code>calico.vxlanMode</code>*</td>
+     <td>The VXLAN Mode to use for the IPv4 POOL created at startup. If it is set to a value other than <code>Never</code>, <code>ipipMode</code> should be set to <code>Never</code>. Allowed values are <code>Always</code>, <code>CrossSubnet</code> and <code>Never</code>. It defaults to <code>Never</code>.</td>
+   </tr>
+   <tr>
+     <td><code>calico.vethMTU</code>*</td>
+     <td>The maximum transmission unit (MTU) setting determines the largest packet size that can be transmitted through your network. It defaults to <code>1440</code>.</td>
+   </tr>
+   <tr>
+     <td><code>kubePodsCIDR</code></td>
+     <td>A valid CIDR block for your Kubernetes Pod subnet. It should not overlap with your node subnet and your Kubernetes Services subnet.</td>
+   </tr>
+   <tr>
+     <td><code>kubeServiceCIDR</code></td>
+     <td>A valid CIDR block for your Kubernetes Services. It should not overlap with your node subnet and your Kubernetes Pod subnet.</td>
+   </tr>
+   <tr>
+     <th colSpan='2'><code>registry</code></th>
+   </tr>
+   <tr>
+     <td><code>registryMirrors</code></td>
+     <td>Configure a Docker registry mirror to speed up downloads. For more information, see {{< contentLink "https://docs.docker.com/registry/recipes/mirror/#configure-the-docker-daemon" "Configure the Docker daemon" >}}.</td>
+   </tr>
+   <tr>
+     <td><code>insecureRegistries</code></td>
+     <td>Set an address of insecure image registry. For more information, see {{< contentLink "https://docs.docker.com/registry/insecure/" "Test an insecure registry" >}}.</td>
+   </tr>
+   <tr>
+     <td><code>privateRegistry</code>*</td>
+     <td>Configure a private image registry for air-gapped installation (for example, a Docker local registry or Harbor). For more information, see {{< contentLink "docs/installing-on-linux/introduction/air-gapped-installation/" "Air-gapped Installation on Linux" >}}.</td>
+   </tr> 
+   </tbody>
+   </table>
+
+{{< notice note >}}
+
+- \* By default, KubeKey does not define these parameters in the configuration file while you can manually add them and customize their values.
+- `addons` is used to install cloud-native add-ons (YAML or Chart). For more information, see [this file](https://github.com/kubesphere/kubekey/blob/release-1.1/docs/addons.md).
+- This page only lists part of the parameters in the configuration file created by KubeKey. For more information about other parameters, see [this example file](https://github.com/kubesphere/kubekey/blob/release-1.1/docs/config-example.md).
+
+{{</ notice >}} 

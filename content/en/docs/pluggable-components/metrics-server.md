@@ -6,8 +6,6 @@ linkTitle: "Metrics Server"
 weight: 6910
 ---
 
-## What is Metrics Server
-
 KubeSphere supports Horizontal Pod Autoscalers (HPA) for [Deployments](../../project-user-guide/application-workloads/deployments/). In KubeSphere, the Metrics Server controls whether the HPA is enabled. You use an HPA object to autoscale a Deployment based on different types of metrics, such as CPU and memory utilization, as well as the minimum and maximum number of replicas. In this way, an HPA helps to make sure your application runs smoothly and consistently in different situations.
 
 ## Enable the Metrics Server before Installation
@@ -23,7 +21,7 @@ When you implement multi-node installation of KubeSphere on Linux, you need to c
    ```
 
    {{< notice note >}}
-   If you adopt [All-in-One Installation](../../quick-start/all-in-one-on-linux/), you do not need to create a `config-sample.yaml` file as you can create a cluster directly. Generally, the all-in-one mode is for users who are new to KubeSphere and look to get familiar with the system. If you want to enable the Metrics Server in this mode (e.g. for testing purposes), refer to [the following section](#enable-devops-after-installation) to see how the Metrics Server can be installed after installation.
+   If you adopt [All-in-One Installation](../../quick-start/all-in-one-on-linux/), you do not need to create a `config-sample.yaml` file as you can create a cluster directly. Generally, the all-in-one mode is for users who are new to KubeSphere and look to get familiar with the system. If you want to enable the Metrics Server in this mode (for example, for testing purposes), refer to [the following section](#enable-devops-after-installation) to see how the Metrics Server can be installed after installation.
    {{</ notice >}}
 
 2. In this file, navigate to `metrics_server` and change `false` to `true` for `enabled`. Save the file after you finish.
@@ -60,12 +58,11 @@ As you [install KubeSphere on Kubernetes](../../installing-on-kubernetes/introdu
 
     ```bash
     kubectl apply -f https://github.com/kubesphere/ks-installer/releases/download/v3.1.0/kubesphere-installer.yaml
-
+    
     kubectl apply -f cluster-configuration.yaml
     ```
     
     {{< notice note >}}
-    
 
 If you install KubeSphere on some cloud hosted Kubernetes engines, it is probable that the Metrics Server is already installed in your environment. In this case, it is not recommended that you enable it in `cluster-configuration.yaml` as it may cause conflicts during installation.
     {{</ notice >}} 
@@ -74,17 +71,13 @@ If you install KubeSphere on some cloud hosted Kubernetes engines, it is probabl
 
 1. Log in to the console as `admin`. Click **Platform** in the top-left corner and select **Cluster Management**.
    
-    ![clusters-management](/images/docs/enable-pluggable-components/metrics-server/clusters-management.png)
-    
 2. Click **CRDs** and enter `clusterconfiguration` in the search bar. Click the result to view its detail page.
 
     {{< notice info >}}
 A Custom Resource Definition (CRD) allows users to create a new type of resources without adding another API server. They can use these resources like any other native Kubernetes objects.
     {{</ notice >}}
 
-3. In **Resource List**, click the three dots on the right of `ks-installer` and select **Edit YAML**.
-
-    ![edit-yaml](/images/docs/enable-pluggable-components/metrics-server/edit-yaml.png)
+3. In **Resource List**, click <img src="/images/docs/enable-pluggable-components/metrics-server/three-dots.png" height="20px"> on the right of `ks-installer` and select **Edit YAML**.
 
 4. In this YAML file, navigate to `metrics_server` and change `false` to `true` for `enabled`. After you finish, click **Update** in the bottom-right corner to save the configuration.
 
@@ -99,8 +92,9 @@ A Custom Resource Definition (CRD) allows users to create a new type of resource
     kubectl logs -n kubesphere-system $(kubectl get pod -n kubesphere-system -l app=ks-install -o jsonpath='{.items[0].metadata.name}') -f
     ```
 
-    {{< notice tip >}}
-You can find the web kubectl tool by clicking the hammer icon in the bottom-right corner of the console.
+    {{< notice note >}}
+
+You can find the web kubectl tool by clicking <img src="/images/docs/enable-pluggable-components/metrics-server/hammer.png" height="20px"> in the bottom-right corner of the console.
     {{</ notice >}}
 
 ## Verify the Installation of the Component

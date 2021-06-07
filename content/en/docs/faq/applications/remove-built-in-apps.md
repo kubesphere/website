@@ -10,12 +10,12 @@ As an open-source and app-centric container platform, KubeSphere integrates 16 b
 
 ## Prerequisites
 
-- You need to use an account with the role of `platform-admin` (e.g. `admin`) for this tutorial.
+- You need to use an account with the role of `platform-admin` (for example, `admin`) for this tutorial.
 - You need to [enable the App Store](../../../pluggable-components/app-store/).
 
 ## Remove a Built-in App
 
-1. Log in to the web console of KubeSphere as `admin`, click **Platform** in the upper left corner, and then select **App Store Management**.
+1. Log in to the web console of KubeSphere as `admin`, click **Platform** in the upper-left corner, and then select **App Store Management**.
 
    ![click-platform](/images/docs/faq/applications/remove-built-in-apps/click-platform.PNG)
 

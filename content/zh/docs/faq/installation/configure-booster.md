@@ -76,15 +76,21 @@ weight: 16200
 
    ```yaml
    registry:
-       registryMirrors: [] # For users who need to speed up downloads
-       insecureRegistries: [] # Set an address of insecure image registry. See https://docs.docker.com/registry/insecure/
-       privateRegistry: "" # Configure a private image registry for air-gapped installation (e.g. docker local registry or Harbor)
+     registryMirrors: []
+     insecureRegistries: []
+     privateRegistry: ""
    ```
 
-2. 在 `registryMirrors` 处填入仓库的镜像地址并保存文件。关于安装过程的更多信息，请参见[多节点安装](../../../installing-on-linux/introduction/multioverview/)。
+   {{< notice note >}}
+
+   有关 `registry` 部分各个参数的更多信息，请参见 [Kubernetes 集群配置](../../../installing-on-linux/introduction/vars/)。
+
+      {{</ notice >}}
+
+2. 在 `registryMirrors` 处填入仓库的镜像地址并保存文件。有关安装的更多信息，请参见[多节点安装](../../../installing-on-linux/introduction/multioverview/)。
 
 {{< notice note >}}
 
-[在 Linux 上通过 All-in-one 模式安装 KubeSphere](../../../quick-start/all-in-one-on-linux/) 不需要 `config-sample.yaml` 文件。该模式下请采用第一种方法进行配置。
+[在 Linux 上通过 All-in-One 模式安装 KubeSphere](../../../quick-start/all-in-one-on-linux/) 不需要 `config-sample.yaml` 文件。该模式下请采用第一种方法进行配置。
 
 {{</ notice >}}

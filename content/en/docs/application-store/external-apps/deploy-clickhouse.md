@@ -19,7 +19,7 @@ This tutorial demonstrates how to deploy ClickHouse Operator and a ClickHouse Cl
 
 ### Step 1: Deploy ClickHouse Operator
 
-1. Log in to the KubeSphere Web console as `admin`, and use **Kubectl** from the **Toolbox** in the bottom right corner to run the following command to install ClickHouse Operator. It is recommended that you have at least two worker nodes available in your cluster.
+1. Log in to the KubeSphere Web console as `admin`, and use **Kubectl** from the **Toolbox** in the bottom-right corner to run the following command to install ClickHouse Operator. It is recommended that you have at least two worker nodes available in your cluster.
 
    ```bash
    kubectl apply -f https://raw.githubusercontent.com/radondb/radondb-clickhouse-kubernetes/master/clickhouse-operator-install.yml
@@ -98,7 +98,7 @@ This tutorial demonstrates how to deploy ClickHouse Operator and a ClickHouse Cl
 
    ![clickhouse-cluster](/images/docs/appstore/external-apps/deploy-clickhouse/clickhouse-cluster.png)
 
-4. In the **Chart Files** tab, you can view the configuration and download the `values.yaml` file. Click **Deploy** to continue.
+4. On the **Chart Files** tab, you can view the configuration and download the `values.yaml` file. Click **Deploy** to continue.
 
    ![chart-tab](/images/docs/appstore/external-apps/deploy-clickhouse/chart-tab.png)
 
@@ -106,7 +106,7 @@ This tutorial demonstrates how to deploy ClickHouse Operator and a ClickHouse Cl
 
    ![basic-info](/images/docs/appstore/external-apps/deploy-clickhouse/basic-info.png)
 
-6. In the **App Configurations** tab, you can change the YAML file to customize configurations. In this tutorial, click **Deploy** to use the default configurations.
+6. On the **App Configurations** tab, you can change the YAML file to customize configurations. In this tutorial, click **Deploy** to use the default configurations.
 
    ![click-deploy](/images/docs/appstore/external-apps/deploy-clickhouse/click-deploy.png)
 
@@ -142,7 +142,7 @@ This tutorial demonstrates how to deploy ClickHouse Operator and a ClickHouse Cl
 
 ### Step 5: Access the ClickHouse Cluster
 
-1. Log out of KubeSphere and log back in as `admin`. Hover your cursor over the hammer icon in the bottom right corner and then select **Kubectl**.
+1. Log out of KubeSphere and log back in as `admin`. Hover your cursor over the hammer icon in the bottom-right corner and then select **Kubectl**.
 
 2. In the window that appears, run the following command and then navigate to the username and password of the ClickHouse cluster.
 

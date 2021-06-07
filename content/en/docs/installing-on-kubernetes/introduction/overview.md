@@ -1,14 +1,14 @@
 ---
 title: "Installing KubeSphere on Kubernetes — Overview"
 keywords: "KubeSphere, Kubernetes, Installation"
-description: "Develop a basic understanding of the general steps of deploying KubeSphere on existing Kubernetes clusters."
+description: "Develop a basic understanding of the general steps of deploying KubeSphere on an existing Kubernetes cluster."
 linkTitle: "Overview"
 weight: 4110
 ---
 
 ![kubesphere+k8s](/images/docs/installing-on-kubernetes/introduction/overview/kubesphere+k8s.png)
 
-As part of KubeSphere's commitment to provide a plug-and-play architecture for users, it can be easily installed on existing Kubernetes clusters. More specifically, KubeSphere can be deployed on Kubernetes either hosted on clouds (e.g. AWS EKS, QingCloud QKE and Google GKE) or on-premises. This is because KubeSphere does not hack Kubernetes itself. It only interacts with the Kubernetes API to manage Kubernetes cluster resources. In other words, KubeSphere can be installed on any native Kubernetes cluster and Kubernetes distribution.
+As part of KubeSphere's commitment to provide a plug-and-play architecture for users, it can be easily installed on existing Kubernetes clusters. More specifically, KubeSphere can be deployed on Kubernetes either hosted on clouds (for example, AWS EKS, QingCloud QKE and Google GKE) or on-premises. This is because KubeSphere does not hack Kubernetes itself. It only interacts with the Kubernetes API to manage Kubernetes cluster resources. In other words, KubeSphere can be installed on any native Kubernetes cluster and Kubernetes distribution.
 
 This section gives you an overview of the general steps of installing KubeSphere on Kubernetes. For more information about the specific way of installation in different environments, see Installing on Hosted Kubernetes and Installing on On-premises Kubernetes.
 

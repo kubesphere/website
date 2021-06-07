@@ -10,7 +10,7 @@ KubeSphere currently supports two kinds of charts: text charts and graphs.
 
 ## Text Chart
 
-A text chart is preferable for displaying a single metric value. The editing window for the text chart is composed of two parts. The upper part displays the real-time metric value, and the lower part is for editing. You can input a PromQL expression to fetch a single metric value.
+A text chart is preferable for displaying a single metric value. The editing window for the text chart is composed of two parts. The upper part displays the real-time metric value, and the lower part is for editing. You can enter a PromQL expression to fetch a single metric value.
 
 - **Chart Name**: The name of the text chart.
 - **Unit**: The metric data unit.

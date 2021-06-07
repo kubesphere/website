@@ -62,7 +62,7 @@ After you modified `jenkins-casc-config`, you need to reload your updated system
    http://192.168.0.4:30180
    ```
 
-3. Access Jenkins at `http://Node IP:Port Number`. When KubeSphere is installed, the Jenkins dashboard is also installed by default. Besides, Jenkins is configured with KubeSphere LDAP, which means you can log in to Jenkins with KubeSphere accounts (e.g. `admin/P@88w0rd`) directly.
+3. Access Jenkins at `http://Node IP:Port Number`. When KubeSphere is installed, the Jenkins dashboard is also installed by default. Besides, Jenkins is configured with KubeSphere LDAP, which means you can log in to Jenkins with KubeSphere accounts (for example, `admin/P@88w0rd`) directly.
 
    ![jenkins-dashboard](/images/docs/devops-user-guide/using-devops/jenkins-system-settings/jenkins-dashboard.jpg)
 

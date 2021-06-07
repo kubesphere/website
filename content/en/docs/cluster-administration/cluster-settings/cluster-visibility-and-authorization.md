@@ -20,7 +20,7 @@ This guide demonstrates how to set cluster visibility.
 
 1. Log in to KubeSphere with an account that has the permission to create a workspace, such as `ws-manager`.
 
-2. Click **Platform** in the top left corner and select **Access Control**. In **Workspaces** from the navigation bar, click **Create**.
+2. Click **Platform** in the top-left corner and select **Access Control**. In **Workspaces** from the navigation bar, click **Create**.
 
    ![create-workspace](/images/docs/cluster-administration/cluster-settings/cluster-visibility-and-authorization/create-workspace.jpg)
 
@@ -46,7 +46,7 @@ After a workspace is created, you can allocate additional clusters to the worksp
 
 1. Log in to KubeSphere with an account that has the permission to manage clusters, such as `admin`.
 
-2. Click **Platform** in the top left corner and select **Cluster Management**. Select a cluster from the list to view cluster information.
+2. Click **Platform** in the top-left corner and select **Cluster Management**. Select a cluster from the list to view cluster information.
 
 3. In **Cluster Settings** from the navigation bar, select **Cluster Visibility**.
 

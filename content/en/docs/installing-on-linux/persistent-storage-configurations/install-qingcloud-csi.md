@@ -18,7 +18,7 @@ Your cluster nodes are created on [QingCloud Platform](https://intl.qingcloud.co
 
 To make sure the platform can create cloud disks for your cluster, you need to provide the access key (`qy_access_key_id` and `qy_secret_access_key`) in a separate configuration file of QingCloud CSI.
 
-1. Log in to the web console of [QingCloud](https://console.qingcloud.com/login) and select **Access Key** from the drop-down list in the top right corner.
+1. Log in to the web console of [QingCloud](https://console.qingcloud.com/login) and select **Access Key** from the drop-down list in the top-right corner.
 
    ![access-key](/images/docs/installing-on-linux/introduction/persistent-storage-configuration/access-key.jpg)
 
@@ -261,7 +261,7 @@ You can verify that QingCloud CSI has been successfully installed either from th
 
 ### KubeSphere console
 
-1. Log in to the web console with the default account and password (`admin/P@88w0rd`) at `<NodeIP>:30880`. Click **Platform** in the top left corner and select **Cluster Management**.
+1. Log in to the web console with the default account and password (`admin/P@88w0rd`) at `<NodeIP>:30880`. Click **Platform** in the top-left corner and select **Cluster Management**.
 
 2. Go to **Pods** in **Application Workloads** and select `kube-system` from the project drop-down list. You can see that the Pods of `csi-qingcloud` are up and running.
 

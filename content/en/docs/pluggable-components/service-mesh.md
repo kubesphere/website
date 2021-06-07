@@ -6,8 +6,6 @@ linkTitle: "KubeSphere Service Mesh"
 weight: 6800
 ---
 
-## What is KubeSphere Service Mesh
-
 On the basis of [Istio](https://istio.io/), KubeSphere Service Mesh visualizes microservices governance and traffic management. It features a powerful toolkit including **circuit breaking, blue-green deployment, canary release, traffic mirroring, distributed tracing, observability and traffic control**. Developers can easily get started with KubeSphere Service Mesh without any code hacking, with the learning curve of Istio greatly reduced. All features of KubeSphere Service Mesh are designed to meet users' demand for their business.
 
 For more information, see [Grayscale Release](../../project-user-guide/grayscale-release/overview/).
@@ -25,7 +23,7 @@ When you implement multi-node installation of KubeSphere on Linux, you need to c
     ```
 
     {{< notice note >}}
-If you adopt [All-in-One Installation](../../quick-start/all-in-one-on-linux/), you do not need to create a `config-sample.yaml` file as you can create a cluster directly. Generally, the all-in-one mode is for users who are new to KubeSphere and look to get familiar with the system. If you want to enable KubeSphere Service Mesh in this mode (e.g. for testing purposes), refer to [the following section](#enable-service-mesh-after-installation) to see how KubeSphere Service Mesh can be installed after installation.
+If you adopt [All-in-One Installation](../../quick-start/all-in-one-on-linux/), you do not need to create a `config-sample.yaml` file as you can create a cluster directly. Generally, the all-in-one mode is for users who are new to KubeSphere and look to get familiar with the system. If you want to enable KubeSphere Service Mesh in this mode (for example, for testing purposes), refer to [the following section](#enable-service-mesh-after-installation) to see how KubeSphere Service Mesh can be installed after installation.
     {{</ notice >}}
 
 2. In this file, navigate to `servicemesh` and change `false` to `true` for `enabled`. Save the file after you finish.
@@ -62,7 +60,7 @@ As you [install KubeSphere on Kubernetes](../../installing-on-kubernetes/introdu
 
     ```bash
     kubectl apply -f https://github.com/kubesphere/ks-installer/releases/download/v3.1.0/kubesphere-installer.yaml
-
+    
     kubectl apply -f cluster-configuration.yaml
     ```
 
@@ -70,17 +68,14 @@ As you [install KubeSphere on Kubernetes](../../installing-on-kubernetes/introdu
 
 1. Log in to the console as `admin`. Click **Platform** in the top-left corner and select **Cluster Management**.
    
-    ![clusters-management](/images/docs/enable-pluggable-components/kubesphere-service-mesh/clusters-management.png)
-    
 2. Click **CRDs** and enter `clusterconfiguration` in the search bar. Click the result to view its detail page.
 
     {{< notice info >}}
 A Custom Resource Definition (CRD) allows users to create a new type of resources without adding another API server. They can use these resources like any other native Kubernetes objects.
     {{</ notice >}}
 
-3. In **Resource List**, click the three dots on the right of `ks-installer` and select **Edit YAML**.
-    ![edit-yaml](/images/docs/enable-pluggable-components/kubesphere-service-mesh/edit-yaml.png)
-
+3. In **Resource List**, click <img src="/images/docs/enable-pluggable-components/kubesphere-service-mesh/three-dots.png" height="20px"> on the right of `ks-installer` and select **Edit YAML**.
+   
 4. In this YAML file, navigate to `servicemesh` and change `false` to `true` for `enabled`. After you finish, click **Update** in the bottom-right corner to save the configuration.
 
     ```yaml
@@ -94,8 +89,9 @@ A Custom Resource Definition (CRD) allows users to create a new type of resource
     kubectl logs -n kubesphere-system $(kubectl get pod -n kubesphere-system -l app=ks-install -o jsonpath='{.items[0].metadata.name}') -f
     ```
 
-    {{< notice tip >}}
-You can find the web kubectl tool by clicking the hammer icon in the bottom-right corner of the console.
+    {{< notice note >}}
+
+You can find the web kubectl tool by clicking <img src="/images/docs/enable-pluggable-components/kubesphere-service-mesh/hammer.png" height="20px"> in the bottom-right corner of the console.
     {{</ notice >}}
 
 ## Verify the Installation of the Component

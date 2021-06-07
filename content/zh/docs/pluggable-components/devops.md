@@ -2,12 +2,9 @@
 title: "KubeSphere DevOps 系统"
 keywords: "Kubernetes, Jenkins, KubeSphere, DevOps, cicd"
 description: "了解如何启用 DevOps 系统来进一步解放您的开发人员，让他们专注于代码编写。"
-
 linkTitle: "KubeSphere DevOps"
 weight: 6300
 ---
-
-## 什么是 KubeSphere DevOps 系统
 
 基于 [Jenkins](https://jenkins.io/) 的 KubeSphere DevOps 系统是专为 Kubernetes 中的 CI/CD 工作流设计的，它提供了一站式的解决方案，帮助开发和运维团队用非常简单的方式构建、测试和发布应用到 Kubernetes。它还具有插件管理、[Binary-to-Image (B2I)](../../project-user-guide/image-builder/binary-to-image/)、[Source-to-Image (S2I)](../../project-user-guide/image-builder/source-to-image/)、代码依赖缓存、代码质量分析、流水线日志等功能。
 
@@ -65,7 +62,7 @@ DevOps 系统为用户提供了一个自动化的环境，应用可以自动发�
 
     ```bash
     kubectl apply -f https://github.com/kubesphere/ks-installer/releases/download/v3.1.0/kubesphere-installer.yaml
-
+    
     kubectl apply -f cluster-configuration.yaml
     ```
 
@@ -73,17 +70,13 @@ DevOps 系统为用户提供了一个自动化的环境，应用可以自动发�
 
 1. 以 `admin` 身份登录控制台，点击左上角的**平台管理**，选择**集群管理**。
 
-    ![集群管理](/images/docs/zh-cn/enable-pluggable-components/kubesphere-devops-system/clusters-management.png)
-
 2. 点击**自定义资源 CRD**，在搜索栏中输入 `clusterconfiguration`，点击搜索结果查看其详细页面。
 
     {{< notice info >}}
-自定义资源定义（CRD）允许用户在不增加额外 API 服务器的情况下创建一种新的资源类型，用户可以像使用其他 Kubernetes 原生对象一样使用这些自定义资源。
+自定义资源定义 (CRD) 允许用户在不增加额外 API 服务器的情况下创建一种新的资源类型，用户可以像使用其他 Kubernetes 原生对象一样使用这些自定义资源。
     {{</ notice >}}
 
-3. 在**资源列表**中，点击 `ks-installer` 右边的三个点，选择**编辑配置文件**。
-
-    ![编辑 YAML](/images/docs/zh-cn/enable-pluggable-components/kubesphere-devops-system/edit-yaml.PNG)
+3. 在**资源列表**中，点击 `ks-installer` 右侧的 <img src="/images/docs/zh-cn/enable-pluggable-components/kubesphere-devops-system/three-dots.png" height="20px">，选择**编辑配置文件**。
 
 4. 在该 YAML 文件中，搜寻到 `devops`，将 `enabled` 的 `false` 改为 `true`。完成后，点击右下角的**更新**，保存配置。
 
@@ -98,8 +91,9 @@ DevOps 系统为用户提供了一个自动化的环境，应用可以自动发�
     kubectl logs -n kubesphere-system $(kubectl get pod -n kubesphere-system -l app=ks-install -o jsonpath='{.items[0].metadata.name}') -f
     ```
 
-    {{< notice tip >}}
-您可以通过点击控制台右下角的锤子图标找到 Web Kubectl 工具。
+    {{< notice note >}}
+
+您可以通过点击控制台右下角的 <img src="/images/docs/zh-cn/enable-pluggable-components/kubesphere-devops-system/hammer.png" height="20px"> 找到 Web Kubectl 工具。
     {{</ notice >}}
 
 ## 验证组件的安装

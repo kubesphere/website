@@ -12,6 +12,7 @@ This tutorial demonstrates how to deploy TiDB Operator and a TiDB Cluster on Kub
 
 ## Prerequisites
 
+- You need to have at least 3 schedulable nodes.
 - You need to enable [the OpenPitrix system](../../../pluggable-components/app-store/).
 - You need to create a workspace, a project, and two user accounts (`ws-admin` and `project-regular`) for this tutorial. The account `ws-admin` must be granted the role of `workspace-admin` in the workspace, and the account `project-regular` must be invited to the project with the role of `operator`. If they are not ready, refer to [Create Workspaces, Projects, Accounts and Roles](../../../quick-start/create-workspace-and-project/).
 
@@ -19,7 +20,7 @@ This tutorial demonstrates how to deploy TiDB Operator and a TiDB Cluster on Kub
 
 ### Step 1: Install TiDB Operator CRD
 
-1. Log in to the KubeSphere Web console as `admin`, and use **Kubectl** from the **Toolbox** in the bottom right corner to execute the following command to install TiDB Operator CRD:
+1. Log in to the KubeSphere Web console as `admin`, and use **Kubectl** from the **Toolbox** in the bottom-right corner to execute the following command to install TiDB Operator CRD:
 
    ```bash
    kubectl apply -f https://raw.githubusercontent.com/pingcap/tidb-operator/v1.1.6/manifests/crd.yaml
@@ -39,7 +40,7 @@ This tutorial demonstrates how to deploy TiDB Operator and a TiDB Cluster on Kub
 
 ### Step 2: Add an app repository
 
-1. Log out of KubeSphere and log back in as `ws-admin`. In your workspace, go to **App Repos** under **Apps Management**, and then click **Add Repo**.
+1. Log out of KubeSphere and log back in as `ws-admin`. In your workspace, go to **App Repositories** under **App Management**, and then click **Add**.
 
    ![add-repo](/images/docs/appstore/external-apps/deploy-tidb-operator-and-cluster/add-repo.PNG)
 
@@ -53,7 +54,7 @@ This tutorial demonstrates how to deploy TiDB Operator and a TiDB Cluster on Kub
 
 ### Step 3: Deploy TiDB Operator
 
-1. Log out of KubeSphere and log back in as `project-regular`. In your project, go to **Applications** under **Application Workloads** and click **Deploy New Application**.
+1. Log out of KubeSphere and log back in as `project-regular`. In your project, go to **Apps** under **Application Workloads** and click **Deploy New App**.
 
    ![deploy-app](/images/docs/appstore/external-apps/deploy-tidb-operator-and-cluster/deploy-app.PNG)
 
@@ -71,15 +72,15 @@ This tutorial demonstrates how to deploy TiDB Operator and a TiDB Cluster on Kub
 
    {{</ notice >}}
 
-4. On the **Chart Files** tab, you can view the configuration from the console directly or download the default `values.yaml` file by clicking the icon in the upper right corner. Under **Versions**, select a version number from the drop-down list and click **Deploy**.
+4. On the **Chart Files** tab, you can view the configuration from the console directly or download the default `values.yaml` file by clicking the icon in the upper-right corner. Under **Versions**, select a version number from the drop-down list and click **Deploy**.
 
    ![select-version](/images/docs/appstore/external-apps/deploy-tidb-operator-and-cluster/select-version.PNG)
 
-5. On the **Basic Info** page, confirm the app name, app version, and deployment location. Click **Next** to continue.
+5. On the **Basic Information** page, confirm the app name, app version, and deployment location. Click **Next** to continue.
 
    ![basic-info](/images/docs/appstore/external-apps/deploy-tidb-operator-and-cluster/basic-info.PNG)
 
-6. On the **App Config** page, you can either edit the `values.yaml` file, or click **Deploy** directly with the default configurations.
+6. On the **App Configurations** page, you can either edit the `values.yaml` file, or click **Deploy** directly with the default configurations.
 
    ![check-config-file](/images/docs/appstore/external-apps/deploy-tidb-operator-and-cluster/check-config-file.PNG)
 
@@ -95,7 +96,7 @@ This tutorial demonstrates how to deploy TiDB Operator and a TiDB Cluster on Kub
 
 The process of deploying a TiDB cluster is similar to deploying TiDB Operator.
 
-1. Go to **Applications** under **Application Workloads**, click **Deploy New Application** again, and then select **From App Templates**.
+1. Go to **Apps** under **Application Workloads**, click **Deploy New App**, and then select **From App Templates**.
 
    ![deploy-app-again](/images/docs/appstore/external-apps/deploy-tidb-operator-and-cluster/deploy-app-again.PNG)
 
@@ -109,14 +110,14 @@ The process of deploying a TiDB cluster is similar to deploying TiDB Operator.
 
    ![download-yaml-file](/images/docs/appstore/external-apps/deploy-tidb-operator-and-cluster/download-yaml-file.PNG)
 
-4. On the **Basic Info** page, confirm the app name, app version, and deployment location. Click **Next** to continue.
+4. On the **Basic Information** page, confirm the app name, app version, and deployment location. Click **Next** to continue.
 
    ![tidb-cluster-info](/images/docs/appstore/external-apps/deploy-tidb-operator-and-cluster/tidb-cluster-info.PNG)
 
 5. Some TiDB components require [persistent volumes](../../../cluster-administration/persistent-volume-and-storage-class/). You can run the following command to view your storage classes.
 
    ```
-   / # kubectl get sc
+   $ kubectl get sc
    NAME                       PROVISIONER     RECLAIMPOLICY   VOLUMEBINDINGMODE   ALLOWVOLUMEEXPANSION   AGE
    csi-high-capacity-legacy   csi-qingcloud   Delete          Immediate           true                   71m
    csi-high-perf              csi-qingcloud   Delete          Immediate           true                   71m
@@ -125,7 +126,7 @@ The process of deploying a TiDB cluster is similar to deploying TiDB Operator.
    csi-super-high-perf        csi-qingcloud   Delete          Immediate           true                   71m
    ```
 
-6. On the **App Config** page, change the default value of the field `storageClassName` from `local-storage` to the name of your storage class. For example, you can change it to `csi-qingcloud` based on the above output.
+6. On the **App Configurations** page, change all the default values of the field `storageClassName` from `local-storage` to the name of your storage class. For example, you can change them to `csi-standard` based on the above output.
 
    ![tidb-cluster-config](/images/docs/appstore/external-apps/deploy-tidb-operator-and-cluster/tidb-cluster-config.PNG)
 
@@ -191,7 +192,7 @@ The process of deploying a TiDB cluster is similar to deploying TiDB Operator.
 
    ![tidb-service](/images/docs/appstore/external-apps/deploy-tidb-operator-and-cluster/tidb-service.PNG)
 
-3. TiDB integrates Prometheus and Grafana to monitor performance of the database cluster. For example, you can access Grafana through `{$NodeIP}:{Nodeport}` to view metrics.
+3. TiDB integrates Prometheus and Grafana to monitor performance of the database cluster. For example, you can access Grafana through `<NodeIP>:<NodePort>` to view metrics.
 
    ![tidb-service-grafana](/images/docs/appstore/external-apps/deploy-tidb-operator-and-cluster/tidb-service-grafana.PNG)
 

@@ -2,12 +2,9 @@
 title: "KubeSphere 应用商店"
 keywords: "Kubernetes, KubeSphere, app-store, OpenPitrix"
 description: "了解如何启用应用商店，一个可以在内部实现数据和应用共享、并制定应用交付流程的行业标准的组件。"
-
 linkTitle: "KubeSphere 应用商店"
 weight: 6200
 ---
-
-## 什么是 KubeSphere 应用商店
 
 作为一个开源的、以应用为中心的容器平台，KubeSphere 在 [OpenPitrix](https://github.com/openpitrix/openpitrix) 的基础上，为用户提供了一个基于 Helm 的应用商店，用于应用生命周期管理。OpenPitrix 是一个开源的 Web 平台，用于打包、部署和管理不同类型的应用。KubeSphere 应用商店让 ISV、开发者和用户能够在一站式服务中只需点击几下就可以上传、测试、部署和发布应用。
 
@@ -69,7 +66,7 @@ weight: 6200
 
     ```bash
     kubectl apply -f https://github.com/kubesphere/ks-installer/releases/download/v3.1.0/kubesphere-installer.yaml
-
+    
     kubectl apply -f cluster-configuration.yaml
     ```
 
@@ -77,17 +74,13 @@ weight: 6200
 
 1. 以 `admin` 身份登录控制台，点击左上角的**平台管理**，选择**集群管理**。
 
-    ![集群管理](/images/docs/zh-cn/enable-pluggable-components/kubesphere-app-store/clusters-management.png)
-
 2. 点击**自定义资源 CRD**，在搜索栏中输入 `clusterconfiguration`，点击结果查看其详细页面。
 
     {{< notice info >}}
 自定义资源定义 (CRD) 允许用户在不增加额外 API 服务器的情况下创建一种新的资源类型，用户可以像使用其他 Kubernetes 原生对象一样使用这些自定义资源。
     {{</ notice >}}
 
-3. 在**资源列表**中，点击 `ks-installer` 右边的三个点，选择**编辑配置文件**。
-
-    ![编辑配置文件](/images/docs/zh-cn/enable-pluggable-components/kubesphere-app-store/edit-yaml.PNG)
+3. 在**资源列表**中，点击 `ks-installer` 右侧的 <img src="/images/docs/zh-cn/enable-pluggable-components/kubesphere-app-store/three-dots.png" height="20px">，选择**编辑配置文件**。
 
 4. 在该 YAML 文件中，搜寻到 `openpitrix`，将 `enabled` 的 `false` 改为 `true`。完成后，点击右下角的**更新**，保存配置。
 
@@ -103,8 +96,9 @@ weight: 6200
     kubectl logs -n kubesphere-system $(kubectl get pod -n kubesphere-system -l app=ks-install -o jsonpath='{.items[0].metadata.name}') -f
     ```
 
-    {{< notice tip >}}
-您可以通过点击控制台右下角的锤子图标找到 Web Kubectl 工具。
+    {{< notice note >}}
+
+您可以通过点击控制台右下角的 <img src="/images/docs/zh-cn/enable-pluggable-components/kubesphere-app-store/hammer.png" height="20px"> 找到 Web Kubectl 工具。
     {{</ notice >}}
 
 ## 验证组件的安装

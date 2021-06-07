@@ -6,7 +6,7 @@ linkTitle: "Set up an HA Cluster Using a Load Balancer"
 weight: 3210
 ---
 
-You can set up a single-master Kubernetes cluster with KubeSphere installed based on the tutorial of [Multi-node Installation](../../../installing-on-linux/introduction/multioverview/). Single-master clusters may be sufficient for development and testing in most cases. For a production environment, however, you need to consider the high availability of the cluster. If key components (for example, kube-apiserver, kube-scheduler, and kube-controller-manager) are all running on the same master node, Kubernetes and KubeSphere will be unavailable once the master node goes down. Therefore, you need to set up a high-availability cluster by provisioning load balancers with multiple master nodes. You can use any cloud load balancer, or any hardware load balancer (e.g. F5). In addition, Keepalived and [HAproxy](https://www.haproxy.com/), or Nginx is also an alternative for creating high-availability clusters.
+You can set up a single-master Kubernetes cluster with KubeSphere installed based on the tutorial of [Multi-node Installation](../../../installing-on-linux/introduction/multioverview/). Single-master clusters may be sufficient for development and testing in most cases. For a production environment, however, you need to consider the high availability of the cluster. If key components (for example, kube-apiserver, kube-scheduler, and kube-controller-manager) are all running on the same master node, Kubernetes and KubeSphere will be unavailable once the master node goes down. Therefore, you need to set up a high-availability cluster by provisioning load balancers with multiple master nodes. You can use any cloud load balancer, or any hardware load balancer (for example, F5). In addition, Keepalived and [HAproxy](https://www.haproxy.com/), or Nginx is also an alternative for creating high-availability clusters.
 
 This tutorial demonstrates the general configurations of a high-availability cluster as you install KubeSphere on Linux.
 
@@ -163,7 +163,7 @@ For more information about different fields in this configuration file, see [Kub
 
 ### Persistent storage plugin configurations
 
-For a production environment, you need to prepare persistent storage and configure the storage plugin (e.g. CSI) in `config-sample.yaml` to define which storage service you want to use. For more information, see [Persistent Storage Configurations](../../../installing-on-linux/persistent-storage-configurations/understand-persistent-storage/).
+For a production environment, you need to prepare persistent storage and configure the storage plugin (for example, CSI) in `config-sample.yaml` to define which storage service you want to use. For more information, see [Persistent Storage Configurations](../../../installing-on-linux/persistent-storage-configurations/understand-persistent-storage/).
 
 ### Enable pluggable components (Optional)
 

@@ -6,7 +6,7 @@ linkTitle: "Integrate SonarQube into Pipelines"
 weight: 11310
 ---
 
-[SonarQube](https://www.sonarqube.org/) is a popular continuous inspection tool for code quality. You can use it for static and dynamic analysis of a codebase. After it is integrated into pipelines in KubeSphere, you can view common code issues such as bugs and vulnerabilities directly on the dashboard as SonarQube detects issues in a running pipeline.
+[SonarQube](https://www.sonarqube.org/) is a popular continuous inspection tool for code quality. You can use it for static and dynamic analysis of a codebase. After it is integrated into pipelines in KubeSphere [Container Platform](https://kubesphere.io/), you can view common code issues such as bugs and vulnerabilities directly on the dashboard as SonarQube detects issues in a running pipeline.
 
 This tutorial demonstrates how you can integrate SonarQube into pipelines. Refer to the following steps first before you [create a pipeline using a Jenkinsfile](../../../devops-user-guide/how-to-use/create-a-pipeline-using-jenkinsfile/).
 
@@ -90,7 +90,7 @@ To integrate SonarQube into your pipeline, you must install SonarQube Server fir
 
    ![access-sonarqube-console](/images/docs/devops-user-guide/tool-integration/integrate-sonarqube-into-pipeline/access-sonarqube-console.jpg)
 
-3. Click **Log in** in the top right corner and use the default account `admin/admin`.
+3. Click **Log in** in the top-right corner and use the default account `admin/admin`.
 
    ![log-in-page](/images/docs/devops-user-guide/tool-integration/integrate-sonarqube-into-pipeline/log-in-page.jpg)
 
@@ -106,7 +106,7 @@ To integrate SonarQube into your pipeline, you must install SonarQube Server fir
 
    ![sonarqube-config-1](/images/docs/devops-user-guide/tool-integration/integrate-sonarqube-into-pipeline/sonarqube-config-1.jpg)
 
-2. Click **Security** and input a token name, such as `kubesphere`.
+2. Click **Security** and enter a token name, such as `kubesphere`.
 
    ![sonarqube-config-2](/images/docs/devops-user-guide/tool-integration/integrate-sonarqube-into-pipeline/sonarqube-config-2.jpg)
 
@@ -144,7 +144,7 @@ To integrate SonarQube into your pipeline, you must install SonarQube Server fir
 
    ![sonarqube-webhook-3](/images/docs/devops-user-guide/tool-integration/integrate-sonarqube-into-pipeline/sonarqube-webhook-3.jpg)
 
-5. Input **Name** and **Jenkins Console URL** (i.e. the SonarQube Webhook address) in the dialog that appears. Click **Create** to finish.
+5. Enter **Name** and **Jenkins Console URL** (i.e. the SonarQube Webhook address) in the dialog that appears. Click **Create** to finish.
 
    ![webhook-page-info](/images/docs/devops-user-guide/tool-integration/integrate-sonarqube-into-pipeline/webhook-page-info.jpg)
 
@@ -190,7 +190,7 @@ To integrate SonarQube into your pipeline, you must install SonarQube Server fir
    http://192.168.0.4:30180
    ```
 
-3. Access Jenkins with the address `http://Public IP:30180`. When KubeSphere is installed, the Jenkins dashboard is also installed by default. Besides, Jenkins is configured with KubeSphere LDAP, which means you can log in to Jenkins with KubeSphere accounts (e.g. `admin/P@88w0rd`) directly. For more information about configuring Jenkins, see [Jenkins System Settings](../../../devops-user-guide/how-to-use/jenkins-setting/).
+3. Access Jenkins with the address `http://{$Public IP}:30180`. When KubeSphere is installed, the Jenkins dashboard is also installed by default. Besides, Jenkins is configured with KubeSphere LDAP, which means you can log in to Jenkins with KubeSphere accounts (for example, `admin/P@88w0rd`) directly. For more information about configuring Jenkins, see [Jenkins System Settings](../../../devops-user-guide/how-to-use/jenkins-setting/).
 
    ![jenkins-login-page](/images/docs/devops-user-guide/tool-integration/integrate-sonarqube-into-pipeline/jenkins-login-page.jpg)
 
@@ -202,19 +202,27 @@ To integrate SonarQube into your pipeline, you must install SonarQube Server fir
 
 4. Click **Manage Jenkins** on the left.
 
-   ![manage-jenkins](/images/docs/devops-user-guide/tool-integration/integrate-sonarqube-into-pipeline/manage-jenkins.jpg)
+   ![manage-jenkins](/images/docs/devops-user-guide/tool-integration/integrate-sonarqube-into-pipeline/manage-jenkins.png)
 
 5. Scroll down to **Configure System** and click it.
 
-   ![configure-system](/images/docs/devops-user-guide/tool-integration/integrate-sonarqube-into-pipeline/configure-system.jpg)
+   ![configure-system](/images/docs/devops-user-guide/tool-integration/integrate-sonarqube-into-pipeline/configure-system.png)
 
 6. Navigate to **SonarQube servers** and click **Add SonarQube**.
 
-   ![add-sonarqube](/images/docs/devops-user-guide/tool-integration/integrate-sonarqube-into-pipeline/add-sonarqube.jpg)
+   ![add-sonarqube](/images/docs/devops-user-guide/tool-integration/integrate-sonarqube-into-pipeline/add-sonarqube.png)
 
-7. Input **Name**, **Server URL** (`http://Node IP:port`) and **Server authentication token** (the SonarQube admin token). Click **Apply** to finish.
+7. Enter **Name** and **Server URL** (`http://{$Node IP}:{$NodePort}`). Click **Add**, select **Jenkins**, and then create the credentials with the SonarQube admin token in the dialog that appears as shown in the second image below. After adding the credentials, select it from the drop-down list for **Server authentication token** and then click **Apply** to finish.
 
-   ![sonarqube-jenkins-settings](/images/docs/devops-user-guide/tool-integration/integrate-sonarqube-into-pipeline/sonarqube-jenkins-settings.jpg)
+   ![sonarqube-jenkins-settings](/images/docs/devops-user-guide/tool-integration/integrate-sonarqube-into-pipeline/sonarqube-jenkins-settings.png)
+
+   ![add-credentials](/images/docs/devops-user-guide/tool-integration/integrate-sonarqube-into-pipeline/add-credentials.png)
+
+   {{< notice note >}}
+
+   If the **Add** button is not working, which is a known bug from Jenkins, you can navigate to **Manage Credentials** under **Manage Jenkins**, click **Jenkins** under **Stores scoped to Jenkins**, click **Global credentials (unrestricted)**, and then click **Add Credentials** from the left navigation bar to add the credentials with the SonarQube admin token by referencing the second image above. After you add the credentials, you can select it from the drop-down list for **Server authentication token**.
+
+   {{</ notice >}}
 
 ### Step 6: Add sonarqubeURL to the KubeSphere Console
 

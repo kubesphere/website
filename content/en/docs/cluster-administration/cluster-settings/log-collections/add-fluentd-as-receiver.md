@@ -1,5 +1,5 @@
 ---
-title: "Add Fluentd as a Receiver (i.e. Collector)"
+title: "Add Fluentd as a Receiver"
 keywords: 'Kubernetes, log, fluentd, pod, container, fluentbit, output'
 description: 'Learn how to add Fluentd to receive logs, events or auditing logs.'
 linkTitle: "Add Fluentd as a Receiver"
@@ -13,7 +13,7 @@ You can use Elasticsearch, Kafka and Fluentd as log receivers in KubeSphere. Thi
 
 ## Prerequisites
 
-- You need an account granted a role including the authorization of **Cluster Management**. For example, you can log in to the console as `admin` directly or create a new role with the authorization and assign it to an account.
+- You need an account granted a role including the permission of **Cluster Management**. For example, you can log in to the console as `admin` directly or create a new role with the permission and assign it to an account.
 
 - Before adding a log receiver, you need to enable any of the `logging`, `events` or `auditing` components. For more information, see [Enable Pluggable Components](../../../../pluggable-components/). `logging` is enabled as an example in this tutorial.
 
@@ -104,8 +104,8 @@ apiVersion: v1
 kind: Service
 metadata:
   labels:
-    app: fluentd-svc
-  name: fluentd-svc
+    app: fluentd
+  name: fluentd
   namespace: default
 spec:
   ports:
@@ -120,29 +120,32 @@ spec:
 EOF
 ```
 
-## Step 2: Add Fluentd as a Log Receiver (i.e. Collector)
+## Step 2: Add Fluentd as a Log Receiver
 
-1. Log in to KubeSphere as `admin`. Click **Platform** in the top left corner and select **Cluster Management**.
-2. If you have enabled the [multi-cluster feature](../../../../multicluster-management/), you can select a specific cluster. If you have not enabled the feature, refer to the next step directly.
-3. On the **Cluster Management** page, go to **Log Collections** in **Cluster Settings**.
+1. Log in to KubeSphere as `admin`. Click **Platform** in the top-left corner and select **Cluster Management**.
 
-4. Click **Add Log Collector** and choose **Fluentd**.
+   {{< notice note >}}
 
-   ![add-receiver](/images/docs/cluster-administration/cluster-settings/log-collections/add-fluentd-as-receiver/add-receiver.png)
+   If you have enabled the [multi-cluster feature](../../../../multicluster-management/), you can select a specific cluster.
 
-5. Provide the Fluentd service address and port as below:
+   {{</ notice >}} 
+
+2. On the **Cluster Management** page, go to **Log Collection** in **Cluster Settings**.
+
+3. Click **Add Log Receiver** and choose **Fluentd**.
+
+4. Provide the Fluentd service address and port as below:
 
    ![add-fluentd](/images/docs/cluster-administration/cluster-settings/log-collections/add-fluentd-as-receiver/add-fluentd.png)
 
-6. Fluentd will appear in the receiver list on the **Log Collections** page, the status of which is **Collecting**.
+5. Fluentd will appear in the receiver list on the **Log Collection** page, the status of which is **Collecting**.
 
-   ![receiver-list](/images/docs/cluster-administration/cluster-settings/log-collections/add-fluentd-as-receiver/receiver-list.png)
 
 ## Step 3: Verify Fluentd is Receiving Logs Sent from Fluent Bit
 
 1. Click **Application Workloads** on the **Cluster Management** page.
 
-2. Select **Workloads** and then select the `default` project from the drop-down list in the **Deployments** tab.
+2. Select **Workloads** and then select the `default` project from the drop-down list on the **Deployments** tab.
 
 3. Click the **fluentd** item and then select the **fluentd-xxxxxxxxx-xxxxx** Pod.
 

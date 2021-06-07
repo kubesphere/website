@@ -14,6 +14,7 @@
       <div class="live-2-left">
           <a href="{{ .url }}">
             <img src="{{ .image }}" alt="">
+            <button>{{ i18n "Wonderful review" }}</button>
           </a>
       </div>
       <div class="live-2-right">
@@ -97,9 +98,9 @@
             </div>
             <h3><a href="{{ .url }}">{{ .title }}</a></h3>
             {{ if ge now.Unix $over}}
-                <button class="over-btn">{{ i18n "Watch replay" }}</button>
+                <a href="{{ .url }}"><button class="over-btn">{{ i18n "Watch replay" }}</button></a>
             {{ else }}
-                <button class="notice-btn">{{ i18n "View details" }}</button>
+                <a href="{{ .url }}"><button class="notice-btn">{{ i18n "View details" }}</button></a>
             {{ end }}
         </div>
         {{ end }}
@@ -113,7 +114,7 @@
         <div class="left-div">
             <h2>{{ .title }}</h2>
             <p>{{ .content }}</p>
-            <a class="btn-a" href="{{ .url }}">{{ .btn }}</a>
+            <a class="btn-a" href="{{ .url }}" target="_blank">{{ .btn }}</a>
         </div>
         <img src="{{ .image }}" alt="">
     </div>
@@ -142,12 +143,13 @@
     var bindClickVideoLi = function() {
         $('.video-ul').on('click', 'li', function(ev) {
             var link = $(this).data('link')
-            var type = $(this).data('type')
-            if (type === 'video') {
-                showVideo(link)
-            } else if (type === 'iframe') {
-                showIframe(link)
-            }
+            window.open(link)
+            // var type = $(this).data('type')
+            // if (type === 'video') {
+            //     showVideo(link)
+            // } else if (type === 'iframe') {
+            //     showIframe(link)
+            // }
         })
     }
 

@@ -77,7 +77,7 @@ You do not need to create the GitHub Secret if your forked repository is open to
 
    **Advanced Settings**: You can define the code relative path. Use the default `/` for this field.
 
-4. On the **Container Settings** page, scroll down to **Service Settings** to set the access policy for the container. Select **HTTP** for **Protocol**, customize the name (for example, `http-1`), and input `8080` for both **Container Port** and **Service Port**.
+4. On the **Container Settings** page, scroll down to **Service Settings** to set the access policy for the container. Select **HTTP** for **Protocol**, customize the name (for example, `http-1`), and enter `8080` for both **Container Port** and **Service Port**.
 
    ![service-settings](/images/docs/project-user-guide/image-builder/s2i-publish-app-without-dockerfile/service-settings.jpg)
 
@@ -85,7 +85,7 @@ You do not need to create the GitHub Secret if your forked repository is open to
 
    ![health-checker](/images/docs/project-user-guide/image-builder/s2i-publish-app-without-dockerfile/health-checker.jpg)
 
-   **HTTP Request**: Select **HTTP** as the protocol, enter `/` as the path (root path in this tutorial), and input `8080` as the port exposed.
+   **HTTP Request**: Select **HTTP** as the protocol, enter `/` as the path (root path in this tutorial), and enter `8080` as the port exposed.
 
    **Initial Delays**: The number of seconds after the container has started before the liveness probe is initiated. Enter `30` for this field.
 

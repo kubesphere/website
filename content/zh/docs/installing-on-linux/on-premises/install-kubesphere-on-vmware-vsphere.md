@@ -461,7 +461,7 @@ https://kubesphere.io             2020-08-15 23:32:12
 
 #### 登录 console 界面
 
-使用上述日志中给定的访问地址进行访问，进入到 KubeSphere 的登录界面并使用默认账号（用户名`admin`，密码`P@88w0rd`）即可登录平台。
+使用上述日志中给定的访问地址进行访问，进入到 KubeSphere 的登录界面并使用默认帐户（用户名`admin`，密码`P@88w0rd`）即可登录平台。
 
 ![登录](/images/docs/vsphere/login.png)
 

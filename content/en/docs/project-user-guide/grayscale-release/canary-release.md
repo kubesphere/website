@@ -21,17 +21,11 @@ This method serves as an efficient way to test performance and reliability of a 
 
 ## Step 1: Create a Canary Release Job
 
-1. Log in to KubeSphere as `project-regular`. Under **Categories**, click **Create Job** on the right of **Canary Release**.
-
-   ![create-canary-release](/images/docs/project-user-guide/grayscale-release/canary-release/create-canary-release.jpg)
+1. Log in to KubeSphere as `project-regular` and navigate to **Grayscale Release**. Under **Categories**, click **Create Job** on the right of **Canary Release**.
 
 2. Set a name for it and click **Next**.
 
-   ![set-task-name](/images/docs/project-user-guide/grayscale-release/canary-release/set-task-name.jpg)
-
-3. Select your app from the drop-down list and the Service for which you want to implement the canary release. If you also use the sample app Bookinfo, select **reviews** and click **Next**.
-
-   ![cabary-release-3](/images/docs/project-user-guide/grayscale-release/canary-release/cabary-release-3.jpg)
+3. On the **Grayscale Release Components** tab, select your app from the drop-down list and the Service for which you want to implement the canary release. If you also use the sample app Bookinfo, select **reviews** and click **Next**.
 
 4. On the **Grayscale Release Version** tab, add another version of it (e.g `kubesphere/examples-bookinfo-reviews-v2:1.13.0`; change `v1` to `v2`) as shown in the image below and click **Next**:
 
@@ -43,7 +37,7 @@ This method serves as an efficient way to test performance and reliability of a 
 
    {{</ notice >}} 
 
-5. You send traffic to these two versions (`v1` and `v2`) either by a specific percentage or by the request content such as `Http Header`, `Cookie` and `URI`. Select **Forward by traffic ratio** and drag the icon in the middle to change the percentage of traffic sent to these two versions respectively (e.g. set 50% for either one). When you finish, click **Create**.
+5. You send traffic to these two versions (`v1` and `v2`) either by a specific percentage or by the request content such as `Http Header`, `Cookie` and `URI`. Select **Forward by traffic ratio** and drag the icon in the middle to change the percentage of traffic sent to these two versions respectively (for example, set 50% for either one). When you finish, click **Create**.
 
    ![canary-release-5](/images/docs/project-user-guide/grayscale-release/canary-release/canary-release-5.gif)
 
@@ -120,7 +114,7 @@ Now that you have two available app versions, access the app to verify the canar
 
    ![traffic-management](/images/docs/project-user-guide/grayscale-release/canary-release/traffic-management.png)
 
-3. Click a component (e.g. **reviews**) and you can see the information of traffic monitoring on the right, displaying real-time data of **Traffic**, **Success rate** and **Duration**.
+3. Click a component (for example, **reviews**) and you can see the information of traffic monitoring on the right, displaying real-time data of **Traffic**, **Success rate** and **Duration**.
 
    ![topology](/images/docs/project-user-guide/grayscale-release/canary-release/topology.png)
 

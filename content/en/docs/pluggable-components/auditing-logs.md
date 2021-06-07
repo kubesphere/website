@@ -6,9 +6,7 @@ linkTitle: "KubeSphere Auditing Logs"
 weight: 6700
 ---
 
-## What are KubeSphere Auditing Logs
-
-KubeSphere Auditing Log System provides a security-relevant chronological set of records documenting the sequence of activities related to individual users, managers, or other components of the system. Each request to KubeSphere generates an event that is then written to a webhook and processed according to a certain rule.
+The KubeSphere Auditing Log System provides a security-relevant chronological set of records documenting the sequence of activities related to individual users, managers, or other components of the system. Each request to KubeSphere generates an event that is then written to a webhook and processed according to a certain rule.
 
 For more information, see [Auditing Log Query](../../toolbox/auditing/auditing-query/).
 
@@ -25,7 +23,7 @@ When you implement multi-node installation KubeSphere on Linux, you need to crea
     ```
 
     {{< notice note >}}
-If you adopt [All-in-One Installation](../../quick-start/all-in-one-on-linux/), you do not need to create a `config-sample.yaml` file as you can create a cluster directly. Generally, the all-in-one mode is for users who are new to KubeSphere and look to get familiar with the system. If you want to enable Auditing in this mode (e.g. for testing purposes), refer to [the following section](#enable-auditing-logs-after-installation) to see how Auditing can be installed after installation.
+If you adopt [All-in-One Installation](../../quick-start/all-in-one-on-linux/), you do not need to create a `config-sample.yaml` file as you can create a cluster directly. Generally, the all-in-one mode is for users who are new to KubeSphere and look to get familiar with the system. If you want to enable Auditing in this mode (for example, for testing purposes), refer to [the following section](#enable-auditing-logs-after-installation) to see how Auditing can be installed after installation.
     {{</ notice >}}
 
 2. In this file, navigate to `auditing` and change `false` to `true` for `enabled`. Save the file after you finish.
@@ -94,7 +92,7 @@ By default, ks-installer will install Elasticsearch internally if Auditing is en
 
     ```bash
     kubectl apply -f https://github.com/kubesphere/ks-installer/releases/download/v3.1.0/kubesphere-installer.yaml
-
+    
     kubectl apply -f cluster-configuration.yaml
     ```
 
@@ -102,17 +100,13 @@ By default, ks-installer will install Elasticsearch internally if Auditing is en
 
 1. Log in to the console as `admin`. Click **Platform** in the top-left corner and select **Cluster Management**.
    
-    ![clusters-management](/images/docs/enable-pluggable-components/kubesphere-auditing-logs/clusters-management.png)
-    
 2. Click **CRDs** and enter `clusterconfiguration` in the search bar. Click the result to view its detail page.
 
     {{< notice info >}}
 A Custom Resource Definition (CRD) allows users to create a new type of resources without adding another API server. They can use these resources like any other native Kubernetes objects.
     {{</ notice >}}
 
-3. In **Resource List**, click the three dots on the right of `ks-installer` and select **Edit YAML**.
-
-     ![edit-yaml](/images/docs/enable-pluggable-components/kubesphere-auditing-logs/edit-yaml.png)
+3. In **Resource List**, click <img src="/images/docs/enable-pluggable-components/kubesphere-auditing-logs/three-dots.png" height="20px">  on the right of `ks-installer` and select **Edit YAML**.
 
 4. In this YAML file, navigate to `auditing` and change `false` to `true` for `enabled`. After you finish, click **Update** in the bottom-right corner to save the configuration.
 
@@ -143,8 +137,9 @@ By default, Elasticsearch will be installed internally if Auditing is enabled. F
     kubectl logs -n kubesphere-system $(kubectl get pod -n kubesphere-system -l app=ks-install -o jsonpath='{.items[0].metadata.name}') -f
     ```
 
-    {{< notice tip >}}
-You can find the web kubectl tool by clicking the hammer icon in the bottom-right corner of the console.
+    {{< notice note >}}
+
+You can find the web kubectl tool by clicking <img src="/images/docs/enable-pluggable-components/kubesphere-auditing-logs/hammer.png" height="20px"> in the bottom-right corner of the console.
     {{</ notice >}}
 
 ## Verify the Installation of the Component
@@ -153,7 +148,7 @@ You can find the web kubectl tool by clicking the hammer icon in the bottom-righ
 
 {{< tab "Verify the component on the dashboard" >}}
 
-Verify that you can use the **Auditing Operating** function from the **Toolbox** in the bottom right corner.
+Verify that you can use the **Auditing Operating** function from the **Toolbox** in the bottom-right corner.
 
 ![auditing-operating](/images/docs/enable-pluggable-components/kubesphere-auditing-logs/auditing-operating.png)
 

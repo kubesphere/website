@@ -6,8 +6,6 @@ linkTitle: "KubeEdge"
 weight: 6930
 ---
 
-## 什么是 KubeEdge
-
 [KubeEdge](https://kubeedge.io/zh/) 是一个开源系统，用于将容器化应用程序编排功能扩展到边缘的主机。KubeEdge 支持多个边缘协议，旨在对部署于云端和边端的应用程序与资源等进行统一管理。
 
 KubeEdge 的组件在两个单独的位置运行——云上和边缘节点上。在云上运行的组件统称为 CloudCore，包括 Controller 和 Cloud Hub。Cloud Hub 作为接收边缘节点发送请求的网关，Controller 则作为编排器。在边缘节点上运行的组件统称为 EdgeCore，包括 EdgeHub，EdgeMesh，MetadataManager 和 DeviceTwin。有关更多信息，请参见 [KubeEdge 网站](https://kubeedge.io/zh/)。
@@ -85,7 +83,7 @@ KubeEdge 的组件在两个单独的位置运行——云上和边缘节点上�
 自定义资源定义 (CRD) 允许用户在不新增 API 服务器的情况下创建一种新的资源类型，用户可以像使用其他 Kubernetes 原生对象一样使用这些自定义资源。
     {{</ notice >}}
 
-3. 在**资源列表**中，点击 `ks-installer` 右侧的三个点，然后选择**编辑配置文件**。
+3. 在**资源列表**中，点击 `ks-installer` 右侧的 <img src="/images/docs/zh-cn/enable-pluggable-components/kubeedge/three-dots.png" height="20px">，然后选择**编辑配置文件**。
    
 4. 在该配置文件中，搜寻到 `kubeedge.enabled`，将 `false` 更改为 `true` 以启用 KubeEdge。
 
@@ -108,8 +106,9 @@ KubeEdge 的组件在两个单独的位置运行——云上和边缘节点上�
     kubectl logs -n kubesphere-system $(kubectl get pod -n kubesphere-system -l app=ks-install -o jsonpath='{.items[0].metadata.name}') -f
     ```
 
-    {{< notice tip >}}
-您可以通过点击控制台右下角的锤子图标来找到 Web kubectl 工具。
+    {{< notice note >}}
+
+您可以通过点击控制台右下角的 <img src="/images/docs/zh-cn/enable-pluggable-components/kubeedge/hammer.png" height="20px"> 来找到 Web kubectl 工具。
     {{</ notice >}}
 
 ## 在升级后启用 KubeEdge
@@ -188,27 +187,4 @@ iptables-hphgf                                    1/1     Running   0          5
 
 如果您在启用 KubeEdge 时未设置 `kubeedge.cloudCore.cloudHub.advertiseAddress`，则 CloudCore 无法正常运行 (`CrashLoopBackOff`)。在这种情况下，请运行 `kubectl -n kubeedge edit cm cloudcore` 添加集群的公共 IP 地址或边缘节点可以访问的 IP 地址。
 
-{{</ notice >}} 
-
-## 自定义配置
-
-启用 KubeEdge 后，您可以手动创建一个 [ConfigMap](../../project-user-guide/configuration/configmaps/) 来自定义某些配置，比如 `keadm` 的下载 URL、KubeEdge 的版本等等。本地配置将基于该 ConfigMap 进行动态更新。
-
-以下是 ConfigMap 的示例：
-
-```yaml
-apiVersion: v1
-data:
-  region: zh # 下载区域。
-  version: v1.6.1 # KubeEdge 的默认安装版本。
-kind: ConfigMap
-metadata:
-  name: edge-watcher-config
-  namespace: kubeedge
-```
-
-{{< notice note >}}
-
-对于 `region` 字段，您可以指定 `zh` 或 `en`。默认值为 `zh`，默认下载链接为 `https://kubeedge.pek3b.qingstor.com/bin/v1.6.1/$arch/keadm-v1.6.1-linux-$arch.tar.gz`。若将 `region` 设置为 `en`，下载链接将变为 `https://github.com/kubesphere/kubeedge/releases/download/v1.6.1-kubesphere/keadm-v1.6.1-linux-amd64.tar.gz`。
-
-{{</ notice >}} 
+{{</ notice >}}

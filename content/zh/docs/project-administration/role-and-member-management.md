@@ -1,92 +1,84 @@
 ---
-title: "角色和成员管理"
+title: "项目角色和成员管理"
 keywords: 'KubeSphere, Kubernetes, 角色, 成员, 管理, 项目'
 description: '了解如何进行项目访问管理。'
-
-linkTitle: "角色和成员管理"
+linkTitle: "项目角色和成员管理"
 weight: 13200
 ---
 
-本教程演示如何管理项目中的角色和成员。
+本教程演示如何在项目中管理角色和成员。在项目级别，您可以向角色授予以下模块中的权限：
 
-您可以在项目范围内向角色授予以下资源的权限：
-
-- 应用负载
-- 存储
-- 配置
-- 监控告警
-- 项目设置
-- 访问控制
+- **应用负载**
+- **存储管理**
+- **配置中心**
+- **监控告警**
+- **访问控制**
+- **项目设置**
 
 ## 准备工作
 
-您需要至少创建一个项目（例如 `demo-project`）。 此外，您还需要准备一个在项目层角色为 `admin` 的帐户（例如 `project-admin`）。有关详情请参见[创建企业空间、项目、帐户和角色](../../quick-start/create-workspace-and-project/)。
+您需要至少创建一个项目（例如 `demo-project`）。此外，您还需要准备一个在项目级别具有 `admin` 角色的帐户（例如 `project-admin`）。有关更多信息，请参见[创建企业空间、项目、帐户和角色](../../quick-start/create-workspace-and-project/)。
 
 ## 内置角色
 
-在**项目角色**页面有三个内置角色。内置角色由 KubeSphere 在项目创建时自动创建，不能编辑或删除。您只能查看其权限列表和授权用户列表。
+**项目角色**页面列出了以下三个可用的内置角色。创建项目时，KubeSphere 会自动创建内置角色，并且内置角色无法进行编辑或删除。您只能查看内置角色的权限或将其分配给用户。
 
-| 内置角色 | 描述                                                |
-| ------------------ | ------------------------------------------------------------ |
-| viewer | 项目观察者，可以查看项目下所有的资源。 |
-| operator   | 项目维护者，可以管理项目下除用户和角色之外的资源。 |
-| admin     | 项目管理员，可以对项目下的所有资源执行所有操作。此角色可以完全控制项目下的所有资源。 |
+<table>
+  <tr>
+    <th width="17%">内置角色</th>
+    <th width="83%">描述</th>
+  </tr>
+  <tr>
+    <td><code>viewer</code></td>
+    <td>项目观察者，可以查看项目下所有的资源。</td>
+  </tr>
+   <tr>
+     <td><code>operator</code></td>
+     <td>项目维护者，可以管理项目下除用户和角色之外的资源。</td>
+  </tr>
+  <tr>
+    <td><code>admin</code></td>
+     <td>项目管理员，可以对项目下的所有资源执行所有操作。此角色可以完全控制项目下的所有资源。</td>
+  </tr>
+</table>
 
-1. 在**项目角色**页面，点击 `admin` 查看该角色的详情，如下图所示：
+若要查看角色所含权限：
 
-    ![view role details](/images/docs/zh-cn/project-admin/project_role_detail.png)
+1. 以 `project-admin` 身份登录控制台。在**项目角色**中，点击一个角色（例如，`admin`）以查看角色详情。
 
-2. 您可以点击**授权用户**选项卡查看被授予 `admin` 角色的用户。
+   ![project-role-detail](/images/docs/zh-cn/project-administration/role-and-member-management/project-role-detail.png)
+
+2. 点击**授权用户**选项卡，查看所有被授予该角色的用户。
 
 ## 创建项目角色
 
-1. 以 `project-admin` 用户登录控制台，在**项目管理**页面选择一个项目（例如 `demo-project`）。
+1. 转到**项目设置**下的**项目角色**。
+
+2. 在**项目角色**中，点击**创建**并设置**角色标识符**（例如，`project-monitor`）。点击**编辑权限**继续。
+
+3. 在弹出的窗口中，权限归类在不同的**模块**下。在本示例中，为该角色选择**应用负载**中的**应用负载查看**，以及**监控告警**中的**告警消息查看**和**告警策略查看**。点击**确定**完成操作。
 
     {{< notice note >}}
 
-此处以 `project-admin` 帐户为例。在**访问控制**页面，只要您帐户的角色具有**成员查看**、**角色管理**和**角色查看**权限，该帐户就可用于创建项目角色。
+**依赖于**表示当前授权项依赖所列出的授权项，勾选该权限后系统会自动选上所有依赖权限。
 
 {{</ notice >}}
 
-2. 打开**项目设置**下的**项目角色**页面，点击**创建**，设置**角色标识符**（此处以创建 `project-monitor` 角色为例），点击**编辑权限**进行下一步。
+4. 新创建的角色将在**项目角色**中列出，点击右侧的 <img src="/images/docs/zh-cn/project-administration/role-and-member-management/three-dots.png" height="20px"> 以编辑该角色。
 
-    ![Create a project role](/images/docs/zh-cn/project-admin/project_role_create_step1.png)
+    ![project-role-list](/images/docs/zh-cn/project-administration/role-and-member-management/project-role-list.png)
 
-3. 选择授予此角色的帐户的权限（例如**应用负载**中的**应用负载查看**，以及**监控告警**中的**告警消息查看**和**告警策略查看**），点击**确定**完成操作。
+## 邀请新成员
 
-    ![Edit Authorization](/images/docs/zh-cn/project-admin/project_role_create_step2.png)
+1. 转到**项目设置**下的**项目成员**，点击**邀请成员**。
 
-    {{< notice note >}}
+2. 点击右侧的 <img src="/images/docs/zh-cn/project-administration/role-and-member-management/add.png" height="20px"> 以邀请一名成员加入项目，并为其分配一个角色。
 
-某些权限**依赖于**其他权限。要选择从属的权限，必须选择其依赖的权限。
+3. 将成员加入项目后，点击**确定**。您可以在**项目成员**列表中查看新邀请的成员。
 
-    {{</ notice >}}
+4. 若要编辑现有成员的角色或将其从项目中移除，点击右侧的 <img src="/images/docs/zh-cn/project-administration/role-and-member-management/three-dots.png" height="20px"> 并选择对应的操作。
 
-4. 角色创建后会显示在**项目角色**页面。您可以点击角色右边的三个点对其进行编辑。
+    ![project-member-list](/images/docs/zh-cn/project-administration/role-and-member-management/project-member-list.png)
 
-    ![Edit Roles](/images/docs/zh-cn/project-admin/project_role_list.png)
+    
 
-    {{< notice note >}}
-
-`project-monitor` 角色在**监控告警**中仅被授予有限的权限，可能无法满足您的需求。此处仅为示例，您可以根据需求创建自定义角色。
-
-{{</ notice >}}
-
-## 邀请成员
-
-1. 选择**项目设置**下的**项目成员**，点击**邀请成员**。
-2. 邀请一个用户加入当前项目，对其授予 `project-monitor` 角色。 
-
-    ![invite member](/images/docs/zh-cn/project-admin/project_invite_member_step2.png)
-
-    {{< notice note >}}
-
-要进行此操作，该用户必须先被邀请至当前项目的企业空间。
-
-    {{</ notice >}}
-
-3. 点击**确定**。用户被邀请至当前项目后会显示在**项目成员**页面。
-
-4. 您可以修改现有成员的角色或将其从项目中移除。
-
-    ![edit member role](/images/docs/zh-cn/project-admin/project_user_edit.png)

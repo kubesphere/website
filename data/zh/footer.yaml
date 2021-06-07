@@ -46,6 +46,8 @@ footer:
       list:
         - content: 参与贡献
           link: contribution/
+        - content: 社区活动
+          link: live/  
         - content: 案例学习
           link: case/
         - content: 合作伙伴

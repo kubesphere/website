@@ -3,7 +3,15 @@
 <section class='section-1 bg-cover' style='background-image: url("{{ .image }}");'>
   <div class="title-div common-layout">
     <h1 class="title-h1">{{ .title }}</h1>
-    <p class="common-p">{{ .content }}</p>
+    <p class="common-p {{ if (and .showDownload (not .inCenter)) }} left-p {{ end }}">{{ .content }}</p>
+    {{ if .content2 }}
+    <p class="common-p {{ if (and .showDownload (not .inCenter)) }} left-p {{ end }}">{{ .content2 }}</p>
+    {{ end }}
+    {{ if .showDownload }}
+    <div class="download-div {{ if .inCenter }} center {{ end }}">
+      {{ partial "downloadButton" . }}
+    </div>
+    {{ end }}
   </div>
 </section>
 {{ end }}
@@ -62,8 +70,14 @@
     {{ else }}
     <img src="{{ .image }}" alt="">
     {{ end }}
+    {{ if .showDownload }}
+    <div>
+      {{ partial "downloadButton" . }}
+    </div>
+    {{ else }}
     <p class="common-p">{{ .content }}</p>
-    <a href="{{ .link }}"><button class="common-btn">{{ .btnContent }}</button></a>
+    <a href="{{ .link | relLangURL }}"><button class="common-btn lab">{{ .btnContent }}</button></a>
+    {{ end }}
   </div>
   {{ end }}
 </section>

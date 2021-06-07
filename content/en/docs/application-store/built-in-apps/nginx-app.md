@@ -19,25 +19,25 @@ This tutorial walks you through an example of deploying NGINX from the App Store
 
 ### Step 1: Deploy NGINX from the App Store
 
-1. On the **Overview** page of the project `demo-project`, click **App Store** in the top left corner.
+1. On the **Overview** page of the project `demo-project`, click **App Store** in the top-left corner.
 
-   ![app-store](/images/docs/appstore/built-in-apps/nginx-app/app-store.jpg)
+   ![app-store](/images/docs/appstore/built-in-apps/nginx-app/app-store.png)
 
-2. Find NGINX and click **Deploy** on the **App Info** page.
+2. Find NGINX and click **Deploy** on the **App Information** page.
 
-   ![nginx-in-app-store](/images/docs/appstore/built-in-apps/nginx-app/nginx-in-app-store.jpg)
+   ![nginx-in-app-store](/images/docs/appstore/built-in-apps/nginx-app/nginx-in-app-store.png)
 
-   ![deploy-nginx](/images/docs/appstore/built-in-apps/nginx-app/deploy-nginx.jpg)
+   ![deploy-nginx](/images/docs/appstore/built-in-apps/nginx-app/deploy-nginx.png)
 
 3. Set a name and select an app version. Make sure NGINX is deployed in `demo-project` and click **Next**.
 
-   ![confirm-deployment](/images/docs/appstore/built-in-apps/nginx-app/confirm-deployment.jpg)
+   ![confirm-deployment](/images/docs/appstore/built-in-apps/nginx-app/confirm-deployment.png)
 
-4. In **App Config**, specify the number of replicas to deploy for the app and enable Ingress based on your needs. When you finish, click **Deploy**.
+4. In **App Configurations**, specify the number of replicas to deploy for the app and enable Ingress based on your needs. When you finish, click **Deploy**.
 
-   ![edit-config-nginx](/images/docs/appstore/built-in-apps/nginx-app/edit-config-nginx.jpg)
+   ![edit-config-nginx](/images/docs/appstore/built-in-apps/nginx-app/edit-config-nginx.png)
 
-   ![manifest-file](/images/docs/appstore/built-in-apps/nginx-app/manifest-file.jpg)
+   ![manifest-file](/images/docs/appstore/built-in-apps/nginx-app/manifest-file.png)
 
    {{< notice note >}}
 
@@ -47,7 +47,7 @@ This tutorial walks you through an example of deploying NGINX from the App Store
 
 5. Wait until NGINX is up and running.
 
-   ![nginx-running](/images/docs/appstore/built-in-apps/nginx-app/nginx-running.jpg)
+   ![nginx-running](/images/docs/appstore/built-in-apps/nginx-app/nginx-running.png)
 
 ### Step 2: Access NGINX
 
@@ -55,23 +55,23 @@ To access NGINX outside the cluster, you need to expose the app through a NodePo
 
 1. Go to **Services** and click the service name of NGINX.
 
-   ![nginx-service](/images/docs/appstore/built-in-apps/nginx-app/nginx-service.jpg)
+   ![nginx-service](/images/docs/appstore/built-in-apps/nginx-app/nginx-service.png)
 
 2. On the service detail page, click **More** and select **Edit Internet Access** from the drop-down menu.
 
-   ![edit-internet-access](/images/docs/appstore/built-in-apps/nginx-app/edit-internet-access.jpg)
+   ![edit-internet-access](/images/docs/appstore/built-in-apps/nginx-app/edit-internet-access.png)
 
 3. Select **NodePort** for **Access Method** and click **OK**. For more information, see [Project Gateway](../../../project-administration/project-gateway/).
 
-   ![nodeport](/images/docs/appstore/built-in-apps/nginx-app/nodeport.jpg)
+   ![nodeport](/images/docs/appstore/built-in-apps/nginx-app/nodeport.png)
 
 4. Under **Service Ports**, you can see the port is exposed.
 
-   ![exposed-port](/images/docs/appstore/built-in-apps/nginx-app/exposed-port.jpg)
+   ![exposed-port](/images/docs/appstore/built-in-apps/nginx-app/exposed-port.png)
 
-5. Access NGINX through `{$NodeIP}:{$Nodeport}`.
+5. Access NGINX through `<NodeIP>:<NodePort>`.
 
-   ![access-nginx](/images/docs/appstore/built-in-apps/nginx-app/access-nginx.jpg)
+   ![access-nginx](/images/docs/appstore/built-in-apps/nginx-app/access-nginx.png)
 
    {{< notice note >}}
 

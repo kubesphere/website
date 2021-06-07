@@ -275,33 +275,39 @@ name = "开源社区"
 
     [[languages.zh.menu.main]]
     parent = "开源社区"
+    name = "社区活动"
+    URL = "live/"
+    weight = 2
+
+    [[languages.zh.menu.main]]
+    parent = "开源社区"
     name = "案例学习"
     URL = "case/"
-    weight = 2
+    weight = 3
 
     [[languages.zh.menu.main]]
     parent = "开源社区"
     name = "合作伙伴"
     URL = "partner/"
-    weight = 3
+    weight = 4
 
     [[languages.zh.menu.main]]
     parent = "开源社区"
     name = "动态"
     URL = "news/"
-    weight = 4
+    weight = 5
 
     [[languages.zh.menu.main]]
     parent = "开源社区"
     name = "版本计划"
     URL = "https://github.com/kubesphere/kubesphere/blob/master/docs/roadmap.md"
-    weight = 5
+    weight = 6
 
     [[languages.zh.menu.main]]
     parent = "开源社区"
     name = "中国站"
     URL = "https://kubesphere.com.cn/"
-    weight = 6
+    weight = 7
 
 [[languages.zh.menu.main]]
 weight = 6

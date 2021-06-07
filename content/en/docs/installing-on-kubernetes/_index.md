@@ -9,7 +9,7 @@ weight: 4000
 icon: "/images/docs/docs.svg"
 ---
 
-This chapter demonstrates how to deploy KubeSphere on existing Kubernetes clusters hosted on cloud or on-premises. As a highly flexible solution to container orchestration, KubeSphere allows users to deploy it and use its services across all Kubernetes engines.
+This chapter demonstrates how to deploy KubeSphere on existing Kubernetes clusters hosted on cloud or on-premises. As a highly flexible solution to container orchestration, KubeSphere can be deployed across various Kubernetes engines.
 
 ## Most Popular Pages
 

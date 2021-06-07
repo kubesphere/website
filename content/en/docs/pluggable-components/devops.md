@@ -6,11 +6,9 @@ linkTitle: "KubeSphere DevOps System"
 weight: 6300
 ---
 
-## What is KubeSphere DevOps System
-
 The KubeSphere DevOps System is designed for CI/CD workflows in Kubernetes. Based on [Jenkins](https://jenkins.io/), it provides one-stop solutions to help both development and Ops teams build, test and publish apps to Kubernetes in a straight-forward way. It also features plugin management, [Binary-to-Image (B2I)](../../project-user-guide/image-builder/binary-to-image/), [Source-to-Image (S2I)](../../project-user-guide/image-builder/source-to-image/), code dependency caching, code quality analysis, pipeline logging, etc.
 
-The DevOps System offers an enabling environment for users as apps can be automatically released to the same platform. It is also compatible with third-party private image registries (e.g. Harbor) and code repositories (e.g. GitLab/GitHub/SVN/BitBucket). As such, it creates excellent user experiences by providing users with comprehensive, visualized CI/CD pipelines which are extremely useful in air-gapped environments.
+The DevOps System offers an enabling environment for users as apps can be automatically released to the same platform. It is also compatible with third-party private image registries (for example, Harbor) and code repositories (for example, GitLab/GitHub/SVN/BitBucket). As such, it creates excellent user experiences by providing users with comprehensive, visualized CI/CD pipelines which are extremely useful in air-gapped environments.
 
 For more information, see [DevOps User Guide](../../devops-user-guide/).
 
@@ -27,7 +25,7 @@ When you implement multi-node installation of KubeSphere on Linux, you need to c
     ```
 
     {{< notice note >}}
-If you adopt [All-in-One Installation](../../quick-start/all-in-one-on-linux/), you do not need to create a `config-sample.yaml` file as you can create a cluster directly. Generally, the all-in-one mode is for users who are new to KubeSphere and look to get familiar with the system. If you want to enable DevOps in this mode (e.g. for testing purposes), refer to [the following section](#enable-devops-after-installation) to see how DevOps can be installed after installation.
+If you adopt [All-in-One Installation](../../quick-start/all-in-one-on-linux/), you do not need to create a `config-sample.yaml` file as you can create a cluster directly. Generally, the all-in-one mode is for users who are new to KubeSphere and look to get familiar with the system. If you want to enable DevOps in this mode (for example, for testing purposes), refer to [the following section](#enable-devops-after-installation) to see how DevOps can be installed after installation.
     {{</ notice >}}
 
 2. In this file, navigate to `devops` and change `false` to `true` for `enabled`. Save the file after you finish.
@@ -64,7 +62,7 @@ As you [install KubeSphere on Kubernetes](../../installing-on-kubernetes/introdu
 
     ```bash
     kubectl apply -f https://github.com/kubesphere/ks-installer/releases/download/v3.1.0/kubesphere-installer.yaml
-
+    
     kubectl apply -f cluster-configuration.yaml
     ```
 
@@ -72,8 +70,6 @@ As you [install KubeSphere on Kubernetes](../../installing-on-kubernetes/introdu
 
 1. Log in to the console as `admin`. Click **Platform** in the top-left corner and select **Cluster Management**.
    
-   ![clusters-management](/images/docs/enable-pluggable-components/kubesphere-devops-system/clusters-management.png)
-
 2. Click **CRDs** and enter `clusterconfiguration` in the search bar. Click the result to view its detail page.
 
     {{< notice info >}}
@@ -82,9 +78,8 @@ A Custom Resource Definition (CRD) allows users to create a new type of resource
 
 {{</ notice >}}
 
-3. In **Resource List**, click the three dots on the right of `ks-installer` and select **Edit YAML**.
+3. In **Resource List**, click <img src="/images/docs/enable-pluggable-components/kubesphere-devops-system/three-dots.png" height="20px"> on the right of `ks-installer` and select **Edit YAML**.
    
-   ![edit-yaml](/images/docs/enable-pluggable-components/kubesphere-devops-system/edit-yaml.png)
 4. In this YAML file, navigate to `devops` and change `false` to `true` for `enabled`. After you finish, click **Update** in the bottom-right corner to save the configuration.
 
     ```yaml
@@ -98,9 +93,9 @@ A Custom Resource Definition (CRD) allows users to create a new type of resource
     kubectl logs -n kubesphere-system $(kubectl get pod -n kubesphere-system -l app=ks-install -o jsonpath='{.items[0].metadata.name}') -f
     ```
 
-    {{< notice tip >}}
+    {{< notice note >}}
 
-You can find the web kubectl tool by clicking the hammer icon in the bottom-right corner of the console.
+You can find the web kubectl tool by clicking <img src="/images/docs/enable-pluggable-components/kubesphere-devops-system/hammer.png" height="20px"> in the bottom-right corner of the console.
 
 {{</ notice >}}
 

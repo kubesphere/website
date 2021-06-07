@@ -7,7 +7,10 @@ css: "scss/scenario.scss"
 section1:
   title: KubeSphere DevOps 提供端到端的工作流，集成主流 CI/CD 工具，提升交付能力
   content: KubeSphere DevOps 提供基于 Jenkins 的 CI/CD 流水线，支持自动化工作流，包括 Binary-to-Image (B2I) 和 Source-to-Image (S2I) 等，帮助不同的组织加快产品上市时间。
-  image: /images/devops/banner.jpg
+  content2:
+  image: /images/devops/banner.png
+  showDownload: true
+  inCenter: true
 
 image: /images/devops/dev-ops.png
 
@@ -44,9 +47,10 @@ section3:
   title: 观看 KubeSphere 一站式 DevOps 工作流操作演示
   videoLink: https://www.youtube.com/embed/c3V-2RX9yGY
   image: /images/service-mesh/15.jpg
+  showDownload: true
   content: 想自己动手体验实际操作？
   btnContent: 开始动手实验
-  link: https://kubesphere.com.cn/docs/pluggable-components/devops/
+  link: docs/pluggable-components/devops/
   bgLeft: /images/service-mesh/3-2.svg
   bgRight: /images/service-mesh/3.svg
 ---

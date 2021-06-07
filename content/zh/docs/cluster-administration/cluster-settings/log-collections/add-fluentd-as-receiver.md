@@ -104,8 +104,8 @@ apiVersion: v1
 kind: Service
 metadata:
   labels:
-    app: fluentd-svc
-  name: fluentd-svc
+    app: fluentd
+  name: fluentd
   namespace: default
 spec:
   ports:
@@ -123,20 +123,23 @@ EOF
 ## 步骤 2：添加 Fluentd 作为日志接收器
 
 1. 以 `admin` 身份登录 KubeSphere 的 Web 控制台。点击左上角的**平台管理**，然后选择**集群管理**。
-2. 如果您启用了[多集群功能](../../../../multicluster-management/)，您可以选择一个集群。如果尚未启用该功能，请直接进行下一步。
-3. 在**集群管理**页面，选择**集群设置**下的**日志收集**。
 
-4. 点击**添加日志接收器**并选择 **Fluentd**。
+   {{< notice note >}} 
 
-   ![add-receiver](/images/docs/cluster-administration/cluster-settings/log-collections/add-fluentd-as-receiver/add-receiver.png)
+   如果您启用了[多集群功能](../../../../multicluster-management/)，您可以选择一个集群。
 
-5. 输入 **Fluentd** 服务地址和端口信息，如下所示：
+   {{</ notice >}}
 
-   ![add-fluentd](/images/docs/cluster-administration/cluster-settings/log-collections/add-fluentd-as-receiver/add-fluentd.png)
+2. 在**集群管理**页面，选择**集群设置**下的**日志收集**。
 
-6. Fluentd 会显示在**日志收集**页面的接收器列表中，状态为**收集中**。
+3. 点击**添加日志接收器**并选择 **Fluentd**。
 
-   ![receiver-list](/images/docs/cluster-administration/cluster-settings/log-collections/add-fluentd-as-receiver/receiver-list.png)
+4. 输入 **Fluentd** 服务地址和端口信息，如下所示：
+
+   ![add-fluentd](/images/docs/zh-cn/cluster-administration/cluster-settings/log-collection/add-fluentd-as-receiver/add-fluentd.png)
+
+5. Fluentd 会显示在**日志收集**页面的接收器列表中，状态为**收集中**。
+
 
 ## 步骤 3：验证 Fluentd 能否从 Fluent Bit 接收日志
 
@@ -152,4 +155,4 @@ EOF
 
 6. 您可以看到日志持续滚动输出。
 
-   ![container-logs](/images/docs/cluster-administration/cluster-settings/log-collections/add-fluentd-as-receiver/container-logs.png)
+   ![container-logs](/images/docs/zh-cn/cluster-administration/cluster-settings/log-collection/add-fluentd-as-receiver/container-logs.png)

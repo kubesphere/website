@@ -6,8 +6,6 @@ linkTitle: "KubeEdge"
 weight: 6930
 ---
 
-## What is KubeEdge
-
 [KubeEdge](https://kubeedge.io/en/) is an open-source system for extending native containerized application orchestration capabilities to hosts at edge. It supports multiple edge protocols and looks to provide unified management of cloud and edge applications and resources.
 
 KubeEdge has components running in two separate places - cloud and edge nodes. The components running on the cloud, collectively known as CloudCore, include Controllers and Cloud Hub. Cloud Hub serves as the gateway for the requests sent by edge nodes while Controllers function as orchestrators. The components running on edge nodes, collectively known as EdgeCore, include EdgeHub, EdgeMesh, MetadataManager, and DeviceTwin. For more information, see [the KubeEdge website](https://kubeedge.io/en/).
@@ -29,7 +27,7 @@ When you implement multi-node installation of KubeSphere on Linux, you need to c
    ```
 
    {{< notice note >}}
-   If you adopt [All-in-One Installation](../../quick-start/all-in-one-on-linux/), you do not need to create a `config-sample.yaml` file as you can create a cluster directly. Generally, the all-in-one mode is for users who are new to KubeSphere and look to get familiar with the system. If you want to enable KubeEdge in this mode (e.g. for testing purposes), refer to [the following section](#enable-kubeedge-after-installation) to see how KubeEdge can be installed after installation.
+   If you adopt [All-in-One Installation](../../quick-start/all-in-one-on-linux/), you do not need to create a `config-sample.yaml` file as you can create a cluster directly. Generally, the all-in-one mode is for users who are new to KubeSphere and look to get familiar with the system. If you want to enable KubeEdge in this mode (for example, for testing purposes), refer to [the following section](#enable-kubeedge-after-installation) to see how KubeEdge can be installed after installation.
    {{</ notice >}}
 
 2. In this file, navigate to `kubeedge.enabled` and change `false` to `true`.
@@ -84,7 +82,7 @@ As you [install KubeSphere on Kubernetes](../../installing-on-kubernetes/introdu
 A Custom Resource Definition (CRD) allows users to create a new type of resources without adding another API server. They can use these resources like any other native Kubernetes objects.
     {{</ notice >}}
 
-3. In **Resource List**, click the three dots on the right of `ks-installer` and select **Edit YAML**.
+3. In **Resource List**, click <img src="/images/docs/enable-pluggable-components/kubeedge/three-dots.png" height="20px"> on the right of `ks-installer` and select **Edit YAML**.
    
 4. In this YAML file, navigate to `kubeedge.enabled` and enable it by setting it to `true`.
 
@@ -107,8 +105,9 @@ The `kubeedge` section is not included in `cluster-configuration.yaml` if your c
     kubectl logs -n kubesphere-system $(kubectl get pod -n kubesphere-system -l app=ks-install -o jsonpath='{.items[0].metadata.name}') -f
     ```
 
-    {{< notice tip >}}
-You can find the web kubectl tool by clicking the hammer icon in the bottom-right corner of the console.
+    {{< notice note >}}
+
+You can find the web kubectl tool by clicking <img src="/images/docs/enable-pluggable-components/kubeedge/hammer.png" height="20px"> in the bottom-right corner of the console.
     {{</ notice >}}
 
 ## Enable KubeEdge after Upgrade
@@ -186,28 +185,5 @@ iptables-hphgf                                    1/1     Running   0          5
 {{< notice note >}}
 
 CloudCore may malfunction (`CrashLoopBackOff`) if `kubeedge.cloudCore.cloudHub.advertiseAddress` was not set when you enabled KubeEdge. In this case, run `kubectl -n kubeedge edit cm cloudcore` to add the public IP address of your cluster or an IP address that can be accessed by edge nodes.
-
-{{</ notice >}} 
-
-## Custom Configurations
-
-After you enable KubeEdge, you can manually create a [ConfigMap](../../project-user-guide/configuration/configmaps/) to customize some configurations, such as the download URL of `keadm` and the version of KubeEdge. Local configurations will be dynamically updated based on the ConfigMap.
-
-Here is an example of the ConfigMap:
-
-```yaml
-apiVersion: v1
-data:
-  region: zh # Download region.
-  version: v1.6.1 # The default installed version of KubeEdge.
-kind: ConfigMap
-metadata:
-  name: edge-watcher-config
-  namespace: kubeedge
-```
-
-{{< notice note >}}
-
-You can specify `zh` or `en` for the field `region`. `zh` is the default value and the default download link is `https://kubeedge.pek3b.qingstor.com/bin/v1.6.1/$arch/keadm-v1.6.1-linux-$arch.tar.gz`. If you set `region` to `en`, the download link will be `https://github.com/kubesphere/kubeedge/releases/download/v1.6.1-kubesphere/keadm-v1.6.1-linux-amd64.tar.gz`.
 
 {{</ notice >}} 

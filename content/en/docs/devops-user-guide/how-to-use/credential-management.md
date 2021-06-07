@@ -48,7 +48,7 @@ Log in to the console of KubeSphere as `project-regular`. Navigate to your DevOp
 
 ### Create GitHub credentials
 
-Similarly, follow the same steps above to create GitHub credentials. Set a different Credential ID (e.g. `github-id`) and also select **Account Credentials** for **Type**. Enter your GitHub username and password for **Username** and **Token/Password** respectively.
+Similarly, follow the same steps above to create GitHub credentials. Set a different Credential ID (for example, `github-id`) and also select **Account Credentials** for **Type**. Enter your GitHub username and password for **Username** and **Token/Password** respectively.
 
 {{< notice note >}}
 
@@ -58,7 +58,7 @@ If there are any special characters such as `@` and `$` in your account or passw
 
 ### Create kubeconfig credentials
 
-Similarly, follow the same steps above to create kubeconfig credentials. Set a different Credential ID (e.g. `demo-kubeconfig`) and select **kubeconfig**.
+Similarly, follow the same steps above to create kubeconfig credentials. Set a different Credential ID (for example, `demo-kubeconfig`) and select **kubeconfig**.
 
 {{< notice info >}}
 

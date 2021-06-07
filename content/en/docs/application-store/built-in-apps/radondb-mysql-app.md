@@ -19,7 +19,7 @@ This tutorial demonstrates how to deploy RadonDB MySQL from the App Store of Kub
 
 ### Step 1: Deploy RadonDB MySQL from the App Store
 
-1. On the **Overview** page of the project `demo-project`, click **App Store** in the top left corner.
+1. On the **Overview** page of the project `demo-project`, click **App Store** in the top-left corner.
 
 2. Find RadonDB MySQL and click **Deploy** on the **App Information** page.
 

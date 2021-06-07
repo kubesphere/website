@@ -6,8 +6,6 @@ linkTitle: "KubeSphere 审计日志"
 weight: 6700
 ---
 
-## 什么是 KubeSphere 审计日志
-
 KubeSphere 审计日志系统提供了一套与安全相关并按时间顺序排列的记录，按顺序记录了与单个用户、管理人员或系统其他组件相关的活动。对 KubeSphere 的每个请求都会生成一个事件，然后写入 Webhook，并根据一定的规则进行处理。
 
 有关更多信息，请参见[审计日志查询](../../toolbox/auditing/auditing-query/)。
@@ -94,7 +92,7 @@ KubeSphere 审计日志系统提供了一套与安全相关并按时间顺序排
 
     ```bash
     kubectl apply -f https://github.com/kubesphere/ks-installer/releases/download/v3.1.0/kubesphere-installer.yaml
-
+    
     kubectl apply -f cluster-configuration.yaml
     ```
 
@@ -102,17 +100,13 @@ KubeSphere 审计日志系统提供了一套与安全相关并按时间顺序排
 
 1. 以 `admin` 身份登录控制台。点击左上角的**平台管理**，选择**集群管理**。
    
-    ![集群管理](/images/docs/zh-cn/enable-pluggable-components/kubesphere-auditing-logs/clusters-management.png)
-    
 2. 点击**自定义资源 CRD**，在搜索栏中输入 `clusterconfiguration`，点击搜索结果查看其详细页面。
 
     {{< notice info >}}
 自定义资源定义 (CRD) 允许用户在不新增 API 服务器的情况下创建一种新的资源类型，用户可以像使用其他 Kubernetes 原生对象一样使用这些自定义资源。
     {{</ notice >}}
 
-3. 在**资源列表**中，点击 `ks-installer` 右边的三个点，选择**编辑配置文件**。
-
-     ![编辑 YAML](/images/docs/zh-cn/enable-pluggable-components/kubesphere-auditing-logs/edit-yaml.PNG)
+3. 在**资源列表**中，点击 `ks-installer` 右侧的 <img src="/images/docs/zh-cn/enable-pluggable-components/kubesphere-auditing-logs/three-dots.png" height="20px">，选择**编辑配置文件**。
 
 4. 在该 YAML 文件中，搜寻到 `auditing`，将 `enabled` 的 `false` 改为 `true`。完成后，点击右下角的**更新**，保存配置。
 
@@ -143,8 +137,9 @@ KubeSphere 审计日志系统提供了一套与安全相关并按时间顺序排
     kubectl logs -n kubesphere-system $(kubectl get pod -n kubesphere-system -l app=ks-install -o jsonpath='{.items[0].metadata.name}') -f
     ```
 
-    {{< notice tip >}}
-您可以点击控制台右下角的锤子图标找到 Web Kubectl 工具。
+    {{< notice note >}}
+
+您可以点击控制台右下角的 <img src="/images/docs/zh-cn/enable-pluggable-components/kubesphere-auditing-logs/hammer.png" height="20px"> 找到 Web Kubectl 工具。
     {{</ notice >}}
 
 ## 验证组件的安装

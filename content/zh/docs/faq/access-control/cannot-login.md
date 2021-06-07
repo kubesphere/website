@@ -1,8 +1,8 @@
 ---
-title: "帐号无法登录"
+title: "帐户无法登录"
 keywords: "无法登录, account is not active, KubeSphere, Kubernetes"
 description: "如何解决无法登录的问题"
-linkTitle: "帐号无法登录"
+linkTitle: "帐户无法登录"
 Weight: 16440
 ---
 
@@ -77,13 +77,13 @@ kubectl -n kubesphere-system get deploy ks-apiserver -o jsonpath='{.spec.templat
 kubectl -n kubesphere-system get deploy ks-controller-manager -o jsonpath='{.spec.template.spec.containers[0].image}'
 ```
 
-## 帐号或密码错误
+## 帐户或密码错误
 
 ![account-not-active](/images/docs/faq/access-control-and-account-management/cannot-login/wrong-password.png)
 
 ks-console 和 ks-apiser 需要借助 Redis 在多个副本之间共享数据，当 Redis 服务异常时会导致 ks-console 多个副本之间无法共享密码加密传输时使用的 salt。
 
-通过以下命令检查帐号密码是否正确：
+通过以下命令检查帐户密码是否正确：
 
 ```
 curl -u <USERNAME>:<PASSWORD> "http://`kubectl -n kubesphere-system get svc ks-apiserver -o jsonpath='{.spec.clusterIP}'`/api/v1/nodes"

@@ -33,7 +33,7 @@ After KubeSphere is installed, you need to add different users with varied roles
 1. Log in to the web console as `admin` with the default account and password (`admin/P@88w0rd`).
 
    {{< notice tip >}}
-   For account security, it is highly recommended that you change your password the first time you log in to the console. To change your password, select **User Settings** in the drop-down menu in the top right corner. In **Password Setting**, set a new password. You also can change the console language in **User Settings**.
+   For account security, it is highly recommended that you change your password the first time you log in to the console. To change your password, select **User Settings** in the drop-down menu in the top-right corner. In **Password Setting**, set a new password. You also can change the console language in **User Settings**.
    {{</ notice >}}
 
    ![chang-password1](/images/docs/quickstart/create-workspaces-projects-accounts/chang-password1.png)
@@ -126,7 +126,7 @@ In this step, you create a project using the account `project-admin` created in 
 
    ![kubesphere-projects](/images/docs/quickstart/create-workspaces-projects-accounts/kubesphere-projects.png)
 
-2. Enter the project name (e.g. `demo-project`) and click **OK** to finish. You can also add an alias and description for the project.
+2. Enter the project name (for example, `demo-project`) and click **OK** to finish. You can also add an alias and description for the project.
 
    ![demo-project](/images/docs/quickstart/create-workspaces-projects-accounts/demo-project.png)
 
@@ -134,7 +134,7 @@ In this step, you create a project using the account `project-admin` created in 
 
    ![click-demo-project](/images/docs/quickstart/create-workspaces-projects-accounts/click-demo-project.png)
 
-4. On the **Overview** page of the project, the project quota remains unset by default. You can click **Set** and specify [resource requests and limits](../../workspace-administration/project-quotas/) as needed (e.g. 1 core for CPU and 1000Gi for memory).
+4. On the **Overview** page of the project, the project quota remains unset by default. You can click **Set** and specify [resource requests and limits](../../workspace-administration/project-quotas/) as needed (for example, 1 core for CPU and 1000Gi for memory).
 
    ![quota1](/images/docs/quickstart/create-workspaces-projects-accounts/quota1.png)
 
@@ -214,7 +214,7 @@ To create a DevOps project, you must install the KubeSphere DevOps system in adv
 
    ![devops](/images/docs/quickstart/create-workspaces-projects-accounts/devops.png)
 
-2. Enter the DevOps project name (e.g. `demo-devops`) and click **OK**. You can also add an alias and description for the project.
+2. Enter the DevOps project name (for example, `demo-devops`) and click **OK**. You can also add an alias and description for the project.
 
    ![devops-project](/images/docs/quickstart/create-workspaces-projects-accounts/devops-project.png)
 

@@ -1,5 +1,5 @@
 ---
-title: "Cluster Shutdown and Restart"
+title: "Kubernetes Cluster Shutdown and Restart"
 description: "Learn how to gracefully shut down your cluster and restart it."
 layout: "single"
 
@@ -8,7 +8,7 @@ weight: 8800
 
 icon: "/images/docs/docs.svg"
 ---
-This document describes the process of gracefully shutting down your cluster and how to restart it. You might need to temporarily shut down your cluster for maintenance reasons.
+This document describes the process of gracefully shutting down your Kubernetes cluster and how to restart it. You might need to temporarily shut down your cluster for maintenance reasons.
 
 {{< notice warning >}}
 Shutting down a cluster is very dangerous. You must fully understand the operation and its consequences. Please make an etcd backup before you proceed.
@@ -42,7 +42,7 @@ done
 Then you can shut down other cluster dependencies, such as external storage.
 
 ## Restart a Cluster Gracefully
-You can restart a cluster gracefully after shutting down the cluster gracefully.
+You can restart a Kubernetes cluster gracefully after shutting down the cluster gracefully.
 
 ### Prerequisites
 You have shut down your cluster gracefully.
