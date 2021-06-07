@@ -28,7 +28,7 @@ weight: 9100
 
    {{</ notice >}}
 
-2. **在基本信息**页面，为创建的企业空间输入名称，并从下拉菜单中选择一名企业空间管理员。点击**创建**以继续。
+2. 在**基本信息**页面，为创建的企业空间输入名称，并从下拉菜单中选择一名企业空间管理员。点击**创建**以继续。
 
    ![set-workspace-info](/images/docs/zh-cn/workspace-administration-and-user-guide/workspace-overview/set-workspace-info.png)
 
