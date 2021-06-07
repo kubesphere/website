@@ -18,7 +18,7 @@ weight: 14320
 
 ## **动手实验**
 
-### **步骤** **1**：安装 **TiDB Operator CRD**
+### 步骤 1：安装 TiDB Operator CRD
 
 1. 以 `admin` 身份登录 KubeSphere 的 Web 控制台，使用右下角**工具箱**中的 **Kubectl** 执行以下命令来安装 TiDB Operator CRD：
 
@@ -38,7 +38,7 @@ weight: 14320
    customresourcedefinition.apiextensions.k8s.io/tidbclusterautoscalers.pingcap.com created
    ```
 
-### **步骤** **2**：添加应用仓库
+### 步骤 2：添加应用仓库
 
 1. 登出 KubeSphere，再以 `ws-admin` 身份登录。在企业空间中，访问**应用管理**下的**应用仓库**，然后点击**添加仓库**。
 
@@ -52,7 +52,7 @@ weight: 14320
 
    ![added-pingcap-repo](/images/docs/zh-cn/appstore/external-apps/deploy-tidb-operator-and-cluster/added-pingcap-repo.png)
 
-### **步骤** **3**：部署 **TiDB Operator**
+### 步骤 3：部署 TiDB Operator
 
 1. 登出 KubeSphere，再以 `project-regular` 身份登录。在您的项目中，访问**应用负载**下的**应用**，点击**部署新应用**。
 
@@ -92,7 +92,7 @@ weight: 14320
 
    ![tidb-deployment](/images/docs/zh-cn/appstore/external-apps/deploy-tidb-operator-and-cluster/tidb-deployment.png)
 
-### **步骤** **4：部署** **TiDB** **集群**
+### 步骤 4：部署 TiDB 集群
 
 部署 TiDB 集群的过程与部署 TiDB Operator 的过程相似。
 
