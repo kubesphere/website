@@ -30,8 +30,6 @@ KubeSphere 默认安装 Jenkins Configuration as Code 插件，您可以通过 Y
 
 1. 以 `admin` 身份登录 KubeSphere，点击左上角的**平台管理**，然后选择**集群管理**。
 
-   ![集群管理](/images/docs/zh-cn/devops-user-guide/use-devops/jenkins-system-settings/cluster-management.png)
-
 2. 如果您已经启用[多集群功能](../../../multicluster-management/)并已导入 Member 集群，您可以选择一个特定集群来编辑 ConfigMap。如果您尚未启用多集群功能，请直接参考下一步。
 
 3. 在左侧导航栏中选择**配置中心**下的**配置**。在**配置**页面上，从下拉列表中选择 `kubesphere-devops-system`，然后点击 `jenkins-casc-config`。

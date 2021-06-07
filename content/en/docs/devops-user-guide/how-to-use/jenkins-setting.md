@@ -18,7 +18,7 @@ You have enabled [the KubeSphere DevOps System](../../../pluggable-components/de
 
 ## Jenkins Configuration as Code
 
-KubeSphere has Jenkins Configuration as Code plugin installed by default to allow you to define the desired state of your Jenkins configuration through YAML files and makes it easy to reproduce your Jenkins configurations including plugin configurations. You can find descriptions about specific Jenkins configurations and example YAML files [in this directory](https://github.com/jenkinsci/configuration-as-code-plugin/tree/master/demos).
+KubeSphere has the Jenkins Configuration as Code plugin installed by default to allow you to define the desired state of your Jenkins configuration through YAML files and makes it easy to reproduce your Jenkins configurations including plugin configurations. You can find descriptions about specific Jenkins configurations and example YAML files [in this directory](https://github.com/jenkinsci/configuration-as-code-plugin/tree/master/demos).
 
 Besides, you can find the `formula.yaml` file in the repository [ks-jenkins](https://github.com/kubesphere/ks-jenkins), where you can view plugin versions and customize these versions based on your needs.
 
@@ -28,9 +28,7 @@ Besides, you can find the `formula.yaml` file in the repository [ks-jenkins](htt
 
 It is recommended that you configure Jenkins in KubeSphere through Configuration as Code (CasC). The built-in Jenkins CasC file is stored as a [ConfigMap](../../../project-user-guide/configuration/configmaps/).
 
-1. Log in to KubeSphere as `admin`. Click **Platform** in the top left corner and select **Cluster Management**.
-
-   ![cluster-management](/images/docs/devops-user-guide/using-devops/jenkins-system-settings/cluster-management.png)
+1. Log in to KubeSphere as `admin`. Click **Platform** in the top-left corner and select **Cluster Management**.
 
 2. If you have enabled the [multi-cluster feature](../../../multicluster-management/) with member clusters imported, you can select a specific cluster to edit the ConfigMap. If you have not enabled the feature, refer to the next step directly.
 
