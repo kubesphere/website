@@ -12,6 +12,10 @@
 <meta property="og:image" content="{{ with .Params.snapshot }}{{ . }}{{ else }}{{ with .Site.Params.snapshot }}{{ . | absURL }}{{ end }}{{ end }}"/>
 <meta property="og:url" content="{{ .Permalink }}"/>
 
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:site" content="@KubeSphere" />
+<meta property="twitter:image" content="{{ with .Params.snapshot }}{{ . }}{{ else }}{{ with .Site.Params.snapshot }}{{ . | absURL }}{{ end }}{{ end }}"/>
+
 <meta name="docsearch:language" content="{{ .Site.LanguageCode }}" />
 
 <link rel="canonical" href="https://kubesphere.io{{ .RelPermalink }}" />
