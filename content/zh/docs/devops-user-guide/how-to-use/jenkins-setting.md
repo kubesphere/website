@@ -8,7 +8,7 @@ Weight: 11240
 
 Jenkins 强大而灵活，已经成为 CI/CD 工作流的事实标准。但是，许多插件要求用户先设置系统级配置，然后才能使用。
 
-KubeSphere DevOps 系统提供基于 Jenkins 的容器化 CI/CD 功能。为了向用户提供可调度的 Jenkins 环境，KubeSphere 使用 **Configuration-as-Code** 进行 Jenkins 系统设置，这要求用户登录 Jenkins 仪表板并在修改配置后重新加载。Jenkins 系统设置在 KubeSphere 当前版本的控制台上不可用，即将发布的版本将支持该设置。
+KubeSphere DevOps 系统提供基于 Jenkins 的容器化 CI/CD 功能。为了向用户提供可调度的 Jenkins 环境，KubeSphere 使用 **Configuration as Code** 进行 Jenkins 系统设置，这要求用户登录 Jenkins 仪表板并在修改配置后重新加载。Jenkins 系统设置在 KubeSphere 当前版本的控制台上不可用，即将发布的版本将支持该设置。
 
 本教程演示如何在 Jenkins 仪表板上设置 Jenkins 并重新加载配置。
 
@@ -16,13 +16,19 @@ KubeSphere DevOps 系统提供基于 Jenkins 的容器化 CI/CD 功能。为了�
 
 您已启用 [KubeSphere DevOps 系统](../../../pluggable-components/devops/)。
 
+## Jenkins Configuration as Code
+
+KubeSphere 默认安装 Jenkins Configuration as Code 插件，您可以通过 YAML 文件定义 Jenkins 的期望状态，便于再现 Jenkins 的配置（包括插件配置）。您可以[在该目录中](https://github.com/jenkinsci/configuration-as-code-plugin/tree/master/demos)查看具体的 Jenkins 配置和示例 YAML 文件。
+
+此外，您可以在 [ks-jenkins](https://github.com/kubesphere/ks-jenkins) 仓库中找到 `formula.yaml` 文件，查看插件版本并按需自定义这些版本。
+
+![plugin-version](/images/docs/zh-cn/devops-user-guide/use-devops/jenkins-system-settings/plugin-version.png)
+
 ## 修改 ConfigMap
 
-建议您通过 Configuration-as-Code (CasC) 在 KubeSphere 中配置 Jenkins。内置 Jenkins CasC 文件存储为 [ConfigMap](../../../project-user-guide/configuration/configmaps/)。
+建议您通过 Configuration as Code (CasC) 在 KubeSphere 中配置 Jenkins。内置 Jenkins CasC 文件存储为 [ConfigMap](../../../project-user-guide/configuration/configmaps/)。
 
 1. 以 `admin` 身份登录 KubeSphere，点击左上角的**平台管理**，然后选择**集群管理**。
-
-   ![集群管理](/images/docs/zh-cn/devops-user-guide/use-devops/jenkins-system-settings/cluster-management.png)
 
 2. 如果您已经启用[多集群功能](../../../multicluster-management/)并已导入 Member 集群，您可以选择一个特定集群来编辑 ConfigMap。如果您尚未启用多集群功能，请直接参考下一步。
 
@@ -34,7 +40,7 @@ KubeSphere DevOps 系统提供基于 Jenkins 的容器化 CI/CD 功能。为了�
 
    ![more-list](/images/docs/zh-cn/devops-user-guide/use-devops/jenkins-system-settings/more-list.png)
 
-5. `jenkins-casc-config` 的配置模板是一个 YAML 文件，如下图所示。您可以在 ConfigMap 的代理 (Kubernetes Jenkins Agent) 中修改容器镜像、标签等内容，或者在 podTemplate 中添加容器。完成操作后，点击**更新**。
+5. `jenkins-casc-config` 的配置模板是一个 YAML 文件，如下图所示。您可以在 ConfigMap 的代理 (Kubernetes Jenkins Agent) 中修改容器镜像、标签、资源请求 (Request) 和限制 (Limit) 等内容，或者在 podTemplate 中添加容器。完成操作后，点击**更新**。
 
    ![编辑 Jenkins](/images/docs/zh-cn/devops-user-guide/use-devops/jenkins-system-settings/edit-jenkins.png)
 
@@ -66,7 +72,7 @@ KubeSphere DevOps 系统提供基于 Jenkins 的容器化 CI/CD 功能。为了�
 
    {{</ notice >}} 
 
-4. 登录仪表板后，点击导航栏中的 **Manage Jenkins**。
+4. 登录仪表板后，点击导航栏中的**系统管理**。
 
    ![manage-jenkins](/images/docs/zh-cn/devops-user-guide/use-devops/jenkins-system-settings/manage-jenkins.png)
 
@@ -74,9 +80,9 @@ KubeSphere DevOps 系统提供基于 Jenkins 的容器化 CI/CD 功能。为了�
 
    ![configuration-as-code](/images/docs/zh-cn/devops-user-guide/use-devops/jenkins-system-settings/configuration-as-code.png)
 
-6. 要重新加载 ConfigMap 中已修改的配置，请点击 **Apply new configuration**。
+6. 要重新加载 ConfigMap 中已修改的配置，请点击**应用新配置**。
 
-   ![应用配置](/images/docs/zh-cn/devops-user-guide/use-devops/jenkins-system-settings/app-config.png)
+   ![应用配置](/images/docs/zh-cn/devops-user-guide/use-devops/jenkins-system-settings/apply-config.png)
 
 7. 有关如何通过 CasC 设置 Jenkins 的更多信息，请参见 [Jenkins 文档](https://github.com/jenkinsci/configuration-as-code-plugin)。
 
