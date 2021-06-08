@@ -14,11 +14,11 @@ You can deliver Helm charts to the public repository of KubeSphere or import a p
 
 The public repository is also known as the App Store in KubeSphere, accessible to every tenant in a workspace. After [uploading the Helm chart of an app](../../../workspace-administration/upload-helm-based-application/), you can deploy your app to test its functions and submit it for review. Ultimately, you have the option to release it the App Store after it is approved. For more information, see [Application Lifecycle Management](../../../application-store/app-lifecycle-management/).
 
-![app-store](/images/docs/project-user-guide/applications/app-templates/app-store.jpg)
+![app-store](/images/docs/project-user-guide/applications/app-templates/app-store.png)
 
 For a private repository, only users with required permissions are allowed to [add private repositories](../../../workspace-administration/app-repository/import-helm-repository/) in a workspace. Generally, the private repository is built based on object storage services, such as MinIO. After imported to KubeSphere, these private repositories serve as application pools to provide app templates.
 
-![private-app-repository](/images/docs/project-user-guide/applications/app-templates/private-app-repository.jpg)
+![private-app-repository](/images/docs/project-user-guide/applications/app-templates/private-app-repository.png)
 
 {{< notice note >}}
 
