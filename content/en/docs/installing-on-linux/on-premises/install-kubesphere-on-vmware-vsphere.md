@@ -25,7 +25,7 @@ This tutorial walks you through an example of how to create Keepalived and HAPro
 
 ## Prepare Linux Hosts
 
-This tutorial creates 8 virtual machines of **CentOS Linux release 7.6.1810 (Core)** for the default minimal installation. Every machine has 2 Cores, 4 GB memory and 40 G disk space.
+This tutorial creates 8 virtual machines of **CentOS Linux release 7.6.1810 (Core)** for the default minimal installation. Every machine has 2 Cores, 4 GB of memory and 40 G disk space.
 
 | Host IP | Host Name | Role |
 | --- | --- | --- |

@@ -16,11 +16,11 @@ Once you have GlusterFS and Heketi set up, you can install GlusterFS on your cli
 
 There are three server machines of Ubuntu 16.04 in this example with each having one attached disk.
 
-| Hostname | IP Address  | Operating System                   | Device          |
-| -------- | ----------- | ---------------------------------- | --------------- |
-| server1  | 192.168.0.2 | Ubuntu 16.04, 4 Cores, 4 GB Memory | /dev/vdd 300 GB |
-| server2  | 192.168.0.3 | Ubuntu 16.04, 4 Cores, 4 GB Memory | /dev/vdd 300 GB |
-| server3  | 192.168.0.4 | Ubuntu 16.04, 4 Cores, 4 GB Memory | /dev/vdd 300 GB |
+| Hostname | IP Address  | Operating System                      | Device          |
+| -------- | ----------- | ------------------------------------- | --------------- |
+| server1  | 192.168.0.2 | Ubuntu 16.04, 4 Cores, 4 GB of Memory | /dev/vdd 300 GB |
+| server2  | 192.168.0.3 | Ubuntu 16.04, 4 Cores, 4 GB of Memory | /dev/vdd 300 GB |
+| server3  | 192.168.0.4 | Ubuntu 16.04, 4 Cores, 4 GB of Memory | /dev/vdd 300 GB |
 
 {{< notice note >}}
 
@@ -48,7 +48,6 @@ There are three server machines of Ubuntu 16.04 in this example with each having
    ```
    
    {{< notice note >}}
-   
 
 Make sure password authentication is enabled in the file `/etc/ssh/sshd_config` (the value of `PasswordAuthentication` should be `yes`).
 
