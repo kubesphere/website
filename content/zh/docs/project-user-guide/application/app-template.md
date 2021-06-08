@@ -14,11 +14,11 @@ weight: 10110
 
 KubeSphere 的公共仓库也称作应用商店，企业空间中的每位租户都能访问。[上传应用的 Helm Chart](../../../workspace-administration/upload-helm-based-application/) 后，您可以部署应用来测试它的功能，并提交审核。最终待应用审核通过后，您可以选择将它发布至应用商店。有关更多信息，请参见[应用程序生命周期管理](../../../application-store/app-lifecycle-management/)。
 
-![应用商店](/images/docs/zh-cn/project-user-guide/applications/app-templates/app-store.PNG)
+![应用商店](/images/docs/zh-cn/project-user-guide/applications/app-templates/app-store-1.png)
 
 对于私有仓库，只有拥有必要权限的用户才能在企业空间中[添加私有仓库](../../../workspace-administration/app-repository/import-helm-repository/)。一般来说，私有仓库基于对象存储服务构建，例如 MinIO。这些私有仓库在导入 KubeSphere 后会充当应用程序池，提供应用模板。
 
-![私有应用仓库](/images/docs/zh-cn/project-user-guide/applications/app-templates/private-app-repository.PNG)
+![私有应用仓库](/images/docs/zh-cn/project-user-guide/applications/app-templates/private-app-repository-2.png)
 
 {{< notice note >}}
 
