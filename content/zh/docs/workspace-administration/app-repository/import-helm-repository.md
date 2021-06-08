@@ -23,14 +23,13 @@ KubeSphere 构建的应用仓库可以让用户使用基于 Helm Chart 的 Kuber
 
 1. 以 `ws-admin` 身份登录 KubeSphere Web 控制台。在企业空间页面，转到**应用管理**下的**应用仓库**，然后点击**添加仓库**。
 
-    ![添加仓库](/images/docs/zh-cn/workspace-administration-and-user-guide/app-repository/import-helm-repository/app-repo.PNG)
+    ![添加仓库](/images/docs/zh-cn/workspace-administration-and-user-guide/app-repository/import-helm-repository/app-repo-1.png)
 
 2. 在弹出的对话框中，输入应用仓库名称并添加仓库 URL。例如，输入 `https://charts.kubesphere.io/main`。
 
-    ![应用信息对话框](/images/docs/zh-cn/workspace-administration-and-user-guide/app-repository/import-helm-repository/app-info-dialogue.png)
+    ![应用信息对话框](/images/docs/zh-cn/workspace-administration-and-user-guide/app-repository/import-helm-repository/app-info-dialogue-2.png)
 
     - **应用仓库名称**：为仓库设置一个简洁明了的名称，方便用户识别。
-    - **类型**：支持基于 Helm chart 的应用程序。
     - **URL**：遵循 RFC 3986 规范并支持以下三种协议：
       
       - S3：S3 格式的 URL，例如 `s3.<region>.amazonaws.com`，用于访问使用 S3 接口的 Amazon S3 服务。如果您选择此类型，则需要提供 Access Key ID 和 Secret Access Key。
@@ -40,7 +39,6 @@ KubeSphere 构建的应用仓库可以让用户使用基于 Helm Chart 的 Kuber
       - HTTPS：例如 `https://docs-repo.gd2.qingstor.com`。
       
         {{< notice note >}}
-      
 
 如果您想要对 HTTP/HTTPS 进行基本访问验证，可以使用类似此格式的 URL：`http://username:password@docs-repo.gd2.qingstor.com`。
         {{</ notice >}}
@@ -48,7 +46,7 @@ KubeSphere 构建的应用仓库可以让用户使用基于 Helm Chart 的 Kuber
 
 3. 输入必需的字段后，点击**验证**以验证 URL。如果 URL 可用，您会在它旁边看到一个绿色的对号，点击**确定**完成操作。
 
-    ![验证 URL](/images/docs/zh-cn/workspace-administration-and-user-guide/app-repository/import-helm-repository/validate-link.PNG)
+    ![验证 URL](/images/docs/zh-cn/workspace-administration-and-user-guide/app-repository/import-helm-repository/validate-link-3.png)
     
     {{< notice note >}}
 
@@ -59,4 +57,4 @@ KubeSphere 构建的应用仓库可以让用户使用基于 Helm Chart 的 Kuber
 
 4. 导入完成后，仓库会列在下方的仓库列表中，并且 KubeSphere 会自动加载该仓库中的所有应用，并添加为应用模板。当用户使用应用模板来部署应用时，可以在该仓库中查看这些应用。有关更多信息，请参见[用应用模板部署应用](../../../project-user-guide/application/deploy-app-from-template/)。
 
-   ![应用仓库列表](/images/docs/zh-cn/workspace-administration-and-user-guide/app-repository/import-helm-repository/app-repo-list.PNG)
+   ![应用仓库列表](/images/docs/zh-cn/workspace-administration-and-user-guide/app-repository/import-helm-repository/app-repo-list-4.png)
