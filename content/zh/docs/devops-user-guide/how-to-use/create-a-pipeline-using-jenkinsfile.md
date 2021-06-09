@@ -151,7 +151,7 @@ KubeSphere 中可以创建两种类型的流水线：一种是本教程中介绍
 
 4. 选择您的 GitHub 帐户，与该令牌相关的所有仓库将在右侧列出。选择 **devops-java-sample** 并点击**选择此仓库**，点击**下一步**继续。
 
-   ![选择仓库](/images/docs/zh-cn/devops-user-guide/use-devops/create-a-pipeline-using-a-jenkinsfile/select-repo.PNG)
+   ![选择仓库](/images/docs/zh-cn/devops-user-guide/use-devops/create-a-pipeline-using-a-jenkinsfile/select_repo.png)
 
 5. 在**高级设置**中，选中**丢弃旧的分支**旁边的方框。本教程中，您可以为**保留分支的天数**和**保留分支的最大个数**使用默认值。
 
