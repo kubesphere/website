@@ -1,6 +1,8 @@
 ---
 title: 'KubeSphere 部署 Litmus 至 Kubernetes 开启混沌实验'
-tag: 'Litmus,LitmusChaos,Kubernetes,Helm,KubeSphere'
+tag: 'Litmus,KubeSphere'
+keyword: 'Litmus,LitmusChaos,Kubernetes,Helm,KubeSphere'
+description: 'description: 'Litmus 是一种开源的云原生混沌工程工具集，专注于 Kubernetes 集群进行模拟故障测试，以帮助开发者和 SRE 发现集群及程序中的缺陷，从而提高系统的健壮性。本文介绍了 Litmus 的架构以及在 KubeSphere 上的部署方法，通过一系列混沌实验来验证整个基础设施和服务抵抗故障的能力。'
 createTime: '2021-06-09'
 author: '杨传胜'
 snapshot: 'https://pek3b.qingstor.com/kubesphere-community/images/20210609224203.png'
