@@ -31,35 +31,35 @@ In **Project Roles**, there are three available built-in roles as shown below. B
 
 ## Create a DevOps Project Role
 
-1. Log in to the console as `devops-admin` and select a DevOps project (for example, `demo-devops`) under **DevOps Projects** list.
+1. Log in to the console as `devops-admin` and select a DevOps project (for example, `demo-devops`) on the **DevOps Projects** page.
 
    {{< notice note >}}
 
-   The account `devops-admin` is used as an example. As long as the account you are using is granted a role including the authorization of **Project Members View**, **Project Roles Management** and **Project Roles View** in **Access Control** at DevOps project level, it can create a DevOps project role.
+   The account `devops-admin` is used as an example. As long as the account you are using is granted a role including the authorization of **Project Member Viewing**, **Project Role Management** and **Project Role Viewing** in **Access Control** at DevOps project level, it can create a DevOps project role.
 
    {{</ notice >}} 
 
-2. Go to **Project Roles** in **Project Management**, click **Create** and set a **Role Identifier**. In this example, a role named `pipeline-creator` will be created. Click **Edit Authorization** to continue.
+2. Go to **Project Roles** in **Project Management**, click **Create** and set a **Name**. In this example, a role named `pipeline-creator` will be created. Click **Edit Permissions** to continue.
 
    ![devops_role_step1](/images/docs/devops-user-guide/understand-and-manage-devops-projects/role-and-member-management/devops_role_step1.png)
 
-3. In **Pipelines Management**, select the authorization that you want this role to contain. For example, **Pipelines Management** and **Pipelines View** are selected for this role. Click **OK** to finish.
+3. In **Pipeline Management**, select the permissions that you want this role to contain. For example, **Pipeline Management** and **Pipeline Viewing** are selected for this role. Click **OK** to finish.
 
    ![devops_role_step2](/images/docs/devops-user-guide/understand-and-manage-devops-projects/role-and-member-management/devops_role_step2.png)
 
    {{< notice note >}} 
 
-   **Depend on** means the major authorization (the one listed after **Depend on**) needs to be selected first so that the affiliated authorization can be assigned.
+   **Depends on** means the major permission (the one listed after **Depends on**) needs to be selected first so that the affiliated permission can be assigned.
 
    {{</ notice >}} 
 
-4. Newly-created roles will be listed in **Project Roles**. You can click the three dots on the right to edit it.
+4. Newly created roles will be listed in **Project Roles**. You can click <img src="/images/docs/devops-user-guide/understand-and-manage-devops-projects/role-and-member-management/three-dots.png" height="15px"> on the right to edit it.
 
    ![devops_role_list](/images/docs/devops-user-guide/understand-and-manage-devops-projects/role-and-member-management/devops_role_list.png)
 
    {{< notice note >}} 
 
-   The role of `pipeline-creator` is only granted **Pipelines Management** and **Pipelines View**, which may not satisfy your need. This example is only for demonstration purpose. You can create customized roles based on your needs.
+   The role of `pipeline-creator` is only granted **Pipeline Management** and **Pipeline Viewing**, which may not satisfy your need. This example is only for demonstration purpose. You can create customized roles based on your needs.
 
    {{</ notice >}} 
 
@@ -67,7 +67,7 @@ In **Project Roles**, there are three available built-in roles as shown below. B
 
 1. In **Project Management**, select **Project Members** and click **Invite Member**.
 
-2. Invite a user to the DevOps project. Grant the role of `pipeline-creator` to the user. 
+2. Click <img src="/images/docs/devops-user-guide/understand-and-manage-devops-projects/role-and-member-management/plus-button.png" height="15px"> to invite an account to the DevOps project. Grant the role of `pipeline-creator` to the account. 
 
    ![devops_invite_member](/images/docs/devops-user-guide/understand-and-manage-devops-projects/role-and-member-management/devops_invite_member.png)
 
