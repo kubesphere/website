@@ -17,11 +17,11 @@ weight: 11120
 
 1. 以 `project-admin` 身份登录 KubeSphere 控制台，转到 **DevOps 工程**，然后点击**创建**。
 
-   ![创建 DevOps 工程](/images/docs/zh-cn/devops-user-guide/understand-and-manage-devops-projects/devops-project-management/devops-project-create.PNG) 
+   ![创建 DevOps 工程](/images/docs/zh-cn/devops-user-guide/understand-and-manage-devops-projects/devops-project-management/devops-project-create-1.png) 
 
 2. 输入 DevOps 工程的基本信息，然后点击**确定**。
 
-   ![输入基本信息](/images/docs/zh-cn/devops-user-guide/understand-and-manage-devops-projects/devops-project-management/create-devops.PNG)
+   ![输入基本信息](/images/docs/zh-cn/devops-user-guide/understand-and-manage-devops-projects/devops-project-management/create-devops-2.png)
 
    - **名称**：此 DevOps 工程的简明名称，便于用户识别，例如 `demo-devops`。
    - **别名**：此 DevOps 工程的别名。
@@ -30,13 +30,13 @@ weight: 11120
 
 3. DevOps 工程创建后，会显示在下图所示的列表中。
 
-   ![DevOps 列表](/images/docs/zh-cn/devops-user-guide/understand-and-manage-devops-projects/devops-project-management/devops-list.PNG)
+   ![DevOps 列表](/images/docs/zh-cn/devops-user-guide/understand-and-manage-devops-projects/devops-project-management/devops-list-3.png)
 
 ## 查看 DevOps 工程
 
 点击刚刚创建的 DevOps 工程，转到其详情页面。具有不同权限的租户可以在 DevOps 工程中执行各种任务，包括创建 CI/CD 流水线和凭证以及管理帐户和角色。
 
-![DevOps 详情页面](/images/docs/zh-cn/devops-user-guide/understand-and-manage-devops-projects/devops-project-management/devops-detail-page.PNG)
+![DevOps 详情页面](/images/docs/zh-cn/devops-user-guide/understand-and-manage-devops-projects/devops-project-management/devops-detail-page-4.png)
 
 ### 流水线
 
@@ -56,4 +56,4 @@ weight: 11120
 
 2. 点击右侧的**工程管理**，您可以编辑此 DevOps 工程的基本信息或删除 DevOps 工程。
 
-   ![工程基本信息](/images/docs/zh-cn/devops-user-guide/understand-and-manage-devops-projects/devops-project-management/project-basic-info.PNG)
+   ![工程基本信息](/images/docs/zh-cn/devops-user-guide/understand-and-manage-devops-projects/devops-project-management/project-basic-info-5.png)
