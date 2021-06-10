@@ -35,7 +35,7 @@ In **Project Roles**, there are three available built-in roles as shown below. B
 
    {{< notice note >}}
 
-   The account `devops-admin` is used as an example. As long as the account you are using is granted a role including the authorization of **Project Member Viewing**, **Project Role Management** and **Project Role Viewing** in **Access Control** at DevOps project level, it can create a DevOps project role.
+   The account `devops-admin` is used as an example. As long as the account you are using is granted a role including the permissions of **Project Member Viewing**, **Project Role Management** and **Project Role Viewing** in **Access Control** at DevOps project level, it can create a DevOps project role.
 
    {{</ notice >}} 
 
