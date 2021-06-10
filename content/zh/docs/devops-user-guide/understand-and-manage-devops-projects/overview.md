@@ -29,7 +29,7 @@ KubeSphere DevOps 系统为您提供以下功能：
 - [图形编辑面板](../../../devops-user-guide/how-to-use/create-a-pipeline-using-graphical-editing-panel/)，用于创建流水线，学习成本低。
 - 强大的工具集成机制，例如 [SonarQube](../../../devops-user-guide/how-to-integrate/sonarqube/)，用于代码质量检查。
 
-![流水线列表](/images/docs/zh-cn/devops-user-guide/understand-and-manage-devops-projects/overview/pipeline-list.PNG)
+![流水线列表](/images/docs/zh-cn/devops-user-guide/understand-and-manage-devops-projects/overview/pipeline-list-1.png)
 
 ![SonarQube 详细结果](/images/docs/zh-cn/devops-user-guide/understand-and-manage-devops-projects/overview/sonarqube-result-detail.PNG)
 

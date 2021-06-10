@@ -29,7 +29,7 @@ The KubeSphere DevOps system provides you with the following features:
 - [Graphical editing panels](../../../devops-user-guide/how-to-use/create-a-pipeline-using-graphical-editing-panel/) to create pipelines with a low learning curve.
 - A powerful tool integration mechanism such as [SonarQube](../../../devops-user-guide/how-to-integrate/sonarqube/) for code quality check.
 
-![pipeline-list](/images/docs/devops-user-guide/understand-and-manage-devops-projects/overview/pipeline-list.jpg)
+![pipeline-list](/images/docs/devops-user-guide/understand-and-manage-devops-projects/overview/pipeline-list.png)
 
 ![sonarqube-result-detail](/images/docs/devops-user-guide/understand-and-manage-devops-projects/overview/sonarqube-result-detail.jpg)
 
