@@ -25,7 +25,7 @@ weight: 3310
 
 ## KubeKey 如何安装不同的存储系统
 
-KubeKey 会为集群创建[一个配置文件](../../../installing-on-linux/introduction/multioverview/#2-编辑配置文件)（默认为 `config-sample.yaml`），其中包含定义不同资源（包括各种插件）的全部必要参数。NFS 和 GlusterFS 等不同的存储系统也能通过 Helm Chart 或 YAML 作为插件进行安装。若要让 KubeKey 以预期的方式来安装这些存储系统，就必须为 KubeKey 提供这些存储系统的必要配置。
+KubeKey 会为集群创建[一个配置文件](../../../installing-on-linux/introduction/multioverview/#2-编辑配置文件)（默认为 `config-sample.yaml`），其中包含定义不同资源（包括各种插件）的全部必要参数。QingCloud CSI 等不同的存储系统也能通过 Helm Chart 或 YAML 作为插件进行安装。若要让 KubeKey 以预期的方式来安装这些存储系统，就必须为 KubeKey 提供这些存储系统的必要配置。
 
 通常，有两种方法能使 KubeKey 应用即将安装的存储系统的配置。
 

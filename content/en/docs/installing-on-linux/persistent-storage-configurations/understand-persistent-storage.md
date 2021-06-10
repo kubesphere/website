@@ -25,7 +25,7 @@ Some storage systems require you to prepare a storage server in advance to provi
 
 ## How Does KubeKey Install Different Storage Systems
 
-KubeKey creates [a configuration file](../../../installing-on-linux/introduction/multioverview/#2-edit-the-configuration-file) (`config-sample.yaml` by default) for your cluster which contains all the necessary parameters you can define for different resources, including various add-ons. Different storage systems, such as NFS and GlusterFS, can also be installed as add-ons by Helm charts or YAML. To let KubeKey install them in the desired way, you must provide KubeKey with necessary configurations of these storage systems.
+KubeKey creates [a configuration file](../../../installing-on-linux/introduction/multioverview/#2-edit-the-configuration-file) (`config-sample.yaml` by default) for your cluster which contains all the necessary parameters you can define for different resources, including various add-ons. Different storage systems, such as QingCloud CSI, can also be installed as add-ons by Helm charts or YAML. To let KubeKey install them in the desired way, you must provide KubeKey with necessary configurations of these storage systems.
 
 There are generally two ways for you to let KubeKey apply configurations of the storage system to be installed.
 
@@ -53,4 +53,3 @@ Supported CSI plugins:
 - [neonsan-csi](https://github.com/yunify/qingstor-csi)
 - [qingcloud-csi](../install-qingcloud-csi/)
 - [ceph-csi](../install-ceph-csi-rbd/)
-- [nfs-client-provisioner](../install-nfs-client/)

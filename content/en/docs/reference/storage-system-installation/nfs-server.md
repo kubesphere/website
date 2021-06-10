@@ -12,7 +12,8 @@ Once your NFS server machine is ready, you can use [KubeKey](../../../installing
 
 {{< notice note >}}
 
-You can also create the storage class of NFS-client after you install a KubeSphere cluster.
+- You can also create the storage class of NFS-client after you install a KubeSphere cluster.
+- It is not recommended that you use NFS storage for production (especially on Kubernetes version 1.20 or later) as some issues may occur, such as `failed to obtain lock` and Pod `CrashLoopBackOff`. Besides, some apps may not be compatible with NFS, including [Prometheus](https://github.com/prometheus/prometheus/blob/03b354d4d9386e4b3bfbcd45da4bb58b182051a5/docs/storage.md#operational-aspects).
 
 {{</ notice >}} 
 

@@ -10,4 +10,3 @@ Supported CSI plugins:
 - [neonsan-csi](https://github.com/yunify/qingstor-csi)
 - {{< contentLink "docs/installing-on-linux/persistent-storage-configurations/install-qingcloud-csi/" "qingcloud-csi" >}}
 - {{< contentLink "docs/installing-on-linux/persistent-storage-configurations/install-ceph-csi-rbd/" "ceph-csi" >}}
-- {{< contentLink "docs/installing-on-linux/persistent-storage-configurations/install-nfs-client/" "nfs-client-provisioner" >}}
