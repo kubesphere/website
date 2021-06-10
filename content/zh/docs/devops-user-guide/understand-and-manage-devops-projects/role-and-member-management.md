@@ -31,7 +31,7 @@ weight: 11130
 
 ## 创建 DevOps 工程角色
 
-1. 以 `devops-admin` 身份登录控制台，然后在 **DevOps 工程**列表下选择一个 DevOps 工程（例如 `demo-devops`）。
+1. 以 `devops-admin` 身份登录控制台，然后前往 **DevOps 工程**页面选择一个 DevOps 工程（例如 `demo-devops`）。
 
    {{< notice note >}}
 
@@ -41,21 +41,21 @@ weight: 11130
 
 2. 转到**工程管理**中的**工程角色**，点击**创建**并设置**角色标识符**。在本示例中，将创建一个名为 `pipeline-creator` 的角色。点击**编辑权限**继续。
 
-   ![创建角色](/images/docs/zh-cn/devops-user-guide/understand-and-manage-devops-projects/role-and-member-management/devops-role-step1.PNG)
+   ![创建角色](/images/docs/zh-cn/devops-user-guide/understand-and-manage-devops-projects/role-and-member-management/devops-role-step_1.png)
 
 3. 在**流水线管理**中，选择您希望授予该角色的权限。例如，为此角色选择了**流水线管理**和**流水线查看**。点击**确定**完成操作。
 
-   ![分配角色](/images/docs/zh-cn/devops-user-guide/understand-and-manage-devops-projects/role-and-member-management/devops-role-step2.PNG)
+   ![分配角色](/images/docs/zh-cn/devops-user-guide/understand-and-manage-devops-projects/role-and-member-management/devops-role-step_2.png)
 
    {{< notice note >}} 
 
-   **依赖于**表示首先需要选择主要授权（**依赖于**之后列出的），以便可以分配关联授权。
+   **依赖于**表示首先需要选择主要权限（**依赖于**之后列出的），以便可以分配关联权限。
 
    {{</ notice >}} 
 
-4. 新创建的角色将列在**工程角色**中。您可以点击右侧的三个点对其进行编辑。
+4. 新创建的角色将列在**工程角色**中。您可以点击右侧的 <img src="/images/docs/zh-cn/devops-user-guide/understand-and-manage-devops-projects/role-and-member-management/three-dots.png" height="15px"> 对其进行编辑。
 
-   ![角色列表](/images/docs/zh-cn/devops-user-guide/understand-and-manage-devops-projects/role-and-member-management/devops-role-list.PNG)
+   ![角色列表](/images/docs/zh-cn/devops-user-guide/understand-and-manage-devops-projects/role-and-member-management/devops-role-list_3.png)
 
    {{< notice note >}} 
 
@@ -67,9 +67,9 @@ weight: 11130
 
 1. 在**工程管理**中选择**工程成员**，然后点击**邀请成员**。
 
-2. 邀请用户加入此 DevOps 工程，并向此用户授予 `pipeline-creator` 角色。
+2. 点击 <img src="/images/docs/zh-cn/devops-user-guide/understand-and-manage-devops-projects/role-and-member-management/plus-button.png" height="15px"> 邀请帐户加入此 DevOps 工程，并向此帐户授予 `pipeline-creator` 角色。
 
-   ![邀请成员](/images/docs/zh-cn/devops-user-guide/understand-and-manage-devops-projects/role-and-member-management/devops-invite-member.PNG)
+   ![邀请成员](/images/docs/zh-cn/devops-user-guide/understand-and-manage-devops-projects/role-and-member-management/devops-invite-member_4.png)
 
    {{< notice note >}} 
 
@@ -81,5 +81,5 @@ weight: 11130
 
 4. 您还可以通过编辑现有成员来更改其角色或将其从 DevOps 工程中删除。
 
-   ![编辑成员](/images/docs/zh-cn/devops-user-guide/understand-and-manage-devops-projects/role-and-member-management/devops-user-edit.PNG)
+   ![编辑成员](/images/docs/zh-cn/devops-user-guide/understand-and-manage-devops-projects/role-and-member-management/devops-user-edit_5.png)
 
