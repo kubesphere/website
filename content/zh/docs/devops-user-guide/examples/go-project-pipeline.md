@@ -36,11 +36,11 @@ weight: 11410
 
 1. 以 `project-regular` 身份登录 KubeSphere Web 控制台，转到您的 DevOps 工程，在**凭证**页面点击**创建**。
 
-   ![创建 DockerHub ID](/images/docs/zh-cn/devops-user-guide/examples/build-and-deploy-a-go-project/create-dockerhub-id.PNG)
+   ![创建 DockerHub ID](/images/docs/zh-cn/devops-user-guide/examples/build-and-deploy-a-go-project/create-dockerhub_id.png)
 
 2. 在弹出对话框中，设置**凭证 ID**，稍后会用于 Jenkinsfile 中，**类型**选择**帐户凭证**。**用户名**输入您的 Docker Hub 帐户名称，**token / 密码**中输入刚刚创建的访问令牌。操作完成后，点击**确定**。
 
-   ![创建 Docker 凭证](/images/docs/zh-cn/devops-user-guide/examples/build-and-deploy-a-go-project/credential-docker-create.PNG)
+   ![创建 Docker 凭证](/images/docs/zh-cn/devops-user-guide/examples/build-and-deploy-a-go-project/credential-docker_create.png)
 
    {{< notice tip >}}
 
@@ -72,7 +72,7 @@ weight: 11410
 
 1. 在流水线列表中，点击该流水线进入其详情页面。点击**编辑 Jenkinsfile** 定义一个 Jenkinsfile，流水线会基于它来运行。
 
-   ![编辑 jenkinsfile](/images/docs/zh-cn/devops-user-guide/examples/build-and-deploy-a-go-project/edit-jenkinsfile.PNG)
+   ![编辑 jenkinsfile](/images/docs/zh-cn/devops-user-guide/examples/build-and-deploy-a-go-project/edit_jenkinsfile.png)
 
 2. 将以下所有内容复制并粘贴到弹出窗口中，用作流水线的示例 Jenkinsfile。您必须将 `DOCKERHUB_USERNAME`、`DOCKERHUB_CREDENTIAL`、`KUBECONFIG_CREDENTIAL_ID` 和 `PROJECT_NAME` 的值替换成您自己的值。操作完成后，点击**确定**。
 
@@ -83,22 +83,22 @@ weight: 11410
          label 'maven'
        }
      }
-
+   
      environment {
-       // the address of your harbor registry
+       // 您 Docker Hub 仓库的地址
        REGISTRY = 'docker.io'
-       // your docker hub username
-       DOCKERHUB_USERNAME = 'yuswift'
-       // docker image name
+       // 您的 Docker Hub 用户名
+       DOCKERHUB_USERNAME = 'Docker Hub Username'
+       // Docker 镜像名称
        APP_NAME = 'devops-go-sample'
-       // ‘dockerhubid’ is the credential id you created in KubeSphere for docker access token
+       // ‘dockerhubid’ 是您在 KubeSphere 用 Docker Hub 访问令牌创建的凭证 ID
        DOCKERHUB_CREDENTIAL = credentials('dockerhubid')
-       //the kubeconfig credential id you created in KubeSphere
+       // 您在 KubeSphere 创建的 kubeconfig 凭证 ID
        KUBECONFIG_CREDENTIAL_ID = 'go'
-       // the name of the project you created in KubeSphere, not the DevOps project name
+       // 您在 KubeSphere 创建的项目名称，不是 DevOps 工程名称
        PROJECT_NAME = 'devops-go'
      }
-
+   
      stages {
        stage('docker login') {
          steps{
@@ -107,7 +107,7 @@ weight: 11410
                }
              }  
            }
-
+   
        stage('build & push') {
          steps {
            container ('maven') {
@@ -138,18 +138,18 @@ weight: 11410
 
 1. Jenkinsfile 设置完成后，您可以在仪表板上查看图形面板。点击**运行**来运行流水线。
 
-   ![运行流水线](/images/docs/zh-cn/devops-user-guide/examples/build-and-deploy-a-go-project/run-pipeline.PNG)
+   ![运行流水线](/images/docs/zh-cn/devops-user-guide/examples/build-and-deploy-a-go-project/run_pipeline.png)
 
 2. 在**活动**选项卡中，您可以查看流水线的状态。稍等片刻，流水线便会成功运行。
 
-   ![流水线成功运行](/images/docs/zh-cn/devops-user-guide/examples/build-and-deploy-a-go-project/pipeline-running.PNG)
+   ![流水线成功运行](/images/docs/zh-cn/devops-user-guide/examples/build-and-deploy-a-go-project/pipeline_running.png)
 
 
 ## 验证结果
 
 1. 如果流水线成功运行，则会在 Jenkinsfile 中指定的项目中创建一个**部署 (Deployment)**。
 
-   ![查看部署](/images/docs/zh-cn/devops-user-guide/examples/build-and-deploy-a-go-project/view-deployment.PNG)
+   ![查看部署](/images/docs/zh-cn/devops-user-guide/examples/build-and-deploy-a-go-project/view_deployment.png)
 
 2. 查看镜像是否已推送至 Docker Hub，如下所示：
 

@@ -36,7 +36,7 @@ You need to create credentials in KubeSphere for the access token created so tha
 
 1. Log in to the web console of KubeSphere as `project-regular`. Go to your DevOps project and click **Create** in **Credentials**.
 
-   ![create-dockerhub-id](/images/docs/devops-user-guide/examples/compile-and-deploy-a-go-project/create-dockerhub-id.jpg)
+   ![create-dockerhub-id](/images/docs/devops-user-guide/examples/compile-and-deploy-a-go-project/create-dockerhub-id.png)
 
 2. In the dialog that appears, set a **Credential ID**, which will be used later in the Jenkinsfile, and select **Account Credentials** for **Type**. Enter your Docker Hub account name for **Username** and the access token just created for **Token/Password**. When you finish, click **OK**.
 
@@ -58,21 +58,21 @@ With the above credentials ready, you can create a pipeline using an example Jen
 
 1. To create a pipeline, click **Create** on the **Pipelines** page.
 
-   ![create-pipeline](/images/docs/devops-user-guide/examples/compile-and-deploy-a-go-project/create-pipeline.jpg)
+   ![create-pipeline](/images/docs/devops-user-guide/examples/compile-and-deploy-a-go-project/create-pipeline.png)
 
 2. Set a name in the pop-up window and click **Next** directly.
 
-   ![set-pipeline-name](/images/docs/devops-user-guide/examples/compile-and-deploy-a-go-project/set-pipeline-name.jpg)
+   ![set-pipeline-name](/images/docs/devops-user-guide/examples/compile-and-deploy-a-go-project/set-pipeline-name.png)
 
 3. In this tutorial, you can use default values for all the fields. In **Advanced Settings**, click **Create** directly.
 
-   ![create-pipeline-2](/images/docs/devops-user-guide/examples/compile-and-deploy-a-go-project/create-pipeline-2.jpg)
+   ![create-pipeline-2](/images/docs/devops-user-guide/examples/compile-and-deploy-a-go-project/create-pipeline-2.png)
 
 ## Edit the Jenkinsfile
 
 1. In the pipeline list, click this pipeline to go to its detail page. Click **Edit Jenkinsfile** to define a Jenkinsfile and your pipeline runs based on it.
 
-   ![edit-jenkinsfile](/images/docs/devops-user-guide/examples/compile-and-deploy-a-go-project/edit-jenkinsfile.jpg)
+   ![edit-jenkinsfile](/images/docs/devops-user-guide/examples/compile-and-deploy-a-go-project/edit-jenkinsfile.png)
 
 2. Copy and paste all the content below to the pop-up window as an example Jenkinsfile for your pipeline. You must replace the value of `DOCKERHUB_USERNAME`,  `DOCKERHUB_CREDENTIAL`, `KUBECONFIG_CREDENTIAL_ID`,  and `PROJECT_NAME` with yours. When you finish, click **OK**.
 
@@ -83,22 +83,22 @@ With the above credentials ready, you can create a pipeline using an example Jen
          label 'maven'
        }
      }
-
+   
      environment {
-       // the address of your harbor registry
+       // the address of your Docker Hub registry
        REGISTRY = 'docker.io'
-       // your docker hub username
-       DOCKERHUB_USERNAME = 'yuswift'
-       // docker image name
+       // your Docker Hub username
+       DOCKERHUB_USERNAME = 'Docker Hub Username'
+       // Docker image name
        APP_NAME = 'devops-go-sample'
-       // ‘dockerhubid’ is the credential id you created in KubeSphere for docker access token
+       // ‘dockerhubid’ is the credentials ID you created in KubeSphere with Docker Hub Access Token
        DOCKERHUB_CREDENTIAL = credentials('dockerhubid')
-       //the kubeconfig credential id you created in KubeSphere
+       // the kubeconfig credentials ID you created in KubeSphere
        KUBECONFIG_CREDENTIAL_ID = 'go'
        // the name of the project you created in KubeSphere, not the DevOps project name
        PROJECT_NAME = 'devops-go'
      }
-
+   
      stages {
        stage('docker login') {
          steps{
@@ -107,7 +107,7 @@ With the above credentials ready, you can create a pipeline using an example Jen
                }
              }  
            }
-
+   
        stage('build & push') {
          steps {
            container ('maven') {
@@ -138,18 +138,18 @@ If your pipeline runs successfully, images will be pushed to Docker Hub. If you 
 
 1. After you finish the Jenkinsfile, you can see graphical panels display on the dashboard. Click **Run** to run the pipeline.
 
-   ![run-pipeline](/images/docs/devops-user-guide/examples/compile-and-deploy-a-go-project/run-pipeline.jpg)
+   ![run-pipeline](/images/docs/devops-user-guide/examples/compile-and-deploy-a-go-project/run-pipeline.png)
 
 2. In **Activity**, you can see the status of the pipeline. It may take a while before it successfully runs.
 
-   ![pipeline-running](/images/docs/devops-user-guide/examples/compile-and-deploy-a-go-project/pipeline-running.jpg)
+   ![pipeline-running](/images/docs/devops-user-guide/examples/compile-and-deploy-a-go-project/pipeline-running.png)
 
 
 ## Verify Results
 
 1. A **Deployment** will be created in the project specified in the Jenkinsfile if the pipeline runs successfully.
 
-   ![view-deployments](/images/docs/devops-user-guide/examples/compile-and-deploy-a-go-project/view-deployments.jpg)
+   ![view-deployments](/images/docs/devops-user-guide/examples/compile-and-deploy-a-go-project/view-deployments.png)
 
 2. Check whether the image is pushed to Docker Hub as shown below:
 
