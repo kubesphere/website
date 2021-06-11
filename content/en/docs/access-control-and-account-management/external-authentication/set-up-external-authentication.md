@@ -98,4 +98,10 @@ You need to deploy a Kubernetes cluster and install KubeSphere in the cluster. F
    kubectl -n kubesphere-system rollout restart deploy/ks-apiserver
    ```
 
+{{< notice note >}}
+
+In a multi-cluster environment, you only need to configure the Host Cluster.
+
+{{</ notice >}} 
+
    
