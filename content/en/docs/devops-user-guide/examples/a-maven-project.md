@@ -62,10 +62,10 @@ The Pod labeled `maven` uses the docker-in-docker network to run the pipeline. N
 
 ### Create credentials
 
-| Credential ID   | Type                | Use                          |
+| Credential ID   | Type                | Where to Use                 |
 | --------------- | ------------------- | ---------------------------- |
 | dockerhub-id    | Account Credentials | Registry, such as Docker Hub |
-| demo-kubeconfig | kubeconfig          | Deploy workloads             |
+| demo-kubeconfig | kubeconfig          | Workloads Deployment         |
 
 For details, refer to the [Credential Management](../../how-to-use/credential-management/).
 
@@ -79,13 +79,13 @@ In this example, all workloads are deployed in `kubesphere-sample-dev`. You must
 
 ### Create a pipeline for the Maven project
 
-1. Go to **Pipelines** of your DevOps project and click **Create**. For more information, see [Create a Pipeline - using Graphical Editing Panel](../../how-to-use/create-a-pipeline-using-graphical-editing-panel/).
+1. Go to **Pipelines** of your DevOps project and click **Create** to create a pipeline named `maven`. For more information, see [Create a Pipeline - using Graphical Editing Panel](../../how-to-use/create-a-pipeline-using-graphical-editing-panel/).
 
 2. Go to the detail page of the pipeline and click **Edit Jenkinsfile**.
 
    ![edit-jenkinsfile](/images/docs/devops-user-guide/examples/build-and-deploy-a-maven-project/edit-jenkinsfile.png)
 
-3. Copy and paste the following content into the pop-up window. You must replace the value of `DOCKERHUB_NAMESPACE` with yours. When you finish, save it.
+3. Copy and paste the following content into the pop-up window. You must replace the value of `DOCKERHUB_NAMESPACE` with yours. When you finish editing, click **OK** to save the Jenkinsfile.
 
    ```groovy
    pipeline {
@@ -104,7 +104,7 @@ In this example, all workloads are deployed in `kubesphere-sample-dev`. You must
            KUBECONFIG_CREDENTIAL_ID = 'demo-kubeconfig'
            REGISTRY = 'docker.io'
            // need to replace by yourself dockerhub namespace
-           DOCKERHUB_NAMESPACE = 'shaowenchen'
+           DOCKERHUB_NAMESPACE = 'Docker Hub Namespace'
            APP_NAME = 'devops-java-sample'
            BRANCH_NAME = 'dev'
        }
@@ -146,17 +146,17 @@ In this example, all workloads are deployed in `kubesphere-sample-dev`. You must
    }
    ```
 
-4. Save the Jenkinsfile and you can see stages and steps are automatically created on graphical editing panels.
+4. You can see stages and steps are automatically created on graphical editing panels.
 
    ![view-edit-jenkinsfile](/images/docs/devops-user-guide/examples/build-and-deploy-a-maven-project/view-edit-jenkinsfile.png)
 
 ### Run and test
 
-1. Click **Run** and type `TAG_NAME` to run the pipeline.
+1. Click **Run**, enter `v1` for **TAG_NAME** in the dialog that appears, and then click **OK** to run the pipeline.
 
    ![run-maven-pipeline](/images/docs/devops-user-guide/examples/build-and-deploy-a-maven-project/run-maven-pipeline.png)
 
-2. You can see the following figure when the pipeline finished.
+2. When the pipeline runs successfully, you can go to the **Activity** tab to view its details.
 
    ![view-result-maven-pipeline](/images/docs/devops-user-guide/examples/build-and-deploy-a-maven-project/view-result-maven-pipeline.png)
 
