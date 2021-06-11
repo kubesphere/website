@@ -54,7 +54,7 @@ weight: 8723
 
    ![member-account](/images/docs/zh-cn/cluster-administration/platform-settings/notification-management/configure-wecom/member-account.png)
 
-4. 您可以点击`测试二组`右侧的 <img src="/images/docs/zh-cn/cluster-administration/platform-settings/notification-management/configure-wecom/three-dots.png" height="20px">来查看其部门 ID。
+4. 您可以点击`测试二组`右侧的 <img src="/images/docs/zh-cn/cluster-administration/platform-settings/notification-management/configure-wecom/three-dots.png" height="20px"> 来查看其部门 ID。
 
    ![dept-id](/images/docs/zh-cn/cluster-administration/platform-settings/notification-management/configure-wecom/dept-id.png)
 
