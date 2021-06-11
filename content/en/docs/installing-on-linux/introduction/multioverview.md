@@ -280,7 +280,7 @@ The `controlPlaneEndpoint` is where you provide your external load balancer info
 
 You can customize persistent storage plugins (for example, NFS Client, Ceph RBD, and GlusterFS) by specifying storage under the field `addons` in `config-sample.yaml`. For more information, see [Persistent Storage Configurations](../../../installing-on-linux/persistent-storage-configurations/understand-persistent-storage/).
 
-KubeKey will install [OpenEBS](https://openebs.io/) to provision [LocalPV](https://kubernetes.io/docs/concepts/storage/volumes/#local) for development and testing environment by default, which is convenient for new users. In this example of multi-node installation, the default storage class (local volume) is used. For production, you can use NFS/Ceph/GlusterFS/CSI or commercial products as persistent storage solutions.
+KubeKey will install [OpenEBS](https://openebs.io/) to provision [LocalPV](https://kubernetes.io/docs/concepts/storage/volumes/#local) for development and testing environment by default, which is convenient for new users. In this example of multi-node installation, the default storage class (local volume) is used. For production, you can use Ceph/GlusterFS/CSI or commercial products as persistent storage solutions.
 
 {{< notice tip >}}
 

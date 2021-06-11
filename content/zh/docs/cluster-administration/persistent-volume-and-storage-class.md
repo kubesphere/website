@@ -152,6 +152,12 @@ NFS（网络文件系统）广泛用于带有 [NFS-Client](https://github.com/ku
 
 ![创建自定义存储类型](/images/docs/zh-cn/cluster-administration/persistent-volumes-and-storage-classes/create-custom-storage-class.PNG)
 
+{{< notice note >}}
+
+不建议您在生产环境中使用 NFS 存储（尤其是在 Kubernetes 1.20 或以上版本），这可能会引起 `failed to obtain lock` 和 `input/output error` 等问题，从而导致 Pod `CrashLoopBackOff`。此外，部分应用不兼容 NFS，例如 [Prometheus](https://github.com/prometheus/prometheus/blob/03b354d4d9386e4b3bfbcd45da4bb58b182051a5/docs/storage.md#operational-aspects) 等。
+
+{{</ notice >}}
+
 #### 准备工作
 
 - 有一个可用的 NFS 服务器。

@@ -264,7 +264,6 @@ spec:
 
 - Ceph RBD & CephFS
 - GlusterFS
-- NFS
 - QingCloud CSI
 - QingStor CSI
 - 未来版本将支持更多插件

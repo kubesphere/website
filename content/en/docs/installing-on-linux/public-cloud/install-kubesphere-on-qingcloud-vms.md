@@ -265,7 +265,6 @@ For testing or development, you can skip this part. KubeKey will use the integra
 
 - Ceph RBD & CephFS
 - GlusterFS
-- NFS
 - QingCloud CSI
 - QingStor CSI
 - More plugins will be supported in future releases
