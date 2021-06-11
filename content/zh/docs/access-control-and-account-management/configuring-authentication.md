@@ -84,6 +84,13 @@ spec:
      iam.kubesphere.io/origin-uid: <Third-party username>
    ```
 
+{{< notice note >}}
+
+多集群环境中，只需要在 host 集群中进行配置。
+
+{{</ notice >}} 
+
+
 ## 身份提供者
 
 您可以在 `identityProviders` 部分中配置多个身份提供者（IdentityProvider, IdP）。身份提供者会对用户进行认证，并向 KubeSphere 提供身份令牌。
