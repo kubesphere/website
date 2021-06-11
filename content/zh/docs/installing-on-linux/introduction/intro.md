@@ -32,14 +32,14 @@ KubeSphere 为用户提供轻量级安装程序 [KubeKey](https://github.com/kub
 
 ## 安装前
 
-- 由于需要从互联网上拉取镜像，因此必须在联网环境下进行。否则，需要改用[离线环境安装 KubeSphere](../../installing-on-linux/introduction/air-gapped-installation/)。
+- 由于需要从互联网上拉取镜像，因此必须在联网环境下进行。否则，需要改用[离线环境安装 KubeSphere](../air-gapped-installation/)。
 - 对于 All-in-One，唯一的节点既是主节点，也是工作节点。
 - 对于多节点安装，需要在配置文件中提供主机信息。
 - 在安装之前，请参见[端口要求](../port-firewall/)。
 
 ## KubeKey
 
-[KubeKey](https://github.com/kubesphere/kubekey) 为集群的安装和配置提供了一种有效的方法。您可以使用它来创建、扩缩和升级 Kubernetes 集群。您也可以在设置集群时使用 KubeKey 安装云原生组件（YAML 或 Chart）。有关更多信息，请参见 [KubeKey](../../installing-on-linux/introduction/kubekey/)。
+[KubeKey](https://github.com/kubesphere/kubekey) 为集群的安装和配置提供了一种有效的方法。您可以使用它来创建、扩缩和升级 Kubernetes 集群。您也可以在设置集群时使用 KubeKey 安装云原生组件（YAML 或 Chart）。有关更多信息，请参见 [KubeKey](../kubekey/)。
 
 ## 快速安装用于开发和测试
 
@@ -67,4 +67,4 @@ KubeSphere 为用户提供轻量级安装程序 [KubeKey](https://github.com/kub
 
 卸载 KubeSphere 意味着将其从您的机器上移除，该操作不可逆，请谨慎操作。
 
-有关更多信息，请参见[卸载 KubeSphere 和 Kubernetes](../../../installing-on-linux/uninstalling/uninstalling-kubesphere-and-kubernetes/)。
+有关更多信息，请参见[卸载 KubeSphere 和 Kubernetes](../../../installing-on-linux/uninstall-kubesphere-and-kubernetes/)。

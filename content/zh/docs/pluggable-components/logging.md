@@ -16,7 +16,7 @@ KubeSphere 为日志收集、查询和管理提供了一个强大的、全面的
 
 当您在 Linux 上安装 KubeSphere 时，首先需要创建一个配置文件，该文件列出了所有 KubeSphere 组件。
 
-1. 基于[在 Linux 上安装 KubeSphere](.../.../installing-on-linux/introduction/multioverview/) 的教程，您需要创建一个默认文件 `config-sample.yaml`。通过执行以下命令修改该文件：
+1. 基于[在 Linux 上安装 KubeSphere](../../installing-on-linux/introduction/multioverview/) 的教程，您需要创建一个默认文件 `config-sample.yaml`。通过执行以下命令修改该文件：
 
     ```bash
     vi config-sample.yaml
@@ -24,9 +24,9 @@ KubeSphere 为日志收集、查询和管理提供了一个强大的、全面的
 
     {{< notice note >}}
 
-- 如果您采用 [All-in-one 安装](.../.../quick-start/all-in-one-on-linux/)，则不需要创建 `config-sample.yaml` 文件，因为可以直接创建集群。一般来说，All-in-one 模式是为那些刚接触 KubeSphere 并希望熟悉系统的用户而准备的。如果您想在这个模式下启用日志系统（比如用于测试），请参考[下面的部分](#在安装后启用日志系统)，查看如何在安装后启用日志系统。
+- 如果您采用 [All-in-one 安装](../../quick-start/all-in-one-on-linux/)，则不需要创建 `config-sample.yaml` 文件，因为可以直接创建集群。一般来说，All-in-one 模式是为那些刚接触 KubeSphere 并希望熟悉系统的用户而准备的。如果您想在这个模式下启用日志系统（比如用于测试），请参考[下面的部分](#在安装后启用日志系统)，查看如何在安装后启用日志系统。
 
-- 如果您采用[多节点安装](.../.../install-on-linux/introduction/multioverview/)，并且使用符号链接作为 Docker 根目录，请确保所有节点遵循完全相同的符号链接。日志代理在守护进程集中部署到节点上。容器日志路径的任何差异都可能导致该节点的收集失败。
+- 如果您采用[多节点安装](../../installing-on-linux/introduction/multioverview/)，并且使用符号链接作为 Docker 根目录，请确保所有节点遵循完全相同的符号链接。日志代理在守护进程集中部署到节点上。容器日志路径的任何差异都可能导致该节点的收集失败。
 
 {{</ notice >}}
 
