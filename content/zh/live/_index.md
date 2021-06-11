@@ -9,21 +9,21 @@ section1:
   image: /images/live/background.jpg
 
 section2:
-  image: /images/live/meetup-hangzhou-kv.png
-  url: ./meetup-hangzhou/
+  image: /images/live/meetup-chengdu-kv.png
+  url: ./meetup-chengdu/
 
   notice:
-    title: Kubernetes and Cloud Native Meetup ——成都站
+    title: Kubernetes and Cloud Native Meetup ——北京站
     timeIcon: /images/live/clock.svg
-    time: 2021/06/19 13:00 – 18:00
+    time: 2021/07/29 13:00 – 18:00
     baseIcon: /images/live/base.svg
-    base: 四川省成都市高新区天府大道中段 500 号天祥广场 B 座 45A + 线上
+    base: 北京市东城区建国门内大街 9 号北京国际饭店 + 线上
     tag: 预告
-    url: ./meetup-chengdu/
+    url: ./meetup-beijing/
 
   over:
-    title: Kubernetes and Cloud Native Meetup ——上海站
-    url: ./meetup-shanghai/
+    title: Kubernetes and Cloud Native Meetup ——杭州站
+    url: ./meetup-hangzhou/
     tag: 结束
 
 section3:
