@@ -104,4 +104,21 @@ In a multi-cluster environment, you only need to configure the Host Cluster.
 
 {{</ notice >}} 
 
-   
+
+## Identity provider
+
+You can configure multiple identity providers (IdPs) in the 'identityProviders' section. The identity provider authenticates the user and provides an identity token to kubesphere.
+
+Kubesphere provides the following types of identity providers by default:
+
+* [LDAPIdentityProvider](../use-an-ldap-service)
+
+* [OIDCIdentityProvider](../oidc-identity-provider)
+
+* [GitHubIdentityProvider]()
+
+* [CASIdentityProvider]()
+
+* [AliyunIDaaSProvider]()
+
+You can also expand the kubesphere [OAuth2 authentication plug-in](../use-an-oauth2-identity-provider) to integrate with your account system.
