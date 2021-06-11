@@ -18,8 +18,6 @@ weight: 11270
 
 1. 点击左上角的**平台管理**，然后选择**集群管理**。
 
-   ![集群管理](/images/docs/zh-cn/devops-user-guide/use-devops/set-ci-node-for-dependency-caching/clusters-management.png)
-
 2. 如果您已经启用[多集群功能](../../../multicluster-management/)并已导入 Member 集群，那么您可以选择一个特定集群以查看其节点。如果尚未启用该功能，请直接参考下一步。
 
 3. 转到**节点管理**下的**集群节点**，您可以在其中查看当前集群中的现有节点。
@@ -30,13 +28,13 @@ weight: 11270
 
    ![选择 CI 节点](/images/docs/zh-cn/devops-user-guide/use-devops/set-ci-node-for-dependency-caching/select-ci-node.png)
 
-5. 在弹出对话框中，点击 **Add 标签**。使用键 `node-role.kubernetes.io/worker` 和值 `ci` 添加新标签，然后点击**保存**。
+5. 在弹出对话框中，您可以看到一个标签的键是 `node-role.kubernetes.io/worker`。输入 `ci` 作为此标签的值，然后点击**保存**。
 
    ![添加 CI 标签](/images/docs/zh-cn/devops-user-guide/use-devops/set-ci-node-for-dependency-caching/add-ci-label.png)
 
    {{< notice note >}} 
 
-   节点可能已经有空值的键，这种情况下您可以直接补充值 `ci`。
+   您也可以点击**添加标签**来按需添加新标签。
 
    {{</ notice >}} 
 
