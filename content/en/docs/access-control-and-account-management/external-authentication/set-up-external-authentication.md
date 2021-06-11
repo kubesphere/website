@@ -100,7 +100,7 @@ You need to deploy a Kubernetes cluster and install KubeSphere in the cluster. F
 
 {{< notice note >}}
 
-In the multi cluster environment, you only need to configure in the host cluster.
+In a multi-cluster environment, you only need to configure the Host Cluster.
 
 {{</ notice >}} 
 
