@@ -6,12 +6,11 @@ linkTitle: "帐户无法登录"
 Weight: 16440
 ---
 
-KubeSphere 安装时会自动创建 admin/P@88w0rd 默认帐户，ks-controller-manager 将用户状态同步到 openldap、Jekins 之后会加密帐户密码，在此之后帐户状态会被转换为 Active 帐户才可以正常登录。
-
+KubeSphere 安装时会自动创建 `admin/P@88w0rd` 默认帐户，密码错误或者帐户状态不是 active 会导致无法登录。
 
 下面是帐户无法登录时，一些常见的问题：
 
-## account not active
+## Account Not Active
 
 ![account-not-active](/images/docs/faq/access-control-and-account-management/cannot-login/account-not-active.png)
 
@@ -59,7 +58,7 @@ kubectl -n kubesphere-system logs -l app=openldap
 
 **解决方式**
 
-您需要先恢复 openldap、Jenkins 这两个服务并保证网络的连通性，重启 ks-controller-manager 后会立即触发 reconcile（当无法连接到 openldap 或 Jenkins 时重试间隔会递增）。
+您需要先恢复 openldap、Jenkins 这两个服务并保证网络的连通性，重启 ks-controller-manager。
 
 ```
 kubectl -n kubesphere-system rollout restart deploy ks-controller-manager
@@ -79,9 +78,7 @@ kubectl -n kubesphere-system get deploy ks-controller-manager -o jsonpath='{.spe
 
 ## 帐户或密码错误
 
-![account-not-active](/images/docs/faq/access-control-and-account-management/cannot-login/wrong-password.png)
-
-ks-console 和 ks-apiser 需要借助 Redis 在多个副本之间共享数据，当 Redis 服务异常时会导致 ks-console 多个副本之间无法共享密码加密传输时使用的 salt。
+![incorrect-password](/images/docs/faq/access-control-and-account-management/cannot-login/wrong-password.png)
 
 通过以下命令检查帐户密码是否正确：
 
@@ -91,7 +88,7 @@ curl -u <USERNAME>:<PASSWORD> "http://`kubectl -n kubesphere-system get svc ks-a
 
 ### Redis 异常
 
-您可以通过以下命令检查 Redis 服务是否正常：
+ks-console 和 ks-apiserver 需要借助 Redis 在多个副本之间共享数据。您可以通过以下命令检查 Redis 服务是否正常：
 
 ```
 kubectl -n kubesphere-system logs -l app=ks-console
@@ -107,25 +104,50 @@ kubectl -n kubesphere-system logs -l app=redis
 
 相关错误日志：
 
-> 1344:C 17 Sep 2020 17:13:18.099 # Failed opening the RDB file dump.rdb (in server root dir /data) for saving: Stale file handle
+```bash
+1344:C 17 Sep 2020 17:13:18.099 # Failed opening the RDB file dump.rdb (in server root dir /data) for saving: Stale file handle
 1:M 17 Sep 2020 17:13:18.198 # Background saving error
 1:M 17 Sep 2020 17:13:24.014 * 1 changes in 3600 seconds. Saving...
 1:M 17 Sep 2020 17:13:24.015 * Background saving started by pid 1345
 1345:C 17 Sep 2020 17:13:24.016 # Failed opening the RDB file dump.rdb (in server root dir /data) for saving: Stale file handle
 1:M 17 Sep 2020 17:13:24.115 # Background saving error
+```
 
-> E0909 07:05:22.770468 1 redis.go:51] unable to reach redis host EOF
+```bash
+E0909 07:05:22.770468 1 redis.go:51] unable to reach redis host EOF
+```
 
-> [WARNING] 252/094143 (6) : Server check_if_redis_is_master_0/R0 is DOWN, reason: Layer7 timeout, info: " at step 5 of tcp-check (expect string '10.223.2.232')", check duration: 1000ms. 2 active and 0 backup servers left. 0 sessions active, 0 requeued, 0 remaining in queue.
+```bash
+[WARNING] 252/094143 (6) : Server check_if_redis_is_master_0/R0 is DOWN, reason: Layer7 timeout, info: " at step 5 of tcp-check (expect string '10.223.2.232')", check duration: 1000ms. 2 active and 0 backup servers left. 0 sessions active, 0 requeued, 0 remaining in queue.
 [WARNING] 252/094143 (6) : Server check_if_redis_is_master_0/R1 is DOWN, reason: Layer7 timeout, info: " at step 5 of tcp-check (expect string '10.223.2.232')", check duration: 1000ms. 1 active and 0 backup servers left. 0 sessions active, 0 requeued, 0 remaining in queue.
 [WARNING] 252/094143 (6) : Server check_if_redis_is_master_0/R2 is DOWN, reason: Layer7 timeout, info: " at step 5 of tcp-check (expect string '10.223.2.232')", check duration: 1000ms. 0 active and 0 backup servers left. 0 sessions active, 0 requeued, 0 remaining in queue.
 [ALERT] 252/094143 (6) : backend 'check_if_redis_is_master_0' has no server available!
-
+```
 
 **解决方式**
 
-您需要先恢复 Redis 服务，保证其正常运行并且pod之间网络可以正常联通，稍后您可以重启 ks-console 以立即同步副本之间的数据。
+您需要先恢复 Redis 服务，保证其正常运行并且 pod 之间网络可以正常联通，稍后重启 ks-console。
 
 ```
 kubectl -n kubesphere-system rollout restart deploy ks-console
 ```
+
+## 升级到 v3.1.0 后无法通过第三方帐号登录
+
+![forbidden](/images/docs/faq/access-control-and-account-management/cannot-login/forbidden.jpg)
+
+```js
+{
+  code: 403,
+  kind: 'Status',
+  apiVersion: 'v1',
+  metadata: {},
+  status: 'Failure',
+  message: 'users.iam.kubesphere.io is forbidden: User "system:pre-registration" cannot create resource "users" in API group "iam.kubesphere.io" at the cluster scope',
+  reason: 'Forbidden',
+  details: { group: 'iam.kubesphere.io', kind: 'users' },
+  statusText: 'Forbidden'
+}
+```
+
+这是一个从 v3.0.0 升级到 v3.1.0 过程中存在的 bug，相关的 issue 和解决方式：[https://github.com/kubesphere/kubesphere/issues/3850](https://github.com/kubesphere/kubesphere/issues/3850)
