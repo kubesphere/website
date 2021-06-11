@@ -11,7 +11,7 @@ weight: 3330
 {{< notice note >}}
 
 - 本教程以 Ubuntu 16.04 为例。
-- 不建议您在生产环境中使用 NFS 存储（尤其是在 Kubernetes 1.20 或以上版本），这可能会导致 `failed to obtain lock` 和 Pod `CrashLoopBackOff` 等问题。此外，部分应用不兼容 NFS，例如 [Prometheus](https://github.com/prometheus/prometheus/blob/03b354d4d9386e4b3bfbcd45da4bb58b182051a5/docs/storage.md#operational-aspects) 等。
+- 不建议您在生产环境中使用 NFS 存储（尤其是在 Kubernetes 1.20 或以上版本），这可能会引起 `failed to obtain lock` 和 `input/output error` 等问题，从而导致 Pod `CrashLoopBackOff`。此外，部分应用不兼容 NFS，例如 [Prometheus](https://github.com/prometheus/prometheus/blob/03b354d4d9386e4b3bfbcd45da4bb58b182051a5/docs/storage.md#operational-aspects) 等。
 
 {{</ notice >}}
 
