@@ -87,7 +87,7 @@ KubeSphere provides two built-in OAuth 2.0 plugins: [GitHubIdentityProvider](htt
    kubectl -n kubesphere-system edit cm kubesphere-config
    ```
 
-2. Configure fields other than `oauthOptions:identityProviders` in the `data:kubesphere.yaml:authentication` section. For details, see [Set Up External Authentication](/docs/access-control-and-account-management/external-authentication/set-up-external-authentication/).
+2. Configure fields other than `oauthOptions:identityProviders` in the `data:kubesphere.yaml:authentication` section. For details, see [Set Up External Authentication](../set-up-external-authentication/).
 
 3. Configure fields in `oauthOptions:identityProviders` section according to the identity provider plugin you have developed.
 

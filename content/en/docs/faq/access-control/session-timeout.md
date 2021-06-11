@@ -18,4 +18,4 @@ In a [multi-cluster environment](../../../multicluster-management/enable-multicl
 
 ## Node Clock Skew 
 
-The node clock skew affects time-sensitive operations such as validating the expiration time of a user token. You can configure the server time synchronization with an NTP server. [MaximumClockSkew](../../../access-control-and-account-management/configuring-authentication/#authentication-configuration) can also be set, which defaults to 10 seconds.
+The node clock skew affects time-sensitive operations such as validating the expiration time of a user token. You can configure the server time synchronization with an NTP server. [MaximumClockSkew](../../../access-control-and-account-management/external-authentication/set-up-external-authentication/) can also be set, which defaults to 10 seconds.

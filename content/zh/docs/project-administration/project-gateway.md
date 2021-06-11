@@ -6,7 +6,7 @@ linkTitle: "项目网关"
 weight: 13500
 ---
 
-KubeSphere 项目中的网关是一个[ NGINX Ingress 控制器](https://www.nginx.com/products/nginx/kubernetes-ingres-controller)。KubeSphere 内置的用于 HTTP 负载均衡的机制称为[应用路由](../../project-user-guide/application-workloads/routes/)，它定义了从外部到集群服务的连接规则。如需允许从外部访问服务，用户可创建路由资源来定义 URI 路径、后端服务名称等信息。
+KubeSphere 项目中的网关是一个[ NGINX Ingress 控制器](https://www.nginx.com/products/nginx-ingress-controller/)。KubeSphere 内置的用于 HTTP 负载均衡的机制称为[应用路由](../../project-user-guide/application-workloads/routes/)，它定义了从外部到集群服务的连接规则。如需允许从外部访问服务，用户可创建路由资源来定义 URI 路径、后端服务名称等信息。
 
 在 KubeSphere 3.0，项目网关单独运行，即每个项目都有自己的 Ingress 控制器。在下一个发布版本中，KubeSphere 除了提供项目范围的网关外，还将提供集群范围的网关，使得所有项目都能共享相同的网关。
 
