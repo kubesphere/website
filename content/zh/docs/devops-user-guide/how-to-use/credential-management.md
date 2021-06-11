@@ -12,7 +12,7 @@ weight: 11230
 
 目前，您可以在 DevOps 工程中存储以下 4 种类型的凭证：
 
-![创建凭证](/images/docs/zh-cn/devops-user-guide/use-devops/credential-management/create-credential-page.png)
+![创建凭证](/images/docs/zh-cn/devops-user-guide/use-devops/credential-management/create-credential_page.png)
 
 - **帐户凭证**：用户名和密码，可以作为单独的组件处理，或者作为用冒号分隔的字符串（格式为 `username:password`）处理，例如 GitHub、GitLab 和 Docker Hub 的帐户。
 - **SSH**：带有私钥的用户名，SSH 公钥/私钥对。
@@ -36,7 +36,7 @@ weight: 11230
 
 1. 在弹出对话框中输入以下信息。
 
-   ![DockerHub 凭证](/images/docs/zh-cn/devops-user-guide/use-devops/credential-management/dockerhub-credentials.PNG)
+   ![DockerHub 凭证](/images/docs/zh-cn/devops-user-guide/use-devops/credential-management/dockerhub_credentials.png)
 
    - **凭证 ID**：设置可以在流水线中使用的 ID，例如 `dockerhub-id`。
    - **类型**：选择**帐户凭证**。
@@ -70,15 +70,15 @@ weight: 11230
 
 1. 凭证创建后，会在列表中显示，如下所示。
 
-   ![凭证列表](/images/docs/zh-cn/devops-user-guide/use-devops/credential-management/credential-list.PNG)
+   ![凭证列表](/images/docs/zh-cn/devops-user-guide/use-devops/credential-management/credential_list.png)
 
 2. 点击任意一个凭证，进入其详情页面，您可以查看帐户详情和与此凭证相关的所有事件。
 
-   ![凭证详情页面](/images/docs/zh-cn/devops-user-guide/use-devops/credential-management/credential-detail-page.PNG)
+   ![凭证详情页面](/images/docs/zh-cn/devops-user-guide/use-devops/credential-management/credential-detail_page.png)
 
 3. 您也可以在此页面上编辑或删除凭证。请注意，编辑凭证时，KubeSphere 不会显示现有用户名或密码信息。如果输入新的用户名和密码，则前一个将被覆盖。
 
-   ![编辑凭证](/images/docs/zh-cn/devops-user-guide/use-devops/credential-management/edit-credentials.PNG)
+   ![编辑凭证](/images/docs/zh-cn/devops-user-guide/use-devops/credential-management/edit_credentials.png)
 
 ## 另请参见
 
