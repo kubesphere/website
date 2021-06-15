@@ -6,7 +6,7 @@ linkTitle: "Remove Built-in Apps in KubeSphere"
 Weight: 16910
 ---
 
-As an open-source and app-centric container platform, KubeSphere integrates 16 built-in apps in the App Store that is based on [OpenPitrix](https://github.com/openpitrix/openpitrix). They are accessible to all tenants in a workspace, while you can also remove them from the App Store. This tutorial demonstrates how to remove a built-in app from the App Store.
+As an open source and app-centric container platform, KubeSphere integrates 16 built-in apps in the App Store that is based on [OpenPitrix](https://github.com/openpitrix/openpitrix). They are accessible to all tenants in a workspace, while you can also remove them from the App Store. This tutorial demonstrates how to remove a built-in app from the App Store.
 
 ## Prerequisites
 
@@ -17,25 +17,21 @@ As an open-source and app-centric container platform, KubeSphere integrates 16 b
 
 1. Log in to the web console of KubeSphere as `admin`, click **Platform** in the upper-left corner, and then select **App Store Management**.
 
-   ![click-platform](/images/docs/faq/applications/remove-built-in-apps/click-platform.PNG)
+2. On the **App Store** page, you can see all 16 built-in apps displayed in the list. Select an app that you want to remove from the App Store. For example, click **Tomcat** to go to its detail page.
 
-   ![select-app-store-management](/images/docs/faq/applications/remove-built-in-apps/select-app-store-management.PNG)
+   ![click-tomcat](/images/docs/faq/applications/remove-built-in-apps/click_tomcat.png)
 
-2. On the **App Store** page, you can see all 16 built-in apps displayed in the list. Select an app that you want to remove from the App Store. For example, click **tomcat** to go to its detail page.
+3. In the detail page of Tomcat, click **Suspend App** to remove the app.
 
-   ![click-tomcat](/images/docs/faq/applications/remove-built-in-apps/click-tomcat.PNG)
-
-3. In the detail page of tomcat, click **Suspend App** to remove the app.
-
-   ![suspend-tomcat](/images/docs/faq/applications/remove-built-in-apps/suspend-tomcat.PNG)
+   ![suspend-tomcat](/images/docs/faq/applications/remove-built-in-apps/suspend_tomcat.png)
 
 4. In the dialog that appears, click **OK** to confirm your operation.
 
-   ![confirm-suspend](/images/docs/faq/applications/remove-built-in-apps/confirm-suspend.PNG)
+   ![confirm-suspend](/images/docs/faq/applications/remove-built-in-apps/confirm_suspend.png)
 
 5. To make the app available again in the App Store, click **Activate App** and then click **OK** to confirm your operation.
 
-   ![activate-tomcat](/images/docs/faq/applications/remove-built-in-apps/activate-tomcat.PNG)
+   ![activate-tomcat](/images/docs/faq/applications/remove-built-in-apps/activate_tomcat.png)
 
    {{< notice note >}}
 
