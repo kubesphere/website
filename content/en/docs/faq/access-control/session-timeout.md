@@ -8,11 +8,11 @@ Weight: 16420
 
 A session starts as a user logs in to the console of KubeSphere. You may see a message of "**Session timeout or this account is logged in elsewhere, please login again**" when the session expires.
 
-## Inactivity Session Timeout
+## Session Timeout
 
-You can control when an inactive user session expires. The default session timeout is two hours of inactivity. It means once the session timeout is reached, the user will be automatically logged out of the console. You can [configure accessTokenMaxAge and accessTokenInactivityTimeout](../../../access-control-and-account-management/external-authentication/set-up-external-authentication/) for the session timeout.
+You can control when session expires. The default session timeout is two hours of inactivity. It means once the session timeout is reached, the user will be automatically logged out of the console. You can [configure accessTokenMaxAge and accessTokenInactivityTimeout](../../../access-control-and-account-management/external-authentication/set-up-external-authentication/) for the session timeout.
 
-## JWT Signature Verification Failed
+## Signature Verification Failed
 
 In a [multi-cluster environment](../../../multicluster-management/enable-multicluster/direct-connection/#prepare-a-member-cluster), `clusterRole` and `jwtSecret` must be set correctly.
 

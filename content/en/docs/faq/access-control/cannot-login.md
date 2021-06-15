@@ -6,7 +6,7 @@ linkTitle: "Account Login Failure"
 Weight: 16440
 ---
 
-KubeSphere automatically creates a default account (`admin/P@88w0rd`) when it is installed. After `ks-controller-manager` synchronizes statuses of accounts to OpenLDAP and Jenkins, accounts and passwords will be encrypted. An account cannot be used for login until the status reaches `Active`.
+KubeSphere automatically creates a default account (`admin/P@88w0rd`) when it is installed. An account cannot be used for login until the status reaches `Active`.
 
 Here are some of the frequently asked questions about account login failure.
 
@@ -86,9 +86,7 @@ kubectl -n kubesphere-system get deploy ks-controller-manager -o jsonpath='{.spe
 
 ## Wrong Username or Password
 
-![account-not-active](/images/docs/faq/access-control-and-account-management/cannot-login/wrong-password.png)
-
-`ks-console` and `ks-apiserver` use Redis to share data across multiple copies. When Redis fails, the copies of `ks-console` will not be able to share the salt required for password encryption and transmission.
+![incorrect-password](/images/docs/faq/access-control-and-account-management/cannot-login/wrong-password.png)
 
 Run the following command to verify that the account and the password are correct.
 
@@ -98,7 +96,7 @@ curl -u <USERNAME>:<PASSWORD> "http://`kubectl -n kubesphere-system get svc ks-a
 
 ### Redis failure
 
-Use the following commands to verify that Redis is running normally.
+`ks-console` and `ks-apiserver` use Redis to share data across multiple copies. Use the following commands to verify that Redis is running normally.
 
 ```
 kubectl -n kubesphere-system logs -l app=ks-console
@@ -141,3 +139,24 @@ You need to restore Redis and make sure it is running normally with good network
 ```
 kubectl -n kubesphere-system rollout restart deploy ks-console
 ```
+
+
+## Unable to login through a third party account after upgrading
+
+![forbidden](/images/docs/faq/access-control-and-account-management/cannot-login/forbidden.jpg)
+
+```js
+{
+  code: 403,
+  kind: 'Status',
+  apiVersion: 'v1',
+  metadata: {},
+  status: 'Failure',
+  message: 'users.iam.kubesphere.io is forbidden: User "system:pre-registration" cannot create resource "users" in API group "iam.kubesphere.io" at the cluster scope',
+  reason: 'Forbidden',
+  details: { group: 'iam.kubesphere.io', kind: 'users' },
+  statusText: 'Forbidden'
+}
+```
+
+This is a bug in the process of upgrading from V3.0.0 to v3.1.0，related issues and solutions: https://github.com/kubesphere/kubesphere/issues/3850
