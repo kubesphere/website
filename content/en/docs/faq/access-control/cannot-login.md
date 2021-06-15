@@ -6,7 +6,7 @@ linkTitle: "Account Login Failure"
 Weight: 16440
 ---
 
-KubeSphere automatically creates a default account (`admin/P@88w0rd`) when it is installed. An account cannot be used for login until the status reaches `Active`.
+KubeSphere automatically creates a default account (`admin/P@88w0rd`) when it is installed. An account cannot be used for login if the status is not **Active** or you use an incorrect password.
 
 Here are some of the frequently asked questions about account login failure.
 
@@ -68,7 +68,7 @@ Internal error occurred: failed calling webhook “validating-user.kubesphere.io
 
 #### Solution
 
-You need to restore OpenLDAP and Jenkins with good network connection. Restarting `ks-controller-manager` will trigger `reconcile` immediately. When the connection to OpenLDAP or Jenkins fails, the retry interval will increase.
+You need to restore OpenLDAP and Jenkins with good network connection, and then restart `ks-controller-manager`.
 
 ```
 kubectl -n kubesphere-system rollout restart deploy ks-controller-manager
@@ -141,7 +141,7 @@ kubectl -n kubesphere-system rollout restart deploy ks-console
 ```
 
 
-## Unable to login through a third party account after upgrading
+## Unable to Log in through a Third Party Account after Upgrading
 
 ![forbidden](/images/docs/faq/access-control-and-account-management/cannot-login/forbidden.jpg)
 
@@ -159,4 +159,4 @@ kubectl -n kubesphere-system rollout restart deploy ks-console
 }
 ```
 
-This is a bug in the process of upgrading from V3.0.0 to v3.1.0，related issues and solutions: https://github.com/kubesphere/kubesphere/issues/3850
+This is a bug in the process of upgrading from V3.0.0 to v3.1.0. For more information about related issues and solutions, see https://github.com/kubesphere/kubesphere/issues/3850.
