@@ -65,7 +65,7 @@ The Pod labeled `maven` uses the docker-in-docker network to run the pipeline. N
 | Credential ID   | Type                | Where to Use                 |
 | --------------- | ------------------- | ---------------------------- |
 | dockerhub-id    | Account Credentials | Registry, such as Docker Hub |
-| demo-kubeconfig | kubeconfig          | Workloads Deployment         |
+| demo-kubeconfig | kubeconfig          | Workload deployment         |
 
 For details, refer to the [Credential Management](../../how-to-use/credential-management/).
 
