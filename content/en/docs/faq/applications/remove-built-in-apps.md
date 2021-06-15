@@ -17,11 +17,11 @@ As an open source and app-centric container platform, KubeSphere integrates 16 b
 
 1. Log in to the web console of KubeSphere as `admin`, click **Platform** in the upper-left corner, and then select **App Store Management**.
 
-2. On the **App Store** page, you can see all 16 built-in apps displayed in the list. Select an app that you want to remove from the App Store. For example, click **Tomcat** to go to its detail page.
+2. On the **App Store** page, you can see all 16 built-in apps in the list. Select an app that you want to remove from the App Store. For example, click **Tomcat** to go to its detail page.
 
    ![click-tomcat](/images/docs/faq/applications/remove-built-in-apps/click_tomcat.png)
 
-3. In the detail page of Tomcat, click **Suspend App** to remove the app.
+3. On the detail page of Tomcat, click **Suspend App** to remove the app.
 
    ![suspend-tomcat](/images/docs/faq/applications/remove-built-in-apps/suspend_tomcat.png)
 
