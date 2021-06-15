@@ -69,23 +69,23 @@ kubectl get cm -n kubesphere-devops-system ks-devops-agent -o yaml
 
 有关详细信息，请参考[凭证管理](../../how-to-use/credential-management/)。
 
-![查看凭证列表](/images/docs/zh-cn/devops-user-guide/examples/build-and-deploy-maven-project/view-credential-lists.PNG)
+![查看凭证列表](/images/docs/zh-cn/devops-user-guide/examples/build-and-deploy-maven-project/view-credential_lists.png)
 
 ### 为工作负载创建一个项目
 
 在本示例中，所有工作负载都部署在 `kubesphere-sample-dev` 项目中。您必须事先创建 `kubesphere-sample-dev` 项目。
 
-![查看项目](/images/docs/zh-cn/devops-user-guide/examples/build-and-deploy-maven-project/view-namespace.PNG)
+![查看项目](/images/docs/zh-cn/devops-user-guide/examples/build-and-deploy-maven-project/view_namespace.png)
 
 ### 为 Maven 工程创建一个流水线
 
-1. 在您的 DevOps 工程中，转到**流水线**页面并点击**创建**。有关更多信息，请参见[使用图形编辑面板创建流水线](../../how-to-use/create-a-pipeline-using-graphical-editing-panel)。
+1. 在您的 DevOps 工程中，转到**流水线**页面并点击**创建**，创建一个名为 `maven` 的流水线。有关更多信息，请参见[使用图形编辑面板创建流水线](../../how-to-use/create-a-pipeline-using-graphical-editing-panel)。
 
 2. 转到该流水线的详情页面，点击**编辑 Jenkinsfile**。
 
-   ![编辑 Jenkinsfile](/images/docs/zh-cn/devops-user-guide/examples/build-and-deploy-maven-project/edit-jenkinsfile.PNG)
+   ![编辑 Jenkinsfile](/images/docs/zh-cn/devops-user-guide/examples/build-and-deploy-maven-project/edit_jenkinsfile.png)
 
-3. 复制粘贴以下内容至弹出窗口。您必须将 `DOCKERHUB_NAMESPACE` 的值替换为您自己的值，完成操作后进行保存。
+3. 复制粘贴以下内容至弹出窗口。您必须将 `DOCKERHUB_NAMESPACE` 的值替换为您自己的值，编辑完成后点击**确定**保存 Jenkinsfile。
 
    ```groovy
    pipeline {
@@ -103,8 +103,8 @@ kubectl get cm -n kubesphere-devops-system ks-devops-agent -o yaml
            DOCKER_CREDENTIAL_ID = 'dockerhub-id'
            KUBECONFIG_CREDENTIAL_ID = 'demo-kubeconfig'
            REGISTRY = 'docker.io'
-           // need to replace by yourself dockerhub namespace
-           DOCKERHUB_NAMESPACE = 'shaowenchen'
+           // 需要更改为您自己的 Docker Hub Namespace
+           DOCKERHUB_NAMESPACE = 'Docker Hub Namespace'
            APP_NAME = 'devops-java-sample'
            BRANCH_NAME = 'dev'
        }
@@ -146,24 +146,24 @@ kubectl get cm -n kubesphere-devops-system ks-devops-agent -o yaml
    }
    ```
 
-4. 保存该 Jenkinsfile，您可以看到图形编辑面板上已自动创建阶段和步骤。
+4. 您可以看到图形编辑面板上已自动创建阶段和步骤。
 
-   ![查看 Jenkinsfile](/images/docs/zh-cn/devops-user-guide/examples/build-and-deploy-maven-project/view-edit-jenkinsfile.PNG)
+   ![查看 Jenkinsfile](/images/docs/zh-cn/devops-user-guide/examples/build-and-deploy-maven-project/view-edit_jenkinsfile.png)
 
 ### 运行和测试
 
-1. 点击运行并在 `TAG_NAME` 中输入内容，运行流水线。
+1. 点击**运行**并在弹出对话框的 **TAG_NAME** 中输入 `v1`，然后点击**确定**运行流水线。
 
-   ![运行 Maven 流水线](/images/docs/zh-cn/devops-user-guide/examples/build-and-deploy-maven-project/run-maven-pipeline.PNG)
+   ![运行 Maven 流水线](/images/docs/zh-cn/devops-user-guide/examples/build-and-deploy-maven-project/run-maven_pipeline.png)
 
-2. 待流水线运行完成，您可以看到下图所示内容。
+2. 待流水线成功运行，您可以前往**活动**选项卡查看其详情。
 
-   ![查看流水线运行结果](/images/docs/zh-cn/devops-user-guide/examples/build-and-deploy-maven-project/view-result-maven-pipeline.PNG)
+   ![查看流水线运行结果](/images/docs/zh-cn/devops-user-guide/examples/build-and-deploy-maven-project/view-result-maven_pipeline.png)
 
 3. 在 `kubesphere-sample-dev` 项目中，已创建新的工作负载。
 
-   ![查看工作负载](/images/docs/zh-cn/devops-user-guide/examples/build-and-deploy-maven-project/view-result-maven-workload.PNG)
+   ![查看工作负载](/images/docs/zh-cn/devops-user-guide/examples/build-and-deploy-maven-project/view-result-maven_workload.png)
 
 4. 您可以查看服务 (Service) 的访问地址，如下所示。
 
-   ![查看服务](/images/docs/zh-cn/devops-user-guide/examples/build-and-deploy-maven-project/view-result-maven-workload-svc.PNG)
+   ![查看服务](/images/docs/zh-cn/devops-user-guide/examples/build-and-deploy-maven-project/view-result-maven-workload_svc.png)
