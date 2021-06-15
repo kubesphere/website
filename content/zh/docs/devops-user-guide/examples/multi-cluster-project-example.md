@@ -1,6 +1,6 @@
 ---
 title: "使用 Jenkinsfile 在多集群项目中部署应用"
-keywords: 'Kubernetes, KubeSphere, docker, devops, jenkins, 多集群'
+keywords: 'Kubernetes, KubeSphere, Docker, DevOps, Jenkins, 多集群'
 description: '学习如何使用基于 Jenkinsfile 的流水线在多集群项目中部署应用。'
 linkTitle: "使用 Jenkinsfile 在多集群项目中部署应用"
 weight: 11420
@@ -10,8 +10,8 @@ weight: 11420
 
 - 您需要[启用多集群功能](../../../../docs/multicluster-management/)。
 - 您需要有一个 [Docker Hub](https://hub.docker.com/) 帐户。
-- 您需要[启用 KubeSphere DevOps 系统](../../../../docs/pluggable-components/devops/)。
-- 您需要创建一个多集群企业空间，在 **Host** 集群上创建一个 DevOps 工程，创建一个多集群项目（本教程中，该多集群项目创建于 Host 集群和一个 Member 集群上），并创建一个帐户 (`project-regular`)，需要邀请该帐户至 DevOps 工程和多集群项目中，并赋予 `operator` 角色。有关更多信息，请参见[创建企业空间、项目、帐户和角色](../../../quick-start/create-workspace-and-project/)、[多集群管理](../../../multicluster-management/)和[多集群项目](../../../project-administration/project-and-multicluster-project/#多集群项目)。
+- 您需要在 Host 集群上[启用 KubeSphere DevOps 系统](../../../../docs/pluggable-components/devops/)。
+- 您需要创建一个多集群企业空间，使用具有 `workspace-self-provisioner` 角色的帐户（例如 `project-admin`）创建一个多集群项目（本教程中，该多集群项目创建于 Host 集群和一个 Member 集群上），并在 Host 集群上创建一个 DevOps 工程。邀请一个帐户（例如 `project-regular`）至 DevOps 工程中，赋予 `operator` 角色。有关更多信息，请参见[创建企业空间、项目、帐户和角色](../../../quick-start/create-workspace-and-project/)、[多集群管理](../../../multicluster-management/)和[多集群项目](../../../project-administration/project-and-multicluster-project/#多集群项目)。
 
 ## 创建 Docker Hub 访问令牌 (Token)
 
@@ -35,13 +35,13 @@ weight: 11420
 
 您需要在 KubeSphere 中为已创建的访问令牌创建凭证，以便流水线能够向 Docker Hub 推送镜像。此外，您还需要创建 kubeconfig 凭证，用于访问 Kubernetes 集群。
 
-1. 以 `project-regular` 身份登录 KubeSphere Web 控制台，转到您的 DevOps 工程，在**凭证**页面点击**创建**。
+1. 以 `project-regular` 身份登录 KubeSphere Web 控制台，前往您的 DevOps 工程，在**凭证**页面点击**创建**。
 
-   ![创建 dockerhub ID](/images/docs/zh-cn/devops-user-guide/examples/deploy-apps-in-multicluster-project-using-jenkinsfile/create-dockerhub-id.PNG)
+   ![创建 dockerhub ID](/images/docs/zh-cn/devops-user-guide/examples/deploy-apps-in-multicluster-project-using-jenkinsfile/create-dockerhub-id-1.png)
 
 2. 在弹出对话框中，设置**凭证 ID**，稍后会用于 Jenkinsfile 中，**类型**选择**帐户凭证**。**用户名**输入您的 Docker Hub 帐户名称，**token / 密码**中输入刚刚创建的访问令牌。操作完成后，点击**确定**。
 
-   ![创建 Docker 凭证](/images/docs/zh-cn/devops-user-guide/examples/deploy-apps-in-multicluster-project-using-jenkinsfile/credential-docker-create.PNG)
+   ![创建 Docker 凭证](/images/docs/zh-cn/devops-user-guide/examples/deploy-apps-in-multicluster-project-using-jenkinsfile/credential-docker.png)
 
    {{< notice tip >}}
 
@@ -49,35 +49,41 @@ weight: 11420
 
    {{</ notice >}} 
 
-3. 再次点击**创建**，**类型**选择 **kubeconfig**。KubeSphere 会自动填充 **Content** 字段，即当前用户帐户的 kubeconfig。设置**凭证 ID**，然后点击**确定**。
+3. 登出 KubeSphere Web 控制台，再以 `project-admin` 身份登录。前往您的 DevOps 工程，在**凭证**页面点击**创建**。**类型**选择 **kubeconfig**，KubeSphere 会自动填充 **Content** 字段，即当前帐户的 kubeconfig。设置**凭证 ID**，然后点击**确定**。
 
    ![创建 kubeconfig](/images/docs/zh-cn/devops-user-guide/examples/deploy-apps-in-multicluster-project-using-jenkinsfile/create-kubeconfig.PNG)
+   
+   {{< notice note >}}
+   
+   在未来版本中，您可以邀请 `project-regular` 帐户至您的多集群项目中，并赋予必要角色，以使用此帐户创建 kubeconfig 凭证。
+   
+   {{</ notice >}}
 
 ## 创建流水线
 
-创建完上述凭证后，您可以按照以下步骤使用示例 Jenkinsfile 创建流水线。
+创建完上述凭证后，您可以使用 `project-regular` 帐户按照以下步骤使用示例 Jenkinsfile 创建流水线。
 
 1. 要创建流水线，请在**流水线**页面点击**创建**。
 
-   ![创建流水线](/images/docs/zh-cn/devops-user-guide/examples/deploy-apps-in-multicluster-project-using-jenkinsfile/create-pipeline.PNG)
+   ![创建流水线](/images/docs/zh-cn/devops-user-guide/examples/deploy-apps-in-multicluster-project-using-jenkinsfile/create_pipeline.png)
 
 2. 在弹出窗口中设置名称，然后点击**下一步**。
 
-   ![设置流水线名称](/images/docs/zh-cn/devops-user-guide/examples/deploy-apps-in-multicluster-project-using-jenkinsfile/set-pipeline-name.PNG)
+   ![设置流水线名称](/images/docs/zh-cn/devops-user-guide/examples/deploy-apps-in-multicluster-project-using-jenkinsfile/set-pipeline_name.png)
 
 3. 在本教程中，您可以为所有字段使用默认值。在**高级设置**页面，直接点击**创建**。
 
-   ![创建流水线-2](/images/docs/zh-cn/devops-user-guide/examples/deploy-apps-in-multicluster-project-using-jenkinsfile/create-pipeline-2.PNG)
+   ![创建流水线-2](/images/docs/zh-cn/devops-user-guide/examples/deploy-apps-in-multicluster-project-using-jenkinsfile/create-pipeline_2.png)
 
 ## 编辑 Jenkinsfile
 
 1. 在流水线列表中，点击该流水线进入其详情页面。点击**编辑 Jenkinsfile** 定义一个 Jenkinsfile，流水线会基于它来运行。
 
-   ![编辑 jenkinsfile](/images/docs/zh-cn/devops-user-guide/examples/deploy-apps-in-multicluster-project-using-jenkinsfile/edit-jenkinsfile.PNG)
+   ![编辑 jenkinsfile](/images/docs/zh-cn/devops-user-guide/examples/deploy-apps-in-multicluster-project-using-jenkinsfile/edit_jenkinsfile.png)
 
 2. 将以下所有内容复制并粘贴到弹出窗口中，用作流水线的示例 Jenkinsfile。您必须将 `DOCKERHUB_USERNAME`、`DOCKERHUB_CREDENTIAL`、`KUBECONFIG_CREDENTIAL_ID`、`MULTI_CLUSTER_PROJECT_NAME` 和 `MEMBER_CLUSTER_NAME` 的值替换成您自己的值。操作完成后，点击**确定**。
 
-   ```
+   ```groovy
    pipeline {
      agent {
        node {
@@ -88,19 +94,19 @@ weight: 11420
      
      environment {
        REGISTRY = 'docker.io'
-       // username of dockerhub
-       DOCKERHUB_USERNAME = 'yuswift'
+       // Docker Hub 用户名
+       DOCKERHUB_USERNAME = 'Your Docker Hub username'
        APP_NAME = 'devops-go-sample'
-       // ‘dockerhubid’ is the dockerhub credential id you created on ks console
-       DOCKERHUB_CREDENTIAL = credentials('dockerhubid')
-       // the kubeconfig credential id you created on ks console
-       KUBECONFIG_CREDENTIAL_ID = 'multi-cluster'
-       // mutli-cluster project name under your own workspace
-       MULTI_CLUSTER_PROJECT_NAME = 'devops-with-go'
-       // the member cluster name you want to deploy app on
-       // in this tutorial, you are assumed to deploy app on host and only one member cluster
-       // for more member clusters, please edit manifest/multi-cluster-deploy.yaml
-       MEMBER_CLUSTER_NAME = 'c9'
+       // ‘dockerhub-go’ 即您在 KubeSphere 控制台上创建的 Docker Hub 凭证 ID
+       DOCKERHUB_CREDENTIAL = credentials('dockerhub-go')
+       // 您在 KubeSphere 控制台上创建的 kubeconfig 凭证 ID
+       KUBECONFIG_CREDENTIAL_ID = dockerhub-go-kubeconfig
+       // 您企业空间中的多集群项目名称
+       MULTI_CLUSTER_PROJECT_NAME = 'demo-multi-cluster'
+       // 您用来部署应用的 Member 集群名称
+       // 本教程中，应用部署在 Host 集群和一个 Member 集群上
+       // 若需要部署在多个 Member 集群上, 请编辑 manifest/multi-cluster-deploy.yaml
+       MEMBER_CLUSTER_NAME = 'Your Member Cluster name'
      }  
      
      stages {
@@ -129,7 +135,7 @@ weight: 11420
              script {
                withCredentials([
                  kubeconfigFile(
-                   credentialsId: 'multi-cluster',
+                   credentialsId: 'dockerhub-go-kubeconfig',
                    variable: 'KUBECONFIG')
                  ]) {
                  sh 'envsubst < devops-go-sample/manifest/multi-cluster-deploy.yaml | kubectl apply -f -'
@@ -152,4 +158,4 @@ weight: 11420
 
 保存 Jenkinsfile 后，点击**运行**。如果一切顺利，您会在您的多集群项目中看到部署 (Deployment) 工作负载。
 
-![Deployment](/images/docs/zh-cn/devops-user-guide/examples/deploy-apps-in-multicluster-project-using-jenkinsfile/multi-cluster-ok.PNG)
+![Deployment](/images/docs/zh-cn/devops-user-guide/examples/deploy-apps-in-multicluster-project-using-jenkinsfile/multi-cluster_ok.png)
