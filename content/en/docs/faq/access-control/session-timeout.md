@@ -10,7 +10,7 @@ A session starts as a user logs in to the console of KubeSphere. You may see a m
 
 ## Session Timeout
 
-You can control when session expires. The default session timeout is two hours of inactivity. It means once the session timeout is reached, the user will be automatically logged out of the console. You can [configure accessTokenMaxAge and accessTokenInactivityTimeout](../../../access-control-and-account-management/external-authentication/set-up-external-authentication/) for the session timeout.
+You can control when a session expires. The default session timeout is two hours of inactivity. It means once the session timeout is reached, the user will be automatically logged out of the console. You can [configure accessTokenMaxAge and accessTokenInactivityTimeout](../../../access-control-and-account-management/external-authentication/set-up-external-authentication/) for the session timeout.
 
 ## Signature Verification Failed
 

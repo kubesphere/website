@@ -6,41 +6,47 @@ linkTitle: "帐户无法登录"
 Weight: 16440
 ---
 
-KubeSphere 安装时会自动创建 `admin/P@88w0rd` 默认帐户，密码错误或者帐户状态不是 active 会导致无法登录。
+KubeSphere 安装时会自动创建默认帐户 (`admin/P@88w0rd`)，密码错误或者帐户状态不是**活跃**会导致无法登录。
 
 下面是帐户无法登录时，一些常见的问题：
 
 ## Account Not Active
 
+登录失败时，您可能看到以下提示。请根据以下步骤排查并解决问题：
+
 ![account-not-active](/images/docs/faq/access-control-and-account-management/cannot-login/account-not-active.png)
 
-您可以通过以下命令来检查帐户状态：
+1. 执行以下命令检查帐户状态：
 
-```
-$ kubectl get users
-NAME         EMAIL                    STATUS
-admin        admin@kubesphere.io      Active
-```
+   ```bash
+   $ kubectl get users
+   NAME         EMAIL                    STATUS
+   admin        admin@kubesphere.io      Active
+   ```
 
-检查 ks-controller-manager 是否正常运行，是否有异常日志：
+2. 检查 `ks-controller-manager` 是否正常运行，是否有异常日志：
 
-```
-kubectl -n kubesphere-system logs -l app=ks-controller-manager
-```
+   ```bash
+   kubectl -n kubesphere-system logs -l app=ks-controller-manager
+   ```
 
-### K8s 1.19 中 admission webhook 无法正常工作
+以下是导致此问题的可能原因。
 
-K8s 1.19 使用了 Golang 1.15 进行编译，需要更新 admission webhook 用到的证书，该问题导致 ks-controller admission webhook 无法正常使用。
+### Kubernetes 1.19 中的 admission webhook 无法正常工作
+
+Kubernetes 1.19 使用了 Golang 1.15 进行编译，需要更新 admission webhook 用到的证书，该问题导致 `ks-controller` admission webhook 无法正常使用。
 
 相关错误日志：
 
-> Internal error occurred: failed calling webhook "validating-user.kubesphere.io": Post "https://ks-controller-manager.kubesphere-system.svc:443/validate-email-iam-kubesphere-io-v1alpha2-user?timeout=30s": x509: certificate relies on legacy Common Name field, use SANs or temporarily enable Common Name matching with GODEBUG=x509ignoreCN=0
+```bash
+Internal error occurred: failed calling webhook "validating-user.kubesphere.io": Post "https://ks-controller-manager.kubesphere-system.svc:443/validate-email-iam-kubesphere-io-v1alpha2-user?timeout=30s": x509: certificate relies on legacy Common Name field, use SANs or temporarily enable Common Name matching with GODEBUG=x509ignoreCN=0
+```
 
-相关 issue 和解决方式 https://github.com/kubesphere/kubesphere/issues/2928
+有关该问题和解决方式的更多信息，请参见[此 GitHub Issue](https://github.com/kubesphere/kubesphere/issues/2928)。
 
 ### ks-controller-manager 无法正常工作
 
-ks-controller-manager 依赖 openldap、Jenkins 这两个有状态服务，当 openldap 或 Jekins 无法正常运行时会导致 ks-controller-manager 一直处于 reconcile 状态。
+`ks-controller-manager` 依赖 openldap、Jenkins 这两个有状态服务，当 openldap 或 Jenkins 无法正常运行时会导致 `ks-controller-manager` 一直处于 `reconcile` 状态。
 
 可以通过以下命令检查 openldap 和 Jeknins 服务是否正常:
 
@@ -52,13 +58,17 @@ kubectl -n kubesphere-system logs -l app=openldap
 
 相关错误日志：
 
-> failed to connect to ldap service, please check ldap status, error: factory is not able to fill the pool: LDAP Result Code 200 \"Network Error\": dial tcp: lookup openldap.kubesphere-system.svc on 169.254.25.10:53: no such host
+```bash
+failed to connect to ldap service, please check ldap status, error: factory is not able to fill the pool: LDAP Result Code 200 \"Network Error\": dial tcp: lookup openldap.kubesphere-system.svc on 169.254.25.10:53: no such host
+```
 
-> Internal error occurred: failed calling webhook “validating-user.kubesphere.io”: Post https://ks-controller-manager.kubesphere-system.svc:443/validate-email-iam-kubesphere-io-v1alpha2-user?timeout=4s: context deadline exceeded
+```bash
+Internal error occurred: failed calling webhook “validating-user.kubesphere.io”: Post https://ks-controller-manager.kubesphere-system.svc:443/validate-email-iam-kubesphere-io-v1alpha2-user?timeout=4s: context deadline exceeded
+```
 
 **解决方式**
 
-您需要先恢复 openldap、Jenkins 这两个服务并保证网络的连通性，重启 ks-controller-manager。
+您需要先恢复 openldap、Jenkins 这两个服务并保证网络的连通性，重启 `ks-controller-manager`。
 
 ```
 kubectl -n kubesphere-system rollout restart deploy ks-controller-manager
@@ -88,7 +98,7 @@ curl -u <USERNAME>:<PASSWORD> "http://`kubectl -n kubesphere-system get svc ks-a
 
 ### Redis 异常
 
-ks-console 和 ks-apiserver 需要借助 Redis 在多个副本之间共享数据。您可以通过以下命令检查 Redis 服务是否正常：
+`ks-console` 和 `ks-apiserver` 需要借助 Redis 在多个副本之间共享数据。您可以通过以下命令检查 Redis 服务是否正常：
 
 ```
 kubectl -n kubesphere-system logs -l app=ks-console
@@ -126,7 +136,7 @@ E0909 07:05:22.770468 1 redis.go:51] unable to reach redis host EOF
 
 **解决方式**
 
-您需要先恢复 Redis 服务，保证其正常运行并且 pod 之间网络可以正常联通，稍后重启 ks-console。
+您需要先恢复 Redis 服务，保证其正常运行并且 Pod 之间网络可以正常联通，稍后重启 `ks-console`。
 
 ```
 kubectl -n kubesphere-system rollout restart deploy ks-console
@@ -150,4 +160,4 @@ kubectl -n kubesphere-system rollout restart deploy ks-console
 }
 ```
 
-这是一个从 v3.0.0 升级到 v3.1.0 过程中存在的 bug，相关的 issue 和解决方式：[https://github.com/kubesphere/kubesphere/issues/3850](https://github.com/kubesphere/kubesphere/issues/3850)
+这是一个从 v3.0.0 升级到 v3.1.0 过程中存在的 Bug。相关和解决方式请参见 [https://github.com/kubesphere/kubesphere/issues/3850](https://github.com/kubesphere/kubesphere/issues/3850)。
