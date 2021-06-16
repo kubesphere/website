@@ -1,6 +1,6 @@
 ---
-title: The Kubernetes Container Platform | KubeSphere
-description: KubeSphere is a distributed operating system managing cloud native applications with Kubernetes as its kernel, and provides plug-and-play architecture for the seamless integration of third-party applications to boost its ecosystem.
+title: Open-Source Kubernetes Container Platform For Enterprise | KubeSphere
+description: An open-source Kubernetes Platform to manage enterprise-grade Kubernetes across hybrid cloud, multi-cloud and edge.
 
 
 css: scss/index.scss
@@ -12,7 +12,7 @@ section1:
 
 section2:
   title: One Kubernetes Platform for Full Stack Solutions
-  content: KubeSphere is also a multi-tenant enterprise-grade Kubernetes container platform with full-stack automated IT operation and streamlined DevOps workflows. It provides developer-friendly wizard web UI, helping enterprises to build out a more robust and feature-rich platform, which includes the most common functionalities needed for enterprise Kubernetes strategies.
+  content: KubeSphere is also a multi-tenant enterprise-grade open-source Kubernetes container platform with full-stack automated IT operation and streamlined DevOps workflows. It provides developer-friendly wizard web UI, helping enterprises to build out a more robust and feature-rich Kubernetes platform, which includes the most common functionalities needed for enterprise Kubernetes strategies.
   children:
     - name: Open Source
       icon: /images/home/open-source.svg
@@ -132,7 +132,7 @@ section4:
       color: orange
 
 section5:
-  title: KubeSphere with its Cloud Native Architecture
+  title: KubeSphere Container Platform with its Cloud Native Architecture
   frontEnd:
     title: Front End
     project: KubeSphere Console
@@ -186,7 +186,7 @@ section6:
   btnLink: case/
   link: mailto:kubesphere@gmail.com
   linkContent: Want to join our user community and showcase your logo? Just send an email to kubesphere@gmail.com
-  joinTitle: Join the Revolution, Partner with KubeSphere
+  joinTitle: Join the Revolution, Partner with KubeSphere Container Platform
   joinContent: We look forward to your joining KubeSphere partner program to improve both ecosystems and grow your business.
   joinLink: partner/
   image: /images/home/certification.jpg
