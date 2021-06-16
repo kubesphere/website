@@ -1,11 +1,11 @@
 approvers:
-    - Sherlock113 #oncall
+    - Patrick-LuoYu #oncall
     - zryfish
     - rayzhou2017
     - FeynmanZhou
 
 reviewers:
-    - Sherlock113
+    - Patrick-LuoYu
     - rayzhou2017
     - zryfish
     - benjaminhuo
