@@ -1,6 +1,6 @@
 ---
-title: The Kubernetes Container Platform | KubeSphere
-description: KubeSphere is a distributed operating system managing cloud native applications with Kubernetes as its kernel, and provides plug-and-play architecture for the seamless integration of third-party applications to boost its ecosystem.
+title: Open Source Kubernetes Container Platform For Enterprise | KubeSphere
+description: An open-source Container Platform to manage enterprise-grade Kubernetes across hybrid cloud, multi-cloud and edge.
 
 
 css: scss/index.scss
