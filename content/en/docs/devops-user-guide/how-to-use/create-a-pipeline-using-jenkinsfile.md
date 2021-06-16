@@ -1,5 +1,5 @@
 ---
-title: "Create a Pipeline Using a Jenkinsfile"
+title: "Create a Jenkins Pipeline Using a Jenkinsfile"
 keywords: 'KubeSphere, Kubernetes, docker, spring boot, Jenkins, devops, ci/cd, pipeline'
 description: "Learn how to create and run a pipeline by using an example Jenkinsfile."
 linkTitle: "Create a Pipeline Using a Jenkinsfile"
@@ -8,11 +8,11 @@ weight: 11210
 
 A Jenkinsfile is a text file that contains the definition of a Jenkins pipeline and is checked into source control.  As it stores the entire workflow as code, it underpins the code review and iteration process of a pipeline. For more information, see [the official documentation of Jenkins](https://www.jenkins.io/doc/book/pipeline/jenkinsfile/).
 
-This tutorial demonstrates how to create a pipeline based on a Jenkinsfile from a GitHub repository. Using the pipeline, you deploy an example application to a development environment and a production environment respectively, which is accessible externally.
+This tutorial demonstrates how to create a pipeline based on a Jenkinsfile from a GitHub repository. Using the Jenkins pipeline, you deploy an example application to a development environment and a production environment respectively, which is accessible externally.
 
 {{< notice note >}}
 
-Two types of pipelines can be created in KubeSphere: Pipelines created based on a Jenkinsfile in SCM, which is introduced in this tutorial, and [pipelines created through the graphical editing panel](../create-a-pipeline-using-graphical-editing-panel/). The Jenkinsfile in SCM requires an internal Jenkinsfile in Source Control Management (SCM). In other words, the Jenkfinsfile serves as part of SCM. The KubeSphere DevOps system automatically builds a CI/CD pipeline based on the existing Jenkinsfile of the code repository. You can define workflows such as `stage` and `step`.
+Two types of pipelines can be created in KubeSphere: Pipelines created based on a Jenkinsfile in SCM, which is introduced in this tutorial, and [pipelines created through the graphical editing panel](../create-a-pipeline-using-graphical-editing-panel/). The Jenkinsfile in SCM requires an internal Jenkinsfile in Source Control Management (SCM). In other words, the Jenkfinsfile serves as part of SCM. The KubeSphere DevOps system automatically builds a CI/CD Jenkins pipeline based on the existing Jenkinsfile of the code repository. You can define workflows such as `stage` and `step`.
 
 {{</ notice >}} 
 
@@ -24,7 +24,7 @@ Two types of pipelines can be created in KubeSphere: Pipelines created based on 
 - You need to set a CI dedicated node for running pipelines. Refer to [Set a CI Node for Dependency Caching](../../how-to-use/set-ci-node/).
 - You need to install and configure SonarQube. Refer to [Integrate SonarQube into Pipeline](../../../devops-user-guide/how-to-integrate/sonarqube/). If you skip this part, there is no **SonarQube Analysis** below.
 
-## Pipeline Overview
+## Jenkins Pipeline Overview
 
 There are eight stages as shown below in this example pipeline.
 
