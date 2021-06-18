@@ -3,7 +3,7 @@ title: "Use an OAuth 2.0 Identity Provider"
 keywords: 'Kubernetes, KubeSphere, OAuth2, Identity Provider'
 description: 'How to use an external OAuth2 identity provider.'
 linkTitle: "Use an OAuth 2.0 Identity Provider"
-weight: 12230
+weight: 12203
 ---
 
 This document describes how to use an external identity provider based on the OAuth 2.0 protocol.
@@ -31,15 +31,15 @@ KubeSphere provides two built-in OAuth 2.0 plugins: [GitHubIdentityProvider](htt
    ```go
    // /pkg/apiserver/authentication/identityprovider/oauth_provider.go
    type OAuthProvider interface {
-   	// Exchange identity with a remote server.
-   	IdentityExchange(code string) (Identity, error)
+    // Exchange identity with a remote server.
+    IdentityExchange(code string) (Identity, error)
    }
    
    type OAuthProviderFactory interface {
-   	// Return the identity provider type.
-   	Type() string
-   	// Apply settings from kubesphere-config.
-   	Create(options oauth.DynamicOptions) (OAuthProvider, error)
+    // Return the identity provider type.
+    Type() string
+    // Apply settings from kubesphere-config.
+    Create(options oauth.DynamicOptions) (OAuthProvider, error)
    }
    ```
 
@@ -47,11 +47,11 @@ KubeSphere provides two built-in OAuth 2.0 plugins: [GitHubIdentityProvider](htt
    // /pkg/apiserver/authentication/identityprovider/identity_provider.go
    type Identity interface {
      // (Mandatory) Return the identifier of the user at the identity provider.
-   	GetUserID() string
+    GetUserID() string
      // (Optional) Return the name of the user to be referred as on KubeSphere.
-   	GetUsername() string
+    GetUsername() string
      // (Optional) Return the email address of the user.
-   	GetEmail() string
+    GetEmail() string
    }
    ```
 
@@ -62,7 +62,7 @@ KubeSphere provides two built-in OAuth 2.0 plugins: [GitHubIdentityProvider](htt
    func init() {
      // Change <StructName> to the actual name of the struct that
      // implements the OAuthProviderFactory interface.
-   	identityprovider.RegisterOAuthProvider(&<StructName>{})
+    identityprovider.RegisterOAuthProvider(&<StructName>{})
    }
    ```
 
@@ -71,10 +71,10 @@ KubeSphere provides two built-in OAuth 2.0 plugins: [GitHubIdentityProvider](htt
    ```go
    // Change <CustomPackage> to the actual name of your plugin package.
    import (
-   	...
-   	_ "kubesphere.io/kubesphere/pkg/apiserver/authentication/identityprovider/<CustomPackage>"
-   	...
-   	)
+    ...
+    _ "kubesphere.io/kubesphere/pkg/apiserver/authentication/identityprovider/<CustomPackage>"
+    ...
+    )
    ```
 
 5. [Build the image of ks-apiserver](https://github.com/kubesphere/community/blob/104bab42f67094930f2ca87c603b7c6365cd092a/developer-guide/development/quickstart.md) and deploy it in your cluster.
