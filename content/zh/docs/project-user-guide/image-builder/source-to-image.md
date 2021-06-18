@@ -55,7 +55,7 @@ Source-to-Image (S2I) 是一个工具箱和工作流，用于从源代码构建�
 
 3. 在**构建设置**页面，请提供以下相应信息，并点击**下一步**。
 
-   ![构建设置](/images/docs/zh-cn/project-user-guide/image-builder/source-to-image/build-settings.PNG)
+   ![构建设置](/images/docs/zh-cn/project-user-guide/image-builder/source-to-image/build_settings.png)
 
    **服务类型**：本示例选择**无状态服务**。有关不同服务的更多信息，请参见[服务类型](../../../project-user-guide/application-workloads/services/#服务类型)。
 
