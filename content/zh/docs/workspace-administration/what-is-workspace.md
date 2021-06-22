@@ -77,7 +77,7 @@ kubectl label ns <namespace> kubesphere.io/workspace- && kubectl patch ns <names
 
 1. 在企业空间页面，转到**企业空间设置**菜单下的**基本信息**。在**基本信息**页面，您可以查看该企业空间的基本信息，例如项目数量和成员数量。
 
-   ![delete-workspace](/images/docs/zh-cn/workspace-administration-and-user-guide/workspace-overview/delete-workspace.png)
+   ![delete-workspace](/images/docs/zh-cn/workspace-administration-and-user-guide/workspace-overview/delete_workspace.png)
 
    {{< notice note >}}
 
