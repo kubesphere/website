@@ -1,51 +1,76 @@
 ---
-title: "查看资源消耗"
-keywords: "Kubernetes, KubeSphere, 计量, 计费, 消耗"
-description: "在不同层级追踪您集群工作负载的资源用量。"
-linkTitle: "查看资源消耗"
+title: "查看资源消费"
+keywords: "Kubernetes, KubeSphere, 计量, 计费, 消费"
+description: "在不同层级追踪集群工作负载的资源用量。"
+linkTitle: "查看资源消费"
 weight: 15410
 ---
 
-本教程介绍透过计量计费如何在不同层级追踪集群资源的使用量。计量计费当前支持 2 个维度的数据查询方式，即基于集群层级进行数据统计和基于企业空间层级进行数据统计。
+KubeSphere 计量功能帮助您在不同层级追踪集群或企业空间中的资源消费。具有不同角色的租户只能看到其有权访问的数据。此外，您还可以为不同的资源设置价格以查看计费信息。
+
+## 准备工作 
+
+- 所有租户都可以访问**资源消费统计**模块，但每个租户可见的信息可能有所不同，可见信息具体取决于租户在所处层级上具有的角色。请注意，计量功能并非 KubeSphere 的可插拔组件，即只要您有一个 KubeSphere 集群，就可以使用该功能。对于新创建的集群，您需要等待大约一小时才能看到计量信息。
+- 如需查看计费信息，您需要预先[启用计费](../enable-billing/)。
 
 ## 查看集群资源消费情况
 
-1. 集群资源消费情况是以集群维度统计包含节点在内的集群的 CPU ，内存、存储等资源消费情况。点击查看消费进入集群层级主面板。
+**集群资源消费情况**包含集群（也包括节点）的资源使用情况，如 CPU、内存、存储等。
 
-![view-resource-consumption](/images/docs/zh-cn/toolbox/metering-and-billing/view-resource-consumption/ksnip_20210508-172746.png)
+1. 使用 `admin` 用户登录 KubeSphere Web 控制台，点击右下角的锤子图标，然后选择**资源消费统计**。
 
-2. 在集群层级左边显示的是一个集群列表，对于单集群，这里显示的是一个 default 集群，如果集群本身已经开启了多集群的功能，那么这里看到的是一个包含 Host 集群和 Member 集群在内的多个集群。右侧显示的是指定集群具体的计量计费统计数据，大体分为上中下 3 部分，最上面显示的是该集群自创建以来的消费总和，并且按照各个资源类型分别进行了统计。如果已经在后台配置了计费价格信息，那么这里还会显示出相关的价格信息。中间这部分默认显示的是截止到昨天的消费历史，同时计量计费也支持用户自定义查询的开始时间，结束时间和时间间隔。最下面显示的当前集群包含的节点的计量计费信息。
+2. 在**集群资源消费情况**一栏，点击**查看消费**。
 
-![view-resource-consumption](/images/docs/zh-cn/toolbox/metering-and-billing/view-resource-consumption/ksnip_20210508-173129.png)
+3. 如果您已经启用[多集群管理](../../../multicluster-management/)，则可以在控制面板左侧看到包含 Host 集群和全部 Member 集群的集群列表。如果您未启用该功能，那么列表中只会显示一个 `default` 集群。
 
-![view-resource-consumption](/images/docs/zh-cn/toolbox/metering-and-billing/view-resource-consumption/ksnip_20210508-173324.png)
+   ![cluster-page](/images/docs/zh-cn/toolbox/metering-and-billing/view-resource-consumption/cluster-page.png)
 
-3. 点击左边集群列表中的某一个集群，可以进入到该集群的详情页，可以看到集群内各个节点的计量计费统计数据。页面布局和上面的集群层级类似。
+   在右侧，有三个模块以不同的方式显示资源消费情况。
 
-![view-resource-consumption](/images/docs/zh-cn/toolbox/metering-and-billing/view-resource-consumption/ksnip_20210508-173415.png)
+   ### 概览
 
-4. 点击左边节点列表，可以进一步进入到某个节点的计量计费详情页。在此页面内可以看到该结点内各个容器组的计量计费信息。
+   最上面的部分显示自集群创建以来不同资源的消费概览。如果您在 ConfigMap `kubesphere-config` 中[已经配置资源的价格](../enable-billing/)，则可以看到计费信息。
 
-![view-resource-consumption](/images/docs/zh-cn/toolbox/metering-and-billing/view-resource-consumption/ksnip_20210508-173717.png)
+   ### 截止到昨天的消费历史
+
+   中间的部分显示截止到昨天的资源消费总况，您也可以自定义时间范围和时间间隔，以查看特定周期内的数据。
+
+   ### 当前包含的资源
+
+   最下面的部分显示过去一小时所选目标对象的资源消费情况（在本例中，显示的是所选集群中全部节点的资源消费情况）。
+
+4. 在左侧，点击集群名称即可查看集群节点或 Pod 的资源消费详情。
+
+   ![node-page](/images/docs/zh-cn/toolbox/metering-and-billing/view-resource-consumption/node-page.png)
+   
+   ![pod-page](/images/docs/zh-cn/toolbox/metering-and-billing/view-resource-consumption/pod-page.png)
+   
+   {{< notice note >}}
+   
+   如需导出 CSV 格式的资源消费统计数据，请勾选左侧的复选框，然后点击 ✓。
+   
+   {{</ notice >}} 
 
 ## 查看企业空间（项目）资源消费情况
 
-1. 企业空间（项目）资源消费情况是以企业空间维度统计包含项目在内的各个企业空间的 CPU ，内存、存储等资源消费情况。点击查看消费进入企业空间层级主面板。
+**企业空间（项目）资源消费情况**包含企业空间（包括项目）的资源使用情况，如 CPU、内存、存储等。
 
-![view-resource-consumption](/images/docs/zh-cn/toolbox/metering-and-billing/view-resource-consumption/ksnip_20210508-173839.png)
+1. 使用 `admin` 用户登录 KubeSphere Web 控制台，点击右下角的锤子图标，然后选择**资源消费统计**。
 
-2. 在企业空间层级左边显示的是一个企业空间列表，右侧显示的是指定企业空间具体的计量计费统计数据。
+2. 在**企业空间（项目）资源消费情况**一栏，点击**查看消费**。
 
-![view-resource-consumption](/images/docs/zh-cn/toolbox/metering-and-billing/view-resource-consumption/ksnip_20210508-174139.png)
+3. 在控制面板左侧，可以看到包含当前集群中全部企业空间的列表。右侧显示所选企业空间的消费详情，其布局与集群消费情况布局类似。
 
-3. 点击左边企业空间列表中的某一个企业空间，可以进入到该企业空间的详情页，可以看到该企业空间内各个项目的计量计费统计数据。
+   ![workspace-page](/images/docs/zh-cn/toolbox/metering-and-billing/view-resource-consumption/workspace-page.png)
 
-![view-resource-consumption](/images/docs/zh-cn/toolbox/metering-and-billing/view-resource-consumption/ksnip_20210508-174335.png)
+   {{< notice note >}}
 
-4. 点击左边的项目列表，可以进一步进入到某个项目的计量计费详情页。在项目详情页面内可以看到各类 K8s 资源（包含 deployment , statefulset 等）的统计数据。
+   在多集群架构中，如果企业空间中没有分配可用集群，则无法查看企业空间的资源消费情况。有关更多信息，请参阅[集群可见性和授权](../../../cluster-administration/cluster-settings/cluster-visibility-and-authorization/)。
 
-![view-resource-consumption](/images/docs/zh-cn/toolbox/metering-and-billing/view-resource-consumption/ksnip_20210508-174551.png)
+   {{</ notice >}} 
 
-5. 点击某一个资源可以进入到资源内部的详情页，可以看到资源内部各个容器组的计量计费统计数据。
+4. 在左侧，点击企业空间名称即可查看其项目或工作负载（例如，部署和有状态副本集）的资源消费详情。
 
-![view-resource-consumption](/images/docs/zh-cn/toolbox/metering-and-billing/view-resource-consumption/ksnip_20210508-174648.png)
+   ![project-page](/images/docs/zh-cn/toolbox/metering-and-billing/view-resource-consumption/project-page.png)
+
+   ![deployment-page](/images/docs/zh-cn/toolbox/metering-and-billing/view-resource-consumption/deployment-page.png)
