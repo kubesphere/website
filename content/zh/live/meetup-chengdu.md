@@ -1,127 +1,96 @@
 ---
 title: KubeSphere and Friends | Kubernetes and Cloud Native Meetup ——成都站
-description: 为了跟社区新老朋友们零距离交流，社区计划从五月到七月，在上海、杭州、成都、北京这四个城市分别为大家带来技术的交流与碰撞。KubeSphere 3.1.0 已在应用商店内置集成了 Apache APISIX，在上海站和杭州站圆满落幕之后，KubeSphere 社区将与 APISIX 联合主办，并与 CNCF 等其他合作伙伴一起，延续 KubeSphere and Friends 的主题，于 6 月 19 日在成都为大家带来 Kubernetes and Cloud Native Meetup。
-keywords: KubeSphere,Meetup,Chengdu
+description: KubeSphere and Friends 2021，Kubernetes and Cloud Native Meetup 第三站成都站顺利举办，围绕“云原生、Dapr、服务网格、多集群、区块链”等火热话题，来自 IT、医疗、制造、区块链等行业技术大牛、嘉宾以及社区伙伴带来最新的思考与实践。
+keywords: KubeSphere,Meetup,多集群,Dapr,APISIX,服务网格,Chengdu
 css: scss/live-detail.scss
 
 section1:
-  snapshot: https://pek3b.qingstor.com/kubesphere-community/images/meetup-chengdu-kv.png
-  liveUrl: http://live.bilibili.com/22580654
+  snapshot: 
+  videoUrl: 
+  type: iframe
   time: 2021-06-19 13:00-18:00
   timeIcon: /images/live/clock.svg
   base: 四川省成都市高新区天府大道中段 500 号天祥广场 B 座 45A + 线上同步直播
   baseIcon: /images/live/base.svg
 ---
+<center>KubeSphere and Friends 2021</center>
+
+<center>Kubernetes and Cloud Native Meetup</center>
+
+<center>第三站成都站顺利举办 🎉🎉🎉</center>
+
+<center>围绕“云原生、Dapr、服务网格、多集群、区块链”等火热话题</center>
+
+<center>来自 IT、医疗、制造、区块链等行业技术大牛、嘉宾</center>
+
+<center>以及社区伙伴带来最新的思考与实践</center>
+
+<center>都有哪些令人难忘的精彩环节和瞬间呢？</center>
+
+<center>一起来看看</center>
+
+<center>↓</center>
+
+## 基于 Kubernetes 与 Dapr 打造智慧医疗平台
+
+![](https://pek3b.qingstor.com/kubesphere-community/images/tanzongwei-chengdu.jpg)
+
+讲师：谭宗威
+
+个人介绍：湖南提灯医疗科技有限公司 CEO
+
+演讲概要：事务一致性、跨服务的同步调用、跨服务的异步消息处理、对开发运维人员素质的要求，是分布式应用程序开发需要解决的关键问题，也是目前影响云原生应用大规模落地的关键因素。用 KubeSphere 结合 Dapr 可以很好的解决上述问题。随着物联网技术在医疗行业中的落地，越来越多的场景需要在病区部署计算设备，KubeSphere 3.1.0 整合 KubeEdge，让“软件定义智慧医院”更容易实现。
+
+<iframe width="760" height="380" src="https://player.bilibili.com/player.html?aid=333864719&bvid=BV1qw411o76d&cid=357591374&page=1&high_quality=1" scrolling="no" border="0" frameborder="no" framespacing="0" allowfullscreen="true"> </iframe>
+
+## 基于 Apache APISIX 的服务网格方案
+
+![](https://pek3b.qingstor.com/kubesphere-community/images/zhangchao-chengdu.jpg)
+
+讲师：张超
+
+个人介绍：Apache APISIX PMC 成员
+
+演讲概要：Apache APISIX 是一个高性能、全动态的云原生 API 网关，因其优秀的设计和丰富的功能支持，它也完全可以工作在服务网格架构中，
+作为数据面 Sidecar 服务存在。
+
+<iframe width="760" height="380" src="https://player.bilibili.com/player.html?aid=931280968&bvid=BV1mM4y1u7AB&cid=357616530&page=1&high_quality=1" scrolling="no" border="0" frameborder="no" framespacing="0" allowfullscreen="true"> </iframe>
+
+## KubeSphere 多集群管理在云智智慧城市中的实践
+
+![](https://pek3b.qingstor.com/kubesphere-community/images/zhouzhengjun-chengdu.jpg)
+
+讲师：周正军
+
+个人介绍：成都云智天下科技股份有限公司，架构师
+
+演讲概要：Kubernetes 生态已经成为云原生事实标准，在万物上云的时代必定存在多个集群的场景，所以多集群的统一管理、运维、发布等势在必行。KubeSphere 将复杂的多 Kubernetes 集群管理通过 UI 实现简单化、统一化、综合化很直观的解决了多集群场景下管理的痛点。
+
+<iframe width="760" height="380" src="https://player.bilibili.com/player.html?aid=333824142&bvid=BV14w411o7HX&cid=357619667&page=1&high_quality=1" scrolling="no" border="0" frameborder="no" framespacing="0" allowfullscreen="true"> </iframe>
+
+## Apache APISIX 在趣链 BaaS 中的应用实践
+
+![](https://pek3b.qingstor.com/kubesphere-community/images/shengweifeng-chengdu.jpg)
+
+讲师：盛威锋
+
+个人介绍：趣链科技—区块链 BaaS 平台架构师
+
+演讲概要：围绕 Apache APISIX 在趣链区块链开放服务平台中的落地实践而展开，介绍 APISIX 在 BaaS 平台中的应用场景，以及区块链网络节点流量管理的最佳实践以及未来发展规划。
+
+<iframe width="760" height="380" src="https://player.bilibili.com/player.html?aid=376284979&bvid=BV1do4y1k7EP&cid=357627696&page=1&high_quality=1" scrolling="no" border="0" frameborder="no" framespacing="0" allowfullscreen="true"> </iframe>
+
+## 长虹电器基于 Kubernetes 的弹性伸缩与金丝雀发布实践
+
+![](https://pek3b.qingstor.com/kubesphere-community/images/louju-chengdu.jpg)
+
+讲师：娄举
+
+个人介绍：四川长虹电器股份有限公司，互联网事业部运维架构师
+
+演讲概要：随着业务量的增长，智能电视云端平台旧有的基础设施已经无法满足新的需求，我们借助 KubeSphere 对基础平台进行了改造，同时 KubeSphere 帮助我们实现了弹性伸缩和更易用的金丝雀发布。
+
+<iframe width="760" height="380" src="https://player.bilibili.com/player.html?aid=418857946&bvid=BV15V411x7tX&cid=357631746&page=1&high_quality=1" scrolling="no" border="0" frameborder="no" framespacing="0" allowfullscreen="true"> </iframe>
 
 
-## 背景
-
-以容器技术和容器编排为基础的云原生应用，被越来越多的企业用户接受和使用，并且在生产环境中使用容器技术的比例逐年增加。KubeSphere 作为一款面向应用的开源容器混合云，经过 3 年的发展和 10 个版本的迭代，收获了一百多位开源贡献者，超过十万次下载，并有数千名社区用户用 KubeSphere 作为企业容器云平台。
-
-KubeSphere 之所以能够如此快速发展，得益于开源社区带来的天然优势，以及社区里长期活跃的用户、贡献者积极参与社区，帮助推动产品和社区快速成长，我们坚持认为 KubeSphere 开源社区的每一位用户和贡献者朋友都是 KubeSphere 生态中的重要组成部分。
-
-为了跟社区新老朋友们零距离交流，社区计划从五月到七月，在上海、杭州、成都、北京这四个城市分别为大家带来技术的交流与碰撞。KubeSphere 3.1.0 已在应用商店内置集成了 Apache APISIX，在上海站和杭州站圆满落幕之后，KubeSphere 社区将与 APISIX 联合主办，并与 CNCF 等其他合作伙伴一起，延续 KubeSphere and Friends 的主题，于 6 月 19 日在成都为大家带来 Kubernetes and Cloud Native Meetup。
-
-## 活动议程
-
-![](https://pek3b.qingstor.com/kubesphere-community/images/agenda-chengdu-meetup.jpeg)
-
-## 活动时间和地点
-
-活动时间：6月19日 下午 13:00-18:00
-
-活动地点：四川省成都市高新区天府大道中段 500 号天祥广场 B 座 45A
-
-## 报名已经开启
-
-成都站目前已经开启招募，若您希望获取经验，期待和各位极客交流，那就抓紧报名吧！位置有限，先到先得！
-
-扫描下方二维码即可进入到报名页面进行报名。
-
-![](https://pek3b.qingstor.com/kubesphere-community/images/chengdumeetup.png)
-
-## 活动礼品
-
-KubeSphere 社区特别定制了 KubeSphere 全套纪念周边礼品：T 恤、马克杯、纪念徽章、帆布袋、口罩...... 只要到场即可获取。
-
-<div align=center><img src="https://pek3b.qingstor.com/kubesphere-community/images/K8s权威指南5.jpeg" width=200"  "></div>
-
-<center>由电子工业出版社赞助提供</center>
-
-<div align=center><img src="https://pek3b.qingstor.com/kubesphere-community/images/张磊的书.jpeg" width=300"  "></div>
-
-<center>由图灵教育提供</center>
-
-除此之外，联合主办方 APISIX 也准备了定制 T 恤和电脑贴纸，以及机械工业出版社华章公司赞助的以下书籍，参与互动交流的同学即有机会获得。
-
-<div align=center><img src="https://pek3b.qingstor.com/kubesphere-community/images/huazhangtushu.png" width=500"  "></div>
-
-## 下一站预告 
-
-第四站 Meetup 将在**北京**进行，时间是 **7 月 29 日**，后续我们会放出报名渠道。目前公开向大家招募演讲议题。
-
-任何关于云原生和 KubeSphere 的观点、干货、技术实践、用户故事都是我们社区非常欢迎的。只要您有兴趣分享，就可以提交您的议题。一旦通过，就可以获得讲师大礼包一份！
-
-扫描下方二维码提交您的议题吧！
-
-> **成都站**目前还有一个主题演讲空余，有兴趣的朋友也可以提交议题！
-
-<div align=center><img src="https://pek3b.qingstor.com/kubesphere-community/images/议题.png" width=200"  "></div>
-
-## DevOps Workshop  
-
-与杭州站一样，成都站 Meetup 同样设置了 DevOps Workshop，有兴趣的同学可以单独报名哦！
-
-时间：6 月 19 日 10:00-12:30
-
-地点：四川省成都市高新区天府大道中段 500 号天祥广场 B 座 45A
-
-**人数：上限 15 人，先到先得，报满即止**
-
-参与者需要：
-
-- 携带笔记本电脑
-- 确保有可以访问 SSH 的客户端
-
-**活动安排（以下内容根据实际参加者的情况做适当的增减）：**
-
-
-- KubeSphere DevOps 介绍
-
-  - SIG 介绍
-
-  - 功能介绍
-
-- Jenkins 稳健性方案介绍
-
-  - 可观测性
-
-  - 告警
-
-- 案例分享
-
-  - 如何在私有环境中构建、发布 Java 应用
-
-  - 如何实现基于 SpringBoot 的持续交付
-
-- 参会者实际演练
-
-- Q&A
-
-<center>报名 Workshop 可加入 DevOps Workshop 现场交流群。</center>
-
-<div align=center><img src="https://pek3b.qingstor.com/kubesphere-community/images/chengdu-workshop.png" width=200"  "></div>
-
-<center>若七天后二维码失效，可添加 小kk 微信：KubeSphere</center>
-
-## Apach APISIX 简介 
-
-Apache APISIX 是一个动态、实时、高性能的 API 网关， 提供负载均衡、动态上游、灰度发布、服务熔断、身份认证、可观测性等丰富的流量管理功能。
-
-APISIX 于 2019 年 4 月由中国的支流科技（api7.ai）创建，于 6 月开源，并于同年 10 月进入 Apache 孵化器。支流科技（api7.ai）对应的商业化产品的名字叫API7 ：）。APISIX 旨在处理大量请求，并具有较低的二次开发门槛。
-
-从其主要功能和特点角度来看，Apache APISIX 可以替代 Nginx 来处理南北流量，也可以扮演 Istio 控制平面和 Envoy 数据平面的角色来处理东西向流量。
-
-在云原生时代，动态和可观测性是 API 网关的标准特性。
-
-Apache APISIX 不仅覆盖了 Nginx 的传统功能，在可观测性上也和 SkyWalking 深度合作，大大提升了服务治理能力。
+> 成都站 Meetup 圆满收官！可扫描官网底部二维码关注 「KubeSphere云原生」 公众号，后台回复 “2021 成都” 获取下载链接。

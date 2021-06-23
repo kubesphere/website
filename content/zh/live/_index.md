@@ -28,6 +28,41 @@ section2:
 
 section3:
   videos:
+    - title: 基于 Kubernetes 与 Dapr 打造智慧医疗平台
+      link: ./tideng-chengdu/
+      snapshot: https://pek3b.qingstor.com/kubesphere-community/images/Dapr.png
+      type: iframe
+      createTime: 2021.06.19
+      group: Meetup
+
+    - title: 基于 Apache APISIX 的服务网格方案
+      link: ./apisix-chengdu/
+      snapshot: https://pek3b.qingstor.com/kubesphere-community/images/apisix-chengdu-cover.png
+      type: iframe
+      createTime: 2021.06.19
+      group: Meetup
+
+    - title: KubeSphere 多集群管理在云智智慧城市中的实践
+      link: ./multicluster-chengdu/
+      snapshot: https://pek3b.qingstor.com/kubesphere-community/images/multicluster-cover.png
+      type: iframe
+      createTime: 2021.06.19
+      group: Meetup
+
+    - title: Apache APISIX 在趣链 BaaS 中的应用实践
+      link: ./baas-chengdu/
+      snapshot: https://pek3b.qingstor.com/kubesphere-community/images/baas-chengdu-cover.png
+      type: iframe
+      createTime: 2021.06.19
+      group: Meetup
+
+    - title: 长虹电器基于 Kubernetes 的弹性伸缩与金丝雀发布实践
+      link: ./hpa-chengdu/
+      snapshot: https://pek3b.qingstor.com/kubesphere-community/images/hpa-cover.png
+      type: iframe
+      createTime: 2021.06.19
+      group: Meetup
+
     - title: 初识云原生 FaaS 平台及 Serverless 生态
       link: ./faas-hangzhou/
       snapshot: https://pek3b.qingstor.com/kubesphere-community/images/Faas-serverless.png
