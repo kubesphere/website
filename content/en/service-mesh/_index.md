@@ -15,7 +15,7 @@ bg: /images/service-mesh/28.svg
 section2:
   title: What Makes KubeSphere Service Mesh Special
   list:
-    - title: Service Mesh traffic management
+    - title: Service Mesh Traffic Management
       image: /images/service-mesh/traffic-management.png
       summary:
       contentList:
