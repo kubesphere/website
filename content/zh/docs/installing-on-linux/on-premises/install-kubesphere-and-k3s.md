@@ -12,7 +12,7 @@ weight: 3530
 
 {{< notice note >}} 
 
-目前，由于功能尚未充分测试，在 KubeSphere 上部署 K3s 仅用于测试和开发。
+目前，由于功能尚未充分测试，在 K3s 上部署 KubeSphere 仅用于测试和开发。
 
 {{</ notice >}} 
 
@@ -23,13 +23,13 @@ weight: 3530
 
 ## 步骤 1：下载 KubeKey
 
-根据以下步骤下载 [KubeKey](../../../installing-on-linux/introduction/kubekey/)。
+执行以下步骤下载 [KubeKey](../../../installing-on-linux/introduction/kubekey/)。
 
 {{< tabs >}}
 
 {{< tab "如果您能正常访问 GitHub/Googleapis" >}}
 
-从 [GitHub Release Page](https://github.com/kubesphere/kubekey/releases) 下载 KubeKey 或直接运行以下命令。
+从 [GitHub Release Page](https://github.com/kubesphere/kubekey/releases) 下载 KubeKey 或直接运行以下命令：
 
 ```bash
 curl -sfL https://get-kk.kubesphere.io | VERSION=v1.1.0 sh -
@@ -67,7 +67,7 @@ curl -sfL https://get-kk.kubesphere.io | VERSION=v1.1.0 sh -
 
 {{</ notice >}}
 
-使 `kk` 可执行：
+执行以下命令为 `kk` 文件增加执行权限：
 
 ```bash
 chmod +x kk
@@ -75,7 +75,7 @@ chmod +x kk
 
 ## 步骤 2：创建集群
 
-1. 运行以下命令为集群创建一个配置文件：
+1. 执行以下命令为集群创建一个配置文件：
 
    ```bash
    ./kk create config --with-kubernetes v1.20.4-k3s --with-kubesphere v3.1.0
@@ -83,11 +83,13 @@ chmod +x kk
 
    {{< notice note >}}
 
-   KubeKey v1.1.0 仅支持安装 K3s v1.20.4。
+   - KubeKey v1.1.0 仅支持安装 K3s v1.20.4。
+
+   - 您可以在以上命令中使用 `-f` 或 `--file` 参数指定配置文件的路径和名称。如未指定路径和名称，KubeKey 将默认在当前目录下创建 `config-sample.yaml` 配置文件。
 
    {{</ notice >}} 
 
-2. 若不自定义名称，则将创建默认文件 `config-sample.yaml`。编辑文件：
+2. 执行以下命令编辑配置文件（以下以默认配置文件名为例）：
 
    ```bash
    vi config-sample.yaml
@@ -147,7 +149,7 @@ chmod +x kk
    kubectl logs -n kubesphere-system $(kubectl get pod -n kubesphere-system -l app=ks-install -o jsonpath='{.items[0].metadata.name}') -f
    ```
 
-   预期输出：
+   如果显示如下信息则安装成功：
 
    ```bash
    #####################################################
@@ -172,7 +174,7 @@ chmod +x kk
    ```
 
 
-5. 使用默认帐户和密码 (`admin/P@88W0rd`) 通过 `<NodeIP>:30880` 访问 KubeSphere Web 控制台。
+5. 从安装日志的 `Console`、`Account` 和 `Password` 参数分别获取 KubeSphere Web 控制台的地址、系统管理员用户名和系统管理员密码，并使用 Web 浏览器登录 KubeSphere Web 控制台。
 
    ![cluster-management](/images/docs/zh-cn/installing-on-linux/on-premises/cluster-management.png)
 
@@ -180,7 +182,7 @@ chmod +x kk
    
    {{< notice note >}}
    
-   您可以在安装后启用 KubeSphere 的可插拔组件，但由于在 KubeSphere 上部署 K3s 目前处于试验阶段，某些功能可能不兼容。
+   您可以在安装后启用 KubeSphere 的可插拔组件，但由于在 KubeSphere 上部署 K3s 目前处于测试阶段，某些功能可能不兼容。
    
    {{</ notice >}} 
 
