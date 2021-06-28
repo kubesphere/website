@@ -8,7 +8,7 @@ author: 'Shaowen Chen, Felix, Sherlock'
 snapshot: '/images/blogs/en/argo-cd-a-tool-for-devops/argo-schematics.png'
 ---
 
-In this post, I'll show you how Argo CD betters Kubernetes DevOps process. Before we begin, let's look at some background information.
+In this post, I'll show you how Argo CD betters [Kubernetes DevOps](https://kubesphere.io/devops/) process. Before we begin, let's look at some background information.
 
 ## Argo CD Capability
 
