@@ -74,5 +74,7 @@ footer:
           link: 'https://www.qingcloud.com/products/kubesphereqke'
         - content: 云原生应用服务平台
           link: 'https://kubesphere.cloud'
-        - content: 业务合作与咨询
+        - content: 技术支持服务
+          link: 'https://kubesphere.cloud/ticket/'
+        - content: 商业版业务合作与咨询
           link: 'https://jinshuju.net/f/tPUldX'
