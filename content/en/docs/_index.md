@@ -48,12 +48,12 @@ section3:
     - image: /images/docs/aws.jpg
       content: AWS Quickstart
       link: https://aws.amazon.com/quickstart/architecture/qingcloud-kubesphere/
+    - image: /images/docs/microsoft-azure.png
+      content: Azure Marketplace
+      link: https://market.azure.cn/marketplace/apps/qingcloud.kubesphere
     - image: /images/docs/qingcloud.svg
       content: QingCloud QKE
       link: https://www.qingcloud.com/products/kubesphereqke/
-    - image: /images/docs/radore.jpg
-      content: Radore RCD
-      link:
 
   titleRight: Want to host KubeSphere on your cloud?
   btnContent: Partner with us
