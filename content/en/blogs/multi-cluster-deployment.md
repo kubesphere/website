@@ -1,5 +1,5 @@
 ---
-title: 'Kubernetes Multi-cluster Deployment: Federation and KubeSphere'
+title: 'Kubernetes Multi-cluster Deployment: Kubernetes Federation and KubeSphere'
 keywords: Kubernetes, KubeSphere, Multi-cluster, Container
 description: KubeSphere v3.0 supports the management of multiple clusters, isolated management of resources, and federated deployments.
 tag: 'KubeSphere, Multi-cluster'
@@ -10,7 +10,7 @@ snapshot: 'https://ap3.qingstor.com/kubesphere-website/docs/kubesphere-architect
 
 ## Scenarios for Multi-cluster Deployment
 
-As the container technology and Kubernetes see a surge in popularity among their users, it is not uncommon for enterprises to run multiple clusters for their business. In general, here are the main scenarios where multiple clusters can be adopted.
+As the container technology and Kubernetes see a surge in popularity among their users, it is not uncommon for enterprises to run multiple clusters for their business. In general, here are the main scenarios where multiple Kubernetes clusters can be adopted.
 
 ### High Availability
 
@@ -28,7 +28,7 @@ Generally, it is much easier for multiple small clusters to isolate failures tha
 
 ### Business Isolation
 
-Although Kubernetes provides namespaces as a solution to app isolation, this method only represents the isolation in logic. This is because different namespaces are connected through the network, which means the issue of resource preemption still exists. To achieve further isolation, you need to create additional network isolation policies or set resource quotas. Using multiple clusters can achieve complete physical isolation that is more secure and reliable than the isolation through namespaces. For example, this is extremely effective when different departments within an enterprise use multiple clusters for the deployment of development, testing or production environments.
+Although Kubernetes provides namespaces as a solution to app isolation, this method only represents the isolation in logic. This is because different namespaces are connected through the network, which means the issue of resource preemption still exists. To achieve further isolation, you need to create additional network isolation policies or set resource quotas. Using multiple Kubernetes clusters can achieve complete physical isolation that is more secure and reliable than the isolation through namespaces. For example, this is extremely effective when different departments within an enterprise use multiple clusters for the deployment of development, testing or production environments.
 
 ![pipeline](https://ap3.qingstor.com/kubesphere-website/docs/pipeline.png)
 
@@ -40,7 +40,7 @@ Kubernetes has become the de facto standard in container orchestration. Against 
 
 The application of multi-cluster deployment offers solutions to a variety of problems as we can see from the scenarios above. Nevertheless, it brings more complexity for operation and maintenance. For a single cluster, app deployment and upgrade are quite straightforward as you can directly update yaml of the cluster. For multiple clusters, you can update them one by one, but how can you guarantee the application load status is the same across different clusters? How to implement service discovery among different clusters? How to achieve load balancing across clusters? The answer given by the community is Federation.
 
-### Federation v1
+### Kubernetes Federation v1
 
 ![federation-v1](https://ap3.qingstor.com/kubesphere-website/docs/federation-v1.png)
 
@@ -50,11 +50,11 @@ There are two versions of Federation with the original v1 already deprecated. In
 
 In terms of API, federated resources are scheduled through annotations, ensuring great compatibility with the original Kubernetes API. As such, the original code can be reused and existing deployment files of users can be easily transferred without any major change. However, this also prevents users from taking further advantage of Federation for API evolution. At the same time, a corresponding controller is needed for each federated resource so that they can be scheduled to different clusters. Originally, Federation only supported a limited number of resource type.
 
-### Federation v2
+### Kubernetes Federation v2
 
 ![federation-v2](https://ap3.qingstor.com/kubesphere-website/docs/federation-v2.png)
 
-The community developed Federation v2 (KubeFed) on the basis of v1. KubeFed has defined its own API standards through CRDs while deprecating the annotation method used before. The architecture has changed significantly as well, discarding Federated API Server and etcd that need to be deployed independently. The control plane of KubeFed adopts the popular implementation of CRD + Controller, which can be directly installed on existing Kubernetes clusters without any additional deployment.
+The community developed Kubernetes Federation v2 (KubeFed) on the basis of v1. KubeFed has defined its own API standards through CRDs while deprecating the annotation method used before. The architecture has changed significantly as well, discarding Federated API Server and etcd that need to be deployed independently. The control plane of KubeFed adopts the popular implementation of CRD + Controller, which can be directly installed on existing Kubernetes clusters without any additional deployment.
 
 KubeFed mainly defines four resource types:
 
@@ -81,9 +81,9 @@ However, KubeFed also has some issues to be resolved:
 
 ## Multi-cluster Feature in KubeSphere
 
-Resource federation is what the community has proposed to solve the issue of deployments across multiple clusters. For many enterprise users, the deployment of multiple clusters is not necessary. What is more important is that they need to be able to manage the resources across multiple clusters at the same time and in the same place.
+Resource federation is what the community has proposed to solve the issue of deployments across multiple Kubernetes clusters. For many enterprise users, the deployment of multiple clusters is not necessary. What is more important is that they need to be able to manage the resources across multiple clusters at the same time and in the same place.
 
-[KubeSphere](https://github.com/kubesphere) supports the management of multiple clusters, isolated management of resources, and federated deployments. In addition, it also features multi-dimensional queries (monitoring, logging, events and auditing) of resources such as clusters and apps, as well as alerts and notifications through various channels. Apps can be deployed on multiple clusters with CI/CD pipelines.
+[KubeSphere](https://github.com/kubesphere) supports the management of multiple Kubernetes clusters, isolated management of resources, and federated deployments. In addition, it also features multi-dimensional queries (monitoring, logging, events and auditing) of resources such as clusters and apps, as well as alerts and notifications through various channels. Apps can be deployed on multiple clusters with CI/CD pipelines.
 
 ![kubesphere-workflow](https://ap3.qingstor.com/kubesphere-website/docs/workflow.png)
 
