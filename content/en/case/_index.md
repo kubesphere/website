@@ -111,5 +111,5 @@ section3:
   bottomContent:
     content: Want your logo up there? Just
     linkContent: email you company's logo to us →
-    link: mailto:kubesphere@gmail.com
+    link: mailto:info@kubesphere.io
 ---

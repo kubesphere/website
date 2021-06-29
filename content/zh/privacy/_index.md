@@ -465,7 +465,7 @@ For the purpose of the GDPR, Service Providers are considered Data Processors.</
 <h3>Exercising Your CCPA Data Protection Rights</h3>
 <p>In order to exercise any of Your rights under the CCPA, and if You are a California resident, You can contact Us:</p>
 <ul>
-<li>By email: <a href="mailto:kubesphere@gmail.com">kubesphere@gmail.com</a></li>
+<li>By email: <a href="mailto:info@kubesphere.io">info@kubesphere.io</a></li>
 </ul>
 <p>Only You, or a person registered with the California Secretary of State that You authorize to act on Your behalf, may make a verifiable request related to Your personal information.</p>
 <p>Your request to Us must:</p>
@@ -523,5 +523,5 @@ For the purpose of the GDPR, Service Providers are considered Data Processors.</
 <h2>Contact Us</h2>
 <p>If you have any questions about this Privacy Policy, You can contact us:</p>
 <ul>
-<li>By email: <a href="mailto:kubesphere@gmail.com">kubesphere@gmail.com</a></li>
+<li>By email: <a href="mailto:info@kubesphere.io">info@kubesphere.io</a></li>
 </ul>

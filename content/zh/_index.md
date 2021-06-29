@@ -183,8 +183,8 @@ section6:
 
   btnContent: 案例学习
   btnLink: case/
-  link: mailto:kubesphere@gmail.com
-  linkContent: 希望加入用户社区并在 KubeSphere 官网展示您的 Logo？请邮件至 kubesphere@gmail.com
+  link: mailto:info@kubesphere.io
+  linkContent: 希望加入用户社区并在 KubeSphere 官网展示您的 Logo？请邮件至 info@kubesphere.io
   joinTitle: 加入 KubeSphere 社区合作伙伴计划
   joinContent: 我们非常期待您加入 KubeSphere 社区合作伙伴计划，共同完善各自的生态，加速您的业务增长。
   joinLink: partner/

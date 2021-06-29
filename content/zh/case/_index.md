@@ -111,5 +111,5 @@ section3:
   bottomContent:
     content: 希望在 KubeSphere 官网展示您的 Logo 或分享您的使用案例？
     linkContent: 欢迎给我们发邮件 →
-    link: mailto:kubesphere@gmail.com
+    link: mailto:info@kubesphere.io
 ---
