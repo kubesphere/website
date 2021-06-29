@@ -76,5 +76,9 @@ footer:
           link: 'https://kubesphere.cloud'
         - content: 技术支持服务
           link: 'https://kubesphere.cloud/ticket/'
+<<<<<<< HEAD
         - content: 了解商业版与咨询合作
+=======
+        - content: 商业版业务合作与咨询
+>>>>>>> 899b15a48764ec40bdb2e726b9e74f8093751d78
           link: 'https://jinshuju.net/f/tPUldX'
