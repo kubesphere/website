@@ -1,6 +1,6 @@
 ---
-title: KubeSphere | 面向云原生应用的容器混合云
-description: KubeSphere 是在 Kubernetes 之上构建的以应用为中心的多租户容器平台，提供全栈的 IT 自动化运维的能力，简化企业的 DevOps 工作流。KubeSphere 提供了运维友好的向导式操作界面，帮助企业快速构建一个强大和功能丰富的容器云平台。
+title: 面向云原生应用的容器混合云，支持 Kubernetes 多集群管理的 PaaS 容器云平台解决方案 | KubeSphere
+description: KubeSphere 是在 Kubernetes 之上构建的以应用为中心的多租户容器平台，完全开源，提供全栈的 IT 自动化运维的能力，简化企业的 DevOps 工作流。KubeSphere 提供了运维友好的向导式操作界面，帮助企业快速构建一个强大和功能丰富的容器云平台。
 
 
 css: scss/index.scss
@@ -11,7 +11,7 @@ section1:
   content: KubeSphere 愿景是打造一个以 Kubernetes 为内核的云原生分布式操作系统，它的架构可以非常方便地使第三方应用与云原生生态组件进行即插即用（plug-and-play）的集成，支持云原生应用在多云与多集群的统一分发和运维管理。
 
 section2:
-  title: 全栈的平台级解决方案
+  title: 全栈的 Kubernetes 容器云 PaaS 解决方案
   content: KubeSphere 是在 Kubernetes 之上构建的以应用为中心的多租户容器平台，提供全栈的 IT 自动化运维的能力，简化企业的 DevOps 工作流。KubeSphere 提供了运维友好的向导式操作界面，帮助企业快速构建一个强大和功能丰富的容器云平台。
   children:
     - name: 完全开源
@@ -88,12 +88,16 @@ section4:
       icon: /images/home/multi-tenant-management.svg
       content: 提供统一的认证鉴权与细粒度的基于角色的授权系统，支持对接 AD/LDAP
 
+    - name: 支持多种存储与网络方案
+      icon: /images/home/multi-tenant-management.svg
+      content: 支持 GlusterFS、Ceph、NFS、LocalPV，提供多个 CSI 插件对接公有云与企业级存储；提供面向物理机 Kubernetes 环境的负载均衡器 <a class='inner-a' target='_blank' href='https://porterlb.io'>Porter</a>，支持网络策略可视化，支持 Calico、Flannel、Cilium、Kube-OVN 等网络插件
+
   features:
-    - name: 应用商店
-      icon: /images/home/store.svg
-      content: 提供基于 Helm 的应用商店与应用仓库，内置多个应用模板，支持应用生命周期管理
-      link: "/docs/pluggable-components/app-store/"
-      color: grape
+    - name: Kubernetes DevOps 系统
+      icon: /images/home/dev-ops.svg
+      content: 基于 Jenkins 为引擎打造的 CI/CD，内置 Source-to-Image 和 Binary-to-Image 自动化打包部署工具
+      link: "devops/"
+      color: orange
 
     - name: 基于 Istio 的微服务治理
       icon: /images/home/service.svg
@@ -101,35 +105,35 @@ section4:
       link: "service-mesh/"
       color: red
 
-    - name: 丰富的可观测性
+    - name: 丰富的云原生可观测性
       icon: /images/home/rich.svg
       content: 提供多维度与多租户的监控、日志、事件、审计搜索，支持多种告警策略与通知渠道，支持日志转发
       link: "observability/"
       color: green
 
-    - name: DevOps 系统
-      icon: /images/home/dev-ops.svg
-      content: 基于 Jenkins 为引擎打造的 CI/CD，内置 Source-to-Image 和 Binary-to-Image 自动化打包部署工具
-      link: "devops/"
-      color: orange
-
-    - name: 支持多种存储方案
-      icon: /images/home/multiple.svg
-      content: 支持 GlusterFS、Ceph RBD、NFS、LocalPV，提供多个 CSI 插件对接使用云上的企业级存储产品
-      link: "/docs/introduction/features/#多种存储解决方案"
+    - name: 云原生应用商店
+      icon: /images/home/store.svg
+      content: 提供基于 Helm 的应用商店与应用仓库，内置多个应用模板，支持应用生命周期管理
+      link: "/docs/pluggable-components/app-store/"
       color: grape
 
-    - name: 网络管理
-      icon: /images/home/network.svg
-      content: 提供面向物理机 Kubernetes 环境的负载均衡器 <a class='inner-a' target='_blank' href='https://porterlb.io'>Porter</a>，支持网络策略的可视化管理，支持 Calico 与 Flannel CNI
-      link: "/docs/introduction/features/#多种网络解决方案"
-      color: green
-
-    - name: 多集群管理
+    - name: Kubernetes 多集群管理
       icon: /images/home/management.svg
       content: 跨多云与多集群统一分发应用，提供集群高可用与灾备的最佳实践，支持跨级群的可观测性
-      link: "/docs/multicluster-management/introduction/overview/"
+      link: "/zh/docs/multicluster-management/introduction/overview/"
       color: orange
+
+    - name: Kubernetes 边缘节点管理
+      icon: /images/home/network.svg
+      content: 基于 KubeEdge 实现应用与工作负载在云端与边缘节点的统一分发与管理，解决在海量边、端设备上完成应用交付、运维、管控的需求
+      link: "/zh/docs/pluggable-components/kubeedge/"
+      color: green
+
+    - name: 多维度计量与计费
+      icon: /images/home/multiple.svg
+      content: 提供基于集群与租户的多维度资源计量与计费的监控报表，让 Kubernetes 运营成本更透明
+      link: "/zh/docs/toolbox/metering-and-billing/view-resource-consumption/"
+      color: grape
 
 section5:
   title: 面向云原生的架构，前后端分离

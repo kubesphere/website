@@ -72,6 +72,8 @@ footer:
           link: 'https://market.azure.cn/marketplace/apps/qingcloud.kubesphere'
         - content: KubeSphere on QingCloud(QKE)
           link: 'https://www.qingcloud.com/products/kubesphereqke'
+        - content: KubeSphere 虚拟化平台
+          link: 'https://kubesphere.cloud/ksv/'
         - content: 云原生应用服务平台
           link: 'https://kubesphere.cloud'
         - content: 业务合作与咨询
