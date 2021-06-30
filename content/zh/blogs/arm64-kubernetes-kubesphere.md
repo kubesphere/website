@@ -10,9 +10,7 @@ snapshot: 'https://pek3b.qingstor.com/kubesphere-community/images/arm.png'
 
 ### 背景
 
-随着我国对信息安全的愈发重视，国产化的趋势也越来越浓，包括国产操作系统、国产 CPU 等。由于 ARM 架构国产 CPU 在维持创新可信和先进性方面的潜在优势，其应用也将会越来越广泛。
-
-KubeSphere 作为一款深受国内外开发者所喜爱的开源容器平台，也将积极参与并探索在 ARM 架构下的应用与创新。本文将主要介绍如何在 ARM64 环境下部署 Kubernetes 和 KubeSphere。
+由于 ARM 架构具有低功耗和并行好的特点，其应用也将会越来越广泛。KubeSphere 作为一款深受国内外开发者所喜爱的开源容器平台，也将积极参与并探索在 ARM 架构下的应用与创新。本文将主要介绍如何在 ARM64 环境下部署 Kubernetes 和 KubeSphere。
 
 ### 环境准备
 #### 节点
