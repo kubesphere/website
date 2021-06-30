@@ -96,7 +96,7 @@ weight: 10230
 
 ### 详情页面
 
-1. 守护进程集创建后会显示在下方的列表中。您可以点击右边的三个点，在弹出菜单中选择操作，修改您的守护进程集。
+1. 守护进程集创建后会显示在下方的列表中。您可以点击右边的 <img src="/images/docs/zh-cn/project-user-guide/application-workloads/daemonsets/three-dots.png" width="20px" />，在弹出菜单中选择操作，修改您的守护进程集。
 
     ![守护进程集列表](/images/docs/zh-cn/project-user-guide/application-workloads/daemonsets/daemonsets_list.png)
 
