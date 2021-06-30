@@ -173,7 +173,7 @@ weight: 10240
 
 ### 详情页面
 
-1. 创建服务后，您可以点击右侧的三个点进一步编辑它，例如元数据（**名称**无法编辑）、配置文件、端口以及外网访问。
+1. 创建服务后，您可以点击右侧的 <img src="/images/docs/zh-cn/project-user-guide/application-workloads/services/three-dots.png" width="20px" /> 进一步编辑它，例如元数据（**名称**无法编辑）、配置文件、端口以及外网访问。
 
     ![创建完成](/images/docs/zh-cn/project-user-guide/application-workloads/services/stateless-finish.PNG)
 
@@ -195,7 +195,7 @@ weight: 10240
 
 ### 资源状态
 
-1. 点击**资源状态**选项卡以查看服务端口和 Pod 信息。
+1. 点击**资源状态**选项卡以查看服务端口、工作负载和 Pod 信息。
 
    ![services-resource-status](/images/docs/zh-cn/project-user-guide/application-workloads/services/services-resource-status.png)
 
