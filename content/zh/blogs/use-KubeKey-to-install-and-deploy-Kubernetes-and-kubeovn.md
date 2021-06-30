@@ -2,7 +2,7 @@
 title: '使用 KubeKey 安装部署 Kubernetes 与 Kube-OVN'
 tag: 'KubeKey, Kubernetes, 安装部署'
 keywords: 'KubeSphere, KubeKey, Kubernetes, Kube-OVN, 安装部署'
-description: 'KubeKey 是 KubeSphere V3.0 新增的安装方式，用户可以一键部署 Kubernetes 和 KubeSphere。Kube-OVN 是一款基于 OVS/OVN 的 Kubernetes 网络编排系统。本文将为大家介绍如何使用 KubeKey 来安装部署 Kubernetes 和 Kube-OVN。'
+description: 'KubeKey 是 KubeSphere v3.0 新增的安装方式，用户可以一键部署 Kubernetes 和 KubeSphere。Kube-OVN 是一款基于 OVS/OVN 的 Kubernetes 网络编排系统。本文将为大家介绍如何使用 KubeKey 来安装部署 Kubernetes 和 Kube-OVN。'
 createTime: '2021-03-16'
 author: '林瑞超'
 snapshot: 'https://pek3b.qingstor.com/kubesphere-community/images/KubeKey-Kubernetes-Kubeovn-banner.png'
@@ -10,7 +10,7 @@ snapshot: 'https://pek3b.qingstor.com/kubesphere-community/images/KubeKey-Kubern
 
 > 作者简介：林瑞超，锐捷网络开发工程师， KubeSphere 社区 contributor， 关注 Kube-OVN, Cilium 等容器网络相关技术
 ## 背景
-KubeKey 是 KubeSphere V3.0 新增的安装方式，用户可以一键部署 Kubernetes 和 KubeSphere。Kube-OVN 是一款基于 OVS/OVN 的 Kubernetes 网络编排系统。本文将为大家介绍如何使用 KubeKey 来安装部署 Kubernetes 和 Kube-OVN。
+KubeKey 是 KubeSphere v3.0 新增的安装方式，用户可以一键部署 Kubernetes 和 KubeSphere。Kube-OVN 是一款基于 OVS/OVN 的 Kubernetes 网络编排系统。本文将为大家介绍如何使用 KubeKey 来安装部署 Kubernetes 和 Kube-OVN。
 ### KubeKey 简介
 KubeKey 是 Kubernetes 和 KubeSphere 的新一代 Installer（安装程序），旨在更方便、快速、高效和灵活地安装 Kubernetes 与 KubeSphere。KubeKey 摒弃了原来 Ansible 带来的依赖问题，用 Go 重写，支持单独 Kubernetes 或整体安装 KubeSphere。它也是扩展和升级集群的有效工具。
 ### Kube-OVN 简介
