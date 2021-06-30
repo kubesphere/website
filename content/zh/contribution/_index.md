@@ -28,7 +28,7 @@ section2:
         - content: '加入 SIG 或微信群'
           link: 'https://github.com/kubesphere/community#kubesphere-community'
         - content: '完善文档'
-          link: 'https://github.com/kubesphere/docs.kubesphere.io/issues?q=is%3Aissue+is%3Aopen+label%3A%22for+new+contributor%22'
+          link: 'https://github.com/kubesphere/website/issues'
         - content: '提交 Bug 或建议'
           link: 'https://github.com/kubesphere/kubesphere/issues/new/choose'
 
