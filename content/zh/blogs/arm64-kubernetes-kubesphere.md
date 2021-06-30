@@ -1,6 +1,8 @@
 ---
 title: '三步搞定 ARM64 离线部署 Kubernetes + KubeSphere'
 tag: 'Kubernetes,KubeSphere,arm'
+keywords: 'Kubernetes, KubeSphere, ARM64, 信创'
+description: 'KubeSphere 作为一款深受国内外开发者所喜爱的开源容器平台，也将积极参与并探索在 ARM 架构下的应用与创新。本文将主要介绍如何在 ARM64 环境下部署 Kubernetes 和 KubeSphere。'
 createTime: '2021-03-29'
 author: '郭峰'
 snapshot: 'https://pek3b.qingstor.com/kubesphere-community/images/arm.png'
