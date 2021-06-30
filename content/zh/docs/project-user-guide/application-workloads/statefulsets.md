@@ -44,7 +44,7 @@ weight: 10220
 
 ### 步骤 3：设置镜像
 
-1. 设置镜像前，请点击**容器组副本数量**中的**加号**或**减号**图标来定义 Pod（即容器组）的副本数量，该参数显示在清单文件中的 `.spec.replicas` 字段。
+1. 设置镜像前，请点击**容器组副本数量**中的 <img src="/images/docs/zh-cn/project-user-guide/application-workloads/statefulsets/plus-icon.png" width="20px" /> 或 <img src="/images/docs/zh-cn/project-user-guide/application-workloads/statefulsets/minus-icon.png" width="20px" /> 来定义 Pod（即容器组）的副本数量，该参数显示在清单文件中的 `.spec.replicas` 字段。
 
     {{< notice tip >}}
 
@@ -109,7 +109,7 @@ weight: 10220
 
 ### 详情页面
 
-1. 有状态副本集创建后会显示在下方的列表中。您可以点击右边的三个点，在弹出菜单中选择操作，修改您的有状态副本集。
+1. 有状态副本集创建后会显示在下方的列表中。您可以点击右边的 <img src="/images/docs/zh-cn/project-user-guide/application-workloads/statefulsets/three-dots.png" width="20px" />，在弹出菜单中选择操作，修改您的有状态副本集。
 
     ![列表](/images/docs/zh-cn/project-user-guide/application-workloads/statefulsets/statefulsets_list.png)
 
@@ -137,7 +137,7 @@ weight: 10220
 
     ![资源状态](/images/docs/zh-cn/project-user-guide/application-workloads/statefulsets/statefulsets_detail_state.png)
 
-    - **副本运行状态**：点击图像中的箭头增加或减少 Pod 副本数量。
+    - **副本运行状态**：点击 <img src="/images/docs/zh-cn/project-user-guide/application-workloads/statefulsets/up-arrow.png" width="20px" /> 或 <img src="/images/docs/zh-cn/project-user-guide/application-workloads/statefulsets/down-arrow.png" width="20px" /> 来增加或减少 Pod 副本数量。
     - **Pod 详情**
 
         ![Pod 列表](/images/docs/zh-cn/project-user-guide/application-workloads/statefulsets/statefulsets_detail_pod.png)
