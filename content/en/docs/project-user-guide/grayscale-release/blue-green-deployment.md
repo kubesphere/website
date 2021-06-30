@@ -1,8 +1,8 @@
 ---
-title: "Blue-green Deployment"
+title: "Kubernetes Blue-green Deployment in Kubesphere"
 keywords: 'KubeSphere, Kubernetes, service mesh, istio, release, blue-green deployment'
 description: 'Learn how to release a blue-green deployment in KubeSphere.'
-linkTitle: "Blue-green Deployment"
+linkTitle: "Blue-Green Deployment with Kubernetes"
 weight: 10520
 ---
 
