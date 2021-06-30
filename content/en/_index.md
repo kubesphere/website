@@ -1,6 +1,6 @@
 ---
 title: Open Source Container Platform For Enterprise Kubernetes | KubeSphere
-description: An open source Kubernetes Platform to manage enterprise-grade Kubernetes across hybrid cloud, multi-cloud and edge.
+description: An open source Kubernetes Platform to manage enterprise-grade Kubernetes across hybrid cloud, multi-cloud and edge. Get started for free!
 
 
 css: scss/index.scss
@@ -132,7 +132,7 @@ section4:
 
     - name: Metering and Billing
       icon: /images/home/network.svg
-      content: Track resource consumption at different levels on a unified dashboard, which makes better-informed decisions on planning and reduces the cost.
+      content: Track resource consumption at different levels on a unified dashboard, which helps you make better-informed decisions on planning and reduce the cost.
       link: "/docs/toolbox/metering-and-billing/view-resource-consumption/"
       color: green
 
