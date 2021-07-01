@@ -152,7 +152,7 @@ You can rerun the Job if it fails, the reason of which displays under **Messages
 
 On the Job detail page, you can manage the Job after it is created.
 
-- **Edit Info**: Edit the basic information except `Name` of the Job.
+- **Edit Information**: Edit the basic information except `Name` of the Job.
 - **Rerun Job**: Rerun the Job, the Pod will restart, and a new execution record will be generated.
 - **View YAML**: View the Job's specification in YAML format.
 - **Delete**: Delete the Job and return to the Job list page.
