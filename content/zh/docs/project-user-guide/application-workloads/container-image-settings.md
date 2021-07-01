@@ -18,7 +18,7 @@ weight: 10280
 
 ### 容器组副本数量
 
-点击**加号**或**减号**图标设置 Pod（即容器组）副本数量，该参数显示在清单文件中的 `.spec.replicas` 字段。该选项对守护进程集不可用。
+点击 <img src="/images/docs/zh-cn/project-user-guide/application-workloads/container-image-settings/plus-icon.png" width="20px" /> 或 <img src="/images/docs/zh-cn/project-user-guide/application-workloads/container-image-settings/minus-icon.png" width="20px" /> 图标设置 Pod（即容器组）副本数量，该参数显示在清单文件中的 `.spec.replicas` 字段。该选项对守护进程集不可用。
 
 ![Pod 副本](/images/docs/zh-cn/project-user-guide/application-workloads/container-image-settings/pod-replicas.PNG)
 
@@ -30,7 +30,7 @@ weight: 10280
 
 #### 镜像搜索栏
 
-您可以点击右边的立方形图标，从列表中选择一个镜像，或者输入镜像名称进行搜索。KubeSphere 提供 Docker Hub 的镜像以及您的私有镜像仓库的镜像。如果想使用私有镜像仓库，您需要先在**配置中心**下的**密钥**中创建镜像仓库密钥。
+您可以点击右边的 <img src="/images/docs/zh-cn/project-user-guide/application-workloads/container-image-settings/cube-icon.png" width="20px" />，从列表中选择一个镜像，或者输入镜像名称进行搜索。KubeSphere 提供 Docker Hub 的镜像以及您的私有镜像仓库的镜像。如果想使用私有镜像仓库，您需要先在**配置中心**下的**密钥**中创建镜像仓库密钥。
 
 {{< notice note >}} 
 
