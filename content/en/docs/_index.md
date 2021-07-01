@@ -43,19 +43,19 @@ sectionLink:
 
 section3:
   title: Run KubeSphere and Kubernetes Stack from the Cloud Service
-  description: Cloud Providers are providing KubeSphere as a cloud-hosted service for users, helping you to create a highly available cluster within minutes via several clicks. These services will be available starting from September 2020.
+  description: Cloud Providers are providing KubeSphere as a cloud-hosted service for users, helping you to create a highly available Kubernetes cluster managed by KubeSphere within minutes via several clicks. It enables you to use the cloud-hosted Kubernetes services out of the box.
   list:
     - image: /images/docs/aws.jpg
       content: AWS Quickstart
       link: https://aws.amazon.com/quickstart/architecture/qingcloud-kubesphere/
-    - image: /images/docs/microsoft-azure.png
+    - image: /images/docs/microsoft-azure.jpg
       content: Azure Marketplace
       link: https://market.azure.cn/marketplace/apps/qingcloud.kubesphere
     - image: /images/docs/qingcloud.svg
       content: QingCloud QKE
       link: https://www.qingcloud.com/products/kubesphereqke/
 
-  titleRight: Want to host KubeSphere on your cloud?
+  titleRight: Want to host KubeSphere on your cloud or your solution?
   btnContent: Partner with us
   btnLink: /partner/
 ---
