@@ -62,7 +62,7 @@ weight: 10260
 
 ### 步骤 4：设置镜像
 
-1. 点击**容器镜像**下的**添加容器镜像**，在搜索栏中输入 `busybox` 。
+1. 点击**容器镜像**下的**添加容器镜像**，在搜索栏中输入 `busybox`，然后按**回车**键。
 
     ![输入 busybox](/images/docs/zh-cn/project-user-guide/application-workloads/cronjobs/input-busybox.png)
 
@@ -98,7 +98,7 @@ weight: 10260
 
     ![任务详情页面](/images/docs/zh-cn/project-user-guide/application-workloads/cronjobs/job-detail-page.png)
 
-4. 在**资源状态**中，您可以检查 Pod 状态。点击右侧的箭头，可以检查容器日志，如下所示，该日志显示预期输出。
+4. 在**资源状态**中，您可以检查 Pod 状态。点击右侧的 <img src="/images/docs/zh-cn/project-user-guide/application-workloads/cronjobs/down-arrow.png" width="20px" />，可以检查容器日志，如下所示，该日志显示预期输出。
 
     ![容器日志-1](/images/docs/zh-cn/project-user-guide/application-workloads/cronjobs/container-log-1.png)
 

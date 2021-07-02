@@ -20,13 +20,13 @@ You need to create a workspace, a project and an account (`project-regular`). Th
 
 Log in to the console as `project-regular`. Go to **Jobs** of a project, choose **CronJobs** and click **Create**.
 
-![cronjob-list](/images/docs/project-user-guide/application-workloads/cronjobs/cronjob-list.jpg)
+![cronjob-list](/images/docs/project-user-guide/application-workloads/cronjobs/click-create.png)
 
 ### Step 2: Enter basic information
 
 Enter the basic information. You can refer to the image below for each field. When you finish, click **Next**.
 
-![cronjob-create-basic-info](/images/docs/project-user-guide/application-workloads/cronjobs/cronjob-create-basic-info.jpg)
+![cronjob-create-basic-info](/images/docs/project-user-guide/application-workloads/cronjobs/basic-info.png)
 
 - **Name**: The name of the CronJob, which is also the unique identifier.
 - **Alias**: The alias name of the CronJob, making resources easier to identify.
@@ -61,17 +61,17 @@ Please refer to [Jobs](../jobs/#step-3-job-settings-optional).
 
 ### Step 4: Set an image
 
-1. Click **Add Container Image** in **Container Image** and enter `busybox` in the search bar.
+1. Click **Add Container Image** in **Container Image**, enter `busybox` in the search bar, and press **Enter**.
 
-    ![input-busybox](/images/docs/project-user-guide/application-workloads/cronjobs/input-busybox.jpg)
+    ![input-busybox](/images/docs/project-user-guide/application-workloads/cronjobs/set-image.png)
 
 2. Scroll down to **Start Command** and enter `/bin/sh,-c,date; echo "KubeSphere!"` in the box under **Parameters**. 
 
-    ![start-command](/images/docs/project-user-guide/application-workloads/cronjobs/start-command.jpg)
+    ![start-command](/images/docs/project-user-guide/application-workloads/cronjobs/start-command.png)
 
 3. Click **√** to finish setting the image and **Next** to continue.
 
-    ![finish-image](/images/docs/project-user-guide/application-workloads/cronjobs/finish-image.jpg)
+    ![finish-image](/images/docs/project-user-guide/application-workloads/cronjobs/image-set.png)
 
     {{< notice note >}}
 
@@ -85,23 +85,23 @@ Please refer to [Jobs](../jobs/#step-3-job-settings-optional).
 
 1. In the final step of **Advanced Settings**, click **Create** to finish. A new item will be added to the CronJob list if the creation is successful. Besides, you can also find Jobs under **Jobs** tab.
 
-    ![cronjob-list-new](/images/docs/project-user-guide/application-workloads/cronjobs/cronjob-list-new.jpg)
+    ![cronjob-list-new](/images/docs/project-user-guide/application-workloads/cronjobs/cronjob.png)
 
-    ![job-list](/images/docs/project-user-guide/application-workloads/cronjobs/job-list.jpg)
+    ![job-list](/images/docs/project-user-guide/application-workloads/cronjobs/jobs.png)
 
-2. Under **ConJobs** tab, click this CronJob and go to **Job Records** tab where you can see the information of each execution record. There are 3 successful CronJob executions as the field **successfulJobsHistoryLimit** is set to 3.
+2. Under the **ConJobs** tab, click this CronJob and go to the **Job Records** tab where you can see the information of each execution record. There are 3 successful CronJob executions as the field **successfulJobsHistoryLimit** is set to 3.
 
-    ![execution-record](/images/docs/project-user-guide/application-workloads/cronjobs/execution-record.jpg)
+    ![execution-record](/images/docs/project-user-guide/application-workloads/cronjobs/exe-records.png)
 
 3. Click any of them and you will be directed to the Job detail page.
 
-    ![job-detail-page](/images/docs/project-user-guide/application-workloads/cronjobs/job-detail-page.jpg)
+    ![job-detail-page](/images/docs/project-user-guide/application-workloads/cronjobs/job-detail.png)
 
-4. In **Resource Status**, you can inspect the Pod status. Click the arrow on the right and check the container log as shown below, which displays the expected output.
+4. In **Resource Status**, you can inspect the Pod status. Click <img src="/images/docs/project-user-guide/application-workloads/cronjobs/down-arrow.png" width="20px" /> on the right and check the container log as shown below, which displays the expected output.
 
-    ![container-log-1](/images/docs/project-user-guide/application-workloads/cronjobs/container-log-1.jpg)
+    ![container-log-1](/images/docs/project-user-guide/application-workloads/cronjobs/view-log.png)
 
-    ![container-log-2](/images/docs/project-user-guide/application-workloads/cronjobs/container-log-2.jpg)
+    ![container-log-2](/images/docs/project-user-guide/application-workloads/cronjobs/log-detail.png)
 
 ## Check CronJob Details
 
@@ -109,12 +109,12 @@ Please refer to [Jobs](../jobs/#step-3-job-settings-optional).
 
 On the CronJob detail page, you can manage the CronJob after it is created.
 
-- **Edit Info**: Edit the basic information except `Name` of the CronJob.
+- **Edit Information**: Edit the basic information except `Name` of the CronJob.
 - **Pause/Start**: Pause or start the Cronjob. Pausing a CronJob will tell the controller to suspend subsequent executions, which does not apply to executions that already start.
 - **Edit YAML**: Edit the CronJob's specification in YAML format.
 - **Delete**: Delete the CronJob, and return to the CronJob list page.
 
-![cronjob-action](/images/docs/project-user-guide/application-workloads/cronjobs/cronjob-action.jpg)
+![cronjob-action](/images/docs/project-user-guide/application-workloads/cronjobs/modify.png)
 
 ### Job records
 
