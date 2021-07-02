@@ -113,7 +113,7 @@ HPA 功能会自动调整 Pod 的数量，将 Pod 的平均资源使用（CPU �
 
    ![pods-increase](/images/docs/zh-cn/project-user-guide/application-workloads/horizontal-pod-autoscaling/pods-increase.png)
 
-2. 在左侧导航栏选择**应用负载**中的**工作负载**，点击负载生成器部署（例如，load-generator-v1）右侧的三个点，从下拉菜单中选择**删除**。负载生成器部署删除后，再次检查 HPA 部署的状态。
+2. 在左侧导航栏选择**应用负载**中的**工作负载**，点击负载生成器部署（例如，load-generator-v1）右侧的 <img src="/images/docs/zh-cn/project-user-guide/application-workloads/horizontal-pod-autoscaling/three-dots.png" width="20px" />，从下拉菜单中选择**删除**。负载生成器部署删除后，再次检查 HPA 部署的状态。
 
    Pod 的数量会减少到最小值。
 
@@ -133,6 +133,6 @@ HPA 功能会自动调整 Pod 的数量，将 Pod 的平均资源使用（CPU �
 
 1. 在左侧导航栏选择**应用负载**中的**工作负载**，点击右侧的 HPA 部署（例如，hpa-v1）。
 
-2. 点击**弹性伸缩**右侧的三个点，从下拉菜单中选择**取消**。
+2. 点击**弹性伸缩**右侧的 <img src="/images/docs/zh-cn/project-user-guide/application-workloads/horizontal-pod-autoscaling/three-dots.png" width="20px" />，从下拉菜单中选择**取消**。
 
    ![cancel-hpa](/images/docs/zh-cn/project-user-guide/application-workloads/horizontal-pod-autoscaling/cancel-hpa.png)

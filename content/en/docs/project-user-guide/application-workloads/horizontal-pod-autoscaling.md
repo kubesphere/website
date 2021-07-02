@@ -113,7 +113,7 @@ This section uses a Deployment that sends requests to the HPA Service to verify 
 
    ![pods-increase](/images/docs/project-user-guide/application-workloads/horizontal-pod-autoscaling/pods-increase.png)
 
-2. Choose **Workloads** in **Application Workloads** on the left navigation bar, click the three dots on the right of the load generator Deployment (for example, load-generator-v1), and choose **Delete** from the drop-down list. After the load-generator Deployment is deleted, check the status of the HPA Deployment again.
+2. Choose **Workloads** in **Application Workloads** on the left navigation bar, click <img src="/images/docs/project-user-guide/application-workloads/horizontal-pod-autoscaling/three-dots.png" width="20px" /> on the right of the load generator Deployment (for example, load-generator-v1), and choose **Delete** from the drop-down list. After the load-generator Deployment is deleted, check the status of the HPA Deployment again.
 
    The number of Pods decreases to the minimum.
 
@@ -133,7 +133,7 @@ You can repeat steps in [Configure HPA](#configure-hpa) to edit the HPA configur
 
 1. Choose **Workloads** in **Application Workloads** on the left navigation bar and click the HPA Deployment (for example, hpa-v1) on the right.
 
-2. Click the three dots on the right of **Horizontal Pod Autoscaling** and choose **Cancel** from the drop-down list.
+2. Click <img src="/images/docs/project-user-guide/application-workloads/horizontal-pod-autoscaling/three-dots.png" width="20px" /> on the right of **Horizontal Pod Autoscaling** and choose **Cancel** from the drop-down list.
 
    ![cancel-hpa](/images/docs/project-user-guide/application-workloads/horizontal-pod-autoscaling/cancel-hpa.png)
 
