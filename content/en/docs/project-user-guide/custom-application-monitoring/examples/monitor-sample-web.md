@@ -35,21 +35,21 @@ Find the source code in the folder `helm` in [kubesphere/prometheus-example-app]
 
 1. Go to the workspace **Overview** page of `demo-workspace` and navigate to **App Templates**.
 
-    ![app-template-create](/images/docs/project-user-guide/custom-application-monitoring/app-template-create.jpg)
+    ![app-template](/images/docs/project-user-guide/custom-application-monitoring/examples/monitor-sample-web-app/app-temp.png)
 
 2. Click **Create** and upload `prometheus-example-app-0.1.0.tgz` as images below.
 
-    ![click-create-app-template](/images/docs/project-user-guide/custom-application-monitoring/click-create-app-template.jpg)
+    ![click-create](/images/docs/project-user-guide/custom-application-monitoring/examples/monitor-sample-web-app/click-create.png)
 
-    ![click-upload-app-template](/images/docs/project-user-guide/custom-application-monitoring/click-upload-app-template.jpg)
+    ![click-upload](/images/docs/project-user-guide/custom-application-monitoring/examples/monitor-sample-web-app/click-upload.png)
 
-    ![click-upload-app-template-2](/images/docs/project-user-guide/custom-application-monitoring/click-upload-app-template-2.jpg)
+    ![click-upload-helm](/images/docs/project-user-guide/custom-application-monitoring/examples/monitor-sample-web-app/click-upload-helm.png)
 
-    ![click-upload-app-template-4](/images/docs/project-user-guide/custom-application-monitoring/click-upload-app-template-4.jpg)
+    ![upload-helm](/images/docs/project-user-guide/custom-application-monitoring/examples/monitor-sample-web-app/upload-helm.png)
 
-    ![click-upload-app-template-5](/images/docs/project-user-guide/custom-application-monitoring/click-upload-app-template-5.jpg)
+    ![click-ok](/images/docs/project-user-guide/custom-application-monitoring/examples/monitor-sample-web-app/click-ok.png)
 
-    ![click-upload-app-template-6](/images/docs/project-user-guide/custom-application-monitoring/click-upload-app-template-6.jpg)
+    ![template-uploaded](/images/docs/project-user-guide/custom-application-monitoring/examples/monitor-sample-web-app/template-uploaded.png)
 
 ### Step 4: Deploy the sample web application
 
@@ -57,27 +57,27 @@ You need to deploy the sample web application into `test`. For demonstration pur
 
 1. Click `prometheus-example-app`.
 
-    ![deploy-sample-web-1](/images/docs/project-user-guide/custom-application-monitoring/deploy-sample-web-1.jpg)
+    ![deploy-sample-web-1](/images/docs/project-user-guide/custom-application-monitoring/examples/monitor-sample-web-app/template-uploaded.png)
 
 2. Expand the menu and click **Test Deployment**.
 
-    ![deploy-sample-web-2](/images/docs/project-user-guide/custom-application-monitoring/deploy-sample-web-2.jpg)
+    ![deploy-sample-web-2](/images/docs/project-user-guide/custom-application-monitoring/examples/monitor-sample-web-app/expand-menu.png)
 
-    ![deploy-sample-web-3](/images/docs/project-user-guide/custom-application-monitoring/deploy-sample-web-3.jpg)
+    ![deploy-sample-web-3](/images/docs/project-user-guide/custom-application-monitoring/examples/monitor-sample-web-app/click-deployment.png)
 
 3. Make sure you deploy the sample web application in `test` and click **Next**.
 
-    ![deploy-sample-web-4](/images/docs/project-user-guide/custom-application-monitoring/deploy-sample-web-4.jpg)
+    ![deploy-sample-web-4](/images/docs/project-user-guide/custom-application-monitoring/examples/monitor-sample-web-app/deploy-in-test.png)
 
 4. Make sure `serviceMonitor.enabled` is set to `true` and click **Deploy**.
 
-    ![deploy-sample-web-5](/images/docs/project-user-guide/custom-application-monitoring/deploy-sample-web-5.jpg)
+    ![deploy-sample-web-5](/images/docs/project-user-guide/custom-application-monitoring/examples/monitor-sample-web-app/app-config.png)
 
-    ![deploy-sample-web-6](/images/docs/project-user-guide/custom-application-monitoring/deploy-sample-web-6.jpg)
+    ![deploy-sample-web-6](/images/docs/project-user-guide/custom-application-monitoring/examples/monitor-sample-web-app/deployment-successful.png)
 
 5. In **Workloads** of the project `test`, wait until the sample web application is up and running.
 
-    ![create-dashboard-1](/images/docs/project-user-guide/custom-application-monitoring/create-dashboard-1.jpg)
+    ![create-dashboard-1](/images/docs/project-user-guide/custom-application-monitoring/examples/monitor-sample-web-app/app-running.png)
 
 ### Step 5: Create a monitoring dashboard
 
@@ -85,34 +85,34 @@ This section guides you on how to create a dashboard from scratch. You will crea
 
 1. Navigate to **Custom Monitoring** and click **Create**.
 
-    ![create-dashboard-2](/images/docs/project-user-guide/custom-application-monitoring/create-dashboard-2.jpg)
+    ![create-dashboard-2](/images/docs/project-user-guide/custom-application-monitoring/examples/monitor-sample-web-app/custom-dashboard.png)
 
-2. Set a name (for example, `sample-web`) and click **Create**.
+2. Set a name (for example, `sample-web`) and click **Next**.
 
-    ![create-dashboard-3](/images/docs/project-user-guide/custom-application-monitoring/create-dashboard-3.jpg)
+    ![create-dashboard-3](/images/docs/project-user-guide/custom-application-monitoring/examples/monitor-sample-web-app/set-name.png)
 
-3. Enter a title in the top-left corner (for example, `Sample Web Overview`).
+3. Enter a title in the upper-left corner (for example, `Sample Web Overview`).
 
-    ![create-dashboard-4](/images/docs/project-user-guide/custom-application-monitoring/create-dashboard-4.jpg)
+    ![create-dashboard-4](/images/docs/project-user-guide/custom-application-monitoring/examples/monitor-sample-web-app/set-title.png)
 
-4. Click the **plus icon** on the left column to create a text chart.
+4. Click <img src="/images/docs/project-user-guide/custom-application-monitoring/examples/monitor-sample-web-app/plus-btn.png" height="15px" width="25px" /> on the left column to create a text chart.
 
-    ![create-dashboard-5](/images/docs/project-user-guide/custom-application-monitoring/create-dashboard-5.jpg)
+    ![create-dashboard-5](/images/docs/project-user-guide/custom-application-monitoring/examples/monitor-sample-web-app/click-plus-btn.png)
 
-5. Type the PromQL expression `myapp_processed_ops_total` in the field **Monitoring Metrics** and give a chart name (for example, `Operation Count`). Click **√** in the bottom-right corner to continue.
+5. Type the PromQL expression `myapp_processed_ops_total` in the field **Monitoring Metrics** and give a chart name (for example, `Operation Count`). Click **√** in the lower-right corner to continue.
 
-    ![create-dashboard-6](/images/docs/project-user-guide/custom-application-monitoring/create-dashboard-6.jpg)
+    ![create-dashboard-6](/images/docs/project-user-guide/custom-application-monitoring/examples/monitor-sample-web-app/enter-expression.png)
 
 6. Click **Add Monitoring Item** to create a line chart.
 
-    ![create-dashboard-7](/images/docs/project-user-guide/custom-application-monitoring/create-dashboard-7.jpg)
+    ![create-dashboard-7](/images/docs/project-user-guide/custom-application-monitoring/examples/monitor-sample-web-app/click-add-item.png)
 
-    ![create-dashboard-8](/images/docs/project-user-guide/custom-application-monitoring/create-dashboard-8.jpg)
+    ![create-dashboard-8](/images/docs/project-user-guide/custom-application-monitoring/examples/monitor-sample-web-app/line-chart.png)
 
-7. Type the PromQL expression `irate(myapp_processed_ops_total[3m])` for **Monitoring Metrics** and name the chart `Operation Rate`. To improve the appearance, you can set **Metric Name** to `{{service}}`. It will name each line with the value of the metric label `service`. Next, set **Decimal Places** to `2` so that the result will be truncated to two decimal places.
+7. Enter the PromQL expression `irate(myapp_processed_ops_total[3m])` for **Monitoring Metrics** and name the chart `Operation Rate`. To improve the appearance, you can set **Metric Name** to `{{service}}`. It will name each line with the value of the metric label `service`. Next, set **Decimal Places** to `2` so that the result will be truncated to two decimal places.
 
-    ![create-dashboard-9](/images/docs/project-user-guide/custom-application-monitoring/create-dashboard-9.jpg)
+    ![create-dashboard-9](/images/docs/project-user-guide/custom-application-monitoring/examples/monitor-sample-web-app/set-chart-expression.png)
 
 8. Click **Save Template** to save it.
 
-    ![create-dashboard-10](/images/docs/project-user-guide/custom-application-monitoring/create-dashboard-10.jpg)
+    ![create-dashboard-10](/images/docs/project-user-guide/custom-application-monitoring/examples/monitor-sample-web-app/save.png)

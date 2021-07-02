@@ -87,15 +87,15 @@ weight: 10813
 
     ![创建仪表板-2](/images/docs/zh-cn/project-user-guide/custom-application-monitoring/examples/monitor-sample-web-app/create-dashboard-2.PNG)
 
-2. 设置名称（例如 `sample-web`），点击**创建**。
+2. 设置名称（例如 `sample-web`），点击**下一步**。
 
-    ![创建仪表板-3](/images/docs/zh-cn/project-user-guide/custom-application-monitoring/examples/monitor-sample-web-app/create-dashboard-3.PNG)
+    ![创建仪表板-3](/images/docs/zh-cn/project-user-guide/custom-application-monitoring/examples/monitor-sample-web-app/create-dashboard_3.png)
 
 3. 在左上角输入标题（例如 `示例 Web 概览`）。
 
     ![创建仪表板-4](/images/docs/zh-cn/project-user-guide/custom-application-monitoring/examples/monitor-sample-web-app/create-dashboard-4.PNG)
 
-4. 点击左列的**加号图标**，创建文本图表。
+4. 点击左列的 <img src="/images/docs/zh-cn/project-user-guide/custom-application-monitoring/examples/monitor-sample-web-app/plus-btn.png" height="15px" width="25px" />，创建文本图表。
 
     ![创建仪表板-5](/images/docs/zh-cn/project-user-guide/custom-application-monitoring/examples/monitor-sample-web-app/create-dashboard-5.PNG)
 
