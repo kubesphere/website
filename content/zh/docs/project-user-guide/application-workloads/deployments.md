@@ -31,7 +31,7 @@ weight: 10210
 
 ### 步骤 3：设置镜像
 
-1. 设置镜像前，请点击**容器组副本数量**中的**加号**或**减号**图标来定义 Pod 的副本数量，该参数显示在清单文件中的 `.spec.replicas` 字段。
+1. 设置镜像前，请点击**容器组副本数量**中的 <img src="/images/docs/zh-cn/project-user-guide/application-workloads/deployments/plus-icon.png" width="20px" /> 或 <img src="/images/docs/zh-cn/project-user-guide/application-workloads/deployments/minus-icon.png" width="20px" /> 来定义 Pod 的副本数量，该参数显示在清单文件中的 `.spec.replicas` 字段。
 
     {{< notice tip >}}
 您可以启用右上角的**编辑模式**，查看 YAML 格式的部署清单文件。KubeSphere 使您可以直接编辑清单文件创建部署，或者您可以按照下列步骤使用仪表板创建部署。
@@ -100,7 +100,7 @@ weight: 10210
 
 ### 详情页面
 
-1. 部署创建后会显示在下方的列表中。您可以点击右边的三个点，在弹出菜单中选择操作，修改您的部署。
+1. 部署创建后会显示在下方的列表中。您可以点击右边的 <img src="/images/docs/zh-cn/project-user-guide/application-workloads/deployments/three-dots.png" width="20px" />，在弹出菜单中选择操作，修改您的部署。
 
     ![部署列表](/images/docs/zh-cn/project-user-guide/application-workloads/deployments/deployment-listed.PNG)
 
@@ -128,7 +128,7 @@ weight: 10210
 
     ![资源状态](/images/docs/zh-cn/project-user-guide/application-workloads/deployments/resource-status.PNG)
 
-    - **副本运行状态**：点击图像中的箭头增加或减少 Pod 副本数量。
+    - **副本运行状态**：点击 <img src="/images/docs/zh-cn/project-user-guide/application-workloads/deployments/up-arrow.png" width="20px" /> 或 <img src="/images/docs/zh-cn/project-user-guide/application-workloads/deployments/down-arrow.png" width="20px" /> 来增加或减少 Pod 副本数量。
     - **Pod 详情**
 
         ![Pod 详情](/images/docs/zh-cn/project-user-guide/application-workloads/deployments/pod-details.PNG)
