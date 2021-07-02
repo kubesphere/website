@@ -32,7 +32,7 @@ You need to create a workspace, a project and an account (`project-regular`). Th
 
 As shown in the image below, KubeSphere provides three basic methods to create a Service: **Stateless Service**, **Stateful Service**, and **External Service**. Besides, you can also customize a Service through **Specify Workloads** and **Edit by YAML** under **Custom Creation**.
 
-![create_service_type](/images/docs/project-user-guide/workloads/create_service_type.png)
+![create_service_type](/images/docs/project-user-guide/application-workloads/services/service-types.png)
 
 - **Stateless Service**
 
@@ -66,11 +66,11 @@ The value of `annotations:kubesphere.io/serviceType` keywords can be defined as:
 
 1. Go to **Services** under **Application Workloads** of a project and click **Create**.
 
-    ![services_lists](/images/docs/project-user-guide/workloads/services_lists.jpg)
+    ![services_lists](/images/docs/project-user-guide/application-workloads/services/click-create.png)
 
 2. Click **Stateless Service**.
 
-    ![stateless_form](/images/docs/project-user-guide/workloads/stateless_form.jpg)
+    ![stateless_form](/images/docs/project-user-guide/application-workloads/services/stateless-service.png)
 
     {{< notice note >}}
 
@@ -80,9 +80,9 @@ The steps of creating a stateful Service and a stateless Service are basically t
 
 ### Step 2: Enter basic information
 
-1. In the dialog that appears, you can see the field **Version** prepopulated with `v1`. You need to define a name for the Service, such as `demo-service`. When you finish, click **Next** to continue.
+1. In the displayed dialog box, you can see the field **Version** prepopulated with `v1`. You need to define a name for the Service, such as `demo-stateless`. When you finish, click **Next** to continue.
 
-    ![stateless_form_1](/images/docs/project-user-guide/workloads/stateless_form_1.jpg)
+    ![stateless_form_1](/images/docs/project-user-guide/application-workloads/services/enter-name.png)
 
     - **Name**: The name of the Service and Deployment, which is also the unique identifier.
     - **Alias**: The alias name of the Service, making resources easier to identify.
@@ -129,7 +129,7 @@ The value of **Name** is used in both configurations, one for Deployment and the
 
 To add a container image for the Service, see [Set an image](../deployments/#step-3-set-an-image) for details.
 
-![stateless_form_2.png](/images/docs/project-user-guide/workloads/stateless_form_2.jpg)
+![stateless_form_2.png](/images/docs/project-user-guide/application-workloads/services/set-image.png)
 
 {{< notice tip >}}
 
@@ -141,13 +141,13 @@ For more information about explanations of dashboard properties, see [Container 
 
 To mount a volume for the Service, see [Mount Volumes](../deployments/#step-4-mount-volumes) for details.
 
-![stateless_form_3](/images/docs/project-user-guide/workloads/stateless_form_3.jpg)
+![stateless_form_3](/images/docs/project-user-guide/application-workloads/services/set-volumes.png)
 
 ### Step 5: Configure advanced settings
 
 You can set a policy for node scheduling and add metadata which is the same as explained in [Deployments](../deployments/#step-5-configure-advanced-settings). For a Service, you can see two additional options available, **Internet Access** and **Enable Sticky Session**.
 
-![stateless_form_4](/images/docs/project-user-guide/workloads/stateless_form_4.jpg)
+![stateless_form_4](/images/docs/project-user-guide/application-workloads/services/advanced-settings.png)
 
 - Internet Access
 
@@ -173,9 +173,9 @@ This value is specified by `.spec.type`. If you select **LoadBalancer**, you nee
 
 ### Detail page
 
-1. After a Service is created, you can click the three dots on the right to further edit it, such as its metadata (excluding **Name**), YAML, port, and Internet access.
+1. After a Service is created, you can click <img src="/images/docs/project-user-guide/application-workloads/services/three-dots.png" width="20px" /> on the right to further edit it, such as its metadata (excluding **Name**), YAML, port, and Internet access.
 
-    ![stateless_finish](/images/docs/project-user-guide/workloads/services_lists_finish.jpg)
+    ![stateless_finish](/images/docs/project-user-guide/application-workloads/services/click-dots.png)
 
     - **Edit**: View and edit the basic information.
     - **Edit YAML**: View, upload, download, or update the YAML file.
@@ -185,7 +185,7 @@ This value is specified by `.spec.type`. If you select **LoadBalancer**, you nee
 
 2. Click the name of the Service and you can go to its detail page.
 
-    ![stateless_finish](/images/docs/project-user-guide/workloads/services_detail.png)
+    ![stateless_finish](/images/docs/project-user-guide/application-workloads/services/detail-page.png)
 
     - Click **More** to expand the drop-down menu which is the same as the one in the Service list.
     - The Pod list provides detailed information of the Pod (status, node, Pod IP and resource usage).
@@ -195,22 +195,22 @@ This value is specified by `.spec.type`. If you select **LoadBalancer**, you nee
 
 ### Resource status
 
-1. Click the **Resource Status** tab to view information about the Service ports and Pods.
+1. Click the **Resource Status** tab to view information about the Service ports, Workloads, and Pods.
 
-   ![services](/images/docs/project-user-guide/workloads/services_resource_status.png)
+   ![services](/images/docs/project-user-guide/application-workloads/services/resource-status.png)
 
-2. In the **Pods** area, click <img src="/images/docs/project-user-guide/workloads/services_refresh_pods.png" width="20px" /> to refresh the Pod information, and click <img src="/images/docs/project-user-guide/workloads/services_display_containers.png" width="20px" />/<img src="/images/docs/project-user-guide/workloads/services_hide_containers.png" width="20px" /> to display/hide the containers in each Pod.
+2. In the **Pods** area, click <img src="/images/docs/project-user-guide/application-workloads/services/refresh.png" width="20px" /> to refresh the Pod information, and click <img src="/images/docs/project-user-guide/application-workloads/services/display.png" width="20px" />/<img src="/images/docs/project-user-guide/application-workloads/services/hide.png" width="20px" /> to display/hide the containers in each Pod.
 
-   ![services](/images/docs/project-user-guide/workloads/services_pods.png)
+   ![services](/images/docs/project-user-guide/application-workloads/services/see-pod.png)
 
 ### Metadata
 
 Click the **Metadata** tab to view the labels and annotations of the Service.
 
-![services](/images/docs/project-user-guide/workloads/services_metadata.png)
+![services](/images/docs/project-user-guide/application-workloads/services/metadata.png)
 
 ### Events
 
 Click the **Events** tab to view the events of the Service.
 
-![services](/images/docs/project-user-guide/workloads/services_events.png)
+![services](/images/docs/project-user-guide/application-workloads/services/events.png)
