@@ -131,7 +131,7 @@ weight: 10250
 
     {{< notice tip >}}如果任务失败，您可以重新运行该任务，失败原因显示在**消息**下。{{</ notice >}}
 
-3. 在**资源状态**中，您可以查看 Pod 状态。先前将**并行数**设置为 2，因此每次会创建两个 Pod。点击右侧的箭头，查看容器日志，如下所示，该日志显示了预期的计算结果。
+3. 在**资源状态**中，您可以查看 Pod 状态。先前将**并行数**设置为 2，因此每次会创建两个 Pod。点击右侧的 <img src="/images/docs/zh-cn/project-user-guide/application-workloads/jobs/down-arrow.png" width="20px" />，查看容器日志，如下所示，该日志显示了预期的计算结果。
 
     ![容器日志](/images/docs/zh-cn/project-user-guide/application-workloads/jobs/container-log.PNG)
 
