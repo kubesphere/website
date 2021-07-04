@@ -1,6 +1,6 @@
 ---
 title: '云原生的 WebAssembly 能取代 Docker 吗？'
-tag: 'KubeSphere,  WebAssembly, Kubernetes, Docker'
+tag: 'Kubernetes, Docker'
 keywords: 'KubeSphere,  WebAssembly, Kubernetes, Docker, Rust'
 description: '本文是整理自 2020 年 KubeSphere 社区组织的年度 Meetup 上 Second State  CEO Michael Yuan 的分享，主要介绍了 WebAssembly 在服务端的位置，与 Docker 的对比，与 Rust 的结合以及与 Kubernetes 的结合等。'
 createTime: '2021-03-31'
