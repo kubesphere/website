@@ -136,7 +136,7 @@ You can set a policy for node scheduling and add metadata in this section. When 
 
     ![statefulsets](/images/docs/project-user-guide/application-workloads/statefulsets/resource-status.png)
 
-    - **Replica Status**: Click  or  to increase or decrease the number of Pod replicas.
+    - **Replica Status**: Click <img src="/images/docs/project-user-guide/application-workloads/statefulsets/up-arrow.png" width="20px" /> or <img src="/images/docs/project-user-guide/application-workloads/statefulsets/down-arrow.png" width="20px" /> to increase or decrease the number of Pod replicas.
     - **Pod detail**
 
         ![statefulsets](/images/docs/project-user-guide/application-workloads/statefulsets/pod-detail.png)
