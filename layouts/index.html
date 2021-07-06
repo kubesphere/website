@@ -104,7 +104,7 @@
         {{ if .check }}
         <span class="common-green-a">{{ i18n "Coming Soon" }} →</span>
         {{ else }}
-        <a class="common-green-a" href="{{ .link }}" target="_blank" rel="noopener noreferrer">{{ i18n "Read More" }} →</a>
+        <a class="common-green-a" href="{{ .link | relLangURL }}" target="_blank" rel="noopener noreferrer">{{ i18n "Read More" }} →</a>
         {{ end }}
       </li>
       {{ end }}
