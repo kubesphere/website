@@ -120,19 +120,19 @@ section4:
     - name: Kubernetes 多集群管理
       icon: /images/home/management.svg
       content: 跨多云与多集群统一分发应用，提供集群高可用与灾备的最佳实践，支持跨级群的可观测性
-      link: "/zh/docs/multicluster-management/introduction/overview/"
+      link: "/docs/multicluster-management/introduction/overview/"
       color: orange
 
     - name: Kubernetes 边缘节点管理
       icon: /images/home/network.svg
       content: 基于 KubeEdge 实现应用与工作负载在云端与边缘节点的统一分发与管理，解决在海量边、端设备上完成应用交付、运维、管控的需求
-      link: "/zh/docs/pluggable-components/kubeedge/"
+      link: "/docs/pluggable-components/kubeedge/"
       color: green
 
     - name: 多维度计量与计费
       icon: /images/home/multiple.svg
       content: 提供基于集群与租户的多维度资源计量与计费的监控报表，让 Kubernetes 运营成本更透明
-      link: "/zh/docs/toolbox/metering-and-billing/view-resource-consumption/"
+      link: "/docs/toolbox/metering-and-billing/view-resource-consumption/"
       color: grape
 
 section5:
