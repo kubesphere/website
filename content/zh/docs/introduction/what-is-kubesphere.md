@@ -14,7 +14,7 @@ weight: 1100
 
 KubeSphere 还开源了 [KubeKey](https://github.com/kubesphere/kubekey) 帮助企业一键在公有云或数据中心快速搭建 Kubernetes 集群，提供单节点、多节点、集群插件安装，以及集群升级与运维。
 
-![功能概览](/images/docs/zh-cn/introduction/what-is-kubesphere/feature-overview.png)
+![功能概览](/images/docs/zh-cn/introduction/what-is-kubesphere/kubesphere-feature-overview.jpeg)
 
 ## 开发运维友好
 
