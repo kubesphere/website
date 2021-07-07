@@ -10,6 +10,10 @@ section1:
 
 section2:
   news:
+    - title: 'Announcing KubeSphere 3.1.0 on AWS Quick Start!'
+      description: KubeSphere Quick Start uses AWS CloudFormation templates to help users automatically provision an Amazon EKS cluster on the AWS Cloud. End users can manage Amazon EKS clusters through the KubeSphere console.
+      image: /images/news/aws-quick-start/quick-start-cover.png
+      link: 'kubesphere-310-on-aws-quick-start/'
     - title: 'KubeCon and CloudNativeCon Europe 2021 is coming! Welcome to join us!'
       description: The KubeSphere team will give a presentation at the Data on Kubernetes Day of KubeCon and CloudNativeCon Europe 2021.
       image: /images/news/kubecon-eu/kubecon-news-banner.png
