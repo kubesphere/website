@@ -20,9 +20,9 @@ You need to create a workspace, a project and an account (`project-admin`). The 
 
 1. Log in to the KubeSphere web console as `project-admin` and go to your project. In **Project Settings** from the navigation bar, select **Advanced Settings** and click **Set Gateway**.
 
-   ![set-project-gateway](/images/docs/project-administration/project-gateway/set-project-gateway.jpg)
+   ![set-project-gateway](/images/docs/project-administration/project-gateway/set-project-gateway.png)
 
-2. In the pop-up window, you can select two access modes for the gateway.
+2. In the displayed dialog box, you can select two access modes for the gateway.
 
    ![access-method](/images/docs/project-administration/project-gateway/access-method.png)
 
@@ -30,15 +30,15 @@ You need to create a workspace, a project and an account (`project-admin`). The 
    
    **LoadBalancer**: You can access Services with a single IP address through the gateway.
    
-3. You can also enable **Application Governance** on the **Set Gateway** page. You need to enable **Application Governance** so that you can use the Tracing feature and use [different grayscale release strategies](../../project-user-guide/grayscale-release/overview/). Once it is enabled, check whether an annotation (for example, `nginx.ingress.kubernetes.io/service-upstream: true`) is added for your route (Ingress) if the route is inaccessible.
+3. You can also enable **Application Governance** on the **Set Gateway** page. You need to enable **Application Governance** so that you can use the Tracing feature and use [different grayscale release strategies](../../project-user-guide/grayscale-release/overview/). If the route is inaccessible after you enabled application governance, check whether an annotation (for example, `nginx.ingress.kubernetes.io/service-upstream: true`) is added for your route (Ingress).
 
 4. After you select an access method, click **Save**.
 
 ## NodePort
 
-If you select **NodePort**, KubeSphere will set a port for http and https requests respectively. You can access your Service at `EIP:NodePort` or `Hostname:NodePort`.
+If you select **NodePort**, KubeSphere will set a port for HTTP and HTTPS requests respectively. You can access your Service at `<EIP>:<NodePort>` or `<Hostname>:<NodePort>`.
 
-![nodeport](/images/docs/project-administration/project-gateway/nodeport.jpg)
+![nodeport](/images/docs/project-administration/project-gateway/nodeport.png)
 
 For example, to access your Service with an elastic IP address (EIP), visit:
 
