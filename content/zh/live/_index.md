@@ -15,9 +15,9 @@ section2:
   notice:
     title: Kubernetes and Cloud Native Meetup ——北京站
     timeIcon: /images/live/clock.svg
-    time: 2021/07/29 13:00 – 18:00
+    time: 2021/07/29 14:00 – 16:30
     baseIcon: /images/live/base.svg
-    base: 北京市东城区建国门内大街 9 号北京国际饭店 + 线上
+    base: 北京国际饭店会议中心 F3 紫金大厅 B + 线上
     tag: 预告
     url: ./meetup-beijing/
 
