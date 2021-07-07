@@ -23,7 +23,7 @@ For the implementation of the Network Policy, you can refer to [KubeSphere Netwo
 
 1. Log in to KubeSphere as `project-admin`. Go to your project and select **Network Isolation** in **Project Settings**. By default, project network isolation is disabled.
 
-   ![project-network-isolation](/images/docs/project-administration/project-network-isolation/project-network-isolation.jpg)
+   ![project-network-isolation](/images/docs/project-administration/project-network-isolation/project-network-isolation.png)
 
 2. To enable project network isolation, click **On**.
 
@@ -35,7 +35,7 @@ For the implementation of the Network Policy, you can refer to [KubeSphere Netwo
 
 3. You can also disable network isolation on this page.
 
-   ![isolation-off](/images/docs/project-administration/project-network-isolation/isolation-off.jpg)
+   ![isolation-off](/images/docs/project-administration/project-network-isolation/isolation-off.png)
 
    {{< notice note >}}
 
@@ -51,7 +51,7 @@ If the default policy does not meet your needs when network isolation is enabled
 
 Network policies at the project level within a cluster are used to control whether resources in this project can be accessed by other projects within the same cluster, and which Services you can access.
 
-Assume a NGINX Deployment workload has been created in another project `demo-project-2` and is exposed via the Service `nginx` on the port `80` with `TCP`. Here is an example of how to set ingress and egress traffic rules.
+Assume an NGINX Deployment workload has been created in another project `demo-project-2` and is exposed via the Service `nginx` on the port `80` with `TCP`. Here is an example of how to set ingress and egress traffic rules.
 
 {{< notice note >}}
 
@@ -71,11 +71,11 @@ For more information about how to create workloads, see [Deployments](../../proj
 
 5. Select the project `demo-project-2`.
 
-   ![ingress-rule](/images/docs/project-administration/project-network-isolation/ingress-rule.jpg)
+   ![ingress-rule](/images/docs/project-administration/project-network-isolation/ingress-rule.png)
 
 6. Click **OK** and you can see that the project is now in the allowlist.
 
-   ![ingress-rule-added](/images/docs/project-administration/project-network-isolation/ingress-rule-added.jpg)
+   ![ingress-rule-added](/images/docs/project-administration/project-network-isolation/ingress-rule-added.png)
 
 {{< notice note >}}
 
@@ -95,13 +95,13 @@ If the network is not accessible after you set the network policy, then you need
 
 5. Select the project `demo-project-2` from the drop-down list.
 
-6. Select the Service that is allowed to receive egress traffic. In this case, check `nginx`.
+6. Select the Service that is allowed to receive egress traffic. In this case, select `nginx`.
 
-   ![engress-rule](/images/docs/project-administration/project-network-isolation/engress-rule.jpg)
+   ![engress-rule](/images/docs/project-administration/project-network-isolation/engress-rule.png)
 
 7. Click **OK** and you can see that the Service is now in the allowlist.
 
-   ![egress-rule-added](/images/docs/project-administration/project-network-isolation/egress-rule-added.jpg)
+   ![egress-rule-added](/images/docs/project-administration/project-network-isolation/egress-rule-added.png)
 
 {{< notice note >}}
 
@@ -123,11 +123,11 @@ KubeSphere uses CIDR to distinguish between peers. Assume a Tomcat Deployment wo
 
 4. Select the protocol `TCP` and enter `80` as the port number.
 
-   ![ingress-CIDR](/images/docs/project-administration/project-network-isolation/ingress-CIDR.jpg)
+   ![ingress-CIDR](/images/docs/project-administration/project-network-isolation/ingress-CIDR.png)
 
 5. Click **OK** and you can see that the rule has been added.
 
-   ![ingress-cidr-set](/images/docs/project-administration/project-network-isolation/ingress-cidr-set.jpg)
+   ![ingress-cidr-set](/images/docs/project-administration/project-network-isolation/ingress-cidr-set.png)
 
 {{< notice note >}}
 
@@ -147,11 +147,11 @@ Assume the IP address of an external client is `http://10.1.0.1:80`, then you ne
 
 4. Select the protocol `TCP` and enter `80` as the port number.
 
-   ![egress-CIDR](/images/docs/project-administration/project-network-isolation/egress-CIDR.jpg)
+   ![egress-CIDR](/images/docs/project-administration/project-network-isolation/egress-CIDR.png)
 
 5. Click **OK** and you can see that the rule has been added.
 
-   ![egress-CIDR-added](/images/docs/project-administration/project-network-isolation/egress-CIDR-added.jpg)
+   ![egress-CIDR-added](/images/docs/project-administration/project-network-isolation/egress-CIDR-added.png)
 
 {{< notice note >}}
 
