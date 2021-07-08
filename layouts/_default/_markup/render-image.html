@@ -1,0 +1,7 @@
+<p>
+  {{ if strings.HasPrefix .Destination "http" }}
+  <img src="{{ .Destination | safeURL }}" alt="{{ .Text }}" {{ with .Title}} title="{{ . }}"{{ end }} />
+  {{ else }}
+  <img src="{{ .Destination | absURL | safeURL }}" alt="{{ .Text }}" {{ with .Title}} title="{{ . }}"{{ end }} />
+  {{ end }}
+</p>

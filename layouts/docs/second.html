@@ -117,29 +117,14 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                         </div>
                     </div>
                 </div>
-
-                {{ define "content" }}
-                {{ if .context.IsSection }}
-                <h{{.count}}>{{ .context.LinkTitle }}</h{{.count}}>
-                {{ else }}
-                <h{{.count}}><a href="{{ .context.RelPermalink }}">{{ .context.LinkTitle }}</a></h{{.count}}>
-                {{ end }}
-                <p>{{ .context.Description }}</p>
-                {{ $count := add .count 1 }}
-                {{ if .context.IsSection }}
-                  {{ range (union (where .context.Pages ".context.Params._build.render" "!=" false) .context.Sections).ByWeight }}
-                    {{ template "content" (dict "context" . "count" $count) }}
-                  {{ end }}
-                {{ else}}
-                {{ end }}
-                {{ end }}
     
                 <div class="content-div main-div">
                     <div class="md-body">
                         <h1>{{ .Title }}</h1>
                         {{ .Content }}
                         {{ range (union (where .Pages ".Params._build.render" "!=" false) .Sections).ByWeight }}
-                        {{ template "content" (dict "context" . "count" 2) }}
+                        <h2>{{ .LinkTitle }}</h2>
+                        <p>{{ .Description }}</p>
                         {{ end }}
                     </div>
                 </div>

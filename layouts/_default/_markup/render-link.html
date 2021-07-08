@@ -1,1 +1,11 @@
-<a href="{{ .Destination | safeURL }}"{{ with .Title}} title="{{ . }}"{{ end }}{{ if strings.HasPrefix .Destination "http" }} target="_blank" rel="noopener noreferrer"{{ end }}>{{ .Text }}</a>
+{{ if strings.HasPrefix .Destination "http" }}
+  <a href="{{ .Destination | safeURL }}"{{ with .Title}} title="{{ . }}"{{ end }} target="_blank" rel="noopener noreferrer">{{ .Text }}</a>
+{{ else }}
+  {{ $page := .Page.GetPage .Destination }}
+  {{ if $page }}
+  <a href="#{{ $page.UniqueID }}"{{ with .Title}} title="{{ . }}"{{ end }}>{{ .Text }}</a>
+  {{ else}}
+  {{ $page := .Page.GetPage  (substr .Destination 3 -1) }}
+  <a href="#{{ $page.UniqueID }}"{{ with .Title}} title="{{ . }}"{{ end }}>{{ .Text }}</a>
+  {{ end }}
+{{ end }}

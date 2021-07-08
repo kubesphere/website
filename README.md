@@ -145,3 +145,16 @@ Total in 2396 ms
 #### Get the already built static content
 
 You will find the previously generated content in the `public` directory.
+
+
+## Create Docs PDF
+
+```
+hugo
+```
+
+```
+cat ./public/all-docs/index.html | wkhtmltopdf --outline-depth 2 --enable-internal-links - ./static/pdf/all-docs.pdf
+
+cat ./public/zh/all-docs/index.html | wkhtmltopdf --outline-depth 2 --enable-internal-links - ./static/pdf/all-docs-zh.pdf
+```
