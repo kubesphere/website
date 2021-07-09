@@ -1,6 +1,8 @@
 ---
 title: '使用 GPU-Operator 与 KubeSphere 简化深度学习训练与监控 GPU'
 tag: 'KubeSphere,Kubernetes,GPU,深度学习'
+keywords: 'GPU, Operator, GPU-Operator, NVIDIA, k8s-device-plugin, 深度学习, Kubernetes, KubeSphere'
+description: '本文将从 GPU-Operator 概念介绍、安装部署、深度训练测试应用部署，以及在 KubeSphere 使用自定义监控面板对接 GPU 监控，从原理到实践，逐步浅析介绍与实践 GPU-Operator。'
 createTime: '2021-03-17'
 author: '朱含'
 snapshot: 'https://pek3b.qingstor.com/kubesphere-community/images/fengmian.png'
