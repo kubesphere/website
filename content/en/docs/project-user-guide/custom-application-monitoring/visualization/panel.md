@@ -17,7 +17,7 @@ A text chart is preferable for displaying a single metric value. The editing win
 - **Decimal Places**: Accept an integer.
 - **Monitoring Metrics**: A list of available Prometheus metrics.
 
-![text-chart-1](/images/docs/project-user-guide/custom-application-monitoring/text-chart-1.jpg)
+![text-chart](/images/docs/project-user-guide/custom-application-monitoring/visualization/charts/text-chart.png)
 
 ## Graph
 
@@ -34,4 +34,4 @@ A graph is preferable for displaying multiple metric values. The editing window 
 - **Unit**: The metric data unit.
 - **Decimal Places**: Accept an integer.
 
-![graph-chart](/images/docs/project-user-guide/custom-application-monitoring/graph-chart.jpg)
+![graph-chart](/images/docs/project-user-guide/custom-application-monitoring/visualization/charts/graph-chart.png)

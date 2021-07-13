@@ -17,7 +17,7 @@ KubeSphere 当前支持两种图表：文本图表和图形图表。
 - **精确位**：支持整数。
 - **监控指标**：包含可用的 Prometheus 指标。
 
-![文本图表](/images/docs/zh-cn/project-user-guide/custom-application-monitoring/visualization/charts/文本图表.jpg)
+![文本图表](/images/docs/zh-cn/project-user-guide/custom-application-monitoring/visualization/charts/text-chart.png)
 
 ## 图形图表
 
@@ -34,4 +34,4 @@ KubeSphere 当前支持两种图表：文本图表和图形图表。
 - **单位**：指标数据的单位。
 - **精确位**：支持整数。
 
-![图形图表](/images/docs/zh-cn/project-user-guide/custom-application-monitoring/visualization/charts/图形图表.jpg)
+![图形图表](/images/docs/zh-cn/project-user-guide/custom-application-monitoring/visualization/charts/graph-chart.png)
