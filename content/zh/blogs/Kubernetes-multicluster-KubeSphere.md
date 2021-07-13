@@ -10,6 +10,7 @@ snapshot: 'https://pek3b.qingstor.com/kubesphere-community/images/Kubernetes-mul
 
 
 > 本文是上海站 Meetup 中讲师李宇根据其分享内容梳理成的文章。本文介绍了 Kubernetes 社区多集群方向的发展历程以及已有的多集群解决方案，分享在混合云的场景下, KubeSphere 如何基于 Kubefed 统一应用的分发与部署，以达到跨 region 的多活/容灾等目的。同时探讨未来多集群领域可能迈向的去中心化的架构。
+> [视频回放](https://kubesphere.com.cn/live/multicluster-shanghai/)
 
 大家好，很高兴来到今天下午的 Meetup。我先简单做个自我介绍，我叫李宇，目前是 KubeSphere 的一名研发，主要负责多集群方向的工作，我今天带来的分享是混合云下的 Kubernetes 多集群管理与应用部署。
 
