@@ -95,7 +95,7 @@ KubeSphere 的多租户系统分**三个**层级，即集群、企业空间和�
 
    {{< notice note >}}
 
-   如果您已启用[多集群功能](../../multicluster-management/)，您需要为企业空间[分配一个或多个可用集群](../../cluster-administration/cluster-settings/cluster-visibility-and-authorization/#在创建企业空间时选择可用集群)，以便项目可以在集群中创建。
+   如果您已启用[多集群功能](../../multicluster-management/)，您需要为企业空间[分配一个或多个可用集群](../../cluster-administration/cluster-settings/cluster-visibility-and-authorization/#在创建企业空间时选择可用集群)，以便后续在一个或多个集群中创建项目。
 
    {{</ notice >}} 
 
@@ -160,7 +160,7 @@ KubeSphere 的多租户系统分**三个**层级，即集群、企业空间和�
 8. 在**外网访问**下，可以在页面上看到网关地址以及 http/https 的端口。
 
    {{< notice note >}}
-如果要使用 `LoadBalancer` 暴露服务，则需要使用云厂商的 LoadBalancer 插件。如果您的 Kubernetes 集群在裸机环境中运行，建议使用 [PorterLB](https://github.com/kubesphere/porter) 作为 LoadBalancer 插件。
+   如果要使用 `LoadBalancer` 暴露服务，则需要使用云厂商的 LoadBalancer 插件。如果您的 Kubernetes 集群在裸机环境中运行，建议使用 [PorterLB](https://github.com/kubesphere/porter) 作为 LoadBalancer 插件。
    {{</ notice >}}
 
    ![完成网关设置1](/images/docs/zh-cn/quickstart/create-workspaces-projects-accounts/完成网关设置1.png)

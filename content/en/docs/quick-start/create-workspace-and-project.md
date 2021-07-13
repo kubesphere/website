@@ -22,13 +22,13 @@ The multi-tenant system of KubeSphere features **three** levels of hierarchical 
 
 You are required to create a new [workspace](../../workspace-administration/what-is-workspace/) to work with instead of using the system workspace where system resources are running and most of them are viewable only. In addition, it is strongly recommended different tenants work with corresponding roles in a workspace for security considerations.
 
-You can create multiple workspaces within a KubeSphere cluster. Under each workspace, you can also create multiple projects. Each level has multiple built-in roles. Besides, KubeSphere allows you to create roles with customized authorization as well. The KubeSphere hierarchy is applicable for enterprise users with different teams or groups, and different roles within each team.
+You can create multiple workspaces within a KubeSphere cluster. Under each workspace, you can also create multiple projects. Each level has multiple built-in roles. Besides, KubeSphere allows you to create roles with customized permission as well. The KubeSphere hierarchy is applicable for enterprise users with different teams or groups, and different roles within each team.
 
 ## Hands-on Lab
 
 ### Step 1: Create an account
 
-After KubeSphere is installed, you need to add different users with varied roles to the platform so that they can work at different levels on various resources. Initially, you only have one default account, which is `admin`, granted the role `platform-admin`. In the first step, you create an account `user-manager` and further create more accounts as `user-manager`.
+After KubeSphere is installed, you need to add different users with varied roles to the platform so that they can work at different levels on various resources. Initially, you only have one default account, which is `admin`, granted the role `platform-admin`. In the first step, create an account `user-manager` and further create more accounts as `user-manager`.
 
 1. Log in to the web console as `admin` with the default account and password (`admin/P@88w0rd`).
 
@@ -38,7 +38,7 @@ After KubeSphere is installed, you need to add different users with varied roles
 
    ![chang-password1](/images/docs/quickstart/create-workspaces-projects-accounts/chang-password1.png)
 
-2. After you log in to the console, click **Platform** in the top-left corner and select **Access Control**.
+2. After you log in to the console, click **Platform** in the upper-left corner and select **Access Control**.
 
    ![access-control](/images/docs/quickstart/create-workspaces-projects-accounts/access-control.png)
 
@@ -55,16 +55,16 @@ After KubeSphere is installed, you need to add different users with varied roles
 Built-in roles are created automatically by KubeSphere and cannot be edited or deleted.
    {{</ notice >}}
 
-3. In **Accounts**, click **Create**. In the pop-up window, provide all the necessary information (marked with *) and select `users-manager`  for **Role**. Refer to the image below as an example.
+3. In **Accounts**, click **Create**. In the displayed dialog box, provide all the necessary information (marked with *) and select `users-manager`  for **Role**. Refer to the following image as an example.
 
-   ![create-account](/images/docs/quickstart/create-workspaces-projects-accounts/create-account.jpg)
+   ![create-account](/images/docs/quickstart/create-workspaces-projects-accounts/create-account.png)
 
-   Click **OK** after you finish. A newly-created account will display in **Accounts**.
+   Click **OK** after you finish. A newly-created account will be displayed in **Accounts**.
 
 4. Log out of the console and log back in with the account `user-manager` to create four accounts that will be used in other tutorials.
 
    {{< notice tip >}}
-   To log out, click your username in the top-right corner and select **Log Out**.
+   To log out, click your username in the upper-right corner and select **Log Out**.
    {{</ notice >}}
 
    | Account           | Role                 | Description                                                  |
@@ -82,19 +82,19 @@ Built-in roles are created automatically by KubeSphere and cannot be edited or d
 
 In this step, you create a workspace using the account `ws-manager` created in the previous step. As the basic logic unit for the management of projects, DevOps projects and organization members, workspaces underpin the multi-tenant system of KubeSphere.
 
-1. Log in to KubeSphere as `ws-manager` which has the permission to manage all workspaces on the platform. Click **Platform** in the top-left corner and select **Access Control**. In **Workspaces**, you can see there is only one default workspace `system-workspace` listed, where system-related components and services run. You are not allowed to delete this workspace.
+1. Log in to KubeSphere as `ws-manager` which has the permission to manage all workspaces on the platform. Click **Platform** in the upper-left corner and select **Access Control**. In **Workspaces**, you can see there is only one default workspace `system-workspace` listed, where system-related components and services run. You are not allowed to delete this workspace.
 
-   ![create-workspace](/images/docs/quickstart/create-workspaces-projects-accounts/create-workspace.jpg)
+   ![create-workspace](/images/docs/quickstart/create-workspaces-projects-accounts/create_workspace.png)
 
-2. Click **Create** on the right, name the new workspace `demo-workspace` and set the user `ws-admin` as the workspace manager shown in the screenshot below:
+2. Click **Create** on the right, name the new workspace `demo-workspace` and set the user `ws-admin` as the administrator shown in the screenshot below:
 
-   ![create-workspace](/images/docs/quickstart/create-workspaces-projects-accounts/create-workspace.png)
+   ![create-workspace](/images/docs/quickstart/create-workspaces-projects-accounts/create-workspace-2.png)
 
    Click **Create** after you finish.
 
    {{< notice note >}}
 
-   If you have enabled the [multi-cluster feature](../../multicluster-management/), you need to [assign an available cluster](../../cluster-administration/cluster-settings/cluster-visibility-and-authorization/#select-available-clusters-when-you-create-a-workspace) (or multiple clusters) to the workspace so that projects can be created on the cluster(s) later.
+   If you have enabled the [multi-cluster feature](../../multicluster-management/), you need to [assign an available cluster](../../cluster-administration/cluster-settings/cluster-visibility-and-authorization/#select-available-clusters-when-you-create-a-workspace) (or multiple clusters) to the workspace so that projects can be created on a cluster or multiple clusters later.
 
    {{</ notice >}} 
 
@@ -159,7 +159,7 @@ In this step, you create a project using the account `project-admin` created in 
 8. Under **Internet Access**, it can be seen that the Gateway Address and the NodePort of http and https all display on the page.
 
    {{< notice note >}}
-If you want to expose services using the type `LoadBalancer`, you need to use the LoadBalancer plugin of cloud providers. If your Kubernetes cluster is running in a bare metal environment, it is recommended that you use [PorterLB](https://github.com/kubesphere/porter) as the LoadBalancer plugin.
+   If you want to expose services using the type `LoadBalancer`, you need to use the LoadBalancer plugin of cloud providers. If your Kubernetes cluster is running in a bare metal environment, it is recommended that you use [PorterLB](https://github.com/kubesphere/porter) as the LoadBalancer plugin.
    {{</ notice >}}
 
    ![nodeport-setting1](/images/docs/quickstart/create-workspaces-projects-accounts/nodeport-setting1.png)
