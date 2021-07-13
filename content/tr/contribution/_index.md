@@ -267,6 +267,13 @@ section3:
           - icon: ''
           - icon: ''
 
+      - name: 'Advocacy and Outreach'
+        icon: '/images/contribution/testing.svg'
+        iconActive: '/images/contribution/testing-active.svg'
+        content: 'We discuss advocacy, outreach, events, social media promotion, and attract new people to join KubeSphere community'
+        link: 'https://github.com/kubesphere/community/tree/master/sig-advocacy-and-outreach'
+        linkContent: 'Join SIG - Advocacy and Outreach →'
+
 section4:
   involved:
     title: 'Get involved'
