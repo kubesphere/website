@@ -16,11 +16,11 @@ KubeSphere 控制台提供 Web Kubectl，方便用户使用。在默认情况下
 
 1. 使用被授予 `platform-admin` 角色的帐户登录 KubeSphere，在右下角的**工具箱**图标上悬停，然后在弹出菜单中选择 **Kubectl**。
 
-    ![web-kubectl-enter](/images/docs/zh-cn/toolbox/web-kubectl/web-kubectl-enter.png)
+    ![web-kubectl-enter](/images/docs/zh-cn/toolbox/web-kubectl/web-kubectl-enter.PNG)
 
 2. 您可以在弹出窗口中看到 Kubectl 界面，如下图所示。如果您启用了多集群功能，则需要先在右上角的下拉列表中选择目标集群。如果未启用多集群功能，则该下拉列表不可见。
 
-    ![web-kubectl-cluster-select](/images/docs/zh-cn/toolbox/web-kubectl/web-kubectl-cluster-select.png)
+    ![web-kubectl-cluster-select](/images/docs/zh-cn/toolbox/web-kubectl/web-kubectl-cluster-select.PNG)
 
 3. 在命令行工具中输入 Kubectl 命令，查询并管理 Kubernetes 集群资源。例如，执行以下命令查询集群中所有 PVC 的状态。
 
@@ -30,7 +30,7 @@ KubeSphere 控制台提供 Web Kubectl，方便用户使用。在默认情况下
 
     ![Web Kubectl 示例](/images/docs/zh-cn/toolbox/web-kubectl/web-kubectl-example.PNG)
 
-    ![web-kubectl-example](/images/docs/zh-cn/toolbox/web-kubectl/web-kubectl-example.png)
+    ![web-kubectl-example](/images/docs/zh-cn/toolbox/web-kubectl/web-kubectl-example.PNG)
 
 4. 在终端窗口中使用以下语法运行 Kubectl 命令：
 
