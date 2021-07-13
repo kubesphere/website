@@ -14,7 +14,7 @@ You need to enable [KubeSphere Auditing Logs](../../../pluggable-components/audi
 
 ## Enter the Query Interface
 
-1. The query function is available for all users. Log in to the console with any account, hover over the **Toolbox** in the lower-right corner and select **Auditing Operating**.
+1. The query function is available for all users. Log in to the console with any account, hover over the <img src="/images/docs/toolbox/auditing-query/toolbox.png" width="20" /> in the lower-right corner and select **Auditing Operating**.
 
    {{< notice note >}} 
 
@@ -26,29 +26,55 @@ Any account has the authorization to query auditing logs, while the logs each ac
 
 {{</ notice >}} 
 
-   ![auditing-operating-ui](/images/docs/toolbox/auditing-operating-ui.jpg)
+2. In the pop-up window, you can view log trends in the last 12 hours. 
 
-2. As shown in the pop-up window, you can see trends in the total number of auditing logs in the last 12 hours. 
-
-   ![Auditing Operating](/images/docs/toolbox/auditing-operating.png)
+   ![auditing-logs](/images/docs/toolbox/auditing-query/auditing-logs.png)
 
 3. The **Auditing Operating** console supports the following query parameters:
 
-   ![Auditing Log Filter](/images/docs/toolbox/auditing-log-filter.png)
-
-   Parameter         | Description
- ---               | --- 
- Cluster           | The cluster where the operation happens. It is enabled if the [multi-cluster feature](../../../multicluster-management/) is turned on. 
- Project           | The project where the operation happens. It supports exact query and fuzzy query. 
- Workspace         | The workspace where the operation happens. It supports exact query and fuzzy query. 
- Resource Type     | The type of resource associated with the request. It supports fuzzy query.
- Resource Name     | The name of the resource associated with the request. It supports fuzzy query.
- Verb              | The Kubernetes verb associated with the request. For non-resource requests, this is the lower-case HTTP method. It supports exact query. 
- Status Code       | The Http response code. It supports exact query. 
- Operation Account | The user who calls this request. It supports exact and fuzzy query. 
- Source IP         | The IP address from where the request originated and intermediate proxies. It supports fuzzy query. 
- Time Range        | The time when the request reaches the apiserver. 
-
+   <table>
+     <tbody>
+       <tr>
+         <th width='150'>Parameter</th>
+         <th>Description</th>
+       </tr>
+       <tr>
+         <td>Cluster</td>
+         <td>Cluster where the operation happens. It is enabled if the <a href="../../../multicluster-management/"> multi-cluster feature</a> is turned on.</td>
+         </tr>
+       <tr>
+         <td>Project</td>
+         <td>Project where the operation happens. It supports exact query and fuzzy query.</td>
+       </tr>
+       <tr>
+         <td>Workspace</td>
+         <td>Workspace where the operation happens. It supports exact query and fuzzy query.</td>
+       </tr>
+       <tr>
+         <td>Resource Type</td>
+         <td>Type of resource associated with the request. It supports fuzzy query.</td>
+       </tr>
+       <tr>
+         <td>Resource Name</td>
+         <td>Name of the resource associated with the request. It supports fuzzy query.</td>
+       </tr><tr>
+         <td>Verb</td>
+         <td>Kubernetes verb associated with the request. For non-resource requests, this is the lower-case HTTP method. It supports exact query.</td>
+       </tr><tr>
+         <td>Status Code</td>
+         <td>HTTP response code. It supports exact query.</td>
+       </tr><tr>
+         <td>Operation Account</td>
+         <td>User who calls this request. It supports exact and fuzzy query.</td>
+       </tr><tr>
+         <td>Source IP</td>
+         <td>IP address from where the request originated and intermediate proxies. It supports fuzzy query.</td>
+       </tr><tr>
+         <td>Time Range</td>
+         <td>Time when the request reaches the apiserver.</td>
+       </tr>
+   </table>
+   
    {{< notice note >}} 
 
 - Fuzzy query supports case-insensitive fuzzy matching and retrieval of full terms by the first half of a word or phrase based on Elasticsearch segmentation rules.
@@ -58,10 +84,10 @@ Any account has the authorization to query auditing logs, while the logs each ac
 
 ## Enter Query Parameters
 
-1. Select a filter and enter the keyword you want to search. For example, query auditing logs containing the information of `user` changed as shown in the following screenshot:
+1. Select a filter and enter the keyword you want to search. For example, query auditing logs containing the information of `services` created as shown in the following screenshot:
 
-   ![User Changed](/images/docs/toolbox/user-changed.png)
+   ![services-created](/images/docs/toolbox/auditing-query/services-created.png)
 
-2. Click any one of the results from the list, and you can see the detail of the auditing log.
+2. You can click the results to see the auditing log details.
 
-   ![Auditing Log Detail](/images/docs/toolbox/auditing-log-detail.png)
+   ![auditing-log-details](/images/docs/toolbox/auditing-query/auditing-log-details.png)
