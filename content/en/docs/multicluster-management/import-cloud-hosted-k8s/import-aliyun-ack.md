@@ -1,12 +1,12 @@
 ---
-title: "Import an Aliyun ACK Cluster"
-keywords: 'Kubernetes, KubeSphere, multicluster, Aliyun ACK'
+title: "Import an Alibaba Cloud Kubernetes (ACK) Cluster"
+keywords: 'Kubernetes, KubeSphere, multicluster, ACK'
 description: 'Learn how to import an Alibaba Cloud Kubernetes cluster.'
-titleLink: "Import an Aliyun ACK Cluster"
+titleLink: "Import an Alibaba Cloud Kubernetes (ACK) Cluster"
 weight: 5310
 ---
 
-This tutorial demonstrates how to import an Aliyun ACK cluster through the [direct connection](../../../multicluster-management/enable-multicluster/direct-connection/) method. If you want to use the agent connection method, refer to [Agent Connection](../../../multicluster-management/enable-multicluster/agent-connection/).
+This tutorial demonstrates how to import an Alibaba Cloud Kubernetes (ACK) cluster through the [direct connection](../../../multicluster-management/enable-multicluster/direct-connection/) method. If you want to use the agent connection method, refer to [Agent Connection](../../../multicluster-management/enable-multicluster/agent-connection/).
 
 ## Prerequisites
 
@@ -59,7 +59,7 @@ This tutorial demonstrates how to import an Aliyun ACK cluster through the [dire
 
 ### Step 2: Get the kubeconfig file
 
-Log in to the web console of Aliyun. Go to **Clusters** under **Container Service - Kubernetes**, click your cluster to go to its detail page, and then select the **Connection Information** tab. You can see the kubeconfig file under the **Public Access** tab. Copy the contents of the kubeconfig file.
+Log in to the web console of Alibaba Cloud. Go to **Clusters** under **Container Service - Kubernetes**, click your cluster to go to its detail page, and then select the **Connection Information** tab. You can see the kubeconfig file under the **Public Access** tab. Copy the contents of the kubeconfig file.
 
 ![kubeconfig](/images/docs/multicluster-management/import-cloud-hosted-k8s/import-ack/kubeconfig.png)
 

@@ -181,7 +181,7 @@ yum install keepalived haproxy psmisc -y
 4. 使 Keepalived 在开机后自动运行：
 
    ```bash
-   systemctl enable haproxy
+   systemctl enable keepalived
    ```
 
 5. 确保您在另一台机器 (`lb2`) 上也配置了 Keepalived。
