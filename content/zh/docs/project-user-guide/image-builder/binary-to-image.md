@@ -88,7 +88,7 @@ Binary-to-Image (B2I) 是一个工具箱和工作流，用于从二进制可执�
 
    ![构建成功](/images/docs/zh-cn/project-user-guide/image-builder/binary-to-image/successful.PNG)
 
-2. 点击该镜像前往其详情页面。在**任务记录**下，点击记录右侧的箭头图标查看构建日志。如果一切运行正常，您可以在日志末尾看到 `Build completed successfully`。
+2. 点击该镜像前往其详情页面。在**任务记录**下，点击记录右侧的 <img src="/images/docs/zh-cn/project-user-guide/image-builder/binary-to-image/down-arrow.png" width="20px" /> 查看构建日志。如果一切运行正常，您可以在日志末尾看到 `Build completed successfully`。
 
    ![查看日志](/images/docs/zh-cn/project-user-guide/image-builder/binary-to-image/inspect-logs.PNG)
 
@@ -116,7 +116,7 @@ Binary-to-Image (B2I) 是一个工具箱和工作流，用于从二进制可执�
 
    ![端口暴露](/images/docs/zh-cn/project-user-guide/image-builder/binary-to-image/exposed-port.PNG)
 
-2. 通过 `http://{$Node IP}:{$NodePort}/{$Binary-Package-Name}/` 访问服务。
+2. 通过 `http://<Node IP>:<NodePort>/<Binary-Package-Name>/` 访问服务。
 
    ![访问服务](/images/docs/zh-cn/project-user-guide/image-builder/binary-to-image/access-service.PNG)
 
@@ -174,7 +174,7 @@ Binary-to-Image (B2I) 是一个工具箱和工作流，用于从二进制可执�
 
    ![构建成功](/images/docs/zh-cn/project-user-guide/image-builder/binary-to-image/image-success.PNG)
 
-2. 点击该镜像前往其详情页面。在**任务记录**下，点击记录右侧的箭头图标查看构建日志。如果一切运行正常，您可以在日志末尾看到 `Build completed successfully`。
+2. 点击该镜像前往其详情页面。在**任务记录**下，点击记录右侧的 <img src="/images/docs/zh-cn/project-user-guide/image-builder/binary-to-image/down-arrow.png" width="20px" /> 查看构建日志。如果一切运行正常，您可以在日志末尾看到 `Build completed successfully`。
 
    ![查看日志](/images/docs/zh-cn/project-user-guide/image-builder/binary-to-image/inspect-log.PNG)
 
