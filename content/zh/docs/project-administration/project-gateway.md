@@ -36,7 +36,7 @@ KubeSphere 项目中的网关是一个[ NGINX Ingress 控制器](https://www.ngi
 
 ## NodePort
 
-如果您选择 **NodePort**，KubeSphere 将为 HTTP 请求和 HTTPS 请求分别设置一个端口。您可以用 `EIP:NodePort` 或 `Hostname:NodePort` 地址访问服务。
+如果您选择 **NodePort**，KubeSphere 将为 HTTP 请求和 HTTPS 请求分别设置一个端口。您可以用 `<EIP>:<NodePort>` 或 `<Hostname>:<NodePort>` 地址访问服务。
 
 ![nodeport](/images/docs/zh-cn/project-administration/project-gateway/nodeport.jpg)
 
