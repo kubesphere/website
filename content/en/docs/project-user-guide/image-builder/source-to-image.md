@@ -25,7 +25,7 @@ This tutorial demonstrates how to use S2I to import source code of a Java sample
 
 Log in to GitHub and fork the GitHub repository [devops-java-sample](https://github.com/kubesphere/devops-java-sample) to your personal GitHub account.
 
-![fork-repository](/images/docs/project-user-guide/image-builder/s2i-publish-app-without-dockerfile/fork-repository.jpg)
+![fork-repository](/images/docs/project-user-guide/image-builder/s2i-publish-app-without-dockerfile/fork-repository.png)
 
 ### Step 2: Create Secrets
 
@@ -41,21 +41,21 @@ You do not need to create the GitHub Secret if your forked repository is open to
 
 1. In the same project, navigate to **Services** under **Application Workloads** and click **Create**.
 
-   ![create-service](/images/docs/project-user-guide/image-builder/s2i-publish-app-without-dockerfile/create-service.jpg)
+   ![create-service](/images/docs/project-user-guide/image-builder/s2i-publish-app-without-dockerfile/create-service.png)
 
 2. Choose **Java** under **Build a New Service from Source Code Repository**, name it `s2i-demo` and click **Next**.
 
-   ![select-lang-type](/images/docs/project-user-guide/image-builder/s2i-publish-app-without-dockerfile/select-lang-type.jpg)
+   ![select-lang-type](/images/docs/project-user-guide/image-builder/s2i-publish-app-without-dockerfile/select-lang-type.png)
 
    {{< notice note >}}
 
-   KubeSphere has integrated common S2I templates such as Java, Node.js and Python. If you want to use other languages or customize your S2I templates, see Customize S2I Templates.
+   KubeSphere has integrated common S2I templates such as Java, Node.js and Python. If you want to use other languages or customize your S2I templates, see [Customize S2I Templates](../s2i-templates/).
 
    {{</ notice >}} 
 
 3. On the **Build Settings** page, provide the following information accordingly and click **Next**.
 
-   ![build-settings](/images/docs/project-user-guide/image-builder/s2i-publish-app-without-dockerfile/build-settings.jpg)
+   ![build-settings](/images/docs/project-user-guide/image-builder/s2i-publish-app-without-dockerfile/build-settings.png)
 
    **Service Type**: Select **Stateless Service** for this example. For more information about different Services, see [Service Type](../../../project-user-guide/application-workloads/services/#service-type).
 
@@ -63,7 +63,7 @@ You do not need to create the GitHub Secret if your forked repository is open to
 
    **Code URL**: The source code repository address (currently support Git). You can specify the code branch and the relative path in the source code terminal. The URL supports HTTP and HTTPS. Paste the forked repository URL (your own repository address) into this field.
 
-   ![copy-repo-code](/images/docs/project-user-guide/image-builder/s2i-publish-app-without-dockerfile/copy-repo-code.jpg)
+   ![copy-repo-code](/images/docs/project-user-guide/image-builder/s2i-publish-app-without-dockerfile/copy-repo-code.png)
 
    **Branch**: The branch that is used for image building. Enter `master` for this tutorial. You can enter `dependency` for a cache test.
 
@@ -79,11 +79,11 @@ You do not need to create the GitHub Secret if your forked repository is open to
 
 4. On the **Container Settings** page, scroll down to **Service Settings** to set the access policy for the container. Select **HTTP** for **Protocol**, customize the name (for example, `http-1`), and enter `8080` for both **Container Port** and **Service Port**.
 
-   ![service-settings](/images/docs/project-user-guide/image-builder/s2i-publish-app-without-dockerfile/service-settings.jpg)
+   ![service-settings](/images/docs/project-user-guide/image-builder/s2i-publish-app-without-dockerfile/service-settings.png)
 
-5. Scroll down to **Health Checker** and check it. Set a readiness probe by filling out the following parameters. Click **√** when you finish setting the probe and then click **Next** to continue.
+5. Scroll down to **Health Checker** and select it. Set a readiness probe by filling out the following parameters. Click **√** when you finish setting the probe and then click **Next** to continue.
 
-   ![health-checker](/images/docs/project-user-guide/image-builder/s2i-publish-app-without-dockerfile/health-checker.jpg)
+   ![health-checker](/images/docs/project-user-guide/image-builder/s2i-publish-app-without-dockerfile/health-checker.png)
 
    **HTTP Request**: Select **HTTP** as the protocol, enter `/` as the path (root path in this tutorial), and enter `8080` as the port exposed.
 
@@ -95,49 +95,49 @@ You do not need to create the GitHub Secret if your forked repository is open to
 
 6. On the **Mount Volumes** page, you can add a volume for the container. For more information, see [Volumes](../../../project-user-guide/storage/volumes/). Click **Next** to continue.
 
-7. On the **Advanced Settings** page, check **Internet Access** and select **NodePort** as the access method. Click **Create** to finish the whole process.
+7. On the **Advanced Settings** page, select **Internet Access** and select **NodePort** as the access method. Click **Create** to finish the whole process.
 
-   ![create-finish](/images/docs/project-user-guide/image-builder/s2i-publish-app-without-dockerfile/create-finish.jpg)
+   ![create-finish](/images/docs/project-user-guide/image-builder/s2i-publish-app-without-dockerfile/create-finish.png)
 
 8. Click **Image Builder** from the navigation bar and you can see that the example image is being built.
 
-   ![building](/images/docs/project-user-guide/image-builder/s2i-publish-app-without-dockerfile/building.jpg)
+   ![building](/images/docs/project-user-guide/image-builder/s2i-publish-app-without-dockerfile/building.png)
 
 ### Step 4: Check results
 
 1. Wait for a while and you can see the status of the image has reached **Successful**.
 
-   ![success-result](/images/docs/project-user-guide/image-builder/s2i-publish-app-without-dockerfile/success-result.jpg)
+   ![success-result](/images/docs/project-user-guide/image-builder/s2i-publish-app-without-dockerfile/success-result.png)
 
-2. Click this image to go to its detail page. Under **Job Records**, click the arrow icon on the right of a record to see building logs. You can see `Build completed successfully` at the end of the log if everything runs normally.
+2. Click this image to go to its detail page. Under **Job Records**, click <img src="/images/docs/project-user-guide/image-builder/s2i-publish-app-without-dockerfile/down-arrow.png" width="20px" /> on the right of a record to see building logs. You can see `Build completed successfully` at the end of the log if everything runs normally.
 
-   ![build-log](/images/docs/project-user-guide/image-builder/s2i-publish-app-without-dockerfile/build-log.jpg)
+   ![build-log](/images/docs/project-user-guide/image-builder/s2i-publish-app-without-dockerfile/build-log.png)
 
 3. Go back to the previous page, and you can see the corresponding Job, Deployment and Service of the image have been all created successfully.
 
    #### Service
 
-   ![service](/images/docs/project-user-guide/image-builder/s2i-publish-app-without-dockerfile/service.jpg)
+   ![service](/images/docs/project-user-guide/image-builder/s2i-publish-app-without-dockerfile/service.png)
 
    #### Deployment
 
-   ![deployment](/images/docs/project-user-guide/image-builder/s2i-publish-app-without-dockerfile/deployment.jpg)
+   ![deployment](/images/docs/project-user-guide/image-builder/s2i-publish-app-without-dockerfile/deployment.png)
 
    #### Job
 
-   ![job](/images/docs/project-user-guide/image-builder/s2i-publish-app-without-dockerfile/job.jpg)
+   ![job](/images/docs/project-user-guide/image-builder/s2i-publish-app-without-dockerfile/job.png)
 
 4. In your Docker Hub repository, you can see that KubeSphere has pushed the image to the repository with the expected tag.
 
-   ![docker-image](/images/docs/project-user-guide/image-builder/s2i-publish-app-without-dockerfile/docker-image.jpg)
+   ![docker-image](/images/docs/project-user-guide/image-builder/s2i-publish-app-without-dockerfile/docker-image.png)
 
 ### Step 5: Access the S2I Service
 
 1. On the **Services** page, click the S2I Service to go to its detail page.
 
-   ![service-detail](/images/docs/project-user-guide/image-builder/s2i-publish-app-without-dockerfile/service-detail.jpg)
+   ![service-detail](/images/docs/project-user-guide/image-builder/s2i-publish-app-without-dockerfile/service-detail.png)
 
-2. To access the Service, you can either use the endpoint with the `curl` command or visit `Node IP:Port Number`. For example:
+2. To access the Service, you can either use the endpoint with the `curl` command or visit `<Node IP>:<Port Number>`. For example:
 
    ```bash
    $ curl 10.10.131.44:8080
