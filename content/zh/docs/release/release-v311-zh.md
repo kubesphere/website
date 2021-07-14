@@ -1,3 +1,15 @@
+---
+title: "Release Notes For 3.1.1"
+keywords: "Kubernetes, KubeSphere, release-notes"
+description: "KubeSphere Release Notes for 3.1.1"
+
+linkTitle: "Release Notes - 3.1.1"
+weight: 18000
+
+---
+
+# 发布说明
+
 - [用户体验](#用户体验)
 - [可观测性](#可观测性)
 - [微服务治理](#微服务治理)
