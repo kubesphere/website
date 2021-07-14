@@ -5,7 +5,7 @@ keywords: 'Kubernetes, KubeSphere, Cilium, 网络插件'
 description: 'Cilium 是一个用于容器网络领域的开源项目，主要是面向容器而使用，用于提供并透明地保护应用程序工作负载（如应用程序容器或进程）之间的网络连接和负载均衡。本文主要介绍如何使用 Cilium 作为网络插件部署 Kubernetes 和 KubeSphere。'
 createTime: '2021-06-04'
 author: '姚锐'
-snapshot: 'https://pek3b.qingstor.com/kubesphere-community/images/Cilium-KubeSphere-Kubernetes .png'
+snapshot: 'https://pek3b.qingstor.com/kubesphere-community/images/Cilium-KubeSphere-Kubernetes.png'
 ---
 
 ## Cilium 简介
@@ -25,6 +25,7 @@ Linux Kernel >= 4.9.17
 
 ## 环境
 以一台 Ubuntu Server 20.04.1 LTS 64bit 为例
+
 | name | ip | role |
 | --- | ---| --- |
 | node1 | 10.160.6.136 | etcd, master, worker |
@@ -36,15 +37,15 @@ sudo wget https://github.com/kubesphere/kubekey/releases/download/v1.1.0/kubekey
 
 ## 使用 cilium 作为网络插件部署 KubeSphere
 
-1.安装 KubeKey
+1. 安装 KubeKey
 ```
 sudo dpkg -i kubekey-v1.1.0-linux-64bit.deb
 ```
-2.生成配置文件
+2. 生成配置文件
 ```
 sudo kk create config --with-kubernetes v1.19.8
 ```
-3.修改配置文件，将网络插件修改为 cilium
+3. 修改配置文件，将网络插件修改为 cilium
 
 注意将 spec.network.plugin 的值修改为 **cilium**
 
@@ -85,12 +86,12 @@ spec:
   addons: []
 ```
 
-4.部署依赖
+4. 部署依赖
 ```
 sudo kk init os -f config-sample.yaml
 ```
 
-5.部署 KubeSphere
+5. 部署 KubeSphere
 ```
 sudo kk create cluster -f config-sample.yaml --with-kubesphere v3.1.0
 ```
@@ -119,15 +120,15 @@ https://kubesphere.io             2021-05-18 17:15:03
 INFO[17:15:16 CST] Installation is complete.
 ```
 
-6.登陆 KubeSphere console
+6. 登陆 KubeSphere console
 
 ![](https://pek3b.qingstor.com/kubesphere-community/images/1621391485-957760-image.png)
 
-7.检查状态
+7. 检查状态
 
 ![](https://pek3b.qingstor.com/kubesphere-community/images/1621391567-876515-image.png)
 
-## 安装 hubble UI 
+## 安装 Hubble UI 
 
 Hubble 是专门为网络可视化设计的，能够利用 Cilium 提供的 eBPF 数据路径，获得对 Kubernetes 应用和服务的网络流量的深度可见性。这些网络流量信息可以对接 Hubble CLI、UI 工具，可以通过交互式的方式快速诊断如与 DNS 相关的问题。除了 Hubble 自身的监控工具，还可以对接主流的云原生监控体系——Prometheus 和 Grafana，实现可扩展的监控策略。
 
@@ -145,9 +146,9 @@ kubectl apply -f https://raw.githubusercontent.com/cilium/cilium/1.9.7/install/k
 ![](https://pek3b.qingstor.com/kubesphere-community/images/1621391731-248693-image.png)
 
 
-## 安装 demo 服务，并在 hubble UI 查看服务依赖关系
+## 安装 demo 服务，并在 Hubble UI 查看服务依赖关系
 
-1.安装 demo
+1. 安装 demo
 
 ```
 kubectl create -f https://raw.githubusercontent.com/cilium/cilium/1.9.7/examples/minikube/http-sw-app.yaml
@@ -156,13 +157,13 @@ kubectl create -f https://raw.githubusercontent.com/cilium/cilium/1.9.7/examples
 ![](https://pek3b.qingstor.com/kubesphere-community/images/1621391817-68900-image.png)
 
 
-2.将 hubble UI 服务类型修改为 NodePort
+2. 将 Hubble UI 服务类型修改为 NodePort
 
 ![](https://pek3b.qingstor.com/kubesphere-community/images/1621392459-478999-image.png)
 
 ![](https://pek3b.qingstor.com/kubesphere-community/images/1621392485-943218-image.png)
 
-3.访问 demo
+3. 访问 demo
 
 ```bash
 kubectl exec xwing -- curl -s -XPOST deathstar.default.svc.cluster.local/v1/request-landing
@@ -173,7 +174,7 @@ Ship landed
 
 ![](https://pek3b.qingstor.com/kubesphere-community/images/1621392797-391370-image.png)
 
-4.在 hubble 上 查看服务依赖关系
+4. 在 Hubble 上 查看服务依赖关系
 
 ![](https://pek3b.qingstor.com/kubesphere-community/images/1621337367-698475-image.png)
 
