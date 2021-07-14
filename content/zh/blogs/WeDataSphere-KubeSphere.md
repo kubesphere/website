@@ -1,6 +1,6 @@
 ---
 title: '基于 WeDataSphere 与 KubeSphere 构建云原生机器学习平台'
-tag: 'KubeSphere, KubeEye'
+tag: 'KubeSphere, 机器学习'
 keywords: 'KubeSphere, WeDataSphere, 机器学习, Prophecis'
 description: '本文分享的是基于 WeDataSphere 和 KubeSphere 这两个开源社区的产品去构建一个云原生机器学习平台 Prophecis。'
 createTime: '2021-01-11'
