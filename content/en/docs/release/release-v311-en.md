@@ -4,25 +4,10 @@ keywords: "Kubernetes, KubeSphere, release-notes"
 description: "KubeSphere Release Notes for 3.1.1"
 
 linkTitle: "Release Notes - 3.1.1"
-weight: 18000
-
-
+weight: 18000Release Notes
 ---
 
 # Release Notes
-
-- [User Experience](#User-Experience)
-- [Observability](#Observability)
-- [Service Mesh](#Service-Mesh)
-- [DevOps](#DevOps)
-- [Authentication and Authorization](#Authentication-and-Authorization)
-- [Multi-tenant Management](#Multi-tenant-Management)
-- [Multi-cluster Management](#Multi-cluster-Management)
-- [Metering and Billing](#Metering-and-Billing)
-- [App Store](#App-Store)
-- [Security](#Security)
-- [Storage](#Storage)
-- [KubeEdge Integration](#KubeEdge-Integration)
 
 ## User Experience
 
