@@ -68,7 +68,7 @@ After KubeSphere is installed, you need to add different users with varied roles
 
    ![create-account](/images/docs/quickstart/create-workspaces-projects-accounts/create-account.png)
 
-   Click **OK** after you finish. The new account will display in the **Accounts** list page.
+   Click **OK** after you finish. The new account will display on the **Accounts** page.
 
 4. Log out of the console and log back in with the account `user-manager` to create four accounts that will be used in other tutorials.
 
