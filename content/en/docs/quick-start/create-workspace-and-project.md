@@ -1,7 +1,7 @@
 ---
 title: "Create Workspaces, Projects, Accounts and Roles"
 keywords: 'KubeSphere, Kubernetes, Multi-tenant, Workspace, Account, Role, Project'
-description: 'Leverage the multi-tenant system of KubeSphere for fine-grained access control at different levels.'
+description: 'Take advantage of the multi-tenant system of KubeSphere for fine-grained access control at different levels.'
 linkTitle: "Create Workspaces, Projects, Accounts and Roles"
 weight: 2300
 ---
@@ -12,13 +12,9 @@ This quickstart demonstrates how to create workspaces, roles and user accounts w
 
 KubeSphere needs to be installed in your machine.
 
-## Estimated Time
-
-About 15 minutes.
-
 ## Architecture
 
-The multi-tenant system of KubeSphere features **three** levels of hierarchical structure which are cluster, workspace and project. A project in KubeSphere is a Kubernetes [namespace](https://kubernetes.io/docs/concepts/overview/working-with-objects/namespaces/).
+The multi-tenant system of KubeSphere features **three** levels of hierarchical structure which are cluster, workspace, and project. A project in KubeSphere is a Kubernetes [namespace](https://kubernetes.io/docs/concepts/overview/working-with-objects/namespaces/).
 
 You are required to create a new [workspace](../../workspace-administration/what-is-workspace/) to work with instead of using the system workspace where system resources are running and most of them are viewable only. In addition, it is strongly recommended different tenants work with corresponding roles in a workspace for security considerations.
 
@@ -33,38 +29,51 @@ After KubeSphere is installed, you need to add different users with varied roles
 1. Log in to the web console as `admin` with the default account and password (`admin/P@88w0rd`).
 
    {{< notice tip >}}
-   For account security, it is highly recommended that you change your password the first time you log in to the console. To change your password, select **User Settings** in the drop-down menu in the top-right corner. In **Password Setting**, set a new password. You also can change the console language in **User Settings**.
+   For account security, it is highly recommended that you change your password the first time you log in to the console. To change your password, select **User Settings** in the drop-down list in the upper-right corner. In **Password Settings**, set a new password. You also can change the console language in **User Settings**.
    {{</ notice >}}
 
-   ![chang-password1](/images/docs/quickstart/create-workspaces-projects-accounts/chang-password1.png)
+2. Click **Platform** in the upper-left corner, and then select **Access Control**. In the left nevigation pane, select **Account Roles**. There are four built-in roles as shown in the following table.
 
-2. After you log in to the console, click **Platform** in the top-left corner and select **Access Control**.
-
-   ![access-control](/images/docs/quickstart/create-workspaces-projects-accounts/access-control.png)
-
-   In **Account Roles**, there are four available built-in roles as shown below. The account to be created next will be assigned the role `users-manager`.
-
-   | Built-in Roles       | Description                                                  |
-   | -------------------- | ------------------------------------------------------------ |
-   | `workspaces-manager` | The workspace manager on the platform who manages all workspaces on the platform. |
-   | `users-manager`      | The user manager on the platform who manages all users.      |
-   | `platform-regular`   | The normal user on the platform who has no access to any resources before joining a workspace or cluster. |
-   | `platform-admin`     | The platform administrator who can manage all resources on the platform. |
+   <table>
+     <tbody>
+       <tr>
+         <th width='180'>Built-in Roles</th>
+         <th>Description</th>
+       </tr>
+       <tr>
+         <td><code>workspaces-manager</code></td>
+         <td>Workspace manager who can manage all workspaces on the platform.</td>
+       </tr>
+       </tr>
+       <tr>
+         <td><code>users-manager</code></td>
+         <td>User manager who can manage all users on the platform.</td>
+       </tr></tr>
+       <tr>
+         <td><code>platform-regular</code></td>
+         <td>Regular user who has no access to any resources before joining a workspace or cluster.</td>
+       </tr>
+   <tr>
+         <td><code>platform-admin</code></td>
+         <td>Administrator who can manage all resources on the platform.</td>
+       </tr>
+     </tbody>
+   </table>
 
    {{< notice note >}}
-Built-in roles are created automatically by KubeSphere and cannot be edited or deleted.
+   Built-in roles are created automatically by KubeSphere and cannot be edited or deleted.
    {{</ notice >}}
 
-3. In **Accounts**, click **Create**. In the pop-up window, provide all the necessary information (marked with *) and select `users-manager`  for **Role**. Refer to the image below as an example.
+3. In **Accounts**, click **Create**. In the displayed dialog box, provide all the necessary information (marked with *) and select `users-manager`  for **Role**. Refer to the following image as an example.
 
-   ![create-account](/images/docs/quickstart/create-workspaces-projects-accounts/create-account.jpg)
+   ![create-account](/images/docs/quickstart/create-workspaces-projects-accounts/create-account.png)
 
-   Click **OK** after you finish. A newly-created account will display in **Accounts**.
+   Click **OK** after you finish. The new account will display in the **Accounts** list page.
 
 4. Log out of the console and log back in with the account `user-manager` to create four accounts that will be used in other tutorials.
 
    {{< notice tip >}}
-   To log out, click your username in the top-right corner and select **Log Out**.
+   To log out, click your username in the upper-right corner and select **Log Out**.
    {{</ notice >}}
 
    | Account           | Role                 | Description                                                  |
@@ -159,7 +168,7 @@ In this step, you create a project using the account `project-admin` created in 
 8. Under **Internet Access**, it can be seen that the Gateway Address and the NodePort of http and https all display on the page.
 
    {{< notice note >}}
-If you want to expose services using the type `LoadBalancer`, you need to use the LoadBalancer plugin of cloud providers. If your Kubernetes cluster is running in a bare metal environment, it is recommended that you use [PorterLB](https://github.com/kubesphere/porter) as the LoadBalancer plugin.
+   If you want to expose services using the type `LoadBalancer`, you need to use the LoadBalancer plugin of cloud providers. If your Kubernetes cluster is running in a bare metal environment, it is recommended that you use [PorterLB](https://github.com/kubesphere/porter) as the LoadBalancer plugin.
    {{</ notice >}}
 
    ![nodeport-setting1](/images/docs/quickstart/create-workspaces-projects-accounts/nodeport-setting1.png)
