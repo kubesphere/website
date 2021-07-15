@@ -1,45 +1,45 @@
 ---
-title: "创建企业空间、项目、帐户和角色"
-keywords: 'KubeSphere, Kubernetes, 多租户, 企业空间, 帐户, 角色, 项目'
+title: "创建企业空间、项目、账户和角色"
+keywords: 'KubeSphere, Kubernetes, 多租户, 企业空间, 账户, 角色, 项目'
 description: '了解如何利用 KubeSphere 中的多租户功能在不同级别进行细粒度访问控制。'
-linkTitle: "创建企业空间、项目、帐户和角色"
+linkTitle: "创建企业空间、项目、账户和角色"
 weight: 2300
 ---
 
-本快速入门演示如何创建企业空间、角色和用户帐户。同时，您将学习如何在企业空间中创建项目和 DevOps 工程，用于运行工作负载。完成本教程后，您将熟悉 KubeSphere 的多租户管理系统，并使用本教程中创建的资源（例如企业空间和帐户等）完成其他教程中的操作。
+本快速入门演示如何创建企业空间、角色和用户账户。同时，您将学习如何在企业空间中创建项目和 DevOps 项目，用于运行工作负载。完成本教程后，您将熟悉 KubeSphere 的多租户管理系统，并使用本教程中创建的资源（例如企业空间和帐号等）完成其他教程中的操作。
 
 ## 准备工作
 
-KubeSphere 需要安装在您的机器中。
+KubeSphere需要安装在您的机器中。
 
 
 ## 预计时间
 
-大约 15 分钟。
+大约15分钟。
 
 ## 架构
 
-KubeSphere 的多租户系统分**三个**层级，即集群、企业空间和项目。KubeSphere 中的项目等同于 Kubernetes 的[命名空间](https://kubernetes.io/zh/docs/concepts/overview/working-with-objects/namespaces/)。
+KubeSphere 的多租户系统分**三个**层级，即群集、企业空间和项目。KubeSphere 中的项目等同于 Kubernetes 的[命名空间](https://kubernetes.io/zh/docs/concepts/overview/working-with-objects/namespaces/)。
 
 您需要创建一个新的[企业空间](../../workspace-administration/what-is-workspace/)进行操作，而不是使用系统企业空间，系统企业空间中运行着系统资源，绝大部分仅供查看。出于安全考虑，强烈建议给不同的租户授予不同的权限在企业空间中进行协作。
 
-您可以在一个 KubeSphere 集群中创建多个企业空间，每个企业空间下可以创建多个项目。KubeSphere 为每个级别默认设有多个内置角色。此外，您还可以创建拥有自定义权限的角色。KubeSphere 多层次结构适用于具有不同团队或组织以及每个团队中需要不同角色的企业用户。
+您可以在一个 KubeSphere 集群中创建多个工作空间，每个工作空间下可以创建多个项目。KubeSphere 为每个级别默认设有多个内置角色。此外，您还可以创建拥有自定义权限的角色。KubeSphere 多层次结构适用于具有不同团队或组织以及每个团队中需要不同角色的企业用户。
 
 ## 动手实验
 
 ### 步骤 1：创建帐户
 
-安装 KubeSphere 之后，您需要向平台添加具有不同角色的用户，以便他们可以针对自己授权的资源在不同的层级进行工作。一开始，系统默认只有一个帐户 `admin`，具有 `platform-admin` 角色。在本步骤中，您将创建一个帐户 `user-manager`，然后使用 `user-manager` 创建新帐户。
+安装 KubeSphere 之后，您需要向平台添加具有不同角色的用户，以便他们可以针对自己授权的资源在不同的层级进行工作。一开始，系统默认只有一个账户 `admin`，具有 `platform-admin` 角色。在本步骤中，您将创建一个帐户 `user-manager`，然后使用 `user-manager`创建新帐号。
 
-1. 以 `admin` 身份使用默认帐户和密码 (`admin/P@88w0rd`) 登录 Web 控制台。
+1. 以 `admin` 身份使用默认帐户和密码（`admin/P@88w0rd`）登录 Web 控制台。
 
    {{< notice tip >}}
    出于安全考虑，强烈建议您在首次登录控制台时更改密码。若要更改密码，在右上角的下拉菜单中选择**个人设置**，在**密码设置**中设置新密码，您也可以在**个人设置**中修改控制台语言。
    {{</ notice >}}
 
-   ![设置密码1](/images/docs/zh-cn/quickstart/create-workspaces-projects-accounts/设置密码1.png)
+   ![设置密码1](/images/docs/quickstart/create-workspaces-projects-accounts/设置密码1.png)
 
-2. 登录控制台后，点击左上角的**平台管理**，然后选择**访问控制**。
+2. 登录控制台后，点击左上角的**平台管理**，然后选择访问控制。
 
    ![访问控制](/images/docs/zh-cn/quickstart/create-workspaces-projects-accounts/访问控制.jpg)
 
@@ -56,13 +56,13 @@ KubeSphere 的多租户系统分**三个**层级，即集群、企业空间和�
 内置角色由 KubeSphere 自动创建，无法编辑或删除。
    {{</ notice >}}
 
-3. 在**帐户管理**中，点击**创建**。在弹出窗口中，提供所有必要信息（带有*标记），然后在**角色**字段选择 `users-manager`。请参考下图示例。
+3. 在**帐户管理**中，点击**创建**。在弹出窗口中,提供所有必要信息（带有*标记），然后在**角色**字段选择 users-manager。请参考下图示例.
 
    ![创建帐户1](/images/docs/zh-cn/quickstart/create-workspaces-projects-accounts/创建帐户1.png)
 
    完成后，点击**确定**。新创建的帐户将显示在**帐户管理**中的帐户列表中。
 
-4. 切换帐户使用 `user-manager` 重新登录，创建如下四个新帐户，这些帐户将在其他的教程中使用。
+4. 切换帐户使用`user-manager` 重新登录，创建如下四个新帐户，这些帐户将在其他的教程中使用。
 
    {{< notice tip >}}
 帐户登出请点击右上角的用户名，然后选择**登出**。
@@ -75,7 +75,7 @@ KubeSphere 的多租户系统分**三个**层级，即集群、企业空间和�
    | `project-admin`   | `platform-regular`   | 创建和管理项目以及 DevOps 工程，并邀请新成员加入项目。       |
    | `project-regular` | `platform-regular`   | `project-regular` 将由 `project-admin` 邀请至项目或 DevOps 工程。该帐户将用于在指定项目中创建工作负载、流水线和其他资源。 |
 
-5. 查看创建的四个帐户。
+5. 查看创建的四个帐号。
 
    ![帐户列表1](/images/docs/zh-cn/quickstart/create-workspaces-projects-accounts/帐户列表1.png)
 
@@ -87,7 +87,7 @@ KubeSphere 的多租户系统分**三个**层级，即集群、企业空间和�
 
    ![创建企业空间1](/images/docs/zh-cn/quickstart/create-workspaces-projects-accounts/创建企业空间1.png)
 
-2. 点击右侧的**创建**，将新企业空间命名为 `demo-workspace`，并将用户 `ws-admin` 设置为企业空间管理员，如下图所示：
+2. 单击右侧的**创建**，将新企业空间命名为 `demo-workspace`,并将用户 `ws-admin` 设置为企业空间管理员，如下图所示：
 
    ![完成创建企业空间](/images/docs/zh-cn/quickstart/create-workspaces-projects-accounts/完成创建企业空间.jpg)
 
@@ -106,7 +106,7 @@ KubeSphere 的多租户系统分**三个**层级，即集群、企业空间和�
 4. 邀请 `project-admin` 和 `project-regular` 进入企业空间，分别授予他们 `workspace-self-provisioner` 和 `workspace-viewer` 角色。
 
    {{< notice note >}}
-实际角色名称的格式：`<workspace name>-<role name>`。例如，在名为 `demo-workspace` 的企业空间中，角色 `viewer` 的实际角色名称为 `demo-workspace-viewer`。
+实际角色名称的格式：`<workspace name>-<role name>`。例如，在名为 `demo-workspace` 的工作空间中，角色 `viewer` 的实际角色名称为 `demo-workspace-viewer`。
    {{</ notice >}}
 
    ![邀请列表](/images/docs/zh-cn/quickstart/create-workspaces-projects-accounts/邀请列表.jpg)
@@ -123,11 +123,11 @@ KubeSphere 的多租户系统分**三个**层级，即集群、企业空间和�
 
 在此步骤中，您需要使用在上一步骤中创建的帐户 `project-admin` 来创建项目。KubeSphere 中的项目与 Kubernetes 中的命名空间相同，为资源提供了虚拟隔离。有关更多信息，请参见[命名空间](https://kubernetes.io/zh/docs/concepts/overview/working-with-objects/namespaces/)。
 
-1. 以 `project-admin` 身份登录 KubeSphere，在**项目管理**中，点击**创建**。
+1. 以 `project-admin` 身份登录 KubeSphere，在 **项目管理**中，点击**创建**。
 
    ![项目](/images/docs/zh-cn/quickstart/create-workspaces-projects-accounts/项目.jpg)
 
-2. 输入项目名称（例如 `demo-project`），然后点击**确定**完成，您还可以为项目添加别名和描述。
+2. 输入项目名称（例如 `demo-project`)，然后点击**确定**完成，您还可以为项目添加别名和描述。
 
    ![创建项目](/images/docs/zh-cn/quickstart/create-workspaces-projects-accounts/创建项目.jpg)
 
@@ -135,7 +135,7 @@ KubeSphere 的多租户系统分**三个**层级，即集群、企业空间和�
 
    ![查看项目](/images/docs/zh-cn/quickstart/create-workspaces-projects-accounts/查看项目.jpg)
 
-4. 在项目的**概览**页面，默认情况下未设置项目配额。您可以点击**设置**并根据需要指定[资源请求和限制](../../workspace-administration/project-quotas/)（例如：CPU 和内存的限制分别设为 1 Core 和 1000 Gi）。
+4. 在项目的**概览**页面，默认情况下未设置项目配额。您可以点击**设置**并根据需要指定[资源请求和限制](../../workspace-administration/project-quotas/)（例如:CPU 和内存的限制分别设为 1 Core 和 1000 Gi）。
 
    ![项目概览1](/images/docs/zh-cn/quickstart/create-workspaces-projects-accounts/项目概览1.png)
 
@@ -143,13 +143,13 @@ KubeSphere 的多租户系统分**三个**层级，即集群、企业空间和�
 
 5. 邀请 `project-regular` 至该项目，并授予该用户 `operator` 角色。请参考下图以了解具体步骤。
 
-   ![邀请成员至项目1](/images/docs/zh-cn/quickstart/create-workspaces-projects-accounts/邀请成员至项目1.png)
+   ![邀请成员至项目1](/images/docs/zh-cn/quickstart/create-workspaces-projects-accounts/邀请成员至项目1.pNg)
 
    {{< notice info >}}
    具有 `operator` 角色的用户是项目维护者，可以管理项目中除用户和角色以外的资源。
    {{</ notice >}}
 
-6. 在创建[应用路由](../../project-user-guide/application-workloads/routes/)（即 Kubernetes 中的 [Ingress](https://kubernetes.io/docs/concepts/services-networking/ingress/)）之前，需要启用该项目的网关。网关是在项目中运行的 [NGINX Ingress 控制器](https://github.com/kubernetes/ingress-nginx)。若要设置网关，请转到**项目设置**中的**高级设置**，然后点击**设置网关**。此步骤中仍使用帐户 `project-admin`。
+6. 在创建[应用路由](../../project-user-guide/application-workloads/routes/)（即 Kubernetes 中的[Ingress](https://kubernetes.io/docs/concepts/services-networking/ingress/)）之前，需要启用该项目的网关。网关是在项目中运行的 [NGINX Ingress 控制器](https://github.com/kubernetes/ingress-nginx)。若要设置网关，请转到**项目设置**中的**高级设置**，然后点击**设置网关**。此步骤中仍使用帐户 `project-admin`。
 
    ![设置网关1](/images/docs/zh-cn/quickstart/create-workspaces-projects-accounts/设置网关1.png)
 
@@ -160,7 +160,7 @@ KubeSphere 的多租户系统分**三个**层级，即集群、企业空间和�
 8. 在**外网访问**下，可以在页面上看到网关地址以及 http/https 的端口。
 
    {{< notice note >}}
-如果要使用 `LoadBalancer` 暴露服务，则需要使用云厂商的 LoadBalancer 插件。如果您的 Kubernetes 集群在裸机环境中运行，建议使用 [PorterLB](https://github.com/kubesphere/porter) 作为 LoadBalancer 插件。
+   如果要使用 `LoadBalancer` 暴露服务，则需要使用云厂商的 LoadBalancer 插件。如果您的 kubernetes 集群在裸机环境中运行，建议使用 [PorterLB](https://github.com/kubesphere/porter) 作为 LoadBalancer 插件。
    {{</ notice >}}
 
    ![完成网关设置1](/images/docs/zh-cn/quickstart/create-workspaces-projects-accounts/完成网关设置1.png)
@@ -179,7 +179,7 @@ KubeSphere 的多租户系统分**三个**层级，即集群、企业空间和�
 
    {{</ notice >}}
 
-3. 在**创建帐户角色**对话框中，设置角色标识符（例如，`clusters-admin`）、角色名称和描述信息，然后点击**编辑权限**。
+3. 在**创建帐户角色**对话框中，设置角色标识符（例如，`clusters-admin`）、 角色名称和描述信息，然后点击**编辑权限**。
 
    {{< notice note >}}
 
@@ -187,7 +187,7 @@ KubeSphere 的多租户系统分**三个**层级，即集群、企业空间和�
 
    {{</ notice >}}
 
-4. 在**编辑权限**对话框中，设置角色权限（例如，选择**集群管理**）并点击**确定**。
+4. 在**编辑权限**对话框中，设置角色权限(例如，选择**集群管理**)并单击**确定**。
 
    {{< notice note >}}
 
@@ -202,11 +202,11 @@ KubeSphere 的多租户系统分**三个**层级，即集群、企业空间和�
 
 6. 在**帐户管理**页面，可以在创建帐户或编辑现有帐户时为帐户分配该角色。
 
-### 步骤 5：创建 DevOps 工程（可选）
+### 步骤 5：创建 DevOps 项目（可选）
 
 {{< notice note >}}
 
-若要创建 DevOps 工程，需要预先安装 KubeSphere DevOps 系统，该系统是个可插拔的组件，提供 CI/CD 流水线、Binary-to-Image 和 Source-to-Image 等功能。有关如何启用 DevOps 的更多信息，请参见 [KubeSphere DevOps 系统](../../pluggable-components/devops/)。
+若要创建 DevOps 工程，需要预先安装 KubeSphere DevOps 系统，该系统是个可插拔的组件，提供 CI/CD 流水线、Binary-to-Image 和 Source-to-Image 等功能。有关如何启用 DevOps 的更多信息，请参见 [KubeSphere DevOps系统](../../pluggable-components/devops/)。
 
 {{</ notice >}}
 
@@ -226,4 +226,4 @@ KubeSphere 的多租户系统分**三个**层级，即集群、企业空间和�
 
    ![邀请-devops-成员1](/images/docs/zh-cn/quickstart/create-workspaces-projects-accounts/邀请-devops-成员1.png)
 
-至此，您已熟悉 KubeSphere 的多租户管理系统。在其他教程中，`project-regular` 帐户还将用于演示如何在项目或 DevOps 工程中创建应用程序和资源。
+至此，您已熟悉 kubeSphere 的多租户管理系统。在其他教程中，`project-regular` 帐户还将用于演示如何在项目或 DevOps 工程中创建应用程序和资源.
