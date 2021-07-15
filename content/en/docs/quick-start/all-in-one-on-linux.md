@@ -1,6 +1,6 @@
 ---
-title: "All-in-one Installation of Kubernetes and KubeSphere on Linux"
-keywords: 'KubeSphere, Kubernetes, All-in-one, Installation'
+title: "All-In-One Installation of Kubernetes and KubeSphere on Linux"
+keywords: 'KubeSphere, Kubernetes, All-In-One, Installation'
 description: 'Install KubeSphere on Linux with a minimal installation package. The tutorial serves as a basic kick-starter for you to understand the container platform, paving the way for learning the following guides.'
 linkTitle: "All-in-One Installation on Linux"
 weight: 2100
@@ -16,19 +16,37 @@ For those who are new to KubeSphere and looking for a quick way to discover the 
 
 To get started with all-in-one installation, you only need to prepare one host according to the following requirements for hardware and operating system.
 
-### Hardware recommendations
+### Hardware Recommendations
 
-| System                                                 | Minimum Requirements                        |
-| ------------------------------------------------------ | ------------------------------------------- |
-| **Ubuntu** *16.04, 18.04*                              | CPU: 2 Cores, Memory: 4 G, Disk Space: 40 G |
-| **Debian** *Buster, Stretch*                           | CPU: 2 Cores, Memory: 4 G, Disk Space: 40 G |
-| **CentOS** *7*.x                                       | CPU: 2 Cores, Memory: 4 G, Disk Space: 40 G |
-| **Red Hat Enterprise Linux 7**                         | CPU: 2 Cores, Memory: 4 G, Disk Space: 40 G |
-| **SUSE Linux Enterprise Server 15/openSUSE Leap 15.2** | CPU: 2 Cores, Memory: 4 G, Disk Space: 40 G |
+<table>
+  <tbody>
+    <tr>
+    <th width='320'>OS</th>
+    <th>Minimum Requirements</th>
+    </tr>
+    <tr>
+      <td><b>Ubuntu</b> <i>16.04</i>, <i>18.04</i></td>
+      <td>2 CPU cores, 4 GB memory, and 40 GB disk space</td>
+    </tr>
+    <tr>
+      <td><b>Debian</b> <i>Buster</i>, <i>Stretch</i></td>
+      <td>2 CPU cores, 4 GB memory, and 40 GB disk space</td>
+    </tr><tr>
+    <td><b>CentOS</b> <i>7.x</i></td>
+      <td>2 CPU cores, 4 GB memory, and 40 GB disk space</td>
+    </tr><tr>
+    <td><b>Red Hat Enterprise Linux 7</b></td>
+      <td>2 CPU cores, 4 GB memory, and 40 GB disk space</td>
+    </tr><tr>
+    <td><b>SUSE Linux Enterprise Server 15/openSUSE Leap 15.2</b></td>
+      <td>2 CPU cores, 4 GB memory, and 40 GB disk space</td>
+    </tr>
+  </tbody>
+</table>
 
 {{< notice note >}}
 
-The system requirements above and the instructions below are for the default minimal installation without any pluggable components enabled. If your machine has at least 8 cores and 16G memory, it is recommended that you enable all components. For more information, see [Enable Pluggable Components](../../pluggable-components/).
+The preceding system requirements and the following instructions are for the default minimal installation without any pluggable components enabled. If your machine has at least 8 CPU cores and 16 GB memory, it is recommended that you enable all components. For more information, see [Enable Pluggable Components](../../pluggable-components/).
 
 {{</ notice >}}
 
@@ -39,35 +57,72 @@ The system requirements above and the instructions below are for the default min
 
 ### Container runtimes
 
-Your cluster must have an available container runtime. If you use KubeKey to set up a cluster, KubeKey will install the latest version of Docker by default. Alternatively, you can install Docker or other container runtimes by yourself before you create a cluster.
+Your cluster must have an available container runtime. If you use KubeKey to set up a cluster, KubeKey installs the latest version of Docker by default. Alternatively, you can manually install Docker or other container runtimes before you create a cluster.
 
-| Supported Container Runtime | Version |
-| --------------------------- | ------- |
-| Docker                      | 19.3.8+ |
-| containerd (experimental, not fully tested)   | Latest  |
-| CRI-O (experimental, not fully tested)        | Latest  |
-| iSula (experimental, not fully tested)        | Latest  |
+<table>
+  <tbody>
+    <tr>
+      <th width='500'>Supported Container Runtime</th>
+      <th>Version</th>
+    </tr>
+    <tr>
+      <td>Docker</td>
+      <td>19.3.8 +</td>
+    </tr>
+    <tr>
+      <td>containerd (experimental, not fully tested)</td>
+      <td>Latest</td>
+    </tr><tr>
+      <td>CRI-O (experimental, not fully tested)</td>
+      <td>Latest</td>
+    </tr><tr>
+      <td>iSula (experimental, not fully tested)</td>
+      <td>Latest</td>
+    </tr>
+  </tbody>
+</table>
 
 {{< notice note >}}
 
-A container runtime must be installed in advance if you want to deploy KubeSphere in an offline environment.
+To deploy KubeSphere in an offline environment, you must install a container runtime in advance.
 
 {{</ notice >}}
 
 ### Dependency requirements
 
-KubeKey can install Kubernetes and KubeSphere together. The dependency that needs to be installed may be different based on the Kubernetes version to be installed. You can refer to the list below to see if you need to install relevant dependencies on your node in advance.
+KubeKey can install Kubernetes and KubeSphere together. The dependency that needs to be installed may be different based on the Kubernetes version to be installed. You can refer to the following list to see if you need to install relevant dependencies on your node in advance.
 
-| Dependency  | Kubernetes Version ≥ 1.18 | Kubernetes Version < 1.18 |
-| ----------- | ------------------------- | ------------------------- |
-| `socat`     | Required                  | Optional but recommended  |
-| `conntrack` | Required                  | Optional but recommended  |
-| `ebtables`  | Optional but recommended  | Optional but recommended  |
-| `ipset`     | Optional but recommended  | Optional but recommended  |
+<table>
+  <tbody>
+    <tr>
+      <th>Dependency</th>
+     <th>Kubernetes Version ≥ 1.18</th>
+      <th>Kubernetes Version < 1.18</th>
+    </tr>
+    <tr>
+      <td><code>socat</code></td>
+     <td>Required</td> 
+      <td>Optional but recommended</td> 
+     </tr>
+    <tr>
+      <td><code>conntrack</code></td>
+     <td>Required</td> 
+      <td>Optional but recommended</td> 
+    </tr><tr>
+    <td><code>ebtables</code></td>
+     <td>Optional but recommended</td> 
+    <td>Optional but recommended</td> 
+    </tr><tr>
+    <td><code>ipset</code></td>
+    <td>Optional but recommended</td> 
+     <td>Optional but recommended</td> 
+    </tr>
+  </tbody>
+</table>
 
 {{< notice info >}}
 
-Developed in Go language, KubeKey represents a brand-new installation tool as a replacement for the ansible-based installer used before. KubeKey provides users with flexible installation choices, as they can install KubeSphere and Kubernetes separately or install them at one time, which is convenient and efficient.
+Developed in Go, KubeKey represents a brand-new installation tool as a replacement for the ansible-based installer used before. KubeKey provides users with flexible installation choices, as they can install KubeSphere and Kubernetes separately or install them at one time, which is convenient and efficient.
 
 {{</ notice >}}
 
@@ -86,16 +141,16 @@ Developed in Go language, KubeKey represents a brand-new installation tool as a 
 
 ## Step 2: Download KubeKey
 
-Follow the steps below to download KubeKey.
+Perform the following steps to download KubeKey.
 
 {{< tabs >}}
 
 {{< tab "Good network connections to GitHub/Googleapis" >}}
 
-Download KubeKey from its [GitHub Release Page](https://github.com/kubesphere/kubekey/releases) or use the following command directly.
+Download KubeKey from its [GitHub Release Page](https://github.com/kubesphere/kubekey/releases) or run the following command:
 
 ```bash
-curl -sfL https://get-kk.kubesphere.io | VERSION=v1.1.0 sh -
+curl -sfL https://get-kk.kubesphere.io | VERSION=v1.1.1 sh -
 ```
 
 {{</ tab >}}
@@ -111,12 +166,12 @@ export KKZONE=cn
 Run the following command to download KubeKey:
 
 ```bash
-curl -sfL https://get-kk.kubesphere.io | VERSION=v1.1.0 sh -
+curl -sfL https://get-kk.kubesphere.io | VERSION=v1.1.1 sh -
 ```
 
 {{< notice note >}}
 
-After you download KubeKey, if you transfer it to a new machine also with poor network connections to Googleapis, you must run `export KKZONE=cn` again before you proceed with the steps below.
+After you download KubeKey, if you transfer it to a new machine also with poor network connections to Googleapis, you must run `export KKZONE=cn` again before you proceed with the following steps.
 
 {{</ notice >}} 
 
@@ -126,7 +181,7 @@ After you download KubeKey, if you transfer it to a new machine also with poor n
 
 {{< notice note >}}
 
-The commands above download the latest release (v1.1.0) of KubeKey. You can change the version number in the command to download a specific version.
+The commands above download the latest release (v1.1.1) of KubeKey. You can change the version number in the command to download a specific version.
 
 {{</ notice >}} 
 
@@ -138,7 +193,7 @@ chmod +x kk
 
 ## Step 3: Get Started with Installation
 
-In this tutorial, you only need to execute one command for installation, the template of which is shown below:
+You only need to run one command for all-in-one installation. The template is as follows:
 
 ```bash
 ./kk create cluster [--with-kubernetes version] [--with-kubesphere version]
@@ -147,23 +202,23 @@ In this tutorial, you only need to execute one command for installation, the tem
 To create a Kubernetes cluster with KubeSphere installed, refer to the following command as an example:
 
 ```bash
-./kk create cluster --with-kubernetes v1.20.4 --with-kubesphere v3.1.0
+./kk create cluster --with-kubernetes v1.20.4 --with-kubesphere v3.1.1
 ```
 
 {{< notice note >}}
 
-- Recommended Kubernetes versions for KubeSphere v3.1.0: v1.17.9, v1.18.8, v1.19.8 and v1.20.4. If you do not specify a Kubernetes version, KubeKey will install Kubernetes v1.19.8 by default. For more information about supported Kubernetes versions, see [Support Matrix](../../installing-on-linux/introduction/kubekey/#support-matrix).
-- For all-in-one installation, generally speaking, you do not need to change any configuration.
+- Recommended Kubernetes versions for KubeSphere v3.1.1: v1.17.9, v1.18.8, v1.19.8 and v1.20.4. If you do not specify a Kubernetes version, KubeKey installs Kubernetes v1.19.8 by default. For more information about supported Kubernetes versions, see [Support Matrix](../../installing-on-linux/introduction/kubekey/#support-matrix).
+- For all-in-one installation, you do not need to change any configuration.
 - If you do not add the flag `--with-kubesphere` in the command in this step, KubeSphere will not be deployed. KubeKey will install Kubernetes only. If you add the flag `--with-kubesphere` without specifying a KubeSphere version, the latest version of KubeSphere will be installed.
 - KubeKey will install [OpenEBS](https://openebs.io/) to provision LocalPV for the development and testing environment by default, which is convenient for new users. For other storage classes, see [Persistent Storage Configurations](../../installing-on-linux/persistent-storage-configurations/understand-persistent-storage/).
 
 {{</ notice >}}
 
-After you execute the command, you will see a table for environment check. For details, read [Node requirements](#node-requirements) and [Dependency requirements](#dependency-requirements) above. Type `yes` to continue.
+After you run the command, you will see a table for environment check. For details, see [Node requirements](#node-requirements) and [Dependency requirements](#dependency-requirements). Type `yes` to continue.
 
 ## Step 4: Verify the Installation
 
-When you see the output as below, it means the installation of Kubernetes and KubeSphere finishes.
+If the following information is displayed, Kubernetes and KubeSphere is successfully installed.
 
 ![Installation-complete](/images/docs/quickstart/all-in-one-installation/Installation-complete.png)
 
@@ -185,12 +240,12 @@ Account: admin
 Password: P@88w0rd
 
 NOTES：
-  1. After logging into the console, please check the
+  1. After you log into the console, please check the
      monitoring status of service components in
-     the "Cluster Management". If any service is not
-     ready, please wait patiently until all components
-     are ready.
-  2. Please modify the default password after login.
+     "Cluster Management". If any service is not
+     ready, please wait patiently until all components 
+     are up and running.
+  2. Please change the default password after login.
 
 #####################################################
 https://kubesphere.io             20xx-xx-xx xx:xx:xx
@@ -209,7 +264,7 @@ After logging in to the console, you can check the status of different component
 
 ## Enable Pluggable Components (Optional)
 
-The guide above is used only for the minimal installation by default. To enable other components in KubeSphere, see [Enable Pluggable Components](../../pluggable-components/) for more details.
+This guide is used only for the minimal installation by default. For more information about how to enable other components in KubeSphere, see [Enable Pluggable Components](../../pluggable-components/).
 
 ## Code Demonstration
 <script src="https://asciinema.org/a/379741.js" id="asciicast-379741" async></script>
