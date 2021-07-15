@@ -76,12 +76,33 @@ After KubeSphere is installed, you need to add different users with varied roles
    To log out, click your username in the upper-right corner and select **Log Out**.
    {{</ notice >}}
 
-   | Account           | Role                 | Description                                                  |
-   | ----------------- | -------------------- | ------------------------------------------------------------ |
-   | `ws-manager`      | `workspaces-manager` | Create and manage all workspaces.                            |
-   | `ws-admin`        | `platform-regular`   | Manage all resources in a specified workspace (This account is used to invite new members to a workspace in this example). |
-   | `project-admin`   | `platform-regular`   | Create and manage projects and DevOps projects, and invite new members into the projects. |
-   | `project-regular` | `platform-regular`   | `project-regular` will be invited to a project or DevOps project by `project-admin`. This account will be used to create workloads, pipelines and other resources in a specified project. |
+   <table>
+     <tbody>
+       <tr>
+         <th width='140'>Account</th>
+         <th width='160'>Role</th>
+         <th>Description</th>
+       </tr>
+       <tr>
+         <td><code>ws-manager</code></td>
+         <td><code>workspaces-manager</code></td>
+         <td>Create and manage all workspaces.</td>
+       </tr>
+       <tr>
+         <td><code>ws-admin</code></td>
+         <td><code>platform-regular</code></td>
+         <td>Manage all resources in a specified workspace (This account is used to invite new members to a workspace in this example).</td>
+       </tr><tr>
+         <td><code>project-admin</code></td>
+         <td><code>platform-regular</code></td>
+         <td>Create and manage projects and DevOps projects, and invite new members into the projects.</td>
+       </tr><tr>
+         <td><code>project-regular</code></td>
+         <td><code>platform-regular</code></td>
+       <td><code>project-regular</code> will be invited to a project or DevOps project by <code>project-admin</code>. This account will be used to create workloads, pipelines and other resources in a specified project.</td>
+       </tr>
+     </tbody>
+   </table>
 
 5. Verify the four accounts created.
 
@@ -91,15 +112,9 @@ After KubeSphere is installed, you need to add different users with varied roles
 
 In this step, you create a workspace using the account `ws-manager` created in the previous step. As the basic logic unit for the management of projects, DevOps projects and organization members, workspaces underpin the multi-tenant system of KubeSphere.
 
-1. Log in to KubeSphere as `ws-manager` which has the permission to manage all workspaces on the platform. Click **Platform** in the top-left corner and select **Access Control**. In **Workspaces**, you can see there is only one default workspace `system-workspace` listed, where system-related components and services run. You are not allowed to delete this workspace.
+1. Log in to KubeSphere as `ws-manager` which has the permission to manage all workspaces on the platform. Click **Platform** in the upper-left corner and select **Access Control**. In **Workspaces**, you can see there is only one default workspace `system-workspace`, where system-related components and services run. You are not allowed to delete this workspace.
 
-   ![create-workspace](/images/docs/quickstart/create-workspaces-projects-accounts/create-workspace.jpg)
-
-2. Click **Create** on the right, name the new workspace `demo-workspace` and set the user `ws-admin` as the workspace manager shown in the screenshot below:
-
-   ![create-workspace](/images/docs/quickstart/create-workspaces-projects-accounts/create-workspace.png)
-
-   Click **Create** after you finish.
+2. Click **Create** on the right, set a name for the new workspace (for example, `demo-workspace`) and set the user `ws-admin` as the workspace manager. Click **Create** after you finish.
 
    {{< notice note >}}
 
@@ -109,77 +124,81 @@ In this step, you create a workspace using the account `ws-manager` created in t
 
 3. Log out of the console and log back in as `ws-admin`. In **Workspace Settings**, select **Workspace Members** and click **Invite Member**.
 
-   ![invite-member](/images/docs/quickstart/create-workspaces-projects-accounts/invite-member.png)
-
-4. Invite both `project-admin` and `project-regular` to the workspace. Grant them the role `workspace-self-provisioner` and `workspace-viewer` respectively. 
+4. Invite both `project-admin` and `project-regular` to the workspace. Assign them the role `workspace-self-provisioner` and `workspace-viewer` respectively and click **OK**.
 
    {{< notice note >}}
 The actual role name follows a naming convention: `<workspace name>-<role name>`. For example, in this workspace named `demo-workspace`, the actual role name of the role `viewer` is `demo-workspace-viewer`.
    {{</ notice >}}
 
-   ![invite-member-and-grant-role](/images/docs/quickstart/create-workspaces-projects-accounts/invite-member-and-grant-role.png)
+   ![invite-member](/images/docs/quickstart/create-workspaces-projects-accounts/invite-member.png)
 
-5. After you add both `project-admin` and `project-regular` to the workspace, click **OK**. In **Workspace Members**, you can see three members listed.
+5. In **Workspace Members**, you can see three members listed.
 
-   | Account           | Role                         | Description                                                  |
-   | ----------------- | ---------------------------- | ------------------------------------------------------------ |
-   | `ws-admin`        | `workspace-admin`            | Manage all resources under the workspace (Use this account to invite new members to the workspace). |
-   | `project-admin`   | `workspace-self-provisioner` | Create and manage projects and DevOps projects, and invite new members to join the projects. |
-   | `project-regular` | `workspace-viewer`           | `project-regular` will be invited by `project-admin` to join a project or DevOps project. The account can be used to create workloads, pipelines, etc. |
+   <table>
+     <tbody>
+       <tr>
+         <th width='150'>Account</th>
+         <th width='150'>Role</th>
+         <th>Description</th>
+       </tr>
+       <tr>
+         <td><code>ws-admin</code></td>
+         <td><code>workspace-admin</code></td>
+         <td>Manage all resources under the workspace (use this account to invite new members to the workspace).</td>
+       </tr>
+       <tr>
+         <td><code>project-admin</code></td>
+         <td><code>workspace-self-provisioner</code></td>
+         <td>Create and manage projects and DevOps projects, and invite new members to join the projects.</td>
+       </tr><tr>
+         <td><code>project-regular</code></td>
+         <td><code>workspace-viewer</code></td>
+       <td><code>project-regular</code> will be invited by <code>project-admin</code> to join a project or DevOps project. The account can be used to create workloads, pipelines, etc.</td>
+       </tr>
+     </tbody>
+   </table>
 
 ### Step 3: Create a project
 
 In this step, you create a project using the account `project-admin` created in the previous step. A project in KubeSphere is the same as a namespace in Kubernetes, which provides virtual isolation for resources. For more information, see [Namespaces](https://kubernetes.io/docs/concepts/overview/working-with-objects/namespaces/).
 
-1. Log in to KubeSphere as `project-admin`. In **Projects**, click **Create**.
-
-   ![kubesphere-projects](/images/docs/quickstart/create-workspaces-projects-accounts/kubesphere-projects.png)
+1. Log in to the KubeSphere web console as `project-admin`. In **Projects**, click **Create**.
 
 2. Enter the project name (for example, `demo-project`) and click **OK** to finish. You can also add an alias and description for the project.
 
-   ![demo-project](/images/docs/quickstart/create-workspaces-projects-accounts/demo-project.png)
+3. In **Projects**, click the project name to view its details page.
 
-3. In **Projects**, click the project created just now to view its detailed information.
+4. On the **Overview** page of the project, the project quota remains unset by default. You can click **Set** and specify [resource requests and limits](../../workspace-administration/project-quotas/) as needed (for example, 1 Core for CPU and 1000 Gi for memory).
 
-   ![click-demo-project](/images/docs/quickstart/create-workspaces-projects-accounts/click-demo-project.png)
+   ![project-quota](/images/docs/quickstart/create-workspaces-projects-accounts/project-quota.png)
 
-4. On the **Overview** page of the project, the project quota remains unset by default. You can click **Set** and specify [resource requests and limits](../../workspace-administration/project-quotas/) as needed (for example, 1 core for CPU and 1000Gi for memory).
+5. Invite `project-regular` to this project and grant this user the role `operator`. Refer to the following image for specific steps.
 
-   ![quota1](/images/docs/quickstart/create-workspaces-projects-accounts/quota1.png)
-
-   ![specify-project-quota1](/images/docs/quickstart/create-workspaces-projects-accounts/specify-project-quota1.png)
-
-5. Invite `project-regular` to this project and grant this user the role `operator`. Refer to the image below for specific steps.
-
-   ![invite-project-member1](/images/docs/quickstart/create-workspaces-projects-accounts/invite-project-member1.png)
+   ![invite-project-regular](/images/docs/quickstart/create-workspaces-projects-accounts/invite-project-regular.png)
 
    {{< notice info >}}
-   The user granted the role `operator` will be a project maintainer who can manage resources other than users and roles in the project.
+   The user granted the role `operator` is a project maintainer who can manage resources other than users and roles in the project.
    {{</ notice >}}
 
 6. Before creating a [Route](../../project-user-guide/application-workloads/routes/) which is [Ingress](https://kubernetes.io/docs/concepts/services-networking/ingress/) in Kubernetes, you need to enable a gateway for this project. The gateway is an [NGINX Ingress controller](https://github.com/kubernetes/ingress-nginx) running in the project. To set a gateway, go to **Advanced Settings** in **Project Settings** and click **Set Gateway**. The account `project-admin` is still used in this step.
 
-   ![set-gateway1](/images/docs/quickstart/create-workspaces-projects-accounts/set-gateway1.png)
+7. Select the access method **NodePort** and click **Save**.
 
-7. Choose the access method **NodePort** and click **Save**.
-
-   ![nodeport](/images/docs/quickstart/create-workspaces-projects-accounts/nodeport.png)
-
-8. Under **Internet Access**, it can be seen that the Gateway Address and the NodePort of http and https all display on the page.
+8. Under **Internet Access**, you can obtain the Gateway Address and the NodePort of http and https in the list.
 
    {{< notice note >}}
-   If you want to expose services using the type `LoadBalancer`, you need to use the LoadBalancer plugin of cloud providers. If your Kubernetes cluster is running in a bare metal environment, it is recommended that you use [PorterLB](https://github.com/kubesphere/porter) as the LoadBalancer plugin.
+   If you want to expose services using the type `LoadBalancer`, you need to use the LoadBalancer plugin of cloud providers. If your Kubernetes cluster is running in a bare metal environment, it is recommended that you use [OpenELB](https://github.com/kubesphere/openelb) as the LoadBalancer plugin.
    {{</ notice >}}
 
-   ![nodeport-setting1](/images/docs/quickstart/create-workspaces-projects-accounts/nodeport-setting1.png)
+   ![nodeport-setting](/images/docs/quickstart/create-workspaces-projects-accounts/nodeport-setting.png)
 
 ### Step 4: Create a role
 
-After you finish the above steps, you know that users can be granted different roles at different levels. The roles used in previous steps are all built-in ones created by KubeSphere itself. In this step, you will learn how to define a customized role to meet the needs in your work.
+After you finish the above steps, you know that users can be granted different roles at different levels. The roles used in previous steps are all built-in ones created by KubeSphere. In this step, you will learn how to define a customized role to meet the needs in your work.
 
 1. Log in to the KubeSphere web console as `admin` again and go to **Access Control**. 
 
-2. Click **Account Roles** on the left navigation bar and **Create** on the right.
+2. Click **Account Roles** on the left navigation pane, and then click **Create** on the right.
 
    {{< notice note >}}
 
@@ -206,7 +225,7 @@ After you finish the above steps, you know that users can be granted different r
 
    {{</ notice >}}
 
-5. On the **Account Roles** page, you can click the name of the created role to view the role details and click <img src="/images/docs/quickstart/create-workspaces-projects-accounts/operation-icon.png" width="20px" align="center"> to edit or delete the role.
+5. On the **Account Roles** page, you can click the name of the created role to view the role details and click <img src="/images/docs/quickstart/create-workspaces-projects-accounts/operation-icon.png" width="20px" align="center"> to edit the role, edit the role permissions, or delete the role.
 
 6. On the **Accounts** page, you can assign the role to an account when you create an account or edit an existing account.
 
@@ -221,18 +240,12 @@ To create a DevOps project, you must install the KubeSphere DevOps system in adv
 
 1. Log in to the console as `project-admin`. In **DevOps Projects**, click **Create**.
 
-   ![devops](/images/docs/quickstart/create-workspaces-projects-accounts/devops.png)
+2. Set a name for the DevOps project (for example, `demo-devops`) and click **OK**. You can also add an alias and description for the project.
 
-2. Enter the DevOps project name (for example, `demo-devops`) and click **OK**. You can also add an alias and description for the project.
+3. Click the project name to view its details page.
 
-   ![devops-project](/images/docs/quickstart/create-workspaces-projects-accounts/devops-project.png)
+4. Go to **Project Management** and select **Project Members**. Click **Invite Member** to grant `project-regular` the role `operator`, who is allowed to create pipelines and credentials. Click **OK** to finish.
 
-3. In **DevOps Projects**, click the project created just now to view its detailed information.
-
-   ![new-devops-project](/images/docs/quickstart/create-workspaces-projects-accounts/new-devops-project.png)
-
-4. Go to **Project Management** and select **Project Members**. Click **Invite Member** to grant `project-regular` the role of `operator`, who is allowed to create pipelines and credentials.
-
-   ![devops-invite-member](/images/docs/quickstart/create-workspaces-projects-accounts/devops-invite-member.png)
+   ![invite-devops-member](/images/docs/quickstart/create-workspaces-projects-accounts/invite-devops-member.png)
 
 You are now familiar with the multi-tenant management system of KubeSphere. In other tutorials, the account `project-regular` will also be used to demonstrate how to create applications and resources in a project or DevOps project.
