@@ -12,11 +12,6 @@ weight: 2300
 
 KubeSphere 需要安装在您的机器中。
 
-
-## 预计时间
-
-大约 15 分钟。
-
 ## 架构
 
 KubeSphere 的多租户系统分**三个**层级，即集群、企业空间和项目。KubeSphere 中的项目等同于 Kubernetes 的[命名空间](https://kubernetes.io/zh/docs/concepts/overview/working-with-objects/namespaces/)。
@@ -34,29 +29,42 @@ KubeSphere 的多租户系统分**三个**层级，即集群、企业空间和�
 1. 以 `admin` 身份使用默认帐户和密码 (`admin/P@88w0rd`) 登录 Web 控制台。
 
    {{< notice tip >}}
-   出于安全考虑，强烈建议您在首次登录控制台时更改密码。若要更改密码，在右上角的下拉菜单中选择**个人设置**，在**密码设置**中设置新密码，您也可以在**个人设置**中修改控制台语言。
+   出于安全考虑，强烈建议您在首次登录控制台时更改密码。若要更改密码，在右上角的下拉列表中选择**个人设置**，在**密码设置**中设置新密码，您也可以在**个人设置**中修改控制台语言。
    {{</ notice >}}
 
-   ![设置密码1](/images/docs/zh-cn/quickstart/create-workspaces-projects-accounts/设置密码1.png)
+2. 点击左上角的**平台管理**，然后选择**访问控制**。在左侧导航栏中，选择**帐户角色**。四个内置角色的描述信息如下表所示。
 
-2. 登录控制台后，点击左上角的**平台管理**，然后选择**访问控制**。
-
-   ![访问控制](/images/docs/zh-cn/quickstart/create-workspaces-projects-accounts/访问控制.jpg)
-
-   在**帐户角色**中，有如下所示四个可用的内置角色。接下来要创建的第一个帐户将被分配 `users-manager` 角色。
-
-   | 内置角色             | 描述                                                         |
-   | -------------------- | ------------------------------------------------------------ |
-   | `workspaces-manager` | 企业空间管理员，管理平台所有企业空间。                       |
-   | `users-manager`      | 用户管理员，管理平台所有用户。                               |
-   | `platform-regular`   | 平台普通用户，在被邀请加入企业空间或集群之前没有任何资源操作权限。 |
-   | `platform-admin`     | 平台管理员，可以管理平台内的所有资源。                       |
+   <table>
+     <tbody>
+       <tr>
+         <th width='160'>内置角色</th>
+         <th>描述</th>
+       </tr>
+       <tr>
+         <td><code>workspaces-manager</code></td>
+         <td>企业空间管理员，管理平台所有企业空间。</td>
+       </tr>
+       </tr>
+       <tr>
+         <td><code>users-manager</code></td>
+         <td>用户管理员，管理平台所有用户。</td>
+       </tr></tr>
+       <tr>
+         <td><code>platform-regular</code></td>
+         <td>平台普通用户，在被邀请加入企业空间或集群之前没有任何资源操作权限。</td>
+       </tr>
+   <tr>
+         <td><code>platform-admin</code></td>
+         <td>平台管理员，可以管理平台内的所有资源。</td>
+       </tr>
+     </tbody>
+   </table>
 
    {{< notice note >}}
-内置角色由 KubeSphere 自动创建，无法编辑或删除。
+   内置角色由 KubeSphere 自动创建，无法编辑或删除。
    {{</ notice >}}
 
-3. 在**帐户管理**中，点击**创建**。在弹出窗口中，提供所有必要信息（带有*标记），然后在**角色**字段选择 `users-manager`。请参考下图示例。
+3. 在**帐户管理**中，点击**创建**。在弹出的对话框中，提供所有必要信息（带有*标记），然后在**角色**一栏选择 `users-manager`。请参考下图示例。
 
    ![创建帐户1](/images/docs/zh-cn/quickstart/create-workspaces-projects-accounts/创建帐户1.png)
 
@@ -65,7 +73,7 @@ KubeSphere 的多租户系统分**三个**层级，即集群、企业空间和�
 4. 切换帐户使用 `user-manager` 重新登录，创建如下四个新帐户，这些帐户将在其他的教程中使用。
 
    {{< notice tip >}}
-帐户登出请点击右上角的用户名，然后选择**登出**。
+   帐户登出请点击右上角的用户名，然后选择**登出**。
    {{</ notice >}}
 
    | 帐户              | 角色                 | 描述                                                         |
@@ -160,7 +168,7 @@ KubeSphere 的多租户系统分**三个**层级，即集群、企业空间和�
 8. 在**外网访问**下，可以在页面上看到网关地址以及 http/https 的端口。
 
    {{< notice note >}}
-如果要使用 `LoadBalancer` 暴露服务，则需要使用云厂商的 LoadBalancer 插件。如果您的 Kubernetes 集群在裸机环境中运行，建议使用 [PorterLB](https://github.com/kubesphere/porter) 作为 LoadBalancer 插件。
+   如果要使用 `LoadBalancer` 暴露服务，则需要使用云厂商的 LoadBalancer 插件。如果您的 Kubernetes 集群在裸机环境中运行，建议使用 [PorterLB](https://github.com/kubesphere/porter) 作为 LoadBalancer 插件。
    {{</ notice >}}
 
    ![完成网关设置1](/images/docs/zh-cn/quickstart/create-workspaces-projects-accounts/完成网关设置1.png)
