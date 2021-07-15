@@ -144,7 +144,7 @@ docker run -d \
 
 ## 步骤 3：下载 KubeKey
 
-与在 Linux 上在线安装 KubeSphere 相似，您需要事先[下载 KubeKey v1.1.0](https://github.com/kubesphere/kubekey/releases)。下载 `tar.gz` 文件，将它传输到充当任务机的本地机器上进行安装。解压文件后，执行以下命令，使 `kk` 可执行。
+与在 Linux 上在线安装 KubeSphere 相似，您需要事先[下载 KubeKey v1.1.1](https://github.com/kubesphere/kubekey/releases)。下载 `tar.gz` 文件，将它传输到充当任务机的本地机器上进行安装。解压文件后，执行以下命令，使 `kk` 可执行。
 
 ```bash
 chmod +x kk
@@ -157,7 +157,7 @@ chmod +x kk
 1. 使用以下命令从能够访问互联网的机器上下载镜像清单文件 `images-list.txt`：
 
    ```bash
-   curl -L -O https://github.com/kubesphere/ks-installer/releases/download/v3.1.0/images-list.txt
+   curl -L -O https://github.com/kubesphere/ks-installer/releases/download/v3.1.1/images-list.txt
    ```
 
    {{< notice note >}}
@@ -169,7 +169,7 @@ chmod +x kk
 2. 下载 `offline-installation-tool.sh`。
 
    ```bash
-   curl -L -O https://github.com/kubesphere/ks-installer/releases/download/v3.1.0/offline-installation-tool.sh
+   curl -L -O https://github.com/kubesphere/ks-installer/releases/download/v3.1.1/offline-installation-tool.sh
    ```
 
 3. 使 `.sh` 文件可执行。
@@ -210,7 +210,7 @@ chmod +x kk
 
    {{< notice note >}}
 
-   - 您可以根据自己的需求变更下载的 Kubernetes 版本。安装 KubeSphere v3.1.0 的建议 Kubernetes 版本：v1.17.9，v1.18.8，v1.19.8 以及 v1.20.4。如果不指定 Kubernetes 版本，KubeKey 将默认安装 Kubernetes v1.19.8。有关受支持的 Kubernetes 版本的更多信息，请参见[支持矩阵](../../../installing-on-linux/introduction/kubekey/#支持矩阵)。
+   - 您可以根据自己的需求变更下载的 Kubernetes 版本。安装 KubeSphere v3.1.1 的建议 Kubernetes 版本：v1.17.9，v1.18.8，v1.19.8 以及 v1.20.4。如果不指定 Kubernetes 版本，KubeKey 将默认安装 Kubernetes v1.19.8。有关受支持的 Kubernetes 版本的更多信息，请参见[支持矩阵](../../../installing-on-linux/introduction/kubekey/#支持矩阵)。
 
    - 运行脚本后，会自动创建一个文件夹 `kubekey`。请注意，您稍后创建集群时，该文件和 `kk` 必须放在同一个目录下。
 
@@ -257,7 +257,7 @@ chmod +x kk
 例如：
 
 ```bash
-./kk create config --with-kubernetes v1.17.9 --with-kubesphere v3.1.0 -f config-sample.yaml
+./kk create config --with-kubernetes v1.17.9 --with-kubesphere v3.1.1 -f config-sample.yaml
 ```
 
 {{< notice note >}}
@@ -323,7 +323,7 @@ metadata:
   name: ks-installer
   namespace: kubesphere-system
   labels:
-    version: v3.1.0
+    version: v3.1.1
 spec:
   persistence:
     storageClass: ""
@@ -470,12 +470,12 @@ Account: admin
 Password: P@88w0rd
 
 NOTES：
-  1. After logging into the console, please check the
+  1. After you log into the console, please check the
      monitoring status of service components in
      the "Cluster Management". If any service is not
      ready, please wait patiently until all components
-     are ready.
-  2. Please modify the default password after login.
+     are up and running.
+  2. Please change the default password after login.
 
 #####################################################
 https://kubesphere.io             20xx-xx-xx xx:xx:xx
@@ -494,14 +494,14 @@ https://kubesphere.io             20xx-xx-xx xx:xx:xx
 
 ## 附录
 
-### KubeSphere v3.1.0 镜像清单
+### KubeSphere v3.1.1 镜像清单
 
 ```txt
 ##k8s-images
-kubesphere/kube-apiserver:v1.20.4
-kubesphere/kube-scheduler:v1.20.4
-kubesphere/kube-proxy:v1.20.4
-kubesphere/kube-controller-manager:v1.20.4
+kubesphere/kube-apiserver:v1.20.6
+kubesphere/kube-scheduler:v1.20.6
+kubesphere/kube-proxy:v1.20.6
+kubesphere/kube-controller-manager:v1.20.6
 kubesphere/kube-apiserver:v1.19.8
 kubesphere/kube-scheduler:v1.19.8
 kubesphere/kube-proxy:v1.19.8
@@ -510,10 +510,10 @@ kubesphere/kube-apiserver:v1.19.9
 kubesphere/kube-scheduler:v1.19.9
 kubesphere/kube-proxy:v1.19.9
 kubesphere/kube-controller-manager:v1.19.9
-kubesphere/kube-apiserver:v1.18.6
-kubesphere/kube-scheduler:v1.18.6
-kubesphere/kube-proxy:v1.18.6
-kubesphere/kube-controller-manager:v1.18.6
+kubesphere/kube-apiserver:v1.18.8
+kubesphere/kube-scheduler:v1.18.8
+kubesphere/kube-proxy:v1.18.8
+kubesphere/kube-controller-manager:v1.18.8
 kubesphere/kube-apiserver:v1.17.9
 kubesphere/kube-scheduler:v1.17.9
 kubesphere/kube-proxy:v1.17.9
@@ -525,10 +525,12 @@ calico/cni:v3.16.3
 calico/kube-controllers:v3.16.3
 calico/node:v3.16.3
 calico/pod2daemon-flexvol:v3.16.3
+calico/typha:v3.16.3
+kubesphere/flannel:v0.12.0
 coredns/coredns:1.6.9
 kubesphere/k8s-dns-node-cache:1.15.12
-openebs/provisioner-localpv:2.3.0
-openebs/linux-utils:2.3.0
+openebs/provisioner-localpv:2.10.1
+openebs/linux-utils:2.10.0
 kubesphere/nfs-client-provisioner:v3.1.0-k8s1.11
 ##csi-images
 csiplugin/csi-neonsan:v1.2.0
@@ -541,21 +543,22 @@ csiplugin/csi-snapshotter:v2.0.1
 csiplugin/csi-node-driver-registrar:v1.2.0
 csiplugin/csi-qingcloud:v1.2.0
 ##kubesphere-images
-kubesphere/ks-apiserver:v3.1.0
-kubesphere/ks-console:v3.1.0
-kubesphere/ks-controller-manager:v3.1.0
-kubesphere/ks-installer:v3.1.0
+kubesphere/ks-apiserver:v3.1.1
+kubesphere/ks-console:v3.1.1
+kubesphere/ks-controller-manager:v3.1.1
+kubesphere/ks-installer:v3.1.1
+kubesphere/kubectl:v1.20.0
 kubesphere/kubectl:v1.19.0
-redis:5.0.5-alpine
-alpine:3.10.4
-haproxy:2.0.4
+redis:5.0.12-alpine
+alpine:3.14
+haproxy:2.0.22-alpine
 nginx:1.14-alpine
 minio/minio:RELEASE.2019-08-07T01-59-21Z
 minio/mc:RELEASE.2019-08-07T23-14-43Z
 mirrorgooglecontainers/defaultbackend-amd64:1.4
 kubesphere/nginx-ingress-controller:v0.35.0
 osixia/openldap:1.3.0
-csiplugin/snapshot-controller:v2.0.1
+csiplugin/snapshot-controller:v3.0.3
 kubesphere/kubefed:v0.7.0
 kubesphere/tower:v0.2.0
 kubesphere/prometheus-config-reloader:v0.42.1
@@ -623,11 +626,11 @@ kubesphere/python-35-centos7:v2.1.0
 kubesphere/python-34-centos7:v2.1.0
 kubesphere/python-27-centos7:v2.1.0
 ##openpitrix-images
-kubesphere/openpitrix-jobs:v3.1.0
+kubespheredev/openpitrix-jobs:v3.1.1
 ##weave-scope-images
 weaveworks/scope:1.13.0
 ##kubeedge-images
-kubeedge/cloudcore:v1.6.1
+kubeedge/cloudcore:v1.6.2
 kubesphere/edge-watcher:v0.1.0
 kubesphere/kube-rbac-proxy:v0.5.0
 kubesphere/edge-watcher-agent:v0.1.0

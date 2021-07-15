@@ -107,7 +107,7 @@ Follow the step below to download [KubeKey](../kubekey).
 Download KubeKey from its [GitHub Release Page](https://github.com/kubesphere/kubekey/releases) or use the following command directly.
 
 ```bash
-curl -sfL https://get-kk.kubesphere.io | VERSION=v1.1.0 sh -
+curl -sfL https://get-kk.kubesphere.io | VERSION=v1.1.1 sh -
 ```
 
 {{</ tab >}}
@@ -123,7 +123,7 @@ export KKZONE=cn
 Run the following command to download KubeKey:
 
 ```bash
-curl -sfL https://get-kk.kubesphere.io | VERSION=v1.1.0 sh -
+curl -sfL https://get-kk.kubesphere.io | VERSION=v1.1.1 sh -
 ```
 
 {{< notice note >}}
@@ -138,7 +138,7 @@ After you download KubeKey, if you transfer it to a new machine also with poor n
 
 {{< notice note >}}
 
-The commands above download the latest release (v1.1.0) of KubeKey. You can change the version number in the command to download a specific version.
+The commands above download the latest release (v1.1.1) of KubeKey. You can change the version number in the command to download a specific version.
 
 {{</ notice >}}
 
@@ -162,7 +162,7 @@ Command:
 
 {{< notice note >}}
 
-- Recommended Kubernetes versions for KubeSphere v3.1.0: v1.17.9, v1.18.8, v1.19.8 and v1.20.4. If you do not specify a Kubernetes version, KubeKey will install Kubernetes v1.19.8 by default. For more information about supported Kubernetes versions, see [Support Matrix](../kubekey/#support-matrix).
+- Recommended Kubernetes versions for KubeSphere v3.1.1: v1.17.9, v1.18.8, v1.19.8, and v1.20.4. If you do not specify a Kubernetes version, KubeKey will install Kubernetes v1.19.8 by default. For more information about supported Kubernetes versions, see [Support Matrix](../kubekey/#support-matrix).
 
 - If you do not add the flag `--with-kubesphere` in the command in this step, KubeSphere will not be deployed unless you install it using the `addons` field in the configuration file or add this flag again when you use `./kk create cluster` later.
 - If you add the flag `--with-kubesphere` without specifying a KubeSphere version, the latest version of KubeSphere will be installed.
@@ -177,7 +177,7 @@ Here are some examples for your reference:
   ./kk create config [-f ~/myfolder/abc.yaml]
   ```
 
-- You can specify a KubeSphere version that you want to install (for example, `--with-kubesphere v3.1.0`).
+- You can specify a KubeSphere version that you want to install (for example, `--with-kubesphere v3.1.1`).
 
   ```bash
   ./kk create config --with-kubesphere [version]
@@ -319,12 +319,12 @@ Account: admin
 Password: P@88w0rd
 
 NOTES：
-  1. After logging into the console, please check the
+  1. After you log into the console, please check the
      monitoring status of service components in
      the "Cluster Management". If any service is not
      ready, please wait patiently until all components
-     are ready.
-  2. Please modify the default password after login.
+     are up and running.
+  2. Please change the default password after login.
 
 #####################################################
 https://kubesphere.io             20xx-xx-xx xx:xx:xx
