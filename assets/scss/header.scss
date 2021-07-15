@@ -340,11 +340,11 @@
           height: 16px;
           background-repeat: no-repeat;
           background-size: contain;
-          background-image: url('/images/header/github-star.png');
+          background-image: url('/images/header/github-star.svg');
         }
         &:hover {
           .star-img {
-            background-image: url('/images/header/github-star-hover.png');
+            background-image: url('/images/header/github-star-hover.svg');
           }
         }
       }
