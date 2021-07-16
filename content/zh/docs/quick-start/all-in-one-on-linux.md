@@ -6,7 +6,7 @@ linkTitle: "在 Linux 上以 All-in-One 模式安装 KubeSphere"
 weight: 2100
 ---
 
-对于刚接触 KubeSphere 并想快速上手该容器平台的用户，All-in-One 安装模式是最佳的选择，它能够帮助您零配置快速部署 KubeSphere 和 Kubernetes。
+对于刚接触 KubeSphere 并想快速上手该[容器平台](https://kubesphere.io/)的用户，All-in-One 安装模式是最佳的选择，它能够帮助您零配置快速部署 KubeSphere 和 Kubernetes。
 
 ## 视频演示
 
@@ -20,17 +20,35 @@ weight: 2100
 
 ### 硬件推荐配置
 
-|  操作系统                                                |  最低要求                        |
-| ------------------------------------------------------ | ------------------------------------------- |
-| **Ubuntu** *16.04, 18.04*                                      | CPU：2 核，内存：4 G，磁盘空间：40 G |
-| **Debian** *Buster, Stretch*                                   | CPU：2 核，内存：4 G，磁盘空间：40 G |
-| **CentOS** *7*.x                                               | CPU：2 核，内存：4 G，磁盘空间：40 G |
-| **Red Hat Enterprise Linux** *7*                               | CPU：2 核，内存：4 G，磁盘空间：40 G |
-| **SUSE Linux Enterprise Server** *15*/**openSUSE Leap** *15.2* | CPU：2 核，内存：4 G，磁盘空间：40 G |
+<table>
+  <tbody>
+    <tr>
+    <th width='320'>操作系统</th>
+    <th>最低配置</th>
+    </tr>
+    <tr>
+      <td><b>Ubuntu</b> <i>16.04</i>, <i>18.04</i></td>
+      <td>2 核 CPU，4 GB 内存，40 GB 磁盘空间</td>
+    </tr>
+    <tr>
+      <td><b>Debian</b> <i>Buster</i>, <i>Stretch</i></td>
+      <td>2 核 CPU，4 GB 内存，40 GB 磁盘空间</td>
+    </tr><tr>
+    <td><b>CentOS</b> <i>7.x</i></td>
+      <td>2 核 CPU，4 GB 内存，40 GB 磁盘空间</td>
+    </tr><tr>
+    <td><b>Red Hat Enterprise Linux 7</b></td>
+      <td>2 核 CPU，4 GB 内存，40 GB 磁盘空间</td>
+    </tr><tr>
+    <td><b>SUSE Linux Enterprise Server 15/openSUSE Leap 15.2</b></td>
+      <td>2 核 CPU，4 GB 内存，40 GB 磁盘空间</td>
+    </tr>
+  </tbody>
+</table>
 
 {{< notice note >}}
 
-以上的系统要求和以下的说明适用于没有启用任何可选组件的默认最小化安装。如果您的机器至少有 8 核 CPU 和 16 G 内存，则建议启用所有组件。有关更多信息，请参见[启用可插拔组件](../../pluggable-components/)。
+以上的系统要求和以下的教程适用于没有启用任何可选组件的默认最小化安装。如果您的机器至少有 8 核 CPU 和 16 GB 内存，则建议启用所有组件。有关更多信息，请参见[启用可插拔组件](../../pluggable-components/)。
 
 {{</ notice >}}
 
@@ -43,7 +61,28 @@ weight: 2100
 
 您的集群必须有一个可用的容器运行时。如果您使用 KubeKey 搭建集群，KubeKey 会默认安装最新版本的 Docker。或者，您也可以在创建集群前手动安装 Docker 或其他容器运行时。
 
-{{< content "common/container-runtime-requirements.md" >}}
+<table>
+  <tbody>
+    <tr>
+      <th width='500'>支持的容器运行时</th>
+      <th>版本</th>
+    </tr>
+    <tr>
+      <td>Docker</td>
+      <td>19.3.8 +</td>
+    </tr>
+    <tr>
+      <td>containerd（试验版，未经充分测试）</td>
+      <td>最新版</td>
+    </tr><tr>
+      <td>CRI-O（试验版，未经充分测试）</td>
+      <td>最新版</td>
+    </tr><tr>
+      <td>iSula（试验版，未经充分测试）</td>
+      <td>最新版</td>
+    </tr>
+  </tbody>
+</table>
 
 {{< notice note >}}
 
@@ -55,12 +94,33 @@ weight: 2100
 
 KubeKey 可以将 Kubernetes 和 KubeSphere 一同安装。针对不同的 Kubernetes 版本，需要安装的依赖项可能有所不同。您可以参考以下列表，查看是否需要提前在节点上安装相关的依赖项。
 
-|  依赖项 | Kubernetes 版本 ≥ 1.18 | Kubernetes 版本 < 1.18 |
-| ----------- | ---------------- | ---------------------- |
-| `socat`     | 必须              | 可选但建议  |
-| `conntrack` | 必须              | 可选但建议  |
-| `ebtables`  | 可选但建议         | 可选但建议  |
-| `ipset`     | 可选但建议         | 可选但建议  |
+<table>
+  <tbody>
+    <tr>
+      <th>依赖项</th>
+     <th>Kubernetes 版本 ≥ 1.18</th>
+      <th>Kubernetes 版本 < 1.18</th>
+    </tr>
+    <tr>
+      <td><code>socat</code></td>
+     <td>必须</td> 
+      <td>可选但建议</td> 
+     </tr>
+    <tr>
+      <td><code>conntrack</code></td>
+     <td>必须</td> 
+      <td>可选但建议</td> 
+    </tr><tr>
+    <td><code>ebtables</code></td>
+     <td>可选但建议</td> 
+    <td>可选但建议</td> 
+    </tr><tr>
+    <td><code>ipset</code></td>
+    <td>可选但建议</td> 
+     <td>可选但建议</td> 
+    </tr>
+  </tbody>
+</table>
 
 {{< notice info >}}
 
@@ -90,7 +150,7 @@ KubeKey 是用 Go 语言开发的一款全新的安装工具，代替了以前�
 从 [GitHub Release Page](https://github.com/kubesphere/kubekey/releases) 下载 KubeKey 或直接使用以下命令。
 
 ```bash
-curl -sfL https://get-kk.kubesphere.io | VERSION=v1.1.0 sh -
+curl -sfL https://get-kk.kubesphere.io | VERSION=v1.1.1 sh -
 ```
 
 {{</ tab >}}
@@ -106,7 +166,7 @@ export KKZONE=cn
 执行以下命令下载 KubeKey。
 
 ```bash
-curl -sfL https://get-kk.kubesphere.io | VERSION=v1.1.0 sh -
+curl -sfL https://get-kk.kubesphere.io | VERSION=v1.1.1 sh -
 ```
 
 {{< notice note >}}
@@ -121,7 +181,7 @@ curl -sfL https://get-kk.kubesphere.io | VERSION=v1.1.0 sh -
 
 {{< notice note >}}
 
-执行以上命令会下载最新版 KubeKey (v1.1.0)，您可以修改命令中的版本号下载指定版本。
+执行以上命令会下载最新版 KubeKey (v1.1.1)，您可以修改命令中的版本号下载指定版本。
 
 {{</ notice >}} 
 
@@ -142,7 +202,7 @@ chmod +x kk
 若要同时安装 Kubernetes 和 KubeSphere，可参考以下示例命令：
 
 ```bash
-./kk create cluster --with-kubernetes v1.20.4 --with-kubesphere v3.1.0
+./kk create cluster --with-kubernetes v1.20.4 --with-kubesphere v3.1.1
 ```
 
 {{< notice note >}}
@@ -180,12 +240,12 @@ Account: admin
 Password: P@88w0rd
 
 NOTES：
-  1. After logging into the console, please check the
+  1. After you log into the console, please check the
      monitoring status of service components in
-     the "Cluster Management". If any service is not
-     ready, please wait patiently until all components
-     are ready.
-  2. Please modify the default password after login.
+     "Cluster Management". If any service is not
+     ready, please wait patiently until all components 
+     are up and running.
+  2. Please change the default password after login.
 
 #####################################################
 https://kubesphere.io             20xx-xx-xx xx:xx:xx
@@ -200,7 +260,7 @@ https://kubesphere.io             20xx-xx-xx xx:xx:xx
 
 登录至控制台后，您可以在**服务组件**中查看各个组件的状态。如果要使用相关服务，您可能需要等待部分组件启动并运行。您也可以使用 `kubectl get pod --all-namespaces` 来检查 KubeSphere 相关组件的运行状况。
 
-![service-components](/images/docs/zh-cn/quickstart/all-in-one-on-linux/service-components.jpg)
+![service-components](/images/docs/zh-cn/quickstart/all-in-one-on-linux/service-components.png)
 
 ## 启用可插拔组件（可选）
 
