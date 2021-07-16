@@ -36,6 +36,10 @@ section2:
       content: "通过 14 年不断的发展，VNG 已成为越南和整个东南亚地区的 IT 领导企业之一。"
       link: "vng/"
 
+    - icon: "images/case/section6-zto.png"
+      content: "中通快递创建于 2002 年，是一家以快递为核心业务，集跨境、快运、商业、云仓、航空、金融、智能、传媒、冷链等生态版块于一体的综合物流服务企业。"
+      link: "zto/"
+
 section3:
   title: 'KubeSphere 助力各行各业'
   tip: 全部
