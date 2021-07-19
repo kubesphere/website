@@ -35,7 +35,7 @@ KubeSphere metering helps you track resource consumption within a given cluster 
        </tr>
         <tr>
          <td>Overview</td>
-          <td>Displays a consumption overview of different resources in a cluster since its creation. You can also see the billing information if you <a herf='../enable-billing/'>have set prices for these resources</a> in the ConfigMap <code>kubesphere-config</code>.</td>
+          <td>Displays a consumption overview of different resources in a cluster since its creation. You can also see the billing information if you <a href='../enable-billing/'>have set prices for these resources</a> in the ConfigMap <code>kubesphere-config</code>.</td>
        </tr> <tr>
          <td>Consumption by Yesterday</td>
          <td>Displays the total resource consumption by yesterday. You can also customize the time range and internal to see data within a specific period.</td>
