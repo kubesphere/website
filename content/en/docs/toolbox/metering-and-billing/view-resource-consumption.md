@@ -17,7 +17,7 @@ KubeSphere metering helps you track resource consumption within a given cluster 
 
 **Cluster Resource Consumption** contains resource usage information of clusters (and nodes included), such as CPU, memory and storage.
 
-1. Log in to the KubeSphere console as `admin`, click the hammer icon in the bottom-right corner and select **Metering and Billing**.
+1. Log in to the KubeSphere console as `admin`, click <img src="/images/docs/toolbox/metering-and-billing/view-resource-consumption/toolbox.png" width='20px' /> in the lower-right corner and select **Metering and Billing**.
 
 2. Click **View Consumption** in the **Cluster Resource Consumption** section.
 
@@ -27,17 +27,24 @@ KubeSphere metering helps you track resource consumption within a given cluster 
 
    On the right side, there are three parts showing resource consumption in different ways.
 
-   ### Overview
-
-   The top part displays a consumption overview of different resources in a cluster since its creation. You can also see the billing information if you [have set prices for these resources](../enable-billing/) in the ConfigMap `kubesphere-config`.
-
-   ### Consumption by Yesterday
-
-   The middle part shows the total resource consumption by yesterday while you can also customize the time range and internal to see data within a specific period.
-
-   ### Current Resources Included
-
-   The bottom part displays the consumption of resources included in the selected target object (in this case, all nodes in the selected cluster) over the last hour.
+   <table>
+     <tbody>
+       <tr>
+         <th width='200'>Module</th>
+         <th>Description</th>
+       </tr>
+        <tr>
+         <td>Overview</td>
+          <td>Displays a consumption overview of different resources in a cluster since its creation. You can also see the billing information if you <a herf='../enable-billing/'>have set prices for these resources</a> in the ConfigMap <code>kubesphere-config</code>.</td>
+       </tr> <tr>
+         <td>Consumption by Yesterday</td>
+         <td>Displays the total resource consumption by yesterday. You can also customize the time range and internal to see data within a specific period.</td>
+       </tr> <tr>
+         <td>Current Resources Included</td>
+         <td>Displays the consumption of resources included in the selected target object (in this case, all nodes in the selected cluster) over the last hour.</td>
+       </tr>
+     </tbody>
+   </table>
 
 4. You can click a cluster on the left and dive deeper into a node or Pod to see detailed consumption information.
 
@@ -47,7 +54,7 @@ KubeSphere metering helps you track resource consumption within a given cluster 
    
    {{< notice note >}}
    
-   To export the metering and billing data of an object as a CSV file, check the box on the left and click **✓**.
+   To export the metering and billing data of an object as a CSV file, select the checkbox on the left and click **✓**.
    
    {{</ notice >}} 
 
@@ -55,7 +62,7 @@ KubeSphere metering helps you track resource consumption within a given cluster 
 
 **Workspace (Project) Resource Consumption** contains resource usage information of workspaces (and projects included), such as CPU, memory and storage.
 
-1. Log in to the KubeSphere console as `admin`, click the hammer icon in the bottom-right corner and select **Metering and Billing**.
+1. Log in to the KubeSphere console as `admin`, click <img src="/images/docs/toolbox/metering-and-billing/view-resource-consumption/toolbox.png" width='20px' /> in the lower-right corner and select **Metering and Billing**.
 
 2. Click **View Consumption** in the **Workspace (Project) Resource Consumption** section.
 
