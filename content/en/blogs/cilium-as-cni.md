@@ -1,5 +1,5 @@
 ---
-title: 'Cilium as the CNI: Deploy a Kubernetes Cluster with KubeSphere Installed'
+title: 'Install Cilium on Kubernetes Using KubeKey'
 keywords: Kubernetes, KubeSphere, Cilium, Network
 description: Explore what Cilium can do on a Kubernetes cluster.
 tag: 'Kubernetes, KubeSphere, Cilium, Network'
@@ -32,9 +32,9 @@ The scenarios where you can use KubeKey:
 - Upgrade a cluster.
 - Install Kubernetes-related add-ons (Chart or YAML).
 
-Currently, KubeKey supports the integration of Cilium as the CNI in deploying Kubernetes clusters with KubeSphere installed, which makes the deployment process simpler and more efficient. 
+Currently, KubeKey supports the installation of Cilium on Kubernetes clusters, which makes the deployment process simpler and more efficient. 
 
-## Cilium as the CNI: Deploy a Kubernetes Cluster with KubeSphere Installed
+## Install Cilium on a Kubernetes Cluster
 
 ### System requirements
 
