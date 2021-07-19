@@ -188,7 +188,7 @@ Hubble is designed for network visualization. Through the eBPF data paths provid
 1. Run the following command on your host machine to create a demo Service:
 
    ```bash
-   kubectl create -f https://raw.githubusercontent.com/cilium/cilium/1.9.7/examples/minikube/http-sw-app.yaml
+   kubectl create -f https://raw.githubusercontent.com/cilium/cilium/1.9.7/examples/minikube/http-sw-app.yaml -n default
    ```
 
    ![demo-service](/images/blogs/en/cilium-as-cni/demo-service.png)
@@ -196,9 +196,9 @@ Hubble is designed for network visualization. Through the eBPF data paths provid
 2. Run the following commands to access the demo resources:
 
    ```bash
-   $ kubectl exec xwing -- curl -s -XPOST deathstar.default.svc.cluster.local/v1/request-landing
+   $ kubectl exec xwing -n default -- curl -s -XPOST deathstar.default.svc.cluster.local/v1/request-landing
    Ship landed
-   $ kubectl exec tiefighter -- curl -s -XPOST deathstar.default.svc.cluster.local/v1/request-landing
+   $ kubectl exec tiefighter -n default -- curl -s -XPOST deathstar.default.svc.cluster.local/v1/request-landing
    Ship landed
    ```
 
