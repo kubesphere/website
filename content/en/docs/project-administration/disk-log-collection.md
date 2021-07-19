@@ -1,12 +1,12 @@
 ---
 title: "Disk Log Collection"
 keywords: 'KubeSphere, Kubernetes, project, disk, log, collection'
-description: 'Enable disk log collection so that you can collect, manage and analyze logs in a unified way.'
+description: 'Enable disk log collection so that you can collect, manage, and analyze logs in a unified way.'
 linkTitle: "Disk Log Collection"
 weight: 13600
 ---
 
-KubeSphere supports multiple log collection methods so that Ops teams can collect, manage and analyze logs in a unified and flexible way.
+KubeSphere supports multiple log collection methods so that Ops teams can collect, manage, and analyze logs in a unified and flexible way.
 
 This tutorial demonstrates how to collect disk logs for an example app.
 
@@ -19,9 +19,8 @@ This tutorial demonstrates how to collect disk logs for an example app.
 
 1. Log in to the web console of KubeSphere as `project-admin` and go to your project.
 
-2. From the left navigation bar, select **Advanced Settings** in **Project Settings**. Under **Disk Log Collection**, enable the feature through the toggle switch.
+2. From the left navigation bar, select **Advanced Settings** in **Project Settings**. Under **Disk Log Collection**, click <img src="/images/docs/project-administration/disk-log-collection/log-toggle-switch.png" width="60" /> to enable the feature.
 
-   ![enable-disk-log-collection](/images/docs/project-administration/disk-log-collection/enable-disk-log-collection.png)
 
 ## Create a Deployment
 
@@ -35,7 +34,7 @@ This tutorial demonstrates how to collect disk logs for an example app.
 
    ![alpine-image](/images/docs/project-administration/disk-log-collection/alpine-image.png)
 
-5. Scroll down to **Start Command** and check it. Enter the following values for **Run Command** and **Parameters** respectively, click **√**, and then click **Next**.
+5. Scroll down to **Start Command** and select the checkbox. Enter the following values for **Run Command** and **Parameters** respectively, click **√**, and then click **Next**.
 
    **Run Command**
 
@@ -57,10 +56,8 @@ This tutorial demonstrates how to collect disk logs for an example app.
 
    ![run-command](/images/docs/project-administration/disk-log-collection/run-command.png)
 
-6. On the **Mount Volumes** tab, enable **Disk Log Collection** and click **Add Volume**.
+6. On the **Mount Volumes** tab, click <img src="/images/docs/project-administration/disk-log-collection/toggle-switch.png" width="20" /> to enable **Disk Log Collection** and click **Add Volume**.
 
-   ![mount-volumes](/images/docs/project-administration/disk-log-collection/mount-volumes.png)
-   
 7. On the **Temporary Volume** tab, enter a name for the volume (for example, `demo-disk-log-collection`) and set the access mode and path. Refer to the image below as an example.
 
    ![volume-example](/images/docs/project-administration/disk-log-collection/volume-example.png)
@@ -79,13 +76,9 @@ This tutorial demonstrates how to collect disk logs for an example app.
 
 1. Under the **Deployments** tab, click the Deployment just created to go to its detail page.
 
-2. In **Resource Status**, click the arrow on the right to view container details, and then click the log icon of `logsidecar-container` (filebeat container) to inspect disk logs.
+2. In **Resource Status**, you can click <img src="/images/docs/project-administration/disk-log-collection/arrow.png" width="20" /> to view container details, and then click <img src="/images/docs/project-administration/disk-log-collection/log-icon.png" width="20" /> of `logsidecar-container` (filebeat container) to view disk logs.
 
-   ![container-log](/images/docs/project-administration/disk-log-collection/container-log.png)
-
-   ![inspect-logs](/images/docs/project-administration/disk-log-collection/inspect-logs.png)
-
-3. Alternatively, you can also use the **Log Search** function from **Toolbox** in the bottom-right corner to view stdout logs. For example, use the Pod name of the Deployment for a fuzzy query:
+3. Alternatively, you can also click <img src="/images/docs/project-administration/disk-log-collection/toolbox.png" width="20" />  in the lower-right corner and select **Log Search** to view stdout logs. For example, use the Pod name of the Deployment for a fuzzy query:
 
    ![fuzzy-match](/images/docs/project-administration/disk-log-collection/fuzzy-match.png)
 

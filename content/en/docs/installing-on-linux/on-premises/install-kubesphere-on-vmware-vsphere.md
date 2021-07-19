@@ -289,7 +289,7 @@ systemctl status -l keepalived
 
 ## Download KubeKey
 
-[Kubekey](https://github.com/kubesphere/kubekey) is the brand-new installer which provides an easy, fast and flexible way to install Kubernetes and KubeSphere v3.0.0.
+[Kubekey](https://github.com/kubesphere/kubekey) is the brand-new installer which provides an easy, fast and flexible way to install Kubernetes and KubeSphere v3.1.1.
 
 Follow the step below to download KubeKey.
 
@@ -300,7 +300,7 @@ Follow the step below to download KubeKey.
 Download KubeKey from its [GitHub Release Page](https://github.com/kubesphere/kubekey/releases) or use the following command directly.
 
 ```bash
-curl -sfL https://get-kk.kubesphere.io | VERSION=v1.1.0 sh -
+curl -sfL https://get-kk.kubesphere.io | VERSION=v1.1.1 sh -
 ```
 
 {{</ tab >}}
@@ -316,7 +316,7 @@ export KKZONE=cn
 Run the following command to download KubeKey:
 
 ```bash
-curl -sfL https://get-kk.kubesphere.io | VERSION=v1.1.0 sh -
+curl -sfL https://get-kk.kubesphere.io | VERSION=v1.1.1 sh -
 ```
 
 {{< notice note >}}
@@ -331,7 +331,7 @@ After you download KubeKey, if you transfer it to a new machine also with poor n
 
 {{< notice note >}}
 
-The commands above download the latest release (v1.1.0) of KubeKey. You can change the version number in the command to download a specific version.
+The commands above download the latest release (v1.1.1) of KubeKey. You can change the version number in the command to download a specific version.
 
 {{</ notice >}} 
 
@@ -345,15 +345,15 @@ chmod +x kk
 
 With KubeKey, you can install Kubernetes and KubeSphere together. You have the option to create a multi-node cluster by customizing parameters in the configuration file.
 
-Create a Kubernetes cluster with KubeSphere installed (for example, `--with-kubesphere v3.1.0`):
+Create a Kubernetes cluster with KubeSphere installed (for example, `--with-kubesphere v3.1.1`):
 
 ```bash
-./kk create config --with-kubernetes v1.19.8 --with-kubesphere v3.1.0
+./kk create config --with-kubernetes v1.19.8 --with-kubesphere v3.1.1
 ```
 
 {{< notice note >}}
 
-- Recommended Kubernetes versions for KubeSphere v3.1.0: v1.17.9, v1.18.8, v1.19.8 and v1.20.4. If you do not specify a Kubernetes version, KubeKey will install Kubernetes v1.19.8 by default. For more information about supported Kubernetes versions, see [Support Matrix](../../../installing-on-linux/introduction/kubekey/#support-matrix).
+- Recommended Kubernetes versions for KubeSphere v3.1.1: v1.17.9, v1.18.8, v1.19.8, and v1.20.4. If you do not specify a Kubernetes version, KubeKey will install Kubernetes v1.19.8 by default. For more information about supported Kubernetes versions, see [Support Matrix](../../../installing-on-linux/introduction/kubekey/#support-matrix).
 
 - If you do not add the flag `--with-kubesphere` in the command in this step, KubeSphere will not be deployed unless you install it using the `addons` field in the configuration file or add this flag again when you use `./kk create cluster` later.
 - If you add the flag `--with-kubesphere` without specifying a KubeSphere version, the latest version of KubeSphere will be installed.
@@ -429,7 +429,7 @@ metadata:
   name: ks-installer
   namespace: kubesphere-system
   labels:
-    version: v3.0.0
+    version: v3.1.1
 spec:
   local_registry: ""
   persistence:
@@ -520,12 +520,12 @@ Console: http://10.10.71.214:30880
 Account: admin
 Password: P@88w0rd
 NOTES：
-  1. After logging into the console, please check the
+  1. After you log into the console, please check the
      monitoring status of service components in
      the "Cluster Management". If any service is not
      ready, please wait patiently until all components
-     are ready.
-  2. Please modify the default password after login.
+     are up and running.
+  2. Please change the default password after login.
 #####################################################
 https://kubesphere.io             2020-08-15 23:32:12
 #####################################################

@@ -20,9 +20,8 @@ KubeSphere 支持多种日志收集方式，使运维团队能够以灵活统一
 
 1. 以 `project-admin` 身份登录 KubeSphere 的 Web 控制台，进入项目。
 
-2. 在左侧导航栏中，选择**项目设置**中的**高级设置**。在**落盘日志收集**一栏下，通过切换开关以启用该功能。
+2. 在左侧导航栏中，选择**项目设置**中的**高级设置**。在**落盘日志收集**一栏下，点击 <img src="/images/docs/zh-cn/project-administration/disk-log-collection/log-toggle-switch.png" width="60" /> 以启用该功能。
 
-   ![enable-disk-collection](/images/docs/zh-cn/project-administration/disk-log-collection/enable-disk-collection.png)
 
 ## 创建部署
 
@@ -58,10 +57,8 @@ KubeSphere 支持多种日志收集方式，使运维团队能够以灵活统一
 
    ![run-command](/images/docs/zh-cn/project-administration/disk-log-collection/run-command.png)
 
-6. 在**挂载存储**选项卡下，启用**落盘日志收集**，点击**添加存储卷**。
+6. 在**挂载存储**选项卡下，切换 <img src="/images/docs/zh-cn/project-administration/disk-log-collection/toggle-switch.png" width="20" /> 启用**落盘日志收集**，点击**添加存储卷**。
 
-   ![mount-volumes](/images/docs/zh-cn/project-administration/disk-log-collection/mount-volumes.png)
-   
 7. 在**临时存储卷**选项卡下，输入存储卷名称（例如 `demo-disk-log-collection`），并设置访问模式和路径。请参考以下示例。
 
    ![volume-example](/images/docs/zh-cn/project-administration/disk-log-collection/volume-example.png)
@@ -80,11 +77,7 @@ KubeSphere 支持多种日志收集方式，使运维团队能够以灵活统一
 
 1. 在**部署**选项卡下，点击刚才创建的部署以访问其详情页。
 
-2. 在**资源状态**中，点击右侧的箭头查看容器详情，然后点击 `logsidecar-container`（filebeat 容器）日志图标以检查落盘日志。
-
-   ![container-log](/images/docs/zh-cn/project-administration/disk-log-collection/container-log.png)
-
-   ![inspect-logs](/images/docs/zh-cn/project-administration/disk-log-collection/inspect-logs.png)
+2. 在**资源状态**中，点击 <img src="/images/docs/zh-cn/project-administration/disk-log-collection/arrow.png" width="20" /> 查看容器详情，然后点击 `logsidecar-container`（filebeat 容器)日志图标 <img src="/images/docs/zh-cn/project-administration/disk-log-collection/log-icon.png" width="20" /> 以检查落盘日志。
 
 3. 或者，您也可以使用右下角**工具箱**中的**日志查询**功能来查看标准输出日志。例如，使用该部署的 Pod 名称进行模糊匹配：
 

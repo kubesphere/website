@@ -6,13 +6,16 @@ linkTitle: "Minimal KubeSphere on Kubernetes"
 weight: 2200
 ---
 
-In addition to installing KubeSphere on a Linux machine, you can also deploy it on existing Kubernetes clusters directly. This tutorial demonstrates the general steps of completing a minimal KubeSphere installation on Kubernetes. For more information, see [Installing on Kubernetes](../../installing-on-kubernetes/).
+In addition to installing KubeSphere on a Linux machine, you can also deploy it on existing Kubernetes clusters. This tutorial demonstrates the general steps of completing a minimal KubeSphere installation on Kubernetes. For more information, see [Installing on Kubernetes](../../installing-on-kubernetes/).
+
+## Prerequisites
+
+- To install KubeSphere v3.1.1 on Kubernetes, your Kubernetes version must be v1.17.x, v1.18.x, v1.19.x or v1.20.x.
+- Make sure your machine meets the minimal hardware requirement: CPU > 1 Core, Memory > 2 GB.
+- A **default** Storage Class in your Kubernetes cluster needs to be configured before the installation.
 
 {{< notice note >}}
 
-- To install KubeSphere v3.1.0 on Kubernetes, your Kubernetes version must be v1.17.x, v1.18.x, v1.19.x or v1.20.x.
-- Make sure your machine meets the minimal hardware requirement: CPU > 1 Core, Memory > 2 G.
-- A **default** Storage Class in your Kubernetes cluster needs to be configured before the installation.
 - The CSR signing feature is activated in `kube-apiserver` when it is started with the `--cluster-signing-cert-file` and `--cluster-signing-key-file` parameters. See [RKE installation issue](https://github.com/kubesphere/kubesphere/issues/1925#issuecomment-591698309).
 - For more information about the prerequisites of installing KubeSphere on Kubernetes, see [Prerequisites](../../installing-on-kubernetes/introduction/prerequisites/).
 
@@ -24,23 +27,23 @@ In addition to installing KubeSphere on a Linux machine, you can also deploy it 
 
 ## Deploy KubeSphere
 
-After you make sure your machine meets the prerequisites, you can follow the steps below to install KubeSphere.
+After you make sure your machine meets the conditions, perform the following steps to install KubeSphere.
 
-1. Execute the following commands:
+1. Run the following commands to start installation:
 
     ```bash
-    kubectl apply -f https://github.com/kubesphere/ks-installer/releases/download/v3.1.0/kubesphere-installer.yaml
+    kubectl apply -f https://github.com/kubesphere/ks-installer/releases/download/v3.1.1/kubesphere-installer.yaml
     
-    kubectl apply -f https://github.com/kubesphere/ks-installer/releases/download/v3.1.0/cluster-configuration.yaml
+    kubectl apply -f https://github.com/kubesphere/ks-installer/releases/download/v3.1.1/cluster-configuration.yaml
     ```
 
-2. Inspect the logs of installation:
+2. After KubeSphere is successfully installed, you can run the following command to view the installation logs:
 
     ```bash
     kubectl logs -n kubesphere-system $(kubectl get pod -n kubesphere-system -l app=ks-install -o jsonpath='{.items[0].metadata.name}') -f
     ```
 
-3. Use `kubectl get pod --all-namespaces` to see whether all Pods are running normally in relevant namespaces of KubeSphere. If they are, check the port (`30880` by default) of the console through the following command:
+3. Use `kubectl get pod --all-namespaces` to see whether all Pods are running normally in relevant namespaces of KubeSphere. If they are, check the port (`30880` by default) of the console by running the following command:
 
     ```bash
     kubectl get svc/ks-console -n kubesphere-system
@@ -54,7 +57,7 @@ After you make sure your machine meets the prerequisites, you can follow the ste
 
 ## Enable Pluggable Components (Optional)
 
-The guide above is used only for the minimal installation by default. To enable other components in KubeSphere, see [Enable Pluggable Components](../../pluggable-components/) for more details.
+This guide is used only for the minimal installation by default. For more information about how to enable other components in KubeSphere, see [Enable Pluggable Components](../../pluggable-components/).
 
 ## Code Demonstration
 <script src="https://asciinema.org/a/362122.js" id="asciicast-362122" async></script>

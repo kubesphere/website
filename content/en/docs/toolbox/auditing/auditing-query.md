@@ -82,7 +82,7 @@ Any account has the authorization to query auditing logs, while the logs each ac
 
 ## Enter Query Parameters
 
-1. Select a filter and enter the keyword you want to search. For example, query auditing logs containing the information of `user` changed as shown in the following screenshot:
+1. Select a filter and enter the keyword you want to search. For example, query auditing logs containing the information of `services` created as shown in the following screenshot:
 
    ![user-changed](/images/docs/toolbox/auditing-query/user-changed.png)
 
