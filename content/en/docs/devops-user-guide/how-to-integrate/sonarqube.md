@@ -83,7 +83,6 @@ To integrate SonarQube into your pipeline, you must install SonarQube Server fir
    s2ioperator-0                              1/1     Running   1          84m
    sonarqube-postgresql-0                     1/1     Running   0          5m31s
    sonarqube-sonarqube-bb595d88b-97594        1/1     Running   2          5m31s
-   uc-jenkins-update-center-8c898f44f-m8dz2   1/1     Running   0          85m
    ```
 
 2. Access the SonarQube console `http://{$Node IP}:{$NodePort}` in your browser and you can see its homepage as below:
