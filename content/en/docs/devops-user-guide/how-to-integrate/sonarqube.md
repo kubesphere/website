@@ -84,7 +84,7 @@ To integrate SonarQube into your pipeline, you must install SonarQube Server fir
    sonarqube-postgresql-0                     1/1     Running   0          5m31s
    sonarqube-sonarqube-bb595d88b-97594        1/1     Running   2          5m31s
    ```
-   
+
 2. Access the SonarQube console `http://{$Node IP}:{$NodePort}` in your browser and you can see its homepage as below:
 
    ![access-sonarqube-console](/images/docs/devops-user-guide/tool-integration/integrate-sonarqube-into-pipeline/access-sonarqube-console.jpg)
