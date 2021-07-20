@@ -8,7 +8,7 @@ weight: 6200
 
 As an open-source and app-centric container platform, KubeSphere provides users with a Helm-based App Store for application lifecycle management on the back of [OpenPitrix](https://github.com/openpitrix/openpitrix), an open-source web-based system to package, deploy and manage different types of apps. The KubeSphere App Store allows ISVs, developers and users to upload, test, deploy and release apps with just several clicks in a one-stop shop.
 
-Internally, the KubeSphere App Store can serve as a place for different teams to share data, middleware, and office applications. Externally, it is conducive to setting industry standards of building and delivery. By default, there are 16 built-in apps in the App Store. After you enable this feature, you can add more apps with app templates.
+Internally, the KubeSphere App Store can serve as a place for different teams to share data, middleware, and office applications. Externally, it is conducive to setting industry standards of building and delivery. By default, there are 17 built-in apps in the App Store. After you enable this feature, you can add more apps with app templates.
 
 ![app-store](/images/docs/enable-pluggable-components/kubesphere-app-store/app-store.png)
 
@@ -106,7 +106,7 @@ You can find the web kubectl tool by clicking <img src="/images/docs/enable-plug
 
 ## Verify the Installation of the Component
 
-After you log in to the console, if you can see **App Store** in the top-left corner and 16 built-in apps in it, it means the installation is successful.
+After you log in to the console, if you can see **App Store** in the top-left corner and 17 built-in apps in it, it means the installation is successful.
 
 ![app-store](/images/docs/enable-pluggable-components/kubesphere-app-store/app-store.png)
 
