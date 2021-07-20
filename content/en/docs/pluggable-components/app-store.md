@@ -8,7 +8,7 @@ weight: 6200
 
 As an open-source and app-centric container platform, KubeSphere provides users with a Helm-based App Store for application lifecycle management on the back of [OpenPitrix](https://github.com/openpitrix/openpitrix), an open-source web-based system to package, deploy and manage different types of apps. The KubeSphere App Store allows ISVs, developers and users to upload, test, deploy and release apps with just several clicks in a one-stop shop.
 
-Internally, the KubeSphere App Store can serve as a place for different teams to share data, middleware, and office applications. Externally, it is conducive to setting industry standards of building and delivery. By default, there are 16 built-in apps in the App Store. After you enable this feature, you can add more apps with app templates.
+Internally, the KubeSphere App Store can serve as a place for different teams to share data, middleware, and office applications. Externally, it is conducive to setting industry standards of building and delivery. By default, there are 17 built-in apps in the App Store. After you enable this feature, you can add more apps with app templates.
 
 ![app-store](/images/docs/enable-pluggable-components/kubesphere-app-store/app-store.png)
 
@@ -72,9 +72,9 @@ As you [install KubeSphere on Kubernetes](../../installing-on-kubernetes/introdu
 
 ## Enable the App Store after Installation
 
-1. Log in to the console as `admin`. Click **Platform** in the top-left corner and select **Cluster Management**.
+1. Log in to the console as `admin`. Click **Platform** in the upper-left corner and select **Cluster Management**.
    
-2. Click **CRDs** and enter `clusterconfiguration` in the search bar. Click the result to view its detail page.
+2. Click **CRDs** and enter `clusterconfiguration` in the search bar. Click the result to view its details page.
 
     {{< notice info >}}
 
@@ -84,7 +84,7 @@ A Custom Resource Definition (CRD) allows users to create a new type of resource
 
 3. In **Resource List**, click <img src="/images/docs/enable-pluggable-components/kubesphere-app-store/three-dots.png" height="20px"> on the right of `ks-installer` and select **Edit YAML**.
 
-4. In this YAML file, navigate to `openpitrix` and change `false` to `true` for `enabled`. After you finish, click **Update** in the bottom-right corner to save the configuration.
+4. In this YAML file, go to `openpitrix` and change `false` to `true` for `enabled`. After you finish, click **Update** in the lower-right corner to save the configuration.
 
     ```yaml
     openpitrix:
@@ -92,7 +92,7 @@ A Custom Resource Definition (CRD) allows users to create a new type of resource
         enabled: true # Change "false" to "true".
     ```
 
-5. You can use the web kubectl to check the installation process by executing the following command:
+5. You can use the web kubectl to check the installation process by running the following command:
 
     ```bash
     kubectl logs -n kubesphere-system $(kubectl get pod -n kubesphere-system -l app=ks-install -o jsonpath='{.items[0].metadata.name}') -f
@@ -100,13 +100,13 @@ A Custom Resource Definition (CRD) allows users to create a new type of resource
 
     {{< notice note >}}
 
-You can find the web kubectl tool by clicking <img src="/images/docs/enable-pluggable-components/kubesphere-app-store/hammer.png" height="20px"> in the bottom-right corner of the console.
+You can find the web kubectl tool by clicking <img src="/images/docs/enable-pluggable-components/kubesphere-app-store/toolbox.png" height="20px"> in the lower-right corner of the console.
 
 {{</ notice >}}
 
 ## Verify the Installation of the Component
 
-After you log in to the console, if you can see **App Store** in the top-left corner and 16 built-in apps in it, it means the installation is successful.
+After you log in to the console, if you can see **App Store** in the upper-left corner and 17 built-in apps in it, it means the installation is successful.
 
 ![app-store](/images/docs/enable-pluggable-components/kubesphere-app-store/app-store.png)
 

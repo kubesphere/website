@@ -8,9 +8,9 @@ weight: 6200
 
 作为一个开源的、以应用为中心的容器平台，KubeSphere 在 [OpenPitrix](https://github.com/openpitrix/openpitrix) 的基础上，为用户提供了一个基于 Helm 的应用商店，用于应用生命周期管理。OpenPitrix 是一个开源的 Web 平台，用于打包、部署和管理不同类型的应用。KubeSphere 应用商店让 ISV、开发者和用户能够在一站式服务中只需点击几下就可以上传、测试、部署和发布应用。
 
-对内，KubeSphere 应用商店可以作为不同团队共享数据、中间件和办公应用的场所。对外，有利于设立构建和交付的行业标准。默认情况下，应用商店中内置了 16 个应用。启用该功能后，您可以通过应用模板添加更多应用。
+对内，KubeSphere 应用商店可以作为不同团队共享数据、中间件和办公应用的场所。对外，有利于设立构建和交付的行业标准。默认情况下，应用商店中内置了 17 个应用。启用该功能后，您可以通过应用模板添加更多应用。
 
-![app-store](/images/docs/zh-cn/enable-pluggable-components/kubesphere-app-store/app-store-page.png)
+![app-store](/images/docs/zh-cn/enable-pluggable-components/kubesphere-app-store/app-store.png)
 
 有关更多信息，请参阅[应用商店](../../application-store/)。
 
@@ -74,7 +74,7 @@ weight: 6200
 
 1. 以 `admin` 身份登录控制台，点击左上角的**平台管理**，选择**集群管理**。
 
-2. 点击**自定义资源 CRD**，在搜索栏中输入 `clusterconfiguration`，点击结果查看其详细页面。
+2. 点击**自定义资源 CRD**，在搜索栏中输入 `clusterconfiguration`，点击结果查看其详情页面。
 
     {{< notice info >}}
 自定义资源定义 (CRD) 允许用户在不增加额外 API 服务器的情况下创建一种新的资源类型，用户可以像使用其他 Kubernetes 原生对象一样使用这些自定义资源。
@@ -98,14 +98,14 @@ weight: 6200
 
     {{< notice note >}}
 
-您可以通过点击控制台右下角的 <img src="/images/docs/zh-cn/enable-pluggable-components/kubesphere-app-store/hammer.png" height="20px"> 找到 Web Kubectl 工具。
+您可以通过点击控制台右下角的 <img src="/images/docs/zh-cn/enable-pluggable-components/kubesphere-app-store/toolbox.png" height="20px"> 找到 Web Kubectl 工具。
     {{</ notice >}}
 
 ## 验证组件的安装
 
-在您登录控制台后，如果您能看到页面左上角的**应用商店**以及其中的 16 个内置应用，则说明安装成功。
+在您登录控制台后，如果您能看到页面左上角的**应用商店**以及其中的 17 个内置应用，则说明安装成功。
 
-![app-store](/images/docs/zh-cn/enable-pluggable-components/kubesphere-app-store/app-store-page.png)
+![app-store](/images/docs/zh-cn/enable-pluggable-components/kubesphere-app-store/app-store.png)
 
 {{< notice note >}}
 
