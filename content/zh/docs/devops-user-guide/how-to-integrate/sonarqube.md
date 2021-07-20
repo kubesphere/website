@@ -83,9 +83,8 @@ weight: 11310
    s2ioperator-0                              1/1     Running   1          84m
    sonarqube-postgresql-0                     1/1     Running   0          5m31s
    sonarqube-sonarqube-bb595d88b-97594        1/1     Running   2          5m31s
-   uc-jenkins-update-center-8c898f44f-m8dz2   1/1     Running   0          85m
    ```
-
+   
 2. 在浏览器中访问 SonarQube 控制台 `http://{$Node IP}:{$NodePort}`，您可以看到其主页，如下所示：
 
    ![访问 SonarQube 控制台](/images/docs/zh-cn/devops-user-guide/tool-integration/integrate-sonarqube-into-pipelines/access-sonarqube-console.png)
