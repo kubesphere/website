@@ -18,12 +18,8 @@ KubeSphere Web 控制台目前支持四种语言：简体中文、繁体中文�
 
 1. 登录 KubeSphere，点击右上角的帐户名称。
 
-2. 选择**个人设置**。
-
-   ![user-settings](/images/docs/zh-cn/faq/kubesphere-web-console/change-console-language/user-settings.png)
+2. 在下拉菜单中，选择**个人设置**。
 
 3. 在**基本信息**页面，从**语言**下拉列表中选择所需的语言。
 
-   ![basic-information-page](/images/docs/zh-cn/faq/kubesphere-web-console/change-console-language/basic-information-page.png)
-
-4. 点击 **✓** 图标保存设置。
+4. 点击 <img src="/images/docs/zh-cn/faq/kubesphere-web-console/change-console-language/check-mark.png" width='20' /> 保存设置。
