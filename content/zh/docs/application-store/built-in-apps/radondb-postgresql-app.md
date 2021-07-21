@@ -45,11 +45,7 @@ weight: 14294
 
    ![project-overview](/images/docs/zh-cn/appstore/built-in-apps/radondb-postgresql-app/project-overview.png)
 
-2. 进入**应用负载**下的**服务**页面，点击 RadonDB PostgreSQL 服务名称。
-
-   ![RadonDB PostgreSQL 服务](/images/docs/zh-cn/appstore/built-in-apps/radondb-postgresql-app/radondb-postgresql-service.png)
-
-3. 进入**应用负载**下的**工作负载**页面，点击**有状态副本集**，查看集群状态。
+2. 进入**应用负载**下的**工作负载**页面，点击**有状态副本集**，查看集群状态。
 
    ![statefulsets-running](/images/docs/zh-cn/appstore/built-in-apps/radondb-postgresql-app/statefulsets-running.png)
 
@@ -57,11 +53,11 @@ weight: 14294
 
    ![statefulset-monitoring](/images/docs/zh-cn/appstore/built-in-apps/radondb-postgresql-app/statefulset-monitoring.png)
 
-4. 进入**应用负载**下的**容器组**页面，可查看所有状态的容器。
+3. 进入**应用负载**下的**容器组**页面，可查看所有状态的容器。
 
    ![pods-running](/images/docs/zh-cn/appstore/built-in-apps/radondb-postgresql-app/pods-running.png)
 
-5. 进入**存储管理**下的**存储卷**页面，可查看存储卷，所有组件均使用了持久化存储。
+4. 进入**存储管理**下的**存储卷**页面，可查看存储卷，所有组件均使用了持久化存储。
 
    ![volumes](/images/docs/zh-cn/appstore/built-in-apps/radondb-postgresql-app/volumes.png)
 
@@ -71,22 +67,18 @@ weight: 14294
 
 ### 步骤 3：访问 RadonDB PostgreSQL
 
-1. 在 `demo-project` 项目的**应用负载**下的**容器组**页面。
+1. 在 **应用负载**下的**容器组**页面，点击一个容器的名称，进入容器详情页面。
 
-2. 点击一个容器的名称，进入容器详情页面。
-
-3. 在**资源状态**页面，点击**终端**图标。
+2. 在**资源状态**页面，点击**终端**图标。
 
    ![RadonDB PostgreSQL 终端](/images/docs/zh-cn/appstore/built-in-apps/radondb-postgresql-app/radondb-postgresql-terminal.png)
 
-4. 在弹出窗口中，向终端输入命令使用该应用。
-
-   执行如下命令，并输入 PostgreSQL 集群用户的密码。
+3. 在弹出窗口中，向终端输入命令使用该应用。
 
    ```bash
-   psql -h <pod name> -p 5432 -U postgres -d postgres
+   psql -h <Pod name> -p 5432 -U postgres -d postgres
    ```
 
    ![访问 RadonDB PostgreSQL](/images/docs/zh-cn/appstore/built-in-apps/radondb-postgresql-app/radondb-postgresql-service-terminal.png)
 
-5. 如果您想从集群外部访问 RadonDB PostgreSQL，详细信息请参见 [RadonDB PostgreSQL 开源项目](https://github.com/radondb/radondb-postgresql-kubernetes)。
+4. 如果您想从集群外部访问 RadonDB PostgreSQL，详细信息请参见 [RadonDB PostgreSQL 开源项目](https://github.com/radondb/radondb-postgresql-kubernetes)。
