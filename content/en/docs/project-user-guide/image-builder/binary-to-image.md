@@ -43,13 +43,13 @@ You must create a Docker Hub Secret so that the Docker image created through B2I
 
 1. In the same project, navigate to **Services** under **Application Workloads** and click **Create**.
 
-   ![create-service](/images/docs/project-user-guide/image-builder/b2i-publish-artifact-to-kubernetes/create-service.jpg)
+   ![create-service](/images/docs/project-user-guide/image-builder/b2i-publish-artifact-to-kubernetes/create-service.png)
 
-2. Scroll down to **Build a New Service through the Artifact** and select **war**. This tutorial use the [spring-mvc-showcase](https://github.com/spring-projects/spring-mvc-showcase) project as a sample and uploads a war artifact to KubeSphere. Set a name, such as `b2i-war-java8`, and click **Next**.
+2. Scroll down to **Build a New Service through the Artifact** and select **war**. This tutorial uses the [spring-mvc-showcase](https://github.com/spring-projects/spring-mvc-showcase) project as a sample and uploads a war artifact to KubeSphere. Set a name, such as `b2i-war-java8`, and click **Next**.
 
 3. On the **Build Settings** page, provide the following information accordingly and click **Next**.
 
-   ![build-settings](/images/docs/project-user-guide/image-builder/b2i-publish-artifact-to-kubernetes/build-settings.jpg)
+   ![build-settings](/images/docs/project-user-guide/image-builder/b2i-publish-artifact-to-kubernetes/build-settings.png)
 
    **Service Type**: Select **Stateless Service** for this example. For more information about different Services, see [Service Type](../../../project-user-guide/application-workloads/services/#service-type).
 
@@ -65,7 +65,7 @@ You must create a Docker Hub Secret so that the Docker image created through B2I
    
 4. On the **Container Settings** page, scroll down to **Service Settings** to set the access policy for the container. Select **HTTP** for **Protocol**, customize the name (for example, `http-port`), and enter `8080` for both **Container Port** and **Service Port**. Click **Next** to continue.
 
-   ![container-settings](/images/docs/project-user-guide/image-builder/b2i-publish-artifact-to-kubernetes/container-settings.jpg)
+   ![container-settings](/images/docs/project-user-guide/image-builder/b2i-publish-artifact-to-kubernetes/container-settings.png)
 
    {{< notice note >}}
 
@@ -75,48 +75,48 @@ You must create a Docker Hub Secret so that the Docker image created through B2I
 
 5. On the **Mount Volumes** page, you can add a volume for the container. For more information, see [Volumes](../../../project-user-guide/storage/volumes/). Click **Next** to continue.
 
-6. On the **Advanced Settings** page, check **Internet Access** and select **NodePort** as the access method. Click **Create** to finish the whole process.
+6. On the **Advanced Settings** page, select **Internet Access** and choose **NodePort** as the access method. Click **Create** to finish the whole process.
 
-   ![advanced-settings](/images/docs/project-user-guide/image-builder/b2i-publish-artifact-to-kubernetes/advanced-settings.jpg)
+   ![advanced-settings](/images/docs/project-user-guide/image-builder/b2i-publish-artifact-to-kubernetes/advanced-settings.png)
 
-7. Click **Image Builder** from the navigation bar and you can see that the example image is being built.![building](/images/docs/project-user-guide/image-builder/b2i-publish-artifact-to-kubernetes/building.jpg)
+7. Click **Image Builder** from the navigation bar and you can see that the example image is being built.![building](/images/docs/project-user-guide/image-builder/b2i-publish-artifact-to-kubernetes/building.png)
 
 
 ### Step 3: Check results
 
 1. Wait for a while and you can see the status of the image has reached **Successful**.
 
-   ![successful](/images/docs/project-user-guide/image-builder/b2i-publish-artifact-to-kubernetes/successful.jpg)
+   ![successful](/images/docs/project-user-guide/image-builder/b2i-publish-artifact-to-kubernetes/successful.png)
 
-2. Click this image to go to its detail page. Under **Job Records**, click the arrow icon on the right of a record to see building logs. You can see `Build completed successfully` at the end of the log if everything runs normally.
+2. Click this image to go to its detail page. Under **Job Records**, click <img src="/images/docs/project-user-guide/image-builder/b2i-publish-artifact-to-kubernetes/down-arrow.png" width="20px" /> on the right of a record to see building logs. You can see `Build completed successfully` at the end of the log if everything runs normally.
 
-   ![inspect-logs](/images/docs/project-user-guide/image-builder/b2i-publish-artifact-to-kubernetes/inspect-logs.jpg)
+   ![inspect-logs](/images/docs/project-user-guide/image-builder/b2i-publish-artifact-to-kubernetes/inspect-logs.png)
 
 3. Go back to the previous page, and you can see the corresponding Job, Deployment and Service of the image have all been created successfully.
 
    #### Service
 
-   ![service](/images/docs/project-user-guide/image-builder/b2i-publish-artifact-to-kubernetes/service.jpg)
+   ![service](/images/docs/project-user-guide/image-builder/b2i-publish-artifact-to-kubernetes/service.png)
 
    #### Deployment
 
-   ![deployment](/images/docs/project-user-guide/image-builder/b2i-publish-artifact-to-kubernetes/deployment.jpg)
+   ![deployment](/images/docs/project-user-guide/image-builder/b2i-publish-artifact-to-kubernetes/deployment.png)
 
    #### Job
 
-   ![job](/images/docs/project-user-guide/image-builder/b2i-publish-artifact-to-kubernetes/job.jpg)
+   ![job](/images/docs/project-user-guide/image-builder/b2i-publish-artifact-to-kubernetes/job.png)
 
 4. In your Docker Hub repository, you can see that KubeSphere has pushed the image to the repository with the expected tag.
 
-   ![docker-image](/images/docs/project-user-guide/image-builder/b2i-publish-artifact-to-kubernetes/docker-image.jpg)
+   ![docker-image](/images/docs/project-user-guide/image-builder/b2i-publish-artifact-to-kubernetes/docker-image.png)
 
 ### Step 4: Access the B2I Service
 
 1. On the **Services** page, click the B2I Service to go to its detail page, where you can see the port number has been exposed.
 
-   ![exposed-port](/images/docs/project-user-guide/image-builder/b2i-publish-artifact-to-kubernetes/exposed-port.jpg)
+   ![exposed-port](/images/docs/project-user-guide/image-builder/b2i-publish-artifact-to-kubernetes/exposed-port.png)
 
-2. Access the Service at `http://{$Node IP}:{$NodePort}/{$Binary-Package-Name}/`.
+2. Access the Service at `http://<Node IP>:<NodePort>/<Binary-Package-Name>/`.
 
    ![access-service](/images/docs/project-user-guide/image-builder/b2i-publish-artifact-to-kubernetes/access-service.jpg)
 
@@ -144,15 +144,15 @@ Make sure you have created a Secret for Docker Hub. For more information, see [C
 
 2. Select **Image Builder** from the navigation bar and click **Create**.
 
-   ![image-builder](/images/docs/project-user-guide/image-builder/b2i-publish-artifact-to-kubernetes/image-builder.jpg)
+   ![image-builder](/images/docs/project-user-guide/image-builder/b2i-publish-artifact-to-kubernetes/image-builder.png)
 
-3. In the dialog that appears, select **binary** and click **Next**.
+3. In the displayed dialog box, select **binary** and click **Next**.
 
-   ![upload-artifact](/images/docs/project-user-guide/image-builder/b2i-publish-artifact-to-kubernetes/upload-artifact.jpg)
+   ![upload-artifact](/images/docs/project-user-guide/image-builder/b2i-publish-artifact-to-kubernetes/upload-artifact.png)
 
 4. On the **Build Settings** page, provide the following information accordingly and click **Create**.
 
-   ![buidling-settings-2](/images/docs/project-user-guide/image-builder/b2i-publish-artifact-to-kubernetes/buidling-settings-2.jpg)
+   ![buidling-settings-2](/images/docs/project-user-guide/image-builder/b2i-publish-artifact-to-kubernetes/buidling-settings-2.png)
 
    **Upload Artifact**: Download [b2i-binary](https://github.com/kubesphere/tutorial/raw/master/tutorial%204%20-%20s2i-b2i/b2i-binary) and upload it to KubeSphere.
 
@@ -166,23 +166,23 @@ Make sure you have created a Secret for Docker Hub. For more information, see [C
 
 5. On the **Image Builder** page, you can see that the image is being built.
 
-   ![building-status](/images/docs/project-user-guide/image-builder/b2i-publish-artifact-to-kubernetes/building-status.jpg)
+   ![building-status](/images/docs/project-user-guide/image-builder/b2i-publish-artifact-to-kubernetes/building-status.png)
 
 ### Step 2: Check results
 
 1. Wait for a while and you can see the status of the image has reached **Successful**.
 
-   ![image-success](/images/docs/project-user-guide/image-builder/b2i-publish-artifact-to-kubernetes/image-success.jpg)
+   ![image-success](/images/docs/project-user-guide/image-builder/b2i-publish-artifact-to-kubernetes/image-success.png)
 
-2. Click this image to go to its detail page. Under **Job Records**, click the arrow icon on the right of a record to see building logs. You can see `Build completed successfully` at the end of the log if everything runs normally.
+2. Click this image to go to its detail page. Under **Job Records**, click <img src="/images/docs/project-user-guide/image-builder/b2i-publish-artifact-to-kubernetes/down-arrow.png" width="20px" /> on the right of a record to see building logs. You can see `Build completed successfully` at the end of the log if everything runs normally.
 
-   ![inspect-log](/images/docs/project-user-guide/image-builder/b2i-publish-artifact-to-kubernetes/inspect-log.jpg)
+   ![inspect-log](/images/docs/project-user-guide/image-builder/b2i-publish-artifact-to-kubernetes/inspect-log.png)
 
 3. Go back to the previous page, and you can see the corresponding Job of the image has been created successfully.
 
-   ![job-created](/images/docs/project-user-guide/image-builder/b2i-publish-artifact-to-kubernetes/job-created.jpg)
+   ![job-created](/images/docs/project-user-guide/image-builder/b2i-publish-artifact-to-kubernetes/job-created.png)
 
 4. In your Docker Hub repository, you can see that KubeSphere has pushed the image to the repository with the expected tag.
 
-   ![docker-image-pushed](/images/docs/project-user-guide/image-builder/b2i-publish-artifact-to-kubernetes/docker-image-pushed.jpg)
+   ![docker-image-pushed](/images/docs/project-user-guide/image-builder/b2i-publish-artifact-to-kubernetes/docker-image-pushed.png)
 
