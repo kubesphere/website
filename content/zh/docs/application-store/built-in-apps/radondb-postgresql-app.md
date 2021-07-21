@@ -71,14 +71,22 @@ weight: 14294
 
 ### 步骤 3：访问 RadonDB PostgreSQL
 
-1. 在 `demo-project` 项目的**概览**页面。
+1. 在 `demo-project` 项目的**应用负载**下的**容器组**页面。
 
-2. 进入**应用负载**下的**容器组**页面，展开菜单查看容器详情，然后点击**终端**图标。
+2. 点击一个容器的名称，进入容器详情页面。
+
+3. 在**资源状态**页面，点击**终端**图标。
 
    ![RadonDB PostgreSQL 终端](/images/docs/zh-cn/appstore/built-in-apps/radondb-postgresql-app/radondb-postgresql-terminal.png)
 
-3. 在弹出窗口中，直接向终端输入命令使用该应用。
+4. 在弹出窗口中，向终端输入命令使用该应用。
+
+   执行如下命令，并输入 PostgreSQL 集群用户的密码。
+
+   ```bash
+   psql -h <pod name> -p 5432 -U postgres -d postgres
+   ```
 
    ![访问 RadonDB PostgreSQL](/images/docs/zh-cn/appstore/built-in-apps/radondb-postgresql-app/radondb-postgresql-service-terminal.png)
 
-4. 如果您想从集群外部访问 RadonDB PostgreSQL，详细信息请参见 [RadonDB PostgreSQL 开源项目](https://github.com/radondb/radondb-postgresql-kubernetes)。
+5. 如果您想从集群外部访问 RadonDB PostgreSQL，详细信息请参见 [RadonDB PostgreSQL 开源项目](https://github.com/radondb/radondb-postgresql-kubernetes)。
