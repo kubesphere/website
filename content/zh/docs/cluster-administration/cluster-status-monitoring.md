@@ -16,8 +16,6 @@ KubeSphere 支持对集群 CPU、内存、网络和磁盘等资源的相关指�
 
 1. 点击左上角的**平台管理**，然后选择**集群管理**。
 
-    ![Platform](/images/docs/zh-cn/cluster-administration/cluster-status-monitoring/platform.png)
-
 2. 如果您已启用了[多集群功能](../../multicluster-management/)并已导入了 Member 集群，您可以选择一个特定集群以查看其应用程序资源。如果尚未启用该功能，请直接进行下一步。
 
     ![Clusters Management](/images/docs/zh-cn/cluster-administration/cluster-status-monitoring/clusters-management.png)

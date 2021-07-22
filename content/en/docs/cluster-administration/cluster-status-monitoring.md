@@ -18,8 +18,6 @@ You need an account granted a role including the authorization of **Cluster Mana
 
 2. If you have enabled the [multi-cluster feature](../../multicluster-management/) with member clusters imported, you can select a specific cluster to view its application resources. If you have not enabled the feature, refer to the next step directly.
 
-    ![Cluster Management](/images/docs/cluster-administration/cluster-status-monitoring/clusters-management.png)
-
 3. Choose **Cluster Status** under **Monitoring & Alerting** to see the overview of cluster status monitoring, including **Cluster Node Status**, **Components Status**, **Cluster Resources Usage**, **ETCD Monitoring**, and **Service Component Monitoring**, as shown in the following figure.
 
     ![Cluster Status Monitoring](/images/docs/cluster-administration/cluster-status-monitoring/cluster-status-monitoring.png)
