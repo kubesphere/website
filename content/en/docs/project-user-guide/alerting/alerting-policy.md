@@ -31,7 +31,7 @@ KubeSphere provides alerting policies for nodes and workloads. This tutorial dem
 
    - **Resource Type**. Select the resource type you want to monitor, such as **Deployment**, **StatefulSet** and **DaemonSet**.
    - **Monitoring Target**. Depending on the resource type you select, the target can be different. You cannot see any target if you do not have any workload in the project.
-   - **Alerting Rule**. Define a rule for the alerting policy. These rules are based on Prometheus expressions and an alert will be triggered when conditions are met. You can monitor objects such as CPU and memory.
+   - **Alerting Rules**. Define a rule for the alerting policy. These rules are based on Prometheus expressions and an alert will be triggered when conditions are met. You can monitor objects such as CPU and memory.
 
    ![rule-template](/images/docs/project-user-guide/alerting/alerting-policies/rule-template.png)
 
