@@ -14,9 +14,7 @@ You need an account granted a role including the authorization of **Cluster Mana
 
 ## Cluster Status Monitoring
 
-1. Click **Platform** in the top-left corner and select **Cluster Management**.
-
-    ![Platform](/images/docs/cluster-administration/cluster-status-monitoring/platform.png)
+1. Click **Platform** in the upper-left corner and select **Cluster Management**.
 
 2. If you have enabled the [multi-cluster feature](../../multicluster-management/) with member clusters imported, you can select a specific cluster to view its application resources. If you have not enabled the feature, refer to the next step directly.
 
@@ -32,17 +30,16 @@ You need an account granted a role including the authorization of **Cluster Mana
 
     ![Cluster Nodes](/images/docs/cluster-administration/cluster-status-monitoring/cluster-nodes.png)
 
-2. In **Cluster Nodes**, click the node name to view usage details in **Running Status**, including the information of CPU, Memory, Pod, Local Storage in the current node, and its health status.
+2. In **Cluster Nodes**, click the node name to view usage details in **Status**, including the information of CPU, Memory, Pod, Local Storage in the current node, and its health status.
 
-    ![Running Status](/images/docs/cluster-administration/cluster-status-monitoring/running-status.png)
+    ![status](/images/docs/cluster-administration/cluster-status-monitoring/status.png)
 
-3. Click the tab **Monitoring** to view how the node is functioning during a certain period based on different metrics, including **CPU Utilization, CPU Load Average, Memory Utilization, Disk Utilization, inode Utilization, IOPS, DISK Throughput, and Network Bandwidth**, as shown in the following figure.
+3. Click the tab **Monitoring** to view how the node is functioning during a certain period based on different metrics, including **CPU Utilization, CPU Load Average, Memory Utilization, Disk Utilization, inode Utilization, IOPS, Disk Throughput, and Network Bandwidth**, as shown in the following figure.
 
     ![Monitoring](/images/docs/cluster-administration/cluster-status-monitoring/monitoring.png)
 
-    {{< notice tip >}}
-You can customize the time range from the drop-down list in the top-right corner to view historical data.
-    {{</ notice >}}
+    {{< notice tip >}}You can customize the time range from the drop-down list in the top-right corner to view historical data.
+{{</ notice >}}
 
 ### Component status
 
@@ -56,9 +53,8 @@ KubeSphere monitors the health status of various service components in the clust
 
     ![Service Components Status](/images/docs/cluster-administration/cluster-status-monitoring/service-components-status.png)
 
-    {{< notice tip >}}
-Components marked in orange may turn to green after a period of time, the reasons of which may be different, such as image pulling retries or pod recreations. You can click the component to see its service details.
-    {{</ notice >}}
+    {{< notice tip >}}Components marked in orange may turn to green after a period of time, the reasons of which may be different, such as image pulling retries or pod recreations. You can click the component to see its service details.
+{{</ notice >}}
 
 ### Cluster resources usage
 
