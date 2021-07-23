@@ -42,7 +42,7 @@ You need an account granted a role including the authorization of **Cluster Mana
 
 4. To create a storage class, click **Create** and enter the basic information in the displayed dialog box. When you finish, click **Next**.
 
-5. In KubeSphere, you can create storage classes for `QingCloud-CSI`, `Glusterfs` and `Ceph RBD`. Alternatively, you can also create customized storage classes for other storage systems based on your needs. Select a type and click **Next**.
+5. In KubeSphere, you can create storage classes for `QingCloud-CSI`, `Glusterfs`, and `Ceph RBD`. Alternatively, you can also create customized storage classes for other storage systems based on your needs. Select a type and click **Next**.
 
     ![create-storage-class-storage-system](/images/docs/cluster-administration/persistent-volume-and-storage-class/create-storage-class-storage-system.png)
 
