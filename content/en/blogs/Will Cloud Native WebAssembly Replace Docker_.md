@@ -1,4 +1,4 @@
-# ****Will Cloud Native WebAssembly Replace Docker?*****
+# ****Will Cloud Native WebAssembly Replace Docker?****
 
 Holding a brand new form, WebAssembly excels in its portability, small size, fast loading and compatibility. Given its good security, compatibility, high efficiency and lightweight, WebAssembly is an ideal technology for applications based on sandbox schemes and has got noticed from communities of containers, function computing, IoT and edge computing. What is WebAssembly? Is it capable of replacing Docker?
 
