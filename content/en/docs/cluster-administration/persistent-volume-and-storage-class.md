@@ -32,21 +32,17 @@ You need an account granted a role including the authorization of **Cluster Mana
 
 ## Manage Storage Classes
 
-1. Click **Platform** in the top-left corner and select **Cluster Management**.
+1. Click **Platform** in the upper-left corner and select **Cluster Management**.
    
-    ![clusters-management-select](/images/docs/cluster-administration/persistent-volume-and-storage-class/clusters-management-select.jpg)
-    
 2. If you have enabled the [multi-cluster feature](../../multicluster-management/) with member clusters imported, you can select a specific cluster. If you have not enabled the feature, refer to the next step directly.
 
-3. On the **Cluster Management** page, navigate to **Storage Classes** under **Storage**, where you can create, update and delete a storage class.
+3. On the **Cluster Management** page, go to **Storage Classes** under **Storage**, where you can create, update and delete a storage class.
 
     ![storage-class](/images/docs/cluster-administration/persistent-volume-and-storage-class/storage-class.jpg)
 
-4. To create a storage class, click **Create** and enter the basic information in the pop-up window. When you finish, click **Next**.
+4. To create a storage class, click **Create** and enter the basic information in the displayed dialog box. When you finish, click **Next**.
 
-    ![create-storage-class-basic-info](/images/docs/cluster-administration/persistent-volume-and-storage-class/create-storage-class-basic-info.png)
-
-5. In KubeSphere, you can create storage classes for `QingCloud-CSI`, `Glusterfs` and `Ceph RBD` directly. Alternatively, you can also create customized storage classes for other storage systems based on your needs. Select a type and click **Next**.
+5. In KubeSphere, you can create storage classes for `QingCloud-CSI`, `Glusterfs` and `Ceph RBD`. Alternatively, you can also create customized storage classes for other storage systems based on your needs. Select a type and click **Next**.
 
     ![create-storage-class-storage-system](/images/docs/cluster-administration/persistent-volume-and-storage-class/create-storage-class-storage-system.png)
 
@@ -54,7 +50,8 @@ You need an account granted a role including the authorization of **Cluster Mana
 
 ### Common settings
 
-Some settings are commonly used and shared among storage classes. You can find them as dashboard properties on the console, which are also indicated by fields or annotations in the StorageClass manifest. You can see the manifest file in YAML format by enabling **Edit Mode** in the top-right corner.
+Some settings are commonly used and shared among storage classes. You can find them as dashboard properties on the console, which are also indicated by fields or annotations in the StorageClass manifest. You can see the manifest file in YAML format by enabling **Edit Mode** in the upper-right corner.
+
 Here are property descriptions of some commonly used fields in KubeSphere.
 
 | Property | Description |
@@ -77,18 +74,18 @@ QingCloud CSI is a CSI plugin on Kubernetes for the storage service of QingCloud
 
 #### Settings
 
-![storage-volume-qingcloud](/images/docs/cluster-administration/persistent-volume-and-storage-class/storage-volume-qingcloud.jpg)
+![storage-volume-qingcloud](/images/docs/cluster-administration/persistent-volume-and-storage-class/storage-volume-qingcloud.png)
 
 | Property | Description |
 | :---- | :---- |
-| type     | On the QingCloud platform, 0 represents high performance volumes. 2 represents high capacity volumes. 3 represents super high performance volumes. 5 represents Enterprise Server SAN. 6 represents NeonSan HDD. 100 represents standard volumes. 200 represents enterprise SSD. |
+| type     | On the QingCloud platform, 0 represents high performance volumes. 2 represents high capacity volumes. 3 represents super high performance volumes. 5 represents Enterprise Server SAN. 100 represents standard volumes. 200 represents enterprise SSD. |
 | maxSize  | The volume size upper limit. |
 | stepSize | The volume size increment. |
 | minSize  | The volume size lower limit. |
 | fsType   | Filesystem type of the volume: ext3, ext4 (default), xfs. |
 | tags     | The ID of QingCloud Tag resource, split by commas. |
 
-More storage class parameters can be seen in [QingCloud-CSI user guide](https://github.com/yunify/qingcloud-csi/blob/master/docs/user-guide.md#set-storage-class).
+For more information about storage class parameters, see [QingCloud-CSI user guide](https://github.com/yunify/qingcloud-csi/blob/master/docs/user-guide.md#set-storage-class).
 
 ### Glusterfs
 
@@ -152,9 +149,7 @@ You can create custom storage classes for your storage systems if they are not d
 #### NFS Introduction
 
 NFS (Net File System) is widely used on Kubernetes with the external-provisioner volume plugin
-[nfs-client](https://github.com/kubernetes-retired/external-storage/tree/master/nfs-client). You can create the storage class of nfs-client by clicking **Custom** in the image below.
-
-![Create Custom Storage Class](/images/storage/create-storage-class-storage-system-custom.png)
+[nfs-client](https://github.com/kubernetes-retired/external-storage/tree/master/nfs-client). You can create the storage class of nfs-client by clicking **Custom**.
 
 {{< notice note >}}
 
@@ -169,7 +164,7 @@ It is not recommended that you use NFS storage for production (especially on Kub
 
 #### Common Settings
 
-![custom-storage-class](/images/docs/cluster-administration/persistent-volume-and-storage-class/custom-storage-class.jpg)
+![custom-storage-class](/images/docs/cluster-administration/persistent-volume-and-storage-class/custom-storage-class.png)
 
 | Property | Description |
 | :---- | :---- |
