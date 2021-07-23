@@ -6,38 +6,38 @@ linkTitle: "企业空间配额"
 weight: 9700
 ---
 
-Workspace quotas are used to control the total resource usage of all projects and DevOps projects in a workspace. Similar to [project quotas](../project-quotas/), workspace quotas contain requests and limits of CPU and memory. Requests make sure projects in the workspace can get the resources they needs as they are specifically guaranteed and reserved. On the contrary, limits ensure that the resource usage of all projects in the workspace can never go above a certain value.
+企业空间配额用于管理企业空间中所有项目和 DevOps 工程的总资源用量。企业空间配额与[项目配额](../project-quotas/)相似，也包含 CPU 和内存的预留 (Request) 和限制 (Limit)。预留确保企业空间中的项目能够获得其所需的资源，因为这些资源已经得到明确保障和预留。相反，限制则确保企业空间中的所有项目的资源用量不能超过特定数值。
 
-In [a multi-cluster architecture](../../multicluster-management/), as you need to [assign one or multiple clusters to a workspace](../../cluster-administration/cluster-settings/cluster-visibility-and-authorization/), you can decide the amount of resources that can be used by the workspace on different clusters.
+在[多集群架构](../../multicluster-management/)中，由于您需要[将一个或多个集群分配到企业空间中](../../cluster-administration/cluster-settings/cluster-visibility-and-authorization/)，您可以设置该企业空间在不同集群上的资源用量。
 
-This tutorial demonstrates how to manage resource quotas for a workspace.
+本教程演示如何管理企业空间中的资源配额。
 
-## Prerequisites
+## 准备工作
 
-You have an available workspace and an account (`ws-manager`). The account must have the `workspaces-manager` role at the platform level. For more information, see [Create Workspaces, Projects, Accounts and Roles](../../quick-start/create-workspace-and-project/).
+您需要准备一个可用的企业空间和一个账户 (`ws-manager`)。该账户必须在平台层级具有 `workspaces-manager` 角色。有关更多信息，请参阅[创建企业空间、项目、帐户和角色](../../quick-start/create-workspace-and-project/)。
 
-## Set Workspace Quotas
+## 设置企业空间配额
 
-1. Log in to the KubeSphere web console as `ws-manager` and go to a workspace.
+1. 使用 `ws-manager` 用户登录 KubeSphere Web 控制台，进入企业空间。
 
-2. Navigate to **Quota Management** under **Workspace Settings**.
+2. 在**企业空间设置**下，选择**配额管理**。
 
-3. The **Quota Management** page lists all the available clusters assigned to the workspace and their respective requests and limits of CPU and memory. Click **Edit Quota** on the right of a cluster.
+3. **配额管理**页面列有分配到该企业空间的全部可用集群，以及各集群的 **CPU 限额**、**CPU 需求**、**内存限额**和**内存需求**。
 
-4. In the dialog that appears, you can see that KubeSphere does not set any requests or limits for the workspace by default. To set requests and limits to control CPU and memory resources, use the slider to move to a desired value or enter numbers directly. Leaving a field blank means you do not set any requests or limits.
+4. 在列表右侧点击**编辑配额**即可查看企业空间配额信息。默认情况下，KubeSphere 不为企业空间设置任何资源预留或资源限制。如需设置资源预留或资源限制来管理 CPU 和内存资源，您可以移动 <img src="/images/docs/zh-cn/workspace-administration-and-user-guide/workspace-quotas/slider.png" width="20" /> 至期望数值或直接输入期望数值。将字段设为空值表示不对资源进行预留或限制。
 
-   ![edit-workspace-quotas](/images/docs/workspace-administration/workspace-quotas/edit-workspace-quotas.png)
+   ![edit-workspace-quotas](/images/docs/zh-cn/workspace-administration-and-user-guide/workspace-quotas/edit-workspace-quotas.png)
 
    {{< notice note >}}
 
-   The limit can never be lower than the request.
+   资源预留不能超过资源限制。
 
    {{</ notice >}} 
 
-5. Click **OK** to finish setting quotas.
+5. 配额设置完成后，点击**确定**。
 
-## See Also
+## 另请参见
 
-[Project Quotas](../project-quotas/)
+[项目配额](../project-quotas/)
 
-[Container Limit Ranges](../../project-administration/container-limit-ranges/)
+[容器限制范围](../../project-administration/container-limit-ranges/)
