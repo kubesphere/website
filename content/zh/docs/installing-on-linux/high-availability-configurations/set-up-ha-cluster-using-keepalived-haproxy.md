@@ -181,7 +181,7 @@ yum install keepalived haproxy psmisc -y
 4. 使 Keepalived 在开机后自动运行：
 
    ```bash
-   systemctl enable haproxy
+   systemctl enable keepalived
    ```
 
 5. 确保您在另一台机器 (`lb2`) 上也配置了 Keepalived。
@@ -267,7 +267,7 @@ yum install keepalived haproxy psmisc -y
 从 [GitHub Release Page](https://github.com/kubesphere/kubekey/releases) 下载 KubeKey 或者直接使用以下命令。
 
 ```bash
-curl -sfL https://get-kk.kubesphere.io | VERSION=v1.1.0 sh -
+curl -sfL https://get-kk.kubesphere.io | VERSION=v1.1.1 sh -
 ```
 
 {{</ tab >}}
@@ -283,7 +283,7 @@ export KKZONE=cn
 运行以下命令来下载 KubeKey：
 
 ```bash
-curl -sfL https://get-kk.kubesphere.io | VERSION=v1.1.0 sh -
+curl -sfL https://get-kk.kubesphere.io | VERSION=v1.1.1 sh -
 ```
 
 {{< notice note >}}
@@ -298,7 +298,7 @@ curl -sfL https://get-kk.kubesphere.io | VERSION=v1.1.0 sh -
 
 {{< notice note >}}
 
-通过以上命令，可以下载 KubeKey 的最新版本 (v1.1.0)。您可以更改命令中的版本号来下载特定的版本。
+通过以上命令，可以下载 KubeKey 的最新版本 (v1.1.1)。您可以更改命令中的版本号来下载特定的版本。
 
 {{</ notice >}} 
 
@@ -311,12 +311,12 @@ chmod +x kk
 使用默认配置创建一个示例配置文件。此处以 Kubernetes v1.20.4 作为示例。
 
 ```bash
-./kk create config --with-kubesphere v3.1.0 --with-kubernetes v1.20.4
+./kk create config --with-kubesphere v3.1.1 --with-kubernetes v1.20.4
 ```
 
 {{< notice note >}}
 
-- 安装 KubeSphere v3.1.0 的建议 Kubernetes 版本：v1.17.9，v1.18.8，v1.19.8 以及 v1.20.4。如果不指定 Kubernetes 版本，KubeKey 将默认安装 Kubernetes v1.19.8。有关受支持的 Kubernetes 版本的更多信息，请参见[支持矩阵](../../../installing-on-linux/introduction/kubekey/#支持矩阵)。
+- 安装 KubeSphere v3.1.1 的建议 Kubernetes 版本：v1.17.9，v1.18.8，v1.19.8 以及 v1.20.4。如果不指定 Kubernetes 版本，KubeKey 将默认安装 Kubernetes v1.19.8。有关受支持的 Kubernetes 版本的更多信息，请参见[支持矩阵](../../../installing-on-linux/introduction/kubekey/#支持矩阵)。
 - 如果您没有在本步骤的命令中添加标志 `--with-kubesphere`，那么除非您使用配置文件中的 `addons` 字段进行安装，或者稍后使用 `./kk create cluster` 时再添加该标志，否则 KubeSphere 将不会被部署。
 - 如果您添加标志 `--with-kubesphere` 时未指定 KubeSphere 版本，则会安装最新版本的 KubeSphere。
 
@@ -399,12 +399,12 @@ spec:
    Password: P@88w0rd
    
    NOTES：
-     1. After logging into the console, please check the
+     1. After you log into the console, please check the
         monitoring status of service components in
         the "Cluster Management". If any service is not
         ready, please wait patiently until all components
-        are ready.
-     2. Please modify the default password after login.
+        are up and running.
+     2. Please change the default password after login.
    
    #####################################################
    https://kubesphere.io             2020-xx-xx xx:xx:xx

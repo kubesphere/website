@@ -171,6 +171,8 @@
               background-position: bottom;
 
               & > p {
+                  display: flex;
+                  align-items: center;
                   padding: 30px 40px;
                   font-weight: 600;
                   line-height: 1.2;
@@ -179,8 +181,6 @@
                   font-size: 0;
 
                   & > span {
-                    display: inline-block;
-                    vertical-align: middle;
                     width: 40px;
                     height: 40px;
                     margin-right: 10px;
@@ -193,9 +193,6 @@
                   }
 
                   & > a {
-                    display: inline-block;
-                    vertical-align: middle;
-                    width: 243px;
                     font-size: 20px;
                   }
               }

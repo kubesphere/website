@@ -332,7 +332,7 @@ You can use KubeKey to install a specified Kubernetes version. The dependency th
 
 ## KubeSphere and its Graphic Dashboard
 
-KubeSphere is a **distributed operating system managing cloud-native applications** with Kubernetes as its kernel. As an [open-source enterprise-grade container platform](https://kubesphere.io/), it boasts full-stack automated IT operation, multi-cluster management, and streamlined DevOps workflows. Here is the architecture of KubeSphere.
+KubeSphere is a **distributed operating system managing cloud-native applications** with Kubernetes as its kernel. As an [open-source enterprise-grade container platform](https://kubesphere.io/), it boasts full-stack automated IT operation, multi-cluster management, and streamlined [DevOps workflows](https://kubesphere.io/devops/). Here is the architecture of KubeSphere.
 
 ![architecture](https://ap3.qingstor.com/kubesphere-website/docs/architecture.png)
 

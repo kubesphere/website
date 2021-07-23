@@ -43,17 +43,17 @@ sectionLink:
 
 section3:
   title: 在云服务上运行 KubeSphere 与 Kubernetes 技术栈
-  description: 云厂商以托管的形式为用户提供 KubeSphere 服务，用户可在几分钟内通过简单的步骤迅速构建高可用集群。2020 年 9 月起，您可在以下云托管服务中使用 KubeSphere。
+  description: 云厂商以托管的形式为用户提供 KubeSphere 服务，深度集成了公有云托管容器服务，用户可在几分钟内通过简单的步骤迅速构建高可用集群。您可在以下公有云上一键部署 KubeSphere。
   list:
     - image: /images/docs/aws.jpg
       content: AWS Quickstart
       link: https://aws.amazon.com/quickstart/architecture/qingcloud-kubesphere/
+    - image: /images/docs/microsoft-azure.jpg
+      content: Azure Marketplace
+      link: https://market.azure.cn/marketplace/apps/qingcloud.kubesphere
     - image: /images/docs/qingcloud.svg
       content: QingCloud QKE
       link: https://www.qingcloud.com/products/kubesphereqke/
-    - image: /images/docs/radore.jpg
-      content: Radore RCD
-      link: 
 
   titleRight: 想要在您的云上托管 KubeSphere?
   btnContent: 与我们合作

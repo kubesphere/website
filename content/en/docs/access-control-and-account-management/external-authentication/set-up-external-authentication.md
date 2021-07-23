@@ -18,7 +18,7 @@ You need to deploy a Kubernetes cluster and install KubeSphere in the cluster. F
 
 ## Procedure
 
-1. Log in to KubeSphere as `admin`, move the cursor to <img src="/images/docs/access-control-and-account-management/external-authentication/set-up-external-authentication/toolbox.png" width="25px"> in the bottom-right corner, click **Kubectl**, and run the following command to edit the `kubesphere-config` ConfigMap:
+1. Log in to KubeSphere as `admin`, move the cursor to <img src="/images/docs/access-control-and-account-management/external-authentication/set-up-external-authentication/toolbox.png" width="20px" height="20px"> in the bottom-right corner, click **Kubectl**, and run the following command to edit the `kubesphere-config` ConfigMap:
 
    ```bash
    kubectl -n kubesphere-system edit cm kubesphere-config
@@ -104,4 +104,21 @@ In a multi-cluster environment, you only need to configure the Host Cluster.
 
 {{</ notice >}} 
 
-   
+
+## Identity provider
+
+You can configure multiple identity providers (IdPs) in the 'identityProviders' section. The identity provider authenticates the user and provides an identity token to kubesphere.
+
+Kubesphere provides the following types of identity providers by default:
+
+* [LDAPIdentityProvider](../use-an-ldap-service)
+
+* [OIDCIdentityProvider](../oidc-identity-provider)
+
+* [GitHubIdentityProvider]()
+
+* [CASIdentityProvider]()
+
+* [AliyunIDaaSProvider]()
+
+You can also expand the kubesphere [OAuth2 authentication plug-in](../use-an-oauth2-identity-provider) to integrate with your account system.

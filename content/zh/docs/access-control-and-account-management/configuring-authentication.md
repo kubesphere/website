@@ -99,7 +99,7 @@ KubeSphere 默认提供了以下几种类型的身份提供者：
 
 * [LDAPIdentityProvider](../ldap-identity-provider)
 
-* [OIDCIdentityProvider]()
+* [OIDCIdentityProvider](../oidc-identity-provider)
 
 * [GitHubIdentityProvider]()
 
@@ -107,4 +107,4 @@ KubeSphere 默认提供了以下几种类型的身份提供者：
 
 * [AliyunIDaaSProvider]()
 
-您也可以拓展 KubeSphere OAuth2 认证插件与您的帐户系统进行集成。
+您也可以拓展 KubeSphere [OAuth2 认证插件](../use-an-oauth2-identity-provider)与您的帐户系统进行集成。

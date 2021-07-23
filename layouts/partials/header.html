@@ -3,7 +3,7 @@
     {{ if eq .Site.Language.Lang "zh"}}
     <div class="join-div">
         <div class="content">
-            🚀KubeSphere 3.1.0 全新发布！混合多云走向边缘，让应用无处不在，<a href='{{ "/blogs/kubesphere-3.1.0-ga-announcement/" | relLangURL }}' target="_blank" rel="noopener noreferrer">查看 v3.1.0 详细解读与视频👩‍💻</a> <a href="https://www.bagevent.com/event/7469384?bag_track=shequ" target="_blank" rel="noopener noreferrer">6 月 19 日相约成都！云原生线下 Meetup 火热报名中🙋‍♂️→</a>
+            🚀KubeSphere 3.1.0 全新发布！混合多云走向边缘，让应用无处不在，<a href='{{ "/blogs/kubesphere-3.1.0-ga-announcement/" | relLangURL }}' target="_blank" rel="noopener noreferrer">查看 v3.1.0 详细解读与视频👩‍💻</a> <a href="https://cic.qingcloud.com/index?channel=4692b1f2-c930-11eb-9f93-acde48001122" target="_blank" rel="noopener noreferrer">7 月 29 日相约北京！云原生线下 Meetup 火热报名中🙋‍♂️→</a>
             <img id="close-join" src="/images/header/close.svg" alt="close">
         </div>
     </div>
@@ -11,7 +11,7 @@
     {{ if eq .Site.Language.Lang "en"}}
     <div class="join-div">
         <div class="content">
-            🚀 KubeSphere 3.1.0 is now generally available as it extends Kubernetes from the cloud to the edge. <a href={{"/docs/release/release-v310/" | relLangURL }} target="_blank" rel="noopener noreferrer">Read the Release Notes for 3.1.0 →</a>
+            🚀 KubeSphere 3.1.0 is now generally available as it extends Kubernetes from the cloud to the edge. <a href={{"/blogs/kubesphere-3.1.0-ga-announcement/" | relLangURL }} target="_blank" rel="noopener noreferrer">Read the GA Announcement for 3.1.0 →</a>
             <img id="close-join" src="/images/header/close.svg" alt="close">
         </div>
     </div>
@@ -86,10 +86,18 @@
                             <li>{{ i18n "demo content 3" }}</li>
                         </ol>
                     </li>
-                    <li class='link-li'>
+                    <!-- <li class='link-li'>
                         <a class='link-slack' href="{{ .Site.Params.slackLink }}" target="_blank" rel="noopener noreferrer"></a>
                         <a class='link-twitter' href="{{ .Site.Params.twitterLink }}" target="_blank" rel="noopener noreferrer"></a>
                         <a class='link-github' href="{{ .Site.Params.githubLink }}" target="_blank" rel="noopener noreferrer"></a>
+                    </li> -->
+                    <li class="github-li">
+                        <div class="github-star">
+                            <a class="star-btn" href="{{ .Site.Params.githubLink }}" rel="noopener noreferrer" target="_blank">
+                                <span class="star-img"></span>&nbsp;<span>Star</span>
+                            </a>
+                            <a class="social-count" href="{{ .Site.Params.githubStarLink }}" rel="noopener noreferrer" target="_blank"></a>
+                        </div>
                     </li>
                     <li class="menu-icon">
                         <img src="/images/header/menu.svg" alt="">
@@ -148,6 +156,17 @@
     </div>
 </header>
 <script>
+var githubApiLink = "{{ .Site.Params.githubApiLink }}"
+
+var getStar = function() {
+    $('.social-count').hide()
+    $.getJSON(githubApiLink, function(data) {
+        $('.social-count').show().html(data.stargazers_count)
+    })
+}
+
+getStar()
+
 var bindNavMouseEvent = function(selector, element) {
     if (!element) {
         element = $(selector)

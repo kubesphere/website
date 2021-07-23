@@ -81,7 +81,7 @@ KubeSphere provides two built-in OAuth 2.0 plugins: [GitHubIdentityProvider](htt
 
 ## Integrate an Identity Provider with KubeSphere
 
-1. Log in to KubeSphere as `admin`, move the cursor to <img src="/images/docs/access-control-and-account-management/external-authentication/use-an-oauth2-identity-provider/toolbox.png" width="25px"> in the bottom-right corner, click **Kubectl**, and run the following command to edit the `kubesphere-config` ConfigMap:
+1. Log in to KubeSphere as `admin`, move the cursor to <img src="/images/docs/access-control-and-account-management/external-authentication/use-an-oauth2-identity-provider/toolbox.png" width="20px" height="20px"> in the bottom-right corner, click **Kubectl**, and run the following command to edit the `kubesphere-config` ConfigMap:
 
    ```bash
    kubectl -n kubesphere-system edit cm kubesphere-config
@@ -100,22 +100,18 @@ KubeSphere provides two built-in OAuth 2.0 plugins: [GitHubIdentityProvider](htt
        authentication:
          authenticateRateLimiterMaxTries: 10
          authenticateRateLimiterDuration: 10m0s
-         loginHistoryRetentionPeriod: 7d
-         maximumClockSkew: 10s
-         multipleLogin: true
-         kubectlImage: kubesphere/kubectl:v1.0.0
-         jwtSecret: '********'
+         jwtSecret: '******'
          oauthOptions:
            accessTokenMaxAge: 1h
            accessTokenInactivityTimeout: 30m
            identityProviders:
-           - name: GitHub
+           - name: github
              type: GitHubIdentityProvider
              mappingMethod: auto
              provider:
-               clientID: 'Iv1.547165ce1cf2f590'
-               clientSecret: '********'
-               redirectURL: 'https://ks-console/oauth/redirect'
+               clientID: '******'
+               clientSecret: '******'
+               redirectURL: 'https://ks-console/oauth/redirect/github'
    ```
 
    Similarly, you can also use Alibaba Cloud IDaaS as an external identity provider. For details, see the official [Alibaba IDaaS documentation](https://www.alibabacloud.com/help/product/111120.htm?spm=a3c0i.14898238.2766395700.1.62081da1NlxYV0) and the [source code of the AliyunIDaasProvider](https://github.com/kubesphere/kubesphere/blob/release-3.1/pkg/apiserver/authentication/identityprovider/github/github.go) plugin.

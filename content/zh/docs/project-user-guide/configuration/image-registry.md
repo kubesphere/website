@@ -22,7 +22,7 @@ Docker 镜像是一个只读的模板，可用于部署容器服务。每个镜�
 
 以 `project-regular` 用户登录 KubeSphere Web 控制台并进入项目，在左侧导航栏中选择**配置中心**下的**密钥**，然后点击**创建**。
 
-![open-dashboard](/images/docs/zh-cn/project-user-guide/configurations/image-registries/open-dashboard.jpg)
+![open-dashboard](/images/docs/zh-cn/project-user-guide/configurations/image-registries/open-dashboard.png)
 
 ### 步骤 2：配置基本信息
 
@@ -34,24 +34,24 @@ Docker 镜像是一个只读的模板，可用于部署容器服务。每个镜�
 
 {{</ notice >}} 
 
-![create-secret](/images/docs/zh-cn/project-user-guide/configurations/image-registries/create-secret.jpg)
+![create-secret](/images/docs/zh-cn/project-user-guide/configurations/image-registries/create-secret.png)
 
 ### 步骤 3：配置镜像仓库信息
 
-将**类型**设置为**镜像仓库密钥**。要在创建应用负载时使用私有仓库中的镜像，您需要配置以下字段：
+将**类型**设置为 **kubernetes.io/dockerconfigjson（镜像仓库密钥）**。要在创建应用负载时使用私有仓库中的镜像，您需要配置以下字段：
 
 - **仓库地址**：镜像仓库的地址，其中包含创建应用负载时需要使用的镜像。
 - **用户名**：登录镜像仓库所需的用户名。
 - **密码**：登录镜像仓库所需的密码。
 - **邮箱**（可选）：您的邮箱地址。
 
-![image-registry-info](/images/docs/zh-cn/project-user-guide/configurations/image-registries/image-registry-info.jpg)
+![image-registry-info](/images/docs/zh-cn/project-user-guide/configurations/image-registries/image-registry-info.png)
 
 #### 添加 Docker Hub 仓库
 
 1. 在 [Docker Hub](https://hub.docker.com/) 上添加镜像仓库之前，您需要注册一个 Docker Hub 帐户。在**密钥设置**页面，将**仓库地址**设置为 `docker.io`，将**用户名**和**密码**分别设置为您的 Docker ID 和密码，然后点击**验证**以检查地址是否可用。
 
-   ![validate-registry-address](/images/docs/zh-cn/project-user-guide/configurations/image-registries/validate-registry-address.jpg)
+   ![validate-registry-address](/images/docs/zh-cn/project-user-guide/configurations/image-registries/validate-registry-address.png)
 
 2. 点击**创建**。密钥创建后会显示在**密钥**界面。有关密钥创建后如何编辑密钥，请参阅[查看密钥详情](../../../project-user-guide/configuration/secrets/#查看密钥详情)。
 
@@ -91,7 +91,7 @@ Docker 镜像是一个只读的模板，可用于部署容器服务。每个镜�
 
 3. 在 KubeSphere 控制台上进入创建密钥的**密钥设置**页面，将**类型**设置为**镜像仓库密钥**，将**仓库地址**设置为您的 Harbor IP 地址，并设置用户名和密码。
 
-   ![harbor-address](/images/docs/zh-cn/project-user-guide/configurations/image-registries/harbor-address.jpg)
+   ![harbor-address](/images/docs/zh-cn/project-user-guide/configurations/image-registries/harbor-address.png)
 
    {{< notice note >}} 
 
@@ -109,4 +109,4 @@ Docker 镜像是一个只读的模板，可用于部署容器服务。每个镜�
 
 如果您已提前创建了私有镜像仓库的密钥，您可以选择私有镜像仓库中的镜像。例如，创建[部署](../../../project-user-guide/application-workloads/deployments/)时，您可以在**容器镜像**页面点击**镜像**下拉列表选择一个仓库，然后输入镜像名称和标签使用镜像。
 
-![use-image-registry](/images/docs/zh-cn/project-user-guide/configurations/image-registries/use-image-registry.jpg)
+![use-image-registry](/images/docs/zh-cn/project-user-guide/configurations/image-registries/use-image-registry.png)

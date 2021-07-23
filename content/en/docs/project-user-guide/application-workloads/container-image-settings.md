@@ -10,7 +10,7 @@ When you create Deployments, StatefulSets or DaemonSets, you need to specify a c
 
 {{< notice tip >}}
 
-You can enable **Edit Mode** in the top-right corner to see corresponding values in the manifest file (YAML format) of properties on the dashboard.
+You can enable **Edit Mode** in the upper-right corner to see corresponding values in the manifest file (YAML format) of properties on the dashboard.
 
 {{</ notice >}}
 
@@ -18,19 +18,19 @@ You can enable **Edit Mode** in the top-right corner to see corresponding values
 
 ### Pod Replicas
 
-Set the number of replicated Pods by clicking the **plus** or **minus** icon, indicated by the `.spec.replicas` field in the manifest file. This option is not available for DaemonSets.
+Set the number of replicated Pods by clicking <img src="/images/docs/project-user-guide/application-workloads/container-image-settings/plus-icon.png" width="20px" /> or <img src="/images/docs/project-user-guide/application-workloads/container-image-settings/minus-icon.png" width="20px" />, indicated by the `.spec.replicas` field in the manifest file. This option is not available for DaemonSets.
 
-![pod-replicas](/images/docs/project-user-guide/workloads/pod-replicas.jpg)
+![pod-replicas](/images/docs/project-user-guide/application-workloads/container-image-settings/pod-replicas.png)
 
 ### Add Container Image
 
 After you click **Add Container Image**, you will see an image as below.
 
-![add-container-explan](/images/docs/project-user-guide/workloads/add-container-explan.jpg)
+![add-container-explan](/images/docs/project-user-guide/application-workloads/container-image-settings/add-image.png)
 
 #### Image Search Bar
 
-You can click the cube icon on the right to select an image from the list or enter an image name to search it. KubeSphere provides Docker Hub images and your private image repository. If you want to use your private image repository, you need to create an Image Registry Secret first in **Secrets** under **Configurations**.
+You can click <img src="/images/docs/project-user-guide/application-workloads/container-image-settings/cube-icon.png" width="20px" /> on the right to select an image from the list or enter an image name to search it. KubeSphere provides Docker Hub images and your private image repository. If you want to use your private image repository, you need to create an Image Registry Secret first in **Secrets** under **Configurations**.
 
 {{< notice note >}} 
 
@@ -57,7 +57,7 @@ The resource quota reserved by the container includes both CPU and memory resour
 - The CPU request is indicated by `.spec.containers[].resources.requests.cpu` in the manifest file. The CPU request can be exceeded.
 - The memory request is indicated by `.spec.containers[].resources.requests.memory` in the manifest file. The memory request can be exceeded but the container may clear up when node memory is insufficient.
 
-![resource-request-limit](/images/docs/project-user-guide/workloads/resource-request-limit.jpg)
+![resource-request-limit](/images/docs/project-user-guide/application-workloads/container-image-settings/requests-limits.png)
 
 #### Resource Limit
 
@@ -68,7 +68,7 @@ You can specify the upper limit of the resources that the application can use, i
 
 {{< notice note >}}
 
-The CPU resource is measured in CPU units, or **Core** in KubeSphere. The memory resource is measured in bytes, or **Mi** in KubeSphere.
+The CPU resource is measured in CPU units, or **Core** in KubeSphere. The memory resource is measured in bytes, or **MiB** in KubeSphere.
 
 {{</ notice >}} 
 
@@ -80,7 +80,7 @@ You need to set the access protocol for the container as well as port informatio
 
 This value is indicated by the `imagePullPolicy` field. On the dashboard, you can choose one of the following three options from the drop-down list.
 
-![image-pull-policy](/images/docs/project-user-guide/workloads/image-pull-policy.jpg)
+![image-pull-policy](/images/docs/project-user-guide/application-workloads/container-image-settings/image-policy.png)
 
 - **Use Local Image First (ifNotPresent)**: It means that the image is pulled only if it does not exist locally.
 
@@ -100,7 +100,7 @@ This value is indicated by the `imagePullPolicy` field. On the dashboard, you ca
 
 Support **Liveness**, **Readiness**, and **Startup**.
 
-![container-health-check](/images/docs/project-user-guide/workloads/container-health-check.jpg)
+![container-health-check](/images/docs/project-user-guide/application-workloads/container-image-settings/health-checker.png)
 
 - **Container Liveness Check**: Liveness probes are used to know whether a container is running, indicated by `livenessProbe`.
 
@@ -112,7 +112,7 @@ Liveness, Readiness and Startup Check have all included the configurations below
 
 - **HTTPGetAction (HTTP Request Check)**: Perform an HTTP `Get` request on the specified port and path on the IP address of the container. If the response status code is greater than or equal to 200 and less than 400, the diagnosis is considered successful. The supported parameters include:
 
-  ![http-request-check](/images/docs/project-user-guide/workloads/http-request-check.jpg)
+  ![http-request-check](/images/docs/project-user-guide/application-workloads/container-image-settings/http-check.png)
 
   - **Scheme**: HTTP or HTTPS, specified by `scheme`.
   - **Path**: The path to access the HTTP server, specified by `path`.
@@ -125,7 +125,7 @@ Liveness, Readiness and Startup Check have all included the configurations below
 
 - **TCPSocketAction (TCP Port Check)**: Perform a TCP check on the specified port on the IP address of the container. If the port is open, the diagnosis is considered successful. The supported parameters include:
   
-  ![tcp-port-check](/images/docs/project-user-guide/workloads/tcp-port-check.jpg)
+  ![tcp-port-check](/images/docs/project-user-guide/application-workloads/container-image-settings/tcp-port.png)
   
   - **Port**: The access port or port name is exposed by the container. The port number must be between 1 and 65535. The value is specified by `port`.
   - **Initial Delays**: The number of seconds after the container has started before liveness probes are initiated, specified by `initialDelaySeconds`. It defaults to 0.
@@ -136,7 +136,7 @@ Liveness, Readiness and Startup Check have all included the configurations below
   
 - **ExecAction (Exec Command Check)**: Execute the specified command in the container. If the return code is 0 when the command exits, the diagnosis is considered successful. The supported parameters include:
   
-  ![exec-command-check](/images/docs/project-user-guide/workloads/exec-command-check.jpg)
+  ![exec-command-check](/images/docs/project-user-guide/application-workloads/container-image-settings/exec-check.png)
   
   - **Command**: A detection command used to detect the health of the container, specified by `exec.command`.
   - **Initial Delays**: The number of seconds after the container has started before liveness probes are initiated, specified by `initialDelaySeconds`. It defaults to 0.
@@ -151,7 +151,7 @@ Liveness, Readiness and Startup Check have all included the configurations below
 
 By default, the container runs the default image command.
 
-![start-command](/images/docs/project-user-guide/workloads/start-command.jpg)
+![start-command](/images/docs/project-user-guide/application-workloads/container-image-settings/start-command.png)
 
 - **Run Command** refers to the `command` field of containers in the manifest file.
 - **Parameters** refers to the `args` field of containers in the manifest file.
@@ -162,7 +162,7 @@ For more information about the command, please visit [Define a Command and Argum
 
 Configure environment variables for Pods in the form of key-value pairs.
 
-![envi-var](/images/docs/project-user-guide/workloads/envi-var.jpg)
+![envi-var](/images/docs/project-user-guide/application-workloads/container-image-settings/env-variables.png)
 
 - name: The name of the environment variable, specified by `env.name`.
 - value: The value of the variable referenced, specified by `env.value`.
@@ -174,7 +174,7 @@ For more information about the command, please visit [Pod variable](https://kube
 
 A security context defines privilege and access control settings for a Pod or Container. For more information about the security context, please visit [Pod Security Policies](https://kubernetes.io/docs/concepts/policy/pod-security-policy/).
 
-![security-context](/images/docs/project-user-guide/workloads/security-context.jpg)
+![security-context](/images/docs/project-user-guide/application-workloads/container-image-settings/container-security-context.png)
 
 #### **Sync Host Timezone**
 
@@ -274,7 +274,7 @@ A security context defines privilege and access control settings for a Pod or Co
 
 ### Deployment Mode
 
-You can select different deployment modes to switch between inter-pod affinity and inter-pod anti-affinity. In Kubernetes, inter-pod affinity is specified as field `podAffinity` of field `affinity` while inter-pod anti-affinity is specified as field `podAntiAffinity` of field `affinity`. In KubeSphere, both `podAffinity` and `podAntiAffinity` are set to `preferredDuringSchedulingIgnoredDuringExecution`. You can enable **Edit Mode** in the top-right corner to see field details.
+You can select different deployment modes to switch between inter-pod affinity and inter-pod anti-affinity. In Kubernetes, inter-pod affinity is specified as field `podAffinity` of field `affinity` while inter-pod anti-affinity is specified as field `podAntiAffinity` of field `affinity`. In KubeSphere, both `podAffinity` and `podAntiAffinity` are set to `preferredDuringSchedulingIgnoredDuringExecution`. You can enable **Edit Mode** in the upper-right corner to see field details.
 
 - **Pod Decentralized Deployment** represents anti-affinity.
 - **Pod Aggregation Deployment** represents affinity.

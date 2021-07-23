@@ -1,5 +1,5 @@
 ---
-title: "service mesh"
+title: "Kubernetes Service Mesh with Istio"
 layout: "scenario"
 
 css: "scss/scenario.scss"
@@ -15,7 +15,7 @@ bg: /images/service-mesh/28.svg
 section2:
   title: What Makes KubeSphere Service Mesh Special
   list:
-    - title: Traffic Management
+    - title: Service Mesh Traffic Management
       image: /images/service-mesh/traffic-management.png
       summary:
       contentList:
@@ -24,12 +24,12 @@ section2:
         - content: <span>Traffic mirroring</span> is a powerful, risk-free method of testing your app versions as it sends a copy of live traffic to a mirrored Service
         - content: <span>Circuit breakers</span> allow users to set limits for calls to individual hosts within a Service
 
-    - title: Visualization
+    - title: Microservices Visualization
       image: /images/service-mesh/visualization.png
       summary: Observability is extremely useful in understanding cloud-native microservice interconnections. KubeSphere has the ability to visualize the connections between microservices and the topology of how they interconnect.
       contentList:
 
-    - title: Distributed Tracing
+    - title: Distributed Tracing for Kubernetes
       image: /images/service-mesh/distributed-tracing.png
       summary: Based on Jaeger, KubeSphere enables users to track how each Service interacts with each other. It brings a deeper understanding about request latency, bottlenecks, serialization and parallelism via visualization.
       contentList:

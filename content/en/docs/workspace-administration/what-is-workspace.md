@@ -35,7 +35,7 @@ You have an account granted the role of `workspaces-manager`, such as `ws-manage
 
    - **Name**: Set a name for the workspace which serves as a unique identifier.
    - **Alias**: An alias name for the workspace.
-   - **Administrator**: The account that administrates the workspace.
+   - **Administrator**: Account that administers the workspace.
    - **Description**: A brief introduction of the workspace.
 
 3. The workspace created appears in the list as shown below.

@@ -49,13 +49,13 @@ Source-to-Image (S2I) 是一个工具箱和工作流，用于从源代码构建�
 
    {{< notice note >}}
 
-   KubeSphere 已集成常用的 S2I 模板，例如 Java、Node.js 和 Python。如果您想使用其他语言或自定义 S2I 模板，请参见自定义 S2I 模板。
+   KubeSphere 已集成常用的 S2I 模板，例如 Java、Node.js 和 Python。如果您想使用其他语言或自定义 S2I 模板，请参见[自定义 S2I 模板](../s2i-templates/)。
 
    {{</ notice >}} 
 
 3. 在**构建设置**页面，请提供以下相应信息，并点击**下一步**。
 
-   ![构建设置](/images/docs/zh-cn/project-user-guide/image-builder/source-to-image/build-settings.PNG)
+   ![构建设置](/images/docs/zh-cn/project-user-guide/image-builder/source-to-image/build_settings.png)
 
    **服务类型**：本示例选择**无状态服务**。有关不同服务的更多信息，请参见[服务类型](../../../project-user-guide/application-workloads/services/#服务类型)。
 
@@ -109,7 +109,7 @@ Source-to-Image (S2I) 是一个工具箱和工作流，用于从源代码构建�
 
    ![构建成功](/images/docs/zh-cn/project-user-guide/image-builder/source-to-image/successful-result.PNG)
 
-2. 点击该镜像前往其详情页面。在**任务记录**下，点击记录右侧的箭头图标查看构建日志。如果一切运行正常，您可以在日志末尾看到 `Build completed successfully`。
+2. 点击该镜像前往其详情页面。在**任务记录**下，点击记录右侧的 <img src="/images/docs/zh-cn/project-user-guide/image-builder/source-to-image/down-arrow.png" width="20px" /> 查看构建日志。如果一切运行正常，您可以在日志末尾看到 `Build completed successfully`。
 
    ![构建日志](/images/docs/zh-cn/project-user-guide/image-builder/source-to-image/build-log.PNG)
 
@@ -137,7 +137,7 @@ Source-to-Image (S2I) 是一个工具箱和工作流，用于从源代码构建�
 
    ![Service 详情](/images/docs/zh-cn/project-user-guide/image-builder/source-to-image/service-detail.PNG)
 
-2. 要访问该服务，您可以执行 `curl` 命令使用 Endpoint 或者访问 `Node IP:Port Number`。例如：
+2. 要访问该服务，您可以执行 `curl` 命令使用 Endpoint 或者访问 `<Node IP>:<Port Number>`。例如：
 
    ```bash
    $ curl 10.10.131.44:8080

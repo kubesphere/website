@@ -55,11 +55,11 @@ KubeSphere 基于 [Istio](https://istio.io/) 向用户提供部署金丝雀服�
 
 3. 您可以看到每个版本分别收到一半流量：
 
-   ![canary-release-6](/images/docs/zh-cn/project-user-guide/grayscale-release/canary-release/canary-release-6.PNG)
+   ![canary-release-6](/images/docs/zh-cn/project-user-guide/grayscale-release/canary-release/canary-release_6.png)
 
 4. 新的部署也已创建。
 
-   ![deployment-list-1](/images/docs/zh-cn/project-user-guide/grayscale-release/canary-release/deployment-list-1.PNG)
+   ![deployment-list-1](/images/docs/zh-cn/project-user-guide/grayscale-release/canary-release/deployment-list_1.png)
 
 5. 您可以执行以下命令直接获取虚拟服务来识别权重：
 
@@ -136,7 +136,7 @@ KubeSphere 提供基于 [Jaeger](https://www.jaegertracing.io/) 的分布式追�
 
 1. 在**灰度发布**中，点击金丝雀发布任务。
 
-2. 在出现的对话框中，点击 **reviews v2** 的三个点，选择**接管所有流量**。这代表 100% 的流量将会被发送到新版本 (v2)。
+2. 在弹出的对话框中，点击 **reviews v2** 右侧的 <img src="/images/docs/zh-cn/project-user-guide/grayscale-release/canary-release/three-dots.png" width="20px" />，选择**接管所有流量**。这代表 100% 的流量将会被发送到新版本 (v2)。
 
    ![take-over-release](/images/docs/zh-cn/project-user-guide/grayscale-release/canary-release/take-over-release.png)
 

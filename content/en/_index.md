@@ -1,6 +1,6 @@
 ---
-title: Open-Source Kubernetes Container Platform For Enterprise | KubeSphere
-description: An open-source Kubernetes Platform to manage enterprise-grade Kubernetes across hybrid cloud, multi-cloud and edge.
+title: Open Source Container Platform For Enterprise Kubernetes | KubeSphere
+description: An open source Kubernetes Platform to manage enterprise-grade Kubernetes across hybrid cloud, multi-cloud and edge. Get started for free!
 
 
 css: scss/index.scss
@@ -8,7 +8,7 @@ css: scss/index.scss
 section1:
   title: KubeSphere Container Platform
   topic: The Kubernetes platform tailored for hybrid multicloud
-  content: KubeSphere is a distributed operating system managing cloud native applications with Kubernetes as its kernel, and provides plug-and-play architecture for the seamless integration of third-party applications to boost its ecosystem.
+  content: KubeSphere is a distributed operating system for cloud-native application management, using Kubernetes as its kernel. It provides a plug-and-play architecture, allowing third-party applications to be seamlessly integrated into its ecosystem.
 
 section2:
   title: One Kubernetes Platform for Full Stack Solutions
@@ -63,7 +63,7 @@ section3:
         - content: Better tracking, routing and optimized communications within Kubernetes for cloud native apps
         - content: Easy-to-use web terminal and graphical panel, satisfying the needs of different users
 
-    - name: User
+    - name: End User
       content: Running and using Apps on Kubernetes has never been so easy
       icon: /images/home/80.svg
       children:
@@ -88,12 +88,17 @@ section4:
       icon: /images/home/multi-tenant-management.svg
       content: Provide unified authentication with fine-grained roles and three-tier authorization system, and support AD/LDAP authentication
 
+    - name: Multiple Storage and Networking Solutions 
+      icon: /images/home/multi-tenant-management.svg
+      content: Support GlusterFS, CephRBD, NFS, LocalPV solutions, and provide CSI plugins to consume storage from multiple cloud providers. Provide a <a class='inner-a' target='_blank' href='https://porterlb.io'>load balancer Porter</a> for bare metal Kubernetes, and offers network policy management, support Calico and Flannel CNI
+
   features:
-    - name: App Store
-      icon: /images/home/store.svg
-      content: Provide an application store for Helm-based applications, and offer application lifecycle management
-      link: "/docs/pluggable-components/app-store/"
-      color: grape
+
+    - name: Kubernetes DevOps System
+      icon: /images/home/dev-ops.svg
+      content: Out-of-box CI/CD based on Jenkins, and automated <a class='inner-a' target='_blank' href='devops/'>DevOps workflow</a> tools including Source-to-Image & Binary-to-Image
+      link: "devops/"
+      color: orange
 
     - name: Service Mesh (Istio-based)
       icon: /images/home/service.svg
@@ -101,35 +106,35 @@ section4:
       link: "service-mesh/"
       color: red
 
-    - name: Rich Observability
+    - name: Cloud Native Observability
       icon: /images/home/rich.svg
       content: Multi-dimensional monitoring, events and audit logs query are supported; multi-tenant log query and collection, alerting and notification are built-in
       link: "observability/"
       color: green
-
-    - name: DevOps System
-      icon: /images/home/dev-ops.svg
-      content: Out-of-box CI/CD based on Jenkins, and automated <a class='inner-a' target='_blank' href='devops/'>DevOps workflow</a> tools including Source-to-Image & Binary-to-Image
-      link: "devops/"
-      color: orange
-
-    - name: Multiple Storage Solutions
-      icon: /images/home/multiple.svg
-      content: Support GlusterFS, CephRBD, NFS, LocalPV solutions, and provide CSI plugins to consume storage from multiple cloud providers
-      link: "/docs/introduction/features/#multiple-storage-solutions"
+    
+    - name: App Store
+      icon: /images/home/store.svg
+      content: Provide an application store for Helm-based applications, and offer application lifecycle management on Kubernetes platform
+      link: "/docs/pluggable-components/app-store/"
       color: grape
 
-    - name: Multiple Network Solutions
-      icon: /images/home/network.svg
-      content: Provide a <a class='inner-a' target='_blank' href='https://porterlb.io'>load balancer Porter</a> for bare metal Kubernetes, and offers network policy management, support Calico and Flannel CNI
-      link: "/docs/introduction/features/#multiple-network-solutions"
-      color: green
-
-    - name: Multi-cluster Management
+    - name: Kubernetes Multi-cluster Mgmt
       icon: /images/home/management.svg
       content: Distribute applications across multiple clusters and cloud providers, and provide disaster recovery solutions and cross-cluster observability
       link: "/docs/multicluster-management/introduction/overview/"
       color: orange
+
+    - name: Edge Computing Platform
+      icon: /images/home/multiple.svg
+      content: KubeSphere integrates <a class='inner-a' target='_blank' href='https://kubeedge.io/en/'>KubeEdge</a> to enable users to deploy applications on the edge devices and view logging and monitoring data of them on the console.
+      link: "/docs/pluggable-components/kubeedge/"
+      color: grape
+
+    - name: Metering and Billing
+      icon: /images/home/network.svg
+      content: Track resource consumption at different levels on a unified dashboard, which helps you make better-informed decisions on planning and reduce the cost.
+      link: "/docs/toolbox/metering-and-billing/view-resource-consumption/"
+      color: green
 
 section5:
   title: KubeSphere Container Platform with its Cloud Native Architecture
@@ -184,8 +189,8 @@ section6:
 
   btnContent: Case Studies
   btnLink: case/
-  link: mailto:kubesphere@gmail.com
-  linkContent: Want to join our user community and showcase your logo? Just send an email to kubesphere@gmail.com
+  link: mailto:info@kubesphere.io
+  linkContent: Want to join our user community and showcase your logo? Just send an email to info@kubesphere.io
   joinTitle: Join the Revolution, Partner with KubeSphere Container Platform
   joinContent: We look forward to your joining KubeSphere partner program to improve both ecosystems and grow your business.
   joinLink: partner/

@@ -8,12 +8,15 @@ weight: 2200
 
 除了在 Linux 机器上安装 KubeSphere 之外，您还可以将其直接部署在现有的 Kubernetes 集群上。本快速入门指南将引导您完成在 Kubernetes 上最小化安装 KubeSphere 的一般性步骤。有关更多信息，请参见[在 Kubernetes 上安装 KubeSphere](../../installing-on-kubernetes/)。
 
+## Prerequisites
+
+- 如需在 Kubernetes 上安装 KubeSphere v3.1.1，您的 Kubernetes 版本必须为：1.17.x、1.18.x、1.19.x 或 1.20.x。
+- 确保您的机器满足最低硬件要求：CPU > 1 核，内存 > 2 GB。
+- 在安装之前，需要配置 Kubernetes 集群中的**默认**存储类型。
+
 {{< notice note >}}
 
-- 如需在 Kubernetes 上安装 KubeSphere v3.1.0，您的 Kubernetes 版本必须为：1.17.x、1.18.x、1.19.x 或 1.20.x；
-- 确保您的机器满足最低硬件要求：CPU > 1 核，内存 > 2 G；
-- 在安装之前，需要配置 Kubernetes 集群中的**默认**存储类型；
-- 当使用 `--cluster-signing-cert-file` 和 `--cluster-signing-key-file` 参数启动时，在 `kube-apiserver` 中会激活 CSR 签名功能。请参见 [RKE 安装问题](https://github.com/kubesphere/kubesphere/issues/1925#issuecomment-591698309)；
+- 当使用 `--cluster-signing-cert-file` 和 `--cluster-signing-key-file` 参数启动时，在 `kube-apiserver` 中会激活 CSR 签名功能。请参见 [RKE 安装问题](https://github.com/kubesphere/kubesphere/issues/1925#issuecomment-591698309)。
 - 有关在 Kubernetes 上安装 KubeSphere 的准备工作，请参见[准备工作](../../installing-on-kubernetes/introduction/prerequisites/)。
 
 {{</ notice >}}
@@ -22,12 +25,12 @@ weight: 2200
 
 确保您的机器满足安装的前提条件之后，可以按照以下步骤安装 KubeSphere。
 
-1. 执行以下命令：
+1. 执行以下命令开始安装：
 
     ```bash
-    kubectl apply -f https://github.com/kubesphere/ks-installer/releases/download/v3.1.0/kubesphere-installer.yaml
+    kubectl apply -f https://github.com/kubesphere/ks-installer/releases/download/v3.1.1/kubesphere-installer.yaml
     
-    kubectl apply -f https://github.com/kubesphere/ks-installer/releases/download/v3.1.0/cluster-configuration.yaml
+    kubectl apply -f https://github.com/kubesphere/ks-installer/releases/download/v3.1.1/cluster-configuration.yaml
     ```
 
 2. 检查安装日志：
@@ -46,7 +49,7 @@ weight: 2200
 
 5. 登录控制台后，您可以在**服务组件**中检查不同组件的状态。如果要使用相关服务，可能需要等待某些组件启动并运行。
 
-    ![KubeSphere 组件](/images/docs/zh-cn/quickstart/minimal-kubesphere-on-k8s/kubesphere-components-zh.png)
+    ![kubesphere-components](/images/docs/zh-cn/quickstart/minimal-kubesphere-on-k8s/kubesphere-components.png)
 
 ## 启用可插拔组件（可选）
 

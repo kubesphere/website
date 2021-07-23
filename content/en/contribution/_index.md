@@ -28,7 +28,7 @@ section2:
         - content: 'Join the SIGs and WGs'
           link: 'https://github.com/kubesphere/community#kubesphere-community'
         - content: 'Improve the Docs'
-          link: 'https://github.com/kubesphere/docs.kubesphere.io/issues?q=is%3Aissue+is%3Aopen+label%3A%22for+new+contributor%22'
+          link: 'https://github.com/kubesphere/website/issues'
         - content: 'Submit a Bug or Suggestion'
           link: 'https://github.com/kubesphere/kubesphere/issues/new/choose'
 

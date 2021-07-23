@@ -2,17 +2,20 @@ footer:
   list:
     - title: Scenarios
       list:
-        - content: DevOps
+        - content: Kubernetes DevOps and GitOps
           link: devops/
 
-        - content: Microservices
+        - content: Microservices with Service Mesh
           link: service-mesh/
 
-        - content: Observability
+        - content: Cloud Native Observability
           link: observability/
 
         - content: Bare Metal LoadBalancer
           link: 'https://porterlb.io/'
+
+        - content: Functions-as-a-Service Platform and Serverless
+          link: 'https://github.com/OpenFunction/OpenFunction' 
 
         - content: Multi-cloud Apps Mgmt
           link: 'https://github.com/openpitrix/openpitrix'
@@ -56,11 +59,15 @@ footer:
           
     - title: Products and Services
       list:
-        - content: KubeSphere on QingCloud(QKE)
-          link: 'https://www.qingcloud.com/products/kubesphereqke'
         - content: KubeSphere on AWS
           link: 'https://aws.amazon.com/quickstart/architecture/qingcloud-kubesphere/'
-        - content: Cloud application service platform
+        - content: KubeSphere on Azure
+          link: 'https://market.azure.cn/marketplace/apps/qingcloud.kubesphere'
+        - content: KubeSphere on QingCloud(QKE)
+          link: 'https://www.qingcloud.com/products/kubesphereqke'
+        - content: KubeSphere Virtualization Platform
+          link: 'https://kubesphere.cloud/en/ksv/'
+        - content: Cloud Native Services and Support
           link: 'https://kubesphere.cloud'
-        - content: Cooperation and consulting
-          link: 'https://jinshuju.net/f/tPUldX'
+        - content: Contact Us
+          link: 'https://jinshuju.net/f/bDS8me'
