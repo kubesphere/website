@@ -34,7 +34,7 @@ section2:
         - content: <span>支持自动化构建和推送</span>镜像至任意仓库，并最终部署至 Kubernetes
         - content: <span>卓越的可恢复性和灵活性，</span>您可以在需要补丁时重新构建并重新运行 S2I/B2I
 
-    - title: 使用 GitOps 实现 DevOps
+    - title: 使用 Jenkins 流水线实现 DevOps
       image: /images/devops/Clear-insight.png
       contentList:
         - content: <span>融合 Git 和 Kubernetes，实现云原生应用自动化交付</span>
