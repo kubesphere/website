@@ -37,4 +37,4 @@ You need an account granted the `platform-admin` role. For more information, see
 
 5. Click **Save** after you finish.
 
-6. (Optional) You can click <img src="/images/docs/cluster-administration/platform-settings/notification-management/configure-webhook/toggle-switch.png" width='30' />/<img src="/images/docs/cluster-administration/platform-settings/notification-management/configure-webhook/toggle-switch-1.png" width='30' /> to turn on/off webhook notifications. After you finish, click **Update** to save the changes.
+6. (Optional) Under **Notification Settings**, you can click <img src="/images/docs/cluster-administration/platform-settings/notification-management/configure-webhook/toggle-switch.png" width='30' />/<img src="/images/docs/cluster-administration/platform-settings/notification-management/configure-webhook/toggle-switch-1.png" width='30' /> to turn on/off webhook notifications. After you finish, click **Update** to save the changes.
