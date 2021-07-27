@@ -31,7 +31,7 @@ You need an account granted the `platform-admin` role. For more information, see
      - **Bearer Token**: Add a token to the URL for unique identification.
      - **Basic Auth**: Provide a username and password for authentication.
 
-   {{< notice note>}}Currently, Kubesphere does not suppot TLS connections (https). You need to select the checkbox on the left of **Skip TLS Certification** if you use https.
+   {{< notice note>}}Currently, KubeSphere does not suppot TLS connections (https). You need to select the checkbox on the left of **Skip TLS Certification** if you use https.
 
    {{</notice>}}
 
