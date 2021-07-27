@@ -18,11 +18,10 @@ To provide consistent user experiences of managing microservices, KubeSphere int
 
 - You need to finish all tasks in [Create Workspaces, Projects, Accounts and Roles](../create-workspace-and-project/).
 
-- You need to enable **Application Governance**. To do so, perform the following steps:
-
-  Log in to the console as `project-admin` and go to your project. Go to **Advanced Settings** under **Project Settings**, click **Edit**, and select **Edit Gateway**. In the displayed dialog box, turn on the toggle switch next to **Application Governance**.
+- You need to enable **Application Governance**. For more information, see [Set a Gateway](../../project-administration/project-gateway/#set-a-gateway).
 
   {{< notice note >}}
+
   You need to enable **Application Governance** so that you can use the Tracing feature. Once it is enabled, check whether an annotation (for example, `nginx.ingress.kubernetes.io/service-upstream: true`) is added for your Route (Ingress) if the Route is inaccessible.
   {{</ notice >}}
 
