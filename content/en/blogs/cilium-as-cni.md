@@ -1,5 +1,5 @@
 ---
-title: 'Install Cilium on Kubernetes Using KubeKey'
+title: 'Visualize Network Traffic: A Simple Way to Enable Cilium on Kubernetes'
 keywords: Kubernetes, KubeSphere, Cilium, Network
 description: Explore what Cilium can do on a Kubernetes cluster.
 tag: 'Kubernetes, KubeSphere, Cilium, Network'
@@ -212,7 +212,7 @@ Hubble is designed for network visualization. Through the eBPF data paths provid
 
    ![nodeport](/images/blogs/en/cilium-as-cni/nodeport.png)
 
-5. Now, you can view the Service dependency graph on the Hubble dashboard.
+5. Now, you can view the graphical service map on the Hubble dashboard.
 
    ![hubble-ui](/images/blogs/en/cilium-as-cni/hubble-ui.png)
 
