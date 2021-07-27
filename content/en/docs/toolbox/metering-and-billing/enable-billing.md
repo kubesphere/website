@@ -54,7 +54,7 @@ Perform the following steps to enable KubeSphere Billing.
        </tr>
        <tr>
          <td><code>currencyUnit</code></td>
-         <td>The currency that displays on the <b>Metering and Billing</b> page. Currently allowed values are <code>CNY</code> (Renminbi) and <code>USD</code> (US dollars). If you specify other currencies, the console will display cost in USD by default.</td>
+         <td>The currency that is displayed on the <b>Metering and Billing</b> page. Currently allowed values are <code>CNY</code> (Renminbi) and <code>USD</code> (US dollars). If you specify other currencies, the console will display cost in USD by default.</td>
        </tr>
        <tr>
          <td><code>cpuCorePerHour</code></td>
