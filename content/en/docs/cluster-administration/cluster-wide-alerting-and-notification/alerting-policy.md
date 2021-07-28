@@ -19,13 +19,11 @@ KubeSphere also has built-in policies which will trigger alerts if conditions de
 
 ## Create an Alerting Policy
 
-1. Log in to the console as `cluster-admin`. Click **Platform** in the top-left corner, and then click **Cluster Management**.
+1. Log in to the console as `cluster-admin`. Click **Platform** in the upper-left corner, and then click **Cluster Management**.
 
-2. Navigate to **Alerting Policies** under **Monitoring & Alerting**, and then click **Create**.
+2. Go to **Alerting Policies** under **Monitoring & Alerting**, and then click **Create**.
 
-   ![click-create](/images/docs/cluster-administration/cluster-wide-alerting-and-notification/alerting-policies-node-level/click-create.png)
-
-3. In the dialog that appears, provide the basic information as follows. Click **Next** to continue.
+3. In the displayed dialog box, provide the basic information as follows. Click **Next** to continue.
 
    - **Name**. A concise and clear name as its unique identifier, such as `node-alert`.
    - **Alias**. Help you distinguish alerting policies better.
@@ -36,9 +34,7 @@ KubeSphere also has built-in policies which will trigger alerts if conditions de
 4. On the **Alerting Rule** tab, you can use the rule template or create a custom rule. To use the template, fill in the following fields and click **Next** to continue.
 
    - **Monitoring Target**. Select a node in your cluster for monitoring.
-   - **Alerting Rule**. Define a rule for the alerting policy. The rules provided in the drop-down list are based on Prometheus expressions and an alert will be triggered when conditions are met. You can monitor objects such as CPU and memory.
-
-   ![alert-rule](/images/docs/cluster-administration/cluster-wide-alerting-and-notification/alerting-policies-node-level/alert-rule.png)
+   - **Alerting Rules**. Define a rule for the alerting policy. The rules provided in the drop-down list are based on Prometheus expressions and an alert will be triggered when conditions are met. You can monitor objects such as CPU and memory.
 
    {{< notice note >}}
 
@@ -52,19 +48,24 @@ KubeSphere also has built-in policies which will trigger alerts if conditions de
 
 ## Edit an Alerting Policy
 
-To edit an alerting policy after it is created, on the **Alerting Policies** page, click <img src="/images/docs/cluster-administration/cluster-wide-alerting-and-notification/alerting-policies-node-level/edit-policy.png" height="25px"> on the right.
+To edit an alerting policy after it is created, on the **Alerting Policies** page, click <img src="/images/docs/cluster-administration/cluster-wide-alerting-and-notification/alerting-policies-node-level/edit-policy.png" height="25px"> on the right of the alerting policy.
 
-1. Click **Edit** from the drop-down menu and edit the alerting policy following the same steps as you create it. Click **Update** on the **Notification Settings** page to save it.
+1. Click **Edit** from the drop-down list and edit the alerting policy following the same steps as you create it. Click **Update** on the **Notification Settings** page to save it.
 
-   ![click-edit](/images/docs/cluster-administration/cluster-wide-alerting-and-notification/alerting-policies-node-level/click-edit.png)
-
-2. Click **Delete** from the drop-down menu to delete an alerting policy.
+2. Click **Delete** from the drop-down list to delete an alerting policy.
 
 ## View an Alerting Policy
 
-Click an alerting policy on the **Alerting Policies** page to see its detail information, including alerting rules and alerting messages. You can also see the rule expression which is based on the template you use when creating the alerting policy.
+Click the name of an alerting policy on the **Alerting Policies** page to see its detail information, including alerting rules and alerting messages. You can also see the rule expression which is based on the template you use when creating the alerting policy.
 
 Under **Monitoring**, the **Alert Monitoring** chart shows the actual usage or amount of resources over time. **Notification Settings** displays the customized message you set in notifications.
 
-![alert-detail](/images/docs/cluster-administration/cluster-wide-alerting-and-notification/alerting-policies-node-level/alert-detail.png)
+![alerting-policy-details-page](/images/docs/cluster-administration/cluster-wide-alerting-and-notification/alerting-policies-node-level/alerting-policy-details-page.png)
 
+{{< notice note >}}
+
+You can click <img src="/images/docs/cluster-administration/cluster-wide-alerting-and-notification/alerting-policies-node-level/drop-down-list.png" width='20' /> on the upper-right corner to select or custom a time range for the alert monitoring chart.
+
+You can also click <img src="/images/docs/zh-cn/cluster-administration/cluster-wide-alerting-and-notification/alerting-policy-node-level/refresh.png" width='25' /> on the upper-right corner to manually refresh the alert monitoring chart.
+
+{{</ notice >}}

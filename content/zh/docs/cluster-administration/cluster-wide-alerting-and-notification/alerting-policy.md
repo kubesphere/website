@@ -22,9 +22,7 @@ KubeSphere 还具有内置策略，一旦满足为这些策略定义的条件，
 
 1. 使用 `cluster-admin` 用户登录控制台。点击左上角的**平台管理**，然后点击**集群管理**。
 
-2. 导航至**监控告警**下的**告警策略**，然后点击**创建**。
-
-   ![click-create](/images/docs/zh-cn/cluster-administration/cluster-wide-alerting-and-notification/alerting-policy-node-level/click-create.png)
+2. 前往**监控告警**下的**告警策略**，然后点击**创建**。
 
 3. 在出现的对话框中，填写以下基本信息。点击**下一步**继续。
 
@@ -38,8 +36,6 @@ KubeSphere 还具有内置策略，一旦满足为这些策略定义的条件，
 
    - **监控目标**：选择集群中的一个节点进行监控。
    - **告警规则**：为告警策略定义一个规则。下拉菜单中提供的规则基于 Prometheus 表达式，满足条件时将会触发告警。您可以对 CPU、内存等对象进行监控。
-
-   ![alert-rule](/images/docs/zh-cn/cluster-administration/cluster-wide-alerting-and-notification/alerting-policy-node-level/alert-rule.png)
 
    {{< notice note >}}
 
@@ -57,15 +53,20 @@ KubeSphere 还具有内置策略，一旦满足为这些策略定义的条件，
 
 1. 点击下拉菜单中的**编辑**，根据与创建时相同的步骤来编辑告警策略。点击**通知设置**页面的**更新**保存更改。
 
-   ![click-edit](/images/docs/zh-cn/cluster-administration/cluster-wide-alerting-and-notification/alerting-policy-node-level/click-edit.png)
-
 2. 点击下拉菜单中的**删除**以删除告警策略。
 
 ## 查看告警策略
 
-在**告警策略**页面，点击一个告警策略查看其详情，包括告警规则和告警消息。您还可以看到创建告警策略时基于所使用模板的告警规则表达式。
+在**告警策略**页面，点击一个告警策略的名称查看其详情，包括告警规则和告警消息。您还可以看到创建告警策略时基于所使用模板的告警规则表达式。
 
 在**监控**下，**告警监控**图显示一段时间内的实际资源使用情况或使用量。**通知设置**显示您在通知中设置的自定义消息。
 
-![alert-detail](/images/docs/zh-cn/cluster-administration/cluster-wide-alerting-and-notification/alerting-policy-node-level/alert-detail.png)
+![alerting-policy-details-page](/images/docs/zh-cn/cluster-administration/cluster-wide-alerting-and-notification/alerting-policy-node-level/alerting-policy-details-page.png)
 
+{{< notice note >}}
+
+您可以点击右上角的 <img src="/images/docs/zh-cn/cluster-administration/cluster-wide-alerting-and-notification/alerting-policy-node-level/drop-down-list.png" width='20' /> 选择告警监控的时间范围或者自定义时间范围。
+
+您还可以点击右上角的 <img src="/images/docs/zh-cn/cluster-administration/cluster-wide-alerting-and-notification/alerting-policy-node-level/refresh.png" width='25' /> 来手动刷新告警监控图。
+
+{{</ notice >}}
