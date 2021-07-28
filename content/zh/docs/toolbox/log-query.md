@@ -1,6 +1,6 @@
 ---
 title: "日志查询"
-keywords: 'KubeSphere, Kubernetes, 日志'
+keywords: 'KubeSphere, Kubernetes, 日志, 查询'
 description: '了解如何快速执行日志查询，追踪集群的最新日志。'
 linkTitle: "日志查询"
 weight: 15100
@@ -16,68 +16,60 @@ weight: 15100
 
 ## 进入日志查询界面
 
-1. 所有用户都可以使用日志查询功能。使用任意帐户登录控制台，在右下角的**工具箱**图标上悬停，然后在弹出菜单中选择**日志查询**。
-
-    ![进入日志查询](/images/docs/zh-cn/toolbox/log-query/log-query-guide.PNG)
+1. 所有用户都可以使用日志查询功能。使用任意帐户登录控制台，在右下角的 <img src="/images/docs/zh-cn/toolbox/log-query/toolbox.png" width='20' /> 上悬停，然后在弹出菜单中选择**日志查询**。
 
 2. 在弹出窗口中，您可以看到日志数量的时间直方图、集群选择下拉列表以及日志查询栏。
 
-    ![日志查询界面](/images/docs/zh-cn/toolbox/log-query/log-query-interface.PNG)
+    ![log-search](/images/docs/zh-cn/toolbox/log-query/log-search.png)
 
     {{< notice note >}}
 
-- 如果您启用了多集群功能，KubeSphere 支持对每个集群分别进行日志查询。您可以使用日志搜索栏旁边的下拉列表切换目标集群。
-- 日志搜索栏中支持以下字段：
-  - **关键字**
-  - **项目**
-  - **工作负载**
-  - **容器组**
-  - **容器**
-  - **时间范围**
+- 如果您启用了[多集群功能](../../multicluster-management/)，KubeSphere 支持对每个集群分别进行日志查询。您可以点击搜索栏左侧的 <img src="/images/docs/zh-cn/toolbox/log-query/drop-down-list.png" width='20' /> 切换目标集群。
+- KubeSphere 默认存储最近七天内的日志。
+
+  {{</ notice >}}
+
+3. 您可以点击搜索栏并输入搜索条件，可以按照消息、企业空间、项目、资源类型、资源名称、原因、类别或时间范围搜索事件（例如，输入`时间范围:最近 10 分钟`来搜索最近 10 分钟的事件）。或者，点击时间直方图中的柱状图，KubeSphere 会使用该柱状图的时间范围进行日志查询。
+
+    ![log-search-list](/images/docs/zh-cn/toolbox/log-query/log-search-list.png)
+
+    {{< notice note >}}
+
 - 关键字字段支持关键字组合查询。例如，您可以同时使用 `Error`、`Fail`、`Fatal`、`Exception` 和 `Warning` 来查询所有异常日志。
 - 关键字字段支持精确匹配和模糊匹配。模糊匹配不区分大小写，并且根据 ElasticSearch 分段规则，通过单词或词组的前半部分来检索完整术语。例如，您可以通过搜索关键字 `node_cpu`（而不是 `cpu`）来检索包含 `node_cpu_total` 的日志。
 
-    {{</ notice >}}
-
-3. 您可以在日志搜索栏中选择**时间范围**来自定义查询时间范围。或者，点击时间直方图中的柱状图，KubeSphere 会使用该柱状图的时间范围进行日志查询。
-
-    ![log-query-time-range](/images/docs/zh-cn/toolbox/log-query/log-query-time-range.PNG)
-
-    {{< notice note >}}
-
-- KubeSphere 默认存储最近七天内的日志。
 - 每个集群都有自己的日志保留期限，可单独设置，您可以在 `ClusterConfiguration` 中进行修改。有关详细信息，请参考 [KubeSphere 日志系统](../../pluggable-components/logging/)。
 
     {{</ notice >}}
 
 ## 使用搜索参数
 
-1. 您可以提供尽可能多的字段来缩小搜索结果。以在集群 `product` 的项目 `kubesphere-system` 中查询最近 12 小时内包含关键字 `error` 的日志为例，如下图所示。
+1. 您可以输入多个条件来缩小搜索结果。
 
-    ![搜索日志](/images/docs/zh-cn/toolbox/log-query/log-query-log-search.PNG)
+    ![log-search-conditions](/images/docs/zh-cn/toolbox/log-query/log-search-conditions.png)
 
-2. 查询返回 13 行日志，并显示了相应的时间、项目、容器组（即 Pod）和容器信息。
+2. 点击列表中的任一结果，进入它的详情页面，查看该容器组 (Pod) 的日志，包括右侧的完整内容，便于开发者分析和排除故障。
 
-3. 点击列表中的任一结果，进入它的详情页面，查看该 Pod 的日志，包括右侧的完整内容，便于开发者分析和排除故障。
+    ![log-search-details-page](/images/docs/zh-cn/toolbox/log-query/log-search-details-page.png)
 
     {{< notice note >}}
 
-日志查询界面支持每 5 秒、10 秒或 15 秒动态刷新一次，并且用户可以将日志导出至本地文件进行进一步分析（点击右上角按钮）。
+- 日志查询界面支持每 5 秒、10 秒或 15 秒动态刷新一次.。
+- 您可以点击右上角的 <img src="/images/docs/zh-cn/toolbox/log-query/export-logs.png" width='20' /> 将日志导出至本地文件进行进一步分析。
 
-    {{</ notice >}}
-    
-    ![日志详情](/images/docs/zh-cn/toolbox/log-query/log-query-log-detail.PNG)
+{{</ notice >}}
 
-4. 您在左侧面板可以通过下拉列表切换 Pod 并查看其在同一个项目中的容器，从而查看是否有任何异常 Pod 影响到其他 Pod。
+4. 在左侧面板中，您可以点击 <img src="/images/docs/zh-cn/toolbox/log-query/drop-down-list.png" width='20' /> 切换 Pod 并查看其在同一个项目中的容器，从而查看是否有任何异常 Pod 影响到其他 Pod。
 
-    ![查看其它 Pod](/images/docs/zh-cn/toolbox/log-query/log-query-inspect-other-pods.PNG)
 
 ## 进入详情页面
 
-1. 如果日志看起来异常，您可以进入 Pod 详情页面或容器详情页面，进一步查看容器日志、资源监控图以及事件。
+在左侧面板，您可以点击 <img src="/images/docs/zh-cn/toolbox/log-query/view-detail-page.png" width='20' /> 查看 Pod 详情页面或容器详情页面。
 
-    ![进入详情页面](/images/docs/zh-cn/toolbox/log-query/log-query-drill.PNG)
+下图是 Pod 详情页面示例：
 
-2. 如下图所示，查看容器详情页面。同时，您还可以打开终端直接为容器排除故障。
+![pod-details-page](/images/docs/zh-cn/toolbox/log-query/pod-details-page.png)
 
-    ![进入容器](/images/docs/zh-cn/toolbox/log-query/log-query-drill-container.png)
+下图是容器详情页面示例。您可以点击右上角的**终端**打开终端为容器排除故障。
+
+![container-detail-page](/images/docs/zh-cn/toolbox/log-query/container-detail-page.png)
