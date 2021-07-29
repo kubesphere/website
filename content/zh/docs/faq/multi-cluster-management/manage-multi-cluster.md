@@ -48,7 +48,7 @@ KubeSphere 提供了易于使用的多集群功能，帮助您[在 KubeSphere �
 
 您通过 Host 集群的中央控制平面创建的帐户会被同步至 Member 集群。
 
-如果您希望让不同的帐访问不同的集群，您可以创建企业空间并[赋予他们不同的集群](../../../cluster-administration/cluster-settings/cluster-visibility-and-authorization/)。 在此之后，您可以根据这些帐户的访问要求，邀请不同的帐户至这些企业空间。在未来版本中，您可以邀请帐户至[多集群项目](../../../project-administration/project-and-multicluster-project/#多集群项目)中。。
+如果您希望让不同的帐访问不同的集群，您可以创建企业空间并[赋予他们不同的集群](../../../cluster-administration/cluster-settings/cluster-visibility-and-authorization/)。 在此之后，您可以根据这些帐户的访问要求，邀请不同的帐户至这些企业空间。在未来版本中，您可以邀请帐户至[多集群项目](../../../project-administration/project-and-multicluster-project/#多集群项目)中。
 
 ### KubeSphere 组件管理
 
