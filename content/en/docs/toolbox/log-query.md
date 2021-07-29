@@ -54,7 +54,7 @@ You need to enable the [KubeSphere Logging System](../../pluggable-components/lo
     
     {{< notice note >}}
 
-- The log query interface supports dynamic refreshing with 5s, 10s or 15s.
+- The log query interface supports dynamic refreshing with 5s, 10s, or 15s.
 - You can click <img src="/images/docs/toolbox/log-query/export-logs.png" width='20' /> in the upper-right corner to export logs to a local file for further analysis.
 
 {{</ notice >}}
@@ -70,6 +70,6 @@ The following figure shows the Pod details page:
 
 ![pod-details-page](/images/docs/toolbox/log-query/pod-details-page.png)
 
-The following figure shows the container detail page. You can click **Terminal** on the upper-left corner to open the terminal and debug the container.
+The following figure shows the container details page. You can click **Terminal** in the upper-left corner to open the terminal and debug the container.
 
 ![container-detail-page](/images/docs/toolbox/log-query/container-detail-page.png)
