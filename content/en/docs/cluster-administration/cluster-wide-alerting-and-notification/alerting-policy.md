@@ -64,8 +64,8 @@ Under **Monitoring**, the **Alert Monitoring** chart shows the actual usage or a
 
 {{< notice note >}}
 
-You can click <img src="/images/docs/cluster-administration/cluster-wide-alerting-and-notification/alerting-policies-node-level/drop-down-list.png" width='20' /> on the upper-right corner to select or custom a time range for the alert monitoring chart.
+You can click <img src="/images/docs/cluster-administration/cluster-wide-alerting-and-notification/alerting-policies-node-level/drop-down-list.png" width='20' /> in the upper-right corner to select or custom a time range for the alert monitoring chart.
 
-You can also click <img src="/images/docs/zh-cn/cluster-administration/cluster-wide-alerting-and-notification/alerting-policy-node-level/refresh.png" width='25' /> on the upper-right corner to manually refresh the alert monitoring chart.
+You can also click <img src="/images/docs/zh-cn/cluster-administration/cluster-wide-alerting-and-notification/alerting-policy-node-level/refresh.png" width='25' /> in the upper-right corner to manually refresh the alert monitoring chart.
 
 {{</ notice >}}
