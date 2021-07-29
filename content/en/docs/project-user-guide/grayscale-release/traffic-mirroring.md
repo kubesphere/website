@@ -16,7 +16,7 @@ Traffic mirroring, also called shadowing, is a powerful, risk-free method of tes
 
 ## Create a Traffic Mirroring Job
 
-1. Log in to KubeSphere as `project-regular` and navigate to **Grayscale Release**. Under **Categories**, click **Create Job** on the right of **Traffic Mirroring**.
+1. Log in to KubeSphere as `project-regular` and go to **Grayscale Release**. Under **Categories**, click **Create Job** on the right of **Traffic Mirroring**.
 
 2. Set a name for it and click **Next**.
 
@@ -24,7 +24,7 @@ Traffic mirroring, also called shadowing, is a powerful, risk-free method of tes
 
 4. On the **Grayscale Release Version** tab, add another version of it (for example, `v2`) as shown in the image below and click **Next**:
 
-   ![traffic-mirroring-4](/images/docs/project-user-guide/grayscale-release/traffic-mirroring/traffic-mirroring-4.jpg)
+   ![traffic-mirroring-4](/images/docs/project-user-guide/grayscale-release/traffic-mirroring/traffic-mirroring-4.png)
 
    {{< notice note >}}
 
@@ -34,19 +34,19 @@ Traffic mirroring, also called shadowing, is a powerful, risk-free method of tes
 
 5. On the **Policy Config** tab, click **Create**.
 
-6. The traffic mirroring job created displays under the tab **Job Status**. Click it to view details.
+6. The traffic mirroring job created is displayed under the tab **Job Status**. Click it to view details.
 
-   ![traffic-mirroing-task](/images/docs/project-user-guide/grayscale-release/traffic-mirroring/traffic-mirroing-task.jpg)
+   ![traffic-mirroing-task](/images/docs/project-user-guide/grayscale-release/traffic-mirroring/traffic-mirroing-task.png)
 
-7. You can see the traffic is being mirrored to `v2` with real-time traffic displaying in the line chart.
+7. You can see the traffic is being mirrored to `v2` with real-time traffic displayed in the line chart.
 
-   ![traffic-mirroring-6](/images/docs/project-user-guide/grayscale-release/traffic-mirroring/traffic-mirroring-6.jpg)
+   ![traffic-mirroring-6](/images/docs/project-user-guide/grayscale-release/traffic-mirroring/traffic-mirroring-6.png)
 
 8. The new **Deployment** is created as well.
 
-   ![new-deployment](/images/docs/project-user-guide/grayscale-release/traffic-mirroring/new-deployment.jpg)
+   ![new-deployment](/images/docs/project-user-guide/grayscale-release/traffic-mirroring/new-deployment.png)
 
-9. You can directly get the virtual service to view `mirror` and `weight` by executing the following command:
+9. You can get the virtual service to view `mirror` and `weight` by running the following command:
 
    ```bash
    kubectl -n demo-project get virtualservice -o yaml
@@ -54,8 +54,8 @@ Traffic mirroring, also called shadowing, is a powerful, risk-free method of tes
 
    {{< notice note >}} 
 
-   - When you execute the command above, replace `demo-project` with your own project (i.e. namespace) name.
-   - If you want to execute the command from the web kubectl on the KubeSphere console, you need to use the account `admin`.
+   - When you run the command above, replace `demo-project` with your own project (namely, namespace) name.
+   - If you want to run the command from the web kubectl on the KubeSphere console, you need to use the account `admin`.
 
    {{</ notice >}} 
 
@@ -82,7 +82,7 @@ Traffic mirroring, also called shadowing, is a powerful, risk-free method of tes
           ...
     ```
 
-    This route rule sends 100% of the traffic to `v1`. The last stanza specifies that you want to mirror to the service `reviews v2`. When traffic gets mirrored, the requests are sent to the mirrored service with their Host/Authority headers appended with `-shadow`. For example, `cluster-1` becomes `cluster-1-shadow`.
+    This route rule sends 100% of the traffic to `v1`. The `mirror` field specifies that you want to mirror to the service `reviews v2`. When traffic gets mirrored, the requests are sent to the mirrored service with their Host/Authority headers appended with `-shadow`. For example, `cluster-1` becomes `cluster-1-shadow`.
 
     {{< notice note >}}
 
@@ -94,4 +94,4 @@ These requests are mirrored as “fire and forget”, which means that the respo
 
 You can remove the traffic mirroring job by clicking **Job offline**, which does not affect the current app version.
 
-![remove-traffic-mirroring](/images/docs/project-user-guide/grayscale-release/traffic-mirroring/remove-traffic-mirroring.jpg)
+![remove-traffic-mirroring](/images/docs/project-user-guide/grayscale-release/traffic-mirroring/remove-traffic-mirroring.png)
