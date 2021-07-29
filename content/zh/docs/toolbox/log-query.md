@@ -54,7 +54,7 @@ weight: 15100
 
     {{< notice note >}}
 
-- 日志查询界面支持每 5 秒、10 秒或 15 秒动态刷新一次.。
+- 日志查询界面支持每 5 秒、10 秒或 15 秒动态刷新一次。
 - 您可以点击右上角的 <img src="/images/docs/zh-cn/toolbox/log-query/export-logs.png" width='20' /> 将日志导出至本地文件进行进一步分析。
 
 {{</ notice >}}
