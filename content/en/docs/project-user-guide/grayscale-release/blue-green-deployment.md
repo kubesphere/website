@@ -58,7 +58,7 @@ The blue-green release provides a zero downtime deployment, which means the new 
 
    {{< notice note >}} 
 
-   - When you run the command above, replace `demo-project` with your own project (i.e. namespace) name.
+   - When you run the command above, replace `demo-project` with your own project (namely, namespace) name.
    - If you want to run the command from the web kubectl on the KubeSphere console, you need to use the account `admin`.
 
    {{</ notice >}}
