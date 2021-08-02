@@ -4,11 +4,9 @@ keywords: Cloud Native, WebAssembly, Kubernetes
 description: Given the advantages of WebAssembly, can it replace Docker?
 tag: 'Cloud Native, WebAssembly, Kubernetes'
 createTime: '2021-07-28'
-author: 'Feynman, Jianna Liu, Yicen Xie'
+author: 'Michael Yuan， Yicen Xie'
 snapshot: 'https://raw.githubusercontent.com/VeraXIE1997/test/main/Will%20Cloud%20Native%20Replace%20Docker/image/image-20210721141953114%E7%9A%84%E5%89%AF%E6%9C%AC.png'
 ---
-
-# Will Cloud Native WebAssembly Replace Docker?
 
 Holding a brand new form, WebAssembly excels in its portability, small size, fast loading and compatibility. Given its good security, compatibility, high efficiency and lightweight, WebAssembly is an ideal technology for applications based on sandbox schemes and has got noticed from communities of containers, function computing, IoT and edge computing. What is WebAssembly? Is it capable of replacing Docker?
 
