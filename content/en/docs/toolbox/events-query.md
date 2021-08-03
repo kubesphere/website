@@ -16,38 +16,27 @@ This guide demonstrates how you can do multi-level, fine-grained event queries t
 
 ## Query Events
 
-1. The event query function is available for all users. Log in to the console with any account, hover over the **Toolbox** in the lower-right corner and select **Event Search**.
+1. The event query function is available for all users. Log in to the console with any account, hover over <img src="/images/docs/toolbox/event-query/toolbox.png" width='20' /> in the lower-right corner and select **Event Search**.
 
-    ![events_query_guide](/images/docs/events/events_query_guide.png)
+2. In the displayed dialog box, you can view the number of events that the account has permission to view.
 
-2. As shown in the pop-up window, you can see the number of events that the account has permission to view.
-
-    ![events_query_home](/images/docs/events/events_query_home.png)
+    ![event-search](/images/docs/toolbox/event-query/event-search.png)
 
     {{< notice note >}}
 
-- KubeSphere supports event queries on each cluster separately if you have enabled the multi-cluster feature. You can switch the target cluster using the drop-down list next to the search bar.
+- KubeSphere supports event queries on each cluster separately if you have enabled the [multi-cluster feature](../../multicluster-management/). You can click <img src="/images/docs/toolbox/event-query/drop-down-list.png" width='20' /> on the left of the search box and select a target cluster.
 
-- Supported fields in the search bar:
-  - **Workspace**
-  - **Project**
-  - **Resource Type**
-  - **Resource Name**
-  - **Reason**
-  - **Message**
-  - **Category**
-  - **Time Range**
-- You can customize the query time range by selecting **Time Range** in the search bar. KubeSphere stores events for last seven days by default.
+- KubeSphere stores events for last seven days by default.
 
     {{</ notice >}}
 
-3. Here is an example to query events in the project `test` whose **Message** contains `container` within last 1 hour as shown in the following screenshot. It returns 84 rows of results with the corresponding time, project, and message all displayed.
+3. You can click the search box and enter a condition to search for events by message, workspace, project, resource type, resource name, reason, category, or time range (for example, use `Time Range:Last 10 minutes` to search for events within the last 10 minutes).
 
-    ![events_query_list](/images/docs/events/events_query_list.png)
+    ![event-search-list](/images/docs/toolbox/event-query/event-search-list.png)
 
 4. Click any one of the results from the list, and you can see raw information of it. It is convenient for developers in terms of debugging and analyzing.
 
-    ![events_query_detail](/images/docs/events/events_query_detail.png)
+    ![event-details](/images/docs/toolbox/event-query/event-details.png)
 
     {{< notice note >}}
 
