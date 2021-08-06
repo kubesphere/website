@@ -8,7 +8,7 @@ weight: 1100
 
 ## Overview
 
-KubeSphere is a **distributed operating system managing cloud-native applications** with [Kubernetes](https://kubernetes.io) as its kernel. It provides a plug-and-play architecture for the seamless integration of third-party applications to boost its ecosystem.
+KubeSphere is a **distributed operating system for cloud-native application management**, using [Kubernetes](https://kubernetes.io) as its kernel. It provides a plug-and-play architecture, allowing third-party applications to be seamlessly integrated into its ecosystem.
 
 KubeSphere also represents a multi-tenant enterprise-grade [Kubernetes container platform](https://kubesphere.io) with full-stack automated IT operation and streamlined [DevOps workflows](https://kubesphere.io/devops/). It provides developer-friendly wizard web UI, helping enterprises to build out a robust and feature-rich platform. It boasts the most common functionalities needed for enterprise Kubernetes strategies, such as **Kubernetes resource management**, **DevOps (CI/CD)**, **application lifecycle management**, **monitoring**, **logging**, **service mesh**, **multi-tenancy**, **alerting and notification**, **auditing**, **storage and networking**, **autoscaling**, **access control**, **GPU support**, **multi-cluster deployment and management**, **network policy**, **registry management**, and **security management**.
 
