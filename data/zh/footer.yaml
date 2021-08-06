@@ -70,6 +70,8 @@ footer:
           link: 'https://aws.amazon.com/cn/quickstart/architecture/qingcloud-kubesphere/'
         - content: KubeSphere on Azure
           link: 'https://market.azure.cn/marketplace/apps/qingcloud.kubesphere'
+        - content: KubeSphere on DigitalOcean
+          link: 'https://marketplace.digitalocean.com/apps/kubesphere'
         - content: KubeSphere on QingCloud(QKE)
           link: 'https://www.qingcloud.com/products/kubesphereqke'
         - content: KubeSphere 虚拟化平台
