@@ -1,7 +1,7 @@
 ---
 title: KubeSphere and Friends | Kubernetes and Cloud Native Meetup ——北京站
-description: CIC 2021 云计算峰会”是一场 Top 级行业盛会，将汇聚 800 家青云QingCloud 企业客户信息化负责人，采取线上线下相结合的方式，与会规模将超过 10000 人。大会的主题为“预见·数字自由”，将有技术大牛分享前沿成果，行业大咖带来实战经验。本次大会除了主论坛，还设置了多个分论坛。KubeSphere Meetup 将作为其中一个分论坛，延续之前上海、杭州、成都三站的“KubeSphere & Friends”主题，为大家带来技术的交流和碰撞。于 7 月 29 日在北京为大家带来 Kubernetes and Cloud Native Meetup。
-keywords:  KubeSphere,Meetup,Beijing
+description: KubeSphere and Friends 2021，Kubernetes and Cloud Native Meetup 第四站北京站顺利举办，搭载 CIC 云计算峰会，围绕“云原生、可观测性、AI、 边缘计算、GitOps”等火热话题，来自 IT、无人驾驶、通信、金融等行业技术大牛、嘉宾以及社区伙伴带来最新的思考与实践。
+keywords:  KubeSphere,Meetup,Beijing,云原生,可观测性,AI,边缘计算,GitOps
 css: scss/live-detail.scss
 
 section1:
@@ -13,48 +13,97 @@ section1:
   base: 北京市东城区建国门内大街 9 号北京国际饭店 + 线上同步直播
   baseIcon: /images/live/base.svg
 ---
+<center>KubeSphere and Friends 2021</center>
+
+<center>Kubernetes and Cloud Native Meetup</center>
+
+<center>第四站北京站顺利举办 🎉🎉🎉</center>
+
+<center>围绕“云原生、可观测性、AI、 边缘计算、GitOps”等火热话题</center>
+
+<center>来自 IT、无人驾驶、通信、金融等行业技术大牛、嘉宾</center>
+
+<center>以及社区伙伴带来最新的思考与实践</center>
+
+<center>都有哪些令人难忘的精彩环节和瞬间呢？</center>
+
+<center>一起来看看</center>
+
+<center>↓</center>
+
+## 深入解读云原生可观测性之日志与告警通知
+
+![](https://pek3b.qingstor.com/kubesphere-community/images/cic-leiwanjun.jpeg)
+
+讲师：雷万钧
+
+个人介绍：KubeSphere 可观测性研发工程师
+
+演讲概要：
+
+日志采集和告警通知是构建云原生可观测性平台非常重要两个环节。Fluent Bit 是非常流行的开源日志采集工具，其轻量高效的特点天然适合云原生场景。Fluent Bit Operator 作为 KubeSphere 社区开源的唯一一个 Fluentbit 管理工具，即将捐献给 Fluent 社区，并将在增加 Fluentd 支持后更名为 Fluent Operator。
+
+本次分享整体介绍了 Fluent Bit 和 Fluent Bit Operator 的架构、功能和部署实践；还介绍了 Notifacation Manager 的云原生架构和功能，以及如何构建企业级的云原生多租户通知系统。
+
+<iframe width="760" height="380" src="https://player.bilibili.com/player.html?aid=377155706&bvid=BV1Ro4y1S7Uo&cid=383164279&page=1&high_quality=1" scrolling="no" border="0" frameborder="no" framespacing="0" allowfullscreen="true"> </iframe>
+
+## 面向无人驾驶 “云端大脑” 可用性的云原生实践
+
+![](https://pek3b.qingstor.com/kubesphere-community/images/cic-zhanghaili.jpeg)
+
+讲师：张海立
+
+个人介绍：驭势科技 云平台研发总监
+
+演讲概要：
+
+驭势科技 UISEE 是中国领先的自动驾驶公司，致力于为全行业、全场景提供 AI 驾驶服务，交付赋能出行和物流新生态的 AI 驾驶员。由于需要保障各个场景下 “真 · 无人” 的业务运作，我们在 “云端大脑” 上做了一些保障其高可用和可观察性方面的实践。
+
+本次分享介绍了驭势科技使用 KubeSphere 的历程，在云服务高可用方面自制 Operator 实现热备切换的工作，以及基于 SkyWalking 进行车云链路追踪的一些实践。
+
+<iframe width="760" height="380" src="https://player.bilibili.com/player.html?aid=804632135&bvid=BV1Ty4y1L7Np&cid=383744661&page=1&high_quality=1" scrolling="no" border="0" frameborder="no" framespacing="0" allowfullscreen="true"> </iframe>
+
+## 中国移动基于 Kubernetes 的物联网边缘计算应用实践
+
+![](https://pek3b.qingstor.com/kubesphere-community/images/cic-heyuchuan.jpeg)
+
+讲师：何毓川
+
+个人介绍：中移物联网 云计算开发高级工程师
+
+演讲概要：
+
+本主题主要分享了中国移动基于 KubeSphere 的物联网边缘计算应用实践，介绍了基于 KubeSphere 的后端架构演进，自研能力以及当前技术栈下产品和技术展望。
+
+<iframe width="760" height="380" src="https://player.bilibili.com/player.html?aid=504628879&bvid=BV1vg411L7e4&cid=383475330&page=1&high_quality=1" scrolling="no" border="0" frameborder="no" framespacing="0" allowfullscreen="true"> </iframe>
+
+## 马上消费金融基于 KubeSphere 的 AI 平台的开发实践
+
+![](https://pek3b.qingstor.com/kubesphere-community/images/cic-Daniel.jpeg)
+
+讲师：胡涛
+
+个人介绍：马上消费金融 高级云平台开发工程师
+
+演讲概要：
+
+本主题从 AI 平台业务架构，开发痛点等切入，介绍了引入 KubeSphere 的原因、过程、收获等；进而介绍了 KubeSphere 的部署架构、配置原理、二次开发等，力求打消 KubeSphere 的神秘感。
+
+<iframe width="760" height="380" src="https://player.bilibili.com/player.html?aid=762238630&bvid=BV1764y1s7bD&cid=383494454&page=1&high_quality=1" scrolling="no" border="0" frameborder="no" framespacing="0" allowfullscreen="true"> </iframe>
+
+## 基于 Argo CD 的 GitOps 实践经验
+
+![](https://pek3b.qingstor.com/kubesphere-community/images/cic-peizhenfei.jpeg)
+
+讲师：裴振飞
+
+个人介绍：视源股份 运维工程师
+
+演讲概要：
+
+本主题主要分享了 GitOps 的落地实践经验，同时介绍了 S2I 在 KubeSphere 上的应⽤，带给视源股份的收益；在介绍 GitOps 的过程中，引⼊ Argo CD 组件，最后与 KubeSphere 多集群管理结合，介绍了 Argo CD 在应⽤多集群间迁移的⼀种尝试⽅案。
+
+<iframe width="760" height="380" src="https://player.bilibili.com/player.html?aid=589719212&bvid=BV1Hq4y1Q7Py&cid=383590164&page=1&high_quality=1" scrolling="no" border="0" frameborder="no" framespacing="0" allowfullscreen="true"> </iframe>
 
 
-## 背景
-
-“CIC 2021 云计算峰会”是一场 Top 级行业盛会，将汇聚 800 家青云QingCloud 企业客户信息化负责人，采取线上线下相结合的方式，与会规模将超过 10000 人。
-
-大会的主题为“预见·数字自由”，将有技术大牛分享前沿成果，行业大咖带来实战经验。本次大会除了主论坛，还设置了多个分论坛。KubeSphere Meetup 将作为其中一个分论坛，延续之前上海、杭州、成都三站的“KubeSphere & Friends”主题，为大家带来技术的交流和碰撞。
-
-## 加速“云原生”，引领业务新变革
-
-从工业时代、互联网时代到云原生时代，企业 IT 系统与业务系统的关系发生了显著变化，从 IT 支撑业务转变为 IT 引领业务、甚至 IT 与业务融为一体，业务的构建方式也围绕着流动在云端的数据发生根本性变革。在此过程中，云原生既赋予了大数据灵活的存储方式、新级别的自动化服务、更好的集成和分析功能，又提供了敏捷构建云原生应用并实施统一管理的全生命周期工具链，正成为企业通过 IT 引领业务变革的利器。
-
-如何加速云原生，继续引领业务新变革？微服务、多云与多集群管理、DevOps、Serverless 又将如何落地？围绕云原生话题的讨论，也将会成为今年 CIC 云计算峰会的一大热门。
-
-## 活动议程
-
-北京站 KubeSphere Meetup 是今年的第四站，目前已确定讲师和议程。
-
-![](https://pek3b.qingstor.com/kubesphere-community/images/agenda-beijing-meetup-cic.png)
-
-## 活动时间和地点
-
-活动时间：7 月 29 日 下午 14:00-16:30
-
-活动地点：北京国际饭店-北京国际饭店会议中心 F3 紫金大厅 B
-
-## 活动礼品
-
-本次活动依旧定制了 KubeSphere 全套纪念周边礼品：T恤、马克杯、纪念徽章、帆布袋、口罩......
-
-除了提供周边礼品之外，我们还会赠送各种云原生相关的硬核书籍，有电子工业出版社提供的 《云原生操作系统Kubernetes》《未来架构从服务化到云原生》，还有人民邮电出版社图灵教育提供的张磊大神的巨著《深入剖析 Kubernetes》。
-
-在本场活动中参与互动交流，即可获得精美礼品一份(如海报中所示)！
-
-## 活动报名
-
-目前报名已经开启，欢迎各位 KubeSphere 社区的小伙伴以及对云原生技术感兴趣的朋友积极报名！在本次 Meetup 中，不仅可以获取各位云原生技术大牛的实践经验分享，还能和各位业界的大咖现场交流！
-
-扫描上方海报或下方图中的二维码进入到报名页面，填写个人信息，选择 “KubeSphere & Friends 2021 Meetup - 北京站”，即可报名。
-
-![](https://pek3b.qingstor.com/kubesphere-community/images/CIC.gif)
-
-
-
-
+> 北京站 Meetup 圆满收官！可扫描官网底部二维码关注 「KubeSphere云原生」 公众号，后台回复 “2021 北京” 获取下载链接。
