@@ -74,14 +74,24 @@
       position: absolute;
     }
 
+    .play{
+      position: absolute;
+      cursor: pointer;
+      top: 380px;
+      left:900px;
+      z-index: 5;
+    }
+
     .img1 {
+      cursor: pointer;
+      position: absolute;
       top: 268px;
       right: 0;
       z-index: 2;
       width: 460px;
       object-fit: contain;
       border: 6px solid #ffffff;
-      border-radius: 3px;
+      border-radius: 5px;
       box-shadow: 0 10px 20px 0 rgba(34, 43, 62, 0.1), 0 8px 16px 0 rgba(33, 43, 61, 0.2), 0 10px 30px 0 rgba(34, 43, 62, 0.1);
     }
 
@@ -1064,7 +1074,7 @@
 .join-us {
   display: none;
   position: fixed;
-  z-index: 10;
+  z-index: 15;
   right: 20px;
   bottom: 16px;
   width: 336px;
@@ -1167,4 +1177,56 @@ footer {
   @media only screen and (max-width: $mobile-max-width) {
     background-color: #f5f8f9;
   }
+}
+
+
+.modal-for-video{
+  display: block;
+  z-index: 20;
+  position: absolute;
+  height: 608px;
+  width: 1080px;
+  top:50%;
+  left:50%;
+  margin-top: -304px;
+  margin-left: -540px;
+  padding: 0;
+  border-radius: 0;
+  font-size: 0;
+ 
+  .video-div{
+    height: 100%;
+    width: 100%;
+
+    video{
+      height: 100%;
+      width: 100%;
+    }
+    iframe{
+      height: 100%;
+      width: 100%;
+    }
+  }
+
+}
+
+.close-video{
+  cursor: pointer;
+  position: absolute;
+  z-index: 20;
+  height: 32px;
+  width: 32px;
+  border-radius: 16px;
+  overflow: hidden;
+  right: -15px;
+  top: -10px;
+}
+
+.shadow{
+  position: absolute;
+  overflow: hidden;
+  z-index: 18;
+  height: 6500px;
+  width: 100%;
+  background-color: rgba(0, 0, 0, 0.7);
 }
