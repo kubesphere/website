@@ -1,6 +1,6 @@
 {{ define "main" }}
 {{ $data := index .Site.Data .Site.Language.Lang }}
-<div class="shadow">test</div>
+<div class="shadow"></div>
 <section class='section-1'>
   {{ with .Params.section1 }}
   <div class="common-layout">
@@ -237,7 +237,8 @@
 <script>
 
   var controlVideo = function () {
-    var openVideo = $('div.open-video');
+
+    var play = $('img.play');
     var img = $('#video');
     var shadow = $('div.shadow')
     var video = $('div.modal-for-video')
@@ -246,15 +247,8 @@
     var closeVideo = $('img.close-video')
     var language = $('div.video-div').data('language')
     var height = document.body.scrollHeight + 'px'
-    console.log(height);
 
-
-    shadow.hide();
-    closeVideo.hide();
-    video.hide();
-    openVideo.hide();
-
-    img.click(function () {
+    let openVideo = function () {
       if (language == 'zh') {
         start2.css('display', 'none')
         start1.attr('src', "https://kubesphere-community.pek3b.qingstor.com/videos/kubesphere-demo-cn.mp4")
@@ -264,30 +258,38 @@
         start2.attr('src', "https://www.youtube.com/embed/YxZ1YUv0CYs")
       }
       shadow.show()
-      shadow.css('height', 'height')
+
+      shadow.css('height', `${height}`)
 
       video.show();
       closeVideo.show();
-      openVideo.show()
 
+    }
+    let endVideo = function () {
+      closeVideo.hide()
+      start1.attr('src', '')
+      start2.attr('src', '')
+      shadow.hide()
+      video.hide()
+    }
+
+    shadow.hide();
+    closeVideo.hide();
+    video.hide();
+
+    img.click(function () {
+      openVideo()
+    })
+    play.click(function () {
+      openVideo()
     })
 
     closeVideo.click(function () {
-      closeVideo.hide()
-      start1.attr('src', '')
-      start2.attr('src', '')
-      shadow.hide()
-      video.hide()
-      openVideo.hide()
-    })
-
+      endVideo()
+    }
+    )
     shadow.click(function () {
-      closeVideo.hide()
-      start1.attr('src', '')
-      start2.attr('src', '')
-      shadow.hide()
-      video.hide()
-      openVideo.hide()
+      endVideo()
     })
 
   }

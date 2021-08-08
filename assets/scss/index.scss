@@ -1186,10 +1186,12 @@ footer {
   position: absolute;
   height: 608px;
   width: 1080px;
+  max-width: 1080px;
   top:50%;
   left:50%;
-  margin-top: -304px;
-  margin-left: -540px;
+  // margin-top: -304px;
+  // margin-left: -540px;
+  transform: translate(-50%,-50%);
   padding: 0;
   border-radius: 0;
   font-size: 0;
@@ -1206,6 +1208,14 @@ footer {
       height: 100%;
       width: 100%;
     }
+  }
+
+  @media only screen and (max-width: $mobile-max-width) {
+    position: absolute;
+    width: 80%;
+    height: auto;
+    top: 50%;
+    left:50%
   }
 
 }
@@ -1226,7 +1236,6 @@ footer {
   position: absolute;
   overflow: hidden;
   z-index: 18;
-  height: 6500px;
-  width: 100%;
+  width: 100vw;
   background-color: rgba(0, 0, 0, 0.7);
 }
