@@ -10,8 +10,11 @@
       <p class='p2'>{{ .content | safeHTML }}</p>
       {{ partial "downloadButton" . }}
     </div>
-    <img class='img1' src="/images/home/53.png" id='video' alt="{{ i18n " kubesphere console screenshot"}}">
-    <img class='play' src="/images/videos/play-b.svg" alt="play">
+    <div class="img1-div">
+      <img class='img1' src="/images/home/53.png" id='video' alt="{{ i18n " kubesphere console screenshot"}}">
+      <img class='play' src="/images/videos/play-b.svg" alt="play">
+    </div>
+
     <img class='img2' src="/images/home/left.svg" alt="{{ i18n " background image"}}">
     <img class='img4' src="/images/home/46.svg" alt="{{ i18n " background image"}}">
   </div>
@@ -238,8 +241,7 @@
 
   var controlVideo = function () {
 
-    var play = $('img.play');
-    var img = $('#video');
+    var startVideo = $('div.img1-div')
     var shadow = $('div.shadow')
     var video = $('div.modal-for-video')
     var start1 = $('video.start1')
@@ -257,14 +259,15 @@
         start1.css('display', 'none')
         start2.attr('src', "https://www.youtube.com/embed/YxZ1YUv0CYs")
       }
-      shadow.show()
 
+      shadow.show()
       shadow.css('height', `${height}`)
 
       video.show();
       closeVideo.show();
 
     }
+
     let endVideo = function () {
       closeVideo.hide()
       start1.attr('src', '')
@@ -277,10 +280,7 @@
     closeVideo.hide();
     video.hide();
 
-    img.click(function () {
-      openVideo()
-    })
-    play.click(function () {
+    startVideo.click(function () {
       openVideo()
     })
 

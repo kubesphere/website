@@ -74,25 +74,35 @@
       position: absolute;
     }
 
-    .play{
-      position: absolute;
-      cursor: pointer;
-      top: 380px;
-      left:900px;
-      z-index: 5;
-    }
 
-    .img1 {
+ 
+    .img1-div{
       cursor: pointer;
       position: absolute;
       top: 268px;
       right: 0;
       z-index: 2;
       width: 460px;
+      height: 265.34px;
       object-fit: contain;
       border: 6px solid #ffffff;
       border-radius: 5px;
       box-shadow: 0 10px 20px 0 rgba(34, 43, 62, 0.1), 0 8px 16px 0 rgba(33, 43, 61, 0.2), 0 10px 30px 0 rgba(34, 43, 62, 0.1);
+    
+    .img1{
+      height: 100%;
+      width: 100%;
+    }
+
+
+    .play{
+      position: absolute;
+      top:50%;
+      left:50%;
+      transform: translate(-50%,-50%);
+      z-index: 5;
+    }
+
     }
 
     .img2 {
@@ -136,7 +146,7 @@
         display: none;
       }
 
-      .img1 {
+      .img1-div {
         position: relative;
         top: 0;
         left: 0;
@@ -1238,4 +1248,9 @@ footer {
   z-index: 18;
   width: 100vw;
   background-color: rgba(0, 0, 0, 0.7);
+}
+
+
+.test{
+  position: absolute;
 }
