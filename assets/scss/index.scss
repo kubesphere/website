@@ -1201,8 +1201,6 @@ footer {
   max-width: 1080px;
   top:50%;
   left:50%;
-  // margin-top: -304px;
-  // margin-left: -540px;
   transform: translate(-50%,-50%);
   padding: 0;
   border-radius: 0;
@@ -1223,11 +1221,8 @@ footer {
   }
 
   @media only screen and (max-width: $mobile-max-width) {
-    position: absolute;
     width: 80%;
-    height: auto;
-    top: 50%;
-    left:50%
+    height: 24.5%;
   }
 
 }
