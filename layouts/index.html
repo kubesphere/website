@@ -1,6 +1,6 @@
 {{ define "main" }}
 {{ $data := index .Site.Data .Site.Language.Lang }}
-<div class="shadow">test</div>
+<div class="shadow"></div>
 <section class='section-1'>
   {{ with .Params.section1 }}
   <div class="common-layout">
@@ -10,8 +10,11 @@
       <p class='p2'>{{ .content | safeHTML }}</p>
       {{ partial "downloadButton" . }}
     </div>
-    <img class='img1' src="/images/home/53.png" id='video' alt="{{ i18n " kubesphere console screenshot"}}">
-    <img class='play' src="/images/videos/play-b.svg" alt="play">
+    <div class="img1-div">
+      <img class='img1' src="/images/home/53.png" id='video' alt="{{ i18n " kubesphere console screenshot"}}">
+      <img class='play' src="/images/videos/play-b.svg" alt="play">
+    </div>
+
     <img class='img2' src="/images/home/left.svg" alt="{{ i18n " background image"}}">
     <img class='img4' src="/images/home/46.svg" alt="{{ i18n " background image"}}">
   </div>
@@ -237,8 +240,8 @@
 <script>
 
   var controlVideo = function () {
-    var openVideo = $('div.open-video');
-    var img = $('#video');
+
+    var startVideo = $('div.img1-div')
     var shadow = $('div.shadow')
     var video = $('div.modal-for-video')
     var start1 = $('video.start1')
@@ -246,15 +249,8 @@
     var closeVideo = $('img.close-video')
     var language = $('div.video-div').data('language')
     var height = document.body.scrollHeight + 'px'
-    console.log(height);
 
-
-    shadow.hide();
-    closeVideo.hide();
-    video.hide();
-    openVideo.hide();
-
-    img.click(function () {
+    let openVideo = function () {
       if (language == 'zh') {
         start2.css('display', 'none')
         start1.attr('src', "https://kubesphere-community.pek3b.qingstor.com/videos/kubesphere-demo-cn.mp4")
@@ -263,31 +259,37 @@
         start1.css('display', 'none')
         start2.attr('src', "https://www.youtube.com/embed/YxZ1YUv0CYs")
       }
+
       shadow.show()
-      shadow.css('height', 'height')
+      shadow.css('height', `${height}`)
 
       video.show();
       closeVideo.show();
-      openVideo.show()
 
+    }
+
+    let endVideo = function () {
+      closeVideo.hide()
+      start1.attr('src', '')
+      start2.attr('src', '')
+      shadow.hide()
+      video.hide()
+    }
+
+    shadow.hide();
+    closeVideo.hide();
+    video.hide();
+
+    startVideo.click(function () {
+      openVideo()
     })
 
     closeVideo.click(function () {
-      closeVideo.hide()
-      start1.attr('src', '')
-      start2.attr('src', '')
-      shadow.hide()
-      video.hide()
-      openVideo.hide()
-    })
-
+      endVideo()
+    }
+    )
     shadow.click(function () {
-      closeVideo.hide()
-      start1.attr('src', '')
-      start2.attr('src', '')
-      shadow.hide()
-      video.hide()
-      openVideo.hide()
+      endVideo()
     })
 
   }
