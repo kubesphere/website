@@ -254,7 +254,7 @@ Azure 虚拟网络不支持 [Calico](https://docs.projectcalico.org/reference/pu
    https://kubesphere.io             2020-xx-xx xx:xx:xx
    ```
 
-4. 使用 `<NodeIP>:30880` 和默认的账户和密码 (`admin/p@88w0rd`) 访问 KubeShpere 控制台。
+4. 使用 `<NodeIP>:30880` 和默认的帐户和密码 (`admin/p@88w0rd`) 访问 KubeShpere 控制台。
 
 
 ## 添加额外端口
