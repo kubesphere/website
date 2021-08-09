@@ -36,6 +36,6 @@ weight: 5500
 在某些情况下，您无法按照上述步骤解绑集群。例如，您导入了一个凭证错误的集群，并且无法访问**集群设置**。在这种情况下，请执行以下命令来解绑不健康的集群：
 
 ```bash
-kubectl delete <cluster name>
+kubectl delete cluster <cluster name>
 ```
 
