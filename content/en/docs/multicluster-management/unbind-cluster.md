@@ -36,6 +36,6 @@ This tutorial demonstrates how to unbind a cluster from the central control plan
 On some occasions, you cannot unbind a cluster by following the steps above. For example, you import a cluster with the wrong credentials and you cannot access **Cluster Settings**. In this case, execute the following command to unbind an unhealthy cluster:
 
 ```bash
-kubectl delete <cluster name>
+kubectl delete cluster <cluster name>
 ```
 
