@@ -7,7 +7,7 @@ Weight: 3410
 
 ---
 
-您可以使用 [Azure 云平台](https://azure.microsoft.com/zh-cn/overview/what-is-azure/)自行安装和管理 Kubernetes，或采用托管 Kubernetes 解决方案。如果要使用完全托管平台解决方案，请参阅 [在AKS 上部署 KubeSphere](../../../installing-on-kubernetes/hosted-kubernetes/install-kubesphere-on-aks/) 。
+您可以使用 [Azure 云平台](https://azure.microsoft.com/zh-cn/overview/what-is-azure/)自行安装和管理 Kubernetes，或采用托管 Kubernetes 解决方案。如果要使用完全托管平台解决方案，请参阅 [在 AKS 上部署 KubeSphere](../../../installing-on-kubernetes/hosted-kubernetes/install-kubesphere-on-aks/) 。
 
 此外，您也可以在 Azure 实例上搭建高可用集群。本指南演示如何创建生产就绪的 Kubernetes 和 KubeSphere 群集。
 
@@ -139,9 +139,9 @@ curl -sfL https://get-kk.kubesphere.io | VERSION=v1.1.1 sh -
 
    给予 `kk` 执行权限:
 
-```bash
-chmod +x kk
-```
+   ```bash
+   chmod +x kk
+   ```
 
 
 
