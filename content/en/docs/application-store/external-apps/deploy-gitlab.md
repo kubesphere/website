@@ -57,8 +57,8 @@ This tutorial demonstrates how to deploy GitLab on KubeSphere.
 
    ```yaml
    global:
-       hosts:
-         domain: demo-project.svc.cluster.local
+     hosts:
+       domain: demo-project.svc.cluster.local
    
      gitlab-runner:
        install: false
