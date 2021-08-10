@@ -7,9 +7,9 @@ Weight: 3410
 
 ---
 
-您可以使用 [Azure 云平台](https://azure.microsoft.com/zh-cn/overview/what-is-azure/)自行安装和管理 Kubernetes，或采用托管 Kubernetes 解决方案。如果要使用完全托管平台解决方案，请参阅 [在 AKS 上部署 KubeSphere](../../../installing-on-kubernetes/hosted-kubernetes/install-kubesphere-on-aks/) 。
+您可以使用 [Azure 云平台](https://azure.microsoft.com/zh-cn/overview/what-is-azure/)自行安装和管理 Kubernetes，或采用托管 Kubernetes 解决方案。如果要使用完全托管平台解决方案，请参阅 [在 AKS 上部署 KubeSphere](../../../installing-on-kubernetes/hosted-kubernetes/install-kubesphere-on-aks/)。
 
-此外，您也可以在 Azure 实例上搭建高可用集群。本指南演示如何创建生产就绪的 Kubernetes 和 KubeSphere 群集。
+此外，您也可以在 Azure 实例上搭建高可用集群。本指南演示如何创建生产就绪的 Kubernetes 和 KubeSphere 集群。
 
 ## 简介
 
@@ -34,16 +34,16 @@ Weight: 3410
 
 这些虚拟机将连接至负载均衡器，其中两个包含预定义规则：
 
-- **Inbound NAT**：为每台机器映射 SSH 端口，以便管理虚拟机。
+- **入站 NAT**：为每台机器映射 SSH 端口，以便管理虚拟机。
 - **负载均衡**：默认情况下，http 和 https 端口将映射至节点池。后续可根据需求添加其他端口。
 
-| 服务                    | 协议                   | 规则                           | 后端端口              | 前端端口                                            | 节点池           |
-| ----------------------- | ---------------------- | ------------------------------ | --------------------- | --------------------------------------------------- | ---------------- |
-| ssh <img width="60px"/> | TCP<img width="20px"/> | Inbound NAT<img width="30px"/> | 22<img width="60px"/> | 50200, 50201, 50202, 50100~50199<img width="10px"/> | 主节点, 普通节点 |
-| api 服务器              | TCP                    | 负载均衡                       | 6443                  | 6443                                                | 主节点           |
-| ks 控制台               | TCP                    | 负载均衡                       | 30880                 | 30880                                               | 主节点           |
-| http                    | TCP                    | 负载均衡                       | 80                    | 80                                                  | 普通节点         |
-| https                   | TCP                    | 负载均衡                       | 443                   | 443                                                 | 普通节点         |
+| 服务       | 协议 | 规则     | 后端端口 | 前端端口                         | 节点池           |
+| ---------- | ---- | -------- | -------- | -------------------------------- | ---------------- |
+| ssh        | TCP  | 入站 NAT | 22       | 50200, 50201, 50202, 50100~50199 | 主节点, 普通节点 |
+| api 服务器 | TCP  | 负载均衡 | 6443     | 6443                             | 主节点           |
+| ks 控制台  | TCP  | 负载均衡 | 30880    | 30880                            | 主节点           |
+| http       | TCP  | 负载均衡 | 80       | 80                               | 普通节点         |
+| https      | TCP  | 负载均衡 | 443      | 443                              | 普通节点         |
 
 ## 创建高可用集群基础设施
 
