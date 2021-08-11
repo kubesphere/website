@@ -122,10 +122,23 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                     <div class="md-body">
                         <h1>{{ .Title }}</h1>
                         {{ .Content }}
+                        <section class="feedback-div">
+                            <p class="title">Feedback</p>
+                            <p>Was this page Helpful?</p>
+                            <button class="Yes">Yes</button>
+                            <button class="No">No</button>
+                        </section>
+                        <br>
+                        <p class="msg-thank">Thanks for the feedback. If you have a specific question about how to use KubeSphere, ask it on Slack. Open an 
+                            issue in the GitHub repo if you want to report a problem or suggest an improvement.</p>
+                        
                     </div>
+
+                    
                 </div>
                 {{ if .IsPage }}
-                
+
+             
                 <div class="page-div common-flex-layout">
                     {{ with .Next }}
                     <!-- {{ if .IsDescendant (.GetPage "/docs")}} -->
@@ -163,6 +176,8 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
             {{ end }}
         </div>
     </section>
+
+
     {{ $aside := resources.Get "js/aside.js" }}
     {{ $asideJS := $aside | resources.Fingerprint "sha512" }}
     <script type="text/javascript" src="{{ $asideJS.RelPermalink }}" integrity="{{ $asideJS.Data.Integrity }}"></script>
@@ -176,6 +191,27 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         var filePath = '{{ .File.Path }}'
         var githubUrl = '{{ .Site.Params.githubUrl }}'
         // var filePath = 'README.md'
+
+        var Yes = $('button.Yes');
+        var No = $('button.No');
+        var msg = $('p.msg-thank')
+        msg.hide()
+
+        Yes.click(function(){
+            Yes.css("background-color"," #55BC8A");
+            Yes.css("opacity",'0.5');
+            Yes.css("pointer-events","none");
+            No.css("pointer-events","none");
+            msg.show()
+        })
+
+        No.click(function(){
+            No.css("background-color"," #55BC8A");
+            No.css("opacity",'0.5');
+            Yes.css("pointer-events","none");
+            No.css("pointer-events","none");
+            msg.show()
+        })
     
         var getLatestTime = function(data) {
             var commit = data[0].commit
