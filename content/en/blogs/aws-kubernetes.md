@@ -1,19 +1,19 @@
 ---
-title: 'Using KubeKey to Deploy an HA Kubernetes Cluster on AWS'
-tag: 'Kubernetes, AWS, KubeKey'
-keywords: 'Kubernetes, AWS, KubeKey, HA, High Availability'
+title: 'How to Deploy an HA Kubernetes Cluster on AWS | KubeSphere KubeKey'
+tag: 'Kubernetes, HA, High Availability, AWS, KubeKey'
+keywords: 'Kubernetes, HA, High Availability, AWS, KubeKey, KubeSphere'
 description: 'The KubeKey tool can be used to quickly and efficiently deploy an HA Kubernetes cluster. This article demonstrates how to deploy an HA Kubernetes cluster on AWS.'
 createTime: '2021-08-10'
 author: 'Leo Li, Patrick Luo'
 snapshot: '/images/blogs/en/aws-kubernetes/aws.png'
 ---
 
-The high availability (HA) of clusters in production environments should be taken seriously. In this article, we will show you how to quickly deploy an HA production environment on AWS EC2 instances. To meet the service requirements of the Kubernetes cluster, we need to ensure the HA of kube-apiserver. You can use either of the following methods to meet the target:
+The high availability (HA) of clusters in production environments should be taken seriously. In this article, we will show you how to quickly deploy an HA Kubernetes cluster on AWS EC2 instances. To meet the service requirements of the Kubernetes cluster, we need to ensure the HA of kube-apiserver. You can use either of the following methods to meet the target:
 
 * Use AWS ELB (recommended).
 * Use keepalived+haproxy to implement load balancing for kube-apiserver.
 
-This article demonstrates how to use the AWS ELB service to build an HA cluster.
+This article demonstrates how to use the AWS ELB service to deploy an HA Kubernetes cluster.
 
 ## Prerequisites
 
