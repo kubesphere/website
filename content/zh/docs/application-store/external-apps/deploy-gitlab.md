@@ -43,15 +43,15 @@ weight: 14310
 
 3. 从下拉菜单中选择 `main`，然后点击 **gitlab**。
 
-   ![click-gitlab](/images/docs/zh-cn/appstore/external-apps/deploy-gitlab/click-gitlab.png)
+   ![click-gitlab](/images/docs/zh-cn/appstore/external-apps/deploy-gitlab/click_gitlab.png)
 
 4. 在**应用信息**选项卡和**配置文件**选项卡，可以看到控制台的默认配置。点击**部署**继续。
 
-   ![view-config](/images/docs/zh-cn/appstore/external-apps/deploy-gitlab/view-config.png)
+   ![view-config](/images/docs/zh-cn/appstore/external-apps/deploy-gitlab/view_config.png)
 
-5. 在**基本信息**页面，可以看到应用名称、应用版本以及部署位置。点击**下一步**继续。
+5. 在**基本信息**页面，可以看到应用名称、应用版本以及部署位置。本教程使用 `4.2.3 [13.2.2]` 版本。点击**下一步**继续。
 
-   ![basic-info](/images/docs/zh-cn/appstore/external-apps/deploy-gitlab/basic-info.png)
+   ![basic-info](/images/docs/zh-cn/appstore/external-apps/deploy-gitlab/basic_info.png)
 
 6. 在**应用配置**页面，使用以下配置替换默认配置，然后点击**部署**。
 
@@ -59,17 +59,15 @@ weight: 14310
    global:
      hosts:
        domain: demo-project.svc.cluster.local
-   
-     gitlab-runner:
-       install: false
-   
-     gitlab:
-       webservice:
-         helmTests:
-           enabled: false
+   gitlab-runner:
+     install: false
+   gitlab:
+     webservice:
+       helmTests:
+         enabled: false
    ```
-
-   ![change-value](/images/docs/zh-cn/appstore/external-apps/deploy-gitlab/change-value.png)
+   
+   ![change-value](/images/docs/zh-cn/appstore/external-apps/deploy-gitlab/change_value.png)
 
    {{< notice note >}}
 
@@ -79,13 +77,13 @@ weight: 14310
 
 7. 等待 GitLab 正常运行。
 
-   ![gitlab-running](/images/docs/appstore/external-apps/deploy-gitlab/gitlab-running.PNG)
+   ![gitlab-running](/images/docs/zh-cn/appstore/external-apps/deploy-gitlab/gitlab-running.png)
 
 8. 访问**工作负载**，可以看到为 GitLab 创建的所有部署和有状态副本集。
 
-   ![deployments-running](/images/docs/appstore/external-apps/deploy-gitlab/deployments-running.PNG)
+   ![deployments-running](/images/docs/zh-cn/appstore/external-apps/deploy-gitlab/deployments-running.png)
 
-   ![statefulsets-running](/images/docs/appstore/external-apps/deploy-gitlab/statefulsets-running.PNG)
+   ![statefulsets-running](/images/docs/zh-cn/appstore/external-apps/deploy-gitlab/statefulsets-running.png)
 
    {{< notice note >}}
 
@@ -97,13 +95,11 @@ weight: 14310
 
 1. 访问**配置中心**的密钥，在搜索栏输入 `gitlab-initial-root-password`，然后按下键盘上的**回车键**来搜索密钥。
 
-   ![search-secret](/images/docs/appstore/external-apps/deploy-gitlab/search-secret.PNG)
+   ![search-secret](/images/docs/zh-cn/appstore/external-apps/deploy-gitlab/search-secret.png)
 
-2. 点击密钥访问其详情页，然后点击右上角的眼睛图标查看密码。请确保将密码进行复制。
+2. 点击密钥访问其详情页，然后点击右上角的 <img src="/images/docs/zh-cn/appstore/external-apps/deploy-gitlab/eye-icon.png" width="20px" /> 查看密码。请确保将密码进行复制。
 
-   ![click-eye-icon](/images/docs/appstore/external-apps/deploy-gitlab/click-eye-icon.PNG)
-
-   ![password](/images/docs/appstore/external-apps/deploy-gitlab/password.PNG)
+   ![password](/images/docs/zh-cn/appstore/external-apps/deploy-gitlab/initial-password.png)
 
 ### 步骤 4：编辑 hosts 文件
 
@@ -130,9 +126,9 @@ weight: 14310
 
 ### 步骤 5：访问 GitLab
 
-1. 访问**应用负载**下的**服务**，在搜索栏输入 `nginx-ingress-controller`，然后按下键盘上的**回车键**搜索该服务，可以看到通过端口 `32618` 暴露的服务，您可以使用该端口访问 GitLab。
+1. 访问**应用负载**下的**服务**，在搜索栏输入 `nginx-ingress-controller`，然后按下键盘上的**回车键**搜索该服务，可以看到通过端口 `31246` 暴露的服务，您可以使用该端口访问 GitLab。
 
-   ![search-service](/images/docs/appstore/external-apps/deploy-gitlab/search-service.PNG)
+   ![search-service](/images/docs/zh-cn/appstore/external-apps/deploy-gitlab/search-service.png)
 
    {{< notice note >}}
 
@@ -140,11 +136,11 @@ weight: 14310
 
    {{</ notice >}}
 
-2. 通过 `http://gitlab.demo-project.svc.cluster.local:32618` 使用 root 帐户及其初始密码 (`root/LAtonWwrzFvbAW560gaZ0oty6slpkCcywzzCCpeqql9bxIjJBMSGys43zSwq3d9I`) 访问 GitLab。
+2. 通过 `http://gitlab.demo-project.svc.cluster.local:31246` 使用 root 帐户及其初始密码 (`root/ojPWrWECLWN0XFJkGs7aAqtitGMJlVfS0fLEDE03P9S0ji34XDoWmxs2MzgZRRWF`) 访问 GitLab。
 
-   ![access-gitlab](/images/docs/appstore/external-apps/deploy-gitlab/access-gitlab.PNG)
+   ![access-gitlab](/images/docs/zh-cn/appstore/external-apps/deploy-gitlab/access_gitlab.png)
 
-   ![gitlab-console](/images/docs/appstore/external-apps/deploy-gitlab/gitlab-console.PNG)
+   ![gitlab-console](/images/docs/zh-cn/appstore/external-apps/deploy-gitlab/gitlab_console.png)
 
    {{< notice note >}}
 
