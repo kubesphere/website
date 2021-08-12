@@ -8,12 +8,14 @@ author: 'Leo Li, Patrick Luo'
 snapshot: '/images/blogs/en/aws-kubernetes/aws.png'
 ---
 
-The high availability (HA) of clusters in production environments should be taken seriously. In this article, we will show you how to quickly deploy an HA Kubernetes cluster on AWS EC2 instances. To meet the service requirements of the Kubernetes cluster, we need to ensure the HA of kube-apiserver. You can use either of the following methods to meet the target:
+The high availability (HA) of clusters in production environments should be taken seriously. Kubernetes and AWS EC2 instances are widely used in various production environments. However, running Kubernetes on AWS while ensuring HA can be complex for many users. In this article, we will demonstrate how KubeKey can help you easily deploy Kubernetes on AWS and ensure HA.
+
+To meet the HA service requirements of Kubernetes in AWS, we need to ensure the HA of kube-apiserver. You can use either of the following methods to meet the target:
 
 * Use AWS ELB (recommended).
 * Use keepalived+haproxy to implement load balancing for kube-apiserver.
 
-This article demonstrates how to use the AWS ELB service to deploy an HA Kubernetes cluster.
+This article uses the AWS ELB service as an example.
 
 ## Prerequisites
 
@@ -131,13 +133,13 @@ sudo systemctl restart sshd
 
 ## Obtain the KubeKey Deployment Tool
 
-Download KubeKey from the [Github Realese Page](https://github.com/kubesphere/kubekey/releases) or run the following command:
+Download KubeKey from the [Github Release Page](https://github.com/kubesphere/kubekey/releases) or run the following command:
 
 ```
 curl -sfL https://get-kk.kubesphere.io | VERSION=v1.1.1 sh -
 ```
 
-## Use KubeyKey to Deploy a Cluster
+## Use KubeKey to Deploy a Cluster
 
 Create the `config-HA.yaml` deployment configuration file.
 
@@ -192,13 +194,13 @@ spec:
 
 ## Create a Cluster
 
-Run the following command to create a cluster.
+Run the following command to install Kubernetes on AWS:
 
 ```
 ./kk create cluster -f config-HA.yaml
 ```
 
-> If a message is displayed indicating that contrack is missing, run the `sudo apt-get install conntrack` command to install contrack.
+> If a message is displayed indicating that conntrack is missing, run the `sudo apt-get install conntrack` command to install conntrack.
 
 ## Check the Deployment Result
 
@@ -207,7 +209,7 @@ Run the following commands to check the deployment result:
 * Run the `kubectl get node -o wide` command. If `Ready` is displayed in the **STATUS** column for all cluster nodes, the cluster nodes are running properly.
 
   ```
-  ubuntu@master1:~$ kubectl get node -owide
+  ubuntu@master1:~$ kubectl get node -o wide
   NAME      STATUS   ROLES           AGE     VERSION   INTERNAL-IP    EXTERNAL-IP   OS-IMAGE             KERNEL-VERSION   CONTAINER-RUNTIME
   master1   Ready    master,worker   3m45s   v1.19.8   192.168.0.10   <none>        Ubuntu 18.04.5 LTS   5.4.0-1045-aws   docker://20.10.7
   master2   Ready    master,worker   95s     v1.19.8   192.168.0.11   <none>        Ubuntu 18.04.5 LTS   5.4.0-1045-aws   docker://20.10.7
@@ -242,10 +244,12 @@ Run the following commands to check the deployment result:
   kube-system   nodelocaldns-q9244                        1/1     Running             0          2m37s
   ```
 
-* Run the `kubectl get ep` command. If the IP addresses of all master nodes are displayed in the **ENDPOINTS** column, HA is functioning properly. 
+* Run the `kubectl get ep` command. If the IP addresses of all master nodes are displayed in the **ENDPOINTS** column, HA is functioning properly for the AWS-managed Kubernetes cluster.
 
   ```
   ubuntu@master1:~$ kubectl get ep
   NAME         ENDPOINTS                                               AGE
   kubernetes   192.168.0.10:6443,192.168.0.11:6443,192.168.0.12:6443   5m10s
   ```
+
+  
