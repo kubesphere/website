@@ -793,3 +793,28 @@ footer {
       }
     }
 }
+
+.feedback-div {
+    margin-top: 40px;
+
+    .title {
+        font-family: PingFangSC;
+        font-size: 28px;
+        line-height: 32px;
+        color: #36435C;
+    }
+
+    button {
+        cursor: pointer;
+        width: 72px;
+        height: 40px;
+        background: linear-gradient(180deg, rgba(0, 0, 0, 0.0001) 0%, rgba(0, 0, 0, 0.1) 96.81%), #FFFFFF;
+        border: 1px solid #CCD3DB;
+        border-radius: 4px;
+    }
+
+    button:hover {
+        background-color: #55BC8A;
+    }
+
+}
