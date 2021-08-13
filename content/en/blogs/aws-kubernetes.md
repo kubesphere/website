@@ -139,7 +139,7 @@ Download KubeKey from the [Github Release Page](https://github.com/kubesphere/ku
 curl -sfL https://get-kk.kubesphere.io | VERSION=v1.1.1 sh -
 ```
 
-## Use KubeKey to Deploy a Cluster
+## Use KubeKey to Deploy a Kubernetes Cluster
 
 Create the `config-HA.yaml` deployment configuration file.
 
@@ -192,7 +192,7 @@ spec:
   addons: []
 ```
 
-## Create a Cluster
+## Create a Kubernetes Cluster
 
 Run the following command to install Kubernetes on AWS:
 
