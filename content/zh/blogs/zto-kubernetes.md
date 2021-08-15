@@ -1,7 +1,7 @@
 ---
 title: '中通快递关键业务和复杂架构挑战下的 Kubernetes 集群服务暴露实践'
 tag: 'KubeSphere, Kubernetes'
-keywords: 'KubeSphere,集群服务, Kubernetes, ZTO'
+keywords: 'KubeSphere, 集群服务, Kubernetes, ZTO, Ingress Nginx'
 description: '云原生已经势在必行，而应用容器化之后，应用的访问方式该如何解决？中通快递通过打通容器和物理网段以及 Ingress 解决了这一难题，以及当前的其他各种复杂场景问题。'
 createTime: '2021-06-11'
 author: '王文虎'
