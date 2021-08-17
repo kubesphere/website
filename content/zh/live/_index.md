@@ -328,7 +328,7 @@ section4:
 
 section5:
   title: 分享你的主题
-  content: 想在社区分享你的落地经验？说出你和 KubeSphere 的开源故事，即刻加入 KubeSphere 开源社区直播计划，提交你的分享主题，将有定制礼品相送！
+  content: 想在社区分享你的云原生实践经验？说出你的开源故事，即刻加入云原生直播计划，提交你的分享主题，将有 KubeSphere 周边礼品相送！
   btn: 提交分享主题
   url: https://jinshuju.net/f/fUCZ1L
   image: /images/live/30.svg

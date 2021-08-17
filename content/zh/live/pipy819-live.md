@@ -25,7 +25,7 @@ section1:
 个人简介：
 近 20 年 IT 从业经验，资深软件架构师，曾在花旗银行、IBM、埃森哲任职，目前在 Flomesh（易衡）任首席云架构师。
 
-![](https://pek3b.qingstor.com/kubesphere-community/images/live-pipy819.png)
+![](https://pek3b.qingstor.com/kubesphere-community/images/pipy819-live.png)
 
 ## 直播时间
 
