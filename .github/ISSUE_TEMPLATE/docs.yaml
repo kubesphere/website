@@ -1,0 +1,64 @@
+name: 新增文章
+description: 新增一篇云原生领域相关文章，类型可以是翻译、原创和转载
+labels: [kind/translation]
+body:
+  - type: markdown
+    id: preface
+    attributes:
+      value: |
+        ## 类型
+  - type: markdown
+    id: type
+    attributes:
+      value: |
+        本文的类型为？
+        - [ ] 翻译
+        - [ ] 原创
+        - [ ] 转载
+  - type: markdown
+    id: info
+    attributes:
+      value: |
+        ## 文章信息
+  - type: input
+    id: original
+    validations:
+      required: true
+    attributes:
+      label: 原文链接
+      description: "这里填写的是英文原文链接，例如：https://medium.com/@wajdi.fathallah/compute-a-brief-history-f65f4e7e5caf"
+  - type: input
+    id: time
+    validations:
+      required: true
+    attributes:
+      label: 原文发布时间
+  - type: input
+    id: author
+    validations:
+      required: true
+    attributes:
+      label: 作者
+  - type: input
+    id: label
+    validations:
+      required: true
+    attributes:
+      label: 标签
+      description: "该 Issue 所属标签，例如 `kind/translation`"
+  - type: markdown
+    id: progress
+    attributes:
+      value: |
+        ## 当前进度
+  - type: markdown
+    id: progress_detail
+    attributes:
+      value: |
+        - [ ] 已提交文章线索
+        - [ ] 已有人认领翻译或为原创文章
+        - [ ] 已提交 PR
+        - [ ] 正在review
+        - [ ] review 完成等待发布
+        - [ ] 已发布到 http://kubesphere.com.cn
+        - [ ] 已发布到 「KubeSphere 云原生」 微信公众号
