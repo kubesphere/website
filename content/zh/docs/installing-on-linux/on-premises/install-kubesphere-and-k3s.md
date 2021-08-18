@@ -6,54 +6,54 @@ linkTitle: "部署 K3s 和 KubeSphere"
 weight: 3530
 ---
 
-[K3s](https://k3s.io/) is a lightweight Kubernetes distribution built for IoT and edge computing with external dependencies minimized. It is packaged as a single binary that reduces the dependencies and steps that are required to set up a Kubernetes cluster.
+[K3s](https://www.rancher.cn/k3s/) 是专为物联网和边缘计算打造的轻量级 Kubernetes 发行版，最大程度上剔除了外部依赖项。它打包为单个二进制文件，减少了搭建 Kubernetes 集群所需的依赖项和步骤。
 
-You can use KubeKey to install both K3s and KubeSphere while KubeSphere can also be deployed on an existing K3s cluster.
+您可以使用 KubeKey 同时安装 K3s 和 KubeSphere，也可以将 KubeSphere 部署在现有的 K3s 集群上。
 
 {{< notice note >}} 
 
-Currently, KubeSphere on K3s is only for testing and development as some features have not been fully tested.
+目前，由于功能尚未充分测试，在 K3s 上部署 KubeSphere 仅用于测试和开发。
 
 {{</ notice >}} 
 
-## Prerequisites
+## 准备工作
 
-- For information about the prerequisites for K3s installation, see [the K3s documentation](https://rancher.com/docs/k3s/latest/en/installation/installation-requirements/).
-- You may need to create necessary firewall rules or port forwarding rules depending on your environment. For more information, see [Port Requirements](../../../installing-on-linux/introduction/port-firewall/).
+- 有关安装 K3s 的准备工作的更多信息，请参阅 [K3s 文档](https://docs.rancher.cn/docs/k3s/installation/installation-requirements/_index)。
+- 取决于您的网络环境，您可能需要配置防火墙规则和端口转发规则。有关更多信息，请参见[端口要求](../../../installing-on-linux/introduction/port-firewall/)。
 
-## Step 1: Download KubeKey
+## 步骤 1：下载 KubeKey
 
-Follow the step below to download [KubeKey](../../../installing-on-linux/introduction/kubekey/).
+执行以下步骤下载 [KubeKey](../../../installing-on-linux/introduction/kubekey/)。
 
 {{< tabs >}}
 
-{{< tab "Good network connections to GitHub/Googleapis" >}}
+{{< tab "如果您能正常访问 GitHub/Googleapis" >}}
 
-Download KubeKey from its [GitHub Release Page](https://github.com/kubesphere/kubekey/releases) or use the following command directly.
+从 [GitHub Release Page](https://github.com/kubesphere/kubekey/releases) 下载 KubeKey 或直接运行以下命令：
 
 ```bash
-curl -sfL https://get-kk.kubesphere.io | VERSION=v1.1.0 sh -
+curl -sfL https://get-kk.kubesphere.io | VERSION=v1.1.1 sh -
 ```
 
 {{</ tab >}}
 
-{{< tab "Poor network connections to GitHub/Googleapis" >}}
+{{< tab "如果您访问 GitHub/Googleapis 受限" >}}
 
-Run the following command first to make sure you download KubeKey from the correct zone.
+首先运行以下命令，以确保您从正确的区域下载 KubeKey。
 
 ```bash
 export KKZONE=cn
 ```
 
-Run the following command to download KubeKey:
+运行以下命令来下载 KubeKey：
 
 ```bash
-curl -sfL https://get-kk.kubesphere.io | VERSION=v1.1.0 sh -
+curl -sfL https://get-kk.kubesphere.io | VERSION=v1.1.1 sh -
 ```
 
 {{< notice note >}}
 
-After you download KubeKey, if you transfer it to a new machine also with poor network connections to Googleapis, you must run `export KKZONE=cn` again before you proceed with the steps below.
+下载 KubeKey 之后，如果您将其转移到访问 Googleapis 受限的新机器上，请务必再次运行 `export KKZONE=cn`，然后继续执行以下步骤。
 
 {{</ notice >}} 
 
@@ -63,31 +63,33 @@ After you download KubeKey, if you transfer it to a new machine also with poor n
 
 {{< notice note >}}
 
-The commands above download the latest release (v1.1.0) of KubeKey. Note that an earlier version of KubeKey cannot be used to install K3s.
+通过以上的命令可以下载 KubeKey 的最新版本 (v1.1.0)。请注意，更早版本的 KubeKey 无法下载 K3s。
 
 {{</ notice >}}
 
-Make `kk` executable:
+执行以下命令为 `kk` 文件增加执行权限：
 
 ```bash
 chmod +x kk
 ```
 
-## Step 2: Create a Cluster
+## 步骤 2：创建集群
 
-1. Create a configuration file of your cluster by running the following command:
+1. 执行以下命令为集群创建一个配置文件：
 
    ```bash
-   ./kk create config --with-kubernetes v1.20.4-k3s --with-kubesphere v3.1.0
+   ./kk create config --with-kubernetes v1.20.4-k3s --with-kubesphere v3.1.1
    ```
 
    {{< notice note >}}
 
-   KubeKey v1.1.0 only supports the installation of K3s v1.20.4.
+   - KubeKey v1.1.0 仅支持安装 K3s v1.20.4。
+
+   - 您可以在以上命令中使用 `-f` 或 `--file` 参数指定配置文件的路径和名称。如未指定路径和名称，KubeKey 将默认在当前目录下创建 `config-sample.yaml` 配置文件。
 
    {{</ notice >}} 
 
-2. A default file `config-sample.yaml` will be created if you do not customize the name. Edit the file.
+2. 执行以下命令编辑配置文件（以下以默认配置文件名为例）：
 
    ```bash
    vi config-sample.yaml
@@ -131,23 +133,23 @@ chmod +x kk
 
    {{< notice note >}}
 
-   For more information about each field in the configuration file, see [an example file](https://github.com/kubesphere/kubekey/blob/release-1.1/docs/config-example.md).
+   有关配置文件中每个字段的更多信息，请参阅[示例文件](https://github.com/kubesphere/kubekey/blob/release-1.1/docs/config-example.md)。
 
    {{</ notice >}} 
 
-3. Save the file and execute the following command to install K3s and KubeSphere:
+3. 保存文件并执行以下命令安装 K3s 和 KubeSphere：
 
    ```
    ./kk create cluster -f config-sample.yaml
    ```
 
-4. When the installation finishes, you can inspect installation logs with the following command:
+4. 安装完成后，可运行以下命令查看安装日志：
 
    ```bash
    kubectl logs -n kubesphere-system $(kubectl get pod -n kubesphere-system -l app=ks-install -o jsonpath='{.items[0].metadata.name}') -f
    ```
 
-   Expected output:
+   如果显示如下信息则安装成功：
 
    ```bash
    #####################################################
@@ -172,14 +174,15 @@ chmod +x kk
    ```
 
 
-5. Access the KubeSphere console at `<NodeIP>:30880` with the default account and password (`admin/P@88W0rd`).
+5. 从安装日志的 `Console`、`Account` 和 `Password` 参数分别获取 KubeSphere Web 控制台的地址、系统管理员用户名和系统管理员密码，并使用 Web 浏览器登录 KubeSphere Web 控制台。
 
-   ![cluster-management](/images/docs/installing-on-linux/on-premises/cluster-management.png)
+   ![cluster-management](/images/docs/zh-cn/installing-on-linux/on-premises/cluster-management.png)
 
-   ![service-components](/images/docs/installing-on-linux/on-premises/service-components.png)
+   ![service-components](/images/docs/zh-cn/installing-on-linux/on-premises/service-components.png)
+   
+   {{< notice note >}}
+   
+   您可以在安装后启用 KubeSphere 的可插拔组件，但由于在 KubeSphere 上部署 K3s 目前处于测试阶段，某些功能可能不兼容。
+   
+   {{</ notice >}} 
 
-{{< notice note >}}
-
-You can enable pluggable components of KubeSphere after the installation while some features may not be compatible as KubeSphere on K3s is only experimental currently.
-
-{{</ notice >}} 

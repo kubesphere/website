@@ -34,8 +34,6 @@ KubeSphere 支持基于存储类型的[动态卷供应](https://kubernetes.io/zh
 
 1. 点击左上角的**平台管理**，然后选择**集群管理**。
    
-    ![选择集群管理](/images/docs/zh-cn/cluster-administration/persistent-volumes-and-storage-classes/cluster-management-select.PNG)
-    
 2. 如果您启用了[多集群功能](../../multicluster-management/)并导入了 Member 集群，可以选择一个特定集群。如果您未启用该功能，请直接参考下一步。
 
 3. 在**集群管理**页面，您可以在**存储管理**下的**存储类型**中创建、更新和删除存储类型。
@@ -43,8 +41,6 @@ KubeSphere 支持基于存储类型的[动态卷供应](https://kubernetes.io/zh
     ![存储类型](/images/docs/zh-cn/cluster-administration/persistent-volumes-and-storage-classes/storage-class.PNG)
 
 4. 要创建一个存储类型，请点击**创建**，在弹出窗口中输入基本信息。完成后，点击**下一步**。
-
-    ![存储类型基本信息](/images/docs/zh-cn/cluster-administration/persistent-volumes-and-storage-classes/create-storage-class-basic-info.PNG)
 
 5. 在 KubeSphere 中，您可以直接为 `QingCloud-CSI`、`Glusterfs` 和 `Ceph RBD` 创建存储类型。或者，您也可以根据需求为其他存储系统创建自定义存储类型。请选择一个类型，然后点击**下一步**。
 
@@ -80,7 +76,7 @@ QingCloud CSI 是 Kubernetes 上的 CSI 插件，供青云QingCloud 存储服务
 
 | 属性 | 描述信息 |
 | :---- | :---- |
-| type     | 在青云QingCloud 平台上，0 代表高性能型硬盘，2 代表大容量型硬盘，3 代表超高性能型硬盘，5 代表企业级服务器 SAN，6 代表 NeonSAN HDD，100 代表基础型硬盘，200 代表企业级 SSD。 |
+| type     | 在青云QingCloud 平台上，0 代表性能型硬盘，2 代表容量型硬盘，3 代表超高性能型硬盘，5 代表企业级分布式 SAN (NeonSAN) 型硬盘，100 代表基础型硬盘，200 代表企业型硬盘。 |
 | maxSize  | 存储卷容量上限。 |
 | stepSize | 存储卷容量增量。 |
 | minSize  | 存储卷容量下限。 |
@@ -148,9 +144,7 @@ Ceph RBD 也是 Kubernetes 上的一种树内存储插件，即 Kubernetes 中�
 
 #### NFS 介绍
 
-NFS（网络文件系统）广泛用于带有 [NFS-Client](https://github.com/kubernetes-retired/external-storage/tree/master/nfs-client)（External-Provisioner 存储卷插件）的 Kubernetes。您可以点击**自定义**来创建 NFS-Client 的存储类型，如下图所示。
-
-![创建自定义存储类型](/images/docs/zh-cn/cluster-administration/persistent-volumes-and-storage-classes/create-custom-storage-class.PNG)
+NFS（网络文件系统）广泛用于带有 [NFS-Client](https://github.com/kubernetes-retired/external-storage/tree/master/nfs-client)（External-Provisioner 存储卷插件）的 Kubernetes。您可以点击**自定义**来创建 NFS-Client 的存储类型。
 
 {{< notice note >}}
 

@@ -89,7 +89,7 @@ As you install KubeSphere in an air-gapped environment, you need to prepare an i
 1. Download the image list file `images-list.txt` from a machine that has access to the Internet through the following command:
 
    ```bash
-   curl -L -O https://github.com/kubesphere/ks-installer/releases/download/v3.1.0/images-list.txt
+   curl -L -O https://github.com/kubesphere/ks-installer/releases/download/v3.1.1/images-list.txt
    ```
 
    {{< notice note >}}
@@ -101,7 +101,7 @@ As you install KubeSphere in an air-gapped environment, you need to prepare an i
 2. Download `offline-installation-tool.sh`. 
 
    ```bash
-   curl -L -O https://github.com/kubesphere/ks-installer/releases/download/v3.1.0/offline-installation-tool.sh
+   curl -L -O https://github.com/kubesphere/ks-installer/releases/download/v3.1.1/offline-installation-tool.sh
    ```
 
 3. Make the `.sh` file executable.
@@ -161,8 +161,8 @@ Similar to installing KubeSphere on an existing Kubernetes cluster in an online 
 1. Execute the following commands to download these two files and transfer them to your machine that serves as the taskbox for installation.
 
    ```bash
-   curl -L -O https://github.com/kubesphere/ks-installer/releases/download/v3.1.0/cluster-configuration.yaml
-   curl -L -O https://github.com/kubesphere/ks-installer/releases/download/v3.1.0/kubesphere-installer.yaml
+   curl -L -O https://github.com/kubesphere/ks-installer/releases/download/v3.1.1/cluster-configuration.yaml
+   curl -L -O https://github.com/kubesphere/ks-installer/releases/download/v3.1.1/kubesphere-installer.yaml
    ```
 
 2. Edit `cluster-configuration.yaml` to add your private image registry. For example, `dockerhub.kubekey.local` is the registry address in this tutorial, then use it as the value of `.spec.local_registry` as below:
@@ -242,14 +242,14 @@ To access the console, make sure port 30880 is opened in your security group.
 
 ## Appendix
 
-### Image list of KubeSphere v3.1.0
+### Image list of KubeSphere v3.1.1
 
 ```txt
 ##k8s-images
-kubesphere/kube-apiserver:v1.20.4
-kubesphere/kube-scheduler:v1.20.4
-kubesphere/kube-proxy:v1.20.4
-kubesphere/kube-controller-manager:v1.20.4
+kubesphere/kube-apiserver:v1.20.6
+kubesphere/kube-scheduler:v1.20.6
+kubesphere/kube-proxy:v1.20.6
+kubesphere/kube-controller-manager:v1.20.6
 kubesphere/kube-apiserver:v1.19.8
 kubesphere/kube-scheduler:v1.19.8
 kubesphere/kube-proxy:v1.19.8
@@ -258,10 +258,10 @@ kubesphere/kube-apiserver:v1.19.9
 kubesphere/kube-scheduler:v1.19.9
 kubesphere/kube-proxy:v1.19.9
 kubesphere/kube-controller-manager:v1.19.9
-kubesphere/kube-apiserver:v1.18.6
-kubesphere/kube-scheduler:v1.18.6
-kubesphere/kube-proxy:v1.18.6
-kubesphere/kube-controller-manager:v1.18.6
+kubesphere/kube-apiserver:v1.18.8
+kubesphere/kube-scheduler:v1.18.8
+kubesphere/kube-proxy:v1.18.8
+kubesphere/kube-controller-manager:v1.18.8
 kubesphere/kube-apiserver:v1.17.9
 kubesphere/kube-scheduler:v1.17.9
 kubesphere/kube-proxy:v1.17.9
@@ -273,10 +273,12 @@ calico/cni:v3.16.3
 calico/kube-controllers:v3.16.3
 calico/node:v3.16.3
 calico/pod2daemon-flexvol:v3.16.3
+calico/typha:v3.16.3
+kubesphere/flannel:v0.12.0
 coredns/coredns:1.6.9
 kubesphere/k8s-dns-node-cache:1.15.12
-openebs/provisioner-localpv:2.3.0
-openebs/linux-utils:2.3.0
+openebs/provisioner-localpv:2.10.1
+openebs/linux-utils:2.10.0
 kubesphere/nfs-client-provisioner:v3.1.0-k8s1.11
 ##csi-images
 csiplugin/csi-neonsan:v1.2.0
@@ -289,21 +291,22 @@ csiplugin/csi-snapshotter:v2.0.1
 csiplugin/csi-node-driver-registrar:v1.2.0
 csiplugin/csi-qingcloud:v1.2.0
 ##kubesphere-images
-kubesphere/ks-apiserver:v3.1.0
-kubesphere/ks-console:v3.1.0
-kubesphere/ks-controller-manager:v3.1.0
-kubesphere/ks-installer:v3.1.0
+kubesphere/ks-apiserver:v3.1.1
+kubesphere/ks-console:v3.1.1
+kubesphere/ks-controller-manager:v3.1.1
+kubesphere/ks-installer:v3.1.1
+kubesphere/kubectl:v1.20.0
 kubesphere/kubectl:v1.19.0
-redis:5.0.5-alpine
-alpine:3.10.4
-haproxy:2.0.4
+redis:5.0.12-alpine
+alpine:3.14
+haproxy:2.0.22-alpine
 nginx:1.14-alpine
 minio/minio:RELEASE.2019-08-07T01-59-21Z
 minio/mc:RELEASE.2019-08-07T23-14-43Z
 mirrorgooglecontainers/defaultbackend-amd64:1.4
 kubesphere/nginx-ingress-controller:v0.35.0
 osixia/openldap:1.3.0
-csiplugin/snapshot-controller:v2.0.1
+csiplugin/snapshot-controller:v3.0.3
 kubesphere/kubefed:v0.7.0
 kubesphere/tower:v0.2.0
 kubesphere/prometheus-config-reloader:v0.42.1
@@ -371,11 +374,11 @@ kubesphere/python-35-centos7:v2.1.0
 kubesphere/python-34-centos7:v2.1.0
 kubesphere/python-27-centos7:v2.1.0
 ##openpitrix-images
-kubesphere/openpitrix-jobs:v3.1.0
+kubespheredev/openpitrix-jobs:v3.1.1
 ##weave-scope-images
 weaveworks/scope:1.13.0
 ##kubeedge-images
-kubeedge/cloudcore:v1.6.1
+kubeedge/cloudcore:v1.6.2
 kubesphere/edge-watcher:v0.1.0
 kubesphere/kube-rbac-proxy:v0.5.0
 kubesphere/edge-watcher-agent:v0.1.0

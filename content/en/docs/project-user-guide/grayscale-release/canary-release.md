@@ -29,7 +29,7 @@ This method serves as an efficient way to test performance and reliability of a 
 
 4. On the **Grayscale Release Version** tab, add another version of it (e.g `kubesphere/examples-bookinfo-reviews-v2:1.13.0`; change `v1` to `v2`) as shown in the image below and click **Next**:
 
-   ![canary-release-4](/images/docs/project-user-guide/grayscale-release/canary-release/canary-release-4.jpg)
+   ![canary-release-4](/images/docs/project-user-guide/grayscale-release/canary-release/canary-release-4.png)
 
    {{< notice note >}}
 
@@ -39,27 +39,27 @@ This method serves as an efficient way to test performance and reliability of a 
 
 5. You send traffic to these two versions (`v1` and `v2`) either by a specific percentage or by the request content such as `Http Header`, `Cookie` and `URI`. Select **Forward by traffic ratio** and drag the icon in the middle to change the percentage of traffic sent to these two versions respectively (for example, set 50% for either one). When you finish, click **Create**.
 
-   ![canary-release-5](/images/docs/project-user-guide/grayscale-release/canary-release/canary-release-5.gif)
+   ![canary-release-5](/images/docs/project-user-guide/grayscale-release/canary-release/canary-release-5.png)
 
 ## Step 2: Verify the Canary Release
 
 Now that you have two available app versions, access the app to verify the canary release.
 
-1. Visit the Bookinfo website and refresh your browser repeatedly. You will be able to see the **Book Reviews** section switching between v1 and v2 at a rate of 50%.
+1. Visit the Bookinfo website and refresh your browser repeatedly. You can see that the **Book Reviews** section switching between v1 and v2 at a rate of 50%.
 
    ![canary](/images/docs/quickstart/deploy-bookinfo-to-k8s/canary.gif)
 
-2. The canary release job created displays under the tab **Job Status**. Click it to view details.
+2. The created canary release job is displayed under the tab **Job Status**. Click it to view details.
 
-   ![canary-release-job](/images/docs/project-user-guide/grayscale-release/canary-release/canary-release-job.jpg)
+   ![canary-release-job](/images/docs/project-user-guide/grayscale-release/canary-release/canary-release-job.png)
 
 3. You can see half of the traffic goes to each of them:
 
-   ![canary-release-6](/images/docs/project-user-guide/grayscale-release/canary-release/canary-release-6.jpg)
+   ![canary-release-6](/images/docs/project-user-guide/grayscale-release/canary-release/canary-release-6.png)
 
 4. The new Deployment is created as well.
 
-   ![deployment-list-1](/images/docs/project-user-guide/grayscale-release/canary-release/deployment-list-1.jpg)
+   ![deployment-list-1](/images/docs/project-user-guide/grayscale-release/canary-release/deployment-list-1.png)
 
 5. You can directly get the virtual Service to identify the weight by executing the following command:
 
@@ -69,7 +69,7 @@ Now that you have two available app versions, access the app to verify the canar
 
    {{< notice note >}} 
 
-   - When you execute the command above, replace `demo-project` with your own project (i.e. namespace) name.
+   - When you execute the command above, replace `demo-project` with your own project (namely, namespace) name.
    - If you want to execute the command from the web kubectl on the KubeSphere console, you need to use the account `admin`.
 
    {{</ notice >}} 
@@ -136,7 +136,7 @@ If everything runs smoothly, you can bring all the traffic to the new version.
 
 1. In **Grayscale Release**, click the canary release job.
 
-2. In the dialog that appears, click the three dots of **reviews v2** and select **Take Over**. It means 100% of the traffic will be sent to the new version (v2).
+2. In the displayed dialog box, click <img src="/images/docs/project-user-guide/grayscale-release/canary-release/three-dots.png" width="20px" /> on the right of **reviews v2** and select **Take Over**. It means 100% of the traffic will be sent to the new version (v2).
 
    ![take-over-release](/images/docs/project-user-guide/grayscale-release/canary-release/take-over-release.png)
 

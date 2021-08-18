@@ -9,25 +9,58 @@ section1:
   image: /images/live/background.jpg
 
 section2:
-  image: /images/live/meetup-chengdu-kv.png
-  url: ./meetup-chengdu/
+  image: /images/live/kv-cic-beijing.png
+  url: ./meetup-beijing/
 
   notice:
-    title: Kubernetes and Cloud Native Meetup ——北京站
-    timeIcon: /images/live/clock.svg
-    time: 2021/07/29 14:00 – 16:30
-    baseIcon: /images/live/base.svg
-    base: 北京国际饭店会议中心 F3 紫金大厅 B + 线上
+    title: 使用 Flomesh 进行 Dubbo 微服务的服务治理
     tag: 预告
-    url: ./meetup-beijing/
+    time: 2021 年 8 月 19 日晚 8 点
+    base: 线上
+    url: ./pipy819-live/
 
   over:
-    title: Kubernetes and Cloud Native Meetup ——杭州站
-    url: ./meetup-hangzhou/
+    title: Kubernetes and Cloud Native Meetup ——成都站
+    url: ./meetup-chengdu/
     tag: 结束
 
 section3:
   videos:
+    - title: 深入解读云原生可观测性之日志与告警通知
+      link: ./nm-cic/
+      snapshot: https://pek3b.qingstor.com/kubesphere-community/images/nm-cic-cover.png
+      type: iframe
+      createTime: 2021.07.29
+      group: Meetup
+
+    - title: 面向无人驾驶 “云端大脑” 可用性的云原生实践
+      link: ./driverless-cic/
+      snapshot: https://pek3b.qingstor.com/kubesphere-community/images/driverless-cic-cover.png
+      type: iframe
+      createTime: 2021.07.29
+      group: Meetup
+
+    - title: 中国移动基于 K8s 的物联网边缘计算应用实践
+      link: ./edgebox-cic/
+      snapshot: https://pek3b.qingstor.com/kubesphere-community/images/edgebox-cic-cover.png
+      type: iframe
+      createTime: 2021.07.29
+      group: Meetup
+
+    - title: 马上消费金融基于 KubeSphere 的 AI 平台的开发实践
+      link: ./ai-cic/
+      snapshot: https://pek3b.qingstor.com/kubesphere-community/images/ai-cic-cover.png
+      type: iframe
+      createTime: 2021.07.29
+      group: Meetup
+
+    - title: 基于 Argo CD 的 GitOps 实践经验
+      link: ./gitops-cic/
+      snapshot: https://pek3b.qingstor.com/kubesphere-community/images/gitops-cic-cover.png
+      type: iframe
+      createTime: 2021.07.29
+      group: Meetup
+
     - title: 基于 Kubernetes 与 Dapr 打造智慧医疗平台
       link: ./tideng-chengdu/
       snapshot: https://pek3b.qingstor.com/kubesphere-community/images/Dapr.png
@@ -295,7 +328,7 @@ section4:
 
 section5:
   title: 分享你的主题
-  content: 想在社区分享你的落地经验？说出你和 KubeSphere 的开源故事，即刻加入 KubeSphere 开源社区直播计划，提交你的分享主题，将有定制礼品相送！
+  content: 想在社区分享你的云原生实践经验？说出你的开源故事，即刻加入云原生直播计划，提交你的分享主题，将有 KubeSphere 周边礼品相送！
   btn: 提交分享主题
   url: https://jinshuju.net/f/fUCZ1L
   image: /images/live/30.svg

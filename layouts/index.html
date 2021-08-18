@@ -1,5 +1,6 @@
 {{ define "main" }}
 {{ $data := index .Site.Data .Site.Language.Lang }}
+<div class="shadow"></div>
 <section class='section-1'>
   {{ with .Params.section1 }}
   <div class="common-layout">
@@ -9,13 +10,17 @@
       <p class='p2'>{{ .content | safeHTML }}</p>
       {{ partial "downloadButton" . }}
     </div>
-    <img class='img1' src="/images/home/53.png" alt="{{ i18n "kubesphere console screenshot"}}">
-    <img class='img2' src="/images/home/left.svg" alt="{{ i18n "background image"}}">
-    <img class='img4' src="/images/home/46.svg" alt="{{ i18n "background image"}}">
+    <div class="img1-div">
+      <img class='img1' src="/images/home/53.png" id='video' alt="{{ i18n " kubesphere console screenshot"}}">
+      <img class='play' src="/images/videos/play-b.svg" alt="play">
+    </div>
+
+    <img class='img2' src="/images/home/left.svg" alt="{{ i18n " background image"}}">
+    <img class='img4' src="/images/home/46.svg" alt="{{ i18n " background image"}}">
   </div>
-  <img class='img1' src="/images/home/bg.png" alt="{{ i18n "background image"}}">
-  <img class='img2' src="/images/home/12-3.png" alt="{{ i18n "background image"}}">
-  <img class='img3' src="/images/home/2.svg" alt="{{ i18n "background image"}}">
+  <img class='img1' src="/images/home/bg.png" alt="{{ i18n " background image"}}">
+  <img class='img2' src="/images/home/12-3.png" alt="{{ i18n " background image"}}">
+  <img class='img3' src="/images/home/2.svg" alt="{{ i18n " background image"}}">
   {{ end }}
 </section>
 
@@ -70,8 +75,8 @@
 
 <section class='section-4'>
   {{ with .Params.section4 }}
-  <img class='bg-1' src="/images/home/section4-left.png" alt="{{ i18n "background image"}}">
-  <img class='bg-2' src="/images/home/section4-right.svg" alt="{{ i18n "background image"}}">
+  <img class='bg-1' src="/images/home/section4-left.png" alt="{{ i18n " background image"}}">
+  <img class='bg-2' src="/images/home/section4-right.svg" alt="{{ i18n " background image"}}">
   <div class="common-layout">
     <div>
       <h2>{{ .title }}</h2>
@@ -104,7 +109,8 @@
         {{ if .check }}
         <span class="common-green-a">{{ i18n "Coming Soon" }} →</span>
         {{ else }}
-        <a class="common-green-a" href="{{ .link | relLangURL }}" target="_blank" rel="noopener noreferrer">{{ i18n "Read More" }} →</a>
+        <a class="common-green-a" href="{{ .link }}" target="_blank" rel="noopener noreferrer">{{ i18n "Read More" }}
+          →</a>
         {{ end }}
       </li>
       {{ end }}
@@ -176,12 +182,12 @@
     <a class='join-div' href="{{ .joinLink }}">
       <p class='p1'>{{ .joinTitle }}</p>
       <p class='p2'>{{ .joinContent }}</p>
-      <img src="/images/home/join-right.svg" alt="{{ i18n "background image"}}">
+      <img src="/images/home/join-right.svg" alt="{{ i18n " background image"}}">
     </a>
     <img class='bottom-img' src="{{ .image }}" alt="cncf">
   </div>
-  <img class='bg-1' src="/images/home/section6-left.svg" alt="{{ i18n "icon" }}">
-  <img class='bg-2' src="/images/home/section6-right.svg" alt="{{ i18n "icon" }}">
+  <img class='bg-1' src="/images/home/section6-left.svg" alt="{{ i18n " icon" }}">
+  <img class='bg-2' src="/images/home/section6-right.svg" alt="{{ i18n " icon" }}">
   {{ end }}
 </section>
 
@@ -217,9 +223,79 @@
   </div>
 </div>
 
+<div class="modal-for-video">
+  <img class="close-video" src="/images/videos/close.png">
+  <div class="video-div" data-language='{{ .Site.Language.Lang }}'>
+    <video class="start1" src="" poster="/images/home/poster.png" controls autoplay></video></video>
+    <iframe class="start2" src=""></iframe>
+  </div>
+
+</div>
+
+
+
+
+
+
 <script>
-  var bindMouseLeftLi = function() {
-    $('.section-3 .left-li').mouseenter(function() {
+
+  var controlVideo = function () {
+
+    var startVideo = $('div.img1-div')
+    var shadow = $('div.shadow')
+    var video = $('div.modal-for-video')
+    var start1 = $('video.start1')
+    var start2 = $('iframe.start2')
+    var closeVideo = $('img.close-video')
+    var language = $('div.video-div').data('language')
+    var height = document.body.scrollHeight + 'px'
+
+    let openVideo = function () {
+      if (language == 'zh') {
+        start2.css('display', 'none')
+        start1.attr('src', "https://kubesphere-community.pek3b.qingstor.com/videos/kubesphere-demo-cn.mp4")
+        video.css('height', 'auto')
+
+      }
+      else if (language == 'en') {
+        start1.css('display', 'none')
+        start2.attr('src', "https://www.youtube.com/embed/YxZ1YUv0CYs")
+      }
+
+      shadow.show()
+      shadow.css('height', `${height}`)
+
+      video.show();
+      closeVideo.show();
+
+    }
+
+    let endVideo = function () {
+      closeVideo.hide()
+      start1.attr('src', '')
+      start2.attr('src', '')
+      shadow.hide()
+      video.hide()
+    }
+
+    shadow.hide();
+
+    startVideo.click(function () {
+      openVideo()
+    })
+
+    closeVideo.click(function () {
+      endVideo()
+    }
+    )
+    shadow.click(function () {
+      endVideo()
+    })
+
+  }
+
+  var bindMouseLeftLi = function () {
+    $('.section-3 .left-li').mouseenter(function () {
       var index = Number($(this).data('index'))
       $('.left-li').removeClass('active')
       $(this).addClass('active')
@@ -227,12 +303,12 @@
     })
   }
 
-  var bindResize = function() {
+  var bindResize = function () {
     var screenWidth = $(window).width()
     if (screenWidth <= 768) {
       $('.image').find('img').attr('src', "/images/home/applications2.png")
-    } 
-    $(window).resize(function() {
+    }
+    $(window).resize(function () {
       var screenWidth = $(window).width()
       if (screenWidth <= 768) {
         $('.image').find('img').attr('src', "/images/home/applications2.png")
@@ -242,24 +318,26 @@
     })
   }
 
-  var bindCount = function() {
-    setTimeout(function() {
+  var bindCount = function () {
+    setTimeout(function () {
       $('.join-us').fadeIn()
     }, 10000)
   }
 
-  var bindClose = function() {
-    $('.join-us .close').click(function(e) {
+  var bindClose = function () {
+    $('.join-us .close').click(function (e) {
       e.stopPropagation()
       $('.join-us').fadeOut()
     })
   }
 
-  var bindMeet = function() {
-    $('.meet-div').click(function() {
+  var bindMeet = function () {
+    $('.meet-div').click(function () {
       window.open('https://kubesphere.com.cn/forum/d/2712-meetup-topic')
     })
   }
+
+  controlVideo()
   bindMouseLeftLi()
   bindResize()
   bindCount()

@@ -20,7 +20,7 @@ image: /images/devops/dev-ops.png
 section2:
   title: Run CI/CD Pipelines in Kubernetes Clusters to Implement Automated Code Checkout, Testing, Code Analysis, Building, Deploying and Releasing
   list:
-    - title: Out-of-box CI/CD Pipelines
+    - title: Out-of-the-Box CI/CD Pipelines
       image: /images/devops/CD-pipeline.png
       contentList:
         - content: <span>Easy integration with SCM</span> including GitLab/GitHub/BitBucket/SVN to simplify continuous integration
@@ -36,7 +36,7 @@ section2:
         - content: <span>Automating image building and pushing</span> to any registry and achieving continuous deployment to Kubernetes clusters
         - content: <span>Excellent resiliency and recoverability</span> as you can copy pipelines and run them concurrently as well as rebuild and rerun S2I/B2I whenever a patch is needed
 
-    - title: Use GitOps to Implement DevOps on Top of Kubernetes
+    - title: Use Jenkins Pipelines to Implement DevOps on Top of Kubernetes
       image: /images/devops/Clear-insight.png
       contentList:
         - content: <span>Kubernetes combined with Git</span> to facilitate continuous integration with code repositories and boost continuous delivery of cloud-native applications

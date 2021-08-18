@@ -49,7 +49,7 @@ If you want to import the Member Cluster to a new Host Cluster while retaining e
 
 The accounts you create through the central control plane from your Host Cluster will be synchronized to Member Clusters. 
 
-You can create workspaces and [assign different clusters to them](../../../cluster-administration/cluster-settings/cluster-visibility-and-authorization/). After that, you can invite different accounts to these workspaces per access requirements for these accounts. Besides, you can also invite different accounts after [creating multi-cluster projects](../../../project-administration/project-and-multicluster-project/#multi-cluster-projects) with different clusters authorized. In this way, you can let different accounts access different clusters.
+If you want to let different accounts access different clusters, you can create workspaces and [assign different clusters to them](../../../cluster-administration/cluster-settings/cluster-visibility-and-authorization/). After that, you can invite different accounts to these workspaces per access requirements for these accounts. In future releases, you will be able to invite accounts to your [multi-cluster projects](../../../project-administration/project-and-multicluster-project/#multi-cluster-projects).
 
 ### KubeSphere Components Management
 

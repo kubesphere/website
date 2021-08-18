@@ -73,8 +73,8 @@ weight: 2600
 3. 编辑完成后保存文件，执行以下命令开始安装：
 
     ```bash
-    kubectl apply -f https://github.com/kubesphere/ks-installer/releases/download/v3.1.0/kubesphere-installer.yaml
-
+    kubectl apply -f https://github.com/kubesphere/ks-installer/releases/download/v3.1.1/kubesphere-installer.yaml
+    
     kubectl apply -f cluster-configuration.yaml
     ```
 
@@ -134,12 +134,12 @@ weight: 2600
     Password: P@88w0rd
 
     NOTES：
-      1. After logging into the console, please check the
-        monitoring status of service components in
-        the "Cluster Management". If any service is not
-        ready, please wait patiently until all components
-        are ready.
-      2. Please modify the default password after login.
+      1. After you log into the console, please check the
+         monitoring status of service components in
+         "Cluster Management". If any service is not
+         ready, please wait patiently until all components 
+         are up and running.
+      2. Please change the default password after login.
 
     #####################################################
     https://kubesphere.io             20xx-xx-xx xx:xx:xx

@@ -66,8 +66,8 @@
 
   .nav {
     height:100%;
-    margin-left: 300px;
-    margin-right: 340px;
+    margin-left: 280px;
+    margin-right: 360px;
     line-height: 93px;
 
     @media only screen and (max-width: $mobile-max-width) {
@@ -184,8 +184,11 @@
     transform: translateY(-50%);
     right: 0;
 
-    & > ul {
+    @media only screen and (max-width: $mobile-max-width) {
+      height: 21px;
+    }
 
+    & > ul {
       @media only screen and (max-width: $mobile-max-width) {
         display: flex;
         flex-wrap: wrap ;
@@ -298,6 +301,58 @@
         }
       }
 
+    }
+
+    .github-li {
+      position: relative;
+      top: 3px;
+    }
+
+    .github-star {      
+      display: flex;
+      align-items: center;
+      margin-left: 10px;
+      background: linear-gradient(180deg, rgba(0, 0, 0, 0.0001) 0%, rgba(0, 0, 0, 0.1) 96.81%), #FFFFFF;
+      border: 1px solid #CCD3DB;
+      box-shadow: 0px 8px 16px rgba(76, 169, 134, 0.1), 0px 10px 50px rgba(76, 169, 134, 0.05);
+      border-radius: 4px;
+      overflow: hidden;
+      @media only screen and (max-width: $mobile-max-width) {
+        display: none;
+      }
+      a {
+        color: #3E464C;
+        font-size: 16px;
+        line-height: 16px;
+        &:hover {
+          color: #4CA986;
+        }
+      }
+
+      .star-btn {
+        padding: 7px 8px;
+        display: flex;
+        align-items: center;
+
+        .star-img {
+          display: inline-block;
+          width: 16px;
+          height: 16px;
+          background-repeat: no-repeat;
+          background-size: contain;
+          background-image: url('/images/header/github-star.svg');
+        }
+        &:hover {
+          .star-img {
+            background-image: url('/images/header/github-star-hover.svg');
+          }
+        }
+      }
+
+      .social-count {
+        padding: 7px 14px;
+        border-left: 1px solid rgba(204, 211, 219, 0.5);
+      }
     }
 
     .menu-icon {
