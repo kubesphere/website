@@ -8,7 +8,7 @@ author: '王文虎'
 snapshot: 'https://pek3b.qingstor.com/kubesphere-community/images/cluster-zhongtong.jpeg'
 ---
 
-> 本文是上海站 Meetup 讲师王文虎根据其分享内容整理的文章。
+> 本文是上海站 Meetup 讲师王文虎根据其分享内容整理的文章。[点击查看视频回放](https://kubesphere.com.cn/live/zhongtong-shanghai/)
 
 KubeSphere 社区的小伙伴们，大家好。我是中通快递容器云平台的研发工程师王文虎，主要负责中通快递容器云平台开发、应用容器化推广、容器平台运维等工作。非常感谢 KubeSphere 社区的邀请，让我有机会跟大家分享中通快递关键业务和复杂架构挑战下的 Kubernetes 集群服务暴露实践。
 
