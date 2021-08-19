@@ -322,19 +322,7 @@ name = "开源社区"
     parent = "开源社区"
     name = "暑期 2021"
     URL = "https://github.com/kubesphere/community/blob/master/sig-advocacy-and-outreach/summer-ospp/README_zh-CN.md"
-    weight = 7
-
-    [[languages.zh.menu.main]]
-    parent = "开源社区"
-    name = "暑期 2021"
-    URL = "https://github.com/kubesphere/community/blob/master/sig-advocacy-and-outreach/summer-ospp/README_zh-CN.md"
-    weight = 7
-
-    [[languages.zh.menu.main]]
-    parent = "开源社区"
-    name = "暑期 2021"
-    URL = "https://github.com/kubesphere/community/blob/master/sig-advocacy-and-outreach/summer-ospp/README_zh-CN.md"
-    weight = 7
+    weight = 8
 
 [[languages.zh.menu.main]]
 weight = 6
