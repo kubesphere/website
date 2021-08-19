@@ -13,13 +13,15 @@ section2:
   url: ./meetup-beijing/
 
   notice:
-    title: Kubernetes and Cloud Native Meetup ——成都站
-    tag: 结束
-    url: ./meetup-chengdu/
+    title: 使用 Flomesh 进行 Dubbo 微服务的服务治理
+    tag: 预告
+    time: 2021 年 8 月 19 日晚 8 点
+    base: 线上
+    url: ./pipy819-live/
 
   over:
-    title: Kubernetes and Cloud Native Meetup ——杭州站
-    url: ./meetup-hangzhou/
+    title: Kubernetes and Cloud Native Meetup ——成都站
+    url: ./meetup-chengdu/
     tag: 结束
 
 section3:
@@ -326,7 +328,7 @@ section4:
 
 section5:
   title: 分享你的主题
-  content: 想在社区分享你的落地经验？说出你和 KubeSphere 的开源故事，即刻加入 KubeSphere 开源社区直播计划，提交你的分享主题，将有定制礼品相送！
+  content: 想在社区分享你的云原生实践经验？说出你的开源故事，即刻加入云原生直播计划，提交你的分享主题，将有 KubeSphere 周边礼品相送！
   btn: 提交分享主题
   url: https://jinshuju.net/f/fUCZ1L
   image: /images/live/30.svg

@@ -122,6 +122,14 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                     <div class="md-body">
                         <h1>{{ .Title }}</h1>
                         {{ .Content }}
+                        <section class="feedback-section">
+                            <p class="title">{{ i18n "feedback"}}</p>
+                            <p>{{i18n "Was this page Helpful?"}}</p>
+                            <button class="Yes">{{ i18n "Yes" }}</button>
+                            <button class="No">{{ i18n "No" }}</button>
+                        </section>
+                        <br>
+                        <p class="msg-thank">{{ i18n "Msg-Thank" }}</p>
                     </div>
                 </div>
                 {{ if .IsPage }}
@@ -176,6 +184,26 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         var filePath = '{{ .File.Path }}'
         var githubUrl = '{{ .Site.Params.githubUrl }}'
         // var filePath = 'README.md'
+        var Yes = $('button.Yes');
+            var No = $('button.No');
+            var msg = $('p.msg-thank')
+            msg.hide()
+
+            Yes.click(function () {
+                Yes.css("background-color", " #55BC8A");
+                Yes.css("opacity", '0.5');
+                Yes.css("pointer-events", "none");
+                No.css("pointer-events", "none");
+                msg.show()
+            })
+
+            No.click(function () {
+                No.css("background-color", " #55BC8A");
+                No.css("opacity", '0.5');
+                Yes.css("pointer-events", "none");
+                No.css("pointer-events", "none");
+                msg.show()
+            })
     
         var getLatestTime = function(data) {
             var commit = data[0].commit
