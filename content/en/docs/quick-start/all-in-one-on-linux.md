@@ -4,6 +4,7 @@ keywords: 'KubeSphere, Kubernetes, All-in-One, Installation'
 description: 'Install KubeSphere on Linux with a minimal installation package. The tutorial serves as a basic kick-starter for you to understand the container platform, paving the way for learning the following guides.'
 linkTitle: "All-in-One Installation on Linux"
 weight: 2100
+showSubscribe: true
 ---
 
 For those who are new to KubeSphere and looking for a quick way to discover the [container platform](https://kubesphere.io/), the all-in-one mode is your best choice to get started. It features rapid deployment and hassle-free configurations with KubeSphere and Kubernetes all provisioned on your machine.
@@ -20,6 +21,7 @@ To get started with all-in-one installation, you only need to prepare one host a
 
 <table>
   <tbody>
+
     <tr>
     <th width='320'>OS</th>
     <th>Minimum Requirements</th>
@@ -41,6 +43,7 @@ To get started with all-in-one installation, you only need to prepare one host a
     <td><b>SUSE Linux Enterprise Server 15/openSUSE Leap 15.2</b></td>
       <td>2 CPU cores, 4 GB memory, and 40 GB disk space</td>
     </tr>
+
   </tbody>
 </table>
 
@@ -52,8 +55,8 @@ The preceding system requirements and the following instructions are for the def
 
 ### Node requirements
 
-- The node can be accessed through `SSH`.
-- `sudo`/`curl`/`openssl` should be used.
+* The node can be accessed through `SSH`.
+* `sudo`/`curl`/`openssl` should be used.
 
 ### Container runtimes
 
@@ -61,6 +64,7 @@ Your cluster must have an available container runtime. If you use KubeKey to set
 
 <table>
   <tbody>
+
     <tr>
       <th width='500'>Supported Container Runtime</th>
       <th>Version</th>
@@ -79,6 +83,7 @@ Your cluster must have an available container runtime. If you use KubeKey to set
       <td>iSula (experimental, not fully tested)</td>
       <td>Latest</td>
     </tr>
+
   </tbody>
 </table>
 
@@ -94,6 +99,7 @@ KubeKey can install Kubernetes and KubeSphere together. The dependency that need
 
 <table>
   <tbody>
+
     <tr>
       <th>Dependency</th>
      <th>Kubernetes Version ≥ 1.18</th>
@@ -117,6 +123,7 @@ KubeKey can install Kubernetes and KubeSphere together. The dependency that need
     <td>Optional but recommended</td> 
      <td>Optional but recommended</td> 
     </tr>
+
   </tbody>
 </table>
 
@@ -128,14 +135,14 @@ Developed in Go, KubeKey represents a brand-new installation tool as a replaceme
 
 ### Network and DNS requirements
 
-- Make sure the DNS address in `/etc/resolv.conf` is available. Otherwise, it may cause some issues of DNS in the cluster.
-- If your network configuration uses firewall rules or security groups, you must ensure infrastructure components can communicate with each other through specific ports. It is recommended that you turn off the firewall. For more information, see [Port Requirements](../../installing-on-linux/introduction/port-firewall/).
-- Supported CNI plugins: Calico and Flannel. Others (such as Cilium and Kube-OVN) may also work but note that they have not been fully tested.
+* Make sure the DNS address in `/etc/resolv.conf` is available. Otherwise, it may cause some issues of DNS in the cluster.
+* If your network configuration uses firewall rules or security groups, you must ensure infrastructure components can communicate with each other through specific ports. It is recommended that you turn off the firewall. For more information, see [Port Requirements](../../installing-on-linux/introduction/port-firewall/).
+* Supported CNI plugins: Calico and Flannel. Others (such as Cilium and Kube-OVN) may also work but note that they have not been fully tested.
 
 {{< notice tip >}}
 
-- It is recommended that your OS be clean (without any other software installed). Otherwise, there may be conflicts.
-- It is recommended that a registry mirror (a booster) be prepared if you have trouble downloading images from `dockerhub.io`. For more information, see [Configure a Booster for Installation](../../faq/installation/configure-booster/).
+* It is recommended that your OS be clean (without any other software installed). Otherwise, there may be conflicts.
+* It is recommended that a registry mirror (a booster) be prepared if you have trouble downloading images from `dockerhub.io`. For more information, see [Configure a Booster for Installation](../../faq/installation/configure-booster/).
 
 {{</ notice >}}
 
@@ -207,10 +214,10 @@ To create a Kubernetes cluster with KubeSphere installed, refer to the following
 
 {{< notice note >}}
 
-- Recommended Kubernetes versions for KubeSphere v3.1.1: v1.17.9, v1.18.8, v1.19.8 and v1.20.4. If you do not specify a Kubernetes version, KubeKey installs Kubernetes v1.19.8 by default. For more information about supported Kubernetes versions, see [Support Matrix](../../installing-on-linux/introduction/kubekey/#support-matrix).
-- For all-in-one installation, you do not need to change any configuration.
-- If you do not add the flag `--with-kubesphere` in the command in this step, KubeSphere will not be deployed. KubeKey will install Kubernetes only. If you add the flag `--with-kubesphere` without specifying a KubeSphere version, the latest version of KubeSphere will be installed.
-- KubeKey will install [OpenEBS](https://openebs.io/) to provision LocalPV for the development and testing environment by default, which is convenient for new users. For other storage classes, see [Persistent Storage Configurations](../../installing-on-linux/persistent-storage-configurations/understand-persistent-storage/).
+* Recommended Kubernetes versions for KubeSphere v3.1.1: v1.17.9, v1.18.8, v1.19.8 and v1.20.4. If you do not specify a Kubernetes version, KubeKey installs Kubernetes v1.19.8 by default. For more information about supported Kubernetes versions, see [Support Matrix](../../installing-on-linux/introduction/kubekey/#support-matrix).
+* For all-in-one installation, you do not need to change any configuration.
+* If you do not add the flag `--with-kubesphere` in the command in this step, KubeSphere will not be deployed. KubeKey will install Kubernetes only. If you add the flag `--with-kubesphere` without specifying a KubeSphere version, the latest version of KubeSphere will be installed.
+* KubeKey will install [OpenEBS](https://openebs.io/) to provision LocalPV for the development and testing environment by default, which is convenient for new users. For other storage classes, see [Persistent Storage Configurations](../../installing-on-linux/persistent-storage-configurations/understand-persistent-storage/).
 
 {{</ notice >}}
 
@@ -228,11 +235,13 @@ Run the following command to check the result.
 kubectl logs -n kubesphere-system $(kubectl get pod -n kubesphere-system -l app=ks-install -o jsonpath='{.items[0].metadata.name}') -f
 ```
 
-The output displays the IP address and port number of the web console, which is exposed through `NodePort 30880` by default. Now, you can access the console at `<NodeIP>:30880` with the default account and password (`admin/P@88w0rd`).
+The output displays the IP address and port number of the web console, which is exposed through `NodePort 30880` by default. Now, you can access the console at `<NodeIP>:30880` with the default account and password ( `admin/P@88w0rd` ).
 
 ```bash
 #####################################################
+
 ###              Welcome to KubeSphere!           ###
+
 #####################################################
 
 Console: http://192.168.0.2:30880
@@ -267,4 +276,5 @@ After logging in to the console, you can check the status of different component
 This guide is used only for the minimal installation by default. For more information about how to enable other components in KubeSphere, see [Enable Pluggable Components](../../pluggable-components/).
 
 ## Code Demonstration
+
 <script src="https://asciinema.org/a/379741.js" id="asciicast-379741" async></script>

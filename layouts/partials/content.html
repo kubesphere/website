@@ -1,72 +1,149 @@
 {{ $context := .context }}
 {{ $parent := .parent }}
 {{ $text := .text }}
+{{ $LanguageCode := .context.Site.Params.LanguageCode }}
+{{ $Site := .context.Site}}
 <!DOCTYPE html>
 <html lang="{{ with .Site.LanguageCode }}{{ . }}{{ else }}en-US{{ end }}">
+
 <head>
     {{- partial "head.html" $context -}}
 
     {{ $style := resources.Get "scss/content.scss" | toCSS | minify | fingerprint }}
     <link rel="stylesheet" href="{{ $style.RelPermalink }}">
-    
+
     {{ $style := resources.Get "scss/markdown.scss" | toCSS | minify | fingerprint }}
     <link rel="stylesheet" href="{{ $style.RelPermalink }}">
 </head>
 
 
 <body>
-{{ if .Site.Params.addGoogleTag }}
-<!-- Google Tag Manager (noscript) -->
-<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-W9FLX4R"
-height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
-<!-- End Google Tag Manager (noscript) -->
-{{ end }}   
-  {{ partial "header.html" $context }}
-  <section class="main-section">
-      <div class="common-layout">
-          <div class='breadcrumb'>
-              {{ $section := $context.FirstSection }}
-              <span><a href='{{ $parent | relLangURL }}/'>{{ i18n $text }}</a> > </span>
-              <span>{{ $context.Title }}</span>
-          </div>
-          <div class='main-div middle-div'>
-              <div class='author'>{{ $context.Params.author }}</div>
-              <div class='date'>{{ i18n "Published on" }}：{{ string $context.Params.createTime }}</div>
-              <h1>{{ $context.Title }}</h1>
-              <div class="share-1">
-                  {{ partial "share.html" $context }}
-              </div>
-              <div class='content'>
-                  <div class='md-body'>
-                      {{ $context.Content }}
-                  </div>
-              </div>
-              <div class="share-2">
-                  {{ partial "share.html" $context }}
-              </div>
-          </div>
-          <div class='aside'>
-              <div class="inner-div">
-                <div class='title'>{{ i18n "Table of Contents" }}</div>
-                <div class='tabs'>{{ $context.TableOfContents }}</div>
-              </div>
-          </div>
-      </div>
-  </section>
-  {{ partial "footer.html" $context }}
-  {{ $aside := resources.Get "js/aside.js" }}
-  {{ $asideJS := $aside | resources.Fingerprint "sha512" }}
-  <script type="text/javascript" src="{{ $asideJS.RelPermalink }}" integrity="{{ $asideJS.Data.Integrity }}"></script>
-  
-  {{ $tab := resources.Get "js/markdown-tab.js" }}
-  {{ $tabJS := $tab | resources.Fingerprint "sha512" }}
-  <script type="text/javascript" src="{{ $tabJS.RelPermalink }}" integrity="{{ $tabJS.Data.Integrity }}"></script>
-  
-  <script>
-    var viewer = new Viewer(document.querySelector('.md-body'), {
-        url: 'src'
-    })
-  </script>
+    {{ if $Site.Params.addGoogleTag }}
+    <!-- Google Tag Manager (noscript) -->
+    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-W9FLX4R" height="0" width="0"
+            style="display:none;visibility:hidden"></iframe></noscript>
+    <!-- End Google Tag Manager (noscript) -->
+    {{ end }}
+    {{ partial "header.html" $context }}
+    <section class="main-section">
+        <div class="common-layout">
+            <div class='breadcrumb'>
+                {{ $section := $context.FirstSection }}
+                <span><a href='{{ $parent | relLangURL }}/'>{{ i18n $text }}</a> > </span>
+                <span>{{ $context.Title }}</span>
+            </div>
+            <div class='main-div middle-div'>
+                <div class='author'>{{ $context.Params.author }}</div>
+                <div class='date'>{{ i18n "Published on" }}：{{ string $context.Params.createTime }}</div>
+                <h1>{{ $context.Title }}</h1>
+                <div class="share-1">
+                    {{ partial "share.html" $context }}
+                </div>
+                <div class='content'>
+                    <div class='md-body'>
+                        {{ $context.Content }}
+                    </div>
+                </div>
+                <div class="share-2">
+                    {{ partial "share.html" $context }}
+                </div>
+            </div>
+            <div class='aside'>
+                <div class="inner-div">
+                    <div class='title'>{{ i18n "Table of Contents" }}</div>
+                    <div class='tabs'>{{ $context.TableOfContents }}</div>
+                </div>
+            </div>
+        </div>
+    </section>
+    {{ if eq $LanguageCode "en-US"}}
+    <div class="SubscribeForm">
+        <div class="innerBox">
+            <img class="close" src="/images/home/close.svg" alt="close">
+            <p class="description">
+                {{ i18n "Receive the latest news, articles and updates from KubeSphere" }}
+            </p>
+            <div>
+                <form action="{{ $Site.Params.mailchimpSubscribeUrl }}" method="post" target="_blank" novalidate>
+                    <input name="EMAIL" id="email-input-blog" type="text"
+                        placeholder='{{ i18n "Please enter your email address" }}'>
+                    <button type="submit" id="email-submit-blog">{{ i18n "Subscribe" }}</button>
+                </form>
+                <span id="message_blog" data-message1='{{ i18n "email is required" }}'
+                    data-message2='{{ i18n "Please enter a valid email address." }}'></span>
+            </div>
+        </div>
+    </div>
+    {{end}}
+    {{ partial "footer.html" $context }}
+    {{ $aside := resources.Get "js/aside.js" }}
+    {{ $asideJS := $aside | resources.Fingerprint "sha512" }}
+    <script type="text/javascript" src="{{ $asideJS.RelPermalink }}" integrity="{{ $asideJS.Data.Integrity }}"></script>
+
+    {{ $tab := resources.Get "js/markdown-tab.js" }}
+    {{ $tabJS := $tab | resources.Fingerprint "sha512" }}
+    <script type="text/javascript" src="{{ $tabJS.RelPermalink }}" integrity="{{ $tabJS.Data.Integrity }}"></script>
+
+    <script>
+        let forbidForm = false;
+        var viewer = new Viewer(document.querySelector('.md-body'), {
+            url: 'src'
+        })
+
+        var blogBindSubmit = function () {
+            var input = $('#email-input-blog')
+            $('#email-submit-blog').click(function (event) {
+                event.stopPropagation()
+                var email = input.val()
+                var message1 = $('#message_blog').data('message1')
+                var message2 = $('#message_blog').data('message2')
+                if (!email) {
+                    event.preventDefault()
+                    $('#message_blog').html(message1).show()
+                } else if (!validateEmail(email)) {
+                    event.preventDefault()
+                    $('#message_blog').html(message2).show()
+                }
+            })
+        }
+        
+        var validateEmail = function (email) {
+            var reg = /^[A-Za-z0-9]+([_\.][A-Za-z0-9]+)*@([A-Za-z0-9\-]+\.)+[A-Za-z]{2,6}$/
+            return reg.test(email)
+        }
+
+        var bindHideMessageBlog = function () {
+            $(window).click(function () {
+                $('#message_blog').hide()
+            })
+        }
+
+        var bindCloseBlog = function () {
+            $('.SubscribeForm .close').click(function (e) {
+                e.stopPropagation()
+                $('.SubscribeForm').fadeOut()
+                window.onscroll = ''
+            })
+        }
+
+        window.onscroll = () => {
+            var scrollTop = document.documentElement.scrollTop || document.body.scrollTop;
+            var windowHeight = document.documentElement.clientHeight || document.body.clientHeight;
+            var scrollHeight = document.documentElement.scrollHeight || document.body.scrollHeight;
+            if (forbidForm) {
+                window.onscroll = ''
+            }
+            if (scrollTop + windowHeight > (scrollHeight - 710)) {
+                $('.SubscribeForm').hide()
+            } else {
+                $('.SubscribeForm').show()
+            }
+        }
+
+        blogBindSubmit()
+        bindCloseBlog()
+        bindHideMessageBlog()
+    </script>
 </body>
 
 </html>
