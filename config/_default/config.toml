@@ -169,7 +169,7 @@ name = "Community"
 
     [[languages.en.menu.main]]
     parent = "Community"
-    name = "Summer 2021"
+    name = "Summer 2021 of OSPP"
     URL = "https://github.com/kubesphere/community/blob/master/sig-advocacy-and-outreach/summer-ospp/README.md"
     weight = 6
 
