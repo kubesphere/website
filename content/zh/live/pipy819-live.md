@@ -5,8 +5,8 @@ keywords: KubeSphere, Kubernetes, Flomesh, 微服务, Dubbo
 css: scss/live-detail.scss
 
 section1:
-  snapshot: 
-  videoUrl: 
+  snapshot: https://pek3b.qingstor.com/kubesphere-community/images/pipy819-live-cover.png
+  videoUrl: //player.bilibili.com/player.html?aid=292409217&bvid=BV12f4y137qd&cid=393067923&page=1&high_quality=1
   type: iframe
   time: 2021-08-19 20:00-21:00
   timeIcon: /images/live/clock.svg
@@ -31,6 +31,6 @@ section1:
 
 2021 年 8 月 19 日晚 8:00-9:00
 
-## 直播地址
+## PPT 下载
 
-B 站 http://live.bilibili.com/22580654
+可扫描官网底部二维码，关注 「KubeSphere 云原生」公众号，后台回复 `2021819` 即可下载 PPT。

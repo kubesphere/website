@@ -13,19 +13,26 @@ section2:
   url: ./meetup-beijing/
 
   notice:
-    title: 使用 Flomesh 进行 Dubbo 微服务的服务治理
+    title: Apache APISIX Ingress Controller 实现与上手实践
     tag: 预告
-    time: 2021 年 8 月 19 日晚 8 点
+    time: 2021 年 8 月 26 日晚 8 点
     base: 线上
-    url: ./pipy819-live/
+    url: ./apisix826-live/
 
   over:
-    title: Kubernetes and Cloud Native Meetup ——成都站
-    url: ./meetup-chengdu/
+    title: 使用 Flomesh 进行 Dubbo 微服务的服务治理
+    url: ./pipy819-live/
     tag: 结束
 
 section3:
   videos:
+    - title: 使用 Flomesh 进行 Dubbo 微服务的服务治理
+      link: ./pipy819-live/
+      snapshot: https://pek3b.qingstor.com/kubesphere-community/images/pipy819-live-cover.png
+      type: iframe
+      createTime: 2021.08.19
+      group: 直播回放
+
     - title: 深入解读云原生可观测性之日志与告警通知
       link: ./nm-cic/
       snapshot: https://pek3b.qingstor.com/kubesphere-community/images/nm-cic-cover.png
@@ -272,7 +279,7 @@ section3:
       group: 直播回放
 
     - title: 手把手教你搭建 KubeSphere 前后端本地开发环境
-      link: /player.bilibili.com/player.html?aid=970391604&bvid=BV1bp4y1r77B&cid=261593695&page=1&high_quality=1
+      link: //player.bilibili.com/player.html?aid=970391604&bvid=BV1bp4y1r77B&cid=261593695&page=1&high_quality=1
       snapshot: https://pek3b.qingstor.com/kubesphere-community/images/dajianqianhouduan.jpeg
       type: iframe
       createTime: 2020.12.01
@@ -296,6 +303,12 @@ section4:
   overImg: /images/live/over.svg
   noticeImg: /images/live/notice.svg
   list:
+    - title: 使用 Flomesh 进行 Dubbo 微服务的服务治理
+      date: 08/19
+      time: 20:00 - 21:00
+      lastTime: 2021-08-19T21:00:00Z
+      url: ./pipy819-live/
+
     - title: KubeSphere v3.1 开源社区交流会直播回放
       date: 04/29
       time: 20:00 - 21:00
@@ -320,11 +333,6 @@ section4:
       lastTime: 2020-12-02T21:00:00Z
       url: ./poterlb-live/
 
-    - title: Kubernetes 混合云在教育服务行业的最佳实践
-      date: 11/26
-      time: 20:00 - 21:00
-      lastTime: 2020-11-26T21:00:00Z
-      url: ./qingjiao-live/
 
 section5:
   title: 分享你的主题

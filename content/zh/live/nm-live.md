@@ -14,7 +14,11 @@ section1:
   baseIcon: /images/live/base.svg
 ---
 
-## 导引
+## 分享人
+
+雷万钧，KubeSphere 可观测性研发工程师
+
+## 分享内容简介
 
 KubeSphere 可观察性研发工程师带大家详细解读社区新开源的 Notification Manager 企业级云原生多租户通知系统。Notification Manager 支持从 Alertmanager 接收通知消息，并发送到用户配置的通知接收渠道，包括邮件、企业微信、Slack、钉钉、Webhook，未来也可以加入从其他 Source 接收消息并发送通知的功能。
 
