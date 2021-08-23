@@ -159,18 +159,19 @@ wget https://github.com/kubesphere/ks-installer/releases/download/v3.1.1/cluster
 部分存储卷 VolumeSize 小于20G,需要手动调整：
 
 ```bash
-shell@Alicloud:~$ cat cluster-configuration.yaml | grep VolumeSize
+shell@Alicloud:~$ cat cluster-configuration.yaml | grep Volum
     mysqlVolumeSize: 20Gi # MySQL PVC size.
     minioVolumeSize: 20Gi # Minio PVC size.
     etcdVolumeSize: 20Gi  # etcd PVC size.
     openldapVolumeSize: 2Gi   # openldap PVC size.
+    redisVolumSize: 2Gi # Redis PVC size.
       elasticsearchMasterVolumeSize: 4Gi   # Volume size of Elasticsearch master nodes.
       elasticsearchDataVolumeSize: 20Gi    # Volume size of Elasticsearch data nodes.
     jenkinsVolumeSize: 8Gi     # Jenkins volume size.
     prometheusVolumeSize: 20Gi       # Prometheus PVC size.
 ```
 
-编辑 cluster-configuration.yaml 文件，调整 `openldapVolumeSize、elasticsearchMasterVolumeSize、jenkinsVolumeSize` 3 个卷大小为 20G。
+编辑 cluster-configuration.yaml 文件，调整 `openldapVolumeSize、redisVolumSize、elasticsearchMasterVolumeSize、jenkinsVolumeSize` 4 个卷大小为 20G。
 
 执行以下命令部署 kubesphere：
 
