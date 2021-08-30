@@ -9,12 +9,12 @@
 <meta property="og:type" content="article"/>
 <meta property="og:title" content="{{ with .Params.Title }}{{ . }}{{ else }}{{ with .Site.Params.title }}{{ . }}{{ end }}{{ end }}"/>
 <meta property="og:description" content="{{ with .Params.Description }}{{ . }}{{ else }}{{ with .Site.Params.description }}{{ . }}{{ end }}{{ end }}"/>
-<meta property="og:image" content="{{ with .Params.snapshot }}{{ . }}{{ else }}{{ with .Site.Params.snapshot }}{{ . | absURL }}{{ end }}{{ end }}"/>
+<meta property="og:image" content="{{ with .Params.snapshot }}{{ . | absURL }}{{ else }}{{ with .Site.Params.snapshot }}{{ . | absURL }}{{ end }}{{ end }}"/>
 <meta property="og:url" content="{{ .Permalink }}"/>
 
 <meta name="twitter:card" content="summary_large_image" />
 <meta name="twitter:site" content="@KubeSphere" />
-<meta property="twitter:image" content="{{ with .Params.snapshot }}{{ . }}{{ else }}{{ with .Site.Params.snapshot }}{{ . | absURL }}{{ end }}{{ end }}"/>
+<meta property="twitter:image" content="{{ with .Params.snapshot }}{{ . | absURL }}{{ else }}{{ with .Site.Params.snapshot }}{{ . | absURL }}{{ end }}{{ end }}"/>
 
 <meta name="docsearch:language" content="{{ .Site.LanguageCode }}" />
 

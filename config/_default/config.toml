@@ -167,6 +167,13 @@ name = "Community"
     URL = "https://github.com/kubesphere/kubesphere/blob/master/docs/roadmap.md"
     weight = 5
 
+    [[languages.en.menu.main]]
+    parent = "Community"
+    name = "Summer 2021 of OSPP"
+    URL = "https://github.com/kubesphere/community/blob/master/sig-advocacy-and-outreach/summer-ospp/README.md"
+    weight = 6
+
+
 [languages.zh]
 weight = 2
 contentDir = "content/zh"
@@ -310,6 +317,12 @@ name = "开源社区"
     name = "中国站"
     URL = "https://kubesphere.com.cn/"
     weight = 7
+
+    [[languages.zh.menu.main]]
+    parent = "开源社区"
+    name = "暑期 2021"
+    URL = "https://github.com/kubesphere/community/blob/master/sig-advocacy-and-outreach/summer-ospp/README_zh-CN.md"
+    weight = 8
 
 [[languages.zh.menu.main]]
 weight = 6
