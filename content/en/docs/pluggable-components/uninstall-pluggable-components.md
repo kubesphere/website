@@ -3,7 +3,7 @@ title: "Uninstall Pluggable Components from KubeSphere v3.1.x"
 keywords: "Installer, uninstall, KubeSphere, Kubernetes"
 description: "Learn how to uninstall each pluggable component in KubeSphere v3.1.x."
 linkTitle: "Uninstall Pluggable Components from KubeSphere v3.1.x"
-Weight: 16500
+Weight: 6940
 ---
 
 After you [enable the pluggable components of KubeSphere](../../../pluggable-components/), you can also uninstall them by performing the following steps. Please back up any necessary data before you uninstall these components.
