@@ -9,15 +9,15 @@ section1:
   image: /images/live/background.jpg
 
 section2:
-  image: /images/live/kv-cic-beijing.png
-  url: ./meetup-beijing/
+  image: /images/live/apisix0826-live-cover.png
+  url: ./apisix826-live/
 
   notice:
-    title: Apache APISIX Ingress Controller 实现与上手实践
+    title: Kubernetes 上的图数据库
     tag: 预告
-    time: 2021 年 8 月 26 日晚 8 点
+    time: 2021 年 09 月 02 日晚 8 点
     base: 线上
-    url: ./apisix826-live/
+    url: ./nebula0902-live/
 
   over:
     title: 使用 Flomesh 进行 Dubbo 微服务的服务治理
@@ -26,6 +26,13 @@ section2:
 
 section3:
   videos:
+    - title: Apache APISIX Ingress Controller 实现与上手实践
+      link: ./apisix826-live/
+      snapshot: https://pek3b.qingstor.com/kubesphere-community/images/apisix826-live-cover.png
+      type: iframe
+      createTime: 2021.08.26
+      group: 直播回放
+
     - title: 使用 Flomesh 进行 Dubbo 微服务的服务治理
       link: ./pipy819-live/
       snapshot: https://pek3b.qingstor.com/kubesphere-community/images/pipy819-live-cover.png
@@ -303,6 +310,12 @@ section4:
   overImg: /images/live/over.svg
   noticeImg: /images/live/notice.svg
   list:
+    - title: Apache APISIX Ingress Controller 实现与上手实践
+      date: 08/26
+      time: 20:00 - 21:00
+      lastTime: 2021-08-26T21:00:00Z
+      url: ./apisix826-live/
+
     - title: 使用 Flomesh 进行 Dubbo 微服务的服务治理
       date: 08/19
       time: 20:00 - 21:00
@@ -326,12 +339,6 @@ section4:
       time: 20:00 - 21:00
       lastTime: 2021-01-06T21:00:00Z
       url: ./nm-live/
-
-    - title: CNCF 网研会：使用 PorterLB 和 KubeSphere 在物理机 K8s 轻松暴露服务
-      date: 12/02
-      time: 20:00 - 21:00
-      lastTime: 2020-12-02T21:00:00Z
-      url: ./poterlb-live/
 
 
 section5:
