@@ -6,7 +6,7 @@ linkTitle: "Kubernetes 集群配置"
 weight: 3160
 ---
 
-When creating a Kubernetes cluster, you can use [KubeKey](../kubekey/) to define a configuration file (`config-sample.yaml`) which contains basic information of your cluster. Refer to the following example for Kubernetes-related parameters in the configuration file.
+当创建 Kubernetes 集群时，您可以使用 [KubeKey](../kubekey/) 去生成含有集群基本信息的配置文件 (`config-sample.yaml`)。有关配置文件中的 Kubernetes 相关参数，请参阅以下示例。
 
 ```yaml
   kubernetes:
@@ -32,95 +32,99 @@ When creating a Kubernetes cluster, you can use [KubeKey](../kubekey/) to define
   addons: []
 ```
 
-The below table describes the above parameters in detail.
+以下表格会详细描述上面的参数。
 
   <table border="1">
    <tbody>
    <tr>
-     <th width='140'>Parameter</th>
-     <th>Description</th>
+     <th width='140'>参数</th>
+     <th>描述</th>
    </tr>
    <tr>
      <th colSpan='2'><code>kubernetes</code></th>
    </tr>
    <tr>
      <td><code>version</code></td>
-     <td>The Kubernetes version to be installed. If you do not specify a Kubernetes version, {{< contentLink "docs/installing-on-linux/introduction/kubekey" "KubeKey" >}} v1.1.0 will install Kubernetes v1.19.8 by default. For more information, see {{< contentLink "docs/installing-on-linux/introduction/kubekey/#support-matrix" "Support Matrix" >}}.</td>
+     <td>Kubernetes 安装版本。如未指定 Kubernetes 版本，{{< contentLink "docs/installing-on-linux/introduction/kubekey" "KubeKey" >}}  v1.1.0 默认安装 Kubernetes v1.19.8。有关更多信息，请参阅{{< contentLink "docs/installing-on-linux/introduction/kubekey/#support-matrix" "支持矩阵" >}}。</td>
    </tr>
    <tr>
      <td><code>imageRepo</code></td>
-     <td>The Docker Hub repository where images will be downloaded.</td>
+     <td>用于下载镜像的 Docker Hub 仓库</td>
    </tr>
    <tr>
      <td><code>clusterName</code></td>
-     <td>The Kubernetes cluster name.</td>
+     <td>Kubernetes 集群名称。</td>
    </tr>
    <tr>
      <td><code>masqueradeAll</code>*</td>
-     <td><code>masqueradeAll</code> tells kube-proxy to SNAT everything if using the pure iptables proxy mode. It defaults to <code>false</code>.</td>
+       <td>如果使用纯 iptables 代理模式，<code>masqueradeAll</code> 即让 kube-proxy 对所有流量进行源地址转换 (SNAT)。它默认值为 <code>false</code>。</td>
    </tr>
    <tr>
      <td><code>maxPods</code>*</td>
-     <td>The maximum number of Pods that can run on this Kubelet. It defaults to <code>110</code>.</td>
+     <td>Kubelet 可运行 Pod 的最大数量，默认值为 <code>110</code>。</td>
    </tr>
    <tr>
      <td><code>nodeCidrMaskSize</code>*</td>
-     <td>The mask size for node CIDR in your cluster. It defaults to <code>24</code>.</td>
+     <td>集群中节点 CIDR 的掩码大小，默认值为 <code>24</code>。</td>
    </tr>
    <tr>
      <td><code>proxyMode</code>*</td>
-     <td>The proxy mode to use. It defaults to <code>ipvs</code>.</td>
+     <td>使用的代理模式，默认为 <code>ipvs</code>。</td>
    </tr>
    <tr>
      <th colSpan='2'><code>network</code></th>
    </tr>
    <tr>
      <td><code>plugin</code></td>
-     <td>The CNI plugin to use. KubeKey installs Calico by default while you can also specify Flannel. Note that some features can only be used when Calico is adopted as the CNI plugin, such as Pod IP Pools.</td>
+     <td>是否使用 CNI 插件。KubeKey 默认安装 Calico，您也可以指定为 Flannel。请注意，只有使用 Calico 作为 CNI 插件时，才能使用某些功能，例如 Pod IP 池。</td>
    </tr>
    <tr>
      <td><code>calico.ipipMode</code>*</td>
-     <td>The IPIP Mode to use for the IPv4 POOL created at startup. If it is set to a value other than <code>Never</code>, <code>vxlanMode</code> should be set to <code>Never</code>. Allowed values are <code>Always</code>, <code>CrossSubnet</code> and <code>Never</code>. It defaults to <code>Always</code>.</td>
+       <td>用于集群启动时创建 IPv4 池的 IPIP 模式。如果值设置除 <code>Never</code> 以外的值，则参数 <code>vxlanMode</code> 应该被设置成 <code>Never</code>。此参数允许设置值 <code>Always</code>，<code>CrossSubnet</code> 和 <code>Never</code>。默认值为 <code>Always</code>。
+       </td>
    </tr>
    <tr>
      <td><code>calico.vxlanMode</code>*</td>
-     <td>The VXLAN Mode to use for the IPv4 POOL created at startup. If it is set to a value other than <code>Never</code>, <code>ipipMode</code> should be set to <code>Never</code>. Allowed values are <code>Always</code>, <code>CrossSubnet</code> and <code>Never</code>. It defaults to <code>Never</code>.</td>
+       <td>用于集群启动时创建 IPv4 池的 VXLAN 模式。如果该值不设为 <code>Never</code>，则参数 <code>ipipMode</code> 应该设为 <code>Never</code>。此参数允许设置值 <code>Always</code>，<code>CrossSubnet</code> 和 <code>Never</code>。默认值为 <code>Never</code>。</td>
    </tr>
    <tr>
      <td><code>calico.vethMTU</code>*</td>
-     <td>The maximum transmission unit (MTU) setting determines the largest packet size that can be transmitted through your network. It defaults to <code>1440</code>.</td>
+     <td>最大传输单元（maximum transmission unit 简称 MTU）设置可以通过网络传输的最大数据包大小。默认值为 <code>1440</code>。</td>
    </tr>
    <tr>
      <td><code>kubePodsCIDR</code></td>
-     <td>A valid CIDR block for your Kubernetes Pod subnet. It should not overlap with your node subnet and your Kubernetes Services subnet.</td>
+     <td>Kubernetes Pod 子网的有效 CIDR 块。CIDR 块不应与您的节点子网和 Kubernetes 服务子网重叠。</td>
    </tr>
    <tr>
      <td><code>kubeServiceCIDR</code></td>
-     <td>A valid CIDR block for your Kubernetes Services. It should not overlap with your node subnet and your Kubernetes Pod subnet.</td>
+     <td>Kubernetes 服务的有效 CIDR 块。CIDR 块不应与您的节点子网和 Kubernetes Pod 子网重叠。</td>
    </tr>
    <tr>
      <th colSpan='2'><code>registry</code></th>
    </tr>
    <tr>
      <td><code>registryMirrors</code></td>
-     <td>Configure a Docker registry mirror to speed up downloads. For more information, see {{< contentLink "https://docs.docker.com/registry/recipes/mirror/#configure-the-docker-daemon" "Configure the Docker daemon" >}}.</td>
+     <td>配置 Docker 仓库镜像以加速下载。有关详细信息，请参阅{{< contentLink "https://docs.docker.com/registry/recipes/mirror/#configure-the-docker-daemon" "配置 Docker 守护进程" >}}。</td>
    </tr>
    <tr>
      <td><code>insecureRegistries</code></td>
-     <td>Set an address of insecure image registry. For more information, see {{< contentLink "https://docs.docker.com/registry/insecure/" "Test an insecure registry" >}}.</td>
+     <td>设置不安全镜像仓库的地址。有关详细信息，请参阅{{< contentLink "https://docs.docker.com/registry/insecure/" "测试不安全仓库" >}}。</td>
    </tr>
    <tr>
      <td><code>privateRegistry</code>*</td>
-     <td>Configure a private image registry for air-gapped installation (for example, a Docker local registry or Harbor). For more information, see {{< contentLink "docs/installing-on-linux/introduction/air-gapped-installation/" "Air-gapped Installation on Linux" >}}.</td>
+     <td>配置私有镜像仓库，用于离线安装（例如，Docker 本地仓库或 Harbor）。有关详细信息，请参阅{{< contentLink "docs/installing-on-linux/introduction/air-gapped-installation/" "离线安装" >}}。</td>
    </tr> 
    </tbody>
    </table>
 
 
+
+
 {{< notice note >}}
 
-- \* By default, KubeKey does not define these parameters in the configuration file while you can manually add them and customize their values.
-- `addons` is used to install cloud-native add-ons (YAML or Chart). For more information, see [this file](https://github.com/kubesphere/kubekey/blob/release-1.1/docs/addons.md).
-- This page only lists part of the parameters in the configuration file created by KubeKey. For more information about other parameters, see [this example file](https://github.com/kubesphere/kubekey/blob/release-1.1/docs/config-example.md).
+- \*默认情况下，KubeKey 不会在配置文件中定义这些参数，您可以手动添加这些参数并自定义其值。
+- `addons` 用于安装云原生扩展 (Addon)（YAML 或 Chart）。有关详细信息，请参阅此[文件](https://github.com/kubesphere/kubekey/blob/release-1.1/docs/addons.md)。
+- 此页面仅列出 KubeKey 创建的配置文件中的部分参数。有关其他参数的详细信息，请参阅此[示例文件](https://github.com/kubesphere/kubekey/blob/release-1.1/docs/config-example.md)。
 
 {{</ notice >}} 
+
