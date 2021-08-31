@@ -1,5 +1,5 @@
 ---
-title: 'Dive Deep into Resource Requests and Limits in Kubernetes'
+title: 'Kubernetes Resource Requests and Limits'
 keywords: Kubernetes, requests, limits
 description: Understand how Kubernetes requests and limits work and why they can work in the expected way.
 tag: 'Kubernetes, KubeSphere, Requests, Limits'
@@ -16,7 +16,7 @@ As you create resources in a Kubernetes cluster, you may have encountered the fo
 
 Generally, cluster administrators can do nothing but restart the cluster if the above issues happen amid traffic bursts when all of your machines hang and SSH login fails. In this article, we will dive deep into Kubernetes requests and limits by analyzing possible issues and discussing the best practices for them. If you are also interested in the underlying mechanism, you can also find the analysis from the perspective of source code. Hopefully, this article will be helpful for you to understand how Kubernetes requests and limits work, and why they can work in the expected way.
 
-## Concepts
+## Concepts of Requests and Limits
 
 To make full use of resources in a Kubernetes cluster and improve scheduling efficiency, Kubernetes uses requests and limits to control resource allocation for containers. Each container can have its own requests and limits. These two parameters are specified by `resources.requests` and `resources.limits`. Generally speaking, requests are more important in scheduling while limits are more important in running.
 
@@ -34,7 +34,7 @@ Requests define the smallest amount of resources a container needs. For example,
 
 On the other hand, limits determine the maximum amount of resources that a container can use, preventing resource shortage or machine crashes due to excessive resource consumption. If it is set to `0`, it means no resource limit for the container. In particular, if you set `limits` without specifying `requests`, Kubernetes considers the value of `requests` is the same as that of `limits` by default.
 
-Requests and limits apply to two types of resources - compressible (for example, CPU) and incompressible (for example, memory). For incompressible resources, appropriate limits are extremely important.
+Kubernetes requests and limits apply to two types of resources - compressible (for example, CPU) and incompressible (for example, memory). For incompressible resources, appropriate limits are extremely important.
 
 Here is a brief summary of requests and limits:
 
@@ -62,7 +62,7 @@ When a Pod is being created, Kubernetes needs to allocate or provision different
 
 Besides, a Kubernetes scheduler works based on the current status of a cluster. In other words, when new Pods are created, the scheduler selects an optimal node for Pods to run on according to the resource specification of the cluster at that moment. This is where potential issues may happen as Kubernetes clusters are highly dynamic. For example, to maintain a node, you may need to cordon it and all the Pods running on it will be scheduled to other nodes. The problem is, after the maintenance, these Pods will not be automatically scheduled back to the original node. This is because a running Pod cannot be rescheduled by Kubernetes itself to another node once it is bound to a node at the beginning.
 
-## Best Practices
+## Best Practices for Configuring Kubernetes Resource Requests and Limits
 
 We can know from the above analysis that cluster stability has a direct bearing on your app's performance. Temporary resource shortage is often the major cause of cluster instability, which cloud mean app malfunctions or even node failures. Here, we would like to introduce two ways to improve cluster stability.
 
@@ -295,7 +295,7 @@ func GetContainerOOMScoreAdjust(pod *v1.Pod, container *v1.Container, memoryCapa
 
 ## Summary
 
-As a portable and extensible open-source platform, Kubernetes is born for managing containerized workloads and Services. It boasts a comprehensive, fast-growing ecosystem that has helped it secure its position as the de facto standard in container orchestration. That being said, it is not always easy for users to learn Kubernetes and this is where KubeSphere comes to play its part. KubeSphere empowers users to perform virtually all the operations on its dashboard while they also have the option to use the built-in web kubectl tool to run commands. This article focuses on requests and limits, their underlying logic in Kubernetes, as well as how to use KubeSphere to configure them for easy operation and maintenance of your cluster.
+As a portable and extensible open-source platform, Kubernetes is born for managing containerized workloads and Services. It boasts a comprehensive, fast-growing ecosystem that has helped it secure its position as the de facto standard in container orchestration. That being said, it is not always easy for users to learn Kubernetes and this is where KubeSphere comes to play its part. KubeSphere empowers users to perform virtually all the operations on its dashboard while they also have the option to use the built-in web kubectl tool to run commands. This article focuses on Kubernetes resource requests and limits, their underlying logic in Kubernetes, as well as how to use KubeSphere to configure them for easy operation and maintenance of your cluster.
 
 ## Reference
 
