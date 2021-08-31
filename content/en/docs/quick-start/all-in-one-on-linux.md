@@ -3,7 +3,8 @@ title: "All-in-One Installation of Kubernetes and KubeSphere on Linux"
 keywords: 'KubeSphere, Kubernetes, All-in-One, Installation'
 description: 'Install KubeSphere on Linux with a minimal installation package. The tutorial serves as a basic kick-starter for you to understand the container platform, paving the way for learning the following guides.'
 linkTitle: "All-in-One Installation on Linux"
-weight: 2100
+weight: 2100,
+showSubscribe: true
 ---
 
 For those who are new to KubeSphere and looking for a quick way to discover the [container platform](https://kubesphere.io/), the all-in-one mode is your best choice to get started. It features rapid deployment and hassle-free configurations with KubeSphere and Kubernetes all provisioned on your machine.
