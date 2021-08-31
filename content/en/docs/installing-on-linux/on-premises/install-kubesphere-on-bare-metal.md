@@ -1,5 +1,5 @@
 ---
-title: "Deploy KubeSphere on Bare Metal"
+title: "Deploy Kubernetes and Kubesphere on Bare Metal"
 keywords: 'Kubernetes, KubeSphere, bare-metal'
 description: 'Learn how to create a multi-node cluster with one master on bare metal.'
 linkTitle: "Deploy KubeSphere on Bare Metal"
