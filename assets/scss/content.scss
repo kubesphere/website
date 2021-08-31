@@ -202,3 +202,121 @@
     }
   }
 }
+.SubscribeForm {
+  position: fixed;
+  right: 49px;
+  bottom: 32px;
+  box-shadow: 0px 8px 16px rgba(36, 46, 66, 0.05), 0px 4px 8px rgba(36, 46, 66, 0.06);
+
+  .innerBox {
+    width: 440px;
+    height: 246px;
+    overflow: hidden;
+    background: url('/images/home/modal-noText.svg');
+    position: relative;
+    padding: -8px -16px;
+    background-position: -16px -8px;
+
+    .close {
+      position: absolute;
+      top: 24px;
+      right: 24px;
+      cursor: pointer;
+    }
+
+    p {
+      width: 360px;
+      height: 44px;
+      left: 40px;
+      top: 103px;
+      right: 40px;
+      position: absolute;
+      font-family: ProximaNova;
+      font-size: 16px;
+      line-height: 22px;
+      color: #919AA3;
+
+    }
+
+    div {
+      bottom: 32px;
+      left: 40px;
+      position: absolute;
+      width: 358px;
+      height: 48px;
+      margin-top: 20px;
+      border-radius: 24px;
+      border: solid 1px #ccd3db;
+      background-color: #f5f8f9;
+
+      @mixin placeholder {
+        font-family: PingFangSC;
+        font-size: 14px;
+        line-height: 16px;
+        text-align: right;
+        color: #CCD3DB;
+      }
+
+      input {
+        width: 207px;
+        height: 20px;
+        font-size: 14px;
+        margin-left: 16px;
+        color: #ccd3db;
+        border: none;
+        outline: none;
+        background-color: #f5f8f9;
+
+        &:-webkit-input-placeholder {
+          @include placeholder();
+        }
+
+        &:-ms-input-placeholder {
+          @include placeholder();
+        }
+
+        &:-moz-placeholder {
+          @include placeholder();
+        }
+
+        &:-moz-placeholder {
+          @include placeholder();
+        }
+      }
+
+      button {
+        width: 111px;
+        height: 40px;
+        margin: 4px 5px 4px 14px;
+        border-radius: 20px;
+        border: none;
+        font-size: 14px;
+        color: #ffffff;
+        cursor: pointer;
+        box-shadow: 0 10px 50px 0 rgba(34, 43, 62, 0.1), 0 8px 16px 0 rgba(33, 43, 61, 0.2);
+        background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.1) 97%), linear-gradient(to bottom, #55bc8a, #55bc8a);
+
+        &:hover {
+          box-shadow: none;
+        }
+      }
+
+      @media only screen and (max-width: $mobile-max-width) {
+        width: 326px;
+
+        input {
+          width: 196px;
+        }
+
+        button {
+          width: 90px;
+        }
+      }
+
+      span {
+        color: red;
+      }
+    }
+
+  }
+}
