@@ -127,9 +127,9 @@
 - id: Accept and continue
   translation: 接受并继续
 - id: Install on Kubernetes
-  translation: 在 Kubernetes 安装
+  translation: 在 Kubernetes 上安装
 - id: Install on Linux
-  translation: 在 Linux 安装
+  translation: 在 Linux 上安装
 - id: Was this page Helpful?
   translation: 这篇文章对您有帮助吗？
 - id: 'Yes'
