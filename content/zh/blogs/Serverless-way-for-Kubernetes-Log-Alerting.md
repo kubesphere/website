@@ -400,26 +400,24 @@ curl http://<wp-svc-address>/notfound
 
 ### 进一步探索
 
-- 同步函数的解决方案
+同步函数的解决方案：
 
+为了可以正常使用 Knative Serving ，我们需要设置其网关的负载均衡器地址。（你可以使用本机地址作为 workaround）
 
-    > 为了可以正常使用 Knative Serving ，我们需要设置其网关的负载均衡器地址。（你可以使用本机地址作为 workaround）
-    >
-    > 将下面的 "1.2.3.4" 替换为实际场景中的地址。
-    >
-    > ```shell
-    > kubectl patch svc -n kourier-system kourier \
-    > -p '{"spec": {"type": "LoadBalancer", "externalIPs": ["1.2.3.4"]}}'
-    > 
-    > kubectl patch configmap/config-domain -n knative-serving \
-    > --type merge --patch '{"data":{"1.2.3.4.sslip.io":""}}'
-    > ```
-    >
-  除了直接由 Kafka 服务器驱动函数运作（异步方式），OpenFunction 还支持使用自带的事件框架对接 Kafka 服务器，之后以 Sink 的方式驱动 Knative 函数运作。可以参考 [OpenFunction Samples](https://github.com/OpenFunction/samples/tree/main/functions/Knative/logs-handler-function) 中的案例。
+```bash
+# 将下面的 "1.2.3.4" 替换为实际场景中的地址。
+$ kubectl patch svc -n kourier-system kourier \
+-p '{"spec": {"type": "LoadBalancer", "externalIPs": ["1.2.3.4"]}}'
+
+$ kubectl patch configmap/config-domain -n knative-serving \
+-type merge --patch '{"data":{"1.2.3.4.sslip.io":""}}'
+```
+
+除了直接由 Kafka 服务器驱动函数运作（异步方式），OpenFunction 还支持使用自带的事件框架对接 Kafka 服务器，之后以 Sink 的方式驱动 Knative 函数运作。可以参考 [OpenFunction Samples](https://github.com/OpenFunction/samples/tree/main/functions/Knative/logs-handler-function) 中的案例。
   
-  在该方案中，同步函数的处理速度较之异步函数有所降低，当然我们同样可以借助 KEDA 来触发 Knative Serving 的 concurrency 机制，但总体而言缺乏异步函数的便捷性。（后续的阶段中我们会优化 OpenFunction 的事件框架来解决同步函数这方面的缺陷）
+在该方案中，同步函数的处理速度较之异步函数有所降低，当然我们同样可以借助 KEDA 来触发 Knative Serving 的 concurrency 机制，但总体而言缺乏异步函数的便捷性。（后续的阶段中我们会优化 OpenFunction 的事件框架来解决同步函数这方面的缺陷）
   
-  由此可见，不同类型的 Serverless 函数有其擅长的任务场景，如一个有序的控制流函数就需要由同步函数而非异步函数来处理。
+由此可见，不同类型的 Serverless 函数有其擅长的任务场景，如一个有序的控制流函数就需要由同步函数而非异步函数来处理。
   
 ## 综述
 
