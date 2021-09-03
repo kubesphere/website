@@ -1,5 +1,5 @@
 ---
-title: 'Kubernetes Resource Requests and Limits'
+title: 'Kubernetes Resource Requests and Limits Deep Dive'
 keywords: Kubernetes, requests, limits
 description: Understand how Kubernetes requests and limits work and why they can work in the expected way.
 tag: 'Kubernetes, KubeSphere, Requests, Limits'
