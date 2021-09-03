@@ -189,13 +189,7 @@ A default file `config-sample.yaml` will be created if you do not change the nam
 
 {{< notice note >}}
 
-To customize 
-
-
-
-
-
-etes related parameters, refer to [Kubernetes Cluster Configurations](../vars/).
+To customize Kubernetes related parameters, refer to [Kubernetes Cluster Configurations](../vars/).
 
 {{</ notice >}}
 
