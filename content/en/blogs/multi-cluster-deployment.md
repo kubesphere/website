@@ -1,5 +1,5 @@
 ---
-title: 'Kubernetes Multi-cluster Deployment: Kubernetes Federation and KubeSphere'
+title: 'Kubernetes Multi-cluster Deployment: Kubernetes Cluster Federation and KubeSphere'
 keywords: Kubernetes, KubeSphere, Multi-cluster, Container
 description: KubeSphere v3.0 supports the management of multiple clusters, isolated management of resources, and federated deployments.
 tag: 'KubeSphere, Multi-cluster'
@@ -38,17 +38,17 @@ Kubernetes has become the de facto standard in container orchestration. Against 
 
 ## Multi-cluster Deployment
 
-The application of multi-cluster deployment offers solutions to a variety of problems as we can see from the scenarios above. Nevertheless, it brings more complexity for operation and maintenance. For a single cluster, app deployment and upgrade are quite straightforward as you can directly update yaml of the cluster. For multiple clusters, you can update them one by one, but how can you guarantee the application load status is the same across different clusters? How to implement service discovery among different clusters? How to achieve load balancing across clusters? The answer given by the community is Federation.
+The application of multi-cluster deployment offers solutions to a variety of problems as we can see from the scenarios above. Nevertheless, it brings more complexity for operation and maintenance. For a single cluster, app deployment and upgrade are quite straightforward as you can directly update yaml of the cluster. For multiple clusters, you can update them one by one, but how can you guarantee the application load status is the same across different clusters? How to implement service discovery among different clusters? How to achieve load balancing across clusters? The answer given by the community is Kubernetes Cluster Federation.
 
 ### Kubernetes Federation v1
 
 ![federation-v1](https://ap3.qingstor.com/kubesphere-website/docs/federation-v1.png)
 
-There are two versions of Federation with the original v1 already deprecated. In v1, the general architecture is very similar to that of Kubernetes. As shown above, Federation API Server is used for the management of different clusters. It receives the request to create the deployment of multiple clusters as Federation Controller Manager deploys workloads on each cluster.
+There are two versions of Kubernetes Federation with the original v1 already deprecated. In v1, the general architecture is very similar to that of Kubernetes. As shown above, Federation API Server is used for the management of different clusters. It receives the request to create the deployment of multiple clusters as Federation Controller Manager deploys workloads on each cluster.
 
 ![annotations](https://ap3.qingstor.com/kubesphere-website/docs/annotations.png)
 
-In terms of API, federated resources are scheduled through annotations, ensuring great compatibility with the original Kubernetes API. As such, the original code can be reused and existing deployment files of users can be easily transferred without any major change. However, this also prevents users from taking further advantage of Federation for API evolution. At the same time, a corresponding controller is needed for each federated resource so that they can be scheduled to different clusters. Originally, Federation only supported a limited number of resource type.
+In terms of API, federated resources are scheduled through annotations, ensuring great compatibility with the original Kubernetes API. As such, the original code can be reused and existing deployment files of users can be easily transferred without any major change. However, this also prevents users from taking further advantage of Federation for API evolution. At the same time, a corresponding controller is needed for each federated resource so that they can be scheduled to different clusters. Originally, Kubernetes Cluster Federation only supported a limited number of resource type.
 
 ### Kubernetes Federation v2
 
