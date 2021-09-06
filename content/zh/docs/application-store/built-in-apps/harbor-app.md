@@ -76,7 +76,7 @@ weight: 14220
 
 1. 如何启用 HTTP 登录？
 
-   在步骤 1 中将 `tls.enabled` 设置为 `false`。`externalURL` 的协议必须和 `expose.type.ports` 相同。
+   在步骤 1 中将 `tls.enabled` 设置为 `false`。`externalURL` 的协议必须和 `expose.nodePort.ports` 相同。
 
    如果您使用 Docker 登录，请在 `daemon.json` 中将 `externalURL` 设置为 `insecure-registries` 其中之一，然后重新加载 Docker。
 
