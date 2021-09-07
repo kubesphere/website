@@ -91,6 +91,8 @@ EOF
 $ systemctl enable containerd && systemctl restart containerd
 ```
 
+> 如果`containerd config dump |grep sandbox_image`仍是显示`k8s.gcr.io/pause:xxx`，请将`version = 2`添加到`/etc/containerd/config.toml`开头并执行`systemctl restart containerd`。
+
 4. 安装 crictl。
 
 ```shell
