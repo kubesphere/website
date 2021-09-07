@@ -93,6 +93,8 @@ As KubeSphere supports any implementation of the Kubernetes CRI, you can easily 
    ```bash
    systemctl enable containerd && systemctl restart containerd
    ```
+   
+> If `containerd config dump |grep sandbox_image` still shows `k8s.gcr.io/pause:xxx`, please add `version = 2` to the beginning of `/etc/containerd/config.toml` and run `systemctl restart containerd`.
 
 4. Install crictl.
 
