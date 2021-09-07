@@ -6,7 +6,7 @@ css: scss/live-detail.scss
 
 section1:
   snapshot: 
-  videoUrl: 
+  videoUrl: //player.bilibili.com/player.html?aid=590352950&bvid=BV1tq4y1Z7yA&cid=401911106&page=1&high_quality=1
   type: iframe
   time: 2021-09-02 20:00-21:00
   timeIcon: /images/live/clock.svg
@@ -37,4 +37,6 @@ Nebula Graph 开发者布道师，开源信徒，软件工程师，前 Ericsson 
 B 站  http://live.bilibili.com/22580654
 
 
+## PPT 下载
 
+可扫描官网底部二维码，关注 「KubeSphere 云原生」公众号，后台回复 `20210902` 即可下载 PPT。

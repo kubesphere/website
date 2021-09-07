@@ -9,23 +9,30 @@ section1:
   image: /images/live/background.jpg
 
 section2:
-  image: /images/live/apisix0826-live-cover.png
-  url: ./apisix826-live/
+  image: /images/live/native-live-cover.png
+  url: ./nebula0902-live/
 
   notice:
-    title: Kubernetes 上的图数据库
+    title: WebAssembly ——Dapr 的高性能执行环境
     tag: 预告
-    time: 2021 年 09 月 02 日晚 8 点
+    time: 2021 年 09 月 09 日晚 8 点
     base: 线上
-    url: ./nebula0902-live/
+    url: ./wasm0909-live/
 
   over:
-    title: 使用 Flomesh 进行 Dubbo 微服务的服务治理
-    url: ./pipy819-live/
+    title: Apache APISIX Ingress Controller 实现与上手实践
+    url: ./apisix826-live/
     tag: 结束
 
 section3:
   videos:
+    - title: K8s 上的图数据库
+      link: ./nebula0902-live/
+      snapshot: https://pek3b.qingstor.com/kubesphere-community/images/nebula0902-live-cover.png
+      type: iframe
+      createTime: 2021.09.02
+      group: 直播回放
+
     - title: Apache APISIX Ingress Controller 实现与上手实践
       link: ./apisix826-live/
       snapshot: https://pek3b.qingstor.com/kubesphere-community/images/apisix826-live-cover.png

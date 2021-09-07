@@ -1,12 +1,12 @@
 ---
-title: "Delete Nodes"
+title: "Delete Kubernetes Nodes"
 keywords: 'Kubernetes, KubeSphere, scale-in, remove-nodes'
 description: 'Cordon a node and even delete a node to scale in your cluster.'
 linkTitle: "Delete Nodes"
 weight: 3620
 ---
 
-## Cordon a Node
+## Cordon a Kubernetes Node
 
 Marking a node as unschedulable prevents the scheduler from placing new Pods onto that node while not affecting existing Pods on the node. This is useful as a preparatory step before a node reboot or other maintenance.
 
@@ -20,7 +20,7 @@ Pods that are part of a DaemonSet tolerate being run on an unschedulable node. D
 
 {{</ notice >}}
 
-## Delete a Node
+## Delete a Kubernetes Node
 
 1. To delete a node, you need to prepare the configuration file of your cluster first, which is the one created when you [set up your cluster](../../introduction/multioverview/#1-create-an-example-configuration-file). If you do not have it, use [KubeKey](https://github.com/kubesphere/kubekey) to retrieve cluster information (a file `sample.yaml` will be created by default).
 

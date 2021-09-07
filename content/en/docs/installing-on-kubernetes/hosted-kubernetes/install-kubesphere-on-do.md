@@ -1,5 +1,5 @@
 ---
-title: "Deploy KubeSphere on DigitalOcean"
+title: "Deploy KubeSphere on DigitalOcean Kubernetes"
 keywords: 'Kubernetes, KubeSphere, DigitalOcean, Installation'
 description: 'Learn how to deploy KubeSphere on DigitalOcean.'
 

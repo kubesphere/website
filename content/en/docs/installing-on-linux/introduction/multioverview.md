@@ -1,5 +1,5 @@
 ---
-title: "Multi-node Installation"
+title: "Install a Multi-node Kubernetes and KubeSphere Cluster"
 keywords: 'Multi-node, Installation, KubeSphere'
 description: 'Learn the general steps of installing KubeSphere and Kubernetes on a multi-node cluster.'
 linkTitle: "Multi-node Installation"
@@ -148,7 +148,7 @@ Make `kk` executable:
 chmod +x kk
 ```
 
-## Step 3: Create a Cluster
+## Step 3: Create a Kubernetes Multi-node Cluster
 
 For multi-node installation, you need to create a cluster by specifying a configuration file.
 
@@ -183,7 +183,7 @@ Here are some examples for your reference:
   ./kk create config --with-kubesphere [version]
   ```
 
-### 2. Edit the configuration file
+### 2. Edit the configuration file of a Kubernetes multi-node cluster
 
 A default file `config-sample.yaml` will be created if you do not change the name. Edit the file and here is an example of the configuration file of a multi-node cluster with one master node.
 
