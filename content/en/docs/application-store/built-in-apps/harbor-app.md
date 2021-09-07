@@ -76,7 +76,7 @@ This tutorial walks you through an example of deploying [Harbor](https://goharbo
 
 1. How to enable HTTP login?
 
-   Set `tls.enabled` to `false` in step 1 above. The protocol of `externalURL` must be the same as `expose.type.ports`.
+   Set `tls.enabled` to `false` in step 1 above. The protocol of `externalURL` must be the same as `expose.nodePort.ports`.
 
    If you use Docker login, set `externalURL` to one of `insecure-registries` in `daemon.json`, then reload Docker.
 
