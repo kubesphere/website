@@ -1,11 +1,11 @@
 ---
-title: "Kubernetes Observability in KubeSphere Allows You to Build Visualizations Simply and Intuitively"
+title: "Kubernetes Observability"
 layout: "scenario"
 
 css: "scss/scenario.scss"
 
 section1:
-  title: KubeSphere Allows You to Build Visualizations Simply and Intuitively.
+  title: Kubernetes Observability in KubeSphere Allows You to Build Visualizations Simply and Intuitively.
   content: KubeSphere provides rich observability from infrastructure to applications. It integrates your favorite tools for multi-dimensional monitoring metrics, multi-tenant log query and collection, alerting and notification. Try Kubernetes Observability in KubeSphere to realize visualization in a simple way.
   image: /images/observability/banner.jpg
   showDownload: true
