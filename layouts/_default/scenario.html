@@ -26,12 +26,12 @@
 <section class="section-2">
   {{ with .Params.section2 }}
   <div class="common-layout">
-    <h2 class="title-black-h2">{{ .title }}</h2>
+    <h2 class="title-black-h2 titleH2">{{ .title }}</h2>
     <ul>
       {{ range .list }}
       <li class="common-flex-layout">
         <div>
-          <h3 class="title-black-h3">{{ .title }}</h3>
+          <h2 class="title-black-h3">{{ .title }}</h2>
           {{ if .summary }}
           <p class="common-p">{{ .summary }}</p>
           {{ end }}
