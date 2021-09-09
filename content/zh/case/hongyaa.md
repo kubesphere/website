@@ -179,6 +179,6 @@ section2:
       - title: 挑战
         content: 多集群、异构云环境
       - title: 采用功能
-        content: KubeSphere多集群管理、开发测试环境管理、自定义监控
+        content: KubeSphere 多集群管理、开发测试环境管理、自定义监控
 
 ---
