@@ -6,7 +6,7 @@ css: scss/live-detail.scss
 
 section1:
   snapshot: 
-  videoUrl: 
+  videoUrl: //player.bilibili.com/player.html?aid=462954787&bvid=BV15L411x7D5&cid=405889914&page=1&high_quality=1
   type: iframe
   time: 2021-09-09 20:00-21:00
   timeIcon: /images/live/clock.svg
@@ -38,3 +38,6 @@ Michael Yuan 博士是 WasmEdge 的创始人和维护者。WasmEdge 是一个由
 
 B 站  http://live.bilibili.com/22580654
 
+## PPT 下载
+
+可扫描官网底部二维码，关注 「KubeSphere 云原生」公众号，后台回复 `20210909` 即可下载 PPT。
