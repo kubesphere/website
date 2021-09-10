@@ -1,0 +1,8 @@
+{{ $content := . }}
+<a href="{{ .link }}" style="{{ if .link }}color: #55bc8a;{{end}}" class="{{ if .bold }}title-bold{{end}}">
+    {{ if .level }}
+        <h{{ .level }} style="{{ if .color }}color:{{.color}};{{end}}">{{ .text }}</h{{ .level }}>
+    {{ else }}
+        {{ .text }}
+    {{ end }}
+</a>

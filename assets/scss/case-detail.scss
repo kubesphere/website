@@ -1,4 +1,5 @@
 @import 'variables';
+
 .section-1 {
   padding-top: 129px;
   padding-bottom: 60px;
@@ -22,7 +23,8 @@
 
 .section-2 {
   position: relative;
-  & > img {
+
+  &>img {
     position: absolute;
     top: 320px;
     left: 50%;
@@ -32,7 +34,8 @@
       display: none;
     }
   }
-  & > div {
+
+  &>div {
     position: relative;
     padding-top: 56px;
     z-index: 2;
@@ -45,42 +48,53 @@
         margin-top: 40px;
       }
 
-      & > li + li {
+      &>li+li {
         margin-top: 30px;
       }
 
-      & > li {
+      &>li {
         h2 {
           font-size: 24px;
           left: 28px;
           letter-spacing: -0.07px;
           color: #30313b;
         }
-  
-        & > p {
+
+        &>p {
           margin-top: 12px;
           font-size: 16px;
           line-height: 1.75;
           letter-spacing: -0.04px;
           color: #919aa3;
         }
-  
-        & > img {
+
+        &>a {
+          display: block;
+          margin-top: 12px;
+          font-size: 16px;
+          line-height: 1.75;
+          letter-spacing: -0.04px;
+          color: #919aa3;
+        }
+
+        &>img {
           display: block;
           max-width: 100%;
           margin: 20px auto 0;
         }
 
-        & > ul {
+        &>ul {
           width: 660px;
           font-size: 0;
           border-radius: 8px;
           overflow: hidden;
           display: flex;
+
           @media only screen and (max-width: $mobile-max-width) {
             width: 100%;
             display: block;
           }
+
           li {
             position: relative;
             display: inline-block;
@@ -102,21 +116,23 @@
               line-height: 1.75;
               text-align: center;
               color: #ffffff;
-
             }
           }
+
           li:nth-child(1) {
             background-image: linear-gradient(to left, #0c8349 99%, #00603c 0%);
           }
+
           li:nth-child(2) {
             background-image: linear-gradient(to left, #2a9762 99%, #278d67 0%);
           }
+
           li:nth-child(3) {
             background-image: linear-gradient(to left, #65c194 99%, #4ca986 9%);
           }
         }
 
-        & > div {
+        &>div {
           position: relative;
           padding: 20px 60px 20px 38px;
           border-radius: 8px;
@@ -145,7 +161,7 @@
       }
     }
 
-    & > div {
+    &>div {
       position: absolute;
       right: 40px;
       top: -56px;
@@ -177,7 +193,7 @@
           padding: 4px 40px 26px;
         }
 
-        li + li {
+        li+li {
           margin-top: 16px;
         }
 
@@ -198,4 +214,8 @@
       }
     }
   }
+}
+
+.title-bold {
+  font-weight: bold;
 }
