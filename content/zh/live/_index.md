@@ -9,23 +9,30 @@ section1:
   image: /images/live/background.jpg
 
 section2:
-  image: /images/live/native-live-cover.png
-  url: ./nebula0902-live/
+  image: /images/live/0909-native-live-cover.png
+  url: ./wasm0909-live/
 
   notice:
-    title: WebAssembly ——Dapr 的高性能执行环境
+    title: Kubernetes 控制器原理简介
     tag: 预告
-    time: 2021 年 09 月 09 日晚 8 点
+    time: 2021 年 09 月 16 日晚 8 点
     base: 线上
-    url: ./wasm0909-live/
+    url: ./uisee0916-live/
 
   over:
-    title: Apache APISIX Ingress Controller 实现与上手实践
-    url: ./apisix826-live/
+    title: K8s 上的图数据库
+    url: ./nebula0902-live/
     tag: 结束
 
 section3:
   videos:
+    - title: WebAssembly ——Dapr 的高性能执行环境
+      link: ./wasm0909-live/
+      snapshot: https://pek3b.qingstor.com/kubesphere-community/images/wasm0909-live-cover.png
+      type: iframe
+      createTime: 2021.09.09
+      group: 直播回放
+
     - title: K8s 上的图数据库
       link: ./nebula0902-live/
       snapshot: https://pek3b.qingstor.com/kubesphere-community/images/nebula0902-live-cover.png
