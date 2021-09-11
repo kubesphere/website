@@ -45,10 +45,20 @@
         {{ else }}
           <h2>{{ .title }}</h2>
           {{ range .contentList }}
-          <p>{{ .content }}</p>
+          {{ if .specialContent }}
+            {{ with .specialContent }}
+              {{ if .link }}
+                {{ partial "case_specialContent.html" . }}
+              {{ else }}
+                <p class="{{ if .bold }}title-bold{{end}}">{{ .text }}</p>
+              {{ end }}
+            {{ end }}
+          {{else}}
+            <p>{{ .content }}</p>
+          {{ end }}
           {{ end }}
           {{ if .image }}
-          <img src="{{ .image }}" alt="">
+            <img src="{{ .image }}" alt="">
           {{ end }}
         {{ end }}
       </li>
