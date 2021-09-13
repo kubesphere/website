@@ -49,6 +49,8 @@
             {{ with .specialContent }}
               {{ if .link }}
                 {{ partial "case_specialContent.html" . }}
+              {{ else if .level }}
+                {{ partial "case_specialContent.html" . }}
               {{ else }}
                 <p class="{{ if .bold }}title-bold{{end}}">{{ .text }}</p>
               {{ end }}
