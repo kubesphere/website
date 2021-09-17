@@ -1,74 +1,75 @@
 ---
-title: "Use Jenkins Shared Libraries in a Pipeline"
-keywords: 'KubeSphere, Kubernetes, Jenkins, Shared Library, Pipelines'
-description: 'Learn how to use Jenkins shared libraries in a pipeline.'
-linkTitle: "Use Jenkins Shared Libraries in a Pipeline"
+title: "在流水线中使用 Jenkins 共享库"
+keywords: 'KubeSphere, Kubernetes, Jenkins, 共享库, 流水线'
+description: '学习如何在流水线中使用 Jenkins 共享库'
+linkTitle: "在流水线中使用 Jenkins 共享库"
 weight: 11292
 ---
 
-For Jenkins pipelines that contain the same stages or steps, one way to avoid repetition in the pipeline codes is to use Jenkins shared libraries in the Jenkinsfiles.
+对于包含相同阶段或步骤的 Jenkins 流水线，在 Jenkins 文件中使用 Jenkins 共享库避免流水线代码重复。
 
-This tutorial demonstrates how to use Jenkins shared libraries in KubeSphere DevOps pipelines.
+本教程演示如何在 KubeSphere DevOps 流水线中使用 Jenkins 共享库。
 
-## Prerequisites
+## 准备工作
 
-- You need to [enable the KubeSphere DevOps system](../../../pluggable-components/devops/).
-- You need to create a workspace, a DevOps project and an account (`project-regular`). This account must be invited to the DevOps project with the `operator` role. For more information, refer to [Create Workspaces, Projects, Accounts and Roles](../../../quick-start/create-workspace-and-project/).
-- You need to have a Jenkins shared library available. This tutorial uses the Jenkins shared library in [a GitHub repository](https://github.com/devops-ws/jenkins-shared-library) as an example.
+- [启用 KubeSphere DevOps 系统](https://kubesphere.io/zh/docs/pluggable-components/devops/)。
+- 您需要创建一个企业空间、一个 DevOps 工程和一个帐户 (``project-regular``)。这个帐户必须被 DevOps 工程邀请，并且授予 ``operator`` 角色。有关详细信息，请参阅[创建企业空间、项目、帐户和角色](https://kubesphere.io/zh/docs/quick-start/create-workspace-and-project/)。
+- 您需要一个可用 Jenkins 共享库。本教程以 [GitHub 仓库](https://github.com/devops-ws/jenkins-shared-library)中的 Jenkins 共享库为例。
 
-## Configure a Shared Library on the Jenkins Dashboard
+## 在 Jenkins 仪表盘配置共享库
 
-1. [Log in to the Jenkins dashboard](../jenkins-setting/#log-in-to-jenkins-to-reload-configurations) and click **Manage Jenkins** in the left navigation bar.
+1. [登录 Jenkins 仪表板](https://kubesphere.io/zh/docs/devops-user-guide/how-to-use/jenkins-setting/#log-in-to-jenkins-to-reload-configurations)并点击左侧导航栏中的**系统管理**
 
-2.  Scroll down and click **Configure System**.
+2. 向下滚动并点击**系统配置**。
 
-   ![click_configure](/images/docs/devops-user-guide/using-devops/jenkins-shared-library/click-configure.png)
+   ![click_configure](/images/docs/zh-cn/devops-user-guide/use-devops/jenkins-shared-library/click-configure.png)
 
-3. Scroll down to **Global Pipeline Libraries** and click **Add**.
+3. 向下滚动到 **Global Pipeline Libraries**，然后点击**新增**。
 
-   ![click-add](/images/docs/devops-user-guide/using-devops/jenkins-shared-library/click-add.png)
+   ![click-add](/images/docs/zh-cn/devops-user-guide/use-devops/jenkins-shared-library/click-add.png)
 
-4. Configure the fields as below.
+4. 配置字段如下所示。
 
-   - **Name**. Set a name (for example, `demo-shared-library`) for the shared library so that you can import the shared library by referring to this name in a Jenkinsfile.
+   - **Name：** 从为共享库设置名称（例如，``demo-shared-library``），以便可以通过在 Jenkinsfile 中引用此名称来导入共享库。
 
-   - **Default version**. Set a branch name from the repository where you put your shared library as the default branch for importing your shared library. Enter `master` for this tutorial.
+   - **Default version：** 从将共享库放在其中的仓库中设置分支名称，作为导入共享库的默认仓库分支。本教程将使用 master。
 
-   - Under **Retrieval method**, choose **Modern SCM**.
+   - 在 **Retrieval method** 下，选择 **Modern SCM**。
 
-   - Under **Source Code Management**, choose **Git** and enter the URL of the example repository for **Project Repository**. You have to configure **Credentials** if you use your own repository that requires the credentials for accessing it.
+   - 在 **Source Code Management** 下，选择 **Git** 并为项目仓库输入**示例仓库**的 URL 。如果您使用自己的仓库则需要配置**访问凭据**。
 
-     ![configure-shared-library](/images/docs/devops-user-guide/using-devops/jenkins-shared-library/configure-shared-library.png)
+     ![configure-shared-library](/images/docs/zh-cn/devops-user-guide/use-devops/jenkins-shared-library/configure-shared-library.png)
 
-5. When you finish editing, click **Apply**.
+5. 当您结束编辑，点击**应用**
 
    {{< notice note >}}
 
-   You can also configure [Folder-level Shared Libraries](https://www.jenkins.io/doc/book/pipeline/shared-libraries/#folder-level-shared-libraries).
+   您还可以配置[文件夹级别的共享库](https://www.jenkins.io/zh/doc/book/pipeline/shared-libraries/#folder-level-shared-libraries)。
 
    {{</ notice >}}
 
-## Use the Shared Library in a Pipeline
+## 在流水线中使用共享库
 
-### Step 1: Create a pipeline
 
-1. Log in to the KubeSphere web console as `project-regular`. Go to your DevOps project and click **Create** on the **Pipelines** page.
+### 步骤 1： 创建流水线
 
-2. Set a name (for example, `demo-shared-library`) in the pop-up window and click **Next**.
+1. 用 ``project-regular`` 帐户登录 KubeSphere web 控制台。进入 DevOps 工程并点击**流水线**页面上的**创建**。
 
-   ![set-name](/images/docs/devops-user-guide/using-devops/jenkins-shared-library/set-name.png)
+2. 在弹出窗口中设置名称（例如，``demo-shared-library``），点击**下一步**。
 
-3. In **Advanced Settings**, click **Create** directly to create a pipeline with the default settings.
+   ![set-name](/images/docs/zh-cn/devops-user-guide/use-devops/jenkins-shared-library/set-name.png)
 
-   ![click-create](/images/docs/devops-user-guide/using-devops/jenkins-shared-library/click-create.png)
+3. 在**高级设置**中，直接点击**创建**，以默认设置创建流水线。
 
-### Step 2: Edit the pipeline
+   ![click-create](/images/docs/zh-cn/devops-user-guide/use-devops/jenkins-shared-library/click-create.png)
 
-1. In the pipeline list, click the pipeline to go to its detail page and click **Edit Jenkinsfile**.
+### 步骤 2：编辑流水线
 
-   ![edit-jenkinsfile](/images/docs/devops-user-guide/using-devops/jenkins-shared-library/edit-jenkinsfile.png)
+1. 在流水线列表中，点击流水线以转到其详细信息页面，然后点击**编辑 Jenkinsfile**。
 
-2. In the displayed dialog box, enter the following example Jenkinsfile. When you finish editing, click **OK**.
+   ![edit-jenkinsfile](/images/docs/zh-cn/devops-user-guide/use-devops/jenkins-shared-library/edit-jenkinsfile.png)
+
+2. 在显示的对话框中，输入以下示例文件。完成编辑后，点击**确定**。
 
    ```groovy
    library identifier: 'devops-ws-demo@master', retriever: modernSCM([
@@ -91,14 +92,14 @@ This tutorial demonstrates how to use Jenkins shared libraries in KubeSphere Dev
        }
    }
    ```
-   
+
    {{< notice note >}}
-   
-   You can specify a `label` for `agent` based on your needs.
-   
+
+   您可以根据需要为 ``label`` 指定 ``agent``。
+
    {{</ notice >}}
-   
-3. Alternatively, you can use a Jenkinsfile starting with `@Library('<the configured name of shared library>') _`. If you use this type of Jenkinsfile, you need to configure the shared library on the Jenkins dashboard in advance. In this tutorial, you can use the following example Jenkinsfile.
+
+3. 或者，您可以使用以 ``@Library('<the configured name of shared library>') _ ``，开头的 Jenkinsfile。如果使用这种类型的 Jenkinsfile，则需要提前在 Jenkins 仪表板上配置共享库。在本教程中，您可以使用以下示例文件。
 
    ```groovy
    @Library('demo-shared-library') _
@@ -120,21 +121,20 @@ This tutorial demonstrates how to use Jenkins shared libraries in KubeSphere Dev
 
    {{< notice note >}}
 
-   You can use `@Library('demo-shared-library@<branch name>') _` to specify a specific branch.
+   您可以使用 `@Library(‘demo-shared-library@<branch name>') _` 来指定特定的分支。
 
    {{</ notice >}}
 
-### Step 3: Run the pipeline
+### 步骤 3：运行流水线
 
-1. You can view the stage under the **Pipeline** tab. Click **Run** to run it.
+1. 您可以在**流水线**选项卡下查看该阶段。点击**运行**运行它。
 
-   ![click-run](/images/docs/devops-user-guide/using-devops/jenkins-shared-library/click-run.png)
+   ![click-run](/images/docs/zh-cn/devops-user-guide/use-devops/jenkins-shared-library/click-run.png)
 
-2. After a while, the pipeline will run successfully.
+2. 在一段时间后，流水线将成功运行。
 
-   ![run-successfully](/images/docs/devops-user-guide/using-devops/jenkins-shared-library/run-successfully.png)
+   ![run-successfully](/images/docs/zh-cn/devops-user-guide/use-devops/jenkins-shared-library/run-successfully.png)
 
-3. You can click the **Success** record under **Status**, and then click **Show Logs** to view the log details.
+3. 您可以点击**状态栏**下的**成功**记录，然后点击**查看日志**查看日志详细信息。
 
-   ![log-details](/images/docs/devops-user-guide/using-devops/jenkins-shared-library/log-details.png)
-
+   ![log-details](/images/docs/zh-cn/devops-user-guide/use-devops/jenkins-shared-library/log-details.png)
