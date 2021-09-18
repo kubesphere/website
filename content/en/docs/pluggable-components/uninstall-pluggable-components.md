@@ -6,7 +6,7 @@ linkTitle: "Uninstall Pluggable Components from KubeSphere v3.1.x"
 Weight: 6940
 ---
 
-After you [enable the pluggable components of KubeSphere](../../../pluggable-components/), you can also uninstall them by performing the following steps. Please back up any necessary data before you uninstall these components.
+After you [enable the pluggable components of KubeSphere](../../pluggable-components/), you can also uninstall them by performing the following steps. Please back up any necessary data before you uninstall these components.
 
 {{< notice note >}}
 
