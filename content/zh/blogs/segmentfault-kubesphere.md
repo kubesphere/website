@@ -8,7 +8,7 @@ author: '祁宁'
 snapshot: 'https://pek3b.qingstor.com/kubesphere-community/images/SegmentFault-hangzhou.png'
 ---
 
-> 本文是根据 KubeSphere 云原生 Meetup 杭州站讲师祁宁分享内容整理而成。点击观看[视频回放](https://kubesphere.com.cn/live/segmentfault/)。
+> 本文是根据 KubeSphere 云原生 Meetup 杭州站讲师祁宁分享内容整理而成。祁宁，思否 CTO。点击观看[视频回放](https://kubesphere.com.cn/live/segmentfault/)。
 
 [SegmentFault](https://segmentfault.com/) 是一家综合性技术社区，由于它的内容跟编程技术紧密相关，因此访问量的波动也和这一群体的作息时间深度绑定。通常情况下 web 页面的请求量峰值在 800 QPS 左右，但我们还做了前后端分离，所以 API 网关的峰值 QPS 是请求量峰值的好几倍。
 
