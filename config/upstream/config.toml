@@ -5,6 +5,6 @@ baseURL = "https://kubesphere.io"
 addGoogleAnalytics = true
 addGoogleTag = true
 hotjarTracking = true
-youtubeLink = "https://www.youtube.com/channel/UCyTdUQUYjf7XLjxECx63Hpw"
+youtubeLink = "https://www.youtube.com/c/KubeSphere"
 addLinkedin = true
 addTwitter = true
