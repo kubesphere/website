@@ -8,7 +8,7 @@ weight: 11293
 
 If you create a Jenkinsfile-based pipeline from a remote code repository, you can configure a webhook in the remote repository so that the pipeline will be automatically triggered when changes are made to the remote repository.
 
-This tutorial demonstrates how to trigger a Jenkins pipeline via a webhook.
+This tutorial demonstrates how to trigger a pipeline via a webhook.
 
 ## Prerequisites
 
