@@ -12,6 +12,12 @@ KubeSphere 基于 [Istio](https://istio.io/) 向用户提供部署金丝雀服�
 
 ![canary-release-0](/images/docs/zh-cn/project-user-guide/grayscale-release/canary-release/canary-release-0.png)
 
+## 视频演示
+
+<video controls="controls" style="width: 100% !important; height: auto !important;">
+  <source type="video/mp4" src="https://kubesphere-community.pek3b.qingstor.com/videos/KubeSphere-v3.1.x-tutorial-videos/zh/KS311_200P005C202109_%E9%87%91%E4%B8%9D%E9%9B%80%E5%8F%91%E5%B8%83%E5%AE%9E%E8%B7%B5.mp4">
+</video>
+
 ## 准备工作
 
 - 您需要启用 [KubeSphere 服务网格](../../../pluggable-components/service-mesh/)。
