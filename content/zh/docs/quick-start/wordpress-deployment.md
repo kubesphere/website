@@ -16,6 +16,12 @@ WordPress（使用 PHP 语言编写）是免费、开源的内容管理系统，
 
 本教程演示了如何在 KubeSphere 中创建应用程序（以 WordPress 为例）并在集群外进行访问。
 
+## 视频演示
+
+<video controls="controls" style="width: 100% !important; height: auto !important;">
+  <source type="video/mp4" src="https://kubesphere-community.pek3b.qingstor.com/videos/KubeSphere-v3.1.x-tutorial-videos/zh/KS311_200P006C202109_%E5%88%9B%E5%BB%BA%E5%B9%B6%E9%83%A8%E7%BD%B2%20WordPress.mp4">
+</video>
+
 ## 准备工作
 
 您需要准备一个 `project regular` 帐户，并在一个项目中赋予该帐户 `operator` 角色（该用户已被邀请参加该项目）。有关更多信息，请参见[创建企业空间、项目、帐户和角色](../create-workspace-and-project/)。
@@ -188,5 +194,5 @@ WordPress（使用 PHP 语言编写）是免费、开源的内容管理系统，
     ![wordpress-page](/images/docs/zh-cn/quickstart/wordpress-deployment/wordpress-page.png)
 
     {{< notice note >}}
-在访问服务之前，请确保安全组中的端口已打开。
+    在访问服务之前，请确保安全组中的端口已打开。
     {{</ notice >}}
