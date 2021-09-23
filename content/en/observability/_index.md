@@ -14,9 +14,9 @@ section1:
 image: /images/observability/observability.jpg
 
 section2:
-  title: Kubernetes Observability, Discoverability, Security, Everything You Need in One Platform
+  title: Kubernetes Observability and Monitoring, Everything You Need in One Platform
   list:
-    - title: Multidimensional Kubernetes Monitoring
+    - title: Multi-dimensional Kubernetes Monitoring
       image: /images/observability/multi-dimensional-monitoring.png
       contentList:
         - content: <span>Infrastructure monitoring</span> provides K8s control plane and cluster node metrics
