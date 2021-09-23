@@ -41,8 +41,12 @@ section2:
       link: "zto/"
          
     - icon: "images/case/section6-hongya.png"
-      content: "红亚科技成立于 2012 年，是一家聚焦信息技术发展，为教育从业者提供优质教育服务的创新型科技公司，面向国内高校、职业院校提供新一代信息技术专业建设服务，是云计算在职业教育领域落地的实践者。"
+      content: "红亚科技成立于 2012 年，是一家聚焦信息技术发展，为教育从业者提供优质教育服务的创新型科技公司。"
       link: "hongyaa/"
+    
+    - icon: "images/case/chinamobile-iot.png"
+      content: "中移物联网有限公司是中国移动通信集团有限公司的全资子公司，是中国移动在物联网领域的主责企业。"
+      link: "chinamobile-iot/"
 
 section3:
   title: 'KubeSphere 助力各行各业'
