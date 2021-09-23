@@ -6,7 +6,7 @@ css: scss/live-detail.scss
 
 section1:
   snapshot: 
-  videoUrl: 
+  videoUrl: //player.bilibili.com/player.html?aid=633004106&bvid=BV1qb4y127kL&cid=409378884&page=1&high_quality=1
   type: iframe
   time: 2021-09-16 20:00-21:00
   timeIcon: /images/live/clock.svg
@@ -15,7 +15,7 @@ section1:
 ---
 ## 分享内容简介
 
-基于  Inside of Kubernetes Controller PPT (作者 Kenta Iso) 对 Kubernetes 的核心构件 Controller（控制器）的概念和工作原理从高层次的整体视角到低层次的实现视角进行深入的介绍。
+基于  Inside of Kubernetes Controller PPT (作者 Kenta Iso) 对 Kubernetes 的核心组件 Controller（控制器）的概念和工作原理从高层次的整体视角到低层次的实现视角进行深入的介绍。
 
 ## 讲师简介
 
@@ -30,10 +30,12 @@ section1:
 
 ## 直播时间
 
-2021 年 09 月 16 日晚 8:00-9:00
+2021 年 09 月 16 日 20:00-21:00
 
 ## 直播地址
 
 B 站  http://live.bilibili.com/22580654
 
+## PPT 下载
 
+可扫描官网底部二维码，关注 「KubeSphere 云原生」公众号，后台回复 `20210916` 即可下载 PPT。

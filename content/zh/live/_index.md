@@ -9,23 +9,30 @@ section1:
   image: /images/live/background.jpg
 
 section2:
-  image: /images/live/0909-native-live-cover.png
-  url: ./wasm0909-live/
+  image: /images/live/cloudnative-live-cover.png
+  url: ./uisee0916-live/
 
   notice:
-    title: Kubernetes 控制器原理简介
+    title: Kubebuilder 使用简介
     tag: 预告
-    time: 2021 年 09 月 16 日晚 8 点
+    time: 2021 年 09 月 23 日晚 8 点
     base: 线上
-    url: ./uisee0916-live/
+    url: ./uisee0923-live/
 
   over:
-    title: K8s 上的图数据库
-    url: ./nebula0902-live/
+    title: WebAssembly ——Dapr 的高性能执行环境
+    url: ./wasm0909-live/
     tag: 结束
 
 section3:
   videos:
+    - title: Kubernetes 控制器原理简介
+      link: ./uisee0916-live/
+      snapshot: https://pek3b.qingstor.com/kubesphere-community/images/uisee0916-live-cover.png
+      type: iframe
+      createTime: 2021.09.16
+      group: 直播回放
+
     - title: WebAssembly ——Dapr 的高性能执行环境
       link: ./wasm0909-live/
       snapshot: https://pek3b.qingstor.com/kubesphere-community/images/wasm0909-live-cover.png
@@ -356,10 +363,10 @@ section4:
 
 
 section5:
-  title: 分享你的主题
-  content: 想在社区分享你的云原生实践经验？说出你的开源故事，即刻加入云原生直播计划，提交你的分享主题，将有 KubeSphere 周边礼品相送！
+  title: 分享您的主题
+  content: 您是否也想在社区分享您的云原生实践经验？即可加入 KubeSphere 社区云原生直播计划，提交分享主题，将有 KubeSphere 周边礼品相送！最重要的是您可以：提升自身软实力，如演讲能力、总结能力；提高自身在云原生领域的知名度；展现企业的技术实力及优秀想法；帮助推广您社区开源的项目。
   btn: 提交分享主题
-  url: https://jinshuju.net/f/fUCZ1L
+  url: https://jinshuju.net/f/QZ52Gm
   image: /images/live/30.svg
 
 ---
