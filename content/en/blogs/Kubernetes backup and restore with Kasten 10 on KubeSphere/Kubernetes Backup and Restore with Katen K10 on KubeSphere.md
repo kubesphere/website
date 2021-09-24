@@ -1,4 +1,12 @@
-# Kubernetes Backup and Restore with Katen K10 on KubeSphere
+---
+title: 'Kubernetes Backup and Restore with Kasten K10 on KubeSphere'
+keywords: Backup and Restore, Kubernetes, Kasten K10
+description: See how convenient it is to backup and restore clusters with Kasten k10 on KubeSphere
+tag: 'Backup and Restore, Kubernetes, Kasten K10'
+createTime: '2021-09-24'
+author: 'Mars Zhang, Yicen Xie'
+snapshot: 'https://github.com/VeraXIE1997/Technical-blogs/blob/main/Kubernetes%20backup%20and%20restore%20with%20Kasten%2010%20on%20KubeSphere/图片1.png?raw=true'
+---
 
 ## Kasten on KubeSphere
 
