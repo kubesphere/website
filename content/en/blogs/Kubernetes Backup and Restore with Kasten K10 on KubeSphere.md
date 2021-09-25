@@ -1,4 +1,12 @@
-# Kubernetes Backup and Restore with Kasten K10 on KubeSphere
+---
+title: 'Kubernetes Backup and Restore with Kasten K10 on KubeSphere'
+keywords: Backup and Restore, Kasten K10, Kubernetes
+description: Several steps to realize Kubernetes backup and restore with Kasten K10 on KubeSphere
+tag: 'Backup and Restore, Kasten K10, Kubernetes'
+createTime: '2021-09-25'
+author: 'Mars Zhang， Yicen Xie'
+snapshot: 'https://raw.githubusercontent.com/VeraXIE1997/test/main/Kasten%2010/image/图片1.png'
+---
 
 ## Kasten on KubeSphere
 
@@ -189,5 +197,3 @@ As a container platform, KubeSphere excels in cloud native application deploymen
 [KubeSphere GitHub](https://github.com/kubesphere/kubesphere)
 
 [KubeSphere Official Document](https://kubesphere.io/docs/introduction/what-is-kubesphere/)
-
-[KubeSphere Documentation](https://kubesphere.io/docs/) 
