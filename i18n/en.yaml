@@ -134,3 +134,5 @@
   translation: 'No'
 - id: Msg-Thank
   translation: Thanks for the feedback. If you have a specific question about how to use KubeSphere, ask it on Slack. Open an issue in the GitHub repo if you want to report a problem or suggest an improvement.
+- id: Visitor-count
+  translation: 'The number of views: '
