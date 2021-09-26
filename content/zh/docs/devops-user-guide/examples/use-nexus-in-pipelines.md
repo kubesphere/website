@@ -1,67 +1,74 @@
 ---
-title: "Use Nexus in Pipelines"
-keywords: 'KubeSphere, Kubernetes, Pipeline, Nexus, Jenkins'
-description: 'Learn how to use Nexus in pipelines on KubeSphere.'
-linkTitle: "Use Nexus in Pipelines"
+title: "在流水线中使用 Nexus"
+keywords: 'KubeSphere, Kubernetes, 流水线, Nexus, Jenkins'
+description: 'Learn how to use Nexus in pipelines on KubeSphere.学习如何在 KubeSphere 流水线上使用 Nexus'
+linkTitle: "在流水线中使用 Nexus"
 weight: 11450
+
+
 ---
 
-[Nexus](https://www.sonatype.com/products/repository-oss) is a repository manager that stores, organizes, and distributes artifacts. With Nexus, developers can have better control over the artifacts needed in a development process.
+[Nexus](https://www.sonatype.com/products/repository-oss) 是存储、组织和分发工件的存储管理器。使用 Nexus 的开发者可以更好的控制开发过程中所需的工件。
 
-This tutorial demonstrates how to use Nexus in pipelines on KubeSphere.
+本教程概述如何在 KubeSphere 流水线上使用 Nexus。
 
-## Prerequisites
+## 准备工作
 
-- You need to [enable the KubeSphere DevOps System](../../../../docs/pluggable-components/devops/).
-- You need to [prepare a Nexus instance](https://help.sonatype.com/repomanager3/installation).
-- You need to have a [GitHub](https://github.com/) account.
-- You need to create a workspace, a DevOps project (for example, `demo-devops`), and an account (for example, `project-regular`). This account needs to be invited into the DevOps project with the role of `operator`. For more information, see [Create Workspaces, Projects, Accounts and Roles](../../../quick-start/create-workspace-and-project/).
+- [启用 KuberSphere DevOps 系统](../../../../docs/pluggable-components/devops/).
 
-## Hands-on Lab
+- [准备 Nexus 实例](https://help.sonatype.com/repomanager3/installation)。
 
-### Step 1: Get a Repository URL on Nexus
+- [GitHub](https://github.com/) 帐户。
 
-1. Log in to the Nexus console as `admin` and click <img src="/images/docs/devops-user-guide/examples/use-nexus-in-pipeline/gear.png" height="18px" /> on the top navigation bar.
+- 创建一个工作空间，一个 DevOps 工程（例如，`demo-devops`）和一个帐户（例如，`project-regular`）。`project-regular` 需要被邀请至 DevOps 工程中并赋予 `operator` 角色。有关更多信息，请参考[创建企业空间、项目、帐户和角色](../../../quick-start/create-workspace-and-project/)。
 
-2. Go to the **Repositories** page and you can see that Nexus provides three types of repository.
+## 动手实验室
 
-   - `proxy`: the proxy for a remote repository to download and store resources on Nexus as cache.
-   - `hosted`: the repository storing artifacts on Nexus.
-   - `group`: a group of configured Nexus repositories.
+### 步骤 1：获得 Nexus 上的仓库 URL
 
-   ![repo-type](/images/docs/devops-user-guide/examples/use-nexus-in-pipeline/repo-type.png)
+1. 用 `admin` 帐户登录 Nexus 控制台，然后在顶部导航栏点击 <img src="/images/docs/devops-user-guide/examples/use-nexus-in-pipeline/gear.png" height="18px" />。
 
-3. You can click a repository to view its details. For example, click **maven-public** to go to its detail page and you can see its URL.
+2. 转到**仓库**页面，您可以看到 Nexus 提供了三种仓库类型。
 
-   ![maven-public-url](/images/docs/devops-user-guide/examples/use-nexus-in-pipeline/maven-public-url.png)
+   - `proxy`：远程仓库代理，用于下载资源并将其作为缓存存储在 Nexus 上。
 
-### Step 2: Modify `pom.xml` in your GitHub repository
+   - `hosted`：仓库在 Nexus 存储工件。
 
-1. Log in to GitHub. Fork [the example repository](https://github.com/devops-ws/learn-pipeline-java) to your own GitHub account.
+   - `group`：一组配置了 Nexus 的仓库。
 
-2. In your own GitHub repository of **learn-pipeline-java**, click the file `pom.xml` in the root directory.
+   ![repo-type](/images/docs/zh-cn/devops-user-guide/examples/use-nexus-in-pipeline/repo-type.png)
 
-   ![click-pom](/images/docs/devops-user-guide/examples/use-nexus-in-pipeline/click-pom.png)
+3. 点击仓库查看它的详细信息。例如：点击 **maven-public** 进去详情页面，并且查看它的 URL。
 
-3. Click <img src="/images/docs/devops-user-guide/examples/use-nexus-in-pipeline/github-edit-icon.png" height="18px" /> to modify the code segment of `<distributionManagement>` in the file. You need to keep the value of `<id>` the same as the value in the ConfigMap modified in step 2 and use the URLs of your own Nexus repositories . 
+   ![maven-public-url](/images/docs/zh-cn/devops-user-guide/examples/use-nexus-in-pipeline/maven-public-url.png)
 
-   ![modify-pom](/images/docs/devops-user-guide/examples/use-nexus-in-pipeline/modify-pom.png)
+### 步骤 2：在 GitHub 仓库修改 `pom.xml`
 
-4. When you finish, click **Commit changes** at the bottom of the page.
+1. 登录 GitHub，fork [示例仓库](https://github.com/devops-ws/learn-pipeline-java)到您的 GitHub 帐户。
 
-### Step 3: Modify the ConfigMap
+2. 在您的 **learn-pipline-java** GitHub 仓库中，点击 root 文件下的文件 `pom.xmnl`。
 
-1. Log in to the KubeSphere web console as `admin`, click **Platform** in the upper-left corner, and select **Cluster Management**.
+   ![click-pom](/images/docs/zh-cn/devops-user-guide/examples/use-nexus-in-pipeline/click-pom.png)
 
-2. Select **ConfigMaps** under **Configurations**. On the **ConfigMaps** page, select `kubesphere-devops-system` from the drop-down list and click `ks-devops-agent`.
+3. 在文件中点击 <img src="/images/docs/zh-cn/devops-user-guide/examples/use-nexus-in-pipeline/github-edit-icon.png" height="18px" /> 以修改 `<distributionManagement>` 代码片。设置 `<id>` 并使用您的 Nexus 仓库的 URL。
 
-   ![ks-devops-agent](/images/docs/devops-user-guide/examples/use-nexus-in-pipeline/ks-devops-agent.png)
+   ![modify-pom](/images/docs/zh-cn/devops-user-guide/examples/use-nexus-in-pipeline/modify-pom.png)
 
-3. On the detail page, click **Edit YAML** from the **More** drop-down menu.
+4. 当您完成以上步骤，点击页面下方的 **Commit changes**。
 
-   ![click-edit-yaml](/images/docs/devops-user-guide/examples/use-nexus-in-pipeline/click-edit-yaml.png)
+### 步骤 3：修改 ConfigMap
 
-4. In the displayed dialog box, scroll down, find the code segment of `<servers>`, and enter the following code:
+1. 使用 `admin` 帐户登录 KubeSphere web 控制台，点击左上角的**平台**，选择**集群管理**。
+
+2. 在**配置**下面选择 **ConfigMaps**。在 **ConfigMaps** 页面上的下拉列表中选择 `kubesphere-devops-system` ，然后点击 `ks-devops-agent`。
+
+   ![ks-devops-agent](/images/docs/zh-cn/devops-user-guide/examples/use-nexus-in-pipeline/ks-devops-agent.png)
+
+3. 在详情页面，在下拉菜单**更多**中，点击**编辑 YAML**。
+
+   ![click-edit-yaml](/images/docs/zh-cn/devops-user-guide/examples/use-nexus-in-pipeline/click-edit-yaml.png)
+
+4. 在显示的会话窗中，向下滚动，找到 `<servers>` 代码片段，输入下列代码：
 
    ```yaml
    <servers>
@@ -73,15 +80,15 @@ This tutorial demonstrates how to use Nexus in pipelines on KubeSphere.
    </servers>
    ```
 
-   ![enter-server-code](/images/docs/devops-user-guide/examples/use-nexus-in-pipeline/enter-server-code.png)
+   ![enter-server-code](/images/docs/zh-cn/devops-user-guide/examples/use-nexus-in-pipeline/enter-server-code.png)
 
    {{< notice note >}}
 
-   `<id>` is a unique identifier you set for your Nexus. `<username>` is your Nexus username. `<password>` is your Nexus password. You can also configure a `NuGet API Key` on Nexus and use it here for better security.
+   `<id>` 是您在步骤 2 设置给 Nexus 的唯一标识符。 `<username>` 是您的 Nexus 用户名. `<password>` 是您的 Nexus 的密码。您也可以在 Nexus 上面配置  `NuGet API Key`，以获得更高的安全性。
 
    {{</ notice >}}
 
-5. Continue to find the code segment of `<mirrors>` and enter the following code:
+5. 继续找到 `<mirrors>` 代码分片，然后输入一下代码：
 
    ```yaml
    <mirrors>
@@ -94,31 +101,31 @@ This tutorial demonstrates how to use Nexus in pipelines on KubeSphere.
    </mirrors>
    ```
 
-   ![enter-mirror-code](/images/docs/devops-user-guide/examples/use-nexus-in-pipeline/enter-mirror-code.png)
+   ![enter-mirror-code](/images/docs/zh-cn/devops-user-guide/examples/use-nexus-in-pipeline/enter-mirror-code.png)
 
    {{< notice note >}}
 
-   `<id>` is a unique identifier you set for your Nexus. `<name>` is the Nexus repository name. `<url>` is the URL of your Nexus repository. `<mirrorOf>` is the Maven repository to be mirrored. In this tutorial, enter `*` to mirror all Maven repositories. For more information, refer to [Using Mirrors for Repositories](http://maven.apache.org/guides/mini/guide-mirror-settings.html).
+   `<id>` 是您在步骤 2 设置给 Nexus 唯一标识符。 `<name>` 是 Nexus 仓库的名字。 `<url>` 是您 Nexus 仓库的 URL。 `<mirrorOf>` 是 要镜像的 Maven 仓库。在本教程，输入 `*` 制作所有 Maven 仓库的镜像。有关更多信息请参考[为仓库使用镜像](http://maven.apache.org/guides/mini/guide-mirror-settings.html).
 
    {{</ notice >}}
 
-6. When you finish, click **Update**.
+6. 当您完成，点击**更新**。
 
-### Step 4: Create a pipeline
+### 步骤 4：创建流水线
 
-1. Log out of the KubeSphere web console and log back in as `project-regular`. Go to your DevOps project and click **Create** on the **Pipelines** page.
+1. 登出 KubeSphere web 控制台，使用帐户 `project-regular` 登录。转到 DevOps 工程，然后在**流水线**页面点击**创建**。
 
-2. On the **Basic Information** tab, set a name for the pipeline (for example, `nexus-pipeline`) and click **Next**.
+2. 在**基础信息**选项卡中，为流水线设置名字（例如，`nexus-pipeline`），然后点击**下一步**。
 
-   ![set-pipeline-name](/images/docs/devops-user-guide/examples/use-nexus-in-pipeline/set-pipeline-name.png)
+   ![set-pipeline-name](/images/docs/zh-cn/devops-user-guide/examples/use-nexus-in-pipeline/set-pipeline-name.png)
 
-3. On the **Advanced Settings** tab, click **Create** to use the default settings.
+3. 在**高级设置**选项卡中，点击**创建**以使用默认配置。
 
-4. Click the pipeline to go to its detail page and click **Edit Jenkinsfile**.
+4. 点击流水线进入它的详情页面，然后点击**编辑 Jenkinsfile**。
 
-   ![click-edit-jenkinsfile](/images/docs/devops-user-guide/examples/use-nexus-in-pipeline/click-edit-jenkinsfile.png)
+   ![click-edit-jenkinsfile](/images/docs/zh-cn/devops-user-guide/examples/use-nexus-in-pipeline/click-edit-jenkinsfile.png)
 
-5. In the displayed dialog box, enter the Jenkinsfile as follows. When you finish, click **OK**.
+5. 在出现的会话窗口中，在 Jenkinsfile 中输入如下内容。当您完成，点击**确定**。
 
    ```groovy
    pipeline {
@@ -158,35 +165,35 @@ This tutorial demonstrates how to use Nexus in pipelines on KubeSphere.
    }
    ```
 
-   ![enter-jenkinsfile](/images/docs/devops-user-guide/examples/use-nexus-in-pipeline/enter-jenkinsfile.png)
+   ![enter-jenkinsfile](/images/docs/zh-cn/devops-user-guide/examples/use-nexus-in-pipeline/enter-jenkinsfile.png)
 
    {{< notice note >}}
 
-   You need to replace the GitHub repository address with your own. In the command from the step in the stage `deploy to Nexus`, `nexus` is the name you set in `<id>` in the ConfigMap and `http://135.68.37.85:8081/repository/maven-snapshots/` is the URL of your Nexus repository. 
-   
+   您需要用您自己的 GitHub 仓库地址替换原有的仓库地址。在 `deploy to Nexus` 阶段的步骤中的命令中，`nexus` 是您在 ConfigMap 上设置在 `<id>` 上的名字，同时 `http://135.68.37.85:8081/repository/maven-snapshots/` 是您 Nexus 仓库的 URL。
+
    {{</ notice >}}
 
-### Step 5: Run the pipeline and check results
+### 步骤 5：运行流水线查看结果
 
-1. You can see all the stages and steps shown on the graphical editing panels. Click **Run** to run the pipeline.
+1. 您可以在图形编辑面板中看到所有的阶段和步骤，点击**运行**去运行流水线。
 
-   ![click-run](/images/docs/devops-user-guide/examples/use-nexus-in-pipeline/click-run.png)
+   ![click-run](/images/docs/zh-cn/devops-user-guide/examples/use-nexus-in-pipeline/click-run.png)
 
-2. After a while, you can see the pipeline status shown as **Success**. Click the **Success** record to see its details.
+2. 一段时间过后，你可以看到流水线的状态显示**成功**。点击**成功**的记录查看细节。 
 
-   ![pipeline-success](/images/docs/devops-user-guide/examples/use-nexus-in-pipeline/pipeline-success.png)
+   ![pipeline-success](/images/docs/zh-cn/devops-user-guide/examples/use-nexus-in-pipeline/pipeline-success.png)
 
-3. You can click **Show Logs** to view the detailed logs.
+3. 您可以点击**查看日志**查看更详细的日志。
 
-   ![pipeline-logs](/images/docs/devops-user-guide/examples/use-nexus-in-pipeline/pipeline-logs.png)
+   ![pipeline-logs](/images/docs/zh-cn/devops-user-guide/examples/use-nexus-in-pipeline/pipeline-logs.png)
 
-4. Log in to Nexus and click **Browse**. Click **maven-public** and you can see all the dependencies have been downloaded.
+4. 登录 Nexus 点击**浏览**。点击 **maven-public**，可以看到所有依赖已经被下载好。
 
-   ![maven-public](/images/docs/devops-user-guide/examples/use-nexus-in-pipeline/maven-public.png)
+   ![maven-public](/images/docs/zh-cn/devops-user-guide/examples/use-nexus-in-pipeline/maven-public.png)
 
-5. Go back to the **Browse** page and click **maven-snapshots**. You can see the JAR package has been uploaded to the repository.
+5. 回到 **Browse** 页面，点击 **maven-sanpshots**。可以看到所有 JAR 包已经被上传到仓库。
 
-   ![maven-snapshots](/images/docs/devops-user-guide/examples/use-nexus-in-pipeline/maven-snapshots.png)
+   ![maven-snapshots](/images/docs/zh-cn/devops-user-guide/examples/use-nexus-in-pipeline/maven-snapshots.png)
 
 
 
