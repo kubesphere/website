@@ -1,4 +1,3 @@
-```markdown
 ---
 title: 'Kubernetes Backup and Restore with Kasten K10 on KubeSphere'
 keywords: Backup and Restore, Kasten K10, Kubernetes
@@ -8,7 +7,6 @@ createTime: '2021-09-25'
 author: 'Mars Zhang， Yicen Xie'
 snapshot: '![kasten k10 arch](./images/blogs/en/kastenk10/KastenK10-architecture.png)'
 ---
-```
 
 ## Kasten on KubeSphere
 
