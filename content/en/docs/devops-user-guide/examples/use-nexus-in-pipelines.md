@@ -43,7 +43,7 @@ This tutorial demonstrates how to use Nexus in pipelines on KubeSphere.
 
    ![click-pom](/images/docs/devops-user-guide/examples/use-nexus-in-pipeline/click-pom.png)
 
-3. Click <img src="/images/docs/devops-user-guide/examples/use-nexus-in-pipeline/github-edit-icon.png" height="18px" /> to modify the code segment of `<distributionManagement>` in the file. You need to keep the value of `<id>` the same as the value in the ConfigMap modified in step 2 and use the URLs of your own Nexus repositories . 
+3. Click <img src="/images/docs/devops-user-guide/examples/use-nexus-in-pipeline/github-edit-icon.png" height="18px" /> to modify the code segment of `<distributionManagement>` in the file. Set the `<id>` and use the URLs of your own Nexus repositories . 
 
    ![modify-pom](/images/docs/devops-user-guide/examples/use-nexus-in-pipeline/modify-pom.png)
 
@@ -77,7 +77,7 @@ This tutorial demonstrates how to use Nexus in pipelines on KubeSphere.
 
    {{< notice note >}}
 
-   `<id>` is a unique identifier you set for your Nexus. `<username>` is your Nexus username. `<password>` is your Nexus password. You can also configure a `NuGet API Key` on Nexus and use it here for better security.
+   `<id>` is the unique identifier you set for your Nexus in step 2. `<username>` is your Nexus username. `<password>` is your Nexus password. You can also configure a `NuGet API Key` on Nexus and use it here for better security.
 
    {{</ notice >}}
 
@@ -98,7 +98,7 @@ This tutorial demonstrates how to use Nexus in pipelines on KubeSphere.
 
    {{< notice note >}}
 
-   `<id>` is a unique identifier you set for your Nexus. `<name>` is the Nexus repository name. `<url>` is the URL of your Nexus repository. `<mirrorOf>` is the Maven repository to be mirrored. In this tutorial, enter `*` to mirror all Maven repositories. For more information, refer to [Using Mirrors for Repositories](http://maven.apache.org/guides/mini/guide-mirror-settings.html).
+   `<id>` is the unique identifier you set for your Nexus in step 2. `<name>` is the Nexus repository name. `<url>` is the URL of your Nexus repository. `<mirrorOf>` is the Maven repository to be mirrored. In this tutorial, enter `*` to mirror all Maven repositories. For more information, refer to [Using Mirrors for Repositories](http://maven.apache.org/guides/mini/guide-mirror-settings.html).
 
    {{</ notice >}}
 
