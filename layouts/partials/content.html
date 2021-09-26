@@ -34,7 +34,10 @@
             </div>
             <div class='main-div middle-div'>
                 <div class='author'>{{ $context.Params.author }}</div>
-                <div class='date'>{{ i18n "Published on" }}：{{ string $context.Params.createTime }}</div>
+                <span class='date'>{{ i18n "Published on" }}：{{ string $context.Params.createTime }}</span>&nbsp;&nbsp;&nbsp;
+                <span style="font-size: 14px; color: #919aa3;" id="busuanzi_container_page_pv">
+                  {{i18n "Visitor-count"}}<span id="busuanzi_value_page_pv"></span>
+                </span>
                 <h1>{{ $context.Title }}</h1>
                 <div class="share-1">
                     {{ partial "share.html" $context }}
@@ -142,6 +145,8 @@
         blogBindSubmit()
         bindCloseBlog()
         bindHideMessageBlog()
+    </script>
+    <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js">
     </script>
 </body>
 

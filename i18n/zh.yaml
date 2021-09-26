@@ -138,3 +138,5 @@
   translation: 否
 - id: Msg-Thank
   translation: 感谢您的反馈。如果您有关于如何使用 KubeSphere 的具体问题，请在 Slack 上提问。如果您想报告问题或提出改进建议，请在 GitHub 存储库中打开问题。
+- id: Visitor-count
+  translation: 本文总阅读量：
