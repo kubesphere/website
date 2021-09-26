@@ -1,17 +1,13 @@
 {{ $context := .context }}
 {{ $parent := .parent }}
 {{ $text := .text }}
-{{ $LanguageCode := .context.Site.Params.LanguageCode }}
-{{ $Site := .context.Site}}
 <!DOCTYPE html>
 <html lang="{{ with .Site.LanguageCode }}{{ . }}{{ else }}en-US{{ end }}">
-
 <head>
     {{- partial "head.html" $context -}}
 
     {{ $style := resources.Get "scss/content.scss" | toCSS | minify | fingerprint }}
     <link rel="stylesheet" href="{{ $style.RelPermalink }}">
-
     {{ $style := resources.Get "scss/markdown.scss" | toCSS | minify | fingerprint }}
     <link rel="stylesheet" href="{{ $style.RelPermalink }}">
 </head>
@@ -34,47 +30,31 @@
             </div>
             <div class='main-div middle-div'>
                 <div class='author'>{{ $context.Params.author }}</div>
-                <div class='date'>{{ i18n "Published on" }}：{{ string $context.Params.createTime }}</div>
-                <h1>{{ $context.Title }}</h1>
-                <div class="share-1">
-                    {{ partial "share.html" $context }}
-                </div>
-                <div class='content'>
-                    <div class='md-body'>
-                        {{ $context.Content }}
-                    </div>
-                </div>
-                <div class="share-2">
-                    {{ partial "share.html" $context }}
-                </div>
-            </div>
-            <div class='aside'>
-                <div class="inner-div">
-                    <div class='title'>{{ i18n "Table of Contents" }}</div>
-                    <div class='tabs'>{{ $context.TableOfContents }}</div>
-                </div>
-            </div>
-        </div>
-    </section>
-    {{ if eq $LanguageCode "en-US"}}
-    <div class="SubscribeForm">
-        <div class="innerBox">
-            <img class="close" src="/images/home/close.svg" alt="close">
-            <p class="description">
-                {{ i18n "Receive the latest news, articles and updates from KubeSphere" }}
-            </p>
-            <div>
-                <form action="{{ $Site.Params.mailchimpSubscribeUrl }}" method="post" target="_blank" novalidate>
-                    <input name="EMAIL" id="email-input-blog" type="text"
-                        placeholder='{{ i18n "Please enter your email address" }}'>
-                    <button type="submit" id="email-submit-blog">{{ i18n "Subscribe" }}</button>
-                </form>
-                <span id="message_blog" data-message1='{{ i18n "email is required" }}'
-                    data-message2='{{ i18n "Please enter a valid email address." }}'></span>
-            </div>
-        </div>
-    </div>
-    {{end}}
+              <span class='date'>{{ i18n "Published on" }}：{{ string $context.Params.createTime }}</span>&nbsp;&nbsp;&nbsp;
+              <span style="font-size: 14px; color: #919aa3;" id="busuanzi_container_page_pv">
+                {{i18n "Visitor-count"}} ：&nbsp;<span id="busuanzi_value_page_pv"></span>
+              </span>
+              <h1>{{ $context.Title }}</h1>
+              <div class="share-1">
+                  {{ partial "share.html" $context }}
+              </div>
+              <div class='content'>
+                  <div class='md-body'>
+                      {{ $context.Content }}
+                  </div>
+              </div>
+              <div class="share-2">
+                  {{ partial "share.html" $context }}
+              </div>
+          </div>
+          <div class='aside'>
+              <div class="inner-div">
+                <div class='title'>{{ i18n "Table of Contents" }}</div>
+                <div class='tabs'>{{ $context.TableOfContents }}</div>
+              </div>
+          </div>
+      </div>
+  </section>
     {{ partial "footer.html" $context }}
     {{ $aside := resources.Get "js/aside.js" }}
     {{ $asideJS := $aside | resources.Fingerprint "sha512" }}
@@ -85,7 +65,6 @@
     <script type="text/javascript" src="{{ $tabJS.RelPermalink }}" integrity="{{ $tabJS.Data.Integrity }}"></script>
 
     <script>
-        let forbidForm = false;
         var viewer = new Viewer(document.querySelector('.md-body'), {
             url: 'src'
         })
@@ -142,6 +121,8 @@
         blogBindSubmit()
         bindCloseBlog()
         bindHideMessageBlog()
+    </script>
+    <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js">
     </script>
 </body>
 
