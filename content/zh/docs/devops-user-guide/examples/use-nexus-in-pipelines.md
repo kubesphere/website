@@ -62,7 +62,7 @@ weight: 11450
 
 2. 在**配置**下面选择 **ConfigMaps**。在 **ConfigMaps** 页面上的下拉列表中选择 `kubesphere-devops-system` ，然后点击 `ks-devops-agent`。
 
-   ![ks-devops-agent](/images/docs/zh-cn/devops-user-guide/examples/use-nexus-in-pipeline/ks-devops-agent.png)
+   ![ks-devops-agent](/images/docs/zh-cn/devops-user-guide/examples/use-nexus-in-pipeline/ks-devops-agent .png)
 
 3. 在详情页面，在下拉菜单**更多**中，点击**编辑 YAML**。
 
