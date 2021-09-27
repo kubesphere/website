@@ -8,7 +8,7 @@ section1:
   snapshot: 
   videoUrl: 
   type: iframe
-  time: 2021-09-30 20:00-21:00
+  time: 2021-10-14 20:00-21:00
   timeIcon: /images/live/clock.svg
   base: 线上
   baseIcon: /images/live/base.svg
@@ -26,11 +26,11 @@ GitOps 提供了一种自动化的管理基础架构的方法。借助 GitOps，
 
 ## 分享大纲
 
-![](https://pek3b.qingstor.com/kubesphere-community/images/yunda0930-live.png)
+![](https://pek3b.qingstor.com/kubesphere-community/images/yunda1014-live.png)
 
 ## 直播时间
 
-2021 年 09 月 30 日 20:00-21:00
+2021 年 10 月 14 日 20:00-21:00
 
 ## 直播地址
 
