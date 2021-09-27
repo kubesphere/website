@@ -180,3 +180,19 @@
     padding-top: 20px;
   }
 }
+
+@mixin common-layout-special {
+  position: relative;
+  width: 1300px;
+  margin: 0 auto;
+  padding-left: 260px;
+  
+  @media only screen and (max-width: $width-01) {
+    width: 100%;
+  }
+
+  @media only screen and (max-width: $width-02) {
+    padding: 10px;
+    padding-top: 20px;
+  }
+}
