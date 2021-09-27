@@ -6,7 +6,7 @@ css: scss/live-detail.scss
 
 section1:
   snapshot: 
-  videoUrl: 
+  videoUrl: //player.bilibili.com/player.html?aid=590717915&bvid=BV1zq4y1o7Lg&cid=413701182&page=1&high_quality=1
   type: iframe
   time: 2021-09-23 20:00-21:00
   timeIcon: /images/live/clock.svg
@@ -36,4 +36,6 @@ Kubebuilder 是一个帮助快速开发自定义资源及控制器的框架工�
 
 B 站  http://live.bilibili.com/22580654
 
+## PPT 下载
 
+可扫描官网底部二维码，关注 「KubeSphere 云原生」公众号，后台回复 `20210923` 即可下载 PPT。

@@ -10,22 +10,29 @@ section1:
 
 section2:
   image: /images/live/cloudnative-live-cover.png
-  url: ./uisee0916-live/
+  url: ./uisee0923-live/
 
   notice:
-    title: Kubebuilder 使用简介
+    title: GitOps 应用简介
     tag: 预告
-    time: 2021 年 09 月 23 日晚 8 点
+    time: 2021 年 09 月 30 日晚 8 点
     base: 线上
-    url: ./uisee0923-live/
+    url: ./yunda0930-live/
 
   over:
-    title: WebAssembly ——Dapr 的高性能执行环境
-    url: ./wasm0909-live/
+    title: Kubernetes 控制器原理简介
+    url: ./uisee0916-live/
     tag: 结束
 
 section3:
   videos:
+    - title: Kubebuilder 使用简介
+      link: ./uisee0923-live/
+      snapshot: https://pek3b.qingstor.com/kubesphere-community/images/uisee0923-live-cover.png
+      type: iframe
+      createTime: 2021.09.23
+      group: 直播回放
+
     - title: Kubernetes 控制器原理简介
       link: ./uisee0916-live/
       snapshot: https://pek3b.qingstor.com/kubesphere-community/images/uisee0916-live-cover.png
