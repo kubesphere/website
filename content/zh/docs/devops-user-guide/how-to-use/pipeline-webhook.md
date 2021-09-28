@@ -1,41 +1,40 @@
 ---
 title: "使用 Webhook 触发流水线"
 keywords: 'Kubernetes, DevOps, Jenkins, 流水线, Webhook'
-description: '学习如何使用 webhook 触发 Jenkins 流水线'
+description: '学习如何使用 webhook 触发 Jenkins 流水线。'
 linkTitle: "使用 Webhook 触发流水线"
 weight: 11293
-
 ---
 
-如果从远程代码仓库创建 Jenkinsfile-based 流水线，则可以在远程仓库中配置 webhook，以便对远程仓库进行改变时，自动触发流水线。
+如果通过远程代码仓库创建基于 Jenkinsfile 的流水线，则可以在远程仓库中配置 webhook，以便对远程仓库进行变更时，自动触发流水线。
 
-本教程概述如何用 webhook 触发流水线。
+本教程演示如何用 webhook 触发流水线。
 
 ## 准备工作
 
 - [启用 KubeSphere DevOps 系统](../../../pluggable-components/devops/)。
-- 创建一个企业空间， DevOps 工程和一个帐户（例如，`project-regular`）。`project-regular` 需要被邀请至 DevOps 工程中并赋予 `operator` 角色。有关更多信息，请参见[创建企业空间、项目、帐户和角色](../../../quick-start/create-workspace-and-project/)。
-- 在远程代码仓库，创建一个 Jenkinsfiel-based 流水线。有关更多信息，请参见[使用 Jenkinsfile 创建流水线](../create-a-pipeline-using-jenkinsfile/)
+- 创建一个企业空间、一个 DevOps工程和一个帐户（例如，`project-regular`）。`project-regular` 需要被邀请至 DevOps 工程中并赋予 `operator` 角色。有关更多信息，请参见[创建企业空间、项目、帐户和角色](../../../quick-start/create-workspace-and-project/)。
+- 通过远程代码仓库创建一个基于 Jenkinsfile 的流水线。有关更多信息，请参见[使用 Jenkinsfile 创建流水线](../create-a-pipeline-using-jenkinsfile/)。
 
 ## 配置 Webhook
 
-### 获得 webhook URL
+### 获取 webhook URL
 
-1. 使用 `project-regular` 帐户登录 Kubesphere web 控制台。转到 DevOps 工程，点击流水线（例如，`jenkins-in-scm`）以查看详情页面。
+1. 使用 `project-regular` 帐户登录 Kubesphere Web 控制台。转到 DevOps 工程，点击流水线（例如，`jenkins-in-scm`）以查看详情页面。
 
-2. 点击**更多**，在下拉菜单中选择**编辑配置文件**。
+2. 点击**更多**，在下拉菜单中选择**编辑配置**。
 
    ![edit-config](/images/docs/zh-cn/devops-user-guide/use-devops/pipeline-webhook/edit-config.png)
 
-3. 在出现的会话框中，滑动至 **Webhook Push** 以获得 webhook push URL。
+3. 在出现的会话框中，滑动至 **Webhook 推送** 以获得 webhook push URL。
 
    ![webhook-push](/images/docs/zh-cn/devops-user-guide/use-devops/pipeline-webhook/webhook-push.png)
 
 ### 在 GitHub 仓库中设置 webhook
 
-1. 登录您的 GitHub，并转到 `devops-java-sample` 项目。
+1. 登录您的 GitHub，并转到 `devops-java-sample` 仓库。
 
-2. 点击 **Setting**，然后点击 **Webhooks**，然后点击 **Add webhook**。
+2. 点击 **Settings**，然后点击 **Webhooks**，然后点击 **Add webhook**。
 
    ![click-add-webhook](/images/docs/zh-cn/devops-user-guide/use-devops/pipeline-webhook/click-add-webhook.png)
 
@@ -51,7 +50,7 @@ weight: 11293
 
 ### 提交拉取请求到仓库
 
-1. 在您仓库的**代码**页面，点击 **master** 然后选择 **sonarqube**。
+1. 在您仓库的 **Code** 页面，点击 **master** 然后选择 **sonarqube**。
 
    ![click-sonar](/images/docs/zh-cn/devops-user-guide/use-devops/pipeline-webhook/click-sonar.png)
 
@@ -67,17 +66,17 @@ weight: 11293
 
 ### 检查 webhook 交付
 
-1. 查看在您仓库的 **Webhooks** 页面，点击 webhook。
+1. 在您仓库的 **Webhooks** 页面，点击 webhook。
 
    ![webhook-ready](/images/docs/zh-cn/devops-user-guide/use-devops/pipeline-webhook/webhook-ready.png)
 
-2. 点击 **Recent Deliveries**，然后点击 specific delivery record 查看详情。
+2. 点击 **Recent Deliveries**，然后点击一个具体交付记录查看详情。
 
    ![delivery-detail](/images/docs/zh-cn/devops-user-guide/use-devops/pipeline-webhook/delivery-detail.png)
 
 ### 检查流水线
 
-1. 使用 `project-regular` 帐户登录 Kubesphere web 控制台。转到 DevOps 工程，点击流水线。
+1. 使用 `project-regular` 帐户登录 Kubesphere Web 控制台。转到 DevOps 工程，点击流水线。
 
 2. 在**活动**选项卡，检查提交到远程仓库 `sonarqube` 分支的拉取请求是否触发了新的运行。
 
