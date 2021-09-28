@@ -1,5 +1,5 @@
 ---
-title: Open Source Container Platform For Enterprise Kubernetes | KubeSphere
+title: Open Source Enterprise Kubernetes Platform | KubeSphere
 description: An open source Kubernetes Platform to manage enterprise-grade Kubernetes across hybrid cloud, multi-cloud and edge. Get started for free!
 
 
