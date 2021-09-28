@@ -2,19 +2,15 @@
 title: "KubeSphere v3.1.x 卸载可插拔组件"
 keywords: "Installer, uninstall, KubeSphere, Kubernetes"
 description: "学习如何在 KubeSphere v3.1.x 卸载所有可插拔组件。"
-linkTitle: "在 KubeSphere v3.1.x 卸载可插拔组件"
+linkTitle: "KubeSphere v3.1.x 卸载可插拔组件"
 Weight: 6940
-
-
-
-
 ---
 
 [启用 KubeSphere 可插拔组件之后](../../pluggable-components/)，还可以根据以下步骤卸载他们。请在卸载这些组件之前，备份所有重要数据。
 
 {{< notice note >}}
 
-KubeSphere v3.1.x 卸载某些可插拔组件的方法与 KubeSphere v3.0.0 不相同。有关 KubeSphere v3.0.0 详细卸载方法，请参见[从 KubeSphere 上卸载可插拔组件](https://v3-0.docs.kubesphere.io/zh/docs/faq/installation/uninstall-pluggable-components/)。
+KubeSphere v3.1.x 卸载某些可插拔组件的方法与 KubeSphere v3.0.0 不相同。有有关 KubeSphere v3.0.0 卸载可插拔组件的详细方法，请参见[从 KubeSphere 上卸载可插拔组件](https://v3-0.docs.kubesphere.io/zh/docs/faq/installation/uninstall-pluggable-components/)。
 
 
 {{</ notice >}}
@@ -31,11 +27,11 @@ KubeSphere v3.1.x 卸载某些可插拔组件的方法与 KubeSphere v3.0.0 不�
 kubectl -n kubesphere-system edit clusterconfiguration ks-installer
 ```
 
-- 使用 `admin` 身份登录 KubeSphere web 控制台，左上角点击**平台管理** ，选择 **集群管理**，在**自定义资源 CRD** 中搜索 `ClusterConfiguration`。有关更多信息，请参见[启用可插拔组件](../../pluggable-components/)。
+- 使用 `admin` 身份登录 KubeSphere Web 控制台，左上角点击**平台管理**，选择**集群管理**，在**自定义资源 CRD** 中搜索 `ClusterConfiguration`。有关更多信息，请参见[启用可插拔组件](../../pluggable-components/)。
 
 {{< notice note >}}
 
-在值改变之后，要等待配置更新完成，然后继续进行后续操作。
+更改值之后，需要等待配置更新完成，然后继续进行后续操作。
 
 {{</ notice >}}
 
@@ -95,7 +91,7 @@ kubectl -n kubesphere-system edit clusterconfiguration ks-installer
    kubectl delete ns kubesphere-devops-system
    ```
 
-## 卸载 KubeSphere 日志
+## 卸载 KubeSphere 日志系统
 
 1. 将 CRD `ClusterConfiguration`  配置文件中 `ks-installer` 参数的 `logging.enabled` 字段的值从 `true` 改为 `false`。
 
@@ -125,11 +121,11 @@ kubectl -n kubesphere-system edit clusterconfiguration ks-installer
 
    {{< notice note >}}
 
-   此操作可能导致审计，事件和服务网格的异常。
+   此操作可能导致审计、事件和服务网格的异常。
 
    {{</ notice >}}
 
-## 卸载 KubeSphere 事件
+## 卸载 KubeSphere 事件系统
 
 1. 将 CRD `ClusterConfiguration`  配置文件中 `ks-installer` 参数的 `events.enabled` 字段的值从 `true` 改为 `false`。
 
@@ -139,7 +135,7 @@ kubectl -n kubesphere-system edit clusterconfiguration ks-installer
    helm delete ks-events -n kubesphere-logging-system
    ```
 
-## 卸载 KubeSphere 警告
+## 卸载 KubeSphere 告警系统
 
 2. 将 CRD `ClusterConfiguration`  配置文件中 `ks-installer` 参数的 `alerting.enabled` 字段的值从 `true` 改为 `false`。
 
@@ -151,7 +147,7 @@ kubectl -n kubesphere-system edit clusterconfiguration ks-installer
 
    {{< notice note >}}
 
-   KubeSphere v3.1.x 消息提示为默认安装，您无需卸载。
+   KubeSphere v3.1.x 通知系统为默认安装，您无需卸载。
 
    {{</ notice >}} 
 
@@ -178,7 +174,7 @@ kubectl -n kubesphere-system edit clusterconfiguration ks-installer
 
 ## 卸载网络策略
 
-对于 NetworkPolicy 组件，禁止它不需要卸载组件，因为其控制器位于 `ks-controller-manager` 中。如果想要将其从 KubeSphere 控制台中移除，将 CRD `ClusterConfiguration`  配置文件中参数 `ks-installer` 中 `network.networkpolicy.enabled` 的值从 `true` 改为 `false`。
+对于 NetworkPolicy 组件，禁用它不需要卸载组件，因为其控制器位于 `ks-controller-manager` 中。如果想要将其从 KubeSphere 控制台中移除，将 CRD `ClusterConfiguration`  配置文件中参数 `ks-installer` 中 `network.networkpolicy.enabled` 的值从 `true` 改为 `false`。
 
 ## 卸载 Metrics Server
 
@@ -216,7 +212,7 @@ kubectl -n kubesphere-system edit clusterconfiguration ks-installer
 
    {{< notice note >}}
 
-   卸载后，您将不能将边缘节点加入集群中。
+   卸载后，您将不能将无法为集群添加边缘节点。
 
    {{</ notice >}}
 
