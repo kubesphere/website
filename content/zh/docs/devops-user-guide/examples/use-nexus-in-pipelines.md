@@ -1,28 +1,28 @@
 ---
 title: "在流水线中使用 Nexus"
 keywords: 'KubeSphere, Kubernetes, 流水线, Nexus, Jenkins'
-description: 'Learn how to use Nexus in pipelines on KubeSphere.学习如何在 KubeSphere 流水线上使用 Nexus'
+description: '学习如何在 KubeSphere 流水线中使用 Nexus。'
 linkTitle: "在流水线中使用 Nexus"
 weight: 11450
 
 
 ---
 
-[Nexus](https://www.sonatype.com/products/repository-oss) 是存储、组织和分发工件的存储管理器。使用 Nexus 的开发者可以更好的控制开发过程中所需的工件。
+[Nexus](https://www.sonatype.com/products/repository-oss) 是存储、组织和分发制品的存储管理器。使用 Nexus 的开发者可以更好的控制开发过程中所需的工件。
 
-本教程概述如何在 KubeSphere 流水线上使用 Nexus。
+本教程演示如何在 KubeSphere 流水线中使用 Nexus。
 
 ## 准备工作
 
-- [启用 KuberSphere DevOps 系统](../../../../docs/pluggable-components/devops/)。
+- 准备一个[启用 KuberSphere DevOps 系统](../../../../docs/pluggable-components/devops/)。
 
-- [准备 Nexus 实例](https://help.sonatype.com/repomanager3/installation)。
+- 准备一个 [Nexus 实例](https://help.sonatype.com/repomanager3/installation)。
 
-- [GitHub](https://github.com/) 帐户。
+- 准备一个[GitHub](https://github.com/) 帐户。
 
-- 创建一个工作空间，一个 DevOps 工程（例如，`demo-devops`）和一个帐户（例如，`project-regular`）。`project-regular` 需要被邀请至 DevOps 工程中并赋予 `operator` 角色。有关更多信息，请参考[创建企业空间、项目、帐户和角色](../../../quick-start/create-workspace-and-project/)。
+- 创建一个企业空间、一个 DevOps 工程（例如，`demo-devops`）和一个帐户（例如，`project-regular`）。`project-regular` 需要被邀请至 DevOps 工程中并赋予 `operator` 角色。有关更多信息，请参考[创建企业空间、项目、帐户和角色](../../../quick-start/create-workspace-and-project/)。
 
-## 动手实验室
+## 动手实验
 
 ### 步骤 1：获得 Nexus 上的仓库 URL
 
@@ -32,9 +32,9 @@ weight: 11450
 
    - `proxy`：远程仓库代理，用于下载资源并将其作为缓存存储在 Nexus 上。
 
-   - `hosted`：仓库在 Nexus 存储工件。
+   - `hosted`：在 Nexus 上存储制品的仓库。
 
-   - `group`：一组配置了 Nexus 的仓库。
+   - `group`：一组已配置好的 Nexus 仓库。
 
    ![repo-type](/images/docs/zh-cn/devops-user-guide/examples/use-nexus-in-pipeline/repo-type.png)
 
@@ -46,11 +46,11 @@ weight: 11450
 
 1. 登录 GitHub，fork [示例仓库](https://github.com/devops-ws/learn-pipeline-java)到您的 GitHub 帐户。
 
-2. 在您的 **learn-pipline-java** GitHub 仓库中，点击 root 文件下的文件 `pom.xmnl`。
+2. 在您的 **learn-pipline-java** GitHub 仓库中，点击根目录下的文件 `pom.xml`。
 
    ![click-pom](/images/docs/zh-cn/devops-user-guide/examples/use-nexus-in-pipeline/click-pom.png)
 
-3. 在文件中点击 <img src="/images/docs/zh-cn/devops-user-guide/examples/use-nexus-in-pipeline/github-edit-icon.png" height="18px" /> 以修改 `<distributionManagement>` 代码片。设置 `<id>` 并使用您的 Nexus 仓库的 URL。
+3. 在文件中点击 <img src="/images/docs/zh-cn/devops-user-guide/examples/use-nexus-in-pipeline/github-edit-icon.png" height="18px" /> 以修改 `<distributionManagement>` 代码片段。设置 `<id>` 并使用您的 Nexus 仓库的 URL。
 
    ![modify-pom](/images/docs/zh-cn/devops-user-guide/examples/use-nexus-in-pipeline/modify-pom.png)
 
@@ -58,13 +58,13 @@ weight: 11450
 
 ### 步骤 3：修改 ConfigMap
 
-1. 使用 `admin` 帐户登录 KubeSphere web 控制台，点击左上角的**平台**，选择**集群管理**。
+1. 使用 `admin` 帐户登录 KubeSphere Web 控制台，点击左上角的**平台管理**，选择**集群管理**。
 
-2. 在**配置**下面选择 **ConfigMaps**。在 **ConfigMaps** 页面上的下拉列表中选择 `kubesphere-devops-system` ，然后点击 `ks-devops-agent`。
+2. 在**配置中心**下面选择 **配置**。在 **配置** 页面上的下拉列表中选择 `kubesphere-devops-system` ，然后点击 `ks-devops-agent`。
 
    ![ks-devops-agent](/images/docs/zh-cn/devops-user-guide/examples/use-nexus-in-pipeline/ks-devops-agent.png)
 
-3. 在详情页面，在下拉菜单**更多**中，点击**编辑 YAML**。
+3. 在详情页面，点击下拉菜单**更多操作**中的**编辑配置文件**。
 
    ![click-edit-yaml](/images/docs/zh-cn/devops-user-guide/examples/use-nexus-in-pipeline/click-edit-yaml.png)
 
@@ -88,7 +88,7 @@ weight: 11450
 
    {{</ notice >}}
 
-5. 继续找到 `<mirrors>` 代码分片，然后输入一下代码：
+5. 继续找到 `<mirrors>` 代码片段，然后输入一下代码：
 
    ```yaml
    <mirrors>
@@ -105,7 +105,7 @@ weight: 11450
 
    {{< notice note >}}
 
-   `<id>` 是您在步骤 2 设置给 Nexus 唯一标识符。 `<name>` 是 Nexus 仓库的名字。 `<url>` 是您 Nexus 仓库的 URL。 `<mirrorOf>` 是 要镜像的 Maven 仓库。在本教程，输入 `*` 制作所有 Maven 仓库的镜像。有关更多信息请参考[为仓库使用镜像](http://maven.apache.org/guides/mini/guide-mirror-settings.html)。
+   `<id>` 是您在步骤 2 设置给 Nexus 唯一标识符。 `<name>` 是 Nexus 仓库的名字。 `<url>` 是您 Nexus 仓库的 URL。 `<mirrorOf>` 是要镜像的 Maven 仓库。在本教程，输入 `*` 镜像所有 Maven 仓库。有关更多信息请参考[为仓库使用镜像](http://maven.apache.org/guides/mini/guide-mirror-settings.html)。
 
    {{</ notice >}}
 
@@ -113,7 +113,7 @@ weight: 11450
 
 ### 步骤 4：创建流水线
 
-1. 登出 KubeSphere web 控制台，使用帐户 `project-regular` 登录。转到 DevOps 工程，然后在**流水线**页面点击**创建**。
+1. 登出 KubeSphere Web 控制台，使用帐户 `project-regular` 登录。转到 DevOps 工程，然后在**流水线**页面点击**创建**。
 
 2. 在**基础信息**选项卡中，为流水线设置名字（例如，`nexus-pipeline`），然后点击**下一步**。
 
@@ -137,7 +137,7 @@ weight: 11450
        stages {
            stage ('clone') {
                steps {
-                   git 'https://github.com/Felixnoo/learn-pipeline-java.git'
+                   git 'https://github.com/YANGMAO-ZHANG/learn-pipeline-java.git'
                }
            }
            
