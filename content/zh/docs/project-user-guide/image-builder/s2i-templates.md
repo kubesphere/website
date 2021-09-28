@@ -1,40 +1,41 @@
 ---
-title: "Customize S2I Templates"
+title: "自定义 S2I 模板"
 keywords: 'KubeSphere, Kubernetes, Docker, S2I, Source-to-Image'
-description: 'Customize S2I templates and understand different template parameters.'
-linkTitle: "Customize S2I Templates"
+description: '学习如何自定义 S2I 模板，并理解不同的模板参数。'
+linkTitle: "自定义 S2I 模板"
 weight: 10640
+
 ---
 
-Once you have understood the workflow and logic of Source-to-Image (S2I), you can customize Image Builder templates (i.e. S2I/B2I templates) based on your projects to extend S2I capabilities. KubeSphere provides several common Image Builder templates, such as [Python](https://github.com/kubesphere/s2i-python-container/) and [Java](https://github.com/kubesphere/s2i-java-container/).
+当您了解了 Source-to-Image (S2I) 的工作流和逻辑，就可以根据您的项目自定义映像生成器模板（即 S2I / B2I 模板），以扩展 S2I 功能。KubeSphere 提供了几种常见的镜像构建器模板，如 [Python ](https://github.com/kubesphere/s2i-python-container/)和  [Java](https://github.com/kubesphere/s2i-java-container/)。 
 
-This tutorial demonstrates how to create an Image Builder that contains an Nginx service. If you need to use Runtime Image in your project, refer to [this document](https://github.com/kubesphere/s2irun/blob/master/docs/runtime_image.md) for more information about how to create a Runtime Image.
+本教程演示如何创建包含 Nginx 服务的镜像构建器。如果需要在项目中使用运行时映像，请参阅[本文档](https://github.com/kubesphere/s2irun/blob/master/docs/runtime_image.md)以了解有关如何创建运行时映像的更多信息。
 
-## Prerequisites
+## 准备工作
 
-S2I template customization can be divided into two parts.
+S2I 模板自定义分成两部分。
 
-- Part 1: S2I Image Builder customization
-  - assemble (required): the `assemble` script that builds application artifacts from source code.
-  - run (required): the `run` script that executes an application.
-  - save-artifacts (optional): the `save-artifacts` script that manages all dependencies in an incremental building process.
-  - usage (optional): the script that provides instructions.
-  - test (optional): the script for testing.
-- Part 2: definition of S2I template
+- 第一部分：S2I 自定义镜像构建
+  - assemble (required)：从源代码构建应用程序制品的脚本 `assemble`。
+  - run (required)：执行一个程序。
+  - save-artifacts (optional)：管理增量构建过程中的所有依赖。
+  - usage (optional)：提供说明的脚本。
+  - test (optional)：用于测试的脚本。
+- 第二部分：S2I 模板定义
 
-You need to have the required elements for S2I template customization ready in advance.
+您需要提前准备好 S2I 模板定制所需的元素。
 
 {{< notice note >}}
 
-The Image Builder is compatible with that of OpenShift, and you can reuse it in KubeSphere. For more information about S2I Image Builder, refer to [S2IRun](https://github.com/kubesphere/s2irun/blob/master/docs/builder_image.md#s2i-builder-image-requirements).
+镜像构建器与 OpenShift 兼容，您可以在 KubeSphere 中重用它。有关 S2I 镜像构建器的更多信息，请参见 [S2IRun](https://github.com/kubesphere/s2irun/blob/master/docs/builder_image.md#s2i-builder-image-requirements)。
 
 {{</ notice >}}
 
-## Create an Image Builder
+## 创建镜像构建器
 
-### Step 1: Prepare S2I directory
+### 步骤 1：准备 S2I 目录
 
-1. [S2I command line tool](https://github.com/openshift/source-to-image/releases) provides an easy-to-use command to initialize a base directory structure required by the Builder. Run the following commands to install S2I CLI.
+1. [S2I 命令行工具](https://github.com/openshift/source-to-image/releases)提供了一个易于使用的命令来初始化生成器所需的基本目录结构。运行以下命令以安装S2I CLI。
 
    ```bash
    $ wget https://github.com/openshift/source-to-image/releases/download/v1.1.14/source-to-image-v1.1.14-874754de-linux-386.tar.gz
@@ -44,13 +45,13 @@ The Image Builder is compatible with that of OpenShift, and you can reuse it in 
    $ cp s2i /usr/local/bin
    ```
 
-2. This tutorial uses `nginx-centos7` as the name of the Image Builder. Run the `s2i create` command to initialize the base directory structure.
+2. 本教程使用 `nginx-centos7` 作为镜像构建器的名称。运行 `s2i create` 命令初始化基本目录结构。
 
    ```bash
    s2i create nginx-centos7 s2i-builder-docs
    ```
 
-3. The directory structure is initialized as follows.
+3. 目录结构初始化如下。
 
    ```
    s2i-builder-docs/
@@ -65,11 +66,11 @@ The Image Builder is compatible with that of OpenShift, and you can reuse it in 
          usage - a script that prints the usage of the Image Builder
    ```
 
-### Step 2: Modify the Dockerfile
+### 步骤 2：修改 Dockerfile
 
-A Dockerfile installs all of the necessary tools and libraries that are needed to build and run an application. This file will also copy the S2I scripts into the output image.
+Dockerfile 安装构建和运行应用程序所需的所有必要工具和库。Dockerfile 还将 S2I 脚本复制到输出镜像中。
 
-Modify the Dockerfile as follows to define the Image Builder.
+按如下所示修改 Dockerfile 以定义镜像构建器。
 
 #### Dockerfile
 
@@ -119,13 +120,13 @@ CMD ["/usr/libexec/s2i/usage"]
 
 {{< notice note >}}
 
-S2I scripts will use the flags defined in the Dockerfile as parameters. If you need to use a base image different from those provided by KubeSphere, refer to [S2I Scripts](https://github.com/kubesphere/s2irun/blob/master/docs/builder_image.md#s2i-scripts).
+S2I 脚本将使用 Dockerfile 中定义的标志作为参数。如果您需要使用与 KubeSphere 提供的基础映像不同的基础映像，请参见 [S2I Scripts](https://github.com/kubesphere/s2irun/blob/master/docs/builder_image.md#s2i-scripts)。
 
 {{</ notice >}}
 
-### Step 3: Create S2I Scripts
+### 步骤 3：创建 S2I 脚本
 
-1. Create an `assemble` script as follows to copy configuration file and static contents to the target container.
+1. 创建一个 `assemble` 脚本，如下所示，将配置文件和静态内容复制到目标容器中。
 
    ```bash
    #!/bin/bash -e
@@ -146,11 +147,11 @@ S2I scripts will use the flags defined in the Dockerfile as parameters. If you n
 
    {{< notice note >}}
 
-   By default, `s2i build` places the application source code in `/tmp/src`. The above commands copy the application source code to the working directory `/opt/app-root/src` defined by `kubespheredev/s2i-base-centos7:1`.
+   默认情况下，`s2i build` 将应用程序源代码放在 `/tmp/src`。上述命令将应用程序源代码复制到由 `kubespheredev/s2i-base-centos7:1` 定义的工作目录 `/opt/app root/src`。
 
    {{</ notice >}}
 
-2. Create a `run` script as follows. In this tutorial, it only starts the `nginx` server.
+2. 创建一个 `run` 脚本，如下所示。在本教程中，它只启动 `nginx` 服务器。
 
    ```bash
    #!/bin/bash -e
@@ -160,11 +161,15 @@ S2I scripts will use the flags defined in the Dockerfile as parameters. If you n
 
    {{< notice note >}}
 
-   This tutorial uses the `exec` command to execute the host process of `nginx` server to let all signals sent from `docker` be received by `nginx` while `nginx` can use the standard input and output streams of the container. Besides, the `save-artifacts` script allows a new build to reuse content from a previous version of application image. The `save-artifacts` script can be deleted because this tutorial does not implement incremental building. 
+   This tutorial uses the `exec` command to execute the host process of `nginx` server to let all signals sent from `docker` be received by `nginx` while `nginx` can use the standard input and output streams of the container. Besides, the `save-artifacts` script allows a new build to reuse content from a previous version of application image. The `save-artifacts` script can be deleted because this tutorial does not implement incremental building.
+
+   
+
+   本教程使用 `exec` 命令执行 `nginx` 服务器主机进程，让 `nginx` 接收从 `docker` 发送的所有信号，而 `nginx` 可以使用容器的标准输入和输出流。此外，`save artifacts` 脚本允许新的构建重用应用程序早期版本镜像内容。`save-artifacts` 脚本可以删除，因为本教程不实现增量构建。 
 
    {{</ notice >}}
 
-3. Create a `usage` script as follows. It prints out instructions on how to use the image.
+3. 创建一个 `usage` 脚本，如下所示，它会打印出镜像使用说明。
 
    ```bash
    #!/bin/bash -e
@@ -179,9 +184,9 @@ S2I scripts will use the flags defined in the Dockerfile as parameters. If you n
    EOF
    ```
 
-### Step 4: Build and run
+### 步骤 4：构建与运行
 
-1. Modify the image name in `Makefile`.
+1. 修改在 `Makefile` 的镜像名称。
 
    ```bash
    IMAGE_NAME = kubespheredev/nginx-centos7-s2ibuilder-sample
@@ -198,131 +203,91 @@ S2I scripts will use the flags defined in the Dockerfile as parameters. If you n
    	IMAGE_NAME=$(IMAGE_NAME)-candidate test/run
    ```
 
-2. Run the `make build` command to build the Image Builder for Nginx.
+2. 运行 `make build` 命令为 NGINX 构建镜像构建器。
 
    ```bash
-   $ make build
-   docker build -t kubespheredev/nginx-centos7-s2ibuilder-sample .
-   Sending build context to Docker daemon  164.9kB
-   Step 1/17 : FROM kubespheredev/s2i-base-centos7:1
-    ---> 48f8574c05df
-   Step 2/17 : LABEL maintainer="Runze Xia <runzexia@yunify.com>"
-    ---> Using cache
-    ---> d60ebf231518
-   Step 3/17 : ENV NGINX_VERSION=1.6.3
-    ---> Using cache
-    ---> 5bd34674d1eb
-   Step 4/17 : LABEL io.k8s.description="Nginx Webserver"       io.k8s.display-name="Nginx 1.6.3"       io.kubesphere.expose-services="8080:http"       io.kubesphere.tags="builder,nginx,html"
-    ---> Using cache
-    ---> c837ad649086
-   Step 5/17 : RUN yum install -y epel-release &&     yum install -y --setopt=tsflags=nodocs nginx &&     yum clean all
-    ---> Running in d2c8fe644415
-   
-   …………
-   …………
-   …………
-   
-   Step 17/17 : CMD ["/usr/libexec/s2i/usage"]
-    ---> Running in c24819f6be27
-   Removing intermediate container c24819f6be27
-    ---> c147c86f2cb8
-   Successfully built c147c86f2cb8
-   Successfully tagged kubespheredev/nginx-centos7-s2ibuilder-sample:latest
+   $ make builddocker build -t kubespheredev/nginx-centos7-s2ibuilder-sample .Sending build context to Docker daemon  164.9kBStep 1/17 : FROM kubespheredev/s2i-base-centos7:1 ---> 48f8574c05dfStep 2/17 : LABEL maintainer="Runze Xia <runzexia@yunify.com>" ---> Using cache ---> d60ebf231518Step 3/17 : ENV NGINX_VERSION=1.6.3 ---> Using cache ---> 5bd34674d1ebStep 4/17 : LABEL io.k8s.description="Nginx Webserver"       io.k8s.display-name="Nginx 1.6.3"       io.kubesphere.expose-services="8080:http"       io.kubesphere.tags="builder,nginx,html" ---> Using cache ---> c837ad649086Step 5/17 : RUN yum install -y epel-release &&     yum install -y --setopt=tsflags=nodocs nginx &&     yum clean all ---> Running in d2c8fe644415………………………………Step 17/17 : CMD ["/usr/libexec/s2i/usage"] ---> Running in c24819f6be27Removing intermediate container c24819f6be27 ---> c147c86f2cb8Successfully built c147c86f2cb8Successfully tagged kubespheredev/nginx-centos7-s2ibuilder-sample:latest
    ```
 
-3. With the Image Builder created, run the following command to create an application image.
+3. 在创建镜像构建器后，运行以下命令创建应用程序镜像。
 
    ```bash
-   $ s2i build ./test/test-app kubespheredev/nginx-centos7-s2ibuilder-sample:latest sample-app
-   ---> Building and installing application from source...
-   Build completed successfully
+   $ s2i build ./test/test-app kubespheredev/nginx-centos7-s2ibuilder-sample:latest sample-app---> Building and installing application from source...Build completed successfully
    ```
 
    {{< notice note >}}
 
    Following the logic defined in the `assemble` script, S2I creates an application image using the Image Builder as a base and injecting the source code from the `test/test-app` directory.
 
+   按照 `assemble` 脚本中定义的逻辑，S2I 使用镜像构建器作为基础创建应用程序镜像，并从 `test/test app` 目录注入源代码。
+
    {{</ notice >}}
 
-4. Run the following command to run the application image.
+4. 运行以下命令以运行应用程序镜像。
 
    ```bash
    docker run -p 8080:8080  sample-app
    ```
 
-   You can access the Nginx application at `http://localhost:8080`.
+   您可以在此位置访问 Nginx 应用程序：`http://localhost:8080`。
 
    ![access-nginx](/images/docs/project-user-guide/image-builder/s2i-templates/access-nginx.png)
 
-### Step 5: Push image and create S2I template
+### 步骤 5：推送镜像与创建 S2I 模板
 
-Once you finish testing the S2I Image Builder locally, you can push the image to your custom image repository. You also need to create a YAML file as the S2I Builder template as follows.
+在本地完成 S2I 镜像构建器测试后，可以将镜像推送到自定义镜像仓库。您还需要创建一个 YAML 文件作为 S2I 构建器模板，如下所示。
 
 #### s2ibuildertemplate.yaml
 
 ```yaml
-apiVersion: devops.kubesphere.io/v1alpha1
-kind: S2iBuilderTemplate
-metadata:
-  labels:
-    controller-tools.k8s.io: "1.0"
-    builder-type.kubesphere.io/s2i: "s2i"
-  name: nginx-demo
-spec:
-  containerInfo:
-    - builderImage: kubespheredev/nginx-centos7-s2ibuilder-sample
-  codeFramework: nginx # type of code framework
-  defaultBaseImage: kubespheredev/nginx-centos7-s2ibuilder-sample # default Image Builder (can be replaced by customized image)
-  version: 0.0.1 # Builder template version
-  description: "This is a S2I builder template for Nginx builds whose result can be run directly without any further application server.." # Builder template description
+apiVersion: devops.kubesphere.io/v1alpha1kind: S2iBuilderTemplatemetadata:  labels:    controller-tools.k8s.io: "1.0"    builder-type.kubesphere.io/s2i: "s2i"  name: nginx-demospec:  containerInfo:    - builderImage: kubespheredev/nginx-centos7-s2ibuilder-sample  codeFramework: nginx # type of code framework  defaultBaseImage: kubespheredev/nginx-centos7-s2ibuilder-sample # default Image Builder (can be replaced by customized image)  version: 0.0.1 # Builder template version  description: "This is a S2I builder template for Nginx builds whose result can be run directly without any further application server.." # Builder template description
 ```
 
-### Step 6: Use S2I template on KubeSphere
+### 步骤 6：在 KubeSphere 使用 S2I 模板
 
-1. Run the following command to submit the S2I template created above to KubeSphere.
+1. 运行以下命令将上面创建的 S2I 模板提交至 KubeSphere。
 
    ```bash
-   $ kubectl apply -f s2ibuildertemplate.yaml
-   s2ibuildertemplate.devops.kubesphere.io/nginx created
+   $ kubectl apply -f s2ibuildertemplate.yamls2ibuildertemplate.devops.kubesphere.io/nginx created
    ```
 
-2. You can find the customized S2I template available when you create a S2I build on KubeSphere.
+2. 在 KubeSphere 上创建 S2I build 时，可以找到可用的自定义 S2I 模板。
 
    ![template-available](/images/docs/project-user-guide/image-builder/s2i-templates/template-available.png)
 
-## S2I Template Parameters Definition
+## S2I 模板参数定义
 
-Refer to the following detailed descriptions of S2I template labels passed as parameters to frontend classifications.
+请参阅以下 S2I 模板标签作为参数传递给前端分类的详细说明。
 
-| Label Name                            | Option               | Definition                                                   |
+| 标签名称                              | 选项                 | 定义                                                         |
 | ------------------------------------- | -------------------- | ------------------------------------------------------------ |
-| builder-type.kubesphere.io/s2i: "s2i" | "s2i"                | The type of this template is S2I, which builds images based on application source code. |
-| builder-type.kubesphere.io/b2i        | "b2i"                | The type of this template is B2I, which builds images based on binary files or other artifacts. |
-| binary-type.kubesphere.io             | "jar","war","binary" | This type is complementary to the type of B2I and will be required when B2I is selected. For example, select the type of "jar" when a JAR package is provided. In KubeSphere v2.1.1 and later, it is also allowed to customize B2I template. |
+| builder-type.kubesphere.io/s2i: "s2i" | "s2i"                | 模板类型为 S2I，基于应用程序源代码构建镜像。                 |
+| builder-type.kubesphere.io/b2i        | "b2i"                | 模板类型为 B2I，基于二进制文件或其他制品构建镜像。           |
+| binary-type.kubesphere.io             | "jar","war","binary" | 该类型为 B2I 类型的补充，在选择 B2I 类型时需要。例如，当提供 Jar 包时，选择 "jar" 类型。在 KubeSphere v2.1.1 及更高版本，允许自定义B2I模板。 |
 
-Refer to the following detailed descriptions of S2I template parameters. The required parameters are marked with an asterisk.
+参见以下 S2I 模板参数的详细说明。所需参数用星号标记。
 
-| Parameter                                  | Type     | Definition                                                   |
+| 参数                                       | 类型     | 定义                                                         |
 | ------------------------------------------ | -------- | ------------------------------------------------------------ |
-| *containerInfo                             | []struct | The information about Image Builder.                         |
-| *containerInfo.builderImage                | string   | S2I Image Builder, such as kubesphere/java-8-centos7:v2.1.0. |
-| containerInfo.runtimeImage                 | string   | S2I Runtime Image, such as kubesphere/java-8-runtime:v2.1.0. |
-| containerInfo.buildVolumes                 | []string | The information about mounted volume. The format is "volume_name:mount_path", such as ["s2i_java_cache:/tmp/artifacts","test_cache:test_path"]. |
-| containerInfo.runtimeArtifacts             | []struct | The list of original path and target path for the output artifact; only add it for phased building. |
-| containerInfo.runtimeArtifacts.source      | string   | The original path of artifact in Image Builder.              |
-| containerInfo.runtimeArtifacts.destination | string   | The target path of artifact in Runtime Image.                |
-| containerInfo.runtimeArtifacts.keep        | bool     | Whether to keep the data in the output image.                |
-| *defaultBaseImage                          | string   | The default Image Builder.                                   |
-| *codeFramework                             | string   | The code framework type, such as Java, Ruby.                 |
-| environment                                | []struct | The list of environment variables in the building process.   |
-| environment.key                            | string   | The name of environment variables.                           |
-| environment.type                           | string   | The type of environment variable keys.                       |
-| environment.description                    | string   | The description of environment variables.                    |
-| environment.optValues                      | []string | The list of parameters for environment variables.            |
-| environment.required                       | bool     | Whether the environment variable is required to be set.      |
-| environment.defaultValue                   | string   | The default value of environment variables.                  |
-| environment.value                          | string   | The value of environment variables.                          |
-| iconPath                                   | string   | The application name.                                        |
-| version                                    | string   | The version of S2I template.                                 |
-| description                                | string   | The description of the template's functions and usage.       |
+| *containerInfo                             | []struct | 关于镜像构建器的信息。                                       |
+| *containerInfo.builderImage                | string   | 镜像构建器，如：kubesphere/java-8-centos7:v2.1.0. S2I。      |
+| containerInfo.runtimeImage                 | string   | 运行时镜像，如：kubesphere/java-8-runtime:v2.1.0. S2I。      |
+| containerInfo.buildVolumes                 | []string | 关于安装卷的信息。格式为 "volume_name:mount_path", 如："s2i_java_cache:/tmp/artifacts","test_cache:test_path"]。 |
+| containerInfo.runtimeArtifacts             | []struct | 输出制品的原始路径和目标路径；仅在分阶段构建中添加。         |
+| 制品facts.source                           | string   | 制品在镜像构建器的原始路径。                                 |
+| containerInfo.runtimeArtifacts.destination | string   | 运行时镜像中制品的目标路径。                                 |
+| containerInfo.runtimeArtifacts.keep        | bool     | 是否将数据保留在输出镜像中。                                 |
+| *defaultBaseImage                          | string   | 默认镜像构建器。                                             |
+| *codeFramework                             | string   | 代码框架类型，如：Java，Ruby。                               |
+| environment                                | []struct | 构建过程中的环境变量列表。                                   |
+| environment.key                            | string   | 环境变量的名称。                                             |
+| environment.type                           | string   | 环境变量键的类型。                                           |
+| environment.description                    | string   | 环境变量的描述。                                             |
+| environment.optValues                      | []string | 环境变量的参数列表。                                         |
+| environment.required                       | bool     | 是否需要设置环境变量。                                       |
+| environment.defaultValue                   | string   | 环境变量的默认值。                                           |
+| environment.value                          | string   | 环境变量的值。                                               |
+| iconPath                                   | string   | 应用名字。                                                   |
+| version                                    | string   | S2I 模板版本。                                               |
+| description                                | string   | 模板功能和用法的说明。                                       |
 
