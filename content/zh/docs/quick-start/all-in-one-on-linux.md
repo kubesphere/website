@@ -1,6 +1,6 @@
 ---
 title: "在 Linux 上以 All-in-One 模式安装 KubeSphere"
-keywords: 'KubeSphere, Kubernetes, All-in-One, 安装'
+keywords: 'KubeSphere, Kubernetes, 单节点集群, 安装'
 description: '了解在 Linux 上如何使用最小安装包安装 KubeSphere。本教程为您理解容器平台提供了基础入门知识，为学习以下指南奠定基础。'
 linkTitle: "在 Linux 上以 All-in-One 模式安装 KubeSphere"
 weight: 2100
