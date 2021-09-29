@@ -13,7 +13,7 @@ snapshot: '/images/blogs/en/kastenk10/KastenK10-architecture.png'
 Purpose-built for Kubernetes, [Kasten 10 ](https://docs.kasten.io/)provides enterprise operations teams an easy-to-use, scalable, and secure system for backup/restore, disaster recovery, and mobility of Kubernetes applications. 
 
 ![kasten k10 arch](/images/blogs/en/kastenk10image/KastenK10-architecture.png)
-[KubeSphere](https://kubesphere.io/docs/introduction/what-is-kubesphere/)** is a distributed operating system for cloud-native application management, using Kubernetes as its kernel. It provides a plug-and-play architecture, allowing third-party applications to be seamlessly integrated into its ecosystem.
+[KubeSphere](https://kubesphere.io/docs/introduction/what-is-kubesphere/) is a distributed operating system for cloud-native application management, using Kubernetes as its kernel. It provides a plug-and-play architecture, allowing third-party applications to be seamlessly integrated into its ecosystem.
 ![kubesphere arch](/images/blogs/en/kastenk10image/kubesphere-architecture.png)
 
 In this article, we will introduce the deployment of Kasten K10 on KubeSphere.
