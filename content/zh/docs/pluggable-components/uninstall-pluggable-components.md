@@ -159,7 +159,9 @@ kubectl -n kubesphere-system edit clusterconfiguration ks-installer
 2. 运行以下命令：
 
    ```bash
-   helm uninstall kube-auditing -n kubesphere-logging-systemkubectl delete crd awhkubectl delete crd ar
+   helm uninstall kube-auditing -n kubesphere-logging-system
+   kubectl delete crd awh
+   kubectl delete crd ar
    ```
 
 ## 卸载 KubeSphere 服务网格
@@ -169,7 +171,14 @@ kubectl -n kubesphere-system edit clusterconfiguration ks-installer
 2. 运行以下命令：
 
    ```bash
-   curl -L https://istio.io/downloadIstio | sh -istioctl x uninstall --purgekubectl -n istio-system delete kiali kialihelm -n istio-system delete kiali-operatorkubectl -n istio-system delete jaeger jaegerhelm -n istio-system delete jaeger-operator
+   curl -L https://istio.io/downloadIstio | sh -
+   istioctl x uninstall --purge
+   
+   kubectl -n istio-system delete kiali kiali
+   helm -n istio-system delete kiali-operator
+   
+   kubectl -n istio-system delete jaeger jaeger
+   helm -n istio-system delete jaeger-operator
    ```
 
 ## 卸载网络策略
@@ -183,7 +192,9 @@ kubectl -n kubesphere-system edit clusterconfiguration ks-installer
 2. 运行以下命令：
 
    ```bash
-   kubectl delete apiservice v1beta1.metrics.k8s.iokubectl -n kube-system delete service metrics-serverkubectl -n kube-system delete deployment metrics-server
+   kubectl delete apiservice v1beta1.metrics.k8s.io
+   kubectl -n kube-system delete service metrics-server
+   kubectl -n kube-system delete deployment metrics-server
    ```
 
 ## 卸载服务拓扑图
@@ -207,12 +218,13 @@ kubectl -n kubesphere-system edit clusterconfiguration ks-installer
 2. 运行以下命令：
 
    ```bash
-   helm uninstall kubeedge -n kubeedgekubectl delete ns kubeedge
+   helm uninstall kubeedge -n kubeedge
+   kubectl delete ns kubeedge
    ```
-
+   
    {{< notice note >}}
-
+   
    卸载后，您将不能将无法为集群添加边缘节点。
-
+   
    {{</ notice >}}
 
