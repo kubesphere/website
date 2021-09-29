@@ -5,7 +5,7 @@ description: Several steps to realize Kubernetes backup and restore with Kasten 
 tag: 'Backup and Restore, Kasten K10, Kubernetes'
 createTime: '2021-09-25'
 author: 'Mars Zhang， Yicen Xie'
-snapshot: '/images/blogs/en/kastenk10/KastenK10-architecture.png'
+snapshot: '/images/blogs/en/kastenk10image/KastenK10-architecture.png'
 ---
 
 ## Kasten on KubeSphere
