@@ -49,7 +49,7 @@ section2:
       link: "chinamobile-iot/"
       
     - icon: "images/case/uisee.png"
-      content: "驭势科技UISEE是中国领先的自动驾驶公司，致力于为全行业、全场景提供AI驾驶服务，交付赋能出行和物流新生态的AI驾驶员。"
+      content: "驭势科技 UISEE 是中国领先的自动驾驶公司，致力于为全行业、全场景提供 AI 驾驶服务，交付赋能出行和物流新生态的 AI 驾驶员。"
       link: "uisee/"
 
 section3:
