@@ -5,22 +5,22 @@ description: Several steps to realize Kubernetes backup and restore with Kasten 
 tag: 'Backup and Restore, Kasten K10, Kubernetes'
 createTime: '2021-09-25'
 author: 'Mars Zhang， Yicen Xie'
-snapshot: '![kasten k10 arch](./images/blogs/en/kastenk10/KastenK10-architecture.png)'
+snapshot: '/images/blogs/en/kastenk10/KastenK10-architecture.png'
 ---
 
 ## Kasten on KubeSphere
 
-Purpose-built for Kubernetes, [**Kasten 10** ](https://docs.kasten.io/)provides enterprise operations teams an easy-to-use, scalable, and secure system for backup/restore, disaster recovery, and mobility of Kubernetes applications. 
+Purpose-built for Kubernetes, [Kasten 10 ](https://docs.kasten.io/)provides enterprise operations teams an easy-to-use, scalable, and secure system for backup/restore, disaster recovery, and mobility of Kubernetes applications. 
 
 ![kasten k10 arch](/images/blogs/en/kastenk10image/KastenK10-architecture.png)
-**[KubeSphere](https://kubesphere.io/docs/introduction/what-is-kubesphere/)** is a distributed operating system for cloud-native application management, using Kubernetes as its kernel. It provides a plug-and-play architecture, allowing third-party applications to be seamlessly integrated into its ecosystem.
+[KubeSphere](https://kubesphere.io/docs/introduction/what-is-kubesphere/)** is a distributed operating system for cloud-native application management, using Kubernetes as its kernel. It provides a plug-and-play architecture, allowing third-party applications to be seamlessly integrated into its ecosystem.
 ![kubesphere arch](/images/blogs/en/kastenk10image/kubesphere-architecture.png)
 
 In this article, we will introduce the deployment of Kasten K10 on KubeSphere.
 
 ## Provision a KubeSphere Cluster
 
-This article will introduce how to deploy Kasten on on KubeSphere Container Platform. You can install KubeSphere on any Kubernetes cluster or Linux system, refer to [**KubeSphere documentation**](https://kubesphere.io/docs/quick-start/all-in-one-on-linux/) for more details or vist the [**Github**]( https://github.com/kubesphere/website) of KubeSphere.
+This article will introduce how to deploy Kasten on on KubeSphere Container Platform. You can install KubeSphere on any Kubernetes cluster or Linux system, refer to [KubeSphere documentation](https://kubesphere.io/docs/quick-start/all-in-one-on-linux/) for more details or vist the [Github]( https://github.com/kubesphere/website) of KubeSphere.
 
 After the creation of KubeSphere cluster, you can log in to KubeSphere web console:
 
@@ -44,7 +44,7 @@ First, create a Namespace to run Kasten.
 ![create a name space](/images/blogs/en/kastenk10image/kastenk10-step8.png)
 After creation, click the Namespace and select "App"-"Deploy New APP"-"From App Template"successively.
 
-![deploy new app](/images/blogs/en/image/kastenk10-step9.png)
+![deploy new app](/images/blogs/en/image/kastenk10image/kastenk10-step9.png)
 Select "Kasten" from the drop-down menu and then select "K10".
 
 ![select k10](/images/blogs/en/kastenk10image/kastenk10-step10.png)
