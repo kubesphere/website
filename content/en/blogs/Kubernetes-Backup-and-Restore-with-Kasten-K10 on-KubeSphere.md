@@ -44,7 +44,7 @@ First, create a Namespace to run Kasten.
 ![create a name space](/images/blogs/en/kastenk10image/kastenk10-step8.png)
 After creation, click the Namespace and select "App"-"Deploy New APP"-"From App Template"successively.
 
-![deploy new app](/images/blogs/en/image/kastenk10image/kastenk10-step9.png)
+![deploy new app](/images/blogs/en/kastenk10image/kastenk10-step9.png)
 Select "Kasten" from the drop-down menu and then select "K10".
 
 ![select k10](/images/blogs/en/kastenk10image/kastenk10-step10.png)
