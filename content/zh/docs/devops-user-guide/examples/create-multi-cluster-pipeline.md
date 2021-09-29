@@ -1,130 +1,130 @@
 ---
-title: "Create a Multi-cluster Pipeline"
-keywords: 'KubeSphere, Kubernetes, Multi-cluster, Pipeline, DevOps'
-description: 'Learn how to create a multi-cluster pipeline on KubeSphere.'
-linkTitle: "Create a Multi-cluster Pipeline"
+title: "创建多集群流水线"
+keywords: 'KubeSphere, Kubernetes, 多集群, 流水线, DevOps'
+description: '学习如何在 Kubesphere 上创建多集群流水线。'
+linkTitle: "创建多集群流水线"
 weight: 11440
 ---
 
-As cloud providers offer different hosted Kubernetes services, DevOps pipelines have to deal with use cases where multiple Kubernetes clusters are involved.
+由于云场上提供不同的托管 Kubernetes 服务，DevOps 流水线必须处理涉及多个 Kubernetes 集群的使用场景。
 
-This tutorial demonstrates how to create a multi-cluster pipeline on KubeSphere.
+本教程将演示如何在 KubeSphere 创建一个多集群流水线。
 
-## Prerequisites
+## 准备工作
 
-- You need to have three Kubernetes clusters with KubeSphere installed. Choose one cluster as your Host Cluster and the other two as your Member Clusters. For more information about cluster roles and how to enable a multi-cluster environment on KubeSphere, refer to [Multi-cluster Management](../../../multicluster-management/).
-- You need to set your Member Clusters as [public clusters](../../../cluster-administration/cluster-settings/cluster-visibility-and-authorization/#make-a-cluster-public). Alternatively, you can [set cluster visibility after a workspace is created](../../../cluster-administration/cluster-settings/cluster-visibility-and-authorization/#set-cluster-visibility-after-a-workspace-is-created).
-- You need to [enable the KubeSphere DevOps system](../../../pluggable-components/devops/) on your Host Cluster.
-- You need to integrate SonarQube into your pipeline. For more information, refer to [Integrate SonarQube into Pipelines](../../how-to-integrate/sonarqube/).
-- You need to create four accounts on your Host Cluster: `ws-manager`, `ws-admin`, `project-admin`, and `project-regular`, and grant these accounts different roles. For more information, refer to [Create Workspaces, Projects, Accounts and Roles](../../../quick-start/create-workspace-and-project/#step-1-create-an-account).
+- 准备三个已安装 KubeSphere 的 Kubernetes 集群，选择一个集群作为 Host 集群，其余两个作为 Member 集群。更多关于集群角色与如何在 KubeSphere 上启用多集群环境，请参见[多集群管理](../../../multicluster-management/)。
+- 将 Member 集群设置为[公开集群](../../../cluster-administration/cluster-settings/cluster-visibility-and-authorization/#将集群设置为公开集群)。或者，您可以[在工作空间创建之后设置集群可见性](../../../cluster-administration/cluster-settings/cluster-visibility-and-authorization/#在创建企业空间后设置集群可见性)。
+- 在 Host 集群上[启用 KubeSphere DevOps 系统](../../../pluggable-components/devops/)。
+- 整合 SonarQube 进入流水线。有关更多信息，请参见[将 SonarQube 集成到流水线](../../how-to-integrate/sonarqube/)。
+- 在 Host 集群创建四个帐户： `ws-manager`、`ws-admin`、`project-admin` 和 `project-regular`，然后授予他们不同的角色。有关详细信息，请参见[创建企业空间、项目、帐户和角色](../../../quick-start/create-workspace-and-project/#step-1-create-an-account)。
 
-## Workflow Overview
+## 工作流程概述
 
-This tutorial uses three clusters to serve as three isolated environments in the workflow. See the diagram as below.
+本教程使用三个集群作为工作流中三个独立的环境。如下图所示：
 
 ![use-case-for-multi-cluster](/images/docs/devops-user-guide/examples/create-multi-cluster-pipeline/use-case-for-multi-cluster.png)
 
-The three clusters are used for development, testing, and production respectively. Once codes get submitted to a Git repository, a pipeline will be triggered to run through the following stages—`Unit Test`, `SonarQube Analysis`, `Build & Push`, and `Deploy to Development Cluster`. Developers use the development cluster for self-testing and validation. When developers give approval, the pipeline will proceed to the stage of `Deploy to Testing Cluster` for stricter validation. Finally, the pipeline, with necessary approval ready, will reach the stage of `Deploy to Production Cluster` to provide services externally. 
+三个集群分别用于开发，测试和生产。当代码被提交至 Git 仓库，就会触发流水线并执行以下几个阶段 — `单元测试`，`SonarQube 分析`，`构建 & 推送` 和 `部署到开发集群`。开发者使用开发集群进行自我测试和验证。当开发者批准后，流水线就会进入到下一个阶段 `部署到测试集群` 进行更严格的验证。最后，流水线在获得必要的批准之后，将会进入下一个阶段 `部署到生产集群`，并向外提供服务。
 
-## Hands-on Lab
+## 动手实验
 
-### Step 1: Prepare clusters
+### 步骤 1：准备集群
 
-See the table below for the role of each cluster. 
+下图展示每个集群对应的角色。
 
-| Cluster Name | Cluster Role   | Usage       |
-| ------------ | -------------- | ----------- |
-| host         | Host Cluster   | Testing     |
-| shire        | Member Cluster | Production  |
-| rohan        | Member Cluster | Development |
+| 集群名称 | 集群角色    | 用途 |
+| -------- | ----------- | ---- |
+| host     | Host 集群   | 测试 |
+| shire    | Member 集群 | 生产 |
+| rohan    | Member 集群 | 开发 |
 
 {{< notice note >}}
 
-These Kubernetes clusters can be hosted across different cloud providers and their Kubernetes versions can also vary. Recommended Kubernetes versions for KubeSphere v3.1.0: v1.17.9, v1.18.8, v1.19.8 and v1.20.4.
+这些 Kubernetes 集群可以被托管至不同的云厂商，也可以使用不同的 Kubernetes 版本。针对 KubeSphere  v3.1.0 推荐的 Kubernetes 版本：v1.17.9、v1.18.8、v1.19.8 和 v1.20.4。
 
 {{</ notice >}}
 
-### Step 2: Create a workspace
+### 步骤 2：创建企业空间
 
-1. Log in to the web console of the Host Cluster as `ws-manager`. On the **Workspaces** page, click **Create**.
+1. 使用 `ws-manager` 帐户登录 Host 集群的 Web 控制台。在**企业空间**页面中，点击**创建**。
 
-2. On the **Basic Information** page, name the workspace `devops-multicluster`, select `ws-admin` for **Administrator**, and click **Next**.
+2. 在**基本信息**页面中，将企业空间命名为 `devops-multicluster`，选择 `ws-admin` 为**管理员**，然后点击**下一步**。
 
    ![create-workspace](/images/docs/devops-user-guide/examples/create-multi-cluster-pipeline/create-workspace.png)
 
-3. On the **Select Clusters** page, select all three clusters and click **Create**.
+3. 在**集群选择**页面，选择所有集群（总共三个集群），然后点击**创建**。
 
    ![select-all-clusters](/images/docs/devops-user-guide/examples/create-multi-cluster-pipeline/select-all-clusters.png)
 
-4. The workspace created will display in the list. You need to log out of the console and log back in as `ws-admin` to invite both `project-admin` and `project-regular` to the workspace and grant them the role `workspace-self-provisioner` and `workspace-viewer` respectively. For more information, refer to [Create Workspaces, Projects, Accounts and Roles](../../../quick-start/create-workspace-and-project/#step-2-create-a-workspace).
+4. 创建的企业空间会显示在列表。您需要登出控制台并以 `ws-admin` 身份重新登录，以邀请 `project-admin` 与 `project-regular` 至企业空间，然后分别授予他们 `work-space-self-provisioner` 和 `workspace-viwer` 角色。有关更多信息，请参见[创建企业空间、项目、帐户和角色](../../../quick-start/create-workspace-and-project/#step-2-create-a-workspace)。
 
    ![workspace-created](/images/docs/devops-user-guide/examples/create-multi-cluster-pipeline/workspace-created.png)
 
-### Step 3: Create a DevOps project
+### 步骤 3：创建 DevOps 工程
 
-1. Log out of the console and log back in as `project-admin`. Go to the **DevOps Projects** page and click **Create**.
+1. 您需要登出控制台，并以 `project-admin` 身份重新登录。转到 **DevOps 工程**页面并点击**创建**。
 
-2. In the dialog that appears, enter `multicluster-demo` for **Name**, select **host** for **Cluster Settings**, and then click **OK**.
+2. 在出现的对话框中，输入 `mulicluster-demo` 作为**名称**，在**集群设置**中选择 **host**，然后点击**确定**。
 
    ![devops-project](/images/docs/devops-user-guide/examples/create-multi-cluster-pipeline/devops-project.png)
 
    {{< notice note >}}
 
-   Only clusters with the DevOps component enabled will be available in the drop-down list.
+   下拉列表中只有启用 DevOps 组件的集群可用。
 
    {{</ notice >}}
 
-3. The DevOps project created will display in the list. Make sure you invite the account `project-regular` to this project with the role `operator`. For more information, refer to [Create Workspaces, Projects, Accounts and Roles](../../../quick-start/create-workspace-and-project/#step-5-create-a-devops-project-optional).
+3. 创建的 DevOps 工程将显示在列表中。请确保邀请帐户 `project-regular` 至这个项目，并赋予 `operator` 角色。有关更多信息，请参见[创建企业空间、项目、帐户和角色](../../../quick-start/create-workspace-and-project/#step-1-create-an-account)。
 
    ![devops-project-created](/images/docs/devops-user-guide/examples/create-multi-cluster-pipeline/devops-project-created.png)
 
-### Step 4: Create projects on clusters
+### 步骤 4：在集群上创建项目
 
-You must create the projects as shown in the table below in advance. Make sure you invite the account `project-regular` to these projects with the role `operator`. For more information about how to create a project, refer to [Create Workspaces, Projects, Accounts and Roles](../../../quick-start/create-workspace-and-project/#step-3-create-a-project).
+提前创建如下表所示的项目。请确保邀请 `project-regular` 帐户到这些项目中，并赋予 `operator` 角色。有关更多信息，请参见[创建企业空间、项目、帐户和角色](../../../quick-start/create-workspace-and-project/#step-1-create-an-account)。
 
-| Cluster Name | Usage       | Project Name           |
-| ------------ | ----------- | ---------------------- |
-| host         | Testing     | kubesphere-sample-prod |
-| shire        | Production  | kubesphere-sample-prod |
-| rohan        | Development | kubesphere-sample-dev  |
+| 集群名 | 用途 | 项目名                 |
+| ------ | ---- | ---------------------- |
+| host   | 测试 | kubesphere-sample-prod |
+| shire  | 生产 | kubesphere-sample-prod |
+| rohan  | 开发 | kubesphere-sample-dev  |
 
-### Step 5: Create credentials
+### 步骤 5：创建凭证
 
-1. Log out of the console and log back in as `project-regular`. On the **DevOps Projects** page, click the DevOps project `multicluster-demo`.
+1. 登出控制台，以 `project-regular` 身份重新登录。在 **DevOps 工程**页面，点击 DevOps 工程 `multicluster-demo`。
 
-2. On the **DevOps Credentials** page, you need to create the credentials as shown in the table below. For more information about how to create credentials, refer to [Credential Management](../../how-to-use/credential-management/#create-credentials) and [Create a Pipeline Using a Jenkinsfile](../../how-to-use/create-a-pipeline-using-jenkinsfile/#step-1-create-credentials).
+2. 在 DevOps 凭证页面，您需要创建如下表所示的凭证。有关如何创建凭证的更多信息，请参见[凭证管理](../../how-to-use/credential-management/#create-credentials)和[使用 Jenkinsfile 创建流水线](../../how-to-use/create-a-pipeline-using-jenkinsfile/#step-1-create-credentials)。
 
-   | Credential ID | Type                | Where to Use                       |
-   | ------------- | ------------------- | ---------------------------------- |
-   | host          | kubeconfig          | The Host Cluster for testing       |
-   | shire         | kubeconfig          | The Member Cluster for production  |
-   | rohan         | kubeconfig          | The Member Cluster for development |
-   | dockerhub-id  | Account Credentials | Docker Hub                         |
-   | sonar-token   | Secret Text         | SonarQube                          |
+| 凭证 ID      | 类型       | 应用场所             |
+| ------------ | ---------- | -------------------- |
+| host         | kubeconfig | 用于 Host 集群测试   |
+| shire        | kubeconfig | 用于 Member 集群生产 |
+| rohan        | kubeconfig | 用于 Member 集群开发 |
+| dockerhub-id | 帐户凭证   | Docker Hub           |
+| sonar-token  | 秘密文本   | SonarQube            |
 
-   {{< notice note >}}
+{{< notice note >}}
 
-   You have to manually enter the kubeconfig of your Member Clusters when creating the kubeconfig credentials `shire` and `rohan`. Make sure your Host Cluster can access the APIServer addresses of your Member Clusters.
+在创建 kubeconfig 凭证 `shire` 和 `rohan` 时，必须手动输入 Member 集群的 kubeconfig。确保 Host 集群可以访问 Member 集群的 APIServer 地址。
 
-   {{</ notice >}}
+{{</ notice >}}
 
-3. You will have five credentials in total.
+3. 您会拥有五个凭证。
 
-   ![credentials-created](/images/docs/devops-user-guide/examples/create-multi-cluster-pipeline/credentials-created.png)
+![credentials-created](/images/docs/devops-user-guide/examples/create-multi-cluster-pipeline/credentials-created.png)
 
-### Step 6: Create a pipeline
+### 步骤 6：创建流水线
 
-1. Go to the **Pipelines** page and click **Create**. In the dialog that appears, enter `build-and-deploy-application` for **Name** and click **Next**.
+1. 在**流水线**页面点击**创建**。在显示的对话框中，输入 `build-and-deploy-application` 作为**名称**然后点击**下一步**。
 
    ![pipeline-name](/images/docs/devops-user-guide/examples/create-multi-cluster-pipeline/pipeline-name.png)
 
-2. In the **Advanced Settings** tab, click **Create** to use the default settings.
+2. 在**高级设置中**选项卡中，点击**创建**即使用默认配置。
 
-3. The pipeline created will display in the list. Click it to go to its detail page.
+3. 列表会展示被创建的流水线，点击流水线进入详细页面。
 
    ![pipeline-created](/images/docs/devops-user-guide/examples/create-multi-cluster-pipeline/pipeline-created.png)
 
-4. Click **Edit Jenkinsfile** and copy and paste the following contents. Make sure you replace the value of `DOCKERHUB_NAMESPACE` with your own value, and then click **OK**.
+4. 点击**编辑 Jenkinsfile**，复制和粘贴以下内容。请确保将 DOCKERHUB_NAMESPACE 的值替换为您自己的值，然后点击**确认**。
 
    ```groovy
    pipeline {
@@ -225,33 +225,33 @@ You must create the projects as shown in the table below in advance. Make sure y
 
    {{< notice note >}}
 
-   The flag `-o` in the `mvn` commands indicates that the offline mode is enabled. If you have relevant maven dependencies and caches ready locally, you can keep the offline mode on to save time.
+   `mvn` 命令中的标志 `-o` 表示启用脱机模式。如果您在本地准备好了相关的 maven 依赖和缓存，可以保持脱机模式以节约时间。
 
    {{</ notice >}}
 
-5. After the pipeline is created, you can view its stages and steps on the graphical editing panel as well.
+5. 流水线创建之后，可以在图形编辑面板上查看流水线的阶段和步骤。
 
    ![pipeline-panel](/images/docs/devops-user-guide/examples/create-multi-cluster-pipeline/pipeline-panel.png)
 
-### Step 7: Run the pipeline and check the results
+### 步骤7：运行流水线并查看结果
 
-1. Click **Run** to run the pipeline. The pipeline will pause when it reaches the stage **deploy to staging** as resources have been deployed to the cluster for development. You need to manually click **Proceed** twice to deploy resources to the testing cluster `host` and the production cluster `shire`.
+1. 点击**运行**按钮运行流水线。当流水线运行达到**部署到暂存**的阶段，将会暂停，因为资源已经被部署到集群进行开发。您需要手动点击**继续**两次，以将资源部署到测试集群 `host` 和生产集群 `shire`。
 
    ![deploy-to-staging](/images/docs/devops-user-guide/examples/create-multi-cluster-pipeline/deploy-to-staging.png)
 
-2. After a while, you can see the pipeline status shown as **Success**.
+2. 一段时间过后，您可以看见流水线的状态展示为**成功**。
 
    ![pipeline-success](/images/docs/devops-user-guide/examples/create-multi-cluster-pipeline/pipeline-success.png)
 
-3. Check the pipeline running logs by clicking **Show Logs** in the upper-right corner. For each stage, you click it to inspect logs, which can be downloaded to your local machine for further analysis.
+3. 在右上角点击**查看日志**，查看流水线运行日志。对于每个阶段，您可以点击显示日志以检查日志，同时日志可以被下载到本地进行进一步的分析。
 
    ![pipeline-logs](/images/docs/devops-user-guide/examples/create-multi-cluster-pipeline/pipeline-logs.png)
 
-4. Once the pipeline runs successfully, click **Code Quality** to check the results through SonarQube.
+4. 当流水线运行成功时，点击**代码质量**，通过 SonarQube 检查结果。
 
    ![sonarqube-result](/images/docs/devops-user-guide/examples/create-multi-cluster-pipeline/sonarqube-result.png)
 
-5. Go to the **Projects** page and you can view the resources deployed in different projects across the clusters by selecting a specific cluster from the drop-down list.
+5. 转到**项目**页面，您可以通过从下拉列表中选择特定集群，来查看部署在各集群不同项目中的资源。
 
    ![host-pods](/images/docs/devops-user-guide/examples/create-multi-cluster-pipeline/host-pods.png)
 
