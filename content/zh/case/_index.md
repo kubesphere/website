@@ -50,7 +50,7 @@ section2:
       
     - icon: "images/case/uisee.png"
       content: "驭势科技UISEE是中国领先的自动驾驶公司，致力于为全行业、全场景提供AI驾驶服务，交付赋能出行和物流新生态的AI驾驶员。"
-      link: "uisee"
+      link: "uisee/"
 
 section3:
   title: 'KubeSphere 助力各行各业'
