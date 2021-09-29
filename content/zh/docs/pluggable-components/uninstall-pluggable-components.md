@@ -10,7 +10,7 @@ Weight: 6940
 
 {{< notice note >}}
 
-KubeSphere v3.1.x 卸载某些可插拔组件的方法与 KubeSphere v3.0.0 不相同。有有关 KubeSphere v3.0.0 卸载可插拔组件的详细方法，请参见[从 KubeSphere 上卸载可插拔组件](https://v3-0.docs.kubesphere.io/zh/docs/faq/installation/uninstall-pluggable-components/)。
+KubeSphere v3.1.x 卸载某些可插拔组件的方法与 KubeSphere v3.0.0 不相同。有关 KubeSphere v3.0.0 卸载可插拔组件的详细方法，请参见[从 KubeSphere 上卸载可插拔组件](https://v3-0.docs.kubesphere.io/zh/docs/faq/installation/uninstall-pluggable-components/)。
 
 
 {{</ notice >}}
@@ -224,7 +224,7 @@ kubectl -n kubesphere-system edit clusterconfiguration ks-installer
    
    {{< notice note >}}
    
-   卸载后，您将不能将无法为集群添加边缘节点。
+   卸载后，您将无法为集群添加边缘节点。
    
    {{</ notice >}}
 
