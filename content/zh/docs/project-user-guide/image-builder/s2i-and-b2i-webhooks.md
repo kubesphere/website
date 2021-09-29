@@ -1,7 +1,7 @@
 ---
 title: "配置 S2I 和 B2I Webhooks"
 keywords: 'KubeSphere, Kubernetes, S2I, Source-to-Image, B2I, Binary-to-Image, Webhook'
-description: '学习如何配置 S2I 和 B2I webhooks'
+description: '学习如何配置 S2I 和 B2I webhooks。'
 linkTitle: "配置 S2I 和 B2I  Webhooks"
 weight: 10650
 
@@ -45,7 +45,7 @@ KubeSphere 提供 Source-to-Image (S2I) 和 Binary-to-Image (B2I) 功能，以�
 
    ![s2i-nodeport](/images/docs/project-user-guide/image-builder/s2i-and-b2i-webhooks/s2i-nodeport.png)
 
-### 步骤 2: Configure an S2I webhook
+### 步骤 2：配置一个 S2I webhook
 
 1. 登出 KubeSphere 并以 `project-regular` 帐户登回。然后转到 `demo-project`。
 
@@ -53,11 +53,11 @@ KubeSphere 提供 Source-to-Image (S2I) 和 Binary-to-Image (B2I) 功能，以�
 
    ![click-s2i](/images/docs/project-user-guide/image-builder/s2i-and-b2i-webhooks/click-s2i.png)
 
-3. 您可以在**远程触发链接**中看到自动生成的链接。复制   `c/s2itrigger/v1alpha1/general/namespaces/demo-project/s2ibuilders/yangmaozhang-s2i-sample-latest-czf/`，因为这个链接将包含在 S2I webhook URL 中。
+3. 您可以在**远程触发链接**中看到自动生成的链接。复制   `/s2itrigger/v1alpha1/general/namespaces/demo-project/s2ibuilders/felixnoo-s2i-sample-latest-zhd/`，因为这个链接将包含在 S2I webhook URL 中。
 
    ![s2i-trigger-link](/images/docs/project-user-guide/image-builder/s2i-and-b2i-webhooks/s2i-trigger-link.png)
 
-4. 登录您的 GitHub 帐户，转到源代码仓库，它将会被用于 S2I 镜像构建。转到 **Settings** 下的    **Webhooks**，然后点击 **add webhook**。
+4. 登录您的 GitHub 帐户，转到用于 S2I 镜像构建器的源代码仓库。转到 **Settings** 下的    **Webhooks**，然后点击 **Add webhook**。
 
    ![click-add-webhook](/images/docs/project-user-guide/image-builder/s2i-and-b2i-webhooks/click-add-webhook.png)
 
@@ -67,11 +67,11 @@ KubeSphere 提供 Source-to-Image (S2I) 和 Binary-to-Image (B2I) 功能，以�
 
    {{< notice note >}}
 
-   `<IP>` 是您自己的 IP 地址，`<Service NodePort>` 是您在第一步中获得的 NodePort。这个链接是来自 S2I 的远程触发链接 `/s2itrigger/v1alpha1/general/namespaces/demo-project/s2ibuilders/felixnoo-s2i-sample-latest-zhd/`。确保您用的是您自己的 IP 地址、Service NodePort 和 S2I 远程触发链接。您可能还需要配置必要的端口转发规则，并根据 Kubernetes 群集的部署位置，在安全组中打开端口。
+   `<IP>` 是您自己的 IP 地址，`<Service NodePort>` 是您在第一步中获得的 NodePort。`/s2itrigger/v1alpha1/general/namespaces/demo-project/s2ibuilders/felixnoo-s2i-sample-latest-zhd/` 来自 S2I 的远程触发链接。确保您用的是您自己的 IP 地址、Service NodePort 和 S2I 远程触发链接。您可能还需要配置必要的端口转发规则，并根据 Kubernetes 群集的部署位置，在安全组中打开端口。
 
    {{</ notice >}}
 
-6. 添加 webhook 后，您可以单击 webhook 查看 **Recent Deliveries** 中的交付详细信息。如果有效负载 URL 有效，您可以看到绿色的勾号。
+6. 添加 webhook 后，您可以点击 webhook 查看 **Recent Deliveries** 中的交付详细信息。如果有效负载 URL 有效，您可以看到绿色的勾号。
 
    ![webhook-delivery](/images/docs/project-user-guide/image-builder/s2i-and-b2i-webhooks/webhook-delivery.png)
 
@@ -85,11 +85,11 @@ KubeSphere 提供 Source-to-Image (S2I) 和 Binary-to-Image (B2I) 功能，以�
 
 1. 暴露 S2I 触发服务。
 
-2. 在 B2I 图像生成器的详细信息页面中查看 **Remote Trigger Link**。
+2. 在 B2I 镜像构建器的详细信息页面中查看 **Remote Trigger Link**。
 
    ![b2i-trigger-link](/images/docs/project-user-guide/image-builder/s2i-and-b2i-webhooks/b2i-trigger-link.png)
 
-3. 在源代码存储库中添加有效负载 URL。B2I 有效负载 URL 格式与 S2I 有效负载 URL 格式相同。
+3. 在源代码仓库中添加有效负载 URL。B2I 有效负载 URL 格式与 S2I 有效负载 URL 格式相同。
 
    ![b2i-payload-url](/images/docs/project-user-guide/image-builder/s2i-and-b2i-webhooks/b2i-payload-url.png)
 
@@ -99,7 +99,7 @@ KubeSphere 提供 Source-to-Image (S2I) 和 Binary-to-Image (B2I) 功能，以�
 
    {{</ notice >}}
 
-4. 如果源代码仓库发生相关事件，B2I 图像生成器将自动触发。
+4. 如果源代码仓库发生相关事件，B2I 镜像构建器将自动触发。
 
    ![b2i-auto-build](/images/docs/project-user-guide/image-builder/s2i-and-b2i-webhooks/b2i-auto-build.png)
 
