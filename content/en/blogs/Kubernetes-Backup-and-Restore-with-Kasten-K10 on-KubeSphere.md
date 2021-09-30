@@ -31,7 +31,7 @@ Click the button  "Platform" in the upper left corner and then select "Access Co
 Enter "Kasten-workspace" and select "App Repositoties"; Add an application repository named Kasten.
 
 ![add repository](/images/blogs/en/kastenk10image/kastenk10-step5.png)
-Add the official Helm Repository of Kasten to KubeSphere. **Helm repository address**[2]：https://charts.kasten.io/
+Add the official Helm Repository of Kasten to KubeSphere. **Helm repository address**[2]：`https://charts.kasten.io/`
 
 ![official helm repository](/images/blogs/en/kastenk10image/kastenk10-step6.png)
 Once completed, the repository will find its status be "successful".
