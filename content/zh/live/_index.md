@@ -15,9 +15,9 @@ section2:
   notice:
     title: GitOps 应用简介
     tag: 预告
-    time: 2021 年 09 月 30 日晚 8 点
+    time: 2021 年 10 月 14 日晚 8 点
     base: 线上
-    url: ./yunda0930-live/
+    url: ./yunda1014-live/
 
   over:
     title: Kubernetes 控制器原理简介
