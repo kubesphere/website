@@ -26,20 +26,20 @@ To get started with all-in-one installation, you only need to prepare one host a
     </tr>
     <tr>
       <td><b>Ubuntu</b> <i>16.04</i>, <i>18.04</i></td>
-      <td>2 CPU cores, 4 GB memory, and 40 GB disk space</td>
+      <td>2 CPU cores, 2 GB memory, and 40 GB disk space</td>
     </tr>
     <tr>
       <td><b>Debian</b> <i>Buster</i>, <i>Stretch</i></td>
-      <td>2 CPU cores, 4 GB memory, and 40 GB disk space</td>
+      <td>2 CPU cores, 2 GB memory, and 40 GB disk space</td>
     </tr><tr>
     <td><b>CentOS</b> <i>7.x</i></td>
-      <td>2 CPU cores, 4 GB memory, and 40 GB disk space</td>
+      <td>2 CPU cores, 2 GB memory, and 40 GB disk space</td>
     </tr><tr>
     <td><b>Red Hat Enterprise Linux 7</b></td>
-      <td>2 CPU cores, 4 GB memory, and 40 GB disk space</td>
+      <td>2 CPU cores, 2 GB memory, and 40 GB disk space</td>
     </tr><tr>
     <td><b>SUSE Linux Enterprise Server 15/openSUSE Leap 15.2</b></td>
-      <td>2 CPU cores, 4 GB memory, and 40 GB disk space</td>
+      <td>2 CPU cores, 2 GB memory, and 40 GB disk space</td>
     </tr>
   </tbody>
 </table>
