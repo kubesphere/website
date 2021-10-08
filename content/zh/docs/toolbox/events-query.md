@@ -10,6 +10,12 @@ Kubernetes 事件系统用于深入了解集群内部发生的事件，KubeSpher
 
 本指南演示了如何进行多层级、细粒度的事件查询，以追踪服务组件的状态。
 
+## 视频演示
+
+<video controls="controls" style="width: 100% !important; height: auto !important;">
+  <source type="video/mp4" src="https://kubesphere-community.pek3b.qingstor.com/videos/KubeSphere-v3.1.x-tutorial-videos/zh/KS311_200P010C202109_%E6%97%A5%E5%BF%97%E4%B8%8E%E4%BA%8B%E4%BB%B6%E6%9F%A5%E8%AF%A2.mp4">
+</video>
+
 ## 准备工作
 
 需要启用 [KubeSphere 事件系统](../../pluggable-components/events/)。

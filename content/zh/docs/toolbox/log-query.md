@@ -10,6 +10,12 @@ weight: 15100
 
 本教程演示了如何使用日志查询功能，包括界面、搜索参数和详情页面。
 
+## 视频演示
+
+<video controls="controls" style="width: 100% !important; height: auto !important;">
+  <source type="video/mp4" src="https://kubesphere-community.pek3b.qingstor.com/videos/KubeSphere-v3.1.x-tutorial-videos/zh/KS311_200P010C202109_%E6%97%A5%E5%BF%97%E4%B8%8E%E4%BA%8B%E4%BB%B6%E6%9F%A5%E8%AF%A2.mp4">
+</video>
+
 ## 准备工作
 
 您需要启用 [KubeSphere 日志系统](../../pluggable-components/logging/)。
