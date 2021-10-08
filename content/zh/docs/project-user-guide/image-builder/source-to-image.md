@@ -12,6 +12,12 @@ Source-to-Image (S2I) 是一个工具箱和工作流，用于从源代码构建�
 
 ![构建流程](/images/docs/zh-cn/project-user-guide/image-builder/source-to-image/build-process.png)
 
+## 视频演示
+
+<video controls="controls" style="width: 100% !important; height: auto !important;">
+  <source type="video/mp4" src="https://kubesphere-community.pek3b.qingstor.com/videos/KubeSphere-v3.1.x-tutorial-videos/zh/KS311_200P008C202109_Source%20to%20Image.mp4">
+</video>
+
 ## 准备工作
 
 - 您需要启用 [KubeSphere DevOps 系统](../../../pluggable-components/devops/)，该系统已集成 S2I。
