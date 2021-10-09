@@ -14,7 +14,7 @@ After you enable KubeEdge, you can [add edge nodes to your cluster](../../instal
 
 ![kubeedge_arch](/images/docs/enable-pluggable-components/kubeedge/kubeedge_arch.png)
 
-## Enable KubeEdge before Installation
+## Enable KubeEdge Before Installation
 
 ### Installing on Linux
 
@@ -72,9 +72,9 @@ As you [install KubeSphere on Kubernetes](../../installing-on-kubernetes/introdu
     kubectl apply -f cluster-configuration.yaml
     ```
 
-## Enable KubeEdge after Installation
+## Enable KubeEdge After Installation
 
-1. Log in to the console as `admin`. Click **Platform** in the top-left corner and select **Cluster Management**.
+1. Log in to the console as `admin`. Click **Platform** in the upper-left corner and select **Cluster Management**.
    
 2. Click **CRDs** and enter `clusterconfiguration` in the search bar. Click the result to view its detail page.
 
@@ -91,7 +91,7 @@ A Custom Resource Definition (CRD) allows users to create a new type of resource
       enabled: true # Change "false" to "true".
     ```
 
-5. Set the value of `kubeedge.cloudCore.cloudHub.advertiseAddress` to the public IP address of your cluster or an IP address that can be accessed by edge nodes. After you finish, click **Update** in the bottom-right corner to save the configuration.
+5. Set the value of `kubeedge.cloudCore.cloudHub.advertiseAddress` to the public IP address of your cluster or an IP address that can be accessed by edge nodes. After you finish, click **OK** in the lower-right corner to save the configuration.
 
     {{< notice note >}}
 
@@ -107,10 +107,10 @@ The `kubeedge` section is not included in `cluster-configuration.yaml` if your c
 
     {{< notice note >}}
 
-You can find the web kubectl tool by clicking <img src="/images/docs/enable-pluggable-components/kubeedge/hammer.png" height="20px"> in the bottom-right corner of the console.
+You can find the web kubectl tool by clicking <img src="/images/docs/enable-pluggable-components/kubeedge/hammer.png" height="20px"> in the lower-right corner of the console.
     {{</ notice >}}
 
-## Enable KubeEdge after Upgrade
+## Enable KubeEdge After Upgrade
 
 If your KubeSphere v3.1.0 cluster is upgraded from KubeSphere v3.0.0, add the following content in `cluster-configuration.yaml` (i.e. the `clusterconfiguration` CRD) and enable `kubeedge` as shown [in the steps above](#enable-kubeedge-after-installation).
 
@@ -155,9 +155,7 @@ Do not add the `kubeedge` section in `cluster-configuration.yaml` before the upg
 
 {{< tab "Verify the component on the dashboard" >}}
 
-On the **Cluster Management** page, verify that the section **Edge Nodes** has appeared under **Node Management**.
-
-![edge-nodes](/images/docs/enable-pluggable-components/kubeedge/edge-nodes.png)
+On the **Cluster Management** page, verify that the **Edge Nodes** module has appeared under **Nodes**.
 
 {{</ tab >}}
 

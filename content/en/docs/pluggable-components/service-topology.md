@@ -8,7 +8,7 @@ weight: 6915
 
 You can enable Service Topology to integrate [Weave Scope](https://www.weave.works/oss/scope/), a visualization and monitoring tool for Docker and Kubernetes. Weave Scope uses established APIs to collect information to build a topology of your apps and containers. The Service topology displays in your project, providing you with visual representations of connections based on traffic.
 
-## Enable Service Topology before Installation
+## Enable Service Topology Before Installation
 
 ### Installing on Linux
 
@@ -65,9 +65,9 @@ As you [install KubeSphere on Kubernetes](../../installing-on-kubernetes/introdu
     ```
 
 
-## Enable Service Topology after Installation
+## Enable Service Topology After Installation
 
-1. Log in to the console as `admin`. Click **Platform** in the top-left corner and select **Cluster Management**.
+1. Log in to the console as `admin`. Click **Platform** in the upper-left corner and select **Cluster Management**.
 
 2. Click **CRDs** and enter `clusterconfiguration` in the search bar. Click the result to view its detail page.
 
@@ -77,7 +77,7 @@ A Custom Resource Definition (CRD) allows users to create a new type of resource
 
 3. In **Resource List**, click <img src="/images/docs/enable-pluggable-components/service-topology/three-dots.png" height="20px"> on the right of `ks-installer` and select **Edit YAML**.
 
-4. In this YAML file, navigate to `network` and change `network.topology.type` to `weave-scope`. After you finish, click **Update** in the bottom-right corner to save the configuration.
+4. In this YAML file, navigate to `network` and change `network.topology.type` to `weave-scope`. After you finish, click **OK** in the lower-right corner to save the configuration.
 
     ```yaml
     network:
@@ -93,7 +93,7 @@ A Custom Resource Definition (CRD) allows users to create a new type of resource
 
     {{< notice note >}}
 
-You can find the web kubectl tool by clicking <img src="/images/docs/enable-pluggable-components/service-topology/hammer.png" height="20px"> in the bottom-right corner of the console.
+You can find the web kubectl tool by clicking <img src="/images/docs/enable-pluggable-components/service-topology/hammer.png" height="20px"> in the lower-right corner of the console.
     {{</ notice >}}
 
 ## Verify the Installation of the Component
@@ -102,9 +102,7 @@ You can find the web kubectl tool by clicking <img src="/images/docs/enable-plug
 
 {{< tab "Verify the component on the dashboard" >}}
 
-Go to one of your project, navigate to **Services** under **Application Workloads**, and you can see a topology of your **Services** on the **Topology** tab.
-
-![topology](/images/docs/enable-pluggable-components/service-topology/topology.png)
+Go to one of your project, navigate to **Services** under **Application Workloads**, and you can see a topology of your Services on the **Service Topology** tab page.
 
 {{</ tab >}}
 

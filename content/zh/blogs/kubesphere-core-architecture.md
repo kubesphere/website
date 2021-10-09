@@ -144,7 +144,7 @@ subjects:
 
 ### CRD + controller
 
-自定义资源（Custom Resource） 是对 Kubernetes API 的扩展，可以通过动态注册的方式拓展 K8s API。用户可以使用 kubectl 来创建和访问其中的对象，就像操作内置资源一样。
+定制资源（Custom Resource） 是对 Kubernetes API 的扩展，可以通过动态注册的方式拓展 K8s API。用户可以使用 kubectl 来创建和访问其中的对象，就像操作内置资源一样。
 
 通过 CRD 对资源进行抽象，再通过 controller 监听资源变化维护资源状态， controller 的核心是 Reconcile，与他的意思一样，通过被动、定时触发的方式对资源状态进行维护，直至达到声明的状态。
 

@@ -18,7 +18,7 @@ Make sure the term you use is the correct one in UI, or it may confuse readers w
 
 | Source Text                                              | Correct Target Text                  | Wrong Target Text                |
 | -------------------------------------------------------- | ------------------------------------ | -------------------------------- |
-| Click **Components** on the **Cluster Management** page. | 在**集群管理**页面点击**服务组件**。 | 在**集群管理**页面点击**组件**。 |
+| Click **System Components** on the **Cluster Management** page. | 在**集群管理**页面点击**系统组件**。 | 在**集群管理**页面点击**系统组件**。 |
 
 ## Format
 

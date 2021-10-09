@@ -313,7 +313,7 @@ https://kubesphere.io             2020-08-28 01:25:54
 
 ## 如何自定义开启可插拔组件
 
-点击 `集群管理` - `自定义资源CRD` ，在过滤条件框输入 `ClusterConfiguration` ，如图下
+点击 `集群管理` - `CRD` ，在过滤条件框输入 `ClusterConfiguration` ，如图下
 ![5-1-自定义组件](/images/docs/huawei-ecs/huawei-crds-config.png)
 点击 `ClusterConfiguration` 详情，对 `ks-installer` 编辑保存退出即可，组件描述介绍：[文档说明](https://github.com/kubesphere/ks-installer/blob/master/deploy/cluster-configuration.yaml)。
 ![5-2-自定义组件](/images/docs/huawei-ecs/huawei-crds-edit-yaml.png)

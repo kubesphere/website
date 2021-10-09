@@ -258,7 +258,7 @@ https://kubesphere.io             20xx-xx-xx xx:xx:xx
 
 {{</ notice >}}
 
-登录至控制台后，您可以在**服务组件**中查看各个组件的状态。如果要使用相关服务，您可能需要等待部分组件启动并运行。您也可以使用 `kubectl get pod --all-namespaces` 来检查 KubeSphere 相关组件的运行状况。
+登录至控制台后，您可以在**系统组件**中查看各个组件的状态。如果要使用相关服务，您可能需要等待部分组件启动并运行。您也可以使用 `kubectl get pod --all-namespaces` 来检查 KubeSphere 相关组件的运行状况。
 
 ![service-components](/images/docs/zh-cn/quickstart/all-in-one-on-linux/service-components.png)
 
