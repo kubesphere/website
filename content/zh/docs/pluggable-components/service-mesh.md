@@ -68,10 +68,10 @@ KubeSphere 服务网格基于 [Istio](https://istio.io/)，将微服务治理和
 
 1. 以 `admin` 身份登录控制台。点击左上角的**平台管理**，选择**集群管理**。
    
-2. 点击**自定义资源 CRD**，在搜索栏中输入 `clusterconfiguration`。点击结果查看其详细页面。
+2. 点击 **CRD**，在搜索栏中输入 `clusterconfiguration`。点击结果查看其详细页面。
 
     {{< notice info >}}
-自定义资源定义 (CRD) 允许用户在不新增 API 服务器的情况下创建一种新的资源类型，用户可以像使用其他 Kubernetes 原生对象一样使用这些自定义资源。
+定制资源定义（CRD）允许用户在不新增 API 服务器的情况下创建一种新的资源类型，用户可以像使用其他 Kubernetes 原生对象一样使用这些定制资源。
     {{</ notice >}}
 
 3. 在**资源列表**中，点击 `ks-installer` 右侧的 <img src="/images/docs/zh-cn/enable-pluggable-components/kubesphere-service-mesh/three-dots.png" height="20px">，选择**编辑配置文件**。
@@ -100,9 +100,7 @@ KubeSphere 服务网格基于 [Istio](https://istio.io/)，将微服务治理和
 
 {{< tab "在仪表板中验证组件的安装" >}}
 
-进入**服务组件**，查看 **Istio** 的状态。您可能会看到如下图所示的界面：
-
-![istio](/images/docs/zh-cn/enable-pluggable-components/kubesphere-service-mesh/istio.png)
+进入**系统组件**，检查 **Istio** 标签页中的所有组件都处于**健康**状态。
 
 {{</ tab >}}
 

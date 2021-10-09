@@ -77,10 +77,10 @@ weight: 6900
 
 1. 以 `admin` 身份登录控制台。点击左上角的**平台管理**，选择**集群管理**。
    
-2. 点击**自定义资源 CRD**，在搜索栏中输入 `clusterconfiguration`。点击结果查看其详细页面。
+2. 点击 **CRD**，在搜索栏中输入 `clusterconfiguration`。点击结果查看其详细页面。
 
     {{< notice info >}}
-自定义资源定义 (CRD) 允许用户在不新增 API 服务器的情况下创建一种新的资源类型，用户可以像使用其他 Kubernetes 原生对象一样使用这些自定义资源。
+定制资源定义（CRD）允许用户在不新增 API 服务器的情况下创建一种新的资源类型，用户可以像使用其他 Kubernetes 原生对象一样使用这些定制资源。
     {{</ notice >}}
 
 3. 在**资源列表**中，点击 `ks-installer` 右侧的 <img src="/images/docs/enable-pluggable-components/network-policies/three-dots.png" height="20px">，选择**编辑配置文件**。
@@ -106,6 +106,4 @@ weight: 6900
 
 ## 验证组件的安装
 
-如果您能在**网络管理**中看到**网络策略**，如下图所示，说明安装成功，因为安装组件之后才会显示这部分。
-
-![网络策略](/images/docs/zh-cn/enable-pluggable-components/network-policies/network-policy.PNG)
+如果您能在**网络**中看到**网络策略**，说明安装成功，因为安装组件之后才会显示这部分。

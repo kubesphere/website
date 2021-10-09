@@ -78,7 +78,7 @@ When you install KubeSphere on Kubernetes, you need to use [ks-installer](https:
     kubectl apply -f cluster-configuration.yaml
     ```
 
-Whether you install KubeSphere on Linux or on Kubernetes, you can check the status of the components you have enabled in the web console of KubeSphere after installation. Go to **Components**, and you can see an image below:
+Whether you install KubeSphere on Linux or on Kubernetes, you can check the status of the components you have enabled in the web console of KubeSphere after installation. Go to **System Components**, and you can see an image below:
 
 ![component-status](/images/docs/quickstart/enable-pluggable-components/component-status.png)
 
@@ -140,7 +140,7 @@ You can find the web kubectl tool by clicking the hammer icon in the bottom-righ
     #####################################################
     ```
 
-7. In **Components**, you can see the status of different components.
+7. In **System Components**, you can see the status of different components.
 
    ![component-status-page](/images/docs/quickstart/enable-pluggable-components/component-status-page.png) 
 

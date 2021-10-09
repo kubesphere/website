@@ -78,7 +78,7 @@ WordPress（使用 PHP 语言编写）是免费、开源的内容管理系统，
 
     ![basic-info](/images/docs/zh-cn/quickstart/wordpress-deployment/basic-info.png)
 
-3. 在**服务组件**中，点击**添加服务**以在应用中设置组件。
+3. 在**系统组件**中，点击**添加服务**以在应用中设置组件。
 
     ![add-service](/images/docs/zh-cn/quickstart/wordpress-deployment/add-service.png)
 

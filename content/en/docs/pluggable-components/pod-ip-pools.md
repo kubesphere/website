@@ -8,7 +8,7 @@ weight: 6920
 
 A Pod IP Pool is used to manage the Pod network address space, and the address space between each Pod IP Pool cannot overlap. When you create a workload, you can select a specific Pod IP Pool, so that created Pods will be assigned IP addresses from this Pod IP Pool.
 
-## Enable Pod IP Pools before Installation
+## Enable Pod IP Pools Before Installation
 
 ### Installing on Linux
 
@@ -65,9 +65,9 @@ As you [install KubeSphere on Kubernetes](../../installing-on-kubernetes/introdu
     ```
 
 
-## Enable Pod IP Pools after Installation
+## Enable Pod IP Pools After Installation
 
-1. Log in to the console as `admin`. Click **Platform** in the top-left corner and select **Cluster Management**.
+1. Log in to the console as `admin`. Click **Platform** in the upper-left corner and select **Cluster Management**.
 
 2. Click **CRDs** and enter `clusterconfiguration` in the search bar. Click the result to view its detail page.
 
@@ -77,7 +77,7 @@ A Custom Resource Definition (CRD) allows users to create a new type of resource
 
 3. In **Resource List**, click <img src="/images/docs/enable-pluggable-components/pod-ip-pools/three-dots.png" height="20px"> on the right of `ks-installer` and select **Edit YAML**.
 
-4. In this YAML file, navigate to `network` and change `network.ippool.type` to `calico`. After you finish, click **Update** in the bottom-right corner to save the configuration.
+4. In this YAML file, navigate to `network` and change `network.ippool.type` to `calico`. After you finish, click **OK** in the lower-right corner to save the configuration.
 
     ```yaml
     network:
@@ -93,14 +93,12 @@ A Custom Resource Definition (CRD) allows users to create a new type of resource
 
     {{< notice note >}}
 
-You can find the web kubectl tool by clicking <img src="/images/docs/enable-pluggable-components/pod-ip-pools/hammer.png" height="20px"> in the bottom-right corner of the console.
+You can find the web kubectl tool by clicking <img src="/images/docs/enable-pluggable-components/pod-ip-pools/hammer.png" height="20px"> in the lower-right corner of the console.
     {{</ notice >}}
 
 ## Verify the Installation of the Component
 
-On the **Cluster Management** page, verify that you can see the section **Pod IP Pools** under **Network**.
-
-![pod-ip-pool](/images/docs/enable-pluggable-components/pod-ip-pools/pod-ip-pool.png)
+On the **Cluster Management** page, verify that you can see the **Pod IP Pools** module under **Network**.
 
 
 

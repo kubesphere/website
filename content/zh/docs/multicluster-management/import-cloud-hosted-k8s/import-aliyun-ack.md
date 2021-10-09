@@ -31,7 +31,7 @@ weight: 5310
 
 2. 以 `admin` 身份登录 ACK 集群的 KubeSphere 控制台。点击左上角的**平台管理**，选择**集群管理**。
 
-3. 访问**自定义资源 CRD**，在搜索栏输入 `ClusterConfiguration`，然后按下键盘上的**回车键**。点击 **ClusterConfiguration** 访问其详情页。
+3. 访问 **CRD**，在搜索栏输入 `ClusterConfiguration`，然后按下键盘上的**回车键**。点击 **ClusterConfiguration** 访问其详情页。
 
    ![search-config](/images/docs/zh-cn/multicluster-management/import-cloud-hosted-k8s/import-ack/search-config.png)
 

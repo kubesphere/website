@@ -47,7 +47,7 @@ weight: 2200
 
 4. 确保在安全组中打开了端口 `30880`，并通过 NodePort `(IP:30880)` 使用默认帐户和密码 `(admin/P@88w0rd)` 访问 Web 控制台。
 
-5. 登录控制台后，您可以在**服务组件**中检查不同组件的状态。如果要使用相关服务，可能需要等待某些组件启动并运行。
+5. 登录控制台后，您可以在**系统组件**中检查不同组件的状态。如果要使用相关服务，可能需要等待某些组件启动并运行。
 
     ![kubesphere-components](/images/docs/zh-cn/quickstart/minimal-kubesphere-on-k8s/kubesphere-components.png)
 

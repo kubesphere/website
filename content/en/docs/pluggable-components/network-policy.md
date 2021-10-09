@@ -10,14 +10,14 @@ Starting from v3.0.0, users can configure network policies of native Kubernetes 
 
 {{< notice note >}}
 
-- Please make sure that the CNI network plugin used by the cluster supports Network Policies before you enable the feature. There are a number of CNI network plugins that support Network Policies, including Calico, Cilium, Kube-router, Romana and Weave Net.
+- Please make sure that the CNI network plugin used by the cluster supports Network Policies before you enable the feature. There are a number of CNI network plugins that support Network Policies, including Calico, Cilium, Kube-router, Romana, and Weave Net.
 - It is recommended that you use [Calico](https://www.projectcalico.org/) as the CNI plugin before you enable Network Policies.
 
 {{</ notice >}}
 
 For more information, see [Network Policies](https://kubernetes.io/docs/concepts/services-networking/network-policies/).
 
-## Enable the Network Policy before Installation
+## Enable the Network Policy Before Installation
 
 ### Installing on Linux
 
@@ -73,9 +73,9 @@ As you [install KubeSphere on Kubernetes](../../installing-on-kubernetes/introdu
     kubectl apply -f cluster-configuration.yaml
     ```
 
-## Enable the Network Policy after Installation
+## Enable the Network Policy After Installation
 
-1. Log in to the console as `admin`. Click **Platform** in the top-left corner and select **Cluster Management**.
+1. Log in to the console as `admin`. Click **Platform** in the upper-left corner and select **Cluster Management**.
    
 2. Click **CRDs** and enter `clusterconfiguration` in the search bar. Click the result to view its detail page.
 
@@ -85,7 +85,7 @@ A Custom Resource Definition (CRD) allows users to create a new type of resource
 
 3. In **Resource List**, click <img src="/images/docs/enable-pluggable-components/network-policies/three-dots.png" height="20px"> on the right of `ks-installer` and select **Edit YAML**.
 
-4. In this YAML file, navigate to `network.networkpolicy` and change `false` to `true` for `enabled`. After you finish, click **Update** in the bottom-right corner to save the configuration.
+4. In this YAML file, navigate to `network.networkpolicy` and change `false` to `true` for `enabled`. After you finish, click **OK** in the lower-right corner to save the configuration.
 
     ```yaml
     network:
@@ -101,11 +101,9 @@ A Custom Resource Definition (CRD) allows users to create a new type of resource
 
     {{< notice note >}}
 
-You can find the web kubectl tool by clicking <img src="/images/docs/enable-pluggable-components/network-policies/hammer.png" height="20px"> in the bottom-right corner of the console.
+You can find the web kubectl tool by clicking <img src="/images/docs/enable-pluggable-components/network-policies/hammer.png" height="20px"> in the lower-right corner of the console.
     {{</ notice >}}
 
 ## Verify the Installation of the Component
 
-If you can see **Network Policies** in **Network** as the image below, it means the installation succeeds as this part won't display until you install the component.
-
-![networkpolicy](/images/docs/enable-pluggable-components/network-policies/networkpolicy.png)
+If you can see the **Network Policies** module in **Network**, it means the installation is successful as this part won't display until you install the component.

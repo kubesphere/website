@@ -70,10 +70,10 @@ weight: 6920
 
 1. 使用 `admin` 用户登录控制台。点击左上角的**平台管理**，然后选择**集群管理**。
 
-2. 点击**自定义资源 CRD**，然后在搜索栏中输入 `clusterconfiguration`。点击搜索结果查看其详情页。
+2. 点击 **CRD**，然后在搜索栏中输入 `clusterconfiguration`。点击搜索结果查看其详情页。
 
     {{< notice info >}}
-自定义资源定义 (CRD) 允许用户在不新增 API 服务器的情况下创建一种新的资源类型，用户可以像使用其他 Kubernetes 原生对象一样使用这些自定义资源。
+定制资源定义（CRD）允许用户在不新增 API 服务器的情况下创建一种新的资源类型，用户可以像使用其他 Kubernetes 原生对象一样使用这些定制资源。
     {{</ notice >}}
 
 3. 在**资源列表**中，点击 `ks-installer` 右侧的 <img src="/images/docs/zh-cn/enable-pluggable-components/pod-ip-pools/three-dots.png" height="20px">，然后选择**编辑配置文件**。
@@ -99,6 +99,4 @@ weight: 6920
 
 ## 验证组件的安装
 
-在**集群管理**页面，您可以在**网络管理**下看到**容器组 IP 池**。
-
-![pod-ip-pool](/images/docs/zh-cn/enable-pluggable-components/pod-ip-pools/pod-ip-pool.png)
+在**集群管理**页面，您可以在**网络**下看到**容器组 IP 池**。
