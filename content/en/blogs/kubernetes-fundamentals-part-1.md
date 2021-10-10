@@ -31,6 +31,8 @@ Some concepts to understand:
 Containers solve a significant issue in application development. Programmers work in a development environment when they write code. When they're ready to put the code into production, this is where problems arise. The code that worked on their machine does not work in production. Differences in operating systems, dependencies, and libraries are only a few of the reasons for this.
 Containers solved this fundamental problem of portability by separating code from the infrastructure it operates on. Developers may choose to package their application into a small container image that contains all of the binaries and libraries it needs to run.
 Any computer with a containerization platform such as Docker or containerd can run that container in production.
+
+## Pods
 ![68747470733a2f2f7170682e66732e71756f726163646e2e6e65742f6d61696e2d71696d672d3637363130313064303137363262633930353438363038616564353966313133](https://cdn.discordapp.com/attachments/854369708812140564/892086736564396092/6.png)
 
 A Pod (as in a pod of whales or a pod of peas) is a group of one or more containers that share storage and network resources and operate according to a set of rules. A Pod's content is always co-located, scheduled, and executed in the same environment. A Pod is a "logical host" for an application that incorporates one or more tightly coupled application containers.
