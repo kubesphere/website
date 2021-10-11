@@ -1,6 +1,6 @@
 ---
-title: "使用 Keepalived 和 HAproxy 创建高可用集群"
-keywords: 'KubeSphere, Kubernetes, HA, 高可用, 安装, 配置, Keepalived, HAproxy'
+title: "使用 Keepalived 和 HAproxy 创建高可用 Kubernetes 集群"
+keywords: 'Kubernetes, KubeSphere, HA, 高可用, 安装, 配置, Keepalived, HAproxy'
 description: '如何使用 Keepalived 和 HAproxy 配置高可用 Kubernetes 集群。'
 linkTitle: "使用 Keepalived 和 HAproxy 创建高可用集群"
 weight: 3220
