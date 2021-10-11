@@ -11,4 +11,4 @@ icon: "/images/docs/docs.svg"
 
 ---
 
-本章演示集群管理员如何将 KubeSphere 升级到 v3.1.1。
+本章演示集群管理员如何将 KubeSphere 升级到 v3.2.0。
