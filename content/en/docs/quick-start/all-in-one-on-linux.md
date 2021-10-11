@@ -259,7 +259,7 @@ You may need to configure port forwarding rules and open the port in your securi
 
 {{</ notice >}}
 
-After logging in to the console, you can check the status of different components in **Components**. You may need to wait for some components to be up and running if you want to use related services. You can also use `kubectl get pod --all-namespaces` to inspect the running status of KubeSphere workloads.
+After logging in to the console, you can check the status of different components in **System Components**. You may need to wait for some components to be up and running if you want to use related services. You can also use `kubectl get pod --all-namespaces` to inspect the running status of KubeSphere workloads.
 
 ![kubesphere-components](/images/docs/quickstart/all-in-one-installation/kubesphere-components.png)
 

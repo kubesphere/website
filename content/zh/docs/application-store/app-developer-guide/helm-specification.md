@@ -20,7 +20,7 @@ chartname/
   values.yaml         # 该 Chart 的默认配置值。
   values.schema.json  # （可选）向 values.yaml 文件添加结构的 JSON Schema。
   charts/             # 一个目录，包含该 Chart 所依赖的任意 Chart。
-  crds/               # 自定义资源定义。
+  crds/               # 定制资源定义。
   templates/          # 模板的目录，若提供相应值便可以生成有效的 Kubernetes 配置文件。
   templates/NOTES.txt # （可选）包含使用说明的纯文本文件。
 ```

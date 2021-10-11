@@ -10,7 +10,7 @@ weight: 3620
 
 Marking a node as unschedulable prevents the scheduler from placing new Pods onto that node while not affecting existing Pods on the node. This is useful as a preparatory step before a node reboot or other maintenance.
 
-Log in to the console as `admin` and go to the **Cluster Management** page. To mark a node unschedulable, choose **Cluster Nodes** under **Node Management** from the left menu, find a node you want to remove from the cluster, and click **Cordon**. Alternatively, you can run the command `kubectl cordon $NODENAME` directly. See [Kubernetes Nodes](https://kubernetes.io/docs/concepts/architecture/nodes/) for more details.
+Log in to the console as `admin` and go to the **Cluster Management** page. To mark a node unschedulable, choose **Cluster Nodes** under **Nodes** from the left menu, find a node you want to remove from the cluster, and click **Cordon**. Alternatively, you can run the command `kubectl cordon $NODENAME` directly. See [Kubernetes Nodes](https://kubernetes.io/docs/concepts/architecture/nodes/) for more details.
 
 ![cordon](/images/docs/installing-on-linux/add-and-delete-nodes/delete-nodes/cordon.png)
 

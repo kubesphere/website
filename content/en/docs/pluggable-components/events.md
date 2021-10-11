@@ -6,11 +6,11 @@ linkTitle: "KubeSphere Events"
 weight: 6500
 ---
 
-KubeSphere events allow users to keep track of what is happening inside a cluster, such as node scheduling status and image pulling result. They will be accurately recorded with the specific reason, status and message displayed in the web console. To query events, users can quickly launch the web Toolkit and enter related information in the search bar with different filters (e.g keyword and project) available. Events can also be archived to third-party tools, such as Elasticsearch, Kafka or Fluentd.
+KubeSphere events allow users to keep track of what is happening inside a cluster, such as node scheduling status and image pulling result. They will be accurately recorded with the specific reason, status and message displayed in the web console. To query events, users can quickly launch the web Toolkit and enter related information in the search bar with different filters (e.g keyword and project) available. Events can also be archived to third-party tools, such as Elasticsearch, Kafka, or Fluentd.
 
 For more information, see [Event Query](../../toolbox/events-query/).
 
-## Enable Events before Installation
+## Enable Events Before Installation
 
 ### Installing on Linux
 
@@ -98,9 +98,9 @@ By default, ks-installer will install Elasticsearch internally if Events is enab
     kubectl apply -f cluster-configuration.yaml
     ```
 
-## Enable Events after Installation
+## Enable Events After Installation
 
-1. Log in to the console as `admin`. Click **Platform** in the top-left corner and select **Cluster Management**.
+1. Log in to the console as `admin`. Click **Platform** in the upper-left corner and select **Cluster Management**.
    
 2. Click **CRDs** and enter `clusterconfiguration` in the search bar. Click the result to view its detail page.
 
@@ -112,7 +112,7 @@ A Custom Resource Definition (CRD) allows users to create a new type of resource
 
 3. In **Resource List**, click <img src="/images/docs/enable-pluggable-components/kubesphere-events/three-dots.png" height="20px"> on the right of `ks-installer` and select **Edit YAML**.
 
-4. In this YAML file, navigate to `events` and change `false` to `true` for `enabled`. After you finish, click **Update** in the bottom-right corner to save the configuration.
+4. In this YAML file, navigate to `events` and change `false` to `true` for `enabled`. After you finish, click **OK** in the lower-right corner to save the configuration.
 
     ```yaml
     events:
@@ -144,7 +144,7 @@ By default, Elasticsearch will be installed internally if Events is enabled. For
 
     {{< notice note >}}
 
-You can find the web kubectl tool by clicking <img src="/images/docs/enable-pluggable-components/kubesphere-events/hammer.png" height="20px"> in the bottom-right corner of the console.
+You can find the web kubectl tool by clicking <img src="/images/docs/enable-pluggable-components/kubesphere-events/hammer.png" height="20px"> in the lower-right corner of the console.
 
 {{</ notice >}}
 
@@ -154,9 +154,7 @@ You can find the web kubectl tool by clicking <img src="/images/docs/enable-plug
 
 {{< tab "Verify the component on the dashboard" >}}
 
-Verify that you can use the **Event Search** function from the **Toolbox** in the bottom-right corner.
-
-![event-search](/images/docs/enable-pluggable-components/kubesphere-events/event-search.png)
+Verify that you can use the **Event Search** function from the **Toolbox** in the lower-right corner.
 
 {{</ tab >}}
 

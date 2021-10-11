@@ -111,6 +111,6 @@ Before you use Istio-based features of KubeSphere, you have to delete `applicati
 
 {{</ notice >}}
 
-After your component is installed, go to the **Cluster Management** page, and you will see the interface below. You can check the status of your component in **Components**.
+After your component is installed, go to the **Cluster Management** page, and you will see the interface below. You can check the status of your component in **System Components**.
 
   ![Full View of KubeSphere Console](/images/docs/huawei-cce/en/view-ks-console-full.png)

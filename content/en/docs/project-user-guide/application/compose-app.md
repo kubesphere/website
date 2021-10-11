@@ -21,7 +21,7 @@ This tutorial demonstrates how to create a microservices-based app Bookinfo, whi
 
 2. Set a name for the app (for example, `bookinfo`) and click **Next**.
 
-3. On the **Components** page, you need to create microservices that compose the app. Click **Add Service** and select **Stateless Service**.
+3. On the **System Components** page, you need to create microservices that compose the app. Click **Add Service** and select **Stateless Service**.
 
 4. Set a name for the Service (e.g `productpage`) and click **Next**.
 

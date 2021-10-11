@@ -72,7 +72,7 @@ Follow the same steps above to create a WordPress Secret `wordpress-secret` with
 
    ![basic-info1](/images/docs/quickstart/wordpress-deployment/basic-info1.png)
 
-3. In **Components**, click **Add Service** to set a component in the app.
+3. In **System Components**, click **Add Service** to set a component in the app.
 
    ![add-service1](/images/docs/quickstart/wordpress-deployment/add-service1.png)
 

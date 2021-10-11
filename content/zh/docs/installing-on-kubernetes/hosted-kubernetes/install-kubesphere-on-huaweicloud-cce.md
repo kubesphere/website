@@ -86,7 +86,7 @@ kubectl apply -f https://github.com/kubesphere/ks-installer/releases/download/v3
 
 通过 `kubesphere-system` 命名空间下的 Pod 运行状态确认 KubeSphere 基础组件都已进入运行状态后，我们需要为 KubeSphere 控制台开启外网访问。
 
-进入**资源管理** > **网络管理**，在右侧面板中选择 `ks-console` 更改网络访问方式，建议选用 `负载均衡（LoadBalancer` 访问方式（需绑定弹性公网 IP），配置完成后如下图：
+进入**资源管理** > **网络**，在右侧面板中选择 `ks-console` 更改网络访问方式，建议选用 `负载均衡（LoadBalancer` 访问方式（需绑定弹性公网 IP），配置完成后如下图：
 
 ![开启 KubeSphere 外网访问](/images/docs/huawei-cce/zh/expose-ks-console.png)
 
@@ -104,7 +104,7 @@ kubectl apply -f https://github.com/kubesphere/ks-installer/releases/download/v3
 
 {{< notice warning >}}
 
-在开启 Istio 组件之前，由于自定义资源定义 (CRD) 冲突的问题，需要先删除华为 CCE 自带的 `applications.app.k8s.io` ，最直接的方式是通过 kubectl 工具来完成：
+在开启 Istio 组件之前，由于定制资源定义（CRD）冲突的问题，需要先删除华为 CCE 自带的 `applications.app.k8s.io` ，最直接的方式是通过 kubectl 工具来完成：
 
 ```bash
 kubectl delete crd applications.app.k8s.io

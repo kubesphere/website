@@ -49,7 +49,7 @@ KubeSphere 监控集群中各种服务组件的健康状态。当关键组件发
 1. 在**集群状态监控**页面，点击**组件状态**区域的组件以查看其状态。
 
     ![component-monitoring](/images/docs/zh-cn/cluster-administration/cluster-status-monitoring/component-monitoring.png)
-2. **服务组件**页面列出了所有的组件。标记为绿色的组件是正常运行的组件，标记为橙色的组件存在问题，需要特别关注。
+2. **系统组件**页面列出了所有的组件。标记为绿色的组件是正常运行的组件，标记为橙色的组件存在问题，需要特别关注。
 
     ![Service Components Status](/images/docs/zh-cn/cluster-administration/cluster-status-monitoring/service-components-status.png)
 {{< notice tip >}}
