@@ -1,6 +1,6 @@
 ---
 title: "概述"
-keywords: "Kubernetes, 升级, KubeSphere, v3.1.1, 升级"
+keywords: "Kubernetes, 升级, KubeSphere, v3.2.0, 升级"
 description: "了解升级之前需要注意的事项，例如版本和升级工具。"
 linkTitle: "概述"
 weight: 7100
@@ -8,20 +8,18 @@ weight: 7100
 
 ## 确定您的升级方案
 
-KubeSphere v3.1.1 与 Kubernetes 1.17.x、1.18.x、1.19.x 以及 1.20.x 兼容：
+KubeSphere v3.2.0 与 Kubernetes 1.19.x、1.20.x、1.21.5 以及 1.22.1 兼容：
 
-- 在您升级集群至 KubeSphere v3.1.1 之前，您的 KubeSphere 集群版本必须为 v3.0.0。
+- 在您升级集群至 KubeSphere v3.2.0 之前，您的 KubeSphere 集群版本必须为 v3.1.x。
 
-- 如果您的现有 KubeSphere v3.0.0 集群安装在 Kubernetes 1.17.x+ 上，您可选择只将 KubeSphere 升级到 v3.1.1 或者同时升级 Kubernetes（到更高版本）和 KubeSphere（到 v3.1.1）。
-
-- 如果您的现有 KubeSphere v3.0.0 集群安装在 Kubernetes 1.16.x 或更早版本上，您必须同时升级 Kubernetes（到 1.17.x+）和 KubeSphere（到 v3.1.1）。
+- 如果您的现有 KubeSphere v3.1.x 集群安装在 Kubernetes 1.19.x+ 上，您可选择只将 KubeSphere 升级到 v3.2.0 或者同时升级 Kubernetes（到更高版本）和 KubeSphere（到 v3.2.0）。
 
 ## 升级前
 
 {{< notice warning >}}
 
 - 您应该先在测试环境中实施升级模拟。在测试环境中成功升级并且所有应用程序都正常运行之后，再在生产环境中升级您的集群。
-- 在升级过程中，应用程序可能会短暂中断（尤其是单副本 Pod），请安排合理的升级时间。
+- 在升级过程中，应用程序可能会短暂中断（尤其是单副本容器组），请安排合理的升级时间。
 - 建议在生产环境中升级之前备份 etcd 和有状态应用程序。您可以使用 [Velero](https://velero.io/) 来备份和迁移 Kubernetes 资源以及持久化存储卷。
 
 {{</ notice >}}
