@@ -99,8 +99,6 @@ Default settings are OK for other detailed configurations. You can also set them
 
 After you set LoadBalancer for KubeSphere console, you can visit it via the given address. Go to KubeSphere login page and use the default account (username `admin` and password `P@88w0rd`) to log in.
 
-  ![Log in to KubeSphere Console](/images/docs/huawei-cce/en/login-ks-console.png)
-
 ## Enable Pluggable Components (Optional)
 
 The example above demonstrates the process of a default minimal installation. To enable other components in KubeSphere, see [Enable Pluggable Components](../../../pluggable-components/) for more details.
@@ -112,5 +110,3 @@ Before you use Istio-based features of KubeSphere, you have to delete `applicati
 {{</ notice >}}
 
 After your component is installed, go to the **Cluster Management** page, and you will see the interface below. You can check the status of your component in **System Components**.
-
-  ![Full View of KubeSphere Console](/images/docs/huawei-cce/en/view-ks-console-full.png)

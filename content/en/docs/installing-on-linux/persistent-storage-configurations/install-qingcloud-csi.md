@@ -261,15 +261,11 @@ You can verify that QingCloud CSI has been successfully installed either from th
 
 ### KubeSphere console
 
-1. Log in to the web console with the default account and password (`admin/P@88w0rd`) at `<NodeIP>:30880`. Click **Platform** in the top-left corner and select **Cluster Management**.
+1. Log in to the web console with the default account and password (`admin/P@88w0rd`) at `<NodeIP>:30880`. Click **Platform** in the upper-left corner and select **Cluster Management**.
 
 2. Go to **Pods** in **Application Workloads** and select `kube-system` from the project drop-down list. You can see that the Pods of `csi-qingcloud` are up and running.
 
-   ![qingcloud-csi-pod](/images/docs/installing-on-linux/persistent-storage-configurations/qingcloud-csi/qingcloud-csi-pod.png)
-
 3. Go to **Storage Classes** under **Storage**, and you can see available storage classes in your cluster.
-
-   ![qingcloud-csi-storage-class](/images/docs/installing-on-linux/persistent-storage-configurations/qingcloud-csi/qingcloud-csi-storage-class.png)
    
    {{< notice note >}}
    

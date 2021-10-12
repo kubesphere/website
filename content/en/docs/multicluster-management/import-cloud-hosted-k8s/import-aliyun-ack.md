@@ -33,11 +33,7 @@ This tutorial demonstrates how to import an Alibaba Cloud Kubernetes (ACK) clust
 
 3. Go to **CRDs**, enter `ClusterConfiguration` in the search bar, and then press **Enter** on your keyboard. Click **ClusterConfiguration** to go to its detail page.
 
-   ![search-config](/images/docs/multicluster-management/import-cloud-hosted-k8s/import-ack/search-config.png)
-
 4. Click <img src="/images/docs/multicluster-management/import-cloud-hosted-k8s/import-ack/three-dots.png" height="20px"> on the right and then select **Edit YAML** to edit `ks-installer`. 
-
-   ![click-edit](/images/docs/multicluster-management/import-cloud-hosted-k8s/import-ack/click-edit.png)
 
 5. In the YAML file of `ks-installer`, change the value of `jwtSecret` to the corresponding value shown above and set the value of `clusterRole` to `member`. Click **Update** to save your changes.
 
@@ -67,16 +63,8 @@ Log in to the web console of Alibaba Cloud. Go to **Clusters** under **Container
 
 1. Log in to the KubeSphere console on your Host Cluster as `admin`. Click **Platform** in the upper-left corner and then select **Cluster Management**. On the **Cluster Management** page, click **Add Cluster**.
 
-   ![click-add-cluster](/images/docs/multicluster-management/import-cloud-hosted-k8s/import-ack/click-add-cluster.png)
-
 2. Enter the basic information based on your needs and click **Next**.
-
-   ![input-info](/images/docs/multicluster-management/import-cloud-hosted-k8s/import-ack/input-info.png)
 
 3. In **Connection Method**, select **Direct Connection**. Fill in the kubeconfig file of the ACK Member Cluster and then click **Create**.
 
-   ![select-method](/images/docs/multicluster-management/import-cloud-hosted-k8s/import-ack/select-method.png)
-
 4. Wait for cluster initialization to finish.
-
-   ![ack-cluster-imported](/images/docs/multicluster-management/import-cloud-hosted-k8s/import-ack/ack-cluster-imported.png)

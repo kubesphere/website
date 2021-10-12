@@ -174,10 +174,6 @@ chmod +x kk
 
 5. Access the KubeSphere console at `<NodeIP>:30880` with the default account and password (`admin/P@88W0rd`).
 
-   ![cluster-management](/images/docs/installing-on-linux/on-premises/cluster-management.png)
-
-   ![service-components](/images/docs/installing-on-linux/on-premises/service-components.png)
-
 {{< notice note >}}
 
 You can enable pluggable components of KubeSphere after the installation while some features may not be compatible as KubeSphere on K3s is only experimental currently.

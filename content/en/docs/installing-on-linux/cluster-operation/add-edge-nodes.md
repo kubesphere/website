@@ -90,7 +90,7 @@ To make sure edge nodes can successfully talk to your cluster, you must forward 
 
 ## Add an Edge Node
 
-1. Log in to the console as `admin` and click **Platform** in the top-left corner.
+1. Log in to the console as `admin` and click **Platform** in the upper-left corner.
 
 2. Select **Cluster Management** and navigate to **Edge Nodes** under **Nodes**.
 
@@ -109,7 +109,7 @@ To make sure edge nodes can successfully talk to your cluster, you must forward 
 
    {{</ notice >}} 
 
-4. Copy the command automatically created under **Add Command** and run it on your edge node.
+4. Copy the command automatically created under **Edge Node Configuration Command** and run it on your edge node.
 
    {{< notice note >}}
 
@@ -117,11 +117,7 @@ To make sure edge nodes can successfully talk to your cluster, you must forward 
 
    {{</ notice >}} 
 
-   ![edge-node-dialog](/images/docs/installing-on-linux/add-and-delete-nodes/add-edge-nodes/edge-node-dialog.png)
-
 5. Close the dialog, refresh the page, and the edge node will appear in the list.
-
-   ![edge-node-added](/images/docs/installing-on-linux/add-and-delete-nodes/add-edge-nodes/edge-node-added.png)
 
    {{< notice note >}}
 

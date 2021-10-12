@@ -284,11 +284,9 @@ glusterfs (default)   kubernetes.io/glusterfs   Delete          Immediate       
 
 ### KubeSphere console
 
-1. Log in to the web console with the default account and password (`admin/P@88w0rd`) at `<NodeIP>:30880`. Click **Platform** in the top-left corner and select **Cluster Management**.
+1. Log in to the web console with the default account and password (`admin/P@88w0rd`) at `<NodeIP>:30880`. Click **Platform** in the upper-left corner and select **Cluster Management**.
 
 3. Go to **Volumes** under **Storage**, and you can see PVCs in use.
-
-   ![volumes-in-use](/images/docs/installing-on-linux/persistent-storage-configurations/glusterfs-client/volumes-in-use.png)
    
    {{< notice note >}}
    
@@ -296,6 +294,4 @@ glusterfs (default)   kubernetes.io/glusterfs   Delete          Immediate       
    
    {{</ notice >}} 
    
-3. On the **Storage Classes** page, you can see the storage class available in your cluster.
-
-   ![storage-class-available](/images/docs/installing-on-linux/persistent-storage-configurations/glusterfs-client/storage-class-available.png)
+4. On the **Storage Classes** page, you can see the storage class available in your cluster.
