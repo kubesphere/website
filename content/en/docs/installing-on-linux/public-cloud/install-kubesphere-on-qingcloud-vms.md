@@ -327,8 +327,6 @@ Both listeners show that the status is **Active**, meaning nodes are up and runn
 
 In the web console of KubeSphere, you can also see that all the nodes are functioning well.
 
-![cluster-node](/images/docs/installing-on-linux/installing-on-public-cloud/deploy-kubesphere-on-qingcloud-instances/cluster-node.png)
-
 To verify if the cluster is highly available, you can turn off an instance on purpose. For example, the above console is accessed through the address `IP: 30880` (the EIP address here is the one bound to the external load balancer). If the cluster is highly available, the console will still work well even if you shut down a master node.
 
 ## See Also

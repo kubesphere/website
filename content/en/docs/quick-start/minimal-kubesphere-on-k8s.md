@@ -54,8 +54,6 @@ After you make sure your machine meets the conditions, perform the following ste
 
 5. After logging in to the console, you can check the status of different components in **System Components**. You may need to wait for some components to be up and running if you want to use related services.
 
-    ![kubesphere-components](/images/docs/quickstart/minimal-installation-on-k8s/kubesphere-components.png)
-
 ## Enable Pluggable Components (Optional)
 
 This guide is used only for the minimal installation by default. For more information about how to enable other components in KubeSphere, see [Enable Pluggable Components](../../pluggable-components/).

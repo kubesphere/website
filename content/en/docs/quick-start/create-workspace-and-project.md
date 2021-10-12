@@ -32,7 +32,7 @@ After KubeSphere is installed, you need to add different users with varied roles
    For account security, it is highly recommended that you change your password the first time you log in to the console. To change your password, select **User Settings** in the drop-down list in the upper-right corner. In **Password Settings**, set a new password. You also can change the console language in **User Settings**.
    {{</ notice >}}
 
-2. Click **Platform** in the upper-left corner, and then select **Access Control**. In the left nevigation pane, select **Account Roles**. There are four built-in roles as shown in the following table.
+2. Click **Platform** in the upper-left corner, and then select **Access Control**. In the left nevigation pane, select **Platform Roles**. There are four built-in roles as shown in the following table.
 
    <table>
      <tbody>
@@ -64,11 +64,9 @@ After KubeSphere is installed, you need to add different users with varied roles
    Built-in roles are created automatically by KubeSphere and cannot be edited or deleted.
    {{</ notice >}}
 
-3. In **Accounts**, click **Create**. In the displayed dialog box, provide all the necessary information (marked with *) and select `users-manager`  for **Role**. Refer to the following image as an example.
+3. In **Users**, click **Create**. In the displayed dialog box, provide all the necessary information (marked with *) and select `users-manager`  for **Role**. Refer to the following image as an example.
 
-   ![create-account](/images/docs/quickstart/create-workspaces-projects-accounts/create-account.png)
-
-   Click **OK** after you finish. The new account will display on the **Accounts** page.
+   Click **OK** after you finish. The new account will display on the **Users** page.
 
 4. Log out of the console and log back in with the account `user-manager` to create four accounts that will be used in other tutorials.
 
@@ -106,8 +104,6 @@ After KubeSphere is installed, you need to add different users with varied roles
 
 5. Verify the four accounts created.
 
-   ![account-list](/images/docs/quickstart/create-workspaces-projects-accounts/account-list.png)
-
 ### Step 2: Create a workspace
 
 In this step, you create a workspace using the account `ws-manager` created in the previous step. As the basic logic unit for the management of projects, DevOps projects and organization members, workspaces underpin the multi-tenant system of KubeSphere.
@@ -130,9 +126,7 @@ In this step, you create a workspace using the account `ws-manager` created in t
 The actual role name follows a naming convention: `<workspace name>-<role name>`. For example, in this workspace named `demo-workspace`, the actual role name of the role `viewer` is `demo-workspace-viewer`.
    {{</ notice >}}
 
-   ![invite-member](/images/docs/quickstart/create-workspaces-projects-accounts/invite-member.png)
-
-5. In **Workspace Members**, you can see three members listed.
+1. In **Workspace Members**, you can see three members listed.
 
    <table>
      <tbody>
@@ -170,11 +164,8 @@ In this step, you create a project using the account `project-admin` created in 
 
 4. On the **Overview** page of the project, the project quota remains unset by default. You can click **Set** and specify [resource requests and limits](../../workspace-administration/project-quotas/) as needed (for example, 1 Core for CPU and 1000 Gi for memory).
 
-   ![project-quota](/images/docs/quickstart/create-workspaces-projects-accounts/project-quota.png)
-
 5. Invite `project-regular` to this project and grant this user the role `operator`. Refer to the following image for specific steps.
 
-   ![invite-project-regular](/images/docs/quickstart/create-workspaces-projects-accounts/invite-project-regular.png)
 
    {{< notice info >}}
    The user granted the role `operator` is a project maintainer who can manage resources other than users and roles in the project.
@@ -190,23 +181,21 @@ In this step, you create a project using the account `project-admin` created in 
    If you want to expose services using the type `LoadBalancer`, you need to use the LoadBalancer plugin of cloud providers. If your Kubernetes cluster is running in a bare metal environment, it is recommended that you use [OpenELB](https://github.com/kubesphere/openelb) as the LoadBalancer plugin.
    {{</ notice >}}
 
-   ![nodeport-setting](/images/docs/quickstart/create-workspaces-projects-accounts/nodeport-setting.png)
-
 ### Step 4: Create a role
 
 After you finish the above steps, you know that users can be granted different roles at different levels. The roles used in previous steps are all built-in ones created by KubeSphere. In this step, you will learn how to define a customized role to meet the needs in your work.
 
 1. Log in to the KubeSphere web console as `admin` again and go to **Access Control**. 
 
-2. Click **Account Roles** on the left navigation pane, and then click **Create** on the right.
+2. Click **Platform Roles** on the left navigation pane, and then click **Create** on the right.
 
    {{< notice note >}}
 
-   The preset roles on the **Account Roles** page cannot be edited and deleted.
+   The preset roles on the **Platform Roles** page cannot be edited and deleted.
 
    {{</ notice >}}
 
-3. In the **Create Account Role** dialog box, set the name (for example, `clusters-admin`), alias, and description of the role, and click **Edit Permissions**.
+3. In the **Create Platform Role** dialog box, set the name (for example, `clusters-admin`), alias, and description of the role, and click **Edit Permission**.
 
    {{< notice note >}}
 
@@ -214,7 +203,7 @@ After you finish the above steps, you know that users can be granted different r
 
    {{</ notice >}}
 
-4. In the **Edit Permissions** dialog box, set the role permissions (for example, select **Cluster Management**) and click **OK**.
+4. In the **Edit Permission** dialog box, set the role permissions (for example, select **Cluster Management**) and click **OK**.
 
    {{< notice note >}}
 
@@ -225,9 +214,9 @@ After you finish the above steps, you know that users can be granted different r
 
    {{</ notice >}}
 
-5. On the **Account Roles** page, you can click the name of the created role to view the role details and click <img src="/images/docs/quickstart/create-workspaces-projects-accounts/operation-icon.png" width="20px" align="center"> to edit the role, edit the role permissions, or delete the role.
+5. On the **Platform Roles** page, you can click the name of the created role to view the role details and click <img src="/images/docs/quickstart/create-workspaces-projects-accounts/operation-icon.png" width="20px" align="center"> to edit the role, edit the role permissions, or delete the role.
 
-6. On the **Accounts** page, you can assign the role to an account when you create an account or edit an existing account.
+6. On the **Users** page, you can assign the role to an account when you create an account or edit an existing account.
 
 
 ### Step 5: Create a DevOps project (Optional)
@@ -245,7 +234,5 @@ To create a DevOps project, you must install the KubeSphere DevOps system in adv
 3. Click the project name to view its details page.
 
 4. Go to **Project Management** and select **Project Members**. Click **Invite Member** to grant `project-regular` the role `operator`, who is allowed to create pipelines and credentials. Click **OK** to finish.
-
-   ![invite-devops-member](/images/docs/quickstart/create-workspaces-projects-accounts/invite-devops-member.png)
 
 You are now familiar with the multi-tenant management system of KubeSphere. In other tutorials, the account `project-regular` will also be used to demonstrate how to create applications and resources in a project or DevOps project.
