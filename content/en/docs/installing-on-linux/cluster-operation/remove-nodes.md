@@ -12,8 +12,6 @@ Marking a node as unschedulable prevents the scheduler from placing new Pods ont
 
 Log in to the console as `admin` and go to the **Cluster Management** page. To mark a node unschedulable, choose **Cluster Nodes** under **Nodes** from the left menu, find a node you want to remove from the cluster, and click **Cordon**. Alternatively, you can run the command `kubectl cordon $NODENAME` directly. See [Kubernetes Nodes](https://kubernetes.io/docs/concepts/architecture/nodes/) for more details.
 
-![cordon](/images/docs/installing-on-linux/add-and-delete-nodes/delete-nodes/cordon.png)
-
 {{< notice note >}}
 
 Pods that are part of a DaemonSet tolerate being run on an unschedulable node. DaemonSets typically provide node-local services that should run on the node even if it is being drained of workload applications.

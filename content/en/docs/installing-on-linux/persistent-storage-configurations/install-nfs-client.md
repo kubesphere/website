@@ -257,15 +257,11 @@ You can verify that NFS-client has been successfully installed either from the c
 
 ### KubeSphere console
 
-1. Log in to the web console as `admin` with the default account and password at `<NodeIP>:30880`. Click **Platform** in the top-left corner and select **Cluster Management**.
+1. Log in to the web console as `admin` with the default account and password at `<NodeIP>:30880`. Click **Platform** in the upper-left corner and select **Cluster Management**.
 
 2. Go to **Pods** in **Application Workloads** and select `kube-system` from the project drop-down list. You can see that the Pod of `nfs-client` is up and running.
 
-   ![nfs-pod](/images/docs/installing-on-linux/persistent-storage-configurations/nfs-client/nfs-pod.png)
-
 3. Go to **Storage Classes** under **Storage**, and you can see available storage classes in your cluster.
-
-   ![nfs-storage-class](/images/docs/installing-on-linux/persistent-storage-configurations/nfs-client/nfs-storage-class.png)
    
    {{< notice note >}}
    
