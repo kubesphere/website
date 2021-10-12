@@ -13,8 +13,8 @@ section2:
     - title: 'Company Introduction'
       contentList:
         - content: ZTO is both a key enabler and a direct beneficiary of China’s fast-growing e-commerce market, and has established itself as one of the largest express delivery service providers for millions of online merchants and consumers transacting on leading Chinese e-commerce platforms, such as Alibaba and JD.com. Globally, ZTO provides delivery services in key overseas markets through its business partners as it expands coverage of international express delivery by collaborating with international industry players.
-      image: /images/case/ZTO/ZTO1.jpg
-
+      image: '/images/case/ZTO/ZTO1.jpg' 
+      
     - title: 'Background'
       contentList:
         - content: For further development, five prominent challenges were waiting to be addressed. 
