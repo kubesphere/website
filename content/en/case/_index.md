@@ -35,6 +35,10 @@ section2:
     - icon: "images/case/vng.jpg"
       content: "VNG has seen 14 years of continuous development and expansion to become one of the leading IT companies in Vietnam and Southeast Asia."
       link: "vng/"
+      
+    - icon: "images/case/ZTO/ZTO6.jpg"
+      content: "ZTO is both a key enabler and a direct beneficiary of China’s fast-growing e-commerce market, and has established itself as one of the largest express delivery service providers for millions of online merchants and consumers transacting on leading Chinese e-commerce platforms, such as Alibaba and JD.com."
+      link: "ZTO/"
 
 section3:
   title: 'Various Industries are Powered by KubeSphere'
