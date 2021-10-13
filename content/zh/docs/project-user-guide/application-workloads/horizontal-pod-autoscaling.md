@@ -15,7 +15,7 @@ HPA 功能会自动调整 Pod 的数量，将 Pod 的平均资源使用（CPU �
 ## 准备工作
 
 - 您需要[启用 Metrics Server](../../../pluggable-components/metrics-server/)。
-- 您需要创建一个企业空间、一个项目以及一个帐户（例如，`project-regular`）。`project-regular` 必须被邀请至此项目中，并被赋予 `operator` 角色。有关更多信息，请参见[创建企业空间、项目、帐户和角色](../../../quick-start/create-workspace-and-project/)。
+- 您需要创建一个企业空间、一个项目以及一个用户（例如，`project-regular`）。`project-regular` 必须被邀请至此项目中，并被赋予 `operator` 角色。有关更多信息，请参见[创建企业空间、项目、用户和角色](../../../quick-start/create-workspace-and-project/)。
 
 ## 创建服务
 

@@ -10,7 +10,7 @@ weight: 9500
 
 - You have already enabled [Network Policies](../../pluggable-components/network-policy/).
 
-- Use an account of the `workspace-admin` role. For example, use the account `ws-admin` created in [Create Workspaces, Projects, Accounts and Roles](../../quick-start/create-workspace-and-project/).
+- Use a user of the `workspace-admin` role. For example, use the `ws-admin` user created in [Create Workspaces, Projects, Users and Roles](../../quick-start/create-workspace-and-project/).
 
   {{< notice note >}}
 
@@ -21,8 +21,6 @@ weight: 9500
 ## Enable or Disable Workspace Network Isolation
 
 Workspace network isolation is disabled by default. You can turn on network isolation in **Basic Information** under **Workspace Settings**.
-
-![workspace-isolation](/images/docs/workspace-administration/workspace-network-isolation/workspace-isolation.png)
 
 {{< notice note >}}
 

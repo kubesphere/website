@@ -16,17 +16,13 @@ This tutorial demonstrates how to add an app repository to KubeSphere.
 
 - You need to enable the [KubeSphere App Store (OpenPitrix)](../../../pluggable-components/app-store/).
 - You need to have an app repository. Refer to [the official documentation of Helm](https://v2.helm.sh/docs/developing_charts/#the-chart-repository-guide) to create repositories or [upload your own apps to the public repository of KubeSphere](../upload-app-to-public-repository/). Alternatively, use the example repository in the steps below, which is only for demonstration purposes.
-- You need to create a workspace and a user account (`ws-admin`). The account must be granted the role of `workspace-admin` in the workspace. For more information, refer to [Create Workspaces, Projects, Accounts and Roles](../../../quick-start/create-workspace-and-project/).
+- You need to create a workspace and a user (`ws-admin`). The user must be granted the role of `workspace-admin` in the workspace. For more information, refer to [Create Workspaces, Projects, Users and Roles](../../../quick-start/create-workspace-and-project/).
 
 ## Add an App Repository
 
 1. Log in to the web console of KubeSphere as `ws-admin`. In your workspace, go to **App Repositories** under **App Management**, and then click **Add**.
 
-    ![app-repo](/images/docs/workspace-administration/app-repository/import-helm-repository/app-repo.png)
-
 2. In the dialog that appears, specify an app repository name and add your repository URL. For example, enter `https://charts.kubesphere.io/main`.
-
-    ![app-info-dialogue](/images/docs/workspace-administration/app-repository/import-helm-repository/app-info-dialogue.png)
 
     - **Name**: Set a simple and clear name for the repository, which is easy for users to identify.
     - **URL**: Follow the RFC 3986 specification with the following three protocols supported:
@@ -39,11 +35,11 @@ If you want to use basic access authentication in HTTP/HTTPS, you can use a URL 
 
 {{</ notice >}}
 
+    - **Synchronization Interval**: Interval of synchronizing the remote app repository.
+
     - **Description**: Give a brief introduction of main features of the app repository.
 
 3. After you specify required fields, click **Validate** to verify the URL. You will see a green check mark next to the URL if it is available and click **OK** to finish.
-
-    ![validate-link](/images/docs/workspace-administration/app-repository/import-helm-repository/validate-link.png)
 
     {{< notice note >}}
 
@@ -53,6 +49,4 @@ If you want to use basic access authentication in HTTP/HTTPS, you can use a URL 
 
     {{</ notice >}}
 
-4. The repository appears in the repository list below after imported and KubeSphere automatically adds all apps in the repository as app templates. When users choose to deploy apps using app templates, they can see apps in this repository. For more information, see [Deploy Apps from App Templates](../../../project-user-guide/application/deploy-app-from-template/).
-
-   ![app-repo-list](/images/docs/workspace-administration/app-repository/import-helm-repository/app-repo-list.png)
+4. The repository appears in the repository list after imported and KubeSphere automatically adds all apps in the repository as app templates. When users choose to deploy apps using app templates, they can see apps in this repository. For more information, see [Deploy Apps from App Templates](../../../project-user-guide/application/deploy-app-from-template/).

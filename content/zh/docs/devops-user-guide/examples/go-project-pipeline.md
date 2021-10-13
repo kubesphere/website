@@ -10,7 +10,7 @@ weight: 11410
 
 - 您需要[启用 KubeSphere DevOps 系统](../../../pluggable-components/devops/)。
 - 您需要有一个 [Docker Hub](https://hub.docker.com/) 帐户。
-- 您需要创建一个企业空间、一个 DevOps 工程、一个项目和一个帐户 (`project-regular`)，需要邀请该帐户至 DevOps 工程和项目中并赋予 `operator` 角色，以部署工作负载。有关更多信息，请参见[创建企业空间、项目、帐户和角色](../../../quick-start/create-workspace-and-project/)。
+- 您需要创建一个企业空间、一个 DevOps 工程、一个项目和一个用户 (`project-regular`)，需要邀请该帐户至 DevOps 工程和项目中并赋予 `operator` 角色，以部署工作负载。有关更多信息，请参见[创建企业空间、项目、用户和角色](../../../quick-start/create-workspace-and-project/)。
 
 ## 创建 Docker Hub 访问令牌 (Token)
 

@@ -161,7 +161,7 @@ You can use KubeKey to install a specified Kubernetes version. The dependency th
 
    - `worker`: worker node names.
 
-   You can provide more values in this configuration file, such as `addons`. KubeKey can install all [addons](https://github.com/kubesphere/kubekey/blob/release-1.0/docs/addons.md) that can be installed as a YAML file or Chart file. For example, KubeKey does not install any storage plugin for Kubernetes by default, but you can [add your own storage systems](https://kubesphere.io/docs/installing-on-linux/persistent-storage-configurations/understand-persistent-storage/), including NFS Client, Ceph, and Glusterfs. For more information about the configuration file, see [Kubernetes Cluster Configurations](https://kubesphere.io/docs/installing-on-linux/introduction/vars/) and [this file](https://github.com/kubesphere/kubekey/blob/release-1.0/docs/config-example.md).
+   You can provide more values in this configuration file, such as `addons`. KubeKey can install all [addons](https://github.com/kubesphere/kubekey/blob/release-1.0/docs/addons.md) that can be installed as a YAML file or Chart file. For example, KubeKey does not install any storage plugin for Kubernetes by default, but you can [add your own storage systems](https://kubesphere.io/docs/installing-on-linux/persistent-storage-configurations/understand-persistent-storage/), including NFS Client, Ceph, and GlusterFS. For more information about the configuration file, see [Kubernetes Cluster Configurations](https://kubesphere.io/docs/installing-on-linux/introduction/vars/) and [this file](https://github.com/kubesphere/kubekey/blob/release-1.0/docs/config-example.md).
 
 6. Save the file when you finish editing and execute the following command to install Kubernetes:
 

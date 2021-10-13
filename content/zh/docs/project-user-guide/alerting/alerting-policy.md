@@ -12,7 +12,7 @@ KubeSphere 支持针对节点和工作负载的告警策略。本教程演示如
 
 - 您需要启用 [KubeSphere 告警系统](../../../pluggable-components/alerting/)。
 - 若想接收告警通知，您需要预先配置一个[通知渠道](../../../cluster-administration/platform-settings/notification-management/configure-email/)。
-- 您需要创建一个企业空间、一个项目和一个帐户（例如 `project-regular`）。该帐户必须已邀请至该项目，并具有 `operator` 角色。有关更多信息，请参见[创建企业空间、项目、帐户和角色](../../../quick-start/create-workspace-and-project/)。
+- 您需要创建一个企业空间、一个项目和一个用户（例如 `project-regular`）。该用户必须已邀请至该项目，并具有 `operator` 角色。有关更多信息，请参见[创建企业空间、项目、用户和角色](../../../quick-start/create-workspace-and-project/)。
 - 您需要确保项目中存在工作负载。如果项目中没有工作负载，请参见[部署并访问 Bookinfo](../../../quick-start/deploy-bookinfo-to-k8s/) 来创建示例应用。
 
 ## 创建告警策略

@@ -14,7 +14,7 @@ This tutorial demonstrates how to set default limit ranges for containers in a p
 
 ## Prerequisites
 
-You have an available workspace, a project and an account (`project-admin`). The account must have the `admin` role at the project level. For more information, see [Create Workspaces, Projects, Accounts and Roles](../../quick-start/create-workspace-and-project/).
+You have an available workspace, a project and a user (`project-admin`). The user must have the `admin` role at the project level. For more information, see [Create Workspaces, Projects, Users and Roles](../../quick-start/create-workspace-and-project/).
 
 ## Set Default Limit Ranges
 

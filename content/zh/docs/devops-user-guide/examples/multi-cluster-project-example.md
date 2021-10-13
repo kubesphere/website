@@ -11,8 +11,8 @@ weight: 11420
 - 您需要[启用多集群功能](../../../../docs/multicluster-management/)并创建一个多集群企业空间。
 - 您需要有一个 [Docker Hub](https://hub.docker.com/) 帐户。
 - 您需要在 Host 集群上[启用 KubeSphere DevOps 系统](../../../../docs/pluggable-components/devops/)。
-- 您需要使用具有 `workspace-self-provisioner` 角色的帐户（例如 `project-admin`）创建一个多集群项目，并在 Host 集群上创建一个 DevOps 工程。本教程中的多集群项目创建于 Host 集群和一个 Member 集群上。
-- 您需要邀请一个帐户（例如 `project-regular`）至 DevOps 工程中，赋予 `operator` 角色。有关更多信息，请参见[创建企业空间、项目、帐户和角色](../../../quick-start/create-workspace-and-project/)、[多集群管理](../../../multicluster-management/)和[多集群项目](../../../project-administration/project-and-multicluster-project/#多集群项目)。
+- 您需要使用具有 `workspace-self-provisioner` 角色的用户（例如 `project-admin`）创建一个多集群项目，并在 Host 集群上创建一个 DevOps 工程。本教程中的多集群项目创建于 Host 集群和一个 Member 集群上。
+- 您需要邀请一个用户（例如 `project-regular`）至 DevOps 工程中，赋予 `operator` 角色。有关更多信息，请参见[创建企业空间、项目、用户和角色](../../../quick-start/create-workspace-and-project/)、[多集群管理](../../../multicluster-management/)和[多集群项目](../../../project-administration/project-and-multicluster-project/#多集群项目)。
 
 ## 创建 Docker Hub 访问令牌 (Token)
 

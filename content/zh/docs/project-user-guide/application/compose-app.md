@@ -12,7 +12,7 @@ weight: 10140
 
 ## 准备工作
 
-- 您需要为本教程创建一个企业空间、一个项目以及一个帐户 (`project-regular`)。该帐户需要被邀请至项目中并赋予 `operator` 角色。有关更多信息，请参见[创建企业空间、项目、帐户和角色](../../../quick-start/create-workspace-and-project/)。
+- 您需要为本教程创建一个企业空间、一个项目以及一个用户 (`project-regular`)。该帐户需要被邀请至项目中并赋予 `operator` 角色。有关更多信息，请参见[创建企业空间、项目、用户和角色](../../../quick-start/create-workspace-and-project/)。
 - `project-admin` 需要[设置项目网关](../../../project-administration/project-gateway/)，以便 `project-regular` 能在创建应用时定义域名。
 
 ## 构建自制应用的微服务

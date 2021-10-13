@@ -8,7 +8,7 @@ Weight: 16410
 
 ## Reset the Password of a Regular User
 
-The administrator who has the permission to manage users can change an account password. On the **Accounts** page, click the account of which you need to change the password. On the detail page, select **Change Password** from the **More** drop-down list.
+The administrator who has the permission to manage users can change a user password. On the **Accounts** page, click the account of which you need to change the password. On the detail page, select **Change Password** from the **More** drop-down list.
 
 ![modify-password](/images/docs/faq/forgot-password/modify-password.png)
 

@@ -11,7 +11,7 @@ KubeSphere project network isolation lets project administrators enforce which n
 ## Prerequisites
 
 - You have already enabled [Network Policies](../../pluggable-components/network-policy/).
-- You must have an available project and an account of the `admin` role (`project-admin`) at the project level. For more information, see [Create Workspaces, Projects, Accounts and Roles](../../quick-start/create-workspace-and-project/).
+- You must have an available project and a user of the `admin` role (`project-admin`) at the project level. For more information, see [Create Workspaces, Projects, Users and Roles](../../quick-start/create-workspace-and-project/).
 
 {{< notice note >}}
 

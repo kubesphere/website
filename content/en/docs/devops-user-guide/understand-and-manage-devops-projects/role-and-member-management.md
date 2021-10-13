@@ -17,7 +17,7 @@ In DevOps project scope, you can grant the following resources' permissions to a
 
 ## Prerequisites
 
-At least one DevOps project has been created, such as `demo-devops`. Besides, you need an account of the `admin` role (for example, `devops-admin`) at the DevOps project level. 
+At least one DevOps project has been created, such as `demo-devops`. Besides, you need a user of the `admin` role (for example, `devops-admin`) at the DevOps project level. 
 
 ## Built-in Roles
 
@@ -67,7 +67,7 @@ In **Project Roles**, there are three available built-in roles as shown below. B
 
 1. In **Project Management**, select **Project Members** and click **Invite Member**.
 
-2. Click <img src="/images/docs/devops-user-guide/understand-and-manage-devops-projects/role-and-member-management/plus-button.png" height="15px"> to invite an account to the DevOps project. Grant the role of `pipeline-creator` to the account. 
+2. Click <img src="/images/docs/devops-user-guide/understand-and-manage-devops-projects/role-and-member-management/plus-button.png" height="15px"> to invite a user to the DevOps project. Grant the role of `pipeline-creator` to the account. 
 
    ![devops_invite_member](/images/docs/devops-user-guide/understand-and-manage-devops-projects/role-and-member-management/devops_invite_member.png)
 

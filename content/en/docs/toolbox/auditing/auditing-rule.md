@@ -8,7 +8,7 @@ weight: 15320
 
 An auditing rule defines the policy for processing auditing logs. KubeSphere Auditing Logs provide users with two CRD rules (`archiving-rule` and `alerting-rule`) for customization.
 
-After you enable [KubeSphere Auditing Logs](../../../pluggable-components/auditing-logs/), log in to the console with an account of `platform-admin` role. In **CRDs** on the **Cluster Management** page, enter `rules.auditing.kubesphere.io` in the search bar. Click the result **Rule** as below and you can see the two CRD rules.
+After you enable [KubeSphere Auditing Logs](../../../pluggable-components/auditing-logs/), log in to the console with a user of `platform-admin` role. In **CRDs** on the **Cluster Management** page, enter `rules.auditing.kubesphere.io` in the search bar. Click the result **Rule** as below and you can see the two CRD rules.
 
 ![auditing-crd](/images/docs/toolbox/auditing-crd.jpg)
 

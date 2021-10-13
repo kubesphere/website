@@ -13,7 +13,7 @@ weight: 11292
 ## 准备工作
 
 - [启用 KubeSphere DevOps 系统](https://kubesphere.io/zh/docs/pluggable-components/devops/)。
-- 您需要创建一个企业空间、一个 DevOps 工程和一个帐户 (`project-regular`)。必须邀请此帐户至 DevOps 工程中，并且授予 `operator` 角色。有关详细信息，请参阅[创建企业空间、项目、帐户和角色](https://kubesphere.io/zh/docs/quick-start/create-workspace-and-project/)。
+- 您需要创建一个企业空间、一个 DevOps 工程和一个用户 (`project-regular`)。必须邀请此帐户至 DevOps 工程中，并且授予 `operator` 角色。有关详细信息，请参阅[创建企业空间、项目、用户和角色](https://kubesphere.io/zh/docs/quick-start/create-workspace-and-project/)。
 - 您需要一个可用 Jenkins 共享库。本教程以 [GitHub 仓库](https://github.com/devops-ws/jenkins-shared-library)中的 Jenkins 共享库为例。
 
 ## 在 Jenkins 仪表盘配置共享库

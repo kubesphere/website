@@ -12,7 +12,7 @@ weight: 10812
 ## 准备工作
 
 - 请确保已[启用应用商店](../../../../pluggable-components/app-store/)。MySQL 和 MySQL Exporter 将通过应用商店来部署。
-- 您需要创建一个企业空间、一个项目和一个帐户 (`project-regular`)。该帐户需要在该项目中具有 `operator` 角色。有关更多信息，请参见[创建企业空间、项目、帐户和角色](../../../../quick-start/create-workspace-and-project/)。
+- 您需要创建一个企业空间、一个项目和一个用户 (`project-regular`)。该帐户需要在该项目中具有 `operator` 角色。有关更多信息，请参见[创建企业空间、项目、用户和角色](../../../../quick-start/create-workspace-and-project/)。
 
 ## 步骤 1：部署 MySQL
 

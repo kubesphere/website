@@ -11,7 +11,7 @@ weight: 10540
 ## 准备工作
 
 - 您需要启用 [KubeSphere 服务网络](../../../pluggable-components/service-mesh/)。
-- 您需要创建一个企业空间、一个项目和一个帐户（例如 `project-regular`）。该帐户必须已邀请至该项目，并具有 `operator` 角色。有关更多信息，请参阅[创建企业空间、项目、帐户和角色](../../../quick-start/create-workspace-and-project/)。
+- 您需要创建一个企业空间、一个项目和一个用户（例如 `project-regular`）。该用户必须已邀请至该项目，并具有 `operator` 角色。有关更多信息，请参阅[创建企业空间、项目、用户和角色](../../../quick-start/create-workspace-and-project/)。
 - 您需要启用**应用治理**，并有可用的应用，以便为该应用进行流量镜像。本教程以 Bookinfo 为例。有关更多信息，请参阅[部署 Bookinfo 和管理流量](../../../quick-start/deploy-bookinfo-to-k8s/)。
 
 ## 创建流量镜像任务
