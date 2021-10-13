@@ -14,13 +14,11 @@ weight: 9100
 
 ## 准备工作
 
-准备一个被授予 `workspaces-manager` 角色的帐户，例如[创建企业空间、项目、帐户和角色](../../quick-start/create-workspace-and-project/)中创建的 `ws-manager` 帐户。
+准备一个被授予 `workspaces-manager` 角色的用户，例如[创建企业空间、项目、用户和角色](../../quick-start/create-workspace-and-project/)中创建的 `ws-manager` 帐户。
 
 ## 创建企业空间
 
-1. 以 `ws-manager` 身份登录 KubeSphere Web 控制台。在**企业空间**页面，您可以查看平台上的所有企业空间。点击**创建**。
-
-   ![workspace-list-1](/images/docs/zh-cn/workspace-administration-and-user-guide/workspace-overview/workspace-list-1.png)
+1. 以 `ws-manager` 身份登录 KubeSphere Web 控制台。点击左上角的**平台管理**并选择**访问控制**。在**企业空间**页面，点击**创建**。
 
    {{< notice note >}}
 
@@ -30,20 +28,14 @@ weight: 9100
 
 2. 在**基本信息**页面，为创建的企业空间输入名称，并从下拉菜单中选择一名企业空间管理员。点击**创建**以继续。
 
-   ![set-workspace-info](/images/docs/zh-cn/workspace-administration-and-user-guide/workspace-overview/set-workspace-info.png)
-
-   - **企业空间名称**：为企业空间设置一个专属名称。
+   - **名称**：为企业空间设置一个专属名称。
    - **别名**：该企业空间的另一种名称。
-   - **企业空间管理员**：管理该企业空间的帐户。
-   - **描述信息**：企业空间的简短介绍。
+   - **管理员**：管理该企业空间的帐户。
+   - **描述**：企业空间的简短介绍。
 
-3. 新创建的企业空间将在下图所示的列表中列出。
-
-   ![workspace-created](/images/docs/zh-cn/workspace-administration-and-user-guide/workspace-overview/workspace-created.png)
+3. 企业空间创建后将显示在企业空间列表中。
 
 4. 点击该企业空间，您可以在**概览**页面查看企业空间中的资源状态。
-
-   ![workspace-overview-4](/images/docs/zh-cn/workspace-administration-and-user-guide/workspace-overview/workspace-overview-4.png)
 
 ## 删除企业空间
 
@@ -77,15 +69,13 @@ kubectl label ns <namespace> kubesphere.io/workspace- && kubectl patch ns <names
 
 1. 在企业空间页面，转到**企业空间设置**菜单下的**基本信息**。在**基本信息**页面，您可以查看该企业空间的基本信息，例如项目数量和成员数量。
 
-   ![delete-workspace](/images/docs/zh-cn/workspace-administration-and-user-guide/workspace-overview/delete_workspace.png)
-
    {{< notice note >}}
 
-   在该页面，您可以点击**编辑信息**更改企业空间的基本信息（企业空间名称无法更改），也可以打开或关闭[网络隔离](../../workspace-administration/workspace-network-isolation/)。
+   在该页面，您可以点击**编辑信息**更改企业空间的基本信息（企业空间名称无法更改），也可以开启或关闭[网络隔离](../../workspace-administration/workspace-network-isolation/)。
 
    {{</ notice >}} 
 
-2. 若要删除企业空间，先勾选**确定删除企业空间**，然后点击**删除**。
+2. 若要删除企业空间，点击**删除企业空间**下的**删除**。在出现的对话框中输入企业空间的名称，然后点击**确定**。
 
    {{< notice warning >}}
 

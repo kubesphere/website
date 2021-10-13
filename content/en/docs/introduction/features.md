@@ -122,7 +122,7 @@ KubeSphere features a self-updating monitoring system with graphical interfaces 
 - **Third-party compatibility**. KubeSphere is compatible with Prometheus, which is the de facto metrics collection platform for monitoring in Kubernetes environments. Monitoring data can be seamlessly displayed in the web console of KubeSphere.
 
 - **Multi-dimensional monitoring at second-level precision**.
-	- For infrastructure monitoring, the system provides comprehensive metrics such as CPU utilization, memory utilization, CPU load average, disk usage, inode utilization, disk throughput, IOPS, network outbound/inbound rate, Pod status, ETCD service status, and API Server status.
+	- For infrastructure monitoring, the system provides comprehensive metrics such as CPU utilization, memory utilization, CPU load average, disk usage, inode utilization, disk throughput, IOPS, network outbound/inbound rate, Pod status, etcd service status, and API Server status.
 	- For application resource monitoring, the system provides five key monitoring metrics: CPU utilization, memory consumption, Pod number, network outbound and inbound rate. Besides, users can sort data based on resource consumption and search metics by customizing the time range. In this way, occurring problems can be quickly located so that users can take necessary action.
 - **Ranking**. Users can sort data by node, workspace and project, which gives them a graphical view of how their resources are running in a straightforward way.
 - **Component monitoring**. It allows users to quickly locate any component failures to avoid unnecessary business downtime.

@@ -90,7 +90,7 @@ As stated above, requests and limits are two important building blocks for clust
 
 ### Before You Begin
 
-KubeSphere features a highly functional multi-tenant system for fine-grained access control of different users. In KubeSphere 3.0, you can set requests and limits for namespaces (ResourceQuotas) and containers (LimitRanges) respectively. To perform these operations, you need to create a workspace, a project (i.e. namespace) and an account (`ws-admin`). For more information, see [Create Workspaces, Projects, Accounts and Roles](https://kubesphere.io/docs/quick-start/create-workspace-and-project/).
+KubeSphere features a highly functional multi-tenant system for fine-grained access control of different users. In KubeSphere 3.0, you can set requests and limits for namespaces (ResourceQuotas) and containers (LimitRanges) respectively. To perform these operations, you need to create a workspace, a project (i.e. namespace) and a user (`ws-admin`). For more information, see [Create Workspaces, Projects, Users and Roles](https://kubesphere.io/docs/quick-start/create-workspace-and-project/).
 
 ### Set Resource Quotas
 

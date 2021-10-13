@@ -113,7 +113,7 @@ There are a few items listed in [KubeSphere kustomization](https://github.com/ku
 
 If your Prometheus stack setup isn't managed by Prometheus Operator, you can skip this step. But you have to make sure that:
 
-- You must copy the recording/alerting rules in [PrometheusRule](https://github.com/kubesphere/kube-prometheus/blob/ks-v3.0/kustomize/prometheus-rules.yaml) and [PrometheusRule for ETCD](https://github.com/kubesphere/kube-prometheus/blob/ks-v3.0/kustomize/prometheus-rulesEtcd.yaml) to your Prometheus config for KubeSphere v3.0.0 to work properly.
+- You must copy the recording/alerting rules in [PrometheusRule](https://github.com/kubesphere/kube-prometheus/blob/ks-v3.0/kustomize/prometheus-rules.yaml) and [PrometheusRule for etcd](https://github.com/kubesphere/kube-prometheus/blob/ks-v3.0/kustomize/prometheus-rulesEtcd.yaml) to your Prometheus config for KubeSphere v3.0.0 to work properly.
 
 - Configure your Prometheus to scrape metrics from the same targets as the ServiceMonitors listed in [KubeSphere kustomization](https://github.com/kubesphere/kube-prometheus/blob/ks-v3.0/kustomize/kustomization.yaml).
 

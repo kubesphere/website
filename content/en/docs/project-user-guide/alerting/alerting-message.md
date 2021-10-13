@@ -11,7 +11,7 @@ Alerting messages record detailed information of alerts triggered based on the a
 ## Prerequisites
 
 - You have enabled [KubeSphere Alerting](../../../pluggable-components/alerting/).
-- You need to create a workspace, a project and an account (`project-regular`). The account must be invited to the project with the role of `operator`. For more information, see [Create Workspaces, Projects, Accounts and Roles](../../../quick-start/create-workspace-and-project/).
+- You need to create a workspace, a project and a user (`project-regular`). The user must be invited to the project with the role of `operator`. For more information, see [Create Workspaces, Projects, Users and Roles](../../../quick-start/create-workspace-and-project/).
 - You have created a workload-level alerting policy and an alert has been triggered. For more information, refer to [Alerting Policies (Workload Level)](../alerting-policy/).
 
 ## View Alerting Messages

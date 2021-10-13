@@ -11,7 +11,7 @@ This section walks you through monitoring a sample web application. The applicat
 ## Prerequisites
 
 - Please make sure you [enable the OpenPitrix system](../../../../pluggable-components/app-store/).
-- You need to create a workspace, a project, and a user account for this tutorial. For more information, see [Create Workspaces, Projects, Accounts and Roles](../../../../quick-start/create-workspace-and-project/). The account needs to be a platform regular user and to be invited to the workspace with the `self-provisioner` role. Namely, create an account `workspace-self-provisioner` of the `self-provisioner` role, and use this account to create a project (for example, `test`). In this tutorial, you log in as `workspace-self-provisioner` and work in the project `test` in the workspace `demo-workspace`.
+- You need to create a workspace, a project, and a user account for this tutorial. For more information, see [Create Workspaces, Projects, Users and Roles](../../../../quick-start/create-workspace-and-project/). The account needs to be a platform regular user and to be invited to the workspace with the `self-provisioner` role. Namely, create a user `workspace-self-provisioner` of the `self-provisioner` role, and use this account to create a project (for example, `test`). In this tutorial, you log in as `workspace-self-provisioner` and work in the project `test` in the workspace `demo-workspace`.
 
 - Knowledge of Helm charts and [PromQL](https://prometheus.io/docs/prometheus/latest/querying/examples/).
 

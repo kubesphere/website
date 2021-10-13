@@ -24,7 +24,7 @@ This tutorial demonstrates how to create and manage credentials in a DevOps proj
 ## Prerequisites
 
 - You have enabled [KubeSphere DevOps System](../../../pluggable-components/devops/).
-- You have a workspace, a DevOps project and an account (`project-regular`) invited to the DevOps project with the `operator` role. If they are not ready yet, see [Create Workspaces, Projects, Accounts and Roles](../../../quick-start/create-workspace-and-project/).
+- You have a workspace, a DevOps project and a user (`project-regular`) invited to the DevOps project with the `operator` role. If they are not ready yet, see [Create Workspaces, Projects, Users and Roles](../../../quick-start/create-workspace-and-project/).
 
 ## Create Credentials
 

@@ -17,7 +17,7 @@ This tutorial demonstrates how to manage roles and members in a project. At the 
 
 ## Prerequisites
 
-At least one project has been created, such as `demo-project`. Besides, you need an account of the `admin` role (for example, `project-admin`) at the project level. For more information, see [Create Workspaces, Projects, Accounts and Roles](../../quick-start/create-workspace-and-project/).
+At least one project has been created, such as `demo-project`. Besides, you need a user of the `admin` role (for example, `project-admin`) at the project level. For more information, see [Create Workspaces, Projects, Users and Roles](../../quick-start/create-workspace-and-project/).
 
 ## Built-in Roles
 
@@ -30,15 +30,15 @@ In **Project Roles**, there are three available built-in roles as shown below. B
   </tr>
   <tr>
     <td><code>viewer</code></td>
-    <td>The viewer who can view all resources in the project.</td>
+    <td>Project viewer who can view all resources in the project.</td>
   </tr>
    <tr>
      <td><code>operator</code></td>
-     <td>The maintainer of the project who can manage resources other than users and roles in the project.</td>
+     <td>Project operator who can manage resources other than users and roles in the project.</td>
   </tr>
   <tr>
     <td><code>admin</code></td>
-     <td>The administrator in the project who can perform any action on any resource. It gives full control over all resources in the project.</td>
+     <td>Project administrator who has full control over all resources in the project.</td>
   </tr>
 </table>
 

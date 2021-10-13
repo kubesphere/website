@@ -15,13 +15,11 @@ This tutorial demonstrates how to create and delete a workspace.
 
 ## Prerequisites
 
-You have an account granted the role of `workspaces-manager`, such as `ws-manager` in [Create Workspaces, Projects, Accounts and Roles](../../quick-start/create-workspace-and-project/).
+You have a user granted the role of `workspaces-manager`, such as `ws-manager` in [Create Workspaces, Projects, Users and Roles](../../quick-start/create-workspace-and-project/).
 
 ## Create a Workspace
 
-1. Log in to the web console of KubeSphere as `ws-manager`. On the **Workspaces** page, you can see all workspaces on the platform. Click **Create**.
-
-   ![workspaces-list](/images/docs/workspace-administration/workspace-overview/workspaces-list.png)
+1. Log in to the web console of KubeSphere as `ws-manager`. Click **Platform** on the upper-left corner, and then select **Access Control**. On the **Workspaces** page, click **Create**.
 
    {{< notice note >}}
 
@@ -31,20 +29,14 @@ You have an account granted the role of `workspaces-manager`, such as `ws-manage
 
 2. On the **Basic Information** page, specify a name for the workspace and select an administrator from the drop-down list. Click **Create** to continue.
 
-   ![set-workspace-info](/images/docs/workspace-administration/workspace-overview/set-workspace-info.png)
-
    - **Name**: Set a name for the workspace which serves as a unique identifier.
    - **Alias**: An alias name for the workspace.
    - **Administrator**: Account that administers the workspace.
    - **Description**: A brief introduction of the workspace.
 
-3. The workspace created appears in the list as shown below.
+3. The workspace is displayed in the workspace list after it is created.
 
-   ![workspace-created](/images/docs/workspace-administration/workspace-overview/workspace-created.png)
-
-4. Click the workspace and you can see resource status in the workspace on the **Overview** page.
-
-   ![workspace-overview](/images/docs/workspace-administration/workspace-overview/workspace-overview.png)
+4. Click the workspace and you can see resource statusof the workspace on the **Overview** page.
 
 ## Delete a Workspace
 
@@ -78,15 +70,13 @@ Be extremely cautious about deleting a workspace if you use kubectl to delete wo
 
 1. In your workspace, go to **Basic Information** under **Workspace Settings**. On the **Basic Information** page, you can see the general information of the workspace, such as the number of projects and members.
 
-   ![workspace-basic-information](/images/docs/workspace-administration/workspace-overview/workspace-basic-information.png)
-
    {{< notice note >}}
 
    On this page, you can click **Edit Information** to change the basic information of the workspace (excluding the workspace name) and turn on/off [Network Isolation](../../workspace-administration/workspace-network-isolation/).
 
    {{</ notice >}} 
 
-2. To delete the workspace, check **Delete Workspace** and click **Delete**.
+2. To delete the workspace, click **Delete** under **Delete Workspace**. In the displayed dialog box, enter the name of the workspace, and then click **OK**.
 
    {{< notice warning >}}
 

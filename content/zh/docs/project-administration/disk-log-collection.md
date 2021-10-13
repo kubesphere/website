@@ -12,7 +12,7 @@ KubeSphere 支持多种日志收集方式，使运维团队能够以灵活统一
 
 ## 准备工作
 
-- 您需要创建企业空间、项目和帐户 (`project-admin`)。该帐户必须被邀请到项目中，并在项目级别具有 `admin` 角色。有关更多信息，请参见[创建企业空间、项目、帐户和角色](../../quick-start/create-workspace-and-project/)。
+- 您需要创建企业空间、项目和帐户 (`project-admin`)。该用户必须被邀请到项目中，并在项目级别具有 `admin` 角色。有关更多信息，请参见[创建企业空间、项目、用户和角色](../../quick-start/create-workspace-and-project/)。
 
 - 您需要启用 [KubeSphere 日志系统](../../pluggable-components/logging/)。
 

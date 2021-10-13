@@ -11,7 +11,7 @@ weight: 13300
 ## 准备工作
 
 - 已经启用[网络策略](../../pluggable-components/network-policy/)。
-- 您必须有一个可用的项目和一个在项目层级拥有 `admin` 角色的帐户 (`project-admin`)。有关更多信息，请参见[创建企业空间、项目、帐户和角色](../../quick-start/create-workspace-and-project/)。
+- 您必须有一个可用的项目和一个在项目层级拥有 `admin` 角色的用户 (`project-admin`)。有关更多信息，请参见[创建企业空间、项目、用户和角色](../../quick-start/create-workspace-and-project/)。
 
 {{< notice note >}}
 

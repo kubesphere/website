@@ -1,6 +1,6 @@
 ---
 title: "持久卷和存储类型"
-keywords: "存储, 存储卷, PV, PVC, 存储类型, CSI, Ceph RBD, Glusterfs, 青云QingCloud, "
+keywords: "存储, 存储卷, PV, PVC, 存储类型, CSI, Ceph RBD, GlusterFS, 青云QingCloud, "
 description: "了解 PV、PVC 和存储类型的基本概念，并演示如何在 KubeSphere 中管理存储类型和 PVC。"
 linkTitle: "持久卷和存储类型"
 weight: 8400
@@ -10,9 +10,9 @@ weight: 8400
 
 ## 介绍
 
-PersistentVolume (PV) 是集群中的一块存储，可以由管理员事先供应，或者使用存储类型来动态供应。PV 是像存储卷 (Volume) 一样的存储卷插件，但是它的生命周期独立于任何使用该 PV 的 Pod。PV 可以[静态](https://kubernetes.io/zh/docs/concepts/storage/persistent-volumes/#static)供应或[动态](https://kubernetes.io/zh/docs/concepts/storage/persistent-volumes/#dynamic)供应。
+PersistentVolume (PV) 是集群中的一块存储，可以由管理员事先供应，或者使用存储类型来动态供应。PV 是像存储卷 (Volume) 一样的存储卷插件，但是它的生命周期独立于任何使用该 PV 的容器组。PV 可以[静态](https://kubernetes.io/zh/docs/concepts/storage/persistent-volumes/#static)供应或[动态](https://kubernetes.io/zh/docs/concepts/storage/persistent-volumes/#dynamic)供应。
 
-PersistentVolumeClaim (PVC) 是用户对存储的请求。它与 Pod 类似，Pod 会消耗节点资源，而 PVC 消耗 PV 资源。
+PersistentVolumeClaim (PVC) 是用户对存储的请求。它与容器组类似，容器组会消耗节点资源，而 PVC 消耗 PV 资源。
 
 KubeSphere 支持基于存储类型的[动态卷供应](https://kubernetes.io/zh/docs/concepts/storage/dynamic-provisioning/)，以创建 PV。
 
@@ -22,37 +22,31 @@ KubeSphere 支持基于存储类型的[动态卷供应](https://kubernetes.io/zh
 
 | 类型                 | 描述信息                                                     |
 | -------------------- | ------------------------------------------------------------ |
-| In-tree              | 内置并作为 Kubernetes 的一部分运行，例如 [RBD](https://kubernetes.io/zh/docs/concepts/storage/storage-classes/#ceph-rbd) 和 [Glusterfs](https://kubernetes.io/zh/docs/concepts/storage/storage-classes/#glusterfs)。有关此类插件的更多信息，请参见 [Provisioner](https://kubernetes.io/zh/docs/concepts/storage/storage-classes/#provisioner)。 |
+| In-tree              | 内置并作为 Kubernetes 的一部分运行，例如 [RBD](https://kubernetes.io/zh/docs/concepts/storage/storage-classes/#ceph-rbd) 和 [GlusterFS](https://kubernetes.io/zh/docs/concepts/storage/storage-classes/#glusterfs)。有关此类插件的更多信息，请参见 [Provisioner](https://kubernetes.io/zh/docs/concepts/storage/storage-classes/#provisioner)。 |
 | External-provisioner | 独立于 Kubernetes 部署，但运行上类似于树内 (in-tree) 插件，例如 [NFS 客户端](https://github.com/kubernetes-retired/external-storage/tree/master/nfs-client)。有关此类插件的更多信息，请参见 [External Storage](https://github.com/kubernetes-retired/external-storage)。 |
 | CSI                  | 容器存储接口，一种将存储资源暴露给 CO（例如 Kubernetes）上的工作负载的标准，例如 [QingCloud-CSI](https://github.com/yunify/qingcloud-csi) 和 [Ceph-CSI](https://github.com/ceph/ceph-csi)。有关此类插件的更多信息，请参见 [Drivers](https://kubernetes-csi.github.io/docs/drivers.html)。 |
 
 ## 准备工作
 
-您需要一个拥有**集群管理**权限的帐户。例如，您可以直接以 `admin` 身份登录控制台，或者创建一个拥有该权限的新角色并将它分配至一个帐户。
+您需要一个拥有**集群管理**权限的帐户。例如，您可以直接以 `admin` 身份登录控制台，或者创建一个拥有该权限的新角色并将它分配至一个用户。
 
 ## 管理存储类型
 
 1. 点击左上角的**平台管理**，然后选择**集群管理**。
    
-2. 如果您启用了[多集群功能](../../multicluster-management/)并导入了 Member 集群，可以选择一个特定集群。如果您未启用该功能，请直接参考下一步。
+2. 如果您启用了[多集群功能](../../multicluster-management/)并导入了成员集群，可以选择一个特定集群。如果您未启用该功能，请直接参考下一步。
 
-3. 在**集群管理**页面，您可以在**存储管理**下的**存储类型**中创建、更新和删除存储类型。
-
-    ![存储类型](/images/docs/zh-cn/cluster-administration/persistent-volumes-and-storage-classes/storage-class.PNG)
+3. 在**集群管理**页面，您可以在**存储**下的**存储类型**中创建、更新和删除存储类型。
 
 4. 要创建一个存储类型，请点击**创建**，在弹出窗口中输入基本信息。完成后，点击**下一步**。
 
-5. 在 KubeSphere 中，您可以直接为 `QingCloud-CSI`、`Glusterfs` 和 `Ceph RBD` 创建存储类型。或者，您也可以根据需求为其他存储系统创建自定义存储类型。请选择一个类型，然后点击**下一步**。
-
-    ![存储系统](/images/docs/zh-cn/cluster-administration/persistent-volumes-and-storage-classes/create-storage-class-storage-system.PNG)
-
-    ![存储类型设置](/images/docs/zh-cn/cluster-administration/persistent-volumes-and-storage-classes/create-storage-class-settings.PNG)
+5. 在 KubeSphere 中，您可以直接为 `QingCloud-CSI`、`GlusterFS` 和 `Ceph RBD` 创建存储类型。或者，您也可以根据需求为其他存储系统创建自定义存储类型。请选择一个类型，然后点击**下一步**。
 
 ### 常用设置
 
-有些设置在存储类型之间常用且共享。您可以在控制台上的仪表板属性中找到这些设置，StorageClass 清单文件中也通过字段或注解加以显示。您可以在右上角启用**编辑模式**，查看 YAML 格式的清单文件。下表是对 KubeSphere 中一些常用字段的属性说明。
+有些设置在存储类型之间常用且共享。您可以在控制台上的仪表板参数中找到这些设置，存储类型清单文件中也通过字段或注解加以显示。您可以在右上角点击**编辑配置文件**，查看 YAML 格式的配置文件。下表是对 KubeSphere 中一些常用字段的参数说明。
 
-| 属性 | 描述信息 |
+| 参数 | 描述 |
 | :---- | :---- |
 | 允许存储卷扩容 | 在清单文件中由 `allowVolumeExpansion` 指定。若设置为 `true`，PV 则被配置为可扩容。有关更多信息，请参见[允许卷扩展](https://kubernetes.io/zh/docs/concepts/storage/storage-classes/#允许卷扩展)。 |
 | 回收机制 | 在清单文件中由 `reclaimPolicy` 指定。可设置为 `Delete` 或 `Retain`（默认）。有关更多信息，请参见[回收策略](https://kubernetes.io/zh/docs/concepts/storage/storage-classes/#回收策略)。 |
@@ -72,48 +66,46 @@ QingCloud CSI 是 Kubernetes 上的 CSI 插件，供青云QingCloud 存储服务
 
 #### 设置
 
-![青云存储卷](/images/docs/zh-cn/cluster-administration/persistent-volumes-and-storage-classes/storage-volume-qingcloud.PNG)
-
-| 属性 | 描述信息 |
+| 参数 | 描述信息 |
 | :---- | :---- |
-| type     | 在青云QingCloud 平台上，0 代表性能型硬盘，2 代表容量型硬盘，3 代表超高性能型硬盘，5 代表企业级分布式 SAN (NeonSAN) 型硬盘，100 代表基础型硬盘，200 代表企业型硬盘。 |
-| maxSize  | 存储卷容量上限。 |
-| stepSize | 存储卷容量增量。 |
-| minSize  | 存储卷容量下限。 |
-| fsType   | 存储卷的文件系统类型：ext3、ext4（默认）、xfs。 |
-| tags     | QingCloud Tag 资源的 ID，用逗号隔开。 |
+| 类型     | 在青云云平台中，0 代表性能型硬盘；2 代表容量型硬盘；3 代表超高性能型硬盘；5 代表企业级分布式 SAN（NeonSAN）型硬盘；100 代表基础型硬盘；200 代表 SSD 企业型硬盘。 |
+| 容量上限  | 存储卷容量上限。 |
+| 增量值 | 存储卷容量增量。 |
+| 容量下限  | 存储卷容量下限。 |
+| 文件系统类型   | 支持 ext3、ext4 和 XFS。默认类型为 ext4。 |
+| 标签     | 为存储卷添加标签。使用半角逗号（,）分隔多个标签。 |
 
 有关存储类型参数的更多信息，请参见 [QingCloud CSI 用户指南](https://github.com/yunify/qingcloud-csi/blob/master/docs/user-guide.md#set-storage-class)。
 
-### Glusterfs
+### GlusterFS
 
-Glusterfs 是 Kubernetes 上的一种树内存储插件，即您不需要额外安装存储卷插件。
+GlusterFS 是 Kubernetes 上的一种树内存储插件，即您不需要额外安装存储卷插件。
 
 #### 准备工作
 
-已经安装 Glusterfs 存储系统。有关更多信息，请参见 [GlusterFS 安装文档](https://www.gluster.org/install/)。
+已经安装 GlusterFS 存储系统。有关更多信息，请参见 [GlusterFS 安装文档](https://www.gluster.org/install/)。
 
 #### 设置
 
-| 属性 | 描述信息 |
+| 参数 | 描述 |
 | :---- | :---- |
-| resturl  | Gluster REST 服务/Heketi 服务 URL，按需供应 Gluster 存储卷。 |
-| clusterid | Heketi 在供应存储卷时使用的集群的 ID。 |
-| restauthenabled | Gluster REST 服务认证 Boolean，对 REST 服务器进行认证。 |
-| restuser | 在 Glusterfs 受信池中有权限创建存储卷的 Glusterfs REST 服务/Heketi 用户。 |
-| secretNamespace, secretName | 识别 Secret 实例，包含与 Gluster REST 服务通信时使用的用户密码。 |
-| gidMin, gidMax | StorageClass GID 范围的最大值和最小值。 |
-| volumetype | 该可选值可以配置存储卷类型和其参数。 |
+| REST URL  | 供应存储卷的 Heketi REST URL，例如，<Heketi 服务集群 IP 地址>:<Heketi 服务端口号>。 |
+| 集群 ID | Gluster 集群 ID。 |
+| 启用 REST 认证 | Gluster 启用对 REST 服务器的认证。 |
+| REST 用户 | Gluster REST 服务或 Heketi 服务的用户名。 |
+| 密钥所属项目 | Heketi 用户密钥的所属项目。 |
+| 密钥名称 | Heketi 用户密钥的名称。 |
+| GID 最小值 | 存储卷的 GID 最小值。 |
+| GID 最大值 | 存储卷的 GID 最大值。 |
+| 存储卷类型 | 存储卷的类型。该值可为 none，replicate:<副本数>，或 disperse:<数据>:<冗余数>。如果未设置该值，则默认存储卷类型为 replicate:3。 |
 
-有关 StorageClass 参数的更多信息，请参见 [Kubernetes 文档中的 Glusterfs](https://kubernetes.io/zh/docs/concepts/storage/storage-classes/#glusterfs)。
+有关 StorageClass 参数的更多信息，请参见 [Kubernetes 文档中的 GlusterFS](https://kubernetes.io/zh/docs/concepts/storage/storage-classes/#glusterfs)。
 
 ### Ceph RBD
 
 Ceph RBD 也是 Kubernetes 上的一种树内存储插件，即 Kubernetes 中已经安装该存储卷插件，但您必须在创建 Ceph RBD 的存储类型之前安装其存储服务器。
 
 由于 **hyperkube** 镜像[自 1.17 版本开始已被弃用](https://github.com/kubernetes/kubernetes/pull/85094)，树内 Ceph RBD 可能无法在不使用 **hyperkube** 的 Kubernetes 上运行。不过，您可以使用 [RBD Provisioner](https://github.com/kubernetes-retired/external-storage/tree/master/ceph/rbd) 作为替代，它的格式与树内 Ceph RBD 相同。唯一不同的参数是 `provisioner`（即 KubeSphere 控制台上的**存储系统**）。如果您想使用 RBD Provisioner，`provisioner` 的值必须为 `ceph.com/rbd`（在**存储系统**中输入该值，如下图所示）。如果您使用树内 Ceph RBD，该值必须为 `kubernetes.io/rbd`。
-
-![存储系统](/images/docs/zh-cn/cluster-administration/persistent-volumes-and-storage-classes/storage-system.PNG)
 
 #### 准备工作
 
@@ -122,19 +114,19 @@ Ceph RBD 也是 Kubernetes 上的一种树内存储插件，即 Kubernetes 中�
 
 #### 设置
 
-| 属性 | 描述信息 |
+| 参数 | 描述 |
 | :---- | :---- |
-| monitors| Ceph 监控器，用逗号隔开。 |
-| adminId| 能够在该池中创建镜像的 Ceph 客户端 ID。 |
-| adminSecretName| `adminId` 的 Secret 名称。 |
-| adminSecretNamespace| `adminSecretName` 的命名空间。 |
-| pool | Ceph RBD 池。 |
-| userId | 用于映射 RBD 镜像的 Ceph 客户端 ID。 |
-| userSecretName | `userId` 的 Ceph Secret 名称，用于映射 RBD 镜像。 |
-| userSecretNamespace | `userSecretName` 的命名空间。 |
-| fsType | Kubernetes 支持的文件系统类型。 |
-| imageFormat | Ceph RBD 镜像格式，可设为 `1` 或 `2`。 |
-| imageFeatures| 该参数为可选，仅在 `imageFormat` 设为 `2` 时使用。 |
+| monitors| Ceph 集群 Monitors 的 IP 地址。 |
+| adminId| Ceph 集群能够创建卷的用户 ID。 |
+| adminSecretName| `adminId` 的密钥名称。 |
+| adminSecretNamespace| `adminSecret` 所在的项目。 |
+| pool | Ceph RBD 的 Pool 名称。 |
+| userId | Ceph 集群能够挂载卷的用户 ID。 |
+| userSecretName | `userId` 的密钥名称。 |
+| userSecretNamespace | `userSecret` 所在的项目。 |
+| 文件系统类型 | 存储卷的文件系统类型。 |
+| imageFormat | Ceph 卷的选项。该值可为 `1` 或 `2`，选择 `2` 后需要填写 `imageFeatures`。 |
+| imageFeatures| Ceph 集群的额外功能。仅当设置 `imageFormat` 为 `2` 时，才需要填写该值。 |
 
 有关 StorageClass 参数的更多信息，请参见 [Kubernetes 文档中的 Ceph RBD](https://kubernetes.io/zh/docs/concepts/storage/storage-classes/#ceph-rbd)。
 
@@ -148,7 +140,7 @@ NFS（网络文件系统）广泛用于带有 [NFS-Client](https://github.com/ku
 
 {{< notice note >}}
 
-不建议您在生产环境中使用 NFS 存储（尤其是在 Kubernetes 1.20 或以上版本），这可能会引起 `failed to obtain lock` 和 `input/output error` 等问题，从而导致 Pod `CrashLoopBackOff`。此外，部分应用不兼容 NFS，例如 [Prometheus](https://github.com/prometheus/prometheus/blob/03b354d4d9386e4b3bfbcd45da4bb58b182051a5/docs/storage.md#operational-aspects) 等。
+不建议您在生产环境中使用 NFS 存储（尤其是在 Kubernetes 1.20 或以上版本），这可能会引起 `failed to obtain lock` 和 `input/output error` 等问题，从而导致容器组 `CrashLoopBackOff`。此外，部分应用不兼容 NFS，例如 [Prometheus](https://github.com/prometheus/prometheus/blob/03b354d4d9386e4b3bfbcd45da4bb58b182051a5/docs/storage.md#operational-aspects) 等。
 
 {{</ notice >}}
 
@@ -159,13 +151,11 @@ NFS（网络文件系统）广泛用于带有 [NFS-Client](https://github.com/ku
 
 #### 常用设置
 
-![自定义存储类型](/images/docs/zh-cn/cluster-administration/persistent-volumes-and-storage-classes/custom-storage-class.PNG)
-
-| 属性 | 描述信息 |
+| 参数 | 描述信息 |
 | :---- | :---- |
 | 存储系统 | 在清单文件中由 `provisioner` 指定。如果您使用 [NFS-Client 的 Chart](https://github.com/kubesphere/helm-charts/tree/master/src/main/nfs-client-provisioner) 来安装存储类型，可以设为 `cluster.local/nfs-client-nfs-client-provisioner`。 |
 | 允许存储卷扩容 | 在清单文件中由 `allowVolumeExpansion` 指定。选择 `No`。 |
-| 回收机制 | 在清单文件中由 `reclaimPolicy` 指定。默认值为 Delete。 |
+| 回收机制 | 在清单文件中由 `reclaimPolicy` 指定。 |
 | 支持的访问模式 | 在清单文件中由 `.metadata.annotations.storageclass.kubesphere.io/supported-access-modes` 指定。默认 `ReadWriteOnce`、`ReadOnlyMany` 和 `ReadWriteMany` 全选。 |
 
 #### 参数

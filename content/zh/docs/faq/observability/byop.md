@@ -113,7 +113,7 @@ KubeSphere 3.0 使用 Prometheus Operator 来管理 Prometheus/Alertmanager 配�
 
 如果您的 Prometheus 堆栈不是由 Prometheus Operator 进行管理，您可以跳过此步骤。但请务必确保：
 
-- 您必须将 [PrometheusRule](https://github.com/kubesphere/kube-prometheus/blob/ks-v3.0/kustomize/prometheus-rules.yaml) 和 [PrometheusRule for ETCD](https://github.com/kubesphere/kube-prometheus/blob/ks-v3.0/kustomize/prometheus-rulesEtcd.yaml) 中的记录/告警规则复制至您的 Prometheus 配置中，以便 KubeSphere 3.0 能够正常运行。
+- 您必须将 [PrometheusRule](https://github.com/kubesphere/kube-prometheus/blob/ks-v3.0/kustomize/prometheus-rules.yaml) 和 [PrometheusRule for etcd](https://github.com/kubesphere/kube-prometheus/blob/ks-v3.0/kustomize/prometheus-rulesEtcd.yaml) 中的记录/告警规则复制至您的 Prometheus 配置中，以便 KubeSphere 3.0 能够正常运行。
 
 - 配置您的 Prometheus，使其抓取指标的目标 (Target) 与 [KubeSphere kustomization](https://github.com/kubesphere/kube-prometheus/blob/ks-v3.0/kustomize/kustomization.yaml) 中列出的 ServiceMonitor 的目标相同。
 

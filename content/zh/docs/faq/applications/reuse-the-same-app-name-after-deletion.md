@@ -10,7 +10,7 @@ Weight: 16920
 
 ## 准备工作
 
-- 您需要使用被邀请到项目中、且具有 `operator` 角色的帐户。本教程使用 `project-regular` 帐户进行演示。有关更多信息，请参考[创建企业空间、项目、帐户和角色](../../../quick-start/create-workspace-and-project/)。
+- 您需要使用被邀请到项目中、且具有 `operator` 角色的用户。本教程使用 `project-regular` 帐户进行演示。有关更多信息，请参考[创建企业空间、项目、用户和角色](../../../quick-start/create-workspace-and-project/)。
 - 您需要[启用应用商店](../../../pluggable-components/app-store/)。
 
 ## 复用相同应用名称

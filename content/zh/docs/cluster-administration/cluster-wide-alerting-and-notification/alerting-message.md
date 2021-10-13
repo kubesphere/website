@@ -11,18 +11,16 @@ weight: 8540
 ## 准备工作
 
 - 您需要启用 [KubeSphere 告警系统](../../../pluggable-components/alerting/)。
-- 您需要创建一个帐户 (`cluster-admin`) 并授予其 `clusters-admin` 角色。有关更多信息，请参见[创建企业空间、项目、帐户和角色](../../../quick-start/create-workspace-and-project/#step-4-create-a-role)。
+- 您需要创建一个用户 (`cluster-admin`) 并授予其 `clusters-admin` 角色。有关更多信息，请参见[创建企业空间、项目、用户和角色](../../../quick-start/create-workspace-and-project/#step-4-create-a-role)。
 - 您已经创建节点级别的告警策略并已触发该告警。有关更多信息，请参考[告警策略（节点级别）](../alerting-policy/)。
 
 ## 查看告警消息
 
 1. 使用 `cluster-admin` 帐户登录 KubeSphere 控制台，导航到**监控告警**下的**告警消息**。
 
-2. 在**告警消息**页面，可以看到列表中的全部告警消息。第一列显示了为告警通知定义的标题和消息。如需查看告警消息的详情，点击告警策略的名称，然后点击所出现页面上的**告警消息**选项卡。
+2. 在**告警消息**页面，可以看到列表中的全部告警消息。第一列显示了为告警消息定义的概括和详情。如需查看告警消息的详细信息，点击告警策略的名称，然后点击告警策略详情页面上的**告警消息**选项卡。
 
-   ![alert-message-page](/images/docs/zh-cn/cluster-administration/cluster-wide-alerting-and-notification/alerting-message-node-level/alert-message-page.png)
-
-3. 在**告警消息**选项卡，您可以看到告警级别、告警资源和告警激活时间。
+3. 在**告警消息**选项卡，您可以看到告警级别、监控目标和告警激活时间。
 
 ## 查看通知
 

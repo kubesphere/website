@@ -1,7 +1,7 @@
 ---
 title: "重置帐户密码"
 keywords: "忘记, 密码, KubeSphere, Kubernetes"
-description: "重置任意一个帐户的密码。"
+description: "重置任意一个用户的密码。"
 linkTitle: "重置帐户密码"
 Weight: 16410
 ---
