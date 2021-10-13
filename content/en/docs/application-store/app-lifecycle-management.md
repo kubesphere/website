@@ -18,7 +18,7 @@ Using [Redis](https://redis.io/) as an example application, this tutorial demons
 ## Prerequisites
 
 - You need to enable the [KubeSphere App Store (OpenPitrix)](../../pluggable-components/app-store/).
-- You need to create a workspace, a project and an account (`project-regular`). For more information, see [Create Workspaces, Projects, Accounts and Roles](../../quick-start/create-workspace-and-project/).
+- You need to create a workspace, a project and a user (`project-regular`). For more information, see [Create Workspaces, Projects, Users and Roles](../../quick-start/create-workspace-and-project/).
 
 ## Hands-on Lab
 
@@ -44,7 +44,7 @@ You need to create two accounts first, one for ISVs (`isv`) and the other (`revi
 
    {{</ notice >}} 
 
-4. As the role is ready now, you need to create an account and grant the role of `app-review` to it. In **Accounts**, click **Create**. Provide the required information and click **OK**.
+4. As the role is ready now, you need to create a user and grant the role of `app-review` to it. In **Accounts**, click **Create**. Provide the required information and click **OK**.
 
    ![create-review-role](/images/docs/appstore/application-lifecycle-management/create-review-role.png)
 

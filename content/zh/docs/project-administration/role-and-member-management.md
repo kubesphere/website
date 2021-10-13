@@ -17,7 +17,7 @@ weight: 13200
 
 ## 准备工作
 
-您需要至少创建一个项目（例如 `demo-project`）。此外，您还需要准备一个在项目级别具有 `admin` 角色的帐户（例如 `project-admin`）。有关更多信息，请参见[创建企业空间、项目、帐户和角色](../../quick-start/create-workspace-and-project/)。
+您需要至少创建一个项目（例如 `demo-project`）。此外，您还需要准备一个在项目级别具有 `admin` 角色的用户（例如 `project-admin`）。有关更多信息，请参见[创建企业空间、项目、用户和角色](../../quick-start/create-workspace-and-project/)。
 
 ## 内置角色
 

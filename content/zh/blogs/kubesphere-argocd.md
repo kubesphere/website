@@ -447,7 +447,7 @@ Argo CD Image Updater 部署略显繁琐，部署操作如下：
 
 1、在 Argo CD 中创建本地用户
 
-创建 Argo CD 镜像更新程序需要访问 Argo CD API Server 的凭据，使用一个 image-updater 具有适当 API 权限的帐户，将以下用户定义添加到 argocd-cm：
+创建 Argo CD 镜像更新程序需要访问 Argo CD API Server 的凭据，使用一个 image-updater 具有适当 API 权限的用户，将以下用户定义添加到 argocd-cm：
 
 ```bash
 # kubectl -n Argo CD edit cm argocd-cm

@@ -14,7 +14,7 @@ weight: 10120
 ## 准备工作
 
 - 您需要启用 [OpenPitrix (App Store)](../../../pluggable-components/app-store/)。
-- 您需要先完成[创建企业空间、项目、帐户和角色](../../../quick-start/create-workspace-and-project/)教程。您必须创建一个企业空间、一个项目和两个用户帐户（`ws-admin ` 和 `project-regular`）。`ws-admin` 必须被授予企业空间中的 `workspace-admin` 角色， `project-regular` 必须被授予项目中的 `operator` 角色。
+- 您需要先完成[创建企业空间、项目、用户和角色](../../../quick-start/create-workspace-and-project/)教程。您必须创建一个企业空间、一个项目和两个用户帐户（`ws-admin ` 和 `project-regular`）。`ws-admin` 必须被授予企业空间中的 `workspace-admin` 角色， `project-regular` 必须被授予项目中的 `operator` 角色。
 
 ## 动手实验
 

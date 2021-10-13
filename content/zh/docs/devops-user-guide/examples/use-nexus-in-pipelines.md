@@ -20,7 +20,7 @@ weight: 11450
 
 - 准备一个[GitHub](https://github.com/) 帐户。
 
-- 创建一个企业空间、一个 DevOps 工程（例如，`demo-devops`）和一个帐户（例如，`project-regular`）。`project-regular` 需要被邀请至 DevOps 工程中并赋予 `operator` 角色。有关更多信息，请参考[创建企业空间、项目、帐户和角色](../../../quick-start/create-workspace-and-project/)。
+- 创建一个企业空间、一个 DevOps 工程（例如，`demo-devops`）和一个用户（例如，`project-regular`）。`project-regular` 需要被邀请至 DevOps 工程中并赋予 `operator` 角色。有关更多信息，请参考[创建企业空间、项目、用户和角色](../../../quick-start/create-workspace-and-project/)。
 
 ## 动手实验
 

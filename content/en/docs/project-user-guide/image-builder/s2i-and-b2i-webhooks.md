@@ -13,7 +13,7 @@ This tutorial demonstrates how to configure S2I and B2I webhooks.
 ## Prerequisites
 
 - You need to enable the [KubeSphere DevOps System](../../../pluggable-components/devops/).
-- You need to create a workspace, a project (`demo-project`) and an account (`project-regular`). The account must be invited to the project with the role of `operator`. For more information, see [Create Workspaces, Projects, Accounts and Roles](../../../quick-start/create-workspace-and-project/).
+- You need to create a workspace, a project (`demo-project`) and a user (`project-regular`). The user must be invited to the project with the role of `operator`. For more information, see [Create Workspaces, Projects, Users and Roles](../../../quick-start/create-workspace-and-project/).
 - You need to create an S2I Image Builder and a B2I Image Builder. For more information, refer to [Source to Image: Publish an App without a Dockerfile](../source-to-image/) and [Binary to Image: Publish an Artifact to Kubernetes](../binary-to-image/).
 
 ## Configure an S2I Webhook

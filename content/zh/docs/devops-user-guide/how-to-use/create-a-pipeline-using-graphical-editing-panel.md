@@ -14,7 +14,7 @@ KubeSphere 中的图形编辑面板包含用于 Jenkins [阶段 (Stage)](https:/
 
 - 您需要[启用 KubeSphere DevOps 系统](../../../pluggable-components/devops/)。
 - 您需要有一个 [Docker Hub](http://www.dockerhub.com/) 帐户。
-- 您需要创建一个企业空间、一个 DevOps 工程和一个帐户 (`project-regular`)，必须邀请该帐户至 DevOps 工程中并赋予 `operator` 角色。如果尚未创建，请参见[创建企业空间、项目、帐户和角色](../../../quick-start/create-workspace-and-project/)。
+- 您需要创建一个企业空间、一个 DevOps 工程和一个用户 (`project-regular`)，必须邀请该帐户至 DevOps 工程中并赋予 `operator` 角色。如果尚未创建，请参见[创建企业空间、项目、用户和角色](../../../quick-start/create-workspace-and-project/)。
 - 设置 CI 专用节点来运行流水线。有关更多信息，请参见[为缓存依赖项设置 CI 节点](../../../devops-user-guide/how-to-use/set-ci-node/)。
 - 配置您的电子邮件服务器用于接收流水线通知（可选）。有关更多信息，请参见[为 KubeSphere 流水线设置电子邮件服务器](../../../devops-user-guide/how-to-use/jenkins-email/)。
 - 配置 SonarQube 将代码分析纳入流水线中（可选）。有关更多信息，请参见[将 SonarQube 集成到流水线](../../../devops-user-guide/how-to-integrate/sonarqube/)。
@@ -65,7 +65,7 @@ KubeSphere 中的图形编辑面板包含用于 Jenkins [阶段 (Stage)](https:/
 
 在本教程中，示例流水线会将 [sample](https://github.com/kubesphere/devops-java-sample/tree/sonarqube) 应用部署至一个项目。因此，您必须先创建一个项目（例如 `kubesphere-sample-dev`）。待流水线成功运行，会在该项目中自动创建该应用的部署和服务。
 
-您可以使用 `project-admin` 帐户创建项目。此外，该帐户也是 CI/CD 流水线的审核员。请确保将 `project-regular` 帐户邀请至该项目并授予 `operator` 角色。有关更多信息，请参见[创建企业空间、项目、帐户和角色](../../../quick-start/create-workspace-and-project/)。
+您可以使用 `project-admin` 帐户创建项目。此外，该帐户也是 CI/CD 流水线的审核员。请确保将 `project-regular` 帐户邀请至该项目并授予 `operator` 角色。有关更多信息，请参见[创建企业空间、项目、用户和角色](../../../quick-start/create-workspace-and-project/)。
 
 ### 步骤 3：创建流水线
 
@@ -311,7 +311,7 @@ KubeSphere 中的图形编辑面板包含用于 Jenkins [阶段 (Stage)](https:/
 
    {{< notice note >}}
 
-   在 KubeSphere 3.1 中，能够运行流水线的帐户也能够继续或终止该流水线。此外，流水线创建者、拥有该工程管理员角色的帐户或者您指定的帐户也有权限继续或终止流水线。
+   在 KubeSphere 3.1 中，能够运行流水线的帐户也能够继续或终止该流水线。此外，流水线创建者、拥有该工程管理员角色的用户或者您指定的帐户也有权限继续或终止流水线。
 
    {{</ notice >}}
 

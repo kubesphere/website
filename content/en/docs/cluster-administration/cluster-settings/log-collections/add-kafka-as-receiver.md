@@ -1,7 +1,7 @@
 ---
 title: "Add Kafka as a Receiver"
 keywords: 'Kubernetes, log, kafka, pod, container, fluentbit, output'
-description: 'Learn how to add Kafka to receive logs, events or auditing logs.'
+description: 'Learn how to add Kafka to receive container logs, resource events, or audit logs.'
 linkTitle: "Add Kafka as a Receiver"
 weight: 8623
 ---
@@ -13,7 +13,7 @@ You can use Elasticsearch, Kafka and Fluentd as log receivers in KubeSphere. Thi
 
 ## Prerequisites
 
-- You need an account granted a role including the permission of **Cluster Management**. For example, you can log in to the console as `admin` directly or create a new role with the permission and assign it to an account.
+- You need a user granted a role including the permission of **Cluster Management**. For example, you can log in to the console as `admin` directly or create a new role with the permission and assign it to a user.
 - Before adding a log receiver, you need to enable any of the `logging`, `events` or `auditing` components. For more information, see [Enable Pluggable Components](../../../../pluggable-components/). `logging` is enabled as an example in this tutorial.
 
 ## Step 1: Create a Kafka Cluster and a Kafka Topic
@@ -101,7 +101,7 @@ You can use [strimzi-kafka-operator](https://github.com/strimzi/strimzi-kafka-op
 
 ## Step 2: Add Kafka as a Log Receiver
 
-1. Log in to KubeSphere as `admin`. Click **Platform** in the top-left corner and select **Cluster Management**.
+1. Log in to KubeSphere as `admin`. Click **Platform** in the upper-left corner and select **Cluster Management**.
 
    {{< notice note >}}
 
@@ -109,17 +109,15 @@ You can use [strimzi-kafka-operator](https://github.com/strimzi/strimzi-kafka-op
 
    {{</ notice >}} 
 
-2. On the **Cluster Management** page, go to **Log Collection** in **Cluster Settings**.
+2. On the **Cluster Management** page, go to **Log Receivers** in **Cluster Settings**.
 
-3. Click **Add Log Receiver** and select **Kafka**. Enter the Kafka broker address and port as below, and then click **OK** to continue.
+3. Click **Add Log Receiver** and select **Kafka**. Enter the Kafka service address and port number, and then click **OK** to continue.
 
-   | Address                                                 | Port |
+   | Service Address                                         | Port Number |
    | ------------------------------------------------------- | ---- |
    | my-cluster-kafka-0.my-cluster-kafka-brokers.default.svc | 9092 |
    | my-cluster-kafka-1.my-cluster-kafka-brokers.default.svc | 9092 |
    | my-cluster-kafka-2.my-cluster-kafka-brokers.default.svc | 9092 |
-
-   ![add-kafka](/images/docs/cluster-administration/cluster-settings/log-collections/add-kafka-as-receiver/add-kafka.png)
 
 4. Run the following commands to verify whether the Kafka cluster is receiving logs sent from Fluent Bit:
 

@@ -12,7 +12,7 @@ weight: 8610
 
 ## 准备工作
 * 您需要启用[多集群功能](../../../multicluster-management/)。
-* 您需要有一个企业空间和一个拥有创建企业空间权限的帐户，例如 `ws-manager`。有关更多信息，请参见[创建企业空间、项目、帐户和角色](../../../quick-start/create-workspace-and-project/)。
+* 您需要有一个企业空间和一个拥有创建企业空间权限的帐户，例如 `ws-manager`。有关更多信息，请参见[创建企业空间、项目、用户和角色](../../../quick-start/create-workspace-and-project/)。
 
 ## 设置集群可见性
 
@@ -22,21 +22,15 @@ weight: 8610
 
 2. 点击左上角的**平台管理**，选择**访问控制**。在左侧导航栏选择**企业空间**，然后点击**创建**。
 
-   ![创建企业空间](/images/docs/zh-cn/cluster-administration/cluster-settings/cluster-visibility-and-authorization/create-workspace.PNG)
-
 3. 输入企业空间的基本信息，点击**下一步**。
 
 4. 在**集群选择**页面，您可以看到可用的集群列表，选择要分配给企业空间的集群并点击**创建**。
 
-   ![选择集群](/images/docs/zh-cn/cluster-administration/cluster-settings/cluster-visibility-and-authorization/select-a-cluster.PNG)
-
 5. 创建企业空间后，拥有必要权限的企业空间成员可以创建资源，在关联集群上运行。
-
-   ![创建项目](/images/docs/zh-cn/cluster-administration/cluster-settings/cluster-visibility-and-authorization/create-project.png)
 
    {{< notice warning >}}
 
-尽量不要在 Host 集群上创建资源，避免负载过高导致多集群稳定性下降。
+尽量不要在主集群上创建资源，避免负载过高导致多集群稳定性下降。
 
 {{</ notice >}} 
 
@@ -52,11 +46,7 @@ weight: 8610
 
 4. 您可以看到已授权企业空间的列表，这意味着所有这些企业空间中的资源都能使用当前集群。
 
-   ![设置集群可见性1](/images/docs/zh-cn/cluster-administration/cluster-settings/cluster-visibility-and-authorization/workspace-list.PNG)
-
-5. 点击**编辑可见范围**设置集群授权。您可以选择让新的企业空间使用该集群，或者将该集群从企业空间解绑。
-
-   ![设置集群可见性2](/images/docs/zh-cn/cluster-administration/cluster-settings/cluster-visibility-and-authorization/assign-workspace.PNG)
+5. 点击**编辑可见性**设置集群可见性。您可以选择让新的企业空间使用该集群，或者将该集群从企业空间解绑。
 
 ### 将集群设置为公开集群
 

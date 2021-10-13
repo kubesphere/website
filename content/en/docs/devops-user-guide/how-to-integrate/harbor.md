@@ -11,7 +11,7 @@ This tutorial demonstrates how to integrate Harbor into KubeSphere pipelines.
 ## Prerequisites
 
 - You need to [enable the KubeSphere DevOps System](../../../pluggable-components/devops/).
-- You need to create a workspace, a DevOps project, and an account (`project-regular`). This account needs to be invited to the DevOps project with the `operator` role. See [Create Workspaces, Projects, Accounts and Roles](../../../quick-start/create-workspace-and-project/) if they are not ready.
+- You need to create a workspace, a DevOps project, and a user (`project-regular`). This account needs to be invited to the DevOps project with the `operator` role. See [Create Workspaces, Projects, Users and Roles](../../../quick-start/create-workspace-and-project/) if they are not ready.
 
 ## Install Harbor
 

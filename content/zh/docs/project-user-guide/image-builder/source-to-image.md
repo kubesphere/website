@@ -22,7 +22,7 @@ Source-to-Image (S2I) 是一个工具箱和工作流，用于从源代码构建�
 
 - 您需要启用 [KubeSphere DevOps 系统](../../../pluggable-components/devops/)，该系统已集成 S2I。
 - 您需要创建一个 [GitHub](https://github.com/) 帐户和一个 [Docker Hub](http://www.dockerhub.com/) 帐户，也支持 GitLab 和 Harbor。本教程使用 Github 仓库提供源代码，用于构建镜像并推送至 Docker Hub。
-- 您需要创建一个企业空间、一个项目和一个帐户 (`project-regular`)，请务必邀请该帐户至项目中并赋予 `operator` 角色。有关更多信息，请参见[创建企业空间、项目、帐户和角色](../../../quick-start/create-workspace-and-project/)。
+- 您需要创建一个企业空间、一个项目和一个用户 (`project-regular`)，请务必邀请该帐户至项目中并赋予 `operator` 角色。有关更多信息，请参见[创建企业空间、项目、用户和角色](../../../quick-start/create-workspace-and-project/)。
 - 设置一个 CI 专用节点用于构建镜像。该操作不是必需，但建议开发和生产环境进行设置，专用节点会缓存依赖项并缩短构建时间。有关更多信息，请参见[为缓存依赖项设置 CI 节点](../../../devops-user-guide/how-to-use/set-ci-node/)。
 
 ## 使用 Source-to-Image (S2I)

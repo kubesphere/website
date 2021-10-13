@@ -44,7 +44,7 @@ Give a title first before you write a paragraph. It can be grouped into differen
 - When you submit your md files to GitHub, make sure you add related image files that appear in md files in the pull request as well. Please save your image files in static/images/docs. You can create a folder in the directory to save your images.
 - If you want to add remarks (for example, put a box on a UI button), use the color **green**. As some screenshot apps does not support the color picking function for a specific color code, as long as the color is **similar** to #09F709, #00FF00, #09F709 or #09F738, it is acceptable.
 - Image format: PNG.
-- Make sure images in your guide match the content. For example, you mention that users need to log in to KubeSphere using an account of a role; this means the account that displays in your image is expected to be the one you are talking about. It confuses your readers if the content you are describing is not consistent with the image used.
+- Make sure images in your guide match the content. For example, you mention that users need to log in to KubeSphere using a user of a role; this means the account that displays in your image is expected to be the one you are talking about. It confuses your readers if the content you are describing is not consistent with the image used.
 - Recommended: [Xnip](https://xnipapp.com/) for Mac and [Sniptool](https://www.reasyze.com/sniptool/) for Windows.
 
 

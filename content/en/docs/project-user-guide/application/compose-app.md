@@ -12,7 +12,7 @@ This tutorial demonstrates how to create a microservices-based app Bookinfo, whi
 
 ## Prerequisites
 
-- You need to create a workspace, a project, and a user account (`project-regular`) for this tutorial. The account needs to be invited to the project with the `operator` role. For more information, see [Create Workspaces, Projects, Accounts and Roles](../../../quick-start/create-workspace-and-project/).
+- You need to create a workspace, a project, and a user account (`project-regular`) for this tutorial. The account needs to be invited to the project with the `operator` role. For more information, see [Create Workspaces, Projects, Users and Roles](../../../quick-start/create-workspace-and-project/).
 - `project-admin` needs to [set the project gateway](../../../project-administration/project-gateway/) so that `project-regular` can define a domain name when creating the app.
 
 ## Create Microservices that Compose an App

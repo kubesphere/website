@@ -16,7 +16,7 @@ To provide consistent user experiences of managing microservices, KubeSphere int
 
 - You need to enable [KubeSphere Service Mesh](../../pluggable-components/service-mesh/).
 
-- You need to finish all tasks in [Create Workspaces, Projects, Accounts and Roles](../create-workspace-and-project/).
+- You need to finish all tasks in [Create Workspaces, Projects, Users and Roles](../create-workspace-and-project/).
 
 - You need to enable **Application Governance**. For more information, see [Set a Gateway](../../project-administration/project-gateway/#set-a-gateway).
 

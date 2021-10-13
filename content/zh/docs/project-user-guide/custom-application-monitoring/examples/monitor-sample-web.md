@@ -11,7 +11,7 @@ weight: 10813
 ## 准备工作
 
 - 请确保[已启用 OpenPitrix 系统](../../../../pluggable-components/app-store/)。
-- 您需要创建一个企业空间、一个项目和一个帐户。有关更多信息，请参见[创建企业空间、项目、帐户和角色](../../../../quick-start/create-workspace-and-project/)。该帐户需要是平台普通用户，邀请至该企业空间中并赋予 `self-provisioner` 角色。故请创建一个 `workspace-self-provisioner` 帐户，赋予 `self-provisioner` 角色，并使用该帐户创建一个项目（例如 `test`）。在本教程中，您以 `workspace-self-provisioner` 身份登录控制台，并在 `demo-workspace` 企业空间的 `test` 项目中进行操作。
+- 您需要创建一个企业空间、一个项目和一个用户。有关更多信息，请参见[创建企业空间、项目、用户和角色](../../../../quick-start/create-workspace-and-project/)。该帐户需要是平台普通用户，邀请至该企业空间中并赋予 `self-provisioner` 角色。故请创建一个 `workspace-self-provisioner` 帐户，赋予 `self-provisioner` 角色，并使用该帐户创建一个项目（例如 `test`）。在本教程中，您以 `workspace-self-provisioner` 身份登录控制台，并在 `demo-workspace` 企业空间的 `test` 项目中进行操作。
 
 - 了解 Helm Chart 和 [PromQL](https://prometheus.io/docs/prometheus/latest/querying/examples/)。
 

@@ -10,7 +10,7 @@ Weight: 16910
 
 ## 准备工作
 
-- 您需要在本教程中使用具有 `platform-admin` 角色的帐户（例如：`admin`）。
+- 您需要在本教程中使用具有 `platform-admin` 角色的用户（例如：`admin`）。
 - 您需要[启用应用商店](../../../pluggable-components/app-store/)。
 
 ## 移除内置应用

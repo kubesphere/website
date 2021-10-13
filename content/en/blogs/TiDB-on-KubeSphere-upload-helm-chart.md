@@ -115,7 +115,7 @@ You can release apps you have uploaded to KubeSphere to the public repository, a
 
    ![app-template-list](https://ap3.qingstor.com/kubesphere-website/docs/20201201150748.png)
 
-4. On the detail page, click the version number to expand the menu where you can delete the version, deploy the app to test it, or submit it for review. KubeSphere allows you to manage an app across its entire lifecycle. For an enterprise, this is very useful when different tenants need to be isolated from each other and are only responsible for their own part as they manage an app version. For demonstration purposes, I will use the account `admin` to perform all the operations. As we do not need to test the app, click **Submit Review** directly.
+4. On the detail page, click the version number to expand the menu where you can delete the version, deploy the app to test it, or submit it for review. KubeSphere allows you to manage an app across its entire lifecycle. For an enterprise, this is very useful when different tenants need to be isolated from each other and are only responsible for their own part as they manage an app version. For demonstration purposes, I will use the user `admin` to perform all the operations. As we do not need to test the app, click **Submit Review** directly.
 
    ![detail-page](https://ap3.qingstor.com/kubesphere-website/docs/20201201150948.png)
 

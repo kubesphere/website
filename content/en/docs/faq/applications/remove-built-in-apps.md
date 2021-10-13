@@ -10,7 +10,7 @@ As an open source and app-centric container platform, KubeSphere integrates 17 b
 
 ## Prerequisites
 
-- You need to use an account with the role of `platform-admin` (for example, `admin`) for this tutorial.
+- You need to use a user with the role of `platform-admin` (for example, `admin`) for this tutorial.
 - You need to [enable the App Store](../../../pluggable-components/app-store/).
 
 ## Remove a Built-in App

@@ -11,7 +11,7 @@ KubeSphere 上的应用路由和 Kubernetes 上的 [Ingress](https://kubernetes.
 
 ## 准备工作
 
-- 您需要创建一个企业空间、一个项目以及两个帐户（例如，`project-admin` 和 `project-regular`）。在此项目中，`project-admin` 必须具有 `admin` 角色，`project-regular` 必须具有 `operator` 角色。有关更多信息，请参见[创建企业空间、项目、帐户和角色](../../../quick-start/create-workspace-and-project/)。
+- 您需要创建一个企业空间、一个项目以及两个帐户（例如，`project-admin` 和 `project-regular`）。在此项目中，`project-admin` 必须具有 `admin` 角色，`project-regular` 必须具有 `operator` 角色。有关更多信息，请参见[创建企业空间、项目、用户和角色](../../../quick-start/create-workspace-and-project/)。
 - 若要以 HTTPS 模式访问应用路由，则需要[创建密钥](../../../project-user-guide/configuration/secrets/)用于加密，密钥中需要包含 `tls.crt`（TLS 证书）和 `tls.key`（TLS 私钥）。
 - 您需要[创建至少一个服务](../../../project-user-guide/application-workloads/services/)。本文档使用演示服务作为示例，该服务会将 Pod 名称返回给外部请求。
 

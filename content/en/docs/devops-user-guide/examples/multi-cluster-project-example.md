@@ -11,8 +11,8 @@ weight: 11420
 - You need to [enable the multi-cluster feature](../../../../docs/multicluster-management/) and create a workspace with your multiple clusters.
 - You need to have a [Docker Hub](https://hub.docker.com/) account.
 - You need to [enable the KubeSphere DevOps System](../../../../docs/pluggable-components/devops/) on your Host Cluster.
-- You need to use an account (for example, `project-admin`) with the role of `workspace-self-provisioner` to create a multi-cluster project and a DevOps project on the Host Cluster. This tutorial creates a multi-cluster project on the Host Cluster and one Member Cluster.
-- You need to invite an account (for example, `project-regular`) to the DevOps project and grant it the role of `operator`. For more information, see [Create Workspaces, Projects, Accounts and Roles](../../../quick-start/create-workspace-and-project/), [Multi-cluster Management](../../../multicluster-management/) and [Multi-cluster Projects](../../../project-administration/project-and-multicluster-project/#multi-cluster-projects).
+- You need to use a user (for example, `project-admin`) with the role of `workspace-self-provisioner` to create a multi-cluster project and a DevOps project on the Host Cluster. This tutorial creates a multi-cluster project on the Host Cluster and one Member Cluster.
+- You need to invite a user (for example, `project-regular`) to the DevOps project and grant it the role of `operator`. For more information, see [Create Workspaces, Projects, Users and Roles](../../../quick-start/create-workspace-and-project/), [Multi-cluster Management](../../../multicluster-management/) and [Multi-cluster Projects](../../../project-administration/project-and-multicluster-project/#multi-cluster-projects).
 
 ## Create a Docker Hub Access Token
 
@@ -62,7 +62,7 @@ You need to create credentials in KubeSphere for the access token created so tha
 
 ## Create a Pipeline
 
-With the above credentials ready, you can use the account `project-regular` to create a pipeline with an example Jenkinsfile as below.
+With the above credentials ready, you can use the user `project-regular` to create a pipeline with an example Jenkinsfile as below.
 
 1. To create a pipeline, click **Create** on the **Pipelines** page.
 

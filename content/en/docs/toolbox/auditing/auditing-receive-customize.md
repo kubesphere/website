@@ -126,7 +126,7 @@ spec:
 ```
 {{< notice tip >}} 
 
-You can also use an account of `platform-admin` role to log in to the console, search `Webhook` in **CRDs** on the **Cluster Management** page, and edit `kube-auditing-webhook` directly.
+You can also use a user of `platform-admin` role to log in to the console, search `Webhook` in **CRDs** on the **Cluster Management** page, and edit `kube-auditing-webhook` directly.
 
 {{</ notice >}}
 
