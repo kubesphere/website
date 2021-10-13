@@ -37,11 +37,7 @@ You need to deploy KubeSphere on your GKE cluster first. For more information ab
 
 3. Go to **CRDs**, enter `ClusterConfiguration` in the search bar, and then press **Enter** on your keyboard. Click **ClusterConfiguration** to go to its detail page.
 
-   ![search-config](/images/docs/multicluster-management/import-cloud-hosted-k8s/import-gke/search-config.png)
-
 4. Click <img src="/images/docs/multicluster-management/import-cloud-hosted-k8s/import-gke/three-dots.png" height="20px"> on the right and then select **Edit YAML** to edit `ks-installer`. 
-
-   ![click-edit](/images/docs/multicluster-management/import-cloud-hosted-k8s/import-gke/click-edit.png)
 
 5. In the YAML file of `ks-installer`, change the value of `jwtSecret` to the corresponding value shown above and set the value of `clusterRole` to `member`.
 
@@ -113,16 +109,8 @@ You need to deploy KubeSphere on your GKE cluster first. For more information ab
 
 1. Log in to the KubeSphere console on your Host Cluster as `admin`. Click **Platform** in the upper-left corner and then select **Cluster Management**. On the **Cluster Management** page, click **Add Cluster**.
 
-   ![click-add-cluster](/images/docs/multicluster-management/import-cloud-hosted-k8s/import-gke/click-add-cluster.png)
-
 2. Enter the basic information based on your needs and click **Next**.
-
-   ![input-info](/images/docs/multicluster-management/import-cloud-hosted-k8s/import-gke/input-info.png)
 
 3. In **Connection Method**, select **Direct Connection**. Fill in the new kubeconfig file of the GKE Member Cluster and then click **Create**.
 
-   ![select-method](/images/docs/multicluster-management/import-cloud-hosted-k8s/import-gke/select-method.png)
-
 4. Wait for cluster initialization to finish.
-
-   ![gke-cluster-imported](/images/docs/multicluster-management/import-cloud-hosted-k8s/import-gke/gke-cluster-imported.png)

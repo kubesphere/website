@@ -1,8 +1,8 @@
 ---
-title: "Create Workspaces, Projects, Accounts and Roles"
-keywords: 'KubeSphere, Kubernetes, Multi-tenant, Workspace, Account, Role, Project'
+title: "Create Workspaces, Projects, Users and Roles"
+keywords: 'KubeSphere, Kubernetes, Multi-tenant, Workspace, User, Role, Project'
 description: 'Take advantage of the multi-tenant system of KubeSphere for fine-grained access control at different levels.'
-linkTitle: "Create Workspaces, Projects, Accounts and Roles"
+linkTitle: "Create Workspaces, Projects, Users and Roles"
 weight: 2300
 ---
 
@@ -171,11 +171,11 @@ In this step, you create a project using the account `project-admin` created in 
    The user granted the role `operator` is a project maintainer who can manage resources other than users and roles in the project.
    {{</ notice >}}
 
-6. Before creating a [Route](../../project-user-guide/application-workloads/routes/) which is [Ingress](https://kubernetes.io/docs/concepts/services-networking/ingress/) in Kubernetes, you need to enable a gateway for this project. The gateway is an [NGINX Ingress controller](https://github.com/kubernetes/ingress-nginx) running in the project. To set a gateway, go to **Advanced Settings** in **Project Settings** and click **Set Gateway**. The account `project-admin` is still used in this step.
+6. Before creating a [Route](../../project-user-guide/application-workloads/routes/) which is [Ingress](https://kubernetes.io/docs/concepts/services-networking/ingress/) in Kubernetes, you need to enable a gateway for this project. The gateway is an [NGINX Ingress controller](https://github.com/kubernetes/ingress-nginx) running in the project. To set a gateway, go to **Gateway Settings** in **Project Settings** and click **Set Gateway**. The account `project-admin` is still used in this step.
 
-7. Select the access method **NodePort** and click **Save**.
+7. Select the access method **NodePort** and click **OK**.
 
-8. Under **Internet Access**, you can obtain the Gateway Address and the NodePort of http and https in the list.
+8. Under **External Access**, you can obtain the Gateway Address and the NodePort of http and https in the list.
 
    {{< notice note >}}
    If you want to expose services using the type `LoadBalancer`, you need to use the LoadBalancer plugin of cloud providers. If your Kubernetes cluster is running in a bare metal environment, it is recommended that you use [OpenELB](https://github.com/kubesphere/openelb) as the LoadBalancer plugin.

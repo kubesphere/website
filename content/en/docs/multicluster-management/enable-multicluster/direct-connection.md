@@ -41,7 +41,7 @@ multicluster:
   clusterRole: host
 ```
 
-You need to **wait for a while** so that the change can take effect.
+You need to wait for a while so that the change can take effect.
 
 {{</ tab >}}
 
@@ -151,12 +151,8 @@ kubectl logs -n kubesphere-system $(kubectl get pod -n kubesphere-system -l app=
 ## Import a Member Cluster
 
 1. Log in to the KubeSphere console as `admin` and click **Add Cluster** on the **Cluster Management** page.
-   
-   ![add-cluster](/images/docs/multicluster-management/enable-multicluster-management-in-kubesphere/direct-connection/add-cluster.png)
 
 2. Enter the basic information of the cluster to be imported on the **Import Cluster** page. You can also click **Edit Mode** in the top-right corner to view and edit the basic information in YAML format. After you finish editing, click **Next**.
-
-     ![cluster-info](/images/docs/multicluster-management/enable-multicluster-management-in-kubesphere/direct-connection/cluster-info.png)
 
 3. In **Connection Method**, select **Direct Connection**, and copy the kubeconfig of the Member Cluster and paste it into the box. You can also click **Edit Mode** in the top-right corner to edit the kubeconfig of the Member Cluster in YAML format.
 
@@ -165,9 +161,5 @@ kubectl logs -n kubesphere-system $(kubectl get pod -n kubesphere-system -l app=
 Make sure the `server` address in KubeConfig is accessible on any node of the Host Cluster.
 
      {{</ notice >}}
-    
-     ![kubeconfig](/images/docs/multicluster-management/enable-multicluster-management-in-kubesphere/direct-connection/kubeconfig.png)
 
-4. Click **Create** and wait for cluster initialization to finish.
-   
-     ![cluster-imported](/images/docs/multicluster-management/enable-multicluster-management-in-kubesphere/direct-connection/cluster-imported.png)
+1. Click **Create** and wait for cluster initialization to finish.
