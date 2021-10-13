@@ -12,7 +12,7 @@ This tutorial describes how to configure a webhook server to receive platform no
 
 ## Prerequisites
 
-You need to prepare an account granted the `platform-admin` role. For more information, see [Create Workspaces, Projects, Accounts and Roles](../../../../quick-start/create-workspace-and-project/).
+You need to prepare a user granted the `platform-admin` role. For more information, see [Create Workspaces, Projects, Users and Roles](../../../../quick-start/create-workspace-and-project/).
 
 ## Configure the Webhook Server
 
@@ -20,21 +20,21 @@ You need to prepare an account granted the `platform-admin` role. For more infor
 
 2. Click **Platform** in the upper-left corner and select **Platform Settings**.
 
-3. In the left nevigation pane, click **Webhook** under **Notification Management**.
+3. In the left nevigation pane, click **Notification Configuration** under **Notification Management**, and select **Webhook**.
 
-4. On the **Webhook** page, configure the following parameters:
+4. On the **Webhook** tab page, set the following parameters:
 
-   - **URL**: URL of the webhook server.
+   - **Webhook URL**: URL of the webhook server.
 
    - **Verification Type**: Webhook authentication method.
-     - **No Auth**: Skips authentication. All notifications can be sent to the URL.
-     - **Bearer Token**: Uses a token for authentication.
-     - **Basic Auth**: Uses a username and password for authentication.
+     - **No authentication**: Skips authentication. All notifications can be sent to the URL.
+     - **Bearer token**: Uses a token for authentication.
+     - **Basic authentication**: Uses a username and password for authentication.
 
-   {{< notice note>}}Currently, KubeSphere does not suppot TLS connections (HTTPS). You need to select **Skip TLS Certification** if you use an HTTPS URL.
+   {{< notice note>}}Currently, KubeSphere does not suppot TLS connections (HTTPS). You need to select **Skip TLS verification (insecure)** if you use an HTTPS URL.
 
    {{</notice>}}
 
 5. Under **Notification Settings**, turn on/off the **Receive Notifications** toggle to start/stop sending notifications to the webhook.
 
-6. Click **Save** after you finish.
+6. Click **OK** after you finish.

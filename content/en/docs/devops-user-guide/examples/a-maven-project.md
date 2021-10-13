@@ -10,7 +10,7 @@ weight: 11430
 
 - You need to [enable the KubeSphere DevOps System](../../../../docs/pluggable-components/devops/).
 - You need to have a [Docker Hub](http://www.dockerhub.com/) account.
-- You need to create a workspace, a DevOps project, and a user account, and this account needs to be invited into the DevOps project with the role of `operator`. For more information, see [Create Workspaces, Projects, Accounts and Roles](../../../quick-start/create-workspace-and-project/).
+- You need to create a workspace, a DevOps project, and a user account, and this account needs to be invited into the DevOps project with the role of `operator`. For more information, see [Create Workspaces, Projects, Users and Roles](../../../quick-start/create-workspace-and-project/).
 
 ## Workflow for a Maven Project
 

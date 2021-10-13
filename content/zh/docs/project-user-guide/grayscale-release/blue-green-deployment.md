@@ -16,7 +16,7 @@ weight: 10520
 ## 准备工作
 
 - 您需要启用 [KubeSphere 服务网格](../../../pluggable-components/service-mesh/)。
-- 您需要创建一个企业空间、一个项目和一个帐户 (`project-regular`)，务必邀请该帐户到项目中并赋予 `operator` 角色。有关更多信息，请参见[创建企业空间、项目、帐户和角色](../../../quick-start/create-workspace-and-project/)。
+- 您需要创建一个企业空间、一个项目和一个用户 (`project-regular`)，务必邀请该帐户到项目中并赋予 `operator` 角色。有关更多信息，请参见[创建企业空间、项目、用户和角色](../../../quick-start/create-workspace-and-project/)。
 - 您需要启用**应用治理**并有一个可用应用，以便您可以实现该应用的蓝绿部署。本教程使用示例应用 Bookinfo。有关更多信息，请参见[部署 Bookinfo 和管理流量](../../../quick-start/deploy-bookinfo-to-k8s/)。
 
 ## 创建蓝绿部署任务

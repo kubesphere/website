@@ -14,7 +14,7 @@ weight: 10310
 
 ## 准备工作
 
-- 您需要创建一个企业空间、一个项目和一个帐户（例如 `project-regular`）。该帐户必须已邀请至该项目，并具有 `operator` 角色。有关更多信息，请参阅[创建企业空间、项目、帐户和角色](../../../quick-start/create-workspace-and-project/)。
+- 您需要创建一个企业空间、一个项目和一个用户（例如 `project-regular`）。该用户必须已邀请至该项目，并具有 `operator` 角色。有关更多信息，请参阅[创建企业空间、项目、用户和角色](../../../quick-start/create-workspace-and-project/)。
 
 - 如需使用动态存储卷供应，您需要配置一个支持动态供应的[存储类型](../../../cluster-administration/persistent-volume-and-storage-class/)。
 

@@ -18,7 +18,7 @@ This tutorial demonstrates how to create an application (WordPress as an example
 
 ## Prerequisites
 
-An account `project-regular` is needed with the role of `operator` assigned in one of your projects (the user has been invited to the project). For more information, see [Create Workspaces, Projects, Accounts and Roles](../create-workspace-and-project/).
+An account `project-regular` is needed with the role of `operator` assigned in one of your projects (the user has been invited to the project). For more information, see [Create Workspaces, Projects, Users and Roles](../create-workspace-and-project/).
 
 ## Estimated Time
 

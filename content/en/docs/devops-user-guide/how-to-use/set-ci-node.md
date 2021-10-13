@@ -12,7 +12,7 @@ This tutorial demonstrates how to set CI nodes so that KubeSphere schedules task
 
 ## Prerequisites
 
-You need an account granted a role including the permission of **Cluster Management**. For example, you can log in to the console as `admin` directly or create a new role with the permission and assign it to an account.
+You need a user granted a role including the permission of **Cluster Management**. For example, you can log in to the console as `admin` directly or create a new role with the permission and assign it to a user.
 
 ## Label a CI Node
 

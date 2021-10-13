@@ -20,9 +20,9 @@ You need to enable [KubeSphere Auditing Logs](../../../pluggable-components/audi
 
 Any account has the authorization to query auditing logs, while the logs each account is able to see are different.
 
-- If an account has the authorization of viewing resources in a project, it can see the auditing log that happens in this project, such as workload creation in the project.
-- If an account has the authorization of listing projects in a workspace, it can see the auditing log that happens in this workspace but not in projects, such as project creation in the workspace.
-- If an account has the authorization of listing projects in a cluster, it can see the auditing log that happens in this cluster but not in workspaces and projects, such as workspace creation in the cluster.
+- If a user has the authorization of viewing resources in a project, it can see the auditing log that happens in this project, such as workload creation in the project.
+- If a user has the authorization of listing projects in a workspace, it can see the auditing log that happens in this workspace but not in projects, such as project creation in the workspace.
+- If a user has the authorization of listing projects in a cluster, it can see the auditing log that happens in this cluster but not in workspaces and projects, such as workspace creation in the cluster.
 
 {{</ notice >}} 
 

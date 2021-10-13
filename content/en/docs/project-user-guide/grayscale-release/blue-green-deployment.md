@@ -15,7 +15,7 @@ The blue-green release provides a zero downtime deployment, which means the new 
 ## Prerequisites
 
 - You need to enable [KubeSphere Service Mesh](../../../pluggable-components/service-mesh/).
-- You need to create a workspace, a project and an account (`project-regular`). The account must be invited to the project with the role of `operator`. For more information, see [Create Workspaces, Projects, Accounts and Roles](../../../quick-start/create-workspace-and-project/).
+- You need to create a workspace, a project and a user (`project-regular`). The user must be invited to the project with the role of `operator`. For more information, see [Create Workspaces, Projects, Users and Roles](../../../quick-start/create-workspace-and-project/).
 - You need to enable **Application Governance** and have an available app so that you can implement the blue-green deployment for it. The sample app used in this tutorial is Bookinfo. For more information, see [Deploy Bookinfo and Manage Traffic](../../../quick-start/deploy-bookinfo-to-k8s/).
 
 ## Create a Blue-green Deployment Job
@@ -59,7 +59,7 @@ The blue-green release provides a zero downtime deployment, which means the new 
    {{< notice note >}} 
 
    - When you run the command above, replace `demo-project` with your own project (namely, namespace) name.
-   - If you want to run the command from the web kubectl on the KubeSphere console, you need to use the account `admin`.
+   - If you want to run the command from the web kubectl on the KubeSphere console, you need to use the user `admin`.
 
    {{</ notice >}}
 

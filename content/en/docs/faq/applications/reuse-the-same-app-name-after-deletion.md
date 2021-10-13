@@ -10,7 +10,7 @@ To deploy an app in KubeSphere, tenants can go to the App Store and select the a
 
 ## Prerequisites
 
-- You need to use an account invited to your project with the role of `operator`. This tutorial uses the account `project-regular` for demonstration purposes. For more information, refer to [Create Workspaces, Projects, Accounts and Roles](../../../quick-start/create-workspace-and-project/).
+- You need to use a user invited to your project with the role of `operator`. This tutorial uses the account `project-regular` for demonstration purposes. For more information, refer to [Create Workspaces, Projects, Users and Roles](../../../quick-start/create-workspace-and-project/).
 - You need to [enable the App Store](../../../pluggable-components/app-store/).
 
 ## Reuse the Same App Name

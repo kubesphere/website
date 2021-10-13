@@ -11,7 +11,7 @@ This tutorial demonstrates how to unbind a cluster from the central control plan
 ## Prerequisites
 
 - You have enabled multi-cluster management.
-- You need an account granted a role including the authorization of **Cluster Management**. For example, you can log in to the console as `admin` directly or create a new role with the authorization and assign it to an account.
+- You need a user granted a role including the authorization of **Cluster Management**. For example, you can log in to the console as `admin` directly or create a new role with the authorization and assign it to a user.
 
 ## Unbind a Cluster
 

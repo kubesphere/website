@@ -24,7 +24,7 @@ WordPress（使用 PHP 语言编写）是免费、开源的内容管理系统，
 
 ## 准备工作
 
-您需要准备一个 `project regular` 帐户，并在一个项目中赋予该帐户 `operator` 角色（该用户已被邀请参加该项目）。有关更多信息，请参见[创建企业空间、项目、帐户和角色](../create-workspace-and-project/)。
+您需要准备一个 `project regular` 帐户，并在一个项目中赋予该帐户 `operator` 角色（该用户已被邀请参加该项目）。有关更多信息，请参见[创建企业空间、项目、用户和角色](../create-workspace-and-project/)。
 
 ## 预计操作时间
 

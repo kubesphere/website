@@ -15,7 +15,7 @@ KubeSphere 中的项目即 Kubernetes [命名空间](https://kubernetes.io/zh/do
 
 ## 准备工作
 
-- 您需要有一个可用的企业空间和一个帐户 (`project-admin`)。该帐户必须在该企业空间拥有 `workspace-self-provisioner` 角色。有关更多信息，请参见[创建企业空间、项目、帐户和角色](../../quick-start/create-workspace-and-project/)。
+- 您需要有一个可用的企业空间和一个用户 (`project-admin`)。该用户必须在该企业空间拥有 `workspace-self-provisioner` 角色。有关更多信息，请参见[创建企业空间、项目、用户和角色](../../quick-start/create-workspace-and-project/)。
 - 在创建多集群项目前，您需要通过[直接连接](../../multicluster-management/enable-multicluster/direct-connection/)或[代理连接](../../multicluster-management/enable-multicluster/agent-connection/)启用多集群功能。
 
 ## 项目

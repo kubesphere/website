@@ -20,11 +20,7 @@ weight: 8723
 
 2. 在**应用管理**页面，点击**自建**下的**创建应用**。
 
-   ![click-create-app](/images/docs/zh-cn/cluster-administration/platform-settings/notification-management/configure-wecom/click-create-app.png)
-
 3. 在**创建应用**页面，上传应用 Logo、输入应用名称（例如，`通知测试`），点击**选择部门 / 成员**编辑**可见范围**，然后点击**创建应用**。
-
-   ![create-app](/images/docs/zh-cn/cluster-administration/platform-settings/notification-management/configure-wecom/create-app.png)
 
    {{< notice note >}}
 
@@ -34,69 +30,43 @@ weight: 8723
 
 4. 应用创建完成后即可查看其详情页面，**AgentId** 右侧显示该应用的 ID。点击 **Secret** 右侧的**查看**，然后在弹出对话框中点击**发送**，便可以在企业微信客户端查看 Secret。此外，您还可以点击**编辑**来编辑可见范围。
 
-   ![app-detail](/images/docs/zh-cn/cluster-administration/platform-settings/notification-management/configure-wecom/app-detail.png)
-
-   ![view-secret](/images/docs/zh-cn/cluster-administration/platform-settings/notification-management/configure-wecom/view-secret.png)
-
 ### 步骤 2：创建部门或标签
 
 1. 在**通讯录**页面的**组织架构**选项卡下，点击**测试**（本教程使用`测试`部门作为示例）右侧的 <img src="/images/docs/zh-cn/cluster-administration/platform-settings/notification-management/configure-wecom/three-dots.png" height="20px">，然后选择**添加子部门**。
 
-   ![add-dept](/images/docs/zh-cn/cluster-administration/platform-settings/notification-management/configure-wecom/add-dept.png)
-
 2. 在弹出对话框中，输入部门名称（例如`测试二组`），然后点击**确定**。
-
-   ![enter-dept-name](/images/docs/zh-cn/cluster-administration/platform-settings/notification-management/configure-wecom/enter-dept-name.png)
 
 3. 创建部门后，您可以点击右侧的**添加成员**、**批量导入**或**从其他部门移入**来添加成员。添加成员后，点击该成员进入详情页面，查看其帐号。
 
-   ![add-member](/images/docs/zh-cn/cluster-administration/platform-settings/notification-management/configure-wecom/add-member.png)
-
-   ![member-account](/images/docs/zh-cn/cluster-administration/platform-settings/notification-management/configure-wecom/member-account.png)
-
 4. 您可以点击`测试二组`右侧的 <img src="/images/docs/zh-cn/cluster-administration/platform-settings/notification-management/configure-wecom/three-dots.png" height="20px"> 来查看其部门 ID。
-
-   ![dept-id](/images/docs/zh-cn/cluster-administration/platform-settings/notification-management/configure-wecom/dept-id.png)
 
 5. 点击**标签**选项卡，然后点击**添加标签**来创建标签。若管理界面无**标签**选项卡，请点击加号图标来创建标签。
 
-   ![add-tag](/images/docs/zh-cn/cluster-administration/platform-settings/notification-management/configure-wecom/add-tag.png)
-
 6. 在弹出对话框中，输入标签名称，例如`组长`。您可以按需指定**可使用人**，点击**确定**完成操作。
-
-   ![create-tag](/images/docs/zh-cn/cluster-administration/platform-settings/notification-management/configure-wecom/create-tag.png)
 
 7. 创建标签后，您可以点击右侧的**添加部门/成员**或**批量导入**来添加部门或成员。点击**标签详情**进入详情页面，可以查看此标签的 ID。
 
-   ![add-member-to-tag](/images/docs/zh-cn/cluster-administration/platform-settings/notification-management/configure-wecom/add-member-to-tag.png)
-
-   ![tag-id](/images/docs/zh-cn/cluster-administration/platform-settings/notification-management/configure-wecom/tag-id.png)
-
 8. 要查看企业 ID，请点击**我的企业**，在**企业信息**页面查看 ID。
-
-   ![company-id](/images/docs/zh-cn/cluster-administration/platform-settings/notification-management/configure-wecom/company-id.png)
 
 ### 步骤 3：在 KubeSphere 控制台配置企业微信通知
 
 您必须在 KubeSphere 控制台提供企业微信的相关 ID 和凭证，以便 KubeSphere 将通知发送至您的企业微信。
 
-1. 使用具有 `platform-admin` 角色的帐户（例如，`admin`）登录 KubeSphere Web 控制台。
+1. 使用具有 `platform-admin` 角色的用户（例如，`admin`）登录 KubeSphere Web 控制台。
 
 2. 点击左上角的**平台管理**，选择**平台设置**。
 
-3. 前往**通知管理**下的**企业微信**。
+3. 前往**通知管理**下的**通知配置**，选择**企业微信**。
 
-   ![platform](/images/docs/zh-cn/cluster-administration/platform-settings/notification-management/configure-wecom/platform.png)
-
-4. 在**服务器配置**下的**企业 ID**、**企业应用 ID** 以及**企业应用凭证**中分别输入您的企业 ID、应用 AgentId 以及应用 Secret。
+4. 在**服务器设置**下的**企业 ID**、**应用 AgentId** 以及**应用 Secret** 中分别输入您的企业 ID、应用 AgentId 以及应用 Secret。
 
 5. 在**接收设置**中，从下拉列表中选择**用户 ID**、**部门 ID** 或者**标签 ID**，输入对应 ID 后点击**添加**。您可以添加多个 ID。
 
-6. 点击**保存**，然后开启**接收通知**并点击**更新**。
+6. 在右上角，打开**未启用**开关来接收企业微信通知，或者关闭**已启用**开关来停用企业微信通知。
 
    {{< notice note >}}
 
-   如果您更改了现有配置，则必须点击**更新**以应用更改。
+   如果您更改了现有配置，则必须点击**确定**以应用更改。
 
    {{</ notice >}}
 

@@ -24,7 +24,7 @@ weight: 10220
 
 ## 准备工作
 
-您需要创建一个企业空间、一个项目以及一个帐户 (`project-regular`)，务必邀请该帐户到项目中并赋予 `operator` 角色。有关更多信息，请参见[创建企业空间、项目、帐户和角色](../../../quick-start/create-workspace-and-project/)。
+您需要创建一个企业空间、一个项目以及一个用户 (`project-regular`)，务必邀请该帐户到项目中并赋予 `operator` 角色。有关更多信息，请参见[创建企业空间、项目、用户和角色](../../../quick-start/create-workspace-and-project/)。
 
 ## 创建有状态副本集
 

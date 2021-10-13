@@ -31,7 +31,7 @@ The role of cluster-admin is able to create accounts for other users and assign 
 
 #### Step 1: Create roles and accounts
 
-First, we will create a new role (user-manager), grants account management and role management authority to this role, then we will create an account and grant the user-manager role to this account.
+First, we will create a new role (user-manager), grants account management and role management authority to this role, then we will create a user and grant the user-manager role to this account.
 
 | Account Name | Cluster Role | Responsibility                    |
 | ------------ | ------------ | --------------------------------- |
@@ -47,7 +47,7 @@ First, we will create a new role (user-manager), grants account management and r
 
 ![](https://pek3b.qingstor.com/kubesphere-docs/png/20190716112826.png)
 
-1.4. Click **Platform**, then navigate to **Accounts** page and click **Create** to create an account.
+1.4. Click **Platform**, then navigate to **Accounts** page and click **Create** to create a user.
 
 ![](https://pek3b.qingstor.com/kubesphere-docs/png/20190716112945.png)
 

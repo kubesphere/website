@@ -11,7 +11,7 @@ A Route on KubeSphere is the same as an [Ingress](https://kubernetes.io/docs/con
 
 ## Prerequisites
 
-- You need to create a workspace, a project and two accounts (for example, `project-admin` and `project-regular`). In the project, the role of `project-admin` must be `admin` and that of `project-regular` must be `operator`. For more information, see [Create Workspaces, Projects, Accounts and Roles](/docs/quick-start/create-workspace-and-project/).
+- You need to create a workspace, a project and two accounts (for example, `project-admin` and `project-regular`). In the project, the role of `project-admin` must be `admin` and that of `project-regular` must be `operator`. For more information, see [Create Workspaces, Projects, Users and Roles](/docs/quick-start/create-workspace-and-project/).
 - If the Route is to be accessed in HTTPS mode, you need to [create a Secret](/docs/project-user-guide/configuration/secrets/) that contains the `tls.crt` (TLS certificate) and `tls.key` (TLS private key) keys used for encryption.
 - You need to [create at least one Service](/docs/project-user-guide/application-workloads/services/). This document uses a demo Service as an example, which returns the Pod name to external requests.
 

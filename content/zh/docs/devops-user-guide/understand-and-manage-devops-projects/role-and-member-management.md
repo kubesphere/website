@@ -17,7 +17,7 @@ weight: 11130
 
 ## 准备工作
 
-至少已创建一个 DevOps 工程，例如 `demo-devops`。此外，您需要一个在 DevOps 工程级别具有 `admin` 角色的帐户（例如 `devops-admin`）。
+至少已创建一个 DevOps 工程，例如 `demo-devops`。此外，您需要一个在 DevOps 工程级别具有 `admin` 角色的用户（例如 `devops-admin`）。
 
 ## 内置角色
 

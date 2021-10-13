@@ -34,7 +34,7 @@ You need to create a Slack app first so that it can help you send notifications 
 
 You must provide the Slack token on the console for authentication so that KubeSphere can send notifications to your channel.
 
-1. Log in to the web console with an account granted the role `platform-admin`.
+1. Log in to the web console with a user granted the role `platform-admin`.
 
 2. Click **Platform** in the top-left corner and select **Platform Settings**.
 

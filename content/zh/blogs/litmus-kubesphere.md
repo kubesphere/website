@@ -91,7 +91,7 @@ Litmus 的组件可以划分为两部分：
 
 本教程将使用 KubeSphere 的应用模板来部署 Litmus。
 
-要想从应用模板部署应用，需要创建一个企业空间、一个项目和两个用户帐户（`ws-admin` 和 `project-regular`）。`ws-admin` 必须被授予企业空间中的 `workspace-admin` 角色， `project-regular` 必须被授予项目中的 `operator` 角色。在创建之前，我们先来回顾一下 KubeSphere 的多租户架构。
+要想从应用模板部署应用，需要创建一个企业空间、一个项目和两个用户用户（`ws-admin` 和 `project-regular`）。`ws-admin` 必须被授予企业空间中的 `workspace-admin` 角色， `project-regular` 必须被授予项目中的 `operator` 角色。在创建之前，我们先来回顾一下 KubeSphere 的多租户架构。
 
 ### 多租户架构
 
@@ -103,7 +103,7 @@ KubeSphere 的多租户系统分**三个**层级，即集群、企业空间和�
 
 ### 创建帐户
 
-安装 KubeSphere 之后，您需要向平台添加具有不同角色的用户，以便他们可以针对自己授权的资源在不同的层级进行工作。一开始，系统默认只有一个帐户 `admin`，具有 `platform-admin` 角色。在本步骤中，您将创建一个帐户 `user-manager`，然后使用 `user-manager` 创建新帐户。
+安装 KubeSphere 之后，您需要向平台添加具有不同角色的用户，以便他们可以针对自己授权的资源在不同的层级进行工作。一开始，系统默认只有一个用户 `admin`，具有 `platform-admin` 角色。在本步骤中，您将创建一个用户 `user-manager`，然后使用 `user-manager` 创建新帐户。
 
 1. 以 `admin` 身份使用默认帐户和密码 (`admin/P@88w0rd`) 登录 Web 控制台。
 
@@ -113,7 +113,7 @@ KubeSphere 的多租户系统分**三个**层级，即集群、企业空间和�
 
    ![](https://pek3b.qingstor.com/kubesphere-community/images/20210602121105.png)
 
-   在**帐户角色**中，有如下所示四个可用的内置角色。接下来要创建的第一个帐户将被分配 `users-manager` 角色。
+   在**帐户角色**中，有如下所示四个可用的内置角色。接下来要创建的第一个用户将被分配 `users-manager` 角色。
 
    | 内置角色             | 描述                                                         |
    | -------------------- | ------------------------------------------------------------ |

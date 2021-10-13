@@ -12,7 +12,7 @@ This tutorial demonstrates how to monitor and visualize MySQL metrics.
 ## Prerequisites
 
 - You need to [enable the App Store](../../../../pluggable-components/app-store/). MySQL and MySQL Exporter will be deployed from the App Store.
-- You need to create a workspace, a project, and an account (`project-regular`) for this tutorial. The account needs to be invited to the project with the `operator` role. For more information, see [Create Workspaces, Projects, Accounts and Roles](../../../../quick-start/create-workspace-and-project/).
+- You need to create a workspace, a project, and a user (`project-regular`) for this tutorial. The account needs to be invited to the project with the `operator` role. For more information, see [Create Workspaces, Projects, Users and Roles](../../../../quick-start/create-workspace-and-project/).
 
 ## Step 1: Deploy MySQL
 

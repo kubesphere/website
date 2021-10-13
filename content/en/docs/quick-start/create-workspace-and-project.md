@@ -22,9 +22,9 @@ You can create multiple workspaces within a KubeSphere cluster. Under each works
 
 ## Hands-on Lab
 
-### Step 1: Create an account
+### Step 1: Create a user
 
-After KubeSphere is installed, you need to add different users with varied roles to the platform so that they can work at different levels on various resources. Initially, you only have one default account, which is `admin`, granted the role `platform-admin`. In the first step, you create an account `user-manager` and further create more accounts as `user-manager`.
+After KubeSphere is installed, you need to add different users with varied roles to the platform so that they can work at different levels on various resources. Initially, you only have one default account, which is `admin`, granted the role `platform-admin`. In the first step, you create a user `user-manager` and further create more accounts as `user-manager`.
 
 1. Log in to the web console as `admin` with the default account and password (`admin/P@88w0rd`).
 
@@ -216,7 +216,7 @@ After you finish the above steps, you know that users can be granted different r
 
 5. On the **Platform Roles** page, you can click the name of the created role to view the role details and click <img src="/images/docs/quickstart/create-workspaces-projects-accounts/operation-icon.png" width="20px" align="center"> to edit the role, edit the role permissions, or delete the role.
 
-6. On the **Users** page, you can assign the role to an account when you create an account or edit an existing account.
+6. On the **Users** page, you can assign the role to a user when you create a user or edit an existing user.
 
 
 ### Step 5: Create a DevOps project (Optional)
