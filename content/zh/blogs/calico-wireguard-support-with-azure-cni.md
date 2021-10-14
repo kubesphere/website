@@ -18,7 +18,7 @@ snapshot: 'https://kubesphere-community.pek3b.qingstor.com/images/%E5%9C%A8%20Az
 
 首先，这里简单回顾一下什么是 WireGuard 以及我们如何在 Calico 中使用它。
 
-WireGuard 是一种 VPN 技术，从 linux 5.6 内核开始默认包含在内核中，它被定位为 IPsec 和 OpenVPN 的替代品。它的目标是更加快速、安全、易于部署和管理。正如不断涌现的 SSL/TLS 的漏洞显示，密码的敏捷性会极大增加复杂性，这与 WireGuard 的目标不符，为此，WireGuard 故意将密码和算法的配置灵活性降低，以减少该技术的可攻击面和可审计性。它的目标是更加简单快速，所以使用标准的 Linux 网络命令便可以很容易的对它进行配置，并且只有约 4000 行代码，使得它的代码可读性高，容易理解和接受审查
+WireGuard 是一种 VPN 技术，从 linux 5.6 内核开始默认包含在内核中，它被定位为 IPsec 和 OpenVPN 的替代品。它的目标是更加快速、安全、易于部署和管理。正如不断涌现的 SSL/TLS 的漏洞显示，密码的敏捷性会极大增加复杂性，这与 WireGuard 的目标不符，为此，WireGuard 故意将密码和算法的配置灵活性降低，以减少该技术的可攻击面和可审计性。它的目标是更加简单快速，所以使用标准的 Linux 网络命令便可以很容易的对它进行配置，并且只有约 4000 行代码，使得它的代码可读性高，容易理解和接受审查。
 
 WireGuard 是一种 VPN 技术，通常被认为是 C/S 架构。它同样能在端对端的网格网络架构中配置使用，这就是 Tigera 设计的 WireGuard 可以在 Kubernetes 中启用的解决方案。使用 Calico，所有启用 WireGuard 的节点将端对端形成一个加密的网格。Calico 甚至支持在同一集群内同时包含启用 WireGuard 的节点与未启用 WireGuard 的节点，并且可以相互通信。
 
