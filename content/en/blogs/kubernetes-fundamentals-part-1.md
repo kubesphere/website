@@ -1,3 +1,13 @@
+---
+  title: 'Kubernetes Fundamentals - Part 1'
+  tag: 'Kubernetes, fundamentals, beginners, guide'
+  keywords: 'Kubernetes, fundamentals, beginners, guide'
+  description: 'Kubernetes was born out of the necessity to make our sophisticated software more available, scalable, transportable, and deployable in small, independent modules.'
+  createTime: '2021-10-14'
+  author: 'Pulkit Singh'
+  snapshot: '/images/blogs/en/kubernetes-fundamentals-part-1/main-poster.png'
+---
+
 # Kubernetes Fundamentals Part one: A Visual Quick Start
 
 
@@ -44,7 +54,7 @@ In a non-cloud context, applications running on the same physical or virtual com
 A node is the smallest unit of computer hardware in Kubernetes. It's a representation of one of the computers in your cluster. Most production systems will have a node that is either a physical machine in a data center or a virtual machine housed on a cloud provider like Google Cloud Platform. Don't let traditions limit you; in theory, you can make a node out of almost anything.
 Thinking of a machine as a "node" adds another degree of abstraction. Instead of worrying about each machine's characteristics, we can now just see it as a collection of CPU and RAM resources that can be utilized. Any machine in a Kubernetes cluster can be used to replace any other machine in this approach
 In this, we have two terms known as:
-![master-worker-node.png](https://github.com/PulkitSinghDev/website-1/blob/master/static/images/blogs/en/kubernetes-fundamentals-part-1/master-worker-node.png)
+![master-worker-node.png](/images/blogs/en/kubernetes-fundamentals-part-1/master-worker-node.png)
 
 
 - Nodes ( Master )
