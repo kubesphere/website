@@ -1,8 +1,8 @@
 ---
 title: '使用 Apache APISIX 作为 Kubernetes 的 Ingress Controller'
 tag: 'Kubernetes, KubeSphere'
-keywords: 'Kubernetes, KubeSphere, Apache APISIX,Ingress Controller'
-description: '你可以在 KubeSphere 中使用 Apache APISIX 的官方 Helm 仓库直接部署 Apache APISIX 和 APISIX Ingress Controller 。并且 Apache APISIX 可通过作为网关，或者 APISIX Ingress Controller 的数据面来承载业务流量。'
+keywords: 'Kubernetes, KubeSphere, Apache APISIX, Ingress Controller'
+description: '本文描写了如何使用 Apache APISIX 作为 Kubernetes 的 Ingress Controller 及部署过程。'
 createTime: '2021-09-02'
 author: '张晋涛'
 snapshot: 'https://pek3b.qingstor.com/kubesphere-community/images/kubesphere-apacheapisix-cover.png'
@@ -28,7 +28,7 @@ Apache APISIX 是一款开源的高性能、动态云原生网关，由深圳支
 
 执行以下命令即可添加 Apache APISIX 的 Helm repo，并完成部署。
 
-```
+```bash
 ➜  ~ helm repo add apisix https://charts.apiseven.com
 "apisix" has been added to your repositories
 ➜  ~ helm repo add bitnami https://charts.bitnami.com/bitnami 
@@ -53,7 +53,7 @@ NOTES:
 
 验证是否已经成功部署且运行：
 
-```
+```bash
 ➜  ~ kubectl -n apisix get pods 
 NAME                                         READY   STATUS    RESTARTS   AGE
 apisix-77d7545d4d-cvdhs                      1/1     Running   0          4m7s
@@ -77,7 +77,7 @@ apisix-ingress-controller-74c6b5fbdd-94ngk   1/1     Running   0          4m7s
 
 在 KubeSphere 的服务和负载界面即可看到部署成功，也可以直接在终端下查看是否已经部署成功。
 
-```
+```bash
 ➜  ~ kubectl get pods,svc -l app=httpbin
 NAME                             READY   STATUS    RESTARTS   AGE
 pod/httpbin-v1-7d6dc7d5f-5lcmg   1/1     Running   0          48s
@@ -90,7 +90,7 @@ service/httpbin   ClusterIP   10.96.0.5    <none>        80/TCP    48s
 
 我们先演示如何使用 Apache APISIX 作为网关代理 Kubernetes 集群中的服务。
 
-```
+```bash
 root@apisix:~$ kubectl -n apisix exec -it `kubectl -n apisix get pods -l app.kubernetes.io/name=apisix -o name` -- bash
 bash-5.1# curl httpbin.default/get
 {
@@ -109,7 +109,7 @@ bash-5.1# curl httpbin.default/get
 
 这里我们使用 curl 调用 Apache APISIX 的 admin 接口，创建一条路由。将所有 host 头为 httpbin.org 的请求转发给 httpbin.default:80 这个实际的应用服务上。
 
-```
+```bash
 bash-5.1# curl "http://127.0.0.1:9180/apisix/admin/routes/1" -H "X-API-KEY: edd1c9f034335f136f87ad84b625c8f1" -X PUT -d '
 {
   "uri": "/get",
@@ -126,7 +126,7 @@ bash-5.1# curl "http://127.0.0.1:9180/apisix/admin/routes/1" -H "X-API-KEY: edd1
 
 你会得到类似上面的输出，接下来验证是否代理成功：
 
-```
+```bash
 bash-5.1# curl http://127.0.0.1:9080/get -H "HOST: httpbin.org"
 {
   "args": {}, 
@@ -143,7 +143,7 @@ bash-5.1# curl http://127.0.0.1:9080/get -H "HOST: httpbin.org"
 
 得到上面的输出，说明已经通过 Apache APISIX 代理了示例项目的流量。接下来我们试试在集群外通过 Apache APISIX 访问示例项目。
 
-```
+```bash
 root@apisix:~$ kubectl  -n apisix get svc -l app.kubernetes.io/name=apisix
 NAME             TYPE        CLUSTER-IP     EXTERNAL-IP   PORT(S)        AGE
 apisix-admin     ClusterIP   10.96.33.97    <none>        9180/TCP       22m
@@ -152,7 +152,7 @@ apisix-gateway   NodePort    10.96.126.83   <none>        80:31441/TCP   22m
 
 在使用 Helm chart 部署的时候，默认会将 Apache APISIX 的端口通过 NodePort 的形式暴露出去。我们使用 Node IP + NodePort 的端口进行访问测试。
 
-```
+```bash
 root@apisix:~$ curl http://172.18.0.5:31441/get -H "HOST: httpbin.org" 
 {
   "args": {}, 
@@ -185,7 +185,7 @@ root@apisix:~$ curl http://172.18.0.5:31441/get -H "HOST: httpbin.org"
 
 在终端下测试是否代理成功：
 
-```
+```bash
 root@apisix:~$ curl http://172.18.0.5:31441/get -H "HOST: http-ing.org"  
 {
   "args": {}, 
