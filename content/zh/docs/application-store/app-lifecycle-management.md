@@ -15,6 +15,12 @@ KubeSphere 集成了 [OpenPitrix](https://github.com/openpitrix/openpitrix)（�
 
 本教程使用 [Redis](https://redis.io/) 作为示例应用程序，演示如何进行应用全生命周期管理，包括提交、审核、测试、发布、升级和下架。
 
+## 视频演示
+
+<video controls="controls" style="width: 100% !important; height: auto !important;">
+  <source type="video/mp4" src="https://kubesphere-community.pek3b.qingstor.com/videos/KubeSphere-v3.1.x-tutorial-videos/zh/KS311_200P007C202109_%E5%BA%94%E7%94%A8%E7%A8%8B%E5%BA%8F%E7%94%9F%E5%91%BD%E5%91%A8%E6%9C%9F%E7%AE%A1%E7%90%86.mp4">
+</video>
+
 ## 准备工作
 
 - 您需要启用 [KubeSphere 应用商店 (OpenPitrix)](../../pluggable-components/app-store/)。
