@@ -25,7 +25,7 @@ Once you build a multi-cluster environment on KubeSphere, you can manage it thro
 
 It is not recommended that you change a Host Cluster to a Member Cluster or the other way round. If a Member Cluster has been imported to a Host Cluster before, you have to use the same cluster name when importing it to a new Host Cluster after unbinding it from the previous Host Cluster.
 
-If you want to import the Member Cluster to a new Host Cluster while retaining existing projects (i.e. namespaces), you can follow the steps as below.
+If you want to import the Member Cluster to a new Host Cluster while retaining existing projects, you can follow the steps as below.
 
 1. Run the following command on the Member Cluster to unbind the projects to be retained from your workspace.
 
@@ -45,11 +45,11 @@ If you want to import the Member Cluster to a new Host Cluster while retaining e
    kuebctl label ns <namespace> kubesphere.io/workspace=<workspace name>
    ```
 
-### Account Management
+### User Management
 
-The accounts you create through the central control plane from your Host Cluster will be synchronized to Member Clusters. 
+The users you create through the central control plane from your Host Cluster will be synchronized to Member Clusters. 
 
-If you want to let different accounts access different clusters, you can create workspaces and [assign different clusters to them](../../../cluster-administration/cluster-settings/cluster-visibility-and-authorization/). After that, you can invite different accounts to these workspaces per access requirements for these accounts. In future releases, you will be able to invite accounts to your [multi-cluster projects](../../../project-administration/project-and-multicluster-project/#multi-cluster-projects).
+If you want to let different users access different clusters, you can create workspaces and [assign different clusters to them](../../../cluster-administration/cluster-settings/cluster-visibility-and-authorization/). After that, you can invite different users to these workspaces per access requirements for these users.
 
 ### KubeSphere Components Management
 

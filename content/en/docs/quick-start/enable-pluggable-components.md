@@ -32,7 +32,7 @@ For more information about each component, see [Overview of Enable Pluggable Com
 
 {{</ notice >}}
 
-## Enable Pluggable Components before Installation
+## Enable Pluggable Components Before Installation
 
 For most of the pluggable components, you can follow the steps below to enable them. If you need to enable [KubeEdge](../../pluggable-components/kubeedge/), [Pod IP Pools](../../pluggable-components/pod-ip-pools/) and [Service Topology](../../pluggable-components/service-topology/), refer to the corresponding tutorials directly.
 
@@ -80,7 +80,7 @@ When you install KubeSphere on Kubernetes, you need to use [ks-installer](https:
 
 Whether you install KubeSphere on Linux or on Kubernetes, you can check the status of the components you have enabled in the web console of KubeSphere after installation. Go to **System Components**, and you can see the component status.
 
-## Enable Pluggable Components after Installation
+## Enable Pluggable Components After Installation
 
 The KubeSphere web console provides a convenient way for users to view and operate on different resources. To enable pluggable components after installation, you only need to make few adjustments on the console directly. For those who are accustomed to the Kubernetes command-line tool, kubectl, they will have no difficulty in using KubeSphere as the tool is integrated into the console.
 

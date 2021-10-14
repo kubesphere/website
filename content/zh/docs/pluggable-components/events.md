@@ -110,7 +110,7 @@ KubeSphere 事件系统使用户能够跟踪集群内部发生的事件，例如
 
 {{</ notice >}}
 
-3. 在**资源列表**中，点击 `ks-installer` 右侧的 <img src="/images/docs/zh-cn/enable-pluggable-components/kubesphere-events/three-dots.png" height="20px">，选择**编辑配置文件**。
+3. 在**资源列表**中，点击 `ks-installer` 右侧的 <img src="/images/docs/zh-cn/enable-pluggable-components/kubesphere-events/three-dots.png" height="20px">，选择**编辑 YAML**。
 
 4. 在该 YAML 文件中，搜寻到 `events`，将 `enabled` 的 `false` 改为 `true`。完成后，点击右下角的**确定**，保存配置。
 
@@ -160,7 +160,7 @@ KubeSphere 事件系统使用户能够跟踪集群内部发生的事件，例如
 
 {{< tab "通过 kubectl 验证组件的安装" >}}
 
-执行以下命令来检查 Pod 的状态：
+执行以下命令来检查容器组的状态：
 
 ```bash
 kubectl get pod -n kubesphere-logging-system

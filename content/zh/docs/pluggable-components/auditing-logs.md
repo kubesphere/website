@@ -103,10 +103,10 @@ KubeSphere 审计日志系统提供了一套与安全相关并按时间顺序排
 2. 点击 **CRD**，在搜索栏中输入 `clusterconfiguration`，点击搜索结果查看其详细页面。
 
     {{< notice info >}}
-定制资源定义 (CRD) 允许用户在不新增 API 服务器的情况下创建一种新的资源类型，用户可以像使用其他 Kubernetes 原生对象一样使用这些自定义资源。
+定制资源定义 (CRD) 允许用户在不新增 API 服务器的情况下创建一种新的资源类型，用户可以像使用其他 Kubernetes 原生对象一样使用这些定制资源。
     {{</ notice >}}
 
-3. 在**资源列表**中，点击 `ks-installer` 右侧的 <img src="/images/docs/zh-cn/enable-pluggable-components/kubesphere-auditing-logs/three-dots.png" height="20px">，选择**编辑配置文件**。
+3. 在**资源列表**中，点击 `ks-installer` 右侧的 <img src="/images/docs/zh-cn/enable-pluggable-components/kubesphere-auditing-logs/three-dots.png" height="20px">，选择**编辑 YAML**。
 
 4. 在该 YAML 文件中，搜寻到 `auditing`，将 `enabled` 的 `false` 改为 `true`。完成后，点击右下角的**确定**，保存配置。
 
@@ -154,7 +154,7 @@ KubeSphere 审计日志系统提供了一套与安全相关并按时间顺序排
 
 {{< tab "通过 kubectl 验证组件的安装" >}}
 
-执行以下命令来检查 Pod 的状态：
+执行以下命令来检查容器组的状态：
 
 ```bash
 kubectl get pod -n kubesphere-logging-system

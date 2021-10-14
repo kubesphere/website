@@ -6,9 +6,9 @@ linkTitle: "Project Quotas"
 weight: 9600
 ---
 
-KubeSphere uses [Kubernetes requests and limits](https://kubesphere.io/blogs/understand-requests-and-limits-in-kubernetes/) to control resource (for example, CPU and memory) usage in a project, also known as [ResourceQuotas](https://kubernetes.io/docs/concepts/policy/resource-quotas/) in Kubernetes. Requests make sure a project can get the resources it needs as they are specifically guaranteed and reserved. On the contrary, limits ensure that a project can never use resources above a certain value.
+KubeSphere uses [Kubernetes requests and limits](https://kubesphere.io/blogs/understand-requests-and-limits-in-kubernetes/) to control resource (for example, CPU and memory) usage in a project, also known as [resource quotas](https://kubernetes.io/docs/concepts/policy/resource-quotas/) in Kubernetes. Requests make sure a project can get the resources it needs as they are specifically guaranteed and reserved. On the contrary, limits ensure that a project can never use resources above a certain value.
 
-Besides CPU and memory, you can also set resource quotas for other objects separately such as Pods, [Deployments](../../project-user-guide/application-workloads/deployments/), [Jobs](../../project-user-guide/application-workloads/jobs/), [Services](../../project-user-guide/application-workloads/services/) and [ConfigMaps](../../project-user-guide/configuration/configmaps/) in a project.
+Besides CPU and memory, you can also set resource quotas for other objects separately such as Pods, [Deployments](../../project-user-guide/application-workloads/deployments/), [Jobs](../../project-user-guide/application-workloads/jobs/), [Services](../../project-user-guide/application-workloads/services/), and [ConfigMaps](../../project-user-guide/configuration/configmaps/) in a project.
 
 This tutorial demonstrates how to configure quotas for a project.
 
@@ -35,7 +35,7 @@ limits to control CPU and memory resources, use the slider to move to a desired 
 
    {{</ notice >}} 
 
-3. To set quotas for other resources, click **Add** under **Project Resource Quotas**, and then select an object from the drop-down list or enter a recource name and set the quantity limit.
+3. To set quotas for other resources, click **Add** under **Project Resource Quotas**, and then select a resource or enter a recource name and set a quota.
 
 4. Click **OK** to finish setting quotas.
 
@@ -45,7 +45,7 @@ limits to control CPU and memory resources, use the slider to move to a desired 
 
    {{< notice note >}}
 
-   For [a multi-cluster project](../../project-administration/project-and-multicluster-project/#multi-cluster-projects), the option **Edit Project Quotas** does not display in the **Manage Project** drop-down menu. To set quotas for a multi-cluster project, go to **Projects Quotas** under **Project Settings** and click **Edit Quota**. Note that as a multi-cluster project runs across clusters, you can set resource quotas on different clusters separately.
+   For [a multi-cluster project](../../project-administration/project-and-multicluster-project/#multi-cluster-projects), the option **Edit Project Quotas** does not display in the **Manage Project** drop-down menu. To set quotas for a multi-cluster project, go to **Projects Quotas** under **Project Settings** and click **Edit Quotas**. Note that as a multi-cluster project runs across clusters, you can set resource quotas on different clusters separately.
 
    {{</ notice >}} 
 

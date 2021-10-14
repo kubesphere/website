@@ -63,11 +63,7 @@ If you need to output logs to more places other than Elasticsearch or Kafka, you
 
 Starting from KubeSphere v3.0.0, resource events and audit logs can be archived in the same way as container logs. The tab **Resource Events** or **Audit Logs** on the **Log Receivers** page will appear if `events` or `auditing` is enabled accordingly in [ClusterConfiguration](https://github.com/kubesphere/kubekey/blob/release-1.1/docs/config-example.md). You can go to the corresponding tab to configure log receivers for resource events or audit logs.
 
-Container logs, resource events, and audit logs should be stored in different Elasticsearch indices to be searched in KubeSphere. The index prefixes are:
-
-- `ks-logstash-log` for container logs
-- `ks-logstash-events` for resource events
-- `ks-logstash-auditing` for audit logs
+Container logs, resource events, and audit logs should be stored in different Elasticsearch indices to be searched in KubeSphere. The index is automatically generated in <Index prefix>-<Year-month-date> format.
 
 ## Turn a Log Receiver on or Off
 

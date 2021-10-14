@@ -27,7 +27,7 @@ KubeSphere also has built-in policies which will trigger alerts if conditions de
 
    - **Name**. A concise and clear name as its unique identifier, such as `node-alert`.
    - **Alias**. Help you distinguish alerting policies better.
-   - **Threshold Duration (min)**. An alert will be firing when the conditions defined for an alerting policy are met at any given point in the time range.
+   - **Threshold Duration (min)**. The status of the alerting policy becomes Firing when the duration of the condition configured in the alerting rule reaches the threshold.
    - **Severity**. Allowed values include **Warning**, **Error** and **Critical**, providing an indication of how serious an alert is.
    - **Description**. A brief introduction to the alerting policy.
 
@@ -42,7 +42,7 @@ KubeSphere also has built-in policies which will trigger alerts if conditions de
 
    {{</ notice >}} 
 
-5. On the **Notification Settings** tab, enter the summary and details of the alerting message, then click **Create**.
+5. On the **Message Settings** tab, enter the summary and details of the alerting message, then click **Create**.
 
 6. An alerting policy will be **Inactive** when just created. If conditions in the rule expression are met, it will reach **Pending** first, and then turn to **Firing** if conditions keep to be met in the given time range.
 
@@ -50,7 +50,7 @@ KubeSphere also has built-in policies which will trigger alerts if conditions de
 
 To edit an alerting policy after it is created, on the **Alerting Policies** page, click <img src="/images/docs/cluster-administration/cluster-wide-alerting-and-notification/alerting-policies-node-level/edit-policy.png" height="25px"> on the right of the alerting policy.
 
-1. Click **Edit Alerting Policy** from the drop-down list and edit the alerting policy following the same steps as you create it. Click **OK** on the **Notification Settings** page to save it.
+1. Click **Edit** from the drop-down list and edit the alerting policy following the same steps as you create it. Click **OK** on the **Message Settings** page to save it.
 
 2. Click **Delete** from the drop-down list to delete an alerting policy.
 
@@ -58,7 +58,7 @@ To edit an alerting policy after it is created, on the **Alerting Policies** pag
 
 Click the name of an alerting policy on the **Alerting Policies** page to see its detail information, including the alerting rule and alerting messages. You can also see the rule expression which is based on the template you use when creating the alerting policy.
 
-Under **Monitoring**, the **Alert Monitoring** chart shows the actual usage or amount of resources over time. **Notification Settings** displays the customized message you set in notifications.
+Under **Monitoring**, the **Alert Monitoring** chart shows the actual usage or amount of resources over time. **Alerting Message** displays the customized message you set in notifications.
 
 {{< notice note >}}
 

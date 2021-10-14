@@ -1,12 +1,12 @@
 ---
 title: "容器组 IP 池"
-keywords: "Kubernetes, KubeSphere, Pod, IP 池"
-description: "了解如何启用容器组 IP 池，为您的 Pod 分配一个特定的容器组 IP 池。"
+keywords: "Kubernetes, KubeSphere, 容器组, IP 池"
+description: "了解如何启用容器组 IP 池，为您的容器组分配一个特定的容器组 IP 池。"
 linkTitle: "容器组 IP 池"
 weight: 6920
 ---
 
-容器组 IP 池用于规划 Pod 网络地址空间，每个容器组 IP 池之间的地址空间不能重叠。创建工作负载时，可选择特定的容器组 IP 池，这样创建出的 Pod 将从该容器组 IP 池中分配 IP。
+容器组 IP 池用于规划容器组网络地址空间，每个容器组 IP 池之间的地址空间不能重叠。创建工作负载时，可选择特定的容器组 IP 池，这样创建出的容器组将从该容器组 IP 池中分配 IP。
 
 ## 安装前启用容器组 IP 池
 
@@ -76,9 +76,9 @@ weight: 6920
 定制资源定义（CRD）允许用户在不新增 API 服务器的情况下创建一种新的资源类型，用户可以像使用其他 Kubernetes 原生对象一样使用这些定制资源。
     {{</ notice >}}
 
-3. 在**资源列表**中，点击 `ks-installer` 右侧的 <img src="/images/docs/zh-cn/enable-pluggable-components/pod-ip-pools/three-dots.png" height="20px">，然后选择**编辑配置文件**。
+3. 在**资源列表**中，点击 `ks-installer` 右侧的 <img src="/images/docs/zh-cn/enable-pluggable-components/pod-ip-pools/three-dots.png" height="20px">，然后选择**编辑 YAML**。
 
-4. 在该配置文件中，搜寻到 `network`，将 `network.ippool.type` 更改为 `calico`。完成后，点击右下角的**更新**保存配置。
+4. 在该配置文件中，搜寻到 `network`，将 `network.ippool.type` 更改为 `calico`。完成后，点击右下角的**确定**保存配置。
 
     ```yaml
     network:

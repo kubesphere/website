@@ -1,14 +1,14 @@
 ---
-title: "帐户无法登录"
-keywords: "无法登录, account is not active, KubeSphere, Kubernetes"
+title: "用户无法登录"
+keywords: "无法登录, 用户不活跃, KubeSphere, Kubernetes"
 description: "如何解决无法登录的问题"
-linkTitle: "帐户无法登录"
+linkTitle: "用户无法登录"
 Weight: 16440
 ---
 
-KubeSphere 安装时会自动创建默认帐户 (`admin/P@88w0rd`)，密码错误或者帐户状态不是**活跃**会导致无法登录。
+KubeSphere 安装时会自动创建默认用户 (`admin/P@88w0rd`)，密码错误或者用户状态不是**活跃**会导致无法登录。
 
-下面是帐户无法登录时，一些常见的问题：
+下面是用户无法登录时，一些常见的问题：
 
 ## Account Not Active
 
@@ -16,7 +16,7 @@ KubeSphere 安装时会自动创建默认帐户 (`admin/P@88w0rd`)，密码错�
 
 ![account-not-active](/images/docs/faq/access-control-and-account-management/cannot-login/account-not-active.png)
 
-1. 执行以下命令检查帐户状态：
+1. 执行以下命令检查用户状态：
 
    ```bash
    $ kubectl get users
@@ -86,11 +86,11 @@ kubectl -n kubesphere-system get deploy ks-apiserver -o jsonpath='{.spec.templat
 kubectl -n kubesphere-system get deploy ks-controller-manager -o jsonpath='{.spec.template.spec.containers[0].image}'
 ```
 
-## 帐户或密码错误
+## 用户名或密码错误
 
 ![incorrect-password](/images/docs/faq/access-control-and-account-management/cannot-login/wrong-password.png)
 
-通过以下命令检查帐户密码是否正确：
+通过以下命令检查用户密码是否正确：
 
 ```
 curl -u <USERNAME>:<PASSWORD> "http://`kubectl -n kubesphere-system get svc ks-apiserver -o jsonpath='{.spec.clusterIP}'`/api/v1/nodes"
