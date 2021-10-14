@@ -342,88 +342,23 @@ section4:
     - year: 2021
       meetup: 
 
-        - place: 芜湖站
-          img: https://pek3b.qingstor.com/kubesphere-community/images/uisee0916-live-cover.png
-          meetupUrl: https://www.baidu.com
-
-        - place: 杭州站
-          img: https://pek3b.qingstor.com/kubesphere-community/images/wasm0909-live-cover.png
-          meetupUrl:
-
-        - place: 成都站
-          img: https://pek3b.qingstor.com/kubesphere-community/images/nebula0902-live-cover.png
-          meetupUrl:
-
         - place: 上海站
-          img: https://pek3b.qingstor.com/kubesphere-community/images/apisix826-live-cover.png
-          meetupUrl:
+          img: https://pek3b.qingstor.com/kubesphere-community/images/meetup-shanghai-cover.png
+          meetupUrl: https://kubesphere.com.cn/live/meetup-shanghai/
 
         - place: 杭州站
-          img: https://pek3b.qingstor.com/kubesphere-community/images/uisee0916-live-cover.png
-          meetupUrl:
+          img: https://pek3b.qingstor.com/kubesphere-community/images/meetup-hangzhou-cover.png
+          meetupUrl: https://kubesphere.com.cn/live/meetup-hangzhou/
 
         - place: 成都站
-          img: https://pek3b.qingstor.com/kubesphere-community/images/wasm0909-live-cover.png
-          meetupUrl:
+          img: https://pek3b.qingstor.com/kubesphere-community/images/meetup-chengdu-cover.png
+          meetupUrl: https://kubesphere.com.cn/live/meetup-chengdu/
 
-        - place: 上海站
-          img: https://pek3b.qingstor.com/kubesphere-community/images/nebula0902-live-cover.png
-          meetupUrl:
+        - place: 北京站
+          img: https://pek3b.qingstor.com/kubesphere-community/images/meetup-beijing-cover.png
+          meetupUrl: https://kubesphere.com.cn/live/meetup-beijing/
 
-        - place: 杭州站
-          img: https://pek3b.qingstor.com/kubesphere-community/images/apisix826-live-cover.png
-          meetupUrl:
-
-        - place: 成都站
-          img: https://pek3b.qingstor.com/kubesphere-community/images/uisee0916-live-cover.png
-          meetupUrl:
-
-        - place: 成都站
-          img: https://pek3b.qingstor.com/kubesphere-community/images/wasm0909-live-cover.png
-          meetupUrl:
-      
-    - year: 2022
-      meetup: 
-
-        - place: 上海站
-          img: https://pek3b.qingstor.com/kubesphere-community/images/uisee0916-live-cover.png
-          meetupUrl:
-
-        - place: 杭州站
-          img: https://pek3b.qingstor.com/kubesphere-community/images/wasm0909-live-cover.png
-          meetupUrl:
-
-        - place: 成都站
-          img: https://pek3b.qingstor.com/kubesphere-community/images/nebula0902-live-cover.png
-          meetupUrl:
-
-        - place: 成都站
-          img: https://pek3b.qingstor.com/kubesphere-community/images/apisix826-live-cover.png
-          meetupUrl:
-
-    - year: 2023
-      meetup: 
-        - place: 上海站
-          img: https://pek3b.qingstor.com/kubesphere-community/images/uisee0916-live-cover.png
-          meetupUrl:
-
-        - place: 杭州站
-          img: https://pek3b.qingstor.com/kubesphere-community/images/wasm0909-live-cover.png
-          meetupUrl:
-
-        - place: 成都站
-          img: https://pek3b.qingstor.com/kubesphere-community/images/nebula0902-live-cover.png
-          meetupUrl:
-
-        - place: 成都站
-          img: https://pek3b.qingstor.com/kubesphere-community/images/apisix826-live-cover.png
-          meetupUrl:
-
-        - place: 终点站
-          img: https://pek3b.qingstor.com/kubesphere-community/images/apisix826-live-cover.png
-          meetupUrl:
-
-    
+  
 section5:
   title: 分享您的主题
   content: 您是否也想在社区分享您的云原生实践经验？即可加入 KubeSphere 社区云原生直播计划，提交分享主题，将有 KubeSphere 周边礼品相送！最重要的是您可以：提升自身软实力，如演讲能力、总结能力；提高自身在云原生领域的知名度；展现企业的技术实力及优秀想法；帮助推广您社区开源的项目。
