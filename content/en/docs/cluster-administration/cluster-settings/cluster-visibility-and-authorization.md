@@ -24,7 +24,7 @@ This guide demonstrates how to set cluster visibility.
 
 3. Provide the basic information for the workspace and click **Next**.
 
-4. On the **Select Clusters** page, you can see a list of available clusters. Select the clusters that you want to allocate to the workspace and click **Create**.
+4. On the **Cluster Settings** page, you can see a list of available clusters. Select the clusters that you want to allocate to the workspace and click **Create**.
 
 5. After the workspace is created, workspace members with necessary permissions can create resources that run on the associated cluster.
 

@@ -16,7 +16,7 @@ weight: 8623
 - 您需要一个被授予**集群管理**权限的用户。例如，您可以直接用 `admin` 用户登录控制台，或创建一个具有**集群管理**权限的角色然后将此角色授予一个用户。
 - 添加日志接收器前，您需要启用组件 `logging`、`events` 或 `auditing`。有关更多信息，请参见[启用可插拔组件](../../../../pluggable-components/)。本教程启用 `logging` 作为示例。
 
-## 步骤 1：创建 Kafka 集群和 Kafka Topic
+## 步骤 1：创建 Kafka 集群和 Kafka 主题
 
 您可以使用 [strimzi-kafka-operator](https://github.com/strimzi/strimzi-kafka-operator) 创建 Kafka 集群和 Kafka 主题。如果您已经有了一个 Kafka 集群，您可以直接从下一步开始。
 

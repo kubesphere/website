@@ -94,7 +94,7 @@ KubeSphere features a highly functional multi-tenant system for fine-grained acc
 
 ### Set Resource Quotas
 
-1. Go to the **Overview** page of your project, navigate to **Basic Information** in **Project Settings**, and select **Edit Quota** from the **Manage Project** drop-down menu.
+1. Go to the **Overview** page of your project, navigate to **Basic Information** in **Project Settings**, and select **Edit Quotas** from the **Manage Project** drop-down menu.
 
    ![edit-quota](/images/blogs/en/understand-requests-and-limits-in-kubesphere/edit-quota.png)
 

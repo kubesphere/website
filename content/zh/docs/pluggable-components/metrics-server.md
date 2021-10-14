@@ -6,7 +6,7 @@ linkTitle: "Metrics Server"
 weight: 6910
 ---
 
-KubeSphere 支持用于[部署](../../project-user-guide/application-workloads/deployments/)的 Pod 弹性伸缩程序 (HPA)。在 KubeSphere 中，Metrics Server 控制着 HPA 是否启用。您可以根据不同类型的指标（例如 CPU 和内存使用率，以及最小和最大副本数），使用 HPA 对象对部署 (Deployment) 自动伸缩。通过这种方式，HPA 可以帮助确保您的应用程序在不同情况下都能平稳、一致地运行。
+KubeSphere 支持用于[部署](../../project-user-guide/application-workloads/deployments/)的容器组（Pod）弹性伸缩程序 (HPA)。在 KubeSphere 中，Metrics Server 控制着 HPA 是否启用。您可以根据不同类型的指标（例如 CPU 和内存使用率，以及最小和最大副本数），使用 HPA 对象对部署 (Deployment) 自动伸缩。通过这种方式，HPA 可以帮助确保您的应用程序在不同情况下都能平稳、一致地运行。
 
 ## 在安装前启用 Metrics Server
 
@@ -78,9 +78,9 @@ KubeSphere 支持用于[部署](../../project-user-guide/application-workloads/d
 
     {{</ notice >}}
 
-3. 在**资源列表**中，点击 `ks-installer` 右侧的 <img src="/images/docs/zh-cn/enable-pluggable-components/metrics-server/three-dots.png" height="20px">，选择**编辑配置文件**。
+3. 在**资源列表**中，点击 `ks-installer` 右侧的 <img src="/images/docs/zh-cn/enable-pluggable-components/metrics-server/three-dots.png" height="20px">，选择**编辑 YAML**。
 
-4. 在该 YAML 文件中，导航到 `metrics_server`，在 `enabled` 一行将 `false` 更改为 `true`。完成后，点击右下角的**更新**以保存配置。
+4. 在该 YAML 文件中，导航到 `metrics_server`，在 `enabled` 一行将 `false` 更改为 `true`。完成后，点击右下角的**确定**以保存配置。
 
     ```yaml
     metrics_server:
@@ -100,13 +100,13 @@ KubeSphere 支持用于[部署](../../project-user-guide/application-workloads/d
 
 ## 验证组件的安装
 
-执行以下命令以验证 Metrics Server 的 Pod 在正常运行。
+执行以下命令以验证 Metrics Server 的容器组在正常运行。
 
 ```bash
 kubectl get pod -n kube-system
 ```
 
-如果 Metrics Server 安装成功，那么集群可能会返回以下输出（不包括无关 Pod）：
+如果 Metrics Server 安装成功，那么集群可能会返回以下输出（不包括无关容器组）：
 
 ```bash
 NAME                                        READY   STATUS    RESTARTS   AGE

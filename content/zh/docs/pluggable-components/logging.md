@@ -6,7 +6,7 @@ linkTitle: "KubeSphere 日志系统"
 weight: 6400
 ---
 
-KubeSphere 为日志收集、查询和管理提供了一个强大的、全面的、易于使用的日志系统。它涵盖了不同层级的日志，包括租户、基础设施资源和应用。用户可以从项目、工作负载、Pod 和关键字等不同维度对日志进行搜索。与 Kibana 相比，KubeSphere 基于租户的日志系统中，每个租户只能查看自己的日志，从而可以在租户之间提供更好的隔离性和安全性。除了 KubeSphere 自身的日志系统，该容器平台还允许用户添加第三方日志收集器，如 Elasticsearch、Kafka 和 Fluentd。
+KubeSphere 为日志收集、查询和管理提供了一个强大的、全面的、易于使用的日志系统。它涵盖了不同层级的日志，包括租户、基础设施资源和应用。用户可以从项目、工作负载、容器组和关键字等不同维度对日志进行搜索。与 Kibana 相比，KubeSphere 基于租户的日志系统中，每个租户只能查看自己的日志，从而可以在租户之间提供更好的隔离性和安全性。除了 KubeSphere 自身的日志系统，该容器平台还允许用户添加第三方日志收集器，如 Elasticsearch、Kafka 和 Fluentd。
 
 有关更多信息，请参见[日志查询](../../toolbox/log-query/)。
 
@@ -112,7 +112,7 @@ KubeSphere 为日志收集、查询和管理提供了一个强大的、全面的
 
 {{</ notice >}}
 
-3. 在**资源列表**中，点击 `ks-installer` 右侧的 <img src="/images/docs/zh-cn/enable-pluggable-components/kubesphere-logging-system/three-dots.png" height="20px">，选择**编辑配置文件**。
+3. 在**资源列表**中，点击 `ks-installer` 右侧的 <img src="/images/docs/zh-cn/enable-pluggable-components/kubesphere-logging-system/three-dots.png" height="20px">，选择**编辑 YAML**。
 
 4. 在该 YAML 文件中，搜寻到 `logging`，将 `enabled` 的 `false` 改为 `true`。完成后，点击右下角的**确定**，保存配置。
 
@@ -161,7 +161,7 @@ KubeSphere 为日志收集、查询和管理提供了一个强大的、全面的
 
 {{< tab "通过 kubectl 验证组件的安装" >}}
 
-执行以下命令来检查 Pod 的状态：
+执行以下命令来检查容器组的状态：
 
 ```bash
 kubectl get pod -n kubesphere-logging-system

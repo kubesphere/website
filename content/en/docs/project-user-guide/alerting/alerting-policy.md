@@ -24,7 +24,7 @@ KubeSphere provides alerting policies for nodes and workloads. This tutorial dem
    - **Name**. A concise and clear name as its unique identifier, such as `alert-demo`.
    - **Alias**. Help you distinguish alerting policies better.
    - **Description**. A brief introduction to the alerting policy.
-   - **Duration (Minutes)**. An alert will be firing when the conditions defined for an alerting policy are met at any given point in the time range.
+   - **Threshold Duration (min)**. The status of the alerting policy becomes Firing when the duration of the condition configured in the alerting rule reaches the threshold.
    - **Severity**. Allowed values include **Warning**, **Error** and **Critical**, providing an indication of how serious an alert is.
 
 3. On the **Alerting Rule** tab, you can use the rule template or create a custom rule. To use the template, fill in the following fields.
@@ -43,7 +43,7 @@ KubeSphere provides alerting policies for nodes and workloads. This tutorial dem
 
    Click **Next** to continue.
 
-4. On the **Notification Settings** tab, enter the alert summary and message to be included in your notification, then click **Create**.
+4. On the **Message Settings** tab, enter the alert summary and message to be included in your notification, then click **Create**.
 
 5. An alerting policy will be **Inactive** when just created. If conditions in the rule expression are met, it will reach **Pending** first, then turn to **Firing** if conditions keep to be met in the given time range.
 
@@ -51,7 +51,7 @@ KubeSphere provides alerting policies for nodes and workloads. This tutorial dem
 
 To edit an alerting policy after it is created, on the **Alerting Policies** page, click <img src="/images/docs/project-user-guide/alerting/alerting-policies/edit-alerting-policy.png" height="20px"> on the right.
 
-1. Click **Edit** from the drop-down menu and edit the alerting policy following the same steps as you create it. Click **Update** on the **Notification Settings** page to save it.
+1. Click **Edit** from the drop-down menu and edit the alerting policy following the same steps as you create it. Click **OK** on the **Message Settings** page to save it.
 
    ![alert-policy-created](/images/docs/project-user-guide/alerting/alerting-policies/alert-policy-created.png)
 
@@ -61,6 +61,6 @@ To edit an alerting policy after it is created, on the **Alerting Policies** pag
 
 Click an alerting policy on the **Alerting Policies** page to see its detail information, including alerting rules and alerting messages. You can also see the rule expression which is based on the template you use when creating the alerting policy.
 
-Under **Monitoring**, the **Alert Monitoring** chart shows the actual usage or amount of resources over time. **Notification Settings** displays the customized message you set in notifications.
+Under **Monitoring**, the **Alert Monitoring** chart shows the actual usage or amount of resources over time. **Alerting Message** displays the customized message you set in notifications.
 
 ![alerting-policy-detail](/images/docs/project-user-guide/alerting/alerting-policies/alerting-policy-detail.png)

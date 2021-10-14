@@ -22,7 +22,7 @@ You have an available workspace and a user (`ws-manager`). The user must have th
 
 2. Navigate to **Workspace Quotas** under **Workspace Settings**.
 
-3. The **Workspace Quotas** page lists all the available clusters assigned to the workspace and their respective requests and limits of CPU and memory. Click **Edit Workspace Quota** on the right of a cluster.
+3. The **Workspace Quotas** page lists all the available clusters assigned to the workspace and their respective requests and limits of CPU and memory. Click **Edit Workspace Quotas** on the right of a cluster.
 
 4. In the displayed dialog box, you can see that KubeSphere does not set any requests or limits for the workspace by default. To set requests and limits to control CPU and memory resources, move <img src="/images/docs/common-icons/slider.png" width="20" /> to a desired value or enter numbers directly. Leaving a field blank means you do not set any requests or limits.
 

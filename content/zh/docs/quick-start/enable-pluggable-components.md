@@ -104,7 +104,7 @@ weight: 2600
 定制资源定义（CRD）允许用户在不增加额外 API 服务器的情况下创建一种新的资源类型，用户可以像使用其他 Kubernetes 原生对象一样使用这些定制资源。
     {{</ notice >}}
 
-3. 在**资源列表**中，点击 `ks-installer` 右侧的三个点，然后选择**编辑配置文件**。
+3. 在**资源列表**中，点击 `ks-installer` 右侧的三个点，然后选择**编辑 YAML**。
 
     ![编辑配置文件](/images/docs/zh-cn/quickstart/enable-pluggable-components/编辑配置文件.png)
 
