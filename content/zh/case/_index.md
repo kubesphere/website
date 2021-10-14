@@ -47,6 +47,10 @@ section2:
     - icon: "images/case/chinamobile-iot.png"
       content: "中移物联网有限公司是中国移动通信集团有限公司的全资子公司，是中国移动在物联网领域的主责企业。"
       link: "chinamobile-iot/"
+      
+    - icon: "images/case/uisee.png"
+      content: "驭势科技 UISEE 是中国领先的自动驾驶公司，致力于为全行业、全场景提供 AI 驾驶服务，交付赋能出行和物流新生态的 AI 驾驶员。"
+      link: "uisee/"
 
     - icon: "images/case/qunar-logo.png"
       content: "去哪儿网（Qunar.com）是中国领先的在线旅游平台，创立于 2005 年 5 月，总部位于北京。"
