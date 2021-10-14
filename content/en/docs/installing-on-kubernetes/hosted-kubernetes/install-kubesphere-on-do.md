@@ -106,9 +106,7 @@ Now that KubeSphere is installed, you can access the web console of KubeSphere b
 
   {{</ notice >}}
 
-- Log in to the console with the default account and password (`admin/P@88w0rd`). In the cluster overview page, you can see the dashboard as shown in the following image.
-
-  ![doks-cluster](/images/docs/do/doks-cluster.png)
+- Log in to the console with the default account and password (`admin/P@88w0rd`). In the cluster overview page, you can see the dashboard.
 
 ## Enable Pluggable Components (Optional)
 

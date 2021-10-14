@@ -1,7 +1,7 @@
 ---
 title: "Create Workspaces, Projects, Users and Roles"
-keywords: 'KubeSphere, Kubernetes, Multi-tenant, Workspace, Account, Role, Project'
-description: 'Leverage the multi-tenant system of KubeSphere for fine-grained access control at different levels.'
+keywords: 'KubeSphere, Kubernetes, Multi-tenant, Workspace, User, Role, Project'
+description: 'Take advantage of the multi-tenant system of KubeSphere for fine-grained access control at different levels.'
 linkTitle: "Create Workspaces, Projects, Users and Roles"
 weight: 2300
 ---
@@ -36,30 +36,41 @@ After KubeSphere is installed, you need to add different users with varied roles
    For account security, it is highly recommended that you change your password the first time you log in to the console. To change your password, select **User Settings** in the drop-down menu in the top-right corner. In **Password Setting**, set a new password. You also can change the console language in **User Settings**.
    {{</ notice >}}
 
-   ![chang-password1](/images/docs/quickstart/create-workspaces-projects-accounts/chang-password1.png)
+2. Click **Platform** in the upper-left corner, and then select **Access Control**. In the left nevigation pane, select **Platform Roles**. There are four built-in roles as shown in the following table.
 
-2. After you log in to the console, click **Platform** in the top-left corner and select **Access Control**.
-
-   ![access-control](/images/docs/quickstart/create-workspaces-projects-accounts/access-control.png)
-
-   In **Account Roles**, there are four available built-in roles as shown below. The account to be created next will be assigned the role `users-manager`.
-
-   | Built-in Roles       | Description                                                  |
-   | -------------------- | ------------------------------------------------------------ |
-   | `workspaces-manager` | The workspace manager on the platform who manages all workspaces on the platform. |
-   | `users-manager`      | The user manager on the platform who manages all users.      |
-   | `platform-regular`   | The normal user on the platform who has no access to any resources before joining a workspace or cluster. |
-   | `platform-admin`     | The platform administrator who can manage all resources on the platform. |
+   <table>
+     <tbody>
+       <tr>
+         <th width='180'>Built-in Roles</th>
+         <th>Description</th>
+       </tr>
+       <tr>
+         <td><code>workspaces-manager</code></td>
+         <td>Workspace manager who can manage all workspaces on the platform.</td>
+       </tr>
+       </tr>
+       <tr>
+         <td><code>users-manager</code></td>
+         <td>User manager who can manage all users on the platform.</td>
+       </tr></tr>
+       <tr>
+         <td><code>platform-regular</code></td>
+         <td>Regular user who has no access to any resources before joining a workspace or cluster.</td>
+       </tr>
+   <tr>
+         <td><code>platform-admin</code></td>
+         <td>Administrator who can manage all resources on the platform.</td>
+       </tr>
+     </tbody>
+   </table>
 
    {{< notice note >}}
 Built-in roles are created automatically by KubeSphere and cannot be edited or deleted.
    {{</ notice >}}
 
-3. In **Accounts**, click **Create**. In the pop-up window, provide all the necessary information (marked with *) and select `users-manager`  for **Role**. Refer to the image below as an example.
+3. In **Users**, click **Create**. In the displayed dialog box, provide all the necessary information (marked with *) and select `users-manager`  for **Role**. Refer to the following image as an example.
 
-   ![create-account](/images/docs/quickstart/create-workspaces-projects-accounts/create-account.jpg)
-
-   Click **OK** after you finish. A newly-created account will display in **Accounts**.
+   Click **OK** after you finish. The new account will display on the **Users** page.
 
 4. Log out of the console and log back in with the account `user-manager` to create four accounts that will be used in other tutorials.
 
@@ -75,8 +86,6 @@ Built-in roles are created automatically by KubeSphere and cannot be edited or d
    | `project-regular` | `platform-regular`   | `project-regular` will be invited to a project or DevOps project by `project-admin`. This account will be used to create workloads, pipelines and other resources in a specified project. |
 
 5. Verify the four accounts created.
-
-   ![account-list](/images/docs/quickstart/create-workspaces-projects-accounts/account-list.png)
 
 ### Step 2: Create a workspace
 
@@ -138,31 +147,21 @@ In this step, you create a project using the account `project-admin` created in 
 
    ![quota1](/images/docs/quickstart/create-workspaces-projects-accounts/quota1.png)
 
-   ![specify-project-quota1](/images/docs/quickstart/create-workspaces-projects-accounts/specify-project-quota1.png)
-
-5. Invite `project-regular` to this project and grant this user the role `operator`. Refer to the image below for specific steps.
-
-   ![invite-project-member1](/images/docs/quickstart/create-workspaces-projects-accounts/invite-project-member1.png)
+5. Invite `project-regular` to this project and grant this user the role `operator`.
 
    {{< notice info >}}
    The user granted the role `operator` will be a project maintainer who can manage resources other than users and roles in the project.
    {{</ notice >}}
 
-6. Before creating a [Route](../../project-user-guide/application-workloads/routes/) which is [Ingress](https://kubernetes.io/docs/concepts/services-networking/ingress/) in Kubernetes, you need to enable a gateway for this project. The gateway is an [NGINX Ingress controller](https://github.com/kubernetes/ingress-nginx) running in the project. To set a gateway, go to **Advanced Settings** in **Project Settings** and click **Set Gateway**. The account `project-admin` is still used in this step.
+6. Before creating a [Route](../../project-user-guide/application-workloads/routes/) which is [Ingress](https://kubernetes.io/docs/concepts/services-networking/ingress/) in Kubernetes, you need to enable a gateway for this project. The gateway is an [NGINX Ingress controller](https://github.com/kubernetes/ingress-nginx) running in the project. To set a gateway, go to **Gateway Settings** in **Project Settings** and click **Set Gateway**. The account `project-admin` is still used in this step.
 
-   ![set-gateway1](/images/docs/quickstart/create-workspaces-projects-accounts/set-gateway1.png)
+7. Select the access method **NodePort** and click **OK**.
 
-7. Choose the access method **NodePort** and click **Save**.
-
-   ![nodeport](/images/docs/quickstart/create-workspaces-projects-accounts/nodeport.png)
-
-8. Under **Internet Access**, it can be seen that the Gateway Address and the NodePort of http and https all display on the page.
+8. Under **External Access**, you can obtain the Gateway Address and the NodePort of http and https in the list.
 
    {{< notice note >}}
 If you want to expose services using the type `LoadBalancer`, you need to use the LoadBalancer plugin of cloud providers. If your Kubernetes cluster is running in a bare metal environment, it is recommended that you use [PorterLB](https://github.com/kubesphere/porter) as the LoadBalancer plugin.
    {{</ notice >}}
-
-   ![nodeport-setting1](/images/docs/quickstart/create-workspaces-projects-accounts/nodeport-setting1.png)
 
 ### Step 4: Create a role
 
@@ -170,15 +169,15 @@ After you finish the above steps, you know that users can be granted different r
 
 1. Log in to the KubeSphere web console as `admin` again and go to **Access Control**. 
 
-2. Click **Account Roles** on the left navigation bar and **Create** on the right.
+2. Click **Platform Roles** on the left navigation pane, and then click **Create** on the right.
 
    {{< notice note >}}
 
-   The preset roles on the **Account Roles** page cannot be edited and deleted.
+   The preset roles on the **Platform Roles** page cannot be edited and deleted.
 
    {{</ notice >}}
 
-3. In the **Create Account Role** dialog box, set the name (for example, `clusters-admin`), alias, and description of the role, and click **Edit Permissions**.
+3. In the **Create Platform Role** dialog box, set the name (for example, `clusters-admin`), alias, and description of the role, and click **Edit Permissions**.
 
    {{< notice note >}}
 
@@ -197,9 +196,9 @@ After you finish the above steps, you know that users can be granted different r
 
    {{</ notice >}}
 
-5. On the **Account Roles** page, you can click the name of the created role to view the role details and click <img src="/images/docs/quickstart/create-workspaces-projects-accounts/operation-icon.png" width="20px" align="center"> to edit or delete the role.
+5. On the **Platform Roles** page, you can click the name of the created role to view the role details and click <img src="/images/docs/quickstart/create-workspaces-projects-accounts/operation-icon.png" width="20px" align="center"> to edit the role, edit the role permissions, or delete the role.
 
-6. On the **Accounts** page, you can assign the role to a user when you create a user or edit an existing account.
+6. On the **Users** page, you can assign the role to an account when you create an account or edit an existing account.
 
 
 ### Step 5: Create a DevOps project (Optional)
@@ -223,7 +222,5 @@ To create a DevOps project, you must install the KubeSphere DevOps system in adv
    ![new-devops-project](/images/docs/quickstart/create-workspaces-projects-accounts/new-devops-project.png)
 
 4. Go to **Project Management** and select **Project Members**. Click **Invite Member** to grant `project-regular` the role of `operator`, who is allowed to create pipelines and credentials.
-
-   ![devops-invite-member](/images/docs/quickstart/create-workspaces-projects-accounts/devops-invite-member.png)
 
 You are now familiar with the multi-tenant management system of KubeSphere. In other tutorials, the account `project-regular` will also be used to demonstrate how to create applications and resources in a project or DevOps project.

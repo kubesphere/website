@@ -261,8 +261,6 @@ You may need to configure port forwarding rules and open the port in your securi
 
 After logging in to the console, you can check the status of different components in **System Components**. You may need to wait for some components to be up and running if you want to use related services. You can also use `kubectl get pod --all-namespaces` to inspect the running status of KubeSphere workloads.
 
-![kubesphere-components](/images/docs/quickstart/all-in-one-installation/kubesphere-components.png)
-
 ## Enable Pluggable Components (Optional)
 
 This guide is used only for the minimal installation by default. For more information about how to enable other components in KubeSphere, see [Enable Pluggable Components](../../pluggable-components/).
