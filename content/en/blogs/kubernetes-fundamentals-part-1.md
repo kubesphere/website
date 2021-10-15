@@ -1,5 +1,5 @@
 ---
-  title: 'Kubernetes Fundamentals - Part 1'
+  title: 'Kubernetes Fundamental 1: Pods, Nodes, Deployments and Ingress'
   tag: 'Kubernetes, fundamentals, beginners, guide'
   keywords: 'Kubernetes, fundamentals, beginners, guide'
   description: 'Kubernetes was born out of the necessity to make our sophisticated software more available, scalable, transportable, and deployable in small, independent modules.'
@@ -7,8 +7,6 @@
   author: 'Pulkit Singh'
   snapshot: '/images/blogs/en/kubernetes-fundamentals-part-1/main-poster.png'
 ---
-
-# Kubernetes Fundamentals Part one: A Visual Quick Start
 
 
 ![mainposter.png](/images/blogs/en/kubernetes-fundamentals-part-1/main-poster.png)
