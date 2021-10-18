@@ -26,12 +26,14 @@ weight: 9100
 
    {{</ notice >}}
 
-2. 在**基本信息**页面，为创建的企业空间输入名称，并从下拉菜单中选择一名企业空间管理员。点击**创建**以继续。
+2. 对于单节点集群，您需要在**基本信息**页面，为创建的企业空间输入名称，并从下拉菜单中选择一名企业空间管理员。点击**创建**。
 
    - **名称**：为企业空间设置一个专属名称。
    - **别名**：该企业空间的另一种名称。
    - **管理员**：管理该企业空间的用户。
    - **描述**：企业空间的简短介绍。
+
+   对于多节点集群，设置企业空间的基本信息后，点击**下一步**。在**集群设置**页面，选择企业空间需要使用的集群，然后点击**创建**。
 
 3. 企业空间创建后将显示在企业空间列表中。
 
@@ -53,7 +55,7 @@ kubectl label ns <namespace> kubesphere.io/workspace- && kubectl patch ns <names
 
 {{< notice note >}} 
 
-以上命令会移除与企业空间关联的 Label 并移除 ownerReferences。之后，您可以将解绑的项目重新[分配给新的企业空间](../../faq/access-control/add-kubernetes-namespace-to-kubesphere-workspace/)。
+以上命令会移除与企业空间关联的标签并移除 ownerReferences。之后，您可以将解绑的项目重新[分配给新的企业空间](../../faq/access-control/add-kubernetes-namespace-to-kubesphere-workspace/)。
 
 {{</ notice >}} 
 

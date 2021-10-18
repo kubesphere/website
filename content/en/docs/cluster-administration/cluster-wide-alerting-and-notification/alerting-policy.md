@@ -31,7 +31,7 @@ KubeSphere also has built-in policies which will trigger alerts if conditions de
    - **Severity**. Allowed values include **Warning**, **Error** and **Critical**, providing an indication of how serious an alert is.
    - **Description**. A brief introduction to the alerting policy.
 
-4. On the **Alerting Rule** tab, you can use the rule template or create a custom rule. To use the template, set the following parameters and click **Next** to continue.
+4. On the **Rule Settings** tab, you can use the rule template or create a custom rule. To use the template, set the following parameters and click **Next** to continue.
 
    - **Monitoring Targets**. Select at lease a node in your cluster for monitoring.
    - **Alerting Rule**. Define a rule for the alerting policy. The rules provided in the drop-down list are based on Prometheus expressions and an alert will be triggered when conditions are met. You can monitor objects such as CPU, and memory.
