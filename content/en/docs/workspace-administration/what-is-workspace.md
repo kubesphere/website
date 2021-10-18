@@ -27,12 +27,14 @@ You have a user granted the role of `workspaces-manager`, such as `ws-manager` i
 
    {{</ notice >}}
 
-2. On the **Basic Information** page, specify a name for the workspace and select an administrator from the drop-down list. Click **Create** to continue.
+2. For single-node cluster, on the **Basic Information** page, specify a name for the workspace and select an administrator from the drop-down list. Click **Create**.
 
    - **Name**: Set a name for the workspace which serves as a unique identifier.
    - **Alias**: An alias name for the workspace.
    - **Administrator**: User that administers the workspace.
    - **Description**: A brief introduction of the workspace.
+
+   For multi-node cluster, after the basic information about the workspace is set, click **Next** to continue. On the **Cluster Settings** page, select clusters to be used in the workspace, and then click **Create**.
 
 3. The workspace is displayed in the workspace list after it is created.
 

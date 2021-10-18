@@ -20,7 +20,7 @@ This tutorial demonstrates how to enable pluggable components of KubeSphere both
 | `kubeedge`       | KubeEdge                              | Add edge nodes to your cluster and run workloads on them.    |
 | `openpitrix`     | KubeSphere App Store                  | Provide an app store for Helm-based applications and allow users to manage apps throughout the entire lifecycle. |
 | `servicemesh`    | KubeSphere Service Mesh (Istio-based) | Provide fine-grained traffic management, observability and tracing, and visualized traffic topology. |
-| `ippool`         | Pod IP Pool                           | Create Pod IP Pools and assign IP addresses from the Pools to your Pods. |
+| `ippool`         | Pod IP Pool                           | Create Pod IP pools and assign IP addresses from the Pools to your Pods. |
 | `topology`       | Service Topology                      | Integrate [Weave Scope](https://www.weave.works/oss/scope/) to view service-to-service communication (topology) of your apps and containers. |
 
 For more information about each component, see [Overview of Enable Pluggable Components](../../pluggable-components/overview/).
