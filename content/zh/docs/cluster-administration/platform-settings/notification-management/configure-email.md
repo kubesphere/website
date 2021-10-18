@@ -6,7 +6,7 @@ linkTitle: "配置邮件通知"
 weight: 8721
 ---
 
-本教程演示如何配置邮件通知及添加接收人，以便接收邮件通知。
+本教程演示如何配置邮件通知及添加接收人，以便接收告警策略的邮件通知。
 
 ## 配置邮件服务器
 
@@ -34,7 +34,7 @@ weight: 8721
 
 2. 添加完成后，接收人的邮箱地址将在**接收设置**下列出。您最多可以添加 50 位接收人，所有接收人都将能收到通知。
 
-3. 若想移除接收人，请将鼠标悬停在想要移除的邮箱地址上，然后点击右侧的 <img src="/images/docs/common-icons/trashcan.png" width='35' height='20' />。
+3. 若想移除接收人，请将鼠标悬停在想要移除的邮箱地址上，然后点击右侧的 <img src="/images/docs/common-icons/trashcan.png" width='25' height='25' />。
 
 ### 设置通知条件
 
@@ -50,7 +50,7 @@ weight: 8721
 
 2. 您可以点击**添加**来添加多个通知条件。
 
-3. 您可以点击通知条件右侧的 <img src="/images/docs/common-icons/trashcan.png" width='35' height='20' /> 来删除通知条件。
+3. 您可以点击通知条件右侧的 <img src="/images/docs/common-icons/trashcan.png" width='25' height='25' /> 来删除通知条件。
 
 4. 配置完成后，您可以点击右下角的**发送测试信息**进行验证。
 

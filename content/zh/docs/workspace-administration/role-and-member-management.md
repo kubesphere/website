@@ -20,7 +20,7 @@ weight: 9400
 
 ## 内置角色
 
-**企业角色**页面列出了以下四个可用的内置角色。创建企业空间时，KubeSphere 会自动创建内置角色，并且内置角色无法进行编辑或删除。您只能查看内置角色的权限或将其分配给用户。
+**企业空间角色**页面列出了以下四个可用的内置角色。创建企业空间时，KubeSphere 会自动创建内置角色，并且内置角色无法进行编辑或删除。您只能查看内置角色的权限或将其分配给用户。
 
 | **名称** | **描述**                                          |
 | ------------------ | ------------------------------------------------------------ |
@@ -31,7 +31,7 @@ weight: 9400
 
 若要查看角色所含权限：
 
-1. 以 `ws-admin` 身份登录控制台。在**企业角色**中，点击一个角色（例如，`workspace-admin`）以查看角色详情。
+1. 以 `ws-admin` 身份登录控制台。在**企业空间角色**中，点击一个角色（例如，`workspace-admin`）以查看角色详情。
 
 2. 点击**授权用户**选项卡，查看所有被授予该角色的用户。
 
@@ -49,7 +49,7 @@ weight: 9400
 
    {{</ notice >}} 
 
-4. 新创建的角色将在**企业角色**中列出，点击右侧的 <img src="/images/docs/zh-cn/workspace-administration-and-user-guide/role-and-member-management/three-dots.png" height="20px"> 以编辑该角色的信息、权限，或删除该角色。
+4. 新创建的角色将在**企业空间角色**中列出，点击右侧的 <img src="/images/docs/zh-cn/workspace-administration-and-user-guide/role-and-member-management/three-dots.png" height="20px"> 以编辑该角色的信息、权限，或删除该角色。
 
 ## 邀请新成员
 

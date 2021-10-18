@@ -1,12 +1,12 @@
 ---
 title: "Pod IP Pools"
-keywords: "Kubernetes, KubeSphere, Pod, IP Pools"
-description: "Learn how to enable Pod IP Pools to assign a specific Pod IP Pool to your Pods."
+keywords: "Kubernetes, KubeSphere, Pod, IP pools"
+description: "Learn how to enable Pod IP Pools to assign a specific Pod IP pool to your Pods."
 linkTitle: "Pod IP Pools"
 weight: 6920
 ---
 
-A Pod IP Pool is used to manage the Pod network address space, and the address space between each Pod IP Pool cannot overlap. When you create a workload, you can select a specific Pod IP Pool, so that created Pods will be assigned IP addresses from this Pod IP Pool.
+A Pod IP pool is used to manage the Pod network address space, and the address space between each Pod IP pool cannot overlap. When you create a workload, you can select a specific Pod IP pool, so that created Pods will be assigned IP addresses from this Pod IP pool.
 
 ## Enable Pod IP Pools Before Installation
 
@@ -21,7 +21,7 @@ When you implement multi-node installation of KubeSphere on Linux, you need to c
    ```
 
    {{< notice note >}}
-   If you adopt [All-in-One Installation](../../quick-start/all-in-one-on-linux/), you do not need to create a `config-sample.yaml` file as you can create a cluster directly. Generally, the all-in-one mode is for users who are new to KubeSphere and look to get familiar with the system. If you want to enable Pod IP Pools in this mode (for example, for testing purposes), refer to [the following section](#enable-pod-ip-pools-after-installation) to see how Pod IP Pools can be installed after installation.
+   If you adopt [All-in-One Installation](../../quick-start/all-in-one-on-linux/), you do not need to create a `config-sample.yaml` file as you can create a cluster directly. Generally, the all-in-one mode is for users who are new to KubeSphere and look to get familiar with the system. If you want to enable Pod IP Pools in this mode (for example, for testing purposes), refer to [the following section](#enable-pod-ip-pools-after-installation) to see how Pod IP pools can be installed after installation.
    {{</ notice >}}
 
 2. In this file, navigate to `network.ippool.type` and change `none` to `calico`. Save the file after you finish.

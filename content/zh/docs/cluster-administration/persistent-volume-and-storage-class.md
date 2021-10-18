@@ -16,7 +16,7 @@ PersistentVolumeClaim (PVC) 是用户对存储的请求。它与容器组类似�
 
 KubeSphere 支持基于存储类型的[动态卷供应](https://kubernetes.io/zh/docs/concepts/storage/dynamic-provisioning/)，以创建 PV。
 
-[存储类型](https://kubernetes.io/zh/docs/concepts/storage/storage-classes/)是管理员描述其提供的存储类型的一种方式。不同的类型可能会映射到不同的服务质量等级或备份策略，或由集群管理员制定的任意策略。每个 StorageClass 都有一个 Provisioner，用于决定使用哪个存储卷插件来供应 PV。该字段必须指定。有关使用哪一个值，请参阅 [Kubernetes 官方文档](https://kubernetes.io/zh/docs/concepts/storage/storage-classes/#provisioner)或与您的存储管理员确认。
+[存储类型](https://kubernetes.io/zh/docs/concepts/storage/storage-classes/)是管理员描述其提供的存储类型的一种方式。不同的类型可能会映射到不同的服务质量等级或备份策略，或由集群管理员制定的任意策略。每个存储类型都有一个 Provisioner，用于决定使用哪个存储卷插件来供应 PV。该字段必须指定。有关使用哪一个值，请参阅 [Kubernetes 官方文档](https://kubernetes.io/zh/docs/concepts/storage/storage-classes/#provisioner)或与您的存储管理员确认。
 
 下表总结了各种 Provisioner（存储系统）常用的存储卷插件。
 
@@ -99,7 +99,7 @@ GlusterFS 是 Kubernetes 上的一种树内存储插件，即您不需要额外�
 | GID 最大值 | 存储卷的 GID 最大值。 |
 | 存储卷类型 | 存储卷的类型。该值可为 none，replicate:<副本数>，或 disperse:<数据>:<冗余数>。如果未设置该值，则默认存储卷类型为 replicate:3。 |
 
-有关 StorageClass 参数的更多信息，请参见 [Kubernetes 文档中的 GlusterFS](https://kubernetes.io/zh/docs/concepts/storage/storage-classes/#glusterfs)。
+有关存储类型参数的更多信息，请参见 [Kubernetes 文档中的 GlusterFS](https://kubernetes.io/zh/docs/concepts/storage/storage-classes/#glusterfs)。
 
 ### Ceph RBD
 
@@ -128,7 +128,7 @@ Ceph RBD 也是 Kubernetes 上的一种树内存储插件，即 Kubernetes 中�
 | imageFormat | Ceph 卷的选项。该值可为 `1` 或 `2`，选择 `2` 后需要填写 `imageFeatures`。 |
 | imageFeatures| Ceph 集群的额外功能。仅当设置 `imageFormat` 为 `2` 时，才需要填写该值。 |
 
-有关 StorageClass 参数的更多信息，请参见 [Kubernetes 文档中的 Ceph RBD](https://kubernetes.io/zh/docs/concepts/storage/storage-classes/#ceph-rbd)。
+有关存储类型参数的更多信息，请参见 [Kubernetes 文档中的 Ceph RBD](https://kubernetes.io/zh/docs/concepts/storage/storage-classes/#ceph-rbd)。
 
 ### 自定义存储类型
 

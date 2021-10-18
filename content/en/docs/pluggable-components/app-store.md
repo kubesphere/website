@@ -108,7 +108,7 @@ After you log in to the console, if you can see **App Store** in the upper-left 
 
 {{< notice note >}}
 
-- You can even access the App Store without logging in to the console by visiting `<NodeIP>:30880/apps`.
+- You can even access the App Store without logging in to the console by visiting `<Node IP Address>:30880/apps`.
 - The **OpenPitrix** tab in KubeSphere 3.2 does not appear on the **System Components** page after the App Store is enabled.
 
 {{</ notice >}} 

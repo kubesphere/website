@@ -7,7 +7,7 @@ linkTitle: "守护进程集"
 weight: 10230
 ---
 
-守护进程集管理多组 Pod 副本，确保所有（或某些）节点运行一个 Pod 的副本。集群添加节点时，守护进程集会根据需要自动将 Pod 添加到新节点。
+守护进程集管理多组 Pod 副本，确保所有（或某些）节点运行一个容器组的副本。集群添加节点时，守护进程集会根据需要自动将 Pod 添加到新节点。
 
 有关更多信息，请参见 [Kubernetes 官方文档](https://kubernetes.io/zh/docs/concepts/workloads/controllers/daemonset/)。
 

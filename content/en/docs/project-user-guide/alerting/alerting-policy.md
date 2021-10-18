@@ -27,7 +27,7 @@ KubeSphere provides alerting policies for nodes and workloads. This tutorial dem
    - **Threshold Duration (min)**. The status of the alerting policy becomes Firing when the duration of the condition configured in the alerting rule reaches the threshold.
    - **Severity**. Allowed values include **Warning**, **Error** and **Critical**, providing an indication of how serious an alert is.
 
-3. On the **Alerting Rule** tab, you can use the rule template or create a custom rule. To use the template, fill in the following fields.
+3. On the **Rule Settings** tab, you can use the rule template or create a custom rule. To use the template, fill in the following fields.
 
    - **Resource Type**. Select the resource type you want to monitor, such as **Deployment**, **StatefulSet** and **DaemonSet**.
    - **Monitoring Target**. Depending on the resource type you select, the target can be different. You cannot see any target if you do not have any workload in the project.
@@ -59,7 +59,7 @@ To edit an alerting policy after it is created, on the **Alerting Policies** pag
 
 ## View an Alerting Policy
 
-Click an alerting policy on the **Alerting Policies** page to see its detail information, including alerting rules and alerting messages. You can also see the rule expression which is based on the template you use when creating the alerting policy.
+Click an alerting policy on the **Alerting Policies** page to see its detail information, including alerting rules and alerting history. You can also see the rule expression which is based on the template you use when creating the alerting policy.
 
 Under **Monitoring**, the **Alert Monitoring** chart shows the actual usage or amount of resources over time. **Alerting Message** displays the customized message you set in notifications.
 
