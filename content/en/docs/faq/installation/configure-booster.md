@@ -10,19 +10,7 @@ If you have trouble downloading images from `dockerhub.io`, it is highly recomme
 
 ## Get a Booster URL
 
-To configure the booster, you need a registry mirror address. See the following example to see how you can get a booster URL from Alibaba Cloud.
-
-1. Log in to the console of Alibaba Cloud and enter "container registry" in the search bar. Click **Container Registry** in the drop-down list as below.
-
-   ![container-registry](/images/docs/installing-on-linux/faq/configure-booster/container-registry.png)
-
-2. Click **Image Booster**.
-
-   ![image-booster](/images/docs/installing-on-linux/faq/configure-booster/image-booster.png)
-
-3. You can find the **Booster URL** in the image below as well as the official guide from Alibaba Cloud to help you configure the booster.
-
-   ![booster-url](/images/docs/installing-on-linux/faq/configure-booster/booster-url.png)
+To configure the booster, you need a registry mirror address. See how you can [get a booster URL from Alibaba Cloud](https://www.alibabacloud.com/help/doc-detail/60750.htm?spm=a2c63.p38356.b99.18.4f4133f0uTKb8S).
 
 ## Set the Registry Mirror
 

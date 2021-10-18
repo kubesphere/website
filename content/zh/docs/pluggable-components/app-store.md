@@ -78,7 +78,7 @@ weight: 6200
 定制资源定义（CRD）允许用户在不增加额外 API 服务器的情况下创建一种新的资源类型，用户可以像使用其他 Kubernetes 原生对象一样使用这些定制资源。
     {{</ notice >}}
 
-3. 在**资源列表**中，点击 `ks-installer` 右侧的 <img src="/images/docs/zh-cn/enable-pluggable-components/kubesphere-app-store/three-dots.png" height="20px">，选择**编辑配置文件**。
+3. 在**资源列表**中，点击 `ks-installer` 右侧的 <img src="/images/docs/zh-cn/enable-pluggable-components/kubesphere-app-store/three-dots.png" height="20px">，选择**编辑 YAML**。
 
 4. 在该 YAML 文件中，搜寻到 `openpitrix`，将 `enabled` 的 `false` 改为 `true`。完成后，点击右下角的**确定**，保存配置。
 
@@ -112,6 +112,6 @@ weight: 6200
 
 ## 在多集群架构中使用应用商店
 
-[在多集群架构中](../../multicluster-management/introduction/kubefed-in-kubesphere/)，一个 Host 集群（H 集群）管理所有 Member 集群（M 集群）。与 KubeSphere 中的其他组件不同，应用商店是所有集群（包括 H 集群和 M 集群）的全局应用程序池。您只需要在 H 集群上启用应用商店，便可以直接在 M 集群上使用应用商店的相关功能（无论 M 集群是否启用应用商店），例如[应用模板](../../project-user-guide/application/app-template/)和[应用仓库](../../workspace-administration/app-repository/import-helm-repository/)。
+[在多集群架构中](../../multicluster-management/introduction/kubefed-in-kubesphere/)，一个主集群管理所有成员集群。与 KubeSphere 中的其他组件不同，应用商店是所有集群（包括主集群和成员集群）的全局应用程序池。您只需要在主集群上启用应用商店，便可以直接在成员集群上使用应用商店的相关功能（无论成员集群是否启用应用商店），例如[应用模板](../../project-user-guide/application/app-template/)和[应用仓库](../../workspace-administration/app-repository/import-helm-repository/)。
 
-但是，如果只在 M 集群上启用应用商店而没有在 H 集群上启用，您将无法在多集群架构中的任何集群上使用应用商店。
+但是，如果只在成员集群上启用应用商店而没有在主集群上启用，您将无法在多集群架构中的任何集群上使用应用商店。

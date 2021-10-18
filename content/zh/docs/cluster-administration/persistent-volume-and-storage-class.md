@@ -16,7 +16,7 @@ PersistentVolumeClaim (PVC) 是用户对存储的请求。它与容器组类似�
 
 KubeSphere 支持基于存储类型的[动态卷供应](https://kubernetes.io/zh/docs/concepts/storage/dynamic-provisioning/)，以创建 PV。
 
-[StorageClass](https://kubernetes.io/zh/docs/concepts/storage/storage-classes/) 是管理员描述其提供的存储类型的一种方式。不同的类型可能会映射到不同的服务质量等级或备份策略，或由集群管理员制定的任意策略。每个 StorageClass 都有一个 Provisioner，用于决定使用哪个存储卷插件来供应 PV。该字段必须指定。有关使用哪一个值，请参阅 [Kubernetes 官方文档](https://kubernetes.io/zh/docs/concepts/storage/storage-classes/#provisioner)或与您的存储管理员确认。
+[存储类型](https://kubernetes.io/zh/docs/concepts/storage/storage-classes/)是管理员描述其提供的存储类型的一种方式。不同的类型可能会映射到不同的服务质量等级或备份策略，或由集群管理员制定的任意策略。每个 StorageClass 都有一个 Provisioner，用于决定使用哪个存储卷插件来供应 PV。该字段必须指定。有关使用哪一个值，请参阅 [Kubernetes 官方文档](https://kubernetes.io/zh/docs/concepts/storage/storage-classes/#provisioner)或与您的存储管理员确认。
 
 下表总结了各种 Provisioner（存储系统）常用的存储卷插件。
 
@@ -44,7 +44,7 @@ KubeSphere 支持基于存储类型的[动态卷供应](https://kubernetes.io/zh
 
 ### 常用设置
 
-有些设置在存储类型之间常用且共享。您可以在控制台上的仪表板参数中找到这些设置，存储类型清单文件中也通过字段或注解加以显示。您可以在右上角点击**编辑配置文件**，查看 YAML 格式的配置文件。下表是对 KubeSphere 中一些常用字段的参数说明。
+有些设置在存储类型之间常用且共享。您可以在控制台上的仪表板参数中找到这些设置，存储类型清单文件中也通过字段或注解加以显示。您可以在右上角点击**编辑 YAML**，查看 YAML 格式的配置文件。下表是对 KubeSphere 中一些常用字段的参数说明。
 
 | 参数 | 描述 |
 | :---- | :---- |

@@ -50,23 +50,34 @@ weight: 8724
 
 7. 点击**确定**。
 
-8. 在右上角，打开**未启用**开关来接收 Slack 通知，或者关闭**已启用**开关来停用 Slack 通知。
-
+8. 勾选**通知条件**左侧的复选框即可设置通知条件。
+   
+   - **标签**：告警策略的名称、级别或监控目标。您可以选择一个标签或者自定义标签。
+   - **操作符**：标签与值的匹配关系，包括**包含值**，**不包含值**，**存在**和**不存在**。
+   - **值**：标签对应的值。
    {{< notice note >}}
+   - 操作符**包含值**和**不包含值**需要添加一个或多个标签值。使用回车分隔多个值。
+   - 操作符**存在**和**不存在**判断某个标签是否存在，无需设置标签值。
+   {{</ notice >}}
 
-   如果您更改了现有配置，则必须点击**确定**以应用更改。
+   您可以点击**添加**来添加多个通知条件，或点击通知条件右侧的 <img src="/images/docs/common-icons/trashcan.png" width='35' height='20' /> 来删除通知条件。
+
+9. 配置完成后，您可以点击右下角的**发送测试信息**进行验证。
+
+10. 在右上角，打开**未启用**开关来接收 Slack 通知，或者关闭**已启用**开关来停用 Slack 通知。
+
+     {{< notice note >}}
+
+   - 通知条件设置后，接收人只会接受符合条件的通知。
+   - 如果您更改了现有配置，则必须点击**确定**以应用更改。
 
    {{</ notice >}} 
 
-9. 若想由应用发送通知，请确保将其加入频道。请在 Slack 频道中输入 `/invite @<app-name>` 将应用加入至该频道。
+11. 若想由应用发送通知，请确保将其加入频道。请在 Slack 频道中输入 `/invite @<app-name>` 将应用加入至该频道。
 
 ## 接收 Slack 通知
 
 配置 Slack 通知并添加频道后，您需要启用 [KubeSphere 告警](../../../../pluggable-components/alerting/)，并为工作负载或节点创建告警策略。告警触发后，列表中的全部频道都将能接收通知。
-
-以下图片为 Slack 通知的示例：
-
-![example-notification](/images/docs/zh-cn/cluster-administration/platform-settings/notification-management/configure-slack/example-notification1.png)
 
 {{< notice note >}}
 

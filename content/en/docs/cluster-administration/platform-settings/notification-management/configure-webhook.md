@@ -35,6 +35,29 @@ You need to prepare a user granted the `platform-admin` role. For more informati
 
    {{</notice>}}
 
-5. Under **Notification Settings**, turn on/off the **Receive Notifications** toggle to start/stop sending notifications to the webhook.
+5. Select the checkbox on the left of **Notification Conditions** to set notification conditions.
 
-6. Click **OK** after you finish.
+    - **Label**: Name, severity, or monitoring target of an alerting policy. You can select a label or customize a label.
+    - **Operator**: Mapping between the label and the values. The operator includes **Includes values**, **Does not include values**, **Exists**, and **Does not exist**.
+    - **Values**: Values associated with the label.
+    {{< notice note >}}
+
+   - Operators **Includes values** and **Does not include values** require one or more label values. Use a carriage return to separate values.
+   - Operators **Exists** and **Does not exist** determine whether a label exists, and do not require a label value.
+
+   {{</ notice >}} 
+
+6. You can click **Add** to add notification conditions, or click <img src="/images/docs/common-icons/trashcan.png" width='35' height='20' /> on the right of a notification condition to delete the condition.
+
+7. After the configurations are complete, you can click **Send Test Message** for verification.
+
+8. On the upper-right corner, you can turn on the **Disabled** toggle to enbale notifications, or turn off the **Enabled** toggle to diable them.
+
+9. Click **OK** after you finish.
+
+   {{< notice note >}}
+
+   - After the notification conditions are set, the recepients will receive only notifications that meet the conditions.
+   - If you change the existing configuration, you must click **OK** to apply it.
+
+   {{</ notice >}} 

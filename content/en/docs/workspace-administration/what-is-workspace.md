@@ -31,12 +31,12 @@ You have a user granted the role of `workspaces-manager`, such as `ws-manager` i
 
    - **Name**: Set a name for the workspace which serves as a unique identifier.
    - **Alias**: An alias name for the workspace.
-   - **Administrator**: Account that administers the workspace.
+   - **Administrator**: User that administers the workspace.
    - **Description**: A brief introduction of the workspace.
 
 3. The workspace is displayed in the workspace list after it is created.
 
-4. Click the workspace and you can see resource statusof the workspace on the **Overview** page.
+4. Click the workspace and you can see resource status of the workspace on the **Overview** page.
 
 ## Delete a Workspace
 

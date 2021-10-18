@@ -74,9 +74,9 @@ KubeSphere 服务网格基于 [Istio](https://istio.io/)，将微服务治理和
 定制资源定义（CRD）允许用户在不新增 API 服务器的情况下创建一种新的资源类型，用户可以像使用其他 Kubernetes 原生对象一样使用这些定制资源。
     {{</ notice >}}
 
-3. 在**资源列表**中，点击 `ks-installer` 右侧的 <img src="/images/docs/zh-cn/enable-pluggable-components/kubesphere-service-mesh/three-dots.png" height="20px">，选择**编辑配置文件**。
+3. 在**资源列表**中，点击 `ks-installer` 右侧的 <img src="/images/docs/zh-cn/enable-pluggable-components/kubesphere-service-mesh/three-dots.png" height="20px">，选择**编辑 YAML**。
    
-4. 在该 YAML 文件中，搜寻到 `servicemesh`，将 `enabled` 的 `false` 改为 `true`。完成后，点击右下角的**更新**，保存配置。
+4. 在该 YAML 文件中，搜寻到 `servicemesh`，将 `enabled` 的 `false` 改为 `true`。完成后，点击右下角的**确定**，保存配置。
 
     ```yaml
     servicemesh:
@@ -106,7 +106,7 @@ KubeSphere 服务网格基于 [Istio](https://istio.io/)，将微服务治理和
 
 {{< tab "通过 kubectl 验证组件的安装" >}}
 
-执行以下命令来检查 Pod 的状态：
+执行以下命令来检查容器组的状态：
 
 ```bash
 kubectl get pod -n istio-system

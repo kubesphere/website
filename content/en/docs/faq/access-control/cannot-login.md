@@ -1,22 +1,22 @@
 ---
-title: "Account Login Failure"
-keywords: "login failure, account is not active, KubeSphere, Kubernetes"
+title: "User Login Failure"
+keywords: "login failure, user is not active, KubeSphere, Kubernetes"
 description: "How to solve the issue of login failure"
-linkTitle: "Account Login Failure"
+linkTitle: "User Login Failure"
 Weight: 16440
 ---
 
-KubeSphere automatically creates a default account (`admin/P@88w0rd`) when it is installed. An account cannot be used for login if the status is not **Active** or you use an incorrect password.
+KubeSphere automatically creates a default user (`admin/P@88w0rd`) when it is installed. A user cannot be used for login if the status is not **Active** or you use an incorrect password.
 
-Here are some of the frequently asked questions about account login failure.
+Here are some of the frequently asked questions about user login failure.
 
-## Account Not Active
+## User Not Active
 
 You may see an image below when the login fails. To find out the reason and solve the issue, perform the following steps:
 
 ![account-not-active](/images/docs/faq/access-control-and-account-management/cannot-login/account-not-active.png)
 
-1. Execute the following command to check the status of your account.
+1. Execute the following command to check the status of the user.
 
    ```bash
    $ kubectl get users
@@ -88,7 +88,7 @@ kubectl -n kubesphere-system get deploy ks-controller-manager -o jsonpath='{.spe
 
 ![incorrect-password](/images/docs/faq/access-control-and-account-management/cannot-login/wrong-password.png)
 
-Run the following command to verify that the account and the password are correct.
+Run the following command to verify that the username and the password are correct.
 
 ```
 curl -u <USERNAME>:<PASSWORD> "http://`kubectl -n kubesphere-system get svc ks-apiserver -o jsonpath='{.spec.clusterIP}'`/api/v1/nodes"

@@ -28,15 +28,11 @@ For more information about creating a Kubernetes namespace, see [Namespaces Walk
 
 ## Add the Namespace to a KubeSphere Workspace
 
-1. Log in to the KubeSphere console as `admin` and go to the **Cluster Management** page. Click **Projects**, and you can see all your projects (i.e. namespaces) running on the current cluster, including the one just created.
+1. Log in to the KubeSphere console as `admin` and go to the **Cluster Management** page. Click **Projects**, and you can see all your projects running on the current cluster, including the one just created.
 
 2. The namespace created through kubectl does not belong to any workspace. Click <img src="/images/docs/faq/access-control-and-account-management/add-exisiting-namespaces-to-a-kubesphere-workspace/three-dots.png" height="20px"> on the right and select **Assign Workspace**.
 
-   ![project-page](/images/docs/faq/access-control-and-account-management/add-exisiting-namespaces-to-a-kubesphere-workspace/project-page.png)
-
-3. In the dialog that appears, select a **Target Workspace** and a **Project Manager** for the project and click **OK**.
+3. In the dialog that appears, select a **Workspace** and a **Project Administrator** for the project and click **OK**.
 
 4. Go to your workspace and you can see the project on the **Projects** page.
-
-   ![workspace-project](/images/docs/faq/access-control-and-account-management/add-exisiting-namespaces-to-a-kubesphere-workspace/workspace-project.png)
 

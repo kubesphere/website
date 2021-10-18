@@ -30,7 +30,7 @@ KubeSphere DevOps 系统提供基于 Jenkins 的容器化 CI/CD 功能，而提�
    echo http://$NODE_IP:$NODE_PORT
    ```
 
-2. 您会得到类似如下的输出。您可以通过输出的地址使用自己的 KubeSphere 帐户和密码（例如 `admin/P@88w0rd`）访问 Jenkins 面板。
+2. 您会得到类似如下的输出。您可以通过输出的地址使用自己的 KubeSphere 用户和密码（例如 `admin/P@88w0rd`）访问 Jenkins 面板。
 
    ```
    http://192.168.0.4:30180
@@ -38,7 +38,7 @@ KubeSphere DevOps 系统提供基于 Jenkins 的容器化 CI/CD 功能，而提�
 
    {{< notice note >}}
 
-   请确保使用自己的 Jenkins 地址。根据您 Kubernetes 集群部署位置的不同，您可能需要在安全组中打开端口，并配置相关的端口转发规则。
+   请确保使用自己的 Jenkins 地址。根据您 KubeSphere 集群部署位置的不同，您可能需要在安全组中打开端口，并配置相关的端口转发规则。
 
    {{</ notice >}}
 
@@ -46,15 +46,9 @@ KubeSphere DevOps 系统提供基于 Jenkins 的容器化 CI/CD 功能，而提�
 
 1. 登录 Jenkins 面板，点击**系统管理**。
 
-   ![click-manage-jenkins](/images/docs/zh-cn/faq/devops/install-plugins-to-jenkins/click-manage-jenkins.png)
-
 2. 在**系统管理**页面，下滑到**插件管理**并点击。
 
-   ![click-manage-plugins](/images/docs/zh-cn/faq/devops/install-plugins-to-jenkins/click-manage-plugins.png)
-
 3. 点击**可选插件**选项卡，您必须使用搜索框来搜索所需插件。例如，您可以在搜索框中输入 `git`，勾选所需插件旁边的复选框，然后按需点击**直接安装**或**下载待重启后安装**。
-
-   ![available-plugins](/images/docs/zh-cn/faq/devops/install-plugins-to-jenkins/available-plugins.png)
 
    {{< notice note >}}
 
@@ -64,15 +58,9 @@ KubeSphere DevOps 系统提供基于 Jenkins 的容器化 CI/CD 功能，而提�
 
 4. 如果已预先下载 HPI 文件，您也可以点击**高级**选项卡，上传该 HPI 文件作为插件进行安装。
 
-   ![click-advanced-tab](/images/docs/zh-cn/faq/devops/install-plugins-to-jenkins/click-advanced-tab.png)
-
 5. 在**已安装**选项卡，可以查看已安装的全部插件。能够安全卸载的插件将会在右侧显示**卸载**按钮。
 
-   ![installed-plugins](/images/docs/zh-cn/faq/devops/install-plugins-to-jenkins/installed-plugins.png)
-
 6. 在**可更新**选项卡，先勾选插件左侧的复选框，再点击**下载待重启后安装**，即可安装更新的插件。您也可以点击**立即获取**按钮检查更新。
-
-   ![update-plugins](/images/docs/zh-cn/faq/devops/install-plugins-to-jenkins/update-plugins.png)
 
 ## 另请参见
 

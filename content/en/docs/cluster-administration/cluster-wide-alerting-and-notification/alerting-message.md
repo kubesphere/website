@@ -18,9 +18,9 @@ Alerting messages record detailed information of alerts triggered based on the a
 
 1. Log in to the KubeSphere console as `cluster-admin` and go to **Alerting Messages** under **Monitoring & Alerting**.
 
-2. On the **Alerting Messages** page, you can see all alerting messages in the list. The first column displays the summary and details you have defined for the alert. To view details of an alerting message, click the name of the alerting policy and then click the **Alerting Messages** tab on the alerting policy details page.
+2. On the **Alerting Messages** page, you can see all alerting messages in the list. The first column displays the summary and details you have defined for the alert. To view details of an alerting message, click the name of the alerting policy and then click the **Alerting History** tab on the alerting policy details page.
 
-3. On the **Alerting Messages** tab, you can see alert severity, monitoring target, and activation time.
+3. On the **Alerting History** tab, you can see alert severity, monitoring target, and activation time.
 
 ## View Notifications
 

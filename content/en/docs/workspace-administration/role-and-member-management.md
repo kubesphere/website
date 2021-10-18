@@ -6,13 +6,7 @@ linkTitle: "Workspace Role and Member Management"
 weight: 9400
 ---
 
-This tutorial demonstrates how to manage roles and members in a workspace. At the workspace level, you can grant permissions in the following modules to a role:
-
-- **Projects**
-- **DevOps Projects**
-- **App Management**
-- **Access Control**
-- **Workspace Settings**
+This tutorial demonstrates how to manage roles and members in a workspace.
 
 ## Prerequisites
 

@@ -6,7 +6,7 @@ linkTitle: "项目配额"
 weight: 9600
 ---
 
-KubeSphere 使用预留（Request）和限制（Limit）来控制项目中的资源（例如 CPU 和内存）使用情况，在 Kubernetes 中也称为 [ResourceQuota](https://kubernetes.io/zh/docs/concepts/policy/resource-quotas/)。请求确保项目能够获得其所需的资源，因为这些资源已经得到明确保障和预留。相反地，限制确保项目不能使用超过特定值的资源。
+KubeSphere 使用预留（Request）和限制（Limit）来控制项目中的资源（例如 CPU 和内存）使用情况，在 Kubernetes 中也称为[资源配额](https://kubernetes.io/zh/docs/concepts/policy/resource-quotas/)。请求确保项目能够获得其所需的资源，因为这些资源已经得到明确保障和预留。相反地，限制确保项目不能使用超过特定值的资源。
 
 除了 CPU 和内存，您还可以单独为其他对象设置资源配额，例如项目中的容器组、[部署](../../project-user-guide/application-workloads/deployments/)、[任务](../../project-user-guide/application-workloads/jobs/)、[服务](../../project-user-guide/application-workloads/services/)和[配置字典](../../project-user-guide/configuration/configmaps/)。
 
@@ -34,7 +34,7 @@ KubeSphere 使用预留（Request）和限制（Limit）来控制项目中的资
 
    {{</ notice >}} 
 
-3. 要为其他资源设置配额，在**项目资源配额**下点击**添加**，从列表中选择一个对象或输入资源名称并设置数量限制。
+3. 要为其他资源设置配额，在**项目资源配额**下点击**添加**，选择一个资源或输入资源名称并设置配额。
 
 4. 点击**确定**完成配额设置。
 

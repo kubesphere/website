@@ -18,7 +18,7 @@ Weight: 16520
 
 ## 编辑控制台配置
 
-1. 以 `admin` 用户登录 KubeSphere，点击右下角的锤子图标，然后选择 **Kubectl**。
+1. 以 `admin` 用户登录 KubeSphere，点击右下角的 <img src="/images/docs/common-icons/hammer.png" height="25" width="25" />，然后选择 **Kubectl**。
 
 2. 执行如下命令：
 
@@ -31,14 +31,14 @@ Weight: 16520
    ```yaml
    client:
      version:
-       kubesphere: v3.0.0
-       kubernetes: v1.17.9
-       openpitrix: v0.3.5
+       kubesphere: v3.2.0
+       kubernetes: v1.20.4
+       openpitrix: v3.2.0
      enableKubeConfig: true
      systemWorkspace: "$"  # 请手动添加此行。
    ```
 
-4. 执行如下命令重新部署 `ks-console`，并等待 Pod 重建。
+4. 执行如下命令重新部署 `ks-console`，并等待容器组重建。
 
    ```bash
    kubectl -n kubesphere-system rollout restart deployment ks-console
