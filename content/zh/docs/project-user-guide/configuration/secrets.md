@@ -36,7 +36,7 @@ Kubernetes [保密字典 (Secret)](https://kubernetes.io/zh/docs/concepts/config
 
 ### 步骤 3：设置保密字典
 
-1. 在**保密字典设置**选项卡，从**类型**下拉列表中选择保密字典类型。您可以在 KubeSphere 中创建以下保密字典，类型对应 YAML 文件中的 `type` 字段。
+1. 在**数据设置**选项卡，从**类型**下拉列表中选择保密字典类型。您可以在 KubeSphere 中创建以下保密字典，类型对应 YAML 文件中的 `type` 字段。
 
    {{< notice note >}}
 
@@ -94,7 +94,7 @@ Kubernetes [保密字典 (Secret)](https://kubernetes.io/zh/docs/concepts/config
 
 1. 以 `project-regular` 用户登录 KubeSphere 并进入您的项目。在左侧导航栏中选择**配置**下的**保密字典**，然后在页面右侧点击**创建**。
 
-2. 设置保密字典名称（例如 `dockerhub-id`）并点击**下一步**。在**保密字典设置**页面，设置以下参数，然后点击**验证**以检查设置的信息是否有效。
+2. 设置保密字典名称（例如 `dockerhub-id`）并点击**下一步**。在**数据设置**页面，设置以下参数，然后点击**验证**以检查设置的信息是否有效。
 
    **类型**：选择**kubernetes.io/dockerconfigjson（镜像仓库保密字典）**。
 
@@ -110,7 +110,7 @@ Kubernetes [保密字典 (Secret)](https://kubernetes.io/zh/docs/concepts/config
 
 1. 以 `project-regular` 用户登录 KubeSphere 并进入您的项目。在左侧导航栏中选择**配置**下的**保密字典**，然后在页面右侧点击**创建**。
 
-2. 设置保密字典名称（例如 `github-id`）并点击**下一步**。在**保密字典设置**页面，设置以下参数。
+2. 设置保密字典名称（例如 `github-id`）并点击**下一步**。在**数据设置**页面，设置以下参数。
 
    **类型**：选择**kubernetes.io/basic-auth（帐户密码保密字典）**。
 
