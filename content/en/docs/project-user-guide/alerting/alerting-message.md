@@ -16,13 +16,11 @@ Alerting messages record detailed information of alerts triggered based on the a
 
 ## View Alerting Messages
 
-1. Log in to the console as `project-regular`, go to your project, and navigate to **Alerting Messages** under **Monitoring & Alerting**.
+1. Log in to the console as `project-regular`, go to your project, and go to **Alerting Messages** under **Monitoring & Alerting**.
 
-2. On the **Alerting Messages** page, you can see all alerting messages in the list. The first column displays the summary and message you have defined in the notification of the alert. To view details of an alerting message, click the name of the alerting policy and click the **Alerting Messages** tab on the page that appears.
+2. On the **Alerting Messages** page, you can see all alerting messages in the list. The first column displays the summary and message you have defined in the notification of the alert. To view details of an alerting message, click the name of the alerting policy and click the **Alerting History** tab on the displayed page.
 
-   ![alerting-messages](/images/docs/project-user-guide/alerting/alerting-messages/alerting-messages.png)
-
-3. On the **Alerting Messages** tab, you can see alert severity, target resources, and alert time.
+3. On the **Alerting History** tab, you can see alert severity, monitoring targets, and activation time.
 
 ## View Notifications
 

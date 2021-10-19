@@ -1,7 +1,7 @@
 ---
 title: "StatefulSets"
-keywords: 'KubeSphere, Kubernetes, StatefulSets, dashboard, service'
-description: 'Learn basic concepts of StatefulSets and how to create StatefulSets in KubeSphere.'
+keywords: 'KubeSphere, Kubernetes, StatefulSets, Dashboard, Service'
+description: 'Learn basic concepts of StatefulSets and how to create StatefulSets on KubeSphere.'
 linkTitle: "StatefulSets"
 weight: 10220
 ---
@@ -31,56 +31,44 @@ In KubeSphere, a **Headless** service is also created when you create a Stateful
 
 ### Step 1: Open the dashboard
 
-Log in to the console as `project-regular`. Go to **Application Workloads** of a project, select **Workloads**, and click **Create** under the tab **StatefulSets**.
-
-![statefulsets](/images/docs/project-user-guide/application-workloads/statefulsets/click-create.png)
+Log in to the console as `project-regular`. Go to **Application Workloads** of a project, select **Workloads**, and click **Create** under the **StatefulSets** tab.
 
 ### Step 2: Enter basic information
 
 Specify a name for the StatefulSet (for example, `demo-stateful`) and click **Next** to continue.
 
-![statefulsets](/images/docs/project-user-guide/application-workloads/statefulsets/enter-name.png)
-
-### Step 3: Set an image
+### Step 3: Set a Pod
 
 1. Before you set an image, define the number of replicated Pods in **Pod Replicas** by clicking <img src="/images/docs/project-user-guide/application-workloads/statefulsets/plus-icon.png" width="20px" /> or <img src="/images/docs/project-user-guide/application-workloads/statefulsets/minus-icon.png" width="20px" />, which is indicated by the `.spec.replicas` field in the manifest file.
 
     {{< notice tip >}}
 
-You can see the StatefulSet manifest file in YAML format by enabling **Edit Mode** in the upper-right corner. KubeSphere allows you to edit the manifest file directly to create a StatefulSet. Alternatively, you can follow the steps below to create a StatefulSet via the dashboard.
+You can see the StatefulSet manifest file in YAML format by enabling **Edit YAML** in the upper-right corner. KubeSphere allows you to edit the manifest file directly to create a StatefulSet. Alternatively, you can follow the steps below to create a StatefulSet via the dashboard.
 
     {{</ notice >}}
-    
-    ![statefulsets](/images/docs/project-user-guide/application-workloads/statefulsets/set-replicas.png)
 
-2. Click **Add Container Image**.
+2. Click **Add Container**.
 
-    ![statefulsets](/images/docs/project-user-guide/application-workloads/statefulsets/click-add-image.png)
-
-3. Enter an image name from public Docker Hub or from a [private repository](../../configuration/image-registry/) you specified. For example, enter `nginx` in the search bar and press **Enter**.
-
-    ![statefulsets](/images/docs/project-user-guide/application-workloads/statefulsets/enter-nginx.png)
+3. Enter an image name from public Docker Hub or from a [private repository](../../configuration/image-registry/) you specified. For example, enter `nginx` in the search box and press **Enter**.
 
     {{< notice note >}}
 
-- Remember to press **Enter** on your keyboard after you enter an image name in the search bar.
-- If you want to use your private image repository, you should [create an Image Registry Secret](../../configuration/image-registry/) first in **Secrets** under **Configurations**.
+- Remember to press **Enter** on your keyboard after you enter an image name in the search box.
+- If you want to use your private image repository, you should [create an Image Registry Secret](../../configuration/image-registry/) first in **Secrets** under **Configuration**.
 
     {{</ notice >}}
 
 4. Set requests and limits for CPU and memory resources based on your needs. For more information, see [Resource Request and Resource Limit in Container Image Settings](../container-image-settings/#add-container-image).
 
-    ![statefulset-request-limit](/images/docs/project-user-guide/application-workloads/statefulsets/set-requests-limits.png)
+5. Click **Use Default Ports** for **Port Settings** or you can customize **Protocol**, **Name** and **Container Port**.
 
-5. Click **Use Default Ports** for **Service Settings** or you can customize **Protocol**, **Name** and **Container Port**.
+6. Select a policy for image pulling from the drop-down list. For more information, see [Image Pull Policy in Container Image Settings](../container-image-settings/#add-container-image).
 
-6. Select a policy for image pulling from the drop-down menu. For more information, see [Image Pull Policy in Container Image Settings](../container-image-settings/#add-container-image).
+7. For other settings (**Health Check**, **Start Command**, **Environment Variables**, **Container Security Context** and **Synchronize Host Timezone**), you can configure them on the dashboard as well. For more information, see detailed explanations of these properties in [Container Image Settings](../container-image-settings/#add-container-image). When you finish, click **√** in the lower-right corner to continue.
 
-7. For other settings (**Health Checker**, **Start Command**, **Environment Variables**, **Container Security Context** and **Sync Host Timezone**), you can configure them on the dashboard as well. For more information, see detailed explanations of these properties in [Container Image Settings](../container-image-settings/#add-container-image). When you finish, click **√** in the bottom-right corner to continue.
+8. Select an update strategy from the drop-down menu. It is recommended you choose **Rolling Update**. For more information, see [Update Strategy](../container-image-settings/#update-strategy).
 
-8. Select an update strategy from the drop-down menu. It is recommended you choose **RollingUpdate**. For more information, see [Update Strategy](../container-image-settings/#update-strategy).
-
-9. Select a deployment mode. For more information, see [Deployment Mode](../container-image-settings/#deployment-mode).
+9. Select a Pod scheduling rule. For more information, see [Pod Scheduling Rules](../container-image-settings/#pod-scheduling-rules).
 
 10. Click **Next** to continue when you finish setting the container image.
 
@@ -88,17 +76,13 @@ You can see the StatefulSet manifest file in YAML format by enabling **Edit Mode
 
 StatefulSets can use the volume template, but you must create it in **Storage** in advance. For more information about volumes, visit [Volumes](../../storage/volumes/#mount-a-volume). When you finish, click **Next** to continue.
 
-![statefulsets](/images/docs/project-user-guide/application-workloads/statefulsets/mount-volume.png)
-
 ### Step 5: Configure advanced settings
 
 You can set a policy for node scheduling and add metadata in this section. When you finish, click **Create** to complete the whole process of creating a StatefulSet.
 
-![statefulsets](/images/docs/project-user-guide/application-workloads/statefulsets/advanced-settings.png)
+- **Select Nodes**
 
-- **Set Node Scheduling Policy**
-
-  You can allow Pod replicas to run on specified nodes. It is specified in the field `nodeSelector`.
+  Assign Pod replicas to run on specified nodes. It is specified in the field `nodeSelector`.
 
 - **Add Metadata**
 
@@ -108,38 +92,28 @@ You can set a policy for node scheduling and add metadata in this section. When 
 
 ### Detail page
 
-1. After a StatefulSet is created, it will be displayed in the list as below. You can click <img src="/images/docs/project-user-guide/application-workloads/statefulsets/three-dots.png" width="20px" /> on the right to select options from the menu to modify your StatefulSet.
+1. After a StatefulSet is created, it will be displayed in the list. You can click <img src="/images/docs/project-user-guide/application-workloads/statefulsets/three-dots.png" width="20px" /> on the right to select options from the menu to modify your StatefulSet.
 
-    ![statefulsets](/images/docs/project-user-guide/application-workloads/statefulsets/click-dots.png)
-
-    - **Edit**: View and edit the basic information.
+    - **Edit Information**: View and edit the basic information.
     - **Edit YAMl**: View, upload, download, or update the YAML file.
-    - **Redeploy**: Redeploy the StatefulSet.
+    - **Re-create**: Re-create the StatefulSet.
     - **Delete**: Delete the StatefulSet.
 
-2. Click the name of the StatefulSet and you can go to its detail page.
-
-    ![statefulsets](/images/docs/project-user-guide/application-workloads/statefulsets/detail-page.png)
+2. Click the name of the StatefulSet and you can go to its details page.
 
 3. Click **More** to display what operations about this StatefulSet you can do.
 
-    ![statefulsets](/images/docs/project-user-guide/application-workloads/statefulsets/click-more.png)
-
-    - **Revision Rollback**: Select the revision to roll back.
+    - **Roll Back**: Select the revision to roll back.
     - **Edit Service**: Set the port to expose the container image and the service port.
-    - **Edit Config Template**: Configure update strategies, containers and volumes.
+    - **Edit Settings**: Configure update strategies, containers and volumes.
     - **Edit YAML**: View, upload, download, or update the YAML file.
-    - **Redeploy**: Redeploy this StatefulSet.
+    - **Re-create**: Re-create this StatefulSet.
     - **Delete**: Delete the StatefulSet, and return to the StatefulSet list page.
 
 4. Click the **Resource Status** tab to view the port and Pod information of a StatefulSet.
 
-    ![statefulsets](/images/docs/project-user-guide/application-workloads/statefulsets/resource-status.png)
-
     - **Replica Status**: Click <img src="/images/docs/project-user-guide/application-workloads/statefulsets/up-arrow.png" width="20px" /> or <img src="/images/docs/project-user-guide/application-workloads/statefulsets/down-arrow.png" width="20px" /> to increase or decrease the number of Pod replicas.
-    - **Pod detail**
-
-        ![statefulsets](/images/docs/project-user-guide/application-workloads/statefulsets/pod-detail.png)
+    - **Pods**
 
         - The Pod list provides detailed information of the Pod (status, node, Pod IP and resource usage).
         - You can view the container information by clicking a Pod item.
@@ -154,17 +128,11 @@ After the resource template of workload is changed, a new log will be generated 
 
 Click the **Metadata** tab to view the labels and annotations of the StatefulSet.
 
-![statefulsets](/images/docs/project-user-guide/application-workloads/statefulsets/metadata.png)
-
 ### Monitoring
 
 1. Click the **Monitoring** tab to view the CPU usage, memory usage, outbound traffic, and inbound traffic of the StatefulSet.
 
-   ![statefulsets](/images/docs/project-user-guide/application-workloads/statefulsets/monitoring.png)
-
-2. Click the drop-down menu in the upper-right corner to customize the time range and time interval.
-
-   ![statefulsets](/images/docs/project-user-guide/application-workloads/statefulsets/set-interval.png)
+2. Click the drop-down menu in the upper-right corner to customize the time range and sampling interval.
 
 3. Click <img src="/images/docs/project-user-guide/application-workloads/statefulsets/start-refresh.png" width="20px" />/<img src="/images/docs/project-user-guide/application-workloads/statefulsets/stop-refresh.png" width="20px" /> in the upper-right corner to start/stop automatic data refreshing.
 
@@ -174,11 +142,7 @@ Click the **Metadata** tab to view the labels and annotations of the StatefulSet
 
 Click the **Environment Variables** tab to view the environment variables of the StatefulSet.
 
-![statefulsets](/images/docs/project-user-guide/application-workloads/statefulsets/env-variables.png)
-
 ### Events
 
 Click the **Events** tab to view the events of the StatefulSet.
-
-![statefulsets](/images/docs/project-user-guide/application-workloads/statefulsets/events.png)
 
