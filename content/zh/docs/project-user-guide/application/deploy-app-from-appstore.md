@@ -13,7 +13,7 @@ weight: 10130
 ## 准备工作
 
 - 您需要启用 [OpenPitrix (App Store)](../../../pluggable-components/app-store/)。
-- 您需要创建一个企业空间、一个项目和一个用户帐户（例如 `project-regular`）。该用户必须是已邀请至该项目的平台普通用户，并具有 `operator` 角色。有关更多信息，请参见[创建企业空间、项目、用户和角色](../../../quick-start/create-workspace-and-project/)。
+- 您需要创建一个企业空间、一个项目和一个用户（例如 `project-regular`）。该用户必须被邀请至该项目，并具有 `operator` 角色。有关更多信息，请参见[创建企业空间、项目、用户和角色](../../../quick-start/create-workspace-and-project/)。
 
 ## 动手实验
 
@@ -23,59 +23,37 @@ weight: 10130
 
    {{< notice note >}}
 
-   您也可以在您的项目中前往**应用负载**下的**应用**页面，点击**部署新应用**，并选择**来自应用商店**进入应用商店。
+   您也可以在您的项目中前往**应用负载**下的**应用**页面，点击**创建**，并选择**来自应用商店**进入应用商店。
 
    {{</ notice >}} 
 
-2. 找到 NGINX，在**应用信息**页面点击**部署**。
-
-   ![nginx-in-app-store](/images/docs/zh-cn/project-user-guide/applications/deploy-apps-from-app-store/nginx-in-app-store.png)
-
-   ![deploy-nginx](/images/docs/zh-cn/project-user-guide/applications/deploy-apps-from-app-store/deploy-nginx.png)
+2. 找到并点击 NGINX，在**应用信息**页面点击**部署**。请确保在**应用部署须知**对话框中点击**确认**。
 
 3. 设置应用的名称和版本，确保 NGINX 部署在 `demo-project` 项目中，点击**下一步**。
 
-   ![confirm-deployment](/images/docs/zh-cn/project-user-guide/applications/deploy-apps-from-app-store/confirm-deployment.png)
-
-4. 在**应用配置**页面，设置应用部署的副本数，根据需要启用或禁用 Ingress，然后点击**部署**。
-
-   ![edit-config-nginx](/images/docs/zh-cn/project-user-guide/applications/deploy-apps-from-app-store/edit-config-nginx.png)
-
-   ![manifest-file](/images/docs/zh-cn/project-user-guide/applications/deploy-apps-from-app-store/manifest-file.png)
+4. 在**应用设置**页面，设置应用部署的副本数，根据需要启用或禁用 Ingress，然后点击**部署**。
 
    {{< notice note >}}
 
-   如需为 NGINX 设置更多的参数, 可点击 **YAML** 后的拨动开关打开应用的 YAML 配置文件，并在配置文件中设置相关参数。 
+   如需为 NGINX 设置更多的参数, 可点击 **YAML** 后的切换开关打开应用的 YAML 配置文件，并在配置文件中设置相关参数。 
 
    {{</ notice >}}
 
 5. 等待应用创建完成并开始运行。
 
-   ![nginx-running](/images/docs/zh-cn/project-user-guide/applications/deploy-apps-from-app-store/nginx-running.png)
-
 ### 步骤 2：访问 NGINX
 
 要从集群外访问 NGINX，您需要先用 NodePort 暴露该应用。
 
-1. 打开**服务**页面并点击 NGINX 的服务名称。
+1. 在 `demo-project` 项目中打开**服务**页面并点击 NGINX 的服务名称。
 
-   ![nginx-service](/images/docs/zh-cn/project-user-guide/applications/deploy-apps-from-app-store/nginx-service.png)
-
-2. 在服务详情页面，点击**更多操作**，在下拉菜单中选择**编辑外网访问**。
-
-   ![edit-internet-access](/images/docs/zh-cn/project-user-guide/applications/deploy-apps-from-app-store/edit-internet-access.png)
+2. 在服务详情页面，点击**更多操作**，在下拉菜单中选择**编辑外部访问**。
 
 3. 将**访问方式**设置为 **NodePort** 并点击**确定**。有关更多信息，请参见[项目网关](../../../project-administration/project-gateway/)。
 
-   ![nodeport](/images/docs/zh-cn/project-user-guide/applications/deploy-apps-from-app-store/nodeport.png)
-
-4. 您可以在**服务端口**区域查看暴露的端口。
-
-   ![exposed-port](/images/docs/zh-cn/project-user-guide/applications/deploy-apps-from-app-store/exposed-port.png)
+4. 在**端口**区域查看暴露的端口。
 
 5. 用 `<NodeIP>:<NodePort>` 地址访问 NGINX。
-
-   ![access-nginx](/images/docs/zh-cn/project-user-guide/applications/deploy-apps-from-app-store/access-nginx.png)
 
    {{< notice note >}}
 

@@ -16,29 +16,21 @@ weight: 10540
 
 ## 创建流量镜像任务
 
-1. 以 `project-regular` 用户登录 KubeSphere 并进入项目。前往**灰度发布**页面，在页面右侧点击**流量镜像**右侧的**发布任务**。
+1. 以 `project-regular` 用户登录 KubeSphere 并进入项目。前往**灰度发布**页面，在页面右侧点击**流量镜像**右侧的**创建**。
 
 2. 设置发布任务的名称并点击**下一步**。
 
-3. 在**灰度组件**选项卡，从下拉列表中选择需要进行流量镜像的应用和对应的服务（本教程以 Bookinfo 应用的 reviews 服务为例），然后点击**下一步**。
+3. 在**服务设置**选项卡，从下拉列表中选择需要进行流量镜像的应用和对应的服务（本教程以 Bookinfo 应用的 reviews 服务为例），然后点击**下一步**。
 
-4. 在**灰度版本**选项卡，为应用添加另一个版本（例如 `v2`），然后点击**下一步**。
+4. 在**新版本设置**选项卡，为应用添加另一个版本（例如 `kubesphere/examples-bookinfo-reviews-v2:1.16.2`；将 `v1` 改为 `v2`），然后点击**下一步**。
 
-   ![traffic-mirroring-4](/images/docs/zh-cn/project-user-guide/grayscale-release/traffic-mirroring/traffic-mirroring-4.jpg)
-
-5. 在**策略配置**选项卡，点击**创建**。
+5. 在**策略设置**选项卡，点击**创建**。
 
 6. 新建的流量镜像任务显示在**任务状态**页面。点击该任务查看详情。
 
-   ![traffic-mirroring-task](/images/docs/zh-cn/project-user-guide/grayscale-release/traffic-mirroring/traffic-mirroring-task.jpg)
-
 7. 在详情页面，您可以看到流量被镜像至 `v2` 版本，同时折线图中显示实时流量。
 
-   ![traffic-mirroring-6](/images/docs/zh-cn/project-user-guide/grayscale-release/traffic-mirroring/traffic-mirroring-6.jpg)
-
 8. 新建的部署也显示在**工作负载**下的**部署**页面。
-
-   ![new-deployment](/images/docs/zh-cn/project-user-guide/grayscale-release/traffic-mirroring/new-deployment.jpg)
 
 9. 您可以执行以下命令查看虚拟服务的 `mirror` 和 `weight` 字段。
 
@@ -86,6 +78,4 @@ weight: 10540
 
 ## 下线任务
 
-您可以点击**任务下线**移除流量镜像任务。此操作不会影响当前的应用版本。
-
-![remove-traffic-mirroring](/images/docs/zh-cn/project-user-guide/grayscale-release/traffic-mirroring/remove-traffic-mirroring.jpg)
+您可以点击**删除**移除流量镜像任务。此操作不会影响当前的应用版本。

@@ -15,15 +15,14 @@ KubeSphere 当前支持两种图表：文本图表和图形图表。
 - **图表名称**：该文本图表的名称。
 - **单位**：指标数据的单位。
 - **精确位**：支持整数。
-- **监控指标**：包含可用的 Prometheus 指标。
-
-![文本图表](/images/docs/zh-cn/project-user-guide/custom-application-monitoring/visualization/charts/text-chart.png)
+- **监控指标**：从包含可用 Prometheus 指标的下拉列表中指定一个监控指标。
 
 ## 图形图表
 
 图形图表适合显示多个指标的数值。图形图表的编辑窗口包括三部分，上半部分显示指标的实时数值，左侧栏用于设置图表主题，右侧栏用于编辑指标和图表描述。
 
-- **图表类型**：支持折线图和堆叠图。
+- **图表类型**：支持折线图和柱状图。
+- **图例类型**：支持基础图和堆叠图。
 - **图表配色**：修改图表各个指标的颜色。
 - **图表名称**：图表的名称。
 - **描述信息**：图表描述。
@@ -33,5 +32,3 @@ KubeSphere 当前支持两种图表：文本图表和图形图表。
 - **监控指标**：包含可用的 Prometheus 指标。
 - **单位**：指标数据的单位。
 - **精确位**：支持整数。
-
-![图形图表](/images/docs/zh-cn/project-user-guide/custom-application-monitoring/visualization/charts/graph-chart.png)

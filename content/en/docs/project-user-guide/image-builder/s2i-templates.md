@@ -252,8 +252,6 @@ S2I scripts will use the flags defined in the Dockerfile as parameters. If you n
 
    You can access the Nginx application at `http://localhost:8080`.
 
-   ![access-nginx](/images/docs/project-user-guide/image-builder/s2i-templates/access-nginx.png)
-
 ### Step 5: Push the image and create an S2I template
 
 Once you finish testing the S2I Image Builder locally, you can push the image to your custom image repository. You also need to create a YAML file as the S2I Builder template as follows.
@@ -286,9 +284,7 @@ spec:
    s2ibuildertemplate.devops.kubesphere.io/nginx created
    ```
 
-2. You can find the customized S2I template available when you create an S2I build on KubeSphere.
-
-   ![template-available](/images/docs/project-user-guide/image-builder/s2i-templates/template-available.png)
+2. You can find the customized S2I template available in **Build Environment** when you create an S2I build on KubeSphere.
 
 ## S2I Template Parameters Definition
 

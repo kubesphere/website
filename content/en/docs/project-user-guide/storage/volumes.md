@@ -1,7 +1,7 @@
 ---
 title: "Volumes"
-keywords: 'Kubernetes, persistent volumes, persistent volume claims, volume clone, volume snapshot, volume expanding'
-description: 'Learn how to create, edit, and mount a volume in KubeSphere.'
+keywords: 'Kubernetes, Persistent Volumes, Persistent Volume Claims, Volume Clone, Volume Snapshot, Volume Expansion'
+description: 'Learn how to create, edit, and mount a volume on KubeSphere.'
 linkTitle: "Volumes"
 weight: 10310
 ---
@@ -26,31 +26,29 @@ All the volumes that are created on the **Volumes** page are PersistentVolumeCla
 
 2. To create a volume, click **Create** on the **Volumes** page.
 
-3. In the dialog that appears, set a name (for example, `demo-volume`) for the volume and click **Next**.
+3. In the displayed dialog box, set a name (for example, `demo-volume`) for the volume and click **Next**.
 
    {{< notice note >}}
 
-   You can see the volume's manifest file in YAML format by enabling **Edit Mode** in the top-right corner. KubeSphere allows you to edit the manifest file directly to create a volume. Alternatively, you can follow the steps below to create a volume via the dashboard.
+   You can see the volume's manifest file in YAML format by enabling **Edit YAML** in the upper-right corner. KubeSphere allows you to edit the manifest file directly to create a volume. Alternatively, you can follow the steps below to create a volume via the dashboard.
 
    {{</ notice >}} 
 
 4. On the **Volume Settings** page, select a method to create a volume.
 
-   - **Create a volume by StorageClass**. You can configure storage classes both [before](../../../installing-on-linux/persistent-storage-configurations/understand-persistent-storage/) and [after](../../../cluster-administration/persistent-volume-and-storage-class/) the installation of KubeSphere.
+   - **Create a Volume from Storage Class**. You can configure storage classes both [before](../../../installing-on-linux/persistent-storage-configurations/understand-persistent-storage/) and [after](../../../cluster-administration/persistent-volume-and-storage-class/) the installation of KubeSphere.
 
-   - **Create a volume by VolumeSnapshot**. To use a snapshot to create a volume, you must create a volume snapshot first.
+   - **Create a Volume from Volume Snapshot**. To use a snapshot to create a volume, you must create a volume snapshot first.
 
-   Select **Create a volume by StorageClass** in this example. For more information about how to create a volume by snapshot, see [Volume Snapshots](../volume-snapshots/).
+   Select **Create a Volume from Storage Class** in this example. For more information about how to create a volume by snapshot, see [Volume Snapshots](../volume-snapshots/).
 
 5. Select a storage class from the drop-down list. This tutorial uses `csi-standard`, a standard storage class provided by QingCloud Platform. You can select your own storage class.
 
-   ![select-storage-class](/images/docs/project-user-guide/volume-management/volumes/select-storage-class.jpg)
-
 6. Depending on the storage class you select, you may see different access modes in this section as some PersistentVolumes only support specific access modes. In total, there are three access modes.
 
-   - **ReadWriteOnce (RWO)**: The volume can be mounted as read-write by a single node.
-   - **ReadOnlyMany (ROX)**: The volume can be mounted as read-only by many nodes.
-   - **ReadWriteMany (RWX)**: The volume can be mounted as read-write by many nodes.
+   - **ReadWriteOnce**: The volume can be mounted as read-write by a single node.
+   - **ReadOnlyMany**: The volume can be mounted as read-only by many nodes.
+   - **ReadWriteMany**: The volume can be mounted as read-write by many nodes.
 
    Select the desired access mode.
 
@@ -60,23 +58,17 @@ All the volumes that are created on the **Volumes** page are PersistentVolumeCla
 
 9. Click **Create** to finish creating a volume.
 
-10. A created volume displays on the **Volumes** page in a project. After it is mounted to a workload, it will turn to **Mounted** under the **Mount** column.
-
-    ![volume-status](/images/docs/project-user-guide/volume-management/volumes/volume-status.jpg)
+10. A created volume displays on the **Volumes** page in a project. After it is mounted to a workload, it will turn to **Mounted** under the **Mount Status** column.
 
     {{< notice note >}}
 
-Newly-created volumes will also appear on the **Volumes** page in **Cluster Management**. Generally, this section is not available to project users such as `project-regular`. Cluster administrators have the responsibility to view and keep track of created volumes in a project. Conversely, if a cluster administrator creates a volume for a project in **Cluster Management**, the volume also appears on the **Volumes** page in a project.
+Newly-created volumes is also displayed on the **Volumes** page in **Cluster Management**. Project users such as `project-regular` can view volume instances under the **Volume Instance** column. Cluster administrators have the responsibility to view and keep track of created volumes in a project. Conversely, if a cluster administrator creates a volume for a project in **Cluster Management**, the volume is also displayed on the **Volumes** page in a project.
 
 {{</ notice >}} 
 
 11. For some volumes, you can see the status reach **Bound** from **Pending** immediately after they are created as they are provisioned dynamically. For volumes that remain in the **Pending** status, they will turn to **Bound** once they are mounted to a workload. The difference is decided by the storage class of the volume.
 
-    ![local-pending](/images/docs/project-user-guide/volume-management/volumes/local-pending.jpg)
-
     For example, if you install KubeSphere with the default storage class (OpenEBS), you can only create local volumes, which means dynamic provisioning is not supported. This is specified by the `volumeBindingMode` field which is set to `WaitForFirstConsumer`.
-
-    ![volumebindingmode](/images/docs/project-user-guide/volume-management/volumes/volumebindingmode.jpg)
 
 ## Mount a Volume
 
@@ -88,15 +80,13 @@ This tutorial does not explain how to create workloads. For more information, se
 
 {{</ notice >}}
 
-On the **Mount Volumes** page, you can see there are different volumes that you can mount to your workload.
-
-![volume-page](/images/docs/project-user-guide/volume-management/volumes/volume-page.jpg)
+On the **Volume Settings** page, you can see there are different volumes that you can mount to your workload.
 
 - **Add Volume Template** (Only available to [StatefulSets](../../../project-user-guide/application-workloads/statefulsets/)): A volume template is used to dynamically create a PVC. Mount the PVC of the StorageClass type to the Pod by setting the name, storage class, access mode, capacity and path, which are all indicated by the field `volumeClaimTemplates`.
 
-- **Add Volume**: Support emptyDir volumes and PVCs.
+- **Mount Volume**: Support emptyDir volumes and PVCs.
 
-  In **Add Volume**, there are 3 kinds of volumes:
+  In **Mount Volume**, there are 3 kinds of volumes:
 
   - **Existing Volume**: Use a PVC to mount.
 
@@ -106,7 +96,7 @@ On the **Mount Volumes** page, you can see there are different volumes that you 
 
     The temporary storage volume represents [emptyDir](https://kubernetes.io/docs/concepts/storage/volumes/#emptydir), which is first created when a Pod is assigned to a node, and exists as long as that Pod is running on that node. An emptyDir volume offers an empty directory from which containers in the Pod can read and write. Depending on your deployment environment, an emptyDir volume can be stored on any medium that is backing the node, which could be a disk or SSD. When the Pod is removed from the node for any reason, the data in the emptyDir is deleted forever.
 
-  - **HostPath**: Use a hostPath volume to mount.
+  - **HostPath Volume**: Use a hostPath volume to mount.
 
     A HostPath volume mounts a file or directory from the host node's filesystem into your Pod. This is not something that most Pods will need, but it offers a powerful escape hatch for some applications. For more information, refer to [the Kubernetes documentation](https://kubernetes.io/docs/concepts/storage/volumes/#hostpath).
 
@@ -126,11 +116,9 @@ After a volume is created, you can see detailed information of it, edit it, or l
 
 ### Edit a volume
 
-On the detail page, you can click **Edit Information** to change its basic information. Click **More** and you can edit its YAML file or delete this volume.
+On the details page, you can click **Edit Information** to change its basic information. Click **More** and you can edit its YAML file or delete this volume.
 
-To delete a volume, make sure the volume is not mounted to any workload. To unmount a volume, go to the detail page of a workload. From the **More** drop-down list, click **Edit Config Template**. Select **Volume** from the pop-up window, and click the dustbin icon to unmount it.
-
-![delete-volume](/images/docs/project-user-guide/volume-management/volumes/delete-volume.jpg)
+To delete a volume, make sure the volume is not mounted to any workload. To unmount a volume, go to the detail page of a workload. From the **More** drop-down list, click **Edit Settings**. Select **Volumes** from the pop-up window, and click the dustbin icon to unmount it.
 
 If the status of a volume remains **Terminating** for a long time after you clicked **Delete**, manually delete it by using the following command:
 
@@ -146,8 +134,6 @@ From the **More** drop-down menu, there are three additional options provided by
 - Create a volume snapshot: Create a volume snapshot which can be used to create volumes. For more information, see [Volume Snapshots](../volume-snapshots/).
 - Expand a volume: Increase the size of a volume. Keep in mind that you cannot reduce the size of a volume on the console due to possible data loss. 
 
-![volume-detail-page](/images/docs/project-user-guide/volume-management/volumes/volume-detail-page.jpg)
-
 For more information about `Storage Capability`, see [Design Documentation](https://github.com/kubesphere/community/blob/master/sig-storage/concepts-and-designs/storage-capability-interface.md).
 
 {{< notice note >}}
@@ -159,7 +145,5 @@ Some in-tree or special CSI plugins may not be covered by `Storage Capability`. 
 ### Volume monitoring
 
 KubeSphere retrieves metric data of PVCs with `Filesystem` mode from Kubelet to monitor volumes including capacity usage and inode usage.
-
-![volume-monitoring](/images/docs/project-user-guide/volume-management/volumes/volume-monitoring.jpg)
 
 For more information about volume monitoring, see [Research on Volume Monitoring](https://github.com/kubesphere/kubesphere/issues/2921).
