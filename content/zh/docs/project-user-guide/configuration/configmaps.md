@@ -30,7 +30,7 @@ Kubernetes [配置字典（ConfigMap）](https://kubernetes.io/docs/concepts/con
 
 {{</ notice >}} 
 
-3. 在**配置设置**选项卡，点击**添加数据**以配置键值对。
+3. 在**数据设置**选项卡，点击**添加数据**以配置键值对。
 
 4. 输入一个键值对。下图为示例：
 
@@ -68,5 +68,4 @@ Kubernetes [配置字典（ConfigMap）](https://kubernetes.io/docs/concepts/con
 ## 使用配置字典
 
 在创建工作负载、[服务](../../../project-user-guide/application-workloads/services/)、[任务](../../../project-user-guide/application-workloads/jobs/)或[定时任务](../../../project-user-guide/application-workloads/cronjobs/)时，您可以用配置字典为容器添加环境变量。您可以在**添加容器**页面勾选**环境变量**，点击**引用配置字典或保密字典**，然后从下拉列表中选择一个配置字典。
-
 

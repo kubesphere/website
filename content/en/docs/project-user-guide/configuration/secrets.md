@@ -36,7 +36,7 @@ You can see the Secret's manifest file in YAML format by enabling **Edit YAML** 
 
 ### Step 3: Set a Secret
 
-1. Under the tab **Secret Settings**, you must select a Secret type. In KubeSphere, you can create the following types of Secrets, indicated by the `type` field.
+1. Under the tab **Data Settings**, you must select a Secret type. In KubeSphere, you can create the following types of Secrets, indicated by the `type` field.
 
    {{< notice note >}}
 
@@ -94,7 +94,7 @@ This section shows how to create Secrets from your Docker Hub account and GitHub
 
 1. Log in to KubeSphere as `project-regular` and go to your project. Select **Secrets** from the navigation bar and click **Create** on the right.
 
-2. Set a name, such as `dockerhub-id`, and click **Next**. On the **Secret Settings** page, fill in the following fields and click **Validate** to verify whether the information provided is valid.
+2. Set a name, such as `dockerhub-id`, and click **Next**. On the **Data Settings** page, fill in the following fields and click **Validate** to verify whether the information provided is valid.
 
    **Type**: Select **kubernetes.io/dockerconfigjson (image registry Secret)**.
 
@@ -110,7 +110,7 @@ This section shows how to create Secrets from your Docker Hub account and GitHub
 
 1. Log in to KubeSphere as `project-regular` and go to your project. Select **Secrets** from the navigation bar and click **Create** on the right.
 
-2. Set a name, such as `github-id`, and click **Next**. On the **Secret Settings** page, fill in the following fields.
+2. Set a name, such as `github-id`, and click **Next**. On the **Data Settings** page, fill in the following fields.
 
    **Type**: Select **kubernetes.io/basic-auth (account password Secret)**.
 

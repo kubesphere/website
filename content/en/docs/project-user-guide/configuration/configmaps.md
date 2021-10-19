@@ -30,7 +30,7 @@ You can see the ConfigMap manifest file in YAML format by enabling **Edit YAML**
 
 {{</ notice >}} 
 
-3. On the **ConfigMap Settings** tab, configure values by clicking **Add Data**.
+3. On the **Data Settings** tab, configure values by clicking **Add Data**.
 
 4. Enter a key-value pair. For example:
 
