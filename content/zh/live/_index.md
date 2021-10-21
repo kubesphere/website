@@ -13,11 +13,11 @@ section2:
   url: ./uisee0923-live/
 
   notice:
-    title: GitOps 应用简介
+    title: CKA/CKS 备考攻略
     tag: 预告
-    time: 2021 年 10 月 14 日晚 8 点
+    time: 2021 年 10 月 21 日晚 8 点
     base: 线上
-    url: ./yunda1014-live/
+    url: ./ckacks1021-live/
 
   over:
     title: Kubernetes 控制器原理简介
