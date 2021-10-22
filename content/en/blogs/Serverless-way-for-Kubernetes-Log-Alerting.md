@@ -1,12 +1,11 @@
 ---
-
-title: OpenFunction Use Case: Logging and Alerting on Kubernetes Powered by Serverless'  
+title: 'Serverless Use Case: Elastic Kubernetes Log Alerts with OpenFunction and Kafka'  
 tag: 'OpenFunction, KubeSphere, Kubernetes'  
 keywords: 'OpenFunction, Serverless, KubeSphere, Kubernetes, Kafka, FaaS'  
 description: 'This blog post offers ideas for serverless log processing, which reduces the link cost while improving flexibility.'   
 createTime: '2021-08-26'  
-author: 'Fang Tian'  
-snapshot: 'https://pek3b.qingstor.com/kubespere-community/images/202109031518797.png'
+author: 'Fang Tian, Bettygogo'  
+snapshot: '/images/blogs/en/Serverless-way-for-Kubernetes-Log-Alerting/kubesphere snapshot.png'
 ---
 
 ## Overview
@@ -30,7 +29,7 @@ In this scenario, we will make use of the serverless capabilities of[ OpenFuncti
 > - Runs serverless workloads using Knative Serving or OpenFunctionAsync (backed by KEDA + Dapr) as a runtime.
 > - Equipped with a built-in event-driven framework.
 
-## Use Kafka as a log receiver
+## Use Kafka as a Log Receiver
 
 First, enable the **logging** component for the KubeSphere platform (For more information, please refer to[ Enable Pluggable Components](https://kubesphere.io/docs/pluggable-components/). Next, we can use [strimzi-kafka-operator](https://github.com/strimzi/strimzi-kafka-operator) to build a minimal Kafka server.
 
@@ -162,7 +161,7 @@ Deploy OpenFunction.
 kubectl apply -f https://github.com/OpenFunction/OpenFunction/releases/download/v0.3.0/bundle.yaml
 ```
 
-## Write a log processing function
+## Write a Log Processing Function
 
 In this example, we install WordPress as the log producer. The application's workload resides in the `demo-project` namespace and the Pod's name is `wordpress-v1-f54f697c5-hdn2z`.
 
@@ -265,7 +264,7 @@ Upload this function to the code repository and record the ****URL of the code r
 
 > You can find this case in [OpenFunction Samples](https://github.com/OpenFunction/samples/tree/main/functions/OpenFuncAsync/logs-handler-function).
 
-## Create a function
+## Create a Function
 
 Use OpenFunction to build the above function. First, set up a key file `push-secret` to access the image repository (After the OCI image is constructed using the code, OpenFunction will upload the image to the image repository for subsequent load startup.):
 
@@ -363,7 +362,7 @@ spec:
                 lagThreshold: "10"
 ```
 
-## Demonstrate the result
+## Demonstrate the Result
 
 Disable the Kafka log receiver first: On the ****Log Collections**** page, click **Kafka** to go to the details page, and choose **More** > **Change Status** > **Close**.
 
@@ -401,7 +400,7 @@ You can see that Slack has received this message (Slack will not receive an aler
 
 ![](https://i.imgur.com/YQc5uOq.png)
 
-### Explore more possibilities
+### Explore More Possibilities
 
 We can further discuss a solution using synchronous functions:
 
