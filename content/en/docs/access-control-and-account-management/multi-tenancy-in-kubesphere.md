@@ -36,8 +36,6 @@ Multi-level access control and resource quota limits underlie resource isolation
 
 Similar to Kubernetes, KubeSphere uses RBAC to manage permissions granted to users, thus logically implementing resource isolation.
 
-![rbac](/images/docs/access-control-and-account-management/multi-tanancy-in-kubesphere/rbac.png)
-
 The access control in KubeSphere is divided into three levels: platform, workspace and project. You use roles to control what permissions users have at different levels for different resources.
 
 1. [Platform roles](/docs/quick-start/create-workspace-and-project/): Control what permissions platform users have for platform resources, such as clusters, workspaces and platform members.

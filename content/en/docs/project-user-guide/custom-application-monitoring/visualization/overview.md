@@ -16,8 +16,6 @@ There are three available built-in templates for MySQL, Elasticsearch, and Redis
 
 A KubeSphere custom monitoring dashboard can be seen as simply a YAML configuration file. The data model is heavily inspired by [Grafana](https://github.com/grafana/grafana), an open-source tool for monitoring and observability. Please find KubeSphere monitoring dashboard data model design in [kubesphere/monitoring-dashboard](https://github.com/kubesphere/monitoring-dashboard). The configuration file is portable and sharable. You are welcome to contribute dashboard templates to the KubeSphere community via [Monitoring Dashboards Gallery](https://github.com/kubesphere/monitoring-dashboard/tree/master/contrib/gallery). 
 
-![new-dashboard](/images/docs/project-user-guide/custom-application-monitoring/visualization/overview/create-dashboard.png)
-
 ### From a built-in template
 
 To help you quickly get started, KubeSphere provides built-in templates for MySQL, Elasticsearch, and Redis. If you want to create dashboards from built-in templates, select a template and then click **Next**.
@@ -28,9 +26,7 @@ To start with a blank template, click **Next**.
 
 ### From a YAML file
 
-Turn on **Edit Mode** in the upper-right corner and then paste your dashboard YAML file.
-
-![new-dashboard-2](/images/docs/project-user-guide/custom-application-monitoring/visualization/overview/edit-mode.png)
+Turn on **Edit YAML** in the upper-right corner and then paste your dashboard YAML file.
 
 ## Dashboard Layout
 
@@ -40,25 +36,17 @@ The monitoring dashboard is composed of four parts. Global settings are on the t
 
 On the top bar, you can configure the following settings: title, theme, time range, and refresh interval.
 
-![dashboard-layout](/images/docs/project-user-guide/custom-application-monitoring/visualization/overview/edit-settings.png)
-
 ### Text chart column
 
 You can add new text charts in the left-most column.
-
-![dashboard-layout-2](/images/docs/project-user-guide/custom-application-monitoring/visualization/overview/text-charts.png)
 
 ### Chart display column
 
 You can view charts in the middle column.
 
-![dashboard-layout-3](/images/docs/project-user-guide/custom-application-monitoring/visualization/overview/view-charts.png)
-
 ### Detail column
 
-You can view chart details in the right-most column. It shows the **max**, **min**, **avg** and **last** value of metrics within the specific period.
-
-![dashboard-layout-4](/images/docs/project-user-guide/custom-application-monitoring/visualization/overview/detail-column.png)
+You can view chart details in the right-most column. It shows the **max**, **min**, **avg**, and **last** value of metrics within the specific period.
 
 ## Edit the monitoring dashboard
 
@@ -67,8 +55,6 @@ You can modify an existing template by clicking **Edit Template** in the upper-r
 ### Add a chart
 
 To add text charts, click <img src="/images/docs/project-user-guide/custom-application-monitoring/visualization/overview/plus-btn.png" height="15px" width="25px" /> in the left column. To add charts in the middle column, click **Add Monitoring Item** in the lower-right corner.
-
-![edit-dashboard](/images/docs/project-user-guide/custom-application-monitoring/visualization/overview/add-charts.png)
 
 ### Add a monitoring group
 

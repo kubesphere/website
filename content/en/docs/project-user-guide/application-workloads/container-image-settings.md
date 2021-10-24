@@ -1,40 +1,36 @@
 ---
-title: "Container Image Settings"
+title: "Pod Settings"
 keywords: 'KubeSphere, Kubernetes, image, workload, setting, container'
-description: 'Learn different properties on the dashboard in detail as you set container images for your workload.'
-linkTitle: "Container Image Settings"
+description: 'Learn different properties on the dashboard in detail as you set Pods for your workload.'
+linkTitle: "Pod Settings"
 weight: 10280
 ---
 
-When you create Deployments, StatefulSets or DaemonSets, you need to specify a container image. At the same time, KubeSphere provides users with various options to customize workload configurations, such as health check probes, environment variables and start commands. This page illustrates detailed explanations of different properties in **Container Image**.
+When you create Deployments, StatefulSets or DaemonSets, you need to specify a Pod. At the same time, KubeSphere provides users with various options to customize workload configurations, such as health check probes, environment variables and start commands. This page illustrates detailed explanations of different properties in **Pod Settings**.
 
 {{< notice tip >}}
 
-You can enable **Edit Mode** in the upper-right corner to see corresponding values in the manifest file (YAML format) of properties on the dashboard.
+You can enable **Edit YAML** in the upper-right corner to see corresponding values in the manifest file (YAML format) of properties on the dashboard.
 
 {{</ notice >}}
 
-## Container Image
+## Pod Settings
 
 ### Pod Replicas
 
 Set the number of replicated Pods by clicking <img src="/images/docs/project-user-guide/application-workloads/container-image-settings/plus-icon.png" width="20px" /> or <img src="/images/docs/project-user-guide/application-workloads/container-image-settings/minus-icon.png" width="20px" />, indicated by the `.spec.replicas` field in the manifest file. This option is not available for DaemonSets.
 
-![pod-replicas](/images/docs/project-user-guide/application-workloads/container-image-settings/pod-replicas.png)
+### Add Container
 
-### Add Container Image
+Click **Add Container** to add a container.
 
-After you click **Add Container Image**, you will see an image as below.
+#### Image Search Box
 
-![add-container-explan](/images/docs/project-user-guide/application-workloads/container-image-settings/add-image.png)
-
-#### Image Search Bar
-
-You can click <img src="/images/docs/project-user-guide/application-workloads/container-image-settings/cube-icon.png" width="20px" /> on the right to select an image from the list or enter an image name to search it. KubeSphere provides Docker Hub images and your private image repository. If you want to use your private image repository, you need to create an Image Registry Secret first in **Secrets** under **Configurations**.
+You can click <img src="/images/docs/project-user-guide/application-workloads/container-image-settings/cube-icon.png" width="20px" /> on the right to select an image from the list or enter an image name to search it. KubeSphere provides Docker Hub images and your private image repository. If you want to use your private image repository, you need to create an Image Registry Secret first in **Secrets** under **Configuration**.
 
 {{< notice note >}} 
 
-Remember to press **Enter** on your keyboard after you enter an image name in the search bar.
+Remember to press **Enter** on your keyboard after you enter an image name in the search box.
 
 {{</ notice >}} 
 
@@ -48,7 +44,7 @@ The container name is automatically created by KubeSphere, which is indicated by
 
 #### Container Type
 
-If you choose **Init Container**, it means the init container will be created for the workload. For more information about init containers, please visit [Init Containers](https://kubernetes.io/docs/concepts/workloads/pods/init-containers/?spm=a2c4g.11186623.2.19.16704b3e9qHXPb).
+If you choose **Init container**, it means the init container will be created for the workload. For more information about init containers, please visit [Init Containers](https://kubernetes.io/docs/concepts/workloads/pods/init-containers/?spm=a2c4g.11186623.2.19.16704b3e9qHXPb).
 
 #### Resource Request
 
@@ -57,11 +53,9 @@ The resource quota reserved by the container includes both CPU and memory resour
 - The CPU request is indicated by `.spec.containers[].resources.requests.cpu` in the manifest file. The CPU request can be exceeded.
 - The memory request is indicated by `.spec.containers[].resources.requests.memory` in the manifest file. The memory request can be exceeded but the container may clear up when node memory is insufficient.
 
-![resource-request-limit](/images/docs/project-user-guide/application-workloads/container-image-settings/requests-limits.png)
-
 #### Resource Limit
 
-You can specify the upper limit of the resources that the application can use, including CPU and memory, to prevent excessive resources from being occupied.
+You can specify the upper limit of the resources that the application can use, including CPU, memory, and GPU, to prevent excessive resources from being occupied.
 
 - The CPU limit is indicated by `.spec.containers[].resources.limits.cpu` in the manifest file. The CPU limit can be exceeded for a short time, and the container will not be stopped.
 - The memory limit is indicated by `.spec.containers[].resources.limits.memory` in the manifest file. The memory limit cannot be exceeded. If it exceeds, the container may be stopped or scheduled to another machine with sufficient resources.
@@ -72,7 +66,7 @@ The CPU resource is measured in CPU units, or **Core** in KubeSphere. The memory
 
 {{</ notice >}} 
 
-#### **Port/Service Settings**
+#### **Port Settings**
 
 You need to set the access protocol for the container as well as port information. To use the default setting, click **Use Default Ports**.
 
@@ -80,67 +74,55 @@ You need to set the access protocol for the container as well as port informatio
 
 This value is indicated by the `imagePullPolicy` field. On the dashboard, you can choose one of the following three options from the drop-down list.
 
-![image-pull-policy](/images/docs/project-user-guide/application-workloads/container-image-settings/image-policy.png)
+- **Use Local Image First**: It means that the image is pulled only if it does not exist locally.
 
-- **Use Local Image First (ifNotPresent)**: It means that the image is pulled only if it does not exist locally.
+- **Pull Image Always**: It means that the image is pulled whenever the pod starts.
 
-- **Redownload Image (Always)**: It means that the image is pulled whenever the pod starts.
-
-- **Only Use Local Image  (Never)**: It means that the image is not pulled no matter the image exists or not.
+- **Use Local Image Only**: It means that the image is not pulled no matter the image exists or not.
 
 {{< notice tip>}}
 
-- The default value is `IfNotPresent`, but the value of images tagged with `:latest` is `Always` by default.
+- The default value is **Use Local Image First**, but the value of images tagged with `:latest` is **Pull Image Always** by default.
 - Docker will check it when pulling the image. If MD5 has not changed, it will not pull.
 - The `:latest` tag should be avoided as much as possible in the production environment, and the latest image can be automatically pulled by the `:latest` tag in the development environment.
 
 {{< /notice >}}
 
-#### **Health Checker**
+#### **Health Check**
 
-Support **Liveness**, **Readiness**, and **Startup**.
+Support liveness check, readiness check, and startup check.
 
-![container-health-check](/images/docs/project-user-guide/application-workloads/container-image-settings/health-checker.png)
+- **Liveness Check**: Liveness probes are used to know whether a container is running, indicated by `livenessProbe`.
 
-- **Container Liveness Check**: Liveness probes are used to know whether a container is running, indicated by `livenessProbe`.
+- **Readiness Check**: Readiness probes are used to know whether a container is ready to serve requests, indicated by `readinessProbe`.
 
-- **Container Readiness Check**: Readiness probes are used to know whether a container is ready to serve requests, indicated by `readinessProbe`.
+- **Startup Check**: Startup probes are used to know whether a container application has started, indicated by `startupProbe`.
 
-- **Container Startup Check**: Startup probes are used to know whether a container application has started, indicated by `startupProbe`.
+Liveness, Readiness and Startup Check include the configurations below:
 
-Liveness, Readiness and Startup Check have all included the configurations below:
+- **HTTP Request**: Perform an HTTP `Get` request on the specified port and path on the IP address of the container. If the response status code is greater than or equal to 200 and less than 400, the diagnosis is considered successful. The supported parameters include:
 
-- **HTTPGetAction (HTTP Request Check)**: Perform an HTTP `Get` request on the specified port and path on the IP address of the container. If the response status code is greater than or equal to 200 and less than 400, the diagnosis is considered successful. The supported parameters include:
-
-  ![http-request-check](/images/docs/project-user-guide/application-workloads/container-image-settings/http-check.png)
-
-  - **Scheme**: HTTP or HTTPS, specified by `scheme`.
-  - **Path**: The path to access the HTTP server, specified by `path`.
-  - **Port**: The access port or port name is exposed by the container. The port number must be between 1 and 65535. The value is specified by `port`.
-  - **Initial Delays**: The number of seconds after the container has started before liveness probes are initiated, specified by `initialDelaySeconds`. It defaults to 0.
-  - **Period Seconds**: The probe frequency (in seconds), specified by `periodSeconds`. It defaults to 10. The minimum value is 1.
-  - **Timeouts**: The number of seconds after which the probe times out, specified by `timeoutSeconds`. It defaults to 1. The minimum value is 1.
+  - **Path**: HTTP or HTTPS, specified by `scheme`, the path to access the HTTP server, specified by `path`, the access port or port name is exposed by the container. The port number must be between 1 and 65535. The value is specified by `port`.
+  - **Initial Delay (s)**: The number of seconds after the container has started before liveness probes are initiated, specified by `initialDelaySeconds`. It defaults to 0.
+  - **Check Interval (s)**: The probe frequency (in seconds), specified by `periodSeconds`. It defaults to 10. The minimum value is 1.
+  - **Timeout (s)**: The number of seconds after which the probe times out, specified by `timeoutSeconds`. It defaults to 1. The minimum value is 1.
   - **Success Threshold**: The minimum consecutive successes for the probe to be considered successful after having failed, specified by `successThreshold`. It defaults to 1 and must be 1 for liveness and startup. The minimum value is 1.
   - **Failure Threshold**: The minimum consecutive failures for the probe to be considered failed after having succeeded, specified by `failureThreshold`. It defaults to 3. The minimum value is 1.
 
-- **TCPSocketAction (TCP Port Check)**: Perform a TCP check on the specified port on the IP address of the container. If the port is open, the diagnosis is considered successful. The supported parameters include:
-  
-  ![tcp-port-check](/images/docs/project-user-guide/application-workloads/container-image-settings/tcp-port.png)
+- **TCP Port**: Perform a TCP check on the specified port on the IP address of the container. If the port is open, the diagnosis is considered successful. The supported parameters include:
   
   - **Port**: The access port or port name is exposed by the container. The port number must be between 1 and 65535. The value is specified by `port`.
-  - **Initial Delays**: The number of seconds after the container has started before liveness probes are initiated, specified by `initialDelaySeconds`. It defaults to 0.
-  - **Period Seconds**: The probe frequency (in seconds), specified by `periodSeconds`. It defaults to 10. The minimum value is 1.
+  - **Initial Delay (s)**: The number of seconds after the container has started before liveness probes are initiated, specified by `initialDelaySeconds`. It defaults to 0.
+  - **Check Interval (s)**: The probe frequency (in seconds), specified by `periodSeconds`. It defaults to 10. The minimum value is 1.
   - **Timeouts**: The number of seconds after which the probe times out, specified by `timeoutSeconds`. It defaults to 1. The minimum value is 1.
   - **Success Threshold**: The minimum consecutive successes for the probe to be considered successful after having failed, specified by `successThreshold`. It defaults to 1 and must be 1 for liveness and startup. The minimum value is 1.
   - **Failure Threshold**: The minimum consecutive failures for the probe to be considered failed after having succeeded, specified by `failureThreshold`. It defaults to 3. The minimum value is 1.
   
-- **ExecAction (Exec Command Check)**: Execute the specified command in the container. If the return code is 0 when the command exits, the diagnosis is considered successful. The supported parameters include:
-  
-  ![exec-command-check](/images/docs/project-user-guide/application-workloads/container-image-settings/exec-check.png)
+- **Command**: Execute the specified command in the container. If the return code is 0 when the command exits, the diagnosis is considered successful. The supported parameters include:
   
   - **Command**: A detection command used to detect the health of the container, specified by `exec.command`.
-  - **Initial Delays**: The number of seconds after the container has started before liveness probes are initiated, specified by `initialDelaySeconds`. It defaults to 0.
-  - **Period Seconds**: The probe frequency (in seconds), specified by `periodSeconds`. It defaults to 10. The minimum value is 1.
+  - **Initial Delay (s)**: The number of seconds after the container has started before liveness probes are initiated, specified by `initialDelaySeconds`. It defaults to 0.
+  - **Check Interval (s)**: The probe frequency (in seconds), specified by `periodSeconds`. It defaults to 10. The minimum value is 1.
   - **Timeouts**: The number of seconds after which the probe times out, specified by `timeoutSeconds`. It defaults to 1. The minimum value is 1.
   - **Success Threshold**: The minimum consecutive successes for the probe to be considered successful after having failed, specified by `successThreshold`. It defaults to 1 and must be 1 for liveness and startup. The minimum value is 1.
   - **Failure Threshold**: The minimum consecutive failures for the probe to be considered failed after having succeeded, specified by `failureThreshold`. It defaults to 3. The minimum value is 1.
@@ -149,11 +131,9 @@ Liveness, Readiness and Startup Check have all included the configurations below
 
 #### **Start Command**
 
-By default, the container runs the default image command.
+By default, a container runs the default image command.
 
-![start-command](/images/docs/project-user-guide/application-workloads/container-image-settings/start-command.png)
-
-- **Run Command** refers to the `command` field of containers in the manifest file.
+- **Command** refers to the `command` field of containers in the manifest file.
 - **Parameters** refers to the `args` field of containers in the manifest file.
 
 For more information about the command, please visit [Define a Command and Arguments for a Container](https://kubernetes.io/docs/tasks/inject-data-application/define-command-argument-container/).
@@ -162,11 +142,9 @@ For more information about the command, please visit [Define a Command and Argum
 
 Configure environment variables for Pods in the form of key-value pairs.
 
-![envi-var](/images/docs/project-user-guide/application-workloads/container-image-settings/env-variables.png)
-
 - name: The name of the environment variable, specified by `env.name`.
 - value: The value of the variable referenced, specified by `env.value`.
-- type: The type of environment variables. It supports customization, configuration items, keys, and variable/variable references.
+- Click **Use ConfigMap or Secret** to use an existing ConfigMap or Secret.
 
 For more information about the command, please visit [Pod variable](https://kubernetes.io/docs/tasks/inject-data-application/environment-variable-expose-pod-information/?spm=a2c4g.11186623.2.20.16704b3e9qHXPb).
 
@@ -174,9 +152,7 @@ For more information about the command, please visit [Pod variable](https://kube
 
 A security context defines privilege and access control settings for a Pod or Container. For more information about the security context, please visit [Pod Security Policies](https://kubernetes.io/docs/concepts/policy/pod-security-policy/).
 
-![security-context](/images/docs/project-user-guide/application-workloads/container-image-settings/container-security-context.png)
-
-#### **Sync Host Timezone**
+#### **Synchronize Host Timezone**
 
 The time zone of the container will be consistent with that of the host after synchronization.
 
@@ -190,13 +166,13 @@ Update strategies are different for different workloads.
 
 {{< tab "Deployments" >}}
 
-The `.spec.strategy` field specifies the strategy used to replace old Pods with new ones. `.spec.strategy.type` can be `Recreate` or `RollingUpdate`. `RollingUpdate` is the default value.
+The `.spec.strategy` field specifies the strategy used to replace old Pods with new ones. `.spec.strategy.type` can be `Recreate` or `Rolling Update`. `Rolling Update` is the default value.
 
-- **RollingUpdate (Recommended)**
+- **Rolling Update (recommended)**
 
   A rolling update means the instance of the old version will be gradually replaced with new ones. During the upgrade process, the traffic will be load balanced and distributed to the old and new instances simultaneously, so the service will not be interrupted.
 
-- **Recreate**
+- **Simultaneous Update**
 
   All existing Pods will be killed before new ones are created. Please note that the service will be interrupted during the update process.
 
@@ -208,11 +184,11 @@ For more information about update strategies, please visit [Strategy in Deployme
 
 The drop-down menu under **Update Strategy** is indicated by the `.spec.updateStrategy` field of a StatefulSet in the manifest file. It allows you to handle updates of Pod containers, tags, resource requests or limits, and annotations. There are two strategies:
 
-- **RollingUpdate (Recommended)**
+- **Rolling Update (recommended)**
 
   If `.spec.template` is updated, the Pods in the StatefulSet will be automatically deleted with new pods created as replacements. Pods are updated in reverse ordinal order, sequentially deleted and created. A new Pod update will not begin until the previous Pod becomes up and running after it is updated.
 
-- **OnDelete**
+- **Update on Deletion**
 
   If `.spec.template` is updated, the Pods in the StatefulSet will not be automatically updated. You need to manually delete old Pods so that the controller can create new Pods.
 
@@ -224,11 +200,11 @@ For more information about update strategies, please visit [StatefulSet Update S
 
 The drop-down menu under **Update Strategy** is indicated by the `.spec.updateStrategy` field of a DaemonSet in the manifest file. It allows you to handle updates of Pod containers, tags, resource requests or limits, and annotations. There are two strategies:
 
-- **RollingUpdate (Recommended)**
+- **Rolling Update (recommended)**
 
   If `.spec.template` is updated, old DaemonSet pods will be killed with new pods created automatically in a controlled fashion. At most one pod of the DaemonSet will be running on each node during the whole update process.
 
-- **OnDelete**
+- **Update on Deletion**
 
   If `.spec.template` is updated, new DaemonSet pods will only be created when you manually delete old DaemonSet pods. This is the same behavior of DaemonSets in Kubernetes version 1.5 or before.
 
@@ -238,31 +214,31 @@ For more information about update strategies, please visit [DaemonSet Update Str
 
 {{</ tabs >}}
 
-### The Number of Pods When Updated
+### Rolling Update Settings
 
 {{< tabs >}}
 
 {{< tab "Deployments" >}}
 
-**The number of Pods when updated** in a Deployment is different from that of a StatefulSet.
+**Rolling Update Settings** in a Deployment is different from that of a StatefulSet.
 
-- **The maximum unavailable number of Pods**: The maximum number of Pods that can be unavailable during the update, specified by `maxUnavailable`. The default value is 25%.
-- **The maximum surge number of Pods**: The maximum number of Pods that can be scheduled above the desired number of Pods, specified by `maxSurge`. The default value is 25%.
+- **Maximum Unavailable Pods**: The maximum number of Pods that can be unavailable during the update, specified by `maxUnavailable`. The default value is 25%.
+- **Maximum Extra Pods**: The maximum number of Pods that can be scheduled above the desired number of Pods, specified by `maxSurge`. The default value is 25%.
 
 {{</ tab >}}
 
 {{< tab "StatefulSets" >}}
 
-When you partition an update, all Pods with an ordinal greater than or equal to the value you set in Partition are updated when you update the StatefulSet’s Pod specification. This field is specified by `.spec.updateStrategy.rollingUpdate.partition`, whose default value is 0. For more information about partitions, please visit [Partitions](https://kubernetes.io/docs/concepts/workloads/controllers/statefulset/#partitions).
+**Ordinal for Dividing Pod Replicas**: When you partition an update, all Pods with an ordinal greater than or equal to the value you set in Partition are updated when you update the StatefulSet’s Pod specification. This field is specified by `.spec.updateStrategy.rollingUpdate.partition`, whose default value is 0. For more information about partitions, please visit [Partitions](https://kubernetes.io/docs/concepts/workloads/controllers/statefulset/#partitions).
 
 {{</ tab >}}
 
 {{< tab "DaemonSets" >}}
 
-**The number of Pods when updated** in a DaemonSet is different from that of a StatefulSet.
+**Rolling Update Settings** in a DaemonSet is different from that of a StatefulSet.
 
-- **The maximum unavailable number of Pods**: The maximum number of pods that can be unavailable during the update, specified by `maxUnavailable`. The default value is 20%.
-- **MinReadySeconds**: The minimum number of seconds before a newly created Pod of DaemonSet is treated as available, specified by `minReadySeconds`. The default value is 0.
+- **Maximum Unavailable Pods**: The maximum number of pods that can be unavailable during the update, specified by `maxUnavailable`. The default value is 20%.
+- **Minimum Running Time for Pod Readiness (s)**: The minimum number of seconds before a newly created Pod of DaemonSet is treated as available, specified by `minReadySeconds`. The default value is 0.
 
 {{</ tab >}}
 
@@ -272,11 +248,12 @@ When you partition an update, all Pods with an ordinal greater than or equal to 
 
 A security context defines privilege and access control settings for a Pod or Container. For more information about Pod Security Policies, please visit [Pod Security Policies](https://kubernetes.io/docs/concepts/policy/pod-security-policy/).
 
-### Deployment Mode
+### Pod Scheduling Rules
 
-You can select different deployment modes to switch between inter-pod affinity and inter-pod anti-affinity. In Kubernetes, inter-pod affinity is specified as field `podAffinity` of field `affinity` while inter-pod anti-affinity is specified as field `podAntiAffinity` of field `affinity`. In KubeSphere, both `podAffinity` and `podAntiAffinity` are set to `preferredDuringSchedulingIgnoredDuringExecution`. You can enable **Edit Mode** in the upper-right corner to see field details.
+You can select different deployment modes to switch between inter-pod affinity and inter-pod anti-affinity. In Kubernetes, inter-pod affinity is specified as field `podAffinity` of field `affinity` while inter-pod anti-affinity is specified as field `podAntiAffinity` of field `affinity`. In KubeSphere, both `podAffinity` and `podAntiAffinity` are set to `preferredDuringSchedulingIgnoredDuringExecution`. You can enable **Edit YAML** in the upper-right corner to see field details.
 
-- **Pod Decentralized Deployment** represents anti-affinity.
-- **Pod Aggregation Deployment** represents affinity.
+- **Decentralized Scheduling** represents anti-affinity.
+- **Centralized Scheduling** represents affinity.
+- **Custom Rules** is to add custom scheduling rules based on your needs.
 
 For more information about affinity and anti-affinity, please visit [Pod affinity](https://kubernetes.io/docs/concepts/scheduling-eviction/assign-pod-node/#inter-pod-affinity-and-anti-affinity).
