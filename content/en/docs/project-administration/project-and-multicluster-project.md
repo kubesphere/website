@@ -25,7 +25,7 @@ This tutorial demonstrates how to manage projects and multi-cluster projects.
 
     {{< notice note >}}
 
-- You can change the cluster where the project will be created on the **Cluster** drop-down list. The list is only visible after you enable the multi-cluster feature.
+- You can change the cluster where the project will be created on the **Cluster** drop-down menu. The list is only visible after you enable the multi-cluster feature.
 - If you cannot see the **Create** button, it means no cluster is available to use for your workspace. You need to contact the platform administrator or cluster administrator so that workspace resources can be created in the cluster. [To assign a cluster to a workspace](../../cluster-administration/cluster-settings/cluster-visibility-and-authorization/), the platform administrator or cluster administrator needs to edit **Cluster Visibility** on the **Cluster Management** page.
 
     {{</ notice >}}
@@ -38,17 +38,17 @@ This tutorial demonstrates how to manage projects and multi-cluster projects.
 
 1. Go to your project, navigate to **Basic Information** under **Project Settings** and click **Manage Project** on the right.
 
-2. Choose **Edit Information** from the drop-down list.
-    
+2. Choose **Edit Information** from the drop-down menu.
+   
     {{< notice note >}}
 
 The project name cannot be edited. If you want to change other information, see relevant tutorials in the documentation.
 
 {{</ notice >}}
 
-1. To delete a project, choose **Delete Project** from the drop-down list. In the dialog that appears, enter the project name and click **OK** to confirm the deletion.
+3. To delete a project, choose **Delete Project** from the drop-down menu. In the dialog that appears, enter the project name and click **OK** to confirm the deletion.
 
-   {{< notice warning >}}
+{{< notice warning >}}
 
 A project cannot be recovered once deleted and resources in the project will be removed.
 
@@ -75,7 +75,7 @@ A project cannot be recovered once deleted and resources in the project will be 
 
 1. Go to your multi-cluster project, navigate to **Basic Information** under **Project Settings** and click **Manage Project** on the right.
 
-2. Choose **Edit Information** from the drop-down list.
+2. Choose **Edit Information** from the drop-down menu.
 
     {{< notice note >}}
 
@@ -83,9 +83,9 @@ The project name cannot be edited. If you want to change other information, see 
 
 {{</ notice >}}
 
-1. To delete a multi-cluster project, choose **Delete Project** from the drop-down list. In the dialog that appears, enter the project name and click **OK** to confirm the deletion.
+3. To delete a multi-cluster project, choose **Delete Project** from the drop-down menu. In the dialog that appears, enter the project name and click **OK** to confirm the deletion.
 
-   {{< notice warning >}}
+{{< notice warning >}}
 
 A multi-cluster project cannot be recovered once deleted and resources in the project will be removed.
 

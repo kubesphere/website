@@ -41,7 +41,7 @@ To access NGINX outside the cluster, you need to expose the app through a NodePo
 
 1. Go to **Services** and click the service name of NGINX.
 
-2. On the service detail page, click **More** and select **Edit External Access** from the drop-down list.
+2. On the service details page, click **More** and select **Edit External Access** from the drop-down list.
 
 3. Select **NodePort** for **Access Method** and click **OK**. For more information, see [Project Gateway](../../../project-administration/project-gateway/).
 

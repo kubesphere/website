@@ -35,9 +35,9 @@ You need to enable the [KubeSphere Logging System](../../pluggable-components/lo
 
     {{</ notice >}}
 
-1. You can customize the query time range by selecting **Time Range** in the log search bar. Alternatively, click on the bars in the time histogram, and KubeSphere will use the time range of that bar for log queries.
+3. You can customize the query time range by selecting **Time Range** in the log search bar. Alternatively, click on the bars in the time histogram, and KubeSphere will use the time range of that bar for log queries.
 
-    {{< notice note >}}
+{{< notice note >}}
 
 - KubeSphere stores logs for last seven days by default.
 - Each cluster has its own log retention period which can be set separately. You can modify it in `ClusterConfiguration`. Refer to [KubeSphere Logging System](../../pluggable-components/logging/) for more details.
@@ -57,9 +57,9 @@ The log query interface supports dynamic refreshing with 5s, 10s or 15s, and all
 
     {{</ notice >}}
 
-1. On the left panel, you can switch between Pods and inspect its containers within the same project from the drop-down list. In this case, you can detect if any abnormal Pods affect other Pods.
+4. On the left panel, you can switch between Pods and inspect its containers within the same project from the drop-down list. In this case, you can detect if any abnormal Pods affect other Pods.
 
-## Drill into the Detail Page
+## Drill into the Details Page
 
 1. If the log looks abnormal, you can drill into the Pod detail page or container detail page to further inspect container logs, resource monitoring graphs, and events.
 

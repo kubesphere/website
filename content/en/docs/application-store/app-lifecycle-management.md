@@ -24,7 +24,7 @@ Using [Redis](https://redis.io/) as an example application, this tutorial demons
 
 You need to create two users first, one for ISVs (`isv`) and the other (`reviewer`) for app technical reviewers.
 
-1. Log in to the KubeSphere console with the account `admin`. Click **Platform** in the upper-left corner and select **Access Control**. In **Platform Roles**, click **Create**.
+1. Log in to the KubeSphere console with the user `admin`. Click **Platform** in the upper-left corner and select **Access Control**. In **Platform Roles**, click **Create**.
 
 2. Set a name for the role, such as `app-review`, and click **Edit Permissions**.
 
@@ -94,7 +94,7 @@ The version number must start with a number and contain decimal points.
 
 {{</ notice >}}
 
-1.  After the app is submitted, the app status will change to **Submitted**. Now app reviewers can review it.
+11. After the app is submitted, the app status will change to **Submitted**. Now app reviewers can review it.
 
 ### Step 3: Review the application
 
