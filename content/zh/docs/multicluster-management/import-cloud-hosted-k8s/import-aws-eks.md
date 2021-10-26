@@ -10,8 +10,8 @@ weight: 5320
 
 ## 准备工作
 
-- 您需要准备一个已安装 KubeSphere 的 Kubernetes 集群，并将其设置为 Host 集群。有关如何准备 Host 集群的更多信息，请参考[准备 Host 集群](../../../multicluster-management/enable-multicluster/direct-connection/#准备-host-集群)。
-- 您需要准备一个 EKS 集群，用作 Member 集群。
+- 您需要准备一个已安装 KubeSphere 的 Kubernetes 集群，并将其设置为主集群。有关如何准备主集群的更多信息，请参考[准备主集群](../../../multicluster-management/enable-multicluster/direct-connection/#准备-host-集群)。
+- 您需要准备一个 EKS 集群，用作。
 
 ## 导入 EKS 集群
 
@@ -19,9 +19,9 @@ weight: 5320
 
 您需要首先在 EKS 集群上部署 KubeSphere。有关如何在 EKS 上部署 KubeSphere 的更多信息，请参考[在 AWS EKS 上部署 KubeSphere](../../../installing-on-kubernetes/hosted-kubernetes/install-kubesphere-on-eks/#在-eks-上安装-kubesphere)。
 
-### 步骤 2：准备 EKS Member 集群
+### 步骤 2：准备 EKS 成员集群
 
-1. 为了通过 Host 集群管理 Member 集群，您需要使它们之间的 `jwtSecret` 相同。首先，需要在 Host 集群上执行以下命令获取 `jwtSecret`。
+1. 为了通过主集群管理，您需要使它们之间的 `jwtSecret` 相同。首先，需要在主集群上执行以下命令获取 `jwtSecret`。
 
    ```bash
    kubectl -n kubesphere-system get cm kubesphere-config -o yaml | grep -v "apiVersion" | grep jwtSecret
@@ -61,9 +61,9 @@ weight: 5320
 
    {{</ notice >}}
 
-### 步骤 3：创建新的 KubeConfig 文件
+### 步骤 3：创建新的 kubeconfig 文件
 
-1. [Amazon EKS](https://docs.aws.amazon.com/zh_cn/eks/index.html) 不像标准的 kubeadm 集群那样提供内置的 KubeConfig 文件。但您可以参考此[文档](https://docs.aws.amazon.com/zh_cn/eks/latest/userguide/create-kubeconfig.html)创建 KubeConfig 文件。生成的 KubeConfig 文件类似如下：
+1. [Amazon EKS](https://docs.aws.amazon.com/zh_cn/eks/index.html) 不像标准的 kubeadm 集群那样提供内置的 kubeconfig 文件。但您可以参考此[文档](https://docs.aws.amazon.com/zh_cn/eks/latest/userguide/create-kubeconfig.html)创建 kubeconfig 文件。生成的 kubeconfig 文件类似如下：
 
    ```yaml
    apiVersion: v1
@@ -98,9 +98,9 @@ weight: 5320
            #   value: "<aws-profile>"
    ```
 
-   但是，自动生成的 KubeConfig 文件要求使用此 KubeConfig 的每台计算机均安装有 `aws` 命令（aws CLI 工具）。
+   但是，自动生成的 kubeconfig 文件要求使用此 kubeconfig 的每台计算机均安装有 `aws` 命令（aws CLI 工具）。
 
-2. 在本地计算机上运行以下命令，获得由 KubeSphere 创建的 ServiceAccount `kubesphere` 的令牌，该令牌对集群具有集群管理员访问权限，并将用作新的 KubeConfig 令牌。
+2. 在本地计算机上运行以下命令，获得由 KubeSphere 创建的 ServiceAccount `kubesphere` 的令牌，该令牌对集群具有集群管理员访问权限，并将用作新的 kubeconfig 令牌。
 
    ```bash
    TOKEN=$(kubectl -n kubesphere-system get secret $(kubectl -n kubesphere-system get sa kubesphere -o jsonpath='{.secrets[0].name}') -o jsonpath='{.data.token}' | base64 -d)
@@ -108,7 +108,7 @@ weight: 5320
    kubectl config set-context --current --user=kubesphere
    ```
 
-3. 运行以下命令获取新的 KubeConfig 文件：
+3. 运行以下命令获取新的 kubeconfig 文件：
 
    ```bash
    cat ~/.kube/config
@@ -150,7 +150,7 @@ weight: 5320
        token: eyJhbGciOiJSUzI1NiIsImtpZCI6ImlCRHF4SlE5a0JFNDlSM2xKWnY1Vkt5NTJrcDNqRS1Ta25IYkg1akhNRmsifQ.eyJpc3M................9KQtFULW544G-FBwURd6ArjgQ3Ay6NHYWZe3gWCHLmag9gF-hnzxequ7oN0LiJrA-al1qGeQv-8eiOFqX3RPCQgbybmix8qw5U6f-Rwvb47-xA
    ```
 
-   您可以运行以下命令检查新的 KubeConfig 是否有权限访问 EKS 集群。
+   您可以运行以下命令检查新的 kubeconfig 是否有权限访问 EKS 集群。
 
    ```shell
    kubectl get nodes
@@ -164,9 +164,9 @@ weight: 5320
    ip-10-0-8-148.cn-north-1.compute.internal   Ready    <none>   78m   v1.18.8-eks-7c9bda
    ```
 
-### 步骤 4：导入 EKS Member 集群
+### 步骤 4：导入 EKS 成员集群
 
-1. 以 `admin` 身份登录 Host 集群的 KubeSphere Web 控制台。点击左上角的**平台管理**，然后选择**集群管理**。在**集群管理**页面，点击**添加集群**。
+1. 以 `admin` 身份登录主集群的 KubeSphere Web 控制台。点击左上角的**平台管理**，然后选择**集群管理**。在**集群管理**页面，点击**添加集群**。
 
    ![click-add-cluster](/images/docs/zh-cn/multicluster-management/import-cloud-hosted-k8s/import-eks/click-add-cluster.png)
 
@@ -174,7 +174,7 @@ weight: 5320
 
    ![input-info](/images/docs/zh-cn/multicluster-management/import-cloud-hosted-k8s/import-eks/input-info.png)
 
-3. **连接方式**选择**直接连接 Kubernetes 集群**。填写 EKS Member 集群的 KubeConfig，然后点击**创建**。
+3. **连接方式**选择**直接连接 Kubernetes 集群**。填写 EKS 的新 kubeconfig，然后点击**创建**。
 
    ![eks-kubeconfig](/images/docs/zh-cn/multicluster-management/import-cloud-hosted-k8s/import-eks/eks-kubeconfig.png)
 

@@ -6,13 +6,13 @@ linkTitle: "代理连接"
 weight: 5220
 ---
 
-KubeSphere 的组件 [Tower](https://github.com/kubesphere/tower) 用于代理连接。Tower 是一种通过代理在集群间建立网络连接的工具。如果 Host 集群（简称 H 集群）无法直接访问 Member 集群（简称 M 集群），您可以暴露 H 集群的代理服务地址，这样可以让 M 集群通过代理连接到 H 集群。当 M 集群部署在私有环境（例如 IDC）并且 H 集群可以暴露代理服务时，适用此连接方法。当您的集群分布部署在不同的云厂商上时，同样适用代理连接的方法。
+KubeSphere 的组件 [Tower](https://github.com/kubesphere/tower) 用于代理连接。Tower 是一种通过代理在集群间建立网络连接的工具。如果主集群无法直接访问成员集群，您可以暴露主集群的代理服务地址，这样可以让成员集群通过代理连接到主集群。当成员集群部署在私有环境（例如 IDC）并且主集群可以暴露代理服务时，适用此连接方法。当您的集群分布部署在不同的云厂商上时，同样适用代理连接的方法。
 
-要通过代理连接使用多集群功能，您必须拥有至少两个集群，分别用作 H 集群和 M 集群。您可以在安装 KubeSphere 之前或者之后将一个集群指定为 H 集群或 M 集群。有关安装 KubeSphere 的更多信息，请参考[在 Linux 上安装](../../../installing-on-linux/)和[在 Kubernetes 上安装](../../../installing-on-kubernetes/)。
+要通过代理连接使用多集群功能，您必须拥有至少两个集群，分别用作主集群和成员集群。您可以在安装 KubeSphere 之前或者之后将一个集群指定为主集群或成员集群。有关安装 KubeSphere 的更多信息，请参考[在 Linux 上安装](../../../installing-on-linux/)和[在 Kubernetes 上安装](../../../installing-on-kubernetes/)。
 
-## 准备 Host 集群
+## 准备主集群
 
-Host 集群为您提供中央控制平面，并且您只能指定一个 Host 集群。
+主集群为您提供中央控制平面，并且您只能指定一个主集群。
 
 {{< tabs >}}
 
@@ -43,7 +43,7 @@ multicluster:
 
 {{< tab "尚未安装 KubeSphere" >}}
 
-在 Linux 上或者在现有 Kubernetes 集群上安装 KubeSphere 之前，您可以定义一个 Host 集群。如果您想[在 Linux 上安装 KubeSphere](../../../installing-on-linux/introduction/multioverview/#1-创建示例配置文件)，需要使用 `config-sample.yaml` 文件。如果您想[在现有 Kubernetes 集群上安装 KubeSphere](../../../installing-on-kubernetes/introduction/overview/#部署-kubesphere)，需要使用两个 YAML 文件，其中一个是 `cluster-configuration.yaml`。要设置一个 Host 集群，请在安装 KubeSphere 之前，将 `config-sample.yaml` 或 `cluster-configuration.yaml` 文件中对应的 `clusterRole` 的值修改为 `host`。
+在 Linux 上或者在现有 Kubernetes 集群上安装 KubeSphere 之前，您可以定义一个主集群。如果您想[在 Linux 上安装 KubeSphere](../../../installing-on-linux/introduction/multioverview/#1-创建示例配置文件)，需要使用 `config-sample.yaml` 文件。如果您想[在现有 Kubernetes 集群上安装 KubeSphere](../../../installing-on-kubernetes/introduction/overview/#部署-kubesphere)，需要使用两个 YAML 文件，其中一个是 `cluster-configuration.yaml`。要设置一个主集群，请在安装 KubeSphere 之前，将 `config-sample.yaml` 或 `cluster-configuration.yaml` 文件中对应的 `clusterRole` 的值修改为 `host`。
 
 ```yaml
 multicluster:
@@ -52,7 +52,7 @@ multicluster:
 
 {{< notice note >}}
 
-如果您在单节点集群上安装 KubeSphere ([All-in-One](../../../quick-start/all-in-one-on-linux/))，则不需要创建 `config-sample.yaml` 文件。这种情况下，您可以在安装 KubeSphere 之后设置 Host 集群。
+如果您在单节点集群上安装 KubeSphere ([All-in-One](../../../quick-start/all-in-one-on-linux/))，则不需要创建 `config-sample.yaml` 文件。这种情况下，您可以在安装 KubeSphere 之后设置主集群。
 
 {{</ notice >}} 
 
@@ -60,7 +60,7 @@ multicluster:
 
 {{</ tabs >}}
 
-您可以使用 **kubectl** 来获取安装日志以验证状态。运行以下命令，稍等片刻，如果 Host 集群已准备就绪，您将看到成功的日志返回。
+您可以使用 **kubectl** 来获取安装日志以验证状态。运行以下命令，稍等片刻，如果主集群已准备就绪，您将看到成功的日志返回。
 
 ```bash
 kubectl logs -n kubesphere-system $(kubectl get pod -n kubesphere-system -l app=ks-install -o jsonpath='{.items[0].metadata.name}') -f
@@ -68,7 +68,7 @@ kubectl logs -n kubesphere-system $(kubectl get pod -n kubesphere-system -l app=
 
 ## 设置代理服务地址
 
-安装 Host 集群后，将在 `kubesphere-system` 中创建一个名为 `tower` 的代理服务，其类型为 `LoadBalancer`。
+安装主集群后，将在 `kubesphere-system` 中创建一个名为 `tower` 的代理服务，其类型为 `LoadBalancer`。
 
 {{< tabs >}}
 
@@ -139,9 +139,9 @@ tower      LoadBalancer    10.233.63.191   139.198.110.23  8080:30721/TCP       
 
 {{</ tabs >}}
 
-## 准备 Member 集群
+## 准备成员集群
 
-为了通过 **Host 集群**管理 Member 集群，您需要使它们之间的 `jwtSecret` 相同。因此，您首先需要在 **Host 集群**中执行以下命令来获取它。
+为了通过 **主集群**管理成员集群，您需要使它们之间的 `jwtSecret` 相同。因此，您首先需要在 **主集群**中执行以下命令来获取它。
 
 ```bash
 kubectl -n kubesphere-system get cm kubesphere-config -o yaml | grep -v "apiVersion" | grep jwtSecret
@@ -189,7 +189,7 @@ multicluster:
 
 {{< tab "尚未安装 KubeSphere" >}}
 
-在 Linux 上或者在现有 Kubernetes 集群上安装 KubeSphere 之前，您可以定义 Member 集群。如果您想[在 Linux 上安装 KubeSphere](../../../installing-on-linux/introduction/multioverview/#1-创建示例配置文件)，需要使用 `config-sample.yaml` 文件。如果您想[在现有 Kubernetes 集群上安装 KubeSphere](../../../installing-on-kubernetes/introduction/overview/#部署-kubesphere)，需要使用两个 YAML 文件，其中一个是 `cluster-configuration.yaml`。要设置 Member 集群，请在安装 KubeSphere 之前，在 `config-sample.yaml` 或 `cluster-configuration.yaml` 文件中输入上方 `jwtSecret` 所对应的值，并将 `clusterRole` 的值修改为 `member`。
+在 Linux 上或者在现有 Kubernetes 集群上安装 KubeSphere 之前，您可以定义成员集群。如果您想[在 Linux 上安装 KubeSphere](../../../installing-on-linux/introduction/multioverview/#1-创建示例配置文件)，需要使用 `config-sample.yaml` 文件。如果您想[在现有 Kubernetes 集群上安装 KubeSphere](../../../installing-on-kubernetes/introduction/overview/#部署-kubesphere)，需要使用两个 YAML 文件，其中一个是 `cluster-configuration.yaml`。要设置成员集群，请在安装 KubeSphere 之前，在 `config-sample.yaml` 或 `cluster-configuration.yaml` 文件中输入上方 `jwtSecret` 所对应的值，并将 `clusterRole` 的值修改为 `member`。
 
 ```yaml
 authentication:
@@ -203,7 +203,7 @@ multicluster:
 
 {{< notice note >}}
 
-如果您在单节点集群上安装 KubeSphere ([All-in-One](../../../quick-start/all-in-one-on-linux/))，则不需要创建 `config-sample.yaml` 文件。这种情况下，您可以在安装 KubeSphere 之后设置 Member 集群。
+如果您在单节点集群上安装 KubeSphere ([All-in-One](../../../quick-start/all-in-one-on-linux/))，则不需要创建 `config-sample.yaml` 文件。这种情况下，您可以在安装 KubeSphere 之后设置成员集群。
 
 {{</ notice >}} 
 
@@ -211,13 +211,13 @@ multicluster:
 
 {{</ tabs >}}
 
-您可以使用 **kubectl** 来获取安装日志以验证状态。运行以下命令，稍等片刻，如果 Member 集群已准备就绪，您将看到成功的日志返回。
+您可以使用 **kubectl** 来获取安装日志以验证状态。运行以下命令，稍等片刻，如果成员集群已准备就绪，您将看到成功的日志返回。
 
 ```bash
 kubectl logs -n kubesphere-system $(kubectl get pod -n kubesphere-system -l app=ks-install -o jsonpath='{.items[0].metadata.name}') -f
 ```
 
-## 导入 Member 集群
+## 导入成员集群
 
 1. 以 `admin` 身份登录 KubeSphere 控制台，转到**集群管理**页面点击**添加集群**。
    
@@ -227,12 +227,12 @@ kubectl logs -n kubesphere-system $(kubectl get pod -n kubesphere-system -l app=
 
      ![集群信息](/images/docs/zh-cn/multicluster-management/enable-multicluster-management-in-kubesphere/agent-connection/cluster-info.PNG)
 
-3. 在**连接方式**，选择**集群连接代理**，然后点击**创建**。H 集群为代理部署 (Deployment) 生成的 YAML 配置文件会显示在控制台上。
+3. 在**连接方式**，选择**集群连接代理**，然后点击**创建**。主集群为代理部署 (Deployment) 生成的 YAML 配置文件会显示在控制台上。
 
      ![代理连接](/images/docs/zh-cn/multicluster-management/enable-multicluster-management-in-kubesphere/agent-connection/select-agent-connection.png)
 
-4. 根据指示在 M 集群中创建一个 `agent.yaml` 文件，然后将代理部署复制并粘贴到该文件中。在该节点上执行 `kubectl create -f agent.yaml` 然后等待代理启动并运行。请确保 M 集群可以访问代理地址。
+4. 根据指示在成员集群中创建一个 `agent.yaml` 文件，然后将代理部署复制并粘贴到该文件中。在该节点上执行 `kubectl create -f agent.yaml` 然后等待代理启动并运行。请确保成员集群可以访问代理地址。
 
-5. 待集群代理启动并运行，您会看到 M 集群已经导入 H 集群。
+5. 待集群代理启动并运行，您会看到成员集群已经导入主集群。
 
      ![已导入的集群](/images/docs/zh-cn/multicluster-management/enable-multicluster-management-in-kubesphere/agent-connection/cluster-imported.PNG)
