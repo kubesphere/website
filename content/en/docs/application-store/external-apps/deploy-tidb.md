@@ -42,7 +42,7 @@ This tutorial demonstrates how to deploy TiDB Operator and a TiDB Cluster on Kub
 
 1. Log out of KubeSphere and log back in as `ws-admin`. In your workspace, go to **App Repositories** under **App Management**, and then click **Add**.
 
-2. In the dialog that appears, enter `pingcap` for the app repository name and `https://charts.pingcap.org` for the PingCAP Helm repository URL. Click **Validate** to verify the URL, and you will see a green check mark next to the URL if it is available. Click **OK** to continue.
+2. In the displayed dialog box, enter `pingcap` for the app repository name and `https://charts.pingcap.org` for the PingCAP Helm repository URL. Click **Validate** to verify the URL, and you will see a green check mark next to the URL if it is available. Click **OK** to continue.
 
 3. Your repository displays in the list after it is successfully imported to KubeSphere.
 
@@ -50,7 +50,7 @@ This tutorial demonstrates how to deploy TiDB Operator and a TiDB Cluster on Kub
 
 1. Log out of KubeSphere and log back in as `project-regular`. In your project, go to **Apps** under **Application Workloads** and click **Create**.
 
-2. In the dialog that appears, select **From App Template**.
+2. In the displayed dialog box, select **From App Template**.
 
 3. Select `pingcap` from the drop-down list, then click **tidb-operator**.
 

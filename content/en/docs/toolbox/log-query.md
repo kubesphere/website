@@ -30,7 +30,7 @@ You need to enable the [KubeSphere Logging System](../../pluggable-components/lo
 
 3. You can customize the query time range by selecting **Time Range** in the log search bar. Alternatively, click on the bars in the time histogram, and KubeSphere will use the time range of that bar for log queries.
 
-    {{< notice note >}}
+{{< notice note >}}
 
 - The keyword field supports the query of keyword combinations. For example, you can use `Error`, `Fail`, `Fatal`, `Exception`, and `Warning` together to query all the exception logs.
 - The keyword field supports exact query and fuzzy query. The fuzzy query provides case-insensitive fuzzy matching and retrieval of full terms by the first half of a word or phrase based on the ElasticSearch segmentation rules. For example, you can retrieve the logs containing `node_cpu_total` by searching the keyword `node_cpu` instead of the keyword `cpu`.
@@ -40,12 +40,9 @@ You need to enable the [KubeSphere Logging System](../../pluggable-components/lo
 
 ## Use Search Parameters
 
-1. You can provide as many fields as possible to narrow down your search results. Below is an example of a log query on the cluster `product` with the keyword `error` in the project `kubesphere-system` within `last 12 hours`.
-2. It returns logs of 13 rows with the corresponding time, project, pod and container information all displayed.
+1. You can provide as many fields as possible to narrow down your search results.
 
-3. Click any one of the results from the list. Drill into its detail page and inspect the log from this Pod, including the complete context on the right. It is convenient for developers in terms of debugging and analyzing.
-
-    ![log-search-details-page](/images/docs/toolbox/log-query/log-search-details-page.png)
+2. Click any one of the results from the list. Drill into its detail page and inspect the log from this Pod, including the complete context on the right. It is convenient for developers in terms of debugging and analyzing.
     
     {{< notice note >}}
 
@@ -53,9 +50,9 @@ The log query interface supports dynamic refreshing with 5s, 10s or 15s, and all
 
     {{</ notice >}}
 
-4. On the left panel, you can switch between Pods and inspect its containers within the same project from the drop-down list. In this case, you can detect if any abnormal Pods affect other Pods.
+4. In the left panel, you can click <img src="/images/docs/toolbox/log-query/view-detail-page.png" width='20' /> to view the Pod details page or container details page.
 
-In the left panel, you can click <img src="/images/docs/toolbox/log-query/view-detail-page.png" width='20' /> to view the Pod details page or container details page.
+## Drill into the Details Page
 
 1. If the log looks abnormal, you can drill into the Pod detail page or container detail page to further inspect container logs, resource monitoring graphs, and events.
 
