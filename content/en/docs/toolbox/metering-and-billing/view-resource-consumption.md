@@ -23,8 +23,6 @@ KubeSphere metering helps you track resource consumption within a given cluster 
 
 3. On the left side of the dashboard, you can see a cluster list containing your Host Cluster and all Member Clusters if you have enabled [multi-cluster management](../../../multicluster-management/). There is only one cluster called `default` in the list if it is not enabled.
 
-   ![cluster-page](/images/docs/toolbox/metering-and-billing/view-resource-consumption/cluster-page.png)
-
    On the right side, there are three parts showing resource consumption in different ways.
 
    <table>
@@ -47,10 +45,6 @@ KubeSphere metering helps you track resource consumption within a given cluster 
    </table>
 
 4. You can click a cluster on the left and dive deeper into a node or Pod to see detailed consumption information.
-
-   ![node-page](/images/docs/toolbox/metering-and-billing/view-resource-consumption/node-page.png)
-   
-   ![pod-page](/images/docs/toolbox/metering-and-billing/view-resource-consumption/pod-page.png)
    
    {{< notice note >}}
    
@@ -68,8 +62,6 @@ KubeSphere metering helps you track resource consumption within a given cluster 
 
 3. On the left side of the dashboard, you can see a list containing all the workspaces in the current cluster. The right part displays detailed consumption information in the selected workspace, the layout of which is basically the same as that of a cluster.
 
-   ![workspace-page](/images/docs/toolbox/metering-and-billing/view-resource-consumption/workspace-page.png)
-
    {{< notice note >}}
 
    In a multi-cluster architecture, you cannot see the metering and billing information of a workspace if it does not have any available cluster assigned to it. For more information, see [Cluster Visibility and Authorization](../../../cluster-administration/cluster-settings/cluster-visibility-and-authorization/).
@@ -77,7 +69,3 @@ KubeSphere metering helps you track resource consumption within a given cluster 
    {{</ notice >}} 
 
 4. Click a workspace on the left and dive deeper into a project or workload (for example, Deployment and StatefulSet) to see detailed consumption information.
-
-   ![project-page](/images/docs/toolbox/metering-and-billing/view-resource-consumption/project-page.png)
-
-   ![workload-page](/images/docs/toolbox/metering-and-billing/view-resource-consumption/workload-page.png)

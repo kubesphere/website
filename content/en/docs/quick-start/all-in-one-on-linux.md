@@ -17,7 +17,7 @@ For those who are new to KubeSphere and looking for a quick way to discover the 
 
 To get started with all-in-one installation, you only need to prepare one host according to the following requirements for hardware and operating system.
 
-### Hardware Recommendations
+### Hardware recommendations
 
 <table>
   <tbody>

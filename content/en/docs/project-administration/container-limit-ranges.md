@@ -18,11 +18,9 @@ You have an available workspace, a project and a user (`project-admin`). The use
 
 ## Set Default Limit Ranges
 
-1. Log in to the console as `project-admin` and go to a project. On the **Overview** page, you can see default limit ranges remain unset if the project is newly created. Click **Set** next to **Resource Default Request Not Set** to configure limit ranges.
+1. Log in to the console as `project-admin` and go to a project. On the **Overview** page, you can see default limit ranges remain unset if the project is newly created. Click **Edit Quotas** next to **Default Container Quotas Not Set** to configure limit ranges.
 
 2. In the dialog that appears, you can see that KubeSphere does not set any requests or limits by default. To set requests and limits to control CPU and memory resources, use the slider to move to a desired value or enter numbers directly. Leaving a field blank means you do not set any requests or limits. 
-
-   ![default-limit-range](/images/docs/project-administration/container-limit-ranges/default-limit-range.png)
 
    {{< notice note >}}
 
@@ -34,18 +32,12 @@ You have an available workspace, a project and a user (`project-admin`). The use
 
 4. Go to **Basic Information** in **Project Settings**, and you can see default limit ranges for containers in a project.
 
-   ![view-limit-ranges](/images/docs/project-administration/container-limit-ranges/view-limit-ranges.png)
-
-5. To change default limit ranges, click **Manage Project** on the **Basic Information** page and select **Edit Resource Default Request**.
+5. To change default limit ranges, click **Edit Project** on the **Basic Information** page and select **Edit Default Container Quotas**.
 
 6. Change limit ranges directly in the dialog and click **OK**.
 
 7. When you create a workload, requests and limits of the container will be pre-populated with values.
-
-   ![workload-values](/images/docs/project-administration/container-limit-ranges/workload-values.png)
-
    {{< notice note >}}
-
    For more information, see **Resource Request** in [Container Image Settings](../../project-user-guide/application-workloads/container-image-settings/).
 
    {{</ notice >}}

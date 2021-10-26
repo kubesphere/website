@@ -152,7 +152,7 @@ kubectl logs -n kubesphere-system $(kubectl get pod -n kubesphere-system -l app=
 
 1. Log in to the KubeSphere console as `admin` and click **Add Cluster** on the **Cluster Management** page.
 
-2. Enter the basic information of the cluster to be imported on the **Import Cluster** page. You can also click **Edit Mode** in the top-right corner to view and edit the basic information in YAML format. After you finish editing, click **Next**.
+2. Enter the basic information of the cluster to be imported on the **Import Cluster** page. You can also click **Edit Mode** in the upper-right corner to view and edit the basic information in YAML format. After you finish editing, click **Next**.
 
 3. In **Connection Method**, select **Direct Connection**, and copy the kubeconfig of the Member Cluster and paste it into the box. You can also click **Edit Mode** in the top-right corner to edit the kubeconfig of the Member Cluster in YAML format.
 

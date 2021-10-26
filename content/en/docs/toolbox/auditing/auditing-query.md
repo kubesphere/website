@@ -18,7 +18,7 @@ You need to enable [KubeSphere Auditing Logs](../../../pluggable-components/audi
 
    {{< notice note >}} 
 
-Any account has the authorization to query auditing logs, while the logs each account is able to see are different.
+Any account has the authorization to query auditing logs, while the logs that each user can view are different.
 
 - If a user has the authorization of viewing resources in a project, it can see the auditing log that happens in this project, such as workload creation in the project.
 - If a user has the authorization of listing projects in a workspace, it can see the auditing log that happens in this workspace but not in projects, such as project creation in the workspace.
@@ -27,8 +27,6 @@ Any account has the authorization to query auditing logs, while the logs each ac
 {{</ notice >}} 
 
 2. In the pop-up window, you can view log trends in the last 12 hours. 
-
-   ![auditing-logs](/images/docs/toolbox/auditing-query/auditing-logs.png)
 
 3. The **Auditing Operating** console supports the following query parameters:
 
@@ -84,10 +82,6 @@ Any account has the authorization to query auditing logs, while the logs each ac
 
 ## Enter Query Parameters
 
-1. Select a filter and enter the keyword you want to search. For example, query auditing logs containing the information of `services` created as shown in the following screenshot:
-
-   ![services-created](/images/docs/toolbox/auditing-query/services-created.png)
+1. Select a filter and enter the keyword you want to search. For example, query auditing logs containing the information of `services` created.
 
 2. You can click the results to see the auditing log details.
-
-   ![auditing-log-details](/images/docs/toolbox/auditing-query/auditing-log-details.png)

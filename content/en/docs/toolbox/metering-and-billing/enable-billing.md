@@ -82,5 +82,3 @@ Perform the following steps to enable KubeSphere Billing.
    ```
 
 4. On the **Metering and Billing** page, you can see the cost information of resources.
-
-   ![metering-and-billing](/images/docs/toolbox/metering-and-billing/enable-billing/metering-and-billing.png)
