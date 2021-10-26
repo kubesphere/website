@@ -6,7 +6,7 @@ css: scss/live-detail.scss
 
 section1:
   snapshot: 
-  videoUrl: 
+  videoUrl: //player.bilibili.com/player.html?aid=976126102&bvid=BV1Z44y1x7e3&cid=428904630&page=1
   type: iframe
   time: 2021-10-21 20:00-21:00
   timeIcon: /images/live/clock.svg
@@ -36,4 +36,6 @@ KubeSphere 研发工程师，openEuler 社区 Cloud Native SIG Maintainer，CKA/
 
 B 站  http://live.bilibili.com/22580654
 
+## PPT 下载
 
+可扫描官网底部二维码，关注 「KubeSphere 云原生」公众号，后台回复 `20211021` 即可下载 PPT。
