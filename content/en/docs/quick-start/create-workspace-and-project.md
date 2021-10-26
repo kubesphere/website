@@ -24,7 +24,7 @@ You can create multiple workspaces within a KubeSphere cluster. Under each works
 
 ### Step 1: Create a user
 
-After KubeSphere is installed, you need to add different users with varied roles to the platform so that they can work at different levels on various resources. Initially, you only have one default account, which is `admin`, granted the role `platform-admin`. In the first step, you create a user `user-manager` and further create more accounts as `user-manager`.
+After KubeSphere is installed, you need to add different users with varied roles to the platform so that they can work at different levels on various resources. Initially, you only have one default user, which is `admin`, granted the role `platform-admin`. In the first step, you create a user `user-manager` and further create more users as `user-manager`.
 
 1. Log in to the web console as `admin` with the default account and password (`admin/P@88w0rd`).
 
@@ -126,9 +126,7 @@ In this step, you create a workspace using the account `ws-manager` created in t
 The actual role name follows a naming convention: `<workspace name>-<role name>`. For example, in this workspace named `demo-workspace`, the actual role name of the role `viewer` is `demo-workspace-viewer`.
    {{</ notice >}}
 
-   ![invite-member](/images/docs/quickstart/create-workspaces-projects-accounts/invite-member.png)
-
-5. In **Workspace Members**, you can see three members listed.
+5. After you add both `project-admin` and `project-regular` to the workspace, click **OK**. In **Workspace Members**, you can see three members listed.
 
    <table>
      <tbody>
@@ -158,13 +156,13 @@ The actual role name follows a naming convention: `<workspace name>-<role name>`
 
 In this step, you create a project using the account `project-admin` created in the previous step. A project in KubeSphere is the same as a namespace in Kubernetes, which provides virtual isolation for resources. For more information, see [Namespaces](https://kubernetes.io/docs/concepts/overview/working-with-objects/namespaces/).
 
-1. Log in to the KubeSphere web console as `project-admin`. In **Projects**, click **Create**.
+1. Log in to KubeSphere as `project-admin`. In **Projects**, click **Create**.
 
 2. Enter the project name (for example, `demo-project`) and click **OK** to finish. You can also add an alias and description for the project.
 
-3. In **Projects**, click the project name to view its details page.
+3. In **Projects**, click the project created just now to view its detailed information.
 
-4. On the **Overview** page of the project, the project quota remains unset by default. You can click **Set** and specify [resource requests and limits](../../workspace-administration/project-quotas/) as needed (for example, 1 Core for CPU and 1000 Gi for memory).
+4. On the **Overview** page of the project, the project quota remains unset by default. You can click **Set** and specify [resource requests and limits](../../workspace-administration/project-quotas/) as needed (for example, 1 core for CPU and 1000Gi for memory).
 
 5. Invite `project-regular` to this project and grant this user the role `operator`.
 
@@ -230,10 +228,10 @@ To create a DevOps project, you must install the KubeSphere DevOps system in adv
 
 1. Log in to the console as `project-admin`. In **DevOps Projects**, click **Create**.
 
-2. Set a name for the DevOps project (for example, `demo-devops`) and click **OK**. You can also add an alias and description for the project.
+2. Enter the DevOps project name (for example, `demo-devops`) and click **OK**. You can also add an alias and description for the project.
 
-3. Click the project name to view its details page.
+3. In **DevOps Projects**, click the project created just now to view its detailed information.
 
-4. Go to **Project Management** and select **Project Members**. Click **Invite Member** to grant `project-regular` the role `operator`, who is allowed to create pipelines and credentials. Click **OK** to finish.
+4. Go to **Project Management** and select **Project Members**. Click **Invite** to grant `project-regular` the role of `operator`, who is allowed to create pipelines and credentials.
 
 You are now familiar with the multi-tenant management system of KubeSphere. In other tutorials, the account `project-regular` will also be used to demonstrate how to create applications and resources in a project or DevOps project.

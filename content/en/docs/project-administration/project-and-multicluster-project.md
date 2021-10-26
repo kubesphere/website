@@ -32,17 +32,13 @@ This tutorial demonstrates how to manage projects and multi-cluster projects.
 
 2. In the **Create Project** window that appears, enter a project name and add an alias or description if necessary. Under **Cluster Settings**, select the cluster where the project will be created (this option does not appear if the multi-cluster feature is not enabled), and click **OK**.
 
-3. A project created will display in the list as shown below. You can click the project name to go to its **Overview** page.
-
-    ![project-list](/images/docs/project-administration/project-and-multicluster-project/project-list.png)
+3. A project created will display in the list. You can click the project name to go to its **Overview** page.
 
 ### Edit a project
 
 1. Go to your project, navigate to **Basic Information** under **Project Settings** and click **Manage Project** on the right.
 
-2. Choose **Edit Information** from the drop-down menu.
-
-    ![project-basic-information](/images/docs/project-administration/project-and-multicluster-project/project-basic-information.png)
+2. Choose **Edit Information** from the drop-down list.
     
     {{< notice note >}}
 
@@ -50,7 +46,7 @@ The project name cannot be edited. If you want to change other information, see 
 
 {{</ notice >}}
 
-3. To delete a project, choose **Delete Project** from the drop-down menu. In the dialog that appears, enter the project name and click **OK** to confirm the deletion.
+1. To delete a project, choose **Delete Project** from the drop-down list. In the dialog that appears, enter the project name and click **OK** to confirm the deletion.
 
    {{< notice warning >}}
 
@@ -71,19 +67,15 @@ A project cannot be recovered once deleted and resources in the project will be 
 
     {{</ notice >}}
 
-2. In the **Create Multi-cluster Project** window that appears, enter a project name and add an alias or description if necessary. Under **Cluster Settings**, select multiple clusters for your project by clicking **Add Cluster**, and click **OK**.
+2. In the **Create Multi-cluster Project** window that appears, enter a project name and add an alias or description if necessary. Under **Clusters**, select multiple clusters for your project by clicking **Add Cluster**, and then click **OK**.
 
-3. A multi-cluster project created will display in the list as shown below. You can click the project name to go to its **Overview** page.
-
-    ![multi-cluster-list](/images/docs/project-administration/project-and-multicluster-project/multi-cluster-list.png)
+3. A multi-cluster project created will display in the list. You can click the project name to go to its **Overview** page.
 
 ### Edit a multi-cluster project
 
 1. Go to your multi-cluster project, navigate to **Basic Information** under **Project Settings** and click **Manage Project** on the right.
 
-2. Choose **Edit Information** from the drop-down menu.
-
-    ![multi-cluster-basic-information](/images/docs/project-administration/project-and-multicluster-project/multi-cluster-basic-information.png)
+2. Choose **Edit Information** from the drop-down list.
 
     {{< notice note >}}
 
@@ -91,7 +83,7 @@ The project name cannot be edited. If you want to change other information, see 
 
 {{</ notice >}}
 
-3. To delete a multi-cluster project, choose **Delete Project** from the drop-down menu. In the dialog that appears, enter the project name and click **OK** to confirm the deletion.
+1. To delete a multi-cluster project, choose **Delete Project** from the drop-down list. In the dialog that appears, enter the project name and click **OK** to confirm the deletion.
 
    {{< notice warning >}}
 

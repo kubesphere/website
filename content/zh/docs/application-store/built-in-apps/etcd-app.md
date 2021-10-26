@@ -43,7 +43,7 @@ weight: 14210
 
    {{</ notice >}} 
 
-5. 在**应用**页面的**应用模板**选项卡下，稍等片刻待 etcd 启动并运行。
+5. 在**应用**页面的**基于模板的应用**选项卡下，稍等片刻待 etcd 启动并运行。
 
    ![etcd 运行中](/images/docs/zh-cn/appstore/built-in-apps/deploy-etcd-on-ks/etcd-running-6.PNG)
 

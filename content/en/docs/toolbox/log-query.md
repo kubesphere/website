@@ -18,9 +18,7 @@ You need to enable the [KubeSphere Logging System](../../pluggable-components/lo
 
 1. The log query function is available for all users. Log in to the console with any account, hover over <img src="/images/docs/toolbox/log-query/toolbox.png" width='20' /> in the lower-right corner and select **Log Search**.
 
-2. In the displayed dialog box, you can see a time histogram of log numbers, a cluster selection drop-down list and a log search box.
-
-    ![log-search](/images/docs/toolbox/log-query/log-search.png)
+2. In the pop-up window, you can see a time histogram of log numbers, a cluster selection drop-down list, and a log search bar.
 
     {{< notice note >}}
 
@@ -30,9 +28,7 @@ You need to enable the [KubeSphere Logging System](../../pluggable-components/lo
 
     {{</ notice >}}
 
-3. You can click the search box and enter a condition to search for logs by keyword, project, workload, Pod, container, or time range (for example, use `Time Range:Last 10 minutes` to search for logs within the last 10 minutes). Alternatively, click on the bars in the time histogram, and KubeSphere will use the time range of that bar for log queries.
-
-    ![log-search-list](/images/docs/toolbox/log-query/log-search-list.png)
+3. You can customize the query time range by selecting **Time Range** in the log search bar. Alternatively, click on the bars in the time histogram, and KubeSphere will use the time range of that bar for log queries.
 
     {{< notice note >}}
 
@@ -44,32 +40,23 @@ You need to enable the [KubeSphere Logging System](../../pluggable-components/lo
 
 ## Use Search Parameters
 
-1. You can enter multiple conditions to narrow down your search results.
+1. You can provide as many fields as possible to narrow down your search results. Below is an example of a log query on the cluster `product` with the keyword `error` in the project `kubesphere-system` within `last 12 hours`.
+2. It returns logs of 13 rows with the corresponding time, project, pod and container information all displayed.
 
-    ![log-search-conditions](/images/docs/toolbox/log-query/log-search-conditions.png)
-
-3. Click any one of the results from the list. Drill into its details page and inspect the log from this Pod, including the complete context on the right. It is convenient for developers in terms of debugging and analyzing.
+3. Click any one of the results from the list. Drill into its detail page and inspect the log from this Pod, including the complete context on the right. It is convenient for developers in terms of debugging and analyzing.
 
     ![log-search-details-page](/images/docs/toolbox/log-query/log-search-details-page.png)
     
     {{< notice note >}}
 
-- The log query interface supports dynamic refreshing with 5s, 10s, or 15s.
-- You can click <img src="/images/docs/toolbox/log-query/export-logs.png" width='20' /> in the upper-right corner to export logs to a local file for further analysis.
+The log query interface supports dynamic refreshing with 5s, 10s or 15s, and allows users to export logs to a local file for further analysis (in the upper-right corner).
 
-{{</ notice >}}
+    {{</ notice >}}
 
-4. In the left panel, you can click <img src="/images/docs/toolbox/log-query/drop-down-list.png" width='20' /> to switch between Pods and inspect its containers within the same project. In this case, you can detect if any abnormal Pods affect other Pods.
-
-
-## Drill into the Details Page
+4. On the left panel, you can switch between Pods and inspect its containers within the same project from the drop-down list. In this case, you can detect if any abnormal Pods affect other Pods.
 
 In the left panel, you can click <img src="/images/docs/toolbox/log-query/view-detail-page.png" width='20' /> to view the Pod details page or container details page.
 
-The following figure shows the Pod details page:
+1. If the log looks abnormal, you can drill into the Pod detail page or container detail page to further inspect container logs, resource monitoring graphs, and events.
 
-![pod-details-page](/images/docs/toolbox/log-query/pod-details-page.png)
-
-The following figure shows the container details page. You can click **Terminal** in the upper-left corner to open the terminal and debug the container.
-
-![container-detail-page](/images/docs/toolbox/log-query/container-detail-page.png)
+2. Inspect the container detail page. At the same time, it allows you to open the terminal to debug the container directly.

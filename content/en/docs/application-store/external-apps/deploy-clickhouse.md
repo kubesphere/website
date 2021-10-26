@@ -75,75 +75,43 @@ This tutorial demonstrates how to deploy ClickHouse Operator and a ClickHouse Cl
 
 1. Log out of KubeSphere and log back in as `ws-admin`. In `demo-workspace`, go to **App Repositories** under **App Management**, and then click **Add**.
 
-   ![add-repo](/images/docs/appstore/external-apps/deploy-clickhouse/add-repo.png)
+2. In the dialog that appears, enter `clickhouse` for the app repository name and `https://radondb.github.io/radondb-clickhouse-kubernetes/` for the repository URL. Click **Validate** to verify the URL, and you will see a green check mark next to the URL if it is available. Click **OK** to continue.
 
-2. In the dialog that appears, enter `clickhouse` for the app repository name and `https://radondb.github.io/radondb-clickhouse-kubernetes/` for the repository URL. Click **Validate** to verify the URL and you will see a green check mark next to the URL if it is available. Click **OK** to continue.
-
-   ![add-clickhouse](/images/docs/appstore/external-apps/deploy-clickhouse/add-clickhouse.png)
-
-3. Your repository displays in the list after successfully imported to KubeSphere.
-
-   ![repo-added](/images/docs/appstore/external-apps/deploy-clickhouse/repo-added.png)
+3. Your repository will display in the list after it is successfully imported to KubeSphere.
 
 ### Step 3: Deploy a ClickHouse Cluster
 
-1. Log out of KubeSphere and log back in as `project-regular`. In `demo-project`, go to **Apps** under **Application Workloads** and click **Deploy New App**.
+1. Log out of KubeSphere and log back in as `project-regular`. In `demo-project`, go to **Apps** under **Application Workloads** and click **Create**.
 
-   ![click-deploy-new-app](/images/docs/appstore/external-apps/deploy-clickhouse/click-deploy-new-app.png)
-
-2. In the dialog that appears, select **From App Templates**.
-
-   ![from-app-templates](/images/docs/appstore/external-apps/deploy-clickhouse/from-app-templates.png)
+2. In the dialog that appears, select **From App Template**.
 
 3. On the new page that appears, select **clickhouse** from the drop-down list and then click **clickhouse-cluster**.
 
-   ![clickhouse-cluster](/images/docs/appstore/external-apps/deploy-clickhouse/clickhouse-cluster.png)
-
 4. On the **Chart Files** tab, you can view the configuration and download the `values.yaml` file. Click **Deploy** to continue.
-
-   ![chart-tab](/images/docs/appstore/external-apps/deploy-clickhouse/chart-tab.png)
 
 5. On the **Basic Information** page, confirm the app name, app version, and deployment location. Click **Next** to continue.
 
-   ![basic-info](/images/docs/appstore/external-apps/deploy-clickhouse/basic-info.png)
+6. On the **App Settings** tab, you can change the YAML file to customize settings. In this tutorial, click **Deploy** to use the default settings.
 
-6. On the **App Configurations** tab, you can change the YAML file to customize configurations. In this tutorial, click **Deploy** to use the default configurations.
+7. After a while, you can see the app is in the **Running** status.
 
-   ![click-deploy](/images/docs/appstore/external-apps/deploy-clickhouse/click-deploy.png)
+### Step 4: View ClickHouse cluster status
 
-7. After a while, you can see the app status shown as **Running**.
+1. In **Workloads** under **Application Workloads**, click the **StatefulSets** tab,  and you can see the StatefulSets are up and running.
 
-   ![app-running](/images/docs/appstore/external-apps/deploy-clickhouse/app-running.png)
-
-### Step 4: View ClickHouse Cluster status
-
-1. In **Workloads** under **Application Workloads**, click the **StatefulSets** tab and you can see the StatefulSets are up and running.
-
-   ![statefulsets-running](/images/docs/appstore/external-apps/deploy-clickhouse/statefulsets-running.png)
-
-3. Click a single StatefulSet to go to its detail page. You can see the metrics in line charts over a period of time under the **Monitoring** tab.
-
-   ![statefulset-monitoring](/images/docs/appstore/external-apps/deploy-clickhouse/statefulset-monitoring.png)
+2. Click a single StatefulSet to go to its detail page. You can see the metrics in line charts over a period of time under the **Monitoring** tab.
 
 3. In **Pods** under **Application Workloads**, you can see all the Pods are up and running.
 
-   ![pods-running](/images/docs/appstore/external-apps/deploy-clickhouse/pods-running.png)
-
 4. In **Volumes** under **Storage**, you can see the ClickHouse Cluster components are using persistent volumes.
 
-   ![volumes](/images/docs/appstore/external-apps/deploy-clickhouse/volumes.png)
-
-5. Volume usage is also monitored. Click a volume item to go to its detail page. Here is an example of one of the data nodes.
-
-   ![volume-status](/images/docs/appstore/external-apps/deploy-clickhouse/volume-status.png)
+5. Volume usage is also monitored. Click a volume item to go to its detail page.
 
 6. On the **Overview** page of the project, you can see a list of resource usage in the current project.
 
-   ![project-overview](/images/docs/appstore/external-apps/deploy-clickhouse/project-overview.png)
+### Step 5: Access the ClickHouse cluster
 
-### Step 5: Access the ClickHouse Cluster
-
-1. Log out of KubeSphere and log back in as `admin`. Hover your cursor over the hammer icon in the bottom-right corner and then select **Kubectl**.
+1. Log out of KubeSphere and log back in as `admin`. Hover your cursor over the hammer icon in the lower-right corner, and then select **Kubectl**.
 
 2. In the window that appears, run the following command and then navigate to the username and password of the ClickHouse cluster.
 
@@ -169,7 +137,7 @@ This tutorial demonstrates how to deploy ClickHouse Operator and a ClickHouse Cl
 
    {{< notice note >}}
 
-   In the above command, `chi-clickho-749j8s-all-nodes-0-0-0` is the Pod name and you can find it in **Pods** under **Application Workloads**. Make sure you use your own Pod name, project name, username and password.
+   In the above command, `chi-clickho-749j8s-all-nodes-0-0-0` is the Pod name and you can find it in **Pods** under **Application Workloads**. Make sure you use your own Pod name, project name, username, and password.
 
    {{</ notice >}}
 

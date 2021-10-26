@@ -44,17 +44,15 @@ In **Project Roles**, there are three available built-in roles as shown below. B
 
 To view the permissions that a role contains:
 
-1. Log in to the console as `project-admin`. In **Project Roles**, click a role (for example, `admin`) and you can see role details as shown below.
+1. Log in to the console as `project-admin`. In **Project Roles**, click a role (for example, `admin`) to view the role details.
 
-    ![project-role-details](/images/docs/project-administration/role-and-member-management/project-role-details.png)
-
-2. Click the **Authorized Users** tab to see all the users that are granted the role.
+2. Click the **Authorized Users** tab to check users that have been granted the role.
 
 ## Create a Project Role
 
 1. Navigate to **Project Roles** under **Project Settings**.
 
-2. In **Project Roles**, click **Create** and set a role **Name** (for example, `project-monitor`). Click **Edit Permissions** to continue.
+2. In **Project Roles**, click **Create** and set a role name (for example, `project-monitor`). Click **Edit Permissions** to continue.
 
 3. In the pop-up window, permissions are categorized into different **Modules**. In this example, select **Application Workload Viewing** in **Application Workloads**, and **Alerting Message Viewing** and **Alerting Policy Viewing** in **Monitoring & Alerting**. Click **OK** to finish creating the role.
 
@@ -66,16 +64,12 @@ To view the permissions that a role contains:
 
 4. Newly-created roles will be listed in **Project Roles**. To edit an existing role, click <img src="/images/docs/project-administration/role-and-member-management/three-dots.png" height="20px"> on the right.
 
-    ![project-role-list](/images/docs/project-administration/role-and-member-management/project-role-list.png)
-
 ## Invite a New Member
 
-1. Navigate to **Project Members** under **Project Settings**, and click **Invite Member**.
+1. Navigate to **Project Members** under **Project Settings**, and click **Invite**.
 
 2. Invite a user to the project by clicking <img src="/images/docs/project-administration/role-and-member-management/add.png" height="20px"> on the right of it and assign a role to it.
 
 3. After you add the user to the project, click **OK**. In **Project Members**, you can see the user in the list.
 
 4. To edit the role of an existing user or remove the user from the project, click <img src="/images/docs/project-administration/role-and-member-management/three-dots.png" height="20px"> on the right and select the corresponding operation.
-
-    ![edit-project-account](/images/docs/project-administration/role-and-member-management/edit-project-account.png)
