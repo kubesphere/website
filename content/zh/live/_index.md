@@ -10,22 +10,29 @@ section1:
 
 section2:
   image: /images/live/cloudnative-live-cover.png
-  url: ./uisee0923-live/
+  url: ./ckacks1021-live/
 
   notice:
-    title: CKA/CKS 备考攻略
+    title: 如何优化容器网络性能
     tag: 预告
-    time: 2021 年 10 月 21 日晚 8 点
+    time: 2021 年 10 月 28 日晚 8 点
     base: 线上
-    url: ./ckacks1021-live/
+    url: ./kubeovn1028-live/
 
   over:
-    title: Kubernetes 控制器原理简介
-    url: ./uisee0916-live/
+    title: Kubebuilder 使用简介
+    url: ./uisee0923-live/
     tag: 结束
 
 section3:
   videos:
+    - title: CKA/CKS 备考攻略
+      link: ./ckacks1021-live/
+      snapshot: https://pek3b.qingstor.com/kubesphere-community/images/uisee0923-live-cover.png
+      type: iframe
+      createTime: 2021.10.21
+      group: 直播回放
+
     - title: Kubebuilder 使用简介
       link: ./uisee0923-live/
       snapshot: https://pek3b.qingstor.com/kubesphere-community/images/uisee0923-live-cover.png
