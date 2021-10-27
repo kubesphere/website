@@ -5,7 +5,7 @@ keyword: '社区, 开源, 贡献, KubeSphere'
 description: 'KubeSphere 社区向新诞生的 26 位 2021 年度的 KubeSphere Talented Speaker 致谢，欢迎更多的人加入到 KubeSphere Talented Speaker 的行列。'
 createTime: '2021-10-15'
 author: 'KubeSphere'
-snapshot: 'http://pek3b.qingstor.com/kubesphere-community/images/talented-speaker-cover.png'
+snapshot: 'https://pek3b.qingstor.com/kubesphere-community/images/talented-speaker-cover.png'
 ---
 
 2021 年，KubeSphere 社区又收获了逾百位的贡献者，包括代码、中英文文档、技术布道、本地化与国际化等贡献都是我们认可的贡献方式，在此我们对 KubeSphere 社区所有的贡献者与合作伙伴表示衷心的感谢！
