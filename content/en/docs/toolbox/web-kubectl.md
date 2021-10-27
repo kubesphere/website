@@ -16,11 +16,7 @@ This tutorial demonstrates how to use web kubectl to operate on and manage clust
 
 1. Log in to KubeSphere with a user granted the `platform-admin` role, hover over the **Toolbox** in the lower-right corner and select **Kubectl**.
 
-    ![web-kubectl-enter](/images/docs/web-kubectl/web-kubectl-enter.png)
-
-2. You can see the kubectl interface as shown in the pop-up window. If you have enabled the multi-cluster feature, you need to select the target cluster first from the drop-down list in the upper-right corner. This drop-down list is not visible if the multi-cluster feature is not enabled.
-
-    ![web-kubectl-cluster-select](/images/docs/web-kubectl/web-kubectl-cluster-select.png)
+2. You can see the kubectl interface in the pop-up window. If you have enabled the multi-cluster feature, you need to select the target cluster first from the drop-down list in the upper-right corner. This drop-down list is not visible if the multi-cluster feature is not enabled.
 
 3. Enter kubectl commands in the command-line tool to query and manage Kubernetes cluster resources. For example, execute the following command to query the status of all PVCs in the cluster.
 

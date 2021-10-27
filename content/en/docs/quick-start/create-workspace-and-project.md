@@ -28,7 +28,7 @@ You can create multiple workspaces within a KubeSphere cluster. Under each works
 
 ### Step 1: Create a user
 
-After KubeSphere is installed, you need to add different users with varied roles to the platform so that they can work at different levels on various resources. Initially, you only have one default account, which is `admin`, granted the role `platform-admin`. In the first step, you create a user `user-manager` and further create more accounts as `user-manager`.
+After KubeSphere is installed, you need to add different users with varied roles to the platform so that they can work at different levels on various resources. Initially, you only have one default user, which is `admin`, granted the role `platform-admin`. In the first step, you create a user `user-manager` and further create more users as `user-manager`.
 
 1. Log in to the web console as `admin` with the default account and password (`admin/P@88w0rd`).
 
@@ -93,11 +93,7 @@ In this step, you create a workspace using the account `ws-manager` created in t
 
 1. Log in to KubeSphere as `ws-manager` which has the permission to manage all workspaces on the platform. Click **Platform** in the top-left corner and select **Access Control**. In **Workspaces**, you can see there is only one default workspace `system-workspace` listed, where system-related components and services run. You are not allowed to delete this workspace.
 
-   ![create-workspace](/images/docs/quickstart/create-workspaces-projects-accounts/create-workspace.jpg)
-
-2. Click **Create** on the right, name the new workspace `demo-workspace` and set the user `ws-admin` as the workspace manager shown in the screenshot below:
-
-   ![create-workspace](/images/docs/quickstart/create-workspaces-projects-accounts/create-workspace.png)
+2. Click **Create** on the right, name the new workspace `demo-workspace` and set the user `ws-admin` as the workspace manager.
 
    Click **Create** after you finish.
 
@@ -107,9 +103,7 @@ In this step, you create a workspace using the account `ws-manager` created in t
 
    {{</ notice >}} 
 
-3. Log out of the console and log back in as `ws-admin`. In **Workspace Settings**, select **Workspace Members** and click **Invite Member**.
-
-   ![invite-member](/images/docs/quickstart/create-workspaces-projects-accounts/invite-member.png)
+3. Log out of the console and log back in as `ws-admin`. In **Workspace Settings**, select **Workspace Members** and click **Invite**.
 
 4. Invite both `project-admin` and `project-regular` to the workspace. Grant them the role `workspace-self-provisioner` and `workspace-viewer` respectively. 
 
@@ -117,9 +111,7 @@ In this step, you create a workspace using the account `ws-manager` created in t
 The actual role name follows a naming convention: `<workspace name>-<role name>`. For example, in this workspace named `demo-workspace`, the actual role name of the role `viewer` is `demo-workspace-viewer`.
    {{</ notice >}}
 
-   ![invite-member-and-grant-role](/images/docs/quickstart/create-workspaces-projects-accounts/invite-member-and-grant-role.png)
-
-5. After you add both `project-admin` and `project-regular` to the workspace, click **OK**. In **Workspace Members**, you can see three members listed.
+1. After you add both `project-admin` and `project-regular` to the workspace, click **OK**. In **Workspace Members**, you can see three members listed.
 
    | Account           | Role                         | Description                                                  |
    | ----------------- | ---------------------------- | ------------------------------------------------------------ |
@@ -133,19 +125,11 @@ In this step, you create a project using the account `project-admin` created in 
 
 1. Log in to KubeSphere as `project-admin`. In **Projects**, click **Create**.
 
-   ![kubesphere-projects](/images/docs/quickstart/create-workspaces-projects-accounts/kubesphere-projects.png)
-
 2. Enter the project name (for example, `demo-project`) and click **OK** to finish. You can also add an alias and description for the project.
-
-   ![demo-project](/images/docs/quickstart/create-workspaces-projects-accounts/demo-project.png)
 
 3. In **Projects**, click the project created just now to view its detailed information.
 
-   ![click-demo-project](/images/docs/quickstart/create-workspaces-projects-accounts/click-demo-project.png)
-
 4. On the **Overview** page of the project, the project quota remains unset by default. You can click **Set** and specify [resource requests and limits](../../workspace-administration/project-quotas/) as needed (for example, 1 core for CPU and 1000Gi for memory).
-
-   ![quota1](/images/docs/quickstart/create-workspaces-projects-accounts/quota1.png)
 
 5. Invite `project-regular` to this project and grant this user the role `operator`.
 
@@ -211,16 +195,10 @@ To create a DevOps project, you must install the KubeSphere DevOps system in adv
 
 1. Log in to the console as `project-admin`. In **DevOps Projects**, click **Create**.
 
-   ![devops](/images/docs/quickstart/create-workspaces-projects-accounts/devops.png)
-
 2. Enter the DevOps project name (for example, `demo-devops`) and click **OK**. You can also add an alias and description for the project.
-
-   ![devops-project](/images/docs/quickstart/create-workspaces-projects-accounts/devops-project.png)
 
 3. In **DevOps Projects**, click the project created just now to view its detailed information.
 
-   ![new-devops-project](/images/docs/quickstart/create-workspaces-projects-accounts/new-devops-project.png)
-
-4. Go to **Project Management** and select **Project Members**. Click **Invite Member** to grant `project-regular` the role of `operator`, who is allowed to create pipelines and credentials.
+4. Go to **Project Management** and select **Project Members**. Click **Invite** to grant `project-regular` the role of `operator`, who is allowed to create pipelines and credentials.
 
 You are now familiar with the multi-tenant management system of KubeSphere. In other tutorials, the account `project-regular` will also be used to demonstrate how to create applications and resources in a project or DevOps project.

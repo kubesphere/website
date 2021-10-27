@@ -15,11 +15,11 @@ This tutorial demonstrates how to import an AWS EKS cluster through the [direct 
 
 ## Import an EKS Cluster
 
-### Step 1: Deploy KubeSphere on your EKS Cluster
+### Step 1: Deploy KubeSphere on your EKS cluster
 
 You need to deploy KubeSphere on your EKS cluster first. For more information about how to deploy KubeSphere on EKS, refer to [Deploy KubeSphere on AWS EKS](../../../installing-on-kubernetes/hosted-kubernetes/install-kubesphere-on-eks/#install-kubesphere-on-eks).
 
-### Step 2: Prepare the EKS Member Cluster
+### Step 2: Prepare the EKS member cluster
 
 1. In order to manage the Member Cluster from the Host Cluster, you need to make `jwtSecret` the same between them. Therefore, get it first by executing the following command on your Host Cluster.
 
@@ -160,7 +160,7 @@ You need to deploy KubeSphere on your EKS cluster first. For more information ab
    ip-10-0-8-148.cn-north-1.compute.internal   Ready    <none>   78m   v1.18.8-eks-7c9bda
    ```
 
-### Step 4: Import the EKS Member Cluster
+### Step 4: Import the EKS member cluster
 
 1. Log in to the KubeSphere console on your Host Cluster as `admin`. Click **Platform** in the upper-left corner and then select **Cluster Management**. On the **Cluster Management** page, click **Add Cluster**.
 

@@ -23,31 +23,17 @@ This tutorial demonstrates how to deploy RadonDB MySQL from the App Store of Kub
 
 2. Find RadonDB MySQL and click **Deploy** on the **App Information** page.
 
-   ![RadonDB MySQL-in-app-store](/images/docs/appstore/built-in-apps/radondb-mysql-app/radondb-mysql-in-app-store.png)
-
-   ![deploy-RadonDB MySQL](/images/docs/appstore/built-in-apps/radondb-mysql-app/deploy-radondb-mysql.png)
-
 3. Set a name and select an app version. Make sure RadonDB MySQL is deployed in `demo-project` and click **Next**.
 
-   ![confirm-deployment](/images/docs/appstore/built-in-apps/radondb-mysql-app/confirm-deployment.png)
-
-4. In **App Configurations**, you can use the default configuration or customize the configuration by editing the YAML file directly. When you finish, click **Deploy**.
-
-   ![set-app-configuration](/images/docs/appstore/built-in-apps/radondb-mysql-app/set-app-configuration.png)
+4. In **App Settings**, you can use the default settings or customize the settings by editing the YAML file directly. When you finish, click **Deploy**.
 
 5. Wait until RadonDB MySQL is up and running.
-
-   ![RadonDB MySQL-running](/images/docs/appstore/built-in-apps/radondb-mysql-app/radondb-mysql-running.png)
 
 ### Step 2: Access RadonDB MySQL
 
 1. In **Services** under **Application Workloads**, click the Service name of RadonDB MySQL.
 
-   ![RadonDB MySQL-service](/images/docs/appstore/built-in-apps/radondb-mysql-app/radondb-mysql-service.png)
-
 2. Under **Pods**, expand the menu to see container details, and then click the **Terminal** icon.
-
-   ![RadonDB MySQL-terminal](/images/docs/appstore/built-in-apps/radondb-mysql-app/radondb-mysql-terminal.png)
 
 3. In the pop-up window, enter commands in the terminal directly to use the app.
 

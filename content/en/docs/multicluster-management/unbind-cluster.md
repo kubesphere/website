@@ -15,9 +15,9 @@ This tutorial demonstrates how to unbind a cluster from the central control plan
 
 ## Unbind a Cluster
 
-1. Click **Platform** in the top-left corner and select **Cluster Management**.
+1. Click **Platform** in the upper-left corner and select **Cluster Management**.
 
-2. On the **Cluster Management** page, click the cluster that you want to remove from the central control plane.
+2. On the **Cluster Management** page, click the cluster that you want to remove from the control plane.
 
 3. Go to **Basic Information** under **Cluster Settings**, check **I confirm I want to unbind the cluster** and click **Unbind**.
 

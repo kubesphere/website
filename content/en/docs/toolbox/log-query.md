@@ -18,11 +18,7 @@ You need to enable the [KubeSphere Logging System](../../pluggable-components/lo
 
 1. The log query function is available for all users. Log in to the console with any account, hover over the **Toolbox** in the lower-right corner and select **Log Search**.
 
-    ![log-query-guide](/images/docs/toolbox/log-query/log-query-guide.png)
-
-2. As shown in the pop-up window, you can see a time histogram of log numbers, a cluster selection drop-down list and a log search bar.
-
-    ![log-query-interface](/images/docs/toolbox/log-query/log-query-interface.png)
+2. In the pop-up window, you can see a time histogram of log numbers, a cluster selection drop-down list, and a log search bar.
 
     {{< notice note >}}
 
@@ -41,9 +37,7 @@ You need to enable the [KubeSphere Logging System](../../pluggable-components/lo
 
 3. You can customize the query time range by selecting **Time Range** in the log search bar. Alternatively, click on the bars in the time histogram, and KubeSphere will use the time range of that bar for log queries.
 
-    ![log-query-time-range](/images/docs/toolbox/log-query/log-query-time-range.png)
-
-    {{< notice note >}}
+{{< notice note >}}
 
 - KubeSphere stores logs for last seven days by default.
 - Each cluster has its own log retention period which can be set separately. You can modify it in `ClusterConfiguration`. Refer to [KubeSphere Logging System](../../pluggable-components/logging/) for more details.
@@ -53,31 +47,20 @@ You need to enable the [KubeSphere Logging System](../../pluggable-components/lo
 ## Use Search Parameters
 
 1. You can provide as many fields as possible to narrow down your search results. Below is an example of a log query on the cluster `product` with the keyword `error` in the project `kubesphere-system` within `last 12 hours`.
-
-    ![log-query-log-search](/images/docs/toolbox/log-query/log-query-log-search.png)
-
 2. It returns logs of 13 rows with the corresponding time, project, pod and container information all displayed.
 
 3. Click any one of the results from the list. Drill into its detail page and inspect the log from this Pod, including the complete context on the right. It is convenient for developers in terms of debugging and analyzing.
 
     {{< notice note >}}
 
-The log query interface supports dynamic refreshing with 5s, 10s or 15s, and allows users to export logs to a local file for further analysis (in the top-right corner).
+The log query interface supports dynamic refreshing with 5s, 10s or 15s, and allows users to export logs to a local file for further analysis (in the upper-right corner).
 
     {{</ notice >}}
-    
-    ![log-query-log-detail](/images/docs/toolbox/log-query/log-query-log-detail.png)
 
-4. As you can see from the left panel, you can switch between Pods and inspect its containers within the same project from the drop-down list. In this case, you can detect if any abnormal Pods affect other Pods.
+4. On the left panel, you can switch between Pods and inspect its containers within the same project from the drop-down list. In this case, you can detect if any abnormal Pods affect other Pods.
 
-    ![log-query-inspect-other-pods](/images/docs/toolbox/log-query/log-query-inspect-other-pods.png)
+## Drill into the Details Page
 
-## Drill into the Detail Page
+1. If the log looks abnormal, you can drill into the Pod detail page or container detail page to further inspect container logs, resource monitoring graphs, and events.
 
-1. If the log looks abnormal, you can drill into the Pod detail page or container detail page to further inspect container logs, resource monitoring graphs and events.
-
-    ![log-query-drill](/images/docs/toolbox/log-query/log-query-drill.png)
-
-2. Inspect the container detail page as follows. At the same time, it allows you to open the terminal to debug the container directly.
-
-    ![log-query-drill-container](/images/docs/toolbox/log-query/log-query-drill-container.png)
+2. Inspect the container detail page. At the same time, it allows you to open the terminal to debug the container directly.

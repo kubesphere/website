@@ -99,8 +99,6 @@ In **Advanced Settings**, make sure the memory limit is no less than 1000 Mi or 
 For the second environment variable added here, the value must be the same as the name you set for MySQL in step 5. Otherwise, WordPress cannot connect to the corresponding database of MySQL.
 
 {{</ notice >}}
-
-    ![environment-varss1](/images/docs/quickstart/wordpress-deployment/environment-varss1.png)
     
     Click **√** to save it and **Next** to continue.
 

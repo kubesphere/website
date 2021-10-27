@@ -59,7 +59,7 @@ KubeSphere creates the hostname automatically. To change the hostname, hover ove
 
 ### Step 2: Access Bookinfo
 
-1. In **Apps**, go to **Composing Apps** and click the app `bookinfo` to see its details page.
+1. In **Apps**, go to **Composed Apps** and click the app `bookinfo` to see its details page.
 
     {{< notice note >}}If you do not see the app in the list, refresh your page.
     {{</ notice >}}
