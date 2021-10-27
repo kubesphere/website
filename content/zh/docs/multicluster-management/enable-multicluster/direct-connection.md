@@ -30,12 +30,27 @@ weight: 5210
   kubectl edit cc ks-installer -n kubesphere-system
   ```
 
-在 `ks-installer` 的 YAML 文件中，搜寻到 `multicluster`，将 `clusterRole` 的值设置为 `host`，然后点击**更新**（如果使用 Web 控制台）使其生效：
+在 `ks-installer` 的 YAML 文件中，搜寻到 `multicluster`，将 `clusterRole` 的值设置为 `host`，然后点击**确定**（如果使用 Web 控制台）使其生效：
 
 ```yaml
 multicluster:
   clusterRole: host
 ```
+
+要设置主集群名称，请在 `ks-installer` 的 YAML 文件中的 `multicluster.clusterRole` 下添加 `hostClusterName` 字段：
+
+```yaml
+multicluster:
+  clusterRole: host
+  hostClusterName: <主集群名称>
+```
+
+{{< notice note >}}
+
+- 建议您在准备主集群的同时设置主集群名称。若您的主集群已在运行并且已经部署过资源，不建议您再去设置主集群名称。
+- 主集群名称只能包含小写字母、数字、连字符（-）或者半角句号（.），必须以小写字母或数字开头和结尾。
+
+{{</ notice >}}
 
 您需要**稍等片刻**待该更改生效。
 
@@ -43,14 +58,30 @@ multicluster:
 
 {{< tab "尚未安装 KubeSphere" >}}
 
-在 Linux 上或者在现有 Kubernetes 集群上安装 KubeSphere 之前，您可以定义一个主集群。如果您想[在 Linux 上安装 KubeSphere](../../../installing-on-linux/introduction/multioverview/#1-创建示例配置文件)，需要使用 `config-sample.yaml` 文件。如果您想[在现有 Kubernetes 集群上安装 KubeSphere](../../../installing-on-kubernetes/introduction/overview/#部署-kubesphere)，需要使用两个 YAML 文件，其中一个是 `cluster-configuration.yaml`。要设置一个主集群，请在安装 KubeSphere 之前，将 `config-sample.yaml` 或 `cluster-configuration.yaml` 文件中对应的 `clusterRole` 的值修改为 `host`。
+在 Linux 上或者在现有 Kubernetes 集群上安装 KubeSphere 之前，您可以定义一个主集群。如果您想[在 Linux 上安装 KubeSphere](../../../installing-on-linux/introduction/multioverview/#1-创建示例配置文件)，需要使用 `config-sample.yaml` 文件。如果您想[在现有 Kubernetes 集群上安装 KubeSphere](../../../installing-on-kubernetes/introduction/overview/#部署-kubesphere)，需要使用两个 YAML 文件，其中一个是 `cluster-configuration.yaml`。
+
+要设置一个主集群，请在安装 KubeSphere 之前，将 `config-sample.yaml` 或 `cluster-configuration.yaml` 文件中对应的 `clusterRole` 的值修改为 `host`。
 
 ```yaml
 multicluster:
   clusterRole: host
 ```
 
+要设置主集群名称，请在 `config-sample.yaml` 或 `cluster-configuration.yaml` 文件中的 `multicluster.clusterRole` 下添加 `hostClusterName` 字段：
+
+```yaml
+multicluster:
+  clusterRole: host
+  hostClusterName: <主集群名称>
+```
+
 {{< notice note >}}
+
+- 主集群名称只能包含小写字母、数字、连字符（-）或者半角句号（.），必须以小写字母或数字开头和结尾。
+
+{{</ notice >}}
+
+{{< notice info >}}
 
 如果您在单节点集群上安装 KubeSphere ([All-in-One](../../../quick-start/all-in-one-on-linux/))，则不需要创建 `config-sample.yaml` 文件。这种情况下，您可以在安装 KubeSphere 之后设置主集群。
 
@@ -103,7 +134,7 @@ authentication:
   jwtSecret: gfIwilcc0WjNGKJ5DLeksf2JKfcLgTZU
 ```
 
-向下滚动并将 `clusterRole` 的值设置为 `member`，然后点击**更新**（如果使用 Web 控制台）使其生效：
+向下滚动并将 `clusterRole` 的值设置为 `member`，然后点击**确定**（如果使用 Web 控制台）使其生效：
 
 ```yaml
 multicluster:
@@ -116,7 +147,9 @@ multicluster:
 
 {{< tab "尚未安装 KubeSphere" >}}
 
-在 Linux 上或者在现有 Kubernetes 集群上安装 KubeSphere 之前，您可以定义。如果您想[在 Linux 上安装 KubeSphere](../../../installing-on-linux/introduction/multioverview/#1-创建示例配置文件)，需要使用 `config-sample.yaml` 文件。如果您想[在现有 Kubernetes 集群上安装 KubeSphere](../../../installing-on-kubernetes/introduction/overview/#部署-kubesphere)，需要使用两个 YAML 文件，其中一个是 `cluster-configuration.yaml`。要设置，请在安装 KubeSphere 之前，在 `config-sample.yaml` 或 `cluster-configuration.yaml` 文件中输入上方 `jwtSecret` 所对应的值，并将 `clusterRole` 的值修改为 `member`。
+在 Linux 上或者在现有 Kubernetes 集群上安装 KubeSphere 之前，您可以定义。如果您想[在 Linux 上安装 KubeSphere](../../../installing-on-linux/introduction/multioverview/#1-创建示例配置文件)，需要使用 `config-sample.yaml` 文件。如果您想[在现有 Kubernetes 集群上安装 KubeSphere](../../../installing-on-kubernetes/introduction/overview/#部署-kubesphere)，需要使用两个 YAML 文件，其中一个是 `cluster-configuration.yaml`。
+
+要设置，请在安装 KubeSphere 之前，在 `config-sample.yaml` 或 `cluster-configuration.yaml` 文件中输入上方 `jwtSecret` 所对应的值，并将 `clusterRole` 的值修改为 `member`。
 
 ```yaml
 authentication:

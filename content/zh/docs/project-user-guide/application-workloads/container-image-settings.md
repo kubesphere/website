@@ -20,6 +20,13 @@ weight: 10280
 
 点击 <img src="/images/docs/zh-cn/project-user-guide/application-workloads/container-image-settings/plus-icon.png" width="20px" /> 或 <img src="/images/docs/zh-cn/project-user-guide/application-workloads/container-image-settings/minus-icon.png" width="20px" /> 图标设置容器组副本数量，该参数显示在清单文件中的 `.spec.replicas` 字段。该选项对守护进程集不可用。
 
+如果您在多集群项目中创建部署，请在**副本调度模式**下选择一个副本调度模式：
+
+- **指定副本数量**：选择集群并设置每个集群的容器组副本数。
+- **指定权重**：选择集群，在**副本总数**中设置容器组副本总数，并指定每个集群的权重。容器组副本将根据权重成比例地调度到每个集群。
+
+如果您在多集群项目中创建有状态副本集，请在**容器组副本数量**下选择集群并设置每个集群的容器组副本数。
+
 ### 添加容器
 
 点击**添加容器**来添加容器。
