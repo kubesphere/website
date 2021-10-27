@@ -26,9 +26,44 @@ section2:
 
 section3:
   videos:
+    - title: JuiceFS CSI Driver 的最佳实践
+      link: ./hangzhou1023-juicefs/
+      snapshot: https://pek3b.qingstor.com/kubesphere-community/images/hangzhou1023-juicefs-cover.png
+      type: iframe
+      createTime: 2021.10.23
+      group: Meetup
+
+    - title: KubeSphere DevOps 越开放，越强大
+      link: ./hangzhou1023-devops/
+      snapshot: https://pek3b.qingstor.com/kubesphere-community/images/hangzhou1023-devops-cover.png
+      type: iframe
+      createTime: 2021.10.23
+      group: Meetup
+
+    - title: 集群镜像重塑分布式应用交付
+      link: ./hangzhou1023-sealer/
+      snapshot: https://pek3b.qingstor.com/kubesphere-community/images/hangzhou1023-sealer-cover.png
+      type: iframe
+      createTime: 2021.10.23
+      group: Meetup
+
+    - title: 新一代高可用 MySQL K8s Operator 源码解析
+      link: ./hangzhou1023-mysql/
+      snapshot: https://pek3b.qingstor.com/kubesphere-community/images/hangzhou1023-mysql-cover.png
+      type: iframe
+      createTime: 2021.10.23
+      group: Meetup
+
+    - title: 云原生区块链探索之路
+      link: ./hangzhou1023-blockchain/
+      snapshot: https://pek3b.qingstor.com/kubesphere-community/images/hangzhou1023-blockchain-cover.png
+      type: iframe
+      createTime: 2021.10.23
+      group: Meetup
+
     - title: CKA/CKS 备考攻略
       link: ./ckacks1021-live/
-      snapshot: https://pek3b.qingstor.com/kubesphere-community/images/uisee0923-live-cover.png
+      snapshot: https://pek3b.qingstor.com/kubesphere-community/images/ckacks1021-live-cover.png
       type: iframe
       createTime: 2021.10.21
       group: 直播回放
@@ -365,6 +400,9 @@ section4:
           img: https://pek3b.qingstor.com/kubesphere-community/images/meetup-beijing-cover.png
           meetupUrl: https://kubesphere.com.cn/live/meetup-beijing/
 
+        - place: 杭州站（10.23）
+          img: https://pek3b.qingstor.com/kubesphere-community/images/meetup-hangzhou1023-cover.png
+          meetupUrl: https://kubesphere.com.cn/live/meetup-hangzhou1023/
   
 section5:
   title: 分享您的主题
