@@ -172,3 +172,40 @@ It is not recommended that you use NFS storage for production (especially on Kub
 ## Manage Volumes
 
 Once the storage class is created, you can create volumes with it. You can list, create, update and delete volumes in **Volumes** under **Storage** on the KubeSphere console. For more details, please see [Volume Management](../../project-user-guide/storage/volumes/).
+
+## Manage Volume Instances
+
+### Volume instance list page
+
+1. Log in to KubeSphere console as `admin`. Click **Platform** in the upper-left corner, select **Cluster Management**, and click **Volumes** under **Storage**.
+2. Click the **Volume Instances** tab on the **Volumes** page to view the volume instance list page that provides the following information:
+   - **Name**: Name of the volume instance. It is automatically specified by the system.
+   - **Status**: Current status of the volume instance, including:
+     - **Available**: The volume instance is available and not yet bound to a volume.
+     - **Bound**: The volume instance is bound to a volume.
+     - **Terminating**: The volume instance is being deleted.
+     - **Failed**: The volume instance is unavailable.
+   - **Capacity**: Capacity of the volume instance.
+   - **Access Mode**: Access mode of the volume instance, including:
+     - **RWO**: The volume instance can be mounted as read-write by a single node.
+     - **ROX**: The volume instance can be mounted as read-only by multiple nodes.
+     - **RWX**: The volume instance can be mounted as read-write by multiple nodes.
+   - **Recycling Strategy**: Recycling strategy of the volume instance, including:
+     - **Retain**: When a volume is deleted, the volume instance still exists and requires manual reclamation.
+     - **Delete**: Remove both the volume instance and the associated storage assets in the volume plugin infrastructure.
+     - **Recycle**: Erase the data on the volume instance and make it available again for a new volume.
+   - **Creation Time**: Time when the volume instance was created.
+3. Click <img src="/images/docs/cluster-administration/volume-instance/three-dots.png" width="15" /> on the right of a volume instance and select an operation from the drop-down menu:
+   - **Edit**: Edit the YAML file of a volume instance.
+   - **View YAML**: View the YAML file of the volume instance.
+   - **Delete**: Delete the volume instance. A volume instance in the **Bound** status cannot be deleted.
+
+### Volume instance details page
+
+1. Click the name of a volume instance to go to its details page.
+2. On the details page, click **Edit Information** to edit the basic information of the volume instance. By clicking **More**, select an operation from the drop-down menu:
+   - **View YAML**: View the YAML file of the volume instance.
+   - **Delete**: Delete the volume instance and return to the list page. A volume instance in the **Bound** status cannot be deleted.
+3. Click the **Resource Status** tab to view the volumes to which the volume instance is bound.
+4. Click the **Metadata** tab to view the labels and annotations of the volume instance.
+5. Click the **Events** tab to view the events of the volume instance.
