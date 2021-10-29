@@ -26,9 +26,44 @@ section2:
 
 section3:
   videos:
+    - title: JuiceFS CSI Driver 的最佳实践
+      link: ./hangzhou1023-juicefs/
+      snapshot: https://pek3b.qingstor.com/kubesphere-community/images/hangzhou1023-juicefs-cover.png
+      type: iframe
+      createTime: 2021.10.23
+      group: Meetup
+
+    - title: KubeSphere DevOps 越开放，越强大
+      link: ./hangzhou1023-devops/
+      snapshot: https://pek3b.qingstor.com/kubesphere-community/images/hangzhou1023-devops-cover.png
+      type: iframe
+      createTime: 2021.10.23
+      group: Meetup
+
+    - title: 集群镜像重塑分布式应用交付
+      link: ./hangzhou1023-sealer/
+      snapshot: https://pek3b.qingstor.com/kubesphere-community/images/hangzhou1023-sealer-cover.png
+      type: iframe
+      createTime: 2021.10.23
+      group: Meetup
+
+    - title: 新一代高可用 MySQL K8s Operator 源码解析
+      link: ./hangzhou1023-mysql/
+      snapshot: https://pek3b.qingstor.com/kubesphere-community/images/hangzhou1023-mysql-cover.png
+      type: iframe
+      createTime: 2021.10.23
+      group: Meetup
+
+    - title: 云原生区块链探索之路
+      link: ./hangzhou1023-blockchain/
+      snapshot: https://pek3b.qingstor.com/kubesphere-community/images/hangzhou1023-blockchain-cover.png
+      type: iframe
+      createTime: 2021.10.23
+      group: Meetup
+
     - title: CKA/CKS 备考攻略
       link: ./ckacks1021-live/
-      snapshot: https://pek3b.qingstor.com/kubesphere-community/images/uisee0923-live-cover.png
+      snapshot: https://pek3b.qingstor.com/kubesphere-community/images/ckacks1021-live-cover.png
       type: iframe
       createTime: 2021.10.21
       group: 直播回放
@@ -349,22 +384,25 @@ section4:
     - year: 2021
       meetup: 
 
-        - place: 上海站
-          img: https://pek3b.qingstor.com/kubesphere-community/images/meetup-shanghai-cover.png
-          meetupUrl: https://kubesphere.com.cn/live/meetup-shanghai/
-
-        - place: 杭州站
-          img: https://pek3b.qingstor.com/kubesphere-community/images/meetup-hangzhou-cover.png
-          meetupUrl: https://kubesphere.com.cn/live/meetup-hangzhou/
-
-        - place: 成都站
+        - place: 杭州站（10.23）
+          img: https://pek3b.qingstor.com/kubesphere-community/images/meetup-hangzhou1023-cover.png
+          meetupUrl: https://kubesphere.com.cn/live/meetup-hangzhou1023/
+        
+        - place: 北京站（7.29）
+          img: https://pek3b.qingstor.com/kubesphere-community/images/meetup-beijing-cover.png
+          meetupUrl: https://kubesphere.com.cn/live/meetup-beijing/
+        
+        - place: 成都站（6.19）
           img: https://pek3b.qingstor.com/kubesphere-community/images/meetup-chengdu-cover.png
           meetupUrl: https://kubesphere.com.cn/live/meetup-chengdu/
 
-        - place: 北京站
-          img: https://pek3b.qingstor.com/kubesphere-community/images/meetup-beijing-cover.png
-          meetupUrl: https://kubesphere.com.cn/live/meetup-beijing/
+        - place: 杭州站（5.29）
+          img: https://pek3b.qingstor.com/kubesphere-community/images/meetup-hangzhou-cover.png
+          meetupUrl: https://kubesphere.com.cn/live/meetup-hangzhou/
 
+        - place: 上海站（5.15）
+          img: https://pek3b.qingstor.com/kubesphere-community/images/meetup-shanghai-cover.png
+          meetupUrl: https://kubesphere.com.cn/live/meetup-shanghai/
   
 section5:
   title: 分享您的主题

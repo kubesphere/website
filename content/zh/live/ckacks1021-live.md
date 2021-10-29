@@ -6,7 +6,7 @@ css: scss/live-detail.scss
 
 section1:
   snapshot: 
-  videoUrl: //player.bilibili.com/player.html?aid=976126102&bvid=BV1Z44y1x7e3&cid=428904630&page=1
+  videoUrl: //player.bilibili.com/player.html?aid=976126102&bvid=BV1Z44y1x7e3&cid=428904630&page=1&high_quality=1
   type: iframe
   time: 2021-10-21 20:00-21:00
   timeIcon: /images/live/clock.svg
