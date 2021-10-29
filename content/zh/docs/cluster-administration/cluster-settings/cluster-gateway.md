@@ -29,13 +29,20 @@ You need to prepare a user with the `platform-admin` role, for example, `admin`.
      - **Annotations**: Add annotations to the cluster gateway.
      - **Configuration Options**: Add key-value pairs to the cluster gateway.
 
+   {{< notice info >}}
+
+   - To use the Tracing feature, turn on **Application Governance** when you create composed applications.
+   - For more information about how to use configuration options, see [Configuration options](https://kubernetes.github.io/ingress-nginx/user-guide/nginx-configuration/configmap/#configuration-options).
+
+   {{</ notice >}}
+
 4. Click **OK** to create the cluster gateway.
 
 5. The cluster gateway created is displayed and the basic information of the gateway is also shown on the page.
 
    {{< notice note >}}
 
-   A project gateway is automatically created when a cluster gateway is created. This project gateway serves as a global gateway for all projects in your cluster.
+   A gateway named `kubesphere-router-kubesphere-system` is also created, which serves as a global gateway for all projects in your cluster.
 
    {{</ notice >}}
 
@@ -46,6 +53,16 @@ You need to prepare a user with the `platform-admin` role, for example, `admin`.
    - **Delete**: Delete the cluster gateway.
 
 7. After a cluster gateway is created, see [Routes](../../../project-user-guide/application-workloads/routes/#create-a-route) for more information about how to create a route.
+
+## Cluster Gateway Details Page
+
+1. Under the **Cluster Gateway** tab, click **Manage** on the right of a cluster gateway and select **View Details** to open its details page.
+2. On the details page, click **Edit** to edit configurations of the cluster gateway or click **More** to select an operation.
+3. Click the **Monitoring** tab to view the monitoring metrics of the cluster gateway.
+4. Click the **Configuration Options** tab to view configuration options of the cluster gateway.
+5. Click the **Gateway Logs** tab to view logs of the cluster gateway.
+6. Click the **Resource Status** tab to view workload status of the cluster gateway. Click <img src="/images/docs/common-icons/replica-plus-icon.png" width="15" /> or <img src="/images/docs/common-icons/replica-minus-icon.png" width="15" /> to scale up or scale down the number of replicas.
+7. Click the **Metadata** tab to view annotations of the cluster gateway.
 
 ## View Project Gateways
 
