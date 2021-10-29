@@ -16,7 +16,7 @@ You need to prepare a user with the `platform-admin` role, for example, `admin`.
 
 1. Log in to the KubeSphere web console as `admin`. Click **Platform** in the upper-left corner and select **Cluster Management**.
 
-2. Go to **Gateway Settings** under **Cluster Settings** from the navigation pane, select the **Cluster Gateway** tab, and click **Set Gateway**.
+2. Go to **Gateway Settings** under **Cluster Settings** from the navigation pane, select the **Cluster Gateway** tab, and click **Enable Gateway**.
 
 3. In the displayed dialog box, select an access mode for the gateway from the following two options:
 
@@ -50,7 +50,7 @@ You need to prepare a user with the `platform-admin` role, for example, `admin`.
 
    - **View Details**: Go to the details page of the cluster gateway.
    - **Edit**: Edit configurations of the cluster gateway.
-   - **Delete**: Delete the cluster gateway.
+   - **Disable**: Disable the cluster gateway.
 
 7. After a cluster gateway is created, see [Routes](../../../project-user-guide/application-workloads/routes/#create-a-route) for more information about how to create a route.
 
@@ -71,7 +71,7 @@ On the **Gateway Settings** page, click the **Project Gateway** tab to view proj
 Click <img src="/images/docs/project-administration/role-and-member-management/three-dots.png" width="20px"> on the right of a project gateway to select an operation from the drop-down menu:
 
 - **Edit**: Edit configurations of the project gateway.
-- **Delete**: Delete the project gateway.
+- **Disable**: Disable the project gateway.
 
 {{< notice note >}}
 
