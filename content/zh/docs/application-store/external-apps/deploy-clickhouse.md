@@ -23,7 +23,7 @@ weight: 14340
 1. 以 `admin` 身份登录 KubeSphere 的 Web 控制台，并使用**工具箱**中的 **Kubectl** 执行以下命令来安装 ClickHouse Operator。建议至少准备 2 个可用集群节点。
 
    ```bash
-   kubectl apply -f https://raw.githubusercontent.com/radondb/radondb-clickhouse-kubernetes/main/clickhouse-operator-install.yml
+   $ kubectl apply -f https://raw.githubusercontent.com/radondb/radondb-clickhouse-kubernetes/main/clickhouse-operator-install.yml
    ```
 
    {{< notice note >}}
@@ -35,10 +35,12 @@ weight: 14340
    **预期结果**
 
    ```powershell
-   customresourcedefinition.apiextensions.k8s.io/clickhouseinstallations.clickhouse.altinity.com configured
-   customresourcedefinition.apiextensions.k8s.io/clickhouseinstallationtemplates.clickhouse.altinity.com created
-   customresourcedefinition.apiextensions.k8s.io/clickhouseoperatorconfigurations.clickhouse.altinity.com created
+   $ kubectl apply -f https://raw.githubusercontent.com/radondb/radondb-clickhouse-kubernetes/main/clickhouse-operator-install.yml
+   customresourcedefinition.apiextensions.k8s.io/clickhouseinstallations.clickhouse.radondb.com created
+   customresourcedefinition.apiextensions.k8s.io/clickhouseinstallationtemplates.clickhouse.radondb.com created
+   customresourcedefinition.apiextensions.k8s.io/clickhouseoperatorconfigurations.clickhouse.radondb.com created
    serviceaccount/clickhouse-operator created
+   clusterrole.rbac.authorization.k8s.io/clickhouse-operator-kube-system created
    clusterrolebinding.rbac.authorization.k8s.io/clickhouse-operator-kube-system created
    configmap/etc-clickhouse-operator-files created
    configmap/etc-clickhouse-operator-confd-files created
@@ -52,7 +54,7 @@ weight: 14340
 2. 执行如下命令可查看 ClickHouse Operator 资源状态。
 
    ```bash
-   kubectl get all --selector=app=clickhouse-operator -n kube-system
+   $ kubectl get all --selector=app=clickhouse-operator -n kube-system
    ```
    **预期结果**
    ```
@@ -149,7 +151,7 @@ weight: 14340
 2. 打开终端窗口，执行如下命令，并输入 ClickHouse 集群用户名和密码。
    
    ```bash
-   kubectl edit chi <app name> -n <project name>
+   $ kubectl edit chi <app name> -n <project name>
    ```
    
    {{< notice note >}}
@@ -163,7 +165,7 @@ weight: 14340
 3. 执行如下命令，访问 ClickHouse 集群，并可通过 `show databases` 命令查看数据库。
 
    ```bash
-   kubectl exec -it <pod name> -n <project name> -- clickhouse-client --user=<user name> --password=<user password>
+   $ kubectl exec -it <pod name> -n <project name> -- clickhouse-client --user=<user name> --password=<user password>
    ```
 
    {{< notice note >}}

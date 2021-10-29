@@ -23,7 +23,7 @@ This tutorial demonstrates how to deploy ClickHouse Operator and a ClickHouse Cl
 1. Log in to the KubeSphere Web console as `admin`, and use **Kubectl** from the **Toolbox** in the bottom-right corner to run the following command to install ClickHouse Operator. It is recommended that you have at least two worker nodes available in your cluster.
 
    ```bash
-   kubectl apply -f https://raw.githubusercontent.com/radondb/radondb-clickhouse-kubernetes/master/clickhouse-operator-install.yml
+   $ kubectl apply -f https://raw.githubusercontent.com/radondb/radondb-clickhouse-kubernetes/master/clickhouse-operator-install.yml
    ```
 
    {{< notice note >}}
@@ -34,11 +34,13 @@ This tutorial demonstrates how to deploy ClickHouse Operator and a ClickHouse Cl
 
 2. You can see the expected output as below if the installation is successful.
 
-   ```
-   customresourcedefinition.apiextensions.k8s.io/clickhouseinstallations.clickhouse.qingcloud.com created
-   customresourcedefinition.apiextensions.k8s.io/clickhouseinstallationtemplates.clickhouse.qingcloud.com created
-   customresourcedefinition.apiextensions.k8s.io/clickhouseoperatorconfigurations.clickhouse.qingcloud.com created
+   ```powershell
+   $ kubectl apply -f https://raw.githubusercontent.com/radondb/radondb-clickhouse-kubernetes/main/clickhouse-operator-install.yml
+   customresourcedefinition.apiextensions.k8s.io/clickhouseinstallations.clickhouse.radondb.com created
+   customresourcedefinition.apiextensions.k8s.io/clickhouseinstallationtemplates.clickhouse.radondb.com created
+   customresourcedefinition.apiextensions.k8s.io/clickhouseoperatorconfigurations.clickhouse.radondb.com created
    serviceaccount/clickhouse-operator created
+   clusterrole.rbac.authorization.k8s.io/clickhouse-operator-kube-system created
    clusterrolebinding.rbac.authorization.k8s.io/clickhouse-operator-kube-system created
    configmap/etc-clickhouse-operator-files created
    configmap/etc-clickhouse-operator-confd-files created
@@ -52,7 +54,7 @@ This tutorial demonstrates how to deploy ClickHouse Operator and a ClickHouse Cl
 3. You can run the following command to view the status of ClickHouse Operator resources.
 
    ```bash
-   kubectl get all --selector=app=clickhouse-operator -n kube-system
+   $ kubectl get all --selector=app=clickhouse-operator -n kube-system
    ```
 
    Expected output:
@@ -148,7 +150,7 @@ This tutorial demonstrates how to deploy ClickHouse Operator and a ClickHouse Cl
 2. In the window that appears, run the following command and then navigate to the username and password of the ClickHouse cluster.
 
    ```bash
-   kubectl edit chi clickho-749j8s -n demo-project
+   $ kubectl edit chi clickho-749j8s -n demo-project
    ```
 
    ![get-username-password](/images/docs/appstore/external-apps/deploy-clickhouse/get-username-password.png)
@@ -162,7 +164,7 @@ This tutorial demonstrates how to deploy ClickHouse Operator and a ClickHouse Cl
 3. Run the following command to access the ClickHouse cluster, and then you can use command like `show databases` to interact with it.
 
    ```bash
-   kubectl exec -it chi-clickho-749j8s-all-nodes-0-0-0 -n demo-project -- clickhouse-client --user=clickhouse --password=c1ickh0use0perator
+   $ kubectl exec -it chi-clickho-749j8s-all-nodes-0-0-0 -n demo-project -- clickhouse-client --user=clickhouse --password=c1ickh0use0perator
    ```
 
    ![use-clickhouse](/images/docs/appstore/external-apps/deploy-clickhouse/use-clickhouse.png)
@@ -172,4 +174,3 @@ This tutorial demonstrates how to deploy ClickHouse Operator and a ClickHouse Cl
    In the above command, `chi-clickho-749j8s-all-nodes-0-0-0` is the Pod name and you can find it in **Pods** under **Application Workloads**. Make sure you use your own Pod name, project name, username and password.
 
    {{</ notice >}}
-
