@@ -12,7 +12,7 @@ This tutorial demonstrates how to upgrade your cluster using KubeKey.
 ## Prerequisites
 
 - You need to have a KubeSphere cluster running v3.1.x. If your KubeSphere version is v3.0.0 or earlier, upgrade to v3.1.x first.
-- Read [Release Notes for 3.1.1](../../release/release-v311/) carefully.
+- Read [Release Notes for 3.2.0](../../release/release-v320/) carefully.
 - Back up any important component beforehand.
 - Make your upgrade plan. Two scenarios are provided in this document for [all-in-one clusters](#all-in-one-cluster) and [multi-node clusters](#multi-node-cluster) respectively.
 
@@ -27,7 +27,7 @@ Follow the steps below to download KubeKey before you upgrade your cluster.
 Download KubeKey from its [GitHub Release Page](https://github.com/kubesphere/kubekey/releases) or use the following command directly.
 
 ```bash
-curl -sfL https://get-kk.kubesphere.io | VERSION=v1.1.1 sh -
+curl -sfL https://get-kk.kubesphere.io | VERSION=v1.2.0 sh -
 ```
 
 {{</ tab >}}
@@ -43,7 +43,7 @@ export KKZONE=cn
 Run the following command to download KubeKey:
 
 ```bash
-curl -sfL https://get-kk.kubesphere.io | VERSION=v1.1.1 sh -
+curl -sfL https://get-kk.kubesphere.io | VERSION=v1.2.0 sh -
 ```
 
 {{< notice note >}}
@@ -58,7 +58,7 @@ After you download KubeKey, if you transfer it to a new machine also with poor n
 
 {{< notice note >}}
 
-The commands above download the latest release (v1.1.1) of KubeKey. You can change the version number in the command to download a specific version.
+The commands above download the latest release (v1.2.0) of KubeKey. You can change the version number in the command to download a specific version.
 
 {{</ notice >}} 
 
@@ -80,10 +80,10 @@ When upgrading Kubernetes, KubeKey will upgrade from one MINOR version to the ne
 
 ### All-in-one cluster
 
-Run the following command to use KubeKey to upgrade your single-node cluster to KubeSphere v3.2.0 and Kubernetes v1.20.4:
+Run the following command to use KubeKey to upgrade your single-node cluster to KubeSphere v3.2.0 and Kubernetes v1.21.5:
 
 ```bash
-./kk upgrade --with-kubernetes v1.20.4 --with-kubesphere v3.1.1
+./kk upgrade --with-kubernetes v1.21.5 --with-kubesphere v3.2.0
 ```
 
 To upgrade Kubernetes to a specific version, explicitly provide the version after the flag `--with-kubernetes`. Available versions are:
@@ -125,10 +125,10 @@ For more information, see [Edit the configuration file](../../installing-on-linu
 {{</ notice >}}
 
 #### Step 3: Upgrade your cluster
-The following command upgrades your cluster to KubeSphere v3.2.0 and Kubernetes v1.20.4:
+The following command upgrades your cluster to KubeSphere v3.2.0 and Kubernetes v1.21.5:
 
 ```bash
-./kk upgrade --with-kubernetes v1.20.4 --with-kubesphere v3.1.1 -f sample.yaml
+./kk upgrade --with-kubernetes v1.21.5 --with-kubesphere v3.2.0 -f sample.yaml
 ```
 
 To upgrade Kubernetes to a specific version, explicitly provide the version after the flag `--with-kubernetes`. Available versions are:

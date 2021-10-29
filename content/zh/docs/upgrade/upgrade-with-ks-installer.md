@@ -11,7 +11,7 @@ weight: 7300
 ## 准备工作
 
 - 您需要有一个运行 KubeSphere v3.1.x 的集群。如果您的 KubeSphere 是 v3.0.0 或更早的版本，请先升级至 v3.1.x。
-- 请仔细阅读 [Release Notes for 3.1.1](../../release/release-v311/)。
+- 请仔细阅读 [Release Notes for 3.2.0](../../release/release-v320/)。
 - 提前备份所有重要的组件。
 - KubeSphere v3.2.0 支持的 Kubernetes 版本：v1.19.x、v1.20.x、v1.21.5 和 v1.22.1。
 
@@ -20,7 +20,7 @@ weight: 7300
 运行以下命令升级集群：
 
 ```bash
-kubectl apply -f https://github.com/kubesphere/ks-installer/releases/download/v3.1.1/kubesphere-installer.yaml
+kubectl apply -f https://github.com/kubesphere/ks-installer/releases/download/v3.2.0/kubesphere-installer.yaml
 ```
 
 ## 启用可插拔组件

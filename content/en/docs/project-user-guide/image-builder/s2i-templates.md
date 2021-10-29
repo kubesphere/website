@@ -37,7 +37,7 @@ The Image Builder is compatible with that of OpenShift, and you can reuse it in 
 1. The [S2I command line tool](https://github.com/openshift/source-to-image/releases) provides an easy-to-use command to initialize a base directory structure required by the Builder. Run the following commands to install the S2I CLI.
 
    ```bash
-   $ wget https://github.com/openshift/source-to-image/releases/download/v1.1.14/source-to-image-v1.1.14-874754de-linux-386.tar.gz
+   $ wget https://github.com/openshift/source-to-image/releases/download/v1.2.04/source-to-image-v1.1.14-874754de-linux-386.tar.gz
    $ tar -xvf source-to-image-v1.1.14-874754de-linux-386.tar.gz
    $ ls
    s2i source-to-image-v1.1.14-874754de-linux-386.tar.gz  sti

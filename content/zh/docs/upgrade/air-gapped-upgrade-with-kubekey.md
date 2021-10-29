@@ -11,7 +11,7 @@ weight: 7400
 
 - 您需要有一个运行 KubeSphere v3.1.x 的集群。如果您的 KubeSphere 是 v3.0.0 或更早的版本，请先升级至 v3.1.x。
 - 您的 Kubernetes 版本必须为 v1.19.x 或更新版本。
-- 请仔细阅读 [Release Notes for 3.1.1](../../release/release-v311/)。
+- 请仔细阅读 [Release Notes for 3.2.0](../../release/release-v320/)。
 - 提前备份所有重要的组件。
 - Docker 仓库。您需要有一个 Harbor 或其他 Docker 仓库。有关更多信息，请参见[准备一个私有镜像仓库](../../installing-on-linux/introduction/air-gapped-installation/#步骤-2准备一个私有镜像仓库)。
 - 请确保每个节点都可以从该 Docker 仓库拉取镜像或向其推送镜像。
@@ -60,7 +60,7 @@ chmod +x kk
 1. 使用以下命令从能够访问互联网的机器上下载镜像清单文件 `images-list.txt`：
 
    ```bash
-   curl -L -O https://github.com/kubesphere/ks-installer/releases/download/v3.1.1/images-list.txt
+   curl -L -O https://github.com/kubesphere/ks-installer/releases/download/v3.2.0/images-list.txt
    ```
 
    {{< notice note >}}
@@ -72,7 +72,7 @@ chmod +x kk
 2. 下载 `offline-installation-tool.sh`。
 
    ```bash
-   curl -L -O https://github.com/kubesphere/ks-installer/releases/download/v3.1.1/offline-installation-tool.sh
+   curl -L -O https://github.com/kubesphere/ks-installer/releases/download/v3.2.0/offline-installation-tool.sh
    ```
 
 3. 使 `.sh` 文件可执行。
@@ -102,18 +102,18 @@ chmod +x kk
 5. 下载 Kubernetes 二进制文件。
 
    ```bash
-   ./offline-installation-tool.sh -b -v v1.17.9 
+   ./offline-installation-tool.sh -b -v v1.21.5 
    ```
 
    如果您无法访问 Google 的对象存储服务，请运行以下命令添加环境变量以变更来源。
 
    ```bash
-   export KKZONE=cn;./offline-installation-tool.sh -b -v v1.17.9 
+   export KKZONE=cn;./offline-installation-tool.sh -b -v v1.21.5 
    ```
 
    {{< notice note >}}
 
-   - 您可以根据自己的需求变更下载的 Kubernetes 版本。安装 KubeSphere v3.2.0 的建议 Kubernetes 版本：v1.19.8、v1.20.4、v1.20.6、v1.21.5 以及 v1.22.1。如果不指定 Kubernetes 版本，KubeKey 将默认安装 Kubernetes v1.19.8。有关受支持的 Kubernetes 版本的更多信息，请参见[支持矩阵](../../installing-on-linux/introduction/kubekey/#支持矩阵)。
+   - 您可以根据自己的需求变更下载的 Kubernetes 版本。安装 KubeSphere v3.2.0 的建议 Kubernetes 版本：v1.19.8、v1.20.4、v1.20.6、v1.21.5 以及 v1.22.1。如果不指定 Kubernetes 版本，KubeKey 将默认安装 Kubernetes v1.21.5。有关受支持的 Kubernetes 版本的更多信息，请参见[支持矩阵](../../installing-on-linux/introduction/kubekey/#支持矩阵)。
 
    - 您可以通过下载 Kubernetes v1.17.9 二进制文件将 Kubernetes 从 v1.16.13 升级到 v1.17.9。但对于跨多个版本升级，需要事先下载所有中间版本，例如您想将 Kubernetes 从 v1.15.12 升级到 v1.18.6，则需要下载 Kubernetes v1.16.13、v1.17.9 和 v1.18.6 二进制文件。
 
@@ -177,7 +177,7 @@ chmod +x kk
 例如：
 
 ```bash
-./kk create config --with-kubernetes v1.17.9 --with-kubesphere v3.1.1 -f config-sample.yaml
+./kk create config --with-kubernetes v1.21.5 --with-kubesphere v3.2.0 -f config-sample.yaml
 ```
 
 {{< notice note >}}
@@ -218,7 +218,7 @@ chmod +x kk
     privateRegistry: dockerhub.kubekey.local
 ```
 
-#### 将单节点集群升级至 KubeSphere v3.2.0 和 Kubernetes v1.19.8
+#### 将单节点集群升级至 KubeSphere v3.2.0 和 Kubernetes v1.21.5
 
 ```bash
 ./kk upgrade -f config-sample.yaml
@@ -265,7 +265,7 @@ chmod +x kk
 例如：
 
 ```bash
-./kk create config --with-kubernetes v1.17.9 --with-kubesphere v3.1.1 -f config-sample.yaml
+./kk create config --with-kubernetes v1.21.5 --with-kubesphere v3.2.0 -f config-sample.yaml
 ```
 
 {{< notice note >}}
@@ -308,7 +308,7 @@ chmod +x kk
     privateRegistry: dockerhub.kubekey.local
 ```
 
-#### 将多节点集群升级至 KubeSphere v3.2.0 和 Kubernetes v1.19.8
+#### 将多节点集群升级至 KubeSphere v3.2.0 和 Kubernetes v1.21.5
 
 ```bash
 ./kk upgrade -f config-sample.yaml

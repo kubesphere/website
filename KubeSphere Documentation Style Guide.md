@@ -184,7 +184,7 @@ When describing the UI, you can use the following prepositions.
 
   ```bash
   # Assume your original Kubernetes cluster is v1.17.9
-  ./kk create config --with-kubesphere --with-kubernetes v1.17.9
+  ./kk create config --with-kubesphere --with-kubernetes v1.20.4
   ```
 
 - If the comment is used for all the code (for example, serving as a header for explanations), put the comment at the beginning above the code. For example:

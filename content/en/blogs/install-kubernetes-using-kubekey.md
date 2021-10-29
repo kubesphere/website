@@ -93,7 +93,7 @@ You can use KubeKey to install a specified Kubernetes version. The dependency th
    The default Kubernetes version is v1.17.9. For more information about supported Kubernetes versions, see this [file](https://github.com/kubesphere/kubekey/blob/master/docs/kubernetes-versions.md). Execute the following command as an example:
 
    ```bash
-   ./kk create config --with-kubernetes v1.17.9
+   ./kk create config --with-kubernetes v1.20.4
    ```
 
 4. A default file `config-sample.yaml` will be created if you do not customize the name. Edit the file.
