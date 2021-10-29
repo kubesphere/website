@@ -75,7 +75,7 @@ Click <img src="/images/docs/project-administration/role-and-member-management/t
 
 {{< notice note >}}
 
-If a project gateway exists prior to the creation of a cluster gateway, the project gateway address may switch between the address of the cluster gateway and that of the project gateway back and forth. It is recommended that you should use either the cluster gateway or project gateway.
+If a project gateway exists prior to the creation of a cluster gateway, the project gateway address may switch between the address of the cluster gateway and that of the project gateway. It is recommended that you should use either the cluster gateway or project gateway.
 
 {{</ notice >}}
 
