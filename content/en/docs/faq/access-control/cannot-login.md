@@ -139,24 +139,3 @@ You need to restore Redis and make sure it is running normally with good network
 ```
 kubectl -n kubesphere-system rollout restart deploy ks-console
 ```
-
-
-## Unable to Log in through a Third Party Account after Upgrading
-
-![forbidden](/images/docs/faq/access-control-and-account-management/cannot-login/forbidden.jpg)
-
-```js
-{
-  code: 403,
-  kind: 'Status',
-  apiVersion: 'v1',
-  metadata: {},
-  status: 'Failure',
-  message: 'users.iam.kubesphere.io is forbidden: User "system:pre-registration" cannot create resource "users" in API group "iam.kubesphere.io" at the cluster scope',
-  reason: 'Forbidden',
-  details: { group: 'iam.kubesphere.io', kind: 'users' },
-  statusText: 'Forbidden'
-}
-```
-
-This is a bug in the process of upgrading from V3.0.0 to v3.1.0. For more information about related issues and solutions, see https://github.com/kubesphere/kubesphere/issues/3850.

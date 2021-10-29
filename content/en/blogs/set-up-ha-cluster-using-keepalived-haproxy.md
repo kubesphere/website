@@ -279,7 +279,7 @@ Before you start to create your Kubernetes cluster, make sure you have tested th
 3. Create a configuration file to specify cluster information. The Kubernetes version I am going to install is `v1.17.9`.
 
    ```bash
-   ./kk create config --with-kubernetes v1.17.9
+   ./kk create config --with-kubernetes v1.20.4
    ```
 
 4. A default file `config-sample.yaml` will be created. Edit the file and here is my configuration for your reference:

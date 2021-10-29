@@ -43,9 +43,9 @@ DevOps 系统为用户提供了一个自动化的环境，应用可以自动发�
 
 ### 在 Kubernetes 上安装
 
-[在 Kubernetes 上安装 KubeSphere](../../installing-on-kubernetes/introduction/overview/) 的教程中说明了在 Kubernetes 上安装 KubeSphere 的流程，不过，需要事先在 [cluster-configuration.yaml](https://github.com/kubesphere/ks-installer/releases/download/v3.1.1/cluster-configuration.yaml) 文件中启用 DevOps（可选系统组件）。
+[在 Kubernetes 上安装 KubeSphere](../../installing-on-kubernetes/introduction/overview/) 的教程中说明了在 Kubernetes 上安装 KubeSphere 的流程，不过，需要事先在 [cluster-configuration.yaml](https://github.com/kubesphere/ks-installer/releases/download/v3.2.0/cluster-configuration.yaml) 文件中启用 DevOps（可选系统组件）。
 
-1. 下载 [cluster-configuration.yaml](https://github.com/kubesphere/ks-installer/releases/download/v3.1.1/cluster-configuration.yaml) 文件，然后打开并开始编辑。
+1. 下载 [cluster-configuration.yaml](https://github.com/kubesphere/ks-installer/releases/download/v3.2.0/cluster-configuration.yaml) 文件，然后打开并开始编辑。
 
     ```bash
     vi cluster-configuration.yaml
@@ -61,7 +61,7 @@ DevOps 系统为用户提供了一个自动化的环境，应用可以自动发�
 3. 执行以下命令开始安装：
 
     ```bash
-    kubectl apply -f https://github.com/kubesphere/ks-installer/releases/download/v3.1.1/kubesphere-installer.yaml
+    kubectl apply -f https://github.com/kubesphere/ks-installer/releases/download/v3.2.0/kubesphere-installer.yaml
     
     kubectl apply -f cluster-configuration.yaml
     ```

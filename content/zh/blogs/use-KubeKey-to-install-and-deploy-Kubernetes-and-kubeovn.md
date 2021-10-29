@@ -51,7 +51,7 @@ chmod +x kk
 创建示例配置文件：
 
 ```shell
-./kk create cluster --with-kubernetes v1.17.9
+./kk create cluster --with-kubernetes v1.20.4
 ```
 完整的文档请参考[官方文档](https://kubesphere.com.cn/docs/installing-on-linux/introduction/multioverview/)
 

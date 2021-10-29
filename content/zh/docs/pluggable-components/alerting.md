@@ -39,9 +39,9 @@ weight: 6600
 
 ### 在 Kubernetes 上安装
 
-[在 Kubernetes 上安装 KubeSphere](../../installing-on-kubernetes/introduction/overview/) 时，您可以先在 [cluster-configuration.yaml](https://github.com/kubesphere/ks-installer/releases/download/v3.1.1/cluster-configuration.yaml) 文件中启用告警系统。
+[在 Kubernetes 上安装 KubeSphere](../../installing-on-kubernetes/introduction/overview/) 时，您可以先在 [cluster-configuration.yaml](https://github.com/kubesphere/ks-installer/releases/download/v3.2.0/cluster-configuration.yaml) 文件中启用告警系统。
 
-1. 下载 [cluster-configuration.yaml](https://github.com/kubesphere/ks-installer/releases/download/v3.1.1/cluster-configuration.yaml) 文件并进行编辑。
+1. 下载 [cluster-configuration.yaml](https://github.com/kubesphere/ks-installer/releases/download/v3.2.0/cluster-configuration.yaml) 文件并进行编辑。
 
     ```bash
     vi cluster-configuration.yaml
@@ -57,7 +57,7 @@ weight: 6600
 3. 执行以下命令开始安装：
 
     ```bash
-    kubectl apply -f https://github.com/kubesphere/ks-installer/releases/download/v3.1.1/kubesphere-installer.yaml
+    kubectl apply -f https://github.com/kubesphere/ks-installer/releases/download/v3.2.0/kubesphere-installer.yaml
     
     kubectl apply -f cluster-configuration.yaml
     ```

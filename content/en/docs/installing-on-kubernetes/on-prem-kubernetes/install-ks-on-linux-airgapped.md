@@ -89,7 +89,7 @@ As you install KubeSphere in an air-gapped environment, you need to prepare an i
 1. Download the image list file `images-list.txt` from a machine that has access to the Internet through the following command:
 
    ```bash
-   curl -L -O https://github.com/kubesphere/ks-installer/releases/download/v3.1.1/images-list.txt
+   curl -L -O https://github.com/kubesphere/ks-installer/releases/download/v3.2.0/images-list.txt
    ```
 
    {{< notice note >}}
@@ -101,7 +101,7 @@ As you install KubeSphere in an air-gapped environment, you need to prepare an i
 2. Download `offline-installation-tool.sh`. 
 
    ```bash
-   curl -L -O https://github.com/kubesphere/ks-installer/releases/download/v3.1.1/offline-installation-tool.sh
+   curl -L -O https://github.com/kubesphere/ks-installer/releases/download/v3.2.0/offline-installation-tool.sh
    ```
 
 3. Make the `.sh` file executable.
@@ -161,8 +161,8 @@ Similar to installing KubeSphere on an existing Kubernetes cluster in an online 
 1. Execute the following commands to download these two files and transfer them to your machine that serves as the taskbox for installation.
 
    ```bash
-   curl -L -O https://github.com/kubesphere/ks-installer/releases/download/v3.1.1/cluster-configuration.yaml
-   curl -L -O https://github.com/kubesphere/ks-installer/releases/download/v3.1.1/kubesphere-installer.yaml
+   curl -L -O https://github.com/kubesphere/ks-installer/releases/download/v3.2.0/cluster-configuration.yaml
+   curl -L -O https://github.com/kubesphere/ks-installer/releases/download/v3.2.0/kubesphere-installer.yaml
    ```
 
 2. Edit `cluster-configuration.yaml` to add your private image registry. For example, `dockerhub.kubekey.local` is the registry address in this tutorial, then use it as the value of `.spec.local_registry` as below:

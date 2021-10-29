@@ -74,8 +74,8 @@ volumeBindingMode: Immediate
 接下来就可以使用 [ks-installer](https://github.com/kubesphere/ks-installer) 在已有的 Kubernetes 集群上来部署 KubeSphere，建议首先还是以最小功能集进行安装，可执行以下命令：
 
 ```bash
-kubectl apply -f https://github.com/kubesphere/ks-installer/releases/download/v3.1.1/kubesphere-installer.yaml
-kubectl apply -f https://github.com/kubesphere/ks-installer/releases/download/v3.1.1/cluster-configuration.yaml
+kubectl apply -f https://github.com/kubesphere/ks-installer/releases/download/v3.2.0/kubesphere-installer.yaml
+kubectl apply -f https://github.com/kubesphere/ks-installer/releases/download/v3.2.0/cluster-configuration.yaml
 ```
 
 执行部署命令后，可以通过进入**工作负载** > **容器组 Pod** 界面，在右侧面板中查询 `kubesphere-system` 命名空间下的 Pod 运行状态了解 KubeSphere 平台最小功能集的部署状态；通过该命名空间下 `ks-console-xxxx` 容器的状态来了解 KubeSphere 控制台应用的可用状态。

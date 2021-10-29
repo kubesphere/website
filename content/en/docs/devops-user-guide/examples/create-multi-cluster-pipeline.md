@@ -40,7 +40,7 @@ See the table below for the role of each cluster.
 
 {{< notice note >}}
 
-These Kubernetes clusters can be hosted across different cloud providers and their Kubernetes versions can also vary. Recommended Kubernetes versions for KubeSphere v3.1.0: v1.17.9, v1.18.8, v1.19.8 and v1.20.4.
+These Kubernetes clusters can be hosted across different cloud providers and their Kubernetes versions can also vary. Recommended Kubernetes versions for KubeSphere v3.2.0: v1.19.x, v1.20.x, v1.21.5, and v1.22.1.
 
 {{</ notice >}}
 

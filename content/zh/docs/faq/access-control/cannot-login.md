@@ -141,23 +141,3 @@ E0909 07:05:22.770468 1 redis.go:51] unable to reach redis host EOF
 ```
 kubectl -n kubesphere-system rollout restart deploy ks-console
 ```
-
-## 升级到 v3.1.0 后无法通过第三方帐号登录
-
-![forbidden](/images/docs/faq/access-control-and-account-management/cannot-login/forbidden.jpg)
-
-```js
-{
-  code: 403,
-  kind: 'Status',
-  apiVersion: 'v1',
-  metadata: {},
-  status: 'Failure',
-  message: 'users.iam.kubesphere.io is forbidden: User "system:pre-registration" cannot create resource "users" in API group "iam.kubesphere.io" at the cluster scope',
-  reason: 'Forbidden',
-  details: { group: 'iam.kubesphere.io', kind: 'users' },
-  statusText: 'Forbidden'
-}
-```
-
-这是一个从 v3.0.0 升级到 v3.1.0 过程中存在的 Bug。相关和解决方式请参见 [https://github.com/kubesphere/kubesphere/issues/3850](https://github.com/kubesphere/kubesphere/issues/3850)。

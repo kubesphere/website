@@ -144,7 +144,7 @@ docker run -d \
 
 ## 步骤 3：下载 KubeKey
 
-与在 Linux 上在线安装 KubeSphere 相似，您需要事先[下载 KubeKey v1.1.1](https://github.com/kubesphere/kubekey/releases)。下载 `tar.gz` 文件，将它传输到充当任务机的本地机器上进行安装。解压文件后，执行以下命令，使 `kk` 可执行。
+与在 Linux 上在线安装 KubeSphere 相似，您需要事先[下载 KubeKey v1.2.0](https://github.com/kubesphere/kubekey/releases)。下载 `tar.gz` 文件，将它传输到充当任务机的本地机器上进行安装。解压文件后，执行以下命令，使 `kk` 可执行。
 
 ```bash
 chmod +x kk
@@ -157,7 +157,7 @@ chmod +x kk
 1. 使用以下命令从能够访问互联网的机器上下载镜像清单文件 `images-list.txt`：
 
    ```bash
-   curl -L -O https://github.com/kubesphere/ks-installer/releases/download/v3.1.1/images-list.txt
+   curl -L -O https://github.com/kubesphere/ks-installer/releases/download/v3.2.0/images-list.txt
    ```
 
    {{< notice note >}}
@@ -169,7 +169,7 @@ chmod +x kk
 2. 下载 `offline-installation-tool.sh`。
 
    ```bash
-   curl -L -O https://github.com/kubesphere/ks-installer/releases/download/v3.1.1/offline-installation-tool.sh
+   curl -L -O https://github.com/kubesphere/ks-installer/releases/download/v3.2.0/offline-installation-tool.sh
    ```
 
 3. 使 `.sh` 文件可执行。
@@ -199,18 +199,18 @@ chmod +x kk
 5. 下载 Kubernetes 二进制文件。
 
    ```bash
-   ./offline-installation-tool.sh -b -v v1.17.9 
+   ./offline-installation-tool.sh -b -v v1.21.5 
    ```
 
    如果您无法访问 Google 的对象存储服务，请运行以下命令添加环境变量以变更来源。
 
    ```bash
-   export KKZONE=cn;./offline-installation-tool.sh -b -v v1.17.9 
+   export KKZONE=cn;./offline-installation-tool.sh -b -v v1.21.5 
    ```
 
    {{< notice note >}}
 
-   - 您可以根据自己的需求变更下载的 Kubernetes 版本。安装 KubeSphere v3.1.1 的建议 Kubernetes 版本：v1.17.9，v1.18.8，v1.19.8 以及 v1.20.4。如果不指定 Kubernetes 版本，KubeKey 将默认安装 Kubernetes v1.19.8。有关受支持的 Kubernetes 版本的更多信息，请参见[支持矩阵](../../../installing-on-linux/introduction/kubekey/#支持矩阵)。
+   - 您可以根据自己的需求变更下载的 Kubernetes 版本。安装 KubeSphere v3.1.1 的建议 Kubernetes 版本：v1.17.9，v1.18.8，v1.19.8 以及 v1.20.4。如果不指定 Kubernetes 版本，KubeKey 将默认安装 Kubernetes v1.21.5。有关受支持的 Kubernetes 版本的更多信息，请参见[支持矩阵](../../../installing-on-linux/introduction/kubekey/#支持矩阵)。
 
    - 运行脚本后，会自动创建一个文件夹 `kubekey`。请注意，您稍后创建集群时，该文件和 `kk` 必须放在同一个目录下。
 
@@ -257,7 +257,7 @@ chmod +x kk
 例如：
 
 ```bash
-./kk create config --with-kubernetes v1.17.9 --with-kubesphere v3.1.1 -f config-sample.yaml
+./kk create config --with-kubernetes v1.21.5 --with-kubesphere v3.2.0 -f config-sample.yaml
 ```
 
 {{< notice note >}}

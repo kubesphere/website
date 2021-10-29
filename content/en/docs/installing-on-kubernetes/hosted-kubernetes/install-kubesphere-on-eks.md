@@ -125,9 +125,9 @@ We will use the kubectl command-line utility for communicating with the cluster 
 - Install KubeSphere using kubectl. The following commands are only for the default minimal installation.
 
    ```bash
-   kubectl apply -f https://github.com/kubesphere/ks-installer/releases/download/v3.1.1/kubesphere-installer.yaml
+   kubectl apply -f https://github.com/kubesphere/ks-installer/releases/download/v3.2.0/kubesphere-installer.yaml
 
-   kubectl apply -f https://github.com/kubesphere/ks-installer/releases/download/v3.1.1/cluster-configuration.yaml
+   kubectl apply -f https://github.com/kubesphere/ks-installer/releases/download/v3.2.0/cluster-configuration.yaml
    ```
 
 - Inspect the logs of installation:
