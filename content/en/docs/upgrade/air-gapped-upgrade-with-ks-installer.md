@@ -1,6 +1,6 @@
 ---
 title: "Air-Gapped Upgrade with ks-installer"
-keywords: "Air-Gapped, upgrade, kubesphere, v3.1.1"
+keywords: "Air-Gapped, upgrade, kubesphere, v3.2.0"
 description: "Use ks-installer and offline package to upgrade KubeSphere."
 linkTitle: "Air-Gapped Upgrade with ks-installer"
 weight: 7500
@@ -11,11 +11,11 @@ ks-installer is recommended for users whose Kubernetes clusters were not set up 
 
 ## Prerequisites
 
-- You need to have a KubeSphere cluster running v3.0.0. If your KubeSphere version is v2.1.1 or earlier, upgrade to v3.0.0 first.
+- You need to have a KubeSphere cluster running v3.1.x. If your KubeSphere version is v3.0.0 or earlier, upgrade to v3.1.x first.
 - Read [Release Notes for 3.1.1](../../release/release-v311/) carefully.
 - Back up any important component beforehand.
 - A Docker registry. You need to have a Harbor or other Docker registries. For more information, see [Prepare a Private Image Registry](../../installing-on-linux/introduction/air-gapped-installation/#step-2-prepare-a-private-image-registry).
-- Supported Kubernetes versions of KubeSphere v3.1.1: v1.17.x, v1.18.x, v1.19.x or v1.20.x.
+- Supported Kubernetes versions of KubeSphere v3.2.0: v1.19.x, v1.20.x, v1.21.5, or v1.22.1.
 
 ## Step 1: Prepare Installation Images
 
@@ -99,7 +99,7 @@ Similar to installing KubeSphere on an existing Kubernetes cluster in an online 
    curl -L -O https://github.com/kubesphere/ks-installer/releases/download/v3.1.1/kubesphere-installer.yaml
    ```
    
-2. Verify that you have specified your private image registry in `spec.local_registry` in `cluster-configuration.yaml`. Note that if your existing cluster was installed in an air-gapped environment, you may already have this field specified. Otherwise, run the following command to edit `cluster-configuration.yaml` of your existing KubeSphere v3.0.0 cluster and add the private image registry:
+2. Verify that you have specified your private image registry in `spec.local_registry` in `cluster-configuration.yaml`. Note that if your existing cluster was installed in an air-gapped environment, you may already have this field specified. Otherwise, run the following command to edit `cluster-configuration.yaml` of your existing KubeSphere v3.1.x cluster and add the private image registry:
 
    ```
    kubectl edit cc -n kubesphere-system
