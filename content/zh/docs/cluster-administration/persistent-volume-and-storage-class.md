@@ -167,3 +167,42 @@ NFS（网络文件系统）广泛用于带有 [NFS-Client](https://github.com/ku
 ## 管理存储卷
 
 存储类型创建后，您可以使用它来创建存储卷。您可以在 KubeSphere 控制台上的**存储管理**下面的**存储卷**中列示、创建、更新和删除存储卷。有关更多详细信息，请参见[存储卷管理](../../project-user-guide/storage/volumes/)。
+
+## 管理存储卷实例
+
+KubeSphere 中的存储卷即 Kubernetes 中的[持久卷声明](https://kubernetes.io/zh/docs/concepts/storage/persistent-volumes/#persistentvolumeclaims)，存储卷实例即 Kubernetes 中的[持久卷](https://kubernetes.io/zh/docs/concepts/storage/persistent-volumes/)。
+
+### Volume instance list page
+
+1. Log in to KubeSphere console as `admin`. Click **Platform** in the upper-left corner, select **Cluster Management**, and click **Volumes** under **Storage**.
+2. Click the **Volume Instances** tab on the **Volumes** page to view the volume instance list page that provides the following information:
+   - **Name**: Name of the volume instance. It is specified by the field `.metadata.name` in the manifest file of the volume instance.
+   - **Status**: Current status of the volume instance. It is specified by the field `.status.phase` in the manifest file of the volume instance, including:
+     - **Available**: The volume instance is available and not yet bound to a volume.
+     - **Bound**: The volume instance is bound to a volume.
+     - **Terminating**: The volume instance is being deleted.
+     - **Failed**: The volume instance is unavailable.
+   - **Capacity**: Capacity of the volume instance. It is specified by the field `.spec.capacity.storage` in the manifest file of the volume instance.
+   - **Access Mode**: Access mode of the volume instance. It is specified by the field `.spec.accessModes` in the manifest file of the volume instance, including:
+     - **RWO**: The volume instance can be mounted as read-write by a single node.
+     - **ROX**: The volume instance can be mounted as read-only by multiple nodes.
+     - **RWX**: The volume instance can be mounted as read-write by multiple nodes.
+   - **Recycling Strategy**: Recycling strategy of the volume instance. It is specified by the field `.spec.persistentVolumeReclaimPolicy` in the manifest file of the volume instance, including:
+     - **Retain**: When a volume is deleted, the volume instance still exists and requires manual reclamation.
+     - **Delete**: Remove both the volume instance and the associated storage assets in the volume plugin infrastructure.
+     - **Recycle**: Erase the data on the volume instance and make it available again for a new volume.
+   - **Creation Time**: Time when the volume instance was created.
+3. Click <img src="/images/docs/common-icons/three-dots.png" width="15" /> on the right of a volume instance and select an operation from the drop-down menu:
+   - **Edit**: Edit the YAML file of a volume instance.
+   - **View YAML**: View the YAML file of the volume instance.
+   - **Delete**: Delete the volume instance. A volume instance in the **Bound** status cannot be deleted.
+
+### Volume instance details page
+
+1. Click the name of a volume instance to go to its details page.
+2. On the details page, click **Edit Information** to edit the basic information of the volume instance. By clicking **More**, select an operation from the drop-down menu:
+   - **View YAML**: View the YAML file of the volume instance.
+   - **Delete**: Delete the volume instance and return to the list page. A volume instance in the **Bound** status cannot be deleted.
+3. Click the **Resource Status** tab to view the volumes to which the volume instance is bound.
+4. Click the **Metadata** tab to view the labels and annotations of the volume instance.
+5. Click the **Events** tab to view the events of the volume instance.
