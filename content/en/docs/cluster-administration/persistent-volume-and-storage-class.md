@@ -175,27 +175,29 @@ Once the storage class is created, you can create volumes with it. You can list,
 
 ## Manage Volume Instances
 
+A volume in KubeSphere is a [persistent volume claim](https://kubernetes.io/docs/concepts/storage/persistent-volumes/#persistentvolumeclaims) in Kubernetes, and a  volume instance is a [persistent volume](https://kubernetes.io/docs/concepts/storage/persistent-volumes/) in Kubernetes. 
+
 ### Volume instance list page
 
 1. Log in to KubeSphere console as `admin`. Click **Platform** in the upper-left corner, select **Cluster Management**, and click **Volumes** under **Storage**.
 2. Click the **Volume Instances** tab on the **Volumes** page to view the volume instance list page that provides the following information:
-   - **Name**: Name of the volume instance. It is automatically specified by the system.
-   - **Status**: Current status of the volume instance, including:
+   - **Name**: Name of the volume instance. It is specified by the field `.metadata.name` in the manifest file of the volume instance.
+   - **Status**: Current status of the volume instance. It is specified by the field `.status.phase` in the manifest file of the volume instance, including:
      - **Available**: The volume instance is available and not yet bound to a volume.
      - **Bound**: The volume instance is bound to a volume.
      - **Terminating**: The volume instance is being deleted.
      - **Failed**: The volume instance is unavailable.
-   - **Capacity**: Capacity of the volume instance.
-   - **Access Mode**: Access mode of the volume instance, including:
+   - **Capacity**: Capacity of the volume instance. It is specified by the field `.spec.capacity.storage` in the manifest file of the volume instance.
+   - **Access Mode**: Access mode of the volume instance. It is specified by the field `.spec.accessModes` in the manifest file of the volume instance, including:
      - **RWO**: The volume instance can be mounted as read-write by a single node.
      - **ROX**: The volume instance can be mounted as read-only by multiple nodes.
      - **RWX**: The volume instance can be mounted as read-write by multiple nodes.
-   - **Recycling Strategy**: Recycling strategy of the volume instance, including:
+   - **Recycling Strategy**: Recycling strategy of the volume instance. It is specified by the field `.spec.persistentVolumeReclaimPolicy` in the manifest file of the volume instance, including:
      - **Retain**: When a volume is deleted, the volume instance still exists and requires manual reclamation.
      - **Delete**: Remove both the volume instance and the associated storage assets in the volume plugin infrastructure.
      - **Recycle**: Erase the data on the volume instance and make it available again for a new volume.
    - **Creation Time**: Time when the volume instance was created.
-3. Click <img src="/images/docs/cluster-administration/volume-instance/three-dots.png" width="15" /> on the right of a volume instance and select an operation from the drop-down menu:
+3. Click <img src="/images/docs/common-icons/three-dots.png" width="15" /> on the right of a volume instance and select an operation from the drop-down menu:
    - **Edit**: Edit the YAML file of a volume instance.
    - **View YAML**: View the YAML file of the volume instance.
    - **Delete**: Delete the volume instance. A volume instance in the **Bound** status cannot be deleted.
