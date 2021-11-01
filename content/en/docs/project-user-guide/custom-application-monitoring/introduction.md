@@ -20,7 +20,7 @@ First of all, your application must expose Prometheus-formatted metrics. The Pro
 
 #### Direct exposing
 
-Directly exposing Prometheus metrics from applications is a common way among cloud-native applications. It requires developers to import Prometheus client libraries in their codes and expose metrics at a specific endpoint. Many applications, such as ETCD, CoreDNS, and Istio, adopt this method.
+Directly exposing Prometheus metrics from applications is a common way among cloud-native applications. It requires developers to import Prometheus client libraries in their codes and expose metrics at a specific endpoint. Many applications, such as etcd, CoreDNS, and Istio, adopt this method.
 
 The Prometheus community offers client libraries for most programming languages. Find your language on the [Prometheus Client Libraries](https://prometheus.io/docs/instrumenting/clientlibs/) page. For Go developers, read [Instrumenting a Go application](https://prometheus.io/docs/guides/go-application/) to learn how to write a Prometheus-compliant application.
 

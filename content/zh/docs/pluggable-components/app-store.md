@@ -1,6 +1,6 @@
 ---
 title: "KubeSphere 应用商店"
-keywords: "Kubernetes, KubeSphere, app-store, OpenPitrix"
+keywords: "Kubernetes, KubeSphere, App Store, OpenPitrix"
 description: "了解如何启用应用商店，一个可以在内部实现数据和应用共享、并制定应用交付流程的行业标准的组件。"
 linkTitle: "KubeSphere 应用商店"
 weight: 6200
@@ -9,8 +9,6 @@ weight: 6200
 作为一个开源的、以应用为中心的容器平台，KubeSphere 在 [OpenPitrix](https://github.com/openpitrix/openpitrix) 的基础上，为用户提供了一个基于 Helm 的应用商店，用于应用生命周期管理。OpenPitrix 是一个开源的 Web 平台，用于打包、部署和管理不同类型的应用。KubeSphere 应用商店让 ISV、开发者和用户能够在一站式服务中只需点击几下就可以上传、测试、部署和发布应用。
 
 对内，KubeSphere 应用商店可以作为不同团队共享数据、中间件和办公应用的场所。对外，有利于设立构建和交付的行业标准。默认情况下，应用商店中内置了 17 个应用。启用该功能后，您可以通过应用模板添加更多应用。
-
-![app-store](/images/docs/zh-cn/enable-pluggable-components/kubesphere-app-store/app-store-page.png)
 
 有关更多信息，请参阅[应用商店](../../application-store/)。
 
@@ -46,9 +44,9 @@ weight: 6200
 
 ### 在 Kubernetes 上安装
 
-[在 Kubernetes 上安装 KubeSphere](../../installing-on-kubernetes/introduction/overview/) 的教程中说明了在 Kubernetes 上安装 KubeSphere 的流程，不过，需要事先在 [cluster-configuration.yaml](https://github.com/kubesphere/ks-installer/releases/download/v3.1.1/cluster-configuration.yaml) 文件中启用应用商店（可选服务组件）。
+[在 Kubernetes 上安装 KubeSphere](../../installing-on-kubernetes/introduction/overview/) 的教程中说明了在 Kubernetes 上安装 KubeSphere 的流程，不过，需要事先在 [cluster-configuration.yaml](https://github.com/kubesphere/ks-installer/releases/download/v3.2.0/cluster-configuration.yaml) 文件中启用应用商店（可选系统组件）。
 
-1. 下载 [cluster-configuration.yaml](https://github.com/kubesphere/ks-installer/releases/download/v3.1.1/cluster-configuration.yaml) 文件，然后打开并开始编辑。
+1. 下载 [cluster-configuration.yaml](https://github.com/kubesphere/ks-installer/releases/download/v3.2.0/cluster-configuration.yaml) 文件，然后打开并开始编辑。
 
     ```bash
     vi cluster-configuration.yaml
@@ -65,7 +63,7 @@ weight: 6200
 3. 执行以下命令开始安装：
 
     ```bash
-    kubectl apply -f https://github.com/kubesphere/ks-installer/releases/download/v3.1.1/kubesphere-installer.yaml
+    kubectl apply -f https://github.com/kubesphere/ks-installer/releases/download/v3.2.0/kubesphere-installer.yaml
     
     kubectl apply -f cluster-configuration.yaml
     ```
@@ -74,15 +72,15 @@ weight: 6200
 
 1. 以 `admin` 身份登录控制台，点击左上角的**平台管理**，选择**集群管理**。
 
-2. 点击**自定义资源 CRD**，在搜索栏中输入 `clusterconfiguration`，点击结果查看其详细页面。
+2. 点击 **CRD**，在搜索栏中输入 `clusterconfiguration`，点击结果查看其详细页面。
 
     {{< notice info >}}
-自定义资源定义 (CRD) 允许用户在不增加额外 API 服务器的情况下创建一种新的资源类型，用户可以像使用其他 Kubernetes 原生对象一样使用这些自定义资源。
+定制资源定义（CRD）允许用户在不增加额外 API 服务器的情况下创建一种新的资源类型，用户可以像使用其他 Kubernetes 原生对象一样使用这些定制资源。
     {{</ notice >}}
 
-3. 在**资源列表**中，点击 `ks-installer` 右侧的 <img src="/images/docs/zh-cn/enable-pluggable-components/kubesphere-app-store/three-dots.png" height="20px">，选择**编辑配置文件**。
+3. 在**资源列表**中，点击 `ks-installer` 右侧的 <img src="/images/docs/zh-cn/enable-pluggable-components/kubesphere-app-store/three-dots.png" height="20px">，选择**编辑 YAML**。
 
-4. 在该 YAML 文件中，搜寻到 `openpitrix`，将 `enabled` 的 `false` 改为 `true`。完成后，点击右下角的**更新**，保存配置。
+4. 在该 YAML 文件中，搜寻到 `openpitrix`，将 `enabled` 的 `false` 改为 `true`。完成后，点击右下角的**确定**，保存配置。
 
     ```yaml
     openpitrix:
@@ -105,17 +103,15 @@ weight: 6200
 
 在您登录控制台后，如果您能看到页面左上角的**应用商店**以及其中的 17 个内置应用，则说明安装成功。
 
-![app-store](/images/docs/zh-cn/enable-pluggable-components/kubesphere-app-store/app-store-page.png)
-
 {{< notice note >}}
 
-- 您可以在不登录控制台的情况下直接访问 `<NodeIP>:30880/apps` 进入应用商店。
-- 与先前版本不同，KubeSphere 3.1 中的应用商店启用后，**OpenPitrix** 选项卡不会显示在**服务组件**页面。
+- 您可以在不登录控制台的情况下直接访问 `<节点 IP 地址>:30880/apps` 进入应用商店。
+- KubeSphere 3.2 中的应用商店启用后，**OpenPitrix** 页签不会显示在**系统组件**页面。
 
 {{</ notice >}} 
 
 ## 在多集群架构中使用应用商店
 
-[在多集群架构中](../../multicluster-management/introduction/kubefed-in-kubesphere/)，一个 Host 集群（H 集群）管理所有 Member 集群（M 集群）。与 KubeSphere 中的其他组件不同，应用商店是所有集群（包括 H 集群和 M 集群）的全局应用程序池。您只需要在 H 集群上启用应用商店，便可以直接在 M 集群上使用应用商店的相关功能（无论 M 集群是否启用应用商店），例如[应用模板](../../project-user-guide/application/app-template/)和[应用仓库](../../workspace-administration/app-repository/import-helm-repository/)。
+[在多集群架构中](../../multicluster-management/introduction/kubefed-in-kubesphere/)，一个主集群管理所有成员集群。与 KubeSphere 中的其他组件不同，应用商店是所有集群（包括主集群和成员集群）的全局应用程序池。您只需要在主集群上启用应用商店，便可以直接在成员集群上使用应用商店的相关功能（无论成员集群是否启用应用商店），例如[应用模板](../../project-user-guide/application/app-template/)和[应用仓库](../../workspace-administration/app-repository/import-helm-repository/)。
 
-但是，如果只在 M 集群上启用应用商店而没有在 H 集群上启用，您将无法在多集群架构中的任何集群上使用应用商店。
+但是，如果只在成员集群上启用应用商店而没有在主集群上启用，您将无法在多集群架构中的任何集群上使用应用商店。

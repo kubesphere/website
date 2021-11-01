@@ -199,7 +199,7 @@ Follow the step below to download KubeKey.
 Download KubeKey from its [GitHub Release Page](https://github.com/kubesphere/kubekey/releases) or use the following command directly.
 
 ```bash
-curl -sfL https://get-kk.kubesphere.io | VERSION=v1.1.1 sh -
+curl -sfL https://get-kk.kubesphere.io | VERSION=v1.2.0 sh -
 ```
 
 {{</ tab >}}
@@ -215,7 +215,7 @@ export KKZONE=cn
 Run the following command to download KubeKey:
 
 ```bash
-curl -sfL https://get-kk.kubesphere.io | VERSION=v1.1.1 sh -
+curl -sfL https://get-kk.kubesphere.io | VERSION=v1.2.0 sh -
 ```
 
 {{< notice note >}}
@@ -230,7 +230,7 @@ After you download KubeKey, if you transfer it to a new machine also with poor n
 
 {{< notice note >}}
 
-The commands above download the latest release (v1.1.1) of KubeKey. You can change the version number in the command to download a specific version.
+The commands above download the latest release (v1.2.0) of KubeKey. You can change the version number in the command to download a specific version.
 
 {{</ notice >}} 
 
@@ -244,10 +244,10 @@ chmod +x kk
 
 With KubeKey, you can install Kubernetes and KubeSphere together. You have the option to create a multi-node cluster by customizing parameters in the configuration file.
 
-Create a Kubernetes cluster with KubeSphere installed (for example, `--with-kubesphere v3.1.1`):
+Create a Kubernetes cluster with KubeSphere installed (for example, `--with-kubesphere v3.2.0`):
 
 ```bash
-./kk create config --with-kubernetes v1.20.4 --with-kubesphere v3.1.1
+./kk create config --with-kubernetes v1.21.5 --with-kubesphere v3.2.0
 ```
 
 {{< notice note >}} 

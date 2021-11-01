@@ -13,7 +13,7 @@ This tutorial demonstrates how to trigger a pipeline by using a webhook.
 ## Prerequisites
 
 - You need to [enable the KubeSphere DevOps system](../../../pluggable-components/devops/).
-- You need to create a workspace, a DevOps project, and an account (`project-regular`). This account needs to be invited to the DevOps project and assigned the `operator` role. See [Create Workspaces, Projects, Accounts and Roles](../../../quick-start/create-workspace-and-project/) if they are not ready.
+- You need to create a workspace, a DevOps project, and a user (`project-regular`). This account needs to be invited to the DevOps project and assigned the `operator` role. See [Create Workspaces, Projects, Users and Roles](../../../quick-start/create-workspace-and-project/) if they are not ready.
 
 - You need to create a Jenkinsfile-based pipeline from a remote code repository. For more information, see [Create a Pipeline Using a Jenkinsfile](../create-a-pipeline-using-jenkinsfile/).
 

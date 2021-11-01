@@ -70,7 +70,7 @@ Kubernetes 创建 Pod 时就给它指定了下列一种 QoS 类：Guaranteed，B
 
 ### 准备工作
 
-您需要创建一个企业空间、一个项目和一个帐户 ( ws-admin )，务必邀请该帐户到项目中并赋予 admin 角色。有关更多信息，请参见[创建企业空间、项目、帐户和角色](https://kubesphere.io/zh/docs/quick-start/create-workspace-and-project/)。
+您需要创建一个企业空间、一个项目和一个用户 ( ws-admin )，务必邀请该用户到项目中并赋予 admin 角色。有关更多信息，请参见[创建企业空间、项目、用户和角色](https://kubesphere.io/zh/docs/quick-start/create-workspace-and-project/)。
 
 ### 设置项目配额（ Resource Quotas ）
 

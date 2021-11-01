@@ -57,9 +57,9 @@ KubeSphere 审计日志系统提供了一套与安全相关并按时间顺序排
 
 ### 在 Kubernetes 上安装
 
-在 Kubernetes 上安装 KubeSphere 的过程与教程[在 Kubernetes 上安装 KubeSphere](../../installing-on-kubernetes/introduction/overview/) 中的说明大致相同，不同之处是需要先在 [cluster-configuration.yaml](https://github.com/kubesphere/ks-installer/releases/download/v3.1.1/cluster-configuration.yaml) 文件中启用审计功能（可选组件）。
+在 Kubernetes 上安装 KubeSphere 的过程与教程[在 Kubernetes 上安装 KubeSphere](../../installing-on-kubernetes/introduction/overview/) 中的说明大致相同，不同之处是需要先在 [cluster-configuration.yaml](https://github.com/kubesphere/ks-installer/releases/download/v3.2.0/cluster-configuration.yaml) 文件中启用审计功能（可选组件）。
 
-1. 下载 [cluster-configuration.yaml](https://github.com/kubesphere/ks-installer/releases/download/v3.1.1/cluster-configuration.yaml) 文件，然后打开并开始编辑。
+1. 下载 [cluster-configuration.yaml](https://github.com/kubesphere/ks-installer/releases/download/v3.2.0/cluster-configuration.yaml) 文件，然后打开并开始编辑。
 
     ```bash
     vi cluster-configuration.yaml
@@ -91,7 +91,7 @@ KubeSphere 审计日志系统提供了一套与安全相关并按时间顺序排
 3. 执行以下命令开始安装：
 
     ```bash
-    kubectl apply -f https://github.com/kubesphere/ks-installer/releases/download/v3.1.1/kubesphere-installer.yaml
+    kubectl apply -f https://github.com/kubesphere/ks-installer/releases/download/v3.2.0/kubesphere-installer.yaml
     
     kubectl apply -f cluster-configuration.yaml
     ```
@@ -100,15 +100,15 @@ KubeSphere 审计日志系统提供了一套与安全相关并按时间顺序排
 
 1. 以 `admin` 身份登录控制台。点击左上角的**平台管理**，选择**集群管理**。
    
-2. 点击**自定义资源 CRD**，在搜索栏中输入 `clusterconfiguration`，点击搜索结果查看其详细页面。
+2. 点击 **CRD**，在搜索栏中输入 `clusterconfiguration`，点击搜索结果查看其详细页面。
 
     {{< notice info >}}
-自定义资源定义 (CRD) 允许用户在不新增 API 服务器的情况下创建一种新的资源类型，用户可以像使用其他 Kubernetes 原生对象一样使用这些自定义资源。
+定制资源定义 (CRD) 允许用户在不新增 API 服务器的情况下创建一种新的资源类型，用户可以像使用其他 Kubernetes 原生对象一样使用这些定制资源。
     {{</ notice >}}
 
-3. 在**资源列表**中，点击 `ks-installer` 右侧的 <img src="/images/docs/zh-cn/enable-pluggable-components/kubesphere-auditing-logs/three-dots.png" height="20px">，选择**编辑配置文件**。
+3. 在**资源列表**中，点击 `ks-installer` 右侧的 <img src="/images/docs/zh-cn/enable-pluggable-components/kubesphere-auditing-logs/three-dots.png" height="20px">，选择**编辑 YAML**。
 
-4. 在该 YAML 文件中，搜寻到 `auditing`，将 `enabled` 的 `false` 改为 `true`。完成后，点击右下角的**更新**，保存配置。
+4. 在该 YAML 文件中，搜寻到 `auditing`，将 `enabled` 的 `false` 改为 `true`。完成后，点击右下角的**确定**，保存配置。
 
     ```yaml
     auditing:
@@ -150,13 +150,11 @@ KubeSphere 审计日志系统提供了一套与安全相关并按时间顺序排
 
 验证您可以使用右下角**工具箱**中的**操作审计**功能。
 
-![auditing-operating](/images/docs/zh-cn/enable-pluggable-components/kubesphere-auditing-logs/auditing-operating.png)
-
 {{</ tab >}}
 
 {{< tab "通过 kubectl 验证组件的安装" >}}
 
-执行以下命令来检查 Pod 的状态：
+执行以下命令来检查容器组的状态：
 
 ```bash
 kubectl get pod -n kubesphere-logging-system

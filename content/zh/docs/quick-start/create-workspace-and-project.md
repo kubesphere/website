@@ -1,8 +1,8 @@
 ---
-title: "创建企业空间、项目、帐户和角色"
+title: "创建企业空间、项目、用户和角色"
 keywords: 'KubeSphere, Kubernetes, 多租户, 企业空间, 帐户, 角色, 项目'
 description: '了解如何利用 KubeSphere 中的多租户功能在不同级别进行细粒度访问控制。'
-linkTitle: "创建企业空间、项目、帐户和角色"
+linkTitle: "创建企业空间、项目、用户和角色"
 weight: 2300
 ---
 
@@ -24,7 +24,7 @@ KubeSphere 的多租户系统分**三个**层级，即集群、企业空间和�
 
 ### 步骤 1：创建帐户
 
-安装 KubeSphere 之后，您需要向平台添加具有不同角色的用户，以便他们可以针对自己授权的资源在不同的层级进行工作。一开始，系统默认只有一个帐户 `admin`，具有 `platform-admin` 角色。在本步骤中，您将创建一个帐户 `user-manager`，然后使用 `user-manager` 创建新帐户。
+安装 KubeSphere 之后，您需要向平台添加具有不同角色的用户，以便他们可以针对自己授权的资源在不同的层级进行工作。一开始，系统默认只有一个用户 `admin`，具有 `platform-admin` 角色。在本步骤中，您将创建一个用户 `user-manager`，然后使用 `user-manager` 创建新帐户。
 
 1. 以 `admin` 身份使用默认帐户和密码 (`admin/P@88w0rd`) 登录 Web 控制台。
 

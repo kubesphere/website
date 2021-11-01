@@ -33,9 +33,9 @@ After you make sure your machine meets the conditions, perform the following ste
 1. Run the following commands to start installation:
 
     ```bash
-    kubectl apply -f https://github.com/kubesphere/ks-installer/releases/download/v3.1.1/kubesphere-installer.yaml
+    kubectl apply -f https://github.com/kubesphere/ks-installer/releases/download/v3.2.0/kubesphere-installer.yaml
     
-    kubectl apply -f https://github.com/kubesphere/ks-installer/releases/download/v3.1.1/cluster-configuration.yaml
+    kubectl apply -f https://github.com/kubesphere/ks-installer/releases/download/v3.2.0/cluster-configuration.yaml
     ```
 
 2. After KubeSphere is successfully installed, you can run the following command to view the installation logs:
@@ -52,9 +52,7 @@ After you make sure your machine meets the conditions, perform the following ste
 
 4. Make sure port `30880` is opened in your security group and access the web console through the NodePort (`IP:30880`) with the default account and password (`admin/P@88w0rd`).
 
-5. After logging in to the console, you can check the status of different components in **Components**. You may need to wait for some components to be up and running if you want to use related services.
-
-    ![kubesphere-components](/images/docs/quickstart/minimal-installation-on-k8s/kubesphere-components.png)
+5. After logging in to the console, you can check the status of different components in **System Components**. You may need to wait for some components to be up and running if you want to use related services.
 
 ## Enable Pluggable Components (Optional)
 

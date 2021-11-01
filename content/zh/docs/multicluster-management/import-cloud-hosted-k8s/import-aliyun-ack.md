@@ -10,14 +10,14 @@ weight: 5310
 
 ## 准备工作
 
-- 您需要准备已安装 KubeSphere 的 Kubernetes 集群，并将该集群设置为 Host 集群。有关如何准备 Host 集群的更多信息，请参考[准备 Host 集群](../../../multicluster-management/enable-multicluster/direct-connection/#准备-host-集群)。
-- 您需要准备已安装 KubeSphere 的 ACK 集群，用作 Member 集群。
+- 您需要准备已安装 KubeSphere 的 Kubernetes 集群，并将该集群设置为主集群。有关如何准备主集群的更多信息，请参考[准备主集群](../../../multicluster-management/enable-multicluster/direct-connection/#准备-host-集群)。
+- 您需要准备已安装 KubeSphere 的 ACK 集群，用作。
 
 ## 导入 ACK 集群
 
-### 步骤 1：准备 ACK Member 集群
+### 步骤 1：准备 ACK 成员集群
 
-1. 为了通过 Host 集群管理 Member 集群，您需要使它们之间的 `jwtSecret` 相同。因此，首先需要在 Host 集群上执行以下命令获取 `jwtSecret`。
+1. 为了通过主集群管理，您需要使它们之间的 `jwtSecret` 相同。因此，首先需要在主集群上执行以下命令获取 `jwtSecret`。
 
    ```bash
    kubectl -n kubesphere-system get cm kubesphere-config -o yaml | grep -v "apiVersion" | grep jwtSecret
@@ -31,7 +31,7 @@ weight: 5310
 
 2. 以 `admin` 身份登录 ACK 集群的 KubeSphere 控制台。点击左上角的**平台管理**，选择**集群管理**。
 
-3. 访问**自定义资源 CRD**，在搜索栏输入 `ClusterConfiguration`，然后按下键盘上的**回车键**。点击 **ClusterConfiguration** 访问其详情页。
+3. 访问 **CRD**，在搜索栏输入 `ClusterConfiguration`，然后按下键盘上的**回车键**。点击 **ClusterConfiguration** 访问其详情页。
 
    ![search-config](/images/docs/zh-cn/multicluster-management/import-cloud-hosted-k8s/import-ack/search-config.png)
 
@@ -57,15 +57,15 @@ weight: 5310
 
    {{</ notice >}}
 
-### 步骤 2：获取 KubeConfig 文件
+### 步骤 2：获取 kubeconfig 文件
 
-登录阿里云的控制台。访问**容器服务 - Kubernetes** 下的**集群**，点击您的集群访问其详情页，然后选择**连接信息**选项卡。您可以看到**公网访问**选项卡下的 KubeConfig 文件。复制 KubeConfig 文件的内容。
+登录阿里云的控制台。访问**容器服务 - Kubernetes** 下的**集群**，点击您的集群访问其详情页，然后选择**连接信息**选项卡。您可以看到**公网访问**选项卡下的 kubeconfig 文件。复制 kubeconfig 文件的内容。
 
 ![kubeconfig](/images/docs/zh-cn/multicluster-management/import-cloud-hosted-k8s/import-ack/kubeconfig.png)
 
-### 步骤 3：导入 ACK Member 集群
+### 步骤 3：导入 ACK 成员集群
 
-1. 以 `admin` 身份登录 Host 集群的 KubeSphere Web 控制台。点击左上角的**平台管理**，选择**集群管理**。在**集群管理**页面，点击**添加集群**。
+1. 以 `admin` 身份登录主集群的 KubeSphere Web 控制台。点击左上角的**平台管理**，选择**集群管理**。在**集群管理**页面，点击**添加集群**。
 
    ![click-add-cluster](/images/docs/zh-cn/multicluster-management/import-cloud-hosted-k8s/import-ack/click-add-cluster.png)
 
@@ -73,7 +73,7 @@ weight: 5310
 
    ![input-info](/images/docs/zh-cn/multicluster-management/import-cloud-hosted-k8s/import-ack/input-info.png)
 
-3. **连接方式**选择**直接连接 Kubernetes 集群**。填写 ACK Member 集群的 KubeConfig，然后点击**创建**。
+3. **连接方式**选择**直接连接 Kubernetes 集群**。填写 ACK 的 kubeconfig，然后点击**创建**。
 
    ![select-method](/images/docs/zh-cn/multicluster-management/import-cloud-hosted-k8s/import-ack/select-method.png)
 

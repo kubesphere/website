@@ -1,12 +1,12 @@
 ---
 title: "容器组 IP 池"
-keywords: "Kubernetes, KubeSphere, Pod, IP 池"
-description: "了解如何启用容器组 IP 池，为您的 Pod 分配一个特定的容器组 IP 池。"
+keywords: "Kubernetes, KubeSphere, 容器组, IP 池"
+description: "了解如何启用容器组 IP 池，为您的容器组分配一个特定的容器组 IP 池。"
 linkTitle: "容器组 IP 池"
 weight: 6920
 ---
 
-容器组 IP 池用于规划 Pod 网络地址空间，每个容器组 IP 池之间的地址空间不能重叠。创建工作负载时，可选择特定的容器组 IP 池，这样创建出的 Pod 将从该容器组 IP 池中分配 IP。
+容器组 IP 池用于规划容器组网络地址空间，每个容器组 IP 池之间的地址空间不能重叠。创建工作负载时，可选择特定的容器组 IP 池，这样创建出的容器组将从该容器组 IP 池中分配 IP 地址。
 
 ## 安装前启用容器组 IP 池
 
@@ -41,9 +41,9 @@ weight: 6920
 
 ### 在 Kubernetes 上安装
 
-[在 Kubernetes 上安装 KubeSphere](../../installing-on-kubernetes/introduction/overview/) 时，您可以在 [cluster-configuration.yaml](https://github.com/kubesphere/ks-installer/releases/download/v3.1.1/cluster-configuration.yaml) 文件中首先启用容器组 IP 池。
+[在 Kubernetes 上安装 KubeSphere](../../installing-on-kubernetes/introduction/overview/) 时，您可以在 [cluster-configuration.yaml](https://github.com/kubesphere/ks-installer/releases/download/v3.2.0/cluster-configuration.yaml) 文件中首先启用容器组 IP 池。
 
-1. 下载 [cluster-configuration.yaml](https://github.com/kubesphere/ks-installer/releases/download/v3.1.1/cluster-configuration.yaml) 文件并进行编辑。
+1. 下载 [cluster-configuration.yaml](https://github.com/kubesphere/ks-installer/releases/download/v3.2.0/cluster-configuration.yaml) 文件并进行编辑。
 
     ```bash
     vi cluster-configuration.yaml
@@ -60,7 +60,7 @@ weight: 6920
 3. 执行以下命令开始安装。
 
     ```bash
-    kubectl apply -f https://github.com/kubesphere/ks-installer/releases/download/v3.1.1/kubesphere-installer.yaml
+    kubectl apply -f https://github.com/kubesphere/ks-installer/releases/download/v3.2.0/kubesphere-installer.yaml
     
     kubectl apply -f cluster-configuration.yaml
     ```
@@ -70,15 +70,15 @@ weight: 6920
 
 1. 使用 `admin` 用户登录控制台。点击左上角的**平台管理**，然后选择**集群管理**。
 
-2. 点击**自定义资源 CRD**，然后在搜索栏中输入 `clusterconfiguration`。点击搜索结果查看其详情页。
+2. 点击 **CRD**，然后在搜索栏中输入 `clusterconfiguration`。点击搜索结果查看其详情页。
 
     {{< notice info >}}
-自定义资源定义 (CRD) 允许用户在不新增 API 服务器的情况下创建一种新的资源类型，用户可以像使用其他 Kubernetes 原生对象一样使用这些自定义资源。
+定制资源定义（CRD）允许用户在不新增 API 服务器的情况下创建一种新的资源类型，用户可以像使用其他 Kubernetes 原生对象一样使用这些定制资源。
     {{</ notice >}}
 
-3. 在**资源列表**中，点击 `ks-installer` 右侧的 <img src="/images/docs/zh-cn/enable-pluggable-components/pod-ip-pools/three-dots.png" height="20px">，然后选择**编辑配置文件**。
+3. 在**资源列表**中，点击 `ks-installer` 右侧的 <img src="/images/docs/zh-cn/enable-pluggable-components/pod-ip-pools/three-dots.png" height="20px">，然后选择**编辑 YAML**。
 
-4. 在该配置文件中，搜寻到 `network`，将 `network.ippool.type` 更改为 `calico`。完成后，点击右下角的**更新**保存配置。
+4. 在该配置文件中，搜寻到 `network`，将 `network.ippool.type` 更改为 `calico`。完成后，点击右下角的**确定**保存配置。
 
     ```yaml
     network:
@@ -99,6 +99,4 @@ weight: 6920
 
 ## 验证组件的安装
 
-在**集群管理**页面，您可以在**网络管理**下看到**容器组 IP 池**。
-
-![pod-ip-pool](/images/docs/zh-cn/enable-pluggable-components/pod-ip-pools/pod-ip-pool.png)
+在**集群管理**页面，您可以在**网络**下看到**容器组 IP 池**。

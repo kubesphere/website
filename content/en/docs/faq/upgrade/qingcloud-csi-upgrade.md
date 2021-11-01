@@ -1,6 +1,6 @@
 ---
 title: "Upgrade QingCloud CSI"
-keywords: "Kubernetes, upgrade, KubeSphere, v3.0.0"
+keywords: "Kubernetes, upgrade, KubeSphere, v3.2.0"
 description: "Upgrade the QingCloud CSI after you upgrade KubeSphere."
 linkTitle: "Upgrade QingCloud CSI"
 weight: 16210
@@ -19,7 +19,7 @@ cd qingcloud-csi/
 ```
 
 ```
-git checkout v1.1.1
+git checkout v1.2.0
 ```
 
 ```

@@ -60,7 +60,7 @@ Java、.net Core 的开发人员对 `Spring Cloud Gateway` 或 `Ocelot` 一定�
 
 ### 准备工作
 
-1. 在部署 SockShop 之前，我们首先要配置一个用于演示的企业空间 `workspace-demo` 和项目 `sock-shop`。具体步骤请参考[《创建企业空间、项目、帐户和角色》](https://kubesphere.com.cn/docs/quick-start/create-workspace-and-project/ "《创建企业空间、项目、帐户和角色》")
+1. 在部署 SockShop 之前，我们首先要配置一个用于演示的企业空间 `workspace-demo` 和项目 `sock-shop`。具体步骤请参考[《创建企业空间、项目、用户和角色》](https://kubesphere.com.cn/docs/quick-start/create-workspace-and-project/ "《创建企业空间、项目、用户和角色》")
 
 2) 完成项目 `sock-shop` 的创建后，我们接下来使用 `kubectl` 部署 SockShop 的相关服务。您可以使用本地的控制台或 KubeSphere web 工具箱中的 `kubectl`执行以下命令。
 

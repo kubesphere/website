@@ -12,59 +12,35 @@ This tutorial walks you through an example of deploying MinIO from the App Store
 ## Prerequisites
 
 - Please make sure you [enable the OpenPitrix system](../../../pluggable-components/app-store/).
-- You need to create a workspace, a project, and a user account (`project-regular`) for this tutorial. The account needs to be a platform regular user and to be invited as the project operator with the `operator` role. In this tutorial, you log in as `project-regular` and work in the project `demo-project` in the workspace `demo-workspace`. For more information, see [Create Workspaces, Projects, Accounts and Roles](../../../quick-start/create-workspace-and-project/).
+- You need to create a workspace, a project, and a user account (`project-regular`) for this tutorial. The account needs to be a platform regular user and to be invited as the project operator with the `operator` role. In this tutorial, you log in as `project-regular` and work in the project `demo-project` in the workspace `demo-workspace`. For more information, see [Create Workspaces, Projects, Users and Roles](../../../quick-start/create-workspace-and-project/).
 
 ## Hands-on Lab
 
 ### Step 1: Deploy MinIO from the App Store
 
-1. On the **Overview** page of the project `demo-project`, click **App Store** in the top-left corner.
-
-   ![minio-app](/images/docs/appstore/built-in-apps/minio-app/minio-app.png)
+1. On the **Overview** page of the project `demo-project`, click **App Store** in the upper-left corner.
 
 2. Find MinIO and click **Deploy** on the **App Information** page.
 
-   ![minio-in-app-store](/images/docs/appstore/built-in-apps/minio-app/minio-in-app-store.png)
-
-   ![deploy-minio](/images/docs/appstore/built-in-apps/minio-app/deploy-minio.png)
-
 3. Set a name and select an app version. Make sure MinIO is deployed in `demo-project` and click **Next**.
 
-   ![minio-deploy](/images/docs/appstore/built-in-apps/minio-app/minio-deploy.png)
-
-4. In **App Configurations**, you can use the default configuration or customize the configuration by editing the YAML file directly. Click **Deploy** to continue.
-
-   ![deloy-minio-2](/images/docs/appstore/built-in-apps/minio-app/deloy-minio-2.png)
+4. In **App Settings**, you can use the default configuration or customize the configuration by editing the YAML file directly. Click **Deploy** to continue.
 
 5. Wait until MinIO is up and running.
 
-   ![minio-in-list](/images/docs/appstore/built-in-apps/minio-app/minio-in-list.png)
-
-### Step 2: Access the MinIO Browser
+### Step 2: Access the MinIO browser
 
 To access MinIO outside the cluster, you need to expose the app through a NodePort first.
 
 1. Go to **Services** and click the service name of MinIO.
 
-   ![minio-detail](/images/docs/appstore/built-in-apps/minio-app/minio-detail.png)
-
-2. Click **More** and select **Edit Internet Access** from the drop-down menu.
-
-   ![edit-internet-access](/images/docs/appstore/built-in-apps/minio-app/edit-internet-access.png)
+2. Click **More** and select **Edit External  Access** from the drop-down menu.
 
 3. Select **NodePort** for **Access Method** and click **OK**. For more information, see [Project Gateway](../../../project-administration/project-gateway/).
 
-   ![nodeport](/images/docs/appstore/built-in-apps/minio-app/nodeport.png)
+4. On the **Services** page, click **MinIO**. On the page that appears, under **Ports**, you can see the port is exposed.
 
-4. Under **Service Ports**, you can see the port is exposed.
-
-   ![port-exposed](/images/docs/appstore/built-in-apps/minio-app/port-exposed.png)
-
-5. To access the MinIO browser, you need `accessKey` and `secretKey`, which are specified in the configuration file of MinIO. Go to **App Templates** in **Apps**, click MinIO, and you can find the value of these two fields under the tab **Configuration Files**.
-
-   ![template-list](/images/docs/appstore/built-in-apps/minio-app/template-list.png)
-
-   ![config-file](/images/docs/appstore/built-in-apps/minio-app/config-file.png)
+5. To access the MinIO browser, you need `accessKey` and `secretKey`, which are specified in the configuration file of MinIO. Go to **Template-Based Apps** in **Apps**, click MinIO, and you can find the value of these two fields under the tab **Chart Files**.
 
 6. Access the MinIO browser through `<NodeIP>:<NodePort>` using `accessKey` and `secretKey`.
 
@@ -74,7 +50,7 @@ To access MinIO outside the cluster, you need to expose the app through a NodePo
 
    {{< notice note >}}
 
-   You may need to open the port in your security groups and configure related port forwarding rules depending on your where your Kubernetes cluster is deployed.
+   You may need to open the port in your security groups and configure related port forwarding rules depending on where your Kubernetes cluster is deployed.
 
    {{</ notice >}} 
 

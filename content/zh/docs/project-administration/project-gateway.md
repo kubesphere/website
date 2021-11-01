@@ -14,7 +14,7 @@ KubeSphere 项目中的网关是一个[ NGINX Ingress 控制器](https://www.ngi
 
 ## 准备工作
 
-您需要创建一个企业空间、一个项目和一个帐户 (`project-admin`)。该帐户必须被邀请至项目，并且在项目中的角色为 `admin`。有关更多信息，请参见[创建企业空间、项目、帐户和角色](../../../docs/quick-start/create-workspace-and-project/)。
+您需要创建一个企业空间、一个项目和一个用户 (`project-admin`)。该用户必须被邀请至项目，并且在项目中的角色为 `admin`。有关更多信息，请参见[创建企业空间、项目、用户和角色](../../../docs/quick-start/create-workspace-and-project/)。
 
 ## 设置网关
 

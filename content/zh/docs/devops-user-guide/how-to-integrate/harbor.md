@@ -11,7 +11,7 @@ weight: 11320
 ## 准备工作
 
 - 您需要启用 [KubeSphere DevOps 系统](../../../pluggable-components/devops/)。
-- 您需要创建一个企业空间、一个 DevOps 工程和一个帐户 (`project-regular`)。需要邀请该帐户至 DevOps 工程并赋予 `operator` 角色。如果尚未创建，请参见[创建企业空间、项目、帐户和角色](../../../quick-start/create-workspace-and-project/)。
+- 您需要创建一个企业空间、一个 DevOps 工程和一个用户 (`project-regular`)。需要邀请该帐户至 DevOps 工程并赋予 `operator` 角色。如果尚未创建，请参见[创建企业空间、项目、用户和角色](../../../quick-start/create-workspace-and-project/)。
 
 ## 安装 Harbor
 

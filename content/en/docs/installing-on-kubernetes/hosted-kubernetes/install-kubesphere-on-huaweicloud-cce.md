@@ -76,9 +76,9 @@ For how to set up or cancel a default StorageClass, refer to Kubernetes official
 Use [ks-installer](https://github.com/kubesphere/ks-installer) to deploy KubeSphere on an existing Kubernetes cluster. Execute the following commands directly for a minimal installation:
 
 ```bash
-kubectl apply -f https://github.com/kubesphere/ks-installer/releases/download/v3.1.1/kubesphere-installer.yaml
+kubectl apply -f https://github.com/kubesphere/ks-installer/releases/download/v3.2.0/kubesphere-installer.yaml
 
-kubectl apply -f https://github.com/kubesphere/ks-installer/releases/download/v3.1.1/cluster-configuration.yaml
+kubectl apply -f https://github.com/kubesphere/ks-installer/releases/download/v3.2.0/cluster-configuration.yaml
 ```
 
 Go to **Workload** > **Pod**, and check the running status of the pod in `kubesphere-system` of its namespace to understand the minimal deployment of KubeSphere. Check `ks-console-xxxx`  of the namespace to understand the availability of KubeSphere console.
@@ -99,8 +99,6 @@ Default settings are OK for other detailed configurations. You can also set them
 
 After you set LoadBalancer for KubeSphere console, you can visit it via the given address. Go to KubeSphere login page and use the default account (username `admin` and password `P@88w0rd`) to log in.
 
-  ![Log in to KubeSphere Console](/images/docs/huawei-cce/en/login-ks-console.png)
-
 ## Enable Pluggable Components (Optional)
 
 The example above demonstrates the process of a default minimal installation. To enable other components in KubeSphere, see [Enable Pluggable Components](../../../pluggable-components/) for more details.
@@ -111,6 +109,4 @@ Before you use Istio-based features of KubeSphere, you have to delete `applicati
 
 {{</ notice >}}
 
-After your component is installed, go to the **Cluster Management** page, and you will see the interface below. You can check the status of your component in **Components**.
-
-  ![Full View of KubeSphere Console](/images/docs/huawei-cce/en/view-ks-console-full.png)
+After your component is installed, go to the **Cluster Management** page, and you will see the interface below. You can check the status of your component in **System Components**.

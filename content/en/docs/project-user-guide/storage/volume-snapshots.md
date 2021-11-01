@@ -1,7 +1,7 @@
 ---
 title: "Volume Snapshots"
-keywords: 'KubeSphere, Kubernetes, volume, snapshots'
-description: 'Learn how to manage a snapshot of a persistent volume in KubeSphere.'
+keywords: 'KubeSphere, Kubernetes, Volume, Snapshots'
+description: 'Learn how to manage a snapshot of a persistent volume on KubeSphere.'
 linkTitle: "Volume Snapshots"
 weight: 10320
 ---
@@ -12,7 +12,7 @@ This tutorial demonstrates how to create and use a volume snapshot.
 
 ## Prerequisites
 
-- You need to create a workspace, a project and an account (`project-regular`). The account must be invited to the project with the role of `operator`. For more information, see [Create Workspaces, Projects, Accounts and Roles](../../../quick-start/create-workspace-and-project/).
+- You need to create a workspace, a project and a user (`project-regular`). The user must be invited to the project with the role of `operator`. For more information, see [Create Workspaces, Projects, Users and Roles](../../../quick-start/create-workspace-and-project/).
 
 - Kubernetes version 1.17+.
 
@@ -22,10 +22,10 @@ This tutorial demonstrates how to create and use a volume snapshot.
 ## Create a Volume Snapshot
 
 1. Log in to the web console of KubeSphere as `project-regular`. On the **Volumes** page of your project, select a volume that you want to create a snapshot for.
-2. On the detail page, select **Create Snapshot** from the **More** drop-down list.
-3. In the dialog that appears, set a name for the snapshot which serves as a unique identifier. Click **OK** to finish.
+2. On the details page, select **Create Snapshot** from the **More** drop-down menu.
+3. In the displayed dialog box, set a name for the snapshot which serves as a unique identifier and select a **Volume Snapshot Class**. Click **OK** to finish.
 
-4. Newly-created snapshots will appear on the **Volume Snapshots** list.
+4. Newly-created snapshots is displayed on the **Volume Snapshots** list.
 
 
 ## Use a Snapshot to Create a Volume
@@ -34,11 +34,9 @@ There are two ways for you to use a snapshot to create a volume.
 
 ### Create a volume from the snapshot detail page
 
-1. Log in to the web console of KubeSphere as `project-regular`. On a snapshot's detail page, click **Apply** to use the snapshot. Generally, the steps are the same as creating a volume directly.
+1. Log in to the web console of KubeSphere as `project-regular`. On a snapshot's details page, click **Apply** to use the snapshot. Generally, the steps are the same as creating a volume directly.
 
-   ![apply-volume](/images/docs/project-user-guide/volume-management/volume-snapshots/apply-volume.jpg)
-
-2. In the dialog that appears, set a name for the volume. Click **Next** to continue.
+2. In the displayed dialog box, set a name for the volume. Click **Next** to continue.
 
    {{< notice note >}}
 
@@ -56,10 +54,10 @@ There are two ways for you to use a snapshot to create a volume.
 
 1. Log in to the web console of KubeSphere as `project-regular`. On the **Volumes** page of a project, click **Create**.
 
-2. In the dialog that appears, set a name for the volume. Click **Next** to continue.
+2. In the displayed dialog box, set a name for the volume. Click **Next** to continue.
 
-3. On the **Volume Settings** tab, select **Create a volume by VolumeSnapshot** under the **Method** section. Select a snapshot and an access mode, and click **Next** to continue.
+3. On the **Volume Settings** tab, select **Create a Volume from Volume Snapshot** under the **Method** section. Select a snapshot and an access mode, and click **Next** to continue.
 
 4. On the **Advanced Settings** tab, add metadata for the volume such as labels and annotations. Click **Create** to finish creating the volume.
 
-5. You can see the volume created appear on the **Volumes** page.
+5. The volume created is displayed on the **Volumes** page.

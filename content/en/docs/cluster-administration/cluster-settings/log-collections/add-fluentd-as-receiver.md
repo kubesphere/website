@@ -1,7 +1,7 @@
 ---
 title: "Add Fluentd as a Receiver"
 keywords: 'Kubernetes, log, fluentd, pod, container, fluentbit, output'
-description: 'Learn how to add Fluentd to receive logs, events or auditing logs.'
+description: 'Learn how to add Fluentd to receive logs, events or audit logs.'
 linkTitle: "Add Fluentd as a Receiver"
 weight: 8624
 ---
@@ -13,9 +13,9 @@ You can use Elasticsearch, Kafka and Fluentd as log receivers in KubeSphere. Thi
 
 ## Prerequisites
 
-- You need an account granted a role including the permission of **Cluster Management**. For example, you can log in to the console as `admin` directly or create a new role with the permission and assign it to an account.
+- You need a user granted a role including the permission of **Cluster Management**. For example, you can log in to the console as `admin` directly or create a new role with the permission and assign it to a user.
 
-- Before adding a log receiver, you need to enable any of the `logging`, `events` or `auditing` components. For more information, see [Enable Pluggable Components](../../../../pluggable-components/). `logging` is enabled as an example in this tutorial.
+- Before adding a log receiver, you need to enable any of the `logging`, `events`, or `auditing` components. For more information, see [Enable Pluggable Components](../../../../pluggable-components/). `logging` is enabled as an example in this tutorial.
 
 ## Step 1: Deploy Fluentd as a Deployment
 
@@ -25,7 +25,7 @@ Run the following commands:
 
 {{< notice note >}}
 
-- The following commands create the Fluentd Deployment, Service and ConfigMap in the `default` namespace and add a filter to the Fluentd ConfigMap to exclude logs from the `default` namespace to avoid Fluent Bit and Fluentd loop log collections.
+- The following commands create the Fluentd Deployment, Service, and ConfigMap in the `default` namespace and add a filter to the Fluentd ConfigMap to exclude logs from the `default` namespace to avoid Fluent Bit and Fluentd loop log collections.
 - Change the namespace if you want to deploy Fluentd into a different namespace.
 
 {{</ notice >}}
@@ -122,7 +122,7 @@ EOF
 
 ## Step 2: Add Fluentd as a Log Receiver
 
-1. Log in to KubeSphere as `admin`. Click **Platform** in the top-left corner and select **Cluster Management**.
+1. Log in to KubeSphere as `admin`. Click **Platform** in the upper-left corner and select **Cluster Management**.
 
    {{< notice note >}}
 
@@ -130,22 +130,20 @@ EOF
 
    {{</ notice >}} 
 
-2. On the **Cluster Management** page, go to **Log Collection** in **Cluster Settings**.
+2. On the **Cluster Management** page, go to **Log Receivers** in **Cluster Settings**.
 
 3. Click **Add Log Receiver** and choose **Fluentd**.
 
-4. Provide the Fluentd service address and port as below:
+4. Provide the Fluentd service address and port number.
 
-   ![add-fluentd](/images/docs/cluster-administration/cluster-settings/log-collections/add-fluentd-as-receiver/add-fluentd.png)
-
-5. Fluentd will appear in the receiver list on the **Log Collection** page, the status of which is **Collecting**.
+5. Fluentd will appear in the receiver list on the **Log Receivers** page, the status of which is **Collecting**.
 
 
 ## Step 3: Verify Fluentd is Receiving Logs Sent from Fluent Bit
 
 1. Click **Application Workloads** on the **Cluster Management** page.
 
-2. Select **Workloads** and then select the `default` project from the drop-down list on the **Deployments** tab.
+2. Select **Workloads** and then select the `default` project on the **Deployments** tab.
 
 3. Click the **fluentd** item and then select the **fluentd-xxxxxxxxx-xxxxx** Pod.
 
@@ -154,5 +152,3 @@ EOF
 5. On the **fluentd** container page, select the **Container Logs** tab.
 
 6. You can see logs begin to scroll up continuously.
-
-   ![container-logs](/images/docs/cluster-administration/cluster-settings/log-collections/add-fluentd-as-receiver/container-logs.png)

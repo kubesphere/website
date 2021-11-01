@@ -1,5 +1,5 @@
 ---
-linkTitle: "日志收集"
+linkTitle: "日志接收器"
 weight: 8620 
 
 _build:

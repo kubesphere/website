@@ -16,7 +16,7 @@ weight: 11440
 - 将 Member 集群设置为[公开集群](../../../cluster-administration/cluster-settings/cluster-visibility-and-authorization/#将集群设置为公开集群)。或者，您可以[在工作空间创建之后设置集群可见性](../../../cluster-administration/cluster-settings/cluster-visibility-and-authorization/#在创建企业空间后设置集群可见性)。
 - 在 Host 集群上[启用 KubeSphere DevOps 系统](../../../pluggable-components/devops/)。
 - 整合 SonarQube 进入流水线。有关更多信息，请参见[将 SonarQube 集成到流水线](../../how-to-integrate/sonarqube/)。
-- 在 Host 集群创建四个帐户： `ws-manager`、`ws-admin`、`project-admin` 和 `project-regular`，然后授予他们不同的角色。有关详细信息，请参见[创建企业空间、项目、帐户和角色](../../../quick-start/create-workspace-and-project/#step-1-create-an-account)。
+- 在 Host 集群创建四个帐户： `ws-manager`、`ws-admin`、`project-admin` 和 `project-regular`，然后授予他们不同的角色。有关详细信息，请参见[创建企业空间、项目、用户和角色](../../../quick-start/create-workspace-and-project/#step-1-create-an-account)。
 
 ## 工作流程概述
 
@@ -56,7 +56,7 @@ weight: 11440
 
    ![select-all-clusters](/images/docs/devops-user-guide/examples/create-multi-cluster-pipeline/select-all-clusters.png)
 
-4. 创建的企业空间会显示在列表。您需要登出控制台并以 `ws-admin` 身份重新登录，以邀请 `project-admin` 与 `project-regular` 至企业空间，然后分别授予他们 `work-space-self-provisioner` 和 `workspace-viwer` 角色。有关更多信息，请参见[创建企业空间、项目、帐户和角色](../../../quick-start/create-workspace-and-project/#step-2-create-a-workspace)。
+4. 创建的企业空间会显示在列表。您需要登出控制台并以 `ws-admin` 身份重新登录，以邀请 `project-admin` 与 `project-regular` 至企业空间，然后分别授予他们 `work-space-self-provisioner` 和 `workspace-viwer` 角色。有关更多信息，请参见[创建企业空间、项目、用户和角色](../../../quick-start/create-workspace-and-project/#step-2-create-a-workspace)。
 
    ![workspace-created](/images/docs/devops-user-guide/examples/create-multi-cluster-pipeline/workspace-created.png)
 
@@ -74,13 +74,13 @@ weight: 11440
 
    {{</ notice >}}
 
-3. 创建的 DevOps 工程将显示在列表中。请确保邀请帐户 `project-regular` 至这个项目，并赋予 `operator` 角色。有关更多信息，请参见[创建企业空间、项目、帐户和角色](../../../quick-start/create-workspace-and-project/#step-1-create-an-account)。
+3. 创建的 DevOps 工程将显示在列表中。请确保邀请帐户 `project-regular` 至这个项目，并赋予 `operator` 角色。有关更多信息，请参见[创建企业空间、项目、用户和角色](../../../quick-start/create-workspace-and-project/#step-1-create-an-account)。
 
    ![devops-project-created](/images/docs/devops-user-guide/examples/create-multi-cluster-pipeline/devops-project-created.png)
 
 ### 步骤 4：在集群上创建项目
 
-提前创建如下表所示的项目。请确保邀请 `project-regular` 帐户到这些项目中，并赋予 `operator` 角色。有关更多信息，请参见[创建企业空间、项目、帐户和角色](../../../quick-start/create-workspace-and-project/#step-1-create-an-account)。
+提前创建如下表所示的项目。请确保邀请 `project-regular` 帐户到这些项目中，并赋予 `operator` 角色。有关更多信息，请参见[创建企业空间、项目、用户和角色](../../../quick-start/create-workspace-and-project/#step-1-create-an-account)。
 
 | 集群名 | 用途 | 项目名                 |
 | ------ | ---- | ---------------------- |

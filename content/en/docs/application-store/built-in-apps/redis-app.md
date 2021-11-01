@@ -13,49 +13,33 @@ This tutorial walks you through an example of deploying Redis from the App Store
 ## Prerequisites
 
 - Please make sure you [enable the OpenPitrix system](../../../pluggable-components/app-store/).
-- You need to create a workspace, a project, and a user account (`project-regular`) for this tutorial. The account needs to be a platform regular user and to be invited as the project operator with the `operator` role. In this tutorial, you log in as `project-regular` and work in the project `demo-project` in the workspace `demo-workspace`. For more information, see [Create Workspaces, Projects, Accounts and Roles](../../../quick-start/create-workspace-and-project/).
+- You need to create a workspace, a project, and a user account (`project-regular`) for this tutorial. The account needs to be a platform regular user and to be invited as the project operator with the `operator` role. In this tutorial, you log in as `project-regular` and work in the project `demo-project` in the workspace `demo-workspace`. For more information, see [Create Workspaces, Projects, Users and Roles](../../../quick-start/create-workspace-and-project/).
 
 ## Hands-on Lab
 
 ### Step 1: Deploy Redis from the App Store
 
-1. On the **Overview** page of the project `demo-project`, click **App Store** in the top-left corner.
-
-   ![app-store](/images/docs/appstore/built-in-apps/redis-app/app-store.png)
+1. On the **Overview** page of the project `demo-project`, click **App Store** in the upper-left corner.
 
 2. Find Redis and click **Deploy** on the **App Information** page.
 
-   ![redis-in-app-store](/images/docs/appstore/built-in-apps/redis-app/redis-in-app-store.png)
-
-   ![deploy-redis](/images/docs/appstore/built-in-apps/redis-app/deploy-redis.png)
-
 3. Set a name and select an app version. Make sure Redis is deployed in `demo-project` and click **Next**.
 
-   ![confirm-deployment](/images/docs/appstore/built-in-apps/redis-app/confirm-deployment.png)
-
-4. In **App Configurations**, specify persistent volumes and a password for the app. When you finish, click **Deploy**.
-
-   ![configure-redis](/images/docs/appstore/built-in-apps/redis-app/configure-redis.png)
+4. In **App Settings**, specify persistent volumes and a password for the app. When you finish, click **Deploy**.
 
    {{< notice note >}}
 
-   To specify more values for Redis, use the toggle switch to see the app’s manifest in YAML format and edit its configurations.
+   To specify more values for Redis, use the toggle switch to see the app's manifest in YAML format and edit its settings.
 
    {{</ notice >}}
 
 5. Wait until Redis is up and running.
 
-   ![redis-running](/images/docs/appstore/built-in-apps/redis-app/redis-running.png)
-
-### Step 2: Access the Redis Terminal
+### Step 2: Access the Redis terminal
 
 1. Go to **Services** and click the service name of Redis.
 
-   ![access-redis](/images/docs/appstore/built-in-apps/redis-app/access-redis.png)
-
 2. Under **Pods**, expand the menu to see container details, and then click the **Terminal** icon.
-
-   ![redis-terminal](/images/docs/appstore/built-in-apps/redis-app/redis-terminal.png)
 
 3. In the pop-up window, use the `redis-cli` command in the terminal to use the app.
 

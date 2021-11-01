@@ -13,7 +13,7 @@ weight: 11293
 ## 准备工作
 
 - [启用 KubeSphere DevOps 系统](../../../pluggable-components/devops/)。
-- 创建一个企业空间、一个 DevOps工程和一个帐户（例如，`project-regular`）。`project-regular` 需要被邀请至 DevOps 工程中并赋予 `operator` 角色。有关更多信息，请参见[创建企业空间、项目、帐户和角色](../../../quick-start/create-workspace-and-project/)。
+- 创建一个企业空间、一个 DevOps工程和一个用户（例如，`project-regular`）。`project-regular` 需要被邀请至 DevOps 工程中并赋予 `operator` 角色。有关更多信息，请参见[创建企业空间、项目、用户和角色](../../../quick-start/create-workspace-and-project/)。
 - 通过远程代码仓库创建一个基于 Jenkinsfile 的流水线。有关更多信息，请参见[使用 Jenkinsfile 创建流水线](../create-a-pipeline-using-jenkinsfile/)。
 
 ## 配置 Webhook

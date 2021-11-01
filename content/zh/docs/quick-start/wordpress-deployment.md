@@ -24,7 +24,7 @@ WordPress（使用 PHP 语言编写）是免费、开源的内容管理系统，
 
 ## 准备工作
 
-您需要准备一个 `project regular` 帐户，并在一个项目中赋予该帐户 `operator` 角色（该用户已被邀请参加该项目）。有关更多信息，请参见[创建企业空间、项目、帐户和角色](../create-workspace-and-project/)。
+您需要准备一个 `project regular` 帐户，并在一个项目中赋予该帐户 `operator` 角色（该用户已被邀请参加该项目）。有关更多信息，请参见[创建企业空间、项目、用户和角色](../create-workspace-and-project/)。
 
 ## 预计操作时间
 
@@ -78,7 +78,7 @@ WordPress（使用 PHP 语言编写）是免费、开源的内容管理系统，
 
     ![basic-info](/images/docs/zh-cn/quickstart/wordpress-deployment/basic-info.png)
 
-3. 在**服务组件**中，点击**添加服务**以在应用中设置组件。
+3. 在**系统组件**中，点击**添加服务**以在应用中设置组件。
 
     ![add-service](/images/docs/zh-cn/quickstart/wordpress-deployment/add-service.png)
 

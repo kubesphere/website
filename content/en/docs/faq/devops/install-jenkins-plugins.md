@@ -38,7 +38,7 @@ You need to enable [the KubeSphere DevOps system](../../../pluggable-components/
 
    {{< notice note >}}
 
-   Make sure you use your own address of Jenkins. You may also need to open the port in your security groups and configure related port forwarding rules depending on where your Kubernetes cluster is deployed.
+   Make sure you use your own address of Jenkins. You may also need to open the port in your security groups and configure related port forwarding rules depending on where your KubeSphere cluster is deployed.
 
    {{</ notice >}}
 
@@ -46,15 +46,9 @@ You need to enable [the KubeSphere DevOps system](../../../pluggable-components/
 
 1. Log in to the Jenkins dashboard and click **Manage Jenkins**.
 
-   ![click-manage-jenkins](/images/docs/faq/devops/install-plugins-to-jenkins/click-manage-jenkins.png)
-
 2. On the **Manage Jenkins** page, scroll down to **Manage Plugins** and click it.
 
-   ![click-manage-plugins](/images/docs/faq/devops/install-plugins-to-jenkins/click-manage-plugins.png)
-
 3. Select the **Available** tab and you have to use the search field to search for the plugins you need. For example, you can enter `git` in the search field, check the checkbox next to the plugin you need, and then click **Install without restart** or **Download now and install after restart** based on your needs.
-
-   ![available-plugins](/images/docs/faq/devops/install-plugins-to-jenkins/available-plugins.png)
 
    {{< notice note >}}
 
@@ -64,15 +58,9 @@ You need to enable [the KubeSphere DevOps system](../../../pluggable-components/
 
 4. If you downloaded an HPI file in advance, you can also select the **Advanced** tab and upload the HPI file to install it as a plugin.
 
-   ![click-advanced-tab](/images/docs/faq/devops/install-plugins-to-jenkins/click-advanced-tab.png)
-
 5. On the **Installed** tab, you can view all the plugins installed, and the plugins that are safe to uninstall will have the **Uninstall** button shown on the right.
 
-   ![installed-plugins](/images/docs/faq/devops/install-plugins-to-jenkins/installed-plugins.png)
-
 6. On the **Updates** tab, you can install the updates for plugins by checking the checkbox of a plugin and then click the **Download now and install after restart** button. You can also click the **Check now** button to check for updates.
-
-   ![update-plugins](/images/docs/faq/devops/install-plugins-to-jenkins/update-plugins.png)
 
 ## See Also
 

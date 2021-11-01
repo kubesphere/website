@@ -14,7 +14,7 @@ weight: 13400
 
 ## 准备工作
 
-您需要有一个可用的企业空间、一个项目和一个帐户 (`project-admin`)。该帐户必须在项目层级拥有 `admin` 角色。有关更多信息，请参见[创建企业空间、项目、帐户和角色](../../quick-start/create-workspace-and-project/)。
+您需要有一个可用的企业空间、一个项目和一个用户 (`project-admin`)。该用户必须在项目层级拥有 `admin` 角色。有关更多信息，请参见[创建企业空间、项目、用户和角色](../../quick-start/create-workspace-and-project/)。
 
 ## 设置默认限制范围
 
