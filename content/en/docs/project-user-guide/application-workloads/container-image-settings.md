@@ -20,6 +20,13 @@ You can enable **Edit YAML** in the upper-right corner to see corresponding valu
 
 Set the number of replicated Pods by clicking <img src="/images/docs/project-user-guide/application-workloads/container-image-settings/plus-icon.png" width="20px" /> or <img src="/images/docs/project-user-guide/application-workloads/container-image-settings/minus-icon.png" width="20px" />, indicated by the `.spec.replicas` field in the manifest file. This option is not available for DaemonSets.
 
+If you create Deployments in a multi-cluster project, select a replica scheduling mode under **Replica Scheduling Mode**:
+
+- **Specify Replicas**: select clusters and set the number of Pod replicas in each cluster.
+- **Specify Weights**: select clusters, set the total number of Pod replicas in **Total Replicas**, and specify a weight for each cluster. The Pod replicas will be proportionally scheduled to the clusters according to the weights.
+
+If you create StatefulSets in a multi-cluster project, select clusters and set the number of Pod replicas in each cluster under **Pod Replicas**.
+
 ### Add Container
 
 Click **Add Container** to add a container.
