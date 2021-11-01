@@ -14,7 +14,7 @@ weight: 7200
 ## 准备工作
 
 - 您需要有一个运行 KubeSphere v3.1.x 的集群。如果您的 KubeSphere 是 v3.0.0 或更早的版本，请先升级至 v3.1.x。
-- 请仔细阅读 [Release Notes for 3.1.1](../../release/release-v311/)。
+- 请仔细阅读 [Release Notes for 3.2.0](../../release/release-v320/)。
 - 提前备份所有重要的组件。
 - 确定您的升级方案。本文档中提供 [All-in-One 集群](#all-in-one-集群)和[多节点集群](#多节点集群)的两种升级场景。
 
@@ -29,7 +29,7 @@ weight: 7200
 从 [GitHub 发布页面](https://github.com/kubesphere/kubekey/releases)下载 KubeKey 或直接使用以下命令。
 
 ```bash
-curl -sfL https://get-kk.kubesphere.io | VERSION=v1.1.1 sh -
+curl -sfL https://get-kk.kubesphere.io | VERSION=v1.2.0 sh -
 ```
 
 {{</ tab >}}
@@ -45,7 +45,7 @@ export KKZONE=cn
 执行以下命令下载 KubeKey。
 
 ```bash
-curl -sfL https://get-kk.kubesphere.io | VERSION=v1.1.1 sh -
+curl -sfL https://get-kk.kubesphere.io | VERSION=v1.2.0 sh -
 ```
 
 {{< notice note >}}
@@ -60,7 +60,7 @@ curl -sfL https://get-kk.kubesphere.io | VERSION=v1.1.1 sh -
 
 {{< notice note >}}
 
-执行以上命令会下载最新版 KubeKey (v1.1.1)，您可以修改命令中的版本号以下载指定版本。
+执行以上命令会下载最新版 KubeKey (v1.2.0)，您可以修改命令中的版本号以下载指定版本。
 
 {{</ notice >}} 
 
@@ -84,7 +84,7 @@ chmod +x kk
 运行以下命令使用 KubeKey 将您的单节点集群升级至 KubeSphere v3.2.0 和 Kubernetes v1.20.4：
 
 ```bash
-./kk upgrade --with-kubernetes v1.20.4 --with-kubesphere v3.1.1
+./kk upgrade --with-kubernetes v1.20.4 --with-kubesphere v3.2.0
 ```
 
 要将 Kubernetes 升级至特定版本，请在 `--with-kubernetes` 标志后明确指定版本号。以下是可用版本：
@@ -130,7 +130,7 @@ chmod +x kk
 运行以下命令，将您的集群升级至 KubeSphere v3.2.0 和 Kubernetes v1.20.4：
 
 ```bash
-./kk upgrade --with-kubernetes v1.20.4 --with-kubesphere v3.1.1 -f sample.yaml
+./kk upgrade --with-kubernetes v1.20.4 --with-kubesphere v3.2.0 -f sample.yaml
 ```
 
 要将 Kubernetes 升级至特定版本，请在 `--with-kubernetes` 标志后明确指定版本号。以下是可用版本：

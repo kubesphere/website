@@ -11,7 +11,7 @@ Air-gapped upgrade with KubeKey is recommended for users whose KubeSphere and Ku
 
 - You need to have a KubeSphere cluster running v3.1.x. If your KubeSphere version is v3.0.0 or earlier, upgrade to v3.1.x first.
 - Your Kubernetes version must be v1.19.x or later.
-- Read [Release Notes for 3.1.1](../../release/release-v311/) carefully.
+- Read [Release Notes for 3.2.0](../../release/release-v320/) carefully.
 - Back up any important component beforehand.
 - A Docker registry. You need to have a Harbor or other Docker registries. For more information, see [Prepare a Private Image Registry](../../installing-on-linux/introduction/air-gapped-installation/#step-2-prepare-a-private-image-registry).
 - Make sure every node can push and pull images from the Docker Registry.
@@ -60,7 +60,7 @@ As you install KubeSphere and Kubernetes on Linux, you need to prepare an image 
 1. Download the image list file `images-list.txt` from a machine that has access to Internet through the following command:
 
    ```bash
-   curl -L -O https://github.com/kubesphere/ks-installer/releases/download/v3.1.1/images-list.txt
+   curl -L -O https://github.com/kubesphere/ks-installer/releases/download/v3.2.0/images-list.txt
    ```
 
    {{< notice note >}}
@@ -72,7 +72,7 @@ As you install KubeSphere and Kubernetes on Linux, you need to prepare an image 
 2. Download `offline-installation-tool.sh`.
 
    ```bash
-   curl -L -O https://github.com/kubesphere/ks-installer/releases/download/v3.1.1/offline-installation-tool.sh
+   curl -L -O https://github.com/kubesphere/ks-installer/releases/download/v3.2.0/offline-installation-tool.sh
    ```
 
 3. Make the `.sh` file executable.
@@ -102,13 +102,13 @@ As you install KubeSphere and Kubernetes on Linux, you need to prepare an image 
 5. Download the Kubernetes binary file.
 
    ```bash
-   ./offline-installation-tool.sh -b -v v1.17.9 
+   ./offline-installation-tool.sh -b -v v1.21.5 
    ```
 
    If you cannot access the object storage service of Google, run the following command instead to add the environment variable to change the source.
 
    ```bash
-   export KKZONE=cn;./offline-installation-tool.sh -b -v v1.17.9 
+   export KKZONE=cn;./offline-installation-tool.sh -b -v v1.21.5 
    ```
 
    {{< notice note >}}
@@ -177,7 +177,7 @@ Execute the following command to generate an example configuration file for inst
 For example:
 
 ```bash
-./kk create config --with-kubernetes v1.20.4 --with-kubesphere v3.1.1 -f config-sample.yaml
+./kk create config --with-kubernetes v1.21.5 --with-kubesphere v3.2.0 -f config-sample.yaml
 ```
 
 {{< notice note >}}
@@ -218,7 +218,7 @@ Set `privateRegistry` of your `config-sample.yaml` file:
     privateRegistry: dockerhub.kubekey.local
 ```
 
-#### Upgrade your single-node cluster to KubeSphere v3.2.0 and Kubernetes v1.19.8
+#### Upgrade your single-node cluster to KubeSphere v3.2.0 and Kubernetes v1.21.5
 
 ```bash
 ./kk upgrade -f config-sample.yaml
@@ -265,7 +265,7 @@ In this example, KubeSphere is installed on multiple nodes, so you need to speci
    For example:
 
 ```bash
-./kk create config --with-kubernetes v1.17.9 --with-kubesphere v3.1.1 -f config-sample.yaml
+./kk create config --with-kubernetes v1.21.5 --with-kubesphere v3.2.0 -f config-sample.yaml
 ```
 
 {{< notice note >}}
@@ -308,7 +308,7 @@ Set `privateRegistry` of your `config-sample.yaml` file:
     privateRegistry: dockerhub.kubekey.local
 ```
 
-#### Upgrade your multi-node cluster to KubeSphere v3.2.0 and Kubernetes v1.19.8
+#### Upgrade your multi-node cluster to KubeSphere v3.2.0 and Kubernetes v1.21.5
 
 ```bash
 ./kk upgrade -f config-sample.yaml

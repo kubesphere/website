@@ -12,10 +12,10 @@ ks-installer is recommended for users whose Kubernetes clusters were not set up 
 ## Prerequisites
 
 - You need to have a KubeSphere cluster running v3.1.x. If your KubeSphere version is v3.0.0 or earlier, upgrade to v3.1.x first.
-- Read [Release Notes for 3.1.1](../../release/release-v311/) carefully.
+- Read [Release Notes for 3.2.0](../../release/release-v320/) carefully.
 - Back up any important component beforehand.
 - A Docker registry. You need to have a Harbor or other Docker registries. For more information, see [Prepare a Private Image Registry](../../installing-on-linux/introduction/air-gapped-installation/#step-2-prepare-a-private-image-registry).
-- Supported Kubernetes versions of KubeSphere v3.2.0: v1.19.x, v1.20.x, v1.21.5, or v1.22.1.
+- Supported Kubernetes versions of KubeSphere v3.2.0: v1.19.x, v1.20.x, v1.21.5, and v1.22.1.
 
 ## Step 1: Prepare Installation Images
 
@@ -24,7 +24,7 @@ As you install KubeSphere in an air-gapped environment, you need to prepare an i
 1. Download the image list file `images-list.txt` from a machine that has access to Internet through the following command:
 
    ```bash
-   curl -L -O https://github.com/kubesphere/ks-installer/releases/download/v3.1.1/images-list.txt
+   curl -L -O https://github.com/kubesphere/ks-installer/releases/download/v3.2.0/images-list.txt
    ```
 
    {{< notice note >}}
@@ -36,7 +36,7 @@ As you install KubeSphere in an air-gapped environment, you need to prepare an i
 2. Download `offline-installation-tool.sh`. 
 
    ```bash
-   curl -L -O https://github.com/kubesphere/ks-installer/releases/download/v3.1.1/offline-installation-tool.sh
+   curl -L -O https://github.com/kubesphere/ks-installer/releases/download/v3.2.0/offline-installation-tool.sh
    ```
 
 3. Make the `.sh` file executable.
@@ -96,7 +96,7 @@ Similar to installing KubeSphere on an existing Kubernetes cluster in an online 
 1. Execute the following command to download ks-installer and transfer it to your machine that serves as the taskbox for installation.
 
    ```bash
-   curl -L -O https://github.com/kubesphere/ks-installer/releases/download/v3.1.1/kubesphere-installer.yaml
+   curl -L -O https://github.com/kubesphere/ks-installer/releases/download/v3.2.0/kubesphere-installer.yaml
    ```
    
 2. Verify that you have specified your private image registry in `spec.local_registry` in `cluster-configuration.yaml`. Note that if your existing cluster was installed in an air-gapped environment, you may already have this field specified. Otherwise, run the following command to edit `cluster-configuration.yaml` of your existing KubeSphere v3.1.x cluster and add the private image registry:
@@ -169,5 +169,3 @@ Now, you will be able to access the web console of KubeSphere through `http://{I
 To access the console, make sure port 30880 is opened in your security group.
 
 {{</ notice >}}
-
-![kubesphere-login](https://ap3.qingstor.com/kubesphere-website/docs/login.png)

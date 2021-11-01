@@ -71,7 +71,7 @@ Follow the steps below to download [KubeKey](../../../installing-on-linux/introd
 Download KubeKey from its [GitHub Release Page](https://github.com/kubesphere/kubekey/releases) or use the following command directly.
 
 ```bash
-curl -sfL https://get-kk.kubesphere.io | VERSION=v1.1.1 sh -
+curl -sfL https://get-kk.kubesphere.io | VERSION=v1.2.0 sh -
 ```
 
 {{</ tab >}}
@@ -87,7 +87,7 @@ export KKZONE=cn
 Run the following command to download KubeKey:
 
 ```bash
-curl -sfL https://get-kk.kubesphere.io | VERSION=v1.1.1 sh -
+curl -sfL https://get-kk.kubesphere.io | VERSION=v1.2.0 sh -
 ```
 
 {{< notice note >}}
@@ -102,7 +102,7 @@ After you download KubeKey, if you transfer it to a new machine also with poor n
 
 {{< notice note >}}
 
-The commands above download the latest release (v1.1.1) of KubeKey. You can change the version number in the command to download a specific version.
+The commands above download the latest release (v1.2.0) of KubeKey. You can change the version number in the command to download a specific version.
 
 {{</ notice >}}
 
@@ -117,7 +117,7 @@ chmod +x kk
 1. Specify a Kubernetes version and a KubeSphere version that you want to install. For example:
 
    ```bash
-   ./kk create config --with-kubernetes v1.20.4 --with-kubesphere v3.1.1
+   ./kk create config --with-kubernetes v1.21.5 --with-kubesphere v3.2.0
    ```
 
    {{< notice note >}}
