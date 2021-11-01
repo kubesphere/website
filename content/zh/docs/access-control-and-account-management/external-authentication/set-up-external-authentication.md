@@ -13,7 +13,7 @@ KubeSphere 提供了一个内置的 OAuth 服务。用户通过获取 OAuth 访�
 
 ## 准备工作
 
-您需要部署一个 Kubernetes 集群，并在集群中安装 KubeSphere。有关详细信息，请参阅[在 Linux 上安装](../docs/installing-on-linux/)和[在 Kubernetes 上安装](../docs/installing-on-kubernetes/)。
+您需要部署一个 Kubernetes 集群，并在集群中安装 KubeSphere。有关详细信息，请参阅[在 Linux 上安装](../../../installing-on-linux/)和[在 Kubernetes 上安装](../../../installing-on-kubernetes/)。
 
 
 ## 步骤

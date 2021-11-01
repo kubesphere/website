@@ -14,7 +14,7 @@ weight: 12230
 
 ## 准备工作
 
-您需要部署一个 Kubernetes 集群，并在集群中安装 KubeSphere。有关详细信息，请参阅[在 Linux 上安装](../docs/installing-on-linux/)和[在 Kubernetes 上安装](../docs/installing-on-kubernetes/)。
+您需要部署一个 Kubernetes 集群，并在集群中安装 KubeSphere。有关详细信息，请参阅[在 Linux 上安装](../../../installing-on-linux/)和[在 Kubernetes 上安装](../../../installing-on-kubernetes/)。
 
 ## 开发 OAuth 2.0 插件
 
