@@ -12,7 +12,7 @@ snapshot: 'https://pek3b.qingstor.com/kubesphere-community/images/radondb-cover.
 
 ## MySQL 运维有哪些挑战？
 
-![](http://pek3b.qingstor.com/kubesphere-community/images/radondb-1.jpg)
+![](https://pek3b.qingstor.com/kubesphere-community/images/radondb-1.jpg)
 
 传统的物理部署方式，即把数据库部署在物理机上。对运维人员而言，会遇到图 1 中四个维度的挑战。
 
@@ -62,7 +62,7 @@ snapshot: 'https://pek3b.qingstor.com/kubesphere-community/images/radondb-cover.
 
 ### 容器技术
 
-![](http://pek3b.qingstor.com/kubesphere-community/images/radondb-2.jpg)
+![](https://pek3b.qingstor.com/kubesphere-community/images/radondb-2.jpg)
 
 ### Docker 横空出世
 
@@ -102,7 +102,7 @@ snapshot: 'https://pek3b.qingstor.com/kubesphere-community/images/radondb-cover.
 
 每一个 Pod 里面的 Xenon 管理当前 Pod 中的 MySQL，主要获取并保存当前状态，获取当前执行的复制状态信息。
 
-![](http://pek3b.qingstor.com/kubesphere-community/images/radondb-3.jpg)
+![](https://pek3b.qingstor.com/kubesphere-community/images/radondb-3.jpg)
 
 ### Helm 版
 
@@ -126,7 +126,7 @@ snapshot: 'https://pek3b.qingstor.com/kubesphere-community/images/radondb-cover.
 
 ### KubeSphere 应用管理
 
-![](http://pek3b.qingstor.com/kubesphere-community/images/radondb-4.jpg)
+![](https://pek3b.qingstor.com/kubesphere-community/images/radondb-4.jpg)
 
 可以通过终端执行命令部署回显信息。
 
