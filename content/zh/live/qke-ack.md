@@ -32,4 +32,4 @@ QKE 可以提供开箱即用、高可用的 KubeSphere，而业务负载可能�
 
 ## 下载 PPT
 
-可扫描官网底部二维码，关注 「KubeSphere 云原生」公众号，后台回复 “PPT” 即可下载 PPT。
+可扫描官网底部二维码，关注 「KubeSphere云原生」公众号，后台回复 “PPT” 即可下载 PPT。

@@ -32,4 +32,4 @@ OpenFunction 项目发起人，KubeSphere 可观测性、边缘计算相关产�
 
 ## 下载 PPT
 
-可扫描官网底部二维码，关注 「KubeSphere 云原生」公众号，后台回复 “2021 杭州” 即可下载 PPT。
+可扫描官网底部二维码，关注 「KubeSphere云原生」公众号，后台回复 “2021 杭州” 即可下载 PPT。
