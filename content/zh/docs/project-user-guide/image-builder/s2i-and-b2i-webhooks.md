@@ -1,106 +1,84 @@
 ---
-title: "Configure S2I and B2I Webhooks"
+title: "配置 S2I 和 B2I Webhooks"
 keywords: 'KubeSphere, Kubernetes, S2I, Source-to-Image, B2I, Binary-to-Image, Webhook'
-description: 'Learn how to configure S2I and B2I webhooks.'
-linkTitle: "Configure S2I and B2I Webhooks"
+description: '学习如何配置 S2I 和 B2I webhooks。'
+linkTitle: "配置 S2I 和 B2I  Webhooks"
 weight: 10650
+
 ---
 
-KubeSphere provides Source-to-Image (S2I) and Binary-to-Image (B2I) features to  automate image building and pushing and application deployment. In KubeSphere v3.1, you can configure S2I and B2I webhooks so that your Image Builder can be automatically triggered when there is any relevant activity in your code repository.
+KubeSphere 提供 Source-to-Image (S2I) 和 Binary-to-Image (B2I) 功能，以自动化镜像构建、推送和应用程序部署。在 KubeSphere v3.1.x 以及后续版本中，您可以配置 S2I 和 B2I Webhook，以便当代码仓库中存在任何相关活动时，自动触发镜像构建器。
 
-This tutorial demonstrates how to configure S2I and B2I webhooks.
+本教程演示如何配置 S2I 和 B2I webhooks。
 
-## Prerequisites
+## 准备工作
 
-- You need to enable the [KubeSphere DevOps System](../../../pluggable-components/devops/).
-- You need to create a workspace, a project (`demo-project`) and an account (`project-regular`). The account must be invited to the project with the role of `operator`. For more information, see [Create Workspaces, Projects, Accounts and Roles](../../../quick-start/create-workspace-and-project/).
-- You need to create an S2I Image Builder and a B2I Image Builder. For more information, refer to [Source to Image: Publish an App without a Dockerfile](../source-to-image/) and [Binary to Image: Publish an Artifact to Kubernetes](../binary-to-image/).
+- 您需要启用 [KubeSphere DevOps 系统](../../../pluggable-components/devops/)，该系统已集成 S2I。
+- 您需要创建一个创建企业空间，一个项目 (`demo-project`) 和一个用户 (`project-regular`)。`project-regular` 需要被邀请到项目中，并赋予 `operator` 角色。有关详细信息，请参考[创建企业空间、项目、用户和角色](../../../quick-start/create-workspace-and-project/#step-1-create-an-account)。
+- 您需要创建一个 S2I 镜像构建器和 B2I 镜像构建器。有关更多信息，请参见 [Source to Image：无需 Dockerfile 发布应用](../source-to-image/)和[Binary to Image：发布制品到 Kubernetes](../binary-to-image/)。
 
-## Configure an S2I Webhook
+## 配置 S2I Webhook
 
-### Step 1: Expose the S2I trigger Service
+### 步骤 1: 暴露 S2I trigger 服务
 
-1. Log in to the KubeSphere web console as `admin`. Click **Platform** in the top-left corner and then select **Cluster Management**.
+1. 以 `admin` 身份登录 KubeSphere Web 控制台。在左上角点击**平台管理**，然后选择**集群管理**。
 
-2. In **Services** under **Application Workloads**, select **kubesphere-devops-system** from the drop-down list and click **s2ioperator-trigger-service** to go to its detail page.
+2. 前往**应用负载**下的**服务**，从下拉框中选择 **kubesphere-devops-system**，然后点击 **s2ioperator-trigger-service** 进入详情页面。
 
-   ![s2i-trigger-service](/images/docs/project-user-guide/image-builder/s2i-and-b2i-webhooks/s2i-trigger-service.png)
+3. 点击**更多操作**，选择**编辑外部访问**。
 
-3. Click **More** and select **Edit Internet Access**.
-
-   ![edit-trigger-service](/images/docs/project-user-guide/image-builder/s2i-and-b2i-webhooks/edit-trigger-service.png)
-
-4. In the window that appears, select **NodePort** from the drop-down list for **Access Method** and then click **OK**.
-
-   ![select-nodeport](/images/docs/project-user-guide/image-builder/s2i-and-b2i-webhooks/select-nodeport.png)
+4. 在弹出的对话框中，从**访问方式**的下拉菜单中选择 **NodePort**，然后点击**确定**。
 
    {{< notice note >}}
 
-   This tutorial selects **NodePort** for demonstration purposes. You can also select **LoadBalancer** based on your needs.
+   本教程出于演示目的选择 **NodePort**。根据您的需要，您也可以选择 **LoadBalancer**。
 
    {{</ notice >}}
 
-5. You can view the **Node Port** on the detail page. It will be included in the S2I webhook URL.
+5. 在详情界面可以查看 **NodePort**。S2I webhook URL 中将包含此 NodePort。
 
-   ![s2i-nodeport](/images/docs/project-user-guide/image-builder/s2i-and-b2i-webhooks/s2i-nodeport.png)
+### 步骤 2：配置 S2I webhook
 
-### Step 2: Configure an S2I webhook
+1. 登出 KubeSphere 并以 `project-regular` 用户登回。然后转到 `demo-project`。
 
-1. Log out of KubeSphere and log back in as `project-regular`. Go to `demo-project`.
+2. 在**镜像构建器**中，点击 S2I 镜像构建器，进入详情页面。
 
-2. In **Image Builder**, click the S2I Image Builder to go to its detail page.
+3. 您可以在**远程触发器**中看到自动生成的链接。复制 `/s2itrigger/v1alpha1/general/namespaces/demo-project/s2ibuilders/felixnoo-s2i-sample-latest-zhd/`，S2I webhook URL 中将包含这个链接。
 
-   ![click-s2i](/images/docs/project-user-guide/image-builder/s2i-and-b2i-webhooks/click-s2i.png)
+4. 登录您的 GitHub 帐户，转到用于 S2I 镜像构建器的源代码仓库。转到 **Settings** 下的 **Webhooks**，然后点击 **Add webhook**。
 
-3. You can see an auto-generated link shown in **Remote Trigger Link**. Copy `/s2itrigger/v1alpha1/general/namespaces/demo-project/s2ibuilders/felixnoo-s2i-sample-latest-zhd/` as it will be included in the S2I webhook URL.
-
-   ![s2i-trigger-link](/images/docs/project-user-guide/image-builder/s2i-and-b2i-webhooks/s2i-trigger-link.png)
-
-4. Log in to your GitHub account and go to the source code repository used for the S2I Image Builder. Go to **Webhooks** under **Settings** and then click **Add webhook**.
-
-   ![click-add-webhook](/images/docs/project-user-guide/image-builder/s2i-and-b2i-webhooks/click-add-webhook.png)
-
-5. In **Payload URL**, enter `http://<IP>:<Service NodePort>/s2itrigger/v1alpha1/general/namespaces/demo-project/s2ibuilders/felixnoo-s2i-sample-latest-zhd/`. You can select trigger events based on your needs and then click **Add webhook**. This tutorial chooses **Just the push event** for demonstration purposes.
-
-   ![add-payload-url](/images/docs/project-user-guide/image-builder/s2i-and-b2i-webhooks/add-payload-url.png)
+5. 在 **Payload URL**，输入 `http://<IP>:<Service NodePort>/s2itrigger/v1alpha1/general/namespaces/demo-project/s2ibuilders/felixnoo-s2i-sample-latest-zhd/`。您可以按需选择触发事件，然后点击 **Add webhook**。本教程出于演示目的，选择 **Just the push event**。
 
    {{< notice note >}}
 
-   `<IP>` is your own IP address, `<Service NodePort>` is the NodePort you get in step 1, and `/s2itrigger/v1alpha1/general/namespaces/demo-project/s2ibuilders/felixnoo-s2i-sample-latest-zhd/` is from the S2I remote trigger link. Make sure you use your own IP, Service NodePort and S2I remote trigger link. You may also need to configure necessary port forwarding rules and open the port in your security groups depending on where your Kubernetes cluster is deployed.
+   `<IP>` 是您自己的 IP 地址，`<Service NodePort>` 是您在第一步中获得的 NodePort。`/s2itrigger/v1alpha1/general/namespaces/demo-project/s2ibuilders/felixnoo-s2i-sample-latest-zhd/` 来自 S2I 的远程触发器链接。确保您用的是您自己的 IP 地址、Service NodePort 和 S2I 远程触发器链接。根据您 Kubernetes 集群的部署位置，您可能还需要配置必要的端口转发规则并在安全组中打开端口。
 
    {{</ notice >}}
 
-6. Once the webhook is added, you can click the webhook to view delivery details in **Recent Deliveries**. You can see a green tick if the Payload URL is valid.
+6. 添加 webhook 后，您可以点击 webhook 查看 **Recent Deliveries** 中的交付详细信息。如果有效负载 URL 有效，您可以看到绿色的勾号。
 
-   ![webhook-delivery](/images/docs/project-user-guide/image-builder/s2i-and-b2i-webhooks/webhook-delivery.png)
+7. 完成上述所有操作后，如果源代码仓库中存在推送事件，则会自动触发 S2I 镜像构建器。
 
-7. After you finish all the above operations, the S2I Image Builder will be automatically triggered if there is a push event to the source code repository.
+## 配置 B2I Webhook
 
-   ![s2i-auto-build](/images/docs/project-user-guide/image-builder/s2i-and-b2i-webhooks/s2i-auto-build.png)
+您可以按照相同的步骤配置 B2I webhook。
 
-## Configure a B2I Webhook
+1. 暴露 S2I 触发器服务。
 
-You can follow the same steps to configure a B2I webhook.
+2. 在 B2I 镜像构建器的详细信息页面中查看**远程触发器**。
 
-1. Expose the S2I trigger Service.
-
-2. View the **Remote Trigger Link** in the detail page of your B2I Image Builder.
-
-   ![b2i-trigger-link](/images/docs/project-user-guide/image-builder/s2i-and-b2i-webhooks/b2i-trigger-link.png)
-
-3. Add the payload URL in the source code repository. The B2I payload URL format is the same as that of S2I payload URL.
-
-   ![b2i-payload-url](/images/docs/project-user-guide/image-builder/s2i-and-b2i-webhooks/b2i-payload-url.png)
+3. 在源代码仓库中添加有效负载 URL。B2I 有效负载 URL 格式与 S2I 有效负载 URL 格式相同。
 
    {{< notice note >}}
 
-   You may need to configure necessary port forwarding rules and open the port in your security groups depending on where your Kubernetes cluster is deployed.
+   根据您 Kubernetes 集群的部署位置，您可能需要配置必要的端口转发规则并在安全组中打开端口。
 
    {{</ notice >}}
 
-4. The B2I Image Builder will be automatically triggered if there is a relevant event to the source code repository.
+4. 如果源代码仓库发生相关事件，B2I 镜像构建器将自动触发。
 
-   ![b2i-auto-build](/images/docs/project-user-guide/image-builder/s2i-and-b2i-webhooks/b2i-auto-build.png)
+
+
 
 
 

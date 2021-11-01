@@ -10,19 +10,7 @@ weight: 16200
 
 ## 获取加速器地址
 
-您需要获取仓库的一个镜像地址以配置加速器。以下示例介绍如何从阿里云获取加速器地址。
-
-1. 登录阿里云控制台，在搜索栏中输入“容器镜像服务”，点击搜索结果中的**容器镜像服务**。
-
-   ![container-registry.png](/images/docs/zh-cn/installing-on-linux/faq/configure-booster/container-registry.PNG)
-
-2. 点击**镜像加速器**。
-
-   ![image-booster](/images/docs/zh-cn/installing-on-linux/faq/configure-booster/image-booster.PNG)
-
-3. 在如图所示的位置获取**加速器地址**，并按照页面上提供的阿里云官方操作文档配置加速器。
-
-   ![booster-url](/images/docs/zh-cn/installing-on-linux/faq/configure-booster/booster-url.PNG)
+您需要获取仓库的一个镜像地址以配置加速器。您可以参考如何[从阿里云获取加速器地址](https://www.alibabacloud.com/help/zh/doc-detail/60750.htm?spm=a2c63.p38356.b99.18.4f4133f0uTKb8S)。
 
 ## 配置仓库镜像地址
 

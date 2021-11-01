@@ -1,6 +1,6 @@
 ---
 title: "镜像仓库"
-keywords: 'KubeSphere, Kubernetes, Docker, 密钥'
+keywords: 'KubeSphere, Kubernetes, Docker, 保密字典'
 description: '了解如何在 KubeSphere 中创建镜像仓库。'
 linkTitle: "镜像仓库"
 weight: 10430
@@ -8,52 +8,44 @@ weight: 10430
 
 Docker 镜像是一个只读的模板，可用于部署容器服务。每个镜像都有一个唯一标识符（即`镜像名称:标签`）。例如，一个镜像可以包含只安装有 Apache 和几个应用的完整的 Ubuntu 操作系统软件包。镜像仓库可用于存储和分发 Docker 镜像。
 
-本教程演示如何为不同的镜像仓库创建密钥。
+本教程演示如何为不同的镜像仓库创建保密字典。
 
 ## 准备工作
 
-您需要创建一个企业空间、一个项目和一个帐户（例如 `project-regular`）。该帐户必须已邀请至该项目，并具有 `operator` 角色。有关更多信息，请参阅[创建企业空间、项目、帐户和角色](../../../quick-start/create-workspace-and-project/)。
+您需要创建一个企业空间、一个项目和一个用户（例如 `project-regular`）。该用户必须已邀请至该项目，并具有 `operator` 角色。有关更多信息，请参阅[创建企业空间、项目、用户和角色](../../../quick-start/create-workspace-and-project/)。
 
-## 创建密钥
+## 创建保密字典
 
-创建工作负载、[服务](../../../project-user-guide/application-workloads/services/)、[任务](../../../project-user-guide/application-workloads/jobs/)或[定时任务](../../../project-user-guide/application-workloads/cronjobs/)时，除了从公共仓库选择镜像，您还可以从私有仓库选择镜像。要使用私有仓库中的镜像，您必须先为私有仓库创建密钥，以便在 KubeSphere 中集成该私有仓库。
+创建工作负载、[服务](../../../project-user-guide/application-workloads/services/)、[任务](../../../project-user-guide/application-workloads/jobs/)或[定时任务](../../../project-user-guide/application-workloads/cronjobs/)时，除了从公共仓库选择镜像，您还可以从私有仓库选择镜像。要使用私有仓库中的镜像，您必须先为私有仓库创建保密字典，以便在 KubeSphere 中集成该私有仓库。
 
-### 步骤 1：进入密钥页面
+### 步骤 1：进入保密字典页面
 
-以 `project-regular` 用户登录 KubeSphere Web 控制台并进入项目，在左侧导航栏中选择**配置中心**下的**密钥**，然后点击**创建**。
-
-![open-dashboard](/images/docs/zh-cn/project-user-guide/configurations/image-registries/open-dashboard.png)
+以 `project-regular` 用户登录 KubeSphere Web 控制台并进入项目，在左侧导航栏中选择**配置**下的**保密字典**，然后点击**创建**。
 
 ### 步骤 2：配置基本信息
 
-设置密钥的名称（例如 `demo-registry-secret`），然后点击**下一步**。
+设置保密字典的名称（例如 `demo-registry-secret`），然后点击**下一步**。
 
 {{< notice tip >}}
 
-您可以在对话框右上角启用**编辑模式**来查看密钥的 YAML 清单文件，并通过直接编辑清单文件来创建密钥。您也可以继续执行后续步骤在控制台上创建密钥。
+您可以在对话框右上角启用**编辑 YAML** 来查看保密字典的 YAML 清单文件，并通过直接编辑清单文件来创建保密字典。您也可以继续执行后续步骤在控制台上创建保密字典。
 
 {{</ notice >}} 
 
-![create-secret](/images/docs/zh-cn/project-user-guide/configurations/image-registries/create-secret.png)
-
 ### 步骤 3：配置镜像仓库信息
 
-将**类型**设置为 **kubernetes.io/dockerconfigjson（镜像仓库密钥）**。要在创建应用负载时使用私有仓库中的镜像，您需要配置以下字段：
+将**类型**设置为 **kubernetes.io/dockerconfigjson（镜像仓库保密字典）**。要在创建应用负载时使用私有仓库中的镜像，您需要配置以下字段：
 
 - **仓库地址**：镜像仓库的地址，其中包含创建应用负载时需要使用的镜像。
 - **用户名**：登录镜像仓库所需的用户名。
 - **密码**：登录镜像仓库所需的密码。
 - **邮箱**（可选）：您的邮箱地址。
 
-![image-registry-info](/images/docs/zh-cn/project-user-guide/configurations/image-registries/image-registry-info.png)
-
 #### 添加 Docker Hub 仓库
 
-1. 在 [Docker Hub](https://hub.docker.com/) 上添加镜像仓库之前，您需要注册一个 Docker Hub 帐户。在**密钥设置**页面，将**仓库地址**设置为 `docker.io`，将**用户名**和**密码**分别设置为您的 Docker ID 和密码，然后点击**验证**以检查地址是否可用。
+1. 在 [Docker Hub](https://hub.docker.com/) 上添加镜像仓库之前，您需要注册一个 Docker Hub 帐户。在**保密字典设置**页面，将**仓库地址**设置为 `docker.io`，将**用户名**和**密码**分别设置为您的 Docker ID 和密码，然后点击**验证**以检查地址是否可用。
 
-   ![validate-registry-address](/images/docs/zh-cn/project-user-guide/configurations/image-registries/validate-registry-address.png)
-
-2. 点击**创建**。密钥创建后会显示在**密钥**界面。有关密钥创建后如何编辑密钥，请参阅[查看密钥详情](../../../project-user-guide/configuration/secrets/#查看密钥详情)。
+2. 点击**创建**。保密字典创建后会显示在**保密字典**界面。有关保密字典创建后如何编辑保密字典，请参阅[查看保密字典详情](../../../project-user-guide/configuration/secrets/#查看保密字典详情)。
 
 #### 添加 Harbor 镜像仓库
 
@@ -89,9 +81,7 @@ Docker 镜像是一个只读的模板，可用于部署容器服务。每个镜�
    sudo systemctl restart docker
    ```
 
-3. 在 KubeSphere 控制台上进入创建密钥的**密钥设置**页面，将**类型**设置为**镜像仓库密钥**，将**仓库地址**设置为您的 Harbor IP 地址，并设置用户名和密码。
-
-   ![harbor-address](/images/docs/zh-cn/project-user-guide/configurations/image-registries/harbor-address.png)
+3. 在 KubeSphere 控制台上进入创建保密字典的**保密字典设置**页面，将**类型**设置为**镜像仓库保密字典**，将**仓库地址**设置为您的 Harbor IP 地址，并设置用户名和密码。
 
    {{< notice note >}} 
 
@@ -99,7 +89,7 @@ Docker 镜像是一个只读的模板，可用于部署容器服务。每个镜�
 
    {{</ notice >}} 
    
-4. 点击**创建**。密钥创建后会显示在**密钥**页面。有关密钥创建后如何编辑密钥，请参阅[查看密钥详情](../../../project-user-guide/configuration/secrets/#查看密钥详情)。
+4. 点击**创建**。保密字典创建后会显示在**保密字典**页面。有关保密字典创建后如何编辑保密字典，请参阅[查看保密字典详情](../../../project-user-guide/configuration/secrets/#查看保密字典详情)。
 
 **HTTPS**
 
@@ -107,6 +97,4 @@ Docker 镜像是一个只读的模板，可用于部署容器服务。每个镜�
 
 ## 使用镜像仓库
 
-如果您已提前创建了私有镜像仓库的密钥，您可以选择私有镜像仓库中的镜像。例如，创建[部署](../../../project-user-guide/application-workloads/deployments/)时，您可以在**容器镜像**页面点击**镜像**下拉列表选择一个仓库，然后输入镜像名称和标签使用镜像。
-
-![use-image-registry](/images/docs/zh-cn/project-user-guide/configurations/image-registries/use-image-registry.png)
+如果您已提前创建了私有镜像仓库的保密字典，您可以选择私有镜像仓库中的镜像。例如，创建[部署](../../../project-user-guide/application-workloads/deployments/)时，您可以在**添加容器**页面点击**镜像**下拉列表选择一个仓库，然后输入镜像名称和标签使用镜像。

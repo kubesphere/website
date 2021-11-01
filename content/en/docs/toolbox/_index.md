@@ -11,6 +11,3 @@ icon: "/images/docs/docs.svg"
 ---
 
 KubeSphere provides several important functionalities from the toolbox. This chapter demonstrates how to use the toolbox of KubeSphere to query events, logs, and auditing logs, view resource consumption information, and run commands with web kubectl.
-
-![toolbox](/images/docs/toolbox/index/toolbox.png)
-

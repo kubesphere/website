@@ -39,7 +39,7 @@ snapshot: 'https://pek3b.qingstor.com/kubesphere-community/images/20210903151879
    helm install kafka-operator -n default strimzi/strimzi-kafka-operator
    ```
 
-2. 运行以下命令在 default 命名空间中创建 Kafka 集群和 Kafka Topic，该命令所创建的 Kafka 和 Zookeeper 集群的存储类型为 **ephemeral**，使用 emptyDir 进行演示。
+2. 运行以下命令在 default 命名空间中创建 Kafka 集群和 Kafka 主题，该命令所创建的 Kafka 和 Zookeeper 集群的存储类型为 **ephemeral**，使用 emptyDir 进行演示。
 
    > 注意，我们此时创建了一个名为 “logs” 的 topic，后续会用到它
 

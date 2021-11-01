@@ -20,7 +20,7 @@ KubeSphere 中可以创建两种类型的流水线：一种是本教程中介绍
 
 - 您需要有一个 [Docker Hub](https://hub.docker.com/) 帐户和一个 [GitHub](https://github.com/) 帐户。
 - 您需要[启用 KubeSphere DevOps 系统](../../../pluggable-components/devops/)。
-- 您需要创建一个企业空间、一个 DevOps 工程和一个帐户 (`project-regular`)，需要邀请该帐户至 DevOps 工程中并赋予 `operator` 角色。如果尚未准备就绪，请参见[创建企业空间、项目、帐户和角色](../../../quick-start/create-workspace-and-project/)。
+- 您需要创建一个企业空间、一个 DevOps 工程和一个用户 (`project-regular`)，需要邀请该帐户至 DevOps 工程中并赋予 `operator` 角色。如果尚未准备就绪，请参见[创建企业空间、项目、用户和角色](../../../quick-start/create-workspace-and-project/)。
 - 您需要设置 CI 专用节点用于运行流水线。请参考[为依赖项缓存设置 CI 节点](../../how-to-use/set-ci-node/)。
 - 您需要安装和配置 SonarQube。请参考[将 SonarQube 集成到流水线](../../../devops-user-guide/how-to-integrate/sonarqube/)。如果您跳过这一部分，则没有下面的 **SonarQube 分析**阶段。
 
@@ -120,7 +120,7 @@ KubeSphere 中可以创建两种类型的流水线：一种是本教程中介绍
 
 {{< notice note >}}
 
-您需要提前创建 `project-admin` 帐户，用作 CI/CD 流水线的审核者。有关更多信息，请参见[创建企业空间、项目、帐户和角色](../../../quick-start/create-workspace-and-project/)。
+您需要提前创建 `project-admin` 帐户，用作 CI/CD 流水线的审核者。有关更多信息，请参见[创建企业空间、项目、用户和角色](../../../quick-start/create-workspace-and-project/)。
 
 {{</ notice >}}
 
@@ -257,7 +257,7 @@ KubeSphere 中可以创建两种类型的流水线：一种是本教程中介绍
    
    {{< notice note >}}
    
-   在 KubeSphere 3.1 中，如果不指定审核员，那么能够运行流水线的帐户也能够继续或终止该流水线。流水线创建者、在该工程中具有 `admin` 角色的帐户或者您指定的帐户也有权限继续或终止流水线。
+   在 KubeSphere 3.1 中，如果不指定审核员，那么能够运行流水线的帐户也能够继续或终止该流水线。流水线创建者、在该工程中具有 `admin` 角色的用户或者您指定的帐户也有权限继续或终止流水线。
    
    {{</ notice >}}
 

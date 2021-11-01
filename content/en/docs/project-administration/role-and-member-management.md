@@ -17,7 +17,7 @@ This tutorial demonstrates how to manage roles and members in a project. At the 
 
 ## Prerequisites
 
-At least one project has been created, such as `demo-project`. Besides, you need an account of the `admin` role (for example, `project-admin`) at the project level. For more information, see [Create Workspaces, Projects, Accounts and Roles](../../quick-start/create-workspace-and-project/).
+At least one project has been created, such as `demo-project`. Besides, you need a user of the `admin` role (for example, `project-admin`) at the project level. For more information, see [Create Workspaces, Projects, Users and Roles](../../quick-start/create-workspace-and-project/).
 
 ## Built-in Roles
 
@@ -30,31 +30,29 @@ In **Project Roles**, there are three available built-in roles as shown below. B
   </tr>
   <tr>
     <td><code>viewer</code></td>
-    <td>The viewer who can view all resources in the project.</td>
+    <td>Project viewer who can view all resources in the project.</td>
   </tr>
    <tr>
      <td><code>operator</code></td>
-     <td>The maintainer of the project who can manage resources other than users and roles in the project.</td>
+     <td>Project operator who can manage resources other than users and roles in the project.</td>
   </tr>
   <tr>
     <td><code>admin</code></td>
-     <td>The administrator in the project who can perform any action on any resource. It gives full control over all resources in the project.</td>
+     <td>Project administrator who has full control over all resources in the project.</td>
   </tr>
 </table>
 
 To view the permissions that a role contains:
 
-1. Log in to the console as `project-admin`. In **Project Roles**, click a role (for example, `admin`) and you can see role details as shown below.
+1. Log in to the console as `project-admin`. In **Project Roles**, click a role (for example, `admin`) to view the role details.
 
-    ![project-role-details](/images/docs/project-administration/role-and-member-management/project-role-details.png)
-
-2. Click the **Authorized Users** tab to see all the users that are granted the role.
+2. Click the **Authorized Users** tab to check users that have been granted the role.
 
 ## Create a Project Role
 
 1. Navigate to **Project Roles** under **Project Settings**.
 
-2. In **Project Roles**, click **Create** and set a role **Name** (for example, `project-monitor`). Click **Edit Permissions** to continue.
+2. In **Project Roles**, click **Create** and set a role name (for example, `project-monitor`). Click **Edit Permissions** to continue.
 
 3. In the pop-up window, permissions are categorized into different **Modules**. In this example, select **Application Workload Viewing** in **Application Workloads**, and **Alerting Message Viewing** and **Alerting Policy Viewing** in **Monitoring & Alerting**. Click **OK** to finish creating the role.
 
@@ -66,16 +64,12 @@ To view the permissions that a role contains:
 
 4. Newly-created roles will be listed in **Project Roles**. To edit an existing role, click <img src="/images/docs/project-administration/role-and-member-management/three-dots.png" height="20px"> on the right.
 
-    ![project-role-list](/images/docs/project-administration/role-and-member-management/project-role-list.png)
-
 ## Invite a New Member
 
-1. Navigate to **Project Members** under **Project Settings**, and click **Invite Member**.
+1. Navigate to **Project Members** under **Project Settings**, and click **Invite**.
 
 2. Invite a user to the project by clicking <img src="/images/docs/project-administration/role-and-member-management/add.png" height="20px"> on the right of it and assign a role to it.
 
 3. After you add the user to the project, click **OK**. In **Project Members**, you can see the user in the list.
 
 4. To edit the role of an existing user or remove the user from the project, click <img src="/images/docs/project-administration/role-and-member-management/three-dots.png" height="20px"> on the right and select the corresponding operation.
-
-    ![edit-project-account](/images/docs/project-administration/role-and-member-management/edit-project-account.png)

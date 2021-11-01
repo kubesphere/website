@@ -66,7 +66,7 @@ KubeSphere 使用一段时间之后，由于工作负载不断增加，您可能
    ./kk add nodes -f sample.yaml
    ```
 
-4. 安装完成后，您将能够在 KubeSphere 的控制台上查看新节点及其信息。在**集群管理**页面，选择左侧菜单**节点管理**下的**集群节点**，或者执行命令 `kubectl get node` 以检查更改。
+4. 安装完成后，您将能够在 KubeSphere 的控制台上查看新节点及其信息。在**集群管理**页面，选择左侧菜单**节点**下的**集群节点**，或者执行命令 `kubectl get node` 以检查更改。
 
    ```bash
    $ kubectl get node

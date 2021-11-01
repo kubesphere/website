@@ -8,7 +8,7 @@ weight: 6910
 
 KubeSphere supports Horizontal Pod Autoscalers (HPA) for [Deployments](../../project-user-guide/application-workloads/deployments/). In KubeSphere, the Metrics Server controls whether the HPA is enabled. You use an HPA object to autoscale a Deployment based on different types of metrics, such as CPU and memory utilization, as well as the minimum and maximum number of replicas. In this way, an HPA helps to make sure your application runs smoothly and consistently in different situations.
 
-## Enable the Metrics Server before Installation
+## Enable the Metrics Server Before Installation
 
 ### Installing on Linux
 
@@ -39,9 +39,9 @@ When you implement multi-node installation of KubeSphere on Linux, you need to c
 
 ### Installing on Kubernetes
 
-As you [install KubeSphere on Kubernetes](../../installing-on-kubernetes/introduction/overview/), you can enable the Metrics Server first in the [cluster-configuration.yaml](https://github.com/kubesphere/ks-installer/releases/download/v3.1.1/cluster-configuration.yaml) file.
+As you [install KubeSphere on Kubernetes](../../installing-on-kubernetes/introduction/overview/), you can enable the Metrics Server first in the [cluster-configuration.yaml](https://github.com/kubesphere/ks-installer/releases/download/v3.2.0/cluster-configuration.yaml) file.
 
-1. Download the file [cluster-configuration.yaml](https://github.com/kubesphere/ks-installer/releases/download/v3.1.1/cluster-configuration.yaml) and edit it.
+1. Download the file [cluster-configuration.yaml](https://github.com/kubesphere/ks-installer/releases/download/v3.2.0/cluster-configuration.yaml) and edit it.
 
     ```bash
     vi cluster-configuration.yaml
@@ -57,7 +57,7 @@ As you [install KubeSphere on Kubernetes](../../installing-on-kubernetes/introdu
 3. Execute the following commands to start installation:
 
     ```bash
-    kubectl apply -f https://github.com/kubesphere/ks-installer/releases/download/v3.1.1/kubesphere-installer.yaml
+    kubectl apply -f https://github.com/kubesphere/ks-installer/releases/download/v3.2.0/kubesphere-installer.yaml
     
     kubectl apply -f cluster-configuration.yaml
     ```
@@ -67,9 +67,9 @@ As you [install KubeSphere on Kubernetes](../../installing-on-kubernetes/introdu
 If you install KubeSphere on some cloud hosted Kubernetes engines, it is probable that the Metrics Server is already installed in your environment. In this case, it is not recommended that you enable it in `cluster-configuration.yaml` as it may cause conflicts during installation.
     {{</ notice >}} 
 
-## Enable the Metrics Server after Installation
+## Enable the Metrics Server After Installation
 
-1. Log in to the console as `admin`. Click **Platform** in the top-left corner and select **Cluster Management**.
+1. Log in to the console as `admin`. Click **Platform** in the upper-left corner and select **Cluster Management**.
    
 2. Click **CRDs** and enter `clusterconfiguration` in the search bar. Click the result to view its detail page.
 
@@ -79,7 +79,7 @@ A Custom Resource Definition (CRD) allows users to create a new type of resource
 
 3. In **Resource List**, click <img src="/images/docs/enable-pluggable-components/metrics-server/three-dots.png" height="20px"> on the right of `ks-installer` and select **Edit YAML**.
 
-4. In this YAML file, navigate to `metrics_server` and change `false` to `true` for `enabled`. After you finish, click **Update** in the bottom-right corner to save the configuration.
+4. In this YAML file, navigate to `metrics_server` and change `false` to `true` for `enabled`. After you finish, click **OK** in the lower-right corner to save the configuration.
 
     ```yaml
     metrics_server:
@@ -94,7 +94,7 @@ A Custom Resource Definition (CRD) allows users to create a new type of resource
 
     {{< notice note >}}
 
-You can find the web kubectl tool by clicking <img src="/images/docs/enable-pluggable-components/metrics-server/hammer.png" height="20px"> in the bottom-right corner of the console.
+You can find the web kubectl tool by clicking <img src="/images/docs/enable-pluggable-components/metrics-server/hammer.png" height="20px"> in the lower-right corner of the console.
     {{</ notice >}}
 
 ## Verify the Installation of the Component

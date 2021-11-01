@@ -16,8 +16,6 @@ weight: 10815
 
 KubeSphere 自定义监控面板可以视作为一个 YAML 配置文件。数据模型主要基于 [Grafana](https://github.com/grafana/grafana)（一个用于监控和可观测性的开源工具）创建，您可以在 [kubesphere/monitoring-dashboard](https://github.com/kubesphere/monitoring-dashboard) 中找到 KubeSphere 监控面板数据模型的设计。该配置文件便捷，可进行分享，欢迎您通过  [Monitoring Dashboards Gallery](https://github.com/kubesphere/monitoring-dashboard/tree/master/contrib/gallery) 对 KubeSphere 社区贡献面板模板。
 
-![监控面板](/images/docs/zh-cn/project-user-guide/custom-application-monitoring/visualization/overview/create-dashboard.png)
-
 ### 使用内置模板
 
 KubeSphere 为 MySQL、Elasticsearch 和 Redis 提供内置模板方便您快速创建监控面板。如果您想使用内置模板，请选择一种并点击**下一步**。
@@ -28,9 +26,7 @@ KubeSphere 为 MySQL、Elasticsearch 和 Redis 提供内置模板方便您快速
 
 ### 使用 YAML 文件
 
-打开右上角的**编辑模式**并粘贴您的面板 YAML 文件。
-
-![面板配置文件](/images/docs/zh-cn/project-user-guide/custom-application-monitoring/visualization/overview/edit-yaml.png)
+打开右上角的**编辑 YAML** 并粘贴您的面板 YAML 文件。
 
 ## 面板布局
 
@@ -40,25 +36,17 @@ KubeSphere 为 MySQL、Elasticsearch 和 Redis 提供内置模板方便您快速
 
 在顶部栏中，您可以配置以下设置：名称、主题、时间范围和刷新间隔。
 
-![顶部栏](/images/docs/zh-cn/project-user-guide/custom-application-monitoring/visualization/overview/edit-dashboard.png)
-
 ### 文本图表栏
 
 您可以在最左侧栏中添加新的文本图表。
-
-![左侧文本栏](/images/docs/zh-cn/project-user-guide/custom-application-monitoring/visualization/overview/add-text-chart.png)
 
 ### 图表显示栏
 
 您可以在中间栏中查看图表。
 
-![中间栏](/images/docs/zh-cn/project-user-guide/custom-application-monitoring/visualization/overview/middle-column.png)
-
 ### 详情栏
 
-您可以在最右侧栏中查看图表详情，包括一段时间内指标的 **max**, **min**, **avg** 和 **last** 等数值。
-
-![右侧详情栏](/images/docs/zh-cn/project-user-guide/custom-application-monitoring/visualization/overview/chart-detail.png)
+您可以在最右侧栏中查看图表详情，包括一段时间内指标的 **max**、**min**、**avg** 和 **last** 等数值。
 
 ## 编辑监控面板
 
@@ -67,8 +55,6 @@ KubeSphere 为 MySQL、Elasticsearch 和 Redis 提供内置模板方便您快速
 ### 添加图表
 
 若要添加文本图表，点击左侧栏中的 <img src="/images/docs/zh-cn/project-user-guide/custom-application-monitoring/visualization/overview/plus-btn.png" height="15px" width="25px" />。若要在中间栏添加图表，点击右下角的**添加监控项**。
-
-![编辑监控面板](/images/docs/zh-cn/project-user-guide/custom-application-monitoring/visualization/overview/add-items.png)
 
 ### 添加监控组
 

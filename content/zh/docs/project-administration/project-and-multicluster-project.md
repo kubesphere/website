@@ -15,7 +15,7 @@ KubeSphere 中的项目即 Kubernetes [命名空间](https://kubernetes.io/zh/do
 
 ## 准备工作
 
-- 您需要有一个可用的企业空间和一个帐户 (`project-admin`)。该帐户必须在该企业空间拥有 `workspace-self-provisioner` 角色。有关更多信息，请参见[创建企业空间、项目、帐户和角色](../../quick-start/create-workspace-and-project/)。
+- 您需要有一个可用的企业空间和一个用户 (`project-admin`)。该用户必须在该企业空间拥有 `workspace-self-provisioner` 角色。有关更多信息，请参见[创建企业空间、项目、用户和角色](../../quick-start/create-workspace-and-project/)。
 - 在创建多集群项目前，您需要通过[直接连接](../../multicluster-management/enable-multicluster/direct-connection/)或[代理连接](../../multicluster-management/enable-multicluster/agent-connection/)启用多集群功能。
 
 ## 项目
@@ -74,10 +74,11 @@ KubeSphere 中的项目即 Kubernetes [命名空间](https://kubernetes.io/zh/do
     {{</ notice >}}
 
 2. 在弹出的**创建多集群项目**窗口中输入项目名称，并根据需要添加别名或说明。在**集群设置**下，点击**添加集群**为项目选择多个集群，然后点击**确定**。
+3. 创建的多集群项目会显示在列表中。点击多集群项目右侧的 <img src="/images/docs/common-icons/three-dots.png" width="15" />，从下拉菜单中选择一个操作：
 
-3. 创建的多集群项目会显示在下图所示的列表中。您可以点击项目名称打开**概览**页面。
-
-    ![multi-cluster-list](/images/docs/zh-cn/project-administration/project-and-multicluster-project/multi-cluster-list.png)
+    - **编辑信息**：编辑多集群项目的基本信息。
+    - **添加集群**：在弹出对话框的下拉列表中选择一个集群并点击**确定**，为多集群项目添加一个集群。
+    - **删除**：删除多集群项目。
 
 ### 编辑多集群项目
 

@@ -22,7 +22,7 @@ weight: 2400
 
 - 您需要启用 [KubeSphere 服务网格](../../pluggable-components/service-mesh/)。
 
-- 您需要完成[创建企业空间、项目、帐户和角色](../create-workspace-and-project/)中的所有任务。
+- 您需要完成[创建企业空间、项目、用户和角色](../create-workspace-and-project/)中的所有任务。
 
 - 您需要启用**应用治理**。有关更多信息，请参见[设置网关](../../project-administration/project-gateway/#设置网关)。
 

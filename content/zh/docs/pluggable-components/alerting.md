@@ -39,9 +39,9 @@ weight: 6600
 
 ### 在 Kubernetes 上安装
 
-[在 Kubernetes 上安装 KubeSphere](../../installing-on-kubernetes/introduction/overview/) 时，您可以先在 [cluster-configuration.yaml](https://github.com/kubesphere/ks-installer/releases/download/v3.1.1/cluster-configuration.yaml) 文件中启用告警系统。
+[在 Kubernetes 上安装 KubeSphere](../../installing-on-kubernetes/introduction/overview/) 时，您可以先在 [cluster-configuration.yaml](https://github.com/kubesphere/ks-installer/releases/download/v3.2.0/cluster-configuration.yaml) 文件中启用告警系统。
 
-1. 下载 [cluster-configuration.yaml](https://github.com/kubesphere/ks-installer/releases/download/v3.1.1/cluster-configuration.yaml) 文件并进行编辑。
+1. 下载 [cluster-configuration.yaml](https://github.com/kubesphere/ks-installer/releases/download/v3.2.0/cluster-configuration.yaml) 文件并进行编辑。
 
     ```bash
     vi cluster-configuration.yaml
@@ -57,7 +57,7 @@ weight: 6600
 3. 执行以下命令开始安装：
 
     ```bash
-    kubectl apply -f https://github.com/kubesphere/ks-installer/releases/download/v3.1.1/kubesphere-installer.yaml
+    kubectl apply -f https://github.com/kubesphere/ks-installer/releases/download/v3.2.0/kubesphere-installer.yaml
     
     kubectl apply -f cluster-configuration.yaml
     ```
@@ -66,15 +66,15 @@ weight: 6600
 
 1. 使用 `admin` 用户登录控制台。点击左上角的**平台管理**，选择**集群管理**。
    
-2. 点击**自定义资源 CRD**，在搜索栏中输入 `clusterconfiguration`。点击结果查看其详细页面。
+2. 点击 **CRD**，在搜索栏中输入 `clusterconfiguration`。点击结果查看其详细页面。
 
     {{< notice info >}}
-自定义资源定义 (CRD) 允许用户在不新增 API 服务器的情况下创建一种新的资源类型，用户可以像使用其他 Kubernetes 原生对象一样使用这些自定义资源。
+定制资源定义 (CRD) 允许用户在不新增 API 服务器的情况下创建一种新的资源类型，用户可以像使用其他 Kubernetes 原生对象一样使用这些定制资源。
     {{</ notice >}}
 
-3. 在**资源列表**中，点击 `ks-installer` 右侧的 <img src="/images/docs/zh-cn/enable-pluggable-components/kubesphere-alerting/three-dots.png" height="20px">，选择**编辑配置文件**。
+3. 在**资源列表**中，点击 `ks-installer` 右侧的 <img src="/images/docs/zh-cn/enable-pluggable-components/kubesphere-alerting/three-dots.png" height="20px">，选择**编辑 YAML**。
 
-4. 在该 YAML 文件中，搜寻到 `alerting`，将 `enabled` 的 `false` 更改为 `true`。完成后，点击右下角的**更新**，保存配置。
+4. 在该 YAML 文件中，搜寻到 `alerting`，将 `enabled` 的 `false` 更改为 `true`。完成后，点击右下角的**确定**，保存配置。
 
     ```yaml
     alerting:
@@ -95,5 +95,3 @@ weight: 6600
 ## 验证组件的安装
 
 如果您在**集群管理**页面可以看到**告警消息**和**告警策略**，说明安装成功，因为安装组件之后才会显示这两部分。
-
-![alerting-section](/images/docs/zh-cn/enable-pluggable-components/kubesphere-alerting/alerting-section.png)

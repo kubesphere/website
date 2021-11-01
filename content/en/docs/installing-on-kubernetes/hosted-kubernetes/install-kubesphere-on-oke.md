@@ -68,9 +68,9 @@ This guide walks you through the steps of deploying KubeSphere on [Oracle Kubern
 - Install KubeSphere using kubectl. The following commands are only for the default minimal installation.
 
   ```bash
-  kubectl apply -f https://github.com/kubesphere/ks-installer/releases/download/v3.1.1/kubesphere-installer.yaml
+  kubectl apply -f https://github.com/kubesphere/ks-installer/releases/download/v3.2.0/kubesphere-installer.yaml
 
-  kubectl apply -f https://github.com/kubesphere/ks-installer/releases/download/v3.1.1/cluster-configuration.yaml
+  kubectl apply -f https://github.com/kubesphere/ks-installer/releases/download/v3.2.0/cluster-configuration.yaml
   ```
 
 - Inspect the logs of installation:
@@ -140,9 +140,7 @@ Now that KubeSphere is installed, you can access the web console of KubeSphere e
 
   ![console-service](https://ap3.qingstor.com/kubesphere-website/docs/console-service.png)
 
-- Log in to the console through the external IP address with the default account and password (`admin/P@88w0rd`). In the cluster overview page, you can see the dashboard shown below:
-
-  ![kubesphere-oke-dashboard](https://ap3.qingstor.com/kubesphere-website/docs/kubesphere-oke-dashboard.png)
+- Log in to the console through the external IP address with the default account and password (`admin/P@88w0rd`). In the cluster overview page, you can see the dashboard.
 
 ## Enable Pluggable Components (Optional)
 

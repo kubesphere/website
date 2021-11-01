@@ -11,7 +11,7 @@ This section walks you through monitoring a sample web application. The applicat
 ## Prerequisites
 
 - Please make sure you [enable the OpenPitrix system](../../../../pluggable-components/app-store/).
-- You need to create a workspace, a project, and a user account for this tutorial. For more information, see [Create Workspaces, Projects, Accounts and Roles](../../../../quick-start/create-workspace-and-project/). The account needs to be a platform regular user and to be invited to the workspace with the `self-provisioner` role. Namely, create an account `workspace-self-provisioner` of the `self-provisioner` role, and use this account to create a project (for example, `test`). In this tutorial, you log in as `workspace-self-provisioner` and work in the project `test` in the workspace `demo-workspace`.
+- You need to create a workspace, a project, and a user account for this tutorial. For more information, see [Create Workspaces, Projects, Users and Roles](../../../../quick-start/create-workspace-and-project/). The account needs to be a platform regular user and to be invited to the workspace with the `self-provisioner` role. Namely, create a user `workspace-self-provisioner` of the `self-provisioner` role, and use this account to create a project (for example, `test`). In this tutorial, you log in as `workspace-self-provisioner` and work in the project `test` in the workspace `demo-workspace`.
 
 - Knowledge of Helm charts and [PromQL](https://prometheus.io/docs/prometheus/latest/querying/examples/).
 
@@ -33,23 +33,9 @@ Find the source code in the folder `helm` in [kubesphere/prometheus-example-app]
 
 ### Step 3: Upload the Helm chart
 
-1. Go to the workspace **Overview** page of `demo-workspace` and navigate to **App Templates**.
+1. Go to the workspace **Overview** page of `demo-workspace` and navigate to **App Templates** under **App Management**.
 
-    ![app-template-create](/images/docs/project-user-guide/custom-application-monitoring/app-template-create.jpg)
-
-2. Click **Create** and upload `prometheus-example-app-0.1.0.tgz` as images below.
-
-    ![click-create-app-template](/images/docs/project-user-guide/custom-application-monitoring/click-create-app-template.jpg)
-
-    ![click-upload-app-template](/images/docs/project-user-guide/custom-application-monitoring/click-upload-app-template.jpg)
-
-    ![click-upload-app-template-2](/images/docs/project-user-guide/custom-application-monitoring/click-upload-app-template-2.jpg)
-
-    ![click-upload-app-template-4](/images/docs/project-user-guide/custom-application-monitoring/click-upload-app-template-4.jpg)
-
-    ![click-upload-app-template-5](/images/docs/project-user-guide/custom-application-monitoring/click-upload-app-template-5.jpg)
-
-    ![click-upload-app-template-6](/images/docs/project-user-guide/custom-application-monitoring/click-upload-app-template-6.jpg)
+2. Click **Create** and upload `prometheus-example-app-0.1.0.tgz`.
 
 ### Step 4: Deploy the sample web application
 
@@ -57,62 +43,30 @@ You need to deploy the sample web application into `test`. For demonstration pur
 
 1. Click `prometheus-example-app`.
 
-    ![deploy-sample-web-1](/images/docs/project-user-guide/custom-application-monitoring/deploy-sample-web-1.jpg)
-
-2. Expand the menu and click **Test Deployment**.
-
-    ![deploy-sample-web-2](/images/docs/project-user-guide/custom-application-monitoring/deploy-sample-web-2.jpg)
-
-    ![deploy-sample-web-3](/images/docs/project-user-guide/custom-application-monitoring/deploy-sample-web-3.jpg)
+2. Expand the menu and click **Test Installation**.
 
 3. Make sure you deploy the sample web application in `test` and click **Next**.
 
-    ![deploy-sample-web-4](/images/docs/project-user-guide/custom-application-monitoring/deploy-sample-web-4.jpg)
-
-4. Make sure `serviceMonitor.enabled` is set to `true` and click **Deploy**.
-
-    ![deploy-sample-web-5](/images/docs/project-user-guide/custom-application-monitoring/deploy-sample-web-5.jpg)
-
-    ![deploy-sample-web-6](/images/docs/project-user-guide/custom-application-monitoring/deploy-sample-web-6.jpg)
+4. Make sure `serviceMonitor.enabled` is set to `true` and click **Install**.
 
 5. In **Workloads** of the project `test`, wait until the sample web application is up and running.
-
-    ![create-dashboard-1](/images/docs/project-user-guide/custom-application-monitoring/create-dashboard-1.jpg)
 
 ### Step 5: Create a monitoring dashboard
 
 This section guides you on how to create a dashboard from scratch. You will create a text chart showing the total number of processed operations and a line chart for displaying the operation rate.
 
-1. Navigate to **Custom Monitoring** and click **Create**.
+1. Navigate to **Custom Monitoring Dashboards** and click **Create**.
 
-    ![create-dashboard-2](/images/docs/project-user-guide/custom-application-monitoring/create-dashboard-2.jpg)
+2. Set a name (for example, `sample-web`) and click **Next**.
 
-2. Set a name (for example, `sample-web`) and click **Create**.
+3. Enter a title in the upper-left corner (for example, `Sample Web Overview`).
 
-    ![create-dashboard-3](/images/docs/project-user-guide/custom-application-monitoring/create-dashboard-3.jpg)
+4. Click <img src="/images/docs/project-user-guide/custom-application-monitoring/examples/monitor-sample-app/plus-icon.png" height="16px" width="20px" /> on the left column to create a text chart.
 
-3. Enter a title in the top-left corner (for example, `Sample Web Overview`).
+5. Type the PromQL expression `myapp_processed_ops_total` in the field **Monitoring Metric** and give a chart name (for example, `Operation Count`). Click **√** in the lower-right corner to continue.
 
-    ![create-dashboard-4](/images/docs/project-user-guide/custom-application-monitoring/create-dashboard-4.jpg)
+6. Click **Add Monitoring Item**, select **Line Chart**, and click **OK**.
 
-4. Click the **plus icon** on the left column to create a text chart.
-
-    ![create-dashboard-5](/images/docs/project-user-guide/custom-application-monitoring/create-dashboard-5.jpg)
-
-5. Type the PromQL expression `myapp_processed_ops_total` in the field **Monitoring Metrics** and give a chart name (for example, `Operation Count`). Click **√** in the bottom-right corner to continue.
-
-    ![create-dashboard-6](/images/docs/project-user-guide/custom-application-monitoring/create-dashboard-6.jpg)
-
-6. Click **Add Monitoring Item** to create a line chart.
-
-    ![create-dashboard-7](/images/docs/project-user-guide/custom-application-monitoring/create-dashboard-7.jpg)
-
-    ![create-dashboard-8](/images/docs/project-user-guide/custom-application-monitoring/create-dashboard-8.jpg)
-
-7. Type the PromQL expression `irate(myapp_processed_ops_total[3m])` for **Monitoring Metrics** and name the chart `Operation Rate`. To improve the appearance, you can set **Metric Name** to `{{service}}`. It will name each line with the value of the metric label `service`. Next, set **Decimal Places** to `2` so that the result will be truncated to two decimal places.
-
-    ![create-dashboard-9](/images/docs/project-user-guide/custom-application-monitoring/create-dashboard-9.jpg)
+7. Enter the PromQL expression `irate(myapp_processed_ops_total[3m])` for **Monitoring Metric** and name the chart `Operation Rate`. To improve the appearance, you can set **Metric Name** to `{{service}}`. It will name each line with the value of the metric label `service`. Next, set **Decimal Places** to `2` so that the result will be truncated to two decimal places. Click **√** in the lower-right corner to continue.
 
 8. Click **Save Template** to save it.
-
-    ![create-dashboard-10](/images/docs/project-user-guide/custom-application-monitoring/create-dashboard-10.jpg)

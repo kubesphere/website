@@ -12,9 +12,9 @@ This tutorial demonstrates how to add an existing Kubernetes namespace to a Kube
 
 ## Prerequisites
 
-- You need an account granted a role including the permission of **Cluster Management**. For example, you can log in to the console as `admin` directly or create a new role with the permission and assign it to an account.
+- You need a user granted a role including the permission of **Cluster Management**. For example, you can log in to the console as `admin` directly or create a new role with the permission and assign it to a user.
 
-- You have an available workspace so that the namespace can be assigned to it. For more information, see [Create Workspaces, Projects, Accounts and Roles](../../../quick-start/create-workspace-and-project/).
+- You have an available workspace so that the namespace can be assigned to it. For more information, see [Create Workspaces, Projects, Users and Roles](../../../quick-start/create-workspace-and-project/).
 
 ## Create a Kubernetes Namespace
 
@@ -28,15 +28,11 @@ For more information about creating a Kubernetes namespace, see [Namespaces Walk
 
 ## Add the Namespace to a KubeSphere Workspace
 
-1. Log in to the KubeSphere console as `admin` and go to the **Cluster Management** page. Click **Projects**, and you can see all your projects (i.e. namespaces) running on the current cluster, including the one just created.
+1. Log in to the KubeSphere console as `admin` and go to the **Cluster Management** page. Click **Projects**, and you can see all your projects running on the current cluster, including the one just created.
 
 2. The namespace created through kubectl does not belong to any workspace. Click <img src="/images/docs/faq/access-control-and-account-management/add-exisiting-namespaces-to-a-kubesphere-workspace/three-dots.png" height="20px"> on the right and select **Assign Workspace**.
 
-   ![project-page](/images/docs/faq/access-control-and-account-management/add-exisiting-namespaces-to-a-kubesphere-workspace/project-page.png)
-
-3. In the dialog that appears, select a **Target Workspace** and a **Project Manager** for the project and click **OK**.
+3. In the dialog that appears, select a **Workspace** and a **Project Administrator** for the project and click **OK**.
 
 4. Go to your workspace and you can see the project on the **Projects** page.
-
-   ![workspace-project](/images/docs/faq/access-control-and-account-management/add-exisiting-namespaces-to-a-kubesphere-workspace/workspace-project.png)
 

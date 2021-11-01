@@ -12,7 +12,7 @@ weight: 10320
 
 ## 准备工作
 
-- 您需要创建一个企业空间、一个项目和一个帐户（例如 `project-regular`）。该帐户必须已邀请至该项目，并具有 `operator` 角色。有关更多信息，请参阅[创建企业空间、项目、帐户和角色](../../../quick-start/create-workspace-and-project/)。
+- 您需要创建一个企业空间、一个项目和一个用户（例如 `project-regular`）。该用户必须已邀请至该项目，并具有 `operator` 角色。有关更多信息，请参阅[创建企业空间、项目、用户和角色](../../../quick-start/create-workspace-and-project/)。
 
 - 您需要确保 Kubernetes 版本为 1.17 或更新版本。
 
@@ -25,7 +25,7 @@ weight: 10320
 
 2. 在存储卷详情页面，点击**更多操作**并从下拉菜单中选择**创建快照**。
 
-3. 在出现的对话框中，设置快照的名称，然后点击**确定**完成创建。快照的名称将作为快照的唯一标识符。
+3. 在弹出的对话框中，设置快照的名称并选择快照类型，然后点击**确定**完成创建。快照的名称将作为快照的唯一标识符。
 
 4. 新建的快照显示在**存储卷快照**列表中。
 
@@ -37,8 +37,6 @@ weight: 10320
 ### 在快照详情页面创建存储卷
 
 1. 以 `project-regular` 用户登录 KubeSphere Web 控制台，进入快照详情页面，然后点击**应用**来使用快照。其他步骤与直接创建存储卷基本相同。
-
-   ![apply-volume](/images/docs/zh-cn/project-user-guide/volume-management/volume-snapshots/apply-volume.jpg)
 
 2. 在弹出的对话框中设置存储卷的名称，然后点击**下一步**。
 

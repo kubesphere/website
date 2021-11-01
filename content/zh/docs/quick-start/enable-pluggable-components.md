@@ -73,12 +73,12 @@ weight: 2600
 3. 编辑完成后保存文件，执行以下命令开始安装：
 
     ```bash
-    kubectl apply -f https://github.com/kubesphere/ks-installer/releases/download/v3.1.1/kubesphere-installer.yaml
+    kubectl apply -f https://github.com/kubesphere/ks-installer/releases/download/v3.2.0/kubesphere-installer.yaml
     
     kubectl apply -f cluster-configuration.yaml
     ```
 
-无论是在 Linux 上还是在 Kubernetes 上安装 KubeSphere，安装后都可以在 KubeSphere 的 Web 控制台中检查已启用组件的状态。转到**服务组件**，可以看到类似如下图片：
+无论是在 Linux 上还是在 Kubernetes 上安装 KubeSphere，安装后都可以在 KubeSphere 的 Web 控制台中检查已启用组件的状态。转到**系统组件**，可以看到类似如下图片：
 
 ![服务组件](/images/docs/zh-cn/quickstart/enable-pluggable-components/服务组件.jpg)
 
@@ -96,15 +96,15 @@ weight: 2600
 
     ![集群管理](/images/docs/zh-cn/quickstart/enable-pluggable-components/集群管理.png)
 
-2. 点击**自定义资源 CRD**，然后在搜索栏中输入 `clusterconfiguration`，点击搜索结果进入其详情页面。
+2. 点击 **CRD**，然后在搜索栏中输入 `clusterconfiguration`，点击搜索结果进入其详情页面。
 
     ![CRD](/images/docs/zh-cn/quickstart/enable-pluggable-components/CRD.png)
 
     {{< notice info >}}
-自定义资源定义 (CRD) 允许用户在不增加额外 API 服务器的情况下创建一种新的资源类型，用户可以像使用其他 Kubernetes 原生对象一样使用这些自定义资源。
+定制资源定义（CRD）允许用户在不增加额外 API 服务器的情况下创建一种新的资源类型，用户可以像使用其他 Kubernetes 原生对象一样使用这些定制资源。
     {{</ notice >}}
 
-3. 在**资源列表**中，点击 `ks-installer` 右侧的三个点，然后选择**编辑配置文件**。
+3. 在**资源列表**中，点击 `ks-installer` 右侧的三个点，然后选择**编辑 YAML**。
 
     ![编辑配置文件](/images/docs/zh-cn/quickstart/enable-pluggable-components/编辑配置文件.png)
 
@@ -146,7 +146,7 @@ weight: 2600
     #####################################################
     ```
 
-7. 登录 KubeSphere 控制台，在**服务组件**中可以查看不同组件的状态。
+7. 登录 KubeSphere 控制台，在**系统组件**中可以查看不同组件的状态。
 
     ![服务组件](/images/docs/zh-cn/quickstart/enable-pluggable-components/服务组件.jpg)
 

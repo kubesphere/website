@@ -10,7 +10,7 @@ weight: 3620
 
 将节点标记为不可调度可防止调度程序将新的 Pod 放置到该节点上，同时不会影响该节点上的现有 Pod。作为节点重启或者其他维护之前的准备步骤，这十分有用。
 
-以 `admin` 身份登录控制台，访问**集群管理**页面。若要将节点标记为不可调度，从左侧菜单中选择**节点管理**下的**集群节点**，找到想要从集群中删除的节点，点击**停止调度**。或者，直接执行命令 `kubectl cordon $NODENAME`。有关更多详细信息，请参见 [Kubernetes 节点](https://kubernetes.io/docs/concepts/architecture/nodes/)。
+以 `admin` 身份登录控制台，访问**集群管理**页面。若要将节点标记为不可调度，从左侧菜单中选择**节点**下的**集群节点**，找到想要从集群中删除的节点，点击**停止调度**。或者，直接执行命令 `kubectl cordon $NODENAME`。有关更多详细信息，请参见 [Kubernetes 节点](https://kubernetes.io/docs/concepts/architecture/nodes/)。
 
 ![cordon](/images/docs/zh-cn/installing-on-linux/add-and-delete-nodes/delete-nodes/cordon.png)
 

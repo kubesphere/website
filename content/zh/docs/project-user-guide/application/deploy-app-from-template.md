@@ -14,7 +14,7 @@ weight: 10120
 ## 准备工作
 
 - 您需要启用 [OpenPitrix (App Store)](../../../pluggable-components/app-store/)。
-- 您需要先完成[创建企业空间、项目、帐户和角色](../../../quick-start/create-workspace-and-project/)教程。您必须创建一个企业空间、一个项目和两个用户帐户（`ws-admin ` 和 `project-regular`）。`ws-admin` 必须被授予企业空间中的 `workspace-admin` 角色， `project-regular` 必须被授予项目中的 `operator` 角色。
+- 您需要先完成[创建企业空间、项目、用户和角色](../../../quick-start/create-workspace-and-project/)教程。您必须创建一个企业空间、一个项目和两个用户（`ws-admin ` 和 `project-regular`）。`ws-admin` 必须被授予企业空间中的 `workspace-admin` 角色， `project-regular` 必须被授予项目中的 `operator` 角色。
 
 ## 动手实验
 
@@ -22,15 +22,9 @@ weight: 10120
 
 1. 以 `ws-admin` 用户登录 KubeSphere Web 控制台。在您的企业空间中，进入**应用管理**下的**应用仓库**页面，并点击**添加仓库**。
 
-   ![add-app-repo](/images/docs/zh-cn/project-user-guide/applications/deploy-apps-from-app-templates/add-app-repo.png)
+2. 在弹出的对话框中，将应用仓库名称设置为 `test-repo`，将应用仓库的 URL 设置为 `https://helm-chart-repo.pek3a.qingstor.com/kubernetes-charts/`。点击**验证**对 URL 进行验证，根据您的需要设置**同步间隔**，再点击**确定**。
 
-2. 在弹出的对话框中，将应用仓库名称设置为 `test-repo`，将应用仓库的 URL 设置为 `https://helm-chart-repo.pek3a.qingstor.com/kubernetes-charts/`，点击**验证**对 URL 进行验证，再点击**确定**。
-
-   ![input-repo-info](/images/docs/zh-cn/project-user-guide/applications/deploy-apps-from-app-templates/input-repo-info.png)
-
-3. 应用仓库导入成功后会显示在如下图所示的列表中。
-
-   ![repository-list](/images/docs/zh-cn/project-user-guide/applications/deploy-apps-from-app-templates/repository-list.png)
+3. 应用仓库导入成功后会显示在列表中。
 
    {{< notice note >}}
 
@@ -40,13 +34,9 @@ weight: 10120
 
 ### 步骤 2：从应用模板部署应用
 
-1. 登出 KubeSphere 并以 `project-regular` 用户重新登录。在您的项目中，进入**应用负载**下的**应用**页面，再点击**部署新应用**。
-
-   ![create-new-app](/images/docs/zh-cn/project-user-guide/applications/deploy-apps-from-app-templates/create-new-app.png)
+1. 登出 KubeSphere 并以 `project-regular` 用户重新登录。在您的项目中，进入**应用负载**下的**应用**页面，再点击**创建**。
 
 2. 在弹出的对话框中选择**来自应用模板**。
-
-   ![select-app-templates](/images/docs/zh-cn/project-user-guide/applications/deploy-apps-from-app-templates/select-app-templates.png)
 
    **来自应用商店**：选择内置的应用和以 Helm Chart 形式单独上传的应用。
 
@@ -54,17 +44,13 @@ weight: 10120
 
 3. 从下拉列表中选择之前添加的私有应用仓库 `test-repo`。
 
-   ![private-app-template](/images/docs/zh-cn/project-user-guide/applications/deploy-apps-from-app-templates/private-app-template.png)
-
    {{< notice note >}}
 
-   下拉列表中的**来自企业空间**选项表示企业空间应用池，包含以 Helm Chart 形式上传的应用。这些应用也属于应用模板。
+   下拉列表中的**当前企业空间**选项表示企业空间应用池，包含以 Helm Chart 形式上传的应用。这些应用也属于应用模板。
 
    {{</ notice >}} 
 
 4. 在搜索框中输入 `grafana` 找到该应用，点击搜索结果进行部署。
-
-   ![search-grafana](/images/docs/zh-cn/project-user-guide/applications/deploy-apps-from-app-templates/search-grafana.png)
 
    {{< notice note >}} 
 
@@ -72,17 +58,11 @@ weight: 10120
 
    {{</ notice >}} 
 
-5. 您可以查看应用信息和配置文件，在**版本**下拉列表中选择版本，然后点击**部署**。
-
-   ![deploy-grafana](/images/docs/zh-cn/project-user-guide/applications/deploy-apps-from-app-templates/deploy-grafana.png)
+5. 可以查看其应用信息和配置文件，在**版本**下拉列表中选择版本，然后点击**部署**。
 
 6. 设置应用名称，确认应用版本和部署位置，点击**下一步**。
 
-   ![confirm-info](/images/docs/zh-cn/project-user-guide/applications/deploy-apps-from-app-templates/confirm-info.png)
-
-7. 在**应用配置**页面，您可以手动编辑清单文件或直接点击**部署**。
-
-   ![app-config](/images/docs/zh-cn/project-user-guide/applications/deploy-apps-from-app-templates/app-config.png)
+7. 在**应用设置**页面，手动编辑清单文件或直接点击**安装**。
 
 8. 等待 Grafana 创建完成并开始运行。
 
@@ -92,37 +72,19 @@ weight: 10120
 
 1. 打开**服务**页面，点击 Grafana 的服务名称。
 
-   ![grafana-services](/images/docs/zh-cn/project-user-guide/applications/deploy-apps-from-app-templates/grafana-services.png)
-
-2. 点击**更多操作**，在下拉菜单中选择**编辑外网访问**。
-
-   ![edit-access](/images/docs/zh-cn/project-user-guide/applications/deploy-apps-from-app-templates/edit-access.png)
+2. 点击**更多操作**，在下拉菜单中选择**编辑外部访问**。
 
 3. 将**访问方式**设置为 **NodePort** 并点击**确定**。有关更多信息，请参见[项目网关](../../../project-administration/project-gateway/)。
 
-   ![nodeport](/images/docs/zh-cn/project-user-guide/applications/deploy-apps-from-app-templates/nodeport.png)
-
-4. 您可以在**服务端口**区域查看暴露的端口。
-
-   ![exposed-port](/images/docs/zh-cn/project-user-guide/applications/deploy-apps-from-app-templates/exposed-port.png)
+4. 在**端口**区域查看暴露的端口。
 
 ### 步骤 4：访问 Grafana
 
-1. 您需要获取用户名和密码才能登录 Grafana 主页。前往**密钥**页面，点击与应用名称相同的条目。
-
-   ![grafana-secret](/images/docs/zh-cn/project-user-guide/applications/deploy-apps-from-app-templates/grafana-secret.png)
+1. 您需要获取用户名和密码才能登录 Grafana 主页。前往**配置**下的**保密字典**页面，点击与应用名称相同的条目。
 
 2. 在详情页面，点击眼睛图标查看用户名和密码。
 
-   ![secret-page](/images/docs/zh-cn/project-user-guide/applications/deploy-apps-from-app-templates/secret-page.png)
-
-   ![click-eye-icon](/images/docs/zh-cn/project-user-guide/applications/deploy-apps-from-app-templates/click-eye-icon.png)
-
-2. 用 `<Node IP>:<NodePort>` 地址访问 Grafana。
-
-   ![grafana-UI](/images/docs/zh-cn/project-user-guide/applications/deploy-apps-from-app-templates/grafana-UI.png)
-
-   ![home-page](/images/docs/zh-cn/project-user-guide/applications/deploy-apps-from-app-templates/home-page.png)
+3. 用 `<Node IP>:<NodePort>` 地址访问 Grafana。
 
    {{< notice note >}}
 

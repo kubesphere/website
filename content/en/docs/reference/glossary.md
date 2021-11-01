@@ -108,11 +108,11 @@ This glossary includes general terms and technical terms that are specific to Ku
 - **Allocated Memory** <br>
     The metric is calculated based on the total memory requests of Pods, for example, on a node. It represents the amount of memory reserved for workloads on this node, even if workloads are using fewer memory resources.
 
-- **Disk Log Collection** <br>
-    The capability to collect disk logs in a container and export to stdout, which will then be collected by the system log collector.
+- **Log Collection** <br>
+    The Log Collection function allows the system to collect container logs saved on volumes and send the logs to standard output.
 
 - **Notification Receiver** <br>
-    The channel to receive notifications, such as email, WeChat Work, Slack and webhook.
+    The channel to receive notifications, such as email, DingTalk, WeCom, Slack, and webhook.
 
 ## Network
 

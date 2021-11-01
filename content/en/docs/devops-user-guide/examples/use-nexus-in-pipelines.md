@@ -15,7 +15,7 @@ This tutorial demonstrates how to use Nexus in pipelines on KubeSphere.
 - You need to [enable the KubeSphere DevOps System](../../../../docs/pluggable-components/devops/).
 - You need to [prepare a Nexus instance](https://help.sonatype.com/repomanager3/installation).
 - You need to have a [GitHub](https://github.com/) account.
-- You need to create a workspace, a DevOps project (for example, `demo-devops`), and an account (for example, `project-regular`). This account needs to be invited into the DevOps project with the role of `operator`. For more information, see [Create Workspaces, Projects, Accounts and Roles](../../../quick-start/create-workspace-and-project/).
+- You need to create a workspace, a DevOps project (for example, `demo-devops`), and a user (for example, `project-regular`). This account needs to be invited into the DevOps project with the role of `operator`. For more information, see [Create Workspaces, Projects, Users and Roles](../../../quick-start/create-workspace-and-project/).
 
 ## Hands-on Lab
 

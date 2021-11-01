@@ -102,7 +102,7 @@ KubeKey 可以一同安装 Kubernetes 和 KubeSphere。根据要安装的 Kubern
 从 [GitHub 发布页面](https://github.com/kubesphere/kubekey/releases)下载 KubeKey 或直接使用以下命令。
 
 ```bash
-curl -sfL https://get-kk.kubesphere.io | VERSION=v1.1.1 sh -
+curl -sfL https://get-kk.kubesphere.io | VERSION=v1.2.0 sh -
 ```
 
 {{</ tab >}}
@@ -118,7 +118,7 @@ export KKZONE=cn
 执行以下命令下载 KubeKey：
 
 ```bash
-curl -sfL https://get-kk.kubesphere.io | VERSION=v1.1.1 sh -
+curl -sfL https://get-kk.kubesphere.io | VERSION=v1.2.0 sh -
 ```
 
 {{< notice note >}}
@@ -133,7 +133,7 @@ curl -sfL https://get-kk.kubesphere.io | VERSION=v1.1.1 sh -
 
 {{< notice note >}}
 
-执行以上命令会下载最新版 KubeKey (v1.1.1)，您可以修改命令中的版本号下载指定版本。
+执行以上命令会下载最新版 KubeKey (v1.2.0)，您可以修改命令中的版本号下载指定版本。
 
 {{</ notice >}}
 
@@ -157,7 +157,7 @@ chmod +x kk
 
 {{< notice note >}}
 
-- 安装 KubeSphere v3.1.1 的建议 Kubernetes 版本：v1.17.9，v1.18.8，v1.19.8 以及 v1.20.4。如果不指定 Kubernetes 版本，KubeKey 将默认安装 Kubernetes v1.19.8。有关受支持的 Kubernetes 版本的更多信息，请参见[支持矩阵](../../../installing-on-linux/introduction/kubekey/#支持矩阵)。
+- 安装 KubeSphere v3.1.1 的建议 Kubernetes 版本：v1.17.9，v1.18.8，v1.19.8 以及 v1.20.4。如果不指定 Kubernetes 版本，KubeKey 将默认安装 Kubernetes v1.21.5。有关受支持的 Kubernetes 版本的更多信息，请参见[支持矩阵](../../../installing-on-linux/introduction/kubekey/#支持矩阵)。
 
 - 如果您在此步骤的命令中不添加标志 `--with-kubesphere`，则不会部署 KubeSphere，只能使用配置文件中的 `addons` 字段安装，或者在您后续使用 `./kk create cluster` 命令时再次添加这个标志。
 - 如果您添加标志 `--with-kubesphere` 时不指定 KubeSphere 版本，则会安装最新版本的 KubeSphere。
@@ -172,7 +172,7 @@ chmod +x kk
   ./kk create config [-f ~/myfolder/abc.yaml]
   ```
 
-- 您可以指定要安装的 KubeSphere 版本（例如 `--with-kubesphere v3.1.1`）。
+- 您可以指定要安装的 KubeSphere 版本（例如 `--with-kubesphere v3.2.0`）。
 
   ```bash
   ./kk create config --with-kubesphere [version]

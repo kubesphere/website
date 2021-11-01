@@ -15,10 +15,16 @@ KubeSphere 集成了 [OpenPitrix](https://github.com/openpitrix/openpitrix)（�
 
 本教程使用 [Redis](https://redis.io/) 作为示例应用程序，演示如何进行应用全生命周期管理，包括提交、审核、测试、发布、升级和下架。
 
+## 视频演示
+
+<video controls="controls" style="width: 100% !important; height: auto !important;">
+  <source type="video/mp4" src="https://kubesphere-community.pek3b.qingstor.com/videos/KubeSphere-v3.1.x-tutorial-videos/zh/KS311_200P007C202109_%E5%BA%94%E7%94%A8%E7%A8%8B%E5%BA%8F%E7%94%9F%E5%91%BD%E5%91%A8%E6%9C%9F%E7%AE%A1%E7%90%86.mp4">
+</video>
+
 ## 准备工作
 
 - 您需要启用 [KubeSphere 应用商店 (OpenPitrix)](../../pluggable-components/app-store/)。
-- 您需要创建一个企业空间、一个项目以及一个帐户 (`project-regular`)。有关更多信息，请参见[创建企业空间、项目、帐户和角色](../../quick-start/create-workspace-and-project/)。
+- 您需要创建一个企业空间、一个项目以及一个用户 (`project-regular`)。有关更多信息，请参见[创建企业空间、项目、用户和角色](../../quick-start/create-workspace-and-project/)。
 
 ## 动手实验
 
@@ -40,15 +46,15 @@ KubeSphere 集成了 [OpenPitrix](https://github.com/openpitrix/openpitrix)（�
 
    {{< notice note >}}
 
-   被授予 `app-review` 角色的帐户能够查看平台上的应用商店并管理应用，包括审核和下架应用。
+   被授予 `app-review` 角色的用户能够查看平台上的应用商店并管理应用，包括审核和下架应用。
 
    {{</ notice >}} 
 
-4. 创建角色后，您需要创建一个帐户，并授予 `app-review` 角色。转到**帐户管理**，点击**创建**。输入必需的信息，然后点击**确定**。
+4. 创建角色后，您需要创建一个用户，并授予 `app-review` 角色。转到**帐户管理**，点击**创建**。输入必需的信息，然后点击**确定**。
 
    ![创建审核帐户](/images/docs/zh-cn/appstore/application-lifecycle-management/create-review-role-5.PNG)
 
-5. 再创建另一个帐户 `isv`，把 `platform-regular` 角色授予它。
+5. 再创建另一个用户 `isv`，把 `platform-regular` 角色授予它。
 
    ![帐户已创建](/images/docs/zh-cn/appstore/application-lifecycle-management/account-ready-6.PNG)
 

@@ -16,25 +16,23 @@ This tutorial demonstrates how to create a ConfigMap in KubeSphere.
 
 ## Prerequisites
 
-You need to create a workspace, a project and an account (`project-regular`). The account must be invited to the project with the role of `operator`. For more information, see [Create Workspaces, Projects, Accounts and Roles](../../../quick-start/create-workspace-and-project/).
+You need to create a workspace, a project and a user (`project-regular`). The user must be invited to the project with the role of `operator`. For more information, see [Create Workspaces, Projects, Users and Roles](../../../quick-start/create-workspace-and-project/).
 
 ## Create a ConfigMap
 
-1. Log in to the console as `project-regular`. Go to **Configurations** of a project, choose **ConfigMaps** and click **Create**.
+1. Log in to the console as `project-regular`. Go to **Configuration** of a project, select **ConfigMaps** and click **Create**.
 
-2. In the dialog that appears, specify a name for the ConfigMap (for example, `demo-configmap`) and click **Next** to continue.
+2. In the displayed dialog box, specify a name for the ConfigMap (for example, `demo-configmap`) and click **Next** to continue.
 
    {{< notice tip >}}
 
-You can see the ConfigMap manifest file in YAML format by enabling **Edit Mode** in the top-right corner. KubeSphere allows you to edit the manifest file directly to create a ConfigMap. Alternatively, you can follow the steps below to create a ConfigMap via the dashboard.
+You can see the ConfigMap manifest file in YAML format by enabling **Edit YAML** in the upper-right corner. KubeSphere allows you to edit the manifest file directly to create a ConfigMap. Alternatively, you can follow the steps below to create a ConfigMap via the dashboard.
 
 {{</ notice >}} 
 
-3. On the **ConfigMap Settings** tab, configure values by clicking **Add Data**.
+3. On the **Data Settings** tab, configure values by clicking **Add Data**.
 
 4. Enter a key-value pair. For example:
-
-   ![key-value](/images/docs/project-user-guide/configurations/configmaps/key-value.png)
 
    {{< notice note >}}
 
@@ -44,27 +42,25 @@ You can see the ConfigMap manifest file in YAML format by enabling **Edit Mode**
 
 {{</ notice >}} 
 
-5. Click **√** in the bottom-right corner to save it and click **Add Data** again if you want to add more key-value pairs.
+5. Click **√** in the lower-right corner to save it and click **Add Data** again if you want to add more key-value pairs.
 
 6. Click **Create** to generate the ConfigMap.
 
 ## View ConfigMap Details
 
-1. After a ConfigMap is created, it displays on the **ConfigMaps** page. You can click <img src="/images/docs/project-user-guide/configurations/configmaps/three-dots.png" height="20px"> on the right and select the operation below from the drop-down list.
+1. After a ConfigMap is created, it is displayed on the **ConfigMaps** page. You can click <img src="/images/docs/project-user-guide/configurations/configmaps/three-dots.png" height="20px"> on the right and select the operation below from the drop-down list.
 
-    - **Edit**: View and edit the basic information.
+    - **Edit Information**: View and edit the basic information.
     - **Edit YAML**: View, upload, download, or update the YAML file.
-    - **Modify Config**: Modify the key-value pair of the ConfigMap.
+    - **Edit Settings**: Modify the key-value pair of the ConfigMap.
     - **Delete**: Delete the ConfigMap.
     
-2. Click the name of the ConfigMap to go to its detail page. Under the tab **Detail**, you can see all the key-value pairs you have added for the ConfigMap.
-
-    ![detail-page](/images/docs/project-user-guide/configurations/configmaps/detail-page.png)
+2. Click the name of the ConfigMap to go to its details page. Under the tab **Details**, you can see all the key-value pairs you have added for the ConfigMap.
 
 3. Click **More** to display what operations about this ConfigMap you can do.
 
     - **Edit YAML**: View, upload, download, or update the YAML file.
-    - **Modify Config**: Modify the key-value pair of the ConfigMap.
+    - **Edit Settings**: Modify the key-value pair of the ConfigMap.
     - **Delete**: Delete the ConfigMap, and return to the list page.
 
 4. Click **Edit Information** to view and edit the basic information.
@@ -72,6 +68,4 @@ You can see the ConfigMap manifest file in YAML format by enabling **Edit Mode**
 
 ## Use a ConfigMap
 
-When you create workloads, [Services](../../../project-user-guide/application-workloads/services/), [Jobs](../../../project-user-guide/application-workloads/jobs/) or [CronJobs](../../../project-user-guide/application-workloads/cronjobs/), you may need to add environment variables for containers. On the **Container Image** page, check **Environment Variables** and click **Use ConfigMap or Secret** to use a ConfigMap from the list.
-
-![use-configmap](/images/docs/project-user-guide/configurations/configmaps/use-configmap.jpg)
+When you create workloads, [Services](../../../project-user-guide/application-workloads/services/), [Jobs](../../../project-user-guide/application-workloads/jobs/) or [CronJobs](../../../project-user-guide/application-workloads/cronjobs/), you may need to add environment variables for containers. On the **Add Container** page, check **Environment Variables** and click **Use ConfigMap or Secret** to use a ConfigMap from the list.

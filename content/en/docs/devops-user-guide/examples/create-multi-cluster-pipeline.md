@@ -16,7 +16,7 @@ This tutorial demonstrates how to create a multi-cluster pipeline on KubeSphere.
 - You need to set your Member Clusters as [public clusters](../../../cluster-administration/cluster-settings/cluster-visibility-and-authorization/#make-a-cluster-public). Alternatively, you can [set cluster visibility after a workspace is created](../../../cluster-administration/cluster-settings/cluster-visibility-and-authorization/#set-cluster-visibility-after-a-workspace-is-created).
 - You need to [enable the KubeSphere DevOps system](../../../pluggable-components/devops/) on your Host Cluster.
 - You need to integrate SonarQube into your pipeline. For more information, refer to [Integrate SonarQube into Pipelines](../../how-to-integrate/sonarqube/).
-- You need to create four accounts on your Host Cluster: `ws-manager`, `ws-admin`, `project-admin`, and `project-regular`, and grant these accounts different roles. For more information, refer to [Create Workspaces, Projects, Accounts and Roles](../../../quick-start/create-workspace-and-project/#step-1-create-an-account).
+- You need to create four accounts on your Host Cluster: `ws-manager`, `ws-admin`, `project-admin`, and `project-regular`, and grant these accounts different roles. For more information, refer to [Create Workspaces, Projects, Users and Roles](../../../quick-start/create-workspace-and-project/#step-1-create-an-account).
 
 ## Workflow Overview
 
@@ -40,7 +40,7 @@ See the table below for the role of each cluster.
 
 {{< notice note >}}
 
-These Kubernetes clusters can be hosted across different cloud providers and their Kubernetes versions can also vary. Recommended Kubernetes versions for KubeSphere v3.1.0: v1.17.9, v1.18.8, v1.19.8 and v1.20.4.
+These Kubernetes clusters can be hosted across different cloud providers and their Kubernetes versions can also vary. Recommended Kubernetes versions for KubeSphere v3.2.0: v1.19.x, v1.20.x, v1.21.5, and v1.22.1.
 
 {{</ notice >}}
 
@@ -56,7 +56,7 @@ These Kubernetes clusters can be hosted across different cloud providers and the
 
    ![select-all-clusters](/images/docs/devops-user-guide/examples/create-multi-cluster-pipeline/select-all-clusters.png)
 
-4. The workspace created will display in the list. You need to log out of the console and log back in as `ws-admin` to invite both `project-admin` and `project-regular` to the workspace and grant them the role `workspace-self-provisioner` and `workspace-viewer` respectively. For more information, refer to [Create Workspaces, Projects, Accounts and Roles](../../../quick-start/create-workspace-and-project/#step-2-create-a-workspace).
+4. The workspace created will display in the list. You need to log out of the console and log back in as `ws-admin` to invite both `project-admin` and `project-regular` to the workspace and grant them the role `workspace-self-provisioner` and `workspace-viewer` respectively. For more information, refer to [Create Workspaces, Projects, Users and Roles](../../../quick-start/create-workspace-and-project/#step-2-create-a-workspace).
 
    ![workspace-created](/images/docs/devops-user-guide/examples/create-multi-cluster-pipeline/workspace-created.png)
 
@@ -74,13 +74,13 @@ These Kubernetes clusters can be hosted across different cloud providers and the
 
    {{</ notice >}}
 
-3. The DevOps project created will display in the list. Make sure you invite the account `project-regular` to this project with the role `operator`. For more information, refer to [Create Workspaces, Projects, Accounts and Roles](../../../quick-start/create-workspace-and-project/#step-5-create-a-devops-project-optional).
+3. The DevOps project created will display in the list. Make sure you invite the account `project-regular` to this project with the role `operator`. For more information, refer to [Create Workspaces, Projects, Users and Roles](../../../quick-start/create-workspace-and-project/#step-5-create-a-devops-project-optional).
 
    ![devops-project-created](/images/docs/devops-user-guide/examples/create-multi-cluster-pipeline/devops-project-created.png)
 
 ### Step 4: Create projects on clusters
 
-You must create the projects as shown in the table below in advance. Make sure you invite the account `project-regular` to these projects with the role `operator`. For more information about how to create a project, refer to [Create Workspaces, Projects, Accounts and Roles](../../../quick-start/create-workspace-and-project/#step-3-create-a-project).
+You must create the projects as shown in the table below in advance. Make sure you invite the account `project-regular` to these projects with the role `operator`. For more information about how to create a project, refer to [Create Workspaces, Projects, Users and Roles](../../../quick-start/create-workspace-and-project/#step-3-create-a-project).
 
 | Cluster Name | Usage       | Project Name           |
 | ------------ | ----------- | ---------------------- |

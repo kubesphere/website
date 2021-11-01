@@ -1,5 +1,5 @@
 ---
-linkTitle: "Configurations"
+linkTitle: "Configuration"
 weight: 10400
 
 _build:

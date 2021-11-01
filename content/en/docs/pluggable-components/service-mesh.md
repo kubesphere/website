@@ -6,11 +6,11 @@ linkTitle: "KubeSphere Service Mesh"
 weight: 6800
 ---
 
-On the basis of [Istio](https://istio.io/), KubeSphere Service Mesh visualizes microservices governance and traffic management. It features a powerful toolkit including **circuit breaking, blue-green deployment, canary release, traffic mirroring, distributed tracing, observability and traffic control**. Developers can easily get started with KubeSphere Service Mesh without any code hacking, with the learning curve of Istio greatly reduced. All features of KubeSphere Service Mesh are designed to meet users' demand for their business.
+On the basis of [Istio](https://istio.io/), KubeSphere Service Mesh visualizes microservices governance and traffic management. It features a powerful toolkit including **circuit breaking, blue-green deployment, canary release, traffic mirroring, distributed tracing, observability, and traffic control**. Developers can easily get started with KubeSphere Service Mesh without any code hacking, with the learning curve of Istio greatly reduced. All features of KubeSphere Service Mesh are designed to meet users' demand for their business.
 
 For more information, see [Grayscale Release](../../project-user-guide/grayscale-release/overview/).
 
-## Enable KubeSphere Service Mesh before Installation
+## Enable KubeSphere Service Mesh Before Installation
 
 ### Installing on Linux
 
@@ -41,9 +41,9 @@ If you adopt [All-in-One Installation](../../quick-start/all-in-one-on-linux/), 
 
 ### Installing on Kubernetes
 
-As you [install KubeSphere on Kubernetes](../../installing-on-kubernetes/introduction/overview/), you can enable KubeSphere Service Mesh first in the [cluster-configuration.yaml](https://github.com/kubesphere/ks-installer/releases/download/v3.1.1/cluster-configuration.yaml) file.
+As you [install KubeSphere on Kubernetes](../../installing-on-kubernetes/introduction/overview/), you can enable KubeSphere Service Mesh first in the [cluster-configuration.yaml](https://github.com/kubesphere/ks-installer/releases/download/v3.2.0/cluster-configuration.yaml) file.
 
-1. Download the file [cluster-configuration.yaml](https://github.com/kubesphere/ks-installer/releases/download/v3.1.1/cluster-configuration.yaml) and edit it.
+1. Download the file [cluster-configuration.yaml](https://github.com/kubesphere/ks-installer/releases/download/v3.2.0/cluster-configuration.yaml) and edit it.
 
     ```bash
     vi cluster-configuration.yaml
@@ -59,14 +59,14 @@ As you [install KubeSphere on Kubernetes](../../installing-on-kubernetes/introdu
 3. Execute the following commands to start installation:
 
     ```bash
-    kubectl apply -f https://github.com/kubesphere/ks-installer/releases/download/v3.1.1/kubesphere-installer.yaml
+    kubectl apply -f https://github.com/kubesphere/ks-installer/releases/download/v3.2.0/kubesphere-installer.yaml
     
     kubectl apply -f cluster-configuration.yaml
     ```
 
-## Enable KubeSphere Service Mesh after Installation
+## Enable KubeSphere Service Mesh After Installation
 
-1. Log in to the console as `admin`. Click **Platform** in the top-left corner and select **Cluster Management**.
+1. Log in to the console as `admin`. Click **Platform** in the upper-left corner and select **Cluster Management**.
    
 2. Click **CRDs** and enter `clusterconfiguration` in the search bar. Click the result to view its detail page.
 
@@ -76,7 +76,7 @@ A Custom Resource Definition (CRD) allows users to create a new type of resource
 
 3. In **Resource List**, click <img src="/images/docs/enable-pluggable-components/kubesphere-service-mesh/three-dots.png" height="20px"> on the right of `ks-installer` and select **Edit YAML**.
    
-4. In this YAML file, navigate to `servicemesh` and change `false` to `true` for `enabled`. After you finish, click **Update** in the bottom-right corner to save the configuration.
+4. In this YAML file, navigate to `servicemesh` and change `false` to `true` for `enabled`. After you finish, click **OK** in the lower-right corner to save the configuration.
 
     ```yaml
     servicemesh:
@@ -91,7 +91,7 @@ A Custom Resource Definition (CRD) allows users to create a new type of resource
 
     {{< notice note >}}
 
-You can find the web kubectl tool by clicking <img src="/images/docs/enable-pluggable-components/kubesphere-service-mesh/hammer.png" height="20px"> in the bottom-right corner of the console.
+You can find the web kubectl tool by clicking <img src="/images/docs/enable-pluggable-components/kubesphere-service-mesh/hammer.png" height="20px"> in the lower-right corner of the console.
     {{</ notice >}}
 
 ## Verify the Installation of the Component
@@ -100,9 +100,7 @@ You can find the web kubectl tool by clicking <img src="/images/docs/enable-plug
 
 {{< tab "Verify the component on the dashboard" >}}
 
-Go to **Components** and check the status of **Istio**. You may see an image as follows:
-
-![istio](/images/docs/enable-pluggable-components/kubesphere-service-mesh/istio.png)
+Go to **System Components** and check that all components on the **Istio** tab page is in **Healthy** state.
 
 {{</ tab >}}
 

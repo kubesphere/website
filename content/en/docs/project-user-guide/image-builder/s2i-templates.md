@@ -37,7 +37,7 @@ The Image Builder is compatible with that of OpenShift, and you can reuse it in 
 1. The [S2I command line tool](https://github.com/openshift/source-to-image/releases) provides an easy-to-use command to initialize a base directory structure required by the Builder. Run the following commands to install the S2I CLI.
 
    ```bash
-   $ wget https://github.com/openshift/source-to-image/releases/download/v1.1.14/source-to-image-v1.1.14-874754de-linux-386.tar.gz
+   $ wget https://github.com/openshift/source-to-image/releases/download/v1.2.04/source-to-image-v1.1.14-874754de-linux-386.tar.gz
    $ tar -xvf source-to-image-v1.1.14-874754de-linux-386.tar.gz
    $ ls
    s2i source-to-image-v1.1.14-874754de-linux-386.tar.gz  sti
@@ -252,8 +252,6 @@ S2I scripts will use the flags defined in the Dockerfile as parameters. If you n
 
    You can access the Nginx application at `http://localhost:8080`.
 
-   ![access-nginx](/images/docs/project-user-guide/image-builder/s2i-templates/access-nginx.png)
-
 ### Step 5: Push the image and create an S2I template
 
 Once you finish testing the S2I Image Builder locally, you can push the image to your custom image repository. You also need to create a YAML file as the S2I Builder template as follows.
@@ -286,9 +284,7 @@ spec:
    s2ibuildertemplate.devops.kubesphere.io/nginx created
    ```
 
-2. You can find the customized S2I template available when you create an S2I build on KubeSphere.
-
-   ![template-available](/images/docs/project-user-guide/image-builder/s2i-templates/template-available.png)
+2. You can find the customized S2I template available in **Build Environment** when you create an S2I build on KubeSphere.
 
 ## S2I Template Parameters Definition
 

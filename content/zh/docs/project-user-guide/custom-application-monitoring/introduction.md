@@ -21,7 +21,7 @@ KubeSphere 的监控引擎基于 Prometheus 和 Prometheus Operator。总体而�
 
 #### 直接暴露
 
-直接暴露 Prometheus 格式的应用指标是云原生应用的常用方式。这种方式需要开发者在代码中导入 Prometheus 客户端库并在特定的端点 (Endpoint) 暴露指标。许多应用，例如 ETCD、CoreDNS 和 Istio，都采用这种方式。
+直接暴露 Prometheus 格式的应用指标是云原生应用的常用方式。这种方式需要开发者在代码中导入 Prometheus 客户端库并在特定的端点 (Endpoint) 暴露指标。许多应用，例如 etcd、CoreDNS 和 Istio，都采用这种方式。
 
 Prometheus 社区为大多数编程语言提供了客户端库。您可以在 [Prometheus Client Libraries](https://prometheus.io/docs/instrumenting/clientlibs/) 页面查看支持的语言。使用 Go 语言的开发者可参阅 [Instrumenting a Go Application for Prometheus](https://prometheus.io/docs/guides/go-application/) 了解如何编写符合 Prometheus 规范的应用程序。
 

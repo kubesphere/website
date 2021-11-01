@@ -11,7 +11,7 @@ KubeSphere project network isolation lets project administrators enforce which n
 ## Prerequisites
 
 - You have already enabled [Network Policies](../../pluggable-components/network-policy/).
-- You must have an available project and an account of the `admin` role (`project-admin`) at the project level. For more information, see [Create Workspaces, Projects, Accounts and Roles](../../quick-start/create-workspace-and-project/).
+- You must have an available project and a user of the `admin` role (`project-admin`) at the project level. For more information, see [Create Workspaces, Projects, Users and Roles](../../quick-start/create-workspace-and-project/).
 
 {{< notice note >}}
 
@@ -23,9 +23,7 @@ For the implementation of the Network Policy, you can refer to [KubeSphere Netwo
 
 1. Log in to KubeSphere as `project-admin`. Go to your project and select **Network Isolation** in **Project Settings**. By default, project network isolation is disabled.
 
-   ![project-network-isolation](/images/docs/project-administration/project-network-isolation/project-network-isolation.png)
-
-2. To enable project network isolation, click **On**.
+2. To enable project network isolation, click **Enable**.
 
    {{< notice note >}}
 
@@ -33,9 +31,8 @@ For the implementation of the Network Policy, you can refer to [KubeSphere Netwo
 
    {{</ notice >}}
 
-3. You can also disable network isolation on this page.
+3. You can also disable network isolation by toggling the **Enabled** button on this page.
 
-   ![isolation-off](/images/docs/project-administration/project-network-isolation/isolation-off.png)
 
    {{< notice note >}}
 
@@ -61,21 +58,15 @@ For more information about how to create workloads, see [Deployments](../../proj
 
 #### Allow ingress traffic from workloads in a different project
 
-1. On the **Network Isolation** page of your current project, select **Cluster Internal Allowlist**.
+1. On the **Network Isolation** page of your current project, click **Internal Allowlist**.
 
-2. Click **Add Allowlist**.
+2. Click **Add Allowlist Entry**.
 
-3. Select **Ingress** under **Direction**.
+3. Select **Ingress** under **Traffic Direction**.
 
-4. Select the tab **Project** under **Type**.
+4. In **Project**, select the project `demo-project-2`.
 
-5. Select the project `demo-project-2`.
-
-   ![ingress-rule](/images/docs/project-administration/project-network-isolation/ingress-rule.png)
-
-6. Click **OK** and you can see that the project is now in the allowlist.
-
-   ![ingress-rule-added](/images/docs/project-administration/project-network-isolation/ingress-rule-added.png)
+5. Click **OK**, and then you can see that the project is now in the allowlist.
 
 {{< notice note >}}
 
@@ -85,9 +76,9 @@ If the network is not accessible after you set the network policy, then you need
 
 #### Allow egress traffic to Services in a different project
 
-1. On the **Network Isolation** page of your current project, select **Cluster Internal Allowlist**.
+1. On the **Network Isolation** page of your current project, click **External Allowlist**.
 
-2. Click **Add Allowlist**.
+2. Click **Add Allowlist Entry**.
 
 3. Select **Egress** under **Direction**.
 
@@ -97,11 +88,7 @@ If the network is not accessible after you set the network policy, then you need
 
 6. Select the Service that is allowed to receive egress traffic. In this case, select `nginx`.
 
-   ![engress-rule](/images/docs/project-administration/project-network-isolation/engress-rule.png)
-
-7. Click **OK** and you can see that the Service is now in the allowlist.
-
-   ![egress-rule-added](/images/docs/project-administration/project-network-isolation/egress-rule-added.png)
+7. Click **OK**, and then you can see that the Service is now in the allowlist.
 
 {{< notice note >}}
 
@@ -113,21 +100,17 @@ When creating a Service, you must make sure that the selectors of the Service ar
 
 KubeSphere uses CIDR to distinguish between peers. Assume a Tomcat Deployment workload has been created in your current project and is exposed via the `NodePort` Service `demo-service` on the NodePort `80` with `TCP`. For an external client with the IP address `192.168.1.1` to access this Service, you need to add a rule for it.
 
-#### Allow ingress traffic from an client outside the cluster
+#### Allow ingress traffic from a client outside the cluster
 
-1. On the **Network Isolation** page of your current project, select **Cluster External IP Address** and click **Add Rule**.
+1. On the **Network Isolation** page of your current project, select **External Allowlist** and click **Add Allowlist Entry**.
 
 2. Select **Ingress** under **Direction**.
 
-3. Enter `192.168.1.1/32` for **CIDR**.
+3. Enter `192.168.1.1/32` for **Network Segment**.
 
 4. Select the protocol `TCP` and enter `80` as the port number.
 
-   ![ingress-CIDR](/images/docs/project-administration/project-network-isolation/ingress-CIDR.png)
-
-5. Click **OK** and you can see that the rule has been added.
-
-   ![ingress-cidr-set](/images/docs/project-administration/project-network-isolation/ingress-cidr-set.png)
+5. Click **OK**, and then you can see that the rule has been added.
 
 {{< notice note >}}
 
@@ -139,19 +122,15 @@ Assume the IP address of an external client is `http://10.1.0.1:80`, then you ne
 
 #### Allow egress traffic to Services outside the cluster
 
-1. On the **Network Isolation** page of your current project, select **Cluster External IP Address** and click **Add Rule**.
+1. On the **Network Isolation** page of your current project, select **External Allowlist** and click **Add Allowlist Entry**.
 
 2. Select **Egress** under **Direction**.
 
-3. Enter `10.1.0.1/32` for **CIDR**.
+3. Enter `10.1.0.1/32` for **Network Segment**.
 
 4. Select the protocol `TCP` and enter `80` as the port number.
 
-   ![egress-CIDR](/images/docs/project-administration/project-network-isolation/egress-CIDR.png)
-
-5. Click **OK** and you can see that the rule has been added.
-
-   ![egress-CIDR-added](/images/docs/project-administration/project-network-isolation/egress-CIDR-added.png)
+5. Click **OK**, and you can see that the rule has been added.
 
 {{< notice note >}}
 
@@ -171,9 +150,9 @@ If egress traffic is controlled, you should have a clear plan of what projects, 
 
 ## FAQs
 
-Q: Why can't the custom monitoring system of KubeSphere get data after I enabled network isolation?
+Q: Why cannot the custom monitoring system of KubeSphere get data after I enabled network isolation?
 
-A: After you enabled custom monitoring, the KubeSphere monitoring system will access the metrics of the Pod. You need to allow ingress traffic for the KubeSphere monitoring system. Otherwise, it cannot access Pod metrics.
+A: After you enable custom monitoring, the KubeSphere monitoring system will access the metrics of the Pod. You need to allow ingress traffic for the KubeSphere monitoring system. Otherwise, it cannot access Pod metrics.
 
 KubeSphere provides a configuration item `allowedIngressNamespaces` to simplify similar configurations, which allows all projects listed in the configuration.
 
@@ -197,7 +176,7 @@ spec:
   ...
 ```
 
-Q: Why can't I access a Service even after setting a network policy through the Service?
+Q: Why cannot I access a Service even after setting a network policy through the Service?
 
 A: When you add a network policy and access the Service via the cluster IP address, if the network is not
    working, check the kube-proxy configuration to see if `masqueradeAll` is `false`.
@@ -222,6 +201,6 @@ A: When you add a network policy and access the Service via the cluster IP addre
      ...
    ```
 
-Q: How do I determine the CIDR when I set the ingress rule?
+Q: How do I determine the network segment when I set the ingress rule?
 
 A: In Kubernetes, the source IP address of the packet is often handled by NAT, so you need to figure out what the source address of the packet will be before you add the rule. For more information, refer to [Source IP](https://github.com/kubesphere/community/blob/master/sig-network/concepts-and-designs/kubesphere-network-policy.md#source-ip).

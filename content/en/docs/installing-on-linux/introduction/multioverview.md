@@ -107,7 +107,7 @@ Follow the step below to download [KubeKey](../kubekey).
 Download KubeKey from its [GitHub Release Page](https://github.com/kubesphere/kubekey/releases) or use the following command directly.
 
 ```bash
-curl -sfL https://get-kk.kubesphere.io | VERSION=v1.1.1 sh -
+curl -sfL https://get-kk.kubesphere.io | VERSION=v1.2.0 sh -
 ```
 
 {{</ tab >}}
@@ -123,7 +123,7 @@ export KKZONE=cn
 Run the following command to download KubeKey:
 
 ```bash
-curl -sfL https://get-kk.kubesphere.io | VERSION=v1.1.1 sh -
+curl -sfL https://get-kk.kubesphere.io | VERSION=v1.2.0 sh -
 ```
 
 {{< notice note >}}
@@ -138,7 +138,7 @@ After you download KubeKey, if you transfer it to a new machine also with poor n
 
 {{< notice note >}}
 
-The commands above download the latest release (v1.1.1) of KubeKey. You can change the version number in the command to download a specific version.
+The commands above download the latest release (v1.2.0) of KubeKey. You can change the version number in the command to download a specific version.
 
 {{</ notice >}}
 
@@ -177,7 +177,7 @@ Here are some examples for your reference:
   ./kk create config [-f ~/myfolder/abc.yaml]
   ```
 
-- You can specify a KubeSphere version that you want to install (for example, `--with-kubesphere v3.1.1`).
+- You can specify a KubeSphere version that you want to install (for example, `--with-kubesphere v3.2.0`).
 
   ```bash
   ./kk create config --with-kubesphere [version]

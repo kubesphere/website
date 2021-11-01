@@ -37,8 +37,6 @@ Kubernetes 解决了应用编排、容器调度的难题，极大地提高了资
 
 与 Kubernetes 相同，KubeSphere 通过 RBAC 对用户的权限加以控制，实现逻辑层面的资源隔离。
 
-![rbac](/images/docs/zh-cn/access-control-and-account-management/multi-tanancy-in-kubesphere/rbac.png)
-
 KubeSphere 中的权限控制分为平台、企业空间、项目三个层级，通过角色来控制用户在不同层级的资源访问权限。
 
 1. [平台角色](../../quick-start/create-workspace-and-project/)：主要控制用户对平台资源的访问权限，如集群的管理、企业空间的管理、平台用户的管理等。
