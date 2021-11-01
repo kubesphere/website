@@ -106,7 +106,7 @@ hasChildren = true
     [[languages.en.menu.main]]
     parent = "Documentation"
     name = "v3.1.x <img src='/images/header/star.svg' alt='star'>"
-    URL = "docs/"
+    URL = "https://v3-1.docs.kubesphere.io/docs"
     weight = 1
 
     [[languages.en.menu.main]]
@@ -245,7 +245,7 @@ name = "文档中心"
     [[languages.zh.menu.main]]
     parent = "文档中心"
     name = "v3.1.x <img src='/images/header/star.svg' alt='star'>"
-    URL = "docs/"
+    URL = "https://v3-1.docs.kubesphere.io/zh/docs/"
     weight = 1
 
     [[languages.zh.menu.main]]
