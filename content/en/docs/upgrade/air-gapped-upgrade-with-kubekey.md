@@ -113,7 +113,7 @@ As you install KubeSphere and Kubernetes on Linux, you need to prepare an image 
 
    {{< notice note >}}
 
-   - You can change the Kubernetes version downloaded based on your needs. Recommended Kubernetes versions for KubeSphere v1.19.8, v1.20.4, v1.20.6, v1.21.5, and v1.22.1. If you do not specify a Kubernetes version, KubeKey will install Kubernetes v1.19.8 by default. For more information about supported Kubernetes versions, see [Support Matrix](../../installing-on-linux/introduction/kubekey/#support-matrix).
+   - You can change the Kubernetes version downloaded based on your needs. Recommended Kubernetes versions for KubeSphere v3.2.0 are v1.19.x, v1.20.x, v1.21.x, and v1.22.x (experimental). If you do not specify a Kubernetes version, KubeKey will install Kubernetes v1.21.5 by default. For more information about supported Kubernetes versions, see [Support Matrix](../../installing-on-linux/introduction/kubekey/#support-matrix).
 
    - You can upgrade Kubernetes from v1.16.13 to v1.17.9 by downloading the v1.17.9 Kubernetes binary file, but for cross-version upgrades, all intermediate versions need to be downloaded in advance. For example, if you want to upgrade Kubernetes from v1.15.12 to v1.18.6, you need to download Kubernetes v1.16.13 and v1.17.9, and the v1.18.6 binary file.
 
@@ -160,7 +160,7 @@ Transfer your packaged image file to your local machine and execute the followin
 |        | Kubernetes | KubeSphere |
 | ------ | ---------- | ---------- |
 | Before | v1.18.6    | v3.1.x     |
-| After  | v1.19.8    | v3.2.0     |
+| After  | v1.21.5    | v3.2.0     |
 
 #### Upgrade a cluster
 
@@ -226,10 +226,10 @@ Set `privateRegistry` of your `config-sample.yaml` file:
 
 To upgrade Kubernetes to a specific version, explicitly provide the version after the flag `--with-kubernetes`. Available versions are:
 
-- v1.19.0, v1.19.8, v1.19.9
-- v1.20.4, v1.20.6
-- v.21.5
-- v1.22.1
+- v1.19.x
+- v1.20.x
+- v.21.x
+- v1.22.x (experimental)
 
 
 ### Air-gapped upgrade for multi-node clusters
@@ -248,7 +248,7 @@ To upgrade Kubernetes to a specific version, explicitly provide the version afte
 |        | Kubernetes | KubeSphere |
 | ------ | ---------- | ---------- |
 | Before | v1.18.6    | v3.1.x     |
-| After  | v1.19.8    | v3.2.0     |
+| After  | v1.21.5    | v3.2.0     |
 
 #### Upgrade a cluster
 
@@ -316,7 +316,7 @@ Set `privateRegistry` of your `config-sample.yaml` file:
 
 To upgrade Kubernetes to a specific version, explicitly provide the version after the flag `--with-kubernetes`. Available versions are:
 
-- v1.19.0, v1.19.8, v1.19.9
-- v1.20.4, v1.20.6
-- v1.21.5
-- v1.22.1
+- v1.19.x
+- v1.20.x
+- v1.21.x
+- v1.22.x (experimental)

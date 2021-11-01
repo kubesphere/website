@@ -142,15 +142,15 @@ The commands above download the latest release (v1.2.0) of KubeKey. You can chan
    chmod +x kk
    ```
 
-2. Create an example configuration file with default configurations. Here Kubernetes v1.20.4 is used as an example.
+2. Create an example configuration file with default configurations. Here Kubernetes v1.21.5 is used as an example.
 
    ```bash
-   ./kk create config --with-kubesphere v3.2.0 --with-kubernetes v1.20.4
+   ./kk create config --with-kubesphere v3.2.0 --with-kubernetes v1.21.5
    ```
 
    {{< notice note >}}
 
-- Recommended Kubernetes versions for KubeSphere v3.1.1: v1.17.9, v1.18.8, v1.19.8, and v1.20.4. If you do not specify a Kubernetes version, KubeKey will install Kubernetes v1.19.8 by default. For more information about supported Kubernetes versions, see [Support Matrix](../../../installing-on-linux/introduction/kubekey/#support-matrix).
+- Recommended Kubernetes versions for KubeSphere v3.2.0: v1.19.x, v1.20.x, v1.21.x or v1.22.x (experimental). If you do not specify a Kubernetes version, KubeKey will install Kubernetes v1.21.5 by default. For more information about supported Kubernetes versions, see [Support Matrix](../../../installing-on-linux/introduction/kubekey/#support-matrix).
 
 - If you do not add the flag `--with-kubesphere` in the command in this step, KubeSphere will not be deployed unless you install it using the `addons` field in the configuration file or add this flag again when you use `./kk create cluster` later.
 - If you add the flag `--with-kubesphere` without specifying a KubeSphere version, the latest version of KubeSphere will be installed.

@@ -11,7 +11,7 @@ In addition to installing KubeSphere on a Linux machine, you can also deploy it 
 
 ## Prerequisites
 
-- To install KubeSphere v3.1.1 on Kubernetes, your Kubernetes version must be v1.17.x, v1.18.x, v1.19.x or v1.20.x.
+- To install KubeSphere v3.2.0 on Kubernetes, your Kubernetes version must be v1.17.x, v1.18.x, v1.19.x or v1.20.x.
 - Make sure your machine meets the minimal hardware requirement: CPU > 1 Core, Memory > 2 GB.
 - A **default** Storage Class in your Kubernetes cluster needs to be configured before the installation.
 

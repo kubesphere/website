@@ -10,7 +10,7 @@ When creating a Kubernetes cluster, you can use [KubeKey](../kubekey/) to define
 
 ```yaml
   kubernetes:
-    version: v1.19.8
+    version: v1.21.5
     imageRepo: kubesphere
     clusterName: cluster.local
     masqueradeAll: false
@@ -45,7 +45,7 @@ The below table describes the above parameters in detail.
    </tr>
    <tr>
      <td><code>version</code></td>
-     <td>The Kubernetes version to be installed. If you do not specify a Kubernetes version, {{< contentLink "docs/installing-on-linux/introduction/kubekey" "KubeKey" >}} v1.1.0 will install Kubernetes v1.19.8 by default. For more information, see {{< contentLink "docs/installing-on-linux/introduction/kubekey/#support-matrix" "Support Matrix" >}}.</td>
+     <td>The Kubernetes version to be installed. If you do not specify a Kubernetes version, {{< contentLink "docs/installing-on-linux/introduction/kubekey" "KubeKey" >}} v1.1.0 will install Kubernetes v1.21.5 by default. For more information, see {{< contentLink "docs/installing-on-linux/introduction/kubekey/#support-matrix" "Support Matrix" >}}.</td>
    </tr>
    <tr>
      <td><code>imageRepo</code></td>

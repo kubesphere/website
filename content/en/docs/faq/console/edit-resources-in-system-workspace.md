@@ -32,7 +32,7 @@ Editing resources in `system-workspace` may cause unexpected results, such as Ku
        client:
          version:
            kubesphere: v3.2.0
-           kubernetes: v1.20.4
+           kubernetes: v1.21.5
            openpitrix: v3.2.0
          enableKubeConfig: true
          systemWorkspace: "$"  # Add this line manually.

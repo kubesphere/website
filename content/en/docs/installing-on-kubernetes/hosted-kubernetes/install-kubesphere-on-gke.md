@@ -30,7 +30,7 @@ This guide walks you through the steps of deploying KubeSphere on [Google Kubern
 
 {{< notice note >}}
 
-- To install KubeSphere v3.1.1 on Kubernetes, your Kubernetes version must be v1.17.x, v1.18.x, v1.19.x or v1.20.x.
+- To install KubeSphere v3.2.0 on Kubernetes, your Kubernetes version must be v1.19.x, v1.20.x, v1.21.x, or v1.22.x (experimental).
 - 3 nodes are included in this example. You can add more nodes based on your own needs especially in a production environment.
 - The machine type e2-medium (2 vCPU, 4GB memory) is for minimal installation. If you want to enable pluggable components or use the cluster for production, please select a machine type with more resources.
 - For other settings, you can change them as well based on your own needs or use the default value.

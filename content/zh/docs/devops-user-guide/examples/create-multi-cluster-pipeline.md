@@ -40,7 +40,7 @@ weight: 11440
 
 {{< notice note >}}
 
-这些 Kubernetes 集群可以被托管至不同的云厂商，也可以使用不同的 Kubernetes 版本。针对 KubeSphere  v3.1.0 推荐的 Kubernetes 版本：v1.17.9、v1.18.8、v1.19.8 和 v1.20.4。
+这些 Kubernetes 集群可以被托管至不同的云厂商，也可以使用不同的 Kubernetes 版本。针对 KubeSphere  v3.2.0 推荐的 Kubernetes 版本：v1.19.x、v1.20.x、v1.21.x 和 v1.22.x（实验性支持）。
 
 {{</ notice >}}
 

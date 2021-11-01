@@ -137,7 +137,7 @@ chmod +x kk
 在当前位置创建配置文件 `master-HA.yaml`：
 
 ```bash
-./kk create config --with-kubesphere v3.2.0 --with-kubernetes v1.20.4 -f master-HA.yaml
+./kk create config --with-kubesphere v3.2.0 --with-kubernetes v1.21.5 -f master-HA.yaml
 ```
 
 > 提示：默认是 Kubernetes 1.17.9，这些 Kubernetes 版本也与 KubeSphere 同时进行过充分的测试： v1.15.12, v1.16.13, v1.17.9 (default), v1.18.6，您可以根据需要指定版本。
@@ -202,7 +202,7 @@ metadata:
   name: ks-installer
   namespace: kubesphere-system
   labels:
-    version: v3.1.1
+    version: v3.2.0
 spec:
   local_registry: ""
   persistence:

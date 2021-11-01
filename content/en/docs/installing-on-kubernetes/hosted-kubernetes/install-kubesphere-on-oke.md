@@ -30,7 +30,7 @@ This guide walks you through the steps of deploying KubeSphere on [Oracle Kubern
 
   {{< notice note >}}
 
-  - To install KubeSphere v3.1.1 on Kubernetes, your Kubernetes version must be v1.17.x, v1.18.x, v1.19.x or v1.20.x.
+  - To install KubeSphere v3.2.0 on Kubernetes, your Kubernetes version must be v1.19.x, v1.20.x, v1.21.x, or v1.22.x (experimental).
   - It is recommended that you should select **Public** for **Visibility Type**, which will assign a public IP address for every node. The IP address can be used later to access the web console of KubeSphere.
   - In Oracle Cloud, a Shape is a template that determines the number of CPUs, amount of memory, and other resources that are allocated to an instance. `VM.Standard.E2.2 (2 CPUs and 16G Memory)` is used in this example. For more information, see [Standard Shapes](https://docs.cloud.oracle.com/en-us/iaas/Content/Compute/References/computeshapes.htm#vmshapes__vm-standard).
   - 3 nodes are included in this example. You can add more nodes based on your own needs especially in a production environment.

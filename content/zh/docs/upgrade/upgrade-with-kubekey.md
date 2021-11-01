@@ -81,18 +81,18 @@ chmod +x kk
 
 ### All-in-One 集群
 
-运行以下命令使用 KubeKey 将您的单节点集群升级至 KubeSphere v3.2.0 和 Kubernetes v1.20.4：
+运行以下命令使用 KubeKey 将您的单节点集群升级至 KubeSphere v3.2.0 和 Kubernetes v1.21.5：
 
 ```bash
-./kk upgrade --with-kubernetes v1.20.4 --with-kubesphere v3.2.0
+./kk upgrade --with-kubernetes v1.21.5 --with-kubesphere v3.2.0
 ```
 
 要将 Kubernetes 升级至特定版本，请在 `--with-kubernetes` 标志后明确指定版本号。以下是可用版本：
 
-- v1.19.0, v1.19.8, v1.19.9
-- v1.20.4, v1.20.6
-- v1.21.5
-- v1.22.1
+- v1.19.x
+- v1.20.x
+- v1.21.x
+- v1.22.x（实验性支持）
 
 ### 多节点集群
 
@@ -127,18 +127,18 @@ chmod +x kk
 
 #### 步骤 3：升级集群
 
-运行以下命令，将您的集群升级至 KubeSphere v3.2.0 和 Kubernetes v1.20.4：
+运行以下命令，将您的集群升级至 KubeSphere v3.2.0 和 Kubernetes v1.21.5：
 
 ```bash
-./kk upgrade --with-kubernetes v1.20.4 --with-kubesphere v3.2.0 -f sample.yaml
+./kk upgrade --with-kubernetes v1.21.5 --with-kubesphere v3.2.0 -f sample.yaml
 ```
 
 要将 Kubernetes 升级至特定版本，请在 `--with-kubernetes` 标志后明确指定版本号。以下是可用版本：
 
-- v1.19.0, v1.19.8, v1.19.9
-- v1.20.4, v1.20.6
-- v1.21.5
-- v1.22.1
+- v1.19.x
+- v1.20.x
+- v1.21.x
+- v1.22.x（实验性支持）
 
 {{< notice note >}}
 

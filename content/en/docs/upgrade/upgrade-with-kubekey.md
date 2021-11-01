@@ -88,10 +88,10 @@ Run the following command to use KubeKey to upgrade your single-node cluster to 
 
 To upgrade Kubernetes to a specific version, explicitly provide the version after the flag `--with-kubernetes`. Available versions are:
 
-- v1.19.0, v1.19.8, v1.19.9
-- v1.20.4, v1.20.6
-- v1.21.5
-- v1.22.1
+- v1.19.x
+- v1.20.x
+- v1.21.x
+- v1.22.x (experimental)
 
 ### Multi-node cluster
 
@@ -133,10 +133,10 @@ The following command upgrades your cluster to KubeSphere v3.2.0 and Kubernetes 
 
 To upgrade Kubernetes to a specific version, explicitly provide the version after the flag `--with-kubernetes`. Available versions are:
 
-- v1.19.0, v1.19.8, v1.19.9
-- v1.20.4, v1.20.6
-- v1.21.5
-- v1.22.1
+- v1.19.x
+- v1.20.x
+- v1.21.x
+- v1.22.x (experimental)
 
 {{< notice note >}}
 
