@@ -32,4 +32,4 @@ vesoft 为开源的分布式图数据库 Nebula Graph 提供了配套的 DBaaS �
 
 ## 下载 PPT
 
-可扫描官网底部二维码，关注 「KubeSphere 云原生」公众号，后台回复 “2021 杭州” 即可下载 PPT。
+可扫描官网底部二维码，关注 「KubeSphere云原生」公众号，后台回复 “2021 杭州” 即可下载 PPT。

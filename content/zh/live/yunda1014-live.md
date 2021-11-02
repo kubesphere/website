@@ -36,4 +36,6 @@ GitOps 提供了一种自动化的管理基础架构的方法。借助 GitOps，
 
 B 站  http://live.bilibili.com/22580654
 
+## PPT 下载
 
+可扫描官网底部二维码，关注 「KubeSphere云原生」公众号，后台回复 `20211014` 即可下载 PPT。

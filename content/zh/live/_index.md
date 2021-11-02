@@ -10,22 +10,29 @@ section1:
 
 section2:
   image: /images/live/cloudnative-live-cover.png
-  url: ./ckacks1021-live/
+  url: ./kubeovn1028-live/
 
   notice:
-    title: 如何优化容器网络性能
+    title: 海量并发微服务框架设计
     tag: 预告
-    time: 2021 年 10 月 28 日晚 8 点
+    time: 2021 年 11 月 04 日晚 8 点
     base: 线上
-    url: ./kubeovn1028-live/
+    url: ./go1104-live/
 
   over:
-    title: Kubebuilder 使用简介
-    url: ./uisee0923-live/
+    title: CKA/CKS 备考攻略
+    url: ./ckacks1021-live/
     tag: 结束
 
 section3:
   videos:
+    - title: 如何优化容器网络性能
+      link: ./kubeovn1028-live/
+      snapshot: https://pek3b.qingstor.com/kubesphere-community/images/kubeovn1028-live-cover.png
+      type: iframe
+      createTime: 2021.10.28
+      group: 直播回放
+
     - title: JuiceFS CSI Driver 的最佳实践
       link: ./hangzhou1023-juicefs/
       snapshot: https://pek3b.qingstor.com/kubesphere-community/images/hangzhou1023-juicefs-cover.png
