@@ -6,7 +6,7 @@ linkTitle: "Persistent Volumes and Storage Classes"
 weight: 8400
 ---
 
-This tutorial describes the basic concepts of PVs, PVCs and storage classes and demonstrates how a cluster administrator can manage storage classes and persistent volumes in KubeSphere.
+This tutorial describes the basic concepts of PVs, PVCs, and storage classes and demonstrates how a cluster administrator can manage storage classes and persistent volumes in KubeSphere.
 
 ## Introduction
 

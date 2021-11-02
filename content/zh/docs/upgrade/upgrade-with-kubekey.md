@@ -1,6 +1,6 @@
 ---
 title: "使用 KubeKey 升级"
-keywords: "Kubernetes, 升级, KubeSphere, v3.2.0, KubeKey"
+keywords: "Kubernetes, 升级, KubeSphere, 3.2.0, KubeKey"
 description: "使用 KubeKey 升级 Kubernetes 和 KubeSphere。"
 linkTitle: "使用 KubeKey 升级"
 weight: 7200
@@ -81,7 +81,7 @@ chmod +x kk
 
 ### All-in-One 集群
 
-运行以下命令使用 KubeKey 将您的单节点集群升级至 KubeSphere v3.2.0 和 Kubernetes v1.21.5：
+运行以下命令使用 KubeKey 将您的单节点集群升级至 KubeSphere 3.2.0 和 Kubernetes v1.21.5：
 
 ```bash
 ./kk upgrade --with-kubernetes v1.21.5 --with-kubesphere v3.2.0
@@ -127,7 +127,7 @@ chmod +x kk
 
 #### 步骤 3：升级集群
 
-运行以下命令，将您的集群升级至 KubeSphere v3.2.0 和 Kubernetes v1.21.5：
+运行以下命令，将您的集群升级至 KubeSphere 3.2.0 和 Kubernetes v1.21.5：
 
 ```bash
 ./kk upgrade --with-kubernetes v1.21.5 --with-kubesphere v3.2.0 -f sample.yaml
@@ -142,6 +142,6 @@ chmod +x kk
 
 {{< notice note >}}
 
-若要使用 KubeSphere v3.2.0 的部分新功能，您需要在升级后启用对应的可插拔组件。
+若要使用 KubeSphere 3.2.0 的部分新功能，您需要在升级后启用对应的可插拔组件。
 
 {{</ notice >}} 

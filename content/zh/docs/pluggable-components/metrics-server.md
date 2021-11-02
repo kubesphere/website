@@ -78,7 +78,7 @@ KubeSphere 支持用于[部署](../../project-user-guide/application-workloads/d
 
     {{</ notice >}}
 
-3. 在**资源列表**中，点击 `ks-installer` 右侧的 <img src="/images/docs/zh-cn/enable-pluggable-components/metrics-server/three-dots.png" height="20px">，选择**编辑 YAML**。
+3. 在**自定义资源**中，点击 `ks-installer` 右侧的 <img src="/images/docs/zh-cn/enable-pluggable-components/metrics-server/three-dots.png" height="20px">，选择**编辑 YAML**。
 
 4. 在该 YAML 文件中，导航到 `metrics_server`，在 `enabled` 一行将 `false` 更改为 `true`。完成后，点击右下角的**确定**以保存配置。
 

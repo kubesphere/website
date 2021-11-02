@@ -6,9 +6,9 @@ linkTitle: "KubeSphere 应用商店"
 weight: 6200
 ---
 
-作为一个开源的、以应用为中心的容器平台，KubeSphere 在 [OpenPitrix](https://github.com/openpitrix/openpitrix) 的基础上，为用户提供了一个基于 Helm 的应用商店，用于应用生命周期管理。OpenPitrix 是一个开源的 Web 平台，用于打包、部署和管理不同类型的应用。KubeSphere 应用商店让 ISV、开发者和用户能够在一站式服务中只需点击几下就可以上传、测试、部署和发布应用。
+作为一个开源的、以应用为中心的容器平台，KubeSphere 在 [OpenPitrix](https://github.com/openpitrix/openpitrix) 的基础上，为用户提供了一个基于 Helm 的应用商店，用于应用生命周期管理。OpenPitrix 是一个开源的 Web 平台，用于打包、部署和管理不同类型的应用。KubeSphere 应用商店让 ISV、开发者和用户能够在一站式服务中只需点击几下就可以上传、测试、安装和发布应用。
 
-对内，KubeSphere 应用商店可以作为不同团队共享数据、中间件和办公应用的场所。对外，有利于设立构建和交付的行业标准。默认情况下，应用商店中内置了 17 个应用。启用该功能后，您可以通过应用模板添加更多应用。
+对内，KubeSphere 应用商店可以作为不同团队共享数据、中间件和办公应用的场所。对外，有利于设立构建和交付的行业标准。启用该功能后，您可以通过应用模板添加更多应用。
 
 有关更多信息，请参阅[应用商店](../../application-store/)。
 
@@ -78,7 +78,7 @@ weight: 6200
 定制资源定义（CRD）允许用户在不增加额外 API 服务器的情况下创建一种新的资源类型，用户可以像使用其他 Kubernetes 原生对象一样使用这些定制资源。
     {{</ notice >}}
 
-3. 在**资源列表**中，点击 `ks-installer` 右侧的 <img src="/images/docs/zh-cn/enable-pluggable-components/kubesphere-app-store/three-dots.png" height="20px">，选择**编辑 YAML**。
+3. 在**自定义资源**中，点击 `ks-installer` 右侧的 <img src="/images/docs/zh-cn/enable-pluggable-components/kubesphere-app-store/three-dots.png" height="20px">，选择**编辑 YAML**。
 
 4. 在该 YAML 文件中，搜寻到 `openpitrix`，将 `enabled` 的 `false` 改为 `true`。完成后，点击右下角的**确定**，保存配置。
 
@@ -101,12 +101,12 @@ weight: 6200
 
 ## 验证组件的安装
 
-在您登录控制台后，如果您能看到页面左上角的**应用商店**以及其中的 17 个内置应用，则说明安装成功。
+在您登录控制台后，如果您能看到页面左上角的**应用商店**以及其中的应用，则说明安装成功。
 
 {{< notice note >}}
 
 - 您可以在不登录控制台的情况下直接访问 `<节点 IP 地址>:30880/apps` 进入应用商店。
-- KubeSphere 3.2 中的应用商店启用后，**OpenPitrix** 页签不会显示在**系统组件**页面。
+- KubeSphere 3.2.0 中的应用商店启用后，**OpenPitrix** 页签不会显示在**系统组件**页面。
 
 {{</ notice >}} 
 

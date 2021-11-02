@@ -1,8 +1,8 @@
 ---
-title: "KubeSphere Auditing Logs"
+title: "KubeSphere Audit Logs"
 keywords: "Kubernetes, auditing, KubeSphere, logs"
 description: "Learn how to enable Auditing to document platform events and activities."
-linkTitle: "KubeSphere Auditing Logs"
+linkTitle: "KubeSphere Audit Logs"
 weight: 6700
 ---
 
@@ -106,7 +106,7 @@ By default, ks-installer will install Elasticsearch internally if Auditing is en
 A Custom Resource Definition (CRD) allows users to create a new type of resources without adding another API server. They can use these resources like any other native Kubernetes objects.
     {{</ notice >}}
 
-3. In **Resource List**, click <img src="/images/docs/enable-pluggable-components/kubesphere-auditing-logs/three-dots.png" height="20px">  on the right of `ks-installer` and select **Edit YAML**.
+3. In **Custom Resources**, click <img src="/images/docs/enable-pluggable-components/kubesphere-auditing-logs/three-dots.png" height="20px">  on the right of `ks-installer` and select **Edit YAML**.
 
 4. In this YAML file, navigate to `auditing` and change `false` to `true` for `enabled`. After you finish, click **OK** in the lower-right corner to save the configuration.
 
@@ -148,7 +148,7 @@ You can find the web kubectl tool by clicking <img src="/images/docs/enable-plug
 
 {{< tab "Verify the component on the dashboard" >}}
 
-Verify that you can use the **Auditing Operating** function from the **Toolbox** in the lower-right corner.
+Verify that you can use the **Audit Log Search** function from the **Toolbox** in the lower-right corner.
 
 {{</ tab >}}
 

@@ -1,6 +1,6 @@
 ---
 title: "Changes after Upgrade"
-keywords: "Kubernetes, upgrade, KubeSphere, v3.2.0"
+keywords: "Kubernetes, upgrade, KubeSphere, 3.2.0"
 description: "Understand what will be changed after the upgrade."
 
 linkTitle: "Changes after Upgrade"

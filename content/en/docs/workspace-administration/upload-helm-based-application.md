@@ -31,8 +31,8 @@ Maximum accepted resolutions of the app icon: 96 x 96 pixels.
 
 {{</ notice >}}
 
-5. The app appears in the template list with the status **Draft** after successfully uploaded, which means this app is under development. The uploaded app is visible to all members in the same workspace.
+5. The app appears in the template list with the status **Developing** after successfully uploaded, which means this app is under development. The uploaded app is visible to all members in the same workspace.
 
-6. Click the app and the page opens with the **Versions** tab selected. Click the draft version to expand the menu, where you can see options including **Delete**, **Test Installation**, and **Submit for Review**.
+6. Click the app and the page opens with the **Versions** tab selected. Click the draft version to expand the menu, where you can see options including **Delete**, **Install**, and **Submit for Release**.
 
 7. For more information about how to release your app to the App Store, refer to [Application Lifecycle Management](../../application-store/app-lifecycle-management/#step-2-upload-and-submit-application).

@@ -6,7 +6,7 @@ linkTitle: "Remove Built-in Apps in KubeSphere"
 Weight: 16910
 ---
 
-As an open source and app-centric container platform, KubeSphere integrates 17 built-in apps in the App Store that is based on [OpenPitrix](https://github.com/openpitrix/openpitrix). They are accessible to all tenants in a workspace, while you can also remove them from the App Store. This tutorial demonstrates how to remove a built-in app from the App Store.
+As an open source and app-centric container platform, KubeSphere integrates apps in the App Store that is based on [OpenPitrix](https://github.com/openpitrix/openpitrix). They are accessible to all tenants in a workspace, while you can also remove them from the App Store. This tutorial demonstrates how to remove a built-in app from the App Store.
 
 ## Prerequisites
 
@@ -17,7 +17,7 @@ As an open source and app-centric container platform, KubeSphere integrates 17 b
 
 1. Log in to the web console of KubeSphere as `admin`, click **Platform** in the upper-left corner, and then select **App Store Management**.
 
-2. On the **App Store** page, you can see all 17 built-in apps in the list. Select an app that you want to remove from the App Store. For example, click **Tomcat** to go to its detail page.
+2. On the **Apps** page, you can see all apps in the list. Select an app that you want to remove from the App Store. For example, click **Tomcat** to go to its detail page.
 
 3. On the detail page of Tomcat, click **Suspend App** to remove the app.
 

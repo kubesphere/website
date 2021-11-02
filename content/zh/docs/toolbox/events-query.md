@@ -22,7 +22,7 @@ Kubernetes 事件系统用于深入了解集群内部发生的事件，KubeSpher
 
 ## 查询事件
 
-1. 所有用户都可以使用事件查询功能。使用任意帐户登录控制台，在右下角的 <img src="/images/docs/zh-cn/toolbox/event-query/toolbox.png" width="20" /> 上悬停，然后在弹出菜单中选择**事件查询**。
+1. 所有用户都可以使用事件查询功能。使用任意帐户登录控制台，在右下角的 <img src="/images/docs/zh-cn/toolbox/event-query/toolbox.png" width="20" /> 上悬停，然后在弹出菜单中选择**资源事件查询**。
 
 2. 在弹出窗口中，您可以看到该帐户有权限查看的事件数量。
 
