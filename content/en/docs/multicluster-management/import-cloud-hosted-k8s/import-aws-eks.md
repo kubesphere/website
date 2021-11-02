@@ -10,8 +10,8 @@ This tutorial demonstrates how to import an AWS EKS cluster through the [direct 
 
 ## Prerequisites
 
-- You have a Kubernetes cluster with KubeSphere installed, and prepared this cluster as the Host Cluster. For more information about how to prepare a Host Cluster, refer to [Prepare a Host Cluster](../../../multicluster-management/enable-multicluster/direct-connection/#prepare-a-host-cluster).
-- You have an EKS cluster to be used as the Member Cluster.
+- You have a Kubernetes cluster with KubeSphere installed, and prepared this cluster as the host cluster. For more information about how to prepare a host cluster, refer to [Prepare a host cluster](../../../multicluster-management/enable-multicluster/direct-connection/#prepare-a-host-cluster).
+- You have an EKS cluster to be used as the member cluster.
 
 ## Import an EKS Cluster
 
@@ -21,7 +21,7 @@ You need to deploy KubeSphere on your EKS cluster first. For more information ab
 
 ### Step 2: Prepare the EKS member cluster
 
-1. In order to manage the Member Cluster from the Host Cluster, you need to make `jwtSecret` the same between them. Therefore, get it first by executing the following command on your Host Cluster.
+1. In order to manage the member cluster from the host cluster, you need to make `jwtSecret` the same between them. Therefore, get it first by executing the following command on your host cluster.
 
    ```bash
    kubectl -n kubesphere-system get cm kubesphere-config -o yaml | grep -v "apiVersion" | grep jwtSecret
@@ -162,10 +162,10 @@ You need to deploy KubeSphere on your EKS cluster first. For more information ab
 
 ### Step 4: Import the EKS member cluster
 
-1. Log in to the KubeSphere console on your Host Cluster as `admin`. Click **Platform** in the upper-left corner and then select **Cluster Management**. On the **Cluster Management** page, click **Add Cluster**.
+1. Log in to the KubeSphere console on your host cluster as `admin`. Click **Platform** in the upper-left corner and then select **Cluster Management**. On the **Cluster Management** page, click **Add Cluster**.
 
 2. Enter the basic information based on your needs and click **Next**.
 
-3. In **Connection Method**, select **Direct Connection**. Fill in the new kubeconfig file of the EKS Member Cluster and then click **Create**.
+3. In **Connection Method**, select **Direct Connection**. Fill in the new kubeconfig file of the EKS member cluster and then click **Create**.
 
 4. Wait for cluster initialization to finish.

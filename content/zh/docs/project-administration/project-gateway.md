@@ -67,6 +67,6 @@ KubeSphere 项目中的网关是一个[ NGINX Ingress 控制器](https://www.ngi
 
 {{< notice note >}}
 
-云厂商通常支持负载均衡器插件。如果在主流的 Kubernetes Engine 上安装 KubeSphere，您可能会发现环境中已有可用的负载均衡器。如果在裸金属环境中安装 KubeSphere，您可以使用 [PorterLB](https://github.com/kubesphere/porter) 作为负载均衡器。
+云厂商通常支持负载均衡器插件。如果在主流的 Kubernetes Engine 上安装 KubeSphere，您可能会发现环境中已有可用的负载均衡器。如果在裸金属环境中安装 KubeSphere，您可以使用 [OpenELB](https://github.com/kubesphere/openelb) 作为负载均衡器。
 
 {{</ notice >}} 
