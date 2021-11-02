@@ -6,9 +6,9 @@ titleLink: "Direct Connection"
 weight: 5210
 ---
 
-If the kube-apiserver address of the member cluster is accessible on any node of the host cluster, you can adopt **Direction Connection**. This method is applicable when the kube-apiserver address of the M Cluster can be exposed or H Cluster and M Cluster are in the same private network or subnet.
+If the kube-apiserver address of the member cluster is accessible on any node of the host cluster, you can adopt **Direction Connection**. This method is applicable when the kube-apiserver address of the member cluster can be exposed or host cluster and member cluster are in the same private network or subnet.
 
-To use the multi-cluster feature using direct connection, you must have at least two clusters serving as the H Cluster and the M Cluster respectively. A cluster can be defined as the H Cluster or the M Cluster either before or after you install KubeSphere. For more information about installing KubeSphere, refer to [Installing on Linux](../../../installing-on-linux/) and [Installing on Kubernetes](../../../installing-on-kubernetes/).
+To use the multi-cluster feature using direct connection, you must have at least two clusters serving as the host cluster and the member cluster respectively. A cluster can be defined as the host cluster or the member cluster either before or after you install KubeSphere. For more information about installing KubeSphere, refer to [Installing on Linux](../../../installing-on-linux/) and [Installing on Kubernetes](../../../installing-on-kubernetes/).
 
 ## Video Demonstration
 
@@ -189,7 +189,7 @@ kubectl logs -n kubesphere-system $(kubectl get pod -n kubesphere-system -l app=
 
      {{< notice note >}}
 
-Make sure the `server` address in KubeConfig is accessible on any node of the Host Cluster.
+Make sure the `server` address in KubeConfig is accessible on any node of the host cluster.
 
      {{</ notice >}}
 

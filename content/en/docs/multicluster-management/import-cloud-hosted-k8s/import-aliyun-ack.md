@@ -10,14 +10,14 @@ This tutorial demonstrates how to import an Alibaba Cloud Kubernetes (ACK) clust
 
 ## Prerequisites
 
-- You have a Kubernetes cluster with KubeSphere installed, and prepared this cluster as the Host Cluster. For more information about how to prepare a Host Cluster, refer to [Prepare a Host Cluster](../../../multicluster-management/enable-multicluster/direct-connection/#prepare-a-host-cluster).
-- You have an ACK cluster with KubeSphere installed to be used as the Member Cluster.
+- You have a Kubernetes cluster with KubeSphere installed, and prepared this cluster as the host cluster. For more information about how to prepare a host cluster, refer to [Prepare a host cluster](../../../multicluster-management/enable-multicluster/direct-connection/#prepare-a-host-cluster).
+- You have an ACK cluster with KubeSphere installed to be used as the member cluster.
 
 ## Import an ACK Cluster
 
 ### Step 1: Prepare the ACK Member Cluster
 
-1. In order to manage the Member Cluster from the Host Cluster, you need to make `jwtSecret` the same between them. Therefore, get it first by executing the following command on your Host Cluster.
+1. In order to manage the member cluster from the host cluster, you need to make `jwtSecret` the same between them. Therefore, get it first by executing the following command on your host cluster.
 
    ```bash
    kubectl -n kubesphere-system get cm kubesphere-config -o yaml | grep -v "apiVersion" | grep jwtSecret
@@ -59,12 +59,12 @@ Log in to the web console of Alibaba Cloud. Go to **Clusters** under **Container
 
 ![kubeconfig](/images/docs/multicluster-management/import-cloud-hosted-k8s/import-ack/kubeconfig.png)
 
-### Step 3: Import the ACK Member Cluster
+### Step 3: Import the ACK member cluster
 
-1. Log in to the KubeSphere console on your Host Cluster as `admin`. Click **Platform** in the upper-left corner and then select **Cluster Management**. On the **Cluster Management** page, click **Add Cluster**.
+1. Log in to the KubeSphere console on your host cluster as `admin`. Click **Platform** in the upper-left corner and then select **Cluster Management**. On the **Cluster Management** page, click **Add Cluster**.
 
 2. Enter the basic information based on your needs and click **Next**.
 
-3. In **Connection Method**, select **Direct Connection**. Fill in the kubeconfig file of the ACK Member Cluster and then click **Create**.
+3. In **Connection Method**, select **Direct Connection**. Fill in the kubeconfig file of the ACK member cluster and then click **Create**.
 
 4. Wait for cluster initialization to finish.

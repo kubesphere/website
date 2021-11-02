@@ -99,6 +99,6 @@ DevOps 是一套重要的实践和方法，让开发和运维团队能够更高�
 
 有时，云端并非资源部署的最优环境。例如，当需要大量计算资源并要求硬盘高 I/O 速度时，使用专门的物理服务器可以实现更佳的性能。此外，对于一些难以迁移上云的特殊工作负载，可能还需要通过经认证的硬件运行，加以复杂的许可与支持协议，在这种情况下，企业更倾向于使用裸机环境部署应用。
 
-借助新一代轻量级安装器 [KubeKey](https://github.com/kubesphere/kubekey)，KubeSphere 帮助企业快速在裸机环境搭建容器化架构，并通过 PorterLB 实现流量的负载均衡。[PorterLB](https://github.com/kubesphere/porter) 由 KubeSphere 社区开源，专为裸机环境下的负载均衡所设计，现已加入 CNCF Landscape，是为 CNCF 所认可的构建云原生最佳实践中的重要一环。
+借助新一代轻量级安装器 [KubeKey](https://github.com/kubesphere/kubekey)，KubeSphere 帮助企业快速在裸机环境搭建容器化架构，并通过 OpenELB 实现流量的负载均衡。[OpenELB](https://github.com/kubesphere/openelb) 由 KubeSphere 社区开源，专为裸机环境下的负载均衡所设计，现已加入 CNCF Landscape，是为 CNCF 所认可的构建云原生最佳实践中的重要一环。
 
 有关 KubeSphere 如何推动各行各业的发展并实现数字化转型，请参见[用户案例学习](../../../case/)。

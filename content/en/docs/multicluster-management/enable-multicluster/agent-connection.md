@@ -6,9 +6,9 @@ titleLink: "Agent Connection"
 weight: 5220
 ---
 
-The component [Tower](https://github.com/kubesphere/tower) of KubeSphere is used for agent connection. Tower is a tool for network connection between clusters through the agent. If the Host Cluster (H Cluster) cannot access the Member Cluster (M Cluster) directly, you can expose the proxy service address of the H cluster. This enables the M Cluster to connect to the H Cluster through the agent. This method is applicable when the M Cluster is in a private environment (for example, IDC) and the H Cluster is able to expose the proxy service. The agent connection is also applicable when your clusters are distributed across different cloud providers.
+The component [Tower](https://github.com/kubesphere/tower) of KubeSphere is used for agent connection. Tower is a tool for network connection between clusters through the agent. If the host cluster cannot access the member cluster directly, you can expose the proxy service address of the host cluster. This enables the member cluster to connect to the host cluster through the agent. This method is applicable when the member cluster is in a private environment (for example, IDC) and the host cluster is able to expose the proxy service. The agent connection is also applicable when your clusters are distributed across different cloud providers.
 
-To use the multi-cluster feature using an agent, you must have at least two clusters serving as the H Cluster and the M Cluster respectively. A cluster can be defined as the H Cluster or the M Cluster either before or after you install KubeSphere. For more information about installing KubeSphere, refer to [Installing on Linux](../../../installing-on-linux/) and [Installing on Kubernetes](../../../installing-on-kubernetes/).
+To use the multi-cluster feature using an agent, you must have at least two clusters serving as the host cluster and the member cluster respectively. A cluster can be defined as the host cluster or the member cluster either before or after you install KubeSphere. For more information about installing KubeSphere, refer to [Installing on Linux](../../../installing-on-linux/) and [Installing on Kubernetes](../../../installing-on-kubernetes/).
 
 ## Video Demonstration
 

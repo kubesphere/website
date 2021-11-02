@@ -57,6 +57,6 @@ You must configure a load balancer in advance before you select **LoadBalancer**
 
 {{< notice note >}}
 
-Cloud providers often support load balancer plugins. If you install KubeSphere on major Kubernetes engines on their platforms, you may notice a load balancer is already available in the environment for you to use. If you install KubeSphere in a bare metal environment, you can use [PorterLB](https://github.com/kubesphere/porter) for load balancing.
+Cloud providers often support load balancer plugins. If you install KubeSphere on major Kubernetes engines on their platforms, you may notice a load balancer is already available in the environment for you to use. If you install KubeSphere in a bare metal environment, you can use [OpenELB](https://github.com/kubesphere/openelb) for load balancing.
 
 {{</ notice >}} 
