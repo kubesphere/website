@@ -18,7 +18,7 @@ Cloud-native technologies and Kubernetes have become more and more popular in Ch
 
 Collaborating with CNCF ambassadors from PingCAP, DaoCloud, Huawei Cloud, KubeSphere, and Cloud Native Community, CNCF hosted the first Kubernetes Community Days (KCD) in Beijing, focusing on open-source projects and technical practices in the cloud-native ecosystem.
 
-![kcd-beijing- organizers](/images/news/kcd-china/kcd-beijing-organizers.png)
+![kcd-beijing-organizers](/images/news/kcd-china/kcd-beijing-organizers.png)
 
 ## Event at a Glance
 
@@ -36,3 +36,8 @@ On the day of the event, nearly 300 people signed up, and more than 150 people p
 
 ![kcd-event-3](/images/news/kcd-china/kcd-event-3.png)
 
+
+
+All the decks shared by speakers have been uploaded to CNCF/Presentations. Feel free to download or comment!
+
+Download: https://github.com/cncf/presentations/tree/master/chinese/kcd-china
