@@ -129,7 +129,7 @@ KubeSphere 利用 [KubeEdge](https://kubeedge.io/zh/) 将原生容器化应用�
 
    {{</ notice >}}
    
-6. 边缘节点加入集群后，部分 Pod 在调度至该边缘节点上后可能会一直处于 `Pending` 状态。由于部分守护进程集（例如，Calico）有强容忍度，在当前版本中 (KubeSphere v3.1.1)，您需要手动 Patch Pod 以防止它们调度至该边缘节点。
+6. 边缘节点加入集群后，部分 Pod 在调度至该边缘节点上后可能会一直处于 `Pending` 状态。由于部分守护进程集（例如，Calico）有强容忍度，在当前版本中 (KubeSphere v3.2.0)，您需要手动 Patch Pod 以防止它们调度至该边缘节点。
 
    ```bash
    #!/bin/bash

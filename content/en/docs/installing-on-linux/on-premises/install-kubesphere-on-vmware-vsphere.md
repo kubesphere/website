@@ -289,7 +289,7 @@ systemctl status -l keepalived
 
 ## Download KubeKey
 
-[Kubekey](https://github.com/kubesphere/kubekey) is the brand-new installer which provides an easy, fast and flexible way to install Kubernetes and KubeSphere v3.1.1.
+[Kubekey](https://github.com/kubesphere/kubekey) is the brand-new installer which provides an easy, fast and flexible way to install Kubernetes and KubeSphere v3.2.0.
 
 Follow the step below to download KubeKey.
 
@@ -353,7 +353,7 @@ Create a Kubernetes cluster with KubeSphere installed (for example, `--with-kube
 
 {{< notice note >}}
 
-- Recommended Kubernetes versions for KubeSphere v3.1.1: v1.17.9, v1.18.8, v1.19.8, and v1.20.4. If you do not specify a Kubernetes version, KubeKey will install Kubernetes v1.19.8 by default. For more information about supported Kubernetes versions, see [Support Matrix](../../../installing-on-linux/introduction/kubekey/#support-matrix).
+- Recommended Kubernetes versions for KubeSphere v3.2.0: v1.19.x, v1.20.x, v1.21.x or v1.22.x (experimental). If you do not specify a Kubernetes version, KubeKey will install Kubernetes v1.21.5 by default. For more information about supported Kubernetes versions, see [Support Matrix](../../../installing-on-linux/introduction/kubekey/#support-matrix).
 
 - If you do not add the flag `--with-kubesphere` in the command in this step, KubeSphere will not be deployed unless you install it using the `addons` field in the configuration file or add this flag again when you use `./kk create cluster` later.
 - If you add the flag `--with-kubesphere` without specifying a KubeSphere version, the latest version of KubeSphere will be installed.
@@ -398,7 +398,7 @@ spec:
     address: "10.10.71.67"
     port: "6443"
   kubernetes:
-    version: v1.19.8
+    version: v1.21.5
     imageRepo: kubesphere
     clusterName: cluster.local
     masqueradeAll: false  # masqueradeAll tells kube-proxy to SNAT everything if using the pure iptables proxy mode. [Default: false]
@@ -429,7 +429,7 @@ metadata:
   name: ks-installer
   namespace: kubesphere-system
   labels:
-    version: v3.1.1
+    version: v3.2.0
 spec:
   local_registry: ""
   persistence:

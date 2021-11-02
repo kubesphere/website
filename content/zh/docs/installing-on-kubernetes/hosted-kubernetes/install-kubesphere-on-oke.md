@@ -28,7 +28,7 @@ weight: 4260
 
     {{< notice note >}}
 
-- 如需在 Kubernetes 上安装 KubeSphere v3.1.1，您的 Kubernetes 版本必须为：v1.17.x，v1.18.x，v1.19.x 或 v1.20.x。
+- 如需在 Kubernetes 上安装 KubeSphere v3.2.0，您的 Kubernetes 版本必须为：v1.19.x，v1.20.x，v1.21.x 或 v1.22.x（实验性支持）。
 - 建议您在**可见性类型**中选择**公共**，即每个节点会分配到一个公共 IP 地址，此地址之后可用于访问 KubeSphere Web 控制台。
 - 在 Oracle Cloud 中，**配置**定义了一个实例会分配到的 CPU 和内存等资源量，本示例使用 `VM.Standard.E2.2 (2 CPUs and 16G Memory)`。有关更多信息，请参见 [Standard Shapes](https://docs.cloud.oracle.com/en-us/iaas/Content/Compute/References/computeshapes.htm#vmshapes__vm-standard)。
 - 本示例包含 3 个节点，可以根据需求自行添加节点（尤其是生产环境）。

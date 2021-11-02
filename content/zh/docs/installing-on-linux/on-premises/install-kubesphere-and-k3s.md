@@ -78,12 +78,12 @@ chmod +x kk
 1. 执行以下命令为集群创建一个配置文件：
 
    ```bash
-   ./kk create config --with-kubernetes v1.20.4-k3s --with-kubesphere v3.2.0
+   ./kk create config --with-kubernetes v1.21.5-k3s --with-kubesphere v3.2.0
    ```
 
    {{< notice note >}}
 
-   - KubeKey v1.1.0 仅支持安装 K3s v1.20.4。
+   - KubeKey v1.2.0 仅支持安装 K3s v1.21.5。
 
    - 您可以在以上命令中使用 `-f` 或 `--file` 参数指定配置文件的路径和名称。如未指定路径和名称，KubeKey 将默认在当前目录下创建 `config-sample.yaml` 配置文件。
 
@@ -117,7 +117,7 @@ chmod +x kk
        address: ""
        port: 6443
      kubernetes:
-       version: v1.20.4-k3s
+       version: v1.21.5-k3s
        imageRepo: kubesphere
        clusterName: cluster.local
      network:

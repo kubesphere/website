@@ -75,15 +75,15 @@ The commands above download the latest release (v1.2.0) of KubeKey. You can chan
 
 ## Support Matrix
 
-If you want to use KubeKey to install both Kubernetes and KubeSphere v3.1.1, see the following table of all supported Kubernetes versions.
+If you want to use KubeKey to install both Kubernetes and KubeSphere v3.2.0, see the following table of all supported Kubernetes versions.
 
 | KubeSphere version | Supported Kubernetes versions                                |
 | ------------------ | ------------------------------------------------------------ |
-| v3.1.1             | v1.17.0, v1.17.4, v1.17.5, v1.17.6, v1.17.7, v1.17.8, v1.17.9, v1.18.3, v1.18.5, v1.18.6, v1.18.8, v1.19.0, v1.19.8, v1.19.9, v1.20.4, v1.20.6 |
+| v3.2.0             | v1.19.x, v1.20.x, v1.21.x or v1.22.x (experimental) |
 
 {{< notice note >}} 
 
 - You can also run `./kk version --show-supported-k8s` to see all supported Kubernetes versions that can be installed by KubeKey.
-- The Kubernetes versions that can be installed using KubeKey are different from the Kubernetes versions supported by KubeSphere v3.0.0. If you want to [install KubeSphere v3.1.1 on an existing Kubernetes cluster](../../../installing-on-kubernetes/introduction/overview/), your Kubernetes version must be v1.17.x, v1.18.x, v1.19.x or v1.20.x. 
+- The Kubernetes versions that can be installed using KubeKey are different from the Kubernetes versions supported by KubeSphere v3.0.0. If you want to [install KubeSphere v3.2.0 on an existing Kubernetes cluster](../../../installing-on-kubernetes/introduction/overview/), your Kubernetes version must be v1.19.x, v1.20.x, v1.21.x or v1.22.x (experimental). 
 
 {{</ notice >}} 
