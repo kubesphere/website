@@ -65,7 +65,7 @@ Please refer to [Jobs](../jobs/#step-3-strategy-settings-optional).
 
     {{< notice note >}}
 
-- This example CronJob prints `KubeSphere`. For more information about setting images, see [Container Image Settings](../container-image-settings/).
+- This example CronJob prints `KubeSphere`. For more information about setting images, see [Pod Settings](../container-image-settings/).
 - For more information about **Restart Policy**, see [Jobs](../jobs/#step-4-set-image).
 - You can skip **Volume Settings** and **Advanced Settings** for this tutorial. For more information, see [Mount Volumes](../deployments/#step-4-mount-volumes) and [Configure Advanced Settings](../deployments/#step-5-configure-advanced-settings) in Deployments.
 
@@ -85,7 +85,7 @@ Please refer to [Jobs](../jobs/#step-3-strategy-settings-optional).
 
 ### Operations
 
-On the CronJob detail page, you can manage the CronJob after it is created.
+On the CronJob details page, you can manage the CronJob after it is created.
 
 - **Edit Information**: Edit the basic information except `Name` of the CronJob.
 - **Pause/Start**: Pause or start the Cronjob. Pausing a CronJob will tell the controller to suspend subsequent executions, which does not apply to executions that already start.

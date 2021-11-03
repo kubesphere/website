@@ -38,7 +38,7 @@ You can set the values in this step or click **Next** to use the default values.
 | Name                    | Definition                   | Description                                                  |
 | ----------------------- | ---------------------------- | ------------------------------------------------------------ |
 | Maximum Retries          | `spec.backoffLimit`          | It specifies the maximum number of retries before this Job is marked as failed. It defaults to 6. |
-| Completed Pods             | `spec.completions`           | It specifies the desired number of successfully finished Pods the Job should be run with. Setting it to nil means that the success of any Pod signals the success of all Pods, and allows parallelism to have any positive value. Setting it to 1 means that parallelism is limited to 1 and the success of that Pod signals the success of the Job. For more information, see [Jobs](https://kubernetes.io/docs/concepts/workloads/controllers/jobs-run-to-completion/). |
+| Complete Pods             | `spec.completions`           | It specifies the desired number of successfully finished Pods the Job should be run with. Setting it to nil means that the success of any Pod signals the success of all Pods, and allows parallelism to have any positive value. Setting it to 1 means that parallelism is limited to 1 and the success of that Pod signals the success of the Job. For more information, see [Jobs](https://kubernetes.io/docs/concepts/workloads/controllers/jobs-run-to-completion/). |
 | Parallel Pods             | `spec.parallelism`           | It specifies the maximum desired number of Pods the Job should run at any given time. The actual number of Pods running in a steady state will be less than this number when the work left to do is less than max parallelism ((`.spec.completions - .status.successful`) < `.spec.parallelism`). For more information, see [Jobs](https://kubernetes.io/docs/concepts/workloads/controllers/jobs-run-to-completion/). |
 | Maximum Duration (s) | `spec.activeDeadlineSeconds` | It specifies the duration in seconds relative to the startTime that the Job may be active before the system tries to terminate it; the value must be a positive integer. |
 
@@ -58,7 +58,7 @@ You can set the values in this step or click **Next** to use the default values.
     perl,-Mbignum=bpi,-wle,print bpi(2000)
     ```
 
-    {{< notice note >}}For more information about setting images, see [Container Image Settings](../container-image-settings/).{{</ notice >}}
+    {{< notice note >}}For more information about setting images, see [Pod Settings](../container-image-settings/).{{</ notice >}}
 
 ### Step 5: Inspect the Job manifest (optional)
 
@@ -122,7 +122,7 @@ You can rerun the Job if it fails and the reason for failure is displayed under 
 - In **Resource Status**, the Pod list provides the Pod's detailed information (for example, creation time, node, Pod IP and monitoring data).
 - You can view the container information by clicking the Pod.
 - Click the container log icon to view the output logs of the container.
-- You can view the Pod detail page by clicking the Pod name.
+- You can view the Pod details page by clicking the Pod name.
 
     {{</ notice >}}
 

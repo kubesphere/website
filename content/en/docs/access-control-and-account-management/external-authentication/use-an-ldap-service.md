@@ -16,7 +16,7 @@ This document describes how to use an LDAP service as an external identity provi
 
 ### Procedure
 
-1. Log in to KubeSphere as `admin`, move the cursor to <img src="/images/docs/access-control-and-account-management/external-authentication/use-an-ldap-service/toolbox.png" width="20px" height="20px"> in the bottom-right corner, click **Kubectl**, and run the following command to edit the `kubesphere-config` ConfigMap:
+1. Log in to KubeSphere as `admin`, move the cursor to <img src="/images/docs/access-control-and-account-management/external-authentication/use-an-ldap-service/toolbox.png" width="20px" height="20px"> in the lower-right corner, click **Kubectl**, and run the following command to edit the `kubesphere-config` ConfigMap:
 
    ```bash
    kubectl -n kubesphere-system edit cm kubesphere-config

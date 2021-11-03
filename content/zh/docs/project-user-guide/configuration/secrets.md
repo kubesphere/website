@@ -65,7 +65,7 @@ Kubernetes [保密字典 (Secret)](https://kubernetes.io/zh/docs/concepts/config
     - **编辑设置**：修改保密字典键值对。
     - **删除**：删除保密字典。
 
-2. 点击保密字典名称打开保密字典详情页面。在**详情**选项卡，您可以查看保密字典的所有键值对。
+2. 点击保密字典名称打开保密字典详情页面。在**数据**选项卡，您可以查看保密字典的所有键值对。
 
     {{< notice note >}}
 
@@ -96,7 +96,7 @@ Kubernetes [保密字典 (Secret)](https://kubernetes.io/zh/docs/concepts/config
 
 2. 设置保密字典名称（例如 `dockerhub-id`）并点击**下一步**。在**数据设置**页面，设置以下参数，然后点击**验证**以检查设置的信息是否有效。
 
-   **类型**：选择**kubernetes.io/dockerconfigjson（镜像仓库保密字典）**。
+   **类型**：选择**镜像仓库信息**。
 
    **仓库地址**：输入您的 Docker Hub 仓库地址，例如 `docker.io`。
 
@@ -112,7 +112,7 @@ Kubernetes [保密字典 (Secret)](https://kubernetes.io/zh/docs/concepts/config
 
 2. 设置保密字典名称（例如 `github-id`）并点击**下一步**。在**数据设置**页面，设置以下参数。
 
-   **类型**：选择**kubernetes.io/basic-auth（帐户密码保密字典）**。
+   **类型**：选择**用户名和密码**。
 
    **用户名**：输入您的 GitHub 帐户。
 

@@ -83,7 +83,7 @@ Source-to-Image (S2I) 是一个工具箱和工作流，用于从源代码构建�
 
    **超时时间（s）**：探针超时的秒数。本字段输入 `10`。
 
-   其他字段请直接使用默认值。有关如何在**容器设置**页面配置探针和设置其他参数的更多信息，请参见[容器镜像设置](../../../project-user-guide/application-workloads/container-image-settings/)。
+   其他字段请直接使用默认值。有关如何在**容器设置**页面配置探针和设置其他参数的更多信息，请参见[容器组设置](../../../project-user-guide/application-workloads/container-image-settings/)。
 
 6. 在**存储卷设置**页面，您可以为容器添加存储卷。有关更多信息，请参见[存储卷](../../../project-user-guide/storage/volumes/)。点击**下一步**继续。
 

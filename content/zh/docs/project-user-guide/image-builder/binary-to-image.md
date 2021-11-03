@@ -69,7 +69,7 @@ Binary-to-Image (B2I) 是一个工具箱和工作流，用于从二进制可执�
 
    {{< notice note >}}
 
-   有关如何在**容器设置**页面设置其他参数的更多信息，请参见[容器镜像设置](../../../project-user-guide/application-workloads/container-image-settings/)。
+   有关如何在**容器设置**页面设置其他参数的更多信息，请参见[容器组设置](../../../project-user-guide/application-workloads/container-image-settings/)。
 
    {{</ notice >}} 
 

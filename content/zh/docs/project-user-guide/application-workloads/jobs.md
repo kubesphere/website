@@ -58,7 +58,7 @@ weight: 10250
     perl,-Mbignum=bpi,-wle,print bpi(2000)
     ```
 
-    {{< notice note >}}有关设置镜像的更多信息，请参见[容器镜像设置](../../../project-user-guide/application-workloads/container-image-settings/)。{{</ notice >}}
+    {{< notice note >}}有关设置镜像的更多信息，请参见[容器组设置](../../../project-user-guide/application-workloads/container-image-settings/)。{{</ notice >}}
 
 ### 步骤 5：检查任务清单（可选）
 

@@ -43,7 +43,7 @@ You need to deploy the sample web application into `test`. For demonstration pur
 
 1. Click `prometheus-example-app`.
 
-2. Expand the menu and click **Test Installation**.
+2. Expand the menu and click **Install**.
 
 3. Make sure you deploy the sample web application in `test` and click **Next**.
 

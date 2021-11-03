@@ -10,7 +10,7 @@ When you create an application workload in a project, you can create a [Persiste
 
 Cluster administrators configure PersistentVolumes using storage classes. In other words, to create a PersistentVolumeClaim in a project, your cluster must have an available storage class. If no customized storage class is configured when you install KubeSphere, [OpenEBS](https://openebs.io/) is installed in your cluster by default to provide Local Persistent Volumes. However, it does not support dynamic volume provisioning. In a production environment, it is recommended you configure storage classes in advance to provide persistent storage services for your apps.
 
-This tutorial demonstrates how to create a volume, mount a volume and use volume features from its detail page.
+This tutorial demonstrates how to create a volume, mount a volume and use volume features from its details page.
 
 ## Prerequisites
 
@@ -34,13 +34,13 @@ All the volumes that are created on the **Volumes** page are PersistentVolumeCla
 
    {{</ notice >}} 
 
-4. On the **Volume Settings** page, select a method to create a volume.
+4. On the **Storage Settings** page, select a method to create a volume.
 
-   - **Create a Volume from Storage Class**. You can configure storage classes both [before](../../../installing-on-linux/persistent-storage-configurations/understand-persistent-storage/) and [after](../../../cluster-administration/persistent-volume-and-storage-class/) the installation of KubeSphere.
+   - **From Storage Class**. You can configure storage classes both [before](../../../installing-on-linux/persistent-storage-configurations/understand-persistent-storage/) and [after](../../../cluster-administration/persistent-volume-and-storage-class/) the installation of KubeSphere.
 
-   - **Create a Volume from Volume Snapshot**. To use a snapshot to create a volume, you must create a volume snapshot first.
+   - **From Volume Snapshot**. To use a snapshot to create a volume, you must create a volume snapshot first.
 
-   Select **Create a Volume from Storage Class** in this example. For more information about how to create a volume by snapshot, see [Volume Snapshots](../volume-snapshots/).
+   Select **From Storage Class** in this example. For more information about how to create a volume by snapshot, see [Volume Snapshots](../volume-snapshots/).
 
 5. Select a storage class from the drop-down list. This tutorial uses `csi-standard`, a standard storage class provided by QingCloud Platform. You can select your own storage class.
 
@@ -118,7 +118,7 @@ After a volume is created, you can see detailed information of it, edit it, or l
 
 On the details page, you can click **Edit Information** to change its basic information. Click **More** and you can edit its YAML file or delete this volume.
 
-To delete a volume, make sure the volume is not mounted to any workload. To unmount a volume, go to the detail page of a workload. From the **More** drop-down list, click **Edit Settings**. Select **Volumes** from the pop-up window, and click the dustbin icon to unmount it.
+To delete a volume, make sure the volume is not mounted to any workload. To unmount a volume, go to the details page of a workload. From the **More** drop-down list, click **Edit Settings**. Select **Volumes** from the pop-up window, and click the dustbin icon to unmount it.
 
 If the status of a volume remains **Terminating** for a long time after you clicked **Delete**, manually delete it by using the following command:
 
@@ -130,9 +130,9 @@ kubectl patch pvc <pvc-name> -p '{"metadata":{"finalizers":null}}'
 
 From the **More** drop-down menu, there are three additional options provided by KubeSphere based on the underlying storage plugin, also known as `Storage Capability`. Volume features include:
 
-- Clone a volume: Create a same volume.
-- Create a volume snapshot: Create a volume snapshot which can be used to create volumes. For more information, see [Volume Snapshots](../volume-snapshots/).
-- Expand a volume: Increase the size of a volume. Keep in mind that you cannot reduce the size of a volume on the console due to possible data loss. 
+- **Clone**: Create a same volume.
+- **Create Snapshot**: Create a volume snapshot which can be used to create volumes. For more information, see [Volume Snapshots](../volume-snapshots/).
+- **Expand**: Increase the size of a volume. Keep in mind that you cannot reduce the size of a volume on the console due to possible data loss. 
 
 For more information about `Storage Capability`, see [Design Documentation](https://github.com/kubesphere/community/blob/master/sig-storage/concepts-and-designs/storage-capability-interface.md).
 

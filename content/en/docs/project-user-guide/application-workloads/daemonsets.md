@@ -51,7 +51,7 @@ Specify a name for the DaemonSet (for example, `demo-daemonset`) and click **Nex
 
 5. Select a policy for image pulling from the drop-down menu. For more information, see [Image Pull Policy in Container Image Settings](../container-image-settings/#add-container-image).
 
-6. For other settings (**Health Check**, **Start Command**, **Environment Variables**, **Container Security Context** and **Synchronize Host Timezone**), you can configure them on the dashboard as well. For more information, see detailed explanations of these properties in [Container Image Settings](../container-image-settings/#add-container-image). When you finish, click **√** in the lower-right corner to continue.
+6. For other settings (**Health Check**, **Start Command**, **Environment Variables**, **Container Security Context** and **Synchronize Host Timezone**), you can configure them on the dashboard as well. For more information, see detailed explanations of these properties in [Pod Settings](../container-image-settings/#add-container-image). When you finish, click **√** in the lower-right corner to continue.
 
 7. Select an update strategy from the drop-down menu. It is recommended you choose **Rolling Update**. For more information, see [Update Strategy](../container-image-settings/#update-strategy).
 
@@ -79,7 +79,7 @@ You can add metadata in this section. When you finish, click **Create** to compl
 
 ## Check DaemonSet Details
 
-### Detail page
+### Details page
 
 1. After a DaemonSet is created, it will be displayed in the list. You can click <img src="/images/docs/project-user-guide/application-workloads/daemonsets/three-dots.png" width="20px" /> on the right and select the options from the menu to modify a DaemonSet.
 
@@ -106,7 +106,7 @@ You can add metadata in this section. When you finish, click **Create** to compl
       - The Pod list provides detailed information of the Pod (status, node, Pod IP and resource usage).
       - You can view the container information by clicking a Pod item.
       - Click the container log icon to view output logs of the container.
-      - You can view the Pod detail page by clicking the Pod name.
+      - You can view the Pod details page by clicking the Pod name.
 
 ### Revision records
 

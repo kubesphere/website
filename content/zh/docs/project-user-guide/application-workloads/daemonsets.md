@@ -52,7 +52,7 @@ weight: 10230
 
 5. 在下拉菜单中选择镜像拉取策略。有关更多信息，请参见[容器镜像设置中关于镜像拉取策略的内容](../../../project-user-guide/application-workloads/container-image-settings/#添加容器镜像)。
 
-6. 对于其他设置（**健康检查**、**启动命令**、**环境变量**、**容器安全上下文** 以及**同步主机时区**），您也可以在仪表板上配置它们。有关更多信息，请参见[容器镜像设置](../../../project-user-guide/application-workloads/container-image-settings/#添加容器镜像)中对这些属性的详细说明。操作完成后，点击右下角的 **√** 继续。
+6. 对于其他设置（**健康检查**、**启动命令**、**环境变量**、**容器安全上下文** 以及**同步主机时区**），您也可以在仪表板上配置它们。有关更多信息，请参见[容器组设置](../../../project-user-guide/application-workloads/container-image-settings/#添加容器镜像)中对这些属性的详细说明。操作完成后，点击右下角的 **√** 继续。
 
 7. 在下拉菜单中选择更新策略。建议您选择**滚动更新**。有关更多信息，请参见[更新策略](../../../project-user-guide/application-workloads/container-image-settings/#更新策略)。
 

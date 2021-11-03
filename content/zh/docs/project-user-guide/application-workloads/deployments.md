@@ -50,7 +50,7 @@ weight: 10210
 
 6. 在下拉列表中选择镜像拉取策略。有关更多信息，请参见[容器镜像设置中关于镜像拉取策略的内容](../../../project-user-guide/application-workloads/container-image-settings/#添加容器镜像)。
 
-7. 对于其他设置（**健康检查**、**启动命令**、**环境变量**、**容器安全上下文** 以及**同步主机时区**），您也可以在仪表板上配置它们。有关更多信息，请参见[容器镜像设置](../../../project-user-guide/application-workloads/container-image-settings/#添加容器镜像)中对这些属性的详细说明。操作完成后，点击右下角的 **√** 继续。
+7. 对于其他设置（**健康检查**、**启动命令**、**环境变量**、**容器安全上下文** 以及**同步主机时区**），您也可以在仪表板上配置它们。有关更多信息，请参见[容器组设置](../../../project-user-guide/application-workloads/container-image-settings/#添加容器镜像)中对这些属性的详细说明。操作完成后，点击右下角的 **√** 继续。
 
 8. 在下拉菜单中选择更新策略。建议您选择**滚动更新**。有关更多信息，请参见[更新策略](../../../project-user-guide/application-workloads/container-image-settings/#更新策略)。
 
@@ -104,7 +104,7 @@ weight: 10210
 
 4. 点击**资源状态**选项卡，查看该部署的端口和容器组信息。
 
-    - **副本运行状态**：点击 <img src="/images/docs/zh-cn/project-user-guide/application-workloads/deployments/up-arrow.png" width="20px" /> 或 <img src="/images/docs/zh-cn/project-user-guide/application-workloads/deployments/down-arrow.png" width="20px" /> 来增加或减少容器组副本数量。
+    - **副本运行状态**：点击 <img src="/images/docs/common-icons/replica-plus-icon.png" width="20px" /> 或 <img src="/images/docs/common-icons/replica-minus-icon.png" width="20px" /> 来增加或减少容器组副本数量。
     - **容器组**
 
         - 容器组列表中显示了容器组详情（运行状态、节点、容器组 IP 以及资源使用情况）。
