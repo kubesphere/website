@@ -38,7 +38,7 @@ The request and limit of CPU and memory resources all refer to single replica.
 | Namespace      | kubesphere-devops-system                                     | kubesphere-devops-system                                |
 | -------------- | ------------------------------------------------------------ | ------------------------------------------------------- |
 | Pattern        | All-in-One installation                                      | Multi-node installation                                 |
-| CPU Request    | 34 m                                                         | 0.47 core心                                               |
+| CPU Request    | 34 m                                                         | 0.47 core                                               |
 | CPU Limit      |                                                              |                                                         |
 | Memory Request | 2.69 G                                                       | 8.6 G                                                   |
 | Memory Limit   |                                                              |                                                         |
