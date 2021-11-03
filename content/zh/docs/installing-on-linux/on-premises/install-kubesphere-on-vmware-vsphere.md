@@ -338,7 +338,7 @@ chmod +x kk
 创建配置文件（一个示例配置文件）。
 
 ```bash
-./kk create config --with-kubernetes v1.19.8 --with-kubesphere v3.2.0
+./kk create config --with-kubernetes v1.21.5 --with-kubesphere v3.2.0
 ```
 
 {{< notice note >}}

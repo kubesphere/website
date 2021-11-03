@@ -348,7 +348,7 @@ With KubeKey, you can install Kubernetes and KubeSphere together. You have the o
 Create a Kubernetes cluster with KubeSphere installed (for example, `--with-kubesphere v3.2.0`):
 
 ```bash
-./kk create config --with-kubernetes v1.19.8 --with-kubesphere v3.2.0
+./kk create config --with-kubernetes v1.21.5 --with-kubesphere v3.2.0
 ```
 
 {{< notice note >}}
