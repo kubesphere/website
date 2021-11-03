@@ -1,5 +1,6 @@
 {{ define "main" }}
 {{ $data := index .Site.Data .Site.Language.Lang }}
+{{ $Site := .Site }}
 <div class="shadow"></div>
 <section class='section-1'>
   {{ with .Params.section1 }}
@@ -8,7 +9,7 @@
       <p class='p1'>{{ .title | safeHTML }}</p>
       <h1>{{ .topic | safeHTML }}</h1>
       <p class='p2'>{{ .content | safeHTML }}</p>
-      {{ partial "downloadButton" . }}
+      {{ partial "downloadButton" $Site }}
     </div>
     <div class="img1-div">
       <img class='img1' src="/images/home/53.png" id='video' alt="{{ i18n " kubesphere console screenshot"}}">
@@ -109,7 +110,8 @@
         {{ if .check }}
         <span class="common-green-a">{{ i18n "Coming Soon" }} →</span>
         {{ else }}
-        <a class="common-green-a" href="{{ .link }}" target="_blank" rel="noopener noreferrer">{{ i18n "Read More" }}
+        <a class="common-green-a" href="{{ $Site.Params.documentLinkBase }}{{ .link }}" target="_blank"
+          rel="noopener noreferrer">{{ i18n "Read More" }}
           →</a>
         {{ end }}
       </li>

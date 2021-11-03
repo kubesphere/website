@@ -33,6 +33,7 @@ facebookLink = "https://www.facebook.com/kubesphere"
 twitterLink = "https://twitter.com/KubeSphere"
 mediumLink = "https://itnext.io/@kubesphere"
 linkedinLink = "https://www.linkedin.com/company/kubesphere/"
+documentLinkBase = "https://v3-1.docs.kubesphere.io"
 
 [languages.en]
 contentDir = "content/en"
