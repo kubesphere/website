@@ -12,7 +12,7 @@ snapshot: 'http://pek3b.qingstor.com/kubesphere-community/images/v3.2.0-GA-cover
 
 现如今最热门的服务器端技术是什么？答案大概就是**云原生**！KubeSphere 作为一个以 Kubernetes 为内核的云原生分布式操作系统，也是这如火如荼的云原生热潮中的一份子。KubeSphere 持续秉承 100% 开源的承诺，借助于开源社区的力量，迅速走向全球。
 
-2021 年 11 月 2 日，KubeSphere 开源社区激动地向大家宣布，KubeSphere 3.2.0 正式发布！
+2021 年 11 月 3 日，KubeSphere 开源社区激动地向大家宣布，KubeSphere 3.2.0 正式发布！
 
 6 个月前，KubeSphere 3.1.0 带着 **“边缘计算”**、**“计量计费”** 等功能来炸场，将 Kubernetes 从云端扩展至边缘，更进一步完善交互设计提升了用户体验。3 个月前，KubeSphere 又发布了 v3.1.1，在部署 KubeSphere 时可以指定 Kubernetes 集群中已有的 Prometheus。
 
