@@ -16,7 +16,7 @@ This guide demonstrates how you can do multi-level, fine-grained event queries t
 
 ## Query Events
 
-1. The event query function is available for all users. Log in to the console with any account, hover over <img src="/images/docs/toolbox/event-query/toolbox.png" width='20' /> in the lower-right corner and select **Event Search**.
+1. The event query function is available for all users. Log in to the console with any account, hover over <img src="/images/docs/toolbox/event-query/toolbox.png" width='20' /> in the lower-right corner and select **Resource Event Search**.
 
 2. In the displayed dialog box, you can view the number of events that the user has permission to view.
 

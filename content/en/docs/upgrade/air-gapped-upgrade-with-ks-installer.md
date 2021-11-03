@@ -1,6 +1,6 @@
 ---
 title: "Air-Gapped Upgrade with ks-installer"
-keywords: "Air-Gapped, upgrade, kubesphere, v3.2.0"
+keywords: "Air-Gapped, upgrade, kubesphere, 3.2.0"
 description: "Use ks-installer and offline package to upgrade KubeSphere."
 linkTitle: "Air-Gapped Upgrade with ks-installer"
 weight: 7500
@@ -15,7 +15,7 @@ ks-installer is recommended for users whose Kubernetes clusters were not set up 
 - Read [Release Notes for 3.2.0](../../release/release-v320/) carefully.
 - Back up any important component beforehand.
 - A Docker registry. You need to have a Harbor or other Docker registries. For more information, see [Prepare a Private Image Registry](../../installing-on-linux/introduction/air-gapped-installation/#step-2-prepare-a-private-image-registry).
-- Supported Kubernetes versions of KubeSphere v3.2.0: v1.19.x, v1.20.x, v1.21.5, and v1.22.1.
+- Supported Kubernetes versions of KubeSphere 3.2.0: v1.19.x, v1.20.x, v1.21.x, and v1.22.x (experimental).
 
 ## Step 1: Prepare Installation Images
 

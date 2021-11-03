@@ -83,7 +83,7 @@ KubeEdge 的组件在两个单独的位置运行——云上和边缘节点上�
 定制资源定义（CRD）允许用户在不新增 API 服务器的情况下创建一种新的资源类型，用户可以像使用其他 Kubernetes 原生对象一样使用这些定制资源。
     {{</ notice >}}
 
-3. 在**资源列表**中，点击 `ks-installer` 右侧的 <img src="/images/docs/zh-cn/enable-pluggable-components/kubeedge/three-dots.png" height="20px">，然后选择**编辑 YAML**。
+3. 在**自定义资源**中，点击 `ks-installer` 右侧的 <img src="/images/docs/zh-cn/enable-pluggable-components/kubeedge/three-dots.png" height="20px">，然后选择**编辑 YAML**。
    
 4. 在该配置文件中，搜寻到 `kubeedge.enabled`，将 `false` 更改为 `true` 以启用 KubeEdge。
 

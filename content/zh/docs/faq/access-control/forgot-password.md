@@ -28,6 +28,6 @@ kubectl patch users <USERNAME> -p '{"spec":{"password":"<YOURPASSWORD>"}}' --typ
 
 {{< notice note >}}
 
-请将命令中的 `<USERNAME>` 修改为实际的帐户名称，将 `<YOURPASSWORD>` 修改为实际的新密码。
+请将命令中的 `<USERNAME>` 修改为实际的用户名，将 `<YOURPASSWORD>` 修改为实际的新密码。
 
 {{</ notice >}} 

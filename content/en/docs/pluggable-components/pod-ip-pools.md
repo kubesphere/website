@@ -75,7 +75,7 @@ As you [install KubeSphere on Kubernetes](../../installing-on-kubernetes/introdu
 A Custom Resource Definition (CRD) allows users to create a new type of resources without adding another API server. They can use these resources like any other native Kubernetes objects.
     {{</ notice >}}
 
-3. In **Resource List**, click <img src="/images/docs/enable-pluggable-components/pod-ip-pools/three-dots.png" height="20px"> on the right of `ks-installer` and select **Edit YAML**.
+3. In **Custom Resources**, click <img src="/images/docs/enable-pluggable-components/pod-ip-pools/three-dots.png" height="20px"> on the right of `ks-installer` and select **Edit YAML**.
 
 4. In this YAML file, navigate to `network` and change `network.ippool.type` to `calico`. After you finish, click **OK** in the lower-right corner to save the configuration.
 

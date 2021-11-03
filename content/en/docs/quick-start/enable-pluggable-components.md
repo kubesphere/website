@@ -98,7 +98,7 @@ If you need to enable [KubeEdge](../../pluggable-components/kubeedge/), [Pod IP 
 A Custom Resource Definition (CRD) allows users to create a new type of  resources without adding another API server. They can use these  resources like any other native Kubernetes objects.
     {{</ notice >}}
 
-3. In **Resource List**, click the three dots on the right of `ks-installer` and select **Edit YAML**.
+3. In **Custom Resources**, click the three dots on the right of `ks-installer` and select **Edit YAML**.
 
 4. In this YAML file, enable the pluggable components you want to install by changing `false` to `true` for `enabled`. After you finish, click **Update** to save the configuration.
 

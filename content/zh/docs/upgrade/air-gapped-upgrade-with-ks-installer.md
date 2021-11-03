@@ -1,6 +1,6 @@
 ---
 title: "使用 ks-installer 离线升级"
-keywords: "离线环境, 升级, kubesphere, v3.2.0"
+keywords: "离线环境, 升级, kubesphere, 3.2.0"
 description: "使用 ks-installer 和离线包升级 KubeSphere。"
 linkTitle: "使用 ks-installer 离线升级"
 weight: 7500
@@ -15,7 +15,7 @@ weight: 7500
 - 请仔细阅读 [Release Notes for 3.2.0](../../release/release-v320/)。
 - 提前备份所有重要的组件。
 - Docker 仓库。您需要有一个 Harbor 或其他 Docker 仓库。有关更多信息，请参见[准备一个私有镜像仓库](../../installing-on-linux/introduction/air-gapped-installation/#步骤-2准备一个私有镜像仓库)。
-- KubeSphere v3.2.0 支持的 Kubernetes 版本：v1.19.x、v1.20.x、v1.21.5 和 v1.22.1。
+- KubeSphere 3.2.0 支持的 Kubernetes 版本：v1.19.x、v1.20.x、v1.21.x 和 v1.22.x（实验性支持）。
 
 ## 步骤 1：准备安装镜像
 

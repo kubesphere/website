@@ -28,6 +28,6 @@ kubectl patch users <USERNAME> -p '{"spec":{"password":"<YOURPASSWORD>"}}' --typ
 
 {{< notice note >}}
 
-Make sure you replace `<USERNAME>` and `<YOURPASSWORD>` with the account and the new password in the command before you run it.
+Make sure you replace `<USERNAME>` and `<YOURPASSWORD>` with the username and the new password in the command before you run it.
 
 {{</ notice >}} 

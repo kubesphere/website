@@ -6,9 +6,9 @@ linkTitle: "KubeSphere App Store"
 weight: 6200
 ---
 
-As an open-source and app-centric container platform, KubeSphere provides users with a Helm-based App Store for application lifecycle management on the back of [OpenPitrix](https://github.com/openpitrix/openpitrix), an open-source web-based system to package, deploy and manage different types of apps. The KubeSphere App Store allows ISVs, developers and users to upload, test, deploy and release apps with just several clicks in a one-stop shop.
+As an open-source and app-centric container platform, KubeSphere provides users with a Helm-based App Store for application lifecycle management on the back of [OpenPitrix](https://github.com/openpitrix/openpitrix), an open-source web-based system to package, deploy and manage different types of apps. The KubeSphere App Store allows ISVs, developers, and users to upload, test, install, and release apps with just several clicks in a one-stop shop.
 
-Internally, the KubeSphere App Store can serve as a place for different teams to share data, middleware, and office applications. Externally, it is conducive to setting industry standards of building and delivery. By default, there are 17 built-in apps in the App Store. After you enable this feature, you can add more apps with app templates.
+Internally, the KubeSphere App Store can serve as a place for different teams to share data, middleware, and office applications. Externally, it is conducive to setting industry standards of building and delivery. After you enable this feature, you can add more apps with app templates.
 
 For more information, see [App Store](../../application-store/).
 
@@ -80,7 +80,7 @@ A Custom Resource Definition (CRD) allows users to create a new type of resource
 
 {{</ notice >}}
 
-3. In **Resource List**, click <img src="/images/docs/enable-pluggable-components/kubesphere-app-store/three-dots.png" height="20px"> on the right of `ks-installer` and select **Edit YAML**.
+3. In **Custom Resources**, click <img src="/images/docs/enable-pluggable-components/kubesphere-app-store/three-dots.png" height="20px"> on the right of `ks-installer` and select **Edit YAML**.
 
 4. In this YAML file, navigate to `openpitrix` and change `false` to `true` for `enabled`. After you finish, click **OK** in the lower-right corner to save the configuration.
 
@@ -104,12 +104,12 @@ You can find the web kubectl tool by clicking <img src="/images/docs/enable-plug
 
 ## Verify the Installation of the Component
 
-After you log in to the console, if you can see **App Store** in the upper-left corner and 17 built-in apps in it, it means the installation is successful.
+After you log in to the console, if you can see **App Store** in the upper-left corner and apps in it, it means the installation is successful.
 
 {{< notice note >}}
 
 - You can even access the App Store without logging in to the console by visiting `<Node IP Address>:30880/apps`.
-- The **OpenPitrix** tab in KubeSphere 3.2 does not appear on the **System Components** page after the App Store is enabled.
+- The **OpenPitrix** tab in KubeSphere 3.2.0 does not appear on the **System Components** page after the App Store is enabled.
 
 {{</ notice >}} 
 

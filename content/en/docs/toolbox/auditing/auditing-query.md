@@ -14,7 +14,7 @@ You need to enable [KubeSphere Auditing Logs](../../../pluggable-components/audi
 
 ## Enter the Query Interface
 
-1. The query function is available for all users. Log in to the console with any user, hover over the <img src="/images/docs/toolbox/auditing-query/toolbox.png" width="20" /> in the lower-right corner and select **Auditing Operating**.
+1. The query function is available for all users. Log in to the console with any user, hover over the <img src="/images/docs/toolbox/auditing-query/toolbox.png" width="20" /> in the lower-right corner and select **Audit Log Search**.
 
    {{< notice note >}} 
 
@@ -28,7 +28,7 @@ Any user has the permission to query auditing logs, while the logs that each use
 
 2. In the pop-up window, you can view log trends in the last 12 hours. 
 
-3. The **Auditing Operating** console supports the following query parameters:
+3. The **Audit Log Search** console supports the following query parameters:
 
    <table>
      <tbody>

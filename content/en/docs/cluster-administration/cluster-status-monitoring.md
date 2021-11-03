@@ -48,7 +48,7 @@ KubeSphere monitors the health status of various service components in the clust
 
 ## Physical Resource Monitoring
 
-Monitoring data in **Physical Resource Monitoring** help users better observe their physical resources and establish normal standards for resource and cluster performance. KubeSphere allows users to view cluster monitoring data within the last 7 days, including **CPU Usage**, **Memory Usage**, **Average CPU Load (1 minute/5 minutes/15 minutes)**, **Inode Usage**, **Disk Throughput (read/write)**, **IOPS (read/write)**, **Network Bandwidth**, and **Pod Status**. You can customize the time range and time interval to view historical monitoring data of physical resources in KubeSphere. The following sections briefly introduce each monitoring indicator.
+Monitoring data in **Physical Resource Monitoring** help users better observe their physical resources and establish normal standards for resource and cluster performance. KubeSphere allows users to view cluster monitoring data within the last 7 days, including **CPU Usage**, **Memory Usage**, **Average CPU Load (1 minute/5 minutes/15 minutes)**, **Disk Usage**, **Inode Usage**, **Disk Throughput (read/write)**, **IOPS (read/write)**, **Network Bandwidth**, and **Pod Status**. You can customize the time range and time interval to view historical monitoring data of physical resources in KubeSphere. The following sections briefly introduce each monitoring indicator.
 
 ### CPU usage
 
