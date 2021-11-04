@@ -1,14 +1,13 @@
 ---
-title: 'Use x509-certificate-exporter to Monitor Component Certificates of a Kubernetes Cluster'  
-tag: 'Prometheus, KubeSphere'  
+title: 'Monitoring X.509 Certificates Expiration in Kubernetes Clusters with a Prometheus Exporter'  
 keywords: x509-certificate-exporter, Prometheus, Kubernetes, Helm, KubeSphere, Certificate Monitoring 
 description: This article details how to deploy x509-certificate-exporter in Kubernetes and monitor component certificates of a Kubernetes cluster using a custom alerting policy on KubeSphere.
-createTime: '2021-06-30'  
+createTime: '2021-11-01'  
 author: 'Yang Chuansheng, Bettygogo'  
 snapshot: '/images/blogs/en/x509-certificate-exporter/x509-certificate-exporter-cover-image.png'
 ---
 
-KubeSphere offers an O&M friendly wizard that simplifies the O\&M of Kubernetes, but it is essentially built on Kubernetes. Kubernetes' TLS certificates are valid for only one year, so we need to update the certificates every year, which is unavoidable even though the cluster is installed by the powerful and lightweight installation tool [KubeKey](https://github.com/kubesphere/kubekey). To prevent possible risks arising from certificate expiration, we need to find a way to monitor certificate validity of Kubernetes components.
+KubeSphere offers a developer-friendly wizard that simplifies the operations & maintenance of Kubernetes, but it is essentially built on Kubernetes. Kubernetes' TLS certificates are valid for only one year, so we need to update the certificates every year, which is unavoidable even though the cluster is installed by the powerful and lightweight installation tool [KubeKey](https://github.com/kubesphere/kubekey). To prevent possible risks arising from certificate expiration, we need to find a way to monitor certificate validity of Kubernetes components.
 
 Some of you may have heard of [ssl-exporter](https://github.com/ribbybibby/ssl_exporter), which exports metrics for SSL certificates collected from various sources, such as the HTTPS certificate, file certificate, Kubernetes Secret, and kubeconfig file. Basically, ssl-exporter can meet our needs, but it does not have a wealth of metrics. Here, I will share a more powerful Prometheus Exporter: [x509-certificate-exporter](https://github.com/enix/x509-certificate-exporter) with you.
 
@@ -22,7 +21,7 @@ Here, we use a KubeSphere app template to deploy x509-certificate-exporter.
 
 To deploy an app using an app template, you need to create a workspace, a project, and two users (`ws-admin` and `project-regular`), and assign platform role `workspace-admin` in the workspace to `ws-admin`, and role `operator` in the project to `project-regular`. To begin with, let's review the multi-tenant architecture of KubeSphere.
 
-### Multi-tenant Architecture
+### Multi-tenant Kubernetes Architecture
 
 KubeSphere's multi-tenant system is divided into three levels: cluster, workspace, and project (equivalent to [namespace](https://kubernetes.io/docs/concepts/overview/working-with-objects/namespaces/) of Kubernetes).
 
@@ -108,7 +107,7 @@ In this section, you need to use user `ws-manager` created in the previous step 
 
 ### Create a Project
 
-In this section, you need to use the previously created user `ws-admin` to create a project. A project in KubeSphere is the same as a namespace in Kubernetes, which provides virtual isolation for resources. For more information, see [Namespace](https://kubernetes.io/zh/docs/concepts/overview/working-with-objects/namespaces/).
+In this section, you need to use the previously created user `ws-admin` to create a project. A project in KubeSphere is the same as a namespace in Kubernetes, which provides virtual isolation for resources. For more information, see [Namespace](https://kubernetes.io/docs/concepts/overview/working-with-objects/namespaces/).
 
 1. Log in to the KubeSphere web console as `ws-admin`. In **Projects**, click **Create**.
    
