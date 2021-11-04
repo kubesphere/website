@@ -40,7 +40,7 @@ snapshot: 'https://pek3b.qingstor.com/kubesphere-community/images/radondb-cover.
 
 如果设计一次电商秒杀的场景持续时间是 30 分钟，那么我们可以在 30 分钟内，将网络、CPU、内存、磁盘等资源提升到最大。在秒杀结束之后，释放这些资源，极大节省成本。
 
-### 主流解决方案
+## 主流解决方案
 
 针对如上挑战，主流的解决方案有两种：
 
