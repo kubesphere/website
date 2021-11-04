@@ -78,12 +78,12 @@ chmod +x kk
 1. Create a configuration file of your cluster by running the following command:
 
    ```bash
-   ./kk create config --with-kubernetes v1.20.4-k3s --with-kubesphere v3.2.0
+   ./kk create config --with-kubernetes v1.21.4-k3s --with-kubesphere v3.2.0
    ```
 
    {{< notice note >}}
 
-   KubeKey v1.2.0 only supports the installation of K3s v1.20.4.
+   KubeKey v1.2.0 supports the installation of K3s v1.21.4.
 
    {{</ notice >}} 
 
@@ -115,7 +115,7 @@ chmod +x kk
        address: ""
        port: 6443
      kubernetes:
-       version: v1.21.5-k3s
+       version: v1.21.4-k3s
        imageRepo: kubesphere
        clusterName: cluster.local
      network:

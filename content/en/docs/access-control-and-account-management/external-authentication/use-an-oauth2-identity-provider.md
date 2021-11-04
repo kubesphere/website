@@ -81,7 +81,7 @@ KubeSphere provides two built-in OAuth 2.0 plugins: [GitHubIdentityProvider](htt
 
 ## Integrate an Identity Provider with KubeSphere
 
-1. Log in to KubeSphere as `admin`, move the cursor to <img src="/images/docs/access-control-and-account-management/external-authentication/use-an-oauth2-identity-provider/toolbox.png" width="20px" height="20px"> in the bottom-right corner, click **Kubectl**, and run the following command to edit the `kubesphere-config` ConfigMap:
+1. Log in to KubeSphere as `admin`, move the cursor to <img src="/images/docs/access-control-and-account-management/external-authentication/use-an-oauth2-identity-provider/toolbox.png" width="20px" height="20px"> in the lower-right corner, click **Kubectl**, and run the following command to edit the `kubesphere-config` ConfigMap:
 
    ```bash
    kubectl -n kubesphere-system edit cm kubesphere-config
@@ -129,8 +129,6 @@ KubeSphere provides two built-in OAuth 2.0 plugins: [GitHubIdentityProvider](htt
    {{</ notice >}}
 
 5. Go to the KubeSphere login page, click **Log In with XXX** (for example, **Log In with GitHub**).
-
-   ![github-login-page](/images/docs/access-control-and-account-management/external-authentication/use-an-oauth2-identity-provider/kubesphere-login-page.png)
 
 6. On the login page of the external identity provider, enter the username and password of a user configured at the identity provider to log in to KubeSphere.
 

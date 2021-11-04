@@ -73,6 +73,8 @@ The CPU resource is measured in CPU units, or **Core** in KubeSphere. The memory
 
 {{</ notice >}} 
 
+To set **GPU Type**, select a GPU type from the drop-down list, which defaults to `nvidia.com/gpu`. **GPU Limit** defaults to no limit.
+
 #### **Port Settings**
 
 You need to set the access protocol for the container as well as port information. To use the default setting, click **Use Default Ports**.

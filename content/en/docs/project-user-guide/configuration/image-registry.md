@@ -6,7 +6,7 @@ linkTitle: "Image Registries"
 weight: 10430
 ---
 
-A Docker image is a read-only template that can be used to deploy container services. Each image has a unique identifier (i.e. image name:tag). For example, an image can contain a complete package of an Ubuntu operating system environment with only Apache and a few applications installed. An image registry is used to store and distribute Docker images.
+A Docker image is a read-only template that can be used to deploy container services. Each image has a unique identifier (for example, image name:tag). For example, an image can contain a complete package of an Ubuntu operating system environment with only Apache and a few applications installed. An image registry is used to store and distribute Docker images.
 
 This tutorial demonstrates how to create Secrets for different image registries.
 
@@ -34,7 +34,7 @@ You can see the Secret's manifest file in YAML format by enabling **Edit YAML** 
 
 ### Step 3: Specify image registry information
 
-Select **kubernetes.io/dockerconfigjson (image registry Secret)** for **Type**. To use images from your private registry as you create application workloads, you need to specify the following fields.
+Select **Image registry information** for **Type**. To use images from your private registry as you create application workloads, you need to specify the following fields.
 
 - **Registry Address**. The address of the image registry that stores images for you to use when creating application workloads.
 - **Username**. The account name you use to log in to the registry.
@@ -81,7 +81,7 @@ Select **kubernetes.io/dockerconfigjson (image registry Secret)** for **Type**. 
    sudo systemctl restart docker
    ```
 
-3. Go back to the **Secret Settings** page and select **kubernetes.io/dockerconfigjson (image registry Secret)** for **Type**. Enter your Harbor IP address for **Registry Address** and enter the username and password.
+3. Go back to the **Data Settings** page and select **Image registry information** for **Type**. Enter your Harbor IP address for **Registry Address** and enter the username and password.
 
    {{< notice note >}} 
 

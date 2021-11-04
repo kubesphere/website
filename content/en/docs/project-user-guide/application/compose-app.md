@@ -21,7 +21,7 @@ This tutorial demonstrates how to create a microservices-based app Bookinfo, whi
 
 2. Set a name for the app (for example, `bookinfo`) and click **Next**.
 
-3. On the **Service Settings** page, you need to create microservices that compose the app. Click **Create Service** and select **Stateless Service**.
+3. On the **Services** page, you need to create microservices that compose the app. Click **Create Service** and select **Stateless Service**.
 
 4. Set a name for the Service (e.g `productpage`) and click **Next**.
 
@@ -39,11 +39,11 @@ This tutorial demonstrates how to create a microservices-based app Bookinfo, whi
 
    {{</ notice >}} 
 
-6. Click **Use Default Ports**. For more information about image settings, see [Container Image Settings](../../../project-user-guide/application-workloads/container-image-settings/). Click **√** in the lower-right corner and **Next** to continue.
+6. Click **Use Default Ports**. For more information about image settings, see [Pod Settings](../../../project-user-guide/application-workloads/container-image-settings/). Click **√** in the lower-right corner and **Next** to continue.
 
 7. On the **Volume Settings** page, [add a volume](../../../project-user-guide/storage/volumes/) or click **Next** to continue.
 
-8. Click **Add** on the **Advanced Settings** page directly.
+8. Click **Create** on the **Advanced Settings** page.
 
 9. Similarly, add the other three microservices for the app. Here is the image information:
 

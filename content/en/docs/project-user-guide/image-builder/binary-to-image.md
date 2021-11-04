@@ -63,7 +63,7 @@ You must create a Docker Hub Secret so that the Docker image created through B2I
 
    {{< notice note >}}
 
-   For more information about how to set other parameters on the **Container Settings** page, see [Container Image Settings](../../../project-user-guide/application-workloads/container-image-settings/).
+   For more information about how to set other parameters on the **Container Settings** page, see [Pod Settings](../../../project-user-guide/application-workloads/container-image-settings/).
 
    {{</ notice >}} 
 

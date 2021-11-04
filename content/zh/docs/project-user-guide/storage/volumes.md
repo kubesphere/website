@@ -34,13 +34,13 @@ weight: 10310
 
    {{</ notice >}} 
 
-4. 在**存储卷设置**页面，选择创建存储卷的方式。
+4. 在**存储设置**页面，选择创建存储卷的方式。
 
-   - **通过存储类型**：您可以在 KubeSphere [安装前](../../../installing-on-linux/persistent-storage-configurations/understand-persistent-storage/)或[安装后](../../../cluster-administration/persistent-volume-and-storage-class/)配置存储类型。
+   - **通过存储类型创建**：您可以在 KubeSphere [安装前](../../../installing-on-linux/persistent-storage-configurations/understand-persistent-storage/)或[安装后](../../../cluster-administration/persistent-volume-and-storage-class/)配置存储类型。
    
    - **通过存储卷快照创建**：如需通过快照创建存储卷，您必须先创建存储卷快照。
    
-   选择**通过存储类型**。有关通过存储卷快照创建存储卷的更多信息，请参阅[存储卷快照](../volume-snapshots/)。
+   选择**通过存储类型创建**。有关通过存储卷快照创建存储卷的更多信息，请参阅[存储卷快照](../volume-snapshots/)。
 5. 从下拉列表中选择存储类型。本教程以青云QingCloud 平台提供的 `csi-standard` 标准存储类型为例。您可以根据需要选择其他存储类型。
 
 6. 由于一些 PersistentVolume 只支持特定的访问模式，页面上显示的访问模式会因您选择的存储类型而不同。访问模式一共有三种：
@@ -129,9 +129,9 @@ kubectl patch pvc <pvc-name> -p '{"metadata":{"finalizers":null}}'
 
 **更多操作**下拉菜单提供了三个额外功能，这些功能基于 KubeSphere 的底层存储插件 `Storage Capability`。具体如下：
 
-- **存储卷克隆**：创建一个相同的存储卷。
+- **克隆**：创建一个相同的存储卷。
 - **创建快照**：创建一个存储卷快照，可用于创建其他存储卷。有关更多信息，请参阅[存储卷快照](../volume-snapshots/)。
-- **存储卷扩容**：增加存储卷的容量。请注意，您无法在控制台上减少存储卷的容量，因为数据可能会因此丢失。
+- **扩容**：增加存储卷的容量。请注意，您无法在控制台上减少存储卷的容量，因为数据可能会因此丢失。
 
 有关 `Storage Capability` 的更多信息，请参阅[设计文档](https://github.com/kubesphere/community/blob/master/sig-storage/concepts-and-designs/storage-capability-interface.md)。
 

@@ -119,11 +119,11 @@ KubeSphere 提供三种创建服务的基本方法：**无状态服务**、**有
 
 ### 步骤 3：设置容器组
 
-为服务添加容器镜像，详情请参见[设置镜像](../../../project-user-guide/application-workloads/deployments/#步骤-3设置镜像)。
+为服务添加容器镜像，详情请参见[设置容器组](../../../project-user-guide/application-workloads/deployments/#步骤-3设置容器组)。
 
 {{< notice tip >}}
 
-有关仪表板上各项属性的详细说明，请直接参见[容器镜像设置](../../../project-user-guide/application-workloads/container-image-settings/)。
+有关仪表板上各项属性的详细说明，请直接参见[容器组设置](../../../project-user-guide/application-workloads/container-image-settings/)。
 
 {{</ notice >}}
 

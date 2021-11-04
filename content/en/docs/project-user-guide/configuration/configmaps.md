@@ -55,7 +55,7 @@ You can see the ConfigMap manifest file in YAML format by enabling **Edit YAML**
     - **Edit Settings**: Modify the key-value pair of the ConfigMap.
     - **Delete**: Delete the ConfigMap.
     
-2. Click the name of the ConfigMap to go to its details page. Under the tab **Details**, you can see all the key-value pairs you have added for the ConfigMap.
+2. Click the name of the ConfigMap to go to its details page. Under the tab **Data**, you can see all the key-value pairs you have added for the ConfigMap.
 
 3. Click **More** to display what operations about this ConfigMap you can do.
 
