@@ -65,7 +65,7 @@ You can see the Secret's manifest file in YAML format by enabling **Edit YAML** 
     - **Edit Settings**: Modify the key-value pair of the Secret.
     - **Delete**: Delete the Secret.
 
-2. Click the name of the Secret and you can go to its details page. Under the tab **Details**, you can see all the key-value pairs you have added for the Secret.
+2. Click the name of the Secret and you can go to its details page. Under the tab **Data**, you can see all the key-value pairs you have added for the Secret.
 
     {{< notice note >}}
 
@@ -96,7 +96,7 @@ This section shows how to create Secrets from your Docker Hub account and GitHub
 
 2. Set a name, such as `dockerhub-id`, and click **Next**. On the **Data Settings** page, fill in the following fields and click **Validate** to verify whether the information provided is valid.
 
-   **Type**: Select **kubernetes.io/dockerconfigjson (image registry Secret)**.
+   **Type**: Select **Image registry information**.
 
    **Registry Address**: Enter the Docker Hub registry address, such as `docker.io`.
 
@@ -112,7 +112,7 @@ This section shows how to create Secrets from your Docker Hub account and GitHub
 
 2. Set a name, such as `github-id`, and click **Next**. On the **Data Settings** page, fill in the following fields.
 
-   **Type**: Select **kubernetes.io/basic-auth (account password Secret)**.
+   **Type**: Select **Username and password**.
 
    **Username**: Enter your GitHub account.
 

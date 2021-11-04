@@ -19,9 +19,9 @@ A Route on KubeSphere is the same as an [Ingress](https://kubernetes.io/docs/con
 
 1. Log in to the KubeSphere web console as `project-admin` and go to your project.
 
-2. Select **Gateway Settings** in **Project Settings** on the left navigation bar and click **Set Gateway** on the right.
+2. Select **Gateway Settings** in **Project Settings** on the left navigation bar and click **Enable Gateway** on the right.
 
-3. In the displayed **Set Gateway** dialog box, set **Access Mode** to **NodePort** or **LoadBalancer**, and click **OK**.
+3. In the displayed dialog box, set **Access Mode** to **NodePort** or **LoadBalancer**, and click **OK**.
 
    {{< notice note >}}
 
@@ -74,7 +74,7 @@ A Route on KubeSphere is the same as an [Ingress](https://kubernetes.io/docs/con
 
 1. Select **Routes** in **Application Workloads** on the left navigation bar and click the name of the Route on the right.
 
-2. Obtain the domain name and Service path in the **Rules** area and the gateway address in the **Details** area.
+2. Obtain the domain name and Service path and the gateway address in the **Rules** area.
 
    * If the [Route access mode](#configure-the-route-access-method) is set to NodePort, the IP address of a Kubernetes cluster node is used as the gateway address and the NodePort is displayed after the domain name.
 
@@ -117,7 +117,6 @@ If you need to access the Route from outside your private network by using eithe
 1. Choose **Routes** in **Application Workloads** on the left navigation bar and click the name of the Route on the right.
 
 2. Click **Edit Information**, or click **More** and choose an operation from the drop-down menu. 
-   * **Edit Information**: Edit the basic information of the Route. The Route name cannot be edited.
    * **Edit YAML**: Edit the YAML configuration file of the Route.
    * **Edit Routing Rules**: Edit the Route rules.
    * **Edit Annotations**: Edit the Route annotations. For more information, see the [official Nginx Ingress controller document](https://kubernetes.github.io/ingress-nginx/user-guide/nginx-configuration/annotations/).

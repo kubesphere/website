@@ -50,7 +50,7 @@ You can see the Deployment manifest file in YAML format by enabling **Edit YAML*
 
 6. Select a policy for image pulling from the drop-down list. For more information, see [Image Pull Policy in Container Image Settings](../container-image-settings/#add-container-image).
 
-7. For other settings (**Health Check**, **Start Command**, **Environment Variables**, **Container Security Context** and **Synchronize Host Timezone**), you can configure them on the dashboard as well. For more information, see detailed explanations of these properties in [Container Image Settings](../container-image-settings/#add-container-image). When you finish, click **√** in the lower-right corner to continue.
+7. For other settings (**Health Check**, **Start Command**, **Environment Variables**, **Container Security Context** and **Synchronize Host Timezone**), you can configure them on the dashboard as well. For more information, see detailed explanations of these properties in [Pod Settings](../container-image-settings/#add-container-image). When you finish, click **√** in the lower-right corner to continue.
 
 8. Select an update strategy from the drop-down menu. It is recommended that you choose **Rolling Update**. For more information, see [Update Strategy](../container-image-settings/#update-strategy).
 
@@ -82,7 +82,7 @@ You can set a policy for node scheduling and add metadata in this section. When 
 
 ## Check Deployment Details
 
-### Detail page
+### Details page
 
 1. After a Deployment is created, it will be displayed in the list. You can click <img src="/images/docs/project-user-guide/application-workloads/deployments/three-dots.png" width="20px" /> on the right and select options from the menu to modify your Deployment.
 
@@ -104,13 +104,13 @@ You can set a policy for node scheduling and add metadata in this section. When 
 
 4. Click the **Resource Status** tab to view the port and Pod information of the Deployment.
 
-    - **Replica Status**: Click <img src="/images/docs/project-user-guide/application-workloads/deployments/up-arrow.png" width="20px" /> or <img src="/images/docs/project-user-guide/application-workloads/deployments/down-arrow.png" width="20px" /> to increase or decrease the number of Pod replicas.
+    - **Replica Status**: Click <img src="/images/docs/common-icons/replica-plus-icon.png" width="20px" /> or <img src="/images/docs/common-icons/replica-minus-icon.png" width="20px" /> to increase or decrease the number of Pod replicas.
     - **Pods**
 
         - The Pod list provides detailed information of the Pod (status, node, Pod IP and resource usage).
         - You can view the container information by clicking a Pod item.
         - Click the container log icon to view output logs of the container.
-        - You can view the Pod detail page by clicking the Pod name.
+        - You can view the Pod details page by clicking the Pod name.
 
 ### Revision records
 

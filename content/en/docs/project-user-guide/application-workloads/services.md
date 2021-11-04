@@ -119,11 +119,11 @@ The value of **Name** is used in both configurations, one for Deployment and the
 
 ### Step 3: Set a Pod
 
-To add a container image for the Service, see [Set an image](../deployments/#step-3-set-an-image) for details.
+To add a container image for the Service, see [Set a Pod](../deployments/#step-3-set-a-pod) for details.
 
 {{< notice tip >}}
 
-For more information about explanations of dashboard properties, see [Container Image Settings](../container-image-settings/) directly. 
+For more information about explanations of dashboard properties, see [Pod Settings](../container-image-settings/) directly. 
 
 {{</ notice >}}
 
@@ -157,7 +157,7 @@ This value is specified by `.spec.type`. If you select **LoadBalancer**, you nee
 
 ## Check Service Details
 
-### Detail page
+### Details page
 
 1. After a Service is created, you can click <img src="/images/docs/project-user-guide/application-workloads/services/three-dots.png" width="20px" /> on the right to further edit it, such as its metadata (excluding **Name**), YAML, port, and Internet access.
 
@@ -173,7 +173,7 @@ This value is specified by `.spec.type`. If you select **LoadBalancer**, you nee
     - The Pod list provides detailed information of the Pod (status, node, Pod IP and resource usage).
     - You can view the container information by clicking a Pod item.
     - Click the container log icon to view output logs of the container.
-    - You can view the Pod detail page by clicking the Pod name.
+    - You can view the Pod details page by clicking the Pod name.
 
 ### Resource status
 

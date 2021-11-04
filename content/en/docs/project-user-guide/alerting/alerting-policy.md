@@ -57,6 +57,4 @@ To edit an alerting policy after it is created, on the **Alerting Policies** pag
 
 Click an alerting policy on the **Alerting Policies** page to see its detail information, including alerting rules and alerting history. You can also see the rule expression which is based on the template you use when creating the alerting policy.
 
-Under **Monitoring**, the **Alert Monitoring** chart shows the actual usage or amount of resources over time. **Alerting Message** displays the customized message you set in notifications.
-
 Under **Alert Monitoring**, the **Alert Monitoring** chart shows the actual usage or amount of resources over time. **Alerting Message** displays the customized message you set in notifications.
