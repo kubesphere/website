@@ -11,7 +11,7 @@ snapshot: 'https://kubesphere-community.pek3b.qingstor.com/images/ebpf-guide-cov
 > 原文链接： https://www.collabora.com/news-and-blog/blog/2019/04/05/an-ebpf-overview-part-1-introduction/
 
 > **作者：Adrian Ratiu**<br />
-> **译者：田璧州**<br />
+> **译者：狄卫华**<br />
 > **注：本文已取得作者本人的翻译授权**
 
 ## 1. 前言
