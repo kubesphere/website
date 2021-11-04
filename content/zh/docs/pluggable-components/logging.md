@@ -38,7 +38,7 @@ KubeSphere 为日志收集、查询和管理提供了一个强大的、全面的
     ```
 
     {{< notice note >}}
-默认情况下，如果启用了日志系统，KubeKey 将安装内置 Elasticsearch。对于生产环境，如果您想启用日志系统，强烈建议在 `config-sample.yaml` 中设置以下值，尤其是 `externalElasticsearchUrl` 和 `externalElasticsearchPort`。在安装前提供以下信息后，KubeKey 将直接对接您的外部 Elasticsearch，不再安装内置 Elasticsearch。
+默认情况下，如果启用了日志系统，KubeKey 将安装内置 Elasticsearch。对于生产环境，如果您想启用日志系统，强烈建议在 `config-sample.yaml` 中设置以下值，尤其是 `externalElasticsearchHost` 和 `externalElasticsearchPort`。在安装前提供以下信息后，KubeKey 将直接对接您的外部 Elasticsearch，不再安装内置 Elasticsearch。
     {{</ notice >}}
 
     ```yaml
@@ -49,7 +49,7 @@ KubeSphere 为日志收集、查询和管理提供了一个强大的、全面的
       elasticsearchDataVolumeSize: 20Gi    # The volume size of Elasticsearch data nodes.
       logMaxAge: 7                     # Log retention day in built-in Elasticsearch. It is 7 days by default.
       elkPrefix: logstash              # The string making up index names. The index name will be formatted as ks-<elk_prefix>-log.
-      externalElasticsearchUrl: # The URL of external Elasticsearch.
+      externalElasticsearchHost: # The URL of external Elasticsearch.
       externalElasticsearchPort: # The port of external Elasticsearch.
     ```
 
@@ -77,7 +77,7 @@ KubeSphere 为日志收集、查询和管理提供了一个强大的、全面的
     ```
 
     {{< notice note >}}
-默认情况下，如果启用了日志系统，ks-installer 将安装内置 Elasticsearch。对于生产环境，如果您想启用日志系统，强烈建议在 `cluster-configuration.yaml` 中设置以下值，尤其是 `externalElasticsearchUrl` 和 `externalElasticsearchPort`。在安装前提供以下信息后，ks-installer 将直接对接您的外部 Elasticsearch，不再安装内置 Elasticsearch。
+默认情况下，如果启用了日志系统，ks-installer 将安装内置 Elasticsearch。对于生产环境，如果您想启用日志系统，强烈建议在 `cluster-configuration.yaml` 中设置以下值，尤其是 `externalElasticsearchHost` 和 `externalElasticsearchPort`。在安装前提供以下信息后，ks-installer 将直接对接您的外部 Elasticsearch，不再安装内置 Elasticsearch。
     {{</ notice >}}
 
     ```yaml
@@ -88,7 +88,7 @@ KubeSphere 为日志收集、查询和管理提供了一个强大的、全面的
       elasticsearchDataVolumeSize: 20Gi    # The volume size of Elasticsearch data nodes.
       logMaxAge: 7                     # Log retention day in built-in Elasticsearch. It is 7 days by default.
       elkPrefix: logstash              # The string making up index names. The index name will be formatted as ks-<elk_prefix>-log.
-      externalElasticsearchUrl: # The URL of external Elasticsearch.
+      externalElasticsearchHost: # The URL of external Elasticsearch.
       externalElasticsearchPort: # The port of external Elasticsearch.
     ```
 
@@ -121,7 +121,7 @@ KubeSphere 为日志收集、查询和管理提供了一个强大的、全面的
       enabled: true # 将“false”更改为“true”。
     ```
 
-    {{< notice note >}}默认情况下，如果启用了日志系统，将会安装内置 Elasticsearch。对于生产环境，如果您想启用日志系统，强烈建议在该 YAML 文件中设置以下值，尤其是 `externalElasticsearchUrl` 和 `externalElasticsearchPort`。在文件中提供以下信息后，KubeSphere 将直接对接您的外部 Elasticsearch，不再安装内置 Elasticsearch。
+    {{< notice note >}}默认情况下，如果启用了日志系统，将会安装内置 Elasticsearch。对于生产环境，如果您想启用日志系统，强烈建议在该 YAML 文件中设置以下值，尤其是 `externalElasticsearchHost` 和 `externalElasticsearchPort`。在文件中提供以下信息后，KubeSphere 将直接对接您的外部 Elasticsearch，不再安装内置 Elasticsearch。
 
     {{</ notice >}}
 
@@ -133,7 +133,7 @@ KubeSphere 为日志收集、查询和管理提供了一个强大的、全面的
       elasticsearchDataVolumeSize: 20Gi    # The volume size of Elasticsearch data nodes.
       logMaxAge: 7                     # Log retention day in built-in Elasticsearch. It is 7 days by default.
       elkPrefix: logstash              # The string making up index names. The index name will be formatted as ks-<elk_prefix>-log.
-      externalElasticsearchUrl: # The URL of external Elasticsearch.
+      externalElasticsearchHost: # The URL of external Elasticsearch.
       externalElasticsearchPort: # The port of external Elasticsearch.
     ```
 
