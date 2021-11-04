@@ -21,7 +21,7 @@ KubeSphere metering helps you track resource consumption within a given cluster 
 
 2. Click **View Consumption** in the **Cluster Resource Consumption** section.
 
-3. On the left side of the dashboard, you can see a cluster list containing your Host Cluster and all Member Clusters if you have enabled [multi-cluster management](../../../multicluster-management/). There is only one cluster called `default` in the list if it is not enabled.
+3. On the left side of the dashboard, you can see a cluster list containing your host cluster and all member clusters if you have enabled [multi-cluster management](../../../multicluster-management/). There is only one cluster called `default` in the list if it is not enabled.
 
    On the right side, there are three parts showing resource consumption in different ways.
 

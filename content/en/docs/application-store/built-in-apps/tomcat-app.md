@@ -20,11 +20,11 @@ This tutorial walks you through an example of deploying Tomcat from the App Stor
 
 1. On the **Overview** page of the project `demo-project`, click **App Store** in the upper-left corner.
 
-2. Find Tomcat and click **Deploy** on the **App Information** page.
+2. Find Tomcat and click **Install** on the **App Information** page.
 
 1. Set a name and select an app version. Make sure Tomcat is deployed in `demo-project` and click **Next**.
 
-2. In **App Settings**, you can use the default settings or customize the settings by editing the YAML file directly. Click **Deploy** to continue.
+2. In **App Settings**, you can use the default settings or customize the settings by editing the YAML file directly. Click **Install** to continue.
 
 3. Wait until Tomcat is up and running.
 

@@ -76,11 +76,11 @@ If the network is not accessible after you set the network policy, then you need
 
 #### Allow egress traffic to Services in a different project
 
-1. On the **Network Isolation** page of your current project, click **External Allowlist**.
+1. On the **Network Isolation** page of your current project, click **Internal Allowlist**.
 
 2. Click **Add Allowlist Entry**.
 
-3. Select **Egress** under **Direction**.
+3. Select **Egress** under **Traffic Direction**.
 
 4. Select the tab **Service** under **Type**.
 
@@ -104,7 +104,7 @@ KubeSphere uses CIDR to distinguish between peers. Assume a Tomcat Deployment wo
 
 1. On the **Network Isolation** page of your current project, select **External Allowlist** and click **Add Allowlist Entry**.
 
-2. Select **Ingress** under **Direction**.
+2. Select **Ingress** under **Traffic Direction**.
 
 3. Enter `192.168.1.1/32` for **Network Segment**.
 
@@ -124,7 +124,7 @@ Assume the IP address of an external client is `http://10.1.0.1:80`, then you ne
 
 1. On the **Network Isolation** page of your current project, select **External Allowlist** and click **Add Allowlist Entry**.
 
-2. Select **Egress** under **Direction**.
+2. Select **Egress** under **Traffic Direction**.
 
 3. Enter `10.1.0.1/32` for **Network Segment**.
 

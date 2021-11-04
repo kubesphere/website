@@ -23,11 +23,11 @@ This tutorial demonstrates how to deploy RadonDB PostgreSQL from the App Store o
 
 2. Click **Database & Cache** under **Categories**.
 
-3. Find RadonDB PostgreSQL and click **Deploy** on the **App Information** page.
+3. Find RadonDB PostgreSQL and click **Install** on the **App Information** page.
 
 4. Set a name and select an app version. Make sure RadonDB PostgreSQL is deployed in `demo-project` and click **Next**.
 
-5. In **App Settings**, you can use the default settings or customize the settings by editing the YAML file. When you finish, click **Deploy**.
+5. In **App Settings**, you can use the default settings or customize the settings by editing the YAML file. When you finish, click **Install**.
 
 6. Wait until RadonDB PostgreSQL is up and running.
 

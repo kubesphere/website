@@ -111,6 +111,6 @@ You need to deploy KubeSphere on your GKE cluster first. For more information ab
 
 2. Enter the basic information based on your needs and click **Next**.
 
-3. In **Connection Method**, select **Direct Connection**. Fill in the new kubeconfig file of the GKE member cluster and then click **Create**.
+3. In **Connection Method**, select **Direct connection**. Fill in the new kubeconfig file of the GKE member cluster and then click **Create**.
 
 4. Wait for cluster initialization to finish.

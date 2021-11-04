@@ -60,11 +60,11 @@ This tutorial demonstrates how to deploy TiDB Operator and a TiDB Cluster on Kub
 
    {{</ notice >}}
 
-4. On the **Chart Files** tab, you can view the configuration on the console directly or download the default `values.yaml` file by clicking the icon in the upper-right corner. Under **Versions**, select a version number from the drop-down list and click **Deploy**.
+4. On the **Chart Files** tab, you can view the configuration on the console directly or download the default `values.yaml` file by clicking the icon in the upper-right corner. Under **Versions**, select a version number from the drop-down list and click **Install**.
 
 5. On the **Basic Information** page, confirm the app name, app version, and deployment location. Click **Next** to continue.
 
-6. On the **App Settings** page, you can either edit the `values.yaml` file, or click **Deploy** directly with the default configurations.
+6. On the **App Settings** page, you can either edit the `values.yaml` file, or click **Install** directly with the default configurations.
 
 7. Wait for TiDB Operator to be up and running.
 
@@ -78,7 +78,7 @@ The process of deploying a TiDB cluster is similar to deploying TiDB Operator.
 
 2. From the PingCAP repository, click **tidb-cluster**.
 
-3. On the **Chart Files** tab, you can view the configuration and download the `values.yaml` file. Click **Deploy** to continue.
+3. On the **Chart Files** tab, you can view the configuration and download the `values.yaml` file. Click **Install** to continue.
 
 4. On the **Basic Information** page, confirm the app name, app version, and deployment location. Click **Next** to continue.
 
@@ -102,7 +102,7 @@ The process of deploying a TiDB cluster is similar to deploying TiDB Operator.
 
    {{</ notice >}} 
 
-7. Click **Deploy**, and you can see two apps in the list.
+7. Click **Install**, and you can see two apps in the list.
 
 ### Step 5: View TiDB cluster status
 

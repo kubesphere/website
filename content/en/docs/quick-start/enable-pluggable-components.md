@@ -100,7 +100,7 @@ A Custom Resource Definition (CRD) allows users to create a new type of  resourc
 
 3. In **Custom Resources**, click the three dots on the right of `ks-installer` and select **Edit YAML**.
 
-4. In this YAML file, enable the pluggable components you want to install by changing `false` to `true` for `enabled`. After you finish, click **Update** to save the configuration.
+4. In this YAML file, enable the pluggable components you want to install by changing `false` to `true` for `enabled`. After you finish, click **OK** to save the configuration.
 
 5. You can use the web kubectl to check the installation process by executing the following command:
 
