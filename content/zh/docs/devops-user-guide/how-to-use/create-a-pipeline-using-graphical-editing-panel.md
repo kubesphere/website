@@ -14,7 +14,7 @@ KubeSphere 中的图形编辑面板包含用于 Jenkins [阶段 (Stage)](https:/
 
 - 您需要[启用 KubeSphere DevOps 系统](../../../pluggable-components/devops/)。
 - 您需要有一个 [Docker Hub](http://www.dockerhub.com/) 帐户。
-- 您需要创建一个企业空间、一个 DevOps 工程和一个用户 (`project-regular`)，必须邀请该帐户至 DevOps 工程中并赋予 `operator` 角色。如果尚未创建，请参见[创建企业空间、项目、用户和角色](../../../quick-start/create-workspace-and-project/)。
+- 您需要创建一个企业空间、一个 DevOps 项目和一个用户 (`project-regular`)，必须邀请该用户至 DevOps 项目中并赋予 `operator` 角色。如果尚未创建，请参见[创建企业空间、项目、用户和角色](../../../quick-start/create-workspace-and-project/)。
 - 设置 CI 专用节点来运行流水线。有关更多信息，请参见[为缓存依赖项设置 CI 节点](../../../devops-user-guide/how-to-use/set-ci-node/)。
 - 配置您的电子邮件服务器用于接收流水线通知（可选）。有关更多信息，请参见[为 KubeSphere 流水线设置电子邮件服务器](../../../devops-user-guide/how-to-use/jenkins-email/)。
 - 配置 SonarQube 将代码分析纳入流水线中（可选）。有关更多信息，请参见[将 SonarQube 集成到流水线](../../../devops-user-guide/how-to-integrate/sonarqube/)。
@@ -40,7 +40,7 @@ KubeSphere 中的图形编辑面板包含用于 Jenkins [阶段 (Stage)](https:/
 
 ### 步骤 1：创建凭证
 
-1. 以 `project-regular` 身份登录 KubeSphere 控制台。转到您的 DevOps 工程，在**工程管理**下的**凭证**页面创建以下凭证。有关如何创建凭证的更多信息，请参见[凭证管理](../credential-management/)。
+1. 以 `project-regular` 身份登录 KubeSphere 控制台。转到您的 DevOps 项目，在 **DevOps 项目设置**下的**凭证**页面创建以下凭证。有关如何创建凭证的更多信息，请参见[凭证管理](../credential-management/)。
 
    {{< notice note >}} 
 
@@ -53,33 +53,23 @@ KubeSphere 中的图形编辑面板包含用于 Jenkins [阶段 (Stage)](https:/
    | dockerhub-id    | 帐户凭证   | Docker Hub |
    | demo-kubeconfig | kubeconfig | Kubernetes |
 
-2. 您还需要为 SonarQube 创建一个凭证 ID (`sonar-token`)，用于上述的阶段 3（代码分析）。请参考[为新工程创建 SonarQube 令牌 (Token)](../../../devops-user-guide/how-to-integrate/sonarqube/#create-sonarqube-token-for-new-project)，在下图所示的**密钥**字段中输入令牌。点击**确定**完成操作。
-
-   ![Sonar 令牌](/images/docs/zh-cn/devops-user-guide/use-devops/create-a-pipeline-using-graphical-editing-panel/sonar-token.PNG)
+2. 您还需要为 SonarQube 创建一个凭证 ID (`sonar-token`)，用于上述的阶段 3（代码分析）。请参阅[为新工程创建 SonarQube 令牌 (Token)](../../../devops-user-guide/how-to-integrate/sonarqube/#create-sonarqube-token-for-new-project)，在**访问令牌**类型的凭证的**令牌**字段中输入 SonarQube 令牌。点击**确定**完成操作。
 
 3. 您可以在列表中看到已创建的三个凭证。
-
-   ![凭证列表](/images/docs/zh-cn/devops-user-guide/use-devops/create-a-pipeline-using-graphical-editing-panel/credential-list.PNG)
 
 ### 步骤 2：创建项目
 
 在本教程中，示例流水线会将 [sample](https://github.com/kubesphere/devops-java-sample/tree/sonarqube) 应用部署至一个项目。因此，您必须先创建一个项目（例如 `kubesphere-sample-dev`）。待流水线成功运行，会在该项目中自动创建该应用的部署和服务。
 
-您可以使用 `project-admin` 帐户创建项目。此外，该帐户也是 CI/CD 流水线的审核员。请确保将 `project-regular` 帐户邀请至该项目并授予 `operator` 角色。有关更多信息，请参见[创建企业空间、项目、用户和角色](../../../quick-start/create-workspace-and-project/)。
+您可以使用 `project-admin` 帐户创建项目。此外，该用户也是 CI/CD 流水线的审核员。请确保将 `project-regular` 帐户邀请至该项目并授予 `operator` 角色。有关更多信息，请参见[创建企业空间、项目、用户和角色](../../../quick-start/create-workspace-and-project/)。
 
 ### 步骤 3：创建流水线
 
-1. 请确保以 `project-regular` 身份登录 KubeSphere 控制台，转到您的 DevOps 工程。在**流水线**页面点击**创建**。
+1. 请确保以 `project-regular` 身份登录 KubeSphere 控制台，转到您的 DevOps 项目。在**流水线**页面点击**创建**。
 
-   ![创建流水线](/images/docs/zh-cn/devops-user-guide/use-devops/create-a-pipeline-using-graphical-editing-panel/create_pipeline.png)
+2. 在弹出的对话框中，将它命名为 `graphical-pipeline`，点击**下一步**。
 
-2. 在弹出对话框中，将它命名为 `graphical-pipeline`，点击**下一步**。
-
-   ![基本信息](/images/docs/zh-cn/devops-user-guide/use-devops/create-a-pipeline-using-graphical-editing-panel/basic_info.png)
-
-3. 在**高级设置**页面，点击**添加参数**，添加以下三个字符串参数。这些参数将用于流水线的 Docker 命令。添加完成后，点击**创建**。
-
-   ![添加参数](/images/docs/zh-cn/devops-user-guide/use-devops/create-a-pipeline-using-graphical-editing-panel/add_parameter.png)
+3. 在**高级设置**页面，点击**添加**，添加以下三个字符串参数。这些参数将用于流水线的 Docker 命令。添加完成后，点击**创建**。
 
    | 参数类型 | 名称                | 值              | 描述信息                                   |
    | -------- | ------------------- | --------------- | ------------------------------------------ |
@@ -95,27 +85,17 @@ KubeSphere 中的图形编辑面板包含用于 Jenkins [阶段 (Stage)](https:/
 
 4. 创建的流水线会显示在列表中。
 
-   ![流水线列表](/images/docs/zh-cn/devops-user-guide/use-devops/create-a-pipeline-using-graphical-editing-panel/pipeline_list.png)
-
 ### 步骤 4：编辑流水线
 
-点击流水线进入其详情页面。要使用图形编辑面板，请点击**流水线**选项卡下的**编辑流水线**。在弹出对话框中，点击**自定义流水线**。该流水线包括六个阶段，请按照以下步骤设置每个阶段。
+- 点击流水线进入其详情页面。要使用图形编辑面板，请点击**任务状态**选项卡下的**编辑流水线**。在弹出的对话框中，点击**自定义流水线**。该流水线包括六个阶段，请按照以下步骤设置每个阶段。
 
-![编辑流水线](/images/docs/zh-cn/devops-user-guide/use-devops/create-a-pipeline-using-graphical-editing-panel/edit_pipeline.png)
+- 您也可以点击**持续集成 (CI)** 和**持续集成&交付 (CI/CD)** 来使用 KubeSphere 提供的[内置流水线模板](../use-pipeline-templates/)。
 
 {{< notice note >}}
 
 流水线详情页面会显示**同步状态**，它是 KubeSphere 和 Jenkins 之间的同步结果。若同步成功，您会看到**成功**图标。您也可以点击**编辑 Jenkinsfile** 手动为流水线创建一个 Jenkinsfile。
 
 {{</ notice >}} 
-
-![click-custom-pipeline](/images/docs/zh-cn/devops-user-guide/use-devops/create-a-pipeline-using-graphical-editing-panel/click-custom-pipeline.png)
-
-{{< notice note >}}
-
-您也可以点击**持续集成 (CI)** 和**持续集成&交付 (CI/CD)** 来使用 KubeSphere 提供的[内置流水线模板](../use-pipeline-templates/)。
-
-{{</ notice >}}
 
 #### 阶段 1：拉取源代码 (Checkout SCM)
 
@@ -141,7 +121,7 @@ KubeSphere 中的图形编辑面板包含用于 Jenkins [阶段 (Stage)](https:/
 
    ![编辑面板](/images/docs/zh-cn/devops-user-guide/use-devops/create-a-pipeline-using-graphical-editing-panel/edit_panel.png)
 
-3. 点击**添加步骤**。在列表中选择 **git**，以从 GitHub 拉取示例代码。在弹出对话框中，填写必需的字段。点击**确定**完成操作。
+3. 点击**添加步骤**。在列表中选择 **git**，以从 GitHub 拉取示例代码。在弹出的对话框中，填写必需的字段。点击**确定**完成操作。
 
    - **URL**：输入 GitHub 仓库地址 `https://github.com/kubesphere/devops-java-sample.git`。请注意，这里是示例地址，您需要使用您自己的仓库地址。
    - **凭证 ID**：本教程中无需输入凭证 ID。
@@ -199,7 +179,7 @@ KubeSphere 中的图形编辑面板包含用于 Jenkins [阶段 (Stage)](https:/
 
    ![嵌套步骤](/images/docs/zh-cn/devops-user-guide/use-devops/create-a-pipeline-using-graphical-editing-panel/nested_step.png)
 
-5. 点击 **Sonarqube 配置**，在弹出对话框中保持默认名称 `sonar` 不变，点击**确定**保存操作。
+5. 点击 **Sonarqube 配置**，在弹出的对话框中保持默认名称 `sonar` 不变，点击**确定**保存操作。
 
    ![sonar](/images/docs/zh-cn/devops-user-guide/use-devops/create-a-pipeline-using-graphical-editing-panel/sonar_env.png)
 
@@ -221,7 +201,7 @@ KubeSphere 中的图形编辑面板包含用于 Jenkins [阶段 (Stage)](https:/
 
    ![超时](/images/docs/zh-cn/devops-user-guide/use-devops/create-a-pipeline-using-graphical-editing-panel/timeout_set.png)
 
-9. 点击**超时**步骤下的**添加嵌套步骤**，选择**代码质量检查 (SonarQube)**。在弹出对话框中选择**检查通过后开始后续任务**。点击**确定**保存操作。
+9. 点击**超时**步骤下的**添加嵌套步骤**，选择**代码质量检查 (SonarQube)**。在弹出的对话框中选择**检查通过后开始后续任务**。点击**确定**保存操作。
 
    ![waitforqualitygate](/images/docs/zh-cn/devops-user-guide/use-devops/create-a-pipeline-using-graphical-editing-panel/waitforqualitygate_set.png)
 
@@ -259,7 +239,7 @@ KubeSphere 中的图形编辑面板包含用于 Jenkins [阶段 (Stage)](https:/
 
    ![shell 命令](/images/docs/zh-cn/devops-user-guide/use-devops/create-a-pipeline-using-graphical-editing-panel/shell_command.png)
 
-5. 再次点击**添加嵌套步骤**，选择**添加凭证**。在弹出对话框中填写以下字段，点击**确定**确认操作。
+5. 再次点击**添加嵌套步骤**，选择**添加凭证**。在弹出的对话框中填写以下字段，点击**确定**确认操作。
 
    - **凭证 ID**：选择您创建的 Docker Hub 凭证，例如 `dockerhub-id`。
    - **密码变量**：输入 `DOCKER_PASSWORD`。
@@ -295,7 +275,7 @@ KubeSphere 中的图形编辑面板包含用于 Jenkins [阶段 (Stage)](https:/
 
    ![添加制品阶段](/images/docs/zh-cn/devops-user-guide/use-devops/create-a-pipeline-using-graphical-editing-panel/add_artifact_stage.png)
 
-2. 选中 **Artifacts** 阶段，点击**任务**下的**添加步骤**，选择**保存制品**。在弹出对话框中输入 `target/*.jar`，用于设置 Jenkins 中制品的保存路径。点击**确定**完成操作。
+2. 选中 **Artifacts** 阶段，点击**任务**下的**添加步骤**，选择**保存制品**。在弹出的对话框中输入 `target/*.jar`，用于设置 Jenkins 中制品的保存路径。点击**确定**完成操作。
 
    ![制品信息](/images/docs/zh-cn/devops-user-guide/use-devops/create-a-pipeline-using-graphical-editing-panel/artifact_info.png)
 
@@ -311,11 +291,11 @@ KubeSphere 中的图形编辑面板包含用于 Jenkins [阶段 (Stage)](https:/
 
    {{< notice note >}}
 
-   在 KubeSphere 3.1 中，能够运行流水线的帐户也能够继续或终止该流水线。此外，流水线创建者、拥有该工程管理员角色的用户或者您指定的帐户也有权限继续或终止流水线。
+   在 KubeSphere 3.2.0 中，能够运行流水线的帐户也能够继续或终止该流水线。此外，流水线创建者、拥有该工程管理员角色的用户或者您指定的帐户也有权限继续或终止流水线。
 
    {{</ notice >}}
 
-3. 再次点击 **Deploy to Dev** 阶段下的**添加步骤**。在列表中选择 **kubernetesDeploy** 并在弹出对话框中填写以下字段。点击**确定**保存操作。
+3. 再次点击 **Deploy to Dev** 阶段下的**添加步骤**。在列表中选择 **kubernetesDeploy** 并在弹出的对话框中填写以下字段。点击**确定**保存操作。
 
    - **Kubeconfig**：选择您创建的 Kubeconfig，例如 `demo-kubeconfig`。
    - **配置文件路径**：输入 `deploy/no-branch-dev/**`，即代码仓库中 Kubernetes 资源 [YAML](https://github.com/kubesphere/devops-java-sample/tree/sonarqube/deploy/no-branch-dev) 文件的相对路径。
@@ -330,41 +310,37 @@ KubeSphere 中的图形编辑面板包含用于 Jenkins [阶段 (Stage)](https:/
 
    {{</ notice >}} 
 
-5. 待您完成上述步骤，请在右下角点击**确认**和**保存**。随后，您可以看到该流水线有完整的工作流，并且每个阶段也清晰列示。当您用图形编辑面板定义流水线时，KubeSphere 会自动创建相应的 Jenkinsfile。点击**编辑 Jenkinsfile** 查看该 Jenkinsfile。
+5. 待您完成上述步骤，请在右下角点击**确定**和**保存**。随后，您可以看到该流水线有完整的工作流，并且每个阶段也清晰列示。当您用图形编辑面板定义流水线时，KubeSphere 会自动创建相应的 Jenkinsfile。点击**编辑 Jenkinsfile** 查看该 Jenkinsfile。
 
    ![流水线设置完成](/images/docs/zh-cn/devops-user-guide/use-devops/create-a-pipeline-using-graphical-editing-panel/pipeline_done.png)
    
    {{< notice note >}}
    
-   在**流水线**页面，您可以点击该流水线右侧的三个点，然后选择**复制流水线**来创建该流水线的副本。如果您需要同时运行多个不包含多分支的流水线，您可以全部选中这些流水线，然后点击**运行**来批量运行它们。
+   在**流水线**页面，您可以点击该流水线右侧的 <img src="/images/docs/common-icons/three-dots.png" width="15" />，然后选择**复制**来创建该流水线的副本。如果您需要同时运行多个不包含多分支的流水线，您可以全部选中这些流水线，然后点击**运行**来批量运行它们。
    
    {{</ notice >}}
 
 ### 步骤 5：运行流水线
 
-1. 您需要手动运行使用图形编辑面板创建的流水线。点击**运行**，您可以在弹出对话框中看到步骤 3 中已定义的三个字符串参数。点击**确定**来运行流水线。
+1. 您需要手动运行使用图形编辑面板创建的流水线。点击**运行**，您可以在弹出的对话框中看到步骤 3 中已定义的三个字符串参数。点击**确定**来运行流水线。
 
    ![运行流水线](/images/docs/zh-cn/devops-user-guide/use-devops/create-a-pipeline-using-graphical-editing-panel/run_pipeline.png)
    
-2. 要查看流水线的状态，请转到**活动**选项卡，点击您想查看的记录。
+2. 要查看流水线的状态，请转到**运行记录**选项卡，点击您想查看的记录。
 
 3. 稍等片刻，流水线如果成功运行，则会在 **Deploy to Dev** 阶段停止。`project-admin` 作为流水线的审核员，需要进行审批，然后资源才会部署至开发环境。
 
    ![流水线成功运行](/images/docs/zh-cn/devops-user-guide/use-devops/create-a-pipeline-using-graphical-editing-panel/pipeline_successful.png)
 
-4. 登出 KubeSphere 控制台，以 `project-admin` 身份重新登录。转到您的 DevOps 工程，点击 `graphical-pipeline` 流水线。在**活动**选项卡下，点击要审核的记录。要批准流水线，请点击**继续**。
+4. 登出 KubeSphere 控制台，以 `project-admin` 身份重新登录。转到您的 DevOps 项目，点击 `graphical-pipeline` 流水线。在**运行记录**选项卡下，点击要审核的记录。要批准流水线，请点击**继续**。
 
 ### 步骤 6：查看流水线详情
 
-1. 以 `project-regular` 身份重新登录控制台。转到您的 DevOps 工程，点击 `graphical-pipeline` 流水线。在**活动**选项卡下，点击**状态**下标记为**成功**的记录。
+1. 以 `project-regular` 身份重新登录控制台。转到您的 DevOps 项目，点击 `graphical-pipeline` 流水线。在**运行记录**选项卡下，点击**状态**下标记为**成功**的记录。
 
 2. 如果所有配置都成功运行，您可以看到所有阶段都已完成。
 
-   ![完成](/images/docs/zh-cn/devops-user-guide/use-devops/create-a-pipeline-using-graphical-editing-panel/completed.png)
-
 3. 在右上角点击**查看日志**，查看所有日志。点击每个阶段查看其详细日志。您可以根据日志排除故障和问题，也可以将日志下载到本地进行进一步分析。
-
-   ![查看日志](/images/docs/zh-cn/devops-user-guide/use-devops/create-a-pipeline-using-graphical-editing-panel/inspect_logs.png)
 
 ### 步骤 7：下载制品
 
@@ -374,7 +350,7 @@ KubeSphere 中的图形编辑面板包含用于 Jenkins [阶段 (Stage)](https:/
 
 ### 步骤 8：查看代码分析结果
 
-在**代码质量**页面，可以查看由 SonarQube 提供的本示例流水线的代码分析结果。如果您没有事先配置 SonarQube，则该部分不可用。有关更多信息，请参见[将 SonarQube 集成到流水线](../../../devops-user-guide/how-to-integrate/sonarqube/)。
+在**代码检查**页面，可以查看由 SonarQube 提供的本示例流水线的代码分析结果。如果您没有事先配置 SonarQube，则该部分不可用。有关更多信息，请参见[将 SonarQube 集成到流水线](../../../devops-user-guide/how-to-integrate/sonarqube/)。
 
 ![SonarQube 详细结果](/images/docs/zh-cn/devops-user-guide/use-devops/create-a-pipeline-using-graphical-editing-panel/sonarqube_result_detail.png)
 
@@ -384,13 +360,7 @@ KubeSphere 中的图形编辑面板包含用于 Jenkins [阶段 (Stage)](https:/
 
 2. 前往该项目（本教程中即 `kubesphere-sample-dev`），请点击**应用负载**下的**工作负载**，您可以看到列表中显示的部署。
 
-   ![查看部署](/images/docs/zh-cn/devops-user-guide/use-devops/create-a-pipeline-using-graphical-editing-panel/view_deployment.png)
-
 3. 在**服务**页面，您可以看到示例服务通过 NodePort 暴露其端口号。要访问服务，请访问 `<Node IP>:<NodePort>`。
-
-   ![服务暴露](/images/docs/zh-cn/devops-user-guide/use-devops/create-a-pipeline-using-graphical-editing-panel/service_exposed.png)
-
-   ![访问服务](/images/docs/zh-cn/devops-user-guide/use-devops/create-a-pipeline-using-graphical-editing-panel/access_service.png)
 
    {{< notice note >}}
 
@@ -402,7 +372,7 @@ KubeSphere 中的图形编辑面板包含用于 Jenkins [阶段 (Stage)](https:/
 
    ![DockerHub 镜像](/images/docs/zh-cn/devops-user-guide/use-devops/create-a-pipeline-using-graphical-editing-panel/dockerhub_image.png)
 
-5. 该应用的名称为 `devops-sample`，即 `APP_NAME` 的值，标签即 `SNAPSHOT-$BUILD_NUMBER` 的值。`$BUILD_NUMBER` 即**活动**选项卡列示的记录的序列号。
+5. 该应用的名称为 `devops-sample`，即 `APP_NAME` 的值，标签即 `SNAPSHOT-$BUILD_NUMBER` 的值。`$BUILD_NUMBER` 即**运行记录**选项卡列示的记录的序列号。
 
 6. 如果您在最后一个阶段设置了电子邮件服务器并添加了电子邮件通知的步骤，您还会收到电子邮件消息。
 

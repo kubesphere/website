@@ -1,6 +1,6 @@
 ---
 title: "Integrate SonarQube into Pipelines"
-keywords: 'Kubernetes, KubeSphere, devops, jenkins, sonarqube, pipeline'
+keywords: 'Kubernetes, KubeSphere, DevOps, Jenkins, SonarQube, Pipeline'
 description: 'Integrate SonarQube into your pipeline for code quality analysis.'
 linkTitle: "Integrate SonarQube into Pipelines"
 weight: 11310
@@ -85,13 +85,9 @@ To integrate SonarQube into your pipeline, you must install SonarQube Server fir
    sonarqube-sonarqube-bb595d88b-97594        1/1     Running   2          5m31s
    ```
 
-2. Access the SonarQube console `http://{$Node IP}:{$NodePort}` in your browser and you can see its homepage as below:
+2. Access the SonarQube console `http://<Node IP>:<NodePort>` in your browser.
 
-   ![access-sonarqube-console](/images/docs/devops-user-guide/tool-integration/integrate-sonarqube-into-pipeline/access-sonarqube-console.jpg)
-
-3. Click **Log in** in the top-right corner and use the default account `admin/admin`.
-
-   ![log-in-page](/images/docs/devops-user-guide/tool-integration/integrate-sonarqube-into-pipeline/log-in-page.jpg)
+3. Click **Log in** in the upper-right corner and log in as the default account `admin/admin`.
 
    {{< notice note >}}
 
@@ -143,7 +139,7 @@ To integrate SonarQube into your pipeline, you must install SonarQube Server fir
 
    ![sonarqube-webhook-3](/images/docs/devops-user-guide/tool-integration/integrate-sonarqube-into-pipeline/sonarqube-webhook-3.jpg)
 
-5. Enter **Name** and **Jenkins Console URL** (i.e. the SonarQube Webhook address) in the dialog that appears. Click **Create** to finish.
+5. Enter **Name** and **Jenkins Console URL** (for example, the SonarQube Webhook address) in the displayed dialog box. Click **Create** to finish.
 
    ![webhook-page-info](/images/docs/devops-user-guide/tool-integration/integrate-sonarqube-into-pipeline/webhook-page-info.jpg)
 
@@ -189,9 +185,7 @@ To integrate SonarQube into your pipeline, you must install SonarQube Server fir
    http://192.168.0.4:30180
    ```
 
-3. Access Jenkins with the address `http://{$Public IP}:30180`. When KubeSphere is installed, the Jenkins dashboard is also installed by default. Besides, Jenkins is configured with KubeSphere LDAP, which means you can log in to Jenkins with KubeSphere accounts (for example, `admin/P@88w0rd`) directly. For more information about configuring Jenkins, see [Jenkins System Settings](../../../devops-user-guide/how-to-use/jenkins-setting/).
-
-   ![jenkins-login-page](/images/docs/devops-user-guide/tool-integration/integrate-sonarqube-into-pipeline/jenkins-login-page.jpg)
+3. Access Jenkins with the address `http://<Node IP>:30180`. When KubeSphere is installed, the Jenkins dashboard is also installed by default. Besides, Jenkins is configured with KubeSphere LDAP, which means you can log in to Jenkins with KubeSphere accounts (for example, `admin/P@88w0rd`) directly. For more information about configuring Jenkins, see [Jenkins System Settings](../../../devops-user-guide/how-to-use/jenkins-setting/).
 
    {{< notice note >}}
 
@@ -199,19 +193,13 @@ To integrate SonarQube into your pipeline, you must install SonarQube Server fir
 
    {{</ notice >}} 
 
-4. Click **Manage Jenkins** on the left.
-
-   ![manage-jenkins](/images/docs/devops-user-guide/tool-integration/integrate-sonarqube-into-pipeline/manage-jenkins.png)
+4. Click **Manage Jenkins** on the left navigation pane.
 
 5. Scroll down to **Configure System** and click it.
 
-   ![configure-system](/images/docs/devops-user-guide/tool-integration/integrate-sonarqube-into-pipeline/configure-system.png)
-
 6. Navigate to **SonarQube servers** and click **Add SonarQube**.
 
-   ![add-sonarqube](/images/docs/devops-user-guide/tool-integration/integrate-sonarqube-into-pipeline/add-sonarqube.png)
-
-7. Enter **Name** and **Server URL** (`http://{$Node IP}:{$NodePort}`). Click **Add**, select **Jenkins**, and then create the credentials with the SonarQube admin token in the dialog that appears as shown in the second image below. After adding the credentials, select it from the drop-down list for **Server authentication token** and then click **Apply** to finish.
+7. Enter **Name** and **Server URL** (`http://<Node IP>:<NodePort>`). Click **Add**, select **Jenkins**, and then create the credentials with the SonarQube admin token in the displayed dialog box as shown in the second image below. After adding the credentials, select it from the drop-down list for **Server authentication token** and then click **Apply** to finish.
 
    ![sonarqube-jenkins-settings](/images/docs/devops-user-guide/tool-integration/integrate-sonarqube-into-pipeline/sonarqube-jenkins-settings.png)
 
@@ -233,14 +221,10 @@ You need to specify `sonarqubeURL` so that you can access SonarQube directly fro
    kubectl edit  cm -n kubesphere-system  ks-console-config
    ```
 
-2. Navigate to `client` and add the field `devops` with `sonarqubeURL` specified.
+2. Go to `data.client.enableKubeConfig` and add the field `devops` with `sonarqubeURL` specified under it.
 
    ```bash
    client:
-     version:
-       kubesphere: v3.0.0
-       kubernetes: v1.17.9
-       openpitrix: v0.3.5
      enableKubeConfig: true
      devops: # Add this field manually.
        sonarqubeURL: http://192.168.0.4:31434 # The SonarQube IP address.
@@ -286,6 +270,4 @@ You need a SonarQube token so that your pipeline can communicate with SonarQube 
 
 ## View Results on the KubeSphere Console
 
-After you [create a pipeline using the graphical editing panel](../../how-to-use/create-a-pipeline-using-graphical-editing-panel/) or [create a pipeline using a Jenkinsfile](../../how-to-use/create-a-pipeline-using-jenkinsfile/), you can view the result of code quality analysis. For example, you may see an image as below if SonarQube runs successfully.
-
-![sonarqube-view-result](/images/docs/devops-user-guide/tool-integration/integrate-sonarqube-into-pipeline/sonarqube-view-result.jpg)
+After you [create a pipeline using the graphical editing panel](../../how-to-use/create-a-pipeline-using-graphical-editing-panel/) or [create a pipeline using a Jenkinsfile](../../how-to-use/create-a-pipeline-using-jenkinsfile/), you can view the result of code quality analysis.
