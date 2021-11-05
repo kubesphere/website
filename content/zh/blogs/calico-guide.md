@@ -1,7 +1,7 @@
 ---
 title: 'Calico 路由反射模式权威指南'
 tag: 'Kubernetes,KubeSphere,Calico'
-keywords: 'Kubernetes, KubeSphere, Calico, 网络插件'
+keywords: 'Kubernetes, KubeSphere, Calico, 网络插件, CNI'
 description: '作为 Kubernetes 最长使用的一种网络插件，Calico 具有很强的扩展性，较优的资源利用和较少的依赖，相较于 Flannel 插件采用 Overlay 的网络，Calico 可以通过三层路由的方式采用性能更佳的 Underlay 网络，Calico 网络插件的转发效率是所有方案中较高的。'
 createTime: '2021-06-02'
 author: '武献雨'
