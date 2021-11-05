@@ -130,8 +130,6 @@ KubeSphere 提供了两个内置的 OAuth 2.0 插件：GitHub的 [GitHubIdentity
 
 5. 进入 KubeSphere 登录界面，点击 **Log In with XXX** （例如， **Log In with GitHub**）。
 
-   ![github-login-page](/images/docs/access-control-and-account-management/external-authentication/use-an-oauth2-identity-provider/kubesphere-login-page.png)
-
 6. 在外部身份提供者的登录界面，输入身份提供者配置的用户名和密码，登录 KubeSphere 。
 
    ![github-login-page](/images/docs/access-control-and-account-management/external-authentication/use-an-oauth2-identity-provider/github-login-page.png)
