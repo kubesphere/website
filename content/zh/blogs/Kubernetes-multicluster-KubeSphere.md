@@ -1,10 +1,10 @@
 ---
 title: '混合云下的 Kubernetes 多集群管理与应用部署'
 tag: 'KubeSphere, Kubernetes, 多集群管理'
-keywords: 'KKubeSphere, Kubernetes, 多集群管理, Kubefed'
+keywords: 'KubeSphere, Kubernetes, 多集群管理, Kubefed'
 description: '本文介绍了 Kubernetes 社区多集群方向的发展历程以及已有的多集群解决方案，分享在混合云的场景下, KubeSphere 如何基于 Kubefed 统一应用的分发与部署，以达到跨 region 的多活/容灾等目的。同时探讨未来多集群领域可能迈向的去中心化的架构。'
 createTime: '2021-05-26'
-author: ' 李宇'
+author: '李宇'
 snapshot: 'https://pek3b.qingstor.com/kubesphere-community/images/Kubernetes-multicluster-KubeSphere-banner.jpg'
 ---
 
