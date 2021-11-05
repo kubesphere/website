@@ -65,6 +65,6 @@ Log in to the web console of Alibaba Cloud. Go to **Clusters** under **Container
 
 2. Enter the basic information based on your needs and click **Next**.
 
-3. In **Connection Method**, select **Direct Connection**. Fill in the kubeconfig file of the ACK member cluster and then click **Create**.
+3. In **Connection Method**, select **Direct connection**. Fill in the kubeconfig file of the ACK member cluster and then click **Create**.
 
 4. Wait for cluster initialization to finish.

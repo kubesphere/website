@@ -21,11 +21,11 @@ This tutorial walks you through an example of deploying NGINX from the App Store
 
 1. On the **Overview** page of the project `demo-project`, click **App Store** in the upper-left corner.
 
-2. Find NGINX and click **Deploy** on the **App Information** page.
+2. Find NGINX and click **Install** on the **App Information** page.
 
 3. Set a name and select an app version. Make sure NGINX is deployed in `demo-project` and click **Next**.
 
-4. In **App Settings**, specify the number of replicas to deploy for the app and enable Ingress based on your needs. When you finish, click **Deploy**.
+4. In **App Settings**, specify the number of replicas to deploy for the app and enable Ingress based on your needs. When you finish, click **Install**.
 
    {{< notice note >}}
 

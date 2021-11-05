@@ -34,7 +34,7 @@ The environment variable `WORDPRESS_DB_PASSWORD` is the password to connect to t
 
 1. Log in to the KubeSphere console using the account `project-regular`. Go to the detail page of `demo-project` and navigate to **Configuration**. In **Secrets**, click **Create** on the right.
 
-2. Enter the basic information (for example, name it `mysql-secret`) and click **Next**. On the next page, select **Opaque (Default)** for **Type** and click **Add Data** to add a key-value pair. Enter the Key (`MYSQL_ROOT_PASSWORD`) and Value (`123456`) and click **√** in the lower-right corner to confirm. When you finish, click **Create** to continue.
+2. Enter the basic information (for example, name it `mysql-secret`) and click **Next**. On the next page, select **Default** for **Type** and click **Add Data** to add a key-value pair. Enter the Key (`MYSQL_ROOT_PASSWORD`) and Value (`123456`) and click **√** in the lower-right corner to confirm. When you finish, click **Create** to continue.
 
 #### Create a WordPress Secret
 
@@ -58,7 +58,7 @@ Follow the same steps above to create a WordPress Secret `wordpress-secret` with
 
 2. Enter the basic information (for example, `wordpress` for **Name**) and click **Next**.
 
-3. In **External Access**, click **Add Service** to set a service in the app.
+3. In **Service Settings**, click **Create Service** to create a service in the app.
 
 4. Select **Stateful Service** to define the service type.
 
@@ -66,7 +66,7 @@ Follow the same steps above to create a WordPress Secret `wordpress-secret` with
 
 6. In **Containers**, click **Add Container**.
 
-7. Enter `mysql:5.6` in the search box, press **Enter** and click **Use Default Port**. After that, do not click **√** in the lower-right corner as the setting is not finished yet.
+7. Enter `mysql:5.6` in the search box, press **Enter** and click **Use Default Ports**. After that, do not click **√** in the lower-right corner as the setting is not finished yet.
 
    {{< notice note >}}
 
@@ -80,13 +80,13 @@ In **Advanced Settings**, make sure the memory limit is no less than 1000 Mi or 
 
    Click **√** after you finish and click **Next** to continue.
 
-3.  In **Advanced Settings**, you can click **Add** directly or select other options based on your needs.
+3.  In **Advanced Settings**, you can click **Create** directly or set other options based on your needs.
 
 #### Add the WordPress frontend component
 
-12. Click **Add Service** again and select **Stateless Service** this time. Enter the name `wordpress` and click **Next**.
+12. In **Services** under **Application Workloads**, click **Create** again and select **Stateless Service** this time. Enter the name `wordpress` and click **Next**.
 
-13. Similar to previous steps, click **Add Container**, enter `wordpress:4.8-apache` in the search box, press **Enter** and click **Use Default Port**.
+13. Similar to previous steps, click **Add Container**, enter `wordpress:4.8-apache` in the search box, press **Enter** and click **Use Default Ports**.
 
 14. Scroll down to **Environment Variables** and click **Use ConfigMap or Secret**. Two environment variables need to be added here. Enter the values as follows.
 
@@ -106,7 +106,7 @@ For the second environment variable added here, the value must be the same as th
 
 2.  Select `wordpress-pvc` created in the previous step, set the mode as `ReadAndWrite`, and enter `/var/www/html` as its mount path. Click **√** to save it, and then click **Next** to continue.
 
-3.  In **Advanced Settings**, you can click **Add** directly or select other options based on your needs.
+3.  In **Advanced Settings**, you can click **Create** directly or set other options based on your needs.
 
 4.  The frontend component is also set now. Click **Next** to continue.
 

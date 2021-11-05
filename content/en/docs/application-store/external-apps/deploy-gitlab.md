@@ -33,11 +33,11 @@ This tutorial demonstrates how to deploy GitLab on KubeSphere.
 
 3. Select `main` from the drop-down list, then click **gitlab**.
 
-4. On the **App Information** tab and the **Chart Files** tab, you can view the default settings on the console. Click **Deploy** to continue.
+4. On the **App Information** tab and the **Chart Files** tab, you can view the default settings on the console. Click **Install** to continue.
 
 5. On the **Basic Information** page, you can view the app name, app version, and deployment location. This tutorial uses the version `4.2.3 [13.2.2]`. Click **Next** to continue.
 
-6. On the **App Settings** page, use the following settings to replace the default ones, and then click **Deploy**.
+6. On the **App Settings** page, use the following settings to replace the default ones, and then click **Install**.
 
    ```yaml
    global:

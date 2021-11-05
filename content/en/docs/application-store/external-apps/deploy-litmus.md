@@ -39,11 +39,11 @@ This tutorial demonstrates how to deploy Litmus on KubeSphere and create chaos e
 
 3. In the drop-down list, choose `litmus`, and then choose `litmus-2-0-0-beta`.
 
-4. You can view the app information and chart files. Under **Versions**, select a specific version and click **Deploy**.
+4. You can view the app information and chart files. Under **Versions**, select a specific version and click **Install**.
 
 5. Under **Basic Information**, set a name for the app. Check the app version and the deployment location, and then click **Next**.
    
-6. Under **App Settings**, you can edit the yaml file or directly click **Deploy**.
+6. Under **App Settings**, you can edit the yaml file or directly click **Install**.
    
 7. The app displays in the list after you create it successfully.
    
@@ -64,8 +64,8 @@ This tutorial demonstrates how to deploy Litmus on KubeSphere and create chaos e
    ![litmus-login-1](/images/docs/appstore/external-apps/deploy-litmus/litmus-login-1.png)
 
    {{< notice note >}}
-  You may need to open the port in your security groups and configure port forwarding rules depending on where your Kubernetes cluster is deployed. Make sure you use your own `NodeIP`.
-  {{</ notice >}}
+    You may need to open the port in your security groups and configure port forwarding rules depending on where your Kubernetes cluster is deployed. Make sure you use your own `NodeIP`.
+    {{</ notice >}}
 
 ### Step 4: Deploy Agent (optional)
 

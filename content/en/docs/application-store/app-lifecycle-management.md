@@ -52,7 +52,7 @@ You need to create two users first, one for ISVs (`isv`) and the other (`reviewe
 
    {{</ notice >}} 
 
-2. In the dialog that appears, click **Upload Helm Chart Package** to upload the chart file. Click **OK** to continue.
+2. In the dialog that appears, click **Upload Helm Chart** to upload the chart file. Click **OK** to continue.
 
 3. Basic information of the app displays under **App Information**. To upload an icon for the app, click **Upload Icon**. You can also skip it and click **OK** directly.
 
@@ -62,13 +62,13 @@ You need to create two users first, one for ISVs (`isv`) and the other (`reviewe
 
    {{</ notice >}} 
 
-4. The app displays in the template list with the status **Draft** after it is successfully uploaded, which means this app is under development. The uploaded app is visible to all members in the same workspace.
+4. The app displays in the template list with the status **Developing** after it is successfully uploaded, which means this app is under development. The uploaded app is visible to all members in the same workspace.
 
-5. Go to the detail page of the app template by clicking Redis from the list. You can edit the basic information of this app by clicking **Edit Information**.
+5. Go to the detail page of the app template by clicking Redis from the list. You can edit the basic information of this app by clicking **Edit**.
 
 6. You can customize the app's basic information by specifying the fields in the pop-up window.
 
-7. Click **OK** to save your changes, then you can test this application by deploying it to Kubernetes. Click the draft version to expand the menu and select **Test Deployment**.
+7. Click **OK** to save your changes, then you can test this application by deploying it to Kubernetes. Click the draft version to expand the menu and click **Install**.
 
    {{< notice note >}} 
 
@@ -76,7 +76,7 @@ You need to create two users first, one for ISVs (`isv`) and the other (`reviewe
 
    {{</ notice >}} 
 
-8. Select the cluster and project to which you want to deploy the app, set up different configurations for the app, and then click **Deploy**.
+8. Select the cluster and project to which you want to deploy the app, set up different configurations for the app, and then click **Install**.
 
    {{< notice note >}}
 
@@ -84,9 +84,9 @@ You need to create two users first, one for ISVs (`isv`) and the other (`reviewe
 
    {{</ notice >}} 
 
-9. Wait for a few minutes, then switch to the tab **Deployed Instances**. You will find that Redis has been deployed successfully.
+9. Wait for a few minutes, then switch to the tab **App Instances**. You will find that Redis has been deployed successfully.
 
-10. After you test the app with no issues found, you can click **Submit for Review** to submit this application for review.
+10. After you test the app with no issues found, you can click **Submit for Release** to submit this application for release.
 
     {{< notice note >}}
 
@@ -94,13 +94,13 @@ The version number must start with a number and contain decimal points.
 
 {{</ notice >}}
 
-11. After the app is submitted, the app status will change to **Submitted**. Now app reviewers can review it.
+11. After the app is submitted, the app status will change to **Submitted**. Now app reviewers can release it.
 
-### Step 3: Review the application
+### Step 3: Release the application
 
-1. Log out of KubeSphere and log back in as `reviewer`. Click **Platform** in the upper-left corner and select **App Store Management**. On the **App Review** page, the app submitted in the previous step displays under the tab **Unprocessed**.
+1. Log out of KubeSphere and log back in as `app-reviewer`. Click **Platform** in the upper-left corner and select **App Store Management**. On the **App Release** page, the app submitted in the previous step displays under the tab **Unreleased**.
 
-2. To review this app, click it to inspect the app information, introduction, chart file and update logs from the pop-up window.
+2. To release this app, click it to inspect the app information, introduction, chart file and update logs from the pop-up window.
 
 3. The reviewer needs to decide whether the app meets the release criteria on the App Store. Click **Pass** to approve it or **Reject** to deny an app submission.
 
@@ -108,11 +108,11 @@ The version number must start with a number and contain decimal points.
 
 After the app is approved, `isv` can release the Redis application to the App Store, allowing all users on the platform to find and deploy this application.
 
-1. Log out of KubeSphere and log back in as `isv`. Go to your workspace and click Redis on the **Template-Based apps** page. On its details page, expand the version menu, then click **Release to Store**. In the pop-up prompt, click **OK** to confirm.
+1. Log out of KubeSphere and log back in as `isv`. Go to your workspace and click Redis on the **Template-Based Apps** page. On its details page, expand the version menu, then click **Release to Store**. In the pop-up prompt, click **OK** to confirm.
 
-2. Under **App Review**, you can see the app status. **Active** means it is available in the App Store.
+2. Under **App Release**, you can see the app status. **Activated** means it is available in the App Store.
 
-3. Click **View in Store** to go to its **App Information** page in the App Store. Alternatively, click **App Store** in the upper-left corner, and you can also see the app.
+3. Click **View in Store** to go to its **Versions** page in the App Store. Alternatively, click **App Store** in the upper-left corner, and you can also see the app.
 
    {{< notice note >}}
 
@@ -120,19 +120,19 @@ After the app is approved, `isv` can release the Redis application to the App St
 
    {{</ notice >}} 
 
-4. Now, users in the workspace can deploy Redis from the App Store. To deploy the app to Kubernetes, click the app to go to its **App Information** page, and click **Deploy**.
+4. Now, users in the workspace can install Redis from the App Store. To install the app to Kubernetes, click the app to go to its **App Information** page, and click **Install**.
    
    {{< notice note >}}
    
-   If you have trouble deploying an application and the **Status** column shows **Failed**, you can hover your cursor over the **Failed** icon to see the error message.
+   If you have trouble installing an application and the **Status** column shows **Failed**, you can hover your cursor over the **Failed** icon to see the error message.
    
    {{</ notice >}}
 
 ### Step 5: Create an application category
 
-`reviewer` can create multiple categories for different types of applications based on their function and usage. It is similar to setting tags and categories can be used in the App Store as filters, such as Big Data, Middleware, and IoT.
+`app-reviewer` can create multiple categories for different types of applications based on their function and usage. It is similar to setting tags and categories can be used in the App Store as filters, such as Big Data, Middleware, and IoT.
 
-1. Log in to KubeSphere as `reviewer`. To create a category, go to the **App Store Management** page and click <img src="/images/docs/appstore/application-lifecycle-management/plus.png" height="20px"> in **App Categories**.
+1. Log in to KubeSphere as `app-reviewer`. To create a category, go to the **App Store Management** page and click <img src="/images/docs/appstore/application-lifecycle-management/plus.png" height="20px"> in **App Categories**.
 
 2. Set a name and icon for the category in the dialog, then click **OK**. For Redis, you can enter `Database` for the field **Name**.
 
@@ -152,11 +152,11 @@ After the app is approved, `isv` can release the Redis application to the App St
 
 To allow workspace users to upgrade apps, you need to add new app versions to KubeSphere first. Follow the steps below to add a new version for the example app.
 
-1. Log in to KubeSphere as `isv` again and navigate to **Template-based apps**. Click the app Redis in the list.
+1. Log in to KubeSphere as `isv` again and navigate to **Template-Based Apps**. Click the app Redis in the list.
 
 2. Download [Redis 12.0.0](https://github.com/kubesphere/tutorial/raw/master/tutorial%205%20-%20app-store/redis-12.0.0.tgz), which is a new version of Redis for demonstration in this tutorial. On the tab **Versions**, click **New Version** on the right to upload the package you just downloaded.
 
-3. Click **Upload Helm Chart Package** and click **OK** after it is uploaded.
+3. Click **Upload Helm Chart** and click **OK** after it is uploaded.
 
 4. The new app version displays in the version list. You can click it to expand the menu and test the new version. Besides, you can also submit it for review and release it to the App Store, which is the same as the steps shown above.
 
@@ -188,7 +188,7 @@ To follow the steps below, you must deploy an app of one of its old versions fir
 
 You can choose to remove an app entirely from the App Store or suspend a specific app version.
 
-1. Log in to KubeSphere as `reviewer`. Click **Platform** in the upper-left corner and select **App Store Management**. On the **App Store** page, click Redis.
+1. Log in to KubeSphere as `app-reviewer`. Click **Platform** in the upper-left corner and select **App Store Management**. On the **App Store** page, click Redis.
 
 2. On the detail page, click **Suspend App** and select **OK** in the dialog to confirm the operation to remove the app from the App Store.
 

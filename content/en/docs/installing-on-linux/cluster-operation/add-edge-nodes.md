@@ -100,7 +100,7 @@ To make sure edge nodes can successfully talk to your cluster, you must forward 
 
    {{</ notice >}} 
 
-3. Click **Add Node**. In the dialog that appears, set a node name and enter an internal IP address of your edge node. Click **Validate** to continue.
+3. Click **Add**. In the dialog that appears, set a node name and enter an internal IP address of your edge node. Click **Validate** to continue.
 
    {{< notice note >}} 
 

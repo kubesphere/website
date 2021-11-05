@@ -20,15 +20,15 @@ This tutorial walks you through an example of how to deploy RabbitMQ from the Ap
 
 1. On the **Overview** page of the project `demo-project`, click **App Store** in the top-left corner.
 
-2. Find RabbitMQ and click **Deploy** on the **App Information** page.
+2. Find RabbitMQ and click **Install** on the **App Information** page.
 
 3. Set a name and select an app version. Make sure RabbitMQ is deployed in `demo-project` and click **Next**.
 
-4. In **App Settings**, you can use the default settings directly or customize the settings either by specifying fields in a form or editing the YAML file. Record the value of **Root Username** and the value of **Root Password**, which will be used later for login. Click **Deploy** to continue.
+4. In **App Settings**, you can use the default settings directly or customize the settings either by specifying fields in a form or editing the YAML file. Record the value of **Root Username** and the value of **Root Password**, which will be used later for login. Click **Install** to continue.
 
    {{< notice tip >}}
 
-   To see the manifest file, toggle the **YAML** switch.
+   To see the manifest file, toggle the **Edit YAML** switch.
 
    {{</ notice >}}
 

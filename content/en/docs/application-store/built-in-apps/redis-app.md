@@ -21,11 +21,11 @@ This tutorial walks you through an example of deploying Redis from the App Store
 
 1. On the **Overview** page of the project `demo-project`, click **App Store** in the upper-left corner.
 
-2. Find Redis and click **Deploy** on the **App Information** page.
+2. Find Redis and click **Install** on the **App Information** page.
 
 3. Set a name and select an app version. Make sure Redis is deployed in `demo-project` and click **Next**.
 
-4. In **App Settings**, specify persistent volumes and a password for the app. When you finish, click **Deploy**.
+4. In **App Settings**, specify persistent volumes and a password for the app. When you finish, click **Install**.
 
    {{< notice note >}}
 

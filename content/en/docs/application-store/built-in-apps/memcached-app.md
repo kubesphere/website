@@ -20,11 +20,11 @@ This tutorial walks you through an example of deploying Memcached from the App S
 
 1. On the **Overview** page of the project `demo-project`, click **App Store** in the upper-left corner.
 
-2. Find Memcached and click **Deploy** on the **App Information** page.
+2. Find Memcached and click **Install** on the **App Information** page.
 
 3. Set a name and select an app version. Make sure Memcached is deployed in `demo-project` and click **Next**.
 
-4. In **App Settings**, you can use the default configuration or customize the configuration by editing the YAML file directly. Click **Deploy** to continue.
+4. In **App Settings**, you can use the default configuration or customize the configuration by editing the YAML file directly. Click **Install** to continue.
 
 5. Wait until Memcached is up and running.
 

@@ -30,13 +30,13 @@ This tutorial demonstrates how to manage projects and multi-cluster projects.
 
     {{</ notice >}}
 
-2. In the **Create Project** window that appears, enter a project name and add an alias or description if necessary. Under **Cluster Settings**, select the cluster where the project will be created (this option does not appear if the multi-cluster feature is not enabled), and click **OK**.
+2. In the **Create Project** window that appears, enter a project name and add an alias or description if necessary. Under **Cluster**, select the cluster where the project will be created (this option does not appear if the multi-cluster feature is not enabled), and click **OK**.
 
 3. A project created will display in the list. You can click the project name to go to its **Overview** page.
 
 ### Edit a project
 
-1. Go to your project, navigate to **Basic Information** under **Project Settings** and click **Manage Project** on the right.
+1. Go to your project, navigate to **Basic Information** under **Project Settings** and click **Manage** on the right.
 
 2. Choose **Edit Information** from the drop-down menu.
    
@@ -46,7 +46,7 @@ The project name cannot be edited. If you want to change other information, see 
 
 {{</ notice >}}
 
-3. To delete a project, choose **Delete Project** from the drop-down menu. In the dialog that appears, enter the project name and click **OK** to confirm the deletion.
+3. To delete a project, choose **Delete** from the drop-down menu. In the dialog that appears, enter the project name and click **OK** to confirm the deletion.
 
 {{< notice warning >}}
 
@@ -76,7 +76,7 @@ A project cannot be recovered once deleted and resources in the project will be 
 
 ### Edit a multi-cluster project
 
-1. Go to your multi-cluster project, navigate to **Basic Information** under **Project Settings** and click **Manage Project** on the right.
+1. Go to your multi-cluster project, navigate to **Basic Information** under **Project Settings** and click **Manage** on the right.
 
 2. Choose **Edit Information** from the drop-down menu.
 

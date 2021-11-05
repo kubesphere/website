@@ -166,6 +166,6 @@ You need to deploy KubeSphere on your EKS cluster first. For more information ab
 
 2. Enter the basic information based on your needs and click **Next**.
 
-3. In **Connection Method**, select **Direct Connection**. Fill in the new kubeconfig file of the EKS member cluster and then click **Create**.
+3. In **Connection Method**, select **Direct connection**. Fill in the new kubeconfig file of the EKS member cluster and then click **Create**.
 
 4. Wait for cluster initialization to finish.
