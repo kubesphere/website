@@ -20,7 +20,7 @@ snapshot: 'https://pek3b.qingstor.com/kubesphere-community/images/kubernetes-cli
 
 自定义控制器涉及到的 client-go 组件整体工作流程，大致如下图：
 
-![](https://pek3b.qingstor.com/kubesphere-community/images/client-go-Danielhu.png)
+![](https://pek3b.qingstor.com/kubesphere-community/images/kubernetes-client-go.png)
 
 今天我们来详细研究下 workqueue 相关代码。client-go 的 util/workqueue 包里主要有三个队列，分别是普通队列，延时队列，限速队列，后一个队列以前一个队列的实现为基础，层层添加新功能，我们按照 Queue、DelayingQueue、RateLimitingQueue 的顺序层层拨开来看限速队列是如何实现的。
 
