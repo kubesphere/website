@@ -14,7 +14,7 @@ snapshot: 'http://pek3b.qingstor.com/kubesphere-community/images/v3.2.0-GA-cover
 
 2021 年 11 月 3 日，KubeSphere 开源社区激动地向大家宣布，KubeSphere 3.2.0 正式发布！
 
-6 个月前，KubeSphere 3.1.0 带着 **“边缘计算”**、**“计量计费”** 等功能来炸场，将 Kubernetes 从云端扩展至边缘，更进一步完善交互设计提升了用户体验。3 个月前，KubeSphere 又发布了 v3.1.1，在部署 KubeSphere 时可以指定 Kubernetes 集群中已有的 Prometheus。
+6 个月前，KubeSphere 3.1.0 带着 **“边缘计算”**、**“计量计费”** 等功能，将 Kubernetes 从云端扩展至边缘，更进一步完善交互设计提升了用户体验。3 个月前，KubeSphere 又发布了 v3.1.1，在部署 KubeSphere 时可以指定 Kubernetes 集群中已有的 Prometheus。
 
 今天，KubeSphere 3.2.0 带来了更多令人期待的功能，新增了对 **“GPU 资源调度管理”** 与 GPU 使用监控的支持，进一步增强了在云原生 AI 场景的使用体验。同时还增强了 **“多集群管理、多租户管理、可观测性、DevOps、应用商店、微服务治理”** 等特性，更进一步完善交互设计，并全面提升了用户体验。
 
