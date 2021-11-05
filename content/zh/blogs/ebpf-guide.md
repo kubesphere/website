@@ -1,5 +1,5 @@
 ---
-title: 'eBPF 概述：第 1 部分：介绍'
+title: 'eBPF 概述，第 1 部分：介绍'
 tag: 'eBPF'
 keywords: 'eBPF'
 description: '有兴趣了解更多关于 eBPF 技术的底层细节？那么请继续移步，我们将深入研究 eBPF 的底层细节，从其虚拟机机制和工具，到在远程资源受限的嵌入式设备上运行跟踪。'
