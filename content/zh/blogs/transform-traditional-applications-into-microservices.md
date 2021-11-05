@@ -1,5 +1,5 @@
 ---
-title: '手把手教你将传统应用改造成微服务，启用流量治理功能'
+title: '将传统应用改造成微服务，启用流量治理功能'
 tag: 'KubeSphere, Kubernetes, 微服务'
 keywords: 'KubeSphere, Kubernetes, 微服务, 流量治理'
 description: '本文将告诉你，如何将一个传统应用转化成微服务，从而来享受 servicemesh 的各种功能，如“灰度发布”、“服务治理”、“流量拓扑”、Tracing 等功能。'
