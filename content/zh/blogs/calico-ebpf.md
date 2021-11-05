@@ -1,6 +1,6 @@
 ---
 title: '开启 Calico eBPF 数据平面实践'
-tag: 'Kubernetes,Calico,eBPF '
+tag: 'Kubernetes,Calico,eBPF'
 keywords: 'Kubernetes, Calico, eBPF'
 description: '在本篇文章中，我们将首先演示通过 KubeKey 创建一个标准的 K8s 集群，并切换数据平面到 eBPF，最后基于该数据平面做一个简单的演示。'
 createTime: '2021-06-24'
