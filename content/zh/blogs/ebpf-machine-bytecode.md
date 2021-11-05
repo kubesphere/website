@@ -1,7 +1,7 @@
 ---
 title: 'eBPF 概述，第二部分：机器和字节码'
-tag: 'Kubernetes,eBPF'
-keywords: 'Kubernetes, eBPF'
+tag: 'eBPF'
+keywords: 'eBPF'
 description: '本系列的第二部分更深入地研究了第一部分中研究的 eBPF VM 和程序。'
 createTime: '2021-10-21'
 author: 'Adrian Ratiu'
