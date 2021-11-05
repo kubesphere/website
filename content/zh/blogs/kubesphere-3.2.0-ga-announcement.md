@@ -5,7 +5,7 @@ keyword: '社区, 开源, 贡献, KubeSphere, release, AI, GPU'
 description: 'KubeSphere 3.2.0 新增了对“GPU 资源调度管理”与 GPU 使用监控的支持，进一步增强了在云原生 AI 场景的使用体验。同时还增强了“多集群管理、多租户管理、可观测性、DevOps、应用商店、微服务治理”等特性，更进一步完善交互设计，并全面提升了用户体验。'
 createTime: '2021-11-03'
 author: 'KubeSphere'
-snapshot: 'http://pek3b.qingstor.com/kubesphere-community/images/v3.2.0-GA-cover.png'
+snapshot: 'https://pek3b.qingstor.com/kubesphere-community/images/v3.2.0-GA-cover.png'
 ---
 
 ![](https://pek3b.qingstor.com/kubesphere-community/images/3.2.0GA.png)
@@ -40,11 +40,11 @@ KubeSphere 3.2.0 支持可视化创建 GPU 工作负载，支持调度 GPU 资�
 
 KubeSphere 自 v3.1.0 开始便添加了集群层级的自定义监控，可以选择默认模板、上传模板或自定义模板来生成自定义监控面板。KubeSphere 3.2.0 的默认模板加入了对 `Grafana` 的支持，可以通过指定监控面板 URL 或上传 Grafana 监控面板 JSON 文件来导入 Grafana 监控面板，KubeSphere 会自动将 Grafana 监控面板转换为 KubeSphere 的监控面板。
 
-![](http://pek3b.qingstor.com/kubesphere-community/images/202111031339897.png)
+![](https://pek3b.qingstor.com/kubesphere-community/images/202111031339897.png)
 
 针对 GPU 资源也提供了默认的监控模板，并提供了默认指标，减少了用户自定义创建模板编写 YAML 的配置成本。
 
-![](http://pek3b.qingstor.com/kubesphere-community/images/202111031336533.png)
+![](https://pek3b.qingstor.com/kubesphere-community/images/202111031336533.png)
 
 2. 告警通知与日志
 
@@ -60,13 +60,13 @@ KubeSphere 自 v3.1.0 开始便添加了集群层级的自定义监控，可以�
 
 随着 Kubernetes 在企业中的应用越来越广泛，CNCF 在 2020 年的用户调研中显示有将近 80% 的用户在生产环境运行 2 个以上 Kubernetes 集群。KubeSphere 旨在解决多集群和多云管理的难题，为用户提供统一的控制平面，将应用程序及其副本跨公有云和本地环境分发到多个集群。KubeSphere 还拥有跨集群的可观测性，包括多集群维度的监控、日志、事件和审计日志等。
 
-![](http://pek3b.qingstor.com/kubesphere-community/images/202111031148924.png)
+![](https://pek3b.qingstor.com/kubesphere-community/images/202111031148924.png)
 
 KubeSphere 3.2.0 在跨集群调度层面更进一步，创建跨集群的联邦部署（federatedDeployment） 时，KubeSphere 不仅支持将业务按不同副本数量调度到多个集群，还支持在其详情页指定在多个集群分发的副本总数，以及指定该业务的副本分发到多个集群的任意权重。当用户想要灵活扩展部署并且要将其多副本按不同比例灵活分发到多个集群时，这个功能会非常有用。
 
-![](http://pek3b.qingstor.com/kubesphere-community/images/202111031144251.png)
+![](https://pek3b.qingstor.com/kubesphere-community/images/202111031144251.png)
 
-![](http://pek3b.qingstor.com/kubesphere-community/images/202111031147569.png)
+![](https://pek3b.qingstor.com/kubesphere-community/images/202111031147569.png)
 
 ### 运维友好的存储管理
 
@@ -106,7 +106,7 @@ KubeSphere 3.2.0 开始支持集群级别的全局网关，所有项目可共用
 
 KubeSphere 3.2.0 新增了 **“动态加载应用商店”** 的功能，合作伙伴可申请将应用的 Helm Chart 集成到 KubeSphere 应用商店，相关的 Pull Request 被合并后，KubeSphere 应用商店即可动态加载应用，不再受到 KubeSphere 版本的限制。KubeSphere 应用商店内置的 Chart 地址为：[https://github.com/kubesphere/helm-charts](https://github.com/kubesphere/helm-charts "https://github.com/kubesphere/helm-charts")，欢迎社区合作伙伴来提交 Helm 应用，比如 Nocalhost 和 Chaos Mesh 已经通过这种方式将 Helm Chart 集成到了 KubeSphere 3.2.0，方便用户一键部署应用至 Kubernetes。
 
-![](http://pek3b.qingstor.com/kubesphere-community/images/202111031129842.png)
+![](https://pek3b.qingstor.com/kubesphere-community/images/202111031129842.png)
 
 ### KubeSphere DevOps 更加独立
 
@@ -141,4 +141,4 @@ SIG Docs 成员也对 Console 界面的中英文文案进行了全面的重构�
 
 以下是参与 KubeSphere 3.2.0 代码与文档贡献的贡献者 GitHub ID，若此名单有遗漏请您与我们联系，排名不分先后。
 
-![](http://pek3b.qingstor.com/kubesphere-community/images/v3.2.0-contributors.png)
+![](https://pek3b.qingstor.com/kubesphere-community/images/v3.2.0-contributors.png)
