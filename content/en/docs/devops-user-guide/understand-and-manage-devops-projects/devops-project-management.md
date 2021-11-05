@@ -17,26 +17,18 @@ This tutorial demonstrates how to create and manage DevOps projects.
 
 1. Log in to the console of KubeSphere as `project-admin`. Go to **DevOps Projects** and click **Create**.
 
-   ![devops-project-create](/images/docs/devops-user-guide/understand-and-manage-devops-projects/devops-project-management/devops-project-create.png) 
-
 2. Provide the basic information for the DevOps project and click **OK**.
-
-   ![create-devops](/images/docs/devops-user-guide/understand-and-manage-devops-projects/devops-project-management/create-devops.png)
 
    - **Name**: A concise and clear name for this DevOps project, which is convenient for users to identify, such as `demo-devops`.
    - **Alias**: The alias name of the DevOps project.
    - **Description**: A brief introduction to the DevOps project.
    - **Cluster Settings**: In the current version, a DevOps project cannot run across multiple clusters at the same time. If you have enabled [the multi-cluster feature](../../../multicluster-management/), you must select the cluster where your DevOps project runs.
 
-3. A DevOps project will appear in the list below after created.
-
-   ![devops-list](/images/docs/devops-user-guide/understand-and-manage-devops-projects/devops-project-management/devops-list.png)
+3. A DevOps project is displayed in the list below after created.
 
 ## View a DevOps Project
 
-Click the DevOps project just created to go to its detail page. Tenants with different permissions are allowed to perform various tasks in a DevOps project, including creating CI/CD pipelines and credentials, and managing accounts and roles. 
-
-![devops-detail-page](/images/docs/devops-user-guide/understand-and-manage-devops-projects/devops-project-management/devops-detail-page.png)
+Click the DevOps project just created to go to its details page. Tenants with different permissions are allowed to perform various tasks in a DevOps project, including creating CI/CD pipelines and credentials, and managing accounts and roles. 
 
 ### Pipelines
 
@@ -52,8 +44,6 @@ Similar to a project, a DevOps project also requires users to be granted differe
 
 ## Edit or Delete a DevOps Project
 
-1. Click **Basic Information** under **Project Management**, and you can see an overview of the current DevOps project, including the number of project roles and members, project name and project creator.
+1. Click **Basic Information** under **DevOps Project Settings**, and you can see an overview of the current DevOps project, including the number of project roles and members, project name and project creator.
 
-2. Click **Project Management** on the right, and you can edit the basic information of the DevOps project or delete it.
-
-   ![project-basic-info](/images/docs/devops-user-guide/understand-and-manage-devops-projects/devops-project-management/project-basic-info.png)
+2. Click **Manage** on the right, and you can edit the basic information of the DevOps project or delete it.

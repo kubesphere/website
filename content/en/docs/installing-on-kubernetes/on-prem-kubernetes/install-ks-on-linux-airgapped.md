@@ -242,7 +242,7 @@ To access the console, make sure port 30880 is opened in your security group.
 
 ## Appendix
 
-### Image list of KubeSphere v3.2.0
+### Image list of KubeSphere 3.2.0
 
 ```txt
 ##kubesphere-images

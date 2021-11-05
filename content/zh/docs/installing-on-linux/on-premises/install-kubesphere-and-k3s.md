@@ -115,7 +115,7 @@ chmod +x kk
      controlPlaneEndpoint:
        domain: lb.kubesphere.local
        address: ""
-       port: 6443
+       port: "6443"
      kubernetes:
        version: v1.21.4-k3s
        imageRepo: kubesphere

@@ -16,22 +16,18 @@ DevOps 是一系列做法和工具，可以使 IT 和软件开发团队之间的
 
 ## 了解 KubeSphere DevOps
 
-KubeSphere DevOps 工程支持源代码管理工具，例如 GitHub、Git 和 SVN。用户可以通过图形编辑面板 (Jenkinsfile out of SCM) 构建 CI/CD 流水线，或者从代码仓库 (Jenkinsfile in SCM) 创建基于 Jenkinsfile 的流水线。
+KubeSphere DevOps 项目支持源代码管理工具，例如 GitHub、Git 和 SVN。用户可以通过图形编辑面板 (Jenkinsfile out of SCM) 构建 CI/CD 流水线，或者从代码仓库 (Jenkinsfile in SCM) 创建基于 Jenkinsfile 的流水线。
 
 ### 功能
 
 KubeSphere DevOps 系统为您提供以下功能：
 
-- 独立的 DevOps 工程，提供访问可控的 CI/CD 流水线。
+- 独立的 DevOps 项目，提供访问可控的 CI/CD 流水线。
 - 开箱即用的 DevOps 功能，无需复杂的 Jenkins 配置。
 - 支持 [Source-to-image (S2I)](../../../project-user-guide/image-builder/source-to-image/) 和 [Binary-to-image (B2I)](../../../project-user-guide/image-builder/binary-to-image/)，快速交付镜像。
 - [基于 Jenkinsfile 的流水线](../../../devops-user-guide/how-to-use/create-a-pipeline-using-jenkinsfile/)，提供一致的用户体验，支持多个代码仓库。
 - [图形编辑面板](../../../devops-user-guide/how-to-use/create-a-pipeline-using-graphical-editing-panel/)，用于创建流水线，学习成本低。
 - 强大的工具集成机制，例如 [SonarQube](../../../devops-user-guide/how-to-integrate/sonarqube/)，用于代码质量检查。
-
-![流水线列表](/images/docs/zh-cn/devops-user-guide/understand-and-manage-devops-projects/overview/pipeline-list-1.png)
-
-![SonarQube 详细结果](/images/docs/zh-cn/devops-user-guide/understand-and-manage-devops-projects/overview/sonarqube-result-detail.PNG)
 
 ### KubeSphere CI/CD 流水线工作流
 

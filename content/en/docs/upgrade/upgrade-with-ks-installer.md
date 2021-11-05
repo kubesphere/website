@@ -13,7 +13,7 @@ ks-installer is recommended for users whose Kubernetes clusters were not set up 
 - You need to have a KubeSphere cluster running v3.1.x. If your KubeSphere version is v3.0.0 or earlier, upgrade to v3.1.x first.
 - Read [Release Notes for 3.2.0](../../release/release-v320/) carefully.
 - Back up any important component beforehand.
-- Supported Kubernetes versions of KubeSphere v3.2.0: v1.19.x, v1.20.x, v1.21.x, and v1.22.x (experimental).
+- Supported Kubernetes versions of KubeSphere 3.2.0: v1.19.x, v1.20.x, v1.21.x, and v1.22.x (experimental).
 
 ## Apply ks-installer
 
@@ -25,5 +25,5 @@ kubectl apply -f https://github.com/kubesphere/ks-installer/releases/download/v3
 
 ## Enable Pluggable Components
 
-You can [enable new pluggable components](../../pluggable-components/overview/) of KubeSphere v3.2.0 after the upgrade to explore more features of the container platform.
+You can [enable new pluggable components](../../pluggable-components/overview/) of KubeSphere 3.2.0 after the upgrade to explore more features of the container platform.
 

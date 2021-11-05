@@ -29,10 +29,6 @@ The KubeSphere DevOps system provides you with the following features:
 - [Graphical editing panels](../../../devops-user-guide/how-to-use/create-a-pipeline-using-graphical-editing-panel/) to create pipelines with a low learning curve.
 - A powerful tool integration mechanism such as [SonarQube](../../../devops-user-guide/how-to-integrate/sonarqube/) for code quality check.
 
-![pipeline-list](/images/docs/devops-user-guide/understand-and-manage-devops-projects/overview/pipeline-list.png)
-
-![sonarqube-result-detail](/images/docs/devops-user-guide/understand-and-manage-devops-projects/overview/sonarqube-result-detail.jpg)
-
 ### KubeSphere CI/CD pipeline workflows
 
 A KubeSphere CI/CD pipeline runs on the back of the underlying Kubernetes Jenkins agents. These Jenkins agents can be dynamically scaled as they are dynamically provisioned or released based on the job status. The Jenkins master and agents run as Pods on KubeSphere nodes. The master runs on one of the nodes with its configuration data stored in a volume. Agents run across nodes while they may not be active all the time because they are created dynamically and deleted automatically as needed.
