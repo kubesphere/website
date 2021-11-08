@@ -8,6 +8,12 @@ weight: 15410
 
 KubeSphere 计量功能帮助您在不同层级追踪集群或企业空间中的资源消费。具有不同角色的租户只能看到其有权访问的数据。此外，您还可以为不同的资源设置价格以查看计费信息。
 
+## 视频演示
+
+<video controls="controls" style="width: 100% !important; height: auto !important;">
+  <source type="video/mp4" src="https://kubesphere-community.pek3b.qingstor.com/videos/KubeSphere-v3.1.x-tutorial-videos/zh/KS311_200P011C202110_%E8%AE%A1%E9%87%8F%E8%AE%A1%E8%B4%B9.mp4">
+</video>
+
 ## 准备工作 
 
 - 所有租户都可以访问**资源消费统计**模块，但每个租户可见的信息可能有所不同，可见信息具体取决于租户在所处层级上具有的角色。请注意，计量功能并非 KubeSphere 的可插拔组件，即只要您有一个 KubeSphere 集群，就可以使用该功能。对于新创建的集群，您需要等待大约一小时才能看到计量信息。

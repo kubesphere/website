@@ -8,6 +8,12 @@ weight: 8200
 
 KubeSphere 支持对集群 CPU、内存、网络和磁盘等资源的相关指标进行监控。在**集群状态监控**页面，您可以查看历史监控数据并根据不同资源的使用率对节点进行排序。
 
+## 视频演示
+
+<video controls="controls" style="width: 100% !important; height: auto !important;">
+  <source type="video/mp4" src="https://kubesphere-community.pek3b.qingstor.com/videos/KubeSphere-v3.1.x-tutorial-videos/zh/KS311_200P013C202111_%E9%9B%86%E7%BE%A4%E7%8A%B6%E6%80%81%E7%9B%91%E6%8E%A7.mp4">
+</video>
+
 ## 准备工作
 
 您需要一个被授予**集群管理**权限的帐户。例如，您可以直接用 `admin` 帐户登录控制台，或创建一个具有**集群管理**权限的角色然后将此角色授予一个帐户。
