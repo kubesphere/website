@@ -1,5 +1,5 @@
 ---
-title: 'eBPF 概述，第二部分：机器和字节码'
+title: 'eBPF 概述，第 2 部分：机器和字节码'
 tag: 'eBPF'
 keywords: 'eBPF'
 description: '本系列的第二部分更深入地研究了第一部分中研究的 eBPF VM 和程序。'
