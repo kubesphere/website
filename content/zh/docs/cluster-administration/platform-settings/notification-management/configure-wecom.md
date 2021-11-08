@@ -3,7 +3,7 @@ title: "配置企业微信通知"
 keywords: 'KubeSphere, Kubernetes, 企业微信, 通知, 告警'
 description: '配置企业微信通知并添加相应 ID 来接收告警通知消息。'
 linkTitle: "配置企业微信通知"
-weight: 8723
+weight: 8724
 ---
 
 本教程演示如何配置企业微信通知并添加相应 ID 来接收告警策略的通知。

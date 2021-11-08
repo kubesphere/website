@@ -1,9 +1,9 @@
 ---
 title: "配置 Webhook 通知"
-keywords: 'KubeSphere, Kubernetes, 自定义, 平台, webhook'
+keywords: 'KubeSphere, Kubernetes, 自定义, 平台, Webhook'
 description: '配置 webhook 服务器以通过 webhook 接收平台通知。'
 linkTitle: "配置 Webhook 通知"
-weight: 8725
+weight: 8726
 ---
 
 Webhook 是应用程序发送由特定事件触发的通知的一种方式，可以实时向其他应用程序发送信息，使用户可以立即接收通知。

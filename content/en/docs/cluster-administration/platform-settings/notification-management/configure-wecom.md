@@ -3,7 +3,7 @@ title: "Configure WeCom Notifications"
 keywords: 'KubeSphere, Kubernetes, WeCom, Alerting, Notification'
 description: 'Learn how to configure a WeCom server to receive platform notifications sent by KubeSphere.'
 linkTitle: "Configure WeCom Notifications"
-weight: 8723
+weight: 8724
 ---
 
 [WeCom](https://work.weixin.qq.com/) is a communication platform for enterprises that includes convenient communication and office automation tools.
@@ -12,7 +12,7 @@ This document describes how to configure a WeCom server to receive platform noti
 
 ## Prerequisites
 
-- You need to have a user with the `platform-admin` role, for example, the user `admin`. For more information, see [Create Workspaces, Projects, Accounts and Roles](../../../../quick-start/create-workspace-and-project/).
+- You need to have a user with the `platform-admin` role, for example, the `admin` user. For more information, see [Create Workspaces, Projects, Users and Roles](../../../../quick-start/create-workspace-and-project/).
 - You need to have a [WeCom account](https://work.weixin.qq.com/wework_admin/register_wx?from=myhome).
 - You need to create a self-built application on the [WeCom Admin Console](https://work.weixin.qq.com/wework_admin/loginpage_wx) and obtain its AgentId and Secret. 
 
