@@ -3,7 +3,7 @@ title: "Configure DingTalk Notifications"
 keywords: 'KubeSphere, Kubernetes, DingTalk, Alerting, Notification'
 description: 'Learn how to configure a Dingtalk conversation or chatbot to receive platform notifications sent by KubeSphere.'
 linkTitle: "Configure DingTalk Notifications"
-weight: 8722
+weight: 8723
 ---
 
 [DingTalk](https://www.dingtalk.com/en) is an enterprise-grade communication and collaboration platform. It integrates messaging, conference calling, task management, and other features into a single application.
@@ -12,7 +12,7 @@ This document describes how to configure a DingTalk conversation or chatbot to r
 
 ## Prerequisites
 
-- You need to have a user with the `platform-admin` role, for example, the user `admin`. For more information, see [Create Workspaces, Projects, Accounts and Roles](../../../../quick-start/create-workspace-and-project/).
+- You need to have a user with the `platform-admin` role, for example, the `admin` user. For more information, see [Create Workspaces, Projects, Users and Roles](../../../../quick-start/create-workspace-and-project/).
 - You need to have a DingTalk account.
 - You need to create an applet on [DingTalk Admin Panel](https://oa.dingtalk.com/index.htm#/microApp/microAppList) and make necessary configurations according to [DingTalk API documentation](https://developers.dingtalk.com/document/app/create-group-session).
 

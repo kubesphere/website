@@ -3,7 +3,7 @@ title: "Configure Slack Notifications"
 keywords: 'KubeSphere, Kubernetes, Slack, notifications'
 description: 'Configure Slack notifications and add channels to receive notifications from alerting policies, kube-events, and kube-auditing.'
 linkTitle: "Configure Slack Notifications"
-weight: 8724
+weight: 8725
 ---
 
 This tutorial demonstrates how to configure Slack notifications and add channels, which can receive notifications for alerting policies.
