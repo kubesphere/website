@@ -6,7 +6,7 @@ css: scss/live-detail.scss
 
 section1:
   snapshot: 
-  videoUrl: 
+  videoUrl: //player.bilibili.com/player.html?aid=633965485&bvid=BV1Gb4y187un&cid=436661201&page=1&high_quality=1
   type: iframe
   time: 2021-11-04 20:00-21:00
   timeIcon: /images/live/clock.svg
@@ -49,4 +49,7 @@ section1:
 
 B 站  http://live.bilibili.com/22580654
 
+## PPT 下载
+
+可扫描官网底部二维码，关注 「KubeSphere云原生」公众号，后台回复 `20211104` 即可下载 PPT。
 
