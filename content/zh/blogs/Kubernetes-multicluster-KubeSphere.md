@@ -68,7 +68,7 @@ Kubernetes 内部分为 Master 和 Worker 两个角色。Master 上面有 API Se
 ![](https://pek3b.qingstor.com/kubesphere-community/images/联邦资源.png)
 
 当然 Kubefed 也不是银弹，也有其一定的局限性。从前面可以看到，其 API 定义复杂，容易出错，也只能使用 kubefedctl 加入和解绑集群，没有提供单独的 SDK。再就是它要求控制层集群到管控集群必须网络可达，单集群到多集群需要改造 API，旧版本也不支持联邦资源的状态收集。
-## KubeShere On Kubefed
+## KubeSphere On Kubefed
 
 接下来我们看看 KubeSphere 基于 Kubefed 如何实现并简化了多集群管理。
 
@@ -134,5 +134,4 @@ Virtual Kubelet 可以帮助你把自己的服务伪装成一个 Kubernetes 的�
 ![](https://pek3b.qingstor.com/kubesphere-community/images/API-transparency.png)
 
 在 Liqo 里面，集群之间不存在联邦关系，左图里在 Kubefed 架构下 k2、k3 两个集群是 k1 的成员集群，资源下方需要经过一次 k1 的 push，而在右边的图里面，k2、k3 只是 k1 的一个节点，因此在部署应用的时候，完全不需要引入任何的 API，k2、k3 看起来就是 k1 的节点，这样业务就可以无感知的被部署到不同的集群上去，极大减少了单集群到多集群改造的复杂性。现在 Liqo 属于刚起步阶段，目前不支持两个集群以上的拓扑，在未来 KubeSphere 也会持续关注开源领域的一些其他的多集群管理方案。
-
 
