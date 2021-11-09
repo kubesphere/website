@@ -20,9 +20,9 @@ In this article, we will introduce the deployment of Kasten K10 on KubeSphere.
 
 ## Provision a KubeSphere Cluster
 
-This article will introduce how to deploy Kasten on on KubeSphere Container Platform. You can install KubeSphere on any Kubernetes cluster or Linux system, refer to [KubeSphere documentation](https://kubesphere.io/docs/quick-start/all-in-one-on-linux/) for more details or vist the [Github]( https://github.com/kubesphere/website) of KubeSphere.
+This article will introduce how to deploy Kasten on KubeSphere Container Platform. You can install KubeSphere on any Kubernetes cluster or Linux system, refer to [KubeSphere documentation](https://kubesphere.io/docs/quick-start/all-in-one-on-linux/) for more details or vist the [Github]( https://github.com/kubesphere/website) of KubeSphere.
 
-After the creation of KubeSphere cluster, you can log in to KubeSphere web console:
+After the creation of KubeSphere cluster, you can log in to the KubeSphere web console:
 
 ![web console](/images/blogs/en/kastenk10image/kastenk10-step3.png)
 Click the button  "Platform" in the upper left corner and then select "Access Control"; Create a new workspace called Kasten-Workspace.
@@ -34,7 +34,7 @@ Enter "Kasten-workspace" and select "App Repositoties"; Add an application repos
 Add the official Helm Repository of Kasten to KubeSphere. **Helm repository address**[2]：`https://charts.kasten.io/`
 
 ![official helm repository](/images/blogs/en/kastenk10image/kastenk10-step6.png)
-Once completed, the repository will find its status be "successful".
+Once completed, the repository will find its status to be "successful".
 
 ![successful status](/images/blogs/en/kastenk10image/kastenk10-step7.png)
 ## Deploy Kasten K10 on Kubernetes to Backup and Restore Cluster
@@ -76,7 +76,7 @@ global:
     create: "true"
     class: "nginx"
   ```
-Click "Deploy" and wait the status to turn into "running".
+Click "Deploy" and wait for the status to turn into "running".
 ![apps](/images/blogs/en/kastenk10image/kastenk10-step13.png)
 Click "Deployment" to check if Kasten has deployed workload and is in running status.
 
@@ -93,7 +93,7 @@ In “Application Workloads” - “Routes” page, we can find the Gateway of I
 Input `https://192.168.99.100/k10/#`  to the browser for the following log-in interface; Input the company and e-mail address to sign up.
 ![login page](/images/blogs/en/kastenk10image/kastenk10-step16.png)
 
-Set the locations for storing our backup data. In this case S3 compatible storage is selected.
+Set the locations for storing our backup data. In this case, S3 compatible storage is selected.
 
 ![settings1](/images/blogs/en/kastenk10image/kastenk10-step17.png)
 
@@ -105,7 +105,7 @@ Finally, start "K10 Disaster Recovery" and we can start to set "Disaster Recover
 
 ## Deploy Cloud Native Applications on Kubernetes
 
-Kasten Dashboard holds 16 applications, which are shown as follows. We can create a Wordpress application with a Wordpress Pod and Mysql Pod, a typical application that is partly stateful and partly stateless. Here are the steps.
+Kasten Dashboard holds 16 applications, which are shown as follows. We can create a WordPress application with a WordPress Pod and Mysql Pod, a typical application that is partly stateful and partly stateless. Here are the steps.
 
 ![kasten dashboard1](/images/blogs/en/kastenk10image/kastenk10-step19.png)
 
@@ -149,7 +149,7 @@ In addition, applications of the WordPress can also be find in "Applications".
 
 ## Back Up Cloud Native Applications
 
-Click "Create Policy" and create a data backup strategy. In such case, Kasten can protect applications by creating local snapshot, and back up the application data to cloud, thus to realize the long-term retention of data.
+Click "Create Policy" and create a data backup strategy. In such a case, Kasten can protect applications by creating local snapshot, and back up the application data to cloud, thus to realize the long-term retention of data.
 ![create policy](/images/blogs/en/kastenk10image/kastenk10-step22.png)
 
 Click "Run Once" to start backup.
@@ -183,7 +183,7 @@ In KubeSphere Dashboard, we can find these applications recovered are running.
 
 ## Summary
 
-As a container platform, KubeSphere excels in cloud native application deployment. For application developers who are not familiar with Kubernetes and hope to make simple configuration to deploy Kasten, it is easy to follow the above steps and deploy Kasten with KubeSphere. KubeSphere helps to directly deploy the official Helm repository of Kasten K10, which performs well in data management, including backup, migration and disaster recovery.
+As a container platform, KubeSphere excels in cloud native application deployment. For application developers who are not familiar with Kubernetes and hope to make simple configurations to deploy Kasten, it is easy to follow the above steps and deploy Kasten with KubeSphere. KubeSphere helps to directly deploy the official Helm repository of Kasten K10, which performs well in data management, including backup, migration and disaster recovery.
 
 
 ### Reference
