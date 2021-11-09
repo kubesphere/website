@@ -153,7 +153,7 @@ spec:
     
     domain: lb.kubesphere.local
     address: "192.168.0.xx"
-    port: "6443"
+    port: 6443
 ```
 
 {{< notice note >}}
