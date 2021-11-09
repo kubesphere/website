@@ -48,10 +48,10 @@ This example pipeline includes the following six stages.
 
    {{</ notice >}} 
 
-   | Credential ID   | Type                | Where to use |
-   | --------------- | ------------------- | ------------ |
-   | dockerhub-id    | Account Credentials | Docker Hub   |
-   | demo-kubeconfig | kubeconfig          | Kubernetes   |
+   | Credential ID   | Type                  | Where to use |
+   | --------------- | --------------------- | ------------ |
+   | dockerhub-id    | Username and password | Docker Hub   |
+   | demo-kubeconfig | kubeconfig            | Kubernetes   |
 
 2. You need to create an additional credential ID (`sonar-token`) for SonarQube, which is used in stage 3 (Code analysis) mentioned above. Refer to [Create SonarQube Token for New Project](../../../devops-user-guide/how-to-integrate/sonarqube/#create-sonarqube-token-for-new-project) to enter your SonarQube token in the **Token** field for a credential of the **Access token** type. Click **OK** to finish.
 
@@ -241,7 +241,7 @@ This stage uses SonarQube to test your code. You can skip this stage if you do n
 
 5. Click **Add Nesting Steps** again and select **withCredentials**. Fill in the following fields in the displayed dialog box. Click **OK** to confirm.
 
-   - **Name**: Select the Docker Hub credentials you created, such as `dockerhub-id`.
+   - **Credential Name**: Select the Docker Hub credentials you created, such as `dockerhub-id`.
    - **Password Variable**: Enter `DOCKER_PASSWORD`.
    - **Username Variable**: Enter `DOCKER_USERNAME`.
 
@@ -310,7 +310,7 @@ This stage uses SonarQube to test your code. You can skip this stage if you do n
 
    {{</ notice >}} 
 
-5. When you finish the steps above, click **Confirm** and **Save** in the lower-right corner. You can see the pipeline now has a complete workflow with each stage clearly listed on the pipeline. When you define a pipeline using the graphical editing panel, KubeSphere automatically creates its corresponding Jenkinsfile. Click **Edit Jenkinsfile** to view the Jenkinsfile.
+5. When you finish the steps above, click **Save** in the lower-right corner. You can see the pipeline now has a complete workflow with each stage clearly listed on the pipeline. When you define a pipeline using the graphical editing panel, KubeSphere automatically creates its corresponding Jenkinsfile. Click **Edit Jenkinsfile** to view the Jenkinsfile.
 
    ![pipeline-done](/images/docs/devops-user-guide/using-devops/create-a-pipeline-using-graphical-editing-panels/pipeline-done.png)
    

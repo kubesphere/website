@@ -28,7 +28,7 @@ The table below summarizes common volume plugins for various provisioners (stora
 
 ## Prerequisites
 
-You need a user granted a role including the authorization of **Cluster Management**. For example, you can log in to the console as `admin` directly or create a new role with the authorization and assign it to a user.
+You need a user granted a role including the permission of **Cluster Management**. For example, you can log in to the console as `admin` directly or create a new role with the permission and assign it to a user.
 
 ## Manage Storage Classes
 
@@ -50,10 +50,11 @@ Here are parameter descriptions of some commonly used fields in KubeSphere.
 
 | Parameter | Description |
 | :---- | :---- |
-| Volume Expansion Allowed | Specified by `allowVolumeExpansion` in the manifest. When it is set to `true`, PVs can be configured to be expandable. For more information, see [Allow Volume Expansion](https://kubernetes.io/docs/concepts/storage/storage-classes/#allow-volume-expansion). |
+| Volume Expansion | Specified by `allowVolumeExpansion` in the manifest. When it is set to `true`, PVs can be configured to be expandable. For more information, see [Allow Volume Expansion](https://kubernetes.io/docs/concepts/storage/storage-classes/#allow-volume-expansion). |
 | Reclaim Policy | Specified by `reclaimPolicy` in the manifest. For more information, see [Reclaim Policy](https://kubernetes.io/docs/concepts/storage/storage-classes/#reclaim-policy). |
 | Storage System | Specified by `provisioner` in the manifest. It determines what volume plugin is used for provisioning PVs. For more information, see [Provisioner](https://kubernetes.io/docs/concepts/storage/storage-classes/#provisioner). |
-| Supported Access Mode | Specified by `metadata.annotations[storageclass.kubesphere.io/supported-access-modes]` in the manifest. It tells KubeSphere which [access mode](https://kubernetes.io/docs/concepts/storage/persistent-volumes/#access-modes) is supported. |
+| Access Mode | Specified by `metadata.annotations[storageclass.kubesphere.io/supported-access-modes]` in the manifest. It tells KubeSphere which [access mode](https://kubernetes.io/docs/concepts/storage/persistent-volumes/#access-modes) is supported. |
+| Volume Binding Mode | Specified by `volumeBindingMode` in the manifest. It determines what binding mode is used. **Delayed binding** means that a volume, after it is created, is bound to a volume instance when a Pod using this volume is created. **Immediate binding** means that a volume, after it is created, is immediately bound to a volume instance. |
 
 For other settings, you need to provide different information for different storage plugins, which, in the manifest, are always indicated under the field `parameters`. They will be described in detail in the sections below. You can also refer to [Parameters](https://kubernetes.io/docs/concepts/storage/storage-classes/#parameters) in the official documentation of Kubernetes.
 
@@ -158,16 +159,27 @@ It is not recommended that you use NFS storage for production (especially on Kub
 
 | Parameter | Description |
 | :---- | :---- |
-| Storage System | Specified by `provisioner` in the manifest. If you install the storage class by [charts for nfs-client](https://github.com/kubesphere/helm-charts/tree/master/src/main/nfs-client-provisioner), it can be `cluster.local/nfs-client-nfs-client-provisioner`. |
-| Volume Expansion Allowed | Specified by `allowVolumeExpansion` in the manifest. Select `No`. |
+| Volume Expansion | Specified by `allowVolumeExpansion` in the manifest. Select `No`. |
 | Reclaim Policy | Specified by `reclaimPolicy` in the manifest. The value is `Delete` by default. |
-| Supported Access Mode | Specified by `.metadata.annotations.storageclass.kubesphere.io/supported-access-modes` in the manifest. `ReadWriteOnce`, `ReadOnlyMany` and `ReadWriteMany` all are selected by default. |
+| Storage System | Specified by `provisioner` in the manifest. If you install the storage class by [charts for nfs-client](https://github.com/kubesphere/helm-charts/tree/master/src/main/nfs-client-provisioner), it can be `cluster.local/nfs-client-nfs-client-provisioner`. |
+| Access Mode | Specified by `.metadata.annotations.storageclass.kubesphere.io/supported-access-modes` in the manifest. `ReadWriteOnce`, `ReadOnlyMany` and `ReadWriteMany` are all selected by default. |
+| Volume Binding Mode | Specified by `volumeBindingMode` in the manifest. It determines what binding mode is used. **Delayed binding** means that a volume, after it is created, is bound to a volume instance when a Pod using this volume is created. **Immediate binding** means that a volume, after it is created, is immediately bound to a volume instance. |
 
 #### Parameters
 
 | Key| Description | Value |
 | :---- | :---- |  :----|
 | archiveOnDelete | Archive pvc when deleting | `true` |
+
+### Storage class details page
+
+After you create a storage class, click the name of the storage class to go to its details page. On the details page, click **Edit YAML** to edit the manifest file of the storage class, or click **More** to select an operation from the drop-down menu:
+
+- **Set as Default Storage Class**: Set the storage class as the default storage class in the cluster. Only one default storage class is allowed in a KubeSphere cluster.
+- **Volume Management**: Manage volume features, including: **Volume Clone**, **Volume Snapshot**, and **Volume Expansion**. Before enabling any features, you should contact your system administrator to confirm that the features are supported by the storage system.
+- **Delete**: Delete the storage class and return to the previous page.
+
+On the **Volumes** tab, view the volumes associated to the storage class. 
 
 ## Manage Volumes
 

@@ -48,10 +48,11 @@ KubeSphere 支持基于存储类型的[动态卷供应](https://kubernetes.io/zh
 
 | 参数 | 描述 |
 | :---- | :---- |
-| 允许存储卷扩容 | 在清单文件中由 `allowVolumeExpansion` 指定。若设置为 `true`，PV 则被配置为可扩容。有关更多信息，请参见[允许卷扩展](https://kubernetes.io/zh/docs/concepts/storage/storage-classes/#允许卷扩展)。 |
+| 存储卷扩容 | 在清单文件中由 `allowVolumeExpansion` 指定。若设置为 `true`，PV 则被配置为可扩容。有关更多信息，请参见[允许卷扩展](https://kubernetes.io/zh/docs/concepts/storage/storage-classes/#允许卷扩展)。 |
 | 回收机制 | 在清单文件中由 `reclaimPolicy` 指定。可设置为 `Delete` 或 `Retain`（默认）。有关更多信息，请参见[回收策略](https://kubernetes.io/zh/docs/concepts/storage/storage-classes/#回收策略)。 |
 | 存储系统 | 在清单文件中由 `provisioner` 指定。它决定使用什么存储卷插件来供应 PV。有关更多信息，请参见 [Provisioner](https://kubernetes.io/zh/docs/concepts/storage/storage-classes/#provisioner)。 |
-| 支持的访问模式 | 在清单文件中由 `metadata.annotations[storageclass.kubesphere.io/supported-access-modes]` 指定。它会向 KubeSphere 表明支持的[访问模式](https://kubernetes.io/zh/docs/concepts/storage/persistent-volumes/#access-modes)。 |
+| 访问模式 | 在清单文件中由 `metadata.annotations[storageclass.kubesphere.io/supported-access-modes]` 指定。它会向 KubeSphere 表明支持的[访问模式](https://kubernetes.io/zh/docs/concepts/storage/persistent-volumes/#access-modes)。 |
+| 存储卷绑定模式 | 在清单文件中由 `volumeBindingMode` 指定。它决定使用何种绑定模式。**延迟绑定**即存储卷创建后，当使用此存储卷的容器组被创建时，此存储卷绑定到一个存储卷实例。**立即绑定**即存储卷创建后，立即绑定到一个存储卷实例。 |
 
 对于其他设置，您需要为不同的存储插件提供不同的信息，它们都显示在清单文件的 `parameters` 字段下。下面将进行详细说明，您也可以参考 Kubernetes 官方文档的[参数](https://kubernetes.io/zh/docs/concepts/storage/storage-classes/#参数)部分。
 
@@ -153,16 +154,27 @@ NFS（网络文件系统）广泛用于带有 [NFS-Client](https://github.com/ku
 
 | 参数 | 描述信息 |
 | :---- | :---- |
-| 存储系统 | 在清单文件中由 `provisioner` 指定。如果您使用 [NFS-Client 的 Chart](https://github.com/kubesphere/helm-charts/tree/master/src/main/nfs-client-provisioner) 来安装存储类型，可以设为 `cluster.local/nfs-client-nfs-client-provisioner`。 |
-| 允许存储卷扩容 | 在清单文件中由 `allowVolumeExpansion` 指定。选择 `No`。 |
+| 存储卷扩容 | 在清单文件中由 `allowVolumeExpansion` 指定。选择`否`。 |
 | 回收机制 | 在清单文件中由 `reclaimPolicy` 指定。 |
-| 支持的访问模式 | 在清单文件中由 `.metadata.annotations.storageclass.kubesphere.io/supported-access-modes` 指定。默认 `ReadWriteOnce`、`ReadOnlyMany` 和 `ReadWriteMany` 全选。 |
+| 存储系统 | 在清单文件中由 `provisioner` 指定。如果您使用 [NFS-Client 的 Chart](https://github.com/kubesphere/helm-charts/tree/master/src/main/nfs-client-provisioner) 来安装存储类型，可以设为 `cluster.local/nfs-client-nfs-client-provisioner`。 |
+| 访问模式 | 在清单文件中由 `.metadata.annotations.storageclass.kubesphere.io/supported-access-modes` 指定。默认 `ReadWriteOnce`、`ReadOnlyMany` 和 `ReadWriteMany` 全选。 |
+| 存储卷绑定模式 | 在清单文件中由 `volumeBindingMode` 指定。它决定使用何种绑定模式。**延迟绑定**即存储卷创建后，当使用此存储卷的容器组被创建时，此存储卷绑定到一个存储卷实例。**立即绑定**即存储卷创建后，立即绑定到一个存储卷实例。 |
 
 #### 参数
 
 | 键 | 描述信息 | 值 |
 | :---- | :---- |  :----|
 | archiveOnDelete | 删除时存档 PVC | `true` |
+
+### 存储类型详情页
+
+创建存储类型后，点击此存储类型的名称前往其详情页。在详情页点击**编辑 YAML** 来编辑此存储类型的清单文件，或点击**更多操作**并在下拉菜单中选择一项操作：
+
+- **设为默认存储类型**：将此存储类型设为集群的默认存储类型。一个 KubeSphere 集群中仅允许设置一个默认存储类型。
+- **存储卷管理**：管理存储卷功能，包括：**存储卷克隆**、**存储卷快照**、**存储卷扩容**。开启任意功能前，请联系系统管理员确认存储系统是否支持这些功能。
+- **删除**：删除此存储类型并返回上一页。
+
+在**存储卷**页签上，查看与此存储类型相关联的存储卷。
 
 ## 管理存储卷
 
