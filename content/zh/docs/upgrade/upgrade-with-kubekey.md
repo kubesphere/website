@@ -14,7 +14,7 @@ weight: 7200
 ## 准备工作
 
 - 您需要有一个运行 KubeSphere v3.1.x 的集群。如果您的 KubeSphere 是 v3.0.0 或更早的版本，请先升级至 v3.1.x。
-- 请仔细阅读 [Release Notes for 3.2.0](../../release/release-v320/)。
+- 请仔细阅读 [3.2.0 版本说明](../../release/release-v320/)。
 - 提前备份所有重要的组件。
 - 确定您的升级方案。本文档中提供 [All-in-One 集群](#all-in-one-集群)和[多节点集群](#多节点集群)的两种升级场景。
 

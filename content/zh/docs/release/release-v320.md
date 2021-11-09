@@ -144,7 +144,7 @@ weight: 18100
 - 修复**创建配置字典**对话框中数据条目为空时锤子图标位置不正确的问题。（[#2206](https://github.com/kubesphere/console/pull/2206)，[@fuchunlan](https://github.com/fuchunlan)）
 - 修复项目**概览**页面时间范围下拉列表默认值显示错误的问题。（[#2340](https://github.com/kubesphere/console/pull/2340)，[@fuchunlan](https://github.com/fuchunlan)）
 - 修复 `referer` URL 包含 & 字符时登录重定向失败的问题。（[#2194](https://github.com/kubesphere/console/pull/2194)，[@harrisonliu5](https://github.com/harrisonliu5)）
-- 在自定义监控面板创建页面将 **1 hours** 修改为 **1 hours**。（[#2276](https://github.com/kubesphere/console/pull/2276)，[@live77](https://github.com/live77)）
+- 在自定义监控面板创建页面将 **1 hours** 修改为 **1 hour**。（[#2276](https://github.com/kubesphere/console/pull/2276)，[@live77](https://github.com/live77)）
 - 修复服务列表页面服务类型显示错误的问题。（[#2178](https://github.com/kubesphere/console/pull/2178), [@xuliwenwenwen](https://github.com/xuliwenwenwen)）
 - 修复灰度发布任务详细信息中流量数据显示错误的问题。（[#2422](https://github.com/kubesphere/console/pull/2422)，[@harrisonliu5](https://github.com/harrisonliu5)）
 - 解决**编辑项目配额**对话框中无法设置带两位小数或大于 8 的值的问题。（[#2127](https://github.com/kubesphere/console/pull/2127)，[@weili520](https://github.com/weili520)）
