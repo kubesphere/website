@@ -48,10 +48,10 @@ KubeSphere 中的图形编辑面板包含用于 Jenkins [阶段 (Stage)](https:/
 
    {{</ notice >}} 
 
-   | 凭证 ID         | 类型       | 用途       |
-   | --------------- | ---------- | ---------- |
-   | dockerhub-id    | 帐户凭证   | Docker Hub |
-   | demo-kubeconfig | kubeconfig | Kubernetes |
+   | 凭证 ID         | 类型         | 用途       |
+   | --------------- | ------------ | ---------- |
+   | dockerhub-id    | 用户名和密码 | Docker Hub |
+   | demo-kubeconfig | kubeconfig   | Kubernetes |
 
 2. 您还需要为 SonarQube 创建一个凭证 ID (`sonar-token`)，用于上述的阶段 3（代码分析）。请参阅[为新工程创建 SonarQube 令牌 (Token)](../../../devops-user-guide/how-to-integrate/sonarqube/#create-sonarqube-token-for-new-project)，在**访问令牌**类型的凭证的**令牌**字段中输入 SonarQube 令牌。点击**确定**完成操作。
 
@@ -241,7 +241,7 @@ KubeSphere 中的图形编辑面板包含用于 Jenkins [阶段 (Stage)](https:/
 
 5. 再次点击**添加嵌套步骤**，选择**添加凭证**。在弹出的对话框中填写以下字段，点击**确定**确认操作。
 
-   - **凭证 ID**：选择您创建的 Docker Hub 凭证，例如 `dockerhub-id`。
+   - **凭证名称**：选择您创建的 Docker Hub 凭证，例如 `dockerhub-id`。
    - **密码变量**：输入 `DOCKER_PASSWORD`。
    - **用户名变量**：输入 `DOCKER_USERNAME`。
 
@@ -310,7 +310,7 @@ KubeSphere 中的图形编辑面板包含用于 Jenkins [阶段 (Stage)](https:/
 
    {{</ notice >}} 
 
-5. 待您完成上述步骤，请在右下角点击**确定**和**保存**。随后，您可以看到该流水线有完整的工作流，并且每个阶段也清晰列示。当您用图形编辑面板定义流水线时，KubeSphere 会自动创建相应的 Jenkinsfile。点击**编辑 Jenkinsfile** 查看该 Jenkinsfile。
+5. 待您完成上述步骤，请在右下角点击**保存**。随后，您可以看到该流水线有完整的工作流，并且每个阶段也清晰列示。当您用图形编辑面板定义流水线时，KubeSphere 会自动创建相应的 Jenkinsfile。点击**编辑 Jenkinsfile** 查看该 Jenkinsfile。
 
    ![流水线设置完成](/images/docs/zh-cn/devops-user-guide/use-devops/create-a-pipeline-using-graphical-editing-panel/pipeline_done.png)
    

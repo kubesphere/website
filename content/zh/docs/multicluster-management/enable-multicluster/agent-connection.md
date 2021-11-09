@@ -172,7 +172,7 @@ tower      LoadBalancer    10.233.63.191   139.198.110.23  8080:30721/TCP       
 
 ## 准备成员集群
 
-为了通过 **主集群**管理成员集群，您需要使它们之间的 `jwtSecret` 相同。因此，您首先需要在 **主集群**中执行以下命令来获取它。
+为了通过**主集群**管理成员集群，您需要使它们之间的 `jwtSecret` 相同。因此，您首先需要在**主集群**中执行以下命令来获取它。
 
 ```bash
 kubectl -n kubesphere-system get cm kubesphere-config -o yaml | grep -v "apiVersion" | grep jwtSecret
