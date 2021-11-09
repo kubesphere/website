@@ -287,7 +287,7 @@ spec:
   controlPlaneEndpoint:
     domain: lb.kubesphere.local
     address: ""                    
-    port: "6443"
+    port: 6443
 ```
 执行以下命令使用自定义的配置文件创建集群：
 
