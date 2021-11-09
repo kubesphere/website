@@ -92,7 +92,7 @@ The GlusterFS storage system has already been installed. See [GlusterFS Installa
 
 | Parameter | Description |
 | :---- | :---- |
-| REST URL  | Heketi REST URL that provisions volumes, for example, <Heketi Service cluster IP Address>:<Heketi Service port number>. |
+| REST URL  | Heketi REST URL that provisions volumes, for example, &lt;Heketi Service cluster IP Address&gt;:&lt;Heketi Service port number&gt;. |
 | Cluster ID | Gluster cluster ID. |
 | REST Authentication | Gluster enables authentication to the REST server. |
 | REST User | Username of Gluster REST service or Heketi service. |
@@ -100,7 +100,7 @@ The GlusterFS storage system has already been installed. See [GlusterFS Installa
 | Secret Name | Name of the Heketi user secret. |
 | Minimum GID | Minimum GID of the volume. |
 | Maximum GID | Maximum GID of the volume. |
-| Volume Type | Type of volume. The value can be none, replicate:<Replicate count>, or disperse:<Data>:<Redundancy count>. If the volume type is not set, the default volume type is replicate:3. |
+| Volume Type | Type of volume. The value can be none, replicate:&lt;Replicate count&gt;, or disperse:&lt;Data&gt;:&lt;Redundancy count&gt;. If the volume type is not set, the default volume type is replicate:3. |
 
 For more information about storage class parameters, see [GlusterFS in Kubernetes Documentation](https://kubernetes.io/docs/concepts/storage/storage-classes/#glusterfs).
 
