@@ -1,63 +1,63 @@
 ---
-title: "Configure Webhook Notifications"
-keywords: 'KubeSphere, Kubernetes, custom, platform, webhook'
-description: 'Configure a webhook server to receive platform notifications through the webhook.'
-linkTitle: "Configure Webhook notifications"
+title: "配置 Webhook 通知"
+keywords: 'KubeSphere, Kubernetes, 自定义, 平台, webhook'
+description: '配置 webhook 服务器以通过 webhook 接收平台通知。'
+linkTitle: "配置 Webhook 通知"
 weight: 8725
 ---
 
-A webhook is a way for an app to send notifications triggered by specific events. It delivers information to other applications in real time, allowing users to receive notifications immediately.
+Webhook 是应用程序发送由特定事件触发的通知的一种方式，可以实时向其他应用程序发送信息，使用户可以立即接收通知。
 
-This tutorial describes how to configure a webhook server to receive platform notifications.
+本教程介绍如何配置 Webhook 服务器以接收平台通知。
 
-## Prerequisites
+## 准备工作
 
-You need to prepare a user granted the `platform-admin` role. For more information, see [Create Workspaces, Projects, Users and Roles](../../../../quick-start/create-workspace-and-project/).
+您需要准备一个被授予 `platform-admin` 角色的用户。有关详细信息，请参阅 [创建企业空间、项目、用户和角色](../../../../quick-start/create-workspace-and-project/)。
 
-## Configure the Webhook Server
+## 配置 Webhook 服务器
 
-1. Log in to the KubeSphere web console as the `platform-admin` user.
+1. 以 `platform-admin` 用户身份登录 KubeSphere Web 控制台。
 
-2. Click **Platform** in the upper-left corner and select **Platform Settings**.
+2. 点击左上角的 **平台管理** ，选择 **平台设置** 。
 
-3. In the left nevigation pane, click **Notification Configuration** under **Notification Management**, and select **Webhook**.
+3. 在左侧导航栏中，点击 **通知管理** 下的 **通知配置** ，选择 **Webhook** 。
 
-4. On the **Webhook** tab page, set the following parameters:
+4. 在 **Webhook** 标签页，设置如下参数：
 
-   - **Webhook URL**: URL of the webhook server.
+   - **Webhook URL**: Webhook 服务器的 URL。
 
-   - **Verification Type**: Webhook authentication method.
-     - **No authentication**: Skips authentication. All notifications can be sent to the URL.
-     - **Bearer token**: Uses a token for authentication.
-     - **Basic authentication**: Uses a username and password for authentication.
+   - **Verification Type**: Webhook 身份验证方法。
+     - **No authentication**: 无身份验证，所有通知都可以发送到该 URL。
+     - **Bearer token**: 使用令牌进行身份验证。
+     - **Basic authentication**: 使用用户名和密码进行身份验证。
 
-   {{< notice note>}}Currently, KubeSphere does not suppot TLS connections (HTTPS). You need to select **Skip TLS verification (insecure)** if you use an HTTPS URL.
+   {{< notice note>}}目前，KubeSphere 不支持 TLS 连接(HTTPS)。如果您使用 HTTPS URL，则需要选择 **Skip TLS 验证（不安全）**。
 
    {{</notice>}}
 
-5. Select the checkbox on the left of **Notification Conditions** to set notification conditions.
+5. 勾选 **通知条件** 左侧的复选框，设置通知条件。
 
-    - **Label**: Name, severity, or monitoring target of an alerting policy. You can select a label or customize a label.
-    - **Operator**: Mapping between the label and the values. The operator includes **Includes values**, **Does not include values**, **Exists**, and **Does not exist**.
-    - **Values**: Values associated with the label.
+    - **Label**: 告警策略的名称、级别或监控目标。可以选择标签，也可以自定义标签。
+    - **Operator**: 标签和值之间的映射。运算符包括 **Includes values**，**Does not include values**，**Exists** 和 **Does not exist** 。
+    - **Values**: 与标签关联的值。
     {{< notice note >}}
 
-   - Operators **Includes values** and **Does not include values** require one or more label values. Use a carriage return to separate values.
-   - Operators **Exists** and **Does not exist** determine whether a label exists, and do not require a label value.
+   - 运算符 **Includes values** 和 **Does not include values** 需要一个或多个标签值。使用回车符来分隔标签值。
+   - 运算符 **Exists** 和 **Does not exist** 判断标签是否存在，不需要标签值。
 
    {{</ notice >}} 
 
-6. You can click **Add** to add notification conditions, or click <img src="/images/docs/common-icons/trashcan.png" width='25' height='25' /> on the right of a notification condition to delete the condition.
+6. 点击 **添加** 来添加通知条件，也可以点击右侧通知条件的 <img src="/images/docs/common-icons/trashcan.png" width='25' height='25' /> 来删除条件。
 
-7. After the configurations are complete, you can click **Send Test Message** for verification.
+7. 配置完成后，可以点击 **发送测试消息** 进行验证。
 
-8. On the upper-right corner, you can turn on the **Disabled** toggle to enbale notifications, or turn off the **Enabled** toggle to diable them.
+8. 在右上角，可以打开 **关闭** 开关以启用通知，或关闭 **开启** 开关以禁用通知。
 
-9. Click **OK** after you finish.
+9. 完成后点击 **确定** 。
 
    {{< notice note >}}
 
-   - After the notification conditions are set, the recepients will receive only notifications that meet the conditions.
-   - If you change the existing configuration, you must click **OK** to apply it.
+   - 设置通知条件后，接收方只会收到满足条件的通知。
+   - 如果更改现有配置，则必须点击 **确定** 才能应用修改后的配置。
 
    {{</ notice >}} 
