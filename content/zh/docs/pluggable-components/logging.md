@@ -35,9 +35,10 @@ KubeSphere 为日志收集、查询和管理提供了一个强大的、全面的
     ```yaml
     logging:
       enabled: true # 将“false”更改为“true”。
+      containerruntime: docker
     ```
 
-    {{< notice info >}}若使用 containerd 作为容器运行时，请将 `.logging.containerruntime` 字段的值更改为 `containerd`。
+    {{< notice info >}}若使用 containerd 作为容器运行时，请将 `containerruntime` 字段的值更改为 `containerd`。如果您从低版本升级至 KubeSphere 3.2.0，则启用 KubeSphere 日志系统时必须在 `logging` 字段下手动添加 `containerruntime` 字段。
 
     {{</ notice >}}
 
@@ -77,9 +78,10 @@ KubeSphere 为日志收集、查询和管理提供了一个强大的、全面的
     ```yaml
     logging:
       enabled: true # 将“false”更改为“true”。
+      containerruntime: docker
     ```
 
-    {{< notice info >}}若使用 containerd 作为容器运行时，请将 `.logging.containerruntime` 字段的值更改为 `containerd`。
+    {{< notice info >}}若使用 containerd 作为容器运行时，请将 `.logging.containerruntime` 字段的值更改为 `containerd`。如果您从低版本升级至 KubeSphere 3.2.0，则启用 KubeSphere 日志系统时必须在 `logging` 字段下手动添加 `containerruntime` 字段。
 
     {{</ notice >}}
 
@@ -125,9 +127,10 @@ KubeSphere 为日志收集、查询和管理提供了一个强大的、全面的
     ```yaml
     logging:
       enabled: true # 将“false”更改为“true”。
+      containerruntime: docker
     ```
 
-    {{< notice info >}}若使用 containerd 作为容器运行时，请将 `.logging.containerruntime` 字段的值更改为 `containerd`。
+    {{< notice info >}}若使用 containerd 作为容器运行时，请将 `.logging.containerruntime` 字段的值更改为 `containerd`。如果您从低版本升级至 KubeSphere 3.2.0，则启用 KubeSphere 日志系统时必须在 `logging` 字段下手动添加 `containerruntime` 字段。
 
     {{</ notice >}}
 

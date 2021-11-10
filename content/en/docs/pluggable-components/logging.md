@@ -35,9 +35,10 @@ When you install KubeSphere on Linux, you need to create a configuration file, w
     ```yaml
     logging:
       enabled: true # Change "false" to "true".
+      containerruntime: docker
     ```
 
-    {{< notice info >}}To use containerd as the container runtime, change the value of the field `.logging.containerruntime` to `containerd`. 
+    {{< notice info >}}To use containerd as the container runtime, change the value of the field `containerruntime` to `containerd`. If you upgraded to KubeSphere 3.2.0 from earlier versions, you have to manually add the field `containerruntime` under `logging` when enabling KubeSphere Logging system.
 
     {{</ notice >}}
 
@@ -77,9 +78,10 @@ As you [install KubeSphere on Kubernetes](../../installing-on-kubernetes/introdu
     ```yaml
     logging:
       enabled: true # Change "false" to "true".
+      containerruntime: docker
     ```
 
-    {{< notice info >}}To use containerd as the container runtime, change the value of the field `.logging.containerruntime` to `containerd`.
+    {{< notice info >}}To use containerd as the container runtime, change the value of the field `.logging.containerruntime` to `containerd`. If you upgraded to KubeSphere 3.2.0 from earlier versions, you have to manually add the field `containerruntime` under `logging` when enabling KubeSphere Logging system.
 
     {{</ notice >}}
 
@@ -125,9 +127,10 @@ A Custom Resource Definition (CRD) allows users to create a new type of resource
     ```yaml
     logging:
       enabled: true # Change "false" to "true".
+      containerruntime: docker
     ```
 
-    {{< notice info >}}To use containerd as the container runtime, change the value of the field `.logging.containerruntime` to `containerd`.
+    {{< notice info >}}To use containerd as the container runtime, change the value of the field `.logging.containerruntime` to `containerd`. If you upgraded to KubeSphere 3.2.0 from earlier versions, you have to manually add the field `containerruntime` under `logging` when enabling KubeSphere Logging system.
 
     {{</ notice >}}
 
