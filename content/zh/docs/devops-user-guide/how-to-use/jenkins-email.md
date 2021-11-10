@@ -18,13 +18,11 @@ Weight: 11260
 
 1. 点击左上角的**平台管理**，然后选择**集群管理**。
 
-2. 如果您已经启用[多集群功能](../../../multicluster-management/)并已导入 Member 集群，那么您可以选择一个特定集群以查看其节点。如果尚未启用该功能，请直接参考下一步。
+2. 如果您已经启用[多集群功能](../../../multicluster-management/)并已导入成员集群，那么您可以选择一个特定集群以查看其节点。如果尚未启用该功能，请直接参考下一步。
 
-3. 转到**应用负载**下的**工作负载**，然后从下拉列表中选择 **kubesphere-devops-system** 项目。点击 **ks-jenkins** 右侧的 <img src="/images/docs/zh-cn/devops-user-guide/use-devops/set-email-server-for-kubesphere-pipelines/three-dots.png" height="15px"> 以编辑其 YAML 配置文件。
+3. 转到**应用负载**下的**工作负载**，然后从下拉列表中选择 **kubesphere-devops-system** 项目。点击 `devops-jenkins` 右侧的 <img src="/images/docs/common-icons/three-dots.png" height="15" /> 并选择**编辑 YAML** 以编辑其 YAML 配置文件。
 
-   ![工作负载列表](/images/docs/zh-cn/devops-user-guide/use-devops/set-email-server-for-kubesphere-pipelines/workloads_list.png)
-
-4. 向下滚动到下图所示的需要指定的字段。完成修改后，点击**更新**以保存。
+4. 向下滚动到下图所示的需要指定的字段。完成修改后，点击**确定**以保存。
 
    {{< notice warning >}}
 

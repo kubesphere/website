@@ -21,11 +21,11 @@ This tutorial walks you through an example of deploying etcd from the App Store 
 
 1. On the **Overview** page of the project `demo-project`, click **App Store** in the upper-left corner.
 
-2. Find etcd and click **Deploy** on the **App Information** page.
+2. Find etcd and click **Install** on the **App Information** page.
 
 3. Set a name and select an app version. Make sure etcd is deployed in `demo-project` and click **Next**.
 
-4. On the **App Settings** page, specify the size of the persistent volume for etcd and click **Deploy**.
+4. On the **App Settings** page, specify the size of the persistent volume for etcd and click **Install**.
 
    {{< notice note >}}
 

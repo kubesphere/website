@@ -13,7 +13,7 @@ weight: 11292
 ## 准备工作
 
 - [启用 KubeSphere DevOps 系统](https://kubesphere.io/zh/docs/pluggable-components/devops/)。
-- 您需要创建一个企业空间、一个 DevOps 工程和一个用户 (`project-regular`)。必须邀请此帐户至 DevOps 工程中，并且授予 `operator` 角色。有关详细信息，请参阅[创建企业空间、项目、用户和角色](https://kubesphere.io/zh/docs/quick-start/create-workspace-and-project/)。
+- 您需要创建一个企业空间、一个 DevOps 项目和一个用户 (`project-regular`)。必须邀请此帐户至 DevOps 项目中，并且授予 `operator` 角色。有关详细信息，请参阅[创建企业空间、项目、用户和角色](https://kubesphere.io/zh/docs/quick-start/create-workspace-and-project/)。
 - 您需要一个可用 Jenkins 共享库。本教程以 [GitHub 仓库](https://github.com/devops-ws/jenkins-shared-library)中的 Jenkins 共享库为例。
 
 ## 在 Jenkins 仪表盘配置共享库
@@ -22,11 +22,7 @@ weight: 11292
 
 2. 向下滚动并点击**系统配置**。
 
-   ![click_configure](/images/docs/zh-cn/devops-user-guide/use-devops/jenkins-shared-library/click-configure.png)
-
 3. 向下滚动到 **Global Pipeline Libraries**，然后点击**新增**。
-
-   ![click-add](/images/docs/zh-cn/devops-user-guide/use-devops/jenkins-shared-library/click-add.png)
 
 4. 配置字段如下所示。
 
@@ -38,13 +34,11 @@ weight: 11292
 
    - 在 **Source Code Management** 下，选择 **Git** 并为**项目仓库**输入示例仓库的 URL 。如果您使用自己的仓库且访问此仓库需要凭据，则需要配置**凭据**。
 
-     ![configure-shared-library](/images/docs/zh-cn/devops-user-guide/use-devops/jenkins-shared-library/configure-shared-library.png)
-
 5. 当您结束编辑，请点击**应用**。
 
    {{< notice note >}}
 
-   您还可以配置[#文件夹级别的共享库](https://www.jenkins.io/zh/doc/book/pipeline/shared-libraries/#folder-level-shared-libraries)。
+   您还可以配置[文件夹级别的共享库](https://www.jenkins.io/zh/doc/book/pipeline/shared-libraries/#folder-level-shared-libraries)。
 
    {{</ notice >}}
 
@@ -53,21 +47,15 @@ weight: 11292
 
 ### 步骤 1： 创建流水线
 
-1. 用 `project-regular` 帐户登录 KubeSphere web 控制台。进入 DevOps 工程并点击**流水线**页面上的**创建**。
+1. 用 `project-regular` 帐户登录 KubeSphere web 控制台。进入 DevOps 项目并点击**流水线**页面上的**创建**。
 
 2. 在弹出窗口中设置名称（例如，``demo-shared-library``），点击**下一步**。
 
-   ![set-name](/images/docs/zh-cn/devops-user-guide/use-devops/jenkins-shared-library/set-name.png)
-
 3. 在**高级设置**中，直接点击**创建**，使用默认设置创建流水线。
-
-   ![click-create](/images/docs/zh-cn/devops-user-guide/use-devops/jenkins-shared-library/click-create.png)
 
 ### 步骤 2：编辑流水线
 
 1. 在流水线列表中，点击流水线以转到其详细信息页面，然后点击**编辑 Jenkinsfile**。
-
-   ![edit-jenkinsfile](/images/docs/zh-cn/devops-user-guide/use-devops/jenkins-shared-library/edit-jenkinsfile.png)
 
 2. 在显示的对话框中，输入以下示例  Jenkinsfile。完成编辑后，点击**确定**。
 
@@ -127,14 +115,8 @@ weight: 11292
 
 ### 步骤 3：运行流水线
 
-1. 您可以在**流水线**选项卡下查看该阶段。点击**运行**运行它。
-
-   ![click-run](/images/docs/zh-cn/devops-user-guide/use-devops/jenkins-shared-library/click-run.png)
+1. 您可以在**任务状态**选项卡下查看该阶段。点击**运行**运行它。
 
 2. 在一段时间后，流水线将成功运行。
 
-   ![run-successfully](/images/docs/zh-cn/devops-user-guide/use-devops/jenkins-shared-library/run-successfully.png)
-
-3. 您可以点击**状态**下的**成功**记录，然后点击**查看日志**查看日志详细信息。
-
-   ![log-details](/images/docs/zh-cn/devops-user-guide/use-devops/jenkins-shared-library/log-details.png)
+3. 您可以点击**运行记录**下的**成功**记录，然后点击**查看日志**查看日志详细信息。

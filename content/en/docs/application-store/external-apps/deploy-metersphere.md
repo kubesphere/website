@@ -33,11 +33,11 @@ This tutorial demonstrates how to deploy MeterSphere on KubeSphere.
 
 3. Select `metersphere` from the drop-down list, then click **metersphere-chart**.
 
-4. On the **App Information** tab and the **Chart Files** tab, you can view the default configuration from the console. Click **Deploy** to continue.
+4. On the **App Information** tab and the **Chart Files** tab, you can view the default configuration from the console. Click **Install** to continue.
 
 5. On the **Basic Information** page, you can view the app name, app version, and deployment location. Click **Next** to continue.
 
-6. On the **App Settings** page, change the value of `imageTag` from `master` to `v1.6`, and then click **Deploy**.
+6. On the **App Settings** page, change the value of `imageTag` from `master` to `v1.6`, and then click **Install**.
 
 7. Wait for MeterSphere to be up and running.
 

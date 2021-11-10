@@ -44,7 +44,7 @@ The following figure shows the end-to-end architecture of the application. For m
 
 1. Log in to the console as `project-regular` and go to your project (`demo-project`). Go to **Apps** under **Application Workloads**, and then click **Deploy Sample App** on the right of the page.
 
-2. Click **Next** in the displayed dialog box where required fields are pre-populated and relevant components are already set. You do not need to change the settings and just click **Create** on the final page (**External Access**).
+2. Click **Next** in the displayed dialog box where required fields are pre-populated and relevant components are already set. You do not need to change the settings and just click **Create** on the final page.
 
     {{< notice note >}}
 
@@ -79,7 +79,7 @@ KubeSphere creates the hostname automatically. To change the hostname, hover ove
 Do not copy the preceding content to your local host file. Replace it with your own IP address and hostname.
     {{</ notice >}}
 
-5. When you finish, click <img src="/images/docs/quickstart/deploy-bookinfo-to-k8s/click-to-visit.png" width='70' /> to access the app.
+5. When you finish, click **Access Service** to access the app.
 
 6. On the app details page, click **Normal user** in the lower-left corner.
 

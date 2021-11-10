@@ -99,7 +99,7 @@ kubectl logs -n kubesphere-system $(kubectl get pod -n kubesphere-system -l app=
 
 ## 准备
 
-为了通过 **主集群**管理，您需要使它们之间的 `jwtSecret` 相同。因此，您首先需要在 **主集群**中执行以下命令来获取它。
+为了通过**主集群**管理，您需要使它们之间的 `jwtSecret` 相同。因此，您首先需要在**主集群**中执行以下命令来获取它。
 
 ```bash
 kubectl -n kubesphere-system get cm kubesphere-config -o yaml | grep -v "apiVersion" | grep jwtSecret

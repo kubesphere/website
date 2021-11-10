@@ -10,7 +10,7 @@ weight: 11430
 
 - 您需要[启用 KubeSphere DevOps 系统](../../../pluggable-components/devops/)。
 - 您需要有一个 [Docker Hub](http://www.dockerhub.com/) 帐户。
-- 您需要创建一个企业空间、一个 DevOps 工程和一个用户帐户，并需要邀请该帐户至 DevOps 工程中并赋予 `operator` 角色。有关更多信息，请参见[创建企业空间、项目、用户和角色](../../../quick-start/create-workspace-and-project/)。
+- 您需要创建一个企业空间、一个 DevOps 项目和一个用户，并需要邀请该用户至 DevOps 项目中并赋予 `operator` 角色。有关更多信息，请参见[创建企业空间、项目、用户和角色](../../../quick-start/create-workspace-and-project/)。
 
 ## Maven 工程的工作流
 
@@ -64,26 +64,20 @@ kubectl get cm -n kubesphere-devops-system ks-devops-agent -o yaml
 
 | 凭证 ID         | 类型       | 用途                  |
 | --------------- | ---------- | --------------------- |
-| dockerhub-id    | 帐户凭证   | 仓库，例如 Docker Hub |
+| dockerhub-id    | 用户名和密码   | 仓库，例如 Docker Hub |
 | demo-kubeconfig | kubeconfig | 部署工作负载          |
 
 有关详细信息，请参考[凭证管理](../../how-to-use/credential-management/)。
-
-![查看凭证列表](/images/docs/zh-cn/devops-user-guide/examples/build-and-deploy-maven-project/view-credential_lists.png)
 
 ### 为工作负载创建一个项目
 
 在本示例中，所有工作负载都部署在 `kubesphere-sample-dev` 项目中。您必须事先创建 `kubesphere-sample-dev` 项目。
 
-![查看项目](/images/docs/zh-cn/devops-user-guide/examples/build-and-deploy-maven-project/view_namespace.png)
-
 ### 为 Maven 工程创建一个流水线
 
-1. 在您的 DevOps 工程中，转到**流水线**页面并点击**创建**，创建一个名为 `maven` 的流水线。有关更多信息，请参见[使用图形编辑面板创建流水线](../../how-to-use/create-a-pipeline-using-graphical-editing-panel)。
+1. 在您的 DevOps 项目中，转到**流水线**页面并点击**创建**，创建一个名为 `maven` 的流水线。有关更多信息，请参见[使用图形编辑面板创建流水线](../../how-to-use/create-a-pipeline-using-graphical-editing-panel)。
 
 2. 转到该流水线的详情页面，点击**编辑 Jenkinsfile**。
-
-   ![编辑 Jenkinsfile](/images/docs/zh-cn/devops-user-guide/examples/build-and-deploy-maven-project/edit_jenkinsfile.png)
 
 3. 复制粘贴以下内容至弹出窗口。您必须将 `DOCKERHUB_NAMESPACE` 的值替换为您自己的值，编辑完成后点击**确定**保存 Jenkinsfile。
 
@@ -148,22 +142,13 @@ kubectl get cm -n kubesphere-devops-system ks-devops-agent -o yaml
 
 4. 您可以看到图形编辑面板上已自动创建阶段和步骤。
 
-   ![查看 Jenkinsfile](/images/docs/zh-cn/devops-user-guide/examples/build-and-deploy-maven-project/view-edit_jenkinsfile.png)
-
 ### 运行和测试
 
 1. 点击**运行**并在弹出对话框的 **TAG_NAME** 中输入 `v1`，然后点击**确定**运行流水线。
 
-   ![运行 Maven 流水线](/images/docs/zh-cn/devops-user-guide/examples/build-and-deploy-maven-project/run-maven_pipeline.png)
-
-2. 待流水线成功运行，您可以前往**活动**选项卡查看其详情。
-
-   ![查看流水线运行结果](/images/docs/zh-cn/devops-user-guide/examples/build-and-deploy-maven-project/view-result-maven_pipeline.png)
+2. 待流水线成功运行，您可以前往**运行记录**选项卡查看其详情。
 
 3. 在 `kubesphere-sample-dev` 项目中，已创建新的工作负载。
 
-   ![查看工作负载](/images/docs/zh-cn/devops-user-guide/examples/build-and-deploy-maven-project/view-result-maven_workload.png)
+4. 在**服务**页面，查看服务 (Service) 的外部访问信息。
 
-4. 您可以查看服务 (Service) 的访问地址，如下所示。
-
-   ![查看服务](/images/docs/zh-cn/devops-user-guide/examples/build-and-deploy-maven-project/view-result-maven-workload_svc.png)

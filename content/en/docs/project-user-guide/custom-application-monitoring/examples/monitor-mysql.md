@@ -20,7 +20,7 @@ To begin with, you need to [deploy MySQL from the App Store](../../../../applica
 
 1. Go to your project and click **App Store** in the upper-left corner.
 
-2. Click **MySQL** to go to its details page and click **Deploy** on the **App Information** tab.
+2. Click **MySQL** to go to its details page and click **Install** on the **App Information** tab.
 
     {{< notice note >}}
 
@@ -30,7 +30,7 @@ MySQL is a built-in app in the KubeSphere App Store, which means it can be deplo
 
 3. Under **Basic Information**, set a **Name** and select a **Version**. Select the project where the app is deployed under **Location** and click **Next**.
 
-4. Under **App Settings**, set a root password by uncommenting the `mysqlRootPassword` field and click **Deploy**.
+4. Under **App Settings**, set a root password by uncommenting the `mysqlRootPassword` field and click **Install**.
 
 5. Wait until MySQL is up and running.
 
@@ -40,7 +40,7 @@ You need to deploy MySQL Exporter in the same project on the same cluster. MySQL
 
 1. Go to **App Store** and click **MySQL Exporter**.
 
-2. On the details page, click **Deploy**.
+2. On the details page, click **Install**.
 
 3. Under **Basic Information**, set a **Name** and select a **Version**. Select the same project where MySQL is deployed under **Location** and click **Next**.
 
@@ -50,7 +50,7 @@ You need to deploy MySQL Exporter in the same project on the same cluster. MySQL
 You must enable the ServiceMonitor CRD if you are using external exporter Helm charts. Those charts usually disable ServiceMonitors by default and require manual modification.
     {{</ notice >}}
 
-5. Modify MySQL connection parameters. MySQL Exporter needs to connect to the target MySQL. In this tutorial, MySQL is installed with the service name `mysql-dh3ily`. Navigate to `mysql` in the configuration file, and set `host` to `mysql-dh3ily`, `pass` to `testing`, and `user` to `root`. Note that your MySQL service may be created with **a different name**. After you finish editing the file, click **Deploy**.
+5. Modify MySQL connection parameters. MySQL Exporter needs to connect to the target MySQL. In this tutorial, MySQL is installed with the service name `mysql-dh3ily`. Navigate to `mysql` in the configuration file, and set `host` to `mysql-dh3ily`, `pass` to `testing`, and `user` to `root`. Note that your MySQL service may be created with **a different name**. After you finish editing the file, click **Install**.
 
 6. Wait until MySQL Exporter is up and running.
 
@@ -58,7 +58,7 @@ You must enable the ServiceMonitor CRD if you are using external exporter Helm c
 
 You can create a monitoring dashboard for MySQL and visualize real-time metrics.
 
-1. In the same project, go to **Custom Monitoring Dashboards** under **Monitoring & Alerting** in the sidebar and click **Create**.
+1. In the same project, go to **Custom Monitoring** under **Monitoring & Alerting** in the sidebar and click **Create**.
 
 2. In the displayed dialog box, set a name for the dashboard (for example, `mysql-overview`) and select the MySQL template. Click **Next** to continue.
 

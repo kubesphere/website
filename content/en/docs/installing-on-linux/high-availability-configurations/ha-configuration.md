@@ -97,7 +97,7 @@ Create an example configuration file with default configurations. Here Kubernete
 
 {{< notice note >}}
 
-- Recommended Kubernetes versions for KubeSphere v3.2.0: v1.19.x, v1.20.x, v1.21.x or v1.22.x (experimental). If you do not specify a Kubernetes version, KubeKey will install Kubernetes v1.21.5 by default. For more information about supported Kubernetes versions, see [Support Matrix](../../../installing-on-linux/introduction/kubekey/#support-matrix).
+- Recommended Kubernetes versions for KubeSphere 3.2.0: v1.19.x, v1.20.x, v1.21.x or v1.22.x (experimental). If you do not specify a Kubernetes version, KubeKey will install Kubernetes v1.21.5 by default. For more information about supported Kubernetes versions, see [Support Matrix](../../../installing-on-linux/introduction/kubekey/#support-matrix).
 
 - If you do not add the flag `--with-kubesphere` in the command in this step, KubeSphere will not be deployed unless you install it using the `addons` field in the configuration file or add this flag again when you use `./kk create cluster` later.
 - If you add the flag `--with-kubesphere` without specifying a KubeSphere version, the latest version of KubeSphere will be installed.
@@ -145,12 +145,14 @@ For more information about different fields in this configuration file, see [Kub
 ### Configure the load balancer
 
 ```yaml
-## Public LB config example
-## apiserver_loadbalancer_domain_name: "lb.kubesphere.local"
+spec:
   controlPlaneEndpoint:
+    ##Internal loadbalancer for apiservers
+    #internalLoadbalancer: haproxy
+    
     domain: lb.kubesphere.local
     address: "192.168.0.xx"
-    port: "6443"
+    port: 6443
 ```
 
 {{< notice note >}}
@@ -158,6 +160,7 @@ For more information about different fields in this configuration file, see [Kub
 - The address and port should be indented by two spaces in `config-sample.yaml`.
 - In most cases, you need to provide the **private IP address** of the load balancer for the field `address`. However, different cloud providers may have different configurations for load balancers. For example, if you configure a Server Load Balancer (SLB) on Alibaba Cloud, the platform assigns a public IP address to the SLB, which means you need to specify the public IP address for the field `address`.
 - The domain name of the load balancer is `lb.kubesphere.local` by default for internal access.
+- To use an internal load balancer, uncomment the field `internalLoadbalancer`.
 
 {{</ notice >}}
 

@@ -20,7 +20,7 @@ This tutorial demonstrates how to deploy ClickHouse Operator and a ClickHouse Cl
 
 ### Step 1: Deploy ClickHouse Operator
 
-1. Log in to the KubeSphere Web console as `admin`, and use **Kubectl** from the **Toolbox** in the bottom-right corner to run the following command to install ClickHouse Operator. It is recommended that you have at least two worker nodes available in your cluster.
+1. Log in to the KubeSphere Web console as `admin`, and use **Kubectl** from the **Toolbox** in the lower-right corner to run the following command to install ClickHouse Operator. It is recommended that you have at least two worker nodes available in your cluster.
 
    ```bash
    $ kubectl apply -f https://raw.githubusercontent.com/radondb/radondb-clickhouse-kubernetes/master/clickhouse-operator-install.yml
@@ -89,11 +89,11 @@ This tutorial demonstrates how to deploy ClickHouse Operator and a ClickHouse Cl
 
 3. On the new page that appears, select **clickhouse** from the drop-down list and then click **clickhouse-cluster**.
 
-4. On the **Chart Files** tab, you can view the configuration and download the `values.yaml` file. Click **Deploy** to continue.
+4. On the **Chart Files** tab, you can view the configuration and download the `values.yaml` file. Click **Install** to continue.
 
 5. On the **Basic Information** page, confirm the app name, app version, and deployment location. Click **Next** to continue.
 
-6. On the **App Settings** tab, you can change the YAML file to customize settings. In this tutorial, click **Deploy** to use the default settings.
+6. On the **App Settings** tab, you can change the YAML file to customize settings. In this tutorial, click **Install** to use the default settings.
 
 7. After a while, you can see the app is in the **Running** status.
 

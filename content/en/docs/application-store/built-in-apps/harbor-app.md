@@ -20,7 +20,7 @@ This tutorial walks you through an example of deploying [Harbor](https://goharbo
 
 1. On the **Overview** page of the project `demo-project`, click **App Store** in the upper-left corner.
 
-2. Find Harbor and click **Deploy** on the **App Information** page.
+2. Find Harbor and click **Install** on the **App Information** page.
 
 3. Set a name and select an app version. Make sure Harbor is deployed in `demo-project` and click **Next**.
 
@@ -40,7 +40,7 @@ This tutorial walks you through an example of deploying [Harbor](https://goharbo
 
    {{</ notice >}} 
 
-   When you finish editing the configuration, click **Deploy** to continue.
+   When you finish editing the configuration, click **Install** to continue.
 
 5. Wait until Harbor is up and running.
 

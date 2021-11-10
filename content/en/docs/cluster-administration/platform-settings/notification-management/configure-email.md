@@ -3,7 +3,7 @@ title: "Configure Email Notifications"
 keywords: 'KubeSphere, Kubernetes, custom, platform'
 description: 'Configure a email server and add recipients to receive email notifications.'
 linkTitle: "Configure Email Notifications"
-weight: 8721
+weight: 8722
 ---
 
 This tutorial demonstrates how to configure a email server and add recipients to receive email notifications of alerting policies.

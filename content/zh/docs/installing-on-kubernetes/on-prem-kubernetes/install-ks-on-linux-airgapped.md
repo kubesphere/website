@@ -243,7 +243,7 @@ https://kubesphere.io             20xx-xx-xx xx:xx:xx
 
 ## 附录
 
-### KubeSphere v3.2.0 镜像清单
+### KubeSphere 3.2.0 镜像清单
 
 ```txt
 ##kubesphere-images

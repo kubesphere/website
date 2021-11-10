@@ -9,23 +9,30 @@ section1:
   image: /images/live/background.jpg
 
 section2:
-  image: /images/live/cloudnative-live-cover.png
-  url: ./kubeovn1028-live/
+  image: /images/live/cloudnative-live-banner.png
+  url: ./go1104-live/
 
   notice:
-    title: 海量并发微服务框架设计
+    title: ROOK 云原生分布式存储开源项目的介绍及其在企业中的应用未来
     tag: 预告
-    time: 2021 年 11 月 04 日晚 8 点
+    time: 2021 年 11 月 11 日晚 8 点
     base: 线上
-    url: ./go1104-live/
+    url: ./rook1111-live/
 
   over:
-    title: CKA/CKS 备考攻略
-    url: ./ckacks1021-live/
+    title:  如何优化容器网络性能
+    url: ./kubeovn1028-live/
     tag: 结束
 
 section3:
   videos:
+    - title:  海量并发微服务框架设计
+      link: ./go1104-live/
+      snapshot: https://pek3b.qingstor.com/kubesphere-community/images/go1104-live-cover.png
+      type: iframe
+      createTime: 2021.11.04
+      group: 直播回放
+
     - title: 如何优化容器网络性能
       link: ./kubeovn1028-live/
       snapshot: https://pek3b.qingstor.com/kubesphere-community/images/kubeovn1028-live-cover.png

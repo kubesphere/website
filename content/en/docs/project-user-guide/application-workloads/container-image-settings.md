@@ -23,7 +23,7 @@ Set the number of replicated Pods by clicking <img src="/images/docs/project-use
 If you create Deployments in a multi-cluster project, select a replica scheduling mode under **Replica Scheduling Mode**:
 
 - **Specify Replicas**: select clusters and set the number of Pod replicas in each cluster.
-- **Specify Weights**: select clusters, set the total number of Pod replicas in **Total Replicas**, and specify a weight for each cluster. The Pod replicas will be proportionally scheduled to the clusters according to the weights.
+- **Specify Weights**: select clusters, set the total number of Pod replicas in **Total Replicas**, and specify a weight for each cluster. The Pod replicas will be proportionally scheduled to the clusters according to the weights. To change weights after a Deployment is created, click the name of the Deployment to go to its details page and change weights under **Weights** on the **Resource Status** tab.
 
 If you create StatefulSets in a multi-cluster project, select clusters and set the number of Pod replicas in each cluster under **Pod Replicas**.
 
@@ -72,6 +72,8 @@ You can specify the upper limit of the resources that the application can use, i
 The CPU resource is measured in CPU units, or **Core** in KubeSphere. The memory resource is measured in bytes, or **MiB** in KubeSphere.
 
 {{</ notice >}} 
+
+To set **GPU Type**, select a GPU type from the drop-down list, which defaults to `nvidia.com/gpu`. **GPU Limit** defaults to no limit.
 
 #### **Port Settings**
 

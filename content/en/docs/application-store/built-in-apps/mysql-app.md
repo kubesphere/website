@@ -21,11 +21,11 @@ This tutorial walks you through an example of deploying MySQL from the App Store
 
 1. On the **Overview** page of the project `demo-project`, click **App Store** in the upper-left corner.
 
-2. Find MySQL and click **Deploy** on the **App Information** page.
+2. Find MySQL and click **Install** on the **App Information** page.
 
 3. Set a name and select an app version. Make sure MySQL is deployed in `demo-project` and click **Next**.
 
-4. In **App Settings**, uncomment the `mysqlRootPassword` field and customize the password. Click **Deploy** to continue.
+4. In **App Settings**, uncomment the `mysqlRootPassword` field and customize the password. Click **Install** to continue.
 
 5. Wait until MySQL is up and running.
 

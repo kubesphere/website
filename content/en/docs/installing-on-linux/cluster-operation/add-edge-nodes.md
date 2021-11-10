@@ -100,7 +100,7 @@ To make sure edge nodes can successfully talk to your cluster, you must forward 
 
    {{</ notice >}} 
 
-3. Click **Add Node**. In the dialog that appears, set a node name and enter an internal IP address of your edge node. Click **Validate** to continue.
+3. Click **Add**. In the dialog that appears, set a node name and enter an internal IP address of your edge node. Click **Validate** to continue.
 
    {{< notice note >}} 
 
@@ -125,7 +125,7 @@ To make sure edge nodes can successfully talk to your cluster, you must forward 
 
    {{</ notice >}}
    
-6. After an edge node joins your cluster, some Pods may be scheduled to it while they remains in the `Pending` state on the edge node. Due to the tolerations some DaemonSets (for example, Calico) have, in the current version (KubeSphere v3.2.0), you need to manually patch some Pods so that they will not be schedule to the edge node.
+6. After an edge node joins your cluster, some Pods may be scheduled to it while they remains in the `Pending` state on the edge node. Due to the tolerations some DaemonSets (for example, Calico) have, in the current version (KubeSphere 3.2.0), you need to manually patch some Pods so that they will not be schedule to the edge node.
 
    ```bash
    #!/bin/bash

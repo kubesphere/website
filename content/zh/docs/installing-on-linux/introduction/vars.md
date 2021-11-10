@@ -10,7 +10,7 @@ weight: 3160
 
 ```yaml
   kubernetes:
-    version: v1.19.8
+    version: v1.21.5
     imageRepo: kubesphere
     clusterName: cluster.local
     masqueradeAll: false

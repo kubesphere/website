@@ -92,7 +92,7 @@ weight: 18100
 
 ### Bug Fixes
 
-- Fix an issue where the value of `kubesphere_app_template_count` is always `0` when `GetKubeSphereStats` is called. ([#4130](https://github.com/kubesphere/kubesphere/pull/4130), [@ks-ci-bot](https://github.com/ks-ci-bot))
+- Fix an issue where the value of `kubesphere_app_template_count` is always `0` when `GetKubeSphereStats` is called. ([#4130](https://github.com/kubesphere/kubesphere/pull/4130), [@Hanamichi](https://github.com/ks-ci-bohttps://github.com/x893675))
 
 ## DevOps
 

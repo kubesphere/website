@@ -11,7 +11,7 @@ weight: 7400
 
 - 您需要有一个运行 KubeSphere v3.1.x 的集群。如果您的 KubeSphere 是 v3.0.0 或更早的版本，请先升级至 v3.1.x。
 - 您的 Kubernetes 版本必须为 v1.19.x 或更新版本。
-- 请仔细阅读 [Release Notes for 3.2.0](../../release/release-v320/)。
+- 请仔细阅读 [3.2.0 版本说明](../../release/release-v320/)。
 - 提前备份所有重要的组件。
 - Docker 仓库。您需要有一个 Harbor 或其他 Docker 仓库。有关更多信息，请参见[准备一个私有镜像仓库](../../installing-on-linux/introduction/air-gapped-installation/#步骤-2准备一个私有镜像仓库)。
 - 请确保每个节点都可以从该 Docker 仓库拉取镜像或向其推送镜像。

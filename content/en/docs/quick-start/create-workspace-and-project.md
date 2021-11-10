@@ -64,7 +64,7 @@ After KubeSphere is installed, you need to add different users with varied roles
    Built-in roles are created automatically by KubeSphere and cannot be edited or deleted.
    {{</ notice >}}
 
-3. In **Users**, click **Create**. In the displayed dialog box, provide all the necessary information (marked with *) and select `users-manager`  for **Role**. Refer to the following image as an example.
+3. In **Users**, click **Create**. In the displayed dialog box, provide all the necessary information (marked with *) and select `users-manager` for **Role**. Refer to the following image as an example.
 
    Click **OK** after you finish. The new account will display on the **Users** page.
 
@@ -118,7 +118,7 @@ In this step, you create a workspace using the account `ws-manager` created in t
 
    {{</ notice >}} 
 
-3. Log out of the console and log back in as `ws-admin`. In **Workspace Settings**, select **Workspace Members** and click **Invite Member**.
+3. Log out of the console and log back in as `ws-admin`. In **Workspace Settings**, select **Workspace Members** and click **Invite**.
 
 4. Invite both `project-admin` and `project-regular` to the workspace. Assign them the role `workspace-self-provisioner` and `workspace-viewer` respectively and click **OK**.
 
@@ -162,7 +162,7 @@ In this step, you create a project using the account `project-admin` created in 
 
 3. In **Projects**, click the project created just now to view its detailed information.
 
-4. On the **Overview** page of the project, the project quota remains unset by default. You can click **Set** and specify [resource requests and limits](../../workspace-administration/project-quotas/) as needed (for example, 1 core for CPU and 1000Gi for memory).
+4. On the **Overview** page of the project, the project quota remains unset by default. You can click **Edit Quotas** and specify [resource requests and limits](../../workspace-administration/project-quotas/) as needed (for example, 1 core for CPU and 1000Gi for memory).
 
 5. Invite `project-regular` to this project and grant this user the role `operator`.
 
@@ -170,11 +170,11 @@ In this step, you create a project using the account `project-admin` created in 
    The user granted the role `operator` is a project maintainer who can manage resources other than users and roles in the project.
    {{</ notice >}}
 
-6. Before creating a [Route](../../project-user-guide/application-workloads/routes/) which is [Ingress](https://kubernetes.io/docs/concepts/services-networking/ingress/) in Kubernetes, you need to enable a gateway for this project. The gateway is an [NGINX Ingress controller](https://github.com/kubernetes/ingress-nginx) running in the project. To set a gateway, go to **Gateway Settings** in **Project Settings** and click **Set Gateway**. The account `project-admin` is still used in this step.
+6. Before creating a [Route](../../project-user-guide/application-workloads/routes/) which is [Ingress](https://kubernetes.io/docs/concepts/services-networking/ingress/) in Kubernetes, you need to enable a gateway for this project. The gateway is an [NGINX Ingress controller](https://github.com/kubernetes/ingress-nginx) running in the project. To set a gateway, go to **Gateway Settings** in **Project Settings** and click **Enable Gateway**. The account `project-admin` is still used in this step.
 
 7. Select the access method **NodePort** and click **OK**.
 
-8. Under **External Access**, you can obtain the Gateway Address and the NodePort of http and https in the list.
+8. Under **Project Gateway**, you can obtain the Gateway Address and the NodePort of http and https in the list.
 
    {{< notice note >}}
    If you want to expose services using the type `LoadBalancer`, you need to use the LoadBalancer plugin of cloud providers. If your Kubernetes cluster is running in a bare metal environment, it is recommended that you use [OpenELB](https://github.com/kubesphere/openelb) as the LoadBalancer plugin.

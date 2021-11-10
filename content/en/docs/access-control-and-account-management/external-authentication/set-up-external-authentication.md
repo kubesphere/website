@@ -18,7 +18,7 @@ You need to deploy a Kubernetes cluster and install KubeSphere in the cluster. F
 
 ## Procedure
 
-1. Log in to KubeSphere as `admin`, move the cursor to <img src="/images/docs/access-control-and-account-management/external-authentication/set-up-external-authentication/toolbox.png" width="20px" height="20px"> in the bottom-right corner, click **Kubectl**, and run the following command to edit the `kubesphere-config` ConfigMap:
+1. Log in to KubeSphere as `admin`, move the cursor to <img src="/images/docs/access-control-and-account-management/external-authentication/set-up-external-authentication/toolbox.png" width="20px" height="20px"> in the lower-right corner, click **Kubectl**, and run the following command to edit the `kubesphere-config` ConfigMap:
 
    ```bash
    kubectl -n kubesphere-system edit cm kubesphere-config
@@ -76,7 +76,7 @@ You need to deploy a Kubernetes cluster and install KubeSphere in the cluster. F
        * `name`: Identity provider name.
        * `type`: Identity provider type.
        * `mappingMethod`: Account mapping method. The value can be `auto` or `lookup`.
-         *  If the value is `auto` (default), you need to specify a new username. KubeSphere automatically creates a user according to the username and maps the user to a third-party account.
+         * If the value is `auto` (default), you need to specify a new username. KubeSphere automatically creates a user according to the username and maps the user to a third-party account.
          * If the value is `lookup`, you need to perform step 3 to manually map an existing KubeSphere user to a third-party account.
        * `provider`: Identity provider information. Fields in this section vary according to the identity provider type.
 

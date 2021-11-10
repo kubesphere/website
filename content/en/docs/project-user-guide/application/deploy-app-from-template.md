@@ -57,7 +57,7 @@ This tutorial demonstrates how to quickly deploy [Grafana](https://grafana.com/)
 
    {{</ notice >}} 
 
-5. Its app information and configuration files are also displayed. Under **Version**, select a version number from the list and click **Deploy**.
+5. Its app information and configuration files are also displayed. Under **Version**, select a version number from the list and click **Install**.
 
 6. Set an app name and confirm the version and deployment location. Click **Next**.
    

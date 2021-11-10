@@ -1,6 +1,6 @@
 ---
 title: "Build and Deploy a Maven Project"
-keywords: 'kubernetes, docker, devops, jenkins, maven'
+keywords: 'Kubernetes, Docker, DevOps, Jenkins, Maven'
 description: 'Learn how to build and deploy a Maven project using a KubeSphere pipeline.'
 linkTitle: "Build and Deploy a Maven Project"
 weight: 11430
@@ -10,7 +10,7 @@ weight: 11430
 
 - You need to [enable the KubeSphere DevOps System](../../../../docs/pluggable-components/devops/).
 - You need to have a [Docker Hub](http://www.dockerhub.com/) account.
-- You need to create a workspace, a DevOps project, and a user account, and this account needs to be invited into the DevOps project with the role of `operator`. For more information, see [Create Workspaces, Projects, Users and Roles](../../../quick-start/create-workspace-and-project/).
+- You need to create a workspace, a DevOps project, and a user account, and this user needs to be invited into the DevOps project with the role of `operator`. For more information, see [Create Workspaces, Projects, Users and Roles](../../../quick-start/create-workspace-and-project/).
 
 ## Workflow for a Maven Project
 
@@ -64,28 +64,22 @@ The Pod labeled `maven` uses the docker-in-docker network to run the pipeline. N
 
 | Credential ID   | Type                | Where to Use                 |
 | --------------- | ------------------- | ---------------------------- |
-| dockerhub-id    | Account Credentials | Registry, such as Docker Hub |
+| dockerhub-id    | Username and password | Registry, such as Docker Hub |
 | demo-kubeconfig | kubeconfig          | Workload deployment         |
 
 For details, refer to the [Credential Management](../../how-to-use/credential-management/).
-
-![view-credential-list](/images/docs/devops-user-guide/examples/build-and-deploy-a-maven-project/view-credential-list.png)
 
 ### Create a project for workloads
 
 In this example, all workloads are deployed in `kubesphere-sample-dev`. You must create the project `kubesphere-sample-dev` in advance.
 
-![view-namespace](/images/docs/devops-user-guide/examples/build-and-deploy-a-maven-project/view-namespace.png)
-
 ### Create a pipeline for the Maven project
 
 1. Go to **Pipelines** of your DevOps project and click **Create** to create a pipeline named `maven`. For more information, see [Create a Pipeline - using Graphical Editing Panel](../../how-to-use/create-a-pipeline-using-graphical-editing-panel/).
 
-2. Go to the detail page of the pipeline and click **Edit Jenkinsfile**.
+2. Go to the details page of the pipeline and click **Edit Jenkinsfile**.
 
-   ![edit-jenkinsfile](/images/docs/devops-user-guide/examples/build-and-deploy-a-maven-project/edit-jenkinsfile.png)
-
-3. Copy and paste the following content into the pop-up window. You must replace the value of `DOCKERHUB_NAMESPACE` with yours. When you finish editing, click **OK** to save the Jenkinsfile.
+3. Copy and paste the following content into the displayed dialog box. You must replace the value of `DOCKERHUB_NAMESPACE` with yours. When you finish editing, click **OK** to save the Jenkinsfile.
 
    ```groovy
    pipeline {
@@ -148,22 +142,12 @@ In this example, all workloads are deployed in `kubesphere-sample-dev`. You must
 
 4. You can see stages and steps are automatically created on graphical editing panels.
 
-   ![view-edit-jenkinsfile](/images/docs/devops-user-guide/examples/build-and-deploy-a-maven-project/view-edit-jenkinsfile.png)
-
 ### Run and test
 
-1. Click **Run**, enter `v1` for **TAG_NAME** in the dialog that appears, and then click **OK** to run the pipeline.
+1. Click **Run**, enter `v1` for **TAG_NAME** in the displayed dialog box, and then click **OK** to run the pipeline.
 
-   ![run-maven-pipeline](/images/docs/devops-user-guide/examples/build-and-deploy-a-maven-project/run-maven-pipeline.png)
+2. When the pipeline runs successfully, you can go to the **Run Records** tab to view its details.
 
-2. When the pipeline runs successfully, you can go to the **Activity** tab to view its details.
+3. In the project of `kubesphere-sample-dev`, new workloads were created.
 
-   ![view-result-maven-pipeline](/images/docs/devops-user-guide/examples/build-and-deploy-a-maven-project/view-result-maven-pipeline.png)
-
-3. In the project of `kubesphere-sample-dev`, there are new workloads created.
-
-   ![view-result-maven-workload](/images/docs/devops-user-guide/examples/build-and-deploy-a-maven-project/view-result-maven-workload.png)
-
-4. You can view the access address of the Service as below.
-
-   ![view-result-maven-workload-svc](/images/docs/devops-user-guide/examples/build-and-deploy-a-maven-project/view-result-maven-workload-svc.png)
+4. On the **Services** page, view the external access information about the Service created.
