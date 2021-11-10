@@ -6,8 +6,13 @@ linkTitle: "应用资源监控"
 weight: 8300
 ---
 
-
 除了在物理资源级别监控数据外，集群管理员还需要密切跟踪整个平台上的应用资源，例如项目和 DevOps 工程的数量，以及特定类型的工作负载和服务的数量。**应用资源监控**提供了平台的资源使用情况和应用级趋势的汇总信息。
+
+## 视频演示
+
+<video controls="controls" style="width: 100% !important; height: auto !important;">
+  <source type="video/mp4" src="https://kubesphere-community.pek3b.qingstor.com/videos/KubeSphere-v3.1.x-tutorial-videos/zh/KS311_200P014C202111_%E5%BA%94%E7%94%A8%E8%B5%84%E6%BA%90%E7%9B%91%E6%8E%A7.mp4">
+</video>
 
 ## 准备工作
 
