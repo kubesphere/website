@@ -52,9 +52,13 @@ section2:
       content: "驭势科技 UISEE 是中国领先的自动驾驶公司，致力于为全行业、全场景提供 AI 驾驶服务，交付赋能出行和物流新生态的 AI 驾驶员。"
       link: "uisee/"
 
-    - icon: "images/case/qunar-logo.png"
+    - icon: "images/case/logo-qunar.png"
       content: "去哪儿网（Qunar.com）是中国领先的在线旅游平台，创立于 2005 年 5 月，总部位于北京。"
       link: "qunar/"
+
+    - icon: "images/case/logo-msxf.png"
+      content: "马上消费金融股份有限公司(简称“马上消费”)是一家经中国银保监会批准，持有消费金融牌照的科技驱动型金融机构。"
+      link: "msxf/"
 
 section3:
   title: 'KubeSphere 助力各行各业'
