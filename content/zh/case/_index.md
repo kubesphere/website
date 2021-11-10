@@ -56,6 +56,10 @@ section2:
       content: "去哪儿网（Qunar.com）是中国领先的在线旅游平台，创立于 2005 年 5 月，总部位于北京。"
       link: "qunar/"
 
+    - icon: "images/case/segmentfault-logo.png"
+      content: "SegmentFault 思否是国内领先的新一代开发者社区和技术媒体，是中国最大的 Hackathon 组织者，目前已覆盖和服务上千万中国软件开发者和 IT 信息从业者。"
+      link: "segmentfault/"
+
 section3:
   title: 'KubeSphere 助力各行各业'
   tip: 全部
