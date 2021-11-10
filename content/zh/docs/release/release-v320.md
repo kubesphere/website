@@ -114,10 +114,9 @@ weight: 18100
 - 升级 Configuration as Code 版本到 1.53。（[#42](https://github.com/kubesphere/ks-jenkins/pull/42), [@rick](https://github.com/LinuxSuRen)）
 
 ## 安装
-
 ### 新特性
 
-- 新增支持 Kubernetes 1.21.5 和 1.22.1。（[#634](https://github.com/kubesphere/kubekey/pull/634)，[@pixiake](https://github.com/pixiake)）
+- 新增支持 Kubernetes 1.21.5 和 1.22.1 ,Kubernetes最低版本要求为1.19。（[#634](https://github.com/kubesphere/kubekey/pull/634)，[@pixiake](https://github.com/pixiake)）
 - 新增支持自动设置容器运行时。（[#738](https://github.com/kubesphere/kubekey/pull/738)，[@pixiake](https://github.com/pixiake)）
 - 新增支持自动更新 Kubernetes 证书。（[#705](https://github.com/kubesphere/kubekey/pull/705)，[@pixiake](https://github.com/pixiake)）
 - 新增支持使用二进制文件安装 Docker 和 conatinerd。（[#657](https://github.com/kubesphere/kubekey/pull/657)，[@pixiake](https://github.com/pixiake)）
