@@ -146,12 +146,14 @@ spec:
 ### 配置负载均衡器
 
 ```yaml
-## Public LB config example
-## apiserver_loadbalancer_domain_name: "lb.kubesphere.local"
+spec:
   controlPlaneEndpoint:
+    ##Internal loadbalancer for apiservers
+    #internalLoadbalancer: haproxy
+    
     domain: lb.kubesphere.local
     address: "192.168.0.xx"
-    port: "6443"
+    port: 6443
 ```
 
 {{< notice note >}}
@@ -159,6 +161,7 @@ spec:
 - `config-sample.yaml` 文件中的 `address` 和 `port` 应缩进两个空格。
 - 大多数情况下，您需要在负载均衡器的 `address` 字段中提供**私有 IP 地址**。但是，不同的云厂商可能对负载均衡器有不同的配置。例如，如果您在阿里云上配置服务器负载均衡器 (SLB)，平台会为 SLB 分配一个公共 IP 地址，所以您需要在 `address` 字段中指定公共 IP 地址。
 - 负载均衡器默认的内部访问域名是 `lb.kubesphere.local`。
+- 若要使用内置负载均衡器，请将 `internalLoadbalancer` 字段取消注释。
 
 {{</ notice >}}
 
