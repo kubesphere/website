@@ -35,10 +35,14 @@ When you install KubeSphere on Linux, you need to create a configuration file, w
     ```yaml
     logging:
       enabled: true # Change "false" to "true".
+      containerruntime: docker
     ```
 
-    {{< notice note >}}
-By default, KubeKey will install Elasticsearch internally if Logging is enabled. For a production environment, it is highly recommended that you set the following values in `config-sample.yaml` if you want to enable Logging, especially `externalElasticsearchUrl` and `externalElasticsearchPort`. Once you provide the following information before installation, KubeKey will integrate your external Elasticsearch directly instead of installing an internal one.
+    {{< notice info >}}To use containerd as the container runtime, change the value of the field `containerruntime` to `containerd`. If you upgraded to KubeSphere 3.2.0 from earlier versions, you have to manually add the field `containerruntime` under `logging` when enabling KubeSphere Logging system.
+
+    {{</ notice >}}
+
+    {{< notice note >}}By default, KubeKey will install Elasticsearch internally if Logging is enabled. For a production environment, it is highly recommended that you set the following values in `config-sample.yaml` if you want to enable Logging, especially `externalElasticsearchUrl` and `externalElasticsearchPort`. Once you provide the following information before installation, KubeKey will integrate your external Elasticsearch directly instead of installing an internal one.
     {{</ notice >}}
 
     ```yaml
@@ -74,10 +78,14 @@ As you [install KubeSphere on Kubernetes](../../installing-on-kubernetes/introdu
     ```yaml
     logging:
       enabled: true # Change "false" to "true".
+      containerruntime: docker
     ```
 
-    {{< notice note >}}
-By default, ks-installer will install Elasticsearch internally if Logging is enabled. For a production environment, it is highly recommended that you set the following values in `cluster-configuration.yaml` if you want to enable Logging, especially `externalElasticsearchUrl` and `externalElasticsearchPort`. Once you provide the following information before installation, ks-installer will integrate your external Elasticsearch directly instead of installing an internal one.
+    {{< notice info >}}To use containerd as the container runtime, change the value of the field `.logging.containerruntime` to `containerd`. If you upgraded to KubeSphere 3.2.0 from earlier versions, you have to manually add the field `containerruntime` under `logging` when enabling KubeSphere Logging system.
+
+    {{</ notice >}}
+
+    {{< notice note >}}By default, ks-installer will install Elasticsearch internally if Logging is enabled. For a production environment, it is highly recommended that you set the following values in `cluster-configuration.yaml` if you want to enable Logging, especially `externalElasticsearchUrl` and `externalElasticsearchPort`. Once you provide the following information before installation, ks-installer will integrate your external Elasticsearch directly instead of installing an internal one.
     {{</ notice >}}
 
     ```yaml
@@ -119,12 +127,17 @@ A Custom Resource Definition (CRD) allows users to create a new type of resource
     ```yaml
     logging:
       enabled: true # Change "false" to "true".
+      containerruntime: docker
     ```
 
-    {{< notice note >}}By default, Elasticsearch will be installed internally if Logging is enabled. For a production environment, it is highly recommended that you set the following values in this yaml file if you want to enable Logging, especially `externalElasticsearchUrl` and `externalElasticsearchPort`. Once you provide the following information, KubeSphere will integrate your external Elasticsearch directly instead of installing an internal one.
-    
+    {{< notice info >}}To use containerd as the container runtime, change the value of the field `.logging.containerruntime` to `containerd`. If you upgraded to KubeSphere 3.2.0 from earlier versions, you have to manually add the field `containerruntime` under `logging` when enabling KubeSphere Logging system.
+
     {{</ notice >}}
-    
+
+    {{< notice note >}}By default, Elasticsearch will be installed internally if Logging is enabled. For a production environment, it is highly recommended that you set the following values in this yaml file if you want to enable Logging, especially `externalElasticsearchUrl` and `externalElasticsearchPort`. Once you provide the following information, KubeSphere will integrate your external Elasticsearch directly instead of installing an internal one.
+
+    {{</ notice >}}
+
     ```yaml
     es:  # Storage backend for logging, tracing, events and auditing.
       elasticsearchMasterReplicas: 1   # The total number of master nodes. Even numbers are not allowed.
