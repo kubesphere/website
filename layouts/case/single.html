@@ -27,43 +27,48 @@
     </div>
     <ul class='ul-left'>
       {{ range .listLeft}}
-      <li>
-        {{ if eq .type 1}}
-        <ul>
-          {{ range .contentList }}
-          <li>
-            <p>{{ .content }}</p>
-          </li>
-          {{ end }}
-        </ul>
-        {{ else if eq .type 2}}
-        <div>
-          <p class='p1'>{{ .content }}</p>
-          <p class='p2'>{{ .author }}</p>
-          <img src="/images/case/ic-quote-right.svg" alt="">
-        </div>
-        {{ else }}
-          <h2>{{ .title }}</h2>
-          {{ range .contentList }}
-          {{ if .specialContent }}
-            {{ with .specialContent }}
-              {{ if .link }}
-                {{ partial "case_specialContent.html" . }}
-              {{ else if .level }}
-                {{ partial "case_specialContent.html" . }}
-              {{ else }}
-                <p class="{{ if .bold }}title-bold{{end}}">{{ .text }}</p>
+        <li>
+          {{ if eq .type 1}}
+            <ul>
+              {{ range .contentList }}
+              <li>
+                <p>{{ .content }}</p>
+              </li>
+              {{ end }}
+            </ul>
+          {{ else if eq .type 2}}
+            <div>
+              <p class='p1'>{{ .content }}</p>
+              <p class='p2'>{{ .author }}</p>
+              <img src="/images/case/ic-quote-right.svg" alt="">
+            </div>
+          {{ else }}
+            <h2>{{ .title }}</h2>
+            {{ range $item,$index := .contentList }}
+              {{ if isset $index "specialContent" }}
+                {{ with $index.specialContent }}
+                  {{ if .link }}
+                    {{ partial "case_specialContent.html" . }}
+                  {{ else if .level }}
+                    {{ partial "case_specialContent.html" . }}
+                  {{ else }}
+                    <p class="{{ if .bold }}title-bold{{end}}">{{ .text }}</p>
+                  {{ end }}
+                {{ end }}
+              {{ end }}
+              {{ if isset $index "content" }}
+                {{ with $index.content }}
+                  <p>{{ . }}</p>
+                {{ end }}
               {{ end }}
             {{ end }}
-          {{else}}
-            <p>{{ .content }}</p>
+            {{ if isset . "image" }}
+              {{ with .image }}
+                <img src="{{ . }}" alt="">
+              {{ end }}
+            {{ end }}
           {{ end }}
-          {{ end }}
-          {{ if .image }}
-            <img src="{{ .image }}" alt="">
-          {{ end }}
-        {{ end }}
-      </li>
+        </li>
       {{ end }}
     </ul>
   </div>
