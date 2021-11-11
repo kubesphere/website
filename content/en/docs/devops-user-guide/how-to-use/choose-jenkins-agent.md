@@ -12,7 +12,7 @@ The `agent` section specifies where the entire Pipeline, or a specific stage, wi
 
 A podTemplate is a template of a Pod that is used to create agents. Users can define a podTemplate to use in the Kubernetes plugin.
 
-As a pipeline runs, every Jenkins agent Pod must have a container named `jnlp` for communications between the Jenkins master and Jenkins agent. In addition, users can add containers in the podTemplate to meet their own needs. They can choose to use their own Pod YAML to flexibly control the runtime, and the container can be switched by the `container` command. Here is an example.
+As a pipeline runs, every Jenkins agent Pod must have a container named `jnlp` for communications between the Jenkins controller and Jenkins agent. In addition, users can add containers in the podTemplate to meet their own needs. They can choose to use their own Pod YAML to flexibly control the runtime, and the container can be switched by the `container` command. Here is an example.
 
 ```groovy
 pipeline {
