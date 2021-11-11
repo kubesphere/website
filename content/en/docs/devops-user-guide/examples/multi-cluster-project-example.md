@@ -65,10 +65,7 @@ With the above credentials ready, you can use the user `project-regular` to crea
    ```groovy
    pipeline {
      agent {
-       node {
-         label 'maven'
-       }
-   
+       label 'go'
      }
      
      environment {
@@ -77,9 +74,9 @@ With the above credentials ready, you can use the user `project-regular` to crea
        DOCKERHUB_USERNAME = 'Your Docker Hub username'
        APP_NAME = 'devops-go-sample'
        // ‘dockerhub-go’ is the Docker Hub credentials ID you created on the KubeSphere console
-       DOCKERHUB_CREDENTIAL = credentials('dockerhub-go')
+       DOCKERHUB_CREDENTIAL = credentials('dockerhub')
        // the kubeconfig credentials ID you created on the KubeSphere console
-       KUBECONFIG_CREDENTIAL_ID = 'dockerhub-go-kubeconfig'
+       KUBECONFIG_CREDENTIAL_ID = 'kubeconfig'
        // mutli-cluster project name under your own workspace
        MULTI_CLUSTER_PROJECT_NAME = 'demo-multi-cluster'
        // the name of the member cluster where you want to deploy your app
@@ -91,16 +88,15 @@ With the above credentials ready, you can use the user `project-regular` to crea
      stages {
        stage('docker login') {
          steps {
-           container('maven') {
+           container('go') {
              sh 'echo $DOCKERHUB_CREDENTIAL_PSW  | docker login -u $DOCKERHUB_CREDENTIAL_USR --password-stdin'
            }
-   
          }
        }
        
        stage('build & push') {
          steps {
-           container('maven') {
+           container('go') {
              sh 'git clone https://github.com/yuswift/devops-go-sample.git'
              sh 'cd devops-go-sample && docker build -t $REGISTRY/$DOCKERHUB_USERNAME/$APP_NAME .'
              sh 'docker push $REGISTRY/$DOCKERHUB_USERNAME/$APP_NAME'
@@ -110,11 +106,11 @@ With the above credentials ready, you can use the user `project-regular` to crea
        
        stage('deploy app to multi cluster') {
          steps {
-           container('maven') {
+           container('go') {
              script {
                withCredentials([
                  kubeconfigFile(
-                   credentialsId: 'dockerhub-go-kubeconfig',
+                   credentialsId: env.KUBECONFIG_CREDENTIAL_ID,
                    variable: 'KUBECONFIG')
                  ]) {
                  sh 'envsubst < devops-go-sample/manifest/multi-cluster-deploy.yaml | kubectl apply -f -'
