@@ -138,7 +138,7 @@ In this example, all workloads are deployed in `kubesphere-sample-dev`. You must
                     credentialsId: env.KUBECONFIG_CREDENTIAL_ID,
                     variable: 'KUBECONFIG')
                     ]) {
-                    sh 'envsubst < devops-go-sample/deploy/all-in-one/devops-sample.yaml | kubectl apply -f -'
+                    sh 'envsubst < deploy/all-in-one/devops-sample.yaml | kubectl apply -f -'
                 }
              }
            }
