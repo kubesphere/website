@@ -79,7 +79,7 @@ weight: 11310
    ```bash
    $ kubectl get pod -n kubesphere-devops-system
    NAME                                       READY   STATUS    RESTARTS   AGE
-   ks-jenkins-68b8949bb-7zwg4                 1/1     Running   0          84m
+   devops-jenkins-68b8949bb-7zwg4                 1/1     Running   0          84m
    s2ioperator-0                              1/1     Running   1          84m
    sonarqube-postgresql-0                     1/1     Running   0          5m31s
    sonarqube-sonarqube-bb595d88b-97594        1/1     Running   2          5m31s

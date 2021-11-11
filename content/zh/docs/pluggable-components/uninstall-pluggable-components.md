@@ -48,7 +48,7 @@ kubectl -n kubesphere-system edit clusterconfiguration ks-installer
 3. 运行下面的命令。
 
    ```bash
-   helm -n kubesphere-devops-system delete ks-jenkins
+   helm -n kubesphere-devops-system delete devops-jenkins
    helm -n kubesphere-devops-system delete uc
    ```
 

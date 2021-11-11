@@ -26,7 +26,7 @@ The built-in Jenkins cannot share the same email configuration with the platform
 
    {{< notice warning >}}
 
-   Once you modify the Email server in the `ks-jenkins` Deployment, it will restart itself. Consequently, the DevOps system will be unavailable for a few minutes. Please make such modification at an appropriate time.
+   Once you modify the Email server in the `devops-jenkins` Deployment, it will restart itself. Consequently, the DevOps system will be unavailable for a few minutes. Please make such modification at an appropriate time.
 
    {{</ notice >}}
 
