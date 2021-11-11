@@ -121,7 +121,7 @@ kubectl get cm -n kubesphere-devops-system ks-devops-agent -o yaml
            stage ('build & push') {
                steps {
                    container ('maven') {
-                       sh 'mvn -o -Dmaven.test.skip=true clean package'
+                       sh 'mvn -Dmaven.test.skip=true clean package'
                        sh 'docker build -f Dockerfile-online -t $REGISTRY/$DOCKERHUB_NAMESPACE/$APP_NAME:SNAPSHOT-$BRANCH_NAME-$BUILD_NUMBER .'
                        withCredentials([usernamePassword(passwordVariable : 'DOCKER_PASSWORD' ,usernameVariable : 'DOCKER_USERNAME' ,credentialsId : "$DOCKER_CREDENTIAL_ID" ,)]) {
                            sh 'echo "$DOCKER_PASSWORD" | docker login $REGISTRY -u "$DOCKER_USERNAME" --password-stdin'

@@ -67,7 +67,7 @@ With the above credentials ready, you can create a pipeline using an example Jen
        DOCKERHUB_USERNAME = 'Docker Hub Username'
        // Docker image name
        APP_NAME = 'devops-go-sample'
-       // ‘dockerhubid’ is the credentials ID you created in KubeSphere with Docker Hub Access Token
+       // 'dockerhubid' is the credentials ID you created in KubeSphere with Docker Hub Access Token
        DOCKERHUB_CREDENTIAL = credentials('dockerhubid')
        // the kubeconfig credentials ID you created in KubeSphere
        KUBECONFIG_CREDENTIAL_ID = 'go'

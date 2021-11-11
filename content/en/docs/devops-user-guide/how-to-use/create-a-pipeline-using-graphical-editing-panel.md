@@ -146,7 +146,7 @@ Pipelines include [declarative pipelines](https://www.jenkins.io/doc/book/pipeli
 3. Click **Add Nesting Steps** to add a nested step under the `maven` container. Select **shell** from the list and enter the following command in the command line. Click **OK** to save it.
 
    ```shell
-   mvn clean -o -gs `pwd`/configuration/settings.xml test
+   mvn clean test
    ```
 
    {{< notice note >}}
@@ -190,7 +190,7 @@ This stage uses SonarQube to test your code. You can skip this stage if you do n
 7. Click **shell** and enter the following command in the command line for the sonarqube branch and authentication. Click **OK** to finish.
 
    ```shell
-   mvn sonar:sonar -o -gs `pwd`/configuration/settings.xml -Dsonar.login=$SONAR_TOKEN
+   mvn sonar:sonar -Dsonar.login=$SONAR_TOKEN
    ```
 
    ![sonarqube-shell-new](/images/docs/devops-user-guide/using-devops/create-a-pipeline-using-graphical-editing-panels/sonarqube-shell-new.png)
@@ -220,7 +220,7 @@ This stage uses SonarQube to test your code. You can skip this stage if you do n
 3. Click **Add Nesting Steps** under the `maven` container to add a nested step. Select **shell** from the list, and enter the following command in the displayed dialog box. Click **OK** to finish.
 
    ```shell
-   mvn -o -Dmaven.test.skip=true -gs `pwd`/configuration/settings.xml clean package
+   mvn -Dmaven.test.skip=true clean package
    ```
 
    ![nested-step-maven](/images/docs/devops-user-guide/using-devops/create-a-pipeline-using-graphical-editing-panels/nested-step-maven.png)

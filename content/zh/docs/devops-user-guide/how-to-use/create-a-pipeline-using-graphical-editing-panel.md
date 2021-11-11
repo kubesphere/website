@@ -146,7 +146,7 @@ KubeSphere 中的图形编辑面板包含用于 Jenkins [阶段 (Stage)](https:/
 3. 点击**添加嵌套步骤**，在 `maven` 容器下添加一个嵌套步骤。在列表中选择 **shell** 并在命令行中输入以下命令。点击**确定**保存操作。
 
    ```shell
-   mvn clean -o -gs `pwd`/configuration/settings.xml test
+   mvn clean test
    ```
 
    {{< notice note >}}
@@ -190,7 +190,7 @@ KubeSphere 中的图形编辑面板包含用于 Jenkins [阶段 (Stage)](https:/
 7. 点击 **shell** 并在命令行中输入以下命令，用于 sonarqube 分支和认证，点击**确定**完成操作。
 
    ```shell
-   mvn sonar:sonar -o -gs `pwd`/configuration/settings.xml -Dsonar.login=$SONAR_TOKEN
+   mvn sonar:sonar -Dsonar.login=$SONAR_TOKEN
    ```
 
    ![新的 SonarQube shell](/images/docs/zh-cn/devops-user-guide/use-devops/create-a-pipeline-using-graphical-editing-panel/sonarqube_shell_new.png)
@@ -220,7 +220,7 @@ KubeSphere 中的图形编辑面板包含用于 Jenkins [阶段 (Stage)](https:/
 3. 点击 `maven` 容器下的**添加嵌套步骤**添加一个嵌套步骤。在列表中选择 **shell** 并在弹出窗口中输入以下命令，点击**确定**完成操作。
 
    ```shell
-   mvn -o -Dmaven.test.skip=true -gs `pwd`/configuration/settings.xml clean package
+   mvn -Dmaven.test.skip=true clean package
    ```
 
    ![maven 嵌套步骤](/images/docs/zh-cn/devops-user-guide/use-devops/create-a-pipeline-using-graphical-editing-panel/nested_step_maven.png)
