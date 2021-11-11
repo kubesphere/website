@@ -57,9 +57,7 @@ weight: 11410
    ```groovy
    pipeline {  
      agent {
-       node {
-         label 'maven'
-       }
+       label 'go'
      }
    
      environment {
@@ -80,30 +78,36 @@ weight: 11410
      stages {
        stage('docker login') {
          steps{
-           container ('maven') {
-             sh 'echo $DOCKERHUB_CREDENTIAL_PSW  | docker login -u $DOCKERHUB_CREDENTIAL_USR --password-stdin'
-               }
-             }  
+           container ('go') {
+             sh 'echo $DOCKERHUB_CREDENTIAL_PSW | docker login -u $DOCKERHUB_CREDENTIAL_USR --password-stdin'
            }
+         }
+       }
    
        stage('build & push') {
          steps {
-           container ('maven') {
+           container ('go') {
              sh 'git clone https://github.com/yuswift/devops-go-sample.git'
              sh 'cd devops-go-sample && docker build -t $REGISTRY/$DOCKERHUB_USERNAME/$APP_NAME .'
              sh 'docker push $REGISTRY/$DOCKERHUB_USERNAME/$APP_NAME'
-             }
            }
          }
+       }
+
        stage ('deploy app') {
          steps {
-           container('maven') {
-             kubernetesDeploy(configs: 'devops-go-sample/manifest/deploy.yaml', kubeconfigId: "$KUBECONFIG_CREDENTIAL_ID")
-             }
+           container('go') {
+              withCredentials([
+                kubeconfigFile(
+                  credentialsId: env.KUBECONFIG_CREDENTIAL_ID,
+                  variable: 'KUBECONFIG')
+                ]) {
+                sh 'envsubst < devops-go-sample/manifest/deploy.yaml | kubectl apply -f -'
            }
          }
        }
      }
+   }
    ```
 
    {{< notice note >}}

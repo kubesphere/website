@@ -83,11 +83,9 @@ In this example, all workloads are deployed in `kubesphere-sample-dev`. You must
 
    ```groovy
    pipeline {
-     agent {
-       node {
-         label 'maven'
+       agent {
+           label 'maven'
        }
-     }
    
        parameters {
            string(name:'TAG_NAME',defaultValue: '',description:'')
@@ -101,19 +99,21 @@ In this example, all workloads are deployed in `kubesphere-sample-dev`. You must
            DOCKERHUB_NAMESPACE = 'Docker Hub Namespace'
            APP_NAME = 'devops-java-sample'
            BRANCH_NAME = 'dev'
+           PROJECT_NAME = 'kubesphere-sample-dev'
        }
    
        stages {
            stage ('checkout scm') {
                steps {
-                   git branch: 'master', url: "https://github.com/kubesphere/devops-java-sample.git"
+                   // Please avoid commit your test changes to this repository
+                   git branch: 'master', url: "https://github.com/kubesphere/devops-maven-sample.git"
                }
            }
    
            stage ('unit test') {
                steps {
                    container ('maven') {
-                       sh 'mvn clean -o -gs `pwd`/configuration/settings.xml test'
+                       sh 'mvn clean test'
                    }
                }
            }
@@ -121,7 +121,7 @@ In this example, all workloads are deployed in `kubesphere-sample-dev`. You must
            stage ('build & push') {
                steps {
                    container ('maven') {
-                       sh 'mvn -o -Dmaven.test.skip=true -gs `pwd`/configuration/settings.xml clean package'
+                       sh 'mvn -o -Dmaven.test.skip=true clean package'
                        sh 'docker build -f Dockerfile-online -t $REGISTRY/$DOCKERHUB_NAMESPACE/$APP_NAME:SNAPSHOT-$BRANCH_NAME-$BUILD_NUMBER .'
                        withCredentials([usernamePassword(passwordVariable : 'DOCKER_PASSWORD' ,usernameVariable : 'DOCKER_USERNAME' ,credentialsId : "$DOCKER_CREDENTIAL_ID" ,)]) {
                            sh 'echo "$DOCKER_PASSWORD" | docker login $REGISTRY -u "$DOCKER_USERNAME" --password-stdin'
@@ -133,7 +133,13 @@ In this example, all workloads are deployed in `kubesphere-sample-dev`. You must
    
            stage('deploy to dev') {
              steps {
-               kubernetesDeploy(configs: 'deploy/dev-ol/**', enableConfigSubstitution: true, kubeconfigId: "$KUBECONFIG_CREDENTIAL_ID")
+                withCredentials([
+                    kubeconfigFile(
+                    credentialsId: env.KUBECONFIG_CREDENTIAL_ID,
+                    variable: 'KUBECONFIG')
+                    ]) {
+                    sh 'envsubst < devops-go-sample/deploy/all-in-one/devops-sample.yaml | kubectl apply -f -'
+                }
              }
            }
        }

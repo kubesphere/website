@@ -73,7 +73,7 @@ With the above credentials ready, you can use the user `project-regular` to crea
        // Docker Hub username
        DOCKERHUB_USERNAME = 'Your Docker Hub username'
        APP_NAME = 'devops-go-sample'
-       // ‘dockerhub-go’ is the Docker Hub credentials ID you created on the KubeSphere console
+       // ‘dockerhub’ is the Docker Hub credentials ID you created on the KubeSphere console
        DOCKERHUB_CREDENTIAL = credentials('dockerhub')
        // the kubeconfig credentials ID you created on the KubeSphere console
        KUBECONFIG_CREDENTIAL_ID = 'kubeconfig'

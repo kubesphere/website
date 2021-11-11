@@ -73,7 +73,7 @@ weight: 11420
        // Docker Hub 用户名
        DOCKERHUB_USERNAME = 'Your Docker Hub username'
        APP_NAME = 'devops-go-sample'
-       // ‘dockerhub-go’ 即您在 KubeSphere 控制台上创建的 Docker Hub 凭证 ID
+       // ‘dockerhub’ 即您在 KubeSphere 控制台上创建的 Docker Hub 凭证 ID
        DOCKERHUB_CREDENTIAL = credentials('dockerhub')
        // 您在 KubeSphere 控制台上创建的 kubeconfig 凭证 ID
        KUBECONFIG_CREDENTIAL_ID = 'kubeconfig'
