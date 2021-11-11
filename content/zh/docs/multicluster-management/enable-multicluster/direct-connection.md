@@ -97,7 +97,7 @@ multicluster:
 kubectl logs -n kubesphere-system $(kubectl get pod -n kubesphere-system -l app=ks-install -o jsonpath='{.items[0].metadata.name}') -f
 ```
 
-## 准备member
+## 准备成员集群
 
 为了通过 **主集群**管理，您需要使它们之间的 `jwtSecret` 相同。因此，您首先需要在 **主集群**中执行以下命令来获取它。
 
@@ -177,7 +177,7 @@ multicluster:
 kubectl logs -n kubesphere-system $(kubectl get pod -n kubesphere-system -l app=ks-install -o jsonpath='{.items[0].metadata.name}') -f
 ```
 
-## 导入member集群
+## 导入成员集群
 
 1. 以 `admin` 身份登录 KubeSphere 控制台，转到**集群管理**页面点击**添加集群**。
    
