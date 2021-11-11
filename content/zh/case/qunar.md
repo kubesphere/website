@@ -174,7 +174,7 @@ section2:
       image: 
 
   rightPart:
-    icon: /images/case/qunar-logo.png
+    icon: /images/case/logo-qunar.png
     list:
       - title: 行业
         content: 旅游业
