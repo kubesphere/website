@@ -360,7 +360,7 @@ spec:
         enabled: false
         username: ""
         password: ""
-      externalElasticsearchUrl: ""
+      externalElasticsearchHost: ""
       externalElasticsearchPort: ""
   console:
     enableMultiLogin: true

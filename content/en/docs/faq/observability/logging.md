@@ -27,7 +27,7 @@ If you are using the KubeSphere internal Elasticsearch and want to change it to 
    kubectl edit cc -n kubesphere-system ks-installer
    ```
 
-2. Comment out `es.elasticsearchDataXXX`, `es.elasticsearchMasterXXX` and `status.logging`, and set `es.externalElasticsearchUrl` to the address of your Elasticsearch and `es.externalElasticsearchPort` to its port number. Below is an example for your reference.
+2. Comment out `es.elasticsearchDataXXX`, `es.elasticsearchMasterXXX` and `status.logging`, and set `es.externalElasticsearchHost` to the address of your Elasticsearch and `es.externalElasticsearchPort` to its port number. Below is an example for your reference.
 
    ```yaml
    apiVersion: installer.kubesphere.io/v1alpha1
@@ -46,7 +46,7 @@ If you are using the KubeSphere internal Elasticsearch and want to change it to 
          # elasticsearchMasterVolumeSize: 4Gi
          elkPrefix: logstash
          logMaxAge: 7
-         externalElasticsearchUrl: <192.168.0.2>
+         externalElasticsearchHost: <192.168.0.2>
          externalElasticsearchPort: <9200>
      ...
    status:
