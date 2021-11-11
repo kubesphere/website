@@ -77,9 +77,9 @@ KubeSphere 中可以创建两种类型的流水线：一种是本教程中介绍
 
 ### 步骤 2：在 GitHub 仓库中修改 Jenkinsfile
 
-1. 登录 GitHub 并 Fork GitHub 仓库 [devops-java-sample](https://github.com/kubesphere/devops-java-sample) 至您的 GitHub 个人帐户。
+1. 登录 GitHub 并 Fork GitHub 仓库 [devops-maven-sample](https://github.com/kubesphere/devops-maven-sample) 至您的 GitHub 个人帐户。
 
-2. 在您自己的 GitHub 仓库 **devops-java-sample** 中，点击根目录中的文件 `Jenkinsfile-online`。
+2. 在您自己的 GitHub 仓库 **devops-maven-sample** 中，点击根目录中的文件 `Jenkinsfile-online`。
 
 3. 点击右侧的编辑图标，编辑环境变量。
 
@@ -93,7 +93,7 @@ KubeSphere 中可以创建两种类型的流水线：一种是本教程中介绍
    | REGISTRY | docker.io | 默认为 `docker.io`，用作推送镜像的地址。 |
    | DOCKERHUB\_NAMESPACE | your-dockerhub-account | 请替换为您的 Docker Hub 帐户名，也可以替换为该帐户下的 Organization 名称。 |
    | GITHUB\_ACCOUNT | your-github-account | 请替换为您的 GitHub 帐户名。例如，如果您的 GitHub 地址是 `https://github.com/kubesphere/`，则您的 GitHub 帐户名为 `kubesphere`，也可以替换为该帐户下的 Organization 名称。 |
-   | APP\_NAME | devops-java-sample | 应用名称。 |
+   | APP\_NAME | devops-maven-sample | 应用名称。 |
    | SONAR\_CREDENTIAL\_ID | sonar-token | 您在 KubeSphere 中为 SonarQube 令牌设置的**名称**，用于代码质量检测。 |
 
    {{< notice note >}}
@@ -131,7 +131,7 @@ KubeSphere 中可以创建两种类型的流水线：一种是本教程中介绍
 
 3. 在 **GitHub** 选项卡，从**凭证**的下拉菜单中选择 **github-token**，然后点击**确定**来选择您的仓库。
 
-4. 选择您的 GitHub 帐户，与该令牌相关的所有仓库将在右侧列出。选择 **devops-java-sample** 并点击**选择**，点击**下一步**继续。
+4. 选择您的 GitHub 帐户，与该令牌相关的所有仓库将在右侧列出。选择 **devops-maven-sample** 并点击**选择**，点击**下一步**继续。
 
 5. 在**高级设置**中，选中**删除旧分支**旁边的方框。本教程中，您可以为**分支保留天数（天）**和**分支最大数量**使用默认值。
 
@@ -225,7 +225,7 @@ KubeSphere 中可以创建两种类型的流水线：一种是本教程中介绍
 
 ### 步骤 6：检查流水线状态
 
-1. 在**运行状态**中，您可以查看流水线的运行状态。请注意，流水线在刚创建后将继续初始化几分钟。示例流水线有八个阶段，它们已在 [Jenkinsfile-online](https://github.com/kubesphere/devops-java-sample/blob/sonarqube/Jenkinsfile-online) 中单独定义。
+1. 在**运行状态**中，您可以查看流水线的运行状态。请注意，流水线在刚创建后将继续初始化几分钟。示例流水线有八个阶段，它们已在 [Jenkinsfile-online](https://github.com/kubesphere/devops-maven-sample/blob/sonarqube/Jenkinsfile-online) 中单独定义。
 
 2. 点击右上角的**查看日志**来查看流水线运行日志。您可以看到流水线的动态日志输出，包括可能导致流水线无法运行的错误。对于每个阶段，您都可以点击该阶段来查看其日志，而且可以将日志下载到本地计算机进行进一步分析。
 

@@ -29,7 +29,7 @@ This tutorial demonstrates how to trigger a pipeline by using a webhook.
 
 ### Set a webhook in the GitHub repository
 
-1. Log in to GitHub and go to your own repository `devops-java-sample`.
+1. Log in to GitHub and go to your own repository `devops-maven-sample`.
 
 2. Click **Settings**, click **Webhooks**, and click **Add webhook**.
 

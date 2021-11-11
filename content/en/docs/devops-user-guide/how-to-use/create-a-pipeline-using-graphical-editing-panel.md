@@ -59,7 +59,7 @@ This example pipeline includes the following six stages.
 
 ### Step 2: Create a project
 
-In this tutorial, the example pipeline will deploy the [sample](https://github.com/kubesphere/devops-java-sample/tree/sonarqube) app to a project. Hence, you must create the project (for example, `kubesphere-sample-dev`) in advance. The Deployment and Service of the app will be created automatically in the project once the pipeline runs successfully.
+In this tutorial, the example pipeline will deploy the [sample](https://github.com/kubesphere/devops-maven-sample/tree/sonarqube) app to a project. Hence, you must create the project (for example, `kubesphere-sample-dev`) in advance. The Deployment and Service of the app will be created automatically in the project once the pipeline runs successfully.
 
 You can use the user `project-admin` to create the project. Besides, this user is also the reviewer of the CI/CD pipeline. Make sure the account `project-regular` is invited to the project with the role of `operator`. For more information, see [Create Workspaces, Projects, Users and Roles](../../../quick-start/create-workspace-and-project/).
 
@@ -123,7 +123,7 @@ Pipelines include [declarative pipelines](https://www.jenkins.io/doc/book/pipeli
 
 3. Click **Add Step**. Select **git** from the list as the example code is pulled from GitHub. In the displayed dialog box, fill in the required field. Click **OK** to finish.
 
-   - **URL**. Enter the GitHub repository address `https://github.com/kubesphere/devops-java-sample.git`. Note that this is an example and you need to use your own repository address.
+   - **URL**. Enter the GitHub repository address `https://github.com/kubesphere/devops-maven-sample.git`. Note that this is an example and you need to use your own repository address.
    - **Name**. You do not need to enter the Credential ID for this tutorial. 
    - **Branch**. It defaults to the master branch if you leave it blank. Enter `sonarqube` or leave it blank if you do not need the code analysis stage.
 
@@ -225,7 +225,7 @@ This stage uses SonarQube to test your code. You can skip this stage if you do n
 
    ![nested-step-maven](/images/docs/devops-user-guide/using-devops/create-a-pipeline-using-graphical-editing-panels/nested-step-maven.png)
 
-4. Click **Add Nesting Steps** again and select **shell**. Enter the following command in the command line to build a Docker image based on the [Dockerfile](https://github.com/kubesphere/devops-java-sample/blob/sonarqube/Dockerfile-online). Click **OK** to confirm.
+4. Click **Add Nesting Steps** again and select **shell**. Enter the following command in the command line to build a Docker image based on the [Dockerfile](https://github.com/kubesphere/devops-maven-sample/blob/sonarqube/Dockerfile-online). Click **OK** to confirm.
 
    {{< notice note >}}
 
@@ -298,7 +298,7 @@ This stage uses SonarQube to test your code. You can skip this stage if you do n
 3. Click **Add Step** under the **Deploy to Dev** stage again. Select **kubernetesDeploy** from the list and fill in the following fields in the displayed dialog box. Click **OK** to save it.
 
    - **Kubeconfig**: Select the Kubeconfig you created, such as `demo-kubeconfig`.
-   - **Configuration File Path**: Enter `deploy/no-branch-dev/**`, which is the relative path of the Kubernetes resource [YAML](https://github.com/kubesphere/devops-java-sample/tree/sonarqube/deploy/no-branch-dev) file in the code repository.
+   - **Configuration File Path**: Enter `deploy/no-branch-dev/**`, which is the relative path of the Kubernetes resource [YAML](https://github.com/kubesphere/devops-maven-sample/tree/sonarqube/deploy/no-branch-dev) file in the code repository.
 
    ![kubernetesDeploy](/images/docs/devops-user-guide/using-devops/create-a-pipeline-using-graphical-editing-panels/kubernetesDeploy.png)
 

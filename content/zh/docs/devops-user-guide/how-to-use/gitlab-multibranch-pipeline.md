@@ -38,7 +38,7 @@ weight: 11291
 
 ### 步骤 2：在 GitLab 仓库中编辑 Jenkinsfile
 
-1. 登录 GitLab 并创建一个公开项目。点击**导入项目**，选择**从 URL 导入仓库**，然后输入 [devops-java-sample](https://github.com/kubesphere/devops-java-sample) 的 URL。可见性级别选择**公开**，然后点击**新建项目**。
+1. 登录 GitLab 并创建一个公开项目。点击**导入项目**，选择**从 URL 导入仓库**，然后输入 [devops-maven-sample](https://github.com/kubesphere/devops-maven-sample) 的 URL。可见性级别选择**公开**，然后点击**新建项目**。
 
 2. 在刚刚创建的项目中，从 master 分支中创建一个新分支，命名为 `gitlab-demo`。
 
@@ -70,7 +70,7 @@ weight: 11291
 
 2. 在出现的对话框中填写基本信息。将流水线的名称设置为 `gitlab-multi-branch` 并选择一个代码仓库。
 
-3. 在 **GitLab** 选项卡下的 **GitLab 服务器地址**中选择默认选项 `https://gitlab.com`，在**项目组/所有者**中输入该 GitLab 项目所属组的名称，然后从**代码仓库**的下拉菜单中选择 `devops-java-sample` 仓库。点击右下角的 **√**，然后点击**下一步**。
+3. 在 **GitLab** 选项卡下的 **GitLab 服务器地址**中选择默认选项 `https://gitlab.com`，在**项目组/所有者**中输入该 GitLab 项目所属组的名称，然后从**代码仓库**的下拉菜单中选择 `devops-maven-sample` 仓库。点击右下角的 **√**，然后点击**下一步**。
 
    {{< notice note >}}
 

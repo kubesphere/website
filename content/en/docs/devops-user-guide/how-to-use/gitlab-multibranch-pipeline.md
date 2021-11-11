@@ -38,7 +38,7 @@ In KubeSphere 3.1.x and later, you can create a multi-branch pipeline with GitLa
 
 ### Step 2: Modify the Jenkinsfile in your GitLab repository
 
-1. Log in to GitLab and create a public project. Click **Import project/repository**, select **Repo by URL** to enter the URL of [devops-java-sample](https://github.com/kubesphere/devops-java-sample), select **Public** for **Visibility Level**, and then click **Create project**.
+1. Log in to GitLab and create a public project. Click **Import project/repository**, select **Repo by URL** to enter the URL of [devops-maven-sample](https://github.com/kubesphere/devops-maven-sample), select **Public** for **Visibility Level**, and then click **Create project**.
 
 2. In the project just created, create a new branch from the master branch and name it `gitlab-demo`.
 
@@ -70,7 +70,7 @@ You need to create two projects, such as `kubesphere-sample-dev` and `kubesphere
 
 2. Provide the basic information in the displayed dialog box. Name it `gitlab-multi-branch` and select a code repository.
 
-3. On the **GitLab** tab, select the default option `https://gitlab.com` for **GitLab Server Address**, enter the username of the GitLab project owner for **Project Group/Owner**, and then select the `devops-java-sample` repository from the drop-down list for **Code Repository**. Click **√** in the lower-right corner and then click **Next**.
+3. On the **GitLab** tab, select the default option `https://gitlab.com` for **GitLab Server Address**, enter the username of the GitLab project owner for **Project Group/Owner**, and then select the `devops-maven-sample` repository from the drop-down list for **Code Repository**. Click **√** in the lower-right corner and then click **Next**.
 
    {{< notice note >}}
 

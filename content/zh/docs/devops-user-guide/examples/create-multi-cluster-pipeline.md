@@ -129,7 +129,7 @@ weight: 11440
    
            REGISTRY = 'docker.io'
            DOCKERHUB_NAMESPACE = 'your Docker Hub account ID'
-           APP_NAME = 'devops-java-sample'
+           APP_NAME = 'devops-maven-sample'
            SONAR_CREDENTIAL_ID = 'sonar-token'
            TAG_NAME = "SNAPSHOT-$BRANCH_NAME-$BUILD_NUMBER"
        }
@@ -137,7 +137,7 @@ weight: 11440
        stage('checkout') {
          steps {
            container('maven') {
-             git branch: 'master', url: 'https://github.com/kubesphere/devops-java-sample.git'
+             git branch: 'master', url: 'https://github.com/kubesphere/devops-maven-sample.git'
            }
          }
        }

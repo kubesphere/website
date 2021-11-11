@@ -29,7 +29,7 @@ Source-to-Image (S2I) 是一个工具箱和工作流，用于从源代码构建�
 
 ### 步骤 1：Fork 示例仓库
 
-登录 GitHub 并 Fork GitHub 仓库 [devops-java-sample](https://github.com/kubesphere/devops-java-sample) 至您的 GitHub 个人帐户。
+登录 GitHub 并 Fork GitHub 仓库 [devops-maven-sample](https://github.com/kubesphere/devops-maven-sample) 至您的 GitHub 个人帐户。
 
 ### 步骤 2：创建保密字典
 

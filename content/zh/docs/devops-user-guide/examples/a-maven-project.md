@@ -57,8 +57,8 @@ kubectl get cm -n kubesphere-devops-system ks-devops-agent -o yaml
 ### Maven 工程准备工作
 
 - 确保您在开发设备上成功构建 Maven 工程。
-- 添加 Dockerfile 至工程仓库以构建镜像。有关更多信息，请参考 <https://github.com/kubesphere/devops-java-sample/blob/master/Dockerfile-online>。
-- 添加 YAML 文件至工程仓库以部署工作负载。有关更多信息，请参考 <https://github.com/kubesphere/devops-java-sample/tree/master/deploy/dev-ol>。如果有多个不同环境，您需要准备多个部署文件。
+- 添加 Dockerfile 至工程仓库以构建镜像。有关更多信息，请参考 <https://github.com/kubesphere/devops-maven-sample/blob/master/Dockerfile-online>。
+- 添加 YAML 文件至工程仓库以部署工作负载。有关更多信息，请参考 <https://github.com/kubesphere/devops-maven-sample/tree/master/deploy/dev-ol>。如果有多个不同环境，您需要准备多个部署文件。
 
 ### 创建凭证
 
@@ -97,7 +97,7 @@ kubectl get cm -n kubesphere-devops-system ks-devops-agent -o yaml
            REGISTRY = 'docker.io'
            // 需要更改为您自己的 Docker Hub Namespace
            DOCKERHUB_NAMESPACE = 'Docker Hub Namespace'
-           APP_NAME = 'devops-java-sample'
+           APP_NAME = 'devops-maven-sample'
            BRANCH_NAME = 'dev'
            PROJECT_NAME = 'kubesphere-sample-dev'
        }
