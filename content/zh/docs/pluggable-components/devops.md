@@ -118,7 +118,7 @@ kubectl get pod -n kubesphere-devops-system
 
 ```bash
 NAME                          READY   STATUS    RESTARTS   AGE
-ks-jenkins-5cbbfbb975-hjnll   1/1     Running   0          40m
+devops-jenkins-5cbbfbb975-hjnll   1/1     Running   0          40m
 s2ioperator-0                 1/1     Running   0          41m
 ```
 

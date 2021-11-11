@@ -26,7 +26,7 @@ Weight: 11260
 
    {{< notice warning >}}
 
-   在 `ks-jenkins` 部署 (Deployment) 中修改电子邮件服务器后，它会重新启动。因此，DevOps 系统将在几分钟内不可用，请在适当的时候进行此类修改。
+   在 `devops-jenkins` 部署 (Deployment) 中修改电子邮件服务器后，它会重新启动。因此，DevOps 系统将在几分钟内不可用，请在适当的时候进行此类修改。
 
    {{</ notice >}}
 

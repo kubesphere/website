@@ -47,7 +47,7 @@ Change the value of `openpitrix.store.enabled` from `true` to `false` in `ks-ins
 3. Run the following commands:
 
    ```bash
-   helm -n kubesphere-devops-system delete ks-jenkins
+   helm -n kubesphere-devops-system delete devops-jenkins
    helm -n kubesphere-devops-system delete uc
    ```
 
