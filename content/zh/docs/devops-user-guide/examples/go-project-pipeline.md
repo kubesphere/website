@@ -96,14 +96,13 @@ weight: 11410
 
        stage ('deploy app') {
          steps {
-           container('go') {
-              withCredentials([
-                kubeconfigFile(
-                  credentialsId: env.KUBECONFIG_CREDENTIAL_ID,
-                  variable: 'KUBECONFIG')
-                ]) {
-                sh 'envsubst < devops-go-sample/manifest/deploy.yaml | kubectl apply -f -'
-           }
+            withCredentials([
+              kubeconfigFile(
+                credentialsId: env.KUBECONFIG_CREDENTIAL_ID,
+                variable: 'KUBECONFIG')
+              ]) {
+              sh 'envsubst < devops-go-sample/manifest/deploy.yaml | kubectl apply -f -'
+            }
          }
        }
      }

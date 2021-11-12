@@ -54,8 +54,8 @@ With the above credentials ready, you can create a pipeline using an example Jen
 
 2. Copy and paste all the content below to the displayed dialog box as an example Jenkinsfile for your pipeline. You must replace the value of `DOCKERHUB_USERNAME`, `DOCKERHUB_CREDENTIAL`, `KUBECONFIG_CREDENTIAL_ID`, and `PROJECT_NAME` with yours. When you finish, click **OK**.
 
-   ```groovy
-   pipeline {
+  ```groovy
+  pipeline {
      agent {
        label 'go'
      }
@@ -95,15 +95,13 @@ With the above credentials ready, you can create a pipeline using an example Jen
        }
        stage ('deploy app') {
          steps {
-           container('go') {
-              withCredentials([
-                kubeconfigFile(
-                  credentialsId: env.KUBECONFIG_CREDENTIAL_ID,
-                  variable: 'KUBECONFIG')
-                ]) {
-                sh 'envsubst < devops-go-sample/manifest/deploy.yaml | kubectl apply -f -'
-              }
-           }
+            withCredentials([
+              kubeconfigFile(
+                credentialsId: env.KUBECONFIG_CREDENTIAL_ID,
+                variable: 'KUBECONFIG')
+              ]) {
+              sh 'envsubst < devops-go-sample/manifest/deploy.yaml | kubectl apply -f -'
+            }
          }
       }
     }

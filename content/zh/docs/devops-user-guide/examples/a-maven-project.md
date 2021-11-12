@@ -105,7 +105,7 @@ kubectl get cm -n kubesphere-devops-system ks-devops-agent -o yaml
        stages {
            stage ('checkout scm') {
                steps {
-                   // 下面的项目是为了大家方便体验功能的示例项目，请大家避免把自己的测试性的修改提交 PR 到该仓库
+                   // 下方所用的 GitHub 仓库仅用作体验功能的示例，请避免向该仓库提交包含测试性改动的 PR
                    git branch: 'master', url: "https://github.com/kubesphere/devops-maven-sample.git"
                }
            }

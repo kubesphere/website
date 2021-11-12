@@ -105,7 +105,7 @@ In this example, all workloads are deployed in `kubesphere-sample-dev`. You must
        stages {
            stage ('checkout scm') {
                steps {
-                   // Please avoid commit your test changes to this repository
+                   // Please avoid committing your test changes to this repository
                    git branch: 'master', url: "https://github.com/kubesphere/devops-maven-sample.git"
                }
            }
