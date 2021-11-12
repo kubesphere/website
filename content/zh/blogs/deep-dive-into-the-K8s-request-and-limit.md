@@ -1,6 +1,7 @@
 ---
 title: '你真的理解 K8s 中的 requests 和 limits 吗？'
-tag: 'Kubernetes,KubeSphere,schedule,monitoring'
+tag: 'Kubernetes,KubeSphere'
+keyword: 'Kubernetes,KubeSphere,requests,limits'
 createTime: '2021-01-01'
 author: '饶云坤'
 snapshot: 'https://pek3b.qingstor.com/kubesphere-community/images/cover.png'
