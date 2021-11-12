@@ -9,7 +9,7 @@ weight: 10640
 
 当您了解了 Source-to-Image (S2I) 的工作流和逻辑，就可以根据您的项目自定义镜像构建器模板（即 S2I / B2I 模板），以扩展 S2I 功能。KubeSphere 提供了几种常见的镜像构建器模板，如 [Python ](https://github.com/kubesphere/s2i-python-container/)和  [Java](https://github.com/kubesphere/s2i-java-container/)。 
 
-本教程演示如何创建包含 Nginx 服务的镜像构建器。如果需要在项目中使用运行时镜像，请参阅[本文档](https://github.com/kubesphere/s2irun/blob/master/docs/runtime_image.md)以了解有关如何创建运行时映像的更多信息。
+本教程演示如何创建包含 Nginx 服务的镜像构建器。如果需要在项目中使用运行时镜像，请参阅[本文档](https://github.com/kubesphere/s2irun/blob/master/docs/runtime_image.md)以了解有关如何创建运行时镜像的更多信息。
 
 ## 准备工作
 
@@ -120,7 +120,7 @@ CMD ["/usr/libexec/s2i/usage"]
 
 {{< notice note >}}
 
-S2I 脚本将使用 Dockerfile 中定义的标志作为参数。如果您需要使用与 KubeSphere 提供的基础映像不同的基础镜像，请参见 [S2I Scripts](https://github.com/kubesphere/s2irun/blob/master/docs/builder_image.md#s2i-scripts)。
+S2I 脚本将使用 Dockerfile 中定义的标志作为参数。如果您需要使用与 KubeSphere 提供的基础镜像不同的基础镜像，请参见 [S2I Scripts](https://github.com/kubesphere/s2irun/blob/master/docs/builder_image.md#s2i-scripts)。
 
 {{</ notice >}}
 
@@ -249,13 +249,7 @@ S2I 脚本将使用 Dockerfile 中定义的标志作为参数。如果您需要�
 
    您可以在此位置访问 Nginx 应用程序：`http://localhost:8080`。
 
-<<<<<<< HEAD
-   ![access-nginx](/images/docs/project-user-guide/image-builder/s2i-templates/access-nginx.png)
-
 ### 步骤 5：推送镜像与创建 S2I 模板
-=======
-### Step 5: Push image and create S2I template
->>>>>>> 95199bd7dd35e69b0fe1730e044eac16906dcf3a
 
 在本地完成 S2I 镜像构建器测试后，可以将镜像推送到自定义镜像仓库。您还需要创建一个 YAML 文件作为 S2I 构建器模板，如下所示。
 
@@ -281,18 +275,13 @@ spec:
 ### 步骤 6：在 KubeSphere 使用 S2I 模板
 
 1. 运行以下命令将上面创建的 S2I 模板提交至 KubeSphere。
+
  ```bash
    $ kubectl apply -f s2ibuildertemplate.yaml
    s2ibuildertemplate.devops.kubesphere.io/nginx created
  ```
-
-<<<<<<< HEAD
-2. 在 KubeSphere 上创建 S2I 构建时，可以找到可用的自定义 S2I 模板。
-
-   ![template-available](/images/docs/project-user-guide/image-builder/s2i-templates/template-available.png)
-=======
-2. You can find the customized S2I template available in **Build Environment** when you create a S2I build on KubeSphere.
->>>>>>> 95199bd7dd35e69b0fe1730e044eac16906dcf3a
+ 
+2. 在 KubeSphere 上创建 S2I 构建时，可以找到在**环境搭建**中找到自定义 S2I 模板。
 
 ## S2I 模板参数定义
 
