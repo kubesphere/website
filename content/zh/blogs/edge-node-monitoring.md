@@ -1,6 +1,6 @@
 ---
 title: '从 KubeSphere 3.1.0 边缘节点的监控问题排查，简要解析边缘监控原理'
-tag: 'KubeSphere, monitoring'
+tag: 'KubeSphere, 边缘节点'
 keywords: 'Kubernetes, KubeSphere, monitoring, 边缘节点'
 description: 'KubeSphere 3.1.0 通过集成 KubeEdge，将节点和资源的管理延伸到了边缘，也是 KubeSphere 正式支持边缘计算的第一个版本。本文作者也第一时间搭建和试用了边缘节点相关的功能，但是在边缘节点纳管之后遇到了一些监控的小问题，在排查过程中也顺带了解了一下 KubeSphere 对于边缘节点的监控原理，发出来和大家分享，方便其他的开发者能够更快的排查问题或进行二次开发。'
 createTime: '2021-06-10'

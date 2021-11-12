@@ -1,6 +1,7 @@
 ---
 title: '手把手从零部署与运营生产级的 Kubernetes 集群与 KubeSphere'
-tag: 'Kubernetes,kubesphere'
+tag: 'Kubernetes,KubeSphere'
+keywords: 'Kubernetes,KubeSphere'
 createTime: '2020-03-26'
 author: 'Liu_wt'
 snapshot: 'https://92uu-blog.oss-cn-beijing.aliyuncs.com/2020-03-25-091655.png'
