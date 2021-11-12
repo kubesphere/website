@@ -178,19 +178,37 @@ pipeline {
     }
     stage('deploy to dev') {
       steps {
-        kubernetesDeploy(configs: 'deploy/dev-ol/**', enableConfigSubstitution: true, kubeconfigId: "$DEV_KUBECONFIG_CREDENTIAL_ID")
+        withCredentials([
+            kubeconfigFile(
+            credentialsId: env.DEV_KUBECONFIG_CREDENTIAL_ID,
+            variable: 'KUBECONFIG')
+            ]) {
+            sh 'envsubst < deploy/dev-all-in-one/devops-sample.yaml | kubectl apply -f -'
+        }
       }
     }
     stage('deploy to staging') {
       steps {
         input(id: 'deploy-to-staging', message: 'deploy to staging?')
-        kubernetesDeploy(configs: 'deploy/prod-ol/**', enableConfigSubstitution: true, kubeconfigId: "$TEST_KUBECONFIG_CREDENTIAL_ID")
+        withCredentials([
+            kubeconfigFile(
+            credentialsId: env.TEST_KUBECONFIG_CREDENTIAL_ID,
+            variable: 'KUBECONFIG')
+            ]) {
+            sh 'envsubst < deploy/prod-all-in-one/devops-sample.yaml | kubectl apply -f -'
+        }
       }
     }
     stage('deploy to production') {
       steps {
         input(id: 'deploy-to-production', message: 'deploy to production?')
-        kubernetesDeploy(configs: 'deploy/prod-ol/**', enableConfigSubstitution: true, kubeconfigId: "$PROD_KUBECONFIG_CREDENTIAL_ID")
+        withCredentials([
+            kubeconfigFile(
+            credentialsId: env.PROD_KUBECONFIG_CREDENTIAL_ID,
+            variable: 'KUBECONFIG')
+            ]) {
+            sh 'envsubst < deploy/prod-all-in-one/devops-sample.yaml | kubectl apply -f -'
+        }
       }
     }
   }
