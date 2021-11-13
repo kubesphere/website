@@ -59,7 +59,6 @@
             </div>
         </div>
     </section>
-    {{ if eq $LanguageCode "en-US"}}
     <div class="SubscribeForm">
         <div class="innerBox">
             <img class="close" src="/images/home/close.svg" alt="close">
@@ -77,7 +76,6 @@
             </div>
         </div>
     </div>
-    {{end}}
     {{ partial "footer.html" $context }}
     {{ $aside := resources.Get "js/aside.js" }}
     {{ $asideJS := $aside | resources.Fingerprint "sha512" }}

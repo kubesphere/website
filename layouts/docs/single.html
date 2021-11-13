@@ -137,12 +137,11 @@
                                 <button class="Yes">{{ i18n "Yes" }}</button>
                                 <button class="No">{{ i18n "No" }}</button>
                             </section>
-                            {{if eq .Site.LanguageCode "en-US"}}
-                            {{if .Params.showSubscribe }}
+                            
                             <div class="SubscribeForm">
                                 <div class="innerBox">
                                     <p class="description">
-                                        Sign up for latest tutorials and Kubernetes tips
+                                        {{ i18n "Receive the latest news, articles and updates from KubeSphere" }}
                                     </p>
                                     <div>
                                         <form action="{{ .Site.Params.mailchimpSubscribeUrl }}" method="post"
@@ -156,8 +155,7 @@
                                         data-message2='{{ i18n "Please enter a valid email address." }}'></span>
                                 </div>
                             </div>
-                            {{end}}
-                            {{end}}
+                            
                             <br>
                             <p class="msg-thank">{{ i18n "Msg-Thank" }}</p>
                         </div>
