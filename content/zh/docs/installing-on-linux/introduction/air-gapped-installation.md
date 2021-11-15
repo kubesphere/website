@@ -513,7 +513,7 @@ kubesphere/kube-scheduler:v1.20.10
 kubesphere/kube-apiserver:v1.19.9
 kubesphere/kube-controller-manager:v1.19.9
 kubesphere/kube-proxy:v1.19.9
-kubesphere/kube-schedulerv1.19.9
+kubesphere/kube-scheduler:v1.19.9
 kubesphere/pause:3.5
 kubesphere/pause:3.4.1
 coredns/coredns:1.8.0
