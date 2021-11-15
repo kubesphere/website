@@ -12,6 +12,12 @@ weight: 6100
 
 有关如何启用每个组件的更多信息，请参见本章的各个教程。
 
+## 视频演示
+
+<video controls="controls" style="width: 100% !important; height: auto !important;">
+  <source type="video/mp4" src="https://kubesphere-community.pek3b.qingstor.com/videos/KubeSphere-v3.1.x-tutorial-videos/zh/KS311_200P002C202109_%E5%90%AF%E7%94%A8%E5%8F%AF%E6%8F%92%E6%8B%94%E7%BB%84%E4%BB%B6.mp4">
+</video>
+
 ## 资源要求
 
 在您启用可插拔组件之前，请确保您的环境中有足够的资源，具体参见下表。否则，可能会因为缺乏资源导致组件崩溃。

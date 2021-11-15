@@ -8,6 +8,12 @@ weight: 2300
 
 本快速入门演示如何创建企业空间、角色和用户帐户。同时，您将学习如何在企业空间中创建项目和 DevOps 工程，用于运行工作负载。完成本教程后，您将熟悉 KubeSphere 的多租户管理系统，并使用本教程中创建的资源（例如企业空间和帐户等）完成其他教程中的操作。
 
+## 视频演示
+
+<video controls="controls" style="width: 100% !important; height: auto !important;">
+  <source type="video/mp4" src="https://kubesphere-community.pek3b.qingstor.com/videos/KubeSphere-v3.1.x-tutorial-videos/zh/KS311_200P003C202109_%E5%88%9B%E5%BB%BA%E4%BC%81%E4%B8%9A%E7%A9%BA%E9%97%B4%E3%80%81%E9%A1%B9%E7%9B%AE%E3%80%81%E5%B8%90%E6%88%B7%E5%92%8C%E8%A7%92%E8%89%B2.mp4">
+</video>
+
 ## 准备工作
 
 KubeSphere 需要安装在您的机器中。

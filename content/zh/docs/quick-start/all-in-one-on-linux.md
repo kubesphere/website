@@ -11,8 +11,9 @@ weight: 2100
 ## 视频演示
 
 <video controls="controls" style="width: 100% !important; height: auto !important;">
-  <source type="video/mp4" src="https://kubesphere-docs.pek3b.qingstor.com/website/docs-v3.0/KS3.0%E5%AE%89%E8%A3%85%E4%B8%8E%E9%83%A8%E7%BD%B2_1_All-in-one%20Installation%20on%20Linux.mp4">
+  <source type="video/mp4" src="https://kubesphere-community.pek3b.qingstor.com/videos/KubeSphere-v3.1.x-tutorial-videos/zh/KS311_200P001C202109_%E5%9C%A8Linux%E4%B8%8A%E4%BB%A5All-in-One%E6%A8%A1%E5%BC%8F%E5%AE%89%E8%A3%85KubeSphere.mp4">
 </video>
+
 
 ## 步骤 1：准备 Linux 机器
 
