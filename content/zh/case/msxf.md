@@ -35,7 +35,7 @@ section2:
       image: https://pek3b.qingstor.com/kubesphere-community/images/cic-msxf-5.png
     - title: 
       contentList:
-        - content: 目前 grafana 社区并没有一个合适的 GPU 纬度展示模板，NVIDIA 也只给了一个主机纬度的相对粗糙的 Dashboard。目前我们用的 GPU Dashboard 是自己开发的。还有一个调用链纬度的监控：
+        - content: 目前 grafana 社区并没有一个合适的 GPU 纬度展示模板，NVIDIA 也只给了一个主机纬度的相对粗糙的 Dashboard。目前我们用的 GPU Dashboard 是自己开发的。还有一个调用链维度的监控：
       image: https://pek3b.qingstor.com/kubesphere-community/images/cic-msxf-6.png
     - title: 
       contentList:
@@ -43,7 +43,7 @@ section2:
       image: https://pek3b.qingstor.com/kubesphere-community/images/cic-msxf-7.png
     - title: 
       contentList:
-        - content: 日志这里可以看到一个额外的信息，我们可以根据 app 纬度来聚合，也就是一个应用下的不同 Pod 产生的日志可以汇总展示。这里其实是简单地根据 pod 的 label 来实现的，将每个 Pod 打上应用相关的 label 信息，然后采集日志时将这个属性暴露出来，就能在展示时针对性汇总。在中台发布的应用有一个日志跳转按钮，转到 kibana 页面后会带上相关参数，实现该应用下全部日志聚合展示的功能。
+        - content: 日志这里可以看到一个额外的信息，我们可以根据 APP 纬度来聚合，也就是一个应用下的不同 Pod 产生的日志可以汇总展示。这里其实是简单地根据 Pod 的 label 来实现的，将每个 Pod 打上应用相关的 Label 信息，然后采集日志时将这个属性暴露出来，就能在展示时针对性汇总。在中台发布的应用有一个日志跳转按钮，转到 Kibana 页面后会带上相关参数，实现该应用下全部日志聚合展示的功能。
         - content: 到这里可以看到整个中台虽然看起来功能还算齐全，但是面板很多，日志监控和主页分别有各自的入口，虽然可以在主页跳转到日志和监控页面，但是这里的鉴权问题、风格统一问题等已经很不和谐。但是我们团队主打的是 AI 能力，人手也有限，没有太多的精力投入到统一 Dashboard 开发上，日志监控等虽然必不可少，但也不是核心能力。这也是引入 KubeSphere 的一个重要原因。后面还会详细谈到为什么引入 KubeSphere。
         - content: 整个中台的底层架构如下图。整个中台构建在 Kubernetes 之上，在引入 KubeSphere 之前大致长这样，三主多从。
       image: https://pek3b.qingstor.com/kubesphere-community/images/cic-msxf-8.png
@@ -62,7 +62,7 @@ section2:
         - content: 功能组件选型复杂：要落地一套容器云并不是部署 Kubernetes 就够了，这里还有日志、监控、服务网格、存储等一系列相关组件需要落地实施，每一个方向都是涉及一系列可选方案，需要专门投入人力去学习、选型。
         - content: 隐形成本高：就算部署了 Kubernetes，后期的日常运维也需要专业的团队，对于一般中小公司来说一个 Kubernetes 运维团队的人力成本也是不小的开支，很多时候花钱还招不到合适的人，往往会陷入部署了 Kubernetes，但是出问题无人能解决的尴尬境地，通过重装来恢复环境。
         - content: 多租户模式实现复杂，安全性低：在 Kubernetes 里只有简单的 Namespace 隔离，配合 Quota 等一定程度上实现资源隔离，但是要 to C 应用还远远不够，很多时候我们需要开发一套权限管理系统来适配企业内专有的账号权限管理系统来对接，成本很高。
-        - content: 缺少本土化支持：Kubernetes 一定程度上可以称为云操作系统，类比于 Linux，其实 Kubernets 更像是 kernel，我们要完整使用容器云能力，要在 Kubernets 之上附加很多的开源组件，就像 kernel 上要加很多的开源软件才能用起来 Linux 一样。很多企业，尤其是国企，会选择购买 Redhat 等来享受企业级支持，专注于系统提供的能力本身，而不想投入太多的人力去掌握和运维系统本身。Kubernetes 本身也有这样的问题，很多企业并不希望额外投入太大的成本去使用这套解决方案，而是希望有一个类似 Redhat 系统的 Kubernetes 版本来简单化落地，而且希望免费。
+        - content: 缺少本土化支持：Kubernetes 一定程度上可以称为云操作系统，类比于 Linux，其实 Kubernets 更像是 kernel，我们要完整使用容器云能力，要在 Kubernets 之上附加很多的开源组件，就像 kernel 上要加很多的开源软件才能用起来 Linux 一样。很多企业，尤其是国企，会选择购买 Red Hat 等来享受企业级支持，专注于系统提供的能力本身，而不想投入太多的人力去掌握和运维系统本身。Kubernetes 本身也有这样的问题，很多企业并不希望额外投入太大的成本去使用这套解决方案，而是希望有一个类似 Redhat 系统的 Kubernetes 版本来简单化落地，而且希望免费。
       image: 
     - title:
       contentList:
@@ -108,7 +108,7 @@ section2:
 
     - title: 总结
       contentList:
-        - content: KubeSphere 提供了统一的门户、多租户支持、多场景整体化解决方案且易于集成，很好解决了落地Kubernetes所面临的各种痛点问题，能够有效降低人力资源成本，提升实施效率，实现业务价值最大化。
+        - content: KubeSphere 提供了统一的门户、多租户支持、多场景整体化解决方案且易于集成，很好解决了落地 Kubernetes 所面临的各种痛点问题，能够有效降低人力资源成本，提升实施效率，实现业务价值最大化。
       image: 
 
   rightPart:
