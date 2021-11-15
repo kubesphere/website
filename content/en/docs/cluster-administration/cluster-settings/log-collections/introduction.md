@@ -45,7 +45,7 @@ To add a log receiver:
 
 A default Elasticsearch receiver will be added with its service address set to an Elasticsearch cluster if `logging`, `events`, or `auditing` is enabled in [ClusterConfiguration](https://github.com/kubesphere/kubekey/blob/release-1.1/docs/config-example.md).
 
-An internal Elasticsearch cluster will be deployed to the Kubernetes cluster if neither `externalElasticsearchHost` nor `externalElasticsearchPort` is specified in [ClusterConfiguration](https://github.com/kubesphere/kubekey/blob/release-1.1/docs/config-example.md) when `logging`, `events`, or `auditing` is enabled. The internal Elasticsearch cluster is for testing and development only. It is recommended that you configure an external Elasticsearch cluster for production.
+An internal Elasticsearch cluster will be deployed to the Kubernetes cluster if neither `externalElasticsearchUrl` nor `externalElasticsearchPort` is specified in [ClusterConfiguration](https://github.com/kubesphere/kubekey/blob/release-1.1/docs/config-example.md) when `logging`, `events`, or `auditing` is enabled. The internal Elasticsearch cluster is for testing and development only. It is recommended that you configure an external Elasticsearch cluster for production.
 
 Log searching relies on the internal or external Elasticsearch cluster configured.
 
