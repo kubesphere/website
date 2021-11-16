@@ -18,68 +18,60 @@ KubeSphere 提供了一个内置的 OAuth 服务。用户通过获取 OAuth 访�
 
 ## 步骤
 
-1. 以 `admin` 身份登录 KubeSphere，将光标移动到右下角 <img src="/images/docs/access-control-and-account-management/external-authentication/set-up-external-authentication/toolbox.png" width="20px" height="20px"> ，点击 **Kubectl**，然后运行以下命令来编辑 `kubesphere-config`：
+1. 以 `admin` 身份登录 KubeSphere，将光标移动到右下角 <img src="/images/docs/access-control-and-account-management/external-authentication/set-up-external-authentication/toolbox.png" width="20px" height="20px"> ，点击 **kubectl**，然后执行以下命令来编辑 CRD `ClusterConfiguration` 中的 `ks-installer`：
 
    ```bash
-   kubectl -n kubesphere-system edit cm kubesphere-config
+   kubectl -n kubesphere-system edit cc ks-installer
    ```
 
-2. 在 `data:kubesphere.yaml:authentication` 部分配置字段
+2. 在 `spec.authentication.jwtSecret` 字段下添加以下字段。
 
    示例:
 
    ```yaml
-   apiVersion: v1
-   data:
-     kubesphere.yaml: |
-       authentication:
-         authenticateRateLimiterMaxTries: 10
-         authenticateRateLimiterDuration: 10m0s
-         loginHistoryRetentionPeriod: 168h
-         maximumClockSkew: 10s
-         multipleLogin: true
-         jwtSecret: "********"
-         oauthOptions:
-           accessTokenMaxAge: 1h
-           accessTokenInactivityTimeout: 30m
-           identityProviders:
-           - name: ldap
-             type: LDAPIdentityProvider
-             mappingMethod: auto
-             provider:
-               host: 192.168.0.2:389
-               managerDN: uid=root,cn=users,dc=nas
-               managerPassword: ********
-               userSearchBase: cn=users,dc=nas
-               loginAttribute: uid
-               mailAttribute: mail
+   spec:
+     authentication:
+       jwtSecret: ''
+       authenticateRateLimiterMaxTries: 10
+       authenticateRateLimiterDuration: 10m0s
+       loginHistoryRetentionPeriod: 168h
+       maximumClockSkew: 10s
+       multipleLogin: true
+       oauthOptions:
+         accessTokenMaxAge: 1h
+         accessTokenInactivityTimeout: 30m
+         identityProviders:
+         - name: LDAP
+           type: LDAPIdentityProvider
+           mappingMethod: auto
+           provider:
+             host: 192.168.0.2:389
+             managerDN: uid=root,cn=users,dc=nas
+             managerPassword: ********
+             userSearchBase: cn=users,dc=nas
+             loginAttribute: uid
+             mailAttribute: mail
    ```
-
+   
     字段描述如下：
-    
-    * `authenticateRateLimiterMaxTries`: `authenticateLimiterDuration` 指定的期间内允许的最大连续登录失败次数。如果用户连续登录失败次数达到限制，则该用户将被封禁。 
-    
-    * `authenticateRateLimiterDuration`: `authenticateRateLimiterMaxTries` 适用的时间段。
-    
-    * `loginHistoryRetentionPeriod`: 用户登录记录保留期限，过期的登录记录将被自动删除。 
-    
-    * `maximumClockSkew`: 时间敏感操作（例如验证用户令牌的过期时间）的最大时钟偏差，默认值为10秒。
-    
-    * `multipleLogin`: 是否允许多个用户同时从不同位置登录，默认值为 `true`。
-    
-    * `jwtSecret`: 签发用户令牌的密钥。在多集群环境下，所有的集群必须[使用相同的密钥](../../../multicluster-management/enable-multicluster/direct-connection/#prepare-a-member-cluster)。
-    
-    * `oauthOptions`:
-      * `accessTokenMaxAge`: 访问令牌有效期。对于多集群环境中的成员集群，默认值为 `0h`，这意味着访问令牌永不过期。对于其他集群，默认值为 `2h`。
-      * `accessTokenInactivityTimeout`: 令牌空闲超时时间。该值表示令牌过期后，刷新用户令牌最大的间隔时间，如果不在此时间窗口内刷新用户身份令牌，用户将需要重新登录以获得访问权。
-      * `identityProviders`:
-        * `name`: 身份提供者的名称。
-        * `type`: 身份提供者的类型。
-        * `mappingMethod`: 帐户映射方式，值可以是 `auto` 或者 `lookup`。
+
+    * `jwtSecret`：签发用户令牌的密钥。在多集群环境下，所有的集群必须[使用相同的密钥](../../../multicluster-management/enable-multicluster/direct-connection/#prepare-a-member-cluster)。
+    * `authenticateRateLimiterMaxTries`：`authenticateLimiterDuration` 指定的期间内允许的最大连续登录失败次数。如果用户连续登录失败次数达到限制，则该用户将被封禁。 
+    * `authenticateRateLimiterDuration`：`authenticateRateLimiterMaxTries` 适用的时间段。
+    * `loginHistoryRetentionPeriod`：用户登录记录保留期限，过期的登录记录将被自动删除。 
+    * `maximumClockSkew`：时间敏感操作（例如验证用户令牌的过期时间）的最大时钟偏差，默认值为10秒。
+    * `multipleLogin`：是否允许多个用户同时从不同位置登录，默认值为 `true`。
+    * `oauthOptions`：
+      * `accessTokenMaxAge`：访问令牌有效期。对于多集群环境中的成员集群，默认值为 `0h`，这意味着访问令牌永不过期。对于其他集群，默认值为 `2h`。
+      * `accessTokenInactivityTimeout`：令牌空闲超时时间。该值表示令牌过期后，刷新用户令牌最大的间隔时间，如果不在此时间窗口内刷新用户身份令牌，用户将需要重新登录以获得访问权。
+      * `identityProviders`：
+        * `name`：身份提供者的名称。
+        * `type`：身份提供者的类型。
+        * `mappingMethod`：帐户映射方式，值可以是 `auto` 或者 `lookup`。
          * 如果值为 `auto`（默认），需要指定新的用户名。通过第三方帐户登录时，KubeSphere 会根据用户名自动创建关联帐户。
          * 如果值为 `lookup`，需要执行步骤 3 以手动关联第三方帐户与 KubeSphere 帐户。
-        * `provider`: 身份提供者信息。此部分中的字段根据身份提供者的类型而异。
-
+        * `provider`：身份提供者信息。此部分中的字段根据身份提供者的类型而异。
+   
 3. 如果 `mappingMethod` 设置为 `lookup`，可以运行以下命令并添加标签来进行帐户关联。如果 `mappingMethod` 是 `auto` 可以跳过这个部分。
 
    ```bash
@@ -90,9 +82,9 @@ KubeSphere 提供了一个内置的 OAuth 服务。用户通过获取 OAuth 访�
    labels:
      iam.kubesphere.io/identify-provider: <Identity provider name>
      iam.kubesphere.io/origin-uid: <Third-party username>
-   ```
+    ```
 
-4. 字段配置完成后，执行以下命令重启 ks-apiserver 。
+4. 字段配置完成后，保存修改，然后执行以下命令重启 ks-apiserver 。
 
    ```bash
    kubectl -n kubesphere-system rollout restart deploy/ks-apiserver
@@ -100,7 +92,7 @@ KubeSphere 提供了一个内置的 OAuth 服务。用户通过获取 OAuth 访�
 
 {{< notice note >}}
 
-多集群环境中，只需要在 Host 集群中进行配置。
+多集群环境中，只需要在主集群中进行配置。
 
 {{</ notice >}}
 
