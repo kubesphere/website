@@ -8,9 +8,9 @@ weight: 11110
 
 DevOps is a set of practices and tools that automate the processes between IT and software development teams. Among other things, as agile software development sees increasing popularity, continuous integration (CI) and continuous delivery (CD) have become an ideal solution in this connection. In a CI/CD workflow, every integration is tested through automatic building, including coding, releasing and testing. This helps developers to identify any integration errors beforehand and teams can deliver internal software to a production environment with speed, security, and reliability.
 
-Nevertheless, the traditional master-agent architecture of Jenkins (i.e. multiple agents work for a master) has the following shortcomings.
+Nevertheless, the traditional controller-agent architecture of Jenkins (i.e. multiple agents work for a controller) has the following shortcomings.
 
-- The entire CI/CD pipeline will crash once the master goes down.
+- The entire CI/CD pipeline will crash once the controller goes down.
 - Resources are not allocated equally as some agents see pipeline jobs wait in queue while others remain idle.
 - Different agents may be configured in different environments and require different coding languages. The disparity can cause inconvenience in management and maintenance. 
 
@@ -31,9 +31,9 @@ The KubeSphere DevOps system provides you with the following features:
 
 ### KubeSphere CI/CD pipeline workflows
 
-A KubeSphere CI/CD pipeline runs on the back of the underlying Kubernetes Jenkins agents. These Jenkins agents can be dynamically scaled as they are dynamically provisioned or released based on the job status. The Jenkins master and agents run as Pods on KubeSphere nodes. The master runs on one of the nodes with its configuration data stored in a volume. Agents run across nodes while they may not be active all the time because they are created dynamically and deleted automatically as needed.
+A KubeSphere CI/CD pipeline runs on the back of the underlying Kubernetes Jenkins agents. These Jenkins agents can be dynamically scaled as they are dynamically provisioned or released based on the job status. The Jenkins controller and agents run as Pods on KubeSphere nodes. The controller runs on one of the nodes with its configuration data stored in a volume. Agents run across nodes while they may not be active all the time because they are created dynamically and deleted automatically as needed.
 
-When the Jenkins master receives a building request, it dynamically creates Jenkins agents that run in Pods according to labels. At the same time, Jenkins agents will be registered in the master. After agents finish their jobs, they will be released and related Pods will be deleted as well.
+When the Jenkins controller receives a building request, it dynamically creates Jenkins agents that run in Pods according to labels. At the same time, Jenkins agents will be registered in the controller. After agents finish their jobs, they will be released and related Pods will be deleted as well.
 
 ### Dynamically provision Jenkins agents
 
@@ -43,4 +43,4 @@ The advantages of dynamically provisioning Jenkins agents are:
 
 **High scalability**. When a KubeSphere cluster has insufficient resources which lead to long waiting time of jobs in the queue, you can add new nodes to the cluster.
 
-**High availability**. When a Jenkins master fails, KubeSphere automatically creates a new Jenkins master container with the volume mounted to the new container. In this way, the data are secured with high availability achieved for the cluster.
+**High availability**. When a Jenkins controller fails, KubeSphere automatically creates a new Jenkins controller container with the volume mounted to the new container. In this way, the data are secured with high availability achieved for the cluster.
