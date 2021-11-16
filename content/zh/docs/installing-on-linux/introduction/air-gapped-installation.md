@@ -497,6 +497,35 @@ https://kubesphere.io             20xx-xx-xx xx:xx:xx
 ### KubeSphere 3.2.0 镜像清单
 
 ```txt
+##k8s-images
+kubesphere/kube-apiserver:v1.22.1
+kubesphere/kube-controller-manager:v1.22.1
+kubesphere/kube-proxy:v1.22.1
+kubesphere/kube-scheduler:v1.22.1
+kubesphere/kube-apiserver:v1.21.5
+kubesphere/kube-controller-manager:v1.21.5
+kubesphere/kube-proxy:v1.21.5
+kubesphere/kube-scheduler:v1.21.5
+kubesphere/kube-apiserver:v1.20.10
+kubesphere/kube-controller-manager:v1.20.10
+kubesphere/kube-proxy:v1.20.10
+kubesphere/kube-scheduler:v1.20.10
+kubesphere/kube-apiserver:v1.19.9
+kubesphere/kube-controller-manager:v1.19.9
+kubesphere/kube-proxy:v1.19.9
+kubesphere/kube-scheduler:v1.19.9
+kubesphere/pause:3.5
+kubesphere/pause:3.4.1
+coredns/coredns:1.8.0
+calico/cni:v3.20.0
+calico/kube-controllers:v3.20.0
+calico/node:v3.20.0
+calico/pod2daemon-flexvol:v3.20.0
+calico/typha:v3.20.0
+kubesphere/flannel:v0.12.0
+openebs/provisioner-localpv:2.10.1
+openebs/linux-utils:2.10.0
+kubesphere/k8s-dns-node-cache:1.15.12
 ##kubesphere-images
 kubesphere/ks-installer:v3.2.0
 kubesphere/ks-apiserver:v3.2.0
@@ -509,7 +538,7 @@ kubesphere/kubectl:v1.19.1
 minio/minio:RELEASE.2019-08-07T01-59-21Z
 minio/mc:RELEASE.2019-08-07T23-14-43Z
 csiplugin/snapshot-controller:v4.0.0
-kubesphere/nginx-ingress-controller:v0.35.0
+kubesphere/nginx-ingress-controller:v0.48.1
 mirrorgooglecontainers/defaultbackend-amd64:1.4
 kubesphere/metrics-server:v0.4.2
 redis:5.0.12-alpine
