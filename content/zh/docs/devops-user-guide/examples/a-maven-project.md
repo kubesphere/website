@@ -1,8 +1,8 @@
 ---
-title: "构建和部署 Maven 工程"
+title: "构建和部署 Maven 项目"
 keywords: 'Kubernetes, Docker, DevOps, Jenkins, Maven'
-description: '学习如何使用 KubeSphere 流水线构建并部署 Maven 工程。'
-linkTitle: "构建和部署 Maven 工程"
+description: '学习如何使用 KubeSphere 流水线构建并部署 Maven 项目。'
+linkTitle: "构建和部署 Maven 项目"
 weight: 11430
 ---
 
@@ -12,9 +12,9 @@ weight: 11430
 - 您需要有一个 [Docker Hub](http://www.dockerhub.com/) 帐户。
 - 您需要创建一个企业空间、一个 DevOps 项目和一个用户，并需要邀请该用户至 DevOps 项目中并赋予 `operator` 角色。有关更多信息，请参见[创建企业空间、项目、用户和角色](../../../quick-start/create-workspace-and-project/)。
 
-## Maven 工程的工作流
+## Maven 项目的工作流
 
-KubeSphere DevOps 中有针对 Maven 工程的工作流，如下图所示，它使用 Jenkins 流水线来构建和部署 Maven 工程。所有步骤均在流水线中进行定义。
+KubeSphere DevOps 中有针对 Maven 项目的工作流，如下图所示，它使用 Jenkins 流水线来构建和部署 Maven 项目。所有步骤均在流水线中进行定义。
 
 ![maven-project-jenkins](/images/docs/zh-cn/devops-user-guide/examples/build-and-deploy-maven-project/maven-project-jenkins.png)
 
@@ -54,11 +54,11 @@ kubectl get cm -n kubesphere-devops-system ks-devops-agent -o yaml
 
 ## Maven 流水线示例
 
-### Maven 工程准备工作
+### Maven 项目准备工作
 
-- 确保您在开发设备上成功构建 Maven 工程。
-- 添加 Dockerfile 至工程仓库以构建镜像。有关更多信息，请参考 <https://github.com/kubesphere/devops-maven-sample/blob/master/Dockerfile-online>。
-- 添加 YAML 文件至工程仓库以部署工作负载。有关更多信息，请参考 <https://github.com/kubesphere/devops-maven-sample/tree/master/deploy/dev-ol>。如果有多个不同环境，您需要准备多个部署文件。
+- 确保您在开发设备上成功构建 Maven 项目。
+- 添加 Dockerfile 至项目仓库以构建镜像。有关更多信息，请参考 <https://github.com/kubesphere/devops-maven-sample/blob/master/Dockerfile-online>。
+- 添加 YAML 文件至项目仓库以部署工作负载。有关更多信息，请参考 <https://github.com/kubesphere/devops-maven-sample/tree/master/deploy/dev-ol>。如果有多个不同环境，您需要准备多个部署文件。
 
 ### 创建凭证
 
@@ -73,7 +73,7 @@ kubectl get cm -n kubesphere-devops-system ks-devops-agent -o yaml
 
 在本示例中，所有工作负载都部署在 `kubesphere-sample-dev` 项目中。您必须事先创建 `kubesphere-sample-dev` 项目。
 
-### 为 Maven 工程创建一个流水线
+### 为 Maven 项目创建一个流水线
 
 1. 在您的 DevOps 项目中，转到**流水线**页面并点击**创建**，创建一个名为 `maven` 的流水线。有关更多信息，请参见[使用图形编辑面板创建流水线](../../how-to-use/create-a-pipeline-using-graphical-editing-panel)。
 
