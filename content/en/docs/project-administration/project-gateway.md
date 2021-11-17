@@ -8,7 +8,9 @@ weight: 13500
 
 A gateway in a KubeSphere project is an [NGINX Ingress controller](https://www.nginx.com/products/nginx/kubernetes-ingress-controller). KubeSphere has a built‑in configuration for HTTP load balancing, called [Routes](../../project-user-guide/application-workloads/routes/). A Route defines rules for external connections to Services within a cluster. Users who need to provide external access to their Services create a Route resource that defines rules, including the URI path, backing service name, and other information.
 
-This tutorial demonstrates how to set a gateway in KubeSphere for external access to Services and Routes.
+In addition to project gateways, KubeSphere also supports [cluster-scope gateway](../../cluster-administration/cluster-settings/cluster-gateway/) to let all projects share a global gateway.
+
+This tutorial demonstrates how to enable a project gateway on KubeSphere for external access to Services and Routes.
 
 ## Prerequisites
 
@@ -24,7 +26,9 @@ You need to create a workspace, a project and a user (`project-admin`). The user
    
    **LoadBalancer**: You can access Services with a single IP address through the gateway.
    
-3. You can also enable **Application Governance** on the **Set Gateway** page. You need to enable **Application Governance** so that you can use the Tracing feature and use [different grayscale release strategies](../../project-user-guide/grayscale-release/overview/). Once it is enabled, check whether an annotation (for example, `nginx.ingress.kubernetes.io/service-upstream: true`) is added for your route (Ingress) if the route is inaccessible.
+3. You can also enable **Tracing** on the **Enable Gateway** page. You have to turn on **Application Governance** when you create composed applications so that you can use the Tracing feature and use [different grayscale release strategies](../../project-user-guide/grayscale-release/overview/). Once it is enabled, check whether an annotation (for example, `nginx.ingress.kubernetes.io/service-upstream: true`) is added for your route (Ingress) if the route is inaccessible.
+
+3. In **Configuration Options**, add key-value pairs to provide configurations for system components of NGINX Ingress controller. For more information, see [NGINX Ingress Controller documentation](https://kubernetes.github.io/ingress-nginx/user-guide/nginx-configuration/configmap/#configuration-options).
 
 4. After you select an access method, click **OK**.
 

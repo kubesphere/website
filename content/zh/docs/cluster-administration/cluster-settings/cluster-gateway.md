@@ -22,12 +22,12 @@ You need to prepare a user with the `platform-admin` role, for example, `admin`.
 
    - **NodePort**: Access Services with corresponding node ports through the gateway. The NodePort access mode provides the following configurations:
      - **Tracing**: Turn on the **Tracing** toggle to enable the Tracing feature on KubeSphere. Once it is enabled, check whether an annotation (for example, `nginx.ingress.kubernetes.io/service-upstream: true`) is added for your route when the route is inaccessible. If not, add an annotation to your route.
-     - **Configuration Options**: Add key-value pairs to the cluster gateway.
+     - **Configuration Options**: Add key-value pairs to the cluster gateway to provide configurations for system components of NGINX Ingress controller. For more information, see [NGINX Ingress Controller documentation](https://kubernetes.github.io/ingress-nginx/user-guide/nginx-configuration/configmap/#configuration-options).
    - **LoadBalancer**: Access Services with a single IP address through the gateway. The LoadBalancer access mode provides the following configurations:
      - **Tracing**: Turn on the **Tracing** toggle to enable the Tracing feature on KubeSphere. Once it is enabled, check whether an annotation (for example, `nginx.ingress.kubernetes.io/service-upstream: true`) is added for your route when the route is inaccessible. If not, add an annotation to your route.
      - **Load Balancer Provider**: Select a load balancer provider from the drop-down list.
      - **Annotations**: Add annotations to the cluster gateway.
-     - **Configuration Options**: Add key-value pairs to the cluster gateway.
+     - **Configuration Options**: Add key-value pairs to the cluster gateway to provide configurations for system components of NGINX Ingress controller. For more information, see [NGINX Ingress Controller documentation](https://kubernetes.github.io/ingress-nginx/user-guide/nginx-configuration/configmap/#configuration-options).
 
    {{< notice info >}}
 
