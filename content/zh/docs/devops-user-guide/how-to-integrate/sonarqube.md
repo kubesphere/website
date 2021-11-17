@@ -244,7 +244,7 @@ kubectl -n kubesphere-system rollout restart deploy ks-apiserver
 kubectl -n kubesphere-system rollout restart deploy ks-console
 ```
 
-## 为新工程创建 SonarQube Token
+## 为新项目创建 SonarQube Token
 
 您需要一个 SonarQube 令牌，以便您的流水线可以在运行时与 SonarQube 通信。
 
@@ -252,11 +252,11 @@ kubectl -n kubesphere-system rollout restart deploy ks-console
 
    ![SonarQube 创建项目](/images/docs/zh-cn/devops-user-guide/tool-integration/integrate-sonarqube-into-pipelines/sonarqube-create-project.png)
 
-2. 输入工程密钥，例如 `java-demo`，然后点击 **Set Up**。
+2. 输入项目密钥，例如 `java-demo`，然后点击 **Set Up**。
 
    ![Jenkins 项目密钥](/images/docs/zh-cn/devops-user-guide/tool-integration/integrate-sonarqube-into-pipelines/jenkins-projet-key.png)
 
-3. 输入工程名称，例如 `java-sample`，然后点击 **Generate**。
+3. 输入项目名称，例如 `java-sample`，然后点击 **Generate**。
 
    ![创建令牌](/images/docs/zh-cn/devops-user-guide/tool-integration/integrate-sonarqube-into-pipelines/generate-a-token.png)
 

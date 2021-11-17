@@ -53,7 +53,7 @@ KubeSphere 中的图形编辑面板包含用于 Jenkins [阶段 (Stage)](https:/
    | dockerhub-id    | 用户名和密码 | Docker Hub |
    | demo-kubeconfig | kubeconfig   | Kubernetes |
 
-2. 您还需要为 SonarQube 创建一个凭证 ID (`sonar-token`)，用于上述的阶段 3（代码分析）。请参阅[为新工程创建 SonarQube 令牌 (Token)](../../../devops-user-guide/how-to-integrate/sonarqube/#create-sonarqube-token-for-new-project)，在**访问令牌**类型的凭证的**令牌**字段中输入 SonarQube 令牌。点击**确定**完成操作。
+2. 您还需要为 SonarQube 创建一个凭证 ID (`sonar-token`)，用于上述的阶段 3（代码分析）。请参阅[为新项目创建 SonarQube 令牌 (Token)](../../../devops-user-guide/how-to-integrate/sonarqube/#create-sonarqube-token-for-new-project)，在**访问令牌**类型的凭证的**令牌**字段中输入 SonarQube 令牌。点击**确定**完成操作。
 
 3. 您可以在列表中看到已创建的三个凭证。
 
@@ -291,7 +291,7 @@ KubeSphere 中的图形编辑面板包含用于 Jenkins [阶段 (Stage)](https:/
 
    {{< notice note >}}
 
-   在 KubeSphere 3.2.0 中，能够运行流水线的帐户也能够继续或终止该流水线。此外，流水线创建者、拥有该工程管理员角色的用户或者您指定的帐户也有权限继续或终止流水线。
+   在 KubeSphere 3.2.0 中，能够运行流水线的帐户也能够继续或终止该流水线。此外，流水线创建者、拥有该项目管理员角色的用户或者您指定的帐户也有权限继续或终止流水线。
 
    {{</ notice >}}
 

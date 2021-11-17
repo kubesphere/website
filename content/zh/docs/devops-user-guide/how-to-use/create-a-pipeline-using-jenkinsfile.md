@@ -61,7 +61,7 @@ KubeSphere 中可以创建两种类型的流水线：一种是本教程中介绍
    | github-id       | 帐户凭证   | GitHub     |
    | demo-kubeconfig | kubeconfig | Kubernetes |
 
-2. 您还需要为 SonarQube 创建一个凭证 (`sonar-token`)，用于上述的阶段 3（SonarQube 分析）。请参阅[为新工程创建 SonarQube 令牌 (Token)](../../../devops-user-guide/how-to-integrate/sonarqube/#为新工程创建-sonarqube-token)，在**访问令牌**类型的凭证的**令牌**字段中输入 SonarQube 令牌。点击**确定**完成操作。
+2. 您还需要为 SonarQube 创建一个凭证 (`sonar-token`)，用于上述的阶段 3（SonarQube 分析）。请参阅[为新项目创建 SonarQube 令牌 (Token)](../../../devops-user-guide/how-to-integrate/sonarqube/#为新项目创建-sonarqube-token)，在**访问令牌**类型的凭证的**令牌**字段中输入 SonarQube 令牌。点击**确定**完成操作。
 
 3. 您还需要创建具有如下图所示权限的 GitHub 个人访问令牌 (PAT)，然后在 DevOps 项目中，使用生成的令牌创建用于 GitHub 认证的帐户凭证（例如，`github-token`）。
 
@@ -219,7 +219,7 @@ KubeSphere 中可以创建两种类型的流水线：一种是本教程中介绍
    
    {{< notice note >}}
    
-   在 KubeSphere 3.2.0 中，如果不指定审核员，那么能够运行流水线的帐户也能够继续或终止该流水线。流水线创建者、在该工程中具有 `admin` 角色的用户或者您指定的帐户也有权限继续或终止流水线。
+   在 KubeSphere 3.2.0 中，如果不指定审核员，那么能够运行流水线的帐户也能够继续或终止该流水线。流水线创建者、在该项目中具有 `admin` 角色的用户或者您指定的帐户也有权限继续或终止流水线。
    
    {{</ notice >}}
 
