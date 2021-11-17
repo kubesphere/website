@@ -61,7 +61,7 @@ containerd github.com/containerd/containerd v1.4.3 269548fa27e0089a8b8278fc4
 
 这里主要用于测试，因此没有将 Podman 安装到基础镜像中，而是在流水线中实时安装。生产环境，应该提前安装，以加快执行速度。
 
-以 [devops-java-sample](https://github.com/kubesphere/devops-java-sample) 为例，流水线中主要需要增加如下部分：
+以 [devops-maven-sample](https://github.com/kubesphere/devops-maven-sample) 为例，流水线中主要需要增加如下部分：
 
 ```groovy
         stage ('install podman') {
@@ -78,11 +78,11 @@ containerd github.com/containerd/containerd v1.4.3 269548fa27e0089a8b8278fc4
         }
 ```
 
-相关脚本，已经更新到 [Podman](https://github.com/kubesphere/devops-java-sample/tree/podman) 分支中。
+相关脚本，已经更新到 [Podman](https://github.com/kubesphere/devops-maven-sample/tree/podman) 分支中。
 
-## 测试 devops-java-sample 项目
+## 测试 devops-maven-sample 项目
 
-使用 devops-java-sample 创建 SCM 流水线，Jenkinsfile 路径设置为 Jenkinsfile-online，并配置好相关的秘钥值。
+使用 devops-maven-sample 创建 SCM 流水线，Jenkinsfile 路径设置为 Jenkinsfile-online，并配置好相关的秘钥值。
 
 最后执行时，在 Podman 分支上可以看到如下日志：
 

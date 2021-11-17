@@ -59,7 +59,7 @@ KubeSphere 中的图形编辑面板包含用于 Jenkins [阶段 (Stage)](https:/
 
 ### 步骤 2：创建项目
 
-在本教程中，示例流水线会将 [sample](https://github.com/kubesphere/devops-java-sample/tree/sonarqube) 应用部署至一个项目。因此，您必须先创建一个项目（例如 `kubesphere-sample-dev`）。待流水线成功运行，会在该项目中自动创建该应用的部署和服务。
+在本教程中，示例流水线会将 [sample](https://github.com/kubesphere/devops-maven-sample/tree/sonarqube) 应用部署至一个项目。因此，您必须先创建一个项目（例如 `kubesphere-sample-dev`）。待流水线成功运行，会在该项目中自动创建该应用的部署和服务。
 
 您可以使用 `project-admin` 帐户创建项目。此外，该用户也是 CI/CD 流水线的审核员。请确保将 `project-regular` 帐户邀请至该项目并授予 `operator` 角色。有关更多信息，请参见[创建企业空间、项目、用户和角色](../../../quick-start/create-workspace-and-project/)。
 
@@ -123,7 +123,7 @@ KubeSphere 中的图形编辑面板包含用于 Jenkins [阶段 (Stage)](https:/
 
 3. 点击**添加步骤**。在列表中选择 **git**，以从 GitHub 拉取示例代码。在弹出的对话框中，填写必需的字段。点击**确定**完成操作。
 
-   - **URL**：输入 GitHub 仓库地址 `https://github.com/kubesphere/devops-java-sample.git`。请注意，这里是示例地址，您需要使用您自己的仓库地址。
+   - **URL**：输入 GitHub 仓库地址 `https://github.com/kubesphere/devops-maven-sample.git`。请注意，这里是示例地址，您需要使用您自己的仓库地址。
    - **凭证 ID**：本教程中无需输入凭证 ID。
    - **分支**：如果您将其留空，则默认为 master 分支。请输入 `sonarqube`，或者如果您不需要代码分析阶段，请将其留空。
 
@@ -146,7 +146,7 @@ KubeSphere 中的图形编辑面板包含用于 Jenkins [阶段 (Stage)](https:/
 3. 点击**添加嵌套步骤**，在 `maven` 容器下添加一个嵌套步骤。在列表中选择 **shell** 并在命令行中输入以下命令。点击**确定**保存操作。
 
    ```shell
-   mvn clean -o -gs `pwd`/configuration/settings.xml test
+   mvn clean test
    ```
 
    {{< notice note >}}
@@ -190,7 +190,7 @@ KubeSphere 中的图形编辑面板包含用于 Jenkins [阶段 (Stage)](https:/
 7. 点击 **shell** 并在命令行中输入以下命令，用于 sonarqube 分支和认证，点击**确定**完成操作。
 
    ```shell
-   mvn sonar:sonar -o -gs `pwd`/configuration/settings.xml -Dsonar.login=$SONAR_TOKEN
+   mvn sonar:sonar -Dsonar.login=$SONAR_TOKEN
    ```
 
    ![新的 SonarQube shell](/images/docs/zh-cn/devops-user-guide/use-devops/create-a-pipeline-using-graphical-editing-panel/sonarqube_shell_new.png)
@@ -220,12 +220,12 @@ KubeSphere 中的图形编辑面板包含用于 Jenkins [阶段 (Stage)](https:/
 3. 点击 `maven` 容器下的**添加嵌套步骤**添加一个嵌套步骤。在列表中选择 **shell** 并在弹出窗口中输入以下命令，点击**确定**完成操作。
 
    ```shell
-   mvn -o -Dmaven.test.skip=true -gs `pwd`/configuration/settings.xml clean package
+   mvn -Dmaven.test.skip=true clean package
    ```
 
    ![maven 嵌套步骤](/images/docs/zh-cn/devops-user-guide/use-devops/create-a-pipeline-using-graphical-editing-panel/nested_step_maven.png)
 
-4. 再次点击**添加嵌套步骤**，选择 **shell**。在命令行中输入以下命令，以根据 [Dockerfile](https://github.com/kubesphere/devops-java-sample/blob/sonarqube/Dockerfile-online) 构建 Docker 镜像。点击**确定**确认操作。
+4. 再次点击**添加嵌套步骤**，选择 **shell**。在命令行中输入以下命令，以根据 [Dockerfile](https://github.com/kubesphere/devops-maven-sample/blob/sonarqube/Dockerfile-online) 构建 Docker 镜像。点击**确定**确认操作。
 
    {{< notice note >}}
 
@@ -298,7 +298,7 @@ KubeSphere 中的图形编辑面板包含用于 Jenkins [阶段 (Stage)](https:/
 3. 再次点击 **Deploy to Dev** 阶段下的**添加步骤**。在列表中选择 **kubernetesDeploy** 并在弹出的对话框中填写以下字段。点击**确定**保存操作。
 
    - **Kubeconfig**：选择您创建的 Kubeconfig，例如 `demo-kubeconfig`。
-   - **配置文件路径**：输入 `deploy/no-branch-dev/**`，即代码仓库中 Kubernetes 资源 [YAML](https://github.com/kubesphere/devops-java-sample/tree/sonarqube/deploy/no-branch-dev) 文件的相对路径。
+   - **配置文件路径**：输入 `deploy/no-branch-dev/**`，即代码仓库中 Kubernetes 资源 [YAML](https://github.com/kubesphere/devops-maven-sample/tree/sonarqube/deploy/no-branch-dev) 文件的相对路径。
 
    ![kubernetesDeploy](/images/docs/zh-cn/devops-user-guide/use-devops/create-a-pipeline-using-graphical-editing-panel/kubernetesDeploy_set.png)
 

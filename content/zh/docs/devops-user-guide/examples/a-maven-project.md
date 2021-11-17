@@ -57,8 +57,8 @@ kubectl get cm -n kubesphere-devops-system ks-devops-agent -o yaml
 ### Maven 工程准备工作
 
 - 确保您在开发设备上成功构建 Maven 工程。
-- 添加 Dockerfile 至工程仓库以构建镜像。有关更多信息，请参考 <https://github.com/kubesphere/devops-java-sample/blob/master/Dockerfile-online>。
-- 添加 YAML 文件至工程仓库以部署工作负载。有关更多信息，请参考 <https://github.com/kubesphere/devops-java-sample/tree/master/deploy/dev-ol>。如果有多个不同环境，您需要准备多个部署文件。
+- 添加 Dockerfile 至工程仓库以构建镜像。有关更多信息，请参考 <https://github.com/kubesphere/devops-maven-sample/blob/master/Dockerfile-online>。
+- 添加 YAML 文件至工程仓库以部署工作负载。有关更多信息，请参考 <https://github.com/kubesphere/devops-maven-sample/tree/master/deploy/dev-ol>。如果有多个不同环境，您需要准备多个部署文件。
 
 ### 创建凭证
 
@@ -83,11 +83,9 @@ kubectl get cm -n kubesphere-devops-system ks-devops-agent -o yaml
 
    ```groovy
    pipeline {
-     agent {
-       node {
-         label 'maven'
+       agent {
+           label 'maven'
        }
-     }
    
        parameters {
            string(name:'TAG_NAME',defaultValue: '',description:'')
@@ -99,21 +97,23 @@ kubectl get cm -n kubesphere-devops-system ks-devops-agent -o yaml
            REGISTRY = 'docker.io'
            // 需要更改为您自己的 Docker Hub Namespace
            DOCKERHUB_NAMESPACE = 'Docker Hub Namespace'
-           APP_NAME = 'devops-java-sample'
+           APP_NAME = 'devops-maven-sample'
            BRANCH_NAME = 'dev'
+           PROJECT_NAME = 'kubesphere-sample-dev'
        }
    
        stages {
            stage ('checkout scm') {
                steps {
-                   git branch: 'master', url: "https://github.com/kubesphere/devops-java-sample.git"
+                   // 下方所用的 GitHub 仓库仅用作体验功能的示例，请避免向该仓库提交包含测试性改动的 PR
+                   git branch: 'master', url: "https://github.com/kubesphere/devops-maven-sample.git"
                }
            }
    
            stage ('unit test') {
                steps {
                    container ('maven') {
-                       sh 'mvn clean -o -gs `pwd`/configuration/settings.xml test'
+                       sh 'mvn clean test'
                    }
                }
            }
@@ -121,7 +121,7 @@ kubectl get cm -n kubesphere-devops-system ks-devops-agent -o yaml
            stage ('build & push') {
                steps {
                    container ('maven') {
-                       sh 'mvn -o -Dmaven.test.skip=true -gs `pwd`/configuration/settings.xml clean package'
+                       sh 'mvn -Dmaven.test.skip=true clean package'
                        sh 'docker build -f Dockerfile-online -t $REGISTRY/$DOCKERHUB_NAMESPACE/$APP_NAME:SNAPSHOT-$BRANCH_NAME-$BUILD_NUMBER .'
                        withCredentials([usernamePassword(passwordVariable : 'DOCKER_PASSWORD' ,usernameVariable : 'DOCKER_USERNAME' ,credentialsId : "$DOCKER_CREDENTIAL_ID" ,)]) {
                            sh 'echo "$DOCKER_PASSWORD" | docker login $REGISTRY -u "$DOCKER_USERNAME" --password-stdin'
@@ -133,7 +133,13 @@ kubectl get cm -n kubesphere-devops-system ks-devops-agent -o yaml
    
            stage('deploy to dev') {
              steps {
-               kubernetesDeploy(configs: 'deploy/dev-ol/**', enableConfigSubstitution: true, kubeconfigId: "$KUBECONFIG_CREDENTIAL_ID")
+                withCredentials([
+                    kubeconfigFile(
+                    credentialsId: env.KUBECONFIG_CREDENTIAL_ID,
+                    variable: 'KUBECONFIG')
+                    ]) {
+                    sh 'envsubst < deploy/all-in-one/devops-sample.yaml | kubectl apply -f -'
+                }
              }
            }
        }

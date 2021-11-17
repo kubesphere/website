@@ -28,7 +28,7 @@ weight: 11293
 
 ### 在 GitHub 仓库中设置 webhook
 
-1. 登录您的 GitHub，并转到 `devops-java-sample` 仓库。
+1. 登录您的 GitHub，并转到 `devops-maven-sample` 仓库。
 
 2. 点击 **Settings**，然后点击 **Webhooks**，然后点击 **Add webhook**。
 

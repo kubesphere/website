@@ -116,9 +116,7 @@ weight: 11450
    ```groovy
    pipeline {
        agent {
-         node {
            label 'maven'
-         }
        }
        stages {
            stage ('clone') {

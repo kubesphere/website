@@ -54,14 +54,12 @@ With the above credentials ready, you can create a pipeline using an example Jen
 
 2. Copy and paste all the content below to the displayed dialog box as an example Jenkinsfile for your pipeline. You must replace the value of `DOCKERHUB_USERNAME`, `DOCKERHUB_CREDENTIAL`, `KUBECONFIG_CREDENTIAL_ID`, and `PROJECT_NAME` with yours. When you finish, click **OK**.
 
-   ```groovy
-   pipeline {  
+  ```groovy
+  pipeline {
      agent {
-       node {
-         label 'maven'
-       }
+       label 'go'
      }
-   
+
      environment {
        // the address of your Docker Hub registry
        REGISTRY = 'docker.io'
@@ -69,7 +67,7 @@ With the above credentials ready, you can create a pipeline using an example Jen
        DOCKERHUB_USERNAME = 'Docker Hub Username'
        // Docker image name
        APP_NAME = 'devops-go-sample'
-       // ‘dockerhubid’ is the credentials ID you created in KubeSphere with Docker Hub Access Token
+       // 'dockerhubid' is the credentials ID you created in KubeSphere with Docker Hub Access Token
        DOCKERHUB_CREDENTIAL = credentials('dockerhubid')
        // the kubeconfig credentials ID you created in KubeSphere
        KUBECONFIG_CREDENTIAL_ID = 'go'
@@ -80,31 +78,35 @@ With the above credentials ready, you can create a pipeline using an example Jen
      stages {
        stage('docker login') {
          steps{
-           container ('maven') {
+           container ('go') {
              sh 'echo $DOCKERHUB_CREDENTIAL_PSW  | docker login -u $DOCKERHUB_CREDENTIAL_USR --password-stdin'
-               }
-             }  
-           }
-   
-       stage('build & push') {
-         steps {
-           container ('maven') {
-             sh 'git clone https://github.com/yuswift/devops-go-sample.git'
-             sh 'cd devops-go-sample && docker build -t $REGISTRY/$DOCKERHUB_USERNAME/$APP_NAME .'
-             sh 'docker push $REGISTRY/$DOCKERHUB_USERNAME/$APP_NAME'
-             }
-           }
-         }
-       stage ('deploy app') {
-         steps {
-           container('maven') {
-             kubernetesDeploy(configs: 'devops-go-sample/manifest/deploy.yaml', kubeconfigId: "$KUBECONFIG_CREDENTIAL_ID")
-             }
            }
          }
        }
-     }
-   ```
+   
+       stage('build & push') {
+         steps {
+           container ('go') {
+             sh 'git clone https://github.com/yuswift/devops-go-sample.git'
+             sh 'cd devops-go-sample && docker build -t $REGISTRY/$DOCKERHUB_USERNAME/$APP_NAME .'
+             sh 'docker push $REGISTRY/$DOCKERHUB_USERNAME/$APP_NAME'
+           }
+         }
+       }
+       stage ('deploy app') {
+         steps {
+            withCredentials([
+              kubeconfigFile(
+                credentialsId: env.KUBECONFIG_CREDENTIAL_ID,
+                variable: 'KUBECONFIG')
+              ]) {
+              sh 'envsubst < devops-go-sample/manifest/deploy.yaml | kubectl apply -f -'
+            }
+         }
+      }
+    }
+  }
+  ```
 
    {{< notice note >}}
 

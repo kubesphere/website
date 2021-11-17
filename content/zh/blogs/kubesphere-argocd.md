@@ -49,7 +49,7 @@ Argo CD 支持的 Kubernetes 配置清单包括 helm charts、kustomize 或纯 Y
 
 源码仓库可参考以下链接，离线环境原因，这里选择第二个示例 spring-demo：
 
-+ [https://github.com/KubeSphere/DevOps-java-sample](https://github.com/KubeSphere/DevOps-java-sample)
++ [https://github.com/KubeSphere/devops-maven-sample](https://github.com/KubeSphere/devops-maven-sample)
 + [https://github.com/willzhang/spring-demo](https://github.com/willzhang/spring-demo)
 
 yaml 文件仓库可参考以下链接，这里命名为 argocd-gitops：

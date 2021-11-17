@@ -20,7 +20,7 @@ For demonstration and testing purposes, here are some example artifacts you can 
 | [b2i-war-java11.war](https://github.com/kubesphere/tutorial/raw/master/tutorial%204%20-%20s2i-b2i/b2i-war-java11.war) | [springmvc5](https://github.com/kubesphere/s2i-java-container/tree/master/tomcat/examples/springmvc5) |
 | [b2i-binary](https://github.com/kubesphere/tutorial/raw/master/tutorial%204%20-%20s2i-b2i/b2i-binary) | [devops-go-sample](https://github.com/runzexia/devops-go-sample) |
 | [b2i-jar-java11.jar](https://github.com/kubesphere/tutorial/raw/master/tutorial%204%20-%20s2i-b2i/b2i-jar-java11.jar) | [ java-maven-example](https://github.com/kubesphere/s2i-java-container/tree/master/java/examples/maven) |
-| [b2i-jar-java8.jar](https://github.com/kubesphere/tutorial/raw/master/tutorial%204%20-%20s2i-b2i/b2i-jar-java8.jar) | [devops-java-sample](https://github.com/kubesphere/devops-java-sample) |
+| [b2i-jar-java8.jar](https://github.com/kubesphere/tutorial/raw/master/tutorial%204%20-%20s2i-b2i/b2i-jar-java8.jar) | [devops-maven-sample](https://github.com/kubesphere/devops-maven-sample) |
 
 ## Prerequisites
 

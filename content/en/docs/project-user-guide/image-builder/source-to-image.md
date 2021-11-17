@@ -23,7 +23,7 @@ This tutorial demonstrates how to use S2I to import source code of a Java sample
 
 ### Step 1: Fork the example repository
 
-Log in to GitHub and fork the GitHub repository [devops-java-sample](https://github.com/kubesphere/devops-java-sample) to your personal GitHub account.
+Log in to GitHub and fork the GitHub repository [devops-maven-sample](https://github.com/kubesphere/devops-maven-sample) to your personal GitHub account.
 
 ### Step 2: Create Secrets
 
