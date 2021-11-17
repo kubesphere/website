@@ -184,37 +184,37 @@ NFS（网络文件系统）广泛用于带有 [NFS-Client](https://github.com/ku
 
 KubeSphere 中的存储卷即 Kubernetes 中的[持久卷声明](https://kubernetes.io/zh/docs/concepts/storage/persistent-volumes/#persistentvolumeclaims)，存储卷实例即 Kubernetes 中的[持久卷](https://kubernetes.io/zh/docs/concepts/storage/persistent-volumes/)。
 
-### Volume instance list page
+### 存储卷实例列表页面
 
-1. Log in to KubeSphere console as `admin`. Click **Platform** in the upper-left corner, select **Cluster Management**, and click **Volumes** under **Storage**.
-2. Click the **Volume Instances** tab on the **Volumes** page to view the volume instance list page that provides the following information:
-   - **Name**: Name of the volume instance. It is specified by the field `.metadata.name` in the manifest file of the volume instance.
-   - **Status**: Current status of the volume instance. It is specified by the field `.status.phase` in the manifest file of the volume instance, including:
-     - **Available**: The volume instance is available and not yet bound to a volume.
-     - **Bound**: The volume instance is bound to a volume.
-     - **Terminating**: The volume instance is being deleted.
-     - **Failed**: The volume instance is unavailable.
-   - **Capacity**: Capacity of the volume instance. It is specified by the field `.spec.capacity.storage` in the manifest file of the volume instance.
-   - **Access Mode**: Access mode of the volume instance. It is specified by the field `.spec.accessModes` in the manifest file of the volume instance, including:
-     - **RWO**: The volume instance can be mounted as read-write by a single node.
-     - **ROX**: The volume instance can be mounted as read-only by multiple nodes.
-     - **RWX**: The volume instance can be mounted as read-write by multiple nodes.
-   - **Recycling Strategy**: Recycling strategy of the volume instance. It is specified by the field `.spec.persistentVolumeReclaimPolicy` in the manifest file of the volume instance, including:
-     - **Retain**: When a volume is deleted, the volume instance still exists and requires manual reclamation.
-     - **Delete**: Remove both the volume instance and the associated storage assets in the volume plugin infrastructure.
-     - **Recycle**: Erase the data on the volume instance and make it available again for a new volume.
-   - **Creation Time**: Time when the volume instance was created.
-3. Click <img src="/images/docs/common-icons/three-dots.png" width="15" /> on the right of a volume instance and select an operation from the drop-down menu:
-   - **Edit**: Edit the YAML file of a volume instance.
-   - **View YAML**: View the YAML file of the volume instance.
-   - **Delete**: Delete the volume instance. A volume instance in the **Bound** status cannot be deleted.
+1. 以 `admin` 身份登录 KubeSphere Web 控制台。点击左上角的**平台管理**，选择**集群管理**，然后在左侧导航栏点击**存储**下的**存储卷**。
+2. 在**存储卷**页面，点击**存储卷实例**页签，查看存储卷实例列表页面。该页面提供以下信息：
+   - **名称**：存储卷实例的名称，在该存储卷实例的清单文件中由 `.metadata.name` 字段指定。
+   - **状态**：存储卷实例的当前状态，在该存储卷实例的清单文件中由 `.status.phase` 字段指定，包括：
+     - **可用**：存储卷实例可用，尚未绑定至存储卷。
+     - **已绑定**：存储卷实例已绑定至存储卷。
+     - **删除中**：正在删除存储卷实例。
+     - **失败**：存储卷实例不可用。
+   - **容量**：存储卷实例的容量，在该存储卷实例的清单文件中由 `.spec.capacity.storage` 字段指定。
+   - **访问模式**：存储卷实例的访问模式，在该存储卷实例的清单文件中由 `.spec.accessModes` 字段指定，包括：
+     - **RWO**：存储卷实例可挂载为单个节点读写。
+     - **ROX**：存储卷实例可挂载为多个节点只读。
+     - **RWX**：存储卷实例可挂载为多个节点读写。
+   - **回收策略**：存储卷实例的回收策略，在该存储卷实例的清单文件中由 `.spec.persistentVolumeReclaimPolicy` 字段指定，包括：
+     - **Retain**：删除存储卷后，保留该存储卷实例，需要手动回收。
+     - **Delete**：删除该存储卷实例，同时从存储卷插件的基础设施中删除所关联的存储设备。
+     - **Recycle**：清除存储卷实例上的数据，使该存储卷实例可供新的存储卷使用。
+   - **创建时间**：存储卷实例的创建时间。
+3. 点击存储卷实例右侧的 <img src="/images/docs/common-icons/three-dots.png" width="15" /> 并在下拉菜单中选择一项操作：
+   - **编辑**：编辑存储卷实例的 YAML 文件。
+   - **查看 YAML**：查看存储卷实例的 YAML 文件。
+   - **删除**：删除存储卷实例。处于**已绑定**状态的存储卷实例不可删除。
 
-### Volume instance details page
+### 存储卷实例详情页面
 
-1. Click the name of a volume instance to go to its details page.
-2. On the details page, click **Edit Information** to edit the basic information of the volume instance. By clicking **More**, select an operation from the drop-down menu:
-   - **View YAML**: View the YAML file of the volume instance.
-   - **Delete**: Delete the volume instance and return to the list page. A volume instance in the **Bound** status cannot be deleted.
-3. Click the **Resource Status** tab to view the volumes to which the volume instance is bound.
-4. Click the **Metadata** tab to view the labels and annotations of the volume instance.
-5. Click the **Events** tab to view the events of the volume instance.
+1. 点击存储卷实例的名称，进入其详情页面。
+2. 在详情页面，点击**编辑信息**以编辑存储卷实例的基本信息。点击**更多操作**，在下拉菜单中选择一项操作：
+   - **查看 YAML**：查看存储卷实例的 YAML 文件。
+   - **删除**：删除存储卷实例并返回列表页面。处于**已绑定**状态的存储卷实例不可删除。
+3. 点击**资源状态**页签，查看存储卷实例所绑定的存储卷。
+4. 点击**元数据**页签，查看存储卷实例的标签和注解。
+5. 点击**事件**页签，查看存储卷实例的事件。
