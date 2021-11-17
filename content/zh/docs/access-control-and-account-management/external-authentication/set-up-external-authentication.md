@@ -84,10 +84,10 @@ KubeSphere 提供了一个内置的 OAuth 服务。用户通过获取 OAuth 访�
      iam.kubesphere.io/origin-uid: <Third-party username>
     ```
 
-4. 字段配置完成后，保存修改，然后执行以下命令重启 ks-apiserver 。
+4. 字段配置完成后，保存修改，然后执行以下命令重启 ks-installer。
 
    ```bash
-   kubectl -n kubesphere-system rollout restart deploy/ks-apiserver
+   kubectl -n kubesphere-system rollout restart deploy/ks-installer
    ```
 
 {{< notice note >}}

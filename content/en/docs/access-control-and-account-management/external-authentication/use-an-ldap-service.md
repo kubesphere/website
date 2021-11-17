@@ -16,42 +16,40 @@ This document describes how to use an LDAP service as an external identity provi
 
 ## Procedure
 
-1. Log in to KubeSphere as `admin`, move the cursor to <img src="/images/docs/access-control-and-account-management/external-authentication/use-an-ldap-service/toolbox.png" width="20px" height="20px"> in the lower-right corner, click **Kubectl**, and run the following command to edit the `kubesphere-config` ConfigMap:
+1. Log in to KubeSphere as `admin`, move the cursor to <img src="/images/docs/access-control-and-account-management/external-authentication/set-up-external-authentication/toolbox.png" width="20px" height="20px"> in the lower-right corner, click **kubectl**, and run the following command to edit `ks-installer` of the CRD `ClusterConfiguration`:
 
    ```bash
-   kubectl -n kubesphere-system edit cm kubesphere-config
+   kubectl -n kubesphere-system edit cc ks-installer
    ```
 
    Example:
 
    ```yaml
-   apiVersion: v1
-   data:
-     kubesphere.yaml: |
-       authentication:
-         authenticateRateLimiterMaxTries: 10
-         authenticateRateLimiterDuration: 10m0s
-         loginHistoryRetentionPeriod: 168h
-         maximumClockSkew: 10s
-         multipleLogin: true
-         jwtSecret: "********"
-         oauthOptions:
-           accessTokenMaxAge: 1h
-           accessTokenInactivityTimeout: 30m
-           identityProviders:
-           - name: LDAP
-             type: LDAPIdentityProvider
-             mappingMethod: auto
-             provider:
-               host: 192.168.0.2:389
-               managerDN: uid=root,cn=users,dc=nas
-               managerPassword: ********
-               userSearchBase: cn=users,dc=nas
-               loginAttribute: uid
-               mailAttribute: mail
+   spec:
+     authentication:
+       jwtSecret: ''
+       authenticateRateLimiterMaxTries: 10
+       authenticateRateLimiterDuration: 10m0s
+       loginHistoryRetentionPeriod: 168h
+       maximumClockSkew: 10s
+       multipleLogin: true
+       oauthOptions:
+         accessTokenMaxAge: 1h
+         accessTokenInactivityTimeout: 30m
+         identityProviders:
+         - name: LDAP
+           type: LDAPIdentityProvider
+           mappingMethod: auto
+           provider:
+             host: 192.168.0.2:389
+             managerDN: uid=root,cn=users,dc=nas
+             managerPassword: ********
+             userSearchBase: cn=users,dc=nas
+             loginAttribute: uid
+             mailAttribute: mail
    ```
-
-2. Configure fields other than `oauthOptions:identityProviders` in the `data:kubesphere.yaml:authentication` section. For details, see [Set Up External Authentication](../set-up-external-authentication/).
+   
+2. Configure fields other than `oauthOptions:identityProviders` in the `spec:authentication` section. For details, see [Set Up External Authentication](../set-up-external-authentication/).
 
 3. Configure fields in `oauthOptions:identityProviders` section.
 
@@ -80,15 +78,15 @@ This document describes how to use an LDAP service as an external identity provi
      iam.kubesphere.io/origin-uid: <LDAP username>
    ```
 
-5. After the fields are configured, run the following command to restart ks-apiserver.
+5. After the fields are configured, run the following command to restart ks-installer.
 
    ```bash
-   kubectl -n kubesphere-system rollout restart deploy/ks-apiserver
+   kubectl -n kubesphere-system rollout restart deploy/ks-installer
    ```
    
    {{< notice note >}}
    
-   The KubeSphere web console is unavailable during the restart of ks-apiserver. Please wait until the restart is complete.
+   The KubeSphere web console is unavailable during the restart of ks-installer. Please wait until the restart is complete.
    
    {{</ notice >}}
    

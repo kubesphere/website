@@ -81,50 +81,48 @@ KubeSphere provides two built-in OAuth 2.0 plugins: [GitHubIdentityProvider](htt
 
 ## Integrate an Identity Provider with KubeSphere
 
-1. Log in to KubeSphere as `admin`, move the cursor to <img src="/images/docs/access-control-and-account-management/external-authentication/use-an-oauth2-identity-provider/toolbox.png" width="20px" height="20px"> in the lower-right corner, click **Kubectl**, and run the following command to edit the `kubesphere-config` ConfigMap:
+1. Log in to KubeSphere as `admin`, move the cursor to <img src="/images/docs/access-control-and-account-management/external-authentication/set-up-external-authentication/toolbox.png" width="20px" height="20px"> in the lower-right corner, click **kubectl**, and run the following command to edit `ks-installer` of the CRD `ClusterConfiguration`:
 
    ```bash
-   kubectl -n kubesphere-system edit cm kubesphere-config
+   kubectl -n kubesphere-system edit cc ks-installer
    ```
 
-2. Configure fields other than `oauthOptions:identityProviders` in the `data:kubesphere.yaml:authentication` section. For details, see [Set Up External Authentication](../set-up-external-authentication/).
+2. Configure fields other than `oauthOptions:identityProviders` in the `spec:authentication` section. For details, see [Set Up External Authentication](../set-up-external-authentication/).
 
 3. Configure fields in `oauthOptions:identityProviders` section according to the identity provider plugin you have developed.
 
    The following is a configuration example that uses GitHub as an external identity provider. For details, see the [official GitHub documentation](https://docs.github.com/en/developers/apps/building-oauth-apps) and the [source code of the GitHubIdentityProvider](https://github.com/kubesphere/kubesphere/blob/release-3.1/pkg/apiserver/authentication/identityprovider/github/github.go) plugin.
 
    ```yaml
-   apiVersion: v1
-   data:
-     kubesphere.yaml: |
-       authentication:
-         authenticateRateLimiterMaxTries: 10
-         authenticateRateLimiterDuration: 10m0s
-         jwtSecret: '******'
-         oauthOptions:
-           accessTokenMaxAge: 1h
-           accessTokenInactivityTimeout: 30m
-           identityProviders:
-           - name: github
-             type: GitHubIdentityProvider
-             mappingMethod: auto
-             provider:
-               clientID: '******'
-               clientSecret: '******'
-               redirectURL: 'https://ks-console/oauth/redirect/github'
+   spec:
+     authentication:
+       jwtSecret: ''
+       authenticateRateLimiterMaxTries: 10
+       authenticateRateLimiterDuration: 10m0s
+       oauthOptions:
+         accessTokenMaxAge: 1h
+         accessTokenInactivityTimeout: 30m
+         identityProviders:
+         - name: github
+           type: GitHubIdentityProvider
+           mappingMethod: auto
+           provider:
+             clientID: '******'
+             clientSecret: '******'
+             redirectURL: 'https://ks-console/oauth/redirect/github'
    ```
-
+   
    Similarly, you can also use Alibaba Cloud IDaaS as an external identity provider. For details, see the official [Alibaba IDaaS documentation](https://www.alibabacloud.com/help/product/111120.htm?spm=a3c0i.14898238.2766395700.1.62081da1NlxYV0) and the [source code of the AliyunIDaasProvider](https://github.com/kubesphere/kubesphere/blob/release-3.1/pkg/apiserver/authentication/identityprovider/github/github.go) plugin.
 
-4. After the `kubesphere-config` ConfigMap is modified, run the following command to restart ks-apiserver.
+4. After the fields are configured, save your changes, and run the following command to restart ks-installer.
 
    ```bash
-   kubectl -n kubesphere-system rollout restart deploy/ks-apiserver
+   kubectl -n kubesphere-system rollout restart deploy/ks-installer
    ```
 
    {{< notice note >}}
 
-   The KubeSphere web console is unavailable during the restart of ks-apiserver. Please wait until the restart is complete.
+   The KubeSphere web console is unavailable during the restart of ks-installer. Please wait until the restart is complete.
 
    {{</ notice >}}
 

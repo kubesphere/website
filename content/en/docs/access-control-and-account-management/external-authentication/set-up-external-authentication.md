@@ -84,10 +84,10 @@ You need to deploy a Kubernetes cluster and install KubeSphere in the cluster. F
      iam.kubesphere.io/origin-uid: <Third-party username>
    ```
    
-4. After the fields are configured, save your changes, and run the following command to restart ks-apiserver.
+4. After the fields are configured, save your changes, and run the following command to restart ks-installer.
 
    ```bash
-   kubectl -n kubesphere-system rollout restart deploy/ks-apiserver
+   kubectl -n kubesphere-system rollout restart deploy/ks-installer
    ```
 
 {{< notice note >}}
