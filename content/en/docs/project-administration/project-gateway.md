@@ -16,11 +16,11 @@ This tutorial demonstrates how to enable a project gateway on KubeSphere for ext
 
 You need to create a workspace, a project and a user (`project-admin`). The user must be invited to the project with the role of `admin` at the project level. For more information, see [Create Workspaces, Projects, Users and Roles](../../../docs/quick-start/create-workspace-and-project/).
 
-## Set a Gateway
+## Enable a Gateway
 
 1. Log in to the KubeSphere web console as `project-admin` and go to your project. In **Project Settings** from the navigation bar, click **Gateway Settings**.
 
-2. Click **Set Gateway**. In the pop-up window, you can select two access modes for the gateway.
+2. Click **Enable Gateway**. In the pop-up window, you can select two access modes for the gateway.
 
    **NodePort**: You can access Services with corresponding node ports through the gateway.
    
