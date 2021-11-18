@@ -27,6 +27,7 @@ KubeKey 的几种使用场景：
 - 以前基于 ansible 的安装程序依赖于许多软件，例如 Python。KubeKey 由 Go 语言开发，可以消除在多种环境中出现的问题，确保成功安装。
 - KubeKey 支持多种安装选项，例如 [All-in-One](../../../quick-start/all-in-one-on-linux/)、[多节点安装](../multioverview/)以及[离线安装](../air-gapped-installation/)。
 - KubeKey 使用 Kubeadm 在节点上尽可能多地并行安装 Kubernetes 集群，使安装更简便，提高效率。与旧版的安装程序相比，它极大地节省了安装时间。
+- KubeKey 提供[内置高可用模式](../../high-availability-configurations/internal-ha-configuration/)，支持一键安装高可用 Kubernetes 集群。
 - KubeKey 旨在将集群作为对象来进行安装，即 CaaO。
 
 ## 下载 KubeKey
