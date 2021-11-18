@@ -1,9 +1,9 @@
 ---
-title: "OIDC身份提供者"
+title: "OIDC 身份提供者"
 keywords: "OIDC, 身份提供者"
 description: "如何使用外部 OIDC 身份提供者。"
 
-linkTitle: "OIDC身份提供者"
+linkTitle: "OIDC 身份提供者"
 weight: 12221
 ---
 

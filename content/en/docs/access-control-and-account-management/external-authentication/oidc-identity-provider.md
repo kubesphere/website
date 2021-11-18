@@ -1,9 +1,9 @@
 ---
-title: "OIDC identity provider"
+title: "OIDC Identity Provider"
 keywords: "OIDC, identity provider"
 description: "How to use an external OIDC identity provider."
 
-linkTitle: "OIDC identity provider"
+linkTitle: "OIDC Identity Provider"
 weight: 12221
 ---
 
