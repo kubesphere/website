@@ -28,9 +28,6 @@ weight: 12220
    spec:
      authentication:
        jwtSecret: ''
-       authenticateRateLimiterMaxTries: 10
-       authenticateRateLimiterDuration: 10m0s
-       loginHistoryRetentionPeriod: 168h
        maximumClockSkew: 10s
        multipleLogin: true
        oauthOptions:
@@ -78,14 +75,10 @@ weight: 12220
      iam.kubesphere.io/origin-uid: <LDAP username>
    ```
 
-5. 字段配置完成后，执行以下命令重启 ks-installer 。
-
-   ```bash
-   kubectl -n kubesphere-system rollout restart deploy/ks-installer
-   ```
+5. 字段配置完成后，保存修改，然后等待 ks-installer 完成重启。
 
    {{< notice note >}}
-
+   
    KubeSphere Web 控制台在 ks-installer 重新启动期间不可用。请等待重启完成。
 
    {{</ notice >}}

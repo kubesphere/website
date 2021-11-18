@@ -114,14 +114,10 @@ KubeSphere provides two built-in OAuth 2.0 plugins: [GitHubIdentityProvider](htt
    
    Similarly, you can also use Alibaba Cloud IDaaS as an external identity provider. For details, see the official [Alibaba IDaaS documentation](https://www.alibabacloud.com/help/product/111120.htm?spm=a3c0i.14898238.2766395700.1.62081da1NlxYV0) and the [source code of the AliyunIDaasProvider](https://github.com/kubesphere/kubesphere/blob/release-3.1/pkg/apiserver/authentication/identityprovider/github/github.go) plugin.
 
-4. After the fields are configured, save your changes, and run the following command to restart ks-installer.
-
-   ```bash
-   kubectl -n kubesphere-system rollout restart deploy/ks-installer
-   ```
+4. After the fields are configured, save your changes, and wait until the restart of ks-installer is complete.
 
    {{< notice note >}}
-
+   
    The KubeSphere web console is unavailable during the restart of ks-installer. Please wait until the restart is complete.
 
    {{</ notice >}}

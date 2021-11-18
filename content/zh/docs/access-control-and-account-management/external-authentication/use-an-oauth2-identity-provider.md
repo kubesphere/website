@@ -114,14 +114,10 @@ KubeSphere 提供了两个内置的 OAuth 2.0 插件：GitHub 的 [GitHubIdentit
    
    同样，您也可以使用阿里云 IDaaS 作为外部身份提供者。详情请参阅[阿里云 IDaaS 文档](https://www.alibabacloud.com/help/product/111120.htm?spm=a3c0i.14898238.2766395700.1.62081da1NlxYV0)和 [AliyunIDaasProvider 源代码](https://github.com/kubesphere/kubesphere/blob/release-3.1/pkg/apiserver/authentication/identityprovider/github/github.go)。
 
-4. 字段配置完成后，保存修改，然后执行以下命令重启 ks-installer。
-
-   ```bash
-   kubectl -n kubesphere-system rollout restart deploy/ks-installer
-   ```
+4. 字段配置完成后，保存修改，然后等待 ks-installer 完成重启。
 
    {{< notice note >}}
-
+   
    KubeSphere Web 控制台在 ks-installer 重新启动期间不可用。请等待重启完成。
 
    {{</ notice >}}

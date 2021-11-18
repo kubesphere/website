@@ -28,9 +28,6 @@ This document describes how to use an LDAP service as an external identity provi
    spec:
      authentication:
        jwtSecret: ''
-       authenticateRateLimiterMaxTries: 10
-       authenticateRateLimiterDuration: 10m0s
-       loginHistoryRetentionPeriod: 168h
        maximumClockSkew: 10s
        multipleLogin: true
        oauthOptions:
@@ -78,12 +75,8 @@ This document describes how to use an LDAP service as an external identity provi
      iam.kubesphere.io/origin-uid: <LDAP username>
    ```
 
-5. After the fields are configured, run the following command to restart ks-installer.
+5. After the fields are configured, save your changes, and wait until the restart of ks-installer is complete.
 
-   ```bash
-   kubectl -n kubesphere-system rollout restart deploy/ks-installer
-   ```
-   
    {{< notice note >}}
    
    The KubeSphere web console is unavailable during the restart of ks-installer. Please wait until the restart is complete.

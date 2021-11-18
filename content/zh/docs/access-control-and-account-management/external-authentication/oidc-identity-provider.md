@@ -53,11 +53,11 @@ weight: 12221
    | -------------------- | ------------------------------------------------------------ |
    | clientID             | 客户端 ID。                                                  |
    | clientSecret         | 客户端密码。                                                 |
-   | redirectURL          | 重定向到 ks-console 的 URL。                                 |
+   | redirectURL          | 重定向到 ks-console 的 URL，格式为：`https://<域名>/oauth/redirect/<身份提供者名称>`。URL 中的 `<身份提供者名称>` 对应 `oauthOptions:identityProviders:name` 的值。 |
    | issuer               | 定义客户端如何动态发现有关 OpenID 提供者的信息。             |
-   | preferredUsernameKey | 可配置的密钥，包含首选用户声明。                             |
-   | emailKey             | 可配置的密钥，包含电子邮件声明。                             |
-   | getUserInfo          | 使用 userinfo 端点获取令牌的附加声明。非常适用于上游返回 “thin” ID 令牌的场景。 |
+   | preferredUsernameKey | 可配置的密钥，包含首选用户声明。此参数为可选参数。           |
+   | emailKey             | 可配置的密钥，包含电子邮件声明。此参数为可选参数。           |
+   | getUserInfo          | 使用 userinfo 端点获取令牌的附加声明。非常适用于上游返回 “thin” ID 令牌的场景。此参数为可选参数。 |
    | insecureSkipVerify   | 关闭 TLS 证书验证。                                          |
 
 

@@ -84,17 +84,13 @@ You need to deploy a Kubernetes cluster and install KubeSphere in the cluster. F
      iam.kubesphere.io/origin-uid: <Third-party username>
    ```
    
-4. After the fields are configured, save your changes, and run the following command to restart ks-installer.
+4. After the fields are configured, save your changes, and wait until the restart of ks-installer is complete.
 
-   ```bash
-   kubectl -n kubesphere-system rollout restart deploy/ks-installer
-   ```
-
-{{< notice note >}}
-
-In a multi-cluster environment, you only need to configure the host cluster.
-
-{{</ notice >}} 
+   {{< notice note >}}
+   
+   In a multi-cluster environment, you only need to configure the host cluster.
+   
+   {{</ notice >}} 
 
 
 ## Identity provider

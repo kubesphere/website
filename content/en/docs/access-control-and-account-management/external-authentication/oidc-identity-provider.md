@@ -53,10 +53,10 @@ You need to deploy a Kubernetes cluster and install KubeSphere in the cluster. F
    | -------------------- | ------------------------------------------------------------ |
    | clientID             | The OAuth2 client ID.                                        |
    | clientSecret         | The OAuth2 client secret.                                    |
-   | redirectURL          | The redirected URL to ks-console.                            |
+   | redirectURL          | The redirected URL to ks-console in the following format: `https://<Domain name>/oauth/redirect/<Provider name>`. The `<Provider name>` in the URL corresponds to the value of `oauthOptions:identityProviders:name`. |
    | issuer               | Defines how Clients dynamically discover information about OpenID Providers. |
-   | preferredUsernameKey | Configurable key which contains the preferred username claims. |
-   | emailKey             | Configurable key which contains the email claims.            |
-   | getUserInfo          | GetUserInfo uses the userinfo endpoint to get additional claims for the token. This is especially useful where upstreams return "thin" ID tokens. |
-   | insecureSkipVerify   | Used to turn off TLS certificate verify.                     |
+   | preferredUsernameKey | Configurable key which contains the preferred username claims. This parameter is optional. |
+   | emailKey             | Configurable key which contains the email claims. This parameter is optional. |
+   | getUserInfo          | GetUserInfo uses the userinfo endpoint to get additional claims for the token. This is especially useful where upstreams return "thin" ID tokens. This parameter is optional. |
+   | insecureSkipVerify   | Used to turn off TLS certificate verification.               |
 
