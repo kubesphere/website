@@ -1,12 +1,12 @@
 ---
 title: "企业空间配额"
 keywords: 'KubeSphere, Kubernetes, 企业空间, 配额'
-description: '设置企业空间配额以管理企业空间中所有项目和 DevOps 工程的总资源用量。'
+description: '设置企业空间配额以管理企业空间中所有项目和 DevOps 项目的总资源用量。'
 linkTitle: "企业空间配额"
 weight: 9700
 ---
 
-企业空间配额用于管理企业空间中所有项目和 DevOps 工程的总资源用量。企业空间配额与[项目配额](../project-quotas/)相似，也包含 CPU 和内存的预留（Request）和限制（Limit）。预留确保企业空间中的项目能够获得其所需的资源，因为这些资源已经得到明确保障和预留。相反，限制则确保企业空间中的所有项目的资源用量不能超过特定数值。
+企业空间配额用于管理企业空间中所有项目和 DevOps 项目的总资源用量。企业空间配额与[项目配额](../project-quotas/)相似，也包含 CPU 和内存的预留（Request）和限制（Limit）。预留确保企业空间中的项目能够获得其所需的资源，因为这些资源已经得到明确保障和预留。相反，限制则确保企业空间中的所有项目的资源用量不能超过特定数值。
 
 在[多集群架构](../../multicluster-management/)中，由于您需要[将一个或多个集群分配到企业空间中](../../cluster-administration/cluster-settings/cluster-visibility-and-authorization/)，您可以设置该企业空间在不同集群上的资源用量。
 

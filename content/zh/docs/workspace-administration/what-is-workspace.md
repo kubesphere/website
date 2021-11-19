@@ -6,7 +6,7 @@ linkTitle: "企业空间概述"
 weight: 9100
 ---
 
-企业空间是用来管理[项目](../../project-administration/)、[DevOps 工程](../../devops-user-guide/)、[应用模板](../upload-helm-based-application/)和应用仓库的一种逻辑单元。您可以在企业空间中控制资源访问权限，也可以安全地在团队内部分享资源。
+企业空间是用来管理[项目](../../project-administration/)、[DevOps 项目](../../devops-user-guide/)、[应用模板](../upload-helm-based-application/)和应用仓库的一种逻辑单元。您可以在企业空间中控制资源访问权限，也可以安全地在团队内部分享资源。
 
 最佳的做法是为租户（集群管理员除外）创建新的企业空间。同一名租户可以在多个企业空间中工作，并且多个租户可以通过不同方式访问同一个企业空间。
 

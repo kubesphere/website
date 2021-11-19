@@ -39,7 +39,7 @@ Kubernetes 解决了应用编排、容器调度的难题，极大地提高了资
 KubeSphere 中的权限控制分为平台、企业空间、项目三个层级，通过角色来控制用户在不同层级的资源访问权限。
 
 1. [平台角色](../../quick-start/create-workspace-and-project/)：主要控制用户对平台资源的访问权限，如集群的管理、企业空间的管理、平台用户的管理等。
-2. [企业空间角色](../../workspace-administration/role-and-member-management/)：主要控制企业空间成员在企业空间下的资源访问权限，如企业空间下项目、DevOps 工程的管理等。
+2. [企业空间角色](../../workspace-administration/role-and-member-management/)：主要控制企业空间成员在企业空间下的资源访问权限，如企业空间下项目、DevOps 项目的管理等。
 3. [项目角色](../../project-administration/role-and-member-management/)：主要控制项目下资源的访问权限，如工作负载的管理、流水线的管理等。
 
 ### 网络隔离

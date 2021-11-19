@@ -6,7 +6,7 @@ linkTitle: "创建企业空间、项目、用户和角色"
 weight: 2300
 ---
 
-本快速入门演示如何创建企业空间、角色和用户帐户。同时，您将学习如何在企业空间中创建项目和 DevOps 工程，用于运行工作负载。完成本教程后，您将熟悉 KubeSphere 的多租户管理系统，并使用本教程中创建的资源（例如企业空间和帐户等）完成其他教程中的操作。
+本快速入门演示如何创建企业空间、角色和用户帐户。同时，您将学习如何在企业空间中创建项目和 DevOps 项目，用于运行工作负载。完成本教程后，您将熟悉 KubeSphere 的多租户管理系统，并使用本教程中创建的资源（例如企业空间和帐户等）完成其他教程中的操作。
 
 ## 准备工作
 
@@ -95,11 +95,11 @@ KubeSphere 的多租户系统分**三个**层级，即集群、企业空间和�
        </tr><tr>
          <td><code>project-admin</code></td>
          <td><code>platform-regular</code></td>
-         <td>创建和管理项目以及 DevOps 工程，并邀请新成员加入项目。</td>
+         <td>创建和管理项目以及 DevOps 项目，并邀请新成员加入项目。</td>
        </tr><tr>
          <td><code>project-regular</code></td>
          <td><code>platform-regular</code></td>
-       <td><code>project-regular</code> 将由 <code>project-admin</code> 邀请至项目或 DevOps 工程。该帐户将用于在指定项目中创建工作负载、流水线和其他资源。</td>
+       <td><code>project-regular</code> 将由 <code>project-admin</code> 邀请至项目或 DevOps 项目。该帐户将用于在指定项目中创建工作负载、流水线和其他资源。</td>
        </tr>
      </tbody>
    </table>
@@ -110,7 +110,7 @@ KubeSphere 的多租户系统分**三个**层级，即集群、企业空间和�
 
 ### 步骤 2：创建企业空间
 
-在本步骤中，您需要使用上一个步骤中创建的帐户 `ws-manager` 创建一个企业空间。作为管理项目、DevOps 工程和组织成员的基本逻辑单元，企业空间是 KubeSphere 多租户系统的基础。
+在本步骤中，您需要使用上一个步骤中创建的帐户 `ws-manager` 创建一个企业空间。作为管理项目、DevOps 项目和组织成员的基本逻辑单元，企业空间是 KubeSphere 多租户系统的基础。
 
 1. 以 `ws-manager` 身份登录 KubeSphere，它具有管理平台上所有企业空间的权限。点击左上角的**平台管理**，选择**访问控制**。在**企业空间**中，可以看到仅列出了一个默认企业空间 `system-workspace`，即系统企业空间，其中运行着与系统相关的组件和服务，您无法删除该企业空间。
 
@@ -149,11 +149,11 @@ KubeSphere 的多租户系统分**三个**层级，即集群、企业空间和�
        <tr>
          <td><code>project-admin</code></td>
          <td><code>workspace-self-provisioner</code></td>
-         <td>创建和管理项目以及 DevOps 工程，并邀请新成员加入项目。</td>
+         <td>创建和管理项目以及 DevOps 项目，并邀请新成员加入项目。</td>
        </tr><tr>
          <td><code>project-regular</code></td>
          <td><code>workspace-viewer</code></td>
-       <td><code>project-regular</code> 将由 <code>project-admin</code> 邀请至项目或 DevOps 工程。该帐户将用于在指定项目中创建工作负载、流水线和其他资源。</td>
+       <td><code>project-regular</code> 将由 <code>project-admin</code> 邀请至项目或 DevOps 项目。该帐户将用于在指定项目中创建工作负载、流水线和其他资源。</td>
        </tr>
      </tbody>
    </table>
@@ -229,22 +229,22 @@ KubeSphere 的多租户系统分**三个**层级，即集群、企业空间和�
 
 6. 在**用户**页面，可以在创建帐户或编辑现有帐户时为帐户分配该角色。
 
-### 步骤 5：创建 DevOps 工程（可选）
+### 步骤 5：创建 DevOps 项目（可选）
 
 {{< notice note >}}
 
-若要创建 DevOps 工程，需要预先安装 KubeSphere DevOps 系统，该系统是个可插拔的组件，提供 CI/CD 流水线、Binary-to-Image 和 Source-to-Image 等功能。有关如何启用 DevOps 的更多信息，请参见 [KubeSphere DevOps 系统](../../pluggable-components/devops/)。
+若要创建 DevOps 项目，需要预先启用 KubeSphere DevOps 系统，该系统是个可插拔的组件，提供 CI/CD 流水线、Binary-to-Image 和 Source-to-Image 等功能。有关如何启用 DevOps 的更多信息，请参见 [KubeSphere DevOps 系统](../../pluggable-components/devops/)。
 
 {{</ notice >}}
 
-1. 以 `project-admin` 身份登录控制台，在 **DevOps 工程**中，点击**创建**。
+1. 以 `project-admin` 身份登录控制台，在 **DevOps 项目**中，点击**创建**。
 
-2. 输入 DevOps 工程名称（例如 `demo-devops`），然后点击**确定**，也可以为该工程添加别名和描述。
+2. 输入 DevOps 项目名称（例如 `demo-devops`），然后点击**确定**，也可以为该项目添加别名和描述。
 
-3. 点击刚创建的工程查看其详细页面。
+3. 点击刚创建的项目查看其详细页面。
 
-4. 转到**DevOps 项目设置**，然后选择**DevOps 项目成员**。点击**邀请**授予 `project-regular` 用户 `operator` 的角色，允许其创建流水线和凭证。
+4. 转到 **DevOps 项目设置**，然后选择 **DevOps 项目成员**。点击**邀请**授予 `project-regular` 用户 `operator` 的角色，允许其创建流水线和凭证。
 
    ![邀请devops成员](/images/docs/zh-cn/quickstart/create-workspaces-projects-accounts/邀请devops成员.png)
 
-至此，您已熟悉 KubeSphere 的多租户管理系统。在其他教程中，`project-regular` 帐户还将用于演示如何在项目或 DevOps 工程中创建应用程序和资源。
+至此，您已熟悉 KubeSphere 的多租户管理系统。在其他教程中，`project-regular` 帐户还将用于演示如何在项目或 DevOps 项目中创建应用程序和资源。

@@ -21,7 +21,7 @@ weight: 18100
 - 修复了在特定页面登出时无法正确重定向至登录页面的问题 [kubesphere/console#2009](https://github.com/kubesphere/console/pull/2009)
 - 修复了容器组模板编辑页面中协议下拉框显示不全的问题 [kubesphere/console#1944](https://github.com/kubesphere/console/pull/1944)
 - 修复了工作负载创建时探针格式校验的问题 [kubesphere/console#1941](https://github.com/kubesphere/console/pull/1941)
-- 修复了企业空间成员详情页面中 DevOps 工程列表展示错误的问题 [#1936](https://github.com/kubesphere/console/pull/1936)
+- 修复了企业空间成员详情页面中 DevOps 项目列表展示错误的问题 [#1936](https://github.com/kubesphere/console/pull/1936)
 - 修复文案错误、缺失的问题 [kubesphere/console#1879](https://github.com/kubesphere/console/pull/1879) [kubesphere/console#1880](https://github.com/kubesphere/console/pull/1880) [kubesphere/console#1895](https://github.com/kubesphere/console/pull/1895)
 
 ## 可观测性
@@ -69,9 +69,9 @@ weight: 18100
 - 修复了 CI 自动推送镜像时 tag 错误的问题 [kubesphere/console#2037](https://github.com/kubesphere/console/pull/2037)
 - 修复了在流水线详情页不能返回上一个页面的问题 [kubesphere/console#1996](https://github.com/kubesphere/console/pull/1996)
 - 修复了镜像构建器弹窗名称不一致的问题 [kubesphere/console#1922](https://github.com/kubesphere/console/pull/1922)
-- 修复了在 DevOps 工程中创建 kubeconfig 类型的证书更新被重置的问题 [kubesphere/console#1990](https://github.com/kubesphere/console/pull/1990)
+- 修复了在 DevOps 项目中创建 kubeconfig 类型的证书更新被重置的问题 [kubesphere/console#1990](https://github.com/kubesphere/console/pull/1990)
 - 修复了多分支流水线中信任用户错误的问题 [kubesphere/console#1987](https://github.com/kubesphere/console/pull/1987)
-- 修复了 DevOps 工程中流水线 stage label 在配置其他项不保存后被重置的问题 [kubesphere/console#1979](https://github.com/kubesphere/console/pull/1979)
+- 修复了 DevOps 项目中流水线 stage label 在配置其他项不保存后被重置的问题 [kubesphere/console#1979](https://github.com/kubesphere/console/pull/1979)
 - 修复了 shell 和 lable 在流水线中显示不准确的问题 [kubesphere/console#1970](https://github.com/kubesphere/console/pull/1970)
 - 修复了流水线基础信息对话框显示信息混乱的问题 [kubesphere/console#1955](https://github.com/kubesphere/console/pull/1955)
 - 修复了多分支流水线运行 API 错误的问题 [kubesphere/console#1954](https://github.com/kubesphere/console/pull/1954)
