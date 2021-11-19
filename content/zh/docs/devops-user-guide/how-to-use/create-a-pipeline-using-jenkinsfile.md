@@ -16,6 +16,12 @@ KubeSphere 中可以创建两种类型的流水线：一种是本教程中介绍
 
 {{</ notice >}} 
 
+## 视频演示
+
+<video controls="controls" style="width: 100% !important; height: auto !important;">
+  <source type="video/mp4" src="https://kubesphere-community.pek3b.qingstor.com/videos/KubeSphere-v3.1.x-tutorial-videos/zh/KS311_200P015C202111_%E4%BD%BF%E7%94%A8%20Jenkinsfile%20%E5%88%9B%E5%BB%BA%E6%B5%81%E6%B0%B4%E7%BA%BF.mp4">
+</video>
+
 ## 准备工作
 
 - 您需要有一个 [Docker Hub](https://hub.docker.com/) 帐户和一个 [GitHub](https://github.com/) 帐户。

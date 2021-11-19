@@ -10,6 +10,12 @@ KubeSphere 的组件 [Tower](https://github.com/kubesphere/tower) 用于代理�
 
 要通过代理连接使用多集群功能，您必须拥有至少两个集群，分别用作 H 集群和 M 集群。您可以在安装 KubeSphere 之前或者之后将一个集群指定为 H 集群或 M 集群。有关安装 KubeSphere 的更多信息，请参考[在 Linux 上安装](../../../installing-on-linux/)和[在 Kubernetes 上安装](../../../installing-on-kubernetes/)。
 
+## 视频演示
+
+<video controls="controls" style="width: 100% !important; height: auto !important;">
+  <source type="video/mp4" src="https://kubesphere-community.pek3b.qingstor.com/videos/KubeSphere-v3.1.x-tutorial-videos/zh/KS311_200P016C202111_%E5%90%AF%E7%94%A8%E5%A4%9A%E9%9B%86%E7%BE%A4.mp4">
+</video>
+
 ## 准备 Host 集群
 
 Host 集群为您提供中央控制平面，并且您只能指定一个 Host 集群。
