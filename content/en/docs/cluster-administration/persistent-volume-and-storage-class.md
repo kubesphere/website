@@ -191,7 +191,7 @@ A volume in KubeSphere is a [persistent volume claim](https://kubernetes.io/docs
 
 ### Volume instance list page
 
-1. Log in to KubeSphere console as `admin`. Click **Platform** in the upper-left corner, select **Cluster Management**, and click **Volumes** under **Storage**.
+1. Log in to KubeSphere web console as `admin`. Click **Platform** in the upper-left corner, select **Cluster Management**, and click **Volumes** under **Storage**.
 2. Click the **Volume Instances** tab on the **Volumes** page to view the volume instance list page that provides the following information:
    - **Name**: Name of the volume instance. It is specified by the field `.metadata.name` in the manifest file of the volume instance.
    - **Status**: Current status of the volume instance. It is specified by the field `.status.phase` in the manifest file of the volume instance, including:
