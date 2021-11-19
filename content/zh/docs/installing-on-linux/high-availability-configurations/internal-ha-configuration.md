@@ -14,7 +14,7 @@ weight: 3150
 
 在您开始操作前，请确保准备了 6 台 Linux 机器，其中 3 台充当主节点，另外 3 台充当工作节点。下图展示了内置高可用模式的架构图。有关系统和网络要求的更多信息，请参见[多节点安装](../../../installing-on-linux/introduction/multioverview/#步骤1准备-linux-主机)。
 
-![高可用架构](/images/docs/zh-cn/installing-on-linux/introduction/internal-ha-configuration/internalLoadBalancer.jpeg)
+![高可用架构](/images/docs/zh-cn/installing-on-linux/introduction/internal-ha-configuration/internalLoadBalancer.png)
 
 ## 下载 KubeKey
 
