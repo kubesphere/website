@@ -180,7 +180,7 @@ KubeSphere 的多租户系统分**三个**层级，即集群、企业空间和�
    具有 `operator` 角色的用户是项目维护者，可以管理项目中除用户和角色以外的资源。
    {{</ notice >}}
 
-6. 在创建[应用路由](../../project-user-guide/application-workloads/routes/)（即 Kubernetes 中的 [Ingress](https://kubernetes.io/docs/concepts/services-networking/ingress/)）之前，需要启用该项目的网关。网关是在项目中运行的 [NGINX Ingress 控制器](https://github.com/kubernetes/ingress-nginx)。若要设置网关，请转到**项目设置**中的**网关设置**，然后点击**设置网关**。此步骤中仍使用帐户 `project-admin`。
+6. 在创建[应用路由](../../project-user-guide/application-workloads/routes/)（即 Kubernetes 中的 [Ingress](https://kubernetes.io/docs/concepts/services-networking/ingress/)）之前，需要启用该项目的网关。网关是在项目中运行的 [NGINX Ingress 控制器](https://github.com/kubernetes/ingress-nginx)。若要设置网关，请转到**项目设置**中的**网关设置**，然后点击**开启网关**。此步骤中仍使用帐户 `project-admin`。
 
 7. 选择访问方式 **NodePort**，然后点击**保存**。
 

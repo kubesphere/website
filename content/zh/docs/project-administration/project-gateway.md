@@ -30,7 +30,7 @@ KubeSphere 项目中的网关是一个[ NGINX Ingress 控制器](https://www.ngi
    
    **LoadBalancer**：通过网关访问服务的单独 IP 地址。
    
-3. 在**设置网关**对话框，您可以启用**链路追踪**以使用 Tracing 功能和[不同的灰度发布策略](../../project-user-guide/grayscale-release/overview/)。如果启用**链路追踪**后无法访问路由，请在路由 (Ingress) 中添加注解（例如 `nginx.ingress.kubernetes.io/service-upstream: true`）。
+3. 在**设置网关**对话框，您可以启用**应用治理**以使用 Tracing 功能和[不同的灰度发布策略](../../project-user-guide/grayscale-release/overview/)。如果启用**应用治理**后无法访问路由，请在路由 (Ingress) 中添加注解（例如 `nginx.ingress.kubernetes.io/service-upstream: true`）。
 
 4. 选择访问方式后点击**保存**。
 
