@@ -387,7 +387,7 @@
   white-space: nowrap;
   overflow: auto;
   height: 535px;
-  background-image: linear-gradient(147.87deg, #4A499A 16%, #8552C3 85.01%);;
+  background-image: linear-gradient(147.87deg, #4A499A 16%, #8552C3 85.01%);
 
   @media only screen and (max-width: $mobile-max-width) {
     width: 100%;
@@ -423,11 +423,8 @@
       &>ul {
         margin-top: 16px;
         display: flex;
+        overflow: scroll;
         background: linear-gradient(to top, rgba(255, 255, 255, 0.08) 5%, transparent 5%) no-repeat;
-
-        @media only screen and (max-width: $mobile-max-width) {
-          overflow: scroll;
-        }
 
         li {
           width: 80px;
@@ -448,40 +445,32 @@
       }
 
       .yearBox {
-        position: relative;
         display: flex;
         align-items: center;
         min-height: 377px;
-        overflow: hidden;
 
-        @media only screen and (max-width: $mobile-max-width) {
-          width: 100%;
-          align-items: flex-start;
-          overflow: auto;
-        }
-
-        .active {
-          display: flex;
-
-          @media only screen and (max-width: $mobile-max-width) {
-            flex-direction: column;
-          }
-        }
-
-        ul {
+        .hiddenUl {
           display: none;
-          position: absolute;
+        }
+
+        .autoMeetUp {
+          width: 100%;
+          height: 260px;
+          margin: 0 auto;
+          display: flex;
+          position: relative;
+
+          .swiper-slide {
+            display: flex;
+            overflow: hidden;
+          }
 
           li {
             height: 258px;
-            width: 373px;
             position: relative;
-            margin-right: 20px;
 
-            @media only screen and (max-width: $mobile-max-width) {
-              width: 330px;
-              margin: 0;
-              margin-top: 20px;
+            &:nth-child(2) {
+              margin: 0 20px;
             }
 
             p {
@@ -492,88 +481,145 @@
               color: #FFFFFF;
             }
 
-            img {
-              margin-top: 20px;
-              width: 100%;
-            }
+            .imgBox {
+              position: relative;
 
-            button {
-              position: absolute;
-              right: 10px;
-              bottom: 10px;
-              padding: 5px 10px;
-              border-radius: 14px;
-              font-size: 8px;
-              color: #fff;
-              border: none;
-              cursor: pointer;
-              box-shadow: 0 10px 50px 0 rgba(34, 43, 62, 0.1), 0 8px 16px 0 rgba(33, 43, 61, 0.2), 0 10px 50px 0 rgba(34, 43, 62, 0.1);
-              background-image: linear-gradient(to bottom, rgba(85, 188, 138, 0), rgba(85, 188, 138, 0.1) 97%), linear-gradient(to bottom, #55bc8a, #55bc8a);
+              img {
+                margin-top: 20px;
+                width: 373px;
+                height: 210px;
+              }
 
-              @media only screen and (max-width: $mobile-max-width) {
-                right: 10px;
-                bottom: 35px;
+              button {
+                position: absolute;
+                right: 12px;
+                bottom: 14px;
+                padding: 9px 16px;
+                border-radius: 16px;
+                font-size: 8px;
+                color: #fff;
+                border: none;
+                cursor: pointer;
+                box-shadow: 0 10px 50px 0 rgba(34, 43, 62, 0.1), 0 8px 16px 0 rgba(33, 43, 61, 0.2), 0 10px 50px 0 rgba(34, 43, 62, 0.1);
+                background-image: linear-gradient(to bottom, rgba(85, 188, 138, 0), rgba(85, 188, 138, 0.1) 97%), linear-gradient(to bottom, #55bc8a, #55bc8a);
+
+                &:hover {
+                  box-shadow: none;
+                }
               }
             }
 
-            &:last-child {
-              margin-right: 0;
+          }
+
+          @media only screen and (max-width: 375px) {
+            .swiper-slide {
+              display: flex;
+              flex-direction: column;
+              align-items: center;
+            }
+
+            li {
+
+              &:nth-child(2) {
+                margin: 0 0;
+              }
+
+              img {
+                width: 100% !important;
+              }
+            }
+          }
+
+          @media only screen and (min-width: 376px) and (max-width: $mobile-max-width) {
+
+            .swiper-slide {
+              display: flex;
+              flex-direction: column;
+              align-items: center;
+            }
+
+            li {
+              &:nth-child(2) {
+                margin: 0 0;
+              }
+
+              img {
+                width: 373px !important;
+              }
+            }
+          }
+
+          @media only screen and (min-width: 769px) and (max-width: 1160px) {
+
+            li {
+              flex-direction: column;
+              align-items: center;
+
+              img {
+                width: 320px !important;
+                height: 180px !important;
+              }
+
+              button {
+                right: 10px;
+                bottom: 40px;
+              }
             }
           }
         }
-      }
 
-      .left-arrow {
-        display: block;
-        background: url('/images/live/arrow.svg');
-        width: 40px;
-        height: 40px;
-        position: absolute;
-        bottom: 151px;
-        left: 0px;
-        transform: rotate(180deg);
-        cursor: pointer;
+        .prev-button {
+          display: block;
+          background: url('/images/live/arrow.svg');
+          width: 40px;
+          height: 40px;
+          position: absolute;
+          bottom: 153.5px;
+          left: 0px;
+          transform: rotate(180deg);
+          cursor: pointer;
 
-        &:hover {
-          background: url('/images/live/arrow-hover.svg');
+          @media only screen and (max-width: 767px) {
+            display: none;
+          }
+
+          @media only screen and (min-width: $mobile-max-width) and (max-width: 1160px) {
+            left: 20px;
+            z-index: 200;
+          }
+
+          &:hover {
+            background: url('/images/live/arrow-hover.svg');
+          }
         }
-      }
 
-      .right-arrow {
-        display: block;
-        background: url('/images/live/arrow.svg');
-        width: 40px;
-        height: 40px;
-        position: absolute;
-        bottom: 151px;
-        right: 0px;
-        cursor: pointer;
+        .next-button {
+          display: block;
+          background: url('/images/live/arrow.svg');
+          width: 40px;
+          height: 40px;
+          position: absolute;
+          bottom: 153.5px;
+          right: 0px;
+          cursor: pointer;
 
-        &:hover {
-          background: url('/images/live/arrow-hover.svg');
-        }
-      }
+          @media only screen and (max-width: 767px) {
+            display: none;
+          }
 
-      .hidden {
-        display: none;
+          @media only screen and (min-width: $mobile-max-width) and (max-width: 1160px) {
+            right: 20px;
+            z-index: 200;
+          }
 
-        @media only screen and (max-width: $mobile-max-width) {
-          width: 100%;
-        }
-      }
+          &:hover {
+            background: url('/images/live/arrow-hover.svg');
+          }
 
-      .show {
-        display: block;
-      }
-
-      @media only screen and (max-width: $mobile-max-width) {
-        .show {
-          display: none;
         }
       }
     }
   }
-
 }
 
 
