@@ -78,25 +78,33 @@
                 {{ end }}
                 {{ end }}
             </ul>
-            <span id="leftArrow" class="left-arrow"></span>
             <div class="yearBox" id="meetup-list">
-                {{ range .list }}
+                {{ range $index,$data := .list }}
                 {{ with . }}
-                <ul>
+                <ul class="hiddenUl" id="needClone_{{ $index }}">
                     {{ range .meetup }}
                     {{ with . }}
                     <li>
                         <p>{{ .place }}</p>
-                        <img src="{{ .img }}">
-                        <a href="{{ .meetupUrl | safeURL }}" target="_blank" rel="noopener noreferrer"><button>{{ i18n "Wonderful review" }}</button></a>
+                        <div class="imgBox">
+                            <img src="{{ .img }}">
+                            <a href="{{ .meetupUrl | safeURL }}" target="_blank" rel="noopener noreferrer">
+                                <button>{{ i18n "Wonderful review" }}</button>
+                            </a>
+                        </div>
                     </li>
                     {{ end }}
                     {{ end }}
                 </ul>
                 {{ end }}
                 {{ end }}
+                <div class="swiper autoMeetUp">
+                    <div id="swiper-wrapper" class="swiper-wrapper">
+                    </div>
+                </div>
+                <div class="prev-button"></div>
+                <div class="next-button"></div>
             </div>
-            <span id="rightArrow" class="right-arrow"></span>
         </div>
     </div>
 </section>
@@ -216,80 +224,106 @@
         initPagination(videos)
     }
 
+    var splitHtmlToNew = function (data) {
+        var resetElement = document.createElement('div')
+        var docWidth = $(document).width()
+        var newCollection = []
+        resetElement.className = 'swiper-slide'
+        if (docWidth > 800) {
+            Array.prototype.forEach.call(data, function (item, index) {
+                if (index > 0 && index % 3 === 0) {
+                    const newDiv = document.createElement('div')
+                    newDiv.appendChild(data[index - 3])
+                    newDiv.appendChild(data[index - 2])
+                    newDiv.appendChild(data[index - 1])
+                    newDiv.className = 'swiper-slide'
+                    newCollection.push(newDiv)
+                }
+                if (index >= data.length - 2) {
+                    resetElement.appendChild(data[index])
+                }
+            })
+            newCollection.push(resetElement)
+        } else {
+            Array.prototype.forEach.call(data, function (item, index) {
+                data[index].className = 'swiper-slide'
+                newCollection.push(data[index])
+            })
+        }
+        return newCollection
+    }
+
+    var autoplayTime = 6000
+
+    var mySwiper = {
+        current: null,
+        create: function () {
+            this.current = new Swiper('.swiper', {
+                autoplay: {
+                    running: true,
+                    pauseOnMouseEnter: true,
+                    disableOnInteraction: false,
+                },
+                delay: autoplayTime,
+                speed: 500,
+                loop: true,
+            })
+        },
+        init: function () {
+            const elements = $('#needClone_0').children().filter('li').clone()
+            const newContent = splitHtmlToNew(elements)
+            if (newContent.length === 0) {
+                return
+            }
+            $('#swiper-wrapper').empty().append(newContent)
+        }
+    }
+
     var MeetupInit = function () {
         var ulHead = $('#meetup-ul');
         var ulList = $('#meetup-list');
         var tabActiveIndex = 0;
-        ulHead.children('li')[0].className = 'active';
-        ulList.children()[0].className = 'active';
-
+        ulHead.children('li').filter(function (index) {
+            return index === 0
+        }).addClass('active')
+        mySwiper.create()
         $('#meetup-ul li').click(function (e) {
             var clickIndex = $(this).index();
+            var preActiveINdex = $('#meetup-ul li.active')
             if (tabActiveIndex === clickIndex) {
                 return
             } else {
                 tabActiveIndex = clickIndex
             }
-            var preActiveINdex = $('#meetup-ul li.active')
-            var preUlBox = ulList.children()[preActiveINdex.index()];
-            var clickUlBox = ulList.children()[clickIndex];
             preActiveINdex.removeClass('active')
-            ulHead.children('li')[clickIndex].className = 'active'
-            clickUlBox.className = 'active'
-            preUlBox.className = ''
-            ClickButton()
+            ulHead.children('li').filter(function (index) {
+                return index === tabActiveIndex
+            }).addClass('active')
+            var elements = $('#needClone_' + tabActiveIndex).children().filter('li').clone()
+            $('#swiper-wrapper').empty().append(splitHtmlToNew(elements))
+            mySwiper.current.destroy()
+            mySwiper.create()
         })
-        ClickButton()
     }
 
-    var judgeButton = function (start, total) {
-        var leftArrow = $('#leftArrow');
-        var rightArrow = $('#rightArrow');
-        if (start >= total) {
-            leftArrow.removeClass('hidden').addClass('show')
-            rightArrow.removeClass('show').addClass('hidden')
-        } else if (start <= 1) {
-            leftArrow.removeClass('show').addClass('hidden')
-            rightArrow.removeClass('hidden').addClass('show')
-        } else {
-            leftArrow.removeClass('hidden').addClass('show')
-            rightArrow.removeClass('hidden').addClass('show')
-        }
+    var initSliderButton = function () {
+        $('.prev-button').click(function (e) {
+            var swiper = mySwiper.current.slidePrev()
+        })
+        $('.next-button').click(function (e) {
+            var swiper = mySwiper.current.slideNext()
+        })
     }
 
-    var ClickButton = function () {
-        var leftArrow = $('#leftArrow');
-        var rightArrow = $('#rightArrow');
-        var stepWidth = 1179;
-        leftArrow.removeClass('show').addClass('hidden');
-        rightArrow.removeClass('show').addClass('hidden');
-        leftArrow.unbind('click')
-        rightArrow.unbind('click')
-
-        var ulList = $('#meetup-list');
-        var ulListChild = $('#meetup-list').children();
-        var activeUl = $('#meetup-list ul.active');
-        var starStep = 1;
-        var totalStep = Math.ceil(activeUl.width() / ulList.width());
-
-        ulListChild.each(item => {
-            ulListChild[item].style = ''
-        })
-        if (totalStep >= 2) {
-            rightArrow.removeClass('hidden').addClass('show');
-        }
-
-        rightArrow.click(function (e) {
-            activeUl[0].style = 'transform: translateX(-' + (starStep * stepWidth) + 'px);';
-            starStep += 1;
-            judgeButton(starStep, totalStep);
-        })
-
-        leftArrow.click(function (e) {
-            starStep = starStep - 1;
-            var left = starStep * stepWidth;
-            activeUl[0].style = 'transform: translateX(-' + (left - stepWidth) + 'px);';
-            judgeButton(starStep, totalStep);
+    var documentResize = function () {
+        var resizeTimer = null
+        $(window).resize(function () {
+            clearTimeout(resizeTimer)
+            resizeTimer = setTimeout(function () {
+                mySwiper.current.destroy()
+                mySwiper.init()
+                mySwiper.create()
+            }, 500)
         })
     }
 
@@ -297,6 +331,9 @@
     bindClickVideoLi()
     initVideos()
     initModal()
+    mySwiper.init()
     MeetupInit()
+    initSliderButton()
+    //documentResize()
 </script>
 {{ end }}
