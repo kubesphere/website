@@ -24,10 +24,10 @@ weight: 2400
 
 - 您需要完成[创建企业空间、项目、用户和角色](../create-workspace-and-project/)中的所有任务。
 
-- 您需要启用**应用治理**。有关更多信息，请参见[设置网关](../../project-administration/project-gateway/#设置网关)。
+- 您需要启用**链路追踪**。有关更多信息，请参见[设置网关](../../project-administration/project-gateway/#设置网关)。
 
     {{< notice note >}}
-  您需要启用**应用治理**以使用追踪功能。启用后若无法访问路由 (Ingress)，请检查您的路由是否已经添加注释（例如：`nginx.ingress.kubernetes.io/service-upstream: true`）。
+  您需要启用**链路追踪**以使用追踪功能。启用后若无法访问路由 (Ingress)，请检查您的路由是否已经添加注释（例如：`nginx.ingress.kubernetes.io/service-upstream: true`）。
     {{</ notice >}}
 
 ## 什么是 Bookinfo 应用
@@ -49,7 +49,7 @@ Bookinfo 应用由以下四个独立的微服务组成，其中 **reviews** 微�
 
 1. 使用帐户 `project-regular` 登录控制台并访问项目 (`demo-project`)。前往**应用负载**下的**应用**，点击右侧的**部署示例应用**。
 
-2. 在出现的对话框中点击**下一步**，其中必填字段已经预先填好，相关组件也已经设置完成。您无需修改设置，只需在最后一页（**外网访问**）点击**创建**。
+2. 在出现的对话框中点击**下一步**，其中必填字段已经预先填好，相关组件也已经设置完成。您无需修改设置，只需在最后一页（**路由设置**）点击**创建**。
 
     ![create-bookinfo](/images/docs/zh-cn/quickstart/deploy-bookinfo-to-k8s/create-bookinfo.png)
 
