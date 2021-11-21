@@ -326,8 +326,6 @@ https://kubesphere.io             2020-08-13 10:50:24
 
 进入 KubeSphere 的 Web 控制台，您也可以看到所有节点运行正常。
 
-![cluster-node](/images/docs/zh-cn/installing-on-linux/installing-on-public-cloud/deploy-kubesphere-on-qingcloud-instances/cluster-node.png)
-
 为验证集群的高可用性，可关闭一台主机进行测试。例如，上面的控制台可通过 `IP:30880` 地址访问（此处 IP 地址为绑定到外部负载均衡器的 EIP 地址）。如果集群的高可用性正常，在您关闭一台主节点后，控制台应该仍能正常工作。
 
 ## 另请参见

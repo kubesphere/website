@@ -176,12 +176,8 @@ chmod +x kk
 
 5. 从安装日志的 `Console`、`Account` 和 `Password` 参数分别获取 KubeSphere Web 控制台的地址、系统管理员用户名和系统管理员密码，并使用 Web 浏览器登录 KubeSphere Web 控制台。
 
-   ![cluster-management](/images/docs/zh-cn/installing-on-linux/on-premises/cluster-management.png)
-
-   ![service-components](/images/docs/zh-cn/installing-on-linux/on-premises/service-components.png)
-   
    {{< notice note >}}
-   
+
    您可以在安装后启用 KubeSphere 的可插拔组件，但由于在 KubeSphere 上部署 K3s 目前处于测试阶段，某些功能可能不兼容。
    
    {{</ notice >}} 

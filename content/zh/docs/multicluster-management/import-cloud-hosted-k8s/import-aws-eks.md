@@ -37,11 +37,7 @@ weight: 5320
 
 3. 访问 **CRD**，在搜索栏输入 `ClusterConfiguration`，然后按下键盘上的**回车键**。点击 **ClusterConfiguration** 访问其详情页。
 
-   ![search-config](/images/docs/zh-cn/multicluster-management/import-cloud-hosted-k8s/import-eks/search-config.png)
-
 4. 点击右侧的 <img src="/images/docs/zh-cn/multicluster-management/import-cloud-hosted-k8s/import-eks/three-dots.png" height="20px">，选择**编辑配置文件**来编辑 `ks-installer`。
-
-   ![click-edit](/images/docs/zh-cn/multicluster-management/import-cloud-hosted-k8s/import-eks/click-edit.png)
 
 5. 在 `ks-installer` 的 YAML 文件中，将 `jwtSecret` 的值改为如上所示的相应值，将 `clusterRole` 的值改为 `member`。点击**更新**保存更改。
 
@@ -168,16 +164,8 @@ weight: 5320
 
 1. 以 `admin` 身份登录主集群的 KubeSphere Web 控制台。点击左上角的**平台管理**，然后选择**集群管理**。在**集群管理**页面，点击**添加集群**。
 
-   ![click-add-cluster](/images/docs/zh-cn/multicluster-management/import-cloud-hosted-k8s/import-eks/click-add-cluster.png)
-
 2. 按需输入基本信息，然后点击**下一步**。
-
-   ![input-info](/images/docs/zh-cn/multicluster-management/import-cloud-hosted-k8s/import-eks/input-info.png)
 
 3. **连接方式**选择**直接连接 Kubernetes 集群**。填写 EKS 的新 kubeconfig，然后点击**创建**。
 
-   ![eks-kubeconfig](/images/docs/zh-cn/multicluster-management/import-cloud-hosted-k8s/import-eks/eks-kubeconfig.png)
-
 4. 等待集群初始化完成。
-
-   ![eks-overview](/images/docs/zh-cn/multicluster-management/import-cloud-hosted-k8s/import-eks/eks-overview.png)

@@ -26,18 +26,16 @@ weight: 15100
 
 2. 在弹出窗口中，您可以看到日志数量的时间直方图、集群选择下拉列表以及日志查询栏。
 
-    ![log-search](/images/docs/zh-cn/toolbox/log-query/log-search.png)
 
-    {{< notice note >}}
+​      {{< notice note >}}
 
 - 如果您启用了[多集群功能](../../multicluster-management/)，KubeSphere 支持对每个集群分别进行日志查询。您可以点击搜索栏左侧的 <img src="/images/docs/zh-cn/toolbox/log-query/drop-down-list.png" width='20' /> 切换目标集群。
+
 - KubeSphere 默认存储最近七天内的日志。
 
   {{</ notice >}}
 
 3. 您可以点击搜索栏并输入搜索条件，可以按照消息、企业空间、项目、资源类型、资源名称、原因、类别或时间范围搜索事件（例如，输入`时间范围:最近 10 分钟`来搜索最近 10 分钟的事件）。或者，点击时间直方图中的柱状图，KubeSphere 会使用该柱状图的时间范围进行日志查询。
-
-    ![log-search-list](/images/docs/zh-cn/toolbox/log-query/log-search-list.png)
 
     {{< notice note >}}
 
@@ -52,11 +50,7 @@ weight: 15100
 
 1. 您可以输入多个条件来缩小搜索结果。
 
-    ![log-search-conditions](/images/docs/zh-cn/toolbox/log-query/log-search-conditions.png)
-
 2. 点击列表中的任一结果，进入它的详情页面，查看该容器组 (Pod) 的日志，包括右侧的完整内容，便于开发者分析和排除故障。
-
-    ![log-search-details-page](/images/docs/zh-cn/toolbox/log-query/log-search-details-page.png)
 
     {{< notice note >}}
 
@@ -72,10 +66,4 @@ weight: 15100
 
 在左侧面板，您可以点击 <img src="/images/docs/zh-cn/toolbox/log-query/view-detail-page.png" width='20' /> 查看 Pod 详情页面或容器详情页面。
 
-下图是 Pod 详情页面示例：
-
-![pod-details-page](/images/docs/zh-cn/toolbox/log-query/pod-details-page.png)
-
-下图是容器详情页面示例。您可以点击右上角的**终端**打开终端为容器排除故障。
-
-![container-detail-page](/images/docs/zh-cn/toolbox/log-query/container-detail-page.png)
+您可以点击右上角的**终端**打开终端为容器排除故障。

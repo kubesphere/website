@@ -21,39 +21,23 @@ weight: 14260
 
 1. 在 `demo-project` 的**概览**页面，点击左上角的**应用商店**。
 
-   ![go-to-app-store](/images/docs/zh-cn/appstore/built-in-apps/mysql-app/go-to-app-store.png)
-
-2. 找到 MySQL，在**应用信息**页面点击**部署**。
-
-   ![find-mysql](/images/docs/zh-cn/appstore/built-in-apps/mysql-app/find-mysql.png)
-
-   ![click-deploy](/images/docs/zh-cn/appstore/built-in-apps/mysql-app/click-deploy.png)
+2. 找到 MySQL，在**应用信息**页面点击**安装**。
 
 3. 设置应用名称和版本，确保 MySQL 部署在 `demo-project` 项目中，然后点击**下一步**。
 
-   ![deploy-mysql](/images/docs/zh-cn/appstore/built-in-apps/mysql-app/deploy-mysql.png)
-
-4. 在**应用配置**页面，取消对 `mysqlRootPassword` 字段的注释并设置密码，然后点击**部署**。
-
-   ![uncomment-password](/images/docs/zh-cn/appstore/built-in-apps/mysql-app/uncomment-password.png)
+4. 在**应用配置**页面，取消对 `mysqlRootPassword` 字段的注释并设置密码，然后点击**安装**。
 
 5. 等待 MySQL 创建完成并开始运行。
 
-   ![mysql-running](/images/docs/zh-cn/appstore/built-in-apps/mysql-app/mysql-running.png)
 
 ### 步骤 2：访问 MySQL 终端
 
 1. 打开**工作负载**页面并点击 MySQL 的工作负载名称。
 
-   ![mysql-workload](/images/docs/zh-cn/appstore/built-in-apps/mysql-app/mysql-workload.png)
-
 2. 在**容器组**区域，展开容器详情，点击终端图标。
-
-   ![mysql-terminal](/images/docs/zh-cn/appstore/built-in-apps/mysql-app/mysql-terminal.png)
 
 3. 在终端窗口中，执行 `mysql -uroot -ptesting` 命令以 `root` 用户登录 MySQL。
 
-   ![log-in-mysql](/images/docs/zh-cn/appstore/built-in-apps/mysql-app/log-in-mysql.png)
 
 ### 步骤 3：从集群外访问 MySQL 数据库
 
@@ -61,19 +45,11 @@ weight: 14260
 
 1. 打开**服务**页面并点击 MySQL 的服务名称。
 
-   ![mysql-service](/images/docs/zh-cn/appstore/built-in-apps/mysql-app/mysql-service.png)
+2. 点击**更多操作**，在下拉菜单中选择**编辑外部访问**。
 
-2. 点击**更多操作**，在下拉菜单中选择**编辑外网访问**。
+3. 将**访问模式**设置为 **NodePort** 并点击**确定**。有关更多信息，请参见[项目网关](../../../project-administration/project-gateway/)。
 
-   ![edit-internet-access](/images/docs/zh-cn/appstore/built-in-apps/mysql-app/edit-internet-access.png)
-
-3. 将**访问方式**设置为 **NodePort** 并点击**确定**。有关更多信息，请参见[项目网关](../../../project-administration/project-gateway/)。
-
-   ![nodeport-mysql](/images/docs/zh-cn/appstore/built-in-apps/mysql-app/nodeport-mysql.png)
-
-4. 您可以在**服务端口**区域查看暴露的端口。该端口号和公网 IP 地址将在下一步用于访问 MySQL 数据库。
-
-   ![mysql-port-number](/images/docs/zh-cn/appstore/built-in-apps/mysql-app/mysql-port-number.png)
+4. 您可以在**端口**区域查看暴露的端口。该端口号和公网 IP 地址将在下一步用于访问 MySQL 数据库。
 
 5. 您需要使用 MySQL Client 或第三方应用（例如 SQLPro Studio）才能访问 MySQL 数据库。以下演示如何使用 SQLPro Studio 访问 MySQL 数据库。
 

@@ -49,7 +49,6 @@ weight: 2200
 
 5. 登录控制台后，您可以在**系统组件**中检查不同组件的状态。如果要使用相关服务，可能需要等待某些组件启动并运行。
 
-    ![kubesphere-components](/images/docs/zh-cn/quickstart/minimal-kubesphere-on-k8s/kubesphere-components.png)
 
 ## 启用可插拔组件（可选）
 

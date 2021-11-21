@@ -262,13 +262,9 @@ https://kubesphere.io             2020-08-24 23:30:06
 
 ## 如何自定义开启可插拔组件
 
-- 点击 `集群管理` - `CRD` ，在过滤条件框输入 `ClusterConfiguration` ，如图：
+- 点击**集群管理** > **CRD**，在过滤条件框输入 `ClusterConfiguration`。
 
-![修改KsInstaller](/images/docs/ali-ecs/update_crd.png)
-
-- 点击 `ClusterConfiguration` 详情，对 `ks-installer` 编辑保存退出即可，组件描述介绍:[文档说明](https://github.com/kubesphere/ks-installer/blob/master/deploy/cluster-configuration.yaml)
-
-![修改KsInstaller](/images/docs/ali-ecs/ks-install-source.png)
+- 点击 `ClusterConfiguration` 详情，对 `ks-installer` 编辑保存退出即可，组件描述介绍:[文档说明](https://github.com/kubesphere/ks-installer/blob/master/deploy/cluster-configuration.yaml)。
 
 ## FAQ
 

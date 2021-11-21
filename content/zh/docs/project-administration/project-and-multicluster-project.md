@@ -22,7 +22,7 @@ KubeSphere 中的项目即 Kubernetes [命名空间](https://kubernetes.io/zh/do
 
 ### 创建项目
 
-1. 前往企业空间的**项目管理**页面，点击**项目**选项卡下的**创建**。
+1. 前往企业空间的**项目**页面，点击**项目**选项卡下的**创建**。
 
     {{< notice note >}}
 
@@ -36,23 +36,19 @@ KubeSphere 中的项目即 Kubernetes [命名空间](https://kubernetes.io/zh/do
 
 3. 创建的项目会显示在下图所示的列表中。您可以点击项目名称打开**概览**页面。
 
-    ![project-list](/images/docs/zh-cn/project-administration/project-and-multicluster-project/project-list.png)
 
 ### 编辑项目
 
-1. 前往您的项目，选择**项目设置**下的**基本信息**，在页面右侧点击**项目管理**。
+1. 前往您的项目，选择**项目设置**下的**基本信息**，在页面右侧点击**管理**。
 
 2. 从下拉菜单中选择**编辑信息**。
 
-    ![project-basic-information](/images/docs/zh-cn/project-administration/project-and-multicluster-project/project-basic-information.png)
-    
     {{< notice note >}}
-
 项目名称无法编辑。如需修改其他信息，请参考相应的文档教程。
 
 {{</ notice >}}
 
-3. 若要删除项目，选择该下拉菜单中的**删除项目**，在弹出的对话框中输入项目名称，点击**确定**。
+3. 若要删除项目，选择该下拉菜单中的**删除**，在弹出的对话框中输入项目名称，点击**确定**。
 
    {{< notice warning >}}
 
@@ -64,7 +60,7 @@ KubeSphere 中的项目即 Kubernetes [命名空间](https://kubernetes.io/zh/do
 
 ### 创建多集群项目
 
-1. 前往企业空间的**项目管理**页面，点击**多集群项目**选项卡，再点击**创建**。
+1. 前往企业空间的**项目**页面，点击**多集群项目**选项卡，再点击**创建**。
 
     {{< notice note >}}
 
@@ -82,12 +78,10 @@ KubeSphere 中的项目即 Kubernetes [命名空间](https://kubernetes.io/zh/do
 
 ### 编辑多集群项目
 
-1. 前往您的多集群项目，选择**项目设置**下的**基本信息**，在页面右侧点击**项目管理**。
+1. 前往您的多集群项目，选择**项目设置**下的**基本信息**，在页面右侧点击**管理**。
 
 2. 从下拉菜单中选择**编辑信息**。
 
-    ![multi-cluster-basic-information](/images/docs/zh-cn/project-administration/project-and-multicluster-project/multi-cluster-basic-information.png)
-    
     {{< notice note >}}
 
 项目名称无法编辑。如需修改其他信息，请参考相应的文档教程。

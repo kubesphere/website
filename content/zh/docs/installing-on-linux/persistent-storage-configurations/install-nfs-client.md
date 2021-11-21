@@ -259,14 +259,10 @@ chmod +x kk
 
 1. 使用默认帐户和密码 (`admin/P@88w0rd`) 通过 `<NodeIP>:30880` 登录 Web 控制台。点击左上角的**平台管理**，选择**集群管理**。
 
-2. 访问**应用负载**中的**容器组**，从下拉菜单中选择 `kube-system`，可以看到 `nfs-client` 的 Pod 正常运行。
+2. 选择**应用负载** > **容器组**，从下拉菜单中选择 `kube-system`，可以看到 `nfs-client` 的 Pod 正常运行。
 
-   ![nfs-pod](/images/docs/zh-cn/installing-on-linux/persistent-storage-configurations/nfs-client/nfs-pod.png)
+3.  选择**存储** > **存储类型**，可以看到集群中可用的存储类型。
 
-3. 访问**存储管理**下的**存储类型**，可以看到集群中可用的存储类型。
-
-   ![nfs-storage-class](/images/docs/zh-cn/installing-on-linux/persistent-storage-configurations/nfs-client/nfs-storage-class.png)
-   
    {{< notice note >}}
    
    有关如何在 KubeSphere 控制台上创建存储卷的更多信息，请参见[存储卷](../../../project-user-guide/storage/volumes/)。

@@ -51,7 +51,6 @@ KubeSphere 承诺为用户提供即插即用架构，您可以轻松地将 KubeS
 
 4. 确保在安全组中打开了 30880 端口，通过 NodePort (`IP:30880`) 使用默认帐户和密码 (`admin/P@88w0rd`) 访问 Web 控制台。
 
-   ![kubesphere-console](/images/docs/zh-cn/installing-on-kubernetes/introduction/login.png)
 
 ## 启用可插拔组件（可选）
 

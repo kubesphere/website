@@ -20,17 +20,13 @@ KubeSphere 除了提供项目范围的网关外，还提供[集群范围的网�
 
 1. 以 `project-admin` 用户登录 KubeSphere Web 控制台，进入您的项目，从左侧导航栏进入**项目设置**下的**网关设置**页面，然后点击**开启网关**。
 
-   ![set-project-gateway](/images/docs/zh-cn/project-administration/project-gateway/set-project-gateway.jpg)
-
 2. 在弹出的对话框中选择网关的访问方式。
 
-   ![access-method](/images/docs/zh-cn/project-administration/project-gateway/access-method.png)
-
    **NodePort**：通过网关访问服务对应的节点端口。
-   
+
    **LoadBalancer**：通过网关访问服务的单独 IP 地址。
    
-3. 在**开启网关**对话框，您可以启用**链路追踪**。创建自制应用时，您必须开启**应用治理**，以使用链路追踪功能和[不同的灰度发布策略](../../project-user-guide/grayscale-release/overview/)。如果启用**应用治理**后无法访问路由，请在路由 (Ingress) 中添加注解（例如 `nginx.ingress.kubernetes.io/service-upstream: true`）。
+3. 在**开启网关**对话框，您可以启用**链路追踪**。创建自制应用时，您必须开启**链路追踪**，以使用链路追踪功能和[不同的灰度发布策略](../../project-user-guide/grayscale-release/overview/)。如果启用**链路追踪**后无法访问路由，请在路由 (Ingress) 中添加注解（例如 `nginx.ingress.kubernetes.io/service-upstream: true`）。
 
 3. 在**配置选项**中，添加键值对，为 NGINX Ingress 控制器的系统组件提供配置信息。有关更多信息，请参阅 [NGINX Ingress 控制器官方文档](https://kubernetes.github.io/ingress-nginx/user-guide/nginx-configuration/configmap/#configuration-options)。
 
@@ -39,8 +35,6 @@ KubeSphere 除了提供项目范围的网关外，还提供[集群范围的网�
 ## NodePort
 
 如果您选择 **NodePort**，KubeSphere 将为 HTTP 请求和 HTTPS 请求分别设置一个端口。您可以用 `EIP:NodePort` 或 `Hostname:NodePort` 地址访问服务。
-
-![nodeport](/images/docs/zh-cn/project-administration/project-gateway/nodeport.jpg)
 
 例如，如果您的服务配置了的弹性 IP 地址 (EIP)，请访问：
 
@@ -64,11 +58,7 @@ KubeSphere 除了提供项目范围的网关外，还提供[集群范围的网�
 ## LoadBalancer
 
 在选择 **LoadBalancer** 前，您必须先配置负载均衡器。负载均衡器的 IP 地址将与网关绑定以便内部的服务和路由可以访问。 
-
-![lb](/images/docs/zh-cn/project-administration/project-gateway/lb.png)
-
 {{< notice note >}}
-
 云厂商通常支持负载均衡器插件。如果在主流的 Kubernetes Engine 上安装 KubeSphere，您可能会发现环境中已有可用的负载均衡器。如果在裸金属环境中安装 KubeSphere，您可以使用 [OpenELB](https://github.com/kubesphere/openelb) 作为负载均衡器。
 
 {{</ notice >}} 
