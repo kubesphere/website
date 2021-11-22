@@ -55,9 +55,7 @@ weight: 4260
 
     ![cloud-shell-oke](/images/docs/zh-cn/installing-on-kubernetes/hosted-kubernetes/install-kubesphere-on-oke/cloud-shell-oke.jpg)
 
-    {{< notice warning >}}
-    
-    如果不在 Cloud Shell 中执行该命令，您无法继续进行以下操作。
+    {{< notice warning >}}如果不在 Cloud Shell 中执行该命令，您无法继续进行以下操作。
     
     {{</ notice >}}
 
