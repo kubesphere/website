@@ -334,8 +334,6 @@ https://kubesphere.io             20xx-xx-xx xx:xx:xx
 
 {{</ notice >}}
 
-![登录](/images/docs/zh-cn/installing-on-linux/introduction/multi-node-installation/login.PNG)
-
 ## 启用 kubectl 自动补全
 
 KubeKey 不会启用 kubectl 自动补全功能，请参见以下内容并将其打开：

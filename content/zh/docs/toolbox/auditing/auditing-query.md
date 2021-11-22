@@ -28,8 +28,6 @@ KubeSphere 支持租户隔离的审计日志查询。本教程演示了如何使
 
 2. 在弹出窗口中，您可以查看最近 12 小时内审计日志总数的趋势。
 
-   ![操作审计](/images/docs/zh-cn/toolbox/auditing/auditing-logs/操作审计.png)
-
 3. **审计日志查询**控制台支持以下查询参数：
 
    <table>
@@ -82,10 +80,6 @@ KubeSphere 支持租户隔离的审计日志查询。本教程演示了如何使
 
 ## 输入查询参数
 
-1. 选择一个过滤器，输入您想搜索的关键字。例如，查询包含 `services` 创建信息的审计日志，如下方截图所示：
-
-   ![过滤审计日志](/images/docs/zh-cn/toolbox/auditing/auditing-logs/过滤审计日志.png)
+1. 选择一个过滤器，输入您想搜索的关键字。例如，查询包含 `services` 创建信息的审计日志。
 
 2. 点击列表中的任一结果，您便可以查看审计日志的详细信息。
-
-   ![审计日志详情](/images/docs/zh-cn/toolbox/auditing/auditing-logs/审计日志详情.png)

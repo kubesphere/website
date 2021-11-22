@@ -105,8 +105,6 @@ kubectl logs -n kubesphere-system $(kubectl get pod -n kubesphere-system -l app=
 
 - 由于服务安装时默认开启 NodePort 且端口为 30880，浏览器输入 `<公网 IP>:30880` ，并以默认帐户（用户名 `admin`，密码 `P@88w0rd`）即可登录控制台。
 
-![console.png](/images/docs/tencent-tke/console.png)
-
 #### LoadBalancer 方式访问
 
 - 在 `容器服务` > `集群` 界面中，选择创建好的集群，在 `服务与路由` > `service` 面板中，点击 `ks-console` 一行中 `更新访问方式`。
@@ -123,8 +121,6 @@ kubectl logs -n kubesphere-system $(kubectl get pod -n kubesphere-system -l app=
 
 - 浏览器输入 `<LoadBalancer 公网 IP>:<映射端口>`，并以默认帐户（用户名 `admin`，密码 `P@88w0rd`）即可登录控制台。
 
-![console.png](/images/docs/tencent-tke/console.png)
-
 
 {{< notice tip >}}
 
@@ -140,5 +136,4 @@ kubectl -n kubesphere-system rollout restart deploy ks-controller-manager
 
 ### 通过 KubeSphere 开启附加组件
 以上示例演示了默认的最小安装过程，要在 KubeSphere 中启用其他组件，请参阅[启用可插拔组件](../../../pluggable-components/)。
-全部附加组件开启并安装成功后，进入集群管理界面，可以得到如下界面呈现效果，特别是在 `服务组件` 部分可以看到已经开启的各个基础和附加组件：
-![console-full.png](/images/docs/tencent-tke/console-full.png)
+全部附加组件开启并安装成功后，进入集群管理界面，在**系统组件**区域可以看到已经开启的各个基础和附加组件。

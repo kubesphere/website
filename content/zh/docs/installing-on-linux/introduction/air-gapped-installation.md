@@ -490,8 +490,6 @@ https://kubesphere.io             20xx-xx-xx xx:xx:xx
 
 {{</ notice >}}
 
-![登录 kubesphere](/images/docs/zh-cn/installing-on-linux/introduction/air-gapped-installation/kubesphere-login.PNG)
-
 ## 附录
 
 ### KubeSphere 3.2.0 镜像清单

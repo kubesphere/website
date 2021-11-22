@@ -21,33 +21,20 @@ weight: 14293
 
 1. 在 `demo-project` 项目的**概览**页面，点击左上角的**应用商店**。
 
-2. 找到 RadonDB MySQL，点击**应用信息**页面上的**部署**。
-
-   ![应用商店中的 RadonDB MySQL](/images/docs/zh-cn/appstore/built-in-apps/radondb-mysql-app/radondb-mysql-in-app-store.png)
-
-   ![部署 RadonDB MySQL](/images/docs/zh-cn/appstore/built-in-apps/radondb-mysql-app/deploy-radondb-mysql.png)
+2. 找到 RadonDB MySQL，点击**应用信息**页面上的**安装**。
 
 3. 设置名称并选择应用版本。请确保将 RadonDB MySQL 部署在 `demo-project` 中，点击**下一步**。
 
-   ![确认部署](/images/docs/zh-cn/appstore/built-in-apps/radondb-mysql-app/confirm-deployment.png)
-
-4. 在**应用配置**页面，您可以使用默认配置，或者编辑 YAML 文件以自定义配置。点击**部署**继续。
-
-   ![设置应用配置](/images/docs/zh-cn/appstore/built-in-apps/radondb-mysql-app/set-app-configuration.png)
+4. 在**应用配置**页面，您可以使用默认配置，或者编辑 YAML 文件以自定义配置。点击**安装**继续。
 
 5. 稍等片刻待 RadonDB MySQL 启动并运行。
 
-   ![RadonDB MySQL 运行中](/images/docs/zh-cn/appstore/built-in-apps/radondb-mysql-app/radondb-mysql-running.png)
 
 ### 步骤 2：访问 RadonDB MySQL
 
 1. 进入**应用负载**下的**服务**页面，点击 RadonDB MySQL 服务名称。
 
-   ![RadonDB MySQL 服务](/images/docs/zh-cn/appstore/built-in-apps/radondb-mysql-app/radondb-mysql-service.png)
-
 2. 在**容器组**下，展开菜单查看容器详情，然后点击**终端**图标。
-
-   ![RadonDB MySQL 终端](/images/docs/zh-cn/appstore/built-in-apps/radondb-mysql-app/radondb-mysql-terminal.png)
 
 3. 在弹出窗口中，直接向终端输入命令使用该应用。
 

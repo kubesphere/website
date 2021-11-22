@@ -108,9 +108,8 @@ https://kubesphere.io             2020-xx-xx xx:xx:xx
 
   {{</ notice >}}
 
-- 使用默认帐户和密码（`admin/P@88w0rd`）登录控制台。在集群概述页面中，可以看到如下图所示的仪表板。
+- 使用默认帐户和密码（`admin/P@88w0rd`）登录控制台。
 
-  ![doks-cluster](/images/docs/zh-cn/installing-on-kubernetes/hosted-kubernetes/install-kubesphere-on-do/doks-cluster.png)
 
 ## 启用可插拔组件（可选）
 

@@ -463,10 +463,6 @@ https://kubesphere.io             2020-08-15 23:32:12
 
 使用上述日志中给定的访问地址进行访问，进入到 KubeSphere 的登录界面并使用默认帐户（用户名`admin`，密码`P@88w0rd`）即可登录平台。
 
-![登录](/images/docs/vsphere/login.png)
-
-![默认界面](/images/docs/vsphere/default.png)
-
 ## 开启可插拔功能组件(可选)
 
 上面的示例演示了默认的最小安装过程，对于可插拔组件，可以在安装之前或之后启用它们。有关详细信息，请参见[启用可插拔组件](../../../pluggable-components/)。

@@ -286,10 +286,8 @@ glusterfs (default)   kubernetes.io/glusterfs   Delete          Immediate       
 
 1. 使用默认帐户和密码 (`admin/P@88w0rd`) 通过 `<NodeIP>:30880` 登录 Web 控制台。点击左上角的**平台管理**，选择**集群管理**。
 
-3. 访问**存储管理**下的**存储卷**，可以看到 PVC 正在使用。
+3. 访问**存储**下的**存储卷**，可以看到 PVC 正在使用。
 
-   ![volumes-in-use](/images/docs/zh-cn/installing-on-linux/persistent-storage-configurations/glusterfs-client/volumes-in-use.png)
-   
    {{< notice note >}}
    
    有关如何在 KubeSphere 控制台上创建存储卷的更多信息，请参见[存储卷](../../../project-user-guide/storage/volumes/)。
@@ -297,6 +295,4 @@ glusterfs (default)   kubernetes.io/glusterfs   Delete          Immediate       
    {{</ notice >}} 
    
 3. 在**存储类型**页面，可以看到集群中可用的存储类型。
-
-   ![storage-class-available](/images/docs/zh-cn/installing-on-linux/persistent-storage-configurations/glusterfs-client/storage-class-available.png)
 

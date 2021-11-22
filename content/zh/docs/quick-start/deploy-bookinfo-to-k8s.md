@@ -51,8 +51,6 @@ Bookinfo 应用由以下四个独立的微服务组成，其中 **reviews** 微�
 
 2. 在出现的对话框中点击**下一步**，其中必填字段已经预先填好，相关组件也已经设置完成。您无需修改设置，只需在最后一页（**路由设置**）点击**创建**。
 
-    ![create-bookinfo](/images/docs/zh-cn/quickstart/deploy-bookinfo-to-k8s/create-bookinfo.png)
-
     {{< notice note >}}
 
 KubeSphere 会自动创建主机名。若要更改主机名，请将鼠标悬停在默认路由规则上，然后点击 <img src="/images/docs/zh-cn/quickstart/deploy-bookinfo-to-k8s/edit-icon.png" width='20px' /> 进行编辑。有关更多信息，请参见[创建基于微服务的应用](../../project-user-guide/application/compose-app/)。
@@ -60,8 +58,6 @@ KubeSphere 会自动创建主机名。若要更改主机名，请将鼠标悬停
     {{</ notice >}}
 
 3. 在**工作负载**中，确保这四个部署都处于`运行中`状态，这意味着该应用已经成功创建。
-
-    ![running](/images/docs/zh-cn/quickstart/deploy-bookinfo-to-k8s/running.png)
 
     {{< notice note >}}可能需要等几分钟才能看到部署正常运行。
 {{</ notice >}}
@@ -74,8 +70,6 @@ KubeSphere 会自动创建主机名。若要更改主机名，请将鼠标悬停
     {{</ notice >}}
     
 2. 详情页面中显示了用于访问 Bookinfo 应用的主机名和端口号。
-
-    ![details-page](/images/docs/zh-cn/quickstart/deploy-bookinfo-to-k8s/details-page.png)
 
 3. 由于将通过 NodePort 在集群外访问该应用，因此您需要在安全组中为出站流量开放上图中的端口，并按需设置端口转发规则。
 
@@ -91,7 +85,7 @@ KubeSphere 会自动创建主机名。若要更改主机名，请将鼠标悬停
 {{</ notice >}}
 
 
-5. 完成后，点击 <img src="/images/docs/zh-cn/quickstart/deploy-bookinfo-to-k8s/click-to-visit.png" width='70' /> 访问该应用。
+5. 完成后，点击**访问服务**访问该应用。
 
 6. 在应用详情页面，点击左下角的 **Normal user**。
 

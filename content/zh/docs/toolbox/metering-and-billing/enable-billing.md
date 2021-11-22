@@ -81,5 +81,3 @@ weight: 15420
    ```
 
 4. 在**资源消费统计**页面，您可以看到资源的消费信息。
-
-   ![计量计费信息](/images/docs/zh-cn/toolbox/metering-and-billing/enable-billing/计量计费信息.png)

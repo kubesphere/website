@@ -55,8 +55,8 @@ weight: 4260
 
     ![cloud-shell-oke](/images/docs/zh-cn/installing-on-kubernetes/hosted-kubernetes/install-kubesphere-on-oke/cloud-shell-oke.jpg)
 
-    {{< notice warning >}}
-如果不在 Cloud Shell 中执行该命令，您无法继续进行以下操作。
+    {{< notice warning >}}如果不在 Cloud Shell 中执行该命令，您无法继续进行以下操作。
+    
     {{</ notice >}}
 
 ## 在 OKE 上安装 KubeSphere
@@ -81,11 +81,11 @@ weight: 4260
     #####################################################
     ###              Welcome to KubeSphere!           ###
     #####################################################
-
+    
     Console: http://10.0.10.2:30880
     Account: admin
     Password: P@88w0rd
-
+    
     NOTES：
       1. After logging into the console, please check the
         monitoring status of service components in
@@ -93,7 +93,7 @@ weight: 4260
         ready, please wait patiently until all components 
         are ready.
       2. Please modify the default password after login.
-
+    
     #####################################################
     https://kubesphere.io             20xx-xx-xx xx:xx:xx
     ```
@@ -136,7 +136,6 @@ KubeSphere 安装完成后，您可以通过 `NodePort` 或 `LoadBalancer` 的�
 
 6. 访问此外部 IP 地址并通过默认的帐户和密码 (`admin/P@88w0rd`) 登录 Web 控制台。在**集群管理**页面，您可以看到集群概览。
 
-    ![概览页面](/images/docs/zh-cn/installing-on-kubernetes/hosted-kubernetes/install-kubesphere-on-oke/概览页面.jpg)
 
 ## 启用可插拔组件（可选）
 

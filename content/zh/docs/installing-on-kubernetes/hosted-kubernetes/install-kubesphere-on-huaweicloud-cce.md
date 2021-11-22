@@ -94,9 +94,7 @@ kubectl apply -f https://github.com/kubesphere/ks-installer/releases/download/v3
 
 ![为 KubeSphere 控制台配置负载均衡访问](/images/docs/huawei-cce/zh/edit-ks-console-svc.png)
 
-通过负载均衡绑定公网访问后，即可使用给定的访问地址进行访问，进入到 KubeSphere 的登录界面并使用默认帐户（用户名 `admin`，密码 `P@88w0rd`）即可登录平台：
-
-![登录 KubeSphere 平台](/images/docs/huawei-cce/zh/login-ks-console.png)
+通过负载均衡绑定公网访问后，即可使用给定的访问地址进行访问，进入到 KubeSphere 的登录界面并使用默认帐户（用户名 `admin`，密码 `P@88w0rd`）即可登录平台。
 
 ### 通过 KubeSphere 开启附加组件
 
@@ -112,6 +110,4 @@ kubectl delete crd applications.app.k8s.io
 
 {{</ notice >}}
 
-全部附加组件开启并安装成功后，进入集群管理界面，可以得到如下界面呈现效果，特别是在 `服务组件` 部分可以看到已经开启的各个基础和附加组件：
-
-![KubeSphere 全功能集管理界面](/images/docs/huawei-cce/zh/view-ks-console-full.png)
+全部附加组件开启并安装成功后，进入集群管理界面，在**系统组件** 区域可以看到已经开启的各个基础和附加组件。

@@ -181,22 +181,15 @@ kubectl logs -n kubesphere-system $(kubectl get pod -n kubesphere-system -l app=
 
 1. 以 `admin` 身份登录 KubeSphere 控制台，转到**集群管理**页面点击**添加集群**。
    
-   ![添加集群](/images/docs/zh-cn/multicluster-management/enable-multicluster-management-in-kubesphere/direct-connection/add-cluster.PNG)
-
 2. 在**导入集群**页面，输入要导入的集群的基本信息。您也可以点击右上角的**编辑模式**以 YAML 格式查看并编辑基本信息。编辑完成后，点击**下一步**。
 
-     ![集群信息](/images/docs/zh-cn/multicluster-management/enable-multicluster-management-in-kubesphere/direct-connection/cluster-info.PNG)
-
-3. 在**连接方式**，选择**直接连接 Kubernetes 集群**，复制的 kubeconfig 内容并粘贴至文本框。您也可以点击右上角的**编辑模式**以 YAML 格式编辑的 kubeconfig。
+3. 在**连接方式**，选择**直接连接 Kubernetes 集群**，复制 kubeconfig 内容并粘贴至文本框。您也可以点击右上角的**编辑模式**以 YAML 格式编辑的 kubeconfig。
 
      {{< notice note >}}
 
 请确保主集群的任何节点都能访问 kubeconfig 中的 `server` 地址。
 
      {{</ notice >}}
-    
-     ![kubeconfig](/images/docs/zh-cn/multicluster-management/enable-multicluster-management-in-kubesphere/direct-connection/kubeconfig.PNG)
 
 4. 点击**创建**，然后等待集群初始化完成。
    
-     ![已导入的集群](/images/docs/zh-cn/multicluster-management/enable-multicluster-management-in-kubesphere/direct-connection/cluster-imported.PNG)

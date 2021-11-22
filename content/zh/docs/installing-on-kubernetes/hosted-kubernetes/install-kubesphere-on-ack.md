@@ -209,9 +209,7 @@ https://kubesphere.io             2020-xx-xx xx:xx:xx
 
 现在已经安装了 KubeSphere，您可以按照以下步骤访问 KubeSphere 的 Web 控制台。
 
-- 切换到 kubesphere-system 命名空间，选择服务，选择 ks-console 点击更新
-
-  ![ks-console](/images/docs/zh-cn/installing-on-kubernetes/hosted-kubernetes/install-kubesphere-on-ack/ks-console.png)
+- 切换到 kubesphere-system 命名空间，选择服务，选择 ks-console 点击更新 。
 
 - 将 service 类型 `NodePort`  更改为 `LoadBalancer` ，完成后点击更新。
 
@@ -221,9 +219,8 @@ https://kubesphere.io             2020-xx-xx xx:xx:xx
 
   ![ack-lb-ip](/images/docs/zh-cn/installing-on-kubernetes/hosted-kubernetes/install-kubesphere-on-ack/ack-lb-ip.png)
 
-- 使用 ACK 生成的 external-ip 访问 KubeSphere 的 Web 控制台, 默认帐户和密码（`admin/P@88w0rd`），在集群概述页面中，可以看到如下图所示的仪表板。
+- 使用 ACK 生成的 external-ip 访问 KubeSphere 的 Web 控制台, 默认帐户和密码（`admin/P@88w0rd`）。
 
-  ![ks-UI](/images/docs/zh-cn/installing-on-kubernetes/hosted-kubernetes/install-kubesphere-on-ack/ks-UI.png)
 
 ## 启用可插拔组件（可选）
 

@@ -21,21 +21,11 @@ weight: 14291
 
 1. 在 `demo-project` 项目的**概览**页面，点击左上角的**应用商店**。
 
-   ![应用商店](/images/docs/zh-cn/appstore/built-in-apps/redis-app/app-store-1.PNG)
-
-2. 找到 Redis，点击**应用信息**页面上的**部署**。
-
-   ![应用商店中的 Redis](/images/docs/zh-cn/appstore/built-in-apps/redis-app/redis-in-app-store-2.PNG)
-
-   ![部署 Redis](/images/docs/zh-cn/appstore/built-in-apps/redis-app/deploy-redis-3.PNG)
+2. 找到 Redis，点击**应用信息**页面上的**安装**。
 
 3. 设置名称并选择应用版本。请确保将 Redis 部署在 `demo-project` 中，点击**下一步**。
 
-   ![确认部署](/images/docs/zh-cn/appstore/built-in-apps/redis-app/confirm-deployment-4.PNG)
-
-4. 在**应用配置**页面，为应用指定持久化存储卷和密码。操作完成后，点击**部署**。
-
-   ![配置 Redis](/images/docs/zh-cn/appstore/built-in-apps/redis-app/config-redis-5.PNG)
+4. 在**应用配置**页面，为应用指定持久化存储卷和密码。操作完成后，点击**安装**。
 
    {{< notice note >}}
 
@@ -45,20 +35,13 @@ weight: 14291
 
 5. 稍等片刻待 Redis 启动并运行。
 
-   ![redis 运行中](/images/docs/zh-cn/appstore/built-in-apps/redis-app/redis-running-6.PNG)
 
 ### 步骤 2：访问 Redis 终端
 
 1. 转到**服务**页面，点击 Redis 的服务名称。
 
-   ![访问 Redis](/images/docs/zh-cn/appstore/built-in-apps/redis-app/access-redis-7.PNG)
-
 2. 在**容器组**中展开菜单查看容器详情，随后点击**终端**图标。
 
-   ![Redis 终端](/images/docs/zh-cn/appstore/built-in-apps/redis-app/redis-terminal-8.PNG)
-
 3. 在弹出窗口的终端中运行 `redis-cli` 命令来使用该应用。
-
-   ![使用 Redis](/images/docs/zh-cn/appstore/built-in-apps/redis-app/use-redis-9.PNG)
 
 4. 有关更多信息，请参见 [Redis 官方文档](https://redis.io/documentation)。

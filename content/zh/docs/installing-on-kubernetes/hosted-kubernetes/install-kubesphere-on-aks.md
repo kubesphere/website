@@ -147,9 +147,7 @@ NAME         TYPE           CLUSTER-IP    EXTERNAL-IP   PORT(S)        AGE
 ks-console   LoadBalancer   10.0.181.93   13.86.xxx.xxx   80:30194/TCP   13m       6379/TCP       10m
 ```
 
-使用 external-ip 地址用默认帐户和密码（admin/P@88w0rd）访问控制台。在集群概述页面中，您可以看到如下图所示的仪表板。
-
-![aks-cluster](/images/docs/zh-cn/installing-on-kubernetes/hosted-kubernetes/install-kubesphere-on-aks/aks-cluster.png)
+使用 external-ip 地址用默认帐户和密码（admin/P@88w0rd）访问控制台。
 
 ## 启用可插拔组件（可选）
 

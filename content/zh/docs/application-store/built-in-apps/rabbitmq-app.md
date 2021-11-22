@@ -21,33 +21,20 @@ weight: 14290
 
 1. 在 `demo-project` 的**概览**页面，点击左上角的**应用商店**。
 
-   ![rabbitmq01](/images/docs/zh-cn/appstore/built-in-apps/rabbitmq-app/rabbitmq01.png)
-
-2. 找到 RabbitMQ，在**应用信息**页面点击**部署**。
-
-   ![find-rabbitmq](/images/docs/zh-cn/appstore/built-in-apps/rabbitmq-app/rabbitmq02.png)
-
-   ![click-deploy](/images/docs/zh-cn/appstore/built-in-apps/rabbitmq-app/rabbitmq021.png)
+2. 找到 RabbitMQ，在**应用信息**页面点击**安装**。
 
 3. 设置应用名称和版本，确保 RabbitMQ 部署在 `demo-project` 项目中，然后点击**下一步**。
 
-   ![rabbitmq03](/images/docs/zh-cn/appstore/built-in-apps/rabbitmq-app/rabbitmq03.png)
-
-4. 在**应用配置**页面，您可以直接使用默认配置，也可以通过修改表单参数或编辑 YAML 文件自定义配置。您需要记录 **Root Username** 和 **Root Password** 的值，用于在后续步骤中登录系统。设置完成后点击**部署**。
-
-   ![rabbitMQ11](/images/docs/zh-cn/appstore/built-in-apps/rabbitmq-app/rabbitMQ11.png)
-
-   ![rabbitMQ04](/images/docs/zh-cn/appstore/built-in-apps/rabbitmq-app/rabbitMQ04.png)
+4. 在**应用配置**页面，您可以直接使用默认配置，也可以通过修改表单参数或编辑 YAML 文件自定义配置。您需要记录 **Root Username** 和 **Root Password** 的值，用于在后续步骤中登录系统。设置完成后点击**安装**。
 
    {{< notice tip >}}
 
-   如需查看清单文件，请点击 **YAML** 开关。
+   如需查看清单文件，请点击 **编辑YAML** 开关。
 
    {{</ notice >}}
 
 5. 等待 RabbitMQ 创建完成并开始运行。
 
-   ![check-if-rabbitmq-is-running](/images/docs/zh-cn/appstore/built-in-apps/rabbitmq-app/rabbitmq05.png)
 
 ### 步骤 2：访问 RabbitMQ 主页
 
@@ -55,19 +42,11 @@ weight: 14290
 
 1. 打开**服务**页面并点击 RabbitMQ 的服务名称。
 
-   ![go-to-services](/images/docs/zh-cn/appstore/built-in-apps/rabbitmq-app/rabbitmq06.png)
+2. 点击**更多操作**，在下拉菜单中选择**编辑外部访问**。
 
-2. 点击**更多操作**，在下拉菜单中选择**编辑外网访问**。
+3. 将**访问模式**设置为 **NodePort** 并点击**确定**。有关更多信息，请参见[项目网关](../../../project-administration/project-gateway/)。
 
-   ![rabbitmq07](/images/docs/zh-cn/appstore/built-in-apps/rabbitmq-app/rabbitmq07.png)
-
-3. 将**访问方式**设置为 **NodePort** 并点击**确定**。有关更多信息，请参见[项目网关](../../../project-administration/project-gateway/)。
-
-   ![rabbitmq08](/images/docs/zh-cn/appstore/built-in-apps/rabbitmq-app/rabbitmq08.png)
-
-4. 您可以在**服务端口**区域查看暴露的端口。
-
-   ![rabbitmq09](/images/docs/zh-cn/appstore/built-in-apps/rabbitmq-app/rabbitmq09.png)
+4. 您可以在**端口**区域查看暴露的端口。
 
 5. 用 `<NodeIP>:<NodePort>` 地址以及步骤 1 中记录的用户名和密码访问 RabbitMQ 的 **management** 端口。
    ![rabbitmq-dashboard](/images/docs/zh-cn/appstore/built-in-apps/rabbitmq-app/rabbitmq-dashboard.png)
