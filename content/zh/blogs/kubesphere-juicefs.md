@@ -1,5 +1,5 @@
 ---
-title: '使用 KubeSphere 应用商店 5 分钟内快速部署 JuiceFS'
+title: '在 Kubernetes 中部署 JuiceFS'
 tag: 'KubeSphere,JuiceFS'
 keyword: 'Kubernetes, KubeSphere, JuiceFS, 对象存储 '
 description: '本教程将介绍如何在 KubeSphere 中一键部署 JuiceFS CSI Driver，为集群上的各种应用提供数据持久化。'
