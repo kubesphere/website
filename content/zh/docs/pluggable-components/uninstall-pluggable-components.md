@@ -137,7 +137,7 @@ kubectl -n kubesphere-system edit clusterconfiguration ks-installer
 
 ## 卸载 KubeSphere 告警系统
 
-2. 将 CRD `ClusterConfiguration`  配置文件中 `ks-installer` 参数的 `alerting.enabled` 字段的值从 `true` 改为 `false`。
+1. 将 CRD `ClusterConfiguration`  配置文件中 `ks-installer` 参数的 `alerting.enabled` 字段的值从 `true` 改为 `false`。
 
 2. 运行以下命令：
 
