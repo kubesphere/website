@@ -20,7 +20,7 @@ weight: 12230
 
 {{< notice note >}}
 
-KubeSphere 提供了两个内置的 OAuth 2.0 插件：GitHub的 [GitHubIdentityProvider](https://github.com/kubesphere/kubesphere/blob/release-3.1/pkg/apiserver/authentication/identityprovider/github/github.go) 和阿里云IDaaS的 [AliyunIDaasProvider](https://github.com/kubesphere/kubesphere/blob/release-3.1/pkg/apiserver/authentication/identityprovider/github/github.go) ，可以根据内置的插件开发其他插件。
+KubeSphere 提供了两个内置的 OAuth 2.0 插件：GitHub 的 [GitHubIdentityProvider](https://github.com/kubesphere/kubesphere/blob/release-3.1/pkg/apiserver/authentication/identityprovider/github/github.go) 和阿里云IDaaS的 [AliyunIDaasProvider](https://github.com/kubesphere/kubesphere/blob/release-3.1/pkg/apiserver/authentication/identityprovider/github/github.go) ，可以根据内置的插件开发其他插件。
 
 {{</ notice >}}
 
@@ -81,54 +81,48 @@ KubeSphere 提供了两个内置的 OAuth 2.0 插件：GitHub的 [GitHubIdentity
 
 ## 集成身份提供者 
 
-1. 以 `admin` 身份登录 KubeSphere，将光标移动到右下角 <img src="/images/docs/access-control-and-account-management/external-authentication/set-up-external-authentication/toolbox.png" width="20px" height="20px"> ，点击 **Kubectl**，然后运行以下命令来编辑 `kubesphere-config`：
+1. 以 `admin` 身份登录 KubeSphere，将光标移动到右下角 <img src="/images/docs/access-control-and-account-management/external-authentication/set-up-external-authentication/toolbox.png" width="20px" height="20px"> ，点击 **kubectl**，然后执行以下命令来编辑 CRD `ClusterConfiguration` 中的 `ks-installer`：
 
    ```bash
-   kubectl -n kubesphere-system edit cm kubesphere-config
+   kubectl -n kubesphere-system edit cc ks-installer
    ```
 
-2. 在 `data:kubesphere.yaml:authentication` 部分配置的 `oauthOptions:identityProviders` 以外的字段信息请参阅[设置外部身份认证](../set-up-external-authentication/)。
+2. 在 `spec:authentication` 部分配置的 `oauthOptions:identityProviders` 以外的字段信息请参阅[设置外部身份认证](../set-up-external-authentication/)。
 
 3. 根据开发的身份提供者插件来配置 `oauthOptions:identityProviders` 中的字段。
 
-   以下是使用 GitHub 作为外部身份提供者的配置示例。详情请参阅[GitHub 官方文档](https://docs.github.com/en/developers/apps/building-oauth-apps) 和[GitHubIdentityProvider源代码](https://github.com/kubesphere/kubesphere/blob/release-3.1/pkg/apiserver/authentication/identityprovider/github/github.go) 。
+   以下是使用 GitHub 作为外部身份提供者的配置示例。详情请参阅 [GitHub 官方文档](https://docs.github.com/en/developers/apps/building-oauth-apps)和 [GitHubIdentityProvider 源代码](https://github.com/kubesphere/kubesphere/blob/release-3.1/pkg/apiserver/authentication/identityprovider/github/github.go) 。
 
    ```yaml
-   apiVersion: v1
-   data:
-     kubesphere.yaml: |
-       authentication:
-         authenticateRateLimiterMaxTries: 10
-         authenticateRateLimiterDuration: 10m0s
-         jwtSecret: '******'
-         oauthOptions:
-           accessTokenMaxAge: 1h
-           accessTokenInactivityTimeout: 30m
-           identityProviders:
-           - name: github
-             type: GitHubIdentityProvider
-             mappingMethod: auto
-             provider:
-               clientID: '******'
-               clientSecret: '******'
-               redirectURL: 'https://ks-console/oauth/redirect/github'
+   spec:
+     authentication:
+       jwtSecret: ''
+       authenticateRateLimiterMaxTries: 10
+       authenticateRateLimiterDuration: 10m0s
+       oauthOptions:
+         accessTokenMaxAge: 1h
+         accessTokenInactivityTimeout: 30m
+         identityProviders:
+         - name: github
+           type: GitHubIdentityProvider
+           mappingMethod: auto
+           provider:
+             clientID: '******'
+             clientSecret: '******'
+             redirectURL: 'https://ks-console/oauth/redirect/github'
    ```
+   
+   同样，您也可以使用阿里云 IDaaS 作为外部身份提供者。详情请参阅[阿里云 IDaaS 文档](https://www.alibabacloud.com/help/product/111120.htm?spm=a3c0i.14898238.2766395700.1.62081da1NlxYV0)和 [AliyunIDaasProvider 源代码](https://github.com/kubesphere/kubesphere/blob/release-3.1/pkg/apiserver/authentication/identityprovider/github/github.go)。
 
-   同样，您也可以使用阿里云 IDaaS 作为外部身份提供者。详情请参阅[阿里云 IDaaS 文档](https://www.alibabacloud.com/help/product/111120.htm?spm=a3c0i.14898238.2766395700.1.62081da1NlxYV0) 和[AliyunIDaasProvider源代码](https://github.com/kubesphere/kubesphere/blob/release-3.1/pkg/apiserver/authentication/identityprovider/github/github.go) 。
-
-4. 修改 `kubesphere-config` 配置后，执行以下命令重启 ks-apiserver 。
-
-   ```bash
-   kubectl -n kubesphere-system rollout restart deploy/ks-apiserver
-   ```
+4. 字段配置完成后，保存修改，然后等待 ks-installer 完成重启。
 
    {{< notice note >}}
-
-   KubeSphere Web 控制台在 ks-apiserver 重新启动期间不可用。请等待重启完成。
+   
+   KubeSphere Web 控制台在 ks-installer 重新启动期间不可用。请等待重启完成。
 
    {{</ notice >}}
 
-5. 进入 KubeSphere 登录界面，点击 **Log In with XXX** （例如， **Log In with GitHub**）。
+5. 进入 KubeSphere 登录界面，点击 **Log In with XXX** （例如，**Log In with GitHub**）。
 
 6. 在外部身份提供者的登录界面，输入身份提供者配置的用户名和密码，登录 KubeSphere 。
 

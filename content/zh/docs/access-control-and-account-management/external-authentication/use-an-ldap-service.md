@@ -16,42 +16,37 @@ weight: 12220
 
 ## 步骤
 
-1. 以 `admin` 身份登录 KubeSphere，将光标移动到右下角 <img src="/images/docs/access-control-and-account-management/external-authentication/set-up-external-authentication/toolbox.png" width="20px" height="20px"> ，点击 **Kubectl**，然后运行以下命令来编辑 `kubesphere-config`：
+1. 以 `admin` 身份登录 KubeSphere，将光标移动到右下角 <img src="/images/docs/access-control-and-account-management/external-authentication/set-up-external-authentication/toolbox.png" width="20px" height="20px"> ，点击 **kubectl**，然后执行以下命令来编辑 CRD `ClusterConfiguration` 中的 `ks-installer`：
 
    ```bash
-   kubectl -n kubesphere-system edit cm kubesphere-config
+   kubectl -n kubesphere-system edit cc ks-installer
    ```
    
     示例：
 
     ```yaml
-   apiVersion: v1
-   data:
-     kubesphere.yaml: |
-       authentication:
-         authenticateRateLimiterMaxTries: 10
-         authenticateRateLimiterDuration: 10m0s
-         loginHistoryRetentionPeriod: 168h
-         maximumClockSkew: 10s
-         multipleLogin: true
-         jwtSecret: "********"
-         oauthOptions:
-           accessTokenMaxAge: 1h
-           accessTokenInactivityTimeout: 30m
-           identityProviders:
-           - name: LDAP
-             type: LDAPIdentityProvider
-             mappingMethod: auto
-             provider:
-               host: 192.168.0.2:389
-               managerDN: uid=root,cn=users,dc=nas
-               managerPassword: ********
-               userSearchBase: cn=users,dc=nas
-               loginAttribute: uid
-               mailAttribute: mail
-   ```
-
-2. 在 `data:kubesphere.yaml:authentication` 部分配置的 `oauthOptions:identityProviders` 以外的字段信息请参阅[设置外部身份认证](../set-up-external-authentication/)。
+   spec:
+     authentication:
+       jwtSecret: ''
+       maximumClockSkew: 10s
+       multipleLogin: true
+       oauthOptions:
+         accessTokenMaxAge: 1h
+         accessTokenInactivityTimeout: 30m
+         identityProviders:
+         - name: LDAP
+           type: LDAPIdentityProvider
+           mappingMethod: auto
+           provider:
+             host: 192.168.0.2:389
+             managerDN: uid=root,cn=users,dc=nas
+             managerPassword: ********
+             userSearchBase: cn=users,dc=nas
+             loginAttribute: uid
+             mailAttribute: mail
+    ```
+   
+2. 在 `spec:authentication` 部分配置 `oauthOptions:identityProviders` 以外的字段信息请参阅[设置外部身份认证](../set-up-external-authentication/)。
 
 3. 在 `oauthOptions:identityProviders` 部分配置字段。
 
@@ -80,15 +75,23 @@ weight: 12220
      iam.kubesphere.io/origin-uid: <LDAP username>
    ```
 
-5. 字段配置完成后，执行以下命令重启 ks-apiserver 。
+5. 字段配置完成后，保存修改，然后等待 ks-installer 完成重启。
+
+   {{< notice note >}}
+   
+   KubeSphere Web 控制台在 ks-installer 重新启动期间不可用。请等待重启完成。
+
+   {{</ notice >}}
+
+6. 如果您使用 KubeSphere 3.2.0，请在配置 LDAP 之后执行以下命令并等待至 `ks-installer` 成功运行：
 
    ```bash
-   kubectl -n kubesphere-system rollout restart deploy/ks-apiserver
+   kubectl -n kubesphere-system set image deployment/ks-apiserver *=kubespheredev/ks-apiserver:release-3.2
    ```
 
    {{< notice note >}}
 
-   KubeSphere Web 控制台在 ks-apiserver 重新启动期间不可用。请等待重启完成。
+   下个版本无需执行此步。
 
    {{</ notice >}}
 
