@@ -161,6 +161,7 @@ weight: 18100
 - Deprecate router API version v1alpha2. ([#4193](https://github.com/kubesphere/kubesphere/pull/4193), [@RolandMa1986](https://github.com/RolandMa1986))
 - Upgrade the pipeline API version from v2 to v3. ([#2323](https://github.com/kubesphere/console/pull/2323), [@harrisonliu5](https://github.com/harrisonliu5))
 - Change the Secret verification API. ([#2368](https://github.com/kubesphere/console/pull/2368), [@harrisonliu5](https://github.com/harrisonliu5))
+- Client credential is required for OAuth2 Token endpoint.（[#3525](https://github.com/kubesphere/kubesphere/pull/3525)，[@wansir](https://github.com/wansir)）
 
 ## Component Changes
 
