@@ -4,7 +4,7 @@ tag: 'KubeSphere,JuiceFS'
 keyword: 'Kubernetes, KubeSphere, JuiceFS, 对象存储 '
 description: '本教程将介绍如何在 KubeSphere 中一键部署 JuiceFS CSI Driver，为集群上的各种应用提供数据持久化。'
 createTime: '2021-11-17'
-author: 'KubeSphere'
+author: '朱唯唯，尹珉'
 snapshot: 'https://pek3b.qingstor.com/kubesphere-community/images/kubesphere-juicefs-cover.png'
 ---
 
