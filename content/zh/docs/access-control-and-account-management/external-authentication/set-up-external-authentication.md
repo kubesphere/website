@@ -9,7 +9,7 @@ weight: 12210
 
 本文档描述了如何在 KubeSphere 上使用外部身份提供者，例如 LDAP 服务或 Active Directory 服务。
 
-KubeSphere 提供了一个内置的 OAuth 服务。用户通过获取 OAuth 访问令牌以对 API 进行身份验证。作为 KubeSphere 管理员，您可以编辑 `kubesphere-config` 来配置 OAuth 并指定身份提供者。
+KubeSphere 提供了一个内置的 OAuth 服务。用户通过获取 OAuth 访问令牌以对 API 进行身份验证。作为 KubeSphere 管理员，您可以编辑 CRD `ClusterConfiguration` 中的 `ks-installer` 来配置 OAuth 并指定身份提供者。
 
 ## 准备工作
 
@@ -99,14 +99,14 @@ KubeSphere 提供了一个内置的 OAuth 服务。用户通过获取 OAuth 访�
 
 KubeSphere 默认提供了以下几种类型的身份提供者：
 
-* [LDAPIdentityProvider](../use-an-ldap-service)
+* [LDAP Identity Provider](../use-an-ldap-service)
 
-* [OIDCIdentityProvider](../oidc-identity-provider)
+* [OIDC Identity Provider](../oidc-identity-provider)
 
-* [GitHubIdentityProvider]()
+* [GitHub Identity Provider]()
 
-* [CASIdentityProvider]()
+* [CAS Identity Provider]()
 
-* [AliyunIDaaSProvider]()
+* [Aliyun IDaaS Provider]()
 
 您也可以拓展 KubeSphere [OAuth2 认证插件](../use-an-oauth2-identity-provider) 与您的帐户系统进行集成。

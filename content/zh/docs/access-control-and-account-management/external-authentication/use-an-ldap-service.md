@@ -12,7 +12,20 @@ weight: 12220
 ## 准备工作
 
 * 您需要部署一个 Kubernetes 集群，并在集群中安装 KubeSphere。有关详细信息，请参阅[在 Linux 上安装](../../../installing-on-linux/)和[在 Kubernetes 上安装](../../../installing-on-kubernetes/)。
+
 * 您需要获取 LDAP 服务的管理员专有名称（DN）和管理员密码。
+
+* 如果您使用 KubeSphere 3.2.0，请在配置 LDAP 之前执行以下命令：
+
+  ```bash
+  kubectl -n kubesphere-system set image deployment/ks-apiserver *=kubespheredev/ks-apiserver:release-3.2
+  ```
+
+  {{< notice note >}}
+
+  下个版本无需执行此步。
+
+  {{</ notice >}}
 
 ## 步骤
 

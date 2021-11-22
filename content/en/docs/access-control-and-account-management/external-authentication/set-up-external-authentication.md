@@ -9,7 +9,7 @@ weight: 12210
 
 This document describes how to use an external identity provider such as an LDAP service or Active Directory service on KubeSphere.
 
-KubeSphere provides a built-in OAuth server. Users can obtain OAuth access tokens to authenticate themselves to the KubeSphere API. As a KubeSphere administrator, you can edit the `kubesphere-config` ConfigMap to configure OAuth and specify identity providers.
+KubeSphere provides a built-in OAuth server. Users can obtain OAuth access tokens to authenticate themselves to the KubeSphere API. As a KubeSphere administrator, you can edit  `ks-installer` of the CRD `ClusterConfiguration` to configure OAuth and specify identity providers.
 
 ## Prerequisites
 
@@ -99,14 +99,14 @@ You can configure multiple identity providers (IdPs) in the 'identityProviders' 
 
 Kubesphere provides the following types of identity providers by default:
 
-* [LDAPIdentityProvider](../use-an-ldap-service)
+* [LDAP Identity Provider](../use-an-ldap-service)
 
-* [OIDCIdentityProvider](../oidc-identity-provider)
+* [OIDC Identity Provider](../oidc-identity-provider)
 
-* [GitHubIdentityProvider]()
+* [GitHub Identity Provider]()
 
-* [CASIdentityProvider]()
+* [CAS Identity Provider]()
 
-* [AliyunIDaaSProvider]()
+* [Aliyun IDaaS Provider]()
 
 You can also expand the kubesphere [OAuth2 authentication plug-in](../use-an-oauth2-identity-provider) to integrate with your account system.

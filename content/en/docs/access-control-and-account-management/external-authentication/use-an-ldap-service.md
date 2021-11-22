@@ -12,7 +12,20 @@ This document describes how to use an LDAP service as an external identity provi
 ## Prerequisites
 
 * You need to deploy a Kubernetes cluster and install KubeSphere in the cluster. For details, see [Installing on Linux](/docs/installing-on-linux/) and [Installing on Kubernetes](/docs/installing-on-kubernetes/).
+
 * You need to obtain the manager distinguished name (DN) and manager password of an LDAP service.
+
+* If you are using KubeSphere 3.2.0, run the following command before configuring LDAP:
+
+  ```bash
+  kubectl -n kubesphere-system set image deployment/ks-apiserver *=kubespheredev/ks-apiserver:release-3.2
+  ```
+
+  {{< notice note >}}
+
+  This is not required in the next release.
+
+  {{</ notice >}}
 
 ## Procedure
 
