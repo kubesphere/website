@@ -280,8 +280,8 @@ spec:
    $ kubectl apply -f s2ibuildertemplate.yaml
    s2ibuildertemplate.devops.kubesphere.io/nginx created
  ```
- 
-2. 在 KubeSphere 上创建 S2I 构建时，可以找到在**环境搭建**中找到自定义 S2I 模板。
+
+2. 在 KubeSphere 上创建 S2I 构建时，可以在**构建环境**中找到自定义 S2I 模板。
 
 ## S2I 模板参数定义
 
