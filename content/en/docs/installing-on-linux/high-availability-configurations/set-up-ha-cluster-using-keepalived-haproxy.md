@@ -51,7 +51,7 @@ Run the following command to install Keepalived and HAproxy first.
 yum install keepalived haproxy psmisc -y
 ```
 
-### HAproxy
+### HAproxy Configuration
 
 1. The configuration of HAproxy is exactly the same on the two machines for load balancing. Run the following command to configure HAproxy.
 
@@ -112,7 +112,7 @@ yum install keepalived haproxy psmisc -y
 
 5. Make sure you configure HAproxy on the other machine (`lb2`) as well.
 
-### Keepalived
+### Keepalived Configuration
 
 Keepalived must be installed on both machines while the configuration of them is slightly different.
 

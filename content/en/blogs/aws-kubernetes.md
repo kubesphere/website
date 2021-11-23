@@ -1,5 +1,5 @@
 ---
-title: 'How to Deploy an HA Kubernetes Cluster on AWS | KubeSphere KubeKey'
+title: 'How to Deploy Kubernetes on AWS'
 tag: 'Kubernetes, HA, High Availability, AWS, KubeKey'
 keywords: 'Kubernetes, HA, High Availability, AWS, KubeKey, KubeSphere'
 description: 'The KubeKey tool can be used to quickly and efficiently deploy an HA Kubernetes cluster. This article demonstrates how to deploy an HA Kubernetes cluster on AWS.'
@@ -17,7 +17,7 @@ To meet the HA service requirements of Kubernetes in AWS, we need to ensure the 
 
 This article uses the AWS ELB service as an example.
 
-## Prerequisites
+## Prerequisites for Deployment on AWS
 
 - You need to create a storage system based on NFS, GlusterFS, or Ceph. In consideration of data persistence, we do not recommend OpenEBS for production environments. This article uses OpenEBS to configure LocalPV as the default storage service only for testing.
 - All nodes can be accessed over SSH.

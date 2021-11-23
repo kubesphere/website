@@ -1,5 +1,5 @@
 ---
-title: 'KubeKey: A Lightweight Installer for Kubernetes and Cloud Native Addons'
+title: 'How to Install Kubernetes the Easy Way Using KubeKey'
 keywords: Kubernetes, KubeSphere, KubeKey, addons, installer
 description: KubeKey allows you to deploy a Kubernetes cluster in the most graceful and efficient way.
 tag: 'KubeSphere, Kubernetes, KubeKey, addons, installer'
@@ -26,7 +26,7 @@ The general steps of installing Kubernetes using KubeKey:
 
 ## Prepare Hosts
 
-I am going to create a cluster with three nodes on cloud. Here is my machine configuration for your reference:
+I am going to create a Kubernetes cluster with three nodes on cloud. Here is my machine configuration for your reference:
 
 | Host IP     | Host Name | Role         | System                                    |
 | ----------- | --------- | ------------ | ----------------------------------------- |
