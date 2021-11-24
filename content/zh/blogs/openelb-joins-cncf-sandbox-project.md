@@ -18,7 +18,7 @@ OpenELB 项目在此前命名为 PorterLB，是为物理机（Bare-metal）、�
 
 - 基于 BGP 与 Layer 2 模式的负载均衡 
 - 基于路由器 ECMP 的负载均衡
-- IP 地址池管理管理
+- IP 地址池管理
 - 使用 CRD 进行 BGP 配置
 
 ![架构](https://kubesphere-community.pek3b.qingstor.com/images/8441636691354_.pic_hd.jpg)
@@ -35,7 +35,7 @@ OpenELB 解决了在非公有云环境的 Kubernetes 集群下对外暴露 LoadB
 
 ## 社区情况
 
-目前 OpenELB 已具备生产可用的特性，已有来自**本来生活、苏州电视台、视源股份、云智天下、Jollychic、QingCloud、百旺、Rocketbyte** 等海内外多家企业采用，早在 2019 年底 OpenELB 的早期版本中就已经在本来生活的生产环境使用，可参考 [OpenELB 如何帮助本来生活在 K8s 物理环境暴露集群服务](https://mp.weixin.qq.com/s/uFwYaPE7cVolLWxYHcgZdQ) 了解详情。OpenELB 项目目前有 13 位贡献者，100 多位社区成员。
+目前 OpenELB 已具备生产可用的特性，已被**本来生活、苏州电视台、视源股份、云智天下、Jollychic、QingCloud、百旺、Rocketbyte** 等海内外多家企业采用。早在 2019 年底，本来生活就将 OpenELB 的早期版本用于其生产环境，可参考 [OpenELB 如何帮助本来生活在 K8s 物理环境暴露集群服务](https://mp.weixin.qq.com/s/uFwYaPE7cVolLWxYHcgZdQ) 了解详情。OpenELB 项目目前有 13 位贡献者，100 多位社区成员。
 
 ![采用企业](https://kubesphere-community.pek3b.qingstor.com/images/8411636689286_.pic_hd.jpg)
 
@@ -45,11 +45,11 @@ MetalLB 在近期也加入了 CNCF Sandbox，该项目在 2017 年底发起，�
 
 ### 云原生架构
 
-在 OpenELB 中，不管是地址管理，还是 BGP 配置管理，你都可以使用 CRD 来配置。对于习惯 Kubectl 的用户使用 OpenELB 将非常友好。对于想定制 OpenELB 的高级用户，也可以直接调用 Kubernetes API 来二次开发。在 MetalLB 中，需通过 ConfigMap 来配置， 感知它们的状态需要通过查看监控或者日志。
+在 OpenELB 中，不管是地址管理，还是 BGP 配置管理，你都可以使用 CRD 来配置。对于习惯了 Kubectl 的用户而言， OpenELB 十分友好。对于想定制 OpenELB 的高级用户，也可以直接调用 Kubernetes API 来二次开发。在 MetalLB 中，需通过 ConfigMap 来配置， 感知它们的状态需要通过查看监控或者日志。
 
 ### 灵活的地址管理
 
-在 OpenELB 中，通过 EIP CRD 来管理地址，它定义子资源 Status 来存储地址分配状态，这样就不会存在分配地址时各副本发生冲突，编程时逻辑也会简单。
+OpenELB 通过 EIP CRD 管理地址，它定义子资源 Status 来存储地址分配状态，这样就不会存在分配地址时各副本发生冲突，编程时逻辑也会简单。
 
 ### 使用 gobgp 发布路由
 
@@ -64,7 +64,7 @@ MetalLB 在近期也加入了 CNCF Sandbox，该项目在 2017 年底发起，�
 
 ### 架构简单，资源占用少
 
-OpenELB 目前只用部署 Deployment 即可，通过多副本实现高可用，非全部副本 Crash 之后并不会影响正常已建立连接。
+OpenELB 目前只用部署 Deployment 即可，通过多副本实现高可用，部分副本 Crash 之后并不会影响已建立的正常连接。
 
 BGP 模式下， Deployment 不同副本都会与路由器建立连接用于发布等价路由，所以正常情况下我们部署两个副本即可。在 Layer 2 模式下，不同副本之间通过 Kubernetes 提供的 Leader Election 机制选举 Leader，进而应答 ARP/NDP。
 
@@ -88,7 +88,7 @@ OpenELB 还将重点开展社区运营并推出一系列社区活动，希望借
 
 ## 持续开源开放
 
-KubeSphere 团队秉持 ”Upstream first“ 的原则，今年 7 月份先将 Fluentbit Operator 项目捐给 Fluent 社区成为 CNCF 子项目，此次又将 OpenELB 加入 CNCF Sandbox。未来 KubeSphere 团队将继续保持开源、开放的理念，持续作为 OpenELB 项目的参与方之一，推动国内和国际开源组织的生态建设，帮助 OpenELB 社区培育一个中立的开源社区与生态，与更多的容器平台及上下游生态伙伴进行深度合作，欢迎大家关注、使用 OpenELB 以及参与社区贡献。
+KubeSphere 团队秉持 “Upstream first” 的原则，今年 7 月份先将 Fluentbit Operator 项目捐给 Fluent 社区成为 CNCF 子项目，此次又将 OpenELB 加入 CNCF Sandbox。未来 KubeSphere 团队将继续保持开源、开放的理念，持续作为 OpenELB 项目的参与方之一，推动国内和国际开源组织的生态建设，帮助 OpenELB 社区培育一个中立的开源社区与生态，与更多的容器平台及上下游生态伙伴进行深度合作，欢迎大家关注、使用 OpenELB 以及参与社区贡献。
 
 - ✨ GitHub：[https://github.com/kubesphere/openelb/](https://github.com/kubesphere/openelb/)
 - 💻 官网：[https://openelb.github.io/](https://openelb.github.io/)
