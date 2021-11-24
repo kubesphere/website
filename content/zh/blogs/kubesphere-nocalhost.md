@@ -1,8 +1,8 @@
 ---
-title: 'KubeSphere 结合 Nocalhost 提供更强大的云原生开发环境'
-tag: 'KubeSphere,Nocalhost'
+title: '在 Kubernetes 中部署云原生开发工具 Nocalhost'
+tag: 'Kubernetes,KubeSphere,Nocalhost'
 keyword: 'Kubernetes, KubeSphere, Nocalhost '
-description: '本文将介绍如何在 KubeSphere 中快速部署 Nocalhost Server，用于提供一个帮助研发团队统一管理 Nocalhost 应用部署的管理平台。'
+description: '本文将介绍如何在 Kubernetes 中快速部署 Nocalhost Server，用于提供一个帮助研发团队统一管理 Nocalhost 应用部署的管理平台。'
 createTime: '2021-11-11'
 author: '张海立，玉易才'
 snapshot: 'https://pek3b.qingstor.com/kubesphere-community/images/kubesphere-nocalhost-cover.png'
