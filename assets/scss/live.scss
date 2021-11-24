@@ -490,13 +490,13 @@
                 height: 210px;
               }
 
-              button {
+              .button {
                 position: absolute;
                 right: 12px;
                 bottom: 14px;
-                padding: 9px 16px;
-                border-radius: 16px;
-                font-size: 8px;
+                padding: 10px 20px;
+                border-radius: 28px;
+                font-size: 16px;
                 color: #fff;
                 border: none;
                 cursor: pointer;
@@ -560,7 +560,7 @@
                 height: 180px !important;
               }
 
-              button {
+              .button {
                 right: 10px;
                 bottom: 40px;
               }

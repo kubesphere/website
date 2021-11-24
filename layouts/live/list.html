@@ -88,8 +88,8 @@
                         <p>{{ .place }}</p>
                         <div class="imgBox">
                             <img src="{{ .img }}">
-                            <a href="{{ .meetupUrl | safeURL }}" target="_blank" rel="noopener noreferrer">
-                                <button>{{ i18n "Wonderful review" }}</button>
+                            <a class="button" href="{{ .meetupUrl | safeURL }}" target="_blank" rel="noopener noreferrer">
+                              {{ i18n "Wonderful review" }}
                             </a>
                         </div>
                     </li>
