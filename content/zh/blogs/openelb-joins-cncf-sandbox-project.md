@@ -8,6 +8,8 @@ author: 'KubeSphere'
 snapshot: 'https://kubesphere-community.pek3b.qingstor.com/images/4761636694917_.pic_hd.jpg'
 --- 
 
+![头图](https://kubesphere-community.pek3b.qingstor.com/images/4761636694917_.pic_hd.jpg)
+
 11 月 10 日，云原生计算基金会 (CNCF) 宣布由青云科技 KubeSphere 团队开源的负载均衡器插件 OpenELB 正式进入 CNCF 沙箱（Sandbox）托管。
 
 ![示意图](https://kubesphere-community.pek3b.qingstor.com/images/8471636692467_.pic_hd.jpg)
@@ -68,7 +70,7 @@ BGP 模式下， Deployment 不同副本都会与路由器建立连接用于发�
 
 ## OpenELB 安装与使用
 
-目前 OpenELB 可支持部署在任意标准的 Kubernetes、K3s 以及其发型版，通过 Yaml 文件或 Helm Chart 一条命令完成部署。同时，在 KubeSphere 容器平台的应用商店和应用仓库也可以通过界面一键部署，可参考文档 `https://openelb.github.io/docs/getting-started/installation/` 进行部署。
+目前 OpenELB 可支持部署在任意标准的 Kubernetes、K3s 以及其发型版，通过 Yaml 文件或 Helm Chart 一条命令完成部署。同时，在 KubeSphere 容器平台的应用商店和应用仓库也可以通过界面一键部署，可参考 [OpenELB 文档](https://openelb.github.io/docs/getting-started/installation/) 进行部署。
 
 ## 未来规划
 
@@ -88,7 +90,7 @@ OpenELB 还将重点开展社区运营并推出一系列社区活动，希望借
 
 KubeSphere 团队秉持 ”Upstream first“ 的原则，今年 7 月份先将 Fluentbit Operator 项目捐给 Fluent 社区成为 CNCF 子项目，此次又将 OpenELB 加入 CNCF Sandbox。未来 KubeSphere 团队将继续保持开源、开放的理念，持续作为 OpenELB 项目的参与方之一，推动国内和国际开源组织的生态建设，帮助 OpenELB 社区培育一个中立的开源社区与生态，与更多的容器平台及上下游生态伙伴进行深度合作，欢迎大家关注、使用 OpenELB 以及参与社区贡献。
 
-- ✨ GitHub：https://github.com/kubesphere/openelb/
-- 💻 官网：https://openelb.github.io/
+- ✨ GitHub：[https://github.com/kubesphere/openelb/](https://github.com/kubesphere/openelb/)
+- 💻 官网：[https://openelb.github.io/](https://openelb.github.io/)
 - 🙋 社群：请通过官网底部二维码关注 KubeSphere 公众号加入社群
 
