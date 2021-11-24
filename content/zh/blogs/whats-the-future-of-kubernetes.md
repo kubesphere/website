@@ -1,7 +1,7 @@
 ---
 title: '基础架构的未来是 Kubernetes，那么 Kubernetes 的未来在何方？'
 tag: 'Kubernetes,多集群管理'
-keyword: 'Kubernetes, MicroVM, , WebAssembly, WASM, K3s, KubeEdge, KubeSphere'
+keyword: 'Kubernetes, MicroVM, WebAssembly, WASM, K3s, KubeEdge, KubeSphere'
 description: 'Kubernetes 已经逐渐开始无聊，关于 Kubernetes 之后有哪些令人兴奋的新技术，作者给出了自己的见解。'
 createTime: '2021-11-23'
 author: '米开朗基杨'
