@@ -12,7 +12,7 @@ section2:
   news:
     - title: KubeSphere 3.2.0 GA：为 Kubernetes 管理带来面向 AI 的 GPU 调度和灵活的网关
       description: KubeSphere 是一个快速发展的开源社区，今天宣布正式发布 KubeSphere 3.2.0，这是综合 Kubernetes 管理平台的最新版本。
-      image: http://pek3b.qingstor.com/kubesphere-community/images/logo-stackfault.png
+      image: https://pek3b.qingstor.com/kubesphere-community/images/logo-stackfault.png
       link: https://stackfault.net/t/topic/49486
     - title: KubeSphere 入驻 Azure Marketplace
       description: 日前，面向云原生应用的容器混合云 KubeSphere 宣布正式入驻 Azure Marketplace，深度集成微软云容器服务 Azure AKS。
@@ -20,19 +20,19 @@ section2:
       link: https://www.doit.com.cn/p/470686.html
     - title: 云原生值与不值的双重思考：好用才能成主流
       description: KubeSphere 是基于 K8s 内核的云原生操作系统，可以帮助企业节约成本，提高效率，最大限度把一个技术平滑传递到企业里的各个部门，屏蔽K8s碎片化。
-      image: http://pek3b.qingstor.com/kubesphere-community/images/logo-cctime.gif
+      image: https://pek3b.qingstor.com/kubesphere-community/images/logo-cctime.gif
       link: http://www.cctime.com/html/2021-7-23/1582703.htm
     - title: 我们为什么需要云原生？看完这一篇就够了
       description: 为了让云原生技术平稳落地，基于Kubernetes构建的面向云原生应用的容器混合云 KubeSphere 已经衍生出了一个庞大的家族。
-      image: http://pek3b.qingstor.com/kubesphere-community/images/logo-csdn.png
+      image: https://pek3b.qingstor.com/kubesphere-community/images/logo-csdn.png
       link: https://mp.weixin.qq.com/s/oMxkpR5d9jcc8eivI4wWkA
     - title: 拥抱“云原生”的本质是什么？
       description: KubeSphere 经过三年的迭代，已经不是单一的产品，而是衍生成一个产品家族，同时社区成员也在扩大。
-      image: http://pek3b.qingstor.com/kubesphere-community/images/logo-cciv.png
+      image: https://pek3b.qingstor.com/kubesphere-community/images/logo-cciv.png
       link: http://www.ccw.com.cn/channel/cloudcomputing/2021-07-21/21116.html
     - title: 超越 OpenShift，KubeSphere 要打造世界级开源容器平台
       description: 目前由国内企业青云科技打造的开源容器平台KubeSphere，已经成为仅次于 Rancher 和 OpenShift 的全球第三容器管理平台。
-      image: http://pek3b.qingstor.com/kubesphere-community/images/logo-techweb.jpeg
+      image: https://pek3b.qingstor.com/kubesphere-community/images/logo-techweb.jpeg
       link: http://www.techweb.com.cn/it/2021-07-21/2849931.shtml
     - title: 云原生时代到来，KubeSphere 容器平台有看点
       description: 今年五月，青云科技旗下自主研发的容器平台 KubeSphere 3.1.0 版本正式发布。
@@ -40,7 +40,7 @@ section2:
       link: http://cloud.it168.com/a2021/0714/6511/000006511655.shtml
     - title: 青云科技主办 KubeSphere and Friends 2021：开源容器混合云，引领云原生
       description: 日前，由青云科技（qingcloud.com，股票代码：688316）旗下容器平台 KubeSphere 主办的“KubeSphere and Friends 2021”云原生 Meetup 线下沙龙首站在上海成功举办。
-      image: http://pek3b.qingstor.com/kubesphere-community/images/logo-vrsina.png
+      image: https://pek3b.qingstor.com/kubesphere-community/images/logo-vrsina.png
       link: http://vr.sina.com.cn/2021-06-09/doc-ikqcfnca0086155.shtml
     - title: KubeSphere 3.1.0 正式发布：混合云走向边缘，让应用无处不在
       description: 新版本主打“延伸至边缘侧的容器混合云”，通过集成 KubeEdge，拓展“边缘场景”，可帮助用户加速实现云边协同，在海量边、端设备上完成大规模应用的统一交付、运维与管控。
@@ -48,11 +48,11 @@ section2:
       link: https://www.doit.com.cn/p/442260.html
     - title: KubeSphere 3.1.0 发布 主打“延伸至边缘侧的容器混合云”
       description: 5 月 11 日消息，青云科技（qingcloud.com，股票代码：688316）旗下自主研发的容器平台 KubeSphere 3.1.0 版本正式发布，新版本主打“延伸至边缘侧的容器混合云”。
-      image: http://pek3b.qingstor.com/kubesphere-community/images/logo-techweb.jpeg
+      image: https://pek3b.qingstor.com/kubesphere-community/images/logo-techweb.jpeg
       link: http://www.techweb.com.cn/it/2021-05-11/2839069.shtml                  
     - title: KubeSphere 3.1.0 正式发布：混合云走向边缘，让应用无处不在
       description: 日前，青云科技旗下自主研发的容器平台 KubeSphere 3.1.0 版本正式发布。
-      image: http://pek3b.qingstor.com/kubesphere-community/images/logo-hexuncaijing.png
+      image: https://pek3b.qingstor.com/kubesphere-community/images/logo-hexuncaijing.png
       link: http://tech.hexun.com/2021-05-11/203579390.html
     - title: KubeSphere 3.0，让混合云一步跨入云原生时代
       description: 混合云的先行者青云QingCloud 发布了其容器平台的最新版本——面向云原生应用的容器混合云 KubeSphere 3.0，让混合云一步跨入云原生时代。
