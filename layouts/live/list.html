@@ -85,11 +85,12 @@
                     {{ range .meetup }}
                     {{ with . }}
                     <li>
-                        <p>{{ .place }}</p>
                         <div class="imgBox">
+                            <p>{{ .place }}</p>
                             <img src="{{ .img }}">
-                            <a class="button" href="{{ .meetupUrl | safeURL }}" target="_blank" rel="noopener noreferrer">
-                              {{ i18n "Wonderful review" }}
+                            <a class="button" href="{{ .meetupUrl | safeURL }}" target="_blank"
+                                rel="noopener noreferrer">
+                                {{ i18n "Wonderful review" }}
                             </a>
                         </div>
                     </li>
@@ -225,31 +226,11 @@
     }
 
     var splitHtmlToNew = function (data) {
-        var resetElement = document.createElement('div')
-        var docWidth = $(document).width()
         var newCollection = []
-        resetElement.className = 'swiper-slide'
-        if (docWidth > 800) {
-            Array.prototype.forEach.call(data, function (item, index) {
-                if (index > 0 && index % 3 === 0) {
-                    const newDiv = document.createElement('div')
-                    newDiv.appendChild(data[index - 3])
-                    newDiv.appendChild(data[index - 2])
-                    newDiv.appendChild(data[index - 1])
-                    newDiv.className = 'swiper-slide'
-                    newCollection.push(newDiv)
-                }
-                if (index >= data.length - 2) {
-                    resetElement.appendChild(data[index])
-                }
-            })
-            newCollection.push(resetElement)
-        } else {
-            Array.prototype.forEach.call(data, function (item, index) {
-                data[index].className = 'swiper-slide'
-                newCollection.push(data[index])
-            })
-        }
+        Array.prototype.forEach.call(data, function (item, index) {
+            data[index].className = 'swiper-slide'
+            newCollection.push(data[index])
+        })
         return newCollection
     }
 
@@ -258,7 +239,8 @@
     var mySwiper = {
         current: null,
         create: function () {
-            this.current = new Swiper('.swiper', {
+            const documentWidth = $(document).width()
+            const option = {
                 autoplay: {
                     running: true,
                     pauseOnMouseEnter: true,
@@ -267,7 +249,12 @@
                 delay: autoplayTime,
                 speed: 500,
                 loop: true,
-            })
+            }
+            if (documentWidth > 800) {
+                option.slidesPerView = 3
+                option.spaceBetween = 20
+            }
+            this.current = new Swiper('.swiper', option)
         },
         init: function () {
             const elements = $('#needClone_0').children().filter('li').clone()
@@ -285,20 +272,20 @@
         var tabActiveIndex = 0;
         ulHead.children('li').filter(function (index) {
             return index === 0
-        }).addClass('active')
+        }).addClass('tab_active')
         mySwiper.create()
         $('#meetup-ul li').click(function (e) {
             var clickIndex = $(this).index();
-            var preActiveINdex = $('#meetup-ul li.active')
+            var preActiveINdex = $('#meetup-ul li.tab_active')
             if (tabActiveIndex === clickIndex) {
                 return
             } else {
                 tabActiveIndex = clickIndex
             }
-            preActiveINdex.removeClass('active')
+            preActiveINdex.removeClass('tab_active')
             ulHead.children('li').filter(function (index) {
                 return index === tabActiveIndex
-            }).addClass('active')
+            }).addClass('tab_active')
             var elements = $('#needClone_' + tabActiveIndex).children().filter('li').clone()
             $('#swiper-wrapper').empty().append(splitHtmlToNew(elements))
             mySwiper.current.destroy()
@@ -315,18 +302,6 @@
         })
     }
 
-    var documentResize = function () {
-        var resizeTimer = null
-        $(window).resize(function () {
-            clearTimeout(resizeTimer)
-            resizeTimer = setTimeout(function () {
-                mySwiper.current.destroy()
-                mySwiper.init()
-                mySwiper.create()
-            }, 500)
-        })
-    }
-
     bindClickVideoTabLi()
     bindClickVideoLi()
     initVideos()
@@ -334,6 +309,5 @@
     mySwiper.init()
     MeetupInit()
     initSliderButton()
-    //documentResize()
 </script>
 {{ end }}

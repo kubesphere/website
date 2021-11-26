@@ -438,7 +438,7 @@
           box-sizing: border-box;
         }
 
-        .active {
+        .tab_active {
           color: rgba(255, 255, 255, 0.7);
           border-bottom: solid 2px rgba(255, 255, 255, 0.7);
         }
@@ -463,26 +463,25 @@
           .swiper-slide {
             display: flex;
             overflow: hidden;
+            flex-direction: column;
           }
 
           li {
             height: 258px;
-            position: relative;
-
-            &:nth-child(2) {
-              margin: 0 20px;
-            }
-
-            p {
-              text-align: center;
-              font-weight: 500;
-              font-size: 20px;
-              line-height: 28px;
-              color: #FFFFFF;
-            }
 
             .imgBox {
               position: relative;
+              display: flex;
+              align-items: center;
+              flex-direction: column;
+
+              p {
+                text-align: center;
+                font-weight: 500;
+                font-size: 20px;
+                line-height: 28px;
+                color: #FFFFFF;
+              }
 
               img {
                 margin-top: 20px;
@@ -492,8 +491,8 @@
 
               .button {
                 position: absolute;
-                right: 12px;
-                bottom: 14px;
+                right: 10px;
+                bottom: 10px;
                 padding: 10px 20px;
                 border-radius: 28px;
                 font-size: 16px;
