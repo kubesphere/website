@@ -39,6 +39,10 @@ snapshot: 'https://pek3b.qingstor.com/kubesphere-community/images/kubesphere-mem
 
 KubeSphere 社区向 2021 年新晋的 KubeSphere Member 致谢，感谢各位 Member 深度和积极的开源贡献。
 
+另外，社区给每个新晋的 KubeSphere Member 都寄了一套 KubeSphere 社区周边礼品作纪念。
+
+![](https://pek3b.qingstor.com/kubesphere-community/images/KubeSphere-swag.png)
+
 ## 如何成为 KubeSphere Member
 
 那么如何成为 KubeSphere Member，成为 KubeSphere Member 之后又能做什么呢？
