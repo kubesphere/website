@@ -13,6 +13,8 @@ section1:
   base: 北京市东城区建国门内大街 9 号北京国际饭店 + 线上同步直播
   baseIcon: /images/live/base.svg
 ---
+![](https://pek3b.qingstor.com/kubesphere-community/images/cic-group-20210729.jpeg)
+
 <center>KubeSphere and Friends 2021</center>
 
 <center>Kubernetes and Cloud Native Meetup</center>

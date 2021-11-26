@@ -13,6 +13,8 @@ section1:
   base: 浙江杭州市西湖区黄龙时代广场 B 座 14F 东 527 + 线上同步直播
   baseIcon: /images/live/base.svg
 ---
+![](https://pek3b.qingstor.com/kubesphere-community/images/meetup-hangzhou-20211023.jpeg)
+
 <center>云原生技术交流 Meetup 杭州站</center>
 
 <center>由 KubeSphere 社区杭州用户委员会发起和主办</center>

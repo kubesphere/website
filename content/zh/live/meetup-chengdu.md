@@ -13,6 +13,8 @@ section1:
   base: 四川省成都市高新区天府大道中段 500 号天祥广场 B 座 45A + 线上同步直播
   baseIcon: /images/live/base.svg
 ---
+![](https://pek3b.qingstor.com/kubesphere-community/images/meetup-chengdu-20210619.jpg)
+
 <center>KubeSphere and Friends 2021</center>
 
 <center>Kubernetes and Cloud Native Meetup</center>

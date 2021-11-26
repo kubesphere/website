@@ -13,6 +13,8 @@ section1:
   base: 浙江省杭州市拱墅区丰潭路 430 号丰元国际大厦 A 座硬趣空间地下一层 + 线上同步直播
   baseIcon: /images/live/base.svg
 ---
+![](https://pek3b.qingstor.com/kubesphere-community/images/meetup-hangzhou-20210529.jpeg)
+
 <center>KubeSphere and Friends 2021</center>
 
 <center>Kubernetes and Cloud Native Meetup</center>
