@@ -28,6 +28,8 @@ snapshot: 'https://pek3b.qingstor.com/kubesphere-community/images/kubesphere-mem
 |Abdelouahab|[点击查看下载证书](https://pek3b.qingstor.com/kubesphere-community/images/member-abdelouahab.png) |
 |Liuyi Chen|[点击查看下载证书](https://pek3b.qingstor.com/kubesphere-community/images/member-chenliuyi.png) |
 
+证书示例：
+![](https://pek3b.qingstor.com/kubesphere-community/images/kubesphere-member-certification.png)
 
 如果您深度参与了 KubeSphere 社区开源贡献，还未入选 KubeSphere Member，欢迎您在 [GitHub](https://github.com/kubesphere/community/issues) 上发起提名申请。示例：[REQUEST: New membership for 123liubao #375](https://github.com/kubesphere/community/issues/375)。
 
