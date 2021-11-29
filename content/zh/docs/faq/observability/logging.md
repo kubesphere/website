@@ -16,6 +16,7 @@ weight: 16310
 - [工具箱显示今天没有日志记录](../../observability/logging/#工具箱显示今天没有日志记录)
 - [在工具箱中查看日志时，报告内部服务器错误](../../observability/logging/#在工具箱中查看日志时报告内部服务器错误)
 - [如何让 KubeSphere 只收集指定工作负载的日志](../../observability/logging/#如何让-kubesphere-只收集指定工作负载的日志)
+- [在查看容器实时日志的时候，控制台上看到的实时日志要比 kubectl log -f xxx 看到的少](../../observability/logging/#在查看容器实时日志的时候控制台上看到的实时日志要比-kubectl-log--f-xxx-看到的少)
 
 ## 如何将日志存储改为外部 Elasticsearch 并关闭内部 Elasticsearch
 
@@ -161,3 +162,10 @@ kubectl edit input -n kubesphere-logging-system tail
 更新 `Input.Spec.Tail.ExcludePath` 字段。例如，将路径设置为 `/var/log/containers/*_kube*-system_*.log`，以排除系统组件的全部日志。
 
 有关更多信息，请参见 [Fluent Bit Operator](https://github.com/kubesphere/fluentbit-operator)。
+
+## 在查看容器实时日志的时候，控制台上看到的实时日志要比 kubectl log -f xxx 看到的少
+
+主要有以下几个原因：
+
+- 当实时去查看容器日志时，Kubernetes 是分 chunk 形式返回，Kubernetes 大概 2 分钟左右会返回一次数据，比较慢
+- 未开启‘实时查看’时看到的末尾部分，在实时查看时，被划分在下次返回的部分中，现象看起来像是日志缺失
