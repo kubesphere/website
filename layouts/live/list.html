@@ -102,6 +102,7 @@
                 <div class="swiper autoMeetUp">
                     <div id="swiper-wrapper" class="swiper-wrapper">
                     </div>
+                    <div class="swiper-pagination"></div>
                 </div>
                 <div class="prev-button"></div>
                 <div class="next-button"></div>
@@ -253,6 +254,13 @@
             if (documentWidth > 800) {
                 option.slidesPerView = 3
                 option.spaceBetween = 20
+            }
+
+            if (documentWidth < 800) {
+                option.pagination = {
+                    el: '.swiper-pagination',
+                    bulletActiveClass: 'my-bullet-active',
+                }
             }
             this.current = new Swiper('.swiper', option)
         },
