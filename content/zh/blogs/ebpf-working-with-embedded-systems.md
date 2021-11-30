@@ -34,13 +34,13 @@ eBPF 虚拟机的字节码是通用的（并未与特定机器相关），所以
 
 简而言之，BPFd 是一个运行在嵌入式设备上的守护程序，作为本地内核/libbpf 的一个远程过程调用（RPC）接口。Python 在主机上运行，调用 BCC 来编译/部署 eBPF 字节码，并通过 BPFd 创建/读取 map。BPFd 的主要优点是，所有的 BCC 基础设施和脚本都可以工作，而不需要在目标设备上安装 BCC、LLVM 或 python，BPFd 二进制文件只有 100kb 左右的大小，并依赖 libc。
 
-![](http://pek3b.qingstor.com/kubesphere-community/images/eBPF-Part4-Diagram1.jpeg)
+![](https://pek3b.qingstor.com/kubesphere-community/images/eBPF-Part4-Diagram1.jpeg)
 
 ## 4. Ply
 
 [ply](https://wkz.github.io/ply/) 项目实现了一种与 BPFtrace 非常相似的高级领域特定语言（受到 AWK 和 C 的启发），其明确的目的是将运行时的依赖性降到最低。它只依赖于一个现代的 libc（不一定是 GNU 的 libc）和 shell（与 sh 兼容）。Ply 本身实现了一个 eBPF 编译器，需要根据目标设备的内核头文件进行构建，然后作为一个单一的二进制库和 shell 包装器部署到目标设备上。
 
-![](http://pek3b.qingstor.com/kubesphere-community/images/eBPF-Part4-Diagram2.jpeg)
+![](https://pek3b.qingstor.com/kubesphere-community/images/eBPF-Part4-Diagram2.jpeg)
 
 为了更好解释 ply，我们把第 3 部分中的 BPFtrace 例子和与 ply 实现进行对比：
 
