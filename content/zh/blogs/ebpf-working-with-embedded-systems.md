@@ -60,7 +60,7 @@ Ply 仍在大量开发中（最近的 v2.0 版本是完全重写的）【译者�
 
 [Gobpf](https://github.com/iovisor/gobpf) 及其合并的子项目（goebpf, gobpf-elf-loader），是 IOVisor 项目的一部分，为 BCC 提供 Golang 语言绑定。eBPF 的内核逻辑仍然用 "限制性 C" 编写，并由 LLVM 编译，只有标准的 python/lua 用户空间脚本被 Go 取代。这个项目对嵌入式设备的意义在于它的 eBPF [elf 加载模块](https://github.com/iovisor/gobpf/tree/master/elf)，其可以被交叉编译并在嵌入式设备上独立运行，以加载 eBPF 程序至内核并与与之交互。
 
-![](http://pek3b.qingstor.com/kubesphere-community/images/eBPF-Part4-Diagram3.jpeg)
+![](https://pek3b.qingstor.com/kubesphere-community/images/eBPF-Part4-Diagram3.jpeg)
 
 值得注意的是，go 加载器可以被写成通用的（我们很快就会看到），因此它可以加载和运行任何 eBPF 字节码，并在本地重新用于多个不同的跟踪会话。
 
