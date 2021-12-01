@@ -1,7 +1,7 @@
 ---
 title: 'eBPF 概述，第 5 部分：跟踪用户进程'
 tag: 'eBPF'
-keywords: 'eBPF'
+keywords: 'eBPF, Linux, Python'
 description: '本文主要讲解了如何使用 eBPF 程序来跟踪用户空间应用程序。'
 createTime: '2021-11-23'
 author: 'Adrian Ratiu'
