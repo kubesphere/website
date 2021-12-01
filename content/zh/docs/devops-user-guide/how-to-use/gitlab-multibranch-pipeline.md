@@ -74,7 +74,11 @@ weight: 11291
 
    {{< notice note >}}
 
-   如需使用 GitLab 私有仓库，则须在 GitLab 上创建拥有 API 和 read_repository 权限的个人访问令牌，在 Jenkins 面板上创建访问 GitLab 的凭证，然后在**系统配置**下的 **GitLab 服务**中添加该凭证。有关如何登录 Jenkins 的更多信息，请参考 [Jenkins 系统设置](../jenkins-setting/#登录-jenkins-重新加载配置)。
+   如需使用 GitLab 私有仓库，请参考以下步骤：
+
+   - 在 GitLab 上前往**用户设置 > 访问令牌**，创建拥有 API 和 read_repository 权限的个人访问令牌。
+   - [登录 Jenkins 面板](../jenkins-setting/#登录-jenkins-重新加载配置)，前往**系统管理 > Manage Credentials**，使用您的 GitLab 令牌创建 Jenkins 凭证，用于访问 GitLab。然后前往**系统管理 > 系统配置**，在 **GitLab 服务**中添加该凭证。
+   - 在您的 DevOps 项目中，选择 **DevOps 项目设置 > 凭证**，使用您的 GitLab 令牌创建一个凭证。然后在创建流水线时，您需要在 **GitLab** 页签上的**凭证**中指定该凭证，以便流水线能够从您的 GitLab 私有仓库中拉取代码。
 
    {{</ notice >}}
 
