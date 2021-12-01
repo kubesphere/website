@@ -28,7 +28,7 @@ You need to create a workspace, a project, and a user (`project-regular`), and i
 
 2. Click **Create**.
 
-### Step 2: Set a Service Account
+### Step 2: Set a service account
 
 1. In the displayed dialog box, set the following parameters:
    - **Name**: A unique identifier for the service account.
