@@ -13,11 +13,11 @@ section2:
   url: ./rook1111-live/
 
   notice:
-    title: 海量并发微服务框架设计
-    tag: 结束
-    time: 2021 年 11 月 04 日晚 8 点
+    title: 浅谈 Webhook 开发与实践
+    tag: 预告
+    time: 2021 年 12 月 02 日晚 8 点
     base: 线上
-    url: ./go1104-live/
+    url: ./webhook1202-live/
 
   over:
     title:  如何优化容器网络性能
