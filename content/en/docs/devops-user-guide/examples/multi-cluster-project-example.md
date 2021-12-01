@@ -106,12 +106,14 @@ With the above credentials ready, you can use the user `project-regular` to crea
        
        stage('deploy app to multi cluster') {
          steps {
-            withCredentials([
-              kubeconfigFile(
-                credentialsId: env.KUBECONFIG_CREDENTIAL_ID,
-                variable: 'KUBECONFIG')
-              ]) {
-              sh 'envsubst < devops-go-sample/manifest/multi-cluster-deploy.yaml | kubectl apply -f -'
+            container('go') {
+               withCredentials([
+                 kubeconfigFile(
+                   credentialsId: env.KUBECONFIG_CREDENTIAL_ID,
+                   variable: 'KUBECONFIG')
+                 ]) {
+                 sh 'envsubst < devops-go-sample/manifest/multi-cluster-deploy.yaml | kubectl apply -f -'
+                 }
               }
            }
          }

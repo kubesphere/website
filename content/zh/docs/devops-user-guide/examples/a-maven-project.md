@@ -132,15 +132,17 @@ kubectl get cm -n kubesphere-devops-system ks-devops-agent -o yaml
            }
    
            stage('deploy to dev') {
-             steps {
-                withCredentials([
-                    kubeconfigFile(
-                    credentialsId: env.KUBECONFIG_CREDENTIAL_ID,
-                    variable: 'KUBECONFIG')
-                    ]) {
-                    sh 'envsubst < deploy/all-in-one/devops-sample.yaml | kubectl apply -f -'
+                steps {
+                    container ('maven') {
+                         withCredentials([
+                             kubeconfigFile(
+                             credentialsId: env.KUBECONFIG_CREDENTIAL_ID,
+                             variable: 'KUBECONFIG')
+                             ]) {
+                             sh 'envsubst < deploy/all-in-one/devops-sample.yaml | kubectl apply -f -'
+                         }
+                    }
                 }
-             }
            }
        }
    }

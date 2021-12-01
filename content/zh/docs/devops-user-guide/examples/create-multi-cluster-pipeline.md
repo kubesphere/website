@@ -181,36 +181,42 @@ weight: 11440
        }
        stage('deploy to dev') {
          steps {
-            withCredentials([
-                kubeconfigFile(
-                credentialsId: env.DEV_KUBECONFIG_CREDENTIAL_ID,
-                variable: 'KUBECONFIG')
-                ]) {
-                sh 'envsubst < deploy/dev-all-in-one/devops-sample.yaml | kubectl apply -f -'
+            container('maven') {
+               withCredentials([
+                   kubeconfigFile(
+                   credentialsId: env.DEV_KUBECONFIG_CREDENTIAL_ID,
+                   variable: 'KUBECONFIG')
+                   ]) {
+                   sh 'envsubst < deploy/dev-all-in-one/devops-sample.yaml | kubectl apply -f -'
+               }
             }
          }
        }
        stage('deploy to staging') {
          steps {
-            input(id: 'deploy-to-staging', message: 'deploy to staging?')
-            withCredentials([
-                kubeconfigFile(
-                credentialsId: env.TEST_KUBECONFIG_CREDENTIAL_ID,
-                variable: 'KUBECONFIG')
-                ]) {
-                sh 'envsubst < deploy/prod-all-in-one/devops-sample.yaml | kubectl apply -f -'
+            container('maven') {
+               input(id: 'deploy-to-staging', message: 'deploy to staging?')
+               withCredentials([
+                   kubeconfigFile(
+                   credentialsId: env.TEST_KUBECONFIG_CREDENTIAL_ID,
+                   variable: 'KUBECONFIG')
+                   ]) {
+                   sh 'envsubst < deploy/prod-all-in-one/devops-sample.yaml | kubectl apply -f -'
+               }
             }
          }
        }
        stage('deploy to production') {
          steps {
-            input(id: 'deploy-to-production', message: 'deploy to production?')
-            withCredentials([
-                kubeconfigFile(
-                credentialsId: env.PROD_KUBECONFIG_CREDENTIAL_ID,
-                variable: 'KUBECONFIG')
-                ]) {
-                sh 'envsubst < deploy/prod-all-in-one/devops-sample.yaml | kubectl apply -f -'
+            container('maven') {
+               input(id: 'deploy-to-production', message: 'deploy to production?')
+               withCredentials([
+                   kubeconfigFile(
+                   credentialsId: env.PROD_KUBECONFIG_CREDENTIAL_ID,
+                   variable: 'KUBECONFIG')
+                   ]) {
+                   sh 'envsubst < deploy/prod-all-in-one/devops-sample.yaml | kubectl apply -f -'
+               }
             }
          }
        }
