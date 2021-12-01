@@ -1,5 +1,5 @@
 ---
-title: 'How to Use Kubernetes Project Gateways and Routes'  
+title: 'How to Use KubeSphere Project Gateways and Routes'  
 tag: 'KubeSphere, Kubernetes'  
 keywords: 'KubeSphere, Kubernetes, Gateway, Spring Cloud'  
 description: 'This article introduces the architecture of Routes, compares Routes with Kubernetes Services and other gateways, and uses SockShop as an example to demonstrate how to configure Routes.'
