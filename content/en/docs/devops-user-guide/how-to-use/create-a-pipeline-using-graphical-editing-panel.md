@@ -146,7 +146,7 @@ Pipelines include [declarative pipelines](https://www.jenkins.io/doc/book/pipeli
 3. Click **Add Nesting Steps** to add a nested step under the `maven` container. Select **shell** from the list and enter the following command in the command line. Click **OK** to save it.
 
    ```shell
-   mvn clean test
+   mvn clean -gs `pwd`/configuration/settings.xml test
    ```
 
    {{< notice note >}}
@@ -155,9 +155,6 @@ Pipelines include [declarative pipelines](https://www.jenkins.io/doc/book/pipeli
 
    {{</ notice >}} 
 
-   ![shell](/images/docs/devops-user-guide/using-devops/create-a-pipeline-using-graphical-editing-panels/shell.png)
-   
-   ![unit-test-set](/images/docs/devops-user-guide/using-devops/create-a-pipeline-using-graphical-editing-panels/unit-test-set.png)
 
 #### Stage 3: Code analysis (optional)
 
