@@ -97,7 +97,7 @@ Change the value of `openpitrix.store.enabled` from `true` to `false` in `ks-ins
 2. To disable only log collection:
 
    ```bash
-   delete inputs.logging.kubesphere.io -n kubesphere-logging-system tail
+   kubectl delete inputs.logging.kubesphere.io -n kubesphere-logging-system tail
    ```
 
    {{< notice note >}}
