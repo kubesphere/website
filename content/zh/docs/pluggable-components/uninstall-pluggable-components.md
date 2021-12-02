@@ -98,7 +98,7 @@ kubectl -n kubesphere-system edit clusterconfiguration ks-installer
 2. 仅禁用日志收集：
 
    ```bash
-   delete inputs.logging.kubesphere.io -n kubesphere-logging-system tail
+   kubectl delete inputs.logging.kubesphere.io -n kubesphere-logging-system tail
    ```
 
    {{< notice note >}}
