@@ -95,12 +95,14 @@ With the above credentials ready, you can create a pipeline using an example Jen
        }
        stage ('deploy app') {
          steps {
-            withCredentials([
-              kubeconfigFile(
-                credentialsId: env.KUBECONFIG_CREDENTIAL_ID,
-                variable: 'KUBECONFIG')
-              ]) {
-              sh 'envsubst < devops-go-sample/manifest/deploy.yaml | kubectl apply -f -'
+            container ('go') {
+               withCredentials([
+                 kubeconfigFile(
+                   credentialsId: env.KUBECONFIG_CREDENTIAL_ID,
+                   variable: 'KUBECONFIG')
+                 ]) {
+                 sh 'envsubst < devops-go-sample/manifest/deploy.yaml | kubectl apply -f -'
+               }
             }
          }
       }
