@@ -43,53 +43,29 @@ kubectl -n kubesphere-system edit clusterconfiguration ks-installer
 
 1. 将 CRD `ClusterConfiguration`  配置文件中 `ks-installer` 参数的 `devops.enabled` 字段的值从 `true` 改为 `false`。
 
-2. 运行[准备工作](#准备工作)中提到的命令，然后删除 CRD `ClusterConfiguration` 配置文件 `ks-installer` 参数中 `status.devops` 字段下的代码。
-
-3. 运行下面的命令。
+2. 卸载 DevOps：
 
    ```bash
-   helm -n kubesphere-devops-system delete devops-jenkins
-   helm -n kubesphere-devops-system delete uc
+   helm uninstall -n kubesphere-devops-system devops
+   kubectl patch -nkubesphere-system cc ks-installer --type=json -p='[{"op": "remove", "path": "/status/devops"}]'
    ```
+3. 删除 DevOps 资源：
 
    ```bash
-   # Delete DevOps projects
-   for devopsproject in `kubectl get devopsprojects -o jsonpath="{.items[*].metadata.name}"`
-   do
-     kubectl patch devopsprojects $devopsproject -p '{"metadata":{"finalizers":null}}' --type=merge
+   # 删除所有 DevOps 相关资源
+   for devops_crd in $(kubectl get crd -o=jsonpath='{range .items[*]}{.metadata.name}{"\n"}{end}' | grep "devops.kubesphere.io"); do
+       for ns in $(kubectl get ns -ojsonpath='{.items..metadata.name}'); do
+           for devops_res in $(kubectl get $devops_crd -n $ns -oname); do
+               kubectl patch $devops_res -n $ns -p '{"metadata":{"finalizers":[]}}' --type=merge
+           done
+       done
    done
-   
-   for pip in `kubectl get pipeline -A -o jsonpath="{.items[*].metadata.name}"`
-   do
-     kubectl patch pipeline $pip -n `kubectl get pipeline -A | grep $pip | awk '{print $1}'` -p '{"metadata":{"finalizers":null}}' --type=merge
-   done
-   
-   for s2ibinaries in `kubectl get s2ibinaries -A -o jsonpath="{.items[*].metadata.name}"`
-   do
-     kubectl patch s2ibinaries $s2ibinaries -n `kubectl get s2ibinaries -A | grep $s2ibinaries | awk '{print $1}'` -p '{"metadata":{"finalizers":null}}' --type=merge
-   done
-   
-   for s2ibuilders in `kubectl get s2ibuilders -A -o jsonpath="{.items[*].metadata.name}"`
-   do
-     kubectl patch s2ibuilders $s2ibuilders -n `kubectl get s2ibuilders -A | grep $s2ibuilders | awk '{print $1}'` -p '{"metadata":{"finalizers":null}}' --type=merge
-   done
-   
-   for s2ibuildertemplates in `kubectl get s2ibuildertemplates -A -o jsonpath="{.items[*].metadata.name}"`
-   do
-     kubectl patch s2ibuildertemplates $s2ibuildertemplates -n `kubectl get s2ibuildertemplates -A | grep $s2ibuildertemplates | awk '{print $1}'` -p '{"metadata":{"finalizers":null}}' --type=merge
-   done
-   
-   for s2iruns in `kubectl get s2iruns -A -o jsonpath="{.items[*].metadata.name}"`
-   do
-     kubectl patch s2iruns $s2iruns -n `kubectl get s2iruns -A | grep $s2iruns | awk '{print $1}'` -p '{"metadata":{"finalizers":null}}' --type=merge
-   done
-   
-   kubectl delete devopsprojects --all 2>/dev/null
+   # 删除所有 DevOps CRD
+   kubectl get crd -o=jsonpath='{range .items[*]}{.metadata.name}{"\n"}{end}' | grep "devops.kubesphere.io" | xargs -I crd_name kubectl delete crd crd_name
+   # 删除 DevOps 命名空间
+   kubectl delete namespace kubesphere-devops-system
    ```
-
-   ```bash
-   kubectl delete ns kubesphere-devops-system
-   ```
+   
 
 ## 卸载 KubeSphere 日志系统
 

@@ -42,53 +42,29 @@ Change the value of `openpitrix.store.enabled` from `true` to `false` in `ks-ins
 
 1. Change the value of `devops.enabled` from `true` to `false` in `ks-installer` of the CRD `ClusterConfiguration`.
 
-2. Run the command mentioned in [Prerequisites](#prerequisites) and then delete the code under `status.devops` in `ks-installer` of the CRD `ClusterConfiguration`.
-
-3. Run the following commands:
+2. To uninstall DevOps:
 
    ```bash
-   helm -n kubesphere-devops-system delete devops-jenkins
-   helm -n kubesphere-devops-system delete uc
+   helm uninstall -n kubesphere-devops-system devops
+   kubectl patch -n kubesphere-system cc ks-installer --type=json -p='[{"op": "remove", "path": "/status/devops"}]'
    ```
+3. To delete DevOps resources:
 
    ```bash
-   # Delete DevOps projects
-   for devopsproject in `kubectl get devopsprojects -o jsonpath="{.items[*].metadata.name}"`
-   do
-     kubectl patch devopsprojects $devopsproject -p '{"metadata":{"finalizers":null}}' --type=merge
+   # Remove all resources related with DevOps
+   for devops_crd in $(kubectl get crd -o=jsonpath='{range .items[*]}{.metadata.name}{"\n"}{end}' | grep "devops.kubesphere.io"); do
+       for ns in $(kubectl get ns -ojsonpath='{.items..metadata.name}'); do
+           for devops_res in $(kubectl get $devops_crd -n $ns -oname); do
+               kubectl patch $devops_res -n $ns -p '{"metadata":{"finalizers":[]}}' --type=merge
+           done
+       done
    done
-   
-   for pip in `kubectl get pipeline -A -o jsonpath="{.items[*].metadata.name}"`
-   do
-     kubectl patch pipeline $pip -n `kubectl get pipeline -A | grep $pip | awk '{print $1}'` -p '{"metadata":{"finalizers":null}}' --type=merge
-   done
-   
-   for s2ibinaries in `kubectl get s2ibinaries -A -o jsonpath="{.items[*].metadata.name}"`
-   do
-     kubectl patch s2ibinaries $s2ibinaries -n `kubectl get s2ibinaries -A | grep $s2ibinaries | awk '{print $1}'` -p '{"metadata":{"finalizers":null}}' --type=merge
-   done
-   
-   for s2ibuilders in `kubectl get s2ibuilders -A -o jsonpath="{.items[*].metadata.name}"`
-   do
-     kubectl patch s2ibuilders $s2ibuilders -n `kubectl get s2ibuilders -A | grep $s2ibuilders | awk '{print $1}'` -p '{"metadata":{"finalizers":null}}' --type=merge
-   done
-   
-   for s2ibuildertemplates in `kubectl get s2ibuildertemplates -A -o jsonpath="{.items[*].metadata.name}"`
-   do
-     kubectl patch s2ibuildertemplates $s2ibuildertemplates -n `kubectl get s2ibuildertemplates -A | grep $s2ibuildertemplates | awk '{print $1}'` -p '{"metadata":{"finalizers":null}}' --type=merge
-   done
-   
-   for s2iruns in `kubectl get s2iruns -A -o jsonpath="{.items[*].metadata.name}"`
-   do
-     kubectl patch s2iruns $s2iruns -n `kubectl get s2iruns -A | grep $s2iruns | awk '{print $1}'` -p '{"metadata":{"finalizers":null}}' --type=merge
-   done
-   
-   kubectl delete devopsprojects --all 2>/dev/null
+   # Remove all DevOps CRDs
+   kubectl get crd -o=jsonpath='{range .items[*]}{.metadata.name}{"\n"}{end}' | grep "devops.kubesphere.io" | xargs -I crd_name kubectl delete crd crd_name
+   # Remove DevOps namespace
+   kubectl delete namespace kubesphere-devops-system
    ```
-
-   ```bash
-   kubectl delete ns kubesphere-devops-system
-   ```
+   
 
 ## Uninstall KubeSphere Logging
 
