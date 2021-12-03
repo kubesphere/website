@@ -41,15 +41,14 @@ kubectl -n kubesphere-system edit clusterconfiguration ks-installer
 
 ## 卸载 KubeSphere DevOps
 
-1. 将 CRD `ClusterConfiguration`  配置文件中 `ks-installer` 参数的 `devops.enabled` 字段的值从 `true` 改为 `false`。
-
-2. 卸载 DevOps：
+1. 卸载 DevOps：
 
    ```bash
    helm uninstall -n kubesphere-devops-system devops
-   kubectl patch -nkubesphere-system cc ks-installer --type=json -p='[{"op": "remove", "path": "/status/devops"}]'
+   kubectl patch -n kubesphere-system cc ks-installer --type=json -p='[{"op": "remove", "path": "/status/devops"}]'
+   kubectl patch -n kubesphere-system cc ks-installer --type=json -p='[{"op": "replace", "path": "/spec/devops/enabled", "value": false}]'
    ```
-3. 删除 DevOps 资源：
+2. 删除 DevOps 资源：
 
    ```bash
    # 删除所有 DevOps 相关资源
@@ -65,7 +64,7 @@ kubectl -n kubesphere-system edit clusterconfiguration ks-installer
    # 删除 DevOps 命名空间
    kubectl delete namespace kubesphere-devops-system
    ```
-   
+
 
 ## 卸载 KubeSphere 日志系统
 

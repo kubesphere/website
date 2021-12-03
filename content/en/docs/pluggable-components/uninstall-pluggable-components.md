@@ -40,15 +40,14 @@ Change the value of `openpitrix.store.enabled` from `true` to `false` in `ks-ins
 
 ## Uninstall KubeSphere DevOps
 
-1. Change the value of `devops.enabled` from `true` to `false` in `ks-installer` of the CRD `ClusterConfiguration`.
-
-2. To uninstall DevOps:
+1. To uninstall DevOps:
 
    ```bash
    helm uninstall -n kubesphere-devops-system devops
    kubectl patch -n kubesphere-system cc ks-installer --type=json -p='[{"op": "remove", "path": "/status/devops"}]'
+   kubectl patch -n kubesphere-system cc ks-installer --type=json -p='[{"op": "replace", "path": "/spec/devops/enabled", "value": false}]'
    ```
-3. To delete DevOps resources:
+2. To delete DevOps resources:
 
    ```bash
    # Remove all resources related with DevOps
@@ -64,7 +63,7 @@ Change the value of `openpitrix.store.enabled` from `true` to `false` in `ks-ins
    # Remove DevOps namespace
    kubectl delete namespace kubesphere-devops-system
    ```
-   
+
 
 ## Uninstall KubeSphere Logging
 
