@@ -237,7 +237,7 @@ You need to specify `sonarqubeURL` so that you can access SonarQube directly fro
 Execute the following commands.
 
 ```bash
-kubectl -n kubesphere-system rollout restart deploy ks-apiserver
+kubectl -n kubesphere-devops-system rollout restart deploy devops-apiserver
 ```
 
 ```bash

@@ -237,7 +237,7 @@ weight: 11310
 执行以下命令。
 
 ```bash
-kubectl -n kubesphere-system rollout restart deploy ks-apiserver
+kubectl -n kubesphere-devops-system rollout restart deploy devops-apiserver
 ```
 
 ```bash
