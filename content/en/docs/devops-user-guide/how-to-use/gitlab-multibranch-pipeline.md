@@ -77,7 +77,7 @@ You need to create two projects, such as `kubesphere-sample-dev` and `kubesphere
    If you want to use a private repository from GitLab, refer to the following steps:
 
    - Go to **User Settings > Access Tokens** on GitLab to create an access token with API and read_repository permissions.
-   - [Log in to the Jenkins dashboard](../jenkins-setting/#log-in-to-jenkins-to-reload-configurations), go to **Manage Jenkins > Manage Credentials** to use your GitLab token to create a Jenkins credential for accessing GitLab, and go to **Manage Jenkins > Configure System** to add the credential in **GitLab Server**.
+   - [Log in to the Jenkins dashboard](../jenkins-setting/#log-in-to-jenkins-to-view-configurations), go to **Manage Jenkins > Manage Credentials** to use your GitLab token to create a Jenkins credential for accessing GitLab, and go to **Manage Jenkins > Configure System** to add the credential in **GitLab Server**.
    - In your DevOps project, select **DevOps Project Settings > Credentials** to use your GitLab token to create a credential. You have to specify the credential for **Credential** on the **GitLab** tab when creating a pipeline so that the pipeline can pull code from your private GitLab repository.
 
    {{</ notice >}}

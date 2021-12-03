@@ -18,7 +18,7 @@ weight: 11292
 
 ## 在 Jenkins 仪表盘配置共享库
 
-1. [登录 Jenkins 仪表板](https://kubesphere.io/zh/docs/devops-user-guide/how-to-use/jenkins-setting/#log-in-to-jenkins-to-reload-configurations)并点击左侧导航栏中的**系统管理**。
+1. [登录 Jenkins 仪表板](../jenkins-setting/#登录-jenkins-查看配置)并点击左侧导航栏中的**系统管理**。
 
 2. 向下滚动并点击**系统配置**。
 

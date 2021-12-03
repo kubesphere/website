@@ -29,20 +29,15 @@ KubeSphere 默认安装 Jenkins Configuration as Code 插件，您可以通过 Y
 建议您通过 Configuration as Code (CasC) 在 KubeSphere 中配置 Jenkins。内置 Jenkins CasC 文件存储为 [ConfigMap](../../../project-user-guide/configuration/configmaps/)。
 
 1. 以 `admin` 身份登录 KubeSphere，点击左上角的**平台管理**，然后选择**集群管理**。
-
 2. 如果您已经启用[多集群功能](../../../multicluster-management/)并已导入成员集群，您可以选择一个特定集群来编辑 ConfigMap。如果您尚未启用多集群功能，请直接参考下一步。
-
 3. 在左侧导航栏中选择**配置**下的**配置字典**。在**配置字典**页面上，从下拉列表中选择 `kubesphere-devops-system`，然后点击 `jenkins-casc-config`。
-
 4. 在详情页面上，点击**更多操作**，在下拉列表中选择**编辑 YAML**。
+5. `jenkins-casc-config` 的配置模板是一个 YAML 文件，位于 `data.jenkins_user.yaml:` 部分。您可以在 ConfigMap 的代理 (Kubernetes Jenkins Agent) 中修改容器镜像、标签、资源请求 (Request) 和限制 (Limit) 等内容，或者在 podTemplate 中添加容器。完成操作后，点击**确定**。
+6. 稍等片刻，您的改动会自动重新加载。
 
-5. `jenkins-casc-config` 的配置模板是一个 YAML 文件，如下图所示。您可以在 ConfigMap 的代理 (Kubernetes Jenkins Agent) 中修改容器镜像、标签、资源请求 (Request) 和限制 (Limit) 等内容，或者在 podTemplate 中添加容器。完成操作后，点击**确定**。
+## 登录 Jenkins 查看配置
 
-   ![编辑 Jenkins](/images/docs/zh-cn/devops-user-guide/use-devops/jenkins-system-settings/edit-jenkins.png)
-
-## 登录 Jenkins 重新加载配置
-
-修改 `jenkins-casc-config` 后，您需要在 Jenkins 仪表板的 **Configuration as Code** 页面上重新加载更新后的系统配置。这是因为直接通过 Jenkins 仪表板配置的系统设置可能在 Jenkins 重新调度之后被 CasC 配置覆盖。
+修改 `jenkins-casc-config` 后，您可以登录 Jenkins 仪表板，在 **Configuration as Code** 页面上查看更新后的系统配置。
 
 1. 执行以下命令获取 Jenkins 的地址。
 
@@ -70,7 +65,7 @@ KubeSphere 默认安装 Jenkins Configuration as Code 插件，您可以通过 Y
 
 5. 向下翻页并点击 **Configuration as Code**.
 
-6. 要重新加载 ConfigMap 中已修改的配置，请点击**应用新配置**。
+6. 要查看更新后的配置，请点击**查看配置**。
 
 7. 有关如何通过 CasC 设置 Jenkins 的更多信息，请参见 [Jenkins 文档](https://github.com/jenkinsci/configuration-as-code-plugin)。
 

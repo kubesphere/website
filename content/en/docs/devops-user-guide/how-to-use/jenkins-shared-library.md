@@ -18,7 +18,7 @@ This tutorial demonstrates how to use Jenkins shared libraries in KubeSphere Dev
 
 ## Configure a Shared Library on the Jenkins Dashboard
 
-1. [Log in to the Jenkins dashboard](../jenkins-setting/#log-in-to-jenkins-to-reload-configurations) and click **Manage Jenkins** in the left navigation pane.
+1. [Log in to the Jenkins dashboard](../jenkins-setting/#log-in-to-jenkins-to-view-configurations) and click **Manage Jenkins** in the left navigation pane.
 
 2. Scroll down and click **Configure System**.
 
