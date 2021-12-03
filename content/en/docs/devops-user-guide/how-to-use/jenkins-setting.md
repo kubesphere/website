@@ -29,43 +29,16 @@ Besides, you can find the `formula.yaml` file in the repository [ks-jenkins](htt
 It is recommended that you configure Jenkins in KubeSphere through Configuration as Code (CasC). The built-in Jenkins CasC file is stored as a [ConfigMap](../../../project-user-guide/configuration/configmaps/).
 
 1. Log in to KubeSphere as `admin`. Click **Platform** in the upper-left corner and select **Cluster Management**.
+
 2. If you have enabled the [multi-cluster feature](../../../multicluster-management/) with member clusters imported, you can select a specific cluster to edit the ConfigMap. If you have not enabled the feature, refer to the next step directly.
+
 3. On the left navigation pane, select **ConfigMaps** under **Configuration**. On the **ConfigMaps** page, select `kubesphere-devops-system` from the drop-down list and click `jenkins-casc-config`.
+
 4. On the details page, click **Edit YAML** from the **More** drop-down list.
+
 5. The configuration template for `jenkins-casc-config` is a YAML file under the `data.jenkins_user.yaml:` section. You can modify the container image, label, resource requests and limits, etc. in the broker (Kubernetes Jenkins agent) in the ConfigMap or add a container in the podTemplate. When you finish, click **OK**.
-6. Wait for a while until your changes are automatically reloaded.
 
-## Log in to Jenkins to View Configurations
-
-After you modified `jenkins-casc-config`, you can log in to the Jenkins dashboard to view the updated system configurations on the **Configuration as Code** page.
-
-1. Execute the following command to get the address of Jenkins.
-
-   ```bash
-   export NODE_PORT=$(kubectl get --namespace kubesphere-devops-system -o jsonpath="{.spec.ports[0].nodePort}" services devops-jenkins)
-   export NODE_IP=$(kubectl get nodes --namespace kubesphere-devops-system -o jsonpath="{.items[0].status.addresses[0].address}")
-   echo http://$NODE_IP:$NODE_PORT
-   ```
-
-2. You can see the expected output as below, which tells you the IP address and port number of Jenkins.
-
-   ```bash
-   http://192.168.0.4:30180
-   ```
-
-3. Access Jenkins at `http://Node IP:Port Number`. When KubeSphere is installed, the Jenkins dashboard is also installed by default. Besides, Jenkins is configured with KubeSphere LDAP, which means you can log in to Jenkins with KubeSphere accounts (for example, `admin/P@88w0rd`) directly.
-
-   {{< notice note >}}
-
-   You may need to set up necessary port forwarding rules and open port `30180` to access Jenkins in your security groups depending on where your instances are deployed.
-
-   {{</ notice >}} 
-
-4. After you log in to the Jenkins dashboard, click **Manage Jenkins** from the navigation pane.
-
-5. Scroll down and click **Configuration as Code**.
-
-6. To view the updated configurations, click **View Configuration**.
+6. Wait for at least 70 seconds until your changes are automatically reloaded.
 
 7. For more information about how to set up Jenkins via CasC, see the [Jenkins documentation](https://github.com/jenkinsci/configuration-as-code-plugin).
 
@@ -74,3 +47,4 @@ After you modified `jenkins-casc-config`, you can log in to the Jenkins dashboar
    In the current version, not all plugins support CasC settings. CasC will only overwrite plugin configurations that are set up through CasC.
 
    {{</ notice >}} 
+
