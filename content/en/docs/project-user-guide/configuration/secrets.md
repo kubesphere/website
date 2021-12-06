@@ -1,5 +1,5 @@
 ---
-title: "Secrets"
+title: "Kubernetes Secrets in KubeSphere"
 keywords: 'KubeSphere, Kubernetes, Secrets'
 description: 'Learn how to create a Secret on KubeSphere.'
 linkTitle: "Secrets"
@@ -18,7 +18,7 @@ This tutorial demonstrates how to create a Secret in KubeSphere.
 
 You need to create a workspace, a project and a user (`project-regular`). The user must be invited to the project with the role of `operator`. For more information, see [Create Workspaces, Projects, Users and Roles](../../../quick-start/create-workspace-and-project/).
 
-## Create a Secret
+## Create a Kubernetes Secret
 
 ### Step 1: Open the dashboard
 
@@ -36,7 +36,7 @@ You can see the Secret's manifest file in YAML format by enabling **Edit YAML** 
 
 ### Step 3: Set a Secret
 
-1. Under the tab **Data Settings**, you must select a Secret type. In KubeSphere, you can create the following types of Secrets, indicated by the `type` field.
+1. Under the tab **Data Settings**, you must select a Secret type. In KubeSphere, you can create the following Kubernetes Secret types, indicated by the `type` field.
 
    {{< notice note >}}
 
@@ -80,7 +80,7 @@ As mentioned above, KubeSphere automatically converts the value of a key into it
     - **Delete**: Delete the Secret, and return to the list page.
 
 
-## Use a Secret
+## How to Use a Kubernetes Secret
 
 Generally, you need to use a Secret when you create workloads, [Services](../../../project-user-guide/application-workloads/services/), [Jobs](../../../project-user-guide/application-workloads/jobs/) or [CronJobs](../../../project-user-guide/application-workloads/cronjobs/). For example, you can select a Secret for a code repository. For more information, see [Image Registries](../image-registry/).
 
