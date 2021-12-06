@@ -1,12 +1,12 @@
 ---
-title: "Add New Nodes"
+title: "Add New Nodes to a Kubernetes Cluster"
 keywords: 'Kubernetes, KubeSphere, scale-out, add-nodes'
 description: 'Add more nodes to scale out your cluster.'
 linkTitle: "Add New Nodes"
 weight: 3610
 ---
 
-After you use KubeSphere for a certain period of time, it is likely that you need to scale out your cluster with an increasing number of workloads. From KubeSphere v3.0.0, you can use the brand-new installer [KubeKey](https://github.com/kubesphere/kubekey) to add new nodes to a cluster. Fundamentally, the operation is based on Kubelet's registration mechanism. In other words, the new nodes will automatically join the existing Kubernetes cluster. KubeSphere supports hybrid environments, which means the newly-added host OS can be CentOS or Ubuntu.
+After you use KubeSphere for a certain period of time, it is likely that you need to scale out your cluster with an increasing number of workloads. From KubeSphere v3.0.0, you can use the brand-new installer [KubeKey](https://github.com/kubesphere/kubekey) to add new nodes to a Kubernetes cluster. Fundamentally, the operation is based on Kubelet's registration mechanism. In other words, the new nodes will automatically join the existing Kubernetes cluster. KubeSphere supports hybrid environments, which means the newly-added host OS can be CentOS or Ubuntu.
 
 This tutorial demonstrates how to add new nodes to a single-node cluster. To scale out a multi-node cluster, the steps are basically the same.
 
@@ -16,7 +16,7 @@ This tutorial demonstrates how to add new nodes to a single-node cluster. To sca
 
 - You have [downloaded KubeKey](../../../installing-on-linux/introduction/multioverview/#step-2-download-kubekey).
 
-## Add Worker Nodes
+## Add Worker Nodes to Kubernetes
 
 1. Retrieve your cluster information using KubeKey. The command below creates a configuration file (`sample.yaml`).
 
@@ -74,7 +74,7 @@ You can skip this step if you already have the configuration file on your machin
    node2         Ready    worker          31h   v1.17.9
    ```
 
-## Add Master Nodes for High Availability
+## Add New Master Nodes for High Availability
 
 The steps of adding master nodes are generally the same as adding worker nodes while you need to configure a load balancer for your cluster. You can use any cloud load balancers or hardware load balancers (for example, F5). In addition, Keepalived and [HAproxy](https://www.haproxy.com/), or Nginx is also an alternative for creating highly available clusters.
 
