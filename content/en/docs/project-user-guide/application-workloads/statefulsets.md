@@ -1,12 +1,12 @@
 ---
-title: "StatefulSets"
+title: "Kubernetes StatefulSet in KubeSphere"
 keywords: 'KubeSphere, Kubernetes, StatefulSets, Dashboard, Service'
 description: 'Learn basic concepts of StatefulSets and how to create StatefulSets on KubeSphere.'
 linkTitle: "StatefulSets"
 weight: 10220
 ---
 
-As a workload API object, a StatefulSet is used to manage stateful applications. It is responsible for the deploying, scaling of a set of Pods, and guarantees the ordering and uniqueness of these Pods.
+As a workload API object, a Kubernetes StatefulSet is used to manage stateful applications. It is responsible for the deploying, scaling of a set of Pods, and guarantees the ordering and uniqueness of these Pods.
 
 Like a Deployment, a StatefulSet manages Pods that are based on an identical container specification. Unlike a Deployment, a StatefulSet maintains a sticky identity for each of their Pods. These Pods are created from the same specification, but are not interchangeable: each has a persistent identifier that it maintains across any rescheduling.
 
@@ -25,7 +25,7 @@ For more information, see the [official documentation of Kubernetes](https://kub
 
 You need to create a workspace, a project and a user (`project-regular`). The user must be invited to the project with the role of `operator`. For more information, see [Create Workspaces, Projects, Users and Roles](../../../quick-start/create-workspace-and-project/).
 
-## Create a StatefulSet
+## Create a Kubernetes StatefulSet
 
 In KubeSphere, a **Headless** service is also created when you create a StatefulSet. You can find the headless service in [Services](../services/) under **Application Workloads** in a project.
 
@@ -78,7 +78,7 @@ StatefulSets can use the volume template, but you must create it in **Storage** 
 
 ### Step 5: Configure advanced settings
 
-You can set a policy for node scheduling and add metadata in this section. When you finish, click **Create** to complete the whole process of creating a StatefulSet.
+You can set a policy for node scheduling and add StatefulSet metadata in this section. When you finish, click **Create** to complete the whole process of creating a StatefulSet.
 
 - **Select Nodes**
 
@@ -88,7 +88,7 @@ You can set a policy for node scheduling and add metadata in this section. When 
 
   Additional metadata settings for resources such as **Labels** and **Annotations**.
 
-## Check StatefulSet Details
+## Check Kubernetes StatefulSet Details
 
 ### Details page
 
