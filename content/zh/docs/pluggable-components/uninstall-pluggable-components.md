@@ -216,7 +216,7 @@ kubectl -n kubesphere-system edit clusterconfiguration ks-installer
 
 ## 卸载容器 IP 池
 
-将 CRD `ClusterConfiguration`  配置文件中参数 `ks-installer` 中 `network.ippool.type` 的值从 `true` 改为 `false`。
+将 CRD `ClusterConfiguration`  配置文件中参数 `ks-installer` 中 `network.ippool.type` 的值从 `calico` 改为 `none`。
 
 ## 卸载 KubeEdge
 
