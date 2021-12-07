@@ -134,8 +134,8 @@ Change the value of `openpitrix.store.enabled` from `true` to `false` in `ks-ins
 
    ```bash
    helm uninstall kube-auditing -n kubesphere-logging-system
-   kubectl delete crd awh
-   kubectl delete crd ar
+   kubectl delete crd rules.auditing.kubesphere.io
+   kubectl delete crd webhooks.auditing.kubesphere.io
    ```
 
 ## Uninstall KubeSphere Service Mesh
