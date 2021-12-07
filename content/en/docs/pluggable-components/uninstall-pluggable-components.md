@@ -93,11 +93,17 @@ Change the value of `openpitrix.store.enabled` from `true` to `false` in `ks-ins
    helm uninstall elasticsearch-logging --namespace kubesphere-logging-system
    ```
 
-   {{< notice note >}}
+   {{< notice warning >}}
 
    This operation may cause anomalies in Auditing, Events, and Service Mesh.
 
    {{</ notice >}}
+   
+4. Run the following command:
+
+   ```bash
+   kubectl delete ns kubesphere-logging-system
+   ```
 
 ## Uninstall KubeSphere Events
 
