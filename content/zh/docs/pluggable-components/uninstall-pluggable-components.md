@@ -181,7 +181,7 @@ kubectl -n kubesphere-system edit clusterconfiguration ks-installer
 
 ## 卸载服务拓扑图
 
-1. 将 CRD `ClusterConfiguration`  配置文件中参数 `ks-installer` 中 `network.topology.type` 的值从 `true` 改为 `false`。
+1. 将 CRD `ClusterConfiguration`  配置文件中参数 `ks-installer` 中 `network.topology.type` 的值从 `weave-scope` 改为 `none`。
 
 2. 运行以下命令：
 
