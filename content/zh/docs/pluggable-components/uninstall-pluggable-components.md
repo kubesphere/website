@@ -214,7 +214,7 @@ kubectl -n kubesphere-system edit clusterconfiguration ks-installer
    kubectl delete ns weave
    ```
 
-## 卸载容器 IP 池
+## 卸载容器组 IP 池
 
 将 CRD `ClusterConfiguration`  配置文件中参数 `ks-installer` 中 `network.ippool.type` 的值从 `calico` 改为 `none`。
 
