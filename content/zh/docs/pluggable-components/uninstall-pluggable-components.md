@@ -94,11 +94,18 @@ kubectl -n kubesphere-system edit clusterconfiguration ks-installer
    helm uninstall elasticsearch-logging --namespace kubesphere-logging-system
    ```
 
-   {{< notice note >}}
+   {{< notice warning >}}
 
    此操作可能导致审计、事件和服务网格的异常。
 
    {{</ notice >}}
+   
+3. 运行以下命令：
+
+   ```bash
+   kubectl delete deployment logsidecar-injector-deploy -n kubesphere-logging-system
+   kubectl delete ns kubesphere-logging-system
+   ```
 
 ## 卸载 KubeSphere 事件系统
 
