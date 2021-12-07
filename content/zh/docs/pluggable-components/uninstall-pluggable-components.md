@@ -135,8 +135,8 @@ kubectl -n kubesphere-system edit clusterconfiguration ks-installer
 
    ```bash
    helm uninstall kube-auditing -n kubesphere-logging-system
-   kubectl delete crd awh
-   kubectl delete crd ar
+   kubectl delete crd rules.auditing.kubesphere.io
+   kubectl delete crd webhooks.auditing.kubesphere.io
    ```
 
 ## 卸载 KubeSphere 服务网格
