@@ -103,6 +103,7 @@ kubectl -n kubesphere-system edit clusterconfiguration ks-installer
 3. 运行以下命令：
 
    ```bash
+   kubectl delete deployment logsidecar-injector-deploy -n kubesphere-logging-system
    kubectl delete ns kubesphere-logging-system
    ```
 

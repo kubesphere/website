@@ -102,6 +102,7 @@ Change the value of `openpitrix.store.enabled` from `true` to `false` in `ks-ins
 4. Run the following command:
 
    ```bash
+   kubectl delete deployment logsidecar-injector-deploy -n kubesphere-logging-system
    kubectl delete ns kubesphere-logging-system
    ```
 
