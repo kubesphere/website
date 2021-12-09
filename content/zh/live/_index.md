@@ -10,22 +10,29 @@ section1:
 
 section2:
   image: /images/live/cloudnative-live-banner.png
-  url: ./rook1111-live/
+  url: ./webhook1202-live/
 
   notice:
-    title: 浅谈 Webhook 开发与实践
+    title: KubeKey v2.0.0 上手指南
     tag: 预告
-    time: 2021 年 12 月 02 日晚 8 点
+    time: 2021 年 12 月 09 日晚 8 点
     base: 线上
-    url: ./webhook1202-live/
+    url: ./kubekey1209-live/
 
   over:
-    title:  如何优化容器网络性能
-    url: ./kubeovn1028-live/
+    title: ROOK 云原生分布式存储开源项目的介绍及其在企业中的应用未来
+    url: ./rook1111-live/
     tag: 结束
 
 section3:
   videos:
+    - title: 浅谈 Webhook 开发与实践
+      link: ./webhook1202-live/
+      snapshot: https://pek3b.qingstor.com/kubesphere-community/images/webhook1202-live-cover.png
+      type: iframe
+      createTime: 2021.12.02
+      group: 直播回放
+
     - title: ROOK 云原生分布式存储开源项目的介绍及其在企业中的应用未来
       link: ./rook1111-live/
       snapshot: https://pek3b.qingstor.com/kubesphere-community/images/rook1111-live-cover.png
