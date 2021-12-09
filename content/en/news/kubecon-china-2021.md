@@ -5,7 +5,6 @@ description: KubeSphere brings 4 sessions and participte 1 office hour in KubeCo
 createTime: '2021-12-09'
 author: 'Feynman, Lindsay'
 ---
-# KubeSphere Team will join the KubeCon China and bring 5 sessions
 
 Every year, the Cloud-Native Computing Foundation organizes its flagship conference KubeCon and CloudNativeCon, which gathers DevOps, SRE, developers, and technologists to meet leading open source and Cloud-Native communities. This year, KubeCon and CloudNativeCon China are coming! KubeSphere Team will bring 4 sessions and participate 1 office hours in this conference, you can join virtually from 9-10 December 2021. 
 
@@ -78,4 +77,4 @@ In this talk, Feynman Zhou and Stone Shi from KubeSphere Team will introduce how
 
 ## RSVP
 
-https://www.lfasiallc.com/kubecon-cloudnativecon-open-source-summit-china/register/
+You can register the KubeCon and CloudNativeCon 2021 via this [link](https://www.lfasiallc.com/kubecon-cloudnativecon-open-source-summit-china/register/), join us virtually from 9-10 December 2021.
