@@ -10,6 +10,10 @@ section1:
 
 section2:
   news:
+    - title: 'Kubesphere Team will join the KubeCon China and bring 5 sessions'
+      description: KubeSphere Team brings 5 session to KubeCon China 2021 
+      image: /images/news/kubecon-china-2021/banner.png
+      link: 'kubecon-china-2021/'
     - title: 'Kubernetes Commnuity Days China 2021 Recap'
       description: The first Kubernetes Community Days China was successfully held in Beijing
       image: /images/news/kcd-china/kcd-china-event.png
