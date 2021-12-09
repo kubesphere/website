@@ -17,7 +17,7 @@ Soft multi-tenancy is a form of multi-tenancy that does not have strict isolatio
 In this talk, KubeSphere maintainers will share their experience and best practice in designing the multi-tenancy architecture: how to manage users and authentication across multiple clusters, how to manage resource quotas for tenants in different clusters, the resource isolation mechanism, and how to authorize resources across multiple clusters.
 
 ## Speaker
-![Wan-hongming](/images/news/kubecon-china-2021/Wan-hongming.png)
+![wan-hongming](/images/news/kubecon-china-2021/wan-hongming.png)
 Hongming Wan - Senior Software Engineer, QingCloud Technologies.
 
 Hongming is the core contributor of KubeSphere, and leads the KubeSphere Multi-tenancy and Security team. He focuses on open source and cloud-native security areas.
@@ -34,7 +34,7 @@ Many application definitions and frameworks are emerging from the CNCF landscape
 - How to extend your operator in an elegant interface
 
 ## Speaker
-![Lai-zhengyi](/images/news/kubecon-china-2021/Lai-zhengyi.png)
+![lai-zhengyi](/images/news/kubecon-china-2021/lai-zhengyi.png)
 Zhengyi Lai - KubeSphere Dev Lead, QingCloud Technologies
 
 Zhengyi Lai is the maintainer of the KubeSphere. He has contributed to helm, virtual-kubelet, grpc-gateway, etc. Zhengyi is also maintaining the application store, network, and pluggable architecture in KubeSphere. His main work focuses on networking, multi-clustering, application delivery and cloud-native technologies such as Artifact Hub.
@@ -52,19 +52,19 @@ As the core of Serverless, FaaS (Function-as-a-Service) has gained more and more
 - Why OpenFunction create its own event management system "OpenFunction Events" when there're already Knative eventing and Argo Events?
 
 ## Speaker
-![Huo-Binjie](/images/news/kubecon-china-2021/Huo-binjie.png)
+![huo-binjie](/images/news/kubecon-china-2021/huo-binjie.png)
 Benjamin Huo - Founder of OpenFunction
 
 Benjamin Huo led the KubeSphere Observability and Serverless team. He is the creator of FluentBit Operator and the founder of the FaaS project [OpenFunction]((https://github.com/OpenFunction/OpenFunction)), also the author and architect of several observability open source projects such as Kube-Events, Notification Manager, etc. He loves cloud-native and open source technologies and is the contributor of Prometheus.
 
-![Lei-Wanjun](/images/news/kubecon-china-2021/Lei-Wanjun.png)
+![lei-wanjun](/images/news/kubecon-china-2021/lei-wanjun.png)
 Wanjun Lei - KubeSphere Dev Lead, QingCloud Technologies.
 
 Wanjun Lei is the maintainer of OpenFunction and is responsible for developing OpenFunction. He is also the maintainer of FluentBit Operator, and a member of the KubeSphere Observability team, where he is responsible for the development of Notification Manager. He loves cloud native and open source technologies, and is a contributor to fluent bit and nats.
 
 ## Session 4: KubeSphere use case sharing in the OpenEBS Office Hours
 
-![openebs-office-hours](/images/news/kubecon-china-2021/Wan-openebs-office-hours.png)
+![openebs-office-hours](/images/news/kubecon-china-2021/openebs-office-hours.png)
 In cloud-based Kubernetes clusters, persistent storage services are usually provided by cloud providers. When enterprises build an on-premise Kubernetes platform or adopt a Kuberntes distribution in production, persistent storage is the biggest challenge. OpenEBS automates the management of storage attached to the Kubernetes worker nodes and allow the storage to be used for dynamically provisioning OpenEBS PVs or Local PVs. KubeSphere is an open source container platform built on Kubernetes, it integrates OpenEBS as the default persistent storage to provide out-of-the-box persistent storage services for users.
 
 In this talk, Feynman Zhou and Stone Shi from KubeSphere Team will introduce how they leverage OpenEBS and Kubernetes to build a container platform and run stateful workloads on it. 
@@ -72,7 +72,7 @@ In this talk, Feynman Zhou and Stone Shi from KubeSphere Team will introduce how
 
 ## Session 5: AWS invited KubeSphere Product Manager to speak at the interview
 
-![AWS-Interview](/images/news/kubecon-china-2021/AWS-Interview.png)
+![aws-interview](/images/news/kubecon-china-2021/aws-interview.png)
 
 
 ## RSVP
