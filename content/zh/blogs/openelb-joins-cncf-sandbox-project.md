@@ -45,7 +45,7 @@ MetalLB 在近期也加入了 CNCF Sandbox，该项目在 2017 年底发起，�
 
 ### 云原生架构
 
-在 OpenELB 中，不管是地址管理，还是 BGP 配置管理，你都可以使用 CRD 来配置。对于习惯了 Kubectl 的用户而言， OpenELB 十分友好。对于想定制 OpenELB 的高级用户，也可以直接调用 Kubernetes API 来二次开发。在 MetalLB 中，需通过 ConfigMap 来配置， 感知它们的状态需要通过查看监控或者日志。
+在 OpenELB 中，不管是地址管理，还是 BGP 配置管理，你都可以使用 CRD 来配置。对于习惯了 Kubectl 的用户而言， OpenELB 十分友好。对于想定制 OpenELB 的高级用户，也可以直接调用 Kubernetes API 来做二次开发。在 MetalLB 中，需通过 ConfigMap 来配置， 感知它们的状态需要通过查看监控或者日志。
 
 ### 灵活的地址管理
 
@@ -57,10 +57,9 @@ OpenELB 通过 EIP CRD 管理地址，它定义子资源 Status 来存储地址�
 
 - 开发成本低，且有 gobgp 社区支持
 - 可以利用 gobgp 丰富特性
-- 通过 BgpConf/BgpPeer CRD 动态配置 gobgp
-- gobgp 作为 lib 使用时， 社区提供了基于 protobuf 的 API， OpenELB 在实现 BgpConf/BgpPeer CRD 时也是参照该 API，并保持兼容。
-
-同时，OpenELB 也提供 status 用于查看 BGP neighbor 配置，状态信息丰富。
+- 通过 BgpConf/BgpPeer CRD 动态配置 gobgp，用户无需重启 OpenELB 即可动态加载最新的配置信息
+- gobgp 作为 lib 使用时， 社区提供了基于 protobuf 的 API， OpenELB 在实现 BgpConf/BgpPeer CRD 时也是参照该 API，并保持兼容
+- OpenELB 也提供 status 用于查看 BGP neighbor 配置，状态信息丰富
 
 ### 架构简单，资源占用少
 
@@ -70,7 +69,7 @@ BGP 模式下， Deployment 不同副本都会与路由器建立连接用于发�
 
 ## OpenELB 安装与使用
 
-目前 OpenELB 可支持部署在任意标准的 Kubernetes、K3s 以及其发型版，通过 Yaml 文件或 Helm Chart 一条命令完成部署。同时，在 KubeSphere 容器平台的应用商店和应用仓库也可以通过界面一键部署，可参考 [OpenELB 文档](https://openelb.github.io/docs/getting-started/installation/) 进行部署。
+目前 OpenELB 可支持部署在任意标准的 Kubernetes、K3s 以及其发行版，通过 Yaml 文件或 Helm Chart 一条命令完成部署。同时，在 KubeSphere 容器平台的应用商店和应用仓库也可以通过界面一键部署，可参考 [OpenELB 文档](https://openelb.github.io/docs/getting-started/installation/) 进行部署。
 
 ## 未来规划
 
