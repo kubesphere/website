@@ -294,7 +294,7 @@ This stage uses SonarQube to test your code. You can skip this stage if you do n
 
 3. Click **Add Step** under the **Deploy to Dev** stage again. Select **container** from the list, name it `maven`, and click **OK**.
 
-3. Click **Add Nesting Steps** in the `maven` container step. Select **withCredentials** from the list, fill in the following fields in the displayed dialog box, and click **OK**.
+4. Click **Add Nesting Steps** in the `maven` container step. Select **withCredentials** from the list, fill in the following fields in the displayed dialog box, and click **OK**.
 
    - **Credential Name**: Select the kubeconfig credential you created, such as `demo-kubeconfig`.
    - **Kubeconfig Variable**: Enter `KUBECONFIG_CONTENT`.
@@ -308,7 +308,7 @@ This stage uses SonarQube to test your code. You can skip this stage if you do n
    envsubst < deploy/dev-ol/devops-sample.yaml | kubectl apply -f -
    ```
 
-4. If you want to receive email notifications when the pipeline runs successfully, click **Add Step** and select **mail** to add email information. Note that configuring the email server is optional, which means you can still run your pipeline if you skip this step.
+6. If you want to receive email notifications when the pipeline runs successfully, click **Add Step** and select **mail** to add email information. Note that configuring the email server is optional, which means you can still run your pipeline if you skip this step.
 
    {{< notice note >}}
 
@@ -316,7 +316,7 @@ This stage uses SonarQube to test your code. You can skip this stage if you do n
 
    {{</ notice >}} 
 
-5. When you finish the steps above, click **Save** in the lower-right corner. You can see the pipeline now has a complete workflow with each stage clearly listed on the pipeline. When you define a pipeline using the graphical editing panel, KubeSphere automatically creates its corresponding Jenkinsfile. Click **Edit Jenkinsfile** to view the Jenkinsfile.
+7. When you finish the steps above, click **Save** in the lower-right corner. You can see the pipeline now has a complete workflow with each stage clearly listed on the pipeline. When you define a pipeline using the graphical editing panel, KubeSphere automatically creates its corresponding Jenkinsfile. Click **Edit Jenkinsfile** to view the Jenkinsfile.
 
    {{< notice note >}}
    
