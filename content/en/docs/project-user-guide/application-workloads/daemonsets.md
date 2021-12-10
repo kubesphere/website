@@ -1,5 +1,5 @@
 ---
-title: "DaemonSets"
+title: "Kubernetes DaemonSets in KubeSphere"
 keywords: 'KubeSphere, Kubernetes, DaemonSet, workload'
 description: 'Learn basic concepts of DaemonSets and how to create DaemonSets in KubeSphere.'
 linkTitle: "DaemonSets"
@@ -10,7 +10,7 @@ A DaemonSet manages groups of replicated Pods while it ensures that all (or some
 
 For more information, see the [official documentation of Kubernetes](https://kubernetes.io/docs/concepts/workloads/controllers/daemonset/).
 
-## Use DaemonSets
+## Use Kubernetes DaemonSets
 
 DaemonSets are very helpful in cases where you want to deploy ongoing background tasks that run on all or certain nodes without any user intervention. For example:
 
@@ -77,7 +77,7 @@ You can add metadata in this section. When you finish, click **Create** to compl
 
   Additional metadata settings for resources such as **Labels** and **Annotations**.
 
-## Check DaemonSet Details
+## Check Kubernetes DaemonSet Details
 
 ### Details page
 
