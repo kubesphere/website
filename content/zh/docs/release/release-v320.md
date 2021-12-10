@@ -162,6 +162,7 @@ weight: 18100
 - 弃用 router API v1alpha2 版本。（[#4193](https://github.com/kubesphere/kubesphere/pull/4193)，[@RolandMa1986](https://github.com/RolandMa1986)）
 - 将流水线 API 版本从 v2 升级到 v3。（[#2323](https://github.com/kubesphere/console/pull/2323)，[@harrisonliu5](https://github.com/harrisonliu5)）
 - 更改保密字典校验 API。（[#2368](https://github.com/kubesphere/console/pull/2368)，[@harrisonliu5](https://github.com/harrisonliu5)）
+- OAuth2 Token endpoint 需要客户端凭证。（[#3525](https://github.com/kubesphere/kubesphere/pull/3525)，[@wansir](https://github.com/wansir)）
 
 ## 组件更改
 

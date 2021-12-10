@@ -48,11 +48,13 @@ curl -X POST -H 'Content-Type: application/x-www-form-urlencoded' \
   --data-urlencode 'grant_type=password' \
   --data-urlencode 'username=admin' \
   --data-urlencode 'password=P#$$w0rd'
+  --data-urlencode 'client_id=kubesphere' \
+  --data-urlencode 'client_secret=kubesphere'
 ```
 
 {{< notice note >}}
 
-将 `[node ip]` 替换为您的实际 IP 地址。
+将 `[node ip]` 替换为您的实际 IP 地址。你可以在 `ClusterConfiguration` 中配置客户端凭证, 存在一个默认的客户端凭证 `client_id` 和 `client_secret` 的值为 `kubesphere`。
 
 {{</ notice >}}
 
