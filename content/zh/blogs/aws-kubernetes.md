@@ -1,5 +1,5 @@
 ---
-title: 'KubeKey 在 AWS 高可用部署 Kubernetes'
+title: 'KubeKey 在 AWS 安装部署 Kubernetes 高可用集群'
 tag: 'Kubernetes,AWS,亚马逊'
 keywords: 'Kubernetes, AWS, KubeKey, 高可用, 亚马逊'
 description: 'KubeKey 是一款可以快速、便捷部署高可用 Kubernetes 集群的工具。本文将主要介绍如何在亚马逊 AWS 部署高可用的 Kubernetes 集群。'
