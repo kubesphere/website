@@ -292,14 +292,23 @@ KubeSphere 中的图形编辑面板包含用于 Jenkins [阶段 (Stage)](https:/
 
    {{</ notice >}}
 
-3. 再次点击 **Deploy to Dev** 阶段下的**添加步骤**。在列表中选择 **kubernetesDeploy** 并在弹出的对话框中填写以下字段。点击**确定**保存操作。
+3. 再次点击 **Deploy to Dev** 阶段下的**添加步骤**。在列表中选择**指定容器**，将其命名为 `maven` 然后点击**确定**。
 
-   - **Kubeconfig**：选择您创建的 Kubeconfig，例如 `demo-kubeconfig`。
-   - **配置文件路径**：输入 `deploy/no-branch-dev/**`，即代码仓库中 Kubernetes 资源 [YAML](https://github.com/kubesphere/devops-maven-sample/tree/sonarqube/deploy/no-branch-dev) 文件的相对路径。
+4. 点击 `maven` 容器步骤下的**添加嵌套步骤**。在列表中选择**添加凭证**，在弹出的对话框中填写以下字段，然后点击**确定**。
 
-   ![kubernetesDeploy](/images/docs/zh-cn/devops-user-guide/use-devops/create-a-pipeline-using-graphical-editing-panel/kubernetesDeploy_set.png)
+   - 凭证名称：选择您创建的 kubeconfig 凭证，例如 `demo-kubeconfig`。
+   - kubeconfig 变量：输入 `KUBECONFIG_CONTENT`。
 
-4. 如果您想在流水线成功运行时接收电子邮件通知，请点击**添加步骤**，选择**邮件**，以添加电子邮件信息。请注意，配置电子邮件服务器是可选操作，如果您跳过该步骤，依然可以运行流水线。
+5. 点击**添加凭证**步骤下的**添加嵌套步骤**。在列表中选择 **shell**，在弹出的对话框中输入以下命令，然后点击**确定**。
+
+   ```shell
+   mkdir ~/.kube
+   echo "$KUBECONFIG_CONTENT" > ~/.kube/config
+   envsubst < deploy/dev-ol/devops-sample-svc.yaml | kubectl apply -f -
+   envsubst < deploy/dev-ol/devops-sample.yaml | kubectl apply -f -
+   ```
+
+6. 如果您想在流水线成功运行时接收电子邮件通知，请点击**添加步骤**，选择**邮件**，以添加电子邮件信息。请注意，配置电子邮件服务器是可选操作，如果您跳过该步骤，依然可以运行流水线。
 
    {{< notice note >}}
 
@@ -307,10 +316,8 @@ KubeSphere 中的图形编辑面板包含用于 Jenkins [阶段 (Stage)](https:/
 
    {{</ notice >}} 
 
-5. 待您完成上述步骤，请在右下角点击**保存**。随后，您可以看到该流水线有完整的工作流，并且每个阶段也清晰列示。当您用图形编辑面板定义流水线时，KubeSphere 会自动创建相应的 Jenkinsfile。点击**编辑 Jenkinsfile** 查看该 Jenkinsfile。
+7. 待您完成上述步骤，请在右下角点击**保存**。随后，您可以看到该流水线有完整的工作流，并且每个阶段也清晰列示。当您用图形编辑面板定义流水线时，KubeSphere 会自动创建相应的 Jenkinsfile。点击**编辑 Jenkinsfile** 查看该 Jenkinsfile。
 
-   ![流水线设置完成](/images/docs/zh-cn/devops-user-guide/use-devops/create-a-pipeline-using-graphical-editing-panel/pipeline_done.png)
-   
    {{< notice note >}}
    
    在**流水线**页面，您可以点击该流水线右侧的 <img src="/images/docs/common-icons/three-dots.png" width="15" />，然后选择**复制**来创建该流水线的副本。如果您需要同时运行多个不包含多分支的流水线，您可以全部选中这些流水线，然后点击**运行**来批量运行它们。
