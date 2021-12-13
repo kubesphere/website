@@ -6,7 +6,7 @@ css: scss/live-detail.scss
 
 section1:
   snapshot: 
-  videoUrl: 
+  videoUrl: //player.bilibili.com/player.html?aid=379700194&bvid=BV1JZ4y197bR&cid=458198382&page=1&high_quality=1
   type: iframe
   time: 2021-12-09 20:00-21:00
   timeIcon: /images/live/clock.svg
@@ -38,3 +38,6 @@ KubeKey 是一款帮助用户搭建 Kubernetes 集群的安装工具，其上手
 B 站  http://live.bilibili.com/22580654
 
 
+## PPT 下载
+
+可扫描官网底部二维码，关注「KubeSphere云原生」公众号，后台回复 `20211209` 即可下载 PPT。
