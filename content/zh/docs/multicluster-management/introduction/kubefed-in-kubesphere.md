@@ -14,7 +14,9 @@ weight: 5120
 
 ![中央控制平面](/images/docs/zh-cn/multicluster-management/introduction/kubesphere-federation/central-control-plane.png)
 
-只能有一个 H 集群存在，而多个 M 集群可以同时存在。在多集群架构中，H 集群和 M 集群之间的网络可以直接连接，或者通过代理连接。M 集群之间的网络可以设置在完全隔离的环境中。
+只能有一个 H 集群存在，而多个 M 集群可以同时存在。在多集群架构中，H 集群和 M 集群之间的网络可以[直接连接](../../enable-multicluster/direct-connection/)，或者通过[代理连接](../../enable-multicluster/agent-connection/)。M 集群之间的网络可以设置在完全隔离的环境中。
+
+如果您是使用通过 kubeadm 搭建的自建 Kubernetes 集群，请参阅[离线安装](../../../installing-on-kubernetes/on-prem-kubernetes/install-ks-on-linux-airgapped/)在您的 Kubernetes 集群上安装 KubeSphere，然后通过直接连接或者代理连接来启用 KubeSphere 多集群管理功能。
 
 ![Kubernetes 联邦](/images/docs/zh-cn/multicluster-management/introduction/kubesphere-federation/kubesphere-federation.png)
 
