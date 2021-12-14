@@ -8,8 +8,6 @@ author: 'KubeSphere'
 snapshot: 'https://kubesphere-community.pek3b.qingstor.com/images/4761636694917_.pic_hd.jpg'
 ---
 
-OpenELB Joins the CNCF Sandbox, Making Service Exposure in Private Environments Easier
-
 ![Cover](https://kubesphere-community.pek3b.qingstor.com/images/4761636694917_.pic_hd.jpg)
 
 On November 10, the Cloud Native Computing Foundation (CNCF) accepted OpenELB, a load balancer plugin open sourced by KubeSphere, into the CNCF Sandbox.
@@ -31,7 +29,7 @@ In the KubeSphere community, we surveyed over 5,000 users to find out environmen
 In Kubernetes clusters, LoadBalancer services can be used to expose backend workloads to outside the cluster. Cloud vendors usually provide cloud-based LB plugins, which requires users to deploy their clusters on specific IaaS platforms. However, most enterprise users deploy Kubernetes clusters on bare metal servers, especially when these clusters are used in production. For private environments with bare metal servers and edge clusters, Kubernetes does not provide a LoadBalancer solution.
 
 OpenELB is designed to expose LoadBalancer services in non-public-cloud Kubernetes clusters. It provides easy-to-use EIPs and makes IP address pool management easier for users in private environments.
-## Status Quo of the OpenELB Community
+## OpenELB Adopters and Contributors
 Currently, OpenELB has been used in production environments by many enterprises, such as BENLAI, Suzhou TV, CVTE, Wisdom World, Jollychic, QingCloud, BAIWANG, Rocketbyte, and more. At the end of 2019, BENLAI has used an earlier version of OpenELB in production. Now, OpenELB has attracted 13 contributors and more than 100 community members.
 ![Enterprises using OpenELB](https://kubesphere-community.pek3b.qingstor.com/images/8411636689286_.pic_hd.jpg)
 
