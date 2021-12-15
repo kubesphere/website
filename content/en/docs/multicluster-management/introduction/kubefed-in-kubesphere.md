@@ -14,7 +14,9 @@ Before you use the central control plane of KubeSphere to management multiple cl
 
 ![central-control-plane](/images/docs/multicluster-management/introduction/kubesphere-federation/central-control-plane.png)
 
-There can only be one H Cluster while multiple M Clusters can exist at the same time. In a multi-cluster architecture, the network between the H Cluster and M Clusters can be connected directly or through an agent. The network between M Clusters can be set in a completely isolated environment.
+There can only be one H Cluster while multiple M Clusters can exist at the same time. In a multi-cluster architecture, the network between the H Cluster and M Clusters can be [connected directly](../../enable-multicluster/direct-connection/) or [through an agent](../../enable-multicluster/agent-connection/). The network between M Clusters can be set in a completely isolated environment.
+
+If you are using on-premises Kubernetes clusters built through kubeadm, install KubeSphere on your Kubernetes clusters by referring to [Air-gapped Installation on Kubernetes](../../../installing-on-kubernetes/on-prem-kubernetes/install-ks-on-linux-airgapped/), and then enable KubeSphere multi-cluster management through direct connection or agent connection.
 
 ![kubesphere-federation](/images/docs/multicluster-management/introduction/kubesphere-federation/kubesphere-federation.png)
 
