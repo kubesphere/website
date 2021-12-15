@@ -206,7 +206,7 @@ kubectl -n kubesphere-system edit clusterconfiguration ks-installer
 
 ## 卸载服务拓扑图
 
-1. 将 CRD `ClusterConfiguration`  配置文件中参数 `ks-installer` 中 `network.topology.type` 的值从 `true` 改为 `false`。
+1. 将 CRD `ClusterConfiguration`  配置文件中参数 `ks-installer` 中 `network.topology.type` 的值从 `weave-scope` 改为 `none`。
 
 2. 运行以下命令：
 
@@ -214,9 +214,9 @@ kubectl -n kubesphere-system edit clusterconfiguration ks-installer
    kubectl delete ns weave
    ```
 
-## 卸载容器 IP 池
+## 卸载容器组 IP 池
 
-将 CRD `ClusterConfiguration`  配置文件中参数 `ks-installer` 中 `network.ippool.type` 的值从 `true` 改为 `false`。
+将 CRD `ClusterConfiguration`  配置文件中参数 `ks-installer` 中 `network.ippool.type` 的值从 `calico` 改为 `none`。
 
 ## 卸载 KubeEdge
 
