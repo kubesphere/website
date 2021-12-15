@@ -45,7 +45,7 @@ The below table describes the above parameters in detail.
    </tr>
    <tr>
      <td><code>version</code></td>
-     <td>The Kubernetes version to be installed. If you do not specify a Kubernetes version, {{< contentLink "docs/installing-on-linux/introduction/kubekey" "KubeKey" >}} v1.2.0 will install Kubernetes v1.21.5 by default. For more information, see {{< contentLink "docs/installing-on-linux/introduction/kubekey/#support-matrix" "Support Matrix" >}}.</td>
+     <td>The Kubernetes version to be installed. If you do not specify a Kubernetes version, {{< contentLink "docs/installing-on-linux/introduction/kubekey" "KubeKey" >}} v1.2.1 will install Kubernetes v1.21.5 by default. For more information, see {{< contentLink "docs/installing-on-linux/introduction/kubekey/#support-matrix" "Support Matrix" >}}.</td>
    </tr>
    <tr>
      <td><code>imageRepo</code></td>
@@ -120,7 +120,7 @@ The below table describes the above parameters in detail.
 {{< notice note >}}
 
 - \* By default, KubeKey does not define these parameters in the configuration file while you can manually add them and customize their values.
-- `addons` is used to install cloud-native add-ons (YAML or Chart). For more information, see [this file](https://github.com/kubesphere/kubekey/blob/release-1.1/docs/addons.md).
-- This page only lists part of the parameters in the configuration file created by KubeKey. For more information about other parameters, see [this example file](https://github.com/kubesphere/kubekey/blob/release-1.1/docs/config-example.md).
+- `addons` is used to install cloud-native add-ons (YAML or Chart). For more information, see [this file](https://github.com/kubesphere/kubekey/blob/release-1.2/docs/addons.md).
+- This page only lists part of the parameters in the configuration file created by KubeKey. For more information about other parameters, see [this example file](https://github.com/kubesphere/kubekey/blob/release-1.2/docs/config-example.md).
 
 {{</ notice >}} 

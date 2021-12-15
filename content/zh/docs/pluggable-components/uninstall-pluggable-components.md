@@ -1,8 +1,8 @@
 ---
-title: "KubeSphere 3.2.0 卸载可插拔组件"
+title: "KubeSphere 3.2.x 卸载可插拔组件"
 keywords: "Installer, uninstall, KubeSphere, Kubernetes"
-description: "学习如何在 KubeSphere 3.2.0 卸载所有可插拔组件。"
-linkTitle: "KubeSphere 3.2.0 卸载可插拔组件"
+description: "学习如何在 KubeSphere 3.2.x 卸载所有可插拔组件。"
+linkTitle: "KubeSphere 3.2.x 卸载可插拔组件"
 Weight: 6940
 ---
 
@@ -10,7 +10,7 @@ Weight: 6940
 
 {{< notice note >}}
 
-KubeSphere 3.2.0 卸载某些可插拔组件的方法与 KubeSphere v3.0.0 不相同。有关 KubeSphere v3.0.0 卸载可插拔组件的详细方法，请参见[从 KubeSphere 上卸载可插拔组件](https://v3-0.docs.kubesphere.io/zh/docs/faq/installation/uninstall-pluggable-components/)。
+KubeSphere 3.2.x 卸载某些可插拔组件的方法与 KubeSphere v3.0.0 不相同。有关 KubeSphere v3.0.0 卸载可插拔组件的详细方法，请参见[从 KubeSphere 上卸载可插拔组件](https://v3-0.docs.kubesphere.io/zh/docs/faq/installation/uninstall-pluggable-components/)。
 
 
 {{</ notice >}}
@@ -129,7 +129,7 @@ kubectl -n kubesphere-system edit clusterconfiguration ks-installer
 
    {{< notice note >}}
 
-   KubeSphere 3.2.0 通知系统为默认安装，您无需卸载。
+   KubeSphere 3.2.1 通知系统为默认安装，您无需卸载。
 
    {{</ notice >}} 
 

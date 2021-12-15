@@ -6,7 +6,7 @@ linkTitle: "使用 KubeKey 内置 HAproxy 创建高可用集群"
 weight: 3150
 ---
 
-[KubeKey](https://github.com/kubesphere/kubekey) 作为一种集群安装工具，从版本 v1.2.0 开始，提供了内置高可用模式，支持一键部署高可用集群环境。KubeKey 的高可用模式实现方式称作本地负载均衡模式。具体表现为 KubeKey 会在每一个工作节点上部署一个负载均衡器（HAproxy），所有主节点的 Kubernetes 组件连接其本地的 kube-apiserver ，而所有工作节点的 Kubernetes 组件通过由 KubeKey 部署的负载均衡器反向代理到多个主节点的 kube-apiserver 。这种模式相较于专用到负载均衡器来说效率有所降低，因为会引入额外的健康检查机制，但是如果当前环境无法提供外部负载均衡器或者虚拟 IP（VIP）时这将是一种更实用、更有效、更方便的高可用部署模式。
+[KubeKey](https://github.com/kubesphere/kubekey) 作为一种集群安装工具，从版本 v1.2.1 开始，提供了内置高可用模式，支持一键部署高可用集群环境。KubeKey 的高可用模式实现方式称作本地负载均衡模式。具体表现为 KubeKey 会在每一个工作节点上部署一个负载均衡器（HAproxy），所有主节点的 Kubernetes 组件连接其本地的 kube-apiserver ，而所有工作节点的 Kubernetes 组件通过由 KubeKey 部署的负载均衡器反向代理到多个主节点的 kube-apiserver 。这种模式相较于专用到负载均衡器来说效率有所降低，因为会引入额外的健康检查机制，但是如果当前环境无法提供外部负载均衡器或者虚拟 IP（VIP）时这将是一种更实用、更有效、更方便的高可用部署模式。
 
 本教程演示了在 Linux 上安装 KubeSphere 时，使用 KubeKey 内置高可用模式部署的大体配置。
 
@@ -27,7 +27,7 @@ weight: 3150
 从 [GitHub Release Page](https://github.com/kubesphere/kubekey/releases) 下载 KubeKey 或直接使用以下命令。
 
 ```bash
-curl -sfL https://get-kk.kubesphere.io | VERSION=v1.2.0 sh -
+curl -sfL https://get-kk.kubesphere.io | VERSION=v1.2.1 sh -
 ```
 
 {{</ tab >}}
@@ -43,7 +43,7 @@ export KKZONE=cn
 执行以下命令下载 KubeKey：
 
 ```bash
-curl -sfL https://get-kk.kubesphere.io | VERSION=v1.2.0 sh -
+curl -sfL https://get-kk.kubesphere.io | VERSION=v1.2.1 sh -
 ```
 
 {{< notice note >}}
@@ -58,7 +58,7 @@ curl -sfL https://get-kk.kubesphere.io | VERSION=v1.2.0 sh -
 
 {{< notice note >}}
 
-执行以上命令会下载最新版 KubeKey (v1.2.0)，您可以修改命令中的版本号下载指定版本。
+执行以上命令会下载最新版 KubeKey (v1.2.1)，您可以修改命令中的版本号下载指定版本。
 
 {{</ notice >}}
 
@@ -71,12 +71,12 @@ chmod +x kk
 创建包含默认配置的示例配置文件。这里使用 Kubernetes v1.21.5 作为示例。
 
 ```bash
-./kk create config --with-kubesphere v3.2.0 --with-kubernetes v1.21.5
+./kk create config --with-kubesphere v3.2.1 --with-kubernetes v1.21.5
 ```
 
 {{< notice note >}}
 
-- 安装 KubeSphere 3.2.0 的建议 Kubernetes 版本：v1.19.x、v1.20.x、v1.21.x 或 v1.22.x（实验性支持）。如果不指定 Kubernetes 版本，KubeKey 将默认安装 Kubernetes v1.21.5。有关受支持的 Kubernetes 版本的更多信息，请参见[支持矩阵](../../../installing-on-linux/introduction/kubekey/#支持矩阵)。
+- 安装 KubeSphere 3.2.1 的建议 Kubernetes 版本：v1.19.x、v1.20.x、v1.21.x 或 v1.22.x（实验性支持）。如果不指定 Kubernetes 版本，KubeKey 将默认安装 Kubernetes v1.21.5。有关受支持的 Kubernetes 版本的更多信息，请参见[支持矩阵](../../../installing-on-linux/introduction/kubekey/#支持矩阵)。
 
 - 如果您在这一步的命令中不添加标志 `--with-kubesphere`，则不会部署 KubeSphere，只能使用配置文件中的 `addons` 字段安装，或者在您后续使用 `./kk create cluster` 命令时再次添加这个标志。
 

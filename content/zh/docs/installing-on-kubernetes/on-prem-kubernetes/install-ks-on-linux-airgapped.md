@@ -90,19 +90,19 @@ Docker 使用 `/var/lib/docker` 作为默认路径来存储所有 Docker 相关�
 1. 使用以下命令从能够访问互联网的机器上下载镜像清单文件 `images-list.txt`：
 
    ```bash
-   curl -L -O https://github.com/kubesphere/ks-installer/releases/download/v3.2.0/images-list.txt
+   curl -L -O https://github.com/kubesphere/ks-installer/releases/download/v3.2.1/images-list.txt
    ```
 
    {{< notice note >}}
 
-   该文件根据不同的模块列出了 `##+modulename` 下的镜像。您可以按照相同的规则把自己的镜像添加到这个文件中。要查看完整文件，请参见[附录](../../../installing-on-kubernetes/on-prem-kubernetes/install-ks-on-linux-airgapped/#kubesphere-v310-镜像清单)。
+   该文件根据不同的模块列出了 `##+modulename` 下的镜像。您可以按照相同的规则把自己的镜像添加到这个文件中。要查看完整文件，请参见[附录](../../../installing-on-kubernetes/on-prem-kubernetes/install-ks-on-linux-airgapped/#kubesphere-v321-镜像清单)。
 
    {{</ notice >}} 
 
 2. 下载 `offline-installation-tool.sh`。
 
    ```bash
-   curl -L -O https://github.com/kubesphere/ks-installer/releases/download/v3.2.0/offline-installation-tool.sh
+   curl -L -O https://github.com/kubesphere/ks-installer/releases/download/v3.2.1/offline-installation-tool.sh
    ```
 
 3. 使 `.sh` 文件可执行。
@@ -162,8 +162,8 @@ Docker 使用 `/var/lib/docker` 作为默认路径来存储所有 Docker 相关�
 1. 执行以下命令下载这两个文件，并将它们传输至您充当任务机的机器，用于安装。
 
    ```bash
-   curl -L -O https://github.com/kubesphere/ks-installer/releases/download/v3.2.0/cluster-configuration.yaml
-   curl -L -O https://github.com/kubesphere/ks-installer/releases/download/v3.2.0/kubesphere-installer.yaml
+   curl -L -O https://github.com/kubesphere/ks-installer/releases/download/v3.2.1/cluster-configuration.yaml
+   curl -L -O https://github.com/kubesphere/ks-installer/releases/download/v3.2.1/kubesphere-installer.yaml
    ```
 
 2. 编辑 `cluster-configuration.yaml` 添加您的私有镜像仓库。例如，本教程中的仓库地址是 `dockerhub.kubekey.local`，将它用作 `.spec.local_registry` 的值，如下所示：
@@ -241,7 +241,7 @@ https://kubesphere.io             20xx-xx-xx xx:xx:xx
 
 ## 附录
 
-### KubeSphere 3.2.0 镜像清单
+### KubeSphere 3.2.1 镜像清单
 
 ```txt
 ##k8s-images

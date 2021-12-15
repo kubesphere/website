@@ -149,7 +149,7 @@ docker run -d \
 
 ## Step 3: Download KubeKey
 
-Similar to installing KubeSphere on Linux in an online environment, you also need to [download KubeKey v1.2.0](https://github.com/kubesphere/kubekey/releases) first. Download the `tar.gz` file, and transfer it to your local machine which serves as the taskbox for installation. After you uncompress the file, execute the following command to make `kk` executable:
+Similar to installing KubeSphere on Linux in an online environment, you also need to [download KubeKey v1.2.1](https://github.com/kubesphere/kubekey/releases) first. Download the `tar.gz` file, and transfer it to your local machine which serves as the taskbox for installation. After you uncompress the file, execute the following command to make `kk` executable:
 
 ```bash
 chmod +x kk
@@ -162,7 +162,7 @@ As you install KubeSphere and Kubernetes on Linux, you need to prepare an image 
 1. Download the image list file `images-list.txt` from a machine that has access to the Internet through the following command:
 
    ```bash
-   curl -L -O https://github.com/kubesphere/ks-installer/releases/download/v3.2.0/images-list.txt
+   curl -L -O https://github.com/kubesphere/ks-installer/releases/download/v3.2.1/images-list.txt
    ```
 
    {{< notice note >}}
@@ -174,7 +174,7 @@ As you install KubeSphere and Kubernetes on Linux, you need to prepare an image 
 2. Download `offline-installation-tool.sh`.
 
    ```bash
-   curl -L -O https://github.com/kubesphere/ks-installer/releases/download/v3.2.0/offline-installation-tool.sh
+   curl -L -O https://github.com/kubesphere/ks-installer/releases/download/v3.2.1/offline-installation-tool.sh
    ```
 
 3. Make the `.sh` file executable.
@@ -215,7 +215,7 @@ As you install KubeSphere and Kubernetes on Linux, you need to prepare an image 
 
    {{< notice note >}}
 
-   - You can change the Kubernetes version downloaded based on your needs. Recommended Kubernetes versions for KubeSphere 3.2.0: v1.19.x, v1.20.x, v1.21.x or v1.22.x (experimental). If you do not specify a Kubernetes version, KubeKey will install Kubernetes v1.21.5 by default. For more information about supported Kubernetes versions, see [Support Matrix](../kubekey/#support-matrix).
+   - You can change the Kubernetes version downloaded based on your needs. Recommended Kubernetes versions for KubeSphere 3.2.1: v1.19.x, v1.20.x, v1.21.x or v1.22.x (experimental). If you do not specify a Kubernetes version, KubeKey will install Kubernetes v1.21.5 by default. For more information about supported Kubernetes versions, see [Support Matrix](../kubekey/#support-matrix).
 
    - After you run the script, a folder `kubekey` is automatically created. Note that this file and `kk` must be placed in the same directory when you create the cluster later.
 
@@ -262,7 +262,7 @@ Execute the following command to generate an example configuration file for inst
 For example:
 
 ```bash
-./kk create config --with-kubernetes v1.21.5 --with-kubesphere v3.2.0 -f config-sample.yaml
+./kk create config --with-kubernetes v1.21.5 --with-kubesphere v3.2.1 -f config-sample.yaml
 ```
 
 {{< notice note >}}
@@ -499,7 +499,7 @@ To access the console, make sure port 30880 is opened in your security group.
 
 ## Appendix
 
-### Image list of KubeSphere 3.2.0
+### Image list of KubeSphere 3.2.1
 
 ```txt
 ##k8s-images

@@ -72,7 +72,7 @@ Kubernetes 服务需要做到高可用，需要保证 kube-apiserver 的 HA ，�
      controlPlaneEndpoint:
          domain: lb.kubesphere.local
          address: "192.168.1.8"
-         port: "6443"
+         port: 6443
 ```
 ###  获取安装程序可执行文件
 
@@ -85,7 +85,7 @@ Kubernetes 服务需要做到高可用，需要保证 kube-apiserver 的 HA ，�
 从 [GitHub Release Page](https://github.com/kubesphere/kubekey/releases) 下载 KubeKey 或直接使用以下命令。
 
 ```bash
-curl -sfL https://get-kk.kubesphere.io | VERSION=v1.2.0 sh -
+curl -sfL https://get-kk.kubesphere.io | VERSION=v1.2.1 sh -
 ```
 
 {{</ tab >}}
@@ -101,7 +101,7 @@ export KKZONE=cn
 执行以下命令下载 KubeKey。
 
 ```bash
-curl -sfL https://get-kk.kubesphere.io | VERSION=v1.2.0 sh -
+curl -sfL https://get-kk.kubesphere.io | VERSION=v1.2.1 sh -
 ```
 
 {{< notice note >}}
@@ -116,7 +116,7 @@ curl -sfL https://get-kk.kubesphere.io | VERSION=v1.2.0 sh -
 
 {{< notice note >}}
 
-执行以上命令会下载最新版 KubeKey (v1.2.0)，您可以修改命令中的版本号下载指定版本。
+执行以上命令会下载最新版 KubeKey (v1.2.1)，您可以修改命令中的版本号下载指定版本。
 
 {{</ notice >}} 
 
@@ -137,7 +137,7 @@ chmod +x kk
 在当前位置创建配置文件 `master-HA.yaml`：
 
 ```bash
-./kk create config --with-kubesphere v3.2.0 --with-kubernetes v1.21.5 -f master-HA.yaml
+./kk create config --with-kubesphere v3.2.1 --with-kubernetes v1.21.5 -f master-HA.yaml
 ```
 
 > 提示：默认是 Kubernetes 1.17.9，这些 Kubernetes 版本也与 KubeSphere 同时进行过充分的测试： v1.15.12, v1.16.13, v1.17.9 (default), v1.18.6，您可以根据需要指定版本。
@@ -169,7 +169,7 @@ spec:
   controlPlaneEndpoint:
     domain: lb.kubesphere.local
     address: "192.168.1.8"
-    port: "6443"
+    port: 6443
   kubernetes:
     version: v1.17.9
     imageRepo: kubesphere
@@ -202,7 +202,7 @@ metadata:
   name: ks-installer
   namespace: kubesphere-system
   labels:
-    version: v3.2.0
+    version: v3.2.1
 spec:
   local_registry: ""
   persistence:
@@ -280,7 +280,7 @@ spec:
 
  ```bash
  # 指定配置文件创建集群
- ./kk create cluster --with-kubesphere v3.2.0 -f master-HA.yaml
+ ./kk create cluster --with-kubesphere v3.2.1 -f master-HA.yaml
 
  # 查看 KubeSphere 安装日志  -- 直到出现控制台的访问地址和登录帐户
 kubectl logs -n kubesphere-system $(kubectl get pod -n kubesphere-system -l app=ks-install -o jsonpath='{.items[0].metadata.name}') -f

@@ -119,7 +119,7 @@ KubeSphere 使用一段时间之后，由于工作负载不断增加，您可能
        # If loadbalancer is used, 'address' should be set to loadbalancer's ip.
        domain: lb.kubesphere.local
        address: 172.16.0.253
-       port: "6443"
+       port: 6443
      kubernetes:
        version: v1.21.5
        imageRepo: kubesphere
@@ -143,7 +143,7 @@ KubeSphere 使用一段时间之后，由于工作负载不断增加，您可能
        # If you use a load balancer, the address should be set to the load balancer's ip.
        domain: lb.kubesphere.local
        address: 172.16.0.253
-       port: "6443"
+       port: 6443
    ```
 
    - 负载均衡器的域名默认为 `lb.kubesphere.local`，用于内部访问。您可以按需进行更改。

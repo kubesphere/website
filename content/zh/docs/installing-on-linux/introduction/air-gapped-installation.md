@@ -144,7 +144,7 @@ docker run -d \
 
 ## 步骤 3：下载 KubeKey
 
-与在 Linux 上在线安装 KubeSphere 相似，您需要事先[下载 KubeKey v1.2.0](https://github.com/kubesphere/kubekey/releases)。下载 `tar.gz` 文件，将它传输到充当任务机的本地机器上进行安装。解压文件后，执行以下命令，使 `kk` 可执行。
+与在 Linux 上在线安装 KubeSphere 相似，您需要事先[下载 KubeKey v1.2.1](https://github.com/kubesphere/kubekey/releases)。下载 `tar.gz` 文件，将它传输到充当任务机的本地机器上进行安装。解压文件后，执行以下命令，使 `kk` 可执行。
 
 ```bash
 chmod +x kk
@@ -157,19 +157,19 @@ chmod +x kk
 1. 使用以下命令从能够访问互联网的机器上下载镜像清单文件 `images-list.txt`：
 
    ```bash
-   curl -L -O https://github.com/kubesphere/ks-installer/releases/download/v3.2.0/images-list.txt
+   curl -L -O https://github.com/kubesphere/ks-installer/releases/download/v3.2.1/images-list.txt
    ```
 
    {{< notice note >}}
 
-   该文件根据不同的模块列出了 `##+modulename` 下的镜像。您可以按照相同的规则把自己的镜像添加到这个文件中。要查看完整文件，请参见[附录](../air-gapped-installation/#kubesphere-v310-镜像清单)。
+   该文件根据不同的模块列出了 `##+modulename` 下的镜像。您可以按照相同的规则把自己的镜像添加到这个文件中。要查看完整文件，请参见[附录](../air-gapped-installation/#kubesphere-v321-镜像清单)。
 
    {{</ notice >}} 
 
 2. 下载 `offline-installation-tool.sh`。
 
    ```bash
-   curl -L -O https://github.com/kubesphere/ks-installer/releases/download/v3.2.0/offline-installation-tool.sh
+   curl -L -O https://github.com/kubesphere/ks-installer/releases/download/v3.2.1/offline-installation-tool.sh
    ```
 
 3. 使 `.sh` 文件可执行。
@@ -210,7 +210,7 @@ chmod +x kk
 
    {{< notice note >}}
 
-   - 您可以根据自己的需求变更下载的 Kubernetes 版本。安装 KubeSphere 3.2.0 的建议 Kubernetes 版本：v1.19.x、v1.20.x、v1.21.x 或 v1.22.x（实验性支持）。如果不指定 Kubernetes 版本，KubeKey 将默认安装 Kubernetes v1.21.5。有关受支持的 Kubernetes 版本的更多信息，请参见[支持矩阵](../../../installing-on-linux/introduction/kubekey/#支持矩阵)。
+   - 您可以根据自己的需求变更下载的 Kubernetes 版本。安装 KubeSphere 3.2.1 的建议 Kubernetes 版本：v1.19.x、v1.20.x、v1.21.x 或 v1.22.x（实验性支持）。如果不指定 Kubernetes 版本，KubeKey 将默认安装 Kubernetes v1.21.5。有关受支持的 Kubernetes 版本的更多信息，请参见[支持矩阵](../../../installing-on-linux/introduction/kubekey/#支持矩阵)。
 
    - 运行脚本后，会自动创建一个文件夹 `kubekey`。请注意，您稍后创建集群时，该文件和 `kk` 必须放在同一个目录下。
 
@@ -257,7 +257,7 @@ chmod +x kk
 例如：
 
 ```bash
-./kk create config --with-kubernetes v1.21.5 --with-kubesphere v3.2.0 -f config-sample.yaml
+./kk create config --with-kubernetes v1.21.5 --with-kubesphere v3.2.1 -f config-sample.yaml
 ```
 
 {{< notice note >}}
@@ -300,7 +300,7 @@ spec:
   controlPlaneEndpoint:
     domain: lb.kubesphere.local
     address: ""
-    port: "6443"
+    port: 6443
   kubernetes:
     version: v1.21.5
     imageRepo: kubesphere
@@ -492,7 +492,7 @@ https://kubesphere.io             20xx-xx-xx xx:xx:xx
 
 ## 附录
 
-### KubeSphere 3.2.0 镜像清单
+### KubeSphere 3.2.1 镜像清单
 
 ```txt
 ##k8s-images
