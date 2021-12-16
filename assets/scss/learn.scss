@@ -144,6 +144,7 @@ h2 {
       font-size: 0;
       overflow-x: auto;
       white-space: nowrap;
+      display: flex;
 
       li {
         position: relative;
@@ -151,7 +152,7 @@ h2 {
         box-sizing: border-box;
         white-space: normal;
         width: 323px;
-        height: 237px;
+        min-height: 237px;
         padding: 30px 20px 30px 62px;
         margin-left: 70px;
         font-size: 14px;
@@ -169,6 +170,7 @@ h2 {
           left: -50px;
           width: 100px;
           height: 100px;
+          object-fit: cover;
           border-radius: 50%;
         }
 

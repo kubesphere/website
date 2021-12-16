@@ -33,15 +33,15 @@ section4:
     - name: 王老师
       profession: KubeSphere DevOps 研发
       description: 本课程由 KubeSphere 开源社区联合 CNCF 倾力制作，特邀 KubeSphere 团队核心研发成员与 DevOps 教练参与录制。
-      image: 
+      image: /images/home/mobx.jpg
     - name: 王老师
       profession: KubeSphere DevOps 研发
       description: 本课程由 KubeSphere 开源社区联合 CNCF 倾力制作，特邀 KubeSphere 团队核心研发成员与 DevOps 教练参与录制。
-      image: 
+      image: /images/home/mobx.jpg
     - name: 王老师
-      profession: KubeSphere DevOps 研发
+      profession: KubeSphere DevOps 研发&可观测性研发
       description: 本课程由 KubeSphere 开源社区联合 CNCF 倾力制作，特邀 KubeSphere 团队核心研发成员与 DevOps 教练参与录制。
-      image: 
+      image: /images/home/mobx.jpg
 section5:
   title: 受益人群
   list:
