@@ -195,7 +195,6 @@ var topActive = function() {
     var topHeight = $('.section-2').outerHeight()
     top.find('a').each(function() {
       var id = $(this).attr('href')
-      console.log(id)
       var h = $(id)
       var elementToTop = getElementTopToScreenTop(h)
       if (elementToTop < headerHeight + topHeight + 10) {
