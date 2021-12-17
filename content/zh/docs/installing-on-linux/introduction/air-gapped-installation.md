@@ -323,7 +323,7 @@ metadata:
   name: ks-installer
   namespace: kubesphere-system
   labels:
-    version: v3.2.0
+    version: v3.2.1
 spec:
   persistence:
     storageClass: ""
