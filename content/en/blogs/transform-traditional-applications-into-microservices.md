@@ -10,13 +10,13 @@ snapshot: '/images/blogs/transform-traditional-applications-into-microservices/t
 
 ## Challenges
 
-When users are using the service mesh feature of KubeSphere, most of them merely know how to deploy the Bookinfo sample, but have no idea about how to use microservices, let alone refactor traditional applications into microservices.
+When trying to use the service mesh features, most of KubeSphere users only manage to deploy a Bookinfo sample on KubeSphere. They are also struggling in understanding how to explore the full capabilities of service mesh, let alone refactor traditional applications into microservices.
 
 This article describes how to refactor a traditional application into microservices to use service mesh features, such as grayscale release, traffic monitoring, and tracing.
 
 ## KubeSphere Microservices
 
-KubeSphere microservices use the application CRD to abstract associated resources into a concrete application, and provide traffic monitoring, grayscale release, and tracing features with the help of Istio's application features. However, KubeSphere microservices shield complex DestinationRule and VirtualService of Istio and automatically update resources according to traffic monitoring settings and grayscale release policies.
+KubeSphere microservices use the application CRD to abstract associated resources into a concrete application, and provide traffic monitoring, grayscale release, and tracing features with the help of Istio's application features. Moreover, KubeSphere microservices shield complex DestinationRule and VirtualService of Istio and automatically update resources according to traffic monitoring settings and grayscale release policies.
 
 Prerequisites for using KubeSphere microservices are as follows:
 
@@ -89,7 +89,7 @@ Select **Edit External Access**, and then change the access mode to **NodePort**
 
 ![07-nodeport](/images/blogs/transform-traditional-applications-into-microservices/07-nodeport.png)
 
-After the pods run properly, access the service page using the service IP address + node port. It can be seen that the application runs properly.
+After the pods run properly, access the service page at `<Service IP address>:<Node port>`. It can be seen that the application runs properly.
 
 ![](https://pek3b.qingstor.com/kubesphere-community/images/1607078616-495561-image.png)
 
