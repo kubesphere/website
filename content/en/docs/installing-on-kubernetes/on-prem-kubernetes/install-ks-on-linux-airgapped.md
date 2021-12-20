@@ -89,7 +89,7 @@ As you install KubeSphere in an air-gapped environment, you need to prepare an i
 1. Download the image list file `images-list.txt` from a machine that has access to the Internet through the following command:
 
    ```bash
-   curl -L -O https://github.com/kubesphere/ks-installer/releases/download/v3.2.0/images-list.txt
+   curl -L -O https://github.com/kubesphere/ks-installer/releases/download/v3.2.1/images-list.txt
    ```
 
    {{< notice note >}}
@@ -101,7 +101,7 @@ As you install KubeSphere in an air-gapped environment, you need to prepare an i
 2. Download `offline-installation-tool.sh`. 
 
    ```bash
-   curl -L -O https://github.com/kubesphere/ks-installer/releases/download/v3.2.0/offline-installation-tool.sh
+   curl -L -O https://github.com/kubesphere/ks-installer/releases/download/v3.2.1/offline-installation-tool.sh
    ```
 
 3. Make the `.sh` file executable.
@@ -161,8 +161,8 @@ Similar to installing KubeSphere on an existing Kubernetes cluster in an online 
 1. Execute the following commands to download these two files and transfer them to your machine that serves as the taskbox for installation.
 
    ```bash
-   curl -L -O https://github.com/kubesphere/ks-installer/releases/download/v3.2.0/cluster-configuration.yaml
-   curl -L -O https://github.com/kubesphere/ks-installer/releases/download/v3.2.0/kubesphere-installer.yaml
+   curl -L -O https://github.com/kubesphere/ks-installer/releases/download/v3.2.1/cluster-configuration.yaml
+   curl -L -O https://github.com/kubesphere/ks-installer/releases/download/v3.2.1/kubesphere-installer.yaml
    ```
 
 2. Edit `cluster-configuration.yaml` to add your private image registry. For example, `dockerhub.kubekey.local` is the registry address in this tutorial, then use it as the value of `.spec.local_registry` as below:
@@ -242,7 +242,7 @@ To access the console, make sure port 30880 is opened in your security group.
 
 ## Appendix
 
-### Image list of KubeSphere 3.2.0
+### Image list of KubeSphere 3.2.1
 
 ```txt
 ##k8s-images
@@ -275,22 +275,21 @@ openebs/provisioner-localpv:2.10.1
 openebs/linux-utils:2.10.0
 kubesphere/k8s-dns-node-cache:1.15.12
 ##kubesphere-images
-kubesphere/ks-installer:v3.2.0
-kubesphere/ks-apiserver:v3.2.0
-kubesphere/ks-console:v3.2.0
-kubesphere/ks-controller-manager:v3.2.0
+kubesphere/ks-installer:v3.2.1
+kubesphere/ks-apiserver:v3.2.1
+kubesphere/ks-console:v3.2.1
+kubesphere/ks-controller-manager:v3.2.1
 kubesphere/kubectl:v1.20.0
 kubesphere/kubefed:v0.8.1
 kubesphere/tower:v0.2.0
-kubesphere/kubectl:v1.19.1
 minio/minio:RELEASE.2019-08-07T01-59-21Z
 minio/mc:RELEASE.2019-08-07T23-14-43Z
 csiplugin/snapshot-controller:v4.0.0
 kubesphere/nginx-ingress-controller:v0.48.1
 mirrorgooglecontainers/defaultbackend-amd64:1.4
 kubesphere/metrics-server:v0.4.2
-redis:5.0.12-alpine
-haproxy:2.0.22-alpine
+redis:5.0.14-alpine
+haproxy:2.0.25-alpine
 alpine:3.14
 osixia/openldap:1.3.0
 kubesphere/netshoot:v1.0
@@ -301,18 +300,25 @@ kubesphere/edge-watcher-agent:v0.1.0
 ##gatekeeper-images
 openpolicyagent/gatekeeper:v3.5.2
 ##openpitrix-images
-kubesphere/openpitrix-jobs:v3.2.0
+kubesphere/openpitrix-jobs:v3.2.1
 ##kubesphere-devops-images
-kubesphere/devops-apiserver:v3.2.0
-kubesphere/devops-controller:v3.2.0
-kubesphere/devops-tools:v3.2.0
+kubesphere/devops-apiserver:v3.2.1
+kubesphere/devops-controller:v3.2.1
+kubesphere/devops-tools:v3.2.1
 kubesphere/ks-jenkins:v3.2.0-2.249.1
 jenkins/jnlp-slave:3.27-1
 kubesphere/builder-base:v3.2.0
 kubesphere/builder-nodejs:v3.2.0
 kubesphere/builder-maven:v3.2.0
+kubesphere/builder-python:v3.2.0
 kubesphere/builder-go:v3.2.0
 kubesphere/builder-go:v3.2.0
+kubesphere/builder-base:v3.2.0-podman
+kubesphere/builder-nodejs:v3.2.0-podman
+kubesphere/builder-maven:v3.2.0-podman
+kubesphere/builder-python:v3.2.0-podman
+kubesphere/builder-go:v3.2.0-podman
+kubesphere/builder-go:v3.2.0-podman
 kubesphere/s2ioperator:v3.2.0
 kubesphere/s2irun:v3.2.0
 kubesphere/s2i-binary:v3.2.0

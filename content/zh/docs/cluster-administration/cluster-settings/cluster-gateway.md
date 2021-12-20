@@ -6,7 +6,7 @@ linkTitle: "Cluster Gateway"
 weight: 8630
 ---
 
-KubeSphere 3.2.0 provides cluster-scope gateways to let all projects share a global project gateway. This document describes how to set a cluster gateway on KubeSphere.
+KubeSphere 3.2.x provides cluster-scope gateways to let all projects share a global project gateway. This document describes how to set a cluster gateway on KubeSphere.
 
 ## Prerequisites
 

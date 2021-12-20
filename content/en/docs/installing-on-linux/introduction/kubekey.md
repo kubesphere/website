@@ -18,7 +18,7 @@ There are several scenarios to use KubeKey:
 
 ## How Does KubeKey Work
 
-After you download KubeKey, you use an executable called `kk` to perform different operations. No matter you use it to create, scale or upgrade a cluster, you must prepare a configuration file using `kk` beforehand. This configuration file contains basic parameters of your cluster, such as host information, network configurations (CNI plugin and Pod and Service CIDR), registry mirrors, add-ons (YAML or Chart) and pluggable component options (if you install KubeSphere). For more information, see [an example configuration file](https://github.com/kubesphere/kubekey/blob/release-1.1/docs/config-example.md).
+After you download KubeKey, you use an executable called `kk` to perform different operations. No matter you use it to create, scale or upgrade a cluster, you must prepare a configuration file using `kk` beforehand. This configuration file contains basic parameters of your cluster, such as host information, network configurations (CNI plugin and Pod and Service CIDR), registry mirrors, add-ons (YAML or Chart) and pluggable component options (if you install KubeSphere). For more information, see [an example configuration file](https://github.com/kubesphere/kubekey/blob/release-1.2/docs/config-example.md).
 
 With the configuration file in place, you execute the `./kk` command with varied flags for different operations. After that, KubeKey automatically installs Docker and pulls all the necessary images for installation. When the installation is complete, you can inspect installation logs.
 
@@ -38,7 +38,7 @@ With the configuration file in place, you execute the `./kk` command with varied
 Download KubeKey from its [GitHub Release Page](https://github.com/kubesphere/kubekey/releases) or use the following command directly.
 
 ```bash
-curl -sfL https://get-kk.kubesphere.io | VERSION=v1.2.0 sh -
+curl -sfL https://get-kk.kubesphere.io | VERSION=v1.2.1 sh -
 ```
 
 {{</ tab >}}
@@ -54,7 +54,7 @@ export KKZONE=cn
 Run the following command to download KubeKey:
 
 ```bash
-curl -sfL https://get-kk.kubesphere.io | VERSION=v1.2.0 sh -
+curl -sfL https://get-kk.kubesphere.io | VERSION=v1.2.1 sh -
 ```
 
 {{< notice note >}}
@@ -69,21 +69,21 @@ After you download KubeKey, if you transfer it to a new machine also with poor n
 
 {{< notice note >}}
 
-The commands above download the latest release (v1.2.0) of KubeKey. You can change the version number in the command to download a specific version.
+The commands above download the latest release (v1.2.1) of KubeKey. You can change the version number in the command to download a specific version.
 
 {{</ notice >}}
 
 ## Support Matrix
 
-If you want to use KubeKey to install both Kubernetes and KubeSphere 3.2.0, see the following table of all supported Kubernetes versions.
+If you want to use KubeKey to install both Kubernetes and KubeSphere 3.2.1, see the following table of all supported Kubernetes versions.
 
 | KubeSphere version | Supported Kubernetes versions                                |
 | ------------------ | ------------------------------------------------------------ |
-| v3.2.0             | v1.19.x, v1.20.x, v1.21.x or v1.22.x (experimental) |
+| v3.2.1             | v1.19.x, v1.20.x, v1.21.x or v1.22.x (experimental) |
 
 {{< notice note >}} 
 
 - You can also run `./kk version --show-supported-k8s` to see all supported Kubernetes versions that can be installed by KubeKey.
-- The Kubernetes versions that can be installed using KubeKey are different from the Kubernetes versions supported by KubeSphere v3.0.0. If you want to [install KubeSphere 3.2.0 on an existing Kubernetes cluster](../../../installing-on-kubernetes/introduction/overview/), your Kubernetes version must be v1.19.x, v1.20.x, v1.21.x or v1.22.x (experimental). 
+- The Kubernetes versions that can be installed using KubeKey are different from the Kubernetes versions supported by KubeSphere v3.0.0. If you want to [install KubeSphere 3.2.1 on an existing Kubernetes cluster](../../../installing-on-kubernetes/introduction/overview/), your Kubernetes version must be v1.19.x, v1.20.x, v1.21.x or v1.22.x (experimental). 
 
 {{</ notice >}} 

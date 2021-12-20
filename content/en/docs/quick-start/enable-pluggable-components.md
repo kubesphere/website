@@ -50,7 +50,7 @@ When you implement multi-node installation of KubeSphere on Linux, you need to c
 If you adopt [All-in-one Installation](../../quick-start/all-in-one-on-linux/), you do not need to create a `config-sample.yaml` file as you can create a cluster directly. Generally, the all-in-one mode is for users who are new to KubeSphere and look to get familiar with the system. If you want to enable pluggable components in this mode (for example, for testing purpose), refer to the [following section](#enable-pluggable-components-after-installation) to see how pluggable components can be installed after installation.
     {{</ notice >}}
 
-2. In this file, enable the pluggable components you want to install by changing `false` to `true` for `enabled`. Here is [the complete file](https://github.com/kubesphere/kubekey/blob/release-1.1/docs/config-example.md) for your reference. Save the file after you finish.
+2. In this file, enable the pluggable components you want to install by changing `false` to `true` for `enabled`. Here is [the complete file](https://github.com/kubesphere/kubekey/blob/release-1.2/docs/config-example.md) for your reference. Save the file after you finish.
 
 3. Create a cluster using the configuration file:
 
@@ -73,7 +73,7 @@ When you install KubeSphere on Kubernetes, you need to use [ks-installer](https:
 3. Save this local file and execute the following commands to start installation.
 
     ```bash
-    kubectl apply -f https://github.com/kubesphere/ks-installer/releases/download/v3.2.0/kubesphere-installer.yaml
+    kubectl apply -f https://github.com/kubesphere/ks-installer/releases/download/v3.2.1/kubesphere-installer.yaml
     
     kubectl apply -f cluster-configuration.yaml
     ```

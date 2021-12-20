@@ -90,19 +90,19 @@ Docker 使用 `/var/lib/docker` 作为默认路径来存储所有 Docker 相关�
 1. 使用以下命令从能够访问互联网的机器上下载镜像清单文件 `images-list.txt`：
 
    ```bash
-   curl -L -O https://github.com/kubesphere/ks-installer/releases/download/v3.2.0/images-list.txt
+   curl -L -O https://github.com/kubesphere/ks-installer/releases/download/v3.2.1/images-list.txt
    ```
 
    {{< notice note >}}
 
-   该文件根据不同的模块列出了 `##+modulename` 下的镜像。您可以按照相同的规则把自己的镜像添加到这个文件中。要查看完整文件，请参见[附录](../../../installing-on-kubernetes/on-prem-kubernetes/install-ks-on-linux-airgapped/#kubesphere-v310-镜像清单)。
+   该文件根据不同的模块列出了 `##+modulename` 下的镜像。您可以按照相同的规则把自己的镜像添加到这个文件中。要查看完整文件，请参见[附录](../../../installing-on-kubernetes/on-prem-kubernetes/install-ks-on-linux-airgapped/#kubesphere-v321-镜像清单)。
 
    {{</ notice >}} 
 
 2. 下载 `offline-installation-tool.sh`。
 
    ```bash
-   curl -L -O https://github.com/kubesphere/ks-installer/releases/download/v3.2.0/offline-installation-tool.sh
+   curl -L -O https://github.com/kubesphere/ks-installer/releases/download/v3.2.1/offline-installation-tool.sh
    ```
 
 3. 使 `.sh` 文件可执行。
@@ -162,8 +162,8 @@ Docker 使用 `/var/lib/docker` 作为默认路径来存储所有 Docker 相关�
 1. 执行以下命令下载这两个文件，并将它们传输至您充当任务机的机器，用于安装。
 
    ```bash
-   curl -L -O https://github.com/kubesphere/ks-installer/releases/download/v3.2.0/cluster-configuration.yaml
-   curl -L -O https://github.com/kubesphere/ks-installer/releases/download/v3.2.0/kubesphere-installer.yaml
+   curl -L -O https://github.com/kubesphere/ks-installer/releases/download/v3.2.1/cluster-configuration.yaml
+   curl -L -O https://github.com/kubesphere/ks-installer/releases/download/v3.2.1/kubesphere-installer.yaml
    ```
 
 2. 编辑 `cluster-configuration.yaml` 添加您的私有镜像仓库。例如，本教程中的仓库地址是 `dockerhub.kubekey.local`，将它用作 `.spec.local_registry` 的值，如下所示：
@@ -241,7 +241,7 @@ https://kubesphere.io             20xx-xx-xx xx:xx:xx
 
 ## 附录
 
-### KubeSphere 3.2.0 镜像清单
+### KubeSphere 3.2.1 镜像清单
 
 ```txt
 ##k8s-images
@@ -274,22 +274,21 @@ openebs/provisioner-localpv:2.10.1
 openebs/linux-utils:2.10.0
 kubesphere/k8s-dns-node-cache:1.15.12
 ##kubesphere-images
-kubesphere/ks-installer:v3.2.0
-kubesphere/ks-apiserver:v3.2.0
-kubesphere/ks-console:v3.2.0
-kubesphere/ks-controller-manager:v3.2.0
+kubesphere/ks-installer:v3.2.1
+kubesphere/ks-apiserver:v3.2.1
+kubesphere/ks-console:v3.2.1
+kubesphere/ks-controller-manager:v3.2.1
 kubesphere/kubectl:v1.20.0
 kubesphere/kubefed:v0.8.1
 kubesphere/tower:v0.2.0
-kubesphere/kubectl:v1.19.1
 minio/minio:RELEASE.2019-08-07T01-59-21Z
 minio/mc:RELEASE.2019-08-07T23-14-43Z
 csiplugin/snapshot-controller:v4.0.0
 kubesphere/nginx-ingress-controller:v0.48.1
 mirrorgooglecontainers/defaultbackend-amd64:1.4
 kubesphere/metrics-server:v0.4.2
-redis:5.0.12-alpine
-haproxy:2.0.22-alpine
+redis:5.0.14-alpine
+haproxy:2.0.25-alpine
 alpine:3.14
 osixia/openldap:1.3.0
 kubesphere/netshoot:v1.0
@@ -300,18 +299,25 @@ kubesphere/edge-watcher-agent:v0.1.0
 ##gatekeeper-images
 openpolicyagent/gatekeeper:v3.5.2
 ##openpitrix-images
-kubesphere/openpitrix-jobs:v3.2.0
+kubesphere/openpitrix-jobs:v3.2.1
 ##kubesphere-devops-images
-kubesphere/devops-apiserver:v3.2.0
-kubesphere/devops-controller:v3.2.0
-kubesphere/devops-tools:v3.2.0
+kubesphere/devops-apiserver:v3.2.1
+kubesphere/devops-controller:v3.2.1
+kubesphere/devops-tools:v3.2.1
 kubesphere/ks-jenkins:v3.2.0-2.249.1
 jenkins/jnlp-slave:3.27-1
 kubesphere/builder-base:v3.2.0
 kubesphere/builder-nodejs:v3.2.0
 kubesphere/builder-maven:v3.2.0
+kubesphere/builder-python:v3.2.0
 kubesphere/builder-go:v3.2.0
 kubesphere/builder-go:v3.2.0
+kubesphere/builder-base:v3.2.0-podman
+kubesphere/builder-nodejs:v3.2.0-podman
+kubesphere/builder-maven:v3.2.0-podman
+kubesphere/builder-python:v3.2.0-podman
+kubesphere/builder-go:v3.2.0-podman
+kubesphere/builder-go:v3.2.0-podman
 kubesphere/s2ioperator:v3.2.0
 kubesphere/s2irun:v3.2.0
 kubesphere/s2i-binary:v3.2.0

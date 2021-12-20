@@ -83,7 +83,7 @@ This document describes how to use an LDAP service as an external identity provi
    
    {{</ notice >}}
    
-5. If you are using KubeSphere 3.2.0, run the following command after configuring LDAP and wait until `ks-installer` is up and running:
+5. If you are using KubeSphere 3.2.1, run the following command after configuring LDAP and wait until `ks-installer` is up and running:
 
    ```bash
    kubectl -n kubesphere-system set image deployment/ks-apiserver *=kubespheredev/ks-apiserver:release-3.2

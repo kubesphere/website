@@ -10,7 +10,7 @@ weight: 2200
 
 ## Prerequisites
 
-- 如需在 Kubernetes 上安装 KubeSphere 3.2.0，您的 Kubernetes 版本必须为：1.19.x、1.20.x、1.21.x 或 1.22.x（实验性支持）。
+- 如需在 Kubernetes 上安装 KubeSphere 3.2.1，您的 Kubernetes 版本必须为：1.19.x、1.20.x、1.21.x 或 1.22.x（实验性支持）。
 - 确保您的机器满足最低硬件要求：CPU > 1 核，内存 > 2 GB。
 - 在安装之前，需要配置 Kubernetes 集群中的**默认**存储类型。
 
@@ -28,9 +28,9 @@ weight: 2200
 1. 执行以下命令开始安装：
 
     ```bash
-    kubectl apply -f https://github.com/kubesphere/ks-installer/releases/download/v3.2.0/kubesphere-installer.yaml
+    kubectl apply -f https://github.com/kubesphere/ks-installer/releases/download/v3.2.1/kubesphere-installer.yaml
     
-    kubectl apply -f https://github.com/kubesphere/ks-installer/releases/download/v3.2.0/cluster-configuration.yaml
+    kubectl apply -f https://github.com/kubesphere/ks-installer/releases/download/v3.2.1/cluster-configuration.yaml
     ```
 
 2. 检查安装日志：

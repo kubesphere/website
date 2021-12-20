@@ -83,7 +83,7 @@ weight: 12220
 
    {{</ notice >}}
 
-6. 如果您使用 KubeSphere 3.2.0，请在配置 LDAP 之后执行以下命令并等待至 `ks-installer` 成功运行：
+6. 如果您使用 KubeSphere 3.2.1，请在配置 LDAP 之后执行以下命令并等待至 `ks-installer` 成功运行：
 
    ```bash
    kubectl -n kubesphere-system set image deployment/ks-apiserver *=kubespheredev/ks-apiserver:release-3.2
