@@ -6,15 +6,15 @@ linkTitle: "Release Notes - 3.2.1"
 weight: 18099
 ---
 
-## New Features and Enhancements
+## Enhancements and Bug Fixes
 
-### New Features
+### Enhancements
 
 - Add support for filtering Pods by status. ([#4434](https://github.com/kubesphere/kubesphere/pull/4434), [@iawia002](https://github.com/iawia002), [#2620](https://github.com/kubesphere/console/pull/2620), [@weili520](https://github.com/weili520))
 - Add a tip in the image builder creation dialog box, which indicates that containerd is not supported. ([#2734](https://github.com/kubesphere/console/pull/2734), [@weili520](https://github.com/weili520))
 - Add information about available quotas in the **Edit Project Quotas** dialog box. ([#2619](https://github.com/kubesphere/console/pull/2619), [@weili520](https://github.com/weili520))
 
-### Enhancements
+### Bug Fixes
 
 - Change the password verification rules to prevent passwords without uppercase letters. ([#4481](https://github.com/kubesphere/kubesphere/pull/4481), [@live77](https://github.com/live77))
 - Fix a login issue, where a user from an LDAP identity provider cannot log in if information about the user does not exist on KubeSphere. ([#4436](https://github.com/kubesphere/kubesphere/pull/4436), [@RolandMa1986](https://github.com/RolandMa1986))

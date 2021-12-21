@@ -6,15 +6,15 @@ linkTitle: "3.2.1 版本说明"
 weight: 18099
 ---
 
-## 新特性和优化增强
+## 功能优化与问题修复
 
-### 新特性
+### 功能优化
 
 - 新增支持按状态过滤容器组。（[#4434](https://github.com/kubesphere/kubesphere/pull/4434)，[@iawia002](https://github.com/iawia002)，[#2620](https://github.com/kubesphere/console/pull/2620)，[@weili520](https://github.com/weili520)）
 - 在镜像构建器创建对话框中增加不支持 containerd 的提示。（[#2734](https://github.com/kubesphere/console/pull/2734)，[@weili520](https://github.com/weili520)）
 - 在**编辑项目配额**对话框中增加可用配额信息。（[#2619](https://github.com/kubesphere/console/pull/2619)，[@weili520](https://github.com/weili520)）
 
-### 优化增强
+### 问题修复
 
 - 更改密码校验规则以阻止不包含大写字母的密码。（[#4481](https://github.com/kubesphere/kubesphere/pull/4481)，[@live77](https://github.com/live77)）
 - 修复 KubeSphere 上不存在相关用户信息时，无法使用来自 LDAP 的用户登录的问题。（[#4436](https://github.com/kubesphere/kubesphere/pull/4436)，[@RolandMa1986](https://github.com/RolandMa1986)）
