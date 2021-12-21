@@ -10,22 +10,29 @@ section1:
 
 section2:
   image: /images/live/cloudnative-live-banner.png
-  url: ./kubekey1209-live/
+  url: ./ceph1216-live/
 
   notice:
-    title: 携程分布式存储实践
+    title: 函数计算应用场景探讨及 FaaS 设计和实现
     tag: 预告
-    time: 2021 年 12 月 16 日晚 8 点
+    time: 2021 年 12 月 23 日晚 8 点
     base: 线上
-    url: ./ceph1216-live/
+    url: ./faas1223-live/
 
   over:
-    title: 浅谈 Webhook 开发与实践
-    url: ./webhook1202-live/
+    title: KubeKey v2.0.0 上手指南
+    url: ./kubekey1209-live/
     tag: 结束
 
 section3:
   videos:
+    - title: 携程分布式存储实践
+      link: ./ceph1216-live/
+      snapshot: https://pek3b.qingstor.com/kubesphere-community/images/ceph1216-live-cover.png
+      type: iframe
+      createTime: 2021.12.16
+      group: 直播回放
+
     - title: KubeKey v2.0.0 上手指南
       link: ./kubekey1209-live/
       snapshot: https://pek3b.qingstor.com/kubesphere-community/images/kubekey1209-live-cover.png
