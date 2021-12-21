@@ -11,7 +11,7 @@ weight: 18099
 ### 新特性
 
 - 新增支持按状态过滤容器组。（[#4434](https://github.com/kubesphere/kubesphere/pull/4434)，[@iawia002](https://github.com/iawia002)，[#2620](https://github.com/kubesphere/console/pull/2620)，[@weili520](https://github.com/weili520)）
-- 在镜像构建器建对话框中增加不支持 containerd 的提示。（[#2734](https://github.com/kubesphere/console/pull/2734)，[@weili520](https://github.com/weili520)）
+- 在镜像构建器创建对话框中增加不支持 containerd 的提示。（[#2734](https://github.com/kubesphere/console/pull/2734)，[@weili520](https://github.com/weili520)）
 - 在**编辑项目配额**对话框中增加可用配额信息。（[#2619](https://github.com/kubesphere/console/pull/2619)，[@weili520](https://github.com/weili520)）
 
 ### 优化增强
@@ -36,6 +36,6 @@ weight: 18099
 - 修复部署创建页面可用配额显示不正确的问题。（[#2668](https://github.com/kubesphere/console/pull/2668)，[@weili520](https://github.com/weili520)）
 - 将文档地址更改为 [kubesphere.io](http://kubesphere.io/) 和 [kubespehre.com.cn](http://kubesphere.io/)。（[#2628](https://github.com/kubesphere/console/pull/2628)，[@weili520](https://github.com/weili520)）
 - 修复无法修改部署存储卷设置的问题。（[#2656](https://github.com/kubesphere/console/pull/2656)，[@weili520](https://github.com/weili520)）
-- 修复浏览器语言不是英文、简体中文或繁体中文时无法访问容器终端的问题。（[#2702](https://github.com/kubesphere/console/pull/2702)，[@weili520](https://github.com/weili520)）
+- 修复浏览器语言必须为英文、简体中文或繁体中文时才能访问容器终端的问题。（[#2702](https://github.com/kubesphere/console/pull/2702)，[@weili520](https://github.com/weili520)）
 - 修复部署编辑对话框中存储卷状态显示不正确的问题。（[#2622](https://github.com/kubesphere/console/pull/2622)，[@weili520](https://github.com/weili520)）
 - 移除凭证详情页面显示的标签。（[#2621](https://github.com/kubesphere/console/pull/2621)，[@123liubao](https://github.com/123liubao)）
