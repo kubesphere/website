@@ -1,18 +1,18 @@
 ---
-title: 'Refactor Traditional Applications into Microservices to Enable the Traffic Monitoring Feature'  
+title: 'Transform Traditional Applications to Microservices into Enable the Traffic Monitoring Feature'  
 tag: 'KubeSphere, Kubernetes, Microservices'  
 keywords: 'KubeSphere, Kubernetes, Microservices, Traffic Monitoring, Service Mesh'  
-description: 'This article describes how to refactor a traditional application into microservices to use service mesh features, such as grayscale release, traffic monitoring, and tracing.'   
-createTime: '2021-07-07'  
+description: 'This article describes how to transform a traditional application into microservices to use service mesh features, such as grayscale release, traffic monitoring, and tracing.'   
+createTime: '2021-12-21'  
 author: 'Zackzhang, Bettygogo'  
 snapshot: '/images/blogs/transform-traditional-applications-into-microservices/traffic-monitoring-cover.png'
 ---
 
 ## Challenges
 
-When trying to use the service mesh features, most of KubeSphere users only manage to deploy a Bookinfo sample on KubeSphere. They are also struggling in understanding how to explore the full capabilities of service mesh, let alone refactor traditional applications into microservices.
+When trying to use service mesh of Kubernetes, most of KubeSphere users only manage to deploy a Bookinfo sample on KubeSphere. They are also struggling in understanding how to explore the full capabilities of service mesh, let alone transform traditional applications into microservices.
 
-This article describes how to refactor a traditional application into microservices to use service mesh features, such as grayscale release, traffic monitoring, and tracing.
+This article describes how to transform a traditional application into microservices to use service mesh features, such as grayscale release, traffic monitoring, and tracing.
 
 ## KubeSphere Microservices
 
@@ -53,7 +53,7 @@ metadata:
 
 ## Example
 
-To implement traffic monitoring, two independent applications are required (for example, WordPress and MySQL). After the two applications work properly, we then refactor them into KubeSphere microservices and inject the sidecar. 
+To implement traffic monitoring, two independent applications are required (for example, WordPress and MySQL). After the two applications work properly, we then transform them into KubeSphere microservices and inject the sidecar. 
 
 Open the [MySQL Docker Hub](https://hub.docker.com/_/mysql "mysql dockerhub") page, and you can see explanation of the `MYSQL_ROOT_PASSWORD` variable. On the KubeSphere web console, set the default MySQL password.
 
@@ -200,9 +200,9 @@ For labels relevant to the app version, if you create the service on KubeSphere,
 
 ![](https://pek3b.qingstor.com/kubesphere-community/images/1607088007-59417-image.png)
 
-## Check the Refactoring Result
+## Check the Transformation Result
 
-After the refactoring is completed, check the application page.
+After the transformation is completed, check the application page.
 
 ![08-check-app](/images/blogs/transform-traditional-applications-into-microservices/08-check-app.png)
 
@@ -224,4 +224,4 @@ Note that you need to enable the route feature before using the tracing feature.
 
 ## Summary
 
-We can successfully refactor the application into microservices by performing the previous steps. As the refactoring process is tedious, the KubeSphere team will continuously optimize this feature to make refactoring easier.
+We can successfully transform the application into microservices by performing the previous steps. As the transformation process is tedious, the KubeSphere team will continuously optimize this feature to make transformation easier.
