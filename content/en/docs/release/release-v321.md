@@ -41,3 +41,6 @@ weight: 18099
 - Remove labels displayed on the credential details page. ([#2621](https://github.com/kubesphere/console/pull/2621), [@123liubao](https://github.com/123liubao))
 - Fix the problem caused by non-ASCII branch names. ([#399](https://github.com/kubesphere/ks-devops/pull/399))
 - Fix the wrong handling of the choice parameter in Pipeline. ([#378](https://github.com/kubesphere/ks-devops/pull/378))
+- Fix the problem that could not proceed or break the pipeline created by others. [#408](https://github.com/kubesphere/ks-devops/pull/408)
+- Fix messy sequence of pipeline run records. [#394](https://github.com/kubesphere/ks-devops/pull/394)
+- Fix pipeline triggered by non-admin user but still display "Started by user admin". [#384](https://github.com/kubesphere/ks-devops/pull/384)
