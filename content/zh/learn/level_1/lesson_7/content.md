@@ -1,5 +1,5 @@
 ---
-title: 课程简介
+title: 私有网络 VPC 实战
 keywords: Kubesphere, Kubesphere learn
 description: Kubesphere
 
