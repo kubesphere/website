@@ -4,7 +4,7 @@ css: "scss/learn.scss"
 
 section1:
   title: 云原生实战
-  content: KubeSphere x 尚硅谷 <br> 最完善的知识体系，从零到一带您入门以 Kubernete 为核心的云原生技术生态
+  content: KubeSphere x 尚硅谷 <br> 最完善的知识体系，从零到一带您入门以 Kubernetes 为核心的云原生技术生态
   topImage: "/images/learn/banner.png"
 
 section2:
