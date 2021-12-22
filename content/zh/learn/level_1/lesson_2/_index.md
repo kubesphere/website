@@ -1,10 +1,10 @@
 ---
-linkTitle: 容器环境准备-Docker
+linkTitle: 云计算简单概念
 weight: 2
 
 _build:
     render: false
 
-profit: 了解容器技术的概念、本质、发展趋势等   
-time: 2020-10-13 20:00-20:40
+profit: 了解云计算的相关概念   
+time: 2021-12-17 20:00-20:40
 ---

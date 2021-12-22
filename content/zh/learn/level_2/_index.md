@@ -1,5 +1,5 @@
 ---
-linkTitle: Level 2：动手实践之扩大建造与运维
+linkTitle: 第二章：Kubernetes 基础
 
 _build:
     render: false
