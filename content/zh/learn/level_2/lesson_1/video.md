@@ -1,5 +1,5 @@
 ---
-title: 课程简介
+title: Kubernetes-基础概念-简介
 keywords: Kubesphere, Kubesphere learn
 description: Kubesphere
 
