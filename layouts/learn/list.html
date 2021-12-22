@@ -77,7 +77,7 @@
     <div class="common-layout">
         <h2>{{ .Params.section6.title }}</h2>
         <ul class="level">
-            {{ range .Page.Sections }}
+            {{ range sort .Page.Sections "Weight" }}
             <li>
                 <p class="title">{{ .LinkTitle }}</p>
                 <table>
