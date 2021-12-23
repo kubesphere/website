@@ -1,5 +1,5 @@
 ---
-linkTitle: 安装metrics-server
+linkTitle: 安装 metrics-server
 weight: 73
 
 _build:

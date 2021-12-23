@@ -1,5 +1,5 @@
 ---
-linkTitle: 安装Kubernetes集群
+linkTitle: 安装 Kubernetes 集群
 weight: 71
 
 _build:

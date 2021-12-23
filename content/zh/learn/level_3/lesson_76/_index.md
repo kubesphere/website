@@ -1,5 +1,5 @@
 ---
-linkTitle: 多节点上KubeKey一键安装集群
+linkTitle: 多节点上 KubeKey 一键安装集群
 weight: 76
 
 _build:

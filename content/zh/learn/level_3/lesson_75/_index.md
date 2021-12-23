@@ -1,5 +1,5 @@
 ---
-linkTitle: 单节点上KubeKey一键安装完整平台
+linkTitle: 单节点上 KubeKey 一键安装完整平台
 weight: 75
 
 _build:
