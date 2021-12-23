@@ -1,5 +1,5 @@
 ---
-linkTitle: Kubernetes-基础概念-简介
+linkTitle: Kubernetes 简介
 weight: 1
 
 _build:
