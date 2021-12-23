@@ -1,5 +1,5 @@
 ---
-linkTitle: 在 KubeSphere 上部署 Spring Cloud 全家桶
+linkTitle: KubeSphere部署SpringCloud全家桶
 weight: 2
 
 _build:

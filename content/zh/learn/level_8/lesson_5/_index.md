@@ -1,5 +1,5 @@
 ---
-linkTitle: Service Mesh 概念与架构
+linkTitle: ServiceMesh 概念与架构
 weight: 5
 
 _build:

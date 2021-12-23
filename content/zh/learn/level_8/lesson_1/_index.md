@@ -1,5 +1,5 @@
 ---
-linkTitle: spring-cloud-kubernetes 基础概念
+linkTitle: SpringCloud与kubernetes基础概念
 weight: 1
 
 _build:
