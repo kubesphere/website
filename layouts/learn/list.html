@@ -90,7 +90,7 @@
                         </tr>
                     </thead>
                     <tbody>
-                        {{ range .Page.Sections }}
+                        {{ range sort .Page.Sections "Weight" }}
                         <tr>
                             <td>{{ .LinkTitle }}</td>
                             <td>{{ .Params.profit }}</td>
