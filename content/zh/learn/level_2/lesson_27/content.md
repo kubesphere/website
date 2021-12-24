@@ -1,5 +1,5 @@
 ---
-title: Kubernetes 工作方式
+title: Kubernetes 集群的方式
 keywords: Kubesphere, Kubesphere learn
 description: Kubesphere
 
