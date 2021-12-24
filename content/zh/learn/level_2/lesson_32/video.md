@@ -1,5 +1,5 @@
 ---
-title: Kubernetes docker容器化环境安装
+title: Kubernetes docker 容器化环境安装
 keywords: Kubesphere, Kubesphere learn
 description: Kubesphere
 
