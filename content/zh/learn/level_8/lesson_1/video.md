@@ -1,5 +1,5 @@
 ---
-title: SpringCloud与kubernetes基础概念
+title: SpringCloud 与 kubernetes 基础概念
 keywords: Kubesphere, Kubesphere learn
 description: Kubesphere
 
