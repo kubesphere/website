@@ -5,6 +5,6 @@ weight: 1
 _build:
     render: false
 
-profit: Kubernetes是什么
-time: 2021-12-12 20:00-20:40
+profit: 快速了解 Kubernetes
+time: 2021-12-14 20:00-20:40
 ---
