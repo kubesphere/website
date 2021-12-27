@@ -39,3 +39,8 @@ weight: 18099
 - Fix an issue where the container terminal cannot be accessed when the browser language is not English, Simplified Chinese, or Traditional Chinese. ([#2702](https://github.com/kubesphere/console/pull/2702), [@weili520](https://github.com/weili520))
 - Fix incorrect volume status displayed in the Deployment editing dialog box. ([#2622](https://github.com/kubesphere/console/pull/2622), [@weili520](https://github.com/weili520))
 - Remove labels displayed on the credential details page. ([#2621](https://github.com/kubesphere/console/pull/2621), [@123liubao](https://github.com/123liubao))
+- Fix the problem caused by non-ASCII branch names. ([#399](https://github.com/kubesphere/ks-devops/pull/399))
+- Fix the wrong handling of the choice parameter in Pipeline. ([#378](https://github.com/kubesphere/ks-devops/pull/378))
+- Fix the problem that could not proceed or break the pipeline created by others. [#408](https://github.com/kubesphere/ks-devops/pull/408)
+- Fix messy sequence of pipeline run records. [#394](https://github.com/kubesphere/ks-devops/pull/394)
+- Fix pipeline triggered by non-admin user but still display "Started by user admin". [#384](https://github.com/kubesphere/ks-devops/pull/384)
