@@ -12,7 +12,7 @@ snapshot: '/images/blogs/en/kubekey-containerd/kubernetes-containerd-banner.png'
 
 [KubeKey](https://github.com/kubesphere/kubekey) is a lightweight and turn-key installer that supports the installation of Kubernetes, KubeSphere and related add-ons. Writtent in Go, KubeKey enables you to set up a Kubernetes cluster within minutes. 
 
-Kubernetes 1.23 [was released on Dec 7](https://kubernetes.io/blog/2021/12/07/kubernetes-1-23-release-announcement/). KubeKey has supported the installation of the latest version Kubernetes in its v2.0.0 alpha release, it also brought some new features such as support Multus CNI, Feature Gates, and easy-to-use air-gapped installation, etc. 
+Kubernetes 1.23 [was released on Dec 7](https://kubernetes.io/blog/2021/12/07/kubernetes-1-23-release-announcement/). KubeKey has supported the installation of the latest version Kubernetes in its v2.0.0 alpha release, and also brought some new features such as support for Multus CNI, Feature Gates, and easy-to-use air-gapped installation, etc. 
 
 This blog will demonstrate how to install Kubernetes 1.23.0, [containerd](https://containerd.io/), and [Multus CNI](https://github.com/k8snetworkplumbingwg/multus-cni) the easy way using KubeKey.
 
@@ -146,14 +146,14 @@ chmod +x kk
 
 ## Step 3: Enable the Multus CNI installation (Optional)
 
-If you want to custom the installation, for example, enable the Multus CNI installation, you can create an example configuration file with default configurations.
+If you want to customize the installation, for example, enable the Multus CNI installation, you can create an example configuration file with default configurations.
 Otherwise, you can skip this step.
 
 ```
 ./kk create config --with-kubernetes v1.23.0
 ```
 
-A default file `config-sample.yaml` will be created if you do not change the name. Edit the file and here is an example of the configuration file of a Kubernetes cluster with one master node. You need to update the host information and enable Multus CNI. We use a single node for this demo, you can also configure a multi-node Kubernetes cluster as you want, see [Multi-node installation](../../docs/installing-on-linux/introduction/multioverview/) for details.
+A default file `config-sample.yaml` will be created if you do not change the name. Edit the file and here is an example of the configuration file of a Kubernetes cluster with one master node. You need to update the host information and enable Multus CNI. We use a single node for this demo, and you can also configure a multi-node Kubernetes cluster as you want. See [Multi-node installation](../../docs/installing-on-linux/introduction/multioverview/) for details.
 
 ```
 apiVersion: kubekey.kubesphere.io/v1alpha2
