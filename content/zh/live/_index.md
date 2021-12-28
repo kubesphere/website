@@ -10,22 +10,29 @@ section1:
 
 section2:
   image: /images/live/cloudnative-live-banner.png
-  url: ./ceph1216-live/
+  url: ./faas1223-live/
 
   notice:
-    title: 函数计算应用场景探讨及 FaaS 设计和实现
+    title: MQTT 及车联网场景应用
     tag: 预告
-    time: 2021 年 12 月 23 日晚 8 点
+    time: 2021 年 12 月 30 日晚 8 点
     base: 线上
-    url: ./faas1223-live/
+    url: ./mqtt1230-live/
 
   over:
-    title: KubeKey v2.0.0 上手指南
-    url: ./kubekey1209-live/
+    title: 携程分布式存储实践
+    url: ./ceph1216-live/
     tag: 结束
 
 section3:
   videos:
+    - title: 函数计算应用场景探讨及 FaaS 设计和实现
+      link: ./faas1223-live/
+      snapshot: https://pek3b.qingstor.com/kubesphere-community/images/faas1223-live-cover.png
+      type: iframe
+      createTime: 2021.12.23
+      group: 直播回放
+
     - title: 携程分布式存储实践
       link: ./ceph1216-live/
       snapshot: https://pek3b.qingstor.com/kubesphere-community/images/ceph1216-live-cover.png
