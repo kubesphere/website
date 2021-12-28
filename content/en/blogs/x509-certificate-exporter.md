@@ -147,7 +147,7 @@ In this section, you need to use the previously created user `ws-admin` to creat
 
 After importing the app repository of x509-certificate-exporter, you can use the app template to deploy x509-certificate-exporter.
 
-1. Log out of the KubeSpere web console and log in to the console as user `project-regular`. Click the project you created to go to the project page. Go to **Apps** under **Application Workloads**, and click **Create**.
+1. Log out of the KubeSphere web console and log in to the console as user `project-regular`. Click the project you created to go to the project page. Go to **Apps** under **Application Workloads**, and click **Create**.
    
    ![15-create-app](/images/blogs/en/x509-certificate-exporter/15-create-app.png)
 
