@@ -6,9 +6,9 @@ css: scss/live-detail.scss
 
 section1:
   snapshot: 
-  videoUrl: 
+  videoUrl: //player.bilibili.com/player.html?aid=935107557&bvid=BV1DT4y1f7TG&cid=467466159&page=1&high_quality=1
   type: iframe
-  time: 2021-12-16 20:00-21:00
+  time: 2021-12-23 20:00-21:00
   timeIcon: /images/live/clock.svg
   base: 线上
   baseIcon: /images/live/base.svg
@@ -37,4 +37,6 @@ FaaS 是什么，为什么需要了解 FaaS，以及 FaaS 如何实现，我们�
 
 B 站  http://live.bilibili.com/22580654
 
+## PPT 下载
 
+可扫描官网底部二维码，关注 「KubeSphere云原生」公众号，后台回复 `20211223` 即可下载 PPT。
