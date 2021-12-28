@@ -1,5 +1,5 @@
 ---
-title: '从 0 到 1，打造新一代开源函数计算平台'
+title: 'OpenFunction：从 0 到 1，打造新一代开源函数计算平台'
 tag: 'Serverless, FaaS, OpenFunction'
 keywords: 'Serverless, FaaS, OpenFunction'
 description: '本文介绍函数计算概念、参考架构及发展趋势，介绍云原生 Serverless 领域的最新进展，进而阐述如何利用云原生技术从 0 到 1 打造新一代开源函数计算平台 OpenFunction。'
