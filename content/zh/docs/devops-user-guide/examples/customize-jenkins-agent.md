@@ -49,7 +49,7 @@ Weight: 11460
    pipeline {
      agent {
        node {
-         label 'maven jdk11'
+         label 'maven && jdk11'
        }
      }
      stages {

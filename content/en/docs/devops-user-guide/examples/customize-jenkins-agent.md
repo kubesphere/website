@@ -49,7 +49,7 @@ This document describes how to customize a Jenkins agent on KubeSphere.
    pipeline {
      agent {
        node {
-         label 'maven jdk11'
+         label 'maven && jdk11'
        }
      }
      stages {
