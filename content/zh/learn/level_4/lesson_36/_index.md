@@ -1,5 +1,5 @@
 ---
-linkTitle: 尚医通项目 DevOps 实战之 Nacos 配置提取
+linkTitle: “尚医通” 微服务项目 DevOps 实战 - Nacos 配置提取
 weight: 36
 
 _build:

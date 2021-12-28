@@ -1,5 +1,5 @@
 ---
-linkTitle: DevOps 基础以及 KubeSphere 下 DevOps 的落地
+linkTitle: DevOps 基础以及 DevOps 的落地
 weight: 31
 
 _build:

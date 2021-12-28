@@ -1,5 +1,5 @@
 ---
-linkTitle: 尚医通项目 DevOps 实战后端部署完成以及验证
+linkTitle: “尚医通” 微服务项目 DevOps 实战 - 后端部署完成以及验证
 weight: 50
 
 _build:

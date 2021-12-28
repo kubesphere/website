@@ -1,5 +1,5 @@
 ---
-title: KubeSphere 若依微服务实战部署本地 Nacos 服务
+title: “若依” 微服务项目实战 - 部署本地 Nacos 服务
 keywords: Kubesphere, Kubesphere learn
 description: Kubesphere
 

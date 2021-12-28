@@ -1,5 +1,5 @@
 ---
-linkTitle: KubeSphere 若依微服务实战上云配置准备
+linkTitle: “若依” 微服务项目实战 - 上云配置准备
 weight: 19
 
 _build:

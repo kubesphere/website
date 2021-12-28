@@ -1,5 +1,5 @@
 ---
-title: KubeSphere 若依微服务实战部署上云配置准备
+title: “若依” 微服务项目实战 - 上云配置准备
 keywords: Kubesphere, Kubesphere learn
 description: Kubesphere
 

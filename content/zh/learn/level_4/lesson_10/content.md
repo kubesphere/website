@@ -1,5 +1,5 @@
 ---
-title: KubeSphere 通过应用市场部署 Zookeeper 服务
+title: 通过应用市场部署 Zookeeper 服务
 keywords: Kubesphere, Kubesphere learn
 description: Kubesphere
 

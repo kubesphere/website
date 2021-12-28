@@ -1,5 +1,5 @@
 ---
-linkTitle: 尚医通项目 DevOps 实战之 MongoDB 服务部署
+linkTitle: “尚医通” 微服务项目 DevOps 实战 - MongoDB 服务部署
 weight: 34
 
 _build:

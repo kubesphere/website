@@ -1,5 +1,5 @@
 ---
-title: KubeSphere 若依微服务实战部署上云流程分析
+title: “若依” 微服务项目实战 - 上云流程分析
 keywords: Kubesphere, Kubesphere learn
 description: Kubesphere
 

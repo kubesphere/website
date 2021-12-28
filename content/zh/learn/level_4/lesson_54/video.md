@@ -1,5 +1,5 @@
 ---
-title: KubeSphere 第一期结束小结
+title: 第一期结束小结
 keywords: Kubesphere, Kubesphere learn
 description: Kubesphere
 

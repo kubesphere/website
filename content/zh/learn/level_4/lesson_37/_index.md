@@ -1,5 +1,5 @@
 ---
-linkTitle: 尚医通项目 DevOps 实战创建可视化流水线工程
+linkTitle: “尚医通” 微服务项目 DevOps 实战 - 创建可视化流水线工程
 weight: 37
 
 _build:

@@ -1,5 +1,5 @@
 ---
-linkTitle: 尚医通项目 DevOps 实战 Webhook 自启动流水线
+linkTitle: “尚医通” 微服务项目 DevOps 实战 - Webhook 自启动流水线
 weight: 53
 
 _build:

@@ -1,5 +1,5 @@
 ---
-title: KubeSphere 通过应用商店部署 RabbitMQ 服务
+title: 通过应用商店部署 RabbitMQ 服务
 keywords: Kubesphere, Kubesphere learn
 description: Kubesphere
 

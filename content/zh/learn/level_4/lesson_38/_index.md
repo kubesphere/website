@@ -1,5 +1,5 @@
 ---
-linkTitle: 尚医通项目 DevOps 实战流水线拉取代码
+linkTitle: “尚医通” 微服务项目 DevOps 实战 - 流水线拉取代码
 weight: 38
 
 _build:

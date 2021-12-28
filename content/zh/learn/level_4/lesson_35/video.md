@@ -1,5 +1,5 @@
 ---
-title: 尚医通项目 DevOps 实战之 MySQL 数据初始化
+title: “尚医通” 微服务项目 DevOps 实战 - MySQL 数据初始化
 keywords: Kubesphere, Kubesphere learn
 description: Kubesphere
 

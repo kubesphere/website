@@ -1,5 +1,5 @@
 ---
-title: 尚医通项目 DevOps 实战最后优化
+title: “尚医通” 微服务项目 DevOps 实战 - 最后优化
 keywords: Kubesphere, Kubesphere learn
 description: Kubesphere
 

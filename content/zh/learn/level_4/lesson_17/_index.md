@@ -1,5 +1,5 @@
 ---
-linkTitle: KubeSphere 若依微服务实战上云 Nacos 服务高可用部署
+linkTitle: “若依” 微服务项目实战 - 上云 Nacos 服务高可用部署
 weight: 17
 
 _build:

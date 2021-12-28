@@ -1,5 +1,5 @@
 ---
-linkTitle: 尚医通项目 DevOps 实战流水线部署到 dev 环境问题解决
+linkTitle: “尚医通” 微服务项目 DevOps 实战 - 流水线部署到 dev 环境问题解决
 weight: 45
 
 _build:

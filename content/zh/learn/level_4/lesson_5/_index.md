@@ -1,5 +1,5 @@
 ---
-linkTitle: KubeSphere 部署 MySQL 服务
+linkTitle: 部署 MySQL 服务
 weight: 5
 
 _build:

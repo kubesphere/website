@@ -1,5 +1,5 @@
 ---
-title: KubeSphere 部署 MySQL 服务
+title: 部署 MySQL 服务
 keywords: Kubesphere, Kubesphere learn
 description: Kubesphere
 

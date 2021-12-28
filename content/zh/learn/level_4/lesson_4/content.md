@@ -1,5 +1,5 @@
 ---
-title: KubeSphere 应用部署三要素
+title: 应用部署三要素
 keywords: Kubesphere, Kubesphere learn
 description: Kubesphere
 

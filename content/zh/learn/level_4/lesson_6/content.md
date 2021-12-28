@@ -1,5 +1,5 @@
 ---
-title: KubeSphere 设置 MySQL 的负载均衡网络
+title: 设置 MySQL 的负载均衡网络
 keywords: Kubesphere, Kubesphere learn
 description: Kubesphere
 

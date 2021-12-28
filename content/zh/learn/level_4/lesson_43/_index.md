@@ -1,5 +1,5 @@
 ---
-linkTitle: 尚医通项目 DevOps 实战流水线并发推送镜像
+linkTitle: “尚医通” 微服务项目 DevOps 实战 - 流水线并发推送镜像
 weight: 43
 
 _build:

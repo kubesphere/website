@@ -1,5 +1,5 @@
 ---
-linkTitle: KubeSphere 若依微服务实战上云部署 web 前端服务以及测试
+linkTitle: “若依” 微服务项目实战 - 上云部署 web 前端服务以及测试
 weight: 30
 
 _build:

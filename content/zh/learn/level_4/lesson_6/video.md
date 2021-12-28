@@ -1,5 +1,5 @@
 ---
-title: KubeSphere 部署 MySQL 服务
+title: 设置 MySQL 的负载均衡网络
 keywords: Kubesphere, Kubesphere learn
 description: Kubesphere
 

@@ -1,5 +1,5 @@
 ---
-title: KubeSphere 基础架构以及多租户实践之企业空间管理
+title: 基础架构以及多租户实践 - 企业空间管理
 keywords: Kubesphere, Kubesphere learn
 description: Kubesphere
 

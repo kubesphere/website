@@ -1,5 +1,5 @@
 ---
-title: 尚医通项目 DevOps 实战之 Nacos 配置提取
+title: “尚医通” 微服务项目 DevOps 实战 - Nacos 配置提取
 keywords: Kubesphere, Kubesphere learn
 description: Kubesphere
 

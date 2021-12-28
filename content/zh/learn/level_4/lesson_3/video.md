@@ -1,5 +1,5 @@
 ---
-title: KubeSphere 基础架构以及多租户实践之项目管理
+title: 基础架构以及多租户实践 - 项目管理
 keywords: Kubesphere, Kubesphere learn
 description: Kubesphere
 

@@ -1,5 +1,5 @@
 ---
-linkTitle: KubeSphere 若依微服务实战上云部署 system 服务
+linkTitle: “若依” 微服务项目实战 - 上云部署 system 服务
 weight: 24
 
 _build:

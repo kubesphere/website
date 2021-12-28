@@ -1,5 +1,5 @@
 ---
-title: KubeSphere 若依微服务实战部署上云Dockerfile修改
+title: “若依” 微服务项目实战 - 上云Dockerfile修改
 keywords: Kubesphere, Kubesphere learn
 description: Kubesphere
 

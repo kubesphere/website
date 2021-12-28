@@ -1,5 +1,5 @@
 ---
-linkTitle: KubeSphere 第一期结束小结
+linkTitle: 第一期结束小结
 weight: 54
 
 _build:
