@@ -28,11 +28,11 @@ This document describes how to customize a Jenkins agent on KubeSphere.
 
    ```yaml
    - name: "maven-jdk11" # The name of the customized Jenkins agent.
-     label: "maven-jdk11" # The label of the customized Jenkins agent.
+     label: "maven jdk11" # The label of the customized Jenkins agent. To specify multiple labels, use spaces to seperate them. 
      inheritFrom: "maven" # The name of the existing pod template from which this customzied Jenkins agent inherits.
      containers:
      - name: "maven" # The container name specified in the existing pod template from which this customzied Jenkins agent inherits.
-     image: "kubespheredev/builder-maven:v3.2.0jdk11" # This image is used for testing purposes only. You can use your own images.
+       image: "kubespheredev/builder-maven:v3.2.0jdk11" # This image is used for testing purposes only. You can use your own images.
    ```
 
    {{< notice note >}}
@@ -43,4 +43,28 @@ This document describes how to customize a Jenkins agent on KubeSphere.
 
 6. Wait for at least 70 seconds until your changes are automatically reloaded.
 
-7. To use the custom Jenkins agent, specify the label and container name of the custom Jenkins agent accordingly when creating a pipeline.
+7. To use the custom Jenkins agent, refer to the following sample Jenkinsfile to specify the label and container name of the custom Jenkins agent accordingly when creating a pipeline.
+
+   ```groovy
+   pipeline {
+     agent {
+       node {
+         label 'maven jdk11'
+       }
+     }
+     stages {
+       stage('Print Maven and JDK version') {
+         steps {
+           container('maven') {
+             sh '''
+             mvn -v
+             java -version
+             '''
+           }
+         }
+       }
+     }
+   }
+   ```
+
+   

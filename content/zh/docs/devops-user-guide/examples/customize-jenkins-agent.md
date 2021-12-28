@@ -28,11 +28,11 @@ Weight: 11460
 
    ```yaml
    - name: "maven-jdk11" # 自定义 Jenkins Agent 的名称。
-     label: "maven-jdk11" # 自定义 Jenkins Agent 的标签。
+     label: "maven jdk11" # 自定义 Jenkins Agent 的标签。若要指定多个标签，请用空格来分隔标签。
      inheritFrom: "maven" # 该自定义 Jenkins Agent 所继承的现有容器组模板的名称。
      containers:
      - name: "maven" # 该自定义 Jenkins Agent 所继承的现有容器组模板中指定的容器名称。
-     image: "kubespheredev/builder-maven:v3.2.0jdk11" # 此镜像只用于测试。您可以使用自己的镜像。
+       image: "kubespheredev/builder-maven:v3.2.0jdk11" # 此镜像只用于测试。您可以使用自己的镜像。
    ```
 
    {{< notice note >}}
@@ -43,4 +43,28 @@ Weight: 11460
 
 6. 请至少等待 70 秒，您的改动会自动重新加载。
 
-7. 要使用自定义 Jenkins Agent，请在创建流水线时指定其对应的标签和容器名。
+7. 要使用自定义 Jenkins Agent，请参考下方的示例 Jenkinsfile，在创建流水线时指定自定义 Jenkins Agent 对应的标签和容器名。
+
+   ```groovy
+   pipeline {
+     agent {
+       node {
+         label 'maven jdk11'
+       }
+     }
+     stages {
+       stage('Print Maven and JDK version') {
+         steps {
+           container('maven') {
+             sh '''
+             mvn -v
+             java -version
+             '''
+           }
+         }
+       }
+     }
+   }
+   ```
+
+   
