@@ -33,7 +33,7 @@ There are eight stages as shown below in this example pipeline.
 {{< notice note >}}
 
 - **Stage 1. Checkout SCM**: Check out source code from the GitHub repository.
-- **Stage 2. Unit test**: It will not proceed with the next stage unit the test is passed.
+- **Stage 2. Unit test**: It will not proceed with the next stage until the test is passed.
 - **Stage 3. SonarQube analysis**: The SonarQube code quality analysis.
 - **Stage 4. Build & push snapshot image**: Build the image based on selected branches in **Strategy Settings**. Push the tag of `SNAPSHOT-$BRANCH_NAME-$BUILD_NUMBER` to Docker Hub, the `$BUILD_NUMBER` of which is the operation serial number in the pipeline's activity list.
 - **Stage 5. Push the latest image**: Tag the sonarqube branch as `latest` and push it to Docker Hub.
