@@ -227,7 +227,7 @@ spec:
       elasticsearchDataVolumeSize: 20Gi    # Volume size of Elasticsearch data nodes
       logMaxAge: 7                     # Log retention time in built-in Elasticsearch, it is 7 days by default.
       elkPrefix: logstash              # The string making up index names. The index name will be formatted as ks-<elk_prefix>-log
-      # externalElasticsearchUrl:
+      # externalElasticsearchHost:
       # externalElasticsearchPort:
   console:
     enableMultiLogin: false  # enable/disable multiple sing on, it allows a user can be used by different users at the same time.
