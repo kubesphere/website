@@ -1,5 +1,5 @@
 ---
-title: “尚医通” 微服务项目 DevOps 实战 -Webhook 自启动流水线
+title: “尚医通” 微服务项目 DevOps 实战 - Webhook 自启动流水线
 keywords: Kubesphere, Kubesphere learn
 description: Kubesphere
 
