@@ -2,8 +2,8 @@
 title: 'Kubernetes Multi-cluster Management and Application Deployment in Hybrid Cloud'  
 tag: 'KubeSphere, Kubernetes, Multi-cluster Management'  
 keywords: 'KubeSphere, Kubernetes, Multi-cluster Management, KubeFed'  
-description: 'This post introduces the development of Kubernetes multi-cluster management and existing multi-cluster solutions. It also shares how KubeSphere distributes and deploys applications in a unified manner using KubeFed in hybrid cloud for the purpose of achieving cross-region high availability and disaster recovery. Finally, it discusses the possibility of decentralized multi-cluster architecture.'   
-createTime: '2021-05-26'  
+description: 'This post introduces Kubernetes multi-cluster management and shares how KubeSphere distributes and deploys applications in a unified manner using KubeFed in hybrid cloud.'   
+createTime: '2021-12-26'  
 author: 'Li Yu, Bettygogo'  
 snapshot: '/images/blogs/en/Kubernetes-multicluster-KubeSphere/00-federation-control-plane.png'
 ---
