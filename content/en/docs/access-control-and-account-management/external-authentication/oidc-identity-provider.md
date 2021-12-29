@@ -9,7 +9,7 @@ weight: 12221
 
 ## OIDC Identity Provider
 
-[OpenID Connect](https://openid.net/connect/) is an interoperable authentication protocol based on the OAuth 2.0 family of specifications. It uses straightforward REST/JSON message flows with a design goal of “making simple things simple and complicated things possible”. It’s uniquely easy for developers to integrate, compared to any preceding Identity protocol, such as Keycloak, Okta, Dex, Auth0, Gluu, and many more.
+[OpenID Connect](https://openid.net/connect/) is an interoperable authentication protocol based on the OAuth 2.0 family of specifications. It uses straightforward REST/JSON message flows with a design goal of “making simple things simple and complicated things possible”. It’s uniquely easy for developers to integrate, compared to any preceding Identity protocol, such as Keycloak, Okta, Dex, Auth0, Gluu, Casdoor and many more.
 
 ## Prerequisites
 
