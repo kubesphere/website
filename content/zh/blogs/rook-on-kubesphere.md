@@ -1,5 +1,5 @@
 ---
-title: '在 KubeSphere 中使用 Rook 构建生产可用存储环境'
+title: '在 Kubernetes 中使用 Rook 构建生产可用存储环境'
 tag: '存储'
 keywords: 'Rook, KubeSphere, Ceph, Kubernetes'
 description: '本文将介绍如何使用 Rook 来创建维护 Ceph 集群，并作为 Kubernetes 的持久化存储。'
