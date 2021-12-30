@@ -5,7 +5,7 @@ keywords: 'Serverless, FaaS, OpenFunction'
 description: '本文介绍函数计算概念、参考架构及发展趋势，介绍云原生 Serverless 领域的最新进展，进而阐述如何利用云原生技术从 0 到 1 打造新一代开源函数计算平台 OpenFunction。'
 createTime: '2021-12-03'
 author: '霍秉杰'
-snapshot: 'http://pek3b.qingstor.com/kubesphere-community/images/serverless-faas-openfunction.png'
+snapshot: 'https://pek3b.qingstor.com/kubesphere-community/images/serverless-faas-openfunction.png'
 ---
 
 **无服务器计算**，即通常所说的 Serverless，已经成为当前云原生领域炙手可热的名词，是继 IaaS，PaaS 之后云计算发展的下一波浪潮。Serverless 强调的是一种架构思想和服务模型，让开发者无需关心基础设施（服务器等），而是专注到应用程序业务逻辑上。加州大学伯克利分校在论文 A Berkeley View on Serverless Computing 中给出了两个关于 Serverless 的核心观点：
