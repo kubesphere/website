@@ -10,8 +10,8 @@ snapshot: 'https://pek3b.qingstor.com/kubesphere-community/images/serverless-faa
 
 **Serverless computing**, commonly known as Serverless, has become a buzzword in the cloud-native field. It will fuel the next wave of development in cloud computing after IaaS and PaaS. Serverless emphasizes an architecture philosophy and service model that allows developers to focus on implementing business logics in applications rather than on managing infrastructures (e.g., servers). In its paper *Cloud Programming Simplified: A Berkeley View on Serverless Computing*, the University of California at Berkeley presents two key viewpoints on Serverless:
 
-+ Although serverful computing will be here to stay, its importance will  decrease as Serverless computing continues to mature.
-+ Serverless computing will eventually become the paradigm of the cloud computing age, replacing the serverful computing model to a  great extent and putting an end to the Client-Server age.
++ Although server-based computing will be here to stay, its importance will decrease as Serverless computing continues to mature.
++ Serverless computing will eventually become the paradigm of the cloud computing age, replacing the server-based computing model to a great extent and putting an end to the Client-Server age.
 
 Now, what is Serverless?
 
@@ -28,12 +28,12 @@ Serverless consists of two components, **BaaS** and **FaaS**. Base cloud service
 The KubeSphere community has been conducting in-depth researches on Serverless since late 2020. We found that:
 
 - Most existing open-source FaaS projects were initiated earlier than the emergence of Knative.
-- An outstanding Serverless platform as it is, Knative cannot be considered as a FaaS platform because Knative Serving can run only applications rather than functions.
+- An outstanding Serverless platform as it is, Knative is still working its way towards a FaaS platform because Knative Serving can run only applications rather than functions.
 - Knative Eventing is an excellent event management framework, but its design is too complex and users could face a steep learning curve.
-- OpenFaaS is a popular FaaS project, but its technology stack is outdated as it depends on Prometheus and Alertmanager for autoscaling, which is not the most professional and agile practice in the cloud-native field.
+- OpenFaaS is a popular FaaS project, but its technology stack is rigid as it depends on Prometheus and Alertmanager for autoscaling, which is not the most professional and agile practice in the cloud-native field.
 - In recent years, many outstanding open-source projects (such as [KEDA](https://keda.sh/), [Dapr](https://dapr.io/), [Cloud Native Buildpacks (CNB)](https://buildpacks.io/), [Tekton](https://tekton.dev/), and [Shipwright](https://shipwright.io/)) have emerged in the cloud-native Serverless-related fields, laying a foundation for building a next generation open-source FaaS platform.
 
-To sum up, we have come to the conclusion that **the existing open-source Serverless or FaaS platforms cannnot meet the demands for building a modern cloud-native FaaS platform, while the latest advances in the cloud-native Serverless field make it possible to build a next generation FaaS platform.**
+To sum up, we have come to the conclusion that **the existing open-source Serverless or FaaS platforms cannot meet the demands for building a modern cloud-native FaaS platform, while the latest advances in the cloud-native Serverless field make it possible to build a next generation FaaS platform.**
 
 ## Framework Design of a Next Generation FaaS Platform
 
@@ -271,7 +271,7 @@ There are 4 main components:
   
   ![](https://pek3b.qingstor.com/kubesphere-community/images/202112021436924.png)
   
-  OpenFunction Events draws on some of the Argo Events design and also introduces Dapr. The overall architecture is divided into 3 parts:
+  OpenFunction Events draws on some Argo Events design and also introduces Dapr. The overall architecture is divided into 3 parts:
   
   + **EventSource**: an interface, which is implemented by asynchronous functions, for a variety of event sources to automatically scale based on the metrics of the event sources, making event consumption more resilient.
   + **EventBus**: `EventBus` uncouples EventBus from the specific Message Broker at the bottom layer through the capability of Dapr. You can integrate various MQ. There are two ways to handle an `EventSource` consumption event. One is to invoke the synchronous function and waiting for the function to return the result; the other is to write it into `EventBus` to trigger an asynchronous function when EventBus receives the event.
@@ -283,7 +283,7 @@ Want to have a look at the practical use cases for OpenFunction? Refer to [Serve
 
 ![](https://pek3b.qingstor.com/kubesphere-community/images/202112021742729.png)
 
-OpenFunction released its very first version in May 202. It has supported asynchronous functions since v0.2.0, added OpenFunction Events with Shipwright supported since v0.3.1, and added a CLI since v0.4.0.
+OpenFunction released its very first version in May 2021. It has supported asynchronous functions since v0.2.0, added OpenFunction Events with Shipwright supported since v0.3.1, and added a CLI since v0.4.0.
 
 **OpenFunction is planning to introduce a visual interface, support more EventSource and the ability to process edge loads, and accelerate cold start by using WebAssembly as a lightweight runtime and combining the Rust function.**
 
