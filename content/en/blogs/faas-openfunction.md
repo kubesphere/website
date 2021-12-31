@@ -21,7 +21,7 @@ On Serverless, the University of California at Berkeley also gave a clear defini
 
 ![](https://pek3b.qingstor.com/kubesphere-community/images/202112011620107.png)
 
-Serverless consists of two components, **BaaS** and **FaaS**. Base cloud services, including object storages, relational databases, and message queue (MQ), are essential for every cloud provider and belong to BaaS (Backend-as-a-Service). FaaS (Function-as-a-Service) is the core of Serverless.
+Serverless consists of two components, **BaaS** and **FaaS**. Base cloud services, including object storages, relational databases, and message queue (MQ), are essential for every cloud provider and belong to BaaS (Backend-as-a-Service). FaaS (Function as a Service) is the core of Serverless.
 
 ## Analysis of Existing Open-Source Serverless Platforms
 
