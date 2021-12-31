@@ -274,7 +274,7 @@ There are 4 main components:
   OpenFunction Events draws on some Argo Events design and also introduces Dapr. The overall architecture is divided into 3 parts:
   
   + **EventSource**: an interface, which is implemented by asynchronous functions, for a variety of event sources to automatically scale based on the metrics of the event sources, making event consumption more resilient.
-  + **EventBus**: `EventBus` uncouples EventBus from the specific Message Broker at the bottom layer through the capability of Dapr. You can integrate various MQ. There are two ways to handle an `EventSource` consumption event. One is to invoke the synchronous function and waiting for the function to return the result; the other is to write it into `EventBus` to trigger an asynchronous function when EventBus receives the event.
+  + **EventBus**: `EventBus` uncouples EventBus from the specific Message Broker at the bottom layer through the capability of Dapr. You can integrate various MQ. There are two ways to handle an event consumed by `EventSource`. One is to invoke the synchronous function and waiting for the function to return the result; the other is to write it into `EventBus` to trigger an asynchronous function when EventBus receives the event.
   + **Trigger**: `Trigger` filters various events through different expressions in `EventBus`, and writes them into `EventBus` to trigger another asynchronous function.
 
 Want to have a look at the practical use cases for OpenFunction? Refer to [Serverless Use Case: Elastic Kubernetes Log Alerts with OpenFunction and Kafka](https://kubesphere.io/blogs/serverless-way-for-kubernetes-log-alert/).
