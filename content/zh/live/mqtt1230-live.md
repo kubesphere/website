@@ -6,7 +6,7 @@ css: scss/live-detail.scss
 
 section1:
   snapshot: 
-  videoUrl: 
+  videoUrl: //player.bilibili.com/player.html?aid=422780369&bvid=BV133411i7JM&cid=473091163&page=1&high_quality=1
   type: iframe
   time: 2021-12-30 20:00-21:00
   timeIcon: /images/live/clock.svg
@@ -36,5 +36,9 @@ section1:
 ## 直播地址
 
 B 站  http://live.bilibili.com/22580654
+
+## PPT 下载
+
+可扫描官网底部二维码，关注 「KubeSphere云原生」公众号，后台回复 `20211230` 即可下载 PPT。
 
 
