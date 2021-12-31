@@ -10,14 +10,14 @@ section1:
 
 section2:
   image: /images/live/cloudnative-live-banner.png
-  url: ./faas1223-live/
+  url: ./mqtt1230-live/
 
   notice:
-    title: MQTT 及车联网场景应用
-    tag: 预告
-    time: 2021 年 12 月 30 日晚 8 点
+    title: 函数计算应用场景探讨及 FaaS 设计和实现
+    tag: 结束
+    time: 2021 年 12 月 23 日晚 8 点
     base: 线上
-    url: ./mqtt1230-live/
+    url: ./faas1223-live/
 
   over:
     title: 携程分布式存储实践
@@ -26,6 +26,13 @@ section2:
 
 section3:
   videos:
+    - title: MQTT 及车联网场景应用
+      link: ./mqtt1230-live/
+      snapshot: https://pek3b.qingstor.com/kubesphere-community/images/mqtt1230-live-cover.png
+      type: iframe
+      createTime: 2021.12.30
+      group: 直播回放
+
     - title: 函数计算应用场景探讨及 FaaS 设计和实现
       link: ./faas1223-live/
       snapshot: https://pek3b.qingstor.com/kubesphere-community/images/faas1223-live-cover.png
