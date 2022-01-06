@@ -6,6 +6,36 @@ viewDetail: 查看详情
 
 list:
   - name: KubeCon 大会
+    content: KubeSphere 社区在 KubeCon + CloudNativeCon 2021 上的技术主题分享。
+    icon: images/conferences/kubecon.svg
+    bg: images/conferences/kubecon-bg.svg
+    bgColor: linear-gradient(270deg, rgb(101, 193, 148), rgb(76, 169, 134))
+    children:
+      - name: 基于 RBAC 和 Kubefed 的 Kubernetes 多集群和多租户管理
+        summary: 软隔离是一种没有严格隔离不同用户、工作负载或应用程序的隔离形式。就 Kubernetes 而言，软隔离通常由 RBAC 和命名空间隔离。当集群管理员跨多个 Kubernetes 集群实现隔离时，会遇到许多挑战，如身份验证和授权、资源配额、网络策略、安全策略等。
+        author: 万宏明
+        link:  rbac/
+        image: https://pek3b.qingstor.com/kubesphere-community/images/kubecon2021-hongming.png
+
+      - name: 从以应用程序为中心的抽象将应用程序运送到多集群环境
+        summary: 许多应用程序定义和框架都来自云原生计算基金会领域，Helm 和 Operator 是 Kubernetes 生态系统中打包和管理应用程序的最流行方式。根据云原生计算基金会 2020 年的调查，以多集群和多云为代表的企业架构已成为现代基础设施的新趋势。如何利用以应用为中心的概念来提供自助服务，跨多个 Kubernetes 集群和云交付/部署应用程序？
+        author: 赖正一
+        link: apps/
+        image: https://pek3b.qingstor.com/kubesphere-community/images/kubecon2021-zhengyi.png
+
+      - name: 用云原生无服务器技术构建现代 FaaS（函数即服务）平台
+        summary: 作为无服务器的核心，FaaS（函数即服务）越来越受到人们的关注。新兴的云原生无服务器技术可以通过用更强大的云原生替代方案替换 FaaS平台的关键组件，从而构建一个强大的现代 FaaS 平台。
+        author: 霍秉杰，雷万钧
+        link:  openfunction/
+        image: https://pek3b.qingstor.com/kubesphere-community/images/kubecon2021-ben.png
+
+      - name: 去哪儿网 Kubernetes 多集群和金丝雀部署最佳实践
+        summary: 随着云原生时代的到来，学习和拥抱云原生不可避免，因为其可以使业务运营更加敏捷。容器化是将应用转移到 Kubernetes 之前的第一步。如何将数以千计的应用程序高效、顺畅地从基于内核的虚拟机 (KVM) 迁移到容器已成为去哪儿网基础设施团队面临的一个巨大挑战。
+        author: 邹晟，陈靖贤
+        link:  qunar/
+        image: https://pek3b.qingstor.com/kubesphere-community/images/kubecon2021-qunar.png   
+
+  - name: KubeCon 大会
     content: KubeSphere 团队在 KubeCon + CloudNativeCon 2019 Shanghai 上的技术主题分享。
     icon: images/conferences/kubecon.svg
     bg: images/conferences/kubecon-bg.svg
