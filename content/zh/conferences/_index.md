@@ -17,7 +17,7 @@ list:
         link:  rbac/
         image: https://pek3b.qingstor.com/kubesphere-community/images/kubecon2021-hongming.png
 
-      - name: 从以应用程序为中心的抽象将应用程序运送到多集群环境
+      - name: 用统一的方式分发 Helm 和 Operator 应用
         summary: 许多应用程序定义和框架都来自云原生计算基金会领域，Helm 和 Operator 是 Kubernetes 生态系统中打包和管理应用程序的最流行方式。根据云原生计算基金会 2020 年的调查，以多集群和多云为代表的企业架构已成为现代基础设施的新趋势。如何利用以应用为中心的概念来提供自助服务，跨多个 Kubernetes 集群和云交付/部署应用程序？
         author: 赖正一
         link: apps/
