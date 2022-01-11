@@ -1,5 +1,5 @@
 ---
-title: '从以应用程序为中心的抽象将应用程序运送到多集群环境'
+title: '用统一的方式分发 Helm 和 Operator 应用'
 author: '赖正一'
 createTime: '2021-12-09'
 snapshot: 'https://pek3b.qingstor.com/kubesphere-community/images/kubecon2021-zhengyi.png'
