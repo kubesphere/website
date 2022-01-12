@@ -1,8 +1,8 @@
 ---
-title: 'OpenFunction: Build a Novel Platform for Open-Source Function Computing from Scratch'  
+title: 'OpenFunction: Build a Modern Cloud-Native Serverless Computing Platform'  
 tag: 'Serverless, FaaS, OpenFunction'  
 keywords: Serverless, FaaS, OpenFunction  
-description: This article describes function computing concepts, reference architectures, and the latest trends in the cloud-native Serverless field, and further explains how OpenFunction builds a novel platform for open-source function computing from scratch.   
+description: This article describes function computing concepts, reference architectures, and the latest trends in the cloud-native Serverless field, and further explains how OpenFunction builds a modern cloud-native serverless computing platform.   
 createTime: '2021-12-03'  
 author: 'Huo Bingjie, Felix'  
 snapshot: 'https://pek3b.qingstor.com/kubesphere-community/images/serverless-faas-openfunction.png'
@@ -30,7 +30,7 @@ The KubeSphere community has been conducting in-depth researches on Serverless s
 - Most existing open-source FaaS projects were initiated earlier than the emergence of Knative.
 - An outstanding Serverless platform as it is, Knative is still working its way towards a FaaS platform because Knative Serving can run only applications rather than functions.
 - Knative Eventing is an excellent event management framework, but its design is too complex and users could face a steep learning curve.
-- OpenFaaS is a popular FaaS project, but its technology stack is rigid as it depends on Prometheus and Alertmanager for autoscaling, which is not the most professional and agile practice in the cloud-native field.
+- OpenFaaS is a popular FaaS project, but its technology stack is rigid as it depends on Prometheus and Alertmanager for autoscaling.
 - In recent years, many outstanding open-source projects (such as [KEDA](https://keda.sh/), [Dapr](https://dapr.io/), [Cloud Native Buildpacks (CNB)](https://buildpacks.io/), [Tekton](https://tekton.dev/), and [Shipwright](https://shipwright.io/)) have emerged in the cloud-native Serverless-related fields, laying a foundation for building a next generation open-source FaaS platform.
 
 To sum up, we have come to the conclusion that **the existing open-source Serverless or FaaS platforms cannot meet the demands for building a modern cloud-native FaaS platform, while the latest advances in the cloud-native Serverless field make it possible to build a next generation FaaS platform.**
@@ -117,7 +117,7 @@ func main() {
 }
 ```
 
-Before the application is started, the function is registered as an HTTP function, a CloudEvent function, or an OpenFunction function. When the registration is complete, `functionframeworks.Start` is invoked to start the application.
+Before the application is started, the function is registered as an HTTP function, a CloudEvent function, or an OpenFunction function. When the registration is completed, `functionframeworks.Start` is invoked to start the application.
 
 ### Build
 
@@ -253,7 +253,7 @@ Assuming that you have to access many other MQ components in addition to Kafka, 
 
 Thus, Dapr is suitable for function computing platforms.
 
-## OpenFunction: the Next Generation Platform for Open-Source Function Computing
+## OpenFunction: a Modern Cloud-Native Serverless Computing Platform
 
 Based on researches on the technologies mentioned above, an open-source project named [OpenFunction](https://github.com/OpenFunction/OpenFunction/) came into being. Its architecture is shown in the following figure.
 
