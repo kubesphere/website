@@ -13,11 +13,11 @@ section2:
   url: ./mqtt1230-live/
 
   notice:
-    title: 函数计算应用场景探讨及 FaaS 设计和实现
-    tag: 结束
-    time: 2021 年 12 月 23 日晚 8 点
+    title: OpenFunction v0.5.0 新特性讲解与 v0.6.0 展望
+    tag: 预告
+    time: 2022 年 01 月 13 日晚 8 点
     base: 线上
-    url: ./faas1223-live/
+    url: ./openfunction0113-live/
 
   over:
     title: 携程分布式存储实践
