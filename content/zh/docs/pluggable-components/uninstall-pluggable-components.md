@@ -10,7 +10,7 @@ Weight: 6940
 
 {{< notice note >}}
 
-KubeSphere 3.2.x 卸载某些可插拔组件的方法与 KubeSphere v3.0.0 不相同。有关 KubeSphere v3.0.0 卸载可插拔组件的详细方法，请参见[从 KubeSphere 上卸载可插拔组件](https://v3-0.docs.kubesphere.io/zh/docs/faq/installation/uninstall-pluggable-components/)。
+KubeSphere 3.2.x 卸载某些可插拔组件的方法与 KubeSphere v3.0.0 不相同。有关 KubeSphere v3.0.0 卸载可插拔组件的详细方法，请参阅从 KubeSphere 上卸载可插拔组件](https://v3-0.docs.kubesphere.io/zh/docs/faq/installation/uninstall-pluggable-components/)。
 
 
 {{</ notice >}}
@@ -19,7 +19,7 @@ KubeSphere 3.2.x 卸载某些可插拔组件的方法与 KubeSphere v3.0.0 不�
 
 在卸载除服务拓扑图和容器组 IP 池之外的可插拔组件之前，必须将 CRD 配置文件 `ClusterConfiguration` 中的 `ks-installer` 中的 `enabled` 字段的值从 `true` 改为 `false`。
 
-使用下列其中一方法更改 `enabled` 字段的值：
+使用下列任一方法更改 `enabled` 字段的值：
 
 - 运行以下命令编辑 `ks-installer`：
 

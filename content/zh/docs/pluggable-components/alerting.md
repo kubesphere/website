@@ -24,14 +24,14 @@ weight: 6600
 如果您采用 [All-in-One 安装](../../quick-start/all-in-one-on-linux/)，则不需要创建 `config-sample.yaml` 文件，因为可以直接创建集群。一般来说，All-in-One 模式针对那些刚接触 KubeSphere 并希望熟悉系统的用户。如果您想在该模式下启用告警系统（例如用于测试），请参考[下面的部分](#在安装后启用告警系统)，查看如何在安装后启用告警系统。
     {{</ notice >}}
 
-2. 在该文件中，搜寻到 `alerting` 并将 `enabled` 的 `false` 更改为 `true`。完成后保存文件。
+2. 在该文件中，搜索 `alerting` 并将 `enabled` 的 `false` 更改为 `true`。完成后保存文件。
 
     ```yaml
     alerting:
       enabled: true # 将“false”更改为“true”。
     ```
     
-3. 使用该配置文件创建集群：
+3. 执行以下命令使用该配置文件创建集群：
 
     ```bash
     ./kk create cluster -f config-sample.yaml
@@ -39,7 +39,7 @@ weight: 6600
 
 ### 在 Kubernetes 上安装
 
-[在 Kubernetes 上安装 KubeSphere](../../installing-on-kubernetes/introduction/overview/) 时，您可以先在 [cluster-configuration.yaml](https://github.com/kubesphere/ks-installer/releases/download/v3.2.1/cluster-configuration.yaml) 文件中启用告警系统。
+当您[在 Kubernetes 上安装 KubeSphere](../../installing-on-kubernetes/introduction/overview/) 时，需要先在 [cluster-configuration.yaml](https://github.com/kubesphere/ks-installer/releases/download/v3.2.1/cluster-configuration.yaml) 文件中启用告警系统。
 
 1. 下载 [cluster-configuration.yaml](https://github.com/kubesphere/ks-installer/releases/download/v3.2.1/cluster-configuration.yaml) 文件并进行编辑。
 
@@ -47,7 +47,7 @@ weight: 6600
     vi cluster-configuration.yaml
     ```
 
-2. 在该本地 `cluster-configuration.yaml` 文件中，搜寻到 `alerting`，将 `enabled` 的 `false` 更改为 `true` 以启用告警系统。完成后保存文件。
+2. 在 `cluster-configuration.yaml` 文件中，搜索 `alerting`，将 `enabled` 的 `false` 更改为 `true` 以启用告警系统。完成后保存文件。
 
     ```yaml
     alerting:
@@ -81,7 +81,7 @@ weight: 6600
       enabled: true # 将“false”更改为“true”。
     ```
     
-5. 您可以使用 Web Kubectl 工具执行以下命令来检查安装过程：
+5. 在  kubectl 中执行以下命令检查安装过程：
 
     ```bash
     kubectl logs -n kubesphere-system $(kubectl get pod -n kubesphere-system -l app=ks-install -o jsonpath='{.items[0].metadata.name}') -f
@@ -89,9 +89,9 @@ weight: 6600
 
     {{< notice note >}}
 
-您可以通过点击控制台右下角的 <img src="/images/docs/zh-cn/enable-pluggable-components/kubesphere-alerting/hammer.png" height="20px"> 找到 Web Kubectl 工具。
+您可以通过点击控制台右下角的 <img src="/images/docs/zh-cn/enable-pluggable-components/kubesphere-alerting/hammer.png" height="20px"> 找到 kubectl 工具。
     {{</ notice >}}
 
 ## 验证组件的安装
 
-如果您在**集群管理**页面可以看到**告警消息**和**告警策略**，说明安装成功，因为安装组件之后才会显示这两部分。
+如果您可以在**集群管理**页面看到**告警消息**和**告警策略**，则说明安装成功。

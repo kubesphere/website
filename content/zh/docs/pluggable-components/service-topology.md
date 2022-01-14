@@ -25,7 +25,7 @@ weight: 6915
 
    {{</ notice >}}
 
-2. 在该文件中，搜寻到 `network.topology.type`，然后将 `none` 改为 `weave-scope`。完成后保存文件。
+2. 在该文件中，搜索 `network.topology.type`，并将 `none` 改为 `weave-scope`。完成后保存文件。
 
    ```yaml
    network:
@@ -33,7 +33,7 @@ weight: 6915
        type: weave-scope # 将“none”更改为“weave-scope”。
    ```
 
-3. 使用该配置文件创建一个集群：
+3. 执行以下命令使用该配置文件创建集群：
 
    ```bash
    ./kk create cluster -f config-sample.yaml
@@ -41,7 +41,7 @@ weight: 6915
 
 ### 在 Kubernetes 上安装
 
-[在 Kubernetes 上安装 KubeSphere](../../installing-on-kubernetes/introduction/overview/) 时，您可以在 [cluster-configuration.yaml](https://github.com/kubesphere/ks-installer/releases/download/v3.2.1/cluster-configuration.yaml) 文件中首先启用服务拓扑图。
+当您[在 Kubernetes 上安装 KubeSphere](../../installing-on-kubernetes/introduction/overview/) 时，需要先在[cluster-configuration.yaml](https://github.com/kubesphere/ks-installer/releases/download/v3.2.1/cluster-configuration.yaml) 文件中启用服务拓扑图。
 
 1. 下载 [cluster-configuration.yaml](https://github.com/kubesphere/ks-installer/releases/download/v3.2.1/cluster-configuration.yaml) 文件并进行编辑。
 
@@ -49,7 +49,7 @@ weight: 6915
     vi cluster-configuration.yaml
     ```
 
-2. 在本地 `cluster-configuration.yaml` 文件中，搜寻到 `network.topology.type`，将 `none` 更改为 `weave-scope` 以启用服务拓扑图。完成后保存文件。
+2. 在 `cluster-configuration.yaml` 文件中，搜索 `network.topology.type`，将 `none` 更改为 `weave-scope` 以启用服务拓扑图。完成后保存文件。
 
     ```yaml
     network:
@@ -57,7 +57,7 @@ weight: 6915
         type: weave-scope # 将“none”更改为“weave-scope”。
     ```
 
-3. 执行以下命令开始安装。
+3. 执行以下命令开始安装：
 
     ```bash
     kubectl apply -f https://github.com/kubesphere/ks-installer/releases/download/v3.2.1/kubesphere-installer.yaml
@@ -68,7 +68,7 @@ weight: 6915
 
 ## 在安装后启用服务拓扑图
 
-1. 使用 `admin` 用户登录控制台。点击左上角的**平台管理**，然后选择**集群管理**。
+1. 以 `admin` 用户登录控制台。点击左上角的**平台管理**，然后选择**集群管理**。
 
 2. 点击 **CRD**，然后在搜索栏中输入 `clusterconfiguration`。点击搜索结果查看其详情页。
 
@@ -86,7 +86,7 @@ weight: 6915
         type: weave-scope # 将“none”更改为“weave-scope”。
     ```
 
-5. 您可以使用 Web Kubectl 执行以下命令查看安装过程：
+5. 在 kubectl 中执行以下命令检查安装过程：
 
     ```bash
     kubectl logs -n kubesphere-system $(kubectl get pod -n kubesphere-system -l app=ks-install -o jsonpath='{.items[0].metadata.name}') -f
@@ -94,7 +94,7 @@ weight: 6915
 
     {{< notice note >}}
 
-您可以通过点击控制台右下角的 <img src="/images/docs/zh-cn/enable-pluggable-components/service-topology/hammer.png" height="20px"> 来找到 Web kubectl 工具。
+您可以通过点击控制台右下角的 <img src="/images/docs/zh-cn/enable-pluggable-components/service-topology/hammer.png" height="20px"> 来找到 kubectl 工具。
     {{</ notice >}}
 
 ## 验证组件的安装
@@ -107,7 +107,7 @@ weight: 6915
 
 {{</ tab >}}
 
-{{< tab "通过 Kubectl 验证组件的安装" >}}
+{{< tab "通过 kubectl 验证组件的安装" >}}
 
 执行以下命令来检查容器组的状态：
 

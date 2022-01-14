@@ -16,7 +16,7 @@ KubeSphere 事件系统使用户能够跟踪集群内部发生的事件，例如
 
 当您在 Linux 上安装多节点 KubeSphere 时，需要创建一个配置文件，该文件列出了所有 KubeSphere 组件。
 
-1. 基于[在 Linux 上安装 KubeSphere](../../installing-on-linux/introduction/multioverview/) 的教程，您需要创建一个默认文件 `config-sample.yaml`。通过执行以下命令修改该文件：
+1. [在 Linux 上安装 KubeSphere](../../installing-on-linux/introduction/multioverview/) 时，您需要创建一个默认文件 `config-sample.yaml`。执行以下命令修改该文件：
 
     ```bash
     vi config-sample.yaml
@@ -59,7 +59,7 @@ KubeSphere 事件系统使用户能够跟踪集群内部发生的事件，例如
 
 ### 在 Kubernetes 上安装
 
-在 Kubernetes 上安装 KubeSphere 的过程与教程[在 Kubernetes 上安装 KubeSphere](../../installing-on-kubernetes/introduction/overview/) 中的说明大致相同，不同之处是需要先在 [cluster-configuration.yaml](https://github.com/kubesphere/ks-installer/releases/download/v3.2.1/cluster-configuration.yaml) 文件中启用事件系统（可选组件）。
+当您[在 Kubernetes 上安装 KubeSphere](../../installing-on-kubernetes/introduction/overview/) 时，需要先在 [cluster-configuration.yaml](https://github.com/kubesphere/ks-installer/releases/download/v3.2.1/cluster-configuration.yaml) 文件中启用事件系统。
 
 1. 下载 [cluster-configuration.yaml](https://github.com/kubesphere/ks-installer/releases/download/v3.2.1/cluster-configuration.yaml) 文件，然后打开并开始编辑。
 
@@ -67,7 +67,7 @@ KubeSphere 事件系统使用户能够跟踪集群内部发生的事件，例如
     vi cluster-configuration.yaml
     ```
 
-2. 在该本地 `cluster-configuration.yaml` 文件中，搜寻到 `events`，并将 `enabled` 的 `false` 改为 `true`，启用事件系统。完成后保存文件。
+2. 在 `cluster-configuration.yaml` 文件中，搜索 `events`，并将 `enabled` 的 `false` 改为 `true`以启用事件系统。完成后保存文件。
 
     ```yaml
     events:
@@ -100,9 +100,9 @@ KubeSphere 事件系统使用户能够跟踪集群内部发生的事件，例如
 
 ## 在安装后启用事件系统
 
-1. 以 `admin` 身份登录控制台。点击左上角的**平台管理**，选择**集群管理**。
+1. 使用 `admin` 用户登录控制台。点击左上角的**平台管理**，选择**集群管理**。
    
-2. 点击 **CRD**，在搜索栏中输入 `clusterconfiguration`。点击结果查看其详细页面。
+2. 点击 **CRD**，在搜索栏中输入 `clusterconfiguration`。点击结果查看其详情页。
 
     {{< notice info >}}
 
@@ -112,7 +112,7 @@ KubeSphere 事件系统使用户能够跟踪集群内部发生的事件，例如
 
 3. 在**自定义资源**中，点击 `ks-installer` 右侧的 <img src="/images/docs/zh-cn/enable-pluggable-components/kubesphere-events/three-dots.png" height="20px">，选择**编辑 YAML**。
 
-4. 在该 YAML 文件中，搜寻到 `events`，将 `enabled` 的 `false` 改为 `true`。完成后，点击右下角的**确定**，保存配置。
+4. 在该配置文件中，搜索 `events`，将 `enabled` 的 `false` 改为 `true`。完成后，点击右下角的**确定**，保存配置。
 
     ```yaml
     events:
@@ -136,7 +136,7 @@ KubeSphere 事件系统使用户能够跟踪集群内部发生的事件，例如
       externalElasticsearchPort: # The port of external Elasticsearch.
     ```
 
-5. 您可以使用 Web Kubectl 工具执行以下命令来检查安装过程：
+5. 在 kubectl 中执行以下命令检查安装过程：
 
     ```bash
     kubectl logs -n kubesphere-system $(kubectl get pod -n kubesphere-system -l app=ks-install -o jsonpath='{.items[0].metadata.name}') -f
@@ -144,7 +144,7 @@ KubeSphere 事件系统使用户能够跟踪集群内部发生的事件，例如
 
     {{< notice note >}}
 
-您可以通过点击控制台右下角的 <img src="/images/docs/zh-cn/enable-pluggable-components/kubesphere-events/hammer.png" height="20px"> 找到 Web Kubectl 工具。
+您可以通过点击控制台右下角的 <img src="/images/docs/zh-cn/enable-pluggable-components/kubesphere-events/hammer.png" height="20px"> 找到 kubectl 工具。
 
 {{</ notice >}}
 

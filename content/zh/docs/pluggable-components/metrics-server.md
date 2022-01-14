@@ -14,7 +14,7 @@ KubeSphere 支持用于[部署](../../project-user-guide/application-workloads/d
 
 当您在 Linux 上安装多节点 KubeSphere 时，首先需要创建一个配置文件，该文件列出了所有 KubeSphere 组件。
 
-1. 基于[在 Linux 上安装 KubeSphere](../../installing-on-linux/introduction/multioverview/) 的教程，您需要创建一个默认文件 `config-sample.yaml`，通过执行以下命令修改该文件：
+1. [在 Linux 上安装 KubeSphere](../../installing-on-linux/introduction/multioverview/) 时，您需要创建一个默认文件 `config-sample.yaml`，通过执行以下命令修改该文件：
 
    ```bash
    vi config-sample.yaml
@@ -24,7 +24,7 @@ KubeSphere 支持用于[部署](../../project-user-guide/application-workloads/d
    如果您采用 [All-in-One 安装](../../quick-start/all-in-one-on-linux/)，则不需要创建 `config-sample.yaml` 文件，因为可以直接创建集群。一般来说，All-in-One 模式是为那些刚接触 KubeSphere 并希望熟悉系统的用户而准备的。如果您想在这个模式下启用 Metrics Server（比如用于测试），请参考[下面的部分](#在安装后启用应用商店)，查看如何在安装后启用 Metrics Server。
    {{</ notice >}}
 
-2. 在该文件中，搜寻到 `metrics_server`，并将 `enabled` 的 `false` 改为 `true`，完成后保存文件。
+2. 在该文件中，搜寻到 `metrics_server`，并将 `enabled` 的 `false` 改为 `true`。完成后保存文件。
 
    ```yaml
    metrics_server:
@@ -39,7 +39,7 @@ KubeSphere 支持用于[部署](../../project-user-guide/application-workloads/d
 
 ### 在 Kubernetes 上安装
 
-[在 Kubernetes 上安装 KubeSphere](../../installing-on-kubernetes/introduction/overview/) 教程中演示了在 Kubernetes 上安装 KubeSphere 的流程。若想安装可选组件 Metrics Server，您可以先在 [cluster-configuration.yaml](https://github.com/kubesphere/ks-installer/releases/download/v3.2.1/cluster-configuration.yaml) 文件中先启用该组件。
+当您[在 Kubernetes 上安装 KubeSphere](../../installing-on-kubernetes/introduction/overview/) 时，需要先在 [cluster-configuration.yaml](https://github.com/kubesphere/ks-installer/releases/download/v3.2.1/cluster-configuration.yaml) 文件中先启用 Metrics Server组件。
 
 1. 下载文件 [cluster-configuration.yaml](https://github.com/kubesphere/ks-installer/releases/download/v3.2.1/cluster-configuration.yaml)，并打开文件进行编辑。
 
@@ -47,7 +47,7 @@ KubeSphere 支持用于[部署](../../project-user-guide/application-workloads/d
     vi cluster-configuration.yaml
     ```
 
-2. 在本地文件 `cluster-configuration.yaml` 中，导航到 `metrics_server`，并在 `enabled` 一行将 `false` 更改为 `true`。完成之后，请保存文件。
+2. 在 `cluster-configuration.yaml` 中，搜索 `metrics_server`，并将 `enabled` 的 `false` 改为 `true`。完成后保存文件。
 
     ```yaml
     metrics_server:
@@ -68,26 +68,26 @@ KubeSphere 支持用于[部署](../../project-user-guide/application-workloads/d
 
 ## 在安装后启用 Metrics Server
 
-1. 以 `admin` 身份登录控制台。点击左上角**平台管理**，选择**集群管理**。
+1. 以 `admin` 用户登录控制台。点击左上角**平台管理**，选择**集群管理**。
    
 2. 点击 **CRD**，在搜索栏中输入 `clusterconfiguration`。点击搜索结果查看详情页。
 
     {{< notice info >}}
 
-定制资源定义（CRD）能让用户创建新的资源类型，而无需添加其他 API 服务器。用户可以像其他原生 Kubernetes 对象一样使用这些资源。
+定制资源定义（CRD）允许用户在不增加额外 API 服务器的情况下创建一种新的资源类型，用户可以像使用其他 Kubernetes 原生对象一样使用这些定制资源。
 
     {{</ notice >}}
 
 3. 在**自定义资源**中，点击 `ks-installer` 右侧的 <img src="/images/docs/zh-cn/enable-pluggable-components/metrics-server/three-dots.png" height="20px">，选择**编辑 YAML**。
 
-4. 在该 YAML 文件中，导航到 `metrics_server`，在 `enabled` 一行将 `false` 更改为 `true`。完成后，点击右下角的**确定**以保存配置。
+4. 在该 YAML 文件中，搜索 `metrics_server`，将 `enabled` 的 `false` 改为 `true`。完成后，点击右下角的**确定**以保存配置。
 
     ```yaml
     metrics_server:
       enabled: true # 将“false”更改为“true”。
     ```
 
-5. 您可以通过执行以下命令，使用 kubectl 来检查安装过程：
+5. 在 kubectl 中执行以下命令检查安装过程：
 
     ```bash
     kubectl logs -n kubesphere-system $(kubectl get pod -n kubesphere-system -l app=ks-install -o jsonpath='{.items[0].metadata.name}') -f
@@ -100,7 +100,7 @@ KubeSphere 支持用于[部署](../../project-user-guide/application-workloads/d
 
 ## 验证组件的安装
 
-执行以下命令以验证 Metrics Server 的容器组在正常运行。
+执行以下命令以验证 Metrics Server 的容器组是否正常运行：
 
 ```bash
 kubectl get pod -n kube-system

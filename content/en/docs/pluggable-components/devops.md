@@ -6,9 +6,9 @@ linkTitle: "KubeSphere DevOps System"
 weight: 6300
 ---
 
-The KubeSphere DevOps System is designed for CI/CD workflows in Kubernetes. Based on [Jenkins](https://jenkins.io/), it provides one-stop solutions to help both development and Ops teams build, test and publish apps to Kubernetes in a straight-forward way. It also features plugin management, [Binary-to-Image (B2I)](../../project-user-guide/image-builder/binary-to-image/), [Source-to-Image (S2I)](../../project-user-guide/image-builder/source-to-image/), code dependency caching, code quality analysis, pipeline logging, etc.
+The KubeSphere DevOps System is designed for CI/CD workflows in Kubernetes. Based on [Jenkins](https://jenkins.io/), it provides one-stop solutions to help both development and Ops teams build, test and publish apps to Kubernetes in a straight-forward way. It also features plugin management, [Binary-to-Image (B2I)](../../project-user-guide/image-builder/binary-to-image/), [Source-to-Image (S2I)](../../project-user-guide/image-builder/source-to-image/), code dependency caching, code quality analysis, pipeline logging, and more.
 
-The DevOps System offers an enabling environment for users as apps can be automatically released to the same platform. It is also compatible with third-party private image registries (for example, Harbor) and code repositories (for example, GitLab/GitHub/SVN/BitBucket). As such, it creates excellent user experiences by providing users with comprehensive, visualized CI/CD pipelines which are extremely useful in air-gapped environments.
+The DevOps System offers an automated environment for users as apps can be automatically released to the same platform. It is also compatible with third-party private image registries (for example, Harbor) and code repositories (for example, GitLab/GitHub/SVN/BitBucket). As such, it creates excellent user experience by providing users with comprehensive, visualized CI/CD pipelines which are extremely useful in air-gapped environments.
 
 For more information, see [DevOps User Guide](../../devops-user-guide/).
 
@@ -18,7 +18,7 @@ For more information, see [DevOps User Guide](../../devops-user-guide/).
 
 When you implement multi-node installation of KubeSphere on Linux, you need to create a configuration file, which lists all KubeSphere components.
 
-1. In the tutorial of [Installing KubeSphere on Linux](../../installing-on-linux/introduction/multioverview/), you create a default file `config-sample.yaml`. Modify the file by executing the following command:
+1. In the tutorial of [Installing KubeSphere on Linux](../../installing-on-linux/introduction/multioverview/), you create a default file `config-sample.yaml`. Modify the file by running the following command:
 
     ```bash
     vi config-sample.yaml
@@ -28,7 +28,7 @@ When you implement multi-node installation of KubeSphere on Linux, you need to c
 If you adopt [All-in-One Installation](../../quick-start/all-in-one-on-linux/), you do not need to create a `config-sample.yaml` file as you can create a cluster directly. Generally, the all-in-one mode is for users who are new to KubeSphere and look to get familiar with the system. If you want to enable DevOps in this mode (for example, for testing purposes), refer to [the following section](#enable-devops-after-installation) to see how DevOps can be installed after installation.
     {{</ notice >}}
 
-2. In this file, navigate to `devops` and change `false` to `true` for `enabled`. Save the file after you finish.
+2. In this file, search for `devops` and change `false` to `true` for `enabled`. Save the file after you finish.
 
     ```yaml
     devops:
@@ -51,14 +51,14 @@ As you [install KubeSphere on Kubernetes](../../installing-on-kubernetes/introdu
     vi cluster-configuration.yaml
     ```
 
-2. In this local `cluster-configuration.yaml` file, navigate to `devops` and enable DevOps by changing `false` to `true` for `enabled`. Save the file after you finish.
+2. In this local `cluster-configuration.yaml` file, search for `devops` and enable DevOps by changing `false` to `true` for `enabled`. Save the file after you finish.
 
     ```yaml
     devops:
       enabled: true # Change "false" to "true".
     ```
 
-3. Execute the following commands to start installation:
+3. Run the following commands to start installation:
 
     ```bash
     kubectl apply -f https://github.com/kubesphere/ks-installer/releases/download/v3.2.1/kubesphere-installer.yaml
@@ -80,14 +80,14 @@ A Custom Resource Definition (CRD) allows users to create a new type of resource
 
 3. In **Custom Resources**, click <img src="/images/docs/enable-pluggable-components/kubesphere-devops-system/three-dots.png" height="20px"> on the right of `ks-installer` and select **Edit YAML**.
    
-4. In this YAML file, navigate to `devops` and change `false` to `true` for `enabled`. After you finish, click **OK** in the lower-right corner to save the configuration.
+4. In this YAML file, search for `devops` and change `false` to `true` for `enabled`. After you finish, click **OK** in the lower-right corner to save the configuration.
 
     ```yaml
     devops:
       enabled: true # Change "false" to "true".
     ```
 
-5. You can use the web kubectl to check the installation process by executing the following command:
+5. Use the web kubectl to check the installation process by running the following command:
 
     ```bash
     kubectl logs -n kubesphere-system $(kubectl get pod -n kubesphere-system -l app=ks-install -o jsonpath='{.items[0].metadata.name}') -f
@@ -111,7 +111,7 @@ Go to **System Components** and check that all components on the **DevOps** tab 
 
 {{< tab "Verify the component through kubectl" >}}
 
-Execute the following command to check the status of Pods:
+Run the following command to check the status of Pods:
 
 ```bash
 kubectl get pod -n kubesphere-devops-system
