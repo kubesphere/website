@@ -253,7 +253,7 @@ Assuming that you have to access many other MQ components in addition to Kafka, 
 
 Thus, Dapr is suitable for function computing platforms.
 
-## OpenFunction: a Modern Cloud-Native Serverless Computing Platform
+## OpenFunction: a Modern Cloud-Native Serverless Computing Platform on Kubernetes
 
 Based on researches on the technologies mentioned above, an open-source project named [OpenFunction](https://github.com/OpenFunction/OpenFunction/) came into being. Its architecture is shown in the following figure.
 
