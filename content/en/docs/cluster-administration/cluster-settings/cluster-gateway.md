@@ -6,7 +6,7 @@ linkTitle: "Cluster Gateway"
 weight: 8630
 ---
 
-KubeSphere 3.2.x provides cluster-scope gateways to let all projects share a global project gateway. This document describes how to set a cluster gateway on KubeSphere.
+KubeSphere 3.2.x provides cluster-scope gateways to let all projects share a global gateway. This document describes how to set a cluster gateway on KubeSphere.
 
 ## Prerequisites
 
@@ -21,10 +21,10 @@ You need to prepare a user with the `platform-admin` role, for example, `admin`.
 3. In the displayed dialog box, select an access mode for the gateway from the following two options:
 
    - **NodePort**: Access Services with corresponding node ports through the gateway. The NodePort access mode provides the following configurations:
-     - **Tracing**: Turn on the **Tracing** toggle to enable the Tracing feature on KubeSphere. Once it is enabled, check whether an annotation (for example, `nginx.ingress.kubernetes.io/service-upstream: true`) is added for your route when the route is inaccessible. If not, add an annotation to your route.
+     - **Tracing**: Turn on the **Tracing** toggle to enable the Tracing feature on KubeSphere. Once it is enabled, check whether an annotation (`nginx.ingress.kubernetes.io/service-upstream: true`) is added for your route when the route is inaccessible. If not, add an annotation to your route.
      - **Configuration Options**: Add key-value pairs to the cluster gateway.
    - **LoadBalancer**: Access Services with a single IP address through the gateway. The LoadBalancer access mode provides the following configurations:
-     - **Tracing**: Turn on the **Tracing** toggle to enable the Tracing feature on KubeSphere. Once it is enabled, check whether an annotation (for example, `nginx.ingress.kubernetes.io/service-upstream: true`) is added for your route when the route is inaccessible. If not, add an annotation to your route.
+     - **Tracing**: Turn on the **Tracing** toggle to enable the Tracing feature on KubeSphere. Once it is enabled, check whether an annotation (`nginx.ingress.kubernetes.io/service-upstream: true`) is added for your route when the route is inaccessible. If not, add an annotation to your route.
      - **Load Balancer Provider**: Select a load balancer provider from the drop-down list.
      - **Annotations**: Add annotations to the cluster gateway.
      - **Configuration Options**: Add key-value pairs to the cluster gateway.
