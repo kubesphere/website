@@ -1,82 +1,84 @@
 ---
-title: "Cluster Gateway"
-keywords: 'KubeSphere, Kubernetes, Cluster, Gateway, NodePort, LoadBalancer'
-description: 'Learn how to create a cluster-scope gateway on KubeSphere.'
-linkTitle: "Cluster Gateway"
+title: "集群网关"
+keywords: 'KubeSphere, Kubernetes, 集群, 网关, NodePort, LoadBalancer'
+description: '学习如何在 KubeSphere 中创建集群级别的网关。'
+linkTitle: "集群网关"
 weight: 8630
+
 ---
 
-KubeSphere 3.2.x provides cluster-scope gateways to let all projects share a global project gateway. This document describes how to set a cluster gateway on KubeSphere.
+KubeSphere v3.2.x 提供集群级别的网关，使所有项目共用一个全局网关。本文档介绍如何在 KubeSphere 设置集群网关。
 
-## Prerequisites
+## 准备工作
 
-You need to prepare a user with the `platform-admin` role, for example, `admin`. For more information, see [Create Workspaces, Projects, Users and Roles](../../../quick-start/create-workspace-and-project/).
+您需要创建一个拥有 `platform-admin` 角色的用户，例如：`admin`。有关更多信息，请参见[创建企业空间、项目、用户和平台角色](../../../quick-start/create-workspace-and-project/).
 
-## Create a Cluster Gateway
+## 创建集群网关
 
-1. Log in to the KubeSphere web console as `admin`. Click **Platform** in the upper-left corner and select **Cluster Management**.
+1. 以 `admin` 身份登录 web 控制台，点击左上角的**平台管理**并选择**集群管理**。
 
-2. Go to **Gateway Settings** under **Cluster Settings** from the navigation pane, select the **Cluster Gateway** tab, and click **Enable Gateway**.
+2. 点击导航面板中**集群设置**下的**网关设置**，选择**集群网关**选项卡，并点击**开启网关**。
 
-3. In the displayed dialog box, select an access mode for the gateway from the following two options:
+3. 在显示的对话框中，从以下的两个选项中选择网关的访问模式：
 
-   - **NodePort**: Access Services with corresponding node ports through the gateway. The NodePort access mode provides the following configurations:
-     - **Tracing**: Turn on the **Tracing** toggle to enable the Tracing feature on KubeSphere. Once it is enabled, check whether an annotation (for example, `nginx.ingress.kubernetes.io/service-upstream: true`) is added for your route when the route is inaccessible. If not, add an annotation to your route.
-     - **Configuration Options**: Add key-value pairs to the cluster gateway.
-   - **LoadBalancer**: Access Services with a single IP address through the gateway. The LoadBalancer access mode provides the following configurations:
-     - **Tracing**: Turn on the **Tracing** toggle to enable the Tracing feature on KubeSphere. Once it is enabled, check whether an annotation (for example, `nginx.ingress.kubernetes.io/service-upstream: true`) is added for your route when the route is inaccessible. If not, add an annotation to your route.
-     - **Load Balancer Provider**: Select a load balancer provider from the drop-down list.
-     - **Annotations**: Add annotations to the cluster gateway.
-     - **Configuration Options**: Add key-value pairs to the cluster gateway.
+   - **NodePort**：通过网关使用对应节点端口来访问服务。NodePort 访问模式提供以下配置：
+     - **链路追踪**：打开**链路追踪**开关以启用 KubeSphere 的链路追踪功能。功能开启后，如应用路由不可访问，请检查是否为应用路由是否添加注解（`nginx.ingress.kubernetes.io/service-upstream: true`）。如注解没有添加，则添加注解至您的应用路由中。
+     - **配置选项**：在集群网关中加入键值对。
+   - **LoadBalacer**：通过网关使用单个 IP 地址访问服务。LoadBalancer 访问模式提供以下配置：
+     - **链路追踪**：打开**链路追踪**开关以启用 KubeSphere 的链路追踪功能。功能开启后，如应用路由不可访问，请检查是否为应用路由是否添加注解（`nginx.ingress.kubernetes.io/service-upstream: true`）。如注解没有添加，则添加注解至您的应用路由中。
+     - **负载均衡器提供商**：从下拉列表中选择负载均衡器提供商。
+     - **注解**：添加注解至集群网关。
+     - **配置选项**: 添加键值对至集群网关。
 
    {{< notice info >}}
 
-   - To use the Tracing feature, turn on **Application Governance** when you create composed applications.
-   - For more information about how to use configuration options, see [Configuration options](https://kubernetes.github.io/ingress-nginx/user-guide/nginx-configuration/configmap/#configuration-options).
+   - 为了使用链路追踪功能，请在创建自制应用时打开**应用治理**。 
+   - 有关如何使用配置选项的更多信息，请参见 [Configuration options](https://kubernetes.github.io/ingress-nginx/user-guide/nginx-configuration/configmap/#configuration-options)。
 
    {{</ notice >}}
 
-4. Click **OK** to create the cluster gateway.
+4. 点击**确定**创建集群网关。
 
-5. The cluster gateway created is displayed and the basic information of the gateway is also shown on the page.
+5. 在这个页面中会展示创建的集群网关和该网关的基本信息。
 
    {{< notice note >}}
 
-   A gateway named `kubesphere-router-kubesphere-system` is also created, which serves as a global gateway for all projects in your cluster.
+   同时还创建了名为 kubesphere-router-kubesphere-system 的网关，作为集群中所有项目的全局网关。
 
    {{</ notice >}}
 
-6. Click **Manage** to select an operation from the drop-down menu:
+6. 点击**管理**，从下拉菜单中选择一项操作：
 
-   - **View Details**: Go to the details page of the cluster gateway.
-   - **Edit**: Edit configurations of the cluster gateway.
-   - **Disable**: Disable the cluster gateway.
+   - **查看详情**：转至集群网关详情页面。
+   - **编辑**：编辑集群网关配置。
+   - **关闭**：关闭集群网关。
 
-7. After a cluster gateway is created, see [Routes](../../../project-user-guide/application-workloads/routes/#create-a-route) for more information about how to create a route.
+7. 创建集群网关后，有关如何创建应用路由的更多信息，请参见[应用路由](../../../project-user-guide/application-workloads/routes/#create-a-route)。
 
-## Cluster Gateway Details Page
+## 集群网关详情页面
 
-1. Under the **Cluster Gateway** tab, click **Manage** on the right of a cluster gateway and select **View Details** to open its details page.
-2. On the details page, click **Edit** to edit configurations of the cluster gateway or click **More** to select an operation.
-3. Click the **Monitoring** tab to view the monitoring metrics of the cluster gateway.
-4. Click the **Configuration Options** tab to view configuration options of the cluster gateway.
-5. Click the **Gateway Logs** tab to view logs of the cluster gateway.
-6. Click the **Resource Status** tab to view workload status of the cluster gateway. Click <img src="/images/docs/common-icons/replica-plus-icon.png" width="15" /> or <img src="/images/docs/common-icons/replica-minus-icon.png" width="15" /> to scale up or scale down the number of replicas.
-7. Click the **Metadata** tab to view annotations of the cluster gateway.
+1. 在**集群网关**选项卡下，点击集群网关右侧的**管理**，选择**查看详情**以打开其详情页面。
+2. 在详情页面，点击**编辑**以配置集群网关，或点击**更多操作**以选择操作。
+3. 点击**监控**选项卡，查看集群网关的监控指标。
+4. 点击**配置选项**选项卡以查看集群网关的配置选项。
+5. 点击**网关日志**选项卡以查看集群网关日志。
+6. 点击**资源状态**选项卡，以查看集群网关的负载状态。点击 <img src="/images/docs/common-icons/replica-plus-icon.png" width="15" /> 或 <img src="/images/docs/common-icons/replica-minus-icon.png" width="15" /> 按钮，以增加或减少副本数量。
+7. 点击**元数据**选项卡，以查看集群网关的注解。
 
-## View Project Gateways
+## 查看项目网关
 
-On the **Gateway Settings** page, click the **Project Gateway** tab to view project gateways.
+在**网关设置**页面，点击**项目网关**选项卡，以查看项目网关。
 
-Click <img src="/images/docs/project-administration/role-and-member-management/three-dots.png" width="20px"> on the right of a project gateway to select an operation from the drop-down menu:
+点击项目网关右侧的 <img src="/images/docs/project-administration/role-and-member-management/three-dots.png" width="20px"> ，从下拉菜单中选择操作：
 
-- **Edit**: Edit configurations of the project gateway.
-- **Disable**: Disable the project gateway.
+- **编辑**：编辑项目网关的配置。
+- **关闭**：关闭项目网关。
 
 {{< notice note >}}
 
-If a project gateway exists prior to the creation of a cluster gateway, the project gateway address may switch between the address of the cluster gateway and that of the project gateway. It is recommended that you should use either the cluster gateway or project gateway.
+如果在创建集群网关之前存在项目网关，则项目网关地址可能会在集群网关地址和项目网关地址之间切换。建议您只使用集群网关或项目网关。
 
 {{</ notice >}}
 
-For more information about how to create project gateways, see [Project Gateway](../../../project-administration/project-gateway/).
+关于如何创建项目网关的更多信息，请参见[项目网关](../../../project-administration/project-gateway/)。
+
