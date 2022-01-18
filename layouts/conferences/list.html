@@ -9,7 +9,7 @@
                 <li>
                     <div class='top-div' style="background: {{ .bgColor | safeCSS}}">
                         <img class='left-img' src="{{ .bg | relURL }}" alt="{{ .name }}">
-                        <h3>{{ .name }}</h3>
+                        <h3>{{ .name }} &nbsp; <span style="color:{{ .year.color }};font-size:{{ .year.fontSize }}">{{ .year.text }}</span></h3>
                         <p>{{ .content }}</p>
                         <img class='right-img' src="{{  .icon | relURL }}" alt="{{ .name }}">
                     </div>

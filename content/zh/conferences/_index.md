@@ -6,6 +6,10 @@ viewDetail: 查看详情
 
 list:
   - name: KubeCon 大会
+    year: 
+      text:
+      color: 
+      fontSize:
     content: KubeSphere 社区在 KubeCon + CloudNativeCon 2021 上的技术主题分享。
     icon: images/conferences/kubecon.svg
     bg: images/conferences/kubecon-bg.svg
