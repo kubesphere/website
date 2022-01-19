@@ -2,7 +2,7 @@
 title: '多租户环境中的 Kubernetes 事件导出、过滤和警报'
 author: '霍秉杰，向军涛'
 createTime: '2020-07-30'
-snapshot: 'http://pek3b.qingstor.com/kubesphere-community/images/kubecon2020-event.jpg'
+snapshot: 'https://pek3b.qingstor.com/kubesphere-community/images/kubecon2020-event.jpg'
 ---
 
 ## 议题简介
