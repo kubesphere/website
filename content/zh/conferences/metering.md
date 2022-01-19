@@ -2,7 +2,7 @@
 title: '基于云原生系统通用模型的计量计费系统'
 author: 'Anne Song，马丹'
 createTime: '2020-07-31'
-snapshot: 'http://pek3b.qingstor.com/kubesphere-community/images/kubecon2020-metering.png'
+snapshot: 'https://pek3b.qingstor.com/kubesphere-community/images/kubecon2020-metering.png'
 ---
 
 ## 议题简介
