@@ -10,14 +10,14 @@ section1:
 
 section2:
   image: /images/live/cloudnative-live-banner.png
-  url: ./mqtt1230-live/
+  url: ./openfunction0113-live/
 
   notice:
-    title: OpenFunction v0.5.0 新特性讲解与 v0.6.0 展望
-    tag: 预告
-    time: 2022 年 01 月 13 日晚 8 点
+    title: MQTT 及车联网场景应用
+    tag: 结束
+    time: 2021 年 12 月 30 日晚 8 点
     base: 线上
-    url: ./openfunction0113-live/
+    url: ./mqtt1230-live/
 
   over:
     title: 携程分布式存储实践
@@ -26,6 +26,13 @@ section2:
 
 section3:
   videos:
+    - title: OpenFunction v0.5.0 新特性讲解与 v0.6.0 展望
+      link: ./openfunction0113-live/
+      snapshot: http://pek3b.qingstor.com/kubesphere-community/images/openfunction0113-live-cover.png
+      type: iframe
+      createTime: 2022.01.13
+      group: 直播回放
+
     - title: MQTT 及车联网场景应用
       link: ./mqtt1230-live/
       snapshot: https://pek3b.qingstor.com/kubesphere-community/images/mqtt1230-live-cover.png
