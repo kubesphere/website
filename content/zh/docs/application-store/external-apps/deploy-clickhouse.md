@@ -2,7 +2,7 @@
 title: "在 KubeSphere 中部署 ClickHouse 集群"
 keywords: 'KubeSphere, Kubernetes, 安装, ClickHouse'
 description: '了解如何从 KubeSphere 应用商店部署 ClickHouse。'
-linkTitle: "在 KubeSphere 中部署 ClickHouse 集群"
+linkTitle: "部署 RadonDB ClickHouse 集群"
 weight: 14340
 ---
 

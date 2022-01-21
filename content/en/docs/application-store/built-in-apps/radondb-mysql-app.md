@@ -10,6 +10,14 @@ weight: 14293
 
 This tutorial demonstrates how to deploy RadonDB MySQL from the App Store of KubeSphere.
 
+{{< notice note >}}
+
+The version of RadonDB MySQL in **App Store** is v1.0.0, and is no longer maintained.
+
+We recommend you to use the latest version of RadonDB MySQL. For deployment instructions, please refer to [Deploy RadonDB MySQL Operator and Cluster](../external-apps/deploy-radondb-mysql/).
+
+{{</ notice >}}
+
 ## Prerequisites
 
 - Please make sure you [enable the OpenPitrix system](../../../pluggable-components/app-store/).

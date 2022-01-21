@@ -13,7 +13,7 @@ weight: 14350
 ## 准备工作
 
 - 请确保[已启用 OpenPitrix 系统](../../../pluggable-components/app-store/)。
-- 您需要创建一个企业空间、一个项目和一个用户帐户 (`project-regular`) 供本教程操作使用。该帐户需要是平台普通用户，并邀请至项目中赋予 `operator` 角色作为项目操作员。本教程中，请以 `project-regular` 身份登录控制台，在企业空间 `demo-workspace` 中的 `demo-project` 项目中进行操作。有关更多信息，请参见[创建企业空间、项目、用户和角色](../../../quick-start/create-workspace-and-project/)。
+- 您需要创建一个企业空间、一个项目和一个用户供本教程操作使用。本教程中，以 `admin` 身份在企业空间 `demo` 中的 `demo-project` 项目中进行操作。有关更多信息，请参见[创建企业空间、项目、用户和角色](../../../quick-start/create-workspace-and-project/)。
 - 请确保 KubeSphere 项目网关已开启外网访问。有关更多信息，请参见[项目网关](../../../project-administration/project-gateway/)。
 
 ## 动手实验
@@ -22,99 +22,146 @@ weight: 14350
 
 1. 登录 KubeSphere 的 Web 控制台。
 
-2. 在企业空间中，进入**应用管理**下的**应用仓库**页面，点击**添加**。
+2. 在 `demo` 企业空间中，进入**应用管理**下的**应用仓库**页面，点击**添加**，弹出仓库配置对话框。
 
-3. 在出现的对话框中，输入 `radondb-mysql-operator` 作为应用仓库名称，输入 `https://radondb.github.io/radondb-mysql-kubernetes/` 作为仓库的 URL。点击**验证**以验证 URL。在 URL 旁边呈现一个绿色的对号，验证通过后，点击**确定**继续。
+3. 输入仓库名称和仓库 URL。
 
-4. 将仓库成功导入到 KubeSphere 之后，在列表中可查看 RadonDB MySQL 仓库。
+   输入 `radondb-mysql-operator` 作为应用仓库名称。  
+   输入 `https://radondb.github.io/radondb-mysql-kubernetes/` 作为仓库的 URL，并点击**验证**以验证 URL。
+
+4. 在 URL 旁边呈现一个绿色的对号，验证通过后，点击**确定**继续。
+
+   将仓库成功导入到 KubeSphere 之后，在列表中即可查看 RadonDB MySQL 仓库。
+
+![certify URL](/images/docs/zh-cn/appstore/external-apps/deploy-radondb-mysql/certify_url.png)
 
 ### 步骤 2：部署 RadonDB MySQL Operator
 
-1. 登录 KubeSphere 的 Web 控制台，并使用**工具箱**中的 **Kubectl** 执行以下命令来安装 ClickHouse Operator。建议至少准备 2 个可用集群节点。
+1. 在 `demo-project` 项目中，进入**应用负载**下的**应用**页面，点击**部署新应用**。
 
-2. 执行如下命令可查看 ClickHouse Operator 资源状态。
+2. 在对话框中，选择**来自应用模板**，进入应用模版页面。
 
-   ```bash
-   $ kubectl get all --selector=app=clickhouse-operator -n kube-system
-   ```
-   **预期结果**
-   ```
-   NAME                                       READY   STATUS    RESTARTS   AGE
-   pod/clickhouse-operator-644fcb8759-9tfcx   2/2     Running   0          4m32s
-   
-   NAME                                  TYPE        CLUSTER-IP    EXTERNAL-IP   PORT(S)    AGE
-   service/clickhouse-operator-metrics   ClusterIP   10.96.72.49   <none>        8888/TCP   4m32s
-   
-   NAME                                  READY   UP-TO-DATE   AVAILABLE   AGE
-   deployment.apps/clickhouse-operator   1/1     1            1           4m32s
-   
-   NAME                                             DESIRED   CURRENT   READY   AGE
-   replicaset.apps/clickhouse-operator-644fcb8759   1         1         1       4m32s
-   
-   ```
+3. 从下拉菜单中选择 `radondb-mysql-operator` 应用仓库。
+
+4. 点击 `mysql-operator` 应用，查看和配置 RadonDB MySQL Operator 应用信息。  
+
+   在**配置文件**选项卡，可查看和编辑 `.yaml` 配置文件。  
+   在**版本**列框区域，可查看和选择版本号。
+
+   ![operator 配置文件](/images/docs/zh-cn/appstore/external-apps/deploy-radondb-mysql/operator_yaml.png)
+
+5. 点击**部署**，进入 `mysql-operator` 应用基本信息配置页面。  
+
+   确认应用名称、应用版本，以及配置部署位置。
+
+6. 点击**下一步**，进入 `mysql-operator` 应用配置页面。  
+
+   确认 `values.yaml` 配置信息，并可编辑文件修改配置。
+
+7. 点击**部署**，返回**应用模版**页面。
+
+   待应用状态切换为`运行中`，则应用部署成功。
 
 ### 步骤 3：部署 RadonDB MySQL 集群
 
-1. 在 KubeSphere 的 Web 控制台。在 `demo-project` 项目中，进入**应用负载**下的**应用**页面，点击**创建**。
+您可以任选一个 [RadonDB MySQL 配置示例](https://github.com/radondb/radondb-mysql-kubernetes/tree/main/config/samples) 部署，或自定义配置部署。
 
-2. 在对话框中，选择**从应用模板**。
+以 `mysql_v1alpha1_mysqlcluster.yaml` 模版为例，创建一个 RadonDB MySQL 集群。
 
-3. 从下拉菜单中选择 `clickhouse` 应用仓库 ，然后点击 **clickhouse-cluster**。
+1. 在右下角**工具箱**中选择 **Kubectl** 工具，打开终端窗口。
 
-4. 在**Chart 文件**选项卡，可以直接通过控制台查看配置信息，也可以通过下载默认 `values.yaml` 文件查看。在**版本**列框下，选择一个版本号，点击**安装**以继续。
+2. 执行以下命令，安装 RadonDB MySQL 集群。
 
-5. 在**基本信息**页面，确认应用名称、应用版本以及部署位置。点击**下一步**以继续。
+   ```kubectl
+   kubectl apply -f https://github.com/radondb/radondb-mysql-kubernetes/releases/latest/download/mysql_v1alpha1_mysqlcluster.yaml --namespace=<project_name>
+   ```
 
-6. 在**应用配置**页面，可以编辑 `values.yaml` 文件，也可以直接点击**安装**使用默认配置。
+   {{< notice note >}}
 
-7. 等待 ClickHouse 集群正常运行。可在**工作负载**下的**应用**页面，查看部署的应用。
+   未指定项目时，集群将被默认安装在 `kubesphere-controls-system` 项目中。若需指定项目，安装命令需添加 `--namespace=<project_name>`。
+
+   {{</ notice >}}
+
+   **预期结果**
+
+   ```powershell
+   $ kubectl apply -f https://github.com/radondb/radondb-mysql-kubernetes/releases/latest/download/mysql_v1alpha1_mysqlcluster.yaml --namespace=demo-project
+   mysqlcluster.mysql.radondb.com/sample created
+   ```
+
+3. 集群创建成果后，执行如下命令，可查看 RadonDB MySQL 集群节点服务。
+
+   ```kubectl
+   kubectl get statefulset,svc
+   ```
+
+   **预期结果**
+
+   ```powershell
+   $ kubectl get statefulset,svc
+   NAME                            READY   AGE
+   statefulset.apps/sample-mysql   3/3     10m
+
+   NAME                           TYPE        CLUSTER-IP      EXTERNAL-IP   PORT(S)    AGE
+   service/default-http-backend   ClusterIP   10.96.69.202    <none>        80/TCP     3h2m
+   service/sample-follower        ClusterIP   10.96.9.162     <none>        3306/TCP   10m
+   service/sample-leader          ClusterIP   10.96.255.188   <none>        3306/TCP   10m
+   service/sample-mysql           ClusterIP   None            <none>        3306/TCP   10m
+   ```
 
 ### 步骤 4：查看 RadonDB MySQL 集群状态
 
-1. 以 `project-regular` 身份登录 KubeSphere 的 Web 控制台。
+在 `demo-project` 项目中，查看集群状态。
 
-2. 进入**应用负载**下的**工作负载**页面，点击**有状态副本集**，查看集群状态。
+1. 进入**应用负载**下的**服务**页面，可查看集群服务状态。
+
+2. 进入**应用负载**下的**工作负载**页面，点击**有状态副本集**，可查看集群状态。
 
    进入一个有状态副本集群详情页面，点击**监控**标签页，可查看一定时间范围内的集群指标。
 
-3. 进入**应用负载**下的**容器组**页面，可查看所有状态的容器。
+3. 进入**应用负载**下的**容器组**页面，可查看集群节点运行状态。
 
 4. 进入**存储**下的**存储卷**页面，可查看存储卷，所有组件均使用了持久化存储。
 
    查看某个存储卷用量信息，以其中一个数据节点为例，可以看到当前存储的存储容量和剩余容量等监控数据。
 
-5. 在项目**概览**页面，可查看当前项目资源使用情况。
+### 步骤 5：访问 RadonDB MySQL
 
-### 步骤 5：访问 RadonDB MySQL 集群
+以下演示在 KubeSphere 访问 RadonDB MySQL 的方式，若需从集群外部访问 RadonDB MySQL，请参考 [RadonDB MySQL 开源项目](https://github.com/radondb/radondb-mysql-kubernetes/)。
 
-1. 在 KubeSphere 的 Web 控制台，将鼠标悬停在右下角的锤子图标上，选择 **Kubectl**。
+**方式一：**
 
-2. 打开终端窗口，执行如下命令，并输入 ClickHouse 集群用户名和密码。
+进入 `demo-project` 项目管理页面，通过容器组终端访问 RadonDB MySQL。
 
-   ```bash
-   $ kubectl edit chi <app name> -n <project name>
-   ```
+1. 进入**应用负载**下的**容器组**页面。
 
-   {{< notice note >}}
+2. 在**容器组**下，点击集群其中一个容器组名称，进入容器组详情页面。
 
-   以下命令示例中 **app name** 为 `clickhouse-app` ，**project name** 为 `demo-project`。
+3. 在**资源状态**中**容器**列框下，点击 **mysql** 容器的**终端**图标。
 
-   {{</ notice >}}
+4. 在终端窗口中，输入命令连接集群。
 
-   ![get-username-password](/images/docs/zh-cn/appstore/external-apps/deploy-clickhouse/get-username-password.png)
+![访问 RadonDB MySQL](/images/docs/zh-cn/appstore/external-apps/deploy-radondb-mysql/pod_terminal.png)
 
-3. 执行如下命令，访问 ClickHouse 集群，并可通过 `show databases` 命令查看数据库。
+**方式二：**
 
-   ```bash
-   $ kubectl exec -it <pod name> -n <project name> -- clickhouse-client --user=<user name> --password=<user password>
-   ```
+在右下角**工具箱**中选择 **Kubectl** 工具，通过 Kubectl 工具访问 RadonDB MySQL。
 
-   {{< notice note >}}
+执行如下命令连接集群，连接成功后即可使用 RadonDB MySQL 应用。
 
-   - 以下命令示例中 **pod name** 为 `chi-clickhouse-app-all-nodes-0-1-0` ，**project name** 为 `demo-project`，**user name** 为 `clickhouse`，**password** 为  `clickh0use0perator`。
+```kubectl
+kubectl exec -it <pod_name> -c mysql -n <project_name> -- mysql --user=<user_name> --password=<user_password>
+```
 
-   - 可在**应用负载**的**容器组**下获取 **pod name**。
+{{< notice note >}}
 
-   {{</ notice >}}
+以下示例中相应参数取值如下：
 
-   ![use-clickhouse](/images/docs/zh-cn/appstore/external-apps/deploy-clickhouse/use-clickhouse.png)
+- **pod_name** 为 `sample-mysql-0`
+- **project_name** 为 `demo-project`  
+- **user_name** 为 `radondb_usr`  
+- **user_password** 为  `RadonDB@123`
+
+{{</ notice >}}
+
+![访问 RadonDB MySQL](/images/docs/zh-cn/appstore/external-apps/deploy-radondb-mysql/kubectl_terminal.png)
