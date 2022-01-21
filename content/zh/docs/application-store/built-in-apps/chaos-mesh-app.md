@@ -88,6 +88,6 @@ linkTitle: "部署 Chaos Mesh"
 
 5. 访问 web-show 应用观察实验结果 ：
 
-    ![Chaos Experiment result](//images/docs/zh-cn/appstore/built-in-apps/deploy-chaos-mesh/experiment-result.png)
+    ![Chaos Experiment result](/images/docs/zh-cn/appstore/built-in-apps/deploy-chaos-mesh/experiment-result.png)
 
 更多详情参考 [Chaos Mesh 使用文档](https://chaos-mesh.org/zh/docs/)。
