@@ -36,7 +36,7 @@ The Container Runtime Interface (CRI) is a plugin interface that enables the kub
 
 The "rktlet" was created by adapting the kubelet code for rkt. This per-runtime custom build process, however, would not scale, exposing the need for a Kubernetes abstract runtime model. To address this, Hyper, CoreOS, Google, and other Kubernetes sponsors collaborated on the Container Runtime Interface, a high-level specification that describes a container runtime from a container-orchestration perspective. The kubelet may support many container runtimes by integrating with the CRI rather than a specific runtime. This eliminates the need to generate a separate kubelet for each runtime.
 
-“The dockershim was the first CRI implementation, providing an agreed-upon layer of abstraction on top of the Docker engine. However, since containerd and runC were separated from Docker's core, it has become less significant. Currently, containerd provides a complete CRI implementation.”
+*“The dockershim was the first CRI implementation, providing an agreed-upon layer of abstraction on top of the Docker engine. However, since containerd and runC were separated from Docker's core, it has become less significant. Currently, containerd provides a complete CRI implementation.”*
 
 Cool! So now, let us talk about the difference between Docker, containerd, and CRI-O.
 
