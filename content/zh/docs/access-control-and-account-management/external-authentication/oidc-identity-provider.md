@@ -9,7 +9,7 @@ weight: 12221
 
 ## OIDC 身份提供者
 
-[OpenID Connect](https://openid.net/connect/) 是一种基于 OAuth 2.0 系列规范的可互操作的身份认证协议。使用简单的 REST/JSON 消息流，其设计目标是“让简单的事情变得简单，让复杂的事情成为可能”。与之前的任何身份认证协议（例如 Keycloak、Okta、Dex、Auth0、Gluu 等）相比，开发人员集成起来非常容易。
+[OpenID Connect](https://openid.net/connect/) 是一种基于 OAuth 2.0 系列规范的可互操作的身份认证协议。使用简单的 REST/JSON 消息流，其设计目标是“让简单的事情变得简单，让复杂的事情成为可能”。与之前的任何身份认证协议（例如 Keycloak、Okta、Dex、Auth0、Gluu、Casdoor 等）相比，开发人员集成起来非常容易。
 
 ## 准备工作
 

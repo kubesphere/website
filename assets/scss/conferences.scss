@@ -15,18 +15,6 @@
 
     & > ul {
 
-      li:nth-child(1) {
-        .top-div  {
-          background-image: linear-gradient(270deg, rgb(101, 193, 148), rgb(76, 169, 134))
-        }
-      }
-
-      li:nth-child(2) {
-        .top-div  {
-          background-image: linear-gradient(to left, rgb(52, 197, 209), rgb(95, 182, 216))
-        }
-      }
-
       & > li {
         .top-div {
           position: relative;

@@ -1,0 +1,17 @@
+<svg width="12" height="12" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <g transform="matrix(1 0 0 -1 0 12)">
+    <rect width="2" height="12" fill="#4CA986">
+      <animate attributeName="height" begin="0s" dur="4.2s"
+        values="2;4;5;8;6;3;6;4;6;2;6;1;6;5;3;3;2;3;7;9;6" calcMode="linear"
+        repeatCount="indefinite" />
+    </rect>
+    <rect x="4" width="2" height="7" fill="#4CA986">
+      <animate attributeName="height" begin="0s" dur="2s" values="8;5;3;5;7;2;7;3;1;4;6;7" calcMode="linear"
+        repeatCount="indefinite" />
+    </rect>
+    <rect x="8" width="2" height="10" fill="#4CA986">
+      <animate attributeName="height" begin="0s" dur="2s" values="3;4;3;8;5;9;4;9;7;4;6;3" calcMode="linear"
+        repeatCount="indefinite" />
+    </rect>
+  </g>
+</svg>

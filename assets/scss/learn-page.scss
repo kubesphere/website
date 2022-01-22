@@ -1,5 +1,40 @@
 @import "variables";
 
+@mixin tooltip {
+  .tooltip {
+    visibility: hidden;
+    width: 80px;
+    padding: 8px 12px;
+    background: #242E42;
+    box-shadow: 0px 4px 8px rgba(36, 46, 66, 0.2);
+    border-radius: 4px;
+    transform: translateX(-50%);
+    box-sizing: border-box;
+    /* 定位 */
+    position: absolute;
+    z-index: 1;
+
+    font-family: PingFang SC;
+    font-style: normal;
+    font-size: 12px;
+    line-height: 20px;
+    color: #fff;
+    text-align: center;
+
+    &::after {
+      content: " ";
+      position: absolute;
+      top: 100%;
+      /* 提示工具底部 */
+      left: 50%;
+      margin-left: -5px;
+      border-width: 5px;
+      border-style: solid;
+      border-color: #242E42 transparent transparent;
+    }
+  }
+}
+
 .navigation {
   box-shadow: 0 4px 8px 0 rgba(36, 46, 66, 0.06), 0 8px 16px 0 rgba(36, 46, 66, 0.05);
   background-image: linear-gradient(to bottom, rgba(134, 219, 162, 0.9), rgba(0, 170, 114, 0.9));
@@ -88,7 +123,8 @@
     .right {
       box-sizing: border-box;
       width: 368px;
-      padding: 24px;
+      padding: 24px 20px 0 20px;
+      min-height: 488px;
       max-height: 600px;
       margin-left: 15px;
       overflow: auto;
@@ -98,163 +134,200 @@
         display: none;
       }
 
-      .lesson-div {
-        margin-top: 20px;
+      .sections {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin-bottom: 12px;
 
-        &:first-child {
-          margin-top: 0;
-        }
-
-        & > p {
+        .sectionFolder {
+          box-sizing: border-box;
+          width: 328px;
+          display: flex;
+          align-items: center;
+          flex-direction: row;
+          padding: 9px 16px;
+          background: #F9FBFD;
+          border-radius: 4px;
           position: relative;
-          padding-left: 9px;
-          font-size: 16px;
-          font-weight: 500;
-          line-height: 1.5;
-          letter-spacing: -0.04px;
 
-          &::before {
-            position: absolute;
-            top: 10px;
-            left: 0;
-            content: "";
-            width: 4px;
-            height: 4px;
-            border-radius: 50%;
-            background-color: #36435c;
+          &:hover {
+            cursor: pointer;
+            background: #EFF4F9;
           }
 
-          a {
-            color: #36435c;
-            &:hover {
-              color: #55bc8a;
-            }
+          .text {
+            font-weight: 500;
+            font-size: 16px;
+            line-height: 22px;
+            width: 264px;
+            text-overflow: ellipsis;
+            white-space: nowrap;
+            overflow: hidden;
           }
 
           .icon {
-            display: inline-block;
-            margin-left: 6px;
-            width: 12px;
-            height: 12px;
-            background-image: url("/images/learn/video.svg");
-          }
-
-          .play-span {
-            display: none;
-            height: 12px;
-            font-size: 0;
-            span {
-              display: inline-block;
-              width: 2px;
-              height: 100%;
-              margin-right: 2px;
-              background-color: #55bc8a;
-            }
-          }
-
-          .playing {
-            display: inline-block;
-            span {
-              animation-name: playing;
-              animation-duration: 1s;
-              animation-timing-function: ease;
-              animation-delay: 0s;
-              animation-iteration-count: infinite;
-
-              &:first-child {
-                animation-delay: 0.3s;
-              }
-              &:last-child {
-                animation-delay: 0.5s;
-              }
-            }
+            display: block;
+            height: 10px;
+            width: 10px;
+            background-image: url('/images/learn/icon-setion-close.svg');
+            background-repeat: no-repeat;
+            position: absolute;
+            right: 17px;
           }
         }
-        & > p.active {
-          a {
-            color: #55bc8a;
-          }
 
-          &::before {
-            background-color: #55bc8a;
-          }
-        }
-      }
-
-      .lesson-link-div {
-        margin-top: 10px;
-        display: flex;
-        a {
-          display: block;
-          box-sizing: border-box;
-          width: 100px;
-          height: 72px;
-          padding: 11px 20px 10px;
-          margin-left: 10px;
-          margin-right: 0;
-          font-size: 14px;
-          line-height: 24px;
-          text-align: center;
-          color: #8f94a1;
-          border-radius: 4px;
-          background-color: #f5f9fa;
-          border: solid 1px transparent;
-
-          &:first-child {
-            margin-left: 0;
-          }
-
-          &:hover {
-            border: solid 1px #4ca986;
-          }
-
-          span {
-            display: inline-block;
-            width: 24px;
-            height: 24px;
-          }
-        }
-        
         .active {
-          color: #00a971;
-          border: solid 1px #55bc8a;
-          background-color: #cdf6d5;
-        }
+          background: linear-gradient(180deg, #242E42 0%, #36435C 100%) !important;
+          color: #ffffff;
 
-        .lesson {
-          span {
-            background-image: url("/images/learn/icon-image.svg");
+          &>.icon {
+            background-image: url('/images/learn/icon-setion-open.svg');
           }
         }
 
-        .lesson.active {
-          span {
-            background-image: url("/images/learn/icon-image-active.svg");
+        ul {
+          transition: 1.2s;
+
+          li {
+            width: 320px;
+            height: 24px;
+            margin: 16px 0px;
+            list-style: none;
+            display: flex;
+            align-items: center;
+            position: relative;
+            cursor: pointer;
+
+            .textLink {
+              width: 252px;
+              display: flex;
+              align-items: center;
+
+              .videoIcon {
+                display: block;
+                width: 12px;
+                height: 12px;
+                margin-right: 8px;
+                background-image: url('/images/learn/lesson-video.svg');
+              }
+
+              .text {
+                flex: 1;
+                font-family: PingFang SC;
+                font-style: normal;
+                font-weight: normal;
+                font-size: 14px;
+                line-height: 24px;
+                display: block;
+                overflow: hidden;
+                white-space: nowrap;
+                text-overflow: ellipsis;
+              }
+            }
+
+            .actions {
+              width: 68px;
+              height: 24px;
+              display: flex;
+              flex-direction: row;
+              align-items: center;
+              justify-content: flex-end;
+
+              .picture {
+                width: 16px;
+                height: 12px;
+                background-image: url('/images/learn/actions-picture.svg');
+                background-repeat: no-repeat;
+                position: relative;
+
+                @include tooltip();
+
+                &:hover {
+                  background-image: url('/images/learn/actions-picture-active.svg');
+
+                  .tooltip {
+                    visibility: visible;
+                    bottom: 20px;
+                    left: 8px;
+                  }
+                }
+              }
+
+              .activePicture {
+                background-image: url('/images/learn/actions-picture-open.svg') !important;
+              }
+
+              .ppt {
+                width: 16px;
+                height: 16px;
+                background-image: url('/images/learn/actions-ppt.svg');
+                background-repeat: no-repeat;
+                position: relative;
+                margin: 0 10px;
+                @include tooltip();
+
+                &:hover {
+                  .tooltip {
+                    visibility: visible;
+                    bottom: 20px;
+                    left: 8px;
+                  }
+                }
+              }
+
+              .download {
+                width: 16px;
+                height: 16px;
+                background-image: url('/images/learn/actions-download.svg');
+                background-repeat: no-repeat;
+                position: relative;
+                @include tooltip();
+
+                &:hover {
+                  .tooltip {
+                    visibility: visible;
+                    bottom: 20px;
+                    left: 8px;
+                  }
+                }
+              }
+            }
+
+            &:hover {
+              .textLink {
+                .videoIcon {
+                  background-image: url('/images/learn/lesson-video-hover.svg');
+                }
+              }
+
+              .text {
+                color: #4CA986;
+              }
+            }
+          }
+
+          .pptActive{
+            .text {
+              color: #4CA986;
+            }
+          }
+
+          .activeLine {
+            .textLink {
+              .videoIcon {
+                background-image: url('/images/learn/lesson-video-play.svg') !important;
+              }
+
+              .text {
+                color: #4CA986;
+              }
+            }
           }
         }
 
-        .courseware {
-          span {
-            background-image: url("/images/learn/icon-ppt.svg");
-          }
-        }
-
-        .courseware.active {
-          span {
-            background-image: url("/images/learn/icon-ppt-active.svg");
-          }
-        }
-
-        .examination {
-          span {
-            background-image: url("/images/learn/icon-download.svg");
-          }
-        }
-
-        .examination.active {
-          span {
-            background-image: url("/images/learn/icon-download-active.svg");
-          }
+        .hideLesson {
+          display: none;
         }
       }
     }

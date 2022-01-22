@@ -40,7 +40,7 @@ weight: 3220
 
 ## 配置负载均衡
 
-[Keepalived](https://www.keepalived.org/) 提供 VRPP 实现，并允许您配置 Linux 机器使负载均衡，预防单点故障。[HAProxy](http://www.haproxy.org/) 提供可靠、高性能的负载均衡，能与 Keepalived 完美配合。
+[Keepalived](https://www.keepalived.org/) 提供 VRRP 实现，并允许您配置 Linux 机器使负载均衡，预防单点故障。[HAProxy](http://www.haproxy.org/) 提供可靠、高性能的负载均衡，能与 Keepalived 完美配合。
 
 由于 `lb1` 和 `lb2` 上安装了 Keepalived 和 HAproxy，如果其中一个节点故障，虚拟 IP 地址（即浮动 IP 地址）将自动与另一个节点关联，使集群仍然可以正常运行，从而实现高可用。若有需要，也可以此为目的，添加更多安装 Keepalived 和 HAproxy 的节点。
 

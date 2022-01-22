@@ -34,7 +34,7 @@ weight: 18099
 - 修复**编辑项目配额**对话框中可用企业空间配额显示不正确的问题。（[#2613](https://github.com/kubesphere/console/pull/2613)，[@weili520](https://github.com/weili520)）
 - 修复**监控**对话框中时间范围选择下拉列表功能不正常的问题。（[#2722](https://github.com/kubesphere/console/pull/2722)，[@weili520](https://github.com/weili520)）
 - 修复部署创建页面可用配额显示不正确的问题。（[#2668](https://github.com/kubesphere/console/pull/2668)，[@weili520](https://github.com/weili520)）
-- 将文档地址更改为 [kubesphere.io](http://kubesphere.io/) 和 [kubespehre.com.cn](http://kubesphere.io/)。（[#2628](https://github.com/kubesphere/console/pull/2628)，[@weili520](https://github.com/weili520)）
+- 将文档地址更改为 [kubesphere.io](http://kubesphere.io) 和 [kubesphere.com.cn](http://kubesphere.io)。（[#2628](https://github.com/kubesphere/console/pull/2628)，[@weili520](https://github.com/weili520)）
 - 修复无法修改部署存储卷设置的问题。（[#2656](https://github.com/kubesphere/console/pull/2656)，[@weili520](https://github.com/weili520)）
 - 修复浏览器语言必须为英文、简体中文或繁体中文时才能访问容器终端的问题。（[#2702](https://github.com/kubesphere/console/pull/2702)，[@weili520](https://github.com/weili520)）
 - 修复部署编辑对话框中存储卷状态显示不正确的问题。（[#2622](https://github.com/kubesphere/console/pull/2622)，[@weili520](https://github.com/weili520)）
