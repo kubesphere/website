@@ -28,61 +28,17 @@ Besides, you can find the `formula.yaml` file in the repository [ks-jenkins](htt
 
 It is recommended that you configure Jenkins in KubeSphere through Configuration as Code (CasC). The built-in Jenkins CasC file is stored as a [ConfigMap](../../../project-user-guide/configuration/configmaps/).
 
-1. Log in to KubeSphere as `admin`. Click **Platform** in the top-left corner and select **Cluster Management**.
+1. Log in to KubeSphere as `admin`. Click **Platform** in the upper-left corner and select **Cluster Management**.
 
 2. If you have enabled the [multi-cluster feature](../../../multicluster-management/) with member clusters imported, you can select a specific cluster to edit the ConfigMap. If you have not enabled the feature, refer to the next step directly.
 
-3. From the navigation bar, select **ConfigMaps** under **Configurations**. On the **ConfigMaps** page, select `kubesphere-devops-system` from the drop-down list and click `jenkins-casc-config`.
+3. On the left navigation pane, select **ConfigMaps** under **Configuration**. On the **ConfigMaps** page, select `kubesphere-devops-system` from the drop-down list and click `jenkins-casc-config`.
 
-   ![edit-configmap](/images/docs/devops-user-guide/using-devops/jenkins-system-settings/edit-configmap.png)
+4. On the details page, click **Edit YAML** from the **More** drop-down list.
 
-4. On the detail page, click **Edit YAML** from the **More** drop-down list.
+5. The configuration template for `jenkins-casc-config` is a YAML file under the `data.jenkins_user.yaml:` section. You can modify the container image, label, resource requests and limits, etc. in the broker (Kubernetes Jenkins agent) in the ConfigMap or add a container in the podTemplate. When you finish, click **OK**.
 
-   ![more-list](/images/docs/devops-user-guide/using-devops/jenkins-system-settings/more-list.png)
-
-5. The configuration template for `jenkins-casc-config` is a YAML file as shown below. You can modify the container image, label, resource requests and limits, etc. in the broker (Kubernetes Jenkins agent) in the ConfigMap or add a container in the podTemplate. When you finish, click **Update**.
-
-   ![edit-jenkins](/images/docs/devops-user-guide/using-devops/jenkins-system-settings/edit-jenkins.png)
-
-## Log in to Jenkins to Reload Configurations
-
-After you modified `jenkins-casc-config`, you need to reload your updated system configuration on the **Configuration as Code** page on the Jenkins dashboard. This is because system settings configured directly through the Jenkins dashboard may be overwritten by the CasC configuration after Jenkins is rescheduled.
-
-1. Execute the following command to get the address of Jenkins.
-
-   ```bash
-   export NODE_PORT=$(kubectl get --namespace kubesphere-devops-system -o jsonpath="{.spec.ports[0].nodePort}" services ks-jenkins)
-   export NODE_IP=$(kubectl get nodes --namespace kubesphere-devops-system -o jsonpath="{.items[0].status.addresses[0].address}")
-   echo http://$NODE_IP:$NODE_PORT
-   ```
-
-2. You can see the expected output as below, which tells you the IP address and port number of Jenkins.
-
-   ```bash
-   http://192.168.0.4:30180
-   ```
-
-3. Access Jenkins at `http://Node IP:Port Number`. When KubeSphere is installed, the Jenkins dashboard is also installed by default. Besides, Jenkins is configured with KubeSphere LDAP, which means you can log in to Jenkins with KubeSphere accounts (for example, `admin/P@88w0rd`) directly.
-
-   ![jenkins-dashboard](/images/docs/devops-user-guide/using-devops/jenkins-system-settings/jenkins-dashboard.jpg)
-
-   {{< notice note >}}
-
-   You may need to set up necessary port forwarding rules and open port `30180` to access Jenkins in your security groups depending on where your instances are deployed.
-
-   {{</ notice >}} 
-
-4. After you log in to the dashboard, click **Manage Jenkins** from the navigation bar.
-
-   ![manage-jenkins](/images/docs/devops-user-guide/using-devops/jenkins-system-settings/manage-jenkins.png)
-
-5. Scroll down and click **Configuration as Code**.
-
-   ![configuration-as-code](/images/docs/devops-user-guide/using-devops/jenkins-system-settings/configuration-as-code.png)
-
-6. To reload configurations that you have modified in the ConfigMap, click **Apply new configuration**.
-
-   ![apply-config](/images/docs/devops-user-guide/using-devops/jenkins-system-settings/apply-config.png)
+6. Wait for at least 70 seconds until your changes are automatically reloaded.
 
 7. For more information about how to set up Jenkins via CasC, see the [Jenkins documentation](https://github.com/jenkinsci/configuration-as-code-plugin).
 
@@ -91,3 +47,4 @@ After you modified `jenkins-casc-config`, you need to reload your updated system
    In the current version, not all plugins support CasC settings. CasC will only overwrite plugin configurations that are set up through CasC.
 
    {{</ notice >}} 
+

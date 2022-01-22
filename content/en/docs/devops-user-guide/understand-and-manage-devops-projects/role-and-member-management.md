@@ -17,11 +17,11 @@ In DevOps project scope, you can grant the following resources' permissions to a
 
 ## Prerequisites
 
-At least one DevOps project has been created, such as `demo-devops`. Besides, you need an account of the `admin` role (for example, `devops-admin`) at the DevOps project level. 
+At least one DevOps project has been created, such as `demo-devops`. Besides, you need a user of the `admin` role (for example, `devops-admin`) at the DevOps project level. 
 
 ## Built-in Roles
 
-In **Project Roles**, there are three available built-in roles as shown below. Built-in roles are created automatically by KubeSphere when a DevOps project is created and they cannot be edited or deleted.
+In **DevOps Project Roles**, there are three available built-in roles as shown below. Built-in roles are created automatically by KubeSphere when a DevOps project is created and they cannot be edited or deleted.
 
 | Built-in Roles     | Description                                                  |
 | ------------------ | ------------------------------------------------------------ |
@@ -35,17 +35,13 @@ In **Project Roles**, there are three available built-in roles as shown below. B
 
    {{< notice note >}}
 
-   The account `devops-admin` is used as an example. As long as the account you are using is granted a role including the permissions of **Project Member Viewing**, **Project Role Management** and **Project Role Viewing** in **Access Control** at DevOps project level, it can create a DevOps project role.
+   The account `devops-admin` is used as an example. As long as the account you are using is granted a role including the permissions of **Member Viewing**, **Role Management** and **Role Viewing** in **Access Control** at DevOps project level, it can create a DevOps project role.
 
    {{</ notice >}} 
 
-2. Go to **Project Roles** in **Project Management**, click **Create** and set a **Name**. In this example, a role named `pipeline-creator` will be created. Click **Edit Permissions** to continue.
-
-   ![devops_role_step1](/images/docs/devops-user-guide/understand-and-manage-devops-projects/role-and-member-management/devops_role_step1.png)
+2. Go to **DevOps Project Roles** in **DevOps Project Settings**, click **Create** and set a **Name**. In this example, a role named `pipeline-creator` will be created. Click **Edit Permissions** to continue.
 
 3. In **Pipeline Management**, select the permissions that you want this role to contain. For example, **Pipeline Management** and **Pipeline Viewing** are selected for this role. Click **OK** to finish.
-
-   ![devops_role_step2](/images/docs/devops-user-guide/understand-and-manage-devops-projects/role-and-member-management/devops_role_step2.png)
 
    {{< notice note >}} 
 
@@ -53,9 +49,7 @@ In **Project Roles**, there are three available built-in roles as shown below. B
 
    {{</ notice >}} 
 
-4. Newly created roles will be listed in **Project Roles**. You can click <img src="/images/docs/devops-user-guide/understand-and-manage-devops-projects/role-and-member-management/three-dots.png" height="15px"> on the right to edit it.
-
-   ![devops_role_list](/images/docs/devops-user-guide/understand-and-manage-devops-projects/role-and-member-management/devops_role_list.png)
+4. Newly created roles will be listed in **DevOps Project Roles**. You can click <img src="/images/docs/common-icons/three-dots.png" height="15px"> on the right to edit it.
 
    {{< notice note >}} 
 
@@ -65,11 +59,9 @@ In **Project Roles**, there are three available built-in roles as shown below. B
 
 ## Invite a New Member
 
-1. In **Project Management**, select **Project Members** and click **Invite Member**.
+1. In **DevOps Project Settings**, select **DevOps Project Members** and click **Invite**.
 
-2. Click <img src="/images/docs/devops-user-guide/understand-and-manage-devops-projects/role-and-member-management/plus-button.png" height="15px"> to invite an account to the DevOps project. Grant the role of `pipeline-creator` to the account. 
-
-   ![devops_invite_member](/images/docs/devops-user-guide/understand-and-manage-devops-projects/role-and-member-management/devops_invite_member.png)
+2. Click <img src="/images/docs/common-icons/invite-member-button.png" height="15px"> to invite a user to the DevOps project. Grant the role of `pipeline-creator` to the account. 
 
    {{< notice note >}} 
 
@@ -77,9 +69,8 @@ In **Project Roles**, there are three available built-in roles as shown below. B
 
    {{</ notice >}} 
 
-3. After you add a user to the DevOps project, click **OK**. In **Project Members**, you can see the newly invited member listed.
+3. After you add a user to the DevOps project, click **OK**. In **DevOps Project Members**, you can see the newly invited member listed.
 
 4. You can also change the role of an existing member by editing it or remove it from the DevOps project.
 
-   ![devops_user_edit](/images/docs/devops-user-guide/understand-and-manage-devops-projects/role-and-member-management/devops_user_edit.png)
 

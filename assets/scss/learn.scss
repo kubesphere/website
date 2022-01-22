@@ -144,14 +144,15 @@ h2 {
       font-size: 0;
       overflow-x: auto;
       white-space: nowrap;
+      display: flex;
 
       li {
         position: relative;
         display: inline-block;
         box-sizing: border-box;
         white-space: normal;
-        width: 323px;
-        height: 237px;
+        min-width: 323px;
+        min-height: 237px;
         padding: 30px 20px 30px 62px;
         margin-left: 70px;
         font-size: 14px;
@@ -169,6 +170,7 @@ h2 {
           left: -50px;
           width: 100px;
           height: 100px;
+          object-fit: cover;
           border-radius: 50%;
         }
 
@@ -250,7 +252,7 @@ h2 {
     margin-top: 68px;
     & > li {
       position: relative;
-      padding: 50px 39px 20px 40px;
+      padding: 50px 39px 40px 40px;
       margin-bottom: 58px;
       border-radius: 8px;
       background-color: #ffffff;
@@ -276,6 +278,10 @@ h2 {
           top: -20px;
           left: 30px;
           border-radius: 5px;
+          white-space: nowrap;
+          text-overflow: ellipsis;
+          max-width: 75%;
+          overflow: hidden;
         }
       }
 
@@ -369,6 +375,46 @@ h2 {
           @media only screen and (max-width: $mobile-max-width) {
             width: 70px;
           }
+        }
+      }
+
+      .button{
+        position: absolute;
+        height: 48px;
+        width: 100%;
+        bottom: 0;
+        left: 0;
+        background: linear-gradient(360deg, rgba(85, 188, 138, 0.25) 0%, rgba(85, 188, 138, 0) 100%);
+        border: none;
+        font-weight: 600;
+        font-size: 14px;
+        line-height: 20px;
+        color: #0F8049;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        cursor: pointer;
+
+        #close{
+          display: none;
+        }
+      }
+
+      .hideButton{
+        display: none;
+      }
+
+      .active{
+        #open{
+          display: none;
+        }
+
+        #close{
+          display: block;
+        }
+
+        svg{
+          transform: rotateX(180deg);
         }
       }
     }

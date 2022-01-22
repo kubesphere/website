@@ -14,19 +14,17 @@ This tutorial demonstrates how to manage resource quotas for a workspace.
 
 ## Prerequisites
 
-You have an available workspace and an account (`ws-manager`). The account must have the `workspaces-manager` role at the platform level. For more information, see [Create Workspaces, Projects, Accounts and Roles](../../quick-start/create-workspace-and-project/).
+You have an available workspace and a user (`ws-manager`). The user must have the `workspaces-manager` role at the platform level. For more information, see [Create Workspaces, Projects, Users and Roles](../../quick-start/create-workspace-and-project/).
 
 ## Set Workspace Quotas
 
 1. Log in to the KubeSphere web console as `ws-manager` and go to a workspace.
 
-2. Navigate to **Quota Management** under **Workspace Settings**.
+2. Navigate to **Workspace Quotas** under **Workspace Settings**.
 
-3. The **Quota Management** page lists all the available clusters assigned to the workspace and their respective requests and limits of CPU and memory. Click **Edit Quota** on the right of a cluster.
+3. The **Workspace Quotas** page lists all the available clusters assigned to the workspace and their respective requests and limits of CPU and memory. Click **Edit Quotas** on the right of a cluster.
 
-4. In the dialog that appears, you can see that KubeSphere does not set any requests or limits for the workspace by default. To set requests and limits to control CPU and memory resources, use the slider to move to a desired value or enter numbers directly. Leaving a field blank means you do not set any requests or limits.
-
-   ![edit-workspace-quotas](/images/docs/workspace-administration/workspace-quotas/edit-workspace-quotas.png)
+4. In the displayed dialog box, you can see that KubeSphere does not set any requests or limits for the workspace by default. To set requests and limits to control CPU and memory resources, move <img src="/images/docs/common-icons/slider.png" width="20" /> to a desired value or enter numbers directly. Leaving a field blank means you do not set any requests or limits.
 
    {{< notice note >}}
 

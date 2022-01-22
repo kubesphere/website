@@ -11,7 +11,7 @@ weight: 13300
 ## 准备工作
 
 - 已经启用[网络策略](../../pluggable-components/network-policy/)。
-- 您必须有一个可用的项目和一个在项目层级拥有 `admin` 角色的帐户 (`project-admin`)。有关更多信息，请参见[创建企业空间、项目、帐户和角色](../../quick-start/create-workspace-and-project/)。
+- 您必须有一个可用的项目和一个在项目层级拥有 `admin` 角色的用户 (`project-admin`)。有关更多信息，请参见[创建企业空间、项目、用户和角色](../../quick-start/create-workspace-and-project/)。
 
 {{< notice note >}}
 
@@ -23,8 +23,6 @@ weight: 13300
 
 1. 以 `project-admin` 身份登录 KubeSphere 控制台，进入您的项目，在**项目设置**下选择**网络隔离**。项目网络隔离默认关闭。
 
-   ![项目网络隔离](/images/docs/zh-cn/project-administration/project-network-isolation/project-network-isolation.PNG)
-
 2. 要启用项目网络隔离，请点击**开启**。
 
    {{< notice note >}}
@@ -34,8 +32,6 @@ weight: 13300
    {{</ notice >}}
 
 3. 您也可以在这个页面关闭网络隔离。
-
-   ![关闭隔离](/images/docs/zh-cn/project-administration/project-network-isolation/isolation-off.PNG)
 
    {{< notice note >}}
 
@@ -61,21 +57,18 @@ weight: 13300
 
 #### 放行来自不同项目的工作负载的入站流量
 
-1. 在当前项目的**网络隔离**页面，选择**集群内部白名单**选项卡。
+1. 在当前项目的**网络隔离**页面，选择**内部白名单**选项卡。
 
-2. 点击**添加白名单**。
+2. 点击**添加白名单条目**。
 
-3. 在**方向**下选择**入口**。
+3. 在**流量方向**下选择**入站**。
 
 4. 在**类型**下选择**项目**选项卡。
 
 5. 选择 `demo-project-2` 项目。
 
-   ![入站规则](/images/docs/zh-cn/project-administration/project-network-isolation/ingress-rule.PNG)
-
 6. 点击**确定**，然后您可以在白名单中看到该项目。
 
-   ![入站规则已添加](/images/docs/zh-cn/project-administration/project-network-isolation/ingress-rule-added.PNG)
 
 {{< notice note >}}
 
@@ -85,11 +78,11 @@ weight: 13300
 
 #### 放行前往不同项目的服务的出站流量
 
-1. 在当前项目的**网络隔离**页面，选择**集群内部白名单**选项卡。
+1. 在当前项目的**网络隔离**页面，选择**内部白名单**选项卡。
 
-2. 点击**添加白名单**。
+2. 点击**添加白名单条目**。
 
-3. 在**方向**下选择**出口**。
+3. 在**流量方向**下选择**出站**。
 
 4. 在**类型**下选择**服务**选项卡。
 
@@ -97,11 +90,8 @@ weight: 13300
 
 6. 选择允许接收出站流量的服务。在本例中，请选择 `nginx`。
 
-   ![出站规则](/images/docs/zh-cn/project-administration/project-network-isolation/egress-rule.PNG)
-
 7. 点击**确定**，然后您可以在白名单中看到该服务。
 
-   ![出站规则已添加](/images/docs/zh-cn/project-administration/project-network-isolation/egress-rule-added.PNG)
 
 {{< notice note >}}
 
@@ -115,19 +105,16 @@ KubeSphere 使用 CIDR 来区分对等方。假设当前项目中已创建一个
 
 #### 放行来自集群外部客户端的入站流量
 
-1. 在当前项目的**网络隔离**页面，选择**集群外部 IP 地址**选项卡，然后点击**添加规则**。
+1. 在当前项目的**网络隔离**页面，选择**外部白名单**选项卡，然后点击**添加白名单条目**。
 
-2. 在**方向**下选择**入口**。
+2. 在**流量方向**下选择**入站**。
 
-3. 在 **CIDR** 中输入 `192.168.1.1/32`。
+3. 在 **网段** 中输入 `192.168.1.1/32`。
 
 4. 选择 `TCP` 协议并输入 `80` 作为端口号。
 
-   ![入站-CIDR](/images/docs/zh-cn/project-administration/project-network-isolation/ingress-CIDR.PNG)
-
 5. 点击**确定**，然后您可以看到该规则已经添加。
 
-   ![入站-CIDR-已设置](/images/docs/zh-cn/project-administration/project-network-isolation/ingress-cidr-set.PNG)
 
 {{< notice note >}}
 
@@ -139,19 +126,16 @@ KubeSphere 使用 CIDR 来区分对等方。假设当前项目中已创建一个
 
 #### 放行前往集群外部服务的出站流量
 
-1. 在当前项目的**网络隔离**页面，选择**集群外部 IP 地址**选项卡，然后点击**添加规则**。
+1. 在当前项目的**网络隔离**页面，选择**外部白名单**选项卡，然后点击**添加白名单条目**。
 
-2. 在**方向**下选择**出口**。
+2. 在**流量方向**下选择**出站**。
 
-3. 在 **CIDR** 中输入 `10.1.0.1/32`。
+3. 在 **网段** 中输入 `10.1.0.1/32`。
 
 4. 选择 `TCP` 协议并输入 `80` 作为端口号。
 
-   ![出站-CIDR](/images/docs/zh-cn/project-administration/project-network-isolation/egress-CIDR.PNG)
-
 5. 点击**确定**，然后您可以看到该规则已经添加。
 
-   ![出站-CIDR-已添加](/images/docs/zh-cn/project-administration/project-network-isolation/egress-CIDR-added.PNG)
 
 {{< notice note >}}
 

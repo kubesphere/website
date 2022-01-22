@@ -12,7 +12,7 @@ weight: 14230
 ## 准备工作
 
 - 请确保[已启用 OpenPitrix 系统](../../../pluggable-components/app-store/)。
-- 您需要创建一个企业空间、一个项目和一个用户帐户 (`project-regular`) 供本教程操作使用。该帐户需要是平台普通用户，并邀请至项目中赋予 `operator` 角色作为项目操作员。本教程中，请以 `project-regular` 身份登录控制台，在企业空间 `demo-workspace` 中的 `demo-project` 项目中进行操作。有关更多信息，请参见[创建企业空间、项目、帐户和角色](../../../quick-start/create-workspace-and-project/)。
+- 您需要创建一个企业空间、一个项目和一个用户帐户 (`project-regular`) 供本教程操作使用。该帐户需要是平台普通用户，并邀请至项目中赋予 `operator` 角色作为项目操作员。本教程中，请以 `project-regular` 身份登录控制台，在企业空间 `demo-workspace` 中的 `demo-project` 项目中进行操作。有关更多信息，请参见[创建企业空间、项目、用户和角色](../../../quick-start/create-workspace-and-project/)。
 
 ## 动手实验
 
@@ -20,35 +20,20 @@ weight: 14230
 
 1. 在 `demo-project` 项目的**概览**页面，点击左上角的**应用商店**。
 
-   ![应用商店](/images/docs/zh-cn/appstore/built-in-apps/deploy-memcached-on-ks/in-app-store-1.PNG)
-
-2. 找到 Memcached，点击**应用信息**页面上的**部署**。
-
-   ![应用商店中的 Memcached](/images/docs/zh-cn/appstore/built-in-apps/deploy-memcached-on-ks/memcached-app-store-2.PNG)
-
-   ![部署 Memcached](/images/docs/zh-cn/appstore/built-in-apps/deploy-memcached-on-ks/deploying-memcached-3.PNG)
+2. 找到 Memcached，点击**应用信息**页面上的**安装**。
 
 3. 设置名称并选择应用版本。请确保将 Memcached 部署在 `demo-project` 中，点击**下一步**。
 
-   ![部署确认](/images/docs/zh-cn/appstore/built-in-apps/deploy-memcached-on-ks/deployment-confirm-4.PNG)
-
-4. 在**应用配置**页面，您可以使用默认配置或者直接编辑 YAML 文件来自定义配置。点击**部署**继续。
-
-   ![编辑配置](/images/docs/zh-cn/appstore/built-in-apps/deploy-memcached-on-ks/edit-config-5.PNG)
+4. 在**应用配置**页面，您可以使用默认配置或者直接编辑 YAML 文件来自定义配置。点击**安装**继续。
 
 5. 稍等片刻待 Memcached 启动并运行。
 
-   ![Memcached 运行中](/images/docs/zh-cn/appstore/built-in-apps/deploy-memcached-on-ks/memcached-running-6.PNG)
 
 ### 步骤 2：访问 Memcached
 
 1. 在**服务**页面点击 Memcached 的服务名称。
 
-   ![Memcached 服务](/images/docs/zh-cn/appstore/built-in-apps/deploy-memcached-on-ks/memcached-service-7.PNG)
-
-2. 在详情页面，您可以分别在**服务端口**和**容器组**下找到端口号和 Pod IP。
-
-   ![Memcached 端口和 Pod](/images/docs/zh-cn/appstore/built-in-apps/deploy-memcached-on-ks/memcached-port-pod-8.PNG)
+2. 在详情页面，您可以分别在**端口**和**容器组**下找到端口号和 Pod IP。
 
 3. Memcached 服务是 Headless 服务，因此在集群内通过 Pod IP 和端口号访问它。Memcached `telnet` 命令的基本语法是 `telnet HOST PORT`。例如：
 

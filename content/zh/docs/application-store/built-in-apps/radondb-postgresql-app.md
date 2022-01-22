@@ -13,7 +13,7 @@ weight: 14294
 ## 准备工作
 
 - 请确保[已启用 OpenPitrix 系统](../../../pluggable-components/app-store/)。
-- 您需要创建一个企业空间、一个项目和一个用户帐户 (`project-regular`) 供本教程操作使用。该帐户需要是平台普通用户，并邀请至项目中赋予 `operator` 角色作为项目操作员。本教程中，以 `project-regular` 身份登录控制台，在企业空间 `demo-workspace` 中的 `demo-project` 项目中进行操作。有关更多信息，请参见[创建企业空间、项目、帐户和角色](../../../quick-start/create-workspace-and-project/)。
+- 您需要创建一个企业空间、一个项目和一个用户帐户 (`project-regular`) 供本教程操作使用。该帐户需要是平台普通用户，并邀请至项目中赋予 `operator` 角色作为项目操作员。本教程中，以 `project-regular` 身份登录控制台，在企业空间 `demo-workspace` 中的 `demo-project` 项目中进行操作。有关更多信息，请参见[创建企业空间、项目、用户和角色](../../../quick-start/create-workspace-and-project/)。
 
 ## 动手实验
 
@@ -21,49 +21,29 @@ weight: 14294
 
 1. 在 `demo-project` 项目的**概览**页面，点击左上角的**应用商店**。
 
-   ![应用商店中的 RadonDB PostgreSQL](/images/docs/zh-cn/appstore/built-in-apps/radondb-postgresql-app/radondb-postgresql-in-app-store.png)
-
-2. 找到 RadonDB PostgreSQL，点击**应用信息**页面上的**部署**。
-
-   ![部署 RadonDB PostgreSQL](/images/docs/zh-cn/appstore/built-in-apps/radondb-postgresql-app/deploy-radondb-postgresql.png)
+2. 找到 RadonDB PostgreSQL，点击**应用信息**页面上的**安装**。
 
 3. 设置名称并选择应用版本。请确保将 RadonDB PostgreSQL 部署在 `demo-project` 中，点击**下一步**。
 
-   ![确认部署](/images/docs/zh-cn/appstore/built-in-apps/radondb-postgresql-app/confirm-deployment.png)
-
-4. 在**应用配置**页面，您可以使用默认配置，或者编辑 YAML 文件以自定义配置。点击**部署**继续。
-
-   ![设置应用配置](/images/docs/zh-cn/appstore/built-in-apps/radondb-postgresql-app/set-app-configuration.png)
+4. 在**应用配置**页面，您可以使用默认配置，或者编辑 YAML 文件以自定义配置。点击**安装**继续。
 
 5. 稍等片刻待 RadonDB PostgreSQL 启动并运行。
 
-   ![RadonDB PostgreSQL 运行中](/images/docs/zh-cn/appstore/built-in-apps/radondb-postgresql-app/radondb-postgresql-running.png)
 
 ### 步骤 2：查看 PostgreSQL 集群状态
 
 1. 在 `demo-project` 项目的**概览**页面，可查看当前项目资源使用情况。
 
-   ![project-overview](/images/docs/zh-cn/appstore/built-in-apps/radondb-postgresql-app/project-overview.png)
-
 2. 进入**应用负载**下的**工作负载**页面，点击**有状态副本集**，查看集群状态。
-
-   ![statefulsets-running](/images/docs/zh-cn/appstore/built-in-apps/radondb-postgresql-app/statefulsets-running.png)
 
    进入一个有状态副本集群详情页面，点击**监控**标签页，可查看一定时间范围内的集群指标。
 
-   ![statefulset-monitoring](/images/docs/zh-cn/appstore/built-in-apps/radondb-postgresql-app/statefulset-monitoring.png)
-
 3. 进入**应用负载**下的**容器组**页面，可查看所有状态的容器。
 
-   ![pods-running](/images/docs/zh-cn/appstore/built-in-apps/radondb-postgresql-app/pods-running.png)
-
-4. 进入**存储管理**下的**存储卷**页面，可查看存储卷，所有组件均使用了持久化存储。
-
-   ![volumes](/images/docs/zh-cn/appstore/built-in-apps/radondb-postgresql-app/volumes.png)
+4. 进入**存储**下的**存储卷**页面，可查看存储卷，所有组件均使用了持久化存储。
 
    查看某个存储卷用量信息，以其中一个数据节点为例，可以看到当前存储的存储容量和剩余容量等监控数据。
 
-   ![volume-status](/images/docs/zh-cn/appstore/built-in-apps/radondb-postgresql-app/volume-status.png)
 
 ### 步骤 3：访问 RadonDB PostgreSQL
 
@@ -71,14 +51,10 @@ weight: 14294
 
 2. 在**资源状态**页面，点击**终端**图标。
 
-   ![RadonDB PostgreSQL 终端](/images/docs/zh-cn/appstore/built-in-apps/radondb-postgresql-app/radondb-postgresql-terminal.png)
-
 3. 在弹出窗口中，向终端输入命令使用该应用。
 
    ```bash
    psql -h <Pod name> -p 5432 -U postgres -d postgres
    ```
-
-   ![访问 RadonDB PostgreSQL](/images/docs/zh-cn/appstore/built-in-apps/radondb-postgresql-app/radondb-postgresql-service-terminal.png)
 
 4. 如果您想从集群外部访问 RadonDB PostgreSQL，详细信息请参见 [RadonDB PostgreSQL 开源项目](https://github.com/radondb/radondb-postgresql-kubernetes)。

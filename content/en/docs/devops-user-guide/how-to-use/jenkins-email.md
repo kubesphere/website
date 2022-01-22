@@ -12,27 +12,25 @@ The built-in Jenkins cannot share the same email configuration with the platform
 ## Prerequisites
 
 - You need to enable the [KubeSphere DevOps System](../../../pluggable-components/devops/).
-- You need an account granted a role including the permission of **Cluster Management**. For example, you can log in to the console as `admin` directly or create a new role with the permission and assign it to an account.
+- You need a user granted a role including the permission of **Cluster Management**. For example, you can log in to the console as `admin` directly or create a new role with the permission and assign it to a user.
 
 ## Set the Email Server
 
-1. Click **Platform** in the top-left corner and select **Cluster Management**.
+1. Click **Platform** in the upper-left corner and select **Cluster Management**.
 
 2. If you have enabled the [multi-cluster feature](../../../multicluster-management/) with member clusters imported, you can select a specific cluster to view its nodes. If you have not enabled the feature, refer to the next step directly.
 
-3. Go to **Workloads** under **Application Workloads**, and choose the project **kubesphere-devops-system** from the drop-down list. Click <img src="/images/docs/devops-user-guide/using-devops/jenkins-email/three-dots.png" height="15px"> on the right of **ks-jenkins** to edit its YAML.
+3. Go to **Workloads** under **Application Workloads**, and select the project **kubesphere-devops-system** from the drop-down list. Click <img src="/images/docs/common-icons/three-dots.png" height="15" /> on the right of `devops-jenkins` and select **Edit YAML** to edit its YAML.
 
-   ![workloads-list](/images/docs/devops-user-guide/using-devops/jenkins-email/workloads-list.png)
-
-4. Scroll down to the fields in the image below which you need to specify. Click **Update** when you finish to save changes.
+4. Scroll down to the fields in the image below which you need to specify. Click **OK** when you finish to save changes.
 
    {{< notice warning >}}
 
-   Once you modify the Email server in the `ks-jenkins` Deployment, it will restart itself. Consequently, the DevOps system will be unavailable for a few minutes. Please make such modification at an appropriate time.
+   Once you modify the Email server in the `devops-jenkins` Deployment, it will restart itself. Consequently, the DevOps system will be unavailable for a few minutes. Please make such modification at an appropriate time.
 
    {{</ notice >}}
 
-   ![set-jenkins-email-3](/images/docs/devops-user-guide/using-devops/jenkins-email/set-jenkins-email-3.jpg)
+   ![set-jenkins-email](/images/docs/devops-user-guide/using-devops/jenkins-email/set-jenkins-email.png)
 
    | Environment Variable Name | Description                      |
    | ------------------------- | -------------------------------- |

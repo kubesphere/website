@@ -90,9 +90,9 @@ To make sure edge nodes can successfully talk to your cluster, you must forward 
 
 ## Add an Edge Node
 
-1. Log in to the console as `admin` and click **Platform** in the top-left corner.
+1. Log in to the console as `admin` and click **Platform** in the upper-left corner.
 
-2. Select **Cluster Management** and navigate to **Edge Nodes** under **Node Management**.
+2. Select **Cluster Management** and navigate to **Edge Nodes** under **Nodes**.
 
    {{< notice note >}}
 
@@ -100,7 +100,7 @@ To make sure edge nodes can successfully talk to your cluster, you must forward 
 
    {{</ notice >}} 
 
-3. Click **Add Node**. In the dialog that appears, set a node name and enter an internal IP address of your edge node. Click **Validate** to continue.
+3. Click **Add**. In the dialog that appears, set a node name and enter an internal IP address of your edge node. Click **Validate** to continue.
 
    {{< notice note >}} 
 
@@ -109,7 +109,7 @@ To make sure edge nodes can successfully talk to your cluster, you must forward 
 
    {{</ notice >}} 
 
-4. Copy the command automatically created under **Add Command** and run it on your edge node.
+4. Copy the command automatically created under **Edge Node Configuration Command** and run it on your edge node.
 
    {{< notice note >}}
 
@@ -117,11 +117,7 @@ To make sure edge nodes can successfully talk to your cluster, you must forward 
 
    {{</ notice >}} 
 
-   ![edge-node-dialog](/images/docs/installing-on-linux/add-and-delete-nodes/add-edge-nodes/edge-node-dialog.png)
-
 5. Close the dialog, refresh the page, and the edge node will appear in the list.
-
-   ![edge-node-added](/images/docs/installing-on-linux/add-and-delete-nodes/add-edge-nodes/edge-node-added.png)
 
    {{< notice note >}}
 
@@ -129,7 +125,7 @@ To make sure edge nodes can successfully talk to your cluster, you must forward 
 
    {{</ notice >}}
    
-6. After an edge node joins your cluster, some Pods may be scheduled to it while they remains in the `Pending` state on the edge node. Due to the tolerations some DaemonSets (for example, Calico) have, in the current version (KubeSphere v3.1.1), you need to manually patch some Pods so that they will not be schedule to the edge node.
+6. After an edge node joins your cluster, some Pods may be scheduled to it while they remains in the `Pending` state on the edge node. Due to the tolerations some DaemonSets (for example, Calico) have, in the current version (KubeSphere 3.2.1), you need to manually patch some Pods so that they will not be schedule to the edge node.
 
    ```bash
    #!/bin/bash

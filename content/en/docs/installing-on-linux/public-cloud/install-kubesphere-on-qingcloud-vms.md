@@ -126,7 +126,7 @@ Follow the step below to download KubeKey.
 Download KubeKey from its [GitHub Release Page](https://github.com/kubesphere/kubekey/releases) or use the following command directly.
 
 ```bash
-curl -sfL https://get-kk.kubesphere.io | VERSION=v1.1.1 sh -
+curl -sfL https://get-kk.kubesphere.io | VERSION=v1.2.1 sh -
 ```
 
 {{</ tab >}}
@@ -142,7 +142,7 @@ export KKZONE=cn
 Run the following command to download KubeKey:
 
 ```bash
-curl -sfL https://get-kk.kubesphere.io | VERSION=v1.1.1 sh -
+curl -sfL https://get-kk.kubesphere.io | VERSION=v1.2.1 sh -
 ```
 
 {{< notice note >}}
@@ -157,7 +157,7 @@ After you download KubeKey, if you transfer it to a new machine also with poor n
 
 {{< notice note >}}
 
-The commands above download the latest release (v1.1.1) of KubeKey. You can change the version number in the command to download a specific version.
+The commands above download the latest release (v1.2.1) of KubeKey. You can change the version number in the command to download a specific version.
 
 {{</ notice >}} 
 
@@ -167,15 +167,15 @@ Make `kk` executable:
 chmod +x kk
 ```
 
-Create an example configuration file with default configurations. Here Kubernetes v1.20.4 is used as an example.
+Create an example configuration file with default configurations. Here Kubernetes v1.21.5 is used as an example.
 
 ```bash
-./kk create config --with-kubesphere v3.1.1 --with-kubernetes v1.20.4
+./kk create config --with-kubesphere v3.2.1 --with-kubernetes v1.21.5
 ```
 
 {{< notice note >}}
 
-- Recommended Kubernetes versions for KubeSphere v3.1.1: v1.17.9, v1.18.8, v1.19.8, and v1.20.4. If you do not specify a Kubernetes version, KubeKey will install Kubernetes v1.19.8 by default. For more information about supported Kubernetes versions, see [Support Matrix](../../../installing-on-linux/introduction/kubekey/#support-matrix).
+- Recommended Kubernetes versions for KubeSphere 3.2.1: v1.19.x, v1.20.x, v1.21.x or v1.22.x (experimental). If you do not specify a Kubernetes version, KubeKey will install Kubernetes v1.21.5 by default. For more information about supported Kubernetes versions, see [Support Matrix](../../../installing-on-linux/introduction/kubekey/#support-matrix).
 
 - If you do not add the flag `--with-kubesphere` in the command in this step, KubeSphere will not be deployed unless you install it using the `addons` field in the configuration file or add this flag again when you use `./kk create cluster` later.
 - If you add the flag `--with-kubesphere` without specifying a KubeSphere version, the latest version of KubeSphere will be installed.
@@ -221,7 +221,7 @@ spec:
     - node3
 ```
 
-For a complete configuration sample explanation, see [this file](https://github.com/kubesphere/kubekey/blob/release-1.1/docs/config-example.md).
+For a complete configuration sample explanation, see [this file](https://github.com/kubesphere/kubekey/blob/release-1.2/docs/config-example.md).
 
 ### Step 4: Configure the load balancer
 
@@ -237,7 +237,7 @@ respectively, and you can refer to the following example.
   controlPlaneEndpoint:
     domain: lb.kubesphere.local
     address: "192.168.0.253"
-    port: "6443"
+    port: 6443
 ```
 
 {{< notice note >}}
@@ -326,8 +326,6 @@ Both listeners show that the status is **Active**, meaning nodes are up and runn
 ![active-listener](/images/docs/installing-on-linux/installing-on-public-cloud/deploy-kubesphere-on-qingcloud-instances/active-listener.png)
 
 In the web console of KubeSphere, you can also see that all the nodes are functioning well.
-
-![cluster-node](/images/docs/installing-on-linux/installing-on-public-cloud/deploy-kubesphere-on-qingcloud-instances/cluster-node.png)
 
 To verify if the cluster is highly available, you can turn off an instance on purpose. For example, the above console is accessed through the address `IP: 30880` (the EIP address here is the one bound to the external load balancer). If the cluster is highly available, the console will still work well even if you shut down a master node.
 

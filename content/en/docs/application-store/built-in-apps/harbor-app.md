@@ -12,35 +12,25 @@ This tutorial walks you through an example of deploying [Harbor](https://goharbo
 ## Prerequisites
 
 - Please make sure you [enable the OpenPitrix system](../../../pluggable-components/app-store/).
-- You need to create a workspace, a project, and a user account for this tutorial. The account needs to be a platform regular user and to be invited as the project operator with the `operator` role. In this tutorial, you log in as `project-regular` and work in the project `demo-project` in the workspace `demo-workspace`. For more information, see [Create Workspaces, Projects, Accounts and Roles](../../../quick-start/create-workspace-and-project/).
+- You need to create a workspace, a project, and a user account for this tutorial. The account needs to be a platform regular user and to be invited as the project operator with the `operator` role. In this tutorial, you log in as `project-regular` and work in the project `demo-project` in the workspace `demo-workspace`. For more information, see [Create Workspaces, Projects, Users and Roles](../../../quick-start/create-workspace-and-project/).
 
 ## Hands-on Lab
 
 ### Step 1: Deploy Harbor from the App Store
 
-1. On the **Overview** page of the project `demo-project`, click **App Store** in the top-left corner.
+1. On the **Overview** page of the project `demo-project`, click **App Store** in the upper-left corner.
 
-   ![app-store](/images/docs/appstore/built-in-apps/harbor-app/app-store.png)
-
-2. Find Harbor and click **Deploy** on the **App Information** page.
-
-   ![find-harbor](/images/docs/appstore/built-in-apps/harbor-app/find-harbor.png)
-
-   ![click-deploy](/images/docs/appstore/built-in-apps/harbor-app/click-deploy.png)
+2. Find Harbor and click **Install** on the **App Information** page.
 
 3. Set a name and select an app version. Make sure Harbor is deployed in `demo-project` and click **Next**.
 
-   ![deploy-harbor](/images/docs/appstore/built-in-apps/harbor-app/deploy-harbor.png)
-
-4. On the **App Configurations** page, edit the configuration file of Harbor. Pay attention to the following fields.
+4. On the **App Settings** page, edit the configuration file of Harbor. Pay attention to the following fields.
 
    `type`: The method you use to access the Harbor Service. This example uses `nodePort`.
 
    `tls`: Specify whether you want to enable HTTPS. Set it to `false` for most cases.
 
    `externalURL`: The URL exposed to tenants.
-
-   ![harbor-config](/images/docs/appstore/built-in-apps/harbor-app/harbor-config.png)
 
    {{< notice note >}}
 
@@ -50,11 +40,9 @@ This tutorial walks you through an example of deploying [Harbor](https://goharbo
 
    {{</ notice >}} 
 
-   When you finish editing the configuration, click **Deploy** to continue.
+   When you finish editing the configuration, click **Install** to continue.
 
 5. Wait until Harbor is up and running.
-
-   ![creating-harbor](/images/docs/appstore/built-in-apps/harbor-app/creating-harbor.png)
 
 ### Step 2: Access Harbor
 

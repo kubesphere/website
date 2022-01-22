@@ -73,7 +73,7 @@ weight: 3320
 从 [GitHub Release Page](https://github.com/kubesphere/kubekey/releases) 下载 KubeKey 或者直接运行以下命令。
 
 ```bash
-curl -sfL https://get-kk.kubesphere.io | VERSION=v1.1.1 sh -
+curl -sfL https://get-kk.kubesphere.io | VERSION=v1.2.1 sh -
 ```
 
 {{</ tab >}}
@@ -89,7 +89,7 @@ export KKZONE=cn
 运行以下命令下载 KubeKey：
 
 ```bash
-curl -sfL https://get-kk.kubesphere.io | VERSION=v1.1.1 sh -
+curl -sfL https://get-kk.kubesphere.io | VERSION=v1.2.1 sh -
 ```
 
 {{< notice note >}}
@@ -104,7 +104,7 @@ curl -sfL https://get-kk.kubesphere.io | VERSION=v1.1.1 sh -
 
 {{< notice note >}}
 
-通过以上的命令，可以下载 KubeKey 的最新版本 (v1.1.1)。您可以更改命令中的版本号来下载特定的版本。
+通过以上的命令，可以下载 KubeKey 的最新版本 (v1.2.1)。您可以更改命令中的版本号来下载特定的版本。
 
 {{</ notice >}}
 
@@ -119,12 +119,12 @@ chmod +x kk
 1. 指定您想要安装的 Kubernetes 版本和 KubeSphere 版本，例如：
 
    ```bash
-   ./kk create config --with-kubernetes v1.20.4 --with-kubesphere v3.1.1
+   ./kk create config --with-kubernetes v1.21.5 --with-kubesphere v3.2.1
    ```
 
    {{< notice note >}}
 
-   - 安装 KubeSphere v3.1.1 的建议 Kubernetes 版本：v1.17.9，v1.18.8，v1.19.8 以及 v1.20.4。如果不指定 Kubernetes 版本，KubeKey 将默认安装 Kubernetes v1.19.8。有关受支持的 Kubernetes 版本的更多信息，请参见[支持矩阵](../../../installing-on-linux/introduction/kubekey/#支持矩阵)。
+   - 安装 KubeSphere 3.2.1 的建议 Kubernetes 版本：v1.19.x、v1.20.x、v1.21.x 或 v1.22.x（实验性支持）。如果不指定 Kubernetes 版本，KubeKey 将默认安装 Kubernetes v1.21.5。有关受支持的 Kubernetes 版本的更多信息，请参见[支持矩阵](../../../installing-on-linux/introduction/kubekey/#支持矩阵)。
 
    - 如果您在此步骤的命令中不添加标志 `--with-kubesphere`，则不会部署 KubeSphere，只能使用配置文件中的 `addons` 字段安装，或者在您后续使用 `./kk create cluster` 命令时再次添加这个标志。
    - 如果您添加标志 `--with-kubesphere` 时不指定 KubeSphere 版本，则会安装最新版本的 KubeSphere。
@@ -157,9 +157,9 @@ chmod +x kk
      controlPlaneEndpoint:
        domain: lb.kubesphere.local
        address: ""
-       port: "6443"
+       port: 6443
      kubernetes:
-       version: v1.20.4
+       version: v1.21.5
        imageRepo: kubesphere
        clusterName: cluster.local
      network:
@@ -263,14 +263,10 @@ chmod +x kk
 
 1. 使用默认帐户和密码 (`admin/P@88w0rd`) 通过 `<NodeIP>:30880` 登录 Web 控制台。点击左上角的**平台管理**，选择**集群管理**。
 
-2. 访问**工作负载**中的**容器组**，从下拉菜单中选择 `kube-system`。可以看到 `csi-qingcloud` 的 Pod 正常运行。
+2.  选择**应用负载** > **容器组**，从下拉菜单中选择 `kube-system`。可以看到 `csi-qingcloud` 的 Pod 正常运行。
 
-   ![qingcloud-csi-pod](/images/docs/zh-cn/installing-on-linux/persistent-storage-configurations/qingcloud-csi/qingcloud-csi-pod.png)
+3. 选择**存储**下的**存储类型**，可以看到集群中可用的存储类型。
 
-3. 访问**存储管理**下的**存储类型**，可以看到集群中可用的存储类型。
-
-   ![qingcloud-csi-storage-class](/images/docs/zh-cn/installing-on-linux/persistent-storage-configurations/qingcloud-csi/qingcloud-csi-storage-class.png)
-   
    {{< notice note >}}
    
    有关如何在 KubeSphere 控制台创建存储卷的更多信息，请参见[存储卷](../../../project-user-guide/storage/volumes/)。

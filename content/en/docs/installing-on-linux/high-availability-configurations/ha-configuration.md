@@ -3,7 +3,7 @@ title: "Set up an HA Cluster Using a Load Balancer"
 keywords: 'KubeSphere, Kubernetes, HA, high availability, installation, configuration'
 description: 'Learn how to create a highly available cluster using a load balancer.'
 linkTitle: "Set up an HA Cluster Using a Load Balancer"
-weight: 3210
+weight: 3220
 ---
 
 You can set up a single-master Kubernetes cluster with KubeSphere installed based on the tutorial of [Multi-node Installation](../../../installing-on-linux/introduction/multioverview/). Single-master clusters may be sufficient for development and testing in most cases. For a production environment, however, you need to consider the high availability of the cluster. If key components (for example, kube-apiserver, kube-scheduler, and kube-controller-manager) are all running on the same master node, Kubernetes and KubeSphere will be unavailable once the master node goes down. Therefore, you need to set up a high-availability cluster by provisioning load balancers with multiple master nodes. You can use any cloud load balancer, or any hardware load balancer (for example, F5). In addition, Keepalived and [HAproxy](https://www.haproxy.com/), or Nginx is also an alternative for creating high-availability clusters.
@@ -48,7 +48,7 @@ You must create a load balancer in your environment to listen (also known as lis
 Download KubeKey from its [GitHub Release Page](https://github.com/kubesphere/kubekey/releases) or use the following command directly.
 
 ```bash
-curl -sfL https://get-kk.kubesphere.io | VERSION=v1.1.1 sh -
+curl -sfL https://get-kk.kubesphere.io | VERSION=v1.2.1 sh -
 ```
 
 {{</ tab >}}
@@ -64,7 +64,7 @@ export KKZONE=cn
 Run the following command to download KubeKey:
 
 ```bash
-curl -sfL https://get-kk.kubesphere.io | VERSION=v1.1.1 sh -
+curl -sfL https://get-kk.kubesphere.io | VERSION=v1.2.1 sh -
 ```
 
 {{< notice note >}}
@@ -79,7 +79,7 @@ After you download KubeKey, if you transfer it to a new machine also with poor n
 
 {{< notice note >}}
 
-The commands above download the latest release (v1.1.1) of KubeKey. You can change the version number in the command to download a specific version.
+The commands above download the latest release (v1.2.1) of KubeKey. You can change the version number in the command to download a specific version.
 
 {{</ notice >}} 
 
@@ -89,15 +89,15 @@ Make `kk` executable:
 chmod +x kk
 ```
 
-Create an example configuration file with default configurations. Here Kubernetes v1.20.4 is used as an example.
+Create an example configuration file with default configurations. Here Kubernetes v1.21.5 is used as an example.
 
 ```bash
-./kk create config --with-kubesphere v3.1.1 --with-kubernetes v1.20.4
+./kk create config --with-kubesphere v3.2.1 --with-kubernetes v1.21.5
 ```
 
 {{< notice note >}}
 
-- Recommended Kubernetes versions for KubeSphere v3.1.1: v1.17.9, v1.18.8, v1.19.8, and v1.20.4. If you do not specify a Kubernetes version, KubeKey will install Kubernetes v1.19.8 by default. For more information about supported Kubernetes versions, see [Support Matrix](../../../installing-on-linux/introduction/kubekey/#support-matrix).
+- Recommended Kubernetes versions for KubeSphere 3.2.1: v1.19.x, v1.20.x, v1.21.x or v1.22.x (experimental). If you do not specify a Kubernetes version, KubeKey will install Kubernetes v1.21.5 by default. For more information about supported Kubernetes versions, see [Support Matrix](../../../installing-on-linux/introduction/kubekey/#support-matrix).
 
 - If you do not add the flag `--with-kubesphere` in the command in this step, KubeSphere will not be deployed unless you install it using the `addons` field in the configuration file or add this flag again when you use `./kk create cluster` later.
 - If you add the flag `--with-kubesphere` without specifying a KubeSphere version, the latest version of KubeSphere will be installed.
@@ -145,12 +145,14 @@ For more information about different fields in this configuration file, see [Kub
 ### Configure the load balancer
 
 ```yaml
-## Public LB config example
-## apiserver_loadbalancer_domain_name: "lb.kubesphere.local"
+spec:
   controlPlaneEndpoint:
+    ##Internal loadbalancer for apiservers
+    #internalLoadbalancer: haproxy
+    
     domain: lb.kubesphere.local
     address: "192.168.0.xx"
-    port: "6443"
+    port: 6443
 ```
 
 {{< notice note >}}
@@ -158,6 +160,7 @@ For more information about different fields in this configuration file, see [Kub
 - The address and port should be indented by two spaces in `config-sample.yaml`.
 - In most cases, you need to provide the **private IP address** of the load balancer for the field `address`. However, different cloud providers may have different configurations for load balancers. For example, if you configure a Server Load Balancer (SLB) on Alibaba Cloud, the platform assigns a public IP address to the SLB, which means you need to specify the public IP address for the field `address`.
 - The domain name of the load balancer is `lb.kubesphere.local` by default for internal access.
+- To use an internal load balancer, uncomment the field `internalLoadbalancer`.
 
 {{</ notice >}}
 

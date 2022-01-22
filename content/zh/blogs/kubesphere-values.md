@@ -1,7 +1,7 @@
 ---
 title: '一文说清 KubeSphere 容器平台的价值'
-tag: 'DevOps, 产品介绍, KubeSphere, 微服务'
-tag: 'DevOps, Kubernetes, KubeSphere, Observability, microservice'
+tag: 'DevOps, KubeSphere, 微服务'
+keywords: 'DevOps, Kubernetes, KubeSphere, Observability, microservice'
 createTime: '2020-04-10'
 author: 'Feynman, Ray'
 snapshot: 'https://pek3b.qingstor.com/kubesphere-docs/png/20200410130334.png'

@@ -13,20 +13,16 @@ This tutorial demonstrates how to use Jenkins shared libraries in KubeSphere Dev
 ## Prerequisites
 
 - You need to [enable the KubeSphere DevOps system](../../../pluggable-components/devops/).
-- You need to create a workspace, a DevOps project and an account (`project-regular`). This account must be invited to the DevOps project with the `operator` role. For more information, refer to [Create Workspaces, Projects, Accounts and Roles](../../../quick-start/create-workspace-and-project/).
+- You need to create a workspace, a DevOps project and a user (`project-regular`). This user must be invited to the DevOps project with the `operator` role. For more information, refer to [Create Workspaces, Projects, Users and Roles](../../../quick-start/create-workspace-and-project/).
 - You need to have a Jenkins shared library available. This tutorial uses the Jenkins shared library in [a GitHub repository](https://github.com/devops-ws/jenkins-shared-library) as an example.
 
 ## Configure a Shared Library on the Jenkins Dashboard
 
-1. [Log in to the Jenkins dashboard](../jenkins-setting/#log-in-to-jenkins-to-reload-configurations) and click **Manage Jenkins** in the left navigation bar.
+1. [Log in to the Jenkins dashboard](../../how-to-integrate/sonarqube/#step-5-add-the-sonarqube-server-to-jenkins) and click **Manage Jenkins** in the left navigation pane.
 
-2.  Scroll down and click **Configure System**.
-
-   ![click_configure](/images/docs/devops-user-guide/using-devops/jenkins-shared-library/click-configure.png)
+2. Scroll down and click **Configure System**.
 
 3. Scroll down to **Global Pipeline Libraries** and click **Add**.
-
-   ![click-add](/images/docs/devops-user-guide/using-devops/jenkins-shared-library/click-add.png)
 
 4. Configure the fields as below.
 
@@ -34,11 +30,9 @@ This tutorial demonstrates how to use Jenkins shared libraries in KubeSphere Dev
 
    - **Default version**. Set a branch name from the repository where you put your shared library as the default branch for importing your shared library. Enter `master` for this tutorial.
 
-   - Under **Retrieval method**, choose **Modern SCM**.
+   - Under **Retrieval method**, select **Modern SCM**.
 
-   - Under **Source Code Management**, choose **Git** and enter the URL of the example repository for **Project Repository**. You have to configure **Credentials** if you use your own repository that requires the credentials for accessing it.
-
-     ![configure-shared-library](/images/docs/devops-user-guide/using-devops/jenkins-shared-library/configure-shared-library.png)
+   - Under **Source Code Management**, select **Git** and enter the URL of the example repository for **Project Repository**. You have to configure **Credentials** if you use your own repository that requires the credentials for accessing it.
 
 5. When you finish editing, click **Apply**.
 
@@ -54,19 +48,13 @@ This tutorial demonstrates how to use Jenkins shared libraries in KubeSphere Dev
 
 1. Log in to the KubeSphere web console as `project-regular`. Go to your DevOps project and click **Create** on the **Pipelines** page.
 
-2. Set a name (for example, `demo-shared-library`) in the pop-up window and click **Next**.
+2. Set a name (for example, `demo-shared-library`) in the displayed dialog box and click **Next**.
 
-   ![set-name](/images/docs/devops-user-guide/using-devops/jenkins-shared-library/set-name.png)
-
-3. In **Advanced Settings**, click **Create** directly to create a pipeline with the default settings.
-
-   ![click-create](/images/docs/devops-user-guide/using-devops/jenkins-shared-library/click-create.png)
+3. On the **Advanced Settings** tab, click **Create** to create a pipeline with the default settings.
 
 ### Step 2: Edit the pipeline
 
-1. In the pipeline list, click the pipeline to go to its detail page and click **Edit Jenkinsfile**.
-
-   ![edit-jenkinsfile](/images/docs/devops-user-guide/using-devops/jenkins-shared-library/edit-jenkinsfile.png)
+1. In the pipeline list, click the pipeline to go to its details page and click **Edit Jenkinsfile**.
 
 2. In the displayed dialog box, enter the following example Jenkinsfile. When you finish editing, click **OK**.
 
@@ -126,15 +114,9 @@ This tutorial demonstrates how to use Jenkins shared libraries in KubeSphere Dev
 
 ### Step 3: Run the pipeline
 
-1. You can view the stage under the **Pipeline** tab. Click **Run** to run it.
+1. You can view the stage under the **Task Status** tab. Click **Run** to run it.
 
-   ![click-run](/images/docs/devops-user-guide/using-devops/jenkins-shared-library/click-run.png)
+2. After a while, the pipeline ran successfully.
 
-2. After a while, the pipeline will run successfully.
-
-   ![run-successfully](/images/docs/devops-user-guide/using-devops/jenkins-shared-library/run-successfully.png)
-
-3. You can click the **Success** record under **Status**, and then click **Show Logs** to view the log details.
-
-   ![log-details](/images/docs/devops-user-guide/using-devops/jenkins-shared-library/log-details.png)
+3. You can click the **Successful** record under **Run Records**, and then click **View Logs** to view the log details.
 

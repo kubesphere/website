@@ -1,112 +1,88 @@
 ---
-title: "Uninstall Pluggable Components from KubeSphere v3.1.x"
+title: "KubeSphere 3.2.x 卸载可插拔组件"
 keywords: "Installer, uninstall, KubeSphere, Kubernetes"
-description: "Learn how to uninstall each pluggable component in KubeSphere v3.1.x."
-linkTitle: "Uninstall Pluggable Components from KubeSphere v3.1.x"
+description: "学习如何在 KubeSphere 3.2.x 卸载所有可插拔组件。"
+linkTitle: "KubeSphere 3.2.x 卸载可插拔组件"
 Weight: 6940
 ---
 
-After you [enable the pluggable components of KubeSphere](../../pluggable-components/), you can also uninstall them by performing the following steps. Please back up any necessary data before you uninstall these components.
+[启用 KubeSphere 可插拔组件之后](../../pluggable-components/)，还可以根据以下步骤卸载他们。请在卸载这些组件之前，备份所有重要数据。
 
 {{< notice note >}}
 
-The methods of uninstalling certain pluggable components on KubeSphere v3.1.x are different from the methods on KubeSphere v3.0.0. For more information about the uninstallation methods on KubeSphere v3.0.0, see [Uninstall Pluggable Components from KubeSphere](https://v3-0.docs.kubesphere.io/docs/faq/installation/uninstall-pluggable-components/).
+KubeSphere 3.2.x 卸载某些可插拔组件的方法与 KubeSphere v3.0.0 不相同。有关 KubeSphere v3.0.0 卸载可插拔组件的详细方法，请参见[从 KubeSphere 上卸载可插拔组件](https://v3-0.docs.kubesphere.io/zh/docs/faq/installation/uninstall-pluggable-components/)。
+
 
 {{</ notice >}}
 
-## Prerequisites
+## 准备工作
 
-You have to change the value of the field `enabled` from `true` to `false` in `ks-installer` of the CRD `ClusterConfiguration` before you uninstall any pluggable components except Service Topology and Pod IP Pools. 
+在卸载除服务拓扑图和容器组 IP 池之外的可插拔组件之前，必须将 CRD 配置文件 `ClusterConfiguration` 中的 `ks-installer` 中的 `enabled` 字段的值从 `true` 改为 `false`。
 
-Use either of the following methods to change the value of the field `enabled`:
+使用下列其中一方法更改 `enabled` 字段的值：
 
-- Run the following command to edit `ks-installer`:
+- 运行以下命令编辑 `ks-installer`：
 
-  ```bash
-  kubectl -n kubesphere-system edit clusterconfiguration ks-installer
-  ```
+```bash
+kubectl -n kubesphere-system edit clusterconfiguration ks-installer
+```
 
-- Log in to the KubeSphere web console as `admin`, click **Platform** in the upper-left corner and select **Cluster Management**, and then go to **CRDs** to search for `ClusterConfiguration`. For more information, see [Enable Pluggable Components](../../../pluggable-components/).
+- 使用 `admin` 身份登录 KubeSphere Web 控制台，左上角点击**平台管理**，选择**集群管理**，在**自定义资源 CRD** 中搜索 `ClusterConfiguration`。有关更多信息，请参见[启用可插拔组件](../../pluggable-components/)。
 
 {{< notice note >}}
 
-After the value is changed, you need to wait until the updating process is complete before you continue with any further operations.
+更改值之后，需要等待配置更新完成，然后继续进行后续操作。
 
 {{</ notice >}}
 
-## Uninstall KubeSphere App Store
+## 卸载 KubeSphere 应用商店
 
-Change the value of `openpitrix.store.enabled` from `true` to `false` in `ks-installer` of the CRD `ClusterConfiguration`.
+将 CRD `ClusterConfiguration`  配置文件中 `ks-installer` 参数的 `openpitrix.store.enabled` 字段的值从 `true` 改为 `false`。
 
-## Uninstall KubeSphere DevOps
+## 卸载 KubeSphere DevOps
 
-1. Change the value of `devops.enabled` from `true` to `false` in `ks-installer` of the CRD `ClusterConfiguration`.
-
-2. Run the command mentioned in [Prerequisites](#prerequisites) and then delete the code under `status.devops` in `ks-installer` of the CRD `ClusterConfiguration`.
-
-3. Run the following commands:
+1. 卸载 DevOps：
 
    ```bash
-   helm -n kubesphere-devops-system delete ks-jenkins
-   helm -n kubesphere-devops-system delete uc
+   helm uninstall -n kubesphere-devops-system devops
+   kubectl patch -n kubesphere-system cc ks-installer --type=json -p='[{"op": "remove", "path": "/status/devops"}]'
+   kubectl patch -n kubesphere-system cc ks-installer --type=json -p='[{"op": "replace", "path": "/spec/devops/enabled", "value": false}]'
+   ```
+2. 删除 DevOps 资源：
+
+   ```bash
+   # 删除所有 DevOps 相关资源
+   for devops_crd in $(kubectl get crd -o=jsonpath='{range .items[*]}{.metadata.name}{"\n"}{end}' | grep "devops.kubesphere.io"); do
+       for ns in $(kubectl get ns -ojsonpath='{.items..metadata.name}'); do
+           for devops_res in $(kubectl get $devops_crd -n $ns -oname); do
+               kubectl patch $devops_res -n $ns -p '{"metadata":{"finalizers":[]}}' --type=merge
+           done
+       done
+   done
+   # 删除所有 DevOps CRD
+   kubectl get crd -o=jsonpath='{range .items[*]}{.metadata.name}{"\n"}{end}' | grep "devops.kubesphere.io" | xargs -I crd_name kubectl delete crd crd_name
+   # 删除 DevOps 命名空间
+   kubectl delete namespace kubesphere-devops-system
    ```
 
-   ```bash
-   # Delete DevOps projects
-   for devopsproject in `kubectl get devopsprojects -o jsonpath="{.items[*].metadata.name}"`
-   do
-     kubectl patch devopsprojects $devopsproject -p '{"metadata":{"finalizers":null}}' --type=merge
-   done
-   
-   for pip in `kubectl get pipeline -A -o jsonpath="{.items[*].metadata.name}"`
-   do
-     kubectl patch pipeline $pip -n `kubectl get pipeline -A | grep $pip | awk '{print $1}'` -p '{"metadata":{"finalizers":null}}' --type=merge
-   done
-   
-   for s2ibinaries in `kubectl get s2ibinaries -A -o jsonpath="{.items[*].metadata.name}"`
-   do
-     kubectl patch s2ibinaries $s2ibinaries -n `kubectl get s2ibinaries -A | grep $s2ibinaries | awk '{print $1}'` -p '{"metadata":{"finalizers":null}}' --type=merge
-   done
-   
-   for s2ibuilders in `kubectl get s2ibuilders -A -o jsonpath="{.items[*].metadata.name}"`
-   do
-     kubectl patch s2ibuilders $s2ibuilders -n `kubectl get s2ibuilders -A | grep $s2ibuilders | awk '{print $1}'` -p '{"metadata":{"finalizers":null}}' --type=merge
-   done
-   
-   for s2ibuildertemplates in `kubectl get s2ibuildertemplates -A -o jsonpath="{.items[*].metadata.name}"`
-   do
-     kubectl patch s2ibuildertemplates $s2ibuildertemplates -n `kubectl get s2ibuildertemplates -A | grep $s2ibuildertemplates | awk '{print $1}'` -p '{"metadata":{"finalizers":null}}' --type=merge
-   done
-   
-   for s2iruns in `kubectl get s2iruns -A -o jsonpath="{.items[*].metadata.name}"`
-   do
-     kubectl patch s2iruns $s2iruns -n `kubectl get s2iruns -A | grep $s2iruns | awk '{print $1}'` -p '{"metadata":{"finalizers":null}}' --type=merge
-   done
-   
-   kubectl delete devopsprojects --all 2>/dev/null
-   ```
+
+## 卸载 KubeSphere 日志系统
+
+1. 将 CRD `ClusterConfiguration`  配置文件中 `ks-installer` 参数的 `logging.enabled` 字段的值从 `true` 改为 `false`。
+
+2. 仅禁用日志收集：
 
    ```bash
-   kubectl delete ns kubesphere-devops-system
-   ```
-
-## Uninstall KubeSphere Logging
-
-1. Change the value of `logging.enabled` from `true` to `false` in `ks-installer` of the CRD `ClusterConfiguration`.
-
-2. To disable only log collection:
-
-   ```bash
-   delete inputs.logging.kubesphere.io -n kubesphere-logging-system tail
+   kubectl delete inputs.logging.kubesphere.io -n kubesphere-logging-system tail
    ```
 
    {{< notice note >}}
 
-   After running this command, you can still view the container recent logs provided by Kubernetes by default. However, the container history logs will be cleared and you cannot browse them any more. 
+   运行此命令后，默认情况下仍可查看 Kubernetes 提供的容器最近日志。但是，容器历史记录日志将被清除，您无法再浏览它们。
 
    {{</ notice >}}
 
-3. To uninstall Logging system including Elasticsearch:
+3. 卸载包括 Elasticsearch 的日志系统，请执行以下操作：
 
    ```bash
    kubectl delete crd fluentbitconfigs.logging.kubesphere.io
@@ -118,27 +94,34 @@ Change the value of `openpitrix.store.enabled` from `true` to `false` in `ks-ins
    helm uninstall elasticsearch-logging --namespace kubesphere-logging-system
    ```
 
-   {{< notice note >}}
+   {{< notice warning >}}
 
-   This operation may cause anomalies in Auditing, Events, and Service Mesh.
+   此操作可能导致审计、事件和服务网格的异常。
 
    {{</ notice >}}
+   
+3. 运行以下命令：
 
-## Uninstall KubeSphere Events
+   ```bash
+   kubectl delete deployment logsidecar-injector-deploy -n kubesphere-logging-system
+   kubectl delete ns kubesphere-logging-system
+   ```
 
-1. Change the value of `events.enabled` from `true` to `false` in `ks-installer` of the CRD `ClusterConfiguration`.
+## 卸载 KubeSphere 事件系统
 
-2. Run the following command:
+1. 将 CRD `ClusterConfiguration`  配置文件中 `ks-installer` 参数的 `events.enabled` 字段的值从 `true` 改为 `false`。
+
+2. 运行以下命令：
 
    ```bash
    helm delete ks-events -n kubesphere-logging-system
    ```
 
-## Uninstall KubeSphere Alerting
+## 卸载 KubeSphere 告警系统
 
-1. Change the value of `alerting.enabled` from `true` to `false` in `ks-installer` of the CRD `ClusterConfiguration`.
+1. 将 CRD `ClusterConfiguration`  配置文件中 `ks-installer` 参数的 `alerting.enabled` 字段的值从 `true` 改为 `false`。
 
-2. Run the following command:
+2. 运行以下命令：
 
    ```bash
    kubectl -n kubesphere-monitoring-system delete thanosruler kubesphere
@@ -146,28 +129,28 @@ Change the value of `openpitrix.store.enabled` from `true` to `false` in `ks-ins
 
    {{< notice note >}}
 
-   Notification is installed in KubeSphere v3.1.x by default, so you do not need to uninstall it.
+   KubeSphere 3.2.1 通知系统为默认安装，您无需卸载。
 
    {{</ notice >}} 
 
 
-## Uninstall KubeSphere Auditing
+## 卸载 KubeSphere 审计
 
-1. Change the value of `auditing.enabled` from `true` to `false` in `ks-installer` of the CRD `ClusterConfiguration`.
+1. 将 CRD `ClusterConfiguration`  配置文件中 `ks-installer` 参数的 `auditing.enabled` 字段的值从 `true` 改为 `false`。
 
-2. Run the following commands:
+2. 运行以下命令：
 
    ```bash
    helm uninstall kube-auditing -n kubesphere-logging-system
-   kubectl delete crd awh
-   kubectl delete crd ar
+   kubectl delete crd rules.auditing.kubesphere.io
+   kubectl delete crd webhooks.auditing.kubesphere.io
    ```
 
-## Uninstall KubeSphere Service Mesh
+## 卸载 KubeSphere 服务网格
 
-1. Change the value of `servicemesh.enabled` from `true` to `false` in `ks-installer` of the CRD `ClusterConfiguration`.
+1. 将 CRD `ClusterConfiguration`  配置文件中 `ks-installer` 参数的 `servicemesh.enabled` 字段的值从 `true` 改为 `false`。
 
-2. Run the following commands:
+2. 运行以下命令：
 
    ```bash
    curl -L https://istio.io/downloadIstio | sh -
@@ -180,15 +163,15 @@ Change the value of `openpitrix.store.enabled` from `true` to `false` in `ks-ins
    helm -n istio-system delete jaeger-operator
    ```
 
-## Uninstall Network Policies
+## 卸载网络策略
 
-For the component NetworkPolicy, disabling it does not require uninstalling the component as its controller is now inside `ks-controller-manager`. If you want to remove it from the KubeSphere console, change the value of `network.networkpolicy.enabled` from `true` to `false` in `ks-installer` of the CRD `ClusterConfiguration`.
+对于 NetworkPolicy 组件，禁用它不需要卸载组件，因为其控制器位于 `ks-controller-manager` 中。如果想要将其从 KubeSphere 控制台中移除，将 CRD `ClusterConfiguration`  配置文件中参数 `ks-installer` 中 `network.networkpolicy.enabled` 的值从 `true` 改为 `false`。
 
-## Uninstall Metrics Server
+## 卸载 Metrics Server
 
-1. Change the value of `metrics_server.enabled` from `true` to `false` in `ks-installer` of the CRD `ClusterConfiguration`.
+1. 将 CRD `ClusterConfiguration`  配置文件中参数 `ks-installer` 中 `metrics_server.enabled` 的值从 `true` 改为 `false`。
 
-2. Run the following commands:
+2. 运行以下命令：
 
    ```bash
    kubectl delete apiservice v1beta1.metrics.k8s.io
@@ -196,34 +179,34 @@ For the component NetworkPolicy, disabling it does not require uninstalling the 
    kubectl -n kube-system delete deployment metrics-server
    ```
 
-## Uninstall Service Topology
+## 卸载服务拓扑图
 
-1. Change the value of `network.topology.type` from `weave-scope` to `none` in `ks-installer` of the CRD `ClusterConfiguration`.
+1. 将 CRD `ClusterConfiguration`  配置文件中参数 `ks-installer` 中 `network.topology.type` 的值从 `weave-scope` 改为 `none`。
 
-2. Run the following command:
+2. 运行以下命令：
 
    ```bash
    kubectl delete ns weave
    ```
 
-## Uninstall Pod IP Pools
+## 卸载容器组 IP 池
 
-Change the value of `network.ippool.type` from `calico` to `none` in `ks-installer` of the CRD `ClusterConfiguration`.
+将 CRD `ClusterConfiguration`  配置文件中参数 `ks-installer` 中 `network.ippool.type` 的值从 `calico` 改为 `none`。
 
-## Uninstall KubeEdge
+## 卸载 KubeEdge
 
-1. Change the value of `kubeedge.enabled` from `true` to `false` in `ks-installer` of the CRD `ClusterConfiguration`.
+1. 将 CRD `ClusterConfiguration`  配置文件中参数 `ks-installer` 中 `kubeedege.enabled` 的值从 `true` 改为 `false`。
 
-2. Run the following commands:
+2. 运行以下命令：
 
    ```bash
    helm uninstall kubeedge -n kubeedge
    kubectl delete ns kubeedge
    ```
-
+   
    {{< notice note >}}
-
-   After the uninstallation, you will not be able to add edge nodes to your cluster.
-
+   
+   卸载后，您将无法为集群添加边缘节点。
+   
    {{</ notice >}}
 

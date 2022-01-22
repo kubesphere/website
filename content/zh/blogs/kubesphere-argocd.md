@@ -49,7 +49,7 @@ Argo CD 支持的 Kubernetes 配置清单包括 helm charts、kustomize 或纯 Y
 
 源码仓库可参考以下链接，离线环境原因，这里选择第二个示例 spring-demo：
 
-+ [https://github.com/KubeSphere/DevOps-java-sample](https://github.com/KubeSphere/DevOps-java-sample)
++ [https://github.com/KubeSphere/devops-maven-sample](https://github.com/KubeSphere/devops-maven-sample)
 + [https://github.com/willzhang/spring-demo](https://github.com/willzhang/spring-demo)
 
 yaml 文件仓库可参考以下链接，这里命名为 argocd-gitops：
@@ -447,7 +447,7 @@ Argo CD Image Updater 部署略显繁琐，部署操作如下：
 
 1、在 Argo CD 中创建本地用户
 
-创建 Argo CD 镜像更新程序需要访问 Argo CD API Server 的凭据，使用一个 image-updater 具有适当 API 权限的帐户，将以下用户定义添加到 argocd-cm：
+创建 Argo CD 镜像更新程序需要访问 Argo CD API Server 的凭据，使用一个 image-updater 具有适当 API 权限的用户，将以下用户定义添加到 argocd-cm：
 
 ```bash
 # kubectl -n Argo CD edit cm argocd-cm

@@ -1,18 +1,18 @@
 ---
 title: "Choose Jenkins Agent" 
-keywords: 'Kubernetes, KubeSphere, docker, devops, jenkins, agent'
+keywords: 'Kubernetes, KubeSphere, Docker, DevOps, Jenkins, Agent'
 description: 'Specify the Jenkins agent and use the built-in podTemplate for your pipeline.'
 linkTitle: "Choose Jenkins Agent"
 weight: 11250
 ---
 
-The `agent` section specifies where the entire Pipeline, or a specific stage, will execute in the Jenkins environment depending on where the `agent` section is placed. The section must be defined at the top-level inside the `pipeline` block, but stage-level usage is optional. For more information, see [the official documentation of Jenkins](https://www.jenkins.io/doc/book/pipeline/syntax/#agent).
+The `agent` section specifies where the entire Pipeline, or a specific stage, will execute in the Jenkins environment depending on where the `agent` section is placed. The section must be defined at the upper-level inside the `pipeline` block, but stage-level usage is optional. For more information, see [the official documentation of Jenkins](https://www.jenkins.io/doc/book/pipeline/syntax/#agent).
 
 ## Built-in podTemplate
 
 A podTemplate is a template of a Pod that is used to create agents. Users can define a podTemplate to use in the Kubernetes plugin.
 
-As a pipeline runs, every Jenkins agent Pod must have a container named `jnlp` for communications between the Jenkins master and Jenkins agent. In addition, users can add containers in the podTemplate to meet their own needs. They can choose to use their own Pod YAML to flexibly control the runtime, and the container can be switched by the `container` command. Here is an example.
+As a pipeline runs, every Jenkins agent Pod must have a container named `jnlp` for communications between the Jenkins controller and Jenkins agent. In addition, users can add containers in the podTemplate to meet their own needs. They can choose to use their own Pod YAML to flexibly control the runtime, and the container can be switched by the `container` command. Here is an example.
 
 ```groovy
 pipeline {

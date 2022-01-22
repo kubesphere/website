@@ -1,20 +1,20 @@
 ---
-title: "获取 KubeConfig"
+title: "获取 Kubeconfig"
 keywords: 'Kubernetes, KubeSphere, 多集群, 混合云, kubeconfig'
-description: '获取通过直接连接导入集群所需的 KubeConfig。'
-linkTitle: "获取 KubeConfig"
+description: '获取通过直接连接导入集群所需的 kubeconfig。'
+linkTitle: "获取 Kubeconfig"
 weight: 5230
 ---
 
-如果您使用[直接连接](../direct-connection/)导入 Member 集群，则需要提供 KubeConfig。
+如果您使用[直接连接](../direct-connection/)导入，则需要提供 kubeconfig。
 
 ## 准备工作
 
 您有一个 Kubernetes 集群。
 
-## 获取 KubeConfig
+## 获取 Kubeconfig
 
-进入 `$HOME/.kube`，检查目录中的文件，通常该目录下存在一个名为 `config` 的文件。使用以下命令获取 KubeConfig 文件：
+进入 `$HOME/.kube`，检查目录中的文件，通常该目录下存在一个名为 `config` 的文件。使用以下命令获取 kubeconfig 文件：
 
 ```bash
 cat $HOME/.kube/config

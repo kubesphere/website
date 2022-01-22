@@ -15,7 +15,7 @@ This document uses HPA based on CPU usage as an example. Operations for HPA base
 ## Prerequisites
 
 - You need to [enable the Metrics Server](https://kubesphere.io/docs/pluggable-components/metrics-server/).
-- You need to create a workspace, a project and an account (for example, `project-regular`). `project-regular` must be invited to the project and assigned the `operator` role. For more information, see [Create Workspaces, Projects, Accounts and Roles](/docs/quick-start/create-workspace-and-project/).
+- You need to create a workspace, a project and a user (for example, `project-regular`). `project-regular` must be invited to the project and assigned the `operator` role. For more information, see [Create Workspaces, Projects, Users and Roles](/docs/quick-start/create-workspace-and-project/).
 
 ## Create a Service
 
@@ -23,19 +23,11 @@ This document uses HPA based on CPU usage as an example. Operations for HPA base
 
 2. Choose **Services** in **Application Workloads** on the left navigation bar and click **Create** on the right.
 
-   ![create-service](/images/docs/project-user-guide/application-workloads/horizontal-pod-autoscaling/create-service.png)
-
 3. In the **Create Service** dialog box, click **Stateless Service**.
-
-   ![stateless-service](/images/docs/project-user-guide/application-workloads/horizontal-pod-autoscaling/stateless-service.png)
 
 4. Set the Service name (for example, `hpa`) and click **Next**.
 
-   ![service-name](/images/docs/project-user-guide/application-workloads/horizontal-pod-autoscaling/service-name.png)
-
-5. Click **Add Container Image**, set **Image** to `mirrorgooglecontainers/hpa-example` and click **Use Default Ports**.
-
-   ![add-container-image](/images/docs/project-user-guide/application-workloads/horizontal-pod-autoscaling/add-container-image.png)
+5. Click **Add Container**, set **Image** to `mirrorgooglecontainers/hpa-example` and click **Use Default Ports**.
 
 6. Set the CPU request (for example, 0.15 cores) for each container, click **√**, and click **Next**.
 
@@ -46,28 +38,22 @@ This document uses HPA based on CPU usage as an example. Operations for HPA base
 
    {{</ notice >}}
 
-   ![cpu-request](/images/docs/project-user-guide/application-workloads/horizontal-pod-autoscaling/cpu-request.png)
-
-7. Click **Next** on the **Mount Volumes** tab and click **Create** on the **Advanced Settings** tab.
+7. Click **Next** on the **Volume Settings** tab and click **Create** on the **Advanced Settings** tab.
 
 ## Configure Kubernetes HPA
 
-1. Choose **Deployments** in **Workloads** on the left navigation bar and click the HPA Deployment (for example, hpa-v1) on the right.
+1. Select **Deployments** in **Workloads** on the left navigation bar and click the HPA Deployment (for example, hpa-v1) on the right.
 
-   ![hpa-deployment](/images/docs/project-user-guide/application-workloads/horizontal-pod-autoscaling/hpa-deployment.png)
-
-2. Click **More** and choose **Horizontal Pod Autoscaling** from the drop-down list.
-
-   ![horizontal-pod-autoscaling](/images/docs/project-user-guide/application-workloads/horizontal-pod-autoscaling/horizontal-pod-autoscaling.png)
+2. Click **More** and select **Edit Autoscaling** from the drop-down menu.
 
 3. In the **Horizontal Pod Autoscaling** dialog box, configure the HPA parameters and click **OK**.
 
-   * **CPU Target Utilization**: Target percentage of the average Pod CPU request.
-   * **Memory Target Usage**: Target average Pod memory usage in MiB.
-   * **Min Replicas Number**: Minimum number of Pods.
-   * **Max Replicas Number**: Maximum number of Pods.
+   * **Target CPU Usage (%)**: Target percentage of the average Pod CPU request.
+   * **Target Memory Usage (MiB)**: Target average Pod memory usage in MiB.
+   * **Minimum Replicas**: Minimum number of Pods.
+   * **Maximum Replicas**: Maximum number of Pods.
 
-   In this example, **CPU Target Utilization** is set to `60`, **Min Replicas Number** is set to `1`, and **Max Replicas Number** is set to `10`.
+   In this example, **Target CPU Usage (%)** is set to `60`, **Minimum Replicas** is set to `1`, and **Maximum Replicas** is set to `10`.
 
    {{< notice note >}}
 
@@ -75,49 +61,29 @@ This document uses HPA based on CPU usage as an example. Operations for HPA base
 
    {{</ notice >}}
 
-   ![hpa-parameters](/images/docs/project-user-guide/application-workloads/horizontal-pod-autoscaling/hpa-parameters.png)
-
 ## Verify HPA
 
 This section uses a Deployment that sends requests to the HPA Service to verify that HPA automatically adjusts the number of Pods to meet the resource usage target.
 
 ### Create a load generator Deployment
 
-1. Choose **Workloads** in **Application Workloads** on the left navigation bar and click **Create** on the right.
-
-   ![create-deployment](/images/docs/project-user-guide/application-workloads/horizontal-pod-autoscaling/create-deployment.png)
+1. Select **Workloads** in **Application Workloads** on the left navigation bar and click **Create** on the right.
 
 2. In the **Create Deployment** dialog box, set the Deployment name (for example, `load-generator`) and click **Next**.
 
-   ![deployment-name](/images/docs/project-user-guide/application-workloads/horizontal-pod-autoscaling/deployment-name.png)
+3. Click **Add Container** and set **Image** to `busybox`.
 
-3. Click **Add Container Image** and set **Image** to `busybox`.
-
-   ![busybox](/images/docs/project-user-guide/application-workloads/horizontal-pod-autoscaling/busybox.png)
-
-4. Scroll down in the dialog box, select **Start Command**, and set **Run Command** to `sh,-c` and **Parameters** to `while true; do wget -q -O- http://<Target Service>.<Target project>.svc.cluster.local; done` (for example, `while true; do wget -q -O- http://hpa.demo-project.svc.cluster.local; done`).
-
-   ![start-command](/images/docs/project-user-guide/application-workloads/horizontal-pod-autoscaling/start-command.png)
+4. Scroll down in the dialog box, select **Start Command**, and set **Command** to `sh,-c` and **Parameters** to `while true; do wget -q -O- http://<Target Service>.<Target project>.svc.cluster.local; done` (for example, `while true; do wget -q -O- http://hpa.demo-project.svc.cluster.local; done`).
 
 5. Click **√** and click **Next**.
 
-6. Click **Next** on the **Mount Volumes** tab and click **Create** on the **Advanced Settings** tab.
+6. Click **Next** on the **Volume Settings** tab and click **Create** on the **Advanced Settings** tab.
 
 ### View the HPA Deployment status
 
-1. After the load generator Deployment is created, choose **Workloads** in **Application Workloads** on the left navigation bar and click the HPA Deployment (for example, hpa-v1) on the right.
+1. After the load generator Deployment is created, go to **Workloads** in **Application Workloads** on the left navigation bar and click the HPA Deployment (for example, hpa-v1) on the right. The number of Pods displayed on the page automatically increases to meet the resource usage target.
 
-   The number of Pods automatically increases to meet the resource usage target.
-
-   ![target-cpu-utilization](/images/docs/project-user-guide/application-workloads/horizontal-pod-autoscaling/target-cpu-utilization.png)
-
-   ![pods-increase](/images/docs/project-user-guide/application-workloads/horizontal-pod-autoscaling/pods-increase.png)
-
-2. Choose **Workloads** in **Application Workloads** on the left navigation bar, click <img src="/images/docs/project-user-guide/application-workloads/horizontal-pod-autoscaling/three-dots.png" width="20px" /> on the right of the load generator Deployment (for example, load-generator-v1), and choose **Delete** from the drop-down list. After the load-generator Deployment is deleted, check the status of the HPA Deployment again.
-
-   The number of Pods decreases to the minimum.
-
-   ![pods-decrease](/images/docs/project-user-guide/application-workloads/horizontal-pod-autoscaling/pods-decrease.png)
+2. Choose **Workloads** in **Application Workloads** on the left navigation bar, click <img src="/images/docs/project-user-guide/application-workloads/horizontal-pod-autoscaling/three-dots.png" width="20px" /> on the right of the load generator Deployment (for example, load-generator-v1), and choose **Delete** from the drop-down list. After the load-generator Deployment is deleted, check the status of the HPA Deployment again. The number of Pods decreases to the minimum.
 
 {{< notice note >}}
 
@@ -133,7 +99,6 @@ You can repeat steps in [Configure HPA](#configure-hpa) to edit the HPA configur
 
 1. Choose **Workloads** in **Application Workloads** on the left navigation bar and click the HPA Deployment (for example, hpa-v1) on the right.
 
-2. Click <img src="/images/docs/project-user-guide/application-workloads/horizontal-pod-autoscaling/three-dots.png" width="20px" /> on the right of **Horizontal Pod Autoscaling** and choose **Cancel** from the drop-down list.
+2. Click <img src="/images/docs/project-user-guide/application-workloads/horizontal-pod-autoscaling/three-dots.png" width="20px" /> on the right of **Autoscaling** and choose **Cancel** from the drop-down list.
 
-   ![cancel-hpa](/images/docs/project-user-guide/application-workloads/horizontal-pod-autoscaling/cancel-hpa.png)
 

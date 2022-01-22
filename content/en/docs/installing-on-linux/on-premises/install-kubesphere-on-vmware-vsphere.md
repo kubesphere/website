@@ -289,7 +289,7 @@ systemctl status -l keepalived
 
 ## Download KubeKey
 
-[Kubekey](https://github.com/kubesphere/kubekey) is the brand-new installer which provides an easy, fast and flexible way to install Kubernetes and KubeSphere v3.1.1.
+[Kubekey](https://github.com/kubesphere/kubekey) is the brand-new installer which provides an easy, fast and flexible way to install Kubernetes and KubeSphere 3.2.1.
 
 Follow the step below to download KubeKey.
 
@@ -300,7 +300,7 @@ Follow the step below to download KubeKey.
 Download KubeKey from its [GitHub Release Page](https://github.com/kubesphere/kubekey/releases) or use the following command directly.
 
 ```bash
-curl -sfL https://get-kk.kubesphere.io | VERSION=v1.1.1 sh -
+curl -sfL https://get-kk.kubesphere.io | VERSION=v1.2.1 sh -
 ```
 
 {{</ tab >}}
@@ -316,7 +316,7 @@ export KKZONE=cn
 Run the following command to download KubeKey:
 
 ```bash
-curl -sfL https://get-kk.kubesphere.io | VERSION=v1.1.1 sh -
+curl -sfL https://get-kk.kubesphere.io | VERSION=v1.2.1 sh -
 ```
 
 {{< notice note >}}
@@ -331,7 +331,7 @@ After you download KubeKey, if you transfer it to a new machine also with poor n
 
 {{< notice note >}}
 
-The commands above download the latest release (v1.1.1) of KubeKey. You can change the version number in the command to download a specific version.
+The commands above download the latest release (v1.2.1) of KubeKey. You can change the version number in the command to download a specific version.
 
 {{</ notice >}} 
 
@@ -345,15 +345,15 @@ chmod +x kk
 
 With KubeKey, you can install Kubernetes and KubeSphere together. You have the option to create a multi-node cluster by customizing parameters in the configuration file.
 
-Create a Kubernetes cluster with KubeSphere installed (for example, `--with-kubesphere v3.1.1`):
+Create a Kubernetes cluster with KubeSphere installed (for example, `--with-kubesphere v3.2.1`):
 
 ```bash
-./kk create config --with-kubernetes v1.19.8 --with-kubesphere v3.1.1
+./kk create config --with-kubernetes v1.21.5 --with-kubesphere v3.2.1
 ```
 
 {{< notice note >}}
 
-- Recommended Kubernetes versions for KubeSphere v3.1.1: v1.17.9, v1.18.8, v1.19.8, and v1.20.4. If you do not specify a Kubernetes version, KubeKey will install Kubernetes v1.19.8 by default. For more information about supported Kubernetes versions, see [Support Matrix](../../../installing-on-linux/introduction/kubekey/#support-matrix).
+- Recommended Kubernetes versions for KubeSphere 3.2.1: v1.19.x, v1.20.x, v1.21.x or v1.22.x (experimental). If you do not specify a Kubernetes version, KubeKey will install Kubernetes v1.21.5 by default. For more information about supported Kubernetes versions, see [Support Matrix](../../../installing-on-linux/introduction/kubekey/#support-matrix).
 
 - If you do not add the flag `--with-kubesphere` in the command in this step, KubeSphere will not be deployed unless you install it using the `addons` field in the configuration file or add this flag again when you use `./kk create cluster` later.
 - If you add the flag `--with-kubesphere` without specifying a KubeSphere version, the latest version of KubeSphere will be installed.
@@ -396,9 +396,9 @@ spec:
     domain: lb.kubesphere.local
     # vip
     address: "10.10.71.67"
-    port: "6443"
+    port: 6443
   kubernetes:
-    version: v1.19.8
+    version: v1.21.5
     imageRepo: kubesphere
     clusterName: cluster.local
     masqueradeAll: false  # masqueradeAll tells kube-proxy to SNAT everything if using the pure iptables proxy mode. [Default: false]
@@ -429,7 +429,7 @@ metadata:
   name: ks-installer
   namespace: kubesphere-system
   labels:
-    version: v3.1.1
+    version: v3.2.1
 spec:
   local_registry: ""
   persistence:
@@ -454,10 +454,10 @@ spec:
       elasticsearchDataVolumeSize: 20Gi    # Volume size of Elasticsearch data nodes
       logMaxAge: 7                     # Log retention time in built-in Elasticsearch, it is 7 days by default.
       elkPrefix: logstash              # The string making up index names. The index name will be formatted as ks-<elk_prefix>-log
-      # externalElasticsearchUrl:
+      # externalElasticsearchHost:
       # externalElasticsearchPort:
   console:
-    enableMultiLogin: false  # enable/disable multiple sing on, it allows an account can be used by different users at the same time.
+    enableMultiLogin: false  # enable/disable multiple sing on, it allows a user can be used by different users at the same time.
     port: 30880
   alerting:                # Whether to install KubeSphere alerting system. It enables Users to customize alerting policies to send messages to receivers in time with different time intervals and alerting levels to choose from.
     enabled: false

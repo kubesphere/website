@@ -12,11 +12,11 @@ This tutorial demonstrates how to create a multi-cluster pipeline on KubeSphere.
 
 ## Prerequisites
 
-- You need to have three Kubernetes clusters with KubeSphere installed. Choose one cluster as your Host Cluster and the other two as your Member Clusters. For more information about cluster roles and how to build a multi-cluster environment on KubeSphere, refer to [Multi-cluster Management](../../../multicluster-management/).
-- You need to set your Member Clusters as [public clusters](../../../cluster-administration/cluster-settings/cluster-visibility-and-authorization/#make-a-cluster-public). Alternatively, you can [set cluster visibility after a workspace is created](../../../cluster-administration/cluster-settings/cluster-visibility-and-authorization/#set-cluster-visibility-after-a-workspace-is-created).
-- You need to [enable the KubeSphere DevOps system](../../../pluggable-components/devops/) on your Host Cluster.
+- You need to have three Kubernetes clusters with KubeSphere installed. Choose one cluster as your host cluster and the other two as your member clusters. For more information about cluster roles and how to build a multi-cluster environment on KubeSphere, refer to [Multi-cluster Management](../../../multicluster-management/).
+- You need to set your member clusters as [public clusters](../../../cluster-administration/cluster-settings/cluster-visibility-and-authorization/#make-a-cluster-public). Alternatively, you can [set cluster visibility after a workspace is created](../../../cluster-administration/cluster-settings/cluster-visibility-and-authorization/#set-cluster-visibility-after-a-workspace-is-created).
+- You need to [enable the KubeSphere DevOps system](../../../pluggable-components/devops/) on your host cluster.
 - You need to integrate SonarQube into your pipeline. For more information, refer to [Integrate SonarQube into Pipelines](../../how-to-integrate/sonarqube/).
-- You need to create four accounts on your Host Cluster: `ws-manager`, `ws-admin`, `project-admin`, and `project-regular`, and grant these accounts different roles. For more information, refer to [Create Workspaces, Projects, Accounts and Roles](../../../quick-start/create-workspace-and-project/#step-1-create-an-account).
+- You need to create four accounts on your host cluster: `ws-manager`, `ws-admin`, `project-admin`, and `project-regular`, and grant these accounts different roles. For more information, refer to [Create Workspaces, Projects, Users and Roles](../../../quick-start/create-workspace-and-project/#step-1-create-an-account).
 
 ## Workflow Overview
 
@@ -34,39 +34,31 @@ See the table below for the role of each cluster.
 
 | Cluster Name | Cluster Role   | Usage       |
 | ------------ | -------------- | ----------- |
-| host         | Host Cluster   | Testing     |
-| shire        | Member Cluster | Production  |
-| rohan        | Member Cluster | Development |
+| host         | Host cluster   | Testing     |
+| shire        | Member cluster | Production  |
+| rohan        | Member cluster | Development |
 
 {{< notice note >}}
 
-These Kubernetes clusters can be hosted across different cloud providers and their Kubernetes versions can also vary. Recommended Kubernetes versions for KubeSphere v3.1.0: v1.17.9, v1.18.8, v1.19.8 and v1.20.4.
+These Kubernetes clusters can be hosted across different cloud providers and their Kubernetes versions can also vary. Recommended Kubernetes versions for KubeSphere 3.2.1: v1.19.x, v1.20.x, v1.21.x, and v1.22.x (experimental).
 
 {{</ notice >}}
 
 ### Step 2: Create a workspace
 
-1. Log in to the web console of the Host Cluster as `ws-manager`. On the **Workspaces** page, click **Create**.
+1. Log in to the web console of the host cluster as `ws-manager`. On the **Workspaces** page, click **Create**.
 
 2. On the **Basic Information** page, name the workspace `devops-multicluster`, select `ws-admin` for **Administrator**, and click **Next**.
 
-   ![create-workspace](/images/docs/devops-user-guide/examples/create-multi-cluster-pipeline/create-workspace.png)
+3. On the **Cluster Settings** page, select all three clusters and click **Create**.
 
-3. On the **Select Clusters** page, select all three clusters and click **Create**.
-
-   ![select-all-clusters](/images/docs/devops-user-guide/examples/create-multi-cluster-pipeline/select-all-clusters.png)
-
-4. The workspace created will display in the list. You need to log out of the console and log back in as `ws-admin` to invite both `project-admin` and `project-regular` to the workspace and grant them the role `workspace-self-provisioner` and `workspace-viewer` respectively. For more information, refer to [Create Workspaces, Projects, Accounts and Roles](../../../quick-start/create-workspace-and-project/#step-2-create-a-workspace).
-
-   ![workspace-created](/images/docs/devops-user-guide/examples/create-multi-cluster-pipeline/workspace-created.png)
+4. The workspace created is displayed in the list. You need to log out of the console and log back in as `ws-admin` to invite both `project-admin` and `project-regular` to the workspace and grant them the role `workspace-self-provisioner` and `workspace-viewer` respectively. For more information, refer to [Create Workspaces, Projects, Users and Roles](../../../quick-start/create-workspace-and-project/#step-2-create-a-workspace).
 
 ### Step 3: Create a DevOps project
 
 1. Log out of the console and log back in as `project-admin`. Go to the **DevOps Projects** page and click **Create**.
 
-2. In the dialog that appears, enter `multicluster-demo` for **Name**, select **host** for **Cluster Settings**, and then click **OK**.
-
-   ![devops-project](/images/docs/devops-user-guide/examples/create-multi-cluster-pipeline/devops-project.png)
+2. In the displayed dialog box, enter `multicluster-demo` for **Name**, select **host** for **Cluster Settings**, and then click **OK**.
 
    {{< notice note >}}
 
@@ -74,13 +66,11 @@ These Kubernetes clusters can be hosted across different cloud providers and the
 
    {{</ notice >}}
 
-3. The DevOps project created will display in the list. Make sure you invite the account `project-regular` to this project with the role `operator`. For more information, refer to [Create Workspaces, Projects, Accounts and Roles](../../../quick-start/create-workspace-and-project/#step-5-create-a-devops-project-optional).
-
-   ![devops-project-created](/images/docs/devops-user-guide/examples/create-multi-cluster-pipeline/devops-project-created.png)
+3. The DevOps project created is displayed in the list. Make sure you invite the `project-regular` user to this project and assign it the `operator` role. For more information, refer to [Create Workspaces, Projects, Users and Roles](../../../quick-start/create-workspace-and-project/#step-5-create-a-devops-project-optional).
 
 ### Step 4: Create projects on clusters
 
-You must create the projects as shown in the table below in advance. Make sure you invite the account `project-regular` to these projects with the role `operator`. For more information about how to create a project, refer to [Create Workspaces, Projects, Accounts and Roles](../../../quick-start/create-workspace-and-project/#step-3-create-a-project).
+You must create the projects as shown in the table below in advance. Make sure you invite the `project-regular` user to these projects and assign it the `operator` role. For more information about how to create a project, refer to [Create Workspaces, Projects, Users and Roles](../../../quick-start/create-workspace-and-project/#step-3-create-a-project).
 
 | Cluster Name | Usage       | Project Name           |
 | ------------ | ----------- | ---------------------- |
@@ -92,37 +82,31 @@ You must create the projects as shown in the table below in advance. Make sure y
 
 1. Log out of the console and log back in as `project-regular`. On the **DevOps Projects** page, click the DevOps project `multicluster-demo`.
 
-2. On the **DevOps Credentials** page, you need to create the credentials as shown in the table below. For more information about how to create credentials, refer to [Credential Management](../../how-to-use/credential-management/#create-credentials) and [Create a Pipeline Using a Jenkinsfile](../../how-to-use/create-a-pipeline-using-jenkinsfile/#step-1-create-credentials).
+2. On the **Credentials** page, you need to create the credentials as shown in the table below. For more information about how to create credentials, refer to [Credential Management](../../how-to-use/credential-management/#create-credentials) and [Create a Pipeline Using a Jenkinsfile](../../how-to-use/create-a-pipeline-using-jenkinsfile/#step-1-create-credentials).
 
    | Credential ID | Type                | Where to Use                       |
    | ------------- | ------------------- | ---------------------------------- |
-   | host          | kubeconfig          | The Host Cluster for testing       |
-   | shire         | kubeconfig          | The Member Cluster for production  |
-   | rohan         | kubeconfig          | The Member Cluster for development |
+   | host          | kubeconfig          | The host cluster for testing       |
+   | shire         | kubeconfig          | The member cluster for production  |
+   | rohan         | kubeconfig          | The member cluster for development |
    | dockerhub-id  | Account Credentials | Docker Hub                         |
    | sonar-token   | Secret Text         | SonarQube                          |
 
    {{< notice note >}}
 
-   You have to manually enter the kubeconfig of your Member Clusters when creating the kubeconfig credentials `shire` and `rohan`. Make sure your Host Cluster can access the APIServer addresses of your Member Clusters.
+   You have to manually enter the kubeconfig of your member clusters when creating the kubeconfig credentials `shire` and `rohan`. Make sure your host cluster can access the API Server addresses of your member clusters.
 
    {{</ notice >}}
 
-3. You will have five credentials in total.
-
-   ![credentials-created](/images/docs/devops-user-guide/examples/create-multi-cluster-pipeline/credentials-created.png)
+3. Five credentials are created in total.
 
 ### Step 6: Create a pipeline
 
-1. Go to the **Pipelines** page and click **Create**. In the dialog that appears, enter `build-and-deploy-application` for **Name** and click **Next**.
+1. Go to the **Pipelines** page and click **Create**. In the displayed dialog box, enter `build-and-deploy-application` for **Name** and click **Next**.
 
-   ![pipeline-name](/images/docs/devops-user-guide/examples/create-multi-cluster-pipeline/pipeline-name.png)
+2. On the **Advanced Settings** tab, click **Create** to use the default settings.
 
-2. In the **Advanced Settings** tab, click **Create** to use the default settings.
-
-3. The pipeline created will display in the list. Click it to go to its detail page.
-
-   ![pipeline-created](/images/docs/devops-user-guide/examples/create-multi-cluster-pipeline/pipeline-created.png)
+3. The pipeline created is displayed in the list. Click its name to go to the details page.
 
 4. Click **Edit Jenkinsfile** and copy and paste the following contents. Make sure you replace the value of `DOCKERHUB_NAMESPACE` with your own value, and then click **OK**.
 
@@ -145,7 +129,7 @@ You must create the projects as shown in the table below in advance. Make sure y
    
            REGISTRY = 'docker.io'
            DOCKERHUB_NAMESPACE = 'your Docker Hub account ID'
-           APP_NAME = 'devops-java-sample'
+           APP_NAME = 'devops-maven-sample'
            SONAR_CREDENTIAL_ID = 'sonar-token'
            TAG_NAME = "SNAPSHOT-$BRANCH_NAME-$BUILD_NUMBER"
        }
@@ -153,16 +137,15 @@ You must create the projects as shown in the table below in advance. Make sure y
        stage('checkout') {
          steps {
            container('maven') {
-             git branch: 'master', url: 'https://github.com/kubesphere/devops-java-sample.git'
+             git branch: 'master', url: 'https://github.com/kubesphere/devops-maven-sample.git'
            }
          }
        }
        stage('unit test') {
          steps {
            container('maven') {
-             sh 'mvn clean -o -gs `pwd`/configuration/settings.xml test'
+             sh 'mvn clean test'
            }
-   
          }
        }
        stage('sonarqube analysis') {
@@ -170,7 +153,7 @@ You must create the projects as shown in the table below in advance. Make sure y
            container('maven') {
              withCredentials([string(credentialsId: "$SONAR_CREDENTIAL_ID", variable: 'SONAR_TOKEN')]) {
                withSonarQubeEnv('sonar') {
-                 sh "mvn sonar:sonar -o -gs `pwd`/configuration/settings.xml -Dsonar.login=$SONAR_TOKEN"
+                 sh "mvn sonar:sonar -Dsonar.login=$SONAR_TOKEN"
                }
    
              }
@@ -181,15 +164,13 @@ You must create the projects as shown in the table below in advance. Make sure y
        stage('build & push') {
          steps {
            container('maven') {
-             sh 'mvn -o -Dmaven.test.skip=true -gs `pwd`/configuration/settings.xml clean package'
+             sh 'mvn -Dmaven.test.skip=true clean package'
              sh 'docker build -f Dockerfile-online -t $REGISTRY/$DOCKERHUB_NAMESPACE/$APP_NAME:SNAPSHOT-$BRANCH_NAME-$BUILD_NUMBER .'
              withCredentials([usernamePassword(passwordVariable : 'DOCKER_PASSWORD' ,usernameVariable : 'DOCKER_USERNAME' ,credentialsId : "$DOCKER_CREDENTIAL_ID" ,)]) {
                sh 'echo "$DOCKER_PASSWORD" | docker login $REGISTRY -u "$DOCKER_USERNAME" --password-stdin'
                sh 'docker push  $REGISTRY/$DOCKERHUB_NAMESPACE/$APP_NAME:SNAPSHOT-$BRANCH_NAME-$BUILD_NUMBER'
              }
-   
            }
-   
          }
        }
        stage('push latest') {
@@ -198,29 +179,51 @@ You must create the projects as shown in the table below in advance. Make sure y
              sh 'docker tag  $REGISTRY/$DOCKERHUB_NAMESPACE/$APP_NAME:SNAPSHOT-$BRANCH_NAME-$BUILD_NUMBER $REGISTRY/$DOCKERHUB_NAMESPACE/$APP_NAME:latest '
              sh 'docker push  $REGISTRY/$DOCKERHUB_NAMESPACE/$APP_NAME:latest '
            }
-   
          }
        }
        stage('deploy to dev') {
          steps {
-           kubernetesDeploy(configs: 'deploy/dev-ol/**', enableConfigSubstitution: true, kubeconfigId: "$DEV_KUBECONFIG_CREDENTIAL_ID")
+            container('maven') {
+               withCredentials([
+                   kubeconfigFile(
+                   credentialsId: env.DEV_KUBECONFIG_CREDENTIAL_ID,
+                   variable: 'KUBECONFIG')
+                   ]) {
+                   sh 'envsubst < deploy/dev-all-in-one/devops-sample.yaml | kubectl apply -f -'
+               }
+            }
          }
        }
        stage('deploy to staging') {
          steps {
-           input(id: 'deploy-to-staging', message: 'deploy to staging?')
-           kubernetesDeploy(configs: 'deploy/prod-ol/**', enableConfigSubstitution: true, kubeconfigId: "$TEST_KUBECONFIG_CREDENTIAL_ID")
+            container('maven') {
+               input(id: 'deploy-to-staging', message: 'deploy to staging?')
+               withCredentials([
+                   kubeconfigFile(
+                   credentialsId: env.TEST_KUBECONFIG_CREDENTIAL_ID,
+                   variable: 'KUBECONFIG')
+                   ]) {
+                   sh 'envsubst < deploy/prod-all-in-one/devops-sample.yaml | kubectl apply -f -'
+               }
+            }
          }
        }
        stage('deploy to production') {
          steps {
-           input(id: 'deploy-to-production', message: 'deploy to production?')
-           kubernetesDeploy(configs: 'deploy/prod-ol/**', enableConfigSubstitution: true, kubeconfigId: "$PROD_KUBECONFIG_CREDENTIAL_ID")
+            container('maven') {
+               input(id: 'deploy-to-production', message: 'deploy to production?')
+               withCredentials([
+                   kubeconfigFile(
+                   credentialsId: env.PROD_KUBECONFIG_CREDENTIAL_ID,
+                   variable: 'KUBECONFIG')
+                   ]) {
+                   sh 'envsubst < deploy/prod-all-in-one/devops-sample.yaml | kubectl apply -f -'
+               }
+            }
          }
        }
      }
    }
-   
    ```
 
    {{< notice note >}}
@@ -231,33 +234,18 @@ You must create the projects as shown in the table below in advance. Make sure y
 
 5. After the pipeline is created, you can view its stages and steps on the graphical editing panel as well.
 
-   ![pipeline-panel](/images/docs/devops-user-guide/examples/create-multi-cluster-pipeline/pipeline-panel.png)
-
 ### Step 7: Run the pipeline and check the results
 
 1. Click **Run** to run the pipeline. The pipeline will pause when it reaches the stage **deploy to staging** as resources have been deployed to the cluster for development. You need to manually click **Proceed** twice to deploy resources to the testing cluster `host` and the production cluster `shire`.
 
-   ![deploy-to-staging](/images/docs/devops-user-guide/examples/create-multi-cluster-pipeline/deploy-to-staging.png)
+2. After a while, you can see the pipeline status shown as **Successful**.
 
-2. After a while, you can see the pipeline status shown as **Success**.
+3. Check the pipeline running logs by clicking **View Logs** in the upper-right corner. For each stage, you click it to inspect logs, which can be downloaded to your local machine for further analysis.
 
-   ![pipeline-success](/images/docs/devops-user-guide/examples/create-multi-cluster-pipeline/pipeline-success.png)
+4. Once the pipeline runs successfully, click **Code Check** to check the results through SonarQube.
 
-3. Check the pipeline running logs by clicking **Show Logs** in the upper-right corner. For each stage, you click it to inspect logs, which can be downloaded to your local machine for further analysis.
+5. Go to the **Projects** page, and you can view the resources deployed in different projects across the clusters by selecting a specific cluster from the drop-down list.
 
-   ![pipeline-logs](/images/docs/devops-user-guide/examples/create-multi-cluster-pipeline/pipeline-logs.png)
-
-4. Once the pipeline runs successfully, click **Code Quality** to check the results through SonarQube.
-
-   ![sonarqube-result](/images/docs/devops-user-guide/examples/create-multi-cluster-pipeline/sonarqube-result.png)
-
-5. Go to the **Projects** page and you can view the resources deployed in different projects across the clusters by selecting a specific cluster from the drop-down list.
-
-   ![host-pods](/images/docs/devops-user-guide/examples/create-multi-cluster-pipeline/host-pods.png)
-
-   ![shire-pods](/images/docs/devops-user-guide/examples/create-multi-cluster-pipeline/shire-pods.png)
-
-   ![rohan-pods](/images/docs/devops-user-guide/examples/create-multi-cluster-pipeline/rohan-pods.png)
 
    
 

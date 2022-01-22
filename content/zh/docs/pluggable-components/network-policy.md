@@ -6,7 +6,7 @@ linkTitle: "网络策略"
 weight: 6900
 ---
 
-从 3.0.0 版本开始，用户可以在 KubeSphere 中配置原生 Kubernetes 的网络策略。网络策略是一种以应用为中心的结构，使您能够指定如何允许 Pod 通过网络与各种网络实体进行通信。通过网络策略，用户可以在同一集群内实现网络隔离，这意味着可以在某些实例 (Pod) 之间设置防火墙。
+从 3.0.0 版本开始，用户可以在 KubeSphere 中配置原生 Kubernetes 的网络策略。网络策略是一种以应用为中心的结构，使您能够指定如何允许容器组通过网络与各种网络实体进行通信。通过网络策略，用户可以在同一集群内实现网络隔离，这意味着可以在某些实例（容器组）之间设置防火墙。
 
 {{< notice note >}}
 
@@ -49,9 +49,9 @@ weight: 6900
 
 ### 在 Kubernetes 上安装
 
-在 Kubernetes 上安装 KubeSphere 的过程与教程[在 Kubernetes 上安装 KubeSphere](../../installing-on-kubernetes/introduction/overview/) 中的说明大致相同，不同之处是需要先在 [cluster-configuration.yaml](https://github.com/kubesphere/ks-installer/releases/download/v3.1.1/cluster-configuration.yaml) 文件中启用网络策略（可选组件）。
+在 Kubernetes 上安装 KubeSphere 的过程与教程[在 Kubernetes 上安装 KubeSphere](../../installing-on-kubernetes/introduction/overview/) 中的说明大致相同，不同之处是需要先在 [cluster-configuration.yaml](https://github.com/kubesphere/ks-installer/releases/download/v3.2.1/cluster-configuration.yaml) 文件中启用网络策略（可选组件）。
 
-1. 下载 [cluster-configuration.yaml](https://github.com/kubesphere/ks-installer/releases/download/v3.1.1/cluster-configuration.yaml) 文件，然后打开并开始编辑。
+1. 下载 [cluster-configuration.yaml](https://github.com/kubesphere/ks-installer/releases/download/v3.2.1/cluster-configuration.yaml) 文件，然后打开并开始编辑。
 
     ```bash
     vi cluster-configuration.yaml
@@ -68,7 +68,7 @@ weight: 6900
 3. 执行以下命令开始安装：
 
     ```bash
-    kubectl apply -f https://github.com/kubesphere/ks-installer/releases/download/v3.1.1/kubesphere-installer.yaml
+    kubectl apply -f https://github.com/kubesphere/ks-installer/releases/download/v3.2.1/kubesphere-installer.yaml
     
     kubectl apply -f cluster-configuration.yaml
     ```
@@ -77,15 +77,15 @@ weight: 6900
 
 1. 以 `admin` 身份登录控制台。点击左上角的**平台管理**，选择**集群管理**。
    
-2. 点击**自定义资源 CRD**，在搜索栏中输入 `clusterconfiguration`。点击结果查看其详细页面。
+2. 点击 **CRD**，在搜索栏中输入 `clusterconfiguration`。点击结果查看其详细页面。
 
     {{< notice info >}}
-自定义资源定义 (CRD) 允许用户在不新增 API 服务器的情况下创建一种新的资源类型，用户可以像使用其他 Kubernetes 原生对象一样使用这些自定义资源。
+定制资源定义（CRD）允许用户在不新增 API 服务器的情况下创建一种新的资源类型，用户可以像使用其他 Kubernetes 原生对象一样使用这些定制资源。
     {{</ notice >}}
 
-3. 在**资源列表**中，点击 `ks-installer` 右侧的 <img src="/images/docs/enable-pluggable-components/network-policies/three-dots.png" height="20px">，选择**编辑配置文件**。
+3. 在**自定义资源**中，点击 `ks-installer` 右侧的 <img src="/images/docs/enable-pluggable-components/network-policies/three-dots.png" height="20px">，选择**编辑 YAML**。
 
-4. 在该 YAML 文件中，搜寻到 `network.networkpolicy`，将 `enabled` 的 `false` 改为 `true`。完成后，点击右下角的**更新**，保存配置。
+4. 在该 YAML 文件中，搜寻到 `network.networkpolicy`，将 `enabled` 的 `false` 改为 `true`。完成后，点击右下角的**确定**，保存配置。
 
     ```yaml
     network:
@@ -106,6 +106,4 @@ weight: 6900
 
 ## 验证组件的安装
 
-如果您能在**网络管理**中看到**网络策略**，如下图所示，说明安装成功，因为安装组件之后才会显示这部分。
-
-![网络策略](/images/docs/zh-cn/enable-pluggable-components/network-policies/network-policy.PNG)
+如果您能在**网络**中看到**网络策略**，说明安装成功，因为安装组件之后才会显示这部分。

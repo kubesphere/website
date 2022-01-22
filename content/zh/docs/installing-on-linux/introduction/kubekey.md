@@ -18,7 +18,7 @@ KubeKey 的几种使用场景：
 
 ## KubeKey 如何运作
 
-下载 KubeKey 之后，您可以使用可执行文件 `kk` 来进行不同的操作。无论您是使用它来创建，扩缩还是升级集群，都必须事先使用 `kk` 准备配置文件。此配置文件包含集群的基本参数，例如主机信息、网络配置（CNI 插件以及 Pod 和 Service CIDR）、仓库镜像、插件（YAML 或 Chart）和可插拔组件选项（如果您安装  KubeSphere）。有关更多信息，请参见[示例配置文件](https://github.com/kubesphere/kubekey/blob/release-1.1/docs/config-example.md)。
+下载 KubeKey 之后，您可以使用可执行文件 `kk` 来进行不同的操作。无论您是使用它来创建，扩缩还是升级集群，都必须事先使用 `kk` 准备配置文件。此配置文件包含集群的基本参数，例如主机信息、网络配置（CNI 插件以及 Pod 和 Service CIDR）、仓库镜像、插件（YAML 或 Chart）和可插拔组件选项（如果您安装  KubeSphere）。有关更多信息，请参见[示例配置文件](https://github.com/kubesphere/kubekey/blob/release-1.2/docs/config-example.md)。
 
 准备好配置文件后，您需要使用 `./kk` 命令以及不同的标志来进行不同的操作。这之后，KubeKey 会自动安装 Docker，并拉取所有必要的镜像以进行安装。安装完成后，您还可以检查安装日志。
 
@@ -27,6 +27,7 @@ KubeKey 的几种使用场景：
 - 以前基于 ansible 的安装程序依赖于许多软件，例如 Python。KubeKey 由 Go 语言开发，可以消除在多种环境中出现的问题，确保成功安装。
 - KubeKey 支持多种安装选项，例如 [All-in-One](../../../quick-start/all-in-one-on-linux/)、[多节点安装](../multioverview/)以及[离线安装](../air-gapped-installation/)。
 - KubeKey 使用 Kubeadm 在节点上尽可能多地并行安装 Kubernetes 集群，使安装更简便，提高效率。与旧版的安装程序相比，它极大地节省了安装时间。
+- KubeKey 提供[内置高可用模式](../../high-availability-configurations/internal-ha-configuration/)，支持一键安装高可用 Kubernetes 集群。
 - KubeKey 旨在将集群作为对象来进行安装，即 CaaO。
 
 ## 下载 KubeKey
@@ -38,7 +39,7 @@ KubeKey 的几种使用场景：
 从 [GitHub Release Page](https://github.com/kubesphere/kubekey/releases) 下载 KubeKey 或者直接运行以下命令。
 
 ```bash
-curl -sfL https://get-kk.kubesphere.io | VERSION=v1.1.1 sh -
+curl -sfL https://get-kk.kubesphere.io | VERSION=v1.2.1 sh -
 ```
 
 {{</ tabs >}}
@@ -54,7 +55,7 @@ export KKZONE=cn
 运行以下命令来下载 KubeKey：
 
 ```bash
-curl -sfL https://get-kk.kubesphere.io | VERSION=v1.1.1 sh -
+curl -sfL https://get-kk.kubesphere.io | VERSION=v1.2.1 sh -
 ```
 
 {{< notice note >}}
@@ -69,21 +70,21 @@ curl -sfL https://get-kk.kubesphere.io | VERSION=v1.1.1 sh -
 
 {{< notice note >}}
 
-通过以上的命令，可以下载 KubeKey 的最新版本 (v1.1.1)。您可以更改命令中的版本号来下载特定的版本。
+通过以上的命令，可以下载 KubeKey 的最新版本 (v1.2.1)。您可以更改命令中的版本号来下载特定的版本。
 
 {{</ notice >}}
 
 ## 支持矩阵
 
-若需使用 KubeKey 来安装 Kubernetes 和 KubeSphere v3.1.1，请参见下表以查看所有受支持的 Kubernetes 版本。
+若需使用 KubeKey 来安装 Kubernetes 和 KubeSphere 3.2.1，请参见下表以查看所有受支持的 Kubernetes 版本。
 
 | KubeSphere 版本 | 受支持的 Kubernetes 版本                                     |
 | --------------- | ------------------------------------------------------------ |
-| v3.1.1          | v1.17.0，v1.17.4，v1.17.5，v1.17.6，v1.17.7，v1.17.8，v1.17.9，v1.18.3，v1.18.5，v1.18.6，v1.18.8，v1.19.0，v1.19.8，v1.19.9，v1.20.4, v1.20.6 |
+| v3.2.1          | v1.19.x、v1.20.x、v1.21.x 或 v1.22.x（实验性支持） |
 
 {{< notice note >}} 
 
 - 您也可以运行 `./kk version --show-supported-k8s`，查看能使用 KubeKey 安装的所有受支持的 Kubernetes 版本。
-- 能使用 KubeKey 安装的 Kubernetes 版本与 KubeSphere v3.0.0 支持的 Kubernetes 版本不同。如需[在现有 Kubernetes 集群上安装 KubeSphere v3.1.1](../../../installing-on-kubernetes/introduction/overview/)，您的 Kubernetes 版本必须为 v1.17.x，v1.18.x，v1.19.x 或 v1.20.x。
+- 能使用 KubeKey 安装的 Kubernetes 版本与 KubeSphere v3.0.0 支持的 Kubernetes 版本不同。如需[在现有 Kubernetes 集群上安装 KubeSphere 3.2.1](../../../installing-on-kubernetes/introduction/overview/)，您的 Kubernetes 版本必须为 v1.17.x，v1.18.x，v1.19.x 或 v1.20.x。
 
 {{</ notice >}} 

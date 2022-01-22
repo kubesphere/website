@@ -1,9 +1,9 @@
 ---
-title: 通过KubeSphere S2I构建容器镜像
+title: 按量付费优点
 keywords: Kubesphere, Kubesphere learn
-description: Kubesphere
+description: 通过按量付费节省成本
 
-pdfUrl: https://kubesphere-community.pek3b.qingstor.com/qkcp-container%20foundation/lesson-6/KubeSphere_S2I_build_image_lab.pdf
+pdfUrl: https://www.yuque.com/leifengyang/oncloud/vfvmcd
 
 ---
 

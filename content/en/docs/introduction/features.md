@@ -11,7 +11,7 @@ weight: 1300
 
 As an [open source container platform](https://kubesphere.io/), KubeSphere provides enterprises with a robust, secure and feature-rich platform, boasting the most common functionalities needed for enterprises adopting Kubernetes, such as multi-cluster deployment and management, network policy configuration, Service Mesh (Istio-based), DevOps projects (CI/CD), security management, Source-to-Image and Binary-to-Image, multi-tenant management, multi-dimensional monitoring, log query and collection, alerting and notification, auditing, application management, and image registry management.
 
-It also supports various open source storage and network solutions, as well as cloud storage services. For example, KubeSphere presents users with a powerful cloud-native tool [PorterLB](https://porterlb.io/), a CNCF-certified load balancer developed for bare metal Kubernetes clusters.
+It also supports various open source storage and network solutions, as well as cloud storage services. For example, KubeSphere presents users with a powerful cloud-native tool [OpenELB](https://openelb.github.io/), a CNCF-certified load balancer developed for bare metal Kubernetes clusters.
 
 With an easy-to-use web console in place, KubeSphere eases the learning curve for users and drives the adoption of Kubernetes.
 
@@ -122,7 +122,7 @@ KubeSphere features a self-updating monitoring system with graphical interfaces 
 - **Third-party compatibility**. KubeSphere is compatible with Prometheus, which is the de facto metrics collection platform for monitoring in Kubernetes environments. Monitoring data can be seamlessly displayed in the web console of KubeSphere.
 
 - **Multi-dimensional monitoring at second-level precision**.
-	- For infrastructure monitoring, the system provides comprehensive metrics such as CPU utilization, memory utilization, CPU load average, disk usage, inode utilization, disk throughput, IOPS, network outbound/inbound rate, Pod status, ETCD service status, and API Server status.
+	- For infrastructure monitoring, the system provides comprehensive metrics such as CPU utilization, memory utilization, CPU load average, disk usage, inode utilization, disk throughput, IOPS, network outbound/inbound rate, Pod status, etcd service status, and API Server status.
 	- For application resource monitoring, the system provides five key monitoring metrics: CPU utilization, memory consumption, Pod number, network outbound and inbound rate. Besides, users can sort data based on resource consumption and search metics by customizing the time range. In this way, occurring problems can be quickly located so that users can take necessary action.
 - **Ranking**. Users can sort data by node, workspace and project, which gives them a graphical view of how their resources are running in a straightforward way.
 - **Component monitoring**. It allows users to quickly locate any component failures to avoid unnecessary business downtime.
@@ -159,7 +159,7 @@ For more information, please see [Project User Guide](../../project-user-guide/)
 
 - Open source network solutions are available such as Calico and Flannel.
 
-- [PorterLB](https://github.com/kubesphere/porter), a load balancer developed for bare metal Kubernetes clusters, is designed by KubeSphere development team. This CNCF-certified tool serves as an important solution for developers. It mainly features:
+- [OpenELB](https://github.com/kubesphere/openelb), a load balancer developed for bare metal Kubernetes clusters, is designed by KubeSphere development team. This CNCF-certified tool serves as an important solution for developers. It mainly features:
 
   1. ECMP routing load balancing
   2. BGP dynamic routing configuration

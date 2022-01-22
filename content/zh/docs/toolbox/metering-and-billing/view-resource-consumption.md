@@ -23,8 +23,6 @@ KubeSphere 计量功能帮助您在不同层级追踪集群或企业空间中的
 
 3. 如果您已经启用[多集群管理](../../../multicluster-management/)，则可以在控制面板左侧看到包含 Host 集群和全部 Member 集群的集群列表。如果您未启用该功能，那么列表中只会显示一个 `default` 集群。
 
-   ![cluster-page](/images/docs/zh-cn/toolbox/metering-and-billing/view-resource-consumption/cluster-page.png)
-
    在右侧，有三个模块以不同的方式显示资源消费情况。
 
    <table border="1">
@@ -34,26 +32,22 @@ KubeSphere 计量功能帮助您在不同层级追踪集群或企业空间中的
          <th>描述</th>
        </tr>
        <tr>
-         <td>概览</td>
+         <td>资源消费统计</td>
          <td>显示自集群创建以来不同资源的消费概览。如果您在 ConfigMap <code>kubesphere-config</code> 中<a href='../enable-billing/'>已经配置资源的价格</a>，则可以看到计费信息。</td>
        </tr>
          <tr>
-           <td>截止到昨天的消费历史</td>
+           <td>消费历史</td>
            <td>显示截止到昨天的资源消费总况，您也可以自定义时间范围和时间间隔，以查看特定周期内的数据。</td>
        </tr>
          <tr>
-           <td>当前包含的资源</td>
+           <td>当前消费</td>
            <td>显示过去一小时所选目标对象的资源消费情况。</td>
        </tr>
      </tbody>
    </table>
-
+   
 4. 在左侧，点击集群名称即可查看集群节点或 Pod 的资源消费详情。
 
-   ![node-page](/images/docs/zh-cn/toolbox/metering-and-billing/view-resource-consumption/node-page.png)
-   
-   ![pod-page](/images/docs/zh-cn/toolbox/metering-and-billing/view-resource-consumption/pod-page.png)
-   
    {{< notice note >}}
    
    如需导出 CSV 格式的资源消费统计数据，请勾选左侧的复选框，然后点击 ✓。
@@ -66,11 +60,9 @@ KubeSphere 计量功能帮助您在不同层级追踪集群或企业空间中的
 
 1. 使用 `admin` 用户登录 KubeSphere Web 控制台，点击右下角的 <img src="/images/docs/zh-cn/toolbox/metering-and-billing/view-resource-consumption/toolbox.png" width='20'/> 图标，然后选择**资源消费统计**。
 
-2. 在**企业空间（项目）资源消费情况**一栏，点击**查看消费**。
+2. 在**企业空间资源消费情况**一栏，点击**查看**。
 
 3. 在控制面板左侧，可以看到包含当前集群中全部企业空间的列表。右侧显示所选企业空间的消费详情，其布局与集群消费情况布局类似。
-
-   ![workspace-page](/images/docs/zh-cn/toolbox/metering-and-billing/view-resource-consumption/workspace-page.png)
 
    {{< notice note >}}
 
@@ -79,7 +71,3 @@ KubeSphere 计量功能帮助您在不同层级追踪集群或企业空间中的
    {{</ notice >}} 
 
 4. 在左侧，点击企业空间名称即可查看其项目或工作负载（例如，部署和有状态副本集）的资源消费详情。
-
-   ![project-page](/images/docs/zh-cn/toolbox/metering-and-billing/view-resource-consumption/project-page.png)
-
-   ![deployment-page](/images/docs/zh-cn/toolbox/metering-and-billing/view-resource-consumption/deployment-page.png)

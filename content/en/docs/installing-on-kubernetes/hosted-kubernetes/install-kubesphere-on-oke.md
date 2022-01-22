@@ -30,7 +30,7 @@ This guide walks you through the steps of deploying KubeSphere on [Oracle Kubern
 
   {{< notice note >}}
 
-  - To install KubeSphere v3.1.1 on Kubernetes, your Kubernetes version must be v1.17.x, v1.18.x, v1.19.x or v1.20.x.
+  - To install KubeSphere 3.2.1 on Kubernetes, your Kubernetes version must be v1.19.x, v1.20.x, v1.21.x, or v1.22.x (experimental).
   - It is recommended that you should select **Public** for **Visibility Type**, which will assign a public IP address for every node. The IP address can be used later to access the web console of KubeSphere.
   - In Oracle Cloud, a Shape is a template that determines the number of CPUs, amount of memory, and other resources that are allocated to an instance. `VM.Standard.E2.2 (2 CPUs and 16G Memory)` is used in this example. For more information, see [Standard Shapes](https://docs.cloud.oracle.com/en-us/iaas/Content/Compute/References/computeshapes.htm#vmshapes__vm-standard).
   - 3 nodes are included in this example. You can add more nodes based on your own needs especially in a production environment.
@@ -68,9 +68,9 @@ This guide walks you through the steps of deploying KubeSphere on [Oracle Kubern
 - Install KubeSphere using kubectl. The following commands are only for the default minimal installation.
 
   ```bash
-  kubectl apply -f https://github.com/kubesphere/ks-installer/releases/download/v3.1.1/kubesphere-installer.yaml
+  kubectl apply -f https://github.com/kubesphere/ks-installer/releases/download/v3.2.1/kubesphere-installer.yaml
 
-  kubectl apply -f https://github.com/kubesphere/ks-installer/releases/download/v3.1.1/cluster-configuration.yaml
+  kubectl apply -f https://github.com/kubesphere/ks-installer/releases/download/v3.2.1/cluster-configuration.yaml
   ```
 
 - Inspect the logs of installation:
@@ -140,9 +140,7 @@ Now that KubeSphere is installed, you can access the web console of KubeSphere e
 
   ![console-service](https://ap3.qingstor.com/kubesphere-website/docs/console-service.png)
 
-- Log in to the console through the external IP address with the default account and password (`admin/P@88w0rd`). In the cluster overview page, you can see the dashboard shown below:
-
-  ![kubesphere-oke-dashboard](https://ap3.qingstor.com/kubesphere-website/docs/kubesphere-oke-dashboard.png)
+- Log in to the console through the external IP address with the default account and password (`admin/P@88w0rd`). In the cluster overview page, you can see the dashboard.
 
 ## Enable Pluggable Components (Optional)
 

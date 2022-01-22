@@ -16,7 +16,7 @@ To provide consistent user experiences of managing microservices, KubeSphere int
 
 - You need to enable [KubeSphere Service Mesh](../../pluggable-components/service-mesh/).
 
-- You need to finish all tasks in [Create Workspaces, Projects, Accounts and Roles](../create-workspace-and-project/).
+- You need to finish all tasks in [Create Workspaces, Projects, Users and Roles](../create-workspace-and-project/).
 
 - You need to enable **Application Governance**. For more information, see [Set a Gateway](../../project-administration/project-gateway/#set-a-gateway).
 
@@ -44,9 +44,7 @@ The following figure shows the end-to-end architecture of the application. For m
 
 1. Log in to the console as `project-regular` and go to your project (`demo-project`). Go to **Apps** under **Application Workloads**, and then click **Deploy Sample App** on the right of the page.
 
-2. Click **Next** in the displayed dialog box where required fields are pre-populated and relevant components are already set. You do not need to change the settings and just click **Create** on the final page (**Internet Access**).
-
-    ![create-bookinfo](/images/docs/quickstart/deploy-bookinfo-to-k8s/create-bookinfo.png)
+2. Click **Next** in the displayed dialog box where required fields are pre-populated and relevant components are already set. You do not need to change the settings and just click **Create** on the final page.
 
     {{< notice note >}}
 
@@ -54,23 +52,19 @@ KubeSphere creates the hostname automatically. To change the hostname, hover ove
 
 {{</ notice >}}
 
-3. In **Workloads**, verify that the statuses of all four Deployments reach `Running`, which means the app has been created successfully.
-
-    ![running](/images/docs/quickstart/deploy-bookinfo-to-k8s/running.png)
+1. In **Workloads**, verify that the statuses of all four Deployments reach `Running`, which means the app has been created successfully.
 
     {{< notice note >}}It may take a few minutes before the Deployments are up and running.
 {{</ notice >}}
 
 ### Step 2: Access Bookinfo
 
-1. In **Apps**, go to **Composing Apps** and click the app `bookinfo` to see its details page.
+1. In **Apps**, go to **Composed Apps** and click the app `bookinfo` to see its details page.
 
     {{< notice note >}}If you do not see the app in the list, refresh your page.
     {{</ notice >}}
     
 2. On the details page, record the hostname and port number of the app which will be used to access Bookinfo.
-
-    ![detail-page](/images/docs/quickstart/deploy-bookinfo-to-k8s/detail-page.png)
 
 3. As the app will be accessed outside the cluster through a NodePort, you need to open the port in your security group for outbound traffic and set port forwarding rules if necessary.
 
@@ -85,11 +79,9 @@ KubeSphere creates the hostname automatically. To change the hostname, hover ove
 Do not copy the preceding content to your local host file. Replace it with your own IP address and hostname.
     {{</ notice >}}
 
-5. When you finish, click <img src="/images/docs/quickstart/deploy-bookinfo-to-k8s/click-to-visit.png" width='70' /> to access the app.
+5. When you finish, click **Access Service** to access the app.
 
 6. On the app details page, click **Normal user** in the lower-left corner.
-
-    ![normal-user](/images/docs/quickstart/deploy-bookinfo-to-k8s/normal-user.png)
 
 7. In the following figure, you can notice that only **Reviewer1** and **Reviewer2** are displayed without any stars in the **Book Reviews** section. This is the status of this app version. To explore more features of traffic management, you can implement a [canary release](../../project-user-guide/grayscale-release/canary-release/) for this app.
 

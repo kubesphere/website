@@ -12,67 +12,43 @@ This tutorial walks you through an example of deploying Tomcat from the App Stor
 ## Prerequisites
 
 - Please make sure you [enable the OpenPitrix system](../../../pluggable-components/app-store/).
-- You need to create a workspace, a project, and a user account for this tutorial. The account needs to be a platform regular user and to be invited as the project operator with the `operator` role. In this tutorial, you log in as `project-regular` and work in the project `demo-project` in the workspace `demo-workspace`. For more information, see [Create Workspaces, Projects, Accounts and Roles](../../../quick-start/create-workspace-and-project/).
+- You need to create a workspace, a project, and a user account for this tutorial. The account needs to be a platform regular user and to be invited as the project operator with the `operator` role. In this tutorial, you log in as `project-regular` and work in the project `demo-project` in the workspace `demo-workspace`. For more information, see [Create Workspaces, Projects, Users and Roles](../../../quick-start/create-workspace-and-project/).
 
 ## Hands-on Lab
 
 ### Step 1: Deploy Tomcat from the App Store
 
-1. On the **Overview** page of the project `demo-project`, click **App Store** in the top-left corner.
+1. On the **Overview** page of the project `demo-project`, click **App Store** in the upper-left corner.
 
-   ![go-to-app-store](/images/docs/appstore/built-in-apps/tomcat-app/tomcat-app01.png)
+2. Find Tomcat and click **Install** on the **App Information** page.
 
-2. Find Tomcat and click **Deploy** on the **App Information** page.
+1. Set a name and select an app version. Make sure Tomcat is deployed in `demo-project` and click **Next**.
 
-   ![find-tomcat](/images/docs/appstore/built-in-apps/tomcat-app/find-tomcat.png)
+2. In **App Settings**, you can use the default settings or customize the settings by editing the YAML file directly. Click **Install** to continue.
 
-   ![click-deploy](/images/docs/appstore/built-in-apps/tomcat-app/click-deploy.png)
+3. Wait until Tomcat is up and running.
 
-3. Set a name and select an app version. Make sure Tomcat is deployed in `demo-project` and click **Next**.
-
-   ![click-next](/images/docs/appstore/built-in-apps/tomcat-app/click-next.png)
-
-4. In **App Configurations**, you can use the default configuration or customize the configuration by editing the YAML file directly. Click **Deploy** to continue.
-
-   ![deploy-tomcat](/images/docs/appstore/built-in-apps/tomcat-app/deploy-tomcat.png)
-
-5. Wait until Tomcat is up and running.
-
-   ![tomcat-running](/images/docs/appstore/built-in-apps/tomcat-app/tomcat-running.png)
-
-### Step 2: Access the Tomcat Terminal
+### Step 2: Access the Tomcat terminal
 
 1. Go to **Services** and click the service name of Tomcat.
 
-   ![click-tomcat-service](/images/docs/appstore/built-in-apps/tomcat-app/click-tomcat-service.png)
-
 2. Under **Pods**, expand the menu to see container details, and then click the **Terminal** icon.
-
-   ![tomcat-teminal-icon](/images/docs/appstore/built-in-apps/tomcat-app/tomcat-teminal-icon.png)
 
 3. You can view deployed projects in `/usr/local/tomcat/webapps`.
 
    ![view-project](/images/docs/appstore/built-in-apps/tomcat-app/view-project.png)
 
-### Step 3: Access a Tomcat Project from Your Browser
+### Step 3: Access a Tomcat project from your browser
 
 To access a Tomcat project outside the cluster, you need to expose the app through a NodePort first.
 
 1. Go to **Services** and click the service name of Tomcat.
 
-   ![click-tomcat-service](/images/docs/appstore/built-in-apps/tomcat-app/click-tomcat-service.png)
-
-2. Click **More** and select **Edit Internet Access** from the drop-down menu.
-
-   ![edit-internet-access](/images/docs/appstore/built-in-apps/tomcat-app/edit-internet-access.png)
+2. Click **More** and select **Edit External Access** from the drop-down list.
 
 3. Select **NodePort** for **Access Method** and click **OK**. For more information, see [Project Gateway](../../../project-administration/project-gateway/).
 
-   ![nodeport](/images/docs/appstore/built-in-apps/tomcat-app/nodeport.png)
-
-4. Under **Service Ports**, you can see the port is exposed.
-
-   ![exposed-port](/images/docs/appstore/built-in-apps/tomcat-app/exposed-port.png)
+4. Under **Ports**, you can see the port is exposed.
 
 5. Access the sample Tomcat project through `<NodeIP>:<NodePort>/sample` in your browser. 
 
@@ -80,7 +56,7 @@ To access a Tomcat project outside the cluster, you need to expose the app throu
 
    {{< notice note >}}
 
-   You may need to open the port in your security groups and configure related port forwarding rules depending on your where your Kubernetes cluster is deployed.
+   You may need to open the port in your security groups and configure related port forwarding rules depending on where your Kubernetes cluster is deployed.
 
    {{</ notice >}} 
 

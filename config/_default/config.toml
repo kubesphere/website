@@ -3,12 +3,15 @@ baseURL = "https://kubesphere-v3.netlify.app"
 enableRobotsTXT = true
 
 [markup]
+  [markup.goldmark.extensions]
+    typographer = false
   [markup.tableOfContents]
     endLevel = 3
     ordered = false
     startLevel = 2
   [markup.goldmark.renderer]
     unsafe= true
+
 
 [Taxonomies]
 
@@ -21,8 +24,6 @@ githubBlobUrl = "https://github.com/kubesphere/website/blob/master/content"
 
 githubEditUrl = "https://github.com/kubesphere/website/edit/master/content"
 
-mailchimpSubscribeUrl = "https://kubesphere.us10.list-manage.com/subscribe/post?u=c85ea2b944b08b951f607bdd4&id=83f673a2d9"
-
 gcs_engine_id = "018068616810858123755%3Apb1pt8sx6ve"
 
 githubLink = "https://github.com/kubesphere/kubesphere"
@@ -33,6 +34,7 @@ facebookLink = "https://www.facebook.com/kubesphere"
 twitterLink = "https://twitter.com/KubeSphere"
 mediumLink = "https://itnext.io/@kubesphere"
 linkedinLink = "https://www.linkedin.com/company/kubesphere/"
+
 
 [languages.en]
 contentDir = "content/en"
@@ -45,6 +47,7 @@ title = "KubeSphere | The Kubernetes platform tailored for hybrid multicloud"
 description = "KubeSphere is a distributed operating system managing cloud native applications with Kubernetes as its kernel, and provides plug-and-play architecture for the seamless integration of third-party applications to boost its ecosystem."
 keywords = "KubeSphere, Kubernetes, container platform, DevOps, hybrid cloud, cloud native"
 snapshot = "/images/common/snapshot-en.png"
+mailchimpSubscribeUrl = "https://kubesphere.us10.list-manage.com/subscribe/post?u=c85ea2b944b08b951f607bdd4&id=83f673a2d9"
 
 [[languages.en.menu.main]]
 weight = 2
@@ -105,33 +108,39 @@ hasChildren = true
 
     [[languages.en.menu.main]]
     parent = "Documentation"
-    name = "v3.1.x <img src='/images/header/star.svg' alt='star'>"
-    URL = "docs/"
+    name = "v3.2.x <img src='/images/header/star.svg' alt='star'>"
+    URL = "/docs"
     weight = 1
+
+    [[languages.en.menu.main]]
+    parent = "Documentation"
+    name = "v3.1.x"
+    URL = "https://v3-1.docs.kubesphere.io/docs"
+    weight = 2
 
     [[languages.en.menu.main]]
     parent = "Documentation"
     name = "v3.0.0"
     URL = "https://v3-0.docs.kubesphere.io/docs"
-    weight = 2
+    weight = 3
 
     [[languages.en.menu.main]]
     parent = "Documentation"
     name = "v2.1.x"
     URL = "https://v2-1.docs.kubesphere.io/docs"
-    weight = 3
+    weight = 4
 
     [[languages.en.menu.main]]
     parent = "Documentation"
     name = "v2.0.x"
     URL = "https://v2-0.docs.kubesphere.io/docs/"
-    weight = 4
+    weight = 5
 
     [[languages.en.menu.main]]
     parent = "Documentation"
     name = "v1.0.0"
     URL = "https://v1-0.docs.kubesphere.io/docs/"
-    weight = 5
+    weight = 6
 
 [[languages.en.menu.main]]
 weight = 5
@@ -185,6 +194,7 @@ title = "KubeSphere | 面向云原生应用的容器混合云"
 description = "KubeSphere 是在 Kubernetes 之上构建的以应用为中心的多租户容器平台，提供全栈的 IT 自动化运维的能力，简化企业的 DevOps 工作流。KubeSphere 提供了运维友好的向导式操作界面，帮助企业快速构建一个强大和功能丰富的容器云平台。"
 keywords = "KubeSphere, Kubernetes, 容器平台, DevOps, 混合云"
 snapshot = "/images/common/snapshot-zh.png"
+mailchimpSubscribeUrl = "https://yunify.us2.list-manage.com/subscribe/post?u=f29f08cef80223b46bad069b5&amp;id=4838e610c2"
 
 [[languages.zh.menu.main]]
 weight = 2
@@ -244,33 +254,39 @@ hasChildren = true
 name = "文档中心"
     [[languages.zh.menu.main]]
     parent = "文档中心"
-    name = "v3.1.x <img src='/images/header/star.svg' alt='star'>"
-    URL = "docs/"
+    name = "v3.2.x <img src='/images/header/star.svg' alt='star'>"
+    URL = "/docs/"
     weight = 1
+
+    [[languages.zh.menu.main]]
+    parent = "文档中心"
+    name = "v3.1.x"
+    URL = "https://v3-1.docs.kubesphere.io/zh/docs/"
+    weight = 2
 
     [[languages.zh.menu.main]]
     parent = "文档中心"
     name = "v3.0.0"
     URL = "https://v3-0.docs.kubesphere.io/zh/docs/"
-    weight = 2
+    weight = 3
 
     [[languages.zh.menu.main]]
     parent = "文档中心"
     name = "v2.1.x"
     URL = "https://v2-1.docs.kubesphere.io/docs/zh-CN/"
-    weight = 3
+    weight = 4
 
     [[languages.zh.menu.main]]
     parent = "文档中心"
     name = "v2.0.x"
     URL = "https://v2-0.docs.kubesphere.io/docs/zh-CN/"
-    weight = 4
+    weight = 5
 
     [[languages.zh.menu.main]]
     parent = "文档中心"
     name = "v1.0.0"
     URL = "https://v1-0.docs.kubesphere.io/docs/zh-CN/"
-    weight = 5
+    weight = 6
 
 [[languages.zh.menu.main]]
 weight = 5

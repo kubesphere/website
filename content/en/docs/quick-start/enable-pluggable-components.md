@@ -20,7 +20,7 @@ This tutorial demonstrates how to enable pluggable components of KubeSphere both
 | `kubeedge`       | KubeEdge                              | Add edge nodes to your cluster and run workloads on them.    |
 | `openpitrix`     | KubeSphere App Store                  | Provide an app store for Helm-based applications and allow users to manage apps throughout the entire lifecycle. |
 | `servicemesh`    | KubeSphere Service Mesh (Istio-based) | Provide fine-grained traffic management, observability and tracing, and visualized traffic topology. |
-| `ippool`         | Pod IP Pool                           | Create Pod IP Pools and assign IP addresses from the Pools to your Pods. |
+| `ippool`         | Pod IP Pool                           | Create Pod IP pools and assign IP addresses from the Pools to your Pods. |
 | `topology`       | Service Topology                      | Integrate [Weave Scope](https://www.weave.works/oss/scope/) to view service-to-service communication (topology) of your apps and containers. |
 
 For more information about each component, see [Overview of Enable Pluggable Components](../../pluggable-components/overview/).
@@ -32,7 +32,7 @@ For more information about each component, see [Overview of Enable Pluggable Com
 
 {{</ notice >}}
 
-## Enable Pluggable Components before Installation
+## Enable Pluggable Components Before Installation
 
 For most of the pluggable components, you can follow the steps below to enable them. If you need to enable [KubeEdge](../../pluggable-components/kubeedge/), [Pod IP Pools](../../pluggable-components/pod-ip-pools/) and [Service Topology](../../pluggable-components/service-topology/), refer to the corresponding tutorials directly.
 
@@ -50,7 +50,7 @@ When you implement multi-node installation of KubeSphere on Linux, you need to c
 If you adopt [All-in-one Installation](../../quick-start/all-in-one-on-linux/), you do not need to create a `config-sample.yaml` file as you can create a cluster directly. Generally, the all-in-one mode is for users who are new to KubeSphere and look to get familiar with the system. If you want to enable pluggable components in this mode (for example, for testing purpose), refer to the [following section](#enable-pluggable-components-after-installation) to see how pluggable components can be installed after installation.
     {{</ notice >}}
 
-2. In this file, enable the pluggable components you want to install by changing `false` to `true` for `enabled`. Here is [the complete file](https://github.com/kubesphere/kubekey/blob/release-1.1/docs/config-example.md) for your reference. Save the file after you finish.
+2. In this file, enable the pluggable components you want to install by changing `false` to `true` for `enabled`. Here is [the complete file](https://github.com/kubesphere/kubekey/blob/release-1.2/docs/config-example.md) for your reference. Save the file after you finish.
 
 3. Create a cluster using the configuration file:
 
@@ -73,16 +73,14 @@ When you install KubeSphere on Kubernetes, you need to use [ks-installer](https:
 3. Save this local file and execute the following commands to start installation.
 
     ```bash
-    kubectl apply -f https://github.com/kubesphere/ks-installer/releases/download/v3.1.1/kubesphere-installer.yaml
+    kubectl apply -f https://github.com/kubesphere/ks-installer/releases/download/v3.2.1/kubesphere-installer.yaml
     
     kubectl apply -f cluster-configuration.yaml
     ```
 
-Whether you install KubeSphere on Linux or on Kubernetes, you can check the status of the components you have enabled in the web console of KubeSphere after installation. Go to **Components**, and you can see an image below:
+Whether you install KubeSphere on Linux or on Kubernetes, you can check the status of the components you have enabled in the web console of KubeSphere after installation. Go to **System Components**, and you can see the component status.
 
-![component-status](/images/docs/quickstart/enable-pluggable-components/component-status.png)
-
-## Enable Pluggable Components after Installation
+## Enable Pluggable Components After Installation
 
 The KubeSphere web console provides a convenient way for users to view and operate on different resources. To enable pluggable components after installation, you only need to make few adjustments on the console directly. For those who are accustomed to the Kubernetes command-line tool, kubectl, they will have no difficulty in using KubeSphere as the tool is integrated into the console.
 
@@ -100,9 +98,9 @@ If you need to enable [KubeEdge](../../pluggable-components/kubeedge/), [Pod IP 
 A Custom Resource Definition (CRD) allows users to create a new type of  resources without adding another API server. They can use these  resources like any other native Kubernetes objects.
     {{</ notice >}}
 
-3. In **Resource List**, click the three dots on the right of `ks-installer` and select **Edit YAML**.
+3. In **Custom Resources**, click the three dots on the right of `ks-installer` and select **Edit YAML**.
 
-4. In this YAML file, enable the pluggable components you want to install by changing `false` to `true` for `enabled`. After you finish, click **Update** to save the configuration.
+4. In this YAML file, enable the pluggable components you want to install by changing `false` to `true` for `enabled`. After you finish, click **OK** to save the configuration.
 
 5. You can use the web kubectl to check the installation process by executing the following command:
 
@@ -140,9 +138,7 @@ You can find the web kubectl tool by clicking the hammer icon in the bottom-righ
     #####################################################
     ```
 
-7. In **Components**, you can see the status of different components.
-
-   ![component-status-page](/images/docs/quickstart/enable-pluggable-components/component-status-page.png) 
+7. In **System Components**, you can see the status of different components.
 
     {{< notice tip >}}
 

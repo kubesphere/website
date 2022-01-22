@@ -90,19 +90,19 @@ Docker 使用 `/var/lib/docker` 作为默认路径来存储所有 Docker 相关�
 1. 使用以下命令从能够访问互联网的机器上下载镜像清单文件 `images-list.txt`：
 
    ```bash
-   curl -L -O https://github.com/kubesphere/ks-installer/releases/download/v3.1.1/images-list.txt
+   curl -L -O https://github.com/kubesphere/ks-installer/releases/download/v3.2.1/images-list.txt
    ```
 
    {{< notice note >}}
 
-   该文件根据不同的模块列出了 `##+modulename` 下的镜像。您可以按照相同的规则把自己的镜像添加到这个文件中。要查看完整文件，请参见[附录](../../../installing-on-kubernetes/on-prem-kubernetes/install-ks-on-linux-airgapped/#kubesphere-v310-镜像清单)。
+   该文件根据不同的模块列出了 `##+modulename` 下的镜像。您可以按照相同的规则把自己的镜像添加到这个文件中。要查看完整文件，请参见[附录](../../../installing-on-kubernetes/on-prem-kubernetes/install-ks-on-linux-airgapped/#kubesphere-v321-镜像清单)。
 
    {{</ notice >}} 
 
 2. 下载 `offline-installation-tool.sh`。
 
    ```bash
-   curl -L -O https://github.com/kubesphere/ks-installer/releases/download/v3.1.1/offline-installation-tool.sh
+   curl -L -O https://github.com/kubesphere/ks-installer/releases/download/v3.2.1/offline-installation-tool.sh
    ```
 
 3. 使 `.sh` 文件可执行。
@@ -162,8 +162,8 @@ Docker 使用 `/var/lib/docker` 作为默认路径来存储所有 Docker 相关�
 1. 执行以下命令下载这两个文件，并将它们传输至您充当任务机的机器，用于安装。
 
    ```bash
-   curl -L -O https://github.com/kubesphere/ks-installer/releases/download/v3.1.1/cluster-configuration.yaml
-   curl -L -O https://github.com/kubesphere/ks-installer/releases/download/v3.1.1/kubesphere-installer.yaml
+   curl -L -O https://github.com/kubesphere/ks-installer/releases/download/v3.2.1/cluster-configuration.yaml
+   curl -L -O https://github.com/kubesphere/ks-installer/releases/download/v3.2.1/kubesphere-installer.yaml
    ```
 
 2. 编辑 `cluster-configuration.yaml` 添加您的私有镜像仓库。例如，本教程中的仓库地址是 `dockerhub.kubekey.local`，将它用作 `.spec.local_registry` 的值，如下所示：
@@ -239,164 +239,157 @@ https://kubesphere.io             20xx-xx-xx xx:xx:xx
 
 {{</ notice >}}
 
-![登录 kubesphere](/images/docs/zh-cn/installing-on-kubernetes/installing-on-on-premises-kubernetes/air-gapped-installation/kubesphere-login.PNG)
-
 ## 附录
 
-### KubeSphere v3.1.1 镜像清单
+### KubeSphere 3.2.1 镜像清单
 
 ```txt
 ##k8s-images
-kubesphere/kube-apiserver:v1.20.6
-kubesphere/kube-scheduler:v1.20.6
-kubesphere/kube-proxy:v1.20.6
-kubesphere/kube-controller-manager:v1.20.6
-kubesphere/kube-apiserver:v1.19.8
-kubesphere/kube-scheduler:v1.19.8
-kubesphere/kube-proxy:v1.19.8
-kubesphere/kube-controller-manager:v1.19.8
+kubesphere/kube-apiserver:v1.22.1
+kubesphere/kube-controller-manager:v1.22.1
+kubesphere/kube-proxy:v1.22.1
+kubesphere/kube-scheduler:v1.22.1
+kubesphere/kube-apiserver:v1.21.5
+kubesphere/kube-controller-manager:v1.21.5
+kubesphere/kube-proxy:v1.21.5
+kubesphere/kube-scheduler:v1.21.5
+kubesphere/kube-apiserver:v1.20.10
+kubesphere/kube-controller-manager:v1.20.10
+kubesphere/kube-proxy:v1.20.10
+kubesphere/kube-scheduler:v1.20.10
 kubesphere/kube-apiserver:v1.19.9
-kubesphere/kube-scheduler:v1.19.9
-kubesphere/kube-proxy:v1.19.9
 kubesphere/kube-controller-manager:v1.19.9
-kubesphere/kube-apiserver:v1.18.8
-kubesphere/kube-scheduler:v1.18.8
-kubesphere/kube-proxy:v1.18.8
-kubesphere/kube-controller-manager:v1.18.8
-kubesphere/kube-apiserver:v1.17.9
-kubesphere/kube-scheduler:v1.17.9
-kubesphere/kube-proxy:v1.17.9
-kubesphere/kube-controller-manager:v1.17.9
-kubesphere/pause:3.1
-kubesphere/pause:3.2
-kubesphere/etcd:v3.4.13
-calico/cni:v3.16.3
-calico/kube-controllers:v3.16.3
-calico/node:v3.16.3
-calico/pod2daemon-flexvol:v3.16.3
-calico/typha:v3.16.3
+kubesphere/kube-proxy:v1.19.9
+kubesphere/kube-scheduler:v1.19.9
+kubesphere/pause:3.5
+kubesphere/pause:3.4.1
+coredns/coredns:1.8.0
+calico/cni:v3.20.0
+calico/kube-controllers:v3.20.0
+calico/node:v3.20.0
+calico/pod2daemon-flexvol:v3.20.0
+calico/typha:v3.20.0
 kubesphere/flannel:v0.12.0
-coredns/coredns:1.6.9
-kubesphere/k8s-dns-node-cache:1.15.12
 openebs/provisioner-localpv:2.10.1
 openebs/linux-utils:2.10.0
-kubesphere/nfs-client-provisioner:v3.1.0-k8s1.11
-##csi-images
-csiplugin/csi-neonsan:v1.2.0
-csiplugin/csi-neonsan-ubuntu:v1.2.0
-csiplugin/csi-neonsan-centos:v1.2.0
-csiplugin/csi-provisioner:v1.5.0
-csiplugin/csi-attacher:v2.1.1
-csiplugin/csi-resizer:v0.4.0
-csiplugin/csi-snapshotter:v2.0.1
-csiplugin/csi-node-driver-registrar:v1.2.0
-csiplugin/csi-qingcloud:v1.2.0
+kubesphere/k8s-dns-node-cache:1.15.12
 ##kubesphere-images
-kubesphere/ks-apiserver:v3.1.1
-kubesphere/ks-console:v3.1.1
-kubesphere/ks-controller-manager:v3.1.1
-kubesphere/ks-installer:v3.1.1
+kubesphere/ks-installer:v3.2.1
+kubesphere/ks-apiserver:v3.2.1
+kubesphere/ks-console:v3.2.1
+kubesphere/ks-controller-manager:v3.2.1
 kubesphere/kubectl:v1.20.0
-kubesphere/kubectl:v1.19.0
-redis:5.0.12-alpine
-alpine:3.14
-haproxy:2.0.22-alpine
-nginx:1.14-alpine
+kubesphere/kubefed:v0.8.1
+kubesphere/tower:v0.2.0
 minio/minio:RELEASE.2019-08-07T01-59-21Z
 minio/mc:RELEASE.2019-08-07T23-14-43Z
+csiplugin/snapshot-controller:v4.0.0
+kubesphere/nginx-ingress-controller:v0.48.1
 mirrorgooglecontainers/defaultbackend-amd64:1.4
-kubesphere/nginx-ingress-controller:v0.35.0
-osixia/openldap:1.3.0
-csiplugin/snapshot-controller:v3.0.3
-kubesphere/kubefed:v0.7.0
-kubesphere/tower:v0.2.0
-kubesphere/prometheus-config-reloader:v0.42.1
-kubesphere/prometheus-operator:v0.42.1
-prom/alertmanager:v0.21.0
-prom/prometheus:v2.26.0
-prom/node-exporter:v0.18.1
-kubesphere/ks-alerting-migration:v3.1.0
-jimmidyson/configmap-reload:v0.3.0
-kubesphere/notification-manager-operator:v1.0.0
-kubesphere/notification-manager:v1.0.0
 kubesphere/metrics-server:v0.4.2
+redis:5.0.14-alpine
+haproxy:2.0.25-alpine
+alpine:3.14
+osixia/openldap:1.3.0
+kubesphere/netshoot:v1.0
+##kubeedge-images
+kubeedge/cloudcore:v1.7.2
+kubesphere/edge-watcher:v0.1.1
+kubesphere/edge-watcher-agent:v0.1.0
+##gatekeeper-images
+openpolicyagent/gatekeeper:v3.5.2
+##openpitrix-images
+kubesphere/openpitrix-jobs:v3.2.1
+##kubesphere-devops-images
+kubesphere/devops-apiserver:v3.2.1
+kubesphere/devops-controller:v3.2.1
+kubesphere/devops-tools:v3.2.1
+kubesphere/ks-jenkins:v3.2.0-2.249.1
+jenkins/jnlp-slave:3.27-1
+kubesphere/builder-base:v3.2.0
+kubesphere/builder-nodejs:v3.2.0
+kubesphere/builder-maven:v3.2.0
+kubesphere/builder-python:v3.2.0
+kubesphere/builder-go:v3.2.0
+kubesphere/builder-go:v3.2.0
+kubesphere/builder-base:v3.2.0-podman
+kubesphere/builder-nodejs:v3.2.0-podman
+kubesphere/builder-maven:v3.2.0-podman
+kubesphere/builder-python:v3.2.0-podman
+kubesphere/builder-go:v3.2.0-podman
+kubesphere/builder-go:v3.2.0-podman
+kubesphere/s2ioperator:v3.2.0
+kubesphere/s2irun:v3.2.0
+kubesphere/s2i-binary:v3.2.0
+kubesphere/tomcat85-java11-centos7:v3.2.0
+kubesphere/tomcat85-java11-runtime:v3.2.0
+kubesphere/tomcat85-java8-centos7:v3.2.0
+kubesphere/tomcat85-java8-runtime:v3.2.0
+kubesphere/java-11-centos7:v3.2.0
+kubesphere/java-8-centos7:v3.2.0
+kubesphere/java-8-runtime:v3.2.0
+kubesphere/java-11-runtime:v3.2.0
+kubesphere/nodejs-8-centos7:v3.2.0
+kubesphere/nodejs-6-centos7:v3.2.0
+kubesphere/nodejs-4-centos7:v3.2.0
+kubesphere/python-36-centos7:v3.2.0
+kubesphere/python-35-centos7:v3.2.0
+kubesphere/python-34-centos7:v3.2.0
+kubesphere/python-27-centos7:v3.2.0
+##kubesphere-monitoring-images
+jimmidyson/configmap-reload:v0.3.0
+prom/prometheus:v2.26.0
+kubesphere/prometheus-config-reloader:v0.43.2
+kubesphere/prometheus-operator:v0.43.2
 kubesphere/kube-rbac-proxy:v0.8.0
 kubesphere/kube-state-metrics:v1.9.7
-openebs/provisioner-localpv:2.3.0
+prom/node-exporter:v0.18.1
+kubesphere/k8s-prometheus-adapter-amd64:v0.6.0
+prom/alertmanager:v0.21.0
 thanosio/thanos:v0.18.0
 grafana/grafana:7.4.3
+kubesphere/kube-rbac-proxy:v0.8.0
+kubesphere/notification-manager-operator:v1.4.0
+kubesphere/notification-manager:v1.4.0
+kubesphere/notification-tenant-sidecar:v3.2.0
 ##kubesphere-logging-images
-kubesphere/elasticsearch-oss:6.7.0-1
 kubesphere/elasticsearch-curator:v5.7.6
-kubesphere/fluentbit-operator:v0.5.0
-kubesphere/fluentbit-operator:migrator
-kubesphere/fluent-bit:v1.6.9
-elastic/filebeat:6.7.0
-kubesphere/kube-auditing-operator:v0.1.2
-kubesphere/kube-auditing-webhook:v0.1.2
-kubesphere/kube-events-exporter:v0.1.0
-kubesphere/kube-events-operator:v0.1.0
-kubesphere/kube-events-ruler:v0.2.0
-kubesphere/log-sidecar-injector:1.1
+kubesphere/elasticsearch-oss:6.7.0-1
+kubesphere/fluentbit-operator:v0.11.0
 docker:19.03
+kubesphere/fluent-bit:v1.8.3
+kubesphere/log-sidecar-injector:1.1
+elastic/filebeat:6.7.0
+kubesphere/kube-events-operator:v0.3.0
+kubesphere/kube-events-exporter:v0.3.0
+kubesphere/kube-events-ruler:v0.3.0
+kubesphere/kube-auditing-operator:v0.2.0
+kubesphere/kube-auditing-webhook:v0.2.0
 ##istio-images
-istio/pilot:1.6.10
-istio/proxyv2:1.6.10
-jaegertracing/jaeger-agent:1.17
-jaegertracing/jaeger-collector:1.17
-jaegertracing/jaeger-es-index-cleaner:1.17
-jaegertracing/jaeger-operator:1.17.1
-jaegertracing/jaeger-query:1.17
-kubesphere/kiali:v1.26.1
-kubesphere/kiali-operator:v1.26.1
-##kubesphere-devops-images
-kubesphere/ks-jenkins:2.249.1
-jenkins/jnlp-slave:3.27-1
-kubesphere/s2ioperator:v3.1.0
-kubesphere/s2irun:v2.1.1
-kubesphere/builder-base:v3.1.0
-kubesphere/builder-nodejs:v3.1.0
-kubesphere/builder-maven:v3.1.0
-kubesphere/builder-go:v3.1.0
-kubesphere/s2i-binary:v2.1.0
-kubesphere/tomcat85-java11-centos7:v2.1.0
-kubesphere/tomcat85-java11-runtime:v2.1.0
-kubesphere/tomcat85-java8-centos7:v2.1.0
-kubesphere/tomcat85-java8-runtime:v2.1.0
-kubesphere/java-11-centos7:v2.1.0
-kubesphere/java-8-centos7:v2.1.0
-kubesphere/java-8-runtime:v2.1.0
-kubesphere/java-11-runtime:v2.1.0
-kubesphere/nodejs-8-centos7:v2.1.0
-kubesphere/nodejs-6-centos7:v2.1.0
-kubesphere/nodejs-4-centos7:v2.1.0
-kubesphere/python-36-centos7:v2.1.0
-kubesphere/python-35-centos7:v2.1.0
-kubesphere/python-34-centos7:v2.1.0
-kubesphere/python-27-centos7:v2.1.0
-##openpitrix-images
-kubespheredev/openpitrix-jobs:v3.1.1
-##weave-scope-images
-weaveworks/scope:1.13.0
-##kubeedge-images
-kubeedge/cloudcore:v1.6.2
-kubesphere/edge-watcher:v0.1.0
-kubesphere/kube-rbac-proxy:v0.5.0
-kubesphere/edge-watcher-agent:v0.1.0
-##example-images-images
-kubesphere/examples-bookinfo-productpage-v1:1.16.2
-kubesphere/examples-bookinfo-reviews-v1:1.16.2
-kubesphere/examples-bookinfo-reviews-v2:1.16.2
-kubesphere/examples-bookinfo-reviews-v3:1.16.2
-kubesphere/examples-bookinfo-details-v1:1.16.2
-kubesphere/examples-bookinfo-ratings-v1:1.16.3
+istio/pilot:1.11.1
+istio/proxyv2:1.11.1
+jaegertracing/jaeger-operator:1.27
+jaegertracing/jaeger-agent:1.27
+jaegertracing/jaeger-collector:1.27
+jaegertracing/jaeger-query:1.27
+jaegertracing/jaeger-es-index-cleaner:1.27
+kubesphere/kiali-operator:v1.38.1
+kubesphere/kiali:v1.38
+##example-images
 busybox:1.31.1
+nginx:1.14-alpine
 joosthofman/wget:1.0
-kubesphere/netshoot:v1.0
 nginxdemos/hello:plain-text
 wordpress:4.8-apache
 mirrorgooglecontainers/hpa-example:latest
 java:openjdk-8-jre-alpine
 fluent/fluentd:v1.4.2-2.0
 perl:latest
+kubesphere/examples-bookinfo-productpage-v1:1.16.2
+kubesphere/examples-bookinfo-reviews-v1:1.16.2
+kubesphere/examples-bookinfo-reviews-v2:1.16.2
+kubesphere/examples-bookinfo-details-v1:1.16.2
+kubesphere/examples-bookinfo-ratings-v1:1.16.3
+##weave-scope-images
+weaveworks/scope:1.13.0
 ```

@@ -1,9 +1,10 @@
 ---
-title: "Set up an HA Cluster Using Keepalived and HAproxy"
-keywords: 'KubeSphere, Kubernetes, HA, high availability, installation, configuration, Keepalived, HAproxy'
+title: "Set up an HA Kubernetes Cluster Using Keepalived and HAproxy"
+keywords: 'Kubernetes, KubeSphere, HA, high availability, installation, configuration, Keepalived, HAproxy'
 description: 'Learn how to create a highly available cluster using Keepalived and HAproxy.'
 linkTitle: "Set up an HA Cluster Using Keepalived and HAproxy"
-weight: 3220
+weight: 3230
+showSubscribe: true
 ---
 
 A highly available Kubernetes cluster ensures your applications run without outages which is required for production. In this connection, there are plenty of ways for you to choose from to achieve high availability.
@@ -50,7 +51,7 @@ Run the following command to install Keepalived and HAproxy first.
 yum install keepalived haproxy psmisc -y
 ```
 
-### HAproxy
+### HAproxy Configuration
 
 1. The configuration of HAproxy is exactly the same on the two machines for load balancing. Run the following command to configure HAproxy.
 
@@ -111,7 +112,7 @@ yum install keepalived haproxy psmisc -y
 
 5. Make sure you configure HAproxy on the other machine (`lb2`) as well.
 
-### Keepalived
+### Keepalived Configuration
 
 Keepalived must be installed on both machines while the configuration of them is slightly different.
 
@@ -267,7 +268,7 @@ Before you start to create your Kubernetes cluster, make sure you have tested th
 Download KubeKey from its [GitHub Release Page](https://github.com/kubesphere/kubekey/releases) or use the following command directly.
 
 ```bash
-curl -sfL https://get-kk.kubesphere.io | VERSION=v1.1.1 sh -
+curl -sfL https://get-kk.kubesphere.io | VERSION=v1.2.1 sh -
 ```
 
 {{</ tab >}}
@@ -283,7 +284,7 @@ export KKZONE=cn
 Run the following command to download KubeKey:
 
 ```bash
-curl -sfL https://get-kk.kubesphere.io | VERSION=v1.1.1 sh -
+curl -sfL https://get-kk.kubesphere.io | VERSION=v1.2.1 sh -
 ```
 
 {{< notice note >}}
@@ -298,7 +299,7 @@ After you download KubeKey, if you transfer it to a new machine also with poor n
 
 {{< notice note >}}
 
-The commands above download the latest release (v1.1.1) of KubeKey. You can change the version number in the command to download a specific version.
+The commands above download the latest release (v1.2.1) of KubeKey. You can change the version number in the command to download a specific version.
 
 {{</ notice >}} 
 
@@ -308,15 +309,15 @@ Make `kk` executable:
 chmod +x kk
 ```
 
-Create an example configuration file with default configurations. Here Kubernetes v1.20.4 is used as an example.
+Create an example configuration file with default configurations. Here Kubernetes v1.21.5 is used as an example.
 
 ```bash
-./kk create config --with-kubesphere v3.1.1 --with-kubernetes v1.20.4
+./kk create config --with-kubesphere v3.2.1 --with-kubernetes v1.21.5
 ```
 
 {{< notice note >}}
 
-- Recommended Kubernetes versions for KubeSphere v3.1.1: v1.17.9, v1.18.8, v1.19.8, and v1.20.4. If you do not specify a Kubernetes version, KubeKey will install Kubernetes v1.19.8 by default. For more information about supported Kubernetes versions, see [Support Matrix](../../../installing-on-linux/introduction/kubekey/#support-matrix).
+- Recommended Kubernetes versions for KubeSphere 3.2.1: v1.19.x, v1.20.x, v1.21.x or v1.22.x (experimental). If you do not specify a Kubernetes version, KubeKey will install Kubernetes v1.21.5 by default. For more information about supported Kubernetes versions, see [Support Matrix](../../../installing-on-linux/introduction/kubekey/#support-matrix).
 
 - If you do not add the flag `--with-kubesphere` in the command in this step, KubeSphere will not be deployed unless you install it using the `addons` field in the configuration file or add this flag again when you use `./kk create cluster` later.
 - If you add the flag `--with-kubesphere` without specifying a KubeSphere version, the latest version of KubeSphere will be installed.

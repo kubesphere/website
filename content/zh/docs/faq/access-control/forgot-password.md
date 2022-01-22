@@ -1,16 +1,22 @@
 ---
 title: "重置帐户密码"
 keywords: "忘记, 密码, KubeSphere, Kubernetes"
-description: "重置任意一个帐户的密码。"
+description: "重置任意一个用户的密码。"
 linkTitle: "重置帐户密码"
 Weight: 16410
 ---
 
 ## 重置普通用户密码
 
-具有用户管理权限的管理员可修改帐户密码。在**帐户管理**页面，点击需要修改密码的帐户。在帐户的详情页面，点击**更多操作**并选择**修改密码**。
+1. 使用具有用户管理权限的用户登录 KubeSphere Web 控制台。
 
-![modify-password](/images/docs/zh-cn/faq/forgot-password/modify-password.png)
+2. 点击左上角的**平台管理**，选择**访问**控制。点击**用户**。
+
+3. 在**用户**页面，点击需要修改密码的用户进入详情页。
+
+4. 在用户的详情页，点击**更多操作**并选择**修改密码**。
+
+5. 在出现的对话框中，输入新的密码并重复输入新的密码。完成后点击**确定**。
 
 ## 重置管理员密码
 
@@ -22,6 +28,6 @@ kubectl patch users <USERNAME> -p '{"spec":{"password":"<YOURPASSWORD>"}}' --typ
 
 {{< notice note >}}
 
-请将命令中的 `<USERNAME>` 修改为实际的帐户名称，将 `<YOURPASSWORD>` 修改为实际的新密码。
+请将命令中的 `<USERNAME>` 修改为实际的用户名，将 `<YOURPASSWORD>` 修改为实际的新密码。
 
 {{</ notice >}} 

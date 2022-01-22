@@ -60,7 +60,7 @@ aws-cli/2.1.2 Python/3.7.3 Linux/4.18.0-193.6.3.el8_2.x86_64 exe/x86_64.centos.8
         - 私有：仅启用对集群的 Kubernetes API server 端点的专用访问。来自集群 VPC 内部的 Kubernetes API 请求使用这个私有 VPC 端点。
 
             {{< notice note >}}
-如果创建的 VPC 没有出站 Internet 访问，则必须启用私有访问。
+      如果创建的 VPC 没有出站 Internet 访问，则必须启用私有访问。
             {{</ notice >}}
 
         - 公有和私有：启用公有和私有访问。
@@ -84,7 +84,7 @@ aws-cli/2.1.2 Python/3.7.3 Linux/4.18.0-193.6.3.el8_2.x86_64 exe/x86_64.centos.8
 
     {{< notice note >}}
 
-- 如需在 Kubernetes 上安装 KubeSphere v3.1.1，您的 Kubernetes 版本必须为：v1.17.x，v1.18.x，v1.19.x 或 v1.20.x。
+- 如需在 Kubernetes 上安装 KubeSphere 3.2.1，您的 Kubernetes 版本必须为：v1.19.x，v1.20.x，v1.21.x 或 v1.22.x（实验性支持）。
 - 此示例中包括 3 个节点。您可以根据自己的需求添加更多节点，尤其是在生产环境中。
 - t3.medium（2 个 vCPU，4 GB 内存）机器类型仅用于最小化安装，如果要启用可插拔组件或集群用于生产，请选择具有更大规格的机器类型。
 - 对于其他设置，您也可以根据自己的需要进行更改，也可以使用默认值。
@@ -130,9 +130,9 @@ aws-cli/2.1.2 Python/3.7.3 Linux/4.18.0-193.6.3.el8_2.x86_64 exe/x86_64.centos.8
 - 使用 kubectl 安装 KubeSphere，以下命令仅用于默认的最小安装。
 
   ```bash
-  kubectl apply -f https://github.com/kubesphere/ks-installer/releases/download/v3.1.1/kubesphere-installer.yaml
+  kubectl apply -f https://github.com/kubesphere/ks-installer/releases/download/v3.2.1/kubesphere-installer.yaml
 
-  kubectl apply -f https://github.com/kubesphere/ks-installer/releases/download/v3.1.1/cluster-configuration.yaml
+  kubectl apply -f https://github.com/kubesphere/ks-installer/releases/download/v3.2.1/cluster-configuration.yaml
   ```
 
 - 检查安装日志：
@@ -206,9 +206,8 @@ aws-cli/2.1.2 Python/3.7.3 Linux/4.18.0-193.6.3.el8_2.x86_64 exe/x86_64.centos.8
 
 - 使用 EKS 生成的 external-ip 访问 KubeSphere 的 Web 控制台。
 
-- 使用默认帐户和密码（`admin/P@88w0rd`）登录控制台，在集群概述页面中，可以看到如下图所示的仪表板。
+- 使用默认帐户和密码（`admin/P@88w0rd`）登录控制台。
 
-  ![eks-cluster](/images/docs/zh-cn/installing-on-kubernetes/hosted-kubernetes/install-kubesphere-on-eks/gke-cluster.png)
 
 ## 启用可插拔组件（可选）
 

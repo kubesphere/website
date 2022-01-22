@@ -4,5 +4,12 @@ defaultContentLanguage = "zh"
 [params]
 showCaseNumber = true
 
+addBaiduAnalytics = true
+
 bilibiliLink = "https://space.bilibili.com/438908638"
+
+[languages.en.params]
+mailchimpSubscribeUrl = "https://yunify.us2.list-manage.com/subscribe/post?u=f29f08cef80223b46bad069b5&amp;id=4838e610c2"
+
+[languages.zh.params]
 mailchimpSubscribeUrl = "https://yunify.us2.list-manage.com/subscribe/post?u=f29f08cef80223b46bad069b5&amp;id=4838e610c2"

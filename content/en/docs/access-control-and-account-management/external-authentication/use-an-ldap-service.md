@@ -14,44 +14,39 @@ This document describes how to use an LDAP service as an external identity provi
 * You need to deploy a Kubernetes cluster and install KubeSphere in the cluster. For details, see [Installing on Linux](/docs/installing-on-linux/) and [Installing on Kubernetes](/docs/installing-on-kubernetes/).
 * You need to obtain the manager distinguished name (DN) and manager password of an LDAP service.
 
-### Procedure
+## Procedure
 
-1. Log in to KubeSphere as `admin`, move the cursor to <img src="/images/docs/access-control-and-account-management/external-authentication/use-an-ldap-service/toolbox.png" width="20px" height="20px"> in the bottom-right corner, click **Kubectl**, and run the following command to edit the `kubesphere-config` ConfigMap:
+1. Log in to KubeSphere as `admin`, move the cursor to <img src="/images/docs/access-control-and-account-management/external-authentication/set-up-external-authentication/toolbox.png" width="20px" height="20px"> in the lower-right corner, click **kubectl**, and run the following command to edit `ks-installer` of the CRD `ClusterConfiguration`:
 
    ```bash
-   kubectl -n kubesphere-system edit cm kubesphere-config
+   kubectl -n kubesphere-system edit cc ks-installer
    ```
 
    Example:
 
    ```yaml
-   apiVersion: v1
-   data:
-     kubesphere.yaml: |
-       authentication:
-         authenticateRateLimiterMaxTries: 10
-         authenticateRateLimiterDuration: 10m0s
-         loginHistoryRetentionPeriod: 168h
-         maximumClockSkew: 10s
-         multipleLogin: true
-         jwtSecret: "********"
-         oauthOptions:
-           accessTokenMaxAge: 1h
-           accessTokenInactivityTimeout: 30m
-           identityProviders:
-           - name: LDAP
-             type: LDAPIdentityProvider
-             mappingMethod: auto
-             provider:
-               host: 192.168.0.2:389
-               managerDN: uid=root,cn=users,dc=nas
-               managerPassword: ********
-               userSearchBase: cn=users,dc=nas
-               loginAttribute: uid
-               mailAttribute: mail
+   spec:
+     authentication:
+       jwtSecret: ''
+       maximumClockSkew: 10s
+       multipleLogin: true
+       oauthOptions:
+         accessTokenMaxAge: 1h
+         accessTokenInactivityTimeout: 30m
+         identityProviders:
+         - name: LDAP
+           type: LDAPIdentityProvider
+           mappingMethod: auto
+           provider:
+             host: 192.168.0.2:389
+             managerDN: uid=root,cn=users,dc=nas
+             managerPassword: ********
+             userSearchBase: cn=users,dc=nas
+             loginAttribute: uid
+             mailAttribute: mail
    ```
-
-2. Configure fields other than `oauthOptions:identityProviders` in the `data:kubesphere.yaml:authentication` section. For details, see [Set Up External Authentication](../set-up-external-authentication/).
+   
+2. Configure fields other than `oauthOptions:identityProviders` in the `spec:authentication` section. For details, see [Set Up External Authentication](../set-up-external-authentication/).
 
 3. Configure fields in `oauthOptions:identityProviders` section.
 
@@ -80,19 +75,27 @@ This document describes how to use an LDAP service as an external identity provi
      iam.kubesphere.io/origin-uid: <LDAP username>
    ```
 
-5. After the fields are configured, run the following command to restart ks-apiserver.
+5. After the fields are configured, save your changes, and wait until the restart of ks-installer is complete.
+
+   {{< notice note >}}
+   
+   The KubeSphere web console is unavailable during the restart of ks-installer. Please wait until the restart is complete.
+   
+   {{</ notice >}}
+   
+6. If you are using KubeSphere 3.2.0, run the following command after configuring LDAP and wait until `ks-installer` is up and running:
 
    ```bash
-   kubectl -n kubesphere-system rollout restart deploy/ks-apiserver
+   kubectl -n kubesphere-system set image deployment/ks-apiserver *=kubesphere/ks-apiserver:v3.2.1
    ```
    
    {{< notice note >}}
    
-   The KubeSphere web console is unavailable during the restart of ks-apiserver. Please wait until the restart is complete.
+   If you are using KubeSphere 3.2.1, skip this step.
    
    {{</ notice >}}
    
-6. Go to the KubeSphere login page and enter the username and password of an LDAP user to log in.
+7. Go to the KubeSphere login page and enter the username and password of an LDAP user to log in.
 
    {{< notice note >}}
 

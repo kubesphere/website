@@ -30,6 +30,6 @@ KubeSphere 平台研发工程师, contributor of kubernetes-sigs, 目前负责 K
 
 ## 下载 PPT
 
-可扫描官网底部二维码，关注 「KubeSphere 云原生」公众号，后台回复 “2021 上海” 即可下载 PPT。
+可扫描官网底部二维码，关注 「KubeSphere云原生」公众号，后台回复 “2021 上海” 即可下载 PPT。
 
 

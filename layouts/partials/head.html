@@ -25,9 +25,23 @@
 <script src='{{ "js/jquery-3.5.0.min.js" | relURL }}'></script>
 <script src='{{ "js/viewer.min.js" | relURL }}'></script>
 <script src='{{ "js/jquery.modal.min.js" | relURL }}'></script>
+<script src='{{ "swiper/swiper-bundle.min.js" | relURL }}'></script>
 
 {{ if .IsDescendant (.GetPage "/docs") }}
 <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/docsearch.js@2/dist/cdn/docsearch.min.js"></script>
+{{ end }}
+
+<!-- Baidu Analytics -->
+{{ if .Site.Params.addBaiduAnalytics }}
+<script>
+  var _hmt = _hmt || [];
+  (function() {
+    var hm = document.createElement("script");
+    hm.src = "https://hm.baidu.com/hm.js?0237e75d94d303ae04e494196700251c";
+    var s = document.getElementsByTagName("script")[0];
+    s.parentNode.insertBefore(hm, s);
+  })();
+</script>
 {{ end }}
 
 <!-- Global site tag (gtag.js) - Google Analytics -->

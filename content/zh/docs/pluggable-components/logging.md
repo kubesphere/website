@@ -6,7 +6,7 @@ linkTitle: "KubeSphere 日志系统"
 weight: 6400
 ---
 
-KubeSphere 为日志收集、查询和管理提供了一个强大的、全面的、易于使用的日志系统。它涵盖了不同层级的日志，包括租户、基础设施资源和应用。用户可以从项目、工作负载、Pod 和关键字等不同维度对日志进行搜索。与 Kibana 相比，KubeSphere 基于租户的日志系统中，每个租户只能查看自己的日志，从而可以在租户之间提供更好的隔离性和安全性。除了 KubeSphere 自身的日志系统，该容器平台还允许用户添加第三方日志收集器，如 Elasticsearch、Kafka 和 Fluentd。
+KubeSphere 为日志收集、查询和管理提供了一个强大的、全面的、易于使用的日志系统。它涵盖了不同层级的日志，包括租户、基础设施资源和应用。用户可以从项目、工作负载、容器组和关键字等不同维度对日志进行搜索。与 Kibana 相比，KubeSphere 基于租户的日志系统中，每个租户只能查看自己的日志，从而可以在租户之间提供更好的隔离性和安全性。除了 KubeSphere 自身的日志系统，该容器平台还允许用户添加第三方日志收集器，如 Elasticsearch、Kafka 和 Fluentd。
 
 有关更多信息，请参见[日志查询](../../toolbox/log-query/)。
 
@@ -35,10 +35,14 @@ KubeSphere 为日志收集、查询和管理提供了一个强大的、全面的
     ```yaml
     logging:
       enabled: true # 将“false”更改为“true”。
+      containerruntime: docker
     ```
 
-    {{< notice note >}}
-默认情况下，如果启用了日志系统，KubeKey 将安装内置 Elasticsearch。对于生产环境，如果您想启用日志系统，强烈建议在 `config-sample.yaml` 中设置以下值，尤其是 `externalElasticsearchUrl` 和 `externalElasticsearchPort`。在安装前提供以下信息后，KubeKey 将直接对接您的外部 Elasticsearch，不再安装内置 Elasticsearch。
+    {{< notice info >}}若使用 containerd 作为容器运行时，请将 `containerruntime` 字段的值更改为 `containerd`。如果您从低版本升级至 KubeSphere 3.2.1，则启用 KubeSphere 日志系统时必须在 `logging` 字段下手动添加 `containerruntime` 字段。
+
+    {{</ notice >}}
+
+    {{< notice note >}}默认情况下，如果启用了日志系统，KubeKey 将安装内置 Elasticsearch。对于生产环境，如果您想启用日志系统，强烈建议在 `config-sample.yaml` 中设置以下值，尤其是 `externalElasticsearchHost` 和 `externalElasticsearchPort`。在安装前提供以下信息后，KubeKey 将直接对接您的外部 Elasticsearch，不再安装内置 Elasticsearch。
     {{</ notice >}}
 
     ```yaml
@@ -49,7 +53,7 @@ KubeSphere 为日志收集、查询和管理提供了一个强大的、全面的
       elasticsearchDataVolumeSize: 20Gi    # The volume size of Elasticsearch data nodes.
       logMaxAge: 7                     # Log retention day in built-in Elasticsearch. It is 7 days by default.
       elkPrefix: logstash              # The string making up index names. The index name will be formatted as ks-<elk_prefix>-log.
-      externalElasticsearchUrl: # The URL of external Elasticsearch.
+      externalElasticsearchHost: # The Host of external Elasticsearch.
       externalElasticsearchPort: # The port of external Elasticsearch.
     ```
 
@@ -61,9 +65,9 @@ KubeSphere 为日志收集、查询和管理提供了一个强大的、全面的
 
 ### 在 Kubernetes 上安装
 
-[在 Kubernetes 上安装 KubeSphere](../../installing-on-kubernetes/introduction/overview/) 的教程中说明了在 Kubernetes 上安装 KubeSphere 的流程，不过，需要事先在 [cluster-configuration.yaml](https://github.com/kubesphere/ks-installer/releases/download/v3.1.1/cluster-configuration.yaml) 文件中启用日志系统（可选服务组件）。
+[在 Kubernetes 上安装 KubeSphere](../../installing-on-kubernetes/introduction/overview/) 的教程中说明了在 Kubernetes 上安装 KubeSphere 的流程，不过，需要事先在 [cluster-configuration.yaml](https://github.com/kubesphere/ks-installer/releases/download/v3.2.1/cluster-configuration.yaml) 文件中启用日志系统（可选系统组件）。
 
-1. 下载 [cluster-configuration.yaml](https://github.com/kubesphere/ks-installer/releases/download/v3.1.1/cluster-configuration.yaml) 文件，然后打开并开始编辑。
+1. 下载 [cluster-configuration.yaml](https://github.com/kubesphere/ks-installer/releases/download/v3.2.1/cluster-configuration.yaml) 文件，然后打开并开始编辑。
 
     ```bash
     vi cluster-configuration.yaml
@@ -74,10 +78,14 @@ KubeSphere 为日志收集、查询和管理提供了一个强大的、全面的
     ```yaml
     logging:
       enabled: true # 将“false”更改为“true”。
+      containerruntime: docker
     ```
 
-    {{< notice note >}}
-默认情况下，如果启用了日志系统，ks-installer 将安装内置 Elasticsearch。对于生产环境，如果您想启用日志系统，强烈建议在 `cluster-configuration.yaml` 中设置以下值，尤其是 `externalElasticsearchUrl` 和 `externalElasticsearchPort`。在安装前提供以下信息后，ks-installer 将直接对接您的外部 Elasticsearch，不再安装内置 Elasticsearch。
+    {{< notice info >}}若使用 containerd 作为容器运行时，请将 `.logging.containerruntime` 字段的值更改为 `containerd`。如果您从低版本升级至 KubeSphere 3.2.1，则启用 KubeSphere 日志系统时必须在 `logging` 字段下手动添加 `containerruntime` 字段。
+
+    {{</ notice >}}
+
+    {{< notice note >}}默认情况下，如果启用了日志系统，ks-installer 将安装内置 Elasticsearch。对于生产环境，如果您想启用日志系统，强烈建议在 `cluster-configuration.yaml` 中设置以下值，尤其是 `externalElasticsearchHost` 和 `externalElasticsearchPort`。在安装前提供以下信息后，ks-installer 将直接对接您的外部 Elasticsearch，不再安装内置 Elasticsearch。
     {{</ notice >}}
 
     ```yaml
@@ -88,14 +96,14 @@ KubeSphere 为日志收集、查询和管理提供了一个强大的、全面的
       elasticsearchDataVolumeSize: 20Gi    # The volume size of Elasticsearch data nodes.
       logMaxAge: 7                     # Log retention day in built-in Elasticsearch. It is 7 days by default.
       elkPrefix: logstash              # The string making up index names. The index name will be formatted as ks-<elk_prefix>-log.
-      externalElasticsearchUrl: # The URL of external Elasticsearch.
+      externalElasticsearchHost: # The Host of external Elasticsearch.
       externalElasticsearchPort: # The port of external Elasticsearch.
     ```
 
 3. 执行以下命令开始安装：
 
     ```bash
-    kubectl apply -f https://github.com/kubesphere/ks-installer/releases/download/v3.1.1/kubesphere-installer.yaml
+    kubectl apply -f https://github.com/kubesphere/ks-installer/releases/download/v3.2.1/kubesphere-installer.yaml
     
     kubectl apply -f cluster-configuration.yaml
     ```
@@ -104,25 +112,29 @@ KubeSphere 为日志收集、查询和管理提供了一个强大的、全面的
 
 1. 以 `admin` 身份登录控制台。点击左上角的**平台管理**，选择**集群管理**。
    
-2. 点击**自定义资源 CRD**，在搜索栏中输入 `clusterconfiguration`。点击结果查看其详细页面。
+2. 点击 **CRD**，在搜索栏中输入 `clusterconfiguration`。点击结果查看其详细页面。
 
     {{< notice info >}}
 
-自定义资源定义 (CRD) 允许用户在不增加额外 API 服务器的情况下创建一种新的资源类型，用户可以像使用其他 Kubernetes 原生对象一样使用这些自定义资源。
+定制资源定义 (CRD) 允许用户在不增加额外 API 服务器的情况下创建一种新的资源类型，用户可以像使用其他 Kubernetes 原生对象一样使用这些定制资源。
 
 {{</ notice >}}
 
-3. 在**资源列表**中，点击 `ks-installer` 右侧的 <img src="/images/docs/zh-cn/enable-pluggable-components/kubesphere-logging-system/three-dots.png" height="20px">，选择**编辑配置文件**。
+3. 在**自定义资源**中，点击 `ks-installer` 右侧的 <img src="/images/docs/zh-cn/enable-pluggable-components/kubesphere-logging-system/three-dots.png" height="20px">，选择**编辑 YAML**。
 
-4. 在该 YAML 文件中，搜寻到 `logging`，将 `enabled` 的 `false` 改为 `true`。完成后，点击右下角的**更新**，保存配置。
+4. 在该 YAML 文件中，搜寻到 `logging`，将 `enabled` 的 `false` 改为 `true`。完成后，点击右下角的**确定**，保存配置。
 
     ```yaml
     logging:
       enabled: true # 将“false”更改为“true”。
+      containerruntime: docker
     ```
 
-    {{< notice note >}}默认情况下，如果启用了日志系统，将会安装内置 Elasticsearch。对于生产环境，如果您想启用日志系统，强烈建议在该 YAML 文件中设置以下值，尤其是 `externalElasticsearchUrl` 和 `externalElasticsearchPort`。在文件中提供以下信息后，KubeSphere 将直接对接您的外部 Elasticsearch，不再安装内置 Elasticsearch。
+    {{< notice info >}}若使用 containerd 作为容器运行时，请将 `.logging.containerruntime` 字段的值更改为 `containerd`。如果您从低版本升级至 KubeSphere 3.2.1，则启用 KubeSphere 日志系统时必须在 `logging` 字段下手动添加 `containerruntime` 字段。
 
+    {{</ notice >}}
+
+    {{< notice note >}}默认情况下，如果启用了日志系统，将会安装内置 Elasticsearch。对于生产环境，如果您想启用日志系统，强烈建议在该 YAML 文件中设置以下值，尤其是 `externalElasticsearchHost` 和 `externalElasticsearchPort`。在文件中提供以下信息后，KubeSphere 将直接对接您的外部 Elasticsearch，不再安装内置 Elasticsearch。
     {{</ notice >}}
 
     ```yaml
@@ -133,7 +145,7 @@ KubeSphere 为日志收集、查询和管理提供了一个强大的、全面的
       elasticsearchDataVolumeSize: 20Gi    # The volume size of Elasticsearch data nodes.
       logMaxAge: 7                     # Log retention day in built-in Elasticsearch. It is 7 days by default.
       elkPrefix: logstash              # The string making up index names. The index name will be formatted as ks-<elk_prefix>-log.
-      externalElasticsearchUrl: # The URL of external Elasticsearch.
+      externalElasticsearchHost: # The Host of external Elasticsearch.
       externalElasticsearchPort: # The port of external Elasticsearch.
     ```
 
@@ -155,15 +167,13 @@ KubeSphere 为日志收集、查询和管理提供了一个强大的、全面的
 
 {{< tab "在仪表板中验证组件的安装" >}}
 
-进入**服务组件**，检查 **Logging** 的状态，可以看到如下类似图片：
-
-![logging](/images/docs/zh-cn/enable-pluggable-components/kubesphere-logging-system/logging.png)
+进入**系统组件**，检查**日志**标签页中的所有组件都处于**健康**状态。
 
 {{</ tab >}}
 
 {{< tab "通过 kubectl 验证组件的安装" >}}
 
-执行以下命令来检查 Pod 的状态：
+执行以下命令来检查容器组的状态：
 
 ```bash
 kubectl get pod -n kubesphere-logging-system

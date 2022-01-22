@@ -8,11 +8,7 @@ weight: 15320
 
 审计规则定义了处理审计日志的策略。KubeSphere 审计日志为用户提供两种 CRD 规则（`archiving-rule` 和 `alerting-rule`）以供自定义。
 
-启用 [KubeSphere 审计日志](../../../pluggable-components/auditing-logs/)后，使用拥有 `platform-admin` 角色的帐户登录控制台。在**集群管理**页面转到**自定义资源 CRD**，在搜索栏中输入 `rules.auditing.kubesphere.io`。点击搜索结果 **Rule**，您便可以看到这两种 CRD 规则，如下所示。
-
-![审计 CRD](/images/docs/zh-cn/toolbox/auditing/auditing-rules/auditing-crd.PNG)
-
-![告警和归档规则](/images/docs/zh-cn/toolbox/auditing/auditing-rules/alerting-archiving-rule.PNG)
+启用 [KubeSphere 审计日志](../../../pluggable-components/auditing-logs/)后，使用拥有 `platform-admin` 角色的用户登录控制台。在**集群管理**页面转到 **CRD**，在搜索栏中输入 `rules.auditing.kubesphere.io`。点击搜索结果 **Rule**，您便可以看到这两种 CRD 规则。
 
 下方是部分规则的示例。
 
@@ -94,7 +90,7 @@ spec:
  过滤器 | 描述信息 
  ---    | --- 
  `Workspace`              | 发生审计事件的企业空间。
- `Devops`                 | 发生审计事件的 DevOps 工程。 
+ `DevOps`                | 发生审计事件的 DevOps 项目。 
  `Level`                  | 审计日志的级别。 
  `RequestURI`             | RequestURI 是由客户端发送至服务器的请求 URI。 
  `Verb`                   | 与该请求相关联的动词。 

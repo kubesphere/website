@@ -11,7 +11,7 @@ weight: 17100
 ## 通用术语
 
 - **企业空间** <br>
-    管理租户工作负载项目（即 Kubernetes 中的企业空间）和 DevOps 工程的逻辑单位。不同团队的成员在企业空间中有不同的权限，可对资源执行不同的操作并共享信息。
+    管理租户工作负载项目（即 Kubernetes 中的企业空间）和 DevOps 项目的逻辑单位。不同团队的成员在企业空间中有不同的权限，可对资源执行不同的操作并共享信息。
 - **系统企业空间** <br>管理 KubeSphere、Kubernetes 以及可选组件（例如应用商店、服务网格和 DevOps 等）系统项目的特殊企业空间。
 - **企业空间成员** <br>邀请至企业空间中工作的用户，拥有特定的权限。
 - **项目** <br>
@@ -47,17 +47,17 @@ weight: 17100
 
 - **有状态副本集** <br>有状态副本集是用于管理有状态应用程序的工作负载对象，例如 MySQL。有关更多信息，请参见[有状态副本集](https://kubernetes.io/zh/docs/concepts/workloads/controllers/statefulset/)。
 
-- **守护进程集** <br>守护进程集管理多组 Pod 副本，确保所有（或某些）节点运行一个 Pod 的副本，例如 Fluentd 和 Logstash。有关更多信息，请参见[守护进程集](https://kubernetes.io/zh/docs/concepts/workloads/controllers/daemonset/)。
+- **守护进程集** <br>守护进程集管理多组容器组副本，确保所有（或某些）节点运行一个容器组的副本，例如 Fluentd 和 Logstash。有关更多信息，请参见[守护进程集](https://kubernetes.io/zh/docs/concepts/workloads/controllers/daemonset/)。
 
-- **任务** <br>任务会创建一个或者多个 Pod，并确保指定数量的 Pod 成功结束。有关更多信息，请参见[任务](https://kubernetes.io/zh/docs/concepts/workloads/controllers/job/)。
+- **任务** <br>任务会创建一个或者多个容器组，并确保指定数量的容器组成功结束。有关更多信息，请参见[任务](https://kubernetes.io/zh/docs/concepts/workloads/controllers/job/)。
 
 - **定时任务** <br>定时任务按照特定时间或特定时间间隔运行任务，定时任务对象就像 crontab 文件中的一行。有关更多信息，请参见[定时任务](https://kubernetes.io/zh/docs/concepts/workloads/controllers/cron-jobs/)。
 
-- **服务** <br>Kubernetes 服务是一种抽象对象，定义一组逻辑 Pod 和访问它们的策略，有时也称为微服务。有关更多信息，请参见[服务](https://kubernetes.io/zh/docs/concepts/services-networking/service/)。
+- **服务** <br>Kubernetes 服务是一种抽象对象，定义一组逻辑容器组和访问它们的策略，有时也称为微服务。有关更多信息，请参见[服务](https://kubernetes.io/zh/docs/concepts/services-networking/service/)。
 
 ## DevOps
 
-- **DevOps 工程** <br>DevOps 工程用于创建和管理流水线和凭证。
+- **DevOps 项目** <br>DevOps 项目用于创建和管理流水线和凭证。
   
 - **SCM** <br>源控制管理 (Source Control Management)，例如 GitHub 和 Gitlab。
   
@@ -95,17 +95,17 @@ weight: 17100
     监控集群中的相关指标，如节点状态、组件状态、CPU、内存、网络和硬盘等。
 
 - **应用资源监控** <br>
-    监控平台上的应用程序资源，例如项目和 DevOps 工程的数量，以及特定类型的工作负载和服务的数量。
+    监控平台上的应用程序资源，例如项目和 DevOps 项目的数量，以及特定类型的工作负载和服务的数量。
 
 - **已分配 CPU** <br>
-    该指标根据节点上 Pod 的总 CPU 请求数计算得出。它表示节点上为工作负载预留的 CPU 资源，工作负载实际正在使用 CPU 资源可能低于该数值。
+    该指标根据节点上容器组的总 CPU 请求数计算得出。它表示节点上为工作负载预留的 CPU 资源，工作负载实际正在使用 CPU 资源可能低于该数值。
 
-- **已分配内存** <br>该指标根据节点上 Pod 的总内存请求计算得出。它表示节点上为工作负载预留的内存资源，工作负载实际正在使用内存资源可能低于该数值。
+- **已分配内存** <br>该指标根据节点上容器组的总内存请求计算得出。它表示节点上为工作负载预留的内存资源，工作负载实际正在使用内存资源可能低于该数值。
   
 - **落盘日志收集** <br>
-    收集容器落盘日志并导出为 stdout，由系统日记收集器收集。
+    日志收集功能允许系统收集保存在存储卷上的容器日志，并将日志发送到标准输出。
 
-- **通知接收器** <br>接收通知的渠道，如电子邮件、企业微信、Slack 和 Webhook。
+- **通知接收器** <br>接收通知的渠道，如电子邮件、钉钉、企业微信、Slack 和 Webhook。
 
 ## 网络
 
@@ -130,23 +130,23 @@ weight: 17100
 
 ## 多集群管理
 
-- **Host 集群（H 集群）** <br>
-    Host 集群管理 Member 集群，并提供统一的多集群中央控制平面。
+- **主集群（H 集群）** <br>
+    主集群管理成员集群，并提供统一的多集群中央控制平面。
 
-- **Member 集群（M 集群）** <br>
-    Member 集群在多集群架构中由 Host 集群统一管理。
+- **成员集群（M 集群）** <br>
+    成员集群在多集群架构中由主集群统一管理。
 
 - **直接连接** <br>
-    当 Host 集群的任意节点均可访问 Member 集群的 kube-apiserver 地址时可使用此方式直接连接 Host 集群和 Member 集群。  
+    当主集群的任意节点均可访问成员集群的 kube-apiserver 地址时可使用此方式直接连接主集群和成员集群。  
 
 - **代理连接** <br>
-    当 Host 集群无法直接连接 Member 集群时可使用代理方式连接 Host 集群和 Member 集群。
+    当主集群无法直接连接成员集群时可使用代理方式连接主集群和成员集群。
 
 - **jwtSecret** <br>
-    Host 集群和 Member 集群所需的密钥以便二者通信。
+    主集群和成员集群所需的密钥以便二者通信。
 
 - **Tower** <br>
-    使用代理连接时，Host 集群上会安装 proxy 组件而 Member 集群上会安装 agent，Tower 包含 proxy 和 agent。
+    使用代理连接时，主集群上会安装 proxy 组件而成员集群上会安装 agent，Tower 包含 proxy 和 agent。
 
 - **代理服务地址** <br>
-    使用代理连接时，Member 集群上的 Tower agent 需要获取的 Host 集群的通信服务地址。
+    使用代理连接时，成员 集群上的 Tower agent 需要获取的主集群的通信服务地址。

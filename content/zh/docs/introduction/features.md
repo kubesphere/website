@@ -9,9 +9,9 @@ weight: 1300
 
 ## 概览
 
-KubeSphere 作为开源的企业级全栈化容器平台，为用户提供了一个健壮、安全、功能丰富、具备极致体验的 Web 控制台。拥有企业级 Kubernetes 所需的最常见的功能，如工作负载管理，网络策略配置，微服务治理（基于 Istio），DevOps 工程 (CI/CD) ，安全管理，Source to Image/Binary to Image，多租户管理，多维度监控，日志查询和收集，告警通知，审计，应用程序管理和镜像管理、应用配置密钥管理等功能模块。
+KubeSphere 作为开源的企业级全栈化容器平台，为用户提供了一个健壮、安全、功能丰富、具备极致体验的 Web 控制台。拥有企业级 Kubernetes 所需的最常见的功能，如工作负载管理，网络策略配置，微服务治理（基于 Istio），DevOps 项目 (CI/CD) ，安全管理，Source to Image/Binary to Image，多租户管理，多维度监控，日志查询和收集，告警通知，审计，应用程序管理和镜像管理、应用配置密钥管理等功能模块。
 
-它还支持各种开源存储和网络解决方案以及云存储服务。例如，KubeSphere 为用户提供了功能强大的云原生工具[负载均衡器插件 PorterLB](https://porterlb.io/)，这是为 Kubernetes 集群开发的 CNCF 认证的负载均衡插件。
+它还支持各种开源存储和网络解决方案以及云存储服务。例如，KubeSphere 为用户提供了功能强大的云原生工具[负载均衡器插件 OpenELB](https://openelb.github.io/)，这是为 Kubernetes 集群开发的 CNCF 认证的负载均衡插件。
 
 有了易于使用的图形化 Web 控制台，KubeSphere 简化了用户的学习曲线并推动了更多的企业使用 Kubernetes 。
 
@@ -59,7 +59,7 @@ KubeSphere 提供了基于 Jenkins 的可视化 CI/CD 流水线编辑，无需�
 - **自动化**：CI/CD 流水线和构建策略均基于 Jenkins，可简化和自动化开发、测试和生产过程。缓存依赖项用于加速构建和部署。
 - **开箱即用**：用户可以基于他们的 Jenkins 构建策略和客户端插件来创建基于 Git repository/SVN 的 Jenkins 流水线。在内置的 Jenkinsfile 中定义任何步骤和阶段。支持常见的代理类型，例如 Maven，Node.js 和 Go。用户也可以自定义代理类型。
 - **可视化**：用户可以轻松地与可视化控制面板进行交互，编辑、管理 CI/CD 流水线。
-- **质量管理**：支持通过静态代码分析扫描来检测DevOps 工程中的 bug、代码错误和安全漏洞。
+- **质量管理**：支持通过静态代码分析扫描来检测DevOps 项目中的 bug、代码错误和安全漏洞。
 - **日志**：日志完整记录 CI/CD 流水线运行全过程。
 
 ### Source-to-Image
@@ -122,7 +122,7 @@ KubeSphere 通过可视化界面操作监控、运维功能，可简化操作和
 - **第三方兼容性**：KubeSphere 与 Prometheus 兼容，后者是用于在 Kubernetes 环境中进行监视的事实指标收集平台。监视数据可以在 KubeSphere 的 Web 控制台中无缝显示。
 
 - **二级精度的多维度监控**：
-	- 在集群资源维度，系统提供了全面的指标，例如 CPU 利用率、内存利用率、CPU 平均负载、磁盘使用量、inode 使用率、磁盘吞吐量、IOPS、网卡速率、容器组运行状态、ETCD 监控、API Server 监控等多项指标。
+	- 在集群资源维度，系统提供了全面的指标，例如 CPU 利用率、内存利用率、CPU 平均负载、磁盘使用量、inode 使用率、磁盘吞吐量、IOPS、网卡速率、容器组运行状态、etcd 监控、API Server 监控等多项指标。
 	- 在应用资源维度，提供针对应用的 CPU 用量、内存用量、容器组数量、网络流出速率、网络流入速率等五项监控指标。并支持按用量排序和自定义时间范围查询，快速定位异常提供按节点、企业空间、项目等资源用量排行。
 - **排序**：用户可以按节点，工作空间和项目对数据进行排序，从而以直观的方式为他们的资源运行提供图形化视图。
 
@@ -160,7 +160,7 @@ KubeSphere 通过可视化界面操作监控、运维功能，可简化操作和
 
 - 支持 Calico、Flannel 等开源网络方案。
 
-- [PorterLB](https://github.com/kubesphere/porter)，是由 KubeSphere 开发团队设计、经过 CNCF 认证的一款适用于物理机部署 Kubernetes 的负载均衡插件。 主要特点：
+- [OpenELB](https://github.com/kubesphere/openelb)，是由 KubeSphere 开发团队设计、经过 CNCF 认证的一款适用于物理机部署 Kubernetes 的负载均衡插件。 主要特点：
 
   1. ECMP 路由负载均衡
   2. BGP 动态路由
@@ -170,4 +170,4 @@ KubeSphere 通过可视化界面操作监控、运维功能，可简化操作和
   6. 通过 CRD 动态配置BGP服务器 (v0.3.0)
   7. 通过 CRD 动态配置BGP对等 (v0.3.0)
 
-  有关 PorterLB 的更多信息，请参见[本文](https://kubesphere.io/conferences/porter/)。
+  有关 OpenELB 的更多信息，请参见[本文](https://kubesphere.io/conferences/porter/)。

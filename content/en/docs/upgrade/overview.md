@@ -1,18 +1,17 @@
 ---
 title: "Upgrade — Overview"
-keywords: "Kubernetes, upgrade, KubeSphere, v3.1.1, upgrade"
-description: "Understand what you need to pay attention to before the upgrade, such as versions and upgrade tools."
+keywords: "Kubernetes, upgrade, KubeSphere, 3.2.1, upgrade"
+description: "Understand what you need to pay attention to before the upgrade, such as versions, and upgrade tools."
 linkTitle: "Overview"
 weight: 7100
 ---
 
 ## Make Your Upgrade Plan
 
-KubeSphere v3.1.1 is compatible with Kubernetes 1.17.x, 1.18.x, 1.19.x and 1.20.x:
+KubeSphere 3.2.1 is compatible with Kubernetes 1.19.x, 1.20.x, 1.21.x, and 1.22.x (experimental):
 
-- Before you upgrade your cluster to KubeSphere v3.1.1, you need to have a KubeSphere cluster running v3.0.0.
-- If your existing KubeSphere v3.0.0 cluster is installed on Kubernetes 1.17.x+, you can choose to only upgrade KubeSphere to v3.1.1 or upgrade Kubernetes (to a higher version) and KubeSphere (to v3.1.1) at the same time.
-- If your existing KubeSphere v3.0.0 cluster is installed on Kubernetes 1.16.x or earlier, you have to upgrade Kubernetes (to 1.17.x+) and KubeSphere (to v3.1.1) at the same time.
+- Before you upgrade your cluster to KubeSphere 3.2.1, you need to have a KubeSphere cluster running v3.1.x.
+- If your existing KubeSphere v3.1.x cluster is installed on Kubernetes 1.19.x+, you can choose to only upgrade KubeSphere to 3.2.1 or upgrade Kubernetes (to a higher version) and KubeSphere (to 3.2.1) at the same time.
 
 ## Before the Upgrade
 

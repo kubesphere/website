@@ -1,7 +1,7 @@
 ---
 title: "服务拓扑图"
 keywords: "Kubernetes, KubeSphere, 服务, 拓扑图"
-description: "了解如何启用服务拓扑图，以基于 Weave Scope 查看 Pod 的上下文详情。"
+description: "了解如何启用服务拓扑图，以基于 Weave Scope 查看容器组的上下文详情。"
 linkTitle: "服务拓扑图"
 weight: 6915
 ---
@@ -41,9 +41,9 @@ weight: 6915
 
 ### 在 Kubernetes 上安装
 
-[在 Kubernetes 上安装 KubeSphere](../../installing-on-kubernetes/introduction/overview/) 时，您可以在 [cluster-configuration.yaml](https://github.com/kubesphere/ks-installer/releases/download/v3.1.1/cluster-configuration.yaml) 文件中首先启用服务拓扑图。
+[在 Kubernetes 上安装 KubeSphere](../../installing-on-kubernetes/introduction/overview/) 时，您可以在 [cluster-configuration.yaml](https://github.com/kubesphere/ks-installer/releases/download/v3.2.1/cluster-configuration.yaml) 文件中首先启用服务拓扑图。
 
-1. 下载 [cluster-configuration.yaml](https://github.com/kubesphere/ks-installer/releases/download/v3.1.1/cluster-configuration.yaml) 文件并进行编辑。
+1. 下载 [cluster-configuration.yaml](https://github.com/kubesphere/ks-installer/releases/download/v3.2.1/cluster-configuration.yaml) 文件并进行编辑。
 
     ```bash
     vi cluster-configuration.yaml
@@ -60,7 +60,7 @@ weight: 6915
 3. 执行以下命令开始安装。
 
     ```bash
-    kubectl apply -f https://github.com/kubesphere/ks-installer/releases/download/v3.1.1/kubesphere-installer.yaml
+    kubectl apply -f https://github.com/kubesphere/ks-installer/releases/download/v3.2.1/kubesphere-installer.yaml
     
     kubectl apply -f cluster-configuration.yaml
     ```
@@ -70,15 +70,15 @@ weight: 6915
 
 1. 使用 `admin` 用户登录控制台。点击左上角的**平台管理**，然后选择**集群管理**。
 
-2. 点击**自定义资源 CRD**，然后在搜索栏中输入 `clusterconfiguration`。点击搜索结果查看其详情页。
+2. 点击 **CRD**，然后在搜索栏中输入 `clusterconfiguration`。点击搜索结果查看其详情页。
 
     {{< notice info >}}
-自定义资源定义 (CRD) 允许用户在不新增 API 服务器的情况下创建一种新的资源类型，用户可以像使用其他 Kubernetes 原生对象一样使用这些自定义资源。
+定制资源定义（CRD）允许用户在不新增 API 服务器的情况下创建一种新的资源类型，用户可以像使用其他 Kubernetes 原生对象一样使用这些定制资源。
     {{</ notice >}}
 
-3. 在**资源列表**中，点击 `ks-installer` 右侧的 <img src="/images/docs/zh-cn/enable-pluggable-components/service-topology/three-dots.png" height="20px">，然后选择**编辑配置文件**。
+3. 在**自定义资源**中，点击 `ks-installer` 右侧的 <img src="/images/docs/zh-cn/enable-pluggable-components/service-topology/three-dots.png" height="20px">，然后选择**编辑 YAML**。
 
-4. 在该配置文件中，搜寻到 `network`，将 `network.topology.type` 更改为 `weave-scope`。完成后，点击右下角的**更新**保存配置。
+4. 在该配置文件中，搜寻到 `network`，将 `network.topology.type` 更改为 `weave-scope`。完成后，点击右下角的**确定**保存配置。
 
     ```yaml
     network:
@@ -103,15 +103,13 @@ weight: 6915
 
 {{< tab "在仪表板中验证组件的安装" >}}
 
-进入一个项目中，导航到**应用负载**下的**服务**，即可看到**拓扑图**选项卡下**服务**的拓扑图。
-
-![topology1](/images/docs/zh-cn/enable-pluggable-components/service-topology/topology.png)
+进入一个项目中，导航到**应用负载**下的**服务**，即可看到**服务拓扑**页签下**服务**的拓扑图。
 
 {{</ tab >}}
 
 {{< tab "通过 Kubectl 验证组件的安装" >}}
 
-执行以下命令来检查 Pod 的状态：
+执行以下命令来检查容器组的状态：
 
 ```bash
 kubectl get pod -n weave

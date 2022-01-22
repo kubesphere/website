@@ -77,9 +77,7 @@ If you have trouble deploying applications into your project when running a pipe
 
 ### Step 3: Create a DevOps kubeconfig
 
-1. Log in to your KubeSphere console of the AWS cluster and go to your DevOps project. Go to **Credentials** under **Project Management**, and then click **Create**. You can name this kubeconfig based on your needs.
-
-   ![create-kubeconfig](/images/docs/faq/devops/create-devops-kubeconfig-on-aws/create-kubeconfig.png)
+1. Log in to your KubeSphere console of the AWS cluster and go to your DevOps project. Go to **Credentials** under **DevOps Project Settings**, and then click **Create**. You can name this kubeconfig based on your needs.
 
 2. In the **Content** text box, pay attention to the following contents:
 

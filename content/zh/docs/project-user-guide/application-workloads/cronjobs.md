@@ -13,7 +13,7 @@ weight: 10260
 
 ## 准备工作
 
-您需要创建一个企业空间、一个项目以及一个帐户 (`project-regular`)。必须邀请该帐户至该项目中并赋予 `operator` 角色。有关更多信息，请参见[创建企业空间、项目、帐户和角色](../../../quick-start/create-workspace-and-project/)。
+您需要创建一个企业空间、一个项目以及一个用户 (`project-regular`)。必须邀请该用户至该项目中并赋予 `operator` 角色。有关更多信息，请参见[创建企业空间、项目、用户和角色](../../../quick-start/create-workspace-and-project/)。
 
 ## 创建定时任务
 
@@ -21,13 +21,9 @@ weight: 10260
 
 以 `project-regular` 身份登录控制台。转到项目的**任务**页面，然后在**定时任务**选项卡下点击**创建**。
 
-![定时任务列表](/images/docs/zh-cn/project-user-guide/application-workloads/cronjobs/cronjob-list.png)
-
 ### 步骤 2：输入基本信息
 
-您可以参考下图在每个字段中输入基本信息。完成操作后，点击**下一步**。
-
-![基本信息](/images/docs/zh-cn/project-user-guide/application-workloads/cronjobs/cronjob-create-basic-info.png)
+您可以参考下面的说明在每个字段中输入基本信息。完成操作后，点击**下一步**。
 
 - **名称**：定时任务的名称，也是唯一标识符。
 - **别名**：定时任务的别名，使资源易于识别。
@@ -40,45 +36,39 @@ weight: 10260
   | 每周  | `0 0 * * 0` |
   | 每月 | `0 0 1 * *` |
   
-- **高级设置（执行参数）**：
+- **高级设置**：
   
-  - **启动 Job 的期限（秒）**：由清单文件中的 `.spec.startingDeadlineSeconds` 指定，此可选字段表示如果由于任何原因错过计划时间，定时任务启动所需的最大秒数。错过执行的定时任务将被计为失败。如果未指定此字段，则此定时任务没有启动期限。
-  - **保留完成 Job 数**：由清单文件中的 `.spec.successfulJobsHistoryLimit` 指定，此字段表示要保留的定时任务执行成功的次数，用于区分显式零和未指定这两种情况。默认值为 3。
-  - **保留失败 Job 数**：由清单文件中的 `.spec.failedJobsHistoryLimit` 指定，此字段表示要保留的定时任务执行失败的次数，用于区分显式零和未指定这两种情况。默认值为 1。
-  - **并发策略**：由 `.spec.concurrencyPolicy` 指定，它表示如何处理任务的并发执行。有效值为：
-      - **Allow** (默认值)：允许定时任务并发运行。
-      - **Forbid**：禁止并发运行，如果前一个运行还没有完成，则跳过下一个运行。
-      - **Replace**：取消当前正在运行的任务，用一个新的来替换。
+  - **最大启动延后时间（s）**：由清单文件中的 `.spec.startingDeadlineSeconds` 指定，此可选字段表示如果由于任何原因错过计划时间，定时任务启动所需的最大秒数。错过执行的定时任务将被计为失败。如果未指定此字段，则此定时任务没有启动期限。
+  - **成功任务保留数量**：由清单文件中的 `.spec.successfulJobsHistoryLimit` 指定，此字段表示要保留的定时任务执行成功的次数，用于区分显式零和未指定这两种情况。默认值为 3。
+  - **失败任务保留数量**：由清单文件中的 `.spec.failedJobsHistoryLimit` 指定，此字段表示要保留的定时任务执行失败的次数，用于区分显式零和未指定这两种情况。默认值为 1。
+  - **并发策略**：由 `.spec.concurrencyPolicy` 指定，它表示如何处理任务的并发执行：
+      - **同时运行任务** (默认值)：允许定时任务并发运行。
+      - **跳过新任务**：禁止并发运行，如果前一个运行还没有完成，则跳过下一个运行。
+      - **跳过旧任务**：取消当前正在运行的任务，用一个新的来替换。
 
 {{< notice note >}}
 
-您可以在右上角开启**编辑模式**，查看此定时任务的 YAML 格式清单文件。
+您可以在右上角开启**编辑 YAML**，查看此定时任务的 YAML 格式清单文件。
 
 {{</ notice >}}
 
 ### 步骤 3：定时任务设置（可选）
 
-请参考[任务](../jobs/#步骤-3任务设置可选)。
+请参考[任务](../jobs/#步骤-3策略设置可选)。
 
-### 步骤 4：设置镜像
+### 步骤 4：设置容器组
 
-1. 点击**容器镜像**下的**添加容器镜像**，在搜索栏中输入 `busybox`，然后按**回车**键。
-
-    ![输入 busybox](/images/docs/zh-cn/project-user-guide/application-workloads/cronjobs/input-busybox.png)
+1. 点击**容器**下的**添加容器镜像**，在搜索栏中输入 `busybox`，然后按**回车**键。
 
 2. 向下滚动到**启动命令**然后在**参数**框中输入 `/bin/sh,-c,date; echo "KubeSphere!"`。
 
-    ![启动命令](/images/docs/zh-cn/project-user-guide/application-workloads/cronjobs/start-command.png)
-
 3. 点击 **√** 完成镜像设置，然后点击**下一步**继续。
-
-    ![完成镜像设置](/images/docs/zh-cn/project-user-guide/application-workloads/cronjobs/finish-image.png)
 
     {{< notice note >}}
 
-- 此示例定时任务输出 `KubeSphere`。有关设置镜像的更多信息，请参见[容器镜像设置](../container-image-settings/)。
+- 此示例定时任务输出 `KubeSphere`。有关设置镜像的更多信息，请参见[容器组设置](../container-image-settings/)。
 - 有关**重启策略**的更多信息，请参见[任务](../jobs/#步骤-4设置镜像)。
-- 您可以跳过本教程的**挂载存储**和**高级设置**。有关更多信息，请参见部署一文中的[挂载存储卷](../deployments/#步骤-4挂载存储卷)和[配置高级设置](../deployments/#步骤-5配置高级设置)。
+- 您可以跳过本教程的**存储卷设置**和**高级设置**。有关更多信息，请参见部署一文中的[挂载存储卷](../deployments/#步骤-4挂载存储卷)和[配置高级设置](../deployments/#步骤-5配置高级设置)。
 
     {{</ notice >}}
 
@@ -86,23 +76,11 @@ weight: 10260
 
 1. 在最后一步**高级设置**中，点击**创建**完成操作。如果创建成功，定时任务列表中将添加一个新条目。此外，您还可以在**任务**选项卡下查看任务。
 
-    ![定时任务列表](/images/docs/zh-cn/project-user-guide/application-workloads/cronjobs/cronjob-list-new.png)
-
-    ![任务列表](/images/docs/zh-cn/project-user-guide/application-workloads/cronjobs/job-list.png)
-
-2. 在**定时任务**选项卡下，点击此定时任务，然后转到**任务记录**选项卡，您可以在其中查看每个执行记录的信息。由于**保留完成 Job 数**字段设置为 3，因此这里显示定时任务成功执行 3 次。
-
-    ![执行记录](/images/docs/zh-cn/project-user-guide/application-workloads/cronjobs/execution-record.png)
+2. 在**定时任务**选项卡下，点击此定时任务，然后转到**任务记录**选项卡，您可以在其中查看每个执行记录的信息。由于**成功任务保留数量**字段设置为 3，因此这里显示定时任务成功执行 3 次。
 
 3. 点击任意记录，您将转到该任务的详情页面。
 
-    ![任务详情页面](/images/docs/zh-cn/project-user-guide/application-workloads/cronjobs/job-detail-page.png)
-
-4. 在**资源状态**中，您可以检查 Pod 状态。点击右侧的 <img src="/images/docs/zh-cn/project-user-guide/application-workloads/cronjobs/down-arrow.png" width="20px" />，可以检查容器日志，如下所示，该日志显示预期输出。
-
-    ![容器日志-1](/images/docs/zh-cn/project-user-guide/application-workloads/cronjobs/container-log-1.png)
-
-    ![容器日志-2](/images/docs/zh-cn/project-user-guide/application-workloads/cronjobs/container-log-2.png)
+4. 在**资源状态**中，您可以检查容器组状态。点击右侧的 <img src="/images/docs/zh-cn/project-user-guide/application-workloads/cronjobs/down-arrow.png" width="20px" />，然后点击 <img src="/images/docs/zh-cn/project-user-guide/application-workloads/cronjobs/container-log-icon.png" width="20px" /> 可以检查容器日志，如下所示，该日志显示预期输出。
 
 ## 定时任务操作
 
@@ -110,7 +88,17 @@ weight: 10260
 
 - **编辑信息**：编辑基本信息，但无法编辑该定时任务的`名称`。
 - **暂停/启动**：暂停或启动该定时任务。暂停定时任务将告知控制器暂停后续执行任务，但已经启动的执行不受影响。
-- **编辑配置文件**：编辑该定时任务的 YAML 文件配置。
+- **编辑 YAML**：编辑该定时任务的 YAML 文件配置。
 - **删除**：删除该定时任务，然后返回定时任务列表页面。
 
-![定时任务操作](/images/docs/zh-cn/project-user-guide/application-workloads/cronjobs/cronjob-action.png)
+### 任务记录
+
+点击**任务记录**选项卡查看定时任务的执行记录。
+
+### 元数据
+
+点击**元数据**选项卡查看定时任务的标签和注解。
+
+### 事件
+
+点击**事件**选项卡查看定时任务的事件。

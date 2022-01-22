@@ -1,7 +1,9 @@
 ---
-title: KubeSphere | KubeSphere 上发布单容器应用
+title: 提交改变
+keywords: Kubesphere, Kubesphere learn
+description: 将容器保存为镜像
 
-pdfUrl: https://kubesphere-community.pek3b.qingstor.com/qkcp/lesson-14/KSCE-200-J001-14-Deployment-one-Container-Service-on-Kubesphere-lab.pdf
+pdfUrl: https://www.yuque.com/leifengyang/oncloud/ox16bw#xNDfm
 
 ---
 

@@ -1,6 +1,6 @@
 ---
 title: Kubebuilder 使用简介
-description: Kubebuilder 是一个帮助快速开发自定义资源及控制器的框架工具。和大家一起走进 Kubebuilder，初步了解 Kubebuilder 的基本原理以及使用方法。
+description: Kubebuilder 是一个帮助快速开发定制资源及控制器的框架工具。和大家一起走进 Kubebuilder，初步了解 Kubebuilder 的基本原理以及使用方法。
 keywords: KubeSphere, Kubernetes, Kuberbuilder
 css: scss/live-detail.scss
 
@@ -15,7 +15,7 @@ section1:
 ---
 ## 分享内容简介
 
-Kubebuilder 是一个帮助快速开发自定义资源及控制器的框架工具。本次分享基于上一讲 [Kubernetes 控制器原理简介](https://kubesphere.com.cn/live/uisee0916-live/)，和大家一起走进 Kubebuilder，初步了解 Kubebuilder 的基本原理以及使用方法。
+Kubebuilder 是一个帮助快速开发定制资源及控制器的框架工具。本次分享基于上一讲 [Kubernetes 控制器原理简介](https://kubesphere.com.cn/live/uisee0916-live/)，和大家一起走进 Kubebuilder，初步了解 Kubebuilder 的基本原理以及使用方法。
 
 ## 讲师简介
 
@@ -38,4 +38,4 @@ B 站  http://live.bilibili.com/22580654
 
 ## PPT 下载
 
-可扫描官网底部二维码，关注 「KubeSphere 云原生」公众号，后台回复 `20210923` 即可下载 PPT。
+可扫描官网底部二维码，关注 「KubeSphere云原生」公众号，后台回复 `20210923` 即可下载 PPT。

@@ -6,9 +6,9 @@ linkTitle: "KubeSphere Alerting"
 weight: 6600
 ---
 
-Alerting is an important building block of observability, closely related to monitoring and logging. The alerting system in KubeSphere, coupled with the proactive failure notification system, allows users to know activities of interest based on alerting policies. When a predefined threshold of a certain metric is reached, an alert will be sent to preconfigured recipients. Therefore, you need to configure the notification method beforehand, including Email, Slack, DingTalk, WeCom and Webhook. With a highly functional alerting and notification system in place, you can quickly identify and resolve potential issues in advance before they affect your business.
+Alerting is an important building block of observability, closely related to monitoring and logging. The alerting system in KubeSphere, coupled with the proactive failure notification system, allows users to know activities of interest based on alerting policies. When a predefined threshold of a certain metric is reached, an alert will be sent to preconfigured recipients. Therefore, you need to configure the notification method beforehand, including Email, Slack, DingTalk, WeCom, and Webhook. With a highly functional alerting and notification system in place, you can quickly identify and resolve potential issues in advance before they affect your business.
 
-## Enable Alerting before Installation
+## Enable Alerting Before Installation
 
 ### Installing on Linux
 
@@ -39,9 +39,9 @@ If you adopt [All-in-One Installation](../../quick-start/all-in-one-on-linux/), 
 
 ### Installing on Kubernetes
 
-As you [install KubeSphere on Kubernetes](../../installing-on-kubernetes/introduction/overview/), you can enable Alerting first in the [cluster-configuration.yaml](https://github.com/kubesphere/ks-installer/releases/download/v3.1.1/cluster-configuration.yaml) file.
+As you [install KubeSphere on Kubernetes](../../installing-on-kubernetes/introduction/overview/), you can enable Alerting first in the [cluster-configuration.yaml](https://github.com/kubesphere/ks-installer/releases/download/v3.2.1/cluster-configuration.yaml) file.
 
-1. Download the file [cluster-configuration.yaml](https://github.com/kubesphere/ks-installer/releases/download/v3.1.1/cluster-configuration.yaml) and edit it.
+1. Download the file [cluster-configuration.yaml](https://github.com/kubesphere/ks-installer/releases/download/v3.2.1/cluster-configuration.yaml) and edit it.
 
     ```bash
     vi cluster-configuration.yaml
@@ -57,14 +57,14 @@ As you [install KubeSphere on Kubernetes](../../installing-on-kubernetes/introdu
 3. Execute the following commands to start installation:
 
     ```bash
-    kubectl apply -f https://github.com/kubesphere/ks-installer/releases/download/v3.1.1/kubesphere-installer.yaml
+    kubectl apply -f https://github.com/kubesphere/ks-installer/releases/download/v3.2.1/kubesphere-installer.yaml
     
     kubectl apply -f cluster-configuration.yaml
     ```
 
-## Enable Alerting after Installation
+## Enable Alerting After Installation
 
-1. Log in to the console as `admin`. Click **Platform** in the top-left corner and select **Cluster Management**.
+1. Log in to the console as `admin`. Click **Platform** in the upper-left corner and select **Cluster Management**.
    
 2. Click **CRDs** and enter `clusterconfiguration` in the search bar. Click the result to view its detail page.
 
@@ -72,9 +72,9 @@ As you [install KubeSphere on Kubernetes](../../installing-on-kubernetes/introdu
 A Custom Resource Definition (CRD) allows users to create a new type of resources without adding another API server. They can use these resources like any other native Kubernetes objects.
     {{</ notice >}}
 
-3. In **Resource List**, click <img src="/images/docs/enable-pluggable-components/kubesphere-alerting/three-dots.png" height="20px"> on the right of `ks-installer` and select **Edit YAML**.
+3. In **Custom Resources**, click <img src="/images/docs/enable-pluggable-components/kubesphere-alerting/three-dots.png" height="20px"> on the right of `ks-installer` and select **Edit YAML**.
 
-4. In this YAML file, navigate to `alerting` and change `false` to `true` for `enabled`. After you finish, click **Update** in the bottom-right corner to save the configuration.
+4. In this YAML file, navigate to `alerting` and change `false` to `true` for `enabled`. After you finish, click **OK** in the lower-right corner to save the configuration.
 
     ```yaml
     alerting:
@@ -89,14 +89,12 @@ A Custom Resource Definition (CRD) allows users to create a new type of resource
 
     {{< notice note >}}
 
-You can find the web kubectl tool by clicking <img src="/images/docs/enable-pluggable-components/kubesphere-alerting/hammer.png" height="20px"> in the bottom-right corner of the console.
+You can find the web kubectl tool by clicking <img src="/images/docs/enable-pluggable-components/kubesphere-alerting/hammer.png" height="20px"> in the lower-right corner of the console.
     {{</ notice >}}
 
 ## Verify the Installation of the Component
 
 If you can see **Alerting Messages** and **Alerting Policies** on the **Cluster Management** page, it means the installation is successful as the two parts won't display until the component is installed.
-
-![alerting-section](/images/docs/enable-pluggable-components/kubesphere-alerting/alerting-section.png)
 
 
 

@@ -1,13 +1,13 @@
 ---
 title: "升级后的变更"
-keywords: "Kubernetes, 升级, KubeSphere, v3.1.1"
+keywords: "Kubernetes, 升级, KubeSphere, 3.2.1"
 description: "了解升级后的变更。"
 
 linkTitle: "升级后的变更"
 weight: 7600
 ---
 
-本文说明先前版本现有设置在升级后的变更。如果您想了解 KubeSphere 3.1.1 的所有新功能和优化，请直接参阅 [v3.1.1 发布说明](../../release/release-v311/)。
+本文说明先前版本现有设置在升级后的变更。如果您想了解 KubeSphere 3.2.1 的所有新功能和优化，请直接参阅 [3.2.1 发布说明](../../release/release-v321/)。
 
 ## 访问控制
 

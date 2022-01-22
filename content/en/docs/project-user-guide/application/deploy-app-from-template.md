@@ -13,7 +13,7 @@ This tutorial demonstrates how to quickly deploy [Grafana](https://grafana.com/)
 ## Prerequisites
 
 - You have enabled [OpenPitrix (App Store)](../../../pluggable-components/app-store/).
-- You have completed the tutorial of [Create Workspaces, Projects, Accounts and Roles](../../../quick-start/create-workspace-and-project/). Namely, you must have a workspace, a project and two accounts (`ws-admin` and `project-regular`). `ws-admin` must be granted the role of `workspace-admin` in the workspace and `project-regular` must be granted the role of `operator` in the project.
+- You have completed the tutorial of [Create Workspaces, Projects, Users and Roles](../../../quick-start/create-workspace-and-project/). Namely, you must have a workspace, a project and two users (`ws-admin` and `project-regular`). `ws-admin` must be granted the role of `workspace-admin` in the workspace and `project-regular` must be granted the role of `operator` in the project.
 
 ## Hands-on Lab
 
@@ -21,15 +21,9 @@ This tutorial demonstrates how to quickly deploy [Grafana](https://grafana.com/)
 
 1. Log in to the web console of KubeSphere as `ws-admin`. In your workspace, go to **App Repositories** under **App Management**, and then click **Add**.
 
-   ![add-app-repo](/images/docs/project-user-guide/applications/deploy-apps-from-app-templates/add-app-repo.png)
+2. In the displayed dialog box, enter `test-repo` for the app repository name and `https://helm-chart-repo.pek3a.qingstor.com/kubernetes-charts/` for the repository URL. Click **Validate** to verify the URL, set **Synchronization Interval** based on your needs, and click **OK**.
 
-2. In the dialog that appears, enter `test-repo` for the app repository name and `https://helm-chart-repo.pek3a.qingstor.com/kubernetes-charts/` for the repository URL. Click **Validate** to verify the URL and click **OK** to continue.
-
-   ![input-repo-info](/images/docs/project-user-guide/applications/deploy-apps-from-app-templates/input-repo-info.png)
-
-3. Your repository appears in the list after successfully imported to KubeSphere.
-
-   ![repository-list](/images/docs/project-user-guide/applications/deploy-apps-from-app-templates/repository-list.png)
+3. Your repository is displayed in the list after successfully imported to KubeSphere.
 
    {{< notice note >}}
 
@@ -39,13 +33,9 @@ This tutorial demonstrates how to quickly deploy [Grafana](https://grafana.com/)
 
 ### Step 2: Deploy Grafana from app templates
 
-1. Log out of KubeSphere and log back in as `project-regular`. In your project, choose **Apps** under **Application Workloads** and click **Deploy New App**.
+1. Log out of KubeSphere and log back in as `project-regular`. In your project, go to **Apps** under **Application Workloads** and click **Create**.
 
-   ![create-new-app](/images/docs/project-user-guide/applications/deploy-apps-from-app-templates/create-new-app.png)
-
-2. Select **From App Templates** from the pop-up dialog.
-
-   ![select-app-templates](/images/docs/project-user-guide/applications/deploy-apps-from-app-templates/select-app-templates.png)
+2. Select **From App Template** in the displayed dialog box.
 
    **From App Store**: Choose built-in apps and apps uploaded individually as Helm charts.
 
@@ -53,17 +43,13 @@ This tutorial demonstrates how to quickly deploy [Grafana](https://grafana.com/)
 
 3. Select `test-repo` from the drop-down list, which is the private app repository just uploaded.
 
-   ![private-app-template](/images/docs/project-user-guide/applications/deploy-apps-from-app-templates/private-app-template.png)
-
    {{< notice note >}}
 
-   The option **From workspace** in the list represents the workspace app pool, which contains apps uploaded as Helm charts. They are also part of app templates.
+   The option **Current workspace** in the list represents the workspace app pool, which contains apps uploaded as Helm charts. They are also part of app templates.
 
    {{</ notice >}} 
 
-4. Enter `Grafana` in the search bar to find the app, and then click it to deploy it.
-
-   ![search-grafana](/images/docs/project-user-guide/applications/deploy-apps-from-app-templates/search-grafana.png)
+4. Enter `grafana` in the search box to search for the app, and then click it to deploy it.
 
    {{< notice note >}} 
 
@@ -71,17 +57,11 @@ This tutorial demonstrates how to quickly deploy [Grafana](https://grafana.com/)
 
    {{</ notice >}} 
 
-5. You can view its app information and configuration files. Under **Versions**, select a version number from the list and click **Deploy**.
+5. Its app information and configuration files are also displayed. Under **Version**, select a version number from the list and click **Install**.
 
-   ![deploy-grafana](/images/docs/project-user-guide/applications/deploy-apps-from-app-templates/deploy-grafana.png)
-
-6. Set an app name and confirm the version and deployment location. Click **Next** to continue.
-
-   ![confirm-info](/images/docs/project-user-guide/applications/deploy-apps-from-app-templates/confirm-info.png)
+6. Set an app name and confirm the version and deployment location. Click **Next**.
    
-7. In **App Configurations**, you can manually edit the manifest file or click **Deploy** directly.
-
-   ![app-config](/images/docs/project-user-guide/applications/deploy-apps-from-app-templates/app-config.png)
+7. In **App Settings**, manually edit the manifest file or click **Install** directly.
 
 8. Wait for Grafana to be up and running.
 
@@ -91,37 +71,19 @@ To access Grafana outside the cluster, you need to expose the app through a Node
 
 1. Go to **Services** and click the service name of Grafana.
 
-   ![grafana-services](/images/docs/project-user-guide/applications/deploy-apps-from-app-templates/grafana-services.png)
-
-2. Click **More** and select **Edit Internet Access** from the drop-down menu.
-
-   ![edit-access](/images/docs/project-user-guide/applications/deploy-apps-from-app-templates/edit-access.png)
+2. Click **More** and select **Edit External Access** from the drop-down menu.
 
 3. Select **NodePort** for **Access Method** and click **OK**. For more information, see [Project Gateway](../../../project-administration/project-gateway/).
 
-   ![nodeport](/images/docs/project-user-guide/applications/deploy-apps-from-app-templates/nodeport.png)
-
-4. Under **Service Ports**, you can see the port is exposed.
-
-   ![exposed-port](/images/docs/project-user-guide/applications/deploy-apps-from-app-templates/exposed-port.png)
+4. Under **Ports**, view the exposed port.
 
 ### Step 4: Access Grafana
 
-1. To access the Grafana dashboard, you need the username and password. Navigate to **Secrets** and click the item that has the same name as the app name.
+1. To access the Grafana dashboard, you need the username and password. Go to **Secrets** under **Configuration** and click the item that has the same name as the app name.
 
-   ![grafana-secret](/images/docs/project-user-guide/applications/deploy-apps-from-app-templates/grafana-secret.png)
+2. On the details page, click the eye icon to view the username and password.
 
-2. On the detail page, click the eye icon and you can see the username and password.
-
-   ![secret-page](/images/docs/project-user-guide/applications/deploy-apps-from-app-templates/secret-page.png)
-
-   ![click-eye-icon](/images/docs/project-user-guide/applications/deploy-apps-from-app-templates/click-eye-icon.png)
-
-2. Access Grafana through `<Node IP>:<NodePort>`.
-
-   ![grafana-UI](/images/docs/project-user-guide/applications/deploy-apps-from-app-templates/grafana-UI.png)
-
-   ![home-page](/images/docs/project-user-guide/applications/deploy-apps-from-app-templates/home-page.png)
+3. Access Grafana through `<Node IP>:<NodePort>`.
 
    {{< notice note >}}
 

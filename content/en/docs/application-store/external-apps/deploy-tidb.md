@@ -14,7 +14,7 @@ This tutorial demonstrates how to deploy TiDB Operator and a TiDB Cluster on Kub
 
 - You need to have at least 3 schedulable nodes.
 - You need to enable [the OpenPitrix system](../../../pluggable-components/app-store/).
-- You need to create a workspace, a project, and two user accounts (`ws-admin` and `project-regular`) for this tutorial. The account `ws-admin` must be granted the role of `workspace-admin` in the workspace, and the account `project-regular` must be invited to the project with the role of `operator`. If they are not ready, refer to [Create Workspaces, Projects, Accounts and Roles](../../../quick-start/create-workspace-and-project/).
+- You need to create a workspace, a project, and two user accounts (`ws-admin` and `project-regular`) for this tutorial. The account `ws-admin` must be granted the role of `workspace-admin` in the workspace, and the account `project-regular` must be invited to the project with the role of `operator`. If they are not ready, refer to [Create Workspaces, Projects, Users and Roles](../../../quick-start/create-workspace-and-project/).
 
 ## Hands-on Lab
 
@@ -42,29 +42,17 @@ This tutorial demonstrates how to deploy TiDB Operator and a TiDB Cluster on Kub
 
 1. Log out of KubeSphere and log back in as `ws-admin`. In your workspace, go to **App Repositories** under **App Management**, and then click **Add**.
 
-   ![add-repo](/images/docs/appstore/external-apps/deploy-tidb-operator-and-cluster/add-repo.PNG)
+2. In the displayed dialog box, enter `pingcap` for the app repository name and `https://charts.pingcap.org` for the PingCAP Helm repository URL. Click **Validate** to verify the URL, and you will see a green check mark next to the URL if it is available. Click **OK** to continue.
 
-2. In the dialog that appears, enter `pingcap` for the app repository name and `https://charts.pingcap.org` for the PingCAP Helm repository URL. Click **Validate** to verify the URL and you will see a green check mark next to the URL if it is available. Click **OK** to continue.
-
-   ![add-pingcap-repo](/images/docs/appstore/external-apps/deploy-tidb-operator-and-cluster/add-pingcap-repo.PNG)
-
-3. Your repository displays in the list after successfully imported to KubeSphere.
-
-   ![added-pingcap-repo](/images/docs/appstore/external-apps/deploy-tidb-operator-and-cluster/added-pingcap-repo.PNG)
+3. Your repository displays in the list after it is successfully imported to KubeSphere.
 
 ### Step 3: Deploy TiDB Operator
 
-1. Log out of KubeSphere and log back in as `project-regular`. In your project, go to **Apps** under **Application Workloads** and click **Deploy New App**.
+1. Log out of KubeSphere and log back in as `project-regular`. In your project, go to **Apps** under **Application Workloads** and click **Create**.
 
-   ![deploy-app](/images/docs/appstore/external-apps/deploy-tidb-operator-and-cluster/deploy-app.PNG)
-
-2. In the dialog that appears, select **From App Templates**.
-
-   ![from-app-templates](/images/docs/appstore/external-apps/deploy-tidb-operator-and-cluster/from-app-templates.PNG)
+2. In the displayed dialog box, select **From App Template**.
 
 3. Select `pingcap` from the drop-down list, then click **tidb-operator**.
-
-   ![click-tidb-operator](/images/docs/appstore/external-apps/deploy-tidb-operator-and-cluster/click-tidb-operator.PNG)
 
    {{< notice note >}}
 
@@ -72,47 +60,27 @@ This tutorial demonstrates how to deploy TiDB Operator and a TiDB Cluster on Kub
 
    {{</ notice >}}
 
-4. On the **Chart Files** tab, you can view the configuration from the console directly or download the default `values.yaml` file by clicking the icon in the upper-right corner. Under **Versions**, select a version number from the drop-down list and click **Deploy**.
-
-   ![select-version](/images/docs/appstore/external-apps/deploy-tidb-operator-and-cluster/select-version.PNG)
+4. On the **Chart Files** tab, you can view the configuration on the console directly or download the default `values.yaml` file by clicking the icon in the upper-right corner. Under **Versions**, select a version number from the drop-down list and click **Install**.
 
 5. On the **Basic Information** page, confirm the app name, app version, and deployment location. Click **Next** to continue.
 
-   ![basic-info](/images/docs/appstore/external-apps/deploy-tidb-operator-and-cluster/basic-info.PNG)
-
-6. On the **App Configurations** page, you can either edit the `values.yaml` file, or click **Deploy** directly with the default configurations.
-
-   ![check-config-file](/images/docs/appstore/external-apps/deploy-tidb-operator-and-cluster/check-config-file.PNG)
+6. On the **App Settings** page, you can either edit the `values.yaml` file, or click **Install** directly with the default configurations.
 
 7. Wait for TiDB Operator to be up and running.
 
-   ![tidb-operator-running](/images/docs/appstore/external-apps/deploy-tidb-operator-and-cluster/tidb-operator-running.PNG)
-
 8. Go to **Workloads**, and you can see two Deployments created for TiDB Operator.
-
-   ![tidb-deployment](/images/docs/appstore/external-apps/deploy-tidb-operator-and-cluster/tidb-deployment.PNG)
 
 ### Step 4: Deploy a TiDB cluster
 
 The process of deploying a TiDB cluster is similar to deploying TiDB Operator.
 
-1. Go to **Apps** under **Application Workloads**, click **Deploy New App**, and then select **From App Templates**.
-
-   ![deploy-app-again](/images/docs/appstore/external-apps/deploy-tidb-operator-and-cluster/deploy-app-again.PNG)
-
-   ![from-app-templates-2](/images/docs/appstore/external-apps/deploy-tidb-operator-and-cluster/from-app-templates-2.PNG)
+1. Go to **Apps** under **Application Workloads**, click **Create**, and then select **From App Template**.
 
 2. From the PingCAP repository, click **tidb-cluster**.
 
-   ![click-tidb-cluster](/images/docs/appstore/external-apps/deploy-tidb-operator-and-cluster/click-tidb-cluster.PNG)
-
-3. On the **Chart Files** tab, you can view the configuration and download the `values.yaml` file. Click **Deploy** to continue.
-
-   ![download-yaml-file](/images/docs/appstore/external-apps/deploy-tidb-operator-and-cluster/download-yaml-file.PNG)
+3. On the **Chart Files** tab, you can view the configuration and download the `values.yaml` file. Click **Install** to continue.
 
 4. On the **Basic Information** page, confirm the app name, app version, and deployment location. Click **Next** to continue.
-
-   ![tidb-cluster-info](/images/docs/appstore/external-apps/deploy-tidb-operator-and-cluster/tidb-cluster-info.PNG)
 
 5. Some TiDB components require [persistent volumes](../../../cluster-administration/persistent-volume-and-storage-class/). You can run the following command to view your storage classes.
 
@@ -126,9 +94,7 @@ The process of deploying a TiDB cluster is similar to deploying TiDB Operator.
    csi-super-high-perf        csi-qingcloud   Delete          Immediate           true                   71m
    ```
 
-6. On the **App Configurations** page, change all the default values of the field `storageClassName` from `local-storage` to the name of your storage class. For example, you can change them to `csi-standard` based on the above output.
-
-   ![tidb-cluster-config](/images/docs/appstore/external-apps/deploy-tidb-operator-and-cluster/tidb-cluster-config.PNG)
+6. On the **App Settings** page, change all the default values of the field `storageClassName` from `local-storage` to the name of your storage class. For example, you can change them to `csi-standard` based on the above output.
 
    {{< notice note >}}
 
@@ -136,19 +102,13 @@ The process of deploying a TiDB cluster is similar to deploying TiDB Operator.
 
    {{</ notice >}} 
 
-7. Click **Deploy** and you can see two apps in the list as shown below:
-
-   ![tidb-cluster-app-running](/images/docs/appstore/external-apps/deploy-tidb-operator-and-cluster/tidb-cluster-app-running.PNG)
+7. Click **Install**, and you can see two apps in the list.
 
 ### Step 5: View TiDB cluster status
 
 1. Go to **Workloads** under **Application Workloads**, and verify that all TiDB cluster Deployments are up and running.
 
-   ![tidb-cluster-deployments-running](/images/docs/appstore/external-apps/deploy-tidb-operator-and-cluster/tidb-cluster-deployments-running.PNG)
-
 2. Switch to the **StatefulSets** tab, and you can see TiDB, TiKV and PD are up and running.
-
-   ![tidb-statefulsets](/images/docs/appstore/external-apps/deploy-tidb-operator-and-cluster/tidb-statefulsets.PNG)
 
    {{< notice note >}}
 
@@ -158,43 +118,19 @@ The process of deploying a TiDB cluster is similar to deploying TiDB Operator.
 
 3. Click a single StatefulSet to go to its detail page. You can see the metrics in line charts over a period of time under the **Monitoring** tab.
 
-   TiDB metrics:
-
-   ![tidb-metrics](/images/docs/appstore/external-apps/deploy-tidb-operator-and-cluster/tidb-metrics.PNG)
-
-   TiKV metrics:
-
-   ![tikv-metrics](/images/docs/appstore/external-apps/deploy-tidb-operator-and-cluster/tikv-metrics.PNG)
-
-   PD metrics:
-
-   ![pd-metrics](/images/docs/appstore/external-apps/deploy-tidb-operator-and-cluster/pd-metrics.PNG)
-
 4. In **Pods** under **Application Workloads**, you can see the TiDB cluster contains two TiDB Pods, three TiKV Pods, and three PD Pods.
-
-   ![tidb-pod-list](/images/docs/appstore/external-apps/deploy-tidb-operator-and-cluster/tidb-pod-list.PNG)
 
 5. In **Volumes** under **Storage**, you can see TiKV and PD are using persistent volumes.
 
-   ![tidb-storage-usage](/images/docs/appstore/external-apps/deploy-tidb-operator-and-cluster/tidb-storage-usage.PNG)
-
-6. Volume usage is also monitored. Click a volume item to go to its detail page. Here is an example of TiKV:
-
-   ![tikv-volume-status](/images/docs/appstore/external-apps/deploy-tidb-operator-and-cluster/tikv-volume-status.PNG)
+6. Volume usage is also monitored. Click a volume item to go to its detail page.
 
 7. On the **Overview** page of the project, you can see a list of resource usage in the current project.
-
-   ![tidb-project-resource-usage](/images/docs/appstore/external-apps/deploy-tidb-operator-and-cluster/tidb-project-resource-usage.PNG)
 
 ### Step 6: Access the TiDB cluster
 
 1. Go to **Services** under **Application Workloads**, and you can see detailed information of all Services. As the Service type is set to `NodePort` by default, you can access it through the Node IP address outside the cluster.
 
-   ![tidb-service](/images/docs/appstore/external-apps/deploy-tidb-operator-and-cluster/tidb-service.PNG)
-
-3. TiDB integrates Prometheus and Grafana to monitor performance of the database cluster. For example, you can access Grafana through `<NodeIP>:<NodePort>` to view metrics.
-
-   ![tidb-service-grafana](/images/docs/appstore/external-apps/deploy-tidb-operator-and-cluster/tidb-service-grafana.PNG)
+2. TiDB integrates Prometheus and Grafana to monitor performance of the database cluster. For example, you can access Grafana through `<NodeIP>:<NodePort>` to view metrics.
 
    ![tidb-grafana](/images/docs/appstore/external-apps/deploy-tidb-operator-and-cluster/tidb-grafana.PNG)
 

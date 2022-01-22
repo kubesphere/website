@@ -12,23 +12,21 @@ Weight: 11260
 ## 准备工作
 
 - 您需要启用 [KubeSphere DevOps 系统](../../../pluggable-components/devops/)。
-- 您需要一个具有**集群管理**权限的帐户。例如，您可以直接以 `admin` 身份登录控制台或者创建具有该权限的新角色并将该角色分配给一个帐户。
+- 您需要一个具有**集群管理**权限的帐户。例如，您可以直接以 `admin` 身份登录控制台或者创建具有该权限的新角色并将该角色分配给一个用户。
 
 ## 设置电子邮件服务器
 
 1. 点击左上角的**平台管理**，然后选择**集群管理**。
 
-2. 如果您已经启用[多集群功能](../../../multicluster-management/)并已导入 Member 集群，那么您可以选择一个特定集群以查看其节点。如果尚未启用该功能，请直接参考下一步。
+2. 如果您已经启用[多集群功能](../../../multicluster-management/)并已导入成员集群，那么您可以选择一个特定集群以查看其节点。如果尚未启用该功能，请直接参考下一步。
 
-3. 转到**应用负载**下的**工作负载**，然后从下拉列表中选择 **kubesphere-devops-system** 项目。点击 **ks-jenkins** 右侧的 <img src="/images/docs/zh-cn/devops-user-guide/use-devops/set-email-server-for-kubesphere-pipelines/three-dots.png" height="15px"> 以编辑其 YAML 配置文件。
+3. 转到**应用负载**下的**工作负载**，然后从下拉列表中选择 **kubesphere-devops-system** 项目。点击 `devops-jenkins` 右侧的 <img src="/images/docs/common-icons/three-dots.png" height="15" /> 并选择**编辑 YAML** 以编辑其 YAML 配置文件。
 
-   ![工作负载列表](/images/docs/zh-cn/devops-user-guide/use-devops/set-email-server-for-kubesphere-pipelines/workloads_list.png)
-
-4. 向下滚动到下图所示的需要指定的字段。完成修改后，点击**更新**以保存。
+4. 向下滚动到下图所示的需要指定的字段。完成修改后，点击**确定**以保存。
 
    {{< notice warning >}}
 
-   在 `ks-jenkins` 部署 (Deployment) 中修改电子邮件服务器后，它会重新启动。因此，DevOps 系统将在几分钟内不可用，请在适当的时候进行此类修改。
+   在 `devops-jenkins` 部署 (Deployment) 中修改电子邮件服务器后，它会重新启动。因此，DevOps 系统将在几分钟内不可用，请在适当的时候进行此类修改。
 
    {{</ notice >}}
 

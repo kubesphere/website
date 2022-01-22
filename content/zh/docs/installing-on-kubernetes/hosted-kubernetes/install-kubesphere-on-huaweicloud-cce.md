@@ -15,7 +15,7 @@ weight: 4250
 
 首先按使用环境的资源需求创建 Kubernetes 集群，满足以下一些条件即可（如已有环境并满足条件可跳过本节内容）：
 
-- 如需在 Kubernetes 上安装 KubeSphere v3.1.1，您的 Kubernetes 版本必须为：v1.17.x，v1.18.x，v1.19.x 或 v1.20.x。
+- 如需在 Kubernetes 上安装 KubeSphere 3.2.1，您的 Kubernetes 版本必须为：v1.19.x，v1.20.x，v1.21.x 或 v1.22.x（实验性支持）。
 - 需要确保 Kubernetes 集群所使用的云主机的网络正常工作，可以通过在创建集群的同时**自动创建**或**使用已有**弹性 IP；或者在集群创建后自行配置网络（如配置 [NAT 网关](https://support.huaweicloud.com/natgateway/)）。
 - 工作节点规格建议选择 `s3.xlarge.2` 的 `4核｜8GB` 配置，并按需扩展工作节点数量（通常生产环境需要 3 个及以上工作节点）。
 
@@ -74,8 +74,8 @@ volumeBindingMode: Immediate
 接下来就可以使用 [ks-installer](https://github.com/kubesphere/ks-installer) 在已有的 Kubernetes 集群上来部署 KubeSphere，建议首先还是以最小功能集进行安装，可执行以下命令：
 
 ```bash
-kubectl apply -f https://github.com/kubesphere/ks-installer/releases/download/v3.1.1/kubesphere-installer.yaml
-kubectl apply -f https://github.com/kubesphere/ks-installer/releases/download/v3.1.1/cluster-configuration.yaml
+kubectl apply -f https://github.com/kubesphere/ks-installer/releases/download/v3.2.1/kubesphere-installer.yaml
+kubectl apply -f https://github.com/kubesphere/ks-installer/releases/download/v3.2.1/cluster-configuration.yaml
 ```
 
 执行部署命令后，可以通过进入**工作负载** > **容器组 Pod** 界面，在右侧面板中查询 `kubesphere-system` 命名空间下的 Pod 运行状态了解 KubeSphere 平台最小功能集的部署状态；通过该命名空间下 `ks-console-xxxx` 容器的状态来了解 KubeSphere 控制台应用的可用状态。
@@ -86,7 +86,7 @@ kubectl apply -f https://github.com/kubesphere/ks-installer/releases/download/v3
 
 通过 `kubesphere-system` 命名空间下的 Pod 运行状态确认 KubeSphere 基础组件都已进入运行状态后，我们需要为 KubeSphere 控制台开启外网访问。
 
-进入**资源管理** > **网络管理**，在右侧面板中选择 `ks-console` 更改网络访问方式，建议选用 `负载均衡（LoadBalancer` 访问方式（需绑定弹性公网 IP），配置完成后如下图：
+进入**资源管理** > **网络**，在右侧面板中选择 `ks-console` 更改网络访问方式，建议选用 `负载均衡（LoadBalancer` 访问方式（需绑定弹性公网 IP），配置完成后如下图：
 
 ![开启 KubeSphere 外网访问](/images/docs/huawei-cce/zh/expose-ks-console.png)
 
@@ -94,9 +94,7 @@ kubectl apply -f https://github.com/kubesphere/ks-installer/releases/download/v3
 
 ![为 KubeSphere 控制台配置负载均衡访问](/images/docs/huawei-cce/zh/edit-ks-console-svc.png)
 
-通过负载均衡绑定公网访问后，即可使用给定的访问地址进行访问，进入到 KubeSphere 的登录界面并使用默认帐户（用户名 `admin`，密码 `P@88w0rd`）即可登录平台：
-
-![登录 KubeSphere 平台](/images/docs/huawei-cce/zh/login-ks-console.png)
+通过负载均衡绑定公网访问后，即可使用给定的访问地址进行访问，进入到 KubeSphere 的登录界面并使用默认帐户（用户名 `admin`，密码 `P@88w0rd`）即可登录平台。
 
 ### 通过 KubeSphere 开启附加组件
 
@@ -104,7 +102,7 @@ kubectl apply -f https://github.com/kubesphere/ks-installer/releases/download/v3
 
 {{< notice warning >}}
 
-在开启 Istio 组件之前，由于自定义资源定义 (CRD) 冲突的问题，需要先删除华为 CCE 自带的 `applications.app.k8s.io` ，最直接的方式是通过 kubectl 工具来完成：
+在开启 Istio 组件之前，由于定制资源定义（CRD）冲突的问题，需要先删除华为 CCE 自带的 `applications.app.k8s.io` ，最直接的方式是通过 kubectl 工具来完成：
 
 ```bash
 kubectl delete crd applications.app.k8s.io
@@ -112,6 +110,4 @@ kubectl delete crd applications.app.k8s.io
 
 {{</ notice >}}
 
-全部附加组件开启并安装成功后，进入集群管理界面，可以得到如下界面呈现效果，特别是在 `服务组件` 部分可以看到已经开启的各个基础和附加组件：
-
-![KubeSphere 全功能集管理界面](/images/docs/huawei-cce/zh/view-ks-console-full.png)
+全部附加组件开启并安装成功后，进入集群管理界面，在**系统组件** 区域可以看到已经开启的各个基础和附加组件。

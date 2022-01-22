@@ -34,7 +34,7 @@ kubectl edit cm -n kubesphere-system kubesphere-config
 
 ## 接收来自 Kubernetes 的审计日志
 
-要使 KubeSphere 审计日志系统接收来自 Kubernetes 的审计日志，您需要向 `/etc/kubernetes/manifests/kube-apiserver.yaml` 添加 Kubernetes 审计策略文件和 Kubernetes 审计 Webhook 配置文件，如下所示。
+要使 KubeSphere 审计日志系统接收来自 Kubernetes 的审计日志，您需要向 `/etc/kubernetes/manifests/kube-apiserver.yaml` 添加 Kubernetes 审计策略文件和 Kubernetes 审计 Webhook 配置文件。
 
 ### 审计策略
 
@@ -126,7 +126,7 @@ spec:
 ```
 {{< notice tip >}} 
 
-您也可以使用拥有 `platform-admin` 角色的帐户登录控制台，在**集群管理**页面转到**自定义资源 CRD**，搜索 `Webhook`，直接编辑 `kube-auditing-webhook`。
+您也可以使用拥有 `platform-admin` 角色的用户登录控制台，在**集群管理**页面转到 **CRD**，搜索 `Webhook`，直接编辑 `kube-auditing-webhook`。
 
 {{</ notice >}}
 

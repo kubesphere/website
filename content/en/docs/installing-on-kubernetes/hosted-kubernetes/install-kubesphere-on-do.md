@@ -28,7 +28,7 @@ You need to select:
 
 {{< notice note >}}
 
-- To install KubeSphere v3.1.1 on Kubernetes, your Kubernetes version must be v1.17.x, v1.18.x, v1.19.x or v1.20.x.
+- To install KubeSphere 3.2.1 on Kubernetes, your Kubernetes version must be v1.19.x, v1.20.x, v1.21.x, or v1.22.x (experimental).
 - 2 nodes are included in this example. You can add more nodes based on your own needs especially in a production environment.
 - The machine type Standard / 4 GB / 2 vCPUs is for minimal installation. If you plan to enable several pluggable components or use the cluster for production, you can upgrade your nodes to a more powerfull type (such as CPU-Optimized / 8 GB / 4 vCPUs). It seems that DigitalOcean provisions the master nodes based on the type of the worker nodes, and for Standard ones the API server can become unresponsive quite soon.
 
@@ -45,9 +45,9 @@ Now that the cluster is ready, you can install KubeSphere following the steps be
 - Install KubeSphere using kubectl. The following commands are only for the default minimal installation.
 
   ```bash
-  kubectl apply -f https://github.com/kubesphere/ks-installer/releases/download/v3.1.1/kubesphere-installer.yaml
+  kubectl apply -f https://github.com/kubesphere/ks-installer/releases/download/v3.2.1/kubesphere-installer.yaml
   
-  kubectl apply -f https://github.com/kubesphere/ks-installer/releases/download/v3.1.1/cluster-configuration.yaml
+  kubectl apply -f https://github.com/kubesphere/ks-installer/releases/download/v3.2.1/cluster-configuration.yaml
   ```
 
 - Inspect the logs of installation:
@@ -106,9 +106,7 @@ Now that KubeSphere is installed, you can access the web console of KubeSphere b
 
   {{</ notice >}}
 
-- Log in to the console with the default account and password (`admin/P@88w0rd`). In the cluster overview page, you can see the dashboard as shown in the following image.
-
-  ![doks-cluster](/images/docs/do/doks-cluster.png)
+- Log in to the console with the default account and password (`admin/P@88w0rd`). In the cluster overview page, you can see the dashboard.
 
 ## Enable Pluggable Components (Optional)
 

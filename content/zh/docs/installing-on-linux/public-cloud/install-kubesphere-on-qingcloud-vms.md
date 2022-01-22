@@ -126,7 +126,7 @@ Weight: 3420
 从 [GitHub 发布页面](https://github.com/kubesphere/kubekey/releases)下载 KubeKey 或直接使用以下命令：
 
 ```bash
-curl -sfL https://get-kk.kubesphere.io | VERSION=v1.1.1 sh -
+curl -sfL https://get-kk.kubesphere.io | VERSION=v1.2.1 sh -
 ```
 
 {{</ tab >}}
@@ -142,7 +142,7 @@ export KKZONE=cn
 执行以下命令下载 KubeKey：
 
 ```bash
-curl -sfL https://get-kk.kubesphere.io | VERSION=v1.1.1 sh -
+curl -sfL https://get-kk.kubesphere.io | VERSION=v1.2.1 sh -
 ```
 
 {{< notice note >}}
@@ -157,7 +157,7 @@ curl -sfL https://get-kk.kubesphere.io | VERSION=v1.1.1 sh -
 
 {{< notice note >}}
 
-执行以上命令会下载最新版 KubeKey (v1.1.1)，您可以修改命令中的版本号下载指定版本。
+执行以上命令会下载最新版 KubeKey (v1.2.1)，您可以修改命令中的版本号下载指定版本。
 
 {{</ notice >}} 
 
@@ -167,15 +167,15 @@ curl -sfL https://get-kk.kubesphere.io | VERSION=v1.1.1 sh -
 chmod +x kk
 ```
 
-创建包含默认配置的示例配置文件。以下以 Kubernetes v1.20.4 为例。
+创建包含默认配置的示例配置文件。以下以 Kubernetes v1.21.5 为例。
 
 ```bash
-./kk create config --with-kubesphere v3.1.1 --with-kubernetes v1.20.4
+./kk create config --with-kubesphere v3.2.1 --with-kubernetes v1.21.5
 ```
 
 {{< notice note >}}
 
-- 安装 KubeSphere v3.1.1 的建议 Kubernetes 版本：v1.17.9，v1.18.8，v1.19.8 以及 v1.20.4。如果不指定 Kubernetes 版本，KubeKey 将默认安装 Kubernetes v1.19.8。有关受支持的 Kubernetes 版本的更多信息，请参见[支持矩阵](../../../installing-on-linux/introduction/kubekey/#支持矩阵)。
+- 安装 KubeSphere 3.2.1 的建议 Kubernetes 版本：v1.19.x、v1.20.x、v1.21.x 或 v1.22.x（实验性支持）。如果不指定 Kubernetes 版本，KubeKey 将默认安装 Kubernetes v1.21.5。有关受支持的 Kubernetes 版本的更多信息，请参见[支持矩阵](../../../installing-on-linux/introduction/kubekey/#支持矩阵)。
 
 - 如果您在这一步的命令中不添加标志 `--with-kubesphere`，则不会部署 KubeSphere，只能使用配置文件中的 `addons` 字段安装，或者在您后续使用 `./kk create cluster` 命令时再次添加这个标志。
 
@@ -222,7 +222,7 @@ spec:
     - node3
 ```
 
-有关完整的配置示例说明，请参见[此文件](https://github.com/kubesphere/kubekey/blob/release-1.1/docs/config-example.md)。
+有关完整的配置示例说明，请参见[此文件](https://github.com/kubesphere/kubekey/blob/release-1.2/docs/config-example.md)。
 
 ### 步骤 4：配置负载均衡器
 
@@ -236,7 +236,7 @@ spec:
   controlPlaneEndpoint:
     domain: lb.kubesphere.local
     address: "192.168.0.253"
-    port: "6443"
+    port: 6443
 ```
 
 {{< notice note >}}
@@ -325,8 +325,6 @@ https://kubesphere.io             2020-08-13 10:50:24
 ![active-listener](/images/docs/zh-cn/installing-on-linux/installing-on-public-cloud/deploy-kubesphere-on-qingcloud-instances/active-listener.png)
 
 进入 KubeSphere 的 Web 控制台，您也可以看到所有节点运行正常。
-
-![cluster-node](/images/docs/zh-cn/installing-on-linux/installing-on-public-cloud/deploy-kubesphere-on-qingcloud-instances/cluster-node.png)
 
 为验证集群的高可用性，可关闭一台主机进行测试。例如，上面的控制台可通过 `IP:30880` 地址访问（此处 IP 地址为绑定到外部负载均衡器的 EIP 地址）。如果集群的高可用性正常，在您关闭一台主节点后，控制台应该仍能正常工作。
 

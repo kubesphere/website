@@ -1,5 +1,5 @@
 ---
-title: 'KubeKey: A Lightweight Installer for Kubernetes and Cloud Native Addons'
+title: 'How to Install Kubernetes the Easy Way Using KubeKey'
 keywords: Kubernetes, KubeSphere, KubeKey, addons, installer
 description: KubeKey allows you to deploy a Kubernetes cluster in the most graceful and efficient way.
 tag: 'KubeSphere, Kubernetes, KubeKey, addons, installer'
@@ -26,7 +26,7 @@ The general steps of installing Kubernetes using KubeKey:
 
 ## Prepare Hosts
 
-I am going to create a cluster with three nodes on cloud. Here is my machine configuration for your reference:
+I am going to create a Kubernetes cluster with three nodes on cloud. Here is my machine configuration for your reference:
 
 | Host IP     | Host Name | Role         | System                                    |
 | ----------- | --------- | ------------ | ----------------------------------------- |
@@ -93,7 +93,7 @@ You can use KubeKey to install a specified Kubernetes version. The dependency th
    The default Kubernetes version is v1.17.9. For more information about supported Kubernetes versions, see this [file](https://github.com/kubesphere/kubekey/blob/master/docs/kubernetes-versions.md). Execute the following command as an example:
 
    ```bash
-   ./kk create config --with-kubernetes v1.17.9
+   ./kk create config --with-kubernetes v1.20.4
    ```
 
 4. A default file `config-sample.yaml` will be created if you do not customize the name. Edit the file.
@@ -161,7 +161,7 @@ You can use KubeKey to install a specified Kubernetes version. The dependency th
 
    - `worker`: worker node names.
 
-   You can provide more values in this configuration file, such as `addons`. KubeKey can install all [addons](https://github.com/kubesphere/kubekey/blob/release-1.0/docs/addons.md) that can be installed as a YAML file or Chart file. For example, KubeKey does not install any storage plugin for Kubernetes by default, but you can [add your own storage systems](https://kubesphere.io/docs/installing-on-linux/persistent-storage-configurations/understand-persistent-storage/), including NFS Client, Ceph, and Glusterfs. For more information about the configuration file, see [Kubernetes Cluster Configurations](https://kubesphere.io/docs/installing-on-linux/introduction/vars/) and [this file](https://github.com/kubesphere/kubekey/blob/release-1.0/docs/config-example.md).
+   You can provide more values in this configuration file, such as `addons`. KubeKey can install all [addons](https://github.com/kubesphere/kubekey/blob/release-1.0/docs/addons.md) that can be installed as a YAML file or Chart file. For example, KubeKey does not install any storage plugin for Kubernetes by default, but you can [add your own storage systems](https://kubesphere.io/docs/installing-on-linux/persistent-storage-configurations/understand-persistent-storage/), including NFS Client, Ceph, and GlusterFS. For more information about the configuration file, see [Kubernetes Cluster Configurations](https://kubesphere.io/docs/installing-on-linux/introduction/vars/) and [this file](https://github.com/kubesphere/kubekey/blob/release-1.0/docs/config-example.md).
 
 6. Save the file when you finish editing and execute the following command to install Kubernetes:
 

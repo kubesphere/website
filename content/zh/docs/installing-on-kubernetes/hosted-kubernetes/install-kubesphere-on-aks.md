@@ -98,9 +98,9 @@ Azure Kubernetes Services 本身将放置在`KubeSphereRG`中。
 请使用以下命令开始部署 KubeSphere。
 
 ```bash
-kubectl apply -f https://github.com/kubesphere/ks-installer/releases/download/v3.1.1/kubesphere-installer.yaml
+kubectl apply -f https://github.com/kubesphere/ks-installer/releases/download/v3.2.1/kubesphere-installer.yaml
 
-kubectl apply -f https://github.com/kubesphere/ks-installer/releases/download/v3.1.1/cluster-configuration.yaml
+kubectl apply -f https://github.com/kubesphere/ks-installer/releases/download/v3.2.1/cluster-configuration.yaml
 ```
 
 可以通过以下命令检查安装日志：
@@ -147,9 +147,7 @@ NAME         TYPE           CLUSTER-IP    EXTERNAL-IP   PORT(S)        AGE
 ks-console   LoadBalancer   10.0.181.93   13.86.xxx.xxx   80:30194/TCP   13m       6379/TCP       10m
 ```
 
-使用 external-ip 地址用默认帐户和密码（admin/P@88w0rd）访问控制台。在集群概述页面中，您可以看到如下图所示的仪表板。
-
-![aks-cluster](/images/docs/zh-cn/installing-on-kubernetes/hosted-kubernetes/install-kubesphere-on-aks/aks-cluster.png)
+使用 external-ip 地址用默认帐户和密码（admin/P@88w0rd）访问控制台。
 
 ## 启用可插拔组件（可选）
 

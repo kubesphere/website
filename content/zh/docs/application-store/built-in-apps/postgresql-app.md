@@ -13,7 +13,7 @@ weight: 14280
 ## 准备工作
 
 - 您需要[启用 OpenPitrix 系统](../../../pluggable-components/app-store/)。
-- 您需要创建一个企业空间、一个项目和一个用户帐户 (`project-regular`)。该帐户必须是已邀请至项目的平台普通用户，并且在项目中的角色为 `operator`。在本教程中，您需要以 `project-regular` 用户登录，并在 `demo-workspace` 企业空间的 `demo-project` 项目中进行操作。有关更多信息，请参见[创建企业空间、项目、帐户和角色](../../../quick-start/create-workspace-and-project/)。
+- 您需要创建一个企业空间、一个项目和一个用户帐户 (`project-regular`)。该用户必须是已邀请至项目的平台普通用户，并且在项目中的角色为 `operator`。在本教程中，您需要以 `project-regular` 用户登录，并在 `demo-workspace` 企业空间的 `demo-project` 项目中进行操作。有关更多信息，请参见[创建企业空间、项目、用户和角色](../../../quick-start/create-workspace-and-project/)。
 
 ## 动手实验
 
@@ -21,31 +21,20 @@ weight: 14280
 
 1. 在 `demo-project` 的**概览**页面，点击左上角的**应用商店**。
 
-   ![click-app-store](/images/docs/zh-cn/appstore/built-in-apps/postgresql-app/click-app-store.png)
-
-2. 找到 PostgreSQL，在**应用信息**页面点击**部署**。
-
-   ![postgresql-in-app-store](/images/docs/zh-cn/appstore/built-in-apps/postgresql-app/postgresql-in-app-store.png)
-
-   ![deploy-postgresql](/images/docs/zh-cn/appstore/built-in-apps/postgresql-app/deploy-postgresql.png)
+2. 找到 PostgreSQL，在**应用信息**页面点击**安装**。
 
 3. 设置应用名称和版本，确保 PostgreSQL 部署在 `demo-project` 项目中，然后点击**下一步**。
 
-   ![deploy-postgresql-2](/images/docs/zh-cn/appstore/built-in-apps/postgresql-app/deploy-postgresql-2.png)
-
-4. 在**应用配置**页面，为应用设置持久卷，记录用户名和密码用于后续访问应用，然后点击**部署**。
-
-   ![set-config](/images/docs/zh-cn/appstore/built-in-apps/postgresql-app/set-config.png)
+4. 在**应用配置**页面，为应用设置持久卷，记录用户名和密码用于后续访问应用，然后点击**安装**。
 
    {{< notice note >}} 
 
-   如需为 PostgreSQL 设置更多的参数，可点击 **YAML** 后的切换开关打开应用的 YAML 清单文件，并在清单文件中设置相关参数。 
+   如需为 PostgreSQL 设置更多的参数，可点击 **编辑YAML** 开关打开应用的 YAML 清单文件，并在清单文件中设置相关参数。 
 
    {{</ notice >}} 
 
 5. 等待 PostgreSQL 创建完成并开始运行。
 
-   ![postgresql-ready](/images/docs/zh-cn/appstore/built-in-apps/postgresql-app/postgresql-ready.png)
 
 ### 步骤 2：访问 PostgreSQL 数据库
 
@@ -53,25 +42,13 @@ weight: 14280
 
 1. 打开**服务**页面并点击 PostgreSQL 的服务名称。
 
-   ![access-postgresql](/images/docs/zh-cn/appstore/built-in-apps/postgresql-app/access-postgresql.png)
+2. 点击**更多操作**，在下拉菜单中选择**编辑外部访问**。
 
-2. 点击**更多操作**，在下拉菜单中选择**编辑外网访问**。
+3. 将**访问模式**设置为 **NodePort** 并点击**确定**。有关更多信息，请参见[项目网关](../../../project-administration/project-gateway/)。
 
-   ![edit-internet-access](/images/docs/zh-cn/appstore/built-in-apps/postgresql-app/edit-internet-access.png)
-
-3. 将**访问方式**设置为 **NodePort** 并点击**确定**。有关更多信息，请参见[项目网关](../../../project-administration/project-gateway/)。
-
-   ![nodeport](/images/docs/zh-cn/appstore/built-in-apps/postgresql-app/nodeport.png)
-
-4. 您可以在**服务端口**区域查看暴露的端口。该端口将在下一步中用于访问 PostgreSQL 数据库。
-
-   ![port-number](/images/docs/zh-cn/appstore/built-in-apps/postgresql-app/port-number.png)
+4. 您可以在**端口**区域查看暴露的端口。该端口将在下一步中用于访问 PostgreSQL 数据库。
 
 5. 在**容器组**区域，展开容器详情，点击终端图标。在弹出的窗口中直接输入命令访问数据库。
-
-   ![container-terminal](/images/docs/zh-cn/appstore/built-in-apps/postgresql-app/container-terminal.png)
-
-   ![postgresql-output](/images/docs/zh-cn/appstore/built-in-apps/postgresql-app/postgresql-output.png)
 
    {{< notice note >}}
 

@@ -12,7 +12,7 @@ weight: 11250
 
 podTemplate 是一种 Pod 模板，该 Pod 用于创建 Agent。用户可以定义在 Kubernetes 插件中使用的 podTemplate。
 
-当流水线运行时，每个 Jenkins Agent Pod 必须具有一个名为 `jnlp` 的容器，用于 Jenkins Master 和 Jenkins Agent 之间进行通信。另外，用户可以在 podTemplate 中添加容器以满足自己的需求。用户可以选择使用自己的 Pod YAML 来灵活地控制运行时环境 (Runtime)，并且可以通过 `container` 命令来切换容器。请参见以下示例。
+当流水线运行时，每个 Jenkins Agent Pod 必须具有一个名为 `jnlp` 的容器，用于 Jenkins Controller 和 Jenkins Agent 之间进行通信。另外，用户可以在 podTemplate 中添加容器以满足自己的需求。用户可以选择使用自己的 Pod YAML 来灵活地控制运行时环境 (Runtime)，并且可以通过 `container` 命令来切换容器。请参见以下示例。
 
 ```groovy
 pipeline {

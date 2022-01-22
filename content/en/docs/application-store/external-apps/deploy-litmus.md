@@ -26,41 +26,36 @@ This tutorial demonstrates how to deploy Litmus on KubeSphere and create chaos e
 
 2. In the dialog that appears, set a name for the repository (for example, `litmus`) and enter the URL `https://litmuschaos.github.io/litmus-helm/`. Click **Validate** to verify the URL. You will see <img src="/images/docs/zh-cn/appstore/external-apps/deploy-litmus/checkmark.png" width="20" /> icon if the URL is available. Click **OK** to continue.
 
-3. The app repository will be displayed in the list after it is successfully imported.
+3. The app repository displays in the list after it is successfully imported.
 
-   ![imported-successfully](/images/docs/appstore/external-apps/deploy-litmus/imported-successfully.png)
+### Step 2: Deploy the Litmus portal
+1. Log out of the KubeSphere console and log back in as `project-regular`. In your project, go to **Apps** under **Application Workloads**, and then click **Create**.
 
-### Step 2: Deploy Litmus Portal
-1. Log out of the KubeSphere console and log back in as `project-regular`. In your project, go to **Apps** under **Application Workloads**, and then click **Deploy New App**.
+2. In the dialog that appears, choose **From App Template**.
 
-2. In the dialog that appears, choose **From App Templates**.
+   - **From App Store**: Select apps from the official APP Store of Kubephere.
 
-   - **From App Store**: select apps from the official APP Store of Kubephere.
-
-   - **From App Templates**: select apps from workspace app templates and the third-party Helm app templates of App Repository.
+   - **From App Template**: Select apps from workspace app templates and the third-party Helm app templates of App Repository.
 
 3. In the drop-down list, choose `litmus`, and then choose `litmus-2-0-0-beta`.
 
-4. You can view the app information and chart files. Under **Versions**, select a specific version and click **Deploy**.
+4. You can view the app information and chart files. Under **Versions**, select a specific version and click **Install**.
 
 5. Under **Basic Information**, set a name for the app. Check the app version and the deployment location, and then click **Next**.
    
-6. Under **App Configurations**, you can edit the yaml file or directly click **Deploy**.
+6. Under **App Settings**, you can edit the yaml file or directly click **Install**.
    
-7. The app will be displayed in the list after you create it.
-
-   ![litmus-running](/images/docs/appstore/external-apps/deploy-litmus/litmus-running.png)
+7. The app displays in the list after you create it successfully.
    
    {{< notice note>}}
    
-   It make take a while before Litmus is running. Please wait for the deployment to finish.
+   It may take a while before Litmus is running. Please wait for the deployment to finish.
    
    {{</ notice>}}
 
-### Step 3: Access Litmus Portal
+### Step 3: Access Litmus portal
 
 1. Go to **Services** under **Application Workloads**, copy the `NodePort` of `litmusportal-frontend-service`.
-   ![litmus-nodeport](/images/docs/appstore/external-apps/deploy-litmus/litmus-nodeport.png)
 
 2. You can access Litmus `Portal` through `${NodeIP}:${NODEPORT}` using the default username and password (`admin`/`litmus`).
 
@@ -69,8 +64,8 @@ This tutorial demonstrates how to deploy Litmus on KubeSphere and create chaos e
    ![litmus-login-1](/images/docs/appstore/external-apps/deploy-litmus/litmus-login-1.png)
 
    {{< notice note >}}
-  You may need to open the port in your security groups and configure port forwarding rules depending on where your Kubernetes cluster is deployed. Make sure you use your own `NodeIP`.
-  {{</ notice >}}
+    You may need to open the port in your security groups and configure port forwarding rules depending on where your Kubernetes cluster is deployed. Make sure you use your own `NodeIP`.
+    {{</ notice >}}
 
 ### Step 4: Deploy Agent (optional)
 
@@ -90,7 +85,7 @@ For details about how to deploy External Agent, see [Litmus Docs](https://litmus
    $ kubectl create deployment nginx --image=nginx --replicas=2 --namespace=default
    ```
 
-2. Log in to Litmus `Portal`, and then click **Schedule a workflow**.
+2. Log in to Litmus `Portal`, and then click **Schedule workflow**.
 
 3. Choose an `Agent` (for example, `Self-Agent`), and then click **Next**.
 
@@ -110,8 +105,6 @@ For details about how to deploy External Agent, see [Litmus Docs](https://litmus
 
     On the KubeSphere console, you can see that a Pod is being deleted and recreated.
 
-    ![terminate-and-recreate](/images/docs/appstore/external-apps/deploy-litmus/terminate-and-recreate.png)
-
     On the Litmus `Portal`, you can see that the experiment is successful.
 
     ![litmus-successful](/images/docs/appstore/external-apps/deploy-litmus/litmus-successful.png)
@@ -123,22 +116,16 @@ For details about how to deploy External Agent, see [Litmus Docs](https://litmus
 
 - **Experiment 2**
 
-1. Perform step 1 to 10 in **Experiment 1** to create a new chaos experiment (`pod-cpu-hog`).
+1. Perform steps 1 to 10 in **Experiment 1** to create a new chaos experiment (`pod-cpu-hog`).
    ![](https://pek3b.qingstor.com/kubesphere-community/images/20210604171414.png)
 
 2. On the KubeSphere console, you can see that the pod CPU usage is close to 1 core.
-
-   ![pod-cpu-hog](/images/docs/appstore/external-apps/deploy-litmus/pod-cpu-hog.png)
 
 - **Experiment 3**
 
 1. Set the `nginx` replica to `1`. You can see there is only one pod left and view the Pod IP address.
 
-   ![nginx-replica](/images/docs/appstore/external-apps/deploy-litmus/nginx-replica.png)
-
-   ![one-pod-left](/images/docs/appstore/external-apps/deploy-litmus/one-pod-left.png)
-
-2. Perform step 1 to 10 in **Experiment 1** to create a new chaos experiment (`pod-network-loss`).
+2. Perform steps 1 to 10 in **Experiment 1** to create a new chaos experiment (`pod-network-loss`).
 
    ![](https://pek3b.qingstor.com/kubesphere-community/images/20210604174057.png)
 

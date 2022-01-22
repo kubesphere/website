@@ -2,23 +2,23 @@
 
 {{ with .Params.section1 }}
 <section class='section-1 bg-cover' style='background-image: url("{{ .image }}");'>
-  <div class="common-layout">
-    <h1 class="title-h1">{{ .title }}</h1>
-  </div>
+    <div class="common-layout">
+        <h1 class="title-h1">{{ .title }}</h1>
+    </div>
 </section>
 {{ end }}
 
 {{ with .Params.section2 }}
 <section class='section-2'>
-  <div class="common-layout">
-      <div class="live-2-left">
-          <a href="{{ .url }}">
-            <img src="{{ .image }}" alt="">
-            <button>{{ i18n "Wonderful review" }}</button>
-            
-          </a>
-      </div>
-      <div class="live-2-right">
+    <div class="common-layout">
+        <div class="live-2-left">
+            <a href="{{ .url }}">
+                <img src="{{ .image }}" alt="">
+                <button>{{ i18n "Wonderful review" }}</button>
+
+            </a>
+        </div>
+        <div class="live-2-right">
             {{ with .notice }}
             <div class='notice shadow'>
                 <h2 title="{{ .title }}">{{ .title }}</h2>
@@ -36,8 +36,8 @@
                 <div class="tag">{{ .tag }}</div>
             </div>
             {{ end }}
-      </div>
-  </div>
+        </div>
+    </div>
 </section>
 {{ end }}
 
@@ -63,52 +63,64 @@
 </section>
 {{ end }}
 
-<div id="modal-for-video" class="modal">
-    <div class='video-div'>
-        <video src="" controls autoplay></video>
-        <iframe 
-            id='iframe-player' 
-            src="" 
-            width="750" 
-            height="420" 
-            frameborder="0" 
-            allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" 
-            allowfullscreen>
-        </iframe>
-    </div>
-</div>
 
 {{ $overImg := .Params.section4.overImg}}
 {{ $noticeImg := .Params.section4.noticeImg}}
 {{ with .Params.section4 }}
-<section class='section-4'>
-    <div class="common-layout">
-        {{ range .list }}
-        <div>
-            <div class="time-div">
-                {{$over := (time .lastTime).Unix}}
-                {{ if ge now.Unix $over}}
-                    <img src="{{ $overImg }}" alt="">
-                {{ else }}
-                    <img src="{{ $noticeImg }}" alt="">
+<section class="common-layout-special">
+    <div class="meetup-box">
+        <div class="meetup-title">{{ .title }}</div>
+        <div class="innerBox">
+            <ul id="meetup-ul">
+                {{ range .list }}
+                {{ with . }}
+                <li> {{ .year }} </li>
                 {{ end }}
-                <div class="right">
-                    <p class="date">{{ .date }}</p>
-                    <p class="time">{{ .time }}</p>
+                {{ end }}
+            </ul>
+            <div class="yearBox" id="meetup-list">
+                {{ range $index,$data := .list }}
+                {{ with . }}
+                <ul class="hiddenUl" id="needClone_{{ $index }}">
+                    {{ range .meetup }}
+                    {{ with . }}
+                    <li>
+                        <div class="imgBox">
+                            <p>{{ .place }}</p>
+                            <img src="{{ .img }}">
+                            <a class="button" href="{{ .meetupUrl | safeURL }}" target="_blank"
+                                rel="noopener noreferrer">
+                                {{ i18n "Wonderful review" }}
+                            </a>
+                        </div>
+                    </li>
+                    {{ end }}
+                    {{ end }}
+                </ul>
+                {{ end }}
+                {{ end }}
+                <div class="swiper autoMeetUp">
+                    <div id="swiper-wrapper" class="swiper-wrapper">
+                    </div>
+                    <div class="swiper-pagination"></div>
                 </div>
+                <div class="prev-button"></div>
+                <div class="next-button"></div>
             </div>
-            <h3><a href="{{ .url }}">{{ .title }}</a></h3>
-            {{ if ge now.Unix $over}}
-                <a href="{{ .url }}"><button class="over-btn">{{ i18n "Watch replay" }}</button></a>
-            {{ else }}
-                <a href="{{ .url }}"><button class="notice-btn">{{ i18n "View details" }}</button></a>
-            {{ end }}
         </div>
-        {{ end }}
     </div>
 </section>
+
 {{ end }}
 
+<div id="modal-for-video" class="modal">
+    <div class='video-div'>
+        <video src="" controls autoplay></video>
+        <iframe id='iframe-player' src="" width="750" height="420" frameborder="0"
+            allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen>
+        </iframe>
+    </div>
+</div>
 {{ with .Params.section5 }}
 <section class='section-5'>
     <div class="common-layout">
@@ -125,15 +137,15 @@
 <script src='{{ "js/pagination.min.js" | relURL }}'></script>
 
 <script>
-    var bindClickVideoTabLi = function() {
+    var bindClickVideoTabLi = function () {
         var tabLi = $('.video-tab-ul > li')
-        tabLi.click(function() {
+        tabLi.click(function () {
             tabLi.removeClass('active')
             var group = $(this).data('group')
             $(this).addClass('active')
-            var videos =  $('.video-ul').data('origin')
+            var videos = $('.video-ul').data('origin')
             if (group) {
-                videos = videos.filter(function(video) {
+                videos = videos.filter(function (video) {
                     return video.group === group
                 })
             }
@@ -141,8 +153,8 @@
         })
     }
 
-    var bindClickVideoLi = function() {
-        $('.video-ul').on('click', 'li', function(ev) {
+    var bindClickVideoLi = function () {
+        $('.video-ul').on('click', 'li', function (ev) {
             var link = $(this).data('link')
             window.open(link)
             // var type = $(this).data('type')
@@ -154,8 +166,8 @@
         })
     }
 
-    var initModal = function() {
-        $('#modal-for-video').on($.modal.BEFORE_CLOSE, function(event, modal) {
+    var initModal = function () {
+        $('#modal-for-video').on($.modal.BEFORE_CLOSE, function (event, modal) {
             $('#modal-for-video video')[0].pause()
             var src = $("#iframe-player").attr('src')
             // 去掉自动播放
@@ -163,19 +175,19 @@
         });
     }
 
-    var showIframe = function(link) {
+    var showIframe = function (link) {
         $('#modal-for-video video').hide()
-        $('#modal-for-video iframe').show().attr({src: link})
+        $('#modal-for-video iframe').show().attr({ src: link })
         $('#modal-for-video').modal()
     }
 
-    var showVideo = function(link) {
+    var showVideo = function (link) {
         $('#modal-for-video iframe').hide()
-        $('#modal-for-video video').show().attr({src: link})
+        $('#modal-for-video video').show().attr({ src: link })
         $('#modal-for-video').modal()
     }
 
-    var createVideoList = function(videos) {
+    var createVideoList = function (videos) {
         var result = ''
         for (var i = 0; i < videos.length; i++) {
             var video = videos[i]
@@ -185,38 +197,125 @@
         return result
     }
 
-    var createVideoLi = function(video) {
+    var createVideoLi = function (video) {
         var img = '<img src="' + video.snapshot + '" alt="background image">'
         var button = '<img class="btn" src="/images/videos/play.svg" alt="play button">'
         var title = '<h3>' + video.title + '</h3>'
         var group = '<p>' + video.group + '</p>'
         var time = '<p class="time">' + video.createTime + '</p>'
-        var div = '<div>' + button + '<div>' + title + group + time + '</div></div>' 
+        var div = '<div>' + button + '<div>' + title + group + time + '</div></div>'
         var s = '<li data-link="' + video.link + '" data-type="' + video.type + '">' + img + div + '</li>'
         return s
     }
 
-    var initPagination = function(dataSource) {
+    var initPagination = function (dataSource) {
         $('#pagination').pagination({
             dataSource: dataSource,
             pageSize: 12,
             prevText: '<<',
             nextText: '>>',
-            callback: function(data, pagination) {
+            callback: function (data, pagination) {
                 var videoList = createVideoList(data)
                 $('.video-ul').empty().append(videoList)
             }
         })
     }
 
-    var initVideos = function() {
-        var videos =  $('.video-ul').data('origin')
+    var initVideos = function () {
+        var videos = $('.video-ul').data('origin')
         initPagination(videos)
+    }
+
+    var splitHtmlToNew = function (data) {
+        var newCollection = []
+        Array.prototype.forEach.call(data, function (item, index) {
+            data[index].className = 'swiper-slide'
+            newCollection.push(data[index])
+        })
+        return newCollection
+    }
+
+    var autoplayTime = 6000
+
+    var mySwiper = {
+        current: null,
+        create: function () {
+            const documentWidth = $(document).width()
+            const option = {
+                autoplay: {
+                    running: true,
+                    pauseOnMouseEnter: true,
+                    disableOnInteraction: false,
+                },
+                delay: autoplayTime,
+                speed: 500,
+                loop: true,
+            }
+            if (documentWidth > 800) {
+                option.slidesPerView = 3
+                option.spaceBetween = 20
+            }
+
+            if (documentWidth < 800) {
+                option.pagination = {
+                    el: '.swiper-pagination',
+                    bulletActiveClass: 'my-bullet-active',
+                }
+            }
+            this.current = new Swiper('.swiper', option)
+        },
+        init: function () {
+            const elements = $('#needClone_0').children().filter('li').clone()
+            const newContent = splitHtmlToNew(elements)
+            if (newContent.length === 0) {
+                return
+            }
+            $('#swiper-wrapper').empty().append(newContent)
+        }
+    }
+
+    var MeetupInit = function () {
+        var ulHead = $('#meetup-ul');
+        var ulList = $('#meetup-list');
+        var tabActiveIndex = 0;
+        ulHead.children('li').filter(function (index) {
+            return index === 0
+        }).addClass('tab_active')
+        mySwiper.create()
+        $('#meetup-ul li').click(function (e) {
+            var clickIndex = $(this).index();
+            var preActiveINdex = $('#meetup-ul li.tab_active')
+            if (tabActiveIndex === clickIndex) {
+                return
+            } else {
+                tabActiveIndex = clickIndex
+            }
+            preActiveINdex.removeClass('tab_active')
+            ulHead.children('li').filter(function (index) {
+                return index === tabActiveIndex
+            }).addClass('tab_active')
+            var elements = $('#needClone_' + tabActiveIndex).children().filter('li').clone()
+            $('#swiper-wrapper').empty().append(splitHtmlToNew(elements))
+            mySwiper.current.destroy()
+            mySwiper.create()
+        })
+    }
+
+    var initSliderButton = function () {
+        $('.prev-button').click(function (e) {
+            var swiper = mySwiper.current.slidePrev()
+        })
+        $('.next-button').click(function (e) {
+            var swiper = mySwiper.current.slideNext()
+        })
     }
 
     bindClickVideoTabLi()
     bindClickVideoLi()
     initVideos()
     initModal()
+    mySwiper.init()
+    MeetupInit()
+    initSliderButton()
 </script>
 {{ end }}

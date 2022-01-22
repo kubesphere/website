@@ -62,9 +62,9 @@ Weight: 16820
    kubectl apply -f devops-deploy.yaml
    ```
 
-### 步骤 2：获取 ServiceAccount 令牌
+### 步骤 2：获取服务帐户令牌
 
-1. 运行以下命令获取 ServiceAccount 的令牌。
+1. 运行以下命令获取服务帐户的令牌。
 
    ```bash
    export TOKEN_NAME=$(kubectl -n kubesphere-sample-dev get sa devops-deploy -o jsonpath='{.secrets[0].name}')
@@ -77,9 +77,7 @@ Weight: 16820
 
 ### 步骤 3：创建 DevOps kubeconfig
 
-1. 登录 AWS 集群的 KubeSphere 控制台，访问您的 DevOps 工程。转到**工程管理**下的**凭证**，然后点击**创建**。您可以按需输入该 kubeconfig 的**凭证 ID**。
-
-   ![create-kubeconfig](/images/docs/zh-cn/faq/devops/create-devops-kubeconfig-on-aws/create-kubeconfig.png)
+1. 登录 AWS 集群的 KubeSphere 控制台，访问您的 DevOps 项目。转到 **DevOps 项目设置**下的**凭证**，然后点击**创建**。您可以按需输入该 kubeconfig 的**凭证 ID**。
 
 2. 在 **Content** 文本框中，请注意以下内容：
 

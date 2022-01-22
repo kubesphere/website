@@ -121,7 +121,7 @@ pipeline {
 
         REGISTRY = 'docker.io'
         DOCKERHUB_NAMESPACE = 'shaowenchen'
-        APP_NAME = 'devops-java-sample'
+        APP_NAME = 'devops-maven-sample'
         SONAR_CREDENTIAL_ID = 'sonar-token'
         TAG_NAME = "SNAPSHOT-$BRANCH_NAME-$BUILD_NUMBER"
     }
@@ -129,16 +129,15 @@ pipeline {
     stage('checkout') {
       steps {
         container('maven') {
-          git branch: 'master', url: 'https://github.com/kubesphere/devops-java-sample.git'
+          git branch: 'master', url: 'https://github.com/kubesphere/devops-maven-sample.git'
         }
       }
     }
     stage('unit test') {
       steps {
         container('maven') {
-          sh 'mvn clean -o -gs `pwd`/configuration/settings.xml test'
+          sh 'mvn clean test'
         }
-
       }
     }
     stage('sonarqube analysis') {
@@ -146,7 +145,7 @@ pipeline {
         container('maven') {
           withCredentials([string(credentialsId: "$SONAR_CREDENTIAL_ID", variable: 'SONAR_TOKEN')]) {
             withSonarQubeEnv('sonar') {
-              sh "mvn sonar:sonar -o -gs `pwd`/configuration/settings.xml -Dsonar.login=$SONAR_TOKEN"
+              sh "mvn sonar:sonar -Dsonar.login=$SONAR_TOKEN"
             }
 
           }
@@ -157,7 +156,7 @@ pipeline {
     stage('build & push') {
       steps {
         container('maven') {
-          sh 'mvn -o -Dmaven.test.skip=true -gs `pwd`/configuration/settings.xml clean package'
+          sh 'mvn -Dmaven.test.skip=true clean package'
           sh 'docker build -f Dockerfile-online -t $REGISTRY/$DOCKERHUB_NAMESPACE/$APP_NAME:SNAPSHOT-$BRANCH_NAME-$BUILD_NUMBER .'
           withCredentials([usernamePassword(passwordVariable : 'DOCKER_PASSWORD' ,usernameVariable : 'DOCKER_USERNAME' ,credentialsId : "$DOCKER_CREDENTIAL_ID" ,)]) {
             sh 'echo "$DOCKER_PASSWORD" | docker login $REGISTRY -u "$DOCKER_USERNAME" --password-stdin'
@@ -179,19 +178,37 @@ pipeline {
     }
     stage('deploy to dev') {
       steps {
-        kubernetesDeploy(configs: 'deploy/dev-ol/**', enableConfigSubstitution: true, kubeconfigId: "$DEV_KUBECONFIG_CREDENTIAL_ID")
+        withCredentials([
+            kubeconfigFile(
+            credentialsId: env.DEV_KUBECONFIG_CREDENTIAL_ID,
+            variable: 'KUBECONFIG')
+            ]) {
+            sh 'envsubst < deploy/dev-all-in-one/devops-sample.yaml | kubectl apply -f -'
+        }
       }
     }
     stage('deploy to staging') {
       steps {
         input(id: 'deploy-to-staging', message: 'deploy to staging?')
-        kubernetesDeploy(configs: 'deploy/prod-ol/**', enableConfigSubstitution: true, kubeconfigId: "$TEST_KUBECONFIG_CREDENTIAL_ID")
+        withCredentials([
+            kubeconfigFile(
+            credentialsId: env.TEST_KUBECONFIG_CREDENTIAL_ID,
+            variable: 'KUBECONFIG')
+            ]) {
+            sh 'envsubst < deploy/prod-all-in-one/devops-sample.yaml | kubectl apply -f -'
+        }
       }
     }
     stage('deploy to production') {
       steps {
         input(id: 'deploy-to-production', message: 'deploy to production?')
-        kubernetesDeploy(configs: 'deploy/prod-ol/**', enableConfigSubstitution: true, kubeconfigId: "$PROD_KUBECONFIG_CREDENTIAL_ID")
+        withCredentials([
+            kubeconfigFile(
+            credentialsId: env.PROD_KUBECONFIG_CREDENTIAL_ID,
+            variable: 'KUBECONFIG')
+            ]) {
+            sh 'envsubst < deploy/prod-all-in-one/devops-sample.yaml | kubectl apply -f -'
+        }
       }
     }
   }

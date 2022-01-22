@@ -32,7 +32,7 @@ weight: 3530
 从 [GitHub Release Page](https://github.com/kubesphere/kubekey/releases) 下载 KubeKey 或直接运行以下命令：
 
 ```bash
-curl -sfL https://get-kk.kubesphere.io | VERSION=v1.1.1 sh -
+curl -sfL https://get-kk.kubesphere.io | VERSION=v1.2.1 sh -
 ```
 
 {{</ tab >}}
@@ -48,7 +48,7 @@ export KKZONE=cn
 运行以下命令来下载 KubeKey：
 
 ```bash
-curl -sfL https://get-kk.kubesphere.io | VERSION=v1.1.1 sh -
+curl -sfL https://get-kk.kubesphere.io | VERSION=v1.2.1 sh -
 ```
 
 {{< notice note >}}
@@ -63,7 +63,7 @@ curl -sfL https://get-kk.kubesphere.io | VERSION=v1.1.1 sh -
 
 {{< notice note >}}
 
-通过以上的命令可以下载 KubeKey 的最新版本 (v1.1.0)。请注意，更早版本的 KubeKey 无法下载 K3s。
+通过以上的命令可以下载 KubeKey 的最新版本 (v1.2.1)。请注意，更早版本的 KubeKey 无法下载 K3s。
 
 {{</ notice >}}
 
@@ -78,12 +78,12 @@ chmod +x kk
 1. 执行以下命令为集群创建一个配置文件：
 
    ```bash
-   ./kk create config --with-kubernetes v1.20.4-k3s --with-kubesphere v3.1.1
+   ./kk create config --with-kubernetes v1.21.4-k3s --with-kubesphere v3.2.1
    ```
 
    {{< notice note >}}
 
-   - KubeKey v1.1.0 仅支持安装 K3s v1.20.4。
+   - KubeKey v1.2.1 支持安装 K3s v1.21.4。
 
    - 您可以在以上命令中使用 `-f` 或 `--file` 参数指定配置文件的路径和名称。如未指定路径和名称，KubeKey 将默认在当前目录下创建 `config-sample.yaml` 配置文件。
 
@@ -117,7 +117,7 @@ chmod +x kk
        address: ""
        port: 6443
      kubernetes:
-       version: v1.20.4-k3s
+       version: v1.21.4-k3s
        imageRepo: kubesphere
        clusterName: cluster.local
      network:
@@ -133,7 +133,7 @@ chmod +x kk
 
    {{< notice note >}}
 
-   有关配置文件中每个字段的更多信息，请参阅[示例文件](https://github.com/kubesphere/kubekey/blob/release-1.1/docs/config-example.md)。
+   有关配置文件中每个字段的更多信息，请参阅[示例文件](https://github.com/kubesphere/kubekey/blob/release-1.2/docs/config-example.md)。
 
    {{</ notice >}} 
 
@@ -176,12 +176,8 @@ chmod +x kk
 
 5. 从安装日志的 `Console`、`Account` 和 `Password` 参数分别获取 KubeSphere Web 控制台的地址、系统管理员用户名和系统管理员密码，并使用 Web 浏览器登录 KubeSphere Web 控制台。
 
-   ![cluster-management](/images/docs/zh-cn/installing-on-linux/on-premises/cluster-management.png)
-
-   ![service-components](/images/docs/zh-cn/installing-on-linux/on-premises/service-components.png)
-   
    {{< notice note >}}
-   
+
    您可以在安装后启用 KubeSphere 的可插拔组件，但由于在 KubeSphere 上部署 K3s 目前处于测试阶段，某些功能可能不兼容。
    
    {{</ notice >}} 

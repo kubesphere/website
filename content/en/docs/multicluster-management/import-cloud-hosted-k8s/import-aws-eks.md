@@ -10,18 +10,18 @@ This tutorial demonstrates how to import an AWS EKS cluster through the [direct 
 
 ## Prerequisites
 
-- You have a Kubernetes cluster with KubeSphere installed, and prepared this cluster as the Host Cluster. For more information about how to prepare a Host Cluster, refer to [Prepare a Host Cluster](../../../multicluster-management/enable-multicluster/direct-connection/#prepare-a-host-cluster).
-- You have an EKS cluster to be used as the Member Cluster.
+- You have a Kubernetes cluster with KubeSphere installed, and prepared this cluster as the host cluster. For more information about how to prepare a host cluster, refer to [Prepare a host cluster](../../../multicluster-management/enable-multicluster/direct-connection/#prepare-a-host-cluster).
+- You have an EKS cluster to be used as the member cluster.
 
 ## Import an EKS Cluster
 
-### Step 1: Deploy KubeSphere on your EKS Cluster
+### Step 1: Deploy KubeSphere on your EKS cluster
 
 You need to deploy KubeSphere on your EKS cluster first. For more information about how to deploy KubeSphere on EKS, refer to [Deploy KubeSphere on AWS EKS](../../../installing-on-kubernetes/hosted-kubernetes/install-kubesphere-on-eks/#install-kubesphere-on-eks).
 
-### Step 2: Prepare the EKS Member Cluster
+### Step 2: Prepare the EKS member cluster
 
-1. In order to manage the Member Cluster from the Host Cluster, you need to make `jwtSecret` the same between them. Therefore, get it first by executing the following command on your Host Cluster.
+1. In order to manage the member cluster from the host cluster, you need to make `jwtSecret` the same between them. Therefore, get it first by executing the following command on your host cluster.
 
    ```bash
    kubectl -n kubesphere-system get cm kubesphere-config -o yaml | grep -v "apiVersion" | grep jwtSecret
@@ -37,11 +37,7 @@ You need to deploy KubeSphere on your EKS cluster first. For more information ab
 
 3. Go to **CRDs**, enter `ClusterConfiguration` in the search bar, and then press **Enter** on your keyboard. Click **ClusterConfiguration** to go to its detail page.
 
-   ![search-config](/images/docs/multicluster-management/import-cloud-hosted-k8s/import-eks/search-config.png)
-
 4. Click <img src="/images/docs/multicluster-management/import-cloud-hosted-k8s/import-eks/three-dots.png" height="20px"> on the right and then select **Edit YAML** to edit `ks-installer`. 
-
-   ![click-edit](/images/docs/multicluster-management/import-cloud-hosted-k8s/import-eks/click-edit.png)
 
 5. In the YAML file of `ks-installer`, change the value of `jwtSecret` to the corresponding value shown above and set the value of `clusterRole` to `member`. Click **Update** to save your changes.
 
@@ -164,20 +160,12 @@ You need to deploy KubeSphere on your EKS cluster first. For more information ab
    ip-10-0-8-148.cn-north-1.compute.internal   Ready    <none>   78m   v1.18.8-eks-7c9bda
    ```
 
-### Step 4: Import the EKS Member Cluster
+### Step 4: Import the EKS member cluster
 
-1. Log in to the KubeSphere console on your Host Cluster as `admin`. Click **Platform** in the upper-left corner and then select **Cluster Management**. On the **Cluster Management** page, click **Add Cluster**.
-
-   ![click-add-cluster](/images/docs/multicluster-management/import-cloud-hosted-k8s/import-eks/click-add-cluster.png)
+1. Log in to the KubeSphere console on your host cluster as `admin`. Click **Platform** in the upper-left corner and then select **Cluster Management**. On the **Cluster Management** page, click **Add Cluster**.
 
 2. Enter the basic information based on your needs and click **Next**.
 
-   ![input-info](/images/docs/multicluster-management/import-cloud-hosted-k8s/import-eks/input-info.png)
-
-3. In **Connection Method**, select **Direct Connection**. Fill in the new kubeconfig file of the EKS Member Cluster and then click **Create**.
-
-   ![eks-kubeconfig](/images/docs/multicluster-management/import-cloud-hosted-k8s/import-eks/eks-kubeconfig.png)
+3. In **Connection Method**, select **Direct connection**. Fill in the new kubeconfig file of the EKS member cluster and then click **Create**.
 
 4. Wait for cluster initialization to finish.
-
-   ![eks-overview](/images/docs/multicluster-management/import-cloud-hosted-k8s/import-eks/eks-overview.png)

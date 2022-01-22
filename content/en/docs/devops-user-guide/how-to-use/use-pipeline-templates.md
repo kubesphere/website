@@ -6,9 +6,9 @@ linkTitle: "Use Pipeline Templates"
 weight: 11290
 ---
 
-KubeSphere offers a graphical editing panel where the stages and steps of a Jenkins pipeline can be defined through interactive operations. In KubeSphere v3.1, two built-in pipeline templates are provided as frameworks of continuous integration (CI) and continuous delivery (CD).
+KubeSphere offers a graphical editing panel where the stages and steps of a Jenkins pipeline can be defined through interactive operations. In KubeSphere 3.2.1, two built-in pipeline templates are provided as frameworks of continuous integration (CI) and continuous delivery (CD).
 
-When you have a pipeline created in your DevOps project on KubeSphere, you can click the pipeline to go to its detail page, and then click **Edit Pipeline** to select a pipeline template based on your needs. This document illustrates the concept of these two pipeline templates.
+When you have a pipeline created in your DevOps project on KubeSphere, you can click the pipeline to go to its details page, and then click **Edit Pipeline** to select a pipeline template based on your needs. This document illustrates the concept of these two pipeline templates.
 
 ## CI Pipeline Template
 

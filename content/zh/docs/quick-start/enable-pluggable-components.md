@@ -50,7 +50,7 @@ weight: 2600
 如果采用 [All-in-one 模式安装](../../quick-start/all-in-one-on-linux/)，您无需创建 `config-sample.yaml` 文件，因为 all-in-one 模式可以通过一条命令直接创建集群。通常，all-in-one 模式适用于刚接触 KubeSphere 并希望快速上手该系统的用户。如果要在此模式下启用可插拔组件（例如，出于测试目的），请参考[在安装后启用可插拔组件](#在安装后启用可插拔组件)。
     {{</ notice >}}
 
-2. 在此文件中，将 `enabled` 的值从 `false` 改为 `true`。这是[完整文件](https://github.com/kubesphere/kubekey/blob/release-1.1/docs/config-example.md)供您参考，修改完成后保存文件。
+2. 在此文件中，将 `enabled` 的值从 `false` 改为 `true`。这是[完整文件](https://github.com/kubesphere/kubekey/blob/release-1.2/docs/config-example.md)供您参考，修改完成后保存文件。
 
 3. 使用该配置文件创建集群：
 
@@ -73,14 +73,12 @@ weight: 2600
 3. 编辑完成后保存文件，执行以下命令开始安装：
 
     ```bash
-    kubectl apply -f https://github.com/kubesphere/ks-installer/releases/download/v3.1.1/kubesphere-installer.yaml
+    kubectl apply -f https://github.com/kubesphere/ks-installer/releases/download/v3.2.1/kubesphere-installer.yaml
     
     kubectl apply -f cluster-configuration.yaml
     ```
 
-无论是在 Linux 上还是在 Kubernetes 上安装 KubeSphere，安装后都可以在 KubeSphere 的 Web 控制台中检查已启用组件的状态。转到**服务组件**，可以看到类似如下图片：
-
-![服务组件](/images/docs/zh-cn/quickstart/enable-pluggable-components/服务组件.jpg)
+无论是在 Linux 上还是在 Kubernetes 上安装 KubeSphere，安装后都可以在 KubeSphere 的 Web 控制台中检查已启用组件的状态。
 
 ## 在安装后启用可插拔组件
 
@@ -94,19 +92,13 @@ weight: 2600
 
 1. 以 `admin` 身份登录控制台。点击左上角的**平台管理** ，然后选择**集群管理**。
 
-    ![集群管理](/images/docs/zh-cn/quickstart/enable-pluggable-components/集群管理.png)
-
-2. 点击**自定义资源 CRD**，然后在搜索栏中输入 `clusterconfiguration`，点击搜索结果进入其详情页面。
-
-    ![CRD](/images/docs/zh-cn/quickstart/enable-pluggable-components/CRD.png)
+2. 点击 **CRD**，然后在搜索栏中输入 `clusterconfiguration`，点击搜索结果进入其详情页面。
 
     {{< notice info >}}
-自定义资源定义 (CRD) 允许用户在不增加额外 API 服务器的情况下创建一种新的资源类型，用户可以像使用其他 Kubernetes 原生对象一样使用这些自定义资源。
+定制资源定义（CRD）允许用户在不增加额外 API 服务器的情况下创建一种新的资源类型，用户可以像使用其他 Kubernetes 原生对象一样使用这些定制资源。
     {{</ notice >}}
 
-3. 在**资源列表**中，点击 `ks-installer` 右侧的三个点，然后选择**编辑配置文件**。
-
-    ![编辑配置文件](/images/docs/zh-cn/quickstart/enable-pluggable-components/编辑配置文件.png)
+3. 在**自定义资源**中，点击 `ks-installer` 右侧的三个点，然后选择**编辑 YAML**。
 
 4. 在该配置文件中，将对应组件 `enabled` 的 `false` 更改为 `true`，以启用要安装的组件。完成后，点击**更新**以保存配置。
 
@@ -146,9 +138,7 @@ weight: 2600
     #####################################################
     ```
 
-7. 登录 KubeSphere 控制台，在**服务组件**中可以查看不同组件的状态。
-
-    ![服务组件](/images/docs/zh-cn/quickstart/enable-pluggable-components/服务组件.jpg)
+7. 登录 KubeSphere 控制台，在**系统组件**中可以查看不同组件的状态。
 
     {{< notice tip >}}
 

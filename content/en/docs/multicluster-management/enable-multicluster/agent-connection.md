@@ -6,9 +6,9 @@ titleLink: "Agent Connection"
 weight: 5220
 ---
 
-The component [Tower](https://github.com/kubesphere/tower) of KubeSphere is used for agent connection. Tower is a tool for network connection between clusters through the agent. If the Host Cluster (H Cluster) cannot access the Member Cluster (M Cluster) directly, you can expose the proxy service address of the H cluster. This enables the M Cluster to connect to the H Cluster through the agent. This method is applicable when the M Cluster is in a private environment (for example, IDC) and the H Cluster is able to expose the proxy service. The agent connection is also applicable when your clusters are distributed across different cloud providers.
+The component [Tower](https://github.com/kubesphere/tower) of KubeSphere is used for agent connection. Tower is a tool for network connection between clusters through the agent. If the host cluster cannot access the member cluster directly, you can expose the proxy service address of the host cluster. This enables the member cluster to connect to the host cluster through the agent. This method is applicable when the member cluster is in a private environment (for example, IDC) and the host cluster is able to expose the proxy service. The agent connection is also applicable when your clusters are distributed across different cloud providers.
 
-To use the multi-cluster feature using an agent, you must have at least two clusters serving as the H Cluster and the M Cluster respectively. A cluster can be defined as the H Cluster or the M Cluster either before or after you install KubeSphere. For more information about installing KubeSphere, refer to [Installing on Linux](../../../installing-on-linux/) and [Installing on Kubernetes](../../../installing-on-kubernetes/).
+To use the multi-cluster feature using an agent, you must have at least two clusters serving as the host cluster and the member cluster respectively. A cluster can be defined as the host cluster or the member cluster either before or after you install KubeSphere. For more information about installing KubeSphere, refer to [Installing on Linux](../../../installing-on-linux/) and [Installing on Kubernetes](../../../installing-on-kubernetes/).
 
 ## Video Demonstration
 
@@ -34,27 +34,58 @@ If you already have a standalone KubeSphere cluster installed, you can set the v
   kubectl edit cc ks-installer -n kubesphere-system
   ```
 
-In the YAML file of `ks-installer`, navigate to `multicluster`, set the value of `clusterRole` to `host`, then click **Update** (if you use the web console) to make it effective:
+In the YAML file of `ks-installer`, navigate to `multicluster`, set the value of `clusterRole` to `host`, then click **OK** (if you use the web console) to make it effective:
 
 ```yaml
 multicluster:
   clusterRole: host
 ```
 
-You need to **wait for a while** so that the change can take effect.
+To set the host cluster name, add a field `hostClusterName` under `multicluster.clusterRole` in the YAML file of `ks-installer`:
+
+```yaml
+multicluster:
+  clusterRole: host
+  hostClusterName: <Host cluster name>
+```
+
+{{< notice note >}}
+
+- It is recommended that you set the host cluster name while you are preparing your host cluster. When your host cluster is set up and running with resources deployed, it is not recommended that you set the host cluster name.
+- The host cluster name can contain only lowercase letters, numbers, hyphens (-), or periods (.), and must start and end with a lowercase letter or number.
+
+{{</ notice >}}
+
+You need to wait for a while so that the change can take effect.
 
 {{</ tab >}}
 
 {{< tab "KubeSphere has not been installed" >}}
 
-You can define a host cluster before you install KubeSphere either on Linux or on an existing Kubernetes cluster. If you want to [install KubeSphere on Linux](../../../installing-on-linux/introduction/multioverview/#1-create-an-example-configuration-file), you use a `config-sample.yaml` file. If you want to [install KubeSphere on an existing Kubernetes cluster](../../../installing-on-kubernetes/introduction/overview/#deploy-kubesphere), you use two YAML files, one of which is `cluster-configuration.yaml`. To set a host cluster, change the value of `clusterRole` to `host` in `config-sample.yaml` or `cluster-configuration.yaml` accordingly before you install KubeSphere.
+You can define a host cluster before you install KubeSphere either on Linux or on an existing Kubernetes cluster. If you want to [install KubeSphere on Linux](../../../installing-on-linux/introduction/multioverview/#1-create-an-example-configuration-file), you use a `config-sample.yaml` file. If you want to [install KubeSphere on an existing Kubernetes cluster](../../../installing-on-kubernetes/introduction/overview/#deploy-kubesphere), you use two YAML files, one of which is `cluster-configuration.yaml`.
+
+To set a host cluster, change the value of `clusterRole` to `host` in `config-sample.yaml` or `cluster-configuration.yaml` accordingly before you install KubeSphere.
 
 ```yaml
 multicluster:
   clusterRole: host
 ```
 
+To set the host cluster name, add a field `hostClusterName` under `multicluster.clusterRole` in `config-sample.yaml` or `cluster-configuration.yaml`:
+
+```yaml
+multicluster:
+  clusterRole: host
+  hostClusterName: <Host cluster name>
+```
+
 {{< notice note >}}
+
+- The host cluster name can contain only lowercase letters, numbers, hyphens (-), or periods (.), and must start and end with a lowercase letter or number.
+
+{{</ notice >}}
+
+{{< notice info >}}
 
 If you install KubeSphere on a single-node cluster ([All-in-One](../../../quick-start/all-in-one-on-linux/)), you do not need to create a `config-sample.yaml` file. In this case, you can set a host cluster after KubeSphere is installed.
 
@@ -93,7 +124,7 @@ tower      LoadBalancer    10.233.63.191   139.198.110.23  8080:30721/TCP       
 
 {{< notice note >}}
 
-Generally, there is always a LoadBalancer solution in the public cloud, and the external IP can be allocated by the load balancer automatically. If your clusters are running in an on-premises environment, especially a **bare metal environment**, you can use [PorterLB](https://github.com/kubesphere/porter) as the LB solution.
+Generally, there is always a LoadBalancer solution in the public cloud, and the external IP can be allocated by the load balancer automatically. If your clusters are running in an on-premises environment, especially a **bare metal environment**, you can use [OpenELB](https://github.com/kubesphere/openelb) as the LB solution.
 
 {{</ notice >}}
 
@@ -180,14 +211,14 @@ authentication:
   jwtSecret: gfIwilcc0WjNGKJ5DLeksf2JKfcLgTZU
 ```
 
-Scroll down and set the value of `clusterRole` to `member`, then click **Update** (if you use the web console) to make it effective:
+Scroll down and set the value of `clusterRole` to `member`, then click **OK** (if you use the web console) to make it effective:
 
 ```yaml
 multicluster:
   clusterRole: member
 ```
 
-You need to **wait for a while** so that the change can take effect.
+You need to wait for a while so that the change can take effect.
 
 {{</ tab >}}
 
@@ -224,19 +255,11 @@ kubectl logs -n kubesphere-system $(kubectl get pod -n kubesphere-system -l app=
 ## Import a Member Cluster
 
 1. Log in to the KubeSphere console as `admin` and click **Add Cluster** on the **Cluster Management** page.
-   
-   ![add-cluster](/images/docs/multicluster-management/enable-multicluster-management-in-kubesphere/agent-connection/add-cluster.png)
 
-2. Enter the basic information of the cluster to be imported on the **Import Cluster** page. You can also click **Edit Mode** in the top-right corner to view and edit the basic information in YAML format. After you finish editing, click **Next**.
+2. Enter the basic information of the cluster to be imported on the **Import Cluster** page. You can also click **Edit Mode** in the upper-right corner to view and edit the basic information in YAML format. After you finish editing, click **Next**.
 
-     ![cluster-info](/images/docs/multicluster-management/enable-multicluster-management-in-kubesphere/agent-connection/cluster-info.png)
+3. In **Connection Method**, select **Agent connection** and click **Create**. It will show the YAML configuration file for the agent Deployment generated by the host cluster on the console.
 
-3. In **Connection Method**, select **Agent Connection** and click **Create**. It will show the YAML configuration file for the agent Deployment generated by the H Cluster on the console.
+4. Create an `agent.yaml` file on the member cluster based on the instruction, then copy and paste the agent deployment to the file. Execute `kubectl create -f agent.yaml` on the node and wait for the agent to be up and running. Please make sure the proxy address is accessible to the member cluster.
 
-     ![select-agent-connection](/images/docs/multicluster-management/enable-multicluster-management-in-kubesphere/agent-connection/select-agent-connection.png)
-
-4. Create an `agent.yaml` file on the M Cluster based on the instruction, then copy and paste the agent deployment to the file. Execute `kubectl create -f agent.yaml` on the node and wait for the agent to be up and running. Please make sure the proxy address is accessible to the M Cluster.
-
-5. You can see the cluster you have imported in the H Cluster when the cluster agent is up and running.
-
-     ![cluster-imported](/images/docs/multicluster-management/enable-multicluster-management-in-kubesphere/agent-connection/cluster-imported.png)
+5. You can see the cluster you have imported in the host cluster when the cluster agent is up and running.

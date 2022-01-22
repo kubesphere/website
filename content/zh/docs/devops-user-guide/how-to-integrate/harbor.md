@@ -11,7 +11,7 @@ weight: 11320
 ## 准备工作
 
 - 您需要启用 [KubeSphere DevOps 系统](../../../pluggable-components/devops/)。
-- 您需要创建一个企业空间、一个 DevOps 工程和一个帐户 (`project-regular`)。需要邀请该帐户至 DevOps 工程并赋予 `operator` 角色。如果尚未创建，请参见[创建企业空间、项目、帐户和角色](../../../quick-start/create-workspace-and-project/)。
+- 您需要创建一个企业空间、一个 DevOps 项目和一个用户 (`project-regular`)。需要邀请该用户至 DevOps 项目并赋予 `operator` 角色。如果尚未创建，请参见[创建企业空间、项目、用户和角色](../../../quick-start/create-workspace-and-project/)。
 
 ## 安装 Harbor
 
@@ -26,25 +26,15 @@ helm install harbor-release harbor/harbor --set expose.type=nodePort,externalURL
 
 ## 获取 Harbor 凭证
 
-1. 安装 Harbor 后，请访问 `NodeIP:30002` 并使用默认帐户和密码 (`admin/Harbor12345`) 登录控制台。转到**项目**并点击**新建项目**。
+1. 安装 Harbor 后，请访问 `<NodeIP>:30002` 并使用默认帐户和密码 (`admin/Harbor12345`) 登录控制台。在左侧导航栏中点击**项目**并在**项目**页面点击**新建项目**。
 
-   ![harbor-projects1](/images/docs/zh-cn/devops-user-guide/tool-integration/integrate-harbor-into-pipelines/harbor-projects1.png)
+2. 在弹出的对话框中，设置项目名称 (`ks-devops-harbor`) 并点击**确定**。
 
-2. 设置项目名称 (`ks-devops-harbor`) 并点击**确定**。
+3. 点击刚刚创建的项目，在**机器人帐户**选项卡下点击**添加机器人帐户**。
 
-   ![set-name1](/images/docs/zh-cn/devops-user-guide/tool-integration/integrate-harbor-into-pipelines/set-name1.png)
+4. 在弹出的对话框中，为机器人帐户设置名称 (`robot-test`) 并点击**添加**。请确保在**权限**中勾选推送制品的权限选框。
 
-3. 点击刚刚创建的项目，在**机器人帐户**选项卡下选择**添加机器人帐户**。
-
-   ![robot-account1](/images/docs/zh-cn/devops-user-guide/tool-integration/integrate-harbor-into-pipelines/robot-account1.png)
-
-4. 为机器人帐户设置名称 (`robot-test`) 并保存。
-
-   ![robot-account-name1](/images/docs/zh-cn/devops-user-guide/tool-integration/integrate-harbor-into-pipelines/robot-account-name1.png)
-
-5. 点击**导出到文件中**，保存该令牌。
-
-   ![export-to-file1](/images/docs/zh-cn/devops-user-guide/tool-integration/integrate-harbor-into-pipelines/export-to-file1.png)
+5. 在弹出的对话框中，点击**导出到文件中**，保存该令牌。
 
 ## 启用 Insecure Registry
 
@@ -79,13 +69,9 @@ helm install harbor-release harbor/harbor --set expose.type=nodePort,externalURL
 
 ## 创建凭证
 
-1. 以 `project-regular` 身份登录 KubeSphere 控制台，转到您的 DevOps 工程，在**工程管理**下的**凭证**页面为 Harbor 创建凭证。
+1. 以 `project-regular` 身份登录 KubeSphere 控制台，转到您的 DevOps 项目，在 **DevOps 项目设置**下的**凭证**页面为 Harbor 创建凭证。
 
-   ![创建凭证](/images/docs/zh-cn/devops-user-guide/tool-integration/integrate-harbor-into-pipelines/create-credentials.PNG)
-
-2. 在**创建凭证**页面，设置凭证 ID (`robot-test`)，**类型**选择**帐户凭证**。**用户名**字段必须和您刚刚下载的 JSON 文件中 `name` 的值相同，并在 **token / 密码**中输入该文件中 `token` 的值。
-
-   ![credentials-page2](/images/docs/zh-cn/devops-user-guide/tool-integration/integrate-harbor-into-pipelines/credentials-page2.png)
+2. 在**创建凭证**页面，设置凭证 ID (`robot-test`)，**类型**选择**用户名和密码**。**用户名**字段必须和您刚刚下载的 JSON 文件中 `name` 的值相同，并在**密码/令牌**中输入该文件中 `token` 的值。
 
 3. 点击**确定**以保存。
 
@@ -93,17 +79,11 @@ helm install harbor-release harbor/harbor --set expose.type=nodePort,externalURL
 
 1. 转到**流水线**页面，点击**创建**。在**基本信息**选项卡，输入名称 (`demo-pipeline`)，然后点击**下一步**。
 
-   ![basic-info1](/images/docs/zh-cn/devops-user-guide/tool-integration/integrate-harbor-into-pipelines/basic-info1.png)
-
 2. **高级设置**中使用默认值，点击**创建**。
-
-   ![advanced-settings1](/images/docs/zh-cn/devops-user-guide/tool-integration/integrate-harbor-into-pipelines/advanced-settings1.png)
 
 ## 编辑 Jenkinsfile
 
 1. 点击该流水线进入其详情页面，然后点击**编辑 Jenkinsfile**。
-
-   ![edit-jenkinsfile1](/images/docs/zh-cn/devops-user-guide/tool-integration/integrate-harbor-into-pipelines/edit-jenkinsfile1.png)
 
 2. 将以下内容复制粘贴至 Jenkinsfile。请注意，您必须将 `REGISTRY`、`HARBOR_NAMESPACE`、`APP_NAME` 和 `HARBOR_CREDENTIAL` 替换为您自己的值。
 

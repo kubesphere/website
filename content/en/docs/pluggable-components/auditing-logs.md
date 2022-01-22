@@ -1,8 +1,8 @@
 ---
-title: "KubeSphere Auditing Logs"
+title: "KubeSphere Audit Logs"
 keywords: "Kubernetes, auditing, KubeSphere, logs"
 description: "Learn how to enable Auditing to document platform events and activities."
-linkTitle: "KubeSphere Auditing Logs"
+linkTitle: "KubeSphere Audit Logs"
 weight: 6700
 ---
 
@@ -10,7 +10,7 @@ The KubeSphere Auditing Log System provides a security-relevant chronological se
 
 For more information, see [Auditing Log Query](../../toolbox/auditing/auditing-query/).
 
-## Enable Auditing Logs before Installation
+## Enable Auditing Logs Before Installation
 
 ### Installing on Linux
 
@@ -34,7 +34,7 @@ If you adopt [All-in-One Installation](../../quick-start/all-in-one-on-linux/), 
     ```
 
     {{< notice note >}}
-By default, KubeKey will install Elasticsearch internally if Auditing is enabled. For a production environment, it is highly recommended that you set the following values in `config-sample.yaml` if you want to enable Auditing, especially `externalElasticsearchUrl` and `externalElasticsearchPort`. Once you provide the following information before installation, KubeKey will integrate your external Elasticsearch directly instead of installing an internal one.
+By default, KubeKey will install Elasticsearch internally if Auditing is enabled. For a production environment, it is highly recommended that you set the following values in `config-sample.yaml` if you want to enable Auditing, especially `externalElasticsearchHost` and `externalElasticsearchPort`. Once you provide the following information before installation, KubeKey will integrate your external Elasticsearch directly instead of installing an internal one.
     {{</ notice >}}
 
     ```yaml
@@ -45,7 +45,7 @@ By default, KubeKey will install Elasticsearch internally if Auditing is enabled
       elasticsearchDataVolumeSize: 20Gi    # The volume size of Elasticsearch data nodes.
       logMaxAge: 7                     # Log retention day in built-in Elasticsearch. It is 7 days by default.
       elkPrefix: logstash              # The string making up index names. The index name will be formatted as ks-<elk_prefix>-log.
-      externalElasticsearchUrl: # The URL of external Elasticsearch.
+      externalElasticsearchHost: # The Host of external Elasticsearch.
       externalElasticsearchPort: # The port of external Elasticsearch.
     ```
 
@@ -57,9 +57,9 @@ By default, KubeKey will install Elasticsearch internally if Auditing is enabled
 
 ### Installing on Kubernetes
 
-As you [install KubeSphere on Kubernetes](../../installing-on-kubernetes/introduction/overview/), you can enable KubeSphere Auditing first in the [cluster-configuration.yaml](https://github.com/kubesphere/ks-installer/releases/download/v3.1.1/cluster-configuration.yaml) file.
+As you [install KubeSphere on Kubernetes](../../installing-on-kubernetes/introduction/overview/), you can enable KubeSphere Auditing first in the [cluster-configuration.yaml](https://github.com/kubesphere/ks-installer/releases/download/v3.2.1/cluster-configuration.yaml) file.
 
-1. Download the file [cluster-configuration.yaml](https://github.com/kubesphere/ks-installer/releases/download/v3.1.1/cluster-configuration.yaml) and edit it.
+1. Download the file [cluster-configuration.yaml](https://github.com/kubesphere/ks-installer/releases/download/v3.2.1/cluster-configuration.yaml) and edit it.
 
     ```bash
     vi cluster-configuration.yaml
@@ -73,7 +73,7 @@ As you [install KubeSphere on Kubernetes](../../installing-on-kubernetes/introdu
     ```
 
     {{< notice note >}}
-By default, ks-installer will install Elasticsearch internally if Auditing is enabled. For a production environment, it is highly recommended that you set the following values in `cluster-configuration.yaml` if you want to enable Auditing, especially `externalElasticsearchUrl` and `externalElasticsearchPort`. Once you provide the following information before installation, ks-installer will integrate your external Elasticsearch directly instead of installing an internal one.
+By default, ks-installer will install Elasticsearch internally if Auditing is enabled. For a production environment, it is highly recommended that you set the following values in `cluster-configuration.yaml` if you want to enable Auditing, especially `externalElasticsearchHost` and `externalElasticsearchPort`. Once you provide the following information before installation, ks-installer will integrate your external Elasticsearch directly instead of installing an internal one.
     {{</ notice >}}
 
     ```yaml
@@ -84,21 +84,21 @@ By default, ks-installer will install Elasticsearch internally if Auditing is en
       elasticsearchDataVolumeSize: 20Gi    # The volume size of Elasticsearch data nodes.
       logMaxAge: 7                     # Log retention day in built-in Elasticsearch. It is 7 days by default.
       elkPrefix: logstash              # The string making up index names. The index name will be formatted as ks-<elk_prefix>-log.
-      externalElasticsearchUrl: # The URL of external Elasticsearch.
+      externalElasticsearchHost: # The Host of external Elasticsearch.
       externalElasticsearchPort: # The port of external Elasticsearch.
     ```
 
 3. Execute the following commands to start installation:
 
     ```bash
-    kubectl apply -f https://github.com/kubesphere/ks-installer/releases/download/v3.1.1/kubesphere-installer.yaml
+    kubectl apply -f https://github.com/kubesphere/ks-installer/releases/download/v3.2.1/kubesphere-installer.yaml
     
     kubectl apply -f cluster-configuration.yaml
     ```
 
-## Enable Auditing Logs after Installation
+## Enable Auditing Logs After Installation
 
-1. Log in to the console as `admin`. Click **Platform** in the top-left corner and select **Cluster Management**.
+1. Log in to the console as `admin`. Click **Platform** in the upper-left corner and select **Cluster Management**.
    
 2. Click **CRDs** and enter `clusterconfiguration` in the search bar. Click the result to view its detail page.
 
@@ -106,9 +106,9 @@ By default, ks-installer will install Elasticsearch internally if Auditing is en
 A Custom Resource Definition (CRD) allows users to create a new type of resources without adding another API server. They can use these resources like any other native Kubernetes objects.
     {{</ notice >}}
 
-3. In **Resource List**, click <img src="/images/docs/enable-pluggable-components/kubesphere-auditing-logs/three-dots.png" height="20px">  on the right of `ks-installer` and select **Edit YAML**.
+3. In **Custom Resources**, click <img src="/images/docs/enable-pluggable-components/kubesphere-auditing-logs/three-dots.png" height="20px">  on the right of `ks-installer` and select **Edit YAML**.
 
-4. In this YAML file, navigate to `auditing` and change `false` to `true` for `enabled`. After you finish, click **Update** in the bottom-right corner to save the configuration.
+4. In this YAML file, navigate to `auditing` and change `false` to `true` for `enabled`. After you finish, click **OK** in the lower-right corner to save the configuration.
 
     ```yaml
     auditing:
@@ -116,7 +116,7 @@ A Custom Resource Definition (CRD) allows users to create a new type of resource
     ```
 
     {{< notice note >}}
-By default, Elasticsearch will be installed internally if Auditing is enabled. For a production environment, it is highly recommended that you set the following values in this yaml file if you want to enable Auditing, especially `externalElasticsearchUrl` and `externalElasticsearchPort`. Once you provide the following information, KubeSphere will integrate your external Elasticsearch directly instead of installing an internal one.
+By default, Elasticsearch will be installed internally if Auditing is enabled. For a production environment, it is highly recommended that you set the following values in this yaml file if you want to enable Auditing, especially `externalElasticsearchHost` and `externalElasticsearchPort`. Once you provide the following information, KubeSphere will integrate your external Elasticsearch directly instead of installing an internal one.
     {{</ notice >}}
 
     ```yaml
@@ -127,7 +127,7 @@ By default, Elasticsearch will be installed internally if Auditing is enabled. F
       elasticsearchDataVolumeSize: 20Gi    # The volume size of Elasticsearch data nodes.
       logMaxAge: 7                     # Log retention day in built-in Elasticsearch. It is 7 days by default.
       elkPrefix: logstash              # The string making up index names. The index name will be formatted as ks-<elk_prefix>-log.
-      externalElasticsearchUrl: # The URL of external Elasticsearch.
+      externalElasticsearchHost: # The Host of external Elasticsearch.
       externalElasticsearchPort: # The port of external Elasticsearch.
     ```
 
@@ -139,7 +139,7 @@ By default, Elasticsearch will be installed internally if Auditing is enabled. F
 
     {{< notice note >}}
 
-You can find the web kubectl tool by clicking <img src="/images/docs/enable-pluggable-components/kubesphere-auditing-logs/hammer.png" height="20px"> in the bottom-right corner of the console.
+You can find the web kubectl tool by clicking <img src="/images/docs/enable-pluggable-components/kubesphere-auditing-logs/hammer.png" height="20px"> in the lower-right corner of the console.
     {{</ notice >}}
 
 ## Verify the Installation of the Component
@@ -148,9 +148,7 @@ You can find the web kubectl tool by clicking <img src="/images/docs/enable-plug
 
 {{< tab "Verify the component on the dashboard" >}}
 
-Verify that you can use the **Auditing Operating** function from the **Toolbox** in the bottom-right corner.
-
-![auditing-operating](/images/docs/enable-pluggable-components/kubesphere-auditing-logs/auditing-operating.png)
+Verify that you can use the **Audit Log Search** function from the **Toolbox** in the lower-right corner.
 
 {{</ tab >}}
 

@@ -1,7 +1,8 @@
 ---
-title: KubeSphere | KubeSphere 上发布单容器应用
+title: 提交改变
+keywords: Kubesphere, Kubesphere learn
+description: 将容器保存为镜像
 
 video: 
-  snapshot: https://pek3b.qingstor.com/kubesphere-docs/png/20200206170305.png
-  videoUrl: https://kubesphere-community.pek3b.qingstor.com/qkcp/lesson-14/KSCE-200-J001-14-Deployment-one-Container-Service-on-Kubesphere.mp4
+  videoUrl: https://pek3b.qingstor.com/kubesphere-community/%E4%BA%91%E5%8E%9F%E7%94%9F%E5%AE%9E%E6%88%98/15%E3%80%81%E5%AE%B9%E5%99%A8%E5%8C%96-%E5%91%BD%E4%BB%A4-%E9%95%9C%E5%83%8F%E4%BF%9D%E5%AD%98.mp4
 ---

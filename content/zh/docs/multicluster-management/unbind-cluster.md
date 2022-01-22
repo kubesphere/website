@@ -11,7 +11,7 @@ weight: 5500
 ## 准备工作
 
 - 您已经启用多集群管理。
-- 您需要有一个拥有**集群管理**权限角色的帐户。例如，您可以直接以 `admin` 身份登录控制台，或者创建一个拥有该权限的新角色并授予至一个帐户。
+- 您需要有一个拥有**集群管理**权限角色的用户。例如，您可以直接以 `admin` 身份登录控制台，或者创建一个拥有该权限的新角色并授予至一个用户。
 
 ## 解绑集群
 
@@ -19,11 +19,7 @@ weight: 5500
 
 2. 在**集群管理**页面，请点击要从中央控制平面移除的集群。
 
-   ![集群管理](/images/docs/zh-cn/multicluster-management/unbind-a-cluster/cluster-management.PNG)
-
 3. 在**集群设置**下的**基本信息**页面，请选择**我确定要执行解绑集群的操作**，然后点击**解除绑定**。
-
-   ![解绑集群](/images/docs/zh-cn/multicluster-management/unbind-a-cluster/unbind-cluster.PNG)
 
    {{< notice note >}}
 

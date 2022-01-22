@@ -18,7 +18,7 @@ Editing resources in `system-workspace` may cause unexpected results, such as Ku
 
 ## Edit the Console Configuration
 
-1. Log in to KubeSphere as `admin`. Click the hammer icon in the bottom-right corner and select **Kubectl**.
+1. Log in to KubeSphere as `admin`. Click <img src="/images/docs/common-icons/hammer.png" height="25" width="25" /> in the lower-right corner and select **Kubectl**.
 
 2. Execute the following command:
 
@@ -31,9 +31,9 @@ Editing resources in `system-workspace` may cause unexpected results, such as Ku
    ```yaml
        client:
          version:
-           kubesphere: v3.0.0
-           kubernetes: v1.17.9
-           openpitrix: v0.3.5
+           kubesphere: v3.2.1
+           kubernetes: v1.21.5
+           openpitrix: v3.2.1
          enableKubeConfig: true
          systemWorkspace: "$"  # Add this line manually.
    ```

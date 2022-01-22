@@ -13,7 +13,7 @@ weight: 14340
 ## 准备工作
 
 - 请确保[已启用 OpenPitrix 系统](../../../pluggable-components/app-store/)。
-- 您需要创建一个企业空间、一个项目和一个用户帐户 (`project-regular`) 供本教程操作使用。该帐户需要是平台普通用户，并邀请至项目中赋予 `operator` 角色作为项目操作员。本教程中，请以 `project-regular` 身份登录控制台，在企业空间 `demo-workspace` 中的 `demo-project` 项目中进行操作。有关更多信息，请参见[创建企业空间、项目、帐户和角色](../../../quick-start/create-workspace-and-project/)。
+- 您需要创建一个企业空间、一个项目和一个用户帐户 (`project-regular`) 供本教程操作使用。该帐户需要是平台普通用户，并邀请至项目中赋予 `operator` 角色作为项目操作员。本教程中，请以 `project-regular` 身份登录控制台，在企业空间 `demo-workspace` 中的 `demo-project` 项目中进行操作。有关更多信息，请参见[创建企业空间、项目、用户和角色](../../../quick-start/create-workspace-and-project/)。
 - 请确保 KubeSphere 项目网关已开启外网访问。有关更多信息，请参见[项目网关](../../../project-administration/project-gateway/)。
 
 ## 动手实验
@@ -23,7 +23,7 @@ weight: 14340
 1. 以 `admin` 身份登录 KubeSphere 的 Web 控制台，并使用**工具箱**中的 **Kubectl** 执行以下命令来安装 ClickHouse Operator。建议至少准备 2 个可用集群节点。
 
    ```bash
-   kubectl apply -f https://raw.githubusercontent.com/radondb/radondb-clickhouse-kubernetes/main/clickhouse-operator-install.yml
+   $ kubectl apply -f https://raw.githubusercontent.com/radondb/radondb-clickhouse-kubernetes/main/clickhouse-operator-install.yml
    ```
 
    {{< notice note >}}
@@ -35,10 +35,12 @@ weight: 14340
    **预期结果**
 
    ```powershell
-   customresourcedefinition.apiextensions.k8s.io/clickhouseinstallations.clickhouse.altinity.com configured
-   customresourcedefinition.apiextensions.k8s.io/clickhouseinstallationtemplates.clickhouse.altinity.com created
-   customresourcedefinition.apiextensions.k8s.io/clickhouseoperatorconfigurations.clickhouse.altinity.com created
+   $ kubectl apply -f https://raw.githubusercontent.com/radondb/radondb-clickhouse-kubernetes/main/clickhouse-operator-install.yml
+   customresourcedefinition.apiextensions.k8s.io/clickhouseinstallations.clickhouse.radondb.com created
+   customresourcedefinition.apiextensions.k8s.io/clickhouseinstallationtemplates.clickhouse.radondb.com created
+   customresourcedefinition.apiextensions.k8s.io/clickhouseoperatorconfigurations.clickhouse.radondb.com created
    serviceaccount/clickhouse-operator created
+   clusterrole.rbac.authorization.k8s.io/clickhouse-operator-kube-system created
    clusterrolebinding.rbac.authorization.k8s.io/clickhouse-operator-kube-system created
    configmap/etc-clickhouse-operator-files created
    configmap/etc-clickhouse-operator-confd-files created
@@ -52,67 +54,49 @@ weight: 14340
 2. 执行如下命令可查看 ClickHouse Operator 资源状态。
 
    ```bash
-   kubectl get all --selector=app=clickhouse-operator -n kube-system
+   $ kubectl get all --selector=app=clickhouse-operator -n kube-system
    ```
    **预期结果**
    ```
    NAME                                       READY   STATUS    RESTARTS   AGE
    pod/clickhouse-operator-644fcb8759-9tfcx   2/2     Running   0          4m32s
-
+   
    NAME                                  TYPE        CLUSTER-IP    EXTERNAL-IP   PORT(S)    AGE
    service/clickhouse-operator-metrics   ClusterIP   10.96.72.49   <none>        8888/TCP   4m32s
-
+   
    NAME                                  READY   UP-TO-DATE   AVAILABLE   AGE
    deployment.apps/clickhouse-operator   1/1     1            1           4m32s
-
+   
    NAME                                             DESIRED   CURRENT   READY   AGE
    replicaset.apps/clickhouse-operator-644fcb8759   1         1         1       4m32s
-
+   
    ```
 
 ### 步骤 2：添加应用仓库
 
-1. 以 `ws-admin` 身份登录 KubeSphere 的 Web 控制台。在企业空间中，进入**应用管理**下的**应用仓库**页面，点击**添加仓库**。
-
-   ![add-repo](/images/docs/zh-cn/appstore/external-apps/deploy-clickhouse/add-repo.png)
+1. 以 `ws-admin` 身份登录 KubeSphere 的 Web 控制台。在企业空间中，进入**应用管理**下的**应用仓库**页面，点击**添加**。
 
 2. 在出现的对话框中，输入 `clickhouse` 作为应用仓库名称，输入 `https://radondb.github.io/radondb-clickhouse-kubernetes/` 作为仓库的 URL。点击**验证**以验证 URL。在 URL 旁边呈现一个绿色的对号，验证通过后，点击**确定**继续。
 
-   ![add-clickhouse](/images/docs/zh-cn/appstore/external-apps/deploy-clickhouse/add-clickhouse.png)
-
 3. 将仓库成功导入到 KubeSphere 之后，在列表中可查看 ClickHouse 仓库。
 
-   ![repo-added](/images/docs/zh-cn/appstore/external-apps/deploy-clickhouse/repo-added.png)
 
 ### 步骤 3：部署 ClickHouse 集群
 
-1. 以 `project-regular` 身份登录 KubeSphere 的 Web 控制台。在 `demo-project` 项目中，进入**应用负载**下的**应用**页面，点击**部署新应用**。
+1. 以 `project-regular` 身份登录 KubeSphere 的 Web 控制台。在 `demo-project` 项目中，进入**应用负载**下的**应用**页面，点击**创建**。
 
-   ![click-deploy-new-app](/images/docs/zh-cn/appstore/external-apps/deploy-clickhouse/click-deploy-new-app.png)
-
-2. 在对话框中，选择**来自应用模板**。
-
-   ![from-app-templates](/images/docs/zh-cn/appstore/external-apps/deploy-clickhouse/from-app-templates.png)
+2. 在对话框中，选择**从应用模板**。
 
 3. 从下拉菜单中选择 `clickhouse` 应用仓库 ，然后点击 **clickhouse-cluster**。
 
-   ![clickhouse-cluster](/images/docs/zh-cn/appstore/external-apps/deploy-clickhouse/clickhouse-cluster.png)
-
-4. 在**配置文件**选项卡，可以直接通过控制台查看配置信息，也可以通过下载默认 `values.yaml` 文件查看。在**版本**列框下，选择一个版本号，点击**部署**以继续。
+4. 在**Chart 文件**选项卡，可以直接通过控制台查看配置信息，也可以通过下载默认 `values.yaml` 文件查看。在**版本**列框下，选择一个版本号，点击**安装**以继续。
    
-   ![chart-tab](/images/docs/zh-cn/appstore/external-apps/deploy-clickhouse/chart-tab.png)
-
 5. 在**基本信息**页面，确认应用名称、应用版本以及部署位置。点击**下一步**以继续。
 
-   ![basic-info](/images/docs/zh-cn/appstore/external-apps/deploy-clickhouse/basic-info.png)
-
-6. 在**应用配置**页面，可以编辑 `values.yaml` 文件，也可以直接点击**部署**使用默认配置。
-
-   ![click-deploy](/images/docs/zh-cn/appstore/external-apps/deploy-clickhouse/click-deploy.png)
+6. 在**应用配置**页面，可以编辑 `values.yaml` 文件，也可以直接点击**安装**使用默认配置。
 
 7. 等待 ClickHouse 集群正常运行。可在**工作负载**下的**应用**页面，查看部署的应用。
 
-   ![app-running](/images/docs/zh-cn/appstore/external-apps/deploy-clickhouse/app-running.png)
 
 ### 步骤 4：查看 ClickHouse 集群状态
 
@@ -120,27 +104,16 @@ weight: 14340
    
 2. 进入**应用负载**下的**工作负载**页面，点击**有状态副本集**，查看集群状态。
 
-   ![statefulsets-running](/images/docs/zh-cn/appstore/external-apps/deploy-clickhouse/statefulsets-running.png)
-
    进入一个有状态副本集群详情页面，点击**监控**标签页，可查看一定时间范围内的集群指标。
-
-   ![statefulset-monitoring](/images/docs/zh-cn/appstore/external-apps/deploy-clickhouse/statefulset-monitoring.png)
 
 3. 进入**应用负载**下的**容器组**页面，可查看所有状态的容器。
 
-   ![pods-running](/images/docs/zh-cn/appstore/external-apps/deploy-clickhouse/pods-running.png)
-
-4. 进入**存储管理**下的**存储卷**页面，可查看存储卷，所有组件均使用了持久化存储。
-
-   ![volumes](/images/docs/zh-cn/appstore/external-apps/deploy-clickhouse/volumes.png)
+4. 进入**存储**下的**存储卷**页面，可查看存储卷，所有组件均使用了持久化存储。
 
    查看某个存储卷用量信息，以其中一个数据节点为例，可以看到当前存储的存储容量和剩余容量等监控数据。
 
-   ![volume-status](/images/docs/zh-cn/appstore/external-apps/deploy-clickhouse/volume-status.png)
-
 5. 在项目**概览**页面，可查看当前项目资源使用情况。
 
-   ![project-overview](/images/docs/zh-cn/appstore/external-apps/deploy-clickhouse/project-overview.png)
 
 ### 步骤 5：访问 ClickHouse 集群
 
@@ -149,7 +122,7 @@ weight: 14340
 2. 打开终端窗口，执行如下命令，并输入 ClickHouse 集群用户名和密码。
    
    ```bash
-   kubectl edit chi <app name> -n <project name>
+   $ kubectl edit chi <app name> -n <project name>
    ```
    
    {{< notice note >}}
@@ -163,7 +136,7 @@ weight: 14340
 3. 执行如下命令，访问 ClickHouse 集群，并可通过 `show databases` 命令查看数据库。
 
    ```bash
-   kubectl exec -it <pod name> -n <project name> -- clickhouse-client --user=<user name> --password=<user password>
+   $ kubectl exec -it <pod name> -n <project name> -- clickhouse-client --user=<user name> --password=<user password>
    ```
 
    {{< notice note >}}

@@ -12,26 +12,26 @@ weight: 10140
 
 ## 准备工作
 
-- 您需要为本教程创建一个企业空间、一个项目以及一个帐户 (`project-regular`)。该帐户需要被邀请至项目中并赋予 `operator` 角色。有关更多信息，请参见[创建企业空间、项目、帐户和角色](../../../quick-start/create-workspace-and-project/)。
+- 您需要为本教程创建一个企业空间、一个项目以及一个用户 (`project-regular`)。该用户需要被邀请至项目中并赋予 `operator` 角色。有关更多信息，请参见[创建企业空间、项目、用户和角色](../../../quick-start/create-workspace-and-project/)。
 - `project-admin` 需要[设置项目网关](../../../project-administration/project-gateway/)，以便 `project-regular` 能在创建应用时定义域名。
 
 ## 构建自制应用的微服务
 
-1. 登录 KubeSphere 的 Web 控制台，导航到项目**应用负载**中的**应用**。在**自制应用**选项卡中，点击**构建自制应用**。
+1. 登录 KubeSphere 的 Web 控制台，导航到项目**应用负载**中的**应用**。在**自制应用**选项卡中，点击**创建**。
 
 2. 设置应用名称（例如 `bookinfo`）并点击**下一步**。
 
-3. 在**服务组件**页面，您需要构建自制应用的微服务。点击**添加服务**，选择**无状态服务**。
+3. 在**服务**页面，您需要构建自制应用的微服务。点击**创建服务**，选择**无状态服务**。
 
 4. 设置服务名称（例如 `productpage`）并点击**下一步**。
 
    {{< notice note >}}
 
-   您可以直接在面板上创建服务，或者启用右上角的**编辑模式**以编辑 YAML 文件。
+   您可以直接在面板上创建服务，或者启用右上角的**编辑 YAML**以编辑 YAML 文件。
 
    {{</ notice >}} 
 
-5. 点击**容器镜像**下的**添加容器镜像**，在搜索栏中输入 `kubesphere/examples-bookinfo-productpage-v1:1.13.0` 以使用 Docker Hub 镜像。
+5. 点击**容器**下的**添加容器**，在搜索栏中输入 `kubesphere/examples-bookinfo-productpage-v1:1.13.0` 以使用 Docker Hub 镜像。
 
    {{< notice note >}}
 
@@ -39,11 +39,11 @@ weight: 10140
 
    {{</ notice >}} 
 
-6. 点击**使用默认端口**。有关更多镜像设置的信息，请参见[容器镜像设置](../../../project-user-guide/application-workloads/container-image-settings/)。点击右下角的 **√** 和**下一步**以继续操作。
+6. 点击**使用默认端口**。有关更多镜像设置的信息，请参见[容器组设置](../../../project-user-guide/application-workloads/container-image-settings/)。点击右下角的 **√** 和**下一步**以继续操作。
 
-7. 在**挂载存储**页面，[添加存储卷](../../../project-user-guide/storage/volumes/)或点击**下一步**以继续操作。
+7. 在**存储卷设置**页面，[添加存储卷](../../../project-user-guide/storage/volumes/)或点击**下一步**以继续操作。
 
-8. 在**高级设置**页面，直接点击**添加**。
+8. 在**高级设置**页面，直接点击**创建**。
 
 9. 同样，为该应用添加其他三个微服务。以下是相应的镜像信息：
 
@@ -55,9 +55,7 @@ weight: 10140
 
 10. 添加微服务完成后，点击**下一步**。
 
-11. 在**外网访问**页面，点击**添加路由规则**。在**指定域名**选项卡中，为您的应用设置域名（例如 `demo.bookinfo`）并在**协议**字段选择 `http`。在`路径`一栏，选择服务 `productpage` 以及端口 `9080`。点击**确定**以继续操作。
-
-    ![route](/images/docs/zh-cn/project-user-guide/applications/create-a-microservices-based-app/route.png)
+11. 在**路由设置**页面，点击**添加路由规则**。在**指定域名**选项卡中，为您的应用设置域名（例如 `demo.bookinfo`）并在**协议**字段选择 `HTTP`。在`路径`一栏，选择服务 `productpage` 以及端口 `9080`。点击**确定**以继续操作。
 
     {{< notice note >}}
 
@@ -86,11 +84,7 @@ weight: 10140
 
 2. 在**自制应用**中，点击刚才创建的应用。
 
-3. 在**应用组件**中，点击**点击访问**以访问该应用。
-
-   ![click-to-visit](/images/docs/zh-cn/project-user-guide/applications/create-a-microservices-based-app/click-to-visit.png)
-
-   ![dashboard](/images/docs/zh-cn/project-user-guide/applications/create-a-microservices-based-app/dashboard.png)
+3. 在**资源状态**中，点击**路由**下的**访问服务**以访问该应用。
 
    {{< notice note >}}
 
@@ -99,6 +93,4 @@ weight: 10140
    {{</ notice >}}
 
 4. 分别点击 **Normal user** 和 **Test user** 以查看其他**服务**。
-
-   ![review-page](/images/docs/zh-cn/project-user-guide/applications/create-a-microservices-based-app/review-page.png)
 

@@ -11,7 +11,7 @@ This tutorial demonstrates how to integrate Harbor into KubeSphere pipelines.
 ## Prerequisites
 
 - You need to [enable the KubeSphere DevOps System](../../../pluggable-components/devops/).
-- You need to create a workspace, a DevOps project, and an account (`project-regular`). This account needs to be invited to the DevOps project with the `operator` role. See [Create Workspaces, Projects, Accounts and Roles](../../../quick-start/create-workspace-and-project/) if they are not ready.
+- You need to create a workspace, a DevOps project, and a user (`project-regular`). This account needs to be invited to the DevOps project with the `operator` role. See [Create Workspaces, Projects, Users and Roles](../../../quick-start/create-workspace-and-project/) if they are not ready.
 
 ## Install Harbor
 
@@ -26,25 +26,15 @@ helm install harbor-release harbor/harbor --set expose.type=nodePort,externalURL
 
 ## Get Harbor Credentials
 
-1. After Harbor is installed, visit `NodeIP:30002` and log in to the console with the default account and password (`admin/Harbor12345`). Go to **Projects** and click **NEW PROJECT**.
+1. After Harbor is installed, visit `<NodeIP>:30002` and log in to the console with the default account and password (`admin/Harbor12345`). Click **Projects** in the left navigation pane and click **NEW PROJECT** on the **Projects** page.
 
-   ![harbor-projects](/images/docs/devops-user-guide/tool-integration/integrate-harbor-into-pipeline/harbor-projects.jpg)
+2. In the displayed dialog box, set a name (`ks-devops-harbor`) and click **OK**.
 
-2. Set a name (`ks-devops-harbor`) and click **OK**.
+3. Click the project you just created, and click **NEW ROBOT ACCOUNT** under the **Robot Accounts** tab.
 
-   ![set-name](/images/docs/devops-user-guide/tool-integration/integrate-harbor-into-pipeline/set-name.png)
+4. In the displayed dialog box, set a name (`robot-test`) for the robot account and click **SAVE**. Make sure you select the checkbox for pushing artifact in **Permissions**. 
 
-3. Click the project you just created, and select **NEW ROBOT ACCOUNT** in **Robot Accounts**.
-
-   ![robot-account](/images/docs/devops-user-guide/tool-integration/integrate-harbor-into-pipeline/robot-account.png)
-
-4. Set a name (`robot-test`) for the robot account and save it.
-
-   ![robot-account-name](/images/docs/devops-user-guide/tool-integration/integrate-harbor-into-pipeline/robot-account-name.png)
-
-5. Click **EXPORT TO FILE** to save the token.
-
-   ![export-to-file](/images/docs/devops-user-guide/tool-integration/integrate-harbor-into-pipeline/export-to-file.png)
+5. In the displayed dialog box, click **EXPORT TO FILE** to save the token.
 
 ## Enable Insecure Registry
 
@@ -79,13 +69,9 @@ You have to configure Docker to disregard security for your Harbor registry.
 
 ## Create Credentials
 
-1. Log in to KubeSphere as `project-regular`, go to your DevOps project and create credentials for Harbor in **Credentials** under **Project Management**.
+1. Log in to KubeSphere as `project-regular`, go to your DevOps project and create credentials for Harbor in **Credentials** under **DevOps Project Settings**.
 
-   ![create-credentials](/images/docs/devops-user-guide/tool-integration/integrate-harbor-into-pipeline/create-credentials.png)
-
-2. On the **Create Credentials** page, set a credential ID (`robot-test`) and select **Account Credentials** for **Type**. The **Username** field must be the same as the value of `name` in the JSON file you just downloaded and enter the value of `token` in the file for **Token/Password**.
-
-   ![credentials-page](/images/docs/devops-user-guide/tool-integration/integrate-harbor-into-pipeline/credentials-page.png)
+2. On the **Create Credentials** page, set a credential ID (`robot-test`) and select **Username and password** for **Type**. The **Username** field must be the same as the value of `name` in the JSON file you just downloaded and enter the value of `token` in the file for **Password/Token**.
 
 3. Click **OK** to save it.
 
@@ -93,17 +79,11 @@ You have to configure Docker to disregard security for your Harbor registry.
 
 1. Go to the **Pipelines** page and click **Create**. In the **Basic Information** tab, enter a name (`demo-pipeline`) for the pipeline and click **Next**.
 
-   ![basic-info](/images/docs/devops-user-guide/tool-integration/integrate-harbor-into-pipeline/basic-info.png)
-
 2. Use default values in **Advanced Settings** and click **Create**.
-
-   ![advanced-settings](/images/docs/devops-user-guide/tool-integration/integrate-harbor-into-pipeline/advanced-settings.png)
 
 ## Edit the Jenkinsfile
 
-1. Click the pipeline to go to its detail page and click **Edit Jenkinsfile**.
-
-   ![edit-jenkinsfile](/images/docs/devops-user-guide/tool-integration/integrate-harbor-into-pipeline/edit-jenkinsfile.png)
+1. Click the pipeline to go to its details page and click **Edit Jenkinsfile**.
 
 2. Copy and paste the following contents into the Jenkinsfile. Note that you must replace the values of `REGISTRY`, `HARBOR_NAMESPACE`, `APP_NAME`, and `HARBOR_CREDENTIAL` with your own values.
 
@@ -160,6 +140,5 @@ You have to configure Docker to disregard security for your Harbor registry.
 
 ## Run the Pipeline
 
-Save the Jenkinsfile and KubeSphere automatically creates all stages and steps on the graphical editing panel. Click **Run** to run the pipeline. If everything goes well, the image will be pushed to your Harbor registry by Jenkins.
+Save the Jenkinsfile and KubeSphere automatically creates all stages and steps on the graphical editing panel. Click **Run** to run the pipeline. If everything goes well, the image is pushed to your Harbor registry by Jenkins.
 
-![image-pushed](/images/docs/devops-user-guide/tool-integration/integrate-harbor-into-pipeline/image-pushed.png)

@@ -33,4 +33,4 @@ Docker 创始人曾在推特上表示，如果WebAssembly 和 WASI 在2008年就
 
 ## 下载 PPT
 
-可扫描官网底部二维码，关注 「KubeSphere 云原生」公众号，后台回复 “PPT” 即可下载 PPT。
+可扫描官网底部二维码，关注 「KubeSphere云原生」公众号，后台回复 “PPT” 即可下载 PPT。

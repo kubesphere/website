@@ -79,19 +79,15 @@ weight: 11310
    ```bash
    $ kubectl get pod -n kubesphere-devops-system
    NAME                                       READY   STATUS    RESTARTS   AGE
-   ks-jenkins-68b8949bb-7zwg4                 1/1     Running   0          84m
+   devops-jenkins-68b8949bb-7zwg4                 1/1     Running   0          84m
    s2ioperator-0                              1/1     Running   1          84m
    sonarqube-postgresql-0                     1/1     Running   0          5m31s
    sonarqube-sonarqube-bb595d88b-97594        1/1     Running   2          5m31s
    ```
 
-2. 在浏览器中访问 SonarQube 控制台 `http://{$Node IP}:{$NodePort}`，您可以看到其主页，如下所示：
-
-   ![访问 SonarQube 控制台](/images/docs/zh-cn/devops-user-guide/tool-integration/integrate-sonarqube-into-pipelines/access-sonarqube-console.png)
+2. 在浏览器中访问 SonarQube 控制台 `http://<Node IP>:<NodePort>`。
 
 3. 点击右上角的 **Log in**，然后使用默认帐户 `admin/admin` 登录。
-
-   ![登录页面](/images/docs/zh-cn/devops-user-guide/tool-integration/integrate-sonarqube-into-pipelines/log-in-page.png)
 
    {{< notice note >}}
 
@@ -124,7 +120,7 @@ weight: 11310
 1. 执行以下命令获取 SonarQube Webhook 的地址。
 
    ```bash
-   export NODE_PORT=$(kubectl get --namespace kubesphere-devops-system -o jsonpath="{.spec.ports[0].nodePort}" services ks-jenkins)
+   export NODE_PORT=$(kubectl get --namespace kubesphere-devops-system -o jsonpath="{.spec.ports[0].nodePort}" services devops-jenkins)
    export NODE_IP=$(kubectl get nodes --namespace kubesphere-devops-system -o jsonpath="{.items[0].status.addresses[0].address}")
    echo http://$NODE_IP:$NODE_PORT/sonarqube-webhook/
    ```
@@ -143,7 +139,7 @@ weight: 11310
 
    ![SonarQube Webhook-2](/images/docs/zh-cn/devops-user-guide/tool-integration/integrate-sonarqube-into-pipelines/sonarqube-webhook-2.png)
 
-5. 在弹出对话框中输入 **Name** 和 **Jenkins Console URL**（即 SonarQube Webhook 地址）。点击 **Create** 完成操作。
+5. 在弹出的对话框中输入 **Name** 和 **Jenkins Console URL**（即 SonarQube Webhook 地址）。点击 **Create** 完成操作。
 
    ![Webhook 页面信息](/images/docs/zh-cn/devops-user-guide/tool-integration/integrate-sonarqube-into-pipelines/webhook-page-info.png)
 
@@ -178,7 +174,7 @@ weight: 11310
 1. 执行以下命令获取 Jenkins 的地址。
 
    ```bash
-   export NODE_PORT=$(kubectl get --namespace kubesphere-devops-system -o jsonpath="{.spec.ports[0].nodePort}" services ks-jenkins)
+   export NODE_PORT=$(kubectl get --namespace kubesphere-devops-system -o jsonpath="{.spec.ports[0].nodePort}" services devops-jenkins)
    export NODE_IP=$(kubectl get nodes --namespace kubesphere-devops-system -o jsonpath="{.items[0].status.addresses[0].address}")
    echo http://$NODE_IP:$NODE_PORT
    ```
@@ -189,9 +185,7 @@ weight: 11310
    http://10.77.1.201:30180
    ```
 
-3. 请使用地址 `http://{$Public IP}:30180` 访问 Jenkins。安装 KubeSphere 时，默认情况下也会安装 Jenkins 仪表板。此外，Jenkins 还配置有 KubeSphere LDAP，这意味着您可以直接使用 KubeSphere 帐户（例如 `admin/P@88w0rd`）登录 Jenkins。有关配置 Jenkins 的更多信息，请参见 [Jenkins 系统设置](../../../devops-user-guide/how-to-use/jenkins-setting/)。
-
-   ![Jenkins 登录页面](/images/docs/zh-cn/devops-user-guide/tool-integration/integrate-sonarqube-into-pipelines/jenkins-login-page.png)
+3. 请使用地址 `http://<Node IP>:30180` 访问 Jenkins。安装 KubeSphere 时，默认情况下也会安装 Jenkins 仪表板。此外，Jenkins 还配置有 KubeSphere LDAP，这意味着您可以直接使用 KubeSphere 帐户（例如 `admin/P@88w0rd`）登录 Jenkins。有关配置 Jenkins 的更多信息，请参见 [Jenkins 系统设置](../../../devops-user-guide/how-to-use/jenkins-setting/)。
 
    {{< notice note >}}
 
@@ -199,19 +193,13 @@ weight: 11310
 
    {{</ notice >}} 
 
-4. 点击左侧的**系统管理**。
-
-   ![管理 Jenkins](/images/docs/zh-cn/devops-user-guide/tool-integration/integrate-sonarqube-into-pipelines/manage-jenkins.png)
+4. 点击左侧导航栏中的**系统管理**。
 
 5. 向下翻页找到并点击**系统配置**。
 
-   ![configure-system](/images/docs/zh-cn/devops-user-guide/tool-integration/integrate-sonarqube-into-pipelines/configure-system.png)
-
 6. 搜寻到 **SonarQube servers**，然后点击 **Add SonarQube**。
 
-   ![添加 SonarQube](/images/docs/zh-cn/devops-user-guide/tool-integration/integrate-sonarqube-into-pipelines/add-sonarqube.png)
-
-7. 输入 **Name** 和 **Server URL** (`http://{$Node IP}:{$NodePort}`)。点击**添加**，选择 **Jenkins**，然后在弹出对话框中用 SonarQube 管理员令牌创建凭证（如下方第二张截图所示）。创建凭证后，从 **Server authentication token** 旁边的下拉列表中选择该凭证。点击**应用**完成操作。
+7. 输入 **Name** 和 **Server URL** (`http://<Node IP>:<NodePort>`)。点击**添加**，选择 **Jenkins**，然后在弹出的对话框中用 SonarQube 管理员令牌创建凭证（如下方第二张截图所示）。创建凭证后，从 **Server authentication token** 旁边的下拉列表中选择该凭证。点击**应用**完成操作。
 
    ![sonarqube-jenkins-settings](/images/docs/zh-cn/devops-user-guide/tool-integration/integrate-sonarqube-into-pipelines/sonarqube-jenkins-settings.png)
    
@@ -233,17 +221,13 @@ weight: 11310
    kubectl edit  cm -n kubesphere-system  ks-console-config
    ```
 
-2. 搜寻到 `client`，添加 `devops` 字段并指定 `sonarqubeURL`。 
+2. 搜寻到 `data.client.enableKubeConfig`，在下方添加 `devops` 字段并指定 `sonarqubeURL`。 
 
    ```bash
    client:
-     version:
-       kubesphere: v3.0.0
-       kubernetes: v1.17.9
-       openpitrix: v0.3.5
      enableKubeConfig: true
-     devops: # Add this field manually.
-       sonarqubeURL: http://10.77.1.201:31377 # The SonarQube IP address.
+     devops: # 手动添加该字段。
+       sonarqubeURL: http://10.77.1.201:31377 # SonarQube IP 地址。
    ```
 
 3. 保存该文件。
@@ -253,14 +237,14 @@ weight: 11310
 执行以下命令。
 
 ```bash
-kubectl -n kubesphere-system rollout restart deploy ks-apiserver
+kubectl -n kubesphere-devops-system rollout restart deploy devops-apiserver
 ```
 
 ```bash
 kubectl -n kubesphere-system rollout restart deploy ks-console
 ```
 
-## 为新工程创建 SonarQube Token
+## 为新项目创建 SonarQube Token
 
 您需要一个 SonarQube 令牌，以便您的流水线可以在运行时与 SonarQube 通信。
 
@@ -268,11 +252,11 @@ kubectl -n kubesphere-system rollout restart deploy ks-console
 
    ![SonarQube 创建项目](/images/docs/zh-cn/devops-user-guide/tool-integration/integrate-sonarqube-into-pipelines/sonarqube-create-project.png)
 
-2. 输入工程密钥，例如 `java-demo`，然后点击 **Set Up**。
+2. 输入项目密钥，例如 `java-demo`，然后点击 **Set Up**。
 
    ![Jenkins 项目密钥](/images/docs/zh-cn/devops-user-guide/tool-integration/integrate-sonarqube-into-pipelines/jenkins-projet-key.png)
 
-3. 输入工程名称，例如 `java-sample`，然后点击 **Generate**。
+3. 输入项目名称，例如 `java-sample`，然后点击 **Generate**。
 
    ![创建令牌](/images/docs/zh-cn/devops-user-guide/tool-integration/integrate-sonarqube-into-pipelines/generate-a-token.png)
 
@@ -286,6 +270,4 @@ kubectl -n kubesphere-system rollout restart deploy ks-console
 
 ## 在 KubeSphere 控制台查看结果
 
-您[使用图形编辑面板创建流水线](../../how-to-use/create-a-pipeline-using-graphical-editing-panel/)或[使用 Jenkinsfile 创建流水线](../../how-to-use/create-a-pipeline-using-jenkinsfile/)之后，可以查看代码质量分析的结果。如果 SonarQube 成功运行，您可能会看到下图所示结果。
-
-![code-analysis](/images/docs/zh-cn/devops-user-guide/tool-integration/integrate-sonarqube-into-pipelines/code-analysis.png)
+您[使用图形编辑面板创建流水线](../../how-to-use/create-a-pipeline-using-graphical-editing-panel/)或[使用 Jenkinsfile 创建流水线](../../how-to-use/create-a-pipeline-using-jenkinsfile/)之后，可以查看代码质量分析的结果。

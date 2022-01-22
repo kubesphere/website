@@ -10,13 +10,11 @@ Credentials are objects containing sensitive information, such as usernames and 
 
 A DevOps project user with necessary permissions can configure credentials for Jenkins pipelines. Once the user adds or configures these credentials in a DevOps project, they can be used in the DevOps project to interact with third-party applications.
 
-Currently, you can store the following 4 types of credentials in a DevOps project:
+Currently, you can create the following 4 types of credentials in a DevOps project:
 
-![create-credential-page](/images/docs/devops-user-guide/using-devops/credential-management/create-credential-page.png)
-
-- **Account Credentials**: Username and password which can be handled as separate components or as a colon-separated string in the format `username:password`, such as accounts of GitHub, GitLab, and Docker Hub.
-- **SSH**: Username with a private key, an SSH public/private key pair.
-- **Secret Text**: Secret content in a file.
+- **Username and password**: Username and password which can be handled as separate components or as a colon-separated string in the format `username:password`, such as accounts of GitHub, GitLab, and Docker Hub.
+- **SSH key**: Username with a private key, an SSH public/private key pair.
+- **Access token**: a token with certain access.
 - **kubeconfig**: It is used to configure cross-cluster authentication. If you select this type, the dialog will auto-populate the field with the kubeconfig file of the current Kubernetes cluster.
 
 This tutorial demonstrates how to create and manage credentials in a DevOps project. For more information about how credentials are used, see [Create a Pipeline Using a Jenkinsfile](../create-a-pipeline-using-jenkinsfile/) and [Create a Pipeline Using Graphical Editing Panels](../create-a-pipeline-using-graphical-editing-panel/).
@@ -24,31 +22,27 @@ This tutorial demonstrates how to create and manage credentials in a DevOps proj
 ## Prerequisites
 
 - You have enabled [KubeSphere DevOps System](../../../pluggable-components/devops/).
-- You have a workspace, a DevOps project and an account (`project-regular`) invited to the DevOps project with the `operator` role. If they are not ready yet, see [Create Workspaces, Projects, Accounts and Roles](../../../quick-start/create-workspace-and-project/).
+- You have a workspace, a DevOps project and a user (`project-regular`) invited to the DevOps project with the `operator` role. If they are not ready yet, see [Create Workspaces, Projects, Users and Roles](../../../quick-start/create-workspace-and-project/).
 
 ## Create Credentials
 
-Log in to the console of KubeSphere as `project-regular`. Navigate to your DevOps project, choose **Credentials** and click **Create**.
-
-![create-credential-step1](/images/docs/devops-user-guide/using-devops/credential-management/create-credential-step1.png)
+Log in to the console of KubeSphere as `project-regular`. Navigate to your DevOps project, select **Credentials** and click **Create**.
 
 ### Create Docker Hub credentials
 
-1. In the dialog that appears, provide the following information.
+1. In the displayed dialog box, provide the following information.
 
-   ![dockerhub-credentials](/images/docs/devops-user-guide/using-devops/credential-management/dockerhub-credentials.png)
-
-   - **Credential ID**:  Set an ID, such as `dockerhub-id`, which can be used in pipelines.
-   - **Type**: Select **Account Credentials**.
-   - **Username**: Your Docker Hub account (i.e Docker ID).
-   - **Token/Password**: Your Docker Hub password.
+   - **Name**: Set a name, such as `dockerhub-id`, which can be used in pipelines.
+   - **Type**: Select **Username and password**.
+   - **Username**: Your Docker Hub account (for example, Docker ID).
+   - **Password/Token**: Your Docker Hub password.
    - **Description**: A brief introduction to the credentials.
 
 2. Click **OK** when you finish.
 
 ### Create GitHub credentials
 
-Similarly, follow the same steps above to create GitHub credentials. Set a different Credential ID (for example, `github-id`) and also select **Account Credentials** for **Type**. Enter your GitHub username and password for **Username** and **Token/Password** respectively.
+Similarly, follow the same steps above to create GitHub credentials. Set a different credential name (for example, `github-id`) and also select **Username and password** for **Type**. Enter your GitHub username and password for **Username** and **Password/Token** respectively.
 
 {{< notice note >}}
 
@@ -58,7 +52,7 @@ If there are any special characters such as `@` and `$` in your account or passw
 
 ### Create kubeconfig credentials
 
-Similarly, follow the same steps above to create kubeconfig credentials. Set a different Credential ID (for example, `demo-kubeconfig`) and select **kubeconfig**.
+Similarly, follow the same steps above to create kubeconfig credentials. Set a different credential name (for example, `demo-kubeconfig`) and select **kubeconfig**.
 
 {{< notice info >}}
 
@@ -68,17 +62,11 @@ A file that is used to configure access to clusters is called a kubeconfig file.
 
 ## View and Manage Credentials
 
-1. Credentials created appear in the list as below.
+1. Credentials created are displayed in the list.
 
-   ![credentials-list](/images/docs/devops-user-guide/using-devops/credential-management/credentials-list.png)
-
-2. Click any of them to go to its detail page, where you can see account details and all the events related to the credentials.
-
-   ![credential-detail-page](/images/docs/devops-user-guide/using-devops/credential-management/credential-detail-page.png)
+2. Click any of them to go to its details page, where you can see account details and all the events related to the credentials.
 
 3. You can also edit or delete credentials on this page. Note that when you edit credentials, KubeSphere does not display the existing username or password information. The previous one will be overwritten if you enter a new username and password.
-
-   ![edit-credentials](/images/docs/devops-user-guide/using-devops/credential-management/edit-credentials.png)
 
 ## See Also
 

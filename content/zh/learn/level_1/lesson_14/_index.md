@@ -1,10 +1,10 @@
 ---
-linkTitle: KubeSphere 上发布单容器应用
+linkTitle: 提交改变
 weight: 14
 
 _build:
     render: false
 
-profit: 了解 KubeSphere 发布容器应用的基本操作  
-time: 2020-10-13 20:00-20:40
+profit: 将容器保存为镜像
+time: 2021-12-18 20:00-20:40
 ---

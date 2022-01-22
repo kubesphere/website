@@ -1,7 +1,10 @@
 approvers:
+    - Felixnoo #oncall
     - Patrick-LuoYu #oncall
     - zryfish
     - rayzhou2017
+    - faweizhao26
+    - yangchuansheng
     - FeynmanZhou
 
 reviewers:

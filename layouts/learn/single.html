@@ -25,57 +25,55 @@
                 </div>
             {{ end }}
         </div>
-        <div class="right">
+        <div class="right" id="lesson">
             {{ $relPermalink := .RelPermalink }}
 
             {{ with .Site.GetPage "/learn" }}
-                {{ range .Sections }}
+            {{ range .Sections }}
+            <div class="sections">
+                <div class="sectionFolder">
+                    <span class="text">{{ .LinkTitle }}</span>
+                    <span class="icon"></span>
+                </div>
+                <ul id="list" class="hideLesson">
                     {{ range .Sections}}
-                        <div class="lesson-div">
-                            <p class='{{ if eq (.GetPage "video").RelPermalink $relPermalink }}active{{ end }}'>
-                                <a href='{{ (.GetPage "video").RelPermalink }}'>
-                                    {{ .LinkTitle }}
-                                    {{ if eq (.GetPage "video").RelPermalink $relPermalink }}
-                                    <span id="play-icon" class="play-span">
-                                        <span></span>
-                                        <span></span>
-                                        <span></span>
-                                    </span>
-                                    {{ else }}
-                                    <span class="icon"></span>
-                                    {{ end }}
-                                </a>
-                            </p>
-                            <div class="lesson-link-div">
-                                {{ with .GetPage "content" }}
-                                <a class="lesson {{ if eq .RelPermalink $relPermalink }} active {{ end }}" href="{{ .RelPermalink }}">
-                                    <span></span>
-                                    <p>{{ i18n "warnGraphic explanation" }}</p>
-                                </a>
-                                {{ end }}
+                    <li class="{{ if eq (.GetPage " video").RelPermalink $relPermalink }}activeLine{{ end }}">
+                        <a class="textLink" href='{{ (.GetPage "video").RelPermalink }}'>
+                            <span class="videoIcon"></span>
+                            <span class="text" title="{{ .LinkTitle }}">{{ .LinkTitle }}</span>
+                        </a>
+                        <div class="actions">
+                            {{ with .GetPage "content" }}
+                            <a class="picture {{ if eq .RelPermalink $relPermalink }} activePicture {{ end }}"
+                                href="{{ .RelPermalink }}">
+                                <div class="tooltip">{{ i18n "warnGraphic explanation" }}</div>
+                            </a>
+                            {{ end }}
 
-                                {{ with .GetPage "courseware" }}
-                                <a class="courseware {{ if eq .RelPermalink $relPermalink }} active {{ end }}" href="{{ .RelPermalink }}">
-                                    <span></span>
-                                    <p>{{ i18n "PPT courseware" }}</p>
-                                </a>
-                                {{ end }}
-                                
-                                {{ with .GetPage "examination" }}
-                                <a class="examination {{ if eq .RelPermalink $relPermalink }} active {{ end }}" href="{{ .RelPermalink }}">
-                                    <span></span>
-                                    <p>{{ i18n "Self-test" }}</p>
-                                </a>
-                                {{ end }}
-                            </div>
+                            {{/*  The follows function has not yet been activated  */}}
+                            {{/*  and styles need update  */}}
+                            {{ with .GetPage "courseware" }}
+                            <a class="ppt {{ if eq .RelPermalink $relPermalink }} activeCourseware {{ end }}"
+                                href="{{ .RelPermalink }}">
+                                <div class="tooltip">{{ i18n "PPT courseware" }}</div>
+                            </a>
+                            {{ end }}
+
+                            {{ with .GetPage "examination" }}
+                            <a class="download {{ if eq .RelPermalink $relPermalink }} activeExamination {{ end }}"
+                                href="{{ .RelPermalink }}">
+                                <div class="tooltip">{{ i18n "Self-test" }}</div>
+                            </a>
+                            {{ end }}
                         </div>
-                        
+                    </li>
                     {{ end }}
-                {{ end }}
-            {{ end }} 
+                </ul>
+            </div>
+            {{ end }}
+            {{ end }}
         </div>
     </div>
-    
 </section>
 <script>
     var icon = $("#play-icon")
@@ -87,5 +85,30 @@
     var handlePauseVideo = function() {
         icon.removeClass('playing')
     }
+
+    var autoOpenFolder = function () {
+        const lessonList = $('#lesson').children()
+        lessonList.each((index, item) => {
+            const sectionFolder = $(item).children('.sectionFolder')
+            const activeVideo = $(item).find('li.activeLine')
+            const isPicture = $(item).find('.activePicture')
+            // open menu folder
+            if (activeVideo.length > 0 || isPicture.length > 0) {
+                sectionFolder.addClass('active')
+                sectionFolder.next().removeClass('hideLesson')
+            }
+            if (isPicture.length > 0) {
+                $(isPicture[0]).parents('li').removeClass('pptActive').addClass('pptActive')
+            }
+            // control menu opening and closing 
+            sectionFolder.on('click', function () {
+                sectionFolder.toggleClass('active')
+                const ulList = sectionFolder.next()
+                ulList.toggleClass('hideLesson')
+            })
+        })
+    }
+
+    autoOpenFolder()
 </script>
 {{ end }}

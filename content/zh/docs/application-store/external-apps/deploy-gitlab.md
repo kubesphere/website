@@ -13,47 +13,32 @@ weight: 14310
 ## 准备工作
 
 - 您需要启用 [OpenPitrix 系统](../../../pluggable-components/app-store/)。
-- 您需要为本教程创建一个企业空间、一个项目以及两个帐户（`ws-admin` 和 `project-regular`）。在企业空间中，`ws-admin` 帐户必须被赋予 `workspace-admin` 角色，`project-regular` 帐户必须被赋予 `operator` 角色。如果还未创建好，请参考[创建企业空间、项目、帐户和角色](../../../quick-start/create-workspace-and-project/)。
+- 您需要为本教程创建一个企业空间、一个项目以及两个帐户（`ws-admin` 和 `project-regular`）。在企业空间中，`ws-admin` 帐户必须被赋予 `workspace-admin` 角色，`project-regular` 帐户必须被赋予 `operator` 角色。如果还未创建好，请参考[创建企业空间、项目、用户和角色](../../../quick-start/create-workspace-and-project/)。
 
 ## 动手实验
 
 ### 步骤 1：添加应用仓库
 
-1. 以 `ws-admin` 身份登录 KubeSphere。在企业空间中，访问**应用管理**下的**应用仓库**，然后点击**添加仓库**。
-
-   ![add-repo](/images/docs/zh-cn/appstore/external-apps/deploy-gitlab/add-repo.png)
+1. 以 `ws-admin` 身份登录 KubeSphere。在企业空间中，访问**应用管理**下的**应用仓库**，然后点击**添加**。
 
 2. 在出现的对话框中，输入 `main` 作为应用仓库名称，输入 `https://charts.kubesphere.io/main` 作为应用仓库 URL。点击**验证**来验证 URL，如果可用，则会在 URL 右侧看到一个绿色的对号。点击**确定**继续操作。
 
-   ![add-main-repo](/images/docs/zh-cn/appstore/external-apps/deploy-gitlab/add-main-repo.png)
-
 3. 仓库成功导入到 KubeSphere 后，会显示在列表里。
 
-   ![added-main-repo](/images/docs/zh-cn/appstore/external-apps/deploy-gitlab/added-main-repo.png)
 
 ### 步骤 2：部署 GitLab
 
-1. 登出 KubeSphere，再以 `project-regular` 登录。在您的项目中，访问**应用负载**下的**应用**，然后点击**部署新应用**。
+1. 登出 KubeSphere，再以 `project-regular` 登录。在您的项目中，访问**应用负载**下的**应用**，然后点击**创建**。
 
-   ![deploy-app](/images/docs/zh-cn/appstore/external-apps/deploy-gitlab/deploy-app.png)
-
-2. 在出现的对话框中，选择**来自应用模板**。
-
-   ![from-app-templates](/images/docs/zh-cn/appstore/external-apps/deploy-gitlab/from-app-templates.png)
+2. 在出现的对话框中，选择**从应用模板**。
 
 3. 从下拉菜单中选择 `main`，然后点击 **gitlab**。
 
-   ![click-gitlab](/images/docs/zh-cn/appstore/external-apps/deploy-gitlab/click_gitlab.png)
-
-4. 在**应用信息**选项卡和**配置文件**选项卡，可以看到控制台的默认配置。点击**部署**继续。
-
-   ![view-config](/images/docs/zh-cn/appstore/external-apps/deploy-gitlab/view_config.png)
+4. 在**应用信息**选项卡和**Chart 文件**选项卡，可以看到控制台的默认配置。点击**安装**继续。
 
 5. 在**基本信息**页面，可以看到应用名称、应用版本以及部署位置。本教程使用 `4.2.3 [13.2.2]` 版本。点击**下一步**继续。
 
-   ![basic-info](/images/docs/zh-cn/appstore/external-apps/deploy-gitlab/basic_info.png)
-
-6. 在**应用配置**页面，使用以下配置替换默认配置，然后点击**部署**。
+6. 在**应用设置**页面，使用以下配置替换默认配置，然后点击**安装**。
 
    ```yaml
    global:
@@ -67,8 +52,6 @@ weight: 14310
          enabled: false
    ```
    
-   ![change-value](/images/docs/zh-cn/appstore/external-apps/deploy-gitlab/change_value.png)
-
    {{< notice note >}}
 
    `demo-project` 指的是部署 GitLab 的项目名称，请确保使用您自己的项目名称。
@@ -77,13 +60,7 @@ weight: 14310
 
 7. 等待 GitLab 正常运行。
 
-   ![gitlab-running](/images/docs/zh-cn/appstore/external-apps/deploy-gitlab/gitlab-running.png)
-
 8. 访问**工作负载**，可以看到为 GitLab 创建的所有部署和有状态副本集。
-
-   ![deployments-running](/images/docs/zh-cn/appstore/external-apps/deploy-gitlab/deployments-running.png)
-
-   ![statefulsets-running](/images/docs/zh-cn/appstore/external-apps/deploy-gitlab/statefulsets-running.png)
 
    {{< notice note >}}
 
@@ -93,13 +70,10 @@ weight: 14310
 
 ### 步骤 3：获取 root 用户的密码
 
-1. 访问**配置中心**的密钥，在搜索栏输入 `gitlab-initial-root-password`，然后按下键盘上的**回车键**来搜索密钥。
-
-   ![search-secret](/images/docs/zh-cn/appstore/external-apps/deploy-gitlab/search-secret.png)
+1. 选择**配置** > **保密字典**，在搜索栏输入 `gitlab-initial-root-password`，然后按下键盘上的**回车键**来搜索密钥。
 
 2. 点击密钥访问其详情页，然后点击右上角的 <img src="/images/docs/zh-cn/appstore/external-apps/deploy-gitlab/eye-icon.png" width="20px" /> 查看密码。请确保将密码进行复制。
 
-   ![password](/images/docs/zh-cn/appstore/external-apps/deploy-gitlab/initial-password.png)
 
 ### 步骤 4：编辑 hosts 文件
 
@@ -127,8 +101,6 @@ weight: 14310
 ### 步骤 5：访问 GitLab
 
 1. 访问**应用负载**下的**服务**，在搜索栏输入 `nginx-ingress-controller`，然后按下键盘上的**回车键**搜索该服务，可以看到通过端口 `31246` 暴露的服务，您可以使用该端口访问 GitLab。
-
-   ![search-service](/images/docs/zh-cn/appstore/external-apps/deploy-gitlab/search-service.png)
 
    {{< notice note >}}
 

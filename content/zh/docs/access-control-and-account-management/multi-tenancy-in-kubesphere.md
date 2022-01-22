@@ -6,7 +6,6 @@ linkTitle: "KubeSphere 中的多租户"
 weight: 12100
 ---
 
-
 Kubernetes 解决了应用编排、容器调度的难题，极大地提高了资源的利用率。有别于传统的集群运维方式，在使用 Kubernetes 的过程中，企业和个人用户在资源共享和安全性方面均面临着诸多挑战。
 
 首当其冲的就是企业环境中多租户形态该如何定义，租户的安全边界该如何划分。Kubernetes 社区[关于多租户的讨论](https://docs.google.com/document/d/1fj3yzmeU2eU8ZNBCUJG97dk_wC7228-e_MmdcmTNrZY)从未停歇，但到目前为止最终的形态尚无定论。
@@ -37,12 +36,10 @@ Kubernetes 解决了应用编排、容器调度的难题，极大地提高了资
 
 与 Kubernetes 相同，KubeSphere 通过 RBAC 对用户的权限加以控制，实现逻辑层面的资源隔离。
 
-![rbac](/images/docs/zh-cn/access-control-and-account-management/multi-tanancy-in-kubesphere/rbac.png)
-
 KubeSphere 中的权限控制分为平台、企业空间、项目三个层级，通过角色来控制用户在不同层级的资源访问权限。
 
 1. [平台角色](../../quick-start/create-workspace-and-project/)：主要控制用户对平台资源的访问权限，如集群的管理、企业空间的管理、平台用户的管理等。
-2. [企业空间角色](../../workspace-administration/role-and-member-management/)：主要控制企业空间成员在企业空间下的资源访问权限，如企业空间下项目、DevOps 工程的管理等。
+2. [企业空间角色](../../workspace-administration/role-and-member-management/)：主要控制企业空间成员在企业空间下的资源访问权限，如企业空间下项目、DevOps 项目的管理等。
 3. [项目角色](../../project-administration/role-and-member-management/)：主要控制项目下资源的访问权限，如工作负载的管理、流水线的管理等。
 
 ### 网络隔离

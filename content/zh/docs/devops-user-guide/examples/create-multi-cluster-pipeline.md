@@ -12,11 +12,11 @@ weight: 11440
 
 ## 准备工作
 
-- 准备三个已安装 KubeSphere 的 Kubernetes 集群，选择一个集群作为 Host 集群，其余两个作为 Member 集群。更多关于集群角色与如何在 KubeSphere 上启用多集群环境，请参见[多集群管理](../../../multicluster-management/)。
-- 将 Member 集群设置为[公开集群](../../../cluster-administration/cluster-settings/cluster-visibility-and-authorization/#将集群设置为公开集群)。或者，您可以[在工作空间创建之后设置集群可见性](../../../cluster-administration/cluster-settings/cluster-visibility-and-authorization/#在创建企业空间后设置集群可见性)。
-- 在 Host 集群上[启用 KubeSphere DevOps 系统](../../../pluggable-components/devops/)。
+- 准备三个已安装 KubeSphere 的 Kubernetes 集群，选择一个集群作为主集群，其余两个作为成员集群。更多关于集群角色与如何在 KubeSphere 上启用多集群环境，请参见[多集群管理](../../../multicluster-management/)。
+- 将成员集群设置为[公开集群](../../../cluster-administration/cluster-settings/cluster-visibility-and-authorization/#将集群设置为公开集群)。或者，您可以[在创建企业空间之后设置集群可见性](../../../cluster-administration/cluster-settings/cluster-visibility-and-authorization/#在创建企业空间后设置集群可见性)。
+- 在主集群上[启用 KubeSphere DevOps 系统](../../../pluggable-components/devops/)。
 - 整合 SonarQube 进入流水线。有关更多信息，请参见[将 SonarQube 集成到流水线](../../how-to-integrate/sonarqube/)。
-- 在 Host 集群创建四个帐户： `ws-manager`、`ws-admin`、`project-admin` 和 `project-regular`，然后授予他们不同的角色。有关详细信息，请参见[创建企业空间、项目、帐户和角色](../../../quick-start/create-workspace-and-project/#step-1-create-an-account)。
+- 在主集群创建四个帐户： `ws-manager`、`ws-admin`、`project-admin` 和 `project-regular`，然后授予他们不同的角色。有关详细信息，请参见[创建企业空间、项目、用户和角色](../../../quick-start/create-workspace-and-project/#step-1-create-an-account)。
 
 ## 工作流程概述
 
@@ -34,39 +34,31 @@ weight: 11440
 
 | 集群名称 | 集群角色    | 用途 |
 | -------- | ----------- | ---- |
-| host     | Host 集群   | 测试 |
-| shire    | Member 集群 | 生产 |
-| rohan    | Member 集群 | 开发 |
+| host     | 主集群   | 测试 |
+| shire    | 成员集群 | 生产 |
+| rohan    | 成员集群 | 开发 |
 
 {{< notice note >}}
 
-这些 Kubernetes 集群可以被托管至不同的云厂商，也可以使用不同的 Kubernetes 版本。针对 KubeSphere  v3.1.0 推荐的 Kubernetes 版本：v1.17.9、v1.18.8、v1.19.8 和 v1.20.4。
+这些 Kubernetes 集群可以被托管至不同的云厂商，也可以使用不同的 Kubernetes 版本。针对 KubeSphere 3.2.1 推荐的 Kubernetes 版本：v1.19.x、v1.20.x、v1.21.x 和 v1.22.x（实验性支持）。
 
 {{</ notice >}}
 
 ### 步骤 2：创建企业空间
 
-1. 使用 `ws-manager` 帐户登录 Host 集群的 Web 控制台。在**企业空间**页面中，点击**创建**。
+1. 使用 `ws-manager` 帐户登录主集群的 Web 控制台。在**企业空间**页面中，点击**创建**。
 
 2. 在**基本信息**页面中，将企业空间命名为 `devops-multicluster`，选择 `ws-admin` 为**管理员**，然后点击**下一步**。
 
-   ![create-workspace](/images/docs/devops-user-guide/examples/create-multi-cluster-pipeline/create-workspace.png)
+3. 在**集群设置**页面，选择所有集群（总共三个集群），然后点击**创建**。
 
-3. 在**集群选择**页面，选择所有集群（总共三个集群），然后点击**创建**。
+4. 创建的企业空间会显示在列表。您需要登出控制台并以 `ws-admin` 身份重新登录，以邀请 `project-admin` 与 `project-regular` 至企业空间，然后分别授予他们 `work-space-self-provisioner` 和 `workspace-viwer` 角色。有关更多信息，请参见[创建企业空间、项目、用户和角色](../../../quick-start/create-workspace-and-project/#step-2-create-a-workspace)。
 
-   ![select-all-clusters](/images/docs/devops-user-guide/examples/create-multi-cluster-pipeline/select-all-clusters.png)
+### 步骤 3：创建 DevOps 项目
 
-4. 创建的企业空间会显示在列表。您需要登出控制台并以 `ws-admin` 身份重新登录，以邀请 `project-admin` 与 `project-regular` 至企业空间，然后分别授予他们 `work-space-self-provisioner` 和 `workspace-viwer` 角色。有关更多信息，请参见[创建企业空间、项目、帐户和角色](../../../quick-start/create-workspace-and-project/#step-2-create-a-workspace)。
-
-   ![workspace-created](/images/docs/devops-user-guide/examples/create-multi-cluster-pipeline/workspace-created.png)
-
-### 步骤 3：创建 DevOps 工程
-
-1. 您需要登出控制台，并以 `project-admin` 身份重新登录。转到 **DevOps 工程**页面并点击**创建**。
+1. 您需要登出控制台，并以 `project-admin` 身份重新登录。转到 **DevOps 项目**页面并点击**创建**。
 
 2. 在出现的对话框中，输入 `mulicluster-demo` 作为**名称**，在**集群设置**中选择 **host**，然后点击**确定**。
-
-   ![devops-project](/images/docs/devops-user-guide/examples/create-multi-cluster-pipeline/devops-project.png)
 
    {{< notice note >}}
 
@@ -74,13 +66,11 @@ weight: 11440
 
    {{</ notice >}}
 
-3. 创建的 DevOps 工程将显示在列表中。请确保邀请帐户 `project-regular` 至这个项目，并赋予 `operator` 角色。有关更多信息，请参见[创建企业空间、项目、帐户和角色](../../../quick-start/create-workspace-and-project/#step-1-create-an-account)。
-
-   ![devops-project-created](/images/docs/devops-user-guide/examples/create-multi-cluster-pipeline/devops-project-created.png)
+3. 创建的 DevOps 项目将显示在列表中。请确保邀请用户 `project-regular` 至这个项目，并赋予 `operator` 角色。有关更多信息，请参见[创建企业空间、项目、用户和角色](../../../quick-start/create-workspace-and-project/#step-1-create-an-account)。
 
 ### 步骤 4：在集群上创建项目
 
-提前创建如下表所示的项目。请确保邀请 `project-regular` 帐户到这些项目中，并赋予 `operator` 角色。有关更多信息，请参见[创建企业空间、项目、帐户和角色](../../../quick-start/create-workspace-and-project/#step-1-create-an-account)。
+提前创建如下表所示的项目。请确保邀请 `project-regular` 用户到这些项目中，并赋予 `operator` 角色。有关更多信息，请参见[创建企业空间、项目、用户和角色](../../../quick-start/create-workspace-and-project/#step-1-create-an-account)。
 
 | 集群名 | 用途 | 项目名                 |
 | ------ | ---- | ---------------------- |
@@ -90,41 +80,35 @@ weight: 11440
 
 ### 步骤 5：创建凭证
 
-1. 登出控制台，以 `project-regular` 身份重新登录。在 **DevOps 工程**页面，点击 DevOps 工程 `multicluster-demo`。
+1. 登出控制台，以 `project-regular` 身份重新登录。在 **DevOps 项目**页面，点击 DevOps 项目 `multicluster-demo`。
 
-2. 在 DevOps 凭证页面，您需要创建如下表所示的凭证。有关如何创建凭证的更多信息，请参见[凭证管理](../../how-to-use/credential-management/#create-credentials)和[使用 Jenkinsfile 创建流水线](../../how-to-use/create-a-pipeline-using-jenkinsfile/#step-1-create-credentials)。
+2. 在**凭证**页面，您需要创建如下表所示的凭证。有关如何创建凭证的更多信息，请参见[凭证管理](../../how-to-use/credential-management/#create-credentials)和[使用 Jenkinsfile 创建流水线](../../how-to-use/create-a-pipeline-using-jenkinsfile/#step-1-create-credentials)。
 
 | 凭证 ID      | 类型       | 应用场所             |
 | ------------ | ---------- | -------------------- |
-| host         | kubeconfig | 用于 Host 集群测试   |
-| shire        | kubeconfig | 用于 Member 集群生产 |
-| rohan        | kubeconfig | 用于 Member 集群开发 |
+| host         | kubeconfig | 用于主集群测试   |
+| shire        | kubeconfig | 用于成员集群生产 |
+| rohan        | kubeconfig | 用于成员集群开发 |
 | dockerhub-id | 帐户凭证   | Docker Hub           |
 | sonar-token  | 秘密文本   | SonarQube            |
 
 {{< notice note >}}
 
-在创建 kubeconfig 凭证 `shire` 和 `rohan` 时，必须手动输入 Member 集群的 kubeconfig。确保 Host 集群可以访问 Member 集群的 APIServer 地址。
+在创建 kubeconfig 凭证 `shire` 和 `rohan` 时，必须手动输入成员集群的 kubeconfig。确保主集群可以访问成员集群的 API Server 地址。
 
 {{</ notice >}}
 
-3. 您会拥有五个凭证。
-
-![credentials-created](/images/docs/devops-user-guide/examples/create-multi-cluster-pipeline/credentials-created.png)
+3. 共创建五个凭证。
 
 ### 步骤 6：创建流水线
 
 1. 在**流水线**页面点击**创建**。在显示的对话框中，输入 `build-and-deploy-application` 作为**名称**然后点击**下一步**。
 
-   ![pipeline-name](/images/docs/devops-user-guide/examples/create-multi-cluster-pipeline/pipeline-name.png)
-
 2. 在**高级设置中**选项卡中，点击**创建**即使用默认配置。
 
-3. 列表会展示被创建的流水线，点击流水线进入详细页面。
+3. 列表会展示被创建的流水线，点击流水线名称进入详情页面。
 
-   ![pipeline-created](/images/docs/devops-user-guide/examples/create-multi-cluster-pipeline/pipeline-created.png)
-
-4. 点击**编辑 Jenkinsfile**，复制和粘贴以下内容。请确保将 DOCKERHUB_NAMESPACE 的值替换为您自己的值，然后点击**确认**。
+4. 点击**编辑 Jenkinsfile**，复制和粘贴以下内容。请确保将 DOCKERHUB_NAMESPACE 的值替换为您自己的值，然后点击**确定**。
 
    ```groovy
    pipeline {
@@ -145,7 +129,7 @@ weight: 11440
    
            REGISTRY = 'docker.io'
            DOCKERHUB_NAMESPACE = 'your Docker Hub account ID'
-           APP_NAME = 'devops-java-sample'
+           APP_NAME = 'devops-maven-sample'
            SONAR_CREDENTIAL_ID = 'sonar-token'
            TAG_NAME = "SNAPSHOT-$BRANCH_NAME-$BUILD_NUMBER"
        }
@@ -153,16 +137,15 @@ weight: 11440
        stage('checkout') {
          steps {
            container('maven') {
-             git branch: 'master', url: 'https://github.com/kubesphere/devops-java-sample.git'
+             git branch: 'master', url: 'https://github.com/kubesphere/devops-maven-sample.git'
            }
          }
        }
        stage('unit test') {
          steps {
            container('maven') {
-             sh 'mvn clean -o -gs `pwd`/configuration/settings.xml test'
+             sh 'mvn clean test'
            }
-   
          }
        }
        stage('sonarqube analysis') {
@@ -170,26 +153,22 @@ weight: 11440
            container('maven') {
              withCredentials([string(credentialsId: "$SONAR_CREDENTIAL_ID", variable: 'SONAR_TOKEN')]) {
                withSonarQubeEnv('sonar') {
-                 sh "mvn sonar:sonar -o -gs `pwd`/configuration/settings.xml -Dsonar.login=$SONAR_TOKEN"
+                 sh "mvn sonar:sonar -Dsonar.login=$SONAR_TOKEN"
                }
-   
              }
            }
-   
          }
        }
        stage('build & push') {
          steps {
            container('maven') {
-             sh 'mvn -o -Dmaven.test.skip=true -gs `pwd`/configuration/settings.xml clean package'
+             sh 'mvn -Dmaven.test.skip=true clean package'
              sh 'docker build -f Dockerfile-online -t $REGISTRY/$DOCKERHUB_NAMESPACE/$APP_NAME:SNAPSHOT-$BRANCH_NAME-$BUILD_NUMBER .'
              withCredentials([usernamePassword(passwordVariable : 'DOCKER_PASSWORD' ,usernameVariable : 'DOCKER_USERNAME' ,credentialsId : "$DOCKER_CREDENTIAL_ID" ,)]) {
                sh 'echo "$DOCKER_PASSWORD" | docker login $REGISTRY -u "$DOCKER_USERNAME" --password-stdin'
                sh 'docker push  $REGISTRY/$DOCKERHUB_NAMESPACE/$APP_NAME:SNAPSHOT-$BRANCH_NAME-$BUILD_NUMBER'
              }
-   
            }
-   
          }
        }
        stage('push latest') {
@@ -198,29 +177,51 @@ weight: 11440
              sh 'docker tag  $REGISTRY/$DOCKERHUB_NAMESPACE/$APP_NAME:SNAPSHOT-$BRANCH_NAME-$BUILD_NUMBER $REGISTRY/$DOCKERHUB_NAMESPACE/$APP_NAME:latest '
              sh 'docker push  $REGISTRY/$DOCKERHUB_NAMESPACE/$APP_NAME:latest '
            }
-   
          }
        }
        stage('deploy to dev') {
          steps {
-           kubernetesDeploy(configs: 'deploy/dev-ol/**', enableConfigSubstitution: true, kubeconfigId: "$DEV_KUBECONFIG_CREDENTIAL_ID")
+            container('maven') {
+               withCredentials([
+                   kubeconfigFile(
+                   credentialsId: env.DEV_KUBECONFIG_CREDENTIAL_ID,
+                   variable: 'KUBECONFIG')
+                   ]) {
+                   sh 'envsubst < deploy/dev-all-in-one/devops-sample.yaml | kubectl apply -f -'
+               }
+            }
          }
        }
        stage('deploy to staging') {
          steps {
-           input(id: 'deploy-to-staging', message: 'deploy to staging?')
-           kubernetesDeploy(configs: 'deploy/prod-ol/**', enableConfigSubstitution: true, kubeconfigId: "$TEST_KUBECONFIG_CREDENTIAL_ID")
+            container('maven') {
+               input(id: 'deploy-to-staging', message: 'deploy to staging?')
+               withCredentials([
+                   kubeconfigFile(
+                   credentialsId: env.TEST_KUBECONFIG_CREDENTIAL_ID,
+                   variable: 'KUBECONFIG')
+                   ]) {
+                   sh 'envsubst < deploy/prod-all-in-one/devops-sample.yaml | kubectl apply -f -'
+               }
+            }
          }
        }
        stage('deploy to production') {
          steps {
-           input(id: 'deploy-to-production', message: 'deploy to production?')
-           kubernetesDeploy(configs: 'deploy/prod-ol/**', enableConfigSubstitution: true, kubeconfigId: "$PROD_KUBECONFIG_CREDENTIAL_ID")
+            container('maven') {
+               input(id: 'deploy-to-production', message: 'deploy to production?')
+               withCredentials([
+                   kubeconfigFile(
+                   credentialsId: env.PROD_KUBECONFIG_CREDENTIAL_ID,
+                   variable: 'KUBECONFIG')
+                   ]) {
+                   sh 'envsubst < deploy/prod-all-in-one/devops-sample.yaml | kubectl apply -f -'
+               }
+            }
          }
        }
      }
    }
-   
    ```
 
    {{< notice note >}}
@@ -231,35 +232,15 @@ weight: 11440
 
 5. 流水线创建之后，可以在图形编辑面板上查看流水线的阶段和步骤。
 
-   ![pipeline-panel](/images/docs/devops-user-guide/examples/create-multi-cluster-pipeline/pipeline-panel.png)
-
 ### 步骤7：运行流水线并查看结果
 
 1. 点击**运行**按钮运行流水线。当流水线运行达到**部署到暂存**的阶段，将会暂停，因为资源已经被部署到集群进行开发。您需要手动点击**继续**两次，以将资源部署到测试集群 `host` 和生产集群 `shire`。
 
-   ![deploy-to-staging](/images/docs/devops-user-guide/examples/create-multi-cluster-pipeline/deploy-to-staging.png)
-
 2. 一段时间过后，您可以看见流水线的状态展示为**成功**。
-
-   ![pipeline-success](/images/docs/devops-user-guide/examples/create-multi-cluster-pipeline/pipeline-success.png)
 
 3. 在右上角点击**查看日志**，查看流水线运行日志。对于每个阶段，您可以点击显示日志以检查日志，同时日志可以被下载到本地进行进一步的分析。
 
-   ![pipeline-logs](/images/docs/devops-user-guide/examples/create-multi-cluster-pipeline/pipeline-logs.png)
-
-4. 当流水线运行成功时，点击**代码质量**，通过 SonarQube 检查结果。
-
-   ![sonarqube-result](/images/docs/devops-user-guide/examples/create-multi-cluster-pipeline/sonarqube-result.png)
+4. 当流水线运行成功时，点击**代码检查**，通过 SonarQube 检查结果。
 
 5. 转到**项目**页面，您可以通过从下拉列表中选择特定集群，来查看部署在各集群不同项目中的资源。
-
-   ![host-pods](/images/docs/devops-user-guide/examples/create-multi-cluster-pipeline/host-pods.png)
-
-   ![shire-pods](/images/docs/devops-user-guide/examples/create-multi-cluster-pipeline/shire-pods.png)
-
-   ![rohan-pods](/images/docs/devops-user-guide/examples/create-multi-cluster-pipeline/rohan-pods.png)
-
-   
-
-
 

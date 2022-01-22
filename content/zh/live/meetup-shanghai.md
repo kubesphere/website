@@ -13,6 +13,8 @@ section1:
   base: 上海市虹口区杨树浦路 188 号 2 号楼 102 赤兔创业咖啡 + 线上同步直播
   baseIcon: /images/live/base.svg
 ---
+![](https://pek3b.qingstor.com/kubesphere-community/images/meetup-shanghai-20210515.jpeg)
+
 <center>KubeSphere and Friends 2021</center>
 
 <center>Kubernetes and Cloud Native Meetup</center>

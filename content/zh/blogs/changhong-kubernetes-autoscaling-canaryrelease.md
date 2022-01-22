@@ -107,13 +107,13 @@ CA 依赖于云平台的能力，而通过设置 HPA 可以触发 CA。在 KubeS
 由于我们是先部署好 Kubernetes，在其上再安装 KubeSphere的，那么我们需要在安装后的 KubeSphere 启用该功能。
 
 启用方法：
-1. 在 KubeSphere 的集群管理界面，找到自定义资源 CRD
+1. 在 KubeSphere 的集群管理界面，找到 CRD
 2. 打开后输入 `clusterconfiguration` 进行搜索
 3. 点击搜索结果，在打开的页面中点击 ks-installer 右侧的按钮，选择编辑配置文件
 4. 在打开的 YAML 文件里找到 Metrics Server，在 enabled 一行将 false 更改为 true
 5. 之后点击右下角的更新即可
 
-![自定义资源 CRD](https://pek3b.qingstor.com/kubesphere-community/images/CRD-changhong.png)
+![ CRD](https://pek3b.qingstor.com/kubesphere-community/images/CRD-changhong.png)
 
 ![修改 YAML 文件](https://pek3b.qingstor.com/kubesphere-community/images/yaml-changhong.png)
 

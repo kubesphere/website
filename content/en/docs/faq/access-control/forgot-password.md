@@ -8,9 +8,15 @@ Weight: 16410
 
 ## Reset the Password of a Regular User
 
-The administrator who has the permission to manage users can change an account password. On the **Accounts** page, click the account of which you need to change the password. On the detail page, select **Change Password** from the **More** drop-down list.
+1. Log in to the KubeSphere web console using the administrator who has the permission to manage users. 
 
-![modify-password](/images/docs/faq/forgot-password/modify-password.png)
+2. Click **Platform** on the upper-left corner and select **Access Control**. Click **Users**.
+
+3. On the **Users** page, click the user of which you need to change the password to visit its details page.
+
+4. On the details page, click **More**, and then select **Change Password** from the drop-down list.
+
+5. On the displayed dialog box, enter a new password and confirm the password. Click **OK** after finished.
 
 ## Reset the Administrator Password
 
@@ -22,6 +28,6 @@ kubectl patch users <USERNAME> -p '{"spec":{"password":"<YOURPASSWORD>"}}' --typ
 
 {{< notice note >}}
 
-Make sure you replace `<USERNAME>` and `<YOURPASSWORD>` with the account and the new password in the command before you run it.
+Make sure you replace `<USERNAME>` and `<YOURPASSWORD>` with the username and the new password in the command before you run it.
 
 {{</ notice >}} 

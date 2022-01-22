@@ -1,7 +1,7 @@
 ---
-title: "Secrets"
+title: "Kubernetes Secrets in KubeSphere"
 keywords: 'KubeSphere, Kubernetes, Secrets'
-description: 'Learn how to create a Secret in KubeSphere.'
+description: 'Learn how to create a Secret on KubeSphere.'
 linkTitle: "Secrets"
 weight: 10410
 ---
@@ -16,15 +16,13 @@ This tutorial demonstrates how to create a Secret in KubeSphere.
 
 ## Prerequisites
 
-You need to create a workspace, a project and an account (`project-regular`). The account must be invited to the project with the role of `operator`. For more information, see [Create Workspaces, Projects, Accounts and Roles](../../../quick-start/create-workspace-and-project/).
+You need to create a workspace, a project and a user (`project-regular`). The user must be invited to the project with the role of `operator`. For more information, see [Create Workspaces, Projects, Users and Roles](../../../quick-start/create-workspace-and-project/).
 
-## Create a Secret
+## Create a Kubernetes Secret
 
 ### Step 1: Open the dashboard
 
-Log in to the console as `project-regular`. Go to **Configurations** of a project, choose **Secrets** and click **Create**.
-
-![create-secrets](/images/docs/project-user-guide/configurations/secrets/create-secrets.png)
+Log in to the console as `project-regular`. Go to **Configuration** of a project, select **Secrets** and click **Create**.
 
 ### Step 2: Enter basic information
 
@@ -32,17 +30,13 @@ Specify a name for the Secret (for example, `demo-secret`) and click **Next** to
 
 {{< notice tip >}}
 
-You can see the Secret's manifest file in YAML format by enabling **Edit Mode** in the upper-right corner. KubeSphere allows you to edit the manifest file directly to create a Secret. Alternatively, you can follow the steps below to create a Secret via the dashboard.
+You can see the Secret's manifest file in YAML format by enabling **Edit YAML** in the upper-right corner. KubeSphere allows you to edit the manifest file directly to create a Secret. Alternatively, you can follow the steps below to create a Secret via the dashboard.
 
 {{</ notice >}} 
 
-![set-secret](/images/docs/project-user-guide/configurations/secrets/set-secret.png)
-
 ### Step 3: Set a Secret
 
-1. Under the tab **Secret Settings**, you must choose a Secret type. In KubeSphere, you can create the following types of Secrets, indicated by the `type` field.
-
-   ![secret-type](/images/docs/project-user-guide/configurations/secrets/secret-type.png)
+1. Under the tab **Data Settings**, you must select a Secret type. In KubeSphere, you can create the following Kubernetes Secret types, indicated by the `type` field.
 
    {{< notice note >}}
 
@@ -50,42 +44,28 @@ You can see the Secret's manifest file in YAML format by enabling **Edit Mode** 
 
    {{</ notice >}} 
 
-   - **Opaque (Default)**. The type of [Opaque](https://kubernetes.io/docs/concepts/configuration/secret/#opaque-secrets) in Kubernetes, which is also the default Secret type in Kubernetes. You can create arbitrary user-defined data for this type of Secret. Click **Add Data** to add key-value pairs for it.
+   - **Default**. The type of [Opaque](https://kubernetes.io/docs/concepts/configuration/secret/#opaque-secrets) in Kubernetes, which is also the default Secret type in Kubernetes. You can create arbitrary user-defined data for this type of Secret. Click **Add Data** to add key-value pairs for it.
 
-     ![default-secret](/images/docs/project-user-guide/configurations/secrets/default-secret.png)
+   - **TLS information**. The type of [kubernetes.io/tls](https://kubernetes.io/docs/concepts/configuration/secret/#tls-secrets) in Kubernetes, which is used to store a certificate and its associated key that are typically used for TLS, such as TLS termination of Ingress resources. You must specify **Credential** and **Private Key** for it, indicated by `tls.crt` and `tls.key` in the YAML file respectively.
 
-   - **kubernetes.io/tis (TLS)**. The type of [kubernetes.io/tls](https://kubernetes.io/docs/concepts/configuration/secret/#tls-secrets) in Kubernetes, which is used to store a certificate and its associated key that are typically used for TLS, such as TLS termination of Ingress resources. You must specify **Credential** and **Private Key** for it, indicated by `tls.crt` and `tls.key` in the YAML file respectively.
+   - **Image registry information**. The type of [kubernetes.io/dockerconfigjson](https://kubernetes.io/docs/concepts/configuration/secret/#docker-config-secrets) in Kubernetes, which is used to store the credentials for accessing a Docker registry for images. For more information, see [Image Registries](../image-registry/).
 
-     ![tls](/images/docs/project-user-guide/configurations/secrets/tls.png)
+   - **Username and password**. The type of [kubernetes.io/basic-auth](https://kubernetes.io/docs/concepts/configuration/secret/#basic-authentication-secret) in Kubernetes, which is used to store credentials needed for basic authentication. You must specify **Username** and **Password** for it, indicated by `username` and `password` in the YAML file respectively.
 
-   - **kubernetes.io/dockerconfigjson (Image Registry Secret)**. The type of [kubernetes.io/dockerconfigjson](https://kubernetes.io/docs/concepts/configuration/secret/#docker-config-secrets) in Kubernetes, which is used to store the credentials for accessing a Docker registry for images. For more information, see [Image Registries](../image-registry/).
+2. For this tutorial, select the default type of Secret. Click **Add Data** and enter the **Key** (`MYSQL_ROOT_PASSWORD`) and **Value** (`123456`) to specify a Secret for MySQL. 
 
-     ![image-registry-secret](/images/docs/project-user-guide/configurations/secrets/image-registry-secret.png)
-
-   - **kubernetes.io/basic-auth (Account Password Secret)**. The type of [kubernetes.io/basic-auth](https://kubernetes.io/docs/concepts/configuration/secret/#basic-authentication-secret) in Kubernetes, which is used to store credentials needed for basic authentication. You must specify **Username** and **Password** for it, indicated by `username` and `password` in the YAML file respectively.
-
-     ![account-password-secret](/images/docs/project-user-guide/configurations/secrets/account-password-secret.png)
-
-2. For this tutorial, select the default type of Secret. Click **Add Data** and enter the **Key** (`MYSQL_ROOT_PASSWORD`) and **Value** (`123456`) as below to specify a Secret for MySQL. 
-
-   ![enter-key](/images/docs/project-user-guide/configurations/secrets/enter-key.png)
-
-3. Click **√** in the bottom-right corner to confirm. You can continue to add key-value pairs to the Secret or click **Create** to finish the creation. For more information about how to use the Secret, see [Compose and Deploy WordPress](../../../quick-start/wordpress-deployment/#task-3-create-an-application).
+3. Click **√** in the lower-right corner to confirm. You can continue to add key-value pairs to the Secret or click **Create** to finish the creation. For more information about how to use the Secret, see [Compose and Deploy WordPress](../../../quick-start/wordpress-deployment/#task-3-create-an-application).
 
 ## Check Secret Details
 
-1. After a Secret is created, it will be displayed in the list as below. You can click <img src="/images/docs/project-user-guide/configurations/secrets/three-dots.png" width="20px" /> on the right and select the operation from the menu to modify it.
+1. After a Secret is created, it will be displayed in the list. You can click <img src="/images/docs/project-user-guide/configurations/secrets/three-dots.png" width="20px" /> on the right and select the operation from the menu to modify it.
 
-    ![secret-list](/images/docs/project-user-guide/configurations/secrets/secret-list.png)
-
-    - **Edit**: View and edit the basic information.
+    - **Edit Information**: View and edit the basic information.
     - **Edit YAML**: View, upload, download, or update the YAML file.
-    - **Edit Seret**: Modify the key-value pair of the Secret.
+    - **Edit Settings**: Modify the key-value pair of the Secret.
     - **Delete**: Delete the Secret.
 
-2. Click the name of the Secret and you can go to its detail page. Under the tab **Detail**, you can see all the key-value pairs you have added for the Secret.
-
-    ![secret-detail-page](/images/docs/project-user-guide/configurations/secrets/secret-detail-page.png)
+2. Click the name of the Secret and you can go to its details page. Under the tab **Data**, you can see all the key-value pairs you have added for the Secret.
 
     {{< notice note >}}
 
@@ -95,22 +75,16 @@ As mentioned above, KubeSphere automatically converts the value of a key into it
 
 3. Click **More** to display what operations about this Secret you can do.
 
-    ![click-more](/images/docs/project-user-guide/configurations/secrets/click-more.png)
-
     - **Edit YAML**: View, upload, download, or update the YAML file.
     - **Edit Secret**: Modify the key-value pair of the Secret.
     - **Delete**: Delete the Secret, and return to the list page.
 
 
-## Use a Secret
+## How to Use a Kubernetes Secret
 
 Generally, you need to use a Secret when you create workloads, [Services](../../../project-user-guide/application-workloads/services/), [Jobs](../../../project-user-guide/application-workloads/jobs/) or [CronJobs](../../../project-user-guide/application-workloads/cronjobs/). For example, you can select a Secret for a code repository. For more information, see [Image Registries](../image-registry/).
 
-![use-secret-repository](/images/docs/project-user-guide/configurations/secrets/use-secret-repository.png)
-
 Alternatively, you may need to add environment variables for containers. On the **Container Image** page, select **Environment Variables** and click **Use ConfigMap or Secret** to use a Secret from the list.
-
-![use-secret-image](/images/docs/project-user-guide/configurations/secrets/use-secret-image.png)
 
 ## Create the Most Common Secrets
 
@@ -120,9 +94,9 @@ This section shows how to create Secrets from your Docker Hub account and GitHub
 
 1. Log in to KubeSphere as `project-regular` and go to your project. Select **Secrets** from the navigation bar and click **Create** on the right.
 
-2. Set a name, such as `dockerhub-id`, and click **Next**. On the **Secret Settings** page, fill in the following fields and click **Validate** to verify whether the information provided is valid.
+2. Set a name, such as `dockerhub-id`, and click **Next**. On the **Data Settings** page, fill in the following fields and click **Validate** to verify whether the information provided is valid.
 
-   **Type**: Select **kubernetes.io/dockerconfigjson (Image Registry Secret)**.
+   **Type**: Select **Image registry information**.
 
    **Registry Address**: Enter the Docker Hub registry address, such as `docker.io`.
 
@@ -130,22 +104,18 @@ This section shows how to create Secrets from your Docker Hub account and GitHub
 
    **Password**: Enter your Docker Hub password.
 
-   ![docker-hub-secret](/images/docs/project-user-guide/configurations/secrets/docker-hub-secret.png)
-
 3. Click **Create** to finish.
 
 ### Create the GitHub Secret
 
 1. Log in to KubeSphere as `project-regular` and go to your project. Select **Secrets** from the navigation bar and click **Create** on the right.
 
-2. Set a name, such as `github-id`, and click **Next**. On the **Secret Settings** page, fill in the following fields.
+2. Set a name, such as `github-id`, and click **Next**. On the **Data Settings** page, fill in the following fields.
 
-   **Type**: Select **kubernetes.io/basic-auth (Account Password Secret)**.
+   **Type**: Select **Username and password**.
 
    **Username**: Enter your GitHub account.
 
    **Password**: Enter your GitHub password.
-
-   ![github-secret](/images/docs/project-user-guide/configurations/secrets/github-secret.png)
 
 3. Click **Create** to finish.

@@ -92,7 +92,7 @@ KubeSphere 利用 [KubeEdge](https://kubeedge.io/zh/) 将原生容器化应用�
 
 1. 使用 `admin` 用户登录控制台，点击左上角的**平台管理**。
 
-2. 选择**集群管理**，然后导航至**节点管理**下的**边缘节点**。
+2. 选择**集群管理**，然后导航至**节点**下的**边缘节点**。
 
    {{< notice note >}}
 
@@ -100,7 +100,7 @@ KubeSphere 利用 [KubeEdge](https://kubeedge.io/zh/) 将原生容器化应用�
 
    {{</ notice >}} 
 
-3. 点击**添加节点**。在出现的对话框中，设置边缘节点的节点名称并输入其内网 IP 地址。点击**验证**以继续。
+3. 点击**添加**。在出现的对话框中，设置边缘节点的节点名称并输入其内网 IP 地址。点击**验证**以继续。
 
    {{< notice note >}} 
 
@@ -109,7 +109,7 @@ KubeSphere 利用 [KubeEdge](https://kubeedge.io/zh/) 将原生容器化应用�
 
    {{</ notice >}} 
 
-4. 复制**添加命令**下自动创建的命令，并在您的边缘节点上运行该命令。
+4. 复制**边缘节点配置命令**下自动创建的命令，并在您的边缘节点上运行该命令。
 
    {{< notice note >}}
 
@@ -117,19 +117,15 @@ KubeSphere 利用 [KubeEdge](https://kubeedge.io/zh/) 将原生容器化应用�
 
    {{</ notice >}} 
 
-   ![edge-node1](/images/docs/zh-cn/installing-on-linux/add-and-delete-nodes/add-edge-nodes/edge-node1.png)
-
 5. 关闭对话框，刷新页面，您将看到边缘节点显示在列表中。
-
-   ![edge-node-2](/images/docs/zh-cn/installing-on-linux/add-and-delete-nodes/add-edge-nodes/edge-node-2.png)
 
    {{< notice note >}}
 
    添加边缘节点后，如果在**边缘节点**页面查看不到 CPU 和内存资源使用情况，请确保您的集群中已安装 [Metrics Server](../../../pluggable-components/metrics-server/) 0.4.1 或以上版本。
 
    {{</ notice >}}
-   
-6. 边缘节点加入集群后，部分 Pod 在调度至该边缘节点上后可能会一直处于 `Pending` 状态。由于部分守护进程集（例如，Calico）有强容忍度，在当前版本中 (KubeSphere v3.1.1)，您需要手动 Patch Pod 以防止它们调度至该边缘节点。
+
+6. 边缘节点加入集群后，部分 Pod 在调度至该边缘节点上后可能会一直处于 `Pending` 状态。由于部分守护进程集（例如，Calico）有强容忍度，在当前版本中 (KubeSphere 3.2.1)，您需要手动 Patch Pod 以防止它们调度至该边缘节点。
 
    ```bash
    #!/bin/bash

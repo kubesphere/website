@@ -22,12 +22,12 @@ weight: 2400
 
 - 您需要启用 [KubeSphere 服务网格](../../pluggable-components/service-mesh/)。
 
-- 您需要完成[创建企业空间、项目、帐户和角色](../create-workspace-and-project/)中的所有任务。
+- 您需要完成[创建企业空间、项目、用户和角色](../create-workspace-and-project/)中的所有任务。
 
-- 您需要启用**应用治理**。有关更多信息，请参见[设置网关](../../project-administration/project-gateway/#设置网关)。
+- 您需要启用**链路追踪**。有关更多信息，请参见[设置网关](../../project-administration/project-gateway/#设置网关)。
 
     {{< notice note >}}
-  您需要启用**应用治理**以使用追踪功能。启用后若无法访问路由 (Ingress)，请检查您的路由是否已经添加注释（例如：`nginx.ingress.kubernetes.io/service-upstream: true`）。
+  您需要启用**链路追踪**以使用追踪功能。启用后若无法访问路由 (Ingress)，请检查您的路由是否已经添加注释（例如：`nginx.ingress.kubernetes.io/service-upstream: true`）。
     {{</ notice >}}
 
 ## 什么是 Bookinfo 应用
@@ -49,9 +49,7 @@ Bookinfo 应用由以下四个独立的微服务组成，其中 **reviews** 微�
 
 1. 使用帐户 `project-regular` 登录控制台并访问项目 (`demo-project`)。前往**应用负载**下的**应用**，点击右侧的**部署示例应用**。
 
-2. 在出现的对话框中点击**下一步**，其中必填字段已经预先填好，相关组件也已经设置完成。您无需修改设置，只需在最后一页（**外网访问**）点击**创建**。
-
-    ![create-bookinfo](/images/docs/zh-cn/quickstart/deploy-bookinfo-to-k8s/create-bookinfo.png)
+2. 在出现的对话框中点击**下一步**，其中必填字段已经预先填好，相关组件也已经设置完成。您无需修改设置，只需在最后一页（**路由设置**）点击**创建**。
 
     {{< notice note >}}
 
@@ -60,8 +58,6 @@ KubeSphere 会自动创建主机名。若要更改主机名，请将鼠标悬停
     {{</ notice >}}
 
 3. 在**工作负载**中，确保这四个部署都处于`运行中`状态，这意味着该应用已经成功创建。
-
-    ![running](/images/docs/zh-cn/quickstart/deploy-bookinfo-to-k8s/running.png)
 
     {{< notice note >}}可能需要等几分钟才能看到部署正常运行。
 {{</ notice >}}
@@ -74,8 +70,6 @@ KubeSphere 会自动创建主机名。若要更改主机名，请将鼠标悬停
     {{</ notice >}}
     
 2. 详情页面中显示了用于访问 Bookinfo 应用的主机名和端口号。
-
-    ![details-page](/images/docs/zh-cn/quickstart/deploy-bookinfo-to-k8s/details-page.png)
 
 3. 由于将通过 NodePort 在集群外访问该应用，因此您需要在安全组中为出站流量开放上图中的端口，并按需设置端口转发规则。
 
@@ -91,7 +85,7 @@ KubeSphere 会自动创建主机名。若要更改主机名，请将鼠标悬停
 {{</ notice >}}
 
 
-5. 完成后，点击 <img src="/images/docs/zh-cn/quickstart/deploy-bookinfo-to-k8s/click-to-visit.png" width='70' /> 访问该应用。
+5. 完成后，点击**访问服务**访问该应用。
 
 6. 在应用详情页面，点击左下角的 **Normal user**。
 
