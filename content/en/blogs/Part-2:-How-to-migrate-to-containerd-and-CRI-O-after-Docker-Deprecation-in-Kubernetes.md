@@ -3,7 +3,7 @@
   tag: 'Kubernetes, containers, container runtimes, docker, containerd, cri-o, docker deprecation'
   keywords: 'Kubernetes, fundamentals, beginners, guide'
   description: 'In the last part of our series, we talked about what are CRI and OCI, differences between Docker, containerd, CRI-O and their architecture, etc. Recently, we’ve got to know that Docker is going to be deprecated from kubernetes! (check out this article officially from....'
-  createTime: '2022-01-22'
+  createTime: '2022-01-24'
   author: 'Pulkit Singh'
   snapshot: '/images/blogs/Part-2:-How-to-migrate-to-containerd-and-CRI-O-after-Docker-Deprecation-in-Kubernetes/2.png'
 ---
