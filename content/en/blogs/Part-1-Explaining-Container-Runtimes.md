@@ -5,10 +5,10 @@
   description: 'In this blog, we will introduce some of the upcoming updates in Kubernetes’s 1.24 and different container runtimes! Before getting into our main topic, we need to....'
   createTime: '2022-01-22'
   author: 'Pulkit Singh'
-  snapshot: 'images/blogs/Part-1-Explaining-Container-Runtimes/1.png'
+  snapshot: '/images/blogs/Part-1-Explaining-Container-Runtimes/1.png'
 ---
 
-![main.png](images/blogs/Part-1-Explaining-Container-Runtimes/1.png)
+![main.png](/images/blogs/Part-1-Explaining-Container-Runtimes/1.png)
 
 In this blog, we will introduce some of the upcoming updates in Kubernetes’s 1.24 and different container runtimes!
 
@@ -41,7 +41,7 @@ The "rktlet" was created by adapting the kubelet code for rkt. This per-runtime 
 Cool! So now, let us talk about the difference between Docker, containerd, and CRI-O.
 
 ## Difference between Docker, containerd, and CRI-O? 
-![5.png](images/blogs/Part-1-Explaining-Container-Runtimes/5.png)
+![5.png](/images/blogs/Part-1-Explaining-Container-Runtimes/5.png)
 
 ### Docker
 It is a software framework for fast developing, testing, and deploying applications. Docker organizes software into containers, which include everything the software requires to operate, such as libraries, system tools, code, and runtime. Docker allows you to swiftly deploy and scale apps in any environment while ensuring that your code will run.
@@ -58,7 +58,7 @@ Docker works as a container operating system by giving you a consistent mechanis
 
 **Architecture**
 
-![arc1.png](images/blogs/Part-1-Explaining-Container-Runtimes/6.png)
+![arc1.png](/images/blogs/Part-1-Explaining-Container-Runtimes/6.png)
 
 Docker is built on a client-server model. The Docker client communicates with the Docker daemon, which handles the construction, execution, and distribution of your Docker containers. You can execute the Docker client and daemon on the same machine, or you can link a Docker client to a Docker daemon that is located elsewhere. A REST API, UNIX sockets, or a network interface are used by the Docker client and daemon to communicate. Docker Compose is another Docker client that allows you to interact with applications made up of many containers.
 
@@ -88,7 +88,7 @@ It is a daemon that runs on Linux and Windows. From image transfer and storage t
 
 **Architecture**
 
-![arc2.png](images/blogs/Part-1-Explaining-Container-Runtimes/7.png)
+![arc2.png](/images/blogs/Part-1-Explaining-Container-Runtimes/7.png)
 
 External users engage with services provided by the GRPC API.
 - Bundle: A user can extract and pack bundles from disk images using the bundle service.
@@ -122,7 +122,7 @@ It is a Kubernetes CRI implementation that allows OCI-compatible runtimes to be 
 
 **Architecture**
 
-![arc3.png](images/blogs/Part-1-Explaining-Container-Runtimes/8.png)
+![arc3.png](/images/blogs/Part-1-Explaining-Container-Runtimes/8.png)
 
 The following are the architectural elements:
 - To deploy a pod, Kubernetes communicates with the kubelet.
