@@ -1,5 +1,5 @@
 ---
-title: '基于 KubeSphere 的 K8s 生产实践之路-集群安装篇'
+title: 'Kubernetes 生产环境集群安装实践'
 tag: 'KubeSphere, Kubernetes'
 keywords: 'KubeSphere, Kubernetes, 集群安装, 最佳实践 '
 description: '基于 KubeSphere 部署的 Kubernetes，后续的很多功能实现都依托于 KubeSphere。适用于中小规模 (<=50) 的 K8s 生产环境，大型环境有待验证。'
