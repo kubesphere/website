@@ -1,5 +1,5 @@
 ---
-title: '多租户与认证鉴权实践：使用 GitLab 账号登陆 KubeSphere'
+title: 'KubeSphere 多租户与认证鉴权实践：使用 GitLab 账号登陆 KubeSphere'
 tag: '认证鉴权, 多租户'
 keywords: ' KubeSphere, GitLab, 多租户, 认证鉴权'
 description: '本文介绍了如何使用 GitLab 账号登录 KubeSphere，是对 KubeSphere 多租户与认证鉴权功能的实践。'
