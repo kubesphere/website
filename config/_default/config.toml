@@ -248,6 +248,12 @@ hasChildren = true
   URL = "videos/"
   weight = 4
 
+  [[languages.zh.menu.main]]
+  parent = "资源"
+  name = "云原生实战"
+  URL = "learn/"
+  weight = 5
+
 [[languages.zh.menu.main]]
 weight = 4
 hasChildren = true
