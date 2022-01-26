@@ -1,5 +1,5 @@
 ---
-title: 'KubeSphere+KubeEdge：轻松实现海量边缘节点与边缘设备管理'
+title: 'KubeEdge 结合 KubeSphere 实现海量边缘节点与边缘设备管理'
 tag: 'KubeSphere'
 keywords: 'KubeSphere, KubeEdge, 边缘节点'
 description: '深入介绍如何解决 KubeEdge 在 KubeSphere 容器平台的容器化部署集成和可观测性难题。'
@@ -54,7 +54,7 @@ KubeSphere 是在 Kubernetes 之上构建的企业级分布式多租户的容器
 - 按照文档进行安装集成
 - 另外还需要开放一些端口
 
-![](http://pek3b.qingstor.com/kubesphere-community/images/fc5588db24a5fb530fdfd3e88884d4d7.jpg)
+![](https://pek3b.qingstor.com/kubesphere-community/images/fc5588db24a5fb530fdfd3e88884d4d7.jpg)
 
 ### 添加边缘节点主要有两种集成方式：
 - 如果边缘节点与 K8s 集群不在一个局域网，云端相应端口 10000 ~ 10004 允许防火墙通过，映射到NodePort 30000~30004;
@@ -86,7 +86,7 @@ controller 定义了两个 CRD：
 
 ## 应用案例：中移物联网边缘计算平台
 
-![](http://pek3b.qingstor.com/kubesphere-community/images/6dd456ed8fbe8f1789b1784e0deb13df.jpg)
+![](https://pek3b.qingstor.com/kubesphere-community/images/6dd456ed8fbe8f1789b1784e0deb13df.jpg)
 
 此案例来自中移物联网何毓川老师，分享了使用 KubeSphere + KubeEdge 来构建中移物联网边缘计算平台，中移物联网计划基于以上的集成和可观测方案，预期在每一个 KubeSphere 容器平台上，边缘节点接入量期望在1k左右。
 
