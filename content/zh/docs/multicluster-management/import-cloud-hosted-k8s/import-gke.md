@@ -11,7 +11,7 @@ weight: 5330
 ## 准备工作
 
 - 您需要准备一个已安装 KubeSphere 的 Kubernetes 集群，并将该集群设置为主集群。有关如何准备主集群的更多信息，请参考[准备主集群](../../../multicluster-management/enable-multicluster/direct-connection/#准备-host-集群)。
-- 您需要准备一个 GKE 集群，用作。
+- 您需要准备一个 GKE 集群，用作成员集群。
 
 ## 导入 GKE 集群
 
