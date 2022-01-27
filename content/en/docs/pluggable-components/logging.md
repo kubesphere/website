@@ -53,7 +53,7 @@ When you install KubeSphere on Linux, you need to create a configuration file, w
       elasticsearchDataVolumeSize: 20Gi    # The volume size of Elasticsearch data nodes.
       logMaxAge: 7                     # Log retention day in built-in Elasticsearch. It is 7 days by default.
       elkPrefix: logstash              # The string making up index names. The index name will be formatted as ks-<elk_prefix>-log.
-      externalElasticsearchUrl: # The URL of external Elasticsearch.
+      externalElasticsearchUrl: # The Host of external Elasticsearch.
       externalElasticsearchPort: # The port of external Elasticsearch.
     ```
 
@@ -96,7 +96,7 @@ As you [install KubeSphere on Kubernetes](../../installing-on-kubernetes/introdu
       elasticsearchDataVolumeSize: 20Gi    # The volume size of Elasticsearch data nodes.
       logMaxAge: 7                     # Log retention day in built-in Elasticsearch. It is 7 days by default.
       elkPrefix: logstash              # The string making up index names. The index name will be formatted as ks-<elk_prefix>-log.
-      externalElasticsearchUrl: # The URL of external Elasticsearch.
+      externalElasticsearchUrl: # The Host of external Elasticsearch.
       externalElasticsearchPort: # The port of external Elasticsearch.
     ```
 
@@ -145,7 +145,7 @@ A Custom Resource Definition (CRD) allows users to create a new type of resource
       elasticsearchDataVolumeSize: 20Gi    # The volume size of Elasticsearch data nodes.
       logMaxAge: 7                     # Log retention day in built-in Elasticsearch. It is 7 days by default.
       elkPrefix: logstash              # The string making up index names. The index name will be formatted as ks-<elk_prefix>-log.
-      externalElasticsearchUrl: # The URL of external Elasticsearch.
+      externalElasticsearchUrl: # The Host of external Elasticsearch.
       externalElasticsearchPort: # The port of external Elasticsearch.
     ```
 

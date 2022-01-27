@@ -45,7 +45,7 @@ By default, KubeKey will install Elasticsearch internally if Auditing is enabled
       elasticsearchDataVolumeSize: 20Gi    # The volume size of Elasticsearch data nodes.
       logMaxAge: 7                     # Log retention day in built-in Elasticsearch. It is 7 days by default.
       elkPrefix: logstash              # The string making up index names. The index name will be formatted as ks-<elk_prefix>-log.
-      externalElasticsearchUrl: # The URL of external Elasticsearch.
+      externalElasticsearchUrl: # The Host of external Elasticsearch.
       externalElasticsearchPort: # The port of external Elasticsearch.
     ```
 
@@ -84,7 +84,7 @@ By default, ks-installer will install Elasticsearch internally if Auditing is en
       elasticsearchDataVolumeSize: 20Gi    # The volume size of Elasticsearch data nodes.
       logMaxAge: 7                     # Log retention day in built-in Elasticsearch. It is 7 days by default.
       elkPrefix: logstash              # The string making up index names. The index name will be formatted as ks-<elk_prefix>-log.
-      externalElasticsearchUrl: # The URL of external Elasticsearch.
+      externalElasticsearchUrl: # The Host of external Elasticsearch.
       externalElasticsearchPort: # The port of external Elasticsearch.
     ```
 
@@ -127,7 +127,7 @@ By default, Elasticsearch will be installed internally if Auditing is enabled. F
       elasticsearchDataVolumeSize: 20Gi    # The volume size of Elasticsearch data nodes.
       logMaxAge: 7                     # Log retention day in built-in Elasticsearch. It is 7 days by default.
       elkPrefix: logstash              # The string making up index names. The index name will be formatted as ks-<elk_prefix>-log.
-      externalElasticsearchUrl: # The URL of external Elasticsearch.
+      externalElasticsearchUrl: # The Host of external Elasticsearch.
       externalElasticsearchPort: # The port of external Elasticsearch.
     ```
 
