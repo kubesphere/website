@@ -6,23 +6,22 @@ createTime: "2022-01-28"
 author: "Feynman Zhou, Lindsay Liu, Felix Liu"
 ---
 
-In 2021, we have witnessed the emerging cloud-native technologies , leading technological innovation, and the power of the open source community. We have also accomplished a lot of milestones with the collaboration of all users, contributors, and partners.
+In 2021, we have witnessed emerging cloud-native technologies, technological innovations, and the power of the open source community. We have also accomplished a lot of milestones with the collaboration of all users, contributors, and partners.
 
-Let's take a look back at the milstone and story of the KubeSphere community over the past year and appreciate all the members who have contributed to the KubeSphere community.
+Let's take a look back at the milestones and story of the KubeSphere community over the past year and appreciate all the members who have contributed to the KubeSphere community.
 
 ![KubeSphere Community Report 2021](/images/news/community-report-2021/2021-community-recap.png)
 
 ## The state of projects under the KubeSphere umbrella
 
-Over the past 3 years, the KubeSphere community has spawned many new open source projects centered around KubeSphere, such as KubeKey, OpenELB, and OpenFunction, all of which have been widely used by the global users. They can be integrated into KubeSphere not only as addons, but also as standalone projects used with Kubernetes. These projects have been joined the CNCF landscape, contributing to the prosperity of the cloud-native ecosystem.
+Over the past 3 years, the KubeSphere community has spawned many new open source projects centered around KubeSphere, such as KubeKey, OpenELB, and OpenFunction, all of which have been widely used by users worldwide. They can be integrated into KubeSphere not only as addons, but also as standalone projects used with Kubernetes. These projects have joined the CNCF Landscape, contributing to the prosperity of the cloud-native ecosystem.
 
 In addition to the rapidly growing metrics of GitHub Star, Fork, and Contributor, the value and potential of the community behind these open source projects is immeasurable. In 2021, the KubeSphere community also donated the OpenELB and Fluent Operator to the CNCF and upstream Fluent community, polishing the projects and growing the community engagement under the umbrella of CNCF and the upstream community.
 
-![KubeSphere Community Report 2021](/images/news/community-report-2021/project-metrics.png)
-
+![KubeSphere project metrics](/images/news/community-report-2021/project-metrics.png)
 ## User Adoption
 
-According to telemetry statistics, KubeSphere has been downloaded 70w times worldwide, with nearly 8w active clusters and thousands of enterprises using KubeSphere in production. We've seen KubeSphere adopted by users in a variety of industries, including banking, insurance, securities, internet, energy, telecom, transportation, universities, retail, logistics, etc., some experienced users who have helped the KubeSphere project by submitting suggestions or feedback and contributing to the code and documentation. 
+According to telemetry statistics, KubeSphere has been downloaded 700,000 times worldwide, with nearly 80,000 active clusters and thousands of enterprises using KubeSphere in production. We've seen KubeSphere adopted by users in a variety of industries, including banking, insurance, securities, internet, energy, telecom, transportation, universities, retail, logistics, etc. Many experienced users have also helped the KubeSphere project by submitting suggestions or feedback and contributing to the code and documentation. 
 
 In addition, we see an increasing number of users evangelizing and promoting KubeSphere at community events, technical articles, and on social media.
 
@@ -30,7 +29,7 @@ In addition, we see an increasing number of users evangelizing and promoting Kub
 
 ## Known Contributing Enterprises and Partners
 
-We are grateful to see more and more enterprises contributing to KubeSphere and its ecosystem projects in the past year. At the same time, we have built partnership with the fast-growing enterprises and technical giants to create joint solutions and enrich the application ecosystem. For example, six cloud-native applications (APISIX, ChaosMesh, Nocalhost, JuiceFS, EdgeMesh, fpga-operator) had been added to  KubeSphere App Store by our partners.
+We are grateful to see more and more enterprises contributing to KubeSphere and its ecosystem projects in the past year. At the same time, we have built partnership with the fast-growing enterprises and technical giants to create joint solutions and enrich the application ecosystem. For example, six cloud-native applications (APISIX, ChaosMesh, Nocalhost, JuiceFS, EdgeMesh, fpga-operator) had been added to KubeSphere App Store by our partners.
 
 
 ![KubeSphere Community Report 2021](/images/news/community-report-2021/contributing-enterprises-partners.png)
@@ -48,7 +47,7 @@ As a unified control plane for multi-cloud and multi-cluster management, KubeSph
 
 ## KubeSphere Member
 
-KubeSphere Members are granted to members who have deeply participated in the open-source contribution to the KubeSphere community. These members have independently developed or tested one or more features, written or translated documents, or helped to promote KubeSphere and open-source technologies in various communities. Now we have invited all of them to join KubeSphere GitHub.
+KubeSphere Members are granted to members who have deeply participated in the open source contribution to the KubeSphere community. These members have independently developed or tested one or more features, written or translated documents, or helped to promote KubeSphere and open source technologies in various communities. Now we have invited all of them to join KubeSphere organization on GitHub.
 
 | Name or GitHub ID | Certificate |
 | ---- | ---- |
@@ -77,7 +76,7 @@ KubeSphere Ambassadors are awarded to technical evangelists who are helping to g
 
 ## KubeSphere Talented Speaker
 
-KubeSphere Talented Speakers are awarded to outstanding lecturers who have conducted public technology presentations at KubeSphere Open-Source Live, KubeSphere Meetup 2020, and CNCF Webinar. They are excellent KubeSphere evangelists and splendid speakers.
+KubeSphere Talented Speakers are awarded to outstanding lecturers who have conducted public technology presentations at KubeSphere Cloud Native Live, KubeSphere Meetup 2020, and CNCF Webinar. They are excellent KubeSphere evangelists and splendid speakers.
 
 | Name | Certificate |
 | ---- | ---- |
@@ -110,9 +109,9 @@ Yu Li|[Download Certificate](https://kubesphere-community.pek3b.qingstor.com/ima
 
 ## Looking Ahead
 
-2021 had finally drawn to an end. we are so lucky and grateful to all of our innovative users, customers, and developers, who helped us to push our boundaries in developing an enterprise-grad Kubernetes platform and keeping fast iteration. It is impossible to complete these milestones without your effort and engagement. 
+2021 had finally drawn to an end. We are so lucky and grateful to all of our innovative users, customers, and developers, who helped us to push our boundaries in developing an enterprise-grade Kubernetes platform and keeping fast iteration. It is impossible to complete these milestones without your efforts and engagements. 
 
-In 2022, we will toward our mission to empower more developers and enterprises to innovate with speed, security, and efficiency. And we know the KubeSphere community has an exciting prospect because the contribution and effort from every one of you will make it better in the new year, and every year. Join us!
+In 2022, our mission continues to empower more developers and enterprises to innovate with speed, security, and efficiency. As the KubeSphere community has an exciting prospect, the contributions and efforts from each one of you will make it better in the new year, and every year to come. Join us!
 
 
 
