@@ -1,5 +1,5 @@
 ---
-title: 'Transform Traditional Applications to Microservices into Enable the Traffic Monitoring Feature'  
+title: 'Transform Traditional Applications into Microservices to Enable the Traffic Monitoring Feature'  
 tag: 'KubeSphere, Kubernetes, Microservices'  
 keywords: 'KubeSphere, Kubernetes, Microservices, Traffic Monitoring, Service Mesh'  
 description: 'This article describes how to transform a traditional application into microservices to use service mesh features, such as grayscale release, traffic monitoring, and tracing.'   
