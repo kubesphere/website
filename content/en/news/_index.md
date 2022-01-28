@@ -10,6 +10,10 @@ section1:
 
 section2:
   news:
+    - title: 'KubeSphere 2021 Year in Review'
+      description: Let's take a look back at the milstone and story of the KubeSphere community over the past year and appreciate all the members who have contributed to the KubeSphere community.
+      image: /images/news/community-report-2021/2021-community-recap-cover.png
+      link: 'kubesphere-2021-year-in-review/'
     - title: 'Kubesphere Team will join the KubeCon China and bring 5 sessions'
       description: KubeSphere Team brings 5 session to KubeCon China 2021 
       image: /images/news/kubecon-china-2021/banner.png
