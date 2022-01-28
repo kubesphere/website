@@ -37,7 +37,7 @@ We are grateful to see more and more enterprises contributing to KubeSphere and 
 
 ## Integration with Cloud Providers
 
-As a uified control plane for multi-cloud and multi-cluster management, KubeSphere can easily import and manage private and hosted Kubernetes clusters. In 2021, KubeSphere is available on AWS, Azure, DigitalOcean, and QingCloud, integrating Amazon EKS, Azure AKS, DigitalOcean Kubernetes, and QingCloud QKE, respectively.
+As a unified control plane for multi-cloud and multi-cluster management, KubeSphere can easily import and manage private and hosted Kubernetes clusters. In 2021, KubeSphere is available on AWS, Azure, DigitalOcean, and QingCloud, integrating Amazon EKS, Azure AKS, DigitalOcean Kubernetes, and QingCloud QKE, respectively.
 
 - [KubeSphere for Amazon EKS](https://aws.amazon.com/quickstart/architecture/qingcloud-kubesphere/)
 - [KubeSphere for Azure AKS](https://market.azure.cn/marketplace/apps/qingcloud.kubesphere)
