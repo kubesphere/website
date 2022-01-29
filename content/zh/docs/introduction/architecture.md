@@ -25,7 +25,6 @@ KubeSphere 将 [前端](https://github.com/kubesphere/console) 与 [后端](http
 | Elasticsearch | 提供集群的日志索引、查询、数据管理等服务，在安装时也可对接您已有的 ES 减少资源消耗。|
 | Fluent Bit | 提供日志接收与转发，可将采集到的⽇志信息发送到 ElasticSearch、Kafka。 |
 | Jenkins | 提供 CI/CD 流水线服务。|
-| SonarQube | 可选安装项，提供代码静态检查与质量分析。|
 | Source-to-Image | 将源代码自动将编译并打包成 Docker 镜像，方便快速构建镜像。|
 | Istio | 提供微服务治理与流量管控，如灰度发布、金丝雀发布、熔断、流量镜像等。|
 | Jaeger | 收集 Sidecar 数据，提供分布式 Tracing 服务。|
@@ -33,8 +32,6 @@ KubeSphere 将 [前端](https://github.com/kubesphere/console) 与 [后端](http
 | Alert | 提供集群、Workload、Pod、容器级别的自定义告警服务。|
 | Notification | 是一项综合通知服务； 它当前支持邮件传递方法。|
 | Redis | 将 ks-console 与 ks-account 的数据存储在内存中的存储系统。|
-| MySQL | 集群后端组件的数据库，监控、告警、DevOps、OpenPitrix 共用 MySQL 服务。|
-| PostgreSQL | SonarQube 和 Harbor 的后端数据库。|
 | OpenLDAP | 负责集中存储和管理用户帐户信息与对接外部的 LDAP。|
 | Storage | 内置 CSI 插件对接云平台存储服务，可选安装开源的 NFS/Ceph/Gluster 的客户端。|
 | Network | 可选安装 Calico/Flannel 等开源的网络插件，支持对接云平台 SDN。|
