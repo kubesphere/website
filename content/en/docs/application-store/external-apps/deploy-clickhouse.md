@@ -2,7 +2,7 @@
 title: "Deploy ClickHouse Operator and a ClickHouse Cluster on KubeSphere"
 keywords: 'KubeSphere, Kubernetes, ClickHouse, ClickHouse Operator, ClickHouse Cluster'
 description: 'Learn how to deploy ClickHouse Operator and a ClickHouse Cluster on KubeSphere.'
-linkTitle: "Deploy ClickHouse Operator and a ClickHouse Cluster on KubeSphere"
+linkTitle: "Deploy RadonDB ClickHouse Operator and Cluster"
 weight: 14340
 ---
 
