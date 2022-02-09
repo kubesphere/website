@@ -23,7 +23,7 @@ weight: 6900
 
 当您在 Linux 上安装多节点 KubeSphere 时，需要创建一个配置文件，该文件列出了所有 KubeSphere 组件。
 
-1. 基于[在 Linux 上安装 KubeSphere](../../installing-on-linux/introduction/multioverview/) 的教程，您需要创建一个默认文件 `config-sample.yaml`。执行以下命令修改该文件：
+1. 在[在 Linux 上安装 KubeSphere](../../installing-on-linux/introduction/multioverview/) 时，您需要创建一个默认文件 `config-sample.yaml`。执行以下命令修改该文件：
 
     ```bash
     vi config-sample.yaml
@@ -33,7 +33,7 @@ weight: 6900
 如果您采用 [All-in-One 安装](../../quick-start/all-in-one-on-linux/)，则不需要创建 `config-sample.yaml` 文件，因为可以直接创建集群。一般来说，All-in-One 模式是为那些刚接触 KubeSphere 并希望熟悉系统的用户而准备的。如果您想在该模式下启用网络策略（例如用于测试），可以参考[下面的部分](#在安装后启用网络策略)，查看如何在安装后启用网络策略。
     {{</ notice >}}
 
-2. 在该文件中，搜寻到 `network.networkpolicy`，并将 `enabled` 的 `false` 改为 `true`。完成后保存文件。
+2. 在该文件中，搜索 `network.networkpolicy`，并将 `enabled` 的 `false` 改为 `true`。完成后保存文件。
 
     ```yaml
     network:
@@ -49,7 +49,7 @@ weight: 6900
 
 ### 在 Kubernetes 上安装
 
-在 Kubernetes 上安装 KubeSphere 的过程与教程[在 Kubernetes 上安装 KubeSphere](../../installing-on-kubernetes/introduction/overview/) 中的说明大致相同，不同之处是需要先在 [cluster-configuration.yaml](https://github.com/kubesphere/ks-installer/releases/download/v3.2.1/cluster-configuration.yaml) 文件中启用网络策略（可选组件）。
+当您[在 Kubernetes 上安装 KubeSphere](../../installing-on-kubernetes/introduction/overview/) 时，需要先在 [cluster-configuration.yaml](https://github.com/kubesphere/ks-installer/releases/download/v3.2.1/cluster-configuration.yaml) 文件中启用网络策略。
 
 1. 下载 [cluster-configuration.yaml](https://github.com/kubesphere/ks-installer/releases/download/v3.2.1/cluster-configuration.yaml) 文件，然后打开并开始编辑。
 
@@ -57,7 +57,7 @@ weight: 6900
     vi cluster-configuration.yaml
     ```
 
-2. 在该本地 `cluster-configuration.yaml` 文件中，搜寻到 `network.networkpolicy`，并将 `enabled` 的 `false` 改为 `true`，启用该功能。完成后保存文件。
+2. 在该本地 `cluster-configuration.yaml` 文件中，搜索 `network.networkpolicy`，并将 `enabled` 的 `false` 改为 `true`。完成后保存文件。
 
     ```yaml
     network:
@@ -93,7 +93,7 @@ weight: 6900
         enabled: true # 将“false”更改为“true”。
     ```
 
-5. 您可以执行以下命令，使用 Web Kubectl 工具来检查安装过程：
+5. 在 kubectl 中执行以下命令检查安装过程：
 
     ```bash
     kubectl logs -n kubesphere-system $(kubectl get pod -n kubesphere-system -l app=ks-install -o jsonpath='{.items[0].metadata.name}') -f
@@ -101,9 +101,9 @@ weight: 6900
 
     {{< notice note >}}
 
-您可以通过点击控制台右下角的 <img src="/images/docs/zh-cn/enable-pluggable-components/network-policies/hammer.png" height="20px"> 找到 Web Kubectl 工具。
+您可以通过点击控制台右下角的 <img src="/images/docs/zh-cn/enable-pluggable-components/network-policies/hammer.png" height="20px"> 找到 kubectl 工具。
     {{</ notice >}}
 
 ## 验证组件的安装
 
-如果您能在**网络**中看到**网络策略**，说明安装成功，因为安装组件之后才会显示这部分。
+如果您能在**网络**中看到**网络策略**，说明安装成功。

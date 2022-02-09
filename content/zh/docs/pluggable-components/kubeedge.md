@@ -31,7 +31,7 @@ KubeEdge 的组件在两个单独的位置运行——云上和边缘节点上�
 
    {{</ notice >}}
 
-2. 在该文件中，搜寻到 `kubeedge.enabled`，然后将 `false` 更改为 `true`。
+2. 在该文件中，搜索 `kubeedge.enabled`，然后将 `false` 更改为 `true`。完成后保存文件。
 
    ```yaml
    kubeedge:
@@ -48,7 +48,7 @@ KubeEdge 的组件在两个单独的位置运行——云上和边缘节点上�
 
 ### 在 Kubernetes 上安装
 
-[在 Kubernetes 上安装 KubeSphere](../../installing-on-kubernetes/introduction/overview/) 时，您可以在 [cluster-configuration.yaml](https://github.com/kubesphere/ks-installer/releases/download/v3.2.1/cluster-configuration.yaml) 文件中首先启用 KubeEdge。
+当您[在 Kubernetes 上安装 KubeSphere](../../installing-on-kubernetes/introduction/overview/) 时，需要先在 [cluster-configuration.yaml](https://github.com/kubesphere/ks-installer/releases/download/v3.2.1/cluster-configuration.yaml) 文件中启用 KubeEdge。
 
 1. 下载 [cluster-configuration.yaml](https://github.com/kubesphere/ks-installer/releases/download/v3.2.1/cluster-configuration.yaml) 文件并进行编辑。
 
@@ -56,7 +56,7 @@ KubeEdge 的组件在两个单独的位置运行——云上和边缘节点上�
     vi cluster-configuration.yaml
     ```
 
-2. 在本地 `cluster-configuration.yaml` 文件中，搜寻到 `kubeedge.enabled`，将 `false` 更改为 `true` 以启用 KubeEdge。
+2. 在本地 `cluster-configuration.yaml` 文件中，搜索 `kubeedge.enabled`，将 `false` 更改为 `true` 以启用 KubeEdge。完成后保存文件。
 
     ```yaml
     kubeedge:
@@ -65,7 +65,7 @@ KubeEdge 的组件在两个单独的位置运行——云上和边缘节点上�
 
 3. 将 `kubeedge.cloudCore.cloudHub.advertiseAddress` 的值设置为集群的公共 IP 地址或边缘节点可以访问的 IP 地址。
 
-4. 保存文件并执行以下命令开始安装：
+4. 执行以下命令开始安装：
 
     ```bash
     kubectl apply -f https://github.com/kubesphere/ks-installer/releases/download/v3.2.1/kubesphere-installer.yaml
@@ -85,7 +85,7 @@ KubeEdge 的组件在两个单独的位置运行——云上和边缘节点上�
 
 3. 在**自定义资源**中，点击 `ks-installer` 右侧的 <img src="/images/docs/zh-cn/enable-pluggable-components/kubeedge/three-dots.png" height="20px">，然后选择**编辑 YAML**。
    
-4. 在该配置文件中，搜寻到 `kubeedge.enabled`，将 `false` 更改为 `true` 以启用 KubeEdge。
+4. 在该配置文件中，搜索 `kubeedge.enabled`，将 `false` 更改为 `true` 以启用 KubeEdge。点击右下角的**确定**，保存配置。
 
     ```yaml
     kubeedge:
@@ -94,7 +94,7 @@ KubeEdge 的组件在两个单独的位置运行——云上和边缘节点上�
 
 5. 将 `kubeedge.cloudCore.cloudHub.advertiseAddress` 的值设置为集群的公共 IP 地址或边缘节点可以访问的 IP 地址。完成后，点击右下角的**确定**保存配置。
 
-6. 您可以使用 Web Kubectl 执行以下命令查看安装过程：
+6. 在 kubectl 中执行以下命令检查安装过程：
 
     ```bash
     kubectl logs -n kubesphere-system $(kubectl get pod -n kubesphere-system -l app=ks-install -o jsonpath='{.items[0].metadata.name}') -f
@@ -102,7 +102,7 @@ KubeEdge 的组件在两个单独的位置运行——云上和边缘节点上�
 
     {{< notice note >}}
 
-您可以通过点击控制台右下角的 <img src="/images/docs/zh-cn/enable-pluggable-components/kubeedge/hammer.png" height="20px"> 来找到 Web kubectl 工具。
+您可以通过点击控制台右下角的 <img src="/images/docs/zh-cn/enable-pluggable-components/kubeedge/hammer.png" height="20px"> 来找到 kubectl 工具。
     {{</ notice >}}
 
 ## 验证组件的安装

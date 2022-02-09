@@ -18,7 +18,7 @@ For more information, see [App Store](../../application-store/).
 
 When you implement multi-node installation of KubeSphere on Linux, you need to create a configuration file, which lists all KubeSphere components.
 
-1. In the tutorial of [Installing KubeSphere on Linux](../../installing-on-linux/introduction/multioverview/), you create a default file `config-sample.yaml`. Modify the file by executing the following command:
+1. In the tutorial of [Installing KubeSphere on Linux](../../installing-on-linux/introduction/multioverview/), you create a default file `config-sample.yaml`. Modify the file by running the following command:
 
     ```bash
     vi config-sample.yaml
@@ -28,7 +28,7 @@ When you implement multi-node installation of KubeSphere on Linux, you need to c
 If you adopt [All-in-One Installation](../../quick-start/all-in-one-on-linux/), you do not need to create a `config-sample.yaml` file as you can create a cluster directly. Generally, the all-in-one mode is for users who are new to KubeSphere and look to get familiar with the system. If you want to enable the App Store in this mode (for example, for testing purposes), refer to [the following section](#enable-app-store-after-installation) to see how the App Store can be installed after installation.
     {{</ notice >}}
 
-2. In this file, navigate to `openpitrix` and change `false` to `true` for `enabled`. Save the file after you finish.
+2. In this file, search for `openpitrix` and change `false` to `true` for `enabled`. Save the file after you finish.
 
     ```yaml
     openpitrix:
@@ -52,7 +52,7 @@ As you [install KubeSphere on Kubernetes](../../installing-on-kubernetes/introdu
     vi cluster-configuration.yaml
     ```
 
-2. In this local `cluster-configuration.yaml` file, navigate to `openpitrix` and enable the App Store by changing `false` to `true` for `enabled`. Save the file after you finish.
+2. In this local `cluster-configuration.yaml` file, search for `openpitrix` and enable the App Store by changing `false` to `true` for `enabled`. Save the file after you finish.
 
     ```yaml
     openpitrix:
@@ -60,7 +60,7 @@ As you [install KubeSphere on Kubernetes](../../installing-on-kubernetes/introdu
         enabled: true # Change "false" to "true".
     ```
 
-3. Execute the following commands to start installation:
+3. Run the following commands to start installation:
 
     ```bash
     kubectl apply -f https://github.com/kubesphere/ks-installer/releases/download/v3.2.1/kubesphere-installer.yaml
@@ -82,7 +82,7 @@ A Custom Resource Definition (CRD) allows users to create a new type of resource
 
 3. In **Custom Resources**, click <img src="/images/docs/enable-pluggable-components/kubesphere-app-store/three-dots.png" height="20px"> on the right of `ks-installer` and select **Edit YAML**.
 
-4. In this YAML file, navigate to `openpitrix` and change `false` to `true` for `enabled`. After you finish, click **OK** in the lower-right corner to save the configuration.
+4. In this YAML file, search for `openpitrix` and change `false` to `true` for `enabled`. After you finish, click **OK** in the lower-right corner to save the configuration.
 
     ```yaml
     openpitrix:
@@ -90,7 +90,7 @@ A Custom Resource Definition (CRD) allows users to create a new type of resource
         enabled: true # Change "false" to "true".
     ```
 
-5. You can use the web kubectl to check the installation process by executing the following command:
+5. Use the web kubectl to check the installation process by running the following command:
 
     ```bash
     kubectl logs -n kubesphere-system $(kubectl get pod -n kubesphere-system -l app=ks-install -o jsonpath='{.items[0].metadata.name}') -f

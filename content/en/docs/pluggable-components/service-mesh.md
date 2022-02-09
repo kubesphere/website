@@ -6,7 +6,7 @@ linkTitle: "KubeSphere Service Mesh"
 weight: 6800
 ---
 
-On the basis of [Istio](https://istio.io/), KubeSphere Service Mesh visualizes microservices governance and traffic management. It features a powerful toolkit including **circuit breaking, blue-green deployment, canary release, traffic mirroring, tracing, observability, and traffic control**. Developers can easily get started with KubeSphere Service Mesh without any code hacking, with the learning curve of Istio greatly reduced. All features of KubeSphere Service Mesh are designed to meet users' demand for their business.
+On the basis of [Istio](https://istio.io/), KubeSphere Service Mesh visualizes microservices governance and traffic management. It features a powerful toolkit including **circuit breaking, blue-green deployment, canary release, traffic mirroring, tracing, observability, and traffic control**. Developers can easily get started with KubeSphere Service Mesh without any code hacking, which greatly reduces the learning curve of Istio. All features of KubeSphere Service Mesh are designed to meet users' demand for their business.
 
 For more information, see [Grayscale Release](../../project-user-guide/grayscale-release/overview/).
 
@@ -33,7 +33,7 @@ If you adopt [All-in-One Installation](../../quick-start/all-in-one-on-linux/), 
       enabled: true # Change "false" to "true".
     ```
 
-3. Create a cluster using the configuration file:
+3. Run the following command to create a cluster using the configuration file:
 
     ```bash
     ./kk create cluster -f config-sample.yaml
@@ -56,7 +56,7 @@ As you [install KubeSphere on Kubernetes](../../installing-on-kubernetes/introdu
       enabled: true # Change "false" to "true".
     ```
 
-3. Execute the following commands to start installation:
+3. Run the following commands to start installation:
 
     ```bash
     kubectl apply -f https://github.com/kubesphere/ks-installer/releases/download/v3.2.1/kubesphere-installer.yaml
@@ -83,7 +83,7 @@ A Custom Resource Definition (CRD) allows users to create a new type of resource
       enabled: true # Change "false" to "true".
     ```
 
-5. You can use the web kubectl to check the installation process by executing the following command:
+5. Run the following command in kubectl to check the installation process:
 
     ```bash
     kubectl logs -n kubesphere-system $(kubectl get pod -n kubesphere-system -l app=ks-install -o jsonpath='{.items[0].metadata.name}') -f
@@ -100,19 +100,19 @@ You can find the web kubectl tool by clicking <img src="/images/docs/enable-plug
 
 {{< tab "Verify the component on the dashboard" >}}
 
-Go to **System Components** and check that all components on the **Istio** tab page is in **Healthy** state.
+Go to **System Components** and check whether all components on the **Istio** tab page is in **Healthy** state. If yes, the component is successfully installed.
 
 {{</ tab >}}
 
 {{< tab "Verify the component through kubectl" >}}
 
-Execute the following command to check the status of Pods:
+Run the following command to check the status of Pods:
 
 ```bash
 kubectl get pod -n istio-system
 ```
 
-The output may look as follows if the component runs successfully:
+The following is an example of the output if the component runs successfully:
 
 ```bash
 NAME                                    READY   STATUS    RESTARTS   AGE

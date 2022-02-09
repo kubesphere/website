@@ -25,7 +25,7 @@ weight: 6920
 
    {{</ notice >}}
 
-2. 在该文件中，搜寻到 `network.ippool.type`，然后将 `none` 更改为 `calico`。完成后保存文件。
+2. 在该文件中，搜索 `network.ippool.type`，然后将 `none` 更改为 `calico`。完成后保存文件。
 
    ```yaml
    network:
@@ -41,7 +41,7 @@ weight: 6920
 
 ### 在 Kubernetes 上安装
 
-[在 Kubernetes 上安装 KubeSphere](../../installing-on-kubernetes/introduction/overview/) 时，您可以在 [cluster-configuration.yaml](https://github.com/kubesphere/ks-installer/releases/download/v3.2.1/cluster-configuration.yaml) 文件中首先启用容器组 IP 池。
+当您[在 Kubernetes 上安装 KubeSphere](../../installing-on-kubernetes/introduction/overview/) 时，需要现在 [cluster-configuration.yaml](https://github.com/kubesphere/ks-installer/releases/download/v3.2.1/cluster-configuration.yaml) 文件中启用容器组 IP 池。
 
 1. 下载 [cluster-configuration.yaml](https://github.com/kubesphere/ks-installer/releases/download/v3.2.1/cluster-configuration.yaml) 文件并进行编辑。
 
@@ -49,7 +49,7 @@ weight: 6920
     vi cluster-configuration.yaml
     ```
 
-2. 在本地 `cluster-configuration.yaml` 文件中，搜寻到 `network.ippool.type`，将 `none` 更改为 `calico` 以启用容器组 IP 池。完成后保存文件。
+2. 在本地 `cluster-configuration.yaml` 文件中，搜索 `network.ippool.type`，将 `none` 更改为 `calico` 以启用容器组 IP 池。完成后保存文件。
 
     ```yaml
     network:
@@ -86,7 +86,7 @@ weight: 6920
         type: calico # 将“none”更改为“calico”。
     ```
 
-5. 您可以使用 Web Kubectl 执行以下命令查看安装过程：
+5. 在  kubectl 中执行以下命令检查安装过程：
 
     ```bash
     kubectl logs -n kubesphere-system $(kubectl get pod -n kubesphere-system -l app=ks-install -o jsonpath='{.items[0].metadata.name}') -f
@@ -94,7 +94,7 @@ weight: 6920
 
     {{< notice note >}}
 
-您可以通过点击控制台右下角的 <img src="/images/docs/zh-cn/enable-pluggable-components/pod-ip-pools/hammer.png" height="20px"> 来找到 Web kubectl 工具。
+您可以通过点击控制台右下角的 <img src="/images/docs/zh-cn/enable-pluggable-components/pod-ip-pools/hammer.png" height="20px"> 来找到 kubectl 工具。
     {{</ notice >}}
 
 ## 验证组件的安装
