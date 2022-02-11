@@ -1,0 +1,155 @@
+{{ define "main" }}
+
+{{ with .Params.topSection }}
+<section class='topSection bg-cover div' style='background-image: url("{{ .image }}");'>
+  <div class="title-div common-layout">
+    <h1 class="title-h1">{{ .title }}</h1>
+    <p class="common-p">{{ .content }}</p>
+  </div>
+</section>
+{{ end }}
+
+{{ with .Params.citySection }}
+<section class="city-section div">
+  <div class="common-layout">
+    <div class="cityBox">
+      {{ with .cityCard }}
+      <div class="city-card">
+        <div class="innerBox">
+          <span class="title">{{ .title }}</span>
+          <span class="des">{{ .des }}</span>
+          <a class="joinUs" href="{{ .joinLink }}">加入我们</a>
+        </div>
+        <img class="bl-svg" src="/images/user-group/city-rect.svg">
+      </div>
+      {{ end }}
+
+      <div class="imageList" id="imageList">
+        {{ range .picList }}
+        <div class="normalPic">
+          <image class="{{ .id }}" src="{{ .backgroundImage }}"></image>
+          <div class="nameText">{{ .name }}</div>
+          <div class="textBox">
+            <div class="title">{{ .title }}</div>
+            <div class="des">{{ .des }}</div>
+          </div>
+        </div>
+        {{ end }}
+      </div>
+      <img class="tr-svg" src="/images/user-group/city-rect1.svg">
+    </div>
+  </div>
+</section>
+{{end}}
+
+{{ with .Params.organization }}
+<section class="org-section div" style="background-image: url(/images/user-group/org/bg.png);">
+  <div class="common-layout">
+    <div class="org">
+      <div class="left">
+        <div class="title">{{ .name }}</div>
+        <image src="{{ .orgIcon }}" class="orgIcon"></image>
+        <div class="des"> {{ .description }}</div>
+      </div>
+      <div class="right">
+        <image class="bg" src="/images/user-group/org/tree.svg"></image>
+        <div class="sig">{{ .SIG }}</div>
+        <div class="sig-zh">{{ .SIG_zh }}</div>
+        <div class="positionBox">
+          <div class="position">{{ .position1 }}</div>
+          <div class="position">{{ .position2 }}</div>
+          <div class="position">{{ .position3 }}</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+{{ end }}
+
+{{ with .Params.applyNew }}
+<section class="applyNew div">
+  <div class="common-layout">
+    <div class="apply">
+      <div class="text-head">
+        <div class="left">
+          <div class="title-en">{{ .title_en }}</div>
+          <div class="title">{{ .title }}</div>
+          <div class="des">{{ .description }}</div>
+          <image class="svg" src="/images/user-group/applyNew/top-rect.svg"></image>
+        </div>
+        <div class="right" style="background-image: url(/images/user-group/applyNew/apply.svg);"></div>
+      </div>
+      {{ with .conditions }}
+        <div class="condition">
+          <image class="icon" src="{{ .image }}"></image>
+          <div class="text">
+            <span class="title">{{ .text }}</span>
+            <span class="des">{{ .description }}</span>
+          </div>
+        </div>
+      {{ end }}
+
+      {{ with .apply }}
+        <div class="apply">
+          <image class="icon" src="{{ .image }}"></image>
+          <div class="text">
+            <span class="title">{{ .text }}</span>
+            <span class="des">
+              站长向社区 <a target="_blank" href="{{ .applyLink }}">提交申请</a>，通过后即可成立。
+            </span>
+          </div>
+        </div>
+      {{ end }}
+
+      {{ with .requirements }}
+        <div class="apply">
+          <image class="icon" src="{{ .image }}"></image>
+          <div class="text">
+            <span class="title">{{ .text }}</span>
+            <span class="des" style="line-height: 32px;">
+              <span>1.站长需要保证所在城市内，每年至少组织一场线下活动（出现疫情等特殊情况例外）。</span>
+                <span>2.如果站长由于某个原因临时、或者长期无法于所在城市组织线下活动，需要向社区 <a target="_blank" href="{{ .applyLink }}">提交申请</a> 推荐新的站长，或请求社区推荐新的站长。如果最终无人能组织活动，城市站设置为不活跃状态，直到有新的活跃成员出现。
+                </span>
+            </span>
+          </div>
+        </div>
+      {{ end }}
+    </div>
+  </div>
+</section>
+{{ end }}
+
+
+{{ with .Params.returns }}
+<section class="returns">
+  <div class="common-layout">
+    <div class="return">
+      <p class="title">{{ .title }}</p>
+      <div class="cards">
+        {{ range .list }}
+          <div class="card">
+            <span class="text">{{ .text }}</span>
+            <image class="bg" src="{{ .bg }}"></image>
+          </div>
+        {{ end }}
+      </div>
+    </div>
+  </div>
+</section>
+{{ end }}
+
+<script>
+  var imageList = $('#imageList')
+  imageList.children().each(function (index, item) {
+    if (index === 0) {
+      $(item).addClass('pic-hover')
+    }
+    $(item).hover(function () {
+      imageList.children().each(function (index, item) {
+        $(item).removeClass('pic-hover')
+      })
+      $(item).addClass('pic-hover')
+    })
+  }) 
+</script>
+{{ end }}
