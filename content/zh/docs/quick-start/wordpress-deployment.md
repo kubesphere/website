@@ -134,8 +134,8 @@ WordPress（使用 PHP 语言编写）是免费、开源的内容管理系统，
 
 4. 通过 `{Node IP}:{NodePort}` 访问此应用程序，可以看到下图：
 
-    ![wordpress-page](/images/docs/zh-cn/quickstart/wordpress-deployment/wordpress-page.png)
+   ![wordpress-page](/images/docs/zh-cn/quickstart/wordpress-deployment/wordpress-page.png)
 
-    {{< notice note >}}
-    在访问服务之前，请确保安全组中的端口已打开。
-    {{</ notice >}}
+   {{< notice note >}}
+   在访问服务之前，请确保安全组中的端口已打开。
+   {{</ notice >}}
