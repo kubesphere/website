@@ -5,7 +5,7 @@ keywords: 'Kubernetes, 备份容灾, SaaS, KubeSphere'
 description: 'KubeSphere Cloud 云原生备份容灾服务是 KubeSphere 团队针对混合云场景推出的 Kubernetes 备份容灾即服务产品。'
 createTime: '2022-02-10'
 author: '尹珉'
-snapshot: 'http://pek3b.qingstor.com/kubesphere-community/images/KubeSphere-SaaS.png'
+snapshot: 'https://pek3b.qingstor.com/kubesphere-community/images/KubeSphere-SaaS.png'
 ---
 
 ## 前言
