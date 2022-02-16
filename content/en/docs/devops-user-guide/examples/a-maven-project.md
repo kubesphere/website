@@ -45,7 +45,7 @@ The Jenkins Agent mounts the directories by Docker Volume on the node. The pipel
 The default file path of Maven settings is `maven` and the configuration file path is `/opt/apache-maven-3.5.3/conf/settings.xml`. Execute the following command to get the content of Maven settings.
 
 ```bash
-kubectl get cm -n kubesphere-devops-system ks-devops-agent -o yaml
+kubectl get cm -n kubesphere-devops-worker ks-devops-agent -o yaml
 ```
 
 ### Network of Maven Pod
