@@ -3,7 +3,10 @@
 {{ with .Params.topSection }}
 <section class='topSection div' style='background-image: url("{{ .image }}");'>
   <div class="title-div common-layout">
-    <h1 class="title-h1">{{ .title }}</h1>
+    <div class="title">
+      <div class="t1">{{ .title1 }}&nbsp;</div>
+      <div class="t1">{{ .title2 }}</div>
+    </div>
     <p class="common-p">{{ .content }}</p>
   </div>
 </section>
@@ -16,11 +19,14 @@
       {{ with .cityCard }}
       <div class="city-card">
         <div class="innerBox">
-          <span class="title">{{ .title }}</span>
-          <span class="des">{{ .des }}</span>
-          <a class="joinUs" href="{{ .joinLink }}">加入我们</a>
+          <div class="text">
+            <span class="title">{{ .title }}</span>
+            <span class="des">{{ .des }}</span>
+            <a class="joinUs" href="{{ .joinLink }}">加入我们</a>
+          </div>
+          <div class="s-bg"></div>
         </div>
-        <img class="bl-svg" src="/images/user-group/city-rect.svg">
+        <img class="bl-svg" src="/images/user-group/list/city-rect.svg">
       </div>
       {{ end }}
 
@@ -36,23 +42,26 @@
         </a>
         {{ end }}
       </div>
-      <img class="tr-svg" src="/images/user-group/city-rect1.svg">
+      <img class="tr-svg" src="/images/user-group/list/city-rect1.svg">
     </div>
   </div>
 </section>
 {{end}}
 
 {{ with .Params.organization }}
-<section class="org-section div" style="background-image: url(/images/user-group/org/bg.png);">
+<section class="org-section div" style="background-image: url(/images/user-group/list/org/bg.png);">
   <div class="common-layout">
     <div class="org">
       <div class="left">
-        <div class="title">{{ .name }}</div>
-        <image src="{{ .orgIcon }}" class="orgIcon"></image>
+        <div class="textBox">
+          <div class="title">{{ .name }}</div>
+          <image src="{{ .orgIcon }}" class="orgIcon"></image>
+        </div>
         <div class="des"> {{ .description }}</div>
       </div>
       <div class="right">
-        <image class="bg" src="/images/user-group/org/tree.svg"></image>
+        <image class="bg" src="/images/user-group/list/org/tree.svg"></image>
+        <image class="m-bg" src="/images/user-group/list/org/m-bg.svg"></image>
         <div class="sig">{{ .SIG }}</div>
         <div class="sig-zh">{{ .SIG_zh }}</div>
         <div class="positionBox">
@@ -75,9 +84,9 @@
           <div class="title-en">{{ .title_en }}</div>
           <div class="title">{{ .title }}</div>
           <div class="des">{{ .description }}</div>
-          <image class="svg" src="/images/user-group/applyNew/top-rect.svg"></image>
+          <image class="svg" src="/images/user-group/list/applyNew/top-rect.svg"></image>
         </div>
-        <div class="right" style="background-image: url(/images/user-group/applyNew/apply.svg);"></div>
+        <div class="right"></div>
       </div>
       {{ with .conditions }}
         <div class="condition">
@@ -86,6 +95,13 @@
             <span class="title">{{ .text }}</span>
             <span class="des">{{ .description }}</span>
           </div>
+        </div>
+        <div class="m-condition">
+          <div class="top">
+            <image class="icon" src="{{ .image }}"></image>
+            <span class="title">{{ .text }}</span>
+          </div>
+          <span class="des">{{ .description }}</span>
         </div>
       {{ end }}
 
@@ -99,6 +115,17 @@
             </span>
           </div>
         </div>
+
+        <div class="m-apply">
+          <div class="top">
+            <image class="icon" src="{{ .image }}"></image>
+            <span class="title">{{ .text }}</span>
+
+          </div>
+          <span class="des">
+            站长向社区 <a target="_blank" href="{{ .applyLink }}">提交申请</a>，通后即可成立。
+          </span>
+        </div>
       {{ end }}
 
       {{ with .requirements }}
@@ -108,10 +135,22 @@
             <span class="title">{{ .text }}</span>
             <span class="des" style="line-height: 32px;">
               <span>1.站长需要保证所在城市内，每年至少组织一场线下活动（出现疫情等特殊情况例外）。</span>
-                <span>2.如果站长由于某个原因临时、或者长期无法于所在城市组织线下活动，需要向社区 <a target="_blank" href="{{ .applyLink }}">提交申请</a> 推荐新的站长，或请求社区推荐新的站长。如果最终无人能组织活动，城市站设置为不活跃状态，直到有新的活跃成员出现。
-                </span>
+              <span>2.如果站长由于某个原因临时、或者长期无法于所在城市组织线下活动，需要向社区 <a target="_blank" href="{{ .applyLink }}">提交申请</a> 推荐新的站长，或请求社区推荐新的站长。如果最终无人能组织活动，城市站设置为不活跃状态，直到有新的活跃成员出现。
+              </span>
             </span>
           </div>
+        </div>
+
+        <div class="m-apply">
+          <div class="top">
+            <image class="icon" src="{{ .image }}"></image>
+            <span class="title">{{ .text }}</span>
+          </div>
+          <ol class="des" style="line-height: 32px;">
+            <li>1. 站长需要保证所在城市内，每年至少组织一场线下活动（出现疫情等特殊情况外）。</li>
+            <li>2. 如果站长由于某个原因临时、或者长期无法于所在城市组织线下活动，需要向区<a target="_blank" href="{{ .applyLink }}">提交申请</a> 推荐新的长，或求社区推荐新的站长。如果最终无人能组织活动，城市站设置为不活跃状态，直有新的活跃员出现。
+            </li>
+          </ol>
         </div>
       {{ end }}
     </div>

@@ -27,16 +27,16 @@ returns:
   title: 为什么加入我们？
   list:
     - text: 结识更多的云原生领域的技术大牛、志同道合的朋友
-      bg: /images/user-group/returns/bg1.svg
+      bg: /images/user-group/list/returns/bg1.svg
 
     - text: 提升在云原生领域的知名度
-      bg: /images/user-group/returns/bg2.svg
+      bg: /images/user-group/list/returns/bg2.svg
 
     - text: 提升自身多项能力：交流沟通能力、组织协调能力、领导能力等
-      bg: /images/user-group/returns/bg3.svg
+      bg: /images/user-group/list/returns/bg3.svg
 
     - text: KubeSphere 社区周边纪念礼品、社区认证证书及社区Title
-      bg: /images/user-group/returns/bg4.svg
+      bg: /images/user-group/list/returns/bg4.svg
 
 members:
   title: 核心成员
