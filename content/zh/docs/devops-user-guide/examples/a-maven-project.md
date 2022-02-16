@@ -45,7 +45,7 @@ Jenkins Agent 通过节点上的 Docker 存储卷 (Volume) 挂载目录。流水
 Maven 设置的默认文件路径是 `maven`，配置文件路径是 `/opt/apache-maven-3.5.3/conf/settings.xml`。执行以下命令获取 Maven 的设置内容。
 
 ```bash
-kubectl get cm -n kubesphere-devops-system ks-devops-agent -o yaml
+kubectl get cm -n kubesphere-devops-worker ks-devops-agent -o yaml
 ```
 
 ### Maven Pod 的网络
