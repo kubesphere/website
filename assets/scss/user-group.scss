@@ -10,6 +10,8 @@
 .topSection {
   position: relative;
   padding-top: 138px;
+  background-size: cover;
+  background-repeat: no-repeat;
 
   .title-div {
     padding-bottom: 62px;
@@ -25,7 +27,7 @@
     }
 
     p {
-      width: 1060px;
+      width: 100%;
       margin-top: 12px;
       letter-spacing: -0.04px;
       color: #ffffff;
@@ -129,6 +131,8 @@
     flex: 1;
 
     .normalPic {
+      display: block;
+      box-sizing: border-box;
       width: 212px;
       height: 300px;
       border-radius: 10px;
@@ -154,7 +158,7 @@
 
       .hangzhou {
         width: 410px;
-        height: 330px;
+        height: 340px;
         top: 0px;
         left: -20px;
       }
@@ -446,6 +450,7 @@
 
 .returns {
   margin-bottom: 78px;
+
   .return {
     .title {
       font-weight: 600;
@@ -472,13 +477,13 @@
         position: relative;
         overflow: hidden;
 
-        .text{
+        .text {
           font-size: 16px;
           line-height: 28px;
           color: #36435C;
         }
 
-        .bg{
+        .bg {
           position: absolute;
           top: 92px;
           right: 0px;

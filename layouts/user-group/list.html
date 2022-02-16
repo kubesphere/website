@@ -1,7 +1,7 @@
 {{ define "main" }}
 
 {{ with .Params.topSection }}
-<section class='topSection bg-cover div' style='background-image: url("{{ .image }}");'>
+<section class='topSection div' style='background-image: url("{{ .image }}");'>
   <div class="title-div common-layout">
     <h1 class="title-h1">{{ .title }}</h1>
     <p class="common-p">{{ .content }}</p>
@@ -26,14 +26,14 @@
 
       <div class="imageList" id="imageList">
         {{ range .picList }}
-        <div class="normalPic">
+        <a class="normalPic" href="./{{ .id }}">
           <image class="{{ .id }}" src="{{ .backgroundImage }}"></image>
           <div class="nameText">{{ .name }}</div>
           <div class="textBox">
             <div class="title">{{ .title }}</div>
             <div class="des">{{ .des }}</div>
           </div>
-        </div>
+        </a>
         {{ end }}
       </div>
       <img class="tr-svg" src="/images/user-group/city-rect1.svg">
