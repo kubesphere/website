@@ -182,7 +182,7 @@ Keepalived must be installed on both machines while the configuration of them is
 4. Make it persist through reboots:
 
    ```bash
-   systemctl enable haproxy
+   systemctl enable keepalived
    ```
 
 5. Make sure you configure Keepalived on the other machine (`lb2`) as well.
