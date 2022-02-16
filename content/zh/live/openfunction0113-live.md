@@ -1,7 +1,7 @@
 ---
 title: OpenFunction v0.5.0 新特性讲解与 v0.6.0 展望
 description: 本次分享将整体介绍 OpenFunction，也会讲解 v0.5.0 的新特性以及 v0.6.0 的展望。
-keywords: KubeSphere, Kubernetes, Serverless, FaaS,  函数计算,   OpenFunction
+keywords: KubeSphere, Kubernetes, Serverless, FaaS, 函数计算, OpenFunction
 css: scss/live-detail.scss
 
 section1:

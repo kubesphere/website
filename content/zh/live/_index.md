@@ -13,15 +13,15 @@ section2:
   url: ./openfunction0113-live/
 
   notice:
-    title: MQTT 及车联网场景应用
-    tag: 结束
-    time: 2021 年 12 月 30 日晚 8 点
+    title: Argo CD 速度通关指南
+    tag: 预告
+    time: 2022 年 02 月 17 日晚 8 点
     base: 线上
-    url: ./mqtt1230-live/
+    url: ./argocd0217-live/
 
   over:
-    title: 携程分布式存储实践
-    url: ./ceph1216-live/
+    title: MQTT 及车联网场景应用
+    url: ./mqtt1230-live/
     tag: 结束
 
 section3:
