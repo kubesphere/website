@@ -1,21 +1,39 @@
 {{ define "main" }}
 
 {{ with .Params.topSection }}
-<section class='topSection div' style='background-image: url("{{ .image }}");'>
+<section class='topSection div pc-topSection' data-bg="{{ .image }},{{ .mobile_image }}" style='background-image: url("{{ .image }}");'>
   <div class="title-div common-layout">
-    <h1 class="title-h1">{{ .title }}</h1>
-    <p class="common-p">{{ .content }}</p>
+    <div class="title">
+      <div class="t1">{{ .kubSphere }}&nbsp;</div>
+      <div class="t1">{{ .committee }}</div>
+    </div>
+    <p class="common-p">{{ .description }}</p>
+  </div>
+</section>
+
+<section class='topSection div m-topSection' style='background-image: url("{{ .mobile_image }}");'>
+  <div class="title-div common-layout">
+    <div class="title">
+      <div class="t1">{{ .kubSphere }}&nbsp;</div>
+      <div class="t1">{{ .committee }}</div>
+    </div>
+    <p class="common-p">{{ .description }}</p>
   </div>
 </section>
 {{ end }}
 
 {{ with .Params.station }}
-<section class="stations div" style="background-image: url(/images/user-group/org/bg.png);">
+<section class="stations div">
   <div class="common-layout">
     <div class="station">
       <div class="left">
         <span class="name_en">{{ .name_en }}</span>
-        <span class="name"> {{ .name }} </span>
+        {{ with .name }}
+        <span class="name"> 
+          <span class="text1">{{ .text1 }}</span>
+          <span class="text2">{{ .text2 }}</span>
+        </span>
+        {{ end }}
 
         {{ range .description }}
         <span class="des">{{ . }}</span>
@@ -101,14 +119,14 @@
               <span class="name">{{ .name }}</span>
               <span class="position">{{ .position }}</span>
               <div class="mobile-bgs">
-                <image class="m-bg" src="{{ .bg }}"></image>
+                <image class="m-bg" src="{{ .image }}"></image>
                 <div>
                   <span class="m-name">{{ .name }}</span>
                   <span class="m-position">{{ .position }}</span>
                 </div>
               </div>
               <span class="des">{{ .des }}</span>
-              <image class="bg" src="{{ .bg }}"></image>
+              <image class="bg" src="{{ .image }}"></image>
             </div>
         {{ end }}
         </div>
@@ -135,7 +153,7 @@
           <div id="swiper" class="rotations">
             <div id="swiper-wrapper" class="swiper-wrapper">
               {{ range .videos }}
-              <image class="swiper-slide video" src="{{ .image }}" data-link="{{ .link }}"></image>
+              <div class="swiper-slide video" style="background-image: url({{ .image }})" data-link="{{ .link }}"></div>
               {{ end }}
             </div>
           </div>
@@ -156,7 +174,7 @@
             <div id="reviewBox">
               {{ range .review }}
               <div class="content">
-                <a href="{{ .link }}" class="text">{{ .text }}</a>
+                <a href="{{ .link }}" class="text" target="_blank">{{ .text }}</a>
                 <span class="des">{{ .description }}</span>
               </div>
               {{ end }}
@@ -243,7 +261,7 @@
   (function () {
     var mSwiper = new Swiper('#mSwiper', {
       autoplay: {
-        running: false,
+        running: true,
         pauseOnMouseEnter: true,
         disableOnInteraction: false,
       },
@@ -257,6 +275,6 @@
         clickable :true,
       },
     });
-  })()
+  })();
 </script>
 {{ end }}

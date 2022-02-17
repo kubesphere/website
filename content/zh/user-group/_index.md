@@ -4,39 +4,21 @@ title: "社区用户委员会"
 css: "scss/user-group.scss"
 
 topSection:
-  title1: KubeSphere 
-  title2: 社区用户委员会
-  content: KubeSphere 社区用户委员会是由 KubeSphere 社区牵头，在城市当地由活跃且愿意为 KubeSphere 社区发展而贡献的用户组成的用户组织。社区会给予委员会相应的支持和授权，以使委员会在当地组织交流活动等，从而促进 KubeSphere 的发展。目前已经成立三个城市站：上海、杭州、成都。
+  kubSphere: KubeSphere 
+  committee: 社区用户委员会
+  description: KubeSphere 社区用户委员会是由 KubeSphere 社区牵头，在城市当地由活跃且愿意为 KubeSphere 社区发展而贡献的用户组成的用户组织。社区会给予委员会相应的支持和授权，以使委员会在当地组织交流活动等，从而促进 KubeSphere 的发展。目前已经成立三个城市站：上海、杭州、成都。
   image: /images/user-group/list/banner.png
+  mobile_image: /images/user-group/list/m-banner.png
 
 citySection:
   cityCard: 
     title: 城市站
     des: KubeSphere 用户委员会目前已经成立三个城市站：上海、杭州、成都。
-    joinLink: https://www.baidu.com
+    joinLink: https://github.com/kubesphere/website/issues
 
-  picList:
-    - name: 上海站
-      backgroundImage: /images/user-group/list/cityCards/shanghai.png
-      title: KubeSphere 社区用户委员会 — 上海站
-      des: 上海站成立于 2021 年 5 月 15 日，是由活跃在上海的 KubeSphere 社区用户和成员组成的。目前为初创阶段，核心成员 4 人。
-      id: shanghai
-    
-    - name: 杭州站
-      backgroundImage: /images/user-group/list/cityCards/hangzhou.png
-      title: KubeSphere 社区用户委员会 — 杭州站
-      des: 杭州站成立于 2021 年 5 月 15 日，是由活跃在上海的 KubeSphere 社区用户和成员组成的。目前为初创阶段，核心成员 5 人。
-      id: hangzhou
-
-    - name: 成都站
-      backgroundImage: /images/user-group/list/cityCards/chengdu.png
-      title: KubeSphere 社区用户委员会 — 成都站
-      des: 成都站成立于 2021 年 5 月 15 日，是由活跃在上海的 KubeSphere 社区用户和成员组成的。目前为初创阶段，核心成员 6 人。
-      id: chengdu 
-  
 organization:
   name: 组织架构
-  orgIcon: /images/user-group/list/org/github.svg
+  githubIcon: /images/user-group/list/org/github.svg
   description: Advocacy and Outreach SIG 旨在以创新的方式发展社区。 我们讨论宣传、外展、活动、社交媒体推广，并吸引新人加入 KubeSphere 社区。如果您感兴趣，可以加入我们的 SIG。在那里您可以找到与您感兴趣的主题所相关的一切内容。
   SIG: Advocacy and Outreach SIG
   SIG_zh: KubeSphere 社区用户委员会

@@ -79,6 +79,8 @@
 }
 
 .topSection {
+  box-sizing: border-box;
+  min-height: 300px;
   position: relative;
   padding-top: 138px;
   background-size: cover;
@@ -87,14 +89,24 @@
   .title-div {
     padding-bottom: 62px;
 
-    h1 {
+    .title {
       width: 1060px;
       font-weight: 600;
-      font-size: 40px;
-      line-height: 40px;
       text-align: center;
       letter-spacing: -0.1px;
+      color: #FFFFFF;
       text-shadow: 0px 2px 6px rgba(0, 0, 0, 0.15);
+      display: flex;
+      flex-direction: row;
+      justify-content: center;
+
+      .t1,
+      .t2 {
+        text-align: left;
+        display: block;
+        font-size: 40px;
+        line-height: 40px;
+      }
     }
 
     p {
@@ -112,24 +124,49 @@
   }
 }
 
+.pc-topSection{
+  display: block;
+}
+
+.m-topSection{
+  display: none;
+}
+
 @media only screen and (max-width: $mobile-max-width) {
   .topSection {
     .title-div {
       width: 100%;
       top: 100px;
+      padding-bottom: 64px;
 
-      h1 {
+      .title {
         width: 100%;
+        flex-direction: column;
+
+        .t1,
+        .t2 {
+          font-size: 32px;
+        }
       }
 
       p {
         width: 100%;
+        text-align: left;
       }
     }
+  }
+
+  .pc-topSection{
+    display: none;
+  }
+  
+  .m-topSection{
+    display: block;
   }
 }
 
 .stations {
+  background-image: url(/images/user-group/list/org/bg.png);
   background-size: 100% 100%;
   padding-top: 77px;
   padding-bottom: 92px;
@@ -161,6 +198,7 @@
         line-height: 52px;
         color: #171C34;
         margin-bottom: 16px;
+        display: flex;
       }
 
       .des {
@@ -227,6 +265,7 @@
           color: #171C34;
           text-shadow: 0px 4px 8px rgba(35, 45, 65, 0.1);
           margin-bottom: 12px;
+          flex-direction: column;
         }
 
         .des {
@@ -320,6 +359,8 @@
 
       .title {
         margin-bottom: 32px;
+        font-size: 24px;
+        line-height: 28px;
       }
 
       .cards {
@@ -328,6 +369,7 @@
 
         .card {
           width: 100%;
+          height: 146px;
           margin-bottom: 20px;
         }
       }
@@ -419,10 +461,12 @@
 
     .member {
       .title {
+        font-size: 24px;
+        line-height: 28px;
         margin-bottom: 32px;
       }
 
-      
+
       .cards {
         flex-direction: column;
         align-items: center;
@@ -431,53 +475,53 @@
           flex-direction: column;
 
           .card {
-              width: 100%;
-              height: 216px;
-              margin: 0px;
-              margin-bottom: 20px;
-              padding: 24px;
+            width: 100%;
+            height: 216px;
+            margin: 0px;
+            margin-bottom: 20px;
+            padding: 24px;
 
-              .bg {
-                display: none;
+            .bg {
+              display: none;
+            }
+
+            .name,
+            .bg,
+            .position {
+              display: none;
+            }
+
+            .des {
+              line-height: 22px;
+            }
+
+            .mobile-bgs {
+              display: flex;
+              flex-direction: row;
+
+              .m-name {
+                font-weight: 500;
+                font-size: 20px;
+                line-height: 24px;
+                color: #36435C;
+                margin-bottom: 8px;
               }
 
-              .name,
-              .bg,
-              .position {
-                display: none;
+              .m-bg {
+                width: 56px;
+                height: 56px;
+                border-radius: 50%;
+                filter: drop-shadow(8px 8px 16px rgba(144, 158, 171, 0.1));
+                margin-right: 16px;
               }
 
-              .des {
-                line-height: 22px;
+              .m-position {
+                font-size: 14px;
+                line-height: 24px;
+                color: #A1A6AB;
+                margin-bottom: 16px;
               }
-
-              .mobile-bgs {
-                display: flex;
-                flex-direction: row;
-
-                .m-name {
-                  font-weight: 500;
-                  font-size: 16px;
-                  line-height: 24px;
-                  color: #36435C;
-                  margin-bottom: 6px;
-                }
-
-                .m-bg {
-                  width: 56px;
-                  height: 56px;
-                  border-radius: 50%;
-                  filter: drop-shadow(8px 8px 16px rgba(144, 158, 171, 0.1));
-                  margin-right: 16px;
-                }
-
-                .m-position {
-                  font-size: 14px;
-                  line-height: 24px;
-                  color: #A1A6AB;
-                  margin-bottom: 12px;
-                }
-              }
+            }
           }
         }
       }
@@ -554,6 +598,8 @@
           .video {
             width: 100%;
             height: 100%;
+            background-size: cover;
+            background-repeat: no-repeat;
             border-radius: 8px;
           }
         }
@@ -705,7 +751,7 @@
       margin: 0 12px;
     }
 
-    &:hover{
+    &:hover {
       cursor: pointer;
     }
   }

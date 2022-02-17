@@ -1,16 +1,28 @@
 {{ define "main" }}
 
 {{ with .Params.topSection }}
-<section class='topSection div' style='background-image: url("{{ .image }}");'>
+<section class='topSection div pc-topSection' style='background-image: url("{{ .image }}");'>
   <div class="title-div common-layout">
     <div class="title">
-      <div class="t1">{{ .title1 }}&nbsp;</div>
-      <div class="t1">{{ .title2 }}</div>
+      <div class="t1">{{ .kubSphere }}&nbsp;</div>
+      <div class="t1">{{ .committee }}</div>
     </div>
-    <p class="common-p">{{ .content }}</p>
+    <p class="common-p">{{ .description }}</p>
+  </div>
+</section>
+
+<section class='topSection div m-topSection' style='background-image: url("{{ .mobile_image }}");'>
+  <div class="title-div common-layout">
+    <div class="title">
+      <div class="t1">{{ .kubSphere }}&nbsp;</div>
+      <div class="t1">{{ .committee }}</div>
+    </div>
+    <p class="common-p">{{ .description }}</p>
   </div>
 </section>
 {{ end }}
+
+{{ $Pages := .Pages.ByWeight }}
 
 {{ with .Params.citySection }}
 <section class="city-section div">
@@ -22,7 +34,7 @@
           <div class="text">
             <span class="title">{{ .title }}</span>
             <span class="des">{{ .des }}</span>
-            <a class="joinUs" href="{{ .joinLink }}">加入我们</a>
+            <a class="joinUs" href="{{ .joinLink }}" target="_blank">加入我们</a>
           </div>
           <div class="s-bg"></div>
         </div>
@@ -30,16 +42,16 @@
       </div>
       {{ end }}
 
-      <div class="imageList" id="imageList">
-        {{ range .picList }}
-        <a class="normalPic" href="./{{ .id }}">
-          <image class="{{ .id }}" src="{{ .backgroundImage }}"></image>
-          <div class="nameText">{{ .name }}</div>
-          <div class="textBox">
-            <div class="title">{{ .title }}</div>
-            <div class="des">{{ .des }}</div>
-          </div>
-        </a>
+      <div id="imageList" class="imageList">
+        {{ range $Pages }}
+          <a class="normalPic" href="{{ .Permalink }}" target="_blank">
+              <image src="{{ .Params.coverImage }}"></image>
+              <div class="nameText">{{ .Params.stationName }}</div>
+              <div class="textBox">
+                <div class="title"> KubeSphere 社区用户委员会 — {{ .Params.stationName }}</div>
+                <div class="des">{{ .Params.topSection.description }}</div>
+              </div>
+          </a>
         {{ end }}
       </div>
       <img class="tr-svg" src="/images/user-group/list/city-rect1.svg">
@@ -55,7 +67,7 @@
       <div class="left">
         <div class="textBox">
           <div class="title">{{ .name }}</div>
-          <image src="{{ .orgIcon }}" class="orgIcon"></image>
+          <image src="{{ .githubIcon }}" class="orgIcon"></image>
         </div>
         <div class="des"> {{ .description }}</div>
       </div>
@@ -148,7 +160,7 @@
           </div>
           <ol class="des" style="line-height: 32px;">
             <li>1. 站长需要保证所在城市内，每年至少组织一场线下活动（出现疫情等特殊情况外）。</li>
-            <li>2. 如果站长由于某个原因临时、或者长期无法于所在城市组织线下活动，需要向区<a target="_blank" href="{{ .applyLink }}">提交申请</a> 推荐新的长，或求社区推荐新的站长。如果最终无人能组织活动，城市站设置为不活跃状态，直有新的活跃员出现。
+            <li>2. 如果站长由于某个原因临时、或者长期无法于所在城市组织线下活动，需要向社区 <a target="_blank" href="{{ .applyLink }}">提交申请</a> 推荐新的长，或求社区推荐新的站长。如果最终无人能组织活动，城市站设置为不活跃状态，直有新的活跃员出现。
             </li>
           </ol>
         </div>
