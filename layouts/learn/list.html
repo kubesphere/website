@@ -43,16 +43,21 @@
     <div class="common-layout">
         <h2>{{ .title }}</h2>
         <p>{{ .description }}</p>
-        <ul>
-            {{ range .list }}
-            <li>
-                <img src="{{ .image }}" alt="icon">
-                <div class="name">{{ .name }}</div>
-                <div class="profession">{{ .profession }}</div>
-                <p>{{ .description }}</p>
-            </li>
-            {{ end }}
-        </ul>
+        <div id="swiper" class="cards">
+            <div class="swiper-wrapper ul">
+                {{ range .list }}
+                    <div class="swiper-slide">
+                        <div class="li">
+                            <img src="{{ .image }}" alt="icon">
+                            <div class="name">{{ .name }}</div>
+                            <div class="profession">{{ .profession }}</div>
+                            <p>{{ .description }}</p>
+                        </div>
+                    </div>
+                {{ end }}
+            </div>
+            <div id="pagination"></div>
+        </div>
     </div>
     {{ end }}
 </section>
@@ -249,9 +254,53 @@ var dealWithTableBody = function (line, tbody) {
         }
     })
 }
-bindScrollEvent()
-initScrollByHash()
-bindClickTopLink()
-tableInit()
+bindScrollEvent();
+initScrollByHash();
+bindClickTopLink();
+tableInit();
+
+function debounce(fn, wait) {
+    let callback = fn;    
+    let timerId = null;
+
+    function debounced() {
+        let context = this;
+        let args = arguments;        
+
+        clearTimeout(timerId);        
+        timerId = setTimeout(function() {            
+            callback.apply(context, args);
+        }, wait);
+    }
+
+    return debounced;         
+}
+
+var swiperPlay = function(){
+    var slideNum = window.innerWidth <= 768 ? 1: 3;
+    var swiper = new Swiper('#swiper', {
+        autoplay: {
+          running: true,
+          delay: 6000,
+          pauseOnMouseEnter: true,
+          disableOnInteraction: false,
+        },
+        slidesPerView: slideNum,
+        slidesPerGroup: slideNum,
+        spaceBetween: 10,
+        loop: true,
+        loopFillGroupWithBlank: true,
+        pagination: {
+          el: '#pagination',
+          bulletClass:'m-bullet',
+          bulletActiveClass:'m-bullet-active',
+          clickable :true,
+      },
+    });
+};
+
+swiperPlay();
+
+window.addEventListener('resize', debounce(swiperPlay, 500));
 </script>
 {{ end }}
