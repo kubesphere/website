@@ -6,24 +6,24 @@ linkTitle: "3.2.0 版本说明"
 weight: 18100
 ---
 
-## 多租户和多群集
+## 多租户和多集群
 
 ### 新特性
 
-- 新增支持在多群集场景设置主群集名称（默认值为 `host`）。（[#4211](https://github.com/kubesphere/kubesphere/pull/4211)，[@yuswift](https://github.com/yuswift)）
-- 新增支持在单群集场景设置群集名称。（[#4220](https://github.com/kubesphere/kubesphere/pull/4220)，[@yuswift](https://github.com/yuswift)）
-- 新增支持使用 `globals.config` 初始化默认群集名称。（[#2283](https://github.com/kubesphere/console/pull/2283)，[@harrisonliu5](https://github.com/harrisonliu5)）
-- 新增支持创建部署时跨多个群集调度容器组副本。（[#2191](https://github.com/kubesphere/console/pull/2191)，[@weili520](https://github.com/weili520)）
-- 新增支持在项目详情页面修改群集权重。（[#2192](https://github.com/kubesphere/console/pull/2192)，[@weili520](https://github.com/weili520)）
+- 新增支持在多集群场景设置主集群名称（默认值为 `host`）。（[#4211](https://github.com/kubesphere/kubesphere/pull/4211)，[@yuswift](https://github.com/yuswift)）
+- 新增支持在单集群场景设置集群名称。（[#4220](https://github.com/kubesphere/kubesphere/pull/4220)，[@yuswift](https://github.com/yuswift)）
+- 新增支持使用 `globals.config` 初始化默认集群名称。（[#2283](https://github.com/kubesphere/console/pull/2283)，[@harrisonliu5](https://github.com/harrisonliu5)）
+- 新增支持创建部署时跨多个集群调度容器组副本。（[#2191](https://github.com/kubesphere/console/pull/2191)，[@weili520](https://github.com/weili520)）
+- 新增支持在项目详情页面修改集群权重。（[#2192](https://github.com/kubesphere/console/pull/2192)，[@weili520](https://github.com/weili520)）
 
 ### 问题修复
 
-- 修复**群集管理**的**创建部署**对话框中可以通过输入项目名称选择多群集项目的问题。（[#2125](https://github.com/kubesphere/console/pull/2125)，[@fuchunlan](https://github.com/fuchunlan)）
-- 修复编辑企业空间或群集基本信息时发生的错误。（[#2188](https://github.com/kubesphere/console/pull/2188), [@xuliwenwenwen](https://github.com/xuliwenwenwen)）
-- 移除主群集**基本信息**页面上有关已删除集群的信息。（[#2211](https://github.com/kubesphere/console/pull/2211)，[@fuchunlan](https://github.com/fuchunlan)）
+- 修复**集群管理**的**创建部署**对话框中可以通过输入项目名称选择多集群项目的问题。（[#2125](https://github.com/kubesphere/console/pull/2125)，[@fuchunlan](https://github.com/fuchunlan)）
+- 修复编辑企业空间或集群基本信息时发生的错误。（[#2188](https://github.com/kubesphere/console/pull/2188), [@xuliwenwenwen](https://github.com/xuliwenwenwen)）
+- 移除主集群**基本信息**页面上有关已删除集群的信息。（[#2211](https://github.com/kubesphere/console/pull/2211)，[@fuchunlan](https://github.com/fuchunlan)）
 - 新增支持在多集群项目中对服务进行排序和编辑。（[#2167](https://github.com/kubesphere/console/pull/2167)，[@harrisonliu5](https://github.com/harrisonliu5)）
-- 重构多群集项目的网关功能。（[#2275](https://github.com/kubesphere/console/pull/2275)，[@harrisonliu5](https://github.com/harrisonliu5)）
-- 修复删除企业空间后多群集项目无法删除的问题。（[#4365](https://github.com/kubesphere/kubesphere/pull/4365)，[@wansir](https://github.com/wansir)）
+- 重构多集群项目的网关功能。（[#2275](https://github.com/kubesphere/console/pull/2275)，[@harrisonliu5](https://github.com/harrisonliu5)）
+- 修复删除企业空间后多集群项目无法删除的问题。（[#4365](https://github.com/kubesphere/kubesphere/pull/4365)，[@wansir](https://github.com/wansir)）
 
 ## 可观察性
 
@@ -72,7 +72,7 @@ weight: 18100
 ### 新特性
 
 - 在应用路由列表页面新增应用路由排序、路由规则编辑和注解编辑功能。（[#2165](https://github.com/kubesphere/console/pull/2165)，[@harrisonliu5](https://github.com/harrisonliu5)）
-- 重构群集网关和项目网关功能。（[#2262](https://github.com/kubesphere/console/pull/2262)，[@harrisonliu5](https://github.com/harrisonliu5)）
+- 重构集群网关和项目网关功能。（[#2262](https://github.com/kubesphere/console/pull/2262)，[@harrisonliu5](https://github.com/harrisonliu5)）
 - 在路由规则创建过程中新增服务名称自动补全功能。（[#2196](https://github.com/kubesphere/console/pull/2196)，[@wengzhisong-hz](https://github.com/wengzhisong-hz)）
 - 对 ks-console 进行了以下 DNS 优化：
   - 直接使用 ks-apiserver 服务的名称作为 API URL，不再使用 `ks-apiserver.kubesphere-system.svc`。
@@ -128,10 +128,10 @@ weight: 18100
 ### 问题修复
 
 - 修复 `runtime.RawExtension` 序列化错误。（[#731](https://github.com/kubesphere/kubekey/pull/731)，[@pixiake](https://github.com/pixiake)）
-- 修复群集升级期间出现的空指针错误。（[#684](https://github.com/kubesphere/kubekey/pull/684)，[@24sama](https://github.com/24sama)）
+- 修复集群升级期间出现的空指针错误。（[#684](https://github.com/kubesphere/kubekey/pull/684)，[@24sama](https://github.com/24sama)）
 - 新增支持更新 Kubernetes 1.20.0 及以上版本的证书。（[#690](https://github.com/kubesphere/kubekey/pull/690)，[@24sama](https://github.com/24sama)）
 - 修复 DNS 地址配置错误。（[#637](https://github.com/kubesphere/kubekey/pull/637)，[@pixiake](https://github.com/pixiake)）
-- 修复缺少默认网关地址时出现的群集创建错误。（[#661](https://github.com/kubesphere/kubekey/pull/661)，[@liulangwa](https://github.com/liulangwa)）
+- 修复缺少默认网关地址时出现的集群创建错误。（[#661](https://github.com/kubesphere/kubekey/pull/661)，[@liulangwa](https://github.com/liulangwa)）
 
 ## 用户体验
 
