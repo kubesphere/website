@@ -1,0 +1,280 @@
+{{ define "main" }}
+
+{{ with .Params.topSection }}
+<section class='topSection div pc-topSection' data-bg="{{ .image }},{{ .mobile_image }}" style='background-image: url("{{ .image }}");'>
+  <div class="title-div common-layout">
+    <div class="title">
+      <div class="t1">{{ .kubSphere }}&nbsp;</div>
+      <div class="t1">{{ .committee }}</div>
+    </div>
+    <p class="common-p">{{ .description }}</p>
+  </div>
+</section>
+
+<section class='topSection div m-topSection' style='background-image: url("{{ .mobile_image }}");'>
+  <div class="title-div common-layout">
+    <div class="title">
+      <div class="t1">{{ .kubSphere }}&nbsp;</div>
+      <div class="t1">{{ .committee }}</div>
+    </div>
+    <p class="common-p">{{ .description }}</p>
+  </div>
+</section>
+{{ end }}
+
+{{ with .Params.station }}
+<section class="stations div">
+  <div class="common-layout">
+    <div class="station">
+      <div class="left">
+        <span class="name_en">{{ .name_en }}</span>
+        {{ with .name }}
+        <span class="name"> 
+          <span class="text1">{{ .text1 }}</span>
+          <span class="text2">{{ .text2 }}</span>
+        </span>
+        {{ end }}
+
+        {{ range .description }}
+        <span class="des">{{ . }}</span>
+        {{ end }}
+
+        {{ with .manager }}
+        <div class="manager">
+          <image class="person" src="{{ .image }}"></image>
+          <div>
+            <div class="top">
+              <span class="p-name">{{ .name }}</span>
+              <div class="codeBox">
+                <image class="p-wx" src="/images/user-group/shanghai/weChat.svg"></image>
+                <image class="qrCode" src="{{ .wxCode }}"></image>
+              </div>
+            </div>
+            <span>{{ .position }}</span>
+          </div>
+        </div>
+        {{ end }}
+      </div>
+      <div class="right">
+        <image class="icon" src="{{ .icon }}"></image>
+        <span class="icon-name">{{ .icon_name }}</span>
+        <span class="station_name">{{ .station_name }}</span>
+        {{ with .manager }}
+        <div class="mobile-manager">
+          <image class="person" src="{{ .image }}"></image>
+          <div>
+            <div class="top">
+              <span class="p-name">{{ .name }}</span>
+              <div class="codeBox">
+                <image class="p-wx" src="/images/user-group/shanghai/weChat.svg"></image>
+                <image class="qrCode" src="{{ .wxCode }}"></image>
+              </div>
+            </div>
+            <span>{{ .position }}</span>
+          </div>
+        </div>
+        {{ end }}
+      </div>
+    </div>
+  </div>
+</section>
+{{ end }}
+
+{{ with .Params.returns }}
+<section class="returns">
+  <div class="common-layout">
+    <div class="return">
+      <p class="title">{{ .title }}</p>
+      <div class="cards">
+        {{ range .list }}
+        <div class="card">
+          <span class="text">{{ .text }}</span>
+          <image class="bg" src="{{ .bg }}"></image>
+        </div>
+        {{ end }}
+      </div>
+    </div>
+  </div>
+</section>
+{{ end }}
+
+{{ with .Params.members }}
+<section class="members">
+  <div class="common-layout">
+    <div class="member">
+      <p class="title">{{ .title }}</p>
+      <div id="mSwiper" class="cards">
+        <div class="swiper-wrapper">
+        {{ range $index,$item := .list }}
+          {{ if modBool $index 3 }}
+            {{ if ne $index 0 }}
+              </div>
+            {{ end }}
+          {{ end }}
+
+          {{ if modBool $index 3 }}
+          <div id="m-swiper-wrapper" class="swiper-slide">
+          {{ end }}
+            <div class="card" id="{{  $index }}">
+              <span class="name">{{ .name }}</span>
+              <span class="position">{{ .position }}</span>
+              <div class="mobile-bgs">
+                <image class="m-bg" src="{{ .image }}"></image>
+                <div>
+                  <span class="m-name">{{ .name }}</span>
+                  <span class="m-position">{{ .position }}</span>
+                </div>
+              </div>
+              <span class="des">{{ .des }}</span>
+              <image class="bg" src="{{ .image }}"></image>
+            </div>
+        {{ end }}
+        </div>
+      </div>
+      <div id="m-pagination"></div>
+    </div>
+  </div>
+</section>
+{{ end }}
+
+{{ with .Params.activities }}
+<section class="activities">
+  <div class="common-layout">
+    <div class="active">
+      <p class="title">社区活动</p>
+      <div class="active-content">
+        <div id="video-box" class="left">
+          <div class="buttons">
+            <image id="video-pre" src="/images/user-group/single/pre.svg" class="pre-next"></image>
+            <a id="video-open" class="video" target="_blank"></a>
+            <image id="video-next" src="/images/user-group/single/next.svg" class="pre-next"></image>
+          </div>
+          <div class="cover-box"></div>
+          <div id="swiper" class="rotations">
+            <div id="swiper-wrapper" class="swiper-wrapper">
+              {{ range .videos }}
+              <div class="swiper-slide video" style="background-image: url({{ .image }})" data-link="{{ .link }}"></div>
+              {{ end }}
+            </div>
+          </div>
+        </div>
+        <div class="right">
+          <div class="titleBox">
+            <span class="t-text">精彩回顾</span>
+            <div class="buttons">
+              <div id="review-pre" class="pre"></div>
+              <span class="pages">
+                <span id="current">1</span> /
+                <span id="total">2</span>
+              </span>
+              <div id="review-next" class="next"></div>
+            </div>
+          </div>
+          <div class="reviewBox">
+            <div id="reviewBox">
+              {{ range .review }}
+              <div class="content">
+                <a href="{{ .link }}" class="text" target="_blank">{{ .text }}</a>
+                <span class="des">{{ .description }}</span>
+              </div>
+              {{ end }}
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+{{ end }}
+
+<script>
+  (function () {
+    var currentPicIndex = 0;
+    var allLink = $('#swiper-wrapper').children().map(function (index, item) {
+      return item.dataset.link
+    })
+    function initSwiper() {
+      return new Swiper('#swiper', {
+        autoplay: {
+          running: true,
+          pauseOnMouseEnter: true,
+          disableOnInteraction: false,
+        },
+        delay: 3000,
+        speed: 800,
+        loop: true,
+        on: {
+          slideChange: function () {
+            currentPicIndex = this.activeIndex - 1
+            $('#video-open').attr('href', allLink[currentPicIndex])
+          },
+        }
+      });
+    }
+    var videoSwiper = initSwiper();
+    $('#video-pre').click(function () {
+      videoSwiper.slidePrev();
+    })
+
+    $('#video-next').click(function () {
+      videoSwiper.slideNext();
+    })
+  })();
+
+  (function () {
+    var reviewChildren = $('#reviewBox').children();
+    var total = Math.ceil(reviewChildren.length / 3);
+    var current = 1;
+    function nextPage() {
+      current += 1;
+      $('#current').text(current);
+    }
+
+    function prePage() {
+      current -= 1;
+      $('#current').text(current);
+    }
+
+    $('#review-pre').click(function () {
+      if (current <= 1) {
+        return
+      }
+      var currentTop = $('#reviewBox')[0].style.transform.slice(11, -3);
+      prePage();
+      const now = parseFloat(currentTop) + parseFloat(current * 296) + 16;
+      $('#reviewBox')[0].style.transform = "translateY(" + now + "px)";
+    })
+
+    $('#review-next').click(function () {
+      if (current >= total) {
+        return
+      }
+      var currentTop = $('#reviewBox')[0].style.transform.slice(11, -3) || 0;
+      const now = parseFloat(currentTop) - parseFloat(current * 296) - 16;
+      nextPage();
+      $('#reviewBox')[0].style.transform = "translateY(" + now + "px)";
+    })
+
+    $('#total').text(total);
+  })();
+
+  (function () {
+    var mSwiper = new Swiper('#mSwiper', {
+      autoplay: {
+        running: true,
+        pauseOnMouseEnter: true,
+        disableOnInteraction: false,
+      },
+      delay: 3000,
+      speed: 800,
+      loop: true,
+      pagination: {
+        el: '#m-pagination',
+        bulletClass:'m-bullet',
+        bulletActiveClass:'m-bullet-active',
+        clickable :true,
+      },
+    });
+  })();
+</script>
+{{ end }}
