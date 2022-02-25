@@ -55,7 +55,7 @@ members:
 
     - name: 薛兴林
       position: 副站长
-      des: 交个朋友运维负责人，KubeSphere 社区 Ambassador，开源爱好者，擅长 Linux 系统、网络、服务器、虚拟化、容器、微服务架构、中间件、监控、CT/CD 等运维工作
+      des: 交个朋友运维负责人，KubeSphere 社区 Ambassador，开源爱好者，擅长 Linux 系统、网络、服务器、虚拟化、容器、微服务架构、中间件、监控、CI/CD 等运维工作
       image: /images/user-group/hangzhou/xuexinglin.jpeg
 
     - name: 马金晶
