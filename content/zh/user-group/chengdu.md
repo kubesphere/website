@@ -9,7 +9,7 @@ css: "scss/user-group-single.scss"
 topSection:
   kubSphere: KubeSphere 
   committee: 社区用户委员会
-  description: KubeSphere 社区用户委员会—成都站，成立于 2021 年  6 月 19 日，是由活跃在成都的 KubeSphere 社区用户和成员组成的初创核心成员 3 人。
+  description: KubeSphere 社区用户委员会—成都站，成立于 2021 年  6 月 19 日，是由活跃在成都的 KubeSphere 社区用户和成员组成。初创核心成员 3 人。
   image: /images/user-group/chengdu/banner.png
   mobile_image: /images/user-group/chengdu/m-banner.png
 
@@ -55,7 +55,7 @@ members:
 
     - name: 娄举
       position: 副站长
-      des: 从事运维工作十余年，Kubernetes重度用户，开源项目爱好者，熟悉devops技术栈；目前就职于马上消费金融，担任saas平台高级SRE工程师一职，负责公司saas平台kubernetes改造等。 
+      des: 从事运维工作十余年，K8s 重度用户，开源项目爱好者，熟悉 DevOps 技术栈；目前就职于马上消费金融，担任 SaaS 平台高级 SRE 工程师一职，负责公司 SaaS 平台 K8s 改造等。 
       image: /images/user-group/chengdu/louju.jpg
 
     - name: 胡涛
