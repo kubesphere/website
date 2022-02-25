@@ -19,7 +19,7 @@ station:
     text1: 申请加入
     text2: 社区用户委员会—杭州站
   description: 
-    - 不管你是否是 KubeSphere 的用户，只要你对云原生技术感兴趣，对组织活动有热情，对发展 KubeSphere 社区有想法，即可申请加入 KubeSphere 社区上海用户委员会。
+    - 不管你是否是 KubeSphere 的用户，只要你对云原生技术感兴趣，对组织活动有热情，对发展 KubeSphere 社区有想法，即可申请加入 KubeSphere 社区杭州用户委员会。
     - 如果你想加入 KubeSphere 社区用户委员会—杭州站，成为其中的一名委员（成员），为发展 KubeSphere 社区贡献自己的一份力量，可添加杭州站站长微信申请，并可加入 KubeSphere 开源社区杭州站微信群。
   manager: 
     name: 尹珉
