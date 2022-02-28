@@ -36,17 +36,45 @@ applyNew:
 
   conditions: 
     text: 成立条件
-    description: 要成立的城市站至少要有一名近半年内在 KubeSphere 社区中活跃的成员作为站长发起；当地能够组织起来小规模（20 人以上）的技术交流活动（KubeSphere 相关）；至少由 Advocacy and Outreach SIG 中的一位 Lead 和两位 Member 通过。
+    description: 
+      - head: 1.要成立的城市站至少要有一名近半年内在 KubeSphere 社区中活跃的成员作为站长发起。
+        link:
+          text: 
+          link_address:
+        tail: 
+      
+      - head: 2.当地能够组织起来小规模（20 人以上）的技术交流活动（KubeSphere 相关）。
+      
+      - head: 3.至少由 Advocacy and Outreach SIG 中的一位 Lead 和两位 Member 通过。
     image: /images/user-group/list/applyNew/condition.svg
 
   apply:
     text: 申请方式
-    applyLink: https://github.com/kubesphere/community/issues/new?assignees=&labels=area%2Fuser-group&template=new_leader.yml&title=REQUEST%3A+New+leader+for+a+User+Group+in+new+city
+    des:
+      head: 站长向社区
+      link:
+        text: 提交申请
+        link_address: https://github.com/kubesphere/community/issues/new?assignees=&labels=area%2Fuser-group&template=new_leader.yml&title=REQUEST%3A+New+leader+for+a+User+Group+in+new+city
+      tail: ，通过后即可成立。
     image: /images/user-group/list/applyNew/note.svg
 
   requirements:
     text: 要求
-    applyLink: https://github.com/kubesphere/community/issues
+    des:
+      - head: 1.站长需要保证所在城市内，每年至少组织一场线下活动（出现疫情等特殊情况例外）。
+        link:
+          text: 
+          link_address:
+        tail: 
+      
+      - head: 2.如果站长由于某个原因临时、或者长期无法于所在城市组织线下活动，需要向社区
+        link:
+          text: 提交申请
+          link_address: https://github.com/kubesphere/community/issues
+        tail: 推荐新的站长，或请求社区推荐新的站长。如果最终无人能组织活动，城市站设置为不活跃状态，直到有新的活跃成员出现。
+
+      - head: 3. 如果 Advocacy and Outreach SIG 例会上有关于某个城市站的议题，该城市站需要至少一位成员参与。 
+
     image: /images/user-group/list/applyNew/requirements.svg
 
 returns:
