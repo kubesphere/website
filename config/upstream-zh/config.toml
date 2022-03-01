@@ -9,7 +9,9 @@ addBaiduAnalytics = true
 bilibiliLink = "https://space.bilibili.com/438908638"
 
 [languages.en.params]
-mailchimpSubscribeUrl = "https://yunify.us2.list-manage.com/subscribe/post?u=f29f08cef80223b46bad069b5&amp;id=4838e610c2"
+useSendcloud = true
+mailchimpSubscribeUrl = "https://www.sendcloud.net/v3/api/subInvite/subscription?invitecode=1dc5a4fb-894c-4470-b01d-ca7fa9d47a46"
 
 [languages.zh.params]
-mailchimpSubscribeUrl = "https://yunify.us2.list-manage.com/subscribe/post?u=f29f08cef80223b46bad069b5&amp;id=4838e610c2"
+useSendcloud = true
+mailchimpSubscribeUrl = "https://www.sendcloud.net/v3/api/subInvite/subscription?invitecode=1dc5a4fb-894c-4470-b01d-ca7fa9d47a46"

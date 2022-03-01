@@ -6,17 +6,7 @@
                 <div class="left-div">
                     <img src="{{ .Site.Params.logo | relURL }}" alt="{{ .Site.Title }}" class="foot-logo">
                     <p>{{ i18n "Receive the latest news, articles and updates from KubeSphere" }}</p>
-                    <div>
-                        <form
-                            action="{{ .Site.Params.mailchimpSubscribeUrl }}"
-                            method="post"
-                            target="_blank"
-                            novalidate
-                        >
-                            <input name="EMAIL" id="email-input" type="text" placeholder='{{ i18n "Please enter your email address" }}'>
-                            <button type="submit" id="email-submit">{{ i18n "Subscribe" }}</button>
-                        </form>
-                    </div>
+                    {{ partial "subscribe.html" .}}
                     <span id="message" data-message1='{{ i18n "email is required" }}' data-message2='{{ i18n "Please enter a valid email address." }}'></span>
                 </div>
                 <div class="right-div">
@@ -105,38 +95,6 @@
 </footer>
 
 <script>
-    var bindSubmit = function() {
-        var input = $('#email-input')
-        $('#email-submit').click(function(event) {
-            event.stopPropagation()
-            var email = input.val()
-            var message1 = $('#message').data('message1')
-            var message2 = $('#message').data('message2')
-            if (!email) {
-                event.preventDefault()
-                showMessage(message1)
-            } else if (!validateEmail(email)) {
-                event.preventDefault()
-                showMessage(message2)
-            }
-        })
-    }
-
-    var bindHideMessage = function() {
-        $(window).click(function() {
-            $('#message').hide()
-        })
-    }
-
-    var showMessage = function(message) {
-        $('#message').html(message).show()
-    }
-
-    var validateEmail = function(email) {
-        var reg = /^[A-Za-z0-9]+([_\.][A-Za-z0-9]+)*@([A-Za-z0-9\-]+\.)+[A-Za-z]{2,6}$/
-        return reg.test(email)
-    }
-
     var lazyLoad = function(allImg, imgNum) {
         for (var i = 0; i < imgNum; i++) {
             var img = allImg.eq(i)
@@ -195,7 +153,5 @@
 
     bindAddPadding()
     // bindLayLoad()
-    bindSubmit()
-    bindHideMessage()
     bindHideCookie()
 </script>

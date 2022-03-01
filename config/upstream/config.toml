@@ -8,3 +8,4 @@ hotjarTracking = true
 youtubeLink = "https://www.youtube.com/c/KubeSphere"
 addLinkedin = true
 addTwitter = true
+useSendcloud = false

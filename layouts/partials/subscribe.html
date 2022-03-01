@@ -1,0 +1,96 @@
+{{ if .Site.Params.useSendcloud }}
+<div id="formAddress" data-actionAddress="{{ .Site.Params.mailchimpSubscribeUrl }}" data-useSendcloud="true"
+  data-Lang="zh">
+  <input name="EMAIL" id="email-input" type="text" placeholder='{{ i18n "Please enter your email address" }}'>
+  <button id="email-submit">{{ i18n "Subscribe" }}</button>
+</div>
+<span id="message" data-message1='{{ i18n "email is required" }}'
+  data-message2='{{ i18n "Please enter a valid email address." }}'
+  data-message3='{{ i18n "Email address already exists." }}'>
+</span>
+<span id="message1" style="color: #00a971;"
+  data-success='{{ i18n "Subscription is successful, we promise not to send you spam" }}'>
+</span>
+{{ else }}
+<div id="formAddress" data-useSendcloud="false">
+  <form action="{{ .Site.Params.mailchimpSubscribeUrl }}" method="post" target="_blank" novalidate>
+    <input name="EMAIL" id="email-input" type="text" placeholder='{{ i18n "Please enter your email address" }}'>
+    <button type="submit" id="email-submit">{{ i18n "Subscribe" }}</button>
+  </form>
+</div>
+<span id="message" data-message1='{{ i18n "email is required" }}'
+  data-message2='{{ i18n "Please enter a valid email address." }}'></span>
+{{ end }}
+
+<script>
+  var bindSubmit = function () {
+    var input = $('#email-input')
+    $('#email-submit').click(function (event) {
+      event.stopPropagation()
+      var email = input.val()
+      var message1 = $('#message').data('message1')
+      var message2 = $('#message').data('message2')
+      var emailExisted = $('#message').data('message3')
+      var successText = $('#message1').data('success')
+      if (!email) {
+        event.preventDefault()
+        showMessage(message1)
+      } else if (!validateEmail(email)) {
+        event.preventDefault()
+        showMessage(message2)
+      } else {
+        var useSendcloud = $('#formAddress').data('usesendcloud')
+        if (!useSendcloud) {
+          return
+        }
+        var address = $('#formAddress').data('actionaddress')
+        $.post({
+          type: 'post',
+          url: address,
+          data: {
+            email: $('#email-input').val().toString()
+          },
+          success: function (res) {
+            showSuccessMessage(successText)
+            setTimeout(function () {
+              $('#email-input').val('')
+            }, 1000)
+          },
+          error: function (error, textStatus) {
+            showMessage(emailExisted)
+          }
+        })
+      }
+    })
+  }
+  var validateEmail = function (email) {
+    var reg = /^[A-Za-z0-9]+([_\.][A-Za-z0-9]+)*@([A-Za-z0-9\-]+\.)+[A-Za-z]{2,6}$/
+    return reg.test(email)
+  }
+
+  var showMessage = function (message) {
+    $('#message').html(message).show()
+  }
+
+  var showSuccessMessage = function (message) {
+    $('#message1').html(message).show()
+  }
+
+  var bindHideMessage = function () {
+    $(window).click(function () {
+      $('#message').hide()
+      $('#message1').hide()
+    })
+  }
+
+  var bindClose = function () {
+    $('.formBox .close').click(function (e) {
+      e.stopPropagation()
+      $('.formBox').fadeOut()
+    })
+  }
+
+  bindSubmit()
+  bindClose()
+  bindHideMessage()
+</script>

@@ -26,6 +26,10 @@
   translation: 请提供您的邮箱
 - id: Please enter a valid email address.
   translation: 请输入有效的邮箱地址!
+- id: Email address already exists.
+  translation: 邮箱地址已经存在
+- id: Subscription is successful, we promise not to send you spam
+  translation: 订阅成功啦，我们保证不会给你发垃圾邮件的啦
 - id: news
   translation: 动态
 - id: Table of Contents
