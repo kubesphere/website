@@ -14,7 +14,7 @@ citySection:
   cityCard: 
     title: 城市站
     des: KubeSphere 用户委员会目前已经成立三个城市站：上海、杭州、成都。
-    joinLink: https://github.com/kubesphere/website/issues
+    joinLink: https://github.com/kubesphere/community/issues/new?assignees=&labels=area%2Fuser-group&template=new_leader.yml&title=REQUEST%3A+New+leader+for+a+User+Group+in+new+city
 
 organization:
   name: 组织架构
