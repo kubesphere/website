@@ -1,5 +1,5 @@
 ---
-title: 'Serverless vs. Function-as-a-Service: Which One to Choose?'  
+title: 'Serverless vs. Function-as-a-Service (FaaS): Which One to Choose?'  
 tag: 'Serverless, FaaS'  
 keywords: Serverless, FaaS  
 description: This article explains the concepts of serverless and FaaS to discuss how to choose the right one for your business.   
@@ -89,7 +89,7 @@ Although many cloud providers have their serverless or FaaS solutions ready for 
 
 In recent years, many outstanding open-source projects (such as [KEDA](https://keda.sh/), [Dapr](https://dapr.io/), [Cloud Native Buildpacks (CNB)](https://buildpacks.io/), [Tekton](https://tekton.dev/), and [Shipwright](https://shipwright.io/)) have emerged in the cloud-native Serverless-related fields. It is not easy to select the appropriate tools and put them together to build your own serverless solution.
 
-Thus, [OpenFunction](https://github.com/OpenFunction/OpenFunction/) comes as a cloud-native open-source FaaS platform aiming to let you focus on your business logic without having to maintain the underlying runtime environment and infrastructure. It can be easily deployed to your Kubernetes cluster. You can generate event-driven and dynamically scaling serverless workloads by simply submitting business-related source code in the form of functions.
+Thus, [OpenFunction](https://github.com/OpenFunction/OpenFunction/) comes as a cloud-native open-source [FaaS platform](https://openfunction.dev/) aiming to let you focus on your business logic without having to maintain the underlying runtime environment and infrastructure. It can be easily deployed to your Kubernetes cluster. You can generate event-driven and dynamically scaling serverless workloads by simply submitting business-related source code in the form of functions. To learn more, see [OpenFunction: a Modern Cloud-Native Serverless Computing Platform on Kubernetes](https://kubesphere.io/blogs/faas-openfunction/).
 
 ## Recap
 
