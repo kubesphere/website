@@ -26,6 +26,8 @@
   translation: email is required!
 - id: Please enter a valid email address.
   translation: Please enter a valid email address!
+- id: Email address already exists.
+  translation: Email address already exists!
 - id: news
   translation: news
 - id: Table of Contents

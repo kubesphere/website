@@ -65,15 +65,31 @@
             <p class="description">
                 {{ i18n "Receive the latest news, articles and updates from KubeSphere" }}
             </p>
-            <div>
+            {{ if $Site.Params.useSendcloud }}
+            <div id="blog_formAddress" data-actionAddress="{{ $Site.Params.mailchimpSubscribeUrl }}"
+                data-useSendcloud="true" data-Lang="zh">
+                <input name="EMAIL" id="email-input-blog" type="text"
+                    placeholder='{{ i18n "Please enter your  email address" }}'>
+                <button id="email-submit-blog">{{ i18n "Subscribe" }}</button>
+                <span id="message_blog" data-message1='{{ i18n "email is required" }}'
+                    data-message2='{{ i18n "Please enter a valid email address." }}'
+                    data-message3='{{ i18n "Email address already exists." }}' style="color: red;">
+                </span>
+                <span id="message1_blog" style="color: #00a971;"
+                    data-success='{{ i18n "Subscription is successful, we promise not to send you spam" }}'>
+                </span>
+            </div>
+            {{ else }}
+            <div id="blog_formAddress" data-useSendcloud="false">
                 <form action="{{ $Site.Params.mailchimpSubscribeUrl }}" method="post" target="_blank" novalidate>
                     <input name="EMAIL" id="email-input-blog" type="text"
                         placeholder='{{ i18n "Please enter your email address" }}'>
                     <button type="submit" id="email-submit-blog">{{ i18n "Subscribe" }}</button>
                 </form>
                 <span id="message_blog" data-message1='{{ i18n "email is required" }}'
-                    data-message2='{{ i18n "Please enter a valid email address." }}'></span>
+                data-message2='{{ i18n "Please enter a valid email address." }}'></span>
             </div>
+            {{ end }}
         </div>
     </div>
     {{ partial "footer.html" $context }}
@@ -97,12 +113,40 @@
                 var email = input.val()
                 var message1 = $('#message_blog').data('message1')
                 var message2 = $('#message_blog').data('message2')
+                var emailExisted = $('#message_blog').data('message3')
+                var successText = $('#message1_blog').data('success')
+
                 if (!email) {
                     event.preventDefault()
                     $('#message_blog').html(message1).show()
                 } else if (!validateEmail(email)) {
                     event.preventDefault()
                     $('#message_blog').html(message2).show()
+                } else {
+                    var useSendcloud = $('#blog_formAddress').data('usesendcloud')
+                    if (!useSendcloud) {
+                        return
+                    }
+
+                    var address = $('#blog_formAddress').data('actionaddress')
+                    $.post({
+                        type: 'post',
+                        url: address,
+                        data: {
+                            email: email.toString()
+                        },
+                        success: function (res) {
+                            showSuccessMessage_blog(successText)
+                            setTimeout(function () {
+                                window.onscroll = ''
+                                $('.SubscribeForm').hide()
+                                $('#email-input-blog').val('')
+                            }, 5000)
+                        },
+                        error: function (error, textStatus) {
+                            showMessage_blog(emailExisted)
+                        }
+                    })
                 }
             })
         }
@@ -124,6 +168,14 @@
                 $('.SubscribeForm').fadeOut()
                 window.onscroll = ''
             })
+        }
+
+        var showMessage_blog = function (message) {
+            $('#message_blog').html(message).show()
+        }
+
+        var showSuccessMessage_blog = function (message) {
+            $('#message1_blog').html(message).show()
         }
 
         window.onscroll = () => {
