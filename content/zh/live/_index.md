@@ -10,22 +10,29 @@ section1:
 
 section2:
   image: /images/live/cloudnative-live-banner.png
-  url: ./argocd0217-live/
+  url: ./gitlab0224-live/
 
   notice:
-    title: 在 KubeSphere 上安装和运行极狐GitLab
+    title: 详解 K8s 服务暴露机制与 OpenELB 负载均衡器插件
     tag: 预告
-    time: 2022 年 02 月 24 日晚 8 点
+    time: 2022 年 03 月 03 日晚 8 点
     base: 线上
-    url: ./gitlab0224-live/
+    url: ./k8s0303-live/
 
   over:
-    title: OpenFunction v0.5.0 新特性讲解与 v0.6.0 展望
-    url: ./openfunction0113-live/
+    title: Argo CD 速度通关指南
+    url: ./argocd0217-live/
     tag: 结束
 
 section3:
   videos:
+    - title: 在 KubeSphere 上安装和运行极狐GitLab
+      link: ./argocd0224-live/
+      snapshot: https://pek3b.qingstor.com/kubesphere-community/images/gitlab0224-live-cover.png
+      type: iframe
+      createTime: 2022.02.24
+      group: 直播回放
+
     - title: Argo CD 速度通关指南
       link: ./argocd0217-live/
       snapshot: https://pek3b.qingstor.com/kubesphere-community/images/argocd0217-live-cover.png
