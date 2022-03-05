@@ -10,22 +10,29 @@ section1:
 
 section2:
   image: /images/live/cloudnative-live-banner.png
-  url: ./gitlab0224-live/
+  url: ./k8s0303-live/
 
   notice:
-    title: 详解 K8s 服务暴露机制与 OpenELB 负载均衡器插件
+    title: SkyWalking 在无人驾驶领域的实践
     tag: 预告
-    time: 2022 年 03 月 03 日晚 8 点
+    time: 2022 年 03 月 10 日晚 8 点
     base: 线上
-    url: ./k8s0303-live/
+    url: ./skywalking0310-live/
 
   over:
-    title: Argo CD 速度通关指南
-    url: ./argocd0217-live/
+    title: 在 KubeSphere 上安装和运行极狐GitLab
+    url: ./gitlab0224-live/
     tag: 结束
 
 section3:
   videos:
+    - title: 详解 K8s 服务暴露机制与 OpenELB 负载均衡器插件
+      link: ./k8s0303-live/
+      snapshot: https://pek3b.qingstor.com/kubesphere-community/images/k8s0303-live-cover.png
+      type: iframe
+      createTime: 2022.03.03
+      group: 直播回放
+
     - title: 在 KubeSphere 上安装和运行极狐GitLab
       link: ./argocd0224-live/
       snapshot: https://pek3b.qingstor.com/kubesphere-community/images/gitlab0224-live-cover.png
