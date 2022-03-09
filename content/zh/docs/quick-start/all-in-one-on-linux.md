@@ -72,7 +72,7 @@ weight: 2100
       <td>19.3.8 +</td>
     </tr>
     <tr>
-      <td>containerd（试验版，未经充分测试）</td>
+      <td>containerd</td>
       <td>最新版</td>
     </tr><tr>
       <td>CRI-O（试验版，未经充分测试）</td>
