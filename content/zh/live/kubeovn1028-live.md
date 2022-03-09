@@ -41,3 +41,16 @@ B 站  http://live.bilibili.com/22580654
 ## PPT 下载
 
 可扫描官网底部二维码，关注 「KubeSphere云原生」公众号，后台回复 `20211028` 即可下载 PPT。
+
+## Q & A
+
+### Q1：相对于 multus 和 ovs-cni 插件下的 pod 多网卡方案有什么区别？
+A：Kube-ovn 提供了更多高层的功能，例如 subnet，VPC，集群互联等.。
+
+### Q2：跨主机的 pod 网络与 vxlan 方式效率提升有多少？
+A：我们没有具体测过 vxlan。但是考虑到目前 kube-ovn 的性能几乎和 Calico 持平，而 Calico 是事实优于 flannel/vxlan 的。我认为 Kube-ovn 优化过后的性能会更好些。
+
+### Q3：使用 Quagga 等软路由软件模拟路由协议 bgp 啥的互联基于 ovn 效果如何？
+A：我们目前优化的是数据面的性能。而 BGP 事实是在做控制面的路由，稳定情况下并不会影响到数据面的情况。
+
+> 每期直播收集的问题请查看[问题收集文档](https://docs.qq.com/doc/DQ1VMUlhwVVFCY1J0)。
