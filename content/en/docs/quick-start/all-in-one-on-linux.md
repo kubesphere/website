@@ -71,7 +71,7 @@ Your cluster must have an available container runtime. If you use KubeKey to set
       <td>19.3.8 +</td>
     </tr>
     <tr>
-      <td>containerd (experimental, not fully tested)</td>
+      <td>containerd</td>
       <td>Latest</td>
     </tr><tr>
       <td>CRI-O (experimental, not fully tested)</td>

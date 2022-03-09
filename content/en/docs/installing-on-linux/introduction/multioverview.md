@@ -54,7 +54,7 @@ Your cluster must have an available container runtime. If you use KubeKey to set
 | Supported Container Runtime | Version |
 | --------------------------- | ------- |
 | Docker                      | 19.3.8+ |
-| containerd (experimental, not fully tested)   | Latest  |
+| containerd   | Latest  |
 | CRI-O (experimental, not fully tested)        | Latest  |
 | iSula (experimental, not fully tested)        | Latest  |
 
