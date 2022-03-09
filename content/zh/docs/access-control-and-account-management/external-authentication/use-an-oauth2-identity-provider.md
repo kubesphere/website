@@ -112,7 +112,7 @@ KubeSphere 提供了两个内置的 OAuth 2.0 插件：GitHub 的 [GitHubIdentit
              redirectURL: 'https://ks-console/oauth/redirect/github'
    ```
    
-   同样，您也可以使用阿里云 IDaaS 作为外部身份提供者。详情请参阅[阿里云 IDaaS 文档](https://www.alibabacloud.com/help/product/111120.htm?spm=a3c0i.14898238.2766395700.1.62081da1NlxYV0)和 [AliyunIDaasProvider 源代码](https://github.com/kubesphere/kubesphere/blob/release-3.1/pkg/apiserver/authentication/identityprovider/github/github.go)。
+   同样，您也可以使用阿里云 IDaaS 作为外部身份提供者。详情请参阅[阿里云 IDaaS 文档](https://www.alibabacloud.com/help/product/111120.htm?spm=a3c0i.14898238.2766395700.1.62081da1NlxYV0)和 [AliyunIDaasProvider 源代码](https://github.com/kubesphere/kubesphere/blob/release-3.1/pkg/apiserver/authentication/identityprovider/aliyunidaas/idaas.go)。
 
 4. 字段配置完成后，保存修改，然后等待 ks-installer 完成重启。
 
