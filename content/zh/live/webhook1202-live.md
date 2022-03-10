@@ -37,7 +37,18 @@ Webhook 的概念在互联网初期就被提出，在云原生时代 Webhook 依
 
 B 站  http://live.bilibili.com/22580654
 
-
 ## PPT 下载
 
 可扫描官网底部二维码，关注 「KubeSphere云原生」公众号，后台回复 `20211202` 即可下载 PPT。
+
+## Q & A
+
+### Q1：自己开发的 Webhook 与官方自带的 Webhook 有作用优先顺序吗？
+
+A：这个取决于 Webhook 的类型，`MutatingAdmissionWebhook` 是先于`ValidatingAdmissionWebhook` 执行的，如果同一类型的作用顺序影响并不大，特别是验证类型的Webhook，所有匹配的 Webhook 是同时并行运行的。
+
+### Q2：Initializers 和 AdmissionWebhook 二者都能实现动态可扩展载入 admission controller，有何区别？
+
+A：相比之下 AdmissionWebhook 的效率更高，虽然 Initializers 和 `MutatingAdmissionWenhook` 都是串行执行，但是 `ValidatingAdmissionWebhook` 是并行执行的，官方也更推荐使用 AdmissionWebhook。在一些高并发场景 Webhook 会更可靠。
+
+> 每期直播收集的问题请查看[问题收集文档](https://docs.qq.com/doc/DQ1VMUlhwVVFCY1J0)。

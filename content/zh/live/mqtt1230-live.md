@@ -41,4 +41,27 @@ B 站  http://live.bilibili.com/22580654
 
 可扫描官网底部二维码，关注 「KubeSphere云原生」公众号，后台回复 `20211230` 即可下载 PPT。
 
+## Q & A
 
+### Q1：EMQ X 的稳定性这块可以更加详细讲讲吗
+
+A：高并发和高可用是 EMQ X 的设计目标，为了实现这些目标 EMQ X 中应用了多种技术，比如：利用 Erlang/OTP 平台的软实时、高并发和容错；全异步架构；连接、会话、路由、集群的分层设计；消息平面和控制平面的分离等。EMQ X 支持多节点集群，集群下整个系统的性能会成倍高于单节点，并能在单节点故障时保证系统服务不中断。
+
+### Q2：真实应用场景下部署方式可以分享吗?比如说 Edege->Broker->MQ->DB。
+
+A：是的，这是一种真实场景，边缘端 MQTT Broker 将数据转发至云端 MQTT Broker，云端 MQTT Broker 可以将消息桥接至 MQ 中，MQ 中的数据供后续业务模块处理。
+
+### Q3：EMQ X 有多次真实测试数据吗？
+
+A：我们数套生产环境均使用 EMQ X 作为 MQTT Broker，使用稳定。
+
+### Q4：EMQ X 规则引擎效率高么?
+
+A：数套生产环境使用下来能够满足我们需求。
+
+
+### Q5：基于Emqx的扩展和Hook这块用的是什么方案能分享下么？
+
+A比如我们使用了 CoAP 扩展，在某系弱网络场景下使用 CoAP 作为通信协议；比如使用各种认证机制增强认证能力等。钩子使用详见 [EMQ 文档](https://docs.emqx.cn/enterprise/v4.4/advanced/hooks.html#%E5%AE%9A%E4%B9%89)。
+
+其他问题请参考[问题收集文档](https://docs.qq.com/doc/DQ1VMUlhwVVFCY1J0)。

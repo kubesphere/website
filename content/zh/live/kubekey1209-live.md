@@ -41,3 +41,33 @@ B 站  http://live.bilibili.com/22580654
 ## PPT 下载
 
 可扫描官网底部二维码，关注「KubeSphere云原生」公众号，后台回复 `20211209` 即可下载 PPT。
+
+## Q & A
+
+### Q1： Module、task 是串行还是并行？支持 Module 之间有 DAG 依赖的情况？只能按照 task 数组执行吗？
+
+A：Module 目前分为包含 task 的 taskModule 和 通过协程启动的 GoroutineModule，但是目前 kk 的流水线中只使用了 taskModule。从设计上来将可以实现 Module 可以实现串行和并行。task 通过 parallel 字段可以控制是否并行执行。DAG 依赖以后考虑可能会支持。目前只能通过 Module 只能按照 task 数组执行，可以通过控制语句或 task  中的 prepare 控制该 task 是否执行。
+
+### Q2：KubeKey 是否支持一个部署文件可以部署多个 K8s 集群？例如定义一个 K8s 集群集合，指定每个 K8s 集群的配置，是否考虑定义一个 ClusterSet CRD？
+
+A：KubeKey 未来会考虑结合 cluster-api 来重构 operator 模式，之后会设计集群级别，node 级别等不同的 CRD。
+
+### Q3：v1.2.0 版本是否会支持 centos/redhat 8，计划的支持时间节点是？是否有 Web 界面支持计划？部署后是否有考虑将集群巡检加入 KubeKey 的计划吗？
+
+A：对于 v1.2.0 版本，我们考虑之后只会 patch 一些修复 bug 的 PR，新的 feature 将仅添加至 v2.0.0 之后的版本。Web 界面和 KubeSphere 社区的集群巡检工具 KubeEye 之后都会考虑集成进 KubeKey。
+
+### Q4：当一个待部署的集群中同时存在 X86 和 ARM64 机器时，KubeKey 在部署 K8s、Istio 等服务时候是如何处理镜像的？不同机器架构需要不同的 Docker 镜像。
+
+A：KubeKey 会下载不同架构的二进制文件和镜像，并推送到对应架构的机器。
+
+### Q5：如何参与 KubeKey 开发？如何在本地进行开发、测试与 debug？
+
+A：以 Goland 为例，最好有一台 linux 云服务器、虚拟机或者WSL 作为安装 K8s 的机器。Goland 配置 sftp ，这样可以在保存时将代码同步至 linux 中。linux 上可安装这个远程 debug 工具 https://github.com/go-delve/delve。在 linux 上编译 kk，并通过 debug 工具执行 kk 命令，Goland 上配置 go remote 连接 linux 上的 delve debug 服务，这样将可以在 Goland 中进行断点调试。
+
+### Q6：RemoteTask 与 LocalTask 有什么区别? 他们的结构体定义重复度很高,是否提取统一?
+
+A：RemoteTask 包含 Hosts 数组，主要用于 ssh 连接至远程宿主机上执行 Linux 命令。
+LocalTask 不包含 Hosts 数组，主要用于运行 kk 的工作节点执行一些本地，不需要连接远程机器的逻辑，如：在终端上显示一个用户确认窗口。
+两者均实现了TaskInterface这个接口，之后可以再次进行提取抽象。
+
+> 其他问题请查看[问题收集文档](https://docs.qq.com/doc/DQ1VMUlhwVVFCY1J0)。

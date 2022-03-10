@@ -40,3 +40,36 @@ B 站  http://live.bilibili.com/22580654
 ## PPT 下载
 
 可扫描官网底部二维码，关注 「KubeSphere云原生」公众号，后台回复 `20210902` 即可下载 PPT。
+
+## Q & A
+
+### Q1：Nebula Graph 怎样在 KubeSphere 界面上部署，有没有教程？
+
+A：
+
+感谢您的问题，这次分享我只做了一个命令行一行在 KubeSphere 拉起来 Nebula 的工具，我们确实还没有在界面上操作部署过，这个我们之后会找机分享，应该不会很难。
+
+另外，听 KubeSphere 社区经理周鹏飞提到，KubeSphere 社区后续会把 Nebula 集成到 KubeSphere 的应用商店里，这样的话会更容易部署的。
+
+
+### Q2：Nebula 有没有 Prometheus Exporter? 如果要通过 Grafana 或者 KubeSphere 自定义监控面板来监控 Nebula 怎样做？
+
+A：
+
+有的，开源的在[这里](https://github.com/vesoft-inc/nebula-stats-exporter)， 另外我们的压测工具的 [repo](https://github.com/vesoft-inc/nebula-bench/tree/master/third) 里也有可以参考的现成 dashboard 可以用。
+
+除此之外，[dashboard](https://docs.nebula-graph.com.cn/2.5.0/nebula-dashboard/1.what-is-dashboard/) 也可以用来一站式部署监控集群。
+
+ 
+### Q3：Nebula 有没有做成 helm chart? 可否直接安装体验？我刚才安装的时候挂了。
+![](https://pek3b.qingstor.com/kubesphere-community/images/image-0902.png)
+
+A：
+
+有的，我们的 operator 就是基于 helm chart 分发的，请参考[这里](https://github.com/vesoft-inc/nebula-operator)。
+
+从您发的错误信息看，报错是因为 operator 依赖的 cert-manager 没安装，如 [guide](https://github.com/vesoft-inc/nebula-operator/blob/master/doc/user/install_guide.md) 里提及，，几个必须的依赖需要先安装，否则一些 CRD 没法识别。
+
+这里安利一下我写的 [nebula-operator-KIND](https://github.com/wey-gu/nebula-operator-kind)，可以一键把所有需要的东西部署在一个 k8s in docker 内部。
+
+> 其他问题请查看[问题收集文档](https://docs.qq.com/doc/DQ1VMUlhwVVFCY1J0)。

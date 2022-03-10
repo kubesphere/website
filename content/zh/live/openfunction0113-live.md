@@ -44,5 +44,14 @@ B 站  http://live.bilibili.com/22580654
 
 可扫描官网底部二维码，关注 「KubeSphere云原生」公众号，后台回复 `20220113` 即可下载 PPT。
 
+## Q & A
 
+### Q1. OpenFunction 和 Knative 之间的关系和区别是什么？
 
+A: OpenFunction 会包含将用户函数转换为可运行应用和将应用构建为 OCI 标准镜像这两个步骤，同时 OpenFunction 还可以负载异步的工作负载，这些是有别于 Knative 的地方。
+
+### Q2. function framework 依赖语言实现，在开发中很多情况都是采用框架，比如 React NextJS 或者 BlitzJS 这些来说他们并没有对外暴露启动入口（提供命令的方式去启动，对于前端开发者来说，去阅读源码并提取入口是困难的），在现在的使用到的 Serverless  服务(阿里，腾讯) 对 function 需要确定的入口，OpenFunction 有对于这一块去解决么？
+
+A: Functions framework 其实是和 builder 共同协作完成用户函数到应用的转换过程，所以这其中不能靠 functions-framework 单独解决的问题可以交给 builder 协同完成。我们之前在关于 nodejs 函数的 functions-framework 实现中也遇到了这个问题，已经有大致的实现方案。
+
+> 每期直播收集的问题请查看[问题收集文档](https://docs.qq.com/doc/DQ1VMUlhwVVFCY1J0)。

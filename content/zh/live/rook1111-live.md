@@ -46,3 +46,23 @@ B 站  http://live.bilibili.com/22580654
 ## PPT 下载
 
 可扫描官网底部二维码，关注「KubeSphere云原生」公众号，后台回复 `20211111` 即可下载 PPT。
+
+## Q & A
+
+### Q1：Ceph 集群部署后，如果磁盘动态扩容，Ceph 能否识别到？
+
+A：可以通过 ROOK 的 CRD 结合 Local Storage Operator 或者 IaaS 厂商提供的 StorageClass 进行扩展。
+
+### Q2：假设存储为磁盘上的 lvm，扩容 lvm，Rook 能够动态发现扩容 pool 池吗？
+
+A：ROOK 支持以 OSD 为单位的扩容。
+
+### Q3：Rook 的 Ceph 和普通 Raid 的性能和稳定性相比较？
+
+A：这个看应用场景，ROOK 或者 Ceph 的目的并不是取代传统存储，需要结合场景来取长补短，这点是我们需要注意的！
+
+### Q4：Rook Ceph 中的 PG 出现限制，无法创建存储对象，请问如何扩展 pool 中的 PG，简单加磁盘吗？
+
+A：可以通过 rook-ceph-tools 工具容器，使用 ceph 命令创建自定义的 pool。
+
+> 其他问题请查看[问题收集文档](https://docs.qq.com/doc/DQ1VMUlhwVVFCY1J0)。
