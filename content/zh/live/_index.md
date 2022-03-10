@@ -34,7 +34,7 @@ section3:
       group: 直播回放
 
     - title: 在 KubeSphere 上安装和运行极狐GitLab
-      link: ./argocd0224-live/
+      link: ./gitlab0224-live/
       snapshot: https://pek3b.qingstor.com/kubesphere-community/images/gitlab0224-live-cover.png
       type: iframe
       createTime: 2022.02.24
