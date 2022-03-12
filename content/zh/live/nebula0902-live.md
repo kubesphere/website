@@ -70,6 +70,5 @@ A：
 
 从您发的错误信息看，报错是因为 operator 依赖的 cert-manager 没安装，如 [guide](https://github.com/vesoft-inc/nebula-operator/blob/master/doc/user/install_guide.md) 里提及，，几个必须的依赖需要先安装，否则一些 CRD 没法识别。
 
-这里安利一下我写的 [nebula-operator-KIND](https://github.com/wey-gu/nebula-operator-kind)，可以一键把所有需要的东西部署在一个 k8s in docker 内部。
+这里安利一下我写的 [nebula-operator-KIND](https://github.com/wey-gu/nebula-operator-kind)，可以一键把所有需要的东西部署在一个 K8s in Docker 内部。
 
-> 其他问题请查看[问题收集文档](https://docs.qq.com/doc/DQ1VMUlhwVVFCY1J0)。

@@ -65,5 +65,19 @@ https://argo-cd.readthedocs.io/en/stable/operator-manual/secret-management/
 
 A：helm 和 kustomize 都只是用来管理配置清单的工具；Argo CD 自身是支持 helm 的，使用方法跟 kustomize 一样。但 Argo CD 官方推荐使用 kustomize 方式编排。我认为有两个原因，第一足够简单；第二更接近原生配置清单。
 
+### Q6：GitHub Argo CD 项目下的 argoproj，argo-workflows，argo-cd 三个项目分别是什么吗? argo-workflows 和 tekton 主要区别？及各自应用的场景？
 
-> 其他问题请参考[问题收集文档](https://docs.qq.com/doc/DQ1VMUlhwVVFCY1J0)。
+A：
+- argoproj/argoproj： argo 所有项目的子项目
+- argoproj/argo-workflow: 流程编排引擎项目
+- argoproj/argo-cd：支持 GitOps 的持续发布工具
+
+argo-workflow 是流程编排引擎，支持丰富的 pipeline 设计，而 tekton 是基于 pipeline 的一个 Gitops CICD 工具；两者的定位是不同的。
+
+argo-workflow 侧重流程编排，定义流程节点主要以编写 yaml 配置清单为主，社区 Web UI 主要是查看功能，相对较弱。同类型的流程编排引擎中，腾讯蓝鲸智云的标准运维拥有交互性非常好的 Web UI，而且免费开源，推荐有兴趣的小伙伴安装体验。
+
+tekton 作为 CI/CD 工具，其实跟 argocd 对标，但其强大的功能，也导致了他的设计较为复杂，使用起来上手难度有点高。CI/CD 方面，推荐使用 gitlab runner 做 CI，或者 github action 做 CI，同时使用 Argo CD 实现 CD 的部分。
+
+### Q7：Operator 部署 Argo CD，请讲讲其 CR 的主要配置项？
+
+A：具体配置项需要根据部署需求来添加，官方文档有非常详细的说明，可以作为参考： https://argocd-operator.readthedocs.io/en/latest/usage/basics/

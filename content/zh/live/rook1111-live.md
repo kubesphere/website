@@ -65,4 +65,14 @@ A：这个看应用场景，ROOK 或者 Ceph 的目的并不是取代传统存�
 
 A：可以通过 rook-ceph-tools 工具容器，使用 ceph 命令创建自定义的 pool。
 
-> 其他问题请查看[问题收集文档](https://docs.qq.com/doc/DQ1VMUlhwVVFCY1J0)。
+### Q5：rook--ceph 有成熟的压测方案吗？
+
+A：可以参考红帽相关产品的测试性能方案，关键字搜索 OpenShift Container Storage 或者 OpenShift Data Foundation。
+
+### Q6：Rook 有成熟的灾后数据恢复方案吗？在 Ceph 中如何取出存储在内的文件？
+
+A：灾后恢复分为在线恢复和离线恢复，在线恢复建议参考红帽 ROOK 项目的商业开源方案中的 OpenShift Data Foundation 的 Metro-DR 特性，离线恢复可以使用 velero 或其他商业方案。
+
+### Q7：Ceph和 seaweedfs 比较
+
+A：Ceph 的发展历史、技术成熟度和支持的接口丰富，是其核心优势！并且，Rook 是 CNCF 的毕业项目。

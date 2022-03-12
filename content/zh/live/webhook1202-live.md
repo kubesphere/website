@@ -50,5 +50,3 @@ A：这个取决于 Webhook 的类型，`MutatingAdmissionWebhook` 是先于`Val
 ### Q2：Initializers 和 AdmissionWebhook 二者都能实现动态可扩展载入 admission controller，有何区别？
 
 A：相比之下 AdmissionWebhook 的效率更高，虽然 Initializers 和 `MutatingAdmissionWenhook` 都是串行执行，但是 `ValidatingAdmissionWebhook` 是并行执行的，官方也更推荐使用 AdmissionWebhook。在一些高并发场景 Webhook 会更可靠。
-
-> 每期直播收集的问题请查看[问题收集文档](https://docs.qq.com/doc/DQ1VMUlhwVVFCY1J0)。
