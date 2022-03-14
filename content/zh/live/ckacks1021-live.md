@@ -44,27 +44,40 @@ B 站  http://live.bilibili.com/22580654
 
 ### Q1：证书上面的名字问题，比如“张三”的中文名称展示和“Zhang San”展示或者“San Zhang”展示，分别要使用哪些证件才能使用上述的 3 种名字展示？如果想和其他国际认证证书上的“San Zhang”保持一致，需要怎么做？
 
-报名完成之后，会有一个Preparation Checklist ，其中有一项是verify name，需要填 first name（名） 和 latest name（姓），需要跟考试时使用证件上的英文姓名一致，以“张三”为例：first name （San）；last name（Zhang）。
+A：报名完成之后，会有一个 Preparation Checklist ，其中有一项是 verify name，需要填 first name（名） 和 latest name（姓），需要跟考试时使用证件上的英文姓名一致，以“张三”为例：first name （San）；last name（Zhang）。
 
 ### Q2：CKS 什么时候会有中文考试？
 
-CKS 已有中文考试，可通过考试官网查看。
+A：CKS 已有中文考试，可通过考试官网查看。
+
 CKA： https://www.cncf.io/certification/cka/
+
 CKS： https://www.cncf.io/certification/cks/
 
 ### Q3：有模拟的考试环境吗？
 
-可使用该[平台](https://killer.sh/)，需要付费
+A：可使用该[平台](https://killer.sh/)，需要付费
 
 ### Q4：有没有任务调度资源调度相关的内容？
 
-有，相关内容可参考 K8s 官方文档
+A：有，相关内容可参考 K8s 官方文档
 
 ### Q5：CKA 会考 networkpolicy 相关的题目吗?
-有，推荐一个有助于理解 networkpolicy 的[网站](https://editor.cilium.io/)： https://editor.cilium.io/
+
+A：有，推荐一个有助于理解 networkpolicy 的[网站](https://editor.cilium.io/)： https://editor.cilium.io/
 
 ### Q6：CKA 会不会涉及集群搭建? 搭建会不会对 CRI, CNI 有要求?
 
-可能会考察集群升级或添加节点，kubeadm 的使用要熟练掌握。
+A：可能会考察集群升级或添加节点，kubeadm 的使用要熟练掌握。
 
->其他问题请参考[文档](https://docs.qq.com/doc/DQ1VMUlhwVVFCY1J0)
+### Q7：对于备考 CKA 的同学，KCNA 还需要考吗？
+
+A：已经备考 CKA 的话，可以直接参加 CKA 考试。
+
+### Q8：CKA会考 etcd 的搭建/备份/扩容/故障处理吗?
+
+A：会考察 etcd 的备份和还原。
+
+### Q9：浏览器标签页是不是有数量限制？
+
+A：一般使用 chrome 进行考试，应该是没有限制的，创建一个专门的书签目录，只需要把跟考试大纲相关的链接存为书签即可，如果相关考题的内容没有存为书签，K8s 官方文档的搜索功能也是很好用的。

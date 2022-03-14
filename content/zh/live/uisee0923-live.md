@@ -66,5 +66,3 @@ Kubebuilder 中提供了一个 [EventHandler](https://pkg.go.dev/sigs.k8s.io/con
 ### Q4：Operator 一直监听 CR 的资源还是一直监控的操作 CR 的事件，如果整个 CR 未达到期望状态，但 CR 的资源又一直没有发生改变，此时还会进入 Reconcile 方法吗？ 
 
 A：Operator 一直监听 CR 的资源事件。如问题 2 中所述，Kubernetes 除了资源发生改变时会触发事件，还会定时进行同步，即定时触发一个更新事件，此时即使整个 CR 未达到期望状态且 CR 的资源也没有发生改变，还是会进入 Reconcile 方法促使 CR 状态去逼近期望状态。
-
-> 其他问题请参考[文档](https://docs.qq.com/doc/DQ1VMUlhwVVFCY1J0)

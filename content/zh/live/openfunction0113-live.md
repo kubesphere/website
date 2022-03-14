@@ -54,4 +54,3 @@ A: OpenFunction 会包含将用户函数转换为可运行应用和将应用构�
 
 A: Functions framework 其实是和 builder 共同协作完成用户函数到应用的转换过程，所以这其中不能靠 functions-framework 单独解决的问题可以交给 builder 协同完成。我们之前在关于 nodejs 函数的 functions-framework 实现中也遇到了这个问题，已经有大致的实现方案。
 
-> 每期直播收集的问题请查看[问题收集文档](https://docs.qq.com/doc/DQ1VMUlhwVVFCY1J0)。
