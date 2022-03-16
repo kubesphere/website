@@ -241,6 +241,7 @@
         current: null,
         create: function () {
             const documentWidth = $(document).width()
+            const childNum = $('#swiper-wrapper').children().length
             const option = {
                 autoplay: {
                     running: true,
@@ -249,11 +250,12 @@
                 },
                 delay: autoplayTime,
                 speed: 500,
-                loop: true,
+                loop: childNum > 3 ? true : false,
             }
             if (documentWidth > 800) {
                 option.slidesPerView = 3
                 option.spaceBetween = 20
+                hideSlideButton(childNum <= 3)
             }
 
             if (documentWidth < 800) {
@@ -308,6 +310,16 @@
         $('.next-button').click(function (e) {
             var swiper = mySwiper.current.slideNext()
         })
+    }
+
+    var hideSlideButton = function (hide) {
+        if (hide) {
+            $('.prev-button').hide()
+            $('.next-button').hide()
+        } else {
+            $('.prev-button').show()
+            $('.next-button').show()
+        }
     }
 
     bindClickVideoTabLi()
