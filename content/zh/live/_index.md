@@ -10,22 +10,64 @@ section1:
 
 section2:
   image: /images/live/cloudnative-live-banner.png
-  url: ./k8s0303-live/
+  url: ./skywalking0310-live/
 
   notice:
-    title: SkyWalking 在无人驾驶领域的实践
+    title: 使用 Kanister 为你的云原生应用数据保驾护航
     tag: 预告
-    time: 2022 年 03 月 10 日晚 8 点
+    time: 2022 年 03 月 17 日晚 8 点
     base: 线上
-    url: ./skywalking0310-live/
+    url: ./kasten0317-live/
 
   over:
-    title: 在 KubeSphere 上安装和运行极狐GitLab
-    url: ./gitlab0224-live/
+    title: 详解 K8s 服务暴露机制与 OpenELB 负载均衡器插件
+    url: ./k8s0303-live/
     tag: 结束
 
 section3:
   videos:
+    - title: 生产化集群的 Day2 运营思考
+      link: ./changsha0312-cluster/
+      snapshot: https://pek3b.qingstor.com/kubesphere-community/images/meetup-changsha-cluster-cover.png
+      type: iframe
+      createTime: 2022.03.12
+      group: Meetup
+
+    - title: Serverless 在函数计算 FC 的实践
+      link: ./changsha0312-serverless/
+      snapshot: https://pek3b.qingstor.com/kubesphere-community/images/meetup-changsha-serverless-cover.png
+      type: iframe
+      createTime: 2022.03.12
+      group: Meetup
+
+    - title: 云原生环境下微服务治理应用实践
+      link: ./changsha0312-microservice/
+      snapshot: https://pek3b.qingstor.com/kubesphere-community/images/meetup-changsha-microservice-cover.png
+      type: iframe
+      createTime: 2022.03.12
+      group: Meetup
+
+    - title: 从 Java 到 Rust，提灯医疗在云原生时代的编程语言演化
+      link: ./changsha0312-rust/
+      snapshot: https://pek3b.qingstor.com/kubesphere-community/images/meetup-changsha-rust-cover.png
+      type: iframe
+      createTime: 2022.03.12
+      group: Meetup
+
+    - title: 云原生 WebAssembly 与 K8s
+      link: ./changsha0312-webassembly/
+      snapshot: https://pek3b.qingstor.com/kubesphere-community/images/meetup-changsha-webassembly-cover.png
+      type: iframe
+      createTime: 2022.03.12
+      group: Meetup
+
+    - title: SkyWalking 在无人驾驶领域的实践
+      link: ./skywalking0310-live/
+      snapshot: https://pek3b.qingstor.com/kubesphere-community/images/skywalking0310-live-cover.png
+      type: iframe
+      createTime: 2022.03.10
+      group: 直播回放 
+
     - title: 详解 K8s 服务暴露机制与 OpenELB 负载均衡器插件
       link: ./k8s0303-live/
       snapshot: https://pek3b.qingstor.com/kubesphere-community/images/k8s0303-live-cover.png
@@ -487,6 +529,13 @@ section4:
         - place: 上海站（5.15）
           img: https://pek3b.qingstor.com/kubesphere-community/images/meetup-shanghai-cover.png
           meetupUrl: https://kubesphere.com.cn/live/meetup-shanghai/
+
+    - year: 2022
+      meetup: 
+
+        - place: 长沙站（03.12）
+          img: https://pek3b.qingstor.com/kubesphere-community/images/meetup-changsha-20220312-cover.png
+          meetupUrl: https://kubesphere.com.cn/live/meetup-changsha-20220312/
   
 section5:
   title: 分享您的主题
