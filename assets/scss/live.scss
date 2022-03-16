@@ -423,7 +423,7 @@
       &>ul {
         margin-top: 16px;
         display: flex;
-        overflow: scroll;
+        overflow: hidden;
         background: linear-gradient(to top, rgba(255, 255, 255, 0.08) 5%, transparent 5%) no-repeat;
 
         li {
