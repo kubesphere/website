@@ -1,5 +1,5 @@
 ---
-title: 云原生 Meetup 长沙
+title: 云原生 Meetup 长沙站
 description: 云原生 Meetup 长沙站，来自 WasmEdge 社区、提灯医疗、中电信数智科技、阿里云及中移金科的技术大牛和嘉宾，围绕“WebAssembly、Rust、微服务治理、Serverless、多云和多集群”等话题进行了精彩分享。
 keywords: KubeSphere,Meetup,ChangSha,Serverless,WebAssembly,Rust,OpenFunction,微服务
 css: scss/live-detail.scss
