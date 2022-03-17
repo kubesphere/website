@@ -10,12 +10,16 @@ section1:
 
 section2:
   news:
+    - title: 'Kubesphere Team will join the KubeCon Europe 2022 and bring 3 sessions'
+      description: KubeSphere Team brings 3 sessions to KubeCon and CloudNativeCOn Europe 2022
+      image: /images/news/kubecon-eu/kubecon-eu-2022-banner.png
+      link: 'join-us-at-kubecon-eu-2022/'
     - title: 'KubeSphere 2021 Year in Review'
       description: Let's take a look back at the milstone and story of the KubeSphere community over the past year and appreciate all the members who have contributed to the KubeSphere community.
       image: /images/news/community-report-2021/2021-community-recap-cover.png
       link: 'kubesphere-2021-year-in-review/'
     - title: 'Kubesphere Team will join the KubeCon China and bring 5 sessions'
-      description: KubeSphere Team brings 5 session to KubeCon China 2021 
+      description: KubeSphere Team brings 5 sessions to KubeCon China 2021 
       image: /images/news/kubecon-china-2021/banner.png
       link: 'kubecon-china-2021/'
     - title: 'Kubernetes Commnuity Days China 2021 Recap'
