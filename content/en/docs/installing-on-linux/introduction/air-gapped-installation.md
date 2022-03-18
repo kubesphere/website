@@ -24,7 +24,9 @@ Please see the requirements for hardware and operating system shown below. To ge
 
 {{< notice note >}}
 
-[KubeKey](https://github.com/kubesphere/kubekey) uses `/var/lib/docker` as the default directory where all Docker related files, including images, are stored. It is recommended you add additional storage volumes with at least **100G** mounted to `/var/lib/docker` and `/mnt/registry` respectively. See [fdisk](https://www.computerhope.com/unix/fdisk.htm) command for reference.
+- [KubeKey](https://github.com/kubesphere/kubekey) uses `/var/lib/docker` as the default directory where all Docker related files, including images, are stored. It is recommended you add additional storage volumes with at least **100G** mounted to `/var/lib/docker` and `/mnt/registry` respectively. See [fdisk](https://www.computerhope.com/unix/fdisk.htm) command for reference.
+
+- Only x86_64 CPUs are supported, and Arm CPUs are not fully supported at present.
 
 {{</ notice >}}
 
@@ -149,7 +151,7 @@ docker run -d \
 
 ## Step 3: Download KubeKey
 
-Similar to installing KubeSphere on Linux in an online environment, you also need to [download KubeKey v1.2.1](https://github.com/kubesphere/kubekey/releases) first. Download the `tar.gz` file, and transfer it to your local machine which serves as the taskbox for installation. After you uncompress the file, execute the following command to make `kk` executable:
+Similar to installing KubeSphere on Linux in an online environment, you also need to [download KubeKey v3.2.1](https://github.com/kubesphere/kubekey/releases) first. Download the `tar.gz` file, and transfer it to your local machine which serves as the taskbox for installation. After you uncompress the file, execute the following command to make `kk` executable:
 
 ```bash
 chmod +x kk
@@ -449,10 +451,16 @@ For more information about these parameters, see [Multi-node Installation](../mu
 
 ## Step 7: Start Installation
 
-You can execute the following command after you make sure that all steps above are completed.
+If you have added the flag when creating the sample configuration file, run the following command:
 
 ```bash
 ./kk create cluster -f config-sample.yaml
+```
+
+If you have not added the flag when creating the sample configuration file, run the following command:
+
+```bash
+./kk create cluster -f config-sample.yaml --with-kubesphere v3.2.1
 ```
 
 {{< notice warning >}}

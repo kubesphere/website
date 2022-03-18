@@ -124,7 +124,7 @@ For more information about Linux compatibility, check out [Linux Distribution Co
 2. After the dependencies are deployed, run the following command to deploy Kubernetes and KubeSphere together:
 
    ```bash
-   sudo kk create cluster -f config-sample.yaml --with-kubesphere v3.1.0
+   sudo kk create cluster -f config-sample.yaml --with-kubesphere v3.2.1
    ```
 
 3. Wait for a while and you will see prompts similar to the following example if the installation is successful:

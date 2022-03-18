@@ -39,7 +39,10 @@ weight: 3120
 
 {{< notice note >}}
 
-`/var/lib/docker` 路径主要用于存储容器数据，在使用和操作过程中数据量会逐渐增加。因此，在生产环境中，建议为 `/var/lib/docker` 单独挂载一个硬盘。
+- `/var/lib/docker` 路径主要用于存储容器数据，在使用和操作过程中数据量会逐渐增加。因此，在生产环境中，建议为 `/var/lib/docker` 单独挂载一个硬盘。
+
+
+- CPU 必须为 x86_64，暂时不支持 Arm 架构的 CPU。
 
 {{</ notice >}}
 
@@ -102,7 +105,7 @@ KubeKey 可以一同安装 Kubernetes 和 KubeSphere。根据要安装的 Kubern
 从 [GitHub 发布页面](https://github.com/kubesphere/kubekey/releases)下载 KubeKey 或直接使用以下命令。
 
 ```bash
-curl -sfL https://get-kk.kubesphere.io | VERSION=v1.2.1 sh -
+curl -sfL https://get-kk.kubesphere.io | VERSION=v2.0.0 sh -
 ```
 
 {{</ tab >}}
@@ -118,7 +121,7 @@ export KKZONE=cn
 执行以下命令下载 KubeKey：
 
 ```bash
-curl -sfL https://get-kk.kubesphere.io | VERSION=v1.2.1 sh -
+curl -sfL https://get-kk.kubesphere.io | VERSION=v2.0.0 sh -
 ```
 
 {{< notice note >}}
@@ -133,7 +136,7 @@ curl -sfL https://get-kk.kubesphere.io | VERSION=v1.2.1 sh -
 
 {{< notice note >}}
 
-执行以上命令会下载最新版 KubeKey (v1.2.1)，您可以修改命令中的版本号下载指定版本。
+执行以上命令会下载最新版 KubeKey (v2.0.0)，您可以修改命令中的版本号下载指定版本。
 
 {{</ notice >}}
 

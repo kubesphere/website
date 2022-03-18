@@ -26,7 +26,9 @@ weight: 3130
 
 {{< notice note >}}
 
-[KubeKey](https://github.com/kubesphere/kubekey) 使用 `/var/lib/docker` 作为默认路径来存储所有 Docker 相关文件（包括镜像）。建议您添加附加存储卷，分别给 `/var/lib/docker` 和 `/mnt/registry` 挂载至少 **100G**。请参见 [fdisk](https://www.computerhope.com/unix/fdisk.htm) 的参考命令。
+- [KubeKey](https://github.com/kubesphere/kubekey) 使用 `/var/lib/docker` 作为默认路径来存储所有 Docker 相关文件（包括镜像）。建议您添加附加存储卷，分别给 `/var/lib/docker` 和 `/mnt/registry` 挂载至少 **100G**。请参见 [fdisk](https://www.computerhope.com/unix/fdisk.htm) 的参考命令。
+
+- CPU 必须为 x86_64，暂时不支持 Arm 架构的 CPU。
 
 {{</ notice >}}
 
@@ -144,7 +146,7 @@ docker run -d \
 
 ## 步骤 3：下载 KubeKey
 
-与在 Linux 上在线安装 KubeSphere 相似，您需要事先[下载 KubeKey v1.2.1](https://github.com/kubesphere/kubekey/releases)。下载 `tar.gz` 文件，将它传输到充当任务机的本地机器上进行安装。解压文件后，执行以下命令，使 `kk` 可执行。
+与在 Linux 上在线安装 KubeSphere 相似，您需要事先[下载 KubeKey v2.0.0](https://github.com/kubesphere/kubekey/releases)。下载 `tar.gz` 文件，将它传输到充当任务机的本地机器上进行安装。解压文件后，执行以下命令，使 `kk` 可执行。
 
 ```bash
 chmod +x kk
@@ -444,10 +446,16 @@ spec:
 
 ## 步骤 7：开始安装
 
-确定完成上面所有步骤后，您可以执行以下命令。
+如果您在创建示例配置文件时添加了标志 `--with-kubesphere`，执行以下命令：
 
 ```bash
 ./kk create cluster -f config-sample.yaml
+```
+
+如果您在创建示例配置文件时未添加标志 `--with-kubesphere`，执行以下命令：
+
+```bash
+./kk create cluster -f config-sample.yaml --with-kubesphere v3.2.1
 ```
 
 {{< notice warning >}}

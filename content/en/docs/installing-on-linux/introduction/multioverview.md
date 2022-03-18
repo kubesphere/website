@@ -37,7 +37,9 @@ Please see the requirements for hardware and operating system shown below. To ge
 
 {{< notice note >}}
 
-The path `/var/lib/docker` is mainly used to store the container data, and will gradually increase in size during use and operation. In the case of a production environment, it is recommended that `/var/lib/docker` should mount a drive separately.
+- The path `/var/lib/docker` is mainly used to store the container data, and will gradually increase in size during use and operation. In the case of a production environment, it is recommended that `/var/lib/docker` should mount a drive separately.
+
+- Only x86_64 CPUs are supported, and Arm CPUs are not fully supported at present.
 
 {{</ notice >}}
 
@@ -107,7 +109,7 @@ Follow the step below to download [KubeKey](../kubekey).
 Download KubeKey from its [GitHub Release Page](https://github.com/kubesphere/kubekey/releases) or use the following command directly.
 
 ```bash
-curl -sfL https://get-kk.kubesphere.io | VERSION=v1.2.1 sh -
+curl -sfL https://get-kk.kubesphere.io | VERSION=v2.0.0 sh -
 ```
 
 {{</ tab >}}
@@ -123,7 +125,7 @@ export KKZONE=cn
 Run the following command to download KubeKey:
 
 ```bash
-curl -sfL https://get-kk.kubesphere.io | VERSION=v1.2.1 sh -
+curl -sfL https://get-kk.kubesphere.io | VERSION=v2.0.0 sh -
 ```
 
 {{< notice note >}}
@@ -138,7 +140,7 @@ After you download KubeKey, if you transfer it to a new machine also with poor n
 
 {{< notice note >}}
 
-The commands above download the latest release (v1.2.1) of KubeKey. You can change the version number in the command to download a specific version.
+The commands above download the latest release (v2.0.0) of KubeKey. You can change the version number in the command to download a specific version.
 
 {{</ notice >}}
 

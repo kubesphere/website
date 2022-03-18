@@ -234,7 +234,7 @@ kind: Cluster
 4. 一键部署集群。
 
 ```shell
-./kk create cluster -f config-sample.yaml  --with-kubesphere v3.0.0
+./kk create cluster -f config-sample.yaml  --with-kubesphere v3.2.1
 ```
 
 ## 查看部署结果

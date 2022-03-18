@@ -47,7 +47,7 @@ weight: 7400
 
 ### 步骤 1：下载 KubeKey
 
-与在 Linux 上在线安装 KubeSphere 相似，您需要事先[下载 KubeKey v1.2.1](https://github.com/kubesphere/kubekey/releases)。下载 `tar.gz` 文件，将它传输到充当任务机的本地机器上进行安装。解压文件后，执行以下命令，使 `kk` 可执行：
+与在 Linux 上在线安装 KubeSphere 相似，您需要事先[下载 KubeKey v2.0.0](https://github.com/kubesphere/kubekey/releases)。下载 `tar.gz` 文件，将它传输到充当任务机的本地机器上进行安装。解压文件后，执行以下命令，使 `kk` 可执行：
 
 ```bash
 chmod +x kk

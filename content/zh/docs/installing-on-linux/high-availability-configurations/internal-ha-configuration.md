@@ -12,9 +12,15 @@ weight: 3150
 
 ## 架构
 
-在您开始操作前，请确保准备了 6 台 Linux 机器，其中 3 台充当主节点，另外 3 台充当工作节点。下图展示了内置高可用模式的架构图。有关系统和网络要求的更多信息，请参见[多节点安装](../../../installing-on-linux/introduction/multioverview/#步骤1准备-linux-主机)。
+下图举例展示了内置高可用模式的架构图。有关系统和网络要求的更多信息，请参见[多节点安装](../../../installing-on-linux/introduction/multioverview/#步骤1准备-linux-主机)。
 
 ![高可用架构](/images/docs/zh-cn/installing-on-linux/introduction/internal-ha-configuration/internalLoadBalancer.png)
+
+{{< notice note >}}
+
+在生产环境中，请确保准备了 6 台 Linux 机器，其中 3 台充当主节点，另外 3 台充当工作节点。
+
+{{</ notice >}}
 
 ## 下载 KubeKey
 
@@ -27,7 +33,7 @@ weight: 3150
 从 [GitHub Release Page](https://github.com/kubesphere/kubekey/releases) 下载 KubeKey 或直接使用以下命令。
 
 ```bash
-curl -sfL https://get-kk.kubesphere.io | VERSION=v1.2.1 sh -
+curl -sfL https://get-kk.kubesphere.io | VERSION=v2.0.0 sh -
 ```
 
 {{</ tab >}}
@@ -43,7 +49,7 @@ export KKZONE=cn
 执行以下命令下载 KubeKey：
 
 ```bash
-curl -sfL https://get-kk.kubesphere.io | VERSION=v1.2.1 sh -
+curl -sfL https://get-kk.kubesphere.io | VERSION=v2.0.0 sh -
 ```
 
 {{< notice note >}}
@@ -58,7 +64,7 @@ curl -sfL https://get-kk.kubesphere.io | VERSION=v1.2.1 sh -
 
 {{< notice note >}}
 
-执行以上命令会下载最新版 KubeKey (v1.2.1)，您可以修改命令中的版本号下载指定版本。
+执行以上命令会下载最新版 KubeKey (v2.0.0)，您可以修改命令中的版本号下载指定版本。
 
 {{</ notice >}}
 

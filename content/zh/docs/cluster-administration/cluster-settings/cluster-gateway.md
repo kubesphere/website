@@ -24,7 +24,7 @@ KubeSphere v3.2.x 提供集群级别的网关，使所有项目共用一个全�
    - **NodePort**：通过网关使用对应节点端口来访问服务。NodePort 访问模式提供以下配置：
      - **链路追踪**：打开**链路追踪**开关以启用 KubeSphere 的链路追踪功能。功能开启后，如应用路由不可访问，请检查是否为应用路由是否添加注解（`nginx.ingress.kubernetes.io/service-upstream: true`）。如注解没有添加，则添加注解至您的应用路由中。
      - **配置选项**：在集群网关中加入键值对。
-   - **LoadBalacer**：通过网关使用单个 IP 地址访问服务。LoadBalancer 访问模式提供以下配置：
+   - **LoadBalancer**：通过网关使用单个 IP 地址访问服务。LoadBalancer 访问模式提供以下配置：
      - **链路追踪**：打开**链路追踪**开关以启用 KubeSphere 的链路追踪功能。功能开启后，如应用路由不可访问，请检查是否为应用路由是否添加注解（`nginx.ingress.kubernetes.io/service-upstream: true`）。如注解没有添加，则添加注解至您的应用路由中。
      - **负载均衡器提供商**：从下拉列表中选择负载均衡器提供商。
      - **注解**：添加注解至集群网关。
