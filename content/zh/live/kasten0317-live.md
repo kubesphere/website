@@ -54,9 +54,9 @@ Kanister 是开源的数据管理框架可以支持自定义数据库。
 A：Kasten K10 是被多家大型客户在生产环境中验证的解决方案。详情可访问 www.Kasten.io 网站了解更多内容。 
 
 ### Q3：能在 KubeSpere 的页面里点点就完成备份恢复等业务操作吗，像各种云厂商产品一样？
-A：可以通过 KubeSphere 直接打开 Kasten K10 的界面，通过简单的 UI 交互实现备份恢复等业务逻辑。关于如何在 KubeSphere 中部署 Kasten k10 可以参考这篇文章：https://mp.weixin.qq.com/s/CYU0V2QfO0JQ0zJaYZFxIw。
+A：可以通过 KubeSphere 直接打开 Kasten K10 的界面，通过简单的 UI 交互实现备份恢复等业务逻辑。关于如何在 KubeSphere 中部署 Kasten k10 可以参考这篇文章： https://mp.weixin.qq.com/s/CYU0V2QfO0JQ0zJaYZFxIw。
 
-此外 KubeSphere 项目的发起方青云科技也推出了备份容灾 SaaS 产品，基于原生的 Kubernetes API，提供了可视化界面，能够覆盖云原生数据保护的绝大多数重要场景，而且能够跨集群、跨云服务商、跨存储区域，轻松实现基础设施间多地、按需的备份恢复。目前该服务还在体验改进阶段，提供了 1TB 的免费托管仓库，感兴趣的可以前往试用：https://kubesphere.cloud/self-service/disaster-recovery/
+此外 KubeSphere 项目的发起方青云科技也推出了备份容灾 SaaS 产品，基于原生的 Kubernetes API，提供了可视化界面，能够覆盖云原生数据保护的绝大多数重要场景，而且能够跨集群、跨云服务商、跨存储区域，轻松实现基础设施间多地、按需的备份恢复。目前该服务还在体验改进阶段，提供了 1TB 的免费托管仓库，感兴趣的可以前往试用： https://kubesphere.cloud/self-service/disaster-recovery/
 
 ### Q4：如何做到自动识别出工作负载为 MySQL 或者是其他应用？如何保证 MySQL 数据的一致性？蓝图利用 mysqldum 在数据量大了之后如何保证性能？
 
