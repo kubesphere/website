@@ -2,9 +2,9 @@
 title: 'Restart a Kubernetes Cluster in a Practical Way'  
 tag: 'Kubernetes, Cluster, Restart'  
 keywords: Kubernetes, Cluster, Restart  
-description: This article provides a practical way to restart a Kubernetes cluster.   
+description: This article provides a practical way to restart a Kubernetes cluster built on kubeadm.   
 createTime: '2022-03-17'  
-author: 'Felix'  
+author: 'Pixiake, Felix'  
 snapshot: '/images/blogs/en/restart-k8s-cluster/restart-k8s.png'
 ---
 
@@ -20,6 +20,8 @@ As the control plane oversees the state of a Kubernetes cluster, worker nodes ha
 
 ## Restart a Kubernetes Cluster
 
+This article assumes that you set up your Kubernetes cluster through [kubeadm](https://kubernetes.io/docs/setup/production-environment/tools/kubeadm/create-cluster-kubeadm/) or [KubeKey](https://kubesphere.io/blogs/install-kubernetes-using-kubekey/).
+
 You have to make sure that you at least finish the backup for ectd before restarting your cluster, which would prevent you from the loss of critical data. Next, let's go into details about the process of restarting a Kubernetes cluster.
 
 ### Shut down worker nodes
@@ -30,13 +32,13 @@ You have to make sure that you at least finish the backup for ectd before restar
 
    ```
    kubectl cordon <worker node name>
-   kubectl drain <worker node name>
+   kubectl drain <worker node name> --ignore-daemonsets --delete-emptydir-data
    ```
 
-3. Run the following command to stop kubelet and kube-proxy.
+3. Run the following command to stop kubelet.
 
    ```
-   sudo docker stop kubelet kube-proxy
+   sudo systemctl stop kubelet
    ```
 
 4. Run the following command to stop Docker.
@@ -61,55 +63,49 @@ You have to make sure that you at least finish the backup for ectd before restar
 
    ```
    kubectl cordon <control plane name>
-   kubectl drain <control plane name>
+   kubectl drain <control plane name> --ignore-daemonsets --delete-emptydir-data
    ```
 
-3. Run the following command to stop kubelet and kube-proxy.
+3. Run the following command to stop kubelet.
 
    ```
-   sudo docker stop kubelet kube-proxy
+   sudo systemctl stop kubelet
    ```
 
-4. Run the following command to stop kube-scheduler and kube-controller-manager.
-
-   ```
-   sudo docker stop kube-scheduler kube-controller-manager
-   ```
-
-5. Run the following command to stop kube-apiserver.
-
-   ```
-   sudo docker stop kube-apiserver
-   ```
-
-6. Run the following command to stop Docker.
+4. Run the following command to stop Docker.
 
    ```
    sudo systemctl stop docker
    ```
 
-7. Run the following command to shut down the control plane.
+5. (Optional) If your etcd is deployed on the control plane, you need to run the following command to stop etcd service. If your etcd runs in the form of pod in your Kubernetes cluster, you can skip this step.
+
+   ```
+   sudo systemctl stop etcd
+   ```
+
+6. Run the following command to shut down the control plane.
 
    ```
    sudo shutdown now
    ```
 
-8. Perform the same operations on other control planes (if any) to shut them down.
+7. Perform the same operations on other control planes (if any) to shut them down.
 
 ### Shut down ectd nodes
 
 1. Connect to an etcd node through SSH.
 
-2. Run the following command to stop kubelet and kube-proxy.
+2. Run the following command to stop kubelet.
 
    ```
-   sudo docker stop kubelet kube-proxy
+   sudo systemctl stop kubelet
    ```
 
 3. Run the following command to stop etcd.
 
    ```
-   sudo docker stop etcd
+   sudo systemctl stop etcd
    ```
 
 4. Run the following command to stop Docker.
