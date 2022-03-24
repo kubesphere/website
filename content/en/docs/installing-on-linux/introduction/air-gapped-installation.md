@@ -151,7 +151,7 @@ docker run -d \
 
 ## Step 3: Download KubeKey
 
-Similar to installing KubeSphere on Linux in an online environment, you also need to [download KubeKey v3.2.1](https://github.com/kubesphere/kubekey/releases) first. Download the `tar.gz` file, and transfer it to your local machine which serves as the taskbox for installation. After you uncompress the file, execute the following command to make `kk` executable:
+Similar to installing KubeSphere on Linux in an online environment, you also need to [download KubeKey v2.0.0](https://github.com/kubesphere/kubekey/releases) first. Download the `tar.gz` file, and transfer it to your local machine which serves as the taskbox for installation. After you uncompress the file, execute the following command to make `kk` executable:
 
 ```bash
 chmod +x kk
