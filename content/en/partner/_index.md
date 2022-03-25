@@ -91,4 +91,8 @@ section4:
     - icon: "images/partner/cloudnative-community.jpg"
       partnerType: "Go-to-market"
       content: 'Cloud Native Community is an neutral, cloud native end user community founded on May 12, 2020 by CNCF ambassadors and open source opinion leaders to promote cloud native technologies and build a developer ecosystem.'
+
+    - icon: "images/partner/jihu.svg"
+      partnerType: "App provider"
+      content: 'JiHu GitLab is an out-of-the-box, open DevOps platform built from the ground up as a single application for all stages of the DevOps lifecycle. This enables Product, Development, QA, Security, and Operations teams to work concurrently on the same project.'
 ---
