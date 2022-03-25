@@ -92,7 +92,9 @@ You have to make sure that you at least finish the backup for ectd before restar
 
 7. Perform the same operations on other control planes (if any) to shut them down.
 
-### Shut down ectd nodes
+### (Optional) Shut down ectd nodes
+
+For a Kubernetes cluster deployed by kubeadm, etcd runs as a pod in the cluster and you can skip this step. If you set up your Kubernetes cluster through other methods, you may need to perform the following steps.
 
 1. Connect to an etcd node through SSH.
 
