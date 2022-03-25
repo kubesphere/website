@@ -93,7 +93,7 @@ sudo kk init os -f config-sample.yaml
 
 5. 部署 KubeSphere
 ```
-sudo kk create cluster -f config-sample.yaml --with-kubesphere v3.1.0
+sudo kk create cluster -f config-sample.yaml --with-kubesphere v3.2.1
 ```
 
 看到如下提示说明安装完成

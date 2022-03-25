@@ -586,10 +586,10 @@ KubeSphere 是在 K8s 之上构建的以应用为中心的多租户容器平台�
 2. 创建包含默认配置的示例配置文件 **config-sample.yaml**
 
    ```bash
-   [root@k8s-master-0 ~]# ./kk create config --with-kubesphere v3.1.1 --with-kubernetes v1.20.4
+   [root@k8s-master-0 ~]# ./kk create config --with-kubesphere v3.2.1 --with-kubernetes v1.20.4
    ```
 
-   - --with-kubesphere 指定 KubeSphere 版本 v3.1.1
+   - --with-kubesphere 指定 KubeSphere 版本 v3.2.1
    - --with-kubernetes 指定 Kubernetes 版本 v1.20.4
 
 3. 根据规划，编辑修改配置文件

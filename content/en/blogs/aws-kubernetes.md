@@ -136,7 +136,7 @@ sudo systemctl restart sshd
 Download KubeKey from the [Github Release Page](https://github.com/kubesphere/kubekey/releases) or run the following command:
 
 ```
-curl -sfL https://get-kk.kubesphere.io | VERSION=v1.2.0 sh -
+curl -sfL https://get-kk.kubesphere.io | VERSION=v2.0.0 sh -
 ```
 
 ## Use KubeKey to Deploy a Kubernetes Cluster

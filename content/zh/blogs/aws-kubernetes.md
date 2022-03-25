@@ -136,7 +136,7 @@ sudo systemctl restart sshd
 从[Github Realese Page](https://github.com/kubesphere/kubekey/releases)下载 KubeKey 或直接使用以下命令：
 
 ```
-curl -sfL https://get-kk.kubesphere.io | VERSION=v1.2.0 sh -
+curl -sfL https://get-kk.kubesphere.io | VERSION=v2.0.0 sh -
 ```
 
 ### 使用 KubeyKey 部署

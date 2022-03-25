@@ -69,7 +69,7 @@ You can use KubeKey to install a specified Kubernetes version. The dependency th
 1. Download KubeKey from its [GitHub Release Page](https://github.com/kubesphere/kubekey/releases) or use the following command to download KubeKey version 1.0.1. You only need to download KubeKey to one of your machines that serves as the **taskbox** for installation, such as the master node.
 
    ```bash
-   curl -sfL https://get-kk.kubesphere.io | VERSION=v1.0.1 sh -
+   curl -sfL https://get-kk.kubesphere.io | VERSION=v2.0.0 sh -
    ```
 
    {{< notice note >}}

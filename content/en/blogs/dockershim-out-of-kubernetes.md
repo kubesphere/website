@@ -238,7 +238,7 @@ We can use the open-source tool [KubeKey](https://github.com/kubesphere/kubekey)
 3. Create a configuration file. For example, run the following command to create the configuration for KubeSphere v3.0.0.
 
    ```bash
-   ./kk create config --with-kubesphere v3.0.0
+   ./kk create config --with-kubesphere v3.2.1
    ```
 
 4. Edit the configuration file (default file name: `config-sample.yaml`). 

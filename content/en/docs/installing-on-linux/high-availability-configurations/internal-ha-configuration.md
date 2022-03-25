@@ -12,9 +12,15 @@ This document describes how to use the built-in high availability mode when inst
 
 ## Architecture
 
-Make sure you have prepared six Linux machines before you begin, three of which serve as control planes and the other three as worker nodes. The following figure shows the architecture of the built-in high availability mode. For more information about system and network requirements, see [Multi-node Installation](../../../installing-on-linux/introduction/multioverview/#step-1-prepare-linux-hosts).
+The following figure shows the example architecture of the built-in high availability mode. For more information about system and network requirements, see [Multi-node Installation](../../../installing-on-linux/introduction/multioverview/#step-1-prepare-linux-hosts).
 
 ![HA architecture](/images/docs/zh-cn/installing-on-linux/introduction/internal-ha-configuration/internalLoadBalancer.png)
+
+{{< notice note >}}
+
+In the development environment, make sure you have prepared six Linux machines, among which three of them serve as control planes and the other three as worker nodes.
+
+{{</ notice >}}
 
 ## Download KubeKey
 
@@ -27,7 +33,7 @@ Refer to the following steps to download KubeKey.
 Download KubeKey from [its GitHub Release Page](https://github.com/kubesphere/kubekey/releases) or run the following command.
 
 ```bash
-curl -sfL https://get-kk.kubesphere.io | VERSION=v1.2.1 sh -
+curl -sfL https://get-kk.kubesphere.io | VERSION=v2.0.0 sh -
 ```
 
 {{</ tab >}}
@@ -43,7 +49,7 @@ export KKZONE=cn
 Run the following command to download KubeKey:
 
 ```bash
-curl -sfL https://get-kk.kubesphere.io | VERSION=v1.2.1 sh -
+curl -sfL https://get-kk.kubesphere.io | VERSION=v2.0.0 sh -
 ```
 
 {{< notice note >}}
@@ -58,7 +64,7 @@ After you download KubeKey, if you transfer it to a new machine also with poor n
 
 {{< notice note >}}
 
-The preceding commands download the latest release of KubeKey (v1.2.1). You can modify the version number in the command to download a specific version.
+The preceding commands download the latest release of KubeKey (v2.0.0). You can modify the version number in the command to download a specific version.
 
 {{</ notice >}}
 

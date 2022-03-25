@@ -267,7 +267,7 @@ Before you start to create your Kubernetes cluster, make sure you have tested th
 1. Download KubeKey from its [GitHub Release Page](https://github.com/kubesphere/kubekey/releases) or use the following command to download KubeKey version 1.0.1. You only need to download KubeKey to one of your machines (e.g. `master1`) that serves as the **taskbox** for installation.
 
    ```bash
-   curl -sfL https://get-kk.kubesphere.io | VERSION=v1.0.1 sh -
+   curl -sfL https://get-kk.kubesphere.io | VERSION=v2.0.0 sh -
    ```
 
 2. The above command downloads KubeKey and unzips the file. Your folder now contains a file called `kk`. Make it executable:
