@@ -5,7 +5,7 @@ keywords: Kubernetes, Logging, Fluent Operator
 description: This article looks into the different types of Kubernetes logs needed for better observability as well as approaches to implement logging in Kubernetes.   
 createTime: '2022-03-23'  
 author: 'Yitaek Hwang'  
-snapshot: 'https://i.imgur.com/P77MbR6.png'
+snapshot: '/images/blogs/en/deep-dive-into-kubernetes-logging/logging_1.png'
 ---
 
 Logging is one of the [three pillars of observability](https://www.oreilly.com/library/view/distributed-systems-observability/9781492033431/ch04.html) in distributed systems. As such, we have seen an explosion of popular open-source (e.g. ELK stack) and mature commerical products (e.g. Splunk) to deal with logging at scale. However, in a complex system like Kubernetes, logging remains a hard problem, compounded by the continued growth of data driven by increased adoption of containerized system. 
@@ -41,12 +41,14 @@ Generally, there are two major ways to handle logs in Kubernetes:
 
 With the first case, kubelet is responsible for writing the container logs to `/var/log/containers` on the underlying node. Note that Kubernetes does not provide a built-in mechanism for rotating logs, but logs files are evicted from the node when the container is evicted from it. A logging agent is then responsible for collecting these logs and sending it to an aggregator like Splunk, Sumo Logic, and ELK. 
 
-![](https://i.imgur.com/P77MbR6.png)
+![](/images/blogs/en/deep-dive-into-kubernetes-logging/logging_1.png)
+
 Image Credit: https://kubernetes.io/docs/concepts/cluster-administration/logging/ 
 
 Alternatively, a sidecar container can be deployed alongside the application to pick up logs from the application. This sidecar can read from a stream, a file, a socket, or journald and send to a log aggregating tool for further analysis and storage. 
 
-![](https://i.imgur.com/nZBgfOX.png)
+![](/images/blogs/en/deep-dive-into-kubernetes-logging/logging_2.png)
+
 Image Credit: https://kubernetes.io/docs/concepts/cluster-administration/logging/ 
 
 Finally, application code can be reconfigured to push logs directly to some logging backend, but this pattern is not common as it alters code behavior. 
@@ -82,7 +84,7 @@ Finally, there are established commercial tools from Splunk, Sumo Logic, Datadog
 
 [Fluent Bit Operator](https://github.com/fluent/fluentbit-operator) (to be renamed to Fluent Operator) is a Kubernetes logging operator developed by the KubeSphere team and donated to the upstream fluent community. Fluent Operator combines the advantages of fluentbit (lightweight) and fluentd (rich plugin ecosystem) to collect logs from each node via fluentbit daemonset, which then forwards to fluentd for aggregation and forwarding to its sinks such as elasticsearch, kafka, loki, s3, splunk, or other log analysis tool. 
 
-![](https://i.imgur.com/VH45igZ.png)
+![](/images/blogs/en/deep-dive-into-kubernetes-logging/logging_3.png)
 
 Fluent Operator is comprised of five custom resourses:
 
@@ -110,7 +112,7 @@ logging:
 
 Then on the dashboard, you should be able to verify logging components:
 
-![](https://i.imgur.com/1HEy5ls.png)
+![](/images/blogs/en/deep-dive-into-kubernetes-logging/logging_4.png)
 
 To collect Kubernetes events, set the `events` field to true
 
@@ -121,7 +123,7 @@ events:
 
 Then you can use the **Event Search** function from the **Toolbox** to search event logs:
 
-![](https://i.imgur.com/OY7Yjn7.png)
+![](/images/blogs/en/deep-dive-into-kubernetes-logging/logging_5.png)
 
 Likewise for audit logs, set the `auditing` field to true
 
@@ -132,7 +134,7 @@ auditing:
 
 Then you can use the **Auditing Operating** function from the **Toolbox**:
 
-![](https://i.imgur.com/AFHurY0.png)
+![](/images/blogs/en/deep-dive-into-kubernetes-logging/logging_6.png)
 
 ## Conclusion
 
