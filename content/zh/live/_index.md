@@ -10,22 +10,29 @@ section1:
 
 section2:
   image: /images/live/cloudnative-live-banner.png
-  url: ./kasten0317-live/
+  url: ./milvus0324-live/
 
   notice:
-    title: 使用 KubeSphere 快速部署开源向量数据库 Milvus 2.0
+    title: 使用 KubeKey 进行闪电交付
     tag: 预告
-    time: 2022 年 03 月 24 日晚 8 点
+    time: 2022 年 03 月 31 日晚 8 点
     base: 线上
-    url: ./milvus0324-live/
+    url: ./kubekey0331-live/
 
   over:
-    title: 详解 K8s 服务暴露机制与 OpenELB 负载均衡器插件
-    url: ./skywalking0310-live/
+    title: 使用 Kanister 为你的云原生应用数据保驾护航
+    url: ./kasten0317-live/
     tag: 结束
 
 section3:
   videos:
+    - title: 使用 KubeSphere 快速部署开源向量数据库 Milvus 2.0
+      link: ./milvus0324-live/
+      snapshot: https://pek3b.qingstor.com/kubesphere-community/images/milvus0234-live-cover.png
+      type: iframe
+      createTime: 2022.03.24
+      group: 直播回放 
+
     - title: 使用 Kanister 为你的云原生应用数据保驾护航
       link: ./kasten0317-live/
       snapshot: https://pek3b.qingstor.com/kubesphere-community/images/kasten0317-live-cover.png
