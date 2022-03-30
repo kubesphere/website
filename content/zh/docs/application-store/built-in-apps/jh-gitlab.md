@@ -11,10 +11,7 @@ linkTitle: "部署极狐GitLab"
 
 ## **准备工作**
 
-
-- 您需要[启用 OpenPitrix 系统](../../../pluggable-components/app-store/)。
-- 您需要创建一个企业空间、一个项目和一个用户帐户。该用户必须是已邀请至项目的平台普通用户，并且在项目中的角色为 `operator`。在本教程中，您需要以 `project-regular` 用户登录，并在 `demo-workspace` 企业空间的 `demo-project` 项目中进行操作。有关更多信息，请参见[创建企业空间、项目、用户和角色](../../../quick-start/create-workspace-and-project/)。
-- 确保 `KubeSphere` 环境有至少 4 Core，8GB RAM 以及 50GB 以上存储。
+* 一个可用的 KubeSphere 环境，并且确保您有可创建资源的权限。
 
 ## 安装
 
@@ -34,11 +31,11 @@ linkTitle: "部署极狐GitLab"
 
 ![from app store](/images/docs/zh-cn/appstore/built-in-apps/jh-app/from-app-store.png)
 
-5. 在 `App Store` 中输入 **jh** 进行搜索，会出现 **jh-gitlab** 的应用：
+5. 在 `App Store` 中输入 **JiHu** 进行搜索，会出现 **JiHu GitLab** 的应用：
 
 ![jh gitlab app](/images/docs/zh-cn/appstore/built-in-apps/jh-app/jihu-gitlab-app.png) 
 
-6. 点击 jh-gitlab 应用，在出现的界面上点击 `install`，即可开始安装。根据表单填写基本信息，然后点击 `next`：
+6. 点击 JiHu GitLab 应用，在出现的界面上点击 `install`，即可开始安装。根据表单填写基本信息，然后点击 `next`：
 
 ![jh install basic info](/images/docs/zh-cn/appstore/built-in-apps/jh-app/jh-install-basic-info.png)
 
