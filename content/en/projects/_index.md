@@ -22,10 +22,10 @@ groups:
 
   - name: Service Proxy
     children:
-      - title: Porter LB
+      - title: OpenELB
         icon: 'https://pek3b.qingstor.com/kubesphere-docs/png/20200608102707.png'
         link: 'https://porterlb.io'
-        description: Porter is an open source load balancer designed for bare metal Kubernetes clusters. It’s implemented by physical switch, and uses BGP and ECMP to achieve the best performance and high availability.
+        description: OpenELB is an open source load balancer designed for bare metal Kubernetes clusters. It’s implemented by physical switch, and uses BGP and ECMP to achieve the best performance and high availability.
 
   - name: Installer
     children:
