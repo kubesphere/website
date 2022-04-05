@@ -10,22 +10,29 @@ section1:
 
 section2:
   image: /images/live/cloudnative-live-banner.png
-  url: ./milvus0324-live/
+  url: ./kubekey0331-live/
 
   notice:
-    title: 使用 KubeKey 进行闪电交付
+    title: Kubernetes 中的流量管理和服务发现
     tag: 预告
-    time: 2022 年 03 月 31 日晚 8 点
+    time: 2022 年 04 月 06 日晚 8 点
     base: 线上
-    url: ./kubekey0331-live/
+    url: ./k8s-apisix-openelb0406-live/
 
   over:
-    title: 使用 Kanister 为你的云原生应用数据保驾护航
-    url: ./kasten0317-live/
+    title: 使用 KubeSphere 快速部署开源向量数据库 Milvus 2.0
+    url: ./milvus0324-live/
     tag: 结束
 
 section3:
   videos:
+    - title: 使用 KubeKey 进行闪电交付
+      link: ./kubekey0331-live/
+      snapshot: https://pek3b.qingstor.com/kubesphere-community/images/kubekey0331-live-cover.png
+      type: iframe
+      createTime: 2022.03.31
+      group: 直播回放 
+
     - title: 使用 KubeSphere 快速部署开源向量数据库 Milvus 2.0
       link: ./milvus0324-live/
       snapshot: https://pek3b.qingstor.com/kubesphere-community/images/milvus0234-live-cover.png
