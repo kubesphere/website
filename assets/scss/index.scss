@@ -1089,14 +1089,19 @@
   z-index: 15;
   right: 20px;
   bottom: 16px;
-  width: 336px;
-  height: 383px;
+  width: 280px;
+  height: 406px;
   text-align: center;
   background-color: #ffffff;
   background-image: url('/images/home/modal-bg.svg');
   background-size: cover;
   box-shadow: 0px 8px 16px rgba(36, 46, 66, 0.05), 0px 4px 8px rgba(36, 46, 66, 0.06);
   border-radius: 4px;
+
+  @media (min-width: 768px) {
+    width: 336px;
+    height: 383px;
+  }
 
   @media (min-width: 1360px) {
     right: 50%;
