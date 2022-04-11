@@ -116,10 +116,10 @@ $ curl -X GET -H "Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ
 
 ## API 参考
 
-KubeSphere API Swagger JSON 文件可以在 https://github.com/kubesphere/kubesphere/tree/release-3.1/api 仓库中找到。
+KubeSphere API Swagger JSON 文件可以在 https://github.com/kubesphere/kubesphere/tree/master/api 仓库中找到。
 
-- KubeSphere 已指定 API [Swagger Json](https://github.com/kubesphere/kubesphere/blob/release-3.1/api/ks-openapi-spec/swagger.json) 文件，它包含所有只适用于 KubeSphere 的 API。
-- KubeSphere 已指定 CRD [Swagger Json](https://github.com/kubesphere/kubesphere/blob/release-3.1/api/openapi-spec/swagger.json) 文件，它包含所有已生成的 CRD API 文档，与 Kubernetes API 对象相同。
-- kubernetes API 参考：https://kubernetes.io/docs/concepts/overview/kubernetes-api/
+- KubeSphere 已指定 API [Swagger Json](https://github.com/kubesphere/kubesphere/blob/master/api/ks-openapi-spec/swagger.json) 文件，它包含所有只适用于 KubeSphere 的 API。
+- KubeSphere 已指定 CRD [Swagger Json](https://github.com/kubesphere/kubesphere/blob/master/api/openapi-spec/swagger.json) 文件，它包含所有已生成的 CRD API 文档，与 Kubernetes API 对象相同。
+- kubernetes API 参考：https://kubernetes.io/docs/concepts/overview/kubernetes-api/。
 
 您也可以[点击这里](https://kubesphere.io/api/kubesphere)查看 KubeSphere API 文档。

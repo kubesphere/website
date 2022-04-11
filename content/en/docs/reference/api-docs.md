@@ -114,9 +114,9 @@ Replace `[node ip]` with your actual IP address.
 
 ## API Reference
 
-The KubeSphere API swagger JSON file can be found in the repository https://github.com/kubesphere/kubesphere/tree/release-3.1/api.
+The KubeSphere API swagger JSON file can be found in the repository https://github.com/kubesphere/kubesphere/tree/master/api.
 
-- KubeSphere specified the API [swagger json](https://github.com/kubesphere/kubesphere/blob/release-3.1/api/ks-openapi-spec/swagger.json) file. It contains all the APIs that are only applied to KubeSphere.
-- KubeSphere specified the CRD [swagger json](https://github.com/kubesphere/kubesphere/blob/release-3.1/api/openapi-spec/swagger.json) file. It contains all the generated CRDs API documentation. It is same as Kubernetes API objects.
+- KubeSphere specified the API [swagger json](https://github.com/kubesphere/kubesphere/blob/master/api/ks-openapi-spec/swagger.json) file. It contains all the APIs that are only applied to KubeSphere.
+- KubeSphere specified the CRD [swagger json](https://github.com/kubesphere/kubesphere/blob/master/api/openapi-spec/swagger.json) file. It contains all the generated CRDs API documentation. It is same as Kubernetes API objects.
 
 You can explore the KubeSphere API document from [here](https://kubesphere.io/api/kubesphere) as well.
