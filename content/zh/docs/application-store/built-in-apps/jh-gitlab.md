@@ -11,7 +11,10 @@ linkTitle: "部署极狐GitLab"
 
 ## **准备工作**
 
-* 一个可用的 KubeSphere 环境，并且确保您有可创建资源的权限。
+
+- 您需要[启用 OpenPitrix 系统](../../../pluggable-components/app-store/)。
+- 您需要创建一个企业空间、一个项目和一个用户帐户。该用户必须是已邀请至项目的平台普通用户，并且在项目中的角色为 `operator`。在本教程中，您需要以 `project-regular` 用户登录，并在 `demo-workspace` 企业空间的 `demo-project` 项目中进行操作。有关更多信息，请参见[创建企业空间、项目、用户和角色](../../../quick-start/create-workspace-and-project/)。
+- 确保 `KubeSphere` 环境有至少 4 Core，8GB RAM 以及 50GB 以上存储。
 
 ## 安装
 
