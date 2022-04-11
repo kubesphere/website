@@ -10,22 +10,29 @@ section1:
 
 section2:
   image: /images/live/cloudnative-live-banner.png
-  url: ./kubekey0331-live/
+  url: ./k8s-apisix-openelb0406-live/
 
   notice:
-    title: Kubernetes 中的流量管理和服务发现
+    title: 5G + IoT 场景下云原生的应用与思考
     tag: 预告
-    time: 2022 年 04 月 06 日晚 8 点
+    time: 2022 年 04 月 14 日晚 8 点
     base: 线上
-    url: ./k8s-apisix-openelb0406-live/
+    url: ./iot0414-live/
 
   over:
-    title: 使用 KubeSphere 快速部署开源向量数据库 Milvus 2.0
-    url: ./milvus0324-live/
+    title: 使用 KubeKey 进行闪电交付
+    url: ./kubekey0331-live/
     tag: 结束
 
 section3:
   videos:
+    - title: Kubernetes 中的流量管理和服务发现
+      link: ./k8s-apisix-openelb0406-live/
+      snapshot: https://pek3b.qingstor.com/kubesphere-community/images/k8s-apisix-openelb0406-live-cover.png
+      type: iframe
+      createTime: 2022.04.06
+      group: 直播回放 
+
     - title: 使用 KubeKey 进行闪电交付
       link: ./kubekey0331-live/
       snapshot: https://pek3b.qingstor.com/kubesphere-community/images/kubekey0331-live-cover.png
