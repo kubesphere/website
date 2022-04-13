@@ -249,13 +249,6 @@ spec:
   hosts:
     - {name: master, address: 192.168.0.2, internalAddress: 192.168.0.2, privateKeyPath: "~/.ssh/id_rsa"}
   ```
-  
-- 在 ARM 设备上安装的示例：
-
-  ```yaml
-  hosts:
-    - {name: master, address: 192.168.0.2, internalAddress: 192.168.0.2, user: ubuntu, password: Testing123, arch: arm64}
-  ```
 
 {{< notice tip >}} 
 

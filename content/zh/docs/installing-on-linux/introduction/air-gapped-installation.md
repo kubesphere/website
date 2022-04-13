@@ -13,21 +13,20 @@ KubeKey v2.0.0 版本新增了清单（manifest）和制品（artifact）的概�
 
 ## 前提条件
 
-| 名称             | 数量 | 用途             |
-| ---------------- | ---- | ---------------- |
-| KubeSphere 3.2.x | 1    | 源集群打包使用   |
-| 服务器           | 2    | 离线环境部署使用 |
+要开始进行多节点安装，您需要参考如下示例准备至少三台主机。
+
+| 主机 IP   | 主机名称    | 角色            |
+| ---------------- | ----   | ---------------- |
+| 192.168.0.2 | node1    | 联网主机用于源集群打包使用。已部署 Kubernetes v1.21.5 和 KubeSphere v3.2.x |
+| 192.168.0.3 | node2    | 离线环境主节点 |
+| 192.168.0.4 | node3    | 离线环境镜像仓库节点 |
 
 ## 部署准备
 
 1. 执行以下命令下载 KubeKey v2.0.0 并解压：
 
    ```bash
-   $ wget https://github.com/kubesphere/kubekey/releases/download/v2.0.0/kubekey-v2.0.0-linux-amd64.tar.gz
-   ```
-
-   ```bash
-   $ tar -zxvf kubekey-v2.0.0-linux-amd64.tar.gz
+   curl -sfL https://get-kk.kubesphere.io | VERSION=v2.0.0 sh -
    ```
 
 2. 在源集群中使用 KubeKey 创建 manifest。支持下面 2 种方式：
@@ -35,7 +34,7 @@ KubeKey v2.0.0 版本新增了清单（manifest）和制品（artifact）的概�
    - （推荐）在已创建的集群中执行 KubeKey 命令生成该文件。
 
    ```bash
-   $ ./kk create manifest
+   ./kk create manifest
    ```
 
    - 根据模版手动创建并编写该文件。关于更多信息，请参阅 [manifest-example](https://github.com/kubesphere/kubekey/blob/master/docs/manifest-example.md)。
@@ -43,7 +42,7 @@ KubeKey v2.0.0 版本新增了清单（manifest）和制品（artifact）的概�
 3. 执行以下命令在源集群中修改 manifest 配置：
    
    ```bash
-   $ vim manifest.yaml
+   vim manifest.yaml
    ```
    
    ```yaml
@@ -62,8 +61,8 @@ KubeKey v2.0.0 版本新增了清单（manifest）和制品（artifact）的概�
        version: "7"
        repository:
          iso:
-           localPath: /mnt/sdb/kk2.0-rc/kubekey/centos-7-amd64-rpms.iso
-           url: #Enter the downloading address.
+           localPath: ""
+           url: #Enter the downloading address, https://github.com/kubesphere/kubekey/releases/tag/v2.0.0.
      kubernetesDistributions:
      - type: kubernetes
        version: v1.21.5
@@ -89,22 +88,10 @@ KubeKey v2.0.0 版本新增了清单（manifest）和制品（artifact）的概�
        docker-compose:
          version: v2.2.2
      images:
-     - registry.cn-beijing.aliyuncs.com/kubesphereio/kube-apiserver:v1.22.1
-     - registry.cn-beijing.aliyuncs.com/kubesphereio/kube-controller-manager:v1.22.1
-     - registry.cn-beijing.aliyuncs.com/kubesphereio/kube-proxy:v1.22.1
-     - registry.cn-beijing.aliyuncs.com/kubesphereio/kube-scheduler:v1.22.1
      - registry.cn-beijing.aliyuncs.com/kubesphereio/kube-apiserver:v1.21.5
      - registry.cn-beijing.aliyuncs.com/kubesphereio/kube-controller-manager:v1.21.5
      - registry.cn-beijing.aliyuncs.com/kubesphereio/kube-proxy:v1.21.5
      - registry.cn-beijing.aliyuncs.com/kubesphereio/kube-scheduler:v1.21.5
-     - registry.cn-beijing.aliyuncs.com/kubesphereio/kube-apiserver:v1.20.10
-     - registry.cn-beijing.aliyuncs.com/kubesphereio/kube-controller-manager:v1.20.10
-     - registry.cn-beijing.aliyuncs.com/kubesphereio/kube-proxy:v1.20.10
-     - registry.cn-beijing.aliyuncs.com/kubesphereio/kube-scheduler:v1.20.10
-     - registry.cn-beijing.aliyuncs.com/kubesphereio/kube-apiserver:v1.19.9
-     - registry.cn-beijing.aliyuncs.com/kubesphereio/kube-controller-manager:v1.19.9
-     - registry.cn-beijing.aliyuncs.com/kubesphereio/kube-proxy:v1.19.9
-     - registry.cn-beijing.aliyuncs.com/kubesphereio/kube-scheduler:v1.19.9
      - registry.cn-beijing.aliyuncs.com/kubesphereio/pause:3.5
      - registry.cn-beijing.aliyuncs.com/kubesphereio/pause:3.4.1
      - registry.cn-beijing.aliyuncs.com/kubesphereio/coredns:1.8.0
@@ -234,7 +221,7 @@ KubeKey v2.0.0 版本新增了清单（manifest）和制品（artifact）的概�
    
    {{< notice note >}}
    
-   - Repository 部分需要指定服务器系统的依赖 ISO 包，可以直接在 `url `中填入对应下载地址或者提前下载 ISO 包到本地在 **localPath** 里填写本地存放路径并删除 `url` 配置项。
+   - 若需要导出的 artifact 文件中包含操作系统依赖文件（如：conntarck、chrony 等），可在 **operationSystem** 元素中的 **.repostiory.iso.url** 中配置相应的 ISO 依赖文件下载地址或者提前下载 ISO 包到本地在 **localPath** 里填写本地存放路径并删除 **url** 配置项。
    
    - 开启 **harbor** 和 **docker-compose** 配置项，为后面通过 KubeKey 自建 harbor 仓库推送镜像使用。
    
@@ -245,30 +232,28 @@ KubeKey v2.0.0 版本新增了清单（manifest）和制品（artifact）的概�
    {{</ notice >}}
    
 4. 从源集群中导出制品 artifact。
-   如果您能正常访问 GitHub 和 Googleapis
+   如果您能正常访问 GitHub 和 Googleapis，执行以下命令：
 
    ```bash
-   $ ./kk artifact export -m manifest-sample.yaml -o kubesphere.tar.gz
+   ./kk artifact export -m manifest-sample.yaml -o kubesphere.tar.gz
    ```
 
    如果您访问 GitHub 和 Googleapis 受限，执行以下命令：
 
    ```bash
    export KKZONE=cn
-   $ ./kk artifact export -m manifest-sample.yaml -o kubesphere.tar.gz
+   ./kk artifact export -m manifest-sample.yaml -o kubesphere.tar.gz
    ```
 
    {{< notice note >}}
 
-   制品是一个根据指定的 manifest 文件内容导出的包含镜像 tar 包和相关二进制文件的 tgz 包。在 KubeKey 初始化镜像仓库、创建集群、添加节点和升级集群的命令中均可指定一个 artifact，KubeKey 将自动解包该 artifact 并在执行命令时直接使用解包出来的文件。
+   制品（artifact）是一个根据指定的 manifest 文件内容导出的包含镜像 tar 包和相关二进制文件的 tgz 包。在 KubeKey 初始化镜像仓库、创建集群、添加节点和升级集群的命令中均可指定一个 artifact，KubeKey 将自动解包该 artifact 并在执行命令时直接使用解包出来的文件。
 
    - 导出时请确保网络连接正常。
 
-   - 导出 artifact 时会根据 manifest 文件中的镜像列表逐个拉取镜像，请确保 KubeKey 的工作节点已安装 containerd 或最低版本为 18.09 的 docker。
+   - 导出 artifact 时会根据 manifest 文件中的镜像列表逐个拉取镜像，请确保 KubeKey 的工作节点已安装最低版本为 1.4.9 的 containerd 或最低版本为 18.09 的 docker。
 
    - KubeKey 会解析镜像列表中的镜像名，若镜像名中的镜像仓库需要鉴权信息，可在 manifest 文件中的 **.registry.auths** 字段中进行配置。
-
-   - 若需要导出的 artifact 文件中包含操作系统依赖文件（如：conntarck、chrony 等），可在 **operationSystem** 元素中的 **.repostiory.iso.url** 中配置相应的 ISO 依赖文件下载地址。
 
    {{</ notice >}}
 
@@ -279,19 +264,19 @@ KubeKey v2.0.0 版本新增了清单（manifest）和制品（artifact）的概�
 2. 执行以下命令创建离线集群配置文件：
 
    ```bash
-   $./kk create config --with-kubesphere v3.2.1 --with-kubernetes v1.21.5 -f config-sample.yaml
+   ./kk create config --with-kubesphere v3.2.1 --with-kubernetes v1.21.5 -f config-sample.yaml
    ```
 
 3. 执行以下命令修改配置文件：
 
    ```bash
-   $ vim config-sample.yaml
+   vim config-sample.yaml
    ```
 
    {{< notice note >}}
 
    - 按照实际离线环境配置修改节点信息。
-   - 必须指定 `registry` 仓库部署节点（用于 KubeKey 部署自建 harbor 仓库）。
+   - 必须指定 `registry` 仓库部署节点（用于 KubeKey 部署自建 Harbor 仓库）。
    - `registry` 里必须指定 `type` 类型为 `harbor`，否则默认安装 docker registry。
    
    {{</ notice >}}
@@ -303,8 +288,8 @@ KubeKey v2.0.0 版本新增了清单（manifest）和制品（artifact）的概�
      name: sample
    spec:
      hosts:
-     - {name: master, address: 192.168.149.133, internalAddress: 192.168.149.133, user: root, password: "Supaur@2022"}
-     - {name: node1, address: 192.168.149.134, internalAddress: 192.168.149.134, user: root, password: "Supaur@2022"}
+     - {name: master, address: 192.168.149.133, internalAddress: 192.168.149.133, user: root, password: "Qcloud@123"}
+     - {name: node1, address: 192.168.149.134, internalAddress: 192.168.149.134, user: root, password: "Qcloud@123"}
    
      roleGroups:
        etcd:
@@ -344,7 +329,7 @@ KubeKey v2.0.0 版本新增了清单（manifest）和制品（artifact）的概�
        #    password: Harbor12345
        plainHTTP: false
        # 设置集群部署时使用的私有仓库
-       privateRegistry: "dockerhub.kubekey.local"
+       privateRegistry: ""
        namespaceOverride: ""
        registryMirrors: []
        insecureRegistries: []
@@ -354,35 +339,44 @@ KubeKey v2.0.0 版本新增了清单（manifest）和制品（artifact）的概�
 4. 执行以下命令安装镜像仓库：
 
    ```bash
-   $ ./kk init registry -f config-sample.yaml -a kubesphere.tar.gz
+   ./kk init registry -f config-sample.yaml -a kubesphere.tar.gz
    ```
 
    {{< notice note >}}
 
    命令中的参数解释如下：
 
-   - **config-sample.yaml **指离线环境集群的配置文件。
+   - **config-sample.yaml** 指离线环境集群的配置文件。
 
    - **kubesphere.tar.gz** 指源集群打包出来的 tar 包镜像。
 
-     harbor 安装文件在 **/opt/harbor** , 如需运维 harbor，可至该目录下。
+     Harbor 管理员账号：admin，密码：Harbor12345。Harbor 安装文件在 **/opt/harbor** , 如需运维 Harbor，可至该目录下。
    
     {{</ notice >}}
 
-5. 创建 harbor 项目。
+5. 创建 Harbor 项目。
+   
+   {{< notice note >}}
 
-   方法1：执行脚本创建 harbor 项目。
+   由于 Harbor 项目存在访问控制（RBAC）的限制，即只有指定角色的用户才能执行某些操作。如果您未创建项目，则镜像不能被推送到 Harbor。Harbor 中有两种类型的项目：
 
-   a. 执行以下命令下载指定脚本初始化 harbor 仓库：
+   - 公共项目（Public）：任何用户都可以从这个项目中拉取镜像。
+   - 私有项目（Private）：只有作为项目成员的用户可以拉取镜像。
+
+    {{</ notice >}}
+
+   方法1：执行脚本创建 Harbor 项目。
+
+   a. 执行以下命令下载指定脚本初始化 Harbor 仓库：
 
       ```bash
-      $ curl https://github.com/kubesphere/ks-installer/blob/master/scripts/create_project_harbor.sh
+      curl https://github.com/kubesphere/ks-installer/blob/master/scripts/create_project_harbor.sh
       ```
 
    b. 执行以下命令修改脚本配置文件：
 
       ```bash
-      $ vim create_project_harbor.sh
+      vim create_project_harbor.sh
       ```
 
       ```yaml
@@ -419,7 +413,7 @@ KubeKey v2.0.0 版本新增了清单（manifest）和制品（artifact）的概�
 
    {{< notice note >}}
 
-   - 修改 **url** 的值为**https://dockerhub.kubekey.local**。
+   - 修改 **url** 的值为 **https://dockerhub.kubekey.local**。
 
    - 需要指定仓库项目名称和镜像列表的项目名称保持一致。
 
@@ -427,24 +421,24 @@ KubeKey v2.0.0 版本新增了清单（manifest）和制品（artifact）的概�
 
   {{</ notice >}}
 
-   c. 执行以下命令创建 harbor 项目：
+   c. 执行以下命令创建 Harbor 项目：
 
       ```bash
-      $ chmod +x create_project_harbor.sh
+      chmod +x create_project_harbor.sh
       ```
        
       ```bash
-      $ ./create_project_harbor.sh
+      ./create_project_harbor.sh
       ```
 
-   方法 2：登录 harbor 仓库创建项目。将项目设置为**公开**以便所有用户都能够拉取镜像。
+   方法 2：登录 Harbor 仓库创建项目。将项目设置为**公开**以便所有用户都能够拉取镜像。关于如何创建项目，请参阅[创建项目](https://goharbor.io/docs/1.10/working-with-projects/create-projects/)。
 
    ![harbor-login-7](/images/docs/zh-cn/appstore/built-in-apps/deploy-harbor-on-ks/harbor-login-7.PNG)
 
 6. 再次执行以下命令修改集群配置文件：
 
    ```bash
-   $ vim config-sample.yaml
+   vim config-sample.yaml
    ```
 
    ```yaml
@@ -474,21 +468,19 @@ KubeKey v2.0.0 版本新增了清单（manifest）和制品（artifact）的概�
 7. 执行以下命令安装 KubeSphere 集群:
 
    ```bash
-   $ ./kk create cluster -f config-sample1.yaml -a kubesphere.tar.gz --with-kubernetes v1.21.5 --with-kubesphere v3.2.1 --with-packages
+   ./kk create cluster -f config-sample.yaml -a kubesphere.tar.gz --with-packages
    ```
 
    参数解释如下：
 
    - **config-sample.yaml**：离线环境集群的配置文件。
    - **kubesphere.tar.gz**：源集群打包出来的 tar 包镜像。
-   - **-with-kubesphere**：指定 KubepShere 版本。
-   - **--with-kubernetes**：指定 Kubernetes 版本。
-   - **--with-packages**：必须添加。否则 ISO 依赖安装失败。
+   - **--with-packages**：若需要安装操作系统依赖，需指定该选项。
 
 8. 执行以下命令查看集群状态：
 
    ```bash
-   $ kubectl logs -n kubesphere-system $(kubectl get pod -n kubesphere-system -l app=ks-install -o jsonpath='{.items[0].metadata.name}') -f
+   kubectl logs -n kubesphere-system $(kubectl get pod -n kubesphere-system -l app=ks-install -o jsonpath='{.items[0].metadata.name}') -f
    ```
    安装完成后，您会看到以下内容：
 
@@ -525,6 +517,3 @@ KubeKey v2.0.0 版本新增了清单（manifest）和制品（artifact）的概�
    要访问控制台，请确保在您的安全组中打开端口 30880。
 
    {{</ notice >}}
-
-
-

@@ -13,21 +13,17 @@ In KubeKey v2.0.0, we bring in concepts of manifest and artifact, which provides
 
 ## Prerequisites
 
-|Item| Quantity | Usage      |
+|Host IP| Host Name | Usage      |
 | ---------------- | ---- | ---------------- |
-|KubeSphere 3.2.x| 1    | For packaging the source cluster. |
-|Servers| 2    | For air-gapped deployment. |
-
+|192.168.0.2 | node1    | Online host for packaging the source cluster with Kubernetes v1.21.5 and KubeSphere v3.2.x installed |
+|192.168.0.3 | node2    | Control plane node of the air-gapped environment |
+|192.168.0.4 | node3    | Image registry node of the air-gapped environment |
 ## Preparations
 
-1. Run the following commands to download and decompress KubeKey v2.0.0.
+1. Run the following commands to download KubeKey v2.0.0.
 
    ```bash
-   $ wget https://github.com/kubesphere/kubekey/releases/download/v2.0.0/kubekey-v2.0.0-linux-amd64.tar.gz
-   ```
-
-   ```bash
-   $ tar -zxvf kubekey-v2.0.0-linux-amd64.tar.gz
+   curl -sfL https://get-kk.kubesphere.io | VERSION=v2.0.0 sh -
    ```
 
 2. In the source cluster, use KubeKey to create a manifest. The following two methods are supported:
@@ -35,7 +31,7 @@ In KubeKey v2.0.0, we bring in concepts of manifest and artifact, which provides
    - (Recommended) In the created cluster, run the following command to create a manifest file:
 
    ```bash
-   $ ./kk create manifest
+   ./kk create manifest
    ```
 
    - Create and compile the manifest file manually according to the template. For more information, see [ manifest-example ](https://github.com/kubesphere/kubekey/blob/master/docs/manifest-example.md).
@@ -43,7 +39,7 @@ In KubeKey v2.0.0, we bring in concepts of manifest and artifact, which provides
 3. Run the following command to modify the manifest configurations in the source cluster.
    
    ```bash
-   $ vim manifest.yaml
+   vim manifest.yaml
    ```
    
    ```yaml
@@ -62,8 +58,8 @@ In KubeKey v2.0.0, we bring in concepts of manifest and artifact, which provides
        version: "7"
        repository:
          iso:
-           localPath: /mnt/sdb/kk2.0-rc/kubekey/centos-7-amd64-rpms.iso
-           url: #Enter the downloading address.
+           localPath: ""
+           url: #Enter the downloading address https://github.com/kubesphere/kubekey/releases/tag/v2.0.0.
      kubernetesDistributions:
      - type: kubernetes
        version: v1.21.5
@@ -89,22 +85,10 @@ In KubeKey v2.0.0, we bring in concepts of manifest and artifact, which provides
        docker-compose:
          version: v2.2.2
      images:
-     - registry.cn-beijing.aliyuncs.com/kubesphereio/kube-apiserver:v1.22.1
-     - registry.cn-beijing.aliyuncs.com/kubesphereio/kube-controller-manager:v1.22.1
-     - registry.cn-beijing.aliyuncs.com/kubesphereio/kube-proxy:v1.22.1
-     - registry.cn-beijing.aliyuncs.com/kubesphereio/kube-scheduler:v1.22.1
      - registry.cn-beijing.aliyuncs.com/kubesphereio/kube-apiserver:v1.21.5
      - registry.cn-beijing.aliyuncs.com/kubesphereio/kube-controller-manager:v1.21.5
      - registry.cn-beijing.aliyuncs.com/kubesphereio/kube-proxy:v1.21.5
      - registry.cn-beijing.aliyuncs.com/kubesphereio/kube-scheduler:v1.21.5
-     - registry.cn-beijing.aliyuncs.com/kubesphereio/kube-apiserver:v1.20.10
-     - registry.cn-beijing.aliyuncs.com/kubesphereio/kube-controller-manager:v1.20.10
-     - registry.cn-beijing.aliyuncs.com/kubesphereio/kube-proxy:v1.20.10
-     - registry.cn-beijing.aliyuncs.com/kubesphereio/kube-scheduler:v1.20.10
-     - registry.cn-beijing.aliyuncs.com/kubesphereio/kube-apiserver:v1.19.9
-     - registry.cn-beijing.aliyuncs.com/kubesphereio/kube-controller-manager:v1.19.9
-     - registry.cn-beijing.aliyuncs.com/kubesphereio/kube-proxy:v1.19.9
-     - registry.cn-beijing.aliyuncs.com/kubesphereio/kube-scheduler:v1.19.9
      - registry.cn-beijing.aliyuncs.com/kubesphereio/pause:3.5
      - registry.cn-beijing.aliyuncs.com/kubesphereio/pause:3.4.1
      - registry.cn-beijing.aliyuncs.com/kubesphereio/coredns:1.8.0
@@ -233,8 +217,8 @@ In KubeKey v2.0.0, we bring in concepts of manifest and artifact, which provides
    ```
    
    {{< notice note >}}
-   
-   - In the registry, you need to specify the dependent ISO package of the server. To do this, you can fill in the download address in `url`or download the ISO package in advance and fill in the local path in **localPath** and delete the `url` configuration item.
+
+   - If the artifact file to export contains ISO dependencies, such as conntarck and chrony, set the IP address for downloading the ISO dependencies in **.repostiory.iso.url** of **operationSystem**. Alternatively, you can download the ISO package in advance and fill in the local path in **localPath** and delete the `url` configuration item.
    
    - You need to enable **harbor** and **docker-compose** configuration items, which will be used when you use KubeKey to build a Harbor registry for pushing images.
    
@@ -249,47 +233,47 @@ In KubeKey v2.0.0, we bring in concepts of manifest and artifact, which provides
    If you are able to access GitHub and Googleapis, run the following command:
 
    ```bash
-   $ ./kk artifact export -m manifest-sample.yaml -o kubesphere.tar.gz
+   ./kk artifact export -m manifest-sample.yaml -o kubesphere.tar.gz
    ```
    If you are unable to access GitHub and Googleapis, run the following commands:
 
    ```bash
    export KKZONE=cn
    
-   $ ./kk artifact export -m manifest-sample.yaml -o kubesphere.tar.gz
+   ./kk artifact export -m manifest-sample.yaml -o kubesphere.tar.gz
    ```
 
    {{< notice note >}}
 
-   The artifact is a .tgz package containing the image package (.tar) and associated binaries exported from the specified manifest file. You can specify an artifact in the KubeKey commands for initializing the image registry, creating clusters, adding nodes, and upgrading clusters, and then KubeKey will automatically unpack the artifact and use the unpacked file when running the command.
+   An artifact is a .tgz package containing the image package (.tar) and associated binaries exported from the specified manifest file. You can specify an artifact in the KubeKey commands for initializing the image registry, creating clusters, adding nodes, and upgrading clusters, and then KubeKey will automatically unpack the artifact and use the unpacked file when running the command.
 
    - Make sure the network connection is working.
 
-   - When exporting artifacts, KubeKey pulls images in the image list of the manifest file one by one. Make sure that the worker nodes have containerd or a minimum version of 18.09 docker installed.
+   - When exporting artifacts, KubeKey pulls images in the image list of the manifest file one by one. Make sure that the worker nodes have a minimum version of 1.4.9 containerd or that of 18.09 docker installed.
 
    - KubeKey will resolve image names in the image list. If the image registry requires authentication, you can configure it in **.registry.auths** in the manifest file.
    {{</ notice >}}
-## Install a Kubernetes Cluster in the Air-gapped Environment
+## Install Clusters in the Air-gapped Environment
 
 1. Copy the downloaded KubeKey and artifact to nodes in the air-gapped environment using a USB device.
 
 2. Run the following command to create a configuration file for the air-gapped cluster:
 
    ```bash
-   $./kk create config --with-kubesphere v3.2.1 --with-kubernetes v1.21.5 -f config-sample.yaml
+   ./kk create config --with-kubesphere v3.2.1 --with-kubernetes v1.21.5 -f config-sample.yaml
    ```
 
 3. Run the following command to modify the configuration file:
 
    ```bash
-   $ vim config-sample.yaml
+   vim config-sample.yaml
    ```
 
    {{< notice note >}}
 
    - Modify the node information according to the actual configuration of the air-gapped environment.
    - You must specify the node where the `registry` to deploy (for KubeKey deployment of self-built Harbor registries).
-   - In `registry`, the value of `type` must be specified as `harbor`. Otherwise, the docker registry is installed by default.
+   - In `registry`, the value of `type` must be specified as that of `harbor`. Otherwise, the docker registry is installed by default.
    
    {{</ notice >}}
 
@@ -300,8 +284,8 @@ In KubeKey v2.0.0, we bring in concepts of manifest and artifact, which provides
      name: sample
    spec:
      hosts:
-     - {name: master, address: 192.168.149.133, internalAddress: 192.168.149.133, user: root, password: "Supaur@2022"}
-     - {name: node1, address: 192.168.149.134, internalAddress: 192.168.149.134, user: root, password: "Supaur@2022"}
+     - {name: master, address: 192.168.149.133, internalAddress: 192.168.149.133, user: root, password: "Qcloud@123"}
+     - {name: node1, address: 192.168.149.134, internalAddress: 192.168.149.134, user: root, password: "Qcloud@123"}
    
      roleGroups:
        etcd:
@@ -341,7 +325,7 @@ In KubeKey v2.0.0, we bring in concepts of manifest and artifact, which provides
        #    password: Harbor12345
        plainHTTP: false
        # Set the private registry to use during cluster deployment.
-       privateRegistry: "dockerhub.kubekey.local"
+       privateRegistry: ""
        namespaceOverride: ""
        registryMirrors: []
        insecureRegistries: []
@@ -352,7 +336,7 @@ In KubeKey v2.0.0, we bring in concepts of manifest and artifact, which provides
 4. Run the following command to install an image registry:
 
    ```bash
-   $ ./kk init registry -f config-sample.yaml -a kubesphere.tar.gz
+   ./kk init registry -f config-sample.yaml -a kubesphere.tar.gz
    ```
    {{< notice note >}}
 
@@ -362,24 +346,34 @@ In KubeKey v2.0.0, we bring in concepts of manifest and artifact, which provides
 
    - **kubesphere.tar.gz**: Specifies the image package of the source cluster.
 
-     The installation file of Harbor is located in **/opt/harbor**, where you can perform O&M of Harbor.
+     The username and password for logging in to Harbor is **admin** and **Harbor12345** by default. The installation file of Harbor is located in **/opt/harbor**, where you can perform O&M of Harbor.
    
     {{</ notice >}}
 
 5. Create a Harbor project.
+   
+   {{< notice note >}}
+
+   As Harbor adopts the Role-based Access Control (RBAC) mechanism, which means that only specified users can perform certain operations. Therefore, you must create a project before pushing images to Harbor. Harbor supports two types of projects:
+
+   - **Public**: All users can pull images from the project.
+
+   - **Private**: Only project members can pull images from the project.
+  
+    {{</ notice >}}
 
    Method 1: Run the following commands to create a Harbor project.
 
    a. Run the following command to download the specified script to initialize the Harbor registry:
 
       ```bash
-      $ curl https://github.com/kubesphere/ks-installer/blob/master/scripts/create_project_harbor.sh
+      curl https://github.com/kubesphere/ks-installer/blob/master/scripts/create_project_harbor.sh
       ```
 
    b. Run the following command to modify the script configuration file:
 
       ```bash
-      $ vim create_project_harbor.sh
+      vim create_project_harbor.sh
       ```
 
       ```yaml
@@ -427,28 +421,28 @@ In KubeKey v2.0.0, we bring in concepts of manifest and artifact, which provides
    c. Run the following commands to create a Harbor project:
    
       ```bash
-      $ chmod +x create_project_harbor.sh
+      chmod +x create_project_harbor.sh
       ```
    
       ```bash
-      $ ./create_project_harbor.sh
+      ./create_project_harbor.sh
       ```
    
-   Method 2: Log in to Harbor and create a project. Set the project to **Public**, so that any user can pull images from this project.
+   Method 2: Log in to Harbor and create a project. Set the project to **Public**, so that any user can pull images from this project. For more information, please refer to [Create Projects]( https://goharbor.io/docs/1.10/working-with-projects/create-projects/).
    
    ![harbor-login](/images/docs/appstore/built-in-apps/harbor-app/harbor-login.jpg)
    
 6. Run the following command again to modify the cluster configuration file：
 
    ```bash
-   $ vim config-sample.yaml
+   vim config-sample.yaml
    ```
 
    {{< notice note >}}
 
    - In **auths**, add **dockerhub.kubekey.local** and the username and password.
    - In **privateRegistry**, add **dockerhub.kubekey.local**.
-   - In **namespaceOverride**, add **kubesphereio** (matches the newly created project in the repository).
+   - In **namespaceOverride**, add **kubesphereio** (to match the newly created project in the registry).
 
     {{</ notice >}}
 
@@ -471,17 +465,14 @@ In KubeKey v2.0.0, we bring in concepts of manifest and artifact, which provides
 7. Run the following command to install a KubeSphere cluster:
 
    ```bash
-   $ ./kk create cluster -f config-sample1.yaml -a kubesphere.tar.gz --with-kubernetes v1.21.5 --with-kubesphere v3.2.1 --with-packages
+   ./kk create cluster -f config-sample1.yaml -a kubesphere.tar.gz --with-packages
    ```
-
 
    The parameters are explained as follows：
 
    - **config-sample.yaml**: Specifies the configuration file for the cluster in the air-gapped environment.
    - **kubesphere.tar.gz**: Specifies the  tarball image from which the source cluster is packaged.
-   - **-with-kubesphere**: Specifies the  KubepShere version.
-   - **--with-kubernetes**: Specifies the  Kubernetes version.
-   - **--with-packages**: This parameter is mandatory. If it is not added, installing the ISO dependency would fail.
+   - **--with-packages**: This parameter is required if you want to install the ISO dependencies.
 
 8. Run the following command to view the cluster status:
 
@@ -514,7 +505,7 @@ In KubeKey v2.0.0, we bring in concepts of manifest and artifact, which provides
    #####################################################
    ```
 
-9. Access KubeSphere's web console at `http://{IP}:30880` using the default account and password `admin/P@88w0rd`.
+9.  Access KubeSphere's web console at `http://{IP}:30880` using the default account and password `admin/P@88w0rd`.
 
    ![login](/images/docs/installing-on-kubernetes/introduction/overview/login.png)
 
