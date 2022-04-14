@@ -204,7 +204,7 @@ chmod +x kk
   roleGroups:
     etcd:
     - ks.master
-    master:
+    control-plane:
     - ks.master
     worker:
     - ks.master
@@ -294,7 +294,7 @@ chmod +x kk
   roleGroups:
     etcd:
     - ks.master
-    master:
+    control-plane:
     - ks.master
     worker:
     - ks.slave1

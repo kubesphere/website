@@ -279,7 +279,7 @@ spec:
   roleGroups:
     etcd:
     - master1
-    master:
+    control-plane:
     - master1
     worker:
     - worker1

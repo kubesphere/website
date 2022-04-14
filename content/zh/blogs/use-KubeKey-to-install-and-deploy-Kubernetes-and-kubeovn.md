@@ -68,7 +68,7 @@ spec:
   roleGroups:
     etcd:
      - node1
-    master:
+    control-plane:
      - node1
     worker:
      - node1

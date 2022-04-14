@@ -21,10 +21,34 @@ In KubeKey v2.0.0, we bring in concepts of manifest and artifact, which provides
 ## Preparations
 
 1. Run the following commands to download KubeKey v2.0.0.
+   {{< tabs >}}
+
+   {{< tab "Good network connections to GitHub/Googleapis" >}}
+
+   Download KubeKey from its [GitHub Release Page](https://github.com/kubesphere/kubekey/releases) or use the following command directly.
 
    ```bash
    curl -sfL https://get-kk.kubesphere.io | VERSION=v2.0.0 sh -
    ```
+
+   {{</ tab >}}
+
+   {{< tab "Poor network connections to GitHub/Googleapis" >}}
+
+   Run the following command first to make sure you download KubeKey from the correct zone.
+
+   ```bash
+   export KKZONE=cn
+   ```
+
+   Run the following command to download KubeKey:
+
+   ```bash
+   curl -sfL https://get-kk.kubesphere.io | VERSION=v2.0.0 sh -
+   ```
+   {{</ tab >}}
+
+   {{</ tabs >}}
 
 2. In the source cluster, use KubeKey to create a manifest. The following two methods are supported:
 
@@ -59,7 +83,7 @@ In KubeKey v2.0.0, we bring in concepts of manifest and artifact, which provides
        repository:
          iso:
            localPath: ""
-           url: #Enter the downloading address https://github.com/kubesphere/kubekey/releases/tag/v2.0.0.
+           url: #https://github.com/kubesphere/kubekey/releases/download/v2.0.0/centos-7-amd64-rpms.iso
      kubernetesDistributions:
      - type: kubernetes
        version: v1.21.5
@@ -225,23 +249,36 @@ In KubeKey v2.0.0, we bring in concepts of manifest and artifact, which provides
    - By default, the list of images in the created manifest is obtained from **docker.io**.
    
    - You can customize the **manifest-sample.yaml** file to export the desired artifact file.
+
+   - You can download the ISO files at https://github.com/kubesphere/kubekey/releases/tag/v2.0.0.
    
    {{</ notice >}}
    
 4. Export the artifact from the source cluster.
-   
-   If you are able to access GitHub and Googleapis, run the following command:
+   {{< tabs >}}
+
+   {{< tab "Good network connections to GitHub/Googleapis" >}}
+
+   Run the following command directly:
 
    ```bash
    ./kk artifact export -m manifest-sample.yaml -o kubesphere.tar.gz
    ```
-   If you are unable to access GitHub and Googleapis, run the following commands:
+
+   {{</ tab >}}
+
+   {{< tab "Poor network connections to GitHub/Googleapis" >}}
+
+   Run the following commands:
 
    ```bash
    export KKZONE=cn
    
    ./kk artifact export -m manifest-sample.yaml -o kubesphere.tar.gz
    ```
+   {{</ tab >}}
+
+   {{</ tabs >}}
 
    {{< notice note >}}
 
@@ -346,8 +383,6 @@ In KubeKey v2.0.0, we bring in concepts of manifest and artifact, which provides
 
    - **kubesphere.tar.gz**: Specifies the image package of the source cluster.
 
-     The username and password for logging in to Harbor is **admin** and **Harbor12345** by default. The installation file of Harbor is located in **/opt/harbor**, where you can perform O&M of Harbor.
-   
     {{</ notice >}}
 
 5. Create a Harbor project.
@@ -359,6 +394,10 @@ In KubeKey v2.0.0, we bring in concepts of manifest and artifact, which provides
    - **Public**: All users can pull images from the project.
 
    - **Private**: Only project members can pull images from the project.
+
+   The username and password for logging in to Harbor is **admin** and **Harbor12345** by default. The installation file of Harbor is located in **/opt/harbor**, where you can perform O&M of Harbor.
+
+
   
     {{</ notice >}}
 

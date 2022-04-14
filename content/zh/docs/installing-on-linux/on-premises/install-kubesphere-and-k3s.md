@@ -107,7 +107,7 @@ chmod +x kk
      roleGroups:
        etcd:
        - master
-       master:
+       control-plane:
        - master
        worker:
        - node1

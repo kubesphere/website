@@ -25,9 +25,34 @@ KubeKey v2.0.0 版本新增了清单（manifest）和制品（artifact）的概�
 
 1. 执行以下命令下载 KubeKey v2.0.0 并解压：
 
+   {{< tabs >}}
+
+   {{< tab "如果您能正常访问 GitHub/Googleapis" >}}
+
+   从 [GitHub Release Page](https://github.com/kubesphere/kubekey/releases) 下载 KubeKey 或者直接运行以下命令。
+
    ```bash
    curl -sfL https://get-kk.kubesphere.io | VERSION=v2.0.0 sh -
    ```
+
+   {{</ tab >}}
+
+   {{< tab "如果您访问 GitHub/Googleapis 受限" >}}
+
+   首先运行以下命令，以确保您从正确的区域下载 KubeKey。
+
+   ```bash
+   export KKZONE=cn
+   ```
+
+   运行以下命令来下载 KubeKey：
+
+   ```bash
+   curl -sfL https://get-kk.kubesphere.io | VERSION=v2.0.0 sh -
+   ```
+   {{</ tab >}}
+
+   {{</ tabs >}}
 
 2. 在源集群中使用 KubeKey 创建 manifest。支持下面 2 种方式：
 
@@ -62,7 +87,7 @@ KubeKey v2.0.0 版本新增了清单（manifest）和制品（artifact）的概�
        repository:
          iso:
            localPath: ""
-           url: #Enter the downloading address, https://github.com/kubesphere/kubekey/releases/tag/v2.0.0.
+           url: #https://github.com/kubesphere/kubekey/releases/download/v2.0.0/centos-7-amd64-rpms.iso
      kubernetesDistributions:
      - type: kubernetes
        version: v1.21.5
@@ -228,22 +253,38 @@ KubeKey v2.0.0 版本新增了清单（manifest）和制品（artifact）的概�
    - 默认创建的 manifest 里面的镜像列表从 **docker.io** 获取。
    
    - 可根据实际情况修改 **manifest-sample.yaml** 文件的内容，用于之后导出期望的 artifact 文件。
+  
+   - 您可以访问 https://github.com/kubesphere/kubekey/releases/tag/v2.0.0 下载 ISO 文件。
    
    {{</ notice >}}
    
 4. 从源集群中导出制品 artifact。
-   如果您能正常访问 GitHub 和 Googleapis，执行以下命令：
+   
+      {{< tabs >}}
+
+   {{< tab "如果您能正常访问 GitHub/Googleapis" >}}
+
+   执行以下命令：
 
    ```bash
    ./kk artifact export -m manifest-sample.yaml -o kubesphere.tar.gz
    ```
 
-   如果您访问 GitHub 和 Googleapis 受限，执行以下命令：
+   {{</ tab >}}
+
+   {{< tab "如果您访问 GitHub/Googleapis 受限" >}}
+
+   依次运行以下命令：
 
    ```bash
    export KKZONE=cn
+
    ./kk artifact export -m manifest-sample.yaml -o kubesphere.tar.gz
    ```
+
+   {{</ tab >}}
+
+   {{</ tabs >}}
 
    {{< notice note >}}
 
@@ -349,8 +390,6 @@ KubeKey v2.0.0 版本新增了清单（manifest）和制品（artifact）的概�
    - **config-sample.yaml** 指离线环境集群的配置文件。
 
    - **kubesphere.tar.gz** 指源集群打包出来的 tar 包镜像。
-
-     Harbor 管理员账号：admin，密码：Harbor12345。Harbor 安装文件在 **/opt/harbor** , 如需运维 Harbor，可至该目录下。
    
     {{</ notice >}}
 
@@ -363,9 +402,11 @@ KubeKey v2.0.0 版本新增了清单（manifest）和制品（artifact）的概�
    - 公共项目（Public）：任何用户都可以从这个项目中拉取镜像。
    - 私有项目（Private）：只有作为项目成员的用户可以拉取镜像。
 
+   Harbor 管理员账号：**admin**，密码：**Harbor12345**。Harbor 安装文件在 **/opt/harbor** , 如需运维 Harbor，可至该目录下。
+
     {{</ notice >}}
 
-   方法1：执行脚本创建 Harbor 项目。
+   方法 1：执行脚本创建 Harbor 项目。
 
    a. 执行以下命令下载指定脚本初始化 Harbor 仓库：
 

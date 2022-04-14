@@ -351,7 +351,7 @@ spec:
     - master1
     - master2
     - master3
-    master:
+    control-plane:
     - master1
     - master2
     - master3
