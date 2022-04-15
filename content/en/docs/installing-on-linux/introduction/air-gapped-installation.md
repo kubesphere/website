@@ -83,7 +83,7 @@ In KubeKey v2.0.0, we bring in concepts of manifest and artifact, which provides
        repository:
          iso:
            localPath: ""
-           url: #https://github.com/kubesphere/kubekey/releases/download/v2.0.0/centos-7-amd64-rpms.iso
+           url: "https://github.com/kubesphere/kubekey/releases/download/v2.0.0/centos-7-amd64-rpms.iso"
      kubernetesDistributions:
      - type: kubernetes
        version: v1.21.5
