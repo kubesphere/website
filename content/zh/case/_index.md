@@ -121,8 +121,10 @@ section3:
           icon: 'images/case/section6-ruijie.png'
         - name: 'supaur'
           icon: 'images/case/section6-supaur.png'
-        - name: 'supaur'
+        - name: 'xiaodiketang'
           icon: 'images/case/section6-xiaodiketang.png'
+        - name: 'zhongkejincai'
+          icon: 'images/case/section6-sinodata.png'
 
     - name: '互联网'
       children:
