@@ -1,5 +1,5 @@
 ---
-title: 'Fluent Operator：一款多租户日志采集、清洗和存储编排引擎'
+title: 'Fluent Operator 入门教程'
 tag: 'KubeSphere, Fluent Operator'
 keywords: 'Kubernetes, KubeSphere, Fluent Operator, 日志采集, 日志查询'
 description: 'Fluent Operator 可以单独部署 Fluent Bit 或者 Fluentd，并不会强制要求使用 Fluent Bit 或 Fluentd，同时还支持使用 Fluentd 接收 Fluent Bit 转发的日志流进行多租户日志隔离，这极大地增加了部署的灵活性和多样性。'
@@ -83,7 +83,7 @@ Fluent Operator 允许您根据需要在上述 3 种模式下配置日志处理�
 
 在 Fluent Bit CRD 中每个 ClusterInput, ClusterParser, ClusterFilter,ClusterOutput 代表一个 Fluent Bit 配置部分，由 ClusterFluentBitConfig 标签选择器选择。Fluent Operator 监视这些对象，构建最终配置，最后创建一个 Secret 来存储安装到 Fluent Bit DaemonSet 中的配置。整个工作流程如下所示：
 
-![](http://pek3b.qingstor.com/kubesphere-community/images/fluent-operator-2022-3.svg)
+![](https://pek3b.qingstor.com/kubesphere-community/images/fluent-operator-2022-3.svg)
 
 因为 Fluent Bit 本身没有重新加载接口（详细信息请参阅此[已知问题](https://github.com/fluent/fluent-bit/issues/365 "已知问题")），为了使 Fluent Bit 能够在 Fluent Bit 配置更改时获取并使用最新配置，添加了一个名为 fluentbit watcher 的包装器，以便在检测到 Fluent Bit 配置更改时立即重新启动 Fluent Bit 进程。这样，无需重新启动 Fluent Bit pod 即可重新加载新配置。
 
