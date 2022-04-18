@@ -1,5 +1,5 @@
 ---
-title: 'Fluent Operator：云原生日志管理的一把瑞士军刀'
+title: 'Fluent Operator：一款多租户日志采集、清洗和存储编排引擎'
 tag: 'KubeSphere, Fluent Operator'
 keywords: 'Kubernetes, KubeSphere, Fluent Operator, 日志采集, 日志查询'
 description: 'Fluent Operator 可以单独部署 Fluent Bit 或者 Fluentd，并不会强制要求使用 Fluent Bit 或 Fluentd，同时还支持使用 Fluentd 接收 Fluent Bit 转发的日志流进行多租户日志隔离，这极大地增加了部署的灵活性和多样性。'
@@ -18,13 +18,13 @@ Fluentbit Operator 降低了 Fluent Bit 的使用门槛，能高效、快捷的�
 
 使用 Fluent Operator 可以灵活且方便地部署、配置及卸载 Fluent Bit 以及 Fluentd。同时, 社区还提供支持 Fluentd 以及 Fluent Bit 的海量插件，用户可以根据实际情况进行定制化配置。官方文档提供了详细的示例，极易上手，大大降低了 Fluent Bit 以及 Fluentd 的使用门槛。
 
-![](http://pek3b.qingstor.com/kubesphere-community/images/fluent-operator-2022-1.png)
+![](https://pek3b.qingstor.com/kubesphere-community/images/fluent-operator-2022-1.png)
 
 ### 日志流水线的各个阶段
 
 Fluent Operator 可以单独部署 Fluent Bit 或者 Fluentd，并不会强制要求使用 Fluent Bit 或 Fluentd，同时还支持使用 Fluentd 接收 Fluent Bit 转发的日志流进行多租户日志隔离，这极大地增加了部署的灵活性和多样性。 为了更全面的了解 Fluent Operator，下图以完整的日志流水线为例，将流水线分为三部分：采集和转发、过滤以及输出。
 
-![](http://pek3b.qingstor.com/kubesphere-community/images/fluent-operator-2022-2.png)
+![](https://pek3b.qingstor.com/kubesphere-community/images/fluent-operator-2022-2.png)
 
 #### 采集和转发
 
@@ -139,7 +139,7 @@ Fluent Bit 和 Fluentd 都已被定义为 Fluent Operator 中的 CRD，您可以
 
 Fluent Bit Only 将只启用轻量级的 Fluent Bit 对日志进行采集、处理以及转发。
 
-![](http://pek3b.qingstor.com/kubesphere-community/images/fluent-operator-2022-4.png)
+![](https://pek3b.qingstor.com/kubesphere-community/images/fluent-operator-2022-4.png)
 
 #### 使用 Fluent Bit 收集 kubelet 的日志并输出到 Elasticsearch
 
@@ -388,7 +388,7 @@ EOF
 
 凭借 Fluentd 丰富的插件，Fluentd 可以充当日志聚合层，执行更高级的日志处理。您可以使用 Fluent Operator 轻松地将日志从 Fluent Bit 转发到 Fluentd。
 
-![](http://pek3b.qingstor.com/kubesphere-community/images/fluent-operator-2022-5.png)
+![](https://pek3b.qingstor.com/kubesphere-community/images/fluent-operator-2022-5.png)
 
 #### 将日志从 Fluent Bit 转发到 Fluentd
 
@@ -775,7 +775,7 @@ EOF
 
 你同样可以开启 Fluentd Only 模式，该模式只会部署 Fluentd statefulset。
 
-![](http://pek3b.qingstor.com/kubesphere-community/images/fluent-operator-2022-6.png)
+![](https://pek3b.qingstor.com/kubesphere-community/images/fluent-operator-2022-6.png)
 
 #### 使用 Fluentd 从 HTTP 接收日志并输出到标准输出
 
