@@ -62,6 +62,16 @@ members:
       position: 委员
       des: 云原生杭州站核心成员，CNCF Dragonfly Member，云原生开源项目爱好者，主要负责大规模文件分发、镜像加速产品研发和优化，工作领域涉及 Kubenetes & CSI、Golang 性能优化。
       image: /images/user-group/hangzhou/majinjing.jpeg
+   
+    - name: 王伊嘉
+      position: 委员
+      des: 杭州数跑科技有限公司 DevOps 运维工程师，负责公司内部集群/项目生产集群优化、运维；内部 CI/CD 流优化、编写；新技术调研、推广等工作。
+      image: /images/user-group/hangzhou/wangyijia.png
+
+    - name: 高鹏程
+      position: 委员
+      des: 睿蓝汽车科技应用运维工程师，负责睿蓝汽车/换电模块应用运维，个人爱好开源项目，主要研究  DevOps，K8s 方面。
+      image: /images/user-group/hangzhou/gaopengcheng.png
 
 activities:
   videos:
