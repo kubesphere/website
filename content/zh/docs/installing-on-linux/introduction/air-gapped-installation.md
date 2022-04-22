@@ -411,7 +411,7 @@ KubeKey v2.0.0 版本新增了清单（manifest）和制品（artifact）的概�
    a. 执行以下命令下载指定脚本初始化 Harbor 仓库：
 
       ```bash
-      curl -O https://github.com/kubesphere/ks-installer/blob/master/scripts/create_project_harbor.sh
+      curl -O https://raw.githubusercontent.com/kubesphere/ks-installer/master/scripts/create_project_harbor.sh
       ```
 
    b. 执行以下命令修改脚本配置文件：

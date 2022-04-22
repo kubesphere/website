@@ -403,7 +403,7 @@ In KubeKey v2.0.0, we bring in concepts of manifest and artifact, which provides
    a. Run the following command to download the specified script to initialize the Harbor registry:
 
       ```bash
-      curl -O https://github.com/kubesphere/ks-installer/blob/master/scripts/create_project_harbor.sh
+      curl -O https://raw.githubusercontent.com/kubesphere/ks-installer/master/scripts/create_project_harbor.sh
       ```
 
    b. Run the following command to modify the script configuration file:
