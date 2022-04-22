@@ -203,7 +203,7 @@ In KubeKey v2.0.0, we bring in concepts of manifest and artifact, which provides
      - docker.io/library/docker:19.03
      - docker.io/kubesphere/fluent-bit:v1.8.3
      - docker.io/kubesphere/log-sidecar-injector:1.1
-      - docker.io/elastic/filebeat:6.7.0
+     - docker.io/elastic/filebeat:6.7.0
      - docker.io/kubesphere/kube-events-operator:v0.3.0
      - docker.io/kubesphere/kube-events-exporter:v0.3.0
      - docker.io/kubesphere/kube-events-ruler:v0.3.0
@@ -403,7 +403,7 @@ In KubeKey v2.0.0, we bring in concepts of manifest and artifact, which provides
    a. Run the following command to download the specified script to initialize the Harbor registry:
 
       ```bash
-      curl https://github.com/kubesphere/ks-installer/blob/master/scripts/create_project_harbor.sh
+      curl -O https://github.com/kubesphere/ks-installer/blob/master/scripts/create_project_harbor.sh
       ```
 
    b. Run the following command to modify the script configuration file:
