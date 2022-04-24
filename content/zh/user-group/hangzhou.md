@@ -73,6 +73,11 @@ members:
       des: 睿蓝汽车科技应用运维工程师，负责睿蓝汽车/换电模块应用运维，个人爱好开源项目，主要研究  DevOps，K8s 方面。
       image: /images/user-group/hangzhou/gaopengcheng.png
 
+    - name: 张慧
+      position: 委员
+      des: 网易伏羲私有云质量保障负责人，chaos mesh 布道师，云原生社区杭州站核心负责人，Linux “女性开源力量”。
+      image: /images/user-group/hangzhou/zhanghui.png
+
 activities:
   videos:
     - image: /images/user-group/shanghai/rotation/ex.png
