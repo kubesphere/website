@@ -2,7 +2,7 @@
 title: '使用 Go 从零开发并发布一个 Kubectl 插件'
 tag: 'Kubernetes'
 keywords: 'Kubernetes, kubectl, go'
-description: '本文主要是给大家分享以下内容：了解 K8s 环境面临的安全风险；了解 K8s 提供的安全机制；改善 K8s 安全状况的最佳实践'
+description: '在我日常使用 Kubectl 查看 K8s 资源的时候，想直接查看对应资源的容器名称和镜像名称，目前 Kubectl 还不支持该选型，需要我们 describe 然后来查看，对于集群自己比较多，不是很方便，因此萌生了自己开发 Kubectl 插件来实现该功能。'
 createTime: '2022-04-20'
 author: '薛磊'
 snapshot: 'https://pek3b.qingstor.com/kubesphere-community/images/go-kubectl-cover.png'
