@@ -435,6 +435,7 @@ In KubeKey v2.0.0, we bring in concepts of manifest and artifact, which provides
       
       harbor_projects=(library
           kubesphereio
+          kubesphere
           calico
           coredns
           openebs

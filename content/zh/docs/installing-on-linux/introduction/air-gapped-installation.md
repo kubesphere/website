@@ -443,6 +443,7 @@ KubeKey v2.0.0 版本新增了清单（manifest）和制品（artifact）的概�
       
       harbor_projects=(library
           kubesphereio
+          kubesphere
           calico
           coredns
           openebs
