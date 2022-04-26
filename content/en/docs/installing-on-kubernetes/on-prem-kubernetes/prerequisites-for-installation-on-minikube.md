@@ -1,8 +1,8 @@
 ---
-title: "Prerequisites"
+title: "Prerequisites for Minikube"
 keywords: "KubeSphere, Minikube, Installation, Prerequisites"
 description: "Make sure your environment where an existing Minikube cluster runs meets the prerequisites before installation."
-linkTitle: "Prerequisites"
+linkTitle: "Prerequisites for Minikube"
 weight: 4120
 ---
 
@@ -47,7 +47,7 @@ weight: 4120
 
     ```
 
-3. Make sure your Kubernetes version is compatible by running `kubectl version` in your minikube cluster node. The output may look as below:
+3. Make sure your Kubectl version is compatible by running `kubectl version` in your minikube cluster node. The output may look as below:
 
     ```bash
    ❯ kubectl version
@@ -67,6 +67,4 @@ Pay attention to the `Server Version` line. If `GitVersion` shows an older one, 
     glusterfs (default)       kubernetes.io/glusterfs   3d4h
     ```
 
-If your Kubernetes cluster environment meets all the requirements above, then you are ready to deploy KubeSphere on your existing Kubernetes cluster.
-
-For more information, see [Overview](../overview/).
+If your Minikube cluster environment meets all the requirements above, then you are ready to deploy KubeSphere on your Minikube.
