@@ -10,22 +10,29 @@ section1:
 
 section2:
   image: /images/live/cloudnative-live-banner.png
-  url: ./iot0414-live/
+  url: ./yatai0421-live/
 
   notice:
-    title: Yatai —— 云原生上的 MLOps 平台
+    title: 使用 Notification Manager 构建云原生通知系统
     tag: 预告
-    time: 2022 年 04 月 21 日晚 8 点
+    time: 2022 年 04 月 28 日晚 8 点
     base: 线上
-    url: ./yatai0421-live/
+    url: ./notification-manager-0428-live/
 
   over:
-    title: Kubernetes 中的流量管理和服务发现
-    url: ./k8s-apisix-openelb0406-live/
+    title: 5G + IoT 场景下云原生的应用与思考
+    url: ./iot0414-live/
     tag: 结束
 
 section3:
   videos:
+    - title: Yatai —— 云原生上的 MLOps 平台
+      link: ./yatai0421-live/
+      snapshot: https://pek3b.qingstor.com/kubesphere-community/images/yatai0421-live-cover.png
+      type: iframe
+      createTime: 2022.04.21
+      group: 直播回放 
+
     - title: 5G + IoT 场景下云原生的应用与思考
       link: ./iot0414-live/
       snapshot: https://pek3b.qingstor.com/kubesphere-community/images/iot0414-live-cover.png
