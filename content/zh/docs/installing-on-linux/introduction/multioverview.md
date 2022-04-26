@@ -20,7 +20,7 @@ weight: 3120
 
 多节点集群由至少一个主节点和一个工作节点组成。您可以使用任何节点作为**任务机**来执行安装任务，也可以在安装之前或之后根据需要新增节点（例如，为了实现高可用性）。
 
-- **Master**：主节点，通常托管控制平面，控制和管理整个系统。
+- **Control Plane Node**：主节点，通常托管控制平面，控制和管理整个系统。
 - **Worker**：工作节点，运行部署在工作节点上的实际应用程序。
 
 ## 步骤 1：准备 Linux 主机
@@ -200,7 +200,7 @@ spec:
   roleGroups:
     etcd:
     - master
-    master:
+    control-plane:
     - master
     worker:
     - node1
@@ -249,13 +249,6 @@ spec:
   hosts:
     - {name: master, address: 192.168.0.2, internalAddress: 192.168.0.2, privateKeyPath: "~/.ssh/id_rsa"}
   ```
-  
-- 在 ARM 设备上安装的示例：
-
-  ```yaml
-  hosts:
-    - {name: master, address: 192.168.0.2, internalAddress: 192.168.0.2, user: ubuntu, password: Testing123, arch: arm64}
-  ```
 
 {{< notice tip >}} 
 
@@ -267,7 +260,7 @@ spec:
 #### roleGroups
 
 - `etcd`：etcd 节点名称
-- `master`：主节点名称
+- `control-plane`：主节点名称
 - `worker`：工作节点名称
 
 #### controlPlaneEndpoint（仅适用于高可用安装）

@@ -16,9 +16,9 @@ This section gives you an overview of a single-master multi-node installation, i
 
 ## Concept
 
-A multi-node cluster is composed of at least one master node and one worker node. You can use any node as the **taskbox** to carry out the installation task. You can add additional nodes based on your needs (for example, for high availability) both before and after the installation.
+A multi-node cluster is composed of at least one control plane node and one worker node. You can use any node as the **taskbox** to carry out the installation task. You can add additional nodes based on your needs (for example, for high availability) both before and after the installation.
 
-- **Master**. A master node generally hosts the control plane that controls and manages the whole system.
+- **Control Plane**. A control plane node generally controls and manages the whole system.
 - **Worker**. Worker nodes run the actual applications deployed on them.
 
 ## Step 1: Prepare Linux Hosts
@@ -204,7 +204,7 @@ spec:
   roleGroups:
     etcd:
     - master
-    master:
+    control-plane:
     - master
     worker:
     - node1
@@ -253,13 +253,6 @@ At the same time, you must provide the login information used to connect to each
   hosts:
     - {name: master, address: 192.168.0.2, internalAddress: 192.168.0.2, privateKeyPath: "~/.ssh/id_rsa"}
   ```
-  
-- For installation on ARM devices:
-
-  ```yaml
-  hosts:
-    - {name: master, address: 192.168.0.2, internalAddress: 192.168.0.2, user: ubuntu, password: Testing123, arch: arm64}
-  ```
 
 {{< notice tip >}} 
 
@@ -271,7 +264,7 @@ At the same time, you must provide the login information used to connect to each
 #### roleGroups
 
 - `etcd`: etcd node names
-- `master`: Master node names
+- `control-plane`: Name of the contro plane node
 - `worker`: Worker node names
 
 #### controlPlaneEndpoint (for HA installation only)

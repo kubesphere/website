@@ -204,7 +204,7 @@ For air-gapped installation, you must specify `privateRegistry`, which is `docke
   roleGroups:
     etcd:
     - ks.master
-    master:
+    control-plane:
     - ks.master
     worker:
     - ks.master
@@ -294,7 +294,7 @@ Set `hosts` of your `config-sample.yaml` file:
   roleGroups:
     etcd:
     - ks.master
-    master:
+    control-plane:
     - ks.master
     worker:
     - ks.slave1

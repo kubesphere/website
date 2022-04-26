@@ -147,7 +147,7 @@ chmod +x kk
      roleGroups:
        etcd:
        - client1
-       master:
+       control-plane:
        - client1
        worker:
        - client2

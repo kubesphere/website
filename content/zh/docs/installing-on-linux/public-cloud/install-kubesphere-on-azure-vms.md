@@ -176,7 +176,7 @@ spec:
     - master-0
     - master-1
     - master-2
-    master:
+    control-plane:
     - master-0
     - master-1
     - master-2

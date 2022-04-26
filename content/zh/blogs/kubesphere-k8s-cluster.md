@@ -614,7 +614,7 @@ KubeSphere 是在 K8s 之上构建的以应用为中心的多租户容器平台�
          - k8s-master-0
          - k8s-master-1
          - k8s-master-2
-         master:
+         control-plane:
          - k8s-master-0
          - k8s-master-1
          - k8s-master-2
@@ -653,7 +653,7 @@ KubeSphere 是在 K8s 之上构建的以应用为中心的多租户容器平台�
      - roleGroups
 
        - etcd: etcd 节点名称
-       - master: master 节点的名称
+       - control-plane: 主节点的名称
        - worker: work 节点的名称
 
      - controlPlaneEndpoint
