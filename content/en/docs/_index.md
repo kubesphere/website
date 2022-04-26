@@ -17,6 +17,7 @@ sectionLink:
     list:
       - /docs/quick-start/all-in-one-on-linux
       - /docs/quick-start/minimal-kubesphere-on-k8s
+      - /docs/quick-start/minimal-kubesphere-on-minikube
       - /docs/quick-start/create-workspace-and-project
       - /docs/introduction/what-is-kubesphere
       - /docs/pluggable-components
