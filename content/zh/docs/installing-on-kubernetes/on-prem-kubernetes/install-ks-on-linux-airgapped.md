@@ -90,7 +90,7 @@ Docker 使用 `/var/lib/docker` 作为默认路径来存储所有 Docker 相关�
 1. 使用以下命令从能够访问互联网的机器上下载镜像清单文件 `images-list.txt`：
 
    ```bash
-   curl -L -O https://github.com/kubesphere/ks-installer/releases/download/v3.2.1/images-list.txt
+   curl -L -O https://github.com/kubesphere/ks-installer/releases/download/v3.3.0/images-list.txt
    ```
 
    {{< notice note >}}
@@ -102,7 +102,7 @@ Docker 使用 `/var/lib/docker` 作为默认路径来存储所有 Docker 相关�
 2. 下载 `offline-installation-tool.sh`。
 
    ```bash
-   curl -L -O https://github.com/kubesphere/ks-installer/releases/download/v3.2.1/offline-installation-tool.sh
+   curl -L -O https://github.com/kubesphere/ks-installer/releases/download/v3.3.0/offline-installation-tool.sh
    ```
 
 3. 使 `.sh` 文件可执行。
@@ -162,8 +162,8 @@ Docker 使用 `/var/lib/docker` 作为默认路径来存储所有 Docker 相关�
 1. 执行以下命令下载这两个文件，并将它们传输至您充当任务机的机器，用于安装。
 
    ```bash
-   curl -L -O https://github.com/kubesphere/ks-installer/releases/download/v3.2.1/cluster-configuration.yaml
-   curl -L -O https://github.com/kubesphere/ks-installer/releases/download/v3.2.1/kubesphere-installer.yaml
+   curl -L -O https://github.com/kubesphere/ks-installer/releases/download/v3.3.0/cluster-configuration.yaml
+   curl -L -O https://github.com/kubesphere/ks-installer/releases/download/v3.3.0/kubesphere-installer.yaml
    ```
 
 2. 编辑 `cluster-configuration.yaml` 添加您的私有镜像仓库。例如，本教程中的仓库地址是 `dockerhub.kubekey.local`，将它用作 `.spec.local_registry` 的值，如下所示：
@@ -241,7 +241,7 @@ https://kubesphere.io             20xx-xx-xx xx:xx:xx
 
 ## 附录
 
-### KubeSphere 3.2.1 镜像清单
+### KubeSphere 3.3.0 镜像清单
 
 ```txt
 ##k8s-images
@@ -274,10 +274,10 @@ openebs/provisioner-localpv:2.10.1
 openebs/linux-utils:2.10.0
 kubesphere/k8s-dns-node-cache:1.15.12
 ##kubesphere-images
-kubesphere/ks-installer:v3.2.1
-kubesphere/ks-apiserver:v3.2.1
-kubesphere/ks-console:v3.2.1
-kubesphere/ks-controller-manager:v3.2.1
+kubesphere/ks-installer:v3.3.0
+kubesphere/ks-apiserver:v3.3.0
+kubesphere/ks-console:v3.3.0
+kubesphere/ks-controller-manager:v3.3.0
 kubesphere/kubectl:v1.20.0
 kubesphere/kubefed:v0.8.1
 kubesphere/tower:v0.2.0
@@ -299,11 +299,11 @@ kubesphere/edge-watcher-agent:v0.1.0
 ##gatekeeper-images
 openpolicyagent/gatekeeper:v3.5.2
 ##openpitrix-images
-kubesphere/openpitrix-jobs:v3.2.1
+kubesphere/openpitrix-jobs:v3.3.0
 ##kubesphere-devops-images
-kubesphere/devops-apiserver:v3.2.1
-kubesphere/devops-controller:v3.2.1
-kubesphere/devops-tools:v3.2.1
+kubesphere/devops-apiserver:v3.3.0
+kubesphere/devops-controller:v3.3.0
+kubesphere/devops-tools:v3.3.0
 kubesphere/ks-jenkins:v3.2.0-2.249.1
 jenkins/jnlp-slave:3.27-1
 kubesphere/builder-base:v3.2.0
