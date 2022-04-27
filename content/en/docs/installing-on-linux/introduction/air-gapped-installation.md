@@ -19,11 +19,7 @@ Please see the requirements for hardware and operating system shown below. To ge
 |192.168.0.4 | node3    | Image registry node of the air-gapped environment |
 ## Preparations
 
-<<<<<<< HEAD
 1. Run the following commands to download KubeKey v2.1.0.
-=======
-1. Run the following commands to download KubeKey v2.0.0.
->>>>>>> befffa40 (PVC and PV-EN)
    {{< tabs >}}
 
 {{< notice note >}}
@@ -31,11 +27,7 @@ Please see the requirements for hardware and operating system shown below. To ge
 - [KubeKey](https://github.com/kubesphere/kubekey) uses `/var/lib/docker` as the default directory where all Docker related files, including images, are stored. It is recommended you add additional storage volumes with at least **100G** mounted to `/var/lib/docker` and `/mnt/registry` respectively. See [fdisk](https://www.computerhope.com/unix/fdisk.htm) command for reference.
 
    ```bash
-<<<<<<< HEAD
    curl -sfL https://get-kk.kubesphere.io | VERSION=v2.1.0 sh -
-=======
-   curl -sfL https://get-kk.kubesphere.io | VERSION=v2.0.0 sh -
->>>>>>> befffa40 (PVC and PV-EN)
    ```
 
 ### Container runtimes
@@ -419,11 +411,7 @@ The domain name is `dockerhub.kubekey.local` in the command. Make sure you use y
            password: Harbor12345
        plainHTTP: false
        privateRegistry: "dockerhub.kubekey.local"
-<<<<<<< HEAD
        namespaceOverride: "kubesphereio"
-=======
-       namespaceOverride: ""
->>>>>>> befffa40 (PVC and PV-EN)
        registryMirrors: []
        insecureRegistries: []
      addons: []
