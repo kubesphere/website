@@ -274,7 +274,7 @@ The domain name is `dockerhub.kubekey.local` in the command. Make sure you use y
      addons: []
    ```
 
-7. Run the following command to install a KubeSphere cluster:
+### Create an example configuration file
 
 Execute the following command to generate an example configuration file for installation:
 
