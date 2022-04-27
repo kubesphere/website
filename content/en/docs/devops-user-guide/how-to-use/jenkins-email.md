@@ -12,7 +12,7 @@ The built-in Jenkins cannot share the same email configuration with the platform
 ## Prerequisites
 
 - You need to enable the [KubeSphere DevOps System](../../../pluggable-components/devops/).
-- You need a user granted a role including the permission of **Cluster Management**. For example, you can log in to the console as `admin` directly or create a new role with the permission and assign it to a user.
+- You need a user granted a role including the **Cluster Management** permission. For example, you can log in to the console as `admin` directly or create a new role with the permission and assign it to a user.
 
 ## Set the Email Server
 
