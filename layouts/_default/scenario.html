@@ -60,11 +60,12 @@
     {{ if .videoLink }}
     <iframe 
         id='iframe-player' 
-        src="{{ .videoLink }}" 
+        src="{{ .videoLink }}"
         width="900" 
         height="580" 
         frameborder="0"
-        allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" 
+        allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+        title="video"
         allowfullscreen>
     </iframe>
     {{ else }}
