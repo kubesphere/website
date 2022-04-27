@@ -113,7 +113,7 @@ chmod +x kk
 
    {{< notice note >}}
 
-   - 您可以根据自己的需求变更下载的 Kubernetes 版本。安装 KubeSphere 3.3.0 的建议 Kubernetes 版本：v1.19.x、v1.20.x、v1.21.x、v1.22.x和v1.23.x。如果不指定 Kubernetes 版本，KubeKey 将默认安装 Kubernetes v1.21.5。有关受支持的 Kubernetes 版本的更多信息，请参见[支持矩阵](../../installing-on-linux/introduction/kubekey/#支持矩阵)。
+   - 您可以根据自己的需求变更下载的 Kubernetes 版本。安装 KubeSphere 3.3.0 的建议 Kubernetes 版本：v1.19.x、v1.20.x、v1.21.x 以及 v1.22.x（实验性支持）。如果不指定 Kubernetes 版本，KubeKey 将默认安装 Kubernetes v1.21.5。有关受支持的 Kubernetes 版本的更多信息，请参见[支持矩阵](../../installing-on-linux/introduction/kubekey/#支持矩阵)。
 
    - 您可以通过下载 Kubernetes v1.17.9 二进制文件将 Kubernetes 从 v1.16.13 升级到 v1.17.9。但对于跨多个版本升级，需要事先下载所有中间版本，例如您想将 Kubernetes 从 v1.15.12 升级到 v1.18.6，则需要下载 Kubernetes v1.16.13、v1.17.9 和 v1.18.6 二进制文件。
 

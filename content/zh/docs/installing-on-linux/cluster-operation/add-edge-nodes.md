@@ -125,51 +125,7 @@ KubeSphere 利用 [KubeEdge](https://kubeedge.io/zh/) 将原生容器化应用�
 
    {{</ notice >}}
 
-## 收集边缘节点监控信息
-
-如果需要收集边缘节点的监控信息，请先在`ClusterConfiguration` 中开启 `metrics_server`，以及在 KubeEdge 中开启 `edgeStream`。
-
-1. 在 KubeSphere 控制台上，点击**平台管理 > 集群管理**。
-
-2. 在左侧导航栏。点击**定制资源定义**。
-
-3. 在右侧的搜索框中，输入 `clusterconfiguration`，并点击结果查看其详细页面。
-
-4. 点击 `ks-installer` 右侧的 <img src="/images/docs/common-icons/three-dots.png" width="15" />，选择**编辑 YAML**。
-
-5. 找到 **metrics_server**，将 `enabled` 的 `false` 更改为 `true`。
-
-    ```yaml
-      metrics_server:
-      enabled: true # 将“false”更改为“true”。
-    ```
-
-6. 点击右下角的**确定**，保存配置。
-
-7. 进入 `/etc/kubeedge/config` 文件，搜索 `edgeStream`，将 `false` 更改为 `true` 并保存文件。
-    ```bash
-    cd /etc/kubeedge/config
-    vi edgecore.yaml
-    ```
-
-    ```bash
-    edgeStream:
-    enable: true #将“false”更改为“true”。
-    handshakeTimeout: 30
-    readDeadline: 15
-    server: xx.xxx.xxx.xxx:10004 #如果没有添加端口转发，将端口修改为30004。
-    tlsTunnelCAFile: /etc/kubeedge/ca/rootCA.crt
-    tlsTunnelCertFile: /etc/kubeedge/certs/server.crt
-    tlsTunnelPrivateKeyFile: /etc/kubeedge/certs/server.key
-    writeDeadline: 15
-    ```
-
-8. 重启 `edgecore.service`。
-    ```bash
-    systemctl restart edgecore.service
-    ```
-
-9. 边缘节点加入集群后，部分 Pod 在调度至该边缘节点上后可能会一直处于 `Pending` 状态。由于部分守护进程集（例如，Calico）有强容忍度，您需要手动 Patch Pod 以防止它们调度至该边缘节点。
+6. 边缘节点加入集群后，部分 Pod 在调度至该边缘节点上后可能会一直处于 `Pending` 状态。由于部分守护进程集（例如，Calico）有强容忍度，在当前版本中 (KubeSphere 3.3.0)，您需要手动 Patch Pod 以防止它们调度至该边缘节点。
 
    ```bash
    #!/bin/bash
