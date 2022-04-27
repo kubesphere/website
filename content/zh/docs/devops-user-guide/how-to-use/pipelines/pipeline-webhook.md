@@ -3,7 +3,7 @@ title: "使用 Webhook 触发流水线"
 keywords: 'Kubernetes, DevOps, Jenkins, 流水线, Webhook'
 description: '学习如何使用 webhook 触发 Jenkins 流水线。'
 linkTitle: "使用 Webhook 触发流水线"
-weight: 11293
+weight: 11219
 ---
 
 如果通过远程代码仓库创建基于 Jenkinsfile 的流水线，则可以在远程仓库中配置 webhook，以便对远程仓库进行变更时，自动触发流水线。
@@ -12,8 +12,8 @@ weight: 11293
 
 ## 准备工作
 
-- [启用 KubeSphere DevOps 系统](../../../pluggable-components/devops/)。
-- 创建一个企业空间、一个 DevOps 项目和一个用户（例如，`project-regular`）。`project-regular` 需要被邀请至 DevOps 项目中并赋予 `operator` 角色。有关更多信息，请参见[创建企业空间、项目、用户和角色](../../../quick-start/create-workspace-and-project/)。
+- [启用 KubeSphere DevOps 系统](../../../../pluggable-components/devops/)。
+- 创建一个企业空间、一个 DevOps 项目和一个用户（例如，`project-regular`）。`project-regular` 需要被邀请至 DevOps 项目中并赋予 `operator` 角色。有关更多信息，请参见[创建企业空间、项目、用户和角色](../../../../quick-start/create-workspace-and-project/)。
 - 通过远程代码仓库创建一个基于 Jenkinsfile 的流水线。有关更多信息，请参见[使用 Jenkinsfile 创建流水线](../create-a-pipeline-using-jenkinsfile/)。
 
 ## 配置 Webhook

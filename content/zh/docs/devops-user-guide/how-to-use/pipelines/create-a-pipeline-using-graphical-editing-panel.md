@@ -3,7 +3,7 @@ title: "使用图形编辑面板创建流水线"
 keywords: 'KubeSphere, Kubernetes, Jenkins, CICD, 图形化流水线'
 description: '学习如何使用 KubeSphere 图形编辑面板创建并运行流水线。'
 linkTitle: '使用图形编辑面板创建流水线'
-weight: 11220
+weight: 11211
 ---
 
 KubeSphere 中的图形编辑面板包含用于 Jenkins [阶段 (Stage)](https://www.jenkins.io/zh/doc/book/pipeline/#阶段) 和[步骤 (Step)](https://www.jenkins.io/zh/doc/book/pipeline/#步骤) 的所有必要操作。您可以直接在交互式面板上定义这些阶段和步骤，无需创建任何 Jenkinsfile。
@@ -12,12 +12,12 @@ KubeSphere 中的图形编辑面板包含用于 Jenkins [阶段 (Stage)](https:/
 
 ## 准备工作
 
-- 您需要[启用 KubeSphere DevOps 系统](../../../pluggable-components/devops/)。
+- 您需要[启用 KubeSphere DevOps 系统](../../../../pluggable-components/devops/)。
 - 您需要有一个 [Docker Hub](http://www.dockerhub.com/) 帐户。
-- 您需要创建一个企业空间、一个 DevOps 项目和一个用户 (`project-regular`)，必须邀请该用户至 DevOps 项目中并赋予 `operator` 角色。如果尚未创建，请参见[创建企业空间、项目、用户和角色](../../../quick-start/create-workspace-and-project/)。
-- 设置 CI 专用节点来运行流水线。有关更多信息，请参见[为缓存依赖项设置 CI 节点](../../../devops-user-guide/how-to-use/set-ci-node/)。
-- 配置您的电子邮件服务器用于接收流水线通知（可选）。有关更多信息，请参见[为 KubeSphere 流水线设置电子邮件服务器](../../../devops-user-guide/how-to-use/jenkins-email/)。
-- 配置 SonarQube 将代码分析纳入流水线中（可选）。有关更多信息，请参见[将 SonarQube 集成到流水线](../../../devops-user-guide/how-to-integrate/sonarqube/)。
+- 您需要创建一个企业空间、一个 DevOps 项目和一个用户 (`project-regular`)，必须邀请该用户至 DevOps 项目中并赋予 `operator` 角色。如果尚未创建，请参见[创建企业空间、项目、用户和角色](../../../../quick-start/create-workspace-and-project/)。
+- 设置 CI 专用节点来运行流水线。有关更多信息，请参见[为缓存依赖项设置 CI 节点](../../../../devops-user-guide/how-to-use/devops-settings/set-ci-node/)。
+- 配置您的电子邮件服务器用于接收流水线通知（可选）。有关更多信息，请参见[为 KubeSphere 流水线设置电子邮件服务器](../../../../devops-user-guide/how-to-use/pipelines/jenkins-email/)。
+- 配置 SonarQube 将代码分析纳入流水线中（可选）。有关更多信息，请参见[将 SonarQube 集成到流水线](../../../../devops-user-guide/how-to-integrate/sonarqube/)。
 
 ## 流水线概述
 
@@ -40,7 +40,7 @@ KubeSphere 中的图形编辑面板包含用于 Jenkins [阶段 (Stage)](https:/
 
 ### 步骤 1：创建凭证
 
-1. 以 `project-regular` 身份登录 KubeSphere 控制台。转到您的 DevOps 项目，在 **DevOps 项目设置**下的**凭证**页面创建以下凭证。有关如何创建凭证的更多信息，请参见[凭证管理](../credential-management/)。
+1. 以 `project-regular` 身份登录 KubeSphere 控制台。转到您的 DevOps 项目，在 **DevOps 项目设置**下的**凭证**页面创建以下凭证。有关如何创建凭证的更多信息，请参见[凭证管理](../../../../devops-user-guide/how-to-use/devops-settings/credential-management/)。
 
    {{< notice note >}} 
 
@@ -53,7 +53,7 @@ KubeSphere 中的图形编辑面板包含用于 Jenkins [阶段 (Stage)](https:/
    | dockerhub-id    | 用户名和密码 | Docker Hub |
    | demo-kubeconfig | kubeconfig   | Kubernetes |
 
-2. 您还需要为 SonarQube 创建一个凭证 ID (`sonar-token`)，用于上述的阶段 3（代码分析）。请参阅[为新项目创建 SonarQube 令牌 (Token)](../../../devops-user-guide/how-to-integrate/sonarqube/#create-sonarqube-token-for-new-project)，在**访问令牌**类型的凭证的**令牌**字段中输入 SonarQube 令牌。点击**确定**完成操作。
+2. 您还需要为 SonarQube 创建一个凭证 ID (`sonar-token`)，用于上述的阶段 3（代码分析）。请参阅[为新项目创建 SonarQube 令牌 (Token)](../../../../devops-user-guide/how-to-integrate/sonarqube/#create-sonarqube-token-for-new-project)，在**访问令牌**类型的凭证的**令牌**字段中输入 SonarQube 令牌。点击**确定**完成操作。
 
 3. 您可以在列表中看到已创建的三个凭证。
 
@@ -61,7 +61,7 @@ KubeSphere 中的图形编辑面板包含用于 Jenkins [阶段 (Stage)](https:/
 
 在本教程中，示例流水线会将 [sample](https://github.com/kubesphere/devops-maven-sample/tree/sonarqube) 应用部署至一个项目。因此，您必须先创建一个项目（例如 `kubesphere-sample-dev`）。待流水线成功运行，会在该项目中自动创建该应用的部署和服务。
 
-您可以使用 `project-admin` 帐户创建项目。此外，该用户也是 CI/CD 流水线的审核员。请确保将 `project-regular` 帐户邀请至该项目并授予 `operator` 角色。有关更多信息，请参见[创建企业空间、项目、用户和角色](../../../quick-start/create-workspace-and-project/)。
+您可以使用 `project-admin` 帐户创建项目。此外，该用户也是 CI/CD 流水线的审核员。请确保将 `project-regular` 帐户邀请至该项目并授予 `operator` 角色。有关更多信息，请参见[创建企业空间、项目、用户和角色](../../../../quick-start/create-workspace-and-project/)。
 
 ### 步骤 3：创建流水线
 
@@ -288,7 +288,7 @@ KubeSphere 中的图形编辑面板包含用于 Jenkins [阶段 (Stage)](https:/
 
    {{< notice note >}}
 
-   在 KubeSphere 3.2.x 中，能够运行流水线的帐户也能够继续或终止该流水线。此外，流水线创建者、拥有该项目管理员角色的用户或者您指定的帐户也有权限继续或终止流水线。
+   在 KubeSphere 3.3.0 中，能够运行流水线的帐户也能够继续或终止该流水线。此外，流水线创建者、拥有该项目管理员角色的用户或者您指定的帐户也有权限继续或终止流水线。
 
    {{</ notice >}}
 
@@ -354,7 +354,7 @@ KubeSphere 中的图形编辑面板包含用于 Jenkins [阶段 (Stage)](https:/
 
 ### 步骤 8：查看代码分析结果
 
-在**代码检查**页面，可以查看由 SonarQube 提供的本示例流水线的代码分析结果。如果您没有事先配置 SonarQube，则该部分不可用。有关更多信息，请参见[将 SonarQube 集成到流水线](../../../devops-user-guide/how-to-integrate/sonarqube/)。
+在**代码检查**页面，可以查看由 SonarQube 提供的本示例流水线的代码分析结果。如果您没有事先配置 SonarQube，则该部分不可用。有关更多信息，请参见[将 SonarQube 集成到流水线](../../../how-to-integrate/sonarqube/)。
 
 ![SonarQube 详细结果](/images/docs/zh-cn/devops-user-guide/use-devops/create-a-pipeline-using-graphical-editing-panel/sonarqube_result_detail.png)
 
