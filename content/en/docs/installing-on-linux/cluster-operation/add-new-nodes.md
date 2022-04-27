@@ -43,7 +43,7 @@ You can skip this step if you already have the configuration file on your machin
      roleGroups:
        etcd:
        - master1
-       control-plane:
+       master:
        - master1
        worker:
        - node1
@@ -74,9 +74,9 @@ You can skip this step if you already have the configuration file on your machin
    node2         Ready    worker          31h   v1.17.9
    ```
 
-## Add New Control Plane Nodes for High Availability
+## Add New Master Nodes for High Availability
 
-The steps of adding control plane nodes are generally the same as adding worker nodes while you need to configure a load balancer for your cluster. You can use any cloud load balancers or hardware load balancers (for example, F5). In addition, Keepalived and [HAproxy](https://www.haproxy.com/), or Nginx is also an alternative for creating highly available clusters.
+The steps of adding master nodes are generally the same as adding worker nodes while you need to configure a load balancer for your cluster. You can use any cloud load balancers or hardware load balancers (for example, F5). In addition, Keepalived and [HAproxy](https://www.haproxy.com/), or Nginx is also an alternative for creating highly available clusters.
 
 1. Create a configuration file using KubeKey.
 
@@ -105,7 +105,7 @@ The steps of adding control plane nodes are generally the same as adding worker 
        - master1
        - master2
        - master3
-       control-plane:
+       master:
        - master1
        - master2
        - master3

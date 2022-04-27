@@ -142,8 +142,8 @@ alicloud-disk-topology               diskplugin.csi.alibabacloud.com   Delete   
 1.使用 [ks-installer](https://github.com/kubesphere/ks-installer) 在已有的 Kubernetes 集群上来部署 KubeSphere，下载 YAML 文件:
 
 ```
-wget https://github.com/kubesphere/ks-installer/releases/download/v3.2.1/kubesphere-installer.yaml
-wget https://github.com/kubesphere/ks-installer/releases/download/v3.2.1/cluster-configuration.yaml
+wget https://github.com/kubesphere/ks-installer/releases/download/v3.3.0/kubesphere-installer.yaml
+wget https://github.com/kubesphere/ks-installer/releases/download/v3.3.0/cluster-configuration.yaml
 ```
 
 

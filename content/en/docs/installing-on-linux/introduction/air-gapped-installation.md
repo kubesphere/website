@@ -9,7 +9,7 @@ weight: 3140
 
 KubeKey is an open-source, lightweight tool for deploying Kubernetes clusters. It allows you to install Kubernetes/K3s only, both Kubernetes/K3s and KubeSphere, and other cloud-native plugins in a flexible, fast, and convenient way. Additionally, it is an effective tool for scaling and upgrading clusters.
 
-In KubeKey v2.0.0, we bring in concepts of manifest and artifact, which provides a solution for air-gapped installation of Kubernetes clusters. A manifest file describes information of the current Kubernetes cluster and defines content in an artifact. Previously, users had to prepare deployment tools, image (.tar) file, and other binaries as the Kubernetes version and image to deploy are different. Now, with KubeKey, air-gapped installation can never be so easy. You simply use a manifest file to define what you need for your cluster in air-gapped environments, and then export the artifact file to quickly and easily deploy image registries and Kubernetes cluster.
+In KubeKey v2.1.0, we bring in concepts of manifest and artifact, which provides a solution for air-gapped installation of Kubernetes clusters. A manifest file describes information of the current Kubernetes cluster and defines content in an artifact. Previously, users had to prepare deployment tools, image (.tar) file, and other binaries as the Kubernetes version and image to deploy are different. Now, with KubeKey, air-gapped installation can never be so easy. You simply use a manifest file to define what you need for your cluster in air-gapped environments, and then export the artifact file to quickly and easily deploy image registries and Kubernetes cluster.
 
 ## Prerequisites
 
@@ -20,7 +20,7 @@ In KubeKey v2.0.0, we bring in concepts of manifest and artifact, which provides
 |192.168.0.4 | node3    | Image registry node of the air-gapped environment |
 ## Preparations
 
-1. Run the following commands to download KubeKey v2.0.0.
+1. Run the following commands to download KubeKey v2.1.0.
    {{< tabs >}}
 
    {{< tab "Good network connections to GitHub/Googleapis" >}}
@@ -28,7 +28,7 @@ In KubeKey v2.0.0, we bring in concepts of manifest and artifact, which provides
    Download KubeKey from its [GitHub Release Page](https://github.com/kubesphere/kubekey/releases) or use the following command directly.
 
    ```bash
-   curl -sfL https://get-kk.kubesphere.io | VERSION=v2.0.0 sh -
+   curl -sfL https://get-kk.kubesphere.io | VERSION=v2.1.0 sh -
    ```
 
    {{</ tab >}}
@@ -44,7 +44,7 @@ In KubeKey v2.0.0, we bring in concepts of manifest and artifact, which provides
    Run the following command to download KubeKey:
 
    ```bash
-   curl -sfL https://get-kk.kubesphere.io | VERSION=v2.0.0 sh -
+   curl -sfL https://get-kk.kubesphere.io | VERSION=v2.1.0 sh -
    ```
    {{</ tab >}}
 
@@ -83,7 +83,7 @@ In KubeKey v2.0.0, we bring in concepts of manifest and artifact, which provides
        repository:
          iso:
            localPath: ""
-           url: "https://github.com/kubesphere/kubekey/releases/download/v2.0.0/centos-7-amd64-rpms.iso"
+           url: "https://github.com/kubesphere/kubekey/releases/download/v2.1.0/centos-7-amd64-rpms.iso"
      kubernetesDistributions:
      - type: kubernetes
        version: v1.21.5
@@ -247,7 +247,7 @@ In KubeKey v2.0.0, we bring in concepts of manifest and artifact, which provides
    
    - You can customize the **manifest-sample.yaml** file to export the desired artifact file.
 
-   - You can download the ISO files at https://github.com/kubesphere/kubekey/releases/tag/v2.0.0.
+   - You can download the ISO files at https://github.com/kubesphere/kubekey/releases/tag/v2.1.0.
    
    {{</ notice >}}
    

@@ -103,10 +103,10 @@ Kubesphere provides the following types of identity providers by default:
 
 * [OIDC Identity Provider](../oidc-identity-provider)
 
-* [GitHub Identity Provider]()
+* GitHub Identity Provider
 
-* [CAS Identity Provider]()
+* CAS Identity Provider
 
-* [Aliyun IDaaS Provider]()
+* Aliyun IDaaS Provider
 
 You can also expand the kubesphere [OAuth2 authentication plug-in](../use-an-oauth2-identity-provider) to integrate with your account system.
