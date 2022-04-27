@@ -122,18 +122,14 @@ chmod +x kk
 
    {{< notice note >}}
 
-<<<<<<< HEAD
    - 安装 KubeSphere 3.3.0 的建议 Kubernetes 版本：v1.19.x、v1.20.x、v1.21.x、v1.22.x 和 v1.23.x。如果不指定 Kubernetes 版本，KubeKey 将默认安装 Kubernetes v1.21.5。有关受支持的 Kubernetes 版本的更多信息，请参见[支持矩阵](../../../installing-on-linux/introduction/kubekey/#支持矩阵)。
-=======
-   - 安装 KubeSphere 3.3.0 的建议 Kubernetes 版本：v1.19.x、v1.20.x、v1.21.x 或 v1.22.x（实验性支持）。如果不指定 Kubernetes 版本，KubeKey 将默认安装 Kubernetes v1.21.5。有关受支持的 Kubernetes 版本的更多信息，请参见[支持矩阵](../../../installing-on-linux/introduction/kubekey/#支持矩阵)。
->>>>>>> 1d8cbc5f (PVC and PV-EN)
 
    - 如果您在此步骤的命令中不添加标志 `--with-kubesphere`，则不会部署 KubeSphere，只能使用配置文件中的 `addons` 字段安装，或者在您后续使用 `./kk create cluster` 命令时再次添加这个标志。
    - 如果您添加标志 `--with-kubesphere` 时不指定 KubeSphere 版本，则会安装最新版本的 KubeSphere。
 
    {{</ notice >}}
 
-4. 如果您不自定义名称，将创建默认文件 `config-sample.yaml`。编辑文件：
+2. 如果您不自定义名称，将创建默认文件 `config-sample.yaml`。编辑文件：
 
    ```bash
    vi config-sample.yaml
@@ -182,15 +178,15 @@ chmod +x kk
    ...             
    ```
 
-5. 请特别注意 `addons` 字段，您必须在该字段下提供 NFS-client 的信息。有关文件中每个参数的更多信息，请参见[多节点安装](../../../installing-on-linux/introduction/multioverview/#2-编辑配置文件)。
+3. 请特别注意 `addons` 字段，您必须在该字段下提供 NFS-client 的信息。有关文件中每个参数的更多信息，请参见[多节点安装](../../../installing-on-linux/introduction/multioverview/#2-编辑配置文件)。
 
-6. 保存文件，执行以下命令安装 Kubernetes 和 KubeSphere：
+4. 保存文件，执行以下命令安装 Kubernetes 和 KubeSphere：
 
    ```bash
    ./kk create cluster -f config-sample.yaml
    ```
 
-7. 安装完成后，可以使用以下命令检查安装日志：
+5. 安装完成后，可以使用以下命令检查安装日志：
 
    ```bash
    kubectl logs -n kubesphere-system $(kubectl get pod -n kubesphere-system -l app=ks-install -o jsonpath='{.items[0].metadata.name}') -f
