@@ -9,21 +9,38 @@ weight: 3130
 
 离线安装几乎与在线安装相同，不同之处是您必须创建一个本地仓库来托管 Docker 镜像。本教程演示了如何在离线环境安装 KubeSphere 和 Kubernetes。
 
+<<<<<<< HEAD
 KubeKey v2.1.0 版本新增了清单（manifest）和制品（artifact）的概念，为用户离线部署 Kubernetes 集群提供了一种解决方案。manifest 是一个描述当前 Kubernetes 集群信息和定义 artifact 制品中需要包含哪些内容的文本文件。在过去，用户需要准备部署工具，镜像 tar 包和其他相关的二进制文件，每位用户需要部署的 Kubernetes 版本和需要部署的镜像都是不同的。现在使用 KubeKey，用户只需使用清单 manifest 文件来定义将要离线部署的集群环境需要的内容，再通过该 manifest 来导出制品 artifact 文件即可完成准备工作。离线部署时只需要 KubeKey 和 artifact 就可快速、简单的在环境中部署镜像仓库和 Kubernetes 集群。
+=======
+>>>>>>> 3785c2cc (update 3.3 new)
 
 ## 步骤 1：准备 Linux 主机
 
 请查看下表中对硬件和操作系统的要求。要开始进行多节点安装，您需要按照下列要求准备至少三台主机。
 
+<<<<<<< HEAD
 | 主机 IP   | 主机名称    | 角色            |
 | ---------------- | ----   | ---------------- |
 | 192.168.0.2 | node1    | 联网主机用于源集群打包使用。已部署 Kubernetes v1.21.5 和 KubeSphere v3.3.0 |
 | 192.168.0.3 | node2    | 离线环境主节点 |
 | 192.168.0.4 | node3    | 离线环境镜像仓库节点 |
+=======
+### 系统要求
+>>>>>>> 3785c2cc (update 3.3 new)
 
-## 部署准备
+| 系统                                                   | 最低要求（每个节点）              |
+| ------------------------------------------------------ | --------------------------------- |
+| **Ubuntu** *16.04, 18.04*                              | CPU: 2 核，内存：4 G，硬盘：100 G |
+| **Debian** *Buster, Stretch*                           | CPU: 2 核，内存：4 G，硬盘：100 G |
+| **CentOS** *7*.x                                       | CPU: 2 核，内存：4 G，硬盘：100 G |
+| **Red Hat Enterprise Linux 7**                         | CPU: 2 核，内存：4 G，硬盘：100 G |
+| **SUSE Linux Enterprise Server 15/openSUSE Leap 15.2** | CPU: 2 核，内存：4 G，硬盘：100 G |
 
+<<<<<<< HEAD
 1. 执行以下命令下载 KubeKey v2.1.0 并解压：
+=======
+{{< notice note >}}
+>>>>>>> 3785c2cc (update 3.3 new)
 
 - [KubeKey](https://github.com/kubesphere/kubekey) 使用 `/var/lib/docker` 作为默认路径来存储所有 Docker 相关文件（包括镜像）。建议您添加附加存储卷，分别给 `/var/lib/docker` 和 `/mnt/registry` 挂载至少 **100G**。请参见 [fdisk](https://www.computerhope.com/unix/fdisk.htm) 的参考命令。
 
@@ -95,7 +112,13 @@ KubeKey 能够同时安装 Kubernetes 和 KubeSphere。根据要安装的 Kubern
    ```
 
    ```bash
+<<<<<<< HEAD
    curl -sfL https://get-kk.kubesphere.io | VERSION=v2.1.0 sh -
+=======
+   openssl req \
+   -newkey rsa:4096 -nodes -sha256 -keyout certs/domain.key \
+   -x509 -days 36500 -out certs/domain.crt
+>>>>>>> 3785c2cc (update 3.3 new)
    ```
 
 2. 当您生成自己的证书时，请确保在字段 `Common Name` 中指定一个域名。例如，本示例中该字段被指定为 `dockerhub.kubekey.local`。
@@ -412,7 +435,7 @@ chmod +x kk
 
    {{< notice note >}}
 
-   命令中的参数解释如下：
+   - 您可以根据自己的需求变更下载的 Kubernetes 版本。安装 KubeSphere 3.3.0 的建议 Kubernetes 版本：v1.19.x、v1.20.x、v1.21.x 或 v1.22.x（实验性支持）。如果不指定 Kubernetes 版本，KubeKey 将默认安装 Kubernetes v1.21.5。有关受支持的 Kubernetes 版本的更多信息，请参见[支持矩阵](../../../installing-on-linux/introduction/kubekey/#支持矩阵)。
 
    - 运行脚本后，会自动创建一个文件夹 `kubekey`。请注意，您稍后创建集群时，该文件和 `kk` 必须放在同一个目录下。
 
