@@ -1,6 +1,6 @@
 ---
 title: "使用 KubeKey 升级"
-keywords: "Kubernetes, 升级, KubeSphere, 3.2.1, KubeKey"
+keywords: "Kubernetes, 升级, KubeSphere, 3.3.0, KubeKey"
 description: "使用 KubeKey 升级 Kubernetes 和 KubeSphere。"
 linkTitle: "使用 KubeKey 升级"
 weight: 7200
@@ -13,8 +13,8 @@ weight: 7200
 
 ## 准备工作
 
-- 您需要有一个运行 KubeSphere v3.1.x 的集群。如果您的 KubeSphere 是 v3.0.0 或更早的版本，请先升级至 v3.1.x。
-- 请仔细阅读 [3.2.1 版本说明](../../release/release-v321/)。
+- 您需要有一个运行 KubeSphere v3.2.x 的集群。如果您的 KubeSphere 是 v3.1.0 或更早的版本，请先升级至 v3.2.x。
+- 请仔细阅读 [3.3.0 版本说明](../../release/release-v321/)。
 - 提前备份所有重要的组件。
 - 确定您的升级方案。本文档中提供 [All-in-One 集群](#all-in-one-集群)和[多节点集群](#多节点集群)的两种升级场景。
 
@@ -29,7 +29,7 @@ weight: 7200
 从 [GitHub 发布页面](https://github.com/kubesphere/kubekey/releases)下载 KubeKey 或直接使用以下命令。
 
 ```bash
-curl -sfL https://get-kk.kubesphere.io | VERSION=v2.0.0 sh -
+curl -sfL https://get-kk.kubesphere.io | VERSION=v2.1.0 sh -
 ```
 
 {{</ tab >}}
@@ -45,7 +45,7 @@ export KKZONE=cn
 执行以下命令下载 KubeKey。
 
 ```bash
-curl -sfL https://get-kk.kubesphere.io | VERSION=v2.0.0 sh -
+curl -sfL https://get-kk.kubesphere.io | VERSION=v2.1.0 sh -
 ```
 
 {{< notice note >}}
@@ -60,7 +60,7 @@ curl -sfL https://get-kk.kubesphere.io | VERSION=v2.0.0 sh -
 
 {{< notice note >}}
 
-执行以上命令会下载最新版 KubeKey (v2.0.0)，您可以修改命令中的版本号以下载指定版本。
+执行以上命令会下载最新版 KubeKey (v2.1.0)，您可以修改命令中的版本号以下载指定版本。
 
 {{</ notice >}} 
 
@@ -81,10 +81,10 @@ chmod +x kk
 
 ### All-in-One 集群
 
-运行以下命令使用 KubeKey 将您的单节点集群升级至 KubeSphere 3.2.1 和 Kubernetes v1.21.5：
+运行以下命令使用 KubeKey 将您的单节点集群升级至 KubeSphere 3.3.0 和 Kubernetes v1.21.5：
 
 ```bash
-./kk upgrade --with-kubernetes v1.21.5 --with-kubesphere v3.2.1
+./kk upgrade --with-kubernetes v1.21.5 --with-kubesphere v3.3.0
 ```
 
 要将 Kubernetes 升级至特定版本，请在 `--with-kubernetes` 标志后明确指定版本号。以下是可用版本：
@@ -127,10 +127,10 @@ chmod +x kk
 
 #### 步骤 3：升级集群
 
-运行以下命令，将您的集群升级至 KubeSphere 3.2.1 和 Kubernetes v1.21.5：
+运行以下命令，将您的集群升级至 KubeSphere 3.3.0 和 Kubernetes v1.21.5：
 
 ```bash
-./kk upgrade --with-kubernetes v1.21.5 --with-kubesphere v3.2.1 -f sample.yaml
+./kk upgrade --with-kubernetes v1.21.5 --with-kubesphere v3.3.0 -f sample.yaml
 ```
 
 要将 Kubernetes 升级至特定版本，请在 `--with-kubernetes` 标志后明确指定版本号。以下是可用版本：
@@ -142,6 +142,6 @@ chmod +x kk
 
 {{< notice note >}}
 
-若要使用 KubeSphere 3.2.1 的部分新功能，您需要在升级后启用对应的可插拔组件。
+若要使用 KubeSphere 3.3.0 的部分新功能，您需要在升级后启用对应的可插拔组件。
 
 {{</ notice >}} 

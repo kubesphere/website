@@ -1,6 +1,6 @@
 ---
 title: "使用 ks-installer 升级"
-keywords: "kubernetes, 升级, kubesphere, 3.2.1"
+keywords: "kubernetes, 升级, kubesphere, 3.3.0"
 description: "使用 ks-installer 升级 KubeSphere。"
 linkTitle: "使用 ks-installer 升级"
 weight: 7300
@@ -10,19 +10,19 @@ weight: 7300
 
 ## 准备工作
 
-- 您需要有一个运行 KubeSphere v3.1.x 的集群。如果您的 KubeSphere 是 v3.0.0 或更早的版本，请先升级至 v3.1.x。
-- 请仔细阅读 [3.2.1 版本说明](../../release/release-v321/)。
+- 您需要有一个运行 KubeSphere v3.2.x 的集群。如果您的 KubeSphere 是 v3.1.0 或更早的版本，请先升级至 v3.2.x。
+- 请仔细阅读 [3.3.0 版本说明](../../release/release-v321/)。
 - 提前备份所有重要的组件。
-- KubeSphere 3.2.1 支持的 Kubernetes 版本：v1.19.x、v1.20.x、v1.21.x 和 v1.22.x（实验性支持）。
+- KubeSphere 3.3.0 支持的 Kubernetes 版本：v1.19.x、v1.20.x、v1.21.x 和 v1.22.x（实验性支持）。
 
 ## 应用 ks-installer
 
 运行以下命令升级集群：
 
 ```bash
-kubectl apply -f https://github.com/kubesphere/ks-installer/releases/download/v3.2.1/kubesphere-installer.yaml
+kubectl apply -f https://github.com/kubesphere/ks-installer/releases/download/v3.3.0/kubesphere-installer.yaml
 ```
 
 ## 启用可插拔组件
 
-您可以在升级后启用 KubeSphere 3.2.1 的[可插拔组件](../../pluggable-components/overview/)以体验该容器平台的更多功能。
+您可以在升级后启用 KubeSphere 3.3.0 的[可插拔组件](../../pluggable-components/overview/)以体验该容器平台的更多功能。
