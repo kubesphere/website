@@ -75,13 +75,10 @@ Perform the following steps to configure [EdgeMesh](https://kubeedge.io/en/docs/
 ## Create Firewall Rules and Port Forwarding Rules
 
 To make sure edge nodes can successfully talk to your cluster, you must forward ports for outside traffic to get into your network. Specifically, map an external port to the corresponding internal IP address (control plane node) and port based on the table below. Besides, you also need to create firewall rules to allow traffic to these ports (`10000` to `10004`).
-<<<<<<< HEAD
 
    {{< notice note >}}
    In `ClusterConfiguration` of the ks-installer, if you set an internal IP address, you need to set the forwarding rule. If you have not set the forwarding rule, you can directly connect to ports 30000 to 30004.
    {{</ notice >}} 
-=======
->>>>>>> 3c40321f (change term master)
 
 | Fields              | External Ports | Fields                  | Internal Ports |
 | ------------------- | -------------- | ----------------------- | -------------- |
