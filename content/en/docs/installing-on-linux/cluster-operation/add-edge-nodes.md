@@ -126,6 +126,7 @@ To make sure edge nodes can successfully talk to your cluster, you must forward 
    {{</ notice >}}
    
 <<<<<<< HEAD
+<<<<<<< HEAD
 ## Collect Monitoring Information on Edge Nodes
 
 To collect monitoring information on edge node, you need to enable `metrics_server` in `ClusterConfiguration` and `edgeStream` in KubeEdge.
@@ -171,9 +172,6 @@ To collect monitoring information on edge node, you need to enable `metrics_serv
     ```
 
 9. After an edge node joins your cluster, some Pods may be scheduled to it while they remains in the `Pending` state on the edge node. Due to the tolerations some DaemonSets (for example, Calico) have, you need to manually patch some Pods so that they will not be scheduled to the edge node.
-=======
-6. After an edge node joins your cluster, some Pods may be scheduled to it while they remain in the `Pending` state on the edge node. Due to the tolerations some DaemonSets (for example, Calico) have, in the current version (KubeSphere 3.2.1), you need to manually patch some Pods so that they will not be scheduled to the edge node.
->>>>>>> 7f363709 (change term master)
 
    ```bash
    #!/bin/bash
