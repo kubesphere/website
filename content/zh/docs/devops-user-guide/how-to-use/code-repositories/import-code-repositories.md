@@ -14,7 +14,6 @@ KubeSphere 3.3.0 支持您从 GitHub 、 GitLab 或 Bitbucket 导入代码仓库
 
 - 您需要启用 [KubeSphere DevOps 系统](../../../../devops-user-guide/devops-overview/devops-project-management/)。
 
-
 ## 操作步骤
 1. 以 `project-regular` 用户登录 KubeSphere 控制台，在左侧导航树，点击 **DevOps 项目**。
 
