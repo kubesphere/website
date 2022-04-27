@@ -387,8 +387,6 @@ KubeKey v2.1.0 版本新增了清单（manifest）和制品（artifact）的概�
 
    命令中的参数解释如下：
 
-   - 您可以根据自己的需求变更下载的 Kubernetes 版本。安装 KubeSphere 3.3.0 的建议 Kubernetes 版本：v1.19.x、v1.20.x、v1.21.x、v1.22.x 和 v1.23.x。如果不指定 Kubernetes 版本，KubeKey 将默认安装 Kubernetes v1.21.5。有关受支持的 Kubernetes 版本的更多信息，请参见[支持矩阵](../../../installing-on-linux/introduction/kubekey/#支持矩阵)。
-
    - **config-sample.yaml** 指离线环境集群的配置文件。
 
    - **kubesphere.tar.gz** 指源集群打包出来的 tar 包镜像。
@@ -545,7 +543,7 @@ KubeKey v2.1.0 版本新增了清单（manifest）和制品（artifact）的概�
 8. 执行以下命令查看集群状态：
 
    ```bash
-   kubectl logs -n kubesphere-system $(kubectl get pod -n kubesphere-system -l app=ks-installer -o jsonpath='{.items[0].metadata.name}') -f
+   kubectl logs -n kubesphere-system $(kubectl get pod -n kubesphere-system -l app=ks-install -o jsonpath='{.items[0].metadata.name}') -f
    ```
    安装完成后，您会看到以下内容：
 
