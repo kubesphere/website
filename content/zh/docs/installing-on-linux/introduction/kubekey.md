@@ -83,6 +83,7 @@ curl -sfL https://get-kk.kubesphere.io | VERSION=v2.1.0 sh -
 | v3.3.0             | v1.19.x、v1.20.x、v1.21.x、v1.22.x、v1.23.x |
 
 
+
 {{< notice note >}} 
 
 - 您也可以运行 `./kk version --show-supported-k8s`，查看能使用 KubeKey 安装的所有受支持的 Kubernetes 版本。
