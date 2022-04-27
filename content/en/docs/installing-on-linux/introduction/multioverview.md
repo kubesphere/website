@@ -16,10 +16,9 @@ This section gives you an overview of a single-master multi-node installation, i
 
 ## Concept
 
-- **Control Plane**. The control plane generally controls and manages the whole system.
+A multi-node cluster is composed of at least one master node and one worker node. You can use any node as the **taskbox** to carry out the installation task. You can add additional nodes based on your needs (for example, for high availability) both before and after the installation.
 
-A multi-node cluster is composed of at least one control plane node and one worker node. You can use any node as the **taskbox** to carry out the installation task. You can add additional nodes based on your needs (for example, for high availability) both before and after the installation.
-
+- **Master**. A master node generally hosts the control plane that controls and manages the whole system.
 - **Worker**. Worker nodes run the actual applications deployed on them.
 =======
 - **Worker node**. Worker nodes run the actual applications deployed on them.

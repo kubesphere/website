@@ -8,22 +8,21 @@ weight: 3140
 
 The air-gapped installation is almost the same as the online installation except that you must create a local registry to host Docker images. This tutorial demonstrates how to install KubeSphere and Kubernetes in an air-gapped environment.
 
-In KubeKey v2.1.0, we bring in concepts of manifest and artifact, which provides a solution for air-gapped installation of Kubernetes clusters. A manifest file describes information of the current Kubernetes cluster and defines content in an artifact. Previously, users had to prepare deployment tools, image (.tar) file, and other binaries as the Kubernetes version and image to deploy are different. Now, with KubeKey, air-gapped installation can never be so easy. You simply use a manifest file to define what you need for your cluster in air-gapped environments, and then export the artifact file to quickly and easily deploy image registries and Kubernetes cluster.
+## Step 1: Prepare Linux Hosts
 
 Please see the requirements for hardware and operating system shown below. To get started with multi-node installation, you need to prepare at least three hosts according to the following requirements.
 
 ### System requirements
 
-1. Run the following commands to download KubeKey v2.1.0.
-   {{< tabs >}}
+| Systems                                                | Minimum Requirements (Each node)             |
+| ------------------------------------------------------ | -------------------------------------------- |
+| **Ubuntu** *16.04, 18.04*                              | CPU: 2 Cores, Memory: 4 G, Disk Space: 100 G |
+| **Debian** *Buster, Stretch*                           | CPU: 2 Cores, Memory: 4 G, Disk Space: 100 G |
+| **CentOS** *7*.x                                       | CPU: 2 Cores, Memory: 4 G, Disk Space: 100 G |
+| **Red Hat Enterprise Linux 7**                         | CPU: 2 Cores, Memory: 4 G, Disk Space: 100 G |
+| **SUSE Linux Enterprise Server 15/openSUSE Leap 15.2** | CPU: 2 Cores, Memory: 4 G, Disk Space: 100 G |
 
 {{< notice note >}}
-
-- [KubeKey](https://github.com/kubesphere/kubekey) uses `/var/lib/docker` as the default directory where all Docker related files, including images, are stored. It is recommended you add additional storage volumes with at least **100G** mounted to `/var/lib/docker` and `/mnt/registry` respectively. See [fdisk](https://www.computerhope.com/unix/fdisk.htm) command for reference.
-
-   ```bash
-   curl -sfL https://get-kk.kubesphere.io | VERSION=v2.1.0 sh -
-   ```
 
 - [KubeKey](https://github.com/kubesphere/kubekey) uses `/var/lib/docker` as the default directory where all Docker related files, including images, are stored. It is recommended you add additional storage volumes with at least **100G** mounted to `/var/lib/docker` and `/mnt/registry` respectively. See [fdisk](https://www.computerhope.com/unix/fdisk.htm) command for reference.
 
@@ -96,7 +95,9 @@ You can use Harbor or any other private image registries. This tutorial uses Doc
    ```
 
    ```bash
-   curl -sfL https://get-kk.kubesphere.io | VERSION=v2.1.0 sh -
+   openssl req \
+   -newkey rsa:4096 -nodes -sha256 -keyout certs/domain.key \
+   -x509 -days 36500 -out certs/domain.crt
    ```
 
 2. Make sure you specify a domain name in the field `Common Name` when you are generating your own certificate. For instance, the field is set to `dockerhub.kubekey.local` in this example. 
@@ -134,190 +135,14 @@ docker run -d \
    ```bash
    mkdir -p  /etc/docker/certs.d/dockerhub.kubekey.local
    ```
-   
-   ```yaml
-   ---
-   apiVersion: kubekey.kubesphere.io/v1alpha2
-   kind: Manifest
-   metadata:
-     name: sample
-   spec:
-     arches:
-     - amd64
-     operatingSystems:
-     - arch: amd64
-       type: linux
-       id: centos
-       version: "7"
-       repository:
-         iso:
-           localPath: ""
-           url: "https://github.com/kubesphere/kubekey/releases/download/v2.1.0/centos-7-amd64-rpms.iso"
-     kubernetesDistributions:
-     - type: kubernetes
-       version: v1.21.5
-     components:
-       helm:
-         version: v3.6.3
-       cni:
-         version: v0.9.1
-       etcd:
-         version: v3.4.13
-       ## For now, if your cluster container runtime is containerd, KubeKey will add a docker 20.10.8 container runtime in the below list.
-       ## The reason is KubeKey creates a cluster with containerd by installing a docker first and making kubelet connect the socket file of containerd which docker contained.
-       containerRuntimes:
-       - type: docker
-         version: 20.10.8
-       crictl:
-         version: v1.22.0
-       ##
-       # docker-registry:
-       #   version: "2"
-       harbor:
-         version: v2.4.1
-       docker-compose:
-         version: v2.2.2
-     images:
-     - docker.io/kubesphere/kube-apiserver:v1.21.5
-     - docker.io/kubesphere/kube-controller-manager:v1.21.5
-     - docker.io/kubesphere/kube-proxy:v1.21.5
-     - docker.io/kubesphere/kube-scheduler:v1.21.5
-     - docker.io/kubesphere/pause:3.5
-     - docker.io/kubesphere/pause:3.4.1
-     - docker.io/coredns/coredns:1.8.0
-     - docker.io/calico/cni:v3.20.0
-     - docker.io/calico/kube-controllers:v3.20.0
-     - docker.io/calico/node:v3.20.0
-     - docker.io/calico/pod2daemon-flexvol:v3.20.0
-     - docker.io/calico/typha:v3.20.0
-     - docker.io/kubesphere/flannel:v0.12.0
-     - docker.io/openebs/provisioner-localpv:2.10.1
-     - docker.io/openebs/linux-utils:2.10.0
-     - docker.io/kubesphere/nfs-subdir-external-provisioner:v4.0.2
-     - docker.io/kubesphere/k8s-dns-node-cache:1.15.12
-     - docker.io/kubesphere/ks-installer:v3.2.1
-     - docker.io/kubesphere/ks-apiserver:v3.2.1
-     - docker.io/kubesphere/ks-console:v3.2.1
-     - docker.io/kubesphere/ks-controller-manager:v3.2.1
-     - docker.io/kubesphere/kubectl:v1.21.0
-     - docker.io/kubesphere/kubefed:v0.8.1
-     - docker.io/kubesphere/tower:v0.2.0
-     - docker.io/minio/minio:RELEASE.2019-08-07T01-59-21Z
-     - docker.io/minio/mc:RELEASE.2019-08-07T23-14-43Z
-     - docker.io/csiplugin/snapshot-controller:v4.0.0
-     - docker.io/kubesphere/nginx-ingress-controller:v0.48.1
-     - docker.io/mirrorgooglecontainers/defaultbackend-amd64:1.4
-     - docker.io/kubesphere/metrics-server:v0.4.2
-     - docker.io/library/redis:5.0.14-alpine
-     - docker.io/library/haproxy:2.0.25-alpine
-     - docker.io/library/haproxy:2.3
-     - docker.io/library/alpine:3.14
-     - docker.io/osixia/openldap:1.3.0
-     - docker.io/kubesphere/netshoot:v1.0
-     - docker.io/kubeedge/cloudcore:v1.7.2
-     - docker.io/kubesphere/edge-watcher:v0.1.1
-     - docker.io/kubesphere/edge-watcher-agent:v0.1.0
-     - docker.io/kubesphere/openpitrix-jobs:v3.2.1
-     - docker.io/kubesphere/devops-apiserver:v3.2.1
-     - docker.io/kubesphere/devops-controller:v3.2.1
-     - docker.io/kubesphere/devops-tools:v3.2.1
-     - docker.io/kubesphere/ks-jenkins:v3.2.0-2.249.1
-     - docker.io/jenkins/jnlp-slave:3.27-1
-     - docker.io/kubesphere/builder-base:v3.2.0
-     - docker.io/kubesphere/builder-nodejs:v3.2.0
-     - docker.io/kubesphere/builder-maven:v3.2.0
-     - docker.io/kubesphere/builder-python:v3.2.0
-     - docker.io/kubesphere/builder-go:v3.2.0
-     - docker.io/kubesphere/builder-base:v3.2.0-podman
-     - docker.io/kubesphere/builder-nodejs:v3.2.0-podman
-     - docker.io/kubesphere/builder-maven:v3.2.0-podman
-     - docker.io/kubesphere/builder-python:v3.2.0-podman
-     - docker.io/kubesphere/builder-go:v3.2.0-podman
-     - docker.io/kubesphere/s2ioperator:v3.2.0
-     - docker.io/kubesphere/s2irun:v3.2.0
-     - docker.io/kubesphere/s2i-binary:v3.2.0
-     - docker.io/kubesphere/tomcat85-java11-centos7:v3.2.0
-     - docker.io/kubesphere/tomcat85-java11-runtime:v3.2.0
-     - docker.io/kubesphere/tomcat85-java8-centos7:v3.2.0
-     - docker.io/kubesphere/tomcat85-java8-runtime:v3.2.0
-     - docker.io/kubesphere/java-11-centos7:v3.2.0
-     - docker.io/kubesphere/java-8-centos7:v3.2.0
-     - docker.io/kubesphere/java-8-runtime:v3.2.0
-     - docker.io/kubesphere/java-11-runtime:v3.2.0
-     - docker.io/kubesphere/nodejs-8-centos7:v3.2.0
-     - docker.io/kubesphere/nodejs-6-centos7:v3.2.0
-     - docker.io/kubesphere/nodejs-4-centos7:v3.2.0
-     - docker.io/kubesphere/python-36-centos7:v3.2.0
-     - docker.io/kubesphere/python-35-centos7:v3.2.0
-     - docker.io/kubesphere/python-34-centos7:v3.2.0
-     - docker.io/kubesphere/python-27-centos7:v3.2.0
-     - docker.io/jimmidyson/configmap-reload:v0.3.0
-     - docker.io/prom/prometheus:v2.26.0
-     - docker.io/kubesphere/prometheus-config-reloader:v0.43.2
-     - docker.io/kubesphere/prometheus-operator:v0.43.2
-     - docker.io/kubesphere/kube-rbac-proxy:v0.8.0
-     - docker.io/kubesphere/kube-state-metrics:v1.9.7
-     - docker.io/prom/node-exporter:v0.18.1
-     - docker.io/kubesphere/k8s-prometheus-adapter-amd64:v0.6.0
-     - docker.io/prom/alertmanager:v0.21.0
-     - docker.io/thanosio/thanos:v0.18.0
-     - docker.io/grafana/grafana:7.4.3
-     - docker.io/kubesphere/kube-rbac-proxy:v0.8.0
-     - docker.io/kubesphere/notification-manager-operator:v1.4.0
-     - docker.io/kubesphere/notification-manager:v1.4.0
-     - docker.io/kubesphere/notification-tenant-sidecar:v3.2.0
-     - docker.io/kubesphere/elasticsearch-curator:v5.7.6
-     - docker.io/kubesphere/elasticsearch-oss:6.7.0-1
-     - docker.io/kubesphere/fluentbit-operator:v0.11.0
-     - docker.io/library/docker:19.03
-     - docker.io/kubesphere/fluent-bit:v1.8.3
-     - docker.io/kubesphere/log-sidecar-injector:1.1
-     - docker.io/elastic/filebeat:6.7.0
-     - docker.io/kubesphere/kube-events-operator:v0.3.0
-     - docker.io/kubesphere/kube-events-exporter:v0.3.0
-     - docker.io/kubesphere/kube-events-ruler:v0.3.0
-     - docker.io/kubesphere/kube-auditing-operator:v0.2.0
-     - docker.io/kubesphere/kube-auditing-webhook:v0.2.0
-     - docker.io/istio/pilot:1.11.1
-     - docker.io/istio/proxyv2:1.11.1
-     - docker.io/jaegertracing/jaeger-operator:1.27
-     - docker.io/jaegertracing/jaeger-agent:1.27
-     - docker.io/jaegertracing/jaeger-collector:1.27
-     - docker.io/jaegertracing/jaeger-query:1.27
-     - docker.io/jaegertracing/jaeger-es-index-cleaner:1.27
-     - docker.io/kubesphere/kiali-operator:v1.38.1
-     - docker.io/kubesphere/kiali:v1.38
-     - docker.io/library/busybox:1.31.1
-     - docker.io/library/nginx:1.14-alpine
-     - docker.io/joosthofman/wget:1.0
-     - docker.io/nginxdemos/hello:plain-text
-     - docker.io/library/wordpress:4.8-apache
-     - docker.io/mirrorgooglecontainers/hpa-example:latest
-     - docker.io/library/java:openjdk-8-jre-alpine
-     - docker.io/fluent/fluentd:v1.4.2-2.0
-     - docker.io/library/perl:latest
-     - docker.io/kubesphere/examples-bookinfo-productpage-v1:1.16.2
-     - docker.io/kubesphere/examples-bookinfo-reviews-v1:1.16.2
-     - docker.io/kubesphere/examples-bookinfo-reviews-v2:1.16.2
-     - docker.io/kubesphere/examples-bookinfo-details-v1:1.16.2
-     - docker.io/kubesphere/examples-bookinfo-ratings-v1:1.16.3
-     - docker.io/weaveworks/scope:1.13.0
-     registry:
-       auths: {}
+
+   ```bash
+   cp certs/domain.crt  /etc/docker/certs.d/dockerhub.kubekey.local/ca.crt
    ```
 
    {{< notice note >}}
 
    The path of the certificate is related to the domain name. When you copy the path, use your actual domain name if it is different from the one set above.
-
-   - You can download the ISO files at https://github.com/kubesphere/kubekey/releases/tag/v2.1.0.
-   
-   {{</ notice >}}
-   
-4. Export the artifact from the source cluster.
-   {{< tabs >}}
-
-3. To verify whether the private registry is effective, you can copy an image to your local machine first, and use `docker push` and `docker pull` to test it.
 
    {{</ notice >}} 
 
@@ -390,37 +215,7 @@ As you install KubeSphere and Kubernetes on Linux, you need to prepare an image 
    export KKZONE=cn;./offline-installation-tool.sh -b -v v1.21.5 
    ```
 
-   - In **auths**, enter **dockerhub.kubekey.local**, username (**admin**) and password (**Harbor12345**).
-   - In **privateRegistry**, enter **dockerhub.kubekey.local**.
-   - In **namespaceOverride**, enter **kubesphereio**.
-
-    {{</ notice >}}
-
-   ```yaml
-     ...
-     registry:
-       type: harbor
-       auths:
-         "dockerhub.kubekey.local":
-           username: admin
-           password: Harbor12345
-       plainHTTP: false
-       privateRegistry: "dockerhub.kubekey.local"
-       namespaceOverride: "kubesphereio"
-       registryMirrors: []
-       insecureRegistries: []
-     addons: []
-   ```
-
-### Create an example configuration file
-
-Execute the following command to generate an example configuration file for installation:
-
-```bash
-./kk create config [--with-kubernetes version] [--with-kubesphere version] [(-f | --file) path]
-```
-
-For example:
+   {{< notice note >}}
 
    - You can change the Kubernetes version downloaded based on your needs. Recommended Kubernetes versions for KubeSphere 3.3.0: v1.19.x or above. If you do not specify a Kubernetes version, KubeKey will install Kubernetes v1.21.5 by default. For more information about supported Kubernetes versions, see [Support Matrix](../kubekey/#support-matrix).
 
@@ -456,29 +251,9 @@ The domain name is `dockerhub.kubekey.local` in the command. Make sure you use y
 
 ## Step 6: Create a Cluster
 
-   - In **auths**, enter **dockerhub.kubekey.local**, username (**admin**) and password (**Harbor12345**).
-   - In **privateRegistry**, enter **dockerhub.kubekey.local**.
-   - In **namespaceOverride**, enter **kubesphereio**.
+In this tutorial, KubeSphere is installed on multiple nodes, so you need to specify a configuration file to add host information. Besides, for air-gapped installation, pay special attention to `.spec.registry.privateRegistry`, which must be set to **your own registry address**. See the [complete YAML file](../air-gapped-installation/#2-edit-the-configuration-file) below for more information.
 
-    {{</ notice >}}
-
-   ```yaml
-     ...
-     registry:
-       type: harbor
-       auths:
-         "dockerhub.kubekey.local":
-           username: admin
-           password: Harbor12345
-       plainHTTP: false
-       privateRegistry: "dockerhub.kubekey.local"
-       namespaceOverride: "kubesphereio"
-       registryMirrors: []
-       insecureRegistries: []
-     addons: []
-   ```
-
-7. Run the following command to install a KubeSphere cluster:
+### Create an example configuration file
 
 Execute the following command to generate an example configuration file for installation:
 

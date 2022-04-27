@@ -125,55 +125,7 @@ To make sure edge nodes can successfully talk to your cluster, you must forward 
 
    {{</ notice >}}
    
-<<<<<<< HEAD
-## Collect Monitoring Information on Edge Nodes
-
-To collect monitoring information on edge node, you need to enable `metrics_server` in `ClusterConfiguration` and `edgeStream` in KubeEdge.
-
-1. On the KubeSphere web console, choose **Platform > Cluster Management**.
-
-2. On the navigation pane on the left, click **CRDs**.
-
-3. In the search bar on the right pane, enter `clusterconfiguration`, and click the result to go to its details page.
-
-4. Click <img src="/images/docs/common-icons/three-dots.png" width="15" /> on the right of ks-installer, and click **Edit YAML**.
-
-5. Search for **metrics_server**, and change the value of `enabled` from `false` to `true`.
-
-    ```yaml
-      metrics_server:
-      enabled: true # Change "false" to "true".
-    ```
-
-6. Click **OK** in the lower right corner to save the change.
-
-7. Open the `/etc/kubeedge/config` file, search for `edgeStream`, change `false` to `true`, and save the change.
-    ```bash
-    cd /etc/kubeedge/config
-    vi edgecore.yaml
-    ```
-
-    ```bash
-    edgeStream:
-    enable: true #Change "false" to "true".。
-    handshakeTimeout: 30
-    readDeadline: 15
-    server: xx.xxx.xxx.xxx:10004 #If port forwarding is not configured, change the port ID to 30004 here.
-    tlsTunnelCAFile: /etc/kubeedge/ca/rootCA.crt
-    tlsTunnelCertFile: /etc/kubeedge/certs/server.crt
-    tlsTunnelPrivateKeyFile: /etc/kubeedge/certs/server.key
-    writeDeadline: 15
-    ```
-
-8. Run the following command to restart `edgecore.service`.
-    ```bash
-    systemctl restart edgecore.service
-    ```
-
-9. After an edge node joins your cluster, some Pods may be scheduled to it while they remains in the `Pending` state on the edge node. Due to the tolerations some DaemonSets (for example, Calico) have, you need to manually patch some Pods so that they will not be scheduled to the edge node.
-=======
-6. After an edge node joins your cluster, some Pods may be scheduled to it while they remain in the `Pending` state on the edge node. Due to the tolerations some DaemonSets (for example, Calico) have, in the current version (KubeSphere 3.2.1), you need to manually patch some Pods so that they will not be scheduled to the edge node.
->>>>>>> 7f363709 (change term master)
+6. After an edge node joins your cluster, some Pods may be scheduled to it while they remains in the `Pending` state on the edge node. Due to the tolerations some DaemonSets (for example, Calico) have, in the current version (KubeSphere 3.3.0), you need to manually patch some Pods so that they will not be schedule to the edge node.
 
    ```bash
    #!/bin/bash
