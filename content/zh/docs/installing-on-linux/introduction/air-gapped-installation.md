@@ -15,15 +15,11 @@ KubeKey v2.1.0 版本新增了清单（manifest）和制品（artifact）的概�
 
 要开始进行多节点安装，您需要参考如下示例准备至少三台主机。
 
-<<<<<<< HEAD
-### 系统要求
-=======
 | 主机 IP   | 主机名称    | 角色            |
 | ---------------- | ----   | ---------------- |
 | 192.168.0.2 | node1    | 联网主机用于源集群打包使用。已部署 Kubernetes v1.21.5 和 KubeSphere v3.3.0 |
 | 192.168.0.3 | node2    | 离线环境主节点 |
 | 192.168.0.4 | node3    | 离线环境镜像仓库节点 |
->>>>>>> cdc9d913 (minor changes)
 
 ## 部署准备
 
@@ -547,7 +543,7 @@ KubeKey v2.1.0 版本新增了清单（manifest）和制品（artifact）的概�
 8. 执行以下命令查看集群状态：
 
    ```bash
-   kubectl logs -n kubesphere-system $(kubectl get pod -n kubesphere-system -l app=ks-install -o jsonpath='{.items[0].metadata.name}') -f
+   kubectl logs -n kubesphere-system $(kubectl get pod -n kubesphere-system -l app=ks-installer -o jsonpath='{.items[0].metadata.name}') -f
    ```
    安装完成后，您会看到以下内容：
 

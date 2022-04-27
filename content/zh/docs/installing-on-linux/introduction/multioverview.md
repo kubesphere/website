@@ -51,7 +51,7 @@ weight: 3120
 
 - 所有节点必须都能通过 `SSH` 访问。
 - 所有节点时间同步。
-- 所有节点都应使用 `sudo`/`curl`/`openssl`。
+- 所有节点都应使用 `sudo`/`curl`/`openssl`/`tar`。
 
 ### 容器运行时
 
@@ -250,6 +250,13 @@ spec:
   ```yaml
   hosts:
     - {name: master, address: 192.168.0.2, internalAddress: 192.168.0.2, privateKeyPath: "~/.ssh/id_rsa"}
+  ```
+  
+- 在 ARM 设备上安装的示例：
+
+  ```yaml
+  hosts:
+    - {name: master, address: 192.168.0.2, internalAddress: 192.168.0.2, user: ubuntu, password: Testing123, arch: arm64}
   ```
 
 {{< notice tip >}} 
