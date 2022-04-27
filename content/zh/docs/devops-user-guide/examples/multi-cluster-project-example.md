@@ -10,7 +10,7 @@ weight: 11420
 
 - 您需要[启用多集群功能](../../../../docs/multicluster-management/)并创建一个多集群企业空间。
 - 您需要有一个 [Docker Hub](https://hub.docker.com/) 帐户。
-- 您需要在主集群上[启用 KubeSphere DevOps 系统](../../../../docs/pluggable-components/devops/)。
+- 您需要在主集群上[启用 KubeSphere DevOps 系统](/docs/pluggable-components/devops/)。
 - 您需要使用具有 `workspace-self-provisioner` 角色的用户（例如 `project-admin`）创建一个多集群项目，并在主集群上创建一个 DevOps 项目。本教程中的多集群项目创建于主集群和一个成员集群上。
 - 您需要邀请一个用户（例如 `project-regular`）至 DevOps 项目中，赋予 `operator` 角色。有关更多信息，请参见[创建企业空间、项目、用户和角色](../../../quick-start/create-workspace-and-project/)、[多集群管理](../../../multicluster-management/)和[多集群项目](../../../project-administration/project-and-multicluster-project/#多集群项目)。
 
@@ -34,7 +34,7 @@ weight: 11420
 
    {{< notice tip >}}
 
-   有关如何创建凭证的更多信息，请参见[凭证管理](../../../devops-user-guide/how-to-use/credential-management/)。
+   有关如何创建凭证的更多信息，请参见[凭证管理](../../../devops-user-guide/how-to-use/devops-settings/credential-management/)。
 
    {{</ notice >}} 
 

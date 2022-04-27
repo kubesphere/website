@@ -36,15 +36,14 @@ weight: 11120
 
 ### 凭证
 
-具有所需权限的 DevOps 项目用户可以为流水线配置凭证，以便与外部环境进行交互。用户在 DevOps 项目中添加凭证后，DevOps 项目就可以使用这些凭证与第三方应用程序（例如 GitHub、GitLab 和 Docker Hub）进行交互。有关更多信息，请参见[凭证管理](../../how-to-use/credential-management/)。
+具有所需权限的 DevOps 项目用户可以为流水线配置凭证，以便与外部环境进行交互。用户在 DevOps 项目中添加凭证后，DevOps 项目就可以使用这些凭证与第三方应用程序（例如 GitHub、GitLab 和 Docker Hub）进行交互。有关更多信息，请参见[凭证管理](../../how-to-use/devops-settings/credential-management/)。
 
 ### 成员和角色
 
-与项目相似，DevOps 项目也需要为用户授予不同的角色，然后用户才能在 DevOps 项目中工作。项目管理员（例如 `project-admin`）负责邀请租户并授予他们不同的角色。有关更多信息，请参见[角色和成员管理](../role-and-member-management/)。
+与项目相似，DevOps 项目也需要为用户授予不同的角色，然后用户才能在 DevOps 项目中工作。项目管理员（例如 `project-admin`）负责邀请租户并授予他们不同的角色。有关更多信息，请参见[角色和成员管理](../../how-to-use/devops-settings/role-and-member-management/)。
 
 ## 编辑或删除 DevOps 项目
 
 1. 点击 **DevOps 项目设置**下的**基本信息**，您可以查看当前 DevOps 项目的概述，包括项目角色和项目成员的数量、项目名称和项目创建者。
 
 2. 点击右侧的 **DevOps 管理**，您可以编辑此 DevOps 项目的基本信息或删除 DevOps 项目。
-
