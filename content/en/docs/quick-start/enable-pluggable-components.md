@@ -73,7 +73,7 @@ When you install KubeSphere on Kubernetes, you need to use [ks-installer](https:
 3. Save this local file and execute the following commands to start installation.
 
     ```bash
-    kubectl apply -f https://github.com/kubesphere/ks-installer/releases/download/v3.2.1/kubesphere-installer.yaml
+    kubectl apply -f https://github.com/kubesphere/ks-installer/releases/download/v3.3.0/kubesphere-installer.yaml
     
     kubectl apply -f cluster-configuration.yaml
     ```

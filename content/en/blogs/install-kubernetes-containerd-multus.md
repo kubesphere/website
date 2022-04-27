@@ -109,7 +109,7 @@ Perform the following steps to download KubeKey.
 Download KubeKey from its [GitHub Release Page](https://github.com/kubesphere/kubekey/releases) or run the following command:
 
 ```bash
-curl -L https://github.com/kubesphere/kubekey/releases/download/v2.0.0-alpha.4/kubekey-v2.0.0-alpha.4-linux-amd64.tar.gz > installer.tar.gz && tar -zxf installer.tar.gz
+curl -sfL https://get-kk.kubesphere.io | VERSION=v2.1.0 sh -
 ```
 
 {{</ tab >}}
@@ -125,7 +125,7 @@ export KKZONE=cn
 Run the following command to download KubeKey:
 
 ```bash
-curl -L https://github.com/kubesphere/kubekey/releases/download/v2.0.0-alpha.4/kubekey-v2.0.0-alpha.4-linux-amd64.tar.gz > installer.tar.gz && tar -zxf installer.tar.gz
+curl -sfL https://get-kk.kubesphere.io | VERSION=v2.1.0 sh -
 ```
 
 {{< notice note >}}

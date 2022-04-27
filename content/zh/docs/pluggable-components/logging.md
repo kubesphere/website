@@ -38,7 +38,7 @@ KubeSphere 为日志收集、查询和管理提供了一个强大的、全面的
       containerruntime: docker
     ```
 
-    {{< notice info >}}若使用 containerd 作为容器运行时，请将 `containerruntime` 字段的值更改为 `containerd`。如果您从低版本升级至 KubeSphere 3.2.1，则启用 KubeSphere 日志系统时必须在 `logging` 字段下手动添加 `containerruntime` 字段。
+    {{< notice info >}}若使用 containerd 作为容器运行时，请将 `containerruntime` 字段的值更改为 `containerd`。如果您从低版本升级至 KubeSphere 3.3.0，则启用 KubeSphere 日志系统时必须在 `logging` 字段下手动添加 `containerruntime` 字段。
 
     {{</ notice >}}
 
@@ -65,9 +65,9 @@ KubeSphere 为日志收集、查询和管理提供了一个强大的、全面的
 
 ### 在 Kubernetes 上安装
 
-当您[在 Kubernetes 上安装 KubeSphere](../../installing-on-kubernetes/introduction/overview/) 时，需要先在 [cluster-configuration.yaml](https://github.com/kubesphere/ks-installer/releases/download/v3.2.1/cluster-configuration.yaml) 文件中启用日志系统。
+当您[在 Kubernetes 上安装 KubeSphere](../../installing-on-kubernetes/introduction/overview/) 时，需要先在 [cluster-configuration.yaml](https://github.com/kubesphere/ks-installer/releases/download/v3.3.0/cluster-configuration.yaml) 文件中启用日志系统。
 
-1. 下载 [cluster-configuration.yaml](https://github.com/kubesphere/ks-installer/releases/download/v3.2.1/cluster-configuration.yaml) 文件，然后打开并开始编辑。
+1. 下载 [cluster-configuration.yaml](https://github.com/kubesphere/ks-installer/releases/download/v3.3.0/cluster-configuration.yaml) 文件，然后打开并开始编辑。
 
     ```bash
     vi cluster-configuration.yaml
@@ -81,7 +81,7 @@ KubeSphere 为日志收集、查询和管理提供了一个强大的、全面的
       containerruntime: docker
     ```
 
-    {{< notice info >}}若使用 containerd 作为容器运行时，请将 `.logging.containerruntime` 字段的值更改为 `containerd`。如果您从低版本升级至 KubeSphere 3.2.1，则启用 KubeSphere 日志系统时必须在 `logging` 字段下手动添加 `containerruntime` 字段。
+    {{< notice info >}}若使用 containerd 作为容器运行时，请将 `.logging.containerruntime` 字段的值更改为 `containerd`。如果您从低版本升级至 KubeSphere 3.3.0，则启用 KubeSphere 日志系统时必须在 `logging` 字段下手动添加 `containerruntime` 字段。
 
     {{</ notice >}}
 
@@ -103,7 +103,7 @@ KubeSphere 为日志收集、查询和管理提供了一个强大的、全面的
 3. 执行以下命令开始安装：
 
     ```bash
-    kubectl apply -f https://github.com/kubesphere/ks-installer/releases/download/v3.2.1/kubesphere-installer.yaml
+    kubectl apply -f https://github.com/kubesphere/ks-installer/releases/download/v3.3.0/kubesphere-installer.yaml
     
     kubectl apply -f cluster-configuration.yaml
     ```
@@ -130,7 +130,7 @@ KubeSphere 为日志收集、查询和管理提供了一个强大的、全面的
       containerruntime: docker
     ```
 
-    {{< notice info >}}若使用 containerd 作为容器运行时，请将 `.logging.containerruntime` 字段的值更改为 `containerd`。如果您从低版本升级至 KubeSphere 3.2.1，则启用 KubeSphere 日志系统时必须在 `logging` 字段下手动添加 `containerruntime` 字段。
+    {{< notice info >}}若使用 containerd 作为容器运行时，请将 `.logging.containerruntime` 字段的值更改为 `containerd`。如果您从低版本升级至 KubeSphere 3.3.0，则启用 KubeSphere 日志系统时必须在 `logging` 字段下手动添加 `containerruntime` 字段。
 
     {{</ notice >}}
 

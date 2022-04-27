@@ -1,7 +1,7 @@
 ---
-title: "3.2.1 版本说明"  
+title: "3.3.0 版本说明"  
 keywords: "Kubernetes, KubeSphere, 版本说明"  
-description: "KubeSphere 3.2.1 版本说明"  
+description: "KubeSphere 3.3.0 版本说明"  
 linkTitle: "3.2.1 版本说明"  
 weight: 18099
 ---
