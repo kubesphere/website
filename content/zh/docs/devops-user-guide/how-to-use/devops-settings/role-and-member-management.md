@@ -3,7 +3,7 @@ title: "角色和成员管理"
 keywords: 'Kubernetes, KubeSphere, DevOps, 角色, 成员'
 description: '在 DevOps 项目中创建并管理各种角色和成员。'
 linkTitle: "角色和成员管理"
-weight: 11130
+weight: 11242
 ---
 
 本教程演示如何在 DevOps 项目中管理角色和成员。

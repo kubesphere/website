@@ -3,7 +3,7 @@ title: "自定义 Jenkins Agent"
 keywords: "KubeSphere, Kubernetes, DevOps, Jenkins, Agent"
 description: "了解如何在 KubeSphere 上自定义 Jenkins Agent。"
 linkTitle: "自定义 Jenkins Agent"
-Weight: 11460
+Weight: 112191
 ---
 
 如果您需要使用运行特定环境（例如 JDK 11）的 Jenkins Agent，您可以在 KubeSphere 上自定义 Jenkins Agent。
@@ -12,7 +12,7 @@ Weight: 11460
 
 ## 准备工作
 
-- 您需要启用 [KubeSphere DevOps 系统](../../../pluggable-components/devops/)。
+- 您需要启用 [KubeSphere DevOps 系统](../../../../pluggable-components/devops/)。
 
 ## 自定义 Jenkins Agent
 

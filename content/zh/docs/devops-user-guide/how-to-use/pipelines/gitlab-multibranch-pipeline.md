@@ -3,7 +3,7 @@ title: "使用 GitLab 创建多分支流水线"
 keywords: 'KubeSphere, Kubernetes, GitLab, Jenkins, 流水线'
 description: '了解如何使用 GitLab 在 KubeSphere 上创建多分支流水线。'
 linkTitle: "使用 GitLab 创建多分支流水线"
-weight: 11291
+weight: 11215
 ---
 
 [GitLab](https://about.gitlab.com/) 是一个提供公开和私有仓库的开源代码仓库平台。它也是一个完整的 DevOps 平台，专业人士能够使用 GitLab 在项目中执行任务。
@@ -13,14 +13,14 @@ weight: 11291
 ## 准备工作
 
 - 您需要准备一个 [GitLab](https://gitlab.com/users/sign_in) 帐户以及一个 [Docker Hub](https://hub.docker.com/) 帐户。
-- 您需要[启用 KubeSphere DevOps 系统](../../../pluggable-components/devops/)。
-- 您需要创建一个企业空间、一个 DevOps 项目以及一个用户 (`project-regular`)，该用户必须被邀请至该 DevOps 项目中并赋予 `operator` 角色。有关更多信息，请参考[创建企业空间、项目、用户和角色](../../../quick-start/create-workspace-and-project/)。
+- 您需要[启用 KubeSphere DevOps 系统](../../../../pluggable-components/devops/)。
+- 您需要创建一个企业空间、一个 DevOps 项目以及一个用户 (`project-regular`)，该用户必须被邀请至该 DevOps 项目中并赋予 `operator` 角色。有关更多信息，请参考[创建企业空间、项目、用户和角色](../../../../quick-start/create-workspace-and-project/)。
 
 ## 动手实验
 
 ### 步骤 1：创建凭证
 
-1. 使用 `project-regular` 用户登录 KubeSphere 控制台。转到您的 DevOps 项目，在 **DevOps 项目设置**下的**凭证**中创建以下凭证。有关更多如何创建凭证的信息，请参见[凭证管理](../../../devops-user-guide/how-to-use/credential-management/)。
+1. 使用 `project-regular` 用户登录 KubeSphere 控制台。转到您的 DevOps 项目，在 **DevOps 项目设置**下的**凭证**中创建以下凭证。有关更多如何创建凭证的信息，请参见[凭证管理](../../../../devops-user-guide/how-to-use/devops-settings/credential-management/)。
 
    {{< notice note >}}
 
@@ -77,7 +77,7 @@ weight: 11291
    如需使用 GitLab 私有仓库，请参考以下步骤：
 
    - 在 GitLab 上前往**用户设置 > 访问令牌**，创建拥有 API 和 read_repository 权限的个人访问令牌。
-   - [登录 Jenkins 面板](../../how-to-integrate/sonarqube/#步骤-5将-sonarqube-服务器添加至-jenkins)，前往**系统管理 > Manage Credentials**，使用您的 GitLab 令牌创建 Jenkins 凭证，用于访问 GitLab。然后前往**系统管理 > 系统配置**，在 **GitLab 服务**中添加该凭证。
+   - [登录 Jenkins 面板](../../../how-to-integrate/sonarqube/#步骤-5将-sonarqube-服务器添加至-jenkins)，前往**系统管理 > Manage Credentials**，使用您的 GitLab 令牌创建 Jenkins 凭证，用于访问 GitLab。然后前往**系统管理 > 系统配置**，在 **GitLab 服务**中添加该凭证。
    - 在您的 DevOps 项目中，选择 **DevOps 项目设置 > 凭证**，使用您的 GitLab 令牌创建一个凭证。然后在创建流水线时，您需要在 **GitLab** 页签上的**凭证**中指定该凭证，以便流水线能够从您的 GitLab 私有仓库中拉取代码。
 
    {{</ notice >}}
