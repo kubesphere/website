@@ -20,6 +20,8 @@
 
 <link rel="canonical" href="https://kubesphere.io{{ .RelPermalink }}" />
 
+{{- partial "favicons.html" . -}}
+
 {{- partial "css.html" . -}}
 
 <script src='{{ "js/jquery-3.5.0.min.js" | relURL }}'></script>
@@ -37,8 +39,8 @@
   var _hmt = _hmt || [];
   (function() {
     var hm = document.createElement("script");
-    hm.src = "https://hm.baidu.com/hm.js?0237e75d94d303ae04e494196700251c";
-    var s = document.getElementsByTagName("script")[0];
+    hm.src = "https://hm.baidu.com/hm.js?2ce8cd34a797c71de60aa07dd2ea7686";
+    var s = document.getElementsByTagName("script")[0]; 
     s.parentNode.insertBefore(hm, s);
   })();
 </script>

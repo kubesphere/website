@@ -10,22 +10,57 @@ section1:
 
 section2:
   image: /images/live/cloudnative-live-banner.png
-  url: ./kasten0317-live/
+  url: ./yatai0421-live/
 
   notice:
-    title: 使用 KubeSphere 快速部署开源向量数据库 Milvus 2.0
+    title: 使用 Notification Manager 构建云原生通知系统
     tag: 预告
-    time: 2022 年 03 月 24 日晚 8 点
+    time: 2022 年 04 月 28 日晚 8 点
     base: 线上
-    url: ./milvus0324-live/
+    url: ./notification-manager-0428-live/
 
   over:
-    title: 详解 K8s 服务暴露机制与 OpenELB 负载均衡器插件
-    url: ./skywalking0310-live/
+    title: 5G + IoT 场景下云原生的应用与思考
+    url: ./iot0414-live/
     tag: 结束
 
 section3:
   videos:
+    - title: Yatai —— 云原生上的 MLOps 平台
+      link: ./yatai0421-live/
+      snapshot: https://pek3b.qingstor.com/kubesphere-community/images/yatai0421-live-cover.png
+      type: iframe
+      createTime: 2022.04.21
+      group: 直播回放 
+
+    - title: 5G + IoT 场景下云原生的应用与思考
+      link: ./iot0414-live/
+      snapshot: https://pek3b.qingstor.com/kubesphere-community/images/iot0414-live-cover.png
+      type: iframe
+      createTime: 2022.04.14
+      group: 直播回放 
+
+    - title: Kubernetes 中的流量管理和服务发现
+      link: ./k8s-apisix-openelb0406-live/
+      snapshot: https://pek3b.qingstor.com/kubesphere-community/images/k8s-apisix-openelb0406-live-cover.png
+      type: iframe
+      createTime: 2022.04.06
+      group: 直播回放 
+
+    - title: 使用 KubeKey 进行闪电交付
+      link: ./kubekey0331-live/
+      snapshot: https://pek3b.qingstor.com/kubesphere-community/images/kubekey0331-live-cover.png
+      type: iframe
+      createTime: 2022.03.31
+      group: 直播回放 
+
+    - title: 使用 KubeSphere 快速部署开源向量数据库 Milvus 2.0
+      link: ./milvus0324-live/
+      snapshot: https://pek3b.qingstor.com/kubesphere-community/images/milvus0234-live-cover.png
+      type: iframe
+      createTime: 2022.03.24
+      group: 直播回放 
+
     - title: 使用 Kanister 为你的云原生应用数据保驾护航
       link: ./kasten0317-live/
       snapshot: https://pek3b.qingstor.com/kubesphere-community/images/kasten0317-live-cover.png
