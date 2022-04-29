@@ -351,7 +351,7 @@ name = "开源社区"
     [[languages.zh.menu.main]]
     parent = "开源社区"
     name = "开源之夏 2022"
-    URL = "https://kubesphere.com.cn/blogs/ospp-2022/"
+    URL = "https://github.com/kubesphere/community/tree/master/sig-advocacy-and-outreach/ospp-2022"
     weight = 9
 
 [[languages.zh.menu.main]]
