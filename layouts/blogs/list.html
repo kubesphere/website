@@ -33,7 +33,7 @@
                         {{ end }}
                     </ul>
                 </div>
-                <a href="{{ .RelPermalink }}">
+                <a href="{{ .RelPermalink }}" aria-label="{{ .RelPermalink }}">
                     {{ "/static/images/blogs/right-arrow.svg" | readFile | safeHTML }}
                 </a>
             </li>
