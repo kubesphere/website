@@ -1,5 +1,5 @@
 ---
-title: '使用 KubeEye 为你的 K8s 集群安全保驾护航'
+title: 'Kubernetes 安全及配置问题检测工具 KubeEye 使用教程'
 tag: 'Kubernetes, KubeEye'
 keywords: 'Kubernetes, KubeSphere, KubeEye, 集群, 新版本发布'
 description: 'KubeEye 是一款 Kubernetes 安全及配置问题检测工具，针对部署在 K8s 集群中的业务应用进行配置检测使用 OPA,针对集群部署的 Node 使用 Node-Problem-Detector 进行检测，同时除了系统内置有根据大多数业界常见场景的预定义规则，还支持用户自定义规则来进行集群检测。'
@@ -247,4 +247,13 @@ kubeeye audit -p ./opa
 
 ## 参考链接
 
+<<<<<<< HEAD
+<<<<<<< HEAD
 *  https://github.com/kubesphere/kubeeye/
+
+=======
+*  https://github.com/kubesphere/kubeeye/
+>>>>>>> 77b43b07 (add new blog of kubeeye)
+=======
+*  https://github.com/kubesphere/kubeeye/
+>>>>>>> cc3aea3c (Update k8s-kubeeye-security.md)
