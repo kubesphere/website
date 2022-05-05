@@ -34,11 +34,11 @@ linkTitle: "部署极狐GitLab"
 
 ![from app store](/images/docs/zh-cn/appstore/built-in-apps/jh-app/from-app-store.png)
 
-5. 在 `App Store` 中输入 **JiHu** 进行搜索，会出现 **JiHu GitLab** 的应用：
+5. 在 `App Store` 中输入 **jh** 进行搜索，会出现 **jh-gitlab** 的应用：
 
 ![jh gitlab app](/images/docs/zh-cn/appstore/built-in-apps/jh-app/jihu-gitlab-app.png) 
 
-6. 点击 JiHu GitLab 应用，在出现的界面上点击 `install`，即可开始安装。根据表单填写基本信息，然后点击 `next`：
+6. 点击 jh-gitlab 应用，在出现的界面上点击 `install`，即可开始安装。根据表单填写基本信息，然后点击 `next`：
 
 ![jh install basic info](/images/docs/zh-cn/appstore/built-in-apps/jh-app/jh-install-basic-info.png)
 
