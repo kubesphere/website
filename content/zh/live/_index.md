@@ -30,7 +30,7 @@ section3:
       link: ./notification-manager-0428-live/
       snapshot: https://pek3b.qingstor.com/kubesphere-community/images/notification-manager-0428-live-cover.png
       type: iframe
-      createTime: 2022.04.21
+      createTime: 2022.04.28
       group: 直播回放 
 
     - title: Yatai —— 云原生上的 MLOps 平台
