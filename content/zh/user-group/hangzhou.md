@@ -78,6 +78,11 @@ members:
       des: 网易伏羲私有云质量保障负责人，chaos mesh 布道师，云原生社区杭州站核心负责人，Linux “女性开源力量”。
       image: /images/user-group/hangzhou/zhanghui.png
 
+    - name: 崔广章
+      position: 委员
+      des: 之江实验室高级研究员，浙江大学工程博士，《深入理解边缘计算》作者。参与过多个行业的云计算生产项目，2018 年初开始从事边缘计算和操作系统相关研究与开发至今。
+      image: /images/user-group/hangzhou/cuiguangzhang.png
+
 activities:
   videos:
     - image: /images/user-group/shanghai/rotation/ex.png
