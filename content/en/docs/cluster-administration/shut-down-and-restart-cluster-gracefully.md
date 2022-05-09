@@ -1,5 +1,5 @@
 ---
-title: "Kubernetes Cluster Shutdown and Restart"
+title: "Cluster Shutdown and Restart"
 description: "Learn how to gracefully shut down your cluster and restart it."
 layout: "single"
 
@@ -41,8 +41,8 @@ done
 ```
 Then you can shut down other cluster dependencies, such as external storage.
 
-## Restart a Kubernetes Cluster Gracefully
-You can restart a Kubernetes cluster gracefully after shutting down the cluster gracefully.
+## Restart a Cluster Gracefully
+You can restart a cluster gracefully after shutting down the cluster gracefully.
 
 ### Prerequisites
 You have shut down your cluster gracefully.
