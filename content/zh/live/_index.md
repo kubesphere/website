@@ -13,15 +13,15 @@ section2:
   url: ./notification-manager-0428-live/
 
   notice:
-    title: Yatai —— 云原生上的 MLOps 平台
-    tag: 结束
-    time: 2022 年 04 月 21 日晚 8 点
+    title: 基于 KubeSphere 的 ClickHouse 容器化实践
+    tag: 预告
+    time: 2022 年 05 月 12 日晚 8 点
     base: 线上
-    url: ./yatai0421-live/
+    url: ./clickhouse0512-live/
 
   over:
-    title: 5G + IoT 场景下云原生的应用与思考
-    url: ./iot0414-live/
+    title: Yatai —— 云原生上的 MLOps 平台
+    url: ./yatai0421-live/
     tag: 结束
 
 section3:
