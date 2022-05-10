@@ -6,7 +6,11 @@ css: scss/live-detail.scss
 
 section1:
   snapshot: 
+<<<<<<< HEAD
   videoUrl: //player.bilibili.com/player.html?aid=939100007&bvid=BV1FT4y1z7Sb&cid=719562038&page=1&high_quality=1
+=======
+  videoUrl: 
+>>>>>>> 3b2e2541 (update the page of live)
   type: iframe
   time: 2022-05-12 20:00-21:00
   timeIcon: /images/live/clock.svg
@@ -33,6 +37,7 @@ ClickHouse 如何结合 KubeSphere 轻量、快速、自动化部署的特点，
 
 B 站  http://live.bilibili.com/22580654
 
+<<<<<<< HEAD
 ## PPT 下载
 
 可扫描官网底部二维码，关注 「KubeSphere云原生」公众号，后台回复 `20220512` 即可下载 PPT。
@@ -82,3 +87,5 @@ A：Kubernetes 直接使用 localpv 宿主机的本地磁盘目录 ，来持久�
 ### Q11：ClickHouse-Operator 部署集群后，能支持 ClickHouse 容器自动初始化么？
 
 A：SQL（DDL、DML 等），满足某些场景一键部署（先数据库、后应用，有编排关联）。当容器化 ClickHouse 部署好以后，操作数据库的方式跟物理机是一模一样的，都可以对数据库进行 DDL 和 DML 一系列操作，而且还可以利用容器的便利性搭建你喜欢的应用去连接数据库。
+=======
+>>>>>>> 3b2e2541 (update the page of live)
