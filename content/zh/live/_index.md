@@ -13,15 +13,15 @@ section2:
   url: ./ksv0526-live/
 
   notice:
-    title: 基于 KubeSphere 和 Thanos 构建可持久化存储的多集群监控系统
+    title: 基于 KubeSphere 的 ClickHouse 容器化实践
     tag: 预告
-    time: 2022 年 06 月 02 日晚 8 点
+    time: 2022 年 05 月 12 日晚 8 点
     base: 线上
-    url: ./jinaai0602-live/
+    url: ./clickhouse0512-live/
 
   over:
-    title: 基于 KubeSphere 的 ClickHouse 容器化实践
-    url: ./clickhouse0512-live/
+    title: Yatai —— 云原生上的 MLOps 平台
+    url: ./yatai0421-live/
     tag: 结束
 
 section3:
