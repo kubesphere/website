@@ -1,5 +1,6 @@
 ---
 <<<<<<< HEAD
+<<<<<<< HEAD
 title: "Use Cases"
 keywords: "KubeSphere, Kubernetes, Multi-cluster, Observability, DevOps"
 description: "Applicable in a variety of scenarios, KubeSphere provides enterprises with containerized environments with a complete set of features for management and operation."
@@ -8,6 +9,11 @@ title: 'Use Cases'
 keywords: 'KubeSphere, Kubernetes, Multi-cluster, Observability, DevOps'
 description: 'Applicable in a variety of scenarios, KubeSphere provides enterprises with containerized environments with a complete set of features for management and operation.'
 >>>>>>> 499b2ff2 (made some grammatical changes to /intoduction/scenarios.md)
+=======
+title: "Use Cases"
+keywords: "KubeSphere, Kubernetes, Multi-cluster, Observability, DevOps"
+description: "Applicable in a variety of scenarios, KubeSphere provides enterprises with containerized environments with a complete set of features for management and operation."
+>>>>>>> bc3088d6 (made grammatical changes to introduction/scenarios.md)
 
 weight: 1700
 ---
