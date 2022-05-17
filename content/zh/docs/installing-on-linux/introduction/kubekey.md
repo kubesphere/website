@@ -80,7 +80,6 @@ curl -sfL https://get-kk.kubesphere.io | VERSION=v2.1.0 sh -
 
 | KubeSphere 版本 | 受支持的 Kubernetes 版本                                     |
 | --------------- | ------------------------------------------------------------ |
-
 | v3.3.0          | v1.19.x、v1.20.x、v1.21.x、v1.22.x、v1.23.x |
 
 {{< notice note >}} 
