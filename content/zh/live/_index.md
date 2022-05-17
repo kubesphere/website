@@ -10,14 +10,14 @@ section1:
 
 section2:
   image: /images/live/cloudnative-live-banner.png
-  url: ./ksv0526-live/
+  url: ./clickhouse0512-live/
 
   notice:
-    title: 基于 KubeSphere 的 ClickHouse 容器化实践
-    tag: 预告
-    time: 2022 年 05 月 12 日晚 8 点
+    title: 使用 Notification Manager 构建云原生通知系统
+    tag: 结束
+    time: 2022 年 04 月 28 日晚 8 点
     base: 线上
-    url: ./clickhouse0512-live/
+    url: ./notification-manager-0428-live/
 
   over:
     title: Yatai —— 云原生上的 MLOps 平台
@@ -26,13 +26,6 @@ section2:
 
 section3:
   videos:
-    - title: 云原生虚拟化
-      link: ./ksv0526-live/
-      snapshot: https://pek3b.qingstor.com/kubesphere-community/images/ksv0526-live-cover.png
-      type: iframe
-      createTime: 2022.05.26
-      group: 直播回放
-
     - title: 从 Fluentbit-operator 到 Fluent-operator
       link: ./chengdu0514-fluent-operator/
       snapshot: https://pek3b.qingstor.com/kubesphere-community/images/chengdu0514-fluent-operator-cover.png
