@@ -216,7 +216,7 @@ You only need to run one command for all-in-one installation.
 
 {{< notice note >}}
 
-- Supported Kubernetes versions: v1.19.8, v1.20.4, v1.21.4, v1.22.1, v1.23.0. If you do not specify a Kubernetes version, KubeKey installs Kubernetes v1.21.5 by default. For more information about supported Kubernetes versions, see [Support Matrix](https://github.com/kubesphere/kubekey/blob/master/docs/kubernetes-versions.md).
+- Supported Kubernetes versions: v1.19.8, v1.20.4, v1.21.4, v1.22.1, and v1.23.x. If you do not specify a Kubernetes version, KubeKey installs Kubernetes v1.21.5 by default. For more information about supported Kubernetes versions, see [Support Matrix](https://github.com/kubesphere/kubekey/blob/master/docs/kubernetes-versions.md).
 - KubeKey supports AMD64 and ARM64.
 
 {{</ notice >}}

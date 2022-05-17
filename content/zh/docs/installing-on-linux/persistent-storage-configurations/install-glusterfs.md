@@ -170,7 +170,7 @@ chmod +x kk
 
    {{< notice note >}}
 
-   - 安装 KubeSphere 3.3.0 的建议 Kubernetes 版本：v1.19.x、v1.20.x、v1.21.x 或 v1.22.x（实验性支持）。如果不指定 Kubernetes 版本，KubeKey 将默认安装 Kubernetes v1.21.5。有关受支持的 Kubernetes 版本的更多信息，请参见[支持矩阵](../../../installing-on-linux/introduction/kubekey/#支持矩阵)。
+   - 安装 KubeSphere 3.3.0 的建议 Kubernetes 版本：v1.19.x、v1.20.x、v1.21.x、v1.22.x 和 v1.23.x。如果不指定 Kubernetes 版本，KubeKey 将默认安装 Kubernetes v1.21.5。有关受支持的 Kubernetes 版本的更多信息，请参见[支持矩阵](../../../installing-on-linux/introduction/kubekey/#支持矩阵)。
 
    - 如果您在此步骤的命令中不添加标志 `--with-kubesphere`，则不会部署 KubeSphere，只能使用配置文件中的 `addons` 字段安装，或者在您后续使用 `./kk create cluster` 命令时再次添加这个标志。
    - 如果您添加标志 `--with-kubesphere` 时不指定 KubeSphere 版本，则会安装最新版本的 KubeSphere。
@@ -286,13 +286,13 @@ glusterfs (default)   kubernetes.io/glusterfs   Delete          Immediate       
 
 1. 使用默认帐户和密码 (`admin/P@88w0rd`) 通过 `<NodeIP>:30880` 登录 Web 控制台。点击左上角的**平台管理**，选择**集群管理**。
 
-3. 访问**存储**下的**存储卷**，可以看到 PVC 正在使用。
+3. 访问**存储**下的**持久卷声明**，可以看到 PVC 正在使用。
 
    {{< notice note >}}
    
-   有关如何在 KubeSphere 控制台上创建存储卷的更多信息，请参见[存储卷](../../../project-user-guide/storage/volumes/)。
+   有关如何在 KubeSphere 控制台上创建持久卷声明的更多信息，请参见[持久卷声明](../../../project-user-guide/storage/volumes/)。
    
    {{</ notice >}} 
    
-3. 在**存储类型**页面，可以看到集群中可用的存储类型。
+3. 在**存储类**页面，可以看到集群中可用的存储类型。
 
