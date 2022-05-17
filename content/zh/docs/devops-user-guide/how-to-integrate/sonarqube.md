@@ -8,7 +8,7 @@ weight: 11310
 
 [SonarQube](https://www.sonarqube.org/) 是一种主流的代码质量持续检测工具。您可以将其用于代码库的静态和动态分析。SonarQube 集成到 KubeSphere 流水线后，如果在运行的流水线中检测到问题，您可以直接在仪表板上查看常见代码问题，例如 Bug 和漏洞。
 
-本教程演示如何将 SonarQube 集成到流水线中。在[使用 Jenkinsfile 创建流水线](../../../devops-user-guide/how-to-use/create-a-pipeline-using-jenkinsfile/)之前，请先参考以下步骤。
+本教程演示如何将 SonarQube 集成到流水线中。在[使用 Jenkinsfile 创建流水线](../../../devops-user-guide/how-to-use/pipelines/create-a-pipeline-using-jenkinsfile/)之前，请先参考以下步骤。
 
 ## 准备工作
 
@@ -185,7 +185,7 @@ weight: 11310
    http://10.77.1.201:30180
    ```
 
-3. 请使用地址 `http://<Node IP>:30180` 访问 Jenkins。安装 KubeSphere 时，默认情况下也会安装 Jenkins 仪表板。此外，Jenkins 还配置有 KubeSphere LDAP，这意味着您可以直接使用 KubeSphere 帐户（例如 `admin/P@88w0rd`）登录 Jenkins。有关配置 Jenkins 的更多信息，请参见 [Jenkins 系统设置](../../../devops-user-guide/how-to-use/jenkins-setting/)。
+3. 请使用地址 `http://<Node IP>:30180` 访问 Jenkins。安装 KubeSphere 时，默认情况下也会安装 Jenkins 仪表板。此外，Jenkins 还配置有 KubeSphere LDAP，这意味着您可以直接使用 KubeSphere 帐户（例如 `admin/P@88w0rd`）登录 Jenkins。有关配置 Jenkins 的更多信息，请参见 [Jenkins 系统设置](../../../devops-user-guide/how-to-use/pipelines/jenkins-setting/)。
 
    {{< notice note >}}
 
@@ -264,10 +264,10 @@ kubectl -n kubesphere-system rollout restart deploy ks-console
 
    ![令牌已创建](/images/docs/zh-cn/devops-user-guide/tool-integration/integrate-sonarqube-into-pipelines/token-created.png)
 
-5. 分别选择 **Java** 和 **Maven**。复制下图所示绿色框中的序列号，如果要在流水线中使用，则需要在[凭证](../../../devops-user-guide/how-to-use/credential-management/#创建凭证)中添加此序列号。
+5. 分别选择 **Java** 和 **Maven**。复制下图所示绿色框中的序列号，如果要在流水线中使用，则需要在[凭证](../../../devops-user-guide/how-to-use/devops-settings/credential-management/#创建凭证)中添加此序列号。
 
    ![sonarqube-example](/images/docs/zh-cn/devops-user-guide/tool-integration/integrate-sonarqube-into-pipelines/sonarqube-example.png)
 
 ## 在 KubeSphere 控制台查看结果
 
-您[使用图形编辑面板创建流水线](../../how-to-use/create-a-pipeline-using-graphical-editing-panel/)或[使用 Jenkinsfile 创建流水线](../../how-to-use/create-a-pipeline-using-jenkinsfile/)之后，可以查看代码质量分析的结果。
+您[使用 Jenkinsfile 创建流水线](../../../devops-user-guide/how-to-use/pipelines/create-a-pipeline-using-jenkinsfile/)或[使用图形编辑面板创建流水线](../../../devops-user-guide/how-to-use/pipelines/create-a-pipeline-using-graphical-editing-panel/)之后，可以查看代码质量分析的结果。

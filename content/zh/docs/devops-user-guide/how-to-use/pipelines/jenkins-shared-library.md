@@ -3,7 +3,7 @@ title: "在流水线中使用 Jenkins 共享库"
 keywords: 'KubeSphere, Kubernetes, Jenkins, 共享库, 流水线'
 description: '学习如何在流水线中使用 Jenkins 共享库。'
 linkTitle: "在流水线中使用 Jenkins 共享库"
-weight: 11292
+weight: 11217
 ---
 
 对于包含相同阶段或步骤的 Jenkins 流水线，在 Jenkinsfile 中使用 Jenkins 共享库避免流水线代码重复。
@@ -12,13 +12,13 @@ weight: 11292
 
 ## 准备工作
 
-- [启用 KubeSphere DevOps 系统](https://kubesphere.io/zh/docs/pluggable-components/devops/)。
+- [启用 KubeSphere DevOps 系统](../../../../pluggable-components/devops/)。
 - 您需要创建一个企业空间、一个 DevOps 项目和一个用户 (`project-regular`)。必须邀请此帐户至 DevOps 项目中，并且授予 `operator` 角色。有关详细信息，请参阅[创建企业空间、项目、用户和角色](https://kubesphere.io/zh/docs/quick-start/create-workspace-and-project/)。
 - 您需要一个可用 Jenkins 共享库。本教程以 [GitHub 仓库](https://github.com/devops-ws/jenkins-shared-library)中的 Jenkins 共享库为例。
 
 ## 在 Jenkins 仪表盘配置共享库
 
-1. [登录 Jenkins 仪表板](../../how-to-integrate/sonarqube/#步骤-5将-sonarqube-服务器添加至-jenkins)并点击左侧导航栏中的**系统管理**。
+1. [登录 Jenkins 仪表板](../../../how-to-integrate/sonarqube/#步骤-5将-sonarqube-服务器添加至-jenkins)并点击左侧导航栏中的**系统管理**。
 
 2. 向下滚动并点击**系统配置**。
 

@@ -3,7 +3,7 @@ title: "使用 Jenkinsfile 创建流水线"
 keywords: 'KubeSphere, Kubernetes, Docker, Spring Boot, Jenkins, DevOps, CI/CD, 流水线'
 description: "学习如何使用示例 Jenkinsfile 创建并运行流水线。"
 linkTitle: "使用 Jenkinsfile 创建流水线"
-weight: 11210
+weight: 11212
 ---
 
 Jenkinsfile 是一个文本文件，它包含 Jenkins 流水线的定义，并被检入源代码控制仓库。Jenkinsfile 将整个工作流存储为代码，因此它是代码审查和流水线迭代过程的基础。有关更多信息，请参见 [Jenkins 官方文档](https://www.jenkins.io/zh/doc/book/pipeline/jenkinsfile/)。
@@ -19,10 +19,10 @@ KubeSphere 中可以创建两种类型的流水线：一种是本教程中介绍
 ## 准备工作
 
 - 您需要有一个 [Docker Hub](https://hub.docker.com/) 帐户和一个 [GitHub](https://github.com/) 帐户。
-- 您需要[启用 KubeSphere DevOps 系统](../../../pluggable-components/devops/)。
-- 您需要创建一个企业空间、一个 DevOps 项目和一个用户 (`project-regular`)，需要邀请该用户至 DevOps 项目中并赋予 `operator` 角色。如果尚未准备就绪，请参见[创建企业空间、项目、用户和角色](../../../quick-start/create-workspace-and-project/)。
-- 您需要设置 CI 专用节点用于运行流水线。请参考[为依赖项缓存设置 CI 节点](../../how-to-use/set-ci-node/)。
-- 您需要安装和配置 SonarQube。请参考[将 SonarQube 集成到流水线](../../../devops-user-guide/how-to-integrate/sonarqube/)。如果您跳过这一部分，则没有下面的 **SonarQube 分析**阶段。
+- 您需要[启用 KubeSphere DevOps 系统](../../../../pluggable-components/devops/)。
+- 您需要创建一个企业空间、一个 DevOps 项目和一个用户 (`project-regular`)，需要邀请该用户至 DevOps 项目中并赋予 `operator` 角色。如果尚未准备就绪，请参见[创建企业空间、项目、用户和角色](../../../../quick-start/create-workspace-and-project/)。
+- 您需要设置 CI 专用节点用于运行流水线。请参考[为依赖项缓存设置 CI 节点](../../../how-to-use/devops-settings/set-ci-node/)。
+- 您需要安装和配置 SonarQube。请参考[将 SonarQube 集成到流水线](../../../how-to-integrate/sonarqube/)。如果您跳过这一部分，则没有下面的 **SonarQube 分析**阶段。
 
 ## 流水线概述
 
@@ -47,7 +47,7 @@ KubeSphere 中可以创建两种类型的流水线：一种是本教程中介绍
 
 ### 步骤 1：创建凭证
 
-1. 以 `project-regular` 身份登录 KubeSphere 控制台。转到您的 DevOps 项目，在 **DevOps 项目设置**下的**凭证**页面创建以下凭证。有关如何创建凭证的更多信息，请参见[凭证管理](../../../devops-user-guide/how-to-use/credential-management/)。
+1. 以 `project-regular` 身份登录 KubeSphere 控制台。转到您的 DevOps 项目，在 **DevOps 项目设置**下的**凭证**页面创建以下凭证。有关如何创建凭证的更多信息，请参见[凭证管理](../../../../devops-user-guide/how-to-use/devops-settings/credential-management/)。
 
    {{< notice note >}}
 
@@ -61,7 +61,7 @@ KubeSphere 中可以创建两种类型的流水线：一种是本教程中介绍
    | github-id       | 帐户凭证   | GitHub     |
    | demo-kubeconfig | kubeconfig | Kubernetes |
 
-2. 您还需要为 SonarQube 创建一个凭证 (`sonar-token`)，用于上述的阶段 3（SonarQube 分析）。请参阅[为新项目创建 SonarQube 令牌 (Token)](../../../devops-user-guide/how-to-integrate/sonarqube/#为新项目创建-sonarqube-token)，在**访问令牌**类型的凭证的**令牌**字段中输入 SonarQube 令牌。点击**确定**完成操作。
+2. 您还需要为 SonarQube 创建一个凭证 (`sonar-token`)，用于上述的阶段 3（SonarQube 分析）。请参阅[为新项目创建 SonarQube 令牌 (Token)](../../../../devops-user-guide/how-to-integrate/sonarqube/#为新项目创建-sonarqube-token)，在**访问令牌**类型的凭证的**令牌**字段中输入 SonarQube 令牌。点击**确定**完成操作。
 
 3. 您还需要创建具有如下图所示权限的 GitHub 个人访问令牌 (PAT)，然后在 DevOps 项目中，使用生成的令牌创建用于 GitHub 认证的帐户凭证（例如，`github-token`）。
 
@@ -110,7 +110,7 @@ KubeSphere 中可以创建两种类型的流水线：一种是本教程中介绍
 
 {{< notice note >}}
 
-您需要提前创建 `project-admin` 帐户，用作 CI/CD 流水线的审核者。有关更多信息，请参见[创建企业空间、项目、用户和角色](../../../quick-start/create-workspace-and-project/)。
+您需要提前创建 `project-admin` 帐户，用作 CI/CD 流水线的审核者。有关更多信息，请参见[创建企业空间、项目、用户和角色](../../../../quick-start/create-workspace-and-project/)。
 
 {{</ notice >}}
 
@@ -219,7 +219,7 @@ KubeSphere 中可以创建两种类型的流水线：一种是本教程中介绍
    
    {{< notice note >}}
    
-   在 KubeSphere 3.2.x 中，如果不指定审核员，那么能够运行流水线的帐户也能够继续或终止该流水线。流水线创建者、在该项目中具有 `admin` 角色的用户或者您指定的帐户也有权限继续或终止流水线。
+   在 KubeSphere 3.3.0 中，如果不指定审核员，那么能够运行流水线的帐户也能够继续或终止该流水线。流水线创建者、在该项目中具有 `admin` 角色的用户或者您指定的帐户也有权限继续或终止流水线。
    
    {{</ notice >}}
 

@@ -1,9 +1,9 @@
 ---
-title: "Jenkins 系统设置"
+title: "设置 Jenkins 系统"
 keywords: 'Kubernetes, KubeSphere, Jenkins, CasC'
 description: '了解如何自定义您的 Jenkins 设置。'
-linkTitle: 'Jenkins 系统设置'
-Weight: 11240
+linkTitle: '设置 Jenkins 系统'
+Weight: 11216
 ---
 
 Jenkins 强大而灵活，已经成为 CI/CD 工作流的事实标准。但是，许多插件要求用户先设置系统级配置，然后才能使用。
@@ -14,7 +14,7 @@ KubeSphere DevOps 系统提供基于 Jenkins 的容器化 CI/CD 功能。为了�
 
 ## 准备工作
 
-您已启用 [KubeSphere DevOps 系统](../../../pluggable-components/devops/)。
+您已启用 [KubeSphere DevOps 系统](../../../../pluggable-components/devops/)。
 
 ## Jenkins Configuration as Code
 
@@ -26,11 +26,11 @@ KubeSphere 默认安装 Jenkins Configuration as Code 插件，您可以通过 Y
 
 ## 修改 ConfigMap
 
-建议您通过 Configuration as Code (CasC) 在 KubeSphere 中配置 Jenkins。内置 Jenkins CasC 文件存储为 [ConfigMap](../../../project-user-guide/configuration/configmaps/)。
+建议您通过 Configuration as Code (CasC) 在 KubeSphere 中配置 Jenkins。内置 Jenkins CasC 文件存储为 [ConfigMap](../../../../project-user-guide/configuration/configmaps/)。
 
 1. 以 `admin` 身份登录 KubeSphere，点击左上角的**平台管理**，然后选择**集群管理**。
 
-2. 如果您已经启用[多集群功能](../../../multicluster-management/)并已导入成员集群，您可以选择一个特定集群来编辑 ConfigMap。如果您尚未启用多集群功能，请直接参考下一步。
+2. 如果您已经启用[多集群功能](../../../../multicluster-management/)并已导入成员集群，您可以选择一个特定集群来编辑 ConfigMap。如果您尚未启用多集群功能，请直接参考下一步。
 
 3. 在左侧导航栏中选择**配置**下的**配置字典**。在**配置字典**页面上，从下拉列表中选择 `kubesphere-devops-system`，然后点击 `jenkins-casc-config`。
 
