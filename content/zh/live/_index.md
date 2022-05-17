@@ -10,14 +10,14 @@ section1:
 
 section2:
   image: /images/live/cloudnative-live-banner.png
-  url: ./notification-manager-0428-live/
+  url: ./clickhouse0512-live/
 
   notice:
-    title: 基于 KubeSphere 的 ClickHouse 容器化实践
-    tag: 预告
-    time: 2022 年 05 月 12 日晚 8 点
+    title: 使用 Notification Manager 构建云原生通知系统
+    tag: 结束
+    time: 2022 年 04 月 28 日晚 8 点
     base: 线上
-    url: ./clickhouse0512-live/
+    url: ./notification-manager-0428-live/
 
   over:
     title: Yatai —— 云原生上的 MLOps 平台
@@ -26,6 +26,55 @@ section2:
 
 section3:
   videos:
+    - title: 从 Fluentbit-operator 到 Fluent-operator
+      link: ./chengdu0514-fluent-operator/
+      snapshot: https://pek3b.qingstor.com/kubesphere-community/images/chengdu0514-fluent-operator-cover.png
+      type: iframe
+      createTime: 2022.05.14
+      group: Meetup
+
+    - title: 云原生应用配置代码化实践
+      link: ./chengdu0514-kusion/
+      snapshot: https://pek3b.qingstor.com/kubesphere-community/images/chengdu0514-configrepo-cover.png
+      type: iframe
+      createTime: 2022.05.14
+      group: Meetup
+
+    - title: 基于 KubeSphere 的分级管理实践
+      link: ./chengdu0514-level/
+      snapshot: https://pek3b.qingstor.com/kubesphere-community/images/chengdu0514-level-cover.png
+      type: iframe
+      createTime: 2022.05.14
+      group: Meetup
+
+    - title: 镜像构建技术 Buildpacks 的原理及在 FaaS 平台中的实践
+      link: ./chengdu0514-openfunction/
+      snapshot: https://pek3b.qingstor.com/kubesphere-community/images/chengdu0514-openfunction-cover.png
+      type: iframe
+      createTime: 2022.05.14
+      group: Meetup
+
+    - title: Nydus - 面向下一代的容器镜像
+      link: ./chengdu0514-nydus/
+      snapshot: https://pek3b.qingstor.com/kubesphere-community/images/chengdu0514-nydus-cover.png
+      type: iframe
+      createTime: 2022.05.14
+      group: Meetup
+
+    - title: 开源 DevOps 工具链整合可以更简单
+      link: ./chengdu0514-devops/
+      snapshot: https://pek3b.qingstor.com/kubesphere-community/images/chengdu0514-devops-cover.png
+      type: iframe
+      createTime: 2022.05.14
+      group: Meetup
+
+    - title: 基于 KubeSphere 的 ClickHouse 容器化实践
+      link: ./clickhouse0512-live/
+      snapshot: https://pek3b.qingstor.com/kubesphere-community/images/clickhouse0512-live-cover.png
+      type: iframe
+      createTime: 2022.05.12
+      group: 直播回放
+
     - title: 使用 Notification Manager 构建云原生通知系统
       link: ./notification-manager-0428-live/
       snapshot: https://pek3b.qingstor.com/kubesphere-community/images/notification-manager-0428-live-cover.png
