@@ -11,7 +11,7 @@ When you use KubeKey to set up a cluster, you create a configuration file which 
 ```bash
 spec:
   hosts:
-  - {name: control plane, address: 192.168.0.2, internalAddress: 192.168.0.2, user: ubuntu, password: Testing123}
+  - {name: master, address: 192.168.0.2, internalAddress: 192.168.0.2, user: ubuntu, password: Testing123}
   - {name: node1, address: 192.168.0.3, internalAddress: 192.168.0.3, user: ubuntu, password: Testing123}
   - {name: node2, address: 192.168.0.4, internalAddress: 192.168.0.4, user: ubuntu, password: Testing123}
 ```
@@ -30,7 +30,7 @@ If you see an error message as above, verify that:
 
   ```bash
   hosts:
-    - {name: control plane, address: 192.168.0.2, internalAddress: 192.168.0.2, port: 8022, user: ubuntu, password: Testing123}
+    - {name: master, address: 192.168.0.2, internalAddress: 192.168.0.2, port: 8022, user: ubuntu, password: Testing123}
   ```
 
 - SSH connections are not restricted in `/etc/ssh/sshd_config`. For example, `PasswordAuthentication` should be set to `true`.

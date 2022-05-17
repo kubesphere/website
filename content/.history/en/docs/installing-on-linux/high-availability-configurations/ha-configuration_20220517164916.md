@@ -6,13 +6,13 @@ linkTitle: "Set up an HA Cluster Using a Load Balancer"
 weight: 3220
 ---
 
-You can set up Kubernetes cluster (a control plane node) with KubeSphere installed based on the tutorial of [Multi-node Installation](../../../installing-on-linux/introduction/multioverview/). Clusters with a control plane node may be sufficient for development and testing in most cases. For a production environment, however, you need to consider the high availability of the cluster. If key components (for example, kube-apiserver, kube-scheduler, and kube-controller-manager) are all running on the same control plane node, Kubernetes and KubeSphere will be unavailable once the control plane node goes down. Therefore, you need to set up a high-availability cluster by provisioning load balancers with multiple control plane nodes. You can use any cloud load balancer, or any hardware load balancer (for example, F5). In addition, Keepalived and [HAproxy](https://www.haproxy.com/), or Nginx is also an alternative for creating high-availability clusters.
+You can set up a single-master Kubernetes cluster with KubeSphere installed based on the tutorial of [Multi-node Installation](../../../installing-on-linux/introduction/multioverview/). Clusters with a control plane node may be sufficient for development and testing in most cases. For a production environment, however, you need to consider the high availability of the cluster. If key components (for example, kube-apiserver, kube-scheduler, and kube-controller-manager) are all running on the same control plane node, Kubernetes and KubeSphere will be unavailable once the control plane node goes down. Therefore, you need to set up a high-availability cluster by provisioning load balancers with multiple control plane nodes. You can use any cloud load balancer, or any hardware load balancer (for example, F5). In addition, Keepalived and [HAproxy](https://www.haproxy.com/), or Nginx is also an alternative for creating high-availability clusters.
 
 This tutorial demonstrates the general configurations of a high-availability cluster as you install KubeSphere on Linux.
 
 ## Architecture
 
-Make sure you have prepared six Linux machines before you begin, with three of them serving as control plane nodes and the other three as worker nodes. The following image shows details of these machines, including their private IP address and role. For more information about system and network requirements, see [Multi-node Installation](../../../installing-on-linux/introduction/multioverview/#step-1-prepare-linux-hosts).
+Make sure you have prepared six Linux machines before you begin, with three of them serving as master nodes and the other three as worker nodes. The following image shows details of these machines, including their private IP address and role. For more information about system and network requirements, see [Multi-node Installation](../../../installing-on-linux/introduction/multioverview/#step-1-prepare-linux-hosts).
 
 ![ha-architecture](/images/docs/installing-on-linux/high-availability-configurations/set-up-ha-cluster-using-lb/ha-architecture.png)
 
@@ -48,7 +48,7 @@ You must create a load balancer in your environment to listen (also known as lis
 Download KubeKey from its [GitHub Release Page](https://github.com/kubesphere/kubekey/releases) or use the following command directly.
 
 ```bash
-curl -sfL https://get-kk.kubesphere.io | VERSION=v2.1.0 sh -
+curl -sfL https://get-kk.kubesphere.io | VERSION=v2.0.0 sh -
 ```
 
 {{</ tab >}}
@@ -64,7 +64,7 @@ export KKZONE=cn
 Run the following command to download KubeKey:
 
 ```bash
-curl -sfL https://get-kk.kubesphere.io | VERSION=v2.1.0 sh -
+curl -sfL https://get-kk.kubesphere.io | VERSION=v2.0.0 sh -
 ```
 
 {{< notice note >}}
@@ -79,7 +79,7 @@ After you download KubeKey, if you transfer it to a new machine also with poor n
 
 {{< notice note >}}
 
-The commands above download the latest release (v2.1.0) of KubeKey. You can change the version number in the command to download a specific version.
+The commands above download the latest release (v2.0.0) of KubeKey. You can change the version number in the command to download a specific version.
 
 {{</ notice >}} 
 
@@ -92,12 +92,12 @@ chmod +x kk
 Create an example configuration file with default configurations. Here Kubernetes v1.21.5 is used as an example.
 
 ```bash
-./kk create config --with-kubesphere v3.3.0 --with-kubernetes v1.21.5
+./kk create config --with-kubesphere v3.2.1 --with-kubernetes v1.21.5
 ```
 
 {{< notice note >}}
 
-- Recommended Kubernetes versions for KubeSphere 3.3.0: v1.19.x or above. If you do not specify a Kubernetes version, KubeKey will install Kubernetes v1.21.5 by default. For more information about supported Kubernetes versions, see [Support Matrix](../../../installing-on-linux/introduction/kubekey/#support-matrix).
+- Recommended Kubernetes versions for KubeSphere 3.2.1: v1.19.x, v1.20.x, v1.21.x or v1.22.x (experimental). If you do not specify a Kubernetes version, KubeKey will install Kubernetes v1.21.5 by default. For more information about supported Kubernetes versions, see [Support Matrix](../../../installing-on-linux/introduction/kubekey/#support-matrix).
 
 - If you do not add the flag `--with-kubesphere` in the command in this step, KubeSphere will not be deployed unless you install it using the `addons` field in the configuration file or add this flag again when you use `./kk create cluster` later.
 - If you add the flag `--with-kubesphere` without specifying a KubeSphere version, the latest version of KubeSphere will be installed.
@@ -130,7 +130,7 @@ spec:
     - master1
     - master2
     - master3
-    master:
+    control-plane:
     - master1
     - master2
     - master3

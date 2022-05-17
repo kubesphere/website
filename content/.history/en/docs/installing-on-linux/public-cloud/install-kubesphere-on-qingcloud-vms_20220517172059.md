@@ -20,7 +20,7 @@ This tutorial walks you through an example of how to create two [QingCloud load 
 
 ## Architecture
 
-This example prepares six machines of **Ubuntu 16.04.6**. You will create two load balancers, and deploy three control plane nodes and etcd nodes on three of the machines. You can configure these control plane and etcd nodes in `config-sample.yaml` created by KubeKey (Please note that this is the default name, which can be changed by yourself).
+This example prepares six machines of **Ubuntu 16.04.6**. You will create two load balancers, and deploy three master and etcd nodes on three of the machines. You can configure these master and etcd nodes in `config-sample.yaml` created by KubeKey (Please note that this is the default name, which can be changed by yourself).
 
 ![ha-architecture](/images/docs/installing-on-linux/installing-on-public-cloud/deploy-kubesphere-on-qingcloud-instances/ha-architecture.png)
 
@@ -126,7 +126,7 @@ Follow the step below to download KubeKey.
 Download KubeKey from its [GitHub Release Page](https://github.com/kubesphere/kubekey/releases) or use the following command directly.
 
 ```bash
-curl -sfL https://get-kk.kubesphere.io | VERSION=v2.1.0 sh -
+curl -sfL https://get-kk.kubesphere.io | VERSION=v2.0.0 sh -
 ```
 
 {{</ tab >}}
@@ -142,7 +142,7 @@ export KKZONE=cn
 Run the following command to download KubeKey:
 
 ```bash
-curl -sfL https://get-kk.kubesphere.io | VERSION=v2.1.0 sh -
+curl -sfL https://get-kk.kubesphere.io | VERSION=v2.0.0 sh -
 ```
 
 {{< notice note >}}
@@ -157,7 +157,7 @@ After you download KubeKey, if you transfer it to a new machine also with poor n
 
 {{< notice note >}}
 
-The commands above download the latest release (v2.1.0) of KubeKey. You can change the version number in the command to download a specific version.
+The commands above download the latest release (v2.0.0) of KubeKey. You can change the version number in the command to download a specific version.
 
 {{</ notice >}} 
 
@@ -170,12 +170,12 @@ chmod +x kk
 Create an example configuration file with default configurations. Here Kubernetes v1.21.5 is used as an example.
 
 ```bash
-./kk create config --with-kubesphere v3.3.0 --with-kubernetes v1.21.5
+./kk create config --with-kubesphere v3.2.1 --with-kubernetes v1.21.5
 ```
 
 {{< notice note >}}
 
-- Recommended Kubernetes versions for KubeSphere 3.3.0: v1.19.x or above. If you do not specify a Kubernetes version, KubeKey will install Kubernetes v1.21.5 by default. For more information about supported Kubernetes versions, see [Support Matrix](../../../installing-on-linux/introduction/kubekey/#support-matrix).
+- Recommended Kubernetes versions for KubeSphere 3.2.1: v1.19.x, v1.20.x, v1.21.x or v1.22.x (experimental). If you do not specify a Kubernetes version, KubeKey will install Kubernetes v1.21.5 by default. For more information about supported Kubernetes versions, see [Support Matrix](../../../installing-on-linux/introduction/kubekey/#support-matrix).
 
 - If you do not add the flag `--with-kubesphere` in the command in this step, KubeSphere will not be deployed unless you install it using the `addons` field in the configuration file or add this flag again when you use `./kk create cluster` later.
 - If you add the flag `--with-kubesphere` without specifying a KubeSphere version, the latest version of KubeSphere will be installed.
@@ -193,7 +193,7 @@ As you adopt the HA topology with stacked control plane nodes, the control plane
 | `control-plane`     | Control plane node names                 |
 | `worker`     | Worker node names                 |
 
-Put the control plane nodes (`master1`, `master2` and `master3`) under `etcd` and `master` respectively as below, which means these three machines will serve as both the control plane and etcd nodes. Note that the number of etcd needs to be odd. Meanwhile, it is not recommended that you install etcd on worker nodes since the memory consumption of etcd is very high.
+Put the control plane nodes (`master1`, `master2` and `master3`) under `etcd` and `master` respectively as below, which means these three machines will serve as both the master and etcd nodes. Note that the number of etcd needs to be odd. Meanwhile, it is not recommended that you install etcd on worker nodes since the memory consumption of etcd is very high.
 
 #### config-sample.yaml Example
 
@@ -211,7 +211,7 @@ spec:
     - master1
     - master2
     - master3
-    master:
+    control-plane:
     - master1
     - master2
     - master3
@@ -327,7 +327,7 @@ Both listeners show that the status is **Active**, meaning nodes are up and runn
 
 In the web console of KubeSphere, you can also see that all the nodes are functioning well.
 
-To verify if the cluster is highly available, you can turn off an instance on purpose. For example, the above console is accessed through the address `IP: 30880` (the EIP address here is the one bound to the external load balancer). If the cluster is highly available, the console will still work well even if you shut down a control plane node.
+To verify if the cluster is highly available, you can turn off an instance on purpose. For example, the above console is accessed through the address `IP: 30880` (the EIP address here is the one bound to the external load balancer). If the cluster is highly available, the console will still work well even if you shut down a master node.
 
 ## See Also
 
