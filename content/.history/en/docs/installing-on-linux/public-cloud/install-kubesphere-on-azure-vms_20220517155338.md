@@ -27,7 +27,7 @@ Besides these VMs, other resources like Load Balancer, Virtual Network and Netwo
 
 ## Architecture
 
-Six machines of **Ubuntu 18.04** will be deployed in an Azure Resource Group. Three of them are grouped into an availability set, serving as both the control plane and etcd nodes. The other three VMs will be defined as a VMSS where Worker nodes will be running.
+Six machines of **Ubuntu 18.04** will be deployed in an Azure Resource Group. Three of them are grouped into an availability set, serving as both the Master and etcd nodes. The other three VMs will be defined as a VMSS where Worker nodes will be running.
 
 ![Architecture](/images/docs/aks/Azure-architecture.png)
 

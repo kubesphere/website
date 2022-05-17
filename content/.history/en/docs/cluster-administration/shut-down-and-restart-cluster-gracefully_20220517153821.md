@@ -60,7 +60,7 @@ Usually, a cluster can be used after restarting, but the cluster may be unavaila
 Ensure all cluster dependencies are ready, such as external storage.
 ### Step 2: Power on cluster machines
 Wait for the cluster to be up and running, which may take about 10 minutes.
-### Step 3: Check the status of all control plane components
+### Step 3: Check all master nodes' status
 Check the status of core components, such as etcd services, and make sure everything is ready.
 ```bash
 kubectl get nodes -l node-role.kubernetes.io/master

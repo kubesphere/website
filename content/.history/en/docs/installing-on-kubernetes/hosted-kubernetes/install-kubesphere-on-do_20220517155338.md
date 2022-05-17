@@ -30,7 +30,7 @@ You need to select:
 
 - To install KubeSphere 3.2.1 on Kubernetes, your Kubernetes version must be v1.19.x, v1.20.x, v1.21.x, or v1.22.x (experimental).
 - 2 nodes are included in this example. You can add more nodes based on your own needs especially in a production environment.
-- The machine type Standard / 4 GB / 2 vCPUs is for minimal installation. If you plan to enable several pluggable components or use the cluster for production, you can upgrade your nodes to a more powerful type (such as CPU-Optimized / 8 GB / 4 vCPUs). It seems that DigitalOcean provisions the control plane nodes based on the type of the worker nodes, and for Standard ones the API server can become unresponsive quite soon.
+- The machine type Standard / 4 GB / 2 vCPUs is for minimal installation. If you plan to enable several pluggable components or use the cluster for production, you can upgrade your nodes to a more powerfull type (such as CPU-Optimized / 8 GB / 4 vCPUs). It seems that DigitalOcean provisions the master nodes based on the type of the worker nodes, and for Standard ones the API server can become unresponsive quite soon.
 
 {{</ notice >}}
 

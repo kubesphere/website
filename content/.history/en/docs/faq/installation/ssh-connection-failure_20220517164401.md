@@ -30,7 +30,7 @@ If you see an error message as above, verify that:
 
   ```bash
   hosts:
-    - {name: control plane, address: 192.168.0.2, internalAddress: 192.168.0.2, port: 8022, user: ubuntu, password: Testing123}
+    - {name: master, address: 192.168.0.2, internalAddress: 192.168.0.2, port: 8022, user: ubuntu, password: Testing123}
   ```
 
 - SSH connections are not restricted in `/etc/ssh/sshd_config`. For example, `PasswordAuthentication` should be set to `true`.

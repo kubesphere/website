@@ -24,7 +24,7 @@ KubeSphere 支持的操作系统包括：
 这里以一台 openEuler 20.09  64bit 为例：
 |name|ip|role|
 |---|---|---|
-|node1|172.169.102.249|etcd, control plane, worker|
+|node1|172.169.102.249|etcd, master, worker|
 
 确保机器已经安装所需依赖软件（sudo curl openssl ebtables socat ipset conntrack docker）
 
