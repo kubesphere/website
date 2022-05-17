@@ -124,9 +124,7 @@ To make sure edge nodes can successfully talk to your cluster, you must forward 
    After an edge node is added, if you cannot see CPU and memory resource usage on the **Edge Nodes** page, make sure [Metrics Server](../../../pluggable-components/metrics-server/) 0.4.1 or later is installed in your cluster.
 
    {{</ notice >}}
-   
-<<<<<<< HEAD
-<<<<<<< HEAD
+
 ## Collect Monitoring Information on Edge Nodes
 
 To collect monitoring information on edge node, you need to enable `metrics_server` in `ClusterConfiguration` and `edgeStream` in KubeEdge.
@@ -172,12 +170,6 @@ To collect monitoring information on edge node, you need to enable `metrics_serv
     ```
 
 9. After an edge node joins your cluster, some Pods may be scheduled to it while they remains in the `Pending` state on the edge node. Due to the tolerations some DaemonSets (for example, Calico) have, you need to manually patch some Pods so that they will not be scheduled to the edge node.
-=======
-6. After an edge node joins your cluster, some Pods may be scheduled to it while they remain in the `Pending` state on the edge node. Due to the tolerations some DaemonSets (for example, Calico) have, in the current version (KubeSphere 3.2.1), you need to manually patch some Pods so that they will not be scheduled to the edge node.
->>>>>>> 7f363709 (change term master)
-=======
-6. After an edge node joins your cluster, some Pods may be scheduled to it while they remains in the `Pending` state on the edge node. Due to the tolerations some DaemonSets (for example, Calico) have, in the current version (KubeSphere 3.3.0), you need to manually patch some Pods so that they will not be schedule to the edge node.
->>>>>>> 3785c2cc (update 3.3 new)
 
    ```bash
    #!/bin/bash
