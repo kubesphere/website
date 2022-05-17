@@ -153,7 +153,7 @@ Configure environment variables for Pods in the form of key-value pairs.
 
 - name: The name of the environment variable, specified by `env.name`.
 - value: The value of the variable referenced, specified by `env.value`.
-- Click **Use ConfigMap or Secret** to use an existing ConfigMap or Secret.
+- Click **From configmap** or **From secret** to use an existing ConfigMap or Secret.
 
 For more information about the command, please visit [Pod variable](https://kubernetes.io/docs/tasks/inject-data-application/environment-variable-expose-pod-information/?spm=a2c4g.11186623.2.20.16704b3e9qHXPb).
 

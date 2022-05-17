@@ -41,7 +41,7 @@ weight: 10140
 
 6. 点击**使用默认端口**。有关更多镜像设置的信息，请参见[容器组设置](../../../project-user-guide/application-workloads/container-image-settings/)。点击右下角的 **√** 和**下一步**以继续操作。
 
-7. 在**存储卷设置**页面，[添加存储卷](../../../project-user-guide/storage/volumes/)或点击**下一步**以继续操作。
+7. 在**存储设置**页面，[添加持久卷声明](../../../project-user-guide/storage/volumes/)或点击**下一步**以继续操作。
 
 8. 在**高级设置**页面，直接点击**创建**。
 

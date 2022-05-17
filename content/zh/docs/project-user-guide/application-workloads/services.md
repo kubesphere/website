@@ -127,9 +127,9 @@ KubeSphere 提供三种创建服务的基本方法：**无状态服务**、**有
 
 {{</ notice >}}
 
-### 步骤 4：挂载存储卷
+### 步骤 4：挂载持久卷
 
-要为服务挂载存储卷，详情请参见[挂载存储卷](../../../project-user-guide/application-workloads/deployments/#步骤-4挂载存储卷)。
+要为服务挂载持久卷，详情请参见[挂载持久卷](../../../project-user-guide/application-workloads/deployments/#步骤-4挂载持久卷)。
 
 ### 步骤 5：配置高级设置
 
