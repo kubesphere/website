@@ -24,7 +24,7 @@ KubeSphere 的多租户系统分**三个**层级，即集群、企业空间和�
 
 ### 步骤 1：创建用户
 
-安装 KubeSphere 之后，您需要向平台添加具有不同角色的用户，以便他们可以针对自己授权的资源在不同的层级进行工作。一开始，系统默认只有一个用户 `admin`，具有 `platform-admin` 角色。在本步骤中，您将创建一个用户 `user-manager`，然后使用 `user-manager` 创建新用户。
+安装 KubeSphere 之后，您需要向平台添加具有不同角色的用户，以便他们可以针对自己授权的资源在不同的层级进行工作。一开始，系统默认只有一个用户 `admin`，具有 `platform-admin` 角色。在本步骤中，您将创建一个示例用户 `user-manager`，然后使用 `user-manager` 创建新用户。
 
 1. 以 `admin` 身份使用默认帐户和密码 (`admin/P@88w0rd`) 登录 Web 控制台。
 
@@ -64,22 +64,23 @@ KubeSphere 的多租户系统分**三个**层级，即集群、企业空间和�
    内置角色由 KubeSphere 自动创建，无法编辑或删除。
    {{</ notice >}}
 
-3. 在**用户**中，点击**创建**。在弹出的对话框中，提供所有必要信息（带有*标记），然后在**角色**一栏选择 `users-manager`。请参考下图示例。
+3. 在**用户**中，点击**创建**。在弹出的对话框中，提供所有必要信息（带有*标记），然后在**平台角色**一栏选择 `users-manager`。
 
-   完成后，点击**确定**。新创建的帐户将显示在**用户**中的帐户列表中。
+   完成后，点击**确定**。新创建的用户将显示在**用户**页面。。
 
-4. 切换帐户使用 `user-manager` 重新登录，创建如下四个新帐户，这些帐户将在其他的教程中使用。
+4. 切换用户使用 `user-manager` 重新登录，创建如下四个新用户，这些用户将在其他的教程中使用。
 
    {{< notice tip >}}
-   帐户登出请点击右上角的用户名，然后选择**登出**。
+   - 帐户登出请点击右上角的用户名，然后选择**登出**。
+   - 下面仅为示例用户名，请根据实际情况修改。
    {{</ notice >}}
 
    <table>
      <tbody>
        <tr>
-         <th width='140'>帐户</th>
-         <th width='160'>角色</th>
-         <th>描述</th>
+         <th width='140'>用户</th>
+         <th> 指定的平台角色</th>
+         <th width='300'>用户权限</th>
        </tr>
        <tr>
          <td><code>ws-manager</code></td>
@@ -89,7 +90,7 @@ KubeSphere 的多租户系统分**三个**层级，即集群、企业空间和�
        <tr>
          <td><code>ws-admin</code></td>
          <td><code>platform-regular</code></td>
-         <td>管理指定企业空间中的所有资源（在此示例中，此帐户用于邀请新成员加入该企业空间）。</td>
+         <td>被邀请到企业空间后，管理该企业空间中的所有资源（在此示例中，此用户用于邀请新成员加入该企业空间）。</td>
        </tr><tr>
          <td><code>project-admin</code></td>
          <td><code>platform-regular</code></td>
@@ -97,19 +98,19 @@ KubeSphere 的多租户系统分**三个**层级，即集群、企业空间和�
        </tr><tr>
          <td><code>project-regular</code></td>
          <td><code>platform-regular</code></td>
-       <td><code>project-regular</code> 将由 <code>project-admin</code> 邀请至项目或 DevOps 项目。该帐户将用于在指定项目中创建工作负载、流水线和其他资源。</td>
+       <td><code>project-regular</code> 将由 <code>project-admin</code> 邀请至项目或 DevOps 项目。该用户将用于在指定项目中创建工作负载、流水线和其他资源。</td>
        </tr>
      </tbody>
    </table>
 
-5. 查看创建的四个帐户。
+5. 在**用户**页面，查看创建的四个用户。
 
 
 ### 步骤 2：创建企业空间
 
-在本步骤中，您需要使用上一个步骤中创建的帐户 `ws-manager` 创建一个企业空间。作为管理项目、DevOps 项目和组织成员的基本逻辑单元，企业空间是 KubeSphere 多租户系统的基础。
+在本步骤中，您需要使用上一个步骤中创建的用户 `ws-manager` 创建一个企业空间。作为管理项目、DevOps 项目和组织成员的基本逻辑单元，企业空间是 KubeSphere 多租户系统的基础。
 
-1. 以 `ws-manager` 身份登录 KubeSphere，它具有管理平台上所有企业空间的权限。点击左上角的**平台管理**，选择**访问控制**。在**企业空间**中，可以看到仅列出了一个默认企业空间 `system-workspace`，即系统企业空间，其中运行着与系统相关的组件和服务，您无法删除该企业空间。
+1. 以 `ws-manager` 身份登录 KubeSphere。点击左上角的**平台管理**，选择**访问控制**。在**企业空间**中，可以看到仅列出了一个默认企业空间 `system-workspace`，即系统企业空间，其中运行着与系统相关的组件和服务，您无法删除该企业空间。
 
 2. 点击右侧的**创建**，将新企业空间命名为 `demo-workspace`，并将用户 `ws-admin` 设置为企业空间管理员。完成后，点击**创建**。
 
@@ -121,34 +122,34 @@ KubeSphere 的多租户系统分**三个**层级，即集群、企业空间和�
 
 3. 登出控制台，然后以 `ws-admin` 身份重新登录。在**企业空间设置**中，选择**企业空间成员**，然后点击**邀请**。
 
-4. 邀请 `project-admin` 和 `project-regular` 进入企业空间，分别授予 `workspace-self-provisioner` 和 `workspace-viewer` 角色，点击**确定**。
+4. 邀请 `project-admin` 和 `project-regular` 进入企业空间，分别授予 `demo-workspace-self-provisioner` 和 `demo-workspace-viewer` 角色，点击**确定**。
 
    {{< notice note >}}
 实际角色名称的格式：`<workspace name>-<role name>`。例如，在名为 `demo-workspace` 的企业空间中，角色 `viewer` 的实际角色名称为 `demo-workspace-viewer`。
    {{</ notice >}}
 
-5. 将 `project-admin` 和 `project-regular` 都添加到企业空间后，点击**确定**。在**企业空间**中，您可以看到列出的三名成员。
+5. 将 `project-admin` 和 `project-regular` 都添加到企业空间后，点击**确定**。在**企业空间成员**中，您可以看到列出的三名成员。
 
    <table>
      <tbody>
        <tr>
-         <th width='150'>帐户</th>
-         <th width='150'>角色</th>
-         <th>描述</th>
+         <th width='150'>用户</th>
+         <th width='150'>分配的企业空间角色</th>
+         <th>角色权限</th>
        </tr>
        <tr>
          <td><code>ws-admin</code></td>
-         <td><code>workspace-admin</code></td>
-         <td>管理指定企业空间中的所有资源（在此示例中，此帐户用于邀请新成员加入企业空间）。</td>
+         <td><code>demo-workspace-admin</code></td>
+         <td>管理指定企业空间中的所有资源（在此示例中，此用户用于邀请新成员加入企业空间）。</td>
        </tr>
        <tr>
          <td><code>project-admin</code></td>
-         <td><code>workspace-self-provisioner</code></td>
+         <td><code>demo-workspace-self-provisioner</code></td>
          <td>创建和管理项目以及 DevOps 项目，并邀请新成员加入项目。</td>
        </tr><tr>
          <td><code>project-regular</code></td>
-         <td><code>workspace-viewer</code></td>
-       <td><code>project-regular</code> 将由 <code>project-admin</code> 邀请至项目或 DevOps 项目。该帐户将用于在指定项目中创建工作负载、流水线和其他资源。</td>
+         <td><code>demo-workspace-viewer</code></td>
+       <td><code>project-regular</code> 将由 <code>project-admin</code> 邀请至项目或 DevOps 项目。该用户将用于在指定项目中创建工作负载、流水线和其他资源。</td>
        </tr>
      </tbody>
    </table>
@@ -159,7 +160,7 @@ KubeSphere 的多租户系统分**三个**层级，即集群、企业空间和�
 
 1. 以 `project-admin` 身份登录 KubeSphere Web 控制台，在**项目**中，点击**创建**。
 
-2. 输入项目名称（例如 `demo-project`），然后点击**确定**完成，您还可以为项目添加别名和描述。
+2. 输入项目名称（例如 `demo-project`），点击**确定**。您还可以为项目添加别名和描述。
 
 3. 在**项目**中，点击刚创建的项目查看其详情页面。
 
