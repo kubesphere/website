@@ -159,7 +159,7 @@ CPU 资源以 CPU 单位计量，即 KubeSphere 中的 **Core**。内存资源�
 
 #### **容器安全上下文**
 
-安全上下文（Security Context）定义容器组或容器的特权和访问控制设置。有关安全上下文的更多信息，请访问 [容器组安全策略](https://kubernetes.io/zh/docs/concepts/policy/pod-security-policy/)。
+安全上下文（Security Context）定义容器组或容器的特权和访问控制设置。有关安全上下文的更多信息，请访问 [容器组安全策略](https://kubernetes.io/docs/concepts/security/pod-security-policy/)。
 
 #### **同步主机时区**
 

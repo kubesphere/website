@@ -14,7 +14,7 @@ KubeSphere 旨在解决 Kubernetes 在构建、部署、管理和可观测性等
 
 作为一个综合性的开源平台，KubeSphere 致力于提供更加友好的用户体验，更强大的操作功能。例如，KubeSphere 的交互式 Web 控制台方便用户直接在平台上进行测试和操作，同时还内置了命令行工具 Kubectl，让习惯使用命令行操作的用户也能快速上手，以最低的学习成本轻松地在平台上创建和修改各类资源。
 
-此外，KubeSphere 在存储和网络方面提供了最优的解决方案，比如存储除了支持流行的开源共享存储如 Ceph RBD 和 GlusterFS 之外，还提供[青云QingCloud 云平台块存储](https://docs.qingcloud.com/product/storage/volume/)和青云QingCloud 自研的[分布式存储 QingStor NeonSAN](https://docs.qingcloud.com/product/storage/volume/super_high_performance_shared_volume/) 作为 Kubernetes 的持久化存储，通过集成的 QingCloud CSI 和 NeonSAN CSI 插件，即可使用青云QingCloud 提供的高性能块存储或 NeonSAN 作为存储卷挂载至工作负载，为企业应用和数据提供更稳定安全的存储服务。
+此外，KubeSphere 在存储和网络方面提供了最优的解决方案，比如存储除了支持流行的开源共享存储如 Ceph RBD 和 GlusterFS 之外，还提供[青云QingCloud 云平台块存储](https://docs.qingcloud.com/product/storage/volume/)和青云QingCloud 自研的[分布式存储 QingStor NeonSAN](https://docs.qingcloud.com/product/storage/volume/super_high_performance_shared_volume/) 作为 Kubernetes 的持久化存储，通过集成的 QingCloud CSI 和 NeonSAN CSI 插件，即可使用青云QingCloud 提供的高性能块存储或 NeonSAN 作为持久卷挂载至工作负载，为企业应用和数据提供更稳定安全的存储服务。
 
 ## 为什么选择 KubeSphere
 

@@ -16,9 +16,9 @@ This section gives you an overview of a single-master multi-node installation, i
 
 ## Concept
 
-A multi-node cluster is composed of at least one master node and one worker node. You can use any node as the **taskbox** to carry out the installation task. You can add additional nodes based on your needs (for example, for high availability) both before and after the installation.
+A multi-node cluster is composed of at least one control plane and one worker node. You can use any node as the **taskbox** to carry out the installation task. You can add additional nodes based on your needs (for example, for high availability) both before and after the installation.
 
-- **Master**. A master node generally hosts the control plane that controls and manages the whole system.
+- **Control Plane**. The control plane generally controls and manages the whole system.
 - **Worker**. Worker nodes run the actual applications deployed on them.
 
 ## Step 1: Prepare Linux Hosts
@@ -90,11 +90,11 @@ KubeKey can install Kubernetes and KubeSphere together. The dependency that need
 
 {{</ notice >}}
 
-This example includes three hosts as below with the master node serving as the taskbox.
+This example includes three hosts as below with the control plane serving as the taskbox.
 
 | Host IP     | Host Name | Role         |
 | ----------- | --------- | ------------ |
-| 192.168.0.2 | master    | master, etcd |
+| 192.168.0.2 | control plane    | control plane, etcd |
 | 192.168.0.3 | node1     | worker       |
 | 192.168.0.4 | node2     | worker       |
 
@@ -187,7 +187,7 @@ Here are some examples for your reference:
 
 ### 2. Edit the configuration file of a Kubernetes multi-node cluster
 
-A default file `config-sample.yaml` will be created if you do not change the name. Edit the file and here is an example of the configuration file of a multi-node cluster with one master node.
+A default file `config-sample.yaml` will be created if you do not change the name. Edit the file and here is an example of the configuration file of a multi-node cluster with the control plane.
 
 {{< notice note >}}
 
