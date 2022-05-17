@@ -31,7 +31,7 @@ KubeSphere DevOps 系统为您提供以下功能：
 
 ### KubeSphere CI/CD 流水线工作流
 
-KubeSphere CI/CD 流水线基于底层 Kubernetes Jenkins Agent 而运行。这些 Jenkins Agent 可以动态扩缩，即根据任务状态进行动态供应或释放。Jenkins Controller 和 Agent 以 Pod 的形式运行在 KubeSphere 节点上。Controller 运行在其中一个节点上，其配置数据存储在一个存储卷 (Volume) 中。Agent 运行在各个节点上，但可能不会一直处于运行状态，而是根据需求动态创建并自动删除。
+KubeSphere CI/CD 流水线基于底层 Kubernetes Jenkins Agent 而运行。这些 Jenkins Agent 可以动态扩缩，即根据任务状态进行动态供应或释放。Jenkins Controller 和 Agent 以 Pod 的形式运行在 KubeSphere 节点上。Controller 运行在其中一个节点上，其配置数据存储在一个持久卷声明中。Agent 运行在各个节点上，但可能不会一直处于运行状态，而是根据需求动态创建并自动删除。
 
 当 Jenkins Controller 收到构建请求，会根据标签动态创建运行在 Pod 中的 Jenkins Agent 并注册到 Controller 上。当 Agent 运行完任务后，将会被释放，相关的 Pod 也会被删除。
 
@@ -43,4 +43,4 @@ KubeSphere CI/CD 流水线基于底层 Kubernetes Jenkins Agent 而运行。这�
 
 **高可扩缩性**：当 KubeSphere 集群因资源不足而导致任务长时间排队等待时，您可以向集群新增节点。
 
-**高可用性**：当 Jenkins Controller 故障时，KubeSphere 会自动创建一个新的 Jenkins Controller 容器，并将存储卷挂载至新创建的容器，保证数据不会丢失，从而实现集群高可用。
+**高可用性**：当 Jenkins Controller 故障时，KubeSphere 会自动创建一个新的 Jenkins Controller 容器，并将持久卷挂载至新创建的容器，保证数据不会丢失，从而实现集群高可用。

@@ -85,7 +85,7 @@ Source-to-Image (S2I) 是一个工具箱和工作流，用于从源代码构建�
 
    其他字段请直接使用默认值。有关如何在**容器设置**页面配置探针和设置其他参数的更多信息，请参见[容器组设置](../../../project-user-guide/application-workloads/container-image-settings/)。
 
-6. 在**存储卷设置**页面，您可以为容器添加存储卷。有关更多信息，请参见[存储卷](../../../project-user-guide/storage/volumes/)。点击**下一步**继续。
+6. 在**存储设置**页面，您可以为容器添加持久卷。有关更多信息，请参见[持久卷](../../../project-user-guide/storage/volumes/)。点击**下一步**继续。
 
 7. 在**高级设置**页面，选中**外部访问**并选择 **NodePort** 作为访问方式。点击**创建**完成整个操作过程。
 
