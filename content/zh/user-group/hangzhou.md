@@ -88,6 +88,9 @@ activities:
     - image: /images/user-group/shanghai/rotation/ex.png
       link: https://kubesphere.com.cn/live/meetup-hangzhou1023/
 
+    - image: /images/user-group/hangzhou/fudata-kubesphere-cover.png
+      link: https://kubesphere.com.cn/live/fudata-kubesphere/
+
   review:
     - text: Kubernetes 备份容灾服务产品体验教程
       description: KubeSphere Cloud 云原生备份容灾服务是 KubeSphere 团队针对混合云场景推出的 Kubernetes 备份容灾即服务产品。

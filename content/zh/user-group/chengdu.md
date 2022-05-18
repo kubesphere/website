@@ -84,6 +84,9 @@ activities:
     - image: https://pek3b.qingstor.com/kubesphere-community/images/hpa-cover.png
       link: https://kubesphere.com.cn/live/hpa-chengdu/
 
+    - image: https://pek3b.qingstor.com/kubesphere-community/images/cloudnative-chengdu-20220514-cover.png
+      link: https://kubesphere.com.cn/live/meetup-chengdu-20220514/
+
   review:
     - text: 马上消费金融基于 KubeSphere 的 AI 平台的开发实践
       description: 本主题从 AI 平台业务架构，开发痛点等切入，介绍了引入 KubeSphere 的原因、过程、收获等；进而介绍了 KubeSphere 的部署架构、配置原理、二次开发等，力求打消 KubeSphere 的神秘感。
