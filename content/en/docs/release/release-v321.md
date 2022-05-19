@@ -26,7 +26,7 @@ weight: 18099
 - Fix an issue where StatefulSet creation fails when a volume template is mounted. ([#2730](https://github.com/kubesphere/console/pull/2730), [@weili520](https://github.com/weili520))
 - Fix an issue where cluster gateway information fails to be obtained when the user does not have permission to view cluster information. ([#2695](https://github.com/kubesphere/console/pull/2695), [@harrisonliu5](https://github.com/harrisonliu5))
 - Fix an issue where status and run records of pipelines are not automatically updated. ([#2594](https://github.com/kubesphere/console/pull/2594), [@harrisonliu5](https://github.com/harrisonliu5))
-- Add a tip for the kubernetesDeply pipeline step, which indicates that the step is about to be deprecated. ([#2660](https://github.com/kubesphere/console/pull/2660), [@harrisonliu5](https://github.com/harrisonliu5))
+- Add a tip for the kubernetesDeploy pipeline step, which indicates that the step is about to be deprecated. ([#2660](https://github.com/kubesphere/console/pull/2660), [@harrisonliu5](https://github.com/harrisonliu5))
 - Fix an issue where HTTP registry addresses of image registry Secrets cannot be validated. ([#2795](https://github.com/kubesphere/console/pull/2795), [@harrisonliu5](https://github.com/harrisonliu5))
 - Fix the incorrect URL of the Harbor image. ([#2784](https://github.com/kubesphere/console/pull/2784), [@harrisonliu5](https://github.com/harrisonliu5))
 - Fix a display error of log search results. ([#2598](https://github.com/kubesphere/console/pull/2598), [@weili520](https://github.com/weili520))
