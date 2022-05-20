@@ -19,10 +19,10 @@ Two types of pipelines can be created in KubeSphere: Pipelines created based on 
 ## Prerequisites
 
 - You need to have a [Docker Hub](https://hub.docker.com/) account and a [GitHub](https://github.com/) account.
-- You need to [enable the KubeSphere DevOps system](../../../../pluggable-components/devops/).
-- You need to create a workspace, a DevOps project, and a user (`project-regular`). This account needs to be invited to the DevOps project with the `operator` role. See [Create Workspaces, Projects, Users and Roles](../../../../quick-start/create-workspace-and-project/) if they are not ready.
-- You need to set a CI dedicated node for running pipelines. Refer to [Set a CI Node for Dependency Caching](../../../../devops-user-guide/how-to-use/devops-settings/set-ci-node/).
-- You need to install and configure SonarQube. Refer to [Integrate SonarQube into Pipeline](../../../../devops-user-guide/how-to-integrate/sonarqube/). If you skip this part, there is no **SonarQube Analysis** below.
+- You need to [enable the KubeSphere DevOps system](../../../pluggable-components/devops/).
+- You need to create a workspace, a DevOps project, and a user (`project-regular`). This account needs to be invited to the DevOps project with the `operator` role. See [Create Workspaces, Projects, Users and Roles](../../../quick-start/create-workspace-and-project/) if they are not ready.
+- You need to set a CI dedicated node for running pipelines. Refer to [Set a CI Node for Dependency Caching](../../how-to-use/set-ci-node/).
+- You need to install and configure SonarQube. Refer to [Integrate SonarQube into Pipeline](../../../devops-user-guide/how-to-integrate/sonarqube/). If you skip this part, there is no **SonarQube Analysis** below.
 
 ## Jenkins Pipeline Overview
 
@@ -47,7 +47,7 @@ There are eight stages as shown below in this example pipeline.
 
 ### Step 1: Create credentials
 
-1. Log in to the KubeSphere console as `project-regular`. Go to your DevOps project and create the following credentials in **Credentials** under **DevOps Project Settings**. For more information about how to create credentials, see [Credential Management](../../../../devops-user-guide/how-to-use/devops-settings/credential-management/).
+1. Log in to the KubeSphere console as `project-regular`. Go to your DevOps project and create the following credentials in **Credentials** under **DevOps Project Settings**. For more information about how to create credentials, see [Credential Management](../../../devops-user-guide/how-to-use/credential-management/).
 
    {{< notice note >}}
 
@@ -61,7 +61,7 @@ There are eight stages as shown below in this example pipeline.
    | github-id       | Account Credentials | GitHub       |
    | demo-kubeconfig | kubeconfig          | Kubernetes   |
 
-2. You need to create an additional credential (`sonar-token`) for SonarQube, which is used in stage 3 (SonarQube analysis) mentioned above. Refer to [Create SonarQube Token for New Project](../../../../devops-user-guide/how-to-integrate/sonarqube/#create-a-sonarqube-token-for-a-new-project) to enter your SonarQube token in the **Token** field for a credential of the **Access token** type. Click **OK** to finish.
+2. You need to create an additional credential (`sonar-token`) for SonarQube, which is used in stage 3 (SonarQube analysis) mentioned above. Refer to [Create SonarQube Token for New Project](../../../devops-user-guide/how-to-integrate/sonarqube/#create-a-sonarqube-token-for-a-new-project) to enter your SonarQube token in the **Token** field for a credential of the **Access token** type. Click **OK** to finish.
 
 3. You also need to create a GitHub personal access token with the permission as shown in the below image, and then use the generated token to create Account Credentials (for example, `github-token`) for GitHub authentication in your DevOps project. 
 
@@ -110,7 +110,7 @@ You need to create two projects, such as `kubesphere-sample-dev` and `kubesphe
 
 {{< notice note >}}
 
-The account `project-admin` needs to be created in advance since it is the reviewer of the CI/CD Pipeline. See [Create Workspaces, Projects, Users and Roles](../../../../quick-start/create-workspace-and-project/) for more information.
+The account `project-admin` needs to be created in advance since it is the reviewer of the CI/CD Pipeline. See [Create Workspaces, Projects, Users and Roles](../../../quick-start/create-workspace-and-project/) for more information.
 
 {{</ notice >}}
 

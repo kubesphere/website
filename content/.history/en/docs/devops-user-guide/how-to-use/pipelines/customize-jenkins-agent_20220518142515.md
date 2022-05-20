@@ -12,7 +12,7 @@ This document describes how to customize a Jenkins agent on KubeSphere.
 
 ## Prerequisites
 
-- You have enabled [the KubeSphere DevOps System](../../../../pluggable-components/devops/).
+- You have enabled [the KubeSphere DevOps System](../../../pluggable-components/devops/).
 
 ## Customize a Jenkins agent
 

@@ -12,12 +12,12 @@ This tutorial demonstrates how to create a pipeline through graphical editing pa
 
 ## Prerequisites
 
-- You need to [enable the KubeSphere DevOps System](../../../../pluggable-components/devops/).
+- You need to [enable the KubeSphere DevOps System](../../../../docs/pluggable-components/devops/).
 - You need to have a [Docker Hub](http://www.dockerhub.com/) account.
-- You need to create a workspace, a DevOps project, and a user (`project-regular`). This user must be invited to the DevOps project with the `operator` role. See [Create Workspaces, Projects, Users and Roles](../../../../quick-start/create-workspace-and-project/) if they are not ready.
-- Set CI dedicated nodes to run the pipeline. For more information, see [Set CI Node for Dependency Cache](../../../../devops-user-guide/how-to-use/devops-settings/set-ci-node/).
-- Configure your email server for pipeline notifications (optional). For more information, see [Set Email Server for KubeSphere Pipelines](../../../../devops-user-guide/how-to-use/pipelines/jenkins-email/).
-- Configure SonarQube to include code analysis as part of the pipeline (optional). For more information, see [Integrate SonarQube into Pipelines](../../../../devops-user-guide/how-to-integrate/sonarqube/).
+- You need to create a workspace, a DevOps project, and a user (`project-regular`). This user must be invited to the DevOps project with the `operator` role. See [Create Workspaces, Projects, Users and Roles](../../../quick-start/create-workspace-and-project/) if they are not ready.
+- Set CI dedicated nodes to run the pipeline. For more information, see [Set CI Node for Dependency Cache](../set-ci-node/).
+- Configure your email server for pipeline notifications (optional). For more information, see [Set Email Server for KubeSphere Pipelines](../../how-to-use/jenkins-email/).
+- Configure SonarQube to include code analysis as part of the pipeline (optional). For more information, see [Integrate SonarQube into Pipelines](../../../devops-user-guide/how-to-integrate/sonarqube/).
 
 ## Pipeline Overview
 
@@ -40,7 +40,7 @@ This example pipeline includes the following six stages.
 
 ### Step 1: Create credentials
 
-1. Log in to the KubeSphere console as `project-regular`. Go to your DevOps project and create the following credentials in **Credentials** under **DevOps Project Settings**. For more information about how to create credentials, see [Credential Management](../../../../devops-user-guide/how-to-use/devops-settings/credential-management/).
+1. Log in to the KubeSphere console as `project-regular`. Go to your DevOps project and create the following credentials in **Credentials** under **DevOps Project Settings**. For more information about how to create credentials, see [Credential Management](../credential-management/).
 
    {{< notice note >}} 
 
@@ -53,7 +53,7 @@ This example pipeline includes the following six stages.
    | dockerhub-id    | Username and password | Docker Hub   |
    | demo-kubeconfig | kubeconfig            | Kubernetes   |
 
-2. You need to create an additional credential ID (`sonar-token`) for SonarQube, which is used in stage 3 (Code analysis) mentioned above. Refer to [Create SonarQube Token for New Project](../../../../devops-user-guide/how-to-integrate/sonarqube/#create-sonarqube-token-for-new-project) to enter your SonarQube token in the **Token** field for a credential of the **Access token** type. Click **OK** to finish.
+2. You need to create an additional credential ID (`sonar-token`) for SonarQube, which is used in stage 3 (Code analysis) mentioned above. Refer to [Create SonarQube Token for New Project](../../../devops-user-guide/how-to-integrate/sonarqube/#create-sonarqube-token-for-new-project) to enter your SonarQube token in the **Token** field for a credential of the **Access token** type. Click **OK** to finish.
 
 3. In total, you have three credentials in the list.
 
@@ -61,7 +61,7 @@ This example pipeline includes the following six stages.
 
 In this tutorial, the example pipeline will deploy the [sample](https://github.com/kubesphere/devops-maven-sample/tree/sonarqube) app to a project. Hence, you must create the project (for example, `kubesphere-sample-dev`) in advance. The Deployment and Service of the app will be created automatically in the project once the pipeline runs successfully.
 
-You can use the user `project-admin` to create the project. Besides, this user is also the reviewer of the CI/CD pipeline. Make sure the account `project-regular` is invited to the project with the role of `operator`. For more information, see [Create Workspaces, Projects, Users and Roles](../../../../quick-start/create-workspace-and-project/).
+You can use the user `project-admin` to create the project. Besides, this user is also the reviewer of the CI/CD pipeline. Make sure the account `project-regular` is invited to the project with the role of `operator`. For more information, see [Create Workspaces, Projects, Users and Roles](../../../quick-start/create-workspace-and-project/).
 
 ### Step 3: Create a pipeline
 
@@ -354,7 +354,7 @@ Click the **Artifacts** tab and then click the icon on the right to download the
 
 ### Step 8: View code analysis results
 
-On the **Code Check** page, view the code analysis result of this example pipeline, which is provided by SonarQube. If you do not configure SonarQube in advance, this section is not available. For more information, see [Integrate SonarQube into Pipelines](../../../how-to-integrate/sonarqube/).
+On the **Code Check** page, view the code analysis result of this example pipeline, which is provided by SonarQube. If you do not configure SonarQube in advance, this section is not available. For more information, see [Integrate SonarQube into Pipelines](../../../devops-user-guide/how-to-integrate/sonarqube/).
 
 ![sonarqube-result-detail](/images/docs/devops-user-guide/using-devops/create-a-pipeline-using-graphical-editing-panels/sonarqube-result-detail.png)
 

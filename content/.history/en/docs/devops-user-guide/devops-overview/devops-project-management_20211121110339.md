@@ -36,11 +36,11 @@ A pipeline entails a collection of plugins that allow you to constantly and cons
 
 ### Credentials
 
-A DevOps project user with required permissions can configure credentials for pipelines for the interaction with external environments. Once the user adds these credentials in a DevOps project, the credentials can be used by the DevOps project to interact with third-party applications, such as GitHub, GitLab and Docker Hub. For more information, see [Credential Management](../../../devops-user-guide/how-to-use/devops-settings/credential-management/).
+A DevOps project user with required permissions can configure credentials for pipelines for the interaction with external environments. Once the user adds these credentials in a DevOps project, the credentials can be used by the DevOps project to interact with third-party applications, such as GitHub, GitLab and Docker Hub. For more information, see [Credential Management](../../../devops-user-guide/how-to-use/credential-management/).
 
 ### Members and Roles
 
-Similar to a project, a DevOps project also requires users to be granted different roles before they can work in the DevOps project. Project administrators (for example, `project-admin`) are responsible for inviting tenants and granting them different roles. For more information, see [Role and Member Management](../../../devops-user-guide/how-to-use/devops-settings/role-and-member-management/).
+Similar to a project, a DevOps project also requires users to be granted different roles before they can work in the DevOps project. Project administrators (for example, `project-admin`) are responsible for inviting tenants and granting them different roles. For more information, see [Role and Member Management](../role-and-member-management/).
 
 ## Edit or Delete a DevOps Project
 

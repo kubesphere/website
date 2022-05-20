@@ -12,13 +12,13 @@ This tutorial demonstrates how to use Jenkins shared libraries in KubeSphere Dev
 
 ## Prerequisites
 
-- You need to [enable the KubeSphere DevOps system](../../../../pluggable-components/devops/).
-- You need to create a workspace, a DevOps project and a user (`project-regular`). This user must be invited to the DevOps project with the `operator` role. For more information, refer to [Create Workspaces, Projects, Users and Roles](../../../../quick-start/create-workspace-and-project/).
+- You need to [enable the KubeSphere DevOps system](../../../pluggable-components/devops/).
+- You need to create a workspace, a DevOps project and a user (`project-regular`). This user must be invited to the DevOps project with the `operator` role. For more information, refer to [Create Workspaces, Projects, Users and Roles](../../../quick-start/create-workspace-and-project/).
 - You need to have a Jenkins shared library available. This tutorial uses the Jenkins shared library in [a GitHub repository](https://github.com/devops-ws/jenkins-shared-library) as an example.
 
 ## Configure a Shared Library on the Jenkins Dashboard
 
-1. [Log in to the Jenkins dashboard](../../../how-to-integrate/sonarqube/#step-5-add-the-sonarqube-server-to-jenkins) and click **Manage Jenkins** in the left navigation pane.
+1. [Log in to the Jenkins dashboard](../../how-to-integrate/sonarqube/#step-5-add-the-sonarqube-server-to-jenkins) and click **Manage Jenkins** in the left navigation pane.
 
 2. Scroll down and click **Configure System**.
 

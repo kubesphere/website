@@ -14,13 +14,13 @@ In KubeSphere 3.1.x and later, you can create a multi-branch pipeline with GitLa
 
 - You need to have a [GitLab](https://gitlab.com/users/sign_in) account and a [Docker Hub](https://hub.docker.com/) account.
 - You need to [enable the KubeSphere DevOps system](../../../../pluggable-components/devops/).
-- You need to create a workspace, a DevOps project and a user (`project-regular`). This user must be invited to the DevOps project with the `operator` role. For more information, refer to [Create Workspaces, Projects, Users and Roles](../../../../quick-start/create-workspace-and-project/).
+- You need to create a workspace, a DevOps project and a user (`project-regular`). This user must be invited to the DevOps project with the `operator` role. For more information, refer to [Create Workspaces, Projects, Users and Roles](../../../quick-start/create-workspace-and-project/).
 
 ## Hands-on Lab
 
 ### Step 1: Create credentials
 
-1. Log in to the KubeSphere console as `project-regular`. Go to your DevOps project and create the following credentials in **Credentials** under **DevOps Project Settings**. For more information about how to create credentials, see [Credential Management](../../../../devops-user-guide/how-to-use/devops-settings/credential-management/).
+1. Log in to the KubeSphere console as `project-regular`. Go to your DevOps project and create the following credentials in **Credentials** under **DevOps Project Settings**. For more information about how to create credentials, see [Credential Management](../../../devops-user-guide/how-to-use/credential-management/).
 
    {{< notice note >}}
 
