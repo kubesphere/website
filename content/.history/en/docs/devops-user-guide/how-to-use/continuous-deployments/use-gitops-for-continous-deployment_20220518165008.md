@@ -1,5 +1,5 @@
 ---
-title: "在 KubeSphere 中使用 GitOps 实现持续部署"
+title: "Use GitOps for Continuous Deployment on KubeSphere"
 keywords: 'Kubernetes, GitOps, KubeSphere, CI，CD, 持续集成，持续部署'
 description: '介绍如何在 KubeSphere 中使用 GitOps 实现持续部署。'
 linkTitle: "在 KubeSphere 中使用 GitOps 实现持续部署"
@@ -9,26 +9,25 @@ GitOps 是一种为云原生应用实现持续部署的理念。GitOps 的核心
 
 KubeSphere 3.3.0 引入了 GitOps，您可以在控制台上便捷地创建持续部署。
 
-## 准备工作
+## Prerequsites
 
-- 您需要有一个企业空间、一个 DevOps 项目和一个用户 (`project-regular`)，并已邀请此帐户至 DevOps 项目中且授予 `operator` 角色。如果尚未准备好，请参考[创建企业空间、项目、用户和角色](../../../../quick-start/create-workspace-and-project/)。
+- You have a workspace, a DevOps project and a user (`project-regular`) invited to the DevOps project with the `operator` role. If they are not ready yet, please refer to [Create Workspaces, Projects, Users and Roles](../../../../quick-start/create-workspace-and-project/).
 
-- 您需要启用 [KubeSphere DevOps 系统](../../../../pluggable-components/devops/)。
+- You need to [enable the KubeSphere DevOps system](../../../../pluggable-components/devops/).
 
+- You need to [import an code repository](../../../../devops-user-guide/how-to-use/code-repositories/import-code-repositories/).
 
-- 您需要[导入代码仓库](../../../../devops-user-guide/how-to-use/code-repositories/import-code-repositories/)。
+## Procedure
 
-## 操作步骤
+1. Log in to the KubeSphere consone as `project-admin`. In the navigation tree on the left, click **DevOps Projects**.
 
-1. 以 `project-regular` 用户登录 KubeSphere 控制台，在左侧导航树，点击 **DevOps 项目**。
+2. On the **DevOps Projects** page, click the DevOps project you created.
 
-2. 在右侧的 **DevOps 项目**页面，点击您创建的 DevOps 项目。
+3. In the navigation tree on the left, click **Continuous Deployments**.
 
-3. 在左侧的导航树，点击**持续部署**。
+4. On the **Continuous Deployments** page, click **Create**.
 
-4. 在右侧的**持续部署**页面，点击**创建**。
-
-5. 在**基本信息**页签，输入持续部署名称并选择代码仓库，您也可以设置别名和添加描述信息，点击**下一步**。
+5. On the **Basic Information** tab, enter a name of the continuous deployment and choose a code repository. Optionally, you can set an alias and add description. 输入持续部署名称并选择代码仓库，您也可以设置别名和添加描述信息，点击**下一步**。
 
 6. 在**部署设置**页签，选择持续部署的部署集群和项目。
 
@@ -39,12 +38,7 @@ KubeSphere 3.3.0 引入了 GitOps，您可以在控制台上便捷地创建持�
     - **清理资源**：自动同步时,自动删除 git 中不存在的资源。
     - **自恢复**：时刻保证与 git 中定义的状态同步。
 
-<<<<<<< HEAD
 9.  在**同步设置**区域，按照实际需要选择以下设置项：
-<<<<<<< HEAD
-
-=======
->>>>>>> 1ad62a1f (devops english version)
     - **跳过规范校验**：不校验资源规范性。
     - **自动创建项目**：在同步的过程中，自动创建项目。
     - **最后清理**：直到所有的资源都已经同步且处于健康状态才删除不存在的资源。
@@ -90,7 +84,7 @@ KubeSphere 3.3.0 引入了 GitOps，您可以在控制台上便捷地创建持�
       </tr>
       <tr>
          <td>部署位置</td>
-        <td>资源部署的集群和项目。</td>
+        <td>部署的集群和项目。</td>
       </tr>
       <tr>
         <td>更新时间</td>
