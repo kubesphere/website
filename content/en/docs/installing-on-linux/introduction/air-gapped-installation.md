@@ -545,12 +545,18 @@ For example:
            password: Harbor12345
        plainHTTP: false
        privateRegistry: "dockerhub.kubekey.local"
-       namespaceOverride: ""
+       namespaceOverride: "kubesphereio"
        registryMirrors: []
        insecureRegistries: []
      addons: []
    ```
+   {{< notice note >}}
 
+   - In **auths**, enter **dockerhub.kubekey.local**, username (**admin**) and password (**Harbor12345**).
+   - In **privateRegistry**, enter **dockerhub.kubekey.local**.
+   - In **namespaceOverride**, enter **kubesphereio**.
+
+    {{</ notice >}}
 7. Run the following command to install a KubeSphere cluster:
 
    ```bash
