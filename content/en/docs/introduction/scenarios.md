@@ -1,7 +1,7 @@
 ---
 title: "Use Cases"
-keywords: 'KubeSphere, Kubernetes, Multi-cluster, Observability, DevOps'
-description: 'Applicable in a variety of scenarios, KubeSphere provides enterprises with containerized environments with a complete set of features for management and operation.'
+keywords: "KubeSphere, Kubernetes, Multi-cluster, Observability, DevOps"
+description: "Applicable in a variety of scenarios, KubeSphere provides enterprises with containerized environments with a complete set of features for management and operation."
 
 weight: 1700
 ---
@@ -18,7 +18,7 @@ The main reasons for employing this method fall into the following four categori
 
 ### High Availability
 
-Users can deploy workloads on multiple clusters by using a global VIP or DNS to send requests to corresponding backend clusters. When a cluster malfunctions or fails to handle requests, the VIP or DNS records can be transferred to a health cluster.
+Users can deploy workloads on multiple clusters by using a global VIP or DNS to send requests to corresponding backend clusters. When a cluster malfunctions or fails to handle requests, the VIP or DNS records can be transferred to a healthy cluster.
 
 ![high-availability](https://ap3.qingstor.com/kubesphere-website/docs/ha.png)
 
@@ -30,7 +30,7 @@ When clusters are deployed in various regions, user requests can be forwarded to
 
 **Failure Isolation**. Generally, it is much easier for multiple small clusters to isolate failures than a large cluster. In case of outages, network failures, insufficient resources or other possible resulting issues, the failure can be isolated within a certain cluster without spreading to others.
 
-**Business Isolation**. Although Kubernetes provides namespaces as a solution to app isolation, this method only represents the isolation in logic. This is because different namespaces are connected through the network, which means the issue of resource preemption still exists. To achieve further isolation, users need to create additional network isolation policies or set resource quotas. Using multiple clusters can achieve complete physical isolation that is more secure and reliable than the isolation through namespaces. For example, this is extremely effective when different departments within an enterprise use multiple clusters for the deployment of development, testing or production environments.
+**Business Isolation**. Although Kubernetes provides namespaces as a solution to app isolation, this method only represents the isolation in logic. This is because different namespaces are connected through the network, which means the issue of resource preemption still exists. To achieve further isolation, users need to create additional network isolation policies or set resource quotas. Using multiple clusters users can achieve complete physical isolation that is more secure and reliable than the isolation through namespaces. For example, this is extremely effective when different departments within an enterprise use multiple clusters for the deployment of development, testing or production environments.
 
 ![pipeline](https://ap3.qingstor.com/kubesphere-website/docs/pipeline.png)
 
@@ -82,7 +82,7 @@ As mentioned above, it is not uncommon for individuals or organizations to deplo
 
 ### Visualization
 
-As users deploy microservices which will communicate among themselves considerably, it will help users gain a better understanding of topological relations between microservices if the connection is highly visualized. Besides, distributed tracing is also essential for each service, providing operators with a detailed understanding of call flows and service dependencies within a mesh. 
+As users deploy microservices which will communicate among themselves considerably, it will help users gain a better understanding of topological relations between microservices if the connection is highly visualized. Besides, distributed tracing is also essential for each service, providing operators with a detailed understanding of call flows and service dependencies within a mesh.
 
 ### Rolling Updates
 
