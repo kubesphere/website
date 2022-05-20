@@ -1,5 +1,5 @@
 ---
-title: "在 KubeSphere 中使用 GitOps 实现持续部署"
+title: "Use GitOps for Continuous Deployment on KubeSphere"
 keywords: 'Kubernetes, GitOps, KubeSphere, CI，CD, 持续集成，持续部署'
 description: '介绍如何在 KubeSphere 中使用 GitOps 实现持续部署。'
 linkTitle: "在 KubeSphere 中使用 GitOps 实现持续部署"
@@ -9,49 +9,45 @@ GitOps 是一种为云原生应用实现持续部署的理念。GitOps 的核心
 
 KubeSphere 3.3.0 引入了 GitOps，您可以在控制台上便捷地创建持续部署。
 
-## 准备工作
+## Prerequsites
 
-- 您需要有一个企业空间、一个 DevOps 项目和一个用户 (`project-regular`)，并已邀请此帐户至 DevOps 项目中且授予 `operator` 角色。如果尚未准备好，请参考[创建企业空间、项目、用户和角色](../../../../quick-start/create-workspace-and-project/)。
+- You have a workspace, a DevOps project and a user (`project-regular`) invited to the DevOps project with the `operator` role. If they are not ready yet, please refer to [Create Workspaces, Projects, Users and Roles](../../../../quick-start/create-workspace-and-project/).
 
-- 您需要启用 [KubeSphere DevOps 系统](../../../../pluggable-components/devops/)。
+- You need to [enable the KubeSphere DevOps system](../../../../pluggable-components/devops/).
 
+- You need to [import an code repository](../../../../devops-user-guide/how-to-use/code-repositories/import-code-repositories/).
 
-- 您需要[导入代码仓库](../../../../devops-user-guide/how-to-use/code-repositories/import-code-repositories/)。
+## Procedure
 
-## 操作步骤
+1. Log in to the KubeSphere consone as `project-admin`，在左侧导航树，点击 **DevOps 项目**。
 
-1. 以 `project-regular` 用户登录 KubeSphere 控制台，在左侧导航树，点击 **DevOps 项目**。
+1. 在右侧的 **DevOps 项目**页面，点击您创建的 DevOps 项目。
 
-2. 在右侧的 **DevOps 项目**页面，点击您创建的 DevOps 项目。
+2. 在左侧的导航树，点击**持续部署**。在右侧的**持续部署**页面，点击**创建**。
 
-3. 在左侧的导航树，点击**持续部署**。
+3. 在**基本信息**页签，输入持续部署名称并选择代码仓库，您也可以设置别名和添加描述信息，点击**下一步**。
 
-4. 在右侧的**持续部署**页面，点击**创建**。
+4. 在**部署设置**页签，选择持续部署的部署集群和项目。
 
-5. 在**基本信息**页签，输入持续部署名称并选择代码仓库，您也可以设置别名和添加描述信息，点击**下一步**。
+5. 在**代码仓库设置**区域，设置代码仓库的分支或标签以及清单文件路径。
 
-6. 在**部署设置**页签，选择持续部署的部署集群和项目。
-
-7. 在**代码仓库设置**区域，设置代码仓库的分支或标签以及清单文件路径。
-
-8. 在**同步策略**区域，您可以选择**手动同步**或****自动同步**。当选择**自动同步**时，会出现**清理资源**和**自恢复**选项，请根据您的实际需要选择。
+6. 在**同步策略**区域，您可以选择**手动同步**或****自动同步**。当选择**自动同步**时，会出现**清理资源**和**自恢复**选项，请根据您的实际需要选择。
 
     - **清理资源**：自动同步时,自动删除 git 中不存在的资源。
     - **自恢复**：时刻保证与 git 中定义的状态同步。
 
-<<<<<<< HEAD
-9.  在**同步设置**区域，按照实际需要选择以下设置项：
+7.  在**同步设置**区域，按照实际需要选择以下设置项：
     - **跳过规范校验**：不校验资源规范性。
     - **自动创建项目**：在同步的过程中，自动创建项目。
     - **最后清理**：直到所有的资源都已经同步且处于健康状态才删除不存在的资源。
     - **仅应用未同步**：仅应用未同步的资源。
 
-10. 在**依赖清理策略**区域，选择一个清理策略：
+8.  在**依赖清理策略**区域，选择一个清理策略：
     - **foreground**：先删除附属资源，再删除主资源。
     - **background**：先删除主资源，再删除附属资源。
     - **orphan**：删除主资源之后，附属资源仍然存在。
 
-11. 在**替换资源**区域，选择是否需要替换已存在的资源，点击**创建**。
+9.  在**替换资源**区域，选择是否需要替换已存在的资源，点击**创建**。
     
     您可以在**持续部署**页面上查看到已创建的持续部署的信息，如下表所示：
 
@@ -86,7 +82,7 @@ KubeSphere 3.3.0 引入了 GitOps，您可以在控制台上便捷地创建持�
       </tr>
       <tr>
          <td>部署位置</td>
-        <td>资源部署的集群和项目。</td>
+        <td>部署的集群和项目。</td>
       </tr>
       <tr>
         <td>更新时间</td>
@@ -95,7 +91,7 @@ KubeSphere 3.3.0 引入了 GitOps，您可以在控制台上便捷地创建持�
     </tbody>
     </table>
 
-12. 点击持续部署右侧的 <img src="/images/docs/common-icons/three-dots.png" width="15" />，您可以执行以下操作：
+10. 点击持续部署右侧的 <img src="/images/docs/common-icons/three-dots.png" width="15" />，您可以执行以下操作：
     - 编辑信息：编辑别名和描述信息。
     - 编辑 YAML：编辑持续部署的 YAML 文件。
     - 同步：触发资源同步。
