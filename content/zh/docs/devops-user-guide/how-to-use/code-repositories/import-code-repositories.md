@@ -14,6 +14,7 @@ KubeSphere 3.3.0 支持您从 GitHub 、 GitLab 或 Bitbucket 导入代码仓库
 
 - 您需要启用 [KubeSphere DevOps 系统](../../../../devops-user-guide/devops-overview/devops-project-management/)。
 
+<<<<<<< HEAD
 ## 操作步骤
 1. 以 `project-regular` 用户登录 KubeSphere 控制台，在左侧导航树，点击 **DevOps 项目**。
 
@@ -25,6 +26,20 @@ KubeSphere 3.3.0 支持您从 GitHub 、 GitLab 或 Bitbucket 导入代码仓库
 
 5. 在**导入代码仓库**对话框，输入代码仓库名称，并选择代码仓库，此处以 GitHub 为例。您也可以为代码仓库设置别名和添加描述信息。
 
+=======
+
+## 操作步骤
+1. 以 `project-regular` 用户登录 KubeSphere 控制台，在左侧导航树，点击 **DevOps 项目**。
+
+2. 在右侧的 **DevOps 项目**页面，点击您创建的 DevOps 项目。
+
+3. 在左侧的导航树，点击**代码仓库**。
+
+4. 在右侧的**代码仓库**页面，点击**导入**。
+
+5. 在**导入代码仓库**对话框，输入代码仓库名称，并选择代码仓库，此处以 GitHub 为例。您也可以为代码仓库设置别名和添加描述信息。
+
+>>>>>>> 44284bfb (devops english version)
 6. 在**凭证**区域，点击**创建凭证**。在弹出的**创建凭证**对话框，设置以下参数：
    - **名称**：输入凭证名称，如 `github-id`。
    - **类型**：取值包括**用户名和密码**、**SSH 密钥**、**访问令牌**和 **kubeconfig**。在 DevOps 项目中，建议使用**用户名和密码**。
