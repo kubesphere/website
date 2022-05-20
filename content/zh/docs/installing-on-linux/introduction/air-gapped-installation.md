@@ -514,7 +514,7 @@ KubeKey v2.0.0 版本新增了清单（manifest）和制品（artifact）的概�
            password: Harbor12345
        plainHTTP: false
        privateRegistry: "dockerhub.kubekey.local"
-       namespaceOverride: ""
+       namespaceOverride: "kubesphereio"
        registryMirrors: []
        insecureRegistries: []
      addons: []
@@ -524,6 +524,7 @@ KubeKey v2.0.0 版本新增了清单（manifest）和制品（artifact）的概�
 
    - 新增 **auths** 配置增加 **dockerhub.kubekey.local** 和账号密码。
    - **privateRegistry** 增加 **dockerhub.kubekey.local**。
+   - **namespaceOverride** 增加 **kubesphereio**。
 
     {{</ notice >}}
 
