@@ -1,7 +1,7 @@
 ---
 title: "KubeSphere Federation"
-keywords: 'Kubernetes, KubeSphere, federation, multicluster, hybrid-cloud'
-description: 'Understand the fundamental concept of Kubernetes federation in KubeSphere, including member clusters and host clusters.'
+keywords: "Kubernetes, KubeSphere, federation, multicluster, hybrid-cloud"
+description: "Understand the fundamental concept of Kubernetes federation in KubeSphere, including member clusters and host clusters."
 linkTitle: "KubeSphere Federation"
 weight: 5120
 ---
@@ -10,11 +10,11 @@ The multi-cluster feature relates to the network connection among multiple clust
 
 ## How the Multi-cluster Architecture Works
 
-Before you use the central control plane of KubeSphere to management multiple clusters, you need to create a host cluster, also known as **host** cluster. The host cluster, essentially, is a KubeSphere cluster with the multi-cluster feature enabled. It provides you with the control plane for unified management of member clusters, also known as **member** cluster. Member clusters are common KubeSphere clusters without the central control plane. Namely, tenants with necessary permissions (usually cluster administrators) can access the control plane from the host cluster to manage all member clusters, such as viewing and editing resources on member clusters. Conversely, if you access the web console of any member cluster separately, you cannot see any resources on other clusters.
+Before you use the central control plane of KubeSphere to manage multiple clusters, you need to create a host cluster, also known as **host** cluster. The host cluster, essentially, is a KubeSphere cluster with the multi-cluster feature enabled. It provides you with the control plane for unified management of member clusters, also known as **member** cluster. Member clusters are common KubeSphere clusters without the central control plane. Namely, tenants with necessary permissions (usually cluster administrators) can access the control plane from the host cluster to manage all member clusters, such as viewing and editing resources on member clusters. Conversely, if you access the web console of any member cluster separately, you cannot see any resources on other clusters.
 
 There can only be one host cluster while multiple member clusters can exist at the same time. In a multi-cluster architecture, the network between the host cluster and member clusters can be [connected directly](../../enable-multicluster/direct-connection/) or [through an agent](../../enable-multicluster/agent-connection/). The network between member clusters can be set in a completely isolated environment.
 
-If you are using on-premises Kubernetes clusters built through kubeadm, install KubeSphere on your Kubernetes clusters by referring to [Air-gapped Installation on Kubernetes](../../../installing-on-kubernetes/on-prem-kubernetes/install-ks-on-linux-airgapped/), and then enable KubeSphere multi-cluster management through direct connection or agent connection. 
+If you are using on-premises Kubernetes clusters built through kubeadm, install KubeSphere on your Kubernetes clusters by referring to [Air-gapped Installation on Kubernetes](../../../installing-on-kubernetes/on-prem-kubernetes/install-ks-on-linux-airgapped/), and then enable KubeSphere multi-cluster management through direct connection or agent connection.
 
 ![kubesphere-federation](/images/docs/multicluster-management/introduction/kubesphere-federation/kubesphere-federation.png)
 
@@ -28,7 +28,7 @@ Before you enable multi-cluster management, make sure you have enough resources 
 
 | Namespace      | kube-federation-system | kubesphere-system |
 | -------------- | ---------------------- | ----------------- |
-| Sub-component  | 2 x controller-manager  | tower             |
+| Sub-component  | 2 x controller-manager | tower             |
 | CPU Request    | 100 m                  | 100 m             |
 | CPU Limit      | 500 m                  | 500 m             |
 | Memory Request | 64 MiB                 | 128 MiB           |
