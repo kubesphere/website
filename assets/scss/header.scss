@@ -212,6 +212,12 @@
           vertical-align: middle;
         }
 
+        img {
+          @media only screen and (max-width: 374px) {
+            display: none;
+          }
+        }
+
         span::after {
           display: inline-block;
           vertical-align: middle;
