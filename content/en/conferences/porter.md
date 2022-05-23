@@ -19,6 +19,7 @@ This component runs on each node, monitoring the change in the service object in
 If the access is required outside the cluster, or to expose the service to users, Kubernetes Service provides two methods: NodePort and LoadBalancer. Besides, Ingress is also a very common option to expose services.
 
 ### NodePort
+
 If the service type is set to NodePort, kube-proxy will apply for a port for the service which is above 30000 (by default). Iptables rules will be configured for all the hosts in the cluster. In this way, users can access the service through any node in the cluster with the assigned port. Please see the image below:
 
 ![NodePort](https://pek3b.qingstor.com/kubesphere-docs/png/20200611115837.png)
@@ -59,7 +60,7 @@ For the first problem, Ingress can be used for L4 but the configuration of Ingre
 
 ## Porter Introduction
 
-[Porter](https://porterlb.io) is an open source cloud native load balancing plugin designed by the KubeSphere development team based on Border Gateway Protocol (BGP). It meanly features:
+[Porter](https://porterlb.io) is an open source cloud native load balancing plugin designed by the KubeSphere development team based on Border Gateway Protocol (BGP). It mainly features:
 
 1. ECMP routing load balancing
 2. BGP dynamic routing configuration
@@ -80,7 +81,7 @@ Porter has been deployed and tested in two environments so far as below. You can
 
 ### ECMP
 
-Equal-Cost Multi-Path (ECMP) means the package forwarding to a same destination can occur along multiple paths of equal cost. When the device supports ECMP, the three-layer traffic that is sent to the target IP or network segment can be distributed by different paths, achieving network load balancing. Besides, once a certain path malfunctions, other paths can finish the forwarding process instead,  serving as the routing redundant backup. Please refer to the image below:
+Equal-Cost Multi-Path (ECMP) means the package forwarding to a same destination can occur along multiple paths of equal cost. When the device supports ECMP, the three-layer traffic that is sent to the target IP or network segment can be distributed by different paths, achieving network load balancing. Besides, once a certain path malfunctions, other paths can finish the forwarding process instead, serving as the routing redundant backup. Please refer to the image below:
 
 ![ECMP Principle](https://pek3b.qingstor.com/kubesphere-docs/png/20200611115936.png)
 
