@@ -30,8 +30,8 @@ weight: 11291
 
    | 凭证 ID         | 类型       | 用途       |
    | --------------- | ---------- | ---------- |
-   | dockerhub-id    | 帐户凭证   | Docker Hub |
-   | gitlab-id       | 帐户凭证   | GitLab     |
+   | dockerhub-id    | 用户名和密码 | Docker Hub |
+   | gitlab-id       | 用户名和密码 | GitLab     |
    | demo-kubeconfig | kubeconfig | Kubernetes |
 
 2. 创建完成后，您可以在列表中看到创建的凭证。

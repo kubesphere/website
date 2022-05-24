@@ -89,8 +89,8 @@ weight: 11440
 | host         | kubeconfig | 用于主集群测试   |
 | shire        | kubeconfig | 用于成员集群生产 |
 | rohan        | kubeconfig | 用于成员集群开发 |
-| dockerhub-id | 帐户凭证   | Docker Hub           |
-| sonar-token  | 秘密文本   | SonarQube            |
+| dockerhub-id | 用户名和密码 | Docker Hub           |
+| sonar-token  | 访问令牌    | SonarQube            |
 
 {{< notice note >}}
 
