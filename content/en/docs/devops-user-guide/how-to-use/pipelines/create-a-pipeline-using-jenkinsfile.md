@@ -57,13 +57,13 @@ There are eight stages as shown below in this example pipeline.
 
    | Credential ID   | Type                | Where to use |
    | --------------- | ------------------- | ------------ |
-   | dockerhub-id    | Account Credentials | Docker Hub   |
-   | github-id       | Account Credentials | GitHub       |
+   | dockerhub-id    | Username and password | Docker Hub   |
+   | github-id       | Username and password | GitHub       |
    | demo-kubeconfig | kubeconfig          | Kubernetes   |
 
 2. You need to create an additional credential (`sonar-token`) for SonarQube, which is used in stage 3 (SonarQube analysis) mentioned above. Refer to [Create SonarQube Token for New Project](../../../../devops-user-guide/how-to-integrate/sonarqube/#create-a-sonarqube-token-for-a-new-project) to enter your SonarQube token in the **Token** field for a credential of the **Access token** type. Click **OK** to finish.
 
-3. You also need to create a GitHub personal access token with the permission as shown in the below image, and then use the generated token to create Account Credentials (for example, `github-token`) for GitHub authentication in your DevOps project. 
+3. You also need to create a GitHub personal access token with the permission as shown in the below image, and then use the generated token to create Username and password (for example, `github-token`) for GitHub authentication in your DevOps project. 
 
    ![github-token-scope](/images/docs/devops-user-guide/using-devops/create-a-pipeline-using-a-jenkinsfile/github-token-scope.png)
 

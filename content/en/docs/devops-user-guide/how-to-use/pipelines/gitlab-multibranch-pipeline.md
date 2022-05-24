@@ -30,8 +30,8 @@ In KubeSphere 3.1.x and later, you can create a multi-branch pipeline with GitLa
 
    | Credential ID   | Type                | Where to use |
    | --------------- | ------------------- | ------------ |
-   | dockerhub-id    | Account Credentials | Docker Hub   |
-   | gitlab-id       | Account Credentials | GitLab       |
+   | dockerhub-id    | Username and password | Docker Hub   |
+   | gitlab-id       | Username and password | GitLab       |
    | demo-kubeconfig | kubeconfig          | Kubernetes   |
 
 2. After creation, you can see the credentials in the list.
