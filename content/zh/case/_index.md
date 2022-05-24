@@ -72,10 +72,13 @@ section2:
       content: "国星宇航是一家 AI 卫星互联网科技公司，由卫星互联网领域的科研院所及部队领军人才创办。"
       link: "adaspace/"
 
+<<<<<<< HEAD
     - icon: "images/case/section6-sinodata.png"
       content: "中科金财是国内领先的区块链技术与金融科技综合服务商，致力于打造领先的产业互联网科技赋能平台。"
       link: "sinodata/"
 
+=======
+>>>>>>> 83636f5a (add new case of adaspace)
 section3:
   title: 'KubeSphere 助力各行各业'
   tip: 全部
