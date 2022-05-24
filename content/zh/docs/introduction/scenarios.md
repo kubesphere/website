@@ -36,8 +36,6 @@ Kubernetes 已经成为容器编排领域的事实标准，很多企业在不同
 
 为应对不同的使用场景，KubeSphere 提供统一的中央控制平面，由 Host 集群纳管 Member 集群，即多个异构的 Kubernetes 集群可以聚合在一起作为 Kubernetes 资源池。当用户部署应用程序时，可以选择应用的副本所要运行于的一个或多个 Kubernetes 集群。整个过程可以通过 KubeSphere 控制台进行管理，以可视化的方式帮助用户实现跨区域和跨集群的高可用性。
 
-![中央控制平面](/images/docs/zh-cn/introduction/use-cases/中央控制平面.png)
-
 有关更多信息，请参见[多集群管理](../../multicluster-management/)。
 
 ## 多维度监控
@@ -47,8 +45,6 @@ Kubernetes 已经成为容器编排领域的事实标准，很多企业在不同
 ### 多维度集群监控
 
 当前，越来越多的企业和个人跨云部署多集群，然而，由于各个云厂商的环境不同，其所提供可观测性工具可能并不适用其他平台。从学习成本和监控的角度来说，进行跨集群管理和监控也并非易事。简而言之，运维团队急需一种统一的工具以对多集群上不同的指标实现多维度监控。
-
-![集群监控](/images/docs/zh-cn/introduction/use-cases/集群监控.jpg)
 
 ### 日志、事件与审计查询
 
@@ -82,8 +78,6 @@ KubeSphere 提供轻量级、扩展性强的微服务架构，为企业创造了
 
 **流量镜像**是一种强大的、无风险的测试应用版本的方法，将实时流量的副本发送给被镜像的服务。采用这种方法，您可以搭建一个与原环境类似的环境以进行验收测试，从而提前发现问题。
 
-![灰度发布](/images/docs/zh-cn/introduction/use-cases/灰度发布.jpg)
-
 ## DevOps 落地实践
 
 DevOps 是一套重要的实践和方法，让开发和运维团队能够更高效地协同工作。软件的开发、测试和发布也得以更迅速、高效和可靠。KubeSphere 中的 CI/CD 流水线为企业提供敏捷开发功能和自动化运维。同时， KubeSphere 的微服务治理功能，帮助企业以一种细粒度的方式开发、测试和发布服务，有效推动企业 DevOps 落地。借助 KubeSphere 的 DevOps 系统，企业可以：
@@ -92,8 +86,6 @@ DevOps 是一套重要的实践和方法，让开发和运维团队能够更高�
 - 可视化端到端监控流程；
 - 以图形编辑面板创建流水线，无需编写 Jenkinsfile；
 - 为流水线轻松集成第三方程序，例如 SonarQube 用于代码质检。
-
-![sonarqube](/images/docs/zh-cn/introduction/use-cases/sonarqube.png)
 
 ## 裸机环境部署
 

@@ -74,7 +74,7 @@ In **Advanced Settings**, make sure the memory limit is no less than 1000 Mi or 
 
 {{</ notice >}} 
 
-1. Scroll down to **Environment Variables** and click **Use ConfigMap or Secret**. Enter the name `MYSQL_ROOT_PASSWORD` and choose the resource `mysql-secret` and the key `MYSQL_ROOT_PASSWORD` created in the previous step. Click **√** after you finish and **Next** to continue.
+1. Scroll down to **Environment Variables** and click **From secret**. Enter the name `MYSQL_ROOT_PASSWORD` and choose the resource `mysql-secret` and the key `MYSQL_ROOT_PASSWORD` created in the previous step. Click **√** after you finish and **Next** to continue.
 
 2. Click **Add Volume Template** under **Volume Templates**. Enter the value of **Volume Name** (`mysql`) and **Mount Path** (mode: `ReadAndWrite`, path: `/var/lib/mysql`).
 
@@ -88,7 +88,7 @@ In **Advanced Settings**, make sure the memory limit is no less than 1000 Mi or 
 
 13. Similar to previous steps, click **Add Container**, enter `wordpress:4.8-apache` in the search box, press **Enter** and click **Use Default Ports**.
 
-14. Scroll down to **Environment Variables** and click **Use ConfigMap or Secret**. Two environment variables need to be added here. Enter the values as follows.
+14. Scroll down to **Environment Variables** and click **From secret**. Two environment variables need to be added here. Enter the values as follows.
 
     - For `WORDPRESS_DB_PASSWORD`, choose `wordpress-secret` and `WORDPRESS_DB_PASSWORD` created in Task 1.
 
@@ -120,7 +120,7 @@ In **Workloads**, check the status of `wordpress-v1` and `mysql-v1` in **Deploym
 
 ### Step 5: Access WordPress through a NodePort
 
-1. To access the Service outside the cluster, navigate to **Services** first. Click the three dots on the right of `wordpress` and select **Edit External Access**.
+1. To access the Service outside the cluster, in the navigation pane on the left, click **Application Workloads > Services** first. Click the three dots on the right of `wordpress` and select **Edit External Access**.
 
 2. Select `NodePort` for **Access Method** and click **OK**.
 
