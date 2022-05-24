@@ -60,13 +60,7 @@ For the first problem, Ingress can be used for L4 but the configuration of Ingre
 
 ## Porter Introduction
 
-<<<<<<< HEAD
-
-[Porter](https://openelb.github.io/) is an open source cloud native load balancing plugin designed by the KubeSphere development team based on Border Gateway Protocol (BGP). It mainly features:
-
-=======
 [Porter](https://porterlb.io) is an open source cloud native load balancing plugin designed by the KubeSphere development team based on Border Gateway Protocol (BGP). It mainly features:
->>>>>>> ac1e41d3 (corrected spelling from meanly to mainly)
 
 1. ECMP routing load balancing
 2. BGP dynamic routing configuration
