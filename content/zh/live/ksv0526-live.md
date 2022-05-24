@@ -1,12 +1,20 @@
 ---
+<<<<<<< HEAD
 title: 容器原生虚拟化：从 KubeVirt 到 KSV 虚拟化
+=======
+title: 云原生虚拟化
+>>>>>>> 98d8ba93 (update the page of live)
 description: 通过与 Hypervisors、OpenStack 等传统虚拟化技术在计算/存储/网络/原理等多维度的对比，体现云原生虚拟化 KubeVirt 所带来的技术优势，以及 KubeVirt 在 KSV 平台的实现方式和 demo 演示。
 keywords: KubeSphere, Kubernetes, OpenStack, KubeVirt, 虚拟化
 css: scss/live-detail.scss
 
 section1:
   snapshot: 
+<<<<<<< HEAD
   videoUrl: //player.bilibili.com/player.html?aid=596971133&bvid=BV1gB4y1X73s&cid=730553912&page=1&high_quality=1
+=======
+  videoUrl: 
+>>>>>>> 98d8ba93 (update the page of live)
   type: iframe
   time: 2022-05-26 20:00-21:00
   timeIcon: /images/live/clock.svg
@@ -33,6 +41,7 @@ section1:
 
 B 站  http://live.bilibili.com/22580654
 
+<<<<<<< HEAD
 # PPT 下载
 
 可扫描官网底部二维码，关注 「KubeSphere云原生」公众号，后台回复 `20220526` 即可下载 PPT。
@@ -78,3 +87,5 @@ A：对于 Macvtap 来说，只要物理交换机支持，应该没问题的。
 ### Q10： KSV 产品可以试用吗？
 
 A：前端支持 3 节点 9VM 的免费体验，但是后端用 kubectl 命令是没有任何限制的，可以 [KSV 官网](https://kubesphere.cloud/ksv/)了解和下载体验。
+=======
+>>>>>>> 98d8ba93 (update the page of live)
