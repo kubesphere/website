@@ -13,15 +13,15 @@ section2:
   url: ./clickhouse0512-live/
 
   notice:
-    title: 使用 Notification Manager 构建云原生通知系统
-    tag: 结束
-    time: 2022 年 04 月 28 日晚 8 点
+    title: 云原生虚拟化
+    tag: 预告
+    time: 2022 年 05 月 26 日晚 8 点
     base: 线上
-    url: ./notification-manager-0428-live/
+    url: ./ksv0526-live/
 
   over:
-    title: Yatai —— 云原生上的 MLOps 平台
-    url: ./yatai0421-live/
+    title: 使用 Notification Manager 构建云原生通知系统
+    url: ./notification-manager-0428-live/
     tag: 结束
 
 section3:
