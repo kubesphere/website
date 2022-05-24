@@ -61,12 +61,16 @@ section2:
       link: "segmentfault/"
    
     - icon: "images/case/logo-msxf.png"
-      content: "马上消费金融股份有限公司(简称“马上消费”)是一家经中国银保监会批准，持有消费金融牌照的科技驱动型金融机构。"
+      content: "马上消费金融股份有限公司是一家经中国银保监会批准，持有消费金融牌照的科技驱动型金融机构。"
       link: "msxf/"
 
     - icon: "images/case/logo-turing.png"
       content: "图菱（成都）科技有限公司成立于 2020 年，主要的业务是为互联网在线模版网站提供模版输出以及系统化解决方案。"
       link: "turing/"
+
+    - icon: "images/case/logo-adaspace.png"
+      content: "国星宇航是一家 AI 卫星互联网科技公司，由卫星互联网领域的科研院所及部队领军人才创办。"
+      link: "adaspace/"
 
 section3:
   title: 'KubeSphere 助力各行各业'
