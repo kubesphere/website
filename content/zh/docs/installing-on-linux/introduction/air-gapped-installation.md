@@ -476,7 +476,13 @@ KubeKey v2.1.0 版本新增了清单（manifest）和制品（artifact）的概�
 
    {{< notice note >}}
 
+<<<<<<< HEAD
    - 修改 **url** 的值为 **https://dockerhub.kubekey.local**。
+=======
+   - 新增 **auths** 配置增加 **dockerhub.kubekey.local** 和账号密码。
+   - **privateRegistry** 增加 **dockerhub.kubekey.local**。
+   - **namespaceOverride** 增加 **kubesphereio**。
+>>>>>>> 760b1120 (PVC and PV-EN)
 
    - 需要指定仓库项目名称和镜像列表的项目名称保持一致。
 
