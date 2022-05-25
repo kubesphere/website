@@ -1,18 +1,18 @@
 ---
-title: "Persistent Volumes and Storage Classes"
-keywords: "storage, volume, pv, pvc, storage class, csi, Ceph RBD, GlusterFS, QingCloud, "
-description: "Learn basic concepts of PVs, PVCs and storage classes, and demonstrate how to manage storage classes and PVCs in KubeSphere."
-linkTitle: "Persistent Volumes and Storage Classes"
-weight: 8400
+title: "Storage Classes"
+keywords: "Storage, Volume, PV, PVC, storage class, csi, Ceph RBD, GlusterFS, QingCloud"
+description: "Learn basic concepts of PVs, PVCs,and storage classes, and demonstrate how to manage storage classes on KubeSphere."
+linkTitle: "Storage Classes"
+weight: 8800
 ---
 
-This tutorial describes the basic concepts of PVs, PVCs, and storage classes and demonstrates how a cluster administrator can manage storage classes and persistent volumes in KubeSphere.
+This tutorial demonstrates how a cluster administrator can manage storage classes and persistent volumes in KubeSphere.
 
 ## Introduction
 
-A PersistentVolume (PV) is a piece of storage in the cluster that has been provisioned by an administrator or dynamically provisioned using storage classes. PVs are volume plugins like volumes, but have a lifecycle independent of any individual Pod that uses the PV. PVs can be provisioned either [statically](https://kubernetes.io/docs/concepts/storage/persistent-volumes/#static) or [dynamically](https://kubernetes.io/docs/concepts/storage/persistent-volumes/#dynamic).
+A Persistent Volume (PV) is a piece of storage in the cluster that has been provisioned by an administrator or dynamically provisioned using storage classes. PVs are volume plugins like volumes, but have a lifecycle independent of any individual Pod that uses the PV. PVs can be provisioned either [statically](https://kubernetes.io/docs/concepts/storage/persistent-volumes/#static) or [dynamically](https://kubernetes.io/docs/concepts/storage/persistent-volumes/#dynamic).
 
-A PersistentVolumeClaim (PVC) is a request for storage by a user. It is similar to a Pod. Pods consume node resources and PVCs consume PV resources.
+A Persistent Volume Claim (PVC) is a request for storage by a user. It is similar to a Pod. Pods consume node resources and PVCs consume PV resources.
 
 KubeSphere supports [dynamic volume provisioning](https://kubernetes.io/docs/concepts/storage/dynamic-provisioning/) based on storage classes to create PVs.
 
@@ -42,7 +42,7 @@ You need a user granted a role including the permission of **Cluster Management*
 
 5. In KubeSphere, you can create storage classes for `QingCloud-CSI`, `GlusterFS`, and `Ceph RBD`. Alternatively, you can also create customized storage classes for other storage systems based on your needs. Select a type and click **Next**.
 
-### Common settings
+### Common Settings
 
 Some settings are commonly used and shared among storage classes. You can find them as dashboard parameters on the console, which are also indicated by fields or annotations in the StorageClass manifest. You can see the manifest file in YAML format by clicking **Edit YAML** in the upper-right corner.
 
@@ -135,7 +135,7 @@ Nevertheless, you can use [rbd provisioner](https://github.com/kubernetes-incuba
 
 For more information about StorageClass parameters, see [Ceph RBD in Kubernetes Documentation](https://kubernetes.io/docs/concepts/storage/storage-classes/#ceph-rbd).
 
-### Custom storage classes
+### Custom Storage Classes
 
 You can create custom storage classes for your storage systems if they are not directly supported by KubeSphere. The following example shows you how to create a storage class for NFS on the KubeSphere console.
 
@@ -169,57 +169,16 @@ It is not recommended that you use NFS storage for production (especially on Kub
 
 | Key| Description | Value |
 | :---- | :---- |  :----|
-| archiveOnDelete | Archive pvc when deleting | `true` |
+| archiveOnDelete | Archive PVCs during deletion | `true` |
 
-### Storage class details page
+## Manage Storage Classes
 
 After you create a storage class, click the name of the storage class to go to its details page. On the details page, click **Edit YAML** to edit the manifest file of the storage class, or click **More** to select an operation from the drop-down menu:
 
 - **Set as Default Storage Class**: Set the storage class as the default storage class in the cluster. Only one default storage class is allowed in a KubeSphere cluster.
-- **Volume Management**: Manage volume features, including: **Volume Clone**, **Volume Snapshot**, and **Volume Expansion**. Before enabling any features, you should contact your system administrator to confirm that the features are supported by the storage system.
-- **Delete**: Delete the storage class and return to the previous page.
+- **Set Authorization Rule**: Set authorization rules so that the storage class can be accessed only in specific projects and workspaces.
+- **Set Volume Operations**: Manage volume features, including: **Volume Cloning**, **Volume Snapshot Creation**, and **Volume Expansion**. Before enabling any features, you should contact your system administrator to confirm that the features are supported by the storage system.
+- **Set Auto Expansion**: Set the system to automatically expand volumes when the remaining volume space is lower than a threshold. You can also enable **Restart workload automatically**.
+- **Delete**: Delete the storage class.
 
-On the **Volumes** tab, view the volumes associated to the storage class. 
-
-## Manage Volumes
-
-Once the storage class is created, you can create volumes with it. You can list, create, update and delete volumes in **Volumes** under **Storage** on the KubeSphere console. For more details, please see [Volume Management](../../project-user-guide/storage/volumes/).
-
-## Manage Volume Instances
-
-A volume in KubeSphere is a [persistent volume claim](https://kubernetes.io/docs/concepts/storage/persistent-volumes/#persistentvolumeclaims) in Kubernetes, and a  volume instance is a [persistent volume](https://kubernetes.io/docs/concepts/storage/persistent-volumes/) in Kubernetes. 
-
-### Volume instance list page
-
-1. Log in to KubeSphere web console as `admin`. Click **Platform** in the upper-left corner, select **Cluster Management**, and click **Volumes** under **Storage**.
-2. Click the **Volume Instances** tab on the **Volumes** page to view the volume instance list page that provides the following information:
-   - **Name**: Name of the volume instance. It is specified by the field `.metadata.name` in the manifest file of the volume instance.
-   - **Status**: Current status of the volume instance. It is specified by the field `.status.phase` in the manifest file of the volume instance, including:
-     - **Available**: The volume instance is available and not yet bound to a volume.
-     - **Bound**: The volume instance is bound to a volume.
-     - **Terminating**: The volume instance is being deleted.
-     - **Failed**: The volume instance is unavailable.
-   - **Capacity**: Capacity of the volume instance. It is specified by the field `.spec.capacity.storage` in the manifest file of the volume instance.
-   - **Access Mode**: Access mode of the volume instance. It is specified by the field `.spec.accessModes` in the manifest file of the volume instance, including:
-     - **RWO**: The volume instance can be mounted as read-write by a single node.
-     - **ROX**: The volume instance can be mounted as read-only by multiple nodes.
-     - **RWX**: The volume instance can be mounted as read-write by multiple nodes.
-   - **Recycling Strategy**: Recycling strategy of the volume instance. It is specified by the field `.spec.persistentVolumeReclaimPolicy` in the manifest file of the volume instance, including:
-     - **Retain**: When a volume is deleted, the volume instance still exists and requires manual reclamation.
-     - **Delete**: Remove both the volume instance and the associated storage assets in the volume plugin infrastructure.
-     - **Recycle**: Erase the data on the volume instance and make it available again for a new volume.
-   - **Creation Time**: Time when the volume instance was created.
-3. Click <img src="/images/docs/common-icons/three-dots.png" width="15" /> on the right of a volume instance and select an operation from the drop-down menu:
-   - **Edit**: Edit the YAML file of a volume instance.
-   - **View YAML**: View the YAML file of the volume instance.
-   - **Delete**: Delete the volume instance. A volume instance in the **Bound** status cannot be deleted.
-
-### Volume instance details page
-
-1. Click the name of a volume instance to go to its details page.
-2. On the details page, click **Edit Information** to edit the basic information of the volume instance. By clicking **More**, select an operation from the drop-down menu:
-   - **View YAML**: View the YAML file of the volume instance.
-   - **Delete**: Delete the volume instance and return to the list page. A volume instance in the **Bound** status cannot be deleted.
-3. Click the **Resource Status** tab to view the volumes to which the volume instance is bound.
-4. Click the **Metadata** tab to view the labels and annotations of the volume instance.
-5. Click the **Events** tab to view the events of the volume instance.
+On the **Persistent Volume Claims** tab, you can view the PVCs associated to the storage class.

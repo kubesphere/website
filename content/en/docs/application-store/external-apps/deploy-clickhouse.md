@@ -105,9 +105,9 @@ This tutorial demonstrates how to deploy ClickHouse Operator and a ClickHouse Cl
 
 3. In **Pods** under **Application Workloads**, you can see all the Pods are up and running.
 
-4. In **Volumes** under **Storage**, you can see the ClickHouse Cluster components are using persistent volumes.
+4. In **Persistent Volume Claims** under **Storage**, you can see the ClickHouse Cluster components are using persistent volumes.
 
-5. Volume usage is also monitored. Click a volume item to go to its detail page.
+5. Usage of the persistent volume is also monitored. Click a persistent volume to go to its detail page.
 
 6. On the **Overview** page of the project, you can see a list of resource usage in the current project.
 

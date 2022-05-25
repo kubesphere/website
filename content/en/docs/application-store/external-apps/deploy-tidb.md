@@ -120,7 +120,7 @@ The process of deploying a TiDB cluster is similar to deploying TiDB Operator.
 
 4. In **Pods** under **Application Workloads**, you can see the TiDB cluster contains two TiDB Pods, three TiKV Pods, and three PD Pods.
 
-5. In **Volumes** under **Storage**, you can see TiKV and PD are using persistent volumes.
+5. In **Persistent Volume Claims** under **Storage**, you can see TiKV and PD are using persistent volumes.
 
 6. Volume usage is also monitored. Click a volume item to go to its detail page.
 
