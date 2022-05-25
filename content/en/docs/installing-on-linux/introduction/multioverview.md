@@ -20,7 +20,6 @@ A multi-node cluster is composed of at least one control plane node and one work
 
 - **Control Plane**. The control plane generally controls and manages the whole system.
 
-
 - **Worker**. Worker nodes run the actual applications deployed on them.
 
 ## Step 1: Prepare Linux Hosts
