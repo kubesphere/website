@@ -457,7 +457,9 @@ chmod +x kk
    - 您可以根据自己的需求变更下载的 Kubernetes 版本。安装 KubeSphere 3.3.0 的建议 Kubernetes 版本：v1.19.x、v1.20.x、v1.21.x、v1.22.x 和 v1.23.x。如果不指定 Kubernetes 版本，KubeKey 将默认安装 Kubernetes v1.21.5。有关受支持的 Kubernetes 版本的更多信息，请参见[支持矩阵](../../../installing-on-linux/introduction/kubekey/#支持矩阵)。
    命令中的参数解释如下：
 
-   - 运行脚本后，会自动创建一个文件夹 `kubekey`。请注意，您稍后创建集群时，该文件和 `kk` 必须放在同一个目录下。
+   - 您可以根据自己的需求变更下载的 Kubernetes 版本。安装 KubeSphere 3.3.0 的建议 Kubernetes 版本：v1.19.x、v1.20.x、v1.21.x、v1.22.x 和 v1.23.x。如果不指定 Kubernetes 版本，KubeKey 将默认安装 Kubernetes v1.21.5。有关受支持的 Kubernetes 版本的更多信息，请参见[支持矩阵](../../../installing-on-linux/introduction/kubekey/#支持矩阵)。
+
+   - **config-sample.yaml** 指离线环境集群的配置文件。
 
    {{</ notice >}} 
 
@@ -469,13 +471,7 @@ chmod +x kk
 
    {{< notice note >}}
 
-<<<<<<< HEAD
    - 修改 **url** 的值为 **https://dockerhub.kubekey.local**。
-=======
-   - 新增 **auths** 配置增加 **dockerhub.kubekey.local** 和账号密码。
-   - **privateRegistry** 增加 **dockerhub.kubekey.local**。
-   - **namespaceOverride** 增加 **kubesphereio**。
->>>>>>> 760b1120 (PVC and PV-EN)
 
    {{</ notice >}} 
 
