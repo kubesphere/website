@@ -14,15 +14,24 @@ Please see the requirements for hardware and operating system shown below. To ge
 
 ### System requirements
 
-| Systems                                                | Minimum Requirements (Each node)             |
-| ------------------------------------------------------ | -------------------------------------------- |
-| **Ubuntu** *16.04, 18.04*                              | CPU: 2 Cores, Memory: 4 G, Disk Space: 100 G |
-| **Debian** *Buster, Stretch*                           | CPU: 2 Cores, Memory: 4 G, Disk Space: 100 G |
-| **CentOS** *7*.x                                       | CPU: 2 Cores, Memory: 4 G, Disk Space: 100 G |
-| **Red Hat Enterprise Linux 7**                         | CPU: 2 Cores, Memory: 4 G, Disk Space: 100 G |
-| **SUSE Linux Enterprise Server 15/openSUSE Leap 15.2** | CPU: 2 Cores, Memory: 4 G, Disk Space: 100 G |
+<<<<<<< HEAD
+1. Run the following commands to download KubeKey v2.1.0.
+=======
+1. Run the following commands to download KubeKey v2.0.0.
+>>>>>>> befffa40 (PVC and PV-EN)
+   {{< tabs >}}
 
 {{< notice note >}}
+
+- [KubeKey](https://github.com/kubesphere/kubekey) uses `/var/lib/docker` as the default directory where all Docker related files, including images, are stored. It is recommended you add additional storage volumes with at least **100G** mounted to `/var/lib/docker` and `/mnt/registry` respectively. See [fdisk](https://www.computerhope.com/unix/fdisk.htm) command for reference.
+
+   ```bash
+<<<<<<< HEAD
+   curl -sfL https://get-kk.kubesphere.io | VERSION=v2.1.0 sh -
+=======
+   curl -sfL https://get-kk.kubesphere.io | VERSION=v2.0.0 sh -
+>>>>>>> befffa40 (PVC and PV-EN)
+   ```
 
 - [KubeKey](https://github.com/kubesphere/kubekey) uses `/var/lib/docker` as the default directory where all Docker related files, including images, are stored. It is recommended you add additional storage volumes with at least **100G** mounted to `/var/lib/docker` and `/mnt/registry` respectively. See [fdisk](https://www.computerhope.com/unix/fdisk.htm) command for reference.
 
@@ -266,7 +275,11 @@ The domain name is `dockerhub.kubekey.local` in the command. Make sure you use y
            password: Harbor12345
        plainHTTP: false
        privateRegistry: "dockerhub.kubekey.local"
+<<<<<<< HEAD
        namespaceOverride: "kubesphereio"
+=======
+       namespaceOverride: ""
+>>>>>>> befffa40 (PVC and PV-EN)
        registryMirrors: []
        insecureRegistries: []
      addons: []
