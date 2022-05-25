@@ -16,11 +16,8 @@ weight: 10310
 
 - 您需要创建一个企业空间、一个项目和一个用户（例如 `project-regular`）。该用户必须已邀请至该项目，并具有 `operator` 角色。有关更多信息，请参阅[创建企业空间、项目、用户和角色](../../../quick-start/create-workspace-and-project/)。
 
-<<<<<<< HEAD
 - 如需使用动态卷供应，您需要配置一个支持动态供应的[存储类](../../../cluster-administration/persistent-volume-and-storage-class/)。
-=======
-- 如需使用动态持久卷供应，您需要配置一个支持动态供应的[存储类](../../../cluster-administration/persistent-volume-and-storage-class/)。
->>>>>>> bbbae3e5 (add persistent storage docs)
+
 
 ## 创建持久性声明
 
@@ -30,11 +27,8 @@ KubeSphere 将 PVC 绑定到满足您设定的请求条件（例如容量和访�
 
 2. 在**持久卷声明**页面，点击**创建**以创建持久卷声明。
 
-<<<<<<< HEAD
 3. 在弹出的对话框设置持久卷声明的名称（例如 `demo-volume`），选择项目，然后点击**下一步**。
-=======
-3. 在弹出的对话框设置持久卷声明的名称（例如 `demo-volume`），然后点击**下一步**。
->>>>>>> bbbae3e5 (add persistent storage docs)
+
 
    {{< notice note >}}
 
@@ -67,10 +61,8 @@ KubeSphere 将 PVC 绑定到满足您设定的请求条件（例如容量和访�
     {{< notice note >}}
 
 - 新建的持久卷声明也会显示在**集群管理**中的**持久卷声明**页面。集群管理员需要查看和跟踪项目中创建的持久卷声明。另一方面，集群管理员在**集群管理**中为项目创建的持久卷声明也会显示在项目的**持久卷声明**页面。
-<<<<<<< HEAD
-=======
+
 - 一些持久卷声明是动态供应的持久卷声明，它们的状态会在创建后立刻从**等待中**变为**已绑定**。其他仍处于**等待中**的持久卷声明会在挂载至工作负载后变为**已绑定**。持久卷声明是否支持动态供应取决于其存储类。例如，如果您使用默认的存储类型 (OpenEBS) 安装 KubeSphere，您只能创建不支持动态供应的本地持久卷声明。这类持久卷声明的绑定模式由 YAML 文件中的 `VolumeBindingMode: WaitForFirstConsumer` 字段指定。
->>>>>>> bbbae3e5 (add persistent storage docs)
 
     {{</ notice >}}
 
@@ -115,7 +107,6 @@ KubeSphere 将 PVC 绑定到满足您设定的请求条件（例如容量和访�
   - 创建卷中的配置文件。
 
 ## 查看和管理持久性声明
-<<<<<<< HEAD
 
 持久性声明创建后，您可以查看持久性声明的详情、编辑持久性声明和使用持久性声明功能。
 ### 查看持久性声明详情
@@ -132,9 +123,13 @@ KubeSphere 将 PVC 绑定到满足您设定的请求条件（例如容量和访�
 ### 编辑持久性声明
 
 =======
+=======
+
+持久性声明创建后，您可以查看持久性声明的详情、编辑持久性声明和使用持久性声明功能。
+>>>>>>> befffa40 (PVC and PV-EN)
 ### 查看持久性声明详情
 
-持久性声明创建后，您可以查看持久性声明的详情、编辑持久性声明和使用持久性声明功能。在**持久性声明**页面，点击一个持久性声明名称可打开持久性声明详情页面。
+在**持久性声明**页面，点击一个持久性声明名称可打开持久性声明详情页面。
 
 1. 点击**资源状态**页签，查看持久卷用量和挂载的容器组。
 
@@ -177,8 +172,6 @@ kubectl patch pvc <pvc-name> -p '{"metadata":{"finalizers":null}}'
 KubeSphere 从 Kubelet 获取 `Filesystem` 模式的 PVC 的指标数据（包括容量使用情况和 inode 使用情况），从而对持久性声明进行监控。
 
 有关持久性声明监控的更多信息，请参阅 [Research on Volume Monitoring](https://github.com/kubesphere/kubesphere/issues/2921)。
-
-<<<<<<< HEAD
 ## 查看持久卷列表并管理持久卷
 
 ### 查看持久卷列表
@@ -261,6 +254,3 @@ KubeSphere 从 Kubelet 获取 `Filesystem` 模式的 PVC 的指标数据（包�
 5. 点击**元数据**页签，查看持久卷的标签和注解。
 
 6. 点击**事件**页签，查看持久卷的事件。
-=======
-
->>>>>>> bbbae3e5 (add persistent storage docs)
