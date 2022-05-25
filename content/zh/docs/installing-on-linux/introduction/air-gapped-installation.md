@@ -469,7 +469,13 @@ chmod +x kk
 
    {{< notice note >}}
 
-   您可以根据需要选择拉取的镜像。例如，如果已经有一个 Kubernetes 集群了，您可以在 `images-list.text` 中删除 `##k8s-images` 和在它下面的相关镜像。
+<<<<<<< HEAD
+   - 修改 **url** 的值为 **https://dockerhub.kubekey.local**。
+=======
+   - 新增 **auths** 配置增加 **dockerhub.kubekey.local** 和账号密码。
+   - **privateRegistry** 增加 **dockerhub.kubekey.local**。
+   - **namespaceOverride** 增加 **kubesphereio**。
+>>>>>>> 760b1120 (PVC and PV-EN)
 
    {{</ notice >}} 
 
