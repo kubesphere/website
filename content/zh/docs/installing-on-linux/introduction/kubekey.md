@@ -85,8 +85,15 @@ curl -sfL https://get-kk.kubesphere.io | VERSION=v2.1.0 sh -
 =======
 | KubeSphere 版本 | 受支持的 Kubernetes 版本                                     |
 | --------------- | ------------------------------------------------------------ |
+<<<<<<< HEAD
 | v3.3.0          | v1.19.x、v1.20.x、v1.21.x、v1.22.x、v1.23.x |
+<<<<<<< HEAD
 >>>>>>> bbbae3e5 (add persistent storage docs)
+=======
+=======
+| v3.3.0          | v1.19.x、v1.20.x、v1.21.x 或 v1.22.x（实验性支持） |
+>>>>>>> 1d8cbc5f (PVC and PV-EN)
+>>>>>>> b9538191 (PVC and PV-EN)
 
 {{< notice note >}} 
 
