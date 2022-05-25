@@ -21,7 +21,6 @@ A multi-node cluster is composed of at least one control plane node and one work
 - **Control plane node**. The control plane generally hosts the control plane and controls and manages the whole system.
 
 - **Worker node**. Worker nodes run the actual applications deployed on them.
-
 ## Step 1: Prepare Linux Hosts
 
 Please see the requirements for hardware and operating system shown below. To get started with multi-node installation in this tutorial, you need to prepare at least three hosts according to the following requirements. It is possible to install the [KubeSphere Container Platform](https://kubesphere.io/) on two nodes if they have sufficient resources.
