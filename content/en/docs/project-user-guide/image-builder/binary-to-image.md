@@ -67,7 +67,7 @@ You must create a Docker Hub Secret so that the Docker image created through B2I
 
    {{</ notice >}} 
 
-5. On the **Volume Settings** page, you can add a volume for the container. For more information, see [Volumes](../../../project-user-guide/storage/volumes/). Click **Next** to continue.
+5. On the **Storage Settings** page, you can add a volume for the container. For more information, see [Volumes](../../../project-user-guide/storage/volumes/). Click **Next** to continue.
 
 6. On the **Advanced Settings** page, select **External Access** and choose **NodePort** as the access method. Click **Create** to finish the whole process.
 
