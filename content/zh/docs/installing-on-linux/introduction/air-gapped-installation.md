@@ -248,13 +248,27 @@ chmod +x kk
 
 本教程中，KubeSphere 安装在多个节点上，因此您需要指定一个配置文件以添加主机信息。此外，离线安装时，请务必将 `.spec.registry.privateRegistry` 设置为**您自己的仓库地址**。有关更多信息，请参见下面的[完整 YAML 文件](../air-gapped-installation/#编辑配置文件)。
 
-### 创建示例配置文件
+   ```yaml
+     ...
+     registry:
+       type: harbor
+       auths:
+         "dockerhub.kubekey.local":
+           username: admin
+           password: Harbor12345
+       plainHTTP: false
+       privateRegistry: "dockerhub.kubekey.local"
+       namespaceOverride: "kubesphereio"
+       registryMirrors: []
+       insecureRegistries: []
+     addons: []
+   ```
 
 执行以下命令生成示例配置文件用于安装：
 
-```bash
-./kk create config [--with-kubernetes version] [--with-kubesphere version] [(-f | --file) path]
-```
+   - 新增 **auths** 配置增加 **dockerhub.kubekey.local** 和账号密码。
+   - **privateRegistry** 增加 **dockerhub.kubekey.local**。
+   - **namespaceOverride** 增加 **kubesphereio**。
 
 例如：
 
