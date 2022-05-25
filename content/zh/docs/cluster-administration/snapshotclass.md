@@ -30,6 +30,5 @@ weight: 8900
    删除策略目前支持以下两种：
 
    -  Delete：底层的存储快照会和 VolumeSnapshotContent 对象一起删除。
-
    -  Retain：底层快照和 VolumeSnapshotContent 对象都会被保留。
 

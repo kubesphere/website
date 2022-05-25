@@ -33,6 +33,7 @@ section1:
 
 B 站  http://live.bilibili.com/22580654
 
+<<<<<<< HEAD
 # PPT 下载
 
 可扫描官网底部二维码，关注 「KubeSphere云原生」公众号，后台回复 `20220526` 即可下载 PPT。
@@ -78,3 +79,5 @@ A：对于 macvtap 来说，只要物理交换机支持，应该没问题的。
 ### Q10： KSV 产品可以试用吗？
 
 A：前端支持 3 节点 9VM 的免费体验，但是后端用 kubectl 命令是没有任何限制的，可以 [KSV 官网](https://kubesphere.cloud/ksv/)了解和下载体验。
+=======
+>>>>>>> 7fc43900 (PVC and PV-EN)
