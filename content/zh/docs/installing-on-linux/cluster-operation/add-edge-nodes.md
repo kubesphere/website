@@ -16,9 +16,7 @@ KubeSphere 利用 [KubeEdge](https://kubeedge.io/zh/) 将原生容器化应用�
 
 {{</ notice >}} 
 
-边缘节点加入集群后，原生 KubeEdge 云组件要求手动配置 iptables，以便您使用 `kubectl logs` 和 `kubectl exec` 等命令。对此，KubeSphere 能够提供一种高效便捷的方法将边缘节点添加到 Kubernetes 集群。它使用所支持的组件来自动配置 iptables（例如，EdgeWatcher）。
-
-![edge-watcher](/images/docs/zh-cn/installing-on-linux/add-and-delete-nodes/add-edge-nodes/edge-watcher.png)
+边缘节点加入集群后，原生 KubeEdge 云组件要求手动配置 iptables，以便您使用 `kubectl logs` 和 `kubectl exec` 等命令。对此，KubeSphere 能够提供一种高效便捷的方法将边缘节点添加到 Kubernetes 集群。
 
 本教程演示如何将边缘节点添加到集群。
 
@@ -80,6 +78,10 @@ KubeSphere 利用 [KubeEdge](https://kubeedge.io/zh/) 将原生容器化应用�
 
 若要确保边缘节点可以成功地与集群通信，您必须转发端口，以便外部流量进入您的网络。您可以根据下表将外网端口映射到相应的内网 IP 地址（主节点）和端口。此外，您还需要创建防火墙规则以允许流量进入这些端口（`10000` 至 `10004`）。
 
+   {{< notice note >}}
+   在 ks-installer 的 `ClusterConfiguration`中，如果您设置的是局域网地址，那么需要配置转发规则。如果您设置的是主机地址（即访问 Console 的地址），直接连接30000 – 30004 端口即可。
+   {{</ notice >}} 
+
 | 字段                | 外网端口 | 字段                    | 内网端口 |
 | ------------------- | -------- | ----------------------- | -------- |
 | `cloudhubPort`      | `10000`  | `cloudhubNodePort`      | `30000`  |
@@ -125,7 +127,51 @@ KubeSphere 利用 [KubeEdge](https://kubeedge.io/zh/) 将原生容器化应用�
 
    {{</ notice >}}
 
-6. 边缘节点加入集群后，部分 Pod 在调度至该边缘节点上后可能会一直处于 `Pending` 状态。由于部分守护进程集（例如，Calico）有强容忍度，在当前版本中 (KubeSphere 3.3.0)，您需要手动 Patch Pod 以防止它们调度至该边缘节点。
+## 收集边缘节点监控信息
+
+如果需要收集边缘节点的监控信息，请先在`ClusterConfiguration` 中开启 `metrics_server`，以及在 KubeEdge 中开启 `edgeStream`。
+
+1. 在 KubeSphere 控制台上，点击**平台管理 > 集群管理**。
+
+2. 在左侧导航栏。点击**定制资源定义**。
+
+3. 在右侧的搜索框中，输入 `clusterconfiguration`，并点击结果查看其详细页面。
+
+4. 点击 `ks-installer` 右侧的 <img src="/images/docs/common-icons/three-dots.png" width="15" />，选择**编辑 YAML**。
+
+5. 找到 **metrics_server**，将 `enabled` 的 `false` 更改为 `true`。
+
+    ```yaml
+      metrics_server:
+      enabled: true # 将“false”更改为“true”。
+    ```
+
+6. 点击右下角的**确定**，保存配置。
+
+7. 进入 `/etc/kubeedge/config` 文件，搜索 `edgeStream`，将 `false` 更改为 `true` 并保存文件。
+    ```bash
+    cd /etc/kubeedge/config
+    vi edgecore.yaml
+    ```
+
+    ```bash
+    edgeStream:
+    enable: true #将“false”更改为“true”。
+    handshakeTimeout: 30
+    readDeadline: 15
+    server: xx.xxx.xxx.xxx:10004 #如果没有添加端口转发，将端口修改为30004。
+    tlsTunnelCAFile: /etc/kubeedge/ca/rootCA.crt
+    tlsTunnelCertFile: /etc/kubeedge/certs/server.crt
+    tlsTunnelPrivateKeyFile: /etc/kubeedge/certs/server.key
+    writeDeadline: 15
+    ```
+
+8. 重启 `edgecore.service`。
+    ```bash
+    systemctl restart edgecore.service
+    ```
+
+9. 边缘节点加入集群后，部分 Pod 在调度至该边缘节点上后可能会一直处于 `Pending` 状态。由于部分守护进程集（例如，Calico）有强容忍度，您需要手动 Patch Pod 以防止它们调度至该边缘节点。
 
    ```bash
    #!/bin/bash
@@ -156,29 +202,16 @@ KubeSphere 利用 [KubeEdge](https://kubeedge.io/zh/) 将原生容器化应用�
    done
    ```
 
-## 自定义配置
-
-若要对边缘节点的部分配置（例如下载 URL 和 KubeEdge 版本）自定义，您可以如下创建一个 [ConfigMap](../../../project-user-guide/configuration/configmaps/)：
-
-```yaml
-apiVersion: v1
-data:
-  region: zh # 下载区域。
-  version: v1.6.1 # KubeEdge 的安装版本。可用的值包括 v1.5.0、v1.6.0、v1.6.1（默认）和 v1.6.2。
-kind: ConfigMap
-metadata:
-  name: edge-watcher-config
-  namespace: kubeedge
-```
-
-{{< notice note >}}
-
-- 对于 `region` 字段，您可以指定 `zh` 或 `en`。默认值为 `zh`，默认下载链接为 `https://kubeedge.pek3b.qingstor.com/bin/v1.6.1/$arch/keadm-v1.6.1-linux-$arch.tar.gz`。若将 `region` 设置为 `en`，下载链接将变为 `https://github.com/kubesphere/kubeedge/releases/download/v1.6.1-kubesphere/keadm-v1.6.1-linux-amd64.tar.gz`。
-- 该 ConfigMap 不会影响您集群中现有边缘节点的配置，仅用于修改新添加的边缘节点的配置。确切地说，该 ConfigMap 会决定上文中[由 KubeSphere 自动生成的命令](#添加边缘节点)，即您之后在边缘节点上需要运行的命令。
-- 虽然您可以变更在边缘节点上安装的 KubeEdge 版本，建议您的云端和边端组件使用相同的 KubeEdge 版本。
-
-{{</ notice >}}
-
+10. 如果仍然无法显示监控数据，执行以下命令：
+    ```bash
+    journalctl -u edgecore.service -b -r
+    ```
+    
+    {{< notice note >}}
+     
+   如果提示 `failed to check the running environment: kube-proxy should not running on edge node when running edgecore`，需要参考步骤 8 再次重启 `edgecore.service`。
+     
+   {{</ notice >}} 
 ## 移除边缘节点
 
 移除边缘节点之前，请删除在该节点上运行的全部工作负载。

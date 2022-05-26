@@ -112,7 +112,7 @@ KubeSphere 为日志收集、查询和管理提供了一个强大的、全面的
 
 1. 以 `admin` 用户登录控制台。点击左上角的**平台管理**，选择**集群管理**。
    
-2. 点击 **CRD**，在搜索栏中输入 `clusterconfiguration`。点击结果查看其详细页面。
+2. 点击 **定制资源定义**，在搜索栏中输入 `clusterconfiguration`。点击结果查看其详细页面。
 
     {{< notice info >}}
 
