@@ -16,6 +16,8 @@ For more information about different components of KubeEdge, see [the KubeEdge d
 
 {{</ notice >}} 
 
+After an edge node joins your cluster, the native KubeEdge cloud component requires you to manually configure iptables so that you can use commands such as `kubectl logs` and `kubectl exec`. In this connection, KubeSphere features an efficient and convenient way to add edge nodes to a Kubernetes cluster.
+
 This tutorial demonstrates how to add an edge node to your cluster.
 
 ## Prerequisites
@@ -77,7 +79,7 @@ Perform the following steps to configure [EdgeMesh](https://kubeedge.io/en/docs/
 To make sure edge nodes can successfully talk to your cluster, you must forward ports for outside traffic to get into your network. Specifically, map an external port to the corresponding internal IP address (control plane node) and port based on the table below. Besides, you also need to create firewall rules to allow traffic to these ports (`10000` to `10004`).
 
    {{< notice note >}}
-   In `ClusterConfiguration` of the ks-installer, if you set an internal IP address, you need to set the forwarding rule. If you have not set the forwarding rule, you can directly connect to ports 30000 to 30004.
+   In `ClusterConfiguration` of the ks-installer, if you set an internal IP address, you need to set the forwarding rule. However, if you set the IP address (for accessing the KubeSphere console) of your host, you can use ports 30000 to 30004.
    {{</ notice >}} 
 
 | Fields              | External Ports | Fields                  | Internal Ports |
@@ -125,11 +127,6 @@ To make sure edge nodes can successfully talk to your cluster, you must forward 
 
    {{</ notice >}}
    
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
->>>>>>> f865802f (Kubeedge and servicemesh)
 ## Collect Monitoring Information on Edge Nodes
 
 To collect monitoring information on edge node, you need to enable `metrics_server` in `ClusterConfiguration` and `edgeStream` in KubeEdge.
