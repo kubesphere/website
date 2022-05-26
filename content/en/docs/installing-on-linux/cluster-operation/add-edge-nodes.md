@@ -170,12 +170,9 @@ To collect monitoring information on edge node, you need to enable `metrics_serv
     ```
 
 9. After an edge node joins your cluster, some Pods may be scheduled to it while they remains in the `Pending` state on the edge node. Due to the tolerations some DaemonSets (for example, Calico) have, you need to manually patch some Pods so that they will not be scheduled to the edge node.
-=======
-6. After an edge node joins your cluster, some Pods may be scheduled to it while they remain in the `Pending` state on the edge node. Due to the tolerations some DaemonSets (for example, Calico) have, in the current version (KubeSphere 3.2.1), you need to manually patch some Pods so that they will not be scheduled to the edge node.
->>>>>>> 7f363709 (change term master)
-=======
-6. After an edge node joins your cluster, some Pods may be scheduled to it while they remains in the `Pending` state on the edge node. Due to the tolerations some DaemonSets (for example, Calico) have, in the current version (KubeSphere 3.3.0), you need to manually patch some Pods so that they will not be schedule to the edge node.
->>>>>>> 3785c2cc (update 3.3 new)
+
+10. After an edge node joins your cluster, some Pods may be scheduled to it while they remains in the `Pending` state on the edge node. Due to the tolerations some DaemonSets (for example, Calico) have, in the current version (KubeSphere 3.3.0), you need to manually patch some Pods so that they will not be schedule to the edge node.
+
 
    ```bash
    #!/bin/bash
@@ -206,7 +203,7 @@ To collect monitoring information on edge node, you need to enable `metrics_serv
    done
    ```
 
-10. If you still cannot see the monitoring data, run the following command:
+11. If you still cannot see the monitoring data, run the following command:
 
     ```bash
     journalctl -u edgecore.service -b -r
