@@ -102,7 +102,7 @@ KubeSphere 事件系统使用户能够跟踪集群内部发生的事件，例如
 
 1. 使用 `admin` 用户登录控制台。点击左上角的**平台管理**，选择**集群管理**。
    
-2. 点击 **CRD**，在搜索栏中输入 `clusterconfiguration`。点击结果查看其详情页。
+2. 点击 **定制资源定义**，在搜索栏中输入 `clusterconfiguration`。点击结果查看其详情页。
 
     {{< notice info >}}
 
