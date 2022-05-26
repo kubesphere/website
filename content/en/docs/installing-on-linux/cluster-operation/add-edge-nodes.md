@@ -16,6 +16,8 @@ For more information about different components of KubeEdge, see [the KubeEdge d
 
 {{</ notice >}} 
 
+After an edge node joins your cluster, the native KubeEdge cloud component requires you to manually configure iptables so that you can use commands such as `kubectl logs` and `kubectl exec`. In this connection, KubeSphere features an efficient and convenient way to add edge nodes to a Kubernetes cluster.
+
 This tutorial demonstrates how to add an edge node to your cluster.
 
 ## Prerequisites
@@ -76,6 +78,10 @@ Perform the following steps to configure [EdgeMesh](https://kubeedge.io/en/docs/
 
 To make sure edge nodes can successfully talk to your cluster, you must forward ports for outside traffic to get into your network. Specifically, map an external port to the corresponding internal IP address (control plane node) and port based on the table below. Besides, you also need to create firewall rules to allow traffic to these ports (`10000` to `10004`).
 
+   {{< notice note >}}
+   In `ClusterConfiguration` of the ks-installer, if you set an internal IP address, you need to set the forwarding rule. However, if you set the IP address (for accessing the KubeSphere console) of your host, you can use ports 30000 to 30004.
+   {{</ notice >}} 
+
 | Fields              | External Ports | Fields                  | Internal Ports |
 | ------------------- | -------------- | ----------------------- | -------------- |
 | `cloudhubPort`      | `10000`        | `cloudhubNodePort`      | `30000`        |
@@ -121,7 +127,51 @@ To make sure edge nodes can successfully talk to your cluster, you must forward 
 
    {{</ notice >}}
    
-6. After an edge node joins your cluster, some Pods may be scheduled to it while they remains in the `Pending` state on the edge node. Due to the tolerations some DaemonSets (for example, Calico) have, in the current version (KubeSphere 3.3.0), you need to manually patch some Pods so that they will not be schedule to the edge node.
+## Collect Monitoring Information on Edge Nodes
+
+To collect monitoring information on edge node, you need to enable `metrics_server` in `ClusterConfiguration` and `edgeStream` in KubeEdge.
+
+1. On the KubeSphere web console, choose **Platform > Cluster Management**.
+
+2. On the navigation pane on the left, click **CRDs**.
+
+3. In the search bar on the right pane, enter `clusterconfiguration`, and click the result to go to its details page.
+
+4. Click <img src="/images/docs/common-icons/three-dots.png" width="15" /> on the right of ks-installer, and click **Edit YAML**.
+
+5. Search for **metrics_server**, and change the value of `enabled` from `false` to `true`.
+
+    ```yaml
+      metrics_server:
+      enabled: true # Change "false" to "true".
+    ```
+
+6. Click **OK** in the lower right corner to save the change.
+
+7. Open the `/etc/kubeedge/config` file, search for `edgeStream`, change `false` to `true`, and save the change.
+    ```bash
+    cd /etc/kubeedge/config
+    vi edgecore.yaml
+    ```
+
+    ```bash
+    edgeStream:
+    enable: true #Change "false" to "true".。
+    handshakeTimeout: 30
+    readDeadline: 15
+    server: xx.xxx.xxx.xxx:10004 #If port forwarding is not configured, change the port ID to 30004 here.
+    tlsTunnelCAFile: /etc/kubeedge/ca/rootCA.crt
+    tlsTunnelCertFile: /etc/kubeedge/certs/server.crt
+    tlsTunnelPrivateKeyFile: /etc/kubeedge/certs/server.key
+    writeDeadline: 15
+    ```
+
+8. Run the following command to restart `edgecore.service`.
+    ```bash
+    systemctl restart edgecore.service
+    ```
+
+9. After an edge node joins your cluster, some Pods may be scheduled to it while they remains in the `Pending` state on the edge node. Due to the tolerations some DaemonSets (for example, Calico) have, you need to manually patch some Pods so that they will not be scheduled to the edge node.
 
    ```bash
    #!/bin/bash
