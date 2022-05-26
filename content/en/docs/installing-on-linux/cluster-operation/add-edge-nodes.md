@@ -124,7 +124,7 @@ To make sure edge nodes can successfully talk to your cluster, you must forward 
    After an edge node is added, if you cannot see CPU and memory resource usage on the **Edge Nodes** page, make sure [Metrics Server](../../../pluggable-components/metrics-server/) 0.4.1 or later is installed in your cluster.
 
    {{</ notice >}}
-   
+
 ## Collect Monitoring Information on Edge Nodes
 
 To collect monitoring information on edge node, you need to enable `metrics_server` in `ClusterConfiguration` and `edgeStream` in KubeEdge.
