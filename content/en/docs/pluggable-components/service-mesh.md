@@ -30,8 +30,20 @@ If you adopt [All-in-One Installation](../../quick-start/all-in-one-on-linux/), 
 
     ```yaml
     servicemesh:
-      enabled: true # Change "false" to "true".
+    enabled: true # Change “false” to “true”.
+    istio: # Customizing the istio installation configuration, refer to https://istio.io/latest/docs/setup/additional-setup/customize-installation/
+      components:
+        ingressGateways:
+        - name: istio-ingressgateway # Used to expose a service outside of the service mesh using an Istio Gateway. The value is false by defalut.
+          enabled: false
+        cni:
+          enabled: false # When the value is true, it identifies user application pods with sidecars requiring traffic redirection and sets this up in the Kubernetes pod lifecycle’s network setup phase.
     ```
+   
+   {{< notice note >}}
+   - For more information about how to access service after enabling Ingress Gateway, please refer to [Ingress Gateway](https://istio.io/latest/docs/tasks/traffic-management/ingress/ingress-control/).
+   - For more information about the Istio CNI plugin, please refer to [Install Istio with the Istio CNI plugin](https://istio.io/latest/docs/setup/additional-setup/cni/).
+   {{</ notice >}}
 
 3. Run the following command to create a cluster using the configuration file:
 
@@ -53,7 +65,14 @@ As you [install KubeSphere on Kubernetes](../../installing-on-kubernetes/introdu
 
     ```yaml
     servicemesh:
-      enabled: true # Change "false" to "true".
+    enabled: true # Change “false” to “true”.
+    istio: # Customizing the istio installation configuration, refer to https://istio.io/latest/docs/setup/additional-setup/customize-installation/
+      components:
+        ingressGateways:
+        - name: istio-ingressgateway # Used to expose a service outside of the service mesh using an Istio Gateway. The value is false by defalut.
+          enabled: false
+        cni:
+          enabled: false # When the value is true, it identifies user application pods with sidecars requiring traffic redirection and sets this up in the Kubernetes pod lifecycle’s network setup phase.
     ```
 
 3. Run the following commands to start installation:
@@ -80,7 +99,15 @@ A Custom Resource Definition (CRD) allows users to create a new type of resource
 
     ```yaml
     servicemesh:
-      enabled: true # Change "false" to "true".
+    enabled: true # Change “false” to “true”.
+    istio: # Customizing the istio installation configuration, refer to https://istio.io/latest/docs/setup/additional-setup/customize-installation/
+      components:
+        ingressGateways:
+        - name: istio-ingressgateway # Used to expose a service outside of the service mesh using an Istio Gateway. The value is false by defalut.
+          enabled: false
+        cni:
+          enabled: false # When the value is true, it identifies user application pods with sidecars requiring traffic redirection and sets this up in the Kubernetes pod lifecycle’s network setup phase.
+    ```
     ```
 
 5. Run the following command in kubectl to check the installation process:

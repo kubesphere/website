@@ -30,8 +30,20 @@ KubeSphere 服务网格基于 [Istio](https://istio.io/)，将微服务治理和
 
     ```yaml
     servicemesh:
-      enabled: true # 将“false”更改为“true”。
+    enabled: true # 将“false”更改为“true”。
+    istio: # Customizing the istio installation configuration, refer to https://istio.io/latest/docs/setup/additional-setup/customize-installation/
+      components:
+        ingressGateways:
+        - name: istio-ingressgateway # 将服务暴露至服务网格之外。默认不开启。
+          enabled: false
+        cni:
+          enabled: false # 启用后，会在 Kubernetes pod 生命周期的网络设置阶段完成 Istio 网格的 pod 流量转发设置工作。
     ```
+   
+   {{< notice note >}}
+   - 关于开启 Ingress Gateway 后如何访问服务，请参阅 [Ingress Gateway](https://istio.io/latest/zh/docs/tasks/traffic-management/ingress/ingress-control/)。
+   - 更多关于 Istio CNI 插件的信息，请参阅[安装 Istio CNI 插件](https://istio.io/latest/zh/docs/setup/additional-setup/cni/)。
+   {{</ notice >}}
 
 3. 执行以下命令使用该配置文件创建集群：
 
@@ -53,7 +65,14 @@ KubeSphere 服务网格基于 [Istio](https://istio.io/)，将微服务治理和
 
     ```yaml
     servicemesh:
-      enabled: true # 将“false”更改为“true”。
+    enabled: true # 将“false”更改为“true”。
+    istio: # Customizing the istio installation configuration, refer to https://istio.io/latest/docs/setup/additional-setup/customize-installation/
+      components:
+        ingressGateways:
+        - name: istio-ingressgateway # 将服务暴露至服务网格之外。默认不开启。
+          enabled: false
+        cni:
+          enabled: false # 启用后，会在 Kubernetes pod 生命周期的网络设置阶段完成 Istio 网格的 pod 流量转发设置工作。
     ```
 
 3. 执行以下命令开始安装：
@@ -68,7 +87,7 @@ KubeSphere 服务网格基于 [Istio](https://istio.io/)，将微服务治理和
 
 1. 以 `admin` 用户登录控制台。点击左上角的**平台管理**，选择**集群管理**。
    
-2. 点击 **CRD**，在搜索栏中输入 `clusterconfiguration`。点击结果查看其详情页。
+2. 点击 **定制资源定义**，在搜索栏中输入 `clusterconfiguration`。点击结果查看其详情页。
 
     {{< notice info >}}
 定制资源定义（CRD）允许用户在不新增 API 服务器的情况下创建一种新的资源类型，用户可以像使用其他 Kubernetes 原生对象一样使用这些定制资源。
@@ -80,7 +99,14 @@ KubeSphere 服务网格基于 [Istio](https://istio.io/)，将微服务治理和
 
     ```yaml
     servicemesh:
-      enabled: true # 将“false”更改为“true”。
+    enabled: true # 将“false”更改为“true”。
+    istio: # Customizing the istio installation configuration, refer to https://istio.io/latest/docs/setup/additional-setup/customize-installation/
+      components:
+        ingressGateways:
+        - name: istio-ingressgateway # 将服务暴露至服务网格之外。默认不开启。
+          enabled: false
+        cni:
+          enabled: false # 启用后，会在 Kubernetes pod 生命周期的网络设置阶段完成 Istio 网格的 pod 流量转发设置工作。
     ```
 
 5. 在 kubectl 中执行以下命令检查安装过程：

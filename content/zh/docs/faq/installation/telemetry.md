@@ -66,7 +66,7 @@ Telemetry 收集已安装 KubeSphere 集群的大小、KubeSphere 和 Kubernetes
 
 1. 以 `admin` 用户登录控制台，点击页面左上角的**平台管理**。
 
-2. 选择**集群管理**，在左侧导航栏中点击 **CRD**。
+2. 选择**集群管理**，在左侧导航栏中点击 **定制资源定义**。
 
     {{< notice note >}}
 如果[多集群功能](../../../multicluster-management/)已经启用，您需要先选择一个集群。
