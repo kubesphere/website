@@ -77,7 +77,7 @@ KubeSphere 利用 [KubeEdge](https://kubeedge.io/zh/) 将原生容器化应用�
 若要确保边缘节点可以成功地与集群通信，您必须转发端口，以便外部流量进入您的网络。您可以根据下表将外网端口映射到相应的内网 IP 地址（主节点）和端口。此外，您还需要创建防火墙规则以允许流量进入这些端口（`10000` 至 `10004`）。
 
    {{< notice note >}}
-   在 ks-installer 的 `ClusterConfiguration`中，如果您设置的是局域网地址，那么需要配置转发规则。如果您未配置转发规则，直接连接 30000 – 30004 端口即可。
+   在 ks-installer 的 `ClusterConfiguration`中，如果您设置的是局域网地址，那么需要配置转发规则。如果您设置的是主机地址（即访问 Console 的地址），直接连接30000 – 30004 端口即可。
    {{</ notice >}} 
 
 | 字段                | 外网端口 | 字段                    | 内网端口 |
@@ -124,8 +124,6 @@ KubeSphere 利用 [KubeEdge](https://kubeedge.io/zh/) 将原生容器化应用�
    添加边缘节点后，如果在**边缘节点**页面查看不到 CPU 和内存资源使用情况，请确保您的集群中已安装 [Metrics Server](../../../pluggable-components/metrics-server/) 0.4.1 或以上版本。
 
    {{</ notice >}}
-
-<<<<<<< HEAD
 ## 收集边缘节点监控信息
 
 如果需要收集边缘节点的监控信息，请先在`ClusterConfiguration` 中开启 `metrics_server`，以及在 KubeEdge 中开启 `edgeStream`。
