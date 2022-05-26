@@ -127,6 +127,9 @@ To make sure edge nodes can successfully talk to your cluster, you must forward 
    
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> f865802f (Kubeedge and servicemesh)
 ## Collect Monitoring Information on Edge Nodes
 
 To collect monitoring information on edge node, you need to enable `metrics_server` in `ClusterConfiguration` and `edgeStream` in KubeEdge.
