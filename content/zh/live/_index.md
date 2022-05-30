@@ -10,22 +10,29 @@ section1:
 
 section2:
   image: /images/live/cloudnative-live-banner.png
-  url: ./clickhouse0512-live/
+  url: ./ksv0526-live/
 
   notice:
-    title: 云原生虚拟化
+    title: 基于 KubeSphere 和 Thanos 构建可持久化存储的多集群监控系统
     tag: 预告
-    time: 2022 年 05 月 26 日晚 8 点
+    time: 2022 年 06 月 02 日晚 8 点
     base: 线上
-    url: ./ksv0526-live/
+    url: ./jinaai0602-live/
 
   over:
-    title: 使用 Notification Manager 构建云原生通知系统
-    url: ./notification-manager-0428-live/
+    title: 基于 KubeSphere 的 ClickHouse 容器化实践
+    url: ./clickhouse0512-live/
     tag: 结束
 
 section3:
   videos:
+    - title: 云原生虚拟化
+      link: ./ksv0526-live/
+      snapshot: https://pek3b.qingstor.com/kubesphere-community/images/ksv0526-live-cover.png
+      type: iframe
+      createTime: 2022.05.26
+      group: 直播回放
+
     - title: 从 Fluentbit-operator 到 Fluent-operator
       link: ./chengdu0514-fluent-operator/
       snapshot: https://pek3b.qingstor.com/kubesphere-community/images/chengdu0514-fluent-operator-cover.png
