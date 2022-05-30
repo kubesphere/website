@@ -6,7 +6,11 @@ css: scss/live-detail.scss
 
 section1:
   snapshot: 
+<<<<<<< HEAD
   videoUrl: //player.bilibili.com/player.html?aid=384705296&bvid=BV1NZ4y1t7fH&cid=736504662&page=1&high_quality=1
+=======
+  videoUrl: 
+>>>>>>> ae662bf3 (update the page of live)
   type: iframe
   time: 2022-06-02 20:00-21:00
   timeIcon: /images/live/clock.svg
@@ -33,6 +37,7 @@ Prometheus 目前是监控的主流软件，其包括含监控服务，告警服
 
 B 站  http://live.bilibili.com/22580654
 
+<<<<<<< HEAD
 ## PPT 下载
 
 可扫描官网底部二维码，关注 「KubeSphere云原生」公众号，后台回复 `20220602` 即可下载 PPT。
@@ -50,3 +55,5 @@ A：简而言之，query 会将获取到的数据 label 比对去重。这里有
 ### Q3：存储有迁移到 VictoriaMetrics 的计划吗？
 
 A：Thanos 与 vm 为 Prometheus 提供两种不同的存储方案，我也不认为 Thanos 会有计划为 vm 提供兼容方案。
+=======
+>>>>>>> ae662bf3 (update the page of live)
