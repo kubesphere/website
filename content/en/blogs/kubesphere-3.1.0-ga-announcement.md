@@ -47,7 +47,7 @@ You use KubeSphere **Metering and Billing** to:
 
 <iframe width="560" height="315" src="https://www.youtube.com/embed/z1VrkAvdCi4" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
-Going forward, the [KubeSphere Container Platform](http://kubesphere.io/) seeks to provide a more comprehensive operational system for metering and billing.
+Going forward, the [KubeSphere Container Platform](https://kubesphere.io/) seeks to provide a more comprehensive operational system for metering and billing.
 
 ### Edge node management
 
