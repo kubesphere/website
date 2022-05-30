@@ -26,7 +26,7 @@ section2:
 
 section3:
   videos:
-    - title: 容器原生虚拟化：从 KubeVirt 到 KSV 虚拟化
+    - title: 云原生虚拟化
       link: ./ksv0526-live/
       snapshot: https://pek3b.qingstor.com/kubesphere-community/images/ksv0526-live-cover.png
       type: iframe
