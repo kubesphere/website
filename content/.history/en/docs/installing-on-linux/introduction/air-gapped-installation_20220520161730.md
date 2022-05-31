@@ -513,18 +513,12 @@ In KubeKey v2.0.0, we bring in concepts of manifest and artifact, which provides
            password: Harbor12345
        plainHTTP: false
        privateRegistry: "dockerhub.kubekey.local"
-       namespaceOverride: "kubesphereio"
+       namespaceOverride: ""
        registryMirrors: []
        insecureRegistries: []
      addons: []
    ```
-   {{< notice note >}}
 
-   - In **auths**, enter **dockerhub.kubekey.local**, username (**admin**) and password (**Harbor12345**).
-   - In **privateRegistry**, enter **dockerhub.kubekey.local**.
-   - In **namespaceOverride**, enter **kubesphereio**.
-
-    {{</ notice >}}
 7. Run the following command to install a KubeSphere cluster:
 
    ```bash
