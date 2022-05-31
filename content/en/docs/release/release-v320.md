@@ -65,7 +65,7 @@ weight: 18100
 
 ### Bug Fixes
 
-- Change the volume access mode options on the **Volume Settings** tab page. ([#2348](https://github.com/kubesphere/console/pull/2348), [@live77](https://github.com/live77))
+- Change the volume access mode options on the **Storage Settings** tab page. ([#2348](https://github.com/kubesphere/console/pull/2348), [@live77](https://github.com/live77))
 
 ## Network
 

@@ -10,22 +10,71 @@ section1:
 
 section2:
   image: /images/live/cloudnative-live-banner.png
-  url: ./notification-manager-0428-live/
+  url: ./clickhouse0512-live/
 
   notice:
-    title: 基于 KubeSphere 的 ClickHouse 容器化实践
+    title: 云原生虚拟化
     tag: 预告
-    time: 2022 年 05 月 12 日晚 8 点
+    time: 2022 年 05 月 26 日晚 8 点
     base: 线上
-    url: ./clickhouse0512-live/
+    url: ./ksv0526-live/
 
   over:
-    title: Yatai —— 云原生上的 MLOps 平台
-    url: ./yatai0421-live/
+    title: 使用 Notification Manager 构建云原生通知系统
+    url: ./notification-manager-0428-live/
     tag: 结束
 
 section3:
   videos:
+    - title: 从 Fluentbit-operator 到 Fluent-operator
+      link: ./chengdu0514-fluent-operator/
+      snapshot: https://pek3b.qingstor.com/kubesphere-community/images/chengdu0514-fluent-operator-cover.png
+      type: iframe
+      createTime: 2022.05.14
+      group: Meetup
+
+    - title: 云原生应用配置代码化实践
+      link: ./chengdu0514-kusion/
+      snapshot: https://pek3b.qingstor.com/kubesphere-community/images/chengdu0514-configrepo-cover.png
+      type: iframe
+      createTime: 2022.05.14
+      group: Meetup
+
+    - title: 基于 KubeSphere 的分级管理实践
+      link: ./chengdu0514-level/
+      snapshot: https://pek3b.qingstor.com/kubesphere-community/images/chengdu0514-level-cover.png
+      type: iframe
+      createTime: 2022.05.14
+      group: Meetup
+
+    - title: 镜像构建技术 Buildpacks 的原理及在 FaaS 平台中的实践
+      link: ./chengdu0514-openfunction/
+      snapshot: https://pek3b.qingstor.com/kubesphere-community/images/chengdu0514-openfunction-cover.png
+      type: iframe
+      createTime: 2022.05.14
+      group: Meetup
+
+    - title: Nydus - 面向下一代的容器镜像
+      link: ./chengdu0514-nydus/
+      snapshot: https://pek3b.qingstor.com/kubesphere-community/images/chengdu0514-nydus-cover.png
+      type: iframe
+      createTime: 2022.05.14
+      group: Meetup
+
+    - title: 开源 DevOps 工具链整合可以更简单
+      link: ./chengdu0514-devops/
+      snapshot: https://pek3b.qingstor.com/kubesphere-community/images/chengdu0514-devops-cover.png
+      type: iframe
+      createTime: 2022.05.14
+      group: Meetup
+
+    - title: 基于 KubeSphere 的 ClickHouse 容器化实践
+      link: ./clickhouse0512-live/
+      snapshot: https://pek3b.qingstor.com/kubesphere-community/images/clickhouse0512-live-cover.png
+      type: iframe
+      createTime: 2022.05.12
+      group: 直播回放
+
     - title: 使用 Notification Manager 构建云原生通知系统
       link: ./notification-manager-0428-live/
       snapshot: https://pek3b.qingstor.com/kubesphere-community/images/notification-manager-0428-live-cover.png
@@ -39,6 +88,13 @@ section3:
       type: iframe
       createTime: 2022.04.21
       group: 直播回放 
+
+    - title: KubeSphere 社区走进企业第一站——富数科技
+      link: ./fudata-kubesphere/
+      snapshot: https://pek3b.qingstor.com/kubesphere-community/images/fudata-kubesphere-cover.png
+      type: iframe
+      createTime: 2022.04.16
+      group: 走进企业 
 
     - title: 5G + IoT 场景下云原生的应用与思考
       link: ./iot0414-live/
@@ -581,6 +637,10 @@ section4:
 
     - year: 2022
       meetup: 
+
+        - place: 成都站（05.14）
+          img: https://pek3b.qingstor.com/kubesphere-community/images/cloudnative-chengdu-20220514-cover.png
+          meetupUrl: https://kubesphere.com.cn/live/meetup-chengdu-20220514/
 
         - place: 长沙站（03.12）
           img: https://pek3b.qingstor.com/kubesphere-community/images/meetup-changsha-20220312-cover.png

@@ -41,7 +41,7 @@ This tutorial demonstrates how to create a microservices-based app Bookinfo, whi
 
 6. Click **Use Default Ports**. For more information about image settings, see [Pod Settings](../../../project-user-guide/application-workloads/container-image-settings/). Click **√** in the lower-right corner and **Next** to continue.
 
-7. On the **Volume Settings** page, [add a volume](../../../project-user-guide/storage/volumes/) or click **Next** to continue.
+7. On the **Storage Settings** page, [add a volume](../../../project-user-guide/storage/volumes/) or click **Next** to continue.
 
 8. Click **Create** on the **Advanced Settings** page.
 

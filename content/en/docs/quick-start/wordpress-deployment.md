@@ -40,13 +40,13 @@ The environment variable `WORDPRESS_DB_PASSWORD` is the password to connect to t
 
 Follow the same steps above to create a WordPress Secret `wordpress-secret` with the key `WORDPRESS_DB_PASSWORD` and value `123456`. Secrets created display in the list.
 
-### Step 2: Create a volume
+### Step 2: Create a PVC
 
-1. Go to **Volumes** under **Storage** and click **Create**.
+1. Go to **Persistent Volume Claims** under **Storage** and click **Create**.
 
-2. Enter the basic information of the volume (for example, name it `wordpress-pvc`) and click **Next**.
+2. Enter the basic information of the Persistent Volume Claims (PVC), for example, `wordpress-pvc`, and click **Next**.
 
-3. In **Volume Settings**, you need to choose an available **Storage Class**, and set **Access Mode** and **Volume Capacity**. You can use the default value directly. Click **Next** to continue.
+3. In **Storage Settings**, you need to choose an available **Storage Class**, and set **Access Mode** and **Volume Capacity**. You can use the default value directly. Click **Next** to continue.
 
 4. For **Advanced Settings**, you do not need to add extra information for this step and click **Create** to finish.
 

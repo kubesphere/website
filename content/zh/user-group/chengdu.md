@@ -67,6 +67,11 @@ members:
       position: 委员
       des: 奈特瑞 JAVA 开发，云原生爱好者，对各类技术和开源项目有钻研精神，开拓精神。
       image: /images/user-group/chengdu/huangshihao.jpeg
+   
+    - name: 何绍辉
+      position: 委员
+      des: 东方财富证券股份有限公司技术研发，主要负责项目架构设计和产品形态演进，云原生爱好者，有一定的容器云、Paas、Saas 项目设计、开发经验，乐意接触、探索学习新的技术领域知识。
+      image: /images/user-group/chengdu/heshaohui.jpg
 
 activities:
   videos:
@@ -78,6 +83,9 @@ activities:
 
     - image: https://pek3b.qingstor.com/kubesphere-community/images/hpa-cover.png
       link: https://kubesphere.com.cn/live/hpa-chengdu/
+
+    - image: https://pek3b.qingstor.com/kubesphere-community/images/cloudnative-chengdu-20220514-cover.png
+      link: https://kubesphere.com.cn/live/meetup-chengdu-20220514/
 
   review:
     - text: 马上消费金融基于 KubeSphere 的 AI 平台的开发实践
