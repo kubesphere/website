@@ -8,9 +8,9 @@ Weight: 3420
 
 ## Introduction
 
-For a production environment, you need to consider the high availability of the cluster. If key components (for example, kube-apiserver, kube-scheduler, and kube-controller-manager) are all running on the same control plane node, Kubernetes and KubeSphere will be unavailable once the control plane node goes down. Therefore, you need to set up a high-availability cluster by provisioning load balancers with multiple control plane nodes. You can use any cloud load balancer, or any hardware load balancer (for example, F5). In addition, Keepalived and [HAproxy](https://www.haproxy.com/), or Nginx is also an alternative for creating high-availability clusters.
+For a production environment, you need to consider the high availability of the cluster. If key components (for example, kube-apiserver, kube-scheduler, and kube-controller-manager) are all running on the same master node, Kubernetes and KubeSphere will be unavailable once the master node goes down. Therefore, you need to set up a high-availability cluster by provisioning load balancers with multiple master nodes. You can use any cloud load balancer, or any hardware load balancer (for example, F5). In addition, Keepalived and [HAproxy](https://www.haproxy.com/), or Nginx is also an alternative for creating high-availability clusters.
 
-This tutorial walks you through an example of how to create two [QingCloud load balancers](https://docs.qingcloud.com/product/network/loadbalancer), serving as the internal load balancer and external load balancer respectively, and of how to implement high availability of control plane and etcd nodes using the load balancers.
+This tutorial walks you through an example of how to create two [QingCloud load balancers](https://docs.qingcloud.com/product/network/loadbalancer), serving as the internal load balancer and external load balancer respectively, and of how to implement high availability of master and etcd nodes using the load balancers.
 
 ## Prerequisites
 
@@ -20,7 +20,7 @@ This tutorial walks you through an example of how to create two [QingCloud load 
 
 ## Architecture
 
-This example prepares six machines of **Ubuntu 16.04.6**. You will create two load balancers, and deploy three control plane nodes and etcd nodes on three of the machines. You can configure these control plane and etcd nodes in `config-sample.yaml` created by KubeKey (Please note that this is the default name, which can be changed by yourself).
+This example prepares six machines of **Ubuntu 16.04.6**. You will create two load balancers, and deploy three master and etcd nodes on three of the machines. You can configure these master and etcd nodes in `config-sample.yaml` created by KubeKey (Please note that this is the default name, which can be changed by yourself).
 
 ![ha-architecture](/images/docs/installing-on-linux/installing-on-public-cloud/deploy-kubesphere-on-qingcloud-instances/ha-architecture.png)
 
@@ -63,17 +63,17 @@ This step demonstrates how to create load balancers on the QingCloud platform.
    
    {{</ notice >}}
 
-4. Click **Add Backend**, and choose the VxNet you just selected (in this example, it is `pn`). Click **Advanced Search**, choose the three control plane nodes, and set the port to `6443` which is the default secure port of api-server.
+4. Click **Add Backend**, and choose the VxNet you just selected (in this example, it is `pn`). Click **Advanced Search**, choose the three master nodes, and set the port to `6443` which is the default secure port of api-server.
 
    ![3-master](/images/docs/installing-on-linux/installing-on-public-cloud/deploy-kubesphere-on-qingcloud-instances/3-master.png)
 
    Click **Submit** when you finish.
 
-5. Click  **Apply Changes** to use the configurations. At this point, you can find the three control plane nodes have been added as the backend servers of the listener that is behind the internal load balancer.
+5. Click  **Apply Changes** to use the configurations. At this point, you can find the three masters have been added as the backend servers of the listener that is behind the internal load balancer.
 
    {{< notice note >}}
    
-   The status of all control plane nodes might show **Not Available** after you added them as backends. This is normal since port `6443` of api-server is not active on control plane nodes yet. The status will change to **Active** and the port of api-server will be exposed after the installation finishes, which means the internal load balancer you configured works as expected.
+   The status of all masters might show **Not Available** after you added them as backends. This is normal since port `6443` of api-server is not active on master nodes yet. The status will change to **Active** and the port of api-server will be exposed after the installation finishes, which means the internal load balancer you configured works as expected.
    
    {{</ notice >}}
    
@@ -184,16 +184,16 @@ Create an example configuration file with default configurations. Here Kubernete
 
 ### Step 3: Set cluster nodes
 
-As you adopt the HA topology with stacked control plane nodes, the control plane nodes and etcd nodes are on the same three machines.
+As you adopt the HA topology with stacked control plane nodes, the master nodes and etcd nodes are on the same three machines.
 
 | **Property** | **Description**                   |
 | :----------- | :-------------------------------- |
 | `hosts`      | Detailed information of all nodes |
 | `etcd`       | etcd node names                   |
-| `control-plane`     | Control plane node names                 |
+| `master`     | Master node names                 |
 | `worker`     | Worker node names                 |
 
-Put the control plane nodes (`master1`, `master2` and `master3`) under `etcd` and `master` respectively as below, which means these three machines will serve as both the control plane and etcd nodes. Note that the number of etcd needs to be odd. Meanwhile, it is not recommended that you install etcd on worker nodes since the memory consumption of etcd is very high.
+Put the master node name (`master1`, `master2` and `master3`) under `etcd` and `master` respectively as below, which means these three machines will serve as both the master and etcd nodes. Note that the number of etcd needs to be odd. Meanwhile, it is not recommended that you install etcd on worker nodes since the memory consumption of etcd is very high.
 
 #### config-sample.yaml Example
 
@@ -327,7 +327,7 @@ Both listeners show that the status is **Active**, meaning nodes are up and runn
 
 In the web console of KubeSphere, you can also see that all the nodes are functioning well.
 
-To verify if the cluster is highly available, you can turn off an instance on purpose. For example, the above console is accessed through the address `IP: 30880` (the EIP address here is the one bound to the external load balancer). If the cluster is highly available, the console will still work well even if you shut down a control plane node.
+To verify if the cluster is highly available, you can turn off an instance on purpose. For example, the above console is accessed through the address `IP: 30880` (the EIP address here is the one bound to the external load balancer). If the cluster is highly available, the console will still work well even if you shut down a master node.
 
 ## See Also
 

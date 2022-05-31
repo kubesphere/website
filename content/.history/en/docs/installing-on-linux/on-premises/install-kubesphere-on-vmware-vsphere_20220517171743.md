@@ -83,7 +83,7 @@ You can follow the New Virtual Machine wizard to create a virtual machine to pla
 
 ## Install a Load Balancer using Keepalived and HAProxy
 
-For a production environment, you have to prepare an external load balancer for your cluster with multiple control plane nodes. If you do not have a load balancer, you can install it using Keepalived and HAProxy. If you are provisioning a development or testing environment by installing a cluster with a control plane node, please skip this section.
+For a production environment, you have to prepare an external load balancer for your cluster with multiple control plane nodes. If you do not have a load balancer, you can install it using Keepalived and HAProxy. If you are provisioning a development or testing environment by installing a single-master cluster, please skip this section.
 
 ### Yum Install
 

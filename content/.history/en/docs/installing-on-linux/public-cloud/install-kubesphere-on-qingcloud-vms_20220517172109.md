@@ -20,7 +20,7 @@ This tutorial walks you through an example of how to create two [QingCloud load 
 
 ## Architecture
 
-This example prepares six machines of **Ubuntu 16.04.6**. You will create two load balancers, and deploy three control plane nodes and etcd nodes on three of the machines. You can configure these control plane and etcd nodes in `config-sample.yaml` created by KubeKey (Please note that this is the default name, which can be changed by yourself).
+This example prepares six machines of **Ubuntu 16.04.6**. You will create two load balancers, and deploy three master and etcd nodes on three of the machines. You can configure these master and etcd nodes in `config-sample.yaml` created by KubeKey (Please note that this is the default name, which can be changed by yourself).
 
 ![ha-architecture](/images/docs/installing-on-linux/installing-on-public-cloud/deploy-kubesphere-on-qingcloud-instances/ha-architecture.png)
 
@@ -327,7 +327,7 @@ Both listeners show that the status is **Active**, meaning nodes are up and runn
 
 In the web console of KubeSphere, you can also see that all the nodes are functioning well.
 
-To verify if the cluster is highly available, you can turn off an instance on purpose. For example, the above console is accessed through the address `IP: 30880` (the EIP address here is the one bound to the external load balancer). If the cluster is highly available, the console will still work well even if you shut down a control plane node.
+To verify if the cluster is highly available, you can turn off an instance on purpose. For example, the above console is accessed through the address `IP: 30880` (the EIP address here is the one bound to the external load balancer). If the cluster is highly available, the console will still work well even if you shut down a master node.
 
 ## See Also
 
