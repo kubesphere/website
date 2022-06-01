@@ -1,7 +1,7 @@
 ---
 title: '使用 Notification Manager 构建云原生通知系统'
 tag: 'KubeSphere, Notification Manager'
-keywords: 'Kubernetes, KubeSphere, Notification Manager, 云原生通知系统'
+keywords: 'Kubernetes, KubeSphere, Notification Manager, 云原生通知系统, 告警, 监控'
 description: 'KubeKey 2.0.0 正式发布，该版本新增了清单（manifest）和制品（artifact）的概念，为用户离线部署 Kubernetes 集群提供了解决方案。'
 createTime: '2022-05-10'
 author: '雷万钧'
