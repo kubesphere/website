@@ -16,15 +16,10 @@ This section gives you an overview of a single-master multi-node installation, i
 
 ## Concept
 
-<<<<<<< HEAD
-A multi-node cluster is composed of at least one control plane and one worker node. You can use any node as the **taskbox** to carry out the installation task. You can add additional nodes based on your needs (for example, for high availability) both before and after the installation.
-
 - **Control Plane**. The control plane generally controls and manages the whole system.
-=======
-A multi-node cluster is composed of at least one master node and one worker node. You can use any node as the **taskbox** to carry out the installation task. You can add additional nodes based on your needs (for example, for high availability) both before and after the installation.
 
-- **Master**. A master node generally hosts the control plane that controls and manages the whole system.
->>>>>>> 1d8cbc5f (PVC and PV-EN)
+A multi-node cluster is composed of at least one control plane node and one worker node. You can use any node as the **taskbox** to carry out the installation task. You can add additional nodes based on your needs (for example, for high availability) both before and after the installation.
+
 - **Worker**. Worker nodes run the actual applications deployed on them.
 
 ## Step 1: Prepare Linux Hosts
@@ -282,7 +277,7 @@ At the same time, you must provide the login information used to connect to each
 
 #### controlPlaneEndpoint (for HA installation only)
 
-The `controlPlaneEndpoint` is where you provide your external load balancer information for an HA cluster. You need to prepare and configure the external load balancer if and only if you need to install multiple master nodes. Please note that the address and port should be indented by two spaces in `config-sample.yaml`, and `address` should be your load balancer's IP address. See [HA Configurations](../../../installing-on-linux/high-availability-configurations/ha-configuration/) for details.
+The `controlPlaneEndpoint` is where you provide your external load balancer information for an HA cluster. You need to prepare and configure the external load balancer if and only if you need to install multiple control plane nodes. Please note that the address and port should be indented by two spaces in `config-sample.yaml`, and `address` should be your load balancer's IP address. See [HA Configurations](../../../installing-on-linux/high-availability-configurations/ha-configuration/) for details.
 
 #### addons
 

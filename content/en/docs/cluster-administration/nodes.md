@@ -27,7 +27,7 @@ Cluster nodes are only accessible to cluster administrators. Some node metrics a
 
     - **Name**: The node name and subnet IP address.
     - **Status**: The current status of a node, indicating whether a node is available or not.
-    - **Role**: The role of a node, indicating whether a node is a worker or master.
+    - **Role**: The role of a node, indicating whether a node is a worker or the control plane.
     - **CPU Usage**: The real-time CPU usage of a node.
     - **Memory Usage**: The real-time memory usage of a node.
     - **Pods**: The real-time usage of Pods on a node.

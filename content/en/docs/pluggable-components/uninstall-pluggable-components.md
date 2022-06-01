@@ -1,8 +1,8 @@
 ---
-title: "Uninstall Pluggable Components from KubeSphere 3.3.0"
+title: "Uninstall Pluggable Components"
 keywords: "Installer, uninstall, KubeSphere, Kubernetes"
-description: "Learn how to uninstall each pluggable component in KubeSphere 3.3.0."
-linkTitle: "Uninstall Pluggable Components from KubeSphere 3.3.0"
+description: "Learn how to uninstall each pluggable component in KubeSphere."
+linkTitle: "Uninstall Pluggable Components"
 Weight: 6940
 ---
 
@@ -77,11 +77,11 @@ Change the value of `openpitrix.store.enabled` from `true` to `false` in `ks-ins
 
    {{< notice note >}}
 
-   After running this command, you can still view the container recent logs provided by Kubernetes by default. However, the container history logs will be cleared and you cannot browse them any more. 
+   After running this command, you can still view the container's recent logs provided by Kubernetes by default. However, the container history logs will be cleared and you cannot browse them any more. 
 
    {{</ notice >}}
 
-3. To uninstall Logging system including Elasticsearch:
+3. To uninstall the Logging system, including Elasticsearch:
 
    ```bash
    kubectl delete crd fluentbitconfigs.logging.kubesphere.io
@@ -194,7 +194,7 @@ Change the value of `network.ippool.type` from `calico` to `none` in `ks-install
 
 ## Uninstall KubeEdge
 
-1. Change the value of `kubeedge.enabled` from `true` to `false` in `ks-installer` of the CRD `ClusterConfiguration`.
+1. Change the value of `kubeedge.enabled` and `edgeruntime.enabled` from `true` to `false` in `ks-installer` of the CRD `ClusterConfiguration`.
 
 2. Run the following commands:
 
@@ -205,7 +205,7 @@ Change the value of `network.ippool.type` from `calico` to `none` in `ks-install
 
    {{< notice note >}}
 
-   After the uninstallation, you will not be able to add edge nodes to your cluster.
+   After uninstallation, you will not be able to add edge nodes to your cluster.
 
    {{</ notice >}}
 

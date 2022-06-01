@@ -9,9 +9,9 @@ weight: 3510
 
 ## Introduction
 
-For a production environment, we need to consider the high availability of the cluster. If the key components (for example, kube-apiserver, kube-scheduler, and kube-controller-manager) are all running on the same master node, Kubernetes and KubeSphere will be unavailable once the master node goes down. Therefore, we need to set up a high-availability cluster by provisioning load balancers with multiple master nodes. You can use any cloud load balancer, or any hardware load balancer (for example, F5). In addition, Keepalived and [HAProxy](https://www.haproxy.com/), or Nginx is also an alternative for creating high-availability clusters.
+For a production environment, we need to consider the high availability of the cluster. If the key components (for example, kube-apiserver, kube-scheduler, and kube-controller-manager) are all running on the same control plane node, Kubernetes and KubeSphere will be unavailable once the control plane node goes down. Therefore, we need to set up a high-availability cluster by provisioning load balancers with multiple control plane nodes. You can use any cloud load balancer, or any hardware load balancer (for example, F5). In addition, Keepalived and [HAProxy](https://www.haproxy.com/), or Nginx is also an alternative for creating high-availability clusters.
 
-This tutorial walks you through an example of how to create Keepalived and HAProxy, and implement high availability of master and etcd nodes using the load balancers on VMware vSphere.
+This tutorial walks you through an example of how to create Keepalived and HAProxy, and implement high availability of control plane and etcd nodes using the load balancers on VMware vSphere.
 
 ## Prerequisites
 
@@ -83,7 +83,7 @@ You can follow the New Virtual Machine wizard to create a virtual machine to pla
 
 ## Install a Load Balancer using Keepalived and HAProxy
 
-For a production environment, you have to prepare an external load balancer for your multiple-master cluster. If you do not have a load balancer, you can install it using Keepalived and HAProxy. If you are provisioning a development or testing environment by installing a single-master cluster, please skip this section.
+For a production environment, you have to prepare an external load balancer for your cluster with multiple control plane nodes. If you do not have a load balancer, you can install it using Keepalived and HAProxy. If you are provisioning a development or testing environment by installing a cluster with a control plane node, please skip this section.
 
 ### Yum Install
 
@@ -491,7 +491,7 @@ spec:
     enabled: false
   openpitrix:          # Whether to install KubeSphere App Store. It provides an application store for Helm-based applications, and offer application lifecycle management
     enabled: false
-  servicemesh:         # Whether to install KubeSphere Service Mesh (Istio-based). It provides fine-grained traffic management, observability and tracing, and offer visualization for traffic topology
+  servicemesh:         # (0.3 Core, 300 MiB) Provide fine-grained traffic management, observability and tracing, and visualized traffic topology
     enabled: false
 ```
 

@@ -22,7 +22,7 @@ WireGuard 是一种 VPN 技术，从 linux 5.6 内核开始默认包含在内核
 
 WireGuard 是一种 VPN 技术，通常被认为是 C/S 架构。它同样能在端对端的网格网络架构中配置使用，这就是 Tigera 设计的 WireGuard 可以在 Kubernetes 中启用的解决方案。使用 Calico，所有启用 WireGuard 的节点将端对端形成一个加密的网格。Calico 甚至支持在同一集群内同时包含启用 WireGuard 的节点与未启用 WireGuard 的节点，并且可以相互通信。
 
-![](https://cdn.jsdelivr.net/gh/kubesphere-sigs/awesome-cloud-native-blogs@master/2021/08/calico-wireguard-support-with-azure-cni/1.1.png)
+![](/jsDelivr/1.1.png)
 
 我们选择 WireGuard 并不是一个折中的方案。我们希望提供最简单、最安全、最快速的方式来加密传输 Kubernetes 集群中的数据，而无需使用 mTLS、IPsec 或其他复杂的配置。事实上，您可以把 WireGuard 看成是另一个具有加密功能的 Overlay。
 
@@ -41,7 +41,7 @@ WireGuard 是一种 VPN 技术，通常被认为是 C/S 架构。它同样能在
 
 下图显示了启用 WireGuard 后集群中的各种数据包流量情况。
 
-![](https://cdn.jsdelivr.net/gh/kubesphere-sigs/awesome-cloud-native-blogs@master/2021/08/calico-wireguard-support-with-azure-cni/2.1.png)
+![](/jsDelivr/2.1.png)
 
 同一主机上的 Pod：
 

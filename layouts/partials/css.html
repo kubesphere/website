@@ -25,7 +25,7 @@
 
 
 {{ if .IsDescendant (.GetPage "/docs") }}
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/docsearch.js@2/dist/cdn/docsearch.min.css">
+<link rel="stylesheet" href="/npm/docsearch.js@2/dist/cdn/docsearch.min.css">
 {{ if not (eq . (.GetPage "/docs"))}}
 {{ $style := resources.Get "scss/doc.scss" | toCSS | minify | fingerprint }}
 <link rel="stylesheet" href="{{ $style.RelPermalink }}">
