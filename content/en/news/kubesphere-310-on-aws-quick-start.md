@@ -4,6 +4,8 @@ keywords: "AWS, Kubernetes, EKS, Amazon EKS, DevOps"
 description: "KubeSphere Quick Start uses AWS CloudFormation templates to help users automatically provision an Amazon EKS cluster on the AWS Cloud. End users can manage Amazon EKS clusters through the KubeSphere console."
 createTime: "2021-07-07"
 author: "Feynman Zhou"
+image: /images/news/aws-quick-start/quick-start-cover.png
+tag: "Product News"
 ---
 
 ![kubecon-eu-banner](/images/news/aws-quick-start/kubesphere-aws.png)
