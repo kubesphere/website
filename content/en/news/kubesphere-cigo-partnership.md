@@ -4,6 +4,8 @@ keywords: "KubeSphere, Cigo Cloud, Partner, Kubernetes"
 description: "KubeSphere and Cigo Cloud work to empower African users on the cloud and promote a local developer community."
 createTime: '2020-11-30'
 author: 'Feynman, Sherlock'
+image: https://ap3.qingstor.com/kubesphere-website/docs/cigo-cloud.png
+tag: "Product News"
 ---
 
 ![cigo-and-KubeSphere](https://ap3.qingstor.com/kubesphere-website/docs/cigo-cloud.png)

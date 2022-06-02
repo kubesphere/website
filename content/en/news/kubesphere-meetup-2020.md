@@ -4,6 +4,8 @@ keywords: KubeSphere, Community, Meetup, Kubernetes
 description: KubeSphere and Friends 2020 Meetup attracted more than 100 individual community members and honored guests to share their ideas and experiences on cloud-native and Kubernetes.
 createTime: '2021-02-02'
 author: 'Feynman, Sherlock, Lindsay'
+image: /images/news/meetup-2020/Snip20210201_8.png
+tag: "Community News"
 ---
 
 ![Snip20210201_8](/images/news/meetup-2020/Snip20210201_8.png)

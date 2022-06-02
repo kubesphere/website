@@ -8,70 +8,53 @@
     </div>
 </section>
 {{ end }}
-
-{{ with .Params.section2 }}
-<section class="section-2">
+<section class='section-list'>
     <div class="common-layout">
-      <div class='news-list' data-origin='{{ .news | jsonify }}'>
-        {{ range .news }}
-        <div class="news-div">
-          <h2>
-            <a href="{{ .link }}" target="_blank" rel="noopener noreferrer">{{ .title }}</a>
-          </h2>
-          <p>{{ .description }}</p>
-          <img src="{{ .image }}" alt="{{ .title }}">
-        </div>
-        {{ end }}
-      </div>
-      <div id='pagination'></div>
+        <ul class='blog-tab-ul'>
+            <li class='active'>{{ .Params.tip }}</li>
+            {{ $tags := slice }}
+            {{ range .Data.Pages }}
+            {{ $tag := split .Params.tag ","}}
+            {{ $tags = $tags | append $tag }}
+            {{ end }}
+            {{ range ($tags | uniq) }}
+            <li data-tag='{{ . }}'>{{ . }}</li>
+            {{ end }}
+        </ul>
+        <ul class='blogs-ul'>
+            {{ range (.Data.Pages.ByParam "createTime").Reverse }}
+            <li data-tag='{{ .Params.tag }}' class="news-div">
+                <h2>
+                    <a href="{{ .RelPermalink }}" target="_blank" rel="noopener noreferrer">{{ .Params.title }}</a>
+                </h2>
+                <p>{{ .Params.description }}</p>
+                <img src="{{ .Params.image }}" alt="{{ .Params.title }}">
+            </li>
+            {{ end }}
+        </ul>
     </div>
 </section>
-{{ end }}
 
-<script src='{{ "js/pagination.min.js" | relURL }}'></script>
 <script>
-    var createNews = function(news) {
-        a = '<a href="' + news.link + '">' + news.title + '</a>'
-        if (news.link.slice(0, 4) == "http") {
-            var a = '<a href="' + news.link + '" target="_blank" rel="noopener noreferrer">' + news.title + '</a>'
-        }
-        var h2 = '<h2>' + a + '</h2>'
-        var p = '<p>' + news.description + '</p>'
-        var img = '<img src="' + news.image + '" alt="' + news.title + '">'
-        var s = '<div class="news-div">' + h2 + p + img + '</div>'
-        return s
-    }
-
-    var createNewsList = function(news) {
-        var result = ''
-        for (var i = 0; i < news.length; i++) {
-            var n = news[i]
-            var s = createNews(n)
-            result += s
-        }
-        return result
-    }
-
-    var initPagination = function(dataSource) {
-        $('#pagination').pagination({
-            dataSource: dataSource,
-            pageSize: 10,
-            prevText: '<<',
-            nextText: '>>',
-            callback: function(data, pagination) {
-                var newsList =createNewsList(data)
-                $('.news-list').empty().append(newsList)
+    var bindClickBlogLi = function() {
+        var tabLi = $('.blog-tab-ul > li')
+        var blogs = $('.blogs-ul > li')
+        tabLi.click(function() {
+            tabLi.removeClass('active')
+            var tag = $(this).data('tag')
+            $(this).addClass('active')
+            blogs.show()
+            if (tag) {
+                blogs.each(function() {
+                    var tags = $(this).data('tag')
+                    if (!tags || !tags.includes(tag)) {
+                        $(this).hide()
+                    }
+                })
             }
         })
     }
 
-    var initNews = function() {
-        var news =  $('.news-list').data('origin')
-        initPagination(news)
-    }
-
-    initNews()
-
+    bindClickBlogLi()
 </script>
-
 {{ end }}
