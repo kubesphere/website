@@ -77,7 +77,7 @@ rules:
 - level: Metadata
 ```
 
-有关审计策略的更多信息，请参见[审计策略](https://kubernetes.io/zh/docs/tasks/debug-application-cluster/audit/#audit-policy)。
+有关审计策略的更多信息，请参见[审计策略](https://kubernetes.io/zh/docs/tasks/debug/debug-cluster/audit/)。
 
 ### 审计 Webhook
 
@@ -89,7 +89,7 @@ kind: Config
 clusters:
 - name: kube-auditing
   cluster:
-    server: https://{ip}:443/audit/webhook/event
+    server: https://{ip}:6443/audit/webhook/event
     insecure-skip-tls-verify: true
 contexts:
 - context:
