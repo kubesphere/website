@@ -4,6 +4,8 @@ keywords: " Community, Kubernetes, KubeSphere"
 description: "KubeSphere Community Report 2021"
 createTime: "2022-01-28"
 author: "Feynman Zhou, Lindsay Liu, Felix Liu"
+image: /images/news/community-report-2021/2021-community-recap-cover.png
+tag: "Community News"
 ---
 
 In 2021, we have witnessed emerging cloud-native technologies, technological innovations, and the power of the open source community. We have also accomplished a lot of milestones with the collaboration of all users, contributors, and partners.

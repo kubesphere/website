@@ -4,6 +4,8 @@ keywords: KubeCon, CloudNativeCon, Kubernetes
 description: KubeSphere brings 3 sessions in KubeCon Europe 2022
 createTime: '2022-03-16'
 author: 'Feynman Zhou'
+image: /images/news/kubecon-eu/kubecon-eu-2022-banner.png
+tag: "Community News"
 ---
 
 ![kubecon-eu-banner](/images/news/kubecon-eu/kubecon-eu-2022-banner.png)

@@ -1,9 +1,11 @@
 ---
 title: "KubeCon and CloudNativeCon Europe 2021 is coming! Welcome to join us!"
+tag: "Community News"
 keywords: "KubeCon, CloudNativeCon, KubeSphere, Kubernetes"
 description: "The KubeSphere team will give a presentation at the Data on Kubernetes Day of KubeCon and CloudNativeCon Europe 2021."
 createTime: "2021-04-20"
 author: "LindSay, Feynman"
+image: /images/news/kubecon-eu/kubecon-news-banner.png
 ---
 
 ## Introduction to KubeCon and CloudNativeCon Europe 2021

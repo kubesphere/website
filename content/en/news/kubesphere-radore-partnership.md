@@ -4,6 +4,8 @@ keywords: KubeSphere, Radore, Partner, Kubernetes
 description: KubeSphere and Radore will work to build and promote both ecosystems as we embark on the journey to the era of hybrid cloud.
 createTime: '2020-06-30'
 author: 'Feynman, Sherlock'
+image: https://ap3.qingstor.com/kubesphere-website/docs/Radore-KubeSphere-cooperation.jpeg
+tag: "Product News"
 ---
 
 ![radore-kubesphere-cooperation](https://ap3.qingstor.com/kubesphere-website/docs/Radore-KubeSphere-cooperation.jpeg)
