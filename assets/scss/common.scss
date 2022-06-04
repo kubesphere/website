@@ -393,7 +393,16 @@ section {
   background-repeat: no-repeat;
   background-size: cover;
   cursor: pointer;
+  &.is-active {
+    background-image: none;
+    width: auto;
+    &:before {
+      content: "Copied";
+      color: #ffffff;
+    }
+  }
 }
+
 
 .copy-code-button:hover {
   top: 3px;
