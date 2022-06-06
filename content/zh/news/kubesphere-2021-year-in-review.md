@@ -12,33 +12,33 @@ image: 'https://pek3b.qingstor.com/kubesphere-community/images/2021-kubesphere-c
 
 农历新年将至，我们一起来回顾一下 KubeSphere 开源社区在过去一年的成长故事，并对所有参与过 KubeSphere 社区贡献的成员致以最诚挚的感谢与问候。
 
-![里程碑](http://pek3b.qingstor.com/kubesphere-community/images/202201282205631.png)
+![里程碑](https://pek3b.qingstor.com/kubesphere-community/images/202201282205631.png)
 
 ## 开源项目发展情况
 
 在过去 3 年里，以 KubeSphere 为中心，KubeSphere 社区衍生出了诸多新的开源项目，比如 KubeKey、OpenELB、OpenFunction 等项目都吸引了海内外开发者的关注和使用。它们不仅可以作为插件集成到 KubeSphere 中，还可以作为独立项目结合 K8s 部署使用，为云原生生态的繁荣做出了贡献。
 
-![开源项目](http://pek3b.qingstor.com/kubesphere-community/images/202201282212883.png)
+![开源项目](https://pek3b.qingstor.com/kubesphere-community/images/202201282212883.png)
 
 这些开源项目在 GitHub 的 Star、Fork 和 Contributor 的数量在快速增长，此外，它们背后的社区价值和潜能却是不可估量。在 2021 年，KubeSphere 社区还将 OpenELB 负载均衡器与 Fluent Operator 日志管理项目分别捐给了 CNCF 基金会和 Fluent 社区，借助 CNCF 与上游社区的力量，为项目带来更多全球开发者的参与。
 
-![项目数据](http://pek3b.qingstor.com/kubesphere-community/images/202201282227077.png)
+![项目数据](https://pek3b.qingstor.com/kubesphere-community/images/202201282227077.png)
 
 ## 企业采用情况
 
 据不完全统计，目前 KubeSphere 在全球已被下载 70w 次，近 8w 个的活跃集群数，数千家企业在生产环境中使用 KubeSphere。我们看到 KubeSphere 被银行、保险、证券、互联网、能源、电信、交通、高校、零售、物流等各行各业的用户在企业中采用，并且社区中不乏有很多资深用户帮助 KubeSphere 项目提交建议或反馈，并深度参与了代码和文档的贡献。此外，我们还看到了越来越多的用户在社区活动、技术文章和社交媒体上布道和推广 KubeSphere。
 
-![企业采用情况](http://pek3b.qingstor.com/kubesphere-community/images/202201282152871.png)
+![企业采用情况](https://pek3b.qingstor.com/kubesphere-community/images/202201282152871.png)
 
 ## 合作伙伴与应用生态
 
 应用商店与应用全生命周期管理是 KubeSphere 的特色，过去一年，我们又新增了很多合作伙伴，丰富了应用生态。例如，我们的合作伙伴已经将 6 个云原生应用（APISIX、ChaosMesh、Nocalhost、JuiceFS、EdgeMesh、fpga-operator）添加到了 KubeSphere 应用商店。除此之外，社区也收获了更多贡献企业。在此，向各贡献企业及合作伙伴致以最诚挚的谢意！
 
-![贡献企业及合作伙伴](http://pek3b.qingstor.com/kubesphere-community/images/202201291848016.png)
+![贡献企业及合作伙伴](https://pek3b.qingstor.com/kubesphere-community/images/202201291848016.png)
 
 KubeSphere 作为多云与多集群管理的云原生应用平台，支持纳管私有化与托管的 K8s 集群。在 2021 年，KubeSphere 已在 AWS、Azure、DigitalOcean、QingCloud 等全球各大公有云应用市场上架，分别集成了 Amazon EKS、Azure AKS、DigitalOcean Kubernetes 与青云 QKE，并联合发布了多篇最佳实践。
 
-![公有云 K8s 集成](http://pek3b.qingstor.com/kubesphere-community/images/202201282153602.png)
+![公有云 K8s 集成](https://pek3b.qingstor.com/kubesphere-community/images/202201282153602.png)
 
 ## 社区活动
 
@@ -153,7 +153,7 @@ KubeSphere 依旧还是一个非常年轻的社区，伴随着开源项目的快
 
 通过一年的运营，KubeSphere 社区 2021 年在关注度方面增长颇高：
 
-![](http://pek3b.qingstor.com/kubesphere-community/images/2021-community-growing.png)
+![](https://pek3b.qingstor.com/kubesphere-community/images/2021-community-growing.png)
 
 > 注：以上数据均为当前数据
 
