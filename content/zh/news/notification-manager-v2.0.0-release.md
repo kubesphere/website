@@ -1,11 +1,11 @@
 ---
 title: 'Notification Manager 2.0.0 发布：新增飞书通知、通知路由、通知静默'
-tag: 'KubeSphere, Notification Manager'
+tag: '产品动态'
 keywords: 'Kubernetes, Notification Manager, 通知路由, 通知静默'
 description: 'Notification Manager 2.0.0 为您带来了许多值得关注的功能，包括新增飞书通知、通知路由、通知静默、自定义模板增强等。'
 createTime: '2022-05-06'
 author: '雷万钧'
-snapshot: 'https://pek3b.qingstor.com/kubesphere-community/images/notification-manager-2.0.0-cover.png'
+image: 'https://pek3b.qingstor.com/kubesphere-community/images/notification-manager-2.0.0-cover.png'
 ---
 
 [Notification Manager](https://github.com/kubesphere/notification-manager) 是 KubeSphere 可观测团队开源的一款 Kubernetes 平台上的**多租户通知管理系统**，其从 Kubernetes 接收告警、事件、审计，根据用户设置的模板生成通知消息并推送给用户。

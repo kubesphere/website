@@ -1,11 +1,11 @@
 ---
 title: 'KubeSphere 3.1.0 GA：混合多云走向边缘，让应用无处不在'
-tag: 'KubeSphere,release'
+tag: '产品动态'
 keyword: '社区, 开源, 贡献, KubeSphere, release'
 description: 'KubeSphere v3.1.0 主打“延伸至边缘侧的容器混合云”，新增了对“边缘计算”场景的支持。同时在 v3.0.0 的基础上新增了计量计费，让基础设施的运营成本更清晰，并进一步优化了在“多云、多集群、多团队、多租户”等应用场景下的使用体验，增强了“多集群管理、多租户管理、可观测性、DevOps、应用商店、微服务治理”等特性，更进一步完善交互设计提升了用户体验。'
 createTime: '2021-04-29'
 author: 'KubeSphere'
-snapshot: 'https://pek3b.qingstor.com/kubesphere-community/images/ks3.1.png'
+image: 'https://pek3b.qingstor.com/kubesphere-community/images/ks3.1.png'
 ---
 
 ![](https://pek3b.qingstor.com/kubesphere-community/images/3.1.0GA.png)

@@ -1,9 +1,11 @@
 ---
-title: 'KubeSphere 2.1.1 发布！全面支持 Kubernetes 1.17！多项功能与用户体验优化！'
-tag: 'release,KubeSphere'
+title: 'KubeSphere 2.1.0 发布！多项功能与用户体验优化！'
+tag: '产品动态'
+keywords: 'KubeSphere, Kubernetes'
+description: 'KubeSphere 2.1.0 对安装部署、DevOps、应用商店、存储、可观测性、认证与权限等模块提供了诸多新功能和深度优化，更好地帮助企业用户在测试生产环境快速落地云原生技术和运维 Kubernetes。'
 createTime: '2019-11-11'
 author: 'Feynman Zhou'
-snapshot: 'https://pek3b.qingstor.com/kubesphere-docs/png/20191112093503.png'
+image: 'https://pek3b.qingstor.com/kubesphere-docs/png/20191112093503.png'
 ---
 
 
@@ -99,8 +101,3 @@ Kubernetes 无疑已经是容器编排的事实标准，但 Kubernetes 本身的
 
 ![](https://pek3b.qingstor.com/kubesphere-docs/png/20191111175033.png)
 
-## 关于 KubeSphere
-
-**KubeSphere** （github.com/kubesphere）是在 Kubernetes 之上构建的开源的 **以应用为中心的容器平台**，支持部署和运行在任何基础设施之上，提供简单易用的操作界面以及向导式操作方式，在降低用户使用容器调度平台学习成本的同时，极大减轻开发、测试、运维的日常工作的复杂度，旨在解决 Kubernetes 本身存在的存储、网络、安全和易用性等痛点。帮助企业轻松应对敏捷开发、自动化运维、应用快速交付、微服务治理、多租户管理、监控日志告警、服务与网络管理业务场景。
-
-![](https://pek3b.qingstor.com/kubesphere-docs/png/20191112191738.png)
