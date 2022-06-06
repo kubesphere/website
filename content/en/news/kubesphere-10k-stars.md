@@ -1,6 +1,6 @@
 ---
 title: 'KubeSphere Celebrates the Milestone of Reaching 10,000 GitHub Stars'  
-tag: 'KubeSphere, Announcement'  
+tag: 'Community News'  
 keywords: Kubernetes, KubeSphere, Community 
 description: We are celebrating the milestone of reaching 10,000 GitHub stars for our open source project KubeSphere.  
 createTime: '2022-05-31'  
