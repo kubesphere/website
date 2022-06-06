@@ -1,11 +1,11 @@
 ---
 title: '除夕夜，来 KubeSphere 社区领证吧！'
-tag: 'KubeSphere, 社区'
+tag: '社区动态'
 keyword: '社区, 开源, 贡献, KubeSphere'
 description: 'KubeSphere 社区管理委员会向此次获得 2020 年度评选产生的 KubeSphere Member、 KubeSphere Ambassador、KubeSphere Talented Speaker、KubeSphere Contributor 成员致谢。'
 createTime: '2021-02-11'
 author: '周鹏飞'
-snapshot: '/images/blogs/en/meetup-2020/kubesphere-meetup.png'
+image: 'https://pek3b.qingstor.com/kubesphere-community/images/kubesphere-certificate-2020-cover.png'
 ---
 
 <video controls="controls" style="width: 100% !important; height: auto !important;">

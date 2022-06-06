@@ -1,11 +1,11 @@
 ---
 title: '2021 年新晋 KubeSphere Contributor 们，快来领证吧！'
-tag: 'KubeSphere, 社区'
+tag: '社区动态'
 keyword: '社区, 开源, 贡献, KubeSphere'
 description: 'KubeSphere 社区向此次获得 2021 年新晋的 KubeSphere Contributor 致谢，并向所有在 KubeSphere 中文论坛分享过技术文章的小伙伴致以最诚挚的问候！'
 createTime: '2021-11-19'
 author: 'KubeSphere'
-snapshot: 'https://pek3b.qingstor.com/kubesphere-community/images/kubesphere-contributor-cover.png'
+image: 'https://pek3b.qingstor.com/kubesphere-community/images/kubesphere-contributor-cover.png'
 ---
 
 2021 年，KubeSphere 社区又收获了逾百位的贡献者，包括代码、中英文文档、技术布道、本地化与国际化等贡献都是我们认可的贡献方式，在此我们对 KubeSphere 社区所有的贡献者与合作伙伴表示衷心的感谢！

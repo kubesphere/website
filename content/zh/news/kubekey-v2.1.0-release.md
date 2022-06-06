@@ -1,11 +1,11 @@
 ---
 title: 'KubeKey 2.1.0 发布，增强 K8s 离线交付体验'
-tag: 'KubeSphere, KubeKey'
+tag: '产品动态'
 keywords: 'Kubernetes, KubeSphere, KubeKey, 离线部署, 新版本发布'
 description: 'KubeKey 2.1.0 增强了离线部署能力和交付体验，同时支持“一云多芯”，即同一个 K8s 集群中可以同时包含 ARM64 节点和 AMD64 节点。'
 createTime: '2022-05-12'
 author: '李耀宗'
-snapshot: 'https://pek3b.qingstor.com/kubesphere-community/images/kubekey-v2.1.0-release.png'
+image: 'https://pek3b.qingstor.com/kubesphere-community/images/kubekey-v2.1.0-release.png'
 ---
 
 2022 年 5 月 6 日，KubeKey 2.1.0 正式发布，这是 KubeKey 的第 8 个正式版本。该版本增强了离线部署能力和交付体验，同时支持“一云多芯”，即同一个 K8s 集群中可以同时包含 ARM64 节点和 AMD64 节点。

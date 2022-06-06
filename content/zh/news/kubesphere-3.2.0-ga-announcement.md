@@ -1,11 +1,11 @@
 ---
 title: 'KubeSphere 3.2.0 发布：带来面向 AI 场景的 GPU 调度与更灵活的网关'
-tag: 'KubeSphere,release'
+tag: '产品动态'
 keyword: '社区, 开源, 贡献, KubeSphere, release, AI, GPU'
 description: 'KubeSphere 3.2.0 新增了对“GPU 资源调度管理”与 GPU 使用监控的支持，进一步增强了在云原生 AI 场景的使用体验。同时还增强了“多集群管理、多租户管理、可观测性、DevOps、应用商店、微服务治理”等特性，更进一步完善交互设计，并全面提升了用户体验。'
 createTime: '2021-11-03'
 author: 'KubeSphere'
-snapshot: 'https://pek3b.qingstor.com/kubesphere-community/images/v3.2.0-GA-cover.png'
+image: 'https://pek3b.qingstor.com/kubesphere-community/images/v3.2.0-GA-cover.png'
 ---
 
 ![](https://pek3b.qingstor.com/kubesphere-community/images/3.2.0GA.png)

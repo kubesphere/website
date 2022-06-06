@@ -1,11 +1,11 @@
 ---
 title: '年度 KubeSphere Ambassador 揭晓！快来领取证书！'
-tag: 'KubeSphere, 社区'
+tag: '社区动态'
 keyword: '社区, 开源, 贡献, KubeSphere'
 description: 'KubeSphere 社区向 2021 年产生的 KubeSphere Ambassador 致谢，并向所有在 KubeSphere 社区分享过实践案例和技术文章的小伙伴致以最诚挚的问候！'
 createTime: '2021-11-12'
 author: 'KubeSphere'
-snapshot: 'https://pek3b.qingstor.com/kubesphere-community/images/ambassador-2021-cover.png'
+image: 'https://pek3b.qingstor.com/kubesphere-community/images/ambassador-2021-cover.png'
 ---
 
 2021 年，KubeSphere 社区又收获了逾百位的贡献者，包括代码、中英文文档、技术布道、本地化与国际化等贡献都是我们认可的贡献方式，在此我们对 KubeSphere 社区所有的贡献者与合作伙伴表示衷心的感谢！

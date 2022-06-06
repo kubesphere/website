@@ -1,11 +1,11 @@
 ---
 title: '抢先体验 KubeSphere 3.3.0 RC 版，支持 Argo CD'
-tag: 'KubeSphere, release'
+tag: '产品动态'
 keyword: '社区, 开源, 贡献, KubeSphere, release, Argo, DevOps'
 description: '距离 KubeSphere 3.2.1 GA 已经过去 4 个月了，现在 KubeSphere 3.3.0 RC 版终于发布了，带来了很多比较重量级的功能，欢迎下载试用。'
 createTime: '2022-05-23'
 author: 'KubeSphere'
-snapshot: 'https://pek3b.qingstor.com/kubesphere-community/images/202205232124305.png'
+image: 'https://pek3b.qingstor.com/kubesphere-community/images/202205232124305.png'
 ---
 
 距离 KubeSphere 3.2.1 GA 已经过去 4 个月了，现在 KubeSphere 3.3.0 RC 版终于发布了，带来了很多比较重量级的功能，例如：

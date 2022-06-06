@@ -1,11 +1,11 @@
 ---
 title: 'KubeKey 2.0.0 发布：让离线部署 Kubernetes 更加便捷'
-tag: 'KubeSphere, KubeKey'
+tag: '产品动态'
 keywords: 'Kubernetes, KubeSphere, KubeKey, 离线部署, 新版本发布'
 description: 'KubeKey 2.0.0 正式发布，该版本新增了清单（manifest）和制品（artifact）的概念，为用户离线部署 Kubernetes 集群提供了解决方案。'
 createTime: '2022-03-12'
 author: '李耀宗'
-snapshot: 'https://pek3b.qingstor.com/kubesphere-community/images/KubeKey-v2.0.0-release-cover.png'
+image: 'https://pek3b.qingstor.com/kubesphere-community/images/KubeKey-v2.0.0-release-cover.png'
 ---
 
 2022 年 3 月 8 日，KubeKey 2.0.0 正式发布，这是 KubeKey 的第 7 个正式版本，也是非常重要的一个版本。该版本新增了清单（manifest）和制品（artifact）的概念，为用户离线部署 Kubernetes 集群提供了解决方案。

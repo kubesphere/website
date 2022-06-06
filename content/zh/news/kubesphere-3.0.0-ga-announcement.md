@@ -1,13 +1,15 @@
 ---
 title: 'KubeSphere 3.0.0 GA：面向应用的容器混合云'
-tag: 'KubeSphere,Release'
+tag: '产品动态'
+keyword: '社区, 开源, 贡献, KubeSphere, release'
+description: 'KubeSphere 3.0.0 主打 “面向应用的容器混合云”，专为多云、多集群、多团队、多租户而设计，大幅增强了集群管理、可观测性、存储管理、网络管理、多租户安全、应用商店、安装部署等特性，并且进一步提升了交互设计与用户体验。'
 createTime: '2020-08-31'
 author: 'Feynman Zhou'
-snapshot: 'https://ap3.qingstor.com/kubesphere-website/docs/20200830101950.png'
+image: 'https://ap3.qingstor.com/kubesphere-website/docs/20200830101950.png'
 ---
 
 
-2020 年 8 月 31 日，KubeSphere 开源社区官方宣布 KubeSphere 3.0.0 GA 版本正式发布！ KubeSphere 3.0.0 主打 “面向应用的容器混合云”，专为 **多云、多集群、多团队、多租户** 而设计，大幅增强了 **集群管理、可观测性、存储管理、网络管理、多租户安全、应用商店、安装部署** 等特性，并且进一步提升了交互设计与用户体验，KubeSphere 3.0.0 是 KubeSphere 至今为止最重要的版本更新。作为多云与多集群的统一控制平面，KubeSphere 3.0.0 带来的新功能将帮助企业加速落地 **多云与混合云策略**，降低企业对任何基础设施之上的 Kubernetes 集群运维管理的门槛，实现现代化应用在容器场景下的快速交付，为企业在生产环境构建云原生技术栈提供了 **完整的平台级解决方案**。
+2020 年 8 月 31 日，KubeSphere 开源社区官方宣布 KubeSphere 3.0.0 GA 版本正式发布！ KubeSphere 3.0.0 主打 “面向应用的容器混合云”，专为**多云、多集群、多团队、多租户**而设计，大幅增强了**集群管理、可观测性、存储管理、网络管理、多租户安全、应用商店、安装部署**等特性，并且进一步提升了交互设计与用户体验，KubeSphere 3.0.0 是 KubeSphere 至今为止最重要的版本更新。作为多云与多集群的统一控制平面，KubeSphere 3.0.0 带来的新功能将帮助企业加速落地**多云与混合云策略**，降低企业对任何基础设施之上的 Kubernetes 集群运维管理的门槛，实现现代化应用在容器场景下的快速交付，为企业在生产环境构建云原生技术栈提供了 **完整的平台级解决方案**。
 
 ![](https://ap3.qingstor.com/kubesphere-website/docs/20200830234022.png)
 

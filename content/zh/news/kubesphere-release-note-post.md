@@ -1,10 +1,11 @@
 ---
 title: 'KubeSphere 容器平台发布 2.1.1，全面支持 Kubernetes 1.17'
-tag: 'Kubernetes,release,KubeSphere'
+tag: '产品动态'
 keywords: 'KubeSphere, Kubernetes'
+description: 'KubeSphere 2.1.1 进一步增强了生产可用性，修复了多个组件的 Bug，升级了内置的多个开源组件。'
 createTime: '2020-02-24'
 author: 'Feynman'
-snapshot: 'https://pek3b.qingstor.com/kubesphere-docs/png/20200224093525.png'
+image: 'https://pek3b.qingstor.com/kubesphere-docs/png/20200224093525.png'
 ---
 
 ![](https://pek3b.qingstor.com/kubesphere-docs/png/20200224093525.png)
