@@ -252,8 +252,9 @@ The domain name is `dockerhub.kubekey.local` in the command. Make sure you use y
 
 ## Step 6: Create a Cluster
 
-   - In **auths**, add **dockerhub.kubekey.local** and the username and password.
-   - In **privateRegistry**, add **dockerhub.kubekey.local**.
+   - In **auths**, enter **dockerhub.kubekey.local**, username (**admin**) and password (**Harbor12345**).
+   - In **privateRegistry**, enter **dockerhub.kubekey.local**.
+   - In **namespaceOverride**, enter **kubesphereio**.
 
     {{</ notice >}}
 
@@ -272,13 +273,7 @@ The domain name is `dockerhub.kubekey.local` in the command. Make sure you use y
        insecureRegistries: []
      addons: []
    ```
-   {{< notice note >}}
 
-   - In **auths**, enter **dockerhub.kubekey.local**, username (**admin**) and password (**Harbor12345**).
-   - In **privateRegistry**, enter **dockerhub.kubekey.local**.
-   - In **namespaceOverride**, enter **kubesphereio**.
-
-    {{</ notice >}}
 7. Run the following command to install a KubeSphere cluster:
 
 Execute the following command to generate an example configuration file for installation:
