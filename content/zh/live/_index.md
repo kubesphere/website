@@ -10,22 +10,29 @@ section1:
 
 section2:
   image: /images/live/cloudnative-live-banner.png
-  url: ./ksv0526-live/
+  url: ./jinaai0602-live/
 
   notice:
-    title: 基于 KubeSphere 和 Thanos 构建可持久化存储的多集群监控系统
+    title: 初探 KubeSphere x Apache Pulsar —— 打造云原生分布式消息流平台
     tag: 预告
-    time: 2022 年 06 月 02 日晚 8 点
+    time: 2022 年 06 月 09 日晚 8 点
     base: 线上
-    url: ./jinaai0602-live/
+    url: ./pulsar0609-live/
 
   over:
-    title: 基于 KubeSphere 的 ClickHouse 容器化实践
-    url: ./clickhouse0512-live/
+    title: 容器原生虚拟化：从 KubeVirt 到 KSV 虚拟化
+    url: ./ksv0526-live/
     tag: 结束
 
 section3:
   videos:
+    - title: 基于 KubeSphere 和 Thanos 构建可持久化存储的多集群监控系统
+      link: ./jinaai0602-live/
+      snapshot: https://pek3b.qingstor.com/kubesphere-community/images/jinaai0602-live-cover.png
+      type: iframe
+      createTime: 2022.06.02
+      group: 直播回放
+
     - title: 容器原生虚拟化：从 KubeVirt 到 KSV 虚拟化
       link: ./ksv0526-live/
       snapshot: https://pek3b.qingstor.com/kubesphere-community/images/ksv0526-live-cover.png
