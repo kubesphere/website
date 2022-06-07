@@ -498,9 +498,8 @@ In KubeKey v2.1.0, we bring in concepts of manifest and artifact, which provides
 
    {{< notice note >}}
 
-   - In **auths**, enter **dockerhub.kubekey.local**, username (**admin**) and password (**Harbor12345**).
-   - In **privateRegistry**, enter **dockerhub.kubekey.local**.
-   - In **namespaceOverride**, enter **kubesphereio**.
+   - In **auths**, add **dockerhub.kubekey.local** and the username and password.
+   - In **privateRegistry**, add **dockerhub.kubekey.local**.
 
     {{</ notice >}}
 
@@ -519,7 +518,13 @@ In KubeKey v2.1.0, we bring in concepts of manifest and artifact, which provides
        insecureRegistries: []
      addons: []
    ```
+   {{< notice note >}}
 
+   - In **auths**, enter **dockerhub.kubekey.local**, username (**admin**) and password (**Harbor12345**).
+   - In **privateRegistry**, enter **dockerhub.kubekey.local**.
+   - In **namespaceOverride**, enter **kubesphereio**.
+
+    {{</ notice >}}
 7. Run the following command to install a KubeSphere cluster:
 
    ```bash
