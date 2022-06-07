@@ -4,6 +4,8 @@ keywords: " Community, Kubernetes"
 description: "The first Kubernetes Community Days China was successfully held in Beijing"
 createTime: "2021-11-02"
 author: "Lindsay"
+image: /images/news/kcd-china/kcd-china-event.png
+tag: "Community News"
 ---
 
 ## Kubernetes Community Days China

@@ -4,6 +4,8 @@ keywords: KubeCon, Meetup, Kubernetes
 description: KubeSphere brings 4 sessions and participte 1 office hour in KubeCon China2021
 createTime: '2021-12-09'
 author: 'Feynman, Lindsay'
+image: /images/news/kubecon-china-2021/banner.png
+tag: "Community News"
 ---
 
 Every year, the Cloud-Native Computing Foundation organizes its flagship conference KubeCon and CloudNativeCon, which gathers DevOps, SRE, developers, and technologists to meet leading open source and Cloud-Native communities. This year, KubeCon and CloudNativeCon China are coming! KubeSphere Team will bring 4 sessions and participate 1 office hours in this conference, you can join virtually from 9-10 December 2021. 

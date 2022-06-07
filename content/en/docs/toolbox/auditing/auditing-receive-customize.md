@@ -77,7 +77,7 @@ rules:
 - level: Metadata
 ```
 
-For more information about the audit policy, see [Audit Policy](https://kubernetes.io/docs/tasks/debug-application-cluster/audit/#audit-policy).
+For more information about the audit policy, see [Audit Policy](https://kubernetes.io/docs/tasks/debug/debug-cluster/audit/).
 
 ### Audit webhook
 
@@ -89,7 +89,7 @@ kind: Config
 clusters:
 - name: kube-auditing
   cluster:
-    server: https://{ip}:443/audit/webhook/event
+    server: https://{ip}:6443/audit/webhook/event
     insecure-skip-tls-verify: true
 contexts:
 - context:

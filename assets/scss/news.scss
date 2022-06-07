@@ -17,6 +17,115 @@
   }
 }
 
+.section-list {
+  background-color: #fff;
+  padding-top: 60px;
+  padding-bottom: 100px;
+
+  @media only screen and (max-width: $mobile-max-width) {
+    padding-top: 20px;
+    padding-bottom: 40px;
+  }
+
+  & > div {
+
+    & > .blog-tab-ul {
+      padding: 30px 34px 22px;
+      border-radius: 5px;
+      box-shadow: 0 4px 16px 0 rgba(7,42,68,.1);
+      background-color: #fff;
+
+      li {
+        display: inline-block;
+        min-width: 48px;
+        padding: 8px 16px;
+        margin-bottom: 8px;
+        border-radius: 20px;
+        -webkit-transition: all .2s ease-in-out;
+        transition: all .2s ease-in-out;
+        cursor: pointer;
+        font-size: 16px;
+        font-weight: 500;
+        line-height: 1.5;
+        text-align: center;
+
+        &:hover {
+          box-shadow: 0 8px 16px 0 rgba(101,193,148,.2),0 0 50px 0 rgba(101,193,148,.1);
+          background-color: #55bc8a;
+          color: #fff;
+        }
+      }
+
+      .active {
+        box-shadow: 0 8px 16px 0 rgba(101,193,148,.2),0 0 50px 0 rgba(101,193,148,.1);
+        background-color: #55bc8a;
+        color: #fff;
+      }
+
+      li + li {
+        margin-left: 12px;
+      }
+    }
+
+    .blogs-ul {
+      margin-top: 20px;
+
+      & > li {
+        position: relative;
+        border-radius: 4px;
+        box-shadow: 0 4px 15px 0 rgba(7,42,68,.1);
+        background-color: #fff;
+
+        position: relative;
+        padding: 32px;
+        padding-right: 274px;
+        margin-bottom: 12px;
+        border-radius: 4px;
+        
+        @media only screen and (max-width: $mobile-max-width) {
+          padding: 10px;
+        }
+
+        h2 {
+        a {
+          font-size: 20px;
+          font-weight: 600;
+          line-height: 1.6;
+          color: #36435c;
+  
+          &:hover {
+            color: #55bc8a;
+          }
+        }
+        }
+      
+        p {
+        margin-top: 12px;
+        font-size: 16px;
+        line-height: 2;
+        color: #919aa3; 
+        }
+      
+        img {
+        position: absolute;
+        top: 50%;
+        right: 32px;
+        transform: translateY(-50%);
+        max-width: 158px;
+  
+        @media only screen and (max-width: $mobile-max-width) {
+          display: none;
+        }
+        }
+        }
+
+        & > li + li {
+          margin-top: 12px;
+        }
+    }
+  }
+}
+
 .section-2 {
   padding-top: 60px;
   padding-bottom: 70px;

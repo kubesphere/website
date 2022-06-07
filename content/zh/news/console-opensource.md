@@ -1,9 +1,11 @@
 ---
 title: 'KubeSphere 前端开源，社区架构首次公布'
-tag: '开源,前端'
+tag: '产品动态,社区动态'
+keywords: 'KubeSphere, Kubernetes'
+description: 'KubeSphere 前端项目 console 宣布开源，并公布了社区架构。'
 createTime: '2019-12-02'
 author: 'Feynman Zhou'
-snapshot: 'https://pek3b.qingstor.com/kubesphere-docs/png/20191202112003.png'
+image: 'https://pek3b.qingstor.com/kubesphere-docs/png/20191202112003.png'
 ---
 
 ## Console 开源
@@ -68,6 +70,6 @@ KubeSphere 社区在一个月之前上线了论坛（kubesphere.com.cn/forum/）
 
 ![](https://pek3b.qingstor.com/kubesphere-docs/png/20191202151552.png)
 
-马上扫码或点击【阅读原文】进入官网报名吧！
+
 
 ![](https://pek3b.qingstor.com/kubesphere-docs/png/20191202151751.png)

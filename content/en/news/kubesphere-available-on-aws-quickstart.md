@@ -4,6 +4,8 @@ createTime: '2021-01-05'
 keywords: "Kubernetes, KubeSphere, AWS, Quickstart"
 description: "KubeSphere expands collaboration with Amazon Web Services to further accelerate the cloud-native technology transformation."
 author: 'Sherlock'
+image: https://ap3.qingstor.com/kubesphere-website/docs/kubesphere-aws.png
+tag: "Product News"
 ---
 
 ![kubesphere-aws](https://ap3.qingstor.com/kubesphere-website/docs/kubesphere-aws.png)
