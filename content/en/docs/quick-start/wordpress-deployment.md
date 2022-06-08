@@ -76,7 +76,7 @@ In **Advanced Settings**, make sure the memory limit is no less than 1000 Mi or 
 
 1. Scroll down to **Environment Variables** and click **From secret**. Enter the name `MYSQL_ROOT_PASSWORD` and choose the resource `mysql-secret` and the key `MYSQL_ROOT_PASSWORD` created in the previous step. Click **√** after you finish and **Next** to continue.
 
-2. Click **Add Volume Template** under **Volume Templates**. Enter the value of **Volume Name** (`mysql`) and **Mount Path** (mode: `ReadAndWrite`, path: `/var/lib/mysql`).
+2. Click **Add Persistent Volume Claim Template** under **Storage Settings**. Enter the PVC name prefix (`mysql`) and **Mount Path** (mode: `ReadAndWrite`, path: `/var/lib/mysql`).
 
    Click **√** after you finish and click **Next** to continue.
 
@@ -102,7 +102,7 @@ For the second environment variable added here, the value must be the same as th
     
     Click **√** to save it and **Next** to continue.
 
-1.  Under **Volumes**, click **Mount Volume**, and then click **Select Volume**.
+1.  Under **Storage Settings**, click **Mount Volume**, and then click **Select Persistent Volume Claim**.
 
 2.  Select `wordpress-pvc` created in the previous step, set the mode as `ReadAndWrite`, and enter `/var/www/html` as its mount path. Click **√** to save it, and then click **Next** to continue.
 
@@ -118,7 +118,7 @@ For the second environment variable added here, the value must be the same as th
 
 In **Workloads**, check the status of `wordpress-v1` and `mysql-v1` in **Deployments** and **StatefulSets** respectively. If they are running properly, it means WordPress has been created successfully.
 
-### Step 5: Access WordPress through a NodePort
+### Step 5: Access WordPress using NodePort
 
 1. To access the Service outside the cluster, in the navigation pane on the left, click **Application Workloads > Services** first. Click the three dots on the right of `wordpress` and select **Edit External Access**.
 

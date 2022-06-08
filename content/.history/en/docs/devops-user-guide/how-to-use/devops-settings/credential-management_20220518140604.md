@@ -3,7 +3,7 @@ title: "Credential Management"
 keywords: 'Kubernetes, Docker, Credential, KubeSphere, DevOps'
 description: 'Create credentials so that your pipelines can communicate with third-party applications or websites.'
 linkTitle: "Credential Management"
-weight: 11230
+weight: 11241
 ---
 
 Credentials are objects containing sensitive information, such as usernames and passwords, SSH keys, and tokens. When a KubeSphere DevOps pipeline is running, it interacts with objects in external environments to perform a series of tasks, including pulling code, pushing and pulling images, and running scripts. During this process, credentials need to be provided accordingly while they do not appear explicitly in the pipeline.
@@ -41,6 +41,7 @@ Log in to the console of KubeSphere as `project-regular`. Navigate to your DevOp
 2. Click **OK** when you finish.
 
 ### Create GitHub credentials
+
 
 Similarly, follow the same steps above to create GitHub credentials. Set a different credential name (for example, `github-id`) and also select **Username and password** for **Type**. Enter your GitHub username and token for **Username** and **Password/Token** respectively.
 

@@ -6,7 +6,7 @@ css: scss/live-detail.scss
 
 section1:
   snapshot: 
-  videoUrl: //player.bilibili.com/player.html?aid=596971133&bvid=BV1gB4y1X73s&cid=730553912&page=1&high_quality=1
+  videoUrl: 
   type: iframe
   time: 2022-05-26 20:00-21:00
   timeIcon: /images/live/clock.svg

@@ -8,7 +8,7 @@ weight: 3120
 
 在生产环境中，由于单节点集群资源有限、计算能力不足，无法满足大部分需求，因此不建议在处理大规模数据时使用单节点集群。此外，单节点集群只有一个节点，因此也不具有高可用性。相比之下，在应用程序部署和分发方面，多节点架构是最常见的首选架构。
 
-本节概述了单主节点式多节点安装，包括概念、[KubeKey](https://github.com/kubesphere/kubekey/) 和操作步骤。有关高可用安装的信息，请参考[高可用配置](../../../installing-on-linux/high-availability-configurations/ha-configuration/)、[在公有云上安装](../../../installing-on-linux/public-cloud/install-kubesphere-on-azure-vms/)和[在本地环境中安装](../../../installing-on-linux/on-premises/install-kubesphere-on-bare-metal/)。
+本节概述了多节点安装，包括概念、[KubeKey](https://github.com/kubesphere/kubekey/) 和操作步骤。有关高可用安装的信息，请参考[高可用配置](../../../installing-on-linux/high-availability-configurations/ha-configuration/)、[在公有云上安装](../../../installing-on-linux/public-cloud/install-kubesphere-on-azure-vms/)和[在本地环境中安装](../../../installing-on-linux/on-premises/install-kubesphere-on-bare-metal/)。
 
 ## 视频演示
 
@@ -20,9 +20,10 @@ weight: 3120
 
 多节点集群由至少一个主节点和一个工作节点组成。您可以使用任何节点作为**任务机**来执行安装任务，也可以在安装之前或之后根据需要新增节点（例如，为了实现高可用性）。
 
-- **Control Plane**：控制平面，控制和管理整个系统。
+- **Control plane node**：主节点，通常托管控制平面，控制和管理整个系统。
 
-- **Worker**：工作节点，运行部署在工作节点上的实际应用程序。
+- **Worker node**：工作节点，运行部署在工作节点上的实际应用程序。
+
 
 ## 步骤 1：准备 Linux 主机
 
