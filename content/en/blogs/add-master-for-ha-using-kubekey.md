@@ -22,7 +22,7 @@ Here is my node information of the existing Kubernetes cluster.
 
 | Host IP    | Host Name | Role         | System                                    |
 | ---------- | --------- | ------------ | ----------------------------------------- |
-| 172.16.0.2 | master1   | master, etcd | CentOS 7.5, 8 Cores, 8 G Memory, 50 G Disk |
+| 172.16.0.2 | master1   | control plane, etcd | CentOS 7.5, 8 Cores, 8 G Memory, 50 G Disk |
 | 172.16.0.3 | worker1   | worker       | CentOS 7.5, 8 Cores, 8 G Memory, 50 G Disk |
 | 172.16.0.4 | worker2   | worker       | CentOS 7.5, 8 Cores, 8 G Memory, 50 G Disk |
 

@@ -8,17 +8,12 @@ weight: 3140
 
 The air-gapped installation is almost the same as the online installation except that you must create a local registry to host Docker images. This tutorial demonstrates how to install KubeSphere and Kubernetes in an air-gapped environment.
 
-<<<<<<< HEAD
 In KubeKey v2.1.0, we bring in concepts of manifest and artifact, which provides a solution for air-gapped installation of Kubernetes clusters. A manifest file describes information of the current Kubernetes cluster and defines content in an artifact. Previously, users had to prepare deployment tools, image (.tar) file, and other binaries as the Kubernetes version and image to deploy are different. Now, with KubeKey, air-gapped installation can never be so easy. You simply use a manifest file to define what you need for your cluster in air-gapped environments, and then export the artifact file to quickly and easily deploy image registries and Kubernetes cluster.
-=======
-## Step 1: Prepare Linux Hosts
->>>>>>> a25f3a3d (update 3.3 new)
 
 Please see the requirements for hardware and operating system shown below. To get started with multi-node installation, you need to prepare at least three hosts according to the following requirements.
 
 ### System requirements
 
-<<<<<<< HEAD
 1. Run the following commands to download KubeKey v2.1.0.
    {{< tabs >}}
 
@@ -29,17 +24,6 @@ Please see the requirements for hardware and operating system shown below. To ge
    ```bash
    curl -sfL https://get-kk.kubesphere.io | VERSION=v2.1.0 sh -
    ```
-=======
-| Systems                                                | Minimum Requirements (Each node)             |
-| ------------------------------------------------------ | -------------------------------------------- |
-| **Ubuntu** *16.04, 18.04*                              | CPU: 2 Cores, Memory: 4 G, Disk Space: 100 G |
-| **Debian** *Buster, Stretch*                           | CPU: 2 Cores, Memory: 4 G, Disk Space: 100 G |
-| **CentOS** *7*.x                                       | CPU: 2 Cores, Memory: 4 G, Disk Space: 100 G |
-| **Red Hat Enterprise Linux 7**                         | CPU: 2 Cores, Memory: 4 G, Disk Space: 100 G |
-| **SUSE Linux Enterprise Server 15/openSUSE Leap 15.2** | CPU: 2 Cores, Memory: 4 G, Disk Space: 100 G |
-
-{{< notice note >}}
->>>>>>> a25f3a3d (update 3.3 new)
 
 - [KubeKey](https://github.com/kubesphere/kubekey) uses `/var/lib/docker` as the default directory where all Docker related files, including images, are stored. It is recommended you add additional storage volumes with at least **100G** mounted to `/var/lib/docker` and `/mnt/registry` respectively. See [fdisk](https://www.computerhope.com/unix/fdisk.htm) command for reference.
 
@@ -112,13 +96,7 @@ You can use Harbor or any other private image registries. This tutorial uses Doc
    ```
 
    ```bash
-<<<<<<< HEAD
    curl -sfL https://get-kk.kubesphere.io | VERSION=v2.1.0 sh -
-=======
-   openssl req \
-   -newkey rsa:4096 -nodes -sha256 -keyout certs/domain.key \
-   -x509 -days 36500 -out certs/domain.crt
->>>>>>> a25f3a3d (update 3.3 new)
    ```
 
 2. Make sure you specify a domain name in the field `Common Name` when you are generating your own certificate. For instance, the field is set to `dockerhub.kubekey.local` in this example. 
@@ -156,7 +134,6 @@ docker run -d \
    ```bash
    mkdir -p  /etc/docker/certs.d/dockerhub.kubekey.local
    ```
-<<<<<<< HEAD
    
    ```yaml
    ---
@@ -327,17 +304,11 @@ docker run -d \
      - docker.io/weaveworks/scope:1.13.0
      registry:
        auths: {}
-=======
-
-   ```bash
-   cp certs/domain.crt  /etc/docker/certs.d/dockerhub.kubekey.local/ca.crt
->>>>>>> a25f3a3d (update 3.3 new)
    ```
 
    {{< notice note >}}
 
    The path of the certificate is related to the domain name. When you copy the path, use your actual domain name if it is different from the one set above.
-<<<<<<< HEAD
 
    - You can download the ISO files at https://github.com/kubesphere/kubekey/releases/tag/v2.1.0.
    
@@ -347,8 +318,6 @@ docker run -d \
    {{< tabs >}}
 
 3. To verify whether the private registry is effective, you can copy an image to your local machine first, and use `docker push` and `docker pull` to test it.
-=======
->>>>>>> a25f3a3d (update 3.3 new)
 
    {{</ notice >}} 
 
@@ -421,7 +390,6 @@ As you install KubeSphere and Kubernetes on Linux, you need to prepare an image 
    export KKZONE=cn;./offline-installation-tool.sh -b -v v1.21.5 
    ```
 
-<<<<<<< HEAD
    - In **auths**, enter **dockerhub.kubekey.local**, username (**admin**) and password (**Harbor12345**).
    - In **privateRegistry**, enter **dockerhub.kubekey.local**.
    - In **namespaceOverride**, enter **kubesphereio**.
@@ -453,9 +421,6 @@ Execute the following command to generate an example configuration file for inst
 ```
 
 For example:
-=======
-   {{< notice note >}}
->>>>>>> a25f3a3d (update 3.3 new)
 
    - You can change the Kubernetes version downloaded based on your needs. Recommended Kubernetes versions for KubeSphere 3.3.0: v1.19.x or above. If you do not specify a Kubernetes version, KubeKey will install Kubernetes v1.21.5 by default. For more information about supported Kubernetes versions, see [Support Matrix](../kubekey/#support-matrix).
 
