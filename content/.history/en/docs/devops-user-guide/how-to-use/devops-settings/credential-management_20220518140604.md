@@ -42,11 +42,14 @@ Log in to the console of KubeSphere as `project-regular`. Navigate to your DevOp
 
 ### Create GitHub credentials
 
-Similarly, follow the same steps above to create GitHub credentials. Set a different credential name (for example, `github-id`) and also select **Username and password** for **Type**. Enter your GitHub username and password for **Username** and **Password/Token** respectively.
+
+Similarly, follow the same steps above to create GitHub credentials. Set a different credential name (for example, `github-id`) and also select **Username and password** for **Type**. Enter your GitHub username and token for **Username** and **Password/Token** respectively.
 
 {{< notice note >}}
 
-If there are any special characters such as `@` and `$` in your account or password, they can cause errors as a pipeline runs because they may not be recognized. In this case, you need to encode your account or password on some third-party websites first, such as [urlencoder](https://www.urlencoder.org/). After that, copy and paste the output for your credential information.
+- Since August, 2021, GitHub requires token-based identity authentication. Here, you need to enter a token rather than your GitHub password. For details about how to generate a token, please refer to [Creating a personal access token](https://docs.github.com/en/authentication/keeping-your-account-and-data-secure/creating-a-personal-access-token).
+
+- If there are any special characters such as `@` and `$` in your account or password, they can cause errors as a pipeline runs because they may not be recognized. In this case, you need to encode your account or password on some third-party websites first, such as [urlencoder](https://www.urlencoder.org/). After that, copy and paste the output for your credential information.
 
 {{</ notice >}}
 

@@ -16,26 +16,13 @@ This section gives you an overview of a single-master multi-node installation, i
 
 ## Concept
 
-<<<<<<< HEAD
-<<<<<<< HEAD
+
 A multi-node cluster is composed of at least one control plane node and one worker node. You can use any node as the **taskbox** to carry out the installation task. You can add additional nodes based on your needs (for example, for high availability) both before and after the installation.
 
-- **Control Plane**. The control plane generally controls and manages the whole system.
+- **Control plane node**. The control plane node generally hosts the control plane and controls and manages the whole system.
 
-=======
-- **Control Plane**. The control plane generally controls and manages the whole system.
-=======
-A multi-node cluster is composed of at least one control plane node and one worker node. You can use any node as the **taskbox** to carry out the installation task. You can add additional nodes based on your needs (for example, for high availability) both before and after installation.
->>>>>>> cdc9d913 (minor changes)
+- **Worke node**. Worker nodes run the actual applications deployed on them.
 
-- **Control plane node**. The control plane generally hosts the control plane and controls and manages the whole system.
-
-<<<<<<< HEAD
->>>>>>> a25f3a3d (update 3.3 new)
-- **Worker**. Worker nodes run the actual applications deployed on them.
-=======
-- **Worker node**. Worker nodes run the actual applications deployed on them.
->>>>>>> cdc9d913 (minor changes)
 
 ## Step 1: Prepare Linux Hosts
 
@@ -268,6 +255,13 @@ At the same time, you must provide the login information used to connect to each
   ```yaml
   hosts:
     - {name: master, address: 192.168.0.2, internalAddress: 192.168.0.2, privateKeyPath: "~/.ssh/id_rsa"}
+  ```
+  
+- For installation on ARM devices:
+
+  ```yaml
+  hosts:
+    - {name: master, address: 192.168.0.2, internalAddress: 192.168.0.2, user: ubuntu, password: Testing123, arch: arm64}
   ```
 
 {{< notice tip >}} 

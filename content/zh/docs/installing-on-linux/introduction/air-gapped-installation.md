@@ -9,24 +9,13 @@ weight: 3130
 
 离线安装几乎与在线安装相同，不同之处是您必须创建一个本地仓库来托管 Docker 镜像。本教程演示了如何在离线环境安装 KubeSphere 和 Kubernetes。
 
-<<<<<<< HEAD
 KubeKey v2.1.0 版本新增了清单（manifest）和制品（artifact）的概念，为用户离线部署 Kubernetes 集群提供了一种解决方案。manifest 是一个描述当前 Kubernetes 集群信息和定义 artifact 制品中需要包含哪些内容的文本文件。在过去，用户需要准备部署工具，镜像 tar 包和其他相关的二进制文件，每位用户需要部署的 Kubernetes 版本和需要部署的镜像都是不同的。现在使用 KubeKey，用户只需使用清单 manifest 文件来定义将要离线部署的集群环境需要的内容，再通过该 manifest 来导出制品 artifact 文件即可完成准备工作。离线部署时只需要 KubeKey 和 artifact 就可快速、简单的在环境中部署镜像仓库和 Kubernetes 集群。
-=======
->>>>>>> a25f3a3d (update 3.3 new)
 
 ## 步骤 1：准备 Linux 主机
 
 请查看下表中对硬件和操作系统的要求。要开始进行多节点安装，您需要按照下列要求准备至少三台主机。
 
-<<<<<<< HEAD
 ### 系统要求
-=======
-| 主机 IP   | 主机名称    | 角色            |
-| ---------------- | ----   | ---------------- |
-| 192.168.0.2 | node1    | 联网主机用于源集群打包使用。已部署 Kubernetes v1.21.5 和 KubeSphere v3.3.0 |
-| 192.168.0.3 | node2    | 离线环境主节点 |
-| 192.168.0.4 | node3    | 离线环境镜像仓库节点 |
->>>>>>> cdc9d913 (minor changes)
 
 | 系统                                                   | 最低要求（每个节点）              |
 | ------------------------------------------------------ | --------------------------------- |
@@ -36,11 +25,7 @@ KubeKey v2.1.0 版本新增了清单（manifest）和制品（artifact）的概�
 | **Red Hat Enterprise Linux 7**                         | CPU: 2 核，内存：4 G，硬盘：100 G |
 | **SUSE Linux Enterprise Server 15/openSUSE Leap 15.2** | CPU: 2 核，内存：4 G，硬盘：100 G |
 
-<<<<<<< HEAD
 1. 执行以下命令下载 KubeKey v2.1.0 并解压：
-=======
-{{< notice note >}}
->>>>>>> a25f3a3d (update 3.3 new)
 
 - [KubeKey](https://github.com/kubesphere/kubekey) 使用 `/var/lib/docker` 作为默认路径来存储所有 Docker 相关文件（包括镜像）。建议您添加附加存储卷，分别给 `/var/lib/docker` 和 `/mnt/registry` 挂载至少 **100G**。请参见 [fdisk](https://www.computerhope.com/unix/fdisk.htm) 的参考命令。
 
@@ -48,7 +33,6 @@ KubeKey v2.1.0 版本新增了清单（manifest）和制品（artifact）的概�
 
 {{</ notice >}}
 
-<<<<<<< HEAD
    ```bash
    curl -sfL https://get-kk.kubesphere.io | VERSION=v2.1.0 sh -
    ```
@@ -74,36 +58,6 @@ KubeKey v2.1.0 版本新增了清单（manifest）和制品（artifact）的概�
 ## 步骤 2：准备一个私有镜像仓库
 
    {{</ tab >}}
-=======
-### 节点要求
-
-- 建议您使用干净的操作系统（不安装任何其他软件），否则可能会有冲突。
-- 请确保每个节点的硬盘至少有 **100G**。
-- 所有节点必须都能通过 `SSH` 访问。
-- 所有节点时间同步。
-- 所有节点都应使用 `sudo`/`curl`/`openssl`。
-
-
-KubeKey 能够同时安装 Kubernetes 和 KubeSphere。根据要安装的 Kubernetes 版本，需要安装的依赖项可能会不同。您可以参考下方列表，查看是否需要提前在您的节点上安装相关依赖项。
-
-| 依赖项      | Kubernetes 版本 ≥ 1.18 | Kubernetes 版本 < 1.18 |
-| ----------- | ---------------------- | ---------------------- |
-| `socat`     | 必须                   | 可选但建议             |
-| `conntrack` | 必须                   | 可选但建议             |
-| `ebtables`  | 可选但建议             | 可选但建议             |
-| `ipset`     | 可选但建议             | 可选但建议             |
-
-{{< notice note >}}
-
-- 在离线环境中，您可以使用私有包、RPM 包（适用于 CentOS）或者 Deb 包（适用于 Debian）来安装这些依赖项。
-- 建议您事先创建一个操作系统镜像文件，并且安装好所有相关依赖项。这样，您便可以直接使用该镜像文件在每台机器上安装操作系统，提高部署效率，也不用担心任何依赖项问题。
-
-{{</ notice >}} 
-
-### 容器运行时
-
-您的集群必须有一个可用的容器运行时。在离线环境中创建集群之前，您必须手动安装 Docker 或其他容器运行时。
->>>>>>> a25f3a3d (update 3.3 new)
 
 {{< content "common/container-runtime-requirements" >}}
 
@@ -134,13 +88,7 @@ KubeKey 能够同时安装 Kubernetes 和 KubeSphere。根据要安装的 Kubern
    ```
 
    ```bash
-<<<<<<< HEAD
    curl -sfL https://get-kk.kubesphere.io | VERSION=v2.1.0 sh -
-=======
-   openssl req \
-   -newkey rsa:4096 -nodes -sha256 -keyout certs/domain.key \
-   -x509 -days 36500 -out certs/domain.crt
->>>>>>> a25f3a3d (update 3.3 new)
    ```
 
 2. 当您生成自己的证书时，请确保在字段 `Common Name` 中指定一个域名。例如，本示例中该字段被指定为 `dockerhub.kubekey.local`。
@@ -149,7 +97,6 @@ KubeKey 能够同时安装 Kubernetes 和 KubeSphere。根据要安装的 Kubern
 
 ### 启动 Docker 仓库
 
-<<<<<<< HEAD
    ```bash
    vim manifest.yaml
    ```
@@ -345,9 +292,6 @@ KubeKey 能够同时安装 Kubernetes 和 KubeSphere。根据要安装的 Kubern
 4. 从源集群中导出制品 artifact。
    
       {{< tabs >}}
-=======
-执行以下命令启动 Docker 仓库：
->>>>>>> a25f3a3d (update 3.3 new)
 
 ```
 docker run -d \
