@@ -24,7 +24,6 @@ weight: 3120
 
 - **Worker node**：工作节点，运行部署在工作节点上的实际应用程序。
 
-
 ## 步骤 1：准备 Linux 主机
 
 请参见下表列出的硬件和操作系统要求。在本教程所演示多节点安装示例中，您需要按照下列要求准备至少三台主机。如果您节点的资源充足，也可以将 [KubeSphere 容器平台](https://kubesphere.com.cn/)安装在两个节点上。
@@ -251,13 +250,6 @@ spec:
   ```yaml
   hosts:
     - {name: master, address: 192.168.0.2, internalAddress: 192.168.0.2, privateKeyPath: "~/.ssh/id_rsa"}
-  ```
-  
-- 在 ARM 设备上安装的示例：
-
-  ```yaml
-  hosts:
-    - {name: master, address: 192.168.0.2, internalAddress: 192.168.0.2, user: ubuntu, password: Testing123, arch: arm64}
   ```
 
 {{< notice tip >}} 

@@ -31,6 +31,41 @@ In KubeKey v2.1.0, we bring in concepts of manifest and artifact, which provides
    curl -sfL https://get-kk.kubesphere.io | VERSION=v2.1.0 sh -
    ```
 
+- [KubeKey](https://github.com/kubesphere/kubekey) uses `/var/lib/docker` as the default directory where all Docker related files, including images, are stored. It is recommended you add additional storage volumes with at least **100G** mounted to `/var/lib/docker` and `/mnt/registry` respectively. See [fdisk](https://www.computerhope.com/unix/fdisk.htm) command for reference.
+
+- Only x86_64 CPUs are supported, and Arm CPUs are not fully supported at present.
+
+{{</ notice >}}
+
+### Node requirements
+
+- It's recommended that your OS be clean (without any other software installed). Otherwise, there may be conflicts.
+- Ensure your disk of each node is at least **100G**.
+- All nodes must be accessible through `SSH`.
+- Time synchronization for all nodes.
+- `sudo`/`curl`/`openssl` should be used in all nodes.
+
+
+KubeKey can install Kubernetes and KubeSphere together. The dependency that needs to be installed may be different based on the Kubernetes version to be installed. You can refer to the list below to see if you need to install relevant dependencies on your node in advance.
+
+| Dependency  | Kubernetes Version ≥ 1.18 | Kubernetes Version < 1.18 |
+| ----------- | ------------------------- | ------------------------- |
+| `socat`     | Required                  | Optional but recommended  |
+| `conntrack` | Required                  | Optional but recommended  |
+| `ebtables`  | Optional but recommended  | Optional but recommended  |
+| `ipset`     | Optional but recommended  | Optional but recommended  |
+
+{{< notice note >}}
+
+- In an air-gapped environment, you can install these dependencies using a private package, a RPM package (for CentOS) or a Deb package (for Debian).
+- It is recommended you create an OS image file with all relevant dependencies installed in advance. In this way, you can use the image file directly for the installation of OS on each machine, improving deployment efficiency while not worrying about any dependency issues.
+
+{{</ notice >}} 
+
+### Container runtimes
+
+Your cluster must have an available container runtime. For air-gapped installation, you must install Docker or other container runtimes by yourself before you create a cluster.
+
    {{</ tab >}}
 
    {{< tab "Poor network connections to GitHub/Googleapis" >}}
@@ -239,13 +274,7 @@ In KubeKey v2.1.0, we bring in concepts of manifest and artifact, which provides
    
    {{< notice note >}}
 
-   - If the artifact file to export contains ISO dependencies, such as conntarck and chrony, set the IP address for downloading the ISO dependencies in **.repostiory.iso.url** of **operationSystem**. Alternatively, you can download the ISO package in advance and fill in the local path in **localPath** and delete the `url` configuration item.
-   
-   - You need to enable **harbor** and **docker-compose** configuration items, which will be used when you use KubeKey to build a Harbor registry for pushing images.
-   
-   - By default, the list of images in the created manifest is obtained from **docker.io**.
-   
-   - You can customize the **manifest-sample.yaml** file to export the desired artifact file.
+   The path of the certificate is related to the domain name. When you copy the path, use your actual domain name if it is different from the one set above.
 
    - You can download the ISO files at https://github.com/kubesphere/kubekey/releases/tag/v2.1.0.
    
@@ -254,7 +283,9 @@ In KubeKey v2.1.0, we bring in concepts of manifest and artifact, which provides
 4. Export the artifact from the source cluster.
    {{< tabs >}}
 
-   {{< tab "Good network connections to GitHub/Googleapis" >}}
+3. To verify whether the private registry is effective, you can copy an image to your local machine first, and use `docker push` and `docker pull` to test it.
+
+   {{</ notice >}} 
 
    Run the following command directly:
 
@@ -303,7 +334,9 @@ In KubeKey v2.1.0, we bring in concepts of manifest and artifact, which provides
    vim config-sample.yaml
    ```
 
-   {{< notice note >}}
+   - In **auths**, enter **dockerhub.kubekey.local**, username (**admin**) and password (**Harbor12345**).
+   - In **privateRegistry**, enter **dockerhub.kubekey.local**.
+   - In **namespaceOverride**, enter **kubesphereio**.
 
    - Modify the node information according to the actual configuration of the air-gapped environment.
    - You must specify the node where the `registry` to deploy (for KubeKey deployment of self-built Harbor registries).
@@ -382,9 +415,7 @@ In KubeKey v2.1.0, we bring in concepts of manifest and artifact, which provides
 
     {{</ notice >}}
 
-5. Create a Harbor project.
-   
-   {{< notice note >}}
+For example:
 
    As Harbor adopts the Role-based Access Control (RBAC) mechanism, which means that only specified users can perform certain operations. Therefore, you must create a project before pushing images to Harbor. Harbor supports two types of projects:
 
