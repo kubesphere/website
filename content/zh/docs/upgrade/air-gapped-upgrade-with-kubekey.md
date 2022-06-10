@@ -13,7 +13,7 @@ weight: 7400
 - 您的 Kubernetes 版本必须为 v1.19.x及以上版本。
 - 请仔细阅读 [3.3.0 版本说明](../../release/release-v321/)。
 - 提前备份所有重要的组件。
-- Docker 仓库。您需要有一个 Harbor 或其他 Docker 仓库。有关更多信息，请参见[准备一个私有镜像仓库](../../installing-on-linux/introduction/air-gapped-installation/#步骤-2准备一个私有镜像仓库)。
+- Docker 仓库。您需要有一个 Harbor 或其他 Docker 仓库。
 - 请确保每个节点都可以从该 Docker 仓库拉取镜像或向其推送镜像。
 
 
@@ -65,7 +65,7 @@ chmod +x kk
 
    {{< notice note >}}
 
-   该文件根据不同的模块列出了 `##+modulename` 下的镜像。您可以按照相同的规则把自己的镜像添加到这个文件中。要查看完整文件，请参见[附录](../../installing-on-linux/introduction/air-gapped-installation/#kubesphere-v321-镜像清单)。
+   该文件根据不同的模块列出了 `##+modulename` 下的镜像。您可以按照相同的规则把自己的镜像添加到这个文件中。
 
    {{</ notice >}} 
 
@@ -224,13 +224,7 @@ chmod +x kk
 ./kk upgrade -f config-sample.yaml
 ```
 
-要将 Kubernetes 升级至特定版本，可以在 `--with-kubernetes` 标志后明确指定版本号。以下是可用版本：
-
-- v1.19.x
-- v1.20.x
-- v1.21.x
-- v1.22.x（实验性支持）
-
+要将 Kubernetes 升级至特定版本，可以在 `--with-kubernetes` 标志后明确指定版本号。以下是可用版本：v1.19.x、v1.20.x、v1.21.x、v1.22.x 和 v1.23.x。
 
 ### 离线升级多节点集群
 
@@ -314,11 +308,5 @@ chmod +x kk
 ./kk upgrade -f config-sample.yaml
 ```
 
-要将 Kubernetes 升级至特定版本，可以在 `--with-kubernetes` 标志后明确指定版本号。以下是可用版本：
-
-- v1.19.x
-- v1.20.x
-- v1.21.x
-- v1.22.x
-- v1.23.x
+要将 Kubernetes 升级至特定版本，可以在 `--with-kubernetes` 标志后明确指定版本号。以下是可用版本：v1.19.x、v1.20.x、v1.21.x、v1.22.x 和 v1.23.x。
 

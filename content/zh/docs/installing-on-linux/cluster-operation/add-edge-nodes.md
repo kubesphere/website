@@ -16,11 +16,6 @@ KubeSphere 利用 [KubeEdge](https://kubeedge.io/zh/) 将原生容器化应用�
 
 {{</ notice >}} 
 
-<<<<<<< HEAD
-=======
-边缘节点加入集群后，原生 KubeEdge 云组件要求手动配置 iptables，以便您使用 `kubectl logs` 和 `kubectl exec` 等命令。对此，KubeSphere 能够提供一种高效便捷的方法将边缘节点添加到 Kubernetes 集群。
-
->>>>>>> f865802f (Kubeedge and servicemesh)
 本教程演示如何将边缘节点添加到集群。
 
 ## 准备工作
@@ -82,11 +77,7 @@ KubeSphere 利用 [KubeEdge](https://kubeedge.io/zh/) 将原生容器化应用�
 若要确保边缘节点可以成功地与集群通信，您必须转发端口，以便外部流量进入您的网络。您可以根据下表将外网端口映射到相应的内网 IP 地址（主节点）和端口。此外，您还需要创建防火墙规则以允许流量进入这些端口（`10000` 至 `10004`）。
 
    {{< notice note >}}
-<<<<<<< HEAD
    在 ks-installer 的 `ClusterConfiguration`中，如果您设置的是局域网地址，那么需要配置转发规则。如果您未配置转发规则，直接连接 30000 – 30004 端口即可。
-=======
-   在 ks-installer 的 `ClusterConfiguration`中，如果您设置的是局域网地址，那么需要配置转发规则。如果您设置的是主机地址（即访问 Console 的地址），直接连接30000 – 30004 端口即可。
->>>>>>> f865802f (Kubeedge and servicemesh)
    {{</ notice >}} 
 
 | 字段                | 外网端口 | 字段                    | 内网端口 |

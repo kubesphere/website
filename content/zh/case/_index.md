@@ -74,6 +74,7 @@ section2:
 
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
     - icon: "images/case/section6-sinodata.png"
       content: "中科金财是国内领先的区块链技术与金融科技综合服务商，致力于打造领先的产业互联网科技赋能平台。"
       link: "sinodata/"
@@ -82,6 +83,8 @@ section2:
 >>>>>>> 83636f5a (add new case of adaspace)
 =======
 >>>>>>> 83636f5a (add new case of adaspace)
+=======
+>>>>>>> 120eac09 (minor changes)
 section3:
   title: 'KubeSphere 助力各行各业'
   tip: 全部

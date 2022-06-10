@@ -46,7 +46,7 @@ KubeSphere 支持基于存储类的[动态卷供应](https://kubernetes.io/zh/do
 
    在 KubeSphere 中，您可以直接为 `QingCloud-CSI`、`GlusterFS` 和 `Ceph RBD` 创建存储类。您也可以为其他存储系统创建自定义存储类。
 
-7. 在**存储类设置**页签，设置相关参数，点击**创建**以创建存储类。参数设置项随您选择的存储系统而异，具体参数解释请参阅[设置存储类](../../cluster-administration/persistent-volume-and-storage-class/#设置存储类)。
+7. 在**存储类设置**页签，设置相关参数，点击**创建**以创建存储类。参数设置项随您选择的存储系统而异。
 
 ## 设置存储类
 
