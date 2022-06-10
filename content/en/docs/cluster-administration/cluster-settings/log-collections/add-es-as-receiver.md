@@ -23,7 +23,7 @@ If you have enabled the [multi-cluster feature](../../../../multicluster-managem
 
 {{</ notice >}} 
 
-2. On the **Cluster Management** page, go to **Log Receivers** in **Cluster Settings**.
+2. On the navigation pane on the left, click **Cluster Settings** > **Log Receivers**.
 
 3. Click **Add Log Receiver** and choose **Elasticsearch**.
 

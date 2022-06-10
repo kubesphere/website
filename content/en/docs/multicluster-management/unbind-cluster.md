@@ -44,7 +44,7 @@ You can unbind a cluster by using either of the following methods:
 
 ## Unbind an Unhealthy Cluster
 
-On some occasions, you cannot unbind a cluster by following the steps above. For example, you import a cluster with the wrong credentials and you cannot access **Cluster Settings**. In this case, execute the following command to unbind an unhealthy cluster:
+On some occasions, you cannot unbind a cluster by following the steps above. For example, you import a cluster with the wrong credentials, and you cannot access **Cluster Settings**. In this case, execute the following command to unbind an unhealthy cluster:
 
 ```bash
 kubectl delete cluster <cluster name>

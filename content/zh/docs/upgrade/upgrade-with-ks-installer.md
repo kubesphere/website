@@ -13,7 +13,7 @@ weight: 7300
 - 您需要有一个运行 KubeSphere v3.2.x 的集群。如果您的 KubeSphere 是 v3.1.0 或更早的版本，请先升级至 v3.2.x。
 - 请仔细阅读 [3.3.0 版本说明](../../release/release-v321/)。
 - 提前备份所有重要的组件。
-- KubeSphere 3.3.0 支持的 Kubernetes 版本：v1.19.x、v1.20.x、v1.21.x 和 v1.22.x（实验性支持）。
+- KubeSphere 3.3.0 支持的 Kubernetes 版本：v1.19.x、v1.20.x、v1.21.x、v1.22.x 和 v1.23.x。
 
 ## 应用 ks-installer
 

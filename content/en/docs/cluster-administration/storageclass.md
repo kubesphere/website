@@ -30,7 +30,7 @@ The table below summarizes common volume plugins for various provisioners (stora
 
 You need a user granted a role including the permission of **Cluster Management**. For example, you can log in to the console as `admin` directly or create a new role with the permission and assign it to a user.
 
-## Manage Storage Classes
+## Create Storage Classes
 
 1. Click **Platform** in the upper-left corner and select **Cluster Management**.
    

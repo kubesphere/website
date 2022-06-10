@@ -87,7 +87,7 @@ KubeSphere 服务网格基于 [Istio](https://istio.io/)，将微服务治理和
 
 1. 以 `admin` 用户登录控制台。点击左上角的**平台管理**，选择**集群管理**。
    
-2. 点击 **定制资源定义**，在搜索栏中输入 `clusterconfiguration`。点击结果查看其详情页。
+2. 点击**定制资源定义**，在搜索栏中输入 `clusterconfiguration`。点击结果查看其详情页。
 
     {{< notice info >}}
 定制资源定义（CRD）允许用户在不新增 API 服务器的情况下创建一种新的资源类型，用户可以像使用其他 Kubernetes 原生对象一样使用这些定制资源。

@@ -87,12 +87,7 @@ chmod +x kk
 ./kk upgrade --with-kubernetes v1.21.5 --with-kubesphere v3.3.0
 ```
 
-要将 Kubernetes 升级至特定版本，请在 `--with-kubernetes` 标志后明确指定版本号。以下是可用版本：
-
-- v1.19.x
-- v1.20.x
-- v1.21.x
-- v1.22.x（实验性支持）
+要将 Kubernetes 升级至特定版本，请在 `--with-kubernetes` 标志后明确指定版本号。以下是可用版本：v1.19.x、v1.20.x、v1.21.x、v1.22.x 和 v1.23.x。
 
 ### 多节点集群
 
@@ -133,15 +128,10 @@ chmod +x kk
 ./kk upgrade --with-kubernetes v1.21.5 --with-kubesphere v3.3.0 -f sample.yaml
 ```
 
-要将 Kubernetes 升级至特定版本，请在 `--with-kubernetes` 标志后明确指定版本号。以下是可用版本：
-
-- v1.19.x
-- v1.20.x
-- v1.21.x
-- v1.22.x（实验性支持）
+要将 Kubernetes 升级至特定版本，请在 `--with-kubernetes` 标志后明确指定版本号。以下是可用版本：v1.19.x、v1.20.x、v1.21.x、v1.22.x 和 v1.23.x。
 
 {{< notice note >}}
 
-若要使用 KubeSphere 3.3.0 的部分新功能，您需要在升级后启用对应的可插拔组件。
+若要使用 KubeSphere 3.3.0 的新功能，您需要在升级后启用对应的可插拔组件。
 
 {{</ notice >}} 
