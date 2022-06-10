@@ -27,7 +27,7 @@ KubeSphere 3.3.0 卸载某些可插拔组件的方法与 KubeSphere v3.0.0 不�
 kubectl -n kubesphere-system edit clusterconfiguration ks-installer
 ```
 
-- 使用 `admin` 身份登录 KubeSphere Web 控制台，左上角点击**平台管理**，选择**集群管理**，在**定制资源定义** 中搜索 `ClusterConfiguration`。有关更多信息，请参见[启用可插拔组件](../../pluggable-components/)。
+- 使用 `admin` 身份登录 KubeSphere Web 控制台，左上角点击**平台管理**，选择**集群管理**，在**定制资源定义**中搜索 `ClusterConfiguration`。有关更多信息，请参见[启用可插拔组件](../../pluggable-components/)。
 
 {{< notice note >}}
 

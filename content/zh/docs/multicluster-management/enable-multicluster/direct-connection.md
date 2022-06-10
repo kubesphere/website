@@ -22,7 +22,7 @@ weight: 5210
 
 - 选项 A - 使用 Web 控制台：
 
-  使用 `admin` 帐户登录控制台，然后进入**集群管理**页面上的 **CRD**，输入关键字 `ClusterConfiguration`，然后转到其详情页面。编辑 `ks-installer` 的 YAML 文件，方法类似于[启用可插拔组件](../../../pluggable-components/)。
+  使用 `admin` 帐户登录控制台，然后进入**集群管理**页面上的**定制资源定义**，输入关键字 `ClusterConfiguration`，然后转到其详情页面。编辑 `ks-installer` 的 YAML 文件，方法类似于[启用可插拔组件](../../../pluggable-components/)。
 
 - 选项 B - 使用 Kubectl：
 
@@ -119,7 +119,7 @@ jwtSecret: "gfIwilcc0WjNGKJ5DLeksf2JKfcLgTZU"
 
 - 选项 A - 使用 Web 控制台：
 
-  使用 `admin` 帐户登录控制台，然后进入**集群管理**页面上的 **CRD**，输入关键字 `ClusterConfiguration`，然后转到其详情页面。编辑 `ks-installer` 的 YAML 文件，方法类似于[启用可插拔组件](../../../pluggable-components/)。
+  使用 `admin` 帐户登录控制台，然后进入**集群管理**页面上的**定制资源定义**，输入关键字 `ClusterConfiguration`，然后转到其详情页面。编辑 `ks-installer` 的 YAML 文件，方法类似于[启用可插拔组件](../../../pluggable-components/)。
 
 - 选项 B - 使用 Kubectl：
 

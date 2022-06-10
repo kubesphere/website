@@ -70,7 +70,7 @@ KubeSphere 支持用于[部署](../../project-user-guide/application-workloads/d
 
 1. 以 `admin` 用户登录控制台。点击左上角**平台管理**，选择**集群管理**。
    
-2. 点击 **定制资源定义**，在搜索栏中输入 `clusterconfiguration`。点击搜索结果查看详情页。
+2. 点击**定制资源定义**，在搜索栏中输入 `clusterconfiguration`。点击搜索结果查看详情页。
 
     {{< notice info >}}
 

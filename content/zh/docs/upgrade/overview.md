@@ -8,7 +8,7 @@ weight: 7100
 
 ## 确定您的升级方案
 
-KubeSphere 3.3.0 与 Kubernetes 1.19.x、1.20.x、1.21.x 以及 1.22.x（实验性支持）兼容：
+KubeSphere 3.3.0 与 Kubernetes 1.19.x、1.20.x、1.21.x、1.22.x、1.23.x 兼容：
 
 - 在您升级集群至 KubeSphere 3.3.0 之前，您的 KubeSphere 集群版本必须为 v3.2.x。
 

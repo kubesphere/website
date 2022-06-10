@@ -94,7 +94,7 @@ As you install KubeSphere in an air-gapped environment, you need to prepare an i
 
    {{< notice note >}}
 
-   This file lists images under `##+modulename` based on different modules. You can add your own images to this file following the same rule. To view the complete file, see [Appendix](../install-ks-on-linux-airgapped/#image-list-of-kubesphere-v310).
+   This file lists images under `##+modulename` based on different modules. You can add your own images to this file following the same rule. To view the complete file, see [Appendix](../install-ks-on-linux-airgapped/#Image-list-of-KubeSphere-3.3.0).
 
    {{</ notice >}} 
 
