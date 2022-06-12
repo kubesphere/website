@@ -1,5 +1,5 @@
 ---
-title: "dev-ops"
+title: "KubeSphere DevOps"
 layout: "scenario"
 
 css: "scss/scenario.scss"
