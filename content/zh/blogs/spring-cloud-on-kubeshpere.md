@@ -78,7 +78,7 @@ DevOps 项目是 KubeSphere 中的一个即插即用组件，提供了 CI/CD Pip
 
 1. 登录 KubeSphere 后进入`pig-ops` DevOps 工程。
 2. 在`凭证`页面中点击`创建`。
-3. 选择`账户凭证`类型，输入 DockerHub 用户名与密码，并将凭证命名为 dockerhub-id。
+3. 选择`用户名和密码`类型，输入 DockerHub 用户名与密码，并将凭证命名为 dockerhub-id。
 4. 再次点击`创建`，并设置为`kubeconfig`类型, 拷贝您的 kubeconfig，并将凭证命名为 kubeconfig-id。
 
 ![Credentials](../../../images/blogs/spring-cloud-on-kubesphere/1.Credentials.PNG)
