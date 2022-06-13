@@ -904,6 +904,37 @@ weaveworks/scope:1.13.0
 
 
 
+   ```bash
+   kubectl logs -n kubesphere-system $(kubectl get pod -n kubesphere-system -l app=ks-installer -o jsonpath='{.items[0].metadata.name}') -f
+   ```
+   安装完成后，您会看到以下内容：
+
+      ```bash
+      **************************************************
+      #####################################################
+      ###              Welcome to KubeSphere!           ###
+      #####################################################
+      
+      Console: http://192.168.149.133:30880
+      Account: admin
+      Password: P@88w0rd
+      
+      NOTES：
+      1. After you log into the console, please check the
+      monitoring status of service components in
+      the "Cluster Management". If any service is not
+      ready, please wait patiently until all components
+      are up and running.
+      1. Please change the default password after login.
+      
+      #####################################################
+      https://kubesphere.io             2022-02-28 23:30:06
+      #####################################################
+      ```
+
+9. 通过 `http://{IP}:30880` 使用默认帐户和密码 `admin/P@88w0rd` 访问 KubeSphere 的 Web 控制台。
+
+   ![kubesphere-login](/images/docs/zh-cn/upgrade/air-gapped-upgrade-with-ks-installer/kubesphere-login.PNG)
 
 
 

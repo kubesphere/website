@@ -540,7 +540,7 @@ In KubeKey v2.1.0, we bring in concepts of manifest and artifact, which provides
 8. Run the following command to view the cluster status:
 
    ```bash
-   $ kubectl logs -n kubesphere-system $(kubectl get pod -n kubesphere-system -l app=ks-install -o jsonpath='{.items[0].metadata.name}') -f
+   $ kubectl logs -n kubesphere-system $(kubectl get pod -n kubesphere-system -l app=ks-installer -o jsonpath='{.items[0].metadata.name}') -f
    ```
 
    After the installation is completed, the following information is displayed:

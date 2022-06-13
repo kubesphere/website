@@ -12,10 +12,10 @@ A DevOps project user with necessary permissions can configure credentials for J
 
 Currently, you can create the following 4 types of credentials in a DevOps project:
 
-- **Username and password**: Username and password which can be handled as separate components or as a colon-separated string in the format `username:password`, such as accounts of GitHub, GitLab, and Docker Hub.
+- **Username and password**: Username and password which can be handled as separate components or as a colon-separated string in the format `username:password`, such as accounts of GitHub and GitLab.
 - **SSH key**: Username with a private key, an SSH public/private key pair.
 - **Access token**: a token with certain access.
-- **kubeconfig**: It is used to configure cross-cluster authentication. If you select this type, the dialog will auto-populate the field with the kubeconfig file of the current Kubernetes cluster.
+- **kubeconfig**: It is used to configure cross-cluster authentication.
 
 This tutorial demonstrates how to create and manage credentials in a DevOps project. For more information about how credentials are used, see [Create a Pipeline Using a Jenkinsfile](../../../../devops-user-guide/how-to-use/pipelines/create-a-pipeline-using-jenkinsfile/) and [Create a Pipeline Using Graphical Editing Panels](../../../../devops-user-guide/how-to-use/pipelines/create-a-pipeline-using-graphical-editing-panel/).
 
@@ -24,52 +24,70 @@ This tutorial demonstrates how to create and manage credentials in a DevOps proj
 - You have enabled [KubeSphere DevOps System](../../../../pluggable-components/devops/).
 - You have a workspace, a DevOps project and a user (`project-regular`) invited to the DevOps project with the `operator` role. If they are not ready yet, see [Create Workspaces, Projects, Users and Roles](../../../../quick-start/create-workspace-and-project/).
 
-## Create Credentials
+## Create a Credential
 
 Log in to the console of KubeSphere as `project-regular`. Navigate to your DevOps project, select **Credentials** and click **Create**.
+1. Log in to the console of KubeSphere as `project-regular`.
 
-### Create Docker Hub credentials
+2. Navigate to your DevOps project. On the navigation pane on the left, choose **DevOps Project Settings > Credentials**.
 
-1. In the displayed dialog box, provide the following information.
+3. In the **Credentials** area on the right, click **Create**.
 
-   - **Name**: Set a name, such as `dockerhub-id`, which can be used in pipelines.
+4. On the **Create Credential** dialog box, enter the credential name and choose the credetial type. Parameters vary depneding on the type you select. For more information, refer to the following.
+### Create a username and password credential
+
+To set a GitHub credential, you need to set the following parameters:
+
+   - **Name**: Set a credential name, for example, `github-id`.
    - **Type**: Select **Username and password**.
-   - **Username**: Your Docker Hub account (for example, Docker ID).
-   - **Password/Token**: Your Docker Hub password.
-   - **Description**: A brief introduction to the credentials.
-
-2. Click **OK** when you finish.
-
-### Create GitHub credentials
-
-Similarly, follow the same steps above to create GitHub credentials. Set a different credential name (for example, `github-id`) and also select **Username and password** for **Type**. Enter your GitHub username and password for **Username** and **Password/Token** respectively.
+   - **Username**: Enter your GitHub username.
+   - **Password/Token**: Enter your GitHub token.
+   - **Description**: Decribe the credential.
 
 {{< notice note >}}
 
-If there are any special characters such as `@` and `$` in your account or password, they can cause errors as a pipeline runs because they may not be recognized. In this case, you need to encode your account or password on some third-party websites first, such as [urlencoder](https://www.urlencoder.org/). After that, copy and paste the output for your credential information.
+- Since August, 2021, GitHub has announced that it would require two factor authentication for users who contribute code on its service. Therefore, if you want to create a GitHub credential, you need to enter your GitHub token, instead of the password. For details about how to create a token, please refer to [Creating a personal access token](https://docs.github.com/en/authentication/keeping-your-account-and-data-secure/creating-a-personal-access-token).
+
+- If there are any special characters such as `@` and `$` in your account or password, they can cause errors as a pipeline runs because they may not be recognized. In this case, you need to encode your account or password on some third-party websites first, such as [urlencoder](https://www.urlencoder.org/). After that, copy and paste the output for your credential information.
 
 {{</ notice >}}
+### Create an SSH key credential
 
-### Create kubeconfig credentials
+You need to set the following parameters:
 
-Similarly, follow the same steps above to create kubeconfig credentials. Set a different credential name (for example, `demo-kubeconfig`) and select **kubeconfig**.
+- **Name**: Set a credential name.
+- **Type**: Select **SSH key**.
+- **Username**: Enter your username.
+- **Private Key**: Enter the SSH key.
+- **Passphrase**: Enter the passphrase. For enhanced security, you are avised to set this parameter.
+- **Description**: Decribe the credential.
+
+### Create an access token credential
+
+You need to set the following parameters:
+
+- **Name**: Set a credential name.
+- **Type**: Select **Access token**.
+- **Access token**: Enter the access token.
+- **Description**: Decribe the credential.
+
+### Create a kubeconfig credential
+
+You need to set the following parameters:
+
+- **Name**: Set a credential name, for example, `demo-kubeconfig`.
+- **Type**: Select **kubeconfig**.
+- **Content**: The system automatically fills in the content when you access the current Kubernetes cluster. and you do not need to change it. However, if you are accessing other clusters, you may need change the content of kubeconfig.
+- **Description**: Decribe the credential.
 
 {{< notice info >}}
 
-A file that is used to configure access to clusters is called a kubeconfig file. This is a generic way of referring to configuration files. For more information, see [the official documentation of Kubernetes](https://kubernetes.io/docs/concepts/configuration/organize-cluster-access-kubeconfig/). You create kubeconfig credentials for the access to the current Kubernetes cluster, which will be used in pipelines. You don't need to change the file since KubeSphere automatically populates the field with the kubeconfig of the current Kubernetes cluster. You may need to change kubeconfig when accessing other clusters.
+A file that is used to configure access to clusters is called a kubeconfig file. This is a generic way of referring to configuration files. For more information, see [the official documentation of Kubernetes](https://kubernetes.io/docs/concepts/configuration/organize-cluster-access-kubeconfig/).
 
 {{</ notice >}}
 
 ## View and Manage Credentials
 
-1. Credentials created are displayed in the list.
+1. Click any of them to go to its details page, where you can see account details and all the events related to the credentials.
 
-2. Click any of them to go to its details page, where you can see account details and all the events related to the credentials.
-
-3. You can also edit or delete credentials on this page. Note that when you edit credentials, KubeSphere does not display the existing username or password information. The previous one will be overwritten if you enter a new username and password.
-
-## See Also
-
-[Create a Pipeline Using a Jenkinsfile](../../../../devops-user-guide/how-to-use/pipelines/create-a-pipeline-using-jenkinsfile/)
-
-[Create a Pipeline Using Graphical Editing Panels](../../../../devops-user-guide/how-to-use/pipelines/create-a-pipeline-using-graphical-editing-panel/)
+2. You can also edit or delete credentials on this page. Note that when you edit credentials, KubeSphere does not display the existing username or password information. The previous one will be overwritten if you enter a new username and password.

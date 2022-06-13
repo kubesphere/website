@@ -34,7 +34,7 @@ In KubeSphere 3.3.0, we introduce the GitOps concept, and you can create continu
 
 7. In **Code Repository Settings**, set a branch or tag of the repository and specify the path of the manifest file.
 
-8. In **Sync Strategy**, you can choose either **Manual Sync** or ****Auto Sync**. If you choose **Auto Sync**, select **Prune resources** and **Self-heal** as needed. 
+8. In **Sync Strategy**, you can choose either **Manual Sync** or **Auto Sync**. If you choose **Auto Sync**, select **Prune resources** and **Self-heal** as needed. 
 
     - **Prune resources**: Automatically deletes resources that are no longer defined in Git.
     - **Self-heal**: Always synchronizes the state defined in Git.

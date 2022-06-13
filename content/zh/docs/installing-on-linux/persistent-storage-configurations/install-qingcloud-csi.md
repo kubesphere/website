@@ -197,7 +197,7 @@ chmod +x kk
 5. 安装完成后，可以使用以下命令检查安装日志：
 
    ```bash
-   kubectl logs -n kubesphere-system $(kubectl get pod -n kubesphere-system -l app=ks-install -o jsonpath='{.items[0].metadata.name}') -f
+   kubectl logs -n kubesphere-system $(kubectl get pod -n kubesphere-system -l app=ks-installer -o jsonpath='{.items[0].metadata.name}') -f
    ```
 
    预期输出：

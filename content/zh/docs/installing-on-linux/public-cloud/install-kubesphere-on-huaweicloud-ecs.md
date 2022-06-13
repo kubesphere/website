@@ -283,7 +283,7 @@ spec:
  ./kk create cluster --with-kubesphere v3.3.0 -f master-HA.yaml
 
  # 查看 KubeSphere 安装日志  -- 直到出现控制台的访问地址和登录帐户
-kubectl logs -n kubesphere-system $(kubectl get pod -n kubesphere-system -l app=ks-install -o jsonpath='{.items[0].metadata.name}') -f
+kubectl logs -n kubesphere-system $(kubectl get pod -n kubesphere-system -l app=ks-installer -o jsonpath='{.items[0].metadata.name}') -f
  ```
 
 ```

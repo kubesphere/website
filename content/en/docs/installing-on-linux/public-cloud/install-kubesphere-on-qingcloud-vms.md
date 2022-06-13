@@ -290,7 +290,7 @@ After you complete the configuration, you can execute the following command to s
 Inspect the logs of installation. When you see output logs as follows, it means KubeSphere has been successfully deployed.
 
 ```bash
-kubectl logs -n kubesphere-system $(kubectl get pod -n kubesphere-system -l app=ks-install -o jsonpath='{.items[0].metadata.name}') -f
+kubectl logs -n kubesphere-system $(kubectl get pod -n kubesphere-system -l app=ks-installer -o jsonpath='{.items[0].metadata.name}') -f
 ```
 
 ```bash

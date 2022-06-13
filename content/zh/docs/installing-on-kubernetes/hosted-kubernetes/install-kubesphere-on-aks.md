@@ -106,7 +106,7 @@ kubectl apply -f https://github.com/kubesphere/ks-installer/releases/download/v3
 可以通过以下命令检查安装日志：
 
 ```bash
-kubectl logs -n kubesphere-system $(kubectl get pod -n kubesphere-system -l app=ks-install -o jsonpath='{.items[0].metadata.name}') -f
+kubectl logs -n kubesphere-system $(kubectl get pod -n kubesphere-system -l app=ks-installer -o jsonpath='{.items[0].metadata.name}') -f
 ```
 
 ## 访问 KubeSphere 控制台

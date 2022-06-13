@@ -28,7 +28,6 @@ KubeSphere 3.3.0 支持您导入 GitHub、GitLab、Bitbucket 或其它基于 Git
 5. 在**导入代码仓库**对话框，输入代码仓库名称，并选择代码仓库，此处以 GitHub 为例。您也可以为代码仓库设置别名和添加描述信息。
 
    下表列举了支持导入的代码仓库和参数设置项。
-
    <table border="1">
      <tbody>
      	<tr>
@@ -69,7 +68,6 @@ KubeSphere 3.3.0 支持您导入 GitHub、GitLab、Bitbucket 或其它基于 Git
        </tr>
      </tbody>
    </table>
-
 
    {{< notice note >}}
 

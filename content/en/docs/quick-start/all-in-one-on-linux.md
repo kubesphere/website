@@ -54,7 +54,7 @@ The preceding system requirements and the following instructions are for the def
 ### Node requirements
 
 - The node can be accessed through `SSH`.
-- `sudo`/`curl`/`openssl` should be used.
+- `sudo`/`curl`/`openssl`/`tar` should be used.
 
 ### Container runtimes
 
@@ -226,7 +226,7 @@ If the following information is displayed, Kubernetes and KubeSphere is successf
 Run the following command to check the result.
 
 ```bash
-kubectl logs -n kubesphere-system $(kubectl get pod -n kubesphere-system -l app=ks-install -o jsonpath='{.items[0].metadata.name}') -f
+kubectl logs -n kubesphere-system $(kubectl get pod -n kubesphere-system -l app=ks-installer -o jsonpath='{.items[0].metadata.name}') -f
 ```
 
 The output displays the IP address and port number of the web console, which is exposed through `NodePort 30880` by default. Now, you can access the console at `<NodeIP>:30880` with the default account and password (`admin/P@88w0rd`).

@@ -233,7 +233,7 @@ Azure 虚拟网络不支持 [Calico](https://docs.projectcalico.org/reference/pu
 2. 检查安装日志：
 
    ```bash
-   kubectl logs -n kubesphere-system $(kubectl get pod -n kubesphere-system -l app=ks-install -o jsonpath='{.items[0].metadata.name}') -f
+   kubectl logs -n kubesphere-system $(kubectl get pod -n kubesphere-system -l app=ks-installer -o jsonpath='{.items[0].metadata.name}') -f
    ```
 
 3. 当安装完成，会出现如下信息：

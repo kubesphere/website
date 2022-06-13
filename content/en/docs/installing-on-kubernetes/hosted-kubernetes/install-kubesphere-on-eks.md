@@ -133,7 +133,7 @@ We will use the kubectl command-line utility for communicating with the cluster 
 - Inspect the logs of installation:
 
    ```bash
-   kubectl logs -n kubesphere-system $(kubectl get pod -n kubesphere-system -l app=ks-install -o jsonpath='{.items[0].metadata.name}') -f
+   kubectl logs -n kubesphere-system $(kubectl get pod -n kubesphere-system -l app=ks-installer -o jsonpath='{.items[0].metadata.name}') -f
    ```
 
 - When the installation finishes, you can see the following message:
