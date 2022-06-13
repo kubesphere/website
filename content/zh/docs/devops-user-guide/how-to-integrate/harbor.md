@@ -134,7 +134,7 @@ helm install harbor-release harbor/harbor --set expose.type=nodePort,externalURL
 
    {{< notice note >}}
 
-   您可以通过带有环境变量的 Jenkins 凭证来传送参数至 `docker login -u`。但是，每个 Harbor 机器人帐户的用户名都包含一个 `$` 字符，当用于环境变量时，Jenkins 会将其转换为 `$$`。[了解更多](https://number1.co.za/rancher-cannot-use-harbor-robot-account-imagepullbackoff-pull-access-denied/)。
+   您可以通过带有环境变量的 Jenkins 凭证来传送参数至 `docker login -u`。但是，每个 Harbor 机器人帐户的用户名都包含一个 `$` 字符，当用于环境变量时，Jenkins 会将其转换为 `$$`。(Harbor v2.2以后可以自定义机器人后缀，避免此类问题)[了解更多](https://number1.co.za/rancher-cannot-use-harbor-robot-account-imagepullbackoff-pull-access-denied/)。
 
    {{</ notice >}} 
 
