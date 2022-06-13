@@ -58,17 +58,6 @@ A：kubevirt 的母体是 K8s，K8s 是支持安装在裸金属服务器上的�
 ### Q5：KSV 里使用了什么网络插件 overlay 网络？
 
 A：KSV 用 Macvtap 实现的是 Underlay 网络，正在集成 Kube-OVN。
-=======
-### Q4：Kubevirt 是不是支持集群的 worker node 是裸金属服务器的情况啊？
-=======
-### Q4：KubeVirt 是不是支持集群的 worker node 是裸金属服务器的情况啊？
->>>>>>> 1645c254 (update the page of live)
-
-A：KubeVirt 的母体是 K8s，K8s 是支持安装在裸金属服务器上的，考虑虚拟机的嵌套虚拟化的需要，最好安装到裸金属服务器上。
-
-### Q5：KSV 里使用了什么网络插件 Overlay 网络？
-
-A：KSV 用 macvtap 实现的是 underlay 网络，正在集成 Kube-OVN。
 ### Q6：VM 实例和 Pod 是什么关系，是 Pod 里启动的 VM 吗？
 
 A：Pod 是带有 libvirt 环境的，所以虚拟机是在 Pod 里面起来的。

@@ -247,16 +247,6 @@ kubeeye audit -p ./opa
 
 ## 参考链接
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-*  https://github.com/kubesphere/kubeeye/
-<<<<<<< HEAD
 
-=======
 *  https://github.com/kubesphere/kubeeye/
->>>>>>> 77b43b07 (add new blog of kubeeye)
-=======
-*  https://github.com/kubesphere/kubeeye/
->>>>>>> cc3aea3c (Update k8s-kubeeye-security.md)
-=======
->>>>>>> 238b45ab (add new blog of kubeeye)
+
