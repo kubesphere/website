@@ -192,5 +192,5 @@ section6:
   joinTitle: 加入 KubeSphere 社区合作伙伴计划
   joinContent: 我们非常期待您加入 KubeSphere 社区合作伙伴计划，共同完善各自的生态，加速您的业务增长。
   joinLink: partner/
-  image: /images/home/certification.jpg
+  image: /images/home/certification.png
 ---

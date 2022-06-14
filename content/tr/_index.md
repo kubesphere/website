@@ -169,5 +169,5 @@ section6:
   btnLink:
   link:
   linkContent: Logonuzun burada yer almasını ister misiniz? Hemen istek gönderin. →
-  image: /images/home/certification.jpg
+  image: /images/home/certification.png
 ---
