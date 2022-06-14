@@ -57,8 +57,8 @@ KubeSphere 中可以创建两种类型的流水线：一种是本教程中介绍
 
    | 凭证 ID         | 类型       | 用途       |
    | --------------- | ---------- | ---------- |
-   | dockerhub-id    | 帐户凭证   | Docker Hub |
-   | github-id       | 帐户凭证   | GitHub     |
+   | dockerhub-id    | 用户名和密码 | Docker Hub |
+   | github-id       | 用户名和密码 | GitHub     |
    | demo-kubeconfig | kubeconfig | Kubernetes |
 
 2. 您还需要为 SonarQube 创建一个凭证 (`sonar-token`)，用于上述的阶段 3（SonarQube 分析）。请参阅[为新项目创建 SonarQube 令牌 (Token)](../../../../devops-user-guide/how-to-integrate/sonarqube/#为新项目创建-sonarqube-token)，在**访问令牌**类型的凭证的**令牌**字段中输入 SonarQube 令牌。点击**确定**完成操作。

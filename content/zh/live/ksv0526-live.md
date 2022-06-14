@@ -53,17 +53,32 @@ A: 暂时没有实现这个功能，在云原生下应该更希望用 LB 或者 
 
 ### Q4：KubeVirt 是不是支持集群的 worker node 是裸金属服务器的情况啊？
 
-A：KubeVirt 的母体是 K8s，K8s 是支持安装在裸金属服务器上的，考虑虚拟机的嵌套虚拟化的需要，最好安装到裸金属服务器上。
+A：kubevirt 的母体是 K8s，K8s 是支持安装在裸金属服务器上的，考虑虚拟机的嵌套虚拟化的需要，最好安装到裸金属服务器上。
 
-### Q5：KSV 里使用了什么网络插件 Overlay 网络？
+### Q5：KSV 里使用了什么网络插件 overlay 网络？
 
 A：KSV 用 Macvtap 实现的是 Underlay 网络，正在集成 Kube-OVN。
-
 ### Q6：VM 实例和 Pod 是什么关系，是 Pod 里启动的 VM 吗？
 
 A：Pod 是带有 libvirt 环境的，所以虚拟机是在 Pod 里面起来的。
 
 ### Q7：OpenStack 相比于 KubeVirt，KubeVirt 更适合什么场景？
+
+A：Kubevirt 会让 K8s 统一纳管容器和 VM，让虚拟机与容器之间更好的交互，虚拟机可以重用云原生组件，还有就是 K8s 要比 OpenStack 更轻量级。
+
+### Q8：Kube-OVN 性能有点差，有使用网络加速插件吗？
+
+A：容器下的大多网络插件都是在一个子网平面的，但是 Kube-OVN 提供了虚拟交换机，虚拟路由器，网关等功能，更加灵活。现在 Kube-OVN 是通过 vether+bridge 的方式接入虚拟机，经过的路径太长，希望 Kube-OVN 和 Kubevirt 社区合作，通过 OVS 的 internal port 直接挂到 VM 中，这样路径很短很多，也可以通过 DPDK+OVS 来提高这个性能，如果更高的网络性能需求，建议使用网卡的硬件虚拟化技术 SRIOV，Kubevirt 是支持的。
+
+### Q9：虚拟机支持组播吗？
+
+A：对于 macvtap 来说，只要物理交换机支持，应该没问题的。
+
+### Q10： KSV 产品可以试用吗？
+
+A：前端支持 3 节点 9VM 的免费体验，但是后端用 kubectl 命令是没有任何限制的，可以 [KSV 官网](https://kubesphere.cloud/ksv/)了解和下载体验。
+
+### Q7：OpenStack 相比于 Kubevirt，Kubevirt 更适合什么场景？
 
 A：KubeVirt 会让 K8s 统一纳管容器和 VM，让虚拟机与容器之间更好的交互，虚拟机可以重用云原生组件，还有就是 K8s 要比 OpenStack 更轻量级。
 

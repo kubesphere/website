@@ -6,7 +6,7 @@ linkTitle: "Import a Code Repository"
 weight: 11231
 ---
 
-In KubeSphere 3.3.0, you can import a GitHub, GitLab, or Bitbucket repository. The following describes how to import a code repository, for example, a GitHub repository.
+In KubeSphere 3.3.0, you can import a GitHub, GitLab, Bitbucket, or Git-based repository. The following describes how to import a GitHub repository.
 
 ## Prerequisites
 
@@ -25,7 +25,56 @@ In KubeSphere 3.3.0, you can import a GitHub, GitLab, or Bitbucket repository. T
 
 4. On the **Code Repositories** page, click **Import**.
 
-5. In the **Import Code Repository** dialog box, enter a name of the code repository, and then select a Github repository. Optionally, you can set an alias and add description.
+5. In the **Import Code Repository** dialog box, enter a name of the code repository, and then select a GitHub repository. Optionally, you can set an alias and add description.
+
+   The following table lists supported code repositories and parameters to set.
+
+   <table border="1">
+     <tbody>
+     	<tr>
+       	<th width="20%">Code Repository</th>
+         <th>Parameter</th>
+       </tr>
+       <tr>
+       	<td>GitHub</td>
+         <td><b>Credential</b>: Select the credential of the code repository.</td>
+       </tr>
+       <tr>
+       	<td>GitLab</td>
+         <td>
+           <ul>
+             <li><b>GitLab Server Address</b>: Select the GitLab server address, and the default value is <b>https:gitlab.com</b>.</li>
+             <li><b>Project Group/Owner</b>: Enter the GitLab username.</li>
+             <li><b>Credential</b>: Select the credential of the code repository.
+             <li><b>Code Repository</b>: Select the code repository.</li>
+           </ul>
+         </td>
+       <tr>
+       	<td>Bitbucket</td>
+         <td>
+           <ul>
+             <li><b>Bitbucket Server Address</b>: Set the Bitbucket server address.</li>
+             <li><b>Credential</b>: Select the credential of the code repository.</li>
+           </ul>
+         </td>
+       </tr>
+       <tr>
+       	<td>Git</td>
+         <td>
+           <ul>
+             <li><b>Code Repository URL</b>: Enter the URL of the code repository.</li>
+             <li><b>Credential</b>: Select the credential of the code repository.</li>
+           </ul>
+         </td>
+       </tr>
+     </tbody>
+   </table>
+
+   {{< notice note >}}
+
+   To use a private GitLab repository, please refer to [Create a Multi-branch Pipeline with GitLab-Step 4](../../../../devops-user-guide/how-to-use/pipelines/gitlab-multibranch-pipeline/).
+
+   {{</ notice >}}
 
 6. In **Credential**, click **Create Credential**. In the **Create Credential** dialog box, set the following parameters:
    - **Name**: Enter a name of the credential, for example, `github-id`.
@@ -34,9 +83,14 @@ In KubeSphere 3.3.0, you can import a GitHub, GitLab, or Bitbucket repository. T
    - **Password/Token**: Enter your GitHub token.
    - **Description**: Add description.
 
-7.In the GitHub repositories that are displayed, select a repository, and click **OK**.
+   {{< notice note >}}
 
-1. Click <img src="/images/docs/common-icons/three-dots.png" width="15" /> on the right of the imported code repository, and you can perform the following operations:
+   For more information about how to create a credential, please refer to [Credential Management](../../../../devops-user-guide/how-to-use/devops-settings/credential-management/).
+
+   {{</ notice >}}
+
+7. In the GitHub repositories that are displayed, select a repository, and click **OK**.
+8. Click <img src="/images/docs/common-icons/three-dots.png" width="15" /> on the right of the imported code repository, and you can perform the following operations:
 
    - **Edit**: Edits the alias and description of the code repository and reselects a code repository.
    - **Edit YAML**: Edits the YAML file of the code repository.

@@ -34,7 +34,11 @@ function addCopyButtons(clipboard) {
       button.title = "Copy Code"
       button.addEventListener('click', function () {
           clipboard.writeText(codeBlock.innerText).then(function () {
+              button.classList.add("is-active");
               button.blur();
+              setTimeout(function() {
+                  button.classList.remove("is-active");
+              }, 2000);
           }, function (error) {
           });
       });

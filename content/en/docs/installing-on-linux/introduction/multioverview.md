@@ -18,7 +18,6 @@ This section gives you an overview of a single-master multi-node installation, i
 
 A multi-node cluster is composed of at least one control plane and one worker node. You can use any node as the **taskbox** to carry out the installation task. You can add additional nodes based on your needs (for example, for high availability) both before and after the installation.
 
-
 - **Control plane node**. The control plane generally hosts the control plane and controls and manages the whole system.
 
 - **Worker node**. Worker nodes run the actual applications deployed on them.
@@ -49,7 +48,7 @@ Please see the requirements for hardware and operating system shown below. To ge
 
 - All nodes must be accessible through `SSH`.
 - Time synchronization for all nodes.
-- `sudo`/`curl`/`openssl` should be used in all nodes.
+- `sudo`/`curl`/`openssl`/`tar` should be used in all nodes.
 
 ### Container runtimes
 

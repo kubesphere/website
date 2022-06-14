@@ -23,7 +23,7 @@ groups:
     children:
       - title: Porter 负载均衡器
         icon: 'https://pek3b.qingstor.com/kubesphere-docs/png/20200608102707.png'
-        link: 'https://porterlb.io'
+        link: 'https://openelb.github.io/'
         description: 适用于物理部署 Kubernetes 环境的负载均衡器插件，Porter 使用物理交换机实现，利用 BGP 和 ECMP 从而达到性能最优和高可用性，提供用户在物理环境暴露 LoadBalancer 类型服务与云上获得一致性体验。
 
   - name: 安装部署

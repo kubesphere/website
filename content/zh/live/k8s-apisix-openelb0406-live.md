@@ -69,7 +69,7 @@ A：可以，但是不建议共用。可以避免爆炸半径过大。
 ### Q6：OpenELB 可以用在生产环境吗？
 
 
-A：可以，[官网](https://porterlb.io/about/)上已经有一些生产环境的案例。
+A：可以，[官网](https://openelb.github.io/)上已经有一些生产环境的案例。
 
 ### Q7：APISIX 是以什么方式对外暴露的？
 

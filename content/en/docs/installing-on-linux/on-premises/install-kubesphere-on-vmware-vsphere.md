@@ -506,7 +506,7 @@ Create a cluster using the configuration file you customized above:
 Inspect the logs of installation by executing the command below:
 
 ```bash
-kubectl logs -n kubesphere-system $(kubectl get pod -n kubesphere-system -l app=ks-install -o jsonpath='{.items[0].metadata.name}') -f
+kubectl logs -n kubesphere-system $(kubectl get pod -n kubesphere-system -l app=ks-installer -o jsonpath='{.items[0].metadata.name}') -f
 ```
 
 If you can see the welcome log return, it means the installation is successful. Your cluster is up and running.

@@ -385,7 +385,7 @@ spec:
 1. 运行以下命令以检查安装日志。
 
    ```bash
-   kubectl logs -n kubesphere-system $(kubectl get pod -n kubesphere-system -l app=ks-install -o jsonpath='{.items[0].metadata.name}') -f
+   kubectl logs -n kubesphere-system $(kubectl get pod -n kubesphere-system -l app=ks-installer -o jsonpath='{.items[0].metadata.name}') -f
    ```
 
 2. 看到以下信息时，表明高可用集群已成功创建。

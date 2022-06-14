@@ -85,7 +85,7 @@ kubectl apply -f https://github.com/kubesphere/ks-installer/releases/download/v3
 You can inspect the logs of installation through the following command:
 
 ```bash
-kubectl logs -n kubesphere-system $(kubectl get pod -n kubesphere-system -l app=ks-install -o jsonpath='{.items[0].metadata.name}') -f
+kubectl logs -n kubesphere-system $(kubectl get pod -n kubesphere-system -l app=ks-installer -o jsonpath='{.items[0].metadata.name}') -f
 ```
 
 ## Access KubeSphere Console

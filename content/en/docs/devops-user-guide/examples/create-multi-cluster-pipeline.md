@@ -89,8 +89,8 @@ You must create the projects as shown in the table below in advance. Make sure y
    | host          | kubeconfig          | The host cluster for testing       |
    | shire         | kubeconfig          | The member cluster for production  |
    | rohan         | kubeconfig          | The member cluster for development |
-   | dockerhub-id  | Account Credentials | Docker Hub                         |
-   | sonar-token   | Secret Text         | SonarQube                          |
+   | dockerhub-id  | Username and password | Docker Hub                         |
+   | sonar-token   | Access token        | SonarQube                          |
 
    {{< notice note >}}
 

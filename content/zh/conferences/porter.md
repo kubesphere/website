@@ -59,7 +59,7 @@ Ingress 并不是 Kubernetes 服务本身提供的暴露方式，而是借助于
 
 ## Porter 介绍
 
-[Porter](https://porterlb.io) 是 KubeSphere 团队研发的一款开源的基于 BGP 协议的云原生负载均衡器插件。它的主要特性有：
+[Porter](https://openelb.github.io/) 是 KubeSphere 团队研发的一款开源的基于 BGP 协议的云原生负载均衡器插件。它的主要特性有：
 
 1. 基于路由器 ECMP 的负载均衡
 2. 基于 BGP 路由动态配置
@@ -141,4 +141,4 @@ Porter 中的所有资源都是 CRD，包括 VIP、BGPPeer、BGPConfig 等。对
 ## 相关资源
 
 - [KubeCon Shanghai: Porter - An Open Source Load Balancer for Bare Metal Kubernetes](https://www.youtube.com/watch?v=EjU1yAVxXYQ)
-- [Porter 官网](https://porterlb.io)
+- [Porter 官网](https://openelb.github.io/)

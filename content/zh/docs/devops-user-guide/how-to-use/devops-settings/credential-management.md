@@ -12,10 +12,10 @@ weight: 11241
 
 目前，您可以在 DevOps 项目中创建以下 4 种类型的凭证：
 
-- **用户名和密码**：用户名和密码，可以作为单独的组件处理，或者作为用冒号分隔的字符串（格式为 `username:password`）处理，例如 GitHub、GitLab 和 Docker Hub 的帐户。
+- **用户名和密码**：用户名和密码，可以作为单独的组件处理，或者作为用冒号分隔的字符串（格式为 `username:password`）处理，例如 GitHub 和 GitLab帐户。
 - **SSH 密钥**：带有私钥的用户名，SSH 公钥/私钥对。
 - **访问令牌**：具有访问权限的令牌。
-- **kubeconfig**：用于配置跨集群认证。如果选择此类型，将自动获取当前 Kubernetes 集群的 kubeconfig 文件内容，并自动填充在当前页面对话框中。
+- **kubeconfig**：用于配置跨集群认证。
 
 本教程演示如何在 DevOps 项目中创建和管理凭证。有关如何使用凭证的更多信息，请参见[使用 Jenkinsfile 创建流水线](../../../../devops-user-guide/how-to-use/pipelines/create-a-pipeline-using-jenkinsfile/)和[使用图形编辑面板创建流水线](../../../../devops-user-guide/how-to-use/pipelines/create-a-pipeline-using-graphical-editing-panel/)。
 
@@ -26,11 +26,22 @@ weight: 11241
 
 ## 创建凭证
 
-以 `project-regular` 身份登录 KubeSphere 控制台。进入您的 DevOps 项目，选择**凭证**，然后点击**创建**。
+1. 以 `project-regular` 身份登录 KubeSphere 控制台。
 
-### 创建 GitHub 凭证
+2. 进入您的 DevOps 项目，在左侧导航栏，选择**DevOps 项目设置 > 凭证**。
 
-同样地，按照上述相同步骤创建 GitHub 凭证。设置不同的**名称**（例如 `github-id`），**类型**同样选择**用户名和密码**。分别在**用户名**和 **密码/令牌**中输入您的 GitHub 用户名和令牌。
+3. 在右侧的**凭证**区域，点击**创建**。
+
+4. 在弹出的**创建凭证**对话框，输入凭证名称，并选择凭证类型。不同的凭证类型需要设置的参数不同，具体请参考以下内容。
+### 创建用户名和密码凭证
+
+以创建 GitHub 用户凭证为例，您需要设置以下参数：
+
+- 名称：设置凭证名称，如 `github-id`。
+- 类型：选择**用户名和密码**。
+- 用户名：输入您的 GitHub 用户名。
+- 密码/令牌：输入您的 GitHub 令牌。
+- 描述：凭证的简介。
 
 {{< notice note >}}
 
@@ -40,20 +51,43 @@ weight: 11241
 
 {{</ notice >}}
 
+### 创建 SSH 密钥凭证
+
+您需要设置以下参数：
+
+- 名称：设置凭证名称。
+- 类型：选择**SSH 密钥**。
+- 用户名：输入您的用户名。
+- 私钥：输入您的 SSH 密钥。
+- 密码短语：输入密码短语。为了更好保护您的账户安全，建议设置该参数。
+- 描述：凭证的简介。
+
+### 创建访问令牌凭证
+
+您需要设置以下参数：
+
+- 名称：设置凭证名称。
+- 类型：选择**访问令牌**。
+- 令牌：输入您的令牌。
+- 描述：凭证的简介。
+
 ### 创建 kubeconfig 凭证
 
-同样地，按照上述相同步骤创建 kubeconfig 凭证。设置不同的凭证 ID（例如 `demo-kubeconfig`）并选择 **kubeconfig**。
+您需要设置以下参数：
+
+- 名称：设置凭证名称，例如 `demo-kubeconfig`。
+- 类型：选择**kubeconfig**。
+- 内容：系统自动获取当前 Kubernetes 集群的 kubeconfig 文件内容，并自动填充该字段，您无须做任何更改。但是访问其他集群时，您可能需要更改 kubeconfig。
+- 描述：凭证的简介。
 
 {{< notice info >}}
 
-用于配置集群访问的文件称为 kubeconfig 文件。这是引用配置文件的通用方法。有关更多信息，请参见 [Kubernetes 官方文档](https://kubernetes.io/zh/docs/concepts/configuration/organize-cluster-access-kubeconfig/)。您可以创建 kubeconfig 凭证来访问当前 Kubernetes 集群，该凭证将在流水线中使用。您不需要更改该文件，因为 KubeSphere 会自动使用当前 Kubernetes 集群的 kubeconfig 填充该字段。访问其他集群时，您可能需要更改 kubeconfig。
+用于配置集群访问的文件称为 kubeconfig 文件。这是引用配置文件的通用方法。有关更多信息，请参见 [Kubernetes 官方文档](https://kubernetes.io/zh/docs/concepts/configuration/organize-cluster-access-kubeconfig/)。
 
 {{</ notice >}}
 
 ## 查看和管理凭证
 
-1. 凭证创建后，会在列表中显示。
+1. 点击已创建的凭证，进入其详情页面，您可以查看帐户详情和与此凭证相关的所有事件。
 
-2. 点击任意一个凭证，进入其详情页面，您可以查看帐户详情和与此凭证相关的所有事件。
-
-3. 您也可以在此页面上编辑或删除凭证。请注意，编辑凭证时，KubeSphere 不会显示现有用户名或密码信息。如果输入新的用户名和密码，则前一个将被覆盖。
+2. 您也可以在此页面上编辑或删除凭证。请注意，编辑凭证时，KubeSphere 不会显示现有用户名或密码信息。如果输入新的用户名和密码，则前一个将被覆盖。

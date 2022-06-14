@@ -144,4 +144,4 @@ There are two advantages in this method:
 ## Related Resources
 
 - [KubeCon Shanghai: Porter - An Open Source Load Balancer for Bare Metal Kubernetes](https://www.youtube.com/watch?v=EjU1yAVxXYQ)
-- [Porter Website](https://porterlb.io)
+- [Porter Website](https://openelb.github.io/)

@@ -72,7 +72,7 @@ weight: 4260
 2. 检查安装日志：
 
     ```bash
-    kubectl logs -n kubesphere-system $(kubectl get pod -n kubesphere-system -l app=ks-install -o jsonpath='{.items[0].metadata.name}') -f
+    kubectl logs -n kubesphere-system $(kubectl get pod -n kubesphere-system -l app=ks-installer -o jsonpath='{.items[0].metadata.name}') -f
     ```
 
 3. 安装完成后会输出以下信息：

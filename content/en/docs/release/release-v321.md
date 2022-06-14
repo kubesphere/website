@@ -34,7 +34,7 @@ weight: 18099
 - Fix incorrect available workspace quotas displayed in the **Edit Project Quotas** dialog box. ([#2613](https://github.com/kubesphere/console/pull/2613), [@weili520](https://github.com/weili520))
 - Fix an issue in the **Monitoring** dialog box, where the time range selection drop-down list does not function properly. ([#2722](https://github.com/kubesphere/console/pull/2722), [@weili520](https://github.com/weili520))
 - Fix incorrect available quotas displayed in the Deployment creation page. ([#2668](https://github.com/kubesphere/console/pull/2668), [@weili520](https://github.com/weili520))
-- Change the documentation address to [kubesphere.io](http://kubesphere.io/) and [kubesphere.com.cn](http://kubesphere.com.cn/). ([#2628](https://github.com/kubesphere/console/pull/2628), [@weili520](https://github.com/weili520))
+- Change the documentation address to [kubesphere.io](https://kubesphere.io/) and [kubesphere.com.cn](https://kubesphere.com.cn/). ([#2628](https://github.com/kubesphere/console/pull/2628), [@weili520](https://github.com/weili520))
 - Fix an issue where Deployment volume settings cannot be modified. ([#2656](https://github.com/kubesphere/console/pull/2656), [@weili520](https://github.com/weili520))
 - Fix an issue where the container terminal cannot be accessed when the browser language is not English, Simplified Chinese, or Traditional Chinese. ([#2702](https://github.com/kubesphere/console/pull/2702), [@weili520](https://github.com/weili520))
 - Fix incorrect volume status displayed in the Deployment editing dialog box. ([#2622](https://github.com/kubesphere/console/pull/2622), [@weili520](https://github.com/weili520))

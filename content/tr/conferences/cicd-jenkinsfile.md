@@ -30,8 +30,8 @@ To get started, we need to create 3 credentials, i.e. DockerHub、GitHub and kub
 
 | Credential ID   | Type                | Username/Password/Secret                                             | Content |
 | --------------- | ------------------- | -------------------------------------------------------------------- | ------- |
-| dockerhub-id    | Account Credentials | Enter your personal DockerHub account information                    | \|      |
-| github-id       | Account Credentials | Enter your personal GitHub account information                       | \|      |
+| dockerhub-id    | Username and password | Enter your personal DockerHub account information                    | \|      |
+| github-id       | Username and password | Enter your personal GitHub account information                       | \|      |
 | kube-config     |
 | demo-kubeconfig | kubeconfig          | \|It will be automatically filled with the kubeconfig of the cluster |
-| sonar-token     | secret_text         | You can get secret by creating SonarQube token                       | \       |
+| sonar-token     | Access token         | You can get secret by creating SonarQube token                       | \       |

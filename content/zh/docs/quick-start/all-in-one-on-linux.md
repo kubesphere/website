@@ -55,7 +55,7 @@ weight: 2100
 ### 节点要求
 
 - 节点必须能够通过 `SSH` 连接。
-- 节点上可以使用 `sudo`/`curl`/`openssl` 命令。
+- 节点上可以使用 `sudo`/`curl`/`openssl`/`tar` 命令。
 
 ### 容器运行时
 
@@ -226,7 +226,7 @@ chmod +x kk
 输入以下命令以检查安装结果。
 
 ```bash
-kubectl logs -n kubesphere-system $(kubectl get pod -n kubesphere-system -l app=ks-install -o jsonpath='{.items[0].metadata.name}') -f
+kubectl logs -n kubesphere-system $(kubectl get pod -n kubesphere-system -l app=ks-installer -o jsonpath='{.items[0].metadata.name}') -f
 ```
 
 输出信息会显示 Web 控制台的 IP 地址和端口号，默认的 NodePort 是 `30880`。现在，您可以使用默认的帐户和密码 (`admin/P@88w0rd`) 通过 `<NodeIP>:30880` 访问控制台。
