@@ -114,6 +114,13 @@ This section walks you through the process of deploying an application using a c
     - **Sync**: Triggers resources synchronization.
     - **Delete**: Deletes the continuous deployment.
 
+  {{< notice warning >}}
+
+  Deleting a continuous deployment also deletes resources associated with the continuous deployment. Therefore, exert caution when deleting the continuous deployment.
+  
+  {{</ notice >}}
+
+
 11. Click the created continuous deployment to go to its details page, where you can view the synchronization status and result.
 
 ## Access the Created Application

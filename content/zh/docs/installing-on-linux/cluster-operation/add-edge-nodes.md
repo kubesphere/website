@@ -125,7 +125,7 @@ KubeSphere 利用 [KubeEdge](https://kubeedge.io/zh/) 将原生容器化应用�
 
    {{</ notice >}}
 
-<<<<<<< HEAD
+
 ## 收集边缘节点监控信息
 
 如果需要收集边缘节点的监控信息，请先在`ClusterConfiguration` 中开启 `metrics_server`，以及在 KubeEdge 中开启 `edgeStream`。

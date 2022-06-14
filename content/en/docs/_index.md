@@ -25,8 +25,8 @@ sectionLink:
       - /docs/pluggable-components/devops
       - /docs/multicluster-management
       - /docs/project-user-guide/configuration/image-registry
-      - /docs/devops-user-guide/how-to-use/create-a-pipeline-using-jenkinsfile
-      - /docs/devops-user-guide/how-to-use/create-a-pipeline-using-graphical-editing-panel
+      - /docs/devops-user-guide/how-to-use/pipelines/create-a-pipeline-using-jenkinsfile
+      - /docs/devops-user-guide/how-to-use/pipelines/create-a-pipeline-using-graphical-editing-panel
       - /docs/project-user-guide/image-builder/source-to-image
       - /docs/application-store/app-lifecycle-management
       
