@@ -10,22 +10,29 @@ section1:
 
 section2:
   image: /images/live/cloudnative-live-banner.png
-  url: ./jinaai0602-live/
+  url: ./pulsar0609-live/
 
   notice:
-    title: 初探 KubeSphere x Apache Pulsar —— 打造云原生分布式消息流平台
+    title: 云原生数据工厂——中海庭数字化转型之路
     tag: 预告
-    time: 2022 年 06 月 09 日晚 8 点
+    time: 2022 年 06 月 16 日晚 8 点
     base: 线上
-    url: ./pulsar0609-live/
+    url: ./headingdata0616-live/
 
   over:
-    title: 容器原生虚拟化：从 KubeVirt 到 KSV 虚拟化
-    url: ./ksv0526-live/
+    title: 基于 KubeSphere 和 Thanos 构建可持久化存储的多集群监控系统
+    url: ./jinaai0602-live/
     tag: 结束
 
 section3:
   videos:
+    - title: 初探 KubeSphere x Apache Pulsar —— 打造云原生分布式消息流平台
+      link: ./pulsar0609-live/
+      snapshot: https://pek3b.qingstor.com/kubesphere-community/images/pulsar0609-live-cover.png
+      type: iframe
+      createTime: 2022.06.09
+      group: 直播回放
+
     - title: 基于 KubeSphere 和 Thanos 构建可持久化存储的多集群监控系统
       link: ./jinaai0602-live/
       snapshot: https://pek3b.qingstor.com/kubesphere-community/images/jinaai0602-live-cover.png
