@@ -194,5 +194,5 @@ section6:
   joinTitle: Join the Revolution, Partner with KubeSphere Container Platform
   joinContent: We look forward to your joining KubeSphere partner program to improve both ecosystems and grow your business.
   joinLink: partner/
-  image: /images/home/certification.jpg
+  image: /images/home/certification.png
 ---
