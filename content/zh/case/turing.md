@@ -78,7 +78,13 @@ section2:
       contentList:
         - content: KubeSphere 平台在插件安装这块的体验比较好，只需要对配置文件相应做调整就能很容易实现。比如日志平台默认由 Elasticsearch 做存储，但我们已经自建有 Elasticsearch 集群，只需要调整 ks-installer 配置。
       image: https://pek3b.qingstor.com/kubesphere-community/images/tuling-10.png
+    - title:
+      contentList:
+        - content: 
       image: https://pek3b.qingstor.com/kubesphere-community/images/tuling-11.png
+    - title:
+      contentList:
+        - content: 
       image: https://pek3b.qingstor.com/kubesphere-community/images/tuling-12.png
     - title:
       contentList:
@@ -93,16 +99,20 @@ section2:
       contentList:
         - content: 1. 环境区分：我们的环境对应的是 KubeSphere 中的项目，通过在流水线中指定对应配置文件区分。
       image: https://pek3b.qingstor.com/kubesphere-community/images/tuling-13.png
+    - title:
+      contentList:
+        - content: 
       image: https://pek3b.qingstor.com/kubesphere-community/images/tuling-14.png
     - title:
       contentList:
-        - content:   
         - content: 2. 前端 Node 环境指定：由于 KubeSphere 平台默认提供的 Node.js 版本和我们所需版本有差异，所以结合自己经验对平台 Node.js 环境通过 Jenkins 插件方式进行了修改，后续流水线中指定对应版本即可。这种方式稍显麻烦，可能通过在流水线中指定镜像应该也能满足，但还未实践。
       image: https://pek3b.qingstor.com/kubesphere-community/images/tuling-15.png
-      image: https://pek3b.qingstor.com/kubesphere-community/images/tuling-16.png
     - title:
       contentList:
-        - content:    
+        - content: 
+      image: https://pek3b.qingstor.com/kubesphere-community/images/tuling-16.png
+    - title:
+      contentList:   
         - content: 日志采集这块，KubeSphere 平台提供了 FluentBit Operator，在集群所有节点以 DaemonSet 运行，并统一部署配置了 Fluent Bit，同时查询方式能满足现有业务。只有 Elasticsearch 我们对接了自己的环境。
       image: https://pek3b.qingstor.com/kubesphere-community/images/tuling-17.png
 

@@ -76,6 +76,10 @@ section2:
       content: "中科金财是国内领先的区块链技术与金融科技综合服务商，致力于打造领先的产业互联网科技赋能平台。"
       link: "sinodata/"
 
+    - icon: "images/case/logo-gxjtkyy.png"
+      content: "广西交科集团有限公司是一家在交通运输系统中具有重要影响力的高新技术企业，致力于为建设交通强国贡献智慧解决方案。"
+      link: "gxjtkyy/"
+
 section3:
   title: 'KubeSphere 助力各行各业'
   tip: 全部
