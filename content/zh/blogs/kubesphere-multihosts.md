@@ -1,7 +1,7 @@
 ---
 title: 'KubeSphere 的异地多活方案探索'
 tag: 'KubeSphere, Kubernetes'
-keywords: 'KubeSphere, Kubernetes, 异地多活, 多集群 '
+keywords: 'KubeSphere, Kubernetes, 异地多活, 多集群'
 description: '遇到这样一个场景，在同一套环境中需要存在多个 Host 控制面集群，因此想探索下 KubeSphere 的异地多活混合容器云管理方案。'
 createTime: '2022-06-05'
 author: '许小平'
