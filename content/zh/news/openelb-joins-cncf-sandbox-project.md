@@ -1,11 +1,11 @@
 ---
 title: 'OpenELB 项目进入 CNCF Sandbox，让私有化环境对外暴露服务更简单'
-tag: 'CNCF'
-keyword: 'OpenELB, 负载均衡器, Kubernetes, LoadBalancer, 物理机'
+tag: '产品动态'
+keywords: 'OpenELB, 负载均衡器, Kubernetes, LoadBalancer, 物理机'
 description: 'CNCF 宣布由青云科技 KubeSphere 团队开源的负载均衡器插件 OpenELB 正式进入 CNCF 沙箱'
 createTime: '2021-11-24'
 author: 'KubeSphere'
-snapshot: 'https://kubesphere-community.pek3b.qingstor.com/images/4761636694917_.pic_hd.jpg'
+image: 'https://kubesphere-community.pek3b.qingstor.com/images/4761636694917_.pic_hd.jpg'
 --- 
 
 ![头图](https://kubesphere-community.pek3b.qingstor.com/images/4761636694917_.pic_hd.jpg)

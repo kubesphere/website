@@ -1,6 +1,6 @@
 ---
 title: 'KubeSphere 迈向新的里程碑 —— 10000 Star!'
-tag: '产品动态'
+tag: '社区动态'
 keywords: 'KubeSphere, 云原生, AKS, EKS, AKS,DigitalOcean, QKE, OpenFunction, OpenELB'
 description: '开源项目 KubeSphere 于近期在 “云原生分布式操作系统” 的征程中迈入新的里程碑 —— GitHub Star 数量突破 10,000！'
 createTime: '2022-05-31'
