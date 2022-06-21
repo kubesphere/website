@@ -84,6 +84,6 @@ If you want to use KubeKey to install both Kubernetes and KubeSphere 3.3.0, see 
 {{< notice note >}} 
 
 - You can also run `./kk version --show-supported-k8s` to see all supported Kubernetes versions that can be installed by KubeKey.
-- The Kubernetes versions that can be installed using KubeKey are different from the Kubernetes versions supported by KubeSphere v3.0.0. If you want to [install KubeSphere 3.3.0 on an existing Kubernetes cluster](../../../installing-on-kubernetes/introduction/overview/), your Kubernetes version must be v1.19.x or above.
+- The Kubernetes versions that can be installed using KubeKey are different from the Kubernetes versions supported by KubeSphere v3.3.0. If you want to [install KubeSphere 3.3.0 on an existing Kubernetes cluster](../../../installing-on-kubernetes/introduction/overview/), your Kubernetes version must be v1.19.x or above.
 
 {{</ notice >}}

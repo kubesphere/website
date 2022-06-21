@@ -25,7 +25,7 @@ Log in to the console as `project-regular`. Go to **Jobs** under **Application W
 
 ### Step 2: Enter basic information
 
-Enter the basic information. Refer to the image below as an example.
+Enter the basic information. The following describes the parameters:
 
 - **Name**: The name of the Job, which is also the unique identifier.
 - **Alias**: The alias name of the Job, making resources easier to identify.

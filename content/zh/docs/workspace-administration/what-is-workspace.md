@@ -77,7 +77,7 @@ kubectl label ns <namespace> kubesphere.io/workspace- && kubectl patch ns <names
 
    {{</ notice >}} 
 
-2. 若要删除企业空间，点击**删除企业空间**下的**删除**。在出现的对话框中输入企业空间的名称，然后点击**确定**。
+2. 若要删除企业空间，点击**管理 > 删除企业空间**。在出现的对话框中输入企业空间的名称，然后点击**确定**。
 
    {{< notice warning >}}
 

@@ -93,7 +93,7 @@ Click the pipeline to go to its details page. To use graphical editing panels, c
 
 - The pipeline details page shows **Sync Status**. It reflects the synchronization result between KubeSphere and Jenkins, and you can see the **Successful** icon if the synchronization is successful. You can also click **Edit Jenkinsfile** to create a Jenkinsfile manually for your pipeline.
 
-- You can also click **Continuous Integration (CI)** and **Continuous Integration & Delivery (CI/CD)** to [use the built-in pipeline templates](../use-pipeline-templates/) provided by KubeSphere.
+- You can also [use the built-in pipeline templates](../use-pipeline-templates/) provided by KubeSphere.
 
 {{</ notice >}}
 

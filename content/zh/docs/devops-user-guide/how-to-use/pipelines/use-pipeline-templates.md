@@ -39,13 +39,13 @@ KubeSphere 提供图形编辑面板，您可以通过交互式操作定义 Jenki
    
    | 参数  | 参数解释 |
    | ----------- | ------------------------- |
-   | GitURL     | 需要克隆的项目仓库的地址                  |
-   | GitRevision | 需要检出的分支                  |
-   | NodeDockerImage  | Node.js 的 Docker 镜像版本  |
-   | InstallScript     | 安装依赖项的 Shell 脚本  |
-   | TestScript     | 项目测试的 Shell 脚本  |
-   | BuildScript     | 构建项目的 Sell 脚本  |
-   | ArtifactsPath     | 归档文件所在的路径  |
+   | GitURL     | 需要克隆的项目仓库的地址。                  |
+   | GitRevision | 需要检出的分支。                  |
+   | NodeDockerImage  | Node.js 的 Docker 镜像版本。  |
+   | InstallScript     | 安装依赖项的 Shell 脚本。  |
+   | TestScript     | 项目测试的 Shell 脚本。  |
+   | BuildScript     | 构建项目的 Sell 脚本。  |
+   | ArtifactsPath     | 归档文件所在的路径。  |
 
 8. 在左侧的可视化编辑页面，系统默认已添加一系列步骤，您可以添加步骤或并行阶段.
 

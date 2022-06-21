@@ -89,7 +89,7 @@ KubeSphere 中的图形编辑面板包含用于 Jenkins [阶段 (Stage)](https:/
 
 - 点击流水线进入其详情页面。要使用图形编辑面板，请点击**任务状态**选项卡下的**编辑流水线**。在弹出的对话框中，点击**自定义流水线**。该流水线包括六个阶段，请按照以下步骤设置每个阶段。
 
-- 您也可以点击**持续集成 (CI)** 和**持续集成&交付 (CI/CD)** 来使用 KubeSphere 提供的[内置流水线模板](../use-pipeline-templates/)。
+- 您也可以使用 KubeSphere 提供的[内置流水线模板](../use-pipeline-templates/)。
 
 {{< notice note >}}
 

@@ -37,15 +37,15 @@ weight: 14350
 
 ### 步骤 2：部署 RadonDB MySQL Operator
 
-1. 在 `demo-project` 项目中，进入**应用负载**下的**应用**页面，点击**部署新应用**。
+1. 在 `demo-project` 项目中，进入**应用负载**下的**应用**页面，点击**创建**。
 
-2. 在对话框中，选择**来自应用模板**，进入应用模版页面。
+2. 在对话框中，选择**从应用模板**，进入应用模版页面。
 
 3. 从下拉菜单中选择 `radondb-mysql-operator` 应用仓库。
 
-4. 点击 `mysql-operator` 应用，查看和配置 RadonDB MySQL Operator 应用信息。  
+4. 点击 `mysql-operator` 应用，查看和配置 RadonDB MySQL Operator 应用信息。
 
-   在**配置文件**选项卡，可查看和编辑 `.yaml` 配置文件。  
+   在**配置文件**选项卡，可查看和编辑 `.yaml` 配置文件。
    在**版本**列框区域，可查看和选择版本号。
 
    ![operator 配置文件](/images/docs/zh-cn/appstore/external-apps/deploy-radondb-mysql/operator_yaml.png)

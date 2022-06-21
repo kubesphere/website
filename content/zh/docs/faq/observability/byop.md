@@ -6,7 +6,7 @@ linkTitle: "集成您自己的 Prometheus"
 Weight: 16330
 ---
 
-KubeSphere 自带一些预装的自定义监控组件，包括 Prometheus Operator、Prometheus、Alertmanager、Grafana（可选）、各种 ServiceMonitor、node-exporter 和 kube-state-metrics。在您安装 KubeSphere 之前，这些组件可能已经存在。在 KubeSphere 3.0 中，您可以使用自己的 Prometheus 堆栈设置。
+KubeSphere 自带一些预装的自定义监控组件，包括 Prometheus Operator、Prometheus、Alertmanager、Grafana（可选）、各种 ServiceMonitor、node-exporter 和 kube-state-metrics。在您安装 KubeSphere 之前，这些组件可能已经存在。在 KubeSphere 3.3.0 中，您可以使用自己的 Prometheus 堆栈设置。
 
 ## 集成您自己的 Prometheus 的步骤
 
@@ -49,7 +49,7 @@ KubeSphere 自带一些预装的自定义监控组件，包括 Prometheus Operat
 
 {{< notice note >}}
 
-KubeSphere 3.0 已经过认证，可以与以下 Prometheus 堆栈组件搭配使用：
+KubeSphere 3.3.0 已经过认证，可以与以下 Prometheus 堆栈组件搭配使用：
 
 - Prometheus Operator **v0.38.3+**
 - Prometheus **v2.20.1+**
@@ -67,7 +67,7 @@ KubeSphere 3.0 已经过认证，可以与以下 Prometheus 堆栈组件搭配�
 
 Prometheus 堆栈可以通过多种方式进行安装。下面的步骤演示如何使用**上游 `kube-prometheus`** 将 Prometheus 堆栈安装至命名空间 `monitoring` 中。
 
-1. 获取 v0.6.0 版 kube-prometheus，它的 node-exporter 版本为 v0.18.1，与 KubeSphere 3.0 所使用的版本相匹配。
+1. 获取 v0.6.0 版 kube-prometheus，它的 node-exporter 版本为 v0.18.1，与 KubeSphere 3.3.0 所使用的版本相匹配。
 
    ```bash
    cd ~ && git clone https://github.com/prometheus-operator/kube-prometheus.git && cd kube-prometheus && git checkout tags/v0.6.0 -b v0.6.0
@@ -91,7 +91,7 @@ Prometheus 堆栈可以通过多种方式进行安装。下面的步骤演示如
    rm -rf manifests/prometheus-adapter-*.yaml
    ```
 
-5. 将 kube-state-metrics 的版本变更为 KubeSphere 3.0 所使用的 v1.9.6。
+5. 将 kube-state-metrics 的版本变更为 KubeSphere 3.3.0 所使用的 v1.9.6。
 
    ```bash
    sed -i 's/v1.9.5/v1.9.6/g' manifests/kube-state-metrics-deployment.yaml
@@ -107,19 +107,19 @@ Prometheus 堆栈可以通过多种方式进行安装。下面的步骤演示如
 
 {{< notice note >}}
 
-KubeSphere 3.0 使用 Prometheus Operator 来管理 Prometheus/Alertmanager 配置和生命周期、ServiceMonitor（用于管理抓取配置）和 PrometheusRule（用于管理 Prometheus 记录/告警规则）。
+KubeSphere 3.3.0 使用 Prometheus Operator 来管理 Prometheus/Alertmanager 配置和生命周期、ServiceMonitor（用于管理抓取配置）和 PrometheusRule（用于管理 Prometheus 记录/告警规则）。
 
-[KubeSphere kustomization](https://github.com/kubesphere/kube-prometheus/blob/ks-v3.0/kustomize/kustomization.yaml) 中列出了一些条目，其中 `prometheus-rules.yaml` 和 `prometheus-rulesEtcd.yaml` 是 KubeSphere 3.0 正常运行的必要条件，其他均为可选。如果您不希望现有 Alertmanager 的配置被覆盖，您可以移除 `alertmanager-secret.yaml`。如果您不希望自己的 ServiceMonitor 被覆盖（KubeSphere 自定义的 ServiceMonitor 弃用许多无关指标，以便 Prometheus 只存储最有用的指标），您可以移除 `xxx-serviceMonitor.yaml`。
+[KubeSphere kustomization](https://github.com/kubesphere/kube-prometheus/blob/ks-v3.0/kustomize/kustomization.yaml) 中列出了一些条目，其中 `prometheus-rules.yaml` 和 `prometheus-rulesEtcd.yaml` 是 KubeSphere 3.3.0 正常运行的必要条件，其他均为可选。如果您不希望现有 Alertmanager 的配置被覆盖，您可以移除 `alertmanager-secret.yaml`。如果您不希望自己的 ServiceMonitor 被覆盖（KubeSphere 自定义的 ServiceMonitor 弃用许多无关指标，以便 Prometheus 只存储最有用的指标），您可以移除 `xxx-serviceMonitor.yaml`。
 
 如果您的 Prometheus 堆栈不是由 Prometheus Operator 进行管理，您可以跳过此步骤。但请务必确保：
 
-- 您必须将 [PrometheusRule](https://github.com/kubesphere/kube-prometheus/blob/ks-v3.0/kustomize/prometheus-rules.yaml) 和 [PrometheusRule for etcd](https://github.com/kubesphere/kube-prometheus/blob/ks-v3.0/kustomize/prometheus-rulesEtcd.yaml) 中的记录/告警规则复制至您的 Prometheus 配置中，以便 KubeSphere 3.0 能够正常运行。
+- 您必须将 [PrometheusRule](https://github.com/kubesphere/kube-prometheus/blob/ks-v3.0/kustomize/prometheus-rules.yaml) 和 [PrometheusRule for etcd](https://github.com/kubesphere/kube-prometheus/blob/ks-v3.0/kustomize/prometheus-rulesEtcd.yaml) 中的记录/告警规则复制至您的 Prometheus 配置中，以便 KubeSphere 3.3.0 能够正常运行。
 
 - 配置您的 Prometheus，使其抓取指标的目标 (Target) 与 [KubeSphere kustomization](https://github.com/kubesphere/kube-prometheus/blob/ks-v3.0/kustomize/kustomization.yaml) 中列出的 ServiceMonitor 的目标相同。
 
 {{</ notice >}}
 
-1. 获取 KubeSphere 3.0 的自定义 kube-prometheus。
+1. 获取 KubeSphere 3.3.0 的自定义 kube-prometheus。
 
    ```bash
    cd ~ && mkdir kubesphere && cd kubesphere && git clone https://github.com/kubesphere/kube-prometheus.git && cd kube-prometheus/kustomize
@@ -150,7 +150,7 @@ KubeSphere 3.0 使用 Prometheus Operator 来管理 Prometheus/Alertmanager 配�
    kubectl -n <your own namespace> get prometheus
    ```
 
-6. 将 Prometheus 规则评估间隔设置为 1m，与 KubeSphere 3.0 的自定义 ServiceMonitor 保持一致。规则评估间隔应大于或等于抓取间隔。
+6. 将 Prometheus 规则评估间隔设置为 1m，与 KubeSphere 3.3.0 的自定义 ServiceMonitor 保持一致。规则评估间隔应大于或等于抓取间隔。
 
    ```bash
    kubectl -n <your own namespace> patch prometheus k8s --patch '{

@@ -10,7 +10,7 @@ After you [enable the pluggable components of KubeSphere](../../pluggable-compon
 
 {{< notice note >}}
 
-The methods of uninstalling certain pluggable components on KubeSphere 3.3.0 are different from the methods on KubeSphere v3.0.0. For more information about the uninstallation methods on KubeSphere v3.0.0, see [Uninstall Pluggable Components from KubeSphere](https://v3-0.docs.kubesphere.io/docs/faq/installation/uninstall-pluggable-components/).
+The methods of uninstalling certain pluggable components on KubeSphere 3.3.0 are different from the methods on KubeSphere v3.3.0. For more information about the uninstallation methods on KubeSphere v3.3.0, see [Uninstall Pluggable Components from KubeSphere](https://v3-0.docs.kubesphere.io/docs/faq/installation/uninstall-pluggable-components/).
 
 {{</ notice >}}
 

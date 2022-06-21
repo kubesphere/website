@@ -112,7 +112,7 @@ chmod +x kk
 - `hosts`：您主机的基本信息（主机名和 IP 地址）以及使用 SSH 连接至主机的信息。
 - `roleGroups.etcd`：etcd 节点。
 - `controlPlaneEndpoint`：负载均衡器地址（可选）。
-- `registry`：镜像仓库信息（可选）。
+- `registry`：镜像服务信息（可选）。
 
 {{< notice note >}}
 
