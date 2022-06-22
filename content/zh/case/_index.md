@@ -80,6 +80,10 @@ section2:
       content: "广西交科集团有限公司是一家在交通运输系统中具有重要影响力的高新技术企业，致力于为建设交通强国贡献智慧解决方案。"
       link: "gxjtkyy/"
 
+    - icon: "images/case/logo-xdf.png"
+      content: "新东方教育科技集团定位于以学生全面成长为核心，以科技为驱动力的综合性教育集团。"
+      link: "xdf/"
+
 section3:
   title: 'KubeSphere 助力各行各业'
   tip: 全部
