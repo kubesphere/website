@@ -33,7 +33,7 @@ weight: 3150
 从 [GitHub Release Page](https://github.com/kubesphere/kubekey/releases) 下载 KubeKey 或直接使用以下命令。
 
 ```bash
-curl -sfL https://get-kk.kubesphere.io | VERSION=v2.1.0 sh -
+curl -sfL https://get-kk.kubesphere.io | VERSION=v2.2.1 sh -
 ```
 
 {{</ tab >}}
@@ -49,7 +49,7 @@ export KKZONE=cn
 执行以下命令下载 KubeKey：
 
 ```bash
-curl -sfL https://get-kk.kubesphere.io | VERSION=v2.1.0 sh -
+curl -sfL https://get-kk.kubesphere.io | VERSION=v2.2.1 sh -
 ```
 
 {{< notice note >}}
@@ -64,7 +64,7 @@ curl -sfL https://get-kk.kubesphere.io | VERSION=v2.1.0 sh -
 
 {{< notice note >}}
 
-执行以上命令会下载最新版 KubeKey (v2.1.0)，您可以修改命令中的版本号下载指定版本。
+执行以上命令会下载最新版 KubeKey (v2.2.1)，您可以修改命令中的版本号下载指定版本。
 
 {{</ notice >}}
 
@@ -82,7 +82,7 @@ chmod +x kk
 
 {{< notice note >}}
 
-- 安装 KubeSphere 3.3.0 的建议 Kubernetes 版本：v1.19.x、v1.20.x、v1.21.x、v1.22.x 和 v1.23.x。如果不指定 Kubernetes 版本，KubeKey 将默认安装 Kubernetes v1.21.5。有关受支持的 Kubernetes 版本的更多信息，请参见[支持矩阵](../../../installing-on-linux/introduction/kubekey/#支持矩阵)。
+- 安装 KubeSphere 3.3.0 的建议 Kubernetes 版本：v1.19.x、v1.20.x、v1.21.x、v1.22.x 和 v1.23.x。如果不指定 Kubernetes 版本，KubeKey 将默认安装 Kubernetes v1.23.7。有关受支持的 Kubernetes 版本的更多信息，请参见[支持矩阵](../../../installing-on-linux/introduction/kubekey/#支持矩阵)。
 
 - 如果您在这一步的命令中不添加标志 `--with-kubesphere`，则不会部署 KubeSphere，只能使用配置文件中的 `addons` 字段安装，或者在您后续使用 `./kk create cluster` 命令时再次添加这个标志。
 
@@ -116,7 +116,7 @@ spec:
     - master1
     - master2
     - master3
-    master:
+    control-plane:
     - master1
     - master2
     - master3

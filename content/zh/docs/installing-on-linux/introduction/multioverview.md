@@ -32,7 +32,7 @@ weight: 3120
 
 | 系统                                                         | 最低要求（每个节点）             |
 | ------------------------------------------------------------ | -------------------------------- |
-| **Ubuntu** *16.04，18.04*                                    | CPU：2 核，内存：4 G，硬盘：40 G |
+| **Ubuntu** *16.04，18.04，20.04*                                    | CPU：2 核，内存：4 G，硬盘：40 G |
 | **Debian** *Buster，Stretch*                                 | CPU：2 核，内存：4 G，硬盘：40 G |
 | **CentOS** *7*.x                                             | CPU：2 核，内存：4 G，硬盘：40 G |
 | **Red Hat Enterprise Linux** *7*                             | CPU：2 核，内存：4 G，硬盘：40 G |
@@ -59,11 +59,6 @@ weight: 3120
 
 {{< content "common/container-runtime-requirements.md" >}}
 
-{{< notice note >}}
-
-如果您想在离线环境中部署 KubeSphere，请务必提前安装一个容器运行时。
-
-{{</ notice >}}
 
 ### 依赖项要求
 
@@ -106,7 +101,7 @@ KubeKey 可以一同安装 Kubernetes 和 KubeSphere。根据要安装的 Kubern
 从 [GitHub 发布页面](https://github.com/kubesphere/kubekey/releases)下载 KubeKey 或直接使用以下命令。
 
 ```bash
-curl -sfL https://get-kk.kubesphere.io | VERSION=v2.1.0 sh -
+curl -sfL https://get-kk.kubesphere.io | VERSION=v2.2.1 sh -
 ```
 
 {{</ tab >}}
@@ -122,7 +117,7 @@ export KKZONE=cn
 执行以下命令下载 KubeKey：
 
 ```bash
-curl -sfL https://get-kk.kubesphere.io | VERSION=v2.1.0 sh -
+curl -sfL https://get-kk.kubesphere.io | VERSION=v2.2.1 sh -
 ```
 
 {{< notice note >}}
@@ -137,7 +132,7 @@ curl -sfL https://get-kk.kubesphere.io | VERSION=v2.1.0 sh -
 
 {{< notice note >}}
 
-执行以上命令会下载最新版 KubeKey (v2.1.0)，您可以修改命令中的版本号下载指定版本。
+执行以上命令会下载最新版 KubeKey (v2.2.1)，您可以修改命令中的版本号下载指定版本。
 
 {{</ notice >}}
 
@@ -161,7 +156,7 @@ chmod +x kk
 
 {{< notice note >}}
 
-- 安装 KubeSphere 3.3.0 的建议 Kubernetes 版本：v1.19.x、v1.20.x、v1.21.x、v1.22.x 和 v1.23.x。如果不指定 Kubernetes 版本，KubeKey 将默认安装 Kubernetes v1.21.5。有关受支持的 Kubernetes 版本的更多信息，请参见[支持矩阵](../../../installing-on-linux/introduction/kubekey/#支持矩阵)。
+- 安装 KubeSphere 3.3.0 的建议 Kubernetes 版本：v1.19.x、v1.20.x、v1.21.x、v1.22.x 和 v1.23.x。如果不指定 Kubernetes 版本，KubeKey 将默认安装 Kubernetes v1.23.7。有关受支持的 Kubernetes 版本的更多信息，请参见[支持矩阵](../../../installing-on-linux/introduction/kubekey/#支持矩阵)。
 
 
 - 如果您在此步骤的命令中不添加标志 `--with-kubesphere`，则不会部署 KubeSphere，只能使用配置文件中的 `addons` 字段安装，或者在您后续使用 `./kk create cluster` 命令时再次添加这个标志。
@@ -202,7 +197,7 @@ spec:
   roleGroups:
     etcd:
     - master
-    master:
+    control-plane:
     - master
     worker:
     - node1
@@ -269,7 +264,7 @@ spec:
 #### roleGroups
 
 - `etcd`：etcd 节点名称
-- `master`：主节点名称
+- `control-plane`：主节点名称
 - `worker`：工作节点名称
 
 #### controlPlaneEndpoint（仅适用于高可用安装）
