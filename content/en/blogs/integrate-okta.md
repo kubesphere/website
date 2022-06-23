@@ -93,7 +93,7 @@ If you already have an Okta account, you can skip this step, but you need to mak
 
 ### Step 4: Make configurations on KubeSphere
 
-1. Log in to KubeSphere as `admin`, move the cursor to <img src="/images/docs/common-icons/hammer.png" width="20" /> in the lower-right corner, click **kubectl**, and run the following command to edit `ks-installer` of the CRD `ClusterConfiguration`:
+1. Log in to KubeSphere as `admin`, move the cursor to <img src="/images/docs/v3.3/common-icons/hammer.png" width="20" /> in the lower-right corner, click **kubectl**, and run the following command to edit `ks-installer` of the CRD `ClusterConfiguration`:
 
    ```bash
    kubectl -n kubesphere-system edit cc ks-installer

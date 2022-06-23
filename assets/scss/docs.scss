@@ -55,7 +55,7 @@
     background-color: #36435c;
     background-repeat: no-repeat;
     background-position: left bottom;
-    background-image: url("/images/docs/26.svg");
+    background-image: url("/images/docs/v3.3/26.svg");
 
     @media only screen and (max-width: $mobile-max-width) {
       display: block;
@@ -130,10 +130,10 @@
           display: inline-block;
           width: 40px;
           height: 40px;
-          background-image: url("/images/docs/22.svg");
+          background-image: url("/images/docs/v3.3/22.svg");
 
           &:hover {
-            background-image: url("/images/docs/22-hover.svg");
+            background-image: url("/images/docs/v3.3/22-hover.svg");
           }
         }
       }
@@ -221,15 +221,15 @@
           }
 
           & > li:nth-child(3n + 1) {
-              background-image: url("/images/docs/bg-1.svg");
+              background-image: url("/images/docs/v3.3/bg-1.svg");
           }
 
           & > li:nth-child(3n + 2) {
-              background-image: url("/images/docs/bg-2.svg");
+              background-image: url("/images/docs/v3.3/bg-2.svg");
           }
 
           & > li:nth-child(3n + 3) {
-              background-image: url("/images/docs/bg-3.svg");
+              background-image: url("/images/docs/v3.3/bg-3.svg");
           }
       }
   }
@@ -318,7 +318,7 @@
       background-position: center;
       background-size: cover;
       background-color: #ffffff;
-      background-image: url('/images/docs/bg-line.png');
+      background-image: url('/images/docs/v3.3/bg-line.png');
 
       @media only screen and (max-width: $mobile-max-width) {
         position: relative;
