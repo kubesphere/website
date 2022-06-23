@@ -32,7 +32,7 @@ KubeKey upgrades Kubernetes from one MINOR version to the next MINOR version unt
 
 | Systems                                                         | Minimum Requirements (Each node)            |
 | --------------------------------------------------------------- | ------------------------------------------- |
-| **Ubuntu** *16.04, 18.04*                                       | CPU: 2 Cores, Memory: 4 G, Disk Space: 40 G |
+| **Ubuntu** *16.04, 18.04, 20.04*                                       | CPU: 2 Cores, Memory: 4 G, Disk Space: 40 G |
 | **Debian** *Buster, Stretch*                                    | CPU: 2 Cores, Memory: 4 G, Disk Space: 40 G |
 | **CentOS** *7.x*                                                | CPU: 2 Cores, Memory: 4 G, Disk Space: 40 G |
 | **Red Hat Enterprise Linux** *7*                                | CPU: 2 Cores, Memory: 4 G, Disk Space: 40 G |
@@ -47,7 +47,7 @@ KubeKey upgrades Kubernetes from one MINOR version to the next MINOR version unt
 
 ### Step 1: Download KubeKey
 
-Similar to installing KubeSphere on Linux in an online environment, you need to [download KubeKey v2.1.0](https://github.com/kubesphere/kubekey/releases) first. Download the `tar.gz` file, and transfer it to your local machine which serves as the taskbox for installation. After you uncompress the file, execute the following command to make `kk` executable:
+Similar to installing KubeSphere on Linux in an online environment, you need to [download KubeKey v2.2.1](https://github.com/kubesphere/kubekey/releases) first. Download the `tar.gz` file, and transfer it to your local machine which serves as the taskbox for installation. After you uncompress the file, execute the following command to make `kk` executable:
 
 ```bash
 chmod +x kk
@@ -113,7 +113,7 @@ As you install KubeSphere and Kubernetes on Linux, you need to prepare an image 
 
    {{< notice note >}}
 
-   - You can change the Kubernetes version downloaded based on your needs. Recommended Kubernetes versions for KubeSphere 3.3.0 are v1.19.x or above. If you do not specify a Kubernetes version, KubeKey will install Kubernetes v1.21.5 by default. For more information about supported Kubernetes versions, see [Support Matrix](../../installing-on-linux/introduction/kubekey/#support-matrix).
+   - You can change the Kubernetes version downloaded based on your needs. Recommended Kubernetes versions for KubeSphere 3.3.0 are v1.19.x or above. If you do not specify a Kubernetes version, KubeKey will install Kubernetes v1.23.7 by default. For more information about supported Kubernetes versions, see [Support Matrix](../../installing-on-linux/introduction/kubekey/#support-matrix).
 
    - You can upgrade Kubernetes from v1.16.13 to v1.17.9 by downloading the v1.17.9 Kubernetes binary file, but for cross-version upgrades, all intermediate versions need to be downloaded in advance. For example, if you want to upgrade Kubernetes from v1.15.12 to v1.18.6, you need to download Kubernetes v1.16.13 and v1.17.9, and the v1.18.6 binary file.
 
@@ -204,7 +204,7 @@ For air-gapped installation, you must specify `privateRegistry`, which is `docke
   roleGroups:
     etcd:
     - ks.master
-    master:
+    control-plane:
     - ks.master
     worker:
     - ks.master
@@ -288,7 +288,7 @@ Set `hosts` of your `config-sample.yaml` file:
   roleGroups:
     etcd:
     - ks.master
-    master:
+    control-plane:
     - ks.master
     worker:
     - ks.slave1

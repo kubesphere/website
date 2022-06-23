@@ -43,7 +43,7 @@ You can skip this step if you already have the configuration file on your machin
      roleGroups:
        etcd:
        - master1
-       master:
+       control-plane:
        - master1
        worker:
        - node1
@@ -105,7 +105,7 @@ The steps of adding master nodes are generally the same as adding worker nodes w
        - master1
        - master2
        - master3
-       master:
+       control-plane:
        - master1
        - master2
        - master3
