@@ -83,12 +83,6 @@ Your cluster must have an available container runtime. If you use KubeKey to set
   </tbody>
 </table>
 
-{{< notice note >}}
-
-To deploy KubeSphere in an offline environment, you must install a container runtime in advance.
-
-{{</ notice >}}
-
 ### Dependency requirements
 
 KubeKey can install Kubernetes and KubeSphere together. The dependency that needs to be installed may be different based on the Kubernetes version to be installed. You can refer to the following list to see if you need to install relevant dependencies on your node in advance.
@@ -151,7 +145,7 @@ Perform the following steps to download KubeKey.
 Download KubeKey from its [GitHub Release Page](https://github.com/kubesphere/kubekey/releases) or run the following command:
 
 ```bash
-curl -sfL https://get-kk.kubesphere.io | VERSION=v2.1.0 sh -
+curl -sfL https://get-kk.kubesphere.io | VERSION=v2.2.1 sh -
 ```
 
 {{</ tab >}}
@@ -167,7 +161,7 @@ export KKZONE=cn
 Run the following command to download KubeKey:
 
 ```bash
-curl -sfL https://get-kk.kubesphere.io | VERSION=v2.1.0 sh -
+curl -sfL https://get-kk.kubesphere.io | VERSION=v2.2.1 sh -
 ```
 
 {{< notice note >}}
@@ -182,7 +176,7 @@ After you download KubeKey, if you transfer it to a new machine also with poor n
 
 {{< notice note >}}
 
-The commands above download the latest release (v2.1.0) of KubeKey. You can change the version number in the command to download a specific version.
+The commands above download the latest release (v2.2.1) of KubeKey. You can change the version number in the command to download a specific version.
 
 {{</ notice >}} 
 
@@ -218,10 +212,6 @@ To create a Kubernetes cluster with KubeSphere installed, refer to the following
 After you run the command, you will see a table for environment check. For details, see [Node requirements](#node-requirements) and [Dependency requirements](#dependency-requirements). Type `yes` to continue.
 
 ## Step 4: Verify the Installation
-
-If the following information is displayed, Kubernetes and KubeSphere is successfully installed.
-
-![Installation-complete](/images/docs/quickstart/all-in-one-installation/Installation-complete.png)
 
 Run the following command to check the result.
 

@@ -84,11 +84,6 @@ weight: 2100
   </tbody>
 </table>
 
-{{< notice note >}}
-
-如果您想在离线环境中部署 KubeSphere，请务必提前安装一个容器运行时。
-
-{{</ notice >}}
 
 ### 依赖项要求
 
@@ -150,7 +145,7 @@ KubeKey 是用 Go 语言开发的一款全新的安装工具，代替了以前�
 从 [GitHub Release Page](https://github.com/kubesphere/kubekey/releases) 下载 KubeKey 或直接使用以下命令。
 
 ```bash
-curl -sfL https://get-kk.kubesphere.io | VERSION=v2.1.0 sh -
+curl -sfL https://get-kk.kubesphere.io | VERSION=v2.2.1 sh -
 ```
 
 {{</ tab >}}
@@ -166,7 +161,7 @@ export KKZONE=cn
 执行以下命令下载 KubeKey。
 
 ```bash
-curl -sfL https://get-kk.kubesphere.io | VERSION=v2.1.0 sh -
+curl -sfL https://get-kk.kubesphere.io | VERSION=v2.2.1 sh -
 ```
 
 {{< notice note >}}
@@ -181,7 +176,7 @@ curl -sfL https://get-kk.kubesphere.io | VERSION=v2.1.0 sh -
 
 {{< notice note >}}
 
-执行以上命令会下载最新版 KubeKey (v2.1.0)，您可以修改命令中的版本号下载指定版本。
+执行以上命令会下载最新版 KubeKey (v2.2.1)，您可以修改命令中的版本号下载指定版本。
 
 {{</ notice >}} 
 
@@ -207,7 +202,7 @@ chmod +x kk
 
 {{< notice note >}}
 
-- 安装 KubeSphere 3.3.0 的建议 Kubernetes 版本：1.19.x、1.20.x、1.21.x、v1.22.x 和 v1.23.x。如果不指定 Kubernetes 版本，KubeKey 将默认安装 Kubernetes v1.21.5。有关受支持的 Kubernetes 版本的更多信息，请参见[支持矩阵](../../installing-on-linux/introduction/kubekey/#支持矩阵)。
+- 安装 KubeSphere 3.3.0 的建议 Kubernetes 版本：1.19.x、1.20.x、1.21.x、v1.22.x 和 v1.23.x。如果不指定 Kubernetes 版本，KubeKey 将默认安装 Kubernetes v1.23.7。有关受支持的 Kubernetes 版本的更多信息，请参见[支持矩阵](../../installing-on-linux/introduction/kubekey/#支持矩阵)。
 
 - 一般来说，对于 All-in-One 安装，您无需更改任何配置。
 - 如果您在这一步的命令中不添加标志 `--with-kubesphere`，则不会部署 KubeSphere，KubeKey 将只安装 Kubernetes。如果您添加标志 `--with-kubesphere` 时不指定 KubeSphere 版本，则会安装最新版本的 KubeSphere。
@@ -218,10 +213,6 @@ chmod +x kk
 执行该命令后，KubeKey 将检查您的安装环境，结果显示在一张表格中。有关详细信息，请参见[节点要求](#节点要求)和[依赖项要求](#依赖项要求)。输入 `yes` 继续安装流程。
 
 ## 步骤 4：验证安装结果
-
-当您看到以下输出时，表明安装已经完成。
-
-![Installation-complete](/images/docs/zh-cn/quickstart/all-in-one-on-linux/Installation-complete.png)
 
 输入以下命令以检查安装结果。
 
