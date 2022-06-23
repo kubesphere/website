@@ -106,42 +106,47 @@ hasChildren = true
 weight = 4
 name = "Documentation"
 hasChildren = true
-
     [[languages.en.menu.main]]
     parent = "Documentation"
-    name = "v3.2.x <img src='/images/header/star.svg' alt='star'>"
-    URL = "/docs"
+    name = "v3.3 <img src='/images/header/star.svg' alt='star'>"
+    URL = "/docs/v3.3"
     weight = 1
 
     [[languages.en.menu.main]]
     parent = "Documentation"
-    name = "v3.1.x"
-    URL = "https://v3-1.docs.kubesphere.io/docs"
+    name = "v3.2"
+    URL = "/docs"
     weight = 2
 
     [[languages.en.menu.main]]
     parent = "Documentation"
-    name = "v3.0.0"
-    URL = "https://v3-0.docs.kubesphere.io/docs"
+    name = "v3.1"
+    URL = "https://v3-1.docs.kubesphere.io/docs"
     weight = 3
 
     [[languages.en.menu.main]]
     parent = "Documentation"
-    name = "v2.1.x"
-    URL = "https://v2-1.docs.kubesphere.io/docs"
+    name = "v3.0"
+    URL = "https://v3-0.docs.kubesphere.io/docs"
     weight = 4
 
     [[languages.en.menu.main]]
     parent = "Documentation"
-    name = "v2.0.x"
-    URL = "https://v2-0.docs.kubesphere.io/docs/"
+    name = "v2.1"
+    URL = "https://v2-1.docs.kubesphere.io/docs"
     weight = 5
 
     [[languages.en.menu.main]]
     parent = "Documentation"
-    name = "v1.0.0"
-    URL = "https://v1-0.docs.kubesphere.io/docs/"
+    name = "v2.0"
+    URL = "https://v2-0.docs.kubesphere.io/docs/"
     weight = 6
+
+    [[languages.en.menu.main]]
+    parent = "Documentation"
+    name = "v1.0"
+    URL = "https://v1-0.docs.kubesphere.io/docs/"
+    weight = 7
 
 [[languages.en.menu.main]]
 weight = 5
