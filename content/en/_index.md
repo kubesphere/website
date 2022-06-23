@@ -115,25 +115,25 @@ section4:
     - name: App Store
       icon: /images/home/store.svg
       content: Provide an application store for Helm-based applications, and offer application lifecycle management on Kubernetes platform
-      link: "/docs/pluggable-components/app-store/"
+      link: "/docs/v3.3/pluggable-components/app-store/"
       color: grape
 
     - name: Kubernetes Multi-cluster Mgmt
       icon: /images/home/management.svg
       content: Distribute applications across multiple clusters and cloud providers, and provide disaster recovery solutions and cross-cluster observability
-      link: "/docs/multicluster-management/introduction/overview/"
+      link: "/docs/v3.3/multicluster-management/introduction/overview/"
       color: orange
 
     - name: Edge Computing Platform
       icon: /images/home/multiple.svg
       content: KubeSphere integrates <a class='inner-a' target='_blank' href='https://kubeedge.io/en/'>KubeEdge</a> to enable users to deploy applications on the edge devices and view logging and monitoring data of them on the console.
-      link: "/docs/pluggable-components/kubeedge/"
+      link: "/docs/v3.3/pluggable-components/kubeedge/"
       color: grape
 
     - name: Metering and Billing
       icon: /images/home/network.svg
       content: Track resource consumption at different levels on a unified dashboard, which helps you make better-informed decisions on planning and reduce the cost.
-      link: "/docs/toolbox/metering-and-billing/view-resource-consumption/"
+      link: "/docs/v3.3/toolbox/metering-and-billing/view-resource-consumption/"
       color: green
 
 section5:
