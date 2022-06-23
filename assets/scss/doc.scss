@@ -16,7 +16,7 @@ main {
     position: relative;
     padding-top: 129px;
     padding-bottom: 20px;
-    background-image: url("/images/docs/banner.png");
+    background-image: url("/images/docs/v3.3/banner.png");
 
     .common-layout {
         position: relative;
@@ -272,14 +272,14 @@ main {
                 width: 12px;
                 height: 11px;
                 background-repeat: no-repeat;
-                background-image: url("/images/docs/downgrade.svg");
+                background-image: url("/images/docs/v3.3/downgrade.svg");
             }
 
             &:hover {
                 color: #56bc8a;
 
                 .download-icon {
-                    background-image: url("/images/docs/downgrade-hover.svg");
+                    background-image: url("/images/docs/v3.3/downgrade-hover.svg");
                 }
             }
         }
@@ -362,14 +362,14 @@ main {
 
             .edit-div {
                 .icon-span {
-                    background-image: url("/images/docs/edit.svg");
+                    background-image: url("/images/docs/v3.3/edit.svg");
                 }
 
                 &:hover {
                     color: #56bc8a;
 
                     .icon-span {
-                        background-image: url("/images/docs/edit-hover.svg");
+                        background-image: url("/images/docs/v3.3/edit-hover.svg");
                     }
 
                     a {
@@ -382,12 +382,12 @@ main {
                 .icon-span {
                     color: #56bc8a;
 
-                    background-image: url("/images/docs/feedback.svg");
+                    background-image: url("/images/docs/v3.3/feedback.svg");
                 }
 
                 &:hover {
                     .icon-span {
-                        background-image: url("/images/docs/feedback-hover.svg");
+                        background-image: url("/images/docs/v3.3/feedback-hover.svg");
                     }
 
                     a {
@@ -400,14 +400,14 @@ main {
                 position: relative;
 
                 .icon-span {
-                    background-image: url("/images/docs/share.svg");
+                    background-image: url("/images/docs/v3.3/share.svg");
                 }
 
                 &:hover {
                     color: #56bc8a;
 
                     .icon-span {
-                        background-image: url("/images/docs/share-hover.svg");
+                        background-image: url("/images/docs/v3.3/share-hover.svg");
                     }
 
                     ul {
