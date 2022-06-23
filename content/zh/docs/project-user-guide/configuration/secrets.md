@@ -48,7 +48,7 @@ Kubernetes [保密字典 (Secret)](https://kubernetes.io/zh/docs/concepts/config
 
    - **TLS 信息**：对应 Kubernetes 的 [kubernetes.io/tls](https://kubernetes.io/zh/docs/concepts/configuration/secret/#tls-secret) 保密字典类型，用于存储证书及其相关保密字典。这类数据通常用于 TLS 场景，例如提供给应用路由 (Ingress) 资源用于终结 TLS 链接。使用此类型的保密字典时，您必须为其指定**凭证**和**私钥**，分别对应 YAML 文件中的 `tls.crt` 和 `tls.key` 字段。
 
-   - **镜像仓库信息**：对应 Kubernetes 的 [kubernetes.io/dockerconfigjson](https://kubernetes.io/zh/docs/concepts/configuration/secret/#docker-config-secrets) 保密字典类型，用于存储访问 Docker 镜像仓库所需的凭证。有关更多信息，请参阅[镜像仓库](../image-registry/)。
+   - **镜像服务信息**：对应 Kubernetes 的 [kubernetes.io/dockerconfigjson](https://kubernetes.io/zh/docs/concepts/configuration/secret/#docker-config-secrets) 保密字典类型，用于存储访问 Docker 镜像仓库所需的凭证。有关更多信息，请参阅[镜像仓库](../image-registry/)。
 
    - **用户名和密码**：对应 Kubernetes 的 [kubernetes.io/basic-auth](https://kubernetes.io/zh/docs/concepts/configuration/secret/#basic-authentication-secret) 保密字典类型，用于存储基本身份认证所需的凭证。使用此类型的保密字典时，您必须为其指定**用户名**和**密码**，分别对应 YAML 文件中的 `username` 和 `password` 字段。
 
@@ -96,7 +96,7 @@ Kubernetes [保密字典 (Secret)](https://kubernetes.io/zh/docs/concepts/config
 
 2. 设置保密字典名称（例如 `dockerhub-id`）并点击**下一步**。在**数据设置**页面，设置以下参数，然后点击**验证**以检查设置的信息是否有效。
 
-   **类型**：选择**镜像仓库信息**。
+   **类型**：选择**镜像服务信息**。
 
    **仓库地址**：输入您的 Docker Hub 仓库地址，例如 `docker.io`。
 

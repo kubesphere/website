@@ -67,7 +67,7 @@ kubectl get cm -n kubesphere-devops-worker ks-devops-agent -o yaml
 | dockerhub-id    | 用户名和密码   | 仓库，例如 Docker Hub |
 | demo-kubeconfig | kubeconfig | 部署工作负载          |
 
-有关详细信息，请参考[凭证管理](../../how-to-use/credential-management/)。
+有关详细信息，请参考[凭证管理](../../how-to-use/devops-settings/credential-management/)。
 
 ### 为工作负载创建一个项目
 
@@ -75,7 +75,7 @@ kubectl get cm -n kubesphere-devops-worker ks-devops-agent -o yaml
 
 ### 为 Maven 项目创建一个流水线
 
-1. 在您的 DevOps 项目中，转到**流水线**页面并点击**创建**，创建一个名为 `maven` 的流水线。有关更多信息，请参见[使用图形编辑面板创建流水线](../../how-to-use/create-a-pipeline-using-graphical-editing-panel)。
+1. 在您的 DevOps 项目中，转到**流水线**页面并点击**创建**，创建一个名为 `maven` 的流水线。有关更多信息，请参见[使用图形编辑面板创建流水线](../../how-to-use/pipelines/create-a-pipeline-using-graphical-editing-panel/)。
 
 2. 转到该流水线的详情页面，点击**编辑 Jenkinsfile**。
 

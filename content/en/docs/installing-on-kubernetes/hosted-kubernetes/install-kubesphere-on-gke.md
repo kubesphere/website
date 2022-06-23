@@ -30,7 +30,7 @@ This guide walks you through the steps of deploying KubeSphere on [Google Kubern
 
 {{< notice note >}}
 
-- To install KubeSphere 3.2.1 on Kubernetes, your Kubernetes version must be v1.19.x, v1.20.x, v1.21.x, or v1.22.x (experimental).
+- To install KubeSphere 3.3.0 on Kubernetes, your Kubernetes version must be v1.19.x or above.
 - 3 nodes are included in this example. You can add more nodes based on your own needs especially in a production environment.
 - The machine type e2-medium (2 vCPU, 4GB memory) is for minimal installation. If you want to enable pluggable components or use the cluster for production, please select a machine type with more resources.
 - For other settings, you can change them as well based on your own needs or use the default value.
@@ -46,15 +46,15 @@ This guide walks you through the steps of deploying KubeSphere on [Google Kubern
 - Install KubeSphere using kubectl. The following commands are only for the default minimal installation.
 
   ```bash
-  kubectl apply -f https://github.com/kubesphere/ks-installer/releases/download/v3.2.1/kubesphere-installer.yaml
+  kubectl apply -f https://github.com/kubesphere/ks-installer/releases/download/v3.3.0/kubesphere-installer.yaml
 
-  kubectl apply -f https://github.com/kubesphere/ks-installer/releases/download/v3.2.1/cluster-configuration.yaml
+  kubectl apply -f https://github.com/kubesphere/ks-installer/releases/download/v3.3.0/cluster-configuration.yaml
   ```
 
 - Inspect the logs of installation:
 
   ```bash
-  kubectl logs -n kubesphere-system $(kubectl get pod -n kubesphere-system -l app=ks-install -o jsonpath='{.items[0].metadata.name}') -f
+  kubectl logs -n kubesphere-system $(kubectl get pod -n kubesphere-system -l app=ks-installer -o jsonpath='{.items[0].metadata.name}') -f
   ```
 
 - When the installation finishes, you can see the following message:

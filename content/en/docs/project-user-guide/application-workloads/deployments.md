@@ -23,7 +23,7 @@ Log in to the console as `project-regular`. Go to **Application Workloads** of a
 
 ### Step 2: Enter basic information
 
-Specify a name for the Deployment (for example, `demo-deployment`) and click **Next** to continue.
+Specify a name for the Deployment (for example, `demo-deployment`), select a project, and click **Next**.
 
 ### Step 3: Set a Pod
 

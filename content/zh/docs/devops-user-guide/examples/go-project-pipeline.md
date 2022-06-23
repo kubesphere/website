@@ -32,7 +32,7 @@ weight: 11410
 
    {{< notice tip >}}
 
-有关如何创建凭证的更多信息，请参见[凭证管理](../../../devops-user-guide/how-to-use/credential-management/)。
+有关如何创建凭证的更多信息，请参见[凭证管理](../../../devops-user-guide/how-to-use/devops-settings/credential-management/)。
 
    {{</ notice >}}
 

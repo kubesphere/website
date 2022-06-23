@@ -10,7 +10,7 @@ Weight: 16420
 
 ## 会话超时
 
-您可以控制会话超时时间，默认超时时间为两小时，即达到会话超时时间后，用户会从控制台自动登出。您可以为会话超时配置 [accessTokenMaxAge 和 accessTokenInactivityTimeout](../../../access-control-and-account-management/configuring-authentication/#authentication-configuration)。
+您可以控制会话超时时间，默认超时时间为两小时，即达到会话超时时间后，用户会从控制台自动登出。您可以为会话超时配置 [accessTokenMaxAge 和 accessTokenInactivityTimeout](../../../access-control-and-account-management/external-authentication/set-up-external-authentication)。
 
 ## 签名校验失败
 
@@ -18,4 +18,4 @@ Weight: 16420
 
 ## 节点时钟偏移
 
-节点时钟偏移会影响时间敏感性操作，例如用户令牌 (Token) 过期时间的验证。您可以将服务器时间和 NTP 服务器进行同步。[MaximumClockSkew](../../../access-control-and-account-management/configuring-authentication/#authentication-configuration) 也可设置，默认为 10 秒。
+节点时钟偏移会影响时间敏感性操作，例如用户令牌 (Token) 过期时间的验证。您可以将服务器时间和 NTP 服务器进行同步。[MaximumClockSkew](../../../access-control-and-account-management/external-authentication/set-up-external-authentication) 也可设置，默认为 10 秒。

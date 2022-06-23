@@ -8,7 +8,7 @@ weight: 3120
 
 在生产环境中，由于单节点集群资源有限、计算能力不足，无法满足大部分需求，因此不建议在处理大规模数据时使用单节点集群。此外，单节点集群只有一个节点，因此也不具有高可用性。相比之下，在应用程序部署和分发方面，多节点架构是最常见的首选架构。
 
-本节概述了单主节点式多节点安装，包括概念、[KubeKey](https://github.com/kubesphere/kubekey/) 和操作步骤。有关高可用安装的信息，请参考[高可用配置](../../../installing-on-linux/high-availability-configurations/ha-configuration/)、[在公有云上安装](../../../installing-on-linux/public-cloud/install-kubesphere-on-azure-vms/)和[在本地环境中安装](../../../installing-on-linux/on-premises/install-kubesphere-on-bare-metal/)。
+本节概述了多节点安装，包括概念、[KubeKey](https://github.com/kubesphere/kubekey/) 和操作步骤。有关高可用安装的信息，请参考[高可用配置](../../../installing-on-linux/high-availability-configurations/ha-configuration/)、[在公有云上安装](../../../installing-on-linux/public-cloud/install-kubesphere-on-azure-vms/)和[在本地环境中安装](../../../installing-on-linux/on-premises/install-kubesphere-on-bare-metal/)。
 
 ## 视频演示
 
@@ -20,8 +20,9 @@ weight: 3120
 
 多节点集群由至少一个主节点和一个工作节点组成。您可以使用任何节点作为**任务机**来执行安装任务，也可以在安装之前或之后根据需要新增节点（例如，为了实现高可用性）。
 
-- **Control Plane Node**：主节点，通常托管控制平面，控制和管理整个系统。
-- **Worker**：工作节点，运行部署在工作节点上的实际应用程序。
+- **Control plane node**：主节点，通常托管控制平面，控制和管理整个系统。
+
+- **Worker node**：工作节点，运行部署在工作节点上的实际应用程序。
 
 ## 步骤 1：准备 Linux 主机
 
@@ -50,7 +51,7 @@ weight: 3120
 
 - 所有节点必须都能通过 `SSH` 访问。
 - 所有节点时间同步。
-- 所有节点都应使用 `sudo`/`curl`/`openssl`。
+- 所有节点都应使用 `sudo`/`curl`/`openssl`/`tar`。
 
 ### 容器运行时
 
@@ -90,7 +91,7 @@ KubeKey 可以一同安装 Kubernetes 和 KubeSphere。根据要安装的 Kubern
 
 | 主机 IP     | 主机名 | 角色         |
 | ----------- | ------ | ------------ |
-| 192.168.0.2 | master | master, etcd |
+| 192.168.0.2 | control plane | control plane, etcd |
 | 192.168.0.3 | node1  | worker       |
 | 192.168.0.4 | node2  | worker       |
 
@@ -105,7 +106,7 @@ KubeKey 可以一同安装 Kubernetes 和 KubeSphere。根据要安装的 Kubern
 从 [GitHub 发布页面](https://github.com/kubesphere/kubekey/releases)下载 KubeKey 或直接使用以下命令。
 
 ```bash
-curl -sfL https://get-kk.kubesphere.io | VERSION=v2.0.0 sh -
+curl -sfL https://get-kk.kubesphere.io | VERSION=v2.1.0 sh -
 ```
 
 {{</ tab >}}
@@ -121,7 +122,7 @@ export KKZONE=cn
 执行以下命令下载 KubeKey：
 
 ```bash
-curl -sfL https://get-kk.kubesphere.io | VERSION=v2.0.0 sh -
+curl -sfL https://get-kk.kubesphere.io | VERSION=v2.1.0 sh -
 ```
 
 {{< notice note >}}
@@ -136,7 +137,7 @@ curl -sfL https://get-kk.kubesphere.io | VERSION=v2.0.0 sh -
 
 {{< notice note >}}
 
-执行以上命令会下载最新版 KubeKey (v2.0.0)，您可以修改命令中的版本号下载指定版本。
+执行以上命令会下载最新版 KubeKey (v2.1.0)，您可以修改命令中的版本号下载指定版本。
 
 {{</ notice >}}
 
@@ -160,7 +161,8 @@ chmod +x kk
 
 {{< notice note >}}
 
-- 安装 KubeSphere 3.2.1 的建议 Kubernetes 版本：v1.19.x、v1.20.x、v1.21.x 或 v1.22.x（实验性支持）。如果不指定 Kubernetes 版本，KubeKey 将默认安装 Kubernetes v1.21.5。有关受支持的 Kubernetes 版本的更多信息，请参见[支持矩阵](../../../installing-on-linux/introduction/kubekey/#支持矩阵)。
+- 安装 KubeSphere 3.3.0 的建议 Kubernetes 版本：v1.19.x、v1.20.x、v1.21.x、v1.22.x 和 v1.23.x。如果不指定 Kubernetes 版本，KubeKey 将默认安装 Kubernetes v1.21.5。有关受支持的 Kubernetes 版本的更多信息，请参见[支持矩阵](../../../installing-on-linux/introduction/kubekey/#支持矩阵)。
+
 
 - 如果您在此步骤的命令中不添加标志 `--with-kubesphere`，则不会部署 KubeSphere，只能使用配置文件中的 `addons` 字段安装，或者在您后续使用 `./kk create cluster` 命令时再次添加这个标志。
 - 如果您添加标志 `--with-kubesphere` 时不指定 KubeSphere 版本，则会安装最新版本的 KubeSphere。
@@ -175,7 +177,7 @@ chmod +x kk
   ./kk create config [-f ~/myfolder/abc.yaml]
   ```
 
-- 您可以指定要安装的 KubeSphere 版本（例如 `--with-kubesphere v3.2.1`）。
+- 您可以指定要安装的 KubeSphere 版本（例如 `--with-kubesphere v3.3.0`）。
 
   ```bash
   ./kk create config --with-kubesphere [version]
@@ -200,7 +202,7 @@ spec:
   roleGroups:
     etcd:
     - master
-    control-plane:
+    master:
     - master
     worker:
     - node1
@@ -249,6 +251,13 @@ spec:
   hosts:
     - {name: master, address: 192.168.0.2, internalAddress: 192.168.0.2, privateKeyPath: "~/.ssh/id_rsa"}
   ```
+  
+- 在 ARM 设备上安装的示例：
+
+  ```yaml
+  hosts:
+    - {name: master, address: 192.168.0.2, internalAddress: 192.168.0.2, user: ubuntu, password: Testing123, arch: arm64}
+  ```
 
 {{< notice tip >}} 
 
@@ -260,7 +269,7 @@ spec:
 #### roleGroups
 
 - `etcd`：etcd 节点名称
-- `control-plane`：主节点名称
+- `master`：主节点名称
 - `worker`：工作节点名称
 
 #### controlPlaneEndpoint（仅适用于高可用安装）

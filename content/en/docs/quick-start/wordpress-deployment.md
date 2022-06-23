@@ -40,13 +40,13 @@ The environment variable `WORDPRESS_DB_PASSWORD` is the password to connect to t
 
 Follow the same steps above to create a WordPress Secret `wordpress-secret` with the key `WORDPRESS_DB_PASSWORD` and value `123456`. Secrets created display in the list.
 
-### Step 2: Create a volume
+### Step 2: Create a PVC
 
-1. Go to **Volumes** under **Storage** and click **Create**.
+1. Go to **Persistent Volume Claims** under **Storage** and click **Create**.
 
-2. Enter the basic information of the volume (for example, name it `wordpress-pvc`) and click **Next**.
+2. Enter the basic information of the Persistent Volume Claims (PVC), for example, `wordpress-pvc`, and click **Next**.
 
-3. In **Volume Settings**, you need to choose an available **Storage Class**, and set **Access Mode** and **Volume Capacity**. You can use the default value directly. Click **Next** to continue.
+3. In **Storage Settings**, you need to choose an available **Storage Class**, and set **Access Mode** and **Volume Capacity**. You can use the default value directly. Click **Next** to continue.
 
 4. For **Advanced Settings**, you do not need to add extra information for this step and click **Create** to finish.
 
@@ -74,9 +74,9 @@ In **Advanced Settings**, make sure the memory limit is no less than 1000 Mi or 
 
 {{</ notice >}} 
 
-1. Scroll down to **Environment Variables** and click **Use ConfigMap or Secret**. Enter the name `MYSQL_ROOT_PASSWORD` and choose the resource `mysql-secret` and the key `MYSQL_ROOT_PASSWORD` created in the previous step. Click **√** after you finish and **Next** to continue.
+1. Scroll down to **Environment Variables** and click **From secret**. Enter the name `MYSQL_ROOT_PASSWORD` and choose the resource `mysql-secret` and the key `MYSQL_ROOT_PASSWORD` created in the previous step. Click **√** after you finish and **Next** to continue.
 
-2. Click **Add Volume Template** under **Volume Templates**. Enter the value of **Volume Name** (`mysql`) and **Mount Path** (mode: `ReadAndWrite`, path: `/var/lib/mysql`).
+2. Click **Add Persistent Volume Claim Template** under **Storage Settings**. Enter the PVC name prefix (`mysql`) and **Mount Path** (mode: `ReadAndWrite`, path: `/var/lib/mysql`).
 
    Click **√** after you finish and click **Next** to continue.
 
@@ -88,7 +88,7 @@ In **Advanced Settings**, make sure the memory limit is no less than 1000 Mi or 
 
 13. Similar to previous steps, click **Add Container**, enter `wordpress:4.8-apache` in the search box, press **Enter** and click **Use Default Ports**.
 
-14. Scroll down to **Environment Variables** and click **Use ConfigMap or Secret**. Two environment variables need to be added here. Enter the values as follows.
+14. Scroll down to **Environment Variables** and click **From secret**. Two environment variables need to be added here. Enter the values as follows.
 
     - For `WORDPRESS_DB_PASSWORD`, choose `wordpress-secret` and `WORDPRESS_DB_PASSWORD` created in Task 1.
 
@@ -102,7 +102,7 @@ For the second environment variable added here, the value must be the same as th
     
     Click **√** to save it and **Next** to continue.
 
-1.  Under **Volumes**, click **Mount Volume**, and then click **Select Volume**.
+1.  Under **Storage Settings**, click **Mount Volume**, and then click **Select Persistent Volume Claim**.
 
 2.  Select `wordpress-pvc` created in the previous step, set the mode as `ReadAndWrite`, and enter `/var/www/html` as its mount path. Click **√** to save it, and then click **Next** to continue.
 
@@ -118,9 +118,9 @@ For the second environment variable added here, the value must be the same as th
 
 In **Workloads**, check the status of `wordpress-v1` and `mysql-v1` in **Deployments** and **StatefulSets** respectively. If they are running properly, it means WordPress has been created successfully.
 
-### Step 5: Access WordPress through a NodePort
+### Step 5: Access WordPress using NodePort
 
-1. To access the Service outside the cluster, navigate to **Services** first. Click the three dots on the right of `wordpress` and select **Edit External Access**.
+1. To access the Service outside the cluster, in the navigation pane on the left, click **Application Workloads > Services** first. Click the three dots on the right of `wordpress` and select **Edit External Access**.
 
 2. Select `NodePort` for **Access Method** and click **OK**.
 

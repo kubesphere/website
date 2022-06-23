@@ -11,8 +11,6 @@ KubeSphere 集成了 [OpenPitrix](https://github.com/openpitrix/openpitrix)（�
 - **应用模板**：这种方式让开发者和独立软件供应商 (ISV) 能够与企业空间中的用户共享应用程序。您也可以在企业空间中导入第三方应用仓库。
 - **自制应用**：这种方式帮助用户使用多个微服务来快速构建一个完整的应用程序。KubeSphere 让用户可以选择现有服务或者创建新的服务，用于在一站式控制台上创建自制应用。
 
-![应用商店](/images/docs/zh-cn/appstore/application-lifecycle-management/app-store.png)
-
 本教程使用 [Redis](https://redis.io/) 作为示例应用程序，演示如何进行应用全生命周期管理，包括提交、审核、测试、发布、升级和下架。
 
 ## 视频演示

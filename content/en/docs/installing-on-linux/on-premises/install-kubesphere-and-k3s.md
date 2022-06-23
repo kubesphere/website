@@ -32,7 +32,7 @@ Follow the step below to download [KubeKey](../../../installing-on-linux/introdu
 Download KubeKey from its [GitHub Release Page](https://github.com/kubesphere/kubekey/releases) or use the following command directly.
 
 ```bash
-curl -sfL https://get-kk.kubesphere.io | VERSION=v2.0.0 sh -
+curl -sfL https://get-kk.kubesphere.io | VERSION=v2.1.0 sh -
 ```
 
 {{</ tab >}}
@@ -48,7 +48,7 @@ export KKZONE=cn
 Run the following command to download KubeKey:
 
 ```bash
-curl -sfL https://get-kk.kubesphere.io | VERSION=v2.0.0 sh -
+curl -sfL https://get-kk.kubesphere.io | VERSION=v2.1.0 sh -
 ```
 
 {{< notice note >}}
@@ -63,7 +63,7 @@ After you download KubeKey, if you transfer it to a new machine also with poor n
 
 {{< notice note >}}
 
-The commands above download the latest release (v2.0.0) of KubeKey. Note that an earlier version of KubeKey cannot be used to install K3s.
+The commands above download the latest release (v2.1.0) of KubeKey. Note that an earlier version of KubeKey cannot be used to install K3s.
 
 {{</ notice >}}
 
@@ -78,12 +78,12 @@ chmod +x kk
 1. Create a configuration file of your cluster by running the following command:
 
    ```bash
-   ./kk create config --with-kubernetes v1.21.4-k3s --with-kubesphere v3.2.1
+   ./kk create config --with-kubernetes v1.21.4-k3s --with-kubesphere v3.3.0
    ```
 
    {{< notice note >}}
 
-   KubeKey v2.0.0 supports the installation of K3s v1.21.4.
+   KubeKey v2.1.0 supports the installation of K3s v1.21.4.
 
    {{</ notice >}} 
 
@@ -105,7 +105,7 @@ chmod +x kk
      roleGroups:
        etcd:
        - master
-       control-plane:
+       master:
        - master
        worker:
        - node1
@@ -144,7 +144,7 @@ chmod +x kk
 4. When the installation finishes, you can inspect installation logs with the following command:
 
    ```bash
-   kubectl logs -n kubesphere-system $(kubectl get pod -n kubesphere-system -l app=ks-install -o jsonpath='{.items[0].metadata.name}') -f
+   kubectl logs -n kubesphere-system $(kubectl get pod -n kubesphere-system -l app=ks-installer -o jsonpath='{.items[0].metadata.name}') -f
    ```
 
    Expected output:

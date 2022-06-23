@@ -11,7 +11,7 @@ In addition to installing KubeSphere on a Linux machine, you can also deploy it 
 
 ## Prerequisites
 
-- To install KubeSphere 3.2.1 on Kubernetes, your Kubernetes version must be v1.19.x, v1.20.x, v1.21.x or v1.22.x (experimental).
+- To install KubeSphere 3.3.0 on Kubernetes, your Kubernetes version must be v1.19.x or above.
 - Make sure your machine meets the minimal hardware requirement: CPU > 1 Core, Memory > 2 GB.
 - A **default** Storage Class in your Kubernetes cluster needs to be configured before the installation.
 
@@ -33,15 +33,15 @@ After you make sure your machine meets the conditions, perform the following ste
 1. Run the following commands to start installation:
 
     ```bash
-    kubectl apply -f https://github.com/kubesphere/ks-installer/releases/download/v3.2.1/kubesphere-installer.yaml
+    kubectl apply -f https://github.com/kubesphere/ks-installer/releases/download/v3.3.0/kubesphere-installer.yaml
     
-    kubectl apply -f https://github.com/kubesphere/ks-installer/releases/download/v3.2.1/cluster-configuration.yaml
+    kubectl apply -f https://github.com/kubesphere/ks-installer/releases/download/v3.3.0/cluster-configuration.yaml
     ```
 
 2. After KubeSphere is successfully installed, you can run the following command to view the installation logs:
 
     ```bash
-    kubectl logs -n kubesphere-system $(kubectl get pod -n kubesphere-system -l app=ks-install -o jsonpath='{.items[0].metadata.name}') -f
+    kubectl logs -n kubesphere-system $(kubectl get pod -n kubesphere-system -l app=ks-installer -o jsonpath='{.items[0].metadata.name}') -f
     ```
 
 3. Use `kubectl get pod --all-namespaces` to see whether all Pods are running normally in relevant namespaces of KubeSphere. If they are, check the port (`30880` by default) of the console by running the following command:

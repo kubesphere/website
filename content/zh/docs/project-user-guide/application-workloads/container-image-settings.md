@@ -91,7 +91,7 @@ CPU 资源以 CPU 单位计量，即 KubeSphere 中的 **Core**。内存资源�
 
 {{< notice tip>}}
 
-- 默认值是 **优先使用本地镜像**，但标记为 `:latest` 的镜像的默认值是 **每次都拉取镜像**。
+- 默认值是**优先使用本地镜像**，但标记为 `:latest` 的镜像的默认值是**每次都拉取镜像**。
 - Docker 会在拉取镜像时进行检查，如果 MD5 值没有变，则不会拉取镜像。
 - 在生产环境中应尽量避免使用 `:latest`，在开发环境中使用 `:latest` 会自动拉取最新的镜像。
 
@@ -155,11 +155,11 @@ CPU 资源以 CPU 单位计量，即 KubeSphere 中的 **Core**。内存资源�
 - 值：变量引用的值，由 `env.value` 指定。
 - 点击**使用配置字典或保密字典**来使用现有的配置字典或保密字典。
 
-有关该命令的更多信息，请访问 [容器组变量](https://kubernetes.io/zh/docs/tasks/inject-data-application/environment-variable-expose-pod-information/)。
+有关该命令的更多信息，请访问[容器组变量](https://kubernetes.io/zh/docs/tasks/inject-data-application/environment-variable-expose-pod-information/)。
 
 #### **容器安全上下文**
 
-安全上下文（Security Context）定义容器组或容器的特权和访问控制设置。有关安全上下文的更多信息，请访问 [容器组安全策略](https://kubernetes.io/zh/docs/concepts/policy/pod-security-policy/)。
+安全上下文（Security Context）定义容器组或容器的特权和访问控制设置。有关安全上下文的更多信息，请访问 [容器组安全策略](https://kubernetes.io/docs/concepts/security/pod-security-policy/)。
 
 #### **同步主机时区**
 

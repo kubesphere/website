@@ -91,7 +91,7 @@ controlPlaneEndpoint:
 从 [GitHub Release Page](https://github.com/kubesphere/kubekey/releases) 下载 KubeKey 或直接使用以下命令。
 
 ```bash
-curl -sfL https://get-kk.kubesphere.io | VERSION=v2.0.0 sh -
+curl -sfL https://get-kk.kubesphere.io | VERSION=v2.1.0 sh -
 ```
 
 {{</ tab >}}
@@ -107,7 +107,7 @@ export KKZONE=cn
 执行以下命令下载 KubeKey。
 
 ```bash
-curl -sfL https://get-kk.kubesphere.io | VERSION=v2.0.0 sh -
+curl -sfL https://get-kk.kubesphere.io | VERSION=v2.1.0 sh -
 ```
 
 {{< notice note >}}
@@ -122,7 +122,7 @@ curl -sfL https://get-kk.kubesphere.io | VERSION=v2.0.0 sh -
 
 {{< notice note >}}
 
-执行以上命令会下载最新版 KubeKey (v2.0.0)，您可以修改命令中的版本号下载指定版本。
+执行以上命令会下载最新版 KubeKey (v2.1.0)，您可以修改命令中的版本号下载指定版本。
 
 {{</ notice >}} 
 
@@ -141,7 +141,7 @@ chmod +x kk
 在当前位置创建配置文件 `config-sample.yaml`：
 
 ```bash
-./kk create config --with-kubesphere v3.2.1 --with-kubernetes v1.21.5 -f config-sample.yaml
+./kk create config --with-kubesphere v3.3.0 --with-kubernetes v1.21.5 -f config-sample.yaml
 ```
 
 > 提示：默认是 Kubernetes 1.17.9，这些 Kubernetes 版本也与 KubeSphere 同时进行过充分的测试： v1.15.12, v1.16.13, v1.17.9 (default), v1.18.6，您可以根据需要指定版本。
@@ -175,7 +175,7 @@ metadata:
       - master1
       - master2
       - master3
-      control-plane:
+      master:
       - master1
       - master2
       - master3
@@ -230,7 +230,7 @@ alibaba-cloud-csi-driver)、NFS Client、Ceph、GlusterFS，您可以根据您�
 ./kk create cluster -f config-sample.yaml
 
 # 查看 KubeSphere 安装日志  -- 直到出现控制台的访问地址和登录帐户
-kubectl logs -n kubesphere-system $(kubectl get pod -n kubesphere-system -l app=ks-install -o jsonpath='{.items[0].metadata.name}') -f
+kubectl logs -n kubesphere-system $(kubectl get pod -n kubesphere-system -l app=ks-installer -o jsonpath='{.items[0].metadata.name}') -f
 ```
 
 ```
@@ -262,7 +262,7 @@ https://kubesphere.io             2020-08-24 23:30:06
 
 ## 如何自定义开启可插拔组件
 
-- 点击**集群管理** > **CRD**，在过滤条件框输入 `ClusterConfiguration`。
+- 点击**集群管理** > **定制资源定义**，在过滤条件框输入 `ClusterConfiguration`。
 
 - 点击 `ClusterConfiguration` 详情，对 `ks-installer` 编辑保存退出即可，组件描述介绍:[文档说明](https://github.com/kubesphere/ks-installer/blob/master/deploy/cluster-configuration.yaml)。
 
