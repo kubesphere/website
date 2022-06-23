@@ -6,7 +6,7 @@ linkTitle: "Add Edge Nodes"
 weight: 3630
 ---
 
-KubeSphere leverages [KubeEdge](https://kubeedge.io/en/), to extend native containerized application orchestration capabilities to hosts at edge. With separate cloud and edge core modules, KubeEdge provides complete edge computing solutions while the installation may be complex and difficult. 
+KubeSphere leverages [KubeEdge](https://kubeedge.io/en/), to extend native containerized application orchestration capabilities to hosts at edge. With separate cloud and edge core modules, KubeEdge provides complete edge computing solutions while the installation may be complex and difficult.
 
 ![kubeedge_arch](/images/docs/installing-on-linux/add-and-delete-nodes/add-edge-nodes/kubeedge_arch.png)
 
@@ -15,10 +15,6 @@ KubeSphere leverages [KubeEdge](https://kubeedge.io/en/), to extend native conta
 For more information about different components of KubeEdge, see [the KubeEdge documentation](https://docs.kubeedge.io/en/docs/kubeedge/#components).
 
 {{</ notice >}} 
-
-After an edge node joins your cluster, the native KubeEdge cloud component requires you to manually configure iptables so that you can use commands such as `kubectl logs` and `kubectl exec`. In this connection, KubeSphere features an efficient and convenient way to add edge nodes to a Kubernetes cluster. It uses supporting components (for example, EdgeWatcher) to automatically configure iptables.
-
-![edge-watcher](/images/docs/installing-on-linux/add-and-delete-nodes/add-edge-nodes/edge-watcher.png)
 
 This tutorial demonstrates how to add an edge node to your cluster.
 
@@ -80,6 +76,10 @@ Perform the following steps to configure [EdgeMesh](https://kubeedge.io/en/docs/
 
 To make sure edge nodes can successfully talk to your cluster, you must forward ports for outside traffic to get into your network. Specifically, map an external port to the corresponding internal IP address (control plane node) and port based on the table below. Besides, you also need to create firewall rules to allow traffic to these ports (`10000` to `10004`).
 
+   {{< notice note >}}
+   In `ClusterConfiguration` of the ks-installer, if you set an internal IP address, you need to set the forwarding rule. If you have not set the forwarding rule, you can directly connect to ports 30000 to 30004.
+   {{</ notice >}} 
+
 | Fields              | External Ports | Fields                  | Internal Ports |
 | ------------------- | -------------- | ----------------------- | -------------- |
 | `cloudhubPort`      | `10000`        | `cloudhubNodePort`      | `30000`        |
@@ -124,8 +124,55 @@ To make sure edge nodes can successfully talk to your cluster, you must forward 
    After an edge node is added, if you cannot see CPU and memory resource usage on the **Edge Nodes** page, make sure [Metrics Server](../../../pluggable-components/metrics-server/) 0.4.1 or later is installed in your cluster.
 
    {{</ notice >}}
-   
-6. After an edge node joins your cluster, some Pods may be scheduled to it while they remain in the `Pending` state on the edge node. Due to the tolerations some DaemonSets (for example, Calico) have, in the current version (KubeSphere 3.2.1), you need to manually patch some Pods so that they will not be scheduled to the edge node.
+
+## Collect Monitoring Information on Edge Nodes
+
+To collect monitoring information on edge node, you need to enable `metrics_server` in `ClusterConfiguration` and `edgeStream` in KubeEdge.
+
+1. On the KubeSphere web console, choose **Platform > Cluster Management**.
+
+2. On the navigation pane on the left, click **CRDs**.
+
+3. In the search bar on the right pane, enter `clusterconfiguration`, and click the result to go to its details page.
+
+4. Click <img src="/images/docs/common-icons/three-dots.png" width="15" /> on the right of ks-installer, and click **Edit YAML**.
+
+5. Search for **metrics_server**, and change the value of `enabled` from `false` to `true`.
+
+    ```yaml
+      metrics_server:
+      enabled: true # Change "false" to "true".
+    ```
+
+6. Click **OK** in the lower right corner to save the change.
+
+7. Open the `/etc/kubeedge/config` file, search for `edgeStream`, change `false` to `true`, and save the change.
+    ```bash
+    cd /etc/kubeedge/config
+    vi edgecore.yaml
+    ```
+
+    ```bash
+    edgeStream:
+    enable: true #Change "false" to "true".。
+    handshakeTimeout: 30
+    readDeadline: 15
+    server: xx.xxx.xxx.xxx:10004 #If port forwarding is not configured, change the port ID to 30004 here.
+    tlsTunnelCAFile: /etc/kubeedge/ca/rootCA.crt
+    tlsTunnelCertFile: /etc/kubeedge/certs/server.crt
+    tlsTunnelPrivateKeyFile: /etc/kubeedge/certs/server.key
+    writeDeadline: 15
+    ```
+
+8. Run the following command to restart `edgecore.service`.
+    ```bash
+    systemctl restart edgecore.service
+    ```
+
+9. After an edge node joins your cluster, some Pods may be scheduled to it while they remains in the `Pending` state on the edge node. Due to the tolerations some DaemonSets (for example, Calico) have, you need to manually patch some Pods so that they will not be scheduled to the edge node.
+
+10. After an edge node joins your cluster, some Pods may be scheduled to it while they remains in the `Pending` state on the edge node. Due to the tolerations some DaemonSets (for example, Calico) have, in the current version (KubeSphere 3.3.0), you need to manually patch some Pods so that they will not be schedule to the edge node.
+
 
    ```bash
    #!/bin/bash
@@ -156,28 +203,17 @@ To make sure edge nodes can successfully talk to your cluster, you must forward 
    done
    ```
 
-## Custom Configurations
+11. If you still cannot see the monitoring data, run the following command:
 
-To customize some configurations of an edge node, such as download URL and KubeEdge version, create a [ConfigMap](../../../project-user-guide/configuration/configmaps/) as below:
-
-```yaml
-apiVersion: v1
-data:
-  region: zh # Download region.
-  version: v1.6.1 # The version of KubeEdge to be installed. Allowed values are v1.5.0, v1.6.0, v1.6.1 (default) and v1.6.2.
-kind: ConfigMap
-metadata:
-  name: edge-watcher-config
-  namespace: kubeedge
-```
-
-{{< notice note >}}
-
-- You can specify `zh` or `en` for the field `region`. `zh` is the default value and the default download link is `https://kubeedge.pek3b.qingstor.com/bin/v1.6.1/$arch/keadm-v1.6.1-linux-$arch.tar.gz`. If you set `region` to `en`, the download link will be `https://github.com/kubesphere/kubeedge/releases/download/v1.6.1-kubesphere/keadm-v1.6.1-linux-amd64.tar.gz`.
-- The ConfigMap does not affect the configurations of exiting edge nodes in your cluster. It is only used to change the KubeEdge configurations to be used on a new edge node. More specifically, it decides [the command automatically created by KubeSphere mentioned above](#add-an-edge-node) which needs to be executed on the edge node.
-- While you can change the KubeEdge version to be installed on an edge node, it is recommended that the cloud and edge modules have the same KubeEdge version.
-
-{{</ notice >}}
+    ```bash
+    journalctl -u edgecore.service -b -r
+    ```
+    
+    {{< notice note >}}
+     
+   If `failed to check the running environment: kube-proxy should not running on edge node when running edgecore` is displayed, refer to Step 8 to restart `edgecore.service` again.
+     
+   {{</ notice >}} 
 
 ## Remove an Edge Node
 
@@ -221,6 +257,6 @@ Before you remove an edge node, delete all your workloads running on it.
    
    {{< notice note >}}
    
-   After the uninstallation, you will not be able to add edge nodes to your cluster.
+   After uninstallation, you will not be able to add edge nodes to your cluster.
    
    {{</ notice >}} 

@@ -35,7 +35,7 @@ Log in to the console as `project-regular`. Go to **Application Workloads** of a
 
 ### Step 2: Enter basic information
 
-Specify a name for the StatefulSet (for example, `demo-stateful`) and click **Next** to continue.
+Specify a name for the StatefulSet (for example, `demo-stateful`), select a project, and click **Next**.
 
 ### Step 3: Set a Pod
 

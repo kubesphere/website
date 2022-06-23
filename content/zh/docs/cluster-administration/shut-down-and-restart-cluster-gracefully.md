@@ -4,7 +4,7 @@ description: "了解如何平稳地关闭和重启集群。"
 layout: "single"
 
 linkTitle: "关闭和重启集群"
-weight: 8800
+weight: 89000
 
 icon: "/images/docs/docs.svg"
 ---

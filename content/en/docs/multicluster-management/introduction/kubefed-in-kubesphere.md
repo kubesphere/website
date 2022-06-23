@@ -1,8 +1,8 @@
 ---
-title: 'KubeSphere Federation'
-keywords: 'Kubernetes, KubeSphere, federation, multicluster, hybrid-cloud'
-description: 'Understand the fundamental concept of Kubernetes federation in KubeSphere, including member clusters and host clusters.'
-linkTitle: 'KubeSphere Federation'
+title: "KubeSphere Federation"
+keywords: "Kubernetes, KubeSphere, federation, multicluster, hybrid-cloud"
+description: "Understand the fundamental concept of Kubernetes federation in KubeSphere, including member clusters and host clusters."
+linkTitle: "KubeSphere Federation"
 weight: 5120
 ---
 

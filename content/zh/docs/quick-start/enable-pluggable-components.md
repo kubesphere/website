@@ -73,7 +73,7 @@ weight: 2600
 3. 编辑完成后保存文件，执行以下命令开始安装：
 
     ```bash
-    kubectl apply -f https://github.com/kubesphere/ks-installer/releases/download/v3.2.1/kubesphere-installer.yaml
+    kubectl apply -f https://github.com/kubesphere/ks-installer/releases/download/v3.3.0/kubesphere-installer.yaml
     
     kubectl apply -f cluster-configuration.yaml
     ```
@@ -92,7 +92,7 @@ weight: 2600
 
 1. 以 `admin` 身份登录控制台。点击左上角的**平台管理** ，然后选择**集群管理**。
 
-2. 点击 **CRD**，然后在搜索栏中输入 `clusterconfiguration`，点击搜索结果进入其详情页面。
+2. 点击**定制资源定义**，然后在搜索栏中输入 `clusterconfiguration`，点击搜索结果进入其详情页面。
 
     {{< notice info >}}
 定制资源定义（CRD）允许用户在不增加额外 API 服务器的情况下创建一种新的资源类型，用户可以像使用其他 Kubernetes 原生对象一样使用这些定制资源。
@@ -100,14 +100,14 @@ weight: 2600
 
 3. 在**自定义资源**中，点击 `ks-installer` 右侧的三个点，然后选择**编辑 YAML**。
 
-4. 在该配置文件中，将对应组件 `enabled` 的 `false` 更改为 `true`，以启用要安装的组件。完成后，点击**更新**以保存配置。
+4. 在该配置文件中，将对应组件 `enabled` 的 `false` 更改为 `true`，以启用要安装的组件。完成后，点击**确定**以保存配置。
 
     ![启用组件](/images/docs/zh-cn/quickstart/enable-pluggable-components/启用组件.png)
 
 5. 执行以下命令，使用 Web kubectl 来检查安装过程：
 
     ```bash
-    kubectl logs -n kubesphere-system $(kubectl get pod -n kubesphere-system -l app=ks-install -o jsonpath='{.items[0].metadata.name}') -f
+    kubectl logs -n kubesphere-system $(kubectl get pod -n kubesphere-system -l app=ks-installer -o jsonpath='{.items[0].metadata.name}') -f
     ```
 
     {{< notice tip >}}

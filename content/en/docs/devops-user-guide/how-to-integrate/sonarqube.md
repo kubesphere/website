@@ -8,7 +8,7 @@ weight: 11310
 
 [SonarQube](https://www.sonarqube.org/) is a popular continuous inspection tool for code quality. You can use it for static and dynamic analysis of a codebase. After it is integrated into pipelines in KubeSphere [Container Platform](https://kubesphere.io/), you can view common code issues such as bugs and vulnerabilities directly on the dashboard as SonarQube detects issues in a running pipeline.
 
-This tutorial demonstrates how you can integrate SonarQube into pipelines. Refer to the following steps first before you [create a pipeline using a Jenkinsfile](../../../devops-user-guide/how-to-use/create-a-pipeline-using-jenkinsfile/).
+This tutorial demonstrates how you can integrate SonarQube into pipelines. Refer to the following steps first before you [create a pipeline using a Jenkinsfile](../../../devops-user-guide/how-to-use/pipelines/create-a-pipeline-using-jenkinsfile/).
 
 ## Prerequisites
 
@@ -185,7 +185,7 @@ To integrate SonarQube into your pipeline, you must install SonarQube Server fir
    http://192.168.0.4:30180
    ```
 
-3. Access Jenkins with the address `http://<Node IP>:30180`. When KubeSphere is installed, the Jenkins dashboard is also installed by default. Besides, Jenkins is configured with KubeSphere LDAP, which means you can log in to Jenkins with KubeSphere accounts (for example, `admin/P@88w0rd`) directly. For more information about configuring Jenkins, see [Jenkins System Settings](../../../devops-user-guide/how-to-use/jenkins-setting/).
+3. Access Jenkins with the address `http://<Node IP>:30180`. When KubeSphere is installed, the Jenkins dashboard is also installed by default. Besides, Jenkins is configured with KubeSphere LDAP, which means you can log in to Jenkins with KubeSphere accounts (for example, `admin/P@88w0rd`) directly. For more information about configuring Jenkins, see [Jenkins System Settings](../../../devops-user-guide/how-to-use/pipelines/jenkins-setting/).
 
    {{< notice note >}}
 
@@ -264,10 +264,10 @@ You need a SonarQube token so that your pipeline can communicate with SonarQube 
 
    ![token-created](/images/docs/devops-user-guide/tool-integration/integrate-sonarqube-into-pipeline/token-created.jpg)
 
-5. Choose **Java** and **Maven** respectively. Copy the serial number within the green box in the image below, which needs to be added in the [Credentials](../../../devops-user-guide/how-to-use/credential-management/#create-credentials) section if it is to be used in pipelines.
+5. Choose **Java** and **Maven** respectively. Copy the serial number within the green box in the image below, which needs to be added in the [Credentials](../../../devops-user-guide/how-to-use/devops-settings/credential-management/#create-credentials) section if it is to be used in pipelines.
 
    ![sonarqube-example](/images/docs/devops-user-guide/tool-integration/integrate-sonarqube-into-pipeline/sonarqube-example.jpg)
 
 ## View Results on the KubeSphere Console
 
-After you [create a pipeline using the graphical editing panel](../../how-to-use/create-a-pipeline-using-graphical-editing-panel/) or [create a pipeline using a Jenkinsfile](../../how-to-use/create-a-pipeline-using-jenkinsfile/), you can view the result of code quality analysis.
+After you [create a pipeline using the graphical editing panel](../../how-to-use/pipelines/create-a-pipeline-using-graphical-editing-panel/) or [create a pipeline using a Jenkinsfile](../../how-to-use/pipelines/create-a-pipeline-using-jenkinsfile/), you can view the result of code quality analysis.

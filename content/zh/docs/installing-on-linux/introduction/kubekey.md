@@ -39,7 +39,7 @@ KubeKey 的几种使用场景：
 从 [GitHub Release Page](https://github.com/kubesphere/kubekey/releases) 下载 KubeKey 或者直接运行以下命令。
 
 ```bash
-curl -sfL https://get-kk.kubesphere.io | VERSION=v2.0.0 sh -
+curl -sfL https://get-kk.kubesphere.io | VERSION=v2.1.0 sh -
 ```
 
 {{</ tabs >}}
@@ -55,7 +55,7 @@ export KKZONE=cn
 运行以下命令来下载 KubeKey：
 
 ```bash
-curl -sfL https://get-kk.kubesphere.io | VERSION=v2.0.0 sh -
+curl -sfL https://get-kk.kubesphere.io | VERSION=v2.1.0 sh -
 ```
 
 {{< notice note >}}
@@ -70,21 +70,22 @@ curl -sfL https://get-kk.kubesphere.io | VERSION=v2.0.0 sh -
 
 {{< notice note >}}
 
-通过以上的命令，可以下载 KubeKey 的最新版本 (v2.0.0)。您可以更改命令中的版本号来下载特定的版本。
+通过以上的命令，可以下载 KubeKey 的最新版本 (v2.1.0)。您可以更改命令中的版本号来下载特定的版本。
 
 {{</ notice >}}
 
 ## 支持矩阵
 
-若需使用 KubeKey 来安装 Kubernetes 和 KubeSphere 3.2.1，请参见下表以查看所有受支持的 Kubernetes 版本。
+若需使用 KubeKey 来安装 Kubernetes 和 KubeSphere 3.3.0，请参见下表以查看所有受支持的 Kubernetes 版本。
 
-| KubeSphere 版本 | 受支持的 Kubernetes 版本                                     |
-| --------------- | ------------------------------------------------------------ |
-| v3.2.1          | v1.19.x、v1.20.x、v1.21.x 或 v1.22.x（实验性支持） |
+| KubeSphere 版本 | 受支持的 Kubernetes 版本 | 
+| ------------------ | ------------------------------------------------------------ |
+| v3.3.0             | v1.19.x、v1.20.x、v1.21.x、v1.22.x、v1.23.x |
+
 
 {{< notice note >}} 
 
 - 您也可以运行 `./kk version --show-supported-k8s`，查看能使用 KubeKey 安装的所有受支持的 Kubernetes 版本。
-- 能使用 KubeKey 安装的 Kubernetes 版本与 KubeSphere v3.0.0 支持的 Kubernetes 版本不同。如需[在现有 Kubernetes 集群上安装 KubeSphere 3.2.1](../../../installing-on-kubernetes/introduction/overview/)，您的 Kubernetes 版本必须为 v1.17.x，v1.18.x，v1.19.x 或 v1.20.x。
+- 能使用 KubeKey 安装的 Kubernetes 版本与 KubeSphere v3.3.0 支持的 Kubernetes 版本不同。如需[在现有 Kubernetes 集群上安装 KubeSphere 3.3.0](../../../installing-on-kubernetes/introduction/overview/)，您的 Kubernetes 版本必须为 v1.19.x，v1.20.x，v1.21.x，v1.22.x 或 v1.23.x。
 
 {{</ notice >}} 

@@ -40,7 +40,7 @@ See the table below for the role of each cluster.
 
 {{< notice note >}}
 
-These Kubernetes clusters can be hosted across different cloud providers and their Kubernetes versions can also vary. Recommended Kubernetes versions for KubeSphere 3.2.1: v1.19.x, v1.20.x, v1.21.x, and v1.22.x (experimental).
+These Kubernetes clusters can be hosted across different cloud providers and their Kubernetes versions can also vary. Recommended Kubernetes versions for KubeSphere 3.3.0: v1.19.x or above.
 
 {{</ notice >}}
 
@@ -82,7 +82,7 @@ You must create the projects as shown in the table below in advance. Make sure y
 
 1. Log out of the console and log back in as `project-regular`. On the **DevOps Projects** page, click the DevOps project `multicluster-demo`.
 
-2. On the **Credentials** page, you need to create the credentials as shown in the table below. For more information about how to create credentials, refer to [Credential Management](../../how-to-use/credential-management/#create-credentials) and [Create a Pipeline Using a Jenkinsfile](../../how-to-use/create-a-pipeline-using-jenkinsfile/#step-1-create-credentials).
+2. On the **Credentials** page, you need to create the credentials as shown in the table below. For more information about how to create credentials, refer to [Credential Management](../../how-to-use/devops-settings/credential-management/#create-credentials) and [Create a Pipeline Using a Jenkinsfile](../../how-to-use/pipelines/create-a-pipeline-using-jenkinsfile/#step-1-create-credentials).
 
    | Credential ID | Type                | Where to Use                       |
    | ------------- | ------------------- | ---------------------------------- |

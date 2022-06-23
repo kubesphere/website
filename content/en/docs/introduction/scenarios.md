@@ -1,7 +1,7 @@
 ---
-title: "Use Cases"
-keywords: "KubeSphere, Kubernetes, Multi-cluster, Observability, DevOps"
-description: "Applicable in a variety of scenarios, KubeSphere provides enterprises with containerized environments with a complete set of features for management and operation."
+title: 'Use Cases'
+keywords: 'KubeSphere, Kubernetes, Multi-cluster, Observability, DevOps'
+description: 'Applicable in a variety of scenarios, KubeSphere provides enterprises with containerized environments with a complete set of features for management and operation.'
 
 weight: 1700
 ---
