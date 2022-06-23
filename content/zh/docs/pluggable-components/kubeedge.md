@@ -1,6 +1,6 @@
 ---
 title: "KubeEdge"
-keywords: "Kubernetes, KubeSphere, Kubeedge"
+keywords: "Kubernetes, KubeSphere, KubeEdge"
 description: "了解如何启用 KubeEdge 为您的集群添加边缘节点。"
 linkTitle: "KubeEdge"
 weight: 6930
@@ -31,11 +31,25 @@ KubeEdge 的组件在两个单独的位置运行——云上和边缘节点上�
 
    {{</ notice >}}
 
-2. 在该文件中，搜索 `kubeedge.enabled`，然后将 `false` 更改为 `true`。完成后保存文件。
+2. 在该文件中，搜索 `edgeruntime` 和 `kubeedge`，然后将它们 `enabled` 值从 `false` 更改为 `true` 以便开启所有 KubeEdge 组件。完成后保存文件。
 
    ```yaml
-   kubeedge:
-     enabled: true # 将“false”更改为“true”。
+   edgeruntime:          # Add edge nodes to your cluster and deploy workloads on edge nodes.
+    enabled: false
+    kubeedge:        # kubeedge configurations
+      enabled: false
+      cloudCore:
+        cloudHub:
+          advertiseAddress: # At least a public IP address or an IP address which can be accessed by edge nodes must be provided.
+            - ""            # Note that once KubeEdge is enabled, CloudCore will malfunction if the address is not provided.
+        service:
+          cloudhubNodePort: "30000"
+          cloudhubQuicNodePort: "30001"
+          cloudhubHttpsNodePort: "30002"
+          cloudstreamNodePort: "30003"
+          tunnelNodePort: "30004"
+        # resources: {}
+        # hostNetWork: false
    ```
 
 3. 将 `kubeedge.cloudCore.cloudHub.advertiseAddress` 的值设置为集群的公共 IP 地址或边缘节点可以访问的 IP 地址。编辑完成后保存文件。
@@ -48,19 +62,33 @@ KubeEdge 的组件在两个单独的位置运行——云上和边缘节点上�
 
 ### 在 Kubernetes 上安装
 
-当您[在 Kubernetes 上安装 KubeSphere](../../installing-on-kubernetes/introduction/overview/) 时，需要先在 [cluster-configuration.yaml](https://github.com/kubesphere/ks-installer/releases/download/v3.2.1/cluster-configuration.yaml) 文件中启用 KubeEdge。
+当您[在 Kubernetes 上安装 KubeSphere](../../installing-on-kubernetes/introduction/overview/) 时，需要先在 [cluster-configuration.yaml](https://github.com/kubesphere/ks-installer/releases/download/v3.3.0/cluster-configuration.yaml) 文件中启用 KubeEdge。
 
-1. 下载 [cluster-configuration.yaml](https://github.com/kubesphere/ks-installer/releases/download/v3.2.1/cluster-configuration.yaml) 文件并进行编辑。
+1. 下载 [cluster-configuration.yaml](https://github.com/kubesphere/ks-installer/releases/download/v3.3.0/cluster-configuration.yaml) 文件并进行编辑。
 
     ```bash
     vi cluster-configuration.yaml
     ```
 
-2. 在本地 `cluster-configuration.yaml` 文件中，搜索 `kubeedge.enabled`，将 `false` 更改为 `true` 以启用 KubeEdge。完成后保存文件。
+2. 在本地 `cluster-configuration.yaml` 文件中，搜索 `edgeruntime` 和 `kubeedge`，然后将它们 `enabled` 值从 `false` 更改为 `true` 以便开启所有 KubeEdge 组件。完成后保存文件。
 
     ```yaml
-    kubeedge:
-      enabled: true # 将“false”更改为“true”。
+   edgeruntime:          # Add edge nodes to your cluster and deploy workloads on edge nodes.
+    enabled: false
+    kubeedge:        # kubeedge configurations
+      enabled: false
+      cloudCore:
+        cloudHub:
+          advertiseAddress: # At least a public IP address or an IP address which can be accessed by edge nodes must be provided.
+            - ""            # Note that once KubeEdge is enabled, CloudCore will malfunction if the address is not provided.
+        service:
+          cloudhubNodePort: "30000"
+          cloudhubQuicNodePort: "30001"
+          cloudhubHttpsNodePort: "30002"
+          cloudstreamNodePort: "30003"
+          tunnelNodePort: "30004"
+        # resources: {}
+        # hostNetWork: false
     ```
 
 3. 将 `kubeedge.cloudCore.cloudHub.advertiseAddress` 的值设置为集群的公共 IP 地址或边缘节点可以访问的 IP 地址。
@@ -68,7 +96,7 @@ KubeEdge 的组件在两个单独的位置运行——云上和边缘节点上�
 4. 执行以下命令开始安装：
 
     ```bash
-    kubectl apply -f https://github.com/kubesphere/ks-installer/releases/download/v3.2.1/kubesphere-installer.yaml
+    kubectl apply -f https://github.com/kubesphere/ks-installer/releases/download/v3.3.0/kubesphere-installer.yaml
     
     kubectl apply -f cluster-configuration.yaml
     ```
@@ -77,7 +105,7 @@ KubeEdge 的组件在两个单独的位置运行——云上和边缘节点上�
 
 1. 使用 `admin` 用户登录控制台。点击左上角的**平台管理**，然后选择**集群管理**。
    
-2. 点击 **CRD**，然后在搜索栏中输入 `clusterconfiguration`。点击搜索结果查看其详情页。
+2. 点击**定制资源定义**，然后在搜索栏中输入 `clusterconfiguration`。点击搜索结果查看其详情页。
 
     {{< notice info >}}
 定制资源定义（CRD）允许用户在不新增 API 服务器的情况下创建一种新的资源类型，用户可以像使用其他 Kubernetes 原生对象一样使用这些定制资源。
@@ -85,11 +113,25 @@ KubeEdge 的组件在两个单独的位置运行——云上和边缘节点上�
 
 3. 在**自定义资源**中，点击 `ks-installer` 右侧的 <img src="/images/docs/zh-cn/enable-pluggable-components/kubeedge/three-dots.png" height="20px">，然后选择**编辑 YAML**。
    
-4. 在该配置文件中，搜索 `kubeedge.enabled`，将 `false` 更改为 `true` 以启用 KubeEdge。点击右下角的**确定**，保存配置。
+4. 在该配置文件中，搜索 `edgeruntime` 和 `kubeedge`，然后将它们 `enabled` 值从 `false` 更改为 `true` 以便开启所有 KubeEdge 组件。完成后保存文件。
 
     ```yaml
-    kubeedge:
-      enabled: true # 将“false”更改为“true”。
+   edgeruntime:          # Add edge nodes to your cluster and deploy workloads on edge nodes.
+    enabled: false
+    kubeedge:        # kubeedge configurations
+      enabled: false
+      cloudCore:
+        cloudHub:
+          advertiseAddress: # At least a public IP address or an IP address which can be accessed by edge nodes must be provided.
+            - ""            # Note that once KubeEdge is enabled, CloudCore will malfunction if the address is not provided.
+        service:
+          cloudhubNodePort: "30000"
+          cloudhubQuicNodePort: "30001"
+          cloudhubHttpsNodePort: "30002"
+          cloudstreamNodePort: "30003"
+          tunnelNodePort: "30004"
+        # resources: {}
+        # hostNetWork: false
     ```
 
 5. 将 `kubeedge.cloudCore.cloudHub.advertiseAddress` 的值设置为集群的公共 IP 地址或边缘节点可以访问的 IP 地址。完成后，点击右下角的**确定**保存配置。
@@ -97,7 +139,7 @@ KubeEdge 的组件在两个单独的位置运行——云上和边缘节点上�
 6. 在 kubectl 中执行以下命令检查安装过程：
 
     ```bash
-    kubectl logs -n kubesphere-system $(kubectl get pod -n kubesphere-system -l app=ks-install -o jsonpath='{.items[0].metadata.name}') -f
+    kubectl logs -n kubesphere-system $(kubectl get pod -n kubesphere-system -l app=ks-installer -o jsonpath='{.items[0].metadata.name}') -f
     ```
 
     {{< notice note >}}

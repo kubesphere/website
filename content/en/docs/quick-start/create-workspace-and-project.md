@@ -105,6 +105,11 @@ After KubeSphere is installed, you need to add different users with varied roles
 
 5. On **Users** page, verify the four users created.
 
+   {{< notice note >}}
+
+   You can click the <img src="/images/docs/common-icons/three-dots.png" width="15" /> icon on the right of the username to enable or disable the user. Additionally, you can batch disable and enable users.
+
+   {{</ notice >}} 
 ### Step 2: Create a workspace
 
 In this step, you create a workspace using user `ws-manager` created in the previous step. As the basic logic unit for the management of projects, DevOps projects and organization members, workspaces underpin the multi-tenant system of KubeSphere.

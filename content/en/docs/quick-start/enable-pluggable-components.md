@@ -1,5 +1,5 @@
 ---
-title: "Enable Pluggable Components - Quickstart"
+title: "Enable Pluggable Components"
 keywords: 'KubeSphere, Kubernetes, pluggable, components'
 description: 'Install pluggable components of KubeSphere so that you can explore the container platform in an all-around way. Pluggable components can be enabled both before and after the installation.'
 linkTitle: "Enable Pluggable Components"
@@ -62,7 +62,7 @@ If you adopt [All-in-one Installation](../../quick-start/all-in-one-on-linux/), 
 
 When you install KubeSphere on Kubernetes, you need to use [ks-installer](https://github.com/kubesphere/ks-installer/) by applying two YAML files as below.
 
-1. First download the file [cluster-configuration.yaml](https://github.com/kubesphere/ks-installer/releases/download/v3.2.0/cluster-configuration.yaml) and edit it.
+1. First download the file [cluster-configuration.yaml](https://github.com/kubesphere/ks-installer/releases/download/v3.1.0/cluster-configuration.yaml) and edit it.
 
     ```bash
     vi cluster-configuration.yaml
@@ -70,10 +70,10 @@ When you install KubeSphere on Kubernetes, you need to use [ks-installer](https:
 
 2. To enable the pluggable component you want to install, change `false` to `true` for `enabled` under the component in this file.
 
-3. Save this local file and execute the following commands to start installation.
+3. Save this local file and execute the following commands to start the installation.
 
     ```bash
-    kubectl apply -f https://github.com/kubesphere/ks-installer/releases/download/v3.2.1/kubesphere-installer.yaml
+    kubectl apply -f https://github.com/kubesphere/ks-installer/releases/download/v3.3.0/kubesphere-installer.yaml
     
     kubectl apply -f cluster-configuration.yaml
     ```
@@ -105,7 +105,7 @@ A Custom Resource Definition (CRD) allows users to create a new type of  resourc
 5. You can use the web kubectl to check the installation process by executing the following command:
 
     ```bash
-    kubectl logs -n kubesphere-system $(kubectl get pod -n kubesphere-system -l app=ks-install -o jsonpath='{.items[0].metadata.name}') -f
+    kubectl logs -n kubesphere-system $(kubectl get pod -n kubesphere-system -l app=ks-installer -o jsonpath='{.items[0].metadata.name}') -f
     ```
 
     {{< notice tip >}}

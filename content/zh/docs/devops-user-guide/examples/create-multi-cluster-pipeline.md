@@ -40,7 +40,7 @@ weight: 11440
 
 {{< notice note >}}
 
-这些 Kubernetes 集群可以被托管至不同的云厂商，也可以使用不同的 Kubernetes 版本。针对 KubeSphere 3.2.1 推荐的 Kubernetes 版本：v1.19.x、v1.20.x、v1.21.x 和 v1.22.x（实验性支持）。
+这些 Kubernetes 集群可以被托管至不同的云厂商，也可以使用不同的 Kubernetes 版本。针对 KubeSphere 3.3.0 推荐的 Kubernetes 版本：v1.19.x、v1.20.x、v1.21.x 、v1.22.x 和 v1.23.x。
 
 {{</ notice >}}
 
@@ -82,7 +82,7 @@ weight: 11440
 
 1. 登出控制台，以 `project-regular` 身份重新登录。在 **DevOps 项目**页面，点击 DevOps 项目 `multicluster-demo`。
 
-2. 在**凭证**页面，您需要创建如下表所示的凭证。有关如何创建凭证的更多信息，请参见[凭证管理](../../how-to-use/credential-management/#create-credentials)和[使用 Jenkinsfile 创建流水线](../../how-to-use/create-a-pipeline-using-jenkinsfile/#step-1-create-credentials)。
+2. 在**凭证**页面，您需要创建如下表所示的凭证。有关如何创建凭证的更多信息，请参见[凭证管理](../../how-to-use/devops-settings/credential-management/#create-credentials)和[使用 Jenkinsfile 创建流水线](../../how-to-use/pipelines/create-a-pipeline-using-jenkinsfile/#step-1-create-credentials)。
 
 | 凭证 ID      | 类型       | 应用场所             |
 | ------------ | ---------- | -------------------- |

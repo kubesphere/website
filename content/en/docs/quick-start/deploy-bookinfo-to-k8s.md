@@ -52,7 +52,7 @@ KubeSphere creates the hostname automatically. To change the hostname, hover ove
 
 {{</ notice >}}
 
-1. In **Workloads**, verify that the statuses of all four Deployments reach `Running`, which means the app has been created successfully.
+1. In **Workloads**, verify that the status of all four Deployments is `Running`, indicating that the app has been created successfully.
 
     {{< notice note >}}It may take a few minutes before the Deployments are up and running.
 {{</ notice >}}
@@ -64,7 +64,7 @@ KubeSphere creates the hostname automatically. To change the hostname, hover ove
     {{< notice note >}}If you do not see the app in the list, refresh your page.
     {{</ notice >}}
     
-2. On the details page, record the hostname and port number of the app which will be used to access Bookinfo.
+2. On the details page, record the hostname and port number of the app, which will be used to access Bookinfo.
 
 3. As the app will be accessed outside the cluster through a NodePort, you need to open the port in your security group for outbound traffic and set port forwarding rules if necessary.
 

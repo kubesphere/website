@@ -29,7 +29,7 @@ This tutorial demonstrates how to quickly deploy [NGINX](https://www.nginx.com/)
 
 2. Search for NGINX, click it, and click **Install** on the **App Information** page. Make sure you click **Agree** in the displayed **App Deploy Agreement** dialog box.
 
-3. Set a name and select an app version. Make sure NGINX is deployed in `demo-project` and click **Next**.
+3. Set a name and select an app version, confirm the location where NGINX will be deployed , and click **Next**.
 
 4. In **App Settings**, specify the number of replicas to deploy for the app and enable Ingress based on your needs. When you finish, click **Install**.
 
@@ -45,7 +45,7 @@ This tutorial demonstrates how to quickly deploy [NGINX](https://www.nginx.com/)
 
 To access NGINX outside the cluster, you need to expose the app through a NodePort first.
 
-1. Go to **Services** in the project `demo-project` and click the service name of NGINX.
+1. Go to **Services** in the created project and click the service name of NGINX.
 
 2. On the Service details page, click **More** and select **Edit External Access** from the drop-down menu.
 

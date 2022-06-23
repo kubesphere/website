@@ -119,9 +119,9 @@ Take `mysql_v1alpha1_mysqlcluster.yaml` template as an example to create a Radon
 
 3. In **Pods** under **Application Workloads**, you can see all the Pods are up and running.
 
-4. In **Volumes** under **Storage**, you can see the ClickHouse Cluster components are using persistent volumes.
+4. In **Persistent Volume Claims** under **Storage**, you can see the ClickHouse Cluster components are using persistent volumes.
 
-   Volume usage is also monitored. Click a volume item to go to its detail page.
+   Usage of the persistent volume is also monitored. Click a persistent volume to go to its detail page.
 
 ### Step 5: Access the RadonDB MySQL cluster
 

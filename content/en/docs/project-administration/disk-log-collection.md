@@ -51,7 +51,7 @@ This tutorial demonstrates how to collect logs for an example app.
 
    {{</ notice >}} 
 
-6. On the **Volume Settings** tab, click <img src="/images/docs/project-administration/disk-log-collection/toggle-switch.png" width="20" /> to enable **Collect Logs on Volumes** and click **Mount Volume**.
+6. On the **Storage Settings** tab, click <img src="/images/docs/project-administration/disk-log-collection/toggle-switch.png" width="20" /> to enable **Collect Logs on Volumes** and click **Mount Volume**.
 
 7. On the **Temporary Volume** tab, enter a name for the volume (for example, `demo-disk-log-collection`) and set the access mode and path.
 

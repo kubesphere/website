@@ -38,7 +38,7 @@ This document uses HPA based on CPU usage as an example. Operations for HPA base
 
    {{</ notice >}}
 
-7. Click **Next** on the **Volume Settings** tab and click **Create** on the **Advanced Settings** tab.
+7. Click **Next** on the **Storage Settings** tab and click **Create** on the **Advanced Settings** tab.
 
 ## Configure Kubernetes HPA
 
@@ -77,7 +77,7 @@ This section uses a Deployment that sends requests to the HPA Service to verify 
 
 5. Click **√** and click **Next**.
 
-6. Click **Next** on the **Volume Settings** tab and click **Create** on the **Advanced Settings** tab.
+6. Click **Next** on the **Storage Settings** tab and click **Create** on the **Advanced Settings** tab.
 
 ### View the HPA Deployment status
 

@@ -34,7 +34,7 @@ You need to create credentials in KubeSphere for the access token created so tha
 
    {{< notice tip >}}
 
-   For more information about how to create credentials, see [Credential Management](../../../devops-user-guide/how-to-use/credential-management/).
+   For more information about how to create credentials, see [Credential Management](../../../devops-user-guide/how-to-use/devops-settings/credential-management/).
 
    {{</ notice >}} 
 

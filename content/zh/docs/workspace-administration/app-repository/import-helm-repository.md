@@ -39,7 +39,7 @@ KubeSphere 构建的应用仓库可以让用户使用基于 Helm Chart 的 Kuber
 如果您想要对 HTTP/HTTPS 进行基本访问验证，可以使用类似此格式的 URL：`http://username:password@docs-repo.gd2.qingstor.com`。
         {{</ notice >}}
 
-    - **同步周期**：同步远端应用仓库的周期。
+    - **同步间隔**：同步远端应用仓库的周期。
     - **描述**：简单介绍应用仓库的主要特性。
 
 3. 输入必需的字段后，点击**验证**以验证 URL。如果 URL 可用，您会在它旁边看到一个绿色的对号，点击**确定**完成操作。

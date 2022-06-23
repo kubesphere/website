@@ -25,7 +25,7 @@ weight: 10250
 
 ### 步骤 2：输入基本信息
 
-输入基本信息。请参考下图作为示例。
+输入基本信息。参数解释如下：
 
 - **名称**：任务的名称，也是唯一标识符。
 - **别名**：任务的别名，使资源易于识别。
@@ -105,7 +105,7 @@ weight: 10250
 
 2. 您可以直接在清单文件中进行调整，然后点击**创建**，或者关闭**编辑 YAML**然后返回**创建任务**页面。
 
-    {{< notice note >}}您可以跳过本教程的**存储卷设置**和**高级设置**。有关更多信息，请参见[挂载存储卷](../../../project-user-guide/application-workloads/deployments/#步骤-4挂载存储卷)和[配置高级设置](../../../project-user-guide/application-workloads/deployments/#步骤-5配置高级设置)。{{</ notice >}}
+    {{< notice note >}}您可以跳过本教程的**存储设置**和**高级设置**。有关更多信息，请参见[挂载持久卷](../../../project-user-guide/application-workloads/deployments/#步骤-4挂载持久卷)和[配置高级设置](../../../project-user-guide/application-workloads/deployments/#步骤-5配置高级设置)。{{</ notice >}}
 
 ### 步骤 6：检查结果
 

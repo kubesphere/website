@@ -6,7 +6,7 @@ linkTitle: "Cluster Gateway"
 weight: 8630
 ---
 
-KubeSphere 3.2.x provides cluster-scope gateways to let all projects share a global gateway. This document describes how to set a cluster gateway on KubeSphere.
+KubeSphere 3.3.0 provides cluster-scope gateways to let all projects share a global gateway. This document describes how to set a cluster gateway on KubeSphere.
 
 ## Prerequisites
 
@@ -57,7 +57,7 @@ You need to prepare a user with the `platform-admin` role, for example, `admin`.
 ## Cluster Gateway Details Page
 
 1. Under the **Cluster Gateway** tab, click **Manage** on the right of a cluster gateway and select **View Details** to open its details page.
-2. On the details page, click **Edit** to edit configurations of the cluster gateway or click **More** to select an operation.
+2. On the details page, click **Edit** to edit configurations of the cluster gateway or click **Disable** to disable the gateway.
 3. Click the **Monitoring** tab to view the monitoring metrics of the cluster gateway.
 4. Click the **Configuration Options** tab to view configuration options of the cluster gateway.
 5. Click the **Gateway Logs** tab to view logs of the cluster gateway.

@@ -25,7 +25,7 @@ Log in to the console as `project-regular`. Go to **Jobs** under **Application W
 
 ### Step 2: Enter basic information
 
-Enter the basic information. Refer to the image below as an example.
+Enter the basic information. The following describes the parameters:
 
 - **Name**: The name of the Job, which is also the unique identifier.
 - **Alias**: The alias name of the Job, making resources easier to identify.
@@ -103,7 +103,7 @@ You can set the values in this step or click **Next** to use the default values.
     
 2. You can make adjustments in the manifest directly and click **Create** or disable the **Edit YAML** and get back to the **Create** page.
 
-    {{< notice note >}}You can skip **Volume Settings** and **Advanced Settings** for this tutorial. For more information, see [Mount volumes](../deployments/#step-4-mount-volumes) and [Configure advanced settings](../deployments/#step-5-configure-advanced-settings).{{</ notice >}}
+    {{< notice note >}}You can skip **Storage Settings** and **Advanced Settings** for this tutorial. For more information, see [Mount volumes](../deployments/#step-4-mount-volumes) and [Configure advanced settings](../deployments/#step-5-configure-advanced-settings).{{</ notice >}}
 
 ### Step 6: Check the result
 

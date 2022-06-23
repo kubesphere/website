@@ -31,9 +31,9 @@ Weight: 16520
    ```yaml
    client:
      version:
-       kubesphere: v3.2.1
+       kubesphere: v3.3.0
        kubernetes: v1.21.5
-       openpitrix: v3.2.1
+       openpitrix: v3.3.0
      enableKubeConfig: true
      systemWorkspace: "$"  # 请手动添加此行。
    ```

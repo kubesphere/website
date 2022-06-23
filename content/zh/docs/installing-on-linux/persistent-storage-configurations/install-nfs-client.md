@@ -54,7 +54,7 @@ weight: 3330
    {{< notice note >}}
 
    - 如果想要配置更多的值，请参见 [NFS-client Chart 配置](https://github.com/kubesphere/helm-charts/tree/master/src/main/nfs-client-provisioner#configuration)。
-   - `storageClass.defaultClass` 字段决定是否将 NFS-client Provisioner 的存储类型设置为默认存储类型。如果您输入 `false`，KubeKey 将安装 [OpenEBS](https://github.com/openebs/openebs) 来提供本地存储卷，您在集群上创建工作负载时，不会动态供应本地存储卷。安装 KubeSphere 之后，您可以直接在控制台上更改默认存储类型。
+   - `storageClass.defaultClass` 字段决定是否将 NFS-client Provisioner 的存储类型设置为默认存储类型。如果您输入 `false`，KubeKey 将安装 [OpenEBS](https://github.com/openebs/openebs) 来提供本地卷，您在集群上创建工作负载时，不会动态供应本地持久卷。安装 KubeSphere 之后，您可以直接在控制台上更改默认存储类型。
 
    {{</ notice >}}
 
@@ -71,7 +71,7 @@ weight: 3330
 从 [GitHub Release Page](https://github.com/kubesphere/kubekey/releases) 下载 KubeKey 或者直接运行以下命令。
 
 ```bash
-curl -sfL https://get-kk.kubesphere.io | VERSION=v2.0.0 sh -
+curl -sfL https://get-kk.kubesphere.io | VERSION=v2.1.0 sh -
 ```
 
 {{</ tab >}}
@@ -87,7 +87,7 @@ export KKZONE=cn
 运行以下命令来下载 KubeKey：
 
 ```bash
-curl -sfL https://get-kk.kubesphere.io | VERSION=v2.0.0 sh -
+curl -sfL https://get-kk.kubesphere.io | VERSION=v2.1.0 sh -
 ```
 
 {{< notice note >}}
@@ -102,7 +102,7 @@ curl -sfL https://get-kk.kubesphere.io | VERSION=v2.0.0 sh -
 
 {{< notice note >}}
 
-通过以上命令，可以下载 KubeKey 的最新版本 (v2.0.0)。您可以更改命令中的版本号来下载特定的版本。
+通过以上命令，可以下载 KubeKey 的最新版本 (v2.1.0)。您可以更改命令中的版本号来下载特定的版本。
 
 {{</ notice >}}
 
@@ -117,19 +117,19 @@ chmod +x kk
 1. 指定您想要安装的 Kubernetes 版本和 KubeSphere 版本，例如：
 
    ```bash
-   ./kk create config --with-kubernetes v1.21.5 --with-kubesphere v3.2.1
+   ./kk create config --with-kubernetes v1.21.5 --with-kubesphere v3.3.0
    ```
 
    {{< notice note >}}
 
-   - 安装 KubeSphere 3.2.1 的建议 Kubernetes 版本：v1.19.x、v1.20.x、v1.21.x 或 v1.22.x（实验性支持）。如果不指定 Kubernetes 版本，KubeKey 将默认安装 Kubernetes v1.21.5。有关受支持的 Kubernetes 版本的更多信息，请参见[支持矩阵](../../../installing-on-linux/introduction/kubekey/#支持矩阵)。
+   - 安装 KubeSphere 3.3.0 的建议 Kubernetes 版本：v1.19.x、v1.20.x、v1.21.x、v1.22.x 和 v1.23.x。如果不指定 Kubernetes 版本，KubeKey 将默认安装 Kubernetes v1.21.5。有关受支持的 Kubernetes 版本的更多信息，请参见[支持矩阵](../../../installing-on-linux/introduction/kubekey/#支持矩阵)。
 
    - 如果您在此步骤的命令中不添加标志 `--with-kubesphere`，则不会部署 KubeSphere，只能使用配置文件中的 `addons` 字段安装，或者在您后续使用 `./kk create cluster` 命令时再次添加这个标志。
    - 如果您添加标志 `--with-kubesphere` 时不指定 KubeSphere 版本，则会安装最新版本的 KubeSphere。
 
    {{</ notice >}}
 
-4. 如果您不自定义名称，将创建默认文件 `config-sample.yaml`。编辑文件：
+2. 如果您不自定义名称，将创建默认文件 `config-sample.yaml`。编辑文件：
 
    ```bash
    vi config-sample.yaml
@@ -147,7 +147,7 @@ chmod +x kk
      roleGroups:
        etcd:
        - client1
-       control-plane:
+       master:
        - client1
        worker:
        - client2
@@ -178,18 +178,18 @@ chmod +x kk
    ...             
    ```
 
-5. 请特别注意 `addons` 字段，您必须在该字段下提供 NFS-client 的信息。有关文件中每个参数的更多信息，请参见[多节点安装](../../../installing-on-linux/introduction/multioverview/#2-编辑配置文件)。
+3. 请特别注意 `addons` 字段，您必须在该字段下提供 NFS-client 的信息。有关文件中每个参数的更多信息，请参见[多节点安装](../../../installing-on-linux/introduction/multioverview/#2-编辑配置文件)。
 
-6. 保存文件，执行以下命令安装 Kubernetes 和 KubeSphere：
+4. 保存文件，执行以下命令安装 Kubernetes 和 KubeSphere：
 
    ```bash
    ./kk create cluster -f config-sample.yaml
    ```
 
-7. 安装完成后，可以使用以下命令检查安装日志：
+5. 安装完成后，可以使用以下命令检查安装日志：
 
    ```bash
-   kubectl logs -n kubesphere-system $(kubectl get pod -n kubesphere-system -l app=ks-install -o jsonpath='{.items[0].metadata.name}') -f
+   kubectl logs -n kubesphere-system $(kubectl get pod -n kubesphere-system -l app=ks-installer -o jsonpath='{.items[0].metadata.name}') -f
    ```
 
    预期输出：
@@ -265,6 +265,6 @@ chmod +x kk
 
    {{< notice note >}}
    
-   有关如何在 KubeSphere 控制台上创建存储卷的更多信息，请参见[存储卷](../../../project-user-guide/storage/volumes/)。
+   有关如何在 KubeSphere 控制台上创建持久卷声明的更多信息，请参见[持久卷声明](../../../project-user-guide/storage/volumes/)。
    
    {{</ notice >}} 

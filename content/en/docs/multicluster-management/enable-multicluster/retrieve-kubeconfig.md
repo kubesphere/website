@@ -1,7 +1,7 @@
 ---
-title: "Retrieve KubeConfig"
+title: "Retrieve Kubeconfig"
 keywords: 'Kubernetes, KubeSphere, multicluster, hybrid-cloud, kubeconfig'
-description: 'Retrieve the KubeConfig which is needed for cluster importing through direct connection.'
+description: 'Retrieve the Kubeconfig which is needed for cluster importing through direct connection.'
 titleLink: "Retrieve KubeConfig"
 weight: 5230
 ---
