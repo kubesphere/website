@@ -1,6 +1,7 @@
 ---
 title: "Documentation"
 css: "scss/docs.scss"
+isDocsRoot: true
 
 LinkTitle: "Documentation"
 
@@ -15,20 +16,20 @@ sectionLink:
     title: Popular Pages
     description: Learn how to use KubeSphere with these quickstarts, tutorials, and examples. 
     list:
-      - /docs/quick-start/all-in-one-on-linux
-      - /docs/quick-start/minimal-kubesphere-on-k8s
-      - /docs/quick-start/create-workspace-and-project
-      - /docs/introduction/what-is-kubesphere
-      - /docs/pluggable-components
-      - /docs/installing-on-linux/introduction/multioverview
-      - /docs/pluggable-components/app-store
-      - /docs/pluggable-components/devops
-      - /docs/multicluster-management
-      - /docs/project-user-guide/configuration/image-registry
-      - /docs/devops-user-guide/how-to-use/pipelines/create-a-pipeline-using-jenkinsfile
-      - /docs/devops-user-guide/how-to-use/pipelines/create-a-pipeline-using-graphical-editing-panel
-      - /docs/project-user-guide/image-builder/source-to-image
-      - /docs/application-store/app-lifecycle-management
+      - /docs/v3.3/quick-start/all-in-one-on-linux
+      - /docs/v3.3/quick-start/minimal-kubesphere-on-k8s
+      - /docs/v3.3/quick-start/create-workspace-and-project
+      - /docs/v3.3/introduction/what-is-kubesphere
+      - /docs/v3.3/pluggable-components
+      - /docs/v3.3/installing-on-linux/introduction/multioverview
+      - /docs/v3.3/pluggable-components/app-store
+      - /docs/v3.3/pluggable-components/devops
+      - /docs/v3.3/multicluster-management
+      - /docs/v3.3/project-user-guide/configuration/image-registry
+      - /docs/v3.3/devops-user-guide/how-to-use/pipelines/create-a-pipeline-using-jenkinsfile
+      - /docs/v3.3/devops-user-guide/how-to-use/pipelines/create-a-pipeline-using-graphical-editing-panel
+      - /docs/v3.3/project-user-guide/image-builder/source-to-image
+      - /docs/v3.3/application-store/app-lifecycle-management
       
   videos:
     title: Popular Videos
