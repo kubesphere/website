@@ -78,7 +78,7 @@ Be extremely cautious about deleting a workspace if you use kubectl to delete wo
 
    {{</ notice >}} 
 
-2. To delete the workspace, click **Delete** under **Delete Workspace**. In the displayed dialog box, enter the name of the workspace, and then click **OK**.
+2. To delete the workspace, click **Manage > Delete Workspace**. In the displayed dialog box, enter the name of the workspace, and then click **OK**.
 
    {{< notice warning >}}
 

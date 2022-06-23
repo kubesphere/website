@@ -67,7 +67,7 @@ Please refer to [Jobs](../jobs/#step-3-strategy-settings-optional).
 
 - This example CronJob prints `KubeSphere`. For more information about setting images, see [Pod Settings](../container-image-settings/).
 - For more information about **Restart Policy**, see [Jobs](../jobs/#step-4-set-image).
-- You can skip **Volume Settings** and **Advanced Settings** for this tutorial. For more information, see [Mount Volumes](../deployments/#step-4-mount-volumes) and [Configure Advanced Settings](../deployments/#step-5-configure-advanced-settings) in Deployments.
+- You can skip **Storage Settings** and **Advanced Settings** for this tutorial. For more information, see [Mount Volumes](../deployments/#step-4-mount-volumes) and [Configure Advanced Settings](../deployments/#step-5-configure-advanced-settings) in Deployments.
 
     {{</ notice >}}
 

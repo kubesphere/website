@@ -1,8 +1,8 @@
 ---
-title: "KubeSphere 3.2.x 卸载可插拔组件"
+title: "卸载可插拔组件"
 keywords: "Installer, uninstall, KubeSphere, Kubernetes"
-description: "学习如何在 KubeSphere 3.2.x 卸载所有可插拔组件。"
-linkTitle: "KubeSphere 3.2.x 卸载可插拔组件"
+description: "学习如何在 KubeSphere上卸载所有可插拔组件。"
+linkTitle: "卸载可插拔组件"
 Weight: 6940
 ---
 
@@ -10,7 +10,7 @@ Weight: 6940
 
 {{< notice note >}}
 
-KubeSphere 3.2.x 卸载某些可插拔组件的方法与 KubeSphere v3.0.0 不相同。有关 KubeSphere v3.0.0 卸载可插拔组件的详细方法，请参阅从 KubeSphere 上卸载可插拔组件](https://v3-0.docs.kubesphere.io/zh/docs/faq/installation/uninstall-pluggable-components/)。
+KubeSphere 3.3.0 卸载某些可插拔组件的方法与 KubeSphere v3.0.0 不相同。有关 KubeSphere v3.0.0 卸载可插拔组件的详细方法，请参阅从 KubeSphere 上卸载可插拔组件](https://v3-0.docs.kubesphere.io/zh/docs/faq/installation/uninstall-pluggable-components/)。
 
 
 {{</ notice >}}
@@ -27,7 +27,7 @@ KubeSphere 3.2.x 卸载某些可插拔组件的方法与 KubeSphere v3.0.0 不�
 kubectl -n kubesphere-system edit clusterconfiguration ks-installer
 ```
 
-- 使用 `admin` 身份登录 KubeSphere Web 控制台，左上角点击**平台管理**，选择**集群管理**，在**自定义资源 CRD** 中搜索 `ClusterConfiguration`。有关更多信息，请参见[启用可插拔组件](../../pluggable-components/)。
+- 使用 `admin` 身份登录 KubeSphere Web 控制台，左上角点击**平台管理**，选择**集群管理**，在**定制资源定义**中搜索 `ClusterConfiguration`。有关更多信息，请参见[启用可插拔组件](../../pluggable-components/)。
 
 {{< notice note >}}
 
@@ -129,7 +129,7 @@ kubectl -n kubesphere-system edit clusterconfiguration ks-installer
 
    {{< notice note >}}
 
-   KubeSphere 3.2.1 通知系统为默认安装，您无需卸载。
+   KubeSphere 3.3.0 通知系统为默认安装，您无需卸载。
 
    {{</ notice >}} 
 
@@ -195,7 +195,7 @@ kubectl -n kubesphere-system edit clusterconfiguration ks-installer
 
 ## 卸载 KubeEdge
 
-1. 将 CRD `ClusterConfiguration`  配置文件中参数 `ks-installer` 中 `kubeedege.enabled` 的值从 `true` 改为 `false`。
+1. 将 CRD `ClusterConfiguration` 配置文件中参数 `ks-installer` 中 `kubeedege.enabled` 和 `edgeruntime.enabled` 的值从 `true` 改为 `false`。
 
 2. 运行以下命令：
 

@@ -1,8 +1,8 @@
 ---
-title: "Uninstall Pluggable Components from KubeSphere 3.2.x"
+title: "Uninstall Pluggable Components"
 keywords: "Installer, uninstall, KubeSphere, Kubernetes"
-description: "Learn how to uninstall each pluggable component in KubeSphere 3.2.x."
-linkTitle: "Uninstall Pluggable Components from KubeSphere 3.2.x"
+description: "Learn how to uninstall each pluggable component in KubeSphere."
+linkTitle: "Uninstall Pluggable Components"
 Weight: 6940
 ---
 
@@ -10,7 +10,7 @@ After you [enable the pluggable components of KubeSphere](../../pluggable-compon
 
 {{< notice note >}}
 
-The methods of uninstalling certain pluggable components on KubeSphere 3.2.x are different from the methods on KubeSphere v3.0.0. For more information about the uninstallation methods on KubeSphere v3.0.0, see [Uninstall Pluggable Components from KubeSphere](https://v3-0.docs.kubesphere.io/docs/faq/installation/uninstall-pluggable-components/).
+The methods of uninstalling certain pluggable components on KubeSphere 3.3.0 are different from the methods on KubeSphere v3.3.0. For more information about the uninstallation methods on KubeSphere v3.3.0, see [Uninstall Pluggable Components from KubeSphere](https://v3-0.docs.kubesphere.io/docs/faq/installation/uninstall-pluggable-components/).
 
 {{</ notice >}}
 
@@ -77,11 +77,11 @@ Change the value of `openpitrix.store.enabled` from `true` to `false` in `ks-ins
 
    {{< notice note >}}
 
-   After running this command, you can still view the container recent logs provided by Kubernetes by default. However, the container history logs will be cleared and you cannot browse them any more. 
+   After running this command, you can still view the container's recent logs provided by Kubernetes by default. However, the container history logs will be cleared and you cannot browse them any more. 
 
    {{</ notice >}}
 
-3. To uninstall Logging system including Elasticsearch:
+3. To uninstall the Logging system, including Elasticsearch:
 
    ```bash
    kubectl delete crd fluentbitconfigs.logging.kubesphere.io
@@ -128,7 +128,7 @@ Change the value of `openpitrix.store.enabled` from `true` to `false` in `ks-ins
 
    {{< notice note >}}
 
-   Notification is installed in KubeSphere 3.2.1 by default, so you do not need to uninstall it.
+   Notification is installed in KubeSphere 3.3.0 by default, so you do not need to uninstall it.
 
    {{</ notice >}} 
 
@@ -194,7 +194,7 @@ Change the value of `network.ippool.type` from `calico` to `none` in `ks-install
 
 ## Uninstall KubeEdge
 
-1. Change the value of `kubeedge.enabled` from `true` to `false` in `ks-installer` of the CRD `ClusterConfiguration`.
+1. Change the value of `kubeedge.enabled` and `edgeruntime.enabled` from `true` to `false` in `ks-installer` of the CRD `ClusterConfiguration`.
 
 2. Run the following commands:
 
@@ -205,7 +205,7 @@ Change the value of `network.ippool.type` from `calico` to `none` in `ks-install
 
    {{< notice note >}}
 
-   After the uninstallation, you will not be able to add edge nodes to your cluster.
+   After uninstallation, you will not be able to add edge nodes to your cluster.
 
    {{</ notice >}}
 

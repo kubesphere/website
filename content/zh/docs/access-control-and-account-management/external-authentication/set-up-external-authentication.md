@@ -103,10 +103,10 @@ KubeSphere 默认提供了以下几种类型的身份提供者：
 
 * [OIDC Identity Provider](../oidc-identity-provider)
 
-* [GitHub Identity Provider]()
+* GitHub Identity Provider
 
-* [CAS Identity Provider]()
+* CAS Identity Provider
 
-* [Aliyun IDaaS Provider]()
+* Aliyun IDaaS Provider
 
 您也可以拓展 KubeSphere [OAuth2 认证插件](../use-an-oauth2-identity-provider) 与您的帐户系统进行集成。

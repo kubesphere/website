@@ -7,14 +7,14 @@ description: "介绍如何在腾讯云 TKE 上部署 KubeSphere。"
 weight: 4270
 ---
 
-本指南将介绍如何在[腾讯云 TKE](https://cloud.tencent.com/document/product/457/6759) 上部署并使用 KubeSphere 3.0.0 平台。
+本指南将介绍如何在[腾讯云 TKE](https://cloud.tencent.com/document/product/457/6759) 上部署并使用 KubeSphere 3.3.0 平台。
 
 ## 腾讯云 TKE 环境准备
 
 ### 创建 Kubernetes 集群
 首先按使用环境的资源需求[创建 Kubernetes 集群](https://cloud.tencent.com/document/product/457/32189)，满足以下一些条件即可（如已有环境并满足条件可跳过本节内容）：
 
-- KubeSphere 3.0.0 默认支持的 Kubernetes 版本为 `1.15.x`, `1.16.x`, `1.17.x`, `1.18.x`，需要选择其中支持的版本进行集群创建（如 `1.16.3`, `1.18.4`）。
+- KubeSphere 3.3.0 默认支持的 Kubernetes 版本为 v1.19.x, v1.20.x, v1.21.x, v1.22.x 和  v1.23.x，选择支持的版本创建集群；
 - 如果老集群版本不大于1.15.0，需要操作控制台先升级master节点然后升级node节点，依次升级至符合要求版本即可。
 - 工作节点机型配置规格方面选择 `标准型S5` 的 `4核｜8GB` 配置即可，并按需扩展工作节点数量（通常生产环境需要 3 个及以上工作节点）。
 
@@ -42,13 +42,13 @@ Server Version: version.Info{Major:"1", Minor:"18+", GitVersion:"v1.18.4-tke.2",
 - 使用 kubectl 执行以下命令安装 KubeSphere：
 
 ```bash
-kubectl apply -f https://github.com/kubesphere/ks-installer/releases/download/v3.2.1/kubesphere-installer.yaml
+kubectl apply -f https://github.com/kubesphere/ks-installer/releases/download/v3.3.0/kubesphere-installer.yaml
 ```
 
 - 下载集群配置文件
 
 ```bash
-wget https://github.com/kubesphere/ks-installer/releases/download/v3.2.1/cluster-configuration.yaml
+wget https://github.com/kubesphere/ks-installer/releases/download/v3.3.0/cluster-configuration.yaml
 ```
 
   {{< notice tip >}}
@@ -88,7 +88,7 @@ kubectl apply -f cluster-configuration.yaml
 - 执行以下命令查看部署日志，当日志输出如以下图片内容时则表示部署完成：
 
 ```bash
-kubectl logs -n kubesphere-system $(kubectl get pod -n kubesphere-system -l app=ks-install -o jsonpath='{.items[0].metadata.name}') -f
+kubectl logs -n kubesphere-system $(kubectl get pod -n kubesphere-system -l app=ks-installer -o jsonpath='{.items[0].metadata.name}') -f
 ```
 
 ![ks-install-log.png](/images/docs/tencent-tke/ks-install-log.png)

@@ -16,10 +16,11 @@ This section gives you an overview of a single-master multi-node installation, i
 
 ## Concept
 
-A multi-node cluster is composed of at least one control plane node and one worker node. You can use any node as the **taskbox** to carry out the installation task. You can add additional nodes based on your needs (for example, for high availability) both before and after the installation.
+A multi-node cluster is composed of at least one control plane and one worker node. You can use any node as the **taskbox** to carry out the installation task. You can add additional nodes based on your needs (for example, for high availability) both before and after the installation.
 
-- **Control Plane**. A control plane node generally controls and manages the whole system.
-- **Worker**. Worker nodes run the actual applications deployed on them.
+- **Control plane node**. The control plane generally hosts the control plane and controls and manages the whole system.
+
+- **Worker node**. Worker nodes run the actual applications deployed on them.
 
 ## Step 1: Prepare Linux Hosts
 
@@ -47,7 +48,7 @@ Please see the requirements for hardware and operating system shown below. To ge
 
 - All nodes must be accessible through `SSH`.
 - Time synchronization for all nodes.
-- `sudo`/`curl`/`openssl` should be used in all nodes.
+- `sudo`/`curl`/`openssl`/`tar` should be used in all nodes.
 
 ### Container runtimes
 
@@ -90,11 +91,11 @@ KubeKey can install Kubernetes and KubeSphere together. The dependency that need
 
 {{</ notice >}}
 
-This example includes three hosts as below with the master node serving as the taskbox.
+This example includes three hosts as below with the control plane serving as the taskbox.
 
 | Host IP     | Host Name | Role         |
 | ----------- | --------- | ------------ |
-| 192.168.0.2 | master    | master, etcd |
+| 192.168.0.2 | control plane    | control plane, etcd |
 | 192.168.0.3 | node1     | worker       |
 | 192.168.0.4 | node2     | worker       |
 
@@ -109,7 +110,7 @@ Follow the step below to download [KubeKey](../kubekey).
 Download KubeKey from its [GitHub Release Page](https://github.com/kubesphere/kubekey/releases) or use the following command directly.
 
 ```bash
-curl -sfL https://get-kk.kubesphere.io | VERSION=v2.0.0 sh -
+curl -sfL https://get-kk.kubesphere.io | VERSION=v2.1.0 sh -
 ```
 
 {{</ tab >}}
@@ -125,7 +126,7 @@ export KKZONE=cn
 Run the following command to download KubeKey:
 
 ```bash
-curl -sfL https://get-kk.kubesphere.io | VERSION=v2.0.0 sh -
+curl -sfL https://get-kk.kubesphere.io | VERSION=v2.1.0 sh -
 ```
 
 {{< notice note >}}
@@ -140,7 +141,7 @@ After you download KubeKey, if you transfer it to a new machine also with poor n
 
 {{< notice note >}}
 
-The commands above download the latest release (v2.0.0) of KubeKey. You can change the version number in the command to download a specific version.
+The commands above download the latest release (v2.1.0) of KubeKey. You can change the version number in the command to download a specific version.
 
 {{</ notice >}}
 
@@ -164,7 +165,7 @@ Command:
 
 {{< notice note >}}
 
-- Recommended Kubernetes versions for KubeSphere 3.2.1: v1.19.x, v1.20.x, v1.21.x or v1.22.x (experimental). If you do not specify a Kubernetes version, KubeKey will install Kubernetes v1.21.5 by default. For more information about supported Kubernetes versions, see [Support Matrix](../kubekey/#support-matrix).
+- Recommended Kubernetes versions for KubeSphere 3.3.0: v1.19.x or above. If you do not specify a Kubernetes version, KubeKey will install Kubernetes v1.21.5 by default. For more information about supported Kubernetes versions, see [Support Matrix](../kubekey/#support-matrix).
 
 - If you do not add the flag `--with-kubesphere` in the command in this step, KubeSphere will not be deployed unless you install it using the `addons` field in the configuration file or add this flag again when you use `./kk create cluster` later.
 - If you add the flag `--with-kubesphere` without specifying a KubeSphere version, the latest version of KubeSphere will be installed.
@@ -179,7 +180,7 @@ Here are some examples for your reference:
   ./kk create config [-f ~/myfolder/abc.yaml]
   ```
 
-- You can specify a KubeSphere version that you want to install (for example, `--with-kubesphere v3.2.1`).
+- You can specify a KubeSphere version that you want to install (for example, `--with-kubesphere v3.3.0`).
 
   ```bash
   ./kk create config --with-kubesphere [version]
@@ -187,7 +188,7 @@ Here are some examples for your reference:
 
 ### 2. Edit the configuration file of a Kubernetes multi-node cluster
 
-A default file `config-sample.yaml` will be created if you do not change the name. Edit the file and here is an example of the configuration file of a multi-node cluster with one master node.
+A default file `config-sample.yaml` will be created if you do not change the name. Edit the file and here is an example of the configuration file of a multi-node cluster with the control plane.
 
 {{< notice note >}}
 
@@ -204,7 +205,7 @@ spec:
   roleGroups:
     etcd:
     - master
-    control-plane:
+    master:
     - master
     worker:
     - node1
@@ -253,6 +254,13 @@ At the same time, you must provide the login information used to connect to each
   hosts:
     - {name: master, address: 192.168.0.2, internalAddress: 192.168.0.2, privateKeyPath: "~/.ssh/id_rsa"}
   ```
+  
+- For installation on ARM devices:
+
+  ```yaml
+  hosts:
+    - {name: master, address: 192.168.0.2, internalAddress: 192.168.0.2, user: ubuntu, password: Testing123, arch: arm64}
+  ```
 
 {{< notice tip >}} 
 
@@ -264,7 +272,7 @@ At the same time, you must provide the login information used to connect to each
 #### roleGroups
 
 - `etcd`: etcd node names
-- `control-plane`: Name of the contro plane node
+- `master`: Master node names
 - `worker`: Worker node names
 
 #### controlPlaneEndpoint (for HA installation only)

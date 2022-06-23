@@ -79,7 +79,7 @@ You do not need to create the GitHub Secret if your forked repository is open to
 
    For other fields, use the default value directly. For more information about how to configure probes and set other parameters on the **Container Settings** page, see [Pod Settings](../../../project-user-guide/application-workloads/container-image-settings/).
 
-6. On the **Volume Settings** page, you can add a volume for the container. For more information, see [Volumes](../../../project-user-guide/storage/volumes/). Click **Next** to continue.
+6. On the **Storage Settings** page, you can add a volume for the container. For more information, see [Volumes](../../../project-user-guide/storage/volumes/). Click **Next** to continue.
 
 7. On the **Advanced Settings** page, select **External Access** and select **NodePort** as the access method. Click **Create** to finish the whole process.
 

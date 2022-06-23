@@ -1,6 +1,6 @@
 ---
 title: "Air-Gapped Upgrade with KubeKey"
-keywords: "Air-Gapped, kubernetes, upgrade, kubesphere, 3.2.1"
+keywords: "Air-Gapped, kubernetes, upgrade, kubesphere, 3.3.0"
 description: "Use the offline package to upgrade Kubernetes and KubeSphere."
 linkTitle: "Air-Gapped Upgrade with KubeKey"
 weight: 7400
@@ -9,11 +9,11 @@ Air-gapped upgrade with KubeKey is recommended for users whose KubeSphere and Ku
 
 ## Prerequisites
 
-- You need to have a KubeSphere cluster running v3.1.x. If your KubeSphere version is v3.0.0 or earlier, upgrade to v3.1.x first.
-- Your Kubernetes version must be v1.19.x or later.
-- Read [Release Notes for 3.2.1](../../release/release-v321/) carefully.
+- You need to have a KubeSphere cluster running v3.2.x. If your KubeSphere version is v3.1.x or earlier, upgrade to v3.2.x first.
+- Your Kubernetes version must be v1.19.x or above.
+- Read [Release Notes for 3.3.0](../../release/release-v321/) carefully.
 - Back up any important component beforehand.
-- A Docker registry. You need to have a Harbor or other Docker registries. For more information, see [Prepare a Private Image Registry](../../installing-on-linux/introduction/air-gapped-installation/#step-2-prepare-a-private-image-registry).
+- A Docker registry. You need to have a Harbor or other Docker registries.
 - Make sure every node can push and pull images from the Docker Registry.
 
 
@@ -47,7 +47,7 @@ KubeKey upgrades Kubernetes from one MINOR version to the next MINOR version unt
 
 ### Step 1: Download KubeKey
 
-Similar to installing KubeSphere on Linux in an online environment, you need to [download KubeKey v2.0.0](https://github.com/kubesphere/kubekey/releases) first. Download the `tar.gz` file, and transfer it to your local machine which serves as the taskbox for installation. After you uncompress the file, execute the following command to make `kk` executable:
+Similar to installing KubeSphere on Linux in an online environment, you need to [download KubeKey v2.1.0](https://github.com/kubesphere/kubekey/releases) first. Download the `tar.gz` file, and transfer it to your local machine which serves as the taskbox for installation. After you uncompress the file, execute the following command to make `kk` executable:
 
 ```bash
 chmod +x kk
@@ -60,19 +60,19 @@ As you install KubeSphere and Kubernetes on Linux, you need to prepare an image 
 1. Download the image list file `images-list.txt` from a machine that has access to Internet through the following command:
 
    ```bash
-   curl -L -O https://github.com/kubesphere/ks-installer/releases/download/v3.2.1/images-list.txt
+   curl -L -O https://github.com/kubesphere/ks-installer/releases/download/v3.3.0/images-list.txt
    ```
 
    {{< notice note >}}
 
-   This file lists images under `##+modulename` based on different modules. You can add your own images to this file following the same rule. To view the complete file, see [Appendix](../../installing-on-linux/introduction/air-gapped-installation/#image-list-of-kubesphere-v321).
+   This file lists images under `##+modulename` based on different modules. You can add your own images to this file following the same rule.
 
    {{</ notice >}} 
 
 2. Download `offline-installation-tool.sh`.
 
    ```bash
-   curl -L -O https://github.com/kubesphere/ks-installer/releases/download/v3.2.1/offline-installation-tool.sh
+   curl -L -O https://github.com/kubesphere/ks-installer/releases/download/v3.3.0/offline-installation-tool.sh
    ```
 
 3. Make the `.sh` file executable.
@@ -113,7 +113,7 @@ As you install KubeSphere and Kubernetes on Linux, you need to prepare an image 
 
    {{< notice note >}}
 
-   - You can change the Kubernetes version downloaded based on your needs. Recommended Kubernetes versions for KubeSphere 3.2.1 are v1.19.x, v1.20.x, v1.21.x, and v1.22.x (experimental). If you do not specify a Kubernetes version, KubeKey will install Kubernetes v1.21.5 by default. For more information about supported Kubernetes versions, see [Support Matrix](../../installing-on-linux/introduction/kubekey/#support-matrix).
+   - You can change the Kubernetes version downloaded based on your needs. Recommended Kubernetes versions for KubeSphere 3.3.0 are v1.19.x or above. If you do not specify a Kubernetes version, KubeKey will install Kubernetes v1.21.5 by default. For more information about supported Kubernetes versions, see [Support Matrix](../../installing-on-linux/introduction/kubekey/#support-matrix).
 
    - You can upgrade Kubernetes from v1.16.13 to v1.17.9 by downloading the v1.17.9 Kubernetes binary file, but for cross-version upgrades, all intermediate versions need to be downloaded in advance. For example, if you want to upgrade Kubernetes from v1.15.12 to v1.18.6, you need to download Kubernetes v1.16.13 and v1.17.9, and the v1.18.6 binary file.
 
@@ -159,8 +159,8 @@ Transfer your packaged image file to your local machine and execute the followin
 
 |        | Kubernetes | KubeSphere |
 | ------ | ---------- | ---------- |
-| Before | v1.18.6    | v3.1.x     |
-| After  | v1.21.5    | 3.2.1     |
+| Before | v1.18.6    | v3.2.x     |
+| After  | v1.21.5    | 3.3.0     |
 
 #### Upgrade a cluster
 
@@ -177,7 +177,7 @@ Execute the following command to generate an example configuration file for inst
 For example:
 
 ```bash
-./kk create config --with-kubernetes v1.21.5 --with-kubesphere v3.2.1 -f config-sample.yaml
+./kk create config --with-kubernetes v1.21.5 --with-kubesphere v3.3.0 -f config-sample.yaml
 ```
 
 {{< notice note >}}
@@ -204,7 +204,7 @@ For air-gapped installation, you must specify `privateRegistry`, which is `docke
   roleGroups:
     etcd:
     - ks.master
-    control-plane:
+    master:
     - ks.master
     worker:
     - ks.master
@@ -218,19 +218,13 @@ Set `privateRegistry` of your `config-sample.yaml` file:
     privateRegistry: dockerhub.kubekey.local
 ```
 
-#### Upgrade your single-node cluster to KubeSphere 3.2.1 and Kubernetes v1.21.5
+#### Upgrade your single-node cluster to KubeSphere 3.3.0 and Kubernetes v1.21.5
 
 ```bash
 ./kk upgrade -f config-sample.yaml
 ```
 
-To upgrade Kubernetes to a specific version, explicitly provide the version after the flag `--with-kubernetes`. Available versions are:
-
-- v1.19.x
-- v1.20.x
-- v.21.x
-- v1.22.x (experimental)
-
+To upgrade Kubernetes to a specific version, explicitly provide the version after the flag `--with-kubernetes`. Available versions are v1.19.x, v1.20.x, v1.21.x, v1.22.x, and v1.23.x.
 
 ### Air-gapped upgrade for multi-node clusters
 
@@ -247,8 +241,8 @@ To upgrade Kubernetes to a specific version, explicitly provide the version afte
 
 |        | Kubernetes | KubeSphere |
 | ------ | ---------- | ---------- |
-| Before | v1.18.6    | v3.1.x     |
-| After  | v1.21.5    | 3.2.1     |
+| Before | v1.18.6    | v3.2.x     |
+| After  | v1.21.5    | 3.3.0     |
 
 #### Upgrade a cluster
 
@@ -265,7 +259,7 @@ In this example, KubeSphere is installed on multiple nodes, so you need to speci
    For example:
 
 ```bash
-./kk create config --with-kubernetes v1.21.5 --with-kubesphere v3.2.1 -f config-sample.yaml
+./kk create config --with-kubernetes v1.21.5 --with-kubesphere v3.3.0 -f config-sample.yaml
 ```
 
 {{< notice note >}}
@@ -294,7 +288,7 @@ Set `hosts` of your `config-sample.yaml` file:
   roleGroups:
     etcd:
     - ks.master
-    control-plane:
+    master:
     - ks.master
     worker:
     - ks.slave1
@@ -308,15 +302,10 @@ Set `privateRegistry` of your `config-sample.yaml` file:
     privateRegistry: dockerhub.kubekey.local
 ```
 
-#### Upgrade your multi-node cluster to KubeSphere 3.2.1 and Kubernetes v1.21.5
+#### Upgrade your multi-node cluster to KubeSphere 3.3.0 and Kubernetes v1.21.5
 
 ```bash
 ./kk upgrade -f config-sample.yaml
 ```
 
-To upgrade Kubernetes to a specific version, explicitly provide the version after the flag `--with-kubernetes`. Available versions are:
-
-- v1.19.x
-- v1.20.x
-- v1.21.x
-- v1.22.x (experimental)
+To upgrade Kubernetes to a specific version, explicitly provide the version after the flag `--with-kubernetes`. Available versions are v1.19.x, v1.20.x, v1.21.x, v1.22.x, and v1.23.x.

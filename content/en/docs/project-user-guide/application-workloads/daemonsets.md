@@ -30,7 +30,7 @@ Log in to the console as `project-regular`. Go to **Application Workloads** of a
 
 ### Step 2: Enter basic information
 
-Specify a name for the DaemonSet (for example, `demo-daemonset`) and click **Next** to continue.
+Specify a name for the DaemonSet (for example, `demo-daemonset`), select a project, and click **Next**.
 
 ### Step 3: Set a Pod
 

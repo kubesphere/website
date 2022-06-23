@@ -54,7 +54,7 @@ The preceding system requirements and the following instructions are for the def
 ### Node requirements
 
 - The node can be accessed through `SSH`.
-- `sudo`/`curl`/`openssl` should be used.
+- `sudo`/`curl`/`openssl`/`tar` should be used.
 
 ### Container runtimes
 
@@ -203,12 +203,12 @@ You only need to run one command for all-in-one installation. The template is as
 To create a Kubernetes cluster with KubeSphere installed, refer to the following command as an example:
 
 ```bash
-./kk create cluster --with-kubernetes v1.21.5 --with-kubesphere v3.2.1
+./kk create cluster --with-kubernetes v1.21.5 --with-kubesphere v3.3.0
 ```
 
 {{< notice note >}}
 
-- Recommended Kubernetes versions for KubeSphere 3.2.1: v1.19.x, v1.20.x, v1.21.x and v1.22.x (experimental). If you do not specify a Kubernetes version, KubeKey installs Kubernetes v1.21.5 by default. For more information about supported Kubernetes versions, see [Support Matrix](../../installing-on-linux/introduction/kubekey/#support-matrix).
+- Recommended Kubernetes versions for KubeSphere 3.3.0: v1.19.x or above. If you do not specify a Kubernetes version, KubeKey installs Kubernetes v1.21.5 by default. For more information about supported Kubernetes versions, see [Support Matrix](../../installing-on-linux/introduction/kubekey/#support-matrix).
 - For all-in-one installation, you do not need to change any configuration.
 - If you do not add the flag `--with-kubesphere` in the command in this step, KubeSphere will not be deployed. KubeKey will install Kubernetes only. If you add the flag `--with-kubesphere` without specifying a KubeSphere version, the latest version of KubeSphere will be installed.
 - KubeKey will install [OpenEBS](https://openebs.io/) to provision LocalPV for the development and testing environment by default, which is convenient for new users. For other storage classes, see [Persistent Storage Configurations](../../installing-on-linux/persistent-storage-configurations/understand-persistent-storage/).
@@ -226,7 +226,7 @@ If the following information is displayed, Kubernetes and KubeSphere is successf
 Run the following command to check the result.
 
 ```bash
-kubectl logs -n kubesphere-system $(kubectl get pod -n kubesphere-system -l app=ks-install -o jsonpath='{.items[0].metadata.name}') -f
+kubectl logs -n kubesphere-system $(kubectl get pod -n kubesphere-system -l app=ks-installer -o jsonpath='{.items[0].metadata.name}') -f
 ```
 
 The output displays the IP address and port number of the web console, which is exposed through `NodePort 30880` by default. Now, you can access the console at `<NodeIP>:30880` with the default account and password (`admin/P@88w0rd`).

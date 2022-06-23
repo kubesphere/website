@@ -14,50 +14,65 @@ This tutorial demonstrates how to create and use a volume snapshot.
 
 - You need to create a workspace, a project and a user (`project-regular`). The user must be invited to the project with the role of `operator`. For more information, see [Create Workspaces, Projects, Users and Roles](../../../quick-start/create-workspace-and-project/).
 
-- Kubernetes version 1.17+.
+- You need to install Kubernetes 1.17 or higher.
 
 - Your underlying storage plugin supports snapshots.
-- You have an available volume so that you can create a snapshot for it. For more information, see [Volumes](../volumes/).
+
+- You have an available PVC so that you can create a snapshot for it. For more information, see [Volumes](../volumes/).
+
+- You need to create a [volume snapshot class](../../../cluster-administration/snapshotclass/).
 
 ## Create a Volume Snapshot
 
-1. Log in to the web console of KubeSphere as `project-regular`. On the **Volumes** page of your project, select a volume that you want to create a snapshot for.
-2. On the details page, select **Create Snapshot** from the **More** drop-down menu.
-3. In the displayed dialog box, set a name for the snapshot which serves as a unique identifier and select a **Volume Snapshot Class**. Click **OK** to finish.
+You can create a volume snapshot using either of the following ways.
 
-4. Newly-created snapshots is displayed on the **Volume Snapshots** list.
+### Method 1: From the Volume Snapshot Page
 
+1. Log in to the web console of KubeSphere as `project-regular`. On the navigation pane on the left, choose **Storage > Volume Snapshots**.
 
-## Use a Snapshot to Create a Volume
+2. On the **Volume Snapshots** page on the right, click **Create**.
 
-There are two ways for you to use a snapshot to create a volume.
+3. On the **Create Snapshot** page that is displayed, select a persistent volume claim that supports snapshots, enter a snapshot name, select a snapshot volume class, and then click **OK**. You can view the created volume snapshot in the volume snapshot list.
 
-### Create a volume from the snapshot details page
+4. Click the Volume Snapshot Content tab, and you can view details of the volume snapshot, such as its status, capacity, and volume snapshot class.
+### Method 2: From the Persistent Volume Claims Page
 
-1. Log in to the web console of KubeSphere as `project-regular`. On a snapshot's details page, click **Apply** to use the snapshot. Generally, the steps are the same as creating a volume directly.
+1. Log in to the web console of KubeSphere as `project-regular`. On the **Persistent Volume Claims** page of your project, select a volume for which you want to create a snapshot.
 
-2. In the displayed dialog box, set a name for the volume. Click **Next** to continue.
+2. On the details page, choose **More > Create Snapshot**.
+
+3. In the displayed dialog box, set a name for the snapshot which serves as a unique identifier and select a **Volume Snapshot Class**. Click **OK** to finish. You can view the created volume snapshot in the volume snapshot list.
+
+## Use a Snapshot to Create a PVC
+
+There are two ways for you to use a snapshot to create a PVC.
+
+### From the Snapshot Details Page
+
+1. Log in to the web console of KubeSphere as `project-regular`. On a snapshot's details page, click **Create Volume** to use the snapshot. Generally, the steps are the same as creating a PVC directly.
+
+2. In the displayed dialog box, set a name for the PVC. Click **Next** to continue.
 
    {{< notice note >}}
 
-   The resource you create is a PersistentVolumeClaim (PVC).
+   The resource you create is a Persistent Volume Claim (PVC).
 
    {{</ notice >}} 
 
-3. On the **Volume Settings** tab, select an access mode and click **Next**.
+3. On the **Storage Settings** tab, select an access mode and click **Next**.
 
-4. On the **Advanced Settings** tab, add metadata for the volume such as labels and annotations. Click **Create** to finish.
+4. On the **Advanced Settings** tab, add metadata for the PVC, such as labels and annotations. Click **Create** to finish.
 
-5. You can see the volume created appear on the **Volumes** page.
+   The created PVC is displayed on the **Persistent Storage Claims** page.
 
-### Create a volume from the Volumes page
+### From the Persistent Storage Claims Page
 
-1. Log in to the web console of KubeSphere as `project-regular`. On the **Volumes** page of a project, click **Create**.
+1. Log in to the web console of KubeSphere as `project-regular`. On the **Persistent Storage Claims** page of a project, click **Create**.
 
 2. In the displayed dialog box, set a name for the volume. Click **Next** to continue.
 
-3. On the **Volume Settings** tab, select **From Volume Snapshot** under the **Method** section. Select a snapshot and an access mode, and click **Next** to continue.
+3. On the **Storage Settings** tab, select **From Volume Snapshot** under the **Creation Method** section. Select a snapshot and an access mode, and click **Next** to continue.
 
-4. On the **Advanced Settings** tab, add metadata for the volume such as labels and annotations. Click **Create** to finish creating the volume.
+4. On the **Advanced Settings** tab, add metadata for the PVC, such as labels and annotations. Click **Create** to finish creating the PVC.
 
-5. The volume created is displayed on the **Volumes** page.
+   The PVC created is displayed on the **Persistent Storage Claims** page.

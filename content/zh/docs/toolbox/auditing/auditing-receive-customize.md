@@ -126,7 +126,7 @@ spec:
 ```
 {{< notice tip >}} 
 
-您也可以使用拥有 `platform-admin` 角色的用户登录控制台，在**集群管理**页面转到 **CRD**，搜索 `Webhook`，直接编辑 `kube-auditing-webhook`。
+您也可以使用拥有 `platform-admin` 角色的用户登录控制台，在**集群管理**页面转到**定制资源定义**，搜索 `Webhook`，直接编辑 `kube-auditing-webhook`。
 
 {{</ notice >}}
 

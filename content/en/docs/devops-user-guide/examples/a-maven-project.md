@@ -67,7 +67,7 @@ The Pod labeled `maven` uses the docker-in-docker network to run the pipeline. N
 | dockerhub-id    | Username and password | Registry, such as Docker Hub |
 | demo-kubeconfig | kubeconfig          | Workload deployment         |
 
-For details, refer to the [Credential Management](../../how-to-use/credential-management/).
+For details, refer to the [Credential Management](../../how-to-use/devops-settings/credential-management/).
 
 ### Create a project for workloads
 
@@ -75,7 +75,7 @@ In this example, all workloads are deployed in `kubesphere-sample-dev`. You must
 
 ### Create a pipeline for the Maven project
 
-1. Go to **Pipelines** of your DevOps project and click **Create** to create a pipeline named `maven`. For more information, see [Create a Pipeline - using Graphical Editing Panel](../../how-to-use/create-a-pipeline-using-graphical-editing-panel/).
+1. Go to **Pipelines** of your DevOps project and click **Create** to create a pipeline named `maven`. For more information, see [Create a Pipeline - using Graphical Editing Panel](../../how-to-use/pipelines/create-a-pipeline-using-graphical-editing-panel/).
 
 2. Go to the details page of the pipeline and click **Edit Jenkinsfile**.
 
