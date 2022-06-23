@@ -42,7 +42,7 @@ KubeSphere 使用一段时间之后，由于工作负载不断增加，您可能
      roleGroups:
        etcd:
        - master1
-       master:
+       control-plane:
        - master1
        worker:
        - node1
@@ -107,7 +107,7 @@ KubeSphere 使用一段时间之后，由于工作负载不断增加，您可能
        - master1
        - master2
        - master3
-       master:
+       control-plane:
        - master1
        - master2
        - master3

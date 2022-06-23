@@ -20,7 +20,7 @@ In KubeKey v2.1.0, we bring in concepts of manifest and artifact, which provides
 |192.168.0.4 | node3    | Image registry node of the air-gapped environment |
 ## Preparations
 
-1. Run the following commands to download KubeKey v2.1.0.
+1. Run the following commands to download KubeKey v2.2.1.
    {{< tabs >}}
 
    {{< tab "Good network connections to GitHub/Googleapis" >}}
@@ -28,7 +28,7 @@ In KubeKey v2.1.0, we bring in concepts of manifest and artifact, which provides
    Download KubeKey from its [GitHub Release Page](https://github.com/kubesphere/kubekey/releases) or use the following command directly.
 
    ```bash
-   curl -sfL https://get-kk.kubesphere.io | VERSION=v2.1.0 sh -
+   curl -sfL https://get-kk.kubesphere.io | VERSION=v2.2.1 sh -
    ```
 
    {{</ tab >}}
@@ -44,7 +44,7 @@ In KubeKey v2.1.0, we bring in concepts of manifest and artifact, which provides
    Run the following command to download KubeKey:
 
    ```bash
-   curl -sfL https://get-kk.kubesphere.io | VERSION=v2.1.0 sh -
+   curl -sfL https://get-kk.kubesphere.io | VERSION=v2.2.1 sh -
    ```
    {{</ tab >}}
 
@@ -83,7 +83,7 @@ In KubeKey v2.1.0, we bring in concepts of manifest and artifact, which provides
        repository:
          iso:
            localPath: ""
-           url: "https://github.com/kubesphere/kubekey/releases/download/v2.1.0/centos-7-amd64-rpms.iso"
+           url: "https://github.com/kubesphere/kubekey/releases/download/v2.2.1/centos-7-amd64-rpms.iso"
      kubernetesDistributions:
      - type: kubernetes
        version: v1.21.5
@@ -94,13 +94,11 @@ In KubeKey v2.1.0, we bring in concepts of manifest and artifact, which provides
          version: v0.9.1
        etcd:
          version: v3.4.13
-       ## For now, if your cluster container runtime is containerd, KubeKey will add a docker 20.10.8 container runtime in the below list.
-       ## The reason is KubeKey creates a cluster with containerd by installing a docker first and making kubelet connect the socket file of containerd which docker contained.
        containerRuntimes:
        - type: docker
          version: 20.10.8
        crictl:
-         version: v1.22.0
+         version: v1.24.0
        ##
        # docker-registry:
        #   version: "2"
@@ -247,7 +245,7 @@ In KubeKey v2.1.0, we bring in concepts of manifest and artifact, which provides
    
    - You can customize the **manifest-sample.yaml** file to export the desired artifact file.
 
-   - You can download the ISO files at https://github.com/kubesphere/kubekey/releases/tag/v2.1.0.
+   - You can download the ISO files at https://github.com/kubesphere/kubekey/releases/tag/v2.2.1.
    
    {{</ notice >}}
    
@@ -282,8 +280,6 @@ In KubeKey v2.1.0, we bring in concepts of manifest and artifact, which provides
    An artifact is a .tgz package containing the image package (.tar) and associated binaries exported from the specified manifest file. You can specify an artifact in the KubeKey commands for initializing the image registry, creating clusters, adding nodes, and upgrading clusters, and then KubeKey will automatically unpack the artifact and use the unpacked file when running the command.
 
    - Make sure the network connection is working.
-
-   - When exporting artifacts, KubeKey pulls images in the image list of the manifest file one by one. Make sure that the worker nodes have a minimum version of 1.4.9 containerd or that of 18.09 docker installed.
 
    - KubeKey will resolve image names in the image list. If the image registry requires authentication, you can configure it in **.registry.auths** in the manifest file.
    {{</ notice >}}
@@ -357,7 +353,6 @@ In KubeKey v2.1.0, we bring in concepts of manifest and artifact, which provides
        #  "dockerhub.kubekey.local":
        #    username: admin
        #    password: Harbor12345
-       plainHTTP: false
        # Set the private registry to use during cluster deployment.
        privateRegistry: ""
        namespaceOverride: ""
@@ -511,7 +506,6 @@ In KubeKey v2.1.0, we bring in concepts of manifest and artifact, which provides
          "dockerhub.kubekey.local":
            username: admin
            password: Harbor12345
-       plainHTTP: false
        privateRegistry: "dockerhub.kubekey.local"
        namespaceOverride: "kubesphereio"
        registryMirrors: []

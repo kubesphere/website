@@ -23,7 +23,7 @@ KubeKey v2.1.0 版本新增了清单（manifest）和制品（artifact）的概�
 
 ## 部署准备
 
-1. 执行以下命令下载 KubeKey v2.1.0 并解压：
+1. 执行以下命令下载 KubeKey v2.2.1 并解压：
 
    {{< tabs >}}
 
@@ -32,7 +32,7 @@ KubeKey v2.1.0 版本新增了清单（manifest）和制品（artifact）的概�
    从 [GitHub Release Page](https://github.com/kubesphere/kubekey/releases) 下载 KubeKey 或者直接运行以下命令。
 
    ```bash
-   curl -sfL https://get-kk.kubesphere.io | VERSION=v2.1.0 sh -
+   curl -sfL https://get-kk.kubesphere.io | VERSION=v2.2.1 sh -
    ```
 
    {{</ tab >}}
@@ -48,7 +48,7 @@ KubeKey v2.1.0 版本新增了清单（manifest）和制品（artifact）的概�
    运行以下命令来下载 KubeKey：
 
    ```bash
-   curl -sfL https://get-kk.kubesphere.io | VERSION=v2.1.0 sh -
+   curl -sfL https://get-kk.kubesphere.io | VERSION=v2.2.1 sh -
    ```
    {{</ tab >}}
 
@@ -87,7 +87,7 @@ KubeKey v2.1.0 版本新增了清单（manifest）和制品（artifact）的概�
        repository:
          iso:
            localPath: ""
-           url: "https://github.com/kubesphere/kubekey/releases/download/v2.1.0/centos-7-amd64-rpms.iso"
+           url: "https://github.com/kubesphere/kubekey/releases/download/v2.2.1/centos-7-amd64-rpms.iso"
      kubernetesDistributions:
      - type: kubernetes
        version: v1.21.5
@@ -98,13 +98,11 @@ KubeKey v2.1.0 版本新增了清单（manifest）和制品（artifact）的概�
          version: v0.9.1
        etcd:
          version: v3.4.13
-       ## For now, if your cluster container runtime is containerd, KubeKey will add a docker 20.10.8 container runtime in the below list.
-       ## The reason is KubeKey creates a cluster with containerd by installing a docker first and making kubelet connect the socket file of containerd which docker contained.
        containerRuntimes:
        - type: docker
          version: 20.10.8
        crictl:
-         version: v1.22.0
+         version: v1.24.0
        ##
        # docker-registry:
        #   version: "2"
@@ -254,7 +252,7 @@ KubeKey v2.1.0 版本新增了清单（manifest）和制品（artifact）的概�
    
    - 可根据实际情况修改 **manifest-sample.yaml** 文件的内容，用于之后导出期望的 artifact 文件。
   
-   - 您可以访问 https://github.com/kubesphere/kubekey/releases/tag/v2.1.0 下载 ISO 文件。
+   - 您可以访问 https://github.com/kubesphere/kubekey/releases/tag/v2.2.1 下载 ISO 文件。
    
    {{</ notice >}}
    
@@ -291,8 +289,6 @@ KubeKey v2.1.0 版本新增了清单（manifest）和制品（artifact）的概�
    制品（artifact）是一个根据指定的 manifest 文件内容导出的包含镜像 tar 包和相关二进制文件的 tgz 包。在 KubeKey 初始化镜像仓库、创建集群、添加节点和升级集群的命令中均可指定一个 artifact，KubeKey 将自动解包该 artifact 并在执行命令时直接使用解包出来的文件。
 
    - 导出时请确保网络连接正常。
-
-   - 导出 artifact 时会根据 manifest 文件中的镜像列表逐个拉取镜像，请确保 KubeKey 的工作节点已安装最低版本为 1.4.9 的 containerd 或最低版本为 18.09 的 docker。
 
    - KubeKey 会解析镜像列表中的镜像名，若镜像名中的镜像仓库需要鉴权信息，可在 manifest 文件中的 **.registry.auths** 字段中进行配置。
 
@@ -368,7 +364,6 @@ KubeKey v2.1.0 版本新增了清单（manifest）和制品（artifact）的概�
        #  "dockerhub.kubekey.local":
        #    username: admin
        #    password: Harbor12345
-       plainHTTP: false
        # 设置集群部署时使用的私有仓库
        privateRegistry: ""
        namespaceOverride: ""
@@ -512,7 +507,6 @@ KubeKey v2.1.0 版本新增了清单（manifest）和制品（artifact）的概�
          "dockerhub.kubekey.local":
            username: admin
            password: Harbor12345
-       plainHTTP: false
        privateRegistry: "dockerhub.kubekey.local"
        namespaceOverride: "kubesphereio"
        registryMirrors: []
