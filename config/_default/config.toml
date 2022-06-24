@@ -110,7 +110,7 @@ hasChildren = true
     [[languages.en.menu.main]]
     parent = "Documentation"
     name = "v3.2.x <img src='/images/header/star.svg' alt='star'>"
-    URL = "/docs"
+    URL = "https://v3-2.docs.kubesphere.io/docs"
     weight = 1
 
     [[languages.en.menu.main]]
