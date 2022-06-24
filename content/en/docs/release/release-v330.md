@@ -21,7 +21,7 @@ weight: 18098
 - Support automatic restart of deployments and statefulsets after a PVC has been changed.
 - Support automatic expansion of PVs.
 
-## Multi-tenancy and multi-cluster
+## Multi-tenancy and Multi-cluster
 ### Features
 - Support for kubeconfig update for member clusters on the KubeSphere console.
 - Support for notifications before a cluster's certificate is about to expire.
@@ -31,8 +31,8 @@ weight: 18098
 
 ### Features
 - Add container process/thread monitoring metrics.
-- Support monitoring node usage.
-- Support for tenant-level custom monitoring Grafana template import.
+- Support node usage monitoring.
+- Support for the ability to import the Grafana template.
 
 ### Enhancements & Updates
 - Upgrade Alertmanager from v0.21.0 to v0.23.0.
