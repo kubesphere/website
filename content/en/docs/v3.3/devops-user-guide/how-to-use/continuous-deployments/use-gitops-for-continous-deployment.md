@@ -28,7 +28,7 @@ This section walks you through the process of deploying an application using a c
 
 5. In the **Import Code Repository** dialog box, enter the name of code repository, for example, `open-podcasts`, and select a code repository. Optionally, you can set an alias and add description.
 
-6. In the **Select Code Repository** dialog box, click **Git**. In **Code Repository URL**, enter the URL of the code repository, for example, `https://github.com/kubesphere-sigs/open-podcasts/blob/master/config/default/kustomization.yaml`, and click **OK**.
+6. In the **Select Code Repository** dialog box, click **Git**. In **Code Repository URL**, enter the URL of the code repository, for example, `https://github.com/kubesphere-sigs/open-podcasts`, and click **OK**.
 
    {{< notice note >}}
    
@@ -84,7 +84,7 @@ This section walks you through the process of deploying an application using a c
            <ul>
            <li><b>Healthy</b>: Resources are healthy.</li>
            <li><b>Degraded</b>: Resources are degraded.</li>
-           <li><b>Progressing</b>: Resources are still working despite that they are unhealthy and may soon be resumed to the healthy state. This is the default state.</li>
+           <li><b>Progressing</b>: Resources are being synchronized. This is the default state.</li>
            <li><b>Suspended</b>: Resources have been suspended and are waiting to be resumed.</li>
            <li><b>Unknown</b>: The resource state is unknown.</li>
            <li><b>Missing</b>: Resources are missing.</li></td>
