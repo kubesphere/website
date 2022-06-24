@@ -115,7 +115,7 @@ hasChildren = true
     [[languages.en.menu.main]]
     parent = "Documentation"
     name = "v3.2"
-    URL = "/docs"
+    URL = "https://v3-2.docs.kubesphere.io/docs"
     weight = 2
 
     [[languages.en.menu.main]]
