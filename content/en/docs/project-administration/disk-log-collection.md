@@ -69,7 +69,7 @@ This tutorial demonstrates how to collect logs for an example app.
 
 1. Under the **Deployments** tab, click the Deployment just created to go to its detail page.
 
-2. In **Resource Status**, you can click <img src="/images/docs/project-administration/disk-log-collection/arrow.png" width="20" /> to view container details, and then click <img src="/images/docs/project-administration/disk-log-collection/log-icon.png" width="20" /> of `logsidecar-container` (filebeat container) to view logs.
+2. In **Resource Status**, you can click <img src="/images/docs/project-administration/disk-log-collection/arrow.png" width="20" /> to view container details, and then click <img src="/images/docs/project-administration/disk-log-collection/log-icon.png" alt="icon" width="20" /> of `logsidecar-container` (filebeat container) to view logs.
 
 3. Alternatively, you can also click <img src="/images/docs/project-administration/disk-log-collection/toolbox.png" width="20" />  in the lower-right corner and select **Log Search** to view stdout logs. For example, use the Pod name of the Deployment for a fuzzy query.
 

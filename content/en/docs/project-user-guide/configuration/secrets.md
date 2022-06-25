@@ -69,7 +69,7 @@ You can see the Secret's manifest file in YAML format by enabling **Edit YAML** 
 
     {{< notice note >}}
 
-As mentioned above, KubeSphere automatically converts the value of a key into its corresponding base64 character value. To see the actual decoded value, click <img src="/images/docs/project-user-guide/configurations/secrets/eye-icon.png" width="20px" /> on the right.
+As mentioned above, KubeSphere automatically converts the value of a key into its corresponding base64 character value. To see the actual decoded value, click <img src="/images/docs/project-user-guide/configurations/secrets/eye-icon.png" alt="icon" width="20px" /> on the right.
 
 {{</ notice >}} 
 

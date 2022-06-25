@@ -72,7 +72,7 @@ weight: 14310
 
 1. 选择**配置** > **保密字典**，在搜索栏输入 `gitlab-initial-root-password`，然后按下键盘上的**回车键**来搜索密钥。
 
-2. 点击密钥访问其详情页，然后点击右上角的 <img src="/images/docs/zh-cn/appstore/external-apps/deploy-gitlab/eye-icon.png" width="20px" /> 查看密码。请确保将密码进行复制。
+2. 点击密钥访问其详情页，然后点击右上角的 <img src="/images/docs/zh-cn/appstore/external-apps/deploy-gitlab/eye-icon.png" alt="icon" width="20px" /> 查看密码。请确保将密码进行复制。
 
 
 ### 步骤 4：编辑 hosts 文件

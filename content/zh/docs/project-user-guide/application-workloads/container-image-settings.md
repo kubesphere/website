@@ -18,7 +18,7 @@ weight: 10280
 
 ### 容器组副本数量
 
-点击 <img src="/images/docs/zh-cn/project-user-guide/application-workloads/container-image-settings/plus-icon.png" width="20px" /> 或 <img src="/images/docs/zh-cn/project-user-guide/application-workloads/container-image-settings/minus-icon.png" width="20px" /> 图标设置容器组副本数量，该参数显示在清单文件中的 `.spec.replicas` 字段。该选项对守护进程集不可用。
+点击 <img src="/images/docs/zh-cn/project-user-guide/application-workloads/container-image-settings/plus-icon.png" alt="icon" width="20px" /> 或 <img src="/images/docs/zh-cn/project-user-guide/application-workloads/container-image-settings/minus-icon.png" alt="icon" width="20px" /> 图标设置容器组副本数量，该参数显示在清单文件中的 `.spec.replicas` 字段。该选项对守护进程集不可用。
 
 如果您在多集群项目中创建部署，请在**副本调度模式**下选择一个副本调度模式：
 
@@ -33,7 +33,7 @@ weight: 10280
 
 #### 镜像搜索栏
 
-您可以点击右边的 <img src="/images/docs/zh-cn/project-user-guide/application-workloads/container-image-settings/cube-icon.png" width="20px" />，从列表中选择一个镜像，或者输入镜像名称进行搜索。KubeSphere 提供 Docker Hub 的镜像以及您的私有镜像仓库的镜像。如果想使用私有镜像仓库，您需要先在**配置**下的**保密字典**中创建镜像仓库保密字典。
+您可以点击右边的 <img src="/images/docs/zh-cn/project-user-guide/application-workloads/container-image-settings/cube-icon.png" alt="icon" width="20px" />，从列表中选择一个镜像，或者输入镜像名称进行搜索。KubeSphere 提供 Docker Hub 的镜像以及您的私有镜像仓库的镜像。如果想使用私有镜像仓库，您需要先在**配置**下的**保密字典**中创建镜像仓库保密字典。
 
 {{< notice note >}} 
 

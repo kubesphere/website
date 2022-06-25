@@ -40,7 +40,7 @@ weight: 10220
 
 ### 步骤 3：设置容器组
 
-1. 设置镜像前，请点击**容器组副本数量**中的 <img src="/images/docs/zh-cn/project-user-guide/application-workloads/statefulsets/plus-icon.png" width="20px" /> 或 <img src="/images/docs/zh-cn/project-user-guide/application-workloads/statefulsets/minus-icon.png" width="20px" /> 来定义容器组的副本数量，该参数显示在清单文件中的 `.spec.replicas` 字段。
+1. 设置镜像前，请点击**容器组副本数量**中的 <img src="/images/docs/zh-cn/project-user-guide/application-workloads/statefulsets/plus-icon.png" alt="icon" width="20px" /> 或 <img src="/images/docs/zh-cn/project-user-guide/application-workloads/statefulsets/minus-icon.png" alt="icon" width="20px" /> 来定义容器组的副本数量，该参数显示在清单文件中的 `.spec.replicas` 字段。
 
     {{< notice tip >}}
 
@@ -113,7 +113,7 @@ weight: 10220
 
 4. 点击**资源状态**选项卡，查看该有状态副本集的端口和容器组信息。
 
-    - **副本运行状态**：点击 <img src="/images/docs/common-icons/replica-plus-icon.png" width="20px" /> 或 <img src="/images/docs/common-icons/replica-minus-icon.png" width="20px" /> 来增加或减少容器组副本数量。
+    - **副本运行状态**：点击 <img src="/images/docs/common-icons/replica-plus-icon.png" alt="icon" width="20px" /> 或 <img src="/images/docs/common-icons/replica-minus-icon.png" alt="icon" width="20px" /> 来增加或减少容器组副本数量。
     - **容器组**
 
         - 容器组列表中显示了容器组详情（运行状态、节点、容器组IP 以及资源使用情况）。
