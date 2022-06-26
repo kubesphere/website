@@ -69,7 +69,7 @@ Kubernetes [保密字典 (Secret)](https://kubernetes.io/zh/docs/concepts/config
 
     {{< notice note >}}
 
-如上文所述，KubeSphere 自动将键值对的值转换成对应的 base64 编码。您可以点击右边的 <img src="/images/docs/zh-cn/project-user-guide/configurations/secrets/eye-icon.png" width="20px" /> 查看解码后的值。
+如上文所述，KubeSphere 自动将键值对的值转换成对应的 base64 编码。您可以点击右边的 <img src="/images/docs/zh-cn/project-user-guide/configurations/secrets/eye-icon.png" alt="icon" width="20px" /> 查看解码后的值。
 
 {{</ notice >}} 
 

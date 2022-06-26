@@ -44,7 +44,7 @@ weight: 11450
 
 2. 在您的 **learn-pipline-java** GitHub 仓库中，点击根目录下的文件 `pom.xml`。
 
-3. 在文件中点击 <img src="/images/docs/zh-cn/devops-user-guide/examples/use-nexus-in-pipeline/github-edit-icon.png" height="18px" /> 以修改 `<distributionManagement>` 代码片段。设置 `<id>` 并使用您的 Nexus 仓库的 URL。
+3. 在文件中点击 <img src="/images/docs/zh-cn/devops-user-guide/examples/use-nexus-in-pipeline/github-edit-icon.png" alt="icon" height="18px" /> 以修改 `<distributionManagement>` 代码片段。设置 `<id>` 并使用您的 Nexus 仓库的 URL。
 
    ![modify-pom](/images/docs/zh-cn/devops-user-guide/examples/use-nexus-in-pipeline/modify-pom.png)
 

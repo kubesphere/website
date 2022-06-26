@@ -48,7 +48,7 @@ The following figure shows the end-to-end architecture of the application. For m
 
     {{< notice note >}}
 
-KubeSphere creates the hostname automatically. To change the hostname, hover over the default route rule and click <img src="/images/docs/quickstart/deploy-bookinfo-to-k8s/edit-icon.png" width='20px' /> to edit it. For more information, see [Create a Microservices-based App](../../project-user-guide/application/compose-app/).
+KubeSphere creates the hostname automatically. To change the hostname, hover over the default route rule and click <img src="/images/docs/quickstart/deploy-bookinfo-to-k8s/edit-icon.png" width='20px' alt="icon" /> to edit it. For more information, see [Create a Microservices-based App](../../project-user-guide/application/compose-app/).
 
 {{</ notice >}}
 

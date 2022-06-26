@@ -79,7 +79,7 @@ Please refer to [Jobs](../jobs/#step-3-strategy-settings-optional).
 
 3. Click any of them and you will be directed to the Job details page.
 
-4. In **Resource Status**, you can inspect the Pod status. Click <img src="/images/docs/project-user-guide/application-workloads/cronjobs/down-arrow.png" width="20px" /> on the right and click <img src="/images/docs/project-user-guide/application-workloads/cronjobs/container-log-icon.png" width="20px" /> to check the container log as shown below, which displays the expected output.
+4. In **Resource Status**, you can inspect the Pod status. Click <img src="/images/docs/project-user-guide/application-workloads/cronjobs/down-arrow.png" width="20px" /> on the right and click <img src="/images/docs/project-user-guide/application-workloads/cronjobs/container-log-icon.png" alt="icon" width="20px" /> to check the container log as shown below, which displays the expected output.
 
 ## Check CronJob Details
 
