@@ -267,39 +267,45 @@ hasChildren = true
 name = "文档中心"
     [[languages.zh.menu.main]]
     parent = "文档中心"
-    name = "v3.2.x <img src='/images/header/star.svg' alt='star'>"
-    URL = "/docs/"
+    name = "v3.3 <img src='/images/header/star.svg' alt='star'>"
+    URL = "/docs/v3.3"
     weight = 1
 
     [[languages.zh.menu.main]]
     parent = "文档中心"
-    name = "v3.1.x"
-    URL = "https://v3-1.docs.kubesphere.io/zh/docs/"
+    name = "v3.2"
+    URL = "https://v3-2.docs.kubesphere.io/zh/docs/"
     weight = 2
 
     [[languages.zh.menu.main]]
     parent = "文档中心"
-    name = "v3.0.0"
-    URL = "https://v3-0.docs.kubesphere.io/zh/docs/"
+    name = "v3.1"
+    URL = "https://v3-1.docs.kubesphere.io/zh/docs/"
     weight = 3
 
     [[languages.zh.menu.main]]
     parent = "文档中心"
-    name = "v2.1.x"
-    URL = "https://v2-1.docs.kubesphere.io/docs/zh-CN/"
+    name = "v3.0"
+    URL = "https://v3-0.docs.kubesphere.io/zh/docs/"
     weight = 4
 
     [[languages.zh.menu.main]]
     parent = "文档中心"
-    name = "v2.0.x"
-    URL = "https://v2-0.docs.kubesphere.io/docs/zh-CN/"
+    name = "v2.1"
+    URL = "https://v2-1.docs.kubesphere.io/docs/zh-CN/"
     weight = 5
 
     [[languages.zh.menu.main]]
     parent = "文档中心"
-    name = "v1.0.0"
-    URL = "https://v1-0.docs.kubesphere.io/docs/zh-CN/"
+    name = "v2.0"
+    URL = "https://v2-0.docs.kubesphere.io/docs/zh-CN/"
     weight = 6
+
+    [[languages.zh.menu.main]]
+    parent = "文档中心"
+    name = "v1.0"
+    URL = "https://v1-0.docs.kubesphere.io/docs/zh-CN/"
+    weight = 7
 
 [[languages.zh.menu.main]]
 weight = 5
