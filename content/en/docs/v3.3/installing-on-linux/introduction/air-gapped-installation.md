@@ -15,7 +15,7 @@ In KubeKey v2.1.0, we bring in concepts of manifest and artifact, which provides
 
 |Host IP| Host Name | Usage      |
 | ---------------- | ---- | ---------------- |
-|192.168.0.2 | node1    | Online host for packaging the source cluster with Kubernetes v1.21.5 and KubeSphere v3.3.0 installed |
+|192.168.0.2 | node1    | Online host for packaging the source cluster with Kubernetes v1.22.10 and KubeSphere v3.3.0 installed |
 |192.168.0.3 | node2    | Control plane node of the air-gapped environment |
 |192.168.0.4 | node3    | Image registry node of the air-gapped environment |
 ## Preparations
@@ -312,7 +312,7 @@ In KubeKey v2.1.0, we bring in concepts of manifest and artifact, which provides
 2. Run the following command to create a configuration file for the air-gapped cluster:
 
    ```bash
-   ./kk create config --with-kubesphere v3.3.0 --with-kubernetes v1.21.5 -f config-sample.yaml
+   ./kk create config --with-kubesphere v3.3.0 --with-kubernetes v1.22.10 -f config-sample.yaml
    ```
 
 3. Run the following command to modify the configuration file:
@@ -556,7 +556,7 @@ In KubeKey v2.1.0, we bring in concepts of manifest and artifact, which provides
 8. Run the following command to view the cluster status:
 
    ```bash
-   $ kubectl logs -n kubesphere-system $(kubectl get pod -n kubesphere-system -l app=ks-installer -o jsonpath='{.items[0].metadata.name}') -f
+   $ kubectl logs -n kubesphere-system $(kubectl get pod -n kubesphere-system -l 'app in (ks-install, ks-installer)' -o jsonpath='{.items[0].metadata.name}') -f
    ```
 
    After the installation is completed, the following information is displayed:

@@ -338,7 +338,7 @@ chmod +x kk
 创建配置文件（一个示例配置文件）。
 
 ```bash
-./kk create config --with-kubernetes v1.21.5 --with-kubesphere v3.3.0
+./kk create config --with-kubernetes v1.22.10 --with-kubesphere v3.3.0
 ```
 
 {{< notice note >}}
@@ -434,7 +434,7 @@ spec:
 此时可以看到安装日志自动输出，或者可以再打开一个 SSH 手动检查安装日志，然后等待安装成功。
 
 ```bash
-kubectl logs -n kubesphere-system $(kubectl get pod -n kubesphere-system -l app=ks-installer -o jsonpath='{.items[0].metadata.name}') -f
+kubectl logs -n kubesphere-system $(kubectl get pod -n kubesphere-system -l 'app in (ks-install, ks-installer)' -o jsonpath='{.items[0].metadata.name}') -f
 ```
 
 如果最后返回`Welcome to KubeSphere`，则表示已安装成功。

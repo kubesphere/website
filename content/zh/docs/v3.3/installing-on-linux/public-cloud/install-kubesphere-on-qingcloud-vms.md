@@ -167,10 +167,10 @@ curl -sfL https://get-kk.kubesphere.io | VERSION=v2.2.1 sh -
 chmod +x kk
 ```
 
-创建包含默认配置的示例配置文件。以下以 Kubernetes v1.21.5 为例。
+创建包含默认配置的示例配置文件。以下以 Kubernetes v1.22.10 为例。
 
 ```bash
-./kk create config --with-kubesphere v3.3.0 --with-kubernetes v1.21.5
+./kk create config --with-kubesphere v3.3.0 --with-kubernetes v1.22.10
 ```
 
 {{< notice note >}}
@@ -289,7 +289,7 @@ spec:
 检查安装日志。如果显示如下日志，KubeSphere 安装成功。
 
 ```bash
-kubectl logs -n kubesphere-system $(kubectl get pod -n kubesphere-system -l app=ks-installer -o jsonpath='{.items[0].metadata.name}') -f
+kubectl logs -n kubesphere-system $(kubectl get pod -n kubesphere-system -l 'app in (ks-install, ks-installer)' -o jsonpath='{.items[0].metadata.name}') -f
 ```
 
 ```bash

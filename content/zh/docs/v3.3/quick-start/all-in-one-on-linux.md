@@ -197,7 +197,7 @@ chmod +x kk
 若要同时安装 Kubernetes 和 KubeSphere，可参考以下示例命令：
 
 ```bash
-./kk create cluster --with-kubernetes v1.21.5 --with-kubesphere v3.3.0
+./kk create cluster --with-kubernetes v1.22.10 --with-kubesphere v3.3.0
 ```
 
 {{< notice note >}}
@@ -217,7 +217,7 @@ chmod +x kk
 输入以下命令以检查安装结果。
 
 ```bash
-kubectl logs -n kubesphere-system $(kubectl get pod -n kubesphere-system -l app=ks-installer -o jsonpath='{.items[0].metadata.name}') -f
+kubectl logs -n kubesphere-system $(kubectl get pod -n kubesphere-system -l 'app in (ks-install, ks-installer)' -o jsonpath='{.items[0].metadata.name}') -f
 ```
 
 输出信息会显示 Web 控制台的 IP 地址和端口号，默认的 NodePort 是 `30880`。现在，您可以使用默认的帐户和密码 (`admin/P@88w0rd`) 通过 `<NodeIP>:30880` 访问控制台。

@@ -88,7 +88,7 @@ kubectl apply -f cluster-configuration.yaml
 - 执行以下命令查看部署日志，当日志输出如以下图片内容时则表示部署完成：
 
 ```bash
-kubectl logs -n kubesphere-system $(kubectl get pod -n kubesphere-system -l app=ks-installer -o jsonpath='{.items[0].metadata.name}') -f
+kubectl logs -n kubesphere-system $(kubectl get pod -n kubesphere-system -l 'app in (ks-install, ks-installer)' -o jsonpath='{.items[0].metadata.name}') -f
 ```
 
 ![ks-install-log.png](/images/docs/v3.3/tencent-tke/ks-install-log.png)

@@ -177,7 +177,7 @@ Execute the following command to generate an example configuration file for inst
 For example:
 
 ```bash
-./kk create config --with-kubernetes v1.21.5 --with-kubesphere v3.3.0 -f config-sample.yaml
+./kk create config --with-kubernetes v1.22.10 --with-kubesphere v3.3.0 -f config-sample.yaml
 ```
 
 {{< notice note >}}
@@ -218,7 +218,7 @@ Set `privateRegistry` of your `config-sample.yaml` file:
     privateRegistry: dockerhub.kubekey.local
 ```
 
-#### Upgrade your single-node cluster to KubeSphere 3.3.0 and Kubernetes v1.21.5
+#### Upgrade your single-node cluster to KubeSphere 3.3.0 and Kubernetes v1.22.10
 
 ```bash
 ./kk upgrade -f config-sample.yaml
@@ -242,7 +242,7 @@ To upgrade Kubernetes to a specific version, explicitly provide the version afte
 |        | Kubernetes | KubeSphere |
 | ------ | ---------- | ---------- |
 | Before | v1.18.6    | v3.2.x     |
-| After  | v1.21.5    | 3.3.0     |
+| After  | v1.22.10    | 3.3.0     |
 
 #### Upgrade a cluster
 
@@ -259,7 +259,7 @@ In this example, KubeSphere is installed on multiple nodes, so you need to speci
    For example:
 
 ```bash
-./kk create config --with-kubernetes v1.21.5 --with-kubesphere v3.3.0 -f config-sample.yaml
+./kk create config --with-kubernetes v1.22.10 --with-kubesphere v3.3.0 -f config-sample.yaml
 ```
 
 {{< notice note >}}
@@ -302,7 +302,7 @@ Set `privateRegistry` of your `config-sample.yaml` file:
     privateRegistry: dockerhub.kubekey.local
 ```
 
-#### Upgrade your multi-node cluster to KubeSphere 3.3.0 and Kubernetes v1.21.5
+#### Upgrade your multi-node cluster to KubeSphere 3.3.0 and Kubernetes v1.22.10
 
 ```bash
 ./kk upgrade -f config-sample.yaml

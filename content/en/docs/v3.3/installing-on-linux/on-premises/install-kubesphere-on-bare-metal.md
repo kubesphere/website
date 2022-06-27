@@ -247,7 +247,7 @@ With KubeKey, you can install Kubernetes and KubeSphere together. You have the o
 Create a Kubernetes cluster with KubeSphere installed (for example, `--with-kubesphere v3.3.0`):
 
 ```bash
-./kk create config --with-kubernetes v1.21.5 --with-kubesphere v3.3.0
+./kk create config --with-kubernetes v1.22.10 --with-kubesphere v3.3.0
 ```
 
 {{< notice note >}} 
@@ -299,7 +299,7 @@ Create a cluster using the configuration file you customized above:
 After the installation finishes, you can inspect the logs of installation by executing the command below:
 
 ```bash
-kubectl logs -n kubesphere-system $(kubectl get pod -n kubesphere-system -l app=ks-installer -o jsonpath='{.items[0].metadata.name}') -f
+kubectl logs -n kubesphere-system $(kubectl get pod -n kubesphere-system -l 'app in (ks-install, ks-installer)' -o jsonpath='{.items[0].metadata.name}') -f
 ```
 
 If you can see the welcome log return, it means the installation is successful.

@@ -113,7 +113,7 @@ A Custom Resource Definition (CRD) allows users to create a new type of resource
 5. Run the following command in kubectl to check the installation process:
 
     ```bash
-    kubectl logs -n kubesphere-system $(kubectl get pod -n kubesphere-system -l app=ks-installer -o jsonpath='{.items[0].metadata.name}') -f
+    kubectl logs -n kubesphere-system $(kubectl get pod -n kubesphere-system -l 'app in (ks-install, ks-installer)' -o jsonpath='{.items[0].metadata.name}') -f
     ```
 
     {{< notice note >}}
