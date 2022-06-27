@@ -14,7 +14,7 @@ weight: 7200
 ## 准备工作
 
 - 您需要有一个运行 KubeSphere v3.2.x 的集群。如果您的 KubeSphere 是 v3.1.0 或更早的版本，请先升级至 v3.2.x。
-- 请仔细阅读 [3.3.0 版本说明](../../release/release-v321/)。
+- 请仔细阅读 [3.3.0 版本说明](../../../v3.3/release/release-v330/)。
 - 提前备份所有重要的组件。
 - 确定您的升级方案。本文档中提供 [All-in-One 集群](#all-in-one-集群)和[多节点集群](#多节点集群)的两种升级场景。
 
@@ -87,7 +87,7 @@ chmod +x kk
 ./kk upgrade --with-kubernetes v1.21.5 --with-kubesphere v3.3.0
 ```
 
-要将 Kubernetes 升级至特定版本，请在 `--with-kubernetes` 标志后明确指定版本号。以下是可用版本：v1.19.x、v1.20.x、v1.21.x、v1.22.x 和 v1.23.x。
+要将 Kubernetes 升级至特定版本，请在 `--with-kubernetes` 标志后明确指定版本号。以下是可用版本：v1.19.x、v1.20.x、v1.21.x、v1.22.x 和 v1.23.x（实验性支持）。
 
 ### 多节点集群
 
@@ -128,7 +128,7 @@ chmod +x kk
 ./kk upgrade --with-kubernetes v1.21.5 --with-kubesphere v3.3.0 -f sample.yaml
 ```
 
-要将 Kubernetes 升级至特定版本，请在 `--with-kubernetes` 标志后明确指定版本号。以下是可用版本：v1.19.x、v1.20.x、v1.21.x、v1.22.x 和 v1.23.x。
+要将 Kubernetes 升级至特定版本，请在 `--with-kubernetes` 标志后明确指定版本号。以下是可用版本：v1.19.x、v1.20.x、v1.21.x、v1.22.x 和 v1.23.x（实验性支持）。
 
 {{< notice note >}}
 

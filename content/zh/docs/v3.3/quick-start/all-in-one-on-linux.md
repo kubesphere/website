@@ -202,7 +202,7 @@ chmod +x kk
 
 {{< notice note >}}
 
-- 安装 KubeSphere 3.3.0 的建议 Kubernetes 版本：1.19.x、1.20.x、1.21.x、v1.22.x 和 v1.23.x。如果不指定 Kubernetes 版本，KubeKey 将默认安装 Kubernetes v1.23.7。有关受支持的 Kubernetes 版本的更多信息，请参见[支持矩阵](../../installing-on-linux/introduction/kubekey/#支持矩阵)。
+- 安装 KubeSphere 3.3.0 的建议 Kubernetes 版本：1.19.x、1.20.x、1.21.x、v1.22.x 和 v1.23.x（实验性支持）。如果不指定 Kubernetes 版本，KubeKey 将默认安装 Kubernetes v1.23.7。有关受支持的 Kubernetes 版本的更多信息，请参见[支持矩阵](../../installing-on-linux/introduction/kubekey/#支持矩阵)。
 
 - 一般来说，对于 All-in-One 安装，您无需更改任何配置。
 - 如果您在这一步的命令中不添加标志 `--with-kubesphere`，则不会部署 KubeSphere，KubeKey 将只安装 Kubernetes。如果您添加标志 `--with-kubesphere` 时不指定 KubeSphere 版本，则会安装最新版本的 KubeSphere。

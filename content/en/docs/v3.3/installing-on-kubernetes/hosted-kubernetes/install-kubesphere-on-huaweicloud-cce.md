@@ -14,7 +14,7 @@ This guide walks you through the steps of deploying KubeSphere on [Huaiwei CCE](
 
 First, create a Kubernetes cluster based on the requirements below.
 
-- To install KubeSphere 3.3.0 on Kubernetes, your Kubernetes version must be v1.19.x or above.
+- To install KubeSphere 3.3.0 on Kubernetes, your Kubernetes version must be v1.19.x, v1.20.x, v1.21.x, v1.22.x, and v1.23.x (experimental support).
 - Ensure the cloud computing network for your Kubernetes cluster works, or use an elastic IP when you use **Auto Create** or **Select Existing**. You can also configure the network after the cluster is created. Refer to [NAT Gateway](https://support.huaweicloud.com/en-us/productdesc-natgateway/en-us_topic_0086739762.html).
 - Select `s3.xlarge.2` `4-core｜8GB` for nodes and add more if necessary (3 and more nodes are required for a production environment).
 

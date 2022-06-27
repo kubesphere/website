@@ -11,8 +11,8 @@ This tutorial demonstrates how to upgrade your cluster using KubeKey.
 
 ## Prerequisites
 
-- You need to have a KubeSphere cluster running v3.1.x. If your KubeSphere version is v3.0.0 or earlier, upgrade to v3.1.x first.
-- Read [Release Notes for 3.3.0](../../release/release-v321/) carefully.
+- You need to have a KubeSphere cluster running v3.2.x. If your KubeSphere version is v3.1.x or earlier, upgrade to v3.2.x first.
+- Read [Release Notes for 3.3.0](../../../v3.3/release/release-v330/) carefully.
 - Back up any important component beforehand.
 - Make your upgrade plan. Two scenarios are provided in this document for [all-in-one clusters](#all-in-one-cluster) and [multi-node clusters](#multi-node-cluster) respectively.
 
@@ -86,7 +86,7 @@ Run the following command to use KubeKey to upgrade your single-node cluster to 
 ./kk upgrade --with-kubernetes v1.21.5 --with-kubesphere v3.3.0
 ```
 
-To upgrade Kubernetes to a specific version, explicitly provide the version after the flag `--with-kubernetes`. Available versions are v1.19.x, v1.20.x, v1.21.x, v1.22.x, and v1.23.x.
+To upgrade Kubernetes to a specific version, explicitly provide the version after the flag `--with-kubernetes`. Available versions are v1.19.x, v1.20.x, v1.21.x, v1.22.x, and v1.23.x (experimental support).
 
 ### Multi-node cluster
 
@@ -126,7 +126,7 @@ The following command upgrades your cluster to KubeSphere 3.3.0 and Kubernetes v
 ./kk upgrade --with-kubernetes v1.21.5 --with-kubesphere v3.3.0 -f sample.yaml
 ```
 
-To upgrade Kubernetes to a specific version, explicitly provide the version after the flag `--with-kubernetes`. Available versions are v1.19.x, v1.20.x, v1.21.x, v1.22.x, and v1.23.x.
+To upgrade Kubernetes to a specific version, explicitly provide the version after the flag `--with-kubernetes`. Available versions are v1.19.x, v1.20.x, v1.21.x, v1.22.x, and v1.23.x (experimental support).
 
 {{< notice note >}}
 

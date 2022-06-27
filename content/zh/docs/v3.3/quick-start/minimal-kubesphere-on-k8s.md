@@ -10,7 +10,7 @@ weight: 2200
 
 ## 准备工作
 
-- 如需在 Kubernetes 上安装 KubeSphere 3.3.0，您的 Kubernetes 版本必须为：v1.19.x，v1.20.x，v1.21.x，v1.22.x 或 v1.23.x。
+- 如需在 Kubernetes 上安装 KubeSphere 3.3.0，您的 Kubernetes 版本必须为：v1.19.x，v1.20.x，v1.21.x，v1.22.x 或 v1.23.x（实验性支持）。
 - 确保您的机器满足最低硬件要求：CPU > 1 核，内存 > 2 GB。
 - 在安装之前，需要配置 Kubernetes 集群中的**默认**存储类型。
 
