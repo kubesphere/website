@@ -10,8 +10,8 @@ Air-gapped upgrade with KubeKey is recommended for users whose KubeSphere and Ku
 ## Prerequisites
 
 - You need to have a KubeSphere cluster running v3.2.x. If your KubeSphere version is v3.1.x or earlier, upgrade to v3.2.x first.
-- Your Kubernetes version must be v1.19.x or above.
-- Read [Release Notes for 3.3.0](../../release/release-v321/) carefully.
+- Your Kubernetes version must be v1.19.x, v1.20.x, v1.21.x, v1.22.x, and v1.23.x (experimental support).
+- Read [Release Notes for 3.3.0](../../../v3.3/release/release-v330/) carefully.
 - Back up any important component beforehand.
 - A Docker registry. You need to have a Harbor or other Docker registries.
 - Make sure every node can push and pull images from the Docker Registry.
@@ -113,7 +113,7 @@ As you install KubeSphere and Kubernetes on Linux, you need to prepare an image 
 
    {{< notice note >}}
 
-   - You can change the Kubernetes version downloaded based on your needs. Recommended Kubernetes versions for KubeSphere 3.3.0 are v1.19.x or above. If you do not specify a Kubernetes version, KubeKey will install Kubernetes v1.23.7 by default. For more information about supported Kubernetes versions, see [Support Matrix](../../installing-on-linux/introduction/kubekey/#support-matrix).
+   - You can change the Kubernetes version downloaded based on your needs. Recommended Kubernetes versions for KubeSphere 3.3.0 are v1.19.x, v1.20.x, v1.21.x, v1.22.x, and v1.23.x (experimental support). If you do not specify a Kubernetes version, KubeKey will install Kubernetes v1.23.7 by default. For more information about supported Kubernetes versions, see [Support Matrix](../../installing-on-linux/introduction/kubekey/#support-matrix).
 
    - You can upgrade Kubernetes from v1.16.13 to v1.17.9 by downloading the v1.17.9 Kubernetes binary file, but for cross-version upgrades, all intermediate versions need to be downloaded in advance. For example, if you want to upgrade Kubernetes from v1.15.12 to v1.18.6, you need to download Kubernetes v1.16.13 and v1.17.9, and the v1.18.6 binary file.
 
@@ -224,7 +224,7 @@ Set `privateRegistry` of your `config-sample.yaml` file:
 ./kk upgrade -f config-sample.yaml
 ```
 
-To upgrade Kubernetes to a specific version, explicitly provide the version after the flag `--with-kubernetes`. Available versions are v1.19.x, v1.20.x, v1.21.x, v1.22.x, and v1.23.x.
+To upgrade Kubernetes to a specific version, explicitly provide the version after the flag `--with-kubernetes`. Available versions are v1.19.x, v1.20.x, v1.21.x, v1.22.x, and v1.23.x (experimental support).
 
 ### Air-gapped upgrade for multi-node clusters
 
@@ -308,4 +308,4 @@ Set `privateRegistry` of your `config-sample.yaml` file:
 ./kk upgrade -f config-sample.yaml
 ```
 
-To upgrade Kubernetes to a specific version, explicitly provide the version after the flag `--with-kubernetes`. Available versions are v1.19.x, v1.20.x, v1.21.x, v1.22.x, and v1.23.x.
+To upgrade Kubernetes to a specific version, explicitly provide the version after the flag `--with-kubernetes`. Available versions are v1.19.x, v1.20.x, v1.21.x, v1.22.x, and v1.23.x (experimental support).

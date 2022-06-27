@@ -8,6 +8,6 @@ weight: 1400
 
 2022 年 6 月 24 日，KubeSphere 3.3.0 正式发布，带来了更多令人期待的功能。新增了基于 GitOps 的持续部署方案，进一步优化了 DevOps 的使用体验。同时还增强了 “多集群管理、多租户管理、可观测性、应用商店、微服务治理、边缘计算、存储” 等特性，更进一步完善交互设计，并全面提升了用户体验。
 
-关于 3.3.0 新特性的详细解读，可参考博客 [KubeSphere 3.3.0 发布：全面拥抱 GitOps](../../../blogs/kubesphere-3.3.0-ga-announcement/)。
+关于 3.3.0 新特性的详细解读，可参考博客 [KubeSphere 3.3.0 发布：全面拥抱 GitOps](https://kubesphere.com.cn/news/kubesphere-3.3.0-ga-announcement/)。
 
-关于 3.3.0 的新功能及增强、Bug 修复、重要的技术调整，以及废弃或移除的功能，请参见 3.3.0 的[发行说明](../../release/release-v330/)。
+关于 3.3.0 的新功能及增强、Bug 修复、重要的技术调整，以及废弃或移除的功能，请参见 [3.3.0 版本说明](../../v3.3/release/release-v330/)。

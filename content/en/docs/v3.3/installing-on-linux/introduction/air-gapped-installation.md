@@ -92,31 +92,9 @@ In KubeKey v2.1.0, we bring in concepts of manifest and artifact, which provides
          iso:
            localPath:
            url: https://github.com/kubesphere/kubekey/releases/download/v2.2.1/ubuntu-20.04-debs-amd64.iso
-     - arch: amd64
-       type: linux
-       id: ubuntu
-       version: "18.04"
-       repository:
-         iso:
-           localPath:
-           url: https://github.com/kubesphere/kubekey/releases/download/v2.2.1/ubuntu-18.04-debs-amd64.iso
-     - arch: amd64
-       type: linux
-       id: ubuntu
-       version: "16.04"
-       repository:
-         iso:
-           localPath:
-           url: https://github.com/kubesphere/kubekey/releases/download/v2.2.1/ubuntu-16.04-debs-amd64.iso
    kubernetesDistributions:
    - type: kubernetes
-     version: v1.22.1
-   - type: kubernetes
-     version: v1.21.5
-   - type: kubernetes
-     version: v1.20.10
-   - type: kubernetes
-     version: v1.19.9
+     version: v1.22.10
    components:
      helm:
        version: v3.6.3
@@ -139,28 +117,12 @@ In KubeKey v2.1.0, we bring in concepts of manifest and artifact, which provides
    docker-compose:
      version: v2.2.2
    images:
-   - docker.io/kubesphere/kube-apiserver:v1.23.7
-   - docker.io/kubesphere/kube-controller-manager:v1.23.7
-   - docker.io/kubesphere/kube-proxy:v1.23.7
-   - docker.io/kubesphere/kube-scheduler:v1.23.7
-   - docker.io/kubesphere/kube-apiserver:v1.24.1
-   - docker.io/kubesphere/kube-controller-manager:v1.24.1
-   - docker.io/kubesphere/kube-proxy:v1.24.1
-   - docker.io/kubesphere/kube-scheduler:v1.24.1
    - docker.io/kubesphere/kube-apiserver:v1.22.10
    - docker.io/kubesphere/kube-controller-manager:v1.22.10
    - docker.io/kubesphere/kube-proxy:v1.22.10
    - docker.io/kubesphere/kube-scheduler:v1.22.10
-   - docker.io/kubesphere/kube-apiserver:v1.21.13
-   - docker.io/kubesphere/kube-controller-manager:v1.21.13
-   - docker.io/kubesphere/kube-proxy:v1.21.13
-   - docker.io/kubesphere/kube-scheduler:v1.21.13
-   - docker.io/kubesphere/pause:3.7
-   - docker.io/kubesphere/pause:3.6
    - docker.io/kubesphere/pause:3.5
-   - docker.io/kubesphere/pause:3.4.1
    - docker.io/coredns/coredns:1.8.0
-   - docker.io/coredns/coredns:1.8.6
    - docker.io/calico/cni:v3.20.0
    - docker.io/calico/kube-controllers:v3.20.0
    - docker.io/calico/node:v3.20.0
@@ -177,6 +139,7 @@ In KubeKey v2.1.0, we bring in concepts of manifest and artifact, which provides
    - docker.io/kubesphere/ks-console:v3.3.0
    - docker.io/kubesphere/ks-controller-manager:v3.3.0
    - docker.io/kubesphere/kubectl:v1.20.0
+   - docker.io/kubesphere/kubectl:v1.21.0
    - docker.io/kubesphere/kubectl:v1.22.0
    - docker.io/kubesphere/kubefed:v0.8.1
    - docker.io/kubesphere/tower:v0.2.0
@@ -349,7 +312,7 @@ In KubeKey v2.1.0, we bring in concepts of manifest and artifact, which provides
 2. Run the following command to create a configuration file for the air-gapped cluster:
 
    ```bash
-   ./kk create config --with-kubesphere v3.2.1 --with-kubernetes v1.21.5 -f config-sample.yaml
+   ./kk create config --with-kubesphere v3.3.0 --with-kubernetes v1.21.5 -f config-sample.yaml
    ```
 
 3. Run the following command to modify the configuration file:
