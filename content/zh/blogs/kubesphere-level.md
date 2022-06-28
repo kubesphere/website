@@ -89,7 +89,7 @@ spec:
 
 在分级管理体系中，支持等级的无限划分，只需要定义一个中间值，就可以在两个等级之间插入一个新的等级，无需操作其他资源；在对资源进行升降级时，只需要修改对应资源的 `label` 标签，就可以对资源进行升降级操作。当然，在对资源进行升降级的时候，我们需要对资源进行检测，保证升级时，其上层资源的权限等级不得低于目标等级；同时，降级时，其下层资源的权限等级不得高于目标等级。在不满足升降级操作条件时，需要将对应资源也做相应调整才可以。
 
-![](http://pek3b.qingstor.com/kubesphere-community/images/level-xuwei-3.png)
+![](https://pek3b.qingstor.com/kubesphere-community/images/level-xuwei-3.png)
 
 ### 不同层级间 Pod 的网络隔离
 
