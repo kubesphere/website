@@ -186,7 +186,7 @@ spec:
     - node000002
 ```
 
-有关更多信息，请参阅[文件](https://github.com/kubesphere/kubekey/blob/release-1.2/docs/config-example.md)。
+有关更多信息，请参阅[文件](https://github.com/kubesphere/kubekey/blob/release-2.2/docs/config-example.md)。
 
 ### 配置负载均衡器
 

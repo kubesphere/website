@@ -18,7 +18,7 @@ There are several scenarios to use KubeKey:
 
 ## How Does KubeKey Work
 
-After you download KubeKey, you use an executable called `kk` to perform different operations. No matter you use it to create, scale or upgrade a cluster, you must prepare a configuration file using `kk` beforehand. This configuration file contains basic parameters of your cluster, such as host information, network configurations (CNI plugin and Pod and Service CIDR), registry mirrors, add-ons (YAML or Chart) and pluggable component options (if you install KubeSphere). For more information, see [an example configuration file](https://github.com/kubesphere/kubekey/blob/release-1.2/docs/config-example.md).
+After you download KubeKey, you use an executable called `kk` to perform different operations. No matter you use it to create, scale or upgrade a cluster, you must prepare a configuration file using `kk` beforehand. This configuration file contains basic parameters of your cluster, such as host information, network configurations (CNI plugin and Pod and Service CIDR), registry mirrors, add-ons (YAML or Chart) and pluggable component options (if you install KubeSphere). For more information, see [an example configuration file](https://github.com/kubesphere/kubekey/blob/release-2.2/docs/config-example.md).
 
 With the configuration file in place, you execute the `./kk` command with varied flags for different operations. After that, KubeKey automatically installs Docker and pulls all the necessary images for installation. When the installation is complete, you can inspect installation logs.
 

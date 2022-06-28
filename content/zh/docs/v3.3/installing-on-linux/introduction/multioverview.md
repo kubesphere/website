@@ -280,7 +280,7 @@ KubeSphere 会默认安装 [OpenEBS](https://openebs.io/)，为开发和测试�
 {{< notice tip >}}
 
 - 您可以编辑配置文件，启用多集群功能。有关更多信息，请参见[多集群管理](../../../multicluster-management/)。
-- 您也可以选择要安装的组件。有关更多信息，请参见[启用可插拔组件](../../../pluggable-components/)。有关完整的 `config-sample.yaml` 文件的示例，请参见[此文件](https://github.com/kubesphere/kubekey/blob/release-1.2/docs/config-example.md)。
+- 您也可以选择要安装的组件。有关更多信息，请参见[启用可插拔组件](../../../pluggable-components/)。有关完整的 `config-sample.yaml` 文件的示例，请参见[此文件](https://github.com/kubesphere/kubekey/blob/release-2.2/docs/config-example.md)。
 
 {{</ notice >}}
 

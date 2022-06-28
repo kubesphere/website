@@ -222,7 +222,7 @@ spec:
     - node3
 ```
 
-有关完整的配置示例说明，请参见[此文件](https://github.com/kubesphere/kubekey/blob/release-1.2/docs/config-example.md)。
+有关完整的配置示例说明，请参见[此文件](https://github.com/kubesphere/kubekey/blob/release-2.2/docs/config-example.md)。
 
 ### 步骤 4：配置负载均衡器
 
