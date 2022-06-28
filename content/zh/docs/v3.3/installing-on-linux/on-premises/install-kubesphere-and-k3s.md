@@ -133,7 +133,7 @@ chmod +x kk
 
    {{< notice note >}}
 
-   有关配置文件中每个字段的更多信息，请参阅[示例文件](https://github.com/kubesphere/kubekey/blob/release-1.2/docs/config-example.md)。
+   有关配置文件中每个字段的更多信息，请参阅[示例文件](https://github.com/kubesphere/kubekey/blob/release-2.2/docs/config-example.md)。
 
    {{</ notice >}} 
 

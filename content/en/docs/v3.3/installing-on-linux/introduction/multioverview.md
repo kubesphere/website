@@ -288,7 +288,7 @@ KubeKey will install [OpenEBS](https://openebs.io/) to provision [LocalPV](https
 {{< notice tip >}}
 
 - You can enable the multi-cluster feature by editing the configuration file. For more information, see [Multi-cluster Management](../../../multicluster-management/).
-- You can also select the components you want to install. For more information, see [Enable Pluggable Components](../../../pluggable-components/). For an example of a complete `config-sample.yaml` file, see [this file](https://github.com/kubesphere/kubekey/blob/release-1.2/docs/config-example.md).
+- You can also select the components you want to install. For more information, see [Enable Pluggable Components](../../../pluggable-components/). For an example of a complete `config-sample.yaml` file, see [this file](https://github.com/kubesphere/kubekey/blob/release-2.2/docs/config-example.md).
 
 {{</ notice >}}
 

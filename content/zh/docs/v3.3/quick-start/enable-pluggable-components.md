@@ -50,7 +50,7 @@ weight: 2600
 如果采用 [All-in-one 模式安装](../../quick-start/all-in-one-on-linux/)，您无需创建 `config-sample.yaml` 文件，因为 all-in-one 模式可以通过一条命令直接创建集群。通常，all-in-one 模式适用于刚接触 KubeSphere 并希望快速上手该系统的用户。如果要在此模式下启用可插拔组件（例如，出于测试目的），请参考[在安装后启用可插拔组件](#在安装后启用可插拔组件)。
     {{</ notice >}}
 
-2. 在此文件中，将 `enabled` 的值从 `false` 改为 `true`。这是[完整文件](https://github.com/kubesphere/kubekey/blob/release-1.2/docs/config-example.md)供您参考，修改完成后保存文件。
+2. 在此文件中，将 `enabled` 的值从 `false` 改为 `true`。这是[完整文件](https://github.com/kubesphere/kubekey/blob/release-2.2/docs/config-example.md)供您参考，修改完成后保存文件。
 
 3. 使用该配置文件创建集群：
 

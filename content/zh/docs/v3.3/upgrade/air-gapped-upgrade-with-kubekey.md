@@ -188,7 +188,7 @@ chmod +x kk
 
 #### 编辑配置文件
 
-编辑该配置文件 `config-sample.yaml`。请查看[供您参考的示例](https://github.com/kubesphere/kubekey/blob/release-1.2/docs/config-example.md)。
+编辑该配置文件 `config-sample.yaml`。请查看[供您参考的示例](https://github.com/kubesphere/kubekey/blob/release-2.2/docs/config-example.md)。
 
    {{< notice warning >}} 
 
@@ -270,7 +270,7 @@ chmod +x kk
 
 #### 编辑配置文件
 
-编辑该配置文件 `config-sample.yaml`。请查看[供您参考的示例](https://github.com/kubesphere/kubekey/blob/release-1.2/docs/config-example.md)。
+编辑该配置文件 `config-sample.yaml`。请查看[供您参考的示例](https://github.com/kubesphere/kubekey/blob/release-2.2/docs/config-example.md)。
 
    {{< notice warning >}} 
 

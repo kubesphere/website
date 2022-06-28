@@ -115,7 +115,7 @@ Edit `sample.yaml` based on your cluster configuration. Make sure you replace th
 
 {{< notice note >}}
 
-For more information, see [Edit the configuration file](../../installing-on-linux/introduction/multioverview/#2-edit-the-configuration-file) or refer to the `Cluster` section of [the complete configuration file](https://github.com/kubesphere/kubekey/blob/release-1.2/docs/config-example.md) for more information.
+For more information, see [Edit the configuration file](../../installing-on-linux/introduction/multioverview/#2-edit-the-configuration-file) or refer to the `Cluster` section of [the complete configuration file](https://github.com/kubesphere/kubekey/blob/release-2.2/docs/config-example.md) for more information.
 
 {{</ notice >}}
 

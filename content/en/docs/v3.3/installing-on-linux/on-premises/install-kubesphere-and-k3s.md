@@ -131,7 +131,7 @@ chmod +x kk
 
    {{< notice note >}}
 
-   For more information about each field in the configuration file, see [an example file](https://github.com/kubesphere/kubekey/blob/release-1.2/docs/config-example.md).
+   For more information about each field in the configuration file, see [an example file](https://github.com/kubesphere/kubekey/blob/release-2.2/docs/config-example.md).
 
    {{</ notice >}} 
 

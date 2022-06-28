@@ -116,7 +116,7 @@ chmod +x kk
 
 {{< notice note >}}
 
-有关更多信息，请参见[编辑配置文件](../../installing-on-linux/introduction/multioverview/#2-编辑配置文件)，或参考[完整配置文件](https://github.com/kubesphere/kubekey/blob/release-1.2/docs/config-example.md)中的 `Cluster` 部分获取更多信息。
+有关更多信息，请参见[编辑配置文件](../../installing-on-linux/introduction/multioverview/#2-编辑配置文件)，或参考[完整配置文件](https://github.com/kubesphere/kubekey/blob/release-2.2/docs/config-example.md)中的 `Cluster` 部分获取更多信息。
 
 {{</ notice >}}
 

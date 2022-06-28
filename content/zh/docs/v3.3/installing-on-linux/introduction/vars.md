@@ -123,8 +123,8 @@ weight: 3160
 {{< notice note >}}
 
 - \*默认情况下，KubeKey 不会在配置文件中定义这些参数，您可以手动添加这些参数并自定义其值。
-- `addons` 用于安装云原生扩展 (Addon)（YAML 或 Chart）。有关详细信息，请参阅此[文件](https://github.com/kubesphere/kubekey/blob/release-1.2/docs/addons.md)。
-- 此页面仅列出 KubeKey 创建的配置文件中的部分参数。有关其他参数的详细信息，请参阅此[示例文件](https://github.com/kubesphere/kubekey/blob/release-1.2/docs/config-example.md)。
+- `addons` 用于安装云原生扩展 (Addon)（YAML 或 Chart）。有关详细信息，请参阅此[文件](https://github.com/kubesphere/kubekey/blob/release-2.2/docs/addons.md)。
+- 此页面仅列出 KubeKey 创建的配置文件中的部分参数。有关其他参数的详细信息，请参阅此[示例文件](https://github.com/kubesphere/kubekey/blob/release-2.2/docs/config-example.md)。
 
 {{</ notice >}} 
 

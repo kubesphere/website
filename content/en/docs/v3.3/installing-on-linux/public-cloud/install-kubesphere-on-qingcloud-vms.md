@@ -221,7 +221,7 @@ spec:
     - node3
 ```
 
-For a complete configuration sample explanation, see [this file](https://github.com/kubesphere/kubekey/blob/release-1.2/docs/config-example.md).
+For a complete configuration sample explanation, see [this file](https://github.com/kubesphere/kubekey/blob/release-2.2/docs/config-example.md).
 
 ### Step 4: Configure the load balancer
 

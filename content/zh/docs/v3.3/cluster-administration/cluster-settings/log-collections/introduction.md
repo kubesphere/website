@@ -43,9 +43,9 @@ KubeSphere 提供灵活的日志接收器配置方式。基于 [FluentBit Operat
 
 ### 添加 Elasticsearch 作为日志接收器
 
-如果 [ClusterConfiguration](https://github.com/kubesphere/kubekey/blob/release-1.2/docs/config-example.md) 中启用了 `logging`、`events` 或 `auditing`，则会添加默认的 Elasticsearch 接收器，服务地址会设为 Elasticsearch 集群。
+如果 [ClusterConfiguration](https://github.com/kubesphere/kubekey/blob/release-2.2/docs/config-example.md) 中启用了 `logging`、`events` 或 `auditing`，则会添加默认的 Elasticsearch 接收器，服务地址会设为 Elasticsearch 集群。
 
-当  `logging`、`events` 或 `auditing` 启用时，如果 [ClusterConfiguration](https://github.com/kubesphere/kubekey/blob/release-1.2/docs/config-example.md) 中未指定 `externalElasticsearchUrl` 和 `externalElasticsearchPort`，则内置 Elasticsearch 集群会部署至 Kubernetes 集群。内置 Elasticsearch 集群仅用于测试和开发。生产环境下，建议您集成外置 Elasticsearch 集群。
+当  `logging`、`events` 或 `auditing` 启用时，如果 [ClusterConfiguration](https://github.com/kubesphere/kubekey/blob/release-2.2/docs/config-example.md) 中未指定 `externalElasticsearchUrl` 和 `externalElasticsearchPort`，则内置 Elasticsearch 集群会部署至 Kubernetes 集群。内置 Elasticsearch 集群仅用于测试和开发。生产环境下，建议您集成外置 Elasticsearch 集群。
 
 日志查询需要依靠所配置的内置或外置 Elasticsearch 集群。
 
@@ -61,7 +61,7 @@ Kafka 往往用于接收日志，并作为 Spark 等处理系统的代理 (Broke
 
 ## 为资源事件或审计日志添加日志接收器
 
-自 KubeSphere v3.0.0 起，资源事件和审计日志可以通过和容器日志相同的方式进行存档。如果在 [ClusterConfiguration](https://github.com/kubesphere/kubekey/blob/release-1.2/docs/config-example.md) 中启用了 `events` 或 `auditing`，**日志接收器**页面会对应显示**资源事件**或**审计日志**选项卡。您可以前往对应选项卡为资源事件或审计日志配置日志接收器。
+自 KubeSphere v3.0.0 起，资源事件和审计日志可以通过和容器日志相同的方式进行存档。如果在 [ClusterConfiguration](https://github.com/kubesphere/kubekey/blob/release-2.2/docs/config-example.md) 中启用了 `events` 或 `auditing`，**日志接收器**页面会对应显示**资源事件**或**审计日志**选项卡。您可以前往对应选项卡为资源事件或审计日志配置日志接收器。
 
 容器日志、资源事件和审计日志应存储在不同的 Elasticsearch 索引中以便在 KubeSphere 中进行搜索。系统以`<索引前缀>-<年-月-日>`格式自动生成索引。
 
