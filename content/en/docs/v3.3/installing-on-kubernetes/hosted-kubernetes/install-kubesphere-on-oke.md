@@ -76,7 +76,7 @@ This guide walks you through the steps of deploying KubeSphere on [Oracle Kubern
 - Inspect the logs of installation:
 
   ```bash
-  kubectl logs -n kubesphere-system $(kubectl get pod -n kubesphere-system -l app=ks-installer -o jsonpath='{.items[0].metadata.name}') -f
+  kubectl logs -n kubesphere-system $(kubectl get pod -n kubesphere-system -l 'app in (ks-install, ks-installer)' -o jsonpath='{.items[0].metadata.name}') -f
   ```
 
 - When the installation finishes, you can see the following message:

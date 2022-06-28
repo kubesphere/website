@@ -119,7 +119,7 @@ chmod +x kk
 1. 指定您想要安装的 Kubernetes 版本和 KubeSphere 版本，例如：
 
    ```bash
-   ./kk create config --with-kubernetes v1.21.5 --with-kubesphere v3.3.0
+   ./kk create config --with-kubernetes v1.22.10 --with-kubesphere v3.3.0
    ```
 
    {{< notice note >}}
@@ -197,7 +197,7 @@ chmod +x kk
 5. 安装完成后，可以使用以下命令检查安装日志：
 
    ```bash
-   kubectl logs -n kubesphere-system $(kubectl get pod -n kubesphere-system -l app=ks-installer -o jsonpath='{.items[0].metadata.name}') -f
+   kubectl logs -n kubesphere-system $(kubectl get pod -n kubesphere-system -l 'app in (ks-install, ks-installer)' -o jsonpath='{.items[0].metadata.name}') -f
    ```
 
    预期输出：

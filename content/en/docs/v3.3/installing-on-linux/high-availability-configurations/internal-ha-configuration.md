@@ -74,10 +74,10 @@ Make `kk` executable:
 chmod +x kk
 ```
 
-Create an example configuration file with default configurations. Here Kubernetes v1.21.5 is used as an example.
+Create an example configuration file with default configurations. Here Kubernetes v1.22.10 is used as an example.
 
 ```bash
-./kk create config --with-kubesphere v3.3.0 --with-kubernetes v1.21.5
+./kk create config --with-kubesphere v3.3.0 --with-kubernetes v1.22.10
 ```
 
 {{< notice note >}}
@@ -170,7 +170,7 @@ After you complete the configuration, run the following command to start install
 1. Run the following command to inspect the logs of installation.
 
    ```bash
-   kubectl logs -n kubesphere-system $(kubectl get pod -n kubesphere-system -l app=ks-installer -o jsonpath='{.items[0].metadata.name}') -f
+   kubectl logs -n kubesphere-system $(kubectl get pod -n kubesphere-system -l 'app in (ks-install, ks-installer)' -o jsonpath='{.items[0].metadata.name}') -f
    ```
 
 2. When you see the following message, it means your HA cluster is successfully created.

@@ -248,7 +248,7 @@ chmod +x kk
 创建安装有 KubeSphere 的 Kubernetes 集群（例如使用 `--with-kubesphere v3.3.0`）：
 
 ```bash
-./kk create config --with-kubernetes v1.21.5 --with-kubesphere v3.3.0
+./kk create config --with-kubernetes v1.22.10 --with-kubesphere v3.3.0
 ```
 
 {{< notice note >}} 
@@ -300,7 +300,7 @@ spec:
 安装结束后，您可以执行以下命令查看安装日志：
 
 ```bash
-kubectl logs -n kubesphere-system $(kubectl get pod -n kubesphere-system -l app=ks-installer -o jsonpath='{.items[0].metadata.name}') -f
+kubectl logs -n kubesphere-system $(kubectl get pod -n kubesphere-system -l 'app in (ks-install, ks-installer)' -o jsonpath='{.items[0].metadata.name}') -f
 ```
 
 如果返回欢迎日志，则安装成功。

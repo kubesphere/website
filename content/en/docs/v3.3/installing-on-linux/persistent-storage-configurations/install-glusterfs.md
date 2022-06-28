@@ -165,7 +165,7 @@ chmod +x kk
 1. Specify a Kubernetes version and a KubeSphere version that you want to install. For example:
 
    ```bash
-   ./kk create config --with-kubernetes v1.21.5 --with-kubesphere v3.3.0
+   ./kk create config --with-kubernetes v1.22.10 --with-kubesphere v3.3.0
    ```
 
    {{< notice note >}}
@@ -236,7 +236,7 @@ chmod +x kk
 5. When the installation finishes, you can inspect installation logs with the following command:
 
    ```bash
-   kubectl logs -n kubesphere-system $(kubectl get pod -n kubesphere-system -l app=ks-installer -o jsonpath='{.items[0].metadata.name}') -f
+   kubectl logs -n kubesphere-system $(kubectl get pod -n kubesphere-system -l 'app in (ks-install, ks-installer)' -o jsonpath='{.items[0].metadata.name}') -f
    ```
 
    Expected output:

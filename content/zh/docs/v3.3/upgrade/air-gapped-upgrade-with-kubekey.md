@@ -177,7 +177,7 @@ chmod +x kk
 例如：
 
 ```bash
-./kk create config --with-kubernetes v1.21.5 --with-kubesphere v3.3.0 -f config-sample.yaml
+./kk create config --with-kubernetes v1.22.10 --with-kubesphere v3.3.0 -f config-sample.yaml
 ```
 
 {{< notice note >}}
@@ -218,7 +218,7 @@ chmod +x kk
     privateRegistry: dockerhub.kubekey.local
 ```
 
-#### 将单节点集群升级至 KubeSphere 3.3.0 和 Kubernetes v1.21.5
+#### 将单节点集群升级至 KubeSphere 3.3.0 和 Kubernetes v1.22.10
 
 ```bash
 ./kk upgrade -f config-sample.yaml
@@ -259,7 +259,7 @@ chmod +x kk
 例如：
 
 ```bash
-./kk create config --with-kubernetes v1.21.5 --with-kubesphere v3.3.0 -f config-sample.yaml
+./kk create config --with-kubernetes v1.22.10 --with-kubesphere v3.3.0 -f config-sample.yaml
 ```
 
 {{< notice note >}}
@@ -302,7 +302,7 @@ chmod +x kk
     privateRegistry: dockerhub.kubekey.local
 ```
 
-#### 将多节点集群升级至 KubeSphere 3.3.0 和 Kubernetes v1.21.5
+#### 将多节点集群升级至 KubeSphere 3.3.0 和 Kubernetes v1.22.10
 
 ```bash
 ./kk upgrade -f config-sample.yaml

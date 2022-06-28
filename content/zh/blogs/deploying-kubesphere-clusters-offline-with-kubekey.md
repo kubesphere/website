@@ -280,7 +280,7 @@ $ wget https://github.com/kubesphere/kubekey/releases/download/v2.0.0-rc.3/kubek
 ### 2. 创建离线集群配置文件
 
 ```bash
-$./kk create config --with-kubesphere v3.2.1 --with-kubernetes v1.21.5 -f config-sample.yaml
+$./kk create config --with-kubesphere v3.2.1 --with-kubernetes v1.22.10 -f config-sample.yaml
 ```
 
 ### 3. 修改配置文件

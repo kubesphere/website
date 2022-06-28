@@ -138,7 +138,7 @@ aws-cli/2.1.2 Python/3.7.3 Linux/4.18.0-193.6.3.el8_2.x86_64 exe/x86_64.centos.8
 - 检查安装日志：
 
   ```bash
-  kubectl logs -n kubesphere-system $(kubectl get pod -n kubesphere-system -l app=ks-installer -o jsonpath='{.items[0].metadata.name}') -f
+  kubectl logs -n kubesphere-system $(kubectl get pod -n kubesphere-system -l 'app in (ks-install, ks-installer)' -o jsonpath='{.items[0].metadata.name}') -f
   ```
 
 - 安装完成后，您会看到以下消息：

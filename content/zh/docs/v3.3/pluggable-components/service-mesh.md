@@ -112,7 +112,7 @@ KubeSphere 服务网格基于 [Istio](https://istio.io/)，将微服务治理和
 5. 在 kubectl 中执行以下命令检查安装过程：
 
     ```bash
-    kubectl logs -n kubesphere-system $(kubectl get pod -n kubesphere-system -l app=ks-installer -o jsonpath='{.items[0].metadata.name}') -f
+    kubectl logs -n kubesphere-system $(kubectl get pod -n kubesphere-system -l 'app in (ks-install, ks-installer)' -o jsonpath='{.items[0].metadata.name}') -f
     ```
 
     {{< notice note >}}
