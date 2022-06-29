@@ -1,7 +1,7 @@
 ---
 title: '基于 KubeSphere 的分级管理实践'
 tag: 'KubeSphere'
-keywords: 'KubeSphere, 分级管理, level'
+keywords: 'KubeSphere, 分级管理'
 description: '我们在 KubeSphere 的基础上进行了改造，以适应租户与资源之间和资源与资源之间的分级管理，同时在项目的网络策略中，增加黑名单和白名单策略，增强了项目间的网络隔离，让资源的管理更安全。'
 createTime: '2022-06-22'
 author: '许伟'
