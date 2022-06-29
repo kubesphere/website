@@ -10,29 +10,62 @@ section1:
 
 section2:
   image: /images/live/cloudnative-live-banner.png
-  url: ./headingdata0616-live/
+  url: ./gpu0623-live/
 
   notice:
-    title: 浅析 Kubernetes 对 GPU 虚拟化、池化技术的集成
+    title: KubeSphere 3.3.0 社区交流会
     tag: 预告
-    time: 2022 年 06 月 23 日晚 8 点
+    time: 2022 年 06 月 30 日晚 8 点
     base: 线上
-    url: ./gpu0623-live/
+    url: ./kubesphere-v3.3.0-live/
 
   over:
     title: Apache Pulsar x KubeSphere 在线 Meetup 
-    tag: 预告
-    time: 2022 年 06 月 25 日晚 8 点
-    base: 线上
+    tag: 结束
     url: ./pulsar-kubesphere-meetup0625/
 
 section3:
   videos:
+    - title: 云原生数据工厂- 中海庭数字化转型之路
+      link: ./0625-headingdata/
+      snapshot: https://pek3b.qingstor.com/kubesphere-community/images/pulsar-kubesphere-meetup-liuxu-cover.png
+      type: iframe
+      createTime: 2022.06.25
+      group: Meetup
+
+    - title: 使用 KubeSphere & CoreDNS 搭建云原生 DNS
+      link: ./0625-dns/
+      snapshot: https://pek3b.qingstor.com/kubesphere-community/images/pulsar-kubesphere-meetup-ma-cover.png
+      type: iframe
+      createTime: 2022.06.25
+      group: Meetup
+
+    - title: KubeSphere x Apache Pulsar 实战部署
+      link: ./0625-pulsar-kubesphere/
+      snapshot: https://pek3b.qingstor.com/kubesphere-community/images/pulsar-kubesphere-meetup-xu-cover.png
+      type: iframe
+      createTime: 2022.06.25
+      group: Meetup
+
+    - title: Apache Pulsar 云原生消息队列架构解析
+      link: ./0625-pulsar/
+      snapshot: https://pek3b.qingstor.com/kubesphere-community/images/pulsar-kubesphere-meetup-liu-cover.png
+      type: iframe
+      createTime: 2022.06.25
+      group: Meetup
+
+    - title: 浅析 Kubernetes 对 GPU 虚拟化、池化技术的集成
+      link: ./gpu0623-live/
+      snapshot: https://pek3b.qingstor.com/kubesphere-community/images/gpu0623-live-cover.png
+      type: iframe
+      createTime: 2022.06.23
+      group: 直播回放
+
     - title: 云原生数据工厂——中海庭数字化转型之路
       link: ./headingdata0616-live/
       snapshot: https://pek3b.qingstor.com/kubesphere-community/images/headingdata0616-live-cover.png
       type: iframe
-      createTime: 2022.06.09
+      createTime: 2022.06.16
       group: 直播回放
 
     - title: 初探 KubeSphere x Apache Pulsar —— 打造云原生分布式消息流平台
@@ -667,6 +700,9 @@ section4:
 
     - year: 2022
       meetup: 
+        - place: 在线 Meetup（06.25）
+          img: https://pek3b.qingstor.com/kubesphere-community/images/pulsar-kubesphere-meetup-cover.png
+          meetupUrl: https://kubesphere.com.cn/live/pulsar-kubesphere-meetup0625/
 
         - place: 成都站（05.14）
           img: https://pek3b.qingstor.com/kubesphere-community/images/cloudnative-chengdu-20220514-cover.png
@@ -675,7 +711,7 @@ section4:
         - place: 长沙站（03.12）
           img: https://pek3b.qingstor.com/kubesphere-community/images/meetup-changsha-20220312-cover.png
           meetupUrl: https://kubesphere.com.cn/live/meetup-changsha-20220312/
-  
+
 section5:
   title: 分享您的主题
   content: 您是否也想在社区分享您的云原生实践经验？即可加入 KubeSphere 社区云原生直播计划，提交分享主题，将有 KubeSphere 周边礼品相送！最重要的是您可以：提升自身软实力，如演讲能力、总结能力；提高自身在云原生领域的知名度；展现企业的技术实力及优秀想法；帮助推广您社区开源的项目。

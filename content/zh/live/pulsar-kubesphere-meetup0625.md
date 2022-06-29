@@ -36,11 +36,15 @@ section1:
 3. Apache Pulsar 如何扩缩容和自动故障转移；
 4. Apache Pulsar 社区案例介绍。
 
+<iframe width="760" height="380" src="https://player.bilibili.com/player.html?aid=600408109&bvid=BV1MB4y1W7Lr&cid=758099463&page=1&high_quality=1" scrolling="no" border="0" frameborder="no" framespacing="0" allowfullscreen="true"> </iframe>
+
 ### 议题二：使用 KubeSphere & CoreDNS 搭建云原生 DNS
 
 分享嘉宾：马伟，青云科技，容器技术顾问。
 
 分享概要：CoreDNS 是一个出色的云原生开源 DNS 服务器，提供 Kubernetes 服务发现和 DNS 服务器功能。KubeSphere 是一个开源的容器混合云，提供全生命周期的 Kubernetes 容器应用管理。本次演讲将分享如何结合 KubeSphere 和 CoreDNS 搭建一个云原生的 DNS 系统，实现统一配置，监控运维。
+
+<iframe width="760" height="380" src="https://player.bilibili.com/player.html?aid=642935218&bvid=BV1HY4y1n7PV&cid=758124588&page=1&high_quality=1" scrolling="no" border="0" frameborder="no" framespacing="0" allowfullscreen="true"> </iframe>
 
 ### 议题三：：KubeSphere x Apache Pulsar 实战部署
 
@@ -51,6 +55,8 @@ section1:
 2. Apache Pulsar 介绍；
 3. Apache Pulsar 在 KubeSphere 上的安装流程；
 4. Apache Pulsar 在 KubeSphere 上的基本使用操作。
+
+<iframe width="760" height="380" src="https://player.bilibili.com/player.html?aid=257994185&bvid=BV1Ja411X7Ls&cid=758125825&page=1&high_quality=1" scrolling="no" border="0" frameborder="no" framespacing="0" allowfullscreen="true"> </iframe>
 
 ### 议题四：云原生数据工厂- 中海庭数字化转型之路
 
@@ -65,6 +71,8 @@ section1:
 3. 云原生实践；
 4. 总结与展望。
 
+<iframe width="760" height="380" src="https://player.bilibili.com/player.html?aid=427959522&bvid=BV15G411x7oi&cid=758122437&page=1&high_quality=1" scrolling="no" border="0" frameborder="no" framespacing="0" allowfullscreen="true"> </iframe>
+
 ## 活动详情
 
 **主办方：StreamNative、KubeSphere**
@@ -77,4 +85,6 @@ section1:
 
 报名链接：https://meeting.tencent.com/dw/9iliuLGaXxDm
 
-报名方式：扫描海报中的二维码
+## PPT 下载
+
+可扫描官网底部二维码，关注 「KubeSphere云原生」公众号，后台回复 `20220625` 即可下载 PPT。
