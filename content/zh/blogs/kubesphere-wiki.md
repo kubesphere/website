@@ -1,7 +1,7 @@
 ---
 title: '在 KubeSphere 部署 Wiki 系统 wiki.js 并启用中文全文检索'
 tag: 'KubeSphere'
-keywords: 'KubeSphere, wiki, wiki.js'
+keywords: 'KubeSphere, wiki, wiki.js, Kubernetes, 云原生'
 description: ' Wiki 写作、分享、权限管理功能还是有的，胜在 UI 设计很漂亮，能满足小团队的基本知识管理需求。以下工作是在 KubeSphere 3.2.1 + Helm 3 已经部署好的情况下进行的。'
 createTime: '2022-06-24'
 author: 'scwang18'
