@@ -310,20 +310,20 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 <footer>
     <div class="down-main">
         <div class='img-div'>
-            <a class='wechat' href="javascript:void(0);">
+            <a class='wechat' href="javascript:void(0);" aria-label="wechat">
                 {{ "/static/images/footer/wechat.svg" | readFile | safeHTML }}
                 <div class="hide-div">
                     <p>Follow the official account</p>
                     <img src="/images/footer/wechat_code.svg" alt="">
                 </div>
             </a>
-            <a class='facebook-a' href="https://www.facebook.com/kubesphere" target="_blank"></a>
-            <a class='twitter-a' href="{{ .Site.Params.twitterLink }}" target="_blank" rel="noopener noreferrer"></a>
-            <a class='linkedin-a' href="{{ .Site.Params.linkedinLink }}" target="_blank" rel="noopener noreferrer"></a>
-            <a class='youtube-a' href="{{ .Site.Params.youtubeLink }}" target="_blank" rel="noopener noreferrer"></a>
-            <a class='slack-a' href="{{ .Site.Params.slackLink }}" target="_blank" rel="noopener noreferrer"></a>
-            <a class='github-a' href="{{ .Site.Params.githubLink }}" target="_blank" rel="noopener noreferrer"></a>
-            <a class='medium-a' href="{{ .Site.Params.mediumLink }}" target="_blank" rel="noopener noreferrer"></a>
+            <a class='facebook-a' href="https://www.facebook.com/kubesphere" target="_blank" aria-label="facebook"></a>
+            <a class='twitter-a' href="{{ .Site.Params.twitterLink }}" target="_blank" rel="noopener noreferrer" aria-label="twitter"></a>
+            <a class='linkedin-a' href="{{ .Site.Params.linkedinLink }}" target="_blank" rel="noopener noreferrer" aria-label="linkedin"></a>
+            <a class='youtube-a' href="{{ .Site.Params.youtubeLink }}" target="_blank" rel="noopener noreferrer" aria-label="youtube"></a>
+            <a class='slack-a' href="{{ .Site.Params.slackLink }}" target="_blank" rel="noopener noreferrer" aria-label="slack"></a>
+            <a class='github-a' href="{{ .Site.Params.githubLink }}" target="_blank" rel="noopener noreferrer" aria-label="github"></a>
+            <a class='medium-a' href="{{ .Site.Params.mediumLink }}" target="_blank" rel="noopener noreferrer" aria-label="medium"></a>
         </div>
         <p class='p1'>{{ i18n "KubeSphere®️ 2022 All Rights Reserved." }}</p>
     </div>
