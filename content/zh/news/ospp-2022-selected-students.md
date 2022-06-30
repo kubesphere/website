@@ -35,7 +35,7 @@ image: 'https://pek3b.qingstor.com/kubesphere-community/images/ospp-2022-selecte
 
 ## 中选学生简介
 
-![](http://pek3b.qingstor.com/kubesphere-community/images/ospp-2022-selected-students-post.png)
+![](https://pek3b.qingstor.com/kubesphere-community/images/ospp-2022-selected-students-post.png)
 
 祝贺以上 6 位同学中选！社区已经给每位同学邮寄了社区周边礼品表示祝贺！
 
