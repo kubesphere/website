@@ -279,6 +279,10 @@
   background-color: #f6f8fa;
 }
 
+.md-body table thead tr th:last-of-type{
+  min-width: 40px;
+}
+
 .md-body table img {
   background-color: transparent;
 }
