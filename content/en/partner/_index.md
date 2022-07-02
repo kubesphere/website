@@ -95,4 +95,8 @@ section4:
     - icon: "images/partner/jihu.svg"
       partnerType: "App provider"
       content: 'JiHu GitLab is an out-of-the-box, open DevOps platform built from the ground up as a single application for all stages of the DevOps lifecycle. This enables Product, Development, QA, Security, and Operations teams to work concurrently on the same project.'
+
+    - icon: "images/partner/Cloudview-logo.png"
+      partnerType: "Technology"
+      content: 'Cloudview is a cloud computing platform that provides IaaS-PaaS-based flexible cloud services.'   
 ---
