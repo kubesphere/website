@@ -10,22 +10,29 @@ section1:
 
 section2:
   image: /images/live/cloudnative-live-banner.png
-  url: ./gpu0623-live/
+  url: ./kubesphere-v3.3.0-live/
 
   notice:
-    title: KubeSphere 3.3.0 社区交流会
+    title: 当 KubeSphere 遇上最先进的开源数据库 PostgreSQL
     tag: 预告
-    time: 2022 年 06 月 30 日晚 8 点
+    time: 2022 年 07 月 07 日晚 8 点
     base: 线上
-    url: ./kubesphere-v3.3.0-live/
+    url: ./pg0707-live/
 
   over:
-    title: Apache Pulsar x KubeSphere 在线 Meetup 
+    title: 浅析 Kubernetes 对 GPU 虚拟化、池化技术的集成
     tag: 结束
-    url: ./pulsar-kubesphere-meetup0625/
+    url: ./gpu0623-live/
 
 section3:
   videos:
+    - title: KubeSphere 3.3.0 社区交流会
+      link: ./kubesphere-v3.3.0-live/
+      snapshot: https://pek3b.qingstor.com/kubesphere-community/images/kubesphere-v3.3.0-live-cover.png
+      type: iframe
+      createTime: 2022.06.30
+      group: 直播回放
+
     - title: 云原生数据工厂- 中海庭数字化转型之路
       link: ./0625-headingdata/
       snapshot: https://pek3b.qingstor.com/kubesphere-community/images/pulsar-kubesphere-meetup-liuxu-cover.png
