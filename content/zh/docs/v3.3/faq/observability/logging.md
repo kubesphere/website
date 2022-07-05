@@ -85,7 +85,9 @@ weight: 16310
 
 KubeSphere 暂不支持启用 X-Pack Security 的 Elasticsearch 集成，此功能即将推出。
 
-## 如何修改日志数据保留期限
+## 如何设置审计、事件、日志及 Istio 日志信息的保留期限
+
+在 KubeSphere v3.3.0 之前的版本，您只能修改日志的保存期限（默认为 7 天）。除了日志外，KubeSphere v3.3.0 还支持您设置审计、事件及 Istio 日志信息的保留期限。
 
 您需要更新 KubeKey 配置并重新运行 `ks-installer`。
 
@@ -95,7 +97,7 @@ KubeSphere 暂不支持启用 X-Pack Security 的 Elasticsearch 集成，此功�
    kubectl edit cc -n kubesphere-system ks-installer
    ```
 
-2. 将 `status.logging` 的注释取消，将 `es.logMaxAge` 的值设置为所需保留期限（默认为 7 天）。
+2. 在 YAML 文件中，如果您只想修改日志的保存期限，可以直接修改 `logMaxAge` 的默认值。如果您想设置审计、事件及 Istio 日志信息的保留期限，需要添加参数 `auditingMaxAge`、`eventMaxAge` 和 `istioMaxAge`，并分别设置它们的保存期限，如下例所示：
 
    ```yaml
    apiVersion: installer.kubesphere.io/v1alpha1
@@ -107,15 +109,12 @@ KubeSphere 暂不支持启用 X-Pack Security 的 Elasticsearch 集成，此功�
    spec:
      ...
      common:
-       es:
+       es:   # Storage backend for logging, events and auditing.
          ...
-         logMaxAge: <7>
-     ...
-   status:
-     ...
-     # logging:
-     #  enabledTime: 2020-08-10T02:05:13UTC
-     #  status: enabled
+         logMaxAge: 7             # Log retention time in built-in Elasticsearch. It is 7 days by default.
+         auditingMaxAge: 2
+         eventMaxAge: 1
+         istioMaxAge: 4
      ...
    ```
 

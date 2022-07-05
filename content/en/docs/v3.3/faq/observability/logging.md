@@ -10,7 +10,7 @@ This page contains some of the frequently asked questions about logging.
 
 - [How to change the log store to the external Elasticsearch and shut down the internal Elasticsearch](#how-to-change-the-log-store-to-the-external-elasticsearch-and-shut-down-the-internal-elasticsearch)
 - [How to change the log store to Elasticsearch with X-Pack Security enabled](#how-to-change-the-log-store-to-elasticsearch-with-x-pack-security-enabled)
-- [How to modify the log data retention period](#how-to-modify-the-log-data-retention-period)
+- [How to set the data retention period of logs, events, auditing logs, and Istio logs](#how-to-set-the-data-retention-period-of-logs-events-auditing-logs-and-istio-logs)
 - [I cannot find logs from workloads on some nodes using Toolbox](#i-cannot-find-logs-from-workloads-on-some-nodes-using-toolbox)
 - [The log search page in Toolbox gets stuck when loading](#the-log-search-page-in-toolbox-gets-stuck-when-loading)
 - [Toolbox shows no log record today](#toolbox-shows-no-log-record-today)
@@ -84,7 +84,9 @@ If you are using the KubeSphere internal Elasticsearch and want to change it to 
 
 Currently, KubeSphere doesn't support the integration of Elasticsearch with X-Pack Security enabled. This feature is coming soon.
 
-## How to modify the log data retention period
+## How to set the data retention period of logs, events, auditing logs, and Istio logs
+
+Before KubeSphere v3.3.0, you can only set the retention period of logs, which is 7 days by default. In KubeSphere v3.3.0, apart from logs, you can also set the data retention period of events, auditing logs, and Istio logs.
 
 You need to update the KubeKey configuration and rerun `ks-installer`.
 
@@ -94,7 +96,8 @@ You need to update the KubeKey configuration and rerun `ks-installer`.
    kubectl edit cc -n kubesphere-system ks-installer
    ```
 
-2. Comment out `status.logging` and set a desired retention period as the value of  `es.logMaxAge` (`7` by default).
+2. In the YAML file, if you only want to change the retention period of logs, you can directly change the default value of `logMaxAge` to a desired one. If you want to set the retention period of events, auditing logs, and Istio logs, you need to add parameters `auditingMaxAge`, `eventMaxAge`, and `istioMaxAge` and set a value for them, respectively, as shown in the following example:
+  
 
    ```yaml
    apiVersion: installer.kubesphere.io/v1alpha1
@@ -106,15 +109,12 @@ You need to update the KubeKey configuration and rerun `ks-installer`.
    spec:
      ...
      common:
-       es:
+       es:   # Storage backend for logging, events and auditing.
          ...
-         logMaxAge: <7>
-     ...
-   status:
-     ...
-     # logging:
-     #  enabledTime: 2020-08-10T02:05:13UTC
-     #  status: enabled
+         logMaxAge: 7             # Log retention time in built-in Elasticsearch. It is 7 days by default.
+         auditingMaxAge: 2
+         eventMaxAge: 1
+         istioMaxAge: 4
      ...
    ```
 
