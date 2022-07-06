@@ -117,8 +117,6 @@ KubeSphere 集成了 [OpenPitrix](https://github.com/openpitrix/openpitrix)（�
 
 1. 登出控制台，然后以 `isv` 身份重新登录 KubeSphere。转到您的企业空间，点击**应用模板**页面上的 Redis。在详情页面上展开版本菜单，然后点击**发布到商店**。在弹出的提示框中，点击**确定**以确认操作。
 
-   ![应用模板页面](/images/docs/v3.3/zh-cn/appstore/application-lifecycle-management/app-templates-page-21.PNG)
-
 2. 在**应用发布**下，您可以查看应用状态。**已上架**意味着它在应用商店中可用。
 
 3. 点击**在商店查看**转到应用商店的**应用信息**页面，或者点击左上角的**应用商店**也可以查看该应用。

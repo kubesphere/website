@@ -14,7 +14,7 @@ weight: 11450
 
 ## 准备工作
 
-- 准备一个[启用 KuberSphere DevOps 系统](../../../../docs/pluggable-components/devops/)。
+- 准备一个[启用 KuberSphere DevOps 系统](../../../pluggable-components/devops/)。
 
 - 准备一个 [Nexus 实例](https://help.sonatype.com/repomanager3/installation)。
 

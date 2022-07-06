@@ -14,7 +14,7 @@ weight: 14293
 
 应用商店 RadonDB MySQL 的版本为 v1.0.0，已不再维护。
 
-推荐您选用最新版 RadonDB MySQL，相关部署说明请参见[部署 RadonDB MySQL Operator 和集群](../external-apps/deploy-radondb-mysql/)。
+推荐您选用最新版 RadonDB MySQL，相关部署说明请参见[部署 RadonDB MySQL Operator 和集群](../../external-apps/deploy-radondb-mysql/)。
 
 {{</ notice >}}
 

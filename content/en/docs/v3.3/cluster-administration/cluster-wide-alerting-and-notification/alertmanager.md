@@ -34,4 +34,4 @@ This is not convenient for Kubernetes users and it breaks the multi-tenant princ
 
 To use Alertmanager to manage alerts on the platform, KubeSphere offers [Notification Manager](https://github.com/kubesphere/notification-manager), a Kubernetes native notification management tool, which is completely open source. It complies with the multi-tenancy principle, providing user-friendly experiences of Kubernetes notifications. It's installed by default in KubeSphere v3.0 and above.
 
-For more details about using Notification Manager to receive Alertmanager notifications, refer to [Notification Manager](../notification-manager/).
+For more details about using Notification Manager to receive Alertmanager notifications, refer to [Notification Manager](https://github.com/kubesphere/notification-manager).

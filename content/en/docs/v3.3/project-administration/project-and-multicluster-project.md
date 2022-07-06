@@ -14,7 +14,7 @@ This tutorial demonstrates how to manage projects and multi-cluster projects.
 
 ## Prerequisites
 
-- You need to create a workspace and a user (`project-admin`). The user must be invited to the workspace with the role of `workspace-self-provisioner`. For more information, see [Create Workspaces, Projects, Users and Roles](../../../docs/quick-start/create-workspace-and-project/).
+- You need to create a workspace and a user (`project-admin`). The user must be invited to the workspace with the role of `workspace-self-provisioner`. For more information, see [Create Workspaces, Projects, Users and Roles](../../quick-start/create-workspace-and-project/).
 - You must enable the multi-cluster feature through [Direction Connection](../../multicluster-management/enable-multicluster/direct-connection/) or [Agent Connection](../../multicluster-management/enable-multicluster/agent-connection/) before you create a multi-cluster project.
 
 ## Projects

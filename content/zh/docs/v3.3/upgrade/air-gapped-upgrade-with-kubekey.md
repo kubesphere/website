@@ -47,11 +47,42 @@ weight: 7400
 
 ### 步骤 1：下载 KubeKey
 
-与在 Linux 上在线安装 KubeSphere 相似，您需要事先[下载 KubeKey v2.2.1](https://github.com/kubesphere/kubekey/releases)。下载 `tar.gz` 文件，将它传输到充当任务机的本地机器上进行安装。解压文件后，执行以下命令，使 `kk` 可执行：
+1. 执行以下命令下载 KubeKey v2.2.1 并解压：
 
-```bash
-chmod +x kk
-```
+   {{< tabs >}}
+
+   {{< tab "如果您能正常访问 GitHub/Googleapis" >}}
+
+   从 [GitHub Release Page](https://github.com/kubesphere/kubekey/releases) 下载 KubeKey 或者直接运行以下命令。
+
+   ```bash
+   curl -sfL https://get-kk.kubesphere.io | VERSION=v2.2.1 sh -
+   ```
+
+   {{</ tab >}}
+
+   {{< tab "如果您访问 GitHub/Googleapis 受限" >}}
+
+   首先运行以下命令，以确保您从正确的区域下载 KubeKey。
+
+   ```bash
+   export KKZONE=cn
+   ```
+
+   运行以下命令来下载 KubeKey：
+
+   ```bash
+   curl -sfL https://get-kk.kubesphere.io | VERSION=v2.2.1 sh -
+   ```
+   {{</ tab >}}
+
+   {{</ tabs >}}
+
+2. 解压文件后，执行以下命令，使 `kk` 可执行：
+
+   ```bash
+   chmod +x kk
+   ```
 
 ### 步骤 2：准备安装镜像
 
@@ -102,13 +133,13 @@ chmod +x kk
 5. 下载 Kubernetes 二进制文件。
 
    ```bash
-   ./offline-installation-tool.sh -b -v v1.21.5 
+   ./offline-installation-tool.sh -b -v v1.22.10 
    ```
 
    如果您无法访问 Google 的对象存储服务，请运行以下命令添加环境变量以变更来源。
 
    ```bash
-   export KKZONE=cn;./offline-installation-tool.sh -b -v v1.21.5 
+   export KKZONE=cn;./offline-installation-tool.sh -b -v v1.22.10 
    ```
 
    {{< notice note >}}
@@ -160,7 +191,7 @@ chmod +x kk
 |        | Kubernetes | KubeSphere |
 | ------ | ---------- | ---------- |
 | 升级前 | v1.18.6    | v3.2.x     |
-| 升级后 | v1.21.5    | 3.3.0     |
+| 升级后 | v1.22.10    | 3.3.0     |
 
 #### 升级集群
 
@@ -242,7 +273,7 @@ chmod +x kk
 |        | Kubernetes | KubeSphere |
 | ------ | ---------- | ---------- |
 | 升级前 | v1.18.6   | v3.2.x     |
-| 升级后 | v1.21.5    | 3.3.0     |
+| 升级后 | v1.22.10    | 3.3.0     |
 
 #### 升级集群
 

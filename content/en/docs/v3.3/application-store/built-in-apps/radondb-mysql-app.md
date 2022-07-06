@@ -14,7 +14,7 @@ This tutorial demonstrates how to deploy RadonDB MySQL from the App Store of Kub
 
 The version of RadonDB MySQL in **App Store** is v1.0.0, and is no longer maintained.
 
-We recommend you to use the latest version of RadonDB MySQL. For deployment instructions, please refer to [Deploy RadonDB MySQL Operator and Cluster](../external-apps/deploy-radondb-mysql/).
+We recommend you to use the latest version of RadonDB MySQL. For deployment instructions, please refer to [Deploy RadonDB MySQL Operator and Cluster](../../external-apps/deploy-radondb-mysql/).
 
 {{</ notice >}}
 

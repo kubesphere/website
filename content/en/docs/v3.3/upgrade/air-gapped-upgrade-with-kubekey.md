@@ -46,12 +46,41 @@ KubeKey upgrades Kubernetes from one MINOR version to the next MINOR version unt
 
 
 ### Step 1: Download KubeKey
+1. 1. Run the following commands to download KubeKey v2.2.1.
+   {{< tabs >}}
 
-Similar to installing KubeSphere on Linux in an online environment, you need to [download KubeKey v2.2.1](https://github.com/kubesphere/kubekey/releases) first. Download the `tar.gz` file, and transfer it to your local machine which serves as the taskbox for installation. After you uncompress the file, execute the following command to make `kk` executable:
+   {{< tab "Good network connections to GitHub/Googleapis" >}}
 
-```bash
-chmod +x kk
-```
+   Download KubeKey from its [GitHub Release Page](https://github.com/kubesphere/kubekey/releases) or use the following command directly.
+
+   ```bash
+   curl -sfL https://get-kk.kubesphere.io | VERSION=v2.2.1 sh -
+   ```
+
+   {{</ tab >}}
+
+   {{< tab "Poor network connections to GitHub/Googleapis" >}}
+
+   Run the following command first to make sure you download KubeKey from the correct zone.
+
+   ```bash
+   export KKZONE=cn
+   ```
+
+   Run the following command to download KubeKey:
+
+   ```bash
+   curl -sfL https://get-kk.kubesphere.io | VERSION=v2.2.1 sh -
+   ```
+   {{</ tab >}}
+
+   {{</ tabs >}}
+
+2. After you uncompress the file, execute the following command to make `kk` executable:
+
+   ```bash
+   chmod +x kk
+   ```
 
 ### Step 2: Prepare installation images
 
@@ -102,13 +131,13 @@ As you install KubeSphere and Kubernetes on Linux, you need to prepare an image 
 5. Download the Kubernetes binary file.
 
    ```bash
-   ./offline-installation-tool.sh -b -v v1.21.5 
+   ./offline-installation-tool.sh -b -v v1.22.10 
    ```
 
    If you cannot access the object storage service of Google, run the following command instead to add the environment variable to change the source.
 
    ```bash
-   export KKZONE=cn;./offline-installation-tool.sh -b -v v1.21.5 
+   export KKZONE=cn;./offline-installation-tool.sh -b -v v1.22.10 
    ```
 
    {{< notice note >}}
@@ -160,7 +189,7 @@ Transfer your packaged image file to your local machine and execute the followin
 |        | Kubernetes | KubeSphere |
 | ------ | ---------- | ---------- |
 | Before | v1.18.6    | v3.2.x     |
-| After  | v1.21.5    | 3.3.0     |
+| After  | v1.22.10    | 3.3.0     |
 
 #### Upgrade a cluster
 

@@ -12,7 +12,7 @@ This tutorial demonstrates how you can integrate SonarQube into pipelines. Refer
 
 ## Prerequisites
 
-You need to [enable the KubeSphere DevOps System](../../../../docs/pluggable-components/devops/).
+You need to [enable the KubeSphere DevOps System](../../../pluggable-components/devops/).
 
 ## Install the SonarQube Server
 
