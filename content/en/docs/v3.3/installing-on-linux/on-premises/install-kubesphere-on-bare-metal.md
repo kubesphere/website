@@ -22,7 +22,7 @@ This tutorial uses 3 physical machines of **DELL 620 Intel (R) Xeon (R) CPU E5-2
 
 ### Install CentOS
 
-Download and install the [image](http://mirror1.es.uci.edu/centos/7.6.1810/isos/x86_64/CentOS-7-x86_64-DVD-1810.iso) first. Make sure you allocate at least 200 GB to the root directory where it stores docker images (you can skip this if you are installing KubeSphere for testing).
+Download and install the [image](https://www.centos.org/download/) first, and CentOS Linux release 7.6.1810 (Core) is recommended. Make sure you allocate at least 200 GB to the root directory where it stores docker images (you can skip this if you are installing KubeSphere for testing).
 
 For more information about the supported systems, see [System Requirements](../../../installing-on-linux/introduction/multioverview/). 
 

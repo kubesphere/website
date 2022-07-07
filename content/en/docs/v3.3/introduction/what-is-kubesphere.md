@@ -30,7 +30,7 @@ The seamless integration of KubeSphere into existing Kubernetes platforms means 
 
 ## Open Source
 
-With the open-source model, the KubeSphere community advances development in an open way. KubeSphere is **100% open source** and available on [GitHub](https://github.com/kubesphere/) where you can find all the source code, documents and discussions. It has been widely installed and used in development, testing and production environments, and a large number of services are running smoothly in KubeSphere. For more information about all major open-source projects, see [Open Source Projects](../../../projects/).
+With the open-source model, the KubeSphere community advances development in an open way. KubeSphere is **100% open source** and available on [GitHub](https://github.com/kubesphere/) where you can find all the source code, documents and discussions. It has been widely installed and used in development, testing and production environments, and a large number of services are running smoothly in KubeSphere. For more information about all major open-source projects, see [Open Source Projects](/projects/).
 
 ## Landscape
 

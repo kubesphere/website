@@ -8,5 +8,5 @@ Kuberentes 此前已宣布将在 1.21 版本中移除树内 (in-tree) 存储插�
 支持的 CSI 插件：
 
 - [neonsan-csi](https://github.com/yunify/qingstor-csi)
-- {{< contentLink "docs/installing-on-linux/persistent-storage-configurations/install-qingcloud-csi/" "qingcloud-csi" >}}
-- {{< contentLink "docs/installing-on-linux/persistent-storage-configurations/install-ceph-csi-rbd/" "ceph-csi" >}}
+- [qingcloud-csi](../../../installing-on-linux/persistent-storage-configurations/install-qingcloud-csi/)
+- [ceph-csi](../../../installing-on-linux/persistent-storage-configurations/install-ceph-csi-rbd/)

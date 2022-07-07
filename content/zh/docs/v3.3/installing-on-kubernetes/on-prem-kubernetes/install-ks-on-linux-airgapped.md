@@ -95,7 +95,7 @@ Docker 使用 `/var/lib/docker` 作为默认路径来存储所有 Docker 相关�
 
    {{< notice note >}}
 
-   该文件根据不同的模块列出了 `##+modulename` 下的镜像。您可以按照相同的规则把自己的镜像添加到这个文件中。若需要查看完整文件，请参见[附录](https://kubesphere.io/zh/docs/installing-on-kubernetes/on-prem-kubernetes/install-ks-on-linux-airgapped/#KubeSphere-3.3.0-镜像清单))。
+   该文件根据不同的模块列出了 `##+modulename` 下的镜像。您可以按照相同的规则把自己的镜像添加到这个文件中。若需要查看完整文件，请参见[附录](#附录)。
 
    {{</ notice >}} 
 

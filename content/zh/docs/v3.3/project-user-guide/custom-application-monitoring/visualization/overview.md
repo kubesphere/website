@@ -54,7 +54,7 @@ KubeSphere 为 MySQL、Elasticsearch 和 Redis 提供内置模板方便您快速
 
 ### 添加图表
 
-若要添加文本图表，点击左侧栏中的 <img src="/images/docs/v3.3/zh-cn/project-user-guide/custom-application-monitoring/visualization/overview/plus-btn.png" height="15px" width="25px" />。若要在中间栏添加图表，点击右下角的**添加监控项**。
+若要添加文本图表，点击左侧栏中的 ➕。若要在中间栏添加图表，点击右下角的**添加监控项**。
 
 ### 添加监控组
 

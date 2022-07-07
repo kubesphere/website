@@ -54,7 +54,7 @@ You can modify an existing template by clicking **Edit Template** in the upper-r
 
 ### Add a chart
 
-To add text charts, click <img src="/images/docs/v3.3/project-user-guide/custom-application-monitoring/visualization/overview/plus-btn.png" height="15px" width="25px" /> in the left column. To add charts in the middle column, click **Add Monitoring Item** in the lower-right corner.
+To add text charts, click ➕ in the left column. To add charts in the middle column, click **Add Monitoring Item** in the lower-right corner.
 
 ### Add a monitoring group
 
