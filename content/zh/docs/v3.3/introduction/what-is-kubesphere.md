@@ -30,7 +30,7 @@ KubeSphere 可以在不修改用户当前的资源或资产、不影响其业务
 
 ## 完全开源
 
-借助开源的模式，KubeSphere 社区驱动着开发工作以开放的方式进行。KubeSphere **100% 开源免费**，已大规模服务于社区用户，广泛地应用在以 Docker 和 Kubernetes 为中心的开发、测试及生产环境中，大量服务平稳地运行在 KubeSphere 之上。您可在 [GitHub](https://github.com/kubesphere/) 上找到所有源代码、文档和讨论，所有主要的开源项目介绍可以在[开源项目列表](../../../projects/)中找到。
+借助开源的模式，KubeSphere 社区驱动着开发工作以开放的方式进行。KubeSphere **100% 开源免费**，已大规模服务于社区用户，广泛地应用在以 Docker 和 Kubernetes 为中心的开发、测试及生产环境中，大量服务平稳地运行在 KubeSphere 之上。您可在 [GitHub](https://github.com/kubesphere/) 上找到所有源代码、文档和讨论，所有主要的开源项目介绍可以在[开源项目列表](../../../../projects/)中找到。
 
 ## 云原生 Landscape
 

@@ -102,4 +102,4 @@ Sometimes, the cloud is not necessarily the ideal place for the deployment of re
 
 KubeSphere can help enterprises deploy a containerized architecture on bare metal, load balancing traffic with a physical switch. In this connection, [OpenELB](https://github.com/kubesphere/openelb), a CNCF-certified cloud-native tool is born for this end. At the same time, KubeSphere, together with QingCloud VPC and QingStor NeonSAN, provides users with a complete set of features ranging from load balancing, container platform building, network management, and storage. This means virtually all aspects of the containerized architecture can be fully controlled and uniformly managed, without sacrificing the performance in virtualization.
 
-For detailed information about how KubeSphere drives the development of numerous industries, please see [Case Studies](https://kubesphere.io/case/).
+For detailed information about how KubeSphere drives the development of numerous industries, please see [Case Studies](/case/).

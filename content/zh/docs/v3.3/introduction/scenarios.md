@@ -93,4 +93,4 @@ DevOps 是一套重要的实践和方法，让开发和运维团队能够更高�
 
 借助新一代轻量级安装器 [KubeKey](https://github.com/kubesphere/kubekey)，KubeSphere 帮助企业快速在裸机环境搭建容器化架构，并通过 OpenELB 实现流量的负载均衡。[OpenELB](https://github.com/kubesphere/openelb) 由 KubeSphere 社区开源，专为裸机环境下的负载均衡所设计，现已加入 CNCF Landscape，是为 CNCF 所认可的构建云原生最佳实践中的重要一环。
 
-有关 KubeSphere 如何推动各行各业的发展并实现数字化转型，请参见[用户案例学习](../../../case/)。
+有关 KubeSphere 如何推动各行各业的发展并实现数字化转型，请参见[用户案例学习](/case/)。

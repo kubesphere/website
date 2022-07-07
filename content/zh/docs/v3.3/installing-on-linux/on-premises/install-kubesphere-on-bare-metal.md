@@ -22,7 +22,7 @@ KubeSphere 除了可以在云上安装，还可以在裸机上安装。由于在
 
 ### 安装 CentOS
 
-请提前下载并安装[ CentOS 镜像](http://mirror1.es.uci.edu/centos/7.6.1810/isos/x86_64/CentOS-7-x86_64-DVD-1810.iso)。请确保根目录已至少分配 200 GB 空间用于存储 Docker 镜像（如果 KubeSphere 仅用于测试，您可以跳过这一步）。
+请提前下载并安装[ CentOS 镜像](https://www.centos.org/download/)，推荐版本为 CentOS Linux release 7.6.1810 (Core)。请确保根目录已至少分配 200 GB 空间用于存储 Docker 镜像（如果 KubeSphere 仅用于测试，您可以跳过这一步）。
 
 有关系统要求的更多信息，请参见[系统要求](../../../installing-on-linux/introduction/multioverview/)。
 

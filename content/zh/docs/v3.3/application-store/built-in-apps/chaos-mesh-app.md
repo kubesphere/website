@@ -13,7 +13,7 @@ linkTitle: "部署 Chaos Mesh"
 
 ## **准备工作**
 
-* 部署 [KubeSphere 应用商店](https://kubesphere.io/zh/docs/pluggable-components/app-store/)
+* 部署 [KubeSphere 应用商店](../../../pluggable-components/app-store/)。
 * 您需要为本教程创建一个企业空间、一个项目和两个帐户（ws-admin 和 project-regular）。帐户 ws-admin 必须在企业空间中被赋予 workspace-admin 角色，帐户 project-regular 必须被邀请至项目中赋予 operator 角色。若还未创建好，请参考[创建企业空间、项目、用户和角色](https://kubesphere.io/zh/docs/quick-start/create-workspace-and-project/)。
 
 
