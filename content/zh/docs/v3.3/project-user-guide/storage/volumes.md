@@ -16,7 +16,7 @@ weight: 10310
 
 - 您需要创建一个企业空间、一个项目和一个用户（例如 `project-regular`）。该用户必须已邀请至该项目，并具有 `operator` 角色。有关更多信息，请参阅[创建企业空间、项目、用户和角色](../../../quick-start/create-workspace-and-project/)。
 
-- 如需使用动态卷供应，您需要配置一个支持动态供应的[存储类](../../../cluster-administration/persistent-volume-and-storage-class/)。
+- 如需使用动态卷供应，您需要配置一个支持动态供应的[存储类](../../../cluster-administration/storageclass/)。
 
 
 
@@ -39,7 +39,7 @@ KubeSphere 将 PVC 绑定到满足您设定的请求条件（例如容量和访�
 
 4. 在**存储设置**页面，选择创建持久卷声明的方式。
 
-   - **通过存储类创建**：您可以在 KubeSphere [安装前](../../../installing-on-linux/persistent-storage-configurations/understand-persistent-storage/)或[安装后](../../../cluster-administration/persistent-volume-and-storage-class/)配置存储类。
+   - **通过存储类创建**：您可以在 KubeSphere [安装前](../../../installing-on-linux/persistent-storage-configurations/understand-persistent-storage/)或[安装后](../../../cluster-administration/storageclass/)配置存储类。
    
    - **通过卷快照创建**：如需通过快照创建持久卷声明，您必须先创建卷快照。
    

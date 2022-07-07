@@ -39,7 +39,7 @@ weight: 14350
 
 1. 在 `demo-project` 项目中，进入**应用负载**下的**应用**页面，点击**创建**。
 
-2. 在对话框中，选择**从应用模板**，进入应用模版页面。
+2. 在对话框中，选择**从应用模板**，进入应用模板页面。
 
 3. 从下拉菜单中选择 `radondb-mysql-operator` 应用仓库。
 
@@ -66,7 +66,7 @@ weight: 14350
 
 您可以任选一个 [RadonDB MySQL 配置示例](https://github.com/radondb/radondb-mysql-kubernetes/tree/main/config/samples) 部署，或自定义配置部署。
 
-以 `mysql_v1alpha1_mysqlcluster.yaml` 模版为例，创建一个 RadonDB MySQL 集群。
+以 `mysql_v1alpha1_mysqlcluster.yaml` 模板为例，创建一个 RadonDB MySQL 集群。
 
 1. 在右下角**工具箱**中选择 **Kubectl** 工具，打开终端窗口。
 

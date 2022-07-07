@@ -34,4 +34,4 @@ Alertmanager 可用于管理 Prometheus 以外来源发出的告警。在 3.0 �
 
 为了使用 Alertmanager 管理平台上的告警，KubeSphere 提供了 [Notification Manager](https://github.com/kubesphere/notification-manager)，它是一个 Kubernetes 原生通知管理工具，完全开源。它符合多租户规则，提供用户友好的 Kubernetes 通知体验，3.0 版及更高版本的 KubeSphere 均默认安装 Notification Manager。
 
-有关使用 Notification Manager 接收 Alertmanager 通知的详细信息，请参考 [Notification Manager](../notification-manager/)。
+有关使用 Notification Manager 接收 Alertmanager 通知的详细信息，请参考 [Notification Manager](https://github.com/kubesphere/notification-manager)。

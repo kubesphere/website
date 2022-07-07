@@ -12,8 +12,6 @@ weight: 3620
 
 以 `admin` 身份登录控制台，访问**集群管理**页面。若要将节点标记为不可调度，从左侧菜单中选择**节点**下的**集群节点**，找到想要从集群中删除的节点，点击**停止调度**。或者，直接执行命令 `kubectl cordon $NODENAME`。有关更多详细信息，请参见 [Kubernetes 节点](https://kubernetes.io/docs/concepts/architecture/nodes/)。
 
-![cordon](/images/docs/v3.3/zh-cn/installing-on-linux/add-and-delete-nodes/delete-nodes/cordon.png)
-
 {{< notice note >}}
 
 守护进程集的 Pod 可以在无法调度的节点上运行。守护进程集通常提供应在节点上运行的本地节点服务，即使正在驱逐工作负载应用程序也不受影响。

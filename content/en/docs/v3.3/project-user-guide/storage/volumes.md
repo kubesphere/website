@@ -16,7 +16,7 @@ This tutorial demonstrates how to create a PVC, mount a PVC, and use PVC feature
 
 - You need to create a workspace, a project and a user (`project-regular`). The user must be invited to the project with the role of `operator`. For more information, see [Create Workspaces, Projects, Users and Roles](../../../quick-start/create-workspace-and-project/).
 
-- If you want to dynamically provision a volume, you need to [configure a storage class](../../../cluster-administration/persistent-volume-and-storage-class/) that supports dynamic provisioning.
+- If you want to dynamically provision a volume, you need to [configure a storage class](../../../cluster-administration/storageclass/) that supports dynamic provisioning.
 
 ## Create a PVC
 
@@ -36,7 +36,7 @@ KubeSphere binds a PVC to a PV that satisfies the request you set for the PVC, s
 
 4. On the **Storage Settings** page, select a method to create a PVC.
 
-   - **From Storage Class**. You can configure storage classes both [before](../../../installing-on-linux/persistent-storage-configurations/understand-persistent-storage/) and [after](../../../cluster-administration/persistent-volume-and-storage-class/) the installation of KubeSphere.
+   - **From Storage Class**. You can configure storage classes both [before](../../../installing-on-linux/persistent-storage-configurations/understand-persistent-storage/) and [after](../../../cluster-administration/storageclass/) the installation of KubeSphere.
 
    - **From Volume Snapshot**. To use a snapshot to create a PVC, you must create a volume snapshot first.
 

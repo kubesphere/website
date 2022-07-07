@@ -38,7 +38,7 @@ $ tar -zxvf kubekey-v2.0.0-rc.3-linux-amd64.tar.gz
 
 说明：manifest 就是一个描述当前 Kubernetes 集群信息和定义 artifact 制品中需要包含哪些内容的文本文件。目前有两种方式来生成该文件：
 
-根据模版手动创建并编写该文件。
+根据模板手动创建并编写该文件。
 使用 KK 命令根据已存在的集群生成该文件。
 
 ```bash

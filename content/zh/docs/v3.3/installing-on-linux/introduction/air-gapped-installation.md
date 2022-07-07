@@ -62,7 +62,7 @@ KubeKey v2.1.0 版本新增了清单（manifest）和制品（artifact）的概�
    ./kk create manifest
    ```
 
-   - 根据模版手动创建并编写该文件。关于更多信息，请参阅 [manifest-example](https://github.com/kubesphere/kubekey/blob/master/docs/manifest-example.md)。
+   - 根据模板手动创建并编写该文件。关于更多信息，请参阅 [manifest-example](https://github.com/kubesphere/kubekey/blob/master/docs/manifest-example.md)。
 
 3. 执行以下命令在源集群中修改 manifest 配置：
    

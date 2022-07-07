@@ -8,9 +8,9 @@ weight: 11420
 
 ## Prerequisites
 
-- You need to [enable the multi-cluster feature](../../../../docs/multicluster-management/) and create a workspace with your multiple clusters.
+- You need to [enable the multi-cluster feature](../../../multicluster-management/) and create a workspace with your multiple clusters.
 - You need to have a [Docker Hub](https://hub.docker.com/) account.
-- You need to [enable the KubeSphere DevOps System](../../../../docs/pluggable-components/devops/) on your host cluster.
+- You need to [enable the KubeSphere DevOps System](../../../pluggable-components/devops/) on your host cluster.
 - You need to use a user (for example, `project-admin`) with the role of `workspace-self-provisioner` to create a multi-cluster project and a DevOps project on the host cluster. This tutorial creates a multi-cluster project on the host cluster and one member cluster.
 - You need to invite a user (for example, `project-regular`) to the DevOps project and grant it the role of `operator`. For more information, see [Create Workspaces, Projects, Users and Roles](../../../quick-start/create-workspace-and-project/), [Multi-cluster Management](../../../multicluster-management/) and [Multi-cluster Projects](../../../project-administration/project-and-multicluster-project/#multi-cluster-projects).
 
