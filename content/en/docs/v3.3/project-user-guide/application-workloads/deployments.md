@@ -27,7 +27,7 @@ Specify a name for the Deployment (for example, `demo-deployment`), select a pro
 
 ### Step 3: Set a Pod
 
-1. Before you set an image, define the number of replicated Pods in **Pod Replicas** by clicking <img src="/images/docs/v3.3/project-user-guide/application-workloads/deployments/plus-icon.png" width="20px" /> or <img src="/images/docs/v3.3/project-user-guide/application-workloads/deployments/minus-icon.png" width="20px" />, which is indicated by the `.spec.replicas` field in the manifest file.
+1. Before you set an image, define the number of replicated Pods in **Pod Replicas** by clicking <img src="/images/docs/v3.3/project-user-guide/application-workloads/deployments/plus-icon.png" width="20px" alt="icon" /> or <img src="/images/docs/v3.3/project-user-guide/application-workloads/deployments/minus-icon.png" width="20px" alt="icon" />, which is indicated by the `.spec.replicas` field in the manifest file.
 
     {{< notice tip >}}
 You can see the Deployment manifest file in YAML format by enabling **Edit YAML** in the upper-right corner. KubeSphere allows you to edit the manifest file directly to create a Deployment. Alternatively, you can follow the steps below to create a Deployment via the dashboard.
@@ -104,7 +104,7 @@ You can set a policy for node scheduling and add metadata in this section. When 
 
 4. Click the **Resource Status** tab to view the port and Pod information of the Deployment.
 
-    - **Replica Status**: Click <img src="/images/docs/v3.3/common-icons/replica-plus-icon.png" width="20px" /> or <img src="/images/docs/v3.3/common-icons/replica-minus-icon.png" width="20px" /> to increase or decrease the number of Pod replicas.
+    - **Replica Status**: Click <img src="/images/docs/v3.3/common-icons/replica-plus-icon.png" width="20px" alt="icon" /> or <img src="/images/docs/v3.3/common-icons/replica-minus-icon.png" width="20px" alt="icon" /> to increase or decrease the number of Pod replicas.
     - **Pods**
 
         - The Pod list provides detailed information of the Pod (status, node, Pod IP and resource usage).

@@ -18,7 +18,7 @@ You can enable **Edit YAML** in the upper-right corner to see corresponding valu
 
 ### Pod Replicas
 
-Set the number of replicated Pods by clicking <img src="/images/docs/v3.3/project-user-guide/application-workloads/container-image-settings/plus-icon.png" width="20px" /> or <img src="/images/docs/v3.3/project-user-guide/application-workloads/container-image-settings/minus-icon.png" width="20px" />, indicated by the `.spec.replicas` field in the manifest file. This option is not available for DaemonSets.
+Set the number of replicated Pods by clicking <img src="/images/docs/v3.3/project-user-guide/application-workloads/container-image-settings/plus-icon.png" width="20px" alt="icon" /> or <img src="/images/docs/v3.3/project-user-guide/application-workloads/container-image-settings/minus-icon.png" width="20px" alt="icon" />, indicated by the `.spec.replicas` field in the manifest file. This option is not available for DaemonSets.
 
 If you create Deployments in a multi-cluster project, select a replica scheduling mode under **Replica Scheduling Mode**:
 
@@ -33,7 +33,7 @@ Click **Add Container** to add a container.
 
 #### Image Search Box
 
-You can click <img src="/images/docs/v3.3/project-user-guide/application-workloads/container-image-settings/cube-icon.png" width="20px" /> on the right to select an image from the list or enter an image name to search it. KubeSphere provides Docker Hub images and your private image repository. If you want to use your private image repository, you need to create an Image Registry Secret first in **Secrets** under **Configuration**.
+You can click <img src="/images/docs/v3.3/project-user-guide/application-workloads/container-image-settings/cube-icon.png" width="20px" alt="icon" /> on the right to select an image from the list or enter an image name to search it. KubeSphere provides Docker Hub images and your private image repository. If you want to use your private image repository, you need to create an Image Registry Secret first in **Secrets** under **Configuration**.
 
 {{< notice note >}} 
 

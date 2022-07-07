@@ -62,7 +62,7 @@ KubeSphere v3.3.0 提供集群级别的网关，使所有项目共用一个全�
 3. 点击**监控**选项卡，查看集群网关的监控指标。
 4. 点击**配置选项**选项卡以查看集群网关的配置选项。
 5. 点击**网关日志**选项卡以查看集群网关日志。
-6. 点击**资源状态**选项卡，以查看集群网关的负载状态。点击 <img src="/images/docs/v3.3/common-icons/replica-plus-icon.png" width="15" /> 或 <img src="/images/docs/v3.3/common-icons/replica-minus-icon.png" width="15" /> 按钮，以增加或减少副本数量。
+6. 点击**资源状态**选项卡，以查看集群网关的负载状态。点击 <img src="/images/docs/v3.3/common-icons/replica-plus-icon.png" width="15" alt="icon" /> 或 <img src="/images/docs/v3.3/common-icons/replica-minus-icon.png" width="15" alt="icon" /> 按钮，以增加或减少副本数量。
 7. 点击**元数据**选项卡，以查看集群网关的注解。
 
 ## 查看项目网关

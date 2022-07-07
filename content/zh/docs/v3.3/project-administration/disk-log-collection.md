@@ -71,7 +71,7 @@ KubeSphere 支持多种日志收集方式，使运维团队能够以灵活统一
 
 1. 在**部署**选项卡下，点击刚才创建的部署以访问其详情页。
 
-2. 在**资源状态**中，点击 <img src="/images/docs/v3.3/zh-cn/project-administration/disk-log-collection/arrow.png" width="20" /> 查看容器详情，然后点击 `logsidecar-container`（filebeat 容器)日志图标 <img src="/images/docs/v3.3/zh-cn/project-administration/disk-log-collection/log-icon.png" width="20" /> 以检查日志。
+2. 在**资源状态**中，点击 <img src="/images/docs/v3.3/zh-cn/project-administration/disk-log-collection/arrow.png" width="20" /> 查看容器详情，然后点击 `logsidecar-container`（filebeat 容器)日志图标 <img src="/images/docs/v3.3/zh-cn/project-administration/disk-log-collection/log-icon.png" width="20" alt="icon" /> 以检查日志。
 
 3. 或者，您也可以使用右下角**工具箱**中的**日志查询**功能来查看标准输出日志。例如，使用该部署的 Pod 名称进行模糊匹配。
 

@@ -27,7 +27,7 @@ weight: 10210
 
 ### 步骤 3：设置容器组
 
-1. 设置镜像前，请点击**容器组副本数量**中的 <img src="/images/docs/v3.3/zh-cn/project-user-guide/application-workloads/deployments/plus-icon.png" width="20px" /> 或 <img src="/images/docs/v3.3/zh-cn/project-user-guide/application-workloads/deployments/minus-icon.png" width="20px" /> 来定义容器组的副本数量，该参数显示在清单文件中的 `.spec.replicas` 字段。
+1. 设置镜像前，请点击**容器组副本数量**中的 <img src="/images/docs/v3.3/zh-cn/project-user-guide/application-workloads/deployments/plus-icon.png" width="20px" alt="icon" /> 或 <img src="/images/docs/v3.3/zh-cn/project-user-guide/application-workloads/deployments/minus-icon.png" width="20px" alt="icon" /> 来定义容器组的副本数量，该参数显示在清单文件中的 `.spec.replicas` 字段。
 
     {{< notice tip >}}
 您可以启用右上角的**编辑 YAML**，查看 YAML 格式的部署清单文件。KubeSphere 使您可以直接编辑清单文件创建部署，或者您可以按照下列步骤使用仪表板创建部署。
@@ -104,7 +104,7 @@ weight: 10210
 
 4. 点击**资源状态**选项卡，查看该部署的端口和容器组信息。
 
-    - **副本运行状态**：点击 <img src="/images/docs/v3.3/common-icons/replica-plus-icon.png" width="20px" /> 或 <img src="/images/docs/v3.3/common-icons/replica-minus-icon.png" width="20px" /> 来增加或减少容器组副本数量。
+    - **副本运行状态**：点击 <img src="/images/docs/v3.3/common-icons/replica-plus-icon.png" width="20px" alt="icon" /> 或 <img src="/images/docs/v3.3/common-icons/replica-minus-icon.png" width="20px" alt="icon" /> 来增加或减少容器组副本数量。
     - **容器组**
 
         - 容器组列表中显示了容器组详情（运行状态、节点、容器组 IP 以及资源使用情况）。

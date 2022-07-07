@@ -219,7 +219,7 @@ After you finish the above steps, you know that users can be granted different r
 
    {{</ notice >}}
 
-5. On the **Platform Roles** page, you can click the name of the created role to view the role details and click <img src="/images/docs/v3.3/quickstart/create-workspaces-projects-accounts/operation-icon.png" width="20px" align="center"> to edit the role, edit the role permissions, or delete the role.
+5. On the **Platform Roles** page, you can click the name of the created role to view the role details and click <img src="/images/docs/v3.3/quickstart/create-workspaces-projects-accounts/operation-icon.png" width="20px" alt="icon" align="center"> to edit the role, edit the role permissions, or delete the role.
 
 6. On the **Users** page, you can assign the role to a user when you create a user or edit an existing user.
 

@@ -115,7 +115,7 @@ You can set the values in this step or click **Next** to use the default values.
 You can rerun the Job if it fails and the reason for failure is displayed under **Message**.
     {{</ notice >}}
 
-3. In **Resource Status**, you can inspect the Pod status. Two Pods were created each time as **Parallel Pods** was set to 2. Click <img src="/images/docs/v3.3/project-user-guide/application-workloads/jobs/down-arrow.png" width="20px" /> on the right and click <img src="/images/docs/v3.3/project-user-guide/application-workloads/jobs/container-log-icon.png" width="20px" /> to check the container log, which displays the expected calculation result.
+3. In **Resource Status**, you can inspect the Pod status. Two Pods were created each time as **Parallel Pods** was set to 2. Click <img src="/images/docs/v3.3/project-user-guide/application-workloads/jobs/down-arrow.png" width="20px" /> on the right and click <img src="/images/docs/v3.3/project-user-guide/application-workloads/jobs/container-log-icon.png" width="20px" alt="icon" /> to check the container log, which displays the expected calculation result.
 
     {{< notice tip >}}
 
