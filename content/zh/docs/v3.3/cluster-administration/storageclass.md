@@ -184,9 +184,7 @@ NFS（网络文件系统）广泛用于带有 [NFS-Client](https://github.com/ku
 
 ## 管理存储类
 
-创建存储类型后，点击此存储类型的名称前往其详情页。在详情页点击**编辑 YAML** 来编辑此存储类型的清单文件。关于参数解释，您可以参考[设置存储类](../../cluster-administration/persistent-volume-and-storage-class/#设置存储类)。同时，您也可以参考 Kubernetes 官方文档的[参数](https://kubernetes.io/zh/docs/concepts/storage/storage-classes/#参数)部分。
-
-同时，您也可以点击**更多操作**并在下拉菜单中选择一项操作：
+创建存储类型后，点击此存储类型的名称前往其详情页。在详情页点击**编辑 YAML** 来编辑此存储类型的清单文件。您也可以点击**更多操作**并在下拉菜单中选择一项操作：
 
 - **设为默认存储类**：将此存储类设为集群的默认存储类。一个 KubeSphere 集群中仅允许设置一个默认存储类。
 - **设置授权规则**：只允许特定项目和企业空间使用该存储类。

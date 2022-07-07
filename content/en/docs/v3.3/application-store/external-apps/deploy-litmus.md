@@ -24,7 +24,7 @@ This tutorial demonstrates how to deploy Litmus on KubeSphere and create chaos e
 ### Step 1: Add an app repository
 1. In your workspace, go to **App Repositories** under **App Management**, and then click **Add**.
 
-2. In the dialog that appears, set a name for the repository (for example, `litmus`) and enter the URL `https://litmuschaos.github.io/litmus-helm/`. Click **Validate** to verify the URL. You will see <img src="/images/docs/v3.3/zh-cn/appstore/external-apps/deploy-litmus/checkmark.png" width="20" /> icon if the URL is available. Click **OK** to continue.
+2. In the dialog that appears, set a name for the repository (for example, `litmus`) and enter the URL `https://litmuschaos.github.io/litmus-helm/`. Click **Validate** to verify the URL. Click **OK** to continue.
 
 3. The app repository displays in the list after it is successfully imported.
 
