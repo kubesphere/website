@@ -82,7 +82,7 @@ The process of deploying a TiDB cluster is similar to deploying TiDB Operator.
 
 4. On the **Basic Information** page, confirm the app name, app version, and deployment location. Click **Next** to continue.
 
-5. Some TiDB components require [persistent volumes](../../../cluster-administration/persistent-volume-and-storage-class/). You can run the following command to view your storage classes.
+5. Some TiDB components require [storage classes](../../../cluster-administration/storageclass/). You can run the following command to view your storage classes.
 
    ```
    $ kubectl get sc
