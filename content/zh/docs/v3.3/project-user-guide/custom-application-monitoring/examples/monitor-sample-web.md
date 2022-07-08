@@ -61,7 +61,7 @@ weight: 10813
 
 3. 在左上角输入标题（例如 `示例 Web 概览`）。
 
-4. 点击左列的 <img src="/images/docs/v3.3/zh-cn/project-user-guide/custom-application-monitoring/examples/monitor-sample-web-app/plus-icon.png" height="16px" width="20px" />，创建文本图表。
+4. 点击左列的 <img src="/images/docs/v3.3/zh-cn/project-user-guide/custom-application-monitoring/examples/monitor-sample-web-app/plus-icon.png" height="16px" width="20px" alt="icon" />，创建文本图表。
 
 5. 在**监控指标**字段输入 PromQL 表达式 `myapp_processed_ops_total`，并设置图表名称（例如 `操作数`）。点击右下角的 **√** 继续。
 

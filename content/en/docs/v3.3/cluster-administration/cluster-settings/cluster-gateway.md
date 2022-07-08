@@ -61,7 +61,7 @@ You need to prepare a user with the `platform-admin` role, for example, `admin`.
 3. Click the **Monitoring** tab to view the monitoring metrics of the cluster gateway.
 4. Click the **Configuration Options** tab to view configuration options of the cluster gateway.
 5. Click the **Gateway Logs** tab to view logs of the cluster gateway.
-6. Click the **Resource Status** tab to view workload status of the cluster gateway. Click <img src="/images/docs/v3.3/common-icons/replica-plus-icon.png" width="15" /> or <img src="/images/docs/v3.3/common-icons/replica-minus-icon.png" width="15" /> to scale up or scale down the number of replicas.
+6. Click the **Resource Status** tab to view workload status of the cluster gateway. Click <img src="/images/docs/v3.3/common-icons/replica-plus-icon.png" width="15" alt="icon" /> or <img src="/images/docs/v3.3/common-icons/replica-minus-icon.png" width="15" /> to scale up or scale down the number of replicas.
 7. Click the **Metadata** tab to view annotations of the cluster gateway.
 
 ## View Project Gateways

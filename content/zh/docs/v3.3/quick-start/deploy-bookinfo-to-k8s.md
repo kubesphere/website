@@ -53,7 +53,7 @@ Bookinfo 应用由以下四个独立的微服务组成，其中 **reviews** 微�
 
     {{< notice note >}}
 
-KubeSphere 会自动创建主机名。若要更改主机名，请将鼠标悬停在默认路由规则上，然后点击 <img src="/images/docs/v3.3/zh-cn/quickstart/deploy-bookinfo-to-k8s/edit-icon.png" width='20px' /> 进行编辑。有关更多信息，请参见[创建基于微服务的应用](../../project-user-guide/application/compose-app/)。
+KubeSphere 会自动创建主机名。若要更改主机名，请将鼠标悬停在默认路由规则上，然后点击 <img src="/images/docs/v3.3/zh-cn/quickstart/deploy-bookinfo-to-k8s/edit-icon.png" width='20px' alt="icon"  /> 进行编辑。有关更多信息，请参见[创建基于微服务的应用](../../project-user-guide/application/compose-app/)。
 
     {{</ notice >}}
 

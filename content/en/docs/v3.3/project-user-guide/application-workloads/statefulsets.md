@@ -39,7 +39,7 @@ Specify a name for the StatefulSet (for example, `demo-stateful`), select a proj
 
 ### Step 3: Set a Pod
 
-1. Before you set an image, define the number of replicated Pods in **Pod Replicas** by clicking <img src="/images/docs/v3.3/project-user-guide/application-workloads/statefulsets/plus-icon.png" width="20px" /> or <img src="/images/docs/v3.3/project-user-guide/application-workloads/statefulsets/minus-icon.png" width="20px" />, which is indicated by the `.spec.replicas` field in the manifest file.
+1. Before you set an image, define the number of replicated Pods in **Pod Replicas** by clicking <img src="/images/docs/v3.3/project-user-guide/application-workloads/statefulsets/plus-icon.png" width="20px" alt="icon" /> or <img src="/images/docs/v3.3/project-user-guide/application-workloads/statefulsets/minus-icon.png" width="20px" alt="icon" />, which is indicated by the `.spec.replicas` field in the manifest file.
 
     {{< notice tip >}}
 
@@ -112,7 +112,7 @@ You can set a policy for node scheduling and add StatefulSet metadata in this se
 
 4. Click the **Resource Status** tab to view the port and Pod information of a StatefulSet.
 
-    - **Replica Status**: Click <img src="/images/docs/v3.3/common-icons/replica-plus-icon.png" width="20px" /> or <img src="/images/docs/v3.3/common-icons/replica-minus-icon.png" width="20px" /> to increase or decrease the number of Pod replicas.
+    - **Replica Status**: Click <img src="/images/docs/v3.3/common-icons/replica-plus-icon.png" width="20px" alt="icon" /> or <img src="/images/docs/v3.3/common-icons/replica-minus-icon.png" width="20px" alt="icon" /> to increase or decrease the number of Pod replicas.
     - **Pods**
 
         - The Pod list provides detailed information of the Pod (status, node, Pod IP and resource usage).
