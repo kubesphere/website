@@ -48,7 +48,7 @@ You can see the ConfigMap manifest file in YAML format by enabling **Edit YAML**
 
 ## View ConfigMap Details
 
-1. After a ConfigMap is created, it is displayed on the **ConfigMaps** page. You can click <img src="/images/docs/v3.3/project-user-guide/configurations/configmaps/three-dots.png" height="20px"> on the right and select the operation below from the drop-down list.
+1. After a ConfigMap is created, it is displayed on the **ConfigMaps** page. You can click <img src="/images/docs/v3.3/project-user-guide/configurations/configmaps/three-dots.png" height="20px" alt="icon"> on the right and select the operation below from the drop-down list.
 
     - **Edit Information**: View and edit the basic information.
     - **Edit YAML**: View, upload, download, or update the YAML file.

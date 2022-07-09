@@ -135,7 +135,7 @@ To collect monitoring information on edge node, you need to enable `metrics_serv
 
 3. In the search bar on the right pane, enter `clusterconfiguration`, and click the result to go to its details page.
 
-4. Click <img src="/images/docs/v3.3/common-icons/three-dots.png" width="15" /> on the right of ks-installer, and click **Edit YAML**.
+4. Click <img src="/images/docs/v3.3/common-icons/three-dots.png" width="15" alt="icon" /> on the right of ks-installer, and click **Edit YAML**.
 
 5. Search for **metrics_server**, and change the value of `enabled` from `false` to `true`.
 

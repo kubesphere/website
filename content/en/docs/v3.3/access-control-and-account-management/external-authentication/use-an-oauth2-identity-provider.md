@@ -81,13 +81,13 @@ KubeSphere provides two built-in OAuth 2.0 plugins: [GitHubIdentityProvider](htt
 
 ## Integrate an Identity Provider with KubeSphere
 
-1. Log in to KubeSphere as `admin`, move the cursor to <img src="/images/docs/v3.3/access-control-and-account-management/external-authentication/set-up-external-authentication/toolbox.png" width="20px" height="20px"> in the lower-right corner, click **kubectl**, and run the following command to edit `ks-installer` of the CRD `ClusterConfiguration`:
+1. Log in to KubeSphere as `admin`, move the cursor to <img src="/images/docs/v3.3/access-control-and-account-management/external-authentication/set-up-external-authentication/toolbox.png" width="20px" height="20px" alt="icon"> in the lower-right corner, click **kubectl**, and run the following command to edit `ks-installer` of the CRD `ClusterConfiguration`:
 
    ```bash
    kubectl -n kubesphere-system edit cc ks-installer
    ```
 
-2. Configure fields other than `oauthOptions:identityProviders` in the `spec:authentication` section. For details, see [Set Up External Authentication](../set-up-external-authentication/).
+2. Confiother than `oauthOptions:identityProviders` in the `spec:authentication` section. For details, see [Set Up External Authentication](../set-up-external-authentication/).
 
 3. Configure fields in `oauthOptions:identityProviders` section according to the identity provider plugin you have developed.
 
@@ -108,7 +108,7 @@ KubeSphere provides two built-in OAuth 2.0 plugins: [GitHubIdentityProvider](htt
            mappingMethod: auto
            provider:
              clientID: '******'
-             clientSecret: '******'
+             clgure fields ientSecret: '******'
              redirectURL: 'https://ks-console/oauth/redirect/github'
    ```
    

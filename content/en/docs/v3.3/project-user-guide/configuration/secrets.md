@@ -58,7 +58,7 @@ You can see the Secret's manifest file in YAML format by enabling **Edit YAML** 
 
 ## Check Secret Details
 
-1. After a Secret is created, it will be displayed in the list. You can click <img src="/images/docs/v3.3/project-user-guide/configurations/secrets/three-dots.png" width="20px" /> on the right and select the operation from the menu to modify it.
+1. After a Secret is created, it will be displayed in the list. You can click <img src="/images/docs/v3.3/project-user-guide/configurations/secrets/three-dots.png" width="20px" alt="icon" /> on the right and select the operation from the menu to modify it.
 
     - **Edit Information**: View and edit the basic information.
     - **Edit YAML**: View, upload, download, or update the YAML file.
@@ -69,7 +69,7 @@ You can see the Secret's manifest file in YAML format by enabling **Edit YAML** 
 
     {{< notice note >}}
 
-As mentioned above, KubeSphere automatically converts the value of a key into its corresponding base64 character value. To see the actual decoded value, click <img src="/images/docs/v3.3/project-user-guide/configurations/secrets/eye-icon.png" width="20px" /> on the right.
+As mentioned above, KubeSphere automatically converts the value of a key into its corresponding base64 character value. To see the actual decoded value, click <img src="/images/docs/v3.3/project-user-guide/configurations/secrets/eye-icon.png" width="20px" alt="icon" /> on the right.
 
 {{</ notice >}} 
 

@@ -108,7 +108,7 @@ This section walks you through the process of deploying an application using a c
     </tbody>
     </table>
 
-10. Click <img src="/images/docs/v3.3/common-icons/three-dots.png" width="15" /> on the right of the continuous deployment, and you can perform the following:
+10. Click <img src="/images/docs/v3.3/common-icons/three-dots.png" width="15" alt="icon" /> on the right of the continuous deployment, and you can perform the following:
     - **Edit Information**: Edits the alias and description.
     - **Edit YAML**: Edits the YAML file.
     - **Sync**: Triggers resources synchronization.
@@ -127,7 +127,7 @@ This section walks you through the process of deploying an application using a c
 
 1. Go to the project where the continuous deployment resides, in the navigation pane on the left, click **Services**.
 
-2. On the **Services** page on the left, click  <img src="/images/docs/v3.3/common-icons/three-dots.png" width="15" /> on the right of the deployed application, and click **Edit External Access**.
+2. On the **Services** page on the left, click  <img src="/images/docs/v3.3/common-icons/three-dots.png" width="15" alt="icon" /> on the right of the deployed application, and click **Edit External Access**.
 
 3. In **Access Mode**, select **NodePort**, and click **OK**.
 

@@ -19,7 +19,7 @@ This tutorial demonstrates how to collect logs for an example app.
 
 1. Log in to the web console of KubeSphere as `project-admin` and go to your project.
 
-2. From the left navigation bar, click **Log Collection** in **Project Settings**, and then click <img src="/images/docs/v3.3/project-administration/disk-log-collection/log-toggle-switch.png" width="60" /> to enable the feature.
+2. From the left navigation bar, click **Log Collection** in **Project Settings**, and then click <img src="/images/docs/v3.3/project-administration/disk-log-collection/log-toggle-switch.png" width="60" alt="icon" /> to enable the feature.
 
 ## Create a Deployment
 

@@ -215,7 +215,7 @@ For more information about PVC monitoring, see [Research on Volume Monitoring](h
      </tbody>
    </table>
 
-2. Click <img src="/images/docs/v3.3/common-icons/three-dots.png" width="15" /> on the right of a PV, and you can perform the following:
+2. Click <img src="/images/docs/v3.3/common-icons/three-dots.png" width="15" alt="icon" /> on the right of a PV, and you can perform the following:
 
    - **Edit Information**: Edit information of the PV.
    - **Edit YAML**: Edit the YAML file of the PV.

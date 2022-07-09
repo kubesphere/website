@@ -18,7 +18,7 @@ Editing resources in `system-workspace` may cause unexpected results, such as Ku
 
 ## Edit the Console Configuration
 
-1. Log in to KubeSphere as `admin`. Click <img src="/images/docs/v3.3/common-icons/hammer.png" height="25" width="25" /> in the lower-right corner and select **Kubectl**.
+1. Log in to KubeSphere as `admin`. Click <img src="/images/docs/v3.3/common-icons/hammer.png" height="25" width="25" alt="icon" /> in the lower-right corner and select **Kubectl**.
 
 2. Execute the following command:
 
