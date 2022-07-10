@@ -1,5 +1,5 @@
 ---
-title: '为 KubeSphere 集群启用免费的泛域名 SSL 证书并实现证书自动更新和分发'
+title: 'Kubernetes Ingress 配置泛域名 TLS 证书'
 tag: 'KubeSphere'
 keywords: 'KubeSphere, Kubernetes, SSL'
 description: "本文记录了利用 let's encrytp 泛域名证书实现 Kubernetes 集群外部服务自动证书配置和证书到期自动更新，支持 HTTPS 访问。"
