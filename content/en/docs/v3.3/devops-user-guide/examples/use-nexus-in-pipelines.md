@@ -21,7 +21,7 @@ This tutorial demonstrates how to use Nexus in pipelines on KubeSphere.
 
 ### Step 1: Get a Repository URL on Nexus
 
-1. Log in to the Nexus console as `admin` and click <img src="/images/docs/v3.3/devops-user-guide/examples/use-nexus-in-pipeline/gear.png" height="18px" /> on the top navigation bar.
+1. Log in to the Nexus console as `admin` and click <img src="/images/docs/v3.3/devops-user-guide/examples/use-nexus-in-pipeline/gear.png" height="18px" alt="icon" /> on the top navigation bar.
 
 2. Go to the **Repositories** page and you can see that Nexus provides three types of repository.
 

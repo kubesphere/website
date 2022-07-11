@@ -77,7 +77,7 @@ You must create a Docker Hub Secret so that the Docker image created through B2I
 
 1. Wait for a while and you can see the status of the image builder has reached **Successful**.
 
-2. Click this image to go to its details page. Under **Job Records**, click <img src="/images/docs/v3.3/project-user-guide/image-builder/b2i-publish-artifact-to-kubernetes/down-arrow.png" width="20px" /> on the right of a record to see building logs. You can see `Build completed successfully` at the end of the log if everything runs normally.
+2. Click this image to go to its details page. Under **Job Records**, click <img src="/images/docs/v3.3/project-user-guide/image-builder/b2i-publish-artifact-to-kubernetes/down-arrow.png" width="20px" alt="icon" /> on the right of a record to see building logs. You can see `Build completed successfully` at the end of the log if everything runs normally.
 
 3. Go back to the **Services**, **Deployments**, and **Jobs** page, and you can see the corresponding Service, Deployment, and Job of the image have been all created successfully.
 
@@ -133,7 +133,7 @@ Make sure you have created a Secret for Docker Hub. For more information, see [C
 
 1. Wait for a while and you can see the status of the image builder has reached **Successful**.
 
-2. Click this image builder to go to its details page. Under **Job Records**, click <img src="/images/docs/v3.3/project-user-guide/image-builder/b2i-publish-artifact-to-kubernetes/down-arrow.png" width="20px" /> on the right of a record to see building logs. You can see `Build completed successfully` at the end of the log if everything runs normally.
+2. Click this image builder to go to its details page. Under **Job Records**, click <img src="/images/docs/v3.3/project-user-guide/image-builder/b2i-publish-artifact-to-kubernetes/down-arrow.png" width="20px" alt="icon" /> on the right of a record to see building logs. You can see `Build completed successfully` at the end of the log if everything runs normally.
 
 3. Go to the **Jobs** page, and you can see the corresponding Job of the image has been created successfully.
 

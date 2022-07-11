@@ -320,7 +320,7 @@ This stage uses SonarQube to test your code. You can skip this stage if you do n
 
    {{< notice note >}}
    
-   On the **Pipelines** page, you can click <img src="/images/docs/v3.3/common-icons/three-dots.png" width="15" /> on the right side of the pipeline and then select **Copy** to create a copy of it. If you need to concurrently run multiple pipelines that don't contain multiple branches, you can select all of these pipelines and then click **Run** to run them in a batch. 
+   On the **Pipelines** page, you can click <img src="/images/docs/v3.3/common-icons/three-dots.png" width="15" alt="icon" /> on the right side of the pipeline and then select **Copy** to create a copy of it. If you need to concurrently run multiple pipelines that don't contain multiple branches, you can select all of these pipelines and then click **Run** to run them in a batch. 
    
    {{</ notice >}}
 

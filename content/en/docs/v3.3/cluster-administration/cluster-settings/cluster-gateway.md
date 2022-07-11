@@ -68,7 +68,7 @@ You need to prepare a user with the `platform-admin` role, for example, `admin`.
 
 On the **Gateway Settings** page, click the **Project Gateway** tab to view project gateways.
 
-Click <img src="/images/docs/v3.3/project-administration/role-and-member-management/three-dots.png" width="20px"> on the right of a project gateway to select an operation from the drop-down menu:
+Click <img src="/images/docs/v3.3/project-administration/role-and-member-management/three-dots.png" width="20px" alt="icon"> on the right of a project gateway to select an operation from the drop-down menu:
 
 - **Edit**: Edit configurations of the project gateway.
 - **Disable**: Disable the project gateway.

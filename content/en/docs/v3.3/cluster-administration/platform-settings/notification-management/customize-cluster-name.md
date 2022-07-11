@@ -16,7 +16,7 @@ You need to have a user with the `platform-admin` role, for example, the `admin`
 
 1. Log in to the KubeSphere console as `admin`.
 
-2. Click <img src="/images/docs/v3.3/common-icons/hammer.png" width="15" /> in the lower-right corner and select **Kubectl**.
+2. Click <img src="/images/docs/v3.3/common-icons/hammer.png" width="15" alt="icon" /> in the lower-right corner and select **Kubectl**.
 
 3. In the displayed dialog box, run the following command:
 

@@ -58,7 +58,7 @@ To add text charts, click ➕ in the left column. To add charts in the middle co
 
 ### Add a monitoring group
 
-To group monitoring items, you can click <img src="/images/docs/v3.3/project-user-guide/custom-application-monitoring/visualization/overview/six-dots.png" width="20px" /> to drag and drop an item into the target group. To add a new group, click **Add Monitoring Group**. If you want to change the place of a group, hover over a group and click <img src="/images/docs/v3.3/project-user-guide/custom-application-monitoring/visualization/overview/up-arrow.png" width="20px" align="center" /> or <img src="/images/docs/v3.3/project-user-guide/custom-application-monitoring/visualization/overview/down-arrow.png" width="20px" align="center" /> arrow on the right.
+To group monitoring items, you can click <img src="/images/docs/v3.3/project-user-guide/custom-application-monitoring/visualization/overview/six-dots.png" width="20px" alt="icon" /> to drag and drop an item into the target group. To add a new group, click **Add Monitoring Group**. If you want to change the place of a group, hover over a group and click <img src="/images/docs/v3.3/project-user-guide/custom-application-monitoring/visualization/overview/up-arrow.png" width="20px" align="center" /> or <img src="/images/docs/v3.3/project-user-guide/custom-application-monitoring/visualization/overview/down-arrow.png" width="20px" align="center" /> arrow on the right.
 
 {{< notice note >}}
 

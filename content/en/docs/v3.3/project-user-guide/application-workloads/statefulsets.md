@@ -92,7 +92,7 @@ You can set a policy for node scheduling and add StatefulSet metadata in this se
 
 ### Details page
 
-1. After a StatefulSet is created, it will be displayed in the list. You can click <img src="/images/docs/v3.3/project-user-guide/application-workloads/statefulsets/three-dots.png" width="20px" /> on the right to select options from the menu to modify your StatefulSet.
+1. After a StatefulSet is created, it will be displayed in the list. You can click <img src="/images/docs/v3.3/project-user-guide/application-workloads/statefulsets/three-dots.png" width="20px" alt="icon" /> on the right to select options from the menu to modify your StatefulSet.
 
     - **Edit Information**: View and edit the basic information.
     - **Edit YAML**: View, upload, download, or update the YAML file.
@@ -134,9 +134,9 @@ Click the **Metadata** tab to view the labels and annotations of the StatefulSet
 
 2. Click the drop-down menu in the upper-right corner to customize the time range and sampling interval.
 
-3. Click <img src="/images/docs/v3.3/project-user-guide/application-workloads/statefulsets/start-refresh.png" width="20px" />/<img src="/images/docs/v3.3/project-user-guide/application-workloads/statefulsets/stop-refresh.png" width="20px" /> in the upper-right corner to start/stop automatic data refreshing.
+3. Click <img src="/images/docs/v3.3/project-user-guide/application-workloads/statefulsets/start-refresh.png" width="20px" alt="icon" />/<img src="/images/docs/v3.3/project-user-guide/application-workloads/statefulsets/stop-refresh.png" width="20px" alt="icon" /> in the upper-right corner to start/stop automatic data refreshing.
 
-4. Click <img src="/images/docs/v3.3/project-user-guide/application-workloads/statefulsets/refresh.png" width="20px" /> in the upper-right corner to manually refresh the data.
+4. Click <img src="/images/docs/v3.3/project-user-guide/application-workloads/statefulsets/refresh.png" width="20px" alt="icon" /> in the upper-right corner to manually refresh the data.
 
 ### Environment variables
 

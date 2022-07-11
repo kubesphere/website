@@ -89,7 +89,7 @@ You do not need to create the GitHub Secret if your forked repository is open to
 
 1. Wait for a while and you can see the status of the image builder has reached **Successful**.
 
-2. Click this image builder to go to its details page. Under **Job Records**, click <img src="/images/docs/v3.3/project-user-guide/image-builder/s2i-publish-app-without-dockerfile/down-arrow.png" width="20px" /> on the right of a record to see building logs. You can see `Build completed successfully` at the end of the log if everything runs normally.
+2. Click this image builder to go to its details page. Under **Job Records**, click <img src="/images/docs/v3.3/project-user-guide/image-builder/s2i-publish-app-without-dockerfile/down-arrow.png" width="20px" alt="icon" /> on the right of a record to see building logs. You can see `Build completed successfully` at the end of the log if everything runs normally.
 
 3. Go back to the **Services**, **Deployments**, and **Jobs** page, and you can see the corresponding Service, Deployment, and Job of the image have been all created successfully.
 

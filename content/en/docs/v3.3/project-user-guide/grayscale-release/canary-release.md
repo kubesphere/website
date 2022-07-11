@@ -110,7 +110,7 @@ If everything runs smoothly, you can bring all the traffic to the new version.
 
 1. In **Release Jobs**, click the canary release job.
 
-2. In the displayed dialog box, click <img src="/images/docs/v3.3/project-user-guide/grayscale-release/canary-release/three-dots.png" width="20px" /> on the right of **reviews v2** and select **Take Over**. It means 100% of the traffic will be sent to the new version (v2).
+2. In the displayed dialog box, click <img src="/images/docs/v3.3/project-user-guide/grayscale-release/canary-release/three-dots.png" width="20px" alt="icon" /> on the right of **reviews v2** and select **Take Over**. It means 100% of the traffic will be sent to the new version (v2).
 
    {{< notice note >}}
    If anything goes wrong with the new version, you can roll back to the previous version v1 anytime.

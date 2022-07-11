@@ -83,7 +83,7 @@ This section uses a Deployment that sends requests to the HPA Service to verify 
 
 1. After the load generator Deployment is created, go to **Workloads** in **Application Workloads** on the left navigation bar and click the HPA Deployment (for example, hpa-v1) on the right. The number of Pods displayed on the page automatically increases to meet the resource usage target.
 
-2. Choose **Workloads** in **Application Workloads** on the left navigation bar, click <img src="/images/docs/v3.3/project-user-guide/application-workloads/horizontal-pod-autoscaling/three-dots.png" width="20px" /> on the right of the load generator Deployment (for example, load-generator-v1), and choose **Delete** from the drop-down list. After the load-generator Deployment is deleted, check the status of the HPA Deployment again. The number of Pods decreases to the minimum.
+2. Choose **Workloads** in **Application Workloads** on the left navigation bar, click <img src="/images/docs/v3.3/project-user-guide/application-workloads/horizontal-pod-autoscaling/three-dots.png" width="20px" alt="icon" /> on the right of the load generator Deployment (for example, load-generator-v1), and choose **Delete** from the drop-down list. After the load-generator Deployment is deleted, check the status of the HPA Deployment again. The number of Pods decreases to the minimum.
 
 {{< notice note >}}
 
@@ -99,6 +99,6 @@ You can repeat steps in [Configure HPA](#configure-hpa) to edit the HPA configur
 
 1. Choose **Workloads** in **Application Workloads** on the left navigation bar and click the HPA Deployment (for example, hpa-v1) on the right.
 
-2. Click <img src="/images/docs/v3.3/project-user-guide/application-workloads/horizontal-pod-autoscaling/three-dots.png" width="20px" /> on the right of **Autoscaling** and choose **Cancel** from the drop-down list.
+2. Click <img src="/images/docs/v3.3/project-user-guide/application-workloads/horizontal-pod-autoscaling/three-dots.png" width="20px" alt="icon" /> on the right of **Autoscaling** and choose **Cancel** from the drop-down list.
 
 

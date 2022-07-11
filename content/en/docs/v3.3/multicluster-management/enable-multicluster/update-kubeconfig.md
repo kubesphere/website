@@ -10,7 +10,7 @@ In multi-cluster environments, if the certificate of a member cluster is about t
 
 1. Choose **Platform > Cluster Management**.
 
-2. On the **Cluster Management** page, click <img src="/images/docs/v3.3/enable-pluggable-components/kubesphere-app-store/three-dots.png" height="20px"> on the right of the member cluster, and click **Update KubeConfig**.
+2. On the **Cluster Management** page, click <img src="/images/docs/v3.3/enable-pluggable-components/kubesphere-app-store/three-dots.png" height="20px" alt="icon"> on the right of the member cluster, and click **Update KubeConfig**.
 
 3. In the **Update KubeConfig** dialog box that is diaplayed, enter the new kubeconfig，and click **update**.
 
