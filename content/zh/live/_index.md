@@ -10,22 +10,29 @@ section1:
 
 section2:
   image: /images/live/cloudnative-live-banner.png
-  url: ./kubesphere-v3.3.0-live/
+  url: ./pg0707-live/
 
   notice:
-    title: 当 KubeSphere 遇上最先进的开源数据库 PostgreSQL
+    title: 基于 KubeSphere & Crane 的成本优化实践
     tag: 预告
-    time: 2022 年 07 月 07 日晚 8 点
+    time: 2022 年 07 月 14 日晚 8 点
     base: 线上
-    url: ./pg0707-live/
+    url: ./crane0714-live/
 
   over:
-    title: 浅析 Kubernetes 对 GPU 虚拟化、池化技术的集成
+    title: KubeSphere 3.3.0 社区交流会
     tag: 结束
-    url: ./gpu0623-live/
+    url: ./kubesphere-v3.3.0-live/
 
 section3:
   videos:
+    - title: 当 KubeSphere 遇上最先进的开源数据库 PostgreSQL
+      link: ./pg0707-live/
+      snapshot: https://pek3b.qingstor.com/kubesphere-community/images/pg0707-live-cover.png
+      type: iframe
+      createTime: 2022.07.07
+      group: 直播回放
+
     - title: KubeSphere 3.3.0 社区交流会
       link: ./kubesphere-v3.3.0-live/
       snapshot: https://pek3b.qingstor.com/kubesphere-community/images/kubesphere-v3.3.0-live-cover.png
