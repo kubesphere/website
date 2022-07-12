@@ -38,7 +38,7 @@ section2:
   
     - icon: "images/case/ZTO/ZTO6.jpg"
       content: "ZTO is both a key enabler and a direct beneficiary of China’s fast-growing e-commerce market, and has established itself as one of the largest express delivery service providers for millions of online merchants and consumers transacting on leading Chinese e-commerce platforms, such as Alibaba and JD.com."
-      link: "ZTO/"
+      link: "zto/"
 
 section3:
   title: 'Various Industries are Powered by KubeSphere'
