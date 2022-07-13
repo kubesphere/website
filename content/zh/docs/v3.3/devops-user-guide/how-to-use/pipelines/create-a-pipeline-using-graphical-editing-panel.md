@@ -320,7 +320,7 @@ KubeSphere 中的图形编辑面板包含用于 Jenkins [阶段 (Stage)](https:/
 
    {{< notice note >}}
    
-   在**流水线**页面，您可以点击该流水线右侧的 <img src="/images/docs/v3.3/common-icons/three-dots.png" width="15" />，然后选择**复制**来创建该流水线的副本。如果您需要同时运行多个不包含多分支的流水线，您可以全部选中这些流水线，然后点击**运行**来批量运行它们。
+   在**流水线**页面，您可以点击该流水线右侧的 <img src="/images/docs/v3.3/common-icons/three-dots.png" width="15" alt="icon" />，然后选择**复制**来创建该流水线的副本。如果您需要同时运行多个不包含多分支的流水线，您可以全部选中这些流水线，然后点击**运行**来批量运行它们。
    
    {{</ notice >}}
 

@@ -68,7 +68,7 @@ weight: 8723
 
    {{</ notice >}}
 
-4. 您可以在**机器人管理**页面点击已创建机器人右侧的 <img src="/images/docs/v3.3/zh-cn/cluster-administration/platform-settings/notification-management/configure-dingtalk/three-dots.png" width="30" height="25" />，查看机器人的具体设置信息，例如 **Webhook**、**自定义关键词**和**加签**。
+4. 您可以在**机器人管理**页面点击已创建机器人右侧的 <img src="/images/docs/v3.3/zh-cn/cluster-administration/platform-settings/notification-management/configure-dingtalk/three-dots.png" width="30" height="25" alt="icon" />，查看机器人的具体设置信息，例如 **Webhook**、**自定义关键词**和**加签**。
 
 ### 步骤 4：在 KubeSphere 控制台配置钉钉通知
 
@@ -92,7 +92,7 @@ weight: 8723
    - 操作符**存在**和**不存在**判断某个标签是否存在，无需设置标签值。
    {{</ notice >}}
 
-   您可以点击**添加**来添加多个通知条件，或点击通知条件右侧的 <img src="/images/docs/v3.3/common-icons/trashcan.png" width='25' height='25' /> 来删除通知条件。
+   您可以点击**添加**来添加多个通知条件，或点击通知条件右侧的 <img src="/images/docs/v3.3/common-icons/trashcan.png" width='25' height='25' alt="icon" /> 来删除通知条件。
 
 6. 配置完成后，您可以点击右下角的**发送测试信息**进行验证。
 

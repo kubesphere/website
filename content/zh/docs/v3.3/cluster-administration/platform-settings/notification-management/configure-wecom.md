@@ -32,13 +32,13 @@ weight: 8724
 
 ### 步骤 2：创建部门或标签
 
-1. 在**通讯录**页面的**组织架构**选项卡下，点击**测试**（本教程使用`测试`部门作为示例）右侧的 <img src="/images/docs/v3.3/zh-cn/cluster-administration/platform-settings/notification-management/configure-wecom/three-dots.png" height="20px">，然后选择**添加子部门**。
+1. 在**通讯录**页面的**组织架构**选项卡下，点击**测试**（本教程使用`测试`部门作为示例）右侧的 <img src="/images/docs/v3.3/zh-cn/cluster-administration/platform-settings/notification-management/configure-wecom/three-dots.png" height="20px" alt="icon" >，然后选择**添加子部门**。
 
 2. 在弹出对话框中，输入部门名称（例如`测试二组`），然后点击**确定**。
 
 3. 创建部门后，您可以点击右侧的**添加成员**、**批量导入**或**从其他部门移入**来添加成员。添加成员后，点击该成员进入详情页面，查看其帐号。
 
-4. 您可以点击`测试二组`右侧的 <img src="/images/docs/v3.3/zh-cn/cluster-administration/platform-settings/notification-management/configure-wecom/three-dots.png" height="20px"> 来查看其部门 ID。
+4. 您可以点击`测试二组`右侧的 <img src="/images/docs/v3.3/zh-cn/cluster-administration/platform-settings/notification-management/configure-wecom/three-dots.png" height="20px" alt="icon" > 来查看其部门 ID。
 
 5. 点击**标签**选项卡，然后点击**添加标签**来创建标签。若管理界面无**标签**选项卡，请点击加号图标来创建标签。
 
@@ -72,7 +72,7 @@ weight: 8724
    - 操作符**存在**和**不存在**判断某个标签是否存在，无需设置标签值。
    {{</ notice >}}
 
-   您可以点击**添加**来添加多个通知条件，或点击通知条件右侧的 <img src="/images/docs/v3.3/common-icons/trashcan.png" width='25' height='25' /> 来删除通知条件。
+   您可以点击**添加**来添加多个通知条件，或点击通知条件右侧的 <img src="/images/docs/v3.3/common-icons/trashcan.png" width='25' height='25' alt="icon" /> 来删除通知条件。
 
 7. 配置完成后，您可以点击右下角的**发送测试信息**进行验证。
 

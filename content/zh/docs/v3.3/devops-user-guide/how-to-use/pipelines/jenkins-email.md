@@ -20,7 +20,7 @@ Weight: 11218
 
 2. 如果您已经启用[多集群功能](../../../../multicluster-management/)并已导入成员集群，那么您可以选择一个特定集群以查看其节点。如果尚未启用该功能，请直接参考下一步。
 
-3. 转到**应用负载**下的**工作负载**，然后从下拉列表中选择 **kubesphere-devops-system** 项目。点击 `devops-jenkins` 右侧的 <img src="/images/docs/v3.3/common-icons/three-dots.png" height="15" /> 并选择**编辑 YAML** 以编辑其 YAML 配置文件。
+3. 转到**应用负载**下的**工作负载**，然后从下拉列表中选择 **kubesphere-devops-system** 项目。点击 `devops-jenkins` 右侧的 <img src="/images/docs/v3.3/common-icons/three-dots.png" height="15" alt="icon" /> 并选择**编辑 YAML** 以编辑其 YAML 配置文件。
 
 4. 向下滚动到下图所示的需要指定的字段。完成修改后，点击**确定**以保存。
 
