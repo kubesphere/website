@@ -22,13 +22,13 @@ Kubernetes 事件系统用于深入了解集群内部发生的事件，KubeSpher
 
 ## 查询事件
 
-1. 所有用户都可以使用事件查询功能。使用任意帐户登录控制台，在右下角的 <img src="/images/docs/v3.3/zh-cn/toolbox/event-query/toolbox.png" width="20" /> 上悬停，然后在弹出菜单中选择**资源事件查询**。
+1. 所有用户都可以使用事件查询功能。使用任意帐户登录控制台，在右下角的 <img src="/images/docs/v3.3/zh-cn/toolbox/event-query/toolbox.png" width="20" alt="icon" /> 上悬停，然后在弹出菜单中选择**资源事件查询**。
 
 2. 在弹出窗口中，您可以看到该帐户有权限查看的事件数量。
 
     {{< notice note >}}
 
-- 如果您启用了[多集群功能](../../multicluster-management/)，KubeSphere 支持对每个集群分别进行事件查询。您可以点击搜索栏左侧的 <img src="/images/docs/v3.3/zh-cn/toolbox/event-query/drop-down-list.png" width='20' />，然后选择一个目标集群。
+- 如果您启用了[多集群功能](../../multicluster-management/)，KubeSphere 支持对每个集群分别进行事件查询。您可以点击搜索栏左侧的 <img src="/images/docs/v3.3/zh-cn/toolbox/event-query/drop-down-list.png" width='20' alt="icon" />，然后选择一个目标集群。
 
 - KubeSphere 默认存储最近七天的事件。
 

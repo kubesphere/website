@@ -82,7 +82,7 @@ weight: 10230
 
 ### 详情页面
 
-1. 守护进程集创建后会显示列表中。您可以点击右边的 <img src="/images/docs/v3.3/zh-cn/project-user-guide/application-workloads/daemonsets/three-dots.png" width="20px" />，在弹出菜单中选择操作，修改您的守护进程集。
+1. 守护进程集创建后会显示列表中。您可以点击右边的 <img src="/images/docs/v3.3/zh-cn/project-user-guide/application-workloads/daemonsets/three-dots.png" width="20px" alt="icon" />，在弹出菜单中选择操作，修改您的守护进程集。
 
     - **编辑信息**：查看并编辑基本信息。
     - **编辑 YAML**：查看、上传、下载或者更新 YAML 文件。
@@ -123,9 +123,9 @@ weight: 10230
 
 2. 点击右上角的下拉菜单以自定义时间范围和采样间隔。
 
-3. 点击右上角的 <img src="/images/docs/v3.3/zh-cn/project-user-guide/application-workloads/daemonsets/daemonsets_autorefresh_start.png" width="20px" />/<img src="/images/docs/v3.3/zh-cn/project-user-guide/application-workloads/daemonsets/daemonsets_autorefresh_stop.png" width="20px" /> 以开始或停止自动刷新数据。
+3. 点击右上角的 <img src="/images/docs/v3.3/zh-cn/project-user-guide/application-workloads/daemonsets/daemonsets_autorefresh_start.png" width="20px" alt="icon" />/<img src="/images/docs/v3.3/zh-cn/project-user-guide/application-workloads/daemonsets/daemonsets_autorefresh_stop.png" width="20px" alt="icon" /> 以开始或停止自动刷新数据。
 
-4. 点击右上角的 <img src="/images/docs/v3.3/zh-cn/project-user-guide/application-workloads/daemonsets/daemonsets_refresh.png" width="20px" /> 以手动刷新数据。
+4. 点击右上角的 <img src="/images/docs/v3.3/zh-cn/project-user-guide/application-workloads/daemonsets/daemonsets_refresh.png" width="20px" alt="icon" /> 以手动刷新数据。
 
 ### 环境变量
 

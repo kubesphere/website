@@ -16,13 +16,13 @@ You need to enable the [KubeSphere Logging System](../../pluggable-components/lo
 
 ## Enter the Log Query Interface
 
-1. The log query function is available for all users. Log in to the console with any account, hover over <img src="/images/docs/v3.3/toolbox/log-query/toolbox.png" width='20' /> in the lower-right corner and select **Log Search**.
+1. The log query function is available for all users. Log in to the console with any account, hover over <img src="/images/docs/v3.3/toolbox/log-query/toolbox.png" width='20' alt="icon" /> in the lower-right corner and select **Log Search**.
 
 2. In the pop-up window, you can see a time histogram of log numbers, a cluster selection drop-down list, and a log search bar.
 
     {{< notice note >}}
 
-- KubeSphere supports log queries on each cluster separately if you have enabled the [multi-cluster feature](../../multicluster-management/). You can click <img src="/images/docs/v3.3/toolbox/log-query/drop-down-list.png" width='20' /> on the left of the search box and select a target cluster.
+- KubeSphere supports log queries on each cluster separately if you have enabled the [multi-cluster feature](../../multicluster-management/). You can click <img src="/images/docs/v3.3/toolbox/log-query/drop-down-list.png" width='20' alt="icon" /> on the left of the search box and select a target cluster.
 
 - KubeSphere stores logs for last seven days by default.
 
@@ -50,7 +50,7 @@ The log query interface supports dynamic refreshing with 5s, 10s or 15s, and all
 
     {{</ notice >}}
 
-4. In the left panel, you can click <img src="/images/docs/v3.3/toolbox/log-query/view-detail-page.png" width='20' /> to view the Pod details page or container details page.
+4. In the left panel, you can click <img src="/images/docs/v3.3/toolbox/log-query/view-detail-page.png" width='20' alt="icon" /> to view the Pod details page or container details page.
 
 ## Drill into the Details Page
 

@@ -69,7 +69,7 @@ KubeSphere v3.3.0 提供集群级别的网关，使所有项目共用一个全�
 
 在**网关设置**页面，点击**项目网关**选项卡，以查看项目网关。
 
-点击项目网关右侧的 <img src="/images/docs/v3.3/project-administration/role-and-member-management/three-dots.png" width="20px"> ，从下拉菜单中选择操作：
+点击项目网关右侧的 <img src="/images/docs/v3.3/project-administration/role-and-member-management/three-dots.png" width="20px" alt="icon" > ，从下拉菜单中选择操作：
 
 - **编辑**：编辑项目网关的配置。
 - **关闭**：关闭项目网关。

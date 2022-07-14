@@ -136,7 +136,7 @@ KubeSphere 利用 [KubeEdge](https://kubeedge.io/zh/) 将原生容器化应用�
 
 3. 在右侧的搜索框中，输入 `clusterconfiguration`，并点击结果查看其详细页面。
 
-4. 点击 `ks-installer` 右侧的 <img src="/images/docs/v3.3/common-icons/three-dots.png" width="15" />，选择**编辑 YAML**。
+4. 点击 `ks-installer` 右侧的 <img src="/images/docs/v3.3/common-icons/three-dots.png" width="15" alt="icon" />，选择**编辑 YAML**。
 
 5. 找到 **metrics_server**，将 `enabled` 的 `false` 更改为 `true`。
 

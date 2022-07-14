@@ -22,14 +22,14 @@ weight: 15100
 
 ## 进入日志查询界面
 
-1. 所有用户都可以使用日志查询功能。使用任意帐户登录控制台，在右下角的 <img src="/images/docs/v3.3/zh-cn/toolbox/log-query/toolbox.png" width='20' /> 上悬停，然后在弹出菜单中选择**日志查询**。
+1. 所有用户都可以使用日志查询功能。使用任意帐户登录控制台，在右下角的 <img src="/images/docs/v3.3/zh-cn/toolbox/log-query/toolbox.png" width='20' alt="icon" /> 上悬停，然后在弹出菜单中选择**日志查询**。
 
 2. 在弹出窗口中，您可以看到日志数量的时间直方图、集群选择下拉列表以及日志查询栏。
 
 
 ​      {{< notice note >}}
 
-- 如果您启用了[多集群功能](../../multicluster-management/)，KubeSphere 支持对每个集群分别进行日志查询。您可以点击搜索栏左侧的 <img src="/images/docs/v3.3/zh-cn/toolbox/log-query/drop-down-list.png" width='20' /> 切换目标集群。
+- 如果您启用了[多集群功能](../../multicluster-management/)，KubeSphere 支持对每个集群分别进行日志查询。您可以点击搜索栏左侧的 <img src="/images/docs/v3.3/zh-cn/toolbox/log-query/drop-down-list.png" width='20' alt="icon" /> 切换目标集群。
 
 - KubeSphere 默认存储最近七天内的日志。
 
@@ -55,15 +55,15 @@ weight: 15100
     {{< notice note >}}
 
 - 日志查询界面支持每 5 秒、10 秒或 15 秒动态刷新一次。
-- 您可以点击右上角的 <img src="/images/docs/v3.3/zh-cn/toolbox/log-query/export-logs.png" width='20' /> 将日志导出至本地文件进行进一步分析。
+- 您可以点击右上角的 <img src="/images/docs/v3.3/zh-cn/toolbox/log-query/export-logs.png" width='20' alt="icon" /> 将日志导出至本地文件进行进一步分析。
 
 {{</ notice >}}
 
-4. 在左侧面板中，您可以点击 <img src="/images/docs/v3.3/zh-cn/toolbox/log-query/drop-down-list.png" width='20' /> 切换 Pod 并查看其在同一个项目中的容器，从而查看是否有任何异常 Pod 影响到其他 Pod。
+4. 在左侧面板中，您可以点击 <img src="/images/docs/v3.3/zh-cn/toolbox/log-query/drop-down-list.png" width='20' alt="icon" /> 切换 Pod 并查看其在同一个项目中的容器，从而查看是否有任何异常 Pod 影响到其他 Pod。
 
 
 ## 进入详情页面
 
-在左侧面板，您可以点击 <img src="/images/docs/v3.3/zh-cn/toolbox/log-query/view-detail-page.png" width='20' /> 查看 Pod 详情页面或容器详情页面。
+在左侧面板，您可以点击 <img src="/images/docs/v3.3/zh-cn/toolbox/log-query/view-detail-page.png" width='20' alt="icon" /> 查看 Pod 详情页面或容器详情页面。
 
 您可以点击右上角的**终端**打开终端为容器排除故障。

@@ -16,13 +16,13 @@ This guide demonstrates how you can do multi-level, fine-grained event queries t
 
 ## Query Events
 
-1. The event query function is available for all users. Log in to the console with any account, hover over <img src="/images/docs/v3.3/toolbox/event-query/toolbox.png" width='20' /> in the lower-right corner and select **Resource Event Search**.
+1. The event query function is available for all users. Log in to the console with any account, hover over <img src="/images/docs/v3.3/toolbox/event-query/toolbox.png" width='20' alt="icon" /> in the lower-right corner and select **Resource Event Search**.
 
 2. In the displayed dialog box, you can view the number of events that the user has permission to view.
 
     {{< notice note >}}
 
-- KubeSphere supports event queries on each cluster separately if you have enabled the [multi-cluster feature](../../multicluster-management/). You can click <img src="/images/docs/v3.3/toolbox/event-query/drop-down-list.png" width='20' /> on the left of the search box and select a target cluster.
+- KubeSphere supports event queries on each cluster separately if you have enabled the [multi-cluster feature](../../multicluster-management/). You can click <img src="/images/docs/v3.3/toolbox/event-query/drop-down-list.png" width='20' alt="icon" /> on the left of the search box and select a target cluster.
 
 - KubeSphere stores events for the last seven days by default.
 

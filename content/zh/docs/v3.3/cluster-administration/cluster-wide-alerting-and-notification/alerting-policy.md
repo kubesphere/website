@@ -63,8 +63,8 @@ KubeSphere 还具有内置策略，一旦满足为这些策略定义的条件，
 
 {{< notice note >}}
 
-您可以点击右上角的 <img src="/images/docs/v3.3/zh-cn/cluster-administration/cluster-wide-alerting-and-notification/alerting-policy-node-level/drop-down-list.png" width='20' /> 选择告警监控的时间范围或者自定义时间范围。
+您可以点击右上角的 <img src="/images/docs/v3.3/zh-cn/cluster-administration/cluster-wide-alerting-and-notification/alerting-policy-node-level/drop-down-list.png" width='20' alt="icon" /> 选择告警监控的时间范围或者自定义时间范围。
 
-您还可以点击右上角的 <img src="/images/docs/v3.3/zh-cn/cluster-administration/cluster-wide-alerting-and-notification/alerting-policy-node-level/refresh.png" width='25' /> 来手动刷新告警监控图。
+您还可以点击右上角的 <img src="/images/docs/v3.3/zh-cn/cluster-administration/cluster-wide-alerting-and-notification/alerting-policy-node-level/refresh.png" width='25' alt="icon" /> 来手动刷新告警监控图。
 
 {{</ notice >}}
