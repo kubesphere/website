@@ -67,6 +67,7 @@ KubeSphere Talented Speaker 主要授予：
 | -------- | -------- | 
 | Jinghe Ma    | [点击领取证书](https://pek3b.qingstor.com/kubesphere-community/images/speaker-majinghe.png)      | 
 | Xingyan Jiang    | [点击领取证书](https://pek3b.qingstor.com/kubesphere-community/images/speaker-jiangxingyan.png)      | 
+| Feynman Zhou    | [点击领取证书](https://pek3b.qingstor.com/kubesphere-community/images/speaker-zhoupengfei.png)      | 
 | Kehui Li   | [点击领取证书](https://pek3b.qingstor.com/kubesphere-community/images/speaker-likehui.png)      | 
 | Botao Tang    | [点击领取证书](https://pek3b.qingstor.com/kubesphere-community/images/speaker-tangbotao.png)      | 
 | Kun Yuan   | [点击领取证书](https://pek3b.qingstor.com/kubesphere-community/images/speaker-yuankun.png)     | 
@@ -83,7 +84,6 @@ KubeSphere Talented Speaker 主要授予：
 | Dehao Cheng    | [点击领取证书](https://pek3b.qingstor.com/kubesphere-community/images/speaker-chengdehao.png)     | 
 | Yuanqing Liu    | [点击领取证书](https://pek3b.qingstor.com/kubesphere-community/images/speaker-liuyuanqing.png)     | 
 | Ran Tao    | [点击领取证书](https://pek3b.qingstor.com/kubesphere-community/images/speaker-taoran.png)     | 
-| Run Hu    | [点击领取证书](https://pek3b.qingstor.com/kubesphere-community/images/speaker-hurun.png)      | 
 | Dezhi Liu    | [点击领取证书](https://pek3b.qingstor.com/kubesphere-community/images/speaker-liudezhi.png)     | 
 | Yangbin Guo   | [点击领取证书](https://pek3b.qingstor.com/kubesphere-community/images/speaker-guoyangbin.png)     | 
 | Weiming Xu    | [点击领取证书](https://pek3b.qingstor.com/kubesphere-community/images/speaker-xuweiming.png)      | 
