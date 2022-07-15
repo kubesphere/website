@@ -2,12 +2,12 @@
 title: '新 KubeSphere Talented Speaker 揭晓！快来领取你的专属证书！'
 tag: '社区动态'
 keyword: '社区, 开源, 贡献, KubeSphere'
-description: 'KubeSphere 社区向新诞生的 26 位 2021 年度的 KubeSphere Talented Speaker 致谢，欢迎更多的人加入到 KubeSphere Talented Speaker 的行列。'
+description: 'KubeSphere 社区向新诞生的 46 位 KubeSphere Talented Speaker 致谢，欢迎更多的人加入到 KubeSphere Talented Speaker 的行列。'
 createTime: '2022-07-15'
 author: 'KubeSphere'
 image: 'https://pek3b.qingstor.com/kubesphere-community/images/talented-speaker-cover-20220715.png'
 ---
-2021 年 8 月份，KubeSphere 社区重启了每周四晚间的线上直播，邀请云原生领域的各位技术专家、贡献者和最终用户等等，分享他们在云原生领域的实践经验和发展动态。自开播后，每期都有数百人观看，截至目前已组织了近四十期。同时，KubeSphere 社区也在北京、上海、杭州、成都、长沙等多个城市组织了多场线下的交流活动，输出了数十个优质演讲内容。
+2021 年 8 月份，KubeSphere 社区重启了每周四晚间的线上云原生直播间，邀请云原生领域的各位技术专家、贡献者和最终用户等等，分享他们在云原生领域的实践经验、技术前沿和发展动态。自开播后，每期都有数百人观看，截至目前已组织了近四十期。同时，KubeSphere 社区也在北京、上海、杭州、成都、长沙等多个城市组织了多场线下的交流活动，输出了数十篇优质演讲内容。
 
 为了激励和感谢在这些社区活动中公开分享的讲师，社区设置了 KubeSphere Talented Speaker 奖项。社区[上次颁发](https://kubesphere.com.cn/news/kubesphere-speaker-certificates/)这个奖项是去年十月份，如今社区又诞生了 46 位 Talented Speaker。这其中有一部分主动参与了其他社区组织的活动，促进 KubeSphere 等云原生技术在不同行业进行更广泛地传播。
 
@@ -43,7 +43,7 @@ KubeSphere Talented Speaker 主要授予：
 | 姓名 | 证书 | 
 | -------- | -------- | 
 | Feng Guo | [点击领取证书](https://pek3b.qingstor.com/kubesphere-community/images/speaker-guofeng.png)     | 
-| Tao Liu |[点击领取证书](https://pek3b.qingstor.com/kubesphere-community/images/speaker-lliutao.png) |
+| Tao Liu |[点击领取证书](https://pek3b.qingstor.com/kubesphere-community/images/speaker-liutao.png) |
 | Junfeng Wan|[点击领取证书](https://pek3b.qingstor.com/kubesphere-community/images/speaker-wanjunfeng.png) |
 | Wenwei Lin|[点击领取证书](https://pek3b.qingstor.com/kubesphere-community/images/speaker-linwenwei.png) |
 | Yang Zhou|[点击领取证书](https://pek3b.qingstor.com/kubesphere-community/images/speaker-zhouyang.png) |
