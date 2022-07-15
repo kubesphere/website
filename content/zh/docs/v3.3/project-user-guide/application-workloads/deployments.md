@@ -84,7 +84,7 @@ weight: 10210
 
 ### 详情页面
 
-1. 部署创建后会显示在列表中。您可以点击右边的 <img src="/images/docs/v3.3/zh-cn/project-user-guide/application-workloads/deployments/three-dots.png" width="20px" />，在弹出菜单中选择操作，修改您的部署。
+1. 部署创建后会显示在列表中。您可以点击右边的 <img src="/images/docs/v3.3/zh-cn/project-user-guide/application-workloads/deployments/three-dots.png" width="20px" alt="icon" />，在弹出菜单中选择操作，修改您的部署。
 
     - **编辑信息**：查看并编辑基本信息。
     - **编辑 YAML**：查看、上传、下载或者更新 YAML 文件。

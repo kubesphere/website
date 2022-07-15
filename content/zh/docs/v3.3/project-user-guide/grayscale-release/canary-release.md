@@ -116,7 +116,7 @@ KubeSphere 提供基于 [Jaeger](https://www.jaegertracing.io/) 的分布式追�
 
 1. 在**任务状态**中，点击金丝雀发布任务。
 
-2. 在弹出的对话框中，点击 **reviews v2** 右侧的 <img src="/images/docs/v3.3/zh-cn/project-user-guide/grayscale-release/canary-release/three-dots.png" width="20px" />，选择**接管**。这代表 100% 的流量将会被发送到新版本 (v2)。
+2. 在弹出的对话框中，点击 **reviews v2** 右侧的 <img src="/images/docs/v3.3/zh-cn/project-user-guide/grayscale-release/canary-release/three-dots.png" width="20px" alt="icon" />，选择**接管**。这代表 100% 的流量将会被发送到新版本 (v2)。
 
    {{< notice note >}}
    如果新版本出现任何问题，可以随时回滚到之前的 v1 版本。

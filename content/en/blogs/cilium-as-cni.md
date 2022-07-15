@@ -167,7 +167,7 @@ For more information about Linux compatibility, check out [Linux Distribution Co
 
 Hubble is designed for network visualization. Through the eBPF data paths provided by Cilium, Hubble enables deep visibility into the network traffic of applications and services running on Kubernetes. You can use the Hubble CLI or UI tools to realize quick interactive diagnoses of issues like DNS-related ones. In addition to Hubble's own monitoring tools, you can also extend your monitoring policies by integrating other popular cloud-native monitoring system such as Prometheus and Grafana.
 
-1. Hover your cursor over <img src="/images/blogs/en/cilium-as-cni/hammer.png" width="20px"> and select **Kubectl**.
+1. Hover your cursor over <img src="/images/blogs/en/cilium-as-cni/hammer.png" width="20px" alt="icon" > and select **Kubectl**.
 
    ![kubectl](/images/blogs/en/cilium-as-cni/kubectl.png)
 
@@ -204,7 +204,7 @@ Hubble is designed for network visualization. Through the eBPF data paths provid
 
    ![get-demo](/images/blogs/en/cilium-as-cni/get-demo.png)
 
-3. On the **Services** page of KubeSphere console, select `kube-system` from the drop-down list, enter `hubble` in the search box, and press **Enter**. Click <img src="/images/blogs/en/cilium-as-cni/three-dots.png" width="20px"> on the right of `hubble-ui` and select **Edit Internet Access**.
+3. On the **Services** page of KubeSphere console, select `kube-system` from the drop-down list, enter `hubble` in the search box, and press **Enter**. Click <img src="/images/blogs/en/cilium-as-cni/three-dots.png" width="20px" alt="icon" > on the right of `hubble-ui` and select **Edit Internet Access**.
 
    ![edit-access](/images/blogs/en/cilium-as-cni/edit-access.png)
 

@@ -51,7 +51,7 @@ This tutorial demonstrates how to collect logs for an example app.
 
    {{</ notice >}} 
 
-6. On the **Storage Settings** tab, click <img src="/images/docs/v3.3/project-administration/disk-log-collection/toggle-switch.png" width="20" /> to enable **Collect Logs on Volumes** and click **Mount Volume**.
+6. On the **Storage Settings** tab, click <img src="/images/docs/v3.3/project-administration/disk-log-collection/toggle-switch.png" width="20" alt="icon" /> to enable **Collect Logs on Volumes** and click **Mount Volume**.
 
 7. On the **Temporary Volume** tab, enter a name for the volume (for example, `demo-disk-log-collection`) and set the access mode and path.
 
@@ -69,7 +69,7 @@ This tutorial demonstrates how to collect logs for an example app.
 
 1. Under the **Deployments** tab, click the Deployment just created to go to its detail page.
 
-2. In **Resource Status**, you can click <img src="/images/docs/v3.3/project-administration/disk-log-collection/arrow.png" width="20" /> to view container details, and then click <img src="/images/docs/v3.3/project-administration/disk-log-collection/log-icon.png" width="20" alt="icon" /> of `logsidecar-container` (filebeat container) to view logs.
+2. In **Resource Status**, you can click <img src="/images/docs/v3.3/project-administration/disk-log-collection/arrow.png" width="20" alt="icon" /> to view container details, and then click <img src="/images/docs/v3.3/project-administration/disk-log-collection/log-icon.png" width="20" alt="icon" /> of `logsidecar-container` (filebeat container) to view logs.
 
-3. Alternatively, you can also click <img src="/images/docs/v3.3/project-administration/disk-log-collection/toolbox.png" width="20" />  in the lower-right corner and select **Log Search** to view stdout logs. For example, use the Pod name of the Deployment for a fuzzy query.
+3. Alternatively, you can also click <img src="/images/docs/v3.3/project-administration/disk-log-collection/toolbox.png" width="20" alt="icon" />  in the lower-right corner and select **Log Search** to view stdout logs. For example, use the Pod name of the Deployment for a fuzzy query.
 

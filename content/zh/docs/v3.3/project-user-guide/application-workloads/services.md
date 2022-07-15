@@ -159,7 +159,7 @@ KubeSphere 提供三种创建服务的基本方法：**无状态服务**、**有
 
 ### 详情页面
 
-1. 创建服务后，您可以点击右侧的 <img src="/images/docs/v3.3/zh-cn/project-user-guide/application-workloads/services/three-dots.png" width="20px" /> 进一步编辑它，例如元数据（**名称**无法编辑）、配置文件、端口以及外部访问。
+1. 创建服务后，您可以点击右侧的 <img src="/images/docs/v3.3/zh-cn/project-user-guide/application-workloads/services/three-dots.png" width="20px" alt="icon" /> 进一步编辑它，例如元数据（**名称**无法编辑）、配置文件、端口以及外部访问。
 
     - **编辑**：查看和编辑基本信息。
     - **编辑 YAML**：查看、上传、下载或者更新 YAML 文件。
@@ -179,7 +179,7 @@ KubeSphere 提供三种创建服务的基本方法：**无状态服务**、**有
 
 1. 点击**资源状态**选项卡以查看服务端口、工作负载和容器组信息。
 
-2. 在**容器组**区域，点击 <img src="/images/docs/v3.3/zh-cn/project-user-guide/application-workloads/services/services_refresh_pods.png" width="20px" /> 以刷新容器组信息，点击 <img src="/images/docs/v3.3/zh-cn/project-user-guide/application-workloads/services/services_display_containers.png" width="20px" />/<img src="/images/docs/v3.3/zh-cn/project-user-guide/application-workloads/services/services_hide_containers.png" width="20px" /> 以显示或隐藏每个容器组中的容器。
+2. 在**容器组**区域，点击 <img src="/images/docs/v3.3/zh-cn/project-user-guide/application-workloads/services/services_refresh_pods.png" width="20px" alt="icon" /> 以刷新容器组信息，点击 <img src="/images/docs/v3.3/zh-cn/project-user-guide/application-workloads/services/services_display_containers.png" width="20px" />/<img src="/images/docs/v3.3/zh-cn/project-user-guide/application-workloads/services/services_hide_containers.png" width="20px" /> 以显示或隐藏每个容器组中的容器。
 
 ### 元数据
 

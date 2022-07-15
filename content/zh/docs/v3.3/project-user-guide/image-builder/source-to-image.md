@@ -95,7 +95,7 @@ Source-to-Image (S2I) 是一个工具箱和工作流，用于从源代码构建�
 
 1. 稍等片刻，您可以看到镜像构建器状态变为**成功**。
 
-2. 点击该镜像构建器前往其详情页面。在**任务记录**下，点击记录右侧的 <img src="/images/docs/v3.3/zh-cn/project-user-guide/image-builder/source-to-image/down-arrow.png" width="20px" /> 查看构建日志。如果一切运行正常，您可以在日志末尾看到 `Build completed successfully`。
+2. 点击该镜像构建器前往其详情页面。在**任务记录**下，点击记录右侧的 <img src="/images/docs/v3.3/zh-cn/project-user-guide/image-builder/source-to-image/down-arrow.png" width="20px" alt="icon" /> 查看构建日志。如果一切运行正常，您可以在日志末尾看到 `Build completed successfully`。
 
 3. 回到**服务**、**部署**和**任务**页面，您可以看到该镜像相应的服务、部署和任务都已成功创建。
 

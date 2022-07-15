@@ -83,7 +83,7 @@ HPA 功能会自动调整容器组的数量，将容器组的平均资源使用�
 
 1. 负载生成器部署创建好后，在左侧导航栏中选择**应用负载**下的**工作负载**，然后点击右侧的 HPA 部署（例如，hpa-v1）。页面中显示的容器组的数量会自动增加以满足资源使用目标。
 
-2. 在左侧导航栏选择**应用负载**中的**工作负载**，点击负载生成器部署（例如，load-generator-v1）右侧的 <img src="/images/docs/v3.3/zh-cn/project-user-guide/application-workloads/horizontal-pod-autoscaling/three-dots.png" width="20px" />，从下拉菜单中选择**删除**。负载生成器部署删除后，再次检查 HPA 部署的状态。容器组的数量会减少到最小值。
+2. 在左侧导航栏选择**应用负载**中的**工作负载**，点击负载生成器部署（例如，load-generator-v1）右侧的 <img src="/images/docs/v3.3/zh-cn/project-user-guide/application-workloads/horizontal-pod-autoscaling/three-dots.png" width="20px" alt="icon" />，从下拉菜单中选择**删除**。负载生成器部署删除后，再次检查 HPA 部署的状态。容器组的数量会减少到最小值。
 
 {{< notice note >}}
 
@@ -99,5 +99,5 @@ HPA 功能会自动调整容器组的数量，将容器组的平均资源使用�
 
 1. 在左侧导航栏选择**应用负载**中的**工作负载**，点击右侧的 HPA 部署（例如，hpa-v1）。
 
-2. 点击**自动伸缩**右侧的 <img src="/images/docs/v3.3/zh-cn/project-user-guide/application-workloads/horizontal-pod-autoscaling/three-dots.png" width="20px" />，从下拉菜单中选择**取消**。
+2. 点击**自动伸缩**右侧的 <img src="/images/docs/v3.3/zh-cn/project-user-guide/application-workloads/horizontal-pod-autoscaling/three-dots.png" width="20px" alt="icon" />，从下拉菜单中选择**取消**。
 
