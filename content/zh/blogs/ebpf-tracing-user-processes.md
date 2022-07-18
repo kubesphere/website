@@ -26,7 +26,7 @@ snapshot: 'https://kubesphere-community.pek3b.qingstor.com/images/ebpf-guide-cov
 
 eBPF 跟踪具有以下优势：
 
-- 它为内核和用户空间提供了一个统一的跟踪接口，与其他工具（[k,u]probe, (dtrace)tracepoint 等）使用的机制兼容。2015 年的文章[选择 linux 跟踪器](http://www.brendangregg.com/blog/2015-07-08/choosing-a-linux-tracer.html)虽然有些过时，但其提供了很好的见解，说明使用所有不同的工具有多困难，要花多少精力。有一个统一的、强大的、安全的、可广泛使用的框架来满足大多数跟踪的需要，是非常有价值的。一些更高级别的工具，如 Perf/SystemTap/DTrace，正在 eBPF 的基础上重写（成为 eBPF 的前端），所以了解 eBPF 有助于使用它们。
+- 它为内核和用户空间提供了一个统一的跟踪接口，与其他工具（[k,u]probe, (dtrace)tracepoint 等）使用的机制兼容。2015 年的文章[选择 linux 跟踪器](https://www.brendangregg.com/blog/2015-07-08/choosing-a-linux-tracer.html)虽然有些过时，但其提供了很好的见解，说明使用所有不同的工具有多困难，要花多少精力。有一个统一的、强大的、安全的、可广泛使用的框架来满足大多数跟踪的需要，是非常有价值的。一些更高级别的工具，如 Perf/SystemTap/DTrace，正在 eBPF 的基础上重写（成为 eBPF 的前端），所以了解 eBPF 有助于使用它们。
 
 - eBPF 是完全可编程的。Perf/ftrace 和其他工具都需要在事后处理数据，而 eBPF 可直接在内核/应用程序中运行自定义的高级本地编译的 C/Python/Go 检测代码。它可以在多个 eBPF 事件运行之间存储数据，例如以基于函数状态/参数计算每个函数调用统计数据。
 

@@ -31,7 +31,7 @@ Apache Pulsar 是新一代云原生分布式消息队列，其独有的存储计
 
 ## 直播地址
 
-B 站  http://live.bilibili.com/22580654
+B 站  https://live.bilibili.com/22580654
 
 ## PPT 下载
 

@@ -31,9 +31,9 @@ snapshot: 'https://kubesphere-community.pek3b.qingstor.com/images/ebpf-guide-cov
 
 ## 2. eBPF 是什么？
 
-eBPF 是一个基于寄存器的虚拟机，使用自定义的 64 位 RISC 指令集，能够在 Linux 内核内运行即时本地编译的 "BPF 程序"，并能访问内核功能和内存的一个子集。这是一个完整的虚拟机实现，不要与基于内核的虚拟机（KVM）相混淆，后者是一个模块，目的是使 Linux 能够作为其他虚拟机的管理程序。eBPF 也是主线内核的一部分，所以它不像其他框架那样需要任何第三方模块（[LTTng](https://lttng.org/docs/v2.10/#doc-lttng-modules) 或 [SystemTap](https://kernelnewbies.org/SystemTap)），而且几乎所有的 Linux 发行版都默认启用。熟悉 DTrace 的读者可能会发现 [DTrace/BPFtrace 对比](http://www.brendangregg.com/blog/2018-10-08/dtrace-for-linux-2018.html)非常有用。
+eBPF 是一个基于寄存器的虚拟机，使用自定义的 64 位 RISC 指令集，能够在 Linux 内核内运行即时本地编译的 "BPF 程序"，并能访问内核功能和内存的一个子集。这是一个完整的虚拟机实现，不要与基于内核的虚拟机（KVM）相混淆，后者是一个模块，目的是使 Linux 能够作为其他虚拟机的管理程序。eBPF 也是主线内核的一部分，所以它不像其他框架那样需要任何第三方模块（[LTTng](https://lttng.org/docs/v2.10/#doc-lttng-modules) 或 [SystemTap](https://kernelnewbies.org/SystemTap)），而且几乎所有的 Linux 发行版都默认启用。熟悉 DTrace 的读者可能会发现 [DTrace/BPFtrace 对比](https://www.brendangregg.com/blog/2018-10-08/dtrace-for-linux-2018.html)非常有用。
 
-在内核内运行一个完整的虚拟机主要是考虑便利和安全。虽然 eBPF 程序所做的操作都可以通过正常的内核模块来处理，但直接的内核编程是一件非常危险的事情 - 这可能会导致系统锁定、内存损坏和进程崩溃，从而导致安全漏洞和其他意外的效果，特别是在生产设备上（eBPF 经常被用来检查生产中的系统），所以通过一个安全的虚拟机运行本地 JIT 编译的快速内核代码对于安全监控和沙盒、网络过滤、程序跟踪、性能分析和调试都是非常有价值的。部分简单的样例可以在这篇优秀的 [eBPF 参考](http://www.brendangregg.com/ebpf.html)中找到。
+在内核内运行一个完整的虚拟机主要是考虑便利和安全。虽然 eBPF 程序所做的操作都可以通过正常的内核模块来处理，但直接的内核编程是一件非常危险的事情 - 这可能会导致系统锁定、内存损坏和进程崩溃，从而导致安全漏洞和其他意外的效果，特别是在生产设备上（eBPF 经常被用来检查生产中的系统），所以通过一个安全的虚拟机运行本地 JIT 编译的快速内核代码对于安全监控和沙盒、网络过滤、程序跟踪、性能分析和调试都是非常有价值的。部分简单的样例可以在这篇优秀的 [eBPF 参考](https://www.brendangregg.com/ebpf.html)中找到。
 
 基于设计，eBPF 虚拟机和其程序有意地设计为**不是**图灵完备的：即不允许有循环（正在进行的工作是支持有界循环【译者注：已经支持有界循环，\#pragma unroll 指令】），所以每个 eBPF 程序都需要保证完成而不会被挂起、所有的内存访问都是有界和类型检查的（包括寄存器，一个 MOV 指令可以改变一个寄存器的类型）、不能包含空解引用、一个程序必须最多拥有 BPF_MAXINSNS 指令（默认 4096）、"主"函数需要一个参数（context）等等。当 eBPF 程序被加载到内核中，其指令被验证模块解析为有向环状图，上述的限制使得正确性可以得到简单而快速的验证。
 

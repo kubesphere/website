@@ -31,7 +31,7 @@ Prometheus 目前是监控的主流软件，其包括含监控服务，告警服
 
 ## 直播地址
 
-B 站  http://live.bilibili.com/22580654
+B 站  https://live.bilibili.com/22580654
 
 ## PPT 下载
 

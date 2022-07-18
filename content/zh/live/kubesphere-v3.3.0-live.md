@@ -31,7 +31,7 @@ KubeSphere 3.3.0 已于 6.25 发布，该版本新增了基于 GitOps 的持续�
 
 ## 直播地址
 
-B 站  http://live.bilibili.com/22580654
+B 站  https://live.bilibili.com/22580654
 
 ## Q & A
 

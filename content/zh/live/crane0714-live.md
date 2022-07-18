@@ -31,5 +31,5 @@ Crane 是腾讯开源的基于 Kubernetes 的降本增效项目。本次分享�
 
 ## 直播地址
 
-B 站  http://live.bilibili.com/22580654
+B 站  https://live.bilibili.com/22580654
 

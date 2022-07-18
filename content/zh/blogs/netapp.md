@@ -130,6 +130,6 @@ kubectl apply -f kubesphere.yaml
 
 ## 参考文档
 
-- http://docs.netapp.com/ontap-9/index.jsp?lang=zh_CN
+- https://docs.netapp.com/ontap-9/index.jsp?lang=zh_CN
 - https://netapp-trident.readthedocs.io/en/stable-v19.07/introduction.html
 - https://github.com/kubesphere/ks-installer/blob/master/README_zh.md

@@ -31,7 +31,7 @@ Mars Zhang 张聪，现就职与 Veeam 软件公司，任云解决方案架构�
 
 ## 直播地址
 
-B 站  http://live.bilibili.com/22580654
+B 站  https://live.bilibili.com/22580654
 
 ## PPT 下载
 

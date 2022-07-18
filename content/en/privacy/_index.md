@@ -210,9 +210,9 @@ For the purpose of the GDPR, Service Providers are considered Data Processors.</
 </ul>
 <p>Some of these third-party vendors may use non-cookie technologies that may not be impacted by browser settings that block cookies. Your browser may not permit You to block such technologies. You can use the following third-party tools to decline the collection and use of information for the purpose of serving You interest-based advertising:</p>
 <ul>
-<li>The NAI's opt-out platform: <a href="http://www.networkadvertising.org/choices/" rel="external nofollow noopener" target="_blank">http://www.networkadvertising.org/choices/</a></li>
-<li>The EDAA's opt-out platform <a href="http://www.youronlinechoices.com/" rel="external nofollow noopener" target="_blank">http://www.youronlinechoices.com/</a></li>
-<li>The DAA's opt-out platform: <a href="http://optout.aboutads.info/?c=2&amp;lang=EN" rel="external nofollow noopener" target="_blank">http://optout.aboutads.info/?c=2&amp;lang=EN</a></li>
+<li>The NAI's opt-out platform: <a href="https://www.networkadvertising.org/choices/" rel="external nofollow noopener" target="_blank">https://www.networkadvertising.org/choices/</a></li>
+<li>The EDAA's opt-out platform <a href="https://www.youronlinechoices.com/" rel="external nofollow noopener" target="_blank">https://www.youronlinechoices.com/</a></li>
+<li>The DAA's opt-out platform: <a href="https://optout.aboutads.info/?c=2&amp;lang=EN" rel="external nofollow noopener" target="_blank">https://optout.aboutads.info/?c=2&amp;lang=EN</a></li>
 </ul>
 <p>You may opt-out of all personalized advertising by enabling privacy features on Your mobile device such as Limit Ad Tracking (iOS) and Opt Out of Ads Personalization (Android). See Your mobile device Help system for more information.</p>
 <p>We may share information, such as hashed email addresses (if available) or other online identifiers collected on Our Service with these third-party vendors. This allows Our third-party vendors to recognize and deliver You ads across devices and browsers. To read more about the technologies used by these third-party vendors and their cross-device capabilities please refer to the Privacy Policy of each vendor listed below.</p>
@@ -221,7 +221,7 @@ For the purpose of the GDPR, Service Providers are considered Data Processors.</
 <li>
 <p><strong>Google Ads (AdWords)</strong></p>
 <p>Google Ads (AdWords) remarketing service is provided by Google Inc.</p>
-<p>You can opt-out of Google Analytics for Display Advertising and customise the Google Display Network ads by visiting the Google Ads Settings page: <a href="http://www.google.com/settings/ads" rel="external nofollow noopener" target="_blank">http://www.google.com/settings/ads</a></p>
+<p>You can opt-out of Google Analytics for Display Advertising and customise the Google Display Network ads by visiting the Google Ads Settings page: <a href="https://www.google.com/settings/ads" rel="external nofollow noopener" target="_blank">https://www.google.com/settings/ads</a></p>
 <p>Google also recommends installing the Google Analytics Opt-out Browser Add-on - <a href="https://tools.google.com/dlpage/gaoptout" rel="external nofollow noopener" target="_blank">https://tools.google.com/dlpage/gaoptout</a> - for your web browser. Google Analytics Opt-out Browser Add-on provides visitors with the ability to prevent their data from being collected and used by Google Analytics.</p>
 <p>For more information on the privacy practices of Google, please visit the Google Privacy &amp; Terms web page: <a href="https://policies.google.com/privacy" rel="external nofollow noopener" target="_blank">https://policies.google.com/privacy</a></p>
 </li>
@@ -236,7 +236,7 @@ For the purpose of the GDPR, Service Providers are considered Data Processors.</
 <p>Facebook remarketing service is provided by Facebook Inc.</p>
 <p>You can learn more about interest-based advertising from Facebook by visiting this page: <a href="https://www.facebook.com/help/516147308587266" rel="external nofollow noopener" target="_blank">https://www.facebook.com/help/516147308587266</a></p>
 <p>To opt-out from Facebook's interest-based ads, follow these instructions from Facebook: <a href="https://www.facebook.com/help/568137493302217" rel="external nofollow noopener" target="_blank">https://www.facebook.com/help/568137493302217</a></p>
-<p>Facebook adheres to the Self-Regulatory Principles for Online Behavioural Advertising established by the Digital Advertising Alliance. You can also opt-out from Facebook and other participating companies through the Digital Advertising Alliance in the USA <a href="http://www.aboutads.info/choices/" rel="external nofollow noopener" target="_blank">http://www.aboutads.info/choices/</a>, the Digital Advertising Alliance of Canada in Canada <a href="http://youradchoices.ca/" rel="external nofollow noopener" target="_blank">http://youradchoices.ca/</a> or the European Interactive Digital Advertising Alliance in Europe <a href="http://www.youronlinechoices.eu/" rel="external nofollow noopener" target="_blank">http://www.youronlinechoices.eu/</a>, or opt-out using your mobile device settings.</p>
+<p>Facebook adheres to the Self-Regulatory Principles for Online Behavioural Advertising established by the Digital Advertising Alliance. You can also opt-out from Facebook and other participating companies through the Digital Advertising Alliance in the USA <a href="https://www.aboutads.info/choices/" rel="external nofollow noopener" target="_blank">https://www.aboutads.info/choices/</a>, the Digital Advertising Alliance of Canada in Canada <a href="https://youradchoices.ca/" rel="external nofollow noopener" target="_blank">https://youradchoices.ca/</a> or the European Interactive Digital Advertising Alliance in Europe <a href="https://www.youronlinechoices.eu/" rel="external nofollow noopener" target="_blank">https://www.youronlinechoices.eu/</a>, or opt-out using your mobile device settings.</p>
 <p>For more information on the privacy practices of Facebook, please visit Facebook's Data Policy: <a href="https://www.facebook.com/privacy/explanation" rel="external nofollow noopener" target="_blank">https://www.facebook.com/privacy/explanation</a></p>
 </li>
 </ul>
@@ -488,9 +488,9 @@ For the purpose of the GDPR, Service Providers are considered Data Processors.</
 <h4>Website</h4>
 <p>You can opt out of receiving ads that are personalized as served by our Service Providers by following our instructions presented on the Service:</p>
 <ul>
-<li>The NAI's opt-out platform: <a href="http://www.networkadvertising.org/choices/" rel="external nofollow noopener" target="_blank">http://www.networkadvertising.org/choices/</a></li>
-<li>The EDAA's opt-out platform <a href="http://www.youronlinechoices.com/" rel="external nofollow noopener" target="_blank">http://www.youronlinechoices.com/</a></li>
-<li>The DAA's opt-out platform: <a href="http://optout.aboutads.info/?c=2&amp;lang=EN" rel="external nofollow noopener" target="_blank">http://optout.aboutads.info/?c=2&amp;lang=EN</a></li>
+<li>The NAI's opt-out platform: <a href="https://www.networkadvertising.org/choices/" rel="external nofollow noopener" target="_blank">https://www.networkadvertising.org/choices/</a></li>
+<li>The EDAA's opt-out platform <a href="https://www.youronlinechoices.com/" rel="external nofollow noopener" target="_blank">https://www.youronlinechoices.com/</a></li>
+<li>The DAA's opt-out platform: <a href="https://optout.aboutads.info/?c=2&amp;lang=EN" rel="external nofollow noopener" target="_blank">https://optout.aboutads.info/?c=2&amp;lang=EN</a></li>
 </ul>
 <p>The opt out will place a cookie on Your computer that is unique to the browser You use to opt out. If you change browsers or delete the cookies saved by your browser, You will need to opt out again.</p>
 <h4>Mobile Devices</h4>

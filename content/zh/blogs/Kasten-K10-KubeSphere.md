@@ -219,7 +219,7 @@ KubeSphere 容器平台对于云原生应用部署非常友好，对于还不熟
 
 [Kasten 官方文档](https://docs.kasten.io/)
 
-[Kasten 实战系列文章](http://www.data2clouds.com/index.php/archives/41/)
+[Kasten 实战系列文章](https://www.data2clouds.com/index.php/archives/41/)
 
 [KubeSphere GitHub](https://github.com/kubesphere/kubesphere)
 
