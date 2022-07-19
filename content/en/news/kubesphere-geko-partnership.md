@@ -20,7 +20,7 @@ Ray Zhou, head of KubeSphere project, highlighted KubeSphere’s decision to wor
 
 By building this strong partnership, KubeSphere and Geko look to better empower both community members as they are connected to exchange innovative solutions and explore cutting-edge technologies. Under the partnership, Geko will start by localizing the web console of KubeSphere v3.0, which will be released very soon. Local websites, documentation and more will be coming as the local community grows. Geko will also hold various activities to engage community members going forward, including workshops and meetups to help KubeSphere users.
 
-As an important part of the partnership, Geko will help to provide services for users in the European market as well, including website maintenance ([kubesphere.eu](http://kubesphere.eu)), infrastructure supply, and specific feature design based on the needs in the region. The next year will see closer cooperation between Geko and KubeSphere, as they look to promote the community together in global events such as KubeCon.
+As an important part of the partnership, Geko will help to provide services for users in the European market as well, including website maintenance (kubesphere.eu), infrastructure supply, and specific feature design based on the needs in the region. The next year will see closer cooperation between Geko and KubeSphere, as they look to promote the community together in global events such as KubeCon.
 
 ## About Geko
 
