@@ -44,7 +44,7 @@ For more information about requirements for nodes, network, and dependencies, [s
 
 ## Configure Load Balancing
 
-[Keepalived](https://www.keepalived.org/) provides a VRPP implementation and allows you to configure Linux machines for load balancing, preventing single points of failure. [HAProxy](http://www.haproxy.org/), providing reliable, high performance load balancing, works perfectly with Keepalived.
+[Keepalived](https://www.keepalived.org/) provides a VRPP implementation and allows you to configure Linux machines for load balancing, preventing single points of failure. [HAProxy](https://www.haproxy.org/), providing reliable, high performance load balancing, works perfectly with Keepalived.
 
 As I said above, I will install both Keepalived and HAproxy on `lb1` and `lb2`. The logic is very simple: if one of the node goes down, the virtual IP address (i.e. the floating IP address) will be automatically associated with another node so that the cluster is still functioning well, thus achieving high availability. If you want, you can add more nodes all with Keepalived and HAproxy installed for that purpose. 
 

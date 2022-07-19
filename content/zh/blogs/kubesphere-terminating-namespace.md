@@ -28,7 +28,7 @@ NAME                              STATUS        AGE
 kubesphere-logging-system         Terminating   6d19h
 ```
 
-它好像这地卡在了 Terminating 的状态。我试着寻找解决方法，参考这个 issue： http://github.com/kubernetes/kubernetes/issues/60807。但是这种方法要通过 API 才可以实现。EKS 是托管在 AWS 中的，我根本没有办法去操作 EKS 的后台。
+它好像这地卡在了 Terminating 的状态。我试着寻找解决方法，参考这个 issue： https://github.com/kubernetes/kubernetes/issues/60807。但是这种方法要通过 API 才可以实现。EKS 是托管在 AWS 中的，我根本没有办法去操作 EKS 的后台。
 
 终于我在这个 issue 中找到了答案： https://github.com/kubernetes/kubernetes/issues/60807#issuecomment-663853215
 

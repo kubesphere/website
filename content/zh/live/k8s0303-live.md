@@ -33,7 +33,7 @@ Kubernetes 集群对外暴露服务通常有多种方案，比如 Ingress、Load
 
 ## 直播地址
 
-B 站  http://live.bilibili.com/22580654
+B 站  https://live.bilibili.com/22580654
 
 ## PPT 下载
 

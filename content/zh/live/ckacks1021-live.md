@@ -34,7 +34,7 @@ KubeSphere 研发工程师，openEuler 社区 Cloud Native SIG Maintainer，CKA/
 
 ## 直播地址
 
-B 站  http://live.bilibili.com/22580654
+B 站  https://live.bilibili.com/22580654
 
 ## PPT 下载
 

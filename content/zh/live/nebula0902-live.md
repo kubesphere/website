@@ -34,7 +34,7 @@ Nebula Graph 开发者布道师，开源信徒，软件工程师，前 Ericsson 
 
 ## 直播地址
 
-B 站  http://live.bilibili.com/22580654
+B 站  https://live.bilibili.com/22580654
 
 
 ## PPT 下载

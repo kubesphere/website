@@ -38,7 +38,7 @@ section1:
 
 ## 直播地址
 
-B 站  http://live.bilibili.com/22580654
+B 站  https://live.bilibili.com/22580654
 
 ## PPT 下载
 

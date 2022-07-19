@@ -36,7 +36,7 @@ Michael Yuan 博士是 WasmEdge 的创始人和维护者。WasmEdge 是一个由
 
 ## 直播地址
 
-B 站  http://live.bilibili.com/22580654
+B 站  https://live.bilibili.com/22580654
 
 ## PPT 下载
 

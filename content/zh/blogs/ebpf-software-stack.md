@@ -124,7 +124,7 @@ eBPF 程序组件在 BCC 组织方式如下：
 
 ## 4. 层级 3：Python 太低级了：BPFftrace
 
-在某些用例中，BCC 仍然过于底层，例如在事件响应中检查系统时，时间至关重要，需要快速做出决定，而编写 python/"限制性 C" 会花费太多时间，因此 BPFtrace 建立在 BCC 之上，通过特定领域语言（受 AWK 和 C 启发）提供更高级别的抽象。根据[声明帖](http://www.brendangregg.com/blog/2018-10-08/dtrace-for-linux-2018.html)，该语言类似于 DTrace 语言实现，也被称为 DTrace 2.0，并提供了良好的介绍和例子。
+在某些用例中，BCC 仍然过于底层，例如在事件响应中检查系统时，时间至关重要，需要快速做出决定，而编写 python/"限制性 C" 会花费太多时间，因此 BPFtrace 建立在 BCC 之上，通过特定领域语言（受 AWK 和 C 启发）提供更高级别的抽象。根据[声明帖](https://www.brendangregg.com/blog/2018-10-08/dtrace-for-linux-2018.html)，该语言类似于 DTrace 语言实现，也被称为 DTrace 2.0，并提供了良好的介绍和例子。
 
 BPFtrace 在一个强大而安全（但与 BCC 相比仍有局限性）的语言中抽象出如此多的逻辑，是非常让人惊奇的。这个单行 shell 程序统计了每个用户进程系统调用的次数（访问[内置变量](https://github.com/iovisor/bpftrace/blob/master/docs/reference_guide.md#1-builtins)、[map 函数](https://github.com/iovisor/bpftrace/blob/master/docs/reference_guide.md#map-functions) 和[count()](https://github.com/iovisor/bpftrace/blob/master/docs/reference_guide.md#2-count-count)文档获取更多信息）。
 

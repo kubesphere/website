@@ -28,7 +28,7 @@ KubeSphere 最小化安装版本已经包含了监控模块，因此不需要额
 
 ### 部署 httpbin 演示应用
 
-由于需要演示网关的访问控制能力，我们必须要先有一个可以访问的应用作为网关的后台服务。这里我们使用 [httpbin.org](http://httpbin.org/) 提供的 [kennethreitz/httpbin](https://hub.docker.com/r/kennethreitz/httpbin/) 容器应用作为演示应用。
+由于需要演示网关的访问控制能力，我们必须要先有一个可以访问的应用作为网关的后台服务。这里我们使用 [httpbin.org](https://httpbin.org/) 提供的 [kennethreitz/httpbin](https://hub.docker.com/r/kennethreitz/httpbin/) 容器应用作为演示应用。
 
 在 KubeSphere 中，我们可以先创建新的项目或使用已有的项目，进入项目页面后，选择「应用负载」下的「服务」直接创建无状态工作负载并生成配套的服务。
 

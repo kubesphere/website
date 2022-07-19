@@ -64,7 +64,7 @@ KubeFed mainly defines four resource types:
 
   - **Template.** Templates define the representation of a common resource to be handled. If the object does not have a corresponding definition on the cluster where it will be deployed, the deployment will fail. In the following example of FederatedDeployment, the template contains all the information needed to create the deployment.
   - **Placement**. Placements define the name of the cluster that a resource object will appear in, with two methods available (`clusters` and `clusterSelector`).
-  - **Override**. Overrides define per-cluster, field-level variation that apply to the template, allowing you to customize configurations. In the example below, the number of replicas defined in `template` is 1, while `overrides` shows the replica number of cluster gondor will be 4 when it is deployed instead of 1 in `template`. A subset of the syntax of [Jsonpatch](http://jsonpatch.com/) is achieved in `overrides`, which means, theoretically, all the content in `template` can be overridden.
+  - **Override**. Overrides define per-cluster, field-level variation that apply to the template, allowing you to customize configurations. In the example below, the number of replicas defined in `template` is 1, while `overrides` shows the replica number of cluster gondor will be 4 when it is deployed instead of 1 in `template`. A subset of the syntax of [Jsonpatch](https://jsonpatch.com/) is achieved in `overrides`, which means, theoretically, all the content in `template` can be overridden.
 
   ![FederatedDeployment](https://ap3.qingstor.com/kubesphere-website/docs/example.png)
 

@@ -82,7 +82,7 @@ section2:
         #     text: 超分设置：
         #     bold: true
         #     level: 3
-        #     link: http://www.baidu.com
+        #     link: https://www.baidu.com
         - content: 我们通过超分比的方式，只要你设置好 Limit，我们很快就能把你的 Requset 算好，给你整合进来。目前生产的话，CPU是 10，内存大概是 1.5。
       image: https://pek3b.qingstor.com/kubesphere-community/images/ZTO-9.png
     - title:

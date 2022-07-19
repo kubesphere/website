@@ -31,7 +31,7 @@ Notification Manager 是 KubeSphere 开源的一款云原生多租户通知管�
 
 ## 直播地址
 
-B 站  http://live.bilibili.com/22580654
+B 站  https://live.bilibili.com/22580654
 
 ## PPT 下载
 

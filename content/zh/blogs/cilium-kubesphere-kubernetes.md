@@ -178,7 +178,7 @@ Ship landed
 
 ![](https://pek3b.qingstor.com/kubesphere-community/images/1621337367-698475-image.png)
 
-如果想开启网络 7 层的可视化观察，就需要对目标 Pod 进行 annotations ，感兴趣可以看 [Cilium 的官方文档](http://docs.cilium.io/en/stable/policy/visibility/)。
+如果想开启网络 7 层的可视化观察，就需要对目标 Pod 进行 annotations ，感兴趣可以看 [Cilium 的官方文档](https://docs.cilium.io/en/stable/policy/visibility/)。
 
 ## 总结
 

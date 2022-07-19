@@ -25,7 +25,7 @@ For demonstration and testing purposes, here are some example artifacts you can 
 ## Prerequisites
 
 - You have enabled the [KubeSphere DevOps System](../../../pluggable-components/devops/).
-- You need to create a [Docker Hub](http://www.dockerhub.com/) account. GitLab and Harbor are also supported.
+- You need to create a [Docker Hub](https://www.dockerhub.com/) account. GitLab and Harbor are also supported.
 - You need to create a workspace, a project and a user (`project-regular`). The user must be invited to the project with the role of `operator`. For more information, see [Create Workspaces, Projects, Users and Roles](../../../quick-start/create-workspace-and-project/).
 - Set a CI dedicated node for building images. This is not mandatory but recommended for the development and production environment as it caches dependencies and reduces build time. For more information, see [Set a CI Node for Dependency Caching](../../../devops-user-guide/how-to-use/devops-settings/set-ci-node/).
 
