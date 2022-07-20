@@ -336,8 +336,8 @@ In KubeKey v2.1.0, we bring in concepts of manifest and artifact, which provides
      name: sample
    spec:
      hosts:
-     - {name: master, address: 192.168.149.133, internalAddress: 192.168.149.133, user: root, password: "Qcloud@123"}
-     - {name: node1, address: 192.168.149.134, internalAddress: 192.168.149.134, user: root, password: "Qcloud@123"}
+     - {name: master, address: 192.168.0.3, internalAddress: 192.168.0.3, user: root, password: "<REPLACE_WITH_YOUR_ACTUAL_PASSWORD>"}
+     - {name: node1, address: 192.168.0.4, internalAddress: 192.168.0.4, user: root, password: "<REPLACE_WITH_YOUR_ACTUAL_PASSWORD>"}
    
      roleGroups:
        etcd:
@@ -567,7 +567,7 @@ In KubeKey v2.1.0, we bring in concepts of manifest and artifact, which provides
    ###              Welcome to KubeSphere!           ###
    #####################################################
    
-   Console: http://192.168.149.133:30880
+   Console: http://192.168.0.3:30880
    Account: admin
    Password: P@88w0rd
    
