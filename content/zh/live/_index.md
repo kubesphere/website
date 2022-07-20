@@ -10,22 +10,29 @@ section1:
 
 section2:
   image: /images/live/cloudnative-live-banner.png
-  url: ./pg0707-live/
+  url: ./crane0714-live/
 
   notice:
-    title: 基于 KubeSphere & Crane 的成本优化实践
+    title: 基于 Zadig 打造云原生 DevOps 平台
     tag: 预告
-    time: 2022 年 07 月 14 日晚 8 点
+    time: 2022 年 07 月 21 日晚 8 点
     base: 线上
-    url: ./crane0714-live/
+    url: ./zadig0721-live/
 
   over:
-    title: KubeSphere 3.3.0 社区交流会
+    title: 当 KubeSphere 遇上最先进的开源数据库 PostgreSQL
     tag: 结束
-    url: ./kubesphere-v3.3.0-live/
+    url: ./pg0707-live/
 
 section3:
   videos:
+    - title: 基于 KubeSphere & Crane 的成本优化实践
+      link: ./crane0714-live/
+      snapshot: https://pek3b.qingstor.com/kubesphere-community/images/crane0714-live-cover.png
+      type: iframe
+      createTime: 2022.07.14
+      group: 直播回放
+
     - title: 当 KubeSphere 遇上最先进的开源数据库 PostgreSQL
       link: ./pg0707-live/
       snapshot: https://pek3b.qingstor.com/kubesphere-community/images/pg0707-live-cover.png
