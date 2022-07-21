@@ -1,5 +1,5 @@
 ---
-title: 'Kubernetes 3.3.0 离线安装教程'
+title: 'KubeSphere 3.3.0 离线安装教程'
 tag: 'KubeSphere'
 keywords: 'KubeSphere, Kubernetes'
 description: "本文参考官方的离线文档，采用手写 manifest 文件的方式，实现 KubeSphere 3.3.0 离线环境的安装部署。"
