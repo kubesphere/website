@@ -92,169 +92,166 @@ In KubeKey v2.1.0, we bring in concepts of manifest and artifact, which provides
          iso:
            localPath:
            url: https://github.com/kubesphere/kubekey/releases/download/v2.2.1/ubuntu-20.04-debs-amd64.iso
-   kubernetesDistributions:
-   - type: kubernetes
-     version: v1.22.10
-   components:
-     helm:
-       version: v3.6.3
-     cni:
-       version: v0.9.1
-     etcd:
-       version: v3.4.13
-    ## For now, if your cluster container runtime is containerd, KubeKey will add a docker 20.10.8 container runtime in the below list.
-    ## The reason is KubeKey creates a cluster with containerd by installing a docker first and making kubelet connect the socket file of containerd which docker contained.
-   containerRuntimes:
-   - type: docker
-     version: 20.10.8
-   crictl:
-     version: v1.22.0
-   ##
-   docker-registry:
-     version: "2"
-   harbor:
-     version: v2.4.1
-   docker-compose:
-     version: v2.2.2
-   images:
-   - docker.io/kubesphere/kube-apiserver:v1.22.10
-   - docker.io/kubesphere/kube-controller-manager:v1.22.10
-   - docker.io/kubesphere/kube-proxy:v1.22.10
-   - docker.io/kubesphere/kube-scheduler:v1.22.10
-   - docker.io/kubesphere/pause:3.5
-   - docker.io/coredns/coredns:1.8.0
-   - docker.io/calico/cni:v3.20.0
-   - docker.io/calico/kube-controllers:v3.20.0
-   - docker.io/calico/node:v3.20.0
-   - docker.io/calico/pod2daemon-flexvol:v3.20.0
-   - docker.io/calico/typha:v3.20.0
-   - docker.io/kubesphere/flannel:v0.12.0
-   - docker.io/openebs/provisioner-localpv:2.10.1
-   - docker.io/openebs/linux-utils:2.10.0
-   - docker.io/library/haproxy:2.3
-   - docker.io/kubesphere/nfs-subdir-external-provisioner:v4.0.2
-   - docker.io/kubesphere/k8s-dns-node-cache:1.15.12
-   - docker.io/kubesphere/ks-installer:v3.3.0
-   - docker.io/kubesphere/ks-apiserver:v3.3.0
-   - docker.io/kubesphere/ks-console:v3.3.0
-   - docker.io/kubesphere/ks-controller-manager:v3.3.0
-   - docker.io/kubesphere/kubectl:v1.20.0
-   - docker.io/kubesphere/kubectl:v1.21.0
-   - docker.io/kubesphere/kubectl:v1.22.0
-   - docker.io/kubesphere/kubefed:v0.8.1
-   - docker.io/kubesphere/tower:v0.2.0
-   - docker.io/minio/minio:RELEASE.2019-08-07T01-59-21Z
-   - docker.io/minio/mc:RELEASE.2019-08-07T23-14-43Z
-   - docker.io/csiplugin/snapshot-controller:v4.0.0
-   - docker.io/kubesphere/nginx-ingress-controller:v1.1.0
-   - docker.io/mirrorgooglecontainers/defaultbackend-amd64:1.4
-   - docker.io/kubesphere/metrics-server:v0.4.2
-   - docker.io/library/redis:5.0.14-alpine
-   - docker.io/library/haproxy:2.0.25-alpine
-   - docker.io/library/alpine:3.14
-   - docker.io/osixia/openldap:1.3.0
-   - docker.io/kubesphere/netshoot:v1.0
-   - docker.io/kubeedge/cloudcore:v1.9.2
-   - docker.io/kubeedge/iptables-manager:v1.9.2
-   - docker.io/kubesphere/edgeservice:v0.2.0
-   - docker.io/kubesphere/openpitrix-jobs:v3.2.1
-   - docker.io/kubesphere/devops-apiserver:v3.3.0
-   - docker.io/kubesphere/devops-controller:v3.3.0
-   - docker.io/kubesphere/devops-tools:v3.3.0
-   - docker.io/kubesphere/ks-jenkins:v3.3.0-2.319.1
-   - docker.io/jenkins/inbound-agent:4.10-2
-   - docker.io/kubesphere/builder-base:v3.2.2
-   - docker.io/kubesphere/builder-nodejs:v3.2.0
-   - docker.io/kubesphere/builder-maven:v3.2.0
-   - docker.io/kubesphere/builder-maven:v3.2.1-jdk11
-   - docker.io/kubesphere/builder-python:v3.2.0
-   - docker.io/kubesphere/builder-go:v3.2.0
-   - docker.io/kubesphere/builder-go:v3.2.2-1.16
-   - docker.io/kubesphere/builder-go:v3.2.2-1.17
-   - docker.io/kubesphere/builder-go:v3.2.2-1.18
-   - docker.io/kubesphere/builder-base:v3.2.2-podman
-   - docker.io/kubesphere/builder-nodejs:v3.2.0-podman
-   - docker.io/kubesphere/builder-maven:v3.2.0-podman
-   - docker.io/kubesphere/builder-maven:v3.2.1-jdk11-podman
-   - docker.io/kubesphere/builder-python:v3.2.0-podman
-   - docker.io/kubesphere/builder-go:v3.2.0-podman
-   - docker.io/kubesphere/builder-go:v3.2.2-1.16-podman
-   - docker.io/kubesphere/builder-go:v3.2.2-1.17-podman
-   - docker.io/kubesphere/builder-go:v3.2.2-1.18-podman
-   - docker.io/kubesphere/s2ioperator:v3.2.1
-   - docker.io/kubesphere/s2irun:v3.2.0
-   - docker.io/kubesphere/s2i-binary:v3.2.0
-   - docker.io/kubesphere/tomcat85-java11-centos7:v3.2.0
-   - docker.io/kubesphere/tomcat85-java11-runtime:v3.2.0
-   - docker.io/kubesphere/tomcat85-java8-centos7:v3.2.0
-   - docker.io/kubesphere/tomcat85-java8-runtime:v3.2.0
-   - docker.io/kubesphere/java-11-centos7:v3.2.0
-   - docker.io/kubesphere/java-8-centos7:v3.2.0
-   - docker.io/kubesphere/java-8-runtime:v3.2.0
-   - docker.io/kubesphere/java-11-runtime:v3.2.0
-   - docker.io/kubesphere/nodejs-8-centos7:v3.2.0
-   - docker.io/kubesphere/nodejs-6-centos7:v3.2.0
-   - docker.io/kubesphere/nodejs-4-centos7:v3.2.0
-   - docker.io/kubesphere/python-36-centos7:v3.2.0
-   - docker.io/kubesphere/python-35-centos7:v3.2.0
-   - docker.io/kubesphere/python-34-centos7:v3.2.0
-   - docker.io/kubesphere/python-27-centos7:v3.2.0
-   - quay.io/argoproj/argocd:v2.3.3
-   - quay.io/argoproj/argocd-applicationset:v0.4.1
-   - ghcr.io/dexidp/dex:v2.30.2
-   - docker.io/library/redis:6.2.6-alpine
-   - docker.io/jimmidyson/configmap-reload:v0.5.0
-   - docker.io/prom/prometheus:v2.34.0
-   - docker.io/kubesphere/prometheus-config-reloader:v0.55.1
-   - docker.io/kubesphere/prometheus-operator:v0.55.1
-   - docker.io/kubesphere/kube-rbac-proxy:v0.11.0
-   - docker.io/kubesphere/kube-state-metrics:v2.3.0
-   - docker.io/prom/node-exporter:v1.3.1
-   - docker.io/prom/alertmanager:v0.23.0
-   - docker.io/thanosio/thanos:v0.25.2
-   - docker.io/grafana/grafana:8.3.3
-   - docker.io/kubesphere/kube-rbac-proxy:v0.8.0
-   - docker.io/kubesphere/notification-manager-operator:v1.4.0
-   - docker.io/kubesphere/notification-manager:v1.4.0
-   - docker.io/kubesphere/notification-tenant-sidecar:v3.2.0
-   - docker.io/kubesphere/elasticsearch-curator:v5.7.6
-   - docker.io/kubesphere/elasticsearch-oss:6.8.22
-   - docker.io/kubesphere/fluentbit-operator:v0.13.0
-   - docker.io/library/docker:19.03
-   - docker.io/kubesphere/fluent-bit:v1.8.11
-   - docker.io/kubesphere/log-sidecar-injector:1.1
-   - docker.io/elastic/filebeat:6.7.0
-   - docker.io/kubesphere/kube-events-operator:v0.4.0
-   - docker.io/kubesphere/kube-events-exporter:v0.4.0
-   - docker.io/kubesphere/kube-events-ruler:v0.4.0
-   - docker.io/kubesphere/kube-auditing-operator:v0.2.0
-   - docker.io/kubesphere/kube-auditing-webhook:v0.2.0
-   - docker.io/istio/pilot:1.11.1
-   - docker.io/istio/proxyv2:1.11.1
-   - docker.io/jaegertracing/jaeger-operator:1.27
-   - docker.io/jaegertracing/jaeger-agent:1.27
-   - docker.io/jaegertracing/jaeger-collector:1.27
-   - docker.io/jaegertracing/jaeger-query:1.27
-   - docker.io/jaegertracing/jaeger-es-index-cleaner:1.27
-   - docker.io/kubesphere/kiali-operator:v1.38.1
-   - docker.io/kubesphere/kiali:v1.38
-   - docker.io/library/busybox:1.31.1
-   - docker.io/library/nginx:1.14-alpine
-   - docker.io/joosthofman/wget:1.0
-   - docker.io/nginxdemos/hello:plain-text
-   - docker.io/library/wordpress:4.8-apache
-   - docker.io/mirrorgooglecontainers/hpa-example:latest
-   - docker.io/library/java:openjdk-8-jre-alpine
-   - docker.io/fluent/fluentd:v1.4.2-2.0
-   - docker.io/library/perl:latest
-   - docker.io/kubesphere/examples-bookinfo-productpage-v1:1.16.2
-   - docker.io/kubesphere/examples-bookinfo-reviews-v1:1.16.2
-   - docker.io/kubesphere/examples-bookinfo-reviews-v2:1.16.2
-   - docker.io/kubesphere/examples-bookinfo-details-v1:1.16.2
-   - docker.io/kubesphere/examples-bookinfo-ratings-v1:1.16.3
-   - docker.io/weaveworks/scope:1.13.0
-   registry:
-     auths: {}
+     kubernetesDistributions:
+     - type: kubernetes
+       version: v1.22.10
+     components:
+       helm:
+         version: v3.6.3
+       cni:
+         version: v0.9.1
+       etcd:
+         version: v3.4.13
+      ## For now, if your cluster container runtime is containerd, KubeKey will add a docker 20.10.8 container runtime in the below list.
+      ## The reason is KubeKey creates a cluster with containerd by installing a docker first and making kubelet connect the socket file of containerd which docker contained.
+       containerRuntimes:
+       - type: docker
+         version: 20.10.8
+       crictl:
+         version: v1.22.0
+       docker-registry:
+         version: "2"
+       harbor:
+         version: v2.4.1
+       docker-compose:
+         version: v2.2.2
+     images:
+     - docker.io/kubesphere/kube-apiserver:v1.22.10
+     - docker.io/kubesphere/kube-controller-manager:v1.22.10
+     - docker.io/kubesphere/kube-proxy:v1.22.10
+     - docker.io/kubesphere/kube-scheduler:v1.22.10
+     - docker.io/kubesphere/pause:3.5
+     - docker.io/coredns/coredns:1.8.0
+     - docker.io/calico/cni:v3.20.0
+     - docker.io/calico/kube-controllers:v3.20.0
+     - docker.io/calico/node:v3.20.0
+     - docker.io/calico/pod2daemon-flexvol:v3.20.0
+     - docker.io/calico/typha:v3.20.0
+     - docker.io/kubesphere/flannel:v0.12.0
+     - docker.io/openebs/provisioner-localpv:2.10.1
+     - docker.io/openebs/linux-utils:2.10.0
+     - docker.io/library/haproxy:2.3
+     - docker.io/kubesphere/nfs-subdir-external-provisioner:v4.0.2
+     - docker.io/kubesphere/k8s-dns-node-cache:1.15.12
+     - docker.io/kubesphere/ks-installer:v3.3.0
+     - docker.io/kubesphere/ks-apiserver:v3.3.0
+     - docker.io/kubesphere/ks-console:v3.3.0
+     - docker.io/kubesphere/ks-controller-manager:v3.3.0
+     - docker.io/kubesphere/kubectl:v1.20.0
+     - docker.io/kubesphere/kubectl:v1.21.0
+     - docker.io/kubesphere/kubectl:v1.22.0
+     - docker.io/kubesphere/kubefed:v0.8.1
+     - docker.io/kubesphere/tower:v0.2.0
+     - docker.io/minio/minio:RELEASE.2019-08-07T01-59-21Z
+     - docker.io/minio/mc:RELEASE.2019-08-07T23-14-43Z
+     - docker.io/csiplugin/snapshot-controller:v4.0.0
+     - docker.io/kubesphere/nginx-ingress-controller:v1.1.0
+     - docker.io/mirrorgooglecontainers/defaultbackend-amd64:1.4
+     - docker.io/kubesphere/metrics-server:v0.4.2
+     - docker.io/library/redis:5.0.14-alpine
+     - docker.io/library/haproxy:2.0.25-alpine
+     - docker.io/library/alpine:3.14
+     - docker.io/osixia/openldap:1.3.0
+     - docker.io/kubesphere/netshoot:v1.0
+     - docker.io/kubeedge/cloudcore:v1.9.2
+     - docker.io/kubeedge/iptables-manager:v1.9.2
+     - docker.io/kubesphere/edgeservice:v0.2.0
+     - docker.io/kubesphere/openpitrix-jobs:v3.2.1
+     - docker.io/kubesphere/devops-apiserver:v3.3.0
+     - docker.io/kubesphere/devops-controller:v3.3.0
+     - docker.io/kubesphere/devops-tools:v3.3.0
+     - docker.io/kubesphere/ks-jenkins:v3.3.0-2.319.1
+     - docker.io/jenkins/inbound-agent:4.10-2
+     - docker.io/kubesphere/builder-base:v3.2.2
+     - docker.io/kubesphere/builder-nodejs:v3.2.0
+     - docker.io/kubesphere/builder-maven:v3.2.0
+     - docker.io/kubesphere/builder-maven:v3.2.1-jdk11
+     - docker.io/kubesphere/builder-python:v3.2.0
+     - docker.io/kubesphere/builder-go:v3.2.0
+     - docker.io/kubesphere/builder-go:v3.2.2-1.16
+     - docker.io/kubesphere/builder-go:v3.2.2-1.17
+     - docker.io/kubesphere/builder-go:v3.2.2-1.18
+     - docker.io/kubesphere/builder-base:v3.2.2-podman
+     - docker.io/kubesphere/builder-nodejs:v3.2.0-podman
+     - docker.io/kubesphere/builder-maven:v3.2.0-podman
+     - docker.io/kubesphere/builder-maven:v3.2.1-jdk11-podman
+     - docker.io/kubesphere/builder-python:v3.2.0-podman
+     - docker.io/kubesphere/builder-go:v3.2.0-podman
+     - docker.io/kubesphere/builder-go:v3.2.2-1.16-podman
+     - docker.io/kubesphere/builder-go:v3.2.2-1.17-podman
+     - docker.io/kubesphere/builder-go:v3.2.2-1.18-podman
+     - docker.io/kubesphere/s2ioperator:v3.2.1
+     - docker.io/kubesphere/s2irun:v3.2.0
+     - docker.io/kubesphere/s2i-binary:v3.2.0
+     - docker.io/kubesphere/tomcat85-java11-centos7:v3.2.0
+     - docker.io/kubesphere/tomcat85-java11-runtime:v3.2.0
+     - docker.io/kubesphere/tomcat85-java8-centos7:v3.2.0
+     - docker.io/kubesphere/tomcat85-java8-runtime:v3.2.0
+     - docker.io/kubesphere/java-11-centos7:v3.2.0
+     - docker.io/kubesphere/java-8-centos7:v3.2.0
+     - docker.io/kubesphere/java-8-runtime:v3.2.0
+     - docker.io/kubesphere/java-11-runtime:v3.2.0
+     - docker.io/kubesphere/nodejs-8-centos7:v3.2.0
+     - docker.io/kubesphere/nodejs-6-centos7:v3.2.0
+     - docker.io/kubesphere/nodejs-4-centos7:v3.2.0
+     - docker.io/kubesphere/python-36-centos7:v3.2.0
+     - docker.io/kubesphere/python-35-centos7:v3.2.0
+     - docker.io/kubesphere/python-34-centos7:v3.2.0
+     - docker.io/kubesphere/python-27-centos7:v3.2.0
+     - quay.io/argoproj/argocd:v2.3.3
+     - quay.io/argoproj/argocd-applicationset:v0.4.1
+     - ghcr.io/dexidp/dex:v2.30.2
+     - docker.io/library/redis:6.2.6-alpine
+     - docker.io/jimmidyson/configmap-reload:v0.5.0
+     - docker.io/prom/prometheus:v2.34.0
+     - docker.io/kubesphere/prometheus-config-reloader:v0.55.1
+     - docker.io/kubesphere/prometheus-operator:v0.55.1
+     - docker.io/kubesphere/kube-rbac-proxy:v0.11.0
+     - docker.io/kubesphere/kube-state-metrics:v2.3.0
+     - docker.io/prom/node-exporter:v1.3.1
+     - docker.io/prom/alertmanager:v0.23.0
+     - docker.io/thanosio/thanos:v0.25.2
+     - docker.io/grafana/grafana:8.3.3
+     - docker.io/kubesphere/kube-rbac-proxy:v0.8.0
+     - docker.io/kubesphere/notification-manager-operator:v1.4.0
+     - docker.io/kubesphere/notification-manager:v1.4.0
+     - docker.io/kubesphere/notification-tenant-sidecar:v3.2.0
+     - docker.io/kubesphere/elasticsearch-curator:v5.7.6
+     - docker.io/kubesphere/elasticsearch-oss:6.8.22
+     - docker.io/kubesphere/fluentbit-operator:v0.13.0
+     - docker.io/library/docker:19.03
+     - docker.io/kubesphere/fluent-bit:v1.8.11
+     - docker.io/kubesphere/log-sidecar-injector:1.1
+     - docker.io/elastic/filebeat:6.7.0
+     - docker.io/kubesphere/kube-events-operator:v0.4.0
+     - docker.io/kubesphere/kube-events-exporter:v0.4.0
+     - docker.io/kubesphere/kube-events-ruler:v0.4.0
+     - docker.io/kubesphere/kube-auditing-operator:v0.2.0
+     - docker.io/kubesphere/kube-auditing-webhook:v0.2.0
+     - docker.io/istio/pilot:1.11.1
+     - docker.io/istio/proxyv2:1.11.1
+     - docker.io/jaegertracing/jaeger-operator:1.27
+     - docker.io/jaegertracing/jaeger-agent:1.27
+     - docker.io/jaegertracing/jaeger-collector:1.27
+     - docker.io/jaegertracing/jaeger-query:1.27
+     - docker.io/jaegertracing/jaeger-es-index-cleaner:1.27
+     - docker.io/kubesphere/kiali-operator:v1.38.1
+     - docker.io/kubesphere/kiali:v1.38
+     - docker.io/library/busybox:1.31.1
+     - docker.io/library/nginx:1.14-alpine
+     - docker.io/joosthofman/wget:1.0
+     - docker.io/nginxdemos/hello:plain-text
+     - docker.io/library/wordpress:4.8-apache
+     - docker.io/mirrorgooglecontainers/hpa-example:latest
+     - docker.io/library/java:openjdk-8-jre-alpine
+     - docker.io/fluent/fluentd:v1.4.2-2.0
+     - docker.io/library/perl:latest
+     - docker.io/kubesphere/examples-bookinfo-productpage-v1:1.16.2
+     - docker.io/kubesphere/examples-bookinfo-reviews-v1:1.16.2
+     - docker.io/kubesphere/examples-bookinfo-reviews-v2:1.16.2
+     - docker.io/kubesphere/examples-bookinfo-details-v1:1.16.2
+     - docker.io/kubesphere/examples-bookinfo-ratings-v1:1.16.3
+     - docker.io/weaveworks/scope:1.13.0
    ```
    
    {{< notice note >}}
