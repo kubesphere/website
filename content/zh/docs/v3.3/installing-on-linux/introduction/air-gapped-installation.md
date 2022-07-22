@@ -56,13 +56,13 @@ KubeKey v2.1.0 版本新增了清单（manifest）和制品（artifact）的概�
 
 2. 在源集群中使用 KubeKey 创建 manifest。支持下面 2 种方式：
 
-   - （推荐）在已创建的集群中执行 KubeKey 命令生成该文件。
+   - （推荐）在已创建的集群中执行 KubeKey 命令生成该文件。生成的yaml只是提供一个示例（镜像列表不完整），需要自行补充修改，第一次离线部署推荐复制下面方第三点的内容。
 
    ```bash
    ./kk create manifest
    ```
 
-   - 根据模板手动创建并编写该文件。关于更多信息，请参阅 [manifest-example](https://github.com/kubesphere/kubekey/blob/master/docs/manifest-example.md)。
+   - 根据模板手动创建并编写该文件（需要一定的基础推荐使用第一种方式）。关于更多信息，请参阅 [manifest-example](https://github.com/kubesphere/kubekey/blob/master/docs/manifest-example.md)。
 
 3. 执行以下命令在源集群中修改 manifest 配置：
    
