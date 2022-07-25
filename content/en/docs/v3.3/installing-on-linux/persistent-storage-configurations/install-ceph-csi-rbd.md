@@ -115,7 +115,7 @@ If you want to configure more values, see [chart configuration for rbd-provision
 
 #### Add-on configurations
 
-Save the above chart config locally (for example, `/root/rbd-provisioner.yaml`). The add-on config for rbd provisioner cloud be like: 
+Save the above chart config locally (for example, `/root/rbd-provisioner.yaml`). The add-on config for rbd provisioner could be like: 
 
 ```yaml
 - name: rbd-provisioner

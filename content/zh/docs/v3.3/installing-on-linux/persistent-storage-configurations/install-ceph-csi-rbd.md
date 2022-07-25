@@ -1,31 +1,29 @@
 ---
 title: "安装 Ceph"
-keywords: 'KubeSphere, Kubernetes, Ceph, installation, configurations, storage'
-description: 'How to create a KubeSphere cluster with Ceph providing storage services.'
+keywords: 'Kubesphere，Kubernetes，Ceph，安装，配置，存储'
+description: '如何创建一个使用 Ceph 提供存储服务的 KubeSphere 集群。'
 linkTitle: "安装 Ceph"
 weight: 3350
 ---
 
-With a Ceph server, you can choose [Ceph RBD](https://kubernetes.io/docs/concepts/storage/storage-classes/#ceph-rbd) or [Ceph CSI](https://github.com/ceph/ceph-csi) as the underlying storage plugin. Ceph RBD is an in-tree storage plugin on Kubernetes, and Ceph CSI is a Container Storage Interface (CSI) driver for RBD, CephFS. 
+您可以选择 [Ceph RBD](https://kubernetes.io/zh/docs/concepts/storage/storage-classes/#ceph-rbd) 或 [Ceph CSI ](https://github.com/ceph/ceph-csi) 作为 Ceph 服务器的底层存储插件。Ceph RBD 是 Kubernetes 上的一个树内存储插件，Ceph 容器存储接口（CSI）是一个用于 RBD 和 CephFS 的驱动程序。
 
-###  Which plugin to select for Ceph 
+### Ceph 插件
 
-Ceph CSI RBD is the preferred choice if you work with **14.0.0 (Nautilus)+** Ceph cluster. Here are some reasons:
+如果你安装的是 Ceph v14.0.0（Nautilus）及以上版本，那么推荐您使用 Ceph CSI RBD。原因如下：
 
-- The in-tree plugin will be deprecated in the future.
-- Ceph RBD only works on Kubernetes with **hyperkube** images, and **hyperkube** images were 
-  [deprecated since Kubernetes 1.17](https://github.com/kubernetes/kubernetes/pull/85094).
-- Ceph CSI has more features such as cloning, expanding and snapshots.
+- 树内存储插件将会被弃用。
+- Ceph RBD 只适用于使用 hyperkube 镜像的 Kubernetes 集群，而 hyperkube 镜像
+ [从 Kubernetes 1.17 开始已被弃用](https://github.com/kubernetes/kubernetes/pull/85094)。
+- Ceph CSI 功能更丰富，如克隆，扩容和快照。
 
 ### Ceph CSI RBD
 
-Ceph-CSI needs to be installed on v1.14.0+ Kubernetes, and work with 14.0.0 (Nautilus)+ Ceph Cluster. 
-For details about compatibility, see [Ceph CSI Support Matrix](https://github.com/ceph/ceph-csi#support-matrix). 
+您需要安装 Kubernetes（v1.14.0 及以上版本）和 Ceph v14.0.0（Nautilus）及以上版本。有关兼容性的详细信息，请参见 [Ceph CSI 支持矩阵](https://github.com/ceph/ceph-csi#support-matrix)。
 
-The following is an example of KubeKey add-on configurations for Ceph CSI RBD installed by **Helm Charts**.
-As the StorageClass is not included in the chart, a StorageClass needs to be configured in the add-on config. 
+以下是 Helm Charts 安装的 Ceph CSI RBD 的 KubeKey 插件配置示例。由于 StorageClass 不包含在 chart 中，因此需要在插件中配置 StorageClass。
 
-####  Chart configurations
+#### Chart 配置
 
 ```yaml
 csiConfig:
@@ -36,9 +34,9 @@ csiConfig:
       - "192.168.0.10:6789"    # <--TobeReplaced-->
 ```
 
-If you want to configure more values, see [chart configuration for ceph-csi-rbd](https://github.com/ceph/ceph-csi/tree/master/charts/ceph-csi-rbd).
+如果你想配置更多的参数，请参见 [ceph-csi-rbd 的 chart 配置](https://github.com/ceph/ceph-csi/tree/master/charts/ceph-csi-rbd)。
 
-#### StorageClass (including secret)
+#### StorageClass 配置（包含保密字典）
 
 ```yaml
 apiVersion: v1
@@ -75,9 +73,9 @@ mountOptions:
    - discard
 ```
 
-#### Add-on configurations
+#### 插件配置
 
-Save the above chart config and StorageClass locally (e.g. `/root/ceph-csi-rbd.yaml` and `/root/ceph-csi-rbd-sc.yaml`). The add-on configuration can be set like:
+将上面的 chart 配置和 StorageClass 保存到本地（例如 `/root/ceph-csi-rbd.yaml` 和 `/root/ceph-csi-rbd-sc.yaml`）。插件配置如下所示:
 
 ```yaml
 addons: 
@@ -97,10 +95,9 @@ addons:
 
 ### Ceph RBD
 
-KubeKey will never use **hyperkube** images. Hence, in-tree Ceph RBD may not work on Kubernetes installed by KubeKey. However, if your Ceph cluster is lower than 14.0.0 which means Ceph CSI can't be used, [rbd provisioner](https://github.com/kubernetes-incubator/external-storage/tree/master/ceph/rbd) can be used as a substitute for Ceph RBD. Its format is the same with [in-tree Ceph RBD](https://kubernetes.io/docs/concepts/storage/storage-classes/#ceph-rbd). 
-The following is an example of KubeKey add-on configurations for rbd provisioner installed by **Helm Charts including a StorageClass**.
+Kubekey 没有使用 hyperkube 镜像。因此，树内 Ceph RBD 可能无法在使用 KubeKey 安装的 Kubernetes 上工作。如果你的 Ceph 集群版本低于 14.0.0，Ceph CSI 将不能使用，但是由于 [RBD](https://github.com/kubernetes-incubator/external-storage/tree/master/ceph/rbd) 格式和 Ceph RBD 相同，可以作为 Ceph RBD 的替代选项。下面是由 Helm Charts 安装的 RBD Provisioner 的 KubeKey 插件配置示例，其中包括 StorageClass。
 
-#### Chart configurations
+#### Chart 配置
 
 ```yaml
 ceph:
@@ -111,11 +108,11 @@ sc:
   isDefault: false
 ```
 
-If you want to configure more values, see [chart configuration for rbd-provisioner](https://github.com/kubesphere/helm-charts/tree/master/src/test/rbd-provisioner#configuration).
+如果你想配置更多的参数，请参见 [RBD-Provisioner 的 chart 配置](https://github.com/kubesphere/helm-charts/tree/master/src/test/rbd-provisioner#configuration)。
 
-#### Add-on configurations
+#### 插件配置
 
-Save the above chart config locally (e.g. `/root/rbd-provisioner.yaml`). The add-on config for rbd provisioner cloud be like: 
+将上面的 chart 配置保存到本地（例如 `/root/rbd-provisioner.yaml`）。RBD Provisioner Cloud 的插件配置如下所示:
 
 ```yaml
 - name: rbd-provisioner
@@ -126,3 +123,4 @@ Save the above chart config locally (e.g. `/root/rbd-provisioner.yaml`). The add
       repo: https://charts.kubesphere.io/test
       valuesFile: /root/rbd-provisioner.yaml
 ```
+
