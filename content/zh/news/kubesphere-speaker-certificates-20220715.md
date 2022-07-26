@@ -2,7 +2,7 @@
 title: '新 KubeSphere Talented Speaker 揭晓！快来领取你的专属证书！'
 tag: '社区动态'
 keyword: '社区, 开源, 贡献, KubeSphere'
-description: 'KubeSphere 社区向新诞生的 46 位 KubeSphere Talented Speaker 致谢，欢迎更多的人加入到 KubeSphere Talented Speaker 的行列。'
+description: 'KubeSphere 社区向新诞生的 47 位 KubeSphere Talented Speaker 致谢，欢迎更多的人加入到 KubeSphere Talented Speaker 的行列。'
 createTime: '2022-07-15'
 author: 'KubeSphere'
 image: 'https://pek3b.qingstor.com/kubesphere-community/images/talented-speaker-cover-20220715.png'
