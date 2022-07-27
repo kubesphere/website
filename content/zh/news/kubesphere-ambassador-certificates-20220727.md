@@ -10,7 +10,7 @@ image: 'https://pek3b.qingstor.com/kubesphere-community/images/kubesphere-ambass
 
 参与开源社区贡献，除了代码、中英文文档、本地化与国际化等贡献方式，还有技术布道这个重要的方式。
 
-技术布道这一贡献方式包括撰写技术博客、用户案例以及在社区活动进行公开技术分享等方式，社区设置了 KubeSphere Ambassador 奖项作为激励多次在社区分享过 KubeSphere 落地实践案例与技术文章的成员。
+技术布道这一贡献方式包括撰写技术博客、用户案例以及在社区活动进行公开技术分享等，社区设置了 KubeSphere Ambassador 奖项作为激励多次在社区分享过 KubeSphere 落地实践案例与技术文章的成员。
 
 从上一次[颁发](https://kubesphere.com.cn/news/kubesphere-ambassador-certificates/)到现在，社区又诞生了  5 位 KubeSphere Ambassador，他们在社区都曾多次通过自己的方式来推广和布道 KubeSphere。
 
@@ -90,7 +90,7 @@ KubeSphere 社区向此次诞生的 KubeSphere Ambassador 致谢，并向所有�
 
 截止到目前，已有数十位社区伙伴获得 KubeSphere Ambassador 这一荣誉奖项，他们用最适合自己的方式，帮 KubeSphere 宣传和布道。而且多数人在获得这一奖项后并未停歇，依旧在社区活跃，参与贡献。
 
-比如 KubeSphere 社区用户委员会杭州站站长尹珉和上海站站长张海立，他们一直是非常活跃的社区贡献者。通过写文章、组织交流活动、组织走进企业交流等等方式，为 KubeSphere 的发展尽一份力、发一份热。
+比如 KubeSphere 社区用户委员会杭州站站长尹珉和上海站站长张海立，他们一直是非常活跃的社区贡献者。通过写文章、组织交流活动、组织走进企业交流等等方式，为 KubeSphere 的发展尽一份力、发一分热。
 
 作为一个还处于快速发展时期的开源项目社区，KubeSphere 需要也欢迎有更多的布道者加入。通过大家的共同努力、共创共建，KubeSphere 才能发展得更好。
 
