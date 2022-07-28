@@ -42,18 +42,21 @@
       </div>
       {{ end }}
 
-      <div id="imageList" class="imageList">
-        {{ range $Pages }}
+      <div class="imageBox">
+        <div id="imageList" class="imageList">
+          {{ range $Pages }}
           <a class="normalPic" href="{{ .Permalink }}" target="_blank">
-              <image src="{{ .Params.coverImage }}"></image>
-              <div class="nameText">{{ .Params.stationName }}</div>
-              <div class="textBox">
-                <div class="title"> KubeSphere 社区用户委员会 — {{ .Params.stationName }}</div>
-                <div class="des">{{ .Params.topSection.description }}</div>
-              </div>
+            <image src="{{ .Params.coverImage }}"></image>
+            <div class="nameText">{{ .Params.stationName }}</div>
+            <div class="textBox">
+              <div class="title"> KubeSphere 社区用户委员会 — {{ .Params.stationName }}</div>
+              <div class="des">{{ .Params.topSection.description }}</div>
+            </div>
           </a>
-        {{ end }}
+          {{ end }}
+        </div>
       </div>
+
       <img class="tr-svg" src="/images/user-group/list/city-rect1.svg">
     </div>
   </div>
@@ -103,89 +106,89 @@
         <div class="right"></div>
       </div>
       {{ with .conditions }}
-        <div class="condition">
-          <image class="icon" src="{{ .image }}"></image>
-          <div class="text">
-            <span class="title">{{ .text }}</span>
-            <span class="des">
-              {{ range .description }}
-                <span>
-                  {{ .head }} <a target="_blank" href="{{ .link.link_address }}">{{ .link.text }}</a>{{ .tail }}
-                </span>
-              {{ end }}
-            </span>
-          </div>
-        </div>
-        <div class="m-condition">
-          <div class="top">
-            <image class="icon" src="{{ .image }}"></image>
-            <span class="title">{{ .text }}</span>
-          </div>
+      <div class="condition">
+        <image class="icon" src="{{ .image }}"></image>
+        <div class="text">
+          <span class="title">{{ .text }}</span>
           <span class="des">
             {{ range .description }}
-              <span>
-                {{ .head }} <a target="_blank" href="{{ .link.link_address }}">{{ .link.text }}</a>{{ .tail }}
-              </span>
+            <span>
+              {{ .head }} <a target="_blank" href="{{ .link.link_address }}">{{ .link.text }}</a>{{ .tail }}
+            </span>
             {{ end }}
           </span>
         </div>
+      </div>
+      <div class="m-condition">
+        <div class="top">
+          <image class="icon" src="{{ .image }}"></image>
+          <span class="title">{{ .text }}</span>
+        </div>
+        <span class="des">
+          {{ range .description }}
+          <span>
+            {{ .head }} <a target="_blank" href="{{ .link.link_address }}">{{ .link.text }}</a>{{ .tail }}
+          </span>
+          {{ end }}
+        </span>
+      </div>
       {{ end }}
 
       {{ with .apply }}
-        <div class="apply">
-          <image class="icon" src="{{ .image }}"></image>
-          <div class="text">
-            <span class="title">{{ .text }}</span>
-            {{ with .des }}
-              <span class="des">
-                {{ .head }} <a target="_blank" href="{{ .link.link_address }}">{{ .link.text }}</a>{{ .tail }}
-              </span>
-            {{ end }}
-          </div>
-        </div>
-
-        <div class="m-apply">
-          <div class="top">
-            <image class="icon" src="{{ .image }}"></image>
-            <span class="title">{{ .text }}</span>
-
-          </div>
+      <div class="apply">
+        <image class="icon" src="{{ .image }}"></image>
+        <div class="text">
+          <span class="title">{{ .text }}</span>
           {{ with .des }}
-            <span class="des">
-              {{ .head }} <a target="_blank" href="{{ .link.link_address }}">{{ .link.text }}</a>{{ .tail }}
-            </span>
+          <span class="des">
+            {{ .head }} <a target="_blank" href="{{ .link.link_address }}">{{ .link.text }}</a>{{ .tail }}
+          </span>
           {{ end }}
         </div>
+      </div>
+
+      <div class="m-apply">
+        <div class="top">
+          <image class="icon" src="{{ .image }}"></image>
+          <span class="title">{{ .text }}</span>
+
+        </div>
+        {{ with .des }}
+        <span class="des">
+          {{ .head }} <a target="_blank" href="{{ .link.link_address }}">{{ .link.text }}</a>{{ .tail }}
+        </span>
+        {{ end }}
+      </div>
       {{ end }}
 
       {{ with .requirements }}
-        <div class="apply">
-          <image class="icon" src="{{ .image }}"></image>
-          <div class="text">
-            <span class="title">{{ .text }}</span>
-            <span class="des" style="line-height: 32px;">
-              {{ range .des }}
-                <span>
-                  {{ .head }}<a target="_blank" href="{{ .link.link_address }}">{{ .link.text }}</a>{{.tail}}
-                </span>
-              {{ end }}
-            </span>
-          </div>
-        </div>
-
-        <div class="m-apply">
-          <div class="top">
-            <image class="icon" src="{{ .image }}"></image>
-            <span class="title">{{ .text }}</span>
-          </div>
-          <ol class="des" style="line-height: 32px;">
+      <div class="apply">
+        <image class="icon" src="{{ .image }}"></image>
+        <div class="text">
+          <span class="title">{{ .text }}</span>
+          <span class="des" style="line-height: 32px;">
             {{ range .des }}
-              <li>
-                {{ .head }}<a target="_blank" href="{{ .link.link_address }}">{{ .link.text }}</a>{{.tail}}
-              </li>
-              {{ end }}
-          </ol>
+            <span>
+              {{ .head }}<a target="_blank" href="{{ .link.link_address }}">{{ .link.text }}</a>{{.tail}}
+            </span>
+            {{ end }}
+          </span>
         </div>
+      </div>
+
+      <div class="m-apply">
+        <div class="top">
+          <image class="icon" src="{{ .image }}"></image>
+          <span class="title">{{ .text }}</span>
+        </div>
+        <ol class="des" style="line-height: 32px;">
+          {{ range .des }}
+          <li>
+            {{ .head }}<a target="_blank" href="{{ .link.link_address }}">{{ .link.text }}</a>{{.tail}}
+          </li>
+          {{ end }}
+        </ol>
+      </div>
       {{ end }}
     </div>
   </div>
@@ -200,10 +203,10 @@
       <p class="title">{{ .title }}</p>
       <div class="cards">
         {{ range .list }}
-          <div class="card">
-            <span class="text">{{ .text }}</span>
-            <image class="bg" src="{{ .bg }}"></image>
-          </div>
+        <div class="card">
+          <span class="text">{{ .text }}</span>
+          <image class="bg" src="{{ .bg }}"></image>
+        </div>
         {{ end }}
       </div>
     </div>
@@ -214,15 +217,21 @@
 <script>
   var imageList = $('#imageList')
   imageList.children().each(function (index, item) {
-    if (index === 0) {
-      $(item).addClass('pic-hover')
+    if (imageList.children().length >= 4) {
+      if (index === imageList.children().length - 1) {
+        $(item).hover(function () {
+          $('#imageList').removeClass('flex-start')
+          $('#imageList').addClass('flex-end')
+        })
+      } else {
+        $(item).hover(function () {
+          if ($('#imageList').hasClass('flex-end')) {
+            $('#imageList').removeClass('flex-end')
+            $('#imageList').addClass('flex-start')
+          }
+        })
+      }
     }
-    $(item).hover(function () {
-      imageList.children().each(function (index, item) {
-        $(item).removeClass('pic-hover')
-      })
-      $(item).addClass('pic-hover')
-    })
   }) 
 </script>
 {{ end }}
