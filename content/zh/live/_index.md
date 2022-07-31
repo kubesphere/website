@@ -10,14 +10,14 @@ section1:
 
 section2:
   image: /images/live/cloudnative-live-banner.png
-  url: ./zadig0721-live/
+  url: ./devops0728-live/
 
   notice:
-    title: 在 KubeSphere 之上构建云原生时代的企业级 DevOps 平台
+    title: RadonDB MySQL K8s
     tag: 预告
-    time: 2022 年 07 月 28 日晚 8 点
+    time: 2022 年 08 月 04 日晚 8 点
     base: 线上
-    url: ./devops0728-live/
+    url: ./radondb0804-live/
 
   over:
     title: 云原生 Meetup 广州站
@@ -26,6 +26,13 @@ section2:
 
 section3:
   videos:
+    - title: 在 KubeSphere 之上构建云原生时代的企业级 DevOps 平台
+      link: ./devops0728-live/
+      snapshot: https://pek3b.qingstor.com/kubesphere-community/images/devops0728-live-cover.png
+      type: iframe
+      createTime: 2022.07.28
+      group: 直播回放
+
     - title: 基于 Zadig 打造云原生 DevOps 平台
       link: ./zadig0721-live/
       snapshot: https://pek3b.qingstor.com/kubesphere-community/images/zadig0721-live-cover.png
@@ -102,6 +109,13 @@ section3:
       type: iframe
       createTime: 2022.06.09
       group: 直播回放
+
+    - title: KubeSphere 社区走进企业第二站 —— 之江实验室
+      link: ./zhijianglab-kubesphere/
+      snapshot: https://pek3b.qingstor.com/kubesphere-community/images/zhijianglab-kubesphere-cover.png
+      type: iframe
+      createTime: 2022.06.08
+      group: 走进企业
 
     - title: 基于 KubeSphere 和 Thanos 构建可持久化存储的多集群监控系统
       link: ./jinaai0602-live/
