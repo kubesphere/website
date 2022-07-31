@@ -6,7 +6,7 @@ css: scss/live-detail.scss
 
 section1:
   snapshot: 
-  videoUrl: 
+  videoUrl: //player.bilibili.com/player.html?aid=601497813&bvid=BV1CB4y1b7Pm&cid=787106869&page=1&high_quality=1
   type: iframe
   time: 2022-07-28 20:00-21:00
   timeIcon: /images/live/clock.svg
@@ -33,3 +33,6 @@ K8s 作为 DevOps 首选编排系统，大幅度提高了应用交付速度，�
 
 B 站  http://live.bilibili.com/22580654
 
+## PPT 下载
+
+可扫描官网底部二维码，关注 「KubeSphere云原生」公众号，后台回复 `20220728` 即可下载 PPT。
