@@ -60,6 +60,3 @@ A：可以修改，可以手动编辑 Jenkinsfile，在拉代码的步骤，通�
 
 A：CI 基于 Jenkins 实现，所以可以实现 DevSecOps。目前暂时没有，主要还是在产品增强方面，可以提交相关 issue，一起来参与。
 
-
-### Q4：在运行流水线拉取代码前能否修改 git 配置,例如 `git config --global http.sslVerify false`，目前刚刚遇到的问题。
-
