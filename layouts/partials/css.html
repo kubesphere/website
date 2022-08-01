@@ -24,7 +24,7 @@
 {{ end }}
 
 
-{{ if .IsDescendant (.GetPage "/docs") }}
+{{ if or (.IsDescendant (.GetPage "/docs")) (.InSection (.GetPage "/docs")) }}
   <link rel="stylesheet" href="/npm/docsearch.js@2/dist/cdn/docsearch.min.css">
   {{ if not (eq . (.GetPage "/docs"))}}
     {{ $folder := . }}
