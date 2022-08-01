@@ -91,7 +91,14 @@ activities:
     - image: /images/user-group/hangzhou/fudata-kubesphere-cover.png
       link: https://kubesphere.com.cn/live/fudata-kubesphere/
 
+    - image: http://pek3b.qingstor.com/kubesphere-community/images/zhijianglab-kubesphere-cover.png
+      link: https://kubesphere.com.cn/live/zhijianglab-kubesphere/
+
   review:
+    - text: 使用 KubeKey 快速离线部署 KubeSphere 集群
+      description: 本教程使用 KubeKey 2.0.0 作为部署工具来实现 KubeSphere 集群在离线环境中的部署。
+      link: https://kubesphere.com.cn/blogs/deploying-kubesphere-clusters-offline-with-kubekey/
+
     - text: Kubernetes 备份容灾服务产品体验教程
       description: KubeSphere Cloud 云原生备份容灾服务是 KubeSphere 团队针对混合云场景推出的 Kubernetes 备份容灾即服务产品。
       link: https://kubesphere.com.cn/blogs/k8s-backup-disater-recovery-service/
@@ -99,10 +106,6 @@ activities:
     - text: 在 Kubernetes 中使用 Rook 构建云原生存储环境
       description: 本文将介绍如何使用 Rook 来创建维护 Ceph 集群，并作为 Kubernetes 的持久化存储。
       link: https://kubesphere.com.cn/blogs/rook-on-kubesphere/
-
-    - text: 在 Kubernetes 中安装和使用 JuiceFS 存储
-      description: 本教程将介绍如何在 KubeSphere 中一键部署 JuiceFS CSI Driver，为集群上的各种应用提供数据持久化。
-      link: https://kubesphere.com.cn/blogs/kubesphere-juicefs/
 
 
 ---
