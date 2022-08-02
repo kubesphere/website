@@ -2,7 +2,7 @@
 title: '基于 KubeSphere 流水线的 GitOps 最佳实践'
 tag: 'KubeSphere, GitOps'
 keywords: 'KubeSphere, GitOps, Kubernetes'
-description: '笔者基于 KubeSphere v3.1.1 的流水线，根据笔者的场景，实现了 GitOps 的服务发布流程，作此记录，暂且称之为最佳实践。'
+description: '本文基于 KubeSphere v3.1.1 的流水线，根据实际应用场景，实现了 GitOps 的服务发布流程。'
 createTime: '2022-07-28'
 author: '李亮'
 snapshot: 'https://pek3b.qingstor.com/kubesphere-community/images/kubesphere-gitops-cover-1.png'
