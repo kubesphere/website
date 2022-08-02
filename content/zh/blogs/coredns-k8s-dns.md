@@ -2,7 +2,7 @@
 title: '基于 CoreDNS 和 K8s 构建云原生场景下的企业级 DNS'
 tag: 'KubeSphere'
 keywords: 'KubeSphere,  Kubernetes, CoreDNS, DNS'
-description: 'Kubernetes 服务发现的特性，使 CoreDNS 很适合作为企业云原生环境的 DNS 服务器，保障企业容器化和非容器化业务服务的稳定运行。'
+description: '结合 KubeSphere 和 CoreDNS，搭建一个云原生的企业 DNS 系统，实现统一配置，监控运维、弹性伸缩。'
 createTime: '2022-07-19'
 author: ' 马伟'
 snapshot: 'https://pek3b.qingstor.com/kubesphere-community/images/kubesphere-coredns-cover.png'
