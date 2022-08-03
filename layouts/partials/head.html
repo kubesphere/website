@@ -29,7 +29,7 @@
 <script src='{{ "js/jquery.modal.min.js" | relURL }}'></script>
 <script src='{{ "swiper/swiper-bundle.min.js" | relURL }}'></script>
 
-{{ if .IsDescendant (.GetPage "/docs") }}
+{{ if or (.IsDescendant (.GetPage "/docs")) (.InSection (.GetPage "/docs")) }}
 <script type="text/javascript" src="/npm/docsearch.js@2/dist/cdn/docsearch.min.js"></script>
 {{ end }}
 
@@ -83,17 +83,21 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 <!-- End GrowingIO Analytics code version: 2.1 -->
 
 <!-- Hotjar Tracking Code for https://kubesphere.io/docs/ -->
-{{ if (and (.Site.Params.hotjarTracking) (.IsDescendant (.GetPage "/docs")) (eq .Site.Language.Lang "en"))  }}
-<script>
-  (function(h,o,t,j,a,r){
-      h.hj=h.hj||function(){(h.hj.q=h.hj.q||[]).push(arguments)};
-      h._hjSettings={hjid:1756364,hjsv:6};
-      a=o.getElementsByTagName('head')[0];
-      r=o.createElement('script');r.async=1;
-      r.src=t+h._hjSettings.hjid+j+h._hjSettings.hjsv;
-      a.appendChild(r);
-  })(window,document,'https://static.hotjar.com/c/hotjar-','.js?sv=');
-</script>
+{{ if eq .Site.Language.Lang "en" }}
+  {{ if .Site.Params.hotjarTracking  }}
+    {{ if or (.IsDescendant (.GetPage "/docs")) (.InSection (.GetPage "/docs")) }}
+      <script>
+        (function(h,o,t,j,a,r){
+            h.hj=h.hj||function(){(h.hj.q=h.hj.q||[]).push(arguments)};
+            h._hjSettings={hjid:1756364,hjsv:6};
+            a=o.getElementsByTagName('head')[0];
+            r=o.createElement('script');r.async=1;
+            r.src=t+h._hjSettings.hjid+j+h._hjSettings.hjsv;
+            a.appendChild(r);
+        })(window,document,'https://static.hotjar.com/c/hotjar-','.js?sv=');
+      </script>
+    {{ end }}
+  {{ end }}
 {{ end }}
 
 
