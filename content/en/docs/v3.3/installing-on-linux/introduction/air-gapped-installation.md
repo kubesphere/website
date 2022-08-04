@@ -354,7 +354,7 @@ In KubeKey v2.1.0, we bring in concepts of manifest and artifact, which provides
        address: ""
        port: 6443
      kubernetes:
-       version: v1.21.5
+       version: v1.22.10
        clusterName: cluster.local
      network:
        plugin: calico

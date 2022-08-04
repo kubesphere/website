@@ -159,7 +159,7 @@ chmod +x kk
        address: ""
        port: 6443
      kubernetes:
-       version: v1.21.5
+       version: v1.22.10
        imageRepo: kubesphere
        clusterName: cluster.local
      network:
