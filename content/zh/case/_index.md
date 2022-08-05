@@ -84,6 +84,10 @@ section2:
       content: "新东方教育科技集团定位于以学生全面成长为核心，以科技为驱动力的综合性教育集团。"
       link: "xdf/"
 
+    - icon: "images/case/section6-extreme-vision.jpg"
+      content: "极视角科技是专业的人工智能计算机视觉算法提供商。"
+      link: "extreme-vision/"
+
 section3:
   title: 'KubeSphere 助力各行各业'
   tip: 全部
