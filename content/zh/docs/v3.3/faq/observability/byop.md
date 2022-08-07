@@ -8,17 +8,9 @@ Weight: 16330
 
 KubeSphere 自带一些预装的自定义监控组件，包括 Prometheus Operator、Prometheus、Alertmanager、Grafana（可选）、各种 ServiceMonitor、node-exporter 和 kube-state-metrics。在您安装 KubeSphere 之前，这些组件可能已经存在。在 KubeSphere 3.3.0 中，您可以使用自己的 Prometheus 堆栈设置。
 
-## 集成您自己的 Prometheus 的步骤
+## 集成您自己的 Prometheus
 
 要使用您自己的 Prometheus 堆栈设置，请执行以下步骤：
-
-1. 卸载 KubeSphere 的自定义 Prometheus 堆栈
-
-2. 安装您自己的 Prometheus 堆栈
-
-3. 将 KubeSphere 自定义组件安装至您的 Prometheus 堆栈
-
-4. 更改 KubeSphere 的 `monitoring endpoint`
 
 ### 步骤 1：卸载 KubeSphere 的自定义 Prometheus 堆栈
 
@@ -51,11 +43,11 @@ KubeSphere 自带一些预装的自定义监控组件，包括 Prometheus Operat
 
 KubeSphere 3.3.0 已经过认证，可以与以下 Prometheus 堆栈组件搭配使用：
 
-- Prometheus Operator **v0.38.3+**
-- Prometheus **v2.20.1+**
-- Alertmanager **v0.21.0+**
-- kube-state-metrics **v1.9.6**
-- node-exporter **v0.18.1**
+- Prometheus Operator **v0.55.1+**
+- Prometheus **v2.34.0+**
+- Alertmanager **v0.23.0+**
+- kube-state-metrics **v2.3.0**
+- node-exporter **v1.3.1**
 
 请确保您的 Prometheus 堆栈组件版本符合上述版本要求，尤其是 **node-exporter** 和 **kube-state-metrics**。
 
@@ -67,7 +59,7 @@ KubeSphere 3.3.0 已经过认证，可以与以下 Prometheus 堆栈组件搭配
 
 Prometheus 堆栈可以通过多种方式进行安装。下面的步骤演示如何使用**上游 `kube-prometheus`** 将 Prometheus 堆栈安装至命名空间 `monitoring` 中。
 
-1. 获取 v0.6.0 版 kube-prometheus，它的 node-exporter 版本为 v0.18.1，与 KubeSphere 3.3.0 所使用的版本相匹配。
+1. 获取 v0.6.0 版 kube-prometheus，它的 node-exporter 版本为 v1.3.1，与 KubeSphere 3.3.0 所使用的版本相匹配。
 
    ```bash
    cd ~ && git clone https://github.com/prometheus-operator/kube-prometheus.git && cd kube-prometheus && git checkout tags/v0.6.0 -b v0.6.0
@@ -91,7 +83,7 @@ Prometheus 堆栈可以通过多种方式进行安装。下面的步骤演示如
    rm -rf manifests/prometheus-adapter-*.yaml
    ```
 
-5. 将 kube-state-metrics 的版本变更为 KubeSphere 3.3.0 所使用的 v1.9.6。
+5. 将 kube-state-metrics 的版本变更为 KubeSphere 3.3.0 所使用的 v2.3.0。
 
    ```bash
    sed -i 's/v1.9.5/v1.9.6/g' manifests/kube-state-metrics-deployment.yaml
