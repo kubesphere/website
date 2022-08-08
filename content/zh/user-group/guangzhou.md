@@ -1,6 +1,5 @@
 ---
 title: "用户委员会-广州站"
-draft: true
 weight: 4
 stationName: 广州站
 coverImage: /images/user-group/list/cityCards/guangzhou.png
@@ -10,7 +9,7 @@ css: "scss/user-group-single.scss"
 topSection:
   kubSphere: KubeSphere 
   committee: 社区用户委员会
-  description: KubeSphere 社区用户委员会—广州站，成立于 2021 年 5 月 15 日，是由活跃在广州的 KubeSphere 社区用户和成员组成的。初创核心成员 4 人。
+  description: KubeSphere 社区用户委员会—广州站，成立于 2022 年 8 月 6 日，是由活跃在广州的 KubeSphere 社区用户和成员组成的。初创核心成员 5 人。
   image: /images/user-group/guangzhou/banner.png
   mobile_image: /images/user-group/guangzhou/m-banner.png
 
@@ -20,12 +19,12 @@ station:
     text1: 申请加入
     text2: 社区用户委员会—广州站
   description: 
-    - 不管你是否是 KubeSphere 的用户，只要你对云原生技术感兴趣，对组织活动有热情，对发展 KubeSphere 社区有想法，即可申请加入 KubeSphere 社区上海用户委员会。
-    - 如果你想加入 KubeSphere 社区用户委员会—上海站，成为其中的一名委员（成员），为发展 KubeSphere 社区贡献自己的一份力量，可添加上海站站长微信申请，并可加入 KubeSphere 开源社区上海站微信群。
+    - 不管你是否是 KubeSphere 的用户，只要你对云原生技术感兴趣，对组织活动有热情，对发展 KubeSphere 社区有想法，即可申请加入 KubeSphere 社区广州用户委员会。
+    - 如果你想加入 KubeSphere 社区用户委员会—广州站，成为其中的一名委员（成员），为发展 KubeSphere 社区贡献自己的一份力量，可添加广州站站长微信申请，并可加入 KubeSphere 开源社区广州站微信群。
   manager: 
-    name: 张海立
-    image: /images/user-group/shanghai/zhanghaili.png
-    wxCode: /images/user-group/shanghai/zhanghailivx.jpeg
+    name: 裴振飞
+    image: /images/user-group/guangzhou/peizhenfei.png
+    wxCode: /images/user-group/guangzhou/peizhenfeivx.jpg
     position: 广州站站长
   icon: /images/user-group/guangzhou/guangzhou.svg
   icon_name: KubeSphere 社区用户委员会
@@ -49,54 +48,46 @@ returns:
 members:
   title: 核心成员
   list:
-    - name: 张海立
+    - name: 裴振飞
       position: 站长
-      des: 驭势科技云平台研发总监，开源爱好者，云原生社区上海站 PMC 成员，KubeSphere Ambassador；日常云原生领域工作涉及 Kubernetes、DevOps、可观察性、服务网格等。
-      image: /images/user-group/shanghai/zhanghaili.png
+      des: 广州视源电子股份有限公司，运维工程师，多年系统运维经验；python 前后端全栈开发者；云原生爱技术好者。公司内部负责运维及运维开发相关工作。
+      image: /images/user-group/guangzhou/peizhenfei.png
 
-    - name: 申红磊
+    - name: 胡卓超
       position: 副站长
-      des: 关注内容：容器、DevSecOps 领域、Spring Cloud、Istio 以及微服务中间件；行业解决方案和发展趋势，云上架构的规划与设计，微服务方案与咨询等。
-      image: /images/user-group/shanghai/shl.png
+      des: 担任多家企业技术顾问，云原生爱好者，个人关注领域 DevOps、Istio、Serverless，工作负责云原生相关技术的落地，架构的演进。
+      image: /images/user-group/guangzhou/huzhuochao.jpeg
 
-    - name: 刘德涵
+    - name: 刘星
       position: 委员
-      des: 韵达科技资深运维，Docker，Linux、Kubernetes 运维，Devops，CI/CD，微服务应用部署，链路监控、helm，基础架构设计，快速定位运维相关问题，多年的运维操作经验，协助社区成员解决相关问题。
-      image: /images/user-group/shanghai/liudehan.jpeg
+      des: 广东国地科技，运维工程师，云原生爱好者，日常工作领域涉及 Devops、Gitops、K8s、监控、服务网格等。
+      image: /images/user-group/guangzhou/liuxing.png
 
-    - name: 张浩飞
+    - name: 符嘉阳
       position: 委员
-      des: 现在任职高级运维工程师，负责公司 K8s 的搭建，维护，与新技术的探索。
-      image: /images/user-group/shanghai/zhanghaofei.jpeg
+      des: 珠海盈米基金销售有限公司，系统开发工程师，云原生爱好者，日常工作涉及 K8s、DevOps、Service Mesh 等。
+      image: /images/user-group/guangzhou/fujiayang.jpeg
+
+    - name: 王静
+      position: 委员
+      des: 天翼云科技有限公司，专家，云原生爱好者。
+      image: /images/user-group/guangzhou/wangjing.jpeg
 
 activities:
   videos:
-    - image: https://pek3b.qingstor.com/kubesphere-community/images/driverless-cic-cover.png
-      link: https://kubesphere.com.cn/live/driverless-cic/
+    - image: https://pek3b.qingstor.com/kubesphere-community/images/meetup-guangzhou-cover.jpeg
+      link: https://kubesphere.com.cn/live/meetup-guangzhou-20220806/
 
-    - image: https://pek3b.qingstor.com/kubesphere-community/images/uisee0916-live-cover.png
-      link: https://kubesphere.com.cn/live/uisee0916-live/
-
-    - image: https://pek3b.qingstor.com/kubesphere-community/images/uisee0923-live-cover.png
-      link: https://kubesphere.com.cn/live/uisee0923-live/
-
-    - image: https://pek3b.qingstor.com/kubesphere-community/images/mqtt1230-live-cover.png
-      link: https://kubesphere.com.cn/live/mqtt1230-live/
+    - image: https://pek3b.qingstor.com/kubesphere-community/images/argocd0217-live-cover.png
+      link: https://kubesphere.com.cn/live/gitops-cic/
 
   review:    
-    - text: 在 KubeSphere 中快速部署使用 GitLab 并构建 DevOps 项目
-      description: 本次分享将和大家一起动手来实践一下在 KubeSphere 部署 GitLab CE（Community Edition 社区版）并构建与之联动的 DevOps 项目。
-      link: https://kubesphere.com.cn/blogs/kubesphere-gitlab-devops/
+    - text: Argo CD 速度通关指南
+      description: 本次直播将介绍 Argo CD，分享实践经验，结合测试环境案例，演示相应场景下的实验效果；让用户快速把握重点难点以及相应的思路和方向
+      link: https://kubesphere.com.cn/live/argocd0217-live/
 
-    - text: 在 Kubernetes 中安装和使用 Apache APISIX Ingress 网关
+    - text: 基于 Argo CD 的 GitOps 实践经验
       description: 通过 KubeSphere 的应用管理能力快速使用 Apache APISIX Ingress Controller
-      link: https://kubesphere.com.cn/blogs/use-apache-apisix-ingress-in-kubesphere/
+      link: https://kubesphere.com.cn/blogs/gitops-argocd/
 
-    - text: 在 Kubernetes 中部署云原生开发工具 Nocalhost
-      description: 本文将介绍如何在 KubeSphere 中快速部署 Nocalhost Server，用于提供一个帮助研发团队统一管理 Nocalhost 应用部署的管理平台。
-      link: https://kubesphere.com.cn/blogs/kubesphere-nocalhost/
-
-    - text: 面向无人驾驶“云端大脑”可用性的云原生实践
-      description: 本次分享介绍了驭势科技使用 KubeSphere 的历程，在云服务高可用方面自制 Operator 实现热备切换的工作，以及基于 SkyWalking 进行车云链路追踪的一些实践。
-      link: https://kubesphere.com.cn/case/uisee/
 ---
