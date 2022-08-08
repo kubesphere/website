@@ -37,11 +37,11 @@
 - id: Demo
   translation: Demo
 - id: demo content 1
-  translation: "1.体验账号： demo1 / Demo1234"
+  translation: "1.创建账户并登录。"
 - id: demo content 2
-  translation: 2.该账号仅开放了部分 UI 界面查看权限
+  translation: 2.进入管理控制台，点击创建托管集群服务。
 - id: demo content 3
-  translation: 3.建议自行安装体验完整的管理功能
+  translation: 3.使用默认账户和密码 （admin/P@88word）登录 KubeSphere。
 - id: Coming Soon
   translation: Coming Soon
 - id: Read More

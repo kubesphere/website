@@ -9,3 +9,4 @@ youtubeLink = "https://www.youtube.com/c/KubeSphere"
 addLinkedin = true
 addTwitter = true
 useSendcloud = false
+DemoLink = "https://kubesphere.cloud/en/console/managed-cluster/"
