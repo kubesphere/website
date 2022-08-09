@@ -88,7 +88,7 @@ Currently, KubeSphere doesn't support the integration of Elasticsearch with X-Pa
 
 Before KubeSphere v3.3.0, you can only set the retention period of logs, which is 7 days by default. In KubeSphere v3.3.0, apart from logs, you can also set the data retention period of events, auditing logs, and Istio logs.
 
-You need to update the KubeKey configuration and rerun `ks-installer`.
+Perform the following to update the KubeKey configurations.
 
 1. Execute the following command:
 
@@ -96,7 +96,7 @@ You need to update the KubeKey configuration and rerun `ks-installer`.
    kubectl edit cc -n kubesphere-system ks-installer
    ```
 
-2. In the YAML file, if you only want to change the retention period of logs, you can directly change the default value of `logMaxAge` to a desired one. If you want to set the retention period of events, auditing logs, and Istio logs, you need to add parameters `auditingMaxAge`, `eventMaxAge`, and `istioMaxAge` and set a value for them, respectively, as shown in the following example:
+2. In the YAML file, if you only want to change the retention period of logs, you can directly change the default value of `logMaxAge` to a desired one. If you want to set the retention period of events, auditing logs, and Istio logs, add parameters `auditingMaxAge`, `eventMaxAge`, and `istioMaxAge` and set a value for them, respectively, as shown in the following example:
   
 
    ```yaml
@@ -118,10 +118,27 @@ You need to update the KubeKey configuration and rerun `ks-installer`.
      ...
    ```
 
-3. Rerun `ks-installer`.
+   {{< notice note >}}
+   If you have not set the retention period of events, auditing logs, and Istio logs, the value of `logMaxAge` is used by default.
+   {{</ notice >}}
 
-   ```bash
-   kubectl rollout restart deploy -n kubesphere-system ks-installer
+3. In the YAML file, detete the `es` parameter, save the changes, and ks-installer will automatically restart to make the changes take effective.
+
+   ```yaml
+   apiVersion: installer.kubesphere.io/v1alpha1
+   kind: ClusterConfiguration
+   metadata:
+     name: ks-installer
+     namespace: kubesphere-system
+   ...
+   status:
+     alerting:
+       enabledTime: 2022-08-11T06:22:01UTC
+       status: enabled
+     ...
+     es:   # delete this line.
+       enabledTime: 2022-08-11T06:22:01UTC    # delete this line.
+       status: enabled   # delete this line.
    ```
 
 ## I cannot find logs from workloads on some nodes using Toolbox
