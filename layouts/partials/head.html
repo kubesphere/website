@@ -24,11 +24,6 @@
 
 {{- partial "css.html" . -}}
 
-<script src='{{ "js/jquery-3.5.0.min.js" | relURL }}'></script>
-<script src='{{ "js/viewer.min.js" | relURL }}'></script>
-<script src='{{ "js/jquery.modal.min.js" | relURL }}'></script>
-<script src='{{ "swiper/swiper-bundle.min.js" | relURL }}'></script>
-
 {{ if .IsDescendant (.GetPage "/docs") }}
 <script type="text/javascript" src="/npm/docsearch.js@2/dist/cdn/docsearch.min.js"></script>
 {{ end }}
