@@ -10,22 +10,71 @@ section1:
 
 section2:
   image: /images/live/cloudnative-live-banner.png
-  url: ./devops0728-live/
+  url: ./radondb0804-live/
 
   notice:
-    title: RadonDB MySQL K8s
+    title: 基于 Harbor 高可用打造 KubeSphere 云原生系统
     tag: 预告
-    time: 2022 年 08 月 04 日晚 8 点
+    time: 2022 年 08 月 11 日晚 8 点
     base: 线上
-    url: ./radondb0804-live/
+    url: ./harbor0811-live/
 
   over:
     title: 云原生 Meetup 广州站
-    tag: 预告
+    tag: 结束
     url: ./meetup-guangzhou-20220806/
 
 section3:
   videos:
+    - title: 云原生应用灾备最佳实践
+      link: ./guangzhou0806-veeam/
+      snapshot: https://pek3b.qingstor.com/kubesphere-community/images/meetup-guangzhou-20220806-veeam-cover.png
+      type: iframe
+      createTime: 2022.08.06
+      group: Meetup
+
+    - title: Holmes：Go 应用性能异常诊断定位利器
+      link: ./guangzhou0806-holmes/
+      snapshot: https://pek3b.qingstor.com/kubesphere-community/images/meetup-guangzhou-20220806-holmes-cover.png
+      type: iframe
+      createTime: 2022.08.06
+      group: Meetup
+
+    - title: KubeSphere 在青花瓷的落地实践与展望
+      link: ./guangzhou0806-kubesphere/
+      snapshot: https://pek3b.qingstor.com/kubesphere-community/images/meetup-guangzhou-20220806-qinghuaci-cover.png
+      type: iframe
+      createTime: 2022.08.06
+      group: Meetup
+
+    - title: KusionStack 实践探秘——技术、角色与应用场景篇
+      link: ./guangzhou0806-kusionstack/
+      snapshot: https://pek3b.qingstor.com/kubesphere-community/images/meetup-guangzhou-20220806-kusionstack-cover.png
+      type: iframe
+      createTime: 2022.08.06
+      group: Meetup
+
+    - title: 基于 Buildpacks 和 Argo CD 的云原生 GitOps 实践
+      link: ./guangzhou0806-gitops/
+      snapshot: https://pek3b.qingstor.com/kubesphere-community/images/meetup-guangzhou-20220806-gitops-cover.png
+      type: iframe
+      createTime: 2022.08.06
+      group: Meetup
+
+    - title: Dragonfly：基于 P2P 的文件和镜像加速系统 
+      link: ./guangzhou0806-dragonfly/
+      snapshot: https://pek3b.qingstor.com/kubesphere-community/images/meetup-guangzhou-20220806-dragonfly-cover.png
+      type: iframe
+      createTime: 2022.08.06
+      group: Meetup
+
+    - title: RadonDB MySQL K8s
+      link: ./radondb0804-live/
+      snapshot: https://pek3b.qingstor.com/kubesphere-community/images/radondb0804-live-cover.png
+      type: iframe
+      createTime: 2022.08.04
+      group: 直播回放
+
     - title: 在 KubeSphere 之上构建云原生时代的企业级 DevOps 平台
       link: ./devops0728-live/
       snapshot: https://pek3b.qingstor.com/kubesphere-community/images/devops0728-live-cover.png
@@ -724,24 +773,28 @@ section4:
           img: https://pek3b.qingstor.com/kubesphere-community/images/meetup-hangzhou1023-cover.png
           meetupUrl: https://kubesphere.com.cn/live/meetup-hangzhou1023/
         
-        - place: 北京站（7.29）
+        - place: 北京站（07.29）
           img: https://pek3b.qingstor.com/kubesphere-community/images/meetup-beijing-cover.png
           meetupUrl: https://kubesphere.com.cn/live/meetup-beijing/
         
-        - place: 成都站（6.19）
+        - place: 成都站（06.19）
           img: https://pek3b.qingstor.com/kubesphere-community/images/meetup-chengdu-cover.png
           meetupUrl: https://kubesphere.com.cn/live/meetup-chengdu/
 
-        - place: 杭州站（5.29）
+        - place: 杭州站（05.29）
           img: https://pek3b.qingstor.com/kubesphere-community/images/meetup-hangzhou-cover.png
           meetupUrl: https://kubesphere.com.cn/live/meetup-hangzhou/
 
-        - place: 上海站（5.15）
+        - place: 上海站（05.15）
           img: https://pek3b.qingstor.com/kubesphere-community/images/meetup-shanghai-cover.png
           meetupUrl: https://kubesphere.com.cn/live/meetup-shanghai/
 
     - year: 2022
       meetup: 
+        - place: 广州站（08.06）
+          img: https://pek3b.qingstor.com/kubesphere-community/images/meetup-guangzhou-cover.jpeg
+          meetupUrl: https://kubesphere.com.cn/live/meetup-guangzhou-20220806/
+
         - place: 在线 Meetup（06.25）
           img: https://pek3b.qingstor.com/kubesphere-community/images/pulsar-kubesphere-meetup-cover.png
           meetupUrl: https://kubesphere.com.cn/live/pulsar-kubesphere-meetup0625/
