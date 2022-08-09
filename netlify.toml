@@ -4,5 +4,26 @@
 [context.deploy-preview.environment]
   HUGO_VERSION = "0.101.0"
 
-[context.deploy-preview]
-command = "hugo --gc --minify --buildFuture -b $DEPLOY_PRIME_URL"
+[[redirects]]
+  from = "/docs"
+  to = "/docs/v3.3"
+  status = 302
+  force = true
+
+[[redirects]]
+  from = "/zh/docs"
+  to = "/zh/docs/v3.3"
+  status = 302
+  force = true
+
+[[redirects]]
+  from = "/docs/*"
+  to = "/docs/v3.3/:splat"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/zh/docs/*"
+  to = "/zh/docs/v3.3/:splat"
+  status = 301
+  force = true
