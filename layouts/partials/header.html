@@ -77,13 +77,15 @@
                         {{ end }}
                     </li>
                     <li class='btn-li'>
-                        <a href="https://kubesphere.cloud/console/managed-cluster/" target="_blank" rel="noopener noreferrer">
+                        <a href="{{ .Site.Params.DemoLink }}" target="_blank" rel="noopener noreferrer">
                             <button class="demo-btn">{{ i18n "Demo" }} →</button>
                         </a>
                         <ol class="dropdown-menu">
                             <li>{{ i18n "demo content 1" }}</li>
                             <li>{{ i18n "demo content 2" }}</li>
                             <li>{{ i18n "demo content 3" }}</li>
+                            <li>{{ i18n "demo content 4" }}</li> 
+                            <li>{{ i18n "demo content 5" }}</li>
                         </ol>
                     </li>
                     <!-- <li class='link-li'>
@@ -138,7 +140,7 @@
 
         </ul>
         <div class="btn-div">
-            <a href="https://kubesphere.cloud/console/managed-cluster/" target="_blank" rel="noopener noreferrer">
+            <a href="{{ .Site.Params.DemoLink }}" target="_blank" rel="noopener noreferrer">
                 <button class="demo-btn">{{ i18n "Demo" }} →</button>
             </a>
         </div>
