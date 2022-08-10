@@ -16,7 +16,7 @@ section1:
 
 ## 分享人简介
 
-刘俊龙，蚂蚁集团技术专家，Holmes committer。
+刘俊龙，Holmes committer，MOSN Contributor。
 
 ![](https://pek3b.qingstor.com/kubesphere-community/images/guangzhou0806-liujunlong.JPG)
 

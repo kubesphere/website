@@ -80,7 +80,7 @@ KusionStack 是蚂蚁开源的可编程云原生协议栈，是基于云原生�
 
 ### Holmes：Go 应用性能异常诊断定位利器
 
-讲师：刘俊龙，蚂蚁集团技术专家，Holmes committer
+讲师：刘俊龙，Holmes committer，MOSN Contributor
 
 ![](https://pek3b.qingstor.com/kubesphere-community/images/guangzhou0806-liujunlong.JPG)
 
