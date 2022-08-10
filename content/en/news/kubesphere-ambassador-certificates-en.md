@@ -40,7 +40,7 @@ The recipients are listed in random order. Here are their contributions:
 
 In Turkey, Halil works with the KubeSphere Community and customers from Turkey and the Middle East on community, localization, sales, and support for further development of KubeSphere.
 
-## Yanying Zhang
+### Yanying Zhang
 
 Yanying Zhang has shared multiple technical articles in the community and has regularly shared videos related to KubeSphere and its technology in the form of livestreaming and in his personal channel on Bilibili. Besides, he is always ready to help others resolve technical problems.
 
@@ -87,7 +87,7 @@ Thanks to their active participation and promotion, KubeSphere are known and use
 ## Acknowledgment
 The KubeSphere community would like to express its gratitude to new KubeSphere Ambassadors and extend the sincerest greetings to those who participated in the open-source contribution to the KubeSphere community!
 
-## Looking Ahead
+## Look Ahead
 To date, dozens of community members have been recognized as KubeSphere Ambassadors. They have helped popularize and expand the influence of 
 
 KubeSphere in their own ways, and most of them are continuously active and making their contributions.
