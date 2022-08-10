@@ -34,7 +34,8 @@ facebookLink = "https://www.facebook.com/kubesphere"
 twitterLink = "https://twitter.com/KubeSphere"
 mediumLink = "https://itnext.io/@kubesphere"
 linkedinLink = "https://www.linkedin.com/company/kubesphere/"
-
+DemoLinkEn = "https://kubesphere.cloud/en/console/managed-cluster/"
+DemoLinkZh = "https://kubesphere.cloud/console/managed-cluster/"
 
 [languages.en]
 contentDir = "content/en"

@@ -41,7 +41,9 @@
 - id: demo content 2
   translation: 2.进入管理控制台，点击创建托管集群服务。
 - id: demo content 3
-  translation: 3.使用默认账户和密码 （admin/P@88word）登录 KubeSphere。
+  translation: 3.新建一个安装了 KubeSphere 的 K8s 集群。
+- id: demo content 4
+  translation: 4.使用默认账户和密码 （admin/P@88word）登录 KubeSphere。
 - id: Coming Soon
   translation: Coming Soon
 - id: Read More
