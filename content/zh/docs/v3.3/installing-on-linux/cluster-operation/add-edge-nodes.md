@@ -24,6 +24,48 @@ KubeSphere 利用 [KubeEdge](https://kubeedge.io/zh/) 将原生容器化应用�
 - 您有一个可用节点作为边缘节点，该节点可以运行 Ubuntu（建议）或 CentOS。本教程以 Ubuntu 18.04 为例。
 - 与 Kubernetes 集群节点不同，边缘节点应部署在单独的网络中。
 
+## 防止非边缘工作负载调度到边缘节点
+
+由于部分守护进程集（例如，Calico）有强容忍度，为了避免影响边缘节点的正常工作，您需要手动 Patch Pod 以防止非边缘工作负载调度至边缘节点。
+
+```bash
+#!/bin/bash
+   
+   
+NoShedulePatchJson='{"spec":{"template":{"spec":{"affinity":{"nodeAffinity":{"requiredDuringSchedulingIgnoredDuringExecution":{"nodeSelectorTerms":[{"matchExpressions":[{"key":"node-role.kubernetes.io/edge","operator":"DoesNotExist"}]}]}}}}}}}'
+   
+ns="kube-system"
+
+
+DaemonSets=("nodelocaldns" "kube-proxy" "calico-node")
+
+length=${#DaemonSets[@]}
+   
+for((i=0;i<length;i++));  
+do
+         ds=${DaemonSets[$i]}
+        echo "Patching resources:DaemonSet/${ds}" in ns:"$ns",
+        kubectl -n $ns patch DaemonSet/${ds} --type merge --patch "$NoShedulePatchJson"
+        sleep 1
+done
+```
+
+## 创建防火墙规则和端口转发规则
+
+若要确保边缘节点可以成功地与集群通信，您必须转发端口，以便外部流量进入您的网络。您可以根据下表将外网端口映射到相应的内网 IP 地址（主节点）和端口。此外，您还需要创建防火墙规则以允许流量进入这些端口（`10000` 至 `10004`）。
+
+   {{< notice note >}}
+   在 ks-installer 的 `ClusterConfiguration`中，如果您设置的是局域网地址，那么需要配置转发规则。如果您未配置转发规则，直接连接 30000 – 30004 端口即可。
+   {{</ notice >}} 
+
+| 字段                | 外网端口 | 字段                    | 内网端口 |
+| ------------------- | -------- | ----------------------- | -------- |
+| `cloudhubPort`      | `10000`  | `cloudhubNodePort`      | `30000`  |
+| `cloudhubQuicPort`  | `10001`  | `cloudhubQuicNodePort`  | `30001`  |
+| `cloudhubHttpsPort` | `10002`  | `cloudhubHttpsNodePort` | `30002`  |
+| `cloudstreamPort`   | `10003`  | `cloudstreamNodePort`   | `30003`  |
+| `tunnelPort`        | `10004`  | `tunnelNodePort`        | `30004`  |
+
 ## 配置边缘节点
 
 您需要在边缘节点上安装容器运行时并配置 EdgeMesh。
@@ -71,22 +113,6 @@ KubeSphere 利用 [KubeEdge](https://kubeedge.io/zh/) 将原生容器化应用�
    ```bash
    net.ipv4.ip_forward = 1
    ```
-
-## 创建防火墙规则和端口转发规则
-
-若要确保边缘节点可以成功地与集群通信，您必须转发端口，以便外部流量进入您的网络。您可以根据下表将外网端口映射到相应的内网 IP 地址（主节点）和端口。此外，您还需要创建防火墙规则以允许流量进入这些端口（`10000` 至 `10004`）。
-
-   {{< notice note >}}
-   在 ks-installer 的 `ClusterConfiguration`中，如果您设置的是局域网地址，那么需要配置转发规则。如果您未配置转发规则，直接连接 30000 – 30004 端口即可。
-   {{</ notice >}} 
-
-| 字段                | 外网端口 | 字段                    | 内网端口 |
-| ------------------- | -------- | ----------------------- | -------- |
-| `cloudhubPort`      | `10000`  | `cloudhubNodePort`      | `30000`  |
-| `cloudhubQuicPort`  | `10001`  | `cloudhubQuicNodePort`  | `30001`  |
-| `cloudhubHttpsPort` | `10002`  | `cloudhubHttpsNodePort` | `30002`  |
-| `cloudstreamPort`   | `10003`  | `cloudstreamNodePort`   | `30003`  |
-| `tunnelPort`        | `10004`  | `tunnelNodePort`        | `30004`  |
 
 ## 添加边缘节点
 
@@ -170,39 +196,7 @@ KubeSphere 利用 [KubeEdge](https://kubeedge.io/zh/) 将原生容器化应用�
     systemctl restart edgecore.service
     ```
 
-9. 边缘节点加入集群后，部分 Pod 在调度至该边缘节点上后可能会一直处于 `Pending` 状态。由于部分守护进程集（例如，Calico）有强容忍度，您需要手动 Patch Pod 以防止它们调度至该边缘节点。
-
-
-   ```bash
-   #!/bin/bash
-   
-   NodeSelectorPatchJson='{"spec":{"template":{"spec":{"nodeSelector":{"node-role.kubernetes.io/master": "","node-role.kubernetes.io/worker": ""}}}}}'
-   
-   NoShedulePatchJson='{"spec":{"template":{"spec":{"affinity":{"nodeAffinity":{"requiredDuringSchedulingIgnoredDuringExecution":{"nodeSelectorTerms":[{"matchExpressions":[{"key":"node-role.kubernetes.io/edge","operator":"DoesNotExist"}]}]}}}}}}}'
-   
-   edgenode="edgenode"
-   if [ $1 ]; then
-           edgenode="$1"
-   fi
-   
-   
-   namespaces=($(kubectl get pods -A -o wide |egrep -i $edgenode | awk '{print $1}' ))
-   pods=($(kubectl get pods -A -o wide |egrep -i $edgenode | awk '{print $2}' ))
-   length=${#namespaces[@]}
-   
-   
-   for((i=0;i<$length;i++));  
-   do
-           ns=${namespaces[$i]}
-           pod=${pods[$i]}
-           resources=$(kubectl -n $ns describe pod $pod | grep "Controlled By" |awk '{print $3}')
-           echo "Patching for ns:"${namespaces[$i]}",resources:"$resources
-           kubectl -n $ns patch $resources --type merge --patch "$NoShedulePatchJson"
-           sleep 1
-   done
-   ```
-
-10. 如果仍然无法显示监控数据，执行以下命令：
+9. 如果仍然无法显示监控数据，执行以下命令：
     ```bash
     journalctl -u edgecore.service -b -r
     ```
