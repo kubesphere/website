@@ -89,7 +89,7 @@ KubeSphere 暂不支持启用 X-Pack Security 的 Elasticsearch 集成，此功�
 
 在 KubeSphere v3.3.0 之前的版本，您只能修改日志的保存期限（默认为 7 天）。除了日志外，KubeSphere v3.3.0 还支持您设置审计、事件及 Istio 日志信息的保留期限。
 
-您需要更新 KubeKey 配置并重新运行 `ks-installer`。
+参考以下步骤更新 KubeKey 配置。
 
 1. 执行以下命令：
 
@@ -118,10 +118,27 @@ KubeSphere 暂不支持启用 X-Pack Security 的 Elasticsearch 集成，此功�
      ...
    ```
 
-3. 重新运行 `ks-installer`。
+   {{< notice note >}}
+   如果您未设置审计、事件及 Istio 日志信息的保留期限，默认使用 `logMaxAge` 的值。
+   {{</ notice >}}
 
-   ```bash
-   kubectl rollout restart deploy -n kubesphere-system ks-installer
+3. 在 YAML 文件中，删除 `es` 部分的内容，保存修改，ks-installer 会自动重启使配置生效。
+
+   ```yaml
+   apiVersion: installer.kubesphere.io/v1alpha1
+   kind: ClusterConfiguration
+   metadata:
+     name: ks-installer
+     namespace: kubesphere-system
+   ...
+   status:
+     alerting:
+       enabledTime: 2022-08-11T06:22:01UTC
+       status: enabled
+     ...
+     es:   # delete this line.
+       enabledTime: 2022-08-11T06:22:01UTC    # delete this line.
+       status: enabled   # delete this line.
    ```
 
 ## 无法使用工具箱找到某些节点上工作负载的日志
