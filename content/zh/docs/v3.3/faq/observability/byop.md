@@ -195,6 +195,6 @@ KubeSphere 3.3.0 使用 Prometheus Operator 来管理 Prometheus/Alertmanager �
 
 {{< notice warning >}}
 
-如果您按照[此指南](../../../pluggable-components/overview/)启用/禁用 KubeSphere 可插拔组件，`monitoring endpoint` 会重置为初始值。此时，您需要再次将其更改为您自己的 Prometheus 并重启 KubeSphere APIserver。
+如果您按照[此指南](../../../pluggable-components/overview/)启用/禁用 KubeSphere 可插拔组件，`monitoring endpoint` 会重置为初始值。此时，您需要再次将其更改为您自己的 Prometheus。
 
 {{</ notice >}}
