@@ -35,14 +35,9 @@ When you install KubeSphere on Linux, you need to create a configuration file, w
     ```yaml
     logging:
       enabled: true # Change "false" to "true".
-      containerruntime: docker
     ```
 
-    {{< notice info >}}To use containerd as the container runtime, change the value of the field `containerruntime` to `containerd`. If you upgraded to KubeSphere 3.3.0 from earlier versions, you have to manually add the field `containerruntime` under `logging` when enabling KubeSphere Logging system.
-
-    {{</ notice >}}
-
-    {{< notice note >}}By default, KubeKey will install Elasticsearch internally if Logging is enabled. For a production environment, it is highly recommended that you set the following values in `config-sample.yaml` if you want to enable Logging, especially `externalElasticsearchUrl` and `externalElasticsearchPort`. Once you provide the following information before installation, KubeKey will integrate your external Elasticsearch directly instead of installing an internal one.
+    {{< notice note >}}By default, KubeKey will install Elasticsearch internally if Logging is enabled. For a production environment, it is highly recommended that you set the following values in `config-sample.yaml` if you want to enable Logging, especially `externalElasticsearchHost` and `externalElasticsearchPort`. Once you provide the following information before installation, KubeKey will integrate your external Elasticsearch directly instead of installing an internal one.
     {{</ notice >}}
 
     ```yaml
@@ -53,7 +48,7 @@ When you install KubeSphere on Linux, you need to create a configuration file, w
       elasticsearchDataVolumeSize: 20Gi    # The volume size of Elasticsearch data nodes.
       logMaxAge: 7                     # Log retention day in built-in Elasticsearch. It is 7 days by default.
       elkPrefix: logstash              # The string making up index names. The index name will be formatted as ks-<elk_prefix>-log.
-      externalElasticsearchUrl: # The Host of external Elasticsearch.
+      externalElasticsearchHost: # The Host of external Elasticsearch.
       externalElasticsearchPort: # The port of external Elasticsearch.
     ```
 
@@ -78,14 +73,9 @@ As you [install KubeSphere on Kubernetes](../../installing-on-kubernetes/introdu
     ```yaml
     logging:
       enabled: true # Change "false" to "true".
-      containerruntime: docker
     ```
 
-    {{< notice info >}}To use containerd as the container runtime, change the value of the field `.logging.containerruntime` to `containerd`. If you upgraded to KubeSphere 3.3.0 from earlier versions, you have to manually add the field `containerruntime` under `logging` when enabling KubeSphere Logging system.
-
-    {{</ notice >}}
-
-    {{< notice note >}}By default, ks-installer will install Elasticsearch internally if Logging is enabled. For a production environment, it is highly recommended that you set the following values in `cluster-configuration.yaml` if you want to enable Logging, especially `externalElasticsearchUrl` and `externalElasticsearchPort`. Once you provide the following information before installation, ks-installer will integrate your external Elasticsearch directly instead of installing an internal one.
+    {{< notice note >}}By default, ks-installer will install Elasticsearch internally if Logging is enabled. For a production environment, it is highly recommended that you set the following values in `cluster-configuration.yaml` if you want to enable Logging, especially `externalElasticsearchHost` and `externalElasticsearchPort`. Once you provide the following information before installation, ks-installer will integrate your external Elasticsearch directly instead of installing an internal one.
     {{</ notice >}}
 
     ```yaml
@@ -96,7 +86,7 @@ As you [install KubeSphere on Kubernetes](../../installing-on-kubernetes/introdu
       elasticsearchDataVolumeSize: 20Gi    # The volume size of Elasticsearch data nodes.
       logMaxAge: 7                     # Log retention day in built-in Elasticsearch. It is 7 days by default.
       elkPrefix: logstash              # The string making up index names. The index name will be formatted as ks-<elk_prefix>-log.
-      externalElasticsearchUrl: # The Host of external Elasticsearch.
+      externalElasticsearchHost: # The Host of external Elasticsearch.
       externalElasticsearchPort: # The port of external Elasticsearch.
     ```
 
@@ -127,14 +117,9 @@ A Custom Resource Definition (CRD) allows users to create a new type of resource
     ```yaml
     logging:
       enabled: true # Change "false" to "true".
-      containerruntime: docker
     ```
 
-    {{< notice info >}}To use containerd as the container runtime, change the value of the field `.logging.containerruntime` to `containerd`. If you upgraded to KubeSphere 3.3.0 from earlier versions, you have to manually add the field `containerruntime` under `logging` when enabling KubeSphere Logging system.
-
-    {{</ notice >}}
-
-    {{< notice note >}}By default, Elasticsearch will be installed internally if Logging is enabled. For a production environment, it is highly recommended that you set the following values in this yaml file if you want to enable Logging, especially `externalElasticsearchUrl` and `externalElasticsearchPort`. Once you provide the following information, KubeSphere will integrate your external Elasticsearch directly instead of installing an internal one.
+    {{< notice note >}}By default, Elasticsearch will be installed internally if Logging is enabled. For a production environment, it is highly recommended that you set the following values in this yaml file if you want to enable Logging, especially `externalElasticsearchHost` and `externalElasticsearchPort`. Once you provide the following information, KubeSphere will integrate your external Elasticsearch directly instead of installing an internal one.
     {{</ notice >}}
 
     ```yaml
@@ -145,7 +130,7 @@ A Custom Resource Definition (CRD) allows users to create a new type of resource
       elasticsearchDataVolumeSize: 20Gi    # The volume size of Elasticsearch data nodes.
       logMaxAge: 7                     # Log retention day in built-in Elasticsearch. It is 7 days by default.
       elkPrefix: logstash              # The string making up index names. The index name will be formatted as ks-<elk_prefix>-log.
-      externalElasticsearchUrl: # The Host of external Elasticsearch.
+      externalElasticsearchHost: # The Host of external Elasticsearch.
       externalElasticsearchPort: # The port of external Elasticsearch.
     ```
 

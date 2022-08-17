@@ -28,7 +28,7 @@ weight: 16310
    kubectl edit cc -n kubesphere-system ks-installer
    ```
 
-2. 将 `es.elasticsearchDataXXX`、`es.elasticsearchMasterXXX` 和 `status.logging` 的注释取消，将 `es.externalElasticsearchUrl` 设置为 Elasticsearch 的地址，将 `es.externalElasticsearchPort` 设置为其端口号。以下示例供您参考：
+2. 将 `es.elasticsearchDataXXX`、`es.elasticsearchMasterXXX` 和 `status.logging` 的注释取消，将 `es.externalElasticsearchHost` 设置为 Elasticsearch 的地址，将 `es.externalElasticsearchPort` 设置为其端口号。以下示例供您参考：
 
    ```yaml
    apiVersion: installer.kubesphere.io/v1alpha1
@@ -40,14 +40,18 @@ weight: 16310
    spec:
      ...
      common:
-       es:
-         # elasticsearchDataReplicas: 1
-         # elasticsearchDataVolumeSize: 20Gi
-         # elasticsearchMasterReplicas: 1
-         # elasticsearchMasterVolumeSize: 4Gi
+       es:  # Storage backend for logging, events and auditing.
+         # master:
+         #   volumeSize: 4Gi  # The volume size of Elasticsearch master nodes.
+         #   replicas: 1      # The total number of master nodes. Even numbers are not allowed.
+         #   resources: {}
+         # data:
+         #   volumeSize: 20Gi  # The volume size of Elasticsearch data nodes.
+         #   replicas: 1       # The total number of data nodes.
+         #   resources: {}
          elkPrefix: logstash
          logMaxAge: 7
-         externalElasticsearchUrl: <192.168.0.2>
+         externalElasticsearchHost: <192.168.0.2>
          externalElasticsearchPort: <9200>
      ...
    status:
