@@ -10,22 +10,29 @@ section1:
 
 section2:
   image: /images/live/cloudnative-live-banner.png
-  url: ./radondb0804-live/
+  url: ./harbor0811-live/
 
   notice:
-    title: 基于 Harbor 高可用打造 KubeSphere 云原生系统
+    title: CONTINAERlab + KinD 秒速部署跨网络 K8s 集群
     tag: 预告
-    time: 2022 年 08 月 11 日晚 8 点
+    time: 2022 年 08 月 18 日晚 8 点
     base: 线上
-    url: ./harbor0811-live/
+    url: ./containerlab0818-live/
 
   over:
-    title: 云原生 Meetup 广州站
-    tag: 结束
-    url: ./meetup-guangzhou-20220806/
+    title: 云原生 Meetup 杭州站
+    tag: 预告
+    url: ./meetup-hangzhou-20220827/
 
 section3:
   videos:
+    - title: 基于 Harbor 为云原生系统打造企业级高可用镜像仓库
+      link: ./harbor0811-live/
+      snapshot: https://pek3b.qingstor.com/kubesphere-community/images/harbor0811-live-cover.png
+      type: iframe
+      createTime: 2022.08.11
+      group: 直播回放
+
     - title: 云原生应用灾备最佳实践
       link: ./guangzhou0806-veeam/
       snapshot: https://pek3b.qingstor.com/kubesphere-community/images/meetup-guangzhou-20220806-veeam-cover.png
