@@ -19,7 +19,7 @@ This page contains some of the frequently asked questions about logging.
 
 ## How to change the log store to the external Elasticsearch and shut down the internal Elasticsearch
 
-If you are using the KubeSphere internal Elasticsearch and want to change it to your external alternate, follow the steps below. If you haven't enabled the logging system, refer to [KubeSphere Logging System](../../../pluggable-components/logging/) to setup your external Elasticsearch directly.
+If you are using the KubeSphere internal Elasticsearch and want to change it to your external alternate, follow the steps below. If you haven't enabled the logging system, refer to [KubeSphere Logging System](../../../pluggable-components/logging/) to set up your external Elasticsearch directly.
 
 1. First, you need to update the KubeKey configuration. Execute the following command:
 
@@ -27,7 +27,7 @@ If you are using the KubeSphere internal Elasticsearch and want to change it to 
    kubectl edit cc -n kubesphere-system ks-installer
    ```
 
-2. Comment out `es.elasticsearchDataXXX`, `es.elasticsearchMasterXXX` and `status.logging`, and set `es.externalElasticsearchUrl` to the address of your Elasticsearch and `es.externalElasticsearchPort` to its port number. Below is an example for your reference.
+2. Comment out `es.elasticsearchDataXXX`, `es.elasticsearchMasterXXX` and `status.logging`, and set `es.externalElasticsearchHost` to the address of your Elasticsearch and `es.externalElasticsearchPort` to its port number. Below is an example for your reference.
 
    ```yaml
    apiVersion: installer.kubesphere.io/v1alpha1
@@ -39,14 +39,18 @@ If you are using the KubeSphere internal Elasticsearch and want to change it to 
    spec:
      ...
      common:
-       es:
-         # elasticsearchDataReplicas: 1
-         # elasticsearchDataVolumeSize: 20Gi
-         # elasticsearchMasterReplicas: 1
-         # elasticsearchMasterVolumeSize: 4Gi
+       es:  # Storage backend for logging, events and auditing.
+         # master:
+         #   volumeSize: 4Gi  # The volume size of Elasticsearch master nodes.
+         #   replicas: 1      # The total number of master nodes. Even numbers are not allowed.
+         #   resources: {}
+         # data:
+         #   volumeSize: 20Gi  # The volume size of Elasticsearch data nodes.
+         #   replicas: 1       # The total number of data nodes.
+         #   resources: {}
          elkPrefix: logstash
          logMaxAge: 7
-         externalElasticsearchUrl: <192.168.0.2>
+         externalElasticsearchHost: <192.168.0.2>
          externalElasticsearchPort: <9200>
      ...
    status:
@@ -122,7 +126,7 @@ Perform the following to update the KubeKey configurations.
    If you have not set the retention period of events, auditing logs, and Istio logs, the value of `logMaxAge` is used by default.
    {{</ notice >}}
 
-3. In the YAML file, detete the `es` parameter, save the changes, and ks-installer will automatically restart to make the changes take effective.
+3. In the YAML file, delete the `es` parameter, save the changes, and ks-installer will automatically restart to make the changes take effective.
 
    ```yaml
    apiVersion: installer.kubesphere.io/v1alpha1

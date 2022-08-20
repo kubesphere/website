@@ -35,21 +35,21 @@ KubeEdge 的组件在两个单独的位置运行——云上和边缘节点上�
 
    ```yaml
    edgeruntime:          # Add edge nodes to your cluster and deploy workloads on edge nodes.
-    enabled: false
-    kubeedge:        # kubeedge configurations
-      enabled: false
-      cloudCore:
-        cloudHub:
-          advertiseAddress: # At least a public IP address or an IP address which can be accessed by edge nodes must be provided.
+     enabled: false
+     kubeedge:        # kubeedge configurations
+       enabled: false
+       cloudCore:
+         cloudHub:
+           advertiseAddress: # At least a public IP address or an IP address which can be accessed by edge nodes must be provided.
             - ""            # Note that once KubeEdge is enabled, CloudCore will malfunction if the address is not provided.
-        service:
-          cloudhubNodePort: "30000"
-          cloudhubQuicNodePort: "30001"
-          cloudhubHttpsNodePort: "30002"
-          cloudstreamNodePort: "30003"
-          tunnelNodePort: "30004"
-        # resources: {}
-        # hostNetWork: false
+         service:
+           cloudhubNodePort: "30000"
+           cloudhubQuicNodePort: "30001"
+           cloudhubHttpsNodePort: "30002"
+           cloudstreamNodePort: "30003"
+           tunnelNodePort: "30004"
+         # resources: {}
+         # hostNetWork: false
    ```
 
 3. 将 `kubeedge.cloudCore.cloudHub.advertiseAddress` 的值设置为集群的公共 IP 地址或边缘节点可以访问的 IP 地址。编辑完成后保存文件。
@@ -72,24 +72,24 @@ KubeEdge 的组件在两个单独的位置运行——云上和边缘节点上�
 
 2. 在本地 `cluster-configuration.yaml` 文件中，搜索 `edgeruntime` 和 `kubeedge`，然后将它们 `enabled` 值从 `false` 更改为 `true` 以便开启所有 KubeEdge 组件。完成后保存文件。
 
-    ```yaml
+   ```yaml
    edgeruntime:          # Add edge nodes to your cluster and deploy workloads on edge nodes.
-    enabled: false
-    kubeedge:        # kubeedge configurations
-      enabled: false
-      cloudCore:
-        cloudHub:
-          advertiseAddress: # At least a public IP address or an IP address which can be accessed by edge nodes must be provided.
+     enabled: false
+     kubeedge:        # kubeedge configurations
+       enabled: false
+       cloudCore:
+         cloudHub:
+           advertiseAddress: # At least a public IP address or an IP address which can be accessed by edge nodes must be provided.
             - ""            # Note that once KubeEdge is enabled, CloudCore will malfunction if the address is not provided.
-        service:
-          cloudhubNodePort: "30000"
-          cloudhubQuicNodePort: "30001"
-          cloudhubHttpsNodePort: "30002"
-          cloudstreamNodePort: "30003"
-          tunnelNodePort: "30004"
-        # resources: {}
-        # hostNetWork: false
-    ```
+         service:
+           cloudhubNodePort: "30000"
+           cloudhubQuicNodePort: "30001"
+           cloudhubHttpsNodePort: "30002"
+           cloudstreamNodePort: "30003"
+           tunnelNodePort: "30004"
+         # resources: {}
+         # hostNetWork: false
+   ```
 
 3. 将 `kubeedge.cloudCore.cloudHub.advertiseAddress` 的值设置为集群的公共 IP 地址或边缘节点可以访问的 IP 地址。
 
@@ -115,24 +115,24 @@ KubeEdge 的组件在两个单独的位置运行——云上和边缘节点上�
    
 4. 在该配置文件中，搜索 `edgeruntime` 和 `kubeedge`，然后将它们 `enabled` 值从 `false` 更改为 `true` 以便开启所有 KubeEdge 组件。完成后保存文件。
 
-    ```yaml
+   ```yaml
    edgeruntime:          # Add edge nodes to your cluster and deploy workloads on edge nodes.
-    enabled: false
-    kubeedge:        # kubeedge configurations
-      enabled: false
-      cloudCore:
-        cloudHub:
-          advertiseAddress: # At least a public IP address or an IP address which can be accessed by edge nodes must be provided.
+     enabled: false
+     kubeedge:        # kubeedge configurations
+       enabled: false
+       cloudCore:
+         cloudHub:
+           advertiseAddress: # At least a public IP address or an IP address which can be accessed by edge nodes must be provided.
             - ""            # Note that once KubeEdge is enabled, CloudCore will malfunction if the address is not provided.
-        service:
-          cloudhubNodePort: "30000"
-          cloudhubQuicNodePort: "30001"
-          cloudhubHttpsNodePort: "30002"
-          cloudstreamNodePort: "30003"
-          tunnelNodePort: "30004"
-        # resources: {}
-        # hostNetWork: false
-    ```
+         service:
+           cloudhubNodePort: "30000"
+           cloudhubQuicNodePort: "30001"
+           cloudhubHttpsNodePort: "30002"
+           cloudstreamNodePort: "30003"
+           tunnelNodePort: "30004"
+         # resources: {}
+         # hostNetWork: false
+   ```
 
 5. 将 `kubeedge.cloudCore.cloudHub.advertiseAddress` 的值设置为集群的公共 IP 地址或边缘节点可以访问的 IP 地址。完成后，点击右下角的**确定**保存配置。
 
