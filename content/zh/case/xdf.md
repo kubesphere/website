@@ -17,171 +17,145 @@ section2:
         - content: 作为中国著名私立教育机构，新东方教育科技集团于2006年9月7日在美国纽约证券交易所成功上市，2020 年 11 月 9 日在香港联合交易所成功二次上市。
       image: 
 
-    - title: 新东方有状态服务 In K8s 的现状
+    - title: 背景介绍
       contentList:
-        - content: 如图所示，上层 Pod 由自定义的 Operator 和 StatefulSet 控制器来托管，Pod 关联 PVC，PVC 绑定 PV，最下层是存储服务。
-        - content: 最下层的存储服务包含本地存储和远端存储两类，对于一般的存储需求，首选是远端存储服务；而对于高性能 IO 的存储需求，那就要选择本地存储服务。目前，本地存储服务包含 K8s 原生 local 存储服务和自研的 xlss 存储服务 2 种。
-      image: https://pek3b.qingstor.com/kubesphere-community/images/xdf-1.png
+        - content: 随着公司业务全面迁入 Kubernetes，在租户管理、对接镜像仓库、存储管理、服务扩缩容配置，监控日志等可观测、易运维、高可用方面带来了很大挑战。
+      image: https://pek3b.qingstor.com/kubesphere-community/images/a72b6d6f-6550-4922-bdf2-6b108f063c56.png
 
-    - title: 原生 K8s 支撑有状态服务的能力
+    - title: 选型
       contentList:
-        - content: 原生 K8s 支撑有状态服务的能力是有状态服务建设的基础，其管理模式是：StatefulSet 控制器 + 存储服务。 
-        - content: 由于虚拟机的账户密码每 3 个月就会更换一次，所以每次登录都需要先查表才能知道最新的密码，非常麻烦。另外，每次更换密码也都需要运维人员大量纯手工操作，极其耗费时间。开发人员上
-      image: 
-    - title: 
-      contentList:
-        - specialContent:
-            text: StatefulSet 控制器
-            level: 3
-        - content: StatefulSet 控制器：用来管理有状态应用的工作负载 API 对象的控制器。管理某 Pod 集合的部署和扩缩，并为这些 Pod 提供持久存储和持久标识符。
-        - content: StatefulSet 资源的特点：
-        - content: 稳定的、唯一的网络标识；
-        - content: 稳定的、持久的存储；
-        - content: 有序的、优雅的部署和缩放；
-        - content: 有序的、自动的滚动更新。
-        - content: StatefulSet 资源的局限：
-        - content: 关于存储，StatefulSet 控制器是不提供存储供给的。
-        - content: 删除或者缩容时，StatefulSet 控制器只负责 Pod；
-        - content: 人工要建一个无头服务，提供每个 Pod 创建唯一的名称；
-        - content: 优雅删除 StatefulSet，建议先缩放至 0 再删除；
-        - content: 有序性也导致依赖性，比如编号大的 pod 依赖前面 pod 的运行情况，前面 pod 无法启动，后面 pod 就不会启动。
-        - content: 这 5 点局限可进一步概括为：StatefulSet 控制器管理 Pod 和部分存储服务（比如扩容时 pvc 的创建），其它的就无能为力。有序性引起的依赖性也会带来负面影响的，需要人工干预治愈。
-      image: 
-    - title:
-      contentList:
-        - specialContent:
-            text: 存储服务
-            level: 3
-        - content: 这是 CNCF 官网关于云原生存储的一副截图。截图时间是 2021 年 7 月初，有 50 多种存储产品，接近半数属于商业产品，开源产品多数都是远端存储类型，有支持文件系统的、有支持对象存储的、还有支持块存储的。 
-      image: https://pek3b.qingstor.com/kubesphere-community/images/xdf-2.png
-    - title:
-      contentList:
-        - content: 数据来源于官网，原生 K8s 支持的 PV 类型，有常用的 rbd、hostpath、local 等类型。
-      image: https://pek3b.qingstor.com/kubesphere-community/images/xdf-3.png
-    - title:
-      contentList:
-        - content: 控制器只有 StatefulSet 控制器可使用，存储产品很多，PV 类型也不少，该怎么选择呢？
-      image: https://pek3b.qingstor.com/kubesphere-community/images/xdf-4.png
-    - title:
-      contentList:
-        - content: 选择存储产品，需要考虑哪些因素呢？新东方在选择存储产品时考虑了以下一些因素：
-        - content: 开源 VS 商业；
-        - content: 本地 VS 远端；
-        - content: 动态供给 VS 静态供给；
-        - content: 数据高可用方案。
-        - content: 做选择是令人头疼的事情，比如选择开源，好处是不用花钱，但稳定性就很难保证，甚至提供的能力也有限；商业产品能力和稳定性有保证，但要付费。在这里先不下结论，最终还是要看需求。
+        - content: 从 0 到 1 自研一套功能全面的 Kubernetes 管理平台开发周期太长。目前开源的 KubeSphere 使用多租户方式管理和使用资源，集成了 CI/CD 等丰富的云原生技术生态，轻松构建企业级 DevOps 架构，非常符合公司的需求。为了将开发运维功能一站式管理，我们选择了 KubeSphere。
+        - content: 1. 更符合开发人员使用习惯，权限分配更加细粒度；
+        - content: 2. 功能强大，生态友好，可扩展性强；
+        - content: 3. 支持 Kubernetes 多集群统一管理；
+        - content: 4. 强大的 DevOps 系统，使得服务自动化发布流程变得简单；
+        - content: 5. 以应用为中心，可以轻松配置服务自动扩缩容，增加了服务可用性；
+        - content: 6. WebShell，服务监控，日志，让故障排查变得不再困难。
+        - content: 7. 这些功能基本解决了我们现阶段痛点，大大降低了运维成本。
       image: 
 
-    - title: 自研存储产品 XLSS
-      contentList:
-        - content: 新东方有状态服务建设的关键需求:良好的性能，支持 IO 密集型应用；数据可用性，具有一定的容灾能力；动态供给，实现有状态服务的完全自动化管理。
-        - content: XLSS（XDF Local Storage Service）中文全称：新东方本地存储服务产品，是一种基于本地存储的高性能、高可用存储方案。可以解决 K8s 中本地存储方案的不足之处：localpv 只能静态供给；使用 localpv 时，pod 与 node 的亲和性绑定造成的可用性降低；本地存储存在数据丢失的风险。
-        - content: 应用场景：
-        - content: 高性能应用，IO 密集型的应用软件，比如 Kafka
-        - content: 本地存储的动态化管理
-        - content: 数据安全，应用数据定期备份，备份数据加密保护
-        - content: 存储资源监控告警，比如 K8s Pv 资源的使用量监控告警
-      image: 
-    - title:
-      contentList:
-        - content: 如图所示，XLSS 在 K8s 中的运行状态是 Xlss 的 3 个组件以容器形式运行在 K8s 集群中，使用本地存储为有状态服务提供存储服务，并定期执行数据的备份作业，Xlss 会提供有关存储和相关作业的 metrics 数据。
-      image: https://pek3b.qingstor.com/kubesphere-community/images/xdf-5.png
-    - title:
-      contentList:
-        - content: XLSS 核心组件介绍：
-        - content: xlss-scheduler：基于 kube-scheduler 的自定义调度器；对于有状态服务的 pod 的调度，自动识别 xlss localpv 的使用身份，智能干预 pod 调度，消除 pod 与 node 的亲和性绑定造成的可用性降低
-        - content: xlss-rescuer：以 DaemonSet 资源类型运行在 k8s 集群中；按照数据备份策略，执行数据备份作业；监视数据恢复请求，执行数据恢复作业；提供 metrics 数据
-        - content: xlss-localpv-provisioner：动态供给本地存储
-      image: 
-    - title:
-      contentList: 
-        - content: xlss-scheduler 关键逻辑实现思路：
-        - content: 如图，这是 K8s 调度器的调度框架模型，在调度流程中包含了许多扩展点。xlss-scheduler 就是基于该调度框架模型，通过编写自定义的插件实现，主要在 3 个扩展点上做了增强：
-        - content: Prefilter：依据 Pod 的节点亲和性，分析亲和性节点的健康状态，若节点异常，对 Pod 设置特殊标记；
-        - content: Filter：针对设置特殊标记的 Pod，解除节点亲和性；
-        - content: Prebind：对设置特殊标记的 Pod，删除特殊标记，根据调度结果，发送数据恢复请求。
-      image: https://pek3b.qingstor.com/kubesphere-community/images/xdf-6.png
-    - title:
-      contentList: 
-        - content: xlss-rescuer 数据备份作业实现逻辑：
-        - content: 图中 3 个部分，左右各一个循环逻辑，中间通过一个缓存队列实现通信。左边的循环实现的功能：收集备份作业策略，并更新到缓存队列中。主要 3 步：
-        - content: 1. watch pod 事件；
-        - content: 2. 从 pod 注解当中获取备份策略，备份作业的配置信息是通过  pod 注解实现的；
-        - content: 3. 同步备份策略到缓存队列。
-        - content: 右边的循环实现的功能：执行备份作业。也是 3 步：
-        - content: 1. 对缓存队列元素排序，排序按照下次备份作业的执行时间点进行升序排列；
-        - content: 2. 休眠等待，若当前时间还没有到最近的一个备份作业执行时间，就会进行休眠等待；
-        - content: 3. 执行备份作业。
-      image: https://pek3b.qingstor.com/kubesphere-community/images/xdf-7.png
-    - title:
-      contentList: 
-        - content: xlss-rescuer 数据恢复作业实现逻辑：
-        - content: 数据恢复作业流程和数据备份作业流程实现思路是类似的，但在具体实现逻辑上有所不同。左边的循环实现的功能：监视恢复作业请求，并更新到缓存队列中。主要 3 步：
-        - content: 1. watch CRD，监视数据恢复请求，接收 xlss-scheduler 发出的数据恢复请求（数据恢复请求以 CRD 方式实现）；
-        - content: 2. 分析 CRD 状态，避免重复处理；
-        - content: 3. 同步恢复请求到缓存队列。
-        - content: 右边的循环实现的功能：执行恢复作业。这里是 4 步：
-        - content: 1. 更新 CRD 实例状态；
-        - content: 2. 恢复快照数据到指定目录；
-        - content: 3. 更新 PV 与 PVC；
-        - content: 4. 删除 CRD 实例
-      image: https://pek3b.qingstor.com/kubesphere-community/images/xdf-8.png
-    - title:
-      contentList: 
-        - content: xlss-localpv-provisioner 存储创建实现思路：
-        - content: xlss-localpv-provisioner 组件，其功能比较专一，实现本地存储的动态创建。其工作流程当 provisioner pod 获取到创建存储的请求时，首先会创建一个临时的 helper pod，这个 helper pod 会被调度到指定的 node 上面，创建文件目录作为本地存储使用，这就完成了 pv 实际后端存储的创建，当存储创建完毕，provisioner pod 会将这个 helper pod 删除。至此，一次本地存储的动态创建完成。
-      image: https://pek3b.qingstor.com/kubesphere-community/images/xdf-9.png
-    - title:
-      contentList: 
-        - content: xlss 自动灾难恢复工作流程：
-        - content: 完整的自动灾难恢复工作流程要经历 6 个阶段：
-        - content: 1. 数据备份：以 pod 为粒度，对 pv 数据进行备份；
-        - content: 2. 节点异常：此时集群出现异常情况，某一节点发生异常，比如服务器损坏，引起在其上面的 pod 工作异常，最后有状态服务的 pod 就会一直处于 Terminating 状态；
-        - content: 3. 异常 pod 处理：当有状态服务的 pod 处于 Terminating 状态时，要清理掉这些 pod，可以手动删除，也可借助工具，让这些有状态的 pod 有重新创建的机会；
-        - content: 4. 智能调度 ：解除亲和性，将新 pod 调度到健康的节点上；
-        - content: 5. 数据恢复：拉取该 pod 对应的最新的快照数据进行数据恢复；
-        - content: 6. 服务恢复：启动应用，对外提供服务。
-        - content: 至此，一个完整的自动灾难恢复工作流程结束，最后又回到起点。
-      image: 
-
-    - title: 大规模存储型中间件服务
-      contentList: 
-        - content: Kafka Cluster In K8s：
-        - content: 以 kafka 集群为例，通过定制化的 kafka operator 来部署 kafka 集群，指定存储服务使用 xlss 存储。采取定制化 Operator + xlss 模式去建设存储型中间件服务。
-      image: https://pek3b.qingstor.com/kubesphere-community/images/xdf-10.png
-    - title: 
-      contentList: 
-        - content: 有状态中间件服务 In K8s：
-        - content: 有状态中间件服务在 K8s 中的运行状态如上图所示，这些存储型中间件服务集群托管于对应的 Operator，底层存储根据业务需要适配各类存储。随着中间件服务集群规模的日益扩大，我们建设了 PaaS 控制面，用户可以通过该控制面来管理运行在 K8s 中的各类中间件服务集群。控制面可以直接和 apiserver 交互，用户通过控制面增删改 CRD 资源，Operator 根据 CRD 资源的最新状态，调和中间件服务集群的状态。
-      image: https://pek3b.qingstor.com/kubesphere-community/images/xdf-11.png
-    - title:
-      contentList: 
-        - content: 用户申请中间件服务示例：
-        - content: 这是用户申请中间件服务的示例：用户通过管理台申请服务，填写相关的配置信息后，申请通过后，就可以在 K8s 集群里面创建相应的服务了。
-      image: https://pek3b.qingstor.com/kubesphere-community/images/xdf-12.png
-    
     - type: 1
       contentList:
         - content: 降低开发人员使用 Kubernetes 的门槛
         - content: 提高了服务打包部署效率
         - content: 提高了系统可观测性能力
 
-    - title: 基于 KubeSphere 部署 XLSS
+    - title: DevOps 实践
       contentList:
-        - content: 若是首次部署，首先要做好本地磁盘的规划，创建好提供给 xlss 使用的存储空间。然后，就是将 xlss 的各个组件运行到 K8s 集群中。将 xlss 组件部署到 K8s 集群中，我们借助了 KubeSphere 的 CI/CD 流水线。自定义流水线一共 5 步，实现将 xlss 组件从静态代码到运行在 K8s 中的容器的转换，高度自动化维护。
-        - content: CI/CD 流水线如下图所示：
-      image: https://pek3b.qingstor.com/kubesphere-community/images/xdf-13.png
+        - content: 在没迁入 Kubernetes 之前，公司的 Jenkins 部署在物理机上，运维人员维护 Jenkins 的生命周期；开发人员在 Jenkins 上创建流水线，发布服务，管理服务生命周期。维护成本和学习成本较高。
+        - content: 引入了 KubeSphere，它基于 Jenkins 的 DevOps 系统帮助开发和运维团队用非常简单的方式构建、测试、发布服务到 Kubernetes。它还兼容 Harbor 镜像仓库和 GitLab 代码库，使得我们的系统可以无缝迁移。
+        - content: 可视化的 CI/CD 流水线，打造了极佳的用户体验，服务的自动化发布和生命周期从碎片化到集中式管理。
+        - content: 目前公司的大多数应用都是通过 KubeSphere DevOps 系统发布，其中包括：业务应用、中间件 Operator、存储组件等 100 多个流水线。
+      image: https://pek3b.qingstor.com/kubesphere-community/images/d85b11c2-a429-4337-8e88-55fb1f005dc7.png
+
+    - title: 中间件可观测
+      contentList:
+        - content: Zookeeper、Kafka、Redis 中间件容器化后，由 Operator 管理其生命周期，中间件和 Operator 容器的故障排查、日志监控查看得益于 KubeSphere 的图形化管理、资源监控功能。
+        - specialContent:
+            text: Kafka
+            level: 3
+        - content: 监控 Kafka 容器的 CPU、内存使用量等：
+      image: https://pek3b.qingstor.com/kubesphere-community/images/55665d63-ad3b-4d86-8916-95cf47d1f4b9.png
+    - title:
+      contentList:
+        - specialContent:
+            text: Zookeeper
+            level: 3
+        - content: 直观展示集群服务列表：
+      image: https://pek3b.qingstor.com/kubesphere-community/images/e40be9bd-5e38-4a76-8713-b1ad64606c17.png
+    - title:
+      contentList:
+        - specialContent:
+            text: Redis
+            level: 3
+        - content: 展示 Redis 命名空间无状态、有状态副本集、存储卷、服务、容器组等概览：
+      image: https://pek3b.qingstor.com/kubesphere-community/images/d72004cf-c7fa-45b1-916a-dcd5c5d3fc4b.png
+    - title:
+      contentList:
+        - content: 通过 WebShell 轻松查看集群状态：
+      image: https://pek3b.qingstor.com/kubesphere-community/images/9981ba08-dfec-442c-ad5e-c590fa590c43.png
+
+    - title: 日志系统
+      contentList:
+        - content: KubeSphere 的日志系统，通过其开源的 Fluentbit Operator 控制 FluentBit CRD 配置 Fluent Bit，可以通过 kubectl edit fluentbit fluent-bit 以 Kubernetes 原生的方式来更改 FluentBit 的配置。
+        - content: 公司 Kube-apiserver、kube-scheduler、kubelet 等系统组件都是通过二进制部署，通过 systemd 管理。如果要采集 kubelet 日志，新建一个 Input Yaml 即可轻松实现：
+      image: https://pek3b.qingstor.com/kubesphere-community/images/xdf-yaml-1.png
+    - title:
+      contentList:
+        - content: 通过界面上工具箱中的日志查询，即可查看系统日志，对公司故障排查和集群监控特别有用。
+      image: https://pek3b.qingstor.com/kubesphere-community/images/e3ee4224-a7f4-4068-a8bd-0a71106c2759.png
+
+    - title: GitOps 实践
+      contentList:
+        - content: GitOps 目前被用作 Kubernetes 和云原生应用开发的运维模式，可以实现对 Kubernetes 的持续部署。它使用 Git 存储系统的状态，使得系统状态的修改痕迹可查看审计。
+        - content: 公司基于 KubeSphere v3.1.1 的流水线，根据公司的场景，实现了基于 Git 的 DevOps（GitOps） 工作流水线服务发布流程。
+        - content: 用 Top Pipeline 生成的流水线，有统一的格式，所以凭证必须统一。
+      image: 
+    - title:
+      contentList:
+        - specialContent:
+            text: 凭证统一
+            level: 3
+        - content: Kubernetes 中 secret 是 namespace 层级的资源。在实际的使用过程中经常会遇到需要在多个 namespace 之间共享 secret 的需求，在多个 namesapce 下去创建 secret 或是逐一编辑，会带来许多重复工作。
+        - content: 例如：KubeShere DevOps 项目中的凭证，有时每个项目都是一样的，所以没必要每次创建 DevOps 项目都去手动创建凭证。
+        - content: 针对我们的 GitOps 场景，Harbor、Argo CD 的 GitOps 账户、GitLab 的账号凭证需要在多个 DevOps 项目之间同步。
+        - content: 我们采用了 kubed（Config Syncer）+ Kyverno，在 kubesphere-devops-system 下创建的源 secret，将会自动同步到所有 devops project 下。达到统一、自动化管理凭证目的。
+      image: https://pek3b.qingstor.com/kubesphere-community/images/260552ee-e505-4028-bfbe-4359e0bfe2fa.png
+    - title:
+      contentList:
+        - content: 这里引入 Kyverno 的作用是：Kubesphere 根据 Secret 的 type 字段前缀有：credential.devops.kubesphere.io/ 就会处理。为了避免 kubesphere-devops-system 下的源 Secret 被 ks-controller-manager 同步。所以源 Secret 的 type 不可为 type： credential.devops.kubesphere.io/basic-auth。kubed 在执行同步的时候，Kyverno 会将其替换。这样控制器只会同步目标凭证到 Jenkins。
+      image: 
+    - title:
+      contentList: 
+        - specialContent:
+            text: Top Pipeline
+            level: 3
+        - content: Top Pipeline 用来自动化创建 GitOps 仓库，生成服务部署清单、pipeline CR 清单、Application CR 清单，将清单提交到 GitLab 仓库，并将 Application 创建到 K8s 集群中。
+      image: https://pek3b.qingstor.com/kubesphere-community/images/1374bfe4-b7a6-4af4-bb62-bfe4e8486a38.png
+    - title:
+      contentList: 
+        - content: 整体用 Groovy 语法实现如下步骤的流水线：
+      image: https://pek3b.qingstor.com/kubesphere-community/images/728ad0b8-0ea4-4267-9276-f572ade0bb94.png
+    - title:
+      contentList: 
+        - content: 输入服务配置参数，点击确定运行。
+      image: https://pek3b.qingstor.com/kubesphere-community/images/887a562f-2d92-4ba6-84bf-6aeccaef4422.png
+    - title:
+      contentList: 
+        - content: 流水线会自动获取需要选择的动态参数，点击下一步，选择参数：
+      image: https://pek3b.qingstor.com/kubesphere-community/images/30c975a5-57c5-4687-aac3-aea0bc8c9051.png
+    - title:
+      contentList: 
+        - content: 选择动态参数之后，程序会自动检查 GitLab 中是否存在该 DevOps 项目的仓库，不存在会自动新建仓库；最终创建 Application 和服务 Pipeline CR 到 Argo CD 所在的 Kubernetes 集群。
+        - content: 查看流水线运行每一个步骤的执行日志：
+      image: https://pek3b.qingstor.com/kubesphere-community/images/448ef4c9-87ca-4562-bc4f-95be61b2533d.png
+    - title:
+      contentList: 
+        - specialContent:
+            text: 服务流水线
+            level: 3
+        - content: 下面是生成的统一风格的服务 GitOps 流水线：
+      image: https://pek3b.qingstor.com/kubesphere-community/images/f63f8402-f017-403e-9d56-3ac48d30daf0.png
+    - title:
+      contentList: 
+        - content: 详细步骤：
+      image: https://pek3b.qingstor.com/kubesphere-community/images/deeb73a4-9c80-415d-b489-593a622c7bc2.png
+    - title:
+      contentList: 
+        - content: kubesphere/builder-base:v3.2.2 镜像中包含了 kustomize 和 Git，我们将 Argo CD 命令行集成到这个镜像中，用生成的镜像作为 Agent。
+        - content: kustomize：使用 kustomize edit set image 更新 kustomization.yaml 中镜像 Tag，以及校验语法是否正确，避免语法不正确提交。提交时，需要先 pull 再 push，并增加失败重试。
+        - content: Argo CD：当 GitLab 仓库发生变更，Argo CD 默认是 3~4 分钟触发同步，时间较长。为了及时触发 CD 同步，用集成到 Agent 镜像中的 argocd 命令行工具，并建专门的 gitops 账号，通过 RBAC 控制该账号的权限。（执行 argocd sync 命令也需要加失败重试）
+        - content: 审核阶段：如果点击终止（一般在新版本测试不通过的情况下点击），将回滚上一个阶段的镜像版本（通过 git revert 命令回退某一次提交），如果 30 分钟内没有点击，或者点了继续，本次发布流程结束。
+      image:    
 
     - type: 2
       content: 'Kubesphere 帮助我们简化了多集群管理，服务发布效率得到大幅提升，监控日志集中管理，让集群排障不再是黑盒。'
       author: '新东方'
 
-    - title: Road Map
+    - title: 未来规划
       contentList:
-        - content: 第一阶段：“云前时代”。有状态服务容器化的起点，确定了容器化的目标。这个阶段有状态服务主要特征是 VM+PaaS 组合的模式管理有状态服务。实现的主要功能：资源管理、白屏运维、简单调度策略、运行时管理。
-        - content: 第二阶段：“初上云端”。从这个阶段开始，尝试将有状态服务从 VM 中解脱出来，迁移到 K8s 平台。这个阶段有状态服务主要特征是 K8s+Operator 组合的模式管理有状态服务。这时，运行时被托管到 K8s，有状态服务由 Opeartor 接管，自动化程度显著提高。此时也暴露出一些不足：比如远端存储的性能不够好，本地存储的可用性不能保证。
-        - content: 第三阶段：“自研之路”。主要是新东方自研 xlss 的实践阶段，前面章节已有涉及。此阶段有状态服务建设的典型特征：Scheduler + Logical Backup 组合模式。这基本达到了我们期望的：本地存储 + 动态供给 + 数据可用性保证。
-        - content: 第四阶段：“追求卓越”。在这个阶段，有状态服务建设的典型特征：Isolation + Physical Backup 组合模式。重点会解决第三阶段发现的瑕疵。大致的解决思路是：利用 LVM 技术实现存储的隔离；利用 DRBD 技术，增加 DRBD 同步物理备份能力，实现应用数据的同步实时备份，解决由于数据量大导致恢复时间增长的问题。在使用 DRBD 技术时，有一个需要权衡的地方，那就是副本数量的设置。若副本数量设置多些，则会增大存储资源使用量；若副本数量设置少些，在 K8s 集群 node 异常情况下，有状态服务 Pod 漂移可选择的 node 数量就会减少。最终需要根据业务场景做出合理选择。
+        - content: KubeSphere 帮助我们简化了多集群管理，服务发布效率得到大幅提升，监控日志集中管理，让集群排障不再是黑盒。
+        - content: 未来随着公司在中间件、微服务、DevOps  方向上发力，利用 KubeSphere 生态，逐步扩大应用场景，在服务治理 Istio、APM、Serverless 、边缘计算等领域做更多的实践。
       image: 
 
   rightPart:
