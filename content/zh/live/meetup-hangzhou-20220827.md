@@ -20,17 +20,13 @@ section1:
 
 ## 活动时间和地点
 
-活动时间：2022 年 8 月 27 日 14:00——18:00
+**活动时间：2022 年 8 月 27 日 14:00——18:00**
 
-活动地点：杭州市滨江区秋溢路 601 号云狐科技园 2 号楼智汇岛会议室
+**活动地点：杭州市滨江区秋溢路 601 号云狐科技园 2 号楼智汇岛会议室**
 
 ## 活动议程
 
 ![](https://pek3b.qingstor.com/kubesphere-community/images/meetup-0827-hangzhou.png)
-
-## 议题提交
-
-目前还有一个议题席位虚位以待，欢迎各位 KubeSphere 社区伙伴提交[议题](https://jinshuju.net/f/mv4Qlx)，分享你的 KubeSphere 实践经验。
 
 ## 活动组织方
 
