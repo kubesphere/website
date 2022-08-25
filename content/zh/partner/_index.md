@@ -94,5 +94,9 @@ section4:
 
     - icon: "images/partner/Cloudview-logo.png"
       partnerType: "Technology"
-      content: 'Cloudview is a cloud computing platform that provides IaaS-PaaS-based flexible cloud services.'     
+      content: 'Cloudview is a cloud computing platform that provides IaaS-PaaS-based flexible cloud services.'   
+      
+    - icon: "images/partner/logo-deepflow.png"
+      partnerType: "App provider"
+      content: 'DeepFlow is a highly automated observability platform open sourced by YUNSHAN Network Inc. (opens new window). It is a full stack, full span and high-performance data engine built for cloud-native observability application developers. With new technologies such as eBPF, WASM and OpenTelemetry, DeepFlow innovatively implements core mechanisms such as AutoTracing, AutoMetrics, AutoTagging and SmartEncoding, helping developers to improve the automation level of code injection, reducing the maintanence complexity of the observability platform. With the programmability and open API of DeepFlow, developers can quickly integrate it into their observability stack.'  
 ---
