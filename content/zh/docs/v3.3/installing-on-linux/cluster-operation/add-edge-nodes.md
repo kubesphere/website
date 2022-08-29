@@ -127,6 +127,8 @@ done
    {{</ notice >}} 
 
 3. 点击**添加**。在出现的对话框中，设置边缘节点的节点名称并输入其内网 IP 地址。点击**验证**以继续。
+   
+   ![add-edge-node](/images/docs/v3.3/zh-cn/installing-on-linux/add-and-delete-nodes/add-edge-nodes/add-edge-node.png)
 
    {{< notice note >}} 
 
@@ -136,6 +138,8 @@ done
    {{</ notice >}} 
 
 4. 复制**边缘节点配置命令**下自动创建的命令，并在您的边缘节点上运行该命令。
+
+   ![edge-command](/images/docs/v3.3/zh-cn/installing-on-linux/add-and-delete-nodes/add-edge-nodes/edge-command.png)
 
    {{< notice note >}}
 

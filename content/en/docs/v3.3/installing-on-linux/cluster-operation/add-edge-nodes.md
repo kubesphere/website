@@ -128,6 +128,8 @@ Perform the following steps to configure [EdgeMesh](https://kubeedge.io/en/docs/
 
 3. Click **Add**. In the dialog that appears, set a node name and enter an internal IP address of your edge node. Click **Validate** to continue.
 
+   ![add-edge-node](/images/docs/v3.3/installing-on-linux/add-and-delete-nodes/add-edge-nodes/add-edge-node.png)
+
    {{< notice note >}} 
 
    - The internal IP address is only used for inter-node communication and you do not necessarily need to use the actual internal IP address of the edge node. As long as the IP address is successfully validated, you can use it.
@@ -136,6 +138,8 @@ Perform the following steps to configure [EdgeMesh](https://kubeedge.io/en/docs/
    {{</ notice >}} 
 
 4. Copy the command automatically created under **Edge Node Configuration Command** and run it on your edge node.
+
+   ![edge-command](/images/docs/v3.3/installing-on-linux/add-and-delete-nodes/add-edge-nodes/edge-command.png)
 
    {{< notice note >}}
 
