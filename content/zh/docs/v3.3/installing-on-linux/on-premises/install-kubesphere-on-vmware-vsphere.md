@@ -241,14 +241,14 @@ track_script {
 
 ```bash
 systemctl restart keepalived && systemctl enable keepalived
-systemctl stop keepaliv
+systemctl stop keepalived
 
 ```
 
 开启 keepalived服务
 
 ```bash
-systemctl start keepalivedb
+systemctl start keepalived
 ```
 
 ### 验证可用性
