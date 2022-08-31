@@ -2,7 +2,7 @@
 title: 'Welcome New KubeSphere Ambassadors! Your Exclusive Certificate Is Ready!'  
 tag: 'Community News'  
 keywords: Kubernetes, KubeSphere, Community 
-description: We are happy to announce five new KubeSphere Ambassadors who have contributed in different ways to the KubeSphere community many times to help more users to get to know the application scenarios and best practices of KubeSphere.
+description: We are happy to announce six new KubeSphere Ambassadors who have contributed in different ways to the KubeSphere community many times to help more users to get to know the application scenarios and best practices of KubeSphere.
 createTime: '2022-08-05'  
 author: 'KubeSphere'  
 image: 'https://pek3b.qingstor.com/kubesphere-community/images/certificate-ambassador-en.png'
@@ -12,7 +12,7 @@ Contributing to the open-source community is not limited to contributing code an
 
 KubeSphere Ambassador is awarded to technical evangelists who are helping to grow the KubeSphere community by writing technical blogs and user cases, sharing technologies in the community, etc.
 
-We are happy to announce five new KubeSphere Ambassadors who have contributed in different ways to the KubeSphere community many times to help more users to get to know the application scenarios and best practices of KubeSphere.
+We are happy to announce six new KubeSphere Ambassadors who have contributed in different ways to the KubeSphere community many times to help more users to get to know the application scenarios and best practices of KubeSphere.
 
 ## About the Certificate
 
@@ -29,6 +29,7 @@ To obtain the certificate, you need to meet one or more of the requirements by p
 | name | certificate |
 | ---- | ---- |
 |Halil ibrahim BUGOL|[View and download the certificate](https://kubesphere-community.pek3b.qingstor.com/images/ambassador-halil.png) |
+|Kunal Kushwaha|[View and download the certificate](https://kubesphere-community.pek3b.qingstor.com/images/ambassador-kunal-kushwaha.png) |
 |Yanying Zhang|[View and download the certificate](https://kubesphere-community.pek3b.qingstor.com/images/ambassador-zhangyanying.png) |
 |scwang18|[View and download the certificate](https://kubesphere-community.pek3b.qingstor.com/images/ambassador-scwang18.png) |
 |Zongwei Tan|[View and download the certificate](https://kubesphere-community.pek3b.qingstor.com/images/ambassador-tanzongwei.png) |
@@ -39,6 +40,17 @@ The recipients are listed in random order. Here are their contributions:
 ### Halil ibrahim BUGOL
 
 In Turkey, Halil works with the KubeSphere Community and customers from Turkey and the Middle East on community, localization, sales, and support for further development of KubeSphere.
+
+### Kunal Kushwaha
+
+Kunal is a developer from India. He is working towards empowering communities via Open Source and Education. He is currently doing Developer Advocacy at Civo, community management at Major League Hacking, is a CNCF Ambassador, GitHub Campus Expert, Gold Microsoft Learn Student Ambassador, Google Summer of Code Mentor at Red Hat Middleware.
+
+He has made great contributions to the development of KubeSphere community. Over the past few months, he has made videos on KubeSphere introduction and usage for publishing on his YouTube channel,  and thus introduced KubeSphere to more people.
+
+YouTube videos at a glance：
+- [KubeSphere: One Kubernetes Platform for Full Stack Solutions and Management](https://www.youtube.com/watch?v=K03wbje_NSI)
+- [Multi-cluster Management With KubeSphere on Civo](https://www.youtube.com/watch?v=DlWt7DUCbFU)
+- [Multi-cluster management and observability with KubeSphere](https://www.youtube.com/watch?v=jQeTKysLTao)
 
 ### Yanying Zhang
 
