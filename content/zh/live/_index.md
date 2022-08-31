@@ -10,14 +10,14 @@ section1:
 
 section2:
   image: /images/live/cloudnative-live-banner.png
-  url: ./containerlab0818-live/
+  url: ./meetup-hangzhou-20220827/
 
   notice:
-    title: 云原生 Meetup 杭州站
+    title: 10 万边缘节点！KubeEdge 大规模边缘集群性能测试实战
     tag: 预告
-    time: 2022 年 08 月 27 日下午 2 点
+    time: 2022 年 09 月 01 日晚 8 点
     base: 线上
-    url: ./meetup-hangzhou-20220827/
+    url: ./kubeedge0901-live/
 
   over:
     title: 云原生 Meetup 广州站
@@ -26,6 +26,48 @@ section2:
 
 section3:
   videos:
+    - title: NebulaGraph 的云产品交付实践
+      link: ./hangzhou0827-nebulagragh/
+      snapshot: https://pek3b.qingstor.com/kubesphere-community/images/meetup-hangzhou-20220827-nebulagragh-cover.png
+      type: iframe
+      createTime: 2022.08.27
+      group: Meetup
+
+    - title: DevSecOps：始于工具，终于数据，谋全局而非谋一隅
+      link: ./hangzhou0827-devsecops/
+      snapshot: https://pek3b.qingstor.com/kubesphere-community/images/meetup-hangzhou-20220827-devsecops-cover.png
+      type: iframe
+      createTime: 2022.08.27
+      group: Meetup
+
+    - title: 基于 KubeEdge 的首个云原生边缘计算威胁建模及安全防护实践
+      link: ./hangzhou0827-kubeedge/
+      snapshot: https://pek3b.qingstor.com/kubesphere-community/images/meetup-hangzhou-20220827-kubeedge-cover.png
+      type: iframe
+      createTime: 2022.08.27
+      group: Meetup
+
+    - title: 基于 KubeSphere 打造一站式云原生机器学习平台
+      link: ./hangzhou0827-mlops/
+      snapshot: https://pek3b.qingstor.com/kubesphere-community/images/meetup-hangzhou-20220827-mlops-cover.png
+      type: iframe
+      createTime: 2022.08.27
+      group: Meetup
+
+    - title: Karmada 跨集群优雅故障迁移深度剖析
+      link: ./hangzhou0827-karmada/
+      snapshot: https://pek3b.qingstor.com/kubesphere-community/images/meetup-hangzhou-20220827-karmada-cover.png
+      type: iframe
+      createTime: 2022.08.27
+      group: Meetup
+
+    - title: 使用 Velero 为你的云原生应用数据保驾护航
+      link: ./hangzhou0827-velero/
+      snapshot: https://pek3b.qingstor.com/kubesphere-community/images/meetup-hangzhou-20220827-velero-cover.png
+      type: iframe
+      createTime: 2022.08.27
+      group: Meetup
+
     - title: CONTINAERlab + KinD 秒速部署跨网络 K8s 集群
       link: ./containerlab0818-live/
       snapshot: https://pek3b.qingstor.com/kubesphere-community/images/containerlab0818-live-cover.png
@@ -805,6 +847,10 @@ section4:
 
     - year: 2022
       meetup: 
+        - place: 杭州站（08. 27）
+          img: https://pek3b.qingstor.com/kubesphere-community/images/meetup-hangzhou-20220827-cover.png
+          meetupUrl: https://kubesphere.com.cn/live/meetup-hangzhou-20220827/
+
         - place: 广州站（08.06）
           img: https://pek3b.qingstor.com/kubesphere-community/images/meetup-guangzhou-cover.jpeg
           meetupUrl: https://kubesphere.com.cn/live/meetup-guangzhou-20220806/
