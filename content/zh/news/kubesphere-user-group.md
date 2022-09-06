@@ -59,7 +59,6 @@ KubeSphere 社区用户委员会上级组织为 Advocacy and Outreach SIG（即�
 
 ### 人员更换规则
 
-* 每一年进行“考核”，对十分不活跃的角色进行“雪藏”或清退
 * 如果站长或副站长因个人原因，不想再担任此角色，可在社区提交申请（GitHub 提交 [issue](https://github.com/kubesphere/community/issues)），上级组织将会寻找合适的人员（首选是委员会成员）替代
 * 基于以上原则，委员会的人员是流动的，委员有机会“晋升”为站长或副站长
 
