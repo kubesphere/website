@@ -10,22 +10,29 @@ section1:
 
 section2:
   image: /images/live/cloudnative-live-banner.png
-  url: ./meetup-hangzhou-20220827/
+  url: ./kubeedge0901-live/
 
   notice:
-    title: 10 万边缘节点！KubeEdge 大规模边缘集群性能测试实战
+    title: 解密云原生数仓 Databend 
     tag: 预告
-    time: 2022 年 09 月 01 日晚 8 点
+    time: 2022 年 09 月 08 日晚 8 点
     base: 线上
-    url: ./kubeedge0901-live/
+    url: ./databend0908-live/
 
   over:
-    title: 云原生 Meetup 广州站
+    title: 云原生 Meetup 杭州站
     tag: 结束
-    url: ./meetup-guangzhou-20220806/
+    url: ./meetup-hangzhou-20220827/
 
 section3:
   videos:
+    - title: 10 万边缘节点！KubeEdge 大规模边缘集群性能测试实战
+      link: ./kubeedge0901-live/
+      snapshot: https://pek3b.qingstor.com/kubesphere-community/images/kubeedge0901-live-cover.png
+      type: iframe
+      createTime: 2022.09.01
+      group: 直播回放
+
     - title: NebulaGraph 的云产品交付实践
       link: ./hangzhou0827-nebulagragh/
       snapshot: https://pek3b.qingstor.com/kubesphere-community/images/meetup-hangzhou-20220827-nebulagragh-cover.png
