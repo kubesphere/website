@@ -58,7 +58,7 @@ KubeSphere 是在 K8s 之上构建的以应用为中心的多租户容器平台�
 
 ## 部署架构图
 
-<img title="" src="https://gitee.com/zdevops/res/raw/main/cloudnative/k8s-on-kubesphere.svg" alt="" width="701">
+![](https://pek3b.qingstor.com/kubesphere-community/images/k8s-on-kubesphere.svg)
 
 ## 节点规划
 
