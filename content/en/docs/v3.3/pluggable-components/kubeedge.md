@@ -63,6 +63,10 @@ When you implement multi-node installation of KubeSphere on Linux, you need to c
 
 As you [install KubeSphere on Kubernetes](../../installing-on-kubernetes/introduction/overview/), you can enable KubeEdge first in the [cluster-configuration.yaml](https://github.com/kubesphere/ks-installer/releases/download/v3.3.0/cluster-configuration.yaml) file.
 
+{{< notice note >}}
+To prevent compatability issues, you are advised to install Kubernetes v1.21.x or earlier.
+{{</ notice >}}
+
 1. Download the file [cluster-configuration.yaml](https://github.com/kubesphere/ks-installer/releases/download/v3.3.0/cluster-configuration.yaml) and edit it.
 
     ```bash

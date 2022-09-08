@@ -64,6 +64,10 @@ KubeEdge 的组件在两个单独的位置运行——云上和边缘节点上�
 
 当您[在 Kubernetes 上安装 KubeSphere](../../installing-on-kubernetes/introduction/overview/) 时，需要先在 [cluster-configuration.yaml](https://github.com/kubesphere/ks-installer/releases/download/v3.3.0/cluster-configuration.yaml) 文件中启用 KubeEdge。
 
+{{< notice note >}}
+为了避免兼容性问题，建议安装 Kubernetes v1.21.x 及其以下版本。
+{{</ notice >}}
+
 1. 下载 [cluster-configuration.yaml](https://github.com/kubesphere/ks-installer/releases/download/v3.3.0/cluster-configuration.yaml) 文件并进行编辑。
 
     ```bash
