@@ -46,7 +46,7 @@ KubeKey upgrades Kubernetes from one MINOR version to the next MINOR version unt
 
 
 ### Step 1: Download KubeKey
-1. 1. Run the following commands to download KubeKey v2.2.1.
+1. 1. Run the following commands to download KubeKey v2.2.2.
    {{< tabs >}}
 
    {{< tab "Good network connections to GitHub/Googleapis" >}}
@@ -54,7 +54,7 @@ KubeKey upgrades Kubernetes from one MINOR version to the next MINOR version unt
    Download KubeKey from its [GitHub Release Page](https://github.com/kubesphere/kubekey/releases) or use the following command directly.
 
    ```bash
-   curl -sfL https://get-kk.kubesphere.io | VERSION=v2.2.1 sh -
+   curl -sfL https://get-kk.kubesphere.io | VERSION=v2.2.2 sh -
    ```
 
    {{</ tab >}}
@@ -70,7 +70,7 @@ KubeKey upgrades Kubernetes from one MINOR version to the next MINOR version unt
    Run the following command to download KubeKey:
 
    ```bash
-   curl -sfL https://get-kk.kubesphere.io | VERSION=v2.2.1 sh -
+   curl -sfL https://get-kk.kubesphere.io | VERSION=v2.2.2 sh -
    ```
    {{</ tab >}}
 

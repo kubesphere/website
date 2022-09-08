@@ -45,7 +45,7 @@ weight: 3160
    </tr>
    <tr>
      <td><code>version</code></td>
-     <td>Kubernetes 安装版本。如未指定 Kubernetes 版本，{{< contentLink "docs/installing-on-linux/introduction/kubekey" "KubeKey" >}} v2.2.1 默认安装 Kubernetes v1.23.7。有关更多信息，请参阅{{< contentLink "docs/installing-on-linux/introduction/kubekey/#support-matrix" "支持矩阵" >}}。</td>
+     <td>Kubernetes 安装版本。如未指定 Kubernetes 版本，{{< contentLink "docs/installing-on-linux/introduction/kubekey" "KubeKey" >}} v2.2.2 默认安装 Kubernetes v1.23.7。有关更多信息，请参阅{{< contentLink "docs/installing-on-linux/introduction/kubekey/#support-matrix" "支持矩阵" >}}。</td>
    </tr>
    <tr>
      <td><code>imageRepo</code></td>

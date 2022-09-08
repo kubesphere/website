@@ -20,7 +20,7 @@ In KubeKey v2.1.0, we bring in concepts of manifest and artifact, which provides
 |192.168.0.4 | node3    | Image registry node of the air-gapped environment |
 ## Preparations
 
-1. Run the following commands to download KubeKey v2.2.1.
+1. Run the following commands to download KubeKey v2.2.2.
    {{< tabs >}}
 
    {{< tab "Good network connections to GitHub/Googleapis" >}}
@@ -28,7 +28,7 @@ In KubeKey v2.1.0, we bring in concepts of manifest and artifact, which provides
    Download KubeKey from its [GitHub Release Page](https://github.com/kubesphere/kubekey/releases) or use the following command directly.
 
    ```bash
-   curl -sfL https://get-kk.kubesphere.io | VERSION=v2.2.1 sh -
+   curl -sfL https://get-kk.kubesphere.io | VERSION=v2.2.2 sh -
    ```
 
    {{</ tab >}}
@@ -44,7 +44,7 @@ In KubeKey v2.1.0, we bring in concepts of manifest and artifact, which provides
    Run the following command to download KubeKey:
 
    ```bash
-   curl -sfL https://get-kk.kubesphere.io | VERSION=v2.2.1 sh -
+   curl -sfL https://get-kk.kubesphere.io | VERSION=v2.2.2 sh -
    ```
    {{</ tab >}}
 
@@ -83,7 +83,7 @@ In KubeKey v2.1.0, we bring in concepts of manifest and artifact, which provides
        repository:
          iso:
            localPath:
-           url: https://github.com/kubesphere/kubekey/releases/download/v2.2.1/centos7-rpms-amd64.iso
+           url: https://github.com/kubesphere/kubekey/releases/download/v2.2.2/centos7-rpms-amd64.iso
      - arch: amd64
        type: linux
        id: ubuntu
@@ -91,7 +91,7 @@ In KubeKey v2.1.0, we bring in concepts of manifest and artifact, which provides
        repository:
          iso:
            localPath:
-           url: https://github.com/kubesphere/kubekey/releases/download/v2.2.1/ubuntu-20.04-debs-amd64.iso
+           url: https://github.com/kubesphere/kubekey/releases/download/v2.2.2/ubuntu-20.04-debs-amd64.iso
      kubernetesDistributions:
      - type: kubernetes
        version: v1.22.10
@@ -122,14 +122,14 @@ In KubeKey v2.1.0, we bring in concepts of manifest and artifact, which provides
      - docker.io/kubesphere/kube-scheduler:v1.22.10
      - docker.io/kubesphere/pause:3.5
      - docker.io/coredns/coredns:1.8.0
-     - docker.io/calico/cni:v3.20.0
-     - docker.io/calico/kube-controllers:v3.20.0
-     - docker.io/calico/node:v3.20.0
-     - docker.io/calico/pod2daemon-flexvol:v3.20.0
-     - docker.io/calico/typha:v3.20.0
+     - docker.io/calico/cni:v3.23.2
+     - docker.io/calico/kube-controllers:v3.23.2
+     - docker.io/calico/node:v3.23.2
+     - docker.io/calico/pod2daemon-flexvol:v3.23.2
+     - docker.io/calico/typha:v3.23.2
      - docker.io/kubesphere/flannel:v0.12.0
-     - docker.io/openebs/provisioner-localpv:2.10.1
-     - docker.io/openebs/linux-utils:2.10.0
+     - docker.io/openebs/provisioner-localpv:3.3.0
+     - docker.io/openebs/linux-utils:3.3.0
      - docker.io/library/haproxy:2.3
      - docker.io/kubesphere/nfs-subdir-external-provisioner:v4.0.2
      - docker.io/kubesphere/k8s-dns-node-cache:1.15.12
@@ -264,7 +264,7 @@ In KubeKey v2.1.0, we bring in concepts of manifest and artifact, which provides
    
    - You can customize the **manifest-sample.yaml** file to export the desired artifact file.
 
-   - You can download the ISO files at https://github.com/kubesphere/kubekey/releases/tag/v2.2.1.
+   - You can download the ISO files at https://github.com/kubesphere/kubekey/releases/tag/v2.2.2.
    
    {{</ notice >}}
    

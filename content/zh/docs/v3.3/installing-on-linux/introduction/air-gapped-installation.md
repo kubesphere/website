@@ -23,7 +23,7 @@ KubeKey v2.1.0 版本新增了清单（manifest）和制品（artifact）的概�
 
 ## 部署准备
 
-1. 执行以下命令下载 KubeKey v2.2.1 并解压：
+1. 执行以下命令下载 KubeKey v2.2.2 并解压：
 
    {{< tabs >}}
 
@@ -32,7 +32,7 @@ KubeKey v2.1.0 版本新增了清单（manifest）和制品（artifact）的概�
    从 [GitHub Release Page](https://github.com/kubesphere/kubekey/releases) 下载 KubeKey 或者直接运行以下命令。
 
    ```bash
-   curl -sfL https://get-kk.kubesphere.io | VERSION=v2.2.1 sh -
+   curl -sfL https://get-kk.kubesphere.io | VERSION=v2.2.2 sh -
    ```
 
    {{</ tab >}}
@@ -48,7 +48,7 @@ KubeKey v2.1.0 版本新增了清单（manifest）和制品（artifact）的概�
    运行以下命令来下载 KubeKey：
 
    ```bash
-   curl -sfL https://get-kk.kubesphere.io | VERSION=v2.2.1 sh -
+   curl -sfL https://get-kk.kubesphere.io | VERSION=v2.2.2 sh -
    ```
    {{</ tab >}}
 
@@ -77,7 +77,7 @@ KubeKey v2.1.0 版本新增了清单（manifest）和制品（artifact）的概�
        repository:
          iso:
            localPath:
-           url: https://github.com/kubesphere/kubekey/releases/download/v2.2.1/centos7-rpms-amd64.iso
+           url: https://github.com/kubesphere/kubekey/releases/download/v2.2.2/centos7-rpms-amd64.iso
      - arch: amd64
        type: linux
        id: ubuntu
@@ -85,7 +85,7 @@ KubeKey v2.1.0 版本新增了清单（manifest）和制品（artifact）的概�
        repository:
          iso:
            localPath:
-           url: https://github.com/kubesphere/kubekey/releases/download/v2.2.1/ubuntu-20.04-debs-amd64.iso
+           url: https://github.com/kubesphere/kubekey/releases/download/v2.2.2/ubuntu-20.04-debs-amd64.iso
      kubernetesDistributions:
      - type: kubernetes
        version: v1.22.10
@@ -116,14 +116,14 @@ KubeKey v2.1.0 版本新增了清单（manifest）和制品（artifact）的概�
      - registry.cn-beijing.aliyuncs.com/kubesphereio/kube-scheduler:v1.22.10
      - registry.cn-beijing.aliyuncs.com/kubesphereio/pause:3.5
      - registry.cn-beijing.aliyuncs.com/kubesphereio/coredns:1.8.0
-     - registry.cn-beijing.aliyuncs.com/kubesphereio/cni:v3.20.0
-     - registry.cn-beijing.aliyuncs.com/kubesphereio/kube-controllers:v3.20.0
-     - registry.cn-beijing.aliyuncs.com/kubesphereio/node:v3.20.0
-     - registry.cn-beijing.aliyuncs.com/kubesphereio/pod2daemon-flexvol:v3.20.0
-     - registry.cn-beijing.aliyuncs.com/kubesphereio/typha:v3.20.0
+     - registry.cn-beijing.aliyuncs.com/kubesphereio/cni:v3.23.2
+     - registry.cn-beijing.aliyuncs.com/kubesphereio/kube-controllers:v3.23.2
+     - registry.cn-beijing.aliyuncs.com/kubesphereio/node:v3.23.2
+     - registry.cn-beijing.aliyuncs.com/kubesphereio/pod2daemon-flexvol:v3.23.2
+     - registry.cn-beijing.aliyuncs.com/kubesphereio/typha:v3.23.2
      - registry.cn-beijing.aliyuncs.com/kubesphereio/flannel:v0.12.0
-     - registry.cn-beijing.aliyuncs.com/kubesphereio/provisioner-localpv:2.10.1
-     - registry.cn-beijing.aliyuncs.com/kubesphereio/linux-utils:2.10.0
+     - registry.cn-beijing.aliyuncs.com/kubesphereio/provisioner-localpv:3.3.0
+     - registry.cn-beijing.aliyuncs.com/kubesphereio/linux-utils:3.3.0
      - registry.cn-beijing.aliyuncs.com/kubesphereio/haproxy:2.3
      - registry.cn-beijing.aliyuncs.com/kubesphereio/nfs-subdir-external-provisioner:v4.0.2
      - registry.cn-beijing.aliyuncs.com/kubesphereio/k8s-dns-node-cache:1.15.12
@@ -258,7 +258,7 @@ KubeKey v2.1.0 版本新增了清单（manifest）和制品（artifact）的概�
    
    - 可根据实际情况修改 **manifest-sample.yaml** 文件的内容，用于之后导出期望的 artifact 文件。
   
-   - 您可以访问 https://github.com/kubesphere/kubekey/releases/tag/v2.2.1 下载 ISO 文件。
+   - 您可以访问 https://github.com/kubesphere/kubekey/releases/tag/v2.2.2 下载 ISO 文件。
    
    {{</ notice >}}
    

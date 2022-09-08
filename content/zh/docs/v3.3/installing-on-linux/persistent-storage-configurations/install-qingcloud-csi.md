@@ -73,7 +73,7 @@ weight: 3320
 从 [GitHub Release Page](https://github.com/kubesphere/kubekey/releases) 下载 KubeKey 或者直接运行以下命令。
 
 ```bash
-curl -sfL https://get-kk.kubesphere.io | VERSION=v2.2.1 sh -
+curl -sfL https://get-kk.kubesphere.io | VERSION=v2.2.2 sh -
 ```
 
 {{</ tab >}}
@@ -89,7 +89,7 @@ export KKZONE=cn
 运行以下命令下载 KubeKey：
 
 ```bash
-curl -sfL https://get-kk.kubesphere.io | VERSION=v2.2.1 sh -
+curl -sfL https://get-kk.kubesphere.io | VERSION=v2.2.2 sh -
 ```
 
 {{< notice note >}}
@@ -104,7 +104,7 @@ curl -sfL https://get-kk.kubesphere.io | VERSION=v2.2.1 sh -
 
 {{< notice note >}}
 
-通过以上的命令，可以下载 KubeKey 的最新版本 (v2.2.1)。您可以更改命令中的版本号来下载特定的版本。
+通过以上的命令，可以下载 KubeKey 的最新版本 (v2.2.2)。您可以更改命令中的版本号来下载特定的版本。
 
 {{</ notice >}}
 
