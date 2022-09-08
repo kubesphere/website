@@ -37,9 +37,9 @@
 - id: Demo
   translation: Demo
 - id: demo content 1
-  translation: "1.创建账户并登录。"
+  translation: "1.创建 KubeSphere Cloud 账户并登录。"
 - id: demo content 2
-  translation: 2.进入管理控制台，点击创建托管集群服务。
+  translation: 2.在页面右上角，进入管理控制台，并点击轻量集群服务。
 - id: demo content 3
   translation: 3.新建一个安装了 KubeSphere 的 K8s 集群。
 - id: demo content 4

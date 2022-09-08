@@ -35,9 +35,9 @@
 - id: Demo
   translation: Demo
 - id: demo content 1
-  translation: "1.Create an account and log in to the KubeSphere Cloud platform."
+  translation: "1.Create a KubeSphere Cloud account and log in to the platform."
 - id: demo content 2
-  translation: 2.In the upper-right corner, click Console, and then click Managed Cluster.
+  translation: 2.In the upper-right corner, click Console, and then click Lite Cluster on the left.
 - id: demo content 3
   translation: 3.Create a K8s cluster with KubeSphere installed.
 - id: demo content 4
