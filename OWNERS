@@ -1,19 +1,16 @@
 approvers:
-    - Felixnoo #oncall
-    - Patrick-LuoYu #oncall
+    - patrickluoyu #oncall
     - zryfish
     - rayzhou2017
     - faweizhao26
     - yangchuansheng
-    - FeynmanZhou
 
 reviewers:
-    - Patrick-LuoYu
+    - patrickluoyu
     - rayzhou2017
     - zryfish
     - benjaminhuo
     - calvinyv
-    - FeynmanZhou
     - pixiake
     - wansir
     - zheng1
