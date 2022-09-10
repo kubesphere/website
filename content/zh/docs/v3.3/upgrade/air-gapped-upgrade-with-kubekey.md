@@ -47,7 +47,7 @@ weight: 7400
 
 ### 步骤 1：下载 KubeKey
 
-1. 执行以下命令下载 KubeKey v2.2.1 并解压：
+1. 执行以下命令下载 KubeKey v2.2.2 并解压：
 
    {{< tabs >}}
 
@@ -56,7 +56,7 @@ weight: 7400
    从 [GitHub Release Page](https://github.com/kubesphere/kubekey/releases) 下载 KubeKey 或者直接运行以下命令。
 
    ```bash
-   curl -sfL https://get-kk.kubesphere.io | VERSION=v2.2.1 sh -
+   curl -sfL https://get-kk.kubesphere.io | VERSION=v2.2.2 sh -
    ```
 
    {{</ tab >}}
@@ -72,7 +72,7 @@ weight: 7400
    运行以下命令来下载 KubeKey：
 
    ```bash
-   curl -sfL https://get-kk.kubesphere.io | VERSION=v2.2.1 sh -
+   curl -sfL https://get-kk.kubesphere.io | VERSION=v2.2.2 sh -
    ```
    {{</ tab >}}
 

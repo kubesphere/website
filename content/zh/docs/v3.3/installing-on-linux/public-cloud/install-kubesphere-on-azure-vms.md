@@ -102,7 +102,7 @@ ssh -i .ssh/id_rsa2  -p50200 kubesphere@40.81.5.xx
 从 KubeKey 的 [Github 发布页面](https://github.com/kubesphere/kubekey/releases)下载，或执行以下命令：
 
 ```bash
-curl -sfL https://get-kk.kubesphere.io | VERSION=v2.2.1 sh -
+curl -sfL https://get-kk.kubesphere.io | VERSION=v2.2.2 sh -
 ```
 
 {{</ tab >}}
@@ -118,7 +118,7 @@ export KKZONE=cn
 运行以下命令下载 KubeKey：
 
 ```bash
-curl -sfL https://get-kk.kubesphere.io | VERSION=v2.2.1 sh -
+curl -sfL https://get-kk.kubesphere.io | VERSION=v2.2.2 sh -
 ```
 
 {{< notice note >}}
@@ -133,7 +133,7 @@ curl -sfL https://get-kk.kubesphere.io | VERSION=v2.2.1 sh -
 
    {{< notice note >}}
 
-上面的命令会下载 KubeKey 最新版本 (v2.2.1)。您可以在命令中更改版本号以下载特定版本。
+上面的命令会下载 KubeKey 最新版本 (v2.2.2)。您可以在命令中更改版本号以下载特定版本。
 
 {{</ notice >}} 
 
