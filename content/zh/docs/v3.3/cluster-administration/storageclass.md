@@ -168,7 +168,7 @@ NFS（网络文件系统）广泛用于带有 [NFS-Client](https://github.com/ku
 
 {{< notice note >}}
 
-不建议您在生产环境中使用 NFS 存储（尤其是在 Kubernetes 1.20 或以上版本），这可能会引起 `failed to obtain lock` 和 `input/output error` 等问题，从而导致容器组 `CrashLoopBackOff`。此外，部分应用不兼容 NFS，例如 [Prometheus](https://github.com/prometheus/prometheus/blob/03b354d4d9386e4b3bfbcd45da4bb58b182051a5/docs/storage.md#operational-aspects) 等。
+NFS 与部分应用不兼容（例如 Prometheus），可能会导致容器组创建失败。如果确实需要在生产环境中使用 NFS，请确保您了解相关风险或咨询 KubeSphere 技术支持 support@kubesphere.cloud。
 
 {{</ notice >}}
 
