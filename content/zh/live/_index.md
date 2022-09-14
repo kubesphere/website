@@ -10,14 +10,14 @@ section1:
 
 section2:
   image: /images/live/cloudnative-live-banner.png
-  url: ./kubeedge0901-live/
+  url: ./databend0908-live/
 
   notice:
-    title: 解密云原生数仓 Databend 
+    title: 容器业务连续性保障的探索与实践
     tag: 预告
-    time: 2022 年 09 月 08 日晚 8 点
+    time: 2022 年 09 月 15 日晚 8 点
     base: 线上
-    url: ./databend0908-live/
+    url: ./container0915-live/
 
   over:
     title: 云原生 Meetup 杭州站
@@ -26,6 +26,13 @@ section2:
 
 section3:
   videos:
+    - title: 解密云原生数仓 Databend
+      link: ./databend0908-live/
+      snapshot: https://pek3b.qingstor.com/kubesphere-community/images/databend0908-live-cover.png
+      type: iframe
+      createTime: 2022.09.08
+      group: 直播回放
+
     - title: 10 万边缘节点！KubeEdge 大规模边缘集群性能测试实战
       link: ./kubeedge0901-live/
       snapshot: https://pek3b.qingstor.com/kubesphere-community/images/kubeedge0901-live-cover.png
