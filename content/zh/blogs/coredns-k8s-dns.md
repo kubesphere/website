@@ -110,7 +110,7 @@ DNS 架构以外网 DNS、内网 DNS、分区 DNS 组成：
 
 KubeSphere 提供了一个开源项目——OpenELB 来解决云原生环境下的服务暴露问题，这是一个 CNCF 的沙箱项目。OpenELB 通过物理环境的交换机使用 BGP 协议将 LoadBalancer 类型服务的 ExternalIP 宣告出去，在 IP 可达的环境下集群外部业务即可通过 EIP 访问 Kubernetes 服务资源。
 
-![](https://i.imgur.com/nTGWjda.png)
+![](https://pek3b.qingstor.com/kubesphere-community/images/nTGWjda.png)
 
 对于集群外需要设置 DNS 服务器的服务资源，可通过 OpenELB 使用 EIP 暴露 CoreDNS ，即可访问 DNS 服务 。
 
@@ -130,8 +130,8 @@ KubeSphere 提供了一个开源项目——OpenELB 来解决云原生环境下�
 
 通过 KubeSphere 自定义监控面板，设置一个基于 CoreDNS 指标的监控面板，KubeSphere 内置了众多监控面板，用户可直接使用模板构建亦可使用 PromQL 创建面板：
 
-![](https://i.imgur.com/Vqdy0FI.png),![](https://i.imgur.com/DGMyVa6.png)
-
+![](https://pek3b.qingstor.com/kubesphere-community/images/Vqdy0FI.png)
+![](https://pek3b.qingstor.com/kubesphere-community/images/DGMyVa6.png)
 ![](https://pek3b.qingstor.com/kubesphere-community/images/202207191501390.png)
 
 通过 KubeSphere 告警和通知组件，用户可基于预置规则模板（CPU、内存、磁盘、网络、异常率）或使用 PromQL 语句自定义告警规则，此处定义当 CoreDNS CPU 用量大于等于 0.1Core 系统触发告警：
@@ -144,11 +144,11 @@ KubeSphere 针对租户设计了通知模板，包含多种通知系统集成，
 
 当告警触发后，即可在告警消息和通知历史处查看到相应的条目，此时用户也会收到一封告警邮件了：
 
-![](https://i.imgur.com/uAQHJ96.png)
+![](https://pek3b.qingstor.com/kubesphere-community/images/uAQHJ96.png)
 
-![](https://i.imgur.com/bUlfrp1.png)
+![](https://pek3b.qingstor.com/kubesphere-community/images/bUlfrp1.png)
 
-![](https://i.imgur.com/b1ZUqQR.png)
+![](https://pek3b.qingstor.com/kubesphere-community/images/b1ZUqQR.png)
 
 在高并发 DNS 请求场景中，还需对 CoreDNS 进行自动伸缩设计，通常考虑到服务高可用性和性能考量，可参考以下计算规格和调度策略设计：
 
