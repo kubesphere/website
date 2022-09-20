@@ -1,12 +1,12 @@
 ---
 title: 容器业务连续性保障的探索与实践
 description: 对于生产业务而言，就需要保障其高可用性、可用性等，这是一个老生常谈的话题——“两地三中心”，基于传统方式已是有成熟落地方案，但对容器平台来说该如何规划、实现？
-keywords: KubeSphere, Kubernetes, 容器,  业务连续性, 两地三中心
+keywords: KubeSphere, Kubernetes, 容器, 业务连续性, 两地三中心
 css: scss/live-detail.scss
 
 section1:
   snapshot: 
-  videoUrl: 
+  videoUrl: //player.bilibili.com/player.html?aid=858028724&bvid=BV19V4y1T7h3&cid=834033757&page=1&high_quality=1
   type: iframe
   time: 2022-09-15 20:00-21:00
   timeIcon: /images/live/clock.svg
@@ -33,4 +33,40 @@ section1:
 
 B 站  http://live.bilibili.com/22580654
 
+## PPT 下载
 
+可扫描官网底部二维码，关注 「KubeSphere云原生」公众号，后台回复 `20220915` 即可下载 PPT。
+
+## Q & A
+
+### Q1：多集群可以用 Calico 打通跨集群网络，怎么实现的？
+
+A：基于 Calico BGP Peer 对等，将两个集群的网络拉平，实现集群直接 pod 网络的互联互通。
+
+### Q2：备份容灾 SaaS 服务与开源的备份方案相比有何优势？
+
+A：SaaS 灾备服务可快速应用到生产环境中，可以通过公网地址暴露 apiserver 的 6443 端口或者通过代理的方式连接集群。且存储介质可以使用托管或自己方式，符合 s3 对象存储接口即可，总结下来：相比开源备份方案，具备可视化 UI 操作、快速实现业务的备份与恢复、无需考虑线下环境不可用导致无法备份和恢复的问题。
+
+### Q3：是否可以将备份容灾服务部署到私有环境中？
+
+A：可以的。我们有 SaaS 版本和离线版本，离线版可以直接部署到现有 Kubernetes 环境。
+
+### Q4：KubeSphere 平台整体备份有没有需要备份的内容清单(是否备份 etcd 和所有 pv 就能完全恢复整个平台)？
+
+A：备份分为 namespace 项目级别和 cluster 集群级别。项目级别组要针对工作负载，服务，应用，pv 卷等资源的备份，cluster 级别则是一些 crd 资源。理论上备份所有 ns 和 cluster 资源可以将整个集群拉起来，但不建议这么做。因为灾备集群本身就是一套 KubeSphere 环境，我们做恢复，主要是保障业务的可用性，恢复时也尽可能对某个 ns 进行即可，而非整体恢复。
+
+在备份时，本身就是去 etcd 里拿到相关资源进行备份，所以没必要再对 etcd 进行单独备份，而且 KubeSphere 自身是有对 etcd 备份的，感兴趣可以去 master 节点找到相应的备份 job 和数据。
+
+### Q5：KubeSphere 开源版与商业版有什么区别？
+
+A： v3.3 企业版与开源版本主要的区别点如下：
+
+- 商业维保支持；
+- 分布式可观测中心，具备更加详细的多级集群统一监控视角；
+- 集成 SpringCloud 框架，可以同时支持 SpringCloud 和 Istio 两大主要微服务治理平台，免去客户对两大框架的维护工作和选型难题，可快速部署业务；
+- 用户测自定义监控指标，作为普通用户也可以设置相关策略；
+- GPU 资源的统一管理与分部。
+
+### Q6：离线环境可以使用备份容灾服务吗？
+
+A：回答同问题 3，可以的。
