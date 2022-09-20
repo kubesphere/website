@@ -10,22 +10,29 @@ section1:
 
 section2:
   image: /images/live/cloudnative-live-banner.png
-  url: ./databend0908-live/
+  url: ./container0915-live/
 
   notice:
-    title: 容器业务连续性保障的探索与实践
+    title: Kubernetes 节点故障自救方案探索
     tag: 预告
-    time: 2022 年 09 月 15 日晚 8 点
+    time: 2022 年 09 月 22 日晚 8 点
     base: 线上
-    url: ./container0915-live/
+    url: ./k8s0922-live/
 
   over:
-    title: 云原生 Meetup 杭州站
+    title: 解密云原生数仓 Databend
     tag: 结束
-    url: ./meetup-hangzhou-20220827/
+    url: ./databend0908-live/
 
 section3:
   videos:
+    - title: 容器业务连续性保障的探索与实践
+      link: ./container0915-live/
+      snapshot: https://pek3b.qingstor.com/kubesphere-community/images/container0915-live-cover.png
+      type: iframe
+      createTime: 2022.09.15
+      group: 直播回放
+
     - title: 解密云原生数仓 Databend
       link: ./databend0908-live/
       snapshot: https://pek3b.qingstor.com/kubesphere-community/images/databend0908-live-cover.png
