@@ -85,6 +85,9 @@ members:
 
 activities:
   videos:
+    - image: https://pek3b.qingstor.com/kubesphere-community/images/meetup-hangzhou-20220827-cover.png
+      link: https://kubesphere.com.cn/live/meetup-hangzhou-20220827/
+
     - image: /images/user-group/shanghai/rotation/ex.png
       link: https://kubesphere.com.cn/live/meetup-hangzhou1023/
 
@@ -95,6 +98,10 @@ activities:
       link: https://kubesphere.com.cn/live/zhijianglab-kubesphere/
 
   review:
+    - text: 基于 JuiceFS 的 KubeSphere DevOps 项目数据迁移方案
+      description: 本教程经过本地研发平台测试通过了使用开源项目 juiceFS-CSI 且后端依托 OSS 作为后端存储实现数据迁移的检验。
+      link: https://kubesphere.com.cn/blogs/kubesphere-data-migration-using-juicefs/
+
     - text: 使用 KubeKey 快速离线部署 KubeSphere 集群
       description: 本教程使用 KubeKey 2.0.0 作为部署工具来实现 KubeSphere 集群在离线环境中的部署。
       link: https://kubesphere.com.cn/blogs/deploying-kubesphere-clusters-offline-with-kubekey/
