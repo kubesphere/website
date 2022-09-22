@@ -1,5 +1,5 @@
 ---
-title: '一文读懂 Prometheus 长期存储主流方案'
+title: 'Prometheus 长期存储主流方案对比'
 tag: 'Prometheus'
 keywords: 'KubeSphere,  Kubernetes, Prometheus, 存储'
 description: 'Prometheus 是单实例不可扩展的，那么如果用户需要采集更多的数据并且保存更长时间该选择怎样的长期存储方案呢？'
