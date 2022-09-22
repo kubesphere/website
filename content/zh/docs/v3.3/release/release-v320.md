@@ -72,7 +72,7 @@ weight: 18100
 ### 新特性
 
 - 在应用路由列表页面新增应用路由排序、路由规则编辑和注解编辑功能。（[#2165](https://github.com/kubesphere/console/pull/2165)，[@harrisonliu5](https://github.com/harrisonliu5)）
-- 重构集群网关和项目网关功能。（[#2262](https://github.com/kubesphere/console/pull/2262)，[@harrisonliu5](https://github.com/harrisonliu5)）
+- 重构项目网关和新增集群网关功能。（[#2262](https://github.com/kubesphere/console/pull/2262)，[@harrisonliu5](https://github.com/harrisonliu5)）
 - 在路由规则创建过程中新增服务名称自动补全功能。（[#2196](https://github.com/kubesphere/console/pull/2196)，[@wengzhisong-hz](https://github.com/wengzhisong-hz)）
 - 对 ks-console 进行了以下 DNS 优化：
   - 直接使用 ks-apiserver 服务的名称作为 API URL，不再使用 `ks-apiserver.kubesphere-system.svc`。
