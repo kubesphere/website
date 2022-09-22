@@ -1,5 +1,5 @@
 ---
-title: '在 K8s 集群上部署 RabbitMQ 实战'
+title: '在 Kubernetes 上部署 RabbitMQ'
 tag: 'KubeSphere, Kubernetes, RabbitMQL'
 keywords: 'KubeSphere, Kubernetes, RabbitMQ'
 description: 'RabbitMQ 单节点安装部署和 RabbitMQ 集群安装部署实战。'
