@@ -1,8 +1,8 @@
 [context.production.environment]
-  HUGO_VERSION = "0.103.1"
+  HUGO_VERSION = "0.104.2"
 
 [context.deploy-preview.environment]
-  HUGO_VERSION = "0.103.1"
+  HUGO_VERSION = "0.104.2"
 
 [[redirects]]
   from = "/docs"
