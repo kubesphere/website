@@ -6,7 +6,7 @@ css: scss/live-detail.scss
 
 section1:
   snapshot: 
-  videoUrl: 
+  videoUrl: //player.bilibili.com/player.html?aid=645814423&bvid=BV1YY4y1N7eC&cid=840546258&page=1&high_quality=1
   type: iframe
   time: 2022-09-22 20:00-21:00
   timeIcon: /images/live/clock.svg
@@ -33,4 +33,32 @@ section1:
 
 B 站  http://live.bilibili.com/22580654
 
+## PPT 下载
 
+可扫描官网底部二维码，关注 「KubeSphere云原生」公众号，后台回复 `20220922` 即可下载 PPT。
+
+## Q & A
+
+### Q1：如果不升级 runc，有没有办法解决？
+
+A：升级 runc 是从根本上解决问题，也可以通过放大 pipe-user-pages-soft 来解决，只不过这种方法需要对这个内核参数有足够的把握，否则可能会引起其他问题。
+
+### Q2：helm chart 部署的？
+
+A：本次分享中通过 KubeSphere 来复现节点 NotReady 的问题，主要涉及的是 kubelet 调用 Docker 的逻辑，因此，我这边是通过 KubeSphere 图形化控制台创建了一个 Nginx 来做的。
+
+### Q3：配置的是什么参数？
+
+A：/proc/sys/fs/pipe-user-pages-soft，详见： https://man7.org/linux/man-pages/man7/pipe.7.html。
+
+### Q4：现有环境，有必要优化这个参数吗?目前没遇到问题。
+
+A：建议做下升级，这个升级风险不大的，这个问题官方是做了紧急修复的，可见重要程度 https://github.com/opencontainers/runc/pull/2871。
+
+### Q5：老师出现问题的环境是什么内核版本？
+
+A： 出问题的 runc 版本是 1.0.0-rc93，我这边环境是：
+- Kubernetes 1.19.3 
+- OS: CentOS 7.9.2009 
+- Kernel: 5.4.94-1.el7.elrepo.x86_64 
+- Docker: 20.10.6
