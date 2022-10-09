@@ -10,14 +10,14 @@ section1:
 
 section2:
   image: /images/live/cloudnative-live-banner.png
-  url: ./container0915-live/
+  url: ./k8s0922-live/
 
   notice:
-    title: Kubernetes 节点故障自救方案探索
-    tag: 预告
-    time: 2022 年 09 月 22 日晚 8 点
+    title: 容器业务连续性保障的探索与实践
+    tag: 结束
+    time: 2022 年 09 月 15 日晚 8 点
     base: 线上
-    url: ./k8s0922-live/
+    url: ./container0915-live/
 
   over:
     title: 解密云原生数仓 Databend
@@ -26,6 +26,13 @@ section2:
 
 section3:
   videos:
+    - title: Kubernetes 节点故障自救方案探索
+      link: ./k8s0922-live/
+      snapshot: https://pek3b.qingstor.com/kubesphere-community/images/k8s0922-live-cover.png
+      type: iframe
+      createTime: 2022.09.22
+      group: 直播回放
+
     - title: 容器业务连续性保障的探索与实践
       link: ./container0915-live/
       snapshot: https://pek3b.qingstor.com/kubesphere-community/images/container0915-live-cover.png
