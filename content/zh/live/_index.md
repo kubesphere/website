@@ -13,11 +13,11 @@ section2:
   url: ./k8s0922-live/
 
   notice:
-    title: 容器业务连续性保障的探索与实践
-    tag: 结束
-    time: 2022 年 09 月 15 日晚 8 点
+    title: Curve 分布式存储设计
+    tag: 预告
+    time: 2022 年 10 月 13 日晚 8 点
     base: 线上
-    url: ./container0915-live/
+    url: ./curve1013-live/
 
   over:
     title: 解密云原生数仓 Databend
