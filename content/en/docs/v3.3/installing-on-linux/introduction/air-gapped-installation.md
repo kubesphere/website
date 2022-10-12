@@ -108,7 +108,7 @@ In KubeKey v2.1.0, we bring in concepts of manifest and artifact, which provides
        - type: docker
          version: 20.10.8
        crictl:
-         version: v1.22.0
+         version: v1.24.0
        docker-registry:
          version: "2"
        harbor:
