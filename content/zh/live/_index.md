@@ -20,9 +20,9 @@ section2:
     url: ./curve1013-live/
 
   over:
-    title: 解密云原生数仓 Databend
-    tag: 结束
-    url: ./databend0908-live/
+    title: Apache APISIX & Kubesphere 联合 Meetup
+    tag: 预告
+    url: ./apisix-kubesphere-meetup1022/
 
 section3:
   videos:
