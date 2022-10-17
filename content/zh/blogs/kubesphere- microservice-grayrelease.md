@@ -1,7 +1,7 @@
 ---
 title: '使用 KubeSphere 实现微服务的灰度发布'
 tag: 'KubeSphere'
-keywords: 'KubeSphere, 微服务, 灰度发布'
+keywords: 'KubeSphere, 微服务, 灰度发布, Istio, 服务网格, Service Mesh, Java'
 description: 'KubeSphere 基于 Istio 微服务框架提供可视化的微服务治理功能，如果您在 Kubernetes 上运行和伸缩微服务，您可以为您的分布式系统配置基于 Istio 的微服务治理功能。'
 createTime: '2022-10-12'
 author: '何昌涛'
