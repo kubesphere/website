@@ -1,5 +1,5 @@
 ---
-title: Apache APISIX & Kubesphere 联合 Meetup
+title: Apache APISIX & KubeSphere 联合 Meetup
 description: 10 月 22 日（周六）下午，由 Apache APISIX & KubeSphere 联合发起的线上 Meetup，正在热烈报名中。此次 Meetup 邀请了来自 vivo、驭势科技、视源股份、青云科技等团队的技术大牛来线上分享。
 keywords: KubeSphere, Kubernetes, Apache APISIX 
 css: scss/live-detail.scss
