@@ -10,22 +10,29 @@ section1:
 
 section2:
   image: /images/live/cloudnative-live-banner.png
-  url: ./k8s0922-live/
+  url: ./curve1013-live/
 
   notice:
-    title: Curve 分布式存储设计
+    title: Kubernetes  多集群管理架构探索
     tag: 预告
-    time: 2022 年 10 月 13 日晚 8 点
+    time: 2022 年 10 月 20 日晚 8 点
     base: 线上
-    url: ./curve1013-live/
+    url: ./multicluster1020-live/
 
   over:
-    title: Apache APISIX & Kubesphere 联合 Meetup
+    title: Apache APISIX & KubeSphere 联合 Meetup
     tag: 预告
     url: ./apisix-kubesphere-meetup1022/
 
 section3:
   videos:
+    - title: Curve 分布式存储设计
+      link: ./curve1013-live/
+      snapshot: https://pek3b.qingstor.com/kubesphere-community/images/curve1013-live-cover.png
+      type: iframe
+      createTime: 2022.10.13
+      group: 直播回放
+
     - title: Kubernetes 节点故障自救方案探索
       link: ./k8s0922-live/
       snapshot: https://pek3b.qingstor.com/kubesphere-community/images/k8s0922-live-cover.png
