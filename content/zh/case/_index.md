@@ -88,6 +88,10 @@ section2:
       content: "极视角科技是专业的人工智能计算机视觉算法提供商。"
       link: "extreme-vision/"
 
+    - icon: "images/case/section6-vesoft-4.png"
+      content: "vesoft inc. 成立于 2018 年 10 月，是一家科技型创业公司。"
+      link: "vesoft/"
+
 section3:
   title: 'KubeSphere 助力各行各业'
   tip: 全部
@@ -150,7 +154,9 @@ section3:
       children:
         - name: 'sina'
           icon: 'images/case/section6-sina.jpg'
-
+        - name: 'vesoft'
+          icon: 'images/case/section6-vesoft-4.png'
+          
     - name: '物流'
       children:
         - name: 'ZTO'
