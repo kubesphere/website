@@ -149,7 +149,7 @@ section2:
       image:    
 
     - type: 2
-      content: 'Kubesphere 帮助我们简化了多集群管理，服务发布效率得到大幅提升，监控日志集中管理，让集群排障不再是黑盒。'
+      content: 'KubeSphere 帮助我们简化了多集群管理，服务发布效率得到大幅提升，监控日志集中管理，让集群排障不再是黑盒。'
       author: '新东方'
 
     - title: 未来规划
