@@ -1,7 +1,7 @@
 ---
 title: '在 VMware vSphere 中构建 Kubernetes 存储环境'
 tag: 'KubeSphere'
-keywords: 'KubeSphere, Kubernetes, vSphere, 存储'
+keywords: 'KubeSphere, Kubernetes, vSphere, 存储, CSI, vCenter, CNS'
 description: '本文将以 VMware vSphere CNS+KubeSphere 为工具在虚拟化环境搭建容器及存储环境。'
 createTime: '2022-10-19'
 author: '马伟'
