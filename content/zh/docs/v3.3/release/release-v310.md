@@ -54,7 +54,6 @@ weight: 18200
 
 - 新增支持 Kube-OVN 插件
 - 支持 Calico IP 池管理 [#3057](https://github.com/kubesphere/kubesphere/issues/3057)
-- 支持为 Deployment 指定静态 IP [#3058](https://github.com/kubesphere/kubesphere/issues/3058)
 - 支持网络可视化 [#3061](https://github.com/kubesphere/kubesphere/issues/3061) [#583](https://github.com/kubesphere/kubesphere/issues/583)
 
 ### 可观测性
