@@ -9,23 +9,58 @@ section1:
   image: /images/live/background.jpg
 
 section2:
-  image: /images/live/cloudnative-live-banner.png
-  url: ./curve1013-live/
+  image: /images/live/cloudnative-live-20221020.png
+  url: ./multicluster1020-live/
 
   notice:
-    title: Kubernetes  多集群管理架构探索
+    title: 向云而生 - JuiceFS 在云原生文件系统的实践
     tag: 预告
-    time: 2022 年 10 月 20 日晚 8 点
+    time: 2022 年 10 月 27 日晚 8 点
     base: 线上
-    url: ./multicluster1020-live/
+    url: ./juicefs1027-live/
 
   over:
     title: Apache APISIX & KubeSphere 联合 Meetup
-    tag: 预告
+    tag: 结束
     url: ./apisix-kubesphere-meetup1022/
 
 section3:
   videos:
+    - title: 手把手一起玩 KubeSphere 全新可插拔功能
+      link: ./apisix-kubesphere-meetup1022-ks/
+      snapshot: https://pek3b.qingstor.com/kubesphere-community/images/kubesphere-apisix-20221022-ks.png
+      type: iframe
+      createTime: 2022.10.22
+      group: Meetup
+
+    - title: Apache APISIX 在希沃网关的应用与实践
+      link: ./apisix-kubesphere-meetup1022-seevo/
+      snapshot: https://pek3b.qingstor.com/kubesphere-community/images/kubesphere-apisix-20221022-xiwo.png
+      type: iframe
+      createTime: 2022.10.22
+      group: Meetup
+
+    - title: OpenFunction 函数计算框架的应用探索
+      link: ./apisix-kubesphere-meetup1022-openfunction/
+      snapshot: https://pek3b.qingstor.com/kubesphere-community/images/kubesphere-apisix-20221022-of.png
+      type: iframe
+      createTime: 2022.10.22
+      group: Meetup
+
+    - title: Apache APISIX 落地实践分享
+      link: ./apisix-kubesphere-meetup1022-vivo/
+      snapshot: https://pek3b.qingstor.com/kubesphere-community/images/kubesphere-apisix-20221022-vivo.png
+      type: iframe
+      createTime: 2022.10.22
+      group: Meetup
+
+    - title: Kubernetes 多集群管理架构探索
+      link: ./multicluster1020-live/
+      snapshot: https://pek3b.qingstor.com/kubesphere-community/images/multicluster1020-live-cover.png
+      type: iframe
+      createTime: 2022.10.20
+      group: 直播回放
+
     - title: Curve 分布式存储设计
       link: ./curve1013-live/
       snapshot: https://pek3b.qingstor.com/kubesphere-community/images/curve1013-live-cover.png
@@ -859,6 +894,10 @@ section4:
   list:
     - year: 2022
       meetup: 
+        - place: 在线 Meetup（10.22）
+          img: https://pek3b.qingstor.com/kubesphere-community/images/apisix-kubesphere-meetup1022-cover.png
+          meetupUrl: https://kubesphere.com.cn/live/apisix-kubesphere-meetup1022/
+
         - place: 杭州站（08. 27）
           img: https://pek3b.qingstor.com/kubesphere-community/images/meetup-hangzhou-20220827-cover.png
           meetupUrl: https://kubesphere.com.cn/live/meetup-hangzhou-20220827/
