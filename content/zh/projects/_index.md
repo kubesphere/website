@@ -36,14 +36,14 @@ groups:
   - name: Serverless
     children:
       - title: OpenFunction
-        icon: 'http://pek3b.qingstor.com/kubesphere-community/images/openfunction-logo-2.png'
+        icon: 'https://pek3b.qingstor.com/kubesphere-community/images/openfunction-logo-2.png'
         link: 'https://github.com/OpenFunction'
         description: OpenFunction 是一个云原生、开源的 FaaS（函数即服务）框架，旨在让开发人员专注于业务逻辑，而不必关心底层运行环境和基础设施。开发人员只需集中精力以函数的形式开发业务相关的源代码。
 
   - name: 日志管理
     children:
       - title: Fluent Operator
-        icon: 'http://pek3b.qingstor.com/kubesphere-community/images/fluent-operator-icon.svg'
+        icon: 'https://pek3b.qingstor.com/kubesphere-community/images/fluent-operator-icon.svg'
         link: 'https://github.com/fluent/fluent-operator'
         description: 使用 Fluent Operator 可以灵活且方便地部署、配置及卸载 Fluent Bit 以及 Fluentd。同时, 社区还提供支持 Fluentd 以及 Fluent Bit 的海量插件，用户可以根据实际情况进行定制化配置。
 
