@@ -231,7 +231,7 @@ These services just created can be accessed easily as KubeSphere tells you how a
 
 I hope you guys all have successfully deployed TiDB. Both TiDB and KubeSphere are powerful tools for cloud-native applications, so in fact, I cannot showcase every aspect of them all in this post. For example, the app deployment function has much to offer for cloud-native enthusiasts like me. I will post another article on how to deploy TiDB by uploading Helm charts to the KubeSphere App Store.
 
-If you have any questions, don't hesitate to contact us in [Slack](https://join.slack.com/t/kubesphere/shared_invite/enQtNTE3MDIxNzUxNzQ0LTZkNTdkYWNiYTVkMTM5ZThhODY1MjAyZmVlYWEwZmQ3ODQ1NmM1MGVkNWEzZTRhNzk0MzM5MmY4NDc3ZWVhMjE) or [GitHub](https://github.com/kubesphere).
+If you have any questions, don't hesitate to contact us in [Slack](https://join.slack.com/t/kubesphere/shared_invite/zt-1ilxbsp39-t4ES4xn5OI0eF5hvOoAhEw) or [GitHub](https://github.com/kubesphere).
 
 ## References
 
