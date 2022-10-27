@@ -37,14 +37,14 @@ groups:
   - name: Serverless
     children:
       - title: OpenFunction
-        icon: 'http://pek3b.qingstor.com/kubesphere-community/images/openfunction-logo-2.png'
+        icon: 'https://pek3b.qingstor.com/kubesphere-community/images/openfunction-logo-2.png'
         link: 'https://github.com/OpenFunction'
         description: OpenFunction is a cloud-native open-source FaaS (Function as a Service) platform aiming to let you focus on your business logic without having to maintain the underlying runtime environment and infrastructure. You can concentrate on developing business-related source code in the form of functions.
 
   - name: Logging
     children:
       - title: Fluent Operator
-        icon: 'http://pek3b.qingstor.com/kubesphere-community/images/fluent-operator-icon.svg'
+        icon: 'https://pek3b.qingstor.com/kubesphere-community/images/fluent-operator-icon.svg'
         link: 'https://github.com/fluent/fluent-operator'
         description: Fluent Operator provides great flexibility in building a logging layer based on Fluent Bit and Fluentd.
 
