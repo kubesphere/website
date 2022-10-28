@@ -10,4 +10,4 @@ In June 2022, KubeSphere 3.3 has been released with more exciting features. This
 
 If you want to know details about new feature of KubeSphere 3.3, you can read the article [KubeSphere 3.3.0: Embrace GitOps](/../../../news/kubesphere-3.3.0-ga-announcement/).
 
-In addition to the above highlights, this release also features other functionality upgrades and fixes the known bugs. There were some deprecated or removed features in 3.3. For more and detailed information, see the [Release Notes for 3.3.0](../../../v3.3/release/release-v330/).
+In addition to the above highlights, this release also features other functionality upgrades and fixes the known bugs. There were some deprecated or removed features in 3.3. For more and detailed information, see the [Release Notes for 3.3.0](../../../v3.3/release/release-v330/) and [Release Notes for 3.3.1](../../../v3.3/release/release-v331/).

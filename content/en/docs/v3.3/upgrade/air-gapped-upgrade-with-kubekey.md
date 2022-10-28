@@ -11,7 +11,7 @@ Air-gapped upgrade with KubeKey is recommended for users whose KubeSphere and Ku
 
 - You need to have a KubeSphere cluster running v3.2.x. If your KubeSphere version is v3.1.x or earlier, upgrade to v3.2.x first.
 - Your Kubernetes version must be v1.19.x, v1.20.x, v1.21.x, v1.22.x, and v1.23.x (experimental support).
-- Read [Release Notes for 3.3](../../../v3.3/release/release-v330/) carefully.
+- Read [Release Notes for 3.3.1](../../../v3.3/release/release-v331/) carefully.
 - Back up any important component beforehand.
 - A Docker registry. You need to have a Harbor or other Docker registries.
 - Make sure every node can push and pull images from the Docker Registry.
