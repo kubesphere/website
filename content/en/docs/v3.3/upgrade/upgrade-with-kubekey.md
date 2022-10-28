@@ -12,7 +12,7 @@ This tutorial demonstrates how to upgrade your cluster using KubeKey.
 ## Prerequisites
 
 - You need to have a KubeSphere cluster running v3.2.x. If your KubeSphere version is v3.1.x or earlier, upgrade to v3.2.x first.
-- Read [Release Notes for 3.3](../../../v3.3/release/release-v330/) carefully.
+- Read [Release Notes for 3.3.1](../../../v3.3/release/release-v331/) carefully.
 - Back up any important component beforehand.
 - Make your upgrade plan. Two scenarios are provided in this document for [all-in-one clusters](#all-in-one-cluster) and [multi-node clusters](#multi-node-cluster) respectively.
 

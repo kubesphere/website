@@ -12,7 +12,7 @@ weight: 7500
 ## 准备工作
 
 - 您需要有一个运行 KubeSphere v3.2.x 的集群。如果您的 KubeSphere 是 v3.1.0 或更早的版本，请先升级至 v3.2.x。
-- 请仔细阅读 [3.3 版本说明](../../../v3.3/release/release-v330/)。
+- 请仔细阅读 [3.3.1 版本说明](../../../v3.3/release/release-v331/)。
 - 提前备份所有重要的组件。
 - Docker 仓库。您需要有一个 Harbor 或其他 Docker 仓库。有关更多信息，请参见[准备一个私有镜像仓库](../../installing-on-linux/introduction/air-gapped-installation/#步骤-2准备一个私有镜像仓库)。
 - KubeSphere 3.3 支持的 Kubernetes 版本：v1.19.x、v1.20.x、v1.21.x、 v1.22.x 和 v1.23.x（实验性支持）。
