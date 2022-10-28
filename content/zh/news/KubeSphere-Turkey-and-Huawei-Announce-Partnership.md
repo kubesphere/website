@@ -12,7 +12,7 @@ KubeSphere 容器平台正在迅速走向全球，这一次是土耳其。
 
 2022 年 10 月 18 日，KubeSphere 土耳其与华为达成战略合作，在华为全联接大会 2022 · 巴黎签署战略合作协议。大会上，双方达成一致，将发挥各自技术和资源优势，为土耳其用户提供更加本土化和优质的云原生服务，共同赋能企业云原生新时代。
 
-![](http://pek3b.qingstor.com/kubesphere-community/images/kubesphere-turkey-huawei.jpeg)
+![](https://pek3b.qingstor.com/kubesphere-community/images/kubesphere-turkey-huawei.jpeg)
 
 华为合作伙伴与生态系统经理 Yavuz Sarı 表示，“我们期待与 KubeSphere Turkey 一起，基于两个场景来开发 PaaS 方案。 第一个是构建一个托管的、可共享的平台，帮助个人开发者和小型企业轻松使用 Kubernetes；另一个则是构建可供政府或其他附属机构使用的托管的、不可共享的平台。 我们会将这些架构都托管在华为云上。”
 
