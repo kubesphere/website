@@ -36,7 +36,7 @@ If you adopt [All-in-One Installation](../../quick-start/all-in-one-on-linux/), 
     ```
 
     {{< notice note >}}
-By default, KubeKey will install Elasticsearch internally if Events is enabled. For a production environment, it is highly recommended that you set the following values in `config-sample.yaml` if you want to enable Events, especially `externalElasticsearchHost` and `externalElasticsearchPort`. Once you provide the following information before installation, KubeKey will integrate your external Elasticsearch directly instead of installing an internal one.
+By default, KubeKey will install Elasticsearch internally if Events is enabled. For a production environment, it is highly recommended that you set the following values in `config-sample.yaml` if you want to enable Events, especially `externalElasticsearchUrl` and `externalElasticsearchPort`. Once you provide the following information before installation, KubeKey will integrate your external Elasticsearch directly instead of installing an internal one.
     {{</ notice >}}
 
     ```yaml
@@ -47,7 +47,7 @@ By default, KubeKey will install Elasticsearch internally if Events is enabled. 
       elasticsearchDataVolumeSize: 20Gi    # The volume size of Elasticsearch data nodes.
       logMaxAge: 7                     # Log retention day in built-in Elasticsearch. It is 7 days by default.
       elkPrefix: logstash              # The string making up index names. The index name will be formatted as ks-<elk_prefix>-log.
-      externalElasticsearchHost: # The Host of external Elasticsearch.
+      externalElasticsearchUrl: # The Host of external Elasticsearch.
       externalElasticsearchPort: # The port of external Elasticsearch.
     ```
 
@@ -59,9 +59,9 @@ By default, KubeKey will install Elasticsearch internally if Events is enabled. 
 
 ### Installing on Kubernetes
 
-As you [install KubeSphere on Kubernetes](../../installing-on-kubernetes/introduction/overview/), you can enable KubeSphere Events first in the [cluster-configuration.yaml](https://github.com/kubesphere/ks-installer/releases/download/v3.3.0/cluster-configuration.yaml) file.
+As you [install KubeSphere on Kubernetes](../../installing-on-kubernetes/introduction/overview/), you can enable KubeSphere Events first in the [cluster-configuration.yaml](https://github.com/kubesphere/ks-installer/releases/download/v3.3.1/cluster-configuration.yaml) file.
 
-1. Download the file [cluster-configuration.yaml](https://github.com/kubesphere/ks-installer/releases/download/v3.3.0/cluster-configuration.yaml) and edit it.
+1. Download the file [cluster-configuration.yaml](https://github.com/kubesphere/ks-installer/releases/download/v3.3.1/cluster-configuration.yaml) and edit it.
 
     ```bash
     vi cluster-configuration.yaml
@@ -75,7 +75,7 @@ As you [install KubeSphere on Kubernetes](../../installing-on-kubernetes/introdu
     ```
 
     {{< notice note >}}
-By default, ks-installer will install Elasticsearch internally if Events is enabled. For a production environment, it is highly recommended that you set the following values in `cluster-configuration.yaml` if you want to enable Events, especially `externalElasticsearchHost` and `externalElasticsearchPort`. Once you provide the following information before installation, ks-installer will integrate your external Elasticsearch directly instead of installing an internal one.
+By default, ks-installer will install Elasticsearch internally if Events is enabled. For a production environment, it is highly recommended that you set the following values in `cluster-configuration.yaml` if you want to enable Events, especially `externalElasticsearchUrl` and `externalElasticsearchPort`. Once you provide the following information before installation, ks-installer will integrate your external Elasticsearch directly instead of installing an internal one.
     {{</ notice >}}
 
     ```yaml
@@ -86,14 +86,14 @@ By default, ks-installer will install Elasticsearch internally if Events is enab
       elasticsearchDataVolumeSize: 20Gi    # The volume size of Elasticsearch data nodes.
       logMaxAge: 7                     # Log retention day in built-in Elasticsearch. It is 7 days by default.
       elkPrefix: logstash              # The string making up index names. The index name will be formatted as ks-<elk_prefix>-log.
-      externalElasticsearchHost: # The Host of external Elasticsearch.
+      externalElasticsearchUrl: # The Host of external Elasticsearch.
       externalElasticsearchPort: # The port of external Elasticsearch.
     ```
 
 3. Execute the following commands to start installation:
 
     ```bash
-    kubectl apply -f https://github.com/kubesphere/ks-installer/releases/download/v3.3.0/kubesphere-installer.yaml
+    kubectl apply -f https://github.com/kubesphere/ks-installer/releases/download/v3.3.1/kubesphere-installer.yaml
     
     kubectl apply -f cluster-configuration.yaml
     ```
@@ -121,7 +121,7 @@ A Custom Resource Definition (CRD) allows users to create a new type of resource
 
     {{< notice note >}}
 
-By default, Elasticsearch will be installed internally if Events is enabled. For a production environment, it is highly recommended that you set the following values in this yaml file if you want to enable Events, especially `externalElasticsearchHost` and `externalElasticsearchPort`. Once you provide the following information, KubeSphere will integrate your external Elasticsearch directly instead of installing an internal one.
+By default, Elasticsearch will be installed internally if Events is enabled. For a production environment, it is highly recommended that you set the following values in this yaml file if you want to enable Events, especially `externalElasticsearchUrl` and `externalElasticsearchPort`. Once you provide the following information, KubeSphere will integrate your external Elasticsearch directly instead of installing an internal one.
     {{</ notice >}}
 
     ```yaml
@@ -132,7 +132,7 @@ By default, Elasticsearch will be installed internally if Events is enabled. For
       elasticsearchDataVolumeSize: 20Gi    # The volume size of Elasticsearch data nodes.
       logMaxAge: 7                     # Log retention day in built-in Elasticsearch. It is 7 days by default.
       elkPrefix: logstash              # The string making up index names. The index name will be formatted as ks-<elk_prefix>-log.
-      externalElasticsearchHost: # The Host of external Elasticsearch.
+      externalElasticsearchUrl: # The Host of external Elasticsearch.
       externalElasticsearchPort: # The port of external Elasticsearch.
     ```
 

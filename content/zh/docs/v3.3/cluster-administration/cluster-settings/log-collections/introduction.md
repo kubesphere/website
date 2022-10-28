@@ -6,7 +6,7 @@ linkTitle: "介绍"
 weight: 8621
 ---
 
-KubeSphere 提供灵活的日志接收器配置方式。基于 [FluentBit Operator](https://github.com/kubesphere/fluentbit-operator/)，用户可以轻松添加、修改、删除、启用或禁用 Elasticsearch、Kafka 和 Fluentd 接收器。接收器添加后，日志会发送至该接收器。
+KubeSphere 提供灵活的日志接收器配置方式。基于 [Fluent Operator](https://github.com/fluent/fluent-operator)，用户可以轻松添加、修改、删除、启用或禁用 Elasticsearch、Kafka 和 Fluentd 接收器。接收器添加后，日志会发送至该接收器。
 
 此教程简述在 KubeSphere 中添加日志接收器的一般性步骤。
 
@@ -45,7 +45,7 @@ KubeSphere 提供灵活的日志接收器配置方式。基于 [FluentBit Operat
 
 如果 [ClusterConfiguration](https://github.com/kubesphere/kubekey/blob/release-2.2/docs/config-example.md) 中启用了 `logging`、`events` 或 `auditing`，则会添加默认的 Elasticsearch 接收器，服务地址会设为 Elasticsearch 集群。
 
-当  `logging`、`events` 或 `auditing` 启用时，如果 [ClusterConfiguration](https://github.com/kubesphere/kubekey/blob/release-2.2/docs/config-example.md) 中未指定 `externalElasticsearchHost` 和 `externalElasticsearchPort`，则内置 Elasticsearch 集群会部署至 Kubernetes 集群。内置 Elasticsearch 集群仅用于测试和开发。生产环境下，建议您集成外置 Elasticsearch 集群。
+当  `logging`、`events` 或 `auditing` 启用时，如果 [ClusterConfiguration](https://github.com/kubesphere/kubekey/blob/release-2.2/docs/config-example.md) 中未指定 `externalElasticsearchUrl` 和 `externalElasticsearchPort`，则内置 Elasticsearch 集群会部署至 Kubernetes 集群。内置 Elasticsearch 集群仅用于测试和开发。生产环境下，建议您集成外置 Elasticsearch 集群。
 
 日志查询需要依靠所配置的内置或外置 Elasticsearch 集群。
 

@@ -7,7 +7,7 @@ description: "了解如何在阿里云容器服务 ACK 上部署 KubeSphere。"
 weight: 4250
 ---
 
-本指南将介绍如果在[阿里云容器服务 ACK](https://www.aliyun.com/product/kubernetes/) 上部署并使用 KubeSphere 3.3.0 平台。
+本指南将介绍如果在[阿里云容器服务 ACK](https://www.aliyun.com/product/kubernetes/) 上部署并使用 KubeSphere 3.3 平台。
 
 ## 阿里云 ACK 环境准备
 
@@ -15,7 +15,7 @@ weight: 4250
 
 首先按使用环境的资源需求创建 Kubernetes 集群，满足以下一些条件即可（如已有环境并满足条件可跳过本节内容）：
 
-- KubeSphere 3.3.0 默认支持的 Kubernetes 版本为 v1.19.x, v1.20.x, v1.21.x, v1.22.x 和  v1.23.x（实验性支持），选择支持的版本创建集群；
+- KubeSphere 3.3 默认支持的 Kubernetes 版本为 v1.19.x, v1.20.x, v1.21.x, v1.22.x 和  v1.23.x（实验性支持），选择支持的版本创建集群；
 - 需要确保 Kubernetes 集群所使用的 ECS 实例的网络正常工作，可以通过在创建集群的同时**自动创建**或**使用已有**弹性 IP；或者在集群创建后自行配置网络（如配置 [NAT 网关](https://www.aliyun.com/product/network/nat/)）；
 - 小规模场景下工作节点规格建议选择 `4核｜8GB` 配置，不推荐`2核｜4GB` ，并按需扩展工作节点数量（通常生产环境需要 3 个及以上工作节点），详情可参考[最佳实践- ECS 选型](https://help.aliyun.com/document_detail/98886.html)。
 
@@ -142,8 +142,8 @@ alicloud-disk-topology               diskplugin.csi.alibabacloud.com   Delete   
 1.使用 [ks-installer](https://github.com/kubesphere/ks-installer) 在已有的 Kubernetes 集群上来部署 KubeSphere，下载 YAML 文件:
 
 ```
-wget https://github.com/kubesphere/ks-installer/releases/download/v3.3.0/kubesphere-installer.yaml
-wget https://github.com/kubesphere/ks-installer/releases/download/v3.3.0/cluster-configuration.yaml
+wget https://github.com/kubesphere/ks-installer/releases/download/v3.3.1/kubesphere-installer.yaml
+wget https://github.com/kubesphere/ks-installer/releases/download/v3.3.1/cluster-configuration.yaml
 ```
 
 

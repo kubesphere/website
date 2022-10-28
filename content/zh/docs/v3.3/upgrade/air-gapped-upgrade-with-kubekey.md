@@ -1,6 +1,6 @@
 ---
 title: "使用 KubeKey 离线升级"
-keywords: "离线环境, kubernetes, 升级, kubesphere, 3.3.0"
+keywords: "离线环境, kubernetes, 升级, kubesphere, 3.3"
 description: "使用离线包升级 Kubernetes 和 KubeSphere。"
 linkTitle: "使用 KubeKey 离线升级"
 weight: 7400
@@ -11,11 +11,22 @@ weight: 7400
 
 - 您需要有一个运行 KubeSphere v3.2.x 的集群。如果您的 KubeSphere 是 v3.1.0 或更早的版本，请先升级至 v3.2.x。
 - 您的 Kubernetes 版本必须为 v1.19.x及以上版本。
-- 请仔细阅读 [3.3.0 版本说明](../../../v3.3/release/release-v330/)。
+- 请仔细阅读 [3.3 版本说明](../../../v3.3/release/release-v330/)。
 - 提前备份所有重要的组件。
 - Docker 仓库。您需要有一个 Harbor 或其他 Docker 仓库。
 - 请确保每个节点都可以从该 Docker 仓库拉取镜像或向其推送镜像。
 
+## 重要提示
+
+KubeSphere 3.3.1 对内置角色和自定义角色的授权项做了一些调整。在您升级到 KubeSphere 3.3.1时，请注意以下几点：
+
+   - 内置角色调整：移除了平台级内置角色 `users-manager`(用户管理员)和 `workspace-manager`（企业空间管理员），如果已有用户绑定了 `users-manager` 或 `workspace-manager`，他们的角色将会在升级之后变更为 `platform-regular`。增加了平台级内置角色 `platform-self-provisioner`。关于平台角色的具体描述，请参见[创建用户](../../quick-start/create-workspace-and-project/#创建用户)。
+
+   - 自定义角色授权项调整：
+       - 移除平台层级自定义角色授权项：用户管理，角色管理，企业空间管理。
+       - 移除企业空间层级自定义角色授权项：成员管理，角色管理，用户组管理。
+       - 移除命名空间层级自定义角色授权项：成员管理，角色管理。
+       - 升级到 KubeSphere 3.3.1 后，自定义角色会被保留，但是其包含的已被移除的授权项会被删除。
 
 ## 升级 KubeSphere 和 Kubernetes
 
@@ -47,7 +58,7 @@ weight: 7400
 
 ### 步骤 1：下载 KubeKey
 
-1. 执行以下命令下载 KubeKey v2.2.2 并解压：
+1. 执行以下命令下载 KubeKey v2.3.0 并解压：
 
    {{< tabs >}}
 
@@ -56,7 +67,7 @@ weight: 7400
    从 [GitHub Release Page](https://github.com/kubesphere/kubekey/releases) 下载 KubeKey 或者直接运行以下命令。
 
    ```bash
-   curl -sfL https://get-kk.kubesphere.io | VERSION=v2.2.2 sh -
+   curl -sfL https://get-kk.kubesphere.io | VERSION=v2.3.0 sh -
    ```
 
    {{</ tab >}}
@@ -72,7 +83,7 @@ weight: 7400
    运行以下命令来下载 KubeKey：
 
    ```bash
-   curl -sfL https://get-kk.kubesphere.io | VERSION=v2.2.2 sh -
+   curl -sfL https://get-kk.kubesphere.io | VERSION=v2.3.0 sh -
    ```
    {{</ tab >}}
 
@@ -91,7 +102,7 @@ weight: 7400
 1. 使用以下命令从能够访问互联网的机器上下载镜像清单文件 `images-list.txt`：
 
    ```bash
-   curl -L -O https://github.com/kubesphere/ks-installer/releases/download/v3.3.0/images-list.txt
+   curl -L -O https://github.com/kubesphere/ks-installer/releases/download/v3.3.1/images-list.txt
    ```
 
    {{< notice note >}}
@@ -103,7 +114,7 @@ weight: 7400
 2. 下载 `offline-installation-tool.sh`。
 
    ```bash
-   curl -L -O https://github.com/kubesphere/ks-installer/releases/download/v3.3.0/offline-installation-tool.sh
+   curl -L -O https://github.com/kubesphere/ks-installer/releases/download/v3.3.1/offline-installation-tool.sh
    ```
 
 3. 使 `.sh` 文件可执行。
@@ -144,7 +155,7 @@ weight: 7400
 
    {{< notice note >}}
 
-   - 您可以根据自己的需求变更下载的 Kubernetes 版本。安装 KubeSphere 3.3.0 的建议 Kubernetes 版本：v1.19.x、v1.20.x、v1.21.x、v1.22.x和v1.23.x（实验性支持）。如果不指定 Kubernetes 版本，KubeKey 将默认安装 Kubernetes v1.23.7。有关受支持的 Kubernetes 版本的更多信息，请参见[支持矩阵](../../installing-on-linux/introduction/kubekey/#支持矩阵)。
+   - 您可以根据自己的需求变更下载的 Kubernetes 版本。安装 KubeSphere 3.3 的建议 Kubernetes 版本：v1.19.x、v1.20.x、v1.21.x、v1.22.x和v1.23.x（实验性支持）。如果不指定 Kubernetes 版本，KubeKey 将默认安装 Kubernetes v1.23.7。有关受支持的 Kubernetes 版本的更多信息，请参见[支持矩阵](../../installing-on-linux/introduction/kubekey/#支持矩阵)。
 
    - 您可以通过下载 Kubernetes v1.17.9 二进制文件将 Kubernetes 从 v1.16.13 升级到 v1.17.9。但对于跨多个版本升级，需要事先下载所有中间版本，例如您想将 Kubernetes 从 v1.15.12 升级到 v1.18.6，则需要下载 Kubernetes v1.16.13、v1.17.9 和 v1.18.6 二进制文件。
 
@@ -191,7 +202,7 @@ weight: 7400
 |        | Kubernetes | KubeSphere |
 | ------ | ---------- | ---------- |
 | 升级前 | v1.18.6    | v3.2.x     |
-| 升级后 | v1.22.10    | 3.3.0     |
+| 升级后 | v1.22.10    | 3.3     |
 
 #### 升级集群
 
@@ -208,7 +219,7 @@ weight: 7400
 例如：
 
 ```bash
-./kk create config --with-kubernetes v1.22.10 --with-kubesphere v3.3.0 -f config-sample.yaml
+./kk create config --with-kubernetes v1.22.10 --with-kubesphere v3.3.1 -f config-sample.yaml
 ```
 
 {{< notice note >}}
@@ -249,7 +260,7 @@ weight: 7400
     privateRegistry: dockerhub.kubekey.local
 ```
 
-#### 将单节点集群升级至 KubeSphere 3.3.0 和 Kubernetes v1.22.10
+#### 将单节点集群升级至 KubeSphere 3.3 和 Kubernetes v1.22.10
 
 ```bash
 ./kk upgrade -f config-sample.yaml
@@ -273,7 +284,7 @@ weight: 7400
 |        | Kubernetes | KubeSphere |
 | ------ | ---------- | ---------- |
 | 升级前 | v1.18.6   | v3.2.x     |
-| 升级后 | v1.22.10    | 3.3.0     |
+| 升级后 | v1.22.10    | 3.3     |
 
 #### 升级集群
 
@@ -290,7 +301,7 @@ weight: 7400
 例如：
 
 ```bash
-./kk create config --with-kubernetes v1.22.10 --with-kubesphere v3.3.0 -f config-sample.yaml
+./kk create config --with-kubernetes v1.22.10 --with-kubesphere v3.3.1 -f config-sample.yaml
 ```
 
 {{< notice note >}}
@@ -333,7 +344,7 @@ weight: 7400
     privateRegistry: dockerhub.kubekey.local
 ```
 
-#### 将多节点集群升级至 KubeSphere 3.3.0 和 Kubernetes v1.22.10
+#### 将多节点集群升级至 KubeSphere 3.3 和 Kubernetes v1.22.10
 
 ```bash
 ./kk upgrade -f config-sample.yaml

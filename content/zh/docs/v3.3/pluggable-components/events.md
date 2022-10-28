@@ -36,7 +36,7 @@ KubeSphere 事件系统使用户能够跟踪集群内部发生的事件，例如
     ```
 
     {{< notice note >}}
-默认情况下，如果启用了事件系统，KubeKey 将安装内置 Elasticsearch。对于生产环境，如果您想启用事件系统，强烈建议在 `config-sample.yaml` 中设置以下值，尤其是 `externalElasticsearchHost` 和 `externalElasticsearchPort`。在安装前提供以下信息后，KubeKey 将直接对接您的外部 Elasticsearch，不再安装内置 Elasticsearch。
+默认情况下，如果启用了事件系统，KubeKey 将安装内置 Elasticsearch。对于生产环境，如果您想启用事件系统，强烈建议在 `config-sample.yaml` 中设置以下值，尤其是 `externalElasticsearchUrl` 和 `externalElasticsearchPort`。在安装前提供以下信息后，KubeKey 将直接对接您的外部 Elasticsearch，不再安装内置 Elasticsearch。
     {{</ notice >}}
 
     ```yaml
@@ -47,7 +47,7 @@ KubeSphere 事件系统使用户能够跟踪集群内部发生的事件，例如
       elasticsearchDataVolumeSize: 20Gi    # The volume size of Elasticsearch data nodes.
       logMaxAge: 7                     # Log retention day in built-in Elasticsearch. It is 7 days by default.
       elkPrefix: logstash              # The string making up index names. The index name will be formatted as ks-<elk_prefix>-log.
-      externalElasticsearchHost: # The Host of external Elasticsearch.
+      externalElasticsearchUrl: # The Host of external Elasticsearch.
       externalElasticsearchPort: # The port of external Elasticsearch.
     ```
 
@@ -59,9 +59,9 @@ KubeSphere 事件系统使用户能够跟踪集群内部发生的事件，例如
 
 ### 在 Kubernetes 上安装
 
-当您[在 Kubernetes 上安装 KubeSphere](../../installing-on-kubernetes/introduction/overview/) 时，需要先在 [cluster-configuration.yaml](https://github.com/kubesphere/ks-installer/releases/download/v3.3.0/cluster-configuration.yaml) 文件中启用事件系统。
+当您[在 Kubernetes 上安装 KubeSphere](../../installing-on-kubernetes/introduction/overview/) 时，需要先在 [cluster-configuration.yaml](https://github.com/kubesphere/ks-installer/releases/download/v3.3.1/cluster-configuration.yaml) 文件中启用事件系统。
 
-1. 下载 [cluster-configuration.yaml](https://github.com/kubesphere/ks-installer/releases/download/v3.3.0/cluster-configuration.yaml) 文件，然后打开并开始编辑。
+1. 下载 [cluster-configuration.yaml](https://github.com/kubesphere/ks-installer/releases/download/v3.3.1/cluster-configuration.yaml) 文件，然后打开并开始编辑。
 
     ```bash
     vi cluster-configuration.yaml
@@ -75,7 +75,7 @@ KubeSphere 事件系统使用户能够跟踪集群内部发生的事件，例如
     ```
 
     {{< notice note >}}
-对于生产环境，如果您想启用事件系统，强烈建议在 `cluster-configuration.yaml` 中设置以下值，尤其是 `externalElasticsearchHost` 和 `externalElasticsearchPort`。在安装前提供以下信息后，ks-installer 将直接对接您的外部 Elasticsearch，不再安装内置 Elasticsearch。
+对于生产环境，如果您想启用事件系统，强烈建议在 `cluster-configuration.yaml` 中设置以下值，尤其是 `externalElasticsearchUrl` 和 `externalElasticsearchPort`。在安装前提供以下信息后，ks-installer 将直接对接您的外部 Elasticsearch，不再安装内置 Elasticsearch。
     {{</ notice >}}
 
     ```yaml
@@ -86,14 +86,14 @@ KubeSphere 事件系统使用户能够跟踪集群内部发生的事件，例如
       elasticsearchDataVolumeSize: 20Gi    # The volume size of Elasticsearch data nodes.
       logMaxAge: 7                     # Log retention day in built-in Elasticsearch. It is 7 days by default.
       elkPrefix: logstash              # The string making up index names. The index name will be formatted as ks-<elk_prefix>-log.
-      externalElasticsearchHost: # The Host of external Elasticsearch.
+      externalElasticsearchUrl: # The Host of external Elasticsearch.
       externalElasticsearchPort: # The port of external Elasticsearch.
     ```
 
 3. 执行以下命令开始安装：
 
     ```bash
-    kubectl apply -f https://github.com/kubesphere/ks-installer/releases/download/v3.3.0/kubesphere-installer.yaml
+    kubectl apply -f https://github.com/kubesphere/ks-installer/releases/download/v3.3.1/kubesphere-installer.yaml
     
     kubectl apply -f cluster-configuration.yaml
     ```
@@ -121,7 +121,7 @@ KubeSphere 事件系统使用户能够跟踪集群内部发生的事件，例如
 
     {{< notice note >}}
 
-默认情况下，如果启用了事件系统，将会安装内置 Elasticsearch。对于生产环境，如果您想启用事件系统，强烈建议在该 YAML 文件中设置以下值，尤其是 `externalElasticsearchHost` 和 `externalElasticsearchPort`。在文件中提供以下信息后，KubeSphere 将直接对接您的外部 Elasticsearch，不再安装内置 Elasticsearch。
+默认情况下，如果启用了事件系统，将会安装内置 Elasticsearch。对于生产环境，如果您想启用事件系统，强烈建议在该 YAML 文件中设置以下值，尤其是 `externalElasticsearchUrl` 和 `externalElasticsearchPort`。在文件中提供以下信息后，KubeSphere 将直接对接您的外部 Elasticsearch，不再安装内置 Elasticsearch。
     {{</ notice >}}
 
     ```yaml
@@ -132,7 +132,7 @@ KubeSphere 事件系统使用户能够跟踪集群内部发生的事件，例如
       elasticsearchDataVolumeSize: 20Gi    # The volume size of Elasticsearch data nodes.
       logMaxAge: 7                     # Log retention day in built-in Elasticsearch. It is 7 days by default.
       elkPrefix: logstash              # The string making up index names. The index name will be formatted as ks-<elk_prefix>-log.
-      externalElasticsearchHost: # The Host of external Elasticsearch.
+      externalElasticsearchUrl: # The Host of external Elasticsearch.
       externalElasticsearchPort: # The port of external Elasticsearch.
     ```
 

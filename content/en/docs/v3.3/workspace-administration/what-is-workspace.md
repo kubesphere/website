@@ -21,11 +21,6 @@ You have a user granted the role of `workspaces-manager`, such as `ws-manager` i
 
 1. Log in to the web console of KubeSphere as `ws-manager`. Click **Platform** on the upper-left corner, and then select **Access Control**. On the **Workspaces** page, click **Create**.
 
-   {{< notice note >}}
-
-   By default, you have at least one workspace `system-workspace` in the list which contains all system projects.
-
-   {{</ notice >}}
 
 2. For single-node cluster, on the **Basic Information** page, specify a name for the workspace and select an administrator from the drop-down list. Click **Create**.
 

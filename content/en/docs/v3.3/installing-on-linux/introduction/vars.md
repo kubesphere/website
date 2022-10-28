@@ -10,7 +10,7 @@ When creating a Kubernetes cluster, you can use [KubeKey](../kubekey/) to define
 
 ```yaml
   kubernetes:
-    version: v1.22.10
+    version: v1.21.5
     imageRepo: kubesphere
     clusterName: cluster.local
     masqueradeAll: false
@@ -45,7 +45,7 @@ The below table describes the above parameters in detail.
    </tr>
    <tr>
      <td><code>version</code></td>
-     <td>The Kubernetes version to be installed. If you do not specify a Kubernetes version, {{< contentLink "docs/installing-on-linux/introduction/kubekey" "KubeKey" >}} v2.2.2 will install Kubernetes v1.23.7 by default. For more information, see {{< contentLink "docs/installing-on-linux/introduction/kubekey/#support-matrix" "Support Matrix" >}}.</td>
+     <td>The Kubernetes version to be installed. If you do not specify a Kubernetes version, {{< contentLink "docs/installing-on-linux/introduction/kubekey" "KubeKey" >}} v2.3.0 will install Kubernetes v1.23.7 by default. For more information, see {{< contentLink "docs/installing-on-linux/introduction/kubekey/#support-matrix" "Support Matrix" >}}.</td>
    </tr>
    <tr>
      <td><code>imageRepo</code></td>
@@ -111,7 +111,7 @@ The below table describes the above parameters in detail.
    </tr>
    <tr>
      <td><code>privateRegistry</code>*</td>
-     <td>Configure a private image registry for air-gapped installation (for example, a Docker local registry or Harbor). For more information, see {{< contentLink "docs/installing-on-linux/introduction/air-gapped-installation/" "Air-gapped Installation on Linux" >}}.</td>
+     <td>Configure a private image registry for air-gapped installation (for example, a Docker local registry or Harbor). For more information, see {{< contentLink "docs/v3.3/installing-on-linux/introduction/air-gapped-installation/" "Air-gapped Installation on Linux" >}}.</td>
    </tr> 
    </tbody>
    </table>

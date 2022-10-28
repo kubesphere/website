@@ -29,7 +29,7 @@ The following modules elaborate on the key features and benefits provided by Kub
 
 KubeSphere provides a graphical web console, giving users a clear view of a variety of Kubernetes resources, including Pods and containers, clusters and nodes, workloads, secrets and ConfigMaps, services and Ingress, jobs and CronJobs, and applications. With wizard user interfaces, users can easily interact with these resources for service discovery, HPA, image management, scheduling, high availability implementation, container health check and more.
 
-As KubeSphere 3.3.0 features enhanced observability, users are able to keep track of resources from multi-tenant perspectives, such as custom monitoring, events, auditing logs, alerts and notifications.
+As KubeSphere 3.3 features enhanced observability, users are able to keep track of resources from multi-tenant perspectives, such as custom monitoring, events, auditing logs, alerts and notifications.
 
 ### Cluster Upgrade and Scaling
 

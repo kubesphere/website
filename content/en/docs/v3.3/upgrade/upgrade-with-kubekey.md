@@ -1,6 +1,6 @@
 ---
 title: "Upgrade with KubeKey"
-keywords: "Kubernetes, upgrade, KubeSphere, 3.3.0, KubeKey"
+keywords: "Kubernetes, upgrade, KubeSphere, 3.3, KubeKey"
 description: "Use KubeKey to upgrade Kubernetes and KubeSphere."
 linkTitle: "Upgrade with KubeKey"
 weight: 7200
@@ -12,9 +12,21 @@ This tutorial demonstrates how to upgrade your cluster using KubeKey.
 ## Prerequisites
 
 - You need to have a KubeSphere cluster running v3.2.x. If your KubeSphere version is v3.1.x or earlier, upgrade to v3.2.x first.
-- Read [Release Notes for 3.3.0](../../../v3.3/release/release-v330/) carefully.
+- Read [Release Notes for 3.3](../../../v3.3/release/release-v330/) carefully.
 - Back up any important component beforehand.
 - Make your upgrade plan. Two scenarios are provided in this document for [all-in-one clusters](#all-in-one-cluster) and [multi-node clusters](#multi-node-cluster) respectively.
+
+## Major Updates
+
+In KubeSphere 3.3.1, some changes have made on built-in roles and permissions of custom roles. Therefore, before you upgrade KubeSphere to 3.3.1, please note the following:
+
+   - Change of built-in roles: Platform-level built-in roles `users-manager` and `workspace-manager` are removed. If an existing user has been bound to `users-manager` or `workspace-manager`, its role will be changed to `platform-regular` after the upgrade is completed. Role `platform-self-provisioner` is added. For more information about built-in roles, refer to [Create a user](../../quick-start/create-workspace-and-project).
+
+   - Some permission of custom roles are removed:
+       - Removed permissions of platform-level custom roles: user management, role management, and workspace management.
+       - Removed permissions of workspace-level custom roles: user management, role management, and user group management.
+       - Removed permissions of namespace-level custom roles: user management and role management.
+       - After you upgrade KubeSphere to 3.3.1, custom roles will be retained, but removed permissions of the custom roles will be revoked.
 
 ## Download KubeKey
 
@@ -27,7 +39,7 @@ Follow the steps below to download KubeKey before you upgrade your cluster.
 Download KubeKey from its [GitHub Release Page](https://github.com/kubesphere/kubekey/releases) or use the following command directly.
 
 ```bash
-curl -sfL https://get-kk.kubesphere.io | VERSION=v2.2.2 sh -
+curl -sfL https://get-kk.kubesphere.io | VERSION=v2.3.0 sh -
 ```
 
 {{</ tab >}}
@@ -43,7 +55,7 @@ export KKZONE=cn
 Run the following command to download KubeKey:
 
 ```bash
-curl -sfL https://get-kk.kubesphere.io | VERSION=v2.2.2 sh -
+curl -sfL https://get-kk.kubesphere.io | VERSION=v2.3.0 sh -
 ```
 
 {{< notice note >}}
@@ -58,7 +70,7 @@ After you download KubeKey, if you transfer it to a new machine also with poor n
 
 {{< notice note >}}
 
-The commands above download the latest release (v2.2.2) of KubeKey. You can change the version number in the command to download a specific version.
+The commands above download the latest release (v2.3.0) of KubeKey. You can change the version number in the command to download a specific version.
 
 {{</ notice >}} 
 
@@ -80,10 +92,10 @@ When upgrading Kubernetes, KubeKey will upgrade from one MINOR version to the ne
 
 ### All-in-one cluster
 
-Run the following command to use KubeKey to upgrade your single-node cluster to KubeSphere 3.3.0 and Kubernetes v1.22.10:
+Run the following command to use KubeKey to upgrade your single-node cluster to KubeSphere 3.3 and Kubernetes v1.22.10:
 
 ```bash
-./kk upgrade --with-kubernetes v1.22.10 --with-kubesphere v3.3.0
+./kk upgrade --with-kubernetes v1.22.10 --with-kubesphere v3.3.1
 ```
 
 To upgrade Kubernetes to a specific version, explicitly provide the version after the flag `--with-kubernetes`. Available versions are v1.19.x, v1.20.x, v1.21.x, v1.22.x, and v1.23.x (experimental support).
@@ -120,16 +132,16 @@ For more information, see [Edit the configuration file](../../installing-on-linu
 {{</ notice >}}
 
 #### Step 3: Upgrade your cluster
-The following command upgrades your cluster to KubeSphere 3.3.0 and Kubernetes v1.22.10:
+The following command upgrades your cluster to KubeSphere 3.3 and Kubernetes v1.22.10:
 
 ```bash
-./kk upgrade --with-kubernetes v1.22.10 --with-kubesphere v3.3.0 -f sample.yaml
+./kk upgrade --with-kubernetes v1.22.10 --with-kubesphere v3.3.1 -f sample.yaml
 ```
 
 To upgrade Kubernetes to a specific version, explicitly provide the version after the flag `--with-kubernetes`. Available versions are v1.19.x, v1.20.x, v1.21.x, v1.22.x, and v1.23.x (experimental support).
 
 {{< notice note >}}
 
-To use new features of KubeSphere 3.3.0, you may need to enable some pluggable components after the upgrade.
+To use new features of KubeSphere 3.3, you may need to enable some pluggable components after the upgrade.
 
 {{</ notice >}} 

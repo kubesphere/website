@@ -1,8 +1,8 @@
 ---
-title: "3.3.0 版本说明"  
-keywords: "Kubernetes, KubeSphere, 版本说明"  
-description: "KubeSphere 3.3.0 版本说明"  
-linkTitle: "3.3.0 版本说明"  
+title: "3.3 版本说明"
+keywords: "Kubernetes, KubeSphere, 版本说明"
+description: "KubeSphere 3.3 版本说明"
+linkTitle: "3.3 版本说明"
 weight: 18098
 ---
 
@@ -13,14 +13,19 @@ weight: 18098
 - 支持导入并管理代码仓库。
 - 新增多款基于 CRD 的内置流水线模板，支持参数自定义。
 - 支持查看流水线事件。
-
+### 优化增强
+- 支持通过 UI 编辑流水线 kubeconfig 绑定方式。
+### 问题修复
+- 修复用户查看 CI/CD 模板失败的问题。
+- 将 `Deprecated` 标签从 CI/CD 模版中移除，并将部署环节由 `kubernetesDeploy` 修改为 kubeconfig 绑定方式。
 ## 存储
 ### 新特性
 - 支持租户级存储类权限管理。
 - 新增卷快照内容和卷快照类管理。
 - 支持 deployment 与 statefulSet 资源调整存储卷声明修改后自动重启。
 - 支持存储卷声明设定使用阈值自动扩容。
-
+### 问题修复
+- 当用户使用 `hostpath` 作为存储时，必须填写主机路径。
 ## 多租户和多集群
 ### 新特性
 - 支持 kubeconfig 证书到期提示。
@@ -60,7 +65,7 @@ weight: 18098
 - 负载均衡类型选择新增 OpenELB。
 ### 问题修复
 - 修复了删除项目后项目网关遗留的问题。
-
+- 修复 IPv4/IPv6 双栈模式下用户创建路由规则失败的问题。
 ## App Store
 ### 问题修复
 - 修复 Helm Controller NPE 错误引起的 ks-controller-manager 崩溃。
@@ -68,6 +73,11 @@ weight: 18098
 ## 验证和授权
 ### 新特性
 - 支持手动启用/禁用用户。
+### 问题修复
+- 删除角色 `users-manager` 和 `workspace-manager`。
+- 新增角色 `platform-self-provisioner`。
+- 屏蔽用户自定义角色的部分权限。
+- 修复 `cluster-admin` 角色用户无法创建企业空间的问题。
 
 ## 用户体验
 - 新增 Kubernetes 审计日志开启提示。
@@ -87,5 +97,7 @@ weight: 18098
 - 优化了服务拓扑图详情展示窗口。
 - 优化了 ClusterConfiguration 更新机制，无需重启 ks-apiserver、ks-controller-manager。
 - 优化了部分页面文案描述。
+- 支持修改每页列表的展示数量。
+- 支持批量停止工作负载。
 
-有关 KubeSphere 3.3.0 的 Issue 和贡献者详细信息，请参阅 [GitHub](https://github.com/kubesphere/kubesphere/blob/master/CHANGELOG/CHANGELOG-3.3.md)。
+有关 KubeSphere 3.3 的 Issue 和贡献者详细信息，请参阅 [GitHub](https://github.com/kubesphere/kubesphere/blob/master/CHANGELOG/CHANGELOG-3.3.md)。

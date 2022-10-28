@@ -76,7 +76,7 @@ kubectl -n kubesphere-system rollout restart deploy ks-controller-manager
 
 ### Wrong code branch used
 
-If you used the incorrect version of ks-installer, the versions of different components would not match after the installation. Execute the following commands to check version consistency. Note that the correct image tag is `v3.3.0`.
+If you used the incorrect version of ks-installer, the versions of different components would not match after the installation. Execute the following commands to check version consistency. Note that the correct image tag is `v3.3.1`.
 
 ```
 kubectl -n kubesphere-system get deploy ks-installer -o jsonpath='{.spec.template.spec.containers[0].image}'

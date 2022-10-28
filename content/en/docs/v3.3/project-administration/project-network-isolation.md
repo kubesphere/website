@@ -152,7 +152,7 @@ If egress traffic is controlled, you should have a clear plan of what projects, 
 
 Q: Why cannot the custom monitoring system of KubeSphere get data after I enabled network isolation?
 
-A: After you enable custom monitoring, the KubeSphere monitoring system will access the metrics of the pod. You need to allow ingress traffic for the KubeSphere monitoring system. Otherwise, it cannot access pod metrics.
+A: After you enable custom monitoring, the KubeSphere monitoring system will access the metrics of the Pod. You need to allow ingress traffic for the KubeSphere monitoring system. Otherwise, it cannot access Pod metrics.
 
 KubeSphere provides a configuration item `allowedIngressNamespaces` to simplify similar configurations, which allows all projects listed in the configuration.
 

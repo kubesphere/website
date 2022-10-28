@@ -1,7 +1,7 @@
 ---
 title: "Monitoring"
 keywords: 'Kubernetes, KubeSphere, API, Monitoring'
-description: 'The API changes of the component **monitoring** in KubeSphere v3.3.0.'
+description: 'The API changes of the component **monitoring** in KubeSphere v3.3.1.'
 linkTitle: "Monitoring"
 weight: 17320
 ---
@@ -16,9 +16,9 @@ The time format of query parameters must be in Unix timestamps (the number of se
 
 ## Deprecated Metrics
 
-In KubeSphere 3.3.0, the metrics on the left have been renamed to the ones on the right.
+In KubeSphere 3.3, the metrics on the left have been renamed to the ones on the right.
 
-|V2.0|V3.0|
+|V2.0|V3.3|
 |---|---|
 |workload_pod_cpu_usage | workload_cpu_usage|
 |workload_pod_memory_usage| workload_memory_usage|
@@ -48,7 +48,7 @@ The following metrics have been deprecated and removed.
 |prometheus_up_sum|
 |prometheus_tsdb_head_samples_appended_rate|
 
-New metrics are introduced in 3.3.0.
+New metrics are introduced in KubeSphere 3.3.
 
 |New Metrics|
 |---|
@@ -59,7 +59,7 @@ New metrics are introduced in 3.3.0.
 
 ## Response Fields
 
-In KubeSphere 3.3.0, the response fields `metrics_level`, `status` and `errorType` are removed.
+In KubeSphere 3.3, the response fields `metrics_level`, `status` and `errorType` are removed.
 
 In addition, the field name `resource_name` has been replaced with the specific resource type names. These types are `node`, `workspace`, `namespace`, `workload`, `pod`, `container` and `persistentvolumeclaim`. For example, instead of `resource_name: node1`, you will get `node: node1`. See the example response below:
 

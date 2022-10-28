@@ -28,7 +28,7 @@ weight: 16310
    kubectl edit cc -n kubesphere-system ks-installer
    ```
 
-2. 将 `es.elasticsearchDataXXX`、`es.elasticsearchMasterXXX` 和 `status.logging` 的注释取消，将 `es.externalElasticsearchHost` 设置为 Elasticsearch 的地址，将 `es.externalElasticsearchPort` 设置为其端口号。以下示例供您参考：
+2. 将 `es.elasticsearchDataXXX`、`es.elasticsearchMasterXXX` 和 `status.logging` 的注释取消，将 `es.externalElasticsearchUrl` 设置为 Elasticsearch 的地址，将 `es.externalElasticsearchPort` 设置为其端口号。以下示例供您参考：
 
    ```yaml
    apiVersion: installer.kubesphere.io/v1alpha1
@@ -40,18 +40,14 @@ weight: 16310
    spec:
      ...
      common:
-       es:  # Storage backend for logging, events and auditing.
-         # master:
-         #   volumeSize: 4Gi  # The volume size of Elasticsearch master nodes.
-         #   replicas: 1      # The total number of master nodes. Even numbers are not allowed.
-         #   resources: {}
-         # data:
-         #   volumeSize: 20Gi  # The volume size of Elasticsearch data nodes.
-         #   replicas: 1       # The total number of data nodes.
-         #   resources: {}
+       es:
+         # elasticsearchDataReplicas: 1
+         # elasticsearchDataVolumeSize: 20Gi
+         # elasticsearchMasterReplicas: 1
+         # elasticsearchMasterVolumeSize: 4Gi
          elkPrefix: logstash
          logMaxAge: 7
-         externalElasticsearchHost: <192.168.0.2>
+         externalElasticsearchUrl: <192.168.0.2>
          externalElasticsearchPort: <9200>
      ...
    status:
@@ -91,9 +87,9 @@ KubeSphere 暂不支持启用 X-Pack Security 的 Elasticsearch 集成，此功�
 
 ## 如何设置审计、事件、日志及 Istio 日志信息的保留期限
 
-在 KubeSphere v3.3.0 之前的版本，您只能修改日志的保存期限（默认为 7 天）。除了日志外，KubeSphere v3.3.0 还支持您设置审计、事件及 Istio 日志信息的保留期限。
+KubeSphere v3.3 还支持您设置日志、审计、事件及 Istio 日志信息的保留期限。
 
-参考以下步骤更新 KubeKey 配置。
+您需要更新 KubeKey 配置并重新运行 `ks-installer`。
 
 1. 执行以下命令：
 
@@ -122,27 +118,10 @@ KubeSphere 暂不支持启用 X-Pack Security 的 Elasticsearch 集成，此功�
      ...
    ```
 
-   {{< notice note >}}
-   如果您未设置审计、事件及 Istio 日志信息的保留期限，默认使用 `logMaxAge` 的值。
-   {{</ notice >}}
+3. 重新运行 `ks-installer`。
 
-3. 在 YAML 文件中，删除 `es` 部分的内容，保存修改，ks-installer 会自动重启使配置生效。
-
-   ```yaml
-   apiVersion: installer.kubesphere.io/v1alpha1
-   kind: ClusterConfiguration
-   metadata:
-     name: ks-installer
-     namespace: kubesphere-system
-   ...
-   status:
-     alerting:
-       enabledTime: 2022-08-11T06:22:01UTC
-       status: enabled
-     ...
-     es:   # delete this line.
-       enabledTime: 2022-08-11T06:22:01UTC    # delete this line.
-       status: enabled   # delete this line.
+   ```bash
+   kubectl rollout restart deploy -n kubesphere-system ks-installer
    ```
 
 ## 无法使用工具箱找到某些节点上工作负载的日志

@@ -89,7 +89,7 @@ As you install KubeSphere in an air-gapped environment, you need to prepare an i
 1. Download the image list file `images-list.txt` from a machine that has access to the Internet through the following command:
 
    ```bash
-   curl -L -O https://github.com/kubesphere/ks-installer/releases/download/v3.3.0/images-list.txt
+   curl -L -O https://github.com/kubesphere/ks-installer/releases/download/v3.3.1/images-list.txt
    ```
 
    {{< notice note >}}
@@ -101,7 +101,7 @@ As you install KubeSphere in an air-gapped environment, you need to prepare an i
 2. Download `offline-installation-tool.sh`. 
 
    ```bash
-   curl -L -O https://github.com/kubesphere/ks-installer/releases/download/v3.3.0/offline-installation-tool.sh
+   curl -L -O https://github.com/kubesphere/ks-installer/releases/download/v3.3.1/offline-installation-tool.sh
    ```
 
 3. Make the `.sh` file executable.
@@ -124,7 +124,7 @@ As you install KubeSphere in an air-gapped environment, you need to prepare an i
      -l IMAGES-LIST         : text file with list of images.
      -r PRIVATE-REGISTRY    : target private registry:port.
      -s                     : save model will be applied. Pull the images in the IMAGES-LIST and save images as a tar.gz file.
-     -v KUBERNETES-VERSION  : download kubernetes' binaries. default: v1.22.10
+     -v KUBERNETES-VERSION  : download kubernetes' binaries. default: v1.21.5
      -h                     : usage message
    ```
 
@@ -161,8 +161,8 @@ Similar to installing KubeSphere on an existing Kubernetes cluster in an online 
 1. Execute the following commands to download these two files and transfer them to your machine that serves as the taskbox for installation.
 
    ```bash
-   curl -L -O https://github.com/kubesphere/ks-installer/releases/download/v3.3.0/cluster-configuration.yaml
-   curl -L -O https://github.com/kubesphere/ks-installer/releases/download/v3.3.0/kubesphere-installer.yaml
+   curl -L -O https://github.com/kubesphere/ks-installer/releases/download/v3.3.1/cluster-configuration.yaml
+   curl -L -O https://github.com/kubesphere/ks-installer/releases/download/v3.3.1/kubesphere-installer.yaml
    ```
 
 2. Edit `cluster-configuration.yaml` to add your private image registry. For example, `dockerhub.kubekey.local` is the registry address in this tutorial, then use it as the value of `.spec.local_registry` as below:
@@ -242,37 +242,37 @@ To access the console, make sure port 30880 is opened in your security group.
 
 ## Appendix
 
-### Image list of KubeSphere 3.3.0
+### Image list of KubeSphere 3.3
 
 ```txt
 ##k8s-images
-kubesphere/kube-apiserver:v1.23.7
-kubesphere/kube-controller-manager:v1.23.7
-kubesphere/kube-proxy:v1.23.7
-kubesphere/kube-scheduler:v1.23.7
-kubesphere/kube-apiserver:v1.24.1
-kubesphere/kube-controller-manager:v1.24.1
-kubesphere/kube-proxy:v1.24.1
-kubesphere/kube-scheduler:v1.24.1
-kubesphere/kube-apiserver:v1.22.10
-kubesphere/kube-controller-manager:v1.22.10
-kubesphere/kube-proxy:v1.22.10
-kubesphere/kube-scheduler:v1.22.10
-kubesphere/kube-apiserver:v1.21.13
-kubesphere/kube-controller-manager:v1.21.13
-kubesphere/kube-proxy:v1.21.13
-kubesphere/kube-scheduler:v1.21.13
+kubesphere/kube-apiserver:v1.23.10
+kubesphere/kube-controller-manager:v1.23.10
+kubesphere/kube-proxy:v1.23.10
+kubesphere/kube-scheduler:v1.23.10
+kubesphere/kube-apiserver:v1.24.3
+kubesphere/kube-controller-manager:v1.24.3
+kubesphere/kube-proxy:v1.24.3
+kubesphere/kube-scheduler:v1.24.3
+kubesphere/kube-apiserver:v1.22.12
+kubesphere/kube-controller-manager:v1.22.12
+kubesphere/kube-proxy:v1.22.12
+kubesphere/kube-scheduler:v1.22.12
+kubesphere/kube-apiserver:v1.21.14
+kubesphere/kube-controller-manager:v1.21.14
+kubesphere/kube-proxy:v1.21.14
+kubesphere/kube-scheduler:v1.21.14
 kubesphere/pause:3.7
 kubesphere/pause:3.6
 kubesphere/pause:3.5
 kubesphere/pause:3.4.1
 coredns/coredns:1.8.0
 coredns/coredns:1.8.6
-calico/cni:v3.20.0
-calico/kube-controllers:v3.20.0
-calico/node:v3.20.0
-calico/pod2daemon-flexvol:v3.20.0
-calico/typha:v3.20.0
+calico/cni:v3.23.2
+calico/kube-controllers:v3.23.2
+calico/node:v3.23.2
+calico/pod2daemon-flexvol:v3.23.2
+calico/typha:v3.23.2
 kubesphere/flannel:v0.12.0
 openebs/provisioner-localpv:2.10.1
 openebs/linux-utils:2.10.0
@@ -280,10 +280,11 @@ library/haproxy:2.3
 kubesphere/nfs-subdir-external-provisioner:v4.0.2
 kubesphere/k8s-dns-node-cache:1.15.12
 ##kubesphere-images
-kubesphere/ks-installer:v3.3.0
-kubesphere/ks-apiserver:v3.3.0
-kubesphere/ks-console:v3.3.0
-kubesphere/ks-controller-manager:v3.3.0
+kubesphere/ks-installer:v3.3.1
+kubesphere/ks-apiserver:v3.3.1
+kubesphere/ks-console:v3.3.1
+kubesphere/ks-controller-manager:v3.3.1
+kubesphere/ks-upgrade:v3.3.1
 kubesphere/kubectl:v1.22.0
 kubesphere/kubectl:v1.21.0
 kubesphere/kubectl:v1.20.0
@@ -307,11 +308,11 @@ kubesphere/edgeservice:v0.2.0
 ##gatekeeper-images
 openpolicyagent/gatekeeper:v3.5.2
 ##openpitrix-images
-kubesphere/openpitrix-jobs:v3.2.1
+kubesphere/openpitrix-jobs:v3.3.1
 ##kubesphere-devops-images
-kubesphere/devops-apiserver:v3.3.0
-kubesphere/devops-controller:v3.3.0
-kubesphere/devops-tools:v3.3.0
+kubesphere/devops-apiserver:v3.3.1
+kubesphere/devops-controller:v3.3.1
+kubesphere/devops-tools:v3.3.1
 kubesphere/ks-jenkins:v3.3.0-2.319.1
 jenkins/inbound-agent:4.10-2
 kubesphere/builder-base:v3.2.2
@@ -360,7 +361,7 @@ prom/prometheus:v2.34.0
 kubesphere/prometheus-config-reloader:v0.55.1
 kubesphere/prometheus-operator:v0.55.1
 kubesphere/kube-rbac-proxy:v0.11.0
-kubesphere/kube-state-metrics:v2.3.0
+kubesphere/kube-state-metrics:v2.5.0
 prom/node-exporter:v1.3.1
 prom/alertmanager:v0.23.0
 thanosio/thanos:v0.25.2
@@ -399,7 +400,6 @@ joosthofman/wget:1.0
 nginxdemos/hello:plain-text
 wordpress:4.8-apache
 mirrorgooglecontainers/hpa-example:latest
-java:openjdk-8-jre-alpine
 fluent/fluentd:v1.4.2-2.0
 perl:latest
 kubesphere/examples-bookinfo-productpage-v1:1.16.2

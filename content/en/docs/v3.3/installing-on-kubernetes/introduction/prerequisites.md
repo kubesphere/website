@@ -8,7 +8,7 @@ weight: 4120
 
 You can install KubeSphere on virtual machines and bare metal with Kubernetes also provisioned. In addition, KubeSphere can also be deployed on cloud-hosted and on-premises Kubernetes clusters as long as your Kubernetes cluster meets the prerequisites below.
 
-- To install KubeSphere 3.3.0 on Kubernetes, your Kubernetes version must be v1.19.x, v1.20.x, v1.21.x, v1.22.x, and v1.23.x (experimental support).
+- To install KubeSphere 3.3 on Kubernetes, your Kubernetes version must be v1.19.x, v1.20.x, v1.21.x, v1.22.x, and v1.23.x (experimental support).
 - Available CPU > 1 Core and Memory > 2 G. Only x86_64 CPUs are supported, and Arm CPUs are not fully supported at present.
 - A **default** StorageClass in your Kubernetes cluster is configured; use `kubectl get sc` to verify it.
 - The CSR signing feature is activated in kube-apiserver when it is started with the `--cluster-signing-cert-file` and `--cluster-signing-key-file` parameters. See [RKE installation issue](https://github.com/kubesphere/kubesphere/issues/1925#issuecomment-591698309).

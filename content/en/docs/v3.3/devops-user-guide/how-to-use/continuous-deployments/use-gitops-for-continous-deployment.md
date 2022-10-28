@@ -6,7 +6,7 @@ linkTitle: "Use GitOps to Achieve Continuous Deployment of Applications"
 weight: 11221
 ---
 
-In KubeSphere 3.3.0, we introduce the GitOps concept, which is a way of implementing continuous deployment for cloud-native applications. The core component of GitOps is a Git repository that always stores applications and declarative description of the infrastructure for version control. With GitOps and Kubernetes, you can enable CI/CD pipelines to apply changes to any cluster, which ensures consistency in cross-cloud deployment scenarios.
+In KubeSphere 3.3, we introduce the GitOps concept, which is a way of implementing continuous deployment for cloud-native applications. The core component of GitOps is a Git repository that always stores applications and declarative description of the infrastructure for version control. With GitOps and Kubernetes, you can enable CI/CD pipelines to apply changes to any cluster, which ensures consistency in cross-cloud deployment scenarios.
 
 This section walks you through the process of deploying an application using a continuous deployment.
 ## Prerequisites

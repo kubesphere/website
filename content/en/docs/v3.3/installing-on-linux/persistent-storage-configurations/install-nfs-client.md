@@ -11,7 +11,7 @@ This tutorial demonstrates how to set up a KubeSphere cluster and configure NFS 
 {{< notice note >}}
 
 - Ubuntu 16.04 is used as an example in this tutorial.
-- NFS is incompatible with some applications, for example, Prometheus, which may result in pod creation failures. If you need to use NFS in the production environment, ensure that you have understood the risks. For more information, contact support@kubesphere.cloud.
+- It is not recommended that you use NFS storage for production (especially on Kubernetes version 1.20 or later) as some issues may occur, such as `failed to obtain lock` and `input/output error`, resulting in Pod `CrashLoopBackOff`. Besides, some apps may not be compatible with NFS, including [Prometheus](https://github.com/prometheus/prometheus/blob/03b354d4d9386e4b3bfbcd45da4bb58b182051a5/docs/storage.md#operational-aspects).
 
 {{</ notice >}}
 
@@ -71,7 +71,7 @@ Follow the steps below to download [KubeKey](../../../installing-on-linux/introd
 Download KubeKey from its [GitHub Release Page](https://github.com/kubesphere/kubekey/releases) or use the following command directly.
 
 ```bash
-curl -sfL https://get-kk.kubesphere.io | VERSION=v2.2.2 sh -
+curl -sfL https://get-kk.kubesphere.io | VERSION=v2.3.0 sh -
 ```
 
 {{</ tab >}}
@@ -87,7 +87,7 @@ export KKZONE=cn
 Run the following command to download KubeKey:
 
 ```bash
-curl -sfL https://get-kk.kubesphere.io | VERSION=v2.2.2 sh -
+curl -sfL https://get-kk.kubesphere.io | VERSION=v2.3.0 sh -
 ```
 
 {{< notice note >}}
@@ -102,7 +102,7 @@ After you download KubeKey, if you transfer it to a new machine also with poor n
 
 {{< notice note >}}
 
-The commands above download the latest release (v2.2.2) of KubeKey. You can change the version number in the command to download a specific version.
+The commands above download the latest release (v2.3.0) of KubeKey. You can change the version number in the command to download a specific version.
 
 {{</ notice >}}
 
@@ -117,12 +117,12 @@ chmod +x kk
 1. Specify a Kubernetes version and a KubeSphere version that you want to install. For example:
 
    ```bash
-   ./kk create config --with-kubernetes v1.22.10 --with-kubesphere v3.3.0
+   ./kk create config --with-kubernetes v1.22.10 --with-kubesphere v3.3.1
    ```
 
    {{< notice note >}}
 
-   - Recommended Kubernetes versions for KubeSphere 3.3.0: v1.19.x, v1.20.x, v1.21.x, v1.22.x, and v1.23.x (experimental support). If you do not specify a Kubernetes version, KubeKey will install Kubernetes v1.23.7 by default. For more information about supported Kubernetes versions, see [Support Matrix](../../../installing-on-linux/introduction/kubekey/#support-matrix).
+   - Recommended Kubernetes versions for KubeSphere 3.3: v1.19.x, v1.20.x, v1.21.x, v1.22.x, and v1.23.x (experimental support). If you do not specify a Kubernetes version, KubeKey will install Kubernetes v1.23.7 by default. For more information about supported Kubernetes versions, see [Support Matrix](../../../installing-on-linux/introduction/kubekey/#support-matrix).
 
    - If you do not add the flag `--with-kubesphere` in the command in this step, KubeSphere will not be deployed unless you install it using the `addons` field in the configuration file or add this flag again when you use `./kk create cluster` later.
    - If you add the flag `--with-kubesphere` without specifying a KubeSphere version, the latest version of KubeSphere will be installed.
@@ -157,7 +157,7 @@ chmod +x kk
        address: ""
        port: 6443
      kubernetes:
-       version: v1.22.10
+       version: v1.21.5
        imageRepo: kubesphere
        clusterName: cluster.local
      network:

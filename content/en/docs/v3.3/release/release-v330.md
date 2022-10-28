@@ -1,8 +1,8 @@
 ---
-title: "Release Notes for 3.3.0"
+title: "Release Notes for 3.3"
 keywords: "Kubernetes, KubeSphere, Release Notes"
-description: "KubeSphere 3.3.0 Release Notes"
-linkTitle: "Release Notes - 3.3.0"
+description: "KubeSphere 3.3 Release Notes"
+linkTitle: "Release Notes - 3.3"
 weight: 18098
 ---
 
@@ -13,13 +13,19 @@ weight: 18098
 - Add support for importing and managing code repositories.
 - Add support for built-in CRD-based pipeline templates and parameter customization.
 - Add support for viewing pipeline events.
-
+### Enhancements & Updates
+- Add support for editing the binding mode of the pipeline's kubeconfig file on the UI.
+### Bug Fixes
+- Fix an issue where users fail to check the CI/CD template.
+- Remove the `Deprecated` tag from the CI/CD template and replace `kubernetesDeploy` with `kubeconfig binding` at the deployment phase.
 ## Storage
 ### Features
 - Add support for tenant-level storage class permission management.
 - Add the volume snapshot content management and volume snapshot class management features.
 - Add support for automatic restart of deployments and statefulsets after a PVC has been changed.
 - Add the PVC auto expansion feature, which automatically expands PVCs when remaining capacity is insufficient.
+### Bug Fixes
+- Set `hostpath` as a required option when users are mounting volumes.
 
 ## Multi-tenancy and Multi-cluster
 ### Features
@@ -61,7 +67,7 @@ weight: 18098
 - Integrate OpenELB with KubeSphere for exposing LoadBalancer services.
 ### Bug Fixes
 - Fix an issue where the gateway of a project is not deleted after the project is deleted.
-
+- Fix an issue where users fail to create routing rules in IPv6 and IPv4 dual-stack environments.
 ## App Store
 ### Bug Fixes
 - Fix a ks-controller-manager crash caused by Helm controller NPE errors.
@@ -69,7 +75,10 @@ weight: 18098
 ## Authentication & Authorization
 ### Features
 - Add support for manually disabling and enabling users.
-
+### Bug Fixes
+- Delete roles `users-manager` and `workspace-manager`.
+- Add role `platform-self-provisioner`.
+- Block some permissions of user-defined roles.
 ## User Experience
 - Add a prompt when the audit log of Kubernetes has been enabled.
 - Add the lifecycle management feature for containers.
@@ -87,6 +96,7 @@ weight: 18098
 - Prevent ks-apiserver and ks-controller-manager from restarting when the cluster configuration is changed.
 - Optimize some UI texts.
 - Optimize display of the service topology on the **Service** page.
+- Add support for changing the number of items displayed on each page of a table.
+- Add support for batch stopping workloads.
 
-
-For more information about issues and contributors of KubeSphere 3.3.0, see [GitHub](https://github.com/kubesphere/kubesphere/blob/master/CHANGELOG/CHANGELOG-3.3.md).
+For more information about issues and contributors of KubeSphere 3.3, see [GitHub](https://github.com/kubesphere/kubesphere/blob/master/CHANGELOG/CHANGELOG-3.3.md).

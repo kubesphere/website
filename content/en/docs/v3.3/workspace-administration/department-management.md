@@ -19,7 +19,7 @@ A department in a workspace is a logical unit used for permission control. You c
 
 1. Log in to the KubeSphere web console as `ws-admin` and go to the `demo-ws` workspace.
 
-2. On the left navigation bar, choose **Department Management** under **Workspace Settings**, and click **Set Departments** on the right.
+2. On the left navigation bar, choose **Departments** under **Workspace Settings**, and click **Set Departments** on the right.
 
 3. In the **Set Departments** dialog box, set the following parameters and click **OK** to create a department.
 
@@ -36,11 +36,11 @@ A department in a workspace is a logical unit used for permission control. You c
    * **Project Role**: Role of all department members in a project. You can click **Add Project** to specify multiple project roles. Only one role can be specified for each project.
    * **DevOps Project Role**: Role of all department members in a DevOps project. You can click **Add DevOps Project** to specify multiple DevOps project roles. Only one role can be specified for each DevOps project.
 
-4. Click **OK** after the department is created, and then click **Close**. On the **Department Management** page, the created department is displayed in a department tree on the left.
+4. Click **OK** after the department is created, and then click **Close**. On the **Departments** page, the created department is displayed in a department tree on the left.
 
 ## Assign a User to a Department
 
-1. On the **Department Management** page, select a department in the department tree on the left and click **Not Assigned** on the right.
+1. On the **Departments** page, select a department in the department tree on the left and click **Not Assigned** on the right.
 
 2. In the user list, click <img src="/images/docs/v3.3/workspace-administration/department-management/assign.png" height="20px"> on the right of a user, and click **OK** for the displayed message to assign the user to the department.
 
@@ -53,12 +53,12 @@ A department in a workspace is a logical unit used for permission control. You c
 
 ## Remove a User from a Department
 
-1. On the **Department Management** page, select a department in the department tree on the left and click **Assigned** on the right.
+1. On the **Departments** page, select a department in the department tree on the left and click **Assigned** on the right.
 2. In the assigned user list, click <img src="/images/docs/v3.3/workspace-administration/department-management/remove.png" height="20px"> on the right of a user, enter the username in the displayed dialog box, and click **OK** to remove the user.
 
 ## Delete and Edit a Department
 
-1. On the **Department Management** page, click **Set Departments**.
+1. On the **Departments** page, click **Set Departments**.
 
 2. In the **Set Departments** dialog box, on the left, click the upper level of the department to be edited or deleted.
 

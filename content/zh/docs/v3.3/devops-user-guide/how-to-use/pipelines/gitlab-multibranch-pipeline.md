@@ -8,7 +8,7 @@ weight: 11215
 
 [GitLab](https://about.gitlab.com/) 是一个提供公开和私有仓库的开源代码仓库平台。它也是一个完整的 DevOps 平台，专业人士能够使用 GitLab 在项目中执行任务。
 
-在 KubeSphere 3.3.0 以及更新版本中，您可以使用 GitLab 在 DevOps 项目中创建多分支流水线。本教程介绍如何使用 GitLab 创建多分支流水线。
+在 KubeSphere 3.3 中，您可以使用 GitLab 在 DevOps 项目中创建多分支流水线。本教程介绍如何使用 GitLab 创建多分支流水线。
 
 ## 准备工作
 

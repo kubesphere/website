@@ -10,7 +10,7 @@ weight: 3160
 
 ```yaml
   kubernetes:
-    version: v1.22.10
+    version: v1.21.5
     imageRepo: kubesphere
     clusterName: cluster.local
     masqueradeAll: false
@@ -45,7 +45,7 @@ weight: 3160
    </tr>
    <tr>
      <td><code>version</code></td>
-     <td>Kubernetes 安装版本。如未指定 Kubernetes 版本，{{< contentLink "docs/installing-on-linux/introduction/kubekey" "KubeKey" >}} v2.2.2 默认安装 Kubernetes v1.23.7。有关更多信息，请参阅{{< contentLink "docs/installing-on-linux/introduction/kubekey/#support-matrix" "支持矩阵" >}}。</td>
+     <td>Kubernetes 安装版本。如未指定 Kubernetes 版本，{{< contentLink "docs/installing-on-linux/introduction/kubekey" "KubeKey" >}} v2.3.0 默认安装 Kubernetes v1.23.7。有关更多信息，请参阅{{< contentLink "docs/installing-on-linux/introduction/kubekey/#support-matrix" "支持矩阵" >}}。</td>
    </tr>
    <tr>
      <td><code>imageRepo</code></td>
@@ -112,7 +112,7 @@ weight: 3160
    </tr>
    <tr>
      <td><code>privateRegistry</code>*</td>
-     <td>配置私有镜像仓库，用于离线安装（例如，Docker 本地仓库或 Harbor）。有关详细信息，请参阅{{< contentLink "docs/installing-on-linux/introduction/air-gapped-installation/" "离线安装" >}}。</td>
+     <td>配置私有镜像仓库，用于离线安装（例如，Docker 本地仓库或 Harbor）。有关详细信息，请参阅{{< contentLink "docs/v3.3/installing-on-linux/introduction/air-gapped-installation/" "离线安装" >}}。</td>
    </tr> 
    </tbody>
    </table>

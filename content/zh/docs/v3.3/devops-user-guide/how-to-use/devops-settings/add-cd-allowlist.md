@@ -5,7 +5,7 @@ description: '介绍如何在 KubeSphere 中添加持续部署白名单。'
 linkTitle: "添加持续部署白名单"
 weight: 11243
 ---
-在 KubeSphere 3.3.0 中，您可以通过设置白名单限制资源持续部署的目标位置。
+在 KubeSphere 3.3 中，您可以通过设置白名单限制资源持续部署的目标位置。
 
 ## 准备工作
 

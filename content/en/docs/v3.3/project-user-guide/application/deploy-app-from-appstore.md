@@ -27,7 +27,7 @@ This tutorial demonstrates how to quickly deploy [NGINX](https://www.nginx.com/)
 
    {{</ notice >}} 
 
-2. Search for NGINX, click it, and click **Install** on the **App Information** page. Make sure you click **Agree** in the displayed **App Deploy Agreement** dialog box.
+2. Search for NGINX, click it, and click **Install** on the **App Information** page. Make sure you click **Agree** in the displayed **Deployment Agreement** dialog box.
 
 3. Set a name and select an app version, confirm the location where NGINX will be deployed , and click **Next**.
 

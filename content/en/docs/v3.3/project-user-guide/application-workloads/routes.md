@@ -48,11 +48,15 @@ A Route on KubeSphere is the same as an [Ingress](https://kubernetes.io/docs/con
 
 2. Select a mode, configure routing rules, click **√**, and click **Next**.
 
-   **Domain Name**: Set a domain name for the route.
-
-   **Protocol**：Select `http` or `https`. If `https` is selected, you need to select a Secret that contains the `tls.crt` (TLS certificate) and `tls.key` (TLS private key) keys used for encryption.
-
-   **Paths**：Map each service to a path. Enter a path name and select a service and port. You can also click **Add** to add multiple paths.
+   * **Auto Generate**: KubeSphere automatically generates a domain name in the `<Service name>.<Project name>.<Gateway address>.nip.io` format and the domain name is automatically resolved by [nip.io](https://nip.io/) into the gateway address. This mode supports only HTTP.
+     
+     * **Paths**: Map each Service to a path. You can click **Add** to add multiple paths.
+     
+   * **Specify Domain**: A user-defined domain name is used. This mode supports both HTTP and HTTPS.
+     
+     * **Domain Name**: Set a domain name for the Route.
+     * **Protocol**: Select `http` or `https`. If `https` is selected, you need to select a Secret that contains the `tls.crt` (TLS certificate) and `tls.key` (TLS private key) keys used for encryption.
+     * **Paths**: Map each Service to a path. You can click **Add** to add multiple paths.
 
 ### (Optional) Step 3: Configure advanced settings
 

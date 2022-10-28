@@ -7,14 +7,6 @@ Weight: 6940
 ---
 
 [启用 KubeSphere 可插拔组件之后](../../pluggable-components/)，还可以根据以下步骤卸载他们。请在卸载这些组件之前，备份所有重要数据。
-
-{{< notice note >}}
-
-KubeSphere 3.3.0 卸载某些可插拔组件的方法与 KubeSphere v3.0.0 不相同。有关 KubeSphere v3.0.0 卸载可插拔组件的详细方法，请参阅从 KubeSphere 上卸载可插拔组件](https://v3-0.docs.kubesphere.io/zh/docs/faq/installation/uninstall-pluggable-components/)。
-
-
-{{</ notice >}}
-
 ## 准备工作
 
 在卸载除服务拓扑图和容器组 IP 池之外的可插拔组件之前，必须将 CRD 配置文件 `ClusterConfiguration` 中的 `ks-installer` 中的 `enabled` 字段的值从 `true` 改为 `false`。
@@ -129,7 +121,7 @@ kubectl -n kubesphere-system edit clusterconfiguration ks-installer
 
    {{< notice note >}}
 
-   KubeSphere 3.3.0 通知系统为默认安装，您无需卸载。
+   KubeSphere 3.3 通知系统为默认安装，您无需卸载。
 
    {{</ notice >}} 
 

@@ -7,7 +7,7 @@ description: "了解如何在华为云容器引擎上部署 KubeSphere。"
 weight: 4250
 ---
 
-本指南将介绍如果在[华为云 CCE 容器引擎](https://support.huaweicloud.com/cce/)上部署并使用 KubeSphere 3.3.0 平台。
+本指南将介绍如果在[华为云 CCE 容器引擎](https://support.huaweicloud.com/cce/)上部署并使用 KubeSphere 3.3 平台。
 
 ## 华为云 CCE 环境准备
 
@@ -15,7 +15,7 @@ weight: 4250
 
 首先按使用环境的资源需求创建 Kubernetes 集群，满足以下一些条件即可（如已有环境并满足条件可跳过本节内容）：
 
-- 如需在 Kubernetes 上安装 KubeSphere 3.3.0，您的 Kubernetes 版本必须为：v1.19.x，v1.20.x，v1.21.x，v1.22.x 或 v1.23.x（实验性支持）。
+- 如需在 Kubernetes 上安装 KubeSphere 3.3，您的 Kubernetes 版本必须为：v1.19.x，v1.20.x，v1.21.x，v1.22.x 或 v1.23.x（实验性支持）。
 - 需要确保 Kubernetes 集群所使用的云主机的网络正常工作，可以通过在创建集群的同时**自动创建**或**使用已有**弹性 IP；或者在集群创建后自行配置网络（如配置 [NAT 网关](https://support.huaweicloud.com/natgateway/)）。
 - 工作节点规格建议选择 `s3.xlarge.2` 的 `4核｜8GB` 配置，并按需扩展工作节点数量（通常生产环境需要 3 个及以上工作节点）。
 
@@ -74,8 +74,8 @@ volumeBindingMode: Immediate
 接下来就可以使用 [ks-installer](https://github.com/kubesphere/ks-installer) 在已有的 Kubernetes 集群上来部署 KubeSphere，建议首先还是以最小功能集进行安装，可执行以下命令：
 
 ```bash
-kubectl apply -f https://github.com/kubesphere/ks-installer/releases/download/v3.3.0/kubesphere-installer.yaml
-kubectl apply -f https://github.com/kubesphere/ks-installer/releases/download/v3.3.0/cluster-configuration.yaml
+kubectl apply -f https://github.com/kubesphere/ks-installer/releases/download/v3.3.1/kubesphere-installer.yaml
+kubectl apply -f https://github.com/kubesphere/ks-installer/releases/download/v3.3.1/cluster-configuration.yaml
 ```
 
 执行部署命令后，可以通过进入**工作负载** > **容器组 Pod** 界面，在右侧面板中查询 `kubesphere-system` 命名空间下的 Pod 运行状态了解 KubeSphere 平台最小功能集的部署状态；通过该命名空间下 `ks-console-xxxx` 容器的状态来了解 KubeSphere 控制台应用的可用状态。

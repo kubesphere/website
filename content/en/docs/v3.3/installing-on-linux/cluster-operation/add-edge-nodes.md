@@ -21,55 +21,12 @@ This tutorial demonstrates how to add an edge node to your cluster.
 ## Prerequisites
 
 - You have enabled [KubeEdge](../../../pluggable-components/kubeedge/).
-- To prevent compatability issues, you are advised to install Kubernetes v1.21.x or earlier.
 - You have an available node to serve as an edge node. The node can run either Ubuntu (recommended) or CentOS. This tutorial uses Ubuntu 18.04 as an example.
 - Edge nodes, unlike Kubernetes cluster nodes, should work in a separate network.
 
-## Prevent non-edge workloads from being scheduled to edge nodes
-
-Due to the tolerations some daemonsets (for example, Calico) have, to ensure that the newly added edge nodes work properly, you need to run the following command to manually patch the pods so that non-edge workloads will not be scheduled to the edge nodes.
-
-```bash
-#!/bin/bash
-   
-   
-NoShedulePatchJson='{"spec":{"template":{"spec":{"affinity":{"nodeAffinity":{"requiredDuringSchedulingIgnoredDuringExecution":{"nodeSelectorTerms":[{"matchExpressions":[{"key":"node-role.kubernetes.io/edge","operator":"DoesNotExist"}]}]}}}}}}}'
-   
-ns="kube-system"
-
-
-DaemonSets=("nodelocaldns" "kube-proxy" "calico-node")
-
-length=${#DaemonSets[@]}
-   
-for((i=0;i<length;i++));  
-do
-         ds=${DaemonSets[$i]}
-        echo "Patching resources:DaemonSet/${ds}" in ns:"$ns",
-        kubectl -n $ns patch DaemonSet/${ds} --type merge --patch "$NoShedulePatchJson"
-        sleep 1
-done
-```
-
-## Create Firewall Rules and Port Forwarding Rules
-
-To make sure edge nodes can successfully talk to your cluster, you must forward ports for outside traffic to get into your network. Specifically, map an external port to the corresponding internal IP address (control plane node) and port based on the table below. Besides, you also need to create firewall rules to allow traffic to these ports (`10000` to `10004`).
-
-   {{< notice note >}}
-   In `ClusterConfiguration` of the ks-installer, if you set an internal IP address, you need to set the forwarding rule. If you have not set the forwarding rule, you can directly connect to ports 30000 to 30004.
-   {{</ notice >}} 
-
-| Fields              | External Ports | Fields                  | Internal Ports |
-| ------------------- | -------------- | ----------------------- | -------------- |
-| `cloudhubPort`      | `10000`        | `cloudhubNodePort`      | `30000`        |
-| `cloudhubQuicPort`  | `10001`        | `cloudhubQuicNodePort`  | `30001`        |
-| `cloudhubHttpsPort` | `10002`        | `cloudhubHttpsNodePort` | `30002`        |
-| `cloudstreamPort`   | `10003`        | `cloudstreamNodePort`   | `30003`        |
-| `tunnelPort`        | `10004`        | `tunnelNodePort`        | `30004`        |
-
 ## Configure an Edge Node
 
-You need to configure the edge node as follows.
+You need to install a container runtime and configure EdgeMesh on your edge node.
 
 ### Install a container runtime
 
@@ -115,6 +72,22 @@ Perform the following steps to configure [EdgeMesh](https://kubeedge.io/en/docs/
    net.ipv4.ip_forward = 1
    ```
 
+## Create Firewall Rules and Port Forwarding Rules
+
+To make sure edge nodes can successfully talk to your cluster, you must forward ports for outside traffic to get into your network. Specifically, map an external port to the corresponding internal IP address (control plane node) and port based on the table below. Besides, you also need to create firewall rules to allow traffic to these ports (`10000` to `10004`).
+
+   {{< notice note >}}
+   In `ClusterConfiguration` of the ks-installer, if you set an internal IP address, you need to set the forwarding rule. If you have not set the forwarding rule, you can directly connect to ports 30000 to 30004.
+   {{</ notice >}} 
+
+| Fields              | External Ports | Fields                  | Internal Ports |
+| ------------------- | -------------- | ----------------------- | -------------- |
+| `cloudhubPort`      | `10000`        | `cloudhubNodePort`      | `30000`        |
+| `cloudhubQuicPort`  | `10001`        | `cloudhubQuicNodePort`  | `30001`        |
+| `cloudhubHttpsPort` | `10002`        | `cloudhubHttpsNodePort` | `30002`        |
+| `cloudstreamPort`   | `10003`        | `cloudstreamNodePort`   | `30003`        |
+| `tunnelPort`        | `10004`        | `tunnelNodePort`        | `30004`        |
+
 ## Add an Edge Node
 
 1. Log in to the console as `admin` and click **Platform** in the upper-left corner.
@@ -129,8 +102,6 @@ Perform the following steps to configure [EdgeMesh](https://kubeedge.io/en/docs/
 
 3. Click **Add**. In the dialog that appears, set a node name and enter an internal IP address of your edge node. Click **Validate** to continue.
 
-   ![add-edge-node](/images/docs/v3.3/installing-on-linux/add-and-delete-nodes/add-edge-nodes/add-edge-node.png)
-
    {{< notice note >}} 
 
    - The internal IP address is only used for inter-node communication and you do not necessarily need to use the actual internal IP address of the edge node. As long as the IP address is successfully validated, you can use it.
@@ -139,8 +110,6 @@ Perform the following steps to configure [EdgeMesh](https://kubeedge.io/en/docs/
    {{</ notice >}} 
 
 4. Copy the command automatically created under **Edge Node Configuration Command** and run it on your edge node.
-
-   ![edge-command](/images/docs/v3.3/installing-on-linux/add-and-delete-nodes/add-edge-nodes/edge-command.png)
 
    {{< notice note >}}
 
@@ -200,7 +169,38 @@ To collect monitoring information on edge node, you need to enable `metrics_serv
     systemctl restart edgecore.service
     ```
 
-9. If you still cannot see the monitoring data, run the following command:
+9. After an edge node joins your cluster, some Pods may be scheduled to it while they remain in the `Pending` state on the edge node. Due to the tolerations some DaemonSets (for example, Calico) have, you need to manually patch some Pods so that they will not be scheduled to the edge node.
+
+   ```bash
+   #!/bin/bash
+   
+   NodeSelectorPatchJson='{"spec":{"template":{"spec":{"nodeSelector":{"node-role.kubernetes.io/master": "","node-role.kubernetes.io/worker": ""}}}}}'
+   
+   NoShedulePatchJson='{"spec":{"template":{"spec":{"affinity":{"nodeAffinity":{"requiredDuringSchedulingIgnoredDuringExecution":{"nodeSelectorTerms":[{"matchExpressions":[{"key":"node-role.kubernetes.io/edge","operator":"DoesNotExist"}]}]}}}}}}}'
+   
+   edgenode="edgenode"
+   if [ $1 ]; then
+           edgenode="$1"
+   fi
+   
+   
+   namespaces=($(kubectl get pods -A -o wide |egrep -i $edgenode | awk '{print $1}' ))
+   pods=($(kubectl get pods -A -o wide |egrep -i $edgenode | awk '{print $2}' ))
+   length=${#namespaces[@]}
+   
+   
+   for((i=0;i<$length;i++));  
+   do
+           ns=${namespaces[$i]}
+           pod=${pods[$i]}
+           resources=$(kubectl -n $ns describe pod $pod | grep "Controlled By" |awk '{print $3}')
+           echo "Patching for ns:"${namespaces[$i]}",resources:"$resources
+           kubectl -n $ns patch $resources --type merge --patch "$NoShedulePatchJson"
+           sleep 1
+   done
+   ```
+
+10. If you still cannot see the monitoring data, run the following command:
 
     ```bash
     journalctl -u edgecore.service -b -r

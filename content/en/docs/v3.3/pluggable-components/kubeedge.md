@@ -34,21 +34,21 @@ When you implement multi-node installation of KubeSphere on Linux, you need to c
 
    ```yaml
    edgeruntime:          # Add edge nodes to your cluster and deploy workloads on edge nodes.
-     enabled: false
-     kubeedge:        # kubeedge configurations
-       enabled: false
-       cloudCore:
-         cloudHub:
-           advertiseAddress: # At least a public IP address or an IP address which can be accessed by edge nodes must be provided.
+    enabled: false
+    kubeedge:        # kubeedge configurations
+      enabled: false
+      cloudCore:
+        cloudHub:
+          advertiseAddress: # At least a public IP address or an IP address which can be accessed by edge nodes must be provided.
             - ""            # Note that once KubeEdge is enabled, CloudCore will malfunction if the address is not provided.
-         service:
-           cloudhubNodePort: "30000"
-           cloudhubQuicNodePort: "30001"
-           cloudhubHttpsNodePort: "30002"
-           cloudstreamNodePort: "30003"
-           tunnelNodePort: "30004"
-         # resources: {}
-         # hostNetWork: false
+        service:
+          cloudhubNodePort: "30000"
+          cloudhubQuicNodePort: "30001"
+          cloudhubHttpsNodePort: "30002"
+          cloudstreamNodePort: "30003"
+          tunnelNodePort: "30004"
+        # resources: {}
+        # hostNetWork: false
    ```
 
 3. Set the value of `kubeedge.cloudCore.cloudHub.advertiseAddress` to the public IP address of your cluster or an IP address that can be accessed by edge nodes. Save the file when you finish editing.
@@ -61,13 +61,9 @@ When you implement multi-node installation of KubeSphere on Linux, you need to c
 
 ### Installing on Kubernetes
 
-As you [install KubeSphere on Kubernetes](../../installing-on-kubernetes/introduction/overview/), you can enable KubeEdge first in the [cluster-configuration.yaml](https://github.com/kubesphere/ks-installer/releases/download/v3.3.0/cluster-configuration.yaml) file.
+As you [install KubeSphere on Kubernetes](../../installing-on-kubernetes/introduction/overview/), you can enable KubeEdge first in the [cluster-configuration.yaml](https://github.com/kubesphere/ks-installer/releases/download/v3.3.1/cluster-configuration.yaml) file.
 
-{{< notice note >}}
-To prevent compatability issues, you are advised to install Kubernetes v1.21.x or earlier.
-{{</ notice >}}
-
-1. Download the file [cluster-configuration.yaml](https://github.com/kubesphere/ks-installer/releases/download/v3.3.0/cluster-configuration.yaml) and edit it.
+1. Download the file [cluster-configuration.yaml](https://github.com/kubesphere/ks-installer/releases/download/v3.3.1/cluster-configuration.yaml) and edit it.
 
     ```bash
     vi cluster-configuration.yaml
@@ -75,31 +71,31 @@ To prevent compatability issues, you are advised to install Kubernetes v1.21.x o
 
 2. In this local `cluster-configuration.yaml` file, navigate to `edgeruntime` and `kubeedge`, and change the value of `enabled` from `false` to `true` to enable all KubeEdge components. Click **OK**.
 
-   ```yaml
+    ```yaml
    edgeruntime:          # Add edge nodes to your cluster and deploy workloads on edge nodes.
-     enabled: false
-     kubeedge:        # kubeedge configurations
-       enabled: false
-       cloudCore:
-         cloudHub:
-           advertiseAddress: # At least a public IP address or an IP address which can be accessed by edge nodes must be provided.
+    enabled: false
+    kubeedge:        # kubeedge configurations
+      enabled: false
+      cloudCore:
+        cloudHub:
+          advertiseAddress: # At least a public IP address or an IP address which can be accessed by edge nodes must be provided.
             - ""            # Note that once KubeEdge is enabled, CloudCore will malfunction if the address is not provided.
-         service:
-           cloudhubNodePort: "30000"
-           cloudhubQuicNodePort: "30001"
-           cloudhubHttpsNodePort: "30002"
-           cloudstreamNodePort: "30003"
-           tunnelNodePort: "30004"
-         # resources: {}
-         # hostNetWork: false
-   ```
+        service:
+          cloudhubNodePort: "30000"
+          cloudhubQuicNodePort: "30001"
+          cloudhubHttpsNodePort: "30002"
+          cloudstreamNodePort: "30003"
+          tunnelNodePort: "30004"
+        # resources: {}
+        # hostNetWork: false
+    ```
 
 3. Set the value of `kubeedge.cloudCore.cloudHub.advertiseAddress` to the public IP address of your cluster or an IP address that can be accessed by edge nodes.
 
 4. Save the file and execute the following commands to start installation:
 
     ```bash
-    kubectl apply -f https://github.com/kubesphere/ks-installer/releases/download/v3.3.0/kubesphere-installer.yaml
+    kubectl apply -f https://github.com/kubesphere/ks-installer/releases/download/v3.3.1/kubesphere-installer.yaml
     
     kubectl apply -f cluster-configuration.yaml
     ```
@@ -118,24 +114,24 @@ A Custom Resource Definition (CRD) allows users to create a new type of resource
    
 4. In this YAML file, navigate to `edgeruntime` and `kubeedge`, and change the value of `enabled` from `false` to `true` to enable all KubeEdge components. Click **OK**.
 
-   ```yaml
+    ```yaml
    edgeruntime:          # Add edge nodes to your cluster and deploy workloads on edge nodes.
-     enabled: false
-     kubeedge:        # kubeedge configurations
-       enabled: false
-       cloudCore:
-         cloudHub:
-           advertiseAddress: # At least a public IP address or an IP address which can be accessed by edge nodes must be provided.
+    enabled: false
+    kubeedge:        # kubeedge configurations
+      enabled: false
+      cloudCore:
+        cloudHub:
+          advertiseAddress: # At least a public IP address or an IP address which can be accessed by edge nodes must be provided.
             - ""            # Note that once KubeEdge is enabled, CloudCore will malfunction if the address is not provided.
-         service:
-           cloudhubNodePort: "30000"
-           cloudhubQuicNodePort: "30001"
-           cloudhubHttpsNodePort: "30002"
-           cloudstreamNodePort: "30003"
-           tunnelNodePort: "30004"
-         # resources: {}
-         # hostNetWork: false
-   ```
+        service:
+          cloudhubNodePort: "30000"
+          cloudhubQuicNodePort: "30001"
+          cloudhubHttpsNodePort: "30002"
+          cloudstreamNodePort: "30003"
+          tunnelNodePort: "30004"
+        # resources: {}
+        # hostNetWork: false
+    ```
 
 5. Set the value of `kubeedge.cloudCore.cloudHub.advertiseAddress` to the public IP address of your cluster or an IP address that can be accessed by edge nodes. After you finish, click **OK** in the lower-right corner to save the configuration.
 

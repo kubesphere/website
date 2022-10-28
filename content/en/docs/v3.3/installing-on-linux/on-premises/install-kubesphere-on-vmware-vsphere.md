@@ -289,7 +289,7 @@ systemctl status -l keepalived
 
 ## Download KubeKey
 
-[Kubekey](https://github.com/kubesphere/kubekey) is the brand-new installer which provides an easy, fast and flexible way to install Kubernetes and KubeSphere 3.3.0.
+[Kubekey](https://github.com/kubesphere/kubekey) is the brand-new installer which provides an easy, fast and flexible way to install Kubernetes and KubeSphere 3.3.
 
 Follow the step below to download KubeKey.
 
@@ -300,7 +300,7 @@ Follow the step below to download KubeKey.
 Download KubeKey from its [GitHub Release Page](https://github.com/kubesphere/kubekey/releases) or use the following command directly.
 
 ```bash
-curl -sfL https://get-kk.kubesphere.io | VERSION=v2.2.2 sh -
+curl -sfL https://get-kk.kubesphere.io | VERSION=v2.3.0 sh -
 ```
 
 {{</ tab >}}
@@ -316,7 +316,7 @@ export KKZONE=cn
 Run the following command to download KubeKey:
 
 ```bash
-curl -sfL https://get-kk.kubesphere.io | VERSION=v2.2.2 sh -
+curl -sfL https://get-kk.kubesphere.io | VERSION=v2.3.0 sh -
 ```
 
 {{< notice note >}}
@@ -331,7 +331,7 @@ After you download KubeKey, if you transfer it to a new machine also with poor n
 
 {{< notice note >}}
 
-The commands above download the latest release (v2.2.2) of KubeKey. You can change the version number in the command to download a specific version.
+The commands above download the latest release (v2.3.0) of KubeKey. You can change the version number in the command to download a specific version.
 
 {{</ notice >}} 
 
@@ -345,15 +345,15 @@ chmod +x kk
 
 With KubeKey, you can install Kubernetes and KubeSphere together. You have the option to create a multi-node cluster by customizing parameters in the configuration file.
 
-Create a Kubernetes cluster with KubeSphere installed (for example, `--with-kubesphere v3.3.0`):
+Create a Kubernetes cluster with KubeSphere installed (for example, `--with-kubesphere v3.3.1`):
 
 ```bash
-./kk create config --with-kubernetes v1.22.10 --with-kubesphere v3.3.0
+./kk create config --with-kubernetes v1.22.10 --with-kubesphere v3.3.1
 ```
 
 {{< notice note >}}
 
-- Recommended Kubernetes versions for KubeSphere 3.3.0: v1.19.x, v1.20.x, v1.21.x, v1.22.x, and v1.23.x (experimental support). If you do not specify a Kubernetes version, KubeKey will install Kubernetes v1.23.7 by default. For more information about supported Kubernetes versions, see [Support Matrix](../../../installing-on-linux/introduction/kubekey/#support-matrix).
+- Recommended Kubernetes versions for KubeSphere 3.3: v1.19.x, v1.20.x, v1.21.x, v1.22.x, and v1.23.x (experimental support). If you do not specify a Kubernetes version, KubeKey will install Kubernetes v1.23.7 by default. For more information about supported Kubernetes versions, see [Support Matrix](../../../installing-on-linux/introduction/kubekey/#support-matrix).
 
 - If you do not add the flag `--with-kubesphere` in the command in this step, KubeSphere will not be deployed unless you install it using the `addons` field in the configuration file or add this flag again when you use `./kk create cluster` later.
 - If you add the flag `--with-kubesphere` without specifying a KubeSphere version, the latest version of KubeSphere will be installed.
@@ -398,7 +398,7 @@ spec:
     address: "10.10.71.67"
     port: 6443
   kubernetes:
-    version: v1.22.10
+    version: v1.21.5
     imageRepo: kubesphere
     clusterName: cluster.local
     masqueradeAll: false  # masqueradeAll tells kube-proxy to SNAT everything if using the pure iptables proxy mode. [Default: false]
@@ -423,192 +423,76 @@ spec:
       storageClassName: local  
 
 ---
----
----
 apiVersion: installer.kubesphere.io/v1alpha1
 kind: ClusterConfiguration
 metadata:
   name: ks-installer
   namespace: kubesphere-system
   labels:
-    version: v3.3.0
+    version: v3.3.1
 spec:
+  local_registry: ""
   persistence:
-    storageClass: ""        # If there is no default StorageClass in your cluster, you need to specify an existing StorageClass here.
+    storageClass: ""
   authentication:
-    jwtSecret: ""           # Keep the jwtSecret consistent with the Host Cluster. Retrieve the jwtSecret by executing "kubectl -n kubesphere-system get cm kubesphere-config -o yaml | grep -v "apiVersion" | grep jwtSecret" on the Host Cluster.
-  local_registry: ""        # Add your private registry address if it is needed.
-  # dev_tag: ""               # Add your kubesphere image tag you want to install, by default it's same as ks-installer release version.
+    jwtSecret: ""
   etcd:
-    monitoring: false       # Enable or disable etcd monitoring dashboard installation. You have to create a Secret for etcd before you enable it.
-    endpointIps: localhost  # etcd cluster EndpointIps. It can be a bunch of IPs here.
-    port: 2379              # etcd port.
+    monitoring: true        # Whether to install etcd monitoring dashboard
+    endpointIps: 192.168.0.7,192.168.0.8,192.168.0.9  # etcd cluster endpointIps
+    port: 2379              # etcd port
     tlsEnable: true
   common:
-    core:
-      console:
-        enableMultiLogin: true  # Enable or disable simultaneous logins. It allows different users to log in with the same account at the same time.
-        port: 30880
-        type: NodePort
-    # apiserver:            # Enlarge the apiserver and controller manager's resource requests and limits for the large cluster
-    #  resources: {}
-    # controllerManager:
-    #  resources: {}
-    redis:
-      enabled: false
-      enableHA: false
-      volumeSize: 2Gi # Redis PVC size.
-    openldap:
-      enabled: false
-      volumeSize: 2Gi   # openldap PVC size.
-    minio:
-      volumeSize: 20Gi # Minio PVC size.
-    monitoring:
-      # type: external   # Whether to specify the external prometheus stack, and need to modify the endpoint at the next line.
-      endpoint: http://prometheus-operated.kubesphere-monitoring-system.svc:9090 # Prometheus endpoint to get metrics data.
-      GPUMonitoring:     # Enable or disable the GPU-related metrics. If you enable this switch but have no GPU resources, Kubesphere will set it to zero.
-        enabled: false
-    gpu:                 # Install GPUKinds. The default GPU kind is nvidia.com/gpu. Other GPU kinds can be added here according to your needs.
-      kinds:
-      - resourceName: "nvidia.com/gpu"
-        resourceType: "GPU"
-        default: true
-    es:   # Storage backend for logging, events and auditing.
-      # master:
-      #   volumeSize: 4Gi  # The volume size of Elasticsearch master nodes.
-      #   replicas: 1      # The total number of master nodes. Even numbers are not allowed.
-      #   resources: {}
-      # data:
-      #   volumeSize: 20Gi  # The volume size of Elasticsearch data nodes.
-      #   replicas: 1       # The total number of data nodes.
-      #   resources: {}
-      logMaxAge: 7             # Log retention time in built-in Elasticsearch. It is 7 days by default.
-      elkPrefix: logstash      # The string making up index names. The index name will be formatted as ks-<elk_prefix>-log.
-      basicAuth:
-        enabled: false
-        username: ""
-        password: ""
-      externalElasticsearchHost: ""
-      externalElasticsearchPort: ""
-  alerting:                # (CPU: 0.1 Core, Memory: 100 MiB) It enables users to customize alerting policies to send messages to receivers in time with different time intervals and alerting levels to choose from.
-    enabled: false         # Enable or disable the KubeSphere Alerting System.
-    # thanosruler:
-    #   replicas: 1
-    #   resources: {}
-  auditing:                # Provide a security-relevant chronological set of records，recording the sequence of activities happening on the platform, initiated by different tenants.
-    enabled: false         # Enable or disable the KubeSphere Auditing Log System.
-    # operator:
-    #   resources: {}
-    # webhook:
-    #   resources: {}
-  devops:                  # (CPU: 0.47 Core, Memory: 8.6 G) Provide an out-of-the-box CI/CD system based on Jenkins, and automated workflow tools including Source-to-Image & Binary-to-Image.
-    enabled: false             # Enable or disable the KubeSphere DevOps System.
-    # resources: {}
-    jenkinsMemoryLim: 2Gi      # Jenkins memory limit.
-    jenkinsMemoryReq: 1500Mi   # Jenkins memory request.
-    jenkinsVolumeSize: 8Gi     # Jenkins volume size.
-    jenkinsJavaOpts_Xms: 1200m  # The following three fields are JVM parameters.
-    jenkinsJavaOpts_Xmx: 1600m
-    jenkinsJavaOpts_MaxRAM: 2g
-  events:                  # Provide a graphical web console for Kubernetes Events exporting, filtering and alerting in multi-tenant Kubernetes clusters.
-    enabled: false         # Enable or disable the KubeSphere Events System.
-    # operator:
-    #   resources: {}
-    # exporter:
-    #   resources: {}
-    # ruler:
-    #   enabled: true
-    #   replicas: 2
-    #   resources: {}
-  logging:                 # (CPU: 57 m, Memory: 2.76 G) Flexible logging functions are provided for log query, collection and management in a unified console. Additional log collectors can be added, such as Elasticsearch, Kafka and Fluentd.
-    enabled: false         # Enable or disable the KubeSphere Logging System.
-    logsidecar:
-      enabled: true
-      replicas: 2
-      # resources: {}
-  metrics_server:                    # (CPU: 56 m, Memory: 44.35 MiB) It enables HPA (Horizontal Pod Autoscaler).
-    enabled: false                   # Enable or disable metrics-server.
-  monitoring:
-    storageClass: ""                 # If there is an independent StorageClass you need for Prometheus, you can specify it here. The default StorageClass is used by default.
-    node_exporter:
-      port: 9100
-      # resources: {}
-    # kube_rbac_proxy:
-    #   resources: {}
-    # kube_state_metrics:
-    #   resources: {}
-    # prometheus:
-    #   replicas: 1  # Prometheus replicas are responsible for monitoring different segments of data source and providing high availability.
-    #   volumeSize: 20Gi  # Prometheus PVC size.
-    #   resources: {}
-    #   operator:
-    #     resources: {}
-    # alertmanager:
-    #   replicas: 1          # AlertManager Replicas.
-    #   resources: {}
-    # notification_manager:
-    #   resources: {}
-    #   operator:
-    #     resources: {}
-    #   proxy:
-    #     resources: {}
-    gpu:                           # GPU monitoring-related plug-in installation.
-      nvidia_dcgm_exporter:        # Ensure that gpu resources on your hosts can be used normally, otherwise this plug-in will not work properly.
-        enabled: false             # Check whether the labels on the GPU hosts contain "nvidia.com/gpu.present=true" to ensure that the DCGM pod is scheduled to these nodes.
-        # resources: {}
-  multicluster:
-    clusterRole: none  # host | member | none  # You can install a solo cluster, or specify it as the Host or Member Cluster.
-  network:
-    networkpolicy: # Network policies allow network isolation within the same cluster, which means firewalls can be set up between certain instances (Pods).
-      # Make sure that the CNI network plugin used by the cluster supports NetworkPolicy. There are a number of CNI network plugins that support NetworkPolicy, including Calico, Cilium, Kube-router, Romana and Weave Net.
-      enabled: false # Enable or disable network policies.
-    ippool: # Use Pod IP Pools to manage the Pod network address space. Pods to be created can be assigned IP addresses from a Pod IP Pool.
-      type: none # Specify "calico" for this field if Calico is used as your CNI plugin. "none" means that Pod IP Pools are disabled.
-    topology: # Use Service Topology to view Service-to-Service communication based on Weave Scope.
-      type: none # Specify "weave-scope" for this field to enable Service Topology. "none" means that Service Topology is disabled.
-  openpitrix: # An App Store that is accessible to all platform tenants. You can use it to manage apps across their entire lifecycle.
-    store:
-      enabled: false # Enable or disable the KubeSphere App Store.
-  servicemesh:         # (0.3 Core, 300 MiB) Provide fine-grained traffic management, observability and tracing, and visualized traffic topology.
-    enabled: false     # Base component (pilot). Enable or disable KubeSphere Service Mesh (Istio-based).
-    istio:  # Customizing the istio installation configuration, refer to https://istio.io/latest/docs/setup/additional-setup/customize-installation/
-      components:
-        ingressGateways:
-        - name: istio-ingressgateway
-          enabled: false
-        cni:
-          enabled: false
-  edgeruntime:          # Add edge nodes to your cluster and deploy workloads on edge nodes.
+    mysqlVolumeSize: 20Gi # MySQL PVC size
+    minioVolumeSize: 20Gi # Minio PVC size
+    etcdVolumeSize: 20Gi  # etcd PVC size
+    openldapVolumeSize: 2Gi   # openldap PVC size
+    redisVolumSize: 2Gi # Redis PVC size
+    es:  # Storage backend for logging, tracing, events and auditing.
+      elasticsearchMasterReplicas: 1   # total number of master nodes, it's not allowed to use even number
+      elasticsearchDataReplicas: 1     # total number of data nodes
+      elasticsearchMasterVolumeSize: 4Gi   # Volume size of Elasticsearch master nodes
+      elasticsearchDataVolumeSize: 20Gi    # Volume size of Elasticsearch data nodes
+      logMaxAge: 7                     # Log retention time in built-in Elasticsearch, it is 7 days by default.
+      elkPrefix: logstash              # The string making up index names. The index name will be formatted as ks-<elk_prefix>-log
+      # externalElasticsearchUrl:
+      # externalElasticsearchPort:
+  console:
+    enableMultiLogin: false  # enable/disable multiple sing on, it allows a user can be used by different users at the same time.
+    port: 30880
+  alerting:                # Whether to install KubeSphere alerting system. It enables Users to customize alerting policies to send messages to receivers in time with different time intervals and alerting levels to choose from.
     enabled: false
-    kubeedge:        # kubeedge configurations
-      enabled: false
-      cloudCore:
-        cloudHub:
-          advertiseAddress: # At least a public IP address or an IP address which can be accessed by edge nodes must be provided.
-            - ""            # Note that once KubeEdge is enabled, CloudCore will malfunction if the address is not provided.
-        service:
-          cloudhubNodePort: "30000"
-          cloudhubQuicNodePort: "30001"
-          cloudhubHttpsNodePort: "30002"
-          cloudstreamNodePort: "30003"
-          tunnelNodePort: "30004"
-        # resources: {}
-        # hostNetWork: false
-      iptables-manager:
-        enabled: true 
-        mode: "external"
-        # resources: {}
-      # edgeService:
-      #   resources: {}
-  gatekeeper:        # Provide admission policy and rule management, A validating (mutating TBA) webhook that enforces CRD-based policies executed by Open Policy Agent.
-    enabled: false   # Enable or disable Gatekeeper.
-    # controller_manager:
-    #   resources: {}
-    # audit:
-    #   resources: {}
-  terminal:
-    # image: 'alpine:3.15' # There must be an nsenter program in the image
-    timeout: 600         # Container timeout, if set to 0, no timeout will be used. The unit is seconds
+  auditing:                # Whether to install KubeSphere audit log system. It provides a security-relevant chronological set of records，recording the sequence of activities happened in platform, initiated by different tenants.
+    enabled: false
+  devops:                  # Whether to install KubeSphere DevOps System. It provides out-of-box CI/CD system based on Jenkins, and automated workflow tools including Source-to-Image & Binary-to-Image
+    enabled: false
+    jenkinsMemoryLim: 2Gi      # Jenkins memory limit
+    jenkinsMemoryReq: 1500Mi   # Jenkins memory request
+    jenkinsVolumeSize: 8Gi     # Jenkins volume size
+    jenkinsJavaOpts_Xms: 512m  # The following three fields are JVM parameters
+    jenkinsJavaOpts_Xmx: 512m
+    jenkinsJavaOpts_MaxRAM: 2g
+  events:                  # Whether to install KubeSphere events system. It provides a graphical web console for Kubernetes Events exporting, filtering and alerting in multi-tenant Kubernetes clusters.
+    enabled: false
+  logging:                 # Whether to install KubeSphere logging system. Flexible logging functions are provided for log query, collection and management in a unified console. Additional log collectors can be added, such as Elasticsearch, Kafka and Fluentd.
+    enabled: false
+    logsidecarReplicas: 2
+  metrics_server:                    # Whether to install metrics-server. IT enables HPA (Horizontal Pod Autoscaler).
+    enabled: true
+  monitoring:                        #
+    prometheusReplicas: 1            # Prometheus replicas are responsible for monitoring different segments of data source and provide high availability as well.
+    prometheusMemoryRequest: 400Mi   # Prometheus request memory
+    prometheusVolumeSize: 20Gi       # Prometheus PVC size
+    alertmanagerReplicas: 1          # AlertManager Replicas
+  multicluster:
+    clusterRole: none  # host | member | none  # You can install a solo cluster, or specify it as the role of host or member cluster
+  networkpolicy:       # Network policies allow network isolation within the same cluster, which means firewalls can be set up between certain instances (Pods).
+    enabled: false
+  notification:        # It supports notification management in multi-tenant Kubernetes clusters. It allows you to set AlertManager as its sender, and receivers include Email, Wechat Work, and Slack.
+    enabled: false
+  openpitrix:          # Whether to install KubeSphere App Store. It provides an application store for Helm-based applications, and offer application lifecycle management
+    enabled: false
+  servicemesh:         # (0.3 Core, 300 MiB) Provide fine-grained traffic management, observability and tracing, and visualized traffic topology
+    enabled: false
 ```
 
 Create a cluster using the configuration file you customized above:

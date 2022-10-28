@@ -1,7 +1,7 @@
 ---
 title: "监控系统"
 keywords: 'Kubernetes, KubeSphere, API, 监控系统'
-description: 'KubeSphere 3.3.0 中监控系统（服务组件）的 API 变更。'
+description: 'KubeSphere 3.3 中监控系统（服务组件）的 API 变更。'
 linkTitle: "监控系统"
 weight: 17320
 ---
@@ -16,9 +16,9 @@ weight: 17320
 
 ## 已弃用的指标
 
-在 KubeSphere 3.3.0 中，下表左侧的指标已重命名为右侧的指标。
+在 KubeSphere 3.3 中，下表左侧的指标已重命名为右侧的指标。
 
-|V2.0|V3.0|
+|V2.0|V3.3|
 |---|---|
 |workload_pod_cpu_usage | workload_cpu_usage|
 |workload_pod_memory_usage| workload_memory_usage|
@@ -48,7 +48,7 @@ weight: 17320
 |prometheus_up_sum|
 |prometheus_tsdb_head_samples_appended_rate|
 
-KubeSphere 3.3.0 中引入的新指标。
+KubeSphere 3.3 中引入的新指标。
 
 |新指标|
 |---|
@@ -59,7 +59,7 @@ KubeSphere 3.3.0 中引入的新指标。
 
 ## 响应字段
 
-在 KubeSphere 3.3.0 中，已移除响应字段 `metrics_level`、`status` 和 `errorType`。
+在 KubeSphere 3.3 中，已移除响应字段 `metrics_level`、`status` 和 `errorType`。
 
 另外，字段名称 `resource_name` 已替换为具体资源类型名称。这些类型是 `node`、`workspace`、`namespace`、`workload`、`pod`、`container` 和 `persistentvolumeclaim`。例如，您将获取 `node: node1`，而不是 `resource_name: node1`。请参见以下示例响应：
 
