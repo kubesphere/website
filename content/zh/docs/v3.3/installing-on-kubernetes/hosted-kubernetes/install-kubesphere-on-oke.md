@@ -28,7 +28,7 @@ weight: 4260
 
     {{< notice note >}}
 
-- 如需在 Kubernetes 上安装 KubeSphere 3.3.0，您的 Kubernetes 版本必须为：v1.19.x，v1.20.x，v1.21.x，v1.22.x 或 v1.23.x（实验性支持）。
+- 如需在 Kubernetes 上安装 KubeSphere 3.3，您的 Kubernetes 版本必须为：v1.19.x，v1.20.x，v1.21.x，v1.22.x 或 v1.23.x（实验性支持）。
 - 建议您在**可见性类型**中选择**公共**，即每个节点会分配到一个公共 IP 地址，此地址之后可用于访问 KubeSphere Web 控制台。
 - 在 Oracle Cloud 中，**配置**定义了一个实例会分配到的 CPU 和内存等资源量，本示例使用 `VM.Standard.E2.2 (2 CPUs and 16G Memory)`。有关更多信息，请参见 [Standard Shapes](https://docs.cloud.oracle.com/en-us/iaas/Content/Compute/References/computeshapes.htm#vmshapes__vm-standard)。
 - 本示例包含 3 个节点，可以根据需求自行添加节点（尤其是生产环境）。
@@ -64,9 +64,9 @@ weight: 4260
 1. 使用 kubectl 安装 KubeSphere。直接输入以下命令会默认执行 KubeSphere 的最小化安装。
 
     ```bash
-    kubectl apply -f https://github.com/kubesphere/ks-installer/releases/download/v3.3.0/kubesphere-installer.yaml
+    kubectl apply -f https://github.com/kubesphere/ks-installer/releases/download/v3.3.1/kubesphere-installer.yaml
 
-    kubectl apply -f https://github.com/kubesphere/ks-installer/releases/download/v3.3.0/cluster-configuration.yaml
+    kubectl apply -f https://github.com/kubesphere/ks-installer/releases/download/v3.3.1/cluster-configuration.yaml
     ```
 
 2. 检查安装日志：

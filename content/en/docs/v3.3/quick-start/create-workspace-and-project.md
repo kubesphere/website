@@ -24,7 +24,7 @@ You can create multiple workspaces within a KubeSphere cluster. Under each works
 
 ### Step 1: Create a user
 
-After KubeSphere is installed, you need to add different users with varied roles to the platform so that they can work at different levels on various resources. Initially, you only have one default user, which is `admin`, granted the role `platform-admin`. In the first step, you create a sample user `user-manager` and further create more users as `user-manager`.
+After KubeSphere is installed, you need to add different users with varied roles to the platform so that they can work at different levels on various resources. Initially, you only have one default user, which is `admin`, granted the role `platform-admin`. In the first step, you create a sample user `user-manager`.
 
 1. Log in to the web console as `admin` with the default user and password (`admin/P@88w0rd`).
 
@@ -32,7 +32,7 @@ After KubeSphere is installed, you need to add different users with varied roles
    For account security, it is highly recommended that you change your password the first time you log in to the console. To change your password, select **User Settings** in the drop-down list in the upper-right corner. In **Password Settings**, set a new password. You also can change the console language in **User Settings**.
    {{</ notice >}}
 
-2. Click **Platform** in the upper-left corner, and then select **Access Control**. In the left nevigation pane, select **Platform Roles**. There are four built-in roles, as shown in the following table.
+2. Click **Platform** in the upper-left corner, and then select **Access Control**. In the left nevigation pane, select **Platform Roles**. The built-in roles are shown in the following table.
 
    <table>
      <tbody>
@@ -41,21 +41,16 @@ After KubeSphere is installed, you need to add different users with varied roles
          <th>Description</th>
        </tr>
        <tr>
-         <td><code>workspaces-manager</code></td>
-         <td>Workspace manager who can manage all workspaces on the platform.</td>
-       </tr>
-       </tr>
-       <tr>
-         <td><code>users-manager</code></td>
-         <td>User manager who can manage all users on the platform.</td>
+         <td><code>platform-self-provisioner</code></td>
+         <td>Create workspaces and become the admin of the created workspaces.</td>
        </tr></tr>
        <tr>
          <td><code>platform-regular</code></td>
-         <td>Regular user who has no access to any resources before joining a workspace or cluster.</td>
+         <td>Has no access to any resources before joining a workspace or cluster.</td>
        </tr>
    <tr>
          <td><code>platform-admin</code></td>
-         <td>Administrator who can manage all resources on the platform.</td>
+         <td>Manage all resources on the platform.</td>
        </tr>
      </tbody>
    </table>
@@ -64,11 +59,15 @@ After KubeSphere is installed, you need to add different users with varied roles
    Built-in roles are created automatically by KubeSphere and cannot be edited or deleted.
    {{</ notice >}}
 
-3. In **Users**, click **Create**. In the displayed dialog box, provide all the necessary information (marked with *) and select `users-manager` for **Platform Role**.
+3. In **Users**, click **Create**. In the displayed dialog box, provide all the necessary information (marked with *) and select `platform-self-provisioner` for **Platform Role**.
 
    Click **OK** after you finish. The new user will display on the **Users** page.
 
-4. Log out of the console and log back in with user `user-manager` to create four users that will be used in other tutorials.
+   {{< notice note >}}
+   If you have not specified a platform role, the created user cannot perform any operations. In this case, you need to create a workspace and invite the created user to the workspace.
+   {{</ notice >}}
+
+4. Repeat the previous steps to create other users that will be used in other tutorials.
 
    {{< notice tip >}}
    - To log out, click your username in the upper-right corner and select **Log Out**.
@@ -81,11 +80,6 @@ After KubeSphere is installed, you need to add different users with varied roles
          <th width='140'>User</th>
          <th width='180'>Assigned Platform Role</th>
          <th>User Permissions</th>
-       </tr>
-       <tr>
-         <td><code>ws-manager</code></td>
-         <td><code>workspaces-manager</code></td>
-         <td>Create and manage all workspaces.</td>
        </tr>
        <tr>
          <td><code>ws-admin</code></td>
@@ -103,7 +97,7 @@ After KubeSphere is installed, you need to add different users with varied roles
      </tbody>
    </table>
 
-5. On **Users** page, verify the four users created.
+5. On **Users** page, view the created users.
 
    {{< notice note >}}
 
@@ -112,11 +106,13 @@ After KubeSphere is installed, you need to add different users with varied roles
    {{</ notice >}} 
 ### Step 2: Create a workspace
 
-In this step, you create a workspace using user `ws-manager` created in the previous step. As the basic logic unit for the management of projects, DevOps projects and organization members, workspaces underpin the multi-tenant system of KubeSphere.
+As the basic logic unit for the management of projects, DevOps projects and organization members, workspaces underpin the multi-tenant system of KubeSphere.
 
-1. Log in to KubeSphere as `ws-manager`. Click **Platform** in the upper-left corner and select **Access Control**. In **Workspaces**, you can see there is only one default workspace `system-workspace`, where system-related components and services run. Deleting this workspace is not allowed.
+1. In the navigation pane on the left, click **Workspaces**. You can see there is only one default workspace `system-workspace`, where system-related components and services run. Deleting this workspace is not allowed.
 
-2. Click **Create** on the right, set a name for the new workspace (for example, `demo-workspace`) and set user `ws-admin` as the workspace manager. Click **Create** after you finish.
+2. On the **Workspaces** page on the right, click **Create**, set a name for the new workspace (for example, `demo-workspace`) and set user `ws-admin` as the workspace manager.
+
+3. Click **Create** after you finish.
 
    {{< notice note >}}
 
@@ -124,9 +120,9 @@ In this step, you create a workspace using user `ws-manager` created in the prev
 
    {{</ notice >}} 
 
-3. Log out of the console and log back in as `ws-admin`. In **Workspace Settings**, select **Workspace Members** and click **Invite**.
+4. Log out of the console and log back in as `ws-admin`. In **Workspace Settings**, select **Workspace Members** and click **Invite**.
 
-4. Invite both `project-admin` and `project-regular` to the workspace. Assign them the role `workspace-self-provisioner` and `workspace-viewer` respectively and click **OK**.
+5. Invite both `project-admin` and `project-regular` to the workspace. Assign them the role `workspace-self-provisioner` and `workspace-viewer` respectively and click **OK**.
 
    {{< notice note >}}
 The actual role name follows a naming convention: `<workspace name>-<role name>`. For example, in this workspace named `demo-workspace`, the actual role name of the role `viewer` is `demo-workspace-viewer`.

@@ -12,7 +12,7 @@ This section introduces monitoring dashboard features. You will learn how to vis
 
 To create new dashboards for your app metrics, navigate to **Custom Monitoring** under **Monitoring & Alerting** in a project. There are three ways to create monitoring dashboards: built-in templates, blank templates for customization and YAML files.
 
-There are three available built-in templates for MySQL, Elasticsearch, and Redis respectively. These templates are for demonstration purposes and are updated with KubeSphere releases. Besides, you can choose to customize monitoring dashboards.
+Built-in templates include MySQL, Elasticsearch, Redis, and more. These templates are for demonstration purposes and are updated with KubeSphere releases. Besides, you can choose to customize monitoring dashboards.
 
 A KubeSphere custom monitoring dashboard can be seen as simply a YAML configuration file. The data model is heavily inspired by [Grafana](https://github.com/grafana/grafana), an open-source tool for monitoring and observability. Please find KubeSphere monitoring dashboard data model design in [kubesphere/monitoring-dashboard](https://github.com/kubesphere/monitoring-dashboard). The configuration file is portable and sharable. You are welcome to contribute dashboard templates to the KubeSphere community via [Monitoring Dashboards Gallery](https://github.com/kubesphere/monitoring-dashboard/tree/master/contrib/gallery). 
 

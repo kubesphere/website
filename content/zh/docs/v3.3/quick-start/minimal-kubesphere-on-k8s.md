@@ -10,7 +10,7 @@ weight: 2200
 
 ## 准备工作
 
-- 如需在 Kubernetes 上安装 KubeSphere 3.3.0，您的 Kubernetes 版本必须为：v1.19.x，v1.20.x，v1.21.x，v1.22.x 或 v1.23.x（实验性支持）。
+- 您的 Kubernetes 版本必须为：v1.19.x，v1.20.x，v1.21.x，v1.22.x 或 v1.23.x（实验性支持）。
 - 确保您的机器满足最低硬件要求：CPU > 1 核，内存 > 2 GB。
 - 在安装之前，需要配置 Kubernetes 集群中的**默认**存储类型。
 
@@ -28,9 +28,9 @@ weight: 2200
 1. 执行以下命令开始安装：
 
     ```bash
-    kubectl apply -f https://github.com/kubesphere/ks-installer/releases/download/v3.3.0/kubesphere-installer.yaml
+    kubectl apply -f https://github.com/kubesphere/ks-installer/releases/download/v3.3.1/kubesphere-installer.yaml
     
-    kubectl apply -f https://github.com/kubesphere/ks-installer/releases/download/v3.3.0/cluster-configuration.yaml
+    kubectl apply -f https://github.com/kubesphere/ks-installer/releases/download/v3.3.1/cluster-configuration.yaml
     ```
 
 2. 检查安装日志：

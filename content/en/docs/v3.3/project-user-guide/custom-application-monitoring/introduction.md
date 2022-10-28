@@ -42,7 +42,7 @@ In the previous step, you expose metric endpoints in a Kubernetes Service object
 
 The ServiceMonitor CRD is defined by [Prometheus Operator](https://github.com/prometheus-operator/prometheus-operator). A ServiceMonitor contains information about the metrics endpoints. With ServiceMonitor objects, the KubeSphere monitoring engine knows where and how to scape metrics. For each monitoring target, you apply a ServiceMonitor object to hook your application (or exporters) up to KubeSphere.
 
-In KubeSphere v3.3.0, you need to pack a ServiceMonitor with your applications (or exporters) into a Helm chart for reuse. In future releases, KubeSphere will provide graphical interfaces for easy operation.
+In KubeSphere 3.3, you need to pack a ServiceMonitor with your applications (or exporters) into a Helm chart for reuse. In future releases, KubeSphere will provide graphical interfaces for easy operation.
 
 Please read [Monitor a Sample Web Application](../examples/monitor-sample-web/) to learn how to pack a ServiceMonitor with your application.
 

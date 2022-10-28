@@ -62,7 +62,7 @@ If you adopt [All-in-one Installation](../../quick-start/all-in-one-on-linux/), 
 
 When you install KubeSphere on Kubernetes, you need to use [ks-installer](https://github.com/kubesphere/ks-installer/) by applying two YAML files as below.
 
-1. First download the file [cluster-configuration.yaml](https://github.com/kubesphere/ks-installer/releases/download/v3.1.0/cluster-configuration.yaml) and edit it.
+1. First download the file [cluster-configuration.yaml](https://github.com/kubesphere/ks-installer/releases/download/v3.3.1/cluster-configuration.yaml) and edit it.
 
     ```bash
     vi cluster-configuration.yaml
@@ -73,7 +73,7 @@ When you install KubeSphere on Kubernetes, you need to use [ks-installer](https:
 3. Save this local file and execute the following commands to start the installation.
 
     ```bash
-    kubectl apply -f https://github.com/kubesphere/ks-installer/releases/download/v3.3.0/kubesphere-installer.yaml
+    kubectl apply -f https://github.com/kubesphere/ks-installer/releases/download/v3.3.1/kubesphere-installer.yaml
     
     kubectl apply -f cluster-configuration.yaml
     ```

@@ -161,7 +161,7 @@ KubeSphere 提供三种创建服务的基本方法：**无状态服务**、**有
 
 1. 创建服务后，您可以点击右侧的 <img src="/images/docs/v3.3/zh-cn/project-user-guide/application-workloads/services/three-dots.png" width="20px" alt="icon" /> 进一步编辑它，例如元数据（**名称**无法编辑）、配置文件、端口以及外部访问。
 
-    - **编辑**：查看和编辑基本信息。
+    - **编辑信息**：查看和编辑基本信息。
     - **编辑 YAML**：查看、上传、下载或者更新 YAML 文件。
     - **编辑服务**：查看访问类型并设置选择器和端口。
     - **编辑外部访问**：编辑服务的外部访问方法。

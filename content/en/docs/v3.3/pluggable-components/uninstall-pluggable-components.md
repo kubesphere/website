@@ -8,12 +8,6 @@ Weight: 6940
 
 After you [enable the pluggable components of KubeSphere](../../pluggable-components/), you can also uninstall them by performing the following steps. Please back up any necessary data before you uninstall these components.
 
-{{< notice note >}}
-
-The methods of uninstalling certain pluggable components on KubeSphere 3.3.0 are different from the methods on KubeSphere v3.3.0. For more information about the uninstallation methods on KubeSphere v3.3.0, see [Uninstall Pluggable Components from KubeSphere](https://v3-0.docs.kubesphere.io/docs/faq/installation/uninstall-pluggable-components/).
-
-{{</ notice >}}
-
 ## Prerequisites
 
 You have to change the value of the field `enabled` from `true` to `false` in `ks-installer` of the CRD `ClusterConfiguration` before you uninstall any pluggable components except Service Topology and Pod IP Pools. 
@@ -128,7 +122,7 @@ Change the value of `openpitrix.store.enabled` from `true` to `false` in `ks-ins
 
    {{< notice note >}}
 
-   Notification is installed in KubeSphere 3.3.0 by default, so you do not need to uninstall it.
+   Notification is installed in KubeSphere 3.3 by default, so you do not need to uninstall it.
 
    {{</ notice >}} 
 

@@ -32,9 +32,9 @@ KubeSphere 承诺为用户提供即插即用架构，您可以轻松地将 KubeS
 1. 执行以下命令以开始安装：
 
    ```bash
-   kubectl apply -f https://github.com/kubesphere/ks-installer/releases/download/v3.3.0/kubesphere-installer.yaml
+   kubectl apply -f https://github.com/kubesphere/ks-installer/releases/download/v3.3.1/kubesphere-installer.yaml
    
-   kubectl apply -f https://github.com/kubesphere/ks-installer/releases/download/v3.3.0/cluster-configuration.yaml
+   kubectl apply -f https://github.com/kubesphere/ks-installer/releases/download/v3.3.1/cluster-configuration.yaml
    ```
 
 2. 检查安装日志：

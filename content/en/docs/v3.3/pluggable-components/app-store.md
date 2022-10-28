@@ -44,9 +44,9 @@ If you adopt [All-in-One Installation](../../quick-start/all-in-one-on-linux/), 
 
 ### Installing on Kubernetes
 
-As you [install KubeSphere on Kubernetes](../../installing-on-kubernetes/introduction/overview/), you can enable the KubeSphere App Store first in the [cluster-configuration.yaml](https://github.com/kubesphere/ks-installer/releases/download/v3.3.0/cluster-configuration.yaml) file.
+As you [install KubeSphere on Kubernetes](../../installing-on-kubernetes/introduction/overview/), you can enable the KubeSphere App Store first in the [cluster-configuration.yaml](https://github.com/kubesphere/ks-installer/releases/download/v3.3.1/cluster-configuration.yaml) file.
 
-1. Download the file [cluster-configuration.yaml](https://github.com/kubesphere/ks-installer/releases/download/v3.3.0/cluster-configuration.yaml) and edit it.
+1. Download the file [cluster-configuration.yaml](https://github.com/kubesphere/ks-installer/releases/download/v3.3.1/cluster-configuration.yaml) and edit it.
 
     ```bash
     vi cluster-configuration.yaml
@@ -63,7 +63,7 @@ As you [install KubeSphere on Kubernetes](../../installing-on-kubernetes/introdu
 3. Run the following commands to start installation:
 
     ```bash
-    kubectl apply -f https://github.com/kubesphere/ks-installer/releases/download/v3.3.0/kubesphere-installer.yaml
+    kubectl apply -f https://github.com/kubesphere/ks-installer/releases/download/v3.3.1/kubesphere-installer.yaml
     
     kubectl apply -f cluster-configuration.yaml
     ```
@@ -109,7 +109,7 @@ After you log in to the console, if you can see **App Store** in the upper-left 
 {{< notice note >}}
 
 - You can even access the App Store without logging in to the console by visiting `<Node IP Address>:30880/apps`.
-- The **OpenPitrix** tab in KubeSphere 3.3.0 does not appear on the **System Components** page after the App Store is enabled.
+- The **OpenPitrix** tab in KubeSphere 3.3 does not appear on the **System Components** page after the App Store is enabled.
 
 {{</ notice >}} 
 

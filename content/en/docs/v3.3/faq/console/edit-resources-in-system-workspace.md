@@ -31,8 +31,8 @@ Editing resources in `system-workspace` may cause unexpected results, such as Ku
    ```yaml
        client:
          version:
-           kubesphere: v3.3.0
-           kubernetes: v1.22.10
+           kubesphere: v3.3.1
+           kubernetes: v1.21.5
            openpitrix: v3.3.0
          enableKubeConfig: true
          systemWorkspace: "$"  # Add this line manually.

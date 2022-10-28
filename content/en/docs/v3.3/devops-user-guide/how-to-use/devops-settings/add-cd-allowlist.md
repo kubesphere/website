@@ -5,7 +5,7 @@ description: 'Describe how to add a continuous deployment allowlist on KubeSpher
 linkTitle: "Add a Continuous Deployment Allowlist"
 weight: 11243
 ---
-In KubeSphere 3.3.0, you can set an allowlist so that only specific code repositories and deployment locations can be used for continuous deployment.
+In KubeSphere 3.3, you can set an allowlist so that only specific code repositories and deployment locations can be used for continuous deployment.
 
 ## Prerequisites
 

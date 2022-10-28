@@ -7,7 +7,7 @@ weight: 11231
 
 ---
 
-KubeSphere 3.3.0 支持您导入 GitHub、GitLab、Bitbucket 或其它基于 Git 的代码仓库，如 Gitee。下面以 Github 仓库为例，展示如何导入代码仓库。
+KubeSphere 3.3 支持您导入 GitHub、GitLab、Bitbucket 或其它基于 Git 的代码仓库，如 Gitee。下面以 Github 仓库为例，展示如何导入代码仓库。
 
 ## 准备工作
 

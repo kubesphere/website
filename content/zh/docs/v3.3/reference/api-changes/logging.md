@@ -1,12 +1,12 @@
 ---
 title: "日志系统"
 keywords: 'Kubernetes, KubeSphere, API, 日志系统'
-description: 'KubeSphere 3.3.0 中日志系统（服务组件）的 API 变更。'
+description: 'KubeSphere 3.3 中日志系统（服务组件）的 API 变更。'
 linkTitle: "日志系统"
 weight: 17310
 ---
 
-KubeSphere 3.3.0 中**日志系统**（服务组件）的 API 变更。
+KubeSphere 3.3 中**日志系统**（服务组件）的 API 变更。
 
 ## 时间格式
 
@@ -22,6 +22,6 @@ KubeSphere 3.3.0 中**日志系统**（服务组件）的 API 变更。
 - GET  /namespaces/{namespace}/pods/{pod}
 - 整个日志设置 API 组
 
-## Fluent Bit Operator
+## Fluent Operator
 
-在 KubeSphere 3.3.0 中，由于 Fluent Bit Operator 项目已重构且不兼容，整个日志设置 API 已从 KubeSphere 内核中移除。有关如何在 KubeSphere 3.3.0 中配置日志收集，请参考 [Fluent Bit Operator](https://github.com/kubesphere/fluentbit-operator) 文档。
+在 KubeSphere 3.3 中，由于 Fluent Operator 项目已重构且不兼容，整个日志设置 API 已从 KubeSphere 内核中移除。有关如何在 KubeSphere 3.3 中配置日志收集，请参考 [Fluent Operator](https://github.com/kubesphere/fluentbit-operator) 文档。

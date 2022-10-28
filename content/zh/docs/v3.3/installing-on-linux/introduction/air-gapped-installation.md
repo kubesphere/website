@@ -13,17 +13,17 @@ KubeKey v2.1.0 版本新增了清单（manifest）和制品（artifact）的概�
 
 ## 前提条件
 
-如果您要进行多节点安装，需要参考如下示例准备至少三台主机。
+要开始进行多节点安装，您需要参考如下示例准备至少三台主机。
 
 | 主机 IP   | 主机名称    | 角色            |
 | ---------------- | ----   | ---------------- |
-| 192.168.0.2 | node1    | 联网主机用于制作离线包 |
+| 192.168.0.2 | node1    | 联网主机用于源集群打包使用。已部署 Kubernetes v1.22.10 和 KubeSphere v3.3.1 |
 | 192.168.0.3 | node2    | 离线环境主节点 |
 | 192.168.0.4 | node3    | 离线环境镜像仓库节点 |
 
 ## 部署准备
 
-1. 执行以下命令下载 KubeKey v2.2.2 并解压：
+1. 执行以下命令下载 KubeKey v2.3.0 并解压：
 
    {{< tabs >}}
 
@@ -32,7 +32,7 @@ KubeKey v2.1.0 版本新增了清单（manifest）和制品（artifact）的概�
    从 [GitHub Release Page](https://github.com/kubesphere/kubekey/releases) 下载 KubeKey 或者直接运行以下命令。
 
    ```bash
-   curl -sfL https://get-kk.kubesphere.io | VERSION=v2.2.2 sh -
+   curl -sfL https://get-kk.kubesphere.io | VERSION=v2.3.0 sh -
    ```
 
    {{</ tab >}}
@@ -48,13 +48,23 @@ KubeKey v2.1.0 版本新增了清单（manifest）和制品（artifact）的概�
    运行以下命令来下载 KubeKey：
 
    ```bash
-   curl -sfL https://get-kk.kubesphere.io | VERSION=v2.2.2 sh -
+   curl -sfL https://get-kk.kubesphere.io | VERSION=v2.3.0 sh -
    ```
    {{</ tab >}}
 
    {{</ tabs >}}
 
-2. 在联网主机上执行以下命令，并复制示例中的 manifest 内容。关于更多信息，请参阅 [manifest-example](https://github.com/kubesphere/kubekey/blob/master/docs/manifest-example.md)。
+2. 在源集群中使用 KubeKey 创建 manifest。支持下面 2 种方式：
+
+   - （推荐）在已创建的集群中执行 KubeKey 命令生成该文件。生成的yaml只是提供一个示例（镜像列表不完整），需要自行补充修改，第一次离线部署推荐复制下方第三点的配置内容。
+
+   ```bash
+   ./kk create manifest
+   ```
+
+   - 根据模板手动创建并编写该文件（需要一定的基础推荐使用第一种方式）。关于更多信息，请参阅 [manifest-example](https://github.com/kubesphere/kubekey/blob/master/docs/manifest-example.md)。
+
+3. 执行以下命令在源集群中修改 manifest 配置：
    
    ```bash
    vim manifest.yaml
@@ -77,7 +87,7 @@ KubeKey v2.1.0 版本新增了清单（manifest）和制品（artifact）的概�
        repository:
          iso:
            localPath:
-           url: https://github.com/kubesphere/kubekey/releases/download/v2.2.2/centos7-rpms-amd64.iso
+           url: https://github.com/kubesphere/kubekey/releases/download/v2.3.0/centos7-rpms-amd64.iso
      - arch: amd64
        type: linux
        id: ubuntu
@@ -85,13 +95,13 @@ KubeKey v2.1.0 版本新增了清单（manifest）和制品（artifact）的概�
        repository:
          iso:
            localPath:
-           url: https://github.com/kubesphere/kubekey/releases/download/v2.2.2/ubuntu-20.04-debs-amd64.iso
+           url: https://github.com/kubesphere/kubekey/releases/download/v2.3.0/ubuntu-20.04-debs-amd64.iso
      kubernetesDistributions:
      - type: kubernetes
-       version: v1.22.10
+       version: v1.22.12
      components:
        helm:
-         version: v3.6.3
+         version: v3.9.0
        cni:
          version: v0.9.1
        etcd:
@@ -106,14 +116,14 @@ KubeKey v2.1.0 版本新增了清单（manifest）和制品（artifact）的概�
        docker-registry:
          version: "2"
        harbor:
-         version: v2.4.1
+         version: v2.5.3
        docker-compose:
          version: v2.2.2
      images:
-     - registry.cn-beijing.aliyuncs.com/kubesphereio/kube-apiserver:v1.22.10
-     - registry.cn-beijing.aliyuncs.com/kubesphereio/kube-controller-manager:v1.22.10
-     - registry.cn-beijing.aliyuncs.com/kubesphereio/kube-proxy:v1.22.10
-     - registry.cn-beijing.aliyuncs.com/kubesphereio/kube-scheduler:v1.22.10
+     - registry.cn-beijing.aliyuncs.com/kubesphereio/kube-apiserver:v1.22.12
+     - registry.cn-beijing.aliyuncs.com/kubesphereio/kube-controller-manager:v1.22.12
+     - registry.cn-beijing.aliyuncs.com/kubesphereio/kube-proxy:v1.22.12
+     - registry.cn-beijing.aliyuncs.com/kubesphereio/kube-scheduler:v1.22.12
      - registry.cn-beijing.aliyuncs.com/kubesphereio/pause:3.5
      - registry.cn-beijing.aliyuncs.com/kubesphereio/coredns:1.8.0
      - registry.cn-beijing.aliyuncs.com/kubesphereio/cni:v3.23.2
@@ -127,13 +137,14 @@ KubeKey v2.1.0 版本新增了清单（manifest）和制品（artifact）的概�
      - registry.cn-beijing.aliyuncs.com/kubesphereio/haproxy:2.3
      - registry.cn-beijing.aliyuncs.com/kubesphereio/nfs-subdir-external-provisioner:v4.0.2
      - registry.cn-beijing.aliyuncs.com/kubesphereio/k8s-dns-node-cache:1.15.12
-     - registry.cn-beijing.aliyuncs.com/kubesphereio/ks-installer:v3.3.0
-     - registry.cn-beijing.aliyuncs.com/kubesphereio/ks-apiserver:v3.3.0
-     - registry.cn-beijing.aliyuncs.com/kubesphereio/ks-console:v3.3.0
-     - registry.cn-beijing.aliyuncs.com/kubesphereio/ks-controller-manager:v3.3.0
-     - registry.cn-beijing.aliyuncs.com/kubesphereio/kubectl:v1.20.0
-     - registry.cn-beijing.aliyuncs.com/kubesphereio/kubectl:v1.21.0
+     - registry.cn-beijing.aliyuncs.com/kubesphereio/ks-installer:v3.3.1
+     - registry.cn-beijing.aliyuncs.com/kubesphereio/ks-apiserver:v3.3.1
+     - registry.cn-beijing.aliyuncs.com/kubesphereio/ks-console:v3.3.1
+     - registry.cn-beijing.aliyuncs.com/kubesphereio/ks-controller-manager:v3.3.1
+     - registry.cn-beijing.aliyuncs.com/kubesphereio/ks-upgrade:v3.3.1
      - registry.cn-beijing.aliyuncs.com/kubesphereio/kubectl:v1.22.0
+     - registry.cn-beijing.aliyuncs.com/kubesphereio/kubectl:v1.21.0
+     - registry.cn-beijing.aliyuncs.com/kubesphereio/kubectl:v1.20.0
      - registry.cn-beijing.aliyuncs.com/kubesphereio/kubefed:v0.8.1
      - registry.cn-beijing.aliyuncs.com/kubesphereio/tower:v0.2.0
      - registry.cn-beijing.aliyuncs.com/kubesphereio/minio:RELEASE.2019-08-07T01-59-21Z
@@ -150,10 +161,11 @@ KubeKey v2.1.0 版本新增了清单（manifest）和制品（artifact）的概�
      - registry.cn-beijing.aliyuncs.com/kubesphereio/cloudcore:v1.9.2
      - registry.cn-beijing.aliyuncs.com/kubesphereio/iptables-manager:v1.9.2
      - registry.cn-beijing.aliyuncs.com/kubesphereio/edgeservice:v0.2.0
-     - registry.cn-beijing.aliyuncs.com/kubesphereio/openpitrix-jobs:v3.2.1
-     - registry.cn-beijing.aliyuncs.com/kubesphereio/devops-apiserver:v3.3.0
-     - registry.cn-beijing.aliyuncs.com/kubesphereio/devops-controller:v3.3.0
-     - registry.cn-beijing.aliyuncs.com/kubesphereio/devops-tools:v3.3.0
+     - registry.cn-beijing.aliyuncs.com/kubesphereio/gatekeeper:v3.5.2
+     - registry.cn-beijing.aliyuncs.com/kubesphereio/openpitrix-jobs:v3.3.1
+     - registry.cn-beijing.aliyuncs.com/kubesphereio/devops-apiserver:v3.3.1
+     - registry.cn-beijing.aliyuncs.com/kubesphereio/devops-controller:v3.3.1
+     - registry.cn-beijing.aliyuncs.com/kubesphereio/devops-tools:v3.3.1
      - registry.cn-beijing.aliyuncs.com/kubesphereio/ks-jenkins:v3.3.0-2.319.1
      - registry.cn-beijing.aliyuncs.com/kubesphereio/inbound-agent:4.10-2
      - registry.cn-beijing.aliyuncs.com/kubesphereio/builder-base:v3.2.2
@@ -201,7 +213,7 @@ KubeKey v2.1.0 版本新增了清单（manifest）和制品（artifact）的概�
      - registry.cn-beijing.aliyuncs.com/kubesphereio/prometheus-config-reloader:v0.55.1
      - registry.cn-beijing.aliyuncs.com/kubesphereio/prometheus-operator:v0.55.1
      - registry.cn-beijing.aliyuncs.com/kubesphereio/kube-rbac-proxy:v0.11.0
-     - registry.cn-beijing.aliyuncs.com/kubesphereio/kube-state-metrics:v2.3.0
+     - registry.cn-beijing.aliyuncs.com/kubesphereio/kube-state-metrics:v2.5.0
      - registry.cn-beijing.aliyuncs.com/kubesphereio/node-exporter:v1.3.1
      - registry.cn-beijing.aliyuncs.com/kubesphereio/alertmanager:v0.23.0
      - registry.cn-beijing.aliyuncs.com/kubesphereio/thanos:v0.25.2
@@ -237,7 +249,6 @@ KubeKey v2.1.0 版本新增了清单（manifest）和制品（artifact）的概�
      - registry.cn-beijing.aliyuncs.com/kubesphereio/hello:plain-text
      - registry.cn-beijing.aliyuncs.com/kubesphereio/wordpress:4.8-apache
      - registry.cn-beijing.aliyuncs.com/kubesphereio/hpa-example:latest
-     - registry.cn-beijing.aliyuncs.com/kubesphereio/java:openjdk-8-jre-alpine
      - registry.cn-beijing.aliyuncs.com/kubesphereio/fluentd:v1.4.2-2.0
      - registry.cn-beijing.aliyuncs.com/kubesphereio/perl:latest
      - registry.cn-beijing.aliyuncs.com/kubesphereio/examples-bookinfo-productpage-v1:1.16.2
@@ -258,17 +269,11 @@ KubeKey v2.1.0 版本新增了清单（manifest）和制品（artifact）的概�
    
    - 可根据实际情况修改 **manifest-sample.yaml** 文件的内容，用于之后导出期望的 artifact 文件。
   
-   - 您可以访问 https://github.com/kubesphere/kubekey/releases/tag/v2.2.2 下载 ISO 文件。
+   - 您可以访问 https://github.com/kubesphere/kubekey/releases/tag/v2.3.0 下载 ISO 文件。
    
    {{</ notice >}}
    
-3. （可选）如果您已经拥有集群，那么可以在已有集群中执行 KubeKey 命令生成 manifest 文件，并参照步骤 2 中的示例配置 manifest 文件内容。
-   
-   ```bash
-   ./kk create manifest
-   ```
-
-4. 导出制品 artifact。
+4. 从源集群中导出制品 artifact。
    
       {{< tabs >}}
 
@@ -313,7 +318,7 @@ KubeKey v2.1.0 版本新增了清单（manifest）和制品（artifact）的概�
 2. 执行以下命令创建离线集群配置文件：
 
    ```bash
-   ./kk create config --with-kubesphere v3.3.0 --with-kubernetes v1.22.10 -f config-sample.yaml
+   ./kk create config --with-kubesphere v3.3.1 --with-kubernetes v1.22.10 -f config-sample.yaml
    ```
 
 3. 执行以下命令修改配置文件：
@@ -358,7 +363,7 @@ KubeKey v2.1.0 版本新增了清单（manifest）和制品（artifact）的概�
        address: ""
        port: 6443
      kubernetes:
-       version: v1.22.10
+       version: v1.21.5
        clusterName: cluster.local
      network:
        plugin: calico
@@ -409,7 +414,7 @@ KubeKey v2.1.0 版本新增了清单（manifest）和制品（artifact）的概�
    - 公共项目（Public）：任何用户都可以从这个项目中拉取镜像。
    - 私有项目（Private）：只有作为项目成员的用户可以拉取镜像。
 
-   Harbor 管理员账号：**admin**，密码：**Harbor12345**。Harbor 安装文件在 **/opt/harbor**, 如需运维 Harbor，可至该目录下。
+   Harbor 管理员账号：**admin**，密码：**Harbor12345**。Harbor 安装文件在 **/opt/harbor** , 如需运维 Harbor，可至该目录下。
 
     {{</ notice >}}
 
@@ -542,8 +547,8 @@ KubeKey v2.1.0 版本新增了清单（manifest）和制品（artifact）的概�
 
    参数解释如下：
 
-   - **config-sample.yaml**：离线环境的配置文件。
-   - **kubesphere.tar.gz**：打包的 tar 包镜像。
+   - **config-sample.yaml**：离线环境集群的配置文件。
+   - **kubesphere.tar.gz**：源集群打包出来的 tar 包镜像。
    - **--with-packages**：若需要安装操作系统依赖，需指定该选项。
 
 8. 执行以下命令查看集群状态：

@@ -121,7 +121,7 @@ KubeSphere 使用一段时间之后，由于工作负载不断增加，您可能
        address: 172.16.0.253
        port: 6443
      kubernetes:
-       version: v1.22.10
+       version: v1.21.5
        imageRepo: kubesphere
        clusterName: cluster.local
        proxyMode: ipvs

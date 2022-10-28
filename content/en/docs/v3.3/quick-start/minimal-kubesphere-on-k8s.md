@@ -11,7 +11,7 @@ In addition to installing KubeSphere on a Linux machine, you can also deploy it 
 
 ## Prerequisites
 
-- To install KubeSphere 3.3.0 on Kubernetes, your Kubernetes version must be v1.19.x, v1.20.x, v1.21.x, v1.22.x, and v1.23.x (experimental support).
+- To install KubeSphere 3.3 on Kubernetes, your Kubernetes version must be v1.19.x, v1.20.x, v1.21.x, v1.22.x, and v1.23.x (experimental support).
 - Make sure your machine meets the minimal hardware requirement: CPU > 1 Core, Memory > 2 GB.
 - A **default** Storage Class in your Kubernetes cluster needs to be configured before the installation.
 
@@ -33,9 +33,9 @@ After you make sure your machine meets the conditions, perform the following ste
 1. Run the following commands to start installation:
 
     ```bash
-    kubectl apply -f https://github.com/kubesphere/ks-installer/releases/download/v3.3.0/kubesphere-installer.yaml
+    kubectl apply -f https://github.com/kubesphere/ks-installer/releases/download/v3.3.1/kubesphere-installer.yaml
     
-    kubectl apply -f https://github.com/kubesphere/ks-installer/releases/download/v3.3.0/cluster-configuration.yaml
+    kubectl apply -f https://github.com/kubesphere/ks-installer/releases/download/v3.3.1/cluster-configuration.yaml
     ```
 
 2. After KubeSphere is successfully installed, you can run the following command to view the installation logs:

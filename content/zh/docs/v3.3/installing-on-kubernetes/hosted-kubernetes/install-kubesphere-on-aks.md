@@ -98,9 +98,9 @@ Azure Kubernetes Services 本身将放置在`KubeSphereRG`中。
 请使用以下命令开始部署 KubeSphere。
 
 ```bash
-kubectl apply -f https://github.com/kubesphere/ks-installer/releases/download/v3.3.0/kubesphere-installer.yaml
+kubectl apply -f https://github.com/kubesphere/ks-installer/releases/download/v3.3.1/kubesphere-installer.yaml
 
-kubectl apply -f https://github.com/kubesphere/ks-installer/releases/download/v3.3.0/cluster-configuration.yaml
+kubectl apply -f https://github.com/kubesphere/ks-installer/releases/download/v3.3.1/cluster-configuration.yaml
 ```
 
 可以通过以下命令检查安装日志：

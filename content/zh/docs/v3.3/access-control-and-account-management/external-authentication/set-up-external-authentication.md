@@ -105,7 +105,7 @@ KubeSphere 默认提供了以下几种类型的身份提供者：
 
 * GitHub Identity Provider
 
-* [CAS Identity Provider](../cas-identity-provider)
+* CAS Identity Provider
 
 * Aliyun IDaaS Provider
 

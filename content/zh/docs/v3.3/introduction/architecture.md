@@ -39,5 +39,3 @@ KubeSphere 将 [前端](https://github.com/kubesphere/console) 与 [后端](http
 ## 服务组件
 
 以上列表中每个功能组件下还有多个服务组件，关于服务组件的说明，可参考 [服务组件说明](../../pluggable-components/)。
-
-![Service Components](https://pek3b.qingstor.com/kubesphere-docs/png/20191017163549.png)

@@ -288,7 +288,7 @@ This stage uses SonarQube to test your code. You can skip this stage if you do n
 
    {{< notice note >}}
 
-   In KubeSphere 3.3.0, the account that can run a pipeline will be able to continue or terminate the pipeline if there is no reviewer specified. Pipeline creators, accounts with the role of `admin` in a project, or the account you specify will be able to continue or terminate a pipeline.
+   In KubeSphere 3.3, the account that can run a pipeline will be able to continue or terminate the pipeline if there is no reviewer specified. Pipeline creators, accounts with the role of `admin` in a project, or the account you specify will be able to continue or terminate a pipeline.
 
    {{</ notice >}}
 

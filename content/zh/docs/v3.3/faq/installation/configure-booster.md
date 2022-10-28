@@ -10,7 +10,7 @@ weight: 16200
 
 ## 获取加速器地址
 
-您需要获取仓库的一个镜像地址以配置加速器。您可以参考如何[从阿里云获取加速器地址](https://www.alibabacloud.com/help/zh/doc-detail/60750.htm?spm=a2c63.p38356.b99.18.4f4133f0uTKb8S)。
+您需要获取仓库的一个镜像地址以配置加速器。您可以参考如何[从阿里云获取加速器地址](https://help.aliyun.com/document_detail/60750.html)。
 
 ## 配置仓库镜像地址
 

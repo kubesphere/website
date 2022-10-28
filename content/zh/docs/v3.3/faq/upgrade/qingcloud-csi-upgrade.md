@@ -1,6 +1,6 @@
 ---
 title: "升级 QingCloud CSI"
-keywords: "Kubernetes, 升级, KubeSphere, v3.3.0"
+keywords: "Kubernetes, 升级, KubeSphere, v3.3.1"
 description: "升级 KubeSphere 后升级 QingCloud CSI。"
 linkTitle: "升级 QingCloud CSI"
 weight: 16210

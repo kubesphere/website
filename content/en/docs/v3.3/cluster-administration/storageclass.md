@@ -121,17 +121,17 @@ Nevertheless, you can use [rbd provisioner](https://github.com/kubernetes-incuba
 
 | Parameter | Description |
 | :---- | :---- |
-| Monitors| IP address of Ceph monitors. |
-| adminId| Ceph client ID that is capable of creating images in the pool. |
-| adminSecretName| Secret name of `adminId`. |
-| adminSecretNamespace| Namespace of `adminSecretName`. |
-| pool | Name of the  Ceph RBD pool. |
-| userId | The Ceph client ID that is used to map the RBD image. |
-| userSecretName | The name of Ceph Secret for `userId` to map RBD image. |
-| userSecretNamespace | The namespace for `userSecretName`. |
+| MONITORS| IP address of Ceph monitors. |
+| ADMINID| Ceph client ID that is capable of creating images in the pool. |
+| ADMINSECRETNAME| Secret name of `adminId`. |
+| ADMINSECRETNAMESPACE| Namespace of `adminSecretName`. |
+| POOL | Name of the  Ceph RBD pool. |
+| USERID | The Ceph client ID that is used to map the RBD image. |
+| USERSECRETNAME | The name of Ceph Secret for `userId` to map RBD image. |
+| USERSECRETNAMESPACE | The namespace for `userSecretName`. |
 | File System Type | File system type of the storage volume. |
-| imageFormat | Option of the Ceph volume. The value can be `1` or `2`. `imageFeatures` needs to be filled when you set imageFormat to `2`. |
-| imageFeatures| Additional function of the Ceph cluster. The value should only be set when you set imageFormat to `2`. |
+| IMAGEFORMAT | Option of the Ceph volume. The value can be `1` or `2`. `imageFeatures` needs to be filled when you set imageFormat to `2`. |
+| IMAGEFEATURES| Additional function of the Ceph cluster. The value should only be set when you set imageFormat to `2`. |
 
 For more information about StorageClass parameters, see [Ceph RBD in Kubernetes Documentation](https://kubernetes.io/docs/concepts/storage/storage-classes/#ceph-rbd).
 
@@ -146,7 +146,7 @@ NFS (Net File System) is widely used on Kubernetes with the external-provisioner
 
 {{< notice note >}}
 
-NFS is incompatible with some applications, for example, Prometheus, which may result in pod creation failures. If you need to use NFS in the production environment, ensure that you have understood the risks. For more information, contact support@kubesphere.cloud.
+It is not recommended that you use NFS storage for production (especially on Kubernetes version 1.20 or later) as some issues may occur, such as `failed to obtain lock` and `input/output error`, resulting in Pod `CrashLoopBackOff`. Besides, some apps may not be compatible with NFS, including [Prometheus](https://github.com/prometheus/prometheus/blob/03b354d4d9386e4b3bfbcd45da4bb58b182051a5/docs/storage.md#operational-aspects).
 
 {{</ notice >}} 
 

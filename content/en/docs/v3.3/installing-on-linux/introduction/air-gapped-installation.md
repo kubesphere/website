@@ -15,12 +15,12 @@ In KubeKey v2.1.0, we bring in concepts of manifest and artifact, which provides
 
 |Host IP| Host Name | Usage      |
 | ---------------- | ---- | ---------------- |
-|192.168.0.2 | node1    | Online host for packaging the source cluster with Kubernetes v1.22.10 and KubeSphere v3.3.0 installed |
+|192.168.0.2 | node1    | Online host for packaging the source cluster with Kubernetes v1.22.10 and KubeSphere v3.3.1 installed |
 |192.168.0.3 | node2    | Control plane node of the air-gapped environment |
 |192.168.0.4 | node3    | Image registry node of the air-gapped environment |
 ## Preparations
 
-1. Run the following commands to download KubeKey v2.2.2.
+1. Run the following commands to download KubeKey v2.3.0 .
    {{< tabs >}}
 
    {{< tab "Good network connections to GitHub/Googleapis" >}}
@@ -28,7 +28,7 @@ In KubeKey v2.1.0, we bring in concepts of manifest and artifact, which provides
    Download KubeKey from its [GitHub Release Page](https://github.com/kubesphere/kubekey/releases) or use the following command directly.
 
    ```bash
-   curl -sfL https://get-kk.kubesphere.io | VERSION=v2.2.2 sh -
+   curl -sfL https://get-kk.kubesphere.io | VERSION=v2.3.0 sh -
    ```
 
    {{</ tab >}}
@@ -44,7 +44,7 @@ In KubeKey v2.1.0, we bring in concepts of manifest and artifact, which provides
    Run the following command to download KubeKey:
 
    ```bash
-   curl -sfL https://get-kk.kubesphere.io | VERSION=v2.2.2 sh -
+   curl -sfL https://get-kk.kubesphere.io | VERSION=v2.3.0 sh -
    ```
    {{</ tab >}}
 
@@ -83,7 +83,7 @@ In KubeKey v2.1.0, we bring in concepts of manifest and artifact, which provides
        repository:
          iso:
            localPath:
-           url: https://github.com/kubesphere/kubekey/releases/download/v2.2.2/centos7-rpms-amd64.iso
+           url: https://github.com/kubesphere/kubekey/releases/download/v2.3.0/centos7-rpms-amd64.iso
      - arch: amd64
        type: linux
        id: ubuntu
@@ -91,13 +91,13 @@ In KubeKey v2.1.0, we bring in concepts of manifest and artifact, which provides
        repository:
          iso:
            localPath:
-           url: https://github.com/kubesphere/kubekey/releases/download/v2.2.2/ubuntu-20.04-debs-amd64.iso
+           url: https://github.com/kubesphere/kubekey/releases/download/v2.3.0/ubuntu-20.04-debs-amd64.iso
      kubernetesDistributions:
      - type: kubernetes
-       version: v1.22.10
+       version: v1.22.12
      components:
        helm:
-         version: v3.6.3
+         version: v3.9.0
        cni:
          version: v0.9.1
        etcd:
@@ -112,14 +112,14 @@ In KubeKey v2.1.0, we bring in concepts of manifest and artifact, which provides
        docker-registry:
          version: "2"
        harbor:
-         version: v2.4.1
+         version: v2.5.3
        docker-compose:
          version: v2.2.2
      images:
-     - docker.io/kubesphere/kube-apiserver:v1.22.10
-     - docker.io/kubesphere/kube-controller-manager:v1.22.10
-     - docker.io/kubesphere/kube-proxy:v1.22.10
-     - docker.io/kubesphere/kube-scheduler:v1.22.10
+     - docker.io/kubesphere/kube-apiserver:v1.22.12
+     - docker.io/kubesphere/kube-controller-manager:v1.22.12
+     - docker.io/kubesphere/kube-proxy:v1.22.12
+     - docker.io/kubesphere/kube-scheduler:v1.22.12
      - docker.io/kubesphere/pause:3.5
      - docker.io/coredns/coredns:1.8.0
      - docker.io/calico/cni:v3.23.2
@@ -133,13 +133,14 @@ In KubeKey v2.1.0, we bring in concepts of manifest and artifact, which provides
      - docker.io/library/haproxy:2.3
      - docker.io/kubesphere/nfs-subdir-external-provisioner:v4.0.2
      - docker.io/kubesphere/k8s-dns-node-cache:1.15.12
-     - docker.io/kubesphere/ks-installer:v3.3.0
-     - docker.io/kubesphere/ks-apiserver:v3.3.0
-     - docker.io/kubesphere/ks-console:v3.3.0
-     - docker.io/kubesphere/ks-controller-manager:v3.3.0
-     - docker.io/kubesphere/kubectl:v1.20.0
-     - docker.io/kubesphere/kubectl:v1.21.0
+     - docker.io/kubesphere/ks-installer:v3.3.1
+     - docker.io/kubesphere/ks-apiserver:v3.3.1
+     - docker.io/kubesphere/ks-console:v3.3.1
+     - docker.io/kubesphere/ks-controller-manager:v3.3.1
+     - docker.io/kubesphere/ks-upgrade:v3.3.1
      - docker.io/kubesphere/kubectl:v1.22.0
+     - docker.io/kubesphere/kubectl:v1.21.0
+     - docker.io/kubesphere/kubectl:v1.20.0
      - docker.io/kubesphere/kubefed:v0.8.1
      - docker.io/kubesphere/tower:v0.2.0
      - docker.io/minio/minio:RELEASE.2019-08-07T01-59-21Z
@@ -156,10 +157,11 @@ In KubeKey v2.1.0, we bring in concepts of manifest and artifact, which provides
      - docker.io/kubeedge/cloudcore:v1.9.2
      - docker.io/kubeedge/iptables-manager:v1.9.2
      - docker.io/kubesphere/edgeservice:v0.2.0
-     - docker.io/kubesphere/openpitrix-jobs:v3.2.1
-     - docker.io/kubesphere/devops-apiserver:v3.3.0
-     - docker.io/kubesphere/devops-controller:v3.3.0
-     - docker.io/kubesphere/devops-tools:v3.3.0
+     - docker.io/openpolicyagent/gatekeeper:v3.5.2
+     - docker.io/kubesphere/openpitrix-jobs:v3.3.1
+     - docker.io/kubesphere/devops-apiserver:v3.3.1
+     - docker.io/kubesphere/devops-controller:v3.3.1
+     - docker.io/kubesphere/devops-tools:v3.3.1
      - docker.io/kubesphere/ks-jenkins:v3.3.0-2.319.1
      - docker.io/jenkins/inbound-agent:4.10-2
      - docker.io/kubesphere/builder-base:v3.2.2
@@ -207,7 +209,7 @@ In KubeKey v2.1.0, we bring in concepts of manifest and artifact, which provides
      - docker.io/kubesphere/prometheus-config-reloader:v0.55.1
      - docker.io/kubesphere/prometheus-operator:v0.55.1
      - docker.io/kubesphere/kube-rbac-proxy:v0.11.0
-     - docker.io/kubesphere/kube-state-metrics:v2.3.0
+     - docker.io/kubesphere/kube-state-metrics:v2.5.0
      - docker.io/prom/node-exporter:v1.3.1
      - docker.io/prom/alertmanager:v0.23.0
      - docker.io/thanosio/thanos:v0.25.2
@@ -243,7 +245,6 @@ In KubeKey v2.1.0, we bring in concepts of manifest and artifact, which provides
      - docker.io/nginxdemos/hello:plain-text
      - docker.io/library/wordpress:4.8-apache
      - docker.io/mirrorgooglecontainers/hpa-example:latest
-     - docker.io/library/java:openjdk-8-jre-alpine
      - docker.io/fluent/fluentd:v1.4.2-2.0
      - docker.io/library/perl:latest
      - docker.io/kubesphere/examples-bookinfo-productpage-v1:1.16.2
@@ -264,7 +265,7 @@ In KubeKey v2.1.0, we bring in concepts of manifest and artifact, which provides
    
    - You can customize the **manifest-sample.yaml** file to export the desired artifact file.
 
-   - You can download the ISO files at https://github.com/kubesphere/kubekey/releases/tag/v2.2.2.
+   - You can download the ISO files at https://github.com/kubesphere/kubekey/releases/tag/v2.3.0.
    
    {{</ notice >}}
    
@@ -309,7 +310,7 @@ In KubeKey v2.1.0, we bring in concepts of manifest and artifact, which provides
 2. Run the following command to create a configuration file for the air-gapped cluster:
 
    ```bash
-   ./kk create config --with-kubesphere v3.3.0 --with-kubernetes v1.22.10 -f config-sample.yaml
+   ./kk create config --with-kubesphere v3.3.1 --with-kubernetes v1.22.10 -f config-sample.yaml
    ```
 
 3. Run the following command to modify the configuration file:
@@ -354,7 +355,7 @@ In KubeKey v2.1.0, we bring in concepts of manifest and artifact, which provides
        address: ""
        port: 6443
      kubernetes:
-       version: v1.22.10
+       version: v1.21.5
        clusterName: cluster.local
      network:
        plugin: calico

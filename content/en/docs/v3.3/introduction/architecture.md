@@ -42,5 +42,3 @@ KubeSphere separates [frontend](https://github.com/kubesphere/console) from [bac
 ## Service Components
 
 Each component has many services. See [Overview](../../pluggable-components/overview/) for more details.
-
-![Service Components](https://pek3b.qingstor.com/kubesphere-docs/png/20191017163549.png)

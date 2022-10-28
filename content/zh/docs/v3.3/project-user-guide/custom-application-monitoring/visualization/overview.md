@@ -12,7 +12,7 @@ weight: 10815
 
 您可以在项目的**监控告警**下的**自定义监控**页面为应用指标创建监控面板。共有三种方式可创建监控面板：使用内置模板创建、使用空白模板进行自定义或者使用 YAML 文件创建。
 
-内置模板共有三种，可分别用于 MySQL、Elasticsearch 和 Redis。这些模板仅供演示使用，并会根据 KubeSphere 新版本的发布同步更新。此外，您还可以创建自定义监控面板。
+内置模板包括 MySQL、Elasticsearch、Redis等。这些模板仅供演示使用，并会根据 KubeSphere 新版本的发布同步更新。此外，您还可以创建自定义监控面板。
 
 KubeSphere 自定义监控面板可以视作为一个 YAML 配置文件。数据模型主要基于 [Grafana](https://github.com/grafana/grafana)（一个用于监控和可观测性的开源工具）创建，您可以在 [kubesphere/monitoring-dashboard](https://github.com/kubesphere/monitoring-dashboard) 中找到 KubeSphere 监控面板数据模型的设计。该配置文件便捷，可进行分享，欢迎您通过  [Monitoring Dashboards Gallery](https://github.com/kubesphere/monitoring-dashboard/tree/master/contrib/gallery) 对 KubeSphere 社区贡献面板模板。
 

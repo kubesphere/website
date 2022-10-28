@@ -78,7 +78,7 @@ kubectl -n kubesphere-system rollout restart deploy ks-controller-manager
 
 如果您使用了错误的 ks-installer 版本，会导致安装之后各组件版本不匹配。
 
-通过以下方式检查各组件版本是否一致，正确的 image tag 应该是 v3.3.0。
+通过以下方式检查各组件版本是否一致，正确的 image tag 应该是 v3.3.1。
 
 ```
 kubectl -n kubesphere-system get deploy ks-installer -o jsonpath='{.spec.template.spec.containers[0].image}'

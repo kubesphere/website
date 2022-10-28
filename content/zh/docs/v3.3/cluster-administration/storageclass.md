@@ -62,7 +62,7 @@ table th:nth-of-type(2) {
 
 | 参数 | 描述信息 |
 | :---- | :---- |
-| 卷扩容 | 在 YAML 文件中由 `allowVolumeExpansion` 指定。 |
+| 卷扩展 | 在 YAML 文件中由 `allowVolumeExpansion` 指定。 |
 | 回收机制 | 在 YAML 文件中由 `reclaimPolicy` 指定。 |
 | 访问模式 | 在 YAML 文件中由 `.metadata.annotations.storageclass.kubesphere.io/supported-access-modes` 指定。默认 `ReadWriteOnce`、`ReadOnlyMany` 和 `ReadWriteMany` 全选。 |
 | 供应者 | 在 YAML 文件中由 `provisioner` 指定。如果您使用 [NFS-Client 的 Chart](https://github.com/kubesphere/helm-charts/tree/master/src/main/nfs-client-provisioner) 来安装存储类型，可以设为 `cluster.local/nfs-client-nfs-client-provisioner`。 |
@@ -144,17 +144,17 @@ Ceph RBD 也是 Kubernetes 上的一种树内存储插件，即 Kubernetes 中�
 
 | 参数 | 描述 |
 | :---- | :---- |
-| monitors| Ceph 集群 Monitors 的 IP 地址。 |
-| adminId| Ceph 集群能够创建卷的用户 ID。 |
-| adminSecretName| `adminId` 的密钥名称。 |
-| adminSecretNamespace| `adminSecret` 所在的项目。 |
-| pool | Ceph RBD 的 Pool 名称。 |
-| userId | Ceph 集群能够挂载卷的用户 ID。 |
-| userSecretName | `userId` 的密钥名称。 |
-| userSecretNamespace | `userSecret` 所在的项目。 |
+| MONITORS| Ceph 集群 Monitors 的 IP 地址。 |
+| ADMINID| Ceph 集群能够创建卷的用户 ID。 |
+| ADMINSECRETNAME| `adminId` 的密钥名称。 |
+| ADMINSECRETNAMESPACE| `adminSecret` 所在的项目。 |
+| POOL | Ceph RBD 的 Pool 名称。 |
+| USERID | Ceph 集群能够挂载卷的用户 ID。 |
+| USERSECRETNAME | `userId` 的密钥名称。 |
+| USERSECRETNAMESPACE | `userSecret` 所在的项目。 |
 | 文件系统类型 | 卷的文件系统类型。 |
-| imageFormat | Ceph 卷的选项。该值可为 `1` 或 `2`，选择 `2` 后需要填写 `imageFeatures`。 |
-| imageFeatures| Ceph 集群的额外功能。仅当设置 `imageFormat` 为 `2` 时，才需要填写该值。 |
+| IMAGEFORMAT | Ceph 卷的选项。该值可为 `1` 或 `2`，选择 `2` 后需要填写 `imageFeatures`。 |
+| IMAGEFEATURES| Ceph 集群的额外功能。仅当设置 `imageFormat` 为 `2` 时，才需要填写该值。 |
 
 有关存储类参数的更多信息，请参见 [Kubernetes 文档中的 Ceph RBD](https://kubernetes.io/zh/docs/concepts/storage/storage-classes/#ceph-rbd)。
 
@@ -168,7 +168,7 @@ NFS（网络文件系统）广泛用于带有 [NFS-Client](https://github.com/ku
 
 {{< notice note >}}
 
-NFS 与部分应用不兼容（例如 Prometheus），可能会导致容器组创建失败。如果确实需要在生产环境中使用 NFS，请确保您了解相关风险或咨询 KubeSphere 技术支持 support@kubesphere.cloud。
+不建议您在生产环境中使用 NFS 存储（尤其是在 Kubernetes 1.20 或以上版本），这可能会引起 `failed to obtain lock` 和 `input/output error` 等问题，从而导致容器组 `CrashLoopBackOff`。此外，部分应用不兼容 NFS，例如 [Prometheus](https://github.com/prometheus/prometheus/blob/03b354d4d9386e4b3bfbcd45da4bb58b182051a5/docs/storage.md#operational-aspects) 等。
 
 {{</ notice >}}
 

@@ -32,7 +32,7 @@ Follow the step below to download [KubeKey](../../../installing-on-linux/introdu
 Download KubeKey from its [GitHub Release Page](https://github.com/kubesphere/kubekey/releases) or use the following command directly.
 
 ```bash
-curl -sfL https://get-kk.kubesphere.io | VERSION=v2.2.2 sh -
+curl -sfL https://get-kk.kubesphere.io | VERSION=v2.3.0 sh -
 ```
 
 {{</ tab >}}
@@ -48,7 +48,7 @@ export KKZONE=cn
 Run the following command to download KubeKey:
 
 ```bash
-curl -sfL https://get-kk.kubesphere.io | VERSION=v2.2.2 sh -
+curl -sfL https://get-kk.kubesphere.io | VERSION=v2.3.0 sh -
 ```
 
 {{< notice note >}}
@@ -63,7 +63,7 @@ After you download KubeKey, if you transfer it to a new machine also with poor n
 
 {{< notice note >}}
 
-The commands above download the latest release (v2.2.2) of KubeKey. Note that an earlier version of KubeKey cannot be used to install K3s.
+The commands above download the latest release (v2.3.0) of KubeKey. Note that an earlier version of KubeKey cannot be used to install K3s.
 
 {{</ notice >}}
 
@@ -78,12 +78,12 @@ chmod +x kk
 1. Create a configuration file of your cluster by running the following command:
 
    ```bash
-   ./kk create config --with-kubernetes v1.21.4-k3s --with-kubesphere v3.3.0
+   ./kk create config --with-kubernetes v1.21.4-k3s --with-kubesphere v3.3.1
    ```
 
    {{< notice note >}}
 
-   KubeKey v2.2.2 supports the installation of K3s v1.21.4.
+   KubeKey v2.3.0 supports the installation of K3s v1.21.4.
 
    {{</ notice >}} 
 

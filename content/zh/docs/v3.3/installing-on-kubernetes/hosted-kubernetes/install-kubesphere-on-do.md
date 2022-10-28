@@ -30,7 +30,7 @@ weight: 4230
 
 {{< notice note >}}
 
-- 如需在 Kubernetes 上安装 KubeSphere 3.3.0，您的 Kubernetes 版本必须为：v1.19.x，v1.20.x，v1.21.x，v1.22.x 或 v1.23.x（实验性支持）。
+- 如需在 Kubernetes 上安装 KubeSphere 3.3，您的 Kubernetes 版本必须为：v1.19.x，v1.20.x，v1.21.x，v1.22.x 或 v1.23.x（实验性支持）。
 - 此示例中包括 3 个节点。您可以根据自己的需求添加更多节点，尤其是在生产环境中。
 - 机器类型 Standard/4 GB/2 vCPU 仅用于最小化安装的，如果您计划启用多个可插拔组件或将集群用于生产，建议将节点升级到规格更大的类型（例如，CPU-Optimized /8 GB /4 vCPUs）。DigitalOcean 是基于工作节点类型来配置主节点，而对于标准节点，API server 可能会很快会变得无响应。
 
@@ -47,9 +47,9 @@ weight: 4230
 - 使用 kubectl 安装 KubeSphere，以下命令仅用于默认的最小安装。
 
   ```bash
-  kubectl apply -f https://github.com/kubesphere/ks-installer/releases/download/v3.3.0/kubesphere-installer.yaml
+  kubectl apply -f https://github.com/kubesphere/ks-installer/releases/download/v3.3.1/kubesphere-installer.yaml
   
-  kubectl apply -f https://github.com/kubesphere/ks-installer/releases/download/v3.3.0/cluster-configuration.yaml
+  kubectl apply -f https://github.com/kubesphere/ks-installer/releases/download/v3.3.1/cluster-configuration.yaml
   ```
 
 - 检查安装日志：

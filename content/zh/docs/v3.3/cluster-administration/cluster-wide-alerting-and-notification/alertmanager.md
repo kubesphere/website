@@ -16,7 +16,7 @@ Alertmanager 处理由客户端应用程序（例如 Prometheus 服务器）发�
 
 Prometheus 的告警分为两部分。Prometheus 服务器根据告警规则向 Alertmanager 发送告警。随后，Alertmanager 管理这些告警，包括沉默、抑制、聚合等，并通过不同方式发送通知，例如电子邮件、应需 (on-call) 通知系统以及聊天平台。
 
-从 3.0 版本开始，KubeSphere 向 Prometheus 添加了开源社区中流行的告警规则，用作内置告警规则。默认情况下，KubeSphere 3.3.0 中的 Prometheus 会持续评估这些内置告警规则，然后向 Alertmanager 发送告警。
+从 3.0 版本开始，KubeSphere 向 Prometheus 添加了开源社区中流行的告警规则，用作内置告警规则。默认情况下，KubeSphere 3.3 中的 Prometheus 会持续评估这些内置告警规则，然后向 Alertmanager 发送告警。
 
 ## 使用 Alertmanager 管理 Kubernetes 事件告警
 
