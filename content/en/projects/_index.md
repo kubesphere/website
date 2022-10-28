@@ -24,7 +24,7 @@ groups:
     children:
       - title: OpenELB
         icon: 'https://pek3b.qingstor.com/kubesphere-docs/png/20200608102707.png'
-        link: 'https://openelb.github.io/'
+        link: 'https://github.com/openelb'
         description: OpenELB is an open source load balancer designed for bare metal Kubernetes clusters. It’s implemented by physical switch, and uses BGP and ECMP to achieve the best performance and high availability.
 
   - name: Installer
@@ -34,12 +34,19 @@ groups:
         link: 'https://github.com/kubesphere/kubekey'
         description: KubeKey is the next-gen installer for Kubernetes and KubeSphere. KubeKey changes from ansible-based technology to Go, supports installing Kubernetes and KubeSphere separately or as a whole easily, efficiently and flexibly.
 
+  - name: Serverless
+    children:
+      - title: OpenFunction
+        icon: 'https://pek3b.qingstor.com/kubesphere-community/images/openfunction-logo-2.png'
+        link: 'https://github.com/OpenFunction'
+        description: OpenFunction is a cloud-native open-source FaaS (Function as a Service) platform aiming to let you focus on your business logic without having to maintain the underlying runtime environment and infrastructure. You can concentrate on developing business-related source code in the form of functions.
+
   - name: Logging
     children:
-      - title: Fluentbit Operator
-        icon: 'https://pek3b.qingstor.com/kubesphere-docs/png/20200608104816.png'
-        link: 'https://github.com/kubesphere/fluentbit-operator'
-        description: The Fluent Bit Operator for Kubernetes facilitates the deployment of Fluent Bit and provides great flexibility in building logging layer based on Fluent Bit, provides Fluent Bit management, custom configuration, and dynamic reloading.
+      - title: Fluent Operator
+        icon: 'https://pek3b.qingstor.com/kubesphere-community/images/fluent-operator-icon.svg'
+        link: 'https://github.com/fluent/fluent-operator'
+        description: Fluent Operator provides great flexibility in building a logging layer based on Fluent Bit and Fluentd.
 
   - name: Notification
     children:

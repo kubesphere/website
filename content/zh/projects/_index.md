@@ -21,10 +21,10 @@ groups:
 
   - name: 服务代理
     children:
-      - title: Porter 负载均衡器
+      - title: OpenELB 负载均衡器
         icon: 'https://pek3b.qingstor.com/kubesphere-docs/png/20200608102707.png'
-        link: 'https://openelb.github.io/'
-        description: 适用于物理部署 Kubernetes 环境的负载均衡器插件，Porter 使用物理交换机实现，利用 BGP 和 ECMP 从而达到性能最优和高可用性，提供用户在物理环境暴露 LoadBalancer 类型服务与云上获得一致性体验。
+        link: 'https://github.com/openelb'
+        description: CNCF 沙箱项目，此前命名为 PorterLB，是为物理机（Bare-metal）、边缘（Edge）和私有化环境设计的负载均衡器插件，可作为 Kubernetes、K3s、KubeSphere 的 LB 插件对集群外暴露 “LoadBalancer” 类型的服务。
 
   - name: 安装部署
     children:
@@ -33,19 +33,26 @@ groups:
         link: 'https://github.com/kubesphere/kubekey'
         description: KubeKey 是 Kubernetes 和 KubeSphere 的下一代 Installer（安装程序），旨在更方便、快速、高效和灵活地安装 Kubernetes 与 KubeSphere。KubeKey 摒弃了原来 Ansible 带来的依赖问题，用 Go 重写，支持单独 Kubernetes 或整体安装 KubeSphere。
 
+  - name: Serverless
+    children:
+      - title: OpenFunction
+        icon: 'https://pek3b.qingstor.com/kubesphere-community/images/openfunction-logo-2.png'
+        link: 'https://github.com/OpenFunction'
+        description: OpenFunction 是一个云原生、开源的 FaaS（函数即服务）框架，旨在让开发人员专注于业务逻辑，而不必关心底层运行环境和基础设施。开发人员只需集中精力以函数的形式开发业务相关的源代码。
+
   - name: 日志管理
     children:
-      - title: Fluentbit Operator
-        icon: 'https://pek3b.qingstor.com/kubesphere-docs/png/20200608104816.png'
-        link: 'https://github.com/kubesphere/fluentbit-operator'
-        description: Fluentbit Operator 极大地方便了 Fluent Bit 在 Kubernetes 之上的部署，并且基于 Fluent Bit 提供了非常灵活日志管理，提供了 Fluent Bit 运维管理、自定义配置、动态加载等功能。
+      - title: Fluent Operator
+        icon: 'https://pek3b.qingstor.com/kubesphere-community/images/fluent-operator-icon.svg'
+        link: 'https://github.com/fluent/fluent-operator'
+        description: 使用 Fluent Operator 可以灵活且方便地部署、配置及卸载 Fluent Bit 以及 Fluentd。同时, 社区还提供支持 Fluentd 以及 Fluent Bit 的海量插件，用户可以根据实际情况进行定制化配置。
 
   - name: 消息通知
     children:
       - title: Notification Manager
         icon: 'https://pek3b.qingstor.com/kubesphere-docs/png/20200608105148.png'
         link: 'https://github.com/kubesphere/notification-manager'
-        description: Notification Manager 管理多租户 Kubernetes 环境中的消息通知。它支持接收来自不同发送方的告警或通知，然后根据告警/通知的租户标签 (如 “namespace”)向平台的各个租户接收方发送通知，支持邮件、企业微信、Slack 等通知渠道，下个版本支持 Webhook。
+        description: Notification Manager 管理多租户 Kubernetes 环境中的消息通知。它支持接收来自不同发送方的告警或通知，然后根据告警/通知的租户标签 (如 “namespace”)向平台的各个租户接收方发送通知，支持邮件、钉钉、飞书、企业微信、Slack 等通知渠道。
 
   - name: Kubernetes 事件
     children:
