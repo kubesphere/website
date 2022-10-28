@@ -12,7 +12,7 @@ KubeSphere, an enterprise-grade container platform for cloud native application 
 
 On October 18, 2022, KubeSphere Turkey announced partnership with Huawei at HUAWEI CONNECT 2022 PARIS. At this event, KubeSphere Turkey and Huawei reached an agreement that both parties would give full play to their technical and resource advantages to provide Turkish users with localized and quality cloud native services and make joint efforts to empower the new cloud native era.
 
-![](http://pek3b.qingstor.com/kubesphere-community/images/kubesphere-turkey-huawei.jpeg)
+![](https://pek3b.qingstor.com/kubesphere-community/images/kubesphere-turkey-huawei.jpeg)
 
 “Together with KubeSphere Turkey, we use KubeSphere to develop PaaS solutions in two scenarios. The first one is to build a managed, shareable platform to help individual developers and small businesses use Kubernetes with ease. The second one is to build a managed, dedicated platform that can be used by government institutions and affiliates. All of these structures will be hosted on the Huawei Cloud,” said Yavuz Sarı, Partnerships & Ecosystem Manager at Huawei.
 
