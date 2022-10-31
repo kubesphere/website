@@ -69,12 +69,6 @@
         box-shadow: 0 4px 15px 0 rgba(7,42,68,.1);
         background-color: #fff;
 
-        &:hover {
-          div {
-            display: block;
-          }
-        }
-
         img {
           position: absolute;
           width: 64px;
@@ -100,7 +94,7 @@
         }
 
         div {
-          display: none;
+          display: block;
           position: absolute;
           top: 50%;
           right: 40px;
