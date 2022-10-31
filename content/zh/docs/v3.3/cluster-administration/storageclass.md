@@ -23,7 +23,7 @@ KubeSphere 支持基于存储类的[动态卷供应](https://kubernetes.io/zh/do
 | 类型                 | 描述信息                                                     |
 | -------------------- | ------------------------------------------------------------ |
 | In-tree              | 内置并作为 Kubernetes 的一部分运行，例如 [RBD](https://kubernetes.io/zh/docs/concepts/storage/storage-classes/#ceph-rbd) 和 [GlusterFS](https://kubernetes.io/zh/docs/concepts/storage/storage-classes/#glusterfs)。有关此类插件的更多信息，请参见 [Provisioner](https://kubernetes.io/zh/docs/concepts/storage/storage-classes/#provisioner)。 |
-| External-provisioner | 独立于 Kubernetes 部署，但运行上类似于树内 (in-tree) 插件，例如 [NFS 客户端](https://github.com/kubernetes-retired/external-storage/tree/master/nfs-client)。有关此类插件的更多信息，请参见 [External Storage](https://github.com/kubernetes-retired/external-storage)。 |
+| External-provisioner | 独立于 Kubernetes 部署，但运行上类似于树内 (in-tree) 插件，例如 [NFS 客户端](https://kubernetes-sigs.github.io/nfs-subdir-external-provisioner/)。有关此类插件的更多信息，请参见 [External Storage](https://github.com/kubernetes-retired/external-storage)。 |
 | CSI                  | 容器存储接口，一种将存储资源暴露给 CO（例如 Kubernetes）上的工作负载的标准，例如 [QingCloud-CSI](https://github.com/yunify/qingcloud-csi) 和 [Ceph-CSI](https://github.com/ceph/ceph-csi)。有关此类插件的更多信息，请参见 [Drivers](https://kubernetes-csi.github.io/docs/drivers.html)。 |
 
 ## 准备工作
@@ -65,7 +65,7 @@ table th:nth-of-type(2) {
 | 卷扩展 | 在 YAML 文件中由 `allowVolumeExpansion` 指定。 |
 | 回收机制 | 在 YAML 文件中由 `reclaimPolicy` 指定。 |
 | 访问模式 | 在 YAML 文件中由 `.metadata.annotations.storageclass.kubesphere.io/supported-access-modes` 指定。默认 `ReadWriteOnce`、`ReadOnlyMany` 和 `ReadWriteMany` 全选。 |
-| 供应者 | 在 YAML 文件中由 `provisioner` 指定。如果您使用 [NFS-Client 的 Chart](https://github.com/kubesphere/helm-charts/tree/master/src/main/nfs-client-provisioner) 来安装存储类型，可以设为 `cluster.local/nfs-client-nfs-client-provisioner`。 |
+| 供应者 | 在 YAML 文件中由 `provisioner` 指定。如果您使用 [NFS-Subdir 的 Chart](https://kubernetes-sigs.github.io/nfs-subdir-external-provisioner/) 来安装存储类型，可以设为 `cluster.local/nfs-subdir-external-provisioner/`。 |
 | 卷绑定模式 | 在 YAML 文件中由 `volumeBindingMode` 指定。它决定使用何种绑定模式。**延迟绑定**即持久性声明创建后，当使用此持久性声明的容器组被创建时，此持久性声明才绑定到一个持久卷。**立即绑定**即持久卷声明创建后，立即绑定到一个持久卷。 |
 ### QingCloud CSI
 
@@ -164,7 +164,7 @@ Ceph RBD 也是 Kubernetes 上的一种树内存储插件，即 Kubernetes 中�
 
 #### NFS 介绍
 
-NFS（网络文件系统）广泛用于带有 [NFS-Client](https://github.com/kubernetes-retired/external-storage/tree/master/nfs-client)（External-Provisioner 卷插件）的 Kubernetes。您可以点击**自定义**来创建 NFS-Client 的存储类型。
+NFS（网络文件系统）广泛用于带有 [nfs-subdir-external-provisioner](https://kubernetes-sigs.github.io/nfs-subdir-external-provisioner/)（External-Provisioner 卷插件）的 Kubernetes。您可以点击**自定义**来创建 NFS-Subdir 的存储类型。
 
 {{< notice note >}}
 
@@ -175,7 +175,7 @@ NFS（网络文件系统）广泛用于带有 [NFS-Client](https://github.com/ku
 #### 准备工作
 
 - 有一个可用的 NFS 服务器。
-- 已经安装卷插件 NFS-Client。社区开发者提供了 [NFS-Client 的 Chart](https://github.com/kubesphere/helm-charts/tree/master/src/main/nfs-client-provisioner)，您可以通过 Helm 用这些 Chart 安装 NFS-Client。
+- 已经安装卷插件 NFS-Subdir。社区开发者提供了 [NFS-SUBDIR 的 Chart](https://kubernetes-sigs.github.io/nfs-subdir-external-provisioner/)，您可以通过 Helm 用这些 Chart 安装 NFS-SUBDIR。
 #### 参数设置项
 
 | 键 | 描述信息 | 值 |
