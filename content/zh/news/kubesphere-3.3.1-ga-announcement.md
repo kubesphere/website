@@ -1,7 +1,7 @@
 ---
 title: 'KubeSphere 3.3.1 发布：权限控制修改'
 tag: '产品动态'
-keyword: '社区, 开源, 贡献, KubeSphere, release, 权限控制       '
+keyword: '社区, 开源, 贡献, KubeSphere, release, 权限控制'
 description: 'KubeSphere 3.3.1 权限控制有非常大的变化。'
 createTime: '2022-10-28'
 author: 'KubeSphere'
@@ -55,4 +55,4 @@ DevOps 模块针对于流水线做了部分优化：
 
 可以访问下方链接来查看完整的 Realese note：
 
-**https://github.com/kubesphere/kubesphere/releases/tag/v3.3.1**                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                 
+**https://github.com/kubesphere/kubesphere/releases/tag/v3.3.1**                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                      
