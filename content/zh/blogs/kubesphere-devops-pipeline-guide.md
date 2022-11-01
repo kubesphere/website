@@ -1,7 +1,7 @@
 ---
 title: 'KubeSphere DevOps 流水线入门指南'
 tag: 'KubeSphere, Kubernetes, DevOps'
-keywords: 'KubeSphere, Kubernetes, DevOps'
+keywords: 'KubeSphere, Kubernetes, DevOps, Jenkins, Groovy'
 description: '本文首先将介绍 DevOps 是什么，随后尝试利用 KubeSphere 集成的功能来实现 DevOps。'
 createTime: '2022-10-27'
 author: '赵海亮'
