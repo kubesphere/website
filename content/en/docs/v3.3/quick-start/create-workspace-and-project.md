@@ -24,7 +24,7 @@ You can create multiple workspaces within a KubeSphere cluster. Under each works
 
 ### Step 1: Create a user
 
-After KubeSphere is installed, you need to add different users with varied roles to the platform so that they can work at different levels on various resources. Initially, you only have one default user, which is `admin`, granted the role `platform-admin`. In the first step, you create a sample user `user-manager`.
+After KubeSphere is installed, you need to add different users with varied roles to the platform so that they can work at different levels on various resources. Initially, you only have one default user, which is `admin`, granted the role `platform-admin`. In the first step, you create a sample user `ws-manager`.
 
 1. Log in to the web console as `admin` with the default user and password (`admin/P@88w0rd`).
 

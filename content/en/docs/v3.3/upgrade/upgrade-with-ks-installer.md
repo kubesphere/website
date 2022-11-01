@@ -13,7 +13,7 @@ ks-installer is recommended for users whose Kubernetes clusters were not set up 
 - You need to have a KubeSphere cluster running v3.2.x. If your KubeSphere version is v3.1.x or earlier, upgrade to v3.2.x first.
 - Read [Release Notes for 3.3.1](../../../v3.3/release/release-v331/) carefully.
 - Back up any important component beforehand.
-- Supported Kubernetes versions of KubeSphere 3.3: v1.19.x, v1.20.x, v1.21.x, v1.22.x, and v1.23.x (experimental support).
+- Supported Kubernetes versions of KubeSphere 3.3: v1.19.x, v1.20.x, v1.21.x, v1.22.x (experimental support), and v1.23.x (experimental support).
 
 ## Major Updates
 
