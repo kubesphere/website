@@ -1,7 +1,7 @@
 ---
 title: '基于 KubeSphere 的开源微服务开发平台 Pig 最佳实践'
 tag: 'Kubernetes'
-keywords: 'Kubernetes, KubeSphere, Pig, 微服务 '
+keywords: 'Kubernetes, KubeSphere, Pig, 微服务'
 description: '本文主要描写了使用 KubeSphere 这款容器云平台和 Pig 这款开源微服务开发平台来解决微服务系统部署、监控的复杂问题。'
 createTime: '2022-10-25'
 author: '何昌涛'
