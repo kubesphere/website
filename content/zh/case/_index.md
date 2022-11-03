@@ -167,6 +167,12 @@ section3:
         - name: 'yaowang'
           icon: 'images/case/section6-yaowang.png'
 
+    - name: '广电'
+      children:
+        - name: 'nctv'
+          icon: 'images/case/logo-nctv.png'
+        - name: 'csztv'
+          icon: 'images/case/logo-csztv.png'  
 
   bottomContent:
     content: 希望在 KubeSphere 官网展示您的 Logo 或分享您的使用案例？
