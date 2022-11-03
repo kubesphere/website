@@ -96,12 +96,14 @@ section3:
         - name: 'xiaodiketang'
           icon: 'images/case/section6-xiaodiketang.png'
         - name: 'zhongkejincai'
-          icon: 'images/case/section6-sinodata.png'
+          icon: 'images/case/section6-sinodata.png'      
 
     - name: 'Internet'
       children:
         - name: 'sina'
           icon: 'images/case/section6-sina.jpg'
+        - name: 'vesoft'
+          icon: 'images/case/section6-vesoft-4.png'
 
     - name: 'Logistics'
       children:
@@ -113,6 +115,12 @@ section3:
         - name: 'yaowang'
           icon: 'images/case/section6-yaowang.png'
 
+    - name: 'TV'
+      children:
+        - name: 'nctv'
+          icon: 'images/case/logo-nctv.png'
+        - name: 'csztv'
+          icon: 'images/case/logo-csztv.png'     
 
   bottomContent:
     content: Want your logo up there? Just
