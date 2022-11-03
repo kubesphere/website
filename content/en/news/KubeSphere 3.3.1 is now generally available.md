@@ -1,8 +1,8 @@
 ---
 title: 'KubeSphere 3.3.1 is now generally available'
 tag: 'Product News'
-keywords: 'Kubernetes, KubeSphere, K8s, release'
-description: 'On October 18, 2022, KubeSphere Turkey announced partnership with Huawei at HUAWEI CONNECT 2022 PARIS. '
+keywords: 'Kubernetes, KubeSphere, K8s, release, news'
+description: 'In KubeSphere 3.3.1, significant changes are made on authentication and authorization.'
 createTime: '2022-10-27'
 author: 'KubeSphere'
 image: 'https://pek3b.qingstor.com/kubesphere-community/images/KS-3.3.1-GA.png'
