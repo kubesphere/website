@@ -15,7 +15,7 @@ In KubeKey v2.1.0, we bring in concepts of manifest and artifact, which provides
 
 |Host IP| Host Name | Usage      |
 | ---------------- | ---- | ---------------- |
-|192.168.0.2 | node1    | Online host for packaging the source cluster with Kubernetes v1.22.10 and KubeSphere v3.3.1 installed |
+|192.168.0.2 | node1    | Online host for packaging the source cluster with Kubernetes v1.22.12 and KubeSphere v3.3.1 installed |
 |192.168.0.3 | node2    | Control plane node of the air-gapped environment |
 |192.168.0.4 | node3    | Image registry node of the air-gapped environment |
 ## Preparations
@@ -310,7 +310,7 @@ In KubeKey v2.1.0, we bring in concepts of manifest and artifact, which provides
 2. Run the following command to create a configuration file for the air-gapped cluster:
 
    ```bash
-   ./kk create config --with-kubesphere v3.3.1 --with-kubernetes v1.22.10 -f config-sample.yaml
+   ./kk create config --with-kubesphere v3.3.1 --with-kubernetes v1.22.12 -f config-sample.yaml
    ```
 
 3. Run the following command to modify the configuration file:
@@ -355,7 +355,7 @@ In KubeKey v2.1.0, we bring in concepts of manifest and artifact, which provides
        address: ""
        port: 6443
      kubernetes:
-       version: v1.21.5
+       version: v1.22.12
        clusterName: cluster.local
      network:
        plugin: calico

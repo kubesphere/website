@@ -10,7 +10,7 @@ When creating a Kubernetes cluster, you can use [KubeKey](../kubekey/) to define
 
 ```yaml
   kubernetes:
-    version: v1.21.5
+    version: v1.22.12
     imageRepo: kubesphere
     clusterName: cluster.local
     masqueradeAll: false

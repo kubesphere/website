@@ -92,14 +92,13 @@ When upgrading Kubernetes, KubeKey will upgrade from one MINOR version to the ne
 
 ### All-in-one cluster
 
-Run the following command to use KubeKey to upgrade your single-node cluster to KubeSphere 3.3 and Kubernetes v1.22.10:
+Run the following command to use KubeKey to upgrade your single-node cluster to KubeSphere 3.3 and Kubernetes v1.22.12:
 
 ```bash
-./kk upgrade --with-kubernetes v1.22.10 --with-kubesphere v3.3.1
+./kk upgrade --with-kubernetes v1.22.12 --with-kubesphere v3.3.1
 ```
 
-To upgrade Kubernetes to a specific version, explicitly provide the version after the flag `--with-kubernetes`. Available versions are v1.19.x, v1.20.x, v1.21.x, v1.22.x (experimental support), and v1.23.x (experimental support).
-
+To upgrade Kubernetes to a specific version, explicitly provide the version after the flag `--with-kubernetes`. Available versions are v1.19.x, v1.20.x, v1.21.x, * v1.22.x,  * v1.23.x， and v1.24.x. For Kubernetes versions with an asterisk, some features of edge nodes may be unavailable due to incompatability. Therefore, if you want to use edge nodes, you are advised to install Kubernetes v1.21.x or earlier.
 ### Multi-node cluster
 
 #### Step 1: Generate a configuration file using KubeKey
@@ -132,13 +131,13 @@ For more information, see [Edit the configuration file](../../installing-on-linu
 {{</ notice >}}
 
 #### Step 3: Upgrade your cluster
-The following command upgrades your cluster to KubeSphere 3.3 and Kubernetes v1.22.10:
+The following command upgrades your cluster to KubeSphere 3.3 and Kubernetes v1.22.12:
 
 ```bash
-./kk upgrade --with-kubernetes v1.22.10 --with-kubesphere v3.3.1 -f sample.yaml
+./kk upgrade --with-kubernetes v1.22.12 --with-kubesphere v3.3.1 -f sample.yaml
 ```
 
-To upgrade Kubernetes to a specific version, explicitly provide the version after the flag `--with-kubernetes`. Available versions are v1.19.x, v1.20.x, v1.21.x, v1.22.x (experimental support), and v1.23.x (experimental support).
+To upgrade Kubernetes to a specific version, explicitly provide the version after the flag `--with-kubernetes`. Available versions are v1.19.x, v1.20.x, v1.21.x, * v1.22.x,  * v1.23.x， and v1.24.x. For Kubernetes versions with an asterisk, some features of edge nodes may be unavailable due to incompatability. Therefore, if you want to use edge nodes, you are advised to install Kubernetes v1.21.x or earlier.
 
 {{< notice note >}}
 

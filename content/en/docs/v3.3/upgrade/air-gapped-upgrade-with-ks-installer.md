@@ -15,7 +15,7 @@ ks-installer is recommended for users whose Kubernetes clusters were not set up 
 - Read [Release Notes for 3.3.1](../../../v3.3/release/release-v331/) carefully.
 - Back up any important component beforehand.
 - A Docker registry. You need to have a Harbor or other Docker registries. For more information, see [Prepare a Private Image Registry](../../installing-on-linux/introduction/air-gapped-installation/#step-2-prepare-a-private-image-registry).
-- Supported Kubernetes versions of KubeSphere 3.3: v1.19.x, v1.20.x, v1.21.x, v1.22.x (experimental support), and v1.23.x (experimental support).
+- Supported Kubernetes versions of KubeSphere 3.3: v1.19.x, v1.20.x, v1.21.x, * v1.22.x, * v1.23.x, and * v1.24.x. For Kubernetes versions with an asterisk, some features of edge nodes may be unavailable due to incompatability. Therefore, if you want to use edge nodes, you are advised to install Kubernetes v1.21.x or earlier.
 
 ## Major Updates
 

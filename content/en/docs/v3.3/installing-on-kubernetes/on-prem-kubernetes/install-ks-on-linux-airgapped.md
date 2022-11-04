@@ -124,7 +124,7 @@ As you install KubeSphere in an air-gapped environment, you need to prepare an i
      -l IMAGES-LIST         : text file with list of images.
      -r PRIVATE-REGISTRY    : target private registry:port.
      -s                     : save model will be applied. Pull the images in the IMAGES-LIST and save images as a tar.gz file.
-     -v KUBERNETES-VERSION  : download kubernetes' binaries. default: v1.21.5
+     -v KUBERNETES-VERSION  : download kubernetes' binaries. default: v1.22.12
      -h                     : usage message
    ```
 

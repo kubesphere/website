@@ -40,7 +40,7 @@ weight: 11440
 
 {{< notice note >}}
 
-这些 Kubernetes 集群可以被托管至不同的云厂商，也可以使用不同的 Kubernetes 版本。针对 KubeSphere 3.3 推荐的 Kubernetes 版本：v1.19.x、v1.20.x、v1.21.x、v1.22.x（实验性支持）和 v1.23.x（实验性支持）。
+这些 Kubernetes 集群可以被托管至不同的云厂商，也可以使用不同的 Kubernetes 版本。针对 KubeSphere 3.3 推荐的 Kubernetes 版本：v1.19.x、v1.20.x、v1.21.x、* v1.22.x、* v1.23.x 和 * v1.24.x。带星号的版本可能出现边缘节点部分功能不可用的情况。因此，如需使用边缘节点，推荐安装 v1.21.x 及之前的版本。
 
 {{</ notice >}}
 

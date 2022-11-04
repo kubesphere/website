@@ -17,7 +17,7 @@ KubeKey v2.1.0 版本新增了清单（manifest）和制品（artifact）的概�
 
 | 主机 IP   | 主机名称    | 角色            |
 | ---------------- | ----   | ---------------- |
-| 192.168.0.2 | node1    | 联网主机用于源集群打包使用。已部署 Kubernetes v1.22.10 和 KubeSphere v3.3.1 |
+| 192.168.0.2 | node1    | 联网主机用于源集群打包使用。已部署 Kubernetes v1.22.12 和 KubeSphere v3.3.1 |
 | 192.168.0.3 | node2    | 离线环境主节点 |
 | 192.168.0.4 | node3    | 离线环境镜像仓库节点 |
 
@@ -318,7 +318,7 @@ KubeKey v2.1.0 版本新增了清单（manifest）和制品（artifact）的概�
 2. 执行以下命令创建离线集群配置文件：
 
    ```bash
-   ./kk create config --with-kubesphere v3.3.1 --with-kubernetes v1.22.10 -f config-sample.yaml
+   ./kk create config --with-kubesphere v3.3.1 --with-kubernetes v1.22.12 -f config-sample.yaml
    ```
 
 3. 执行以下命令修改配置文件：
@@ -363,7 +363,7 @@ KubeKey v2.1.0 版本新增了清单（manifest）和制品（artifact）的概�
        address: ""
        port: 6443
      kubernetes:
-       version: v1.21.5
+       version: v1.22.12
        clusterName: cluster.local
      network:
        plugin: calico
