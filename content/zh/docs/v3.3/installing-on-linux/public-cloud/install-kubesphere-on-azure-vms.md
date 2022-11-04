@@ -145,15 +145,15 @@ curl -sfL https://get-kk.kubesphere.io | VERSION=v2.3.0 sh -
 
 
 
-2. 使用默认配置创建示例配置文件，这里以 Kubernetes v1.22.10 为例。
+2. 使用默认配置创建示例配置文件，这里以 Kubernetes v1.22.12 为例。
 
    ```bash
-   ./kk create config --with-kubesphere v3.3.1 --with-kubernetes v1.22.10
+   ./kk create config --with-kubesphere v3.3.1 --with-kubernetes v1.22.12
    ```
 
    {{< notice note >}}
 
-- KubeSphere 3.3 对应 Kubernetes 版本推荐：v1.19.x、v1.20.x、v1.21.x、 v1.22.x（实验性支持）和 v1.23.x（实验性支持）。如果未指定 Kubernetes 版本，KubeKey 将默认安装 Kubernetes v1.23.7。有关支持的 Kubernetes 版本请参阅[支持矩阵](../../../installing-on-linux/introduction/kubekey/#support-matrix)。
+- KubeSphere 3.3 对应 Kubernetes 版本推荐：v1.19.x、v1.20.x、v1.21.x、* v1.22.x、* v1.23.x 和 * v1.24.x。带星号的版本可能出现边缘节点部分功能不可用的情况。因此，如需使用边缘节点，推荐安装 v1.21.x 及之前的版本。如果未指定 Kubernetes 版本，KubeKey 将默认安装 Kubernetes v1.22.12。有关支持的 Kubernetes 版本请参阅[支持矩阵](../../../installing-on-linux/introduction/kubekey/#support-matrix)。
 - 如果在此步骤中的命令中未添加标志 `--with-kubesphere`，则不会部署 KubeSphere，除非您使用配置文件中的 `addons` 字段进行安装，或稍后使用 `./kk create cluster` 时再次添加此标志。
 
 - 如果在未指定 KubeSphere 版本的情况下添加标志 --with kubesphere`，将安装 KubeSphere 的最新版本。

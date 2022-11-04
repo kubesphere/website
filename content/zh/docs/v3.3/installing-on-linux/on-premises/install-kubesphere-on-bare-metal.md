@@ -248,12 +248,12 @@ chmod +x kk
 创建安装有 KubeSphere 的 Kubernetes 集群（例如使用 `--with-kubesphere v3.3.1`）：
 
 ```bash
-./kk create config --with-kubernetes v1.22.10 --with-kubesphere v3.3.1
+./kk create config --with-kubernetes v1.22.12 --with-kubesphere v3.3.1
 ```
 
 {{< notice note >}} 
 
-- 安装 KubeSphere 3.3 的建议 Kubernetes 版本：v1.19.x、v1.20.x、v1.21.x、v1.22.x（实验性支持）和 v1.23.x（实验性支持）。如果不指定 Kubernetes 版本，KubeKey 将默认安装 Kubernetes v1.23.7。有关受支持的 Kubernetes 版本的更多信息，请参见[支持矩阵](../../../installing-on-linux/introduction/kubekey/#支持矩阵)。
+- 安装 KubeSphere 3.3 的建议 Kubernetes 版本：v1.19.x、v1.20.x、v1.21.x、* v1.22.x、* v1.23.x 和 * v1.24.x。带星号的版本可能出现边缘节点部分功能不可用的情况。因此，如需使用边缘节点，推荐安装 v1.21.x 及之前的版本。如果不指定 Kubernetes 版本，KubeKey 将默认安装 Kubernetes v1.22.12。有关受支持的 Kubernetes 版本的更多信息，请参见[支持矩阵](../../../installing-on-linux/introduction/kubekey/#支持矩阵)。
 
 - 如果您在这一步的命令中不添加标志 `--with-kubesphere`，则不会部署 KubeSphere，只能使用配置文件中的 `addons` 字段安装 KubeSphere，或者在您后续使用 `./kk create cluster` 命令时再次添加该标志。
 - 如果您添加标志 `--with-kubesphere` 时不指定 KubeSphere 版本，则会安装最新版本的 KubeSphere。

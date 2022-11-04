@@ -93,13 +93,13 @@ chmod +x kk
 
 ### All-in-One 集群
 
-运行以下命令使用 KubeKey 将您的单节点集群升级至 KubeSphere 3.3 和 Kubernetes v1.22.10：
+运行以下命令使用 KubeKey 将您的单节点集群升级至 KubeSphere 3.3 和 Kubernetes v1.22.12：
 
 ```bash
-./kk upgrade --with-kubernetes v1.22.10 --with-kubesphere v3.3.1
+./kk upgrade --with-kubernetes v1.22.12 --with-kubesphere v3.3.1
 ```
 
-要将 Kubernetes 升级至特定版本，请在 `--with-kubernetes` 标志后明确指定版本号。以下是可用版本：v1.19.x、v1.20.x、v1.21.x、v1.22.x（实验性支持）和 v1.23.x（实验性支持）。
+要将 Kubernetes 升级至特定版本，请在 `--with-kubernetes` 标志后明确指定版本号。以下是可用版本：v1.19.x、v1.20.x、v1.21.x、* v1.22.x、* v1.23.x 和 * v1.24.x。带星号的版本可能出现边缘节点部分功能不可用的情况。因此，如需使用边缘节点，推荐安装 v1.21.x 及之前的版本。
 
 ### 多节点集群
 
@@ -134,13 +134,13 @@ chmod +x kk
 
 #### 步骤 3：升级集群
 
-运行以下命令，将您的集群升级至 KubeSphere 3.3 和 Kubernetes v1.22.10：
+运行以下命令，将您的集群升级至 KubeSphere 3.3 和 Kubernetes v1.22.12：
 
 ```bash
-./kk upgrade --with-kubernetes v1.22.10 --with-kubesphere v3.3.1 -f sample.yaml
+./kk upgrade --with-kubernetes v1.22.12 --with-kubesphere v3.3.1 -f sample.yaml
 ```
 
-要将 Kubernetes 升级至特定版本，请在 `--with-kubernetes` 标志后明确指定版本号。以下是可用版本：v1.19.x、v1.20.x、v1.21.x、v1.22.x（实验性支持）和 v1.23.x（实验性支持）。
+要将 Kubernetes 升级至特定版本，请在 `--with-kubernetes` 标志后明确指定版本号。以下是可用版本：v1.19.x、v1.20.x、v1.21.x、* v1.22.x、* v1.23.x 和 * v1.24.x。带星号的版本可能出现边缘节点部分功能不可用的情况。因此，如需使用边缘节点，推荐安装 v1.21.x 及之前的版本。
 
 {{< notice note >}}
 

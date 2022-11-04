@@ -8,11 +8,11 @@ weight: 7100
 
 ## Make Your Upgrade Plan
 
-KubeSphere 3.3 is compatible with Kubernetes 1.19.x, 1.20.x, 1.21.x, 1.22.x, and 1.23.x (experimental support):
+KubeSphere 3.3 is compatible with Kubernetes v1.19.x, v1.20.x, v1.21.x, * v1.22.x, * v1.23.x, and * v1.24.x:
 
 - Before you upgrade your cluster to KubeSphere 3.3, you need to have a KubeSphere cluster running v3.2.x.
-- If your existing KubeSphere v3.1.x cluster is installed on Kubernetes 1.19.x+, you can choose to only upgrade KubeSphere to 3.3 or upgrade Kubernetes (to a higher version) and KubeSphere (to 3.3) at the same time.
-
+- You can choose to only upgrade KubeSphere to 3.3 or upgrade Kubernetes (to a higher version) and KubeSphere (to 3.3) at the same time.
+- For Kubernetes versions with an asterisk, some features of edge nodes may be unavailable due to incompatability. Therefore, if you want to use edge nodes, you are advised to install Kubernetes v1.21.x or earlier.
 ## Before the Upgrade
 
 {{< notice warning >}}

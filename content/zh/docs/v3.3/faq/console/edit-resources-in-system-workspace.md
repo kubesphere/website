@@ -32,7 +32,7 @@ Weight: 16520
    client:
      version:
        kubesphere: v3.3.1
-       kubernetes: v1.21.5
+       kubernetes: v1.22.12
        openpitrix: v3.3.1
      enableKubeConfig: true
      systemWorkspace: "$"  # 请手动添加此行。
