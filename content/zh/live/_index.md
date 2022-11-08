@@ -9,15 +9,15 @@ section1:
   image: /images/live/background.jpg
 
 section2:
-  image: /images/live/cloudnative-live-20221027.png
-  url: ./juicefs1027-live/
+  image: /images/live/cloudnative-live-20221103.png
+  url: ./authorization1103-live/
 
   notice:
-    title: KubeSphere 3.3.1 鉴权优化详解
-    tag: 预告
-    time: 2022 年 11 月 03 日晚 8 点
+    title: 向云而生 - JuiceFS 在云原生文件系统的实践
+    tag: 结束
+    time: 2022 年 10 月 27 日晚 8 点
     base: 线上
-    url: ./authorization1103-live/
+    url: ./juicefs1027-live/
 
   over:
     title: Apache APISIX & KubeSphere 联合 Meetup
@@ -26,12 +26,19 @@ section2:
 
 section3:
   videos:
+    - title: KubeSphere 3.3.1 鉴权优化详解
+      link: ./authorization1103-live/
+      snapshot: https://pek3b.qingstor.com/kubesphere-community/images/authorization1103-live-cover.png
+      type: iframe
+      createTime: 2022.11.03
+      group: 直播回放
+
     - title: 向云而生 - JuiceFS 在云原生文件系统的实践
       link: ./juicefs1027-live/
       snapshot: https://pek3b.qingstor.com/kubesphere-community/images/juicefs1027-live-cover.png
       type: iframe
       createTime: 2022.10.27
-      group: 直播回复
+      group: 直播回放
 
     - title: 手把手一起玩 KubeSphere 全新可插拔功能
       link: ./apisix-kubesphere-meetup1022-ks/
