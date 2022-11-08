@@ -52,12 +52,28 @@ section3:
         - name: 'benlai'
           icon: 'images/case/section6-benlai.jpg'
 
-    - name: 'Finance'
+    - name: 'Bank'
       children:
         - name: 'huaxia-bank'
           icon: 'images/case/section6-huaxia-bank.jpg'
         - name: 'webank'
           icon: 'images/case/section6-webank.jpg'
+        - name: 'spd-silicon-valley-bank'
+          icon: '/images/home/section6-spd-silicon-valley-bank.jpg'
+
+    - name: 'Insurance'
+      children:
+        - name: 'china-taiping'
+          icon: '/images/home/section6-china-taiping.jpg'
+        - name: 'picc'
+          icon: '/images/home/section6-picc.jpg'
+        - name: 'zking-insurance'
+          icon: '/images/home/section6-zking-insurance.jpg'   
+
+    - name: 'Finance'
+      children:
+        - name: 'msxf'
+          icon: 'images/case/logo-msxf.png'  
 
     - name: 'IT Service'
       children:
@@ -96,7 +112,9 @@ section3:
         - name: 'xiaodiketang'
           icon: 'images/case/section6-xiaodiketang.png'
         - name: 'zhongkejincai'
-          icon: 'images/case/section6-sinodata.png'      
+          icon: 'images/case/section6-sinodata.png'  
+        - name: 'turing'
+          icon: 'images/case/logo-turing.png'    
 
     - name: 'Internet'
       children:
@@ -104,6 +122,12 @@ section3:
           icon: 'images/case/section6-sina.jpg'
         - name: 'vesoft'
           icon: 'images/case/section6-vesoft-4.png'
+        - name: 'adaspace'
+          icon: 'images/case/logo-adaspace.png'
+        - name: 'qunar'
+          icon: 'images/case/logo-qunar.png'
+        - name: 'segmentfault'
+          icon: 'images/case/segmentfault-logo.png'
 
     - name: 'Logistics'
       children:
@@ -120,7 +144,44 @@ section3:
         - name: 'nctv'
           icon: 'images/case/logo-nctv.png'
         - name: 'csztv'
-          icon: 'images/case/logo-csztv.png'     
+          icon: 'images/case/logo-csztv.png'  
+
+    - name: 'Manufacturing'
+      children:
+        - name: 'aviation-industry-corporation-of-china'
+          icon: '/images/home/section6-aviation-industry-corporation-of-china.jpg'
+
+    - name: 'Energy'
+      children:
+        - name: 'changqing-youtian'
+          icon: '/images/home/section6-changqing-youtian.jpg'
+
+    - name: 'Pharmaceuticals'
+      children:
+        - name: 'sinopharm'
+          icon: '/images/home/section6-sinopharm.jpg'
+
+    - name: 'Transportation'
+      children:
+        - name: 'sichuan-airlines'
+          icon: '/images/home/section6-sichuan-airlines.jpg'
+        - name: 'gxjtkyy'
+          icon: 'images/case/logo-gxjtkyy.png'
+
+    - name: 'Communications'
+      children:
+        - name: 'chinamobile-iot'
+          icon: 'images/case/chinamobile-iot.png'
+
+    - name: 'Educational'
+      children:
+        - name: 'xdf'
+          icon: 'images/case/logo-xdf.png'
+
+    - name: 'Public Utilities'
+      children:
+        - name: 'guizhou-water-investment'
+          icon: '/images/home/section6-guizhou-water-investment.jpg'
 
   bottomContent:
     content: Want your logo up there? Just
