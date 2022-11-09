@@ -32,7 +32,7 @@ section3:
       content: 基于技术协作或联合解决方案为 KubeSphere 提供硬件平台、云服务或应用程序。如果您有这种解决方案，欢迎成为 KubeSphere 的技术合作伙伴，通过产品生态合作共同推动产业繁荣。     
 
     - title: "云提供商"
-      content: 如果您是基于 Kubernetes 的解决方案的云提供商，还可以将 KubeSphere 集成到您的应用程序市场中，使用 KubeSphere 来扩展您的生态系统。
+      content: 如果您是基于 Kubernetes 提供解决方案的云提供商，还可以将 KubeSphere 集成到您的应用程序市场中，使用 KubeSphere 来扩展您的生态系统。
 
     - title: "市场合作伙伴"
       content: 如果您是开源社区或致力于推广您的开源项目，可以联合 KubeSphere 社区组织活动（比如线上直播和线下 Meetup），也可以共同产出优质内容（技术博客等），或者进行丰富多样的联合推广，推动更多用户使用 KubeSphere 家族产品获得成功。
