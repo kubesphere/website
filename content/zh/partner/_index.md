@@ -5,7 +5,7 @@ css: "scss/partner.scss"
 
 section1:
   title: '成为 KubeSphere 合作伙伴'
-  content: '我们非常期待您加入 KubeSphere 合作伙伴计划。KubeSphere 可以为合作伙伴提供资源和权益，帮助合作伙伴提高专业技能，交付和推广产品。同时，合作伙伴还可以并把 KubeSphere 加入其市场策略中，来实现具体业务目标。'
+  content: '我们非常期待您加入 KubeSphere 合作伙伴计划。KubeSphere 可以为合作伙伴提供资源和权益，帮助合作伙伴提高专业技能，交付和推广产品。同时，合作伙伴还可以把 KubeSphere 加入其市场策略中，来实现具体业务目标。'
   topImage: '/images/partner/partner-top.jpg'
 
 section2:
