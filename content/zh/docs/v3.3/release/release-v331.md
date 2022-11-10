@@ -33,6 +33,6 @@ weight: 18096
 
 ## 用户体验
 - 支持修改每页列表的展示数量。
-- 支持批量停止工作负载。
+- 新增对 statefulset 和 deamonset 批量停止的支持
 
 有关 KubeSphere 3.3.1 的 Issue 和贡献者详细信息，请参阅 [GitHub](https://github.com/kubesphere/kubesphere/blob/master/CHANGELOG/CHANGELOG-3.3.1.md)。
