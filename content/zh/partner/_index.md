@@ -24,25 +24,21 @@ section2:
 section3:
   title: '合作伙伴类型'
   zhForm: true
-  link: "https://jinshuju.net/f/QZ52Gm"
+  link: "https://jinshuju.net/f/WIVxeX"
   linkText: '立即申请'
   tip: '立即申请 →'
   partnerType:
     - title: "应用程序提供商"
       content: KubeSphere 在 OpenPitrix 的基础上，为用户提供了一个基于 Helm 的应用商店，用于应用生命周期管理。KubeSphere 应用商店让 ISV、开发者和用户能够在一站式服务中只需点击几下就可以上传、测试、安装和发布应用。KubeSphere 拥有数以万计的用户，所以您可以作为应用程序提供商，将应用发布到 KubeSphere 应用商店，让这些用户可以一键将您的应用部署到 Kubernetes。     
-      link: "request/"
 
     - title: "技术合作伙伴"
       content: 基于技术协作或联合解决方案为 KubeSphere 提供硬件平台、云服务或应用程序。如果您有这种解决方案，欢迎成为 KubeSphere 的技术合作伙伴，通过产品生态合作共同推动产业繁荣。  
-      link: "request/"  
 
     - title: "云提供商"
       content: 如果您是基于 Kubernetes 提供解决方案的云提供商，还可以将 KubeSphere 集成到您的应用程序市场中，使用 KubeSphere 来扩展您的生态系统。
-      link: "request/"
 
     - title: "市场合作伙伴"
       content: 如果您是开源社区或致力于推广您的开源项目，可以联合 KubeSphere 社区组织活动（比如线上直播和线下 Meetup），也可以共同产出优质内容（技术博客等），或者进行丰富多样的联合推广，推动更多用户使用 KubeSphere 家族产品获得成功。
-      link: "request/"
   
 section4:
   title: '合作伙伴'
