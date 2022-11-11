@@ -8,6 +8,8 @@ addBaiduAnalytics = true
 
 bilibiliLink = "https://space.bilibili.com/438908638"
 
+applyAllInOne = true
+
 [languages.en.params]
 useSendcloud = true
 mailchimpSubscribeUrl = "https://www.sendcloud.net/v3/api/subInvite/subscription?invitecode=1dc5a4fb-894c-4470-b01d-ca7fa9d47a46"

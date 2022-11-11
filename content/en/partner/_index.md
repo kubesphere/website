@@ -24,6 +24,8 @@ section2:
 section3:
   title: 'Partner Types'
   tip: Apply now →
+  link: "https://jinshuju.net/f/QZ52Gm"
+  linkText: 'Apply now'
   partnerType:
     - title: "App Providers"
       content: "KubeSphere App Store is a great place to showcase your applications. KubeSphere brings your applications to tens of thousands of users, allowing them to deploy your App to Kubernetes with one click."
