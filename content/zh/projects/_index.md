@@ -33,6 +33,13 @@ groups:
         link: 'https://github.com/kubesphere/kubekey'
         description: KubeKey 是 Kubernetes 和 KubeSphere 的下一代 Installer（安装程序），旨在更方便、快速、高效和灵活地安装 Kubernetes 与 KubeSphere。KubeKey 摒弃了原来 Ansible 带来的依赖问题，用 Go 重写，支持单独 Kubernetes 或整体安装 KubeSphere。
 
+  - name: 集群巡检
+    children:
+      - title: KubeEye
+        icon: 'https://pek3b.qingstor.com/kubesphere-community/images/202211111151370.png'
+        link: 'https://github.com/kubesphere/kubeeye'
+        description: KubeEye 是为 Kubernetes 设计的巡检工具，用于发现 Kubernetes 资源（使用 OPA ）、集群组件、集群节点（使用Node-Problem-Detector）等配置是否符合最佳实践，对于不符合最佳实践的，将给出修改建议。KubeEye 支持自定义巡检规则、插件安装，通过 KubeEye Operator 能够使用 web 页面的图形化展示来查看巡检结果以及给出修复建议。
+
   - name: Serverless
     children:
       - title: OpenFunction
