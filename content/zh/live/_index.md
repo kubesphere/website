@@ -13,11 +13,11 @@ section2:
   url: ./authorization1103-live/
 
   notice:
-    title: 向云而生 - JuiceFS 在云原生文件系统的实践
-    tag: 结束
-    time: 2022 年 10 月 27 日晚 8 点
+    title: 基于 KubeSphere 部署 StoneDB 云原生 HTAP 数据库
+    tag: 预告
+    time: 2022 年 11 月 17 日晚 8 点
     base: 线上
-    url: ./juicefs1027-live/
+    url: ./stonedb1117-live/
 
   over:
     title: Apache APISIX & KubeSphere 联合 Meetup
