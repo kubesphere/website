@@ -20,7 +20,7 @@ In KubeKey v2.1.0, we bring in concepts of manifest and artifact, which provides
 |192.168.0.4 | node3    | Image registry node of the air-gapped environment |
 ## Preparations
 
-1. Run the following commands to download KubeKey v2.3.0 .
+1. Run the following commands to download KubeKey v3.0.2 .
    {{< tabs >}}
 
    {{< tab "Good network connections to GitHub/Googleapis" >}}
@@ -28,7 +28,7 @@ In KubeKey v2.1.0, we bring in concepts of manifest and artifact, which provides
    Download KubeKey from its [GitHub Release Page](https://github.com/kubesphere/kubekey/releases) or use the following command directly.
 
    ```bash
-   curl -sfL https://get-kk.kubesphere.io | VERSION=v2.3.0 sh -
+   curl -sfL https://get-kk.kubesphere.io | VERSION=v3.0.2 sh -
    ```
 
    {{</ tab >}}
@@ -44,7 +44,7 @@ In KubeKey v2.1.0, we bring in concepts of manifest and artifact, which provides
    Run the following command to download KubeKey:
 
    ```bash
-   curl -sfL https://get-kk.kubesphere.io | VERSION=v2.3.0 sh -
+   curl -sfL https://get-kk.kubesphere.io | VERSION=v3.0.2 sh -
    ```
    {{</ tab >}}
 
@@ -83,7 +83,7 @@ In KubeKey v2.1.0, we bring in concepts of manifest and artifact, which provides
        repository:
          iso:
            localPath:
-           url: https://github.com/kubesphere/kubekey/releases/download/v2.3.0/centos7-rpms-amd64.iso
+           url: https://github.com/kubesphere/kubekey/releases/download/v3.0.2/centos7-rpms-amd64.iso
      - arch: amd64
        type: linux
        id: ubuntu
@@ -91,7 +91,7 @@ In KubeKey v2.1.0, we bring in concepts of manifest and artifact, which provides
        repository:
          iso:
            localPath:
-           url: https://github.com/kubesphere/kubekey/releases/download/v2.3.0/ubuntu-20.04-debs-amd64.iso
+           url: https://github.com/kubesphere/kubekey/releases/download/v3.0.2/ubuntu-20.04-debs-amd64.iso
      kubernetesDistributions:
      - type: kubernetes
        version: v1.22.12
@@ -265,7 +265,7 @@ In KubeKey v2.1.0, we bring in concepts of manifest and artifact, which provides
    
    - You can customize the **manifest-sample.yaml** file to export the desired artifact file.
 
-   - You can download the ISO files at https://github.com/kubesphere/kubekey/releases/tag/v2.3.0.
+   - You can download the ISO files at https://github.com/kubesphere/kubekey/releases/tag/v3.0.2.
    
    {{</ notice >}}
    

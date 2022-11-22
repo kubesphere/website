@@ -101,7 +101,7 @@ ssh -i .ssh/id_rsa2  -p50200 kubesphere@40.81.5.xx
 Download KubeKey from its [GitHub Release Page](https://github.com/kubesphere/kubekey/releases) or use the following command directly:
 
 ```bash
-curl -sfL https://get-kk.kubesphere.io | VERSION=v2.3.0 sh -
+curl -sfL https://get-kk.kubesphere.io | VERSION=v3.0.2 sh -
 ```
 
 {{</ tab >}}
@@ -117,7 +117,7 @@ export KKZONE=cn
 Run the following command to download KubeKey:
 
 ```bash
-curl -sfL https://get-kk.kubesphere.io | VERSION=v2.3.0 sh -
+curl -sfL https://get-kk.kubesphere.io | VERSION=v3.0.2 sh -
 ```
 
 {{< notice note >}}
@@ -132,7 +132,7 @@ After you download KubeKey, if you transfer it to a new machine also with poor n
 
    {{< notice note >}}
 
-The commands above download the latest release (v2.3.0) of KubeKey. You can change the version number in the command to download a specific version.
+The commands above download the latest release (v3.0.2) of KubeKey. You can change the version number in the command to download a specific version.
 
 {{</ notice >}} 
 
@@ -150,7 +150,7 @@ The commands above download the latest release (v2.3.0) of KubeKey. You can chan
 
    {{< notice note >}}
 
-- Recommended Kubernetes versions for KubeSphere 3.3: v1.19.x, v1.20.x, v1.21.x, * v1.22.x, * v1.23.x, and * v1.24.x. For Kubernetes versions with an asterisk, some features of edge nodes may be unavailable due to incompatability. Therefore, if you want to use edge nodes, you are advised to install Kubernetes v1.21.x or earlier. If you do not specify a Kubernetes version, KubeKey will install Kubernetes v1.23.7 by default. For more information about supported Kubernetes versions, see [Support Matrix](../../../installing-on-linux/introduction/kubekey/#support-matrix).
+- Recommended Kubernetes versions for KubeSphere 3.3: v1.19.x, v1.20.x, v1.21.x, * v1.22.x, * v1.23.x, and * v1.24.x. For Kubernetes versions with an asterisk, some features of edge nodes may be unavailable due to incompatability. Therefore, if you want to use edge nodes, you are advised to install Kubernetes v1.21.x or earlier. If you do not specify a Kubernetes version, KubeKey will install Kubernetes v1.23.10 by default. For more information about supported Kubernetes versions, see [Support Matrix](../../../installing-on-linux/introduction/kubekey/#support-matrix).
 
 - If you do not add the flag `--with-kubesphere` in the command in this step, KubeSphere will not be deployed unless you install it using the `addons` field in the configuration file or add this flag again when you use `./kk create cluster` later.
 - If you add the flag `--with-kubesphere` without specifying a KubeSphere version, the latest version of KubeSphere will be installed.

@@ -57,7 +57,7 @@ KubeKey upgrades Kubernetes from one MINOR version to the next MINOR version unt
 
 
 ### Step 1: Download KubeKey
-1. 1. Run the following commands to download KubeKey v2.3.0.
+1. 1. Run the following commands to download KubeKey v3.0.2.
    {{< tabs >}}
 
    {{< tab "Good network connections to GitHub/Googleapis" >}}
@@ -65,7 +65,7 @@ KubeKey upgrades Kubernetes from one MINOR version to the next MINOR version unt
    Download KubeKey from its [GitHub Release Page](https://github.com/kubesphere/kubekey/releases) or use the following command directly.
 
    ```bash
-   curl -sfL https://get-kk.kubesphere.io | VERSION=v2.3.0 sh -
+   curl -sfL https://get-kk.kubesphere.io | VERSION=v3.0.2 sh -
    ```
 
    {{</ tab >}}
@@ -81,7 +81,7 @@ KubeKey upgrades Kubernetes from one MINOR version to the next MINOR version unt
    Run the following command to download KubeKey:
 
    ```bash
-   curl -sfL https://get-kk.kubesphere.io | VERSION=v2.3.0 sh -
+   curl -sfL https://get-kk.kubesphere.io | VERSION=v3.0.2 sh -
    ```
    {{</ tab >}}
 
@@ -153,7 +153,7 @@ As you install KubeSphere and Kubernetes on Linux, you need to prepare an image 
 
    {{< notice note >}}
 
-   - You can change the Kubernetes version downloaded based on your needs. Recommended Kubernetes versions for KubeSphere 3.3 are v1.19.x, v1.20.x, v1.21.x, * v1.22.x, * v1.23.x, and * v1.24.x. For Kubernetes versions with an asterisk, some features of edge nodes may be unavailable due to incompatability. Therefore, if you want to use edge nodes, you are advised to install Kubernetes v1.21.x or earlier. If you do not specify a Kubernetes version, KubeKey will install Kubernetes v1.23.7 by default. For more information about supported Kubernetes versions, see [Support Matrix](../../installing-on-linux/introduction/kubekey/#support-matrix).
+   - You can change the Kubernetes version downloaded based on your needs. Recommended Kubernetes versions for KubeSphere 3.3 are v1.19.x, v1.20.x, v1.21.x, * v1.22.x, * v1.23.x, and * v1.24.x. For Kubernetes versions with an asterisk, some features of edge nodes may be unavailable due to incompatability. Therefore, if you want to use edge nodes, you are advised to install Kubernetes v1.21.x or earlier. If you do not specify a Kubernetes version, KubeKey will install Kubernetes v1.23.10 by default. For more information about supported Kubernetes versions, see [Support Matrix](../../installing-on-linux/introduction/kubekey/#support-matrix).
 
    - You can upgrade Kubernetes from v1.16.13 to v1.17.9 by downloading the v1.17.9 Kubernetes binary file, but for cross-version upgrades, all intermediate versions need to be downloaded in advance. For example, if you want to upgrade Kubernetes from v1.15.12 to v1.18.6, you need to download Kubernetes v1.16.13 and v1.17.9, and the v1.18.6 binary file.
 
