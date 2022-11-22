@@ -23,7 +23,7 @@ KubeKey v2.1.0 版本新增了清单（manifest）和制品（artifact）的概�
 
 ## 部署准备
 
-1. 执行以下命令下载 KubeKey v2.3.0 并解压：
+1. 执行以下命令下载 KubeKey v3.0.2 并解压：
 
    {{< tabs >}}
 
@@ -32,7 +32,7 @@ KubeKey v2.1.0 版本新增了清单（manifest）和制品（artifact）的概�
    从 [GitHub Release Page](https://github.com/kubesphere/kubekey/releases) 下载 KubeKey 或者直接运行以下命令。
 
    ```bash
-   curl -sfL https://get-kk.kubesphere.io | VERSION=v2.3.0 sh -
+   curl -sfL https://get-kk.kubesphere.io | VERSION=v3.0.2 sh -
    ```
 
    {{</ tab >}}
@@ -48,7 +48,7 @@ KubeKey v2.1.0 版本新增了清单（manifest）和制品（artifact）的概�
    运行以下命令来下载 KubeKey：
 
    ```bash
-   curl -sfL https://get-kk.kubesphere.io | VERSION=v2.3.0 sh -
+   curl -sfL https://get-kk.kubesphere.io | VERSION=v3.0.2 sh -
    ```
    {{</ tab >}}
 
@@ -87,7 +87,7 @@ KubeKey v2.1.0 版本新增了清单（manifest）和制品（artifact）的概�
        repository:
          iso:
            localPath:
-           url: https://github.com/kubesphere/kubekey/releases/download/v2.3.0/centos7-rpms-amd64.iso
+           url: https://github.com/kubesphere/kubekey/releases/download/v3.0.2/centos7-rpms-amd64.iso
      - arch: amd64
        type: linux
        id: ubuntu
@@ -95,7 +95,7 @@ KubeKey v2.1.0 版本新增了清单（manifest）和制品（artifact）的概�
        repository:
          iso:
            localPath:
-           url: https://github.com/kubesphere/kubekey/releases/download/v2.3.0/ubuntu-20.04-debs-amd64.iso
+           url: https://github.com/kubesphere/kubekey/releases/download/v3.0.2/ubuntu-20.04-debs-amd64.iso
      kubernetesDistributions:
      - type: kubernetes
        version: v1.22.12
@@ -269,7 +269,7 @@ KubeKey v2.1.0 版本新增了清单（manifest）和制品（artifact）的概�
    
    - 可根据实际情况修改 **manifest-sample.yaml** 文件的内容，用于之后导出期望的 artifact 文件。
   
-   - 您可以访问 https://github.com/kubesphere/kubekey/releases/tag/v2.3.0 下载 ISO 文件。
+   - 您可以访问 https://github.com/kubesphere/kubekey/releases/tag/v3.0.2 下载 ISO 文件。
    
    {{</ notice >}}
    
