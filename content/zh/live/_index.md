@@ -9,15 +9,15 @@ section1:
   image: /images/live/background.jpg
 
 section2:
-  image: /images/live/cloudnative-live-20221103.png
-  url: ./authorization1103-live/
+  image: /images/live/cloudnative-live-20221117.png
+  url: ./stonedb1117-live/
 
   notice:
-    title: 向云而生 - JuiceFS 在云原生文件系统的实践
-    tag: 结束
-    time: 2022 年 10 月 27 日晚 8 点
+    title: KubeSphere + Flux CD 多集群应用的探索
+    tag: 预告
+    time: 2022 年 11 月 24 日晚 8 点
     base: 线上
-    url: ./juicefs1027-live/
+    url: ./fluxcd1124-live/
 
   over:
     title: Apache APISIX & KubeSphere 联合 Meetup
@@ -26,6 +26,13 @@ section2:
 
 section3:
   videos:
+    - title: 基于 KubeSphere 部署 StoneDB 云原生 HTAP 数据库
+      link: ./stonedb1117-live/
+      snapshot: https://pek3b.qingstor.com/kubesphere-community/images/stonedb1117-live-cover.png
+      type: iframe
+      createTime: 2022.11.17
+      group: 直播回放
+
     - title: KubeSphere 3.3.1 鉴权优化详解
       link: ./authorization1103-live/
       snapshot: https://pek3b.qingstor.com/kubesphere-community/images/authorization1103-live-cover.png

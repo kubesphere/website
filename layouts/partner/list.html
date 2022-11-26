@@ -45,8 +45,10 @@
 </section>
 
 <section class="section-3">
+    {{ $applyZh := .Site.Params.applyAllInOne }}
     {{ with .Params.section3 }}
     {{ $tip := .tip }}
+    {{ $linkText := .linkText }}
     <div class="common-layout">
         <h2 class="title-black-h2">{{ .title }}</h2>
         <ul class="partner-ul common-flex-layout">
@@ -54,12 +56,19 @@
                 <li>
                     <h3 class="common-content">{{ .title }}</h3>
                     <p class="common-p">{{ .content }}</p>
+                    {{ if not $applyZh }}
                     <div>
                         <a class="common-green-a" href="{{ .link }}">{{ $tip }}</a>
                     </div>
+                    {{ end }}
                 </li>
             {{ end }}
         </ul>
+        {{if $applyZh}}
+        <div>
+            <a class="apply common-green-a" href="{{ .link }}" target="_blank">{{ $tip }}</a>
+        </div>
+        {{ end }}
     </div>
     {{ end }}
 </section>

@@ -145,7 +145,7 @@ KubeKey 是用 Go 语言开发的一款全新的安装工具，代替了以前�
 从 [GitHub Release Page](https://github.com/kubesphere/kubekey/releases) 下载 KubeKey 或直接使用以下命令。
 
 ```bash
-curl -sfL https://get-kk.kubesphere.io | VERSION=v2.3.0 sh -
+curl -sfL https://get-kk.kubesphere.io | VERSION=v3.0.2 sh -
 ```
 
 {{</ tab >}}
@@ -161,7 +161,7 @@ export KKZONE=cn
 执行以下命令下载 KubeKey。
 
 ```bash
-curl -sfL https://get-kk.kubesphere.io | VERSION=v2.3.0 sh -
+curl -sfL https://get-kk.kubesphere.io | VERSION=v3.0.2 sh -
 ```
 
 {{< notice note >}}
@@ -176,7 +176,7 @@ curl -sfL https://get-kk.kubesphere.io | VERSION=v2.3.0 sh -
 
 {{< notice note >}}
 
-执行以上命令会下载最新版 KubeKey (v2.3.0)，您可以修改命令中的版本号下载指定版本。
+执行以上命令会下载最新版 KubeKey (v3.0.2)，您可以修改命令中的版本号下载指定版本。
 
 {{</ notice >}} 
 
@@ -202,7 +202,7 @@ chmod +x kk
 
 {{< notice note >}}
 
-- 安装 KubeSphere 3.3 的建议 Kubernetes 版本：v1.19.x、v1.20.x、v1.21.x、* v1.22.x、* v1.23.x 和 * v1.24.x。带星号的版本可能出现边缘节点部分功能不可用的情况。因此，如需使用边缘节点，推荐安装 v1.21.x 及之前的版本。如果不指定 Kubernetes 版本，KubeKey 将默认安装 Kubernetes v1.22.12。有关受支持的 Kubernetes 版本的更多信息，请参见[支持矩阵](../../installing-on-linux/introduction/kubekey/#支持矩阵)。
+- 安装 KubeSphere 3.3 的建议 Kubernetes 版本：v1.19.x、v1.20.x、v1.21.x、* v1.22.x、* v1.23.x 和 * v1.24.x。带星号的版本可能出现边缘节点部分功能不可用的情况。因此，如需使用边缘节点，推荐安装 v1.21.x 及之前的版本。如果不指定 Kubernetes 版本，KubeKey 将默认安装 Kubernetes v1.23.10。有关受支持的 Kubernetes 版本的更多信息，请参见[支持矩阵](../../installing-on-linux/introduction/kubekey/#支持矩阵)。
 
 - 一般来说，对于 All-in-One 安装，您无需更改任何配置。
 - 如果您在这一步的命令中不添加标志 `--with-kubesphere`，则不会部署 KubeSphere，KubeKey 将只安装 Kubernetes。如果您添加标志 `--with-kubesphere` 时不指定 KubeSphere 版本，则会安装最新版本的 KubeSphere。
