@@ -9,15 +9,15 @@ section1:
   image: /images/live/background.jpg
 
 section2:
-  image: /images/live/cloudnative-live-20221117.png
-  url: ./stonedb1117-live/
+  image: /images/live/cloudnative-live-20221124.png
+  url: ./fluxcd1124-live/
 
   notice:
-    title: KubeSphere + Flux CD 多集群应用的探索
-    tag: 预告
-    time: 2022 年 11 月 24 日晚 8 点
+    title: 基于 KubeSphere 部署 StoneDB 云原生 HTAP 数据库
+    tag: 结束
+    time: 2022 年 11 月 17 日晚 8 点
     base: 线上
-    url: ./fluxcd1124-live/
+    url: ./stonedb1117-live/
 
   over:
     title: Apache APISIX & KubeSphere 联合 Meetup
@@ -26,6 +26,13 @@ section2:
 
 section3:
   videos:
+    - title: KubeSphere + Flux CD 多集群应用的探索
+      link: ./fluxcd1124-live/
+      snapshot: https://pek3b.qingstor.com/kubesphere-community/images/fluxcd1124-live-cover.png
+      type: iframe
+      createTime: 2022.11.24
+      group: 直播回放
+
     - title: 基于 KubeSphere 部署 StoneDB 云原生 HTAP 数据库
       link: ./stonedb1117-live/
       snapshot: https://pek3b.qingstor.com/kubesphere-community/images/stonedb1117-live-cover.png

@@ -6,7 +6,7 @@ css: scss/live-detail.scss
 
 section1:
   snapshot: 
-  videoUrl: 
+  videoUrl: //player.bilibili.com/player.html?aid=733023261&bvid=BV1zD4y1e7US&cid=902200128&page=1&high_quality=1
   type: iframe
   time: 2022-11-24 20:00-21:00
   timeIcon: /images/live/clock.svg
@@ -33,3 +33,20 @@ GitOps 是云原生环境下的持续交付模型，Flux CD 是实现 GitOps 的
 
 B 站  https://live.bilibili.com/22580654
 
+## PPT 下载
+
+可扫描官网底部二维码，关注 「KubeSphere云原生」公众号，后台回复 `20221124` 即可下载 PPT。
+
+## Q & A 
+
+### Q1：`application-controller` 是在 Flux CD 项目下的吗，还是自己开发的？应用下发到多个集群，也是由这个组件下发的吗？
+
+A：`application-controller` 是自己开发的，负责监听`gitops.kubesphere.io/v1alpha1/applications` 这个 CRD，解析下发给 Flux CD 的 `kustomize-controller` 或者 `helm-controller` 去做真正的应用下发。
+
+### Q2：Flux CD 也类似于 controller，来处理 `application-controller` 创建出来的资源吗？
+
+A：对的，Flux CD 是由一系列 [controller](https://fluxcd.io/flux/components/ "controller") 组成的，用来处理 `application-controller` 的资源。
+
+### Q3：由这两个 `application-controller` 和 Flux CD 来支持多集群，和由 Karmada 来部署多集群资源，各有什么优势吗？看上去都是由 crd + controller 的形式，只是定义来源不一样？
+
+A：Flux CD 的多集群和 Karmada 的多集群的概念是不一样的，Flux CD 的多集群是人为手动指定的部署位置可以是多集群，Karmada 的多集群是存在集群层面的负载调度。
