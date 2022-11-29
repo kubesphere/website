@@ -1,5 +1,5 @@
 ---
-title: '使用 KubeSphere 部署高可用 RocketMQ 集群'
+title: '使用 Kubernetes 部署高可用 RocketMQ 集群'
 tag: 'KubeSphere, Kubernetes, RocketMQ'
 keywords: 'KubeSphere, Kubernetes, RocketMQ'
 description: '本文重点介绍 单 Master 模式和多 Master 多 Slave-异步复制模式在 K8s 集群上的部署方案。'
