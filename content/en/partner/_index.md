@@ -78,7 +78,7 @@ section4:
       partnerType: "Technology"
       content: 'OrionX software provides a fine-grained, remote, and dynamically configurable virtualization solution for physical GPUs with almost no performance loss.'
 
-    - icon: "images/partner/qingcloud.svg"
+    - icon: "images/partner/QingCloud-Logo-Color.png"
       partnerType: "Cloud Provider"
       content: 'QingCloud is a cloud computing platform that provides IaaS-based flexible cloud services. QKE is a cloud-hosted Kubernetes service with KubeSphere and powered by QingCloud'
 
@@ -105,4 +105,12 @@ section4:
     - icon: "images/partner/logo-deepflow.png"
       partnerType: "App provider"
       content: 'DeepFlow is a highly automated observability platform open sourced by YUNSHAN Network Inc. (opens new window). It is a full stack, full span and high-performance data engine built for cloud-native observability application developers. With new technologies such as eBPF, WASM and OpenTelemetry, DeepFlow innovatively implements core mechanisms such as AutoTracing, AutoMetrics, AutoTagging and SmartEncoding, helping developers to improve the automation level of code injection, reducing the maintanence complexity of the observability platform. With the programmability and open API of DeepFlow, developers can quickly integrate it into their observability stack.' 
+
+    - icon: "images/partner/JuiceFS_logo.png"
+      partnerType: "App provider"
+      content: 'JuiceFS is an open source, high-performance distributed file system designed for the cloud. It provides full POSIX compatibility, allowing almost all kinds of object storage to be used locally as massive local disks and to be mounted and read on different cross-platform and cross-region hosts at the same time.' 
+
+    - icon: "images/partner/sofastack-logo.png"
+      partnerType: "Go-to-market"
+      content: 'SOFAStack open source community is able to quickly build financial grade cloud native architecture, while refining best practices in multiple financial scenarios, with the following characteristics.First, the community profile is open, with a comprehensive open source community, neutral, compatible with the community and open source ecosystem, and SOFAStack actively working with other communities to build the ecosystem;Second, financial grade, including the components required to build financial grade cloud-native architecture, allowing users to focus more on business development, to meet the current and future needs of the user scenario, experienced the refinement of large-scale scenarios, especially the demanding financial scenarios;Third, cloud-native, based on SOFAStack can quickly build cloud-native microservices system, rapid development of more reliable, scalable, more easily maintained cloud-native applications.'
 ---

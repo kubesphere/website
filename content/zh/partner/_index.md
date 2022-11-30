@@ -87,6 +87,10 @@ section4:
       partnerType: "应用程序提供商"
       content: '微众银行是中国第一家数字银行，由腾讯发起，通过不同的在线平台提供财富管理和融资服务。'
 
+    - icon: "images/partner/cloudnative-community.jpg"
+      partnerType: "市场合作伙伴"
+      content: '云原生社区是一个中立的云原生终端用户社区，由 CNCF 大使和开源意见领袖于 2020 年 5 月 12 日成立，旨在推广云原生技术，构建开发者生态系统。'
+
     - icon: "images/partner/jihu.svg"
       partnerType: "应用程序提供商"
       content: '极狐GitLab 是一个一体化的 DevOps 平台，提供覆盖软件开发全生命周期的 DevOps 能力，从项目管理、源代码托管、CI/CD、运维监控以及 DevSecOps，能够让研发、测试、运维、安全等团队在同一个平台上进行协同，帮助团队更快、更安全地交付更好的软件，提升研运效能，激发 DevOps 可观价值。'     
@@ -98,4 +102,12 @@ section4:
     - icon: "images/partner/logo-deepflow.png"
       partnerType: "应用程序提供商"
       content: 'DeepFlow 是云杉网络开源的一款高度自动化的可观测性平台，是为云原生应用开发者建设可观测性能力而量身打造的全栈、全链路、高性能数据引擎。DeepFlow 使用 eBPF、WASM、OpenTelemetry 等新技术，创新的实现了 AutoTracing、AutoMetrics、AutoTagging、SmartEncoding 等核心机制，帮助开发者提升埋点插码的自动化水平，降低可观测性平台的运维复杂度。利用 DeepFlow 的可编程能力和开放接口，开发者可以快速将其融入到自己的可观测性技术栈中。'  
+
+    - icon: "images/partner/JuiceFS_logo.png"
+      partnerType: "应用程序提供商"
+      content: 'JuiceFS 是一款面向云原生设计的高性能分布式文件系统。提供完备的 POSIX 兼容性，可将几乎所有对象存储接入本地作为海量本地磁盘使用，亦可同时在跨平台、跨地区的不同主机上挂载读写。'  
+
+    - icon: "images/partner/sofastack-logo.png"
+      partnerType: "市场合作伙伴"
+      content: 'SOFAStack 开源社区能够快速构建金融级云原生架构，同时在多个金融场景里均锤炼出最佳实践，具备以下特点：一是社区简介开放，社区全面开源共建、保持中立、兼容社区与开源生态，SOFAStack 积极与其他社区开展生态共建;二是金融级，包含构建金融级云原生架构所需的各个组件，让用户更加专注于业务开发，满足用户场景的现状和未来需求，经历过大规模场景的锤炼，特别是严苛的金融场景;三是云原生，基于 SOFAStack 可快速搭建云原生微服务体系，快速开发更具可靠性、扩展性、更加易于维护的云原生应用。'  
 ---
