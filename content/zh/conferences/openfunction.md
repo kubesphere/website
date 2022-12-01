@@ -1,7 +1,7 @@
 ---
 title: '用云原生无服务器技术构建现代 FaaS（函数即服务）平台'
 author: '霍秉杰，雷万钧'
-createTime: '20 21-12-10'
+createTime: '2021-12-10'
 snapshot: 'https://pek3b.qingstor.com/kubesphere-community/images/kubecon2021-ben.png'
 ---
 
