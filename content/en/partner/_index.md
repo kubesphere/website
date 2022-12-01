@@ -113,4 +113,8 @@ section4:
     - icon: "images/partner/sofastack-logo.png"
       partnerType: "Go-to-market"
       content: 'SOFAStack open source community is able to quickly build financial grade cloud native architecture, while refining best practices in multiple financial scenarios, with the following characteristics.First, the community profile is open, with a comprehensive open source community, neutral, compatible with the community and open source ecosystem, and SOFAStack actively working with other communities to build the ecosystem;Second, financial grade, including the components required to build financial grade cloud-native architecture, allowing users to focus more on business development, to meet the current and future needs of the user scenario, experienced the refinement of large-scale scenarios, especially the demanding financial scenarios;Third, cloud-native, based on SOFAStack can quickly build cloud-native microservices system, rapid development of more reliable, scalable, more easily maintained cloud-native applications.'
+
+    - icon: "images/partner/crane.svg"
+      partnerType: "App provider"
+      content: 'Crane is a FinOps Platform for Cloud Resource Analytics and Economics in Kubernetes clusters. The goal is not only help user to manage cloud cost easier but also ensure the quality of applications.' 
 ---
