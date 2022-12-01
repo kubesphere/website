@@ -184,6 +184,54 @@
     "tag": "KubeSphere 2.0,峰会论坛"
   },
   {
+    "title": "去哪儿网 Kubernetes 多集群和金丝雀部署最佳实践",
+    "link": "https://kubesphere-community.pek3b.qingstor.com/videos/KubeCon2021-China-qunar.mp4",
+    "createTime": "2021.12.10",
+    "snapshot": "https://pek3b.qingstor.com/kubesphere-community/images/kubecon2021-qunar.png",
+    "group": "KubeCon",
+    "tag": "Kubernetes,峰会论坛"
+  },
+  {
+    "title": "用云原生无服务器技术构建现代 FaaS（函数即服务）平台",
+    "link": "https://kubesphere-community.pek3b.qingstor.com/videos/KubeCon2021-China-Ben.mp4",
+    "createTime": "2021.12.10",
+    "snapshot": "https://pek3b.qingstor.com/kubesphere-community/images/kubecon2021-ben.png",
+    "group": "KubeCon",
+    "tag": "FaaS,峰会论坛"
+  },
+  {
+    "title": "基于 RBAC 和 Kubefed 的 Kubernetes 多集群和多租户管理",
+    "link": "https://kubesphere-community.pek3b.qingstor.com/videos/KubeCon2021-China-hongming.mp4",
+    "createTime": "2021.12.09",
+    "snapshot": "https://pek3b.qingstor.com/kubesphere-community/images/kubecon2021-hongming.png",
+    "group": "KubeCon",
+    "tag": "Kubernetes,峰会论坛"
+  },
+  {
+    "title": "用统一的方式分发 Helm 和 Operator 应用",
+    "link": "https://kubesphere-community.pek3b.qingstor.com/videos/KubeCon2021-China-zhengyi.mp4",
+    "createTime": "2021.12.09",
+    "snapshot": "https://pek3b.qingstor.com/kubesphere-community/images/kubecon2021-zhengyi.png",
+    "group": "KubeCon",
+    "tag": "Kubernetes,峰会论坛"
+  },
+  {
+    "title": "基于云原生系统通用模型的计量计费系统",
+    "link": "https://kubesphere-community.pek3b.qingstor.com/videos/KubeCon2020-metering.mp4",
+    "createTime": "2020.07.31",
+    "snapshot": "https://pek3b.qingstor.com/kubesphere-community/images/kubecon2020-metering.png",
+    "group": "KubeCon",
+    "tag": "Kubernetes,峰会论坛"
+  },
+  {
+    "title": "多租户环境中的 Kubernetes 事件导出、过滤和警报",
+    "link": "https://kubesphere-community.pek3b.qingstor.com/videos/KubeCon2020-event.mp4",
+    "createTime": "2020.07.30",
+    "snapshot": "https://pek3b.qingstor.com/kubesphere-community/images/kubecon2020-event.jpg",
+    "group": "KubeCon",
+    "tag": "Kubernetes,峰会论坛"
+  },
+  {
     "title": "Porter：面向裸金属环境的 Kubernetes 开源负载均衡器",
     "link": "https://kubesphere-docs.pek3b.qingstor.com/website/kubecon/Porter%20-%20An%20Open%20Source%20Load%20Balancer%20for%20Bare%20Metal%20Kubernetes%20-%20Xuetao%20Song%20%26%20Fang%20Du.mp4",
     "createTime": "2019.09.27",
@@ -420,7 +468,7 @@
     "link": "https://kubesphere-docs.pek3b.qingstor.com/website/%E4%BA%A7%E5%93%81%E4%BB%8B%E7%BB%8D/Container_100P001C201804_%E5%AE%B9%E5%99%A8%E6%98%AF%E4%BB%80%E4%B9%88.mp4",
     "createTime": "2019.09.27",
     "snapshot": "https://pek3b.qingstor.com/kubesphere-docs/png/20190928114725.png",
-    "group": "Kubernetes基础",
+    "group": "Kubernetes 基础",
     "tag": "Kubernetes,容器"
   },
   {
@@ -428,7 +476,7 @@
     "link": "https://kubesphere-docs.pek3b.qingstor.com/website/%E4%BA%A7%E5%93%81%E4%BB%8B%E7%BB%8D/Container_100P002C201804_%E5%AE%B9%E5%99%A8%E4%B8%8E%E9%95%9C%E5%83%8F%E7%9A%84%E5%85%B3%E7%B3%BB.mp4",
     "createTime": "2019.09.27",
     "snapshot": "https://pek3b.qingstor.com/kubesphere-docs/png/20190928114801.png",
-    "group": "Kubernetes基础",
+    "group": "Kubernetes 基础",
     "tag": "Kubernetes,容器"
   },
   {
@@ -436,7 +484,7 @@
     "link": "https://kubesphere-docs.pek3b.qingstor.com/website/Kubernetes%E5%9F%BA%E7%A1%80/K8S_100P001C201809_K8S%E6%98%AF%E4%BB%80%E4%B9%88.mp4",
     "createTime": "2019.09.27",
     "snapshot": "https://pek3b.qingstor.com/kubesphere-docs/png/20190928000918.png",
-    "group": "Kubernetes基础",
+    "group": "Kubernetes 基础",
     "tag": "Kubernetes,快速教程"
   },
   {
@@ -444,7 +492,7 @@
     "link": "https://kubesphere-docs.pek3b.qingstor.com/website/Kubernetes%E5%9F%BA%E7%A1%80/K8S_100P002C201809_K8S%E4%B8%8EKubeSphere%E7%9A%84%E5%85%B3%E7%B3%BB.mp4",
     "createTime": "2019.09.27",
     "snapshot": "https://pek3b.qingstor.com/kubesphere-docs/png/20190928001616.png",
-    "group": "Kubernetes基础",
+    "group": "Kubernetes 基础",
     "tag": "Kubernetes,快速教程"
   },
   {
@@ -452,7 +500,7 @@
     "link": "https://kubesphere-docs.pek3b.qingstor.com/website/Kubernetes%E5%9F%BA%E7%A1%80/K8S_100P003C201809_K8S%E6%9E%B6%E6%9E%84.mp4",
     "createTime": "2019.09.27",
     "snapshot": "https://pek3b.qingstor.com/kubesphere-docs/png/20190928001806.png",
-    "group": "Kubernetes基础",
+    "group": "Kubernetes 基础",
     "tag": "Kubernetes,快速教程"
   },
   {
@@ -460,7 +508,7 @@
     "link": "https://kubesphere-docs.pek3b.qingstor.com/website/Kubernetes%E5%9F%BA%E7%A1%80/K8S_100P004C201809_K8S%E5%9F%BA%E6%9C%AC%E6%A6%82%E5%BF%B5-1.mp4",
     "createTime": "2019.09.27",
     "snapshot": "https://pek3b.qingstor.com/kubesphere-docs/png/20190928001957.png",
-    "group": "Kubernetes基础",
+    "group": "Kubernetes 基础",
     "tag": "Kubernetes,快速教程"
   },
   {
@@ -468,7 +516,7 @@
     "link": "https://kubesphere-docs.pek3b.qingstor.com/website/Kubernetes%E5%9F%BA%E7%A1%80/K8S_100P005C201809_K8S%E5%9F%BA%E6%9C%AC%E6%A6%82%E5%BF%B5-2.mp4",
     "createTime": "2019.09.27",
     "snapshot": "https://pek3b.qingstor.com/kubesphere-docs/png/20190928002045.png",
-    "group": "Kubernetes基础",
+    "group": "Kubernetes 基础",
     "tag": "Kubernetes,快速教程"
   },
   {
@@ -476,7 +524,7 @@
     "link": "https://kubesphere-docs.pek3b.qingstor.com/website/Kubernetes%E5%9F%BA%E7%A1%80/K8S_100P005C201809_K8S%E5%9F%BA%E6%9C%AC%E6%A6%82%E5%BF%B5-3.mp4",
     "createTime": "2019.09.27",
     "snapshot": "https://pek3b.qingstor.com/kubesphere-docs/png/20190928002215.png",
-    "group": "Kubernetes基础",
+    "group": "Kubernetes 基础",
     "tag": "Kubernetes,快速教程"
   },
   {
@@ -484,7 +532,7 @@
     "link": "https://kubesphere-docs.pek3b.qingstor.com/website/Kubernetes%E5%9F%BA%E7%A1%80/K8S_100P007C201809_K8S%20Networking-1.mp4",
     "createTime": "2019.09.27",
     "snapshot": "https://pek3b.qingstor.com/kubesphere-docs/png/20190928002445.png",
-    "group": "Kubernetes基础",
+    "group": "Kubernetes 基础",
     "tag": "Kubernetes,快速教程"
   },
   {
@@ -492,7 +540,7 @@
     "link": "https://kubesphere-docs.pek3b.qingstor.com/website/Kubernetes%E5%9F%BA%E7%A1%80/K8S_100P007C201809_K8S%20Networking-2.mp4",
     "createTime": "2019.09.27",
     "snapshot": "https://pek3b.qingstor.com/kubesphere-docs/png/20190928002510.png",
-    "group": "Kubernetes基础",
+    "group": "Kubernetes 基础",
     "tag": "Kubernetes,快速教程"
   },
   {
@@ -500,7 +548,7 @@
     "link": "https://kubesphere-docs.pek3b.qingstor.com/website/Kubernetes%E5%9F%BA%E7%A1%80/K8S_100P009C201809_K8S%20Storage-1.mp4",
     "createTime": "2019.09.27",
     "snapshot": "https://pek3b.qingstor.com/kubesphere-docs/png/20190928002616.png",
-    "group": "Kubernetes基础",
+    "group": "Kubernetes 基础",
     "tag": "Kubernetes,快速教程"
   },
   {
@@ -508,7 +556,7 @@
     "link": "https://kubesphere-docs.pek3b.qingstor.com/website/Kubernetes%E5%9F%BA%E7%A1%80/K8S_100P010C201809_K8S%20Storage-2-CSI%20%E6%9E%B6%E6%9E%84.mp4",
     "createTime": "2019.09.27",
     "snapshot": "https://pek3b.qingstor.com/kubesphere-docs/png/20190928002702.png",
-    "group": "Kubernetes基础",
+    "group": "Kubernetes 基础",
     "tag": "Kubernetes,快速教程"
   }
 ]

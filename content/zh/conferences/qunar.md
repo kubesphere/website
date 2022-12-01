@@ -2,7 +2,7 @@
 title: '去哪儿网 Kubernetes 多集群和金丝雀部署最佳实践'
 author: '陈靖贤，邹晟'
 createTime: '2021-12-10'
-snapshot: 'https://pek3b.qingstor.com/kubesphere-community/images/kubecon2021-qunar.png '
+snapshot: 'https://pek3b.qingstor.com/kubesphere-community/images/kubecon2021-qunar.png'
 ---
 
 ## 议题简介
