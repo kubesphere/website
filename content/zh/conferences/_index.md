@@ -5,6 +5,42 @@ css: "scss/conferences.scss"
 viewDetail: 查看详情
 
 list:
+  - name: KubeCon 北美 2022
+    content: KubeSphere 社区在 KubeCon + CloudNativeCon 北美 2022 上的技术主题分享。
+    icon: images/conferences/kubecon.svg
+    bg: images/conferences/kubecon-bg.svg
+    bgColor: linear-gradient(270deg, rgb(101, 193, 148), rgb(76, 169, 134))
+    children:
+      - name: 使用 Fluent Bit 实现云边统一可观测性
+        summary: 随着云原生边缘计算技术的兴起，越来越多的组织开始使用 Kubernetes 结合边缘计算框架来管理边缘的资源和工作负载。其中一些边缘计算框架（如 KubeEdge）将边缘节点作为云端 K8s 集群的一部分进行管理，这对于用户管理边缘节点和边缘应用是个巨大的挑战。
+        author: 霍秉杰
+        link: fluentbit/
+        image: https://pek3b.qingstor.com/kubesphere-community/images/kubecon-a-2022-ben.png
+
+  - name: KubeCon EU 2022
+    content: KubeSphere 社区在 KubeCon + CloudNativeCon EU 2022 上的技术主题分享。
+    icon: images/conferences/kubecon.svg
+    bg: images/conferences/kubecon-bg.svg
+    bgColor: linear-gradient(270deg, rgb(101, 193, 148), rgb(76, 169, 134))
+    children:
+      - name: 使用云原生 Serverless 技术为自动驾驶赋能
+        summary: 对于自动驾驶平台来说，复杂的用例和众多的模块给整个架构带来了巨大的挑战。以数据存档为例，车辆和云端每秒钟都会产生大量的时间敏感数据，分散在各种设备和集群中。各种类型的存储介质、不均匀的数据大小、混合的异步操作、陡峭的资源开销曲线等挑战都促使我们需要一个更灵活、更有弹性、更节省成本的架构。
+        author: 霍秉杰，卢修明
+        link:  serverless/
+        image: https://pek3b.qingstor.com/kubesphere-community/images/kubecon-eu-2022-ben-lu.png
+
+      - name: 深入浅出 Fluent Operator
+        summary: 在新增 Fluentd 的支持后，Fluent Bit Operator 现已被重新命名为 Fluent Operator。在本次分享中，Fluent Operator 的 Maintainer 将会详细介绍 Fluent Operator 的主要功能及其设计原则和架构.
+        author: 霍秉杰，朱晗
+        link: fluent-operator/
+        image: https://pek3b.qingstor.com/kubesphere-community/images/kubecon-eu-2022-fluent-operator.png
+
+      - name: 使用 Fluent Operator 在边缘端构建云原生日志管道
+        summary: 在本次分享中，周鹏飞将给大家介绍 Fluent Operator 的架构和全新设计，并通过一个 Demo 来演示如何在 K3s 上使用 Fluent Operator 来处理边缘和 IoT 场景的日志。
+        author: 周鹏飞
+        link: fluent-operator-2/
+        image: https://pek3b.qingstor.com/kubesphere-community/images/kubecon-eu-2022-fluent-operator-2.png
+
   - name: KubeCon 大会 2021
     content: KubeSphere 社区在 KubeCon + CloudNativeCon 2021 上的技术主题分享。
     icon: images/conferences/kubecon.svg
@@ -14,7 +50,7 @@ list:
       - name: 基于 RBAC 和 Kubefed 的 Kubernetes 多集群和多租户管理
         summary: 软隔离是一种没有严格隔离不同用户、工作负载或应用程序的隔离形式。就 Kubernetes 而言，软隔离通常由 RBAC 和命名空间隔离。当集群管理员跨多个 Kubernetes 集群实现隔离时，会遇到许多挑战，如身份验证和授权、资源配额、网络策略、安全策略等。
         author: 万宏明
-        link:  rbac/
+        link: rbac/
         image: https://pek3b.qingstor.com/kubesphere-community/images/kubecon2021-hongming.png
 
       - name: 用统一的方式分发 Helm 和 Operator 应用
@@ -26,13 +62,13 @@ list:
       - name: 用云原生无服务器技术构建现代 FaaS（函数即服务）平台
         summary: 作为无服务器的核心，FaaS（函数即服务）越来越受到人们的关注。新兴的云原生无服务器技术可以通过用更强大的云原生替代方案替换 FaaS平台的关键组件，从而构建一个强大的现代 FaaS 平台。
         author: 霍秉杰，雷万钧
-        link:  openfunction/
+        link: openfunction/
         image: https://pek3b.qingstor.com/kubesphere-community/images/kubecon2021-ben.png
 
       - name: 去哪儿网 Kubernetes 多集群和金丝雀部署最佳实践
         summary: 随着云原生时代的到来，学习和拥抱云原生不可避免，因为其可以使业务运营更加敏捷。容器化是将应用转移到 Kubernetes 之前的第一步。如何将数以千计的应用程序高效、顺畅地从基于内核的虚拟机 (KVM) 迁移到容器已成为去哪儿网基础设施团队面临的一个巨大挑战。
         author: 邹晟，陈靖贤
-        link:  qunar/
+        link: qunar/
         image: https://pek3b.qingstor.com/kubesphere-community/images/kubecon2021-qunar.png   
 
   - name: KubeCon 大会 2020
@@ -44,7 +80,7 @@ list:
       - name: 基于云原生系统通用模型的计量计费系统
         summary: 云原生服务比传统云服务更具弹性和可定制性。计算能力、存储和网络能力应该按需求实时分配，指标计量和计费参数复杂，产品定价策略将依靠许多参数不仅包括资源指标，和不同的资源提供者将使用不同的程序创建和释放资源，所以硬编码的计量/计费系统不能满足快速增长的需求。
         author: Anne Song，马丹
-        link:  metering/
+        link: metering/
         image: https://pek3b.qingstor.com/kubesphere-community/images/kubecon2020-metering.png
 
       - name: 多租户环境中的 Kubernetes 事件导出、过滤和警报

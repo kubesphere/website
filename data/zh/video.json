@@ -184,6 +184,38 @@
     "tag": "KubeSphere 2.0,峰会论坛"
   },
   {
+    "title": "使用云原生 Serverless 技术为自动驾驶赋能",
+    "link": "https://kubesphere-community.pek3b.qingstor.com/videos/KubeCon-America-2022-ben.mp4",
+    "createTime": "2022.10.24",
+    "snapshot": "https://pek3b.qingstor.com/kubesphere-community/images/kubecon-a-2022-ben.png",
+    "group": "KubeCon",
+    "tag": "Fluent Bit,峰会论坛"
+  },
+  {
+    "title": "使用云原生 Serverless 技术为自动驾驶赋能",
+    "link": "https://kubesphere-community.pek3b.qingstor.com/videos/KubeCon-EU-2022-Ben-Lu.mp4",
+    "createTime": "2022.05.17",
+    "snapshot": "https://pek3b.qingstor.com/kubesphere-community/images/kubecon-eu-2022-ben-lu.png",
+    "group": "KubeCon",
+    "tag": "Serverless,峰会论坛"
+  },
+  {
+    "title": "深入浅出 Fluent Operator",
+    "link": "https://kubesphere-community.pek3b.qingstor.com/videos/KubeCon-EU-2022-Ben.mp4",
+    "createTime": "2022.05.17",
+    "snapshot": "https://pek3b.qingstor.com/kubesphere-community/images/kubecon-eu-2022-fluent-operator.png",
+    "group": "KubeCon",
+    "tag": "Fluent Operator,峰会论坛"
+  },
+  {
+    "title": "使用 Fluent Operator 在边缘端构建云原生日志管道",
+    "link": "https://kubesphere-community.pek3b.qingstor.com/videos/KubeCon-EU-2022-Feynman.mp4",
+    "createTime": "2022.05.17",
+    "snapshot": "https://pek3b.qingstor.com/kubesphere-community/images/kubecon-eu-2022-fluent-operator-2.png",
+    "group": "KubeCon",
+    "tag": "Fluent Operator,峰会论坛"
+  },
+  {
     "title": "去哪儿网 Kubernetes 多集群和金丝雀部署最佳实践",
     "link": "https://kubesphere-community.pek3b.qingstor.com/videos/KubeCon2021-China-qunar.mp4",
     "createTime": "2021.12.10",
