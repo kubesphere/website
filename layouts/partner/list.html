@@ -77,11 +77,24 @@
     {{ with .Params.section4 }}
     <div class="common-layout">
         <h2 class="title-black-h2">{{ .title }}</h2>
-        <ul class="partner-ul">
+        {{ $allType := slice }}
+        {{ range .featuredPartnerList }}
+            {{ $exist := in $allType .partnerType }}
+            {{ if not $exist }}
+                {{ $allType = $allType | append .partnerType }}
+            {{ end }}
+        {{ end }}
+        <div id="partner-group">
+            <div class="li active">{{ i18n "ALL" }}</div>
+            {{ range $allType }}
+            <div class="li" data-name="{{ . }}">{{ . }}</div>
+            {{ end }}
+        </div>
+
+        <ul class="partner-ul" id="partner-children">
             {{ range .featuredPartnerList }}
-                <li>
+                <li data-name="{{ .partnerType }}">
                     <img src="{{ .icon | relURL }}" alt="{{ .content }}">
-                    <div class='type'>{{ .partnerType }}</div>
                     <div class='content'>{{ .content }}</div>
                 </li>
             {{ end }}
@@ -89,4 +102,22 @@
     </div>
     {{ end }}
 </section>
+<script>
+    $('#partner-group div').click(function() {
+        $("#partner-group div").removeClass("active");
+        $(this).addClass("active");
+        var name = $(this).data("name")
+        if (name) {
+            $("#partner-children li").each(function(item) {
+                if ($(this).data("name") !== name) {
+                    $(this).hide()
+                } else {
+                    $(this).show()
+                }
+            })
+        } else {
+            $("#partner-children li").show()
+        }
+	})
+</script>
 {{ end }}
