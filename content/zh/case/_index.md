@@ -202,6 +202,8 @@ section3:
       children:
         - name: 'aviation-industry-corporation-of-china'
           icon: '/images/home/section6-aviation-industry-corporation-of-china.jpg'
+        - name: 'crrc'
+          icon: '/images/case/logo-crrc.png'
 
     - name: '能源'
       children:
