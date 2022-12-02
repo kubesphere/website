@@ -24,6 +24,7 @@
         <ul class='blogs-ul'>
             {{ range (.Data.Pages.ByParam "createTime").Reverse }}
             <li data-tag='{{ .Params.tag }}' class="news-div">
+                <p class="time">{{ .Params.createTime }}</p>
                 <h2>
                     <a href="{{ .RelPermalink }}" target="_blank" rel="noopener noreferrer">{{ .Params.title }}</a>
                 </h2>

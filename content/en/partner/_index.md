@@ -87,7 +87,7 @@ section4:
       content: 'With the technical infrastructure it holds, Radore provides private and corporate data center services (Colocation, Dedicated Servers, Cloud Services, Web Hosting, CDN).'
 
     - icon: "images/partner/webank.jpg"
-      partnerType: "App provider"
+      partnerType: "App Provider"
       content: 'WeBank, The 1st digital bank in China and initiated by Tencent, offers wealth management and financing services through different online platforms.'
    
     - icon: "images/partner/cloudnative-community.jpg"
@@ -95,7 +95,7 @@ section4:
       content: 'Cloud Native Community is an neutral, cloud native end user community founded on May 12, 2020 by CNCF ambassadors and open source opinion leaders to promote cloud native technologies and build a developer ecosystem.'
 
     - icon: "images/partner/jihu.svg"
-      partnerType: "App provider"
+      partnerType: "App Provider"
       content: 'JiHu GitLab is an out-of-the-box, open DevOps platform built from the ground up as a single application for all stages of the DevOps lifecycle. This enables Product, Development, QA, Security, and Operations teams to work concurrently on the same project.'
 
     - icon: "images/partner/Cloudview-logo.png"
@@ -103,11 +103,11 @@ section4:
       content: 'Cloudview is a cloud computing platform that provides IaaS-PaaS-based flexible cloud services.'  
       
     - icon: "images/partner/logo-deepflow.png"
-      partnerType: "App provider"
+      partnerType: "App Provider"
       content: 'DeepFlow is a highly automated observability platform open sourced by YUNSHAN Network Inc. (opens new window). It is a full stack, full span and high-performance data engine built for cloud-native observability application developers. With new technologies such as eBPF, WASM and OpenTelemetry, DeepFlow innovatively implements core mechanisms such as AutoTracing, AutoMetrics, AutoTagging and SmartEncoding, helping developers to improve the automation level of code injection, reducing the maintanence complexity of the observability platform. With the programmability and open API of DeepFlow, developers can quickly integrate it into their observability stack.' 
 
     - icon: "images/partner/JuiceFS_logo.png"
-      partnerType: "App provider"
+      partnerType: "App Provider"
       content: 'JuiceFS is an open source, high-performance distributed file system designed for the cloud. It provides full POSIX compatibility, allowing almost all kinds of object storage to be used locally as massive local disks and to be mounted and read on different cross-platform and cross-region hosts at the same time.' 
 
     - icon: "images/partner/sofastack-logo.png"
@@ -115,6 +115,6 @@ section4:
       content: 'SOFAStack open source community is able to quickly build financial grade cloud native architecture, while refining best practices in multiple financial scenarios, with the following characteristics.First, the community profile is open, with a comprehensive open source community, neutral, compatible with the community and open source ecosystem, and SOFAStack actively working with other communities to build the ecosystem;Second, financial grade, including the components required to build financial grade cloud-native architecture, allowing users to focus more on business development, to meet the current and future needs of the user scenario, experienced the refinement of large-scale scenarios, especially the demanding financial scenarios;Third, cloud-native, based on SOFAStack can quickly build cloud-native microservices system, rapid development of more reliable, scalable, more easily maintained cloud-native applications.'
 
     - icon: "images/partner/crane.svg"
-      partnerType: "App provider"
+      partnerType: "App Provider"
       content: 'Crane is a FinOps Platform for Cloud Resource Analytics and Economics in Kubernetes clusters. The goal is not only help user to manage cloud cost easier but also ensure the quality of applications.' 
 ---
