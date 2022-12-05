@@ -60,7 +60,13 @@
             var link = $(this).data('link')
             var language = $('.video-ul').data('language')
             if (language === 'zh') {
-                showVideo(link)
+                const isBiliBili = link.includes('player.bilibili.com')
+                // due to the browser's cookie policy, bilibili website cant be used in iframe
+                if(isBiliBili){
+                    window.open(link)
+                }else{
+                    showVideo(link)
+                }
             } else if (language === 'en') {
                 showIframe(link)
             }
