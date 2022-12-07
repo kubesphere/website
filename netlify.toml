@@ -39,3 +39,8 @@
   to = "http://139.198.16.58:9900/forum/:splat"
   status = 200
   force = true
+
+
+[[edge_functions]]
+function = "go-get"
+path = "/*"
