@@ -27,3 +27,9 @@
   to = "/zh/docs/v3.3/:splat"
   status = 301
   force = true
+
+[[redirects]]
+  from = "/tr/forum/*"
+  to = "http://139.198.113.75:9900/tr/forum/:splat"
+  status = 200
+  force = true
