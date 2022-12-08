@@ -803,7 +803,7 @@ section3:
       createTime: 2021.05.15
       group: Meetup      
 
-    - title: 中通快递关键业务和复杂架构挑战下的 K8S 集群服务暴露实践
+    - title: 中通快递关键业务和复杂架构挑战下的 K8s 集群服务暴露实践
       link: ./zhongtong-shanghai/
       snapshot: https://pek3b.qingstor.com/kubesphere-community/images/cluster-zhongtong.jpeg
       type: iframe
@@ -852,7 +852,7 @@ section3:
       createTime: 2020.12.19
       group: Meetup
 
-    - title: 使用（KubeSphere）QKE管理多个ACK集群
+    - title: 使用（KubeSphere）QKE 管理多个 ACK 集群
       link: ./qke-ack/
       snapshot: https://pek3b.qingstor.com/kubesphere-community/images/qke-akc.jpeg
       type: iframe
