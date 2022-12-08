@@ -155,7 +155,7 @@ The manifest contains 3 sections:
 + `strategy` specifies the tool for building images.
 + `output` indicates the image repository to which the image built from the source code is pushed.
 
-`strategy` is configured by the custom resource `ClusterBuildStrategy`. For example, if we are going to use buildpacks to build an image, the ClsterBuildStrategy should look as follows:
+`strategy` is configured by the custom resource `ClusterBuildStrategy`. For example, if we are going to use buildpacks to build an image, the ClusterBuildStrategy should look as follows:
 
 ![](https://pek3b.qingstor.com/kubesphere-community/images/202112012139381.png)
 
