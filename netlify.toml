@@ -31,7 +31,7 @@
 [[redirects]]
   from = "/log/*"
   to = "https://log.kubesphere.io/:splat"
-  status = 301
+  status = 308
   force = true   
 
 [[redirects]]
