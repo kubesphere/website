@@ -132,7 +132,7 @@ Generally, there is always a LoadBalancer solution in the public cloud, and the 
 
 {{< tab "No LoadBalancer available in your cluster" >}}
 
-    ```
+
 1. Run the following command to check the service:
 
     ```shell
@@ -145,7 +145,7 @@ Generally, there is always a LoadBalancer solution in the public cloud, and the 
     tower      LoadBalancer    10.233.63.191   <pending>  8080:30721/TCP            16h
     ```
 
-2. If `EXTERNAL-IP` is `pending`, you need to manually set the proxy address. For example, if your public IP address is `139.198.120.120`, you need to expose port (for example, `8080`) of this public IP address to <NodeIP>:<NodePort>.
+2. If `EXTERNAL-IP` is `pending`, you need to manually set the proxy address. For example, if your public IP address is `139.198.120.120`, you need to expose port (for example, `30721`) of this public IP address to `NodeIP`:`NodePort`.
 
 3. Add the value of `proxyPublishAddress` to the configuration file of `ks-installer` and provide the public IP address (`139.198.120.120` in this tutorial) and port number as follows.
 
@@ -164,8 +164,10 @@ Generally, there is always a LoadBalancer solution in the public cloud, and the 
     ```yaml
     multicluster:
         clusterRole: host
-        proxyPublishAddress: http://139.198.120.120:8080 # Add this line to set the address to access tower
+        proxyPublishAddress: http://139.198.120.120:{NodePort} # Add this line to set the address to access tower
     ```
+
+   In the YAML file, you need to replace `NodePort` with the port ID you specified in Step 2.
 
 4. Save the configuration and wait for a while, or you can manually restart `ks-apiserver` to make the change effective immediately using the following command.
 

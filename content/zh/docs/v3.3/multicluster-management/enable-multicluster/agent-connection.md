@@ -140,7 +140,7 @@ tower      LoadBalancer    10.233.63.191   139.198.110.23  8080:30721/TCP       
     tower      LoadBalancer    10.233.63.191   <pending>  8080:30721/TCP            16h
     ```
 
-2. 由于 `EXTERNAL-IP` 处于 `pending` 状态，您需要手动设置代理地址。例如，如果您的公有 IP 地址为 `139.198.120.120`，则需要将公网 IP 的端口，如`8080` 转发到 `NodeIP`:`NodePort`。
+2. 由于 `EXTERNAL-IP` 处于 `pending` 状态，您需要手动设置代理地址。例如，如果您的公有 IP 地址为 `139.198.120.120`，则需要将公网 IP 的端口，如`30721` 转发到 `NodeIP`:`NodePort`。
 
 3. 将 `proxyPublishAddress` 的值添加到 `ks-installer` 的配置文件中，并按如下所示输入公有 IP 地址（此处示例 `139.198.120.120`）和端口号。
 
@@ -159,8 +159,9 @@ tower      LoadBalancer    10.233.63.191   139.198.110.23  8080:30721/TCP       
     ```yaml
     multicluster:
         clusterRole: host
-        proxyPublishAddress: http://139.198.120.120:8080 # Add this line to set the address to access tower
+        proxyPublishAddress: http://139.198.120.120:{NodePort} # Add this line to set the address to access tower
     ```
+    请将 YAML 文件中的 {NodePort} 替换为您在步骤 2 中指定的端口。
 
 4. 保存配置并稍等片刻，或者您可以运行以下命令手动重启 `ks-apiserver` 使修改立即生效。
 
