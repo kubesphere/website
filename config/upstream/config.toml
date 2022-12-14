@@ -2,7 +2,7 @@ baseURL = "https://kubesphere.io"
 
 [params]
 
-applyAllInOne = false
+applyAllInOne = true
 addGoogleAnalytics = true
 addGoogleTag = true
 hotjarTracking = true
