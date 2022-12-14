@@ -45,7 +45,7 @@
       <div class="imageBox">
         <div id="imageList" class="imageList">
           {{ range $Pages }}
-          <a class="normalPic" href="{{ .Permalink }}" target="_blank">
+          <a class="normalPic" href="{{ .Permalink | relURL }}" target="_blank">
             <image src="{{ .Params.coverImage }}"></image>
             <div class="nameText">{{ .Params.stationName }}</div>
             <div class="textBox">
