@@ -48,4 +48,4 @@
 
 [[edge_functions]]
 function = "go-get"
-path = "/^(?!log).*"
+path = "/^(?!log|forum).*"
