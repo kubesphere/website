@@ -118,4 +118,16 @@ section4:
     - icon: "images/partner/crane.svg"
       partnerType: "应用程序提供商"
       content: 'Crane 是一个基于 FinOps 的云资源分析与成本优化平台。它的愿景是在保证客户应用运行质量的前提下实现极致的降本。' 
+
+    - icon: "images/partner/logo-chaosmesh.svg"
+      partnerType: "应用程序提供商"
+      content: 'Chaos Mesh 是一个开源的云原生混沌工程平台，提供丰富的故障模拟类型，具有强大的故障场景编排能力，方便用户在开发测试中以及生产环境中模拟现实世界中可能出现的各类异常，帮助用户发现系统潜在的问题。Chaos Mesh 提供完善的可视化操作，旨在降低用户进行混沌工程的门槛。用户可以方便地在 Web UI 界面上设计自己的混沌场景，以及监控混沌实验的运行状态。' 
+
+    - icon: "images/partner/nocalhost-horizontal-color.svg"
+      partnerType: "应用程序提供商"
+      content: 'Nocalhost 一词源于 No Local，是一款基于 IDE 的云原生开发工具，提供实时的云原生应用开发体验。在 Nocalhost 开发云端应用时，任何代码改动都可以在远端立即生效，无需重新构建新镜像。这可以缩短整个开发反馈循环并极大地提高研发效率。' 
+
+    - icon: "images/partner/Curve-logo.svg"
+      partnerType: "应用程序提供商"
+      content: 'Curve 是一款高性能、易运维、云原生的开源分布式存储系统，目前为 CNCF Sandbox 项目。可应用于主流的云原生基础设施平台：对接 OpenStack 平台为云主机提供高性能块存储服务；对接 Kubernetes 为其提供 RWO、RWX 等类型的持久化存储卷；对接 PolarFS 作为云原生数据库的高性能存储底座，完美支持云原生数据库的存算分离架构。Curve 也可作为云存储中间件使用 S3 兼容的对象存储作为数据存储引擎，为公有云用户提供高性价比的共享文件存储。' 
 ---
