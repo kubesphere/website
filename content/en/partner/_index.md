@@ -117,4 +117,16 @@ section4:
     - icon: "images/partner/crane.svg"
       partnerType: "App Provider"
       content: 'Crane is a FinOps Platform for Cloud Resource Analytics and Economics in Kubernetes clusters. The goal is not only help user to manage cloud cost easier but also ensure the quality of applications.' 
+
+    - icon: "images/partner/logo-chaosmesh.svg"
+      partnerType: "App Provider"
+      content: 'Chaos Mesh is an open source cloud-native Chaos Engineering platform. It offers various types of fault simulation and has an enormous capability to orchestrate fault scenarios. Using Chaos Mesh, you can conveniently simulate various abnormalities that might occur in reality during the development, testing, and production environments and find potential problems in the system. To lower the threshold for a Chaos Engineering project, Chaos Mesh provides you with a visualization operation. You can easily design your Chaos scenarios on the Web UI and monitor the status of Chaos experiments.' 
+
+    - icon: "images/partner/nocalhost-horizontal-color.svg"
+      partnerType: "App Provider"
+      content: 'The term Nocalhost originates from No Local, which is a cloud-native development tool based on IDE, provides realtime cloud native application developing experience. When developing cloud-based application in Nocalhost, any code changes can immediately take effects in remote side, and there is no need to rebuild a new image. This can shorten the entire development feedback loops and massively improve R&D efficiency.' 
+
+    - icon: "images/partner/Curve-logo.svg"
+      partnerType: "App Provider"
+      content: 'Curve is a high-performance, lightweight-operation, cloud-native open source distributed storage system. Curve can be applied to: 1) mainstream cloud-native infrastructure platforms OpenStack and Kubernetes; 2) high-performance storage for cloud-native databases; 3) cloud storage middleware using S3-compatible object storage as a data storage.' 
 ---
