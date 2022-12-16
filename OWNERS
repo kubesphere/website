@@ -1,16 +1,17 @@
 approvers:
-    - patrickluoyu #oncall
-    - zryfish
+    - Bettygogo2021 #oncall
+    - zheng1
     - rayzhou2017
     - faweizhao26
     - yangchuansheng
 
 reviewers:
-    - patrickluoyu
+    - Bettygogo2021
+    - zheng1
     - rayzhou2017
-    - zryfish
+    - faweizhao26
+    - yangchuansheng
     - benjaminhuo
     - calvinyv
     - pixiake
     - wansir
-    - zheng1
