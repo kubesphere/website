@@ -3,6 +3,26 @@
 <head>
     {{- partial "head.html" . -}}
 </head>
+<script>
+    const LANGUAGE_REG = [/en/g, /zh/g]
+    const LANGUAGE_HREF = ['/', '/zh']
+
+    const userLang = navigator.language;
+    const firstComeSite = !localStorage.getItem('firstVisit')
+    const nowPathName = window.location.pathname
+
+    if (!!firstComeSite) {
+        localStorage.setItem('firstVisit', true)
+        const languageIndex = LANGUAGE_REG.findIndex(reg => reg.test(userLang))
+
+        try {
+            const href_prefix = LANGUAGE_HREF[languageIndex]
+            if (!nowPathName.startsWith(href_prefix) && languageIndex !== -1) {
+                window.location.replace(href_prefix + nowPathName)
+            }
+        } catch (err) {}
+    }
+</script>
 
 <body>
 {{ if .Site.Params.addGoogleTag }}
