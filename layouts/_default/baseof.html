@@ -8,19 +8,34 @@
     const LANGUAGE_HREF = ['/', '/zh']
 
     const userLang = navigator.language;
-    const firstComeSite = !localStorage.getItem('firstVisit')
     const nowPathName = window.location.pathname
+    let cookieBanned = false
+    let pageLang
 
-    if (!!firstComeSite) {
-        localStorage.setItem('firstVisit', true)
-        const languageIndex = LANGUAGE_REG.findIndex(reg => reg.test(userLang))
+    try{
+        pageLang = localStorage.getItem('lang')
+    } catch (err){
+        cookieBanned = true
+    }
 
-        try {
-            const href_prefix = LANGUAGE_HREF[languageIndex]
-            if (!nowPathName.startsWith(href_prefix) && languageIndex !== -1) {
-                window.location.replace(href_prefix + nowPathName)
+    if(!pageLang){
+        if(userLang.indexOf('zh') !== -1){
+            pageLang = 'zh'
+        } else {
+            pageLang = 'en'
+        }
+    }
+
+    if(!cookieBanned){
+        if (pageLang === 'en') {
+            if (nowPathName.startsWith('/zh')) {
+                window.location.href =  nowPathName.slice(2,)
             }
-        } catch (err) {}
+        } else {
+            if (!nowPathName.startsWith('/zh')) {
+                window.location.href = '/zh' + nowPathName
+            }
+        }  
     }
 </script>
 
