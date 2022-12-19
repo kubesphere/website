@@ -71,7 +71,7 @@
                         {{ with .Page.AllTranslations }}
                         <ul class="dropdown-menu">
                             {{ range . }}
-                            <li onclick="location = '{{ .RelPermalink }}'">{{ .Language.LanguageName }}</li>
+                            <li onclick="handleLangClick('{{ .Language }}','{{ .RelPermalink }}')">{{ .Language.LanguageName }}</li>
                             {{ end }}
                         </ul>
                         {{ end }}
@@ -247,6 +247,10 @@ bindNavMouseEvent('.header-container .btn-li')
 
 bindClickShowMenu()
 bindClickModalLi()
-
-
+var handleLangClick = function(lang, href){
+    try{
+        localStorage.setItem('lang', lang)
+    }catch(err){}
+    location.href = href
+}
 </script>
