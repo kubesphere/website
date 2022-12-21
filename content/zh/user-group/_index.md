@@ -31,7 +31,7 @@ organization:
 applyNew:
   title_en: KubeSphere community
   title: 申请成立新的城市站
-  description: 为了方便 KubeSphere 社区用户的线下交流，以及本地活动的开展，KubeSphere 社区欢迎并鼓励成立新的城市站（上海、杭州、成都除外）。
+  description: 为了方便 KubeSphere 社区用户的线下交流，以及本地活动的开展，KubeSphere 社区欢迎并鼓励成立新的城市站（上海、杭州、成都、广州除外）。
   right_pic: /images/user-group/list/applyNew/apply.svg
 
   conditions: 

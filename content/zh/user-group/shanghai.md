@@ -83,6 +83,14 @@ activities:
       link: https://kubesphere.com.cn/live/mqtt1230-live/
 
   review:    
+    - text: KubeSphere 使用 HTTPS 协议集成 Harbor 镜像仓库指南
+      description: 这篇文章介绍了 Harbor 的功能和使用方法，并讨论了在 KubeSphere 中使用 Harbor 的相关信息。
+      link: https://kubesphere.io/zh/blogs/kubesphere-harbor/
+    
+    - text: KubeSphere 集群配置 NFS 存储解决方案
+      description: 这篇文章介绍了在 KubeSphere 中使用 NFS 提供文件存储服务的方法，并讨论了相关的注意事项。
+      link: https://kubesphere.io/zh/blogs/kubesphere-nfs/
+
     - text: 在 KubeSphere 中快速部署使用 GitLab 并构建 DevOps 项目
       description: 本次分享将和大家一起动手来实践一下在 KubeSphere 部署 GitLab CE（Community Edition 社区版）并构建与之联动的 DevOps 项目。
       link: https://kubesphere.com.cn/blogs/kubesphere-gitlab-devops/
