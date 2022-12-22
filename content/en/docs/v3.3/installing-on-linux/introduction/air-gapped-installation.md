@@ -15,12 +15,12 @@ In KubeKey v2.1.0, we bring in concepts of manifest and artifact, which provides
 
 |Host IP| Host Name | Usage      |
 | ---------------- | ---- | ---------------- |
-|192.168.0.2 | node1    | Online host for packaging the source cluster with Kubernetes v1.22.12 and KubeSphere v3.3.1 installed |
+|192.168.0.2 | node1    | Online host for packaging the source cluster |
 |192.168.0.3 | node2    | Control plane node of the air-gapped environment |
 |192.168.0.4 | node3    | Image registry node of the air-gapped environment |
 ## Preparations
 
-1. Run the following commands to download KubeKey v3.0.2 .
+1. Run the following commands to download KubeKey v3.0.2.
    {{< tabs >}}
 
    {{< tab "Good network connections to GitHub/Googleapis" >}}
@@ -50,18 +50,8 @@ In KubeKey v2.1.0, we bring in concepts of manifest and artifact, which provides
 
    {{</ tabs >}}
 
-2. In the source cluster, use KubeKey to create a manifest. The following two methods are supported:
+2. On the online host, run the following command and copy content in the [manifest-example](https://github.com/kubesphere/kubekey/blob/master/docs/manifest-example.md).
 
-   - (Recommended) In the created cluster, run the following command to create a manifest file:
-
-   ```bash
-   ./kk create manifest
-   ```
-
-   - Create and compile the manifest file manually according to the template. For more information, see [ manifest-example ](https://github.com/kubesphere/kubekey/blob/master/docs/manifest-example.md).
-
-3. Run the following command to modify the manifest configurations in the source cluster.
-   
    ```bash
    vim manifest.yaml
    ```
@@ -269,7 +259,14 @@ In KubeKey v2.1.0, we bring in concepts of manifest and artifact, which provides
    
    {{</ notice >}}
    
-4. Export the artifact from the source cluster.
+3. If you already deployed a cluster, you can run the following command in the cluster to create a manifest file and configure the file according to the sample in Step 2.
+
+   ```bash
+   ./kk create manifest
+   ```
+
+4. Export the artifact.
+
    {{< tabs >}}
 
    {{< tab "Good network connections to GitHub/Googleapis" >}}

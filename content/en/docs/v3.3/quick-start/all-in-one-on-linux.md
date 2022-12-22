@@ -26,7 +26,7 @@ To get started with all-in-one installation, you only need to prepare one host a
     <th>Minimum Requirements</th>
     </tr>
     <tr>
-      <td><b>Ubuntu</b> <i>16.04</i>, <i>18.04</i></td>
+      <td><b>Ubuntu</b> <i>16.04</i>, <i>18.04</i></td>, <i>20.04</i></td>, <i>22.04</i></td>
       <td>2 CPU cores, 4 GB memory, and 40 GB disk space</td>
     </tr>
     <tr>
