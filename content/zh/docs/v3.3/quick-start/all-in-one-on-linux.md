@@ -27,7 +27,7 @@ weight: 2100
     <th>最低配置</th>
     </tr>
     <tr>
-      <td><b>Ubuntu</b> <i>16.04</i>, <i>18.04</i></td>
+      <td><b>Ubuntu</b> <i>16.04</i>, <i>18.04</i></td>, <i>20.04</i></td>, <i>22.04</i></td>
       <td>2 核 CPU，4 GB 内存，40 GB 磁盘空间</td>
     </tr>
     <tr>

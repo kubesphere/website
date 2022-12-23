@@ -47,7 +47,7 @@ curl -X POST -H 'Content-Type: application/x-www-form-urlencoded' \
  'http://[node ip]:31407/oauth/token' \
   --data-urlencode 'grant_type=password' \
   --data-urlencode 'username=admin' \
-  --data-urlencode 'password=P#$$w0rd'
+  --data-urlencode 'password=P#$$w0rd' \
   --data-urlencode 'client_id=kubesphere' \
   --data-urlencode 'client_secret=kubesphere'
 ```

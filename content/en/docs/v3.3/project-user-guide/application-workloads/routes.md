@@ -50,10 +50,6 @@ A Route on KubeSphere is the same as an [Ingress](https://kubernetes.io/docs/con
 
    * **Auto Generate**: KubeSphere automatically generates a domain name in the `<Service name>.<Project name>.<Gateway address>.nip.io` format and the domain name is automatically resolved by [nip.io](https://nip.io/) into the gateway address. This mode supports only HTTP.
      
-     * **Paths**: Map each Service to a path. You can click **Add** to add multiple paths.
-     
-   * **Specify Domain**: A user-defined domain name is used. This mode supports both HTTP and HTTPS.
-     
      * **Domain Name**: Set a domain name for the Route.
      * **Protocol**: Select `http` or `https`. If `https` is selected, you need to select a Secret that contains the `tls.crt` (TLS certificate) and `tls.key` (TLS private key) keys used for encryption.
      * **Paths**: Map each Service to a path. You can click **Add** to add multiple paths.

@@ -116,7 +116,7 @@ After you make sure your machine meets the conditions, perform the following ste
 3. After KubeSphere is successfully installed, you can run the following command to view the installation logs:
 
     ```bash
-    kubectl logs -n kubesphere-system $(kubectl get pod -n kubesphere-system -l app=ks-install -o jsonpath='{.items[0].metadata.name}') -f
+    kubectl logs -n kubesphere-system $(kubectl get pod -n kubesphere-system -l 'app in (ks-install, ks-installer)' -o jsonpath='{.items[0].metadata.name}') -f
     ```
 
 4. Use `kubectl get pod --all-namespaces` to see whether all Pods are running normally in relevant namespaces of KubeSphere. If they are, check the port (`30880` by default) of the console by running the following command:
