@@ -1,0 +1,10 @@
+{
+  "functions": [
+    {
+      "pattern": "^/[^l][^o][^g].*$",
+      "function": "go-get",
+      "name": "go module"
+    }
+  ],
+  "version": 1
+}

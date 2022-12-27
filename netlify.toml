@@ -32,7 +32,7 @@
   from = "/log/*"
   to = "https://log.kubesphere.io/:splat"
   status = 308
-  force = true   
+  force = true
 
 [[redirects]]
   from = "/tr/forum/*"
@@ -46,6 +46,3 @@
   status = 200
   force = true
 
-[[edge_functions]]
-function = "go-get"
-path = "/^(?!log|forum).*"
