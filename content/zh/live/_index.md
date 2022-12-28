@@ -13,11 +13,11 @@ section2:
   url: ./fluxcd1124-live/
 
   notice:
-    title: 基于 KubeSphere 部署 StoneDB 云原生 HTAP 数据库
-    tag: 结束
-    time: 2022 年 11 月 17 日晚 8 点
+    title: 华能信托核心业务系统 Kubernetes 落地实践
+    tag: 预告
+    time: 2022 年 12 月 29 日晚 8 点
     base: 线上
-    url: ./stonedb1117-live/
+    url: ./k8s1229-live/
 
   over:
     title: Apache APISIX & KubeSphere 联合 Meetup
