@@ -9,15 +9,15 @@ section1:
   image: /images/live/background.jpg
 
 section2:
-  image: /images/live/cloudnative-live-20221124.png
-  url: ./fluxcd1124-live/
+  image: /images/live/cloudnative-live-20221229.png
+  url: ./k8s1229-live/
 
   notice:
-    title: 华能信托核心业务系统 Kubernetes 落地实践
-    tag: 预告
-    time: 2022 年 12 月 29 日晚 8 点
+    title: KubeSphere + Flux CD 多集群应用的探索
+    tag: 结束
+    time: 2022 年 11 月 24 日晚 8 点
     base: 线上
-    url: ./k8s1229-live/
+    url: ./fluxcd1124-live/
 
   over:
     title: Apache APISIX & KubeSphere 联合 Meetup
@@ -26,6 +26,13 @@ section2:
 
 section3:
   videos:
+    - title: 华能信托核心业务系统 Kubernetes 落地实践
+      link: ./k8s1229-live/
+      snapshot: https://pek3b.qingstor.com/kubesphere-community/images/k8s1229-live-cover.png
+      type: iframe
+      createTime: 2022.12.29
+      group: 直播回放
+
     - title: KubeSphere + Flux CD 多集群应用的探索
       link: ./fluxcd1124-live/
       snapshot: https://pek3b.qingstor.com/kubesphere-community/images/fluxcd1124-live-cover.png
