@@ -13,11 +13,11 @@ section2:
   url: ./k8s1229-live/
 
   notice:
-    title: KubeSphere + Flux CD 多集群应用的探索
-    tag: 结束
-    time: 2022 年 11 月 24 日晚 8 点
+    title: 借助 Argo CD 实现 GitOps 多环境管理
+    tag: 预告
+    time: 2023 年 01 月 11 日晚 8 点
     base: 线上
-    url: ./fluxcd1124-live/
+    url: ./gitops0111-live/
 
   over:
     title: Apache APISIX & KubeSphere 联合 Meetup
