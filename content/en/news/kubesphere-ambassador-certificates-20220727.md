@@ -3,7 +3,7 @@ title: 'Welcome New KubeSphere Ambassadors! Your Exclusive Certificate Is Ready!
 tag: 'Community News'  
 keywords: Kubernetes, KubeSphere, Community 
 description: We are happy to announce six new KubeSphere Ambassadors who have contributed in different ways to the KubeSphere community many times to help more users to get to know the application scenarios and best practices of KubeSphere.
-createTime: '2022-08-05'  
+createTime: '2022-07-27'  
 author: 'KubeSphere'  
 image: 'https://pek3b.qingstor.com/kubesphere-community/images/certificate-ambassador-en.png'
 ---
