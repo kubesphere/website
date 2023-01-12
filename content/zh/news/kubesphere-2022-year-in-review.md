@@ -70,6 +70,8 @@ KubeSphere 社区在所有社区用户、贡献者、合作伙伴的共同协作
 
 2022 年共诞生了 6 位新的 KubeSphere Ambassador，他们是 KubeSphere 的积极布道者，通过他们写文章、做分享等多种形式的贡献，越来越多的人熟知 KubeSphere。
 
+![](https://pek3b.qingstor.com/kubesphere-community/images/kubesphere-ambassador-2022-review.png)
+
 | 姓名或昵称 | 证书 |
 | ---- | ---- |
 |Halil ibrahim BUGOL|[领取证书](https://kubesphere-community.pek3b.qingstor.com/images/ambassador-halil.png) |
@@ -82,6 +84,8 @@ KubeSphere 社区在所有社区用户、贡献者、合作伙伴的共同协作
 ### 2022 年度 KubeSphere Talented Speaker
 
 2022 年共诞生了 56 位新的 KubeSphere Talented Speaker，他们参与了 KubeSphere 组织或参与的社区活动，分享了 KubeSphere 及其他云原生技术的理论知识或实践经验。
+
+![](https://pek3b.qingstor.com/kubesphere-community/images/kubesphere-speaker-2022-review.png)
 
 | 姓名或昵称 | 证书 |
 | ---- | ---- |
@@ -200,6 +204,8 @@ KubeSphere 社区在所有社区用户、贡献者、合作伙伴的共同协作
 2022 年共诞生 2 位新的 KubeSphere Member，他们深度参与了 KubeSphere 社区开源贡献，在社区独立完成了一个或多个功能特性开发、文档撰写以及测试。
 
 社区也欢迎更多的 contributor 能进阶为 member，如果您在半年内为特定的 SIG 代码库贡献了至少一个显著的 PR 或者完成一项或多项功能的开发，即可去 GitHub 提交 [Issue](https://github.com/kubesphere/community/issues) 来申请。
+
+![](https://pek3b.qingstor.com/kubesphere-community/images/kubesphere-member-2022-review.png)
 
 | 姓名或 GitHub ID | 证书 |
 | ---- | ---- |
