@@ -9,15 +9,15 @@ section1:
   image: /images/live/background.jpg
 
 section2:
-  image: /images/live/cloudnative-live-20221229.png
-  url: ./k8s1229-live/
+  image: /images/live/cloudnative-live-20230111.png
+  url: ./gitops0111-live/
 
   notice:
-    title: 借助 Argo CD 实现 GitOps 多环境管理
-    tag: 预告
-    time: 2023 年 01 月 11 日晚 8 点
+    title: 华能信托核心业务系统 Kubernetes 落地实践
+    tag: 结束
+    time: 2022 年 12 月 29 日晚 8 点
     base: 线上
-    url: ./gitops0111-live/
+    url: ./k8s1229-live/
 
   over:
     title: Apache APISIX & KubeSphere 联合 Meetup
@@ -26,6 +26,13 @@ section2:
 
 section3:
   videos:
+    - title: 借助 Argo CD 实现 GitOps 多环境管理
+      link: ./gitops0111-live/
+      snapshot: https://pek3b.qingstor.com/kubesphere-community/images/gitops0111-live-cover.png
+      type: iframe
+      createTime: 2023.01.11
+      group: 直播回放
+
     - title: 华能信托核心业务系统 Kubernetes 落地实践
       link: ./k8s1229-live/
       snapshot: https://pek3b.qingstor.com/kubesphere-community/images/k8s1229-live-cover.png
