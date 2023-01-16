@@ -146,7 +146,7 @@ For more information, please see [Project User Guide](../../project-user-guide/)
 ## Application Management and Orchestration
 
 - **App Store**. KubeSphere provides an app store based on [OpenPitrix](https://github.com/openpitrix/openpitrix), an industry-leading open source system for app management across the whole lifecycle, including release, removal, and distribution.
-- **App repository**. In KubeSphere, users can create an app repository hosted either in object storage (such as [QingStor](https://www.qingcloud.com/products/qingstor/) or [AWS S3](https://aws.amazon.com/what-is-cloud-object-storage/)) or in [GitHub](https://github.com/). App packages submitted to the app repository are composed of Helm Chart template files of the app.
+- **App repository**. In KubeSphere, users can create an app repository hosted either in object storage (such as [QingStor](https://www.qingcloud.com/products/objectstorage/) or [AWS S3](https://aws.amazon.com/what-is-cloud-object-storage/)) or in [GitHub](https://github.com/). App packages submitted to the app repository are composed of Helm Chart template files of the app.
 - **App template**. With app templates, KubeSphere provides a visualized way for app deployment with just one click. Internally, app templates can help different teams in the enterprise to share middleware and business systems. Externally, they can serve as an industry standard for application delivery based on different scenarios and needs.
 
 ## Multiple Storage Solutions

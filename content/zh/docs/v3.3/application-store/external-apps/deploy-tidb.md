@@ -84,7 +84,7 @@ weight: 14320
 
 4. 在**基本信息**页面，确认应用名称、应用版本和部署位置。点击**下一步**以继续。
 
-5. 一些 TiDB 组件需要[持久卷](../../../cluster-administration/persistent-volume-and-storage-class/)。您可以运行以下命令查看存储类型。
+5. 一些 TiDB 组件需要[存储类](../../../cluster-administration/storageclass/)。您可以运行以下命令查看存储类型。
 
    ```
    / # kubectl get sc
