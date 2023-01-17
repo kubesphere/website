@@ -131,8 +131,8 @@ The contributors are listed in random order.
 
 If you have made contributions, but did not see your name on the list, feel free to email info@kubesphere.io. We will grant you a certificate once confirmed.
 
-View the first list of contributors at https://kubesphere.com.cn/news/kubesphere-certificates/.
-View the second list of contributors at https://kubesphere.com.cn/news/kubesphere-contributor-certificates/.
+View the first list of contributors at https://kubesphere.io/zh/news/kubesphere-certificates/.
+View the second list of contributors at https://kubesphere.io/zh/news/kubesphere-contributor-certificates/.
 
 ## Acknowledgment
 

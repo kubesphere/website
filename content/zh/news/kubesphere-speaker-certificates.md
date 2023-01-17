@@ -11,25 +11,25 @@ image: 'https://pek3b.qingstor.com/kubesphere-community/images/talented-speaker-
 2021 年，KubeSphere 社区又收获了逾百位的贡献者，包括代码、中英文文档、技术布道、本地化与国际化等贡献都是我们认可的贡献方式，在此我们对 KubeSphere 社区所有的贡献者与合作伙伴表示衷心的感谢！
 技术布道的贡献方式包括撰写技术博客、用户案例、在社区活动进行公开技术分享等方式，社区设置了 KubeSphere Talented Speaker 奖项作为激励参与社区活动公开技术分享的讲师。
 
-从上一次[颁发](https://kubesphere.com.cn/blogs/kubesphere-certificates/)（2021 年 2 月 11 日）到现在，共诞生了 26 位 Talented Speaker，他们都参与过 2021 年 KubeSphere 社区组织的 KubeSphere Meetup 及云原生技术直播活动：
+从上一次[颁发](https://kubesphere.io/zh/news/kubesphere-certificates/)（2021 年 2 月 11 日）到现在，共诞生了 26 位 Talented Speaker，他们都参与过 2021 年 KubeSphere 社区组织的 KubeSphere Meetup 及云原生技术直播活动：
 
-[KubeSphere and Friends | Kubernetes and Cloud Native Meetup ——上海站](https://kubesphere.com.cn/live/meetup-shanghai/)
+[KubeSphere and Friends | Kubernetes and Cloud Native Meetup ——上海站](https://kubesphere.io/zh/live/meetup-shanghai/)
 
-[KubeSphere and Friends | Kubernetes and Cloud Native Meetup ——杭州站](https://kubesphere.com.cn/live/meetup-hangzhou/)
+[KubeSphere and Friends | Kubernetes and Cloud Native Meetup ——杭州站](https://kubesphere.io/zh/live/meetup-hangzhou/)
 
-[KubeSphere and Friends | Kubernetes and Cloud Native Meetup ——成都站](https://kubesphere.com.cn/live/meetup-chengdu/)
+[KubeSphere and Friends | Kubernetes and Cloud Native Meetup ——成都站](https://kubesphere.io/zh/live/meetup-chengdu/)
 
-[KubeSphere and Friends | Kubernetes and Cloud Native Meetup ——北京站](https://kubesphere.com.cn/live/meetup-beijing/)
+[KubeSphere and Friends | Kubernetes and Cloud Native Meetup ——北京站](https://kubesphere.io/zh/live/meetup-beijing/)
 
-[使用 Flomesh 进行 Dubbo 微服务的服务治理](https://kubesphere.com.cn/live/pipy819-live/)
+[使用 Flomesh 进行 Dubbo 微服务的服务治理](https://kubesphere.io/zh/live/pipy819-live/)
 
-[Apache APISIX Ingress Controller 实现与上手实践](https://kubesphere.com.cn/live/apisix826-live/)
+[Apache APISIX Ingress Controller 实现与上手实践](https://kubesphere.io/zh/live/apisix826-live/)
 
-[Kubernetes 上的图数据库](https://kubesphere.com.cn/live/nebula0902-live/)
+[Kubernetes 上的图数据库](https://kubesphere.io/zh/live/nebula0902-live/)
 
-[Kubernetes 控制器原理简介](https://kubesphere.com.cn/live/uisee0916-live/)
+[Kubernetes 控制器原理简介](https://kubesphere.io/zh/live/uisee0916-live/)
 
-[Kubebuilder 使用简介](https://kubesphere.com.cn/live/uisee0923-live/)
+[Kubebuilder 使用简介](https://kubesphere.io/zh/live/uisee0923-live/)
 
 
 KubeSphere Talented Speaker 是授予在 KubeSphere 社区云原生技术直播活动、2021 年组织的 KubeSphere Meetup 及其他技术分享活动上进行过公开技术分享的优秀讲师，他们是帮助 KubeSphere 社区积极布道的技术传播者，具备出色的技术演讲能力。

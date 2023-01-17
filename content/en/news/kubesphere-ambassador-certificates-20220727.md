@@ -58,28 +58,28 @@ Yanying Zhang has shared multiple technical articles in the community and has re
 
 Articles at a glance:
 
-- [Offline Installation Tutorial for KubeSphere 3.3.0](https://kubesphere.com.cn/blogs/kubesphere-v3.3.0-offline-installation/)
-- [Deploy MySQL Clusters on Kubernetes Based on StatefulSet (Part 2)](https://kubesphere.com.cn/blogs/mysql-on-k8s-statefulset-2/)
-- [Deploy MySQL Clusters on Kubernetes Based on StatefulSet (Part 1)](https://kubesphere.com.cn/blogs/mysql-on-k8s-statefulset-1/)
-- [Monitor the External etcd in KubeSphere](https://kubesphere.com.cn/blogs/kubesphere-etcd/)
-- [Install Kubernetes Clusters for Production on KubeSphere](https://kubesphere.com.cn/blogs/kubesphere-k8s-cluster/)
+- [Offline Installation Tutorial for KubeSphere 3.3.0](https://kubesphere.io/zh/blogs/kubesphere-v3.3.0-offline-installation/)
+- [Deploy MySQL Clusters on Kubernetes Based on StatefulSet (Part 2)](https://kubesphere.io/zh/blogs/mysql-on-k8s-statefulset-2/)
+- [Deploy MySQL Clusters on Kubernetes Based on StatefulSet (Part 1)](https://kubesphere.io/zh/blogs/mysql-on-k8s-statefulset-1/)
+- [Monitor the External etcd in KubeSphere](https://kubesphere.io/zh/blogs/kubesphere-etcd/)
+- [Install Kubernetes Clusters for Production on KubeSphere](https://kubesphere.io/zh/blogs/kubesphere-k8s-cluster/)
 
 ### scwang18
 
 scwang18 was invited to contribute articles to the community after we had read his great article about KubeSphere. With a keen interest in our invitation, he shared three technical articles within a short period and showed us his writing plan. We expect to read more works from him.
 
 Articles at a glance:
-- [Ingress Failure Diagnosis in the Kubernetes Cluster](https://kubesphere.com.cn/blogs/kubesphere-ingress-fault-diagnosis/)
-- [Deploy Wiki.js on KubeSphere and Enable Chinese Full-Text Search](https://kubesphere.com.cn/blogs/kubesphere-wiki/)
-- [Configure the TLS Wildcard Certificate for Kubernetes Ingress](https://kubesphere.com.cn/blogs/kubesphere-ssl/)
+- [Ingress Failure Diagnosis in the Kubernetes Cluster](https://kubesphere.io/zh/blogs/kubesphere-ingress-fault-diagnosis/)
+- [Deploy Wiki.js on KubeSphere and Enable Chinese Full-Text Search](https://kubesphere.io/zh/blogs/kubesphere-wiki/)
+- [Configure the TLS Wildcard Certificate for Kubernetes Ingress](https://kubesphere.io/zh/blogs/kubesphere-ssl/)
 
 ### Zongwei Tan
 
 Zongwei Tan is CEO of TDCare Medical Care Technology Co., Ltd. and also a superb speaker. Since his first participation in the KubeSphere and Cloud-native Meetup held in Chengdu last June, he has shared KubeSphere and OpenFunction related content in multiple activities held by different organizations.
 
 Works at a glance:
-- [From Java to Rust, the Programming Language Evolution of TDCare in the Cloud-native Era](https://kubesphere.com.cn/live/changsha0312-rust/)
-- [Build a Smart Medical Platform Based on Kubernetes and Dapr](https://kubesphere.com.cn/live/tideng-chengdu/)
+- [From Java to Rust, the Programming Language Evolution of TDCare in the Cloud-native Era](https://kubesphere.io/zh/live/changsha0312-rust/)
+- [Build a Smart Medical Platform Based on Kubernetes and Dapr](https://kubesphere.io/zh/live/tideng-chengdu/)
 
 ### Zhenfei Pei
 
@@ -89,9 +89,9 @@ Recently, Mr. Pei has assumed Guangzhou station head of the KubeSphere Community
 
 Works at a glance:
 
-- [Hands-on Experience of GitOps Based on Argo Cd (Video)](https://kubesphere.com.cn/live/gitops-cic/)
-- [Hands-on Experience of GitOps Based on Argo Cd (Article)](https://kubesphere.com.cn/live/argocd0217-live/)
-- [Argo CD QuickStart Guide](https://kubesphere.com.cn/blogs/gitops-argocd/)
+- [Hands-on Experience of GitOps Based on Argo Cd (Video)](https://kubesphere.io/zh/live/gitops-cic/)
+- [Hands-on Experience of GitOps Based on Argo Cd (Article)](https://kubesphere.io/zh/live/argocd0217-live/)
+- [Argo CD QuickStart Guide](https://kubesphere.io/zh/blogs/gitops-argocd/)
 - [The Argo CD Section of Cloud-native Practical Training Course](https://www.bilibili.com/video/BV1rD4y1c7r1?p=20&vd_source=082ccfb1773100241c716ab77af81a3f)
 
 Thanks to their active participation and promotion, KubeSphere are known and used more widely, which further accelerates the growth of its ecosystem.

@@ -11,7 +11,7 @@ image: 'https://pek3b.qingstor.com/kubesphere-community/images/kubekey-v2.1.0-re
 2022 年 5 月 6 日，KubeKey 2.1.0 正式发布，这是 KubeKey 的第 8 个正式版本。该版本增强了离线部署能力和交付体验，同时支持“一云多芯”，即同一个 K8s 集群中可以同时包含 ARM64 节点和 AMD64 节点。
 
 > Kubekey 2.0.0 于两个月前发布，关于该版本的变化，你可以点击此处了解：
-> + [KubeKey 2.0.0 发布：让离线部署 K8s 更加便捷](https://kubesphere.com.cn/blogs/kubekey-v2.0.0-release/)
+> + [KubeKey 2.0.0 发布：让离线部署 K8s 更加便捷](https://kubesphere.io/zh/blogs/kubekey-v2.0.0-release/)
 
 ## KubeKey 简介
 
@@ -74,10 +74,10 @@ KubeKey v2.1.0 不兼容 KubeKey v2.0.0 制作的制品，请使用 KubeKey v2.1
 
 ## KubeKey 相关内容参考
 
-- [使用 KubeKey 快速离线部署 K8s 与 KubeSphere](https://kubesphere.com.cn/blogs/deploying-kubesphere-clusters-offline-with-kubekey/)
+- [使用 KubeKey 快速离线部署 K8s 与 KubeSphere](https://kubesphere.io/zh/blogs/deploying-kubesphere-clusters-offline-with-kubekey/)
 
-- [集群部署神器之 KubeKey——v2.0.0 上手指南（直播回放 + PPT）](https://kubesphere.com.cn/live/kubekey1209-live/)
+- [集群部署神器之 KubeKey——v2.0.0 上手指南（直播回放 + PPT）](https://kubesphere.io/zh/live/kubekey1209-live/)
 
-- [使用 KubeKey 在 AWS 高可用部署 Kubernetes](https://kubesphere.com.cn/blogs/aws-kubernetes/)
+- [使用 KubeKey 在 AWS 高可用部署 Kubernetes](https://kubesphere.io/zh/blogs/aws-kubernetes/)
 
-- [使用 KubeKey 安装部署 Kubernetes 与 Kube-OVN](https://kubesphere.com.cn/blogs/use-kubekey-to-install-and-deploy-kubernetes-and-kubeovn/)
+- [使用 KubeKey 安装部署 Kubernetes 与 Kube-OVN](https://kubesphere.io/zh/blogs/use-kubekey-to-install-and-deploy-kubernetes-and-kubeovn/)

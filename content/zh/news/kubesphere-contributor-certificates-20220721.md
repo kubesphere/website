@@ -10,7 +10,7 @@ image: 'https://pek3b.qingstor.com/kubesphere-community/images/202207211743338.p
 
 KubeSphere 于 2018 年发起，在四年的时间里迭代了十多个版本，收获了 10000+ star 和上百万下载量。这得益于各位 Contributor 的参与和贡献。截止到目前，KubeSphere Contributor 已接近 300 人。
 
-为了感谢和激励 KubeSphere Contributor，社区设置了对应的奖项。从上一次[颁发](https://kubesphere.com.cn/news/kubesphere-contributor-certificates/)到现在，社区又诞生了 101 位新的 Contributor。
+为了感谢和激励 KubeSphere Contributor，社区设置了对应的奖项。从上一次[颁发](https://kubesphere.io/zh/news/kubesphere-contributor-certificates/)到现在，社区又诞生了 101 位新的 Contributor。
 
 ## 证书说明
 

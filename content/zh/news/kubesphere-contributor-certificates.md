@@ -12,7 +12,7 @@ image: 'https://pek3b.qingstor.com/kubesphere-community/images/kubesphere-contri
 
 KubeSphere 开源贡献的方式，包括在 GitHub 提交 Pull Request 参与应用的开发及 bug 的修复（即我们常说的贡献代码），或者在 KubeSphere 中文论坛发布过优质的技术博客。社区设置了 KubeSphere Contributor 奖项作为激励多次为 KubeSphere 贡献代码的成员。
 
-从上一次[颁发](https://kubesphere.com.cn/blogs/kubesphere-certificates/)（2021 年 2 月 11 日）到现在，共诞生了 76 位 KubeSphere Contributor，他们都曾为 KubeSphere 贡献过代码。
+从上一次[颁发](https://kubesphere.io/zh/news/kubesphere-certificates/)（2021 年 2 月 11 日）到现在，共诞生了 76 位 KubeSphere Contributor，他们都曾为 KubeSphere 贡献过代码。
 
 另外，在 10 月份，作为 Hacktoberfest 活动的项目之一，KubeSphere 也开启了为期一个月的 Hacktoberfest 活动月。只要在 10 月 1 日至 31 日期间（在任何时区）提交的 PR 数量达到 4 个，就可以获得官方限定的 2021 年 Hacktoberfest T恤、KubeSphere 周边礼品和证书。活动开启后，有些社区小伙伴积极参与并达到了要求，他们的证书在本次一并发放。
 

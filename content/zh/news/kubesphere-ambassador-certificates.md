@@ -12,11 +12,11 @@ image: 'https://pek3b.qingstor.com/kubesphere-community/images/ambassador-2021-c
 
 技术布道的贡献方式包括撰写技术博客、用户案例、在社区活动进行公开技术分享等方式，社区设置了 KubeSphere Ambassador 奖项作为激励多次在社区分享过 KubeSphere 落地实践案例与技术文章的成员。
 
-此外，KubeSphere 社区今年还成立了用户委员会，每个城市站的站长肩负起了组织线下交流活动，推广和布道 KubeSphere 的责任。10 月 23 日，由 KubeSphere 社区用户委员会杭州站站长尹珉发起和组织的云原生技术交流 Meetup-杭州站，在杭州圆满落下帷幕。关于本次活动的回顾，可以参考本篇文章：[云原生技术交流 Meetup 杭州站（10.23）回放视频 + PPT 分享](https://kubesphere.com.cn/live/meetup-hangzhou1023/)。
+此外，KubeSphere 社区今年还成立了用户委员会，每个城市站的站长肩负起了组织线下交流活动，推广和布道 KubeSphere 的责任。10 月 23 日，由 KubeSphere 社区用户委员会杭州站站长尹珉发起和组织的云原生技术交流 Meetup-杭州站，在杭州圆满落下帷幕。关于本次活动的回顾，可以参考本篇文章：[云原生技术交流 Meetup 杭州站（10.23）回放视频 + PPT 分享](https://kubesphere.io/zh/live/meetup-hangzhou1023/)。
 
 当然，他们也会采取其他方式比如文章来积极地推广 KubeSphere，帮助更多社区用户熟悉 KubeSphere 的应用场景和最佳实践。
 
-从上一次[颁发](https://kubesphere.com.cn/blogs/kubesphere-certificates/)（2021 年 2 月 11 日）到现在，共诞生了 4 位 KubeSphere Ambassador，他们在社区都曾多次通过文章等形式推广和布道 KubeSphere。
+从上一次[颁发](https://kubesphere.io/zh/news/kubesphere-certificates/)（2021 年 2 月 11 日）到现在，共诞生了 4 位 KubeSphere Ambassador，他们在社区都曾多次通过文章等形式推广和布道 KubeSphere。
 
 ## 领取证书
 

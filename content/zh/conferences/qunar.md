@@ -30,4 +30,4 @@ snapshot: 'https://pek3b.qingstor.com/kubesphere-community/images/kubecon2021-qu
 
 ## 对应文章
 
-https://kubesphere.com.cn/blogs/qunar-kubesphere-best-practice/
+https://kubesphere.io/zh/blogs/qunar-kubesphere-best-practice/

@@ -12,7 +12,7 @@ image: 'https://pek3b.qingstor.com/kubesphere-community/images/kubesphere-user-g
 
 为了让国内的云原生爱好者能够有更多的机会聚在一起面对面交流，自 2020 年起 KubeSphere 社区便组织了多场大大小小的线下 Meetup。同时，为了能够让那些狂热爱好者能够自发组织小范围的云原生技术交流和 Meetup，我们于 2021 年创立了社区用户委员会，分别成立了上海站、杭州站、成都站三个城市站，并已正常运转。
 
-目前，KubeSphere 社区用户委员会[官网落地页](https://kubesphere.com.cn/user-group/)已上线，关于委员会的信息和分享内容，各位小伙伴均可在此页面了解（也可在官网“社区”下拉菜单下找到“用户委员会”来获取信息）。
+目前，KubeSphere 社区用户委员会[官网落地页](https://kubesphere.io/zh/user-group/)已上线，关于委员会的信息和分享内容，各位小伙伴均可在此页面了解（也可在官网“社区”下拉菜单下找到“用户委员会”来获取信息）。
 
 ## 社区用户委员会简介
 
@@ -84,7 +84,7 @@ KubeSphere 社区用户委员会上级组织为 Advocacy and Outreach SIG（即�
 
 1. 向站长申请
 2. 向上级组织申请
-3. 填写[表单](https://docs.qq.com/form/page/DQ3l0VUZlUVVreVVy?_w_tencentdocx_form=1)申请
+3. 填写[表单](https://jinshuju.net/f/WkQDTC)申请
 
 ### 需要具备的条件：
 

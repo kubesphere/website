@@ -46,11 +46,11 @@ KubeSphere 作为多云与多集群管理的云原生应用平台，支持纳管
 
 您可以通过以下链接回顾每场活动：
 
-- [上海站 Meetup](https://kubesphere.com.cn/live/meetup-shanghai/)
-- [杭州站 Meetup](https://kubesphere.com.cn/live/meetup-hangzhou/)
-- [成都站 Meetup](https://kubesphere.com.cn/live/meetup-chengdu/)
-- [北京站 Meetup](https://kubesphere.com.cn/live/meetup-beijing/)
-- [云原生直播](https://kubesphere.com.cn/live/)
+- [上海站 Meetup](https://kubesphere.io/zh/live/meetup-shanghai/)
+- [杭州站 Meetup](https://kubesphere.io/zh/live/meetup-hangzhou/)
+- [成都站 Meetup](https://kubesphere.io/zh/live/meetup-chengdu/)
+- [北京站 Meetup](https://kubesphere.io/zh/live/meetup-beijing/)
+- [云原生直播](https://kubesphere.io/zh/live/)
 - [年度 Office Hours](https://mp.weixin.qq.com/s/F6LlsLZCg-uFECimAHzYGg)
 - [暑期 2021](https://github.com/kubesphere/community/tree/master/sig-advocacy-and-outreach/summer-ospp)
 
@@ -58,38 +58,38 @@ KubeSphere 作为多云与多集群管理的云原生应用平台，支持纳管
 
 2021 年 KubeSphere 社区联合尚硅谷推出了云原生实战课程，[第一期](https://mp.weixin.qq.com/s/YulPIl_a9Y2OG92vS0dIZg)于 9 月份发布，[第二期](https://mp.weixin.qq.com/s/R5SqIdEVHn52f5lM6duRjg)于 12 月份发布。
 
-目前该系列视频课程已推出两期，除了[发布到 KubeSphere 官网](https://kubesphere.com.cn/learn/)之外，还同步更新到了 [B 站](https://space.bilibili.com/438908638)，截至目前已收获近 **25 万**播放量。2022 年我们将会继续推出第三期，内容更加丰富，增加了 Serverless、边缘计算、云原生虚拟化、集群备份与迁移相关的技术与开源项目。
+目前该系列视频课程已推出两期，除了[发布到 KubeSphere 官网](https://kubesphere.io/zh/learn/)之外，还同步更新到了 [B 站](https://space.bilibili.com/438908638)，截至目前已收获近 **25 万**播放量。2022 年我们将会继续推出第三期，内容更加丰富，增加了 Serverless、边缘计算、云原生虚拟化、集群备份与迁移相关的技术与开源项目。
 
 ## 年度用户落地实践案例
 
 KubeSphere 凭借其学习成本低、可扩展性强、产品体验优、社区活跃等优势，深受数千家企业和组织的信赖，他们选择将 KubeSphere 与自身的业务紧密结合，结合企业实际场景落地实践，完成了业务的优化和升级。他们在落地过程中加入了很多创新型的改造，进一步推动了软件业的发展。
 
 仅 2021 年就有近 10 家企业向社区提交了实践案例，包括：
-- [中通物流基于 KubeSphere 在生产环境的实践与开发部署](https://kubesphere.com.cn/case/zto/)
-- [红亚科技——KubeSphere 多集群管理大招：使用 QKE 管理多个 ACK 集群](https://kubesphere.com.cn/case/hongyaa/)
-- [中国移动基于 Kubernetes 的物联网边缘计算应用实践](https://kubesphere.com.cn/case/chinamobile-iot/)
-- [驭势科技——面向无人驾驶 “云端大脑” 可用性的云原生实践](https://kubesphere.com.cn/case/uisee/)
-- [Qunar 云原生容器化落地实践](https://kubesphere.com.cn/case/qunar/)
-- [SegmentFault 基于 Kubernetes 的容器化与持续交付实践](https://kubesphere.com.cn/case/segmentfault/)
-- [马上消费金融基于 KubeSphere 的 AI 平台开发实践](https://kubesphere.com.cn/case/msxf/)
+- [中通物流基于 KubeSphere 在生产环境的实践与开发部署](https://kubesphere.io/zh/case/zto/)
+- [红亚科技——KubeSphere 多集群管理大招：使用 QKE 管理多个 ACK 集群](https://kubesphere.io/zh/case/hongyaa/)
+- [中国移动基于 Kubernetes 的物联网边缘计算应用实践](https://kubesphere.io/zh/case/chinamobile-iot/)
+- [驭势科技——面向无人驾驶 “云端大脑” 可用性的云原生实践](https://kubesphere.io/zh/case/uisee/)
+- [Qunar 云原生容器化落地实践](https://kubesphere.io/zh/case/qunar/)
+- [SegmentFault 基于 Kubernetes 的容器化与持续交付实践](https://kubesphere.io/zh/case/segmentfault/)
+- [马上消费金融基于 KubeSphere 的 AI 平台开发实践](https://kubesphere.io/zh/case/msxf/)
 
-欢迎各大企业或组织向 KubeSphere 社区提交自己的实践案例，您可以先在社区[论坛帖子](https://kubesphere.com.cn/forum/d/5293-kubesphere/)中进行回复，然后将案例文章发布到论坛中。
+欢迎各大企业或组织向 KubeSphere 社区提交自己的实践案例，您可以先在社区[论坛帖子](https://kubesphere.io/forum/d/5293-kubesphere/)中进行回复，然后将案例文章发布到论坛中。
 
 ## 年度 KubeSphere Member
 
-2021 年，共有 12 位突出贡献者入选了 [KubeSphere Member](https://kubesphere.com.cn/news/kubesphere-member-certificates/)，均由 KubeSphere 社区技术委员会投票通过。他们深度参与了 KubeSphere 社区开源贡献，在社区独立完成了一个或多个功能特性开发、文档撰写以及测试，并帮助 KubeSphere 在多个社区积极布道，推广开源技术，目前已全部邀请加入了 KubeSphere 的 GitHub 组织。
+2021 年，共有 12 位突出贡献者入选了 [KubeSphere Member](https://kubesphere.io/zh/news/kubesphere-member-certificates/)，均由 KubeSphere 社区技术委员会投票通过。他们深度参与了 KubeSphere 社区开源贡献，在社区独立完成了一个或多个功能特性开发、文档撰写以及测试，并帮助 KubeSphere 在多个社区积极布道，推广开源技术，目前已全部邀请加入了 KubeSphere 的 GitHub 组织。
 
 ![](https://pek3b.qingstor.com/kubesphere-community/images/KubeSphere-member-2021.png)
 
 ## 年度 KubeSphere Ambassador
 
-2021 年共诞生了 4 位 [KubeSphere Ambassador](https://kubesphere.com.cn/news/kubesphere-ambassador-certificates/)，他们在社区都曾多次通过文章等形式推广和布道 KubeSphere。
+2021 年共诞生了 4 位 [KubeSphere Ambassador](https://kubesphere.io/zh/news/kubesphere-ambassador-certificates/)，他们在社区都曾多次通过文章等形式推广和布道 KubeSphere。
 
 ![](https://pek3b.qingstor.com/kubesphere-community/images/KubeSphere-ambassador-2021.png)
 
 ## 年度 Talented Speaker
 
-2021 年共诞生了 44 位 [KubeSphere Talented Speaker](https://kubesphere.com.cn/news/kubesphere-speaker-certificates/)，他们积极参与了 2021 年 KubeSphere 社区组织的 KubeSphere Meetup 及云原生技术直播活动，是帮助 KubeSphere 社区积极布道的技术传播者，具备出色的技术演讲能力。
+2021 年共诞生了 44 位 [KubeSphere Talented Speaker](https://kubesphere.io/zh/news/kubesphere-speaker-certificates/)，他们积极参与了 2021 年 KubeSphere 社区组织的 KubeSphere Meetup 及云原生技术直播活动，是帮助 KubeSphere 社区积极布道的技术传播者，具备出色的技术演讲能力。
 
 通过他们的积极布道，越来越多的人去学习了解 KubeSphere 以及更多的云原生技术。得益于他们的分享，大批的社区用户，尤其是云原生领域的新人，学到了非常多的云原生知识和经验。
 
@@ -97,7 +97,7 @@ KubeSphere 凭借其学习成本低、可扩展性强、产品体验优、社区
 
 ## 年度 KubeSphere Contributor
 
-2021 年共新增了 72 位 [KubeSphere Contributor](https://kubesphere.com.cn/news/kubesphere-contributor-certificates/)，他们参与了一个或多个项目功能特性的开发、文档撰写等等。
+2021 年共新增了 72 位 [KubeSphere Contributor](https://kubesphere.io/zh/news/kubesphere-contributor-certificates/)，他们参与了一个或多个项目功能特性的开发、文档撰写等等。
 
 以下为 2021 年度 KubeSphere Contributor 的 GitHub ID 或名字（排名不分先后）：
 

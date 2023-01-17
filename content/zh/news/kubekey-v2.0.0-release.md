@@ -91,10 +91,10 @@ curl -sfL https://get-kk.kubesphere.io | sh -
 
 ## KubeKey 相关内容参考
 
-- [使用 KubeKey 快速离线部署 K8s 与 KubeSphere](https://kubesphere.com.cn/blogs/deploying-kubesphere-clusters-offline-with-kubekey/)
+- [使用 KubeKey 快速离线部署 K8s 与 KubeSphere](https://kubesphere.io/zh/blogs/deploying-kubesphere-clusters-offline-with-kubekey/)
 
-- [集群部署神器之 KubeKey——v2.0.0 上手指南（直播回放 + PPT）](https://kubesphere.com.cn/live/kubekey1209-live/)
+- [集群部署神器之 KubeKey——v2.0.0 上手指南（直播回放 + PPT）](https://kubesphere.io/zh/live/kubekey1209-live/)
 
-- [使用 KubeKey 在 AWS 高可用部署 Kubernetes](https://kubesphere.com.cn/blogs/aws-kubernetes/)
+- [使用 KubeKey 在 AWS 高可用部署 Kubernetes](https://kubesphere.io/zh/blogs/aws-kubernetes/)
 
-- [使用 KubeKey 安装部署 Kubernetes 与 Kube-OVN](https://kubesphere.com.cn/blogs/use-kubekey-to-install-and-deploy-kubernetes-and-kubeovn/)
+- [使用 KubeKey 安装部署 Kubernetes 与 Kube-OVN](https://kubesphere.io/zh/blogs/use-kubekey-to-install-and-deploy-kubernetes-and-kubeovn/)

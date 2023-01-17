@@ -26,7 +26,7 @@ The achievement of 10,000 GitHub stars has tremendous implications for KubeSpher
 
 Many thanks to all KubeSphere users and contributors. Let’s join us in looking back at what KubeSphere has achieved all the way along:
 
-+ Released several major versions and added rich features in the latest major versions 3.1 and 3.2. For more information, see [KubeSphere 3.2.0 GA: Bringing AI-oriented GPU Scheduling and Flexible Gateway](https://kubesphere.com.cn/en/blogs/kubesphere-3.2.0-ga-announcement/).
++ Released several major versions and added rich features in the latest major versions 3.1 and 3.2. For more information, see [KubeSphere 3.2.0 GA: Bringing AI-oriented GPU Scheduling and Flexible Gateway](https://kubesphere.io/news/kubesphere-3.2.0-ga-announcement/).
 + Launched services in major global public cloud application markets, such as AWS, Azure, DigitalOcean, and QingCloud. KubeSphere is also integrated with various container engines, such as Amazon Elastic Kubernetes Service (EKS), Azure Kubernetes Service (AKS), DigitalOcean Kubernetes, and QingCloud Kubernetes Engine (QKE).
 + Developed **Fluentbit Operator** to manage Fluent Bit in cloud native architectures and contributed it to the Fluent community. With Fluentd integrated, Fluentbit Operator was renamed **Fluent Operator** (GitHub URL: https://github.com/fluent/fluent-operator).
 + Initiated the PorterLB project in the KubeSphere community to resolve the issue that might occur on exposing the LoadBalancer service in Kubernetes clusters outside public clouds. This project was renamed [OpenELB](https://github.com/kubesphere/openelb/). **On November 10, 2021**, this project was managed as a sandbox project under the Cloud Native Computing Foundation (CNCF) umbrella.

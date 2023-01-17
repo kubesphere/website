@@ -73,7 +73,7 @@ $ chmod +x kk
 $ ./kk create cluster --with-kubernetes v1.21.5 --with-kubesphere v3.3.0-rc.0
 ```
 
-多节点安装可以参考 [KubeSphere 的官方文档](https://kubesphere.com.cn/docs/installing-on-linux/introduction/multioverview/)。
+多节点安装可以参考 [KubeSphere 的官方文档](https://kubesphere.io/zh/docs/installing-on-linux/introduction/multioverview/)。
 
 ## 在已有 K8s 集群上安装
 
