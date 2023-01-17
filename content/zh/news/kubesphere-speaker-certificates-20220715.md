@@ -9,7 +9,7 @@ image: 'https://pek3b.qingstor.com/kubesphere-community/images/talented-speaker-
 ---
 2021 年 8 月份，KubeSphere 社区重启了每周四晚间的线上云原生直播间，邀请云原生领域的各位技术专家、贡献者和最终用户等等，分享他们在云原生领域的实践经验、技术前沿和发展动态。自开播后，每期都有数百人观看，截至目前已组织了近四十期。同时，KubeSphere 社区也在北京、上海、杭州、成都、长沙等多个城市组织了多场线下的交流活动，输出了数十篇优质演讲内容。
 
-为了激励和感谢在这些社区活动中公开分享的讲师，社区设置了 KubeSphere Talented Speaker 奖项。社区[上次颁发](https://kubesphere.com.cn/news/kubesphere-speaker-certificates/)这个奖项是去年十月份，如今社区又诞生了 47 位 Talented Speaker。这其中有一部分主动参与了其他社区组织的活动，促进 KubeSphere 等云原生技术在不同行业进行更广泛地传播。
+为了激励和感谢在这些社区活动中公开分享的讲师，社区设置了 KubeSphere Talented Speaker 奖项。社区[上次颁发](https://kubesphere.io/zh/news/kubesphere-speaker-certificates/)这个奖项是去年十月份，如今社区又诞生了 47 位 Talented Speaker。这其中有一部分主动参与了其他社区组织的活动，促进 KubeSphere 等云原生技术在不同行业进行更广泛地传播。
 
 ## 证书说明
 
@@ -25,16 +25,16 @@ KubeSphere Talented Speaker 主要授予：
 
 在每场活动结束后，社区都将活动中的演讲内容（PPT + 直播回放视频）公开分享给了大家：
 
-- [KubeSphere and Friends | Kubernetes and Cloud Native Meetup ——上海站](https://kubesphere.com.cn/live/meetup-shanghai/)
-- [KubeSphere and Friends | Kubernetes and Cloud Native Meetup ——杭州站](https://kubesphere.com.cn/live/meetup-hangzhou/)
-- [KubeSphere and Friends | Kubernetes and Cloud Native Meetup ——成都站](https://kubesphere.com.cn/live/meetup-chengdu/)
-- [KubeSphere and Friends | Kubernetes and Cloud Native Meetup ——北京站](https://kubesphere.com.cn/live/meetup-beijing/)
-- [云原生技术交流 Meetup 杭州站](https://kubesphere.com.cn/live/meetup-hangzhou1023/)
-- [云原生技术交流 Meetup 长沙站](https://kubesphere.com.cn/live/meetup-changsha-20220312/)
-- [云原生技术交流 Meetup 成都站](https://kubesphere.com.cn/live/meetup-chengdu-20220514/)
-- [Apache Pulsar x KubeSphere 在线 Meetup](https://kubesphere.com.cn/live/pulsar-kubesphere-meetup0625/)
+- [KubeSphere and Friends | Kubernetes and Cloud Native Meetup ——上海站](https://kubesphere.io/zh/live/meetup-shanghai/)
+- [KubeSphere and Friends | Kubernetes and Cloud Native Meetup ——杭州站](https://kubesphere.io/zh/live/meetup-hangzhou/)
+- [KubeSphere and Friends | Kubernetes and Cloud Native Meetup ——成都站](https://kubesphere.io/zh/live/meetup-chengdu/)
+- [KubeSphere and Friends | Kubernetes and Cloud Native Meetup ——北京站](https://kubesphere.io/zh/live/meetup-beijing/)
+- [云原生技术交流 Meetup 杭州站](https://kubesphere.io/zh/live/meetup-hangzhou1023/)
+- [云原生技术交流 Meetup 长沙站](https://kubesphere.io/zh/live/meetup-changsha-20220312/)
+- [云原生技术交流 Meetup 成都站](https://kubesphere.io/zh/live/meetup-chengdu-20220514/)
+- [Apache Pulsar x KubeSphere 在线 Meetup](https://kubesphere.io/zh/live/pulsar-kubesphere-meetup0625/)
 
-以上 Meetup 以及周四的云原生直播活动回顾，都可以浏览官网的[社区活动](https://kubesphere.com.cn/live/)页面进行回顾。
+以上 Meetup 以及周四的云原生直播活动回顾，都可以浏览官网的[社区活动](https://kubesphere.io/zh/live/)页面进行回顾。
 
 ## 领取证书
 
@@ -98,9 +98,9 @@ KubeSphere Talented Speaker 主要授予：
 
 > 如果您符合上述的领取条件，但没有获得该证书也并未出现在公开名单中，请微信联系助手小 KK（微信搜索 `kubesphere`），备注「讲师证书」，我们将为您定制 KubeSphere 证书与纪念周边。
 >
-> 第一次颁发名单： https://kubesphere.com.cn/news/kubesphere-certificates/
+> 第一次颁发名单： https://kubesphere.io/zh/news/kubesphere-certificates/
 >
-> 第二次颁发名单： https://kubesphere.com.cn/news/kubesphere-speaker-certificates/
+> 第二次颁发名单： https://kubesphere.io/zh/news/kubesphere-speaker-certificates/
 
 ## 公开致谢
 

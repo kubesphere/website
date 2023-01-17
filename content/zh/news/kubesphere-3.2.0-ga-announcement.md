@@ -24,7 +24,7 @@ image: 'https://pek3b.qingstor.com/kubesphere-community/images/v3.2.0-GA-cover.p
 
 ### GPU 调度与配额管理
 
-当前随着人工智能机器学习等领域技术的快速发展，市场上涌现了越来越多 AI 公司对服务器集群中 GPU 资源调度管理的需求，其中监控 GPU 使用情况以及 GPU 资源配额管理等需求在社区的呼声很高，在 KubeSphere 中文论坛收到了[很多 GPU 相关的需求](https://kubesphere.com.cn/forum/?q=gpu "很多 GPU 相关的需求")，KubeSphere 本身是一直支持 GPU 的，现在在 v3.2.0 中会将 GPU 的管理变得更易用。
+当前随着人工智能机器学习等领域技术的快速发展，市场上涌现了越来越多 AI 公司对服务器集群中 GPU 资源调度管理的需求，其中监控 GPU 使用情况以及 GPU 资源配额管理等需求在社区的呼声很高，在 KubeSphere 中文论坛收到了[很多 GPU 相关的需求](https://kubesphere.io/forum/?q=gpu "很多 GPU 相关的需求")，KubeSphere 本身是一直支持 GPU 的，现在在 v3.2.0 中会将 GPU 的管理变得更易用。
 
 KubeSphere 3.2.0 支持可视化创建 GPU 工作负载，支持调度 GPU 资源的任务，同时还支持对 GPU 资源进行租户级配额管理，可对接 Nvidia GPU 或 vGPU 等方案。
 

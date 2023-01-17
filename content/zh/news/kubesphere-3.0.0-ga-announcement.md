@@ -5,13 +5,13 @@ keyword: '社区, 开源, 贡献, KubeSphere, release'
 description: 'KubeSphere 3.0.0 主打 “面向应用的容器混合云”，专为多云、多集群、多团队、多租户而设计，大幅增强了集群管理、可观测性、存储管理、网络管理、多租户安全、应用商店、安装部署等特性，并且进一步提升了交互设计与用户体验。'
 createTime: '2020-08-31'
 author: 'Feynman Zhou'
-image: 'https://ap3.qingstor.com/kubesphere-website/docs/20200830101950.png'
+image: 'https://pek3b.qingstor.com/kubesphere-community/images/2023-01-17%2011.01.18.png'
 ---
 
 
 2020 年 8 月 31 日，KubeSphere 开源社区官方宣布 KubeSphere 3.0.0 GA 版本正式发布！ KubeSphere 3.0.0 主打 “面向应用的容器混合云”，专为**多云、多集群、多团队、多租户**而设计，大幅增强了**集群管理、可观测性、存储管理、网络管理、多租户安全、应用商店、安装部署**等特性，并且进一步提升了交互设计与用户体验，KubeSphere 3.0.0 是 KubeSphere 至今为止最重要的版本更新。作为多云与多集群的统一控制平面，KubeSphere 3.0.0 带来的新功能将帮助企业加速落地**多云与混合云策略**，降低企业对任何基础设施之上的 Kubernetes 集群运维管理的门槛，实现现代化应用在容器场景下的快速交付，为企业在生产环境构建云原生技术栈提供了 **完整的平台级解决方案**。
 
-![](https://ap3.qingstor.com/kubesphere-website/docs/20200830234022.png)
+![](https://pek3b.qingstor.com/kubesphere-community/images/10123241J_0.png)
 
 IDC 预测，到 2022 年有 70% 的企业会采用 Kubernetes 作为多云与混合云管理工具，到 2023 年将会有一半以上的企业级应用部署在容器化的混合云与多云环境，同时还会有超过 5 亿的数字化应用与服务将会以云原生的方式来开发与构建。
 
@@ -23,19 +23,17 @@ IDC 预测，到 2022 年有 70% 的企业会采用 Kubernetes 作为多云与�
 
 KubeSphere 3.0.0 在多集群管理中支持跨云的联邦部署和多集群的统一管理，帮助企业将应用一键分发到不同的公有云和私有化的基础设施之上。同时，3.0.0 打造了业界可观测性最丰富的容器平台，提供从集群层级到应用层级的监控、日志、告警通知、审计、事件，支持多维度与多租户查询，还支持了第三方应用的自定义监控，让开发者和集群管理员能够清晰掌握应用与集群的运行状况。存储与网络管理能力在 3.0.0 也上了一个台阶，例如在不同租户间支持网络隔离、网络防火墙策略、K8s 网络策略（Network Policy）管理等；而存储卷支持了快照、容量管理、监控等实用的功能。
 
-![](https://ap3.qingstor.com/kubesphere-website/docs/20200831191531.png)
-
 ## 多云与多集群管理
 
 多云与多集群管理是 KubeSphere 用户呼声最高的功能，企业在 **开发与生产环境分离、业务跨云部署与多云灾备、业务异地多活、业务与数据分离、业务流量潮汐效应** 等应用场景中，传统的多云混合云方案已经无法满足用户的业务需求，企业通常选择以 Kubernetes 为核心的容器技术来布局多云混合云架构，多数企业对于运维管理多种基础设施之上的 Kubernetes 集群是刚需。而 3.0.0 带来的多云与多集群管理提供了面向多个 Kubernetes 集群的中央控制面板，让用户只需要在一个统一的控制台全面纳管公有云托管与自建的 Kubernetes 集群，实现应用跨云和跨集群的部署与运维。
 
-![](https://ap3.qingstor.com/kubesphere-website/docs/20200830101950.png)
+![](https://pek3b.qingstor.com/kubesphere-community/images/2023-01-17%2011.00.54.png)
 
 ## 多租户与多维度的可观测性
 
 可观测性是容器云平台非常关键的一环，狭义上主要包含监控、日志和追踪等，广义上还包括告警、事件、审计等。3.0.0 除了对已有的监控、日志、告警等功能进行优化升级，还推出了应用的自定义监控，针对 Kubernetes 和 KubeSphere 的操作审计，以及 Kubernetes 事件管理，支持对平台操作审计与 K8s 事件的归档、检索和告警，告警通知新增支持发送到企业微信和 Slack，这对于多租户场景和安全管控较为严格的企业来说，是非常有价值的。
 
-![](https://ap3.qingstor.com/kubesphere-website/docs/20200830102226.png)
+![](https://pek3b.qingstor.com/kubesphere-community/images/1012361051_0.png)
 
 
 ## OpenPitrix: 企业级应用商店与应用生命周期管理

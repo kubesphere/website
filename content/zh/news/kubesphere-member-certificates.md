@@ -10,9 +10,9 @@ image: 'https://pek3b.qingstor.com/kubesphere-community/images/kubesphere-member
 
 2021 年，KubeSphere 社区又收获了逾百位的贡献者，包括代码、中英文文档、技术布道、本地化与国际化等贡献都是我们认可的贡献方式，在此我们对 KubeSphere 社区所有的贡献者与合作伙伴表示衷心的感谢！
 
-社区设置了 KubeSphere Contributor 奖项作为激励多次为 KubeSphere 贡献代码的成员。上周已经[颁发了 2021 年度新晋的 KubeSphere Contributor 证书](https://kubesphere.com.cn/blogs/kubesphere-contributor-certificates/)。而对于具有突出贡献的活跃贡献者，我们还设立了专门的 KubeSphere Member 奖项作为激励。
+社区设置了 KubeSphere Contributor 奖项作为激励多次为 KubeSphere 贡献代码的成员。上周已经[颁发了 2021 年度新晋的 KubeSphere Contributor 证书](https://kubesphere.io/zh/news/kubesphere-contributor-certificates/)。而对于具有突出贡献的活跃贡献者，我们还设立了专门的 KubeSphere Member 奖项作为激励。
 
-从上一次[颁发](https://kubesphere.com.cn/blogs/kubesphere-certificates/)（2021 年 2 月 11 日）到现在，共有 10 位（其中 Daniel Hu 的证书已单独颁发过，此次不再颁布）突出贡献者入选了 KubeSphere Member，均由 KubeSphere 社区技术委员会与 KubeSphere 指导委员会投票通过。他们深度参与了 KubeSphere 社区开源贡献，在社区独立完成了一个或多个功能特性开发、文档撰写以及测试，并帮助 KubeSphere 在多个社区积极布道，推广开源技术，目前已全部邀请加入了 KubeSphere 的 Github 组织。
+从上一次[颁发](https://kubesphere.io/zh/news/kubesphere-certificates/)（2021 年 2 月 11 日）到现在，共有 10 位（其中 Daniel Hu 的证书已单独颁发过，此次不再颁布）突出贡献者入选了 KubeSphere Member，均由 KubeSphere 社区技术委员会与 KubeSphere 指导委员会投票通过。他们深度参与了 KubeSphere 社区开源贡献，在社区独立完成了一个或多个功能特性开发、文档撰写以及测试，并帮助 KubeSphere 在多个社区积极布道，推广开源技术，目前已全部邀请加入了 KubeSphere 的 Github 组织。
 
 ## 领取证书
 

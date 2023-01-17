@@ -12,7 +12,7 @@ image: 'https://pek3b.qingstor.com/kubesphere-community/images/202206271135109.j
 
 CNCF 发布的 2021 年度调查报告指出，容器和 K8s 的事实地位已经趋于稳固，并慢慢退居“幕后”，类似于无处不在的 Linux，人们甚至都感觉不到它的存在。这要得益于众多致力于降低用户使用门槛的 K8s 管理平台，KubeSphere 便是这其中的佼佼者，它帮助用户屏蔽了底层 K8s 集群的复杂性和差异性，提供了可插拔的开放式架构，无缝对接第三方应用，极大地降低了企业用户的使用门槛。
 
-2021 年 KubeSphere 先后推出了 [v3.1](https://kubesphere.com.cn/news/kubesphere-3.1.0-ga-announcement/) 和 [v3.2](https://kubesphere.com.cn/news/kubesphere-3.2.0-ga-announcement/) 两个大版本，带来了 **“边缘计算”**、**“计量计费”**、**“GPU 资源调度管理”** 等众多令人期待的功能，将 K8s 从云端扩展至边缘，并进一步增强了在云原生 AI 场景的使用体验。
+2021 年 KubeSphere 先后推出了 [v3.1](https://kubesphere.io/zh/news/kubesphere-3.1.0-ga-announcement/) 和 [v3.2](https://kubesphere.io/zh/news/kubesphere-3.2.0-ga-announcement/) 两个大版本，带来了 **“边缘计算”**、**“计量计费”**、**“GPU 资源调度管理”** 等众多令人期待的功能，将 K8s 从云端扩展至边缘，并进一步增强了在云原生 AI 场景的使用体验。
 
 今天，KubeSphere 3.3.0 带来了更多令人期待的功能，新增了基于 **GitOps** 的持续部署方案，进一步优化了 DevOps 的使用体验。同时还增强了 “**多集群管理、多租户管理、可观测性、应用商店、微服务治理、边缘计算、存储**” 等特性，更进一步完善交互设计，并全面提升了用户体验。
 

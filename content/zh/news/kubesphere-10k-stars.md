@@ -28,7 +28,7 @@ KubeSphere 致力于成为企业落地云原生的基石，即打造一个云原
 
 让我们来共同回顾 KubeSphere 项目在成长旅程中获得的成绩，诚挚地感谢所有的用户和贡献者：
 
-+ 发布了多个主要版本，最新的两个主要版本是 3.1 和 3.2，包含了众多新功能。具体可参考：[KubeSphere 3.2.0 发布：带来面向 AI 场景的 GPU 调度与更灵活的网关](https://kubesphere.com.cn/blogs/kubesphere-3.2.0-ga-announcement/)。
++ 发布了多个主要版本，最新的两个主要版本是 3.1 和 3.2，包含了众多新功能。具体可参考：[KubeSphere 3.2.0 发布：带来面向 AI 场景的 GPU 调度与更灵活的网关](https://kubesphere.io/zh/blogs/kubesphere-3.2.0-ga-announcement/)。
 + 在 AWS、Azure、DigitalOcean、QingCloud 等全球各大公有云应用市场上架，分别集成了 Amazon EKS、Azure AKS、DigitalOcean Kubernetes 与青云 QKE 容器引擎。
 
 + 为了满足以云原生的方式管理 Fluent Bit 的需求开发了 **Fluentbit Operator**，随后不久捐献给 Fluent 社区。在集成了 Fluentd 之后，重新命名为 **Fluent Operator**（GitHub 地址： **https://github.com/fluent/fluent-operator**）。

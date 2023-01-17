@@ -77,7 +77,7 @@ KubeSphere 社区已经参与了[夏季活动](https://github.com/cncf/mentoring
 - 社区治理
 - ...
 
-具体的贡献方式参见 [KubeSphere 官网](https://kubesphere.com.cn/contribution/)。
+具体的贡献方式参见 [KubeSphere 官网](https://kubesphere.io/zh/contribution/)。
 
 一起来 [KubeSphere 的 GitHub 仓库](https://github.com/kubesphere/kubesphere)共建共赢吧！可以先点个 Star 关注一下哦！
 

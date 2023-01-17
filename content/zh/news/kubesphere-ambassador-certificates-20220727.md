@@ -12,7 +12,7 @@ image: 'https://pek3b.qingstor.com/kubesphere-community/images/kubesphere-ambass
 
 技术布道这一贡献方式包括撰写技术博客、用户案例以及在社区活动进行公开技术分享等，社区设置了 KubeSphere Ambassador 奖项作为激励多次在社区分享过 KubeSphere 落地实践案例与技术文章的成员。
 
-从上一次[颁发](https://kubesphere.com.cn/news/kubesphere-ambassador-certificates/)到现在，社区又诞生了  5 位 KubeSphere Ambassador，他们在社区都曾多次通过自己的方式来推广和布道 KubeSphere。
+从上一次[颁发](https://kubesphere.io/zh/news/kubesphere-ambassador-certificates/)到现在，社区又诞生了  5 位 KubeSphere Ambassador，他们在社区都曾多次通过自己的方式来推广和布道 KubeSphere。
 
 ## 证书说明
 
@@ -45,28 +45,28 @@ Halil 来自土耳其，从去年开始，他一直在积极地帮助 KubeSphere
 张延英笔名老Z，从去年下半年到如今，他已在社区输出了多篇技术文章，他还经常利用周末时间在 [B 站直播](https://live.bilibili.com/23977595?broadcast_type=0&is_room_feed=1&spm_id_from=333.999.0.0)分享 KubeSphere 相关的技术内容，而他的 [B 站空间](https://space.bilibili.com/1039301316/?spm_id_from=333.999.0.0)也发布了多个与 KubeSphere 相关的视频。此外他在社群里也非常活跃，经常帮助群内的小伙伴解决问题。
 
 老 Z 文章一览：
-- [KubeSphere 3.3.0 离线安装教程](https://kubesphere.com.cn/blogs/kubesphere-v3.3.0-offline-installation/)
-- [在 Kubernetes 中基于 StatefulSet 部署 MySQL（下）](https://kubesphere.com.cn/blogs/mysql-on-k8s-statefulset-2/)
-- [在 Kubernetes 中基于 StatefulSet 部署 MySQL（上）](https://kubesphere.com.cn/blogs/mysql-on-k8s-statefulset-1/)
-- [在 KubeSphere 中监控集群外部 Etcd](https://kubesphere.com.cn/blogs/kubesphere-etcd/)
-- [Kubernetes 生产环境集群安装实践](https://kubesphere.com.cn/blogs/kubesphere-k8s-cluster/)
+- [KubeSphere 3.3.0 离线安装教程](https://kubesphere.io/zh/blogs/kubesphere-v3.3.0-offline-installation/)
+- [在 Kubernetes 中基于 StatefulSet 部署 MySQL（下）](https://kubesphere.io/zh/blogs/mysql-on-k8s-statefulset-2/)
+- [在 Kubernetes 中基于 StatefulSet 部署 MySQL（上）](https://kubesphere.io/zh/blogs/mysql-on-k8s-statefulset-1/)
+- [在 KubeSphere 中监控集群外部 Etcd](https://kubesphere.io/zh/blogs/kubesphere-etcd/)
+- [Kubernetes 生产环境集群安装实践](https://kubesphere.io/zh/blogs/kubesphere-k8s-cluster/)
 
 ### scwang18
 
 前段时间，我们偶然在某个社区平台上发现了一篇 KubeSphere 的优质文章，遂联系了作者 scwang18，并邀请他来社区投稿。他对此也显示出了极大兴趣，不光在短短的一段时间内发了三篇技术文章，还向我们展示了他的 KubeSphere 内容创作计划。所以，我们后续还能在社区读到多篇他的文章。
 
 scwang18 文章一览：
-- [Kubernetes 集群中 Ingress 故障的根因诊断](https://kubesphere.com.cn/blogs/kubesphere-ingress-fault-diagnosis/)
-- [在 KubeSphere 部署 Wiki 系统 wiki.js 并启用中文全文检索](https://kubesphere.com.cn/blogs/kubesphere-wiki/)
-- [Kubernetes Ingress 配置泛域名 TLS 证书](https://kubesphere.com.cn/blogs/kubesphere-ssl/)
+- [Kubernetes 集群中 Ingress 故障的根因诊断](https://kubesphere.io/zh/blogs/kubesphere-ingress-fault-diagnosis/)
+- [在 KubeSphere 部署 Wiki 系统 wiki.js 并启用中文全文检索](https://kubesphere.io/zh/blogs/kubesphere-wiki/)
+- [Kubernetes Ingress 配置泛域名 TLS 证书](https://kubesphere.io/zh/blogs/kubesphere-ssl/)
 
 ### Zongwei Tan
 
 谭宗威是提灯医疗的 CEO，他具备出色的演讲能力。从去年六月份第一次参与 KubeSphere 成都站的 Meetup 开始，他已经在多个活动（包含非 KubeSphere 组织的活动）中分享 KubeSphere、OpenFunction 相关的内容。
 
 谭宗威分享内容一览：
-- [从 Java 到 Rust，提灯医疗在云原生时代的编程语言演化](https://kubesphere.com.cn/live/changsha0312-rust/)
-- [基于 Kubernetes 与 Dapr 打造智慧医疗平台](https://kubesphere.com.cn/live/tideng-chengdu/)
+- [从 Java 到 Rust，提灯医疗在云原生时代的编程语言演化](https://kubesphere.io/zh/live/changsha0312-rust/)
+- [基于 Kubernetes 与 Dapr 打造智慧医疗平台](https://kubesphere.io/zh/live/tideng-chengdu/)
 
 ### Zhenfei Pei
 
@@ -75,9 +75,9 @@ scwang18 文章一览：
 日前，大飞哥又多了一个身份，KubeSphere 社区用户委员会广州站站长，此后他将通过这一身份，帮助 KubeSphere 社区在广州组织交流活动，帮助 KubeSphere 布道。
 
 大飞哥分享一览：
-- [基于 Argo CD 的 GitOps 实践经验](https://kubesphere.com.cn/live/gitops-cic/)
-- [Argo CD 速度通关指南](https://kubesphere.com.cn/live/argocd0217-live/)
-- [文章——基于 Argo CD 的 GitOps 实践经验](https://kubesphere.com.cn/blogs/gitops-argocd/)
+- [基于 Argo CD 的 GitOps 实践经验](https://kubesphere.io/zh/live/gitops-cic/)
+- [Argo CD 速度通关指南](https://kubesphere.io/zh/live/argocd0217-live/)
+- [文章——基于 Argo CD 的 GitOps 实践经验](https://kubesphere.io/zh/blogs/gitops-argocd/)
 - [云原生实战课程第二期 Argo CD 部分](https://www.bilibili.com/video/BV1rD4y1c7r1?p=20&vd_source=082ccfb1773100241c716ab77af81a3f)
 
 通过他们的宣传和布道，KubeSphere 被越来越多的人了解到并开始尝试使用，KubeSphere 的生态进一步拓展。
