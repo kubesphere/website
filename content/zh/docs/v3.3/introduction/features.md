@@ -147,7 +147,7 @@ KubeSphere 通过可视化界面操作监控、运维功能，可简化操作和
 ## 应用程序管理和编排
 
 - **应用商店**：KubeSphere 提供了一个基于开源 [OpenPitrix](https://github.com/openpitrix/openpitrix) 的应用商店，支持应用上传、应用审核、应用上架与分类、应用部署，为用户提供应用全生命周期管理功能。
-- **应用资料库**：在 KubeSphere 中，用户可将基于 Helm Chart 模板文件打包好的应用程序包上传并保存在第三方平台之上，例如 [QingStor](https://www.qingcloud.com/products/qingstor/) 对象存储服务、[AWS S3](https://aws.amazon.com/what-is-cloud-object-storage/) 或者 [GitHub](https://github.com/) 等，同时在 KubeSphere 控制台上配置并使用这些第三方的应用资料库。
+- **应用资料库**：在 KubeSphere 中，用户可将基于 Helm Chart 模板文件打包好的应用程序包上传并保存在第三方平台之上，例如 [QingStor](https://www.qingcloud.com/products/objectstorage/) 对象存储服务、[AWS S3](https://aws.amazon.com/what-is-cloud-object-storage/) 或者 [GitHub](https://github.com/) 等，同时在 KubeSphere 控制台上配置并使用这些第三方的应用资料库。
 - **应用程式范本**：有了应用程序模板，KubeSphere 只需单击一下即可提供一种可视化的方法来部署应用程序。 在内部，应用程序模板可以帮助企业中的不同团队共享中间件和业务系统。 在外部，它们可以用作基于不同方案和需求的应用程序交付的行业标准。
 
 ## 多种存储解决方案
