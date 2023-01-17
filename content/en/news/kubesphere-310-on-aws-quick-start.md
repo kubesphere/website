@@ -64,7 +64,7 @@ The built-in CI/CD templates can be used in most cases directly while you can ed
 
 Existing features of Kubernetes multi-cluster management, networking, multi-tenant management, observability, DevOps, application lifecycle management, and microservices governance have also been enhanced as we work to ensure better user experiences across clusters and clouds.
 
-You can check out the [GA announcement for 3.1.0](https://kubesphere.io/blogs/kubesphere-3.1.0-ga-announcement/) for more demos and details.
+You can check out the [GA announcement for 3.1.0](https://kubesphere.io/news/kubesphere-3.1.0-ga-announcement/) for more demos and details.
 
 ## Conclusion
 
