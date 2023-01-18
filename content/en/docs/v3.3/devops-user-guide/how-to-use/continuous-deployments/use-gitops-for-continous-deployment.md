@@ -196,6 +196,12 @@ This section walks you through the process of deploying an application using a c
         </tbody>
         </table>
 
+    {{< notice note >}}
+
+  To configure the preceding parameters, go to the list or details page of continous deployment, select **Sync** from the drop-down list, and then specify parameter values in the **Sync Resource** dialog box.
+
+    {{</ notice >}}
+
 7. In the **Sync Settings** section, configure parameters as needed.
 
     <table class="tableblock frame-all grid-all stretch">
