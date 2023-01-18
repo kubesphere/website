@@ -12,13 +12,13 @@ KubeSphere 3.3 引入了一种为云原生应用实现持续部署的理念 – 
 
 ## 准备工作
 
-- 您需要有一个企业空间、一个 DevOps 项目和一个用户 (`project-regular`)，并已邀请此帐户至 DevOps 项目中且授予 `operator` 角色。如果尚未准备好，请参考[创建企业空间、项目、用户和角色](../../../../quick-start/create-workspace-and-project/)。
+- 您需要有一个企业空间、一个 DevOps 项目和一个用户 (**project-regular**)，并已邀请此帐户至 DevOps 项目中且授予 **operator** 角色。如果尚未准备好，请参考[创建企业空间、项目、用户和角色](../../../../quick-start/create-workspace-and-project/)。
 
 - 您需要启用 [KubeSphere DevOps 系统](../../../../pluggable-components/devops/)。
 
 ## 导入代码仓库
 
-1. 以 `project-regular` 用户登录 KubeSphere 控制台，在左侧导航树，点击 **DevOps 项目**。
+1. 以 **project-regular** 用户登录 KubeSphere 控制台，在左侧导航树，点击 **DevOps 项目**。
 
 2. 在右侧的 **DevOps 项目**页面，点击您创建的 DevOps 项目。
 
@@ -26,10 +26,10 @@ KubeSphere 3.3 引入了一种为云原生应用实现持续部署的理念 – 
 
 4. 在右侧的**代码仓库**页面，点击**导入**。
 
-5. 在**导入代码仓库**对话框，输入代码仓库名称，如 `open-podcasts`，并选择代码仓库。您也可以为代码仓库设置别名和添加描述信息。
+5. 在**导入代码仓库**对话框，输入代码仓库名称，如 **open-podcasts**，并选择代码仓库。您也可以为代码仓库设置别名和添加描述信息。
 
 
-6. 在**选择代码仓库**对话框，点击 **Git**，在**代码仓库地址**区域，输入代码仓库地址，如 `https://github.com/kubesphere-sigs/open-podcasts`，点击**确定**。
+6. 在**选择代码仓库**对话框，点击 **Git**，在**代码仓库地址**区域，输入代码仓库地址，如 **https://github.com/kubesphere-sigs/open-podcasts**，点击**确定**。
 
    {{< notice note >}}
 
@@ -43,33 +43,291 @@ KubeSphere 3.3 引入了一种为云原生应用实现持续部署的理念 – 
 
 2. 在右侧的**持续部署**页面，点击**创建**。
 
-3. 在**基本信息**页签，输入持续部署名称，如 `open-podcasts`，并选择上一步创建的代码仓库，您也可以设置别名和添加描述信息，点击**下一步**。
+3. 在**基本信息**页签，输入持续部署名称，如 **open-podcasts**，并选择上一步创建的代码仓库，您也可以设置别名和添加描述信息，点击**下一步**。
 
 4. 在**部署设置**页签，选择持续部署的部署集群和项目。
 
-5. 在**代码仓库设置**区域，设置代码仓库的分支或标签以及 kustomization 清单文件路径，如 `config/default`。
+5. 在**代码仓库设置**区域，设置代码仓库的分支或标签以及 Kustomization 清单文件路径。
 
-6. 在**同步策略**区域，您可以选择**手动同步**或**自动同步**。当选择**自动同步**时，会出现**清理资源**和**自恢复**选项，请根据您的实际需要选择。
+    <table class="tableblock frame-all grid-all stretch">
+    <colgroup>
+    <col style={{width: "30%"}} />
+    <col style={{width: "70%"}} />
+    </colgroup>
+    <thead>
+    <tr class="header">
+    <th class="tableblock halign-left valign-top">参数</th>
+    <th class="tableblock halign-left valign-top">描述</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr class="odd">
+    <td class="tableblock halign-left valign-top"><div class="content">
+    <div class="paragraph">
+    <p>修订版本</p>
+    </div>
+    </div></td>
+    <td class="tableblock halign-left valign-top"><div class="content">
+    <div class="paragraph">
+    <p>Git 仓库中的 commit ID、分支或标签。例如，<strong>master</strong>, <strong>v1.2.0</strong>, <strong>0a1b2c3</strong> 或 <strong>HEAD</strong>。</p>
+    </div>
+    </div></td>
+    </tr>
+    <tr class="even">
+    <td class="tableblock halign-left valign-top"><div class="content">
+    <div class="paragraph">
+    <p>清单文件路径</p>
+    </div>
+    </div></td>
+    <td class="tableblock halign-left valign-top"><div class="content">
+    <div class="paragraph">
+    <p>设置清单文件路径。例如，<strong>config/default</strong>。</p>
+    </div>
+    </div></td>
+    </tr>
+    </tbody>
+    </table>
 
-    - **清理资源**：自动同步时，自动删除 Git 中不存在的资源。
-    - **自恢复**：时刻保证与 Git 中定义的状态同步。
+6. 在**同步策略**区域，根据需要选择**自动同步**或**手动同步**。
+
+    -   **自动同步**：在检测到 Git 仓库中的清单与部署资源的实时状态之间存在差异时，根据设置的同步选项，自动触发应用程序同步。具体参数如下表所示。
+
+        <table class="tableblock frame-all grid-all stretch">
+        <colgroup>
+        <col style={{width: "30%"}} />
+        <col style={{width: "70%"}} />
+        </colgroup>
+        <thead>
+        <tr class="header">
+        <th class="tableblock halign-left valign-top">参数</th>
+        <th class="tableblock halign-left valign-top">描述</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr class="odd">
+        <td class="tableblock halign-left valign-top"><div class="content">
+        <div class="paragraph">
+        <p>清理资源</p>
+        </div>
+        </div></td>
+        <td class="tableblock halign-left valign-top"><div class="content">
+        <div class="paragraph">
+        <p>如果勾选，自动同步时会删除 Git 仓库中不存在的资源。不勾选时，自动同步触发时不会删除集群中的资源。</p>
+        </div>
+        </div></td>
+        </tr>
+        <tr class="even">
+        <td class="tableblock halign-left valign-top"><div class="content">
+        <div class="paragraph">
+        <p>自纠正</p>
+        </div>
+        </div></td>
+        <td class="tableblock halign-left valign-top"><div class="content">
+        <div class="paragraph">
+        <p>如果勾选，当检测到 Git 仓库中定义的状态与部署资源中有偏差时，将强制应用 Git 仓库中的定义。不勾选时，对部署资源做更改时不会触发自动同步。</p>
+        </div>
+        </div></td>
+        </tr>
+        </tbody>
+        </table>
+
+    -   **手动同步**：根据设置的同步选项，手动触发应用程序同步。具体参数如下表所示。
+
+        <table class="tableblock frame-all grid-all stretch">
+        <colgroup>
+        <col style={{width: "30%"}} />
+        <col style={{width: "70%"}} />
+        </colgroup>
+        <thead>
+        <tr class="header">
+        <th class="tableblock halign-left valign-top">参数</th>
+        <th class="tableblock halign-left valign-top">描述</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr class="odd">
+        <td class="tableblock halign-left valign-top"><div class="content">
+        <div class="paragraph">
+        <p>清理资源</p>
+        </div>
+        </div></td>
+        <td class="tableblock halign-left valign-top"><div class="content">
+        <div class="paragraph">
+        <p>如果勾选，同步会删除 Git 仓库中不存在的资源。不勾选时，同步不会删除集群中的资源，而是会显示 <strong>out-of-sync</strong>。</p>
+        </div>
+        </div></td>
+        </tr>
+        <tr class="even">
+        <td class="tableblock halign-left valign-top"><div class="content">
+        <div class="paragraph">
+        <p>模拟运行</p>
+        </div>
+        </div></td>
+        <td class="tableblock halign-left valign-top"><div class="content">
+        <div class="paragraph">
+        <p>模拟同步，不影响最终部署资源。</p>
+        </div>
+        </div></td>
+        </tr>
+        <tr class="odd">
+        <td class="tableblock halign-left valign-top"><div class="content">
+        <div class="paragraph">
+        <p>仅执行 Apply</p>
+        </div>
+        </div></td>
+        <td class="tableblock halign-left valign-top"><div class="content">
+        <div class="paragraph">
+        <p>如果勾选，同步应用资源时会跳过 <strong>pre/post</strong> 钩子，仅执行 <strong>kubectl apply</strong>。</p>
+        </div>
+        </div></td>
+        </tr>
+        <tr class="even">
+        <td class="tableblock halign-left valign-top"><div class="content">
+        <div class="paragraph">
+        <p>强制 Apply</p>
+        </div>
+        </div></td>
+        <td class="tableblock halign-left valign-top"><div class="content">
+        <div class="paragraph">
+        <p>如果勾选，同步时会执行 <strong>kubectl apply --force</strong>。</p>
+        </div>
+        </div></td>
+        </tr>
+        </tbody>
+        </table>
 
 
-7.  在**同步设置**区域，按照实际需要选择以下设置项：
+7.  在**同步设置**区域，根据需要设置同步相关参数。
 
-    - **跳过规范校验**：不校验资源规范性。
-    - **自动创建项目**：在同步的过程中，自动创建项目。
-    - **最后清理**：直到所有的资源都已经同步且处于健康状态才删除不存在的资源。
-    - **仅应用未同步**：仅应用未同步的资源。
+    <table class="tableblock frame-all grid-all stretch">
+    <colgroup>
+    <col style={{width: "30%"}} />
+    <col style={{width: "70%"}} />
+    </colgroup>
+    <thead>
+    <tr class="header">
+    <th class="tableblock halign-left valign-top">参数</th>
+    <th class="tableblock halign-left valign-top">描述</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr class="odd">
+    <td class="tableblock halign-left valign-top"><div class="content">
+    <div class="paragraph">
+    <p>跳过规范校验</p>
+    </div>
+    </div></td>
+    <td class="tableblock halign-left valign-top"><div class="content">
+    <div class="paragraph">
+    <p>跳过 <strong>kubectl</strong> 验证。执行 <strong>kubectl apply</strong> 时，增加 <strong>--validate=false</strong> 标识。</p>
+    </div>
+    </div></td>
+    </tr>
+    <tr class="even">
+    <td class="tableblock halign-left valign-top"><div class="content">
+    <div class="paragraph">
+    <p>自动创建项目</p>
+    </div>
+    </div></td>
+    <td class="tableblock halign-left valign-top"><div class="content">
+    <div class="paragraph">
+    <p>在项目不存在的情况下自动为应用程序资源创建项目。</p>
+    </div>
+    </div></td>
+    </tr>
+    <tr class="odd">
+    <td class="tableblock halign-left valign-top"><div class="content">
+    <div class="paragraph">
+    <p>最后清理</p>
+    </div>
+    </div></td>
+    <td class="tableblock halign-left valign-top"><div class="content">
+    <div class="paragraph">
+    <p>同步操作时，其他资源都完成部署且处于健康状态后，再清理资源。</p>
+    </div>
+    </div></td>
+    </tr>
+    <tr class="even">
+    <td class="tableblock halign-left valign-top"><div class="content">
+    <div class="paragraph">
+    <p>选择性同步</p>
+    </div>
+    </div></td>
+    <td class="tableblock halign-left valign-top"><div class="content">
+    <div class="paragraph">
+    <p>仅同步 <strong>out-of-sync</strong> 状态的资源。</p>
+    </div>
+    </div></td>
+    </tr>
+    </tbody>
+    </table>
 
-8.  在**依赖清理策略**区域，选择一个清理策略：
-    - **foreground**：先删除附属资源，再删除主资源。
-    - **background**：先删除主资源，再删除附属资源。
-    - **orphan**：删除主资源之后，附属资源仍然存在。
+8.  在**依赖清理策略**区域，根据需要选择依赖清理策略。
 
-9.  在**替换资源**区域，选择是否需要替换已存在的资源，点击**创建**。
+    <table class="tableblock frame-all grid-all stretch">
+    <colgroup>
+    <col style={{width: "30%"}} />
+    <col style={{width: "70%"}} />
+    </colgroup>
+    <thead>
+    <tr class="header">
+    <th class="tableblock halign-left valign-top">参数</th>
+    <th class="tableblock halign-left valign-top">描述</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr class="odd">
+    <td class="tableblock halign-left valign-top"><div class="content">
+    <div class="paragraph">
+    <p>foreground</p>
+    </div>
+    </div></td>
+    <td class="tableblock halign-left valign-top"><div class="content">
+    <div class="paragraph">
+    <p>先删除依赖资源，再删除主资源。</p>
+    </div>
+    </div></td>
+    </tr>
+    <tr class="even">
+    <td class="tableblock halign-left valign-top"><div class="content">
+    <div class="paragraph">
+    <p>background</p>
+    </div>
+    </div></td>
+    <td class="tableblock halign-left valign-top"><div class="content">
+    <div class="paragraph">
+    <p>先删除主资源，再删除依赖资源。</p>
+    </div>
+    </div></td>
+    </tr>
+    <tr class="odd">
+    <td class="tableblock halign-left valign-top"><div class="content">
+    <div class="paragraph">
+    <p>orphan</p>
+    </div>
+    </div></td>
+    <td class="tableblock halign-left valign-top"><div class="content">
+    <div class="paragraph">
+    <p>删除主资源，留下依赖资源成为孤儿。</p>
+    </div>
+    </div></td>
+    </tr>
+    </tbody>
+    </table>
+
+9. 在**替换资源**区域，选择是否需要替换已存在的资源。
+
+    {{< notice note >}}
+
+  如果勾选，将执行 **kubectl replace/create** 命令同步资源。不勾选时，使用 **kubectl apply** 命令同步资源。
+
+    {{</ notice >}}
     
-    您可以在**持续部署**页面上查看到已创建的持续部署的信息，如下表所示：
+10. 点击**创建**。资源创建完成后将显示在持续部署列表中。
+
+## 查看已创建的持续部署信息
+
+1. 在**持续部署**页面上查看到已创建的持续部署信息。具体参数如下表所示。
 
     <table>
     <tbody>
@@ -111,11 +369,11 @@ KubeSphere 3.3 引入了一种为云原生应用实现持续部署的理念 – 
     </tbody>
     </table>
 
-10. 点击持续部署右侧的 <img src="/images/docs/v3.3/common-icons/three-dots.png" width="15" alt="icon" />，您可以执行以下操作：
-    - 编辑信息：编辑别名和描述信息。
-    - 编辑 YAML：编辑持续部署的 YAML 文件。
-    - 同步：触发资源同步。
-    - 删除：删除持续部署。
+2. 点击持续部署右侧的 <img src="/images/docs/v3.3/common-icons/three-dots.png" width="15" alt="icon" />，您可以执行以下操作：
+    - **编辑信息**：编辑别名和描述信息。
+    - **编辑 YAML**：编辑持续部署的 YAML 文件。
+    - **同步**：触发资源同步。
+    - **删除**：删除持续部署。
 
   {{< notice warning >}}
 
@@ -123,7 +381,7 @@ KubeSphere 3.3 引入了一种为云原生应用实现持续部署的理念 – 
   
   {{</ notice >}}
 
-11. 点击已创建的持续部署进入详情页面，可以查看同步状态和同步结果。
+3. 点击已创建的持续部署进入详情页面，可以查看同步状态和同步结果。
 
 ## 访问已创建的应用
 

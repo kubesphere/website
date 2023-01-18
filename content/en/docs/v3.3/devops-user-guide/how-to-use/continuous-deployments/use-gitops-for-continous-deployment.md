@@ -11,24 +11,24 @@ In KubeSphere 3.3, we introduce the GitOps concept, which is a way of implementi
 This section walks you through the process of deploying an application using a continuous deployment.
 ## Prerequisites
 
-- You have a workspace, a DevOps project and a user (`project-regular`) invited to the DevOps project with the `operator` role. If they are not ready yet, please refer to [Create Workspaces, Projects, Users and Roles](../../../../quick-start/create-workspace-and-project/).
+- You have a workspace, a DevOps project and a user (**project-regular**) invited to the DevOps project with the **operator** role. If they are not ready yet, please refer to [Create Workspaces, Projects, Users and Roles](../../../../quick-start/create-workspace-and-project/).
 
 - You need to [enable the KubeSphere DevOps system](../../../../pluggable-components/devops/).
 
 
 ## Import a Code Repository
 
-1. Log in to the KubeSphere console as `project-regular`. In the navigation pane on the left, click **DevOps Projects**.
+1. Log in to the KubeSphere console as **project-regular**. In the left-side navigation pane, click **DevOps Projects**.
 
 2. On the **DevOps Projects** page, click the DevOps project you created.
 
-3. In the navigation pane on the left, click **Code Repositories**.
+3. In the left-side navigation pane, click **Code Repositories**.
 
 4. On the **Code Repositories** page on the left, click **Import**.
 
-5. In the **Import Code Repository** dialog box, enter the name of code repository, for example, `open-podcasts`, and select a code repository. Optionally, you can set an alias and add description.
+5. In the **Import Code Repository** dialog box, enter the name of code repository, for example, **open-podcasts**, and select a code repository. Optionally, you can set an alias and add description.
 
-6. In the **Select Code Repository** dialog box, click **Git**. In **Code Repository URL**, enter the URL of the code repository, for example, `https://github.com/kubesphere-sigs/open-podcasts`, and click **OK**.
+6. In the **Select Code Repository** dialog box, click **Git**. In **Code Repository URL**, enter the URL of the code repository, for example, **https://github.com/kubesphere-sigs/open-podcasts**, and click **OK**.
 
    {{< notice note >}}
    
@@ -38,35 +38,295 @@ This section walks you through the process of deploying an application using a c
 
 ## Create a Continuous Deployment
 
-1. In the navigation pane on the left, click **Continuous Deployments**.
+1. In the left-side navigation pane, click **Continuous Deployments**.
 
 2. On the **Continuous Deployments** page, click **Create**.
 
-3. On the **Basic Information** tab, enter a name of the continuous deployment, for example, `open-podcasts`, and choose a code repository. Then, click **Next**. Optionally, you can set an alias and add description.
+3. On the **Basic Information** tab, enter a name of the continuous deployment, for example, **open-podcasts**, and choose a code repository. Then, click **Next**. Optionally, you can set an alias and add description.
 
-4. On the **Deployment Settings** tab, choose the cluster and project that the continuous deployment will be deployed.
+4. In the **Deployment Location** section of the **Deployment Settings** tab, configure the cluster and project for which the continuous deployment will be deployed.
 
-5.  In **Code Repository Settings**, set a branch or tag of the repository and specify the path of the manifest file, for example, `config/default`.
+5. In the **Code Repository Settings** section, specify a branch or tag of the repository and the manifest file path.
 
-6.  In **Sync Strategy**, you can choose either **Manual Sync** or **Auto Sync**. If you choose **Auto Sync**, select **Prune resources** and **Self-heal** as needed. 
+    <table class="tableblock frame-all grid-all stretch">
+    <colgroup>
+    <col style={{width: "30%"}} />
+    <col style={{width: "70%"}} />
+    </colgroup>
+    <thead>
+    <tr class="header">
+    <th class="tableblock halign-left valign-top">Parameter</th>
+    <th class="tableblock halign-left valign-top">Description</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr class="odd">
+    <td class="tableblock halign-left valign-top"><div class="content">
+    <div class="paragraph">
+    <p>Revision</p>
+    </div>
+    </div></td>
+    <td class="tableblock halign-left valign-top"><div class="content">
+    <div class="paragraph">
+    <p>The commit ID, branch, or tag of the repository. For example, <strong>master</strong>, <strong>v1.2.0</strong>, <strong>0a1b2c3</strong>, or <strong>HEAD</strong>.</p>
+    </div>
+    </div></td>
+    </tr>
+    <tr class="even">
+    <td class="tableblock halign-left valign-top"><div class="content">
+    <div class="paragraph">
+    <p>Manifest File Path</p>
+    </div>
+    </div></td>
+    <td class="tableblock halign-left valign-top"><div class="content">
+    <div class="paragraph">
+    <p>The manifest file path. For example, <strong>config/default</strong>.</p>
+    </div>
+    </div></td>
+    </tr>
+    </tbody>
+    </table>
 
-    - **Prune resources**: Automatically deletes resources that are no longer defined in Git.
-    - **Self-heal**: Always synchronizes the state defined in Git.
+6. In the **Sync Strategy** section, select **Auto Sync** or **Manual Sync** as needed.
 
-7.  In **Sync Settings**, select the following options as needed:
-    - **skip schema validation**: Does not validate resources.
-    - **Auto create project**: Automatically creates a project during synchronization.
-    - **Prune last**: Deletes resources that no longer exist after all resources have been synchronized and become healthy.
-    - **Apply out of sync only**: Skips syncing resources that are already in the desired state.
+    -   **Auto Sync**: automatically syncs an application when it detects differences between the desired manifests in Git, and the live state in the cluster. The following table describes the parameters.
 
-8.  In **Prune Propagation Policy**, choose a deletion policy:
-    - **foreground**: Deletes dependents first, and then deletes owners.
-    - **background**: Deletes owners first, and then deletes dependents.
-    - **orphan**: Deletes owners while retaining dependents.
+        <table class="tableblock frame-all grid-all stretch">
+        <colgroup>
+        <col style={{width: "30%"}} />
+        <col style={{width: "70%"}} />
+        </colgroup>
+        <thead>
+        <tr class="header">
+        <th class="tableblock halign-left valign-top">Parameter</th>
+        <th class="tableblock halign-left valign-top">Description</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr class="odd">
+        <td class="tableblock halign-left valign-top"><div class="content">
+        <div class="paragraph">
+        <p>Prune resources</p>
+        </div>
+        </div></td>
+        <td class="tableblock halign-left valign-top"><div class="content">
+        <div class="paragraph">
+        <p>If checked, it will delete resources that are no longer defined in Git. By default and as a safety mechanism, auto sync will not delete resources.</p>
+        </div>
+        </div></td>
+        </tr>
+        <tr class="even">
+        <td class="tableblock halign-left valign-top"><div class="content">
+        <div class="paragraph">
+        <p>Self-heal</p>
+        </div>
+        </div></td>
+        <td class="tableblock halign-left valign-top"><div class="content">
+        <div class="paragraph">
+        <p>If checked, it will force the state defined in Git into the cluster when a deviation in the cluster is detected. By default, changes that are made to the live cluster will not trigger auto sync.</p>
+        </div>
+        </div></td>
+        </tr>
+        </tbody>
+        </table>
 
-9.  In **Replace Resource**, decide whether you want to replace resources that already exist. Click **Create**.
-    
-    On the **Continuous Deployments** page, you can view the created continuous deployment, as shown in the following table.
+    -   **Manual Sync**: manually triggers application synchronization according to the synchronization options set. The following table describes the parameters.
+
+        <table class="tableblock frame-all grid-all stretch">
+        <colgroup>
+        <col style={{width: "25%"}} />
+        <col style={{width: "75%"}} />
+        </colgroup>
+        <thead>
+        <tr class="header">
+        <th class="tableblock halign-left valign-top">Parameter</th>
+        <th class="tableblock halign-left valign-top">Description</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr class="odd">
+        <td class="tableblock halign-left valign-top"><div class="content">
+        <div class="paragraph">
+        <p>Prune resources</p>
+        </div>
+        </div></td>
+        <td class="tableblock halign-left valign-top"><div class="content">
+        <div class="paragraph">
+        <p>If checked, it will delete resources that are no longer defined in Git.
+         By default and as a safety mechanism, manual sync will not delete resources, but mark the resource <strong>out-of-sync</strong> state.</p>
+        </div>
+        </div></td>
+        </tr>
+        <tr class="even">
+        <td class="tableblock halign-left valign-top"><div class="content">
+        <div class="paragraph">
+        <p>Dry run</p>
+        </div>
+        </div></td>
+        <td class="tableblock halign-left valign-top"><div class="content">
+        <div class="paragraph">
+        <p>Preview apply without affecting the cluster.</p>
+        </div>
+        </div></td>
+        </tr>
+        <tr class="odd">
+        <td class="tableblock halign-left valign-top"><div class="content">
+        <div class="paragraph">
+        <p>Apply only</p>
+        </div>
+        </div></td>
+        <td class="tableblock halign-left valign-top"><div class="content">
+        <div class="paragraph">
+        <p>If checked, it will skip <strong>pre/post</strong> sync hooks and just run <strong>kubectl apply</strong> for application resources.</p>
+        </div>
+        </div></td>
+        </tr>
+        <tr class="even">
+        <td class="tableblock halign-left valign-top"><div class="content">
+        <div class="paragraph">
+        <p>Force</p>
+        </div>
+        </div></td>
+        <td class="tableblock halign-left valign-top"><div class="content">
+        <div class="paragraph">
+        <p>If checked, it will use <strong>kubectl apply --force</strong> to sync resources.</p>
+        </div>
+        </div></td>
+        </tr>
+        </tbody>
+        </table>
+
+7. In the **Sync Settings** section, configure parameters as needed.
+
+    <table class="tableblock frame-all grid-all stretch">
+    <colgroup>
+    <col style={{width: "30%"}} />
+    <col style={{width: "70%"}} />
+    </colgroup>
+    <thead>
+    <tr class="header">
+    <th class="tableblock halign-left valign-top">Parameter</th>
+    <th class="tableblock halign-left valign-top">Description</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr class="odd">
+    <td class="tableblock halign-left valign-top"><div class="content">
+    <div class="paragraph">
+    <p>Skip schema validation</p>
+    </div>
+    </div></td>
+    <td class="tableblock halign-left valign-top"><div class="content">
+    <div class="paragraph">
+    <p>Disables <strong>kubectl</strong> validation. <strong>--validate=false</strong> is added when <strong>kubectl apply</strong> runs.</p>
+    </div>
+    </div></td>
+    </tr>
+    <tr class="even">
+    <td class="tableblock halign-left valign-top"><div class="content">
+    <div class="paragraph">
+    <p>Auto create project</p>
+    </div>
+    </div></td>
+    <td class="tableblock halign-left valign-top"><div class="content">
+    <div class="paragraph">
+    <p>Automatically creates projects for application resources if the projects do not exist.</p>
+    </div>
+    </div></td>
+    </tr>
+    <tr class="odd">
+    <td class="tableblock halign-left valign-top"><div class="content">
+    <div class="paragraph">
+    <p>Prune last</p>
+    </div>
+    </div></td>
+    <td class="tableblock halign-left valign-top"><div class="content">
+    <div class="paragraph">
+    <p>Resource pruning happened as a final, implicit wave of a sync operation,  after other resources have been deployed and become healthy.</p>
+    </div>
+    </div></td>
+    </tr>
+    <tr class="even">
+    <td class="tableblock halign-left valign-top"><div class="content">
+    <div class="paragraph">
+    <p>Selective sync</p>
+    </div>
+    </div></td>
+    <td class="tableblock halign-left valign-top"><div class="content">
+    <div class="paragraph">
+    <p>Syncs only <strong>out-of-sync</strong> resources.</p>
+    </div>
+    </div></td>
+    </tr>
+    </tbody>
+    </table>
+
+8. In the **Prune Propagation Policy** section, select a policy as needed.
+
+    <table class="tableblock frame-all grid-all stretch">
+    <colgroup>
+    <col style={{width: "30%"}} />
+    <col style={{width: "70%"}} />
+    </colgroup>
+    <thead>
+    <tr class="header">
+    <th class="tableblock halign-left valign-top">Parameter</th>
+    <th class="tableblock halign-left valign-top">Description</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr class="odd">
+    <td class="tableblock halign-left valign-top"><div class="content">
+    <div class="paragraph">
+    <p>foreground</p>
+    </div>
+    </div></td>
+    <td class="tableblock halign-left valign-top"><div class="content">
+    <div class="paragraph">
+    <p>Deletes dependent resources first, and then deletes the owner resource.</p>
+    </div>
+    </div></td>
+    </tr>
+    <tr class="even">
+    <td class="tableblock halign-left valign-top"><div class="content">
+    <div class="paragraph">
+    <p>background</p>
+    </div>
+    </div></td>
+    <td class="tableblock halign-left valign-top"><div class="content">
+    <div class="paragraph">
+    <p>Deletes the owner resource immediately, and then deletes the dependent resources in the background.</p>
+    </div>
+    </div></td>
+    </tr>
+    <tr class="odd">
+    <td class="tableblock halign-left valign-top"><div class="content">
+    <div class="paragraph">
+    <p>orphan</p>
+    </div>
+    </div></td>
+    <td class="tableblock halign-left valign-top"><div class="content">
+    <div class="paragraph">
+    <p>Deletes the dependent resources that remain orphaned after the owner resource is deleted.</p>
+    </div>
+    </div></td>
+    </tr>
+    </tbody>
+    </table>
+
+9. In the **Replace Resource** section, specify whether to replace the resources that already exist.
+
+    <Notice type="note">
+
+    If checked, the resources will be synced by **kubectl replace/create**. By default, the resources will be synced by **kubectl apply**.
+
+    </Notice>
+
+10. Click **Create**. The resource you create will appear in the list of continuous deployments.
+
+## View the Created Continuous Deployment
+
+1. On the **Continuous Deployments** page, view the created continuous deployment. The following table describes the parameters.
 
     <table>
     <tbody>
@@ -108,11 +368,11 @@ This section walks you through the process of deploying an application using a c
     </tbody>
     </table>
 
-10. Click <img src="/images/docs/v3.3/common-icons/three-dots.png" width="15" alt="icon" /> on the right of the continuous deployment, and you can perform the following:
-    - **Edit Information**: Edits the alias and description.
-    - **Edit YAML**: Edits the YAML file.
-    - **Sync**: Triggers resources synchronization.
-    - **Delete**: Deletes the continuous deployment.
+2. Click <img src="/images/docs/v3.3/common-icons/three-dots.png" width="15" alt="icon" /> on the right of the continuous deployment, and you can perform the following:
+    - **Edit Information**: edits the alias and description.
+    - **Edit YAML**: edits the YAML file.
+    - **Sync**: triggers resources synchronization.
+    - **Delete**: deletes the continuous deployment.
 
   {{< notice warning >}}
 
@@ -121,17 +381,17 @@ This section walks you through the process of deploying an application using a c
   {{</ notice >}}
 
 
-11. Click the created continuous deployment to go to its details page, where you can view the synchronization status and result.
+3. Click the created continuous deployment to go to its details page, where you can view the synchronization status and result.
 
 ## Access the Created Application
 
-1. Go to the project where the continuous deployment resides, in the navigation pane on the left, click **Services**.
+1. Go to the project where the continuous deployment resides, in the left-side navigation pane, click **Services**.
 
 2. On the **Services** page on the left, click  <img src="/images/docs/v3.3/common-icons/three-dots.png" width="15" alt="icon" /> on the right of the deployed application, and click **Edit External Access**.
 
 3. In **Access Mode**, select **NodePort**, and click **OK**.
 
-4. In the **External Access** column, check the exposed port, and access the application by `nodeIP: nodePort`.
+4. In the **External Access** column, check the exposed port, and access the application by **nodeIP: nodePort**.
 
   {{< notice note >}}
   Before accessing the service, open the exposed port in security groups.
