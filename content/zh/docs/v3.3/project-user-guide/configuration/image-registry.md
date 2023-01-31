@@ -98,3 +98,7 @@ Docker 镜像是一个只读的模板，可用于部署容器服务。每个镜�
 ## 使用镜像仓库
 
 如果您已提前创建了私有镜像仓库的保密字典，您可以选择私有镜像仓库中的镜像。例如，创建[部署](../../../project-user-guide/application-workloads/deployments/)时，您可以在**添加容器**页面点击**镜像**下拉列表选择一个仓库，然后输入镜像名称和标签使用镜像。
+
+如果您使用 YAML 文件创建工作负载且需要使用私有镜像仓库，需要在本地 YAML 文件中手动添加 `kubesphere.io/imagepullsecrets` 字段，并且取值是 JSON 格式的字符串（其中 `key` 为容器名称，`value` 为保密字典名），以保证 `imagepullsecrets` 字段不被丢失，如下示例图所示。
+
+![kubesphere-ecosystem](/images/docs/v3.3/project-user-guide/configurations/image-pull-secrets.png)

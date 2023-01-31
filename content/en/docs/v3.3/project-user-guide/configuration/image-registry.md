@@ -98,3 +98,7 @@ For the integration of the HTTPS-based Harbor registry, refer to [Harbor Documen
 ## Use an Image Registry
 
 When you set images, you can select the private image registry if the Secret of it is created in advance. For example, click the arrow on the **Add Container** page to expand the registry list when you create a [Deployment](../../../project-user-guide/application-workloads/deployments/). After you choose the image registry, enter the image name and tag to use the image.
+
+If you use YAML to create a workload and need to use a private image registry, you need to manually add `kubesphere.io/imagepullsecrets` to `annotations` in your local YAML file, and enter the key-value pair in JSON format, where `key` must be the name of the container, and `value` must be the name of the secret, as shown in the following sample.
+
+![kubesphere-ecosystem](/images/docs/v3.3/project-user-guide/configurations/image-pull-secrets.png)
