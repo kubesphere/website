@@ -173,7 +173,7 @@ section6:
     - icon: /images/home/section6-inaccel.jpg
     - icon: /images/home/section6-maxnerva.jpg
     - icon: /images/home/section6-picc.jpg
-    - icon: /images/case/section6-supaur.png
+    - icon: /images/case/logo-xdf.png
     - icon: /images/home/section6-sina.jpg
     - icon: /images/home/section6-sichuan-airlines.jpg
     - icon: /images/home/section6-sinopharm.jpg
