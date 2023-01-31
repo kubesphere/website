@@ -159,8 +159,6 @@ section3:
           icon: 'images/case/section6-hongya.png'
         - name: 'ruijie'
           icon: 'images/case/section6-ruijie.png'
-        - name: 'supaur'
-          icon: 'images/case/section6-supaur.png'
         - name: 'xiaodiketang'
           icon: 'images/case/section6-xiaodiketang.png'
         - name: 'zhongkejincai'
