@@ -55,24 +55,32 @@ Make sure you install **node-exporter** and **kube-state-metrics** if only **Pro
 
 {{</ notice >}}
 
-The Prometheus stack can be installed in many ways. The following steps show how to install it into the namespace `monitoring` using `ks-prometheus` (based on the **upstream `kube-prometheus`** project).
+The Prometheus stack can be installed in many ways. The following steps show how to install it into the namespace `monitoring` using [Prometheus stack manifests in ks-installer](https://github.com/kubesphere/ks-installer/tree/release-3.3/roles/ks-monitor/files/prometheus) (generated from a KubeSphere custom version of [kube-prometheus](https://github.com/prometheus-operator/kube-prometheus.git)).
 
-1. Obtain `ks-prometheus` that KubeSphere v3.3.0 uses.
+1. Obtain `ks-installer` that KubeSphere v3.3.0 uses.
 
    ```bash
-   cd ~ && git clone -b release-3.3 https://github.com/kubesphere/ks-prometheus.git && cd ks-prometheus
+   cd ~ && git clone -b release-3.3 https://github.com/kubesphere/ks-installer.git && cd ks-installer/roles/ks-monitor/files/prometheus
    ```
 
-2. Set up the `monitoring` namespace.
-
+2. Create `kustomization.yaml`:  
    ```bash
-   sed -i 's/kubesphere-monitoring-system/monitoring/g' kustomization.yaml
+   # create 
+   cat <<EOF > kustomization.yaml
+   apiVersion: kustomize.config.k8s.io/v1beta1
+   kind: Kustomization
+   namespace: monitoring
+   resources:
+   EOF
+
+   # append yaml paths
+   find . -mindepth 2 -name "*.yaml" -type f -print | sed 's/^/- /' >> kustomization.yaml
    ```
 
 3. Remove unnecessary components. For example, if Grafana is not enabled in KubeSphere, you can run the following command to delete the Grafana section in `kustomization.yaml`.
 
    ```bash
-   sed -i '/manifests\/grafana\//d' kustomization.yaml
+   sed -i '/grafana\//d' kustomization.yaml
    ```
 
 4. Install the stack.
@@ -85,50 +93,50 @@ The Prometheus stack can be installed in many ways. The following steps show how
 
 {{< notice note >}}
 
-If your Prometheus stack is not installed using `ks-prometheus`, skip this step.
+If your Prometheus stack is installed using [Prometheus stack manifests in ks-installer](https://github.com/kubesphere/ks-installer/tree/release-3.3/roles/ks-monitor/files/prometheus), skip this step.
 
 KubeSphere 3.3.0 uses Prometheus Operator to manage Prometheus/Alertmanager config and lifecycle, ServiceMonitor (to manage scrape config), and PrometheusRule (to manage Prometheus recording/alert rules).
 
 If your Prometheus stack setup isn't managed by Prometheus Operator, you can skip this step. But you have to make sure that:
 
-- You must copy the recording/alerting rules in [PrometheusRule](https://github.com/kubesphere/ks-prometheus/blob/release-3.3/manifests/kubernetes/kubernetes-prometheusRule.yaml) and [PrometheusRule for etcd](https://github.com/kubesphere/ks-prometheus/blob/release-3.3/manifests/etcd/prometheus-rulesEtcd.yaml) to your Prometheus config for KubeSphere v3.3.0 to work properly.
+- You must copy the recording/alerting rules in [PrometheusRule](https://github.com/kubesphere/ks-installer/tree/release-3.3/roles/ks-monitor/files/prometheus/kubernetes/kubernetes-prometheusRule.yaml) and [PrometheusRule for etcd](https://github.com/kubesphere/ks-installer/tree/release-3.3/roles/ks-monitor/files/prometheus/etcd/prometheus-rulesEtcd.yaml) to your Prometheus config for KubeSphere v3.3.0 to work properly.
 
-- Configure your Prometheus to scrape metrics from the same targets as that in [serviceMonitor](https://github.com/kubesphere/ks-prometheus/tree/release-3.3/manifests) of each component.
+- Configure your Prometheus to scrape metrics from the same targets as that in [serviceMonitor](https://github.com/kubesphere/ks-installer/tree/release-3.3/roles/ks-monitor/files/prometheus/) of each component.
 
 {{</ notice >}}
 
-1. Obtain `ks-prometheus` that KubeSphere v3.3.0 uses.
+1. Obtain `ks-installer` that KubeSphere v3.3.0 uses.
 
    ```bash
-   cd ~ && git clone -b release-3.3 https://github.com/kubesphere/ks-prometheus.git && cd ks-prometheus
+   cd ~ && git clone -b release-3.3 https://github.com/kubesphere/ks-installer.git && cd ks-installer/roles/ks-monitor/files/prometheus
    ```
 
-2. Configure `kustomization.yaml` and retain the following content only.
+2. Create `kustomization.yaml`, fill the following content.
 
    ```yaml
    apiVersion: kustomize.config.k8s.io/v1beta1
    kind: Kustomization
    namespace: <your own namespace>
    resources:
-   - ./manifests/alertmanager/alertmanager-secret.yaml
-   - ./manifests/etcd/prometheus-rulesEtcd.yaml
-   - ./manifests/kube-state-metrics/kube-state-metrics-serviceMonitor.yaml
-   - ./manifests/kubernetes/kubernetes-prometheusRule.yaml
-   - ./manifests/kubernetes/kubernetes-serviceKubeControllerManager.yaml
-   - ./manifests/kubernetes/kubernetes-serviceKubeScheduler.yaml
-   - ./manifests/kubernetes/kubernetes-serviceMonitorApiserver.yaml
-   - ./manifests/kubernetes/kubernetes-serviceMonitorCoreDNS.yaml
-   - ./manifests/kubernetes/kubernetes-serviceMonitorKubeControllerManager.yaml
-   - ./manifests/kubernetes/kubernetes-serviceMonitorKubeScheduler.yaml
-   - ./manifests/kubernetes/kubernetes-serviceMonitorKubelet.yaml
-   - ./manifests/node-exporter/node-exporter-serviceMonitor.yaml
-   - ./manifests/prometheus/prometheus-clusterRole.yaml
+   - ./alertmanager/alertmanager-secret.yaml
+   - ./etcd/prometheus-rulesEtcd.yaml
+   - ./kube-state-metrics/kube-state-metrics-serviceMonitor.yaml
+   - ./kubernetes/kubernetes-prometheusRule.yaml
+   - ./kubernetes/kubernetes-serviceKubeControllerManager.yaml
+   - ./kubernetes/kubernetes-serviceKubeScheduler.yaml
+   - ./kubernetes/kubernetes-serviceMonitorApiserver.yaml
+   - ./kubernetes/kubernetes-serviceMonitorCoreDNS.yaml
+   - ./kubernetes/kubernetes-serviceMonitorKubeControllerManager.yaml
+   - ./kubernetes/kubernetes-serviceMonitorKubeScheduler.yaml
+   - ./kubernetes/kubernetes-serviceMonitorKubelet.yaml
+   - ./node-exporter/node-exporter-serviceMonitor.yaml
+   - ./prometheus/prometheus-clusterRole.yaml
    ```
 
    {{< notice note >}}
 
    - Set the value of `namespace` to your own namespace in which the Prometheus stack is deployed. For example, it is `monitoring` if you install Prometheus in the `monitoring` namespace in Step 2.
-   - If you have enabled the alerting component for KubeSphere, retain `thanos-ruler` in the `kustomization.yaml` file.
+   - If you have enabled the alerting component for KubeSphere, supplement yaml paths of `thanos-ruler` into `kustomization.yaml`.
 
    {{</ notice >}}
 
