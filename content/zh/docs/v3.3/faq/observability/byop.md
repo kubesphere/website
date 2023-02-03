@@ -57,24 +57,31 @@ KubeSphere 3.3 已经过认证，可以与以下 Prometheus 堆栈组件搭配�
 
 {{</ notice >}}
 
-Prometheus 堆栈可以通过多种方式进行安装。下面的步骤演示如何使用 `ks-prometheus`（基于上游的 `kube-prometheus` 项目） 将 Prometheus 堆栈安装至命名空间 `monitoring` 中。
+Prometheus 堆栈可以通过多种方式进行安装。下面的步骤演示如何使用 [ks-installer 中的 Prometheus stack manifests](https://github.com/kubesphere/ks-installer/tree/release-3.3/roles/ks-monitor/files/prometheus) (其由 KubeSphere 基于 [kube-prometheus](https://github.com/prometheus-operator/kube-prometheus.git) 的定制版本生成) 将 Prometheus 堆栈安装至命名空间 `monitoring` 中。
 
-1. 获取 KubeSphere 3.3.0 所使用的 `ks-prometheus`。
+1. 获取 KubeSphere 3.3.0 所使用的 `ks-installer`。
 
    ```bash
-   cd ~ && git clone -b release-3.3 https://github.com/kubesphere/ks-prometheus.git && cd ks-prometheus
+   cd ~ && git clone -b release-3.3 https://github.com/kubesphere/ks-installer.git && cd ks-installer/roles/ks-monitor/files/prometheus
    ```
 
-2. 设置命名空间。
-
+2. 创建 `kustomization.yaml`:  
    ```bash
-   sed -i 's/kubesphere-monitoring-system/monitoring/g' kustomization.yaml
+   # create 
+   cat <<EOF > kustomization.yaml
+   apiVersion: kustomize.config.k8s.io/v1beta1
+   kind: Kustomization
+   namespace: monitoring
+   resources:
+   EOF
+   # append yaml paths
+   find . -mindepth 2 -name "*.yaml" -type f -print | sed 's/^/- /' >> kustomization.yaml
    ```
 
 3. （可选）移除不必要的组件。例如，KubeSphere 未启用 Grafana 时，可以删除 `kustomization.yaml` 中的 `grafana` 部分：
 
    ```bash
-   sed -i '/manifests\/grafana\//d' kustomization.yaml
+   sed -i '/grafana\//d' kustomization.yaml
    ```
 
 4. 安装堆栈。
@@ -87,50 +94,50 @@ Prometheus 堆栈可以通过多种方式进行安装。下面的步骤演示如
 
 {{< notice note >}}
 
-如果您的 Prometheus 堆栈是通过 `ks-prometheus` 进行安装，您可以跳过此步骤。
+如果您的 Prometheus 堆栈是通过 [ks-installer 中的 Prometheus stack manifests](https://github.com/kubesphere/ks-installer/tree/release-3.3/roles/ks-monitor/files/prometheus) 进行安装，您可以跳过此步骤。
 
 KubeSphere 3.3.0 使用 Prometheus Operator 来管理 Prometheus/Alertmanager 配置和生命周期、ServiceMonitor（用于管理抓取配置）和 PrometheusRule（用于管理 Prometheus 记录/告警规则）。
 
 如果您的 Prometheus 堆栈不是由 Prometheus Operator 进行管理，您可以跳过此步骤。但请务必确保：
 
-- 您必须将 [PrometheusRule](https://github.com/kubesphere/ks-prometheus/blob/release-3.3/manifests/kubernetes/kubernetes-prometheusRule.yaml) 和 [PrometheusRule for etcd](https://github.com/kubesphere/ks-prometheus/blob/release-3.3/manifests/etcd/prometheus-rulesEtcd.yaml) 中的记录/告警规则复制至您的 Prometheus 配置中，以便 KubeSphere 3.3.0 能够正常运行。
+- 您必须将 [PrometheusRule](https://github.com/kubesphere/ks-installer/tree/release-3.3/roles/ks-monitor/files/prometheus/kubernetes/kubernetes-prometheusRule.yaml) 和 [PrometheusRule for etcd](https://github.com/kubesphere/ks-installer/tree/release-3.3/roles/ks-monitor/files/prometheus/etcd/prometheus-rulesEtcd.yaml) 中的记录/告警规则复制至您的 Prometheus 配置中，以便 KubeSphere 3.3.0 能够正常运行。
 
-- 配置您的 Prometheus，使其抓取指标的目标 (Target) 与 各组件的 [serviceMonitor](https://github.com/kubesphere/ks-prometheus/tree/release-3.3/manifests) 文件中列出的目标相同。
+- 配置您的 Prometheus，使其抓取指标的目标 (Target) 与 各组件的 [serviceMonitor](https://github.com/kubesphere/ks-installer/tree/release-3.3/roles/ks-monitor/files/prometheus/) 文件中列出的目标相同。
 
 {{</ notice >}}
 
-1. 获取 KubeSphere 3.3.0 所使用的 `ks-prometheus`。
+1. 获取 KubeSphere 3.3.0 所使用的 `ks-installer`。
 
    ```bash
-   cd ~ && git clone -b release-3.3 https://github.com/kubesphere/ks-prometheus.git && cd ks-prometheus
+   cd ~ && git clone -b release-3.3 https://github.com/kubesphere/ks-installer.git && cd ks-installer/roles/ks-monitor/files/prometheus
    ```
 
-2. 设置 `kustomization.yaml`，仅保留如下内容。
+2. 创建 `kustomization.yaml`，填充如下内容。
 
    ```yaml
    apiVersion: kustomize.config.k8s.io/v1beta1
    kind: Kustomization
    namespace: <your own namespace>
    resources:
-   - ./manifests/alertmanager/alertmanager-secret.yaml
-   - ./manifests/etcd/prometheus-rulesEtcd.yaml
-   - ./manifests/kube-state-metrics/kube-state-metrics-serviceMonitor.yaml
-   - ./manifests/kubernetes/kubernetes-prometheusRule.yaml
-   - ./manifests/kubernetes/kubernetes-serviceKubeControllerManager.yaml
-   - ./manifests/kubernetes/kubernetes-serviceKubeScheduler.yaml
-   - ./manifests/kubernetes/kubernetes-serviceMonitorApiserver.yaml
-   - ./manifests/kubernetes/kubernetes-serviceMonitorCoreDNS.yaml
-   - ./manifests/kubernetes/kubernetes-serviceMonitorKubeControllerManager.yaml
-   - ./manifests/kubernetes/kubernetes-serviceMonitorKubeScheduler.yaml
-   - ./manifests/kubernetes/kubernetes-serviceMonitorKubelet.yaml
-   - ./manifests/node-exporter/node-exporter-serviceMonitor.yaml
-   - ./manifests/prometheus/prometheus-clusterRole.yaml
+   - ./alertmanager/alertmanager-secret.yaml
+   - ./etcd/prometheus-rulesEtcd.yaml
+   - ./kube-state-metrics/kube-state-metrics-serviceMonitor.yaml
+   - ./kubernetes/kubernetes-prometheusRule.yaml
+   - ./kubernetes/kubernetes-serviceKubeControllerManager.yaml
+   - ./kubernetes/kubernetes-serviceKubeScheduler.yaml
+   - ./kubernetes/kubernetes-serviceMonitorApiserver.yaml
+   - ./kubernetes/kubernetes-serviceMonitorCoreDNS.yaml
+   - ./kubernetes/kubernetes-serviceMonitorKubeControllerManager.yaml
+   - ./kubernetes/kubernetes-serviceMonitorKubeScheduler.yaml
+   - ./kubernetes/kubernetes-serviceMonitorKubelet.yaml
+   - ./node-exporter/node-exporter-serviceMonitor.yaml
+   - ./prometheus/prometheus-clusterRole.yaml
    ```
 
    {{< notice note >}}
 
    - 将此处 `namespace` 的值设置为您自己的命名空间。例如，如果您在步骤 2 将 Prometheus 安装在命名空间 `monitoring` 中，这里即为 `monitoring`。
-   - 如果您启用了 KubeSphere 的告警，还需要保留 `kustomization.yaml` 中的 `thanos-ruler` 部分。
+   - 如果您启用了 KubeSphere 的告警，还需要将 `thanos-ruler` 的 yaml 文件路径补充到 `kustomization.yaml` 中。
 
    {{</ notice >}}
 
