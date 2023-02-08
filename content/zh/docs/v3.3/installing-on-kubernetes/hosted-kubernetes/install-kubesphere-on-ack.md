@@ -7,7 +7,7 @@ description: "了解如何在阿里云容器服务 ACK 上部署 KubeSphere。"
 weight: 4250
 ---
 
-本指南将介绍如果在[阿里云容器服务 ACK](https://www.aliyun.com/product/kubernetes/) 上部署并使用 KubeSphere 3.3 平台。
+本指南将介绍如何在[阿里云容器服务 ACK](https://www.aliyun.com/product/kubernetes/) 上部署并使用 KubeSphere 3.3 平台。
 
 ## 阿里云 ACK 环境准备
 
@@ -31,7 +31,7 @@ weight: 4250
 
 ![create-ack-cluster](/images/docs/v3.3/zh-cn/installing-on-kubernetes/hosted-kubernetes/install-kubesphere-on-ack/create-ack-cluster.png)
 
-说明：配置集群名称、选择 Kubernetes版本、容器运行时版本等。
+说明：配置集群名称、选择 Kubernetes 版本、容器运行时版本等。
 
 
 
@@ -53,7 +53,7 @@ weight: 4250
 
 {{< notice warning >}}
 
-由于阿里云 Prometheus node-exporter端口与 KubeSphere冲突，这里不勾选 Prometheus 监控服务， 不安装阿里云 Prometheus 组件。
+由于阿里云 Prometheus node-exporter 端口与 KubeSphere 冲突，这里不勾选 Prometheus 监控服务， 不安装阿里云 Prometheus 组件。
 
 {{</ notice >}}
 
@@ -107,17 +107,17 @@ alicloud-disk-ssd          diskplugin.csi.alibabacloud.com   Delete          Imm
 alicloud-disk-topology     diskplugin.csi.alibabacloud.com   Delete          WaitForFirstConsumer   true                   14m
 ```
 
-容器服务Kubernetes版（ACK）集群默认提供了以下几种StorageClass：
+容器服务 Kubernetes 版（ACK）集群默认提供了以下几种 StorageClass：
 
 - alicloud-disk-efficiency：高效云盘。
-- alicloud-disk-ssd：SSD云盘。
-- alicloud-disk-essd：ESSD云盘。
-- alicloud-disk-available：提供高可用选项，优先创建SSD云盘；如果SSD云盘售尽，则创建高效云盘。
-- alicloud-disk-topology: 使用延迟绑定的方式创建云盘。
+- alicloud-disk-ssd：SSD 云盘。
+- alicloud-disk-essd：ESSD 云盘。
+- alicloud-disk-available：提供高可用选项，优先创建 SSD 云盘；如果 SSD 云盘售尽，则创建高效云盘。
+- alicloud-disk-topology：使用延迟绑定的方式创建云盘。
 
-**指定默认StorageClass**
+**指定默认 StorageClass **
 
-本次使用alicloud-disk-efficiency，注意申请高效云盘时申请的PV大小不得小于20G。
+本次使用 alicloud-disk-efficiency，注意申请高效云盘时申请的 PV 大小不得小于20G。
 
 ```bash
 kubectl patch sc alicloud-disk-efficiency -p '{"metadata": {"annotations": {"storageclass.beta.kubernetes.io/is-default-class": "true"}}}'
@@ -137,7 +137,7 @@ alicloud-disk-topology               diskplugin.csi.alibabacloud.com   Delete   
 
 
 
-### 最小化部署kubesphere
+### 最小化部署 kubesphere
 
 1.使用 [ks-installer](https://github.com/kubesphere/ks-installer) 在已有的 Kubernetes 集群上来部署 KubeSphere，下载 YAML 文件:
 
@@ -150,7 +150,7 @@ wget https://github.com/kubesphere/ks-installer/releases/download/v3.3.1/cluster
 
 {{< notice warning >}}
 
-由于阿里云 ACK 高效磁盘最小申请大小为20G，所以挂载的PV申请的容量大小不能小于该值，参考以下配置修改cluster-configuration.yaml。
+由于阿里云 ACK 高效磁盘最小申请大小为20G，所以挂载的 PV 申请的容量大小不能小于该值，参考以下配置修改 cluster-configuration.yaml。
 
 {{</ notice >}}
 
@@ -228,6 +228,6 @@ https://kubesphere.io             2020-xx-xx xx:xx:xx
 
 {{< notice warning >}}
 
-由于阿里云 ACK 已经在 kube-system命名空间部署 Metrics-server，请勿开启 KubeSphere metrics-server插件，否则部署失败。
+由于阿里云 ACK 已经在 kube-system 命名空间部署 Metrics-server，请勿开启 KubeSphere metrics-server 插件，否则部署失败。
 
 {{</ notice >}}
