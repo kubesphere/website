@@ -76,33 +76,33 @@ members:
 activities:
   videos:
     - image: https://pek3b.qingstor.com/kubesphere-community/images/multicluster-cover.png
-      link: https://kubesphere.com.cn/live/multicluster-chengdu/
+      link: https://kubesphere.io/zh/live/multicluster-chengdu/
 
     - image: https://pek3b.qingstor.com/kubesphere-community/images/ai-cic-cover.png
-      link: https://kubesphere.com.cn/live/ai-cic/
+      link: https://kubesphere.io/zh/live/ai-cic/
 
     - image: https://pek3b.qingstor.com/kubesphere-community/images/hpa-cover.png
-      link: https://kubesphere.com.cn/live/hpa-chengdu/
+      link: https://kubesphere.io/zh/live/hpa-chengdu/
 
     - image: https://pek3b.qingstor.com/kubesphere-community/images/cloudnative-chengdu-20220514-cover.png
-      link: https://kubesphere.com.cn/live/meetup-chengdu-20220514/
+      link: https://kubesphere.io/zh/live/meetup-chengdu-20220514/
 
   review:
     - text: 马上消费金融基于 KubeSphere 的 AI 平台的开发实践
       description: 本主题从 AI 平台业务架构，开发痛点等切入，介绍了引入 KubeSphere 的原因、过程、收获等；进而介绍了 KubeSphere 的部署架构、配置原理、二次开发等，力求打消 KubeSphere 的神秘感。
-      link: https://kubesphere.com.cn/case/msxf/
+      link: https://kubesphere.io/zh/case/msxf/
       
     - text: 长虹电器基于 Kubernetes 的弹性伸缩与金丝雀发布实践
       description: 本文是 2021 KubeSphere Meetup 成都站讲师娄举分享内容整理而成，分享了长虹智能电视增值平台项目基础架构如何借助 KubeSphere 从旧有的传统模式迁移到 Kubernetes，以及使用 KubeSphere 如何进行弹性伸缩和金丝雀发布。
-      link: https://kubesphere.com.cn/blogs/changhong-kubernetes-autoscaling-canaryrelease/
+      link: https://kubesphere.io/zh/blogs/changhong-kubernetes-autoscaling-canaryrelease/
 
     - text: Kubernetes client-go 源码分析 - Indexer & ThreadSafeStore
       description: Indexer 主要依赖于 ThreadSafeStore 实现，是 client-go 提供的一种缓存机制，通过检索本地缓存可以有效降低 apiserver 的压力，本文详细解读了 Indexer 和对应的 ThreadSafeStore 的实现。
-      link: https://kubesphere.com.cn/blogs/kubernetes-client-go-indexer-threadsafestore/
+      link: https://kubesphere.io/zh/blogs/kubernetes-client-go-indexer-threadsafestore/
 
     - text: Kubernetes client-go 源码分析 - workqueue
       description: 本文详细研究了 Kubernetes client-go workqueue 的相关代码。
-      link: https://kubesphere.com.cn/blogs/kubernetes-client-go-workqueue/
+      link: https://kubesphere.io/zh/blogs/kubernetes-client-go-workqueue/
 
 
 

@@ -71,16 +71,16 @@ members:
 activities:
   videos:
     - image: https://pek3b.qingstor.com/kubesphere-community/images/driverless-cic-cover.png
-      link: https://kubesphere.com.cn/live/driverless-cic/
+      link: https://kubesphere.io/zh/live/driverless-cic/
 
     - image: https://pek3b.qingstor.com/kubesphere-community/images/uisee0916-live-cover.png
-      link: https://kubesphere.com.cn/live/uisee0916-live/
+      link: https://kubesphere.io/zh/live/uisee0916-live/
 
     - image: https://pek3b.qingstor.com/kubesphere-community/images/uisee0923-live-cover.png
-      link: https://kubesphere.com.cn/live/uisee0923-live/
+      link: https://kubesphere.io/zh/live/uisee0923-live/
 
     - image: https://pek3b.qingstor.com/kubesphere-community/images/mqtt1230-live-cover.png
-      link: https://kubesphere.com.cn/live/mqtt1230-live/
+      link: https://kubesphere.io/zh/live/mqtt1230-live/
 
   review:    
     - text: KubeSphere 使用 HTTPS 协议集成 Harbor 镜像仓库指南
@@ -93,17 +93,17 @@ activities:
 
     - text: 在 KubeSphere 中快速部署使用 GitLab 并构建 DevOps 项目
       description: 本次分享将和大家一起动手来实践一下在 KubeSphere 部署 GitLab CE（Community Edition 社区版）并构建与之联动的 DevOps 项目。
-      link: https://kubesphere.com.cn/blogs/kubesphere-gitlab-devops/
+      link: https://kubesphere.io/zh/blogs/kubesphere-gitlab-devops/
 
     - text: 在 Kubernetes 中安装和使用 Apache APISIX Ingress 网关
       description: 通过 KubeSphere 的应用管理能力快速使用 Apache APISIX Ingress Controller
-      link: https://kubesphere.com.cn/blogs/use-apache-apisix-ingress-in-kubesphere/
+      link: https://kubesphere.io/zh/blogs/use-apache-apisix-ingress-in-kubesphere/
 
     - text: 在 Kubernetes 中部署云原生开发工具 Nocalhost
       description: 本文将介绍如何在 KubeSphere 中快速部署 Nocalhost Server，用于提供一个帮助研发团队统一管理 Nocalhost 应用部署的管理平台。
-      link: https://kubesphere.com.cn/blogs/kubesphere-nocalhost/
+      link: https://kubesphere.io/zh/blogs/kubesphere-nocalhost/
 
     - text: 面向无人驾驶“云端大脑”可用性的云原生实践
       description: 本次分享介绍了驭势科技使用 KubeSphere 的历程，在云服务高可用方面自制 Operator 实现热备切换的工作，以及基于 SkyWalking 进行车云链路追踪的一些实践。
-      link: https://kubesphere.com.cn/case/uisee/
+      link: https://kubesphere.io/zh/case/uisee/
 ---
