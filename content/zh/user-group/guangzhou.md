@@ -76,10 +76,10 @@ members:
 activities:
   videos:
     - image: https://pek3b.qingstor.com/kubesphere-community/images/meetup-guangzhou-cover.jpeg
-      link: https://kubesphere.com.cn/live/meetup-guangzhou-20220806/
+      link: https://kubesphere.io/zh/live/meetup-guangzhou-20220806/
 
     - image: https://pek3b.qingstor.com/kubesphere-community/images/argocd0217-live-cover.png
-      link: https://kubesphere.com.cn/live/gitops-cic/
+      link: https://kubesphere.io/zh/live/gitops-cic/
 
   review:    
     - text: 负载均衡器 OpenELB ARP 欺骗技术解析
@@ -92,10 +92,10 @@ activities:
 
     - text: Argo CD 速度通关指南
       description: 本次直播将介绍 Argo CD，分享实践经验，结合测试环境案例，演示相应场景下的实验效果；让用户快速把握重点难点以及相应的思路和方向
-      link: https://kubesphere.com.cn/live/argocd0217-live/
+      link: https://kubesphere.io/zh/live/argocd0217-live/
 
     - text: 基于 Argo CD 的 GitOps 实践经验
       description: 通过 KubeSphere 的应用管理能力快速使用 Apache APISIX Ingress Controller
-      link: https://kubesphere.com.cn/blogs/gitops-argocd/
+      link: https://kubesphere.io/zh/blogs/gitops-argocd/
 
 ---

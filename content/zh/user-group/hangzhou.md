@@ -50,7 +50,7 @@ members:
   list:
     - name: 尹珉
       position: 站长
-      des: 杭州数跑科技运维工程师， KubeSphere 开源社区 Ambassador，云原生爱好者。
+      des: 杭州微宏科技有限公司运维主管， KubeSphere 开源社区 Ambassador，云原生爱好者。
       image: /images/user-group/hangzhou/yinmin.jpeg
 
     - name: 薛兴林
@@ -86,33 +86,33 @@ members:
 activities:
   videos:
     - image: https://pek3b.qingstor.com/kubesphere-community/images/meetup-hangzhou-20220827-cover.png
-      link: https://kubesphere.com.cn/live/meetup-hangzhou-20220827/
+      link: https://kubesphere.io/zh/live/meetup-hangzhou-20220827/
 
     - image: /images/user-group/shanghai/rotation/ex.png
-      link: https://kubesphere.com.cn/live/meetup-hangzhou1023/
+      link: https://kubesphere.io/zh/live/meetup-hangzhou1023/
 
     - image: /images/user-group/hangzhou/fudata-kubesphere-cover.png
-      link: https://kubesphere.com.cn/live/fudata-kubesphere/
+      link: https://kubesphere.io/zh/live/fudata-kubesphere/
 
     - image: http://pek3b.qingstor.com/kubesphere-community/images/zhijianglab-kubesphere-cover.png
-      link: https://kubesphere.com.cn/live/zhijianglab-kubesphere/
+      link: https://kubesphere.io/zh/live/zhijianglab-kubesphere/
 
   review:
     - text: 基于 JuiceFS 的 KubeSphere DevOps 项目数据迁移方案
       description: 本教程经过本地研发平台测试通过了使用开源项目 juiceFS-CSI 且后端依托 OSS 作为后端存储实现数据迁移的检验。
-      link: https://kubesphere.com.cn/blogs/kubesphere-data-migration-using-juicefs/
+      link: https://kubesphere.io/zh/blogs/kubesphere-data-migration-using-juicefs/
 
     - text: 使用 KubeKey 快速离线部署 KubeSphere 集群
       description: 本教程使用 KubeKey 2.0.0 作为部署工具来实现 KubeSphere 集群在离线环境中的部署。
-      link: https://kubesphere.com.cn/blogs/deploying-kubesphere-clusters-offline-with-kubekey/
+      link: https://kubesphere.io/zh/blogs/deploying-kubesphere-clusters-offline-with-kubekey/
 
     - text: Kubernetes 备份容灾服务产品体验教程
       description: KubeSphere Cloud 云原生备份容灾服务是 KubeSphere 团队针对混合云场景推出的 Kubernetes 备份容灾即服务产品。
-      link: https://kubesphere.com.cn/blogs/k8s-backup-disater-recovery-service/
+      link: https://kubesphere.io/zh/blogs/k8s-backup-disater-recovery-service/
       
     - text: 在 Kubernetes 中使用 Rook 构建云原生存储环境
       description: 本文将介绍如何使用 Rook 来创建维护 Ceph 集群，并作为 Kubernetes 的持久化存储。
-      link: https://kubesphere.com.cn/blogs/rook-on-kubesphere/
+      link: https://kubesphere.io/zh/blogs/rook-on-kubesphere/
 
 
 ---
