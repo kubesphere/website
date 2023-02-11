@@ -1,5 +1,5 @@
 ---
-title: '基于 KubeSphere 玩转 K8s｜如何修复 KubeSphere 内置 Jenkins 的 Apache Log4j2 漏洞'
+title: '修复 KubeSphere 内置 Jenkins 的 Apache Log4j2 漏洞'
 tag: 'KubeSphere, Kubernetes, Log4j2'
 keywords: 'KubeSphere, Kubernetes, Log4j2, Jenkins'
 description: '本文以修复 Jenkins 存在的 Apache Log4j2 漏洞为背景，介绍了修复该漏洞的两种解决方案。并且，初步探究了在 KubeSphere 中集成的 Jenkins 如何自定义构建镜像以及如何升级更新。'
