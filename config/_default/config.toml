@@ -37,6 +37,9 @@ linkedinLink = "https://www.linkedin.com/company/kubesphere/"
 DemoLinkEn = "https://kubesphere.cloud/en/console/managed-cluster/"
 DemoLinkZh = "https://kubesphere.cloud/console/managed-cluster/"
 
+baiduAnalyticsID = "2ce8cd34a797c71de60aa07dd2ea7686"
+googleAnalyticsID = "G-YYCVN36HT5"
+
 [languages.en]
 contentDir = "content/en"
 weight = 1
@@ -50,6 +53,10 @@ keywords = "KubeSphere, Kubernetes, container platform, DevOps, hybrid cloud, cl
 snapshot = "/images/common/snapshot-en.png"
 useSendcloud = false
 mailchimpSubscribeUrl = "https://kubesphere.us10.list-manage.com/subscribe/post?u=c85ea2b944b08b951f607bdd4&id=83f673a2d9"
+hotjarTracking = true
+youtubeLink = "https://www.youtube.com/c/KubeSphere"
+addLinkedin = true
+addTwitter = true
 
 [[languages.en.menu.main]]
 weight = 2
@@ -203,6 +210,8 @@ keywords = "KubeSphere, Kubernetes, 容器平台, DevOps, 混合云"
 snapshot = "/images/common/snapshot-zh.png"
 useSendcloud = true
 mailchimpSubscribeUrl = "https://www.sendcloud.net/v3/api/subInvite/subscription?invitecode=1dc5a4fb-894c-4470-b01d-ca7fa9d47a46"
+showCaseNumber = true
+bilibiliLink = "https://space.bilibili.com/438908638"
 
 [[languages.zh.menu.main]]
 weight = 2
