@@ -55,18 +55,18 @@ section2:
             text: DevOps 持续集成部署
             level: 3
         - content: 在使用 KubeSphere 之前公司公有云服务都部署在超融合服务器环境，使用 GitLab 的 CI 能力，在 Rancher 上发布服务。开发测试环境开发人员进行代码编译打包然后发布，生产环境开发人员打 tag 推送镜像，然后统一由运维人员使用 Rancher 进行发布部署。CI/CD 流程架构图如下：
-      image: http://pek3b.qingstor.com/kubesphere-community/images/jyzl-1.png
+      image: https://pek3b.qingstor.com/kubesphere-community/images/jyzl-1.png
     - title:
       contentList:
         - content: 改用 KubeSphere 后开发人员集成发布在 KubeSphere DevOps 项目里完成整个流程的编辑运行查看等操作。基于 Jenkins 脚本编排流水线，生产环境由运维人员进行 DevOps 项目授权操作。操作起来更流畅，能实现更复杂的流水线编排，但 Jenkins 容器镜像相对较大会吃资源一点。基于 KubepShere CI/CD 流程架构图如下：
-      image: http://pek3b.qingstor.com/kubesphere-community/images/jyzl-2.png
+      image: https://pek3b.qingstor.com/kubesphere-community/images/jyzl-2.png
     - title:
       contentList:
         - specialContent:
             text: 日志与监控
             level: 3
         - content: 
-      image: http://pek3b.qingstor.com/kubesphere-community/images/jyzl-3.png
+      image: https://pek3b.qingstor.com/kubesphere-community/images/jyzl-3.png
     - title:
       contentList:
         - content: 日志监控采用更为轻量的 Loki 系统组件来采集处理，并用 Grafana 进行可视化展示，监控使用 Prometheus，同样使用 Grafana 来展示。
