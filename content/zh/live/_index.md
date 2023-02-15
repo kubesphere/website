@@ -13,16 +13,16 @@ section2:
   url: ./gitops0111-live/
 
   notice:
-    title: 华能信托核心业务系统 Kubernetes 落地实践
-    tag: 结束
-    time: 2022 年 12 月 29 日晚 8 点
+    title: 浅聊 K8s 存储与 CSI
+    tag: 预告
+    time: 2023 年 02 月 16 日晚 8 点
     base: 线上
-    url: ./k8s1229-live/
+    url: ./csi0216-live/
 
   over:
-    title: Apache APISIX & KubeSphere 联合 Meetup
+    title: 华能信托核心业务系统 Kubernetes 落地实践
     tag: 结束
-    url: ./apisix-kubesphere-meetup1022/
+    url: ./k8s1229-live/
 
 section3:
   videos:
