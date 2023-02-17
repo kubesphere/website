@@ -150,6 +150,8 @@ section3:
           icon: '/images/home/section6-aviation-industry-corporation-of-china.jpg'
         - name: 'crrc'
           icon: '/images/case/logo-crrc.png'
+        - name: 'keyenlinx'
+          icon: '/images/case/logo-keyenlinx.png'
 
     - name: 'Energy'
       children:

@@ -92,6 +92,10 @@ section2:
       content: "vesoft inc. 成立于 2018 年 10 月，是一家科技型创业公司。"
       link: "vesoft/"
 
+    - icon: "images/case/logo-keyenlinx.png"
+      content: "技研智联是一家专注于为纺织企业提供自动化控制系统软件、工业互联网应用平台、数字化转型与智能制造整体解决方案的高新技术企业。"
+      link: "keyenlinx/"
+
 section3:
   title: 'KubeSphere 助力各行各业'
   tip: 全部
@@ -202,6 +206,8 @@ section3:
           icon: '/images/home/section6-aviation-industry-corporation-of-china.jpg'
         - name: 'crrc'
           icon: '/images/case/logo-crrc.png'
+        - name: 'keyenlinx'
+          icon: '/images/case/logo-keyenlinx.png'
 
     - name: '能源'
       children:
