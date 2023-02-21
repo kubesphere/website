@@ -18,15 +18,15 @@ section2:
 
     - title: 背景介绍
       contentList:
-        - content: 在使用 Kubernetes 之前，公司一直是采用超融合传统虚拟机的方式来部署上线项目，这就导致公司资源浪费非常严重，每年单单在服务器的开销就大大增加。在使用 Kubernetes 之前，公司一直是采用超融合传统虚拟机的方式来部署上线项目，这就导致公司资源浪费非常严重，每年单单在服务器的开销就大大增加。
+        - content: 在使用 Kubernetes 之前，公司一直是采用超融合传统虚拟机的方式来部署上线项目，这就导致公司资源浪费非常严重，每年单单在服务器的开销就大大增加。项目在上线的过程中出错的几率非常大，并且难以排查，没有一套规范的流程，需要开发人员手动部署，导致人员消耗非常严重。
         - content: 目前公司拥有 3000+ 的员工，其中研发团队（运维，开发，测试，产品等）超过 300 人，在苏州，湖北都有研发团队。
-        - content: 目前行业正在向自动化、云原生靠近，传统的互联网模式已经无法满足大公司的业务需求了，为了让开发人员将更多的精力放在业务上，自动化部署、项目的全方位监控就变得越来越重要。目前公司云原生是刚刚起步，很多东西需要去探索发现，所以技术上有很多欠缺，需要非常细致的理解各个组件的运行原理和模式。
+        - content: 目前行业正在向自动化、云原生靠近，传统的互联网模式已经无法满足大公司的业务需求了，为了让开发人员将更多的精力放在业务上，自动化部署、项目的全方位监控就变得越来越重要。目前公司云原生是刚刚起步，很多东西需要去探索发现，所以技术上有很多欠缺，需要非常细致地理解各个组件的运行原理和模式。
       image: 
 
     - title: 选型
       contentList:
         - content: 在使用 KubeSphere 之前，我们也使用了很多其他的项目，如 KubeOperator，DaoCloud，Choerodon等。但是在使用过程中发现，其他工具的功能并不是很完善，遇到问题很难排查，社区也不是很活跃，这就导致我们的使用成本和维护成本大大增加。
-        - content: 经过实践使用 KubeSphere 搭建的集群更加稳定，资源管控更加便捷，与同类云原生产品相比，KubeSphere 几乎实现了我们在生产环境会用到的所有功能。于是我们就开始在测试环境搭建并使用，随后慢慢地向生产环境迁移。目前我们公司有三分一的项目已经迁移到 KubeSphere 平台上，并且回收了之前的旧服务器，大大提高了资源使用率。
+        - content: 经过实践使用 KubeSphere 搭建的集群更加稳定，资源管控更加便捷，与同类云原生产品相比，KubeSphere 几乎实现了我们在生产环境会用到的所有功能。于是我们就开始在测试环境搭建并使用，随后慢慢地向生产环境迁移。目前我们公司有三分之一的项目已经迁移到 KubeSphere 平台上，并且回收了之前的旧服务器，大大提高了资源使用率。
       image: 
 
     - type: 1
@@ -41,12 +41,12 @@ section2:
             text: 基础设施与部署架构
             level: 3
         - content: 目前我们使用私有环境来搭建 Kubernetes 与 KubeSphere，因为是在我们内部使用，所以不考虑在云上进行搭建。
-        - content: 基础服务器采用的是 Linux Centos 7，内核版本是 5.6。
+        - content: 基础服务器采用的是 Linux CentOS 7，内核版本是 5.6。
         - content: 在搭建 Kubernetes 集群时，我选择使用 Keepalived 和 HAproxy 创建高可用 Kubernetes 集群，其中包括两个负载均衡入口。
       image: https://pek3b.qingstor.com/kubesphere-community/images/kubesphere-yiheda-2.png
     - title:
       contentList:
-        - content: 然后是 3 个 Master 节点，3 个 Worker 节点，一个 Etcd 集群，因为是多集群，我会为公司每个项目创建一个集群，所有我们单个集群分配的资源不是很多，当资源不够使用时需要进行申请。
+        - content: 然后是 3 个 Master 节点，3 个 Worker 节点，一个 Etcd 集群，因为是多集群，我会为公司每个项目创建一个集群，所以我们单个集群分配的资源不是很多，当资源不够使用时需要进行申请。
       image: https://pek3b.qingstor.com/kubesphere-community/images/kubesphere-yiheda-3.png
     - title:
       contentList:
