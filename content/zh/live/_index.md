@@ -9,23 +9,30 @@ section1:
   image: /images/live/background.jpg
 
 section2:
-  image: /images/live/cloudnative-live-20230111.png
-  url: ./gitops0111-live/
+  image: /images/live/cloudnative-live-20230216.png
+  url: ./csi0216-live/
 
   notice:
-    title: 浅聊 K8s 存储与 CSI
+    title: 使用 eBPF 零成本落地分布式追踪
     tag: 预告
-    time: 2023 年 02 月 16 日晚 8 点
+    time: 2023 年 02 月 23 日晚 8 点
     base: 线上
-    url: ./csi0216-live/
+    url: ./ebpf0223-live/
 
   over:
-    title: 华能信托核心业务系统 Kubernetes 落地实践
+    title: 借助 Argo CD 实现 GitOps 多环境管理
     tag: 结束
-    url: ./k8s1229-live/
+    url: ./gitops0111-live/
 
 section3:
   videos:
+    - title: 浅聊 K8s 存储与 CSI
+      link: ./csi0216-live/
+      snapshot: https://pek3b.qingstor.com/kubesphere-community/images/csi0216-live-cover.png
+      type: iframe
+      createTime: 2023.02.16
+      group: 直播回放
+
     - title: 借助 Argo CD 实现 GitOps 多环境管理
       link: ./gitops0111-live/
       snapshot: https://pek3b.qingstor.com/kubesphere-community/images/gitops0111-live-cover.png
