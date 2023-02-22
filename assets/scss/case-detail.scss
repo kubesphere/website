@@ -66,6 +66,15 @@
           line-height: 1.75;
           letter-spacing: -0.04px;
           color: #919aa3;
+
+          code {
+            color: #36435c;
+            padding: 0.2em 0.4em;
+            margin: 0;
+            font-size: 85%;
+            background-color: #1B1F230A;
+            border-radius: 3px;
+          }
         }
 
         &>a {

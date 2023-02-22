@@ -58,7 +58,7 @@
               {{ end }}
               {{ if isset $index "content" }}
                 {{ with $index.content }}
-                  <p>{{ . }}</p>
+                  <p>{{ . | markdownify }}</p>
                 {{ end }}
               {{ end }}
             {{ end }}
