@@ -25,7 +25,7 @@ section2:
 
     - title: 选型
       contentList:
-        - content: 在使用 KubeSphere 之前，我们也使用了很多其他的项目，如 KubeOperator，DaoCloud，Choerodon等。但是在使用过程中发现，其他工具的功能并不是很完善，遇到问题很难排查，社区也不是很活跃，这就导致我们的使用成本和维护成本大大增加。
+        - content: 在使用 KubeSphere 之前，我们也使用了很多其他的项目。但是在使用过程中发现，其他工具的功能并不是很完善，遇到问题很难排查，社区也不是很活跃，这就导致我们的使用成本和维护成本大大增加。
         - content: 经过实践使用 KubeSphere 搭建的集群更加稳定，资源管控更加便捷，与同类云原生产品相比，KubeSphere 几乎实现了我们在生产环境会用到的所有功能。于是我们就开始在测试环境搭建并使用，随后慢慢地向生产环境迁移。目前我们公司有三分之一的项目已经迁移到 KubeSphere 平台上，并且回收了之前的旧服务器，大大提高了资源使用率。
       image: 
 
@@ -82,7 +82,7 @@ section2:
             level: 3
         - content: 我们搭建了一套 EFK 的日志系统，通过 Filebeat 收集服务端的数据，再通过 Kafka 发送到 es 中，然后通过 Kibana 查询日志数据，另外我们增加了一套 SkyWalking，它会给我们生成一个链路 ID，这样我们就可以根据这个链路 ID 直接查找当前请求下的所有日志。
         - content: 在监控方面除了 KubeSphere 自带的监控之外，我们还用了一套外部的监控系统：
-        - content: 主机层面：Prometheus + General
+        - content: 主机层面：Prometheus + Grafana
         - content: 服务层面：SkyWalking
         - content: 包括服状态的监控以及所有的告警
       image: https://pek3b.qingstor.com/kubesphere-community/images/kubesphere-yiheda-8.png
