@@ -152,6 +152,8 @@ section3:
           icon: '/images/case/logo-crrc.png'
         - name: 'keyenlinx'
           icon: '/images/case/logo-keyenlinx.png'
+        - name: 'yiheda'
+          icon: '/images/case/logo-yiheda.png'
 
     - name: 'Energy'
       children:

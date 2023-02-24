@@ -96,6 +96,10 @@ section2:
       content: "技研智联是一家专注于为纺织企业提供自动化控制系统软件、工业互联网应用平台、数字化转型与智能制造整体解决方案的高新技术企业。"
       link: "keyenlinx/"
 
+    - icon: "images/case/logo-yiheda.png"
+      content: "怡合达自动化专业从事自动化零部件研发、生产和销售，提供 FA 工厂自动化零部件一站式供应。"
+      link: "yiheda/"
+
 section3:
   title: 'KubeSphere 助力各行各业'
   tip: 全部
@@ -208,6 +212,8 @@ section3:
           icon: '/images/case/logo-crrc.png'
         - name: 'keyenlinx'
           icon: '/images/case/logo-keyenlinx.png'
+        - name: 'yiheda'
+          icon: '/images/case/logo-yiheda.png'
 
     - name: '能源'
       children:
