@@ -18,7 +18,7 @@ section2:
 
     - title: 背景介绍
       contentList:
-        - content: 各子公司引入物联网业务初期，分为两个团队，独立开发各自业务，资源分配上也是以满足当前业务需求为主，要求能快速开发功能，快速上线，人员投入相对较多，因项目开发较早，技术选型相互独立，系统架构独立设计，大豆电子以 Spring boot 为主，蜜连科技以 Python Flask 为主，搭配 Golang 做中间件消息处理。
+        - content: 各子公司引入物联网业务初期，分为两个团队，独立开发各自业务，资源分配上也是以满足当前业务需求为主，要求能快速开发功能，快速上线，人员投入相对较多，因项目开发较早，技术选型相互独立，系统架构独立设计，大豆电子以 Spring Boot 为主，蜜连科技以 Python Flask 为主，搭配 Golang 做中间件消息处理。
         - content: 随着业务交叉重合增多，旧的体系架构存在如下弊端：
         - content: 各子公司独立开发，业务直接部署在 ECS 运行；
         - content: 数据层相互独立部署在单独的 ECS 中使用；
@@ -41,7 +41,7 @@ section2:
         - content: KubeSphere 管理界面对比 K8s 简洁明了，操作方便；
         - content: KubeSphere 提供 Kubekey 快速集群搭建，只需要简单的几个配置修改，便可完成 K8s 集群，KubeSphere 管理页面等众多复杂的安装部署工作；
         - content: KubeSphere 为国内开源项目，提供丰富的示例文档、视频教程、开源社区等，出现问题时更快速的找到解决方案。
-        - content: 目前，我同新业务使用 SpringCloud 微服务业务进 KubeSphere 生产集群、 KubeSphere 测试集群来满足我司业务的开展，使用 GitLab+Harbor+KubeSphere 提供的 DevOps，实现 CI/CD，实现快速部署，高效监看。
+        - content: 目前，我司新业务使用 SpringCloud 微服务业务进 KubeSphere 生产集群、KubeSphere 测试集群来满足我司业务的开展，使用 GitLab+Harbor+KubeSphere 提供的 DevOps，实现 CI/CD，实现快速部署，高效监看。
       image: 
 
     - type: 1
@@ -82,7 +82,7 @@ section2:
         - specialContent:
             text: 系统架构图
             level: 3
-        - content: 采用标准 Springboot 微服务架构，业务层、中间件层、数据层、CI/CD 均使用 KubeSphere 进行部署，使用 K8s 标准存储类进行数据存储，中间件及数据层的配置数据及加密数据，则使用 K8s 配置字典和保密字典。
+        - content: 采用标准 Spring Boot 微服务架构，业务层、中间件层、数据层、CI/CD 均使用 KubeSphere 进行部署，使用 K8s 标准存储类进行数据存储，中间件及数据层的配置数据及加密数据，则使用 K8s 配置字典和保密字典。
       image: https://pek3b.qingstor.com/kubesphere-community/images/kubesphere-hsh-3.png
     - title:
       contentList:
@@ -101,7 +101,7 @@ section2:
       contentList:
         - content: CI/CD 简述：
         - content: 开发人员提交代码；
-        - content: Gitlab 触发推送事件；
+        - content: GitLab 触发推送事件；
         - content: GitLab 调用回调钩子触发 Jenkins 构建任务；
         - content: Jenkins 根据构建任务中流水线脚本进行任务执行，拉取代码、Maven 编译、Docker 构建、Docker 推送 Harbor、执行部署脚本、企业微信通知。
         - content: CI/CD 工作流：
@@ -112,7 +112,7 @@ section2:
             text: 日志系统
             level: 3
         - content: 一部分，集群运行日志及容器运行日志，采用 KubeSphere 默认提供的 ES 进行收集存储；
-        - content: API 业务部分日志采用 logstash + ElasticSearch 进行收集落盘，采用 kibana 进行日志读取及查看。
+        - content: API 业务部分日志采用 logstash + Elasticsearch 进行收集落盘，采用 Kibana 进行日志读取及查看。
       image: 
 
     - title: 使用效果
