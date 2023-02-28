@@ -22,7 +22,7 @@ You've completed all steps in [Tutorial 1](admin-quick-start.md).
 
 ![](https://pek3b.qingstor.com/kubesphere-docs/png/20190717133759.png)
 
-1.2. Fill in the basic information, name it as demo-repo and input the URL with `https://helm-chart-repo.pek3a.qingstor.com/kubernetes-charts/`, you can validate if this URL is available, choose **OK** when you've done.
+1.2. Fill in the basic information, name it as demo-repo and input the URL with `https://charts.kubesphere.io/main`, you can validate if this URL is available, choose **OK** when you've done.
 
 ![](https://pek3b.qingstor.com/kubesphere-docs/png/20190717134319.png)
 

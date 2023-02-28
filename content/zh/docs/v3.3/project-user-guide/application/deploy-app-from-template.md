@@ -22,7 +22,7 @@ weight: 10120
 
 1. 以 `ws-admin` 用户登录 KubeSphere Web 控制台。在您的企业空间中，进入**应用管理**下的**应用仓库**页面，并点击**添加**。
 
-2. 在弹出的对话框中，将应用仓库名称设置为 `test-repo`，将应用仓库的 URL 设置为 `https://helm-chart-repo.pek3a.qingstor.com/kubernetes-charts/`。点击**验证**对 URL 进行验证，根据您的需要设置**同步间隔**，再点击**确定**。
+2. 在弹出的对话框中，将应用仓库名称设置为 `test-repo`，将应用仓库的 URL 设置为 `https://charts.kubesphere.io/main`。点击**验证**对 URL 进行验证，根据您的需要设置**同步间隔**，再点击**确定**。
 
 3. 应用仓库导入成功后会显示在列表中。
 
@@ -30,7 +30,7 @@ weight: 10120
 
    有关添加私有仓库时的更多参数信息，请参见[导入 Helm 仓库](../../../workspace-administration/app-repository/import-helm-repository/)。
 
-   {{</ notice >}} 
+   {{</ notice >}}
 
 ### 步骤 2：从应用模板部署应用
 
