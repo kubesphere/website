@@ -100,6 +100,10 @@ section2:
       content: "怡合达自动化专业从事自动化零部件研发、生产和销售，提供 FA 工厂自动化零部件一站式供应。"
       link: "yiheda/"
 
+    - icon: "images/case/logo-hsh.png"
+      content: "好上好信息是中国大陆一家致力于为中国智造提供全面支持的综合服务商。"
+      link: "bobinfo/"
+
 section3:
   title: 'KubeSphere 助力各行各业'
   tip: 全部
@@ -214,6 +218,8 @@ section3:
           icon: '/images/case/logo-keyenlinx.png'
         - name: 'yiheda'
           icon: '/images/case/logo-yiheda.png'
+        - name: 'bobinfo'
+          icon: '/images/case/logo-hsh.png'
 
     - name: '能源'
       children:

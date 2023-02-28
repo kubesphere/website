@@ -154,6 +154,8 @@ section3:
           icon: '/images/case/logo-keyenlinx.png'
         - name: 'yiheda'
           icon: '/images/case/logo-yiheda.png'
+        - name: 'bobinfo'
+          icon: '/images/case/logo-hsh.png'
 
     - name: 'Energy'
       children:
