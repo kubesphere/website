@@ -9,15 +9,15 @@ section1:
   image: /images/live/background.jpg
 
 section2:
-  image: /images/live/cloudnative-live-20230216.png
-  url: ./csi0216-live/
+  image: /images/live/cloudnative-live-20230223.png
+  url: ./ebpf0223-live/
 
   notice:
-    title: 使用 eBPF 零成本落地分布式追踪
-    tag: 预告
-    time: 2023 年 02 月 23 日晚 8 点
+    title: 浅聊 K8s 存储与 CSI
+    tag: 结束
+    time: 2023 年 02 月 16 日晚 8 点
     base: 线上
-    url: ./ebpf0223-live/
+    url: ./csi0216-live/
 
   over:
     title: 借助 Argo CD 实现 GitOps 多环境管理
@@ -26,6 +26,13 @@ section2:
 
 section3:
   videos:
+    - title: 使用 eBPF 零成本落地分布式追踪
+      link: ./ebpf0223-live/
+      snapshot: https://pek3b.qingstor.com/kubesphere-community/images/ebpf0223-live-cover.png
+      type: iframe
+      createTime: 2023.02.23
+      group: 直播回放
+
     - title: 浅聊 K8s 存储与 CSI
       link: ./csi0216-live/
       snapshot: https://pek3b.qingstor.com/kubesphere-community/images/csi0216-live-cover.png
