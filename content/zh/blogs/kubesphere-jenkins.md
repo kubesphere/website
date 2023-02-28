@@ -29,7 +29,7 @@ DevOps 与 Jenkins 集成紧密且优雅，从构建、部署到使用维护纯�
 
 ## 具体集成说明
 
-用户使用 KubeSphere 平台的 DevOps 功能时，调用 devops-api 发送请求，DevOps 收到请求后，部分请求直接调用 jenkins 进行操作，部分请求通过更新 devops-controller 监听的资源，通过 devops-controller 来操作 Jenkins。
+用户使用 KubeSphere 平台的 DevOps 功能时，调用 devops-api 发送请求，DevOps 收到请求后，部分请求直接调用 Jenkins 进行操作，部分请求通过更新 devops-controller 监听的资源，通过 devops-controller 来操作 Jenkins。
 
 运行流水线阶段，Jenkins 配置了 K8s 动态 slave：
 
@@ -144,7 +144,7 @@ KubeSphere 通过 ks-install 和 helm 都配置好了，无需单独配置。
 
 **使用：**
 
-以流水线为例，groovy 中添加以下字段会按照 `'base'` 去匹配 pod 的 lable，匹配到了会使用这个 label 的 pod 模板启动 pod 运行流水线，下面有两个 pipeline 脚本，第一个是选定了 pod 的模板的会启动一个 pod 来执行，第二个 any，如果设置了 master 节点为 `Only build jobs with label expressions matching this node` 将会启动 base pod 来运行，如果选择 `Use this node as much as possible` 则会在 Jenkins 自身的容器/服务器上运行，如果是普通 job 的话，勾选`Restrict where this project can be run` 且填写 `Label Expression` 选择要运行的 label，和 pipeline 类似。
+以流水线为例，groovy 中添加以下字段会按照 `'base'` 去匹配 pod 的 lable，匹配到了会使用这个 label 的 pod 模板启动 pod 运行流水线，下面有两个 pipeline 脚本，第一个是选定了 pod 的模板的会启动一个 pod 来执行，第二个 any，如果设置了 master 节点为 `Only build jobs with label expressions matching this node` 将会启动 base pod 来运行，如果选择 `Use this node as much as possible` 则会在 Jenkins 自身的容器/服务器上运行，如果是普通 job 的话，勾选`Restrict where this project can be run` 且填写 `Label Expression` 选择要运行的 lable，和 pipeline 类似。
 
 ```groovy
 pipeline {
@@ -214,7 +214,7 @@ Jenkins 使用驱动 K8s 实现动态 slave：
 
 ## 部署使用问题
 
-### 误删 apiserivice
+### 误删 apiservice
 
 ```bash
 kubectl delete --all apiservice
@@ -255,7 +255,7 @@ kubectl apply -f https://raw.githubusercontent.com/kubesphere/notification-manag
 
 ### JNLP 容器无法启动
 
-JNLP 是 Jenkin 的远程调用协议。
+JNLP 是 Jenkins 的远程调用协议。
 
 ```bash
 [root@k8s-1 ~]# kubectl logs -f  -n kubesphere-devops-worker base-w9dpq jnlp
@@ -313,7 +313,7 @@ INFO: Disabled agent engine reconnects.
 
 - `ks-installer/roles/ks-core/init-token/tasks/main.yaml` 生成一个随机值 secret；
 - 部署 KubeSphere 的时候初始化通过 `ks-installer/roles/ks-core/init-token/files/jwt-script/jwt.sh` 生成了一个 jwt token 入参为上面生成的字符串和 '{"email": "admin@kubesphere.io","username": "admin","token_type": "static_token"}'；
-- 通过生成的 token 和 secret 创建 secret 名为 kubesphere-secret；
+- 通过生成的 token 和 secret 创建名为 kubesphere-secret 的 secret；
 - 部署 DevOps 的时候将填入 `authentication.jwtSecret devops.password` 通过 helm 部署 DevOps；
 - 部署 Jenkin 的密码为写死的"P@ssw0rd"；
 - admin password 生成了一个随机的 22 位字符串写入 Jenkins pod 环境变了并通过读取 configmap devops-jenkins 启动 Jenkins。
