@@ -177,6 +177,8 @@ section3:
           icon: 'images/case/section6-sinodata.png'
         - name: 'turing'
           icon: 'images/case/logo-turing.png'
+        - name: 'pigeon'
+          icon: 'images/case/logo-pigeon.png'
 
     - name: '互联网'
       children:

@@ -112,7 +112,9 @@ section3:
         - name: 'zhongkejincai'
           icon: 'images/case/section6-sinodata.png'  
         - name: 'turing'
-          icon: 'images/case/logo-turing.png'    
+          icon: 'images/case/logo-turing.png'   
+        - name: 'pigeon'
+          icon: 'images/case/logo-pigeon.png' 
 
     - name: 'Internet'
       children:
