@@ -130,4 +130,8 @@ section4:
     - icon: "images/partner/Curve-logo.svg"
       partnerType: "应用程序提供商"
       content: 'Curve 是一款高性能、易运维、云原生的开源分布式存储系统，目前为 CNCF Sandbox 项目。可应用于主流的云原生基础设施平台：对接 OpenStack 平台为云主机提供高性能块存储服务；对接 Kubernetes 为其提供 RWO、RWX 等类型的持久化存储卷；对接 PolarFS 作为云原生数据库的高性能存储底座，完美支持云原生数据库的存算分离架构。Curve 也可作为云存储中间件使用 S3 兼容的对象存储作为数据存储引擎，为公有云用户提供高性价比的共享文件存储。' 
+
+    - icon: "images/partner/databend-logo.svg"
+      partnerType: "应用程序提供商"
+      content: 'Databend 是一款面向对象存储设计的新一代云原生数据仓库。采用存算分离架构，兼容 MySQL、ClickHouse 协议，支持多种对象存储、多租户体系和数据共享，具备实时分析、弹性扩缩容和 PB 级数据处理能力。'     
 ---
