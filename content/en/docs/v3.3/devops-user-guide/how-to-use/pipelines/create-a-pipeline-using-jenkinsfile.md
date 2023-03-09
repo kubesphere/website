@@ -219,7 +219,7 @@ The account `project-admin` needs to be created in advance since it is the revie
    
    {{< notice note >}}
    
-   In KubeSphere 3.3, the account that can run a pipeline will be able to continue or terminate the pipeline if there is no reviewer specified. Pipeline creators and the account you specify will be able to continue or terminate the pipeline.
+   In KubeSphere 3.3, if you do not specify a reviewer, the user that can run a pipeline will be able to continue or terminate the pipeline. If you specify a reviewer, the user who created the pipeline and the user specified will be able to continue or terminate the pipeline.
    
    {{</ notice >}}
 
