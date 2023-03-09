@@ -37,7 +37,7 @@ KubeSphere 是在 Kubernetes 之上构建的以应用为中心的多租户容器
 
 Databend 完全面向对象存储而设计，在减少复杂性和成本的同时提高灵活性和效率。Databend 支持多种对象存储服务，如 AWS S3、Azure Blob、Google Cloud Storage、HDFS、Alibaba Cloud OSS、Tencent Cloud COS 等。您可以根据业务的需求和偏好选择合适的服务来存放你的数据。
 
-这里我们以青云 QingStor 为例，介绍与 S3 兼容的对象存储相关配置的预先准备工作。
+这里我们以青云 QingStor 为例，介绍与 S3 兼容的对象存储相关配置的准备工作。
 
 ### 创建 Bucket
 
@@ -47,11 +47,11 @@ Databend 完全面向对象存储而设计，在减少复杂性和成本的同�
 
 需要关注的是 bucket 的名字 `<bucket>` 和其所在的可用区 `<region>`。
 
-由于这里使用 s3 兼容服务，所以最后连接的 endpoint_url 是 `s3.<bucket>.<region>.qingstor.com` 。
+由于这里使用 S3 兼容服务，所以最后连接的 endpoint_url 是 `s3.<bucket>.<region>.qingstor.com` 。
 
 ### 创建 API 密钥
 
-> API 密钥（Access Key）可以让您通过发送 API 指令来访问青云的服务。API 密钥 ID 须作为参数包含在每一个请求中发送；而 API 密钥的私钥负责生成 API 请求串的签名，私钥需要被妥善保管，切勿外传。默认所有 IP 地址都可使用此密钥调用 API，设置 IP 白名单后只有白名单范围内的 IP  地址才可使用此密钥。
+> API 密钥（Access Key）可以让您通过发送 API 指令来访问青云的服务。API 密钥 ID 须作为参数包含在每一个请求中发送；而 API 密钥的私钥负责生成 API 请求串的签名，私钥需要被妥善保管，切勿外传。默认所有 IP 地址都可使用此密钥调用 API，设置 IP 白名单后只有白名单范围内的 IP 地址才可使用此密钥。
 
 点击右上方菜单，选中 API 密钥，创建新的密钥用于 API 访问。
 
@@ -185,7 +185,7 @@ Databend 官方提供了 Helm Charts ，而 KubeSphere 也支持使用 Helm Char
 > 可以将 Helm Chart 交付至 KubeSphere 的公共仓库，或者导入私有应用仓库来提供应用模板。
 > [https://kubesphere.io/zh/docs/v3.3/workspace-administration/upload-helm-based-application/](https://kubesphere.io/zh/docs/v3.3/workspace-administration/upload-helm-based-application/)
 
-在企业空间侧边栏选中 **应用管理** ，点击 **应用仓库** ，添加 Databend 官方维护的 [Helm Charts](https://charts.databend.rs/) 。
+在企业空间侧边栏选中**应用管理** ，点击**应用仓库** ，添加 Databend 官方维护的 [Helm Charts](https://charts.databend.rs/) 。
 
 ![](https://pek3b.qingstor.com/kubesphere-community/images/173222569320236.png)
 
@@ -201,7 +201,7 @@ Databend 官方提供了 Helm Charts ，而 KubeSphere 也支持使用 Helm Char
 
 ![](https://pek3b.qingstor.com/kubesphere-community/images/412313176720238.png)
 
-在集群模式下部署 Databend 时，首先需要启动一个 Meta节点，然后设置并启动其他 Meta 节点以加入第一个 Meta 节点，形成集群。在成功启动所有 Meta 节点后，逐个启动 Query 节点。每个 Query 节点在启动后自动注册到 Meta 节点以形成集群。
+在集群模式下部署 Databend 时，首先需要启动一个 Meta 节点，然后设置并启动其他 Meta 节点以加入第一个 Meta 节点，形成集群。在成功启动所有 Meta 节点后，逐个启动 Query 节点。每个 Query 节点在启动后自动注册到 Meta 节点以形成集群。
 
 ![](https://pek3b.qingstor.com/kubesphere-community/images/30141921520239.png)
 
@@ -331,7 +331,7 @@ psiace@ks:~$ curl https://admin-gfkyzxaz.c.kubesphere.cloud:30443/v1/health
 ```
 ### 执行查询
 
-bendsql 是一个十分方便的命令行界面工具，可以帮助您顺畅高效地使用 Databend 。bendsql 也支持连接 Databend Cloud ，管理计算集群和运行 SQL 查询。
+bendsql 是一个十分方便的命令行界面工具，可以帮助您顺畅高效地使用 Databend。bendsql 也支持连接 Databend Cloud，管理计算集群和运行 SQL 查询。
 
 **安装 bendsql**
 
@@ -360,6 +360,3 @@ dd:databend@query-gfkyzxaz/default=> SELECT avg(number) FROM numbers(1000);
 +-------------+
 (1 row)
 ```
-## 总结
-
-本文介绍了如何使用 KubeSphere 创建和部署 Databend 高可用集群，后端存储服务采用 QingStor ，最后使用 bendsql 演示连接集群和执行查询。
