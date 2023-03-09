@@ -132,5 +132,5 @@ section4:
 
     - icon: "images/partner/databend-logo.svg"
       partnerType: "App Provider"
-      content: 'Databend is a modern cloud data warehouse focusing on reducing cost and complexity for your massive-scale analytics needs. Open source alternative to Snowflake.'  
+      content: 'Databend is a modern cloud data warehouse focusing on reducing cost and complexity for your massive-scale analytics needs. It is an open source alternative to Snowflake.'  
 ---
