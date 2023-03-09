@@ -129,4 +129,8 @@ section4:
     - icon: "images/partner/Curve-logo.svg"
       partnerType: "App Provider"
       content: 'Curve is a high-performance, lightweight-operation, cloud-native open source distributed storage system. Curve can be applied to: 1) mainstream cloud-native infrastructure platforms OpenStack and Kubernetes; 2) high-performance storage for cloud-native databases; 3) cloud storage middleware using S3-compatible object storage as a data storage.' 
+
+    - icon: "images/partner/databend-logo.svg"
+      partnerType: "App Provider"
+      content: 'Databend is a modern cloud data warehouse focusing on reducing cost and complexity for your massive-scale analytics needs. It is an open source alternative to Snowflake.'  
 ---
