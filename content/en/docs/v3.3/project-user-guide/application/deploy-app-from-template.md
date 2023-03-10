@@ -21,7 +21,7 @@ This tutorial demonstrates how to quickly deploy [Grafana](https://grafana.com/)
 
 1. Log in to the web console of KubeSphere as `ws-admin`. In your workspace, go to **App Repositories** under **App Management**, and then click **Add**.
 
-2. In the displayed dialog box, enter `test-repo` for the app repository name and `https://helm-chart-repo.pek3a.qingstor.com/kubernetes-charts/` for the repository URL. Click **Validate** to verify the URL, set **Synchronization Interval** based on your needs, and click **OK**.
+2. In the displayed dialog box, enter `test-repo` for the app repository name and `https://charts.kubesphere.io/main` for the repository URL. Click **Validate** to verify the URL, set **Synchronization Interval** based on your needs, and click **OK**.
 
 3. Your repository is displayed in the list after successfully imported to KubeSphere.
 
@@ -29,7 +29,7 @@ This tutorial demonstrates how to quickly deploy [Grafana](https://grafana.com/)
 
    For more information about dashboard properties as you add a private repository, see [Import Helm Repository](../../../workspace-administration/app-repository/import-helm-repository/).
 
-   {{</ notice >}} 
+   {{</ notice >}}
 
 ### Step 2: Deploy Grafana from app templates
 
