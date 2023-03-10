@@ -142,7 +142,7 @@ KubeKey 是用 Go 语言开发的一款全新的安装工具，代替了以前�
 
 {{< tab "如果您能正常访问 GitHub/Googleapis" >}}
 
-从 [GitHub Release Page](https://github.com/kubesphere/kubekey/releases) 下载 KubeKey 或直接使用以下命令。
+从 [GitHub Release Page](https://github.com/kubesphere/kubekey/releases) 下载 KubeKey 或直接使用以下命令(ubuntu使用bash替换sh)。
 
 ```bash
 curl -sfL https://get-kk.kubesphere.io | VERSION=v3.0.2 sh -
