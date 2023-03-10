@@ -49,6 +49,10 @@ section {
   justify-content: space-between;
 }
 
+.nowrap-li:last-of-type {
+  white-space: nowrap;
+}
+
 .title-h1 {
   font-size: 40px;
   line-height: 1;

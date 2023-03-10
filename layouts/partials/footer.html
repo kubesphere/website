@@ -13,7 +13,7 @@
                     <ul class="common-flex-layout">
                         {{ with $data.footer.footer }}
                         {{ range .list }}
-                            <li>
+                            <li class="nowrap-li">
                                 <div class="h3">{{ .title }}</div>
                                 {{ range .list }}
                                 {{ if hasPrefix .link "http" }}
