@@ -104,6 +104,10 @@ section2:
       content: "好上好信息是中国大陆一家致力于为中国智造提供全面支持的综合服务商。"
       link: "bobinfo/"
 
+    - icon: "images/case/logo-wxtv.png"
+      content: "无锡广播电视集团成立于 1999 年，为全国首家广电集团。"
+      link: "wuxitv/"
+
 section3:
   title: 'KubeSphere 助力各行各业'
   tip: 全部
@@ -209,6 +213,8 @@ section3:
           icon: 'images/case/logo-nctv.png'
         - name: 'csztv'
           icon: 'images/case/logo-csztv.png'  
+        - name: 'wxtv'
+          icon: 'images/case/logo-wxtv.png' 
 
     - name: '制造'
       children:

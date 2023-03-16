@@ -144,7 +144,9 @@ section3:
         - name: 'nctv'
           icon: 'images/case/logo-nctv.png'
         - name: 'csztv'
-          icon: 'images/case/logo-csztv.png'  
+          icon: 'images/case/logo-csztv.png'
+        - name: 'wxtv'
+          icon: 'images/case/logo-wxtv.png'   
 
     - name: 'Manufacturing'
       children:
