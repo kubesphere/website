@@ -174,7 +174,7 @@ When a request returns **404**, the log content is as follows:
 
 Here are our needs: When a request returns **404**, the Notification Manager sends a notification to the receiver (Configure a Slack alert receiver according to [Configure Slack Notifications](https://kubesphere.io/docs/cluster-administration/platform-settings/notification-management/configure-slack/), and records the namespace, Pod name, request path, request method, and other information. Therefore, we write a simple function:
 
-> You can learn how to use `openfunction-context` from [OpenFunction Context Spec,](https://github.com/OpenFunction/functions-framework/blob/main/docs/OpenFunction-context-specs.md) which is a tool library provided by OpenFunction for writing functions. You can learn more about OpenFunction functions from [OpenFunction Samples.](https://github.com/OpenFunction/samples)
+> You can learn how to use `openfunction-context` from [OpenFunction Context Spec,](https://github.com/OpenFunction/functions-framework/blob/main/docs/v0.3.0/OpenFunction-context-specs.md) which is a tool library provided by OpenFunction for writing functions. You can learn more about OpenFunction functions from [OpenFunction Samples.](https://github.com/OpenFunction/samples)
 
 ```go
 package logshandler
@@ -262,7 +262,7 @@ func LogsHandler(ctx *ofctx.OpenFunctionContext, in []byte) int {
 
 Upload this function to the code repository and record the ****URL of the code repository**** and the **path of the code in the repository**, which will be used in the **Create a function** step.
 
-> You can find this case in [OpenFunction Samples](https://github.com/OpenFunction/samples/tree/main/functions/OpenFuncAsync/logs-handler-function).
+> You can find this case in [OpenFunction Samples](https://github.com/OpenFunction/samples/tree/main/functions/async/logs-handler-function).
 
 ## Create a Function
 
@@ -415,7 +415,7 @@ $ kubectl patch configmap/config-domain -n knative-serving \
 -type merge --patch '{"data":{"1.2.3.4.sslip.io":""}}'
 ```
 
-OpenFunction drives the running of the `Knative` function in two ways: (1) Use the Kafka server in asynchronous mode; (2) Use its own event framework to connect to the Kafka server, and then operate in Sink mode. You can refer to the case in [OpenFunction Samples](https://github.com/OpenFunction/samples/tree/main/functions/Knative/logs-handler-function).
+OpenFunction drives the running of the `Knative` function in two ways: (1) Use the Kafka server in asynchronous mode; (2) Use its own event framework to connect to the Kafka server, and then operate in Sink mode. You can refer to the case in [OpenFunction Samples](https://github.com/OpenFunction/samples/tree/main/functions/knative/logs-handler-function).
 
 In this solution, the processing speed of synchronous functions is lower than that of asynchronous functions. We can also use KEDA to trigger the concurrency mechanism of Knative Serving, but it is not as convenient as asynchronous functions. (In the future, we will optimize the OpenFunction event framework to make up for the shortcomings of synchronous functions.)
 
