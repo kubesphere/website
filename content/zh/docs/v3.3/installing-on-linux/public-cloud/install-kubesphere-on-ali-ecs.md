@@ -141,7 +141,7 @@ chmod +x kk
 在当前位置创建配置文件 `config-sample.yaml`：
 
 ```bash
-./kk create config --with-kubesphere v3.3.1 --with-kubernetes v1.22.12 -f config-sample.yaml
+./kk create config --with-kubesphere v3.3.2 --with-kubernetes v1.22.12 -f config-sample.yaml
 ```
 
 > 提示：默认是 Kubernetes 1.17.9，这些 Kubernetes 版本也与 KubeSphere 同时进行过充分的测试： v1.15.12, v1.16.13, v1.17.9 (default), v1.18.6，您可以根据需要指定版本。

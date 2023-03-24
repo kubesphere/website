@@ -1,6 +1,6 @@
 ---
 title: "Upgrade with ks-installer"
-keywords: "Kubernetes, upgrade, KubeSphere, v3.3.1"
+keywords: "Kubernetes, upgrade, KubeSphere, v3.3.2"
 description: "Use ks-installer to upgrade KubeSphere."
 linkTitle: "Upgrade with ks-installer"
 weight: 7300
@@ -11,9 +11,9 @@ ks-installer is recommended for users whose Kubernetes clusters were not set up 
 ## Prerequisites
 
 - You need to have a KubeSphere cluster running v3.2.x. If your KubeSphere version is v3.1.x or earlier, upgrade to v3.2.x first.
-- Read [Release Notes for 3.3.1](../../../v3.3/release/release-v331/) carefully.
+- Read [Release Notes for 3.3.2](../../../v3.3/release/release-v332/) carefully.
 - Back up any important component beforehand.
-- Supported Kubernetes versions of KubeSphere 3.3: v1.19.x, v1.20.x, v1.21.x, * v1.22.x,  * v1.23.x， and v1.24.x. For Kubernetes versions with an asterisk, some features of edge nodes may be unavailable due to incompatability. Therefore, if you want to use edge nodes, you are advised to install Kubernetes v1.21.x or earlier.
+- Supported Kubernetes versions of KubeSphere 3.3: v1.20.x, v1.21.x, * v1.22.x,  * v1.23.x， and v1.24.x. For Kubernetes versions with an asterisk, some features of edge nodes may be unavailable due to incompatability. Therefore, if you want to use edge nodes, you are advised to install Kubernetes v1.21.x.
 
 ## Major Updates
 
@@ -32,7 +32,7 @@ In KubeSphere 3.3.1, some changes have made on built-in roles and permissions of
 Run the following command to upgrade your cluster.
 
 ```bash
-kubectl apply -f https://github.com/kubesphere/ks-installer/releases/download/v3.3.1/kubesphere-installer.yaml  --force
+kubectl apply -f https://github.com/kubesphere/ks-installer/releases/download/v3.3.2/kubesphere-installer.yaml  --force
 ```
 
 ## Enable Pluggable Components

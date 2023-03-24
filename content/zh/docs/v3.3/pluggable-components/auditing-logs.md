@@ -57,9 +57,9 @@ KubeSphere 审计日志系统提供了一套与安全相关并按时间顺序排
 
 ### 在 Kubernetes 上安装
 
-当您[在 Kubernetes 上安装 KubeSphere](../../installing-on-kubernetes/introduction/overview/) 时，需要先在 [cluster-configuration.yaml](https://github.com/kubesphere/ks-installer/releases/download/v3.3.1/cluster-configuration.yaml) 文件中启用审计功能。
+当您[在 Kubernetes 上安装 KubeSphere](../../installing-on-kubernetes/introduction/overview/) 时，需要先在 [cluster-configuration.yaml](https://github.com/kubesphere/ks-installer/releases/download/v3.3.2/cluster-configuration.yaml) 文件中启用审计功能。
 
-1. 下载 [cluster-configuration.yaml](https://github.com/kubesphere/ks-installer/releases/download/v3.3.1/cluster-configuration.yaml) 文件，执行以下命令打开并编辑该文件：
+1. 下载 [cluster-configuration.yaml](https://github.com/kubesphere/ks-installer/releases/download/v3.3.2/cluster-configuration.yaml) 文件，执行以下命令打开并编辑该文件：
 
     ```bash
     vi cluster-configuration.yaml
@@ -91,7 +91,7 @@ KubeSphere 审计日志系统提供了一套与安全相关并按时间顺序排
 3. 执行以下命令开始安装：
 
     ```bash
-    kubectl apply -f https://github.com/kubesphere/ks-installer/releases/download/v3.3.1/kubesphere-installer.yaml
+    kubectl apply -f https://github.com/kubesphere/ks-installer/releases/download/v3.3.2/kubesphere-installer.yaml
     
     kubectl apply -f cluster-configuration.yaml
     ```

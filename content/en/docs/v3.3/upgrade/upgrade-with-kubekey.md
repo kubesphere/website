@@ -12,7 +12,7 @@ This tutorial demonstrates how to upgrade your cluster using KubeKey.
 ## Prerequisites
 
 - You need to have a KubeSphere cluster running v3.2.x. If your KubeSphere version is v3.1.x or earlier, upgrade to v3.2.x first.
-- Read [Release Notes for 3.3.1](../../../v3.3/release/release-v331/) carefully.
+- Read [Release Notes for 3.3.2](../../../v3.3/release/release-v332/) carefully.
 - Back up any important component beforehand.
 - Make your upgrade plan. Two scenarios are provided in this document for [all-in-one clusters](#all-in-one-cluster) and [multi-node clusters](#multi-node-cluster) respectively.
 
@@ -95,10 +95,10 @@ When upgrading Kubernetes, KubeKey will upgrade from one MINOR version to the ne
 Run the following command to use KubeKey to upgrade your single-node cluster to KubeSphere 3.3 and Kubernetes v1.22.12:
 
 ```bash
-./kk upgrade --with-kubernetes v1.22.12 --with-kubesphere v3.3.1
+./kk upgrade --with-kubernetes v1.22.12 --with-kubesphere v3.3.2
 ```
 
-To upgrade Kubernetes to a specific version, explicitly provide the version after the flag `--with-kubernetes`. Available versions are v1.19.x, v1.20.x, v1.21.x, * v1.22.x,  * v1.23.x， and v1.24.x. For Kubernetes versions with an asterisk, some features of edge nodes may be unavailable due to incompatability. Therefore, if you want to use edge nodes, you are advised to install Kubernetes v1.21.x or earlier.
+To upgrade Kubernetes to a specific version, explicitly provide the version after the flag `--with-kubernetes`. Available versions are v1.20.x, v1.21.x, * v1.22.x,  * v1.23.x， and v1.24.x. For Kubernetes versions with an asterisk, some features of edge nodes may be unavailable due to incompatability. Therefore, if you want to use edge nodes, you are advised to install Kubernetes v1.21.x.
 ### Multi-node cluster
 
 #### Step 1: Generate a configuration file using KubeKey
@@ -134,10 +134,10 @@ For more information, see [Edit the configuration file](../../installing-on-linu
 The following command upgrades your cluster to KubeSphere 3.3 and Kubernetes v1.22.12:
 
 ```bash
-./kk upgrade --with-kubernetes v1.22.12 --with-kubesphere v3.3.1 -f sample.yaml
+./kk upgrade --with-kubernetes v1.22.12 --with-kubesphere v3.3.2 -f sample.yaml
 ```
 
-To upgrade Kubernetes to a specific version, explicitly provide the version after the flag `--with-kubernetes`. Available versions are v1.19.x, v1.20.x, v1.21.x, * v1.22.x,  * v1.23.x， and v1.24.x. For Kubernetes versions with an asterisk, some features of edge nodes may be unavailable due to incompatability. Therefore, if you want to use edge nodes, you are advised to install Kubernetes v1.21.x or earlier.
+To upgrade Kubernetes to a specific version, explicitly provide the version after the flag `--with-kubernetes`. Available versions are v1.20.x, v1.21.x, * v1.22.x,  * v1.23.x， and v1.24.x. For Kubernetes versions with an asterisk, some features of edge nodes may be unavailable due to incompatability. Therefore, if you want to use edge nodes, you are advised to install Kubernetes v1.21.x.
 
 {{< notice note >}}
 

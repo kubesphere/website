@@ -14,7 +14,7 @@ This guide walks you through the steps of deploying KubeSphere on [Huaiwei CCE](
 
 First, create a Kubernetes cluster based on the requirements below.
 
-- To install KubeSphere 3.3 on Kubernetes, your Kubernetes version must be v1.19.x, v1.20.x, v1.21.x, * v1.22.x, * v1.23.x, and * v1.24.x. For Kubernetes versions with an asterisk, some features of edge nodes may be unavailable due to incompatability. Therefore, if you want to use edge nodes, you are advised to install Kubernetes v1.21.x or earlier.
+- To install KubeSphere 3.3 on Kubernetes, your Kubernetes version must be v1.20.x, v1.21.x, * v1.22.x, * v1.23.x, and * v1.24.x. For Kubernetes versions with an asterisk, some features of edge nodes may be unavailable due to incompatability. Therefore, if you want to use edge nodes, you are advised to install Kubernetes v1.21.x.
 - Ensure the cloud computing network for your Kubernetes cluster works, or use an elastic IP when you use **Auto Create** or **Select Existing**. You can also configure the network after the cluster is created. Refer to [NAT Gateway](https://support.huaweicloud.com/en-us/productdesc-natgateway/en-us_topic_0086739762.html).
 - Select `s3.xlarge.2` `4-core｜8GB` for nodes and add more if necessary (3 and more nodes are required for a production environment).
 
@@ -76,9 +76,9 @@ For how to set up or cancel a default StorageClass, refer to Kubernetes official
 Use [ks-installer](https://github.com/kubesphere/ks-installer) to deploy KubeSphere on an existing Kubernetes cluster. Execute the following commands directly for a minimal installation:
 
 ```bash
-kubectl apply -f https://github.com/kubesphere/ks-installer/releases/download/v3.3.1/kubesphere-installer.yaml
+kubectl apply -f https://github.com/kubesphere/ks-installer/releases/download/v3.3.2/kubesphere-installer.yaml
 
-kubectl apply -f https://github.com/kubesphere/ks-installer/releases/download/v3.3.1/cluster-configuration.yaml
+kubectl apply -f https://github.com/kubesphere/ks-installer/releases/download/v3.3.2/cluster-configuration.yaml
 ```
 
 Go to **Workload** > **Pod**, and check the running status of the pod in `kubesphere-system` of its namespace to understand the minimal deployment of KubeSphere. Check `ks-console-xxxx`  of the namespace to understand the availability of KubeSphere console.

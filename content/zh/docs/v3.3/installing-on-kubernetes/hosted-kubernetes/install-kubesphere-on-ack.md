@@ -15,7 +15,7 @@ weight: 4250
 
 首先按使用环境的资源需求创建 Kubernetes 集群，满足以下一些条件即可（如已有环境并满足条件可跳过本节内容）：
 
-- KubeSphere 3.3 默认支持的 Kubernetes 版本为 v1.19.x、v1.20.x、v1.21.x、* v1.22.x、* v1.23.x 和 * v1.24.x。带星号的版本可能出现边缘节点部分功能不可用的情况。因此，如需使用边缘节点，推荐安装 v1.21.x 及之前的版本；
+- KubeSphere 3.3 默认支持的 Kubernetes 版本为 v1.20.x、v1.21.x、* v1.22.x、* v1.23.x 和 * v1.24.x。带星号的版本可能出现边缘节点部分功能不可用的情况。因此，如需使用边缘节点，推荐安装 v1.21.x；
 - 需要确保 Kubernetes 集群所使用的 ECS 实例的网络正常工作，可以通过在创建集群的同时**自动创建**或**使用已有**弹性 IP；或者在集群创建后自行配置网络（如配置 [NAT 网关](https://www.aliyun.com/product/network/nat/)）；
 - 小规模场景下工作节点规格建议选择 `4核｜8GB` 配置，不推荐`2核｜4GB` ，并按需扩展工作节点数量（通常生产环境需要 3 个及以上工作节点），详情可参考[最佳实践- ECS 选型](https://help.aliyun.com/document_detail/98886.html)。
 
@@ -142,8 +142,8 @@ alicloud-disk-topology               diskplugin.csi.alibabacloud.com   Delete   
 1.使用 [ks-installer](https://github.com/kubesphere/ks-installer) 在已有的 Kubernetes 集群上来部署 KubeSphere，下载 YAML 文件:
 
 ```
-wget https://github.com/kubesphere/ks-installer/releases/download/v3.3.1/kubesphere-installer.yaml
-wget https://github.com/kubesphere/ks-installer/releases/download/v3.3.1/cluster-configuration.yaml
+wget https://github.com/kubesphere/ks-installer/releases/download/v3.3.2/kubesphere-installer.yaml
+wget https://github.com/kubesphere/ks-installer/releases/download/v3.3.2/cluster-configuration.yaml
 ```
 
 

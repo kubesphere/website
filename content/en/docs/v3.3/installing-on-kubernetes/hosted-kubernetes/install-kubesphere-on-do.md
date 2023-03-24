@@ -28,7 +28,7 @@ You need to select:
 
 {{< notice note >}}
 
-- To install KubeSphere 3.3 on Kubernetes, your Kubernetes version must be v1.19.x, v1.20.x, v1.21.x, * v1.22.x, * v1.23.x, and * v1.24.x. For Kubernetes versions with an asterisk, some features of edge nodes may be unavailable due to incompatability. Therefore, if you want to use edge nodes, you are advised to install Kubernetes v1.21.x or earlier.
+- To install KubeSphere 3.3 on Kubernetes, your Kubernetes version must be v1.20.x, v1.21.x, * v1.22.x, * v1.23.x, and * v1.24.x. For Kubernetes versions with an asterisk, some features of edge nodes may be unavailable due to incompatability. Therefore, if you want to use edge nodes, you are advised to install Kubernetes v1.21.x.
 - 2 nodes are included in this example. You can add more nodes based on your own needs, especially in a production environment.
 - The machine type Standard/4 GB/2 vCPUs is for minimal installation. If you plan to enable several pluggable components or use the cluster for production, you can upgrade your nodes to a more powerful type (such as CPU-Optimized / 8 GB / 4 vCPUs). It seems that DigitalOcean provisions the control plane nodes based on the type of the worker nodes, and for Standard ones the API server can become unresponsive quite soon.
 
@@ -45,9 +45,9 @@ Now that the cluster is ready, you can install KubeSphere following the steps be
 - Install KubeSphere using kubectl. The following commands are only for the default minimal installation.
 
   ```bash
-  kubectl apply -f https://github.com/kubesphere/ks-installer/releases/download/v3.3.1/kubesphere-installer.yaml
+  kubectl apply -f https://github.com/kubesphere/ks-installer/releases/download/v3.3.2/kubesphere-installer.yaml
   
-  kubectl apply -f https://github.com/kubesphere/ks-installer/releases/download/v3.3.1/cluster-configuration.yaml
+  kubectl apply -f https://github.com/kubesphere/ks-installer/releases/download/v3.3.2/cluster-configuration.yaml
   ```
 
 - Inspect the logs of installation:

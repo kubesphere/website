@@ -117,19 +117,19 @@ chmod +x kk
 1. Specify a Kubernetes version and a KubeSphere version that you want to install. For example:
 
    ```bash
-   ./kk create config --with-kubernetes v1.22.12 --with-kubesphere v3.3.1
+   ./kk create config --with-kubernetes v1.22.12 --with-kubesphere v3.3.2
    ```
 
    {{< notice note >}}
 
-   - Recommended Kubernetes versions for KubeSphere 3.3: v1.19.x, v1.20.x, v1.21.x, * v1.22.x, * v1.23.x, and * v1.24.x. For Kubernetes versions with an asterisk, some features of edge nodes may be unavailable due to incompatability. Therefore, if you want to use edge nodes, you are advised to install Kubernetes v1.21.x or earlier. If you do not specify a Kubernetes version, KubeKey will install Kubernetes v1.23.10 by default. For more information about supported Kubernetes versions, see [Support Matrix](../../../installing-on-linux/introduction/kubekey/#support-matrix).
+   - Recommended Kubernetes versions for KubeSphere 3.3: v1.20.x, v1.21.x, * v1.22.x, * v1.23.x, and * v1.24.x. For Kubernetes versions with an asterisk, some features of edge nodes may be unavailable due to incompatability. Therefore, if you want to use edge nodes, you are advised to install Kubernetes v1.21.x. If you do not specify a Kubernetes version, KubeKey will install Kubernetes v1.23.10 by default. For more information about supported Kubernetes versions, see [Support Matrix](../../../installing-on-linux/introduction/kubekey/#support-matrix).
 
    - If you do not add the flag `--with-kubesphere` in the command in this step, KubeSphere will not be deployed unless you install it using the `addons` field in the configuration file or add this flag again when you use `./kk create cluster` later.
    - If you add the flag `--with-kubesphere` without specifying a KubeSphere version, the latest version of KubeSphere will be installed.
 
    {{</ notice >}}
 
-4. A default file `config-sample.yaml` will be created if you do not customize the name. Edit the file.
+2. A default file `config-sample.yaml` will be created if you do not customize the name. Edit the file.
 
    ```bash
    vi config-sample.yaml
@@ -178,15 +178,15 @@ chmod +x kk
    ...             
    ```
 
-5. Pay special attention to the field of `addons`, under which you must provide the information of NFS-client. For more information about each parameter in this file, see [Multi-node Installation](../../../installing-on-linux/introduction/multioverview/#2-edit-the-configuration-file).
+3. Pay special attention to the field of `addons`, under which you must provide the information of NFS-client. For more information about each parameter in this file, see [Multi-node Installation](../../../installing-on-linux/introduction/multioverview/#2-edit-the-configuration-file).
 
-6. Save the file and execute the following command to install Kubernetes and KubeSphere:
+4. Save the file and execute the following command to install Kubernetes and KubeSphere:
 
    ```bash
    ./kk create cluster -f config-sample.yaml
    ```
 
-7. When the installation finishes, you can inspect installation logs with the following command:
+5. When the installation finishes, you can inspect installation logs with the following command:
 
    ```bash
    kubectl logs -n kubesphere-system $(kubectl get pod -n kubesphere-system -l 'app in (ks-install, ks-installer)' -o jsonpath='{.items[0].metadata.name}') -f
