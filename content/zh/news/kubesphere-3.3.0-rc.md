@@ -79,7 +79,7 @@ $ ./kk create cluster --with-kubernetes v1.21.5 --with-kubesphere v3.3.0-rc.0
 
 除了在 Linux 机器上安装 KubeSphere 之外，您还可以将其直接部署在现有的 Kubernetes 集群上。前提条件：
 
-- 您的 Kubernetes 版本必须为：1.19.x、1.20.x、1.21.x、1.22.x 或 1.23.x。
+- 您的 Kubernetes 版本必须为：1.20.x、1.21.x、1.22.x，1.23.x 或 1.24.x。
 - 确保您的机器满足最低硬件要求：CPU > 2 核，内存 > 4 GB。
 - 在安装之前，需要配置 Kubernetes 集群中的**默认**存储类型。
 

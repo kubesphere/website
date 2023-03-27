@@ -10,8 +10,8 @@ Air-gapped upgrade with KubeKey is recommended for users whose KubeSphere and Ku
 ## Prerequisites
 
 - You need to have a KubeSphere cluster running v3.2.x. If your KubeSphere version is v3.1.x or earlier, upgrade to v3.2.x first.
-- Your Kubernetes version must be v1.19.x, v1.20.x, v1.21.x, * v1.22.x, * v1.23.x, and * v1.24.x. For Kubernetes versions with an asterisk, some features of edge nodes may be unavailable due to incompatability. Therefore, if you want to use edge nodes, you are advised to install Kubernetes v1.21.x or earlier.
-- Read [Release Notes for 3.3.1](../../../v3.3/release/release-v331/) carefully.
+- Your Kubernetes version must be v1.20.x, v1.21.x, * v1.22.x, * v1.23.x, and * v1.24.x. For Kubernetes versions with an asterisk, some features of edge nodes may be unavailable due to incompatability. Therefore, if you want to use edge nodes, you are advised to install Kubernetes v1.21.x.
+- Read [Release Notes for 3.3.2](../../../v3.3/release/release-v332/) carefully.
 - Back up any important component beforehand.
 - A Docker registry. You need to have a Harbor or other Docker registries.
 - Make sure every node can push and pull images from the Docker Registry.
@@ -100,7 +100,7 @@ As you install KubeSphere and Kubernetes on Linux, you need to prepare an image 
 1. Download the image list file `images-list.txt` from a machine that has access to Internet through the following command:
 
    ```bash
-   curl -L -O https://github.com/kubesphere/ks-installer/releases/download/v3.3.1/images-list.txt
+   curl -L -O https://github.com/kubesphere/ks-installer/releases/download/v3.3.2/images-list.txt
    ```
 
    {{< notice note >}}
@@ -112,7 +112,7 @@ As you install KubeSphere and Kubernetes on Linux, you need to prepare an image 
 2. Download `offline-installation-tool.sh`.
 
    ```bash
-   curl -L -O https://github.com/kubesphere/ks-installer/releases/download/v3.3.1/offline-installation-tool.sh
+   curl -L -O https://github.com/kubesphere/ks-installer/releases/download/v3.3.2/offline-installation-tool.sh
    ```
 
 3. Make the `.sh` file executable.
@@ -153,7 +153,7 @@ As you install KubeSphere and Kubernetes on Linux, you need to prepare an image 
 
    {{< notice note >}}
 
-   - You can change the Kubernetes version downloaded based on your needs. Recommended Kubernetes versions for KubeSphere 3.3 are v1.19.x, v1.20.x, v1.21.x, * v1.22.x, * v1.23.x, and * v1.24.x. For Kubernetes versions with an asterisk, some features of edge nodes may be unavailable due to incompatability. Therefore, if you want to use edge nodes, you are advised to install Kubernetes v1.21.x or earlier. If you do not specify a Kubernetes version, KubeKey will install Kubernetes v1.23.10 by default. For more information about supported Kubernetes versions, see [Support Matrix](../../installing-on-linux/introduction/kubekey/#support-matrix).
+   - You can change the Kubernetes version downloaded based on your needs. Recommended Kubernetes versions for KubeSphere 3.3 are v1.20.x, v1.21.x, * v1.22.x, * v1.23.x, and * v1.24.x. For Kubernetes versions with an asterisk, some features of edge nodes may be unavailable due to incompatability. Therefore, if you want to use edge nodes, you are advised to install Kubernetes v1.21.x. If you do not specify a Kubernetes version, KubeKey will install Kubernetes v1.23.10 by default. For more information about supported Kubernetes versions, see [Support Matrix](../../installing-on-linux/introduction/kubekey/#support-matrix).
 
    - You can upgrade Kubernetes from v1.16.13 to v1.17.9 by downloading the v1.17.9 Kubernetes binary file, but for cross-version upgrades, all intermediate versions need to be downloaded in advance. For example, if you want to upgrade Kubernetes from v1.15.12 to v1.18.6, you need to download Kubernetes v1.16.13 and v1.17.9, and the v1.18.6 binary file.
 
@@ -200,7 +200,7 @@ Transfer your packaged image file to your local machine and execute the followin
 |        | Kubernetes | KubeSphere |
 | ------ | ---------- | ---------- |
 | Before | v1.18.6    | v3.2.x     |
-| After  | v1.22.12    | 3.3.1     |
+| After  | v1.22.12    | 3.3.x     |
 
 #### Upgrade a cluster
 
@@ -217,7 +217,7 @@ Execute the following command to generate an example configuration file for inst
 For example:
 
 ```bash
-./kk create config --with-kubernetes v1.22.12 --with-kubesphere v3.3.1 -f config-sample.yaml
+./kk create config --with-kubernetes v1.22.12 --with-kubesphere v3.3.2 -f config-sample.yaml
 ```
 
 {{< notice note >}}
@@ -264,7 +264,7 @@ Set `privateRegistry` of your `config-sample.yaml` file:
 ./kk upgrade -f config-sample.yaml
 ```
 
-To upgrade Kubernetes to a specific version, explicitly provide the version after the flag `--with-kubernetes`. Available versions are v1.19.x, v1.20.x, v1.21.x, * v1.22.x, * v1.23.x, and * v1.24.x. For Kubernetes versions with an asterisk, some features of edge nodes may be unavailable due to incompatability. Therefore, if you want to use edge nodes, you are advised to install Kubernetes v1.21.x or earlier.
+To upgrade Kubernetes to a specific version, explicitly provide the version after the flag `--with-kubernetes`. Available versions are v1.20.x, v1.21.x, * v1.22.x, * v1.23.x, and * v1.24.x. For Kubernetes versions with an asterisk, some features of edge nodes may be unavailable due to incompatability. Therefore, if you want to use edge nodes, you are advised to install Kubernetes v1.21.x.
 
 ### Air-gapped upgrade for multi-node clusters
 
@@ -282,7 +282,7 @@ To upgrade Kubernetes to a specific version, explicitly provide the version afte
 |        | Kubernetes | KubeSphere |
 | ------ | ---------- | ---------- |
 | Before | v1.18.6    | v3.2.x     |
-| After  | v1.22.12    | 3.3.1     |
+| After  | v1.22.12    | 3.3.x     |
 
 #### Upgrade a cluster
 
@@ -299,7 +299,7 @@ In this example, KubeSphere is installed on multiple nodes, so you need to speci
    For example:
 
 ```bash
-./kk create config --with-kubernetes v1.22.12 --with-kubesphere v3.3.1 -f config-sample.yaml
+./kk create config --with-kubernetes v1.22.12 --with-kubesphere v3.3.2 -f config-sample.yaml
 ```
 
 {{< notice note >}}
@@ -348,4 +348,4 @@ Set `privateRegistry` of your `config-sample.yaml` file:
 ./kk upgrade -f config-sample.yaml
 ```
 
-To upgrade Kubernetes to a specific version, explicitly provide the version after the flag `--with-kubernetes`. Available versions are v1.19.x, v1.20.x, v1.21.x, * v1.22.x, * v1.23.x, and * v1.24.x. For Kubernetes versions with an asterisk, some features of edge nodes may be unavailable due to incompatability. Therefore, if you want to use edge nodes, you are advised to install Kubernetes v1.21.x or earlier.
+To upgrade Kubernetes to a specific version, explicitly provide the version after the flag `--with-kubernetes`. Available versions are v1.20.x, v1.21.x, * v1.22.x, * v1.23.x, and * v1.24.x. For Kubernetes versions with an asterisk, some features of edge nodes may be unavailable due to incompatability. Therefore, if you want to use edge nodes, you are advised to install Kubernetes v1.21.x.

@@ -123,11 +123,11 @@ In KubeKey v2.1.0, we bring in concepts of manifest and artifact, which provides
      - docker.io/library/haproxy:2.3
      - docker.io/kubesphere/nfs-subdir-external-provisioner:v4.0.2
      - docker.io/kubesphere/k8s-dns-node-cache:1.15.12
-     - docker.io/kubesphere/ks-installer:v3.3.1
-     - docker.io/kubesphere/ks-apiserver:v3.3.1
-     - docker.io/kubesphere/ks-console:v3.3.1
-     - docker.io/kubesphere/ks-controller-manager:v3.3.1
-     - docker.io/kubesphere/ks-upgrade:v3.3.1
+     - docker.io/kubesphere/ks-installer:v3.3.2
+     - docker.io/kubesphere/ks-apiserver:v3.3.2
+     - docker.io/kubesphere/ks-console:v3.3.2
+     - docker.io/kubesphere/ks-controller-manager:v3.3.2
+     - docker.io/kubesphere/ks-upgrade:v3.3.2
      - docker.io/kubesphere/kubectl:v1.22.0
      - docker.io/kubesphere/kubectl:v1.21.0
      - docker.io/kubesphere/kubectl:v1.20.0
@@ -148,10 +148,10 @@ In KubeKey v2.1.0, we bring in concepts of manifest and artifact, which provides
      - docker.io/kubeedge/iptables-manager:v1.9.2
      - docker.io/kubesphere/edgeservice:v0.2.0
      - docker.io/openpolicyagent/gatekeeper:v3.5.2
-     - docker.io/kubesphere/openpitrix-jobs:v3.3.1
-     - docker.io/kubesphere/devops-apiserver:v3.3.1
-     - docker.io/kubesphere/devops-controller:v3.3.1
-     - docker.io/kubesphere/devops-tools:v3.3.1
+     - docker.io/kubesphere/openpitrix-jobs:v3.3.2
+     - docker.io/kubesphere/devops-apiserver:v3.3.2
+     - docker.io/kubesphere/devops-controller:v3.3.2
+     - docker.io/kubesphere/devops-tools:v3.3.2
      - docker.io/kubesphere/ks-jenkins:v3.3.0-2.319.1
      - docker.io/jenkins/inbound-agent:4.10-2
      - docker.io/kubesphere/builder-base:v3.2.2
@@ -307,7 +307,7 @@ In KubeKey v2.1.0, we bring in concepts of manifest and artifact, which provides
 2. Run the following command to create a configuration file for the air-gapped cluster:
 
    ```bash
-   ./kk create config --with-kubesphere v3.3.1 --with-kubernetes v1.22.12 -f config-sample.yaml
+   ./kk create config --with-kubesphere v3.3.2 --with-kubernetes v1.22.12 -f config-sample.yaml
    ```
 
 3. Run the following command to modify the configuration file:

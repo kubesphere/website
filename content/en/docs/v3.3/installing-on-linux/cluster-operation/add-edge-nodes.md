@@ -21,7 +21,7 @@ This tutorial demonstrates how to add an edge node to your cluster.
 ## Prerequisites
 
 - You have enabled [KubeEdge](../../../pluggable-components/kubeedge/).
-- To prevent compatability issues, you are advised to install Kubernetes v1.21.x or earlier.
+- To prevent compatability issues, you are advised to install Kubernetes v1.21.x.
 - You have an available node to serve as an edge node. The node can run either Ubuntu (recommended) or CentOS. This tutorial uses Ubuntu 18.04 as an example.
 - Edge nodes, unlike Kubernetes cluster nodes, should work in a separate network.
 

@@ -84,14 +84,14 @@ aws-cli/2.1.2 Python/3.7.3 Linux/4.18.0-193.6.3.el8_2.x86_64 exe/x86_64.centos.8
 
     {{< notice note >}}
 
-- 如需在 Kubernetes 上安装 KubeSphere 3.3，您的 Kubernetes 版本必须为：v1.19.x、v1.20.x、v1.21.x、* v1.22.x、* v1.23.x 和 * v1.24.x。带星号的版本可能出现边缘节点部分功能不可用的情况。因此，如需使用边缘节点，推荐安装 v1.21.x 及之前的版本。
+- 如需在 Kubernetes 上安装 KubeSphere 3.3，您的 Kubernetes 版本必须为：v1.20.x、v1.21.x、* v1.22.x、* v1.23.x 和 * v1.24.x。带星号的版本可能出现边缘节点部分功能不可用的情况。因此，如需使用边缘节点，推荐安装 v1.21.x 版本。
 - 此示例中包括 3 个节点。您可以根据自己的需求添加更多节点，尤其是在生产环境中。
 - t3.medium（2 个 vCPU，4 GB 内存）机器类型仅用于最小化安装，如果要启用可插拔组件或集群用于生产，请选择具有更大规格的机器类型。
 - 对于其他设置，您也可以根据自己的需要进行更改，也可以使用默认值。
 
     {{</ notice >}}
 
-8. 当 EKS 集群准备就绪时，您可以使用 kubectl 连接到集群。
+1. 当 EKS 集群准备就绪时，您可以使用 kubectl 连接到集群。
 
 ## 配置 kubectl
 
@@ -130,9 +130,9 @@ aws-cli/2.1.2 Python/3.7.3 Linux/4.18.0-193.6.3.el8_2.x86_64 exe/x86_64.centos.8
 - 使用 kubectl 安装 KubeSphere，以下命令仅用于默认的最小安装。
 
   ```bash
-  kubectl apply -f https://github.com/kubesphere/ks-installer/releases/download/v3.3.1/kubesphere-installer.yaml
+  kubectl apply -f https://github.com/kubesphere/ks-installer/releases/download/v3.3.2/kubesphere-installer.yaml
 
-  kubectl apply -f https://github.com/kubesphere/ks-installer/releases/download/v3.3.1/cluster-configuration.yaml
+  kubectl apply -f https://github.com/kubesphere/ks-installer/releases/download/v3.3.2/cluster-configuration.yaml
   ```
 
 - 检查安装日志：

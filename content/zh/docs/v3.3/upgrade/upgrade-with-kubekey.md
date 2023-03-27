@@ -14,13 +14,13 @@ weight: 7200
 ## 准备工作
 
 - 您需要有一个运行 KubeSphere v3.2.x 的集群。如果您的 KubeSphere 是 v3.1.0 或更早的版本，请先升级至 v3.2.x。
-- 请仔细阅读 [3.3.1 版本说明](../../../v3.3/release/release-v331/)。
+- 请仔细阅读 [3.3.2 版本说明](../../../v3.3/release/release-v332/)。
 - 提前备份所有重要的组件。
 - 确定您的升级方案。本文档中提供 [All-in-One 集群](#all-in-one-集群)和[多节点集群](#多节点集群)的两种升级场景。
 
 ## 重要提示
 
-KubeSphere 3.3.1 对内置角色和自定义角色的授权项做了一些调整。在您升级到 KubeSphere 3.3.1时，请注意以下几点：
+KubeSphere 3.3.1 对内置角色和自定义角色的授权项做了一些调整。在您升级到 KubeSphere 3.3.1 时，请注意以下几点：
 
    - 内置角色调整：移除了平台级内置角色 `users-manager`(用户管理员)和 `workspace-manager`（企业空间管理员），如果已有用户绑定了 `users-manager` 或 `workspace-manager`，他们的角色将会在升级之后变更为 `platform-regular`。增加了平台级内置角色 `platform-self-provisioner`。关于平台角色的具体描述，请参见[创建用户](../../quick-start/create-workspace-and-project/#创建用户)。
 
@@ -96,10 +96,10 @@ chmod +x kk
 运行以下命令使用 KubeKey 将您的单节点集群升级至 KubeSphere 3.3 和 Kubernetes v1.22.12：
 
 ```bash
-./kk upgrade --with-kubernetes v1.22.12 --with-kubesphere v3.3.1
+./kk upgrade --with-kubernetes v1.22.12 --with-kubesphere v3.3.2
 ```
 
-要将 Kubernetes 升级至特定版本，请在 `--with-kubernetes` 标志后明确指定版本号。以下是可用版本：v1.19.x、v1.20.x、v1.21.x、* v1.22.x、* v1.23.x 和 * v1.24.x。带星号的版本可能出现边缘节点部分功能不可用的情况。因此，如需使用边缘节点，推荐安装 v1.21.x 及之前的版本。
+要将 Kubernetes 升级至特定版本，请在 `--with-kubernetes` 标志后明确指定版本号。以下是可用版本：v1.20.x、v1.21.x、* v1.22.x、* v1.23.x 和 * v1.24.x。带星号的版本可能出现边缘节点部分功能不可用的情况。因此，如需使用边缘节点，推荐安装 v1.21.x。
 
 ### 多节点集群
 
@@ -137,10 +137,10 @@ chmod +x kk
 运行以下命令，将您的集群升级至 KubeSphere 3.3 和 Kubernetes v1.22.12：
 
 ```bash
-./kk upgrade --with-kubernetes v1.22.12 --with-kubesphere v3.3.1 -f sample.yaml
+./kk upgrade --with-kubernetes v1.22.12 --with-kubesphere v3.3.2 -f sample.yaml
 ```
 
-要将 Kubernetes 升级至特定版本，请在 `--with-kubernetes` 标志后明确指定版本号。以下是可用版本：v1.19.x、v1.20.x、v1.21.x、* v1.22.x、* v1.23.x 和 * v1.24.x。带星号的版本可能出现边缘节点部分功能不可用的情况。因此，如需使用边缘节点，推荐安装 v1.21.x 及之前的版本。
+要将 Kubernetes 升级至特定版本，请在 `--with-kubernetes` 标志后明确指定版本号。以下是可用版本：v1.20.x、v1.21.x、* v1.22.x、* v1.23.x 和 * v1.24.x。带星号的版本可能出现边缘节点部分功能不可用的情况。因此，如需使用边缘节点，推荐安装 v1.21.x。
 
 {{< notice note >}}
 
