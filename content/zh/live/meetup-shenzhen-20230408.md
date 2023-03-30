@@ -16,7 +16,7 @@ section1:
 
 自 2021 年起，KubeSphere 社区开始走进多个城市组织大规模的 Meetup，这些近距离的线下分享交流会，既增强了社区各位小伙伴之间的连接和联系，又让各位小伙伴享受到了技术盛宴。
 
-2023 年 KubeSphere Meetup 第一站将走进深圳举办。此次 Meetup 也是第一次走进深圳组织，欢迎深圳当地的云原生爱好者和 KubeSphere 用户报名参与。本次 Meetup 邀请到 Flomesh、联易融、青云科技、深圳好上好信息、深圳氦三科技等企业的技术专家，分享多集群、Jenkins、GitOps 以及 KubeSphere 的可插拔架构和应用实践等干货内容。
+2023 年 KubeSphere Meetup 第一站将首次走进深圳，欢迎深圳当地的云原生爱好者和 KubeSphere 用户报名参与。本次 Meetup 邀请到 Flomesh、联易融、青云科技、深圳好上好信息、深圳氦三科技等企业的技术专家，分享多集群、Jenkins、GitOps 以及 KubeSphere 的可插拔架构和应用实践等干货内容。
 
 ## 活动时间和地点
 
