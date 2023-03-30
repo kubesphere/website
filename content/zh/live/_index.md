@@ -13,11 +13,11 @@ section2:
   url: ./ebpf0223-live/
 
   notice:
-    title: 浅聊 K8s 存储与 CSI
-    tag: 结束
-    time: 2023 年 02 月 16 日晚 8 点
-    base: 线上
-    url: ./csi0216-live/
+    title:  KubeSphere Meetup 深圳站
+    tag: 预告
+    time: 2023 年 04 月 08 日下午 2 点
+    base: 线下
+    url: ./meetup-shenzhen-20230408/
 
   over:
     title: 借助 Argo CD 实现 GitOps 多环境管理
