@@ -58,7 +58,7 @@ KubeSphere 3.3.1 对内置角色和自定义角色的授权项做了一些调整
 
 ### 步骤 1：下载 KubeKey
 
-1. 执行以下命令下载 KubeKey v3.0.2 并解压：
+1. 执行以下命令下载 KubeKey 并解压：
 
    {{< tabs >}}
 
@@ -67,7 +67,7 @@ KubeSphere 3.3.1 对内置角色和自定义角色的授权项做了一些调整
    从 [GitHub Release Page](https://github.com/kubesphere/kubekey/releases) 下载 KubeKey 或者直接运行以下命令。
 
    ```bash
-   curl -sfL https://get-kk.kubesphere.io | VERSION=v3.0.2 sh -
+   curl -sfL https://get-kk.kubesphere.io | VERSION=v3.0.7 sh -
    ```
 
    {{</ tab >}}
@@ -83,7 +83,7 @@ KubeSphere 3.3.1 对内置角色和自定义角色的授权项做了一些调整
    运行以下命令来下载 KubeKey：
 
    ```bash
-   curl -sfL https://get-kk.kubesphere.io | VERSION=v3.0.2 sh -
+   curl -sfL https://get-kk.kubesphere.io | VERSION=v3.0.7 sh -
    ```
    {{</ tab >}}
 
@@ -156,8 +156,6 @@ KubeSphere 3.3.1 对内置角色和自定义角色的授权项做了一些调整
    {{< notice note >}}
 
    - 您可以根据自己的需求变更下载的 Kubernetes 版本。安装 KubeSphere 3.3 的建议 Kubernetes 版本：v1.20.x、v1.21.x、* v1.22.x、* v1.23.x 和 * v1.24.x。带星号的版本可能出现边缘节点部分功能不可用的情况。因此，如需使用边缘节点，推荐安装 v1.21.x。如果不指定 Kubernetes 版本，KubeKey 将默认安装 Kubernetes v1.23.10。有关受支持的 Kubernetes 版本的更多信息，请参见[支持矩阵](../../installing-on-linux/introduction/kubekey/#支持矩阵)。
-
-   - 您可以通过下载 Kubernetes v1.17.9 二进制文件将 Kubernetes 从 v1.16.13 升级到 v1.17.9。但对于跨多个版本升级，需要事先下载所有中间版本，例如您想将 Kubernetes 从 v1.15.12 升级到 v1.18.6，则需要下载 Kubernetes v1.16.13、v1.17.9 和 v1.18.6 二进制文件。
 
    - 运行脚本后，会自动创建一个文件夹 `kubekey`。请注意，您稍后创建集群时，该文件和 `kk` 必须放在同一个目录下。
 

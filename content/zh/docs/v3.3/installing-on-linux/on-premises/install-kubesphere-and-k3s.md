@@ -32,7 +32,7 @@ weight: 3530
 从 [GitHub Release Page](https://github.com/kubesphere/kubekey/releases) 下载 KubeKey 或直接运行以下命令：
 
 ```bash
-curl -sfL https://get-kk.kubesphere.io | VERSION=v3.0.2 sh -
+curl -sfL https://get-kk.kubesphere.io | VERSION=v3.0.7 sh -
 ```
 
 {{</ tab >}}
@@ -48,7 +48,7 @@ export KKZONE=cn
 运行以下命令来下载 KubeKey：
 
 ```bash
-curl -sfL https://get-kk.kubesphere.io | VERSION=v3.0.2 sh -
+curl -sfL https://get-kk.kubesphere.io | VERSION=v3.0.7 sh -
 ```
 
 {{< notice note >}}
@@ -63,7 +63,7 @@ curl -sfL https://get-kk.kubesphere.io | VERSION=v3.0.2 sh -
 
 {{< notice note >}}
 
-通过以上的命令可以下载 KubeKey 的最新版本 (v3.0.2)。请注意，更早版本的 KubeKey 无法下载 K3s。
+通过以上的命令可以下载 KubeKey 的最新版本。请注意，更早版本的 KubeKey 无法下载 K3s。
 
 {{</ notice >}}
 
@@ -83,7 +83,7 @@ chmod +x kk
 
    {{< notice note >}}
 
-   - KubeKey v3.0.2 支持安装 K3s v1.21.4。
+   - KubeKey v3.0.7 支持安装 K3s v1.21.4。
 
    - 您可以在以上命令中使用 `-f` 或 `--file` 参数指定配置文件的路径和名称。如未指定路径和名称，KubeKey 将默认在当前目录下创建 `config-sample.yaml` 配置文件。
 

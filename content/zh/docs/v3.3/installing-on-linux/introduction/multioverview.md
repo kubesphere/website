@@ -101,7 +101,7 @@ KubeKey 可以一同安装 Kubernetes 和 KubeSphere。根据要安装的 Kubern
 从 [GitHub 发布页面](https://github.com/kubesphere/kubekey/releases)下载 KubeKey 或直接使用以下命令。
 
 ```bash
-curl -sfL https://get-kk.kubesphere.io | VERSION=v3.0.2 sh -
+curl -sfL https://get-kk.kubesphere.io | VERSION=v3.0.7 sh -
 ```
 
 {{</ tab >}}
@@ -117,7 +117,7 @@ export KKZONE=cn
 执行以下命令下载 KubeKey：
 
 ```bash
-curl -sfL https://get-kk.kubesphere.io | VERSION=v3.0.2 sh -
+curl -sfL https://get-kk.kubesphere.io | VERSION=v3.0.7 sh -
 ```
 
 {{< notice note >}}
@@ -132,7 +132,7 @@ curl -sfL https://get-kk.kubesphere.io | VERSION=v3.0.2 sh -
 
 {{< notice note >}}
 
-执行以上命令会下载最新版 KubeKey (v3.0.2)，您可以修改命令中的版本号下载指定版本。
+执行以上命令会下载最新版 KubeKey，您可以修改命令中的版本号下载指定版本。
 
 {{</ notice >}}
 

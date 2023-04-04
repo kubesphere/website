@@ -101,7 +101,7 @@ ssh -i .ssh/id_rsa2  -p50200 kubesphere@40.81.5.xx
 Download KubeKey from its [GitHub Release Page](https://github.com/kubesphere/kubekey/releases) or use the following command directly:
 
 ```bash
-curl -sfL https://get-kk.kubesphere.io | VERSION=v3.0.2 sh -
+curl -sfL https://get-kk.kubesphere.io | VERSION=v3.0.7 sh -
 ```
 
 {{</ tab >}}
@@ -117,7 +117,7 @@ export KKZONE=cn
 Run the following command to download KubeKey:
 
 ```bash
-curl -sfL https://get-kk.kubesphere.io | VERSION=v3.0.2 sh -
+curl -sfL https://get-kk.kubesphere.io | VERSION=v3.0.7 sh -
 ```
 
 {{< notice note >}}
@@ -132,7 +132,7 @@ After you download KubeKey, if you transfer it to a new machine also with poor n
 
    {{< notice note >}}
 
-The commands above download the latest release (v3.0.2) of KubeKey. You can change the version number in the command to download a specific version.
+The commands above download the latest release of KubeKey. You can change the version number in the command to download a specific version.
 
 {{</ notice >}} 
 
@@ -142,7 +142,7 @@ The commands above download the latest release (v3.0.2) of KubeKey. You can chan
    chmod +x kk
    ```
 
-2. Create an example configuration file with default configurations. Here Kubernetes v1.22.12 is used as an example.
+1. Create an example configuration file with default configurations. Here Kubernetes v1.22.12 is used as an example.
 
    ```bash
    ./kk create config --with-kubesphere v3.3.2 --with-kubernetes v1.22.12

@@ -183,7 +183,7 @@ When describing the UI, you can use the following prepositions.
   ```
 
   ```bash
-  # Assume your original Kubernetes cluster is v1.17.9
+  # Assume your original Kubernetes cluster is v1.20.4
   ./kk create config --with-kubesphere --with-kubernetes v1.20.4
   ```
 
