@@ -23,7 +23,6 @@ weight: 18300
 ### UPGRADES & ENHANCEMENTS
 
 - Be compatible with Kubernetes 1.15.x, 1.16.x, 1.17.x and 1.18.x for [ks-installer](https://github.com/kubesphere/ks-installer), v3.0.0
-- [KubeKey](https://github.com/kubesphere/kubekey) officially supports Kubernetes 1.15.12, 1.16.13, 1.17.9 and 1.18.6 (Please avoid using KubeKey to install Kubernetes 1.15 to 1.15.5 and 1.16 to 1.16.2, because Kubernetes has an [API validation issue](https://github.com/kubernetes/kubernetes/issues/83778))
 - Add support for EulerOS, UOS and KylinOS
 - Add support for Kunpeng and Phytium CPU
 - Use ClusterConfiguration CRD to store ks-installer's configuration instead of ConfigMap
