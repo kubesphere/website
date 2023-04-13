@@ -9,15 +9,15 @@ section1:
   image: /images/live/background.jpg
 
 section2:
-  image: /images/live/cloudnative-live-20230223.png
-  url: ./ebpf0223-live/
+  image: /images/live/cloud-native-20230408.png
+  url: ./meetup-shenzhen-20230408/
 
   notice:
-    title:  KubeSphere Meetup 深圳站
-    tag: 预告
-    time: 2023 年 04 月 08 日下午 2 点
-    base: 线下
-    url: ./meetup-shenzhen-20230408/
+    title:  使用 eBPF 零成本落地分布式追踪
+    tag: 结束
+    time: 2023 年 02 月 23 日晚 8 点
+    base: 线上
+    url: ./ebpf0223-live/
 
   over:
     title: 借助 Argo CD 实现 GitOps 多环境管理
@@ -26,6 +26,48 @@ section2:
 
 section3:
   videos:
+    - title: 借助 Argo CD 实现 GitOps 多环境管理
+      link: ./shenzhen0408-gitops/
+      snapshot: https://pek3b.qingstor.com/kubesphere-community/images/shenzhen0408-gitops-cover.png
+      type: iframe
+      createTime: 2023.04.08
+      group: Meetup
+
+    - title: 好上好信息 API 微服务集群在 KubeSphere 的部署实践
+      link: ./shenzhen0408-api/
+      snapshot: https://pek3b.qingstor.com/kubesphere-community/images/shenzhen0408-api-cover.png
+      type: iframe
+      createTime: 2023.04.08
+      group: Meetup
+
+    - title: KubeSphere 可插拔架构前瞻
+      link: ./shenzhen0408-kubesphere/
+      snapshot: https://pek3b.qingstor.com/kubesphere-community/images/shenzhen0408-kubesphere-cover.png
+      type: iframe
+      createTime: 2023.04.08
+      group: Meetup
+
+    - title: Jenkins 云原生企业级实践
+      link: ./shenzhen0408-jenkins/
+      snapshot: https://pek3b.qingstor.com/kubesphere-community/images/shenzhen0408-jenkins-cover.png
+      type: iframe
+      createTime: 2023.04.08
+      group: Meetup
+
+    - title: 混合多云下的多 K8s 集群和流量管理
+      link: ./shenzhen0408-flomesh/
+      snapshot: https://pek3b.qingstor.com/kubesphere-community/images/shenzhen0408-flomesh-cover.png
+      type: iframe
+      createTime: 2023.04.08
+      group: Meetup
+
+    - title: KubeSphere 走进高校交流第一站——华师大
+      link: ./cs4all-kubesphere/
+      snapshot: https://pek3b.qingstor.com/kubesphere-community/images/kubesphere-shuishan-cover.png
+      type: iframe
+      createTime: 2023.03.31
+      group: 走进高校
+
     - title: 使用 eBPF 零成本落地分布式追踪
       link: ./ebpf0223-live/
       snapshot: https://pek3b.qingstor.com/kubesphere-community/images/ebpf0223-live-cover.png
