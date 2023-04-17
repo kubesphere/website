@@ -990,6 +990,12 @@ section4:
   noticeImg: /images/live/notice.svg
   title: Meetup 回顾
   list:
+    - year: 2023
+      meetup: 
+        - place: 深圳站（04.08）
+          img: https://pek3b.qingstor.com/kubesphere-community/images/kubesphere-meetup-shenzhen-20230408-cover.png
+          meetupUrl: https://kubesphere.io/zh/live/meetup-shenzhen-20230408/
+
     - year: 2022
       meetup: 
         - place: 在线 Meetup（10.22）
