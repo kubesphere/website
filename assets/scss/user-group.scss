@@ -91,10 +91,16 @@
   }
 }
 
+.city-section{
+  background-repeat: no-repeat;
+  background-size: 100% auto;
+  background-position-y: bottom;
+}
+
 .cityBox {
   width: 100%;
-  padding-top: 91px;
-  padding-bottom: 99px;
+  padding-top: 147px;
+  padding-bottom: 188px;
   display: flex;
   flex-direction: row;
   position: relative;
@@ -103,46 +109,27 @@
     position: relative;
 
     .innerBox {
-      position: relative;
-      width: 232px;
-      height: 300px;
-      border-radius: 10px;
-      background: #FFFFFF;
-      box-shadow: 0px 8px 16px rgba(36, 46, 66, 0.05), 0px 4px 8px rgba(36, 46, 66, 0.06);
-      z-index: 0;
+      width: 184px;
+      // height: 300px;
 
-      .text{
-        position:absolute;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        z-index: 10;
-        padding: 24px 19px 24px 24px;
-        display: flex;
-        flex-direction: column;
-        justify-content: space-between;
-
-        .title {
+      .title {
           display: block;
           font-weight: 600;
           font-size: 32px;
           line-height: 52px;
           color: #171C34;
           margin-bottom: 8px;
-          z-index: 10;
-        }
-  
-        .des {
+      }
+
+      .des {
           display: block;
           font-size: 16px;
           line-height: 32px;
           color: #171C34;
           margin-bottom: 24px;
-          z-index: 10;
-        }
-  
-        .joinUs {
+      }
+
+      .joinUs {
           display: flex;
           width: 104px;
           height: 40px;
@@ -155,77 +142,34 @@
           font-weight: 600;
           font-size: 14px;
           line-height: 20px;
-          z-index: 10;
-        }
       }
-
-      .s-bg{
-        width: 293px;
-        height: 300px;
-        top: 0;
-        left: 0;
-        position: absolute;
-        background-image: url(/images/user-group/list/station-bg.svg);
-        background-size: cover;
-        background-position: -18px 0px;
-        background-repeat: no-repeat;
-        z-index: 1;
-      }
-    }
-
-    .bl-svg {
-      position: absolute;
-      width: 131px;
-      height: 128px;
-      bottom: -78px;
-      left: -63px;
-      z-index: -1;
     }
   }
 
-  .tr-svg {
-    position: absolute;
-    width: 131px;
-    height: 128px;
-    top: 19px;
-    right: -48px;
-    z-index: -1;
-  }
 
-  .imageBox{
-    overflow: hidden;
-
-    .imageList {
-      width: 1140px;
-      margin-left: 20px;
+  .imageList {
+      margin-left: 59px;
       display: flex;
       flex-direction: row;
       justify-content: flex-start;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 24px;
       flex: 1;
 
       .normalPic {
           display: block;
           box-sizing: border-box;
-          width: 212px;
-          height: 300px;
+          width: 280px;
+          height: 160px;
           border-radius: 10px;
           // background: #C4C4C4;
           padding: 20px;
           overflow: hidden;
           position: relative;
           z-index: 0;
-          transition: width .5s;
-    
-          img {
-            position: absolute;
-            border-radius: 10px;
-            width: 444px;
-            height: 300px;
-            top: 0px;
-            left: 0px;
-            z-index: -1;
-            transition: transform .5s;
-          }
+          transition: all .3s;
+          background-size: 100% 100%;
     
           .nameText {
             text-align: center;
@@ -240,55 +184,47 @@
             color: #ffffff;
           }
     
-          .textBox {
-            position: absolute;
-            bottom: 0px;
-            left: 0px;
-            padding: 20px;
-            padding-bottom: 16px;
-            opacity: 0;
-            background: linear-gradient(180deg, rgba(23, 28, 52, 0) 0%, rgba(23, 28, 52, 0.8) 100%);
-            border-radius: 10px;
+          // .textBox {
+          //   position: absolute;
+          //   bottom: 0px;
+          //   left: 0px;
+          //   padding: 20px;
+          //   padding-bottom: 16px;
+          //   opacity: 0;
+          //   background: linear-gradient(180deg, rgba(23, 28, 52, 0) 0%, rgba(23, 28, 52, 0.8) 100%);
+          //   border-radius: 10px;
     
-            .title {
-              font-weight: 600;
-              font-size: 16px;
-              line-height: 24px;
-              letter-spacing: -0.0444444px;
-              color: #FFFFFF;
-              margin-bottom: 8px;
-            }
+          //   .title {
+          //     font-weight: 600;
+          //     font-size: 16px;
+          //     line-height: 24px;
+          //     letter-spacing: -0.0444444px;
+          //     color: #FFFFFF;
+          //     margin-bottom: 8px;
+          //   }
     
-            .des {
-              font-size: 14px;
-              line-height: 20px;
-              color: rgba(255, 255, 255, 0.8);
-            }
-          }
+          //   .des {
+          //     font-size: 14px;
+          //     line-height: 20px;
+          //     color: rgba(255, 255, 255, 0.8);
+          //   }
+          // }
     
-          &:nth-child(even) {
-            margin: 0 20px;
-          }
-
-          &:last-child{
-            margin-right: 0px;
-          }
-
           &:hover {
-            width: 444px;
+            transform: scale(1.3, 1.3);
+            z-index: 100;
             cursor: pointer;
 
-            .textBox {
-              opacity: 1;
-              transition-delay: .6s;
-            }
+            // .textBox {
+            //   opacity: 1;
+            //   transition-delay: .6s;
+            // }
 
-            .chengdu {
-              left: 0px;
-            }
+            // .chengdu {
+            //   left: 0px;
+            // }
           }
       }
-    }
   }
 }
 
@@ -305,8 +241,12 @@
 
       .innerBox{
         width: 100%;
-        height: 228px;
         margin-top: -49px;
+        background: #FFFFFF;
+        box-shadow: 0px 8px 16px rgba(36, 46, 66, 0.05), 0px 4px 8px rgba(36, 46, 66, 0.06);
+        backdrop-filter: blur(6px);
+        padding: 2rem 2rem;
+        border-radius: 10px;
 
         .text{
           .title{
@@ -334,7 +274,6 @@
       display: none;
     }
 
-    .imageBox{
       .imageList{
         width: 100%;
         flex-direction: column;
@@ -362,9 +301,13 @@
               height: 100%;
             }
           }
+
+          &:hover{
+            transform: none;
+          }
         }
       }
-    }
+
   }
 }
 
