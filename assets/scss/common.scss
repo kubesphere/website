@@ -53,6 +53,14 @@ section {
   white-space: nowrap;
 }
 
+@media screen and (max-width: $mobile-max-width) {
+  .nowrap-li:last-of-type {
+    a {
+      white-space: normal;
+    }
+  }
+}
+
 .title-h1 {
   font-size: 40px;
   line-height: 1;

@@ -25,46 +25,33 @@
 {{ $Pages := .Pages.ByWeight }}
 
 {{ with .Params.citySection }}
-<section class="city-section div">
+<section class="city-section div" style="background-image: url(/images/user-group/list/org/bg.png);">
   <div class="common-layout">
     <div class="cityBox">
       {{ with .cityCard }}
       <div class="city-card">
         <div class="innerBox">
-          <div class="text">
-            <span class="title">{{ .title }}</span>
-            <span class="des">{{ .des }}</span>
-            <a class="joinUs" href="{{ .joinLink }}" target="_blank">加入我们</a>
-          </div>
-          <div class="s-bg"></div>
+          <span class="title">{{ .title }}</span>
+          <span class="des">{{ .des }}</span>
+          <a class="joinUs" href="{{ .joinLink }}" target="_blank">加入我们</a>
         </div>
-        <img class="bl-svg" src="/images/user-group/list/city-rect.svg">
       </div>
       {{ end }}
 
-      <div class="imageBox">
-        <div id="imageList" class="imageList">
-          {{ range $Pages }}
-          <a class="normalPic" href="{{ .Permalink | relURL }}" target="_blank">
-            <image src="{{ .Params.coverImage }}"></image>
+      <div class="imageList">
+        {{ range $Pages }}
+          <a class="normalPic" href="{{ .Permalink | relURL }}" target="_blank" style="background-image: url('{{ .Params.coverImage }}')">
             <div class="nameText">{{ .Params.stationName }}</div>
-            <div class="textBox">
-              <div class="title"> KubeSphere 社区用户委员会 — {{ .Params.stationName }}</div>
-              <div class="des">{{ .Params.topSection.description }}</div>
-            </div>
           </a>
-          {{ end }}
+        {{ end }}
         </div>
       </div>
-
-      <img class="tr-svg" src="/images/user-group/list/city-rect1.svg">
-    </div>
   </div>
 </section>
 {{end}}
-
+ 
 {{ with .Params.organization }}
-<section class="org-section div" style="background-image: url(/images/user-group/list/org/bg.png);">
+<section class="org-section div">
   <div class="common-layout">
     <div class="org">
       <div class="left">
@@ -215,23 +202,6 @@
 {{ end }}
 
 <script>
-  var imageList = $('#imageList')
-  imageList.children().each(function (index, item) {
-    if (imageList.children().length >= 4) {
-      if (index === imageList.children().length - 1) {
-        $(item).hover(function () {
-          $('#imageList').removeClass('flex-start')
-          $('#imageList').addClass('flex-end')
-        })
-      } else {
-        $(item).hover(function () {
-          if ($('#imageList').hasClass('flex-end')) {
-            $('#imageList').removeClass('flex-end')
-            $('#imageList').addClass('flex-start')
-          }
-        })
-      }
-    }
-  }) 
+
 </script>
 {{ end }}

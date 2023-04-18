@@ -6,7 +6,7 @@ css: "scss/user-group.scss"
 topSection:
   kubSphere: KubeSphere 
   committee: 社区用户委员会
-  description: KubeSphere 社区用户委员会，是由 KubeSphere 社区牵头发起，在某个城市当地，由活跃且愿意为 KubeSphere 社区发展而贡献的社区成员构成的组织。社区会给予委员会相应的支持和授权，汇聚城市当地优秀的云原生人才，连接 KubeSphere 社区与开发者，通过丰富多样化的社区交流与线下互动活动，促进云原生技术知识的分享、推广和实践，促进 KubeSphere 社区的发展。目前已经成立 4 个城市站：上海、杭州、成都、广州。
+  description: KubeSphere 社区用户委员会，是由 KubeSphere 社区牵头发起，在某个城市当地，由活跃且愿意为 KubeSphere 社区发展而贡献的社区成员构成的组织。社区会给予委员会相应的支持和授权，汇聚城市当地优秀的云原生人才，连接 KubeSphere 社区与开发者，通过丰富多样化的社区交流与线下互动活动，促进云原生技术知识的分享、推广和实践，促进 KubeSphere 社区的发展。目前已经成立 5 个城市站：上海、杭州、成都、广州、深圳。
   image: /images/user-group/list/banner.png
   mobile_image: /images/user-group/list/m-banner.png
 
