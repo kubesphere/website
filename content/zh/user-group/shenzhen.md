@@ -19,8 +19,8 @@ station:
     text1: 申请加入
     text2: 社区用户委员会—深圳站
   description: 
-    - 不管你是否是 KubeSphere 的用户，只要你对云原生技术感兴趣，对组织活动有热情，对发展 KubeSphere 社区有想法，即可申请加入 KubeSphere 社区广州用户委员会。
-    - 如果你想加入 KubeSphere 社区用户委员会—广州站，成为其中的一名委员（成员），为发展 KubeSphere 社区贡献自己的一份力量，可添加广州站站长微信申请，并可加入 KubeSphere 开源社区广州站微信群。
+    - 不管你是否是 KubeSphere 的用户，只要你对云原生技术感兴趣，对组织活动有热情，对发展 KubeSphere 社区有想法，即可申请加入 KubeSphere 社区深圳用户委员会。
+    - 如果你想加入 KubeSphere 社区用户委员会—深圳站，成为其中的一名委员（成员），为发展 KubeSphere 社区贡献自己的一份力量，可添加深圳站站长微信申请，并可加入 KubeSphere 开源社区深圳站微信群。
   manager: 
     name: 徐鹏
     image: /images/user-group/shenzhen/xupeng.jpeg
@@ -65,7 +65,7 @@ members:
 
     - name: 吴妙勇
       position: 委员
-      des: 通信专业在读，爱好竞赛、公益志愿，程序编写。参加多场志愿公益活动与项目，获“榜样青年”“青年之星”等称呼。参与国家级科研立项 1 项，发明专利研发 1 项。目前担任职畅新青年珠海城市站主席一职。
+      des: 江苏霄龙网络科技有限责任公司广东省总经理。通信专业在读，爱好竞赛、公益志愿，程序编写。参加多场志愿公益活动与项目，获“榜样青年”“青年之星”等称呼。参与国家级科研立项 1 项，发明专利研发 1 项。
       image: /images/user-group/shenzhen/wumiaoyong.jpg
 
     - name: 刘锡锋
