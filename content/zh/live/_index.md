@@ -13,16 +13,16 @@ section2:
   url: ./meetup-shenzhen-20230408/
 
   notice:
-    title:  使用 eBPF 零成本落地分布式追踪
-    tag: 结束
-    time: 2023 年 02 月 23 日晚 8 点
+    title: 利用 ChatGPT 检测 K8s 安全与合规性
+    tag: 预告
+    time: 2023 年 04 月 20 日晚 8 点
     base: 线上
-    url: ./ebpf0223-live/
+    url: ./chatgpt-k8s-0420-live/
 
   over:
-    title: 借助 Argo CD 实现 GitOps 多环境管理
+    title: 使用 eBPF 零成本落地分布式追踪
     tag: 结束
-    url: ./gitops0111-live/
+    url: ./ebpf0223-live/
 
 section3:
   videos:
