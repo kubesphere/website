@@ -9,15 +9,15 @@ section1:
   image: /images/live/background.jpg
 
 section2:
-  image: /images/live/cloud-native-20230408.png
-  url: ./meetup-shenzhen-20230408/
+  image: /images/live/cloud-native-20230420.png
+  url: ./chatgpt-k8s-0420-live/
 
   notice:
-    title: 利用 ChatGPT 检测 K8s 安全与合规性
-    tag: 预告
-    time: 2023 年 04 月 20 日晚 8 点
-    base: 线上
-    url: ./chatgpt-k8s-0420-live/
+    title: KubeSphere Meetup 深圳站
+    tag: 结束
+    time: 2023 年 04 月 08 日
+    base: 线上+线下
+    url: ./meetup-shenzhen-20230408/
 
   over:
     title: 使用 eBPF 零成本落地分布式追踪
@@ -26,6 +26,13 @@ section2:
 
 section3:
   videos:
+    - title: 利用 ChatGPT 检测 K8s 安全与合规性
+      link: ./chatgpt-k8s-0420-live/
+      snapshot: https://pek3b.qingstor.com/kubesphere-community/images/chatgpt-k8s-0420-live-cover.png
+      type: iframe
+      createTime: 2023.04.20
+      group: 直播回放
+
     - title: 借助 Argo CD 实现 GitOps 多环境管理
       link: ./shenzhen0408-gitops/
       snapshot: https://pek3b.qingstor.com/kubesphere-community/images/shenzhen0408-gitops-cover.png
