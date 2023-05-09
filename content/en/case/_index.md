@@ -115,6 +115,8 @@ section3:
           icon: 'images/case/logo-turing.png'   
         - name: 'pigeon'
           icon: 'images/case/logo-pigeon.png' 
+        - name: 'excelsecu'
+          icon: 'images/case/logo-excelsecu.png'
 
     - name: 'Internet'
       children:
