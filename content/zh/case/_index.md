@@ -108,6 +108,10 @@ section2:
       content: "无锡广播电视集团成立于 1999 年，为全国首家广电集团。"
       link: "wuxitv/"
 
+    - icon: "images/case/logo-excelsecu.png"
+      content: "深圳市文鼎创数据科技有限公司创立于 2006 年，是全球领先的线上身份认证解决方案提供商。"
+      link: "excelsecu/"
+
 section3:
   title: 'KubeSphere 助力各行各业'
   tip: 全部
@@ -183,6 +187,8 @@ section3:
           icon: 'images/case/logo-turing.png'
         - name: 'pigeon'
           icon: 'images/case/logo-pigeon.png'
+        - name: 'excelsecu'
+          icon: 'images/case/logo-excelsecu.png'
 
     - name: '互联网'
       children:
