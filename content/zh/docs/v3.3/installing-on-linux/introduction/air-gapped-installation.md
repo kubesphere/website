@@ -153,9 +153,9 @@ KubeKey v2.1.0 版本新增了清单（manifest）和制品（artifact）的概�
      - registry.cn-beijing.aliyuncs.com/kubesphereio/edgeservice:v0.2.0
      - registry.cn-beijing.aliyuncs.com/kubesphereio/gatekeeper:v3.5.2
      - registry.cn-beijing.aliyuncs.com/kubesphereio/openpitrix-jobs:v3.3.2
-     - registry.cn-beijing.aliyuncs.com/kubesphereio/devops-apiserver:v3.3.2
-     - registry.cn-beijing.aliyuncs.com/kubesphereio/devops-controller:v3.3.2
-     - registry.cn-beijing.aliyuncs.com/kubesphereio/devops-tools:v3.3.2
+     - registry.cn-beijing.aliyuncs.com/kubesphereio/devops-apiserver:ks-v3.3.2
+     - registry.cn-beijing.aliyuncs.com/kubesphereio/devops-controller:ks-v3.3.2
+     - registry.cn-beijing.aliyuncs.com/kubesphereio/devops-tools:ks-v3.3.2
      - registry.cn-beijing.aliyuncs.com/kubesphereio/ks-jenkins:v3.3.0-2.319.1
      - registry.cn-beijing.aliyuncs.com/kubesphereio/inbound-agent:4.10-2
      - registry.cn-beijing.aliyuncs.com/kubesphereio/builder-base:v3.2.2
