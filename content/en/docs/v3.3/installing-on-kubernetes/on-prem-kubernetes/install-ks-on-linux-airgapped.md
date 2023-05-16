@@ -310,9 +310,9 @@ openpolicyagent/gatekeeper:v3.5.2
 ##openpitrix-images
 kubesphere/openpitrix-jobs:v3.3.2
 ##kubesphere-devops-images
-kubesphere/devops-apiserver:v3.3.2
-kubesphere/devops-controller:v3.3.2
-kubesphere/devops-tools:v3.3.2
+kubesphere/devops-apiserver:ks-v3.3.2
+kubesphere/devops-controller:ks-v3.3.2
+kubesphere/devops-tools:ks-v3.3.2
 kubesphere/ks-jenkins:v3.3.0-2.319.1
 jenkins/inbound-agent:4.10-2
 kubesphere/builder-base:v3.2.2

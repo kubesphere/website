@@ -149,9 +149,9 @@ In KubeKey v2.1.0, we bring in concepts of manifest and artifact, which provides
      - docker.io/kubesphere/edgeservice:v0.2.0
      - docker.io/openpolicyagent/gatekeeper:v3.5.2
      - docker.io/kubesphere/openpitrix-jobs:v3.3.2
-     - docker.io/kubesphere/devops-apiserver:v3.3.2
-     - docker.io/kubesphere/devops-controller:v3.3.2
-     - docker.io/kubesphere/devops-tools:v3.3.2
+     - docker.io/kubesphere/devops-apiserver:ks-v3.3.2
+     - docker.io/kubesphere/devops-controller:ks-v3.3.2
+     - docker.io/kubesphere/devops-tools:ks-v3.3.2
      - docker.io/kubesphere/ks-jenkins:v3.3.0-2.319.1
      - docker.io/jenkins/inbound-agent:4.10-2
      - docker.io/kubesphere/builder-base:v3.2.2
