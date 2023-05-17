@@ -134,4 +134,8 @@ section4:
     - icon: "images/partner/databend-logo.svg"
       partnerType: "应用程序提供商"
       content: 'Databend 是一款面向对象存储设计的新一代云原生数据仓库。采用存算分离架构，兼容 MySQL、ClickHouse 协议，支持多种对象存储、多租户体系和数据共享，具备实时分析、弹性扩缩容和 PB 级数据处理能力。'     
+
+    - icon: "images/partner/logo-flomesh.png"
+      partnerType: "市场合作伙伴"
+      content: 'Flomesh 是一站式云原生应用流量管理供应商，以开源软件 Pipy 为核心，提供全方面的应用流量管理产品及解决方案。在混合云、多云环境中提供了统一的、一致的负载均衡能力、开箱即用的服务网格能力和全局一体化的管理能力。'   
 ---

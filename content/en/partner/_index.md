@@ -132,5 +132,9 @@ section4:
 
     - icon: "images/partner/databend-logo.svg"
       partnerType: "App Provider"
-      content: 'Databend is a modern cloud data warehouse focusing on reducing cost and complexity for your massive-scale analytics needs. It is an open source alternative to Snowflake.'  
+      content: 'Databend is a modern cloud data warehouse focusing on reducing cost and complexity for your massive-scale analytics needs. It is an open-source alternative to Snowflake.'  
+
+    - icon: "images/partner/logo-flomesh.png"
+      partnerType: "Go-to-market"
+      content: 'Flomesh is a leading provider of cloud-native application traffic management solutions centered around the open-source software, Pipy. With an extensive range of products and solutions, Flomesh excels in delivering unified and consistent load balancing capabilities, out-of-the-box service mesh functionality, and globally integrated management features, specifically designed for hybrid cloud and multi-cloud environments.'
 ---
