@@ -51,7 +51,7 @@ section1:
 - 介绍 Flomesh 多集群、技术亮点和架构
 - KubeSphere 与 Flomesh 一站式的解决方案
 
-> 因直播收音设备问题，本议题直播回放视频未收录声音，后续讲师会进行补录。届时会更新。
+<iframe width="760" height="380" src="https://player.bilibili.com/player.html?aid=313773230&bvid=BV1EP411d7uX&cid=1133992070&page=1&high_quality=1" scrolling="no" border="0" frameborder="no" framespacing="0" allowfullscreen="true"> </iframe>
 
 ### Jenkins 云原生企业级实践
 
