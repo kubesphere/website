@@ -529,7 +529,7 @@ Please check the result using the command:
 
 1. 验证 KubeSphere 管理控制台
 
-我们打开浏览器访问 master-0 节点的 Ip 地址和端口 "30880"，可以看到 KubeSphere 管理控制台的登录页面。
+我们打开浏览器访问 master-0 节点的 IP 地址和端口 "30880"，可以看到 KubeSphere 管理控制台的登录页面。
 
 输入默认用户 admin 和默认密码 P@88w0rd，然后点击「登录」。
 
