@@ -13,16 +13,16 @@ section2:
   url: ./chatgpt-k8s-0420-live/
 
   notice:
-    title: KubeSphere Meetup 深圳站
-    tag: 结束
-    time: 2023 年 04 月 08 日
-    base: 线上+线下
-    url: ./meetup-shenzhen-20230408/
+    title: 云原生 Meetup 杭州站
+    tag: 预告
+    time: 2023 年 06 月 03 日
+    base: 线上+杭州
+    url: ./meetup-hangzhou-20230603/
 
   over:
-    title: 使用 eBPF 零成本落地分布式追踪
+    title: KubeSphere Meetup 深圳站
     tag: 结束
-    url: ./ebpf0223-live/
+    url: ./meetup-shenzhen-20230408/
 
 section3:
   videos:
