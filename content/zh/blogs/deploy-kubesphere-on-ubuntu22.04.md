@@ -12,10 +12,6 @@ snapshot: 'https://pek3b.qingstor.com/kubesphere-community/images/kubesphere-on-
 
 ## 前言
 
-### **导图**
-
-![](https://pek3b.qingstor.com/kubesphere-community/images/KubeSphere-ubuntu-mind.png)
-
 ### **知识点**
 
 - 定级：**入门级**
