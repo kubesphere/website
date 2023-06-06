@@ -9,15 +9,15 @@ section1:
   image: /images/live/background.jpg
 
 section2:
-  image: /images/live/cloud-native-20230420.png
-  url: ./chatgpt-k8s-0420-live/
+  image: /images/live/cloudnative-live-20230603.png
+  url: ./meetup-hangzhou-20230603/
 
   notice:
-    title: 云原生 Meetup 杭州站
-    tag: 预告
-    time: 2023 年 06 月 03 日
-    base: 线上+杭州
-    url: ./meetup-hangzhou-20230603/
+    title: 利用 ChatGPT 检测 K8s 安全与合规性
+    tag: 结束
+    time: 2023 年 04 月 20 日
+    base: 线上
+    url: ./chatgpt-k8s-0420-live/
 
   over:
     title: KubeSphere Meetup 深圳站
@@ -26,6 +26,34 @@ section2:
 
 section3:
   videos:
+    - title: 无需编译重启快速扩展服务网格功能
+      link: ./hangzhou0603-flomesh/
+      snapshot: https://pek3b.qingstor.com/kubesphere-community/images/hangzhou0603-flomesh-cover.png
+      type: iframe
+      createTime: 2023.06.03
+      group: Meetup
+
+    - title: Curve 云原生分布式存储
+      link: ./hangzhou0603-curve/
+      snapshot: https://pek3b.qingstor.com/kubesphere-community/images/hangzhou0603-curve-cover.png
+      type: iframe
+      createTime: 2023.06.03
+      group: Meetup
+
+    - title: 极狐GitLab x KubeSphere，云原生应用安全构建初体验
+      link: ./hangzhou0603-gitlab/
+      snapshot: https://pek3b.qingstor.com/kubesphere-community/images/hangzhou0603-gitlab-cover.png
+      type: iframe
+      createTime: 2023.06.03
+      group: Meetup
+
+    - title: 基于 KubeSphere 的云计算落地实践
+      link: ./hangzhou0603-kubesphere/
+      snapshot: https://pek3b.qingstor.com/kubesphere-community/images/hangzhou0603-kubesphere-cover.png
+      type: iframe
+      createTime: 2023.06.03
+      group: Meetup
+
     - title: 利用 ChatGPT 检测 K8s 安全与合规性
       link: ./chatgpt-k8s-0420-live/
       snapshot: https://pek3b.qingstor.com/kubesphere-community/images/chatgpt-k8s-0420-live-cover.png
