@@ -1027,6 +1027,10 @@ section4:
   list:
     - year: 2023
       meetup: 
+        - place: 杭州站（06.03）
+          img: https://pek3b.qingstor.com/kubesphere-community/images/meetup-hangzhou-20230603-cover.png
+          meetupUrl: https://kubesphere.io/zh/live/meetup-hangzhou-20230603/
+
         - place: 深圳站（04.08）
           img: https://pek3b.qingstor.com/kubesphere-community/images/kubesphere-meetup-shenzhen-20230408-cover.png
           meetupUrl: https://kubesphere.io/zh/live/meetup-shenzhen-20230408/
