@@ -8,7 +8,7 @@ author: '老 Z'
 snapshot: 'https://pek3b.qingstor.com/kubesphere-community/images/kubesphere-jenkins-log4j2-cover.png'
 ---
 
-> 作者：老 Z，中电信数智科技有限公司山东分公司运维架构师，云原生爱好者，目前专注于云原生运维，云原生领域技术栈涉及 Kubernetes、KubeSphere、DevOps、OpenStack、Ansible 等。
+> 作者：老 Z，运维架构师，云原生爱好者，目前专注于云原生运维，云原生领域技术栈涉及 Kubernetes、KubeSphere、DevOps、OpenStack、Ansible 等。
 
 ![](https://pek3b.qingstor.com/kubesphere-community/images/image-20230210141327867.png)
 
