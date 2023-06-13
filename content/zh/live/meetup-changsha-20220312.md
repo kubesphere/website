@@ -1,6 +1,6 @@
 ---
 title: 云原生 Meetup 长沙站
-description: 云原生 Meetup 长沙站，来自 WasmEdge 社区、提灯医疗、中电信数智科技、阿里云及中移金科的技术大牛和嘉宾，围绕“WebAssembly、Rust、微服务治理、Serverless、多云和多集群”等话题进行了精彩分享。
+description: 云原生 Meetup 长沙站，来自 WasmEdge 社区、提灯医疗、阿里云及中移金科的技术大牛和嘉宾，围绕“WebAssembly、Rust、微服务治理、Serverless、多云和多集群”等话题进行了精彩分享。
 keywords: KubeSphere,Meetup,ChangSha,Serverless,WebAssembly,Rust,OpenFunction,微服务
 css: scss/live-detail.scss
 
@@ -25,7 +25,7 @@ section1:
 
 <center>围绕“WebAssembly、Rust、微服务治理、Serverless、多云和多集群”等话题</center>
 
-<center>来自 WasmEdge 社区、提灯医疗、中电信数智科技、阿里云及中移金科的技术大牛和嘉宾</center>
+<center>来自 WasmEdge 社区、提灯医疗、阿里云及中移金科的技术大牛和嘉宾</center>
 
 <center>带来了新的实践和思考</center>
 
@@ -63,7 +63,7 @@ section1:
 
 讲师：唐波涛
 
-个人介绍：中电信数智科技湖南分公司，运维组长
+个人介绍：运维组长
 
 演讲概要：集群镜像把整个集群看成一台服务器，把 K8s 看成云操作系统，实现整个集群的镜像化打包和交付，为企业级软件提供一种“开箱即用”的应用封装技术。以行业 ISV 为例，集群镜像帮助企业解决了分布式软件的部署一致性难题、降低了交付出错率，最终指数级降低分布式软件的交付成本。受 Docker 等容器技术的启发，集群镜像将单机应用封装技术，上升到分布式集群维度，最终实现分布式软件的高效交付（build, share, run)。
 
