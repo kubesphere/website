@@ -41,7 +41,7 @@
 - id: demo content 3
   translation: 3.Create a K8s cluster with KubeSphere installed.
 - id: demo content 4
-  translation: 4.Access KubeSphere with the default account and password (admin/P@88word).
+  translation: 4.Access KubeSphere with the default account and password (admin/P@88w0rd).
 - id: Coming Soon
   translation: Coming Soon
 - id: Read More
