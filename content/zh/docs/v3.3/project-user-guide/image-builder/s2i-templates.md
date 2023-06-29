@@ -38,7 +38,7 @@ S2I 模板自定义分成两部分。
 1. [S2I 命令行工具](https://github.com/openshift/source-to-image/releases)提供了一个易于使用的命令来初始化构建器所需的基本目录结构。运行以下命令以安装S2I CLI。
 
    ```bash
-   $ wget https://github.com/openshift/source-to-image/releases/download/v1.2.04/source-to-image-v1.1.14-874754de-linux-386.tar.gz
+   $ wget https://github.com/openshift/source-to-image/releases/download/v1.1.14/source-to-image-v1.1.14-874754de-linux-386.tar.gz
    $ tar -xvf source-to-image-v1.1.14-874754de-linux-386.tar.gz
    $ ls
    s2i source-to-image-v1.1.14-874754de-linux-386.tar.gz  sti
