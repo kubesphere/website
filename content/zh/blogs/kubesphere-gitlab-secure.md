@@ -2,7 +2,7 @@
 title: '云原生时代，如何通过 KubeSphere x 极狐GitLab 构建安全应用？'
 tag: 'KubeSphere'
 keywords: 'Kubernetes, KubeSphere, GitLab '
-description: '结合 KubeSphere 和极狐 GitLab 来构建一个云原生应用安全体系。'
+description: '结合 KubeSphere 和极狐GitLab 来构建一个云原生应用安全体系。'
 createTime: '2023-06-28'
 author: '小马哥'
 snapshot: 'https://pek3b.qingstor.com/kubesphere-community/images/kubesphere-gitlab-20230628-cover.png'
@@ -118,13 +118,13 @@ Gartner 每年会针对新技术会发布一个技术成熟度曲线，上图是
 
 - 持续优化，持续安全
 
-针对以上云原生开发安全防护体系，极狐 GitLab 提供开箱即用的 DevSecOps 功能，包括七大功能：**容器镜像扫描、静态应用安全测试 (SAST)、动态应用安全扫描（DAST）、密钥检测、License 合规、依赖项扫描以及模糊测试**。
+针对以上云原生开发安全防护体系，极狐GitLab 提供开箱即用的 DevSecOps 功能，包括七大功能：**容器镜像扫描、静态应用安全测试 (SAST)、动态应用安全扫描（DAST）、密钥检测、License 合规、依赖项扫描以及模糊测试**。
 
 ![](https://pek3b.qingstor.com/kubesphere-community/images/kubesphere-gitlab-20230628-10.jpg)
 
 ### 这么多安全功能，如何去实现落地？
 
-一言以蔽之，就是**将这些安全功能集成到 CI/CD（持续集成/持续部署）中去，达到持续测试和持续安全的效果**。极狐 GitLab 把所有安全功能和 CI/CD 集成到 Workflow 中，这个 Workflow 和研发工作流融合到一块，非常完整。
+一言以蔽之，就是**将这些安全功能集成到 CI/CD（持续集成/持续部署）中去，达到持续测试和持续安全的效果**。极狐GitLab 把所有安全功能和 CI/CD 集成到 Workflow 中，这个 Workflow 和研发工作流融合到一块，非常完整。
 
 ![](https://pek3b.qingstor.com/kubesphere-community/images/kubesphere-gitlab-20230628-11.jpg)
 
@@ -136,33 +136,33 @@ Gartner 每年会针对新技术会发布一个技术成熟度曲线，上图是
 
 > 图中不同安全手段标注不同颜色，是一个简单建议，也就是蓝色的几种安全手段是非常容易实践而且收效不错的，如果要全部落地实践，可以采取这种循序渐进的方式，先落地蓝色部分，再落地绿色部分。
 
-## 极狐 GitLab x KubeSphere 云原生安全体系如何构建？
+## 极狐GitLab x KubeSphere 云原生安全体系如何构建？
 
-接下来，我们来聊聊如何把 KubeSphere 和极狐 GitLab 进行结合，利用 CI/CD，把安全防护手段集成到软件开发生命周期中。
+接下来，我们来聊聊如何把 KubeSphere 和极狐GitLab 进行结合，利用 CI/CD，把安全防护手段集成到软件开发生命周期中。
 
-### 极狐 GitLab 介绍
+### 极狐GitLab 介绍
 
-极狐 GitLab 是一个一体化的 DevOps 平台，其提供的一体化 DevOps 能力覆盖软件开发全生命周期（从计划到运维），同时内置安全功能，能够利用开箱即用的安全能力构建 DevSecOps 体系。
+极狐GitLab 是一个一体化的 DevOps 平台，其提供的一体化 DevOps 能力覆盖软件开发全生命周期（从计划到运维），同时内置安全功能，能够利用开箱即用的安全能力构建 DevSecOps 体系。
 
 ### KubeSphere 介绍
 
 Kubernetes 是一个非常复杂的容器编排平台，学习成本非常高，KubeSphere 所做的事情就是高度产品化和抽象了底层 Kubernetes，是一个面向云原生的操作系统，解决了 K8s 使用门槛高和云原生生态工具庞杂的痛点。
 
-### 在 KubeSphere 上使用极狐 GitLab 搭建 DevOps 有什么优势？
+### 在 KubeSphere 上使用极狐GitLab 搭建 DevOps 有什么优势？
 
-最典型的优点就是可以实现极狐 GitLab & Runner 的云原生运行并实现灵活调度。
+最典型的优点就是可以实现极狐GitLab & Runner 的云原生运行并实现灵活调度。
 
-可以看下图这个实例，当研发人员提交代码变更之后，就会触发 CI/CD Pipeline，而极狐 GitLab CI 如果检测到有 Job 需要运行，就会给 Runner 一个信号，触发背后的调度机制，Executors 帮助完成所有的 Step，例如对 Go 源码进行 Check out、Build、Test。
+可以看下图这个实例，当研发人员提交代码变更之后，就会触发 CI/CD Pipeline，而极狐GitLab CI 如果检测到有 Job 需要运行，就会给 Runner 一个信号，触发背后的调度机制，Executors 帮助完成所有的 Step，例如对 Go 源码进行 Check out、Build、Test。
 
 ![](https://pek3b.qingstor.com/kubesphere-community/images/kubesphere-gitlab-20230628-13.jpg)
 
-如何在 KubeSphere 上安装极狐 GitLab ？
+如何在 KubeSphere 上安装极狐GitLab ？
 
-### 极狐 GitLab 和 KubeSphere 的集成主要有两个方式：
+### 极狐GitLab 和 KubeSphere 的集成主要有两个方式：
 
 **➤ 方式一**
 
-直接把极狐 GitLab Runner 作为单组件，安装在 KubeSphere 上，当我们的应用程序代码提交之后，开始跑 CI 时，就会自动在 KubeSphere 上完成所有构建操作，并直接反馈数据。
+直接把极狐GitLab Runner 作为单组件，安装在 KubeSphere 上，当我们的应用程序代码提交之后，开始跑 CI 时，就会自动在 KubeSphere 上完成所有构建操作，并直接反馈数据。
 
 安装步骤如下：
 
@@ -178,7 +178,7 @@ Kubernetes 是一个非常复杂的容器编排平台，学习成本非常高，
 
 ![](https://pek3b.qingstor.com/kubesphere-community/images/kubesphere-gitlab-20230628-16.jpg)
 
-4. 修改 Yaml 文件内容，输入极狐 GitLab 实例地址 Runner Token 等，点击 Install 即可。
+4. 修改 Yaml 文件内容，输入极狐GitLab 实例地址 Runner Token 等，点击 Install 即可。
 
 ![](https://pek3b.qingstor.com/kubesphere-community/images/kubesphere-gitlab-20230628-17.jpg)
 
@@ -188,7 +188,7 @@ Kubernetes 是一个非常复杂的容器编排平台，学习成本非常高，
 
 **➤ 方式二**
 
-把整个极狐 GitLab 源代码托管平台安装到 KubeSphere 上面去，目前在 KubeSphere 上部署极狐 GitLab 非常便利，只需要利用 KubeSphere 应用商店搜索极狐 GitLab 即可一键部署。安装好以后，团队就可以直接在 KubeSphere 上面使用极狐 GitLab 进行协作了。
+把整个极狐GitLab 源代码托管平台安装到 KubeSphere 上面去，目前在 KubeSphere 上部署极狐GitLab 非常便利，只需要利用 KubeSphere 应用商店搜索极狐GitLab 即可一键部署。安装好以后，团队就可以直接在 KubeSphere 上面使用极狐GitLab 进行协作了。
 
 详细安装教程：
 
@@ -196,9 +196,9 @@ https://gitlab.cn/blog/2022/04/01/jihu-kubesphere/?jh=gu0%20%E4%BD%9C%E8%80%85%E
 
 ![](https://pek3b.qingstor.com/kubesphere-community/images/kubesphere-gitlab-20230628-19.jpg)
 
-以上介绍了如何在 KubeSphere 上安装极狐 GitLab/Runner，接下来我们通过一个 Demo 介绍如何在 KubeSphere 上进行 DevSecOps 检测。
+以上介绍了如何在 KubeSphere 上安装极狐GitLab/Runner，接下来我们通过一个 Demo 介绍如何在 KubeSphere 上进行 DevSecOps 检测。
 
-### 极狐 GitLab x KubeSphere 安全扫描 Demo
+### 极狐GitLab x KubeSphere 安全扫描 Demo
 
 安装完以后，通过 Project → Settings → CI/CD 这个路径找到 Runner 页面，左边是项目专用 Runner，也就是只有这个项目可以用，其他项目用不了；右边共享 Runner 则是可以被此实例下的其他项目所使用的 Runner。
 
@@ -214,8 +214,8 @@ https://gitlab.cn/blog/2022/04/01/jihu-kubesphere/?jh=gu0%20%E4%BD%9C%E8%80%85%E
 
 - 最后，修复后重新提交，再次扫描没有问题就可以合入了。
 
-以上就是一个简单的 Demo，来使用极狐 GitLab 的安全扫描功能。
+以上就是一个简单的 Demo，来使用极狐GitLab 的安全扫描功能。
 
 ## 总结
 
-本文给大家介绍了极狐 GitLab 和 KubeSphere 各自的优势，并探讨了如何结合 KubeSphere 和极狐 GitLab 来构建一个云原生应用安全体系，最后通过一个示例来展示极狐 GiLab DevSecOps 功能的工作原理，希望对大家有帮助～
+本文给大家介绍了极狐GitLab 和 KubeSphere 各自的优势，并探讨了如何结合 KubeSphere 和极狐GitLab 来构建一个云原生应用安全体系，最后通过一个示例来展示极狐GitLab DevSecOps 功能的工作原理，希望对大家有帮助～
