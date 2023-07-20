@@ -184,6 +184,8 @@ section3:
       children:
         - name: 'chinamobile-iot'
           icon: 'images/case/chinamobile-iot.png'
+        - name: 'eastcom'
+          icon: 'images/case/logo-eastcom.png'
 
     - name: 'Educational'
       children:

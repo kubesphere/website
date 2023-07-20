@@ -112,6 +112,10 @@ section2:
       content: "深圳市文鼎创数据科技有限公司创立于 2006 年，是全球领先的线上身份认证解决方案提供商。"
       link: "excelsecu/"
 
+    - icon: "images/case/logo-eastcom.png"
+      content: "东方通信是一家集硬件设备、软件、服务为一体的整体解决方案提供商。"
+      link: "eastcom/"
+
 section3:
   title: 'KubeSphere 助力各行各业'
   tip: 全部
@@ -256,6 +260,8 @@ section3:
       children:
         - name: 'chinamobile-iot'
           icon: 'images/case/chinamobile-iot.png'
+        - name: 'eastcom'
+          icon: 'images/case/logo-eastcom.png'
 
     - name: '教育'
       children:
