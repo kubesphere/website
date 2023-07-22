@@ -99,7 +99,25 @@ weight: 5320
 2. 在本地计算机上运行以下命令，获得由 KubeSphere 创建的 ServiceAccount `kubesphere` 的令牌，该令牌对集群具有集群管理员访问权限，并将用作新的 kubeconfig 令牌。
 
    ```bash
-   TOKEN=$(kubectl -n kubesphere-system get secret $(kubectl -n kubesphere-system get sa kubesphere -o jsonpath='{.secrets[0].name}') -o jsonpath='{.data.token}' | base64 -d)
+   USER=kubesphere
+   NAMESPACE=kubesphere-system
+   # 删除旧密钥
+   kubectl delete secret ${USER}-secret -n ${NAMESPACE}
+   # 创建密钥
+   kubectl apply -f - <<EOF
+   apiVersion: v1
+   kind: Secret
+   metadata:
+     namespace: ${NAMESPACE}
+     name: ${USER}-secret
+     annotations:
+       kubernetes.io/service-account.name: ${USER}
+   type: kubernetes.io/service-account-token
+   EOF
+
+   # 密钥内容
+   TOKEN=$(kubectl describe secret ${USER}-secret -n ${NAMESPACE} | grep "token:" | awk '{print $2}')
+
    kubectl config set-credentials kubesphere --token=${TOKEN}
    kubectl config set-context --current --user=kubesphere
    ```
