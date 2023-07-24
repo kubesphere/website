@@ -42,7 +42,7 @@
 
 [[redirects]]
   from = "/forum/*"
-  to = "http://139.198.113.75:9800/forum/:splat"
-  status = 200
+  to = "https://ask.kubesphere.io/forum/:splat"
+  status = 302
   force = true
 
