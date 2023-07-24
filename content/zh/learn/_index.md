@@ -88,20 +88,20 @@ section7:
       profession: 容器解决方案架构师
       base: 成都/武汉
       workYears: 3-5 年
-      link: https://kubesphere.com.cn/forum/d/1666-kubesphere-qingcloud
+      link: https://ask.kubesphere.io/forum/d/1666-kubesphere-qingcloud
     - company: 吉利汽车
       profession: 云原生工程师
       base: 杭州
       workYears: 3-5 年
-      link: https://kubesphere.com.cn/forum/d/6243
+      link: https://ask.kubesphere.io/forum/d/6243
     - company: 摩尔线程
       profession: GPU 云原生开发工程师
       base: 北京
       workYears: 3-5 年
-      link: https://kubesphere.com.cn/forum/d/6605-gpu
+      link: https://ask.kubesphere.io/forum/d/6605-gpu
     - company: 青云QingCloud
       profession: 容器网络开发工程师
       base: 成都/武汉
       workYears: 3-5 年
-      link: https://kubesphere.com.cn/forum/d/1666-kubesphere-qingcloud
+      link: https://ask.kubesphere.io/forum/d/1666-kubesphere-qingcloud
 ---

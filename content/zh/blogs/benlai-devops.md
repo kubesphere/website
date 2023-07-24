@@ -94,7 +94,7 @@ KubeSphere 内置的基于 Jenkins 的 DevOps 流水线非常适合我们，并�
 
 ### 连环坑：线下访问线上数据库
 
-为了将应用的镜像从线下环境上传到线上生产环境的镜像仓库，我们踩了个连环坑，先是折腾了好久镜像仓库的 https 登陆。登陆的坑填平了，又掉到 push 镜像的坑里。最后，发现就是一个小小的配置导致的 push 镜像到线上环境失败。这两个坑折腾了我们很长的时间，不过好在最终都解决了，这些解决方法的细节，我们记录在了 KubeSphere 开发者论坛，可以在 KubeSphere 论坛找到：`https://kubesphere.com.cn/forum/d/294-docker-login-https-harbor`。
+为了将应用的镜像从线下环境上传到线上生产环境的镜像仓库，我们踩了个连环坑，先是折腾了好久镜像仓库的 https 登陆。登陆的坑填平了，又掉到 push 镜像的坑里。最后，发现就是一个小小的配置导致的 push 镜像到线上环境失败。这两个坑折腾了我们很长的时间，不过好在最终都解决了，这些解决方法的细节，我们记录在了 KubeSphere 开发者论坛，可以在 KubeSphere 论坛找到：`https://ask.kubesphere.io/forum/d/294-docker-login-https-harbor`。
 
 ![](https://pek3b.qingstor.com/kubesphere-docs/png/20200327140134.png)
 

@@ -260,7 +260,7 @@ Kubernetes 作为一个具有良好移植和扩展性的开源平台，用于管
 - https://learnk8s.io/setting-cpu-memory-limits-requests
 - https://kubernetes.io/docs/tasks/configure-pod-container/quality-service-pod/
 - https://docs.oracle.com/cd/E13150_01/jrockit_jvm/jrockit/jrdocs/refman/optionX.html
-- https://kubesphere.com.cn/forum/d/1155-k8s
+- https://ask.kubesphere.io/forum/d/1155-k8s
 - https://kubernetes.io/docs/tasks/administer-cluster/out-of-resource/
 - https://kubernetes.io/docs/concepts/policy/limit-range/
 - https://www.kernel.org/doc/Documentation/scheduler/sched-bwc.txt

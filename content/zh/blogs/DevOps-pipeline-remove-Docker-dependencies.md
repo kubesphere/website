@@ -21,7 +21,7 @@ snapshot: 'https://pek3b.qingstor.com/kubesphere-community/images/DevOps.png'
 
 ## 测试环境描述
 
-安装非 Docker 集群可以参考[文档](https://kubesphere.com.cn/forum/d/3054-dockerkubernetes) ，执行如下命令, 查看 Kubernetes 版本:
+安装非 Docker 集群可以参考[文档](https://ask.kubesphere.io/forum/d/3054-dockerkubernetes) ，执行如下命令, 查看 Kubernetes 版本:
 
 ```bash
 kubectl version

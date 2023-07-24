@@ -167,7 +167,7 @@ You can now enable KubeEdge in your cluster and manage edge nodes on the KubeSph
 - Fixed the workload deployment failure in DevOps pipelines. ([#3112](https://github.com/kubesphere/kubesphere/issues/3112))
 - Fixed an issue where the account with the  `admin` role in a DevOps project could not download artifacts. ([#3088](https://github.com/kubesphere/kubesphere/issues/3083))
 - Fixed an issue of DevOps pipeline creation failure. ([#3105](https://github.com/kubesphere/kubesphere/issues/3105))
-- Fixed an issue of triggering pipelines in a multi-cluster architecture. ([#2626](https://kubesphere.com.cn/forum/d/2626-webhook-jenkins))
+- Fixed an issue of triggering pipelines in a multi-cluster architecture. ([#2626](https://ask.kubesphere.io/forum/d/2626-webhook-jenkins))
 - Fixed an issue of data loss when a pipeline was edited. ([#1270](https://github.com/kubesphere/console/issues/1270))
 - Fixed a display issue of **Docker Container Register Credentials**. ([#1269](https://github.com/kubesphere/console/issues/1269))
 - Fixed a localization issue of Chinese unit in the code analysis result. ([#1278](https://github.com/kubesphere/console/issues/1278))

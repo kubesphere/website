@@ -102,7 +102,7 @@ kubectl get ep -n kube-system | grep -E 'kube-scheduler|kube-controller-manager'
 
 请检查您的网络插件，并确保您的主机和 Pod 网络 CIDR 之间没有 IPPool 重叠。强烈建议您使用 [KubeKey](https://github.com/kubesphere/kubekey) 安装 Kubernetes。
 
-中文读者可以参考 KubeSphere 开发者社区的[讨论](https://kubesphere.com.cn/forum/d/2027/16)了解更多信息。
+中文读者可以参考 KubeSphere 开发者社区的[讨论](https://ask.kubesphere.io/forum/d/2027/16)了解更多信息。
 
 ## Prometheus 产生错误日志：打开存储失败、没有此文件或目录
 

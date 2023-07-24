@@ -102,7 +102,7 @@ Check if your computer browser's local clock is in sync with the Internet time a
 
 Check your network plugin and make sure that there is no IP Pool overlap between your hosts and Pod network CIDR. It is strongly recommended that you install Kubernetes with [KubeKey](https://github.com/kubesphere/kubekey).
 
-Chinese readers may refer to [the discussion](https://kubesphere.com.cn/forum/d/2027/16) in the KubeSphere China forum for more information.
+Chinese readers may refer to [the discussion](https://ask.kubesphere.io/forum/d/2027/16) in the KubeSphere China forum for more information.
 
 ## Prometheus produces an error log: opening storage failed, no such file or directory
 

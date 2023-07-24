@@ -83,7 +83,7 @@ KubeSphere 2.1.1 was released on Feb 23rd, 2020, which has fixed known bugs and 
 - Fix the paging issue in DevOps pipelines' branches list page #[1517](https://github.com/kubesphere/kubesphere/issues/1517)
 - Fix the issue of failing to display pipeline configuration after modifying it #[1522](https://github.com/kubesphere/kubesphere/issues/1522)
 - Fix the issue of failing to download generated artifact in S2I job #[1547](https://github.com/kubesphere/kubesphere/issues/1547)
-- Fix the issue of [data loss occasionally after restarting Jenkins]( https://kubesphere.com.cn/forum/d/283-jenkins)
+- Fix the issue of [data loss occasionally after restarting Jenkins]( https://ask.kubesphere.io/forum/d/283-jenkins)
 - Fix the issue that only 'PR-HEAD' is fetched when binding pipeline with GitHub #[1780](https://github.com/kubesphere/kubesphere/issues/1780)
 - Fix 414 issue when updating DevOps credential #[1824](https://github.com/kubesphere/kubesphere/issues/1824)
 - Fix wrong s2ib/s2ir naming issue from B2I/S2I #[1840](https://github.com/kubesphere/kubesphere/issues/1840)

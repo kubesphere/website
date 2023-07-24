@@ -167,7 +167,7 @@ weight: 18200
 - 修复 DevOps 流水线中无法部署工作负载的问题 [#3112](https://github.com/kubesphere/kubesphere/issues/3112)
 - 修复 DevOps 项目管理员无法下载 Artifact 的问题 [#3088](https://github.com/kubesphere/kubesphere/issues/3083)
 - 修复 DevOps 无法创建流水线的问题 [#3105](https://github.com/kubesphere/kubesphere/issues/3105)
-- 修复多集群下流水线触发的问题 [#2626](https://kubesphere.com.cn/forum/d/2626-webhook-jenkins)
+- 修复多集群下流水线触发的问题 [#2626](https://ask.kubesphere.io/forum/d/2626-webhook-jenkins)
 - 修复某些情况下编辑流水线时导致的数据丢失问题 [#1270](https://github.com/kubesphere/console/issues/1270)
 - 修复点击 **Docker Container Registry Credentials** 时的报错问题 [#1269](https://github.com/kubesphere/console/issues/1269)
 - 修复英文控制台显示中文代码质量检查结果的问题 [#1278](https://github.com/kubesphere/console/issues/1278)

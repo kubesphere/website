@@ -9,7 +9,7 @@ Weight: 3240
 对于生产环境，我们需要考虑集群的高可用性。本文教您部署如何在多台阿里 ECS 实例快速部署一套高可用的生产环境。要满足 Kubernetes 集群服务需要做到高可用，需要保证 kube-apiserver 的 HA ，可使用以下下列两种方式：
 
 - 阿里云 SLB （推荐）
-- keepalived + haproxy [keepalived + haproxy](https://kubesphere.com.cn/forum/d/1566-kubernetes-keepalived-haproxy)对 kube-apiserver 进行负载均衡，实现高可用 kubernetes 集群。
+- keepalived + haproxy [keepalived + haproxy](https://ask.kubesphere.io/forum/d/1566-kubernetes-keepalived-haproxy)对 kube-apiserver 进行负载均衡，实现高可用 kubernetes 集群。
 
 ## 前提条件
 

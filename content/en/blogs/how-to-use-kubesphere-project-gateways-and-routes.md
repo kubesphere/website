@@ -14,7 +14,7 @@ KubeSphere project gateways and Routes provide a method for aggregating Services
 
 Project gateways are used to aggregate Services. Therefore, we can understand the project gateway architecture from the perspective of Services. The following figure shows the architecture of a project gateway in a typical production environment.
 
-![](https://kubesphere.com.cn/forum/assets/files/2021-07-27/1627370451-193428-kubernetes-ingress.png)
+![](https://ask.kubesphere.io/forum/assets/files/2021-07-27/1627370451-193428-kubernetes-ingress.png)
 
 The architecture contains four parts:
 
@@ -48,13 +48,13 @@ Therefore, Routes and API gateways such as Spring Cloud Gateway and Ocelot provi
 
 Overall, each type of gateway has its own advantages and disadvantages. In the initial phase of a project, the gateway architecture should be considered. In cloud-native scenarios, Routes are an ideal choice. If your team depends on a specific technology stack, the API gateway of the technology stack is preferred. However, this does not necessarily mean you can only use one type of gateway. In some complex scenarios, you can use different types of gateways to utilize their advantages. For example, developers can use API gateways that they are familiar with to implement features such as service aggregation and authentication, and use Routes to expose these API gateways to implement features such as logging, monitoring, load balancing, and HTTPS offloading. For example, Microsoft's microservice architecture demo [eShopOnContainers](https://docs.microsoft.com/en-us/dotnet/architecture/cloud-native/introduce-eshoponcontainers-reference-app "eShopOnContainers") uses this hybrid architecture.
 
-![](https://kubesphere.com.cn/forum/assets/files/2021-07-27/1627370654-571190-eshoponcontainers-architecture-aggregator-services.png)
+![](https://ask.kubesphere.io/forum/assets/files/2021-07-27/1627370654-571190-eshoponcontainers-architecture-aggregator-services.png)
 
 ## Hands-on Practice
 
 So far we have discussed the application scenarios and overall architecture of Routes. In the following we will demonstrate how to configure a project gateway and Route in KubeSphere. The following uses SockShop as an example, which is a microservice demo project of Weaveworks. SockShop uses an architecture where the front-end and back-end are separated. It consists of the `front-end` Service and back-end Services such as `catalogue`, `carts`, and `orders`. In the architecture, the `front-end` Service not only provides static pages, but also functions as a proxy that forwards traffic to back-end APIs. Assume that asynchronous service blocking occurs when Node.js forwards traffic to APIs, which deteriorates page performance. To address this problem, we can use Routes to directly forward traffic to the `catalogue` Service. The following describes the configuration procedure.
 
-![](https://kubesphere.com.cn/forum/assets/files/2021-07-27/1627370560-468146-socksshop.png)
+![](https://ask.kubesphere.io/forum/assets/files/2021-07-27/1627370560-468146-socksshop.png)
 
 ### Preparations
 
@@ -84,11 +84,11 @@ After the preceding preparations are complete, go to the **Workloads** page of t
 
 2. After the Route is created, click `front-end` in the Route list to view its details. On the **Resource Status** tab, click **Access Service**. If the Route functions properly, the following web page will be displayed.
 
-   ![](https://kubesphere.com.cn/forum/assets/files/2021-07-27/1627371245-961841-sockshop.png)
+   ![](https://ask.kubesphere.io/forum/assets/files/2021-07-27/1627371245-961841-sockshop.png)
 
 3. Open the debugging console of your web browser (for example, press **F12** for Chrome) to check the network requests of the SockShop web page. The following figure shows an API request sent to `catalogue`.
 
-   ![](https://kubesphere.com.cn/forum/assets/files/2021-07-27/1627371262-490907-f12.png)
+   ![](https://ask.kubesphere.io/forum/assets/files/2021-07-27/1627371262-490907-f12.png)
 
    `X-Powered-By: Express` in `Response Headers` shows that the request is forwarded by the `front-end` Node.js application.
 
@@ -98,7 +98,7 @@ After the preceding preparations are complete, go to the **Workloads** page of t
 
 5. Refresh the SockShop web page (the page shows no changes) and check the network requests in the debugging console, as shown in the following figure.
 
-   ![](https://kubesphere.com.cn/forum/assets/files/2021-07-27/1627371313-315498-f12-after.png)
+   ![](https://ask.kubesphere.io/forum/assets/files/2021-07-27/1627371313-315498-f12-after.png)
 
    `X-Powered-By: Express` does not exist in `Response Headers`, which means that the API request is directly sent to the `catalogue` Service according to the new routing rule without being forwarded by the `front-end` Service. In this example, two routing rules are configured in the Route. The `/catalogue` routing rule is preferred to the `/` routing rule because the path of the former is longer and therefore more accurate.
 

@@ -70,7 +70,7 @@ snapshot: 'https://pek3b.qingstor.com/kubesphere-community/images/kubesphere-k8s
 
 1. 查找官方论坛，关键词使用 **Etcd** 找到了以下一篇看着比较接近的文档，打开来看看。
 
-   > [Etcd 使用自签名证书，prometheus 报错未知机构签发 #2.11](https://kubesphere.com.cn/forum/d/1322-etcd-prometheus-2-11 "etcd 使用自签名证书，prometheus 报错未知机构签发 #2.11")
+   > [Etcd 使用自签名证书，prometheus 报错未知机构签发 #2.11](https://ask.kubesphere.io/forum/d/1322-etcd-prometheus-2-11 "etcd 使用自签名证书，prometheus 报错未知机构签发 #2.11")
 
    ![](https://znotes-1258881081.cos.ap-beijing.myqcloud.com/k8s-on-kubesphere/etcd-monitoring-1.png)
 
@@ -618,7 +618,7 @@ snapshot: 'https://pek3b.qingstor.com/kubesphere-community/images/kubesphere-k8s
 
 ### **参考文档**
 
-- [etcd 使用自签名证书，prometheus 报错未知机构签发 #2.11](https://kubesphere.com.cn/forum/d/1322-etcd-prometheus-2-11 "etcd 使用自签名证书，prometheus 报错未知机构签发 #2.11")
+- [etcd 使用自签名证书，prometheus 报错未知机构签发 #2.11](https://ask.kubesphere.io/forum/d/1322-etcd-prometheus-2-11 "etcd 使用自签名证书，prometheus 报错未知机构签发 #2.11")
 - https://www.cnblogs.com/lvcisco/p/12575608.html?ivk_sa=1024320u
 
 ### **Get 文档**

@@ -378,7 +378,7 @@ name = "开源社区"
 [[languages.zh.menu.main]]
 weight = 6
 name = "用户论坛"
-URL = "https://kubesphere.com.cn/forum"
+URL = "https://ask.kubesphere.io/forum"
 
 
 # [languages.tr]
