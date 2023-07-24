@@ -46,3 +46,8 @@
   status = 302
   force = true
 
+[[redirects]]
+  from = "/forum/"
+  to = "https://ask.kubesphere.io/forum/"
+  status = 302
+  force = true
