@@ -13,16 +13,16 @@ section2:
   url: ./meetup-hangzhou-20230603/
 
   notice:
-    title: 利用 ChatGPT 检测 K8s 安全与合规性
-    tag: 结束
-    time: 2023 年 04 月 20 日
+    title: 万亿级流量下的视频行业云原生建设之路
+    tag: 预告
+    time: 2023 年 07 月 27 日
     base: 线上
-    url: ./chatgpt-k8s-0420-live/
+    url: ./cloudnative0727-live/
 
   over:
-    title: KubeSphere Meetup 深圳站
-    tag: 结束
-    url: ./meetup-shenzhen-20230408/
+    title: KubeSphere Meetup 上海站
+    tag: 预告
+    url: ./meetup-shanghai-20230805/
 
 section3:
   videos:
