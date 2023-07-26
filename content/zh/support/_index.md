@@ -9,5 +9,5 @@ section1:
   topImage: "/images/contribution/contribution-top.jpg"
 
 sectionIframe:
-  formUrl: https://jinshuju.net/f/bDS8me/embedded.js?inner_redirect=false&banner=show&background=white&height=1838
+  formUrl: https://m.qingcloud.com/p/aec50/embedded.js?inner_redirect=false&banner=show&background=white&height=1838
 ---
