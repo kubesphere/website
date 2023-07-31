@@ -9,23 +9,30 @@ section1:
   image: /images/live/background.jpg
 
 section2:
-  image: /images/live/cloudnative-live-20230603.png
-  url: ./meetup-hangzhou-20230603/
+  image: /images/live/cloudnative-live-20230727.png
+  url: ./cloudnative0727-live/
 
   notice:
-    title: 万亿级流量下的视频行业云原生建设之路
+    title: KubeSphere Meetup 上海站
     tag: 预告
     time: 2023 年 07 月 27 日
     base: 线上
-    url: ./cloudnative0727-live/
+    url: ./meetup-shanghai-20230805/
 
   over:
-    title: KubeSphere Meetup 上海站
-    tag: 预告
-    url: ./meetup-shanghai-20230805/
+    title: Meetup 杭州站
+    tag: 结束
+    url: ./meetup-hangzhou-20230603/
 
 section3:
   videos:
+    - title: 万亿级流量下的视频行业云原生建设之路
+      link: ./cloudnative0727-live/
+      snapshot: https://pek3b.qingstor.com/kubesphere-community/images/cloudnative0727-live-cover.png
+      type: iframe
+      createTime: 2023.07.27
+      group: 直播回放
+
     - title: 无需编译重启快速扩展服务网格功能
       link: ./hangzhou0603-flomesh/
       snapshot: https://pek3b.qingstor.com/kubesphere-community/images/hangzhou0603-flomesh-cover.png

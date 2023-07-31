@@ -6,7 +6,7 @@ css: scss/live-detail.scss
 
 section1:
   snapshot: 
-  videoUrl: 
+  videoUrl: //player.bilibili.com/player.html?aid=446457321&bvid=BV1mj411X7ZE&cid=1213078748&page=1&high_quality=1
   type: iframe
   time: 2023-07-27 20:00-21:00
   timeIcon: /images/live/clock.svg
@@ -37,3 +37,12 @@ Luga Lee，系统架构设计师，公众号：架构驿站（priest-arc）主�
 
 B 站  https://live.bilibili.com/22580654
 
+## PPT 下载
+
+可扫描官网底部二维码，关注 「KubeSphere云原生」公众号，后台回复 `20230727` 即可下载 PPT。
+
+## Q & A
+
+### Q1：流量网关怎么做灰度发布的呢，哪些方式处理好多版本管理兼容？
+
+A：如果想构件自己的云原生环境，可以借助 Flux 的 Flagger 實現，作为一种渐进式交付工具，Flagger 可自动执行在 Kubernetes 上运行的应用程序的发布过程。具体可参考：https://mp.weixin.qq.com/s/2_Gbthiw8Sy6Moeg8VMYHw。 
