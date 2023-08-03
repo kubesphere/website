@@ -4,7 +4,7 @@ tag: 'KubeSphere, Kubernetes, RabbitMQL'
 keywords: 'KubeSphere, Kubernetes, RabbitMQ'
 description: 'RabbitMQ 单节点安装部署和 RabbitMQ 集群安装部署实战。'
 createTime: '2022-09-07'
-author: '张延英'
+author: '老 Z'
 snapshot: 'https://pek3b.qingstor.com/kubesphere-community/images/rabbitmq-k8s-cover.png'
 ---
 

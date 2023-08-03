@@ -42,7 +42,7 @@ Halil 来自土耳其，从去年开始，他一直在积极地帮助 KubeSphere
 
 ### Yanying Zhang
 
-张延英笔名老Z，从去年下半年到如今，他已在社区输出了多篇技术文章，他还经常利用周末时间在 [B 站直播](https://live.bilibili.com/23977595?broadcast_type=0&is_room_feed=1&spm_id_from=333.999.0.0)分享 KubeSphere 相关的技术内容，而他的 [B 站空间](https://space.bilibili.com/1039301316/?spm_id_from=333.999.0.0)也发布了多个与 KubeSphere 相关的视频。此外他在社群里也非常活跃，经常帮助群内的小伙伴解决问题。
+老 Z，从去年下半年到如今，他已在社区输出了多篇技术文章，他还经常利用周末时间在 [B 站直播](https://live.bilibili.com/23977595?broadcast_type=0&is_room_feed=1&spm_id_from=333.999.0.0)分享 KubeSphere 相关的技术内容，而他的 [B 站空间](https://space.bilibili.com/1039301316/?spm_id_from=333.999.0.0)也发布了多个与 KubeSphere 相关的视频。此外他在社群里也非常活跃，经常帮助群内的小伙伴解决问题。
 
 老 Z 文章一览：
 - [KubeSphere 3.3.0 离线安装教程](https://kubesphere.io/zh/blogs/kubesphere-v3.3.0-offline-installation/)
