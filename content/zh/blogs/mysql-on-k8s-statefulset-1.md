@@ -4,7 +4,7 @@ tag: 'KubeSphere, Kubernetes, MySQL'
 keywords: 'KubeSphere, Kubernetes, MySQL, StatefulSet'
 description: '本文实现了 MySQL 数据库在基于 KubeSphere 部署的 K8s 集群上的安装部署，部署方式采用了图形化这种形式。'
 createTime: '2022-06-02'
-author: '张延英'
+author: '老 Z'
 snapshot: 'https://pek3b.qingstor.com/kubesphere-community/images/kubesphere-kubernetes-mysql-statefulset-cover.png'
 ---
 

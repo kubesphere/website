@@ -4,7 +4,7 @@ tag: 'Kubernetes, KubeSphere'
 keywords: 'Kubernetes, Etcd, KubeSphere'
 description: '经研究发现，KubeSphere 自带的集群状态监控中有 Etcd 监控的页面展示，但是在 KubeSphere 3.2.1 版本中，默认配置开启 Etcd 监控后，集群状态中的 Etcd 监控页面确实没有任何数据。本文将记录里解决该问题的排障之旅。'
 createTime: '2022-04-21'
-author: '张延英'
+author: '老 Z'
 snapshot: 'https://pek3b.qingstor.com/kubesphere-community/images/kubesphere-k8s-etcd-cover.png'
 ---
 

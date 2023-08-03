@@ -4,7 +4,7 @@ tag: 'KubeSphere, Kubernetes, RocketMQ'
 keywords: 'KubeSphere, Kubernetes, RocketMQ'
 description: '本文重点介绍 单 Master 模式和多 Master 多 Slave-异步复制模式在 K8s 集群上的部署方案。'
 createTime: '2022-11-18'
-author: '张延英'
+author: '老 Z'
 snapshot: 'https://pek3b.qingstor.com/kubesphere-community/images/rocketmq-k8s-cover.png'
 ---
 

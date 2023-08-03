@@ -4,11 +4,11 @@ tag: 'KubeSphere, Kubernetes'
 keywords: 'KubeSphere, Kubernetes, 集群安装, 最佳实践 '
 description: '基于 KubeSphere 部署的 Kubernetes，后续的很多功能实现都依托于 KubeSphere。适用于中小规模 (<=50) 的 K8s 生产环境，大型环境有待验证。'
 createTime: '2022-01-21'
-author: '张延英'
+author: '老 Z'
 snapshot: 'https://pek3b.qingstor.com/kubesphere-community/images/KubeSphere-K8s-cluster.png'
 ---
 
-> 作者：张延英，电信系统集成公司山东分公司运维架构师，云原生爱好者，目前专注于云原生运维
+> 作者：老 Z，运维架构师，云原生爱好者，目前专注于云原生运维
 
 ## 前提说明
 

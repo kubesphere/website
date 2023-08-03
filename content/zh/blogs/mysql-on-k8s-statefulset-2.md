@@ -4,7 +4,7 @@ tag: 'KubeSphere, Kubernetes, MySQL'
 keywords: 'KubeSphere, Kubernetes, MySQL, StatefulSet'
 description: '本文将会介绍如何使用 GitOps 来部署 MySQL，部署过程涉及的所有 YAML 文件都会使用 Git 进行版本管理，并存放在 Git 仓库中。'
 createTime: '2022-06-07'
-author: '张延英'
+author: '老 Z'
 snapshot: 'https://pek3b.qingstor.com/kubesphere-community/images/kubesphere-kubernetes-mysql-statefulset-cover.png'
 ---
 
