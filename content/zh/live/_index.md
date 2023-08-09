@@ -9,15 +9,15 @@ section1:
   image: /images/live/background.jpg
 
 section2:
-  image: /images/live/cloudnative-live-20230727.png
-  url: ./cloudnative0727-live/
+  image: /images/live/cloudnative-live-20230805.png
+  url: ./meetup-shanghai-20230805/
 
   notice:
-    title: KubeSphere Meetup 上海站
-    tag: 预告
+    title: 万亿级流量下的视频行业云原生建设之路
+    tag: 结束
     time: 2023 年 07 月 27 日
     base: 线上
-    url: ./meetup-shanghai-20230805/
+    url: ./cloudnative0727-live/
 
   over:
     title: Meetup 杭州站
@@ -26,6 +26,48 @@ section2:
 
 section3:
   videos:
+    - title: EMQX 云服务的 Serverless 实践
+      link: ./shanghai0805-emqx/
+      snapshot: https://pek3b.qingstor.com/kubesphere-community/images/20230805-shanghai-meetup-6-cover.png
+      type: iframe
+      createTime: 2023.08.05
+      group: Meetup
+
+    - title: Milvus：AI & LLM 时代的记忆体
+      link: ./shanghai0805-milvus/
+      snapshot: https://pek3b.qingstor.com/kubesphere-community/images/20230805-shanghai-meetup-5-cover.png
+      type: iframe
+      createTime: 2023.08.05
+      group: Meetup
+
+    - title: 面向无人驾驶车联网的云原生远程监控实践
+      link: ./shanghai0805-monitor/
+      snapshot: https://pek3b.qingstor.com/kubesphere-community/images/20230805-shanghai-meetup-4-cover.png
+      type: iframe
+      createTime: 2023.08.05
+      group: Meetup
+
+    - title: AIOPS — 日志的分析与挖掘的研究现状
+      link: ./shanghai0805-aiops/
+      snapshot: https://pek3b.qingstor.com/kubesphere-community/images/20230805-shanghai-meetup-3-cover.png
+      type: iframe
+      createTime: 2023.08.05
+      group: Meetup
+
+    - title: OpenFunction 函数计算框架及 AI 应用实践浅谈
+      link: ./shanghai0805-openfunction/
+      snapshot: https://pek3b.qingstor.com/kubesphere-community/images/20230805-shanghai-meetup-2-cover.png
+      type: iframe
+      createTime: 2023.08.05
+      group: Meetup
+
+    - title: 云原生环境下的技术变革 — 从无服务器到生成式 AI
+      link: ./shanghai0805-aws/
+      snapshot: https://pek3b.qingstor.com/kubesphere-community/images/20230805-shanghai-meetup-1-cover.png
+      type: iframe
+      createTime: 2023.08.05
+      group: Meetup
+
     - title: 万亿级流量下的视频行业云原生建设之路
       link: ./cloudnative0727-live/
       snapshot: https://pek3b.qingstor.com/kubesphere-community/images/cloudnative0727-live-cover.png
@@ -1034,6 +1076,10 @@ section4:
   list:
     - year: 2023
       meetup: 
+        - place: 上海站（08.05）
+          img: https://pek3b.qingstor.com/kubesphere-community/images/meetup-shanghai-20230805-cover.png
+          meetupUrl: https://kubesphere.io/zh/live/meetup-shanghai-20230805/
+
         - place: 杭州站（06.03）
           img: https://pek3b.qingstor.com/kubesphere-community/images/meetup-hangzhou-20230603-cover.png
           meetupUrl: https://kubesphere.io/zh/live/meetup-hangzhou-20230603/
