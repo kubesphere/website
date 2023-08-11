@@ -68,6 +68,11 @@ members:
       des: 现在任职高级运维工程师，负责公司 K8s 的搭建，维护，与新技术的探索。
       image: /images/user-group/shanghai/zhanghaofei.jpeg
 
+    - name: 马永兴
+      position: 委员
+      des: 中移上海产业研究院后端开发工程师，高级系统架构师，开源爱好者，主要工作云边协同、边缘计算方向，涉及 Kubernetes、KubeSphere、KubeEdge 开源社区等。
+      image: /images/user-group/shanghai/mayongxing.jpg
+
 activities:
   videos:
     - image: https://pek3b.qingstor.com/kubesphere-community/images/driverless-cic-cover.png
