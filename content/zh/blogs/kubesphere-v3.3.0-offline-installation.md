@@ -8,7 +8,7 @@ author: '老Z'
 snapshot: 'https://pek3b.qingstor.com/kubesphere-community/images/kubesphere-v3.3.0-offline-installation.png'
 ---
 
-> 作者：老Z，运维架构师，云原生爱好者，目前专注于云原生运维，云原生领域技术栈涉及Kubernetes、KubeSphere、DevOps、OpenStack、Ansible等。
+> 作者：运维架构师，云原生爱好者，目前专注于云原生运维，云原生领域技术栈涉及 Kubernetes、KubeSphere、DevOps、OpenStack、Ansible 等。
 
 KubeKey 是一个用于部署 K8s 集群的开源轻量级工具。
 
