@@ -155,6 +155,8 @@ section3:
       children:
         - name: 'anchnet'
           icon: 'images/case/section6-anchnet.jpg'
+        - name: 'AlphaFlow'
+          icon: 'images/case/logo-alphaflow.png'
         - name: 'cmft'
           icon: 'images/case/section6-cmft.jpg'
         - name: 'extreme-vision'
