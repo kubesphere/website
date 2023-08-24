@@ -183,7 +183,7 @@ section6:
     - icon: /images/home/section6-webank.jpg
     - icon: /images/home/section6-wisdom-world.jpg
     - icon: /images/home/section6-yiliu.jpg
-    - icon: /images/home/section6-zking-insurance.jpg
+    - icon: /images/case/logo-alphaflow.png
 
   btnContent: 案例学习
   btnLink: case/
