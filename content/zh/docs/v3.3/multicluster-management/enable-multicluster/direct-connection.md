@@ -187,7 +187,7 @@ kubectl logs -n kubesphere-system $(kubectl get pod -n kubesphere-system -l 'app
 
      {{< notice note >}}
 
-请确保主集群的任何节点都能访问 kubeconfig 中的 `server` 地址。
+请确保 server 地址为该 member 集群可访问的 kube-apiserver 地址（主集群的任何节点都能访问）。
 
      {{</ notice >}}
 
