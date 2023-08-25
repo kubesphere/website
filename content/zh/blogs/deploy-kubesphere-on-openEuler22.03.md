@@ -4,7 +4,7 @@ tag: 'KubeSphere'
 keywords: 'Kubernetes, KubeSphere, openEuler 22.03 '
 description: '本文介绍了如何在 openEuler 22.03 LTS SP1 X86 架构服务器上部署 KubeSphere 和 Kubernetes 集群。'
 createTime: '2023-05-24'
-author: '老 Z'
+author: '运维有术'
 snapshot: 'https://pek3b.qingstor.com/kubesphere-community/images/openeuler-kubesphere-cover.png'
 ---
 

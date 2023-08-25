@@ -30,6 +30,3 @@ snapshot: 'https://pek3b.qingstor.com/kubesphere-community/images/kubecon-eu-202
   <source src="https://kubesphere-community.pek3b.qingstor.com/videos/KubeCon-EU-2022-Ben.mp4" type="video/mp4">
 </video>
 
-## 对应文章
-
-整理中
