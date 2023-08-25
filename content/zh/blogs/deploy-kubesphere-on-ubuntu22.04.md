@@ -4,7 +4,7 @@ tag: 'KubeSphere'
 keywords: 'Kubernetes, KubeSphere, Ubuntu 22.04 '
 description: '本文介绍了如何在 Ubuntu 22.04 LTS 服务器上部署 KubeSphere 和 Kubernetes 集群。'
 createTime: '2023-05-18'
-author: '老 Z'
+author: '运维有术'
 snapshot: 'https://pek3b.qingstor.com/kubesphere-community/images/kubesphere-on-ubuntu-cover.png'
 ---
 

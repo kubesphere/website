@@ -4,7 +4,7 @@ tag: 'KubeSphere, Kubernetes, KubeKey'
 keywords: 'KubeSphere, Kubernetes, KubeKey'
 description: '本文主要实战演示了在利用 KubeKey 自动化增加 Worker 节点到已有 Kubernetes 集群的详细过程。'
 createTime: '2023-07-19'
-author: '老 Z'
+author: '运维有术'
 snapshot: 'https://pek3b.qingstor.com/kubesphere-community/images/kubekey-k8s-v1.24-cover.png'
 ---
 

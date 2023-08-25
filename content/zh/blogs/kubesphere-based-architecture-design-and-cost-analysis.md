@@ -4,7 +4,7 @@ tag: 'KubeSphere'
 keywords: 'Kubernetes, KubeSphere'
 description: '本文分享了我设计的第一版基于 KubeSphere 部署 Kubernetes 集群的部署架构规划方案， 此方案是一个真实的小规模生产环境部署架构设计的案例。'
 createTime: '2023-08-17'
-author: '老 Z'
+author: '运维有术'
 snapshot: 'https://pek3b.qingstor.com/kubesphere-community/images/kubesphere-k8s-20230817-cover.png'
 ---
 

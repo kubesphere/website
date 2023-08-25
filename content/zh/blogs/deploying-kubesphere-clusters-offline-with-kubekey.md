@@ -10,7 +10,7 @@ snapshot: 'https://pek3b.qingstor.com/kubesphere-community/images/kubekey-kubesp
 
 ## 一、KubeKey 介绍
 
-KubeKey（以下简称 KK) 是一个用于部署 Kubernetes 集群的开源轻量级工具。它提供了一种灵活、快速、便捷的方式来仅安装 Kubernetes/K3s，或同时安装 Kubernetes/K3s 和 KubeSphere，以及其他云原生插件。除此之外，它也是扩展和升级集群的有效工具。
+KubeKey（以下简称 KK）是一个用于部署 Kubernetes 集群的开源轻量级工具。它提供了一种灵活、快速、便捷的方式来仅安装 Kubernetes/K3s，或同时安装 Kubernetes/K3s 和 KubeSphere，以及其他云原生插件。除此之外，它也是扩展和升级集群的有效工具。
 
 KubeKey v2.0.0 版本新增了清单（manifest）和制品（artifact）的概念，为用户离线部署 Kubernetes 集群提供了一种解决方案。在过去，用户需要准备部署工具，镜像 tar 包和其他相关的二进制文件，每位用户需要部署的 Kubernetes 版本和需要部署的镜像都是不同的。现在使用 KK，用户只需使用清单 manifest 文件来定义将要离线部署的集群环境需要的内容，再通过该 manifest 来导出制品 artifact 文件即可完成准备工作。离线部署时只需要 KK 和 artifact 就可快速、简单的在环境中部署镜像仓库和 Kubernetes 集群。
 

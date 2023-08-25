@@ -28,6 +28,3 @@ Fluent Operator 的前身是 Fluentbit Operator，在构建基于 Fluent Bit 和
   <source src="https://kubesphere-community.pek3b.qingstor.com/videos/KubeCon-EU-2022-Feynman.mp4" type="video/mp4">
 </video>
 
-## 对应文章
-
-整理中

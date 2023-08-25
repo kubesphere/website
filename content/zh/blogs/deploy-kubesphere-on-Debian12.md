@@ -4,7 +4,7 @@ tag: 'KubeSphere'
 keywords: 'Kubernetes, KubeSphere, Debian 12'
 description: '本文介绍了如何在 Debian 12 服务器上部署 KubeSphere 和 Kubernetes 集群。我们将使用 KubeSphere 开发的 KubeKey 工具实现自动化部署，在三台服务器上实现高可用模式最小化部署 Kubernetes 集群和 KubeSphere。'
 createTime: '2023-06-16'
-author: '老 Z'
+author: '运维有术'
 snapshot: 'https://pek3b.qingstor.com/kubesphere-community/images/debian-kubesphere-cover.png'
 ---
 

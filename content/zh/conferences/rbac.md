@@ -19,6 +19,3 @@ snapshot: 'https://pek3b.qingstor.com/kubesphere-community/images/kubecon2021-ho
   <source src="https://kubesphere-community.pek3b.qingstor.com/videos/KubeCon2021-China-hongming.mp4" type="video/mp4">
 </video>
 
-## 对应文章
-
-整理中，敬请期待

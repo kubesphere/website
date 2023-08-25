@@ -4,7 +4,7 @@ tag: 'KubeSphere'
 keywords: 'Kubernetes, KubeSphere, Zookeeper '
 description: '本文详细介绍了 Zookeeper 单节点和集群模式在基于 KubeSphere 部署的 K8s 集群上的安装部署、测试验证的过程'
 createTime: '2023-08-11'
-author: '老 Z'
+author: '运维有术'
 snapshot: 'https://pek3b.qingstor.com/kubesphere-community/images/zookeeper-on-kubesphere-cover.png'
 ---
 
