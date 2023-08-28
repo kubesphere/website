@@ -1,7 +1,7 @@
 ---
 title: "3.3.0 版本说明"
 keywords: "Kubernetes, KubeSphere, 版本说明"
-description: "KubeSphere 3.4.0 版本说明"
+description: "KubeSphere 3.3.0 版本说明"
 linkTitle: "3.3.0 版本说明"
 weight: 18098
 ---
@@ -86,4 +86,4 @@ weight: 18098
 - 优化了 ClusterConfiguration 更新机制，无需重启 ks-apiserver、ks-controller-manager。
 - 优化了部分页面文案描述。
 
-有关 KubeSphere 3.4.0 的 Issue 和贡献者详细信息，请参阅 [GitHub](https://github.com/kubesphere/kubesphere/blob/master/CHANGELOG/CHANGELOG-3.3.md)。
+有关 KubeSphere 3.3.0 的 Issue 和贡献者详细信息，请参阅 [GitHub](https://github.com/kubesphere/kubesphere/blob/master/CHANGELOG/CHANGELOG-3.3.md)。

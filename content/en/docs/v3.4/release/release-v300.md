@@ -2,7 +2,6 @@
 title: "Release Notes for 3.0.0"
 keywords: "Kubernetes, KubeSphere, release-notes"
 description: "KubeSphere release notes for 3.0.0."
-
 linkTitle: "Release Notes - 3.0.0"
 weight: 18400
 ---

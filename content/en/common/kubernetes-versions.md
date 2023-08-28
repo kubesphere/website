@@ -5,8 +5,8 @@ _build:
 
 | Installation Tool | KubeSphere version | Supported Kubernetes versions                                |
 | ----------------- | ------------------ | ------------------------------------------------------------ |
-| KubeKey           | 3.3.2             | v1.20.x, v1.21.x, * v1.22.x, * v1.23.x， * v1.24.x|
-| ks-installer      | 3.3.2             | v1.20.x, v1.21.x, * v1.22.x, * v1.23.x， * v1.24.x|
+| KubeKey           | 3.3.2             | v1.20.x, v1.21.x, * v1.22.x, * v1.23.x, * v1.24.x|
+| ks-installer      | 3.3.2             | v1.20.x, v1.21.x, * v1.22.x, * v1.23.x, * v1.24.x|
 
 {{< notice note >}}
 
