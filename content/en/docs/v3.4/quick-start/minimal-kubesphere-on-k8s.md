@@ -11,7 +11,7 @@ In addition to installing KubeSphere on a Linux machine, you can also deploy it 
 
 ## Prerequisites
 
-- To install KubeSphere 3.4 on Kubernetes, your Kubernetes version must be v1.20.x, v1.21.x, * v1.22.x, * v1.23.x, and * v1.24.x. For Kubernetes versions with an asterisk, some features of edge nodes may be unavailable due to incompatability. Therefore, if you want to use edge nodes, you are advised to install Kubernetes v1.21.x.
+- To install KubeSphere 3.4 on Kubernetes, your Kubernetes version must be v1.20.x, v1.21.x, * v1.22.x, * v1.23.x, * v1.24.x, * v1.25.x, and * v1.26.x. For Kubernetes versions with an asterisk, some features of edge nodes may be unavailable due to incompatability. Therefore, if you want to use edge nodes, you are advised to install Kubernetes v1.21.x.
 - Make sure your machine meets the minimal hardware requirement: CPU > 1 Core, Memory > 2 GB.
 - A **default** Storage Class in your Kubernetes cluster needs to be configured before the installation.
 

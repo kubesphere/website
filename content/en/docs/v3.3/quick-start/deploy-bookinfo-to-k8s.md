@@ -36,7 +36,7 @@ Bookinfo is composed of the following four separate microservices. There are thr
 
 The following figure shows the end-to-end architecture of the application. For more information, see [Bookinfo Application](https://istio.io/latest/docs/examples/bookinfo/).
 
-![bookinfo](/images/docs/v3.3/quickstart/deploy-bookinfo-to-k8s/bookinfo.png)
+![bookinfo](/images/docs/v3.x/quickstart/deploy-bookinfo-to-k8s/bookinfo.png)
 
 ## Hands-on Lab
 
@@ -48,7 +48,7 @@ The following figure shows the end-to-end architecture of the application. For m
 
     {{< notice note >}}
 
-KubeSphere creates the hostname automatically. To change the hostname, hover over the default route rule and click <img src="/images/docs/v3.3/quickstart/deploy-bookinfo-to-k8s/edit-icon.png" width='20px' alt="icon"  /> to edit it. For more information, see [Create a Microservices-based App](../../project-user-guide/application/compose-app/).
+KubeSphere creates the hostname automatically. To change the hostname, hover over the default route rule and click <img src="/images/docs/v3.x/quickstart/deploy-bookinfo-to-k8s/edit-icon.png" width='20px' alt="icon"  /> to edit it. For more information, see [Create a Microservices-based App](../../project-user-guide/application/compose-app/).
 
 {{</ notice >}}
 
@@ -85,7 +85,7 @@ Do not copy the preceding content to your local host file. Replace it with your 
 
 7. In the following figure, you can notice that only **Reviewer1** and **Reviewer2** are displayed without any stars in the **Book Reviews** section. This is the status of this app version. To explore more features of traffic management, you can implement a [canary release](../../project-user-guide/grayscale-release/canary-release/) for this app.
 
-    ![ratings-page](/images/docs/v3.3/quickstart/deploy-bookinfo-to-k8s/ratings-page.png)
+    ![ratings-page](/images/docs/v3.x/quickstart/deploy-bookinfo-to-k8s/ratings-page.png)
     
     {{< notice note >}}
 

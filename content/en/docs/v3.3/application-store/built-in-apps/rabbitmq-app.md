@@ -48,9 +48,9 @@ To access RabbitMQ outside the cluster, you need to expose the app through a Nod
 
 5. Access RabbitMQ **management** through `<NodeIP>:<NodePort>`. Note that the username and password are those you set in **Step 1**.
    
-   ![rabbitmq-dashboard](/images/docs/v3.3/appstore/built-in-apps/rabbitmq-app/rabbitmq-dashboard.png)
+   ![rabbitmq-dashboard](/images/docs/v3.x/appstore/built-in-apps/rabbitmq-app/rabbitmq-dashboard.png)
 
-   ![rabbitma-dashboard-detail](/images/docs/v3.3/appstore/built-in-apps/rabbitmq-app/rabbitma-dashboard-detail.png)
+   ![rabbitma-dashboard-detail](/images/docs/v3.x/appstore/built-in-apps/rabbitmq-app/rabbitma-dashboard-detail.png)
 
    {{< notice note >}}
 

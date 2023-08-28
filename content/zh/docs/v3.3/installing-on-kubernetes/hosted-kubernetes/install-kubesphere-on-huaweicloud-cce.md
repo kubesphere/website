@@ -24,7 +24,7 @@ weight: 4250
 - 创建完集群后，进入**资源管理** > **集群管理**界面，在**基本信息** > **网络** 面板中，绑定`公网apiserver地址`；
 - 在右侧面板中，选择 **kubectl** 标签页，并在**下载kubectl配置文件**列表项中**点击此处下载**，即可获取公用可用的 kubectl 证书。
 
-![生成 Kubectl 配置文件](/images/docs/v3.3/huawei-cce/zh/generate-kubeconfig.png)
+![生成 Kubectl 配置文件](/images/docs/v3.x/huawei-cce/zh/generate-kubeconfig.png)
 
 获取 kubectl 配置文件后，可通过 kubectl 命令行工具来验证集群连通性：
 
@@ -80,7 +80,7 @@ kubectl apply -f https://github.com/kubesphere/ks-installer/releases/download/v3
 
 执行部署命令后，可以通过进入**工作负载** > **容器组 Pod** 界面，在右侧面板中查询 `kubesphere-system` 命名空间下的 Pod 运行状态了解 KubeSphere 平台最小功能集的部署状态；通过该命名空间下 `ks-console-xxxx` 容器的状态来了解 KubeSphere 控制台应用的可用状态。
 
-![部署 KubeSphere 最小功能集](/images/docs/v3.3/huawei-cce/zh/deploy-ks-minimal.png)
+![部署 KubeSphere 最小功能集](/images/docs/v3.x/huawei-cce/zh/deploy-ks-minimal.png)
 
 ### 开启 KubeSphere 外网访问
 
@@ -88,11 +88,11 @@ kubectl apply -f https://github.com/kubesphere/ks-installer/releases/download/v3
 
 进入**资源管理** > **网络**，在右侧面板中选择 `ks-console` 更改网络访问方式，建议选用 `负载均衡（LoadBalancer` 访问方式（需绑定弹性公网 IP），配置完成后如下图：
 
-![开启 KubeSphere 外网访问](/images/docs/v3.3/huawei-cce/zh/expose-ks-console.png)
+![开启 KubeSphere 外网访问](/images/docs/v3.x/huawei-cce/zh/expose-ks-console.png)
 
 服务细节配置基本上选用默认选项即可，当然也可以按需进行调整：
 
-![为 KubeSphere 控制台配置负载均衡访问](/images/docs/v3.3/huawei-cce/zh/edit-ks-console-svc.png)
+![为 KubeSphere 控制台配置负载均衡访问](/images/docs/v3.x/huawei-cce/zh/edit-ks-console-svc.png)
 
 通过负载均衡绑定公网访问后，即可使用给定的访问地址进行访问，进入到 KubeSphere 的登录界面并使用默认帐户（用户名 `admin`，密码 `P@88w0rd`）即可登录平台。
 

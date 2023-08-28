@@ -7,7 +7,7 @@ layout: "second"
 linkTitle: "在 Linux 上安装 KubeSphere"
 weight: 3000
 
-icon: "/images/docs/v3.3/docs.svg"
+icon: "/images/docs/v3.x/docs.svg"
 ---
 
 

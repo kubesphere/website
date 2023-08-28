@@ -44,7 +44,7 @@ weight: 14250
 
 3. 在弹出窗口中，直接向终端输入命令使用该应用。
 
-   ![Mongodb 服务终端](/images/docs/v3.3/zh-cn/appstore/built-in-apps/mongodb-app/mongodb-service-terminal-9.PNG)
+   ![Mongodb 服务终端](/images/docs/v3.x/zh-cn/appstore/built-in-apps/mongodb-app/mongodb-service-terminal-9.PNG)
 
    {{< notice note >}}
 

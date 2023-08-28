@@ -29,7 +29,7 @@ Besides these VMs, other resources like Load Balancer, Virtual Network and Netwo
 
 Six machines of **Ubuntu 18.04** will be deployed in an Azure Resource Group. Three of them are grouped into an availability set, serving as both the control plane and etcd nodes. The other three VMs will be defined as a VMSS where Worker nodes will be running.
 
-![Architecture](/images/docs/v3.3/aks/Azure-architecture.png)
+![Architecture](/images/docs/v3.x/aks/Azure-architecture.png)
 
 These VMs will be attached to a load balancer. There are two predefined rules in the load balancer:
 
@@ -60,7 +60,7 @@ You don't have to create these resources one by one. According to the best pract
 
 4. Copy your public SSH key for the field **Admin Key**. Alternatively, create a new one with `ssh-keygen`.
 
-   ![azure-template-parameters](/images/docs/v3.3/installing-on-linux/installing-on-public-cloud/deploy-kubesphere-on-azure-vms/azure-template-parameters.png)
+   ![azure-template-parameters](/images/docs/v3.x/installing-on-linux/installing-on-public-cloud/deploy-kubesphere-on-azure-vms/azure-template-parameters.png)
 
    {{< notice note >}}
 
@@ -74,7 +74,7 @@ Password authentication is restricted in Linux configurations. Only SSH is accep
 
 After successfully created, all the resources will display in the resource group `KubeSphereVMRG`. Record the public IP of the load balancer and the private IP addresses of the VMs. You will need them later.
 
-![New Created Resources](/images/docs/v3.3/aks/azure-vm-all-resources.png)
+![New Created Resources](/images/docs/v3.x/aks/azure-vm-all-resources.png)
 
 ## Deploy Kubernetes and KubeSphere
 
@@ -259,6 +259,6 @@ Azure Virtual Network doesn't support the IPIP mode used by [Calico](https://doc
 As the Kubernetes cluster is set up on Azure instances directly, the load balancer is not integrated with [Kubernetes Services](https://kubernetes.io/docs/concepts/services-networking/service/#loadbalancer). However, you can still manually map the NodePort to the load balancer. There are 2 steps required.
 
 1. Create a new Load Balance Rule in the load balancer.
-   ![Load Balancer](/images/docs/v3.3/aks/azure-vm-loadbalancer-rule.png)
+   ![Load Balancer](/images/docs/v3.x/aks/azure-vm-loadbalancer-rule.png)
 2. Create an Inbound Security rule to allow Internet access in the Network Security Group.
-   ![Firewall](/images/docs/v3.3/aks/azure-vm-firewall.png)
+   ![Firewall](/images/docs/v3.x/aks/azure-vm-firewall.png)

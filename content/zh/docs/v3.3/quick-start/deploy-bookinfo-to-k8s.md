@@ -41,7 +41,7 @@ Bookinfo 应用由以下四个独立的微服务组成，其中 **reviews** 微�
 
 这个应用的端到端架构如下所示。有关更多详细信息，请参见 [Bookinfo 应用](https://istio.io/latest/zh/docs/examples/bookinfo/)。
 
-![bookinfo](/images/docs/v3.3/zh-cn/quickstart/deploy-bookinfo-to-k8s/bookinfo.png)
+![bookinfo](/images/docs/v3.x/zh-cn/quickstart/deploy-bookinfo-to-k8s/bookinfo.png)
 
 ## 动手实验
 
@@ -53,7 +53,7 @@ Bookinfo 应用由以下四个独立的微服务组成，其中 **reviews** 微�
 
     {{< notice note >}}
 
-KubeSphere 会自动创建主机名。若要更改主机名，请将鼠标悬停在默认路由规则上，然后点击 <img src="/images/docs/v3.3/zh-cn/quickstart/deploy-bookinfo-to-k8s/edit-icon.png" width='20px' alt="icon"  /> 进行编辑。有关更多信息，请参见[创建基于微服务的应用](../../project-user-guide/application/compose-app/)。
+KubeSphere 会自动创建主机名。若要更改主机名，请将鼠标悬停在默认路由规则上，然后点击 <img src="/images/docs/v3.x/zh-cn/quickstart/deploy-bookinfo-to-k8s/edit-icon.png" width='20px' alt="icon"  /> 进行编辑。有关更多信息，请参见[创建基于微服务的应用](../../project-user-guide/application/compose-app/)。
 
     {{</ notice >}}
 
@@ -89,11 +89,11 @@ KubeSphere 会自动创建主机名。若要更改主机名，请将鼠标悬停
 
 6. 在应用详情页面，点击左下角的 **Normal user**。
 
-    ![normal-user](/images/docs/v3.3/zh-cn/quickstart/deploy-bookinfo-to-k8s/normal-user.png)
+    ![normal-user](/images/docs/v3.x/zh-cn/quickstart/deploy-bookinfo-to-k8s/normal-user.png)
 
 7. 在下图中，您可以注意到 **Book Reviews** 板块仅出现 **Reviewer1** 和 **Reviewer2**，并且没有任何评级内容，因为这是当前应用版本的状态。若想探索更多流量管理相关的功能，您可以为该应用执行[金丝雀发布](../../project-user-guide/grayscale-release/canary-release/)。
 
-    ![ratings-page](/images/docs/v3.3/zh-cn/quickstart/deploy-bookinfo-to-k8s/ratings-page.png)
+    ![ratings-page](/images/docs/v3.x/zh-cn/quickstart/deploy-bookinfo-to-k8s/ratings-page.png)
 
     {{< notice note >}}
 

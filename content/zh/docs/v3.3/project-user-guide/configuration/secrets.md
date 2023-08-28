@@ -58,7 +58,7 @@ Kubernetes [保密字典 (Secret)](https://kubernetes.io/zh/docs/concepts/config
 
 ## 查看保密字典详情
 
-1. 保密字典创建后会显示在如图所示的列表中。您可以点击右边的 <img src="/images/docs/v3.3/zh-cn/project-user-guide/configurations/secrets/three-dots.png" width="20px" />，并从下拉菜单中选择操作来修改保密字典。
+1. 保密字典创建后会显示在如图所示的列表中。您可以点击右边的 <img src="/images/docs/v3.x/zh-cn/project-user-guide/configurations/secrets/three-dots.png" width="20px" />，并从下拉菜单中选择操作来修改保密字典。
 
     - **编辑信息**：查看和编辑基本信息。
     - **编辑 YAML**：查看、上传、下载或更新 YAML 文件。
@@ -69,7 +69,7 @@ Kubernetes [保密字典 (Secret)](https://kubernetes.io/zh/docs/concepts/config
 
     {{< notice note >}}
 
-如上文所述，KubeSphere 自动将键值对的值转换成对应的 base64 编码。您可以点击右边的 <img src="/images/docs/v3.3/zh-cn/project-user-guide/configurations/secrets/eye-icon.png" width="20px" /> 查看解码后的值。
+如上文所述，KubeSphere 自动将键值对的值转换成对应的 base64 编码。您可以点击右边的 <img src="/images/docs/v3.x/zh-cn/project-user-guide/configurations/secrets/eye-icon.png" width="20px" /> 查看解码后的值。
 
 {{</ notice >}} 
 

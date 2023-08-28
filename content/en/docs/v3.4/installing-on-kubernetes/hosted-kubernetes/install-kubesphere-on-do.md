@@ -28,7 +28,7 @@ You need to select:
 
 {{< notice note >}}
 
-- To install KubeSphere 3.4 on Kubernetes, your Kubernetes version must be v1.20.x, v1.21.x, * v1.22.x, * v1.23.x, and * v1.24.x. For Kubernetes versions with an asterisk, some features of edge nodes may be unavailable due to incompatability. Therefore, if you want to use edge nodes, you are advised to install Kubernetes v1.21.x.
+- To install KubeSphere 3.4 on Kubernetes, your Kubernetes version must be v1.20.x, v1.21.x, * v1.22.x, * v1.23.x, * v1.24.x, * v1.25.x, and * v1.26.x. For Kubernetes versions with an asterisk, some features of edge nodes may be unavailable due to incompatability. Therefore, if you want to use edge nodes, you are advised to install Kubernetes v1.21.x.
 - 2 nodes are included in this example. You can add more nodes based on your own needs, especially in a production environment.
 - The machine type Standard/4 GB/2 vCPUs is for minimal installation. If you plan to enable several pluggable components or use the cluster for production, you can upgrade your nodes to a more powerful type (such as CPU-Optimized / 8 GB / 4 vCPUs). It seems that DigitalOcean provisions the control plane nodes based on the type of the worker nodes, and for Standard ones the API server can become unresponsive quite soon.
 

@@ -120,7 +120,7 @@ KubeSphere 为日志收集、查询和管理提供了一个强大的、全面的
 
 {{</ notice >}}
 
-3. 在**自定义资源**中，点击 `ks-installer` 右侧的 <img src="/images/docs/v3.3/zh-cn/enable-pluggable-components/kubesphere-logging-system/three-dots.png" height="20px">，选择**编辑 YAML**。
+3. 在**自定义资源**中，点击 `ks-installer` 右侧的 <img src="/images/docs/v3.x/zh-cn/enable-pluggable-components/kubesphere-logging-system/three-dots.png" height="20px">，选择**编辑 YAML**。
 
 4. 在该 YAML 文件中，搜索 `logging`，将 `enabled` 的 `false` 改为 `true`。完成后，点击右下角的**确定**以保存配置。
 
@@ -157,7 +157,7 @@ KubeSphere 为日志收集、查询和管理提供了一个强大的、全面的
 
     {{< notice note >}}
 
-您可以通过点击控制台右下角的 <img src="/images/docs/v3.3/zh-cn/enable-pluggable-components/kubesphere-logging-system/hammer.png" height="20px"> 找到 kubectl 工具。
+您可以通过点击控制台右下角的 <img src="/images/docs/v3.x/zh-cn/enable-pluggable-components/kubesphere-logging-system/hammer.png" height="20px"> 找到 kubectl 工具。
 
 {{</ notice >}}
 

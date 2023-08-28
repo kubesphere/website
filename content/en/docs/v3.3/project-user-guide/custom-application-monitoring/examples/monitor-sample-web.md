@@ -61,7 +61,7 @@ This section guides you on how to create a dashboard from scratch. You will crea
 
 3. Enter a title in the upper-left corner (for example, `Sample Web Overview`).
 
-4. Click <img src="/images/docs/v3.3/project-user-guide/custom-application-monitoring/examples/monitor-sample-app/plus-icon.png" height="16px" width="20px" alt="icon" /> on the left column to create a text chart.
+4. Click <img src="/images/docs/v3.x/project-user-guide/custom-application-monitoring/examples/monitor-sample-app/plus-icon.png" height="16px" width="20px" alt="icon" /> on the left column to create a text chart.
 
 5. Type the PromQL expression `myapp_processed_ops_total` in the field **Monitoring Metric** and give a chart name (for example, `Operation Count`). Click **√** in the lower-right corner to continue.
 

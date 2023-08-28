@@ -58,7 +58,7 @@ KubeSphere 为 MySQL、Elasticsearch 和 Redis 提供内置模板方便您快速
 
 ### 添加监控组
 
-若要将监控项分组，您可以点击 <img src="/images/docs/v3.3/zh-cn/project-user-guide/custom-application-monitoring/visualization/overview/six-dots.png" width="20px" alt="icon" /> 将右侧的项目拖放至目标组。若要添加新的分组，点击**添加监控组**。如果您想修改监控组的位置，请将鼠标悬停至监控组上并点击右侧的 <img src="/images/docs/v3.3/zh-cn/project-user-guide/custom-application-monitoring/visualization/overview/up-arrow.png" width="20px" align="center" /> 或 <img src="/images/docs/v3.3/zh-cn/project-user-guide/custom-application-monitoring/visualization/overview/down-arrow.png" width="20px" align="center" />。
+若要将监控项分组，您可以点击 <img src="/images/docs/v3.x/zh-cn/project-user-guide/custom-application-monitoring/visualization/overview/six-dots.png" width="20px" alt="icon" /> 将右侧的项目拖放至目标组。若要添加新的分组，点击**添加监控组**。如果您想修改监控组的位置，请将鼠标悬停至监控组上并点击右侧的 <img src="/images/docs/v3.x/zh-cn/project-user-guide/custom-application-monitoring/visualization/overview/up-arrow.png" width="20px" align="center" /> 或 <img src="/images/docs/v3.x/zh-cn/project-user-guide/custom-application-monitoring/visualization/overview/down-arrow.png" width="20px" align="center" />。
 
 {{< notice note >}}
 

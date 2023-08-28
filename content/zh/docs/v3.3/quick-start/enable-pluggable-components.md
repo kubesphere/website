@@ -102,7 +102,7 @@ weight: 2600
 
 4. 在该配置文件中，将对应组件 `enabled` 的 `false` 更改为 `true`，以启用要安装的组件。完成后，点击**确定**以保存配置。
 
-    ![启用组件](/images/docs/v3.3/zh-cn/quickstart/enable-pluggable-components/启用组件.png)
+    ![启用组件](/images/docs/v3.x/zh-cn/quickstart/enable-pluggable-components/启用组件.png)
 
 5. 执行以下命令，使用 Web kubectl 来检查安装过程：
 

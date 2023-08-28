@@ -14,7 +14,7 @@ KubeSphere 安装时会自动创建默认用户 (`admin/P@88w0rd`)，密码错�
 
 登录失败时，您可能看到以下提示。请根据以下步骤排查并解决问题：
 
-![account-not-active](/images/docs/v3.3/faq/access-control-and-account-management/cannot-login/account-not-active.png)
+![account-not-active](/images/docs/v3.x/faq/access-control-and-account-management/cannot-login/account-not-active.png)
 
 1. 执行以下命令检查用户状态：
 
@@ -88,7 +88,7 @@ kubectl -n kubesphere-system get deploy ks-controller-manager -o jsonpath='{.spe
 
 ## 用户名或密码错误
 
-![incorrect-password](/images/docs/v3.3/faq/access-control-and-account-management/cannot-login/wrong-password.png)
+![incorrect-password](/images/docs/v3.x/faq/access-control-and-account-management/cannot-login/wrong-password.png)
 
 通过以下命令检查用户密码是否正确：
 

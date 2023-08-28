@@ -90,7 +90,7 @@ In KubeSphere 3.3, you can import a GitHub, GitLab, Bitbucket, or Git-based repo
    {{</ notice >}}
 
 7. In the GitHub repositories that are displayed, select a repository, and click **OK**.
-8. Click <img src="/images/docs/v3.3/common-icons/three-dots.png" width="15" alt="icon" /> on the right of the imported code repository, and you can perform the following operations:
+8. Click <img src="/images/docs/v3.x/common-icons/three-dots.png" width="15" alt="icon" /> on the right of the imported code repository, and you can perform the following operations:
 
    - **Edit**: Edits the alias and description of the code repository and reselects a code repository.
    - **Edit YAML**: Edits the YAML file of the code repository.

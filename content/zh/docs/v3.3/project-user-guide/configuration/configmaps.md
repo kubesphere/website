@@ -47,7 +47,7 @@ Kubernetes [配置字典（ConfigMap）](https://kubernetes.io/docs/concepts/con
 
 ## 查看配置字典详情
 
-1. 配置字典创建后会显示在**配置字典**页面。您可以点击右侧的 <img src="/images/docs/v3.3/zh-cn/project-user-guide/configurations/configmaps/three-dots.png" height="20px">，并从下拉菜单中选择操作来修改配置字典。
+1. 配置字典创建后会显示在**配置字典**页面。您可以点击右侧的 <img src="/images/docs/v3.x/zh-cn/project-user-guide/configurations/configmaps/three-dots.png" height="20px">，并从下拉菜单中选择操作来修改配置字典。
 
     - **编辑**：查看和编辑基本信息。
     - **编辑 YAML**：查看、上传、下载或更新 YAML 文件。

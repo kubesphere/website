@@ -77,7 +77,7 @@ If you install KubeSphere on some cloud hosted Kubernetes engines, it is probabl
 A Custom Resource Definition (CRD) allows users to create a new type of resources without adding another API server. They can use these resources like any other native Kubernetes objects.
     {{</ notice >}}
 
-3. In **Custom Resources**, click <img src="/images/docs/v3.3/enable-pluggable-components/metrics-server/three-dots.png" height="20px"> on the right of `ks-installer` and select **Edit YAML**.
+3. In **Custom Resources**, click <img src="/images/docs/v3.x/enable-pluggable-components/metrics-server/three-dots.png" height="20px"> on the right of `ks-installer` and select **Edit YAML**.
 
 4. In this YAML file, navigate to `metrics_server` and change `false` to `true` for `enabled`. After you finish, click **OK** in the lower-right corner to save the configuration.
 
@@ -94,7 +94,7 @@ A Custom Resource Definition (CRD) allows users to create a new type of resource
 
     {{< notice note >}}
 
-You can find the web kubectl tool by clicking <img src="/images/docs/v3.3/enable-pluggable-components/metrics-server/hammer.png" height="20px"> in the lower-right corner of the console.
+You can find the web kubectl tool by clicking <img src="/images/docs/v3.x/enable-pluggable-components/metrics-server/hammer.png" height="20px"> in the lower-right corner of the console.
     {{</ notice >}}
 
 ## Verify the Installation of the Component

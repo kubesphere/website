@@ -61,14 +61,14 @@ You need to prepare a user with the `platform-admin` role, for example, `admin`.
 3. Click the **Monitoring** tab to view the monitoring metrics of the cluster gateway.
 4. Click the **Configuration Options** tab to view configuration options of the cluster gateway.
 5. Click the **Gateway Logs** tab to view logs of the cluster gateway.
-6. Click the **Resource Status** tab to view workload status of the cluster gateway. Click <img src="/images/docs/v3.3/common-icons/replica-plus-icon.png" width="15" alt="icon" /> or <img src="/images/docs/v3.3/common-icons/replica-minus-icon.png" width="15" /> to scale up or scale down the number of replicas.
+6. Click the **Resource Status** tab to view workload status of the cluster gateway. Click <img src="/images/docs/v3.x/common-icons/replica-plus-icon.png" width="15" alt="icon" /> or <img src="/images/docs/v3.x/common-icons/replica-minus-icon.png" width="15" /> to scale up or scale down the number of replicas.
 7. Click the **Metadata** tab to view annotations of the cluster gateway.
 
 ## View Project Gateways
 
 On the **Gateway Settings** page, click the **Project Gateway** tab to view project gateways.
 
-Click <img src="/images/docs/v3.3/project-administration/role-and-member-management/three-dots.png" width="20px" alt="icon"> on the right of a project gateway to select an operation from the drop-down menu:
+Click <img src="/images/docs/v3.x/project-administration/role-and-member-management/three-dots.png" width="20px" alt="icon"> on the right of a project gateway to select an operation from the drop-down menu:
 
 - **Edit**: Edit configurations of the project gateway.
 - **Disable**: Disable the project gateway.

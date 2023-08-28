@@ -44,7 +44,7 @@ weight: 11219
 
 2. 转到 `/deploy/dev-ol` 然后点击文件 `devops-sample.yaml`。
 
-3. 点击 <img src="/images/docs/v3.3/zh-cn/devops-user-guide/use-devops/pipeline-webhook/edit-btn.png" width="20px" alt="icon" /> 以编辑文件。 例如，将 `spec.replicas` 的值改变为 `3`。
+3. 点击 <img src="/images/docs/v3.x/zh-cn/devops-user-guide/use-devops/pipeline-webhook/edit-btn.png" width="20px" alt="icon" /> 以编辑文件。 例如，将 `spec.replicas` 的值改变为 `3`。
 
 4. 在页面底部点击 **Commit changes**。
 

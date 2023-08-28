@@ -72,7 +72,7 @@ weight: 14310
 
 1. 选择**配置** > **保密字典**，在搜索栏输入 `gitlab-initial-root-password`，然后按下键盘上的**回车键**来搜索密钥。
 
-2. 点击密钥访问其详情页，然后点击右上角的 <img src="/images/docs/v3.3/zh-cn/appstore/external-apps/deploy-gitlab/eye-icon.png" width="20px" alt="icon" /> 查看密码。请确保将密码进行复制。
+2. 点击密钥访问其详情页，然后点击右上角的 <img src="/images/docs/v3.x/zh-cn/appstore/external-apps/deploy-gitlab/eye-icon.png" width="20px" alt="icon" /> 查看密码。请确保将密码进行复制。
 
 
 ### 步骤 4：编辑 hosts 文件
@@ -110,9 +110,9 @@ weight: 14310
 
 2. 通过 `http://gitlab.demo-project.svc.cluster.local:31246` 使用 root 帐户及其初始密码 (`root/ojPWrWECLWN0XFJkGs7aAqtitGMJlVfS0fLEDE03P9S0ji34XDoWmxs2MzgZRRWF`) 访问 GitLab。
 
-   ![access-gitlab](/images/docs/v3.3/zh-cn/appstore/external-apps/deploy-gitlab/access_gitlab.png)
+   ![access-gitlab](/images/docs/v3.x/zh-cn/appstore/external-apps/deploy-gitlab/access_gitlab.png)
 
-   ![gitlab-console](/images/docs/v3.3/zh-cn/appstore/external-apps/deploy-gitlab/gitlab_console.png)
+   ![gitlab-console](/images/docs/v3.x/zh-cn/appstore/external-apps/deploy-gitlab/gitlab_console.png)
 
    {{< notice note >}}
 

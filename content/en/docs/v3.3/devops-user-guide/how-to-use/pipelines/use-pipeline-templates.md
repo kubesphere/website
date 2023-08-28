@@ -89,16 +89,16 @@ The following briefly introduces the CI and CI & CD pipeline templates.
 
 - CI pipeline template
 
-   ![ci-template](/images/docs/v3.3/devops-user-guide/using-devops/use-pipeline-templates/ci-template.png)
+   ![ci-template](/images/docs/v3.x/devops-user-guide/using-devops/use-pipeline-templates/ci-template.png)
 
-   ![ci-stages](/images/docs/v3.3/devops-user-guide/using-devops/use-pipeline-templates/ci-stages.png)
+   ![ci-stages](/images/docs/v3.x/devops-user-guide/using-devops/use-pipeline-templates/ci-stages.png)
 
    The CI pipeline template contains two stages. The **clone code** stage checks out code and the **build & push** stage builds an image and pushes it to Docker Hub. You need to create credentials for your code repository and your Docker Hub registry in advance, and then set the URL of your repository and these credentials in corresponding steps. After you finish editing, the pipeline is ready to run.
 
 - CI & CD pipeline template
 
-   ![cicd-template](/images/docs/v3.3/devops-user-guide/using-devops/use-pipeline-templates/cicd-template.png)
+   ![cicd-template](/images/docs/v3.x/devops-user-guide/using-devops/use-pipeline-templates/cicd-template.png)
 
-   ![cicd-stages](/images/docs/v3.3/devops-user-guide/using-devops/use-pipeline-templates/cicd-stages.png)
+   ![cicd-stages](/images/docs/v3.x/devops-user-guide/using-devops/use-pipeline-templates/cicd-stages.png)
 
    The CI & CD pipeline template contains six stages. For more information about each stage, refer to [Create a Pipeline Using a Jenkinsfile](../create-a-pipeline-using-jenkinsfile/#pipeline-overview), where you can find similar stages and the descriptions. You need to create credentials for your code repository, your Docker Hub registry, and the kubeconfig of your cluster in advance, and then set the URL of your repository and these credentials in corresponding steps. After you finish editing, the pipeline is ready to run.

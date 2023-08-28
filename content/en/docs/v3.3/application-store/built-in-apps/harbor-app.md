@@ -48,7 +48,7 @@ This tutorial walks you through an example of deploying [Harbor](https://goharbo
 
 1. Based on the field `expose.type` you set in the configuration file, the access method may be different. As this example uses `nodePort` to access Harbor, visit `http://<NodeIP>:30002` as set in the previous step.
 
-   ![harbor-login](/images/docs/v3.3/appstore/built-in-apps/harbor-app/harbor-login.jpg)
+   ![harbor-login](/images/docs/v3.x/appstore/built-in-apps/harbor-app/harbor-login.jpg)
 
    {{< notice note >}}
 
@@ -58,7 +58,7 @@ This tutorial walks you through an example of deploying [Harbor](https://goharbo
 
 2. Log in to Harbor using the default account and password (`admin/Harbor12345`). The password is defined in the field `harborAdminPassword` in the configuration file.
 
-   ![harbor-dashboard](/images/docs/v3.3/appstore/built-in-apps/harbor-app/harbor-dashboard.jpg)
+   ![harbor-dashboard](/images/docs/v3.x/appstore/built-in-apps/harbor-app/harbor-dashboard.jpg)
 
 ## FAQ
 

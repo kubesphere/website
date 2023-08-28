@@ -15,7 +15,7 @@ weight: 7500
 - 请仔细阅读 [3.4.0 版本说明](../../../v3.4/release/release-v340/)。
 - 提前备份所有重要的组件。
 - Docker 仓库。您需要有一个 Harbor 或其他 Docker 仓库。有关更多信息，请参见[准备一个私有镜像仓库](../../installing-on-linux/introduction/air-gapped-installation/#步骤-2准备一个私有镜像仓库)。
-- KubeSphere 3.4 支持的 Kubernetes 版本：v1.20.x、v1.21.x、* v1.22.x、* v1.23.x 和 * v1.24.x。带星号的版本可能出现边缘节点部分功能不可用的情况。因此，如需使用边缘节点，推荐安装 v1.21.x。
+- KubeSphere 3.4 支持的 Kubernetes 版本：v1.20.x、v1.21.x、* v1.22.x、* v1.23.x、* v1.24.x、* v1.25.x 和 * v1.26.x。带星号的版本可能出现边缘节点部分功能不可用的情况。因此，如需使用边缘节点，推荐安装 v1.21.x。
 
 ## 重要提示
 

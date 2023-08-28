@@ -12,4 +12,4 @@ The most common use cases of multi-cluster management include service traffic lo
 
 KubeSphere is developed to address multi-cluster and multi-cloud management challenges, including the scenarios mentioned above. It provides users with a unified control plane to distribute applications and its replicas to multiple clusters from public cloud to on-premises environments. KubeSphere also boasts rich observability across multiple clusters including centralized monitoring, logging, events, and auditing logs.
 
-![multi-cluster-overview](/images/docs/v3.3/multicluster-management/introduction/overview/multi-cluster-overview.jpg)
+![multi-cluster-overview](/images/docs/v3.x/multicluster-management/introduction/overview/multi-cluster-overview.jpg)

@@ -10,7 +10,7 @@ This document describes how to use an external identity provider based on the OA
 
 The following figure shows the authentication process between KubeSphere and an external OAuth 2.0 identity provider.
 
-![oauth2](/images/docs/v3.3/access-control-and-account-management/external-authentication/use-an-oauth2-identity-provider/oauth2.svg)
+![oauth2](/images/docs/v3.x/access-control-and-account-management/external-authentication/use-an-oauth2-identity-provider/oauth2.svg)
 
 ## Prerequisites
 
@@ -81,7 +81,7 @@ KubeSphere provides two built-in OAuth 2.0 plugins: [GitHubIdentityProvider](htt
 
 ## Integrate an Identity Provider with KubeSphere
 
-1. Log in to KubeSphere as `admin`, move the cursor to <img src="/images/docs/v3.3/access-control-and-account-management/external-authentication/set-up-external-authentication/toolbox.png" width="20px" height="20px" alt="icon"> in the lower-right corner, click **kubectl**, and run the following command to edit `ks-installer` of the CRD `ClusterConfiguration`:
+1. Log in to KubeSphere as `admin`, move the cursor to <img src="/images/docs/v3.x/access-control-and-account-management/external-authentication/set-up-external-authentication/toolbox.png" width="20px" height="20px" alt="icon"> in the lower-right corner, click **kubectl**, and run the following command to edit `ks-installer` of the CRD `ClusterConfiguration`:
 
    ```bash
    kubectl -n kubesphere-system edit cc ks-installer
@@ -126,5 +126,5 @@ KubeSphere provides two built-in OAuth 2.0 plugins: [GitHubIdentityProvider](htt
 
 6. On the login page of the external identity provider, enter the username and password of a user configured at the identity provider to log in to KubeSphere.
 
-   ![github-login-page](/images/docs/v3.3/access-control-and-account-management/external-authentication/use-an-oauth2-identity-provider/github-login-page.png)
+   ![github-login-page](/images/docs/v3.x/access-control-and-account-management/external-authentication/use-an-oauth2-identity-provider/github-login-page.png)
 

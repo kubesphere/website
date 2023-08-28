@@ -50,7 +50,7 @@ spec:
 
 您可以通过指定 Agent 的标签来使用内置 podTempalte。例如，要使用 nodejs 的 podTemplate，您可以在创建流水线时指定标签为 `nodejs`，具体参见以下示例。
 
-![Jenkins Agent](/images/docs/v3.3/zh-cn/devops-user-guide/use-devops/choose-jenkins-agent/jenkins-agent.PNG)
+![Jenkins Agent](/images/docs/v3.x/zh-cn/devops-user-guide/use-devops/choose-jenkins-agent/jenkins-agent.PNG)
 
 ```groovy
 pipeline {

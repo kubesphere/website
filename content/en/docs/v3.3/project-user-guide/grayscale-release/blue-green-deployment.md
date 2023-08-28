@@ -9,7 +9,7 @@ weight: 10520
 
 The blue-green release provides a zero downtime deployment, which means the new version can be deployed with the old one preserved. At any time, only one of the versions is active serving all the traffic, while the other one remains idle. If there is a problem with running, you can quickly roll back to the old version.
 
-![blue-green-0](/images/docs/v3.3/project-user-guide/grayscale-release/blue-green-deployment/blue-green-0.png)
+![blue-green-0](/images/docs/v3.x/project-user-guide/grayscale-release/blue-green-deployment/blue-green-0.png)
 
 
 ## Prerequisites

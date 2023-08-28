@@ -22,7 +22,7 @@ KubeSphere has the Jenkins Configuration as Code plugin installed by default to 
 
 Besides, you can find the `formula.yaml` file in the repository [ks-jenkins](https://github.com/kubesphere/ks-jenkins), where you can view plugin versions and customize these versions based on your needs.
 
-![plugin-version](/images/docs/v3.3/devops-user-guide/using-devops/jenkins-system-settings/plugin-version.png)
+![plugin-version](/images/docs/v3.x/devops-user-guide/using-devops/jenkins-system-settings/plugin-version.png)
 
 ## Modify the ConfigMap
 

@@ -47,7 +47,7 @@ KubeSphere 支持针对节点和工作负载的告警策略。本教程演示如
 
 ## 编辑告警策略
 
-若要在创建后编辑告警策略，点击**告警策略**页面右侧的 <img src="/images/docs/v3.3/zh-cn/project-user-guide/alerting/alerting-policies/edit-alerting-policy.png" height="20px">。
+若要在创建后编辑告警策略，点击**告警策略**页面右侧的 <img src="/images/docs/v3.x/zh-cn/project-user-guide/alerting/alerting-policies/edit-alerting-policy.png" height="20px">。
 
 1. 点击下拉菜单中的**编辑**，按照创建时相同的步骤来编辑告警策略。点击**消息设置**页面的**确定**保存更改。
 

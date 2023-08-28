@@ -136,7 +136,7 @@ weight: 14320
 
 3. TiDB 集成了 Prometheus 和 Grafana 以监控数据库集群的性能。例如，您可以通过 `<NodeIP>:<NodePort>` 访问 Grafana 以查看指标。
 
-   ![tidb-grafana](/images/docs/v3.3/zh-cn/appstore/external-apps/deploy-tidb-operator-and-cluster/tidb-grafana.png)
+   ![tidb-grafana](/images/docs/v3.x/zh-cn/appstore/external-apps/deploy-tidb-operator-and-cluster/tidb-grafana.png)
 
    {{< notice note >}}
 

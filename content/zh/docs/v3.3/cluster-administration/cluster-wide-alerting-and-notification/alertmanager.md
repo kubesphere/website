@@ -10,7 +10,7 @@ Alertmanager 处理由客户端应用程序（例如 Prometheus 服务器）发�
 
 从初次发布开始，KubeSphere 就一直使用 Prometheus 作为监控服务的后端。从 3.0 版本开始，KubeSphere 的监控栈新增了 Alertmanager 来管理从 Prometheus 和其他服务组件（例如 [kube-events](https://github.com/kubesphere/kube-events) 和 kube-auditing）发出的告警。
 
-![alertmanager-kubesphere](/images/docs/v3.3/cluster-administration/cluster-wide-alerting-and-notification/alertmanager-in-kubesphere/alertmanager@kubesphere.png)
+![alertmanager-kubesphere](/images/docs/v3.x/cluster-administration/cluster-wide-alerting-and-notification/alertmanager-in-kubesphere/alertmanager@kubesphere.png)
 
 ## 使用 Alertmanager 管理 Prometheus 告警
 

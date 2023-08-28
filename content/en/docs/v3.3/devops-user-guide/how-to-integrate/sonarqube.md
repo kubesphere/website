@@ -52,7 +52,7 @@ To integrate SonarQube into your pipeline, you must install SonarQube Server fir
 
 3. You will get this prompt:
 
-   ![sonarqube-install](/images/docs/v3.3/devops-user-guide/tool-integration/integrate-sonarqube-into-pipeline/sonarqube-install.png)
+   ![sonarqube-install](/images/docs/v3.x/devops-user-guide/tool-integration/integrate-sonarqube-into-pipeline/sonarqube-install.png)
 
 ## Get the SonarQube Console Address
 
@@ -99,15 +99,15 @@ To integrate SonarQube into your pipeline, you must install SonarQube Server fir
 
 1. Click the letter **A** and select **My Account** from the menu to go to the **Profile** page.
 
-   ![sonarqube-config-1](/images/docs/v3.3/devops-user-guide/tool-integration/integrate-sonarqube-into-pipeline/sonarqube-config-1.jpg)
+   ![sonarqube-config-1](/images/docs/v3.x/devops-user-guide/tool-integration/integrate-sonarqube-into-pipeline/sonarqube-config-1.jpg)
 
 2. Click **Security** and enter a token name, such as `kubesphere`.
 
-   ![sonarqube-config-2](/images/docs/v3.3/devops-user-guide/tool-integration/integrate-sonarqube-into-pipeline/sonarqube-config-2.jpg)
+   ![sonarqube-config-2](/images/docs/v3.x/devops-user-guide/tool-integration/integrate-sonarqube-into-pipeline/sonarqube-config-2.jpg)
 
 3. Click **Generate** and copy the token.
 
-   ![sonarqube-config-3](/images/docs/v3.3/devops-user-guide/tool-integration/integrate-sonarqube-into-pipeline/sonarqube-config-3.jpg)
+   ![sonarqube-config-3](/images/docs/v3.x/devops-user-guide/tool-integration/integrate-sonarqube-into-pipeline/sonarqube-config-3.jpg)
 
    {{< notice warning >}} 
 
@@ -133,15 +133,15 @@ To integrate SonarQube into your pipeline, you must install SonarQube Server fir
 
 3. Click **Administration**, **Configuration** and **Webhooks** in turn to create a webhook. 
 
-   ![sonarqube-webhook-1](/images/docs/v3.3/devops-user-guide/tool-integration/integrate-sonarqube-into-pipeline/sonarqube-webhook-1.jpg)
+   ![sonarqube-webhook-1](/images/docs/v3.x/devops-user-guide/tool-integration/integrate-sonarqube-into-pipeline/sonarqube-webhook-1.jpg)
 
 4. Click **Create**.
 
-   ![sonarqube-webhook-3](/images/docs/v3.3/devops-user-guide/tool-integration/integrate-sonarqube-into-pipeline/sonarqube-webhook-3.jpg)
+   ![sonarqube-webhook-3](/images/docs/v3.x/devops-user-guide/tool-integration/integrate-sonarqube-into-pipeline/sonarqube-webhook-3.jpg)
 
 5. Enter **Name** and **Jenkins Console URL** (for example, the SonarQube Webhook address) in the displayed dialog box. Click **Create** to finish.
 
-   ![webhook-page-info](/images/docs/v3.3/devops-user-guide/tool-integration/integrate-sonarqube-into-pipeline/webhook-page-info.jpg)
+   ![webhook-page-info](/images/docs/v3.x/devops-user-guide/tool-integration/integrate-sonarqube-into-pipeline/webhook-page-info.jpg)
 
 ### Step 4: Add the SonarQube configuration to ks-installer
 
@@ -201,9 +201,9 @@ To integrate SonarQube into your pipeline, you must install SonarQube Server fir
 
 7. Enter **Name** and **Server URL** (`http://<Node IP>:<NodePort>`). Click **Add**, select **Jenkins**, and then create the credentials with the SonarQube admin token in the displayed dialog box as shown in the second image below. After adding the credentials, select it from the drop-down list for **Server authentication token** and then click **Apply** to finish.
 
-   ![sonarqube-jenkins-settings](/images/docs/v3.3/devops-user-guide/tool-integration/integrate-sonarqube-into-pipeline/sonarqube-jenkins-settings.png)
+   ![sonarqube-jenkins-settings](/images/docs/v3.x/devops-user-guide/tool-integration/integrate-sonarqube-into-pipeline/sonarqube-jenkins-settings.png)
 
-   ![add-credentials](/images/docs/v3.3/devops-user-guide/tool-integration/integrate-sonarqube-into-pipeline/add-credentials.png)
+   ![add-credentials](/images/docs/v3.x/devops-user-guide/tool-integration/integrate-sonarqube-into-pipeline/add-credentials.png)
 
    {{< notice note >}}
 
@@ -250,23 +250,23 @@ You need a SonarQube token so that your pipeline can communicate with SonarQube 
 
 1. On the SonarQube console, click **Create new project**.
 
-   ![sonarqube-create-project](/images/docs/v3.3/devops-user-guide/tool-integration/integrate-sonarqube-into-pipeline/sonarqube-create-project.jpg)
+   ![sonarqube-create-project](/images/docs/v3.x/devops-user-guide/tool-integration/integrate-sonarqube-into-pipeline/sonarqube-create-project.jpg)
 
 2. Enter a project key, such as `java-demo`, and click **Set Up**.
 
-   ![jenkins-projet-key](/images/docs/v3.3/devops-user-guide/tool-integration/integrate-sonarqube-into-pipeline/jenkins-projet-key.jpg)
+   ![jenkins-projet-key](/images/docs/v3.x/devops-user-guide/tool-integration/integrate-sonarqube-into-pipeline/jenkins-projet-key.jpg)
 
 3. Enter a project name, such as `java-sample`, and click **Generate**.
 
-   ![generate-a-token](/images/docs/v3.3/devops-user-guide/tool-integration/integrate-sonarqube-into-pipeline/generate-a-token.jpg)
+   ![generate-a-token](/images/docs/v3.x/devops-user-guide/tool-integration/integrate-sonarqube-into-pipeline/generate-a-token.jpg)
 
 4. After the token is created, click **Continue**.
 
-   ![token-created](/images/docs/v3.3/devops-user-guide/tool-integration/integrate-sonarqube-into-pipeline/token-created.jpg)
+   ![token-created](/images/docs/v3.x/devops-user-guide/tool-integration/integrate-sonarqube-into-pipeline/token-created.jpg)
 
 5. Choose **Java** and **Maven** respectively. Copy the serial number within the green box in the image below, which needs to be added in the [Credentials](../../../devops-user-guide/how-to-use/devops-settings/credential-management/#create-credentials) section if it is to be used in pipelines.
 
-   ![sonarqube-example](/images/docs/v3.3/devops-user-guide/tool-integration/integrate-sonarqube-into-pipeline/sonarqube-example.jpg)
+   ![sonarqube-example](/images/docs/v3.x/devops-user-guide/tool-integration/integrate-sonarqube-into-pipeline/sonarqube-example.jpg)
 
 ## View Results on the KubeSphere Console
 

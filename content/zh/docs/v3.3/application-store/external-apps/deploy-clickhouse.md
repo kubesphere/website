@@ -131,7 +131,7 @@ weight: 14340
 
    {{</ notice >}}
 
-   ![get-username-password](/images/docs/v3.3/zh-cn/appstore/external-apps/deploy-clickhouse/get-username-password.png)
+   ![get-username-password](/images/docs/v3.x/zh-cn/appstore/external-apps/deploy-clickhouse/get-username-password.png)
 
 3. 执行如下命令，访问 ClickHouse 集群，并可通过 `show databases` 命令查看数据库。
 
@@ -147,4 +147,4 @@ weight: 14340
 
    {{</ notice >}}
 
-   ![use-clickhouse](/images/docs/v3.3/zh-cn/appstore/external-apps/deploy-clickhouse/use-clickhouse.png)
+   ![use-clickhouse](/images/docs/v3.x/zh-cn/appstore/external-apps/deploy-clickhouse/use-clickhouse.png)

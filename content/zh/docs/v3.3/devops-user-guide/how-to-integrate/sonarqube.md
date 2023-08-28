@@ -52,7 +52,7 @@ weight: 11310
 
 3. 您会获取以下提示内容：
 
-   ![安装 SonarQube](/images/docs/v3.3/zh-cn/devops-user-guide/tool-integration/integrate-sonarqube-into-pipelines/sonarqube-install.png)
+   ![安装 SonarQube](/images/docs/v3.x/zh-cn/devops-user-guide/tool-integration/integrate-sonarqube-into-pipelines/sonarqube-install.png)
 
 ## 获取 SonarQube 控制台地址
 
@@ -99,15 +99,15 @@ weight: 11310
 
 1. 点击右上角字母 **A**，然后从菜单中选择 **My Account** 以转到 **Profile** 页面。
 
-   ![SonarQube 配置-1](/images/docs/v3.3/zh-cn/devops-user-guide/tool-integration/integrate-sonarqube-into-pipelines/sonarqube-config-1.png)
+   ![SonarQube 配置-1](/images/docs/v3.x/zh-cn/devops-user-guide/tool-integration/integrate-sonarqube-into-pipelines/sonarqube-config-1.png)
 
 2. 点击 **Security** 并输入令牌名称，例如 `kubesphere`。
 
-   ![SonarQube 配置-2](/images/docs/v3.3/zh-cn/devops-user-guide/tool-integration/integrate-sonarqube-into-pipelines/sonarqube-config-2.png)
+   ![SonarQube 配置-2](/images/docs/v3.x/zh-cn/devops-user-guide/tool-integration/integrate-sonarqube-into-pipelines/sonarqube-config-2.png)
 
 3. 点击 **Generate** 并复制此令牌。
 
-   ![SonarQube 配置-3](/images/docs/v3.3/zh-cn/devops-user-guide/tool-integration/integrate-sonarqube-into-pipelines/sonarqube-config-3.png)
+   ![SonarQube 配置-3](/images/docs/v3.x/zh-cn/devops-user-guide/tool-integration/integrate-sonarqube-into-pipelines/sonarqube-config-3.png)
 
    {{< notice warning >}} 
 
@@ -133,15 +133,15 @@ weight: 11310
 
 3. 依次点击 **Administration**、**Configuration** 和 **Webhooks** 创建一个 Webhook。
 
-   ![SonarQube Webhook-1](/images/docs/v3.3/zh-cn/devops-user-guide/tool-integration/integrate-sonarqube-into-pipelines/sonarqube-webhook-1.png)
+   ![SonarQube Webhook-1](/images/docs/v3.x/zh-cn/devops-user-guide/tool-integration/integrate-sonarqube-into-pipelines/sonarqube-webhook-1.png)
 
 4. 点击 **Create**。
 
-   ![SonarQube Webhook-2](/images/docs/v3.3/zh-cn/devops-user-guide/tool-integration/integrate-sonarqube-into-pipelines/sonarqube-webhook-2.png)
+   ![SonarQube Webhook-2](/images/docs/v3.x/zh-cn/devops-user-guide/tool-integration/integrate-sonarqube-into-pipelines/sonarqube-webhook-2.png)
 
 5. 在弹出的对话框中输入 **Name** 和 **Jenkins Console URL**（即 SonarQube Webhook 地址）。点击 **Create** 完成操作。
 
-   ![Webhook 页面信息](/images/docs/v3.3/zh-cn/devops-user-guide/tool-integration/integrate-sonarqube-into-pipelines/webhook-page-info.png)
+   ![Webhook 页面信息](/images/docs/v3.x/zh-cn/devops-user-guide/tool-integration/integrate-sonarqube-into-pipelines/webhook-page-info.png)
 
 ### 步骤 4：将 SonarQube 配置添加到 ks-installer
 
@@ -201,9 +201,9 @@ weight: 11310
 
 7. 输入 **Name** 和 **Server URL** (`http://<Node IP>:<NodePort>`)。点击**添加**，选择 **Jenkins**，然后在弹出的对话框中用 SonarQube 管理员令牌创建凭证（如下方第二张截图所示）。创建凭证后，从 **Server authentication token** 旁边的下拉列表中选择该凭证。点击**应用**完成操作。
 
-   ![sonarqube-jenkins-settings](/images/docs/v3.3/zh-cn/devops-user-guide/tool-integration/integrate-sonarqube-into-pipelines/sonarqube-jenkins-settings.png)
+   ![sonarqube-jenkins-settings](/images/docs/v3.x/zh-cn/devops-user-guide/tool-integration/integrate-sonarqube-into-pipelines/sonarqube-jenkins-settings.png)
    
-   ![add-credentials](/images/docs/v3.3/zh-cn/devops-user-guide/tool-integration/integrate-sonarqube-into-pipelines/add-credentials.png)
+   ![add-credentials](/images/docs/v3.x/zh-cn/devops-user-guide/tool-integration/integrate-sonarqube-into-pipelines/add-credentials.png)
    
    {{< notice note >}}
    
@@ -250,23 +250,23 @@ kubectl -n kubesphere-system rollout restart deploy ks-console
 
 1. 在 SonarQube 控制台上，点击 **Create new project**。
 
-   ![SonarQube 创建项目](/images/docs/v3.3/zh-cn/devops-user-guide/tool-integration/integrate-sonarqube-into-pipelines/sonarqube-create-project.png)
+   ![SonarQube 创建项目](/images/docs/v3.x/zh-cn/devops-user-guide/tool-integration/integrate-sonarqube-into-pipelines/sonarqube-create-project.png)
 
 2. 输入项目密钥，例如 `java-demo`，然后点击 **Set Up**。
 
-   ![Jenkins 项目密钥](/images/docs/v3.3/zh-cn/devops-user-guide/tool-integration/integrate-sonarqube-into-pipelines/jenkins-projet-key.png)
+   ![Jenkins 项目密钥](/images/docs/v3.x/zh-cn/devops-user-guide/tool-integration/integrate-sonarqube-into-pipelines/jenkins-projet-key.png)
 
 3. 输入项目名称，例如 `java-sample`，然后点击 **Generate**。
 
-   ![创建令牌](/images/docs/v3.3/zh-cn/devops-user-guide/tool-integration/integrate-sonarqube-into-pipelines/generate-a-token.png)
+   ![创建令牌](/images/docs/v3.x/zh-cn/devops-user-guide/tool-integration/integrate-sonarqube-into-pipelines/generate-a-token.png)
 
 4. 创建令牌后，点击 **Continue**。
 
-   ![令牌已创建](/images/docs/v3.3/zh-cn/devops-user-guide/tool-integration/integrate-sonarqube-into-pipelines/token-created.png)
+   ![令牌已创建](/images/docs/v3.x/zh-cn/devops-user-guide/tool-integration/integrate-sonarqube-into-pipelines/token-created.png)
 
 5. 分别选择 **Java** 和 **Maven**。复制下图所示绿色框中的序列号，如果要在流水线中使用，则需要在[凭证](../../../devops-user-guide/how-to-use/devops-settings/credential-management/#创建凭证)中添加此序列号。
 
-   ![sonarqube-example](/images/docs/v3.3/zh-cn/devops-user-guide/tool-integration/integrate-sonarqube-into-pipelines/sonarqube-example.png)
+   ![sonarqube-example](/images/docs/v3.x/zh-cn/devops-user-guide/tool-integration/integrate-sonarqube-into-pipelines/sonarqube-example.png)
 
 ## 在 KubeSphere 控制台查看结果
 

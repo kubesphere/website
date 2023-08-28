@@ -139,7 +139,7 @@ KubeSphere 集成了 [OpenPitrix](https://github.com/openpitrix/openpitrix)（�
 
 `reviewer` 可以根据不同类型应用程序的功能和用途创建多个分类。这类似于设置标签，可以在应用商店中将分类用作筛选器，例如大数据、中间件和物联网等。
 
-1. 以 `reviewer` 身份登录 KubeSphere。要创建分类，请转到**应用商店管理**页面，再点击**应用分类**页面中的 <img src="/images/docs/v3.3/zh-cn/appstore/application-lifecycle-management/plus.png" height="20px">。
+1. 以 `reviewer` 身份登录 KubeSphere。要创建分类，请转到**应用商店管理**页面，再点击**应用分类**页面中的 <img src="/images/docs/v3.x/zh-cn/appstore/application-lifecycle-management/plus.png" height="20px">。
 
 2. 在弹出的对话框中设置分类名称和图标，然后点击**确定**。对于 Redis，您可以将**分类名称**设置为 `Database`。
 

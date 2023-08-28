@@ -33,7 +33,7 @@ This tutorial demonstrates how to deploy RadonDB MySQL Operator and a RadonDB My
 
    Your repository displays in the list after it is successfully imported to KubeSphere.
 
-![certify URL](/images/docs/v3.3/appstore/external-apps/deploy-radondb-mysql/certify_url.png)
+![certify URL](/images/docs/v3.x/appstore/external-apps/deploy-radondb-mysql/certify_url.png)
 
 ### Step 2: Deploy RadonDB MySQL Operator
 
@@ -48,7 +48,7 @@ This tutorial demonstrates how to deploy RadonDB MySQL Operator and a RadonDB My
    On the **Chart Files** tab, you can view the configuration and edit the `.yaml` files.  
    On the **Version** list, you can view the app versions and select a version.
 
-   ![operator configuration](/images/docs/v3.3/appstore/external-apps/deploy-radondb-mysql/operator_yaml.png)
+   ![operator configuration](/images/docs/v3.x/appstore/external-apps/deploy-radondb-mysql/operator_yaml.png)
 
 5. Click **Deploy**, go to the **Basic Information** page.  
 
@@ -139,7 +139,7 @@ Go to the `demo-project` project management page, access RadonDB MySQL through t
 
 4. In terminal window, run the following command to access the RadonDB MySQL cluster.
 
-![Access RadonDB MySQL](/images/docs/v3.3/appstore/external-apps/deploy-radondb-mysql/pod_terminal.png)
+![Access RadonDB MySQL](/images/docs/v3.x/appstore/external-apps/deploy-radondb-mysql/pod_terminal.png)
 
 **Method 2**
 
@@ -157,4 +157,4 @@ In the blow command, `sample-mysql-0` is the Pod name and `demo-project` is the 
 
 {{</ notice >}}
 
-![Access RadonDB MySQL](/images/docs/v3.3/appstore/external-apps/deploy-radondb-mysql/kubectl_terminal.png)
+![Access RadonDB MySQL](/images/docs/v3.x/appstore/external-apps/deploy-radondb-mysql/kubectl_terminal.png)

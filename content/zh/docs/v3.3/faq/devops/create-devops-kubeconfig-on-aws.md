@@ -73,7 +73,7 @@ Weight: 16820
 
 2. 输出类似如下：
 
-   ![get-token](/images/docs/v3.3/zh-cn/faq/devops/create-devops-kubeconfig-on-aws/get-token.jpg)
+   ![get-token](/images/docs/v3.x/zh-cn/faq/devops/create-devops-kubeconfig-on-aws/get-token.jpg)
 
 ### 步骤 3：创建 DevOps kubeconfig
 

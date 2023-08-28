@@ -59,9 +59,9 @@ This tutorial demonstrates how to deploy Litmus on KubeSphere and create chaos e
 
 2. You can access Litmus `Portal` through `${NodeIP}:${NODEPORT}` using the default username and password (`admin`/`litmus`).
 
-   ![litmus-login-page](/images/docs/v3.3/appstore/external-apps/deploy-litmus/litmus-login-page.png)
+   ![litmus-login-page](/images/docs/v3.x/appstore/external-apps/deploy-litmus/litmus-login-page.png)
 
-   ![litmus-login-1](/images/docs/v3.3/appstore/external-apps/deploy-litmus/litmus-login-1.png)
+   ![litmus-login-1](/images/docs/v3.x/appstore/external-apps/deploy-litmus/litmus-login-1.png)
 
    {{< notice note >}}
     You may need to open the port in your security groups and configure port forwarding rules depending on where your Kubernetes cluster is deployed. Make sure you use your own `NodeIP`.
@@ -107,7 +107,7 @@ For details about how to deploy External Agent, see [Litmus Docs](https://litmus
 
     On the Litmus `Portal`, you can see that the experiment is successful.
 
-    ![litmus-successful](/images/docs/v3.3/appstore/external-apps/deploy-litmus/litmus-successful.png)
+    ![litmus-successful](/images/docs/v3.x/appstore/external-apps/deploy-litmus/litmus-successful.png)
 
     You can click a specific workflow node to view its detailed logs.
 
@@ -131,7 +131,7 @@ For details about how to deploy External Agent, see [Litmus Docs](https://litmus
 
    You can ping the Pod IP address to test the packet loss rate.
 
-   ![packet-loss-rate](/images/docs/v3.3/appstore/external-apps/deploy-litmus/packet-loss-rate.png)
+   ![packet-loss-rate](/images/docs/v3.x/appstore/external-apps/deploy-litmus/packet-loss-rate.png)
 
    {{< notice note >}}
 

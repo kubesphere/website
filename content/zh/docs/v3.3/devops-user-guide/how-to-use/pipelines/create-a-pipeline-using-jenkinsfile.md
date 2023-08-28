@@ -28,7 +28,7 @@ KubeSphere 中可以创建两种类型的流水线：一种是本教程中介绍
 
 本示例流水线包括以下八个阶段。
 
-![流水线概览](/images/docs/v3.3/zh-cn/devops-user-guide/use-devops/create-a-pipeline-using-a-jenkinsfile/pipeline-overview.png)
+![流水线概览](/images/docs/v3.x/zh-cn/devops-user-guide/use-devops/create-a-pipeline-using-a-jenkinsfile/pipeline-overview.png)
 
 {{< notice note >}}
 
@@ -65,7 +65,7 @@ KubeSphere 中可以创建两种类型的流水线：一种是本教程中介绍
 
 3. 您还需要创建具有如下图所示权限的 GitHub 个人访问令牌 (PAT)，然后在 DevOps 项目中，使用生成的令牌创建用于 GitHub 认证的帐户凭证（例如，`github-token`）。
 
-   ![github-token-scope](/images/docs/v3.3/zh-cn/devops-user-guide/use-devops/create-a-pipeline-using-a-jenkinsfile/github-token-scope.png)
+   ![github-token-scope](/images/docs/v3.x/zh-cn/devops-user-guide/use-devops/create-a-pipeline-using-a-jenkinsfile/github-token-scope.png)
    
    {{< notice note >}}
    
@@ -83,7 +83,7 @@ KubeSphere 中可以创建两种类型的流水线：一种是本教程中介绍
 
 3. 点击右侧的编辑图标，编辑环境变量。
 
-   ![jenkins-edit--2](/images/docs/v3.3/zh-cn/devops-user-guide/use-devops/create-a-pipeline-using-a-jenkinsfile/jenkins-edit--2.png)
+   ![jenkins-edit--2](/images/docs/v3.x/zh-cn/devops-user-guide/use-devops/create-a-pipeline-using-a-jenkinsfile/jenkins-edit--2.png)
 
    | 条目 | 值 | 描述信息 |
    | :--- | :--- | :--- |
@@ -185,7 +185,7 @@ KubeSphere 中可以创建两种类型的流水线：一种是本教程中介绍
 
    {{< notice note >}}
 
-   - 您可以点击该流水线右侧的 <img src="/images/docs/v3.3/common-icons/three-dots.png" width="15" alt="icon" />，然后选择**复制**来创建该流水线的副本。如需并发运行不包含多分支的多个流水线，您可以将这些流水线全选，然后点击**运行**来批量运行它们。
+   - 您可以点击该流水线右侧的 <img src="/images/docs/v3.x/common-icons/three-dots.png" width="15" alt="icon" />，然后选择**复制**来创建该流水线的副本。如需并发运行不包含多分支的多个流水线，您可以将这些流水线全选，然后点击**运行**来批量运行它们。
    - 流水线详情页显示**同步状态**，即 KubeSphere 和 Jenkins 的同步结果。若同步成功，您会看到**成功**图标中打上绿色的对号。
 
    {{</ notice >}} 

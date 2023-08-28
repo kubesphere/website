@@ -8,7 +8,7 @@ weight: 3630
 
 KubeSphere 利用 [KubeEdge](https://kubeedge.io/zh/) 将原生容器化应用程序编排功能扩展到边缘的主机。KubeEdge 拥有单独的云端和边端核心模块，提供完整的边缘计算解决方案，但安装过程可能较为繁琐。
 
-![kubeedge_arch](/images/docs/v3.3/zh-cn/installing-on-linux/add-and-delete-nodes/add-edge-nodes/kubeedge_arch.png)
+![kubeedge_arch](/images/docs/v3.x/zh-cn/installing-on-linux/add-and-delete-nodes/add-edge-nodes/kubeedge_arch.png)
 
 {{< notice note >}}
 
@@ -129,7 +129,7 @@ done
 
 3. 点击**添加**。在出现的对话框中，设置边缘节点的节点名称并输入其内网 IP 地址。点击**验证**以继续。
    
-   ![add-edge-node](/images/docs/v3.3/zh-cn/installing-on-linux/add-and-delete-nodes/add-edge-nodes/add-edge-node.png)
+   ![add-edge-node](/images/docs/v3.x/zh-cn/installing-on-linux/add-and-delete-nodes/add-edge-nodes/add-edge-node.png)
 
    {{< notice note >}} 
 
@@ -140,7 +140,7 @@ done
 
 4. 复制**边缘节点配置命令**下自动创建的命令，并在您的边缘节点上运行该命令。
 
-   ![edge-command](/images/docs/v3.3/zh-cn/installing-on-linux/add-and-delete-nodes/add-edge-nodes/edge-command.png)
+   ![edge-command](/images/docs/v3.x/zh-cn/installing-on-linux/add-and-delete-nodes/add-edge-nodes/edge-command.png)
 
    {{< notice note >}}
 
@@ -167,7 +167,7 @@ done
 
 3. 在右侧的搜索框中，输入 `clusterconfiguration`，并点击结果查看其详细页面。
 
-4. 点击 `ks-installer` 右侧的 <img src="/images/docs/v3.3/common-icons/three-dots.png" width="15" alt="icon" />，选择**编辑 YAML**。
+4. 点击 `ks-installer` 右侧的 <img src="/images/docs/v3.x/common-icons/three-dots.png" width="15" alt="icon" />，选择**编辑 YAML**。
 
 5. 找到 **metrics_server**，将 `enabled` 的 `false` 更改为 `true`。
 

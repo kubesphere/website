@@ -375,7 +375,7 @@ KubeSphere 3.3 引入了一种为云原生应用实现持续部署的理念 – 
     </tbody>
     </table>
 
-2. 点击持续部署右侧的 <img src="/images/docs/v3.3/common-icons/three-dots.png" width="15" alt="icon" />，您可以执行以下操作：
+2. 点击持续部署右侧的 <img src="/images/docs/v3.x/common-icons/three-dots.png" width="15" alt="icon" />，您可以执行以下操作：
     - **编辑信息**：编辑别名和描述信息。
     - **编辑 YAML**：编辑持续部署的 YAML 文件。
     - **同步**：触发资源同步。
@@ -393,7 +393,7 @@ KubeSphere 3.3 引入了一种为云原生应用实现持续部署的理念 – 
 
 1. 进入持续部署所在的项目，在左侧导航栏，点击**服务**。
 
-2. 在右侧的**服务**区域，找到已部署的应用，并点击右侧 <img src="/images/docs/v3.3/common-icons/three-dots.png" width="15" alt="icon" />，选择**编辑外部访问**。
+2. 在右侧的**服务**区域，找到已部署的应用，并点击右侧 <img src="/images/docs/v3.x/common-icons/three-dots.png" width="15" alt="icon" />，选择**编辑外部访问**。
 
 3. 在**访问模式**中选择 **NodePort**，点击**确定**。
 

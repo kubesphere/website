@@ -24,7 +24,7 @@ Kubernetes 解决了应用编排、容器调度的难题，极大地提高了资
 
 为了解决上述问题，KubeSphere 提供了基于 Kubernetes 的多租户管理方案。
 
-![multi-tenancy-architecture](/images/docs/v3.3/zh-cn/access-control-and-account-management/multi-tanancy-in-kubesphere/multi-tenancy-architecture.png)
+![multi-tenancy-architecture](/images/docs/v3.x/zh-cn/access-control-and-account-management/multi-tanancy-in-kubesphere/multi-tenancy-architecture.png)
 
 在 KubeSphere 中[企业空间](../../workspace-administration/what-is-workspace/)是最小的租户单元，企业空间提供了跨集群、跨项目（即 Kubernetes 中的命名空间）共享资源的能力。企业空间中的成员可以在授权集群中创建项目，并通过邀请授权的方式参与项目协同。
 
@@ -54,4 +54,4 @@ KubeSphere 还提供了针对用户的[操作审计](../../pluggable-components/
 
 KubeSphere 完整的认证鉴权链路如下图所示，可以通过 OPA 拓展 Kubernetes 的 RBAC 规则。KubeSphere 团队计划集成 [Gatekeeper](https://github.com/open-policy-agent/gatekeeper) 以支持更为丰富的安全管控策略。
 
-![request-chain](/images/docs/v3.3/zh-cn/access-control-and-account-management/multi-tanancy-in-kubesphere/request-chain.jpg)
+![request-chain](/images/docs/v3.x/zh-cn/access-control-and-account-management/multi-tanancy-in-kubesphere/request-chain.jpg)

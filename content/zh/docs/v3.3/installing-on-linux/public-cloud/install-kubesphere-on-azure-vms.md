@@ -30,7 +30,7 @@ Weight: 3410
 
 六台 **Ubuntu 18.04** 的机器会被部署至 Azure 资源组中。其中三台机器会分至同一个可用性集，同时充当主节点和 etcd 节点。其他三个虚拟机会被定义为 VMSS，工作节点将在其中运行。
 
-![Architecture](/images/docs/v3.3/aks/Azure-architecture.png)
+![Architecture](/images/docs/v3.x/aks/Azure-architecture.png)
 
 这些虚拟机将连接至负载均衡器，其中两个包含预定义规则：
 
@@ -61,7 +61,7 @@ Weight: 3410
 
 4. 复制您的 SSH 公钥至 **Admin Key** 中。或者，使用 `ssh-keygen` 创建一个新的密钥。
 
-   ![azure-template-parameters](/images/docs/v3.3/installing-on-linux/installing-on-public-cloud/deploy-kubesphere-on-azure-vms/azure-template-parameters.png)
+   ![azure-template-parameters](/images/docs/v3.x/installing-on-linux/installing-on-public-cloud/deploy-kubesphere-on-azure-vms/azure-template-parameters.png)
 
    {{< notice note >}}
 
@@ -75,7 +75,7 @@ Linux 只接受 SSH 验证，密码身份验证在其配置中受限。
 
 创建成功后，所有资源会显示在 `KubeSphereVMRG` 资源组中。记录负载均衡器的公用 IP 和虚拟机的私有 IP 地址，以备后续使用。
 
-![New Created Resources](/images/docs/v3.3/aks/azure-vm-all-resources.png)
+![New Created Resources](/images/docs/v3.x/aks/azure-vm-all-resources.png)
 
 ## 部署 Kubernetes 和 KubeSphere
 
@@ -265,9 +265,9 @@ Azure 虚拟网络不支持 [Calico](https://docs.projectcalico.org/reference/pu
 
 1. 在负载均衡器中创建新的负载均衡规则。
 
-   ![Load Balancer](/images/docs/v3.3/aks/azure-vm-loadbalancer-rule.png)
+   ![Load Balancer](/images/docs/v3.x/aks/azure-vm-loadbalancer-rule.png)
 
 2. 在网络安全组中创建入站安全规则以允许外网访问。
 
-   ![Firewall](/images/docs/v3.3/aks/azure-vm-firewall.png)
+   ![Firewall](/images/docs/v3.x/aks/azure-vm-firewall.png)
 

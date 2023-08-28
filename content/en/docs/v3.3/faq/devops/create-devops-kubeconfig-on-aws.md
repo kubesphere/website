@@ -73,7 +73,7 @@ If you have trouble deploying applications into your project when running a pipe
 
 2. The output is similar to the following:
 
-   ![get-token](/images/docs/v3.3/faq/devops/create-devops-kubeconfig-on-aws/get-token.jpg)
+   ![get-token](/images/docs/v3.x/faq/devops/create-devops-kubeconfig-on-aws/get-token.jpg)
 
 ### Step 3: Create a DevOps kubeconfig
 

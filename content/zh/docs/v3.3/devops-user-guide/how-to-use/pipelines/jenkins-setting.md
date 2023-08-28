@@ -22,7 +22,7 @@ KubeSphere 默认安装 Jenkins Configuration as Code 插件，您可以通过 Y
 
 此外，您可以在 [ks-jenkins](https://github.com/kubesphere/ks-jenkins) 仓库中找到 `formula.yaml` 文件，查看插件版本并按需自定义这些版本。
 
-![plugin-version](/images/docs/v3.3/zh-cn/devops-user-guide/use-devops/jenkins-system-settings/plugin-version.png)
+![plugin-version](/images/docs/v3.x/zh-cn/devops-user-guide/use-devops/jenkins-system-settings/plugin-version.png)
 
 ## 修改 ConfigMap
 

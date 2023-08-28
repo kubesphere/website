@@ -8,7 +8,7 @@ weight: 7100
 
 ## Make Your Upgrade Plan
 
-KubeSphere 3.4 is compatible with Kubernetes v1.20.x, v1.21.x, * v1.22.x, * v1.23.x, and * v1.24.x:
+KubeSphere 3.4 is compatible with Kubernetes v1.20.x, v1.21.x, * v1.22.x, * v1.23.x, * v1.24.x, * v1.25.x, and * v1.26.x:
 
 - Before you upgrade your cluster to KubeSphere 3.4, you need to have a KubeSphere cluster running v3.2.x.
 - You can choose to only upgrade KubeSphere to 3.4 or upgrade Kubernetes (to a higher version) and KubeSphere (to 3.4) at the same time.

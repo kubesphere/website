@@ -502,7 +502,7 @@ KubeKey v2.1.0 版本新增了清单（manifest）和制品（artifact）的概�
 
    方法 2：登录 Harbor 仓库创建项目。将项目设置为**公开**以便所有用户都能够拉取镜像。关于如何创建项目，请参阅[创建项目](https://goharbor.io/docs/1.10/working-with-projects/create-projects/)。
 
-   ![harbor-login-7](/images/docs/v3.3/zh-cn/appstore/built-in-apps/deploy-harbor-on-ks/harbor-login-7.PNG)
+   ![harbor-login-7](/images/docs/v3.x/zh-cn/appstore/built-in-apps/deploy-harbor-on-ks/harbor-login-7.PNG)
 
 6. 再次执行以下命令修改集群配置文件：
 
@@ -577,7 +577,7 @@ KubeKey v2.1.0 版本新增了清单（manifest）和制品（artifact）的概�
 
 9. 通过 `http://{IP}:30880` 使用默认帐户和密码 `admin/P@88w0rd` 访问 KubeSphere 的 Web 控制台。
 
-   ![kubesphere-login](/images/docs/v3.3/zh-cn/upgrade/air-gapped-upgrade-with-ks-installer/kubesphere-login.PNG)
+   ![kubesphere-login](/images/docs/v3.x/zh-cn/upgrade/air-gapped-upgrade-with-ks-installer/kubesphere-login.PNG)
 
 
    {{< notice note >}}

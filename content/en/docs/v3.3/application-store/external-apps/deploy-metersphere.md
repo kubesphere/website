@@ -55,7 +55,7 @@ This tutorial demonstrates how to deploy MeterSphere on KubeSphere.
 
 2. You can access MeterSphere through `<NodeIP>:<NodePort>` using the default account and password (`admin/metersphere`).
 
-   ![login-metersphere](/images/docs/v3.3/appstore/external-apps/deploy-metersphere/login-metersphere.PNG)
+   ![login-metersphere](/images/docs/v3.x/appstore/external-apps/deploy-metersphere/login-metersphere.PNG)
 
    {{< notice note >}}
 

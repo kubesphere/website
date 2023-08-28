@@ -56,7 +56,7 @@ MeterSphere 是一站式的开源企业级连续测试平台，涵盖测试跟�
 
 2. 您可以通过 `<NodeIP>:<NodePort>` 使用默认帐户及密码 (`admin/metersphere`) 访问 MeterSphere。
 
-   ![login-metersphere](/images/docs/v3.3/zh-cn/appstore/external-apps/deploy-metersphere/login-metersphere.png)
+   ![login-metersphere](/images/docs/v3.x/zh-cn/appstore/external-apps/deploy-metersphere/login-metersphere.png)
 
    {{< notice note >}}
 

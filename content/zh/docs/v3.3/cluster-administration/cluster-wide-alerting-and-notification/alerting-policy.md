@@ -49,7 +49,7 @@ KubeSphere 还具有内置策略，一旦满足为这些策略定义的条件，
 
 ## 编辑告警策略
 
-如需在创建后编辑告警策略，在**告警策略**页面点击右侧的 <img src="/images/docs/v3.3/zh-cn/cluster-administration/cluster-wide-alerting-and-notification/alerting-policy-node-level/edit-policy.png" height="25px">。
+如需在创建后编辑告警策略，在**告警策略**页面点击右侧的 <img src="/images/docs/v3.x/zh-cn/cluster-administration/cluster-wide-alerting-and-notification/alerting-policy-node-level/edit-policy.png" height="25px">。
 
 1. 点击下拉菜单中的**编辑**，根据与创建时相同的步骤来编辑告警策略。点击**消息设置**页面的**确定**保存更改。
 
@@ -63,8 +63,8 @@ KubeSphere 还具有内置策略，一旦满足为这些策略定义的条件，
 
 {{< notice note >}}
 
-您可以点击右上角的 <img src="/images/docs/v3.3/zh-cn/cluster-administration/cluster-wide-alerting-and-notification/alerting-policy-node-level/drop-down-list.png" width='20' alt="icon" /> 选择告警监控的时间范围或者自定义时间范围。
+您可以点击右上角的 <img src="/images/docs/v3.x/zh-cn/cluster-administration/cluster-wide-alerting-and-notification/alerting-policy-node-level/drop-down-list.png" width='20' alt="icon" /> 选择告警监控的时间范围或者自定义时间范围。
 
-您还可以点击右上角的 <img src="/images/docs/v3.3/zh-cn/cluster-administration/cluster-wide-alerting-and-notification/alerting-policy-node-level/refresh.png" width='25' alt="icon" /> 来手动刷新告警监控图。
+您还可以点击右上角的 <img src="/images/docs/v3.x/zh-cn/cluster-administration/cluster-wide-alerting-and-notification/alerting-policy-node-level/refresh.png" width='25' alt="icon" /> 来手动刷新告警监控图。
 
 {{</ notice >}}

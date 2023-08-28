@@ -500,7 +500,7 @@ In KubeKey v2.1.0, we bring in concepts of manifest and artifact, which provides
    
    Method 2: Log in to Harbor and create a project. Set the project to **Public**, so that any user can pull images from this project. For more information, please refer to [Create Projects]( https://goharbor.io/docs/1.10/working-with-projects/create-projects/).
    
-   ![harbor-login](/images/docs/v3.3/appstore/built-in-apps/harbor-app/harbor-login.jpg)
+   ![harbor-login](/images/docs/v3.x/appstore/built-in-apps/harbor-app/harbor-login.jpg)
    
 6. Run the following command again to modify the cluster configuration file：
 
@@ -581,7 +581,7 @@ In KubeKey v2.1.0, we bring in concepts of manifest and artifact, which provides
 
 9.  Access KubeSphere's web console at `http://{IP}:30880` using the default account and password `admin/P@88w0rd`.
 
-   ![login](/images/docs/v3.3/installing-on-kubernetes/introduction/overview/login.png)
+   ![login](/images/docs/v3.x/installing-on-kubernetes/introduction/overview/login.png)
 
    {{< notice note >}}
 

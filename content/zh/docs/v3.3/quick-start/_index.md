@@ -7,7 +7,7 @@ linkTitle: "快速入门"
 
 weight: 2000
 
-icon: "/images/docs/v3.3/docs.svg"
+icon: "/images/docs/v3.x/docs.svg"
 
 ---
 

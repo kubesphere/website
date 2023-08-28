@@ -16,11 +16,11 @@ Azure can help you implement infrastructure as code by providing resource deploy
 
 You don't have to install Azure CLI on your machine as Azure provides a web-based terminal. Click the Cloud Shell button on the menu bar at the upper-right corner in Azure portal.
 
-![Cloud Shell](/images/docs/v3.3/aks/aks-launch-icon.png)
+![Cloud Shell](/images/docs/v3.x/aks/aks-launch-icon.png)
 
 Select **Bash** Shell.
 
-![Bash Shell](/images/docs/v3.3/aks/aks-choices-bash.png)
+![Bash Shell](/images/docs/v3.x/aks/aks-choices-bash.png)
 
 ### Create a Resource Group
 
@@ -62,15 +62,15 @@ aks-nodepool1-23754246-vmss000000   Ready    agent   38m   v1.16.13
 
 After you execute all the commands above, you can see there are 2 Resource Groups created in Azure Portal.
 
-![Resource groups](/images/docs/v3.3/aks/aks-create-command.png)
+![Resource groups](/images/docs/v3.x/aks/aks-create-command.png)
 
 Azure Kubernetes Services itself will be placed in `KubeSphereRG`.
 
-![Azure Kubernetes Services](/images/docs/v3.3/aks/aks-dashboard.png)
+![Azure Kubernetes Services](/images/docs/v3.x/aks/aks-dashboard.png)
 
 All the other Resources will be placed in `MC_KubeSphereRG_KuberSphereCluster_westus`, such as VMs, Load Balancer and Virtual Network.
 
-![Azure Kubernetes Services](/images/docs/v3.3/aks/aks-all-resources.png)
+![Azure Kubernetes Services](/images/docs/v3.x/aks/aks-all-resources.png)
 
 ## Deploy KubeSphere on AKS
 

@@ -42,7 +42,7 @@ A department in a workspace is a logical unit used for permission control. You c
 
 1. On the **Departments** page, select a department in the department tree on the left and click **Not Assigned** on the right.
 
-2. In the user list, click <img src="/images/docs/v3.3/workspace-administration/department-management/assign.png" height="20px"> on the right of a user, and click **OK** for the displayed message to assign the user to the department.
+2. In the user list, click <img src="/images/docs/v3.x/workspace-administration/department-management/assign.png" height="20px"> on the right of a user, and click **OK** for the displayed message to assign the user to the department.
 
    {{< notice note >}}
 
@@ -54,7 +54,7 @@ A department in a workspace is a logical unit used for permission control. You c
 ## Remove a User from a Department
 
 1. On the **Departments** page, select a department in the department tree on the left and click **Assigned** on the right.
-2. In the assigned user list, click <img src="/images/docs/v3.3/workspace-administration/department-management/remove.png" height="20px"> on the right of a user, enter the username in the displayed dialog box, and click **OK** to remove the user.
+2. In the assigned user list, click <img src="/images/docs/v3.x/workspace-administration/department-management/remove.png" height="20px"> on the right of a user, enter the username in the displayed dialog box, and click **OK** to remove the user.
 
 ## Delete and Edit a Department
 
@@ -62,7 +62,7 @@ A department in a workspace is a logical unit used for permission control. You c
 
 2. In the **Set Departments** dialog box, on the left, click the upper level of the department to be edited or deleted.
 
-3. Click <img src="/images/docs/v3.3/workspace-administration/department-management/edit.png" height="20px"> on the right of the department to edit it.
+3. Click <img src="/images/docs/v3.x/workspace-administration/department-management/edit.png" height="20px"> on the right of the department to edit it.
 
    {{< notice note >}}
 
@@ -70,7 +70,7 @@ A department in a workspace is a logical unit used for permission control. You c
 
    {{</ notice >}}
 
-4. Click <img src="/images/docs/v3.3/workspace-administration/department-management/remove.png" height="20px"> on the right of the department, enter the department name in the displayed dialog box, and click **OK** to delete the department.
+4. Click <img src="/images/docs/v3.x/workspace-administration/department-management/remove.png" height="20px"> on the right of the department, enter the department name in the displayed dialog box, and click **OK** to delete the department.
 
    {{< notice note >}}
 

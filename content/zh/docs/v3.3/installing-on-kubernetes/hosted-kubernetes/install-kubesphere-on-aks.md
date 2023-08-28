@@ -16,11 +16,11 @@ Azure 可以通过提供自动化部署资源功能从而实现基础设施即�
 
 由于 Azure 提供了基于 Web 的终端，因此您不必在计算机上安装 Azure CLI。单击 Azure 门户右上角菜单栏上的 Cloud Shell 按钮。
 
-![Cloud Shell](/images/docs/v3.3/zh-cn/installing-on-kubernetes/hosted-kubernetes/install-kubesphere-on-aks/aks-launch-icon.png)
+![Cloud Shell](/images/docs/v3.x/zh-cn/installing-on-kubernetes/hosted-kubernetes/install-kubesphere-on-aks/aks-launch-icon.png)
 
 选择 **Bash** Shell。
 
-![Bash Shell](/images/docs/v3.3/zh-cn/installing-on-kubernetes/hosted-kubernetes/install-kubesphere-on-aks/aks-choices-bash.png)
+![Bash Shell](/images/docs/v3.x/zh-cn/installing-on-kubernetes/hosted-kubernetes/install-kubesphere-on-aks/aks-choices-bash.png)
 
 ### 创建资源组
 
@@ -66,7 +66,7 @@ aks-nodepool1-27194461-vmss000002   Ready    agent   65s   v1.17.13
 
 执行完以上所有命令后，您可以看到在 Azure Portal 中创建了 2 个资源组。
 
-![Resource groups](/images/docs/v3.3/zh-cn/installing-on-kubernetes/hosted-kubernetes/install-kubesphere-on-aks/aks-create-command.png)
+![Resource groups](/images/docs/v3.x/zh-cn/installing-on-kubernetes/hosted-kubernetes/install-kubesphere-on-aks/aks-create-command.png)
 
 查看资源组详情
 
@@ -87,11 +87,11 @@ $ az group show --resource-group KubeSphereRG
 
 Azure Kubernetes Services 本身将放置在`KubeSphereRG`中。
 
-![Azure Kubernetes Services](/images/docs/v3.3/zh-cn/installing-on-kubernetes/hosted-kubernetes/install-kubesphere-on-aks/aks-dashboard.png)
+![Azure Kubernetes Services](/images/docs/v3.x/zh-cn/installing-on-kubernetes/hosted-kubernetes/install-kubesphere-on-aks/aks-dashboard.png)
 
 所有其他资源都将放置在`MC_KubeSphereRG_KuberSphereCluster_westus`中，例如 VM，负载均衡器和虚拟网络。
 
-![Azure Kubernetes Services](/images/docs/v3.3/zh-cn/installing-on-kubernetes/hosted-kubernetes/install-kubesphere-on-aks/aks-all-resources.png)
+![Azure Kubernetes Services](/images/docs/v3.x/zh-cn/installing-on-kubernetes/hosted-kubernetes/install-kubesphere-on-aks/aks-all-resources.png)
 
 ## 在 AKS 上部署 KubeSphere
 

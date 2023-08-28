@@ -34,7 +34,7 @@ This tutorial demonstrates how to configure a email server and add recipients to
 
 2. After it is added, the email address of a recipient will be listed under **Recipient Settings**. You can add up to 50 recipients and all of them will be able to receive email notifications.
 
-3. To remove a recipient, hover over the email address you want to remove, then click <img src="/images/docs/v3.3/common-icons/trashcan.png" width="25" height="25" alt="icon" />.
+3. To remove a recipient, hover over the email address you want to remove, then click <img src="/images/docs/v3.x/common-icons/trashcan.png" width="25" height="25" alt="icon" />.
 
 ### Set notification conditions
 
@@ -52,7 +52,7 @@ This tutorial demonstrates how to configure a email server and add recipients to
 
 2. You can click **Add** to add notification conditions.
 
-3. You can click <img src="/images/docs/v3.3/common-icons/trashcan.png" width='25' height='25' alt="icon" /> on the right of a notification condition to delete the condition.
+3. You can click <img src="/images/docs/v3.x/common-icons/trashcan.png" width='25' height='25' alt="icon" /> on the right of a notification condition to delete the condition.
 
 4. After the configurations are complete, you can click **Send Test Message** for verification.
 

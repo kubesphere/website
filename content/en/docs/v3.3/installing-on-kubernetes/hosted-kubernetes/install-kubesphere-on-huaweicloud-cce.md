@@ -23,7 +23,7 @@ First, create a Kubernetes cluster based on the requirements below.
 - Go to **Resource Management** > **Cluster Management** > **Basic Information** > **Network**, and bind `Public apiserver`.
 - Select **kubectl** on the right column, go to **Download kubectl configuration file**, and click **Click here to download**, then you will get a public key for kubectl.
 
-  ![Generate Kubectl config file](/images/docs/v3.3/huawei-cce/en/generate-kubeconfig.png)
+  ![Generate Kubectl config file](/images/docs/v3.x/huawei-cce/en/generate-kubeconfig.png)
 
 After you get the configuration file for kubectl, use kubectl command line to verify the connection to the cluster.
 
@@ -83,7 +83,7 @@ kubectl apply -f https://github.com/kubesphere/ks-installer/releases/download/v3
 
 Go to **Workload** > **Pod**, and check the running status of the pod in `kubesphere-system` of its namespace to understand the minimal deployment of KubeSphere. Check `ks-console-xxxx`  of the namespace to understand the availability of KubeSphere console.
 
-  ![Deploy KubeSphere in Minimal](/images/docs/v3.3/huawei-cce/en/deploy-ks-minimal.png)
+  ![Deploy KubeSphere in Minimal](/images/docs/v3.x/huawei-cce/en/deploy-ks-minimal.png)
 
 ### Expose KubeSphere Console
 
@@ -91,11 +91,11 @@ Check the running status of Pods in `kubesphere-system` namespace and make sure
 
 Go to **Resource Management** > **Network** and choose the service in `ks-console`. It is suggested that you choose `LoadBalancer` (Public IP is required). The configuration is shown below.
 
-  ![Expose KubeSphere Console](/images/docs/v3.3/huawei-cce/en/expose-ks-console.png)
+  ![Expose KubeSphere Console](/images/docs/v3.x/huawei-cce/en/expose-ks-console.png)
 
 Default settings are OK for other detailed configurations. You can also set them based on your needs.
 
-  ![Edit KubeSphere Console SVC](/images/docs/v3.3/huawei-cce/en/edit-ks-console-svc.png)
+  ![Edit KubeSphere Console SVC](/images/docs/v3.x/huawei-cce/en/edit-ks-console-svc.png)
 
 After you set LoadBalancer for KubeSphere console, you can visit it via the given address. Go to KubeSphere login page and use the default account (username `admin` and password `P@88w0rd`) to log in.
 

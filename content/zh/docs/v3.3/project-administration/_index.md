@@ -6,7 +6,7 @@ layout: "second"
 linkTitle: "项目管理"
 weight: 13000
 
-icon: "/images/docs/v3.3/docs.svg"
+icon: "/images/docs/v3.x/docs.svg"
 
 ---
 

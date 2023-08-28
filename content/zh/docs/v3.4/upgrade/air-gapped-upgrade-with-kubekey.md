@@ -155,7 +155,7 @@ KubeSphere 3.4 对内置角色和自定义角色的授权项做了一些调整�
 
    {{< notice note >}}
 
-   - 您可以根据自己的需求变更下载的 Kubernetes 版本。安装 KubeSphere 3.4 的建议 Kubernetes 版本：v1.20.x、v1.21.x、* v1.22.x、* v1.23.x 和 * v1.24.x。带星号的版本可能出现边缘节点部分功能不可用的情况。因此，如需使用边缘节点，推荐安装 v1.21.x。如果不指定 Kubernetes 版本，KubeKey 将默认安装 Kubernetes v1.23.10。有关受支持的 Kubernetes 版本的更多信息，请参见[支持矩阵](../../installing-on-linux/introduction/kubekey/#支持矩阵)。
+   - 您可以根据自己的需求变更下载的 Kubernetes 版本。安装 KubeSphere 3.4 的建议 Kubernetes 版本：v1.20.x、v1.21.x、* v1.22.x、* v1.23.x、* v1.24.x、* v1.25.x 和 * v1.26.x。带星号的版本可能出现边缘节点部分功能不可用的情况。因此，如需使用边缘节点，推荐安装 v1.21.x。如果不指定 Kubernetes 版本，KubeKey 将默认安装 Kubernetes v1.23.10。有关受支持的 Kubernetes 版本的更多信息，请参见[支持矩阵](../../installing-on-linux/introduction/kubekey/#支持矩阵)。
 
    - 运行脚本后，会自动创建一个文件夹 `kubekey`。请注意，您稍后创建集群时，该文件和 `kk` 必须放在同一个目录下。
 
@@ -264,7 +264,7 @@ KubeSphere 3.4 对内置角色和自定义角色的授权项做了一些调整�
 ./kk upgrade -f config-sample.yaml
 ```
 
-要将 Kubernetes 升级至特定版本，可以在 `--with-kubernetes` 标志后明确指定版本号。以下是可用版本：v1.20.x、v1.21.x、* v1.22.x、* v1.23.x 和 * v1.24.x。带星号的版本可能出现边缘节点部分功能不可用的情况。因此，如需使用边缘节点，推荐安装 v1.21.x。
+要将 Kubernetes 升级至特定版本，可以在 `--with-kubernetes` 标志后明确指定版本号。以下是可用版本：v1.20.x、v1.21.x、* v1.22.x、* v1.23.x、* v1.24.x、* v1.25.x 和 * v1.26.x。带星号的版本可能出现边缘节点部分功能不可用的情况。因此，如需使用边缘节点，推荐安装 v1.21.x。
 
 ### 离线升级多节点集群
 
@@ -348,5 +348,5 @@ KubeSphere 3.4 对内置角色和自定义角色的授权项做了一些调整�
 ./kk upgrade -f config-sample.yaml
 ```
 
-要将 Kubernetes 升级至特定版本，可以在 `--with-kubernetes` 标志后明确指定版本号。以下是可用版本：v1.20.x、v1.21.x、* v1.22.x、* v1.23.x 和 * v1.24.x。带星号的版本可能出现边缘节点部分功能不可用的情况。因此，如需使用边缘节点，推荐安装 v1.21.x。
+要将 Kubernetes 升级至特定版本，可以在 `--with-kubernetes` 标志后明确指定版本号。以下是可用版本：v1.20.x、v1.21.x、* v1.22.x、* v1.23.x、* v1.24.x、* v1.25.x 和 * v1.26.x。带星号的版本可能出现边缘节点部分功能不可用的情况。因此，如需使用边缘节点，推荐安装 v1.21.x。
 

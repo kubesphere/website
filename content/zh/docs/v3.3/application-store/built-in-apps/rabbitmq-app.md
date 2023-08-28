@@ -49,9 +49,9 @@ weight: 14290
 4. 您可以在**端口**区域查看暴露的端口。
 
 5. 用 `<NodeIP>:<NodePort>` 地址以及步骤 1 中记录的用户名和密码访问 RabbitMQ 的 **management** 端口。
-   ![rabbitmq-dashboard](/images/docs/v3.3/zh-cn/appstore/built-in-apps/rabbitmq-app/rabbitmq-dashboard.png)
+   ![rabbitmq-dashboard](/images/docs/v3.x/zh-cn/appstore/built-in-apps/rabbitmq-app/rabbitmq-dashboard.png)
 
-   ![rabbitma-dashboard-detail](/images/docs/v3.3/zh-cn/appstore/built-in-apps/rabbitmq-app/rabbitma-dashboard-detail.png)
+   ![rabbitma-dashboard-detail](/images/docs/v3.x/zh-cn/appstore/built-in-apps/rabbitmq-app/rabbitma-dashboard-detail.png)
 
    {{< notice note >}}
 

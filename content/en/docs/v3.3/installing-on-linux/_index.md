@@ -6,7 +6,7 @@ layout: "second"
 linkTitle: "Installing on Linux"
 weight: 3000
 
-icon: "/images/docs/v3.3/docs.svg"
+icon: "/images/docs/v3.x/docs.svg"
 ---
 
 This chapter demonstrates how to use KubeKey to provision a production-ready Kubernetes and KubeSphere cluster on Linux in different environments. You can also use KubeKey to easily scale out and in your cluster and set various storage classes based on your needs.
@@ -14,4 +14,4 @@ This chapter demonstrates how to use KubeKey to provision a production-ready Kub
 
 Below you will find some of the most viewed and helpful pages in this chapter. It is highly recommended that you refer to them first.
 
-{{< popularPage icon="/images/docs/v3.3/qingcloud-2.svg" title="Deploy KubeSphere on QingCloud" description="Provision an HA KubeSphere cluster on QingCloud." link="../installing-on-linux/public-cloud/install-kubesphere-on-qingcloud-vms/" >}}
+{{< popularPage icon="/images/docs/v3.x/qingcloud-2.svg" title="Deploy KubeSphere on QingCloud" description="Provision an HA KubeSphere cluster on QingCloud." link="../installing-on-linux/public-cloud/install-kubesphere-on-qingcloud-vms/" >}}

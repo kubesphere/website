@@ -21,7 +21,7 @@ This tutorial walks you through an example of how to create Keepalived and HAPro
 
 ## Architecture
 
-![Architecture](/images/docs/v3.3/vsphere/kubesphereOnVsphere-zh-architecture.png)
+![Architecture](/images/docs/v3.x/vsphere/kubesphereOnVsphere-zh-architecture.png)
 
 ## Prepare Linux Hosts
 
@@ -45,41 +45,41 @@ You do not need to create a virtual machine for `vip` (i.e. Virtual IP) above, s
 
 You can follow the New Virtual Machine wizard to create a virtual machine to place in the VMware Host Client inventory.
 
-![create](/images/docs/v3.3/vsphere/kubesphereOnVsphere-en-0-1-create.png)
+![create](/images/docs/v3.x/vsphere/kubesphereOnVsphere-en-0-1-create.png)
 
 1. In the first step **Select a creation type**, you can deploy a virtual machine from an OVF or OVA file, or register an existing virtual machine directly.
 
-    ![kubesphereOnVsphere-en-0-1-1-create-type](/images/docs/v3.3/vsphere/kubesphereOnVsphere-en-0-1-1-create-type.png)
+    ![kubesphereOnVsphere-en-0-1-1-create-type](/images/docs/v3.x/vsphere/kubesphereOnVsphere-en-0-1-1-create-type.png)
 
 2. When you create a new virtual machine, provide a unique name for the  virtual machine to distinguish it from existing virtual machines on the  host you are managing.
 
-    ![kubesphereOnVsphere-en-0-1-2-name](/images/docs/v3.3/vsphere/kubesphereOnVsphere-en-0-1-2-name.png)
+    ![kubesphereOnVsphere-en-0-1-2-name](/images/docs/v3.x/vsphere/kubesphereOnVsphere-en-0-1-2-name.png)
 
 3. Select a compute resource and storage (datastore) for the configuration and disk files. You can select the  datastore that has the most suitable properties, such as size, speed,  and availability, for your virtual machine storage.
 
-    ![kubesphereOnVsphere-en-0-1-3-resource](/images/docs/v3.3/vsphere/kubesphereOnVsphere-en-0-1-3-resource.png)
+    ![kubesphereOnVsphere-en-0-1-3-resource](/images/docs/v3.x/vsphere/kubesphereOnVsphere-en-0-1-3-resource.png)
 
-    ![kubesphereOnVsphere-en-0-1-4-storage](/images/docs/v3.3/vsphere/kubesphereOnVsphere-en-0-1-4-storage.png)
+    ![kubesphereOnVsphere-en-0-1-4-storage](/images/docs/v3.x/vsphere/kubesphereOnVsphere-en-0-1-4-storage.png)
 
-    ![kubesphereOnVsphere-en-0-1-5-compatibility](/images/docs/v3.3/vsphere/kubesphereOnVsphere-en-0-1-5-compatibility.png)
+    ![kubesphereOnVsphere-en-0-1-5-compatibility](/images/docs/v3.x/vsphere/kubesphereOnVsphere-en-0-1-5-compatibility.png)
 
 4. Select a guest operating system. The wizard will provide the appropriate defaults for the operating system installation.
 
-    ![kubesphereOnVsphere-en-0-1-6-system](/images/docs/v3.3/vsphere/kubesphereOnVsphere-en-0-1-6-system.png)
+    ![kubesphereOnVsphere-en-0-1-6-system](/images/docs/v3.x/vsphere/kubesphereOnVsphere-en-0-1-6-system.png)
 
 5. Before you finish deploying a new virtual machine, you have the option to set **Virtual Hardware** and **VM Options**. You can refer to the images below for part of the fields.
 
-    ![kubesphereOnVsphere-en-0-1-7-hardware-1](/images/docs/v3.3/vsphere/kubesphereOnVsphere-en-0-1-7-hardware-1.png)
+    ![kubesphereOnVsphere-en-0-1-7-hardware-1](/images/docs/v3.x/vsphere/kubesphereOnVsphere-en-0-1-7-hardware-1.png)
 
-    ![kubesphereOnVsphere-en-0-1-7-hardware-2](/images/docs/v3.3/vsphere/kubesphereOnVsphere-en-0-1-7-hardware-2.png)
+    ![kubesphereOnVsphere-en-0-1-7-hardware-2](/images/docs/v3.x/vsphere/kubesphereOnVsphere-en-0-1-7-hardware-2.png)
 
-    ![kubesphereOnVsphere-en-0-1-7-hardware-3](/images/docs/v3.3/vsphere/kubesphereOnVsphere-en-0-1-7-hardware-3.png)
+    ![kubesphereOnVsphere-en-0-1-7-hardware-3](/images/docs/v3.x/vsphere/kubesphereOnVsphere-en-0-1-7-hardware-3.png)
 
-    ![kubesphereOnVsphere-en-0-1-7-hardware-4](/images/docs/v3.3/vsphere/kubesphereOnVsphere-en-0-1-7-hardware-4.png)
+    ![kubesphereOnVsphere-en-0-1-7-hardware-4](/images/docs/v3.x/vsphere/kubesphereOnVsphere-en-0-1-7-hardware-4.png)
 
 6. In **Ready to complete** page, you review the configuration selections that you have made for the virtual machine. Click **Finish** at the bottom-right corner to continue.
 
-    ![kubesphereOnVsphere-en-0-1-8](/images/docs/v3.3/vsphere/kubesphereOnVsphere-en-0-1-8.png)
+    ![kubesphereOnVsphere-en-0-1-8](/images/docs/v3.x/vsphere/kubesphereOnVsphere-en-0-1-8.png)
 
 ## Install a Load Balancer using Keepalived and HAProxy
 

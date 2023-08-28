@@ -10,7 +10,7 @@ KubeSphere 基于 [Istio](https://istio.io/) 向用户提供部署金丝雀服�
 
 该方法能够高效地测试服务性能和可靠性，有助于在实际环境中发现潜在问题，同时不影响系统整体稳定性。
 
-![canary-release-0](/images/docs/v3.3/zh-cn/project-user-guide/grayscale-release/canary-release/canary-release-0.png)
+![canary-release-0](/images/docs/v3.x/zh-cn/project-user-guide/grayscale-release/canary-release/canary-release-0.png)
 
 ## 视频演示
 
@@ -116,7 +116,7 @@ KubeSphere 提供基于 [Jaeger](https://www.jaegertracing.io/) 的分布式追�
 
 1. 在**任务状态**中，点击金丝雀发布任务。
 
-2. 在弹出的对话框中，点击 **reviews v2** 右侧的 <img src="/images/docs/v3.3/zh-cn/project-user-guide/grayscale-release/canary-release/three-dots.png" width="20px" alt="icon" />，选择**接管**。这代表 100% 的流量将会被发送到新版本 (v2)。
+2. 在弹出的对话框中，点击 **reviews v2** 右侧的 <img src="/images/docs/v3.x/zh-cn/project-user-guide/grayscale-release/canary-release/three-dots.png" width="20px" alt="icon" />，选择**接管**。这代表 100% 的流量将会被发送到新版本 (v2)。
 
    {{< notice note >}}
    如果新版本出现任何问题，可以随时回滚到之前的 v1 版本。

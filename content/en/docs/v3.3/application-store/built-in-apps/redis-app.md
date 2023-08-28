@@ -43,6 +43,6 @@ This tutorial walks you through an example of deploying Redis from the App Store
 
 3. In the pop-up window, use the `redis-cli` command in the terminal to use the app.
 
-   ![use-redis](/images/docs/v3.3/appstore/built-in-apps/redis-app/use-redis.png)
+   ![use-redis](/images/docs/v3.x/appstore/built-in-apps/redis-app/use-redis.png)
 
 4. For more information, see [the official documentation of Redis](https://redis.io/documentation).

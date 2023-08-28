@@ -16,7 +16,7 @@ weight: 5120
 
 如果您是使用通过 kubeadm 搭建的自建 Kubernetes 集群，请参阅[离线安装](../../../installing-on-kubernetes/on-prem-kubernetes/install-ks-on-linux-airgapped/)在您的 Kubernetes 集群上安装 KubeSphere，然后通过直接连接或者代理连接来启用 KubeSphere 多集群管理功能。
 
-![Kubernetes 联邦](/images/docs/v3.3/zh-cn/multicluster-management/introduction/kubesphere-federation/kubesphere-federation.png)
+![Kubernetes 联邦](/images/docs/v3.x/zh-cn/multicluster-management/introduction/kubesphere-federation/kubesphere-federation.png)
 
 ## 厂商无锁定
 

@@ -22,7 +22,7 @@ This tutorial walks you through an example of how to create two [QingCloud load 
 
 This example prepares six machines of **Ubuntu 16.04.6**. You will create two load balancers, and deploy three control plane nodes and etcd nodes on three of the machines. You can configure these control plane and etcd nodes in `config-sample.yaml` created by KubeKey (Please note that this is the default name, which can be changed by yourself).
 
-![ha-architecture](/images/docs/v3.3/installing-on-linux/installing-on-public-cloud/deploy-kubesphere-on-qingcloud-instances/ha-architecture.png)
+![ha-architecture](/images/docs/v3.x/installing-on-linux/installing-on-public-cloud/deploy-kubesphere-on-qingcloud-instances/ha-architecture.png)
 
 {{< notice note >}}
 
@@ -40,15 +40,15 @@ This step demonstrates how to create load balancers on the QingCloud platform.
 
 1. Log in to the [QingCloud console](https://console.qingcloud.com/login). In the menu on the left, under **Network & CDN**, select **Load Balancers**. Click **Create** to create a load balancer.
 
-   ![create-lb](/images/docs/v3.3/installing-on-linux/installing-on-public-cloud/deploy-kubesphere-on-qingcloud-instances/create-lb.png)
+   ![create-lb](/images/docs/v3.x/installing-on-linux/installing-on-public-cloud/deploy-kubesphere-on-qingcloud-instances/create-lb.png)
 
 2. In the pop-up window, set a name for the load balancer. Choose the VxNet where your machines are created from the **Network** drop-down list. Here is `pn`. Other fields can be default values as shown below. Click **Submit** to finish.
 
-   ![qingcloud-lb](/images/docs/v3.3/installing-on-linux/installing-on-public-cloud/deploy-kubesphere-on-qingcloud-instances/qingcloud-lb.png)
+   ![qingcloud-lb](/images/docs/v3.x/installing-on-linux/installing-on-public-cloud/deploy-kubesphere-on-qingcloud-instances/qingcloud-lb.png)
 
 3. Click the load balancer. On the detail page, create a listener that listens on port `6443` with the **Listener Protocol** set to `TCP`.
 
-   ![listener](/images/docs/v3.3/installing-on-linux/installing-on-public-cloud/deploy-kubesphere-on-qingcloud-instances/listener.png)
+   ![listener](/images/docs/v3.x/installing-on-linux/installing-on-public-cloud/deploy-kubesphere-on-qingcloud-instances/listener.png)
 
    - **Name**: Define a name for this Listener
    - **Listener Protocol**: Select `TCP` protocol
@@ -65,7 +65,7 @@ This step demonstrates how to create load balancers on the QingCloud platform.
 
 4. Click **Add Backend**, and choose the VxNet you just selected (in this example, it is `pn`). Click **Advanced Search**, choose the three control plane nodes, and set the port to `6443` which is the default secure port of api-server.
 
-   ![3-master](/images/docs/v3.3/installing-on-linux/installing-on-public-cloud/deploy-kubesphere-on-qingcloud-instances/3-master.png)
+   ![3-master](/images/docs/v3.x/installing-on-linux/installing-on-public-cloud/deploy-kubesphere-on-qingcloud-instances/3-master.png)
 
    Click **Submit** when you finish.
 
@@ -77,7 +77,7 @@ This step demonstrates how to create load balancers on the QingCloud platform.
    
    {{</ notice >}}
    
-   ![apply-change](/images/docs/v3.3/installing-on-linux/installing-on-public-cloud/deploy-kubesphere-on-qingcloud-instances/apply-change.png)
+   ![apply-change](/images/docs/v3.x/installing-on-linux/installing-on-public-cloud/deploy-kubesphere-on-qingcloud-instances/apply-change.png)
    
    Record the Intranet VIP shown under **Networks**. The IP address will be added later to the configuration file.
 
@@ -93,7 +93,7 @@ Two elastic IPs are needed for this tutorial, one for the VPC network and the ot
 
 1. Similarly, create an external load balancer while don't select VxNet for the **Network** field. Bind the EIP that you created to this load balancer by clicking **Add IPv4**.
 
-   ![bind-eip](/images/docs/v3.3/installing-on-linux/installing-on-public-cloud/deploy-kubesphere-on-qingcloud-instances/bind-eip.png)
+   ![bind-eip](/images/docs/v3.x/installing-on-linux/installing-on-public-cloud/deploy-kubesphere-on-qingcloud-instances/bind-eip.png)
 
 2. On the load balancer's detail page, create a listener that listens on port `30880` (NodePort of KubeSphere console) with **Listener Protocol** set to `HTTP`.
 
@@ -103,11 +103,11 @@ Two elastic IPs are needed for this tutorial, one for the VPC network and the ot
 
    {{</ notice >}}
 
-   ![listener2](/images/docs/v3.3/installing-on-linux/installing-on-public-cloud/deploy-kubesphere-on-qingcloud-instances/listener2.png)
+   ![listener2](/images/docs/v3.x/installing-on-linux/installing-on-public-cloud/deploy-kubesphere-on-qingcloud-instances/listener2.png)
 
 3. Click **Add Backend**. In **Advanced Search**, choose the `six` machines on which you are going to install KubeSphere within the VxNet `pn`, and set the port to `30880`.
 
-   ![six-instances](/images/docs/v3.3/installing-on-linux/installing-on-public-cloud/deploy-kubesphere-on-qingcloud-instances/six-instances.png)
+   ![six-instances](/images/docs/v3.x/installing-on-linux/installing-on-public-cloud/deploy-kubesphere-on-qingcloud-instances/six-instances.png)
 
    Click **Submit** when you finish.
 
@@ -320,11 +320,11 @@ https://kubesphere.io             2020-08-13 10:50:24
 
 Now that you have finished the installation, go back to the detail page of both the internal and external load balancers to see the status.
 
-![active](/images/docs/v3.3/installing-on-linux/installing-on-public-cloud/deploy-kubesphere-on-qingcloud-instances/active.png)
+![active](/images/docs/v3.x/installing-on-linux/installing-on-public-cloud/deploy-kubesphere-on-qingcloud-instances/active.png)
 
 Both listeners show that the status is **Active**, meaning nodes are up and running.
 
-![active-listener](/images/docs/v3.3/installing-on-linux/installing-on-public-cloud/deploy-kubesphere-on-qingcloud-instances/active-listener.png)
+![active-listener](/images/docs/v3.x/installing-on-linux/installing-on-public-cloud/deploy-kubesphere-on-qingcloud-instances/active-listener.png)
 
 In the web console of KubeSphere, you can also see that all the nodes are functioning well.
 

@@ -27,7 +27,7 @@ weight: 10210
 
 ### 步骤 3：设置容器组
 
-1. 设置镜像前，请点击**容器组副本数量**中的 <img src="/images/docs/v3.3/zh-cn/project-user-guide/application-workloads/deployments/plus-icon.png" width="20px" alt="icon" /> 或 <img src="/images/docs/v3.3/zh-cn/project-user-guide/application-workloads/deployments/minus-icon.png" width="20px" alt="icon" /> 来定义容器组的副本数量，该参数显示在清单文件中的 `.spec.replicas` 字段。
+1. 设置镜像前，请点击**容器组副本数量**中的 <img src="/images/docs/v3.x/zh-cn/project-user-guide/application-workloads/deployments/plus-icon.png" width="20px" alt="icon" /> 或 <img src="/images/docs/v3.x/zh-cn/project-user-guide/application-workloads/deployments/minus-icon.png" width="20px" alt="icon" /> 来定义容器组的副本数量，该参数显示在清单文件中的 `.spec.replicas` 字段。
 
     {{< notice tip >}}
 您可以启用右上角的**编辑 YAML**，查看 YAML 格式的部署清单文件。KubeSphere 使您可以直接编辑清单文件创建部署，或者您可以按照下列步骤使用仪表板创建部署。
@@ -84,7 +84,7 @@ weight: 10210
 
 ### 详情页面
 
-1. 部署创建后会显示在列表中。您可以点击右边的 <img src="/images/docs/v3.3/zh-cn/project-user-guide/application-workloads/deployments/three-dots.png" width="20px" alt="icon" />，在弹出菜单中选择操作，修改您的部署。
+1. 部署创建后会显示在列表中。您可以点击右边的 <img src="/images/docs/v3.x/zh-cn/project-user-guide/application-workloads/deployments/three-dots.png" width="20px" alt="icon" />，在弹出菜单中选择操作，修改您的部署。
 
     - **编辑信息**：查看并编辑基本信息。
     - **编辑 YAML**：查看、上传、下载或者更新 YAML 文件。
@@ -104,7 +104,7 @@ weight: 10210
 
 4. 点击**资源状态**选项卡，查看该部署的端口和容器组信息。
 
-    - **副本运行状态**：点击 <img src="/images/docs/v3.3/common-icons/replica-plus-icon.png" width="20px" alt="icon" /> 或 <img src="/images/docs/v3.3/common-icons/replica-minus-icon.png" width="20px" alt="icon" /> 来增加或减少容器组副本数量。
+    - **副本运行状态**：点击 <img src="/images/docs/v3.x/common-icons/replica-plus-icon.png" width="20px" alt="icon" /> 或 <img src="/images/docs/v3.x/common-icons/replica-minus-icon.png" width="20px" alt="icon" /> 来增加或减少容器组副本数量。
     - **容器组**
 
         - 容器组列表中显示了容器组详情（运行状态、节点、容器组 IP 以及资源使用情况）。
@@ -126,9 +126,9 @@ weight: 10210
 
 2. 点击右上角的下拉菜单以自定义时间范围和采样间隔。
 
-3. 点击右上角的 <img src="/images/docs/v3.3/zh-cn/project-user-guide/application-workloads/deployments/deployments_autorefresh_start.png" width="20px" />/<img src="/images/docs/v3.3/zh-cn/project-user-guide/application-workloads/deployments/deployments_autorefresh_stop.png" width="20px" /> 以开始或停止数据自动刷新。 
+3. 点击右上角的 <img src="/images/docs/v3.x/zh-cn/project-user-guide/application-workloads/deployments/deployments_autorefresh_start.png" width="20px" />/<img src="/images/docs/v3.x/zh-cn/project-user-guide/application-workloads/deployments/deployments_autorefresh_stop.png" width="20px" /> 以开始或停止数据自动刷新。 
 
-4. 点击右上角的 <img src="/images/docs/v3.3/zh-cn/project-user-guide/application-workloads/deployments/deployments_refresh.png" width="20px" /> 以手动刷新数据。
+4. 点击右上角的 <img src="/images/docs/v3.x/zh-cn/project-user-guide/application-workloads/deployments/deployments_refresh.png" width="20px" /> 以手动刷新数据。
 
 ### 环境变量
 

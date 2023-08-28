@@ -41,9 +41,9 @@ Cluster nodes are only accessible to cluster administrators. Some node metrics a
 ## Node Management
 On the **Cluster Nodes** page, you can perform the following operations:
 
-- **Cordon/Uncordon**: Click <img src="/images/docs/v3.3/common-icons/three-dots.png" width="15" alt="icon" /> on the right of the cluster node, and then click **Cordon** or **Uncordon**. Marking a node as unschedulable is very useful during a node reboot or other maintenance. The Kubernetes scheduler will not schedule new Pods to this node if it's been marked unschedulable. Besides, this does not affect existing workloads already on the node.
+- **Cordon/Uncordon**: Click <img src="/images/docs/v3.x/common-icons/three-dots.png" width="15" alt="icon" /> on the right of the cluster node, and then click **Cordon** or **Uncordon**. Marking a node as unschedulable is very useful during a node reboot or other maintenance. The Kubernetes scheduler will not schedule new Pods to this node if it's been marked unschedulable. Besides, this does not affect existing workloads already on the node.
 
-- **Open Terminal**：Click <img src="/images/docs/v3.3/common-icons/three-dots.png" width="15" alt="icon" /> on the right of the cluster node, and then click **Open Terminal**. This makes it convenient for you to manage nodes, such as modifying node configurations and downloading images.
+- **Open Terminal**：Click <img src="/images/docs/v3.x/common-icons/three-dots.png" width="15" alt="icon" /> on the right of the cluster node, and then click **Open Terminal**. This makes it convenient for you to manage nodes, such as modifying node configurations and downloading images.
 
 - **Edit Taints**：Taints allow a node to repel a set of pods. To edit a taint, select the check box before the target node. On the **Edit Taints** that is displayed, you can add, delete, or modify taints.
 

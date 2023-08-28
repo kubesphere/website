@@ -121,7 +121,7 @@ This tutorial demonstrates how to deploy ClickHouse Operator and a ClickHouse Cl
    $ kubectl edit chi clickho-749j8s -n demo-project
    ```
 
-   ![get-username-password](/images/docs/v3.3/appstore/external-apps/deploy-clickhouse/get-username-password.png)
+   ![get-username-password](/images/docs/v3.x/appstore/external-apps/deploy-clickhouse/get-username-password.png)
 
    {{< notice note >}}
 
@@ -135,7 +135,7 @@ This tutorial demonstrates how to deploy ClickHouse Operator and a ClickHouse Cl
    $ kubectl exec -it chi-clickho-749j8s-all-nodes-0-0-0 -n demo-project -- clickhouse-client --user=clickhouse --password=c1ickh0use0perator
    ```
 
-   ![use-clickhouse](/images/docs/v3.3/appstore/external-apps/deploy-clickhouse/use-clickhouse.png)
+   ![use-clickhouse](/images/docs/v3.x/appstore/external-apps/deploy-clickhouse/use-clickhouse.png)
 
    {{< notice note >}}
 

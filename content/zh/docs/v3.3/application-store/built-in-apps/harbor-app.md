@@ -49,7 +49,7 @@ weight: 14220
 
 1. 基于配置文件中 `expose.type` 字段的设置，访问方式可能会不同。本示例使用 `nodePort` 访问 Harbor，按照先前步骤中的设置，访问 `http://nodeIP:30002`。
 
-   ![登录 Harbor](/images/docs/v3.3/zh-cn/appstore/built-in-apps/deploy-harbor-on-ks/harbor-login-7.PNG)
+   ![登录 Harbor](/images/docs/v3.x/zh-cn/appstore/built-in-apps/deploy-harbor-on-ks/harbor-login-7.PNG)
 
    {{< notice note >}}
 
@@ -59,7 +59,7 @@ weight: 14220
 
 2. 使用默认帐户和密码 (`admin/Harbor12345`) 登录 Harbor。密码由配置文件中的 `harborAdminPassword` 字段定义。
 
-   ![Harbor 仪表板](/images/docs/v3.3/zh-cn/appstore/built-in-apps/deploy-harbor-on-ks/harbor-dashboard-8.jpg)
+   ![Harbor 仪表板](/images/docs/v3.x/zh-cn/appstore/built-in-apps/deploy-harbor-on-ks/harbor-dashboard-8.jpg)
 
 ## 常见问题
 

@@ -49,7 +49,7 @@ weight: 11242
 
    {{</ notice >}} 
 
-4. 新创建的角色将列在 **DevOps 项目角色**中。您可以点击右侧的 <img src="/images/docs/v3.3/common-icons/three-dots.png" height="15px" alt="icon" > 对其进行编辑。
+4. 新创建的角色将列在 **DevOps 项目角色**中。您可以点击右侧的 <img src="/images/docs/v3.x/common-icons/three-dots.png" height="15px" alt="icon" > 对其进行编辑。
 
    {{< notice note >}} 
 
@@ -61,7 +61,7 @@ weight: 11242
 
 1. 在 **DevOps 项目设置**中选择 **DevOps 项目成员**，然后点击**邀请**。
 
-2. 点击 <img src="/images/docs/v3.3/common-icons/invite-member-button.png" height="15px" alt="icon" > 邀请帐户加入此 DevOps 项目，并向此帐户授予 `pipeline-creator` 角色。
+2. 点击 <img src="/images/docs/v3.x/common-icons/invite-member-button.png" height="15px" alt="icon" > 邀请帐户加入此 DevOps 项目，并向此帐户授予 `pipeline-creator` 角色。
 
    {{< notice note >}} 
 

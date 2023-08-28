@@ -50,7 +50,7 @@ In the current version, there are 4 types of built-in podTemplates, i.e. `base`,
 
 You can use the built-in podTemplate by specifying the label for an agent. For example, to use the nodejs podTemplate, you can set the label to `nodejs` when creating the Pipeline, as shown in the example below.
 
-![jenkins-agent](/images/docs/v3.3/devops-user-guide/using-devops/jenkins-agent/jenkins-agent.jpg)
+![jenkins-agent](/images/docs/v3.x/devops-user-guide/using-devops/jenkins-agent/jenkins-agent.jpg)
 
 ```groovy
 pipeline {

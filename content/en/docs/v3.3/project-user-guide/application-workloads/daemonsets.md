@@ -81,7 +81,7 @@ You can add metadata in this section. When you finish, click **Create** to compl
 
 ### Details page
 
-1. After a DaemonSet is created, it will be displayed in the list. You can click <img src="/images/docs/v3.3/project-user-guide/application-workloads/daemonsets/three-dots.png" width="20px" alt="icon" /> on the right and select the options from the menu to modify a DaemonSet.
+1. After a DaemonSet is created, it will be displayed in the list. You can click <img src="/images/docs/v3.x/project-user-guide/application-workloads/daemonsets/three-dots.png" width="20px" alt="icon" /> on the right and select the options from the menu to modify a DaemonSet.
 
     - **Edit Information**: View and edit the basic information.
     - **Edit YAML**: View, upload, download, or update the YAML file.
@@ -122,9 +122,9 @@ Click the **Metadata** tab to view the labels and annotations of the DaemonSet.
 
 2. Click the drop-down menu in the upper-right corner to customize the time range and sampling interval.
 
-3. Click <img src="/images/docs/v3.3/project-user-guide/application-workloads/daemonsets/start-refresh.png" width="20px" alt="icon" />/<img src="/images/docs/v3.3/project-user-guide/application-workloads/daemonsets/stop-refresh.png" width="20px" alt="icon" /> in the upper-right corner to start/stop automatic data refreshing.
+3. Click <img src="/images/docs/v3.x/project-user-guide/application-workloads/daemonsets/start-refresh.png" width="20px" alt="icon" />/<img src="/images/docs/v3.x/project-user-guide/application-workloads/daemonsets/stop-refresh.png" width="20px" alt="icon" /> in the upper-right corner to start/stop automatic data refreshing.
 
-4. Click <img src="/images/docs/v3.3/project-user-guide/application-workloads/daemonsets/refresh.png" width="20px" alt="icon" /> in the upper-right corner to manually refresh the data.
+4. Click <img src="/images/docs/v3.x/project-user-guide/application-workloads/daemonsets/refresh.png" width="20px" alt="icon" /> in the upper-right corner to manually refresh the data.
 
 ### Environment variables
 

@@ -45,9 +45,9 @@ weight: 14240
 
 6. 通过 `<NodeIP>:<NodePort>` 使用 `accessKey` 和 `secretKey` 访问 MinIO Browser。
 
-   ![Minio Browser](/images/docs/v3.3/zh-cn/appstore/built-in-apps/deploy-minio-on-ks/minio-browser-13.PNG)
+   ![Minio Browser](/images/docs/v3.x/zh-cn/appstore/built-in-apps/deploy-minio-on-ks/minio-browser-13.PNG)
 
-   ![Minio Browser 界面](/images/docs/v3.3/zh-cn/appstore/built-in-apps/deploy-minio-on-ks/minio-browser-interface-14.PNG)
+   ![Minio Browser 界面](/images/docs/v3.x/zh-cn/appstore/built-in-apps/deploy-minio-on-ks/minio-browser-interface-14.PNG)
 
    {{< notice note >}}
 

@@ -78,7 +78,7 @@ weight: 6200
 定制资源定义（CRD）允许用户在不增加额外 API 服务器的情况下创建一种新的资源类型，用户可以像使用其他 Kubernetes 原生对象一样使用这些定制资源。
     {{</ notice >}}
 
-3. 在**自定义资源**中，点击 `ks-installer` 右侧的 <img src="/images/docs/v3.3/zh-cn/enable-pluggable-components/kubesphere-app-store/three-dots.png" height="20px">，选择**编辑 YAML**。
+3. 在**自定义资源**中，点击 `ks-installer` 右侧的 <img src="/images/docs/v3.x/zh-cn/enable-pluggable-components/kubesphere-app-store/three-dots.png" height="20px">，选择**编辑 YAML**。
 
 4. 在该 YAML 文件中，搜索 `openpitrix`，将 `enabled` 的 `false` 改为 `true`。完成后，点击右下角的**确定**，保存配置。
 
@@ -96,7 +96,7 @@ weight: 6200
 
     {{< notice note >}}
 
-您可以通过点击控制台右下角的 <img src="/images/docs/v3.3/zh-cn/enable-pluggable-components/kubesphere-app-store/hammer.png" height="20px"> 找到 kubectl 工具。
+您可以通过点击控制台右下角的 <img src="/images/docs/v3.x/zh-cn/enable-pluggable-components/kubesphere-app-store/hammer.png" height="20px"> 找到 kubectl 工具。
     {{</ notice >}}
 
 ## 验证组件的安装

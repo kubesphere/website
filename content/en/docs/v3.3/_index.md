@@ -9,7 +9,7 @@ LinkTitle: "Documentation"
 section1:
   title: KubeSphere Documentation
   content: Learn how to build and manage cloud-native applications using KubeSphere Container Platform. Get documentation, example code, tutorials, and more.
-  image: /images/docs/v3.3/banner.png
+  image: /images/docs/v3.x/banner.png
 
 sectionLink:
   docs:
@@ -46,13 +46,13 @@ section3:
   title: Run KubeSphere and Kubernetes Stack from the Cloud Service
   description: Cloud Providers are providing KubeSphere as a cloud-hosted service for users, helping you to create a highly available Kubernetes cluster managed by KubeSphere within minutes via several clicks. It enables you to use the cloud-hosted Kubernetes services out of the box.
   list:
-    - image: /images/docs/v3.3/aws.jpg
+    - image: /images/docs/v3.x/aws.jpg
       content: AWS Quickstart
       link: https://aws.amazon.com/quickstart/architecture/qingcloud-kubesphere/
-    - image: /images/docs/v3.3/microsoft-azure.jpg
+    - image: /images/docs/v3.x/microsoft-azure.jpg
       content: Azure Marketplace
       link: https://market.azure.cn/marketplace/apps/qingcloud.kubesphere
-    - image: /images/docs/v3.3/qingcloud.svg
+    - image: /images/docs/v3.x/qingcloud.svg
       content: QingCloud QKE
       link: https://www.qingcloud.com/products/kubesphereqke/
 

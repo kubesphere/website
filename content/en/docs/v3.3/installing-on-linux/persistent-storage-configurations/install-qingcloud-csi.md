@@ -20,7 +20,7 @@ To make sure the platform can create cloud disks for your cluster, you need to p
 
 1. Log in to the web console of [QingCloud](https://console.qingcloud.com/login) and select **Access Key** from the drop-down list in the top-right corner.
 
-   ![access-key](/images/docs/v3.3/installing-on-linux/introduction/persistent-storage-configuration/access-key.jpg)
+   ![access-key](/images/docs/v3.x/installing-on-linux/introduction/persistent-storage-configuration/access-key.jpg)
 
 2. Click **Create** to generate keys. Download the key after it is created, which is stored in a csv file.
 
@@ -47,7 +47,7 @@ The separate configuration file contains all parameters of QingCloud CSI which w
 
 2. The field `zone` specifies where your cloud disks are created. On QingCloud Platform, you must select a zone before you create them.
 
-   ![storage-zone](/images/docs/v3.3/installing-on-linux/introduction/persistent-storage-configuration/storage-zone.jpg)
+   ![storage-zone](/images/docs/v3.x/installing-on-linux/introduction/persistent-storage-configuration/storage-zone.jpg)
 
    Make sure the value you specify for `zone` matches the region ID below:
 

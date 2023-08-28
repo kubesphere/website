@@ -34,7 +34,7 @@ weight: 8722
 
 2. 添加完成后，接收人的邮箱地址将在**接收设置**下列出。您最多可以添加 50 位接收人，所有接收人都将能收到通知。
 
-3. 若想移除接收人，请将鼠标悬停在想要移除的邮箱地址上，然后点击右侧的 <img src="/images/docs/v3.3/common-icons/trashcan.png" width='25' height='25' alt="icon" />。
+3. 若想移除接收人，请将鼠标悬停在想要移除的邮箱地址上，然后点击右侧的 <img src="/images/docs/v3.x/common-icons/trashcan.png" width='25' height='25' alt="icon" />。
 
 ### 设置通知条件
 
@@ -50,7 +50,7 @@ weight: 8722
 
 2. 您可以点击**添加**来添加多个通知条件。
 
-3. 您可以点击通知条件右侧的 <img src="/images/docs/v3.3/common-icons/trashcan.png" width='25' height='25' alt="icon" /> 来删除通知条件。
+3. 您可以点击通知条件右侧的 <img src="/images/docs/v3.x/common-icons/trashcan.png" width='25' height='25' alt="icon" /> 来删除通知条件。
 
 4. 配置完成后，您可以点击右下角的**发送测试信息**进行验证。
 

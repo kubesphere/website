@@ -78,7 +78,7 @@ A Custom Resource Definition (CRD) allows users to create a new type of resource
 
 {{</ notice >}}
 
-3. In **Custom Resources**, click <img src="/images/docs/v3.3/enable-pluggable-components/kubesphere-devops-system/three-dots.png" height="20px"> on the right of `ks-installer` and select **Edit YAML**.
+3. In **Custom Resources**, click <img src="/images/docs/v3.x/enable-pluggable-components/kubesphere-devops-system/three-dots.png" height="20px"> on the right of `ks-installer` and select **Edit YAML**.
    
 4. In this YAML file, search for `devops` and change `false` to `true` for `enabled`. After you finish, click **OK** in the lower-right corner to save the configuration.
 
@@ -95,7 +95,7 @@ A Custom Resource Definition (CRD) allows users to create a new type of resource
 
     {{< notice note >}}
 
-You can find the web kubectl tool by clicking <img src="/images/docs/v3.3/enable-pluggable-components/kubesphere-devops-system/hammer.png" height="20px"> in the lower-right corner of the console.
+You can find the web kubectl tool by clicking <img src="/images/docs/v3.x/enable-pluggable-components/kubesphere-devops-system/hammer.png" height="20px"> in the lower-right corner of the console.
 
 {{</ notice >}}
 

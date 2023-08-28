@@ -68,7 +68,7 @@ A project cannot be recovered once deleted and resources in the project will be 
     {{</ notice >}}
 
 2. In the **Create Multi-cluster Project** window that appears, enter a project name and add an alias or description if necessary. Under **Clusters**, select multiple clusters for your project by clicking **Add Cluster**, and then click **OK**.
-3. A multi-cluster project created is displayed in the list. Click <img src="/images/docs/v3.3/common-icons/three-dots.png" width="15" alt="icon" /> on the right of a multi-cluster project to select an operation from the drop-down menu:
+3. A multi-cluster project created is displayed in the list. Click <img src="/images/docs/v3.x/common-icons/three-dots.png" width="15" alt="icon" /> on the right of a multi-cluster project to select an operation from the drop-down menu:
 
    - **Edit Information**: Edit the basic information of a multi-cluster project.
    - **Add Cluster**: Select a cluster from the drop-down list in the displayed dialog box and click **OK** to add a cluster to a multi-cluster project.

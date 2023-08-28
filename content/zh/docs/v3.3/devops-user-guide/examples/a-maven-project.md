@@ -16,7 +16,7 @@ weight: 11430
 
 KubeSphere DevOps 中有针对 Maven 项目的工作流，如下图所示，它使用 Jenkins 流水线来构建和部署 Maven 项目。所有步骤均在流水线中进行定义。
 
-![maven-project-jenkins](/images/docs/v3.3/zh-cn/devops-user-guide/examples/build-and-deploy-maven-project/maven-project-jenkins.png)
+![maven-project-jenkins](/images/docs/v3.x/zh-cn/devops-user-guide/examples/build-and-deploy-maven-project/maven-project-jenkins.png)
 
 首先，Jenkins Master 创建一个 Pod 来运行流水线。Kubernetes 创建 Pod 作为 Jenkins Master 的 Agent，该 Pod 会在流水线完成之后销毁。主要流程包括克隆代码、构建和推送镜像以及部署工作负载。
 

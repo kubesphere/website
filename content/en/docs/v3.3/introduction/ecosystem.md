@@ -12,4 +12,4 @@ KubeSphere integrates **a wide breadth of major ecosystem tools related to Kuber
 
 KubeSphere also features new capabilities that are not yet available in upstream Kubernetes, alleviating the pain points of Kubernetes including storage, network, security and usability. Not only does KubeSphere allow developers and DevOps teams use their favorite tools in a unified console, but, most importantly, these functionalities are loosely coupled with the platform since they are pluggable and optional.
 
-![kubesphere-ecosystem](/images/docs/v3.3/introduction/kubesphere-ecosystem/kubesphere-ecosystem.png)
+![kubesphere-ecosystem](/images/docs/v3.x/introduction/kubesphere-ecosystem/kubesphere-ecosystem.png)

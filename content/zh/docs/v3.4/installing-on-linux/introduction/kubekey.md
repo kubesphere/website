@@ -80,11 +80,11 @@ curl -sfL https://get-kk.kubesphere.io | VERSION=v3.0.7 sh -
 
 | KubeSphere 版本 | 受支持的 Kubernetes 版本 | 
 | ------------------ | ------------------------------------------------------------ |
-| v3.4             | v1.20.x、v1.21.x、* v1.22.x、* v1.23.x 和 * v1.24.x |
+| v3.4             | v1.20.x、v1.21.x、* v1.22.x、* v1.23.x、* v1.24.x、* v1.25.x 和 * v1.26.x|
 
 {{< notice note >}} 
 
 - 您也可以运行 `./kk version --show-supported-k8s`，查看能使用 KubeKey 安装的所有受支持的 Kubernetes 版本。
-- 能使用 KubeKey 安装的 Kubernetes 版本与 KubeSphere 3.4 支持的 Kubernetes 版本不同。如需[在现有 Kubernetes 集群上安装 KubeSphere 3.4](../../../installing-on-kubernetes/introduction/overview/)，您的 Kubernetes 版本必须为 v1.20.x、v1.21.x、* v1.22.x、* v1.23.x 和 * v1.24.x。
+- 能使用 KubeKey 安装的 Kubernetes 版本与 KubeSphere 3.4 支持的 Kubernetes 版本不同。如需[在现有 Kubernetes 集群上安装 KubeSphere 3.4](../../../installing-on-kubernetes/introduction/overview/)，您的 Kubernetes 版本必须为 v1.20.x、v1.21.x、* v1.22.x、* v1.23.x、* v1.24.x、* v1.25.x 和 * v1.26.x。
 - 带星号的版本可能出现边缘节点部分功能不可用的情况。因此，如果您需要使用 KubeEdge，为了避免兼容性问题，建议安装 v1.21.x 版本的 Kubernetes。
 {{</ notice >}} 

@@ -45,7 +45,7 @@ This tutorial demonstrates how to trigger a pipeline by using a webhook.
 
 2. Go to `/deploy/dev-ol/` and click the file `devops-sample.yaml`.
 
-3. Click <img src="/images/docs/v3.3/devops-user-guide/using-devops/pipeline-webhook/edit-btn.png" width="20px" alt="icon" /> to edit the file. For example, change the value of `spec.replicas` to `3`.
+3. Click <img src="/images/docs/v3.x/devops-user-guide/using-devops/pipeline-webhook/edit-btn.png" width="20px" alt="icon" /> to edit the file. For example, change the value of `spec.replicas` to `3`.
 
 4. Click **Commit changes** at the bottom of the page.
 

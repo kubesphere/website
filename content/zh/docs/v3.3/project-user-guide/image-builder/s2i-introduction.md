@@ -16,7 +16,7 @@ Source-to-Image (S2I) 是一个将源代码构建成镜像的自动化工具。S
 
 对于 Python 和 Ruby 等解释型语言，程序的构建环境和运行时环境通常是相同的。例如，基于 Ruby 的镜像构建器通常包含 Bundler、Rake、Apache、GCC 以及其他构建运行时环境所需的安装包。构建的工作流程如下图所示：
 
-![s2i-builder](/images/docs/v3.3/zh-cn/project-user-guide/image-builder/s2i-intro/s2i-builder.png)
+![s2i-builder](/images/docs/v3.x/zh-cn/project-user-guide/image-builder/s2i-intro/s2i-builder.png)
 
 ### S2I 工作原理
 
@@ -28,7 +28,7 @@ S2I 执行以下步骤：
 
 S2I 流程图如下：
 
-![s2i-flow](/images/docs/v3.3/zh-cn/project-user-guide/image-builder/s2i-intro/s2i-flow.png)
+![s2i-flow](/images/docs/v3.x/zh-cn/project-user-guide/image-builder/s2i-intro/s2i-flow.png)
 
 ### 运行时镜像
 
@@ -36,4 +36,4 @@ S2I 流程图如下：
 
 构建的工作流程如下：
 
-![s2i-runtime-build](/images/docs/v3.3/zh-cn/project-user-guide/image-builder/s2i-intro/s2i-runtime-build.png)
+![s2i-runtime-build](/images/docs/v3.x/zh-cn/project-user-guide/image-builder/s2i-intro/s2i-runtime-build.png)

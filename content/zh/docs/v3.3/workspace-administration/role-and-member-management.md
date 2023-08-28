@@ -49,15 +49,15 @@ weight: 9400
 
    {{</ notice >}} 
 
-4. 新创建的角色将在**企业空间角色**中列出，点击右侧的 <img src="/images/docs/v3.3/zh-cn/workspace-administration-and-user-guide/role-and-member-management/three-dots.png" height="20px"> 以编辑该角色的信息、权限，或删除该角色。
+4. 新创建的角色将在**企业空间角色**中列出，点击右侧的 <img src="/images/docs/v3.x/zh-cn/workspace-administration-and-user-guide/role-and-member-management/three-dots.png" height="20px"> 以编辑该角色的信息、权限，或删除该角色。
 
 ## 邀请新成员
 
 1. 转到**企业空间设置**下**企业空间成员**，点击**邀请**。
-2. 点击右侧的 <img src="/images/docs/v3.3/zh-cn/workspace-administration-and-user-guide/role-and-member-management/add.png" height="20px"> 以邀请一名成员加入企业空间，并为其分配一个角色。
+2. 点击右侧的 <img src="/images/docs/v3.x/zh-cn/workspace-administration-and-user-guide/role-and-member-management/add.png" height="20px"> 以邀请一名成员加入企业空间，并为其分配一个角色。
 
 
 
 3. 将成员加入企业空间后，点击**确定**。您可以在**企业空间成员**列表中查看新邀请的成员。
 
-4. 若要编辑现有成员的角色或将其从企业空间中移除，点击右侧的 <img src="/images/docs/v3.3/zh-cn/workspace-administration-and-user-guide/role-and-member-management/three-dots.png" height="20px"> 并选择对应的操作。
+4. 若要编辑现有成员的角色或将其从企业空间中移除，点击右侧的 <img src="/images/docs/v3.x/zh-cn/workspace-administration-and-user-guide/role-and-member-management/three-dots.png" height="20px"> 并选择对应的操作。

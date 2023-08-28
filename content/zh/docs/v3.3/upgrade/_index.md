@@ -7,7 +7,7 @@ linkTitle: "升级"
 
 weight: 7000
 
-icon: "/images/docs/v3.3/docs.svg"
+icon: "/images/docs/v3.x/docs.svg"
 
 ---
 

@@ -31,7 +31,7 @@ weight: 4310
 
 2. 当您生成自己的证书时，请确保在字段 `Common Name` 中指定一个域名。例如，本示例中该字段被指定为 `dockerhub.kubekey.local`。
 
-   ![自签名证书](/images/docs/v3.3/zh-cn/installing-on-kubernetes/installing-on-on-premises-kubernetes/air-gapped-installation/self-signed-cert.jpg)
+   ![自签名证书](/images/docs/v3.x/zh-cn/installing-on-kubernetes/installing-on-on-premises-kubernetes/air-gapped-installation/self-signed-cert.jpg)
 
 ### 启动 Docker 仓库
 

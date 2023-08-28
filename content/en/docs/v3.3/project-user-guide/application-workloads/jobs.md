@@ -115,7 +115,7 @@ You can set the values in this step or click **Next** to use the default values.
 You can rerun the Job if it fails and the reason for failure is displayed under **Message**.
     {{</ notice >}}
 
-3. In **Resource Status**, you can inspect the Pod status. Two Pods were created each time as **Parallel Pods** was set to 2. Click <img src="/images/docs/v3.3/project-user-guide/application-workloads/jobs/down-arrow.png" width="20px" alt="icon" /> on the right and click <img src="/images/docs/v3.3/project-user-guide/application-workloads/jobs/container-log-icon.png" width="20px" alt="icon" /> to check the container log, which displays the expected calculation result.
+3. In **Resource Status**, you can inspect the Pod status. Two Pods were created each time as **Parallel Pods** was set to 2. Click <img src="/images/docs/v3.x/project-user-guide/application-workloads/jobs/down-arrow.png" width="20px" alt="icon" /> on the right and click <img src="/images/docs/v3.x/project-user-guide/application-workloads/jobs/container-log-icon.png" width="20px" alt="icon" /> to check the container log, which displays the expected calculation result.
 
     {{< notice tip >}}
 
@@ -141,13 +141,13 @@ On the Job details page, you can manage the Job after it is created.
 
 1. Click the **Job Records** tab to view the execution records of the Job.
 
-2. Click <img src="/images/docs/v3.3/project-user-guide/application-workloads/jobs/refresh.png" width="20px" alt="icon" /> to refresh the execution records.
+2. Click <img src="/images/docs/v3.x/project-user-guide/application-workloads/jobs/refresh.png" width="20px" alt="icon" /> to refresh the execution records.
 
 ### Resource status
 
 1. Click the **Resource Status** tab to view the Pods of the Job.
 
-2. Click <img src="/images/docs/v3.3/project-user-guide/application-workloads/jobs/refresh.png" width="20px" alt="icon" /> to refresh the Pod information, and click <img src="/images/docs/v3.3/project-user-guide/application-workloads/jobs/display.png" width="20px" />/<img src="/images/docs/v3.3/project-user-guide/application-workloads/jobs/hide.png" width="20px" /> to display/hide the containers in each Pod.
+2. Click <img src="/images/docs/v3.x/project-user-guide/application-workloads/jobs/refresh.png" width="20px" alt="icon" /> to refresh the Pod information, and click <img src="/images/docs/v3.x/project-user-guide/application-workloads/jobs/display.png" width="20px" />/<img src="/images/docs/v3.x/project-user-guide/application-workloads/jobs/hide.png" width="20px" /> to display/hide the containers in each Pod.
 
 ### Metadata
 

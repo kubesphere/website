@@ -47,7 +47,7 @@ You need to prepare a user granted the `platform-admin` role. For more informati
 
    {{</ notice >}} 
 
-6. You can click **Add** to add notification conditions, or click <img src="/images/docs/v3.3/common-icons/trashcan.png" width='25' height='25' alt="icon" /> on the right of a notification condition to delete the condition.
+6. You can click **Add** to add notification conditions, or click <img src="/images/docs/v3.x/common-icons/trashcan.png" width='25' height='25' alt="icon" /> on the right of a notification condition to delete the condition.
 
 7. After the configurations are complete, you can click **Send Test Message** for verification.
 
